@@ -238,11 +238,11 @@ msgstr ""
 msgid "1"
 msgstr ""
 
-#: adjust.h:132 httpdfunc.h:4169
+#: adjust.h:132 httpdfunc.h:4155
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:122 httpdfunc.h:4111
+#: adjust.h:122 httpdfunc.h:4097
 msgid "1 sec"
 msgstr ""
 
@@ -342,7 +342,7 @@ msgstr "1 Second"
 msgid "2"
 msgstr ""
 
-#: adjust.h:133 httpdfunc.h:4176
+#: adjust.h:133 httpdfunc.h:4162
 msgid "2 GB"
 msgstr ""
 
@@ -350,7 +350,7 @@ msgstr ""
 msgid "2 Khz"
 msgstr ""
 
-#: adjust.h:123 avsettings.h:80 httpdfunc.h:4118
+#: adjust.h:123 avsettings.h:80 httpdfunc.h:4104
 msgid "2 sec"
 msgstr ""
 
@@ -386,7 +386,7 @@ msgstr "2 Seconds"
 msgid "3"
 msgstr ""
 
-#: adjust.h:134 httpdfunc.h:4183
+#: adjust.h:134 httpdfunc.h:4169
 msgid "3 GB"
 msgstr ""
 
@@ -438,7 +438,7 @@ msgstr "3 Seconds"
 msgid "4"
 msgstr ""
 
-#: adjust.h:135 httpdfunc.h:4190
+#: adjust.h:135 httpdfunc.h:4176
 msgid "4 GB"
 msgstr ""
 
@@ -733,7 +733,7 @@ msgstr "Settings"
 msgid "AV Settings"
 msgstr "Audio/Video Settings"
 
-#: httpdfunc.h:5408 skin_default_skin.xml.h:50 webif_info.h:3
+#: httpdfunc.h:5394 skin_default_skin.xml.h:50 webif_info.h:3
 msgid "About"
 msgstr "About titan"
 
@@ -754,7 +754,7 @@ msgstr ""
 msgid "Activate (autostart)"
 msgstr ""
 
-#: httpdfunc.h:4814 skin_default_skin.xml.h:55
+#: httpdfunc.h:4800 skin_default_skin.xml.h:55
 msgid "Activate CEC"
 msgstr ""
 
@@ -915,11 +915,11 @@ msgstr ""
 msgid "Amount of files: "
 msgstr "Total of Files: "
 
-#: httpdfunc.h:4460 skin_default_skin.xml.h:74
+#: httpdfunc.h:4446 skin_default_skin.xml.h:74
 msgid "Animated Screens"
 msgstr "Animated Menus"
 
-#: httpdfunc.h:4496 skin_default_skin.xml.h:75
+#: httpdfunc.h:4482 skin_default_skin.xml.h:75
 msgid "Animated Speed"
 msgstr "Animation Speed"
 
@@ -1712,7 +1712,7 @@ msgstr ""
 msgid "COPY"
 msgstr "Copy"
 
-#: httpdfunc.h:5313 skin_default_skin.xml.h:169 webif_info_sysinfos.h:2
+#: httpdfunc.h:5299 skin_default_skin.xml.h:169 webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr ""
 
@@ -1831,7 +1831,7 @@ msgstr "Can't get EPG time or the EPG Endtime is faulty."
 msgid "Can't get Streamurl !"
 msgstr "Streamurl is not reachable!"
 
-#: extensions.h:444 httpdfunc.h:6484
+#: extensions.h:444 httpdfunc.h:6470
 msgid "Can't get all TPK index !"
 msgstr "ATTENTION: Can't retrieve full plugin index!"
 
@@ -1839,7 +1839,7 @@ msgstr "ATTENTION: Can't retrieve full plugin index!"
 msgid "Can't get data from facebook"
 msgstr ""
 
-#: extensions.h:190 httpdfunc.h:6070
+#: extensions.h:190 httpdfunc.h:6056
 msgid "Can't install Package. Package to big."
 msgstr ""
 "ERROR: The designated package is too big\n"
@@ -1916,7 +1916,7 @@ msgstr "ERROR: Cannot start Systemupdate! File Corrupt!"
 msgid "Can't start timeshift play !"
 msgstr "Cannot start timeshift playback!"
 
-#: extensions.h:448 httpdfunc.h:6496
+#: extensions.h:448 httpdfunc.h:6482
 msgid "Can't update all packages !"
 msgstr "ERROR: Not all plugins were updated!"
 
@@ -1937,7 +1937,7 @@ msgstr ""
 msgid "Change Channelname"
 msgstr ""
 
-#: httpdfunc.h:4380 skin_default_skin.xml.h:135
+#: httpdfunc.h:4366 skin_default_skin.xml.h:135
 msgid "Change Channelname auto."
 msgstr "Auto Update Channelname"
 
@@ -1987,7 +1987,7 @@ msgstr ""
 msgid "Channel Down"
 msgstr ""
 
-#: adjust.h:72 epgsettings.h:139 httpdfunc.h:3898
+#: adjust.h:72 epgsettings.h:139 httpdfunc.h:3884
 msgid "Channel EPG"
 msgstr ""
 
@@ -2065,7 +2065,7 @@ msgstr ""
 "ERROR: Channellist empty or corrupt\n"
 "Channel not found!"
 
-#: httpdfunc.h:4539 skin_default_skin.xml.h:141
+#: httpdfunc.h:4525 skin_default_skin.xml.h:141
 msgid "Channellist view"
 msgstr ""
 
@@ -2095,7 +2095,7 @@ msgstr "Parental control"
 msgid "Child safety"
 msgstr "Parental control"
 
-#: extensions.h:184 httpdfunc.h:6002
+#: extensions.h:184 httpdfunc.h:5988
 msgid "Choice Install Medium"
 msgstr "Choose the installation medium"
 
@@ -2666,11 +2666,11 @@ msgstr ""
 msgid "Deactivate"
 msgstr ""
 
-#: httpdfunc.h:4767 skin_default_skin.xml.h:182
+#: httpdfunc.h:4753 skin_default_skin.xml.h:182
 msgid "Deactivate Crypt Support on Media Playback"
 msgstr "Deactivate Crypt Support during Media Playback"
 
-#: httpdfunc.h:4790 skin_default_skin.xml.h:183
+#: httpdfunc.h:4776 skin_default_skin.xml.h:183
 msgid "Deactivate MiniTV"
 msgstr ""
 
@@ -2682,7 +2682,7 @@ msgstr ""
 msgid "Debug Modus"
 msgstr ""
 
-#: httpdfunc.h:4888 skin_default_skin.xml.h:185
+#: httpdfunc.h:4874 skin_default_skin.xml.h:185
 msgid "Debuglevel"
 msgstr ""
 
@@ -2807,7 +2807,7 @@ msgstr ""
 msgid "Device:"
 msgstr ""
 
-#: httpdfunc.h:5321 skin_default_skin.xml.h:198 system_infos_sysinfo.h:23
+#: httpdfunc.h:5307 skin_default_skin.xml.h:198 system_infos_sysinfo.h:23
 #: webif_info_sysinfos.h:6
 msgid "Devices"
 msgstr ""
@@ -2871,7 +2871,7 @@ msgstr ""
 msgid "Director:"
 msgstr ""
 
-#: httpdfunc.h:3982 skin_default_skin.xml.h:200
+#: httpdfunc.h:3968 skin_default_skin.xml.h:200
 msgid "Dirsort"
 msgstr "Directory sort by"
 
@@ -2915,7 +2915,7 @@ msgstr ""
 msgid "Doku"
 msgstr "Documentation"
 
-#: httpdfunc.h:3908 skin_default_skin.xml.h:210
+#: httpdfunc.h:3894 skin_default_skin.xml.h:210
 msgid "Don't clear TV on zap (only with fastzap)"
 msgstr ""
 
@@ -2965,7 +2965,7 @@ msgstr ""
 msgid "Draw"
 msgstr ""
 
-#: httpdfunc.h:4927 skin_default_skin.xml.h:213
+#: httpdfunc.h:4913 skin_default_skin.xml.h:213
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
@@ -3022,7 +3022,7 @@ msgstr ""
 msgid "EJECT"
 msgstr "Eject"
 
-#: adjust.h:71 adjust.h:326 httpdfunc.h:3891 play.h:1433
+#: adjust.h:71 adjust.h:326 httpdfunc.h:3877 play.h:1433
 #: skin_default_skin.xml.h:230 webif_index.atemio5200.h:34
 #: webif_index.atemio5200.h:90 webif_index.atemio6200.h:34
 #: webif_index.atemio6200.h:90 webif_index.atemio7600.h:65
@@ -3135,7 +3135,7 @@ msgstr "ERROR: can't read resolution"
 msgid "ERROR cant start LCD driver"
 msgstr "ERROR: Can't start LCD driver"
 
-#: httpdfunc.h:5643
+#: httpdfunc.h:5629
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
 
@@ -3173,8 +3173,8 @@ msgstr "ERROR: can't set marker in this file"
 #: global.h:7179 harddisk.h:355 harddisk.h:487 harddisk.h:678 harddisk.h:686
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
 #: harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362
-#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3276 httpdfunc.h:6177
-#: httpdfunc.h:6442 httpdfunc.h:6513 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3262 httpdfunc.h:6163
+#: httpdfunc.h:6428 httpdfunc.h:6499 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -3405,7 +3405,7 @@ msgstr "ERROR: Settings could not be saved!"
 msgid "Error, Internet Connection not found"
 msgstr "ERROR: Internet Connection not found"
 
-#: httpdfunc.h:5095
+#: httpdfunc.h:5081
 msgid "Error, Program not started."
 msgstr ""
 
@@ -3484,7 +3484,7 @@ msgstr "Exit"
 msgid "Expert"
 msgstr "Expert Mode"
 
-#: httpdfunc.h:4671 skin_default_skin.xml.h:247
+#: httpdfunc.h:4657 skin_default_skin.xml.h:247
 msgid "Expert Modus"
 msgstr "Expert Mode"
 
@@ -3640,15 +3640,15 @@ msgstr ""
 msgid "Fast Rewind"
 msgstr ""
 
-#: httpdfunc.h:4133 skin_default_skin.xml.h:255
+#: httpdfunc.h:4119 skin_default_skin.xml.h:255
 msgid "Fast Text Render"
 msgstr ""
 
-#: httpdfunc.h:3960 skin_default_skin.xml.h:254
+#: httpdfunc.h:3946 skin_default_skin.xml.h:254
 msgid "Faststop"
 msgstr "Fast titan reboot"
 
-#: httpdfunc.h:3931 skin_default_skin.xml.h:256
+#: httpdfunc.h:3917 skin_default_skin.xml.h:256
 msgid "Fastzap"
 msgstr ""
 
@@ -3941,7 +3941,7 @@ msgstr "Question"
 msgid "Framerate"
 msgstr "Maximum Rate"
 
-#: httpdfunc.h:5269 system_infos.h:16
+#: httpdfunc.h:5255 system_infos.h:16
 msgid "Free Space"
 msgstr ""
 
@@ -4009,7 +4009,7 @@ msgstr ""
 msgid "Frontend type unknown"
 msgstr "ERROR: Frontend type unknown"
 
-#: httpdfunc.h:4075 skin_default_skin.xml.h:276
+#: httpdfunc.h:4061 skin_default_skin.xml.h:276
 msgid "Frontpanel Power Aktion"
 msgstr "Frontpanel Power Action"
 
@@ -4057,7 +4057,7 @@ msgstr "Graphic Multi EPG - Satellites"
 msgid "GREEN"
 msgstr "Green"
 
-#: adjust.h:114 httpdfunc.h:4067 skin_default_skin.xml.h:292
+#: adjust.h:114 httpdfunc.h:4053 skin_default_skin.xml.h:292
 #: webif_index.atemio510.h:6 webif_index.atemio5200.h:6
 #: webif_index.atemio6000.h:6 webif_index.atemio6100.h:6
 #: webif_index.atemio6200.h:6 webif_index.atemio7600.h:4
@@ -4093,7 +4093,7 @@ msgstr ""
 msgid "Giantgirl"
 msgstr ""
 
-#: httpdfunc.h:5369 skin_default_skin.xml.h:282 webif_info_logs.h:3
+#: httpdfunc.h:5355 skin_default_skin.xml.h:282 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr ""
 
@@ -4101,7 +4101,7 @@ msgstr ""
 msgid "Git Changelog (Extern)"
 msgstr ""
 
-#: httpdfunc.h:5375
+#: httpdfunc.h:5361
 msgid "Git Changelog Full"
 msgstr ""
 
@@ -4247,7 +4247,7 @@ msgstr ""
 msgid "HTTPD Port"
 msgstr ""
 
-#: httpdfunc.h:3839 skin_default_skin.xml.h:295
+#: httpdfunc.h:3825 skin_default_skin.xml.h:295
 msgid "Hangtime"
 msgstr "Time to wait before Error-Message appears"
 
@@ -4287,7 +4287,7 @@ msgstr ""
 msgid "Hello World !"
 msgstr ""
 
-#: httpdfunc.h:5169 skin_default_skin.xml.h:828 webif_index.atemio510.h:16
+#: httpdfunc.h:5155 skin_default_skin.xml.h:828 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -4637,7 +4637,7 @@ msgstr ""
 msgid "Hoster Url not http://"
 msgstr "The hosters URL is not http://"
 
-#: httpdfunc.h:5365
+#: httpdfunc.h:5351
 msgid "Hotline"
 msgstr ""
 
@@ -4837,11 +4837,11 @@ msgstr ""
 msgid "Info bar selection"
 msgstr ""
 
-#: httpdfunc.h:3753 skin_default_skin.xml.h:371
+#: httpdfunc.h:3739 skin_default_skin.xml.h:371
 msgid "Infobar Sleep"
 msgstr "Infobar display delay (sec)"
 
-#: httpdfunc.h:3721 skin_default_skin.xml.h:372
+#: httpdfunc.h:3707 skin_default_skin.xml.h:372
 msgid "Infobar Timeout"
 msgstr "Infobar fadeout after (sec)"
 
@@ -4942,7 +4942,7 @@ msgstr ""
 msgid "Install File Manager Tpk first !"
 msgstr "Install 'File Manager' Extension first !"
 
-#: httpdfunc.h:6145 httpdfunc.h:6153 httpdfunc.h:6163
+#: httpdfunc.h:6131 httpdfunc.h:6139 httpdfunc.h:6149
 msgid "Install Log:"
 msgstr ""
 
@@ -4966,15 +4966,15 @@ msgstr "Install netsurf Internetbrowser Extension first!"
 msgid "Install success"
 msgstr "Installation accomplished successfully"
 
-#: extensions.h:157 httpdfunc.h:6036
+#: extensions.h:157 httpdfunc.h:6022
 msgid "Install to FLASH"
 msgstr "Install to FLASH"
 
-#: extensions.h:145 httpdfunc.h:6018
+#: extensions.h:145 httpdfunc.h:6004
 msgid "Install to MNT"
 msgstr "Install to MNT (Flash)"
 
-#: extensions.h:171 httpdfunc.h:6056
+#: extensions.h:171 httpdfunc.h:6042
 msgid "Install to SWAP"
 msgstr "Install to SWAP (USB oder HDD)"
 
@@ -4982,7 +4982,7 @@ msgstr "Install to SWAP (USB oder HDD)"
 msgid "Installation start"
 msgstr "Installation started"
 
-#: httpdfunc.h:5680 security.h:2034 skin_default_skin.xml.h:375
+#: httpdfunc.h:5666 security.h:2034 skin_default_skin.xml.h:375
 msgid "Installed:"
 msgstr ""
 
@@ -5109,7 +5109,7 @@ msgstr ""
 msgid "Kamera 2 (Umschalten mit Rot)"
 msgstr ""
 
-#: httpdfunc.h:5271 skin_default_skin.xml.h:387 system_infos.h:18
+#: httpdfunc.h:5257 skin_default_skin.xml.h:387 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr ""
@@ -5428,7 +5428,7 @@ msgstr "WED"
 msgid "MO"
 msgstr "MON"
 
-#: httpdfunc.h:5317 skin_default_skin.xml.h:447 webif_info_sysinfos.h:4
+#: httpdfunc.h:5303 skin_default_skin.xml.h:447 webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr "Memory Technology Device (MTD)"
 
@@ -5677,7 +5677,7 @@ msgstr ""
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: httpdfunc.h:5315 skin_default_skin.xml.h:426 webif_info_sysinfos.h:3
+#: httpdfunc.h:5301 skin_default_skin.xml.h:426 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr ""
 
@@ -5736,8 +5736,8 @@ msgstr ""
 #: global.h:7168 global.h:7172 global.h:7179 global.h:7183 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
-#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5791 httpdfunc.h:6177
-#: httpdfunc.h:6442 httpdfunc.h:6513 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5777 httpdfunc.h:6163
+#: httpdfunc.h:6428 httpdfunc.h:6499 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -5856,7 +5856,7 @@ msgstr ""
 msgid "Modulation:"
 msgstr ""
 
-#: httpdfunc.h:5319 skin_default_skin.xml.h:438 webif_info_sysinfos.h:5
+#: httpdfunc.h:5305 skin_default_skin.xml.h:438 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr ""
 
@@ -5888,7 +5888,7 @@ msgstr ""
 msgid "More audio/video formats playable"
 msgstr ""
 
-#: httpdfunc.h:5273 skin_default_skin.xml.h:441 system_infos.h:20
+#: httpdfunc.h:5259 skin_default_skin.xml.h:441 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr "Device mounts"
@@ -6042,7 +6042,7 @@ msgstr ""
 msgid "Name:"
 msgstr ""
 
-#: httpdfunc.h:5275 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
+#: httpdfunc.h:5261 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:34 plugins_panel_skin.xml.h:13
 #: skin_default_skin.xml.h:454 skins_mc_skin.xml.h:34
 #: skins_panel_skin.xml.h:13 system_infos.h:22 webif_info_systeminfos.h:6
@@ -6133,7 +6133,7 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-#: httpdfunc.h:4627 httpdfunc.h:5440 skin_default_skin.xml.h:462
+#: httpdfunc.h:4613 httpdfunc.h:5426 skin_default_skin.xml.h:462
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr ""
@@ -6165,7 +6165,7 @@ msgstr "No audio synchronisation"
 msgid "No Linux partition found on this device."
 msgstr ""
 
-#: httpdfunc.h:5585 stream.h:33
+#: httpdfunc.h:5571 stream.h:33
 msgid "No Live Stream running"
 msgstr ""
 
@@ -6183,19 +6183,19 @@ msgid ""
 "Create device?"
 msgstr ""
 
-#: httpdfunc.h:6257
+#: httpdfunc.h:6243
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr ""
 
-#: httpdfunc.h:6261
+#: httpdfunc.h:6247
 msgid "No Tpk Files Found on Media Devices."
 msgstr ""
 
-#: httpdfunc.h:5910 httpdfunc.h:6064 httpdfunc.h:6325
+#: httpdfunc.h:5896 httpdfunc.h:6050 httpdfunc.h:6311
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5846
+#: httpdfunc.h:5832
 msgid "No Tpk Sections Found."
 msgstr ""
 
@@ -6308,8 +6308,8 @@ msgstr ""
 #: global.h:7172 global.h:7179 global.h:7183 harddisk.h:355 harddisk.h:487
 #: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
 #: harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860
-#: harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3276
-#: httpdfunc.h:6177 httpdfunc.h:6442 httpdfunc.h:6513 hwtest.h:88 hwtest.h:93
+#: harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3262
+#: httpdfunc.h:6163 httpdfunc.h:6428 httpdfunc.h:6499 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -6928,7 +6928,7 @@ msgstr ""
 msgid "Player"
 msgstr ""
 
-#: httpdfunc.h:4358 skin_default_skin.xml.h:504
+#: httpdfunc.h:4344 skin_default_skin.xml.h:504
 msgid "Player for .ts"
 msgstr "Player for .ts files"
 
@@ -7073,11 +7073,11 @@ msgstr ""
 msgid "Power = reboot receiver"
 msgstr ""
 
-#: adjust.h:110 httpdfunc.h:4039
+#: adjust.h:110 httpdfunc.h:4025
 msgid "Power Menu"
 msgstr ""
 
-#: adjust.h:111 adjust.h:117 httpdfunc.h:4046 httpdfunc.h:4082
+#: adjust.h:111 adjust.h:117 httpdfunc.h:4032 httpdfunc.h:4068
 #: skin_default_skin.xml.h:518 webif_index.atemio510.h:4
 #: webif_index.atemio5200.h:4 webif_index.atemio6000.h:4
 #: webif_index.atemio6100.h:4 webif_index.atemio6200.h:4
@@ -7150,7 +7150,7 @@ msgstr ""
 msgid "Program Info"
 msgstr ""
 
-#: httpdfunc.h:5097
+#: httpdfunc.h:5083
 msgid "Program started successfully"
 msgstr ""
 
@@ -7203,7 +7203,7 @@ msgstr "No. of Providers: "
 msgid "Prozess Info"
 msgstr "Process Information"
 
-#: httpdfunc.h:5327 skin_default_skin.xml.h:533 webif_info_sysinfos.h:9
+#: httpdfunc.h:5313 skin_default_skin.xml.h:533 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr "Pocess list"
 
@@ -7326,7 +7326,7 @@ msgstr ""
 msgid "Radiotext"
 msgstr ""
 
-#: httpdfunc.h:5277 skin_default_skin.xml.h:539 system_infos.h:24
+#: httpdfunc.h:5263 skin_default_skin.xml.h:539 system_infos.h:24
 #: webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr "RAM"
@@ -7449,7 +7449,7 @@ msgstr ""
 msgid "Record / Timeshift / Stream"
 msgstr ""
 
-#: httpdfunc.h:4200 skin_default_skin.xml.h:543
+#: httpdfunc.h:4186 skin_default_skin.xml.h:543
 msgid "Record Forerun (min)"
 msgstr "Forerun For Timer Recordings (Min)"
 
@@ -7457,7 +7457,7 @@ msgstr "Forerun For Timer Recordings (Min)"
 msgid "Record Max Sectors"
 msgstr "Maximum Sectors size for 'record'"
 
-#: httpdfunc.h:4232 skin_default_skin.xml.h:546
+#: httpdfunc.h:4218 skin_default_skin.xml.h:546
 msgid "Record Overrun (min)"
 msgstr "Overrun For Timer Recordings (Min)"
 
@@ -7473,7 +7473,7 @@ msgstr ""
 msgid "Record Player"
 msgstr "Recordings Player (.ts)"
 
-#: httpdfunc.h:4155 skin_default_skin.xml.h:550
+#: httpdfunc.h:4141 skin_default_skin.xml.h:550
 msgid "Record Split Size"
 msgstr "Record Split Size"
 
@@ -7497,7 +7497,7 @@ msgstr ""
 msgid "Record started"
 msgstr "Recording started"
 
-#: httpdfunc.h:4605 skin_default_skin.xml.h:544
+#: httpdfunc.h:4591 skin_default_skin.xml.h:544
 msgid "Recording name"
 msgstr "Recording title"
 
@@ -7569,7 +7569,7 @@ msgstr "Remote Control Long Version"
 msgid "RemoteControl Old Version"
 msgstr "Remote Control old Version"
 
-#: httpdfunc.h:4032 skin_default_skin.xml.h:559
+#: httpdfunc.h:4018 skin_default_skin.xml.h:559
 msgid "Remotecontrol Power Aktion"
 msgstr "Remotecontrol Power Action"
 
@@ -7577,7 +7577,7 @@ msgstr "Remotecontrol Power Action"
 msgid "Remove Cachefile ?"
 msgstr "Clear Cache?"
 
-#: httpdfunc.h:6418 httpdfunc.h:6428
+#: httpdfunc.h:6404 httpdfunc.h:6414
 msgid "Remove Log:"
 msgstr ""
 
@@ -7664,7 +7664,7 @@ msgstr ""
 msgid "Resolution:"
 msgstr ""
 
-#: adjust.h:113 httpdfunc.h:4060 skin_default_skin.xml.h:572 softcam.h:292
+#: adjust.h:113 httpdfunc.h:4046 skin_default_skin.xml.h:572 softcam.h:292
 #: softcam.h:460 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
@@ -7728,7 +7728,7 @@ msgstr ""
 msgid "Results"
 msgstr ""
 
-#: httpdfunc.h:4583 skin_default_skin.xml.h:580
+#: httpdfunc.h:4569 skin_default_skin.xml.h:580
 msgid "Resync Recording immediately"
 msgstr "Resync Recording immediately (No write cache)"
 
@@ -7796,7 +7796,7 @@ msgstr "Satellite"
 msgid "SAT/Cable 19.2 13.0 KabelD | 20.05.2015"
 msgstr ""
 
-#: httpdfunc.h:4839 skin_default_skin.xml.h:595
+#: httpdfunc.h:4825 skin_default_skin.xml.h:595
 msgid "SATA Connector"
 msgstr ""
 
@@ -8451,7 +8451,7 @@ msgstr "Search within actual EPG"
 msgid "Season"
 msgstr ""
 
-#: httpdfunc.h:3870 skin_default_skin.xml.h:624
+#: httpdfunc.h:3856 skin_default_skin.xml.h:624
 msgid "Second Infobar"
 msgstr ""
 
@@ -8540,7 +8540,7 @@ msgstr ""
 msgid "Server Name"
 msgstr ""
 
-#: httpdfunc.h:6542 skin_default_skin.xml.h:631 webif_info.h:1
+#: httpdfunc.h:6528 skin_default_skin.xml.h:631 webif_info.h:1
 msgid "Service"
 msgstr "Channel"
 
@@ -8548,7 +8548,7 @@ msgstr "Channel"
 msgid "Serviceinfo"
 msgstr ""
 
-#: httpdfunc.h:4402 skin_default_skin.xml.h:633
+#: httpdfunc.h:4388 skin_default_skin.xml.h:633
 msgid "Set action after rec"
 msgstr "Action after recording"
 
@@ -8594,7 +8594,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Save Settings?"
 
-#: httpdfunc.h:6612 skin_default_skin.xml.h:639 webif_system.h:4
+#: httpdfunc.h:6598 skin_default_skin.xml.h:639 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr ""
 
@@ -8654,11 +8654,11 @@ msgstr "Show Picture title"
 msgid "Show Signal Infos"
 msgstr ""
 
-#: httpdfunc.h:4438 skin_default_skin.xml.h:649
+#: httpdfunc.h:4424 skin_default_skin.xml.h:649
 msgid "Show Timeline in Channellist"
 msgstr "Show progress bar in channellist?"
 
-#: httpdfunc.h:4649 skin_default_skin.xml.h:644
+#: httpdfunc.h:4635 skin_default_skin.xml.h:644
 msgid "Show hidden files"
 msgstr "Show hidden Files?"
 
@@ -8670,11 +8670,11 @@ msgstr ""
 msgid "Show in VFD"
 msgstr ""
 
-#: httpdfunc.h:4700 skin_default_skin.xml.h:645
+#: httpdfunc.h:4686 skin_default_skin.xml.h:645
 msgid "Show infobar on program change"
 msgstr "Show Infobar on zap?"
 
-#: httpdfunc.h:4561
+#: httpdfunc.h:4547
 msgid "Show last pos Question"
 msgstr "Use 'Resume from last position'?"
 
@@ -8845,15 +8845,15 @@ msgstr ""
 msgid "Skin tobayer01 for grey picons"
 msgstr ""
 
-#: httpdfunc.h:4264 skin_default_skin.xml.h:658
+#: httpdfunc.h:4250 skin_default_skin.xml.h:658
 msgid "Skip 1/3"
 msgstr "Cue for Buttons 1/3 (sec)"
 
-#: httpdfunc.h:4296 skin_default_skin.xml.h:659
+#: httpdfunc.h:4282 skin_default_skin.xml.h:659
 msgid "Skip 4/6"
 msgstr "Cue for Buttons 4/6 (sec)"
 
-#: httpdfunc.h:4328 skin_default_skin.xml.h:660
+#: httpdfunc.h:4314 skin_default_skin.xml.h:660
 msgid "Skip 7/9"
 msgstr "Cue for Buttons 7/9 (sec)"
 
@@ -8962,11 +8962,11 @@ msgstr ""
 msgid "Spezialfunctions unlocked, no input required"
 msgstr "Special functions unlocked, no input required"
 
-#: httpdfunc.h:3775 skin_default_skin.xml.h:673
+#: httpdfunc.h:3761 skin_default_skin.xml.h:673
 msgid "Spinnerspeed"
 msgstr "Spinner speed"
 
-#: httpdfunc.h:3807 skin_default_skin.xml.h:674
+#: httpdfunc.h:3793 skin_default_skin.xml.h:674
 msgid "Spinnertime"
 msgstr "Spinner time"
 
@@ -8986,7 +8986,7 @@ msgstr ""
 "Standard favourites have been imported.\n"
 "The Receiver will reboot now."
 
-#: adjust.h:112 adjust.h:118 httpdfunc.h:4053 httpdfunc.h:4089
+#: adjust.h:112 adjust.h:118 httpdfunc.h:4039 httpdfunc.h:4075
 #: powerofftimer.h:118 skin_default_skin.xml.h:677 webif_index.atemio510.h:7
 #: webif_index.atemio5200.h:7 webif_index.atemio6000.h:7
 #: webif_index.atemio6100.h:7 webif_index.atemio6200.h:7
@@ -9174,7 +9174,7 @@ msgstr ""
 msgid "Streaminfo"
 msgstr "Stream Information"
 
-#: httpdfunc.h:5551 skin_default_skin.xml.h:692 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5537 skin_default_skin.xml.h:692 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr ""
 
@@ -9194,7 +9194,7 @@ msgstr "Stream with Cache (1MB)"
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Stream with Cache (5MB)"
 
-#: httpdfunc.h:5640
+#: httpdfunc.h:5626
 msgid "Streaming succesfull stopped."
 msgstr ""
 
@@ -9251,15 +9251,15 @@ msgstr ""
 msgid "Sure to delete Image?\n"
 msgstr ""
 
-#: httpdfunc.h:5367
+#: httpdfunc.h:5353
 msgid "Svn Changelog"
 msgstr ""
 
-#: httpdfunc.h:5373
+#: httpdfunc.h:5359
 msgid "Svn Changelog Full"
 msgstr ""
 
-#: httpdfunc.h:5323 panel_settings_autostart.h:210 settings_autostart.h:315
+#: httpdfunc.h:5309 panel_settings_autostart.h:210 settings_autostart.h:315
 #: skin_default_skin.xml.h:699 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr ""
@@ -9312,7 +9312,7 @@ msgstr ""
 msgid "System - Usbupdate (tmp)"
 msgstr ""
 
-#: httpdfunc.h:6577 skin_default_skin.xml.h:706 webif_system.h:3
+#: httpdfunc.h:6563 skin_default_skin.xml.h:706 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
@@ -9325,17 +9325,17 @@ msgstr "System Information"
 msgid "System Infos"
 msgstr ""
 
-#: httpdfunc.h:5267 skin_default_skin.xml.h:711 system_infos.h:14
+#: httpdfunc.h:5253 skin_default_skin.xml.h:711 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr ""
 
-#: httpdfunc.h:5672 httpdfunc.h:5781 skin_default_skin.xml.h:712
+#: httpdfunc.h:5658 httpdfunc.h:5767 skin_default_skin.xml.h:712
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr ""
 
-#: httpdfunc.h:5800
+#: httpdfunc.h:5786
 msgid ""
 "System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
@@ -9380,13 +9380,13 @@ msgstr ""
 msgid "TPK"
 msgstr ""
 
-#: extensions.h:267 httpdfunc.h:6177 httpdfunc.h:6179 httpdfunc.h:6444
+#: extensions.h:267 httpdfunc.h:6163 httpdfunc.h:6165 httpdfunc.h:6430
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "Installed successfully.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:324 httpdfunc.h:6442
+#: extensions.h:324 httpdfunc.h:6428
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 "Removed successfully.\n"
@@ -9398,7 +9398,7 @@ msgstr ""
 "Installed successfully from tmp.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:456 httpdfunc.h:6513
+#: extensions.h:456 httpdfunc.h:6499
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 "Updated successfully.\n"
@@ -9408,7 +9408,7 @@ msgstr ""
 msgid "TPK install (online)"
 msgstr "Install (Online)"
 
-#: httpdfunc.h:6214 skin_default_skin.xml.h:750 webif_system_extensions.h:5
+#: httpdfunc.h:6200 skin_default_skin.xml.h:750 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Install (Lokal)"
 
@@ -9416,7 +9416,7 @@ msgstr "Install (Lokal)"
 msgid "TPK remove"
 msgstr "Remove"
 
-#: httpdfunc.h:6212 skin_default_skin.xml.h:752 webif_system_extensions.h:4
+#: httpdfunc.h:6198 skin_default_skin.xml.h:752 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Install (tmp)"
 
@@ -9561,7 +9561,7 @@ msgstr ""
 msgid "The video no longer exists"
 msgstr ""
 
-#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6156
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6142
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -9653,7 +9653,7 @@ msgstr "Powersave (Sleep) in"
 msgid "Time to stop "
 msgstr "Time to stop (min)"
 
-#: httpdfunc.h:4864 skin_default_skin.xml.h:732
+#: httpdfunc.h:4850 skin_default_skin.xml.h:732
 msgid "Time to wait after seek for fill buffer"
 msgstr "Time to wait after seek to fill buffer"
 
@@ -9785,7 +9785,7 @@ msgstr ""
 msgid "Titan Changelog (Extern)"
 msgstr ""
 
-#: httpdfunc.h:5371 webif_info_logs.h:4
+#: httpdfunc.h:5357 webif_info_logs.h:4
 msgid "Titan Log"
 msgstr ""
 
@@ -9902,7 +9902,7 @@ msgstr ""
 msgid "Tone Mode"
 msgstr ""
 
-#: httpdfunc.h:5325 skin_default_skin.xml.h:746 webif_info_sysinfos.h:8
+#: httpdfunc.h:5311 skin_default_skin.xml.h:746 webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "Top (Processes)"
 
@@ -9928,7 +9928,7 @@ msgstr ""
 "\n"
 "Coming soon ..."
 
-#: extensions.h:222 httpdfunc.h:5897 skin_default_skin.xml.h:748
+#: extensions.h:222 httpdfunc.h:5883 skin_default_skin.xml.h:748
 msgid "Tpk Install - select file"
 msgstr "Installation - Selection"
 
@@ -9936,7 +9936,7 @@ msgstr "Installation - Selection"
 msgid "Tpk Install - select install medium"
 msgstr ""
 
-#: extensions.h:217 httpdfunc.h:5833
+#: extensions.h:217 httpdfunc.h:5819
 msgid "Tpk Install - select section"
 msgstr "Installation - Choose Category"
 
@@ -9944,15 +9944,15 @@ msgstr "Installation - Choose Category"
 msgid "Tpk Install Info"
 msgstr "Install Information"
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:6121 httpdfunc.h:6123
+#: extensions.h:254 extensions.h:259 httpdfunc.h:6107 httpdfunc.h:6109
 msgid "Tpk Install Info - Install ERROR"
 msgstr "ERROR: Installation failed!"
 
-#: extensions.h:250 httpdfunc.h:6119
+#: extensions.h:250 httpdfunc.h:6105
 msgid "Tpk Install Info - Install OK"
 msgstr "Installed successfully"
 
-#: extensions.h:291 httpdfunc.h:6312
+#: extensions.h:291 httpdfunc.h:6298
 msgid "Tpk Remove - select file"
 msgstr "Remove - Selection"
 
@@ -9960,19 +9960,19 @@ msgstr "Remove - Selection"
 msgid "Tpk Remove Info"
 msgstr "Remove Information"
 
-#: extensions.h:317 httpdfunc.h:6396
+#: extensions.h:317 httpdfunc.h:6382
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "ERROR: Removing failed"
 
-#: extensions.h:310 httpdfunc.h:6392
+#: extensions.h:310 httpdfunc.h:6378
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Removed successfully"
 
-#: extensions.h:444 extensions.h:448 httpdfunc.h:6481 httpdfunc.h:6493
+#: extensions.h:444 extensions.h:448 httpdfunc.h:6467 httpdfunc.h:6479
 msgid "Tpk Update Info - Update ERROR"
 msgstr "ERROR: Update failed!"
 
-#: httpdfunc.h:6503
+#: httpdfunc.h:6489
 msgid "Tpk Update Info - Update OK"
 msgstr ""
 
@@ -10210,7 +10210,7 @@ msgstr ""
 msgid "UPNP Media Render"
 msgstr ""
 
-#: httpdfunc.h:5329 skin_default_skin.xml.h:786 webif_info_sysinfos.h:10
+#: httpdfunc.h:5315 skin_default_skin.xml.h:786 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
@@ -10334,7 +10334,7 @@ msgstr "Use configuration from Flash (temporary)"
 msgid "Use config from Stick or HDD"
 msgstr "Use configuration from Swap (permanent)"
 
-#: httpdfunc.h:4722 skin_default_skin.xml.h:790
+#: httpdfunc.h:4708 skin_default_skin.xml.h:790
 msgid "Use cross control for fast zapping and vol"
 msgstr "Use control cross for fast zapping and volume control"
 
@@ -10452,7 +10452,7 @@ msgstr ""
 msgid "View Sections"
 msgstr ""
 
-#: httpdfunc.h:4097 skin_default_skin.xml.h:805
+#: httpdfunc.h:4083 skin_default_skin.xml.h:805
 msgid "Virtualzap Timeout"
 msgstr ""
 
@@ -10498,7 +10498,7 @@ msgstr ""
 msgid "Volume: "
 msgstr ""
 
-#: httpdfunc.h:3700 skin_default_skin.xml.h:808
+#: httpdfunc.h:3686 skin_default_skin.xml.h:808
 msgid "Volumebar Timeout"
 msgstr "Time to Volumebar Fadeout (sec)"
 
@@ -10973,7 +10973,7 @@ msgstr "All Numbers"
 msgid "allways del file"
 msgstr "Always delete timeshift file"
 
-#: adjust.h:102 httpdfunc.h:3989 mc_audioplayer_settings.h:27
+#: adjust.h:102 httpdfunc.h:3975 mc_audioplayer_settings.h:27
 #: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:23
 #: plugins_mc_skin.xml.h:4 skin_default_skin.xml.h:73 skins_mc_skin.xml.h:4
 msgid "alpha"
@@ -10984,15 +10984,15 @@ msgstr "alphabetic"
 msgid "always"
 msgstr "Always"
 
-#: adjust.h:174 httpdfunc.h:4488
+#: adjust.h:174 httpdfunc.h:4474
 msgid "anim. both"
 msgstr "zoom"
 
-#: adjust.h:173 httpdfunc.h:4481
+#: adjust.h:173 httpdfunc.h:4467
 msgid "anim. height"
 msgstr "height of animation"
 
-#: adjust.h:172 httpdfunc.h:4474
+#: adjust.h:172 httpdfunc.h:4460
 msgid "anim. width"
 msgstr "width of animation"
 
@@ -11025,7 +11025,7 @@ msgid "ausgehende Anrufe"
 msgstr "Outgoing calls"
 
 #: adjust.h:161 autotimer.c:479 autotimer.c:512 avsettings.h:71
-#: fancontrol.h:108 httpdfunc.h:4409 httpdsettings.h:110 rectimer.h:1186
+#: fancontrol.h:108 httpdfunc.h:4395 httpdsettings.h:110 rectimer.h:1186
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
 #: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
@@ -11189,7 +11189,7 @@ msgstr "Channelname + Time"
 msgid "channel number"
 msgstr "Channel number"
 
-#: adjust.h:196 httpdfunc.h:4612
+#: adjust.h:196 httpdfunc.h:4598
 msgid "channel-movie"
 msgstr "Channel - Title"
 
@@ -11271,7 +11271,7 @@ msgstr ""
 msgid "daily"
 msgstr "Daily"
 
-#: adjust.h:106 httpdfunc.h:4017 mc_audioplayer_settings.h:31
+#: adjust.h:106 httpdfunc.h:4003 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
 #: plugins_mc_skin.xml.h:13 skin_default_skin.xml.h:179 skins_mc_skin.xml.h:13
 msgid "date"
@@ -11291,7 +11291,7 @@ msgid "deactivate"
 msgstr ""
 
 #: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:148 epgsettings.h:154
-#: httpdfunc.h:4104 httpdfunc.h:4162 httpdfunc.h:4553 network.h:612
+#: httpdfunc.h:4090 httpdfunc.h:4148 httpdfunc.h:4539 network.h:612
 msgid "deaktiv"
 msgstr "deactivate"
 
@@ -11436,7 +11436,7 @@ msgstr ""
 msgid "end search"
 msgstr ""
 
-#: adjust.h:124 httpdfunc.h:4125 pin.h:193
+#: adjust.h:124 httpdfunc.h:4111 pin.h:193
 msgid "endless"
 msgstr ""
 
@@ -11464,7 +11464,7 @@ msgstr "!!! ERROR !!!"
 msgid "event"
 msgstr ""
 
-#: adjust.h:211 httpdfunc.h:4692
+#: adjust.h:211 httpdfunc.h:4678
 msgid "expert (11)"
 msgstr "Expert mode (11)"
 
@@ -11484,7 +11484,7 @@ msgstr ""
 msgid "extensionsmenu"
 msgstr ""
 
-#: adjust.h:153 adjust.h:381 httpdfunc.h:4365 httpdfunc.h:4846
+#: adjust.h:153 adjust.h:381 httpdfunc.h:4351 httpdfunc.h:4832
 #: httpdsettings.h:50
 msgid "extern"
 msgstr "external"
@@ -11497,7 +11497,7 @@ msgstr ""
 msgid "fade out/in"
 msgstr "Fade in/out"
 
-#: adjust.h:95 adjust.h:178 httpdfunc.h:3952 httpdfunc.h:4510
+#: adjust.h:95 adjust.h:178 httpdfunc.h:3938 httpdfunc.h:4496
 #: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
 #: mc_videoplayer_settings.h:31 moduleconfig.h:248 plugins_mc_skin.xml.h:20
 #: skins_mc_skin.xml.h:20
@@ -11627,7 +11627,7 @@ msgstr "Use network share for recordings"
 msgid "helpbox"
 msgstr ""
 
-#: adjust.h:184 httpdfunc.h:4546 pin.h:111
+#: adjust.h:184 httpdfunc.h:4532 pin.h:111
 msgid "hidden"
 msgstr ""
 
@@ -11684,7 +11684,7 @@ msgstr ""
 msgid "inadynsettings"
 msgstr ""
 
-#: adjust.h:70 httpdfunc.h:3884 webif_help.h:35
+#: adjust.h:70 httpdfunc.h:3870 webif_help.h:35
 msgid "infobar"
 msgstr "Infobar"
 
@@ -11716,7 +11716,7 @@ msgstr ""
 msgid "interfacelist"
 msgstr ""
 
-#: adjust.h:154 adjust.h:382 httpdfunc.h:4372 httpdfunc.h:4853
+#: adjust.h:154 adjust.h:382 httpdfunc.h:4358 httpdfunc.h:4839
 #: httpdsettings.h:49
 msgid "intern"
 msgstr "internal"
@@ -11878,7 +11878,7 @@ msgstr ""
 msgid "mediadbsettings"
 msgstr ""
 
-#: adjust.h:94 httpdfunc.h:3945
+#: adjust.h:94 httpdfunc.h:3931
 msgid "medium"
 msgstr ""
 
@@ -11922,7 +11922,7 @@ msgstr ""
 msgid "move west"
 msgstr "Move West"
 
-#: adjust.h:197 httpdfunc.h:4619
+#: adjust.h:197 httpdfunc.h:4605
 msgid "movie-channel"
 msgstr "Title - Channel"
 
@@ -12005,11 +12005,11 @@ msgstr "NFS Server"
 #: epgsettings.h:188 epgsettings.h:197 epgsettings.h:201 epgsettings.h:206
 #: epgsettings.h:211 harddisk.h:236 harddisk.h:241 harddisk.h:255
 #: harddisk.h:260 harddisk.h:274 harddisk.h:279 harddisk.h:293 harddisk.h:298
-#: httpdfunc.h:3877 httpdfunc.h:3915 httpdfunc.h:3938 httpdfunc.h:3967
-#: httpdfunc.h:4140 httpdfunc.h:4387 httpdfunc.h:4445 httpdfunc.h:4467
-#: httpdfunc.h:4568 httpdfunc.h:4590 httpdfunc.h:4634 httpdfunc.h:4656
-#: httpdfunc.h:4678 httpdfunc.h:4707 httpdfunc.h:4729 httpdfunc.h:4774
-#: httpdfunc.h:4797 httpdfunc.h:4821 httpdfunc.h:4935 httpdsettings.h:27
+#: httpdfunc.h:3863 httpdfunc.h:3901 httpdfunc.h:3924 httpdfunc.h:3953
+#: httpdfunc.h:4126 httpdfunc.h:4373 httpdfunc.h:4431 httpdfunc.h:4453
+#: httpdfunc.h:4554 httpdfunc.h:4576 httpdfunc.h:4620 httpdfunc.h:4642
+#: httpdfunc.h:4664 httpdfunc.h:4693 httpdfunc.h:4715 httpdfunc.h:4760
+#: httpdfunc.h:4783 httpdfunc.h:4807 httpdfunc.h:4921 httpdsettings.h:27
 #: httpdsettings.h:57 httpdsettings.h:65 inadyn.h:138
 #: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
 #: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
@@ -12078,7 +12078,7 @@ msgstr "None"
 msgid "nonlinear"
 msgstr ""
 
-#: adjust.h:179 fancontrol.h:65 httpdfunc.h:4517 timeshiftsettings.h:49
+#: adjust.h:179 fancontrol.h:65 httpdfunc.h:4503 timeshiftsettings.h:49
 #: tmc.h:557
 msgid "normal"
 msgstr ""
@@ -12092,7 +12092,7 @@ msgid "not started akttime higher than timer endtime"
 msgstr "ERROR: Event not started. Endtime already past"
 
 #: adjust.h:162 autotimer.c:480 autotimer.c:513 epgsettings.h:216
-#: httpdfunc.h:4416 rectimer.h:1187
+#: httpdfunc.h:4402 rectimer.h:1187
 msgid "nothing"
 msgstr ""
 
@@ -12336,7 +12336,7 @@ msgstr ""
 msgid "possetup"
 msgstr ""
 
-#: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4430
+#: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4416
 #: rectimer.h:1189 stopifnotused.c:111
 msgid "power off"
 msgstr "Power Off"
@@ -12469,19 +12469,19 @@ msgstr "Repeat"
 msgid "resolutionsettings"
 msgstr ""
 
-#: adjust.h:103 httpdfunc.h:3996 mc_audioplayer_settings.h:28
+#: adjust.h:103 httpdfunc.h:3982 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
 #: plugins_mc_skin.xml.h:46 skin_default_skin.xml.h:581 skins_mc_skin.xml.h:46
 msgid "reverse alpha"
 msgstr "descending alphabetic"
 
-#: adjust.h:107 httpdfunc.h:4024 mc_audioplayer_settings.h:32
+#: adjust.h:107 httpdfunc.h:4010 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
 #: plugins_mc_skin.xml.h:47 skin_default_skin.xml.h:582 skins_mc_skin.xml.h:47
 msgid "reverse date"
 msgstr "descending date"
 
-#: adjust.h:105 httpdfunc.h:4010 mc_audioplayer_settings.h:30
+#: adjust.h:105 httpdfunc.h:3996 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:583 skins_mc_skin.xml.h:48
 msgid "reverse size"
@@ -12695,7 +12695,7 @@ msgstr "Show IP Address"
 msgid "singleepg"
 msgstr ""
 
-#: adjust.h:104 httpdfunc.h:4003 mc_audioplayer_settings.h:29
+#: adjust.h:104 httpdfunc.h:3989 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
 #: plugins_mc_skin.xml.h:52 skin_default_skin.xml.h:654 skins_mc_skin.xml.h:52
 msgid "size"
@@ -12722,7 +12722,7 @@ msgstr "Skins"
 msgid "skinselect"
 msgstr ""
 
-#: adjust.h:180 httpdfunc.h:4524 moduleconfig.h:246 tmc.h:556
+#: adjust.h:180 httpdfunc.h:4510 moduleconfig.h:246 tmc.h:556
 msgid "slow"
 msgstr ""
 
@@ -12781,7 +12781,7 @@ msgid "stable"
 msgstr "Nightly-Img"
 
 #: adjust.h:163 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4423 rectimer.h:1188 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4409 rectimer.h:1188 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Standby"
 
@@ -12805,7 +12805,7 @@ msgstr "Starting"
 msgid "starting Full Update (from backup) ?"
 msgstr "Start Full Update from a backup?"
 
-#: httpdfunc.h:5795 system_update.h:220
+#: httpdfunc.h:5781 system_update.h:220
 msgid "starting Full Update ?"
 msgstr "Start Full Update?"
 
@@ -12829,7 +12829,7 @@ msgstr "Step West"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5567 httpdfunc.h:5613 record.h:1433 record.h:1442 record.h:1453
+#: httpdfunc.h:5553 httpdfunc.h:5599 record.h:1433 record.h:1442 record.h:1453
 #: record.h:1482 record.h:1491 record.h:1523 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
@@ -13098,8 +13098,8 @@ msgstr ""
 msgid "universal"
 msgstr ""
 
-#: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
-#: httpdfunc.h:5574 httpdfunc.h:5620 hwtest.h:478 moduleconfig.h:345
+#: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2879 httpdfunc.h:2891
+#: httpdfunc.h:5560 httpdfunc.h:5606 hwtest.h:478 moduleconfig.h:345
 #: security.h:2086 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
@@ -13201,11 +13201,11 @@ msgstr ""
 msgid "verwerfen"
 msgstr "reject"
 
-#: adjust.h:177 httpdfunc.h:4503
+#: adjust.h:177 httpdfunc.h:4489
 msgid "very fast"
 msgstr ""
 
-#: adjust.h:181 httpdfunc.h:4531
+#: adjust.h:181 httpdfunc.h:4517
 msgid "very slow"
 msgstr ""
 
@@ -13376,11 +13376,11 @@ msgstr ""
 #: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
 #: cec.h:176 dlna.h:277 epgsettings.h:136 epgsettings.h:189 epgsettings.h:198
 #: harddisk.h:235 harddisk.h:242 harddisk.h:254 harddisk.h:261 harddisk.h:273
-#: harddisk.h:280 harddisk.h:292 harddisk.h:299 httpdfunc.h:3922
-#: httpdfunc.h:3974 httpdfunc.h:4147 httpdfunc.h:4394 httpdfunc.h:4452
-#: httpdfunc.h:4575 httpdfunc.h:4597 httpdfunc.h:4641 httpdfunc.h:4663
-#: httpdfunc.h:4685 httpdfunc.h:4714 httpdfunc.h:4736 httpdfunc.h:4781
-#: httpdfunc.h:4804 httpdfunc.h:4828 httpdfunc.h:4943 httpdsettings.h:28
+#: harddisk.h:280 harddisk.h:292 harddisk.h:299 httpdfunc.h:3908
+#: httpdfunc.h:3960 httpdfunc.h:4133 httpdfunc.h:4380 httpdfunc.h:4438
+#: httpdfunc.h:4561 httpdfunc.h:4583 httpdfunc.h:4627 httpdfunc.h:4649
+#: httpdfunc.h:4671 httpdfunc.h:4700 httpdfunc.h:4722 httpdfunc.h:4767
+#: httpdfunc.h:4790 httpdfunc.h:4814 httpdfunc.h:4929 httpdsettings.h:28
 #: httpdsettings.h:58 httpdsettings.h:66 inadyn.h:139
 #: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
@@ -13428,15 +13428,15 @@ msgstr "Yes (Text in %)"
 msgid "yes (Text in MB)"
 msgstr "Yes (Text in MB)"
 
-#: adjust.h:220 httpdfunc.h:4743
+#: adjust.h:220 httpdfunc.h:4729
 msgid "yes / vzap 1 sec"
 msgstr ""
 
-#: adjust.h:221 httpdfunc.h:4750
+#: adjust.h:221 httpdfunc.h:4736
 msgid "yes / vzap 2 sec"
 msgstr ""
 
-#: adjust.h:222 httpdfunc.h:4757
+#: adjust.h:222 httpdfunc.h:4743
 msgid "yes / vzap endless"
 msgstr ""
 
