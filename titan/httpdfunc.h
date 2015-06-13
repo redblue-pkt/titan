@@ -2520,7 +2520,7 @@ char* webgetrectimer(char* param, int flag, int fmt)
 				ostrcatbig(&buf, "<img border=0 src=img/edit.png width=16 height=16 alt=\"Edit Timer\"></a>", &maxlen, &pos);
 
 				//delete png
-				ostrcatbig(&buf, "<img border=0 src=img/delete.png width=16 height=16 alt=Delete onclick='delquestion(\"", &maxlen, &pos);
+				ostrcatbig(&buf, "<img border=0 src=img/delete.png width=16 height=16 alt=Delete onclick=\"delquestion(\"", &maxlen, &pos);
 				ostrcatbig(&buf, "query?delrectimer", &maxlen, &pos);
 				ostrcatbig(&buf, "&", &maxlen, &pos);
 				ostrcatbig(&buf, node->timestamp, &maxlen, &pos);
@@ -2531,7 +2531,7 @@ char* webgetrectimer(char* param, int flag, int fmt)
 				//free(tmpnr); tmpnr = NULL;
 				//ostrcatbig(&buf, "&", &maxlen, &pos);
 				//ostrcatbig(&buf, node->text, &maxlen, &pos);
-				ostrcatbig(&buf, "\");'>", &maxlen, &pos);
+				ostrcatbig(&buf, "\");\">", &maxlen, &pos);
 			}
 
 			ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
