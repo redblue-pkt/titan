@@ -2044,7 +2044,7 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 	struct skin* filelist = getscreennode(webdir, "filelist");
 	struct skin* filelistpath = getscreennode(webdir, "filelistpath");
 	struct skin* node = NULL;
-printf("aaaa\n");
+
 	if(param == NULL) param = path;
 
 	//create param1
