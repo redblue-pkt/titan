@@ -2141,6 +2141,7 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 					//epg png
 					if(checkbit(flag, 1) == 1)
 					{
+						node->text = string_replace_all("\"", "&#34;", node->text, 1);
 						ostrcatbig(&buf, "<a href=\"query?getmovieepg&", &maxlen, &pos);
 						ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
 						ostrcatbig(&buf, "/", &maxlen, &pos);
