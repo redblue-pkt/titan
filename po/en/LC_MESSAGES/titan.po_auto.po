@@ -5929,10 +5929,6 @@ msgstr "Move"
 msgid "Moven"
 msgstr "Move"
 
-#: tithek_mainmenu.h:27
-msgid "Movie4k"
-msgstr ""
-
 #: skin_default_skin.xml.h:446
 msgid "Moviepath"
 msgstr ""
@@ -6010,7 +6006,7 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:27
 msgid "MyVideo"
 msgstr ""
 
@@ -6030,7 +6026,7 @@ msgstr "Next"
 msgid "NONE"
 msgstr "None"
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:29
 msgid "NTV-Now"
 msgstr ""
 
@@ -6097,7 +6093,7 @@ msgstr "Show scanned CIFS/NFS-Shares"
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:28
 msgid "Netzkino"
 msgstr ""
 
@@ -7288,11 +7284,11 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:32
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:30
 msgid "RTL2-Now"
 msgstr ""
 
@@ -7768,7 +7764,7 @@ msgstr ""
 msgid "Rotor Settings"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:31
 msgid "RtlNitro-Now"
 msgstr ""
 
@@ -8293,41 +8289,41 @@ msgstr ""
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:622 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_mainmenu.h:34 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
+#: tithek_mainmenu.h:33 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:352 youtube.h:354
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr ""
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:34
 msgid "Search (10)"
 msgstr "Search viewing 10 Results"
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:35
 msgid "Search (20)"
 msgstr "Search viewing 20 Results"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:36
 msgid "Search (25)"
 msgstr "Search viewing 25 Results"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:37
 msgid "Search (50)"
 msgstr "Search viewing 50 Results"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:39
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:38
 msgid "Search Cast"
 msgstr "Search by Cast"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:40
 msgid "Search Movie"
 msgstr "Search for a Movie"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:41
 msgid "Search Serie"
 msgstr "Search for a Series"
 
@@ -8913,7 +8909,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Softcam selection: "
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:42
 msgid "Solarmovie"
 msgstr ""
 
@@ -9239,7 +9235,7 @@ msgstr ""
 msgid "Sunday"
 msgstr ""
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:43
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9657,7 +9653,7 @@ msgstr "Time to stop (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Time to wait after seek to fill buffer"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:44
 msgid "TimeTv"
 msgstr ""
 
@@ -9773,7 +9769,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:45
 msgid "Tips und Tricks"
 msgstr "Tips and Tricks"
 
@@ -10371,7 +10367,7 @@ msgstr "Settings"
 msgid "VLC Player"
 msgstr ""
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:46
 msgid "VOX-Now"
 msgstr ""
 
@@ -10777,11 +10773,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:47
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:48
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -10834,7 +10830,7 @@ msgstr ""
 "\n"
 "Do you want the Receiver to shutdown?"
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:49
 msgid "Youtube"
 msgstr ""
 
@@ -10842,7 +10838,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:50
 msgid "ZDF"
 msgstr ""
 
