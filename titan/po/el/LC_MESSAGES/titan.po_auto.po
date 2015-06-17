@@ -13277,6 +13277,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Movie4k"
-#~ msgstr "Διαδρομή αρχείου ταινιών"
