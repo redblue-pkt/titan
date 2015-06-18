@@ -247,7 +247,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, "w.mov", 1, 0);
 		cmd = ostrcat(cmd, "ie4k", 1, 0);
 		cmd = ostrcat(cmd, ".", 1, 0);
-		cmd = ostrcat(cmd, "me", 1, 0);
+		cmd = ostrcat(cmd, "to", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
@@ -586,7 +586,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
 
 	ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
-	ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
+	//ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
 
 	if(ip != NULL)
 		pos = strchr(ip, '/');
