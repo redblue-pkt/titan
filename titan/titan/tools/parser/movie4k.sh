@@ -32,7 +32,7 @@ if [ "$buildtype" = "full" ];then
 	for ROUND2 in $watchlist; do
 		count=`expr $count + 1`	
 		filename2="$ROUND2"
-		$wgetbin "http://www.movie4k.me/$ROUND2" -O cache."$count"."$filename2"
+		$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 		if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2 | wc -l` -gt 0 ];then
 			pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2`"	
 		else
@@ -41,7 +41,7 @@ if [ "$buildtype" = "full" ];then
 	
 		for ROUND3 in $pagelist; do
 			filename3="$ROUND3"
-			$wgetbin "http://www.movie4k.me/$ROUND3" -O cache."$count"."$filename3"
+			$wgetbin "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 	
 			id_list=`cat cache."$count"."$filename3" | grep '<a href="' | cut -d'"' -f2 | sort -u | grep .html`
 	
@@ -67,7 +67,7 @@ if [ "$buildtype" = "full" ];then
 				TITLE=`echo $ROUND4 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
 				TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/รx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/ร/g' -e 's/&Uuml;/รS/g' -e 's/&Ouml;/ร/g' -e 's/&auml;/รค/g' -e 's/&uuml;/รผ/g' -e 's/&ouml;/รถ/g' -e 's/&eacute;/รฉ/g' -e 's/&egrave;/รจ/g' -e 's/%F6/รถ/g' -e 's/%FC/รผ/g' -e 's/%E4/รค/g' -e 's/%26/&/g' -e 's/%C4/ร/g' -e 's/%D6/ร/g' -e 's/%DC/รS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-				URL=http://www.movie4k.me/"$ROUND4"
+				URL=http://www.movie4k.to/"$ROUND4"
 	
 				lang=35
 				if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
@@ -105,7 +105,7 @@ for ROUND2 in $watchlist; do
 	piccount=`expr $piccount + 1`
 	count=`expr $count + 1`	
 	filename2="$ROUND2"
-	$wgetbin "http://www.movie4k.me/$ROUND2" -O cache."$count"."$filename2"
+	$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 	if [ "$ROUND2" = "index.php?lang=de" ];then
 		TYPE="kino.ger"
 		TYPENAME="Kino Filme (de)"
@@ -136,7 +136,7 @@ for ROUND2 in $watchlist; do
 		TITLE=`echo $ROUND3 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
 		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/รx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/ร/g' -e 's/&Uuml;/รS/g' -e 's/&Ouml;/ร/g' -e 's/&auml;/รค/g' -e 's/&uuml;/รผ/g' -e 's/&ouml;/รถ/g' -e 's/&eacute;/รฉ/g' -e 's/&egrave;/รจ/g' -e 's/%F6/รถ/g' -e 's/%FC/รผ/g' -e 's/%E4/รค/g' -e 's/%26/&/g' -e 's/%C4/ร/g' -e 's/%D6/ร/g' -e 's/%DC/รS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-		URL=http://www.movie4k.me/"$ROUND3"
+		URL=http://www.movie4k.to/"$ROUND3"
 
 		lang=35
 		if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
@@ -185,7 +185,7 @@ for ROUND2 in $watchlist; do
 	piccount=`expr $piccount + 1`
 	count=`expr $count + 1`	
 	filename2="$ROUND2"
-	$wgetbin "http://www.movie4k.me/$ROUND2" -O cache."$count"."$filename2"
+	$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 	if [ "$ROUND2" = "index.php?lang=de" ];then
 		TYPE="last.updates.ger"
 		TYPENAME="Letzte Updates (de)"
@@ -219,7 +219,7 @@ for ROUND2 in $watchlist; do
 		TITLE=`echo $ROUND3 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
 		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/รx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/ร/g' -e 's/&Uuml;/รS/g' -e 's/&Ouml;/ร/g' -e 's/&auml;/รค/g' -e 's/&uuml;/รผ/g' -e 's/&ouml;/รถ/g' -e 's/&eacute;/รฉ/g' -e 's/&egrave;/รจ/g' -e 's/%F6/รถ/g' -e 's/%FC/รผ/g' -e 's/%E4/รค/g' -e 's/%26/&/g' -e 's/%C4/ร/g' -e 's/%D6/ร/g' -e 's/%DC/รS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-		URL=http://www.movie4k.me/"$ROUND3"
+		URL=http://www.movie4k.to/"$ROUND3"
 
 		lang=35
 		if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
@@ -275,7 +275,7 @@ if [ "$buildtype" = "full" ];then
 	for ROUND3 in $watchlist; do
 		count=`expr $count + 1`
 		filename3="$ROUND3"
-		$wgetbin "http://www.movie4k.me/$ROUND3" -O cache."$count"."$filename3"
+		$wgetbin "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 	
 		id_list=`cat cache."$count"."$filename3" | grep tvshows-season- | cut -d '"' -f6 | sort -u | grep .html`
 		echo id_list $id_list
@@ -303,7 +303,7 @@ if [ "$buildtype" = "full" ];then
 			TITLE=`echo $ROUND4 | sed "s!tvshows-season-!!" | sed "s!.html!!" | head -n1 | tr '-' ' ' | sed 's/^ //'`
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/รx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/ร/g' -e 's/&Uuml;/รS/g' -e 's/&Ouml;/ร/g' -e 's/&auml;/รค/g' -e 's/&uuml;/รผ/g' -e 's/&ouml;/รถ/g' -e 's/&eacute;/รฉ/g' -e 's/&egrave;/รจ/g' -e 's/%F6/รถ/g' -e 's/%FC/รผ/g' -e 's/%E4/รค/g' -e 's/%26/&/g' -e 's/%C4/ร/g' -e 's/%D6/ร/g' -e 's/%DC/รS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-			URL=http://www.movie4k.me/"$ROUND4"
+			URL=http://www.movie4k.to/"$ROUND4"
 	
 			lang=37
 			if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
@@ -336,7 +336,7 @@ movies-updates.html
 
 for ROUND3 in $watchlist; do
 	filename3="$ROUND3"
-	$wgetbin "http://www.movie4k.me/$ROUND3" -O cache."$count"."$filename3"
+	$wgetbin "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 
 	id_list=`cat cache."$count"."$filename3" | grep "\.html"  | cut -d'"' -f2 | grep "\.html" | sort -um`
 
@@ -362,7 +362,7 @@ for ROUND3 in $watchlist; do
 		TITLE=`echo $ROUND4 | sed "s!-online-film-!;!" | sed "s!-watch-movie-!;!" | tr ";" "\n" | head -n1 | tr '-' ' ' | sed 's/^ //'`
 		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/รx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/ร/g' -e 's/&Uuml;/รS/g' -e 's/&Ouml;/ร/g' -e 's/&auml;/รค/g' -e 's/&uuml;/รผ/g' -e 's/&ouml;/รถ/g' -e 's/&eacute;/รฉ/g' -e 's/&egrave;/รจ/g' -e 's/%F6/รถ/g' -e 's/%FC/รผ/g' -e 's/%E4/รค/g' -e 's/%26/&/g' -e 's/%C4/ร/g' -e 's/%D6/ร/g' -e 's/%DC/รS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-		URL=http://www.movie4k.me/"$ROUND4"
+		URL=http://www.movie4k.to/"$ROUND4"
 
 		lang=35
 		if [ `echo $TMPLANG | grep "us_ger_small.png" | wc -l` -eq 1 ];then
@@ -418,13 +418,13 @@ if [ "$buildtype" = "full" ];then
 		count=`expr $count + 1`
 	
 		filename1="$ROUND1"
-		$wgetbin "http://www.movie4k.me/$ROUND1" -O cache."$count"."$filename1"
+		$wgetbin "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
 	
 		genrelist=`cat cache."$count"."$filename1" | grep tdmovies | grep .html | cut -d '"' -f6`
 		for ROUND2 in $genrelist; do
 			count=`expr $count + 1`	
 			filename2="$ROUND2"
-			$wgetbin "http://www.movie4k.me/$ROUND2" -O cache."$count"."$filename2"
+			$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 			if [ `cat cache."$count"."$filename2" | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2 | wc -l` -gt 0 ];then
 				pagelist="$ROUND2 `cat cache.$count.$filename2 | grep boxgrey | tr '><' '\n' | grep .html | grep -v './'  | cut -d'"' -f2`"	
 			else
@@ -435,7 +435,7 @@ if [ "$buildtype" = "full" ];then
 			for ROUND3 in $pagelist; do
 				count=`expr $count + 1`	
 				filename3="$ROUND3"
-				$wgetbin "http://www.movie4k.me/$ROUND3" -O cache."$count"."$filename3"
+				$wgetbin "http://www.movie4k.to/$ROUND3" -O cache."$count"."$filename3"
 				ck=`expr $ck + 1`
 				echo !!!!!!!!!!!!!!!!!!!ck $ck
 				if [ "$ck" = "10" ];then
@@ -499,12 +499,12 @@ if [ "$buildtype" = "full" ];then
 		count=`expr $count + 1`
 	
 		filename1="$ROUND1"
-		$wgetbin "http://www.movie4k.me/$ROUND1" -O cache."$count"."$filename1"
+		$wgetbin "http://www.movie4k.to/$ROUND1" -O cache."$count"."$filename1"
 		genrelist=`cat cache."$count"."$filename1" | grep tvshows-genre | grep .html | cut -d'"' -f6 | sort -um`
 		for ROUND2 in $genrelist; do
 			count=`expr $count + 1`	
 			filename2="$ROUND2"
-			$wgetbin "http://www.movie4k.me/$ROUND2" -O cache."$count"."$filename2"
+			$wgetbin "http://www.movie4k.to/$ROUND2" -O cache."$count"."$filename2"
 	
 			id_list=`cat cache."$count"."$filename2" | grep tvshows-season | grep .html | cut -d'"' -f6 | sort -um`
 			TITLE=`echo $ROUND2 | sed 's/.html//' | tr '-' '\n' | tail -n1`
