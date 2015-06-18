@@ -148,11 +148,11 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		char* send = NULL;
 		send = ostrcat(send, "GET /searchAutoCompleteNew.php?search=the HTTP/1.1\r\n", 1, 0);
 		send = ostrcat(send, "Accept-Encoding: identity\r\nAccept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n", 1, 0);
-		send = ostrcat(send, "Host: www.movie4k.me\r\nAccept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
+		send = ostrcat(send, "Host: www.movie4k.to\r\nAccept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
 		send = ostrcat(send, "Connection: close\r\nUser-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3\r\n\r\n", 1, 0);
 		debug(99, "send: %s", send);
 
-		tmpstr = gethttpreal("www.movie4k.me", "/searchAutoCompleteNew.php?search=the", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+		tmpstr = gethttpreal("www.movie4k.to", "/searchAutoCompleteNew.php?search=the", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 		free(send); send = NULL;
 		debug(99, "tmpstr: %s", tmpstr);
 		titheklog(debuglevel, "/tmp/movie4k_search", NULL, NULL, NULL, tmpstr);
@@ -166,14 +166,14 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		send = ostrcat(send, search, 1, 0);
 		send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: identity\r\n", 1, 0);
 		send = ostrcat(send, "Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
-		send = ostrcat(send, "Host: www.movie4k.me\r\n", 1, 0);
+		send = ostrcat(send, "Host: www.movie4k.to\r\n", 1, 0);
 		send = ostrcat(send, "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3\r\n", 1, 0);
 		send = ostrcat(send, "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n", 1, 0);
 		send = ostrcat(send, "Connection: close\r\nCookie: xxx2=ok;\r\n\r\n", 1, 0);
 		debug(99, "send: %s", send);
 
 		free(tmpstr), tmpstr = NULL;
-		tmpstr = gethttpreal("movie4k.me", "/", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+		tmpstr = gethttpreal("movie4k.to", "/", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 		folgen = string_resub("<TABLE id=\"tablemoviesindex\">", "</TABLE>", tmpstr, 0);
 		folgen = string_replace_all("1000\r\n", "", folgen, 1);
@@ -228,7 +228,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					
 					ostrcatbig(&line, name, &maxlen, &bigpos);
 					ostrcatbig(&line, lang, &maxlen, &bigpos);
-					ostrcatbig(&line, "#http://www.movie4k.me/", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 					ostrcatbig(&line, link, &maxlen, &bigpos);
 					ostrcatbig(&line, "#", &maxlen, &bigpos);
 					ostrcatbig(&line, pic, &maxlen, &bigpos);
@@ -599,7 +599,7 @@ printf("ret1[i].part: %s\n",ret1[i].part);
 						ostrcatbig(&line, ")", &maxlen, &bigpos);					
 					}
 */
-					ostrcatbig(&line, "#http://www.movie4k.me/", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 					ostrcatbig(&line, url, &maxlen, &bigpos);
 					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 					ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -631,7 +631,7 @@ printf("ret1[i].part: %s\n",ret1[i].part);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
 */
-						ostrcatbig(&line, "#http://www.movie4k.me/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url2, &maxlen, &bigpos);
 						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -663,7 +663,7 @@ printf("ret1[i].part: %s\n",ret1[i].part);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
 */
-						ostrcatbig(&line, "#http://www.movie4k.me/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url3, &maxlen, &bigpos);
 						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -695,7 +695,7 @@ printf("ret1[i].part: %s\n",ret1[i].part);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
 */
-						ostrcatbig(&line, "#http://www.movie4k.me/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url4, &maxlen, &bigpos);
 						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -860,7 +860,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 							ostrcatbig(&line, " ", &maxlen, &bigpos);							
 //							ostrcatbig(&line, cj, &maxlen, &bigpos);
 							ostrcatbig(&line, episode, &maxlen, &bigpos);
-							ostrcatbig(&line, "#http://www.movie4k.me/", &maxlen, &bigpos);
+							ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 							ostrcatbig(&line, link, &maxlen, &bigpos);
 							ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
 							ostrcatbig(&line, ci, &maxlen, &bigpos);
@@ -990,7 +990,7 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 					ostrcatbig(&line, " ", &maxlen, &bigpos);
 					
 					ostrcatbig(&line, lang, &maxlen, &bigpos);
-					ostrcatbig(&line, "#http://www.movie4k.me/", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 					ostrcatbig(&line, link, &maxlen, &bigpos);
 					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
 					ostrcatbig(&line, season, &maxlen, &bigpos);
@@ -1109,7 +1109,7 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 					ostrcatbig(&line, episode, &maxlen, &bigpos);
 					ostrcatbig(&line, " ", &maxlen, &bigpos);
 					ostrcatbig(&line, lang, &maxlen, &bigpos);
-					ostrcatbig(&line, "#http://www.movie4k.me/", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 					ostrcatbig(&line, link, &maxlen, &bigpos);
 					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
 					ostrcatbig(&line, season, &maxlen, &bigpos);
