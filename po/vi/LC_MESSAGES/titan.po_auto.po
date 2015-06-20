@@ -5968,10 +5968,6 @@ msgstr ""
 msgid "NONE"
 msgstr "không"
 
-#: tithek_mainmenu.h:30
-msgid "NTV-Now"
-msgstr ""
-
 #: skin_default_skin.xml.h:451 stock.h:270
 msgid "Name"
 msgstr "Tên"
@@ -7219,11 +7215,11 @@ msgstr "Cổng HTPTD"
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:31
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:30
 msgid "RTL2-Now"
 msgstr ""
 
@@ -7698,10 +7694,6 @@ msgstr "Vị trí roto"
 #: skin_default_skin.xml.h:588
 msgid "Rotor Settings"
 msgstr "Thiết lập roto"
-
-#: tithek_mainmenu.h:32
-msgid "RtlNitro-Now"
-msgstr ""
 
 #: skin_default_skin.xml.h:589
 msgid "Runtime"
@@ -8224,41 +8216,41 @@ msgstr "Không có đầu ra."
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:622 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_mainmenu.h:34 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
+#: tithek_mainmenu.h:32 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:352 youtube.h:354
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "dò"
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:33
 msgid "Search (10)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:34
 msgid "Search (20)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:35
 msgid "Search (25)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:36
 msgid "Search (50)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:38
 msgid "Search (local)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:37
 msgid "Search Cast"
 msgstr "tìm kiếm bên trái"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:39
 msgid "Search Movie"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:40
 msgid "Search Serie"
 msgstr "Dò"
 
@@ -8842,7 +8834,7 @@ msgstr "Chọn thiết bị đọc"
 msgid "Softcam selection:"
 msgstr ""
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:41
 msgid "Solarmovie"
 msgstr ""
 
@@ -9163,7 +9155,7 @@ msgstr ""
 msgid "Sunday"
 msgstr "Chủ nhật"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:42
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9569,7 +9561,7 @@ msgstr "thời gian để dừng lại"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Thời gian đợi sau khi tìm kiếm bộ đệm khác"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:43
 msgid "TimeTv"
 msgstr "Bộ định thời"
 
@@ -9682,7 +9674,7 @@ msgstr ""
 msgid "Tint"
 msgstr "màu sắc"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:44
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -10272,7 +10264,7 @@ msgstr "THIẾT LẬP HIỂN THỊ"
 msgid "VLC Player"
 msgstr "Phát VLC"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:45
 msgid "VOX-Now"
 msgstr ""
 
@@ -10678,11 +10670,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:46
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:47
 msgid "XXX-XVIDEOS"
 msgstr "VIDEO"
 
@@ -10732,7 +10724,7 @@ msgid ""
 "Stop the box??? "
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:48
 msgid "Youtube"
 msgstr ""
 
@@ -10740,7 +10732,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:49
 msgid "ZDF"
 msgstr ""
 
