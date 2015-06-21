@@ -1704,6 +1704,14 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
+#: adjust.h:391
+msgid "CA"
+msgstr ""
+
+#: adjust.h:334
+msgid "CA Device"
+msgstr ""
+
 #: tpchoice.h:70
 msgid "CABLE"
 msgstr "Kabel"
@@ -2048,6 +2056,10 @@ msgstr "Sender Verlauf"
 msgid "Channel List"
 msgstr "Senderliste"
 
+#: adjust.h:383
+msgid "Channel Scan"
+msgstr ""
+
 #: skin_default_skin.xml.h:142
 msgid "Channel Search"
 msgstr "Sendersuche"
@@ -2367,10 +2379,6 @@ msgstr "Community Passwort"
 msgid "Community User"
 msgstr "Community Benutzername"
 
-#: adjust.h:314
-msgid "Community login"
-msgstr "Community-Login"
-
 #: stock.h:197
 msgid "Company: "
 msgstr "Gesellschaft:"
@@ -2652,6 +2660,10 @@ msgstr ""
 msgid "DTS-Downmix firmware "
 msgstr "DTS-Downmix-Firmware"
 
+#: adjust.h:330
+msgid "DVB Devices"
+msgstr ""
+
 #: transponder.h:572 transponder.h:579
 msgid "DVBS"
 msgstr "DVB-S"
@@ -2660,7 +2672,7 @@ msgstr "DVB-S"
 msgid "DVBS2"
 msgstr "DVB-S2"
 
-#: tpk_showname.h:26
+#: adjust.h:358 tpk_showname.h:26
 msgid "DVD Player"
 msgstr "DVD-Player"
 
@@ -3021,6 +3033,10 @@ msgstr ""
 msgid "Draw"
 msgstr "Unentschieden"
 
+#: adjust.h:387
+msgid "Draw Screen"
+msgstr ""
+
 #: httpdfunc.h:4914 skin_default_skin.xml.h:213
 msgid "Dualboot Menu TitanNit / E2"
 msgstr "Dualboot Menü TitanNit / E2"
@@ -3078,20 +3094,20 @@ msgstr "Tuner bearbeiten"
 msgid "EJECT"
 msgstr "Auswerfen"
 
-#: adjust.h:71 adjust.h:326 httpdfunc.h:3878 play.h:1433
-#: skin_default_skin.xml.h:230 webif_index.atemio5200.h:34
-#: webif_index.atemio5200.h:90 webif_index.atemio6200.h:34
-#: webif_index.atemio6200.h:90 webif_index.atemio7600.h:65
-#: webif_index.atemio7600.h:82 webif_index.atemio-nemesis.h:34
-#: webif_index.atemio-nemesis.h:90 webif_rc.atemio510.h:49
-#: webif_rc.atemio5200.h:17 webif_rc.atemio520.h:24 webif_rc.atemio530.h:24
-#: webif_rc.atemio6000.h:17 webif_rc.atemio6100.h:17 webif_rc.atemio6200.h:17
-#: webif_rc.atemio7600.h:15 webif_rc.atemio-nemesis.h:17 webif_rc.h:17
-#: webif_rc_virtual.atemio510.h:2 webif_rc_virtual.atemio510.h:49
-#: webif_rc_virtual.atemio5200.h:37 webif_rc_virtual.atemio520.h:37
-#: webif_rc_virtual.atemio530.h:37 webif_rc_virtual.atemio6000.h:37
-#: webif_rc_virtual.atemio6100.h:37 webif_rc_virtual.atemio6200.h:37
-#: webif_rc_virtual.atemio-nemesis.h:37 webif_rc_virtual.h:37
+#: adjust.h:71 httpdfunc.h:3878 play.h:1433 skin_default_skin.xml.h:230
+#: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
+#: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
+#: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
+#: webif_index.atemio-nemesis.h:34 webif_index.atemio-nemesis.h:90
+#: webif_rc.atemio510.h:49 webif_rc.atemio5200.h:17 webif_rc.atemio520.h:24
+#: webif_rc.atemio530.h:24 webif_rc.atemio6000.h:17 webif_rc.atemio6100.h:17
+#: webif_rc.atemio6200.h:17 webif_rc.atemio7600.h:15
+#: webif_rc.atemio-nemesis.h:17 webif_rc.h:17 webif_rc_virtual.atemio510.h:2
+#: webif_rc_virtual.atemio510.h:49 webif_rc_virtual.atemio5200.h:37
+#: webif_rc_virtual.atemio520.h:37 webif_rc_virtual.atemio530.h:37
+#: webif_rc_virtual.atemio6000.h:37 webif_rc_virtual.atemio6100.h:37
+#: webif_rc_virtual.atemio6200.h:37 webif_rc_virtual.atemio-nemesis.h:37
+#: webif_rc_virtual.h:37
 msgid "EPG"
 msgstr "EPG"
 
@@ -3146,6 +3162,10 @@ msgstr "Suche"
 #: skin_default_skin.xml.h:243
 msgid "EPG Settings"
 msgstr "EPG-Einstellungen"
+
+#: adjust.h:366
+msgid "EPG Task"
+msgstr ""
 
 #: skin_default_skin.xml.h:231
 msgid "EPG button on EPG Screen"
@@ -3757,6 +3777,10 @@ msgstr "Im Cache zwischenspeichern (30MB/360 Sek)"
 msgid "File Manager"
 msgstr "Datei Manager"
 
+#: adjust.h:407
+msgid "File Operation"
+msgstr ""
+
 #: tithek.h:670
 msgid "File exist, overwrite?"
 msgstr ""
@@ -4007,6 +4031,10 @@ msgstr ""
 msgid "Frage"
 msgstr ""
 
+#: adjust.h:379
+msgid "Framebuffer"
+msgstr ""
+
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
 msgstr "Bildfrequenz"
@@ -4095,10 +4123,6 @@ msgstr "Partitionsprüfung 'swap'"
 msgid "Full Pic"
 msgstr "Vollbildmodus"
 
-#: adjust.h:350
-msgid "Function"
-msgstr "Funktion"
-
 #: skin_default_skin.xml.h:278
 msgid "G"
 msgstr ""
@@ -4175,7 +4199,7 @@ msgstr "GIT Änderungsprotokoll (extern)"
 msgid "Git Changelog Full"
 msgstr "GIT Änderungsprotokoll (komplett)"
 
-#: adjust.h:298
+#: adjust.h:310
 msgid "Global"
 msgstr ""
 
@@ -4309,6 +4333,10 @@ msgstr ""
 msgid "HOSTNAME"
 msgstr "Hostname"
 
+#: adjust.h:338
+msgid "HTTP Server/Stream/Record"
+msgstr ""
+
 #: skin_default_skin.xml.h:363
 msgid "HTTP Settings"
 msgstr "Webinterface/RGUI"
@@ -4325,7 +4353,7 @@ msgstr "Zeit bis Warnmeldung erscheint (sek)"
 msgid "Hard"
 msgstr "schwer"
 
-#: adjust.h:286 harddisk.h:487 skin_default_skin.xml.h:296
+#: adjust.h:294 harddisk.h:487 skin_default_skin.xml.h:296
 msgid "Harddisk"
 msgstr "Datenträger"
 
@@ -4823,6 +4851,10 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
+#: adjust.h:346
+msgid "ID3"
+msgstr ""
+
 #: skin_default_skin.xml.h:367
 msgid "ID:"
 msgstr ""
@@ -4856,10 +4888,6 @@ msgstr ""
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
 msgstr "IMDb-API"
-
-#: adjust.h:306
-msgid "IMDbScan"
-msgstr ""
 
 #: tsSchnitt.c:123
 msgid "INFO"
@@ -5274,6 +5302,10 @@ msgstr "Schlüssel"
 msgid "Key Action - Plugins"
 msgstr "Schnellstart"
 
+#: adjust.h:282
+msgid "Key Actions"
+msgstr ""
+
 #: tpk_showname.h:52
 msgid "KeyLock"
 msgstr ""
@@ -5584,6 +5616,10 @@ msgstr ""
 msgid "MTD"
 msgstr "Flash Aufteilung"
 
+#: adjust.h:270
+msgid "MTD Operation/System Update"
+msgstr ""
+
 #: system_infos_sysinfo.h:19
 msgid "MTD info"
 msgstr "Flash Aufteilung Informationen"
@@ -5735,7 +5771,7 @@ msgstr "Media Center"
 msgid "MediaCenter FolderIcons"
 msgstr "Media Center Odnersymbole"
 
-#: adjust.h:342
+#: adjust.h:395
 msgid "MediaDB"
 msgstr ""
 
@@ -5794,6 +5830,10 @@ msgstr "MediaDB Speicherort"
 #: mediadb.h:1477
 msgid "MediaDB scan finished"
 msgstr "MediaDB Suche beendet"
+
+#: adjust.h:322
+msgid "MediaDB/IMDb/TMDb"
+msgstr ""
 
 #: tithek_mainmenu.h:22
 msgid "Mediacenter AudioPlayer Playlisten Preview"
@@ -5872,7 +5912,7 @@ msgstr "Menü Titel"
 msgid "Menu not implemented !"
 msgstr "Menü noch nicht verfügbar!"
 
-#: adjust.h:278 skin_default_skin.xml.h:427
+#: skin_default_skin.xml.h:427
 msgid "Menulist"
 msgstr "Menüliste"
 
@@ -6120,7 +6160,7 @@ msgstr "Multi Satelliten"
 msgid "MultiGUI Plugin"
 msgstr ""
 
-#: tpk_showname.h:75
+#: adjust.h:298 tpk_showname.h:75
 msgid "MultiImage"
 msgstr ""
 
@@ -6160,7 +6200,7 @@ msgstr "Musik"
 msgid "Mute"
 msgstr "Stumm"
 
-#: adjust.h:346
+#: adjust.h:403
 msgid "Mutex"
 msgstr ""
 
@@ -6211,6 +6251,10 @@ msgstr "Netzwerk"
 msgid "Network Adapter Test"
 msgstr "Test"
 
+#: adjust.h:278
+msgid "Network Interface"
+msgstr ""
+
 #: skin_default_skin.xml.h:458
 msgid "Network Interfacelist"
 msgstr "Adapter"
@@ -6231,7 +6275,7 @@ msgstr "Verbindungstest"
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: adjust.h:282 skin_default_skin.xml.h:457 tpk_showname.h:76
+#: adjust.h:286 skin_default_skin.xml.h:457 tpk_showname.h:76
 msgid "Networkbrowser"
 msgstr "Netzwerk Browser"
 
@@ -6287,7 +6331,7 @@ msgstr ""
 msgid "News"
 msgstr "Aktuelle Meldungen"
 
-#: httpdfunc.h:4614 httpdfunc.h:5427 skin_default_skin.xml.h:462
+#: adjust.h:375 httpdfunc.h:4614 httpdfunc.h:5427 skin_default_skin.xml.h:462
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Neuigkeiten"
@@ -6625,6 +6669,10 @@ msgstr ""
 msgid "Old Audiofw"
 msgstr "Alte Audio-Firmware"
 
+#: adjust.h:371
+msgid "Old Entry"
+msgstr ""
+
 #: mc_pictureplayer_settings.h:64
 msgid "Onkelz Rock Radio"
 msgstr ""
@@ -6863,7 +6911,7 @@ msgstr ""
 msgid "Photos postet"
 msgstr "Bild veröffentlicht"
 
-#: webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
+#: adjust.h:415 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
 #: webif_index.atemio6200.h:64 webif_index.atemio6200.h:120
 #: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
 #: webif_index.atemio-nemesis.h:64 webif_index.atemio-nemesis.h:120
@@ -7484,7 +7532,7 @@ msgstr "Radio"
 msgid "Radio: "
 msgstr ""
 
-#: adjust.h:330
+#: adjust.h:342
 msgid "Radiotext"
 msgstr ""
 
@@ -8021,6 +8069,10 @@ msgstr ""
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr ""
 
+#: adjust.h:411
+msgid "SMTP"
+msgstr ""
+
 #: skin_default_skin.xml.h:663
 msgid "SNR:"
 msgstr ""
@@ -8221,7 +8273,7 @@ msgstr "Speichern"
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: adjust.h:338 plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
+#: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
 msgid "Scan"
 msgstr "Suchlauf"
 
@@ -8275,7 +8327,7 @@ msgstr "Science Fiction"
 msgid "Score:"
 msgstr "Punkte:"
 
-#: adjust.h:290 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:14
+#: adjust.h:302 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:14
 #: skins_mc_skin.xml.h:49 skins_tithek_skin.xml.h:14
 msgid "Screensaver"
 msgstr "Bildschirmschoner"
@@ -9329,10 +9381,6 @@ msgstr ""
 msgid "Stream Transcode"
 msgstr ""
 
-#: adjust.h:322
-msgid "Stream/Record/Softcam"
-msgstr ""
-
 #: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:182
 msgid "Streaminfo"
@@ -9362,6 +9410,10 @@ msgstr "Direktes Streamen mit Puffer (5MB)"
 msgid "Streaming succesfull stopped."
 msgstr "Streaming erfolgreich beendet"
 
+#: adjust.h:314
+msgid "Stringconvert"
+msgstr ""
+
 #: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
 msgid "Style"
 msgstr "Stil"
@@ -9375,7 +9427,7 @@ msgstr "Unterkanäle"
 msgid "Subservices"
 msgstr "Unterkanäle"
 
-#: adjust.h:334 skin_default_skin.xml.h:696 webif_index.atemio5200.h:65
+#: adjust.h:350 skin_default_skin.xml.h:696 webif_index.atemio5200.h:65
 #: webif_index.atemio5200.h:121 webif_index.atemio6200.h:65
 #: webif_index.atemio6200.h:121 webif_index.atemio7600.h:27
 #: webif_index.atemio7600.h:79 webif_index.atemio-nemesis.h:65
@@ -9542,7 +9594,7 @@ msgstr "TMDb"
 msgid "TMDb Movie Database Plugin"
 msgstr "TMDb Filmdatenbank"
 
-#: adjust.h:302
+#: adjust.h:318
 msgid "TPK"
 msgstr ""
 
@@ -9789,6 +9841,10 @@ msgstr ""
 msgid "Thu"
 msgstr "Don"
 
+#: adjust.h:354
+msgid "Thumbnails"
+msgstr ""
+
 #: global.h:6123 global.h:6133 rectimer.h:1083 skin_default_skin.xml.h:723
 msgid "Thursday"
 msgstr "Donnerstag"
@@ -10023,8 +10079,8 @@ msgstr "TiThek - Hauptmenü - Favoriten"
 msgid "Tithek Hoster URL with http://"
 msgstr "Tithek Hoster URL (http://...)"
 
-#: adjust.h:294
-msgid "Tithek/HTTP Header"
+#: adjust.h:306
+msgid "Tithek/HTTP Header/Community"
 msgstr ""
 
 #: mediadb.h:2518 plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:737
@@ -10086,10 +10142,6 @@ msgstr "Top (Prozesse)"
 #: system_infos_sysinfo.h:27
 msgid "Top Info"
 msgstr "Top Informationen"
-
-#: adjust.h:270
-msgid "TopfieldVFD"
-msgstr ""
 
 #: TopfieldVFD.c:72
 msgid "TopfieldVFD plugin not available, wrong box!"
@@ -10310,10 +10362,6 @@ msgstr ""
 #: security.h:2088 skin_default_skin.xml.h:766
 msgid "Tunertype"
 msgstr "Tuner Typ"
-
-#: adjust.h:318
-msgid "Tuning"
-msgstr ""
 
 #: service.h:969
 msgid "Tuning to Channel failed!"
@@ -10804,6 +10852,10 @@ msgstr "Wetter"
 #: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
 msgid "Weather Infos"
 msgstr "Wetter Infos"
+
+#: adjust.h:290
+msgid "Web Adjust"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:65 skins_mc_skin.xml.h:65
 msgid "Web Radio Player"
@@ -11585,7 +11637,7 @@ msgstr ""
 msgid "e"
 msgstr ""
 
-#: adjust.h:310
+#: adjust.h:326
 msgid "ePlayer"
 msgstr ""
 
@@ -11669,7 +11721,7 @@ msgstr ""
 msgid "extensionsmenu"
 msgstr "Erweiterungsmenü"
 
-#: adjust.h:153 adjust.h:381 httpdfunc.h:4352 httpdfunc.h:4833
+#: adjust.h:153 adjust.h:446 httpdfunc.h:4352 httpdfunc.h:4833
 #: httpdsettings.h:50
 msgid "extern"
 msgstr ""
@@ -11901,7 +11953,7 @@ msgstr "installiert"
 msgid "interfacelist"
 msgstr "Netzwerkliste"
 
-#: adjust.h:154 adjust.h:382 httpdfunc.h:4359 httpdfunc.h:4840
+#: adjust.h:154 adjust.h:447 httpdfunc.h:4359 httpdfunc.h:4840
 #: httpdsettings.h:49
 msgid "intern"
 msgstr ""
@@ -12181,7 +12233,7 @@ msgstr "NFSD Kernel Server autostart"
 #: adjust.h:69 adjust.h:84 adjust.h:93 adjust.h:98 adjust.h:127 adjust.h:157
 #: adjust.h:167 adjust.h:171 adjust.h:188 adjust.h:192 adjust.h:200
 #: adjust.h:204 adjust.h:208 adjust.h:214 adjust.h:218 adjust.h:225
-#: adjust.h:229 adjust.h:233 adjust.h:239 adjust.h:245 adjust.h:390
+#: adjust.h:229 adjust.h:233 adjust.h:239 adjust.h:245 adjust.h:455
 #: autotimer.c:453 autotimer.c:486 avsettings.h:162 avsettings.h:213
 #: avsettings.h:217 avsettings.h:230 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
@@ -13662,3 +13714,9 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "Community login"
+#~ msgstr "Community-Login"
+
+#~ msgid "Function"
+#~ msgstr "Funktion"
