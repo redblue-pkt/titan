@@ -13714,9 +13714,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Community login"
-#~ msgstr "Community-Login"
-
-#~ msgid "Function"
-#~ msgstr "Funktion"
