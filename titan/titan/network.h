@@ -202,7 +202,7 @@ int writeinterfaces()
 
 			if(savedns != NULL)
 			{
-				debug(50, "[NETWORK] save resolv.conf: %s\n", savedns);
+				debug(55, "[NETWORK] save resolv.conf: %s\n", savedns);
 				
 				savedns = ostrcat(savedns, "\n", 1, 0);
 				if(dnscount == 1)
@@ -223,7 +223,7 @@ int writeinterfaces()
 		net = net->next;
 	}
 
-	debug(50, "[NETWORK] save interfaces:\n %s", savesettings);
+	debug(55, "[NETWORK] save interfaces:\n %s", savesettings);
 
 	FILE* fd = fopen("/mnt/network/interfaces", "w");
 	if(fd)
@@ -493,13 +493,13 @@ void screennetwork_adapterext(int mode, char* interface)
 				system("echo disable > /proc/stb/fp/wol");
 		}
 		
-		debug(50, "save settings");
-		debug(50, "type: %i", tmp_type);
-		debug(50, "ipaddress: %s", tmp_ipaddress);
-		debug(50, "netmask: %s", tmp_netmask);
-		debug(50, "gateway: %s", tmp_gateway);
-		debug(50, "dnsserver1: %s", tmp_dnsserver1);
-		debug(50, "dnsserver2: %s", tmp_dnsserver2);
+		debug(55, "save settings");
+		debug(55, "type: %i", tmp_type);
+		debug(55, "ipaddress: %s", tmp_ipaddress);
+		debug(55, "netmask: %s", tmp_netmask);
+		debug(55, "gateway: %s", tmp_gateway);
+		debug(55, "dnsserver1: %s", tmp_dnsserver1);
+		debug(55, "dnsserver2: %s", tmp_dnsserver2);
 
 		if(ostrcmp(net->ip, tmp_ipaddress) != 0)
 		{
