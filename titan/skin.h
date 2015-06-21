@@ -4006,7 +4006,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		err("setnodeattr ret = 1");
 		return 1;
 	}
-	debug(100, "start drawscree with screenname=%s", node->name);
+	debug(100, "start drawscreen with screenname=%s", node->name);
 	if(node->name != NULL && ostrstr(node->name, "LCD_") != NULL)
 	{
 		m_lock(&status.oledmutex, 25);
