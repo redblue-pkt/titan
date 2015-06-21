@@ -4869,7 +4869,7 @@ printf("webadjust fmt: %d\n",fmt);
 	char* tmpstr2 = NULL;	
 	struct splitstr* ret2 = NULL;	
 	tmpstr = ostrcat("10\n40\n50\n55\n60\n70\n77\n80\n81\n90\n99\n100\n110\n130\n133\n150\n200\n201\n250\n270\n278\n300\n307\n333\n400\n401\n444\n500\n555\n620\n777\n900\n913\n975\n4440", NULL, 0, 0);
-	tmpstr2 = ostrcat(" - Minimal\n - MTD Operation/System Update\n - MediaCenter\n - Network Interface\n - Key Actions\n - Network Browser\n - Web Adjust\n - Harddisk\n - MultiImage\n - Screensaver\n - Tithek/HTTP Header/Community\n - Global\n - Stringconvert\n - TPK\n - MediaDB/IMDb/TMDb\n - ePlayer\n - DVB Devices\n - CA Device\n - HTTP Server/Stream/Record\n - ID3\n - Subtitle\n - Thumbnails\n - DVD Player\n - EPG Task\n - Old Entry\n - Newsletter\n - Framebuffer\n - Channel Scan\n - Draw Screen\n - CA\n - MediaDB\n - Mutex\n - File Operation\n - SMTP\n - PiP", NULL, 0, 0);
+	tmpstr2 = ostrcat(" - Minimal\n - MTD Operation/System Update\n - MediaCenter\n - Network Interface\n - Key Actions\n - Network Browser\n - Web Adjust\n - Harddisk\n - MultiImage\n - Screensaver\n - Tithek/HTTP Header/Community\n - Global\n - Stringconvert\n - TPK\n - MediaDB/IMDb/TMDb\n - ePlayer\n - DVB Devices\n - CA Device\n - HTTP Server/Stream/Record\n - Radiotext\n - ID3\n - Subtitle\n - Thumbnails\n - DVD Player\n - EPG Task\n - Old Entry\n - Newsletter\n - Framebuffer\n - Channel Scan\n - Draw Screen\n - CA\n - MediaDB\n - Mutex\n - File Operation\n - SMTP\n - PiP", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Debuglevel"), &maxlen, &pos);
