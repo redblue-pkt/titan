@@ -1671,6 +1671,14 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
+#: adjust.h:391
+msgid "CA"
+msgstr ""
+
+#: adjust.h:334
+msgid "CA Device"
+msgstr ""
+
 #: tpchoice.h:70
 msgid "CABLE"
 msgstr "Kabel"
@@ -2004,6 +2012,10 @@ msgstr ""
 msgid "Channel List"
 msgstr ""
 
+#: adjust.h:383
+msgid "Channel Scan"
+msgstr ""
+
 #: skin_default_skin.xml.h:142
 msgid "Channel Search"
 msgstr ""
@@ -2299,10 +2311,6 @@ msgstr ""
 msgid "Community User"
 msgstr ""
 
-#: adjust.h:314
-msgid "Community login"
-msgstr ""
-
 #: stock.h:197
 msgid "Company: "
 msgstr "Bedrijf:"
@@ -2582,6 +2590,10 @@ msgstr ""
 msgid "DTS-Downmix firmware "
 msgstr ""
 
+#: adjust.h:330
+msgid "DVB Devices"
+msgstr ""
+
 #: transponder.h:572 transponder.h:579
 msgid "DVBS"
 msgstr ""
@@ -2590,7 +2602,7 @@ msgstr ""
 msgid "DVBS2"
 msgstr ""
 
-#: tpk_showname.h:26
+#: adjust.h:358 tpk_showname.h:26
 msgid "DVD Player"
 msgstr ""
 
@@ -2949,6 +2961,10 @@ msgstr ""
 msgid "Draw"
 msgstr ""
 
+#: adjust.h:387
+msgid "Draw Screen"
+msgstr ""
+
 #: httpdfunc.h:4914 skin_default_skin.xml.h:213
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
@@ -3006,20 +3022,20 @@ msgstr ""
 msgid "EJECT"
 msgstr "Uitwerpen"
 
-#: adjust.h:71 adjust.h:326 httpdfunc.h:3878 play.h:1433
-#: skin_default_skin.xml.h:230 webif_index.atemio5200.h:34
-#: webif_index.atemio5200.h:90 webif_index.atemio6200.h:34
-#: webif_index.atemio6200.h:90 webif_index.atemio7600.h:65
-#: webif_index.atemio7600.h:82 webif_index.atemio-nemesis.h:34
-#: webif_index.atemio-nemesis.h:90 webif_rc.atemio510.h:49
-#: webif_rc.atemio5200.h:17 webif_rc.atemio520.h:24 webif_rc.atemio530.h:24
-#: webif_rc.atemio6000.h:17 webif_rc.atemio6100.h:17 webif_rc.atemio6200.h:17
-#: webif_rc.atemio7600.h:15 webif_rc.atemio-nemesis.h:17 webif_rc.h:17
-#: webif_rc_virtual.atemio510.h:2 webif_rc_virtual.atemio510.h:49
-#: webif_rc_virtual.atemio5200.h:37 webif_rc_virtual.atemio520.h:37
-#: webif_rc_virtual.atemio530.h:37 webif_rc_virtual.atemio6000.h:37
-#: webif_rc_virtual.atemio6100.h:37 webif_rc_virtual.atemio6200.h:37
-#: webif_rc_virtual.atemio-nemesis.h:37 webif_rc_virtual.h:37
+#: adjust.h:71 httpdfunc.h:3878 play.h:1433 skin_default_skin.xml.h:230
+#: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
+#: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
+#: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
+#: webif_index.atemio-nemesis.h:34 webif_index.atemio-nemesis.h:90
+#: webif_rc.atemio510.h:49 webif_rc.atemio5200.h:17 webif_rc.atemio520.h:24
+#: webif_rc.atemio530.h:24 webif_rc.atemio6000.h:17 webif_rc.atemio6100.h:17
+#: webif_rc.atemio6200.h:17 webif_rc.atemio7600.h:15
+#: webif_rc.atemio-nemesis.h:17 webif_rc.h:17 webif_rc_virtual.atemio510.h:2
+#: webif_rc_virtual.atemio510.h:49 webif_rc_virtual.atemio5200.h:37
+#: webif_rc_virtual.atemio520.h:37 webif_rc_virtual.atemio530.h:37
+#: webif_rc_virtual.atemio6000.h:37 webif_rc_virtual.atemio6100.h:37
+#: webif_rc_virtual.atemio6200.h:37 webif_rc_virtual.atemio-nemesis.h:37
+#: webif_rc_virtual.h:37
 msgid "EPG"
 msgstr ""
 
@@ -3073,6 +3089,10 @@ msgstr "EPG zoeken"
 
 #: skin_default_skin.xml.h:243
 msgid "EPG Settings"
+msgstr ""
+
+#: adjust.h:366
+msgid "EPG Task"
 msgstr ""
 
 #: skin_default_skin.xml.h:231
@@ -3680,6 +3700,10 @@ msgstr "Bestand afspeel buffer (30Mb/360s)"
 msgid "File Manager"
 msgstr ""
 
+#: adjust.h:407
+msgid "File Operation"
+msgstr ""
+
 #: tithek.h:670
 msgid "File exist, overwrite?"
 msgstr "Bestand bestaat reeds, overschrijven?"
@@ -3918,6 +3942,10 @@ msgstr ""
 msgid "Frage"
 msgstr "Vraag"
 
+#: adjust.h:379
+msgid "Framebuffer"
+msgstr ""
+
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
 msgstr ""
@@ -4006,10 +4034,6 @@ msgstr "Bestandssysteemcontrole wisselbestand"
 msgid "Full Pic"
 msgstr "Afbeelding spreidden"
 
-#: adjust.h:350
-msgid "Function"
-msgstr ""
-
 #: skin_default_skin.xml.h:278
 msgid "G"
 msgstr ""
@@ -4086,7 +4110,7 @@ msgstr ""
 msgid "Git Changelog Full"
 msgstr ""
 
-#: adjust.h:298
+#: adjust.h:310
 msgid "Global"
 msgstr ""
 
@@ -4219,6 +4243,10 @@ msgstr ""
 msgid "HOSTNAME"
 msgstr ""
 
+#: adjust.h:338
+msgid "HTTP Server/Stream/Record"
+msgstr ""
+
 #: skin_default_skin.xml.h:363
 msgid "HTTP Settings"
 msgstr ""
@@ -4235,7 +4263,7 @@ msgstr "Tijd totdat ERROR bericht verschijnt"
 msgid "Hard"
 msgstr ""
 
-#: adjust.h:286 harddisk.h:487 skin_default_skin.xml.h:296
+#: adjust.h:294 harddisk.h:487 skin_default_skin.xml.h:296
 msgid "Harddisk"
 msgstr "Hardeschijf"
 
@@ -4657,6 +4685,10 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
+#: adjust.h:346
+msgid "ID3"
+msgstr ""
+
 #: skin_default_skin.xml.h:367
 msgid "ID:"
 msgstr ""
@@ -4689,10 +4721,6 @@ msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
-msgstr ""
-
-#: adjust.h:306
-msgid "IMDbScan"
 msgstr ""
 
 #: tsSchnitt.c:123
@@ -5102,6 +5130,10 @@ msgstr ""
 msgid "Key Action - Plugins"
 msgstr "Toets acties - Plugins"
 
+#: adjust.h:282
+msgid "Key Actions"
+msgstr ""
+
 #: tpk_showname.h:52
 msgid "KeyLock"
 msgstr ""
@@ -5412,6 +5444,10 @@ msgstr "MA"
 msgid "MTD"
 msgstr ""
 
+#: adjust.h:270
+msgid "MTD Operation/System Update"
+msgstr ""
+
 #: system_infos_sysinfo.h:19
 msgid "MTD info"
 msgstr "MTD informatie"
@@ -5559,7 +5595,7 @@ msgstr ""
 msgid "MediaCenter FolderIcons"
 msgstr ""
 
-#: adjust.h:342
+#: adjust.h:395
 msgid "MediaDB"
 msgstr ""
 
@@ -5618,6 +5654,10 @@ msgstr "MediaDB opslaglocatie"
 #: mediadb.h:1477
 msgid "MediaDB scan finished"
 msgstr "MediaDB scan klaar"
+
+#: adjust.h:322
+msgid "MediaDB/IMDb/TMDb"
+msgstr ""
 
 #: tithek_mainmenu.h:22
 msgid "Mediacenter AudioPlayer Playlisten Preview"
@@ -5696,7 +5736,7 @@ msgstr "Menu titel"
 msgid "Menu not implemented !"
 msgstr "Menu is niet beschikbaar!"
 
-#: adjust.h:278 skin_default_skin.xml.h:427
+#: skin_default_skin.xml.h:427
 msgid "Menulist"
 msgstr ""
 
@@ -5944,7 +5984,7 @@ msgstr "Meerdere satellieten"
 msgid "MultiGUI Plugin"
 msgstr ""
 
-#: tpk_showname.h:75
+#: adjust.h:298 tpk_showname.h:75
 msgid "MultiImage"
 msgstr ""
 
@@ -5984,7 +6024,7 @@ msgstr "Muziek"
 msgid "Mute"
 msgstr ""
 
-#: adjust.h:346
+#: adjust.h:403
 msgid "Mutex"
 msgstr ""
 
@@ -6035,6 +6075,10 @@ msgstr ""
 msgid "Network Adapter Test"
 msgstr ""
 
+#: adjust.h:278
+msgid "Network Interface"
+msgstr ""
+
 #: skin_default_skin.xml.h:458
 msgid "Network Interfacelist"
 msgstr ""
@@ -6055,7 +6099,7 @@ msgstr ""
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: adjust.h:282 skin_default_skin.xml.h:457 tpk_showname.h:76
+#: adjust.h:286 skin_default_skin.xml.h:457 tpk_showname.h:76
 msgid "Networkbrowser"
 msgstr "Netwerk browser"
 
@@ -6111,7 +6155,7 @@ msgstr ""
 msgid "News"
 msgstr "Nieuws"
 
-#: httpdfunc.h:4614 httpdfunc.h:5427 skin_default_skin.xml.h:462
+#: adjust.h:375 httpdfunc.h:4614 httpdfunc.h:5427 skin_default_skin.xml.h:462
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Nieuwsbrief"
@@ -6447,6 +6491,10 @@ msgstr ""
 msgid "Old Audiofw"
 msgstr "Oude ausio firmware"
 
+#: adjust.h:371
+msgid "Old Entry"
+msgstr ""
+
 #: mc_pictureplayer_settings.h:64
 msgid "Onkelz Rock Radio"
 msgstr ""
@@ -6685,7 +6733,7 @@ msgstr ""
 msgid "Photos postet"
 msgstr "Foto gepost"
 
-#: webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
+#: adjust.h:415 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
 #: webif_index.atemio6200.h:64 webif_index.atemio6200.h:120
 #: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
 #: webif_index.atemio-nemesis.h:64 webif_index.atemio-nemesis.h:120
@@ -7295,7 +7343,7 @@ msgstr "Radio speler"
 msgid "Radio: "
 msgstr ""
 
-#: adjust.h:330
+#: adjust.h:342
 msgid "Radiotext"
 msgstr ""
 
@@ -7828,6 +7876,10 @@ msgstr ""
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr ""
 
+#: adjust.h:411
+msgid "SMTP"
+msgstr ""
+
 #: skin_default_skin.xml.h:663
 msgid "SNR:"
 msgstr ""
@@ -8028,7 +8080,7 @@ msgstr "Opslaan"
 msgid "Save Settings"
 msgstr "Instellingen opslaan"
 
-#: adjust.h:338 plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
+#: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
 msgid "Scan"
 msgstr "Scannen"
 
@@ -8080,7 +8132,7 @@ msgstr ""
 msgid "Score:"
 msgstr ""
 
-#: adjust.h:290 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:14
+#: adjust.h:302 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:14
 #: skins_mc_skin.xml.h:49 skins_tithek_skin.xml.h:14
 msgid "Screensaver"
 msgstr ""
@@ -9131,10 +9183,6 @@ msgstr ""
 msgid "Stream Transcode"
 msgstr ""
 
-#: adjust.h:322
-msgid "Stream/Record/Softcam"
-msgstr ""
-
 #: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:182
 msgid "Streaminfo"
@@ -9164,6 +9212,10 @@ msgstr "Streaming afspeel buffer (5MB)"
 msgid "Streaming succesfull stopped."
 msgstr ""
 
+#: adjust.h:314
+msgid "Stringconvert"
+msgstr ""
+
 #: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
 msgid "Style"
 msgstr "Stijl"
@@ -9177,7 +9229,7 @@ msgstr "Subkanaal"
 msgid "Subservices"
 msgstr ""
 
-#: adjust.h:334 skin_default_skin.xml.h:696 webif_index.atemio5200.h:65
+#: adjust.h:350 skin_default_skin.xml.h:696 webif_index.atemio5200.h:65
 #: webif_index.atemio5200.h:121 webif_index.atemio6200.h:65
 #: webif_index.atemio6200.h:121 webif_index.atemio7600.h:27
 #: webif_index.atemio7600.h:79 webif_index.atemio-nemesis.h:65
@@ -9342,7 +9394,7 @@ msgstr ""
 msgid "TMDb Movie Database Plugin"
 msgstr ""
 
-#: adjust.h:302
+#: adjust.h:318
 msgid "TPK"
 msgstr ""
 
@@ -9572,6 +9624,10 @@ msgstr ""
 
 #: global.h:6158
 msgid "Thu"
+msgstr ""
+
+#: adjust.h:354
+msgid "Thumbnails"
 msgstr ""
 
 #: global.h:6123 global.h:6133 rectimer.h:1083 skin_default_skin.xml.h:723
@@ -9806,8 +9862,8 @@ msgstr ""
 msgid "Tithek Hoster URL with http://"
 msgstr ""
 
-#: adjust.h:294
-msgid "Tithek/HTTP Header"
+#: adjust.h:306
+msgid "Tithek/HTTP Header/Community"
 msgstr ""
 
 #: mediadb.h:2518 plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:737
@@ -9869,10 +9925,6 @@ msgstr "Top (processen)"
 #: system_infos_sysinfo.h:27
 msgid "Top Info"
 msgstr "Top informatie"
-
-#: adjust.h:270
-msgid "TopfieldVFD"
-msgstr ""
 
 #: TopfieldVFD.c:72
 msgid "TopfieldVFD plugin not available, wrong box!"
@@ -10087,10 +10139,6 @@ msgstr "Tuner instellingen niet toegestaan/nbij lopende opname of stream!"
 #: security.h:2088 skin_default_skin.xml.h:766
 msgid "Tunertype"
 msgstr "Tuner type"
-
-#: adjust.h:318
-msgid "Tuning"
-msgstr ""
 
 #: service.h:969
 msgid "Tuning to Channel failed!"
@@ -10577,6 +10625,10 @@ msgstr "Weer"
 #: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
 msgid "Weather Infos"
 msgstr "Weer tonen"
+
+#: adjust.h:290
+msgid "Web Adjust"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:65 skins_mc_skin.xml.h:65
 msgid "Web Radio Player"
@@ -11354,7 +11406,7 @@ msgstr ""
 msgid "e"
 msgstr ""
 
-#: adjust.h:310
+#: adjust.h:326
 msgid "ePlayer"
 msgstr ""
 
@@ -11438,7 +11490,7 @@ msgstr ""
 msgid "extensionsmenu"
 msgstr ""
 
-#: adjust.h:153 adjust.h:381 httpdfunc.h:4352 httpdfunc.h:4833
+#: adjust.h:153 adjust.h:446 httpdfunc.h:4352 httpdfunc.h:4833
 #: httpdsettings.h:50
 msgid "extern"
 msgstr ""
@@ -11670,7 +11722,7 @@ msgstr ""
 msgid "interfacelist"
 msgstr ""
 
-#: adjust.h:154 adjust.h:382 httpdfunc.h:4359 httpdfunc.h:4840
+#: adjust.h:154 adjust.h:447 httpdfunc.h:4359 httpdfunc.h:4840
 #: httpdsettings.h:49
 msgid "intern"
 msgstr ""
@@ -11950,7 +12002,7 @@ msgstr "NFS server"
 #: adjust.h:69 adjust.h:84 adjust.h:93 adjust.h:98 adjust.h:127 adjust.h:157
 #: adjust.h:167 adjust.h:171 adjust.h:188 adjust.h:192 adjust.h:200
 #: adjust.h:204 adjust.h:208 adjust.h:214 adjust.h:218 adjust.h:225
-#: adjust.h:229 adjust.h:233 adjust.h:239 adjust.h:245 adjust.h:390
+#: adjust.h:229 adjust.h:233 adjust.h:239 adjust.h:245 adjust.h:455
 #: autotimer.c:453 autotimer.c:486 avsettings.h:162 avsettings.h:213
 #: avsettings.h:217 avsettings.h:230 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
