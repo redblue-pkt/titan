@@ -87,7 +87,7 @@ retry:
 			usleep(1000);
 #endif
 			if(flag == 0 && tout > 0) goto retry;
-			debug(250, "dvb read timeout fd=%d", fd);
+			debug(200, "dvb read timeout fd=%d", fd);
 		}
 		else if(ret < 0)
 		{
@@ -108,7 +108,7 @@ retry:
 	}
 	else if(ret == 0)
 	{
-		debug(250, "dvb select timeout fd=%d, tout=%d", fd, tout);
+		debug(200, "dvb select timeout fd=%d, tout=%d", fd, tout);
 	}
 	else
 	{
