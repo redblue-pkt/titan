@@ -325,9 +325,6 @@ char* getaspectmode(struct skin* node, char* path)
 	char* tmpstr = NULL;
 
 	tmpstr = getaspect();
-	debug(10, "getaspectmode(begin)=%s", tmpstr);
-	debug(10, "getaspectmode(4:3)=%d", ostrcmp(tmpstr, "4:3"));
-	debug(10, "getaspectmode(16:9)=%d", ostrcmp(tmpstr, "16:9"));
 
 #ifdef MIPSEL	
     if(ostrcmp(tmpstr, "4:3") == 1)
@@ -356,7 +353,6 @@ char* getaspectmode(struct skin* node, char* path)
 		tmpstr = ostrcat("/", tmpstr, 0, 1);
 	tmpstr = ostrcat(path, tmpstr, 0, 1);
 
-	debug(10, "getaspectmode(end)=%s", tmpstr);
 	return tmpstr;
 }
 
