@@ -7833,7 +7833,7 @@ msgid "SAT"
 msgstr "Satellite"
 
 #: tpk_showname.h:118
-msgid "SAT/Cable 19.2 13.0 KabelD | 20.05.2015"
+msgid "SAT/Cable 19.2 13.0 KabelD | 26.06.2015"
 msgstr ""
 
 #: httpdfunc.h:4826 skin_default_skin.xml.h:595
