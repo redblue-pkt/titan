@@ -4023,9 +4023,9 @@ msgid ""
 "or record is starting in next time.\n"
 "Really shutdown ?"
 msgstr ""
-"ACHTUNG: Eine Aufnahme wird aufgezeichnet oder eine zeitgesteuerte Aufnahme "
-"startet gleich.\n"
-"Soll das System trotzdem neu gestartet werden?"
+"ACHTUNG: Eine Aufnahme wird aufgezeichnet\n"
+"oder eine zeitgesteuerte Aufnahme startet gleich.\n"
+"Soll TitanNit trotzdem neu gestartet werden?"
 
 #: tsSchnitt.c:347
 msgid "Frage"
