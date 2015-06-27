@@ -28,13 +28,19 @@ if [ "$buildtype" = "full" ];then
 #	count=`cat cache.beeg.main.html | grep ^'<a href="/section/home/' | grep 'target="_self">' | cut -d ">" -f2 | cut -d"<" -f1 | tail -n1`
 	count=`echo $sectionstags | tr ' ' '\n' | wc -l`
 	echo "[beeg.sh] count: $count"
-	i=1
-	until [ "$i" -gt "$count" ]
-	do
-	#echo $i
-	sections="$sections http://beeg.com/section/home/$i/"
-	i=$[$i+1]
+
+#	i=1
+#	until [ "$i" -gt "$count" ]
+#	do
+#	#echo $i
+#	sections="$sections http://beeg.com/section/home/$i/"
+#	i=$[$i+1]
+#	done
+
+	for ROUND0 in $sectionstags; do
+		sections="$sections http://beeg.com$ROUND0"
 	done
+
 	echo sections $sections
 	
 	for ROUND0 in $sections; do
