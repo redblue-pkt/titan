@@ -29,13 +29,13 @@ if [ "$buildtype" = "full" ];then
 	count=`echo $sectionstags | tr ' ' '\n' | wc -l`
 	echo "[beeg.sh] count: $count"
 
-#	i=1
-#	until [ "$i" -gt "$count" ]
-#	do
+	i=1
+	until [ "$i" -gt "$count" ]
+	do
 #	#echo $i
 #	sections="$sections http://beeg.com/section/home/$i/"
-#	i=$[$i+1]
-#	done
+	i=$[$i+1]
+	done
 
 	for ROUND0 in $sectionstags; do
 		sections="$sections http://beeg.com$ROUND0"
