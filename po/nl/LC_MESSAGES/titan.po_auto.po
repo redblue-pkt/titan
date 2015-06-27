@@ -1049,7 +1049,7 @@ msgid "Astra 19.2 - new (matze70)"
 msgstr ""
 
 #: tpk_showname.h:5
-msgid "Astra 19.2 KabelD and all transponder | 20.05.2015"
+msgid "Astra 19.2 KabelD and all transponder | 27.06.2015"
 msgstr ""
 
 #: tpk_description.h:13
