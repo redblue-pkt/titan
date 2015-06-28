@@ -7967,11 +7967,11 @@ msgid "Sat: default Settings Astra 19.2"
 msgstr ""
 
 #: tpk_description.h:120
-msgid "Sat: matze70 Astra 19.2 | 24.10.2014"
+msgid "Sat: matze70 Astra 19.2 | 28.06.2015"
 msgstr ""
 
 #: tpk_description.h:121
-msgid "Sat: matze70 new design Astra 19.2 | 09.05.2015"
+msgid "Sat: matze70 new design Astra 19.2 | 28.06.2015"
 msgstr ""
 
 #: tpk_description.h:123
