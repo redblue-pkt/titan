@@ -47,11 +47,7 @@ mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 #rm "$HOME"/parser/BUILD/kinox.sh
 #rm "$HOME"/parser/BUILD/myvideo.sh
 #rm "$HOME"/parser/BUILD/netzkino.sh
-#rm "$HOME"/parser/BUILD/rtl2now.sh
-#rm "$HOME"/parser/BUILD/rtl-now.sh
 #rm "$HOME"/parser/BUILD/solarmovie.sh
-#rm "$HOME"/parser/BUILD/superrtlnow.sh
-#rm "$HOME"/parser/BUILD/voxnow.sh
 #rm "$HOME"/parser/BUILD/youtube.sh
 #rm "$HOME"/parser/BUILD/zdf.sh
 #rm "$HOME"/parser/BUILD/movie4k.sh
@@ -62,8 +58,13 @@ mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 #rm "$HOME"/parser/BUILD/internettv.sh
 #rm "$HOME"/parser/BUILD/filmon.sh
 #rm "$HOME"/parser/BUILD/tvtoast.sh
-#rm "$HOME"/parser/BUILD/rtlnitronow.sh
-#rm "$HOME"/parser/BUILD/n-tvnow.sh
+
+rm "$HOME"/parser/BUILD/rtlnitronow.sh
+rm "$HOME"/parser/BUILD/n-tvnow.sh
+rm "$HOME"/parser/BUILD/rtl2now.sh
+rm "$HOME"/parser/BUILD/rtl-now.sh
+rm "$HOME"/parser/BUILD/superrtlnow.sh
+rm "$HOME"/parser/BUILD/voxnow.sh
 
 lasttimestamp=`cat /var/www/atemio/web/mediathek/lasttimestamp`
 lasttimestamp=`expr $lasttimestamp + 84500`
