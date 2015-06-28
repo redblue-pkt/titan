@@ -120,6 +120,7 @@ for ROUND in $WATCHLIST; do
 #			echo PIC2 $PIC2
 #exit
 #			PATH=`cat cache.$DOMAIN.$ROUND.$filename.$filename2.list | sed 's/"path":/\npath=/' | grep ^'path=' | cut -d'"' -f2 | tr -d '\\\'`
+			piccount=`expr $piccount + 1`	
 
 			LINE="$STITLE""#""$STREAMURL""#""$SPIC""#""$DOMAIN""_""$piccount"".""jpg""#""$SHOWNAME""#""$STREAMTYPE"
 
