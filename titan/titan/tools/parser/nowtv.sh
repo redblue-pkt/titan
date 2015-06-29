@@ -8,7 +8,7 @@ DOMAIN=nowtv.de
 SHOWNAME=NowTv
 MEDIAURL=atemio.dyndns.tv
 MEDIAPATH=mediathek
-STREAMTYPE=7
+STREAMTYPE=5
 
 rm cache.*
 rm -rf _full/$DOMAIN
@@ -69,12 +69,12 @@ for ROUND in $WATCHLIST; do
 			filename2=`echo $SEARCH | sed 's/"seoUrl":/\n"seoUrl":/' | grep ^'"seoUrl":' | cut -d '"' -f4 | sed 's/~/ /g'`
 			STREAMURL="https://api.nowtv.de/v3/movies/$filename/$filename2?fields=fields%3D%2A%2Cformat%2Cfiles%2Cbreakpoints%2CpaymentPaytypes%2Ctrailers"
 
-			STREAMTYPE=2222
+			STREAMTYPE=5
 
 			PAY=`echo $SEARCH | sed 's/"price":/\n"price":/' | grep ^'"price":' | cut -d '"' -f4 | sed 's/~/ /g' | sed 's!\\\!!g'`
 
 			if [ ! -z "$PAY" ] && [ `echo $SEARCH | grep '"free":false' | wc -l` -gt 0 ];then
-				STREAMTYPE=3333
+				STREAMTYPE=6
 				PAY=`echo $SEARCH | sed 's/"price":/\n"price":/' | grep ^'"price":' | cut -d '"' -f4 | sed 's/~/ /g' | sed 's!\\\!!g'`
 				WARE=`echo $SEARCH | sed 's/"currency":/\n"currency":/' | grep ^'"currency":' | cut -d '"' -f4 | sed 's/~/ /g' | sed 's!\\\!!g'`
 				STITLE="$STITLE ($PAY $WARE)"
@@ -107,10 +107,8 @@ for ROUND in $WATCHLIST; do
 		echo "$LINE" >> cache.$DOMAIN.$ROUND.category.titanlist
 	
 		cat cache.$DOMAIN.$ROUND.$filename.titanlist > _full/$DOMAIN/streams/$DOMAIN.$ROUND.`echo "$filename" | tr 'A-Z' 'a-z'`.list
-			
 	done
 	cat cache.$DOMAIN.$ROUND.category.titanlist | sort -u > _full/$DOMAIN/$DOMAIN.$ROUND.category.list
-
 done
 
 cat cache.$DOMAIN.category.titanlist | sort -u > _full/$DOMAIN/$DOMAIN.category.list

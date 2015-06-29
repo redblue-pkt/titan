@@ -40,10 +40,12 @@ char* nowtv(char* link)
 
 			streamurl = ostrcat("http://hls.fra.rtlnow.de/hls-vod-enc", tmpstr2, 0, 0); 
 			streamurl = ostrcat(streamurl, ".m3u8", 1, 0); 
-			streamurl = string_replace_all("rtl2now", "rtl2now/videos", streamurl, 1);
-			streamurl = string_replace_all("superrtlnow", "superrtlnow/videos", streamurl, 1);
-			streamurl = string_replace_all("voxnow", "voxnow/videos", streamurl, 1);
-			streamurl = string_replace_all("ntvnow", "ntvnow/videos", streamurl, 1);
+			streamurl = string_replace_all("/rtlnow/", "/rtlnow/videos/", streamurl, 1);
+			streamurl = string_replace_all("/rtl2now/", "/rtl2now/videos/", streamurl, 1);
+			streamurl = string_replace_all("/superrtlnow/", "/superrtlnow/videos/", streamurl, 1);
+			streamurl = string_replace_all("/voxnow/", "/voxnow/videos/", streamurl, 1);
+			streamurl = string_replace_all("/ntvnow/", "/ntvnow/videos/", streamurl, 1);
+			streamurl = string_replace_all("/nitronow/", "/nitronow/videos/", streamurl, 1);
 
 			tmpstr3 = string_resub("\"bitrate\":", ",\"", ret1[i].part, 0);
 
