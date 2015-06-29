@@ -1295,7 +1295,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = youtube_hoster(tmpstr);
 	}						
-	else if(((struct tithek*)listbox->select->handle)->flag == 5 || 6)
+	else if(((struct tithek*)listbox->select->handle)->flag == 5)
+	{
+		if(tmpstr != NULL) tmpstr1 = nowtv(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 6)
 	{
 		if(tmpstr != NULL) tmpstr1 = nowtv(tmpstr);
 	}
