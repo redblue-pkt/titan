@@ -679,14 +679,10 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			addmenulist(&mlist, "Search on ZDF (local)", _("Search on ZDF (local)"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on TecTime (local)", _("Search on TecTime (local)"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on Giga (local)", _("Search on Giga (local)"), NULL, 0, 0);
-			addmenulist(&mlist, "Search on Rtl-Now (local)", _("Search on Rtl-Now (local)"), NULL, 0, 0);
-			addmenulist(&mlist, "Search on Rtl2-Now (local)", _("Search on Rtl2-Now (local)"), NULL, 0, 0);
-			addmenulist(&mlist, "Search on SuperRTL-Now (local)", _("Search on SuperRTL-Now (local)"), NULL, 0, 0);
-			addmenulist(&mlist, "Search on VOX-Now (local)", _("Search on VOX-Now (local)"), NULL, 0, 0);
-			addmenulist(&mlist, "Search on RtlNitro-Now (local)", _("Search on RtlNitro-Now (local)"), NULL, 0, 0);
-			addmenulist(&mlist, "Search on NTV-Now (local)", _("Search on NTV-Now (local)"), NULL, 0, 0);
+			addmenulist(&mlist, "Search on NowTv (local)", _("Search on NowTv (local)"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on InternetTv (local)", _("Search on InternetTv (local)"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on InternetRadio (local)", _("Search on InternetRadio (local)"), NULL, 0, 0);
+			addmenulist(&mlist, "Search on All (local)", _("Search on All (local)"), NULL, 0, 0);
 		}
 	}
 
@@ -778,12 +774,10 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 18;
 		else if(ostrcmp(mbox->name, "Search on Beeg (local)") == 0)
 			ret = 19;
-		else if(ostrcmp(mbox->name, "Search on Rtl2-Now (local)") == 0)
+		else if(ostrcmp(mbox->name, "Search on NowTv (local)") == 0)
 			ret = 20;
-		else if(ostrcmp(mbox->name, "Search on Rtl-Now (local)") == 0)
+		else if(ostrcmp(mbox->name, "Search on All (local)") == 0)
 			ret = 21;
-		else if(ostrcmp(mbox->name, "Search on SuperRTL-Now (local)") == 0)
-			ret = 22;
 		else if(ostrcmp(mbox->name, "Search on VOX-Now (local)") == 0)
 			ret = 23;
 		else if(ostrcmp(mbox->name, "Search on Xvideos (local)") == 0)
@@ -794,10 +788,6 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 26;
 		else if(ostrcmp(mbox->name, "Search on FilmOn (local)") == 0)
 			ret = 27;
-		else if(ostrcmp(mbox->name, "Search on RtlNitro-Now (local)") == 0)
-			ret = 28;
-		else if(ostrcmp(mbox->name, "Search on NTV-Now (local)") == 0)
-			ret = 29;
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
 			if(status.play == 1)
