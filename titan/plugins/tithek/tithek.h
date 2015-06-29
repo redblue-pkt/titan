@@ -87,7 +87,7 @@ int tithekmlehd = 0;
 //flag 73   - watchmovies movie
 //flag 74   - watchmovies series
 //flag 75   - watchmovies local search
-
+//flag 100  - all local search
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
 
@@ -111,10 +111,14 @@ int tithekmlehd = 0;
 //check 17 	- Search on TecTime (local)
 //check 18 	- Search on Giga (local)
 //check 19 	- Search on Beeg (local)
+
+//check 20 	- Search on NowTv (local)
+
 //check 20 	- Search on Rtl2-Now (local)
 //check 21 	- Search on Rtl-Now (local)
 //check 22 	- Search on SuperRTL-Now (local)
 //check 23 	- Search on VOX-Now (local)
+
 //check 24 	- Search on Xvideos (local)
 //check 25 	- Search on Mle-HD (local)
 //check 26 	- Search on Netzkino (local)
@@ -1855,23 +1859,13 @@ waitrcstart:
 				}
 				else if(check == 20)
 				{
-					if(rtl2now_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Rtl2Now - Search (local)", tmpstr, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, "Rtl2Now - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+					if(nowtv_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Rtl2Now - Search (local)", tmpstr, 0) == 0)
+						if(screenlistbox(grid, listbox, countlabel, "NowTv - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 21)
 				{
-					if(rtlnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Rtl-Now - Search (local)", tmpstr, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, "Rtl-Now - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-				}
-				else if(check == 22)
-				{
-					if(superrtlnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "SuperRtlNow - Search (local)", tmpstr, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, "SuperRtlNow - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-				}
-				else if(check == 23)
-				{
-					if(voxnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "VoxNow - Search (local)", tmpstr, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, "VoxNow - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+					if(all_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Rtl-Now - Search (local)", tmpstr, 0) == 0)
+						if(screenlistbox(grid, listbox, countlabel, "All - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 24)
 				{
@@ -1892,16 +1886,6 @@ waitrcstart:
 				{
 					if(filmon_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "FilmOn - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "FilmOn - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-				}
-				else if(check == 28)
-				{
-					if(rtlnitronow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "RtlNitroNow - Search (local)", tmpstr, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, "RtlNitroNow - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-				}
-				else if(check == 29)
-				{
-					if(ntvnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "NtvNow - Search (local)", tmpstr, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, "NtvNow - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 /*
 why ?
@@ -2026,24 +2010,9 @@ why ?
 					if(beeg_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 56)
+				else if(((struct tithek*)listbox->select->handle)->flag == 100)
 				{
-					if(rtl2now_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 57)
-				{
-					if(rtlnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 58)
-				{
-					if(superrtlnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 59)
-				{
-					if(voxnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
+					if(all_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 60)
