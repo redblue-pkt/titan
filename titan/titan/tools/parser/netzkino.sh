@@ -97,7 +97,7 @@ for SEARCH in $SEARCHLIST; do
 		PIC=`echo $ROUND | sed 's/"thumbnail":/\nthumbnail:/' | grep ^thumbnail: | cut -d'"' -f2 | tr '\\' ' ' | sed 's/ \+//g'`
 		TITLE=`echo $PIC | tr '/' '\n' | tail -n1 | sed 's/-172x198.jpg//' | sed 's/-172x198.gif//' | tr '-' ' ' | tr '_' ' '`
 		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-		URL=`echo $ROUND | sed 's/"Streaming":/\nStreaming:/' | grep ^Streaming: | cut -d'"' -f2 | tr '\\' ' ' | sed 's/ \+//g'`
+		URL=`echo $ROUND | sed 's/"Streaming":/\nStreaming:/' | grep ^Streaming: | cut -d'"' -f2 | tr '\\' ' ' | sed 's/ \+//g' | sed 's!/master.m3u8!!' | sed '!/netzkino_and-vh.akamaihd.net/i/!/pmd.netzkino-seite.netzkino.de/!'`
 		
 #		LINE="$TITLE#rtmp://mf.netzkino.c.nmdn.net/netzkino/_definst_/mp4:$URL#$PIC#netzkino_$piccount.jpg#Netzkino#2"
 		LINE="$TITLE#http://netzkino_and-vh.akamaihd.net/i/$URL.mp4/master.m3u8#$PIC#netzkino_$piccount.jpg#Netzkino#2"
