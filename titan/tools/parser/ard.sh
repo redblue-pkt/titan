@@ -21,11 +21,13 @@ echo "[ard.sh] START (buildtype: $buildtype): $DATENAME" > _full/ard/build.log
 tt=1
 if [ $tt = 1 ];then
 watchlist="
-New;/ard/servlet/ajax-cache/3516220/view=switch/index.html
-Most~Viewed;/ard/servlet/ajax-cache/3516210/view=list/show=recent/index.html
-Best~Rated;/ard/servlet/ajax-cache/3516188/view=switch/index.html
-Documentaries;/ard/servlet/ajax-cache/3474718/view=switch/index.html
-Movie~Highlights;/ard/servlet/ajax-cache/4585472/view=switch/index.html
+New;/tv/Neueste-Videos/mehr?documentId=23644268
+#Most~Viewed;/tv/Meistabgerufene-Videos/mehr?documentId=23644244
+Best~Rated;/tv/Am-besten-bewertet/mehr?documentId=21282468
+Documentaries;/tv/Reportage-Doku/Tipps?documentId=21301806&m27307124=quelle.tv
+Movie~Highlights;/tv/Film-Highlights/Tipps?documentId=21301808
+Channels;/tv/Channels/Tipps?documentId=21282550&m27307124=quelle.tv
+Series;/tv/Soaps-Serien/Tipps?documentId=26402940&m27307124=quelle.tv
 "
 watchlist1="
 All Shows A-Z
@@ -43,7 +45,7 @@ for ROUND1 in $watchlist; do
 	geturl=`echo $ROUND1 | cut -d ";" -f2`
 
 	wget http://www.ardmediathek.de$geturl -O cache.$filename.$count.html
-	searchlist=`cat cache.$filename.$count.html | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="mt-media_item">!\n\n<div~class="mt-media_item">!g' | grep ^'<div~class="mt-media_item">'`
+	searchlist=`cat cache.$filename.$count.html | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="media~mediaA">!\n\n<div~class="media~mediaA">!g' | grep ^'<div~class="media~mediaA">'`
 
 	for ROUND2 in $searchlist; do
 		piccount=`expr $piccount + 1`
@@ -106,7 +108,7 @@ if [ "$buildtype" = "full" ];then
 			exit
 		fi
 				
-		searchlist1=`cat cache.$filename.$count.html | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="mt-media_item">!\n\n<div~class="mt-media_item">!g' | grep ^'<div~class="mt-media_item">'`
+		searchlist1=`cat cache.$filename.$count.html | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="media~mediaA">!\n\n<div~class="media~mediaA">!g' | grep ^'<div~class="media~mediaA">'`
 
 		for ROUND1 in $searchlist1; do
 			piccount=`expr $piccount + 1`
@@ -133,7 +135,7 @@ if [ "$buildtype" = "full" ];then
 				
 				wget http://www.ardmediathek.de$ROUND2 -O cache.$filename."$filename2".$count.list
 
-				searchlist3=`cat cache.$filename."$filename2".$count.list | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="mt-media_item">!\r\n<div~class="mt-media_item">!g' | grep ^'<div~class="mt-media_item">' | grep -v '<h3~class="mt-title">~<a>~<span~class' | grep -v '<div~class="mt-media_item">~<form~action='`
+				searchlist3=`cat cache.$filename."$filename2".$count.list | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="media~mediaA">!\r\n<div~class="media~mediaA">!g' | grep ^'<div~class="media~mediaA">' | grep -v '<h3~class="mt-title">~<a>~<span~class' | grep -v '<div~class="media~mediaA">~<form~action='`
 				for ROUND3 in $searchlist3; do
 					piccount=`expr $piccount + 1`
 					count=`expr $count + 1`
