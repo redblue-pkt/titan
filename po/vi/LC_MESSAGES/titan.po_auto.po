@@ -652,7 +652,7 @@ msgstr ""
 "\n"
 " đang hủy sao chép…"
 
-#: skin_default_skin.xml.h:100 tithek_mainmenu.h:13 webif_channellist.h:4
+#: skin_default_skin.xml.h:100 tithek_mainmenu.h:14 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -711,6 +711,10 @@ msgstr "A"
 #: skin_default_skin.xml.h:71 webif_channellist.h:1
 msgid "ALL"
 msgstr "TẤT CẢ"
+
+#: tithek_mainmenu.h:3
+msgid "ARD"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:6 skins_mc_skin.xml.h:6
 msgid "AUDIO"
@@ -1060,43 +1064,43 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr ""
 
-#: tithek_mainmenu.h:3
+#: tithek_mainmenu.h:4
 msgid "Atemio Cable Tuner scan"
 msgstr "Bạn có muốn kích hoạt tuner không ?"
 
-#: tithek_mainmenu.h:4
+#: tithek_mainmenu.h:5
 msgid "Atemio Channelsearch 4xSat"
 msgstr "kiểu dò chương trình"
 
-#: tithek_mainmenu.h:5
+#: tithek_mainmenu.h:6
 msgid "Atemio Harddisc formating"
 msgstr ""
 
-#: tithek_mainmenu.h:6
+#: tithek_mainmenu.h:7
 msgid "Atemio Network configuration stable IP"
 msgstr ""
 
-#: tithek_mainmenu.h:7
+#: tithek_mainmenu.h:8
 msgid "Atemio Series Recoding"
 msgstr ""
 
-#: tithek_mainmenu.h:8
+#: tithek_mainmenu.h:9
 msgid "Atemio Skin (Gui Design)"
 msgstr ""
 
-#: tithek_mainmenu.h:9
+#: tithek_mainmenu.h:10
 msgid "Atemio TitanNit Trailer"
 msgstr ""
 
-#: tithek_mainmenu.h:10
+#: tithek_mainmenu.h:11
 msgid "Atemio TitanNit zap Menu"
 msgstr ""
 
-#: tithek_mainmenu.h:11
+#: tithek_mainmenu.h:12
 msgid "Atemio Tuner configuration Sat"
 msgstr " Cài đặt tuner"
 
-#: tithek_mainmenu.h:12
+#: tithek_mainmenu.h:13
 msgid "Atemio WLAN configuration"
 msgstr "Cấu hình LNB"
 
@@ -1892,7 +1896,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1499
+#: mc_videoplayer.h:888 play.h:1497
 msgid "Can't start playback !"
 msgstr "Không thể phát lại!"
 
@@ -1921,7 +1925,7 @@ msgstr "hủy"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_mainmenu.h:14
+#: tithek_mainmenu.h:15
 msgid "Category"
 msgstr ""
 
@@ -2498,7 +2502,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "MẶC ĐỊNH"
 
-#: play.h:1423 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1421 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:189
 #: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:3
 #: skins_weather_skin.xml.h:2
@@ -3005,7 +3009,7 @@ msgstr ""
 msgid "EJECT"
 msgstr ""
 
-#: adjust.h:71 httpdfunc.h:3878 play.h:1423 skin_default_skin.xml.h:230
+#: adjust.h:71 httpdfunc.h:3878 play.h:1421 skin_default_skin.xml.h:230
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3022,7 +3026,7 @@ msgstr ""
 msgid "EPG"
 msgstr ""
 
-#: play.h:1274 play.h:1280 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1272 play.h:1278 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "EPG Info"
 msgstr "Thông tin EPG"
 
@@ -3189,8 +3193,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1274 play.h:1280 play.h:1289
-#: play.h:1290 play.h:1499 play.h:1715 play.h:1726
+#: player.h:108 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
+#: play.h:1288 play.h:1497 play.h:1713 play.h:1724
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:5
@@ -3645,7 +3649,7 @@ msgstr "Schnelles Umschalten"
 msgid "Fav"
 msgstr ""
 
-#: tithek_mainmenu.h:15
+#: tithek_mainmenu.h:16
 msgid "Favoriten"
 msgstr ""
 
@@ -4618,19 +4622,19 @@ msgstr ""
 msgid "How many days"
 msgstr "Bao nhiêu ngày"
 
-#: tithek_mainmenu.h:16
+#: tithek_mainmenu.h:17
 msgid "HowTo Feedadresse Eingeben"
 msgstr ""
 
-#: tithek_mainmenu.h:17
+#: tithek_mainmenu.h:18
 msgid "HowTo Picons Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:18
+#: tithek_mainmenu.h:19
 msgid "HowTo Secret"
 msgstr ""
 
-#: tithek_mainmenu.h:19
+#: tithek_mainmenu.h:20
 msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
@@ -4970,7 +4974,7 @@ msgstr "Trình duyệt mạng"
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
-#: tithek_mainmenu.h:20
+#: tithek_mainmenu.h:21
 msgid "Internet Radio"
 msgstr "Trình duyệt mạng"
 
@@ -5017,7 +5021,7 @@ msgstr ""
 msgid "Jump"
 msgstr ""
 
-#: play.h:1196
+#: play.h:1194
 msgid "Jump To (min)"
 msgstr ""
 
@@ -5106,7 +5110,7 @@ msgstr "Bàn phím"
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-#: tithek_mainmenu.h:21
+#: tithek_mainmenu.h:22
 msgid "KinoX"
 msgstr ""
 
@@ -5468,11 +5472,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1715
+#: play.h:1713
 msgid "Marker autoseek is started"
 msgstr "Đã thiết lập nhà sản xuất"
 
-#: play.h:1726
+#: play.h:1724
 msgid "Marker autoseek is stopped"
 msgstr "Đã thiết lập nhà sản xuất"
 
@@ -5615,23 +5619,23 @@ msgstr "Tìm kiếm MediaDB hoàn thành"
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: tithek_mainmenu.h:22
+#: tithek_mainmenu.h:23
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:23
+#: tithek_mainmenu.h:24
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:24
+#: tithek_mainmenu.h:25
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:25
+#: tithek_mainmenu.h:26
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:26
+#: tithek_mainmenu.h:27
 msgid "Mediacenter VideoPlayer Preview"
 msgstr ""
 
@@ -5743,7 +5747,7 @@ msgstr ""
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
-#: play.h:614 play.h:1289 play.h:1499 play.h:1715 play.h:1726 possetup.h:98
+#: play.h:614 play.h:1287 play.h:1497 play.h:1713 play.h:1724 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -5907,7 +5911,7 @@ msgstr "di chuyển"
 msgid "Moven"
 msgstr "Di chuyển"
 
-#: tithek_mainmenu.h:27
+#: tithek_mainmenu.h:28
 msgid "Movie4k"
 msgstr ""
 
@@ -5988,7 +5992,7 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:29
 msgid "MyVideo"
 msgstr "My Video"
 
@@ -6075,7 +6079,7 @@ msgstr "Trình duyệt mạng – Dò cifs/nfs-Chia sẻ "
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:30
 msgid "Netzkino"
 msgstr ""
 
@@ -6247,7 +6251,7 @@ msgstr ""
 msgid "November"
 msgstr ""
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:31
 msgid "NowTv"
 msgstr ""
 
@@ -6324,8 +6328,8 @@ msgstr "E"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1274 play.h:1280 play.h:1289
-#: play.h:1290 play.h:1499 play.h:1715 play.h:1726 plugins_dlna_skin.xml.h:7
+#: player.h:108 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
+#: play.h:1288 play.h:1497 play.h:1713 play.h:1724 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -7267,11 +7271,11 @@ msgstr "Cổng HTPTD"
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:33
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:32
 msgid "RTL2-Now"
 msgstr ""
 
@@ -7358,7 +7362,7 @@ msgstr "cho phép thiết bị đọc"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1290
+#: play.h:1288
 msgid "Really Delete ?"
 msgstr "Bạn muốn xóa?"
 
@@ -7464,7 +7468,7 @@ msgstr "Bộ đinh thời ghi"
 msgid "Record cut"
 msgstr "Thư mục chứa bản ghi"
 
-#: play.h:1289
+#: play.h:1287
 msgid "Record in progress"
 msgstr "Đang ghi tên"
 
@@ -7818,7 +7822,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr "dò"
 
-#: dvdplay.h:29 play.h:1423 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1421 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "LỰA CHỌN"
 
@@ -7842,7 +7846,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1423
+#: play.h:1421
 msgid "SORT"
 msgstr "Sắp xếp"
 
@@ -8272,41 +8276,41 @@ msgstr "Không có đầu ra."
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:622 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:33 tmdb.h:898
+#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:34 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "dò"
 
-#: tithek_mainmenu.h:34
+#: tithek_mainmenu.h:35
 msgid "Search (10)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:36
 msgid "Search (20)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:37
 msgid "Search (25)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:38
 msgid "Search (50)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:40
 msgid "Search (local)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:39
 msgid "Search Cast"
 msgstr "tìm kiếm bên trái"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:41
 msgid "Search Movie"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:42
 msgid "Search Serie"
 msgstr "Dò"
 
@@ -8874,7 +8878,7 @@ msgstr "Chọn thiết bị đọc"
 msgid "Softcam selection:"
 msgstr ""
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:43
 msgid "Solarmovie"
 msgstr ""
 
@@ -9195,7 +9199,7 @@ msgstr ""
 msgid "Sunday"
 msgstr "Chủ nhật"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:44
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9605,7 +9609,7 @@ msgstr "thời gian để dừng lại"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Thời gian đợi sau khi tìm kiếm bộ đệm khác"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:45
 msgid "TimeTv"
 msgstr "Bộ định thời"
 
@@ -9718,7 +9722,7 @@ msgstr ""
 msgid "Tint"
 msgstr "màu sắc"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:46
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -10300,7 +10304,7 @@ msgstr "THIẾT LẬP HIỂN THỊ"
 msgid "VLC Player"
 msgstr "Phát VLC"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:47
 msgid "VOX-Now"
 msgstr ""
 
@@ -10710,11 +10714,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:48
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:49
 msgid "XXX-XVIDEOS"
 msgstr "VIDEO"
 
@@ -10764,7 +10768,7 @@ msgid ""
 "Stop the box??? "
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:50
 msgid "Youtube"
 msgstr ""
 
@@ -10772,7 +10776,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:51
 msgid "ZDF"
 msgstr ""
 

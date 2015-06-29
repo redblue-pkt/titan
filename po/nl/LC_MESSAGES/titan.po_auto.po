@@ -656,7 +656,7 @@ msgstr ""
 "\n"
 "Backup wordt afgebroken..."
 
-#: skin_default_skin.xml.h:100 tithek_mainmenu.h:13 webif_channellist.h:4
+#: skin_default_skin.xml.h:100 tithek_mainmenu.h:14 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -715,6 +715,10 @@ msgstr ""
 #: skin_default_skin.xml.h:71 webif_channellist.h:1
 msgid "ALL"
 msgstr "Alle"
+
+#: tithek_mainmenu.h:3
+msgid "ARD"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:6 skins_mc_skin.xml.h:6
 msgid "AUDIO"
@@ -1064,43 +1068,43 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr ""
 
-#: tithek_mainmenu.h:3
+#: tithek_mainmenu.h:4
 msgid "Atemio Cable Tuner scan"
 msgstr "Kabel Tuner aktiveren ?"
 
-#: tithek_mainmenu.h:4
+#: tithek_mainmenu.h:5
 msgid "Atemio Channelsearch 4xSat"
 msgstr "Type kanaalzoekmethode"
 
-#: tithek_mainmenu.h:5
+#: tithek_mainmenu.h:6
 msgid "Atemio Harddisc formating"
 msgstr "Hardeschijf formatteren"
 
-#: tithek_mainmenu.h:6
+#: tithek_mainmenu.h:7
 msgid "Atemio Network configuration stable IP"
 msgstr "Netwerk configuratie vast IP"
 
-#: tithek_mainmenu.h:7
+#: tithek_mainmenu.h:8
 msgid "Atemio Series Recoding"
 msgstr "Series opnemen"
 
-#: tithek_mainmenu.h:8
+#: tithek_mainmenu.h:9
 msgid "Atemio Skin (Gui Design)"
 msgstr "Skin"
 
-#: tithek_mainmenu.h:9
+#: tithek_mainmenu.h:10
 msgid "Atemio TitanNit Trailer"
 msgstr "TitanNit trailer"
 
-#: tithek_mainmenu.h:10
+#: tithek_mainmenu.h:11
 msgid "Atemio TitanNit zap Menu"
 msgstr "TitanNit zap menu"
 
-#: tithek_mainmenu.h:11
+#: tithek_mainmenu.h:12
 msgid "Atemio Tuner configuration Sat"
 msgstr "Tuner Instellingen"
 
-#: tithek_mainmenu.h:12
+#: tithek_mainmenu.h:13
 msgid "Atemio WLAN configuration"
 msgstr "LNB instellingen"
 
@@ -1905,7 +1909,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1499
+#: mc_videoplayer.h:888 play.h:1497
 msgid "Can't start playback !"
 msgstr "Weergave kan niet gestart worden!"
 
@@ -1934,7 +1938,7 @@ msgstr "Annuleren"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_mainmenu.h:14
+#: tithek_mainmenu.h:15
 msgid "Category"
 msgstr "Catergorie"
 
@@ -2515,7 +2519,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr ""
 
-#: play.h:1423 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1421 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:189
 #: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:3
 #: skins_weather_skin.xml.h:2
@@ -3022,7 +3026,7 @@ msgstr ""
 msgid "EJECT"
 msgstr "Uitwerpen"
 
-#: adjust.h:71 httpdfunc.h:3878 play.h:1423 skin_default_skin.xml.h:230
+#: adjust.h:71 httpdfunc.h:3878 play.h:1421 skin_default_skin.xml.h:230
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3039,7 +3043,7 @@ msgstr "Uitwerpen"
 msgid "EPG"
 msgstr ""
 
-#: play.h:1274 play.h:1280 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1272 play.h:1278 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "EPG Info"
 msgstr "EPG informatie"
 
@@ -3208,8 +3212,8 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1274 play.h:1280 play.h:1289
-#: play.h:1290 play.h:1499 play.h:1715 play.h:1726
+#: player.h:108 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
+#: play.h:1288 play.h:1497 play.h:1713 play.h:1724
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:5
@@ -3668,7 +3672,7 @@ msgstr "Snel omschakelen"
 msgid "Fav"
 msgstr "Favorieten"
 
-#: tithek_mainmenu.h:15
+#: tithek_mainmenu.h:16
 msgid "Favoriten"
 msgstr "Favorieten"
 
@@ -4653,19 +4657,19 @@ msgstr ""
 msgid "How many days"
 msgstr ""
 
-#: tithek_mainmenu.h:16
+#: tithek_mainmenu.h:17
 msgid "HowTo Feedadresse Eingeben"
 msgstr ""
 
-#: tithek_mainmenu.h:17
+#: tithek_mainmenu.h:18
 msgid "HowTo Picons Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:18
+#: tithek_mainmenu.h:19
 msgid "HowTo Secret"
 msgstr ""
 
-#: tithek_mainmenu.h:19
+#: tithek_mainmenu.h:20
 msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
@@ -5010,7 +5014,7 @@ msgstr ""
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
-#: tithek_mainmenu.h:20
+#: tithek_mainmenu.h:21
 msgid "Internet Radio"
 msgstr ""
 
@@ -5057,7 +5061,7 @@ msgstr ""
 msgid "Jump"
 msgstr "Spring"
 
-#: play.h:1196
+#: play.h:1194
 msgid "Jump To (min)"
 msgstr "Spring naar (min)"
 
@@ -5146,7 +5150,7 @@ msgstr ""
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-#: tithek_mainmenu.h:21
+#: tithek_mainmenu.h:22
 msgid "KinoX"
 msgstr ""
 
@@ -5508,11 +5512,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1715
+#: play.h:1713
 msgid "Marker autoseek is started"
 msgstr "Markering automatisch zoeken is gestart"
 
-#: play.h:1726
+#: play.h:1724
 msgid "Marker autoseek is stopped"
 msgstr "Markering automatisch zoeken is gestopt"
 
@@ -5659,23 +5663,23 @@ msgstr "MediaDB scan klaar"
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: tithek_mainmenu.h:22
+#: tithek_mainmenu.h:23
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:23
+#: tithek_mainmenu.h:24
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:24
+#: tithek_mainmenu.h:25
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:25
+#: tithek_mainmenu.h:26
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:26
+#: tithek_mainmenu.h:27
 msgid "Mediacenter VideoPlayer Preview"
 msgstr ""
 
@@ -5787,7 +5791,7 @@ msgstr ""
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
-#: play.h:614 play.h:1289 play.h:1499 play.h:1715 play.h:1726 possetup.h:98
+#: play.h:614 play.h:1287 play.h:1497 play.h:1713 play.h:1724 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -5951,7 +5955,7 @@ msgstr "Verplaats Modus"
 msgid "Moven"
 msgstr "Verplaatsen"
 
-#: tithek_mainmenu.h:27
+#: tithek_mainmenu.h:28
 msgid "Movie4k"
 msgstr ""
 
@@ -6032,7 +6036,7 @@ msgstr ""
 msgid "My Video"
 msgstr "Mijn Video"
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:29
 msgid "MyVideo"
 msgstr ""
 
@@ -6119,7 +6123,7 @@ msgstr "Netwerk browser - gevonden cifs/nfs shares"
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:30
 msgid "Netzkino"
 msgstr ""
 
@@ -6291,7 +6295,7 @@ msgstr "Notitie gemaakt"
 msgid "November"
 msgstr ""
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:31
 msgid "NowTv"
 msgstr ""
 
@@ -6368,8 +6372,8 @@ msgstr ""
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1274 play.h:1280 play.h:1289
-#: play.h:1290 play.h:1499 play.h:1715 play.h:1726 plugins_dlna_skin.xml.h:7
+#: player.h:108 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
+#: play.h:1288 play.h:1497 play.h:1713 play.h:1724 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -7313,11 +7317,11 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:33
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:32
 msgid "RTL2-Now"
 msgstr ""
 
@@ -7404,7 +7408,7 @@ msgstr "Reader geactiveerd"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1290
+#: play.h:1288
 msgid "Really Delete ?"
 msgstr "Echt verwijderen?"
 
@@ -7510,7 +7514,7 @@ msgstr ""
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1289
+#: play.h:1287
 msgid "Record in progress"
 msgstr "Opname bezig"
 
@@ -7864,7 +7868,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr "Zoek"
 
-#: dvdplay.h:29 play.h:1423 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1421 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Selecteer"
 
@@ -7888,7 +7892,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1423
+#: play.h:1421
 msgid "SORT"
 msgstr "Sorteren"
 
@@ -8318,41 +8322,41 @@ msgstr "Script heeft geen output of is gestart op de achtergrond."
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:622 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:33 tmdb.h:898
+#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:34 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Zoek"
 
-#: tithek_mainmenu.h:34
+#: tithek_mainmenu.h:35
 msgid "Search (10)"
 msgstr "Zoek (10)"
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:36
 msgid "Search (20)"
 msgstr "Zoek (20)"
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:37
 msgid "Search (25)"
 msgstr "Zoek (25)"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:38
 msgid "Search (50)"
 msgstr "Zoek (50)"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:40
 msgid "Search (local)"
 msgstr "Zoek (lokaal)"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:39
 msgid "Search Cast"
 msgstr "Zoek cast"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:41
 msgid "Search Movie"
 msgstr "Zoek film"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:42
 msgid "Search Serie"
 msgstr "Zoek serie"
 
@@ -8922,7 +8926,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Softcam kiezen:"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:43
 msgid "Solarmovie"
 msgstr ""
 
@@ -9245,7 +9249,7 @@ msgstr ""
 msgid "Sunday"
 msgstr "Zondag"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:44
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9662,7 +9666,7 @@ msgstr "Tijd tot stop (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Wachttijd na zoeken om buffer te vullen"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:45
 msgid "TimeTv"
 msgstr ""
 
@@ -9777,7 +9781,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:46
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -10362,7 +10366,7 @@ msgstr "Beeldscherm instellingen"
 msgid "VLC Player"
 msgstr "VLC speler"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:47
 msgid "VOX-Now"
 msgstr ""
 
@@ -10772,11 +10776,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:48
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:49
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -10828,7 +10832,7 @@ msgstr ""
 "Backup wordt opgeslagen in /tmp\n"
 "Vanaf daar veilig stellen naar uw PC m.b.v. van FTP"
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:50
 msgid "Youtube"
 msgstr ""
 
@@ -10836,7 +10840,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:51
 msgid "ZDF"
 msgstr ""
 
@@ -13457,15 +13461,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Search on Rtl-Now (local)"
-#~ msgstr "Zoek op Rtl-Now (lokaal)"
-
-#~ msgid "Search on Rtl2-Now (local)"
-#~ msgstr "Zoek op Rtl2-Now (lokaal)"
-
-#~ msgid "Search on SuperRTL-Now (local)"
-#~ msgstr "Zoek op SuperRTL-Now (lokaal)"
-
-#~ msgid "Search on VOX-Now (local)"
-#~ msgstr "Zoek op VOX-Now (lokaal)"
