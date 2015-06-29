@@ -111,18 +111,19 @@ int tithekmlehd = 0;
 //check 17 	- Search on TecTime (local)
 //check 18 	- Search on Giga (local)
 //check 19 	- Search on Beeg (local)
-
 //check 20 	- Search on NowTv (local)
-
-//check 20 	- Search on Rtl2-Now (local)
-//check 21 	- Search on Rtl-Now (local)
-//check 22 	- Search on SuperRTL-Now (local)
-//check 23 	- Search on VOX-Now (local)
+//check 21 	- Search on All (local)
 
 //check 24 	- Search on Xvideos (local)
 //check 25 	- Search on Mle-HD (local)
 //check 26 	- Search on Netzkino (local)
 //check 27 	- Search on FilmOn (local)
+
+//removed
+//check 20 	- Search on Rtl2-Now (local)
+//check 21 	- Search on Rtl-Now (local)
+//check 22 	- Search on SuperRTL-Now (local)
+//check 23 	- Search on VOX-Now (local)
 //check 28 	- Search on RtlNitro-Now (local)
 //check 29 	- Search on NTV-Now (local)
 
