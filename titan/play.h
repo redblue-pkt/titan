@@ -778,8 +778,6 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 20;
 		else if(ostrcmp(mbox->name, "Search on All (local)") == 0)
 			ret = 21;
-		else if(ostrcmp(mbox->name, "Search on VOX-Now (local)") == 0)
-			ret = 23;
 		else if(ostrcmp(mbox->name, "Search on Xvideos (local)") == 0)
 			ret = 24;
 		else if(ostrcmp(mbox->name, "Search on Mle-HD (local)") == 0)
