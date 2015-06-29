@@ -12,7 +12,6 @@
 #include "beeg.h"
 #include "kinox.h"
 #include "myvideo.h"
-#include "rtl2now.h"
 #include "movie4k.h"
 #include "mlehd.h"
 #include "xvideos.h"
@@ -49,6 +48,7 @@
 #include "vidbull.h"
 #include "vodlocker.h"
 #include "vidto.h"
+#include "nowtv.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

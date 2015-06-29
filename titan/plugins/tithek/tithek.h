@@ -16,10 +16,10 @@ int tithekmlehd = 0;
 //flag 2	- http (default streamurl)
 //flag 3	- menu cover
 //flag 4	- youtube
-//flag 5	- rtl2now
-//flag 6	- superrtlnow
-//flag 7	- rtlnow
-//flag 8	- voxnow
+//flag 5	- nowtv //rtl2now
+//flag 6	- nowtv pay //superrtlnow
+//flag 7	- nowtv local serach //rtlnow
+//flag 8	- nowtv search //voxnow
 //flag 9	- youtube suche 10 
 //flag 10	- youtube suche 25
 //flag 11	- youtube suche 50
@@ -206,21 +206,11 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if((node->flag == 9996 || node->flag == 9997 || node->flag == 9998 || node->flag == 9999) && !file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
 		skip = 1;
-	else if(node->flag == 16 && pay == 0)
-		skip = 1;
-	else if(node->flag == 17 && pay == 0)
-		skip = 1;
-	else if(node->flag == 18 && pay == 0)
-		skip = 1;
-	else if(node->flag == 19 && pay == 0)
+	else if(node->flag == 6 && pay == 0)
 		skip = 1;
 	else if(node->flag == 1 && pay == 0)
 		skip = 1;
 	else if(node->flag == 35 && pay == 0)
-		skip = 1;
-	else if(node->flag == 68 && pay == 0)
-		skip = 1;
-	else if(node->flag == 71 && pay == 0)
 		skip = 1;
 	else if(titheksolarmovie == 1 && node->flag == 9996 && sos == 0)
 	{
@@ -1305,21 +1295,9 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = youtube_hoster(tmpstr);
 	}						
-	else if(((struct tithek*)listbox->select->handle)->flag == 5)
+	else if(((struct tithek*)listbox->select->handle)->flag == 5 || 6)
 	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 6)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 7)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 8)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.voxnow.de", "voxnow", tmpstr2, 1);
+		if(tmpstr != NULL) tmpstr1 = nowtv(tmpstr);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 12)
 	{
@@ -1328,22 +1306,6 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	else if(((struct tithek*)listbox->select->handle)->flag == 14)
 	{
 		if(tmpstr != NULL) tmpstr1 = kinox(tmpstr);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 16)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 17)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 18)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.voxnow.de", "voxnow", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 19)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 38)
 	{
@@ -1376,22 +1338,6 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	else if(((struct tithek*)listbox->select->handle)->flag == 64)
 	{
 		if(tmpstr != NULL) tmpstr1 = tvtoast(tmpstr);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 67)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.rtlnitronow.de", "rtlnitronow", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 68)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.rtlnitronow.de", "rtlnitronow", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 70)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.n-tvnow.de", "ntvnow", tmpstr2, 1);
-	}
-	else if(((struct tithek*)listbox->select->handle)->flag == 71)
-	{
-		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.n-tvnow.de", "ntvnow", tmpstr2, 1);
 	}
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr2); tmpstr2 = NULL;
@@ -2001,7 +1947,7 @@ why ?
 			{
 				clearscreen(grid);
 
-				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 38) || (((struct tithek*)listbox->select->handle)->flag == 42) || (((struct tithek*)listbox->select->handle)->flag == 45) || (((struct tithek*)listbox->select->handle)->flag == 46) || (((struct tithek*)listbox->select->handle)->flag == 64) || (((struct tithek*)listbox->select->handle)->flag == 50) || (((struct tithek*)listbox->select->handle)->flag == 41) || (((struct tithek*)listbox->select->handle)->flag == 43) || (((struct tithek*)listbox->select->handle)->flag == 67) || (((struct tithek*)listbox->select->handle)->flag == 68) || (((struct tithek*)listbox->select->handle)->flag == 70) || (((struct tithek*)listbox->select->handle)->flag == 71))
+				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43)
 				{
 					submenu(listbox, load, title);
 //					drawscreen(grid, 0, 0);
@@ -2119,11 +2065,6 @@ why ?
 				else if(((struct tithek*)listbox->select->handle)->flag == 65)
 				{
 					if(tvtoast_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-				}
-				else if(((struct tithek*)listbox->select->handle)->flag == 69)
-				{
-					if(rtlnitronow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 44)
