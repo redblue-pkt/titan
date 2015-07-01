@@ -1,0 +1,316 @@
+.:
+dr-xr-xr-x    2         0 Jan  8 19:12 audio
+dr-xr-xr-x    3         0 Jan  8 19:12 avs
+dr-xr-xr-x    3         0 Jan  8 19:12 denc
+dr-xr-xr-x    4         0 Jan  8 19:12 encoder
+dr-xr-xr-x    3         0 Jan  8 19:12 fb
+dr-xr-xr-x    2         0 Jan  8 19:12 fp
+dr-xr-xr-x    6         0 Jan  8 19:12 frontend
+dr-xr-xr-x    2         0 Jan  8 19:12 ft
+dr-xr-xr-x    2         0 Jan  8 19:12 hdmi
+dr-xr-xr-x    2         0 Jan  8 19:12 info
+dr-xr-xr-x    4         0 Jan  8 19:12 ir
+dr-xr-xr-x    2         0 Jan  8 19:12 lcd
+dr-xr-xr-x    2         0 Jan  8 19:12 pcr
+dr-xr-xr-x    2         0 Jan  8 19:12 tsmux
+dr-xr-xr-x    2         0 Jan  8 19:12 video
+dr-xr-xr-x    4         0 Jan  8 19:12 vmpeg
+
+./audio:
+-rw-r--r--    1         0 Jan  8 19:12 aac
+-rw-r--r--    1         0 Jan  8 19:12 aac_choices
+-rw-r--r--    1         0 Jan  8 19:12 ac3
+-rw-r--r--    1         0 Jan  8 19:12 ac3_choices
+-rw-r--r--    1         0 Jan  8 19:12 audio_delay_bitstream
+-rw-r--r--    1         0 Jan  8 19:12 audio_delay_pcm
+-rw-r--r--    1         0 Jan  8 19:12 force_hdmi_audio_disable
+-rw-r--r--    1         0 Jan  8 19:12 j1_mute
+-rw-r--r--    1         0 Jan  8 19:12 pts_offset
+
+./avs:
+dr-xr-xr-x    2         0 Jan  8 19:12 0
+
+./avs/0:
+-rw-r--r--    1         0 Jan  8 19:12 colorformat
+-rw-r--r--    1         0 Jan  8 19:12 colorformat_choices
+-rw-r--r--    1         0 Jan  8 19:12 fb
+-rw-r--r--    1         0 Jan  8 19:12 fb_choices
+-rw-r--r--    1         0 Jan  8 19:12 input
+-rw-r--r--    1         0 Jan  8 19:12 input_choices
+-rw-r--r--    1         0 Jan  8 19:12 sb
+-rw-r--r--    1         0 Jan  8 19:12 sb_choices
+-rw-r--r--    1         0 Jan  8 19:12 volume
+
+./denc:
+dr-xr-xr-x    2         0 Jan  8 19:12 0
+
+./denc/0:
+-rw-r--r--    1         0 Jan  8 19:12 wss
+-rw-r--r--    1         0 Jan  8 19:12 wss_choices
+
+./encoder:
+dr-xr-xr-x    2         0 Jan  8 19:12 0
+dr-xr-xr-x    2         0 Jan  8 19:12 1
+-rw-r--r--    1         0 Jan  8 19:12 enable
+
+./encoder/0:
+-rw-r--r--    1         0 Jan  8 19:12 apply
+-rw-r--r--    1         0 Jan  8 19:12 aspectratio
+-rw-r--r--    1         0 Jan  8 19:12 audio_codec
+-rw-r--r--    1         0 Jan  8 19:12 bitrate
+-rw-r--r--    1         0 Jan  8 19:12 decoder
+-rw-r--r--    1         0 Jan  8 19:12 display_format
+-rw-r--r--    1         0 Jan  8 19:12 framerate
+-rw-r--r--    1         0 Jan  8 19:12 framerate_choices
+-rw-r--r--    1         0 Jan  8 19:12 gop_frameb
+-rw-r--r--    1         0 Jan  8 19:12 gop_framep
+-rw-r--r--    1         0 Jan  8 19:12 height
+-rw-r--r--    1         0 Jan  8 19:12 interlaced
+-rw-r--r--    1         0 Jan  8 19:12 level
+-rw-r--r--    1         0 Jan  8 19:12 profile
+-rw-r--r--    1         0 Jan  8 19:12 video_codec
+-rw-r--r--    1         0 Jan  8 19:12 width
+
+./encoder/1:
+-rw-r--r--    1         0 Jan  8 19:12 apply
+-rw-r--r--    1         0 Jan  8 19:12 aspectratio
+-rw-r--r--    1         0 Jan  8 19:12 audio_codec
+-rw-r--r--    1         0 Jan  8 19:12 bitrate
+-rw-r--r--    1         0 Jan  8 19:12 decoder
+-rw-r--r--    1         0 Jan  8 19:12 display_format
+-rw-r--r--    1         0 Jan  8 19:12 framerate
+-rw-r--r--    1         0 Jan  8 19:12 framerate_choices
+-rw-r--r--    1         0 Jan  8 19:12 gop_frameb
+-rw-r--r--    1         0 Jan  8 19:12 gop_framep
+-rw-r--r--    1         0 Jan  8 19:12 height
+-rw-r--r--    1         0 Jan  8 19:12 interlaced
+-rw-r--r--    1         0 Jan  8 19:12 level
+-rw-r--r--    1         0 Jan  8 19:12 profile
+-rw-r--r--    1         0 Jan  8 19:12 video_codec
+-rw-r--r--    1         0 Jan  8 19:12 width
+
+./fb:
+-rw-r--r--    1         0 Jan  8 19:12 3dmode
+-rw-r--r--    1         0 Jan  8 19:12 alpha_op
+-rw-r--r--    1         0 Jan  8 19:12 alpha_op_choices
+-rw-r--r--    1         0 Jan  8 19:12 alpha_value
+-rw-r--r--    1         0 Jan  8 19:12 dst_height
+-rw-r--r--    1         0 Jan  8 19:12 dst_left
+-rw-r--r--    1         0 Jan  8 19:12 dst_top
+-rw-r--r--    1         0 Jan  8 19:12 dst_width
+dr-xr-xr-x    2         0 Jan  8 19:12 primary
+-rw-r--r--    1         0 Jan  8 19:12 znorm
+
+./fb/primary:
+-rw-r--r--    1         0 Jan  8 19:12 3d
+-rw-r--r--    1         0 Jan  8 19:12 3d_choices
+-rw-r--r--    1         0 Jan  8 19:12 zoffset
+
+./fp:
+-rw-r--r--    1         0 Jan  8 19:12 enable_clock
+-rw-r--r--    1         0 Jan  8 19:12 enable_led
+-rw-r--r--    1         0 Jan  8 19:12 events
+-rw-r--r--    1         0 Jan  8 19:12 fan
+-rw-r--r--    1         0 Jan  8 19:12 fan_pwm
+-rw-r--r--    1         0 Jan  8 19:12 fan_vlt
+-rw-r--r--    1         0 Jan  8 19:12 led0_pattern
+-rw-r--r--    1         0 Jan  8 19:12 led1_pattern
+-rw-r--r--    1         0 Jan  8 19:12 led_pattern_speed
+-rw-r--r--    1         0 Jan  8 19:12 mouse
+-rw-r--r--    1         0 Jan  8 19:12 oled_brightness
+-rw-r--r--    1         0 Jan  8 19:12 rtc
+-rw-r--r--    1         0 Jan  8 19:12 rtc_offset
+-rw-r--r--    1         0 Jan  8 19:12 vcr_fns
+-rw-r--r--    1         0 Jan  8 19:12 version
+-rw-r--r--    1         0 Jan  8 19:12 vfd_type
+-rw-r--r--    1         0 Jan  8 19:12 wakeup_time
+-rw-r--r--    1         0 Jan  8 19:12 was_timer_wakeup
+-rw-r--r--    1         0 Jan  8 19:12 wol
+
+./frontend:
+dr-xr-xr-x    2         0 Jan  8 19:12 0
+dr-xr-xr-x    2         0 Jan  8 19:12 1
+dr-xr-xr-x    2         0 Jan  8 19:12 2
+dr-xr-xr-x    2         0 Jan  8 19:12 3
+
+./frontend/0:
+-rw-r--r--    1         0 Jan  8 19:12 bscan_results
+-rw-r--r--    1         0 Jan  8 19:12 bscan_start
+-rw-r--r--    1         0 Jan  8 19:12 bscan_status
+-rw-r--r--    1         0 Jan  8 19:12 bscan_stop
+-rw-r--r--    1         0 Jan  8 19:12 mode
+-rw-r--r--    1         0 Jan  8 19:12 static_current_limiting
+-rw-r--r--    1         0 Jan  8 19:12 static_current_limiting_choices
+
+./frontend/1:
+-rw-r--r--    1         0 Jan  8 19:12 bscan_results
+-rw-r--r--    1         0 Jan  8 19:12 bscan_start
+-rw-r--r--    1         0 Jan  8 19:12 bscan_status
+-rw-r--r--    1         0 Jan  8 19:12 bscan_stop
+-rw-r--r--    1         0 Jan  8 19:12 mode
+-rw-r--r--    1         0 Jan  8 19:12 static_current_limiting
+-rw-r--r--    1         0 Jan  8 19:12 static_current_limiting_choices
+
+./frontend/2:
+-rw-r--r--    1         0 Jan  8 19:12 bscan_results
+-rw-r--r--    1         0 Jan  8 19:12 bscan_start
+-rw-r--r--    1         0 Jan  8 19:12 bscan_status
+-rw-r--r--    1         0 Jan  8 19:12 bscan_stop
+-rw-r--r--    1         0 Jan  8 19:12 mode
+-rw-r--r--    1         0 Jan  8 19:12 static_current_limiting
+-rw-r--r--    1         0 Jan  8 19:12 static_current_limiting_choices
+
+./frontend/3:
+-rw-r--r--    1         0 Jan  8 19:12 bscan_results
+-rw-r--r--    1         0 Jan  8 19:12 bscan_start
+-rw-r--r--    1         0 Jan  8 19:12 bscan_status
+-rw-r--r--    1         0 Jan  8 19:12 bscan_stop
+-rw-r--r--    1         0 Jan  8 19:12 mode
+-rw-r--r--    1         0 Jan  8 19:12 static_current_limiting
+-rw-r--r--    1         0 Jan  8 19:12 static_current_limiting_choices
+
+./ft:
+-rw-r--r--    1         0 Jan  8 19:12 ci
+-rw-r--r--    1         0 Jan  8 19:12 config
+-rw-r--r--    1         0 Jan  8 19:12 ini
+-rw-r--r--    1         0 Jan  8 19:12 macadr
+-rw-r--r--    1         0 Jan  8 19:12 mcu
+-rw-r--r--    1         0 Jan  8 19:12 rcu
+-rw-r--r--    1         0 Jan  8 19:12 rs232
+-rw-r--r--    1         0 Jan  8 19:12 sci
+-rw-r--r--    1         0 Jan  8 19:12 tssrc
+
+./hdmi:
+-rw-r--r--    1         0 Jan  8 19:12 bypass_edid_checking
+-rw-r--r--    1         0 Jan  8 19:12 enable_hdmi_reset
+
+./info:
+-rw-r--r--    1         0 Jan  8 19:12 boxtype
+-rw-r--r--    1         0 Jan  8 19:12 chipset
+-rw-r--r--    1         0 Jan  8 19:12 help
+-rw-r--r--    1         0 Jan  8 19:12 model
+-rw-r--r--    1         0 Jan  8 19:12 version
+-rw-r--r--    1         0 Jan  8 19:12 vumodel
+
+./ir:
+dr-xr-xr-x    2         0 Jan  8 19:12 mouse
+dr-xr-xr-x    2         0 Jan  8 19:12 rc
+
+./ir/mouse:
+-rw-r--r--    1         0 Jan  8 19:12 left_right_swap
+-rw-r--r--    1         0 Jan  8 19:12 left_right_swap_choices
+-rw-r--r--    1         0 Jan  8 19:12 up_down_swap
+-rw-r--r--    1         0 Jan  8 19:12 up_down_swap_choices
+
+./ir/rc:
+-rw-r--r--    1         0 Jan  8 19:12 key_swap
+-rw-r--r--    1         0 Jan  8 19:12 key_swap_choices
+-rw-r--r--    1         0 Jan  8 19:12 mask0
+-rw-r--r--    1         0 Jan  8 19:12 mask1
+-rw-r--r--    1         0 Jan  8 19:12 type
+
+./lcd:
+-rw-r--r--    1         0 Jan  8 19:12 bpp
+-rw-r--r--    1         0 Jan  8 19:12 final_scroll_delay
+-rw-r--r--    1         0 Jan  8 19:12 initial_scroll_delay
+-rw-r--r--    1         0 Jan  8 19:12 oled_brightness
+-rw-r--r--    1         0 Jan  8 19:12 scroll_delay
+-rw-r--r--    1         0 Jan  8 19:12 scroll_repeats
+-rw-r--r--    1         0 Jan  8 19:12 show_symbols
+-rw-r--r--    1         0 Jan  8 19:12 xres
+-rw-r--r--    1         0 Jan  8 19:12 yres
+
+./pcr:
+-rw-r--r--    1         0 Jan  8 19:12 pcr_stc_offset
+
+./tsmux:
+-rw-r--r--    1         0 Jan  8 19:12 ci0_input
+-rw-r--r--    1         0 Jan  8 19:12 ci0_input_choices
+-rw-r--r--    1         0 Jan  8 19:12 ci0_tsclk
+-rw-r--r--    1         0 Jan  8 19:12 ci0_tsclk_choices
+-rw-r--r--    1         0 Jan  8 19:12 ci1_input
+-rw-r--r--    1         0 Jan  8 19:12 ci1_input_choices
+-rw-r--r--    1         0 Jan  8 19:12 ci1_tsclk
+-rw-r--r--    1         0 Jan  8 19:12 ci1_tsclk_choices
+-rw-r--r--    1         0 Jan  8 19:12 input0
+-rw-r--r--    1         0 Jan  8 19:12 input0_choices
+-rw-r--r--    1         0 Jan  8 19:12 input1
+-rw-r--r--    1         0 Jan  8 19:12 input1_choices
+-rw-r--r--    1         0 Jan  8 19:12 input2
+-rw-r--r--    1         0 Jan  8 19:12 input2_choices
+-rw-r--r--    1         0 Jan  8 19:12 input3
+-rw-r--r--    1         0 Jan  8 19:12 input3_choices
+
+./video:
+-rw-r--r--    1         0 Jan  8 19:12 alpha
+-rw-r--r--    1         0 Jan  8 19:12 aspect
+-rw-r--r--    1         0 Jan  8 19:12 aspect_choices
+-rw-r--r--    1         0 Jan  8 19:12 hdmi_colorspace
+-rw-r--r--    1         0 Jan  8 19:12 hdmi_colorspace_choices
+-rw-r--r--    1         0 Jan  8 19:12 policy
+-rw-r--r--    1         0 Jan  8 19:12 policy2
+-rw-r--r--    1         0 Jan  8 19:12 policy_choices
+-rw-r--r--    1         0 Jan  8 19:12 videomode
+-rw-r--r--    1         0 Jan  8 19:12 videomode_50hz
+-rw-r--r--    1         0 Jan  8 19:12 videomode_50hz_choices
+-rw-r--r--    1         0 Jan  8 19:12 videomode_60hz
+-rw-r--r--    1         0 Jan  8 19:12 videomode_60hz_choices
+-rw-r--r--    1         0 Jan  8 19:12 videomode_choices
+-rw-r--r--    1         0 Jan  8 19:12 videomode_preferred
+
+./vmpeg:
+dr-xr-xr-x    2         0 Jan  8 19:12 0
+dr-xr-xr-x    2         0 Jan  8 19:12 1
+-rw-r--r--    1         0 Jan  8 19:12 deinterlace
+-rw-r--r--    1         0 Jan  8 19:12 deinterlace_choices
+
+./vmpeg/0:
+-rw-r--r--    1         0 Jan  8 19:12 aspect
+-rw-r--r--    1         0 Jan  8 19:12 codec
+-rw-r--r--    1         0 Jan  8 19:12 dst_apply
+-rw-r--r--    1         0 Jan  8 19:12 dst_height
+-rw-r--r--    1         0 Jan  8 19:12 dst_left
+-rw-r--r--    1         0 Jan  8 19:12 dst_top
+-rw-r--r--    1         0 Jan  8 19:12 dst_width
+-rw-r--r--    1         0 Jan  8 19:12 fallback_framerate
+-rw-r--r--    1         0 Jan  8 19:12 fallback_framerate_choices
+-rw-r--r--    1         0 Jan  8 19:12 framerate
+-rw-r--r--    1         0 Jan  8 19:12 pep_apply
+-rw-r--r--    1         0 Jan  8 19:12 pep_auto_flesh
+-rw-r--r--    1         0 Jan  8 19:12 pep_block_noise_reduction
+-rw-r--r--    1         0 Jan  8 19:12 pep_blue_boost
+-rw-r--r--    1         0 Jan  8 19:12 pep_brightness
+-rw-r--r--    1         0 Jan  8 19:12 pep_contrast
+-rw-r--r--    1         0 Jan  8 19:12 pep_digital_contour_removal
+-rw-r--r--    1         0 Jan  8 19:12 pep_dynamic_contrast
+-rw-r--r--    1         0 Jan  8 19:12 pep_green_boost
+-rw-r--r--    1         0 Jan  8 19:12 pep_hue
+-rw-r--r--    1         0 Jan  8 19:12 pep_mosquito_noise_reduction
+-rw-r--r--    1         0 Jan  8 19:12 pep_saturation
+-rw-r--r--    1         0 Jan  8 19:12 pep_scaler_sharpness
+-rw-r--r--    1         0 Jan  8 19:12 pep_sharpness
+-rw-r--r--    1         0 Jan  8 19:12 pep_split
+-rw-r--r--    1         0 Jan  8 19:12 progressive
+-rw-r--r--    1         0 Jan  8 19:12 pts
+-rw-r--r--    1         0 Jan  8 19:12 pts_offset
+-rw-r--r--    1         0 Jan  8 19:12 sharpness_control
+-rw-r--r--    1         0 Jan  8 19:12 sharpness_control_choices
+-rw-r--r--    1         0 Jan  8 19:12 sharpness_value
+-rw-r--r--    1         0 Jan  8 19:12 sync_offset
+-rw-r--r--    1         0 Jan  8 19:12 xres
+-rw-r--r--    1         0 Jan  8 19:12 yres
+
+./vmpeg/1:
+-rw-r--r--    1         0 Jan  8 19:12 aspect
+-rw-r--r--    1         0 Jan  8 19:12 codec
+-rw-r--r--    1         0 Jan  8 19:12 dst_apply
+-rw-r--r--    1         0 Jan  8 19:12 dst_height
+-rw-r--r--    1         0 Jan  8 19:12 dst_left
+-rw-r--r--    1         0 Jan  8 19:12 dst_top
+-rw-r--r--    1         0 Jan  8 19:12 dst_width
+-rw-r--r--    1         0 Jan  8 19:12 fallback_framerate
+-rw-r--r--    1         0 Jan  8 19:12 fallback_framerate_choices
+-rw-r--r--    1         0 Jan  8 19:12 framerate
+-rw-r--r--    1         0 Jan  8 19:12 progressive
+-rw-r--r--    1         0 Jan  8 19:12 xres
+-rw-r--r--    1         0 Jan  8 19:12 yres
