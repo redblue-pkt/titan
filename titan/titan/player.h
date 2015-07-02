@@ -28,6 +28,7 @@ extern ManagerHandler_t ManagerHandler;
 #endif
 
 #ifdef EPLAYER4
+int GST_VERSION_MAJOR = 0;
 GstElement *pipeline = NULL;
 gint m_framerate;
 unsigned long long m_gst_startpts = 0;
