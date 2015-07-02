@@ -771,7 +771,7 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	}
 	guint8 *data;
 //	gsize size;
-#if GST_VERSION_MAJOR < 1
+#if GST_VERSION_MAJOR > 1
 	GstMapInfo map;
 	gst_buffer_map(buffer, &map, GST_MAP_READ);
 #endif
