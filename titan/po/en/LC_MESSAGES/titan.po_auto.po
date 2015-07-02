@@ -1640,7 +1640,7 @@ msgstr "Favourites"
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1243
+#: player.h:1248
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -3228,7 +3228,7 @@ msgstr "ERROR: can't set marker in this file"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
+#: player.h:109 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
 #: play.h:1288 play.h:1497 play.h:1713 play.h:1724
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
@@ -5808,7 +5808,7 @@ msgstr ""
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
 #: play.h:614 play.h:1287 play.h:1497 play.h:1713 play.h:1724 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
@@ -6390,7 +6390,7 @@ msgstr ""
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
+#: player.h:109 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
 #: play.h:1288 play.h:1497 play.h:1713 play.h:1724 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
@@ -9087,7 +9087,7 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr "Start WLAN?"
 
-#: mc_videoplayer.h:904 player.h:108
+#: mc_videoplayer.h:904 player.h:109
 msgid "Start at last position ?"
 msgstr "Resume from last position?"
 
