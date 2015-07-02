@@ -712,10 +712,11 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 {
 	//printf("++++++ subtitelflag: %i\n", subtitleflag);
 	if(subtitleflag == 0 || subtitleflag == 2) return;
-	
-//	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
-//	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
-	
+
+#if GST_VERSION_MAJOR < 1
+	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
+	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
+#endif	
 	time_t running_pts = 0;
 	gint64 pos = 0;
 	int32_t decoder_ms;
@@ -748,8 +749,9 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	}
 	gint64 buf_pos = GST_BUFFER_PTS(buffer);
 	size_t len = map.size;
-//	printf("gst_buffer_get_size %zu map.size %zu\n", gst_buffer_get_size(buffer), len);
-
+#if GST_VERSION_MAJOR < 1
+	printf("gst_buffer_get_size %zu map.size %zu\n", gst_buffer_get_size(buffer), len);
+#endif
 	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
 #endif
 			
@@ -2236,8 +2238,11 @@ unsigned long long playergetpts()
 /*
 	if(pipeline)
 	{
-//		gst_element_query_position(pipeline, &fmt, (gint64*)&pts);
+#if GST_VERSION_MAJOR < 1
+		gst_element_query_position(pipeline, &fmt, (gint64*)&pts);
+#else
 		gst_element_query_position(pipeline, fmt, (gint64*)&pts);
+#endif
 		sec = pts / 1000000000;
 		pts = sec * 90000;
 		debug(150, "Pts = %02d:%02d:%02d (%llu.0000 sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
@@ -2263,8 +2268,11 @@ unsigned long long playergetpts()
 
 		gst_object_unref(sink);
 
-//		if(!use_get_decoder_time && !gst_element_query_position(pipeline, &fmt, &pos))
+#if GST_VERSION_MAJOR < 1
+		if(!use_get_decoder_time && !gst_element_query_position(pipeline, &fmt, &pos))
+#else
 		if(!use_get_decoder_time && !gst_element_query_position(pipeline, fmt, &pos))
+#endif
 			return 0;
 
 		/* pos is in nanoseconds. we have 90 000 pts per second. */
@@ -2931,8 +2939,11 @@ void playersend_ff_fr_event(gdouble rate) {
 	GstEvent *seek_event;
    
 	/* Obtain the current position, needed for the seek event */
-//	if (!gst_element_query_position (pipeline, &format, &position)) {
+#if GST_VERSION_MAJOR < 1
+	if (!gst_element_query_position (pipeline, &format, &position)) {
+#else
 	if (!gst_element_query_position (pipeline, format, &position)) {
+#endif
 		g_printerr ("Unable to retrieve current position.\n");
 		return;
 	}
