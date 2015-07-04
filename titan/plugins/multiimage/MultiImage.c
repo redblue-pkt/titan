@@ -259,7 +259,7 @@ int no_mdev()
 	
 	if(ren != 1)
 	{ 
-		if(textbox("MultiImage", _("All data on this device will be deleted!\nOK?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+		if(textbox("MultiImage", _("All data on this device will be deleted!\nOK?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 650, 200, 0, 0) == 2)
 		{
 			free(mdev); mdev = NULL;
 			return 1;
