@@ -1,8 +1,8 @@
 [createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.clean.po
-xgettext: Non-ASCII string at plugins_multiimage_skin.xml.h:4.
+xgettext: Non-ASCII string at tpk_description.h:83.
           Please specify the source encoding through --from-code.
 [createpo.sh] xgettext --omit-header -s -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
-xgettext: Non-ASCII string at plugins_multiimage_skin.xml.h:4.
+xgettext: Non-ASCII string at tpk_description.h:83.
           Please specify the source encoding through --from-code.
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po: utf-8
