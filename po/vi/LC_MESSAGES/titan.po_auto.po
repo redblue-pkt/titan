@@ -13397,9 +13397,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "GmediaRender"
-#~ msgstr "Media Center"
-
-#~ msgid "UPNP Media Render"
-#~ msgstr "Media Center"
