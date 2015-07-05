@@ -7354,7 +7354,7 @@ msgstr "Drücken Sie eine Gerätetaste"
 
 #: skin_default_skin.xml.h:521
 msgid "Press OK after scan has ended."
-msgstr ""
+msgstr "Drücken Sie Ok, wenn der Suchlauf abgeschlossen ist"
 
 #: hwtest.h:206
 msgid "Press OK or EXIT"
