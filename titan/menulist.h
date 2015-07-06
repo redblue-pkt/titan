@@ -289,7 +289,7 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 
 	while(1)
 	{
-		if(listbox->select != NULL)
+		if(listbox->select != NULL && fromthread == 0)
 			writevfdmenu(listbox->select->text);
 		
 		rcret = waitrc(screen, 0, 0);
