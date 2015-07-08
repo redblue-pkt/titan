@@ -682,7 +682,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					if(buf[0] == 0x47)
 					{
 						buf[3] = buf[3] & 0x3f;
-					}
+					} 
 #endif
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 				}
