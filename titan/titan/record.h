@@ -679,10 +679,13 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						}
 					}*/
 #ifdef MIPSEL
-					if(buf[0] == 0x47)
-					{
-						buf[3] = buf[3] & 0x3f;
-					}
+				i = 0;
+				while(i < readret-1)
+				{
+					if(buf[i] == 0x47)
+						buf[i+3] = buf[i+3] & 0x3f;
+					i = i + 188;
+				}
 #endif
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 				}
