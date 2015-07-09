@@ -2173,7 +2173,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr "Pasirinkite Bendrinamus i srao"
 
-#: ard.h:97 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Pasirinkite savo Srauto Format i emiau pateikto srao"
 
@@ -8338,7 +8338,7 @@ msgstr "Vykdyti scenarij"
 msgid "Script has no output or started in background."
 msgstr ""
 
-#: ard.h:127 ard.h:129 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
+#: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
 #: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:797
@@ -9193,7 +9193,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: ard.h:97 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr "Srauto Meniu"
 
@@ -11927,7 +11927,7 @@ msgstr ""
 msgid "menuprotect"
 msgstr ""
 
-#: skin_default_skin.xml.h:829 webif_help.h:51
+#: webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -12930,10 +12930,6 @@ msgstr ""
 msgid "system_backup_restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:831
-msgid "system_infos"
-msgstr ""
-
 #: webif_help.h:95
 msgid "system_infos_main"
 msgstr ""
@@ -12942,7 +12938,7 @@ msgstr ""
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:830 webif_help.h:96
+#: webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
