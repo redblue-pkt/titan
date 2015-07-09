@@ -678,26 +678,31 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 							dvbreadfd(servicenode->recsrcfd, buf, recbsize - i, i, readtimeout, 0);
 						}
 					}*/
-#ifdef MIPSEL
-					i = 0;
-					if(buf[i] != 0x47)
+#ifndef MIPSEL
+					if(servicenode->type == RECORDPLAY)
 					{
-						i = 1;
-						while(i <= 188)
+#endif			
+						i = 0;
+						if(buf[i] != 0x47)
 						{
-							if(buf[i] == 0x47) break;
-							i++;
+							i = 1;
+							while(i <= 188)
+							{
+								if(buf[i] == 0x47) break;
+								i++;
+							}
 						}
-					}
-					if(i <= 188)
-					{
-						while(i < readret-1)
+						if(i <= 188)
 						{
-							if(buf[i] == 0x47)
-								buf[i+3] = buf[i+3] & 0x3f;
-							i = i + 188;
+							while(i < readret-1)
+							{
+								if(buf[i] == 0x47)
+									buf[i+3] = buf[i+3] & 0x3f;
+								i = i + 188;
+							}
 						}
-					}
+#ifndef MIPSEL
+					}						
 #endif
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 				}
