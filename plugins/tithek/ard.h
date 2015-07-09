@@ -20,13 +20,13 @@ char* ard(char* link)
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	titheklog(debuglevel, "/tmp/tithek/ard1_tmpstr", NULL, NULL, NULL,tmpstr);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr", tmpstr, 0);
 
 	tmpstr2 = string_resub("_mediaStreamArray\":[", "]}],\"_sortierArray\"", tmpstr, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/ard2_tmpstr2", tmpstr2, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/ard2_tmpstr2", tmpstr2, 0);
 
 	tmpstr2 = string_replace_all("{", "\n", tmpstr2, 1);
-//	writesys("/var/usr/local/share/titan/plugins/tithek/ard2_tmpstr3", tmpstr2, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek/ard2_tmpstr3", tmpstr2, 0);
 
 	int count = 0, i = 0;	
 	struct splitstr* ret1 = NULL;
@@ -36,18 +36,28 @@ char* ard(char* link)
 	{
 		if(ret1[i].part != NULL && ostrstr(ret1[i].part, "_quality") != NULL)
 		{
-			if(ostrstr(ret1[i].part, "mp4") != NULL)
+		
+			if(ostrstr(ret1[i].part, "f4m") != NULL)
+				pic = ostrcat("f4m.png", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "mp4") != NULL)
 				pic = ostrcat("mp4.png", NULL, 0, 0);
 			else if(ostrstr(ret1[i].part, "3gp") != NULL)
 				pic = ostrcat("3gp.png", NULL, 0, 0);
 			else if(ostrstr(ret1[i].part, "flv") != NULL)
 				pic = ostrcat("flv.png", NULL, 0, 0);
 
+			if(ostrstr(ret1[i].part, "_quality\":3") != NULL)
+				nummer = ostrcat("high", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "_quality\":2") != NULL)
+				nummer = ostrcat("middle", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "_quality\":1") != NULL)
+				nummer = ostrcat("low", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "_quality\":\"auto") != NULL)
+				nummer = ostrcat("auto", NULL, 0, 0);
+
 			if(ostrstr(ret1[i].part, "http://") != NULL)
 			{
 				streamurl = oregex(".*\"_stream\":\"(http://.*.mp4).*", ret1[i].part);
-				nummer = oregex(".*16_9_(.*).mp4\".*", ret1[i].part);
-
 				title = ostrcat("Http Stream (", NULL, 0, 0);
 				title = ostrcat(title, nummer, 1, 0);
 				title = ostrcat(title, ")", 1, 0);
@@ -61,8 +71,6 @@ char* ard(char* link)
 				part2 = oregex(".*\"_stream\":\"(mp4:.*)\"}.*", ret1[i].part);
 
 				part1 = stringreplacecharonce(part1, '"', '\0');
-				nummer = oregex(".*16_9_(.*).mp4\".*", ret1[i].part);
-
 				streamurl = ostrcat(part1, part2, 0, 0);
 
 				title = ostrcat("RTMP Stream (", NULL, 0, 0);
