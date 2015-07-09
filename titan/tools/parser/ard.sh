@@ -16,6 +16,7 @@ DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[ard.sh] START (buildtype: $buildtype): $DATENAME" > _full/ard/build.log
 DOMAIN=ard
 SHOWNAME=ARD
+
 ##################
 # watchlist
 ##################
@@ -28,7 +29,7 @@ for ROUND in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 	for ROUND1 in $LIST; do
 
 		count=`expr $count + 1`
-		SECTION=`echo $ROUND1 | cut -d "/" -f3 | tr '-' ' '`
+		SECTION=`echo $ROUND1 | cut -d "/" -f3`
 		TITLE=`echo $ROUND1 | cut -d "/" -f3 | tr '-' ' '`
 		filename1=`echo $TITLE | tr 'A-Z' 'a-z' | tr -d '\n' | tr -d '\r' | tr -d '\t' | tr -d ' ' | tr -d '%'`
 
@@ -45,57 +46,31 @@ for ROUND in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 		if [ ! -e cache.$DOMAIN.category.titanlist ] || [ `cat cache.$DOMAIN.category.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 			echo "$LINE" >> cache.$DOMAIN.category.titanlist
 		fi
-#echo SURL $SURL
 		$wgetbin http://www.ardmediathek.de"$LPATH" -O cache.$filename.$filename1.$count.html
 		LIST2=`cat cache.$filename.$filename1.$count.html | tr '\r' ' ' | tr '\n' ' ' | sed 's/ \+/ /g' | sed "s!<a href=\"/tv/$SECTION/!\nfshow=/tv/$SECTION/!g" | grep ^fshow=  | grep "?documentId" | grep -v "Sendung?documentId" | grep -v sendungsTyp | tr ' ' '~'`
-count1=0
+			
 		for ROUND2 in $LIST2; do
-
-count1=`expr $count1 + 1`
-#if [ "$count1" = "2" ];then
-#	break
-#fi
 			piccount=`expr $piccount + 1`	
-#			echo ROUND2 $ROUND2
 			TITLE=`echo $ROUND2 | cut -d "/" -f4 | tr '-' ' '`
 			TITLE="$TITLE - `echo $ROUND2 | cut -d "/" -f5 | tr '-' ' '`"
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/&#043;/+/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/#043;/+/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/+/ /g' -e 's/,/ /g' -e 's/;/ /g' -e 's/\.\+/./g' -e 's/+/ /g' -e 's/#/ /g' -e 's/\.\+/ /g' -e 's/\ \+/ /g' -e 's/^ //'`
 			TITLE=`echo $TITLE | sed 's/\(.*\)\./\1\t/g' | sed 's/^\.//g'`
 			TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
-#			echo TITLE $TITLE
 #			URL=http://www.ardmediathek.de"`echo $ROUND2 | sed 's/"~class=/\n/' | grep fshow=/ | sed 's/fshow=//'`"
 			URL=http://www.ardmediathek.de/play/media/"`echo $ROUND2 | sed 's/"~class=/\n/' | grep fshow=/ | sed 's/fshow=//' | sed 's!?documentId=!\ndocumentId=&!' | grep ^documentId= | cut -d "&" -f1 | sed 's!?documentId=!!' | sed 's!documentId=!!'`?devicetype=pc&features=flash"
 
 			PIC=http://www.ardmediathek.de"`echo $ROUND2 | sed 's!/image/!\n/image/!' | grep ^/image/ | sed 's/##width##.*/0/'`"
-#			echo PIC $PIC
 			STREAMTYPE=45
 			LINE="$TITLE""#""$URL""#""$PIC""#""$DOMAIN""_""$filename""_""$filename1""_""$piccount"".""jpg""#""$SHOWNAME""#""$STREAMTYPE"
-#echo LINE $LINE
-#echo 111111
 			if [ ! -e cache.$DOMAIN.category.$filename1.titanlist ] || [ `cat cache.$DOMAIN.category.$filename1.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
-#echo 222222
 				echo "$LINE" >> cache.$DOMAIN.category.$filename1.titanlist
 			fi
-#echo cache.$DOMAIN.category.$filename1.titanlist
-#echo 333333
-#ls cache.$DOMAIN.category.$filename1.titanlist
-#echo 444444
-#cat cache.$DOMAIN.category.$filename1.titanlist
-#echo 555555
 			if [ ! -e  cache.ard.titanlist ] || [ `cat  cache.ard.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 				echo "$LINE" >>  cache.ard.titanlist
 			fi
-			
-			if [ "$filename1" = "annewill" ]; then
-echo annewill
-
-			exit
-			fi	
 		done
 		if [ -e cache.$DOMAIN.category.$filename1.titanlist ];then
 			cat cache.$DOMAIN.category.$filename1.titanlist | sort -u > _full/ard/streams/$DOMAIN.category.$filename1.list		
-#		else
-#		exit
 		fi
 	done
 done
