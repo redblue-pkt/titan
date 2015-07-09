@@ -20,13 +20,12 @@ char* ard(char* link)
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	titheklog(debuglevel, "/tmp/tithek/ard1_tmpstr", NULL, NULL, NULL,tmpstr);
-	writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr", tmpstr, 0);
 
 	tmpstr2 = string_resub("_mediaStreamArray\":[", "]}],\"_sortierArray\"", tmpstr, 0);
-	writesys("/var/usr/local/share/titan/plugins/tithek/ard2_tmpstr2", tmpstr2, 0);
+	titheklog(debuglevel, "/tmp/tithek/ard2_tmpstr2", NULL, NULL, NULL, tmpstr2);
 
 	tmpstr2 = string_replace_all("{", "\n", tmpstr2, 1);
-	writesys("/var/usr/local/share/titan/plugins/tithek/ard2_tmpstr3", tmpstr2, 0);
+	titheklog(debuglevel, "/tmp/tithek/ard3_tmpstr2", NULL, NULL, NULL, tmpstr2);
 
 	int count = 0, i = 0;	
 	struct splitstr* ret1 = NULL;
@@ -109,7 +108,7 @@ char* ard(char* link)
 	free(tmpstr2), tmpstr2 = NULL;
 	free(ip), ip = NULL;
 
-	titheklog(debuglevel, "/tmp/tithek/ard3_streamurl", NULL, NULL, NULL, streamurl);
+	titheklog(debuglevel, "/tmp/tithek/ard4_streamurl", NULL, NULL, NULL, streamurl);
 
 	debug(99, "streamurl: %s", streamurl);	
 	return streamurl;
