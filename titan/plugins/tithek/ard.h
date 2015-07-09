@@ -52,6 +52,8 @@ char* ard(char* link)
 				nummer = ostrcat("middle", NULL, 0, 0);
 			else if(ostrstr(ret1[i].part, "_quality\":1") != NULL)
 				nummer = ostrcat("low", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "_quality\":0") != NULL)
+				nummer = ostrcat("verylow", NULL, 0, 0);
 			else if(ostrstr(ret1[i].part, "_quality\":\"auto") != NULL)
 				nummer = ostrcat("auto", NULL, 0, 0);
 
