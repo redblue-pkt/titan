@@ -1829,7 +1829,7 @@ msgid ""
 "All Tuners in use or no Tuner defined."
 msgstr "Не найдено свободных тюнеров, или он сейчас определяется"
 
-#: record.h:1063
+#: record.h:1075
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -1837,7 +1837,7 @@ msgstr ""
 "Не удаётся найти свободный тюнер для записи\n"
 "Переключиться на таймшифт?"
 
-#: record.h:1561
+#: record.h:1573
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Не удаётся получить время EPG или время окончания неизвестно"
 
@@ -3228,7 +3228,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1063 record.h:1311 record.h:1561 record.h:1586
+#: record.h:387 record.h:1075 record.h:1323 record.h:1573 record.h:1598
 #: rectimer.h:577 rectimer.h:1238 rectimer.h:1385 rectimer.h:1397
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -5806,7 +5806,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1063 record.h:1311 record.h:1561 record.h:1586 rectimer.h:577
+#: record.h:1075 record.h:1323 record.h:1573 record.h:1598 rectimer.h:577
 #: rectimer.h:1238 rectimer.h:1385 rectimer.h:1397 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6390,7 +6390,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1063 record.h:1586 rectimer.h:577 rectimer.h:1238 rectimer.h:1385
+#: record.h:1075 record.h:1598 rectimer.h:577 rectimer.h:1238 rectimer.h:1385
 #: rectimer.h:1397 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -7472,7 +7472,7 @@ msgstr "Ресивер расблокирован!"
 msgid "Receiver unlock"
 msgstr "Блокировка приёмника"
 
-#: record.h:1460 record.h:1528 skin_default_skin.xml.h:542
+#: record.h:1472 record.h:1540 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7536,7 +7536,7 @@ msgstr "Идёт запись"
 msgid "Record path"
 msgstr "Путь записи"
 
-#: record.h:1586
+#: record.h:1598
 msgid "Record started"
 msgstr "Запись началась"
 
@@ -9707,7 +9707,7 @@ msgstr "Список таймеров"
 msgid "Timer Record Path"
 msgstr "Путь таймера записи"
 
-#: record.h:1310
+#: record.h:1322
 msgid "Timer Record start !"
 msgstr "Таймер записи запущен!"
 
@@ -10925,15 +10925,15 @@ msgstr "Старт"
 msgid "active"
 msgstr "Автостарт вкл"
 
-#: record.h:1526 record.h:1572
+#: record.h:1538 record.h:1584
 msgid "add recording (enter duration)"
 msgstr "Начать запись (С вводом длительности)"
 
-#: record.h:1525 record.h:1567
+#: record.h:1537 record.h:1579
 msgid "add recording (indefinitely)"
 msgstr "Начать запись (Без ограничений по длительности)"
 
-#: record.h:1524 record.h:1554
+#: record.h:1536 record.h:1566
 msgid "add recording (stop after current event)"
 msgstr "Начать запись (Остановить в конце текущей передачи)"
 
@@ -11176,7 +11176,7 @@ msgstr "Карточка"
 msgid "center"
 msgstr "Центр"
 
-#: record.h:1506 record.h:1515 record.h:1538
+#: record.h:1518 record.h:1527 record.h:1550
 msgid "change"
 msgstr "Изменить"
 
@@ -12839,8 +12839,8 @@ msgstr "Шаг Запад"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5554 httpdfunc.h:5600 record.h:1442 record.h:1451 record.h:1462
-#: record.h:1491 record.h:1500 record.h:1532 skin_default_skin.xml.h:687
+#: httpdfunc.h:5554 httpdfunc.h:5600 record.h:1454 record.h:1463 record.h:1474
+#: record.h:1503 record.h:1512 record.h:1544 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Стоп"
