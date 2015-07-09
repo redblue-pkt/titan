@@ -448,16 +448,60 @@ int piphdmi(struct service *node, int flag)
 
 int pipswap(struct service *node)
 {
+	int hdmi = 0;
 	char* tmpstr = NULL;
+	struct dvbdev *videonode = NULL;
+	struct dvbdev *audionode = NULL;
 	struct channel* chnodeP = node->channel;
 	struct channel* chnodeT = status.aktservice->channel;
 	if(node->type == CHANNEL && chnodeP != NULL && chnodeP != chnodeT)
 	{
-		pipstop(node, 0);
+		if(status.aktservice->type == HDMIIN)
+		{
+			hdmi = 1;
+			pipstop(node, 1);
+		}
+		else
+			pipstop(node, 0);
 		tmpstr = ostrcat(node->channellist, NULL, 0, 0);
 		servicecheckret(servicestart(chnodeP, tmpstr, NULL, 0), 0);
 		free(tmpstr); tmpstr = NULL;
-		
+		if(hdmi == 1)
+		{
+			piphdmi(node, 0);
+			free(node->channellist);
+			node->channellist = NULL;
+			node->channellist = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		}
+		else
+		{
+			pipstart(chnodeT, NULL, 0);
+			free(node->channellist);
+			node->channellist = NULL;
+			node->channellist = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		}
+	}
+	else if(node->type == HDMIIN)
+	{
+		pipstop(node, 0);
+		servicestop(status.aktservice, 1, 1);
+		audionode = audioopen(0);
+		if(audionode != NULL)
+		{
+			audioselectsource(audionode, AUDIO_SOURCE_HDMI);
+			audioplay(audionode); 
+		}
+		videonode = videoopen(0, 0);
+		if(videonode != NULL)
+		{
+			videoselectsource(videonode, VIDEO_SOURCE_HDMI);
+			videosetstreamtype(videonode, 0);
+			videoplay(videonode); 
+		}
+		status.aktservice->videodev = videonode;
+		status.aktservice->audiodev = audionode;
+		status.aktservice->type = HDMIIN;
+		status.aktservice->channel = NULL;
 		pipstart(chnodeT, NULL, 0);
 		free(node->channellist);
 		node->channellist = ostrcat(status.lastservice->channellist, NULL, 0, 0);
@@ -495,8 +539,12 @@ void pipmenu()
 	if(dst_left == 0) dst_left = 505;
 	if(dst_top == 0) dst_top = 36;
 		
-	if(status.pipservice->type == HDMIIN)
+	if(status.aktservice->type == HDMIIN)
+		changetext(hdmi, "no function");
+	else if(status.pipservice->type == HDMIIN)
 		changetext(hdmi, "live TV");
+	else
+		changetext(hdmi, "HDMI-in");
 	
 	while(1)
 	{
@@ -521,6 +569,8 @@ void pipmenu()
 		
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
+			if(status.aktservice->type == HDMIIN)
+				continue;
 			if(status.pipservice->type == HDMIIN)
 			{
 				pipstop(status.pipservice, 1);
@@ -538,6 +588,12 @@ void pipmenu()
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
 			pipswap(status.pipservice);
+			if(status.aktservice->type == HDMIIN)
+				changetext(hdmi, "no function");
+			else if(status.pipservice->type != HDMIIN)
+				changetext(hdmi, "HDMI-in");
+			else
+				changetext(hdmi, "live TV");
 			continue;
 		}
 			
