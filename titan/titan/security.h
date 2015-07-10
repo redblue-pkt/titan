@@ -2048,7 +2048,9 @@ char* getabout()
 	text = ostrcat(text, tmpstr, 1, 1);
 #else
 	text = ostrcat(text, _("External Player"), 1, 0);
-	text = ostrcat(text, ": libeplayer3\n", 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	tmpstr = command("ffmpeg -version | grep version");
+	text = ostrcat(text, tmpstr, 1, 1);
 #endif
 
 	text = ostrcat(text, _("Driver"), 1, 0);
