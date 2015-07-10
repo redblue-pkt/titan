@@ -2041,6 +2041,15 @@ char* getabout()
 	tmpstr = readsys("/proc/stb/fp/version", 1);
 	text = ostrcat(text, tmpstr, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
+
+	text = ostrcat(text, _("External Player"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	tmpstr = command("gst-launch-1.0 --version | grep GStreamer");
+	text = ostrcat(text, tmpstr, 1, 1);
+	text = ostrcat(text, "\n", 1, 0);	
+#else
+	text = ostrcat(text, _("External Player"), 1, 0);
+	text = ostrcat(text, ": libeplayer3\n", 1, 0);
 #endif
 	tmpstr = ostrcat(_("License"), ": ", 0, 0);
 
