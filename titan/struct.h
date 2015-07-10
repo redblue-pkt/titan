@@ -86,7 +86,7 @@
 #include <ddvdlib.h>
 #endif
 
-
+#define DRIVER "20150113"
 #define OVERSION "1.66"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
