@@ -20,7 +20,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: security.h:678 security.h:2072
+#: security.h:678 security.h:2074
 msgid " Days "
 msgstr ""
 
@@ -1091,7 +1091,7 @@ msgstr "Configuration de Tuner"
 msgid "Atemio WLAN configuration"
 msgstr "Configuration LNB"
 
-#: security.h:2077
+#: security.h:2079
 msgid "Atemio free license"
 msgstr ""
 
@@ -2371,7 +2371,7 @@ msgstr "copier la liste de satellite sans succès"
 msgid "Copy satlist successfull"
 msgstr "copier la liste de satellite avec succès"
 
-#: security.h:2086
+#: security.h:2088
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2751,7 +2751,7 @@ msgid ""
 "BOOT = Green"
 msgstr ""
 
-#: security.h:2079
+#: security.h:2081
 msgid "Dev free license"
 msgstr ""
 
@@ -2919,7 +2919,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2054
+#: security.h:2056
 msgid "Driver"
 msgstr ""
 
@@ -5262,7 +5262,7 @@ msgstr ""
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2059
+#: security.h:2061
 msgid "License"
 msgstr ""
 
@@ -9967,7 +9967,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:676 security.h:2069
+#: security.h:676 security.h:2071
 msgid "Trial period ends in"
 msgstr ""
 
@@ -9983,7 +9983,7 @@ msgstr "Mardi"
 msgid "Tune to channel failed"
 msgstr ""
 
-#: security.h:2095 skin_default_skin.xml.h:760
+#: security.h:2097 skin_default_skin.xml.h:760
 msgid "Tuner"
 msgstr ""
 
@@ -10021,7 +10021,7 @@ msgid ""
 "or stream is running !"
 msgstr ""
 
-#: security.h:2102 skin_default_skin.xml.h:766
+#: security.h:2104 skin_default_skin.xml.h:766
 msgid "Tunertype"
 msgstr "type de tuner"
 
@@ -10078,7 +10078,7 @@ msgstr ""
 msgid "UE"
 msgstr "Ü"
 
-#: security.h:2075
+#: security.h:2077
 msgid "UFS910 free license"
 msgstr ""
 
@@ -11349,7 +11349,7 @@ msgstr ""
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2081
+#: security.h:2083
 msgid "expired"
 msgstr ""
 
@@ -12985,7 +12985,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2880 httpdfunc.h:2892
 #: httpdfunc.h:5561 httpdfunc.h:5607 hwtest.h:478 moduleconfig.h:345
-#: security.h:2100 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
+#: security.h:2102 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13078,7 +13078,7 @@ msgstr ""
 msgid "v"
 msgstr ""
 
-#: security.h:2062
+#: security.h:2064
 msgid "valid"
 msgstr ""
 
