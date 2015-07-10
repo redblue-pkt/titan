@@ -2952,7 +2952,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2035
+#: security.h:2055
 msgid "Driver"
 msgstr ""
 
@@ -3498,7 +3498,7 @@ msgstr "Mở rộng"
 msgid "Extensions List"
 msgstr "Danh sách mở rộng"
 
-#: security.h:2051 security.h:2057
+#: security.h:2045 security.h:2051
 msgid "External Player"
 msgstr ""
 
@@ -3989,7 +3989,7 @@ msgstr "Hiển thị VF"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2045
+#: security.h:2039
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4966,7 +4966,7 @@ msgstr "Cài đặt lỗi !"
 msgid "Installation start"
 msgstr "Đang cài đặt"
 
-#: httpdfunc.h:5667 security.h:2040 skin_default_skin.xml.h:375
+#: httpdfunc.h:5667 security.h:2034 skin_default_skin.xml.h:375
 msgid "Installed:"
 msgstr "Cài đặt"
 
