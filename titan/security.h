@@ -2046,7 +2046,6 @@ char* getabout()
 	text = ostrcat(text, ": ", 1, 0);
 	tmpstr = command("gst-launch-1.0 --version | grep GStreamer");
 	text = ostrcat(text, tmpstr, 1, 1);
-	text = ostrcat(text, "\n", 1, 0);	
 #else
 	text = ostrcat(text, _("External Player"), 1, 0);
 	text = ostrcat(text, ": libeplayer3\n", 1, 0);
@@ -2055,7 +2054,7 @@ char* getabout()
 	text = ostrcat(text, _("Driver"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
 	text = ostrcat(text, DRIVER, 1, 0);
-	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, "\n\n", 1, 0);
 
 	tmpstr = ostrcat(_("License"), ": ", 0, 0);
 
