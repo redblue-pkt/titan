@@ -19,7 +19,7 @@ msgstr " - OKÉ!"
 msgid " : NOT OKAY!"
 msgstr " : NIET OKÉ!"
 
-#: security.h:678 security.h:2073
+#: security.h:678 security.h:2072
 msgid " Days "
 msgstr ""
 
@@ -1108,7 +1108,7 @@ msgstr "Tuner Instellingen"
 msgid "Atemio WLAN configuration"
 msgstr "LNB instellingen"
 
-#: security.h:2078
+#: security.h:2077
 msgid "Atemio free license"
 msgstr ""
 
@@ -2407,7 +2407,7 @@ msgstr "Satelietlijst kopiëren niet gelukt"
 msgid "Copy satlist successfull"
 msgstr "Satelietlijst kopiëren gelukt"
 
-#: security.h:2087
+#: security.h:2086
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2795,7 +2795,7 @@ msgstr ""
 "Rood = Hangend proces afbreken\n"
 "Groen = Herstart systeem"
 
-#: security.h:2080
+#: security.h:2079
 msgid "Dev free license"
 msgstr ""
 
@@ -2969,7 +2969,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2055
+#: security.h:2054
 msgid "Driver"
 msgstr ""
 
@@ -3519,7 +3519,7 @@ msgstr "Plugins"
 msgid "Extensions List"
 msgstr "Plugin overzichtslijst"
 
-#: security.h:2045 security.h:2051
+#: security.h:2045 security.h:2050
 msgid "External Player"
 msgstr ""
 
@@ -5348,7 +5348,7 @@ msgstr ""
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2060
+#: security.h:2059
 msgid "License"
 msgstr ""
 
@@ -10097,7 +10097,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:676 security.h:2070
+#: security.h:676 security.h:2069
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10113,7 +10113,7 @@ msgstr "Dinsdag"
 msgid "Tune to channel failed"
 msgstr "Afstemmen op kanaal is niet gelukt"
 
-#: security.h:2096 skin_default_skin.xml.h:760
+#: security.h:2095 skin_default_skin.xml.h:760
 msgid "Tuner"
 msgstr ""
 
@@ -10151,7 +10151,7 @@ msgid ""
 "or stream is running !"
 msgstr "Tuner instellingen niet toegestaan/nbij lopende opname of stream!"
 
-#: security.h:2103 skin_default_skin.xml.h:766
+#: security.h:2102 skin_default_skin.xml.h:766
 msgid "Tunertype"
 msgstr "Tuner type"
 
@@ -10208,7 +10208,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2076
+#: security.h:2075
 msgid "UFS910 free license"
 msgstr ""
 
@@ -11485,7 +11485,7 @@ msgstr "Gebeurtenis"
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2082
+#: security.h:2081
 msgid "expired"
 msgstr ""
 
@@ -13121,7 +13121,7 @@ msgstr "Universeel"
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2880 httpdfunc.h:2892
 #: httpdfunc.h:5561 httpdfunc.h:5607 hwtest.h:478 moduleconfig.h:345
-#: security.h:2101 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
+#: security.h:2100 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13214,7 +13214,7 @@ msgstr ""
 msgid "v"
 msgstr ""
 
-#: security.h:2063
+#: security.h:2062
 msgid "valid"
 msgstr ""
 
