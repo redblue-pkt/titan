@@ -60,7 +60,7 @@ fi
 ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/conf/machine/include/ini-oem.inc
 ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/
 
-write="$drivername $kv $pr $driverdate"
+write="$drivername - $kv $pr - $driverdate"
 echo 44444 	STM: $STM BOXNAME: $BOXNAME drivername: $drivername kv: $kv pr: $pr driverdate: $driverdate ROOTDIR: $ROOTDIR
 echo write: $write
 cat ../struct.h | sed s/"^#define DRIVER .*"/"#define DRIVER \"$write\""/ > struct.h.tmp
