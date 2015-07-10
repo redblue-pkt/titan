@@ -50,17 +50,19 @@ if [ "$CPU" = "mipsel" ];then
 	kv=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^"KV " | cut -d '"' -f2`
 	pr=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^"PR " | cut -d '"' -f2`
 	driverdate=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^"SRCDATE " | cut -d '"' -f2`
+	write="$drivername - $kv $pr - $driverdate"
+
+	ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/conf/machine/include/ini-oem.inc
+	ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/
 else
 	drivername=""
 	kv=""
 	pr=""
 	driverdate=`date`
+	write="$driverdate"
 fi
 
-ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/conf/machine/include/ini-oem.inc
-ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/
 
-write="$drivername - $kv $pr - $driverdate"
 echo 44444 	STM: $STM BOXNAME: $BOXNAME drivername: $drivername kv: $kv pr: $pr driverdate: $driverdate ROOTDIR: $ROOTDIR
 echo write: $write
 cat ../struct.h | sed s/"^#define DRIVER .*"/"#define DRIVER \"$write\""/ > struct.h.tmp
