@@ -9965,6 +9965,10 @@ msgstr ""
 msgid "Top"
 msgstr "Top (Processes)"
 
+#: tithek_mainmenu.h:47
+msgid "Top 100 Single Charts"
+msgstr ""
+
 #: system_infos_sysinfo.h:27
 msgid "Top Info"
 msgstr "Top Information"
@@ -10418,7 +10422,7 @@ msgstr "Settings"
 msgid "VLC Player"
 msgstr ""
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:48
 msgid "VOX-Now"
 msgstr ""
 
@@ -10427,7 +10431,7 @@ msgid "Version"
 msgstr ""
 
 #: tpk_description.h:165
-msgid "Version 10868 of OScam"
+msgid "Version 10888 of OScam"
 msgstr ""
 
 #: transponder.h:450 transponder.h:458
@@ -10828,11 +10832,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:49
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:50
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -10885,7 +10889,7 @@ msgstr ""
 "\n"
 "Do you want the Receiver to shutdown?"
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:51
 msgid "Youtube"
 msgstr ""
 
@@ -10893,7 +10897,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:52
 msgid "ZDF"
 msgstr ""
 
