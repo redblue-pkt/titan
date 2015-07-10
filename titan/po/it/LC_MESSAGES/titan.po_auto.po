@@ -2942,7 +2942,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2035
+#: security.h:2055
 msgid "Driver"
 msgstr ""
 
@@ -3486,7 +3486,7 @@ msgstr ""
 msgid "Extensions List"
 msgstr ""
 
-#: security.h:2051 security.h:2057
+#: security.h:2045 security.h:2051
 msgid "External Player"
 msgstr ""
 
@@ -3976,7 +3976,7 @@ msgstr "VFDisplay"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2045
+#: security.h:2039
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4953,7 +4953,7 @@ msgstr "Install error"
 msgid "Installation start"
 msgstr "Installing"
 
-#: httpdfunc.h:5667 security.h:2040 skin_default_skin.xml.h:375
+#: httpdfunc.h:5667 security.h:2034 skin_default_skin.xml.h:375
 msgid "Installed:"
 msgstr "Installa"
 
