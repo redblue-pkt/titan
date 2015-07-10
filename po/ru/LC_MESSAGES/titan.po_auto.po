@@ -20,7 +20,7 @@ msgstr " - OK!"
 msgid " : NOT OKAY!"
 msgstr ": Плохо!"
 
-#: security.h:678 security.h:2072
+#: security.h:678 security.h:2074
 msgid " Days "
 msgstr ""
 
@@ -1111,7 +1111,7 @@ msgstr "Конфигурация тюнера"
 msgid "Atemio WLAN configuration"
 msgstr "WiFi конфигурация"
 
-#: security.h:2077
+#: security.h:2079
 msgid "Atemio free license"
 msgstr ""
 
@@ -2409,7 +2409,7 @@ msgstr "Не удалось скопировать список спутнико
 msgid "Copy satlist successfull"
 msgstr "Список спутников скопирован успешно"
 
-#: security.h:2086
+#: security.h:2088
 msgid "Copyright"
 msgstr "Авторские права"
 
@@ -2797,7 +2797,7 @@ msgstr ""
 " Красная кнопка = Завершить процесс\n"
 " Зелёная кнопка = Рестарт системы"
 
-#: security.h:2079
+#: security.h:2081
 msgid "Dev free license"
 msgstr ""
 
@@ -2971,7 +2971,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2054
+#: security.h:2056
 msgid "Driver"
 msgstr ""
 
@@ -5347,7 +5347,7 @@ msgstr ""
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2059
+#: security.h:2061
 msgid "License"
 msgstr ""
 
@@ -10097,7 +10097,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:676 security.h:2069
+#: security.h:676 security.h:2071
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10113,7 +10113,7 @@ msgstr "Вторник"
 msgid "Tune to channel failed"
 msgstr "Не удалось настроиться на канал"
 
-#: security.h:2095 skin_default_skin.xml.h:760
+#: security.h:2097 skin_default_skin.xml.h:760
 msgid "Tuner"
 msgstr "Тюнер"
 
@@ -10153,7 +10153,7 @@ msgstr ""
 "Настройка тюнера не доступна\n"
 "при записи или стриминге!"
 
-#: security.h:2102 skin_default_skin.xml.h:766
+#: security.h:2104 skin_default_skin.xml.h:766
 msgid "Tunertype"
 msgstr "Тип тюнера"
 
@@ -10210,7 +10210,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2075
+#: security.h:2077
 msgid "UFS910 free license"
 msgstr ""
 
@@ -11486,7 +11486,7 @@ msgstr "События"
 msgid "expert (11)"
 msgstr "Эксперт"
 
-#: security.h:2081
+#: security.h:2083
 msgid "expired"
 msgstr ""
 
@@ -13125,7 +13125,7 @@ msgstr "Universal"
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2880 httpdfunc.h:2892
 #: httpdfunc.h:5561 httpdfunc.h:5607 hwtest.h:478 moduleconfig.h:345
-#: security.h:2100 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
+#: security.h:2102 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13218,7 +13218,7 @@ msgstr "Использовать SSL"
 msgid "v"
 msgstr ""
 
-#: security.h:2062
+#: security.h:2064
 msgid "valid"
 msgstr ""
 
