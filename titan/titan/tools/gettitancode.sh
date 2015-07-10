@@ -59,7 +59,7 @@ else
 fi
 
 echo 44444 	drivername: $drivername kv: $kv pr: $pr driverdate: $driverdate ROOTDIR: $ROOTDIR
-cat ../security.h | sed "s/^#define DRIVER .*/#define DRIVER $drivername $kv $pr $driverdate/" > security.h.tmp
+cat ../security.h | sed "s/^#define DRIVER .*/#define DRIVER \"$drivername $kv $pr $driverdate\"/" > security.h.tmp
 mv -f security.h.tmp ../security.h
 
 /home/atemio/flashimg/BUILDGIT/checkout_mips360/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers
