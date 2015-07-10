@@ -4,6 +4,9 @@ ROOTDIR=$2
 TYPE=$3
 SRCDIR=$4
 CPU=$5
+STM=$6
+BOX=$7
+BOXNAME=$8
 
 cd "$HOME"/flashimg/$SRCDIR/titan/tools
 
@@ -42,3 +45,22 @@ mv -f titan.c.tmp ../titan.c
 echo 3333333 code2: $code ROOTDIR: $ROOTDIR
 cat ../security.h | sed "s/^#define BUILDCODE .*/#define BUILDCODE $code/" > security.h.tmp
 mv -f security.h.tmp ../security.h
+
+if [ "$CPU" = "mipsel" ];then
+	drivername=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/conf/machine/include/ini-oem.inc | grep $BOXNAME | grep ini | cut -d "'" -f6`
+	kv=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^KV | cut -d '"' -f2`
+	pr=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^PR | cut -d '"' -f2`
+	driverdate=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^SRCDATE | cut -d '"' -f2`
+else
+	drivername=""
+	kv=""
+	pr=""
+	driverdate=`date`
+fi
+
+echo 44444 	drivername: $drivername kv: $kv pr: $pr driverdate: $driverdate ROOTDIR: $ROOTDIR
+cat ../security.h | sed "s/^#define DRIVER .*/#define DRIVER $drivername $kv $pr $driverdate/" > security.h.tmp
+mv -f security.h.tmp ../security.h
+
+/home/atemio/flashimg/BUILDGIT/checkout_mips360/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers
+

@@ -2031,6 +2031,12 @@ char* getabout()
 	text = ostrcat(text, ": ", 1, 0);
 	text = ostrcat(text, OVERSION, 1, 0);
 	text = ostrcat(text, "\n", 1, 0);
+
+	text = ostrcat(text, _("Driver"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, DRIVER, 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
+
 	text = ostrcat(text, _("Installed:"), 1, 0);
 	text = ostrcat(text, " ", 1, 0);
 	text = ostrcat(text, imgversion, 1, 1);
