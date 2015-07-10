@@ -60,9 +60,11 @@ fi
 ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/conf/machine/include/ini-oem.inc
 ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/
 
+write="$drivername $kv $pr $driverdate"
 echo 44444 	STM: $STM BOXNAME: $BOXNAME drivername: $drivername kv: $kv pr: $pr driverdate: $driverdate ROOTDIR: $ROOTDIR
-echo cat ../struct.h | sed "s/^#define DRIVER .*/#define DRIVER \"$drivername $kv $pr $driverdate\"/"
-cat ../struct.h | sed "s/^#define DRIVER .*/#define DRIVER \"$drivername $kv $pr $driverdate\"/" > struct.h.tmp
+echo "cat ../struct.h | sed \"s/^#define DRIVER .*/#define DRIVER \\"$write\\"/\""
+cat ../struct.h | sed "s/^#define DRIVER .*/#define DRIVER \"$write\"/" > struct.h.tmp
+
 mv -f struct.h.tmp ../struct.h
 
 /home/atemio/flashimg/BUILDGIT/checkout_mips360/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers
