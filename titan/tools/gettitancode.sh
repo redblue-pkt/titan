@@ -5,8 +5,7 @@ TYPE=$3
 SRCDIR=$4
 CPU=$5
 STM=$6
-BOX=$7
-BOXNAME=$8
+BOXNAME=$7
 
 cd "$HOME"/flashimg/$SRCDIR/titan/tools
 
@@ -58,7 +57,7 @@ else
 	driverdate=`date`
 fi
 
-echo 44444 	drivername: $drivername kv: $kv pr: $pr driverdate: $driverdate ROOTDIR: $ROOTDIR
+echo 44444 	STM: $STM BOXNAME: $BOXNAME drivername: $drivername kv: $kv pr: $pr driverdate: $driverdate ROOTDIR: $ROOTDIR
 cat ../security.h | sed "s/^#define DRIVER .*/#define DRIVER \"$drivername $kv $pr $driverdate\"/" > security.h.tmp
 mv -f security.h.tmp ../security.h
 

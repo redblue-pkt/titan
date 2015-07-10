@@ -159,7 +159,7 @@ echo "[titan]--------------------------------------------------------"
 #echo "[titan] Make Securety"
 #echo "[titan]--------------------------------------------------------"
 
-"$HOME"/flashimg/$SRCDIR/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR $TYPE $SRCDIR $CPU $STM $BOX $BOXNAME
+"$HOME"/flashimg/$SRCDIR/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR $TYPE $SRCDIR $CPU $STM $BOXNAME
 
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Security done"
