@@ -46,10 +46,10 @@ cat ../security.h | sed "s/^#define BUILDCODE .*/#define BUILDCODE $code/" > sec
 mv -f security.h.tmp ../security.h
 
 if [ "$CPU" = "mipsel" ];then
-	drivername=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/conf/machine/include/ini-oem.inc | grep $BOXNAME | grep ini | cut -d "'" -f6`
-	kv=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^KV | cut -d '"' -f2`
-	pr=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^PR | cut -d '"' -f2`
-	driverdate=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^SRCDATE | cut -d '"' -f2`
+	drivername=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/conf/machine/include/ini-oem.inc | grep "$BOXNAME" | grep "ini" | cut -d "'" -f6`
+	kv=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^"KV " | cut -d '"' -f2`
+	pr=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^"PR " | cut -d '"' -f2`
+	driverdate=`cat "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/meta-ini/recipes-drivers/ini-dvb-modules-$drivername.bb | grep ^"SRCDATE " | cut -d '"' -f2`
 else
 	drivername=""
 	kv=""
@@ -63,5 +63,5 @@ ls -al "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/meta-oe-alliance/meta-brands/me
 write="$drivername $kv $pr $driverdate"
 echo 44444 	STM: $STM BOXNAME: $BOXNAME drivername: $drivername kv: $kv pr: $pr driverdate: $driverdate ROOTDIR: $ROOTDIR
 echo write: $write
-cat ../struct.h | sed "s/^#define DRIVER .*/#define DRIVER \"$write\"/" > struct.h.tmp
+cat ../struct.h | sed s/"^#define DRIVER .*"/"#define DRIVER \"$write\""/ > struct.h.tmp
 mv -f struct.h.tmp ../struct.h
