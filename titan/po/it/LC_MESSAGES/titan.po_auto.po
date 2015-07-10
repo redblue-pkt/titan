@@ -19,7 +19,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: security.h:678 security.h:2058
+#: security.h:678 security.h:2073
 msgid " Days "
 msgstr ""
 
@@ -1097,7 +1097,7 @@ msgstr "Impostazione Tuner"
 msgid "Atemio WLAN configuration"
 msgstr "LNB configurazioni"
 
-#: security.h:2063
+#: security.h:2078
 msgid "Atemio free license"
 msgstr ""
 
@@ -2382,7 +2382,7 @@ msgstr ""
 msgid "Copy satlist successfull"
 msgstr ""
 
-#: security.h:2072
+#: security.h:2087
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2770,7 +2770,7 @@ msgstr ""
 "Rosso  = Finire il Processo\n"
 "Verde = Restart Del sistema"
 
-#: security.h:2065
+#: security.h:2080
 msgid "Dev free license"
 msgstr ""
 
@@ -2940,6 +2940,10 @@ msgstr ""
 
 #: adjust.h:387
 msgid "Draw Screen"
+msgstr ""
+
+#: security.h:2035
+msgid "Driver"
 msgstr ""
 
 #: httpdfunc.h:4914 skin_default_skin.xml.h:213
@@ -3482,6 +3486,10 @@ msgstr ""
 msgid "Extensions List"
 msgstr ""
 
+#: security.h:2051 security.h:2057
+msgid "External Player"
+msgstr ""
+
 #: MultiImage.c:401
 msgid ""
 "Extracting will take a few minutes ...\n"
@@ -3968,7 +3976,7 @@ msgstr "VFDisplay"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2039
+#: security.h:2045
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4945,7 +4953,7 @@ msgstr "Install error"
 msgid "Installation start"
 msgstr "Installing"
 
-#: httpdfunc.h:5667 security.h:2034 skin_default_skin.xml.h:375
+#: httpdfunc.h:5667 security.h:2040 skin_default_skin.xml.h:375
 msgid "Installed:"
 msgstr "Installa"
 
@@ -5287,7 +5295,7 @@ msgstr ""
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2045
+#: security.h:2060
 msgid "License"
 msgstr ""
 
@@ -9998,7 +10006,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:676 security.h:2055
+#: security.h:676 security.h:2070
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10014,7 +10022,7 @@ msgstr "Martedì"
 msgid "Tune to channel failed"
 msgstr "errore nel cambio canale"
 
-#: security.h:2081 skin_default_skin.xml.h:760
+#: security.h:2096 skin_default_skin.xml.h:760
 msgid "Tuner"
 msgstr ""
 
@@ -10052,7 +10060,7 @@ msgid ""
 "or stream is running !"
 msgstr ""
 
-#: security.h:2088 skin_default_skin.xml.h:766
+#: security.h:2103 skin_default_skin.xml.h:766
 msgid "Tunertype"
 msgstr ""
 
@@ -10109,7 +10117,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2061
+#: security.h:2076
 msgid "UFS910 free license"
 msgstr ""
 
@@ -11384,7 +11392,7 @@ msgstr ""
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2067
+#: security.h:2082
 msgid "expired"
 msgstr ""
 
@@ -13020,7 +13028,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2880 httpdfunc.h:2892
 #: httpdfunc.h:5561 httpdfunc.h:5607 hwtest.h:478 moduleconfig.h:345
-#: security.h:2086 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
+#: security.h:2101 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13113,7 +13121,7 @@ msgstr ""
 msgid "v"
 msgstr ""
 
-#: security.h:2048
+#: security.h:2063
 msgid "valid"
 msgstr ""
 
