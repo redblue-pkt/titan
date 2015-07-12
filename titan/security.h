@@ -27,7 +27,7 @@ int checklowflash()
 	cmd = ostrcat(cmd, "$2}'", 1, 0); 
 
 	tmpstr = string_newline(command(cmd));
-	free(cmd), cmd = NULL;
+	free(cmd), cmd = NULL; 
 
 	if(tmpstr == NULL)
 	{
