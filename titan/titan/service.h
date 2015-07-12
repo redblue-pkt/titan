@@ -995,32 +995,28 @@ char* servicecheckret(int ret, int flag)
 #ifdef MIPSEL
 void servicefullHDMIin_start()
 {
-	audiostop(status.aktservice->audiodev);
-	videostop(status.aktservice->videodev, 1);
-						
-	audioselectsource(status.aktservice->audiodev, AUDIO_SOURCE_HDMI);
-	videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_HDMI);
-	videosetstreamtype(status.aktservice->videodev, 0);
-			
-	audioplay(status.aktservice->audiodev);
-	videoplay(status.aktservice->videodev);
-}
-
-void servicefullHDMIin_stop()
-{
-	struct channel* chnode = status.aktservice->channel;
+	struct dvbdev *videonode = NULL;
+	struct dvbdev *audionode = NULL;
 	
-	audiostop(status.aktservice->audiodev);
-	videostop(status.aktservice->videodev, 1);
-						
-	audioselectsource(status.aktservice->audiodev, AUDIO_SOURCE_DEMUX);
-	videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_DEMUX);
-	videosetstreamtype(status.aktservice->videodev, 0);
-	audiosetbypassmode(status.aktservice->audiodev, chnode->audiocodec);
-	setencoding(chnode, status.aktservice->videodev);
-			
-	audioplay(status.aktservice->audiodev);
-	videoplay(status.aktservice->videodev);
+	servicestop(status.aktservice, 1, 1);
+	
+	audionode = audioopen(0);
+	if(audionode != NULL)
+	{
+		audioselectsource(audionode, AUDIO_SOURCE_HDMI);
+		audioplay(audionode); 
+	}
+	videonode = videoopen(0, 0);
+	if(videonode != NULL)
+	{
+		videoselectsource(videonode, VIDEO_SOURCE_HDMI);
+		videosetstreamtype(videonode, 0);
+		videoplay(videonode); 
+	}
+	status.aktservice->videodev = videonode;
+	status.aktservice->audiodev = audionode;
+	status.aktservice->type = HDMIIN;
+	status.aktservice->channel = NULL;
 }
 #endif
 
