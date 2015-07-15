@@ -1046,7 +1046,8 @@ void screenrectimerext(struct rectimer* node, int flag)
 	
 	changeinput(name, node->name);
 
-	addchoicebox(justplay, "0", _("record"));
+	if(status.pvr == 1)
+		addchoicebox(justplay, "0", _("record"));
 	addchoicebox(justplay, "1", _("switch channel"));
 	if(newnode == 0)
 	{
