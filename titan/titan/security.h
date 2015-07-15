@@ -1239,6 +1239,25 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("moduleconfig", child->name) == 0) child->locked = 1;
 			}
 
+			// hide pvr 
+			if(status.pvr == 0)
+			{
+				if(ostrcmp("recordpath", child->name) == 0) child->locked = 1;
+				if(ostrcmp("rectimerext", child->name) == 0) child->locked = 1;
+				if(ostrcmp("rectimer", child->name) == 0) child->locked = 1;
+				if(ostrcmp("recordlist", child->name) == 0) child->locked = 1;
+				if(ostrcmp("vfdrecord", child->name) == 0) child->locked = 1;
+				if(ostrcmp("rectimer", child->name) == 0) child->locked = 1;
+				if(ostrcmp("recsplitsize", child->name) == 0) child->locked = 1;
+				if(ostrcmp("recforerun", child->name) == 0) child->locked = 1;
+				if(ostrcmp("recoverrun", child->name) == 0) child->locked = 1;
+				if(ostrcmp("def_rectimer_after", child->name) == 0) child->locked = 1;
+				if(ostrcmp("recsync", child->name) == 0) child->locked = 1;
+				if(ostrcmp("recordnamefmt", child->name) == 0) child->locked = 1;
+				if(ostrcmp("recordpicture", child->name) == 0) child->locked = 1;
+				if(ostrcmp("rectext", child->name) == 0) child->locked = 1;
+			}
+
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;

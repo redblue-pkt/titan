@@ -1432,6 +1432,8 @@ struct status
 	int recording;
 	// count for streaming
 	int streaming;
+	// pvr allowed = 1, disable = 0
+	int pvr;
 	// timeshift running = 1, ending = 2
 	int timeshift;
 	// 0 = normal, 1 = permanent timeshift

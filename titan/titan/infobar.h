@@ -596,7 +596,8 @@ void screeninfobar()
 			}
 			continue;
 		}
-		if(rcret == getrcconfigint("rcrecord", NULL))
+//		if(rcret == getrcconfigint("rcrecord", NULL))
+		if(rcret == getrcconfigint("rcrecord", NULL) && status.pvr == 1)
 		{
 			subtitlepause(1);
 			status.infobar = 0;
@@ -607,7 +608,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if((status.timeshift == 0 && rcret == getrcconfigint("rcplay", NULL)) || rcret == getrcconfigint("rcarchive", NULL) || rcret == getrcconfigint("rcwebplay", NULL))
+		if((status.pvr == 1 && status.timeshift == 0 && rcret == getrcconfigint("rcplay", NULL)) || rcret == getrcconfigint("rcarchive", NULL) || rcret == getrcconfigint("rcwebplay", NULL))
 		{
 			subtitlepause(1);
 			status.infobar = 0;
