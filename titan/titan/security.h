@@ -27,7 +27,7 @@ int checklowflash()
 	cmd = ostrcat(cmd, "$2}'", 1, 0); 
 
 	tmpstr = string_newline(command(cmd));
-	free(cmd), cmd = NULL; 
+	free(cmd), cmd = NULL;
 
 	if(tmpstr == NULL)
 	{
@@ -1256,6 +1256,7 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("recordnamefmt", child->name) == 0) child->locked = 1;
 				if(ostrcmp("recordpicture", child->name) == 0) child->locked = 1;
 				if(ostrcmp("rectext", child->name) == 0) child->locked = 1;
+				if(ostrcmp("timermenu", child->name) == 0) child->locked = 1;
 			}
 
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
