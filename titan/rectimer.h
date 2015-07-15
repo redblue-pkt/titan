@@ -1291,7 +1291,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 						addconfigllutmp("transponderid", tmpchnode->transponderid);
 					}
 				}
-     				else
+     			else
 				{
 					addconfigtmp("rchannellist", tmpchannellist);
 					if(tmpchnode != NULL)
