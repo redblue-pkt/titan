@@ -1256,6 +1256,7 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("recordnamefmt", child->name) == 0) child->locked = 1;
 				if(ostrcmp("recordpicture", child->name) == 0) child->locked = 1;
 				if(ostrcmp("rectext", child->name) == 0) child->locked = 1;
+				if(ostrcmp("recsync", child->name) == 0) child->locked = 1;
 			}
 
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
