@@ -805,6 +805,12 @@ char* getepgakttitle(struct skin* node)
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL;
 
+	if(status.aktservice->type == HDMIIN)
+	{
+		tmpstr = ostrcat(tmpstr, "HDMI-in", 1, 0);
+		return tmpstr;
+	}
+
 	epgnode = getepgakt(status.aktservice->channel);
 	if(epgnode != NULL)
 	{
