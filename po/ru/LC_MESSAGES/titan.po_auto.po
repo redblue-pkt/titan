@@ -20,7 +20,7 @@ msgstr " - OK!"
 msgid " : NOT OKAY!"
 msgstr ": Плохо!"
 
-#: security.h:678 security.h:2074
+#: security.h:678 security.h:2093
 msgid " Days "
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr ""
 msgid "/"
 msgstr ""
 
-#: titan.c:1202
+#: titan.c:1208
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -187,7 +187,7 @@ msgstr ""
 "/mnt не для записи!\n"
 "Исправить это?"
 
-#: titan.c:1185
+#: titan.c:1191
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1111,7 +1111,7 @@ msgstr "Конфигурация тюнера"
 msgid "Atemio WLAN configuration"
 msgstr "WiFi конфигурация"
 
-#: security.h:2079
+#: security.h:2098
 msgid "Atemio free license"
 msgstr ""
 
@@ -1216,7 +1216,7 @@ msgstr "Поиск каналов (Авто)"
 msgid "Automatic start last subtitle"
 msgstr "Автоматический запуск старых субтитров"
 
-#: titan.c:1254
+#: titan.c:1260
 msgid "Automatic stop in 10 seconds."
 msgstr "Автостоп через 10 сек"
 
@@ -2155,7 +2155,7 @@ msgstr "Выберите режим воспроизведения из спис
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Выберите нужное из списка ниже"
 
-#: titan.c:980
+#: titan.c:986
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Выберите пульт управления из списка"
 
@@ -2409,7 +2409,7 @@ msgstr "Не удалось скопировать список спутнико
 msgid "Copy satlist successfull"
 msgstr "Список спутников скопирован успешно"
 
-#: security.h:2088
+#: security.h:2107
 msgid "Copyright"
 msgstr "Авторские права"
 
@@ -2797,7 +2797,7 @@ msgstr ""
 " Красная кнопка = Завершить процесс\n"
 " Зелёная кнопка = Рестарт системы"
 
-#: security.h:2081
+#: security.h:2100
 msgid "Dev free license"
 msgstr ""
 
@@ -2971,7 +2971,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2056
+#: security.h:2075
 msgid "Driver"
 msgstr ""
 
@@ -3191,7 +3191,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:634 infobar.h:758
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:635 infobar.h:759
 #: info.h:27 keyactions.h:205 letwatch.h:30 letwatch.h:69 letwatch.h:75
 #: log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73
 #: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
@@ -3237,7 +3237,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:663 security.h:680 security.h:1894 service.h:738 service.h:983
+#: security.h:663 security.h:680 security.h:1913 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skin_default_skin.xml.h:245
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
@@ -3258,8 +3258,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1021 titan.c:1030 titan.c:1158 titan.c:1179
-#: titan.c:1185 titan.c:1196 titan.c:1202 tithek.c:89 tithek_global.h:258
+#: titan.c:346 titan.c:355 titan.c:1027 titan.c:1036 titan.c:1164 titan.c:1185
+#: titan.c:1191 titan.c:1202 titan.c:1208 tithek.c:89 tithek_global.h:258
 #: tithek.h:665 tithek.h:1219 tithek.h:1280 tithek.h:1490 tithek.h:1512
 #: tithek.h:1529 tithek.h:1761 tithek.h:1921 tithek.h:2121 tithek.h:2149
 #: tithek.h:2165 tithek.h:2177 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -3433,27 +3433,27 @@ msgstr "Ошибка: Исходный файл транспондера пус�
 msgid "Error: Transponder Source file not found"
 msgstr "Ошибка: Исходный файл транспондера не найден"
 
-#: titan.c:857
+#: titan.c:863
 msgid "Error: no audio device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:845
+#: titan.c:851
 msgid "Error: no demux device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:839
+#: titan.c:845
 msgid "Error: no frontend device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:851
+#: titan.c:857
 msgid "Error: no video device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:833
+#: titan.c:839
 msgid "Error: open rc device !!"
 msgstr "Ошибка открытия устройства!"
 
-#: titan.c:880
+#: titan.c:886
 msgid "Error: skin not found !!"
 msgstr "Скин не найден!"
 
@@ -3517,7 +3517,7 @@ msgstr "Плагины"
 msgid "Extensions List"
 msgstr "Список плагинов"
 
-#: security.h:2045 security.h:2050
+#: security.h:2064 security.h:2069
 msgid "External Player"
 msgstr ""
 
@@ -3769,7 +3769,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1021
+#: titan.c:1027
 msgid "First Wizzard"
 msgstr "Мастер настроек"
 
@@ -3964,7 +3964,7 @@ msgstr "Частота кадров"
 msgid "Free Space"
 msgstr "Свободное место"
 
-#: titan.c:1196
+#: titan.c:1202
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3972,7 +3972,7 @@ msgstr ""
 "Мало места в /mnt!\n"
 "Могут быть проблемы!"
 
-#: titan.c:1179
+#: titan.c:1185
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4020,7 +4020,7 @@ msgstr "Дисплей ресивера"
 msgid "Front Key"
 msgstr "Кнопки панели"
 
-#: security.h:2039
+#: security.h:2058
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4806,7 +4806,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2027
+#: security.h:2046
 msgid "Image"
 msgstr "Имидж"
 
@@ -4833,7 +4833,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Аудио Inc. AC3 в %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1030 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1036 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5005,7 +5005,7 @@ msgstr "Установка в SWAP (USB или HDD)"
 msgid "Installation start"
 msgstr "Запуск установки"
 
-#: httpdfunc.h:5667 security.h:2034 skin_default_skin.xml.h:375
+#: httpdfunc.h:5667 security.h:2053 skin_default_skin.xml.h:375
 msgid "Installed:"
 msgstr "Установлено"
 
@@ -5021,7 +5021,7 @@ msgstr "Интерфейс"
 msgid "Internet Browser"
 msgstr "Интернет браузер"
 
-#: infobar.h:758
+#: infobar.h:759
 msgid "Internet Browser Plugin not installed !"
 msgstr "Плагин браузера не установлен!"
 
@@ -5347,7 +5347,7 @@ msgstr ""
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2061
+#: security.h:2080
 msgid "License"
 msgstr ""
 
@@ -5785,7 +5785,7 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:634 infobar.h:758
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:635 infobar.h:759
 #: keyactions.h:205 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101
 #: letwatch.h:30 letwatch.h:69 letwatch.h:75 log.h:46 log.h:48 marker.h:215
 #: marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
@@ -5819,7 +5819,7 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1894 service.h:738
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1913 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
 #: skinadjust.h:720 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:361 spinner.h:18
@@ -5829,8 +5829,8 @@ msgstr ""
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1158
-#: titan.c:1179 titan.c:1185 titan.c:1196 titan.c:1202 tithek.c:89
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1164
+#: titan.c:1185 titan.c:1191 titan.c:1202 titan.c:1208 tithek.c:89
 #: tithek_global.h:258 tithek.h:665 tithek.h:1219 tithek.h:1280 tithek.h:1490
 #: tithek.h:1512 tithek.h:1761 tithek.h:1921 tithek.h:2121 tithek.h:2149
 #: tithek.h:2165 tithek.h:2177 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6359,7 +6359,7 @@ msgstr ""
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:634 infobar.h:758 info.h:27
+#: inadyn.h:190 inadyn.h:200 infobar.h:635 infobar.h:759 info.h:27
 #: keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:30
 #: letwatch.h:69 letwatch.h:75 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
 #: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
@@ -6402,7 +6402,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:663 security.h:680 security.h:1894 service.h:738 service.h:983
+#: security.h:663 security.h:680 security.h:1913 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317 skinadjust.h:720
 #: skins_dlna_skin.xml.h:7 skinselector.h:231 skins_facebook_skin.xml.h:3
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:35
@@ -6418,9 +6418,9 @@ msgstr ""
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1021
-#: titan.c:1030 titan.c:1158 titan.c:1179 titan.c:1185 titan.c:1196
-#: titan.c:1202 tithek.c:89 tithek_global.h:258 tithek.h:665 tithek.h:1219
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1027
+#: titan.c:1036 titan.c:1164 titan.c:1185 titan.c:1191 titan.c:1202
+#: titan.c:1208 tithek.c:89 tithek_global.h:258 tithek.h:665 tithek.h:1219
 #: tithek.h:1280 tithek.h:1490 tithek.h:1512 tithek.h:1529 tithek.h:1761
 #: tithek.h:1921 tithek.h:2121 tithek.h:2149 tithek.h:2165 tithek.h:2177
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -7471,7 +7471,7 @@ msgstr "Возврат"
 msgid "Receiver reboots now !!!"
 msgstr "Ресивер перезагружается!"
 
-#: titan.c:1158
+#: titan.c:1164
 msgid "Receiver successful unlocked"
 msgstr "Ресивер расблокирован!"
 
@@ -7611,11 +7611,11 @@ msgstr "Запоминать позицию при проигрывании фи
 msgid "Remote"
 msgstr "Пульт управления"
 
-#: titan.c:973
+#: titan.c:979
 msgid "RemoteControl Long Version"
 msgstr "Пульт управления последней версии"
 
-#: titan.c:972
+#: titan.c:978
 msgid "RemoteControl Old Version"
 msgstr "Пульты управления всех версий"
 
@@ -8503,7 +8503,7 @@ msgstr "Выбрать путь"
 msgid "Select Unicable Manufacturer"
 msgstr "Выберите провайдера"
 
-#: titan.c:980
+#: titan.c:986
 msgid "Select Your Remote Control"
 msgstr "Выберите Ваш пульт управления"
 
@@ -8626,7 +8626,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
 msgstr ""
 
-#: titan.c:1021
+#: titan.c:1027
 msgid "Settings OK ?"
 msgstr "Настройки в порядке?"
 
@@ -8650,7 +8650,7 @@ msgstr "Параметры PiP"
 msgid "Sharename can't be empty!"
 msgstr "Имя папки не может быть пустым!"
 
-#: infobar.h:634 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
+#: infobar.h:635 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -10097,7 +10097,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:676 security.h:2071
+#: security.h:676 security.h:2090
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10113,7 +10113,7 @@ msgstr "Вторник"
 msgid "Tune to channel failed"
 msgstr "Не удалось настроиться на канал"
 
-#: security.h:2097 skin_default_skin.xml.h:760
+#: security.h:2116 skin_default_skin.xml.h:760
 msgid "Tuner"
 msgstr "Тюнер"
 
@@ -10153,7 +10153,7 @@ msgstr ""
 "Настройка тюнера не доступна\n"
 "при записи или стриминге!"
 
-#: security.h:2104 skin_default_skin.xml.h:766
+#: security.h:2123 skin_default_skin.xml.h:766
 msgid "Tunertype"
 msgstr "Тип тюнера"
 
@@ -10210,7 +10210,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2077
+#: security.h:2096
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10286,7 +10286,7 @@ msgstr ""
 msgid "Unitymedia NRW | 1.7.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1252
+#: titan.c:1258
 msgid "Unknown Error."
 msgstr "Неизвестная ошибка!"
 
@@ -10391,7 +10391,7 @@ msgstr "Плеер VLC"
 msgid "VOX-Now"
 msgstr ""
 
-#: security.h:2030
+#: security.h:2049
 msgid "Version"
 msgstr "Версия"
 
@@ -11486,7 +11486,7 @@ msgstr "События"
 msgid "expert (11)"
 msgstr "Эксперт"
 
-#: security.h:2083
+#: security.h:2102
 msgid "expired"
 msgstr ""
 
@@ -13125,7 +13125,7 @@ msgstr "Universal"
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2880 httpdfunc.h:2892
 #: httpdfunc.h:5561 httpdfunc.h:5607 hwtest.h:478 moduleconfig.h:345
-#: security.h:2102 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
+#: security.h:2121 skin_default_skin.xml.h:782 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13218,7 +13218,7 @@ msgstr "Использовать SSL"
 msgid "v"
 msgstr ""
 
-#: security.h:2064
+#: security.h:2083
 msgid "valid"
 msgstr ""
 
