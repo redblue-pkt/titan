@@ -1239,7 +1239,7 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("moduleconfig", child->name) == 0) child->locked = 1;
 			}
 
-			// hide pvr 
+			// hide pvr / timeshift
 			if(status.pvr == 0)
 			{
 				if(ostrcmp("recordpath", child->name) == 0) child->locked = 1;
@@ -1257,6 +1257,8 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("recordpicture", child->name) == 0) child->locked = 1;
 				if(ostrcmp("rectext", child->name) == 0) child->locked = 1;
 				if(ostrcmp("recsync", child->name) == 0) child->locked = 1;
+				if(ostrcmp("timeshift", child->name) == 0) child->locked = 1;
+				if(ostrcmp("timeshiftsettings", child->name) == 0) child->locked = 1;
 			}
 
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
