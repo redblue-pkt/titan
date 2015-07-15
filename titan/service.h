@@ -1016,7 +1016,8 @@ void servicefullHDMIin_start()
 	status.aktservice->videodev = videonode;
 	status.aktservice->audiodev = audionode;
 	status.aktservice->type = HDMIIN;
-	status.aktservice->channel = NULL;
+	delchannel(65535, 0, 1);
+	status.aktservice->channel = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
 }
 #endif
 
