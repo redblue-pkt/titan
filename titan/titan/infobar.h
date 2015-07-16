@@ -191,30 +191,6 @@ void screeninfobar()
 				}
 			}
 		}
-#ifdef MIPSEL
-		if(rcret == getrcconfigint("rcexit", NULL) && checkchipset("BCM7424") == 1 && status.infobar == 0)
-		{
-			if(status.aktservice->type == CHANNEL)
-				servicefullHDMIin_start();
-			else if(status.aktservice->type == HDMIIN)
-			{
-				if(status.lastservice->channel != NULL)
-				{
-					tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
-					servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
-					free(tmpstr); tmpstr = NULL; 
-				}
-			}
-			infobartimeout = 0;
-			infobar = infobar1;
-			if(status.infobar == 0)
-				drawscreen(infobar, 0, 4);
-			else
-				drawscreen(infobar, 0, 0);
-			status.infobar = 1;
-			continue;
-		}
-#endif
 		//Plugin von aussen aufrufen
 		//if(rcret == RCTIMEOUT && status.extplugin != NULL)
 		if(status.extplugin != NULL)
@@ -501,7 +477,33 @@ void screeninfobar()
 			}
 
 			if(rcret == getrcconfigint("rctv", NULL))
+			{
+#ifdef MIPSEL
+				if(checkchipset("BCM7424") == 1 && status.servicetype == 0)
+				{
+					if(status.aktservice->type == CHANNEL)
+						servicefullHDMIin_start();
+					else if(status.aktservice->type == HDMIIN)
+					{
+						if(status.lastservice->channel != NULL)
+						{
+							tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+							servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
+							free(tmpstr); tmpstr = NULL; 
+						}
+					}
+					infobartimeout = 0;
+					infobar = infobar1;
+					if(status.infobar == 0)
+						drawscreen(infobar, 0, 4);
+					else
+						drawscreen(infobar, 0, 0);
+					status.infobar = 1;
+					continue;
+				}
+#endif				
 				status.servicetype = 0;
+			}
 			if(rcret == getrcconfigint("rcradio", NULL))
 				status.servicetype = 1;
 
