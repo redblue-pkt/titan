@@ -664,7 +664,7 @@ int main(int argc, char *argv[])
 
 	// set pvr 1 = allowed , 0 = disabled
 	status.pvr = 1;	
-	if(file_exist("/etc/.stable") && (checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1))
+	if(file_exist("/etc/.stable") && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1))
 		status.pvr = 0;
 
 	if(getconfigint("sos", NULL) == 0)
