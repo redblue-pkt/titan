@@ -7185,4 +7185,39 @@ void setdefaultsats()
 	}
 }
 
+char* create_backup(char* input, int flag)
+{
+	char* infotext = ostrcat(_("Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup."), NULL, 0, 0);
+	if(flag == 0) return infotext;
+
+	char* tmpstr = NULL, *cmd = NULL;
+	status.sec = 0; //deaktivate spinner
+	cmd = ostrcat(cmd, "backup.sh ", 1, 0);
+	cmd = ostrcat(cmd, input, 1, 0);
+
+	if(file_exist("/var/swap"))
+	{
+		if(!file_exist("/var/swap/logs"))
+			 mkdir("/var/swap/logs", 777);
+	
+		if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
+			cmd = ostrcat(cmd, " > /var/swap/logs/backup_debug.log 2>&1", 1, 0);		
+	}
+	else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
+	{
+		if(!file_exist("/mnt/logs"))
+			 mkdir("/mnt/logs", 777);
+	
+		if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
+			cmd = ostrcat(cmd, " > /mnt/logs/backup_debug.log 2>&1", 1, 0);
+	}
+
+	tmpstr = command(cmd);
+	if(tmpstr == NULL)
+		tmpstr = ostrcat(tmpstr, _("Backup created successfully"), 1, 0);
+
+	free(cmd); cmd = NULL;
+
+	return tmpstr;
+}
 #endif

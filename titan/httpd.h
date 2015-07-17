@@ -325,6 +325,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgettpkupgrade(fmt);
 	else if(ostrcmp(query, "getbackup") == 0)
 		buf = webgetbackup(fmt);
+	else if(ostrcmp(query, "getcreatebackup") == 0)
+		buf = webgetcreatebackup(fmt);
 	else if(ostrcmp(query, "getrestore") == 0)
 		buf = webgetrestore(fmt);
 	else if(ostrcmp(query, "getserviceinfo") == 0)
