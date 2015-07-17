@@ -633,7 +633,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if((status.pvr == 1 && (status.timeshift == 0 && rcret == getrcconfigint("rcplay", NULL)) || rcret == getrcconfigint("rcarchive", NULL) || rcret == getrcconfigint("rcwebplay", NULL)))
+		if((status.pvr == 1 && ((status.timeshift == 0 && rcret == getrcconfigint("rcplay", NULL)) || rcret == getrcconfigint("rcarchive", NULL) || rcret == getrcconfigint("rcwebplay", NULL))))
 		{
 			subtitlepause(1);
 			status.infobar = 0;
