@@ -6626,6 +6626,9 @@ char* webgetcreatebackup(int fmt)
 #else
 	tmpstr = create_backup("full", 1);
 	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	tmpstr = ostrcat(tmpstrf, "<br>", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Backup created successfully"), 1, 0);
 #endif
 	buf = ostrcat(buf, tmpstr, 1, 1);
 
@@ -6655,14 +6658,20 @@ char* webgetrestore(int fmt)
 		buf = ostrcat(buf, "<br>", 1, 0);
 	}
 
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/Service.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	tmpstr = create_backuprestore();
 	
 	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
-
 	buf = ostrcat(buf, tmpstr, 1, 1);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getcreaterestore&1 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Restore"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getcreaterestore&2 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Backup"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
 
 	if(fmt == 0)
 	{
@@ -6671,7 +6680,52 @@ char* webgetrestore(int fmt)
 	
 	return buf;
 }
+/////////
+char* webgetcreaterestore(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
 
+	char* buf = NULL, *tmpstr = NULL;
+
+	int mode = atoi(param);
+
+	if(mode == 1)
+		tmpstr = command("/sbin/settings.sh restore");
+
+	if(mode == 2)
+	{
+		writeallconfig(1);
+		tmpstr = command("/sbin/settings.sh backup");
+	}
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"createrestore\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+	if(tmpstr == NULL)
+		buf = ostrcat(buf, _("No backup folders found!!!\n\nAborting restoring..."), 1, 0);
+	else
+		buf = ostrcat(buf, _("Backup created successfully"), 1, 0);
+
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	buf = ostrcat(buf, tmpstr, 1, 1);	
+
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}	
+	
+	return buf;
+}
+	
 char* webstartplugin(char* param, int fmt)
 {
 	void (*startplugin)(void);
@@ -6698,5 +6752,235 @@ char* webstartplugin(char* param, int fmt)
 	return buf;
 }
 	
+char* webgetrestoredefaultlist(int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"restoredefaultlist\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Restore default settings"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getrestoredefault&1 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Restore default settings"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getrestoredefault&2 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Format MNT with Backup/Restore"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getrestoredefault&3 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Format MNT (all)"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetrestoredefault(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL, *tmpstr = NULL;
+	int mode = atoi(param);
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"restoredefault\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+
+	if(mode == 1)
+	{
+		tmpstr = getconfig("restorecmd", NULL);
+		system(tmpstr);
+		buf = ostrcat(buf, _("Restore default settings"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Receiver reboots now !!!"), 1, 0);
+		system("sync");
+		system("sleep 10; init 6");
+	}
+	if(mode == 2)
+	{
+		system("touch /var/etc/.erasemtd");
+		system("touch /var/etc/.backupmtd");		
+		buf = ostrcat(buf, _("Format MNT with Backup/Restore"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Receiver reboots now !!!"), 1, 0);
+		system("sync");
+		system("sleep 10; init 6");
+	}
+	if(mode == 3)
+	{
+		system("touch /var/etc/.erasemtd");
+		buf = ostrcat(buf, _("Format MNT (all)"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Receiver reboots now !!!"), 1, 0);
+		system("sync");
+		system("sleep 10; init 6");
+	}
+
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}	
+	
+	return buf;
+}
+
+char* webgetchannelsettingslist(int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"channelsettingslist\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Restore channel settings"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getchannelsettings&1 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Restore Default Channel Settings"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+	
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getchannelsettings&2 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Restore Default Bouquets"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getchannelsettings&3 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Restore Default Channels"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getchannelsettings&4 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Restore Default Providers"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getchannelsettings&5 target=main>", 1, 0);
+	buf = ostrcat(buf, _("Restore Default Sats"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetchannelsettings(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL;
+	int mode = atoi(param);
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"channelsettings\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+
+	if(mode == 1)
+	{
+		system("rm -rf /mnt/settings/* > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/* /mnt/settings > /dev/null 2>&1");
+		buf = ostrcat(buf, _("Restore Default Channel Settings"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Receiver reboots now !!!"), 1, 0);
+		system("sync");
+		system("sleep 10; init 6");
+	}
+	if(mode == 2)
+	{
+		system("rm -f /mnt/settings/bouquets.* > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/bouquets.cfg /mnt/settings/bouquets.cfg > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/bouquets.*.tv /mnt/settings > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/bouquets.*.radio /mnt/settings > /dev/null 2>&1");
+		buf = ostrcat(buf, _("Restore Default Bouquets"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Receiver reboots now !!!"), 1, 0);
+		system("sync");
+		system("sleep 10; init 6");
+	}
+	if(mode == 3)
+	{
+		system("rm -f /mnt/settings/channel > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/channel /mnt/settings > /dev/null 2>&1");
+		buf = ostrcat(buf, _("Restore Default Channels"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Receiver reboots now !!!"), 1, 0);
+		system("sync");
+		system("sleep 10; init 6");
+	}
+	if(mode == 4)
+	{
+		system("rm -f /mnt/settings/provider > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/provider /mnt/settings > /dev/null 2>&1");
+		buf = ostrcat(buf, _("Restore Default Providers"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Receiver reboots now !!!"), 1, 0);
+		system("sync");
+		system("sleep 10; init 6");
+	}
+	if(mode == 5)
+	{
+		system("rm -f /mnt/settings/satellites > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/satellites /mnt/settings > /dev/null 2>&1");
+		buf = ostrcat(buf, _("Restore Default Sats"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Receiver reboots now !!!"), 1, 0);
+		system("sync");
+		system("sleep 10; init 6");
+	}
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}	
+	
+	return buf;
+}
 	
 #endif

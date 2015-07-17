@@ -7220,4 +7220,11 @@ char* create_backup(char* input, int flag)
 
 	return tmpstr;
 }
+
+char* create_backuprestore()
+{
+	char* tmpstr = ostrcat(_("Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!"), NULL, 0, 0);
+	return tmpstr;
+}
+
 #endif
