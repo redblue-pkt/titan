@@ -997,6 +997,7 @@ void servicefullHDMIin_start()
 {
 	struct dvbdev *videonode = NULL;
 	struct dvbdev *audionode = NULL;
+	struct channel* chnode = NULL;
 	
 	servicestop(status.aktservice, 1, 1);
 	
@@ -1016,8 +1017,10 @@ void servicefullHDMIin_start()
 	status.aktservice->videodev = videonode;
 	status.aktservice->audiodev = audionode;
 	status.aktservice->type = HDMIIN;
-	delchannel(65535, 0, 1);
-	status.aktservice->channel = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
+	chnode = getchannel(65535, 0);
+	if(chnode == NULL)
+		chnode = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
+	status.aktservice->channel = chnode;
 }
 #endif
 
