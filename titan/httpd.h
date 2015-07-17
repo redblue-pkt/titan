@@ -319,6 +319,14 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgettpktmplist(param, fmt);
 	else if(ostrcmp(query, "gettpkremove") == 0 && param != NULL)
 		buf = webgettpkremove(param, fmt);
+	else if(ostrcmp(query, "getrestoredefault") == 0 && param != NULL)
+		buf = webgetrestoredefault(param, fmt);
+	else if(ostrcmp(query, "getchannelsettings") == 0 && param != NULL)
+		buf = webgetchannelsettings(param, fmt);
+	else if(ostrcmp(query, "getrestoredefaultlist") == 0)
+		buf = webgetrestoredefaultlist(fmt);
+	else if(ostrcmp(query, "getchannelsettingslist") == 0)
+		buf = webgetchannelsettingslist(fmt);
 	else if(ostrcmp(query, "gettpkremovelist") == 0)
 		buf = webgettpkremovelist(fmt);
 	else if(ostrcmp(query, "gettpkupgrade") == 0)
@@ -329,6 +337,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetcreatebackup(fmt);
 	else if(ostrcmp(query, "getrestore") == 0)
 		buf = webgetrestore(fmt);
+	else if(ostrcmp(query, "getcreaterestore") == 0 && param != NULL)
+		buf = webgetcreaterestore(param, fmt);
 	else if(ostrcmp(query, "getserviceinfo") == 0)
 		buf = webgetserviceinfo(fmt);
 	else if(ostrcmp(query, "getstreaming") == 0 && param != NULL)
