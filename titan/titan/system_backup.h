@@ -12,7 +12,7 @@ void screensystem_backup()
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *infotext = NULL;
 
-	infotext = _("Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup.");
+	infotext = create_backup(NULL, 0);
 
 	changetext(info, infotext);
 //	changetitle(backup, _("Create Backup"));
@@ -41,35 +41,18 @@ void screensystem_backup()
 			if(listbox->select != NULL && listbox->select->ret != NULL)
 			{
 				drawscreen(loading, 0, 0);
-				status.sec = 0; //deaktivate spinner
-				tmpstr = ostrcat(tmpstr, "backup.sh ", 1, 0);
-				tmpstr = ostrcat(tmpstr, listbox->select->ret, 1, 0);
-
-				if(file_exist("/var/swap"))
-				{
-					if(!file_exist("/var/swap/logs"))
-						 mkdir("/var/swap/logs", 777);
-				
-					if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
-						tmpstr = ostrcat(tmpstr, " > /var/swap/logs/backup_debug.log 2>&1", 1, 0);		
-				}
-				else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
-				{
-					if(!file_exist("/mnt/logs"))
-						 mkdir("/mnt/logs", 777);
-				
-					if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
-						tmpstr = ostrcat(tmpstr, " > /mnt/logs/backup_debug.log 2>&1", 1, 0);
-				}
-
-				system(tmpstr);
-				free(tmpstr); tmpstr = NULL;
+				tmpstr = create_backup(listbox->select->ret, 1);
 				clearscreen(loading);
+				changetext(info, tmpstr);
+				sleep(30);
 			}
 		}
 	}
 
-	infotext = NULL;
+//	infotext = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(infotext), infotext = NULL;
+
 	delownerrc(backup);
 	clearscreen(backup);
 }

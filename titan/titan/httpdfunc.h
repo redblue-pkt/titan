@@ -6585,13 +6585,48 @@ char* webgetbackup(int fmt)
 		buf = ostrcat(buf, "<br>", 1, 0);
 	}
 
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/Service.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	tmpstr = create_backup(NULL, 0);
 	
 	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+	buf = ostrcat(buf, tmpstr, 1, 1);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
+	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getcreatebackup target=main>", 1, 0);
+	buf = ostrcat(buf, _("create System Backup"), 1, 0);
+	buf = ostrcat(buf, "</a>", 1, 0);
+	buf = ostrcat(buf, "</br></br>", 1, 0);
 
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetcreatebackup(int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"createbackup\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("create System Backup"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+#ifdef MIPSEL
+	tmpstr = ostrcat(tmpstr, _("System Backup on your Box not Supported"), 1, 0);
+#else
+	tmpstr = create_backup("full", 1);
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+#endif
 	buf = ostrcat(buf, tmpstr, 1, 1);
 
 	if(fmt == 0)
