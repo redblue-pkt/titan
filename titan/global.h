@@ -7187,7 +7187,7 @@ void setdefaultsats()
 
 char* create_backup(char* input, int flag)
 {
-	char* infotext = ostrcat(_("Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup."), NULL, 0, 0);
+	char* infotext = ostrcat(_("The backup image will be saved to /tmp or /var/backup. In case of insufficient internal\nmemory, a USB Stick or HDD must be used. A folder named backup must exist on\nthe target drive."), NULL, 0, 0);
 	if(flag == 0) return infotext;
 
 	char* tmpstr = NULL, *cmd = NULL;
