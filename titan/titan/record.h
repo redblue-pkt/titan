@@ -726,8 +726,23 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 							while(i < readret-1)
 							{
 								if(buf[i] == 0x47)
+								{
 									buf[i+3] = buf[i+3] & 0x3f;
-								i = i + 188;
+									i = i + 188;
+								}
+								else
+								{
+									while(i < readret-1)
+									{
+										i = i + 1;
+										if(buf[i] == 0x47)
+										{
+											buf[i+3] = buf[i+3] & 0x3f;
+											i = i + 188;
+											break;
+										}
+									}	
+								}
 							}
 						}
 #ifndef MIPSEL
