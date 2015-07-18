@@ -1377,7 +1377,7 @@ msgstr "Hintergrundfarbe"
 msgid "Background2 Color"
 msgstr "Hintergrundfarbe 2"
 
-#: skin_default_skin.xml.h:106
+#: httpdfunc.h:6672 skin_default_skin.xml.h:106
 msgid "Backup"
 msgstr "Sichern"
 
@@ -1390,7 +1390,7 @@ msgstr "Einstellungen werden gesichert"
 msgid "Backup / Restore Settings"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: system_backup_restore.h:82
+#: global.h:7217 httpdfunc.h:6631 httpdfunc.h:6711 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Die Sicherung wurde erfolgreich erstellt"
 
@@ -1409,17 +1409,6 @@ msgstr ""
 "Sicherung wurde gestartet.\n"
 "\n"
 "Bitte warten"
-
-#: system_backup.h:15
-msgid ""
-"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
-"will never use.\n"
-"There must be a folder backup."
-msgstr ""
-"Das Image wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher "
-"nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert "
-"werden.\n"
-"Es muss ein Ordner mit dem Namen 'backup' auf dem Datenträger sein."
 
 #: lnbconfig.h:142
 msgid "Band"
@@ -1862,7 +1851,7 @@ msgstr ""
 "Kein freier Tuner gefunden oder kein\n"
 "Tuner definiert."
 
-#: record.h:1110
+#: record.h:1125
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -1870,7 +1859,7 @@ msgstr ""
 "FEHLER: Es ist kein freier Tuner vorhanden.\n"
 "Zum Aufnahme/Timeshift-Sender wechseln?"
 
-#: record.h:1608
+#: record.h:1623
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG-Zeit kann nicht gefunden werden oder ist nicht korrekt!"
 
@@ -3306,7 +3295,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1110 record.h:1358 record.h:1608 record.h:1633
+#: record.h:387 record.h:1125 record.h:1373 record.h:1623 record.h:1648
 #: rectimer.h:577 rectimer.h:1239 rectimer.h:1386 rectimer.h:1398
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -3976,11 +3965,11 @@ msgstr "Formatieren"
 msgid "Format HDD"
 msgstr "Datenträger formatieren"
 
-#: restoredefault.h:65
+#: httpdfunc.h:6785 httpdfunc.h:6836 restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr "Auslieferzustand"
 
-#: restoredefault.h:64
+#: httpdfunc.h:6780 httpdfunc.h:6827 restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatiere MNT mit anschließender Wiederherstellung"
 
@@ -5989,7 +5978,7 @@ msgstr "Menüliste"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1110 record.h:1358 record.h:1608 record.h:1633 rectimer.h:577
+#: record.h:1125 record.h:1373 record.h:1623 record.h:1648 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6423,7 +6412,7 @@ msgstr "TPK Auswahl nicht vorhanden"
 msgid "No Tuner configured"
 msgstr "FEHLER: Es ist kein Tuner eingerichtet!"
 
-#: system_backup_restore.h:51
+#: httpdfunc.h:6709 system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -6576,7 +6565,7 @@ msgstr "Ö"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1110 record.h:1633 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
+#: record.h:1125 record.h:1648 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
 #: rectimer.h:1398 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -7343,7 +7332,7 @@ msgstr "Ausschalttimer"
 msgid "Present"
 msgstr "vorhanden"
 
-#: system_backup_restore.h:15
+#: global.h:7226 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -7652,6 +7641,8 @@ msgstr "Aufnahme Fortschritt Farbe"
 msgid "Recall"
 msgstr ""
 
+#: httpdfunc.h:6819 httpdfunc.h:6829 httpdfunc.h:6838 httpdfunc.h:6928
+#: httpdfunc.h:6940 httpdfunc.h:6950 httpdfunc.h:6960 httpdfunc.h:6970
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
 msgstr "Receiver startet jetzt neu!"
@@ -7664,7 +7655,7 @@ msgstr "Ihr Receiver wurde erfolgreich freigeschaltet"
 msgid "Receiver unlock"
 msgstr "Receiver freischalten"
 
-#: record.h:1507 record.h:1575 skin_default_skin.xml.h:542
+#: record.h:1522 record.h:1590 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7728,7 +7719,7 @@ msgstr "Aufnahme läuft"
 msgid "Record path"
 msgstr "Aufnahmepfad"
 
-#: record.h:1633
+#: record.h:1648
 msgid "Record started"
 msgstr "Aufnahme gestartet"
 
@@ -7919,27 +7910,27 @@ msgstr "Netzwerk neu starten?"
 msgid "Restart Oscam ?"
 msgstr "OScam Neustart?"
 
-#: skin_default_skin.xml.h:573
+#: httpdfunc.h:6667 skin_default_skin.xml.h:573
 msgid "Restore"
 msgstr "Wiederherstellen"
 
-#: skin_default_skin.xml.h:574
+#: httpdfunc.h:6879 httpdfunc.h:6938 skin_default_skin.xml.h:574
 msgid "Restore Default Bouquets"
 msgstr "Standard Bouquet Liste wiederherstellen"
 
-#: skin_default_skin.xml.h:576
+#: httpdfunc.h:6874 httpdfunc.h:6926 skin_default_skin.xml.h:576
 msgid "Restore Default Channel Settings"
 msgstr "Komplette Standard Sender Liste wiederherstellen"
 
-#: skin_default_skin.xml.h:575
+#: httpdfunc.h:6884 httpdfunc.h:6948 skin_default_skin.xml.h:575
 msgid "Restore Default Channels"
 msgstr "Standard Sender Liste wiederherstellen"
 
-#: skin_default_skin.xml.h:577
+#: httpdfunc.h:6889 httpdfunc.h:6958 skin_default_skin.xml.h:577
 msgid "Restore Default Providers"
 msgstr "Standard Anbieter Liste wiederherstellen"
 
-#: skin_default_skin.xml.h:578
+#: httpdfunc.h:6894 httpdfunc.h:6968 skin_default_skin.xml.h:578
 msgid "Restore Default Sats"
 msgstr "Standard SAT Liste wiederherstellen"
 
@@ -7947,7 +7938,12 @@ msgstr "Standard SAT Liste wiederherstellen"
 msgid "Restore Settings"
 msgstr "Einstellungen wiederherstellen"
 
-#: restoredefault.h:63 restoredefault.h:67 skin_default_skin.xml.h:579
+#: httpdfunc.h:6868 webif_settings.h:4
+msgid "Restore channel settings"
+msgstr ""
+
+#: httpdfunc.h:6768 httpdfunc.h:6775 httpdfunc.h:6817 restoredefault.h:63
+#: restoredefault.h:67 skin_default_skin.xml.h:579 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Werkseinstellungen"
 
@@ -8817,7 +8813,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Einstellungen speichern?"
 
-#: httpdfunc.h:6618 skin_default_skin.xml.h:639 webif_system.h:4
+#: httpdfunc.h:6656 skin_default_skin.xml.h:639 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Einstellungen sichern/wiederherstellen"
 
@@ -9543,6 +9539,10 @@ msgstr "USB-Image Aktualisieren (Lokal)"
 msgid "System Backup"
 msgstr "System Sicherung"
 
+#: httpdfunc.h:6625
+msgid "System Backup on your Box not Supported"
+msgstr ""
+
 #: skin_default_skin.xml.h:709 webif_info.h:6 webif_systeminfo.h:1
 msgid "System Info"
 msgstr "System Infos"
@@ -9744,6 +9744,15 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
+#: global.h:7190
+msgid ""
+"The backup image will be saved to /tmp or /var/backup. In case of "
+"insufficient internal\n"
+"memory, a USB Stick or HDD must be used. A folder named backup must exist "
+"on\n"
+"the target drive."
+msgstr ""
+
 #: divxstage.h:79 novamov.h:80 nowvideo.h:105 primeshare.h:79 shared.h:65
 #: thefile.h:68 videoweed.h:80
 msgid ""
@@ -9929,7 +9938,7 @@ msgstr "Timer Liste"
 msgid "Timer Record Path"
 msgstr "Ordner für Timeraufnahme"
 
-#: record.h:1357
+#: record.h:1372
 msgid "Timer Record start !"
 msgstr ""
 "Timeraufnahme wurde gestartet!\n"
@@ -11166,15 +11175,15 @@ msgstr "aktivieren"
 msgid "active"
 msgstr "Autostart aktiviert"
 
-#: record.h:1573 record.h:1619
+#: record.h:1588 record.h:1634
 msgid "add recording (enter duration)"
 msgstr "Aufnahme hinzufügen (Länge eingeben)"
 
-#: record.h:1572 record.h:1614
+#: record.h:1587 record.h:1629
 msgid "add recording (indefinitely)"
 msgstr "Aufnahme hinzufügen (unbegrenzt)"
 
-#: record.h:1571 record.h:1601
+#: record.h:1586 record.h:1616
 msgid "add recording (stop after current event)"
 msgstr "Aufnahme hinzufügen (diese Sendung)"
 
@@ -11417,7 +11426,7 @@ msgstr "Karte gefunden"
 msgid "center"
 msgstr "mittig"
 
-#: record.h:1553 record.h:1562 record.h:1585
+#: record.h:1568 record.h:1577 record.h:1600
 msgid "change"
 msgstr "ändern"
 
@@ -11503,7 +11512,7 @@ msgstr "zu Favoriten kopieren"
 msgid "cover"
 msgstr "Cover"
 
-#: skin_default_skin.xml.h:174
+#: httpdfunc.h:6594 httpdfunc.h:6619 skin_default_skin.xml.h:174
 msgid "create System Backup"
 msgstr "System Sicherung erstellen"
 
@@ -13085,8 +13094,8 @@ msgstr "Schritt nach West"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5573 httpdfunc.h:5619 record.h:1489 record.h:1498 record.h:1509
-#: record.h:1538 record.h:1547 record.h:1579 skin_default_skin.xml.h:687
+#: httpdfunc.h:5573 httpdfunc.h:5619 record.h:1504 record.h:1513 record.h:1524
+#: record.h:1553 record.h:1562 record.h:1594 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stoppen"
@@ -13729,3 +13738,13 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid ""
+#~ "Backup to /tmp or /var/backup. If the free memory too small can a usb "
+#~ "device will never use.\n"
+#~ "There must be a folder backup."
+#~ msgstr ""
+#~ "Das Image wird in /tmp oder /var/backup abgelegt. Falls der interne "
+#~ "Speicher nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD "
+#~ "gespeichert werden.\n"
+#~ "Es muss ein Ordner mit dem Namen 'backup' auf dem Datenträger sein."
