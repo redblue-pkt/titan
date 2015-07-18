@@ -13602,6 +13602,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
-#~ msgstr "Settings Hotbird 13.0/Astra 19.2/Astra 28.2E (Bulldog)"
