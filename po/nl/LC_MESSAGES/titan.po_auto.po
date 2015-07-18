@@ -1,15 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.65\n"
+"Project-Id-Version: TitanNit 1.67\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-01-11 21:36+0100\n"
-"Last-Translator: Bulldog <_Bulldog@aaf.info>\n"
+"PO-Revision-Date: 2015-07-18 10:05+0100\n"
+"Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
 
 #: hwtest.h:442
 msgid " - OKAY!"
@@ -9550,6 +9551,8 @@ msgid ""
 "on\n"
 "the target drive."
 msgstr ""
+"Backup wordt opgeslagen in /tmp\n"
+"Vanaf daar veilig stellen naar uw PC m.b.v. van FTP"
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:105 primeshare.h:79 shared.h:65
 #: thefile.h:68 videoweed.h:80

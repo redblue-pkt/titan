@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.66\n"
+"Project-Id-Version: TitanNit 1.67\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
@@ -9541,7 +9541,7 @@ msgstr "System Sicherung"
 
 #: httpdfunc.h:6625
 msgid "System Backup on your Box not Supported"
-msgstr ""
+msgstr "System Sicherung wird auf Ihrem Receiver nicht unterstützt."
 
 #: skin_default_skin.xml.h:709 webif_info.h:6 webif_systeminfo.h:1
 msgid "System Info"
@@ -9752,6 +9752,10 @@ msgid ""
 "on\n"
 "the target drive."
 msgstr ""
+"Das Image wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher "
+"nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert "
+"werden.\n"
+"Es muss ein Ordner mit dem Namen 'backup' auf dem Datenträger sein."
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:105 primeshare.h:79 shared.h:65
 #: thefile.h:68 videoweed.h:80
