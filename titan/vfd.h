@@ -470,7 +470,7 @@ void updatevfd()
 	
 	if(status.standby == 0)
 	{
-		if(status.aktservice->type != CHANNEL)
+		if(status.aktservice->type != CHANNEL && status.aktservice->type != HDMIIN)
 		{
 			free(tmpstr);
 			return;
