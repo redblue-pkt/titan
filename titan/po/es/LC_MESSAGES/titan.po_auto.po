@@ -13591,12 +13591,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Backup to /tmp or /var/backup. If the free memory too small can a usb "
-#~ "device will never use.\n"
-#~ "There must be a folder backup."
-#~ msgstr ""
-#~ "Copia de seguridad en /tmp o /var/ backup. Si no hay espacio suficiente, "
-#~ "se puede utilizar una tarjeta de disco duro/USB stick.\n"
-#~ "Una carpeta llamada copia de seguridad debe existir."

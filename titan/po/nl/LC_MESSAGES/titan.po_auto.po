@@ -13491,11 +13491,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Backup to /tmp or /var/backup. If the free memory too small can a usb "
-#~ "device will never use.\n"
-#~ "There must be a folder backup."
-#~ msgstr ""
-#~ "Backup wordt opgeslagen in /tmp\n"
-#~ "Vanaf daar veilig stellen naar uw PC m.b.v. van FTP"

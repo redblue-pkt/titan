@@ -13738,13 +13738,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Backup to /tmp or /var/backup. If the free memory too small can a usb "
-#~ "device will never use.\n"
-#~ "There must be a folder backup."
-#~ msgstr ""
-#~ "Das Image wird in /tmp oder /var/backup abgelegt. Falls der interne "
-#~ "Speicher nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD "
-#~ "gespeichert werden.\n"
-#~ "Es muss ein Ordner mit dem Namen 'backup' auf dem Datenträger sein."
