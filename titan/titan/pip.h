@@ -450,8 +450,6 @@ int pipswap(struct service *node)
 {
 	int hdmi = 0;
 	char* tmpstr = NULL;
-	struct dvbdev *videonode = NULL;
-	struct dvbdev *audionode = NULL;
 	struct channel* chnodeP = node->channel;
 	struct channel* chnodeT = status.aktservice->channel;
 	if(node->type == CHANNEL && chnodeP != NULL && chnodeP != chnodeT)
@@ -485,23 +483,7 @@ int pipswap(struct service *node)
 	{
 		pipstop(node, 0);
 		servicestop(status.aktservice, 1, 1);
-		audionode = audioopen(0);
-		if(audionode != NULL)
-		{
-			audioselectsource(audionode, AUDIO_SOURCE_HDMI);
-			audioplay(audionode); 
-		}
-		videonode = videoopen(0, 0);
-		if(videonode != NULL)
-		{
-			videoselectsource(videonode, VIDEO_SOURCE_HDMI);
-			videosetstreamtype(videonode, 0);
-			videoplay(videonode); 
-		}
-		status.aktservice->videodev = videonode;
-		status.aktservice->audiodev = audionode;
-		status.aktservice->type = HDMIIN;
-		status.aktservice->channel = NULL;
+		servicefullHDMIin_start();
 		pipstart(chnodeT, NULL, 0);
 		free(node->channellist);
 		node->channellist = ostrcat(status.lastservice->channellist, NULL, 0, 0);
