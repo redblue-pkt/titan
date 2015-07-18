@@ -350,8 +350,8 @@ query:	getcommand
 raw:		??
 descr:		returns command output
 param:		yes
-example:	queryraw?getcommand&free
-example:	queryraw?getcommand&df%02-h
+example:	queryraw?getcommand&cmd=free
+example:	queryraw?getcommand&cmd=df%02-h
 
 query:	webgethelp
 raw:		??

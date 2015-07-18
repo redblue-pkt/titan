@@ -275,11 +275,11 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetbouquetchannel(param, fmt);
 		m_unlock(&status.waitrcmutex, 24);
 	}
-	else if(ostrcmp(query, "getcommand") == 0 && param != NULL)
+	else if((ostrcmp(query, "getcommand") == 0 || ostrcmp(query, "getcommand=") == 0))
 	{
 		m_lock(&status.waitrcmutex, 24);
 		buf = webgetcommand(param, fmt);
-		m_unlock(&status.waitrcmutex, 24);
+		m_unlock(&status.waitrcmutex, 24);		
 	}
 	else if(ostrcmp(query, "getsystem") == 0 && param != NULL)
 	{
@@ -331,6 +331,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgettpkremovelist(fmt);
 	else if(ostrcmp(query, "gettpkupgrade") == 0)
 		buf = webgettpkupgrade(fmt);
+	else if(ostrcmp(query, "gettelnet") == 0)
+		buf = webgettelnet(fmt);
 	else if(ostrcmp(query, "getbackup") == 0)
 		buf = webgetbackup(fmt);
 	else if(ostrcmp(query, "getcreatebackup") == 0)

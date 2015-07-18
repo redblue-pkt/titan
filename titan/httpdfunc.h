@@ -5052,33 +5052,6 @@ char* webgetparamvalue(char* param, char* searchparam)
 	return buf;
 }
 
-char* webgetcommand(char* param, int fmt)
-{
-	char* buf = NULL, *tmpstr = NULL;
-	if(param == NULL) return NULL;
-	if(status.security == 0) return NULL;
-
-//	if(fmt == 0) 
-//	{
-		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
-		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"command\"><center>", 1, 0);
-//	}
-
-	debug(10, "cmd: %s", param);
-	tmpstr = command(param);
-	buf = ostrcat(buf, tmpstr, 1, 0);
-	free(tmpstr), tmpstr = NULL;	
-
-	buf = string_replace_all("\n", "<br>", buf, 1);
-	buf = string_replace_all("<br>", "<br>\n", buf, 1);
-
-//	if(fmt == 0)
-		buf = ostrcat(buf, "</center></body></html>", 1, 0);
-
-	return buf;
-}
-
 char* webgetsystem(char* param, int fmt)
 {
 	char* buf = NULL;
@@ -6982,5 +6955,96 @@ char* webgetchannelsettings(char* param, int fmt)
 	
 	return buf;
 }
-	
+
+char* webgettelnet(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+	if(status.security == 0) return NULL;
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"command\"><center>", 1, 0);
+//	}
+
+	buf = ostrcat(buf, "<form action=query method=get>", 1, 0);
+	buf = ostrcat(buf, "<br><br>", 1, 0);
+	buf = ostrcat(buf, "<div class=label>", 1, 0);
+	buf = ostrcat(buf, _("Send Telnet Command"), 1, 0);
+	buf = ostrcat(buf, "</div>", 1, 0);
+
+	buf = ostrcat(buf, "<br><br>", 1, 0);
+	buf = ostrcat(buf, "<input hidden class=inputbox name=getcommand>", 1, 0);	
+//	buf = ostrcat(buf, "<input hidden class=inputbox name=play>", 1, 0);
+	buf = ostrcat(buf, "<input class=inputbox style='width:360px' name=\"cmd\" style=\"overflow:hidden;\">", 1, 0);
+	buf = ostrcat(buf, "<br><br>", 1, 0);
+	buf = ostrcat(buf, "<input class=button type=submit value=\"", 1, 0);
+	buf = ostrcat(buf, _("Send"), 1, 0);
+	buf = ostrcat(buf, "\"></input>", 1, 0);
+
+	buf = ostrcat(buf, "&nbsp;", 1, 0);
+	buf = ostrcat(buf, "<input class=button type=reset name=reset value=\"", 1, 0);
+	buf = ostrcat(buf, _("Reset"), 1, 0);
+	buf = ostrcat(buf, "\"></input>", 1, 0);
+
+	buf = ostrcat(buf, "</form>", 1, 0);
+
+
+//	debug(10, "cmd: %s", param);
+//	tmpstr = command(param);
+	buf = ostrcat(buf, tmpstr, 1, 0);
+	free(tmpstr), tmpstr = NULL;	
+
+	buf = string_replace_all("\n", "<br>", buf, 1);
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+//	if(fmt == 0)
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+
+	return buf;
+}
+
+char* webgetcommand(char* param, int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL, *cmd = NULL;
+	if(param == NULL) return NULL;
+	if(status.security == 0) return NULL;
+
+	cmd = ostrcat(param + 4, NULL, 0, 0);
+
+	if(cmd == NULL) return NULL;
+	htmldecode(cmd, cmd);
+	cmd = string_replace_all("+", " ", cmd, 1);	
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"command\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, cmd, 1, 0);	
+		buf = ostrcat(buf, "</h1>", 1, 0);
+//	}
+
+	buf = ostrcat(buf, "<br><br>", 1, 0);
+
+	debug(10, "cmd: %s", cmd);
+	tmpstr = command(cmd);
+	printf("webgetcommand: tmpstr: %s\n", tmpstr);
+
+	buf = ostrcat(buf, tmpstr, 1, 0);
+	free(tmpstr), tmpstr = NULL;	
+	free(cmd), cmd = NULL;	
+
+	buf = string_replace_all("\n", "<br>", buf, 1);
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+//	if(fmt == 0)
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+
+	return buf;
+}
+
 #endif
