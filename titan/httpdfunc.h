@@ -6627,7 +6627,7 @@ char* webgetcreatebackup(int fmt)
 	tmpstr = create_backup("full", 1);
 	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
 
-	tmpstr = ostrcat(tmpstrf, "<br>", 1, 0);
+	tmpstr = ostrcat(tmpstr, "<br>", 1, 0);
 	tmpstr = ostrcat(tmpstr, _("Backup created successfully"), 1, 0);
 #endif
 	buf = ostrcat(buf, tmpstr, 1, 1);
