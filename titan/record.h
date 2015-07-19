@@ -83,6 +83,15 @@ char* recordcheckret(struct stimerthread* timernode, int ret, int flag)
 			case 17:
 				tmpstr = ostrcat(_("No space left on device"), NULL, 0, 0);
 				break;
+			case 18:
+				tmpstr = ostrcat(_("No free encoder"), NULL, 0, 0);
+				break;
+			case 19:
+				tmpstr = ostrcat(_("Can't open VIDEO device"), NULL, 0, 0);
+				break;
+			case 20:
+				tmpstr = ostrcat(_("Can't open AUDIO device"), NULL, 0, 0);
+				break;
 		}
 		if(tmpstr != NULL)
 		{
@@ -1330,17 +1339,33 @@ not needed we use wakeup_record_device on recordstartreal
 #ifdef MIPSEL
 	else if(chnode->serviceid == 65535)
 	{
-		ret = encoderset(-1, 1, 1024*1024*8, 1280, 720, 25000, 0, 0);
-		ret = 0;
+		encoderset(-1, 1, 1024*1024*8, 1280, 720, 25000, 0, 0);
 		encnode = encoderopen(0);
+		if(encode = NULL)
+		{
+			ret = 18;
+			goto end;
+		}
 		servicenode->encoderdev = encnode;
  		
  		videonode = videoopen(0, encnode->decoder);
+		if(videonode = NULL)
+		{
+			ret = 19;
+			goto end;
+		} 		
 		servicenode->videodev = videonode;
 		videoselectsource(servicenode->videodev, VIDEO_SOURCE_HDMI);
 		videoplay(servicenode->videodev);
 
  		audionode = audioopen(encnode->decoder);
+ 		if(audionode = NULL)
+		{
+			ret = 20;
+			videostop(node->videodev, 1);
+			videoclose(node->videodev, -1);
+			goto end;
+		} 
 		servicenode->audiodev = audionode;
 		audioselectsource(servicenode->audiodev, AUDIO_SOURCE_HDMI);
 		audioplay(servicenode->audiodev);

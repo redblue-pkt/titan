@@ -1019,7 +1019,8 @@ void servicefullHDMIin_start()
 	status.aktservice->type = HDMIIN;
 	chnode = getchannel(65535, 0);
 	if(chnode == NULL)
-		chnode = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
+		//chnode = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
+		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1);
 	status.aktservice->channel = chnode;
 }
 #endif

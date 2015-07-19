@@ -250,6 +250,7 @@ void freechannelhistory();
 
 //channellist.h
 int screenchannellist(struct channel** retchannel, char** retchannellist, int flag);
+int checkbouquet(struct channel* tmpchannel);
 
 //rguid.h
 void rguidthreadfunc(struct stimerthread* timernode);

@@ -479,6 +479,7 @@ int pipswap(struct service *node)
 			node->channellist = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 		}
 	}
+#ifdef MIPSEL
 	else if(node->type == HDMIIN)
 	{
 		pipstop(node, 0);
@@ -488,6 +489,7 @@ int pipswap(struct service *node)
 		free(node->channellist);
 		node->channellist = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 	}
+#endif
 	else
 	{
 		return 1;
