@@ -8113,7 +8113,7 @@ msgid "Sat: "
 msgstr "Satelite: "
 
 #: tpk_description.h:118
-msgid "Sat: Bulldog Settings 3x Sat | 18.07.2015"
+msgid "Sat: Bulldog Settings 3x Sat | 19.07.2015"
 msgstr ""
 
 #: tpk_description.h:119
@@ -8698,7 +8698,7 @@ msgid "Settings Hotbird 13.0, Astra 19.2 | 18.07.2015"
 msgstr ""
 
 #: tpk_showname.h:156
-msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 18.07.2015"
+msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 19.07.2015"
 msgstr ""
 
 #: titan.c:1027
