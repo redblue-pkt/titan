@@ -1341,7 +1341,7 @@ not needed we use wakeup_record_device on recordstartreal
 	{
 		encoderset(-1, 1, 1024*1024*8, 1280, 720, 25000, 0, 0);
 		encnode = encoderopen(0);
-		if(encode = NULL)
+		if(encnode == NULL)
 		{
 			ret = 18;
 			goto end;
@@ -1349,7 +1349,7 @@ not needed we use wakeup_record_device on recordstartreal
 		servicenode->encoderdev = encnode;
  		
  		videonode = videoopen(0, encnode->decoder);
-		if(videonode = NULL)
+		if(videonode == NULL)
 		{
 			ret = 19;
 			goto end;
@@ -1359,11 +1359,11 @@ not needed we use wakeup_record_device on recordstartreal
 		videoplay(servicenode->videodev);
 
  		audionode = audioopen(encnode->decoder);
- 		if(audionode = NULL)
+ 		if(audionode == NULL)
 		{
 			ret = 20;
-			videostop(node->videodev, 1);
-			videoclose(node->videodev, -1);
+			videostop(servicenode->videodev, 1);
+			videoclose(servicenode->videodev, -1);
 			goto end;
 		} 
 		servicenode->audiodev = audionode;
