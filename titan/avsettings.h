@@ -214,6 +214,31 @@ void screenavsettings(int flag)
 	addchoicebox(autosubtitle, "1", _("yes"));
 	setchoiceboxselection(autosubtitle, getconfig("autosubtitle", NULL));
 
+#ifdef MIPSEL
+	addchoicebox(audiodelaybitstream, "0", _("no"));
+	addchoicebox(audiodelaybitstream, "08CA", "25ms");
+	addchoicebox(audiodelaybitstream, "1194", "50ms");
+	addchoicebox(audiodelaybitstream, "1A5E", "75ms");
+	addchoicebox(audiodelaybitstream, "2328", "100ms");
+	addchoicebox(audiodelaybitstream, "34BC", "150ms");
+	addchoicebox(audiodelaybitstream, "4650", "200ms");
+	addchoicebox(audiodelaybitstream, "6978", "300ms");
+	addchoicebox(audiodelaybitstream, "8CA0", "400ms");
+	addchoicebox(audiodelaybitstream, "AFC8", "500ms");
+	setchoiceboxselection(audiodelaybitstream, getconfig("audiodelaybitstream", NULL));
+	
+	addchoicebox(audiodelaypcm, "0", _("no"));
+	addchoicebox(audiodelaypcm, "08CA", "25ms");
+	addchoicebox(audiodelaypcm, "1194", "50ms");
+	addchoicebox(audiodelaypcm, "1A5E", "75ms");
+	addchoicebox(audiodelaypcm, "2328", "100ms");
+	addchoicebox(audiodelaypcm, "34BC", "150ms");
+	addchoicebox(audiodelaypcm, "4650", "200ms");
+	addchoicebox(audiodelaypcm, "6978", "300ms");
+	addchoicebox(audiodelaypcm, "8CA0", "400ms");
+	addchoicebox(audiodelaypcm, "AFC8", "500ms");
+	setchoiceboxselection(audiodelaypcm, getconfig("audiodelaypcm", NULL));
+#else	
 	addchoicebox(audiodelaybitstream, "0", _("no"));
 	addchoicebox(audiodelaybitstream, "350", "10ms");
 	addchoicebox(audiodelaybitstream, "700", "20ms");
@@ -239,7 +264,8 @@ void screenavsettings(int flag)
 	addchoicebox(audiodelaypcm, "3150", "90ms");
 	addchoicebox(audiodelaypcm, "3500", "100ms");
 	setchoiceboxselection(audiodelaypcm, getconfig("audiodelaypcm", NULL));
-
+#endif
+	
 	drawscreen(avsettings, 0, 0);
 	addscreenrc(avsettings, listbox);
 
