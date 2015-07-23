@@ -3109,7 +3109,7 @@ msgid "ERROR... can't set marker in this file"
 msgstr ""
 
 #: about.h:9 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
-#: autotimer.c:603 avsettings.h:305 betarobot.h:57 bgdownload.h:176
+#: autotimer.c:603 avsettings.h:331 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:945 channellist.h:947 channellist.h:952
 #: channellist.h:954 channellist.h:1038 divxstage.h:36 divxstage.h:79
 #: divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345
@@ -4959,7 +4959,7 @@ msgstr ""
 msgid "Ipad Stream"
 msgstr ""
 
-#: avsettings.h:305 videomode.h:67
+#: avsettings.h:331 videomode.h:67
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -5667,7 +5667,7 @@ msgstr ""
 msgid "Menulist"
 msgstr ""
 
-#: avsettings.h:305 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
+#: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
 #: channellist.h:954 channellist.h:1038 divxstage.h:36 divxstage.h:79
 #: divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345
@@ -6236,7 +6236,7 @@ msgid "OE"
 msgstr ""
 
 #: about.h:9 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
-#: autotimer.c:603 avsettings.h:305 betarobot.h:57 bgdownload.h:176
+#: autotimer.c:603 avsettings.h:331 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:945 channellist.h:947
 #: channellist.h:952 channellist.h:954 channellist.h:1038 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336
@@ -11908,19 +11908,19 @@ msgstr "Serwer NFS"
 #: adjust.h:204 adjust.h:208 adjust.h:214 adjust.h:218 adjust.h:225
 #: adjust.h:229 adjust.h:233 adjust.h:239 adjust.h:245 adjust.h:455
 #: autotimer.c:453 autotimer.c:486 avsettings.h:162 avsettings.h:213
-#: avsettings.h:217 avsettings.h:230 blindscanadjust.h:150
-#: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
-#: blindscanadjust.h:191 cec.h:143 cec.h:147 cec.h:151 cec.h:155 cec.h:159
-#: cec.h:163 cec.h:167 cec.h:171 cec.h:175 dlna.h:276 epgsettings.h:135
-#: epgsettings.h:188 epgsettings.h:197 epgsettings.h:201 epgsettings.h:206
-#: epgsettings.h:211 harddisk.h:236 harddisk.h:241 harddisk.h:255
-#: harddisk.h:260 harddisk.h:274 harddisk.h:279 harddisk.h:293 harddisk.h:298
-#: httpdfunc.h:3877 httpdfunc.h:3915 httpdfunc.h:3938 httpdfunc.h:3967
-#: httpdfunc.h:4140 httpdfunc.h:4389 httpdfunc.h:4449 httpdfunc.h:4472
-#: httpdfunc.h:4573 httpdfunc.h:4597 httpdfunc.h:4640 httpdfunc.h:4662
-#: httpdfunc.h:4684 httpdfunc.h:4713 httpdfunc.h:4735 httpdfunc.h:4780
-#: httpdfunc.h:4803 httpdfunc.h:4827 httpdfunc.h:4941 httpdsettings.h:27
-#: httpdsettings.h:57 httpdsettings.h:65 inadyn.h:138
+#: avsettings.h:218 avsettings.h:230 avsettings.h:242 avsettings.h:255
+#: blindscanadjust.h:150 blindscanadjust.h:154 blindscanadjust.h:158
+#: blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143 cec.h:147 cec.h:151
+#: cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171 cec.h:175 dlna.h:276
+#: epgsettings.h:135 epgsettings.h:188 epgsettings.h:197 epgsettings.h:201
+#: epgsettings.h:206 epgsettings.h:211 harddisk.h:236 harddisk.h:241
+#: harddisk.h:255 harddisk.h:260 harddisk.h:274 harddisk.h:279 harddisk.h:293
+#: harddisk.h:298 httpdfunc.h:3877 httpdfunc.h:3915 httpdfunc.h:3938
+#: httpdfunc.h:3967 httpdfunc.h:4140 httpdfunc.h:4389 httpdfunc.h:4449
+#: httpdfunc.h:4472 httpdfunc.h:4573 httpdfunc.h:4597 httpdfunc.h:4640
+#: httpdfunc.h:4662 httpdfunc.h:4684 httpdfunc.h:4713 httpdfunc.h:4735
+#: httpdfunc.h:4780 httpdfunc.h:4803 httpdfunc.h:4827 httpdfunc.h:4941
+#: httpdsettings.h:27 httpdsettings.h:57 httpdsettings.h:65 inadyn.h:138
 #: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
 #: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
 #: mc_videoplayer_settings.h:39 mc_videoplayer_settings.h:43
