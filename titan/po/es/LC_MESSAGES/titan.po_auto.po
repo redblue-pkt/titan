@@ -13614,9 +13614,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "yes (Text in %)"
-#~ msgstr "Si (Texto en %)"
-
-#~ msgid "yes (Text in MB)"
-#~ msgstr "Si (Texto en MB)"
