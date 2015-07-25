@@ -118,9 +118,9 @@ void screenskinadjust()
 		addchoicebox(infobar2_sel, "infobar2_v3","v3");
 	setchoiceboxselection(infobar2_sel, getskinconfig("infobar2_selection", NULL));
 
-	addchoicebox(showrecfreesize, "0", _("no"));
-	addchoicebox(showrecfreesize, "1", _("yes (Text in %)"));
-	addchoicebox(showrecfreesize, "2", _("yes (Text in MB)"));
+	addchoicebox(showrecfreesize, "0", _("No"));
+	addchoicebox(showrecfreesize, "1", _("%"));
+	addchoicebox(showrecfreesize, "2", _("GB"));
 	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
 
 	addchoicebox(listboxselect, "0", getskinconfig("listboxselect", NULL));
