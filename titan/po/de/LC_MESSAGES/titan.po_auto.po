@@ -3040,7 +3040,7 @@ msgstr ""
 
 #: security.h:2078
 msgid "Driver"
-msgstr ""
+msgstr "Treiber"
 
 #: httpdfunc.h:4933 skin_default_skin.xml.h:213
 msgid "Dualboot Menu TitanNit / E2"
@@ -6378,7 +6378,7 @@ msgstr "NFS Server Einstellungen"
 
 #: skinadjust.h:121
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: panel_settings_autostart.h:122 settings_autostart.h:161
 msgid "No Audiosync"
@@ -7960,7 +7960,7 @@ msgstr "Einstellungen wiederherstellen"
 
 #: httpdfunc.h:6841 webif_settings.h:4
 msgid "Restore channel settings"
-msgstr ""
+msgstr "Senderlisten wiederherstellen"
 
 #: httpdfunc.h:6741 httpdfunc.h:6748 httpdfunc.h:6790 restoredefault.h:63
 #: restoredefault.h:67 skin_default_skin.xml.h:579 webif_settings.h:3
@@ -8736,7 +8736,7 @@ msgstr "Senden"
 
 #: httpdfunc.h:6974
 msgid "Send Telnet Command"
-msgstr ""
+msgstr "Sende Telnet Kommando"
 
 #: skin_default_skin.xml.h:629
 msgid "Send all CAID to modules"
