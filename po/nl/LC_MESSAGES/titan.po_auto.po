@@ -50,7 +50,7 @@ msgstr ""
 msgid "$"
 msgstr ""
 
-#: skin_default_skin.xml.h:29
+#: skinadjust.h:122 skin_default_skin.xml.h:29
 msgid "%"
 msgstr ""
 
@@ -4050,6 +4050,10 @@ msgstr "Afbeelding spreidden"
 msgid "G"
 msgstr ""
 
+#: skinadjust.h:123
+msgid "GB"
+msgstr ""
+
 #: tpk_showname.h:39
 msgid "GMediaRender"
 msgstr ""
@@ -6197,6 +6201,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:464
 msgid "Nfs Server Settings"
+msgstr ""
+
+#: skinadjust.h:121
+msgid "No"
 msgstr ""
 
 #: panel_settings_autostart.h:122 settings_autostart.h:161
@@ -12095,11 +12103,11 @@ msgstr "NFS server"
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:121
-#: stopifnotused.c:94 timeshiftsettings.h:59 timeshiftsettings.h:63
-#: tithek_settings.h:37 tithek_settings.h:41 tithek_settings.h:45 tmc.h:531
-#: tmc.h:535 tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244
-#: tunerconfig.h:277 xupnpd.h:30
+#: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:94
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
+#: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
+#: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
+#: xupnpd.h:30
 msgid "no"
 msgstr "Nee"
 
@@ -13475,14 +13483,6 @@ msgstr "Geel"
 msgid "yes"
 msgstr "Ja"
 
-#: skinadjust.h:122
-msgid "yes (Text in %)"
-msgstr "Ja (Text in %)"
-
-#: skinadjust.h:123
-msgid "yes (Text in MB)"
-msgstr "Ja (Text in MB)"
-
 #: adjust.h:220 httpdfunc.h:4749
 msgid "yes / vzap 1 sec"
 msgstr "Ja / VZAP 1 sek"
@@ -13514,3 +13514,9 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "yes (Text in %)"
+#~ msgstr "Ja (Text in %)"
+
+#~ msgid "yes (Text in MB)"
+#~ msgstr "Ja (Text in MB)"
