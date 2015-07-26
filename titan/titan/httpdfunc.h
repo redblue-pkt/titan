@@ -6689,7 +6689,7 @@ char* webgetcreaterestore(char* param, int fmt)
 
 	buf = ostrcat(buf, tmpstr, 1, 1);	
 
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+	buf = string_replace_all("\n", "<br>\n", buf, 1);
 
 //	if(fmt == 0)
 //	{
