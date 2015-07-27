@@ -683,7 +683,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 								buf[i+3] = buf[i+3] & 0x3f;
 								i = i + 188;
 							}
-							else
+/*							else
 							{
 								while(i < readret-1)
 								{
@@ -695,7 +695,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 										break;
 									}
 								}	
-							}
+							}*/
 						}
 					}
 				}
@@ -756,7 +756,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 									buf[i+3] = buf[i+3] & 0x3f;
 									i = i + 188;
 								}
-								else
+/*								else
 								{
 									while(i < readret-1)
 									{
@@ -768,7 +768,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 											break;
 										}
 									}	
-								}
+								}*/
 							}
 						}
 #ifndef MIPSEL
