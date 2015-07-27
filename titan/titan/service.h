@@ -997,7 +997,7 @@ void servicefullHDMIin_start()
 {
 	struct dvbdev *videonode = NULL;
 	struct dvbdev *audionode = NULL;
-	struct channel* chnode = NULL;
+	struct channel *chnode = NULL;
 	
 	servicestop(status.aktservice, 1, 1);
 	
