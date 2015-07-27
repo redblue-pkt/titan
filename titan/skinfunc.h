@@ -1171,8 +1171,8 @@ char* getrecfreesize(struct skin* node)
 
 	if(status.showrecfreesize > 0)
 	{
-		unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024 * 1024);
-		unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024 * 1024);
+		unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024);
+		unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024);
 
 		if(full > 0 && full >= free) ret = ((full - free) * 100) / full;
 
@@ -1190,8 +1190,8 @@ char* getrecfreesizetext(struct skin* node)
 
 	if(status.showrecfreesize > 0)
 	{
-		unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024 * 1024);
-		unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024 * 1024);
+		unsigned long long full = getfullspace(getconfig("rec_path", NULL)) / (1024 * 1024);
+		unsigned long long free = getfreespace(getconfig("rec_path", NULL)) / (1024 * 1024);
 
 		if(full > 0 && full >= free) ret = ((full - free) * 100) / full;
 
@@ -1201,7 +1201,7 @@ char* getrecfreesizetext(struct skin* node)
 		if(status.showrecfreesize == 1)
 			tmpstr = ostrcat(oitoa(ret), " %", 1, 0);
 		else
-			tmpstr = ostrcat(ollutoa(free), " GB", 1, 0);
+			tmpstr = ostrcat(ollutoa(free), " MB", 1, 0);
 	}
 
 	return tmpstr;
