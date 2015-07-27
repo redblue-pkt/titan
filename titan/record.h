@@ -732,6 +732,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						}
 					}*/
 //Workaround scrambled Bits
+/*
 #ifndef MIPSEL
 					if(servicenode->type == RECORDPLAY)
 					{
@@ -773,6 +774,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 #ifndef MIPSEL
 					}						
 #endif
+*/
 //*
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 				}
