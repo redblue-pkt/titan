@@ -83,12 +83,13 @@ int audioplay(struct dvbdev* node)
 		return 1;
 	}
 
-#ifdef MIPSEL
+/*#ifdef MIPSEL
 	if(getconfig("audiodelaypcm", NULL) != NULL && node->devnr == 0)
 		setaudiodelaypcm("0");
 	if(getconfig("audiodelaybitstream", NULL) != NULL && node->devnr == 0)
 		setaudiodelaybitstream("0");
 #endif
+*/
 
 	debug(200, "AUDIO_PLAY");
 	if(ioctl(node->fd, AUDIO_PLAY) < 0)
@@ -97,12 +98,12 @@ int audioplay(struct dvbdev* node)
 		return 1;
 	}
 
-#ifdef MIPSEL
+/*#ifdef MIPSEL
 	if(getconfig("audiodelaypcm", NULL) != NULL && node->devnr == 0)
 		setaudiodelaypcm(getconfig("audiodelaypcm", NULL));
 	if(getconfig("audiodelaybitstream", NULL) != NULL && node->devnr == 0)
 		setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
-#endif	
+#endif*/	
 	return 0;
 }
 
