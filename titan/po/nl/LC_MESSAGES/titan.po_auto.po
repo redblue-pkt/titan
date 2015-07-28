@@ -1608,7 +1608,7 @@ msgstr "Favorieten ingangen: "
 msgid "Bouquets"
 msgstr "Favorieten"
 
-#: record.h:397
+#: record.h:387
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Opname klaar, ontvanger wordt in 30sec. uitgeschakeld!"
 
@@ -1818,7 +1818,7 @@ msgstr ""
 "Kan geen tuner vinden.\n"
 "Er is geen vrije tuner beschikbaar."
 
-#: record.h:1156
+#: record.h:1125
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -1826,7 +1826,7 @@ msgstr ""
 "Er is geen vrije Tuner .\n"
 "zappen naar opname/timeshift kanaal ?"
 
-#: record.h:1698
+#: record.h:1623
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG tijd kan niet gevonden worden of is niet juist"
 
@@ -1846,10 +1846,6 @@ msgstr "Kan data van facebook niet lezen"
 msgid "Can't install Package. Package to big."
 msgstr "Pakket te groot, installatie niet mogelijk."
 
-#: record.h:93
-msgid "Can't open AUDIO device"
-msgstr ""
-
 #: record.h:52
 msgid "Can't open DMX device"
 msgstr "DMX apparaat kan niet geopend worden"
@@ -1857,10 +1853,6 @@ msgstr "DMX apparaat kan niet geopend worden"
 #: record.h:49
 msgid "Can't open FRONTEND device"
 msgstr "FRONTEND apparaat kan niet geopend worden"
-
-#: record.h:90
-msgid "Can't open VIDEO device"
-msgstr ""
 
 #: record.h:46
 msgid "Can't open file"
@@ -3231,8 +3223,8 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:99
-#: record.h:397 record.h:1156 record.h:1447 record.h:1698 record.h:1723
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
+#: record.h:387 record.h:1125 record.h:1373 record.h:1623 record.h:1648
 #: rectimer.h:577 rectimer.h:1239 rectimer.h:1386 rectimer.h:1398
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -5816,8 +5808,8 @@ msgstr ""
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:397
-#: record.h:1156 record.h:1447 record.h:1698 record.h:1723 rectimer.h:577
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
+#: record.h:1125 record.h:1373 record.h:1623 record.h:1648 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6271,10 +6263,6 @@ msgstr "Er is geen configuratie bestand gevonden."
 msgid "No device available"
 msgstr ""
 
-#: record.h:87
-msgid "No free encoder"
-msgstr ""
-
 #: plugins_multiimage_skin.xml.h:10 skins_multiimage_skin.xml.h:10
 msgid "No image installed"
 msgstr ""
@@ -6409,8 +6397,8 @@ msgstr ""
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:397
-#: record.h:1156 record.h:1723 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
+#: record.h:1125 record.h:1648 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
 #: rectimer.h:1398 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -7487,7 +7475,7 @@ msgstr "Ontvanger succesvol vrijgegeven"
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1596 record.h:1665 skin_default_skin.xml.h:542
+#: record.h:1522 record.h:1590 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7503,7 +7491,7 @@ msgstr ""
 msgid "Record"
 msgstr "Opname"
 
-#: record.h:99
+#: record.h:90
 msgid "Record / Timeshift / Stream"
 msgstr "Opname/Timeshift/Stream"
 
@@ -7551,7 +7539,7 @@ msgstr "Opname bezig"
 msgid "Record path"
 msgstr ""
 
-#: record.h:1723
+#: record.h:1648
 msgid "Record started"
 msgstr "Opname is gestart"
 
@@ -9756,7 +9744,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr ""
 
-#: record.h:1446
+#: record.h:1372
 msgid "Timer Record start !"
 msgstr "Timer Opname gestart!"
 
@@ -10977,15 +10965,15 @@ msgstr "Activeren"
 msgid "active"
 msgstr "Aktief"
 
-#: record.h:1663 record.h:1709
+#: record.h:1588 record.h:1634
 msgid "add recording (enter duration)"
 msgstr "Opname toevoegen (opnameduur ingeven)"
 
-#: record.h:1662 record.h:1704
+#: record.h:1587 record.h:1629
 msgid "add recording (indefinitely)"
 msgstr "Opname toevoegen (oneindig)"
 
-#: record.h:1661 record.h:1691
+#: record.h:1586 record.h:1616
 msgid "add recording (stop after current event)"
 msgstr "Opname toevoegen (deze uitzending)"
 
@@ -11228,7 +11216,7 @@ msgstr "Kaart gevonden"
 msgid "center"
 msgstr ""
 
-#: record.h:1642 record.h:1651 record.h:1675
+#: record.h:1568 record.h:1577 record.h:1600
 msgid "change"
 msgstr "Wijzig"
 
@@ -12888,8 +12876,8 @@ msgstr "Stap west"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1578 record.h:1587 record.h:1598
-#: record.h:1627 record.h:1636 record.h:1669 skin_default_skin.xml.h:687
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1504 record.h:1513 record.h:1524
+#: record.h:1553 record.h:1562 record.h:1594 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
