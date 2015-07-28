@@ -83,15 +83,6 @@ char* recordcheckret(struct stimerthread* timernode, int ret, int flag)
 			case 17:
 				tmpstr = ostrcat(_("No space left on device"), NULL, 0, 0);
 				break;
-			case 18:
-				tmpstr = ostrcat(_("No free encoder"), NULL, 0, 0);
-				break;
-			case 19:
-				tmpstr = ostrcat(_("Can't open VIDEO device"), NULL, 0, 0);
-				break;
-			case 20:
-				tmpstr = ostrcat(_("Can't open AUDIO device"), NULL, 0, 0);
-				break;
 		}
 		if(tmpstr != NULL)
 		{
@@ -325,7 +316,6 @@ void recordstop(struct service* node, int ret)
 				dmxclose(node->dmxaudiodev, -1);
 			}
 			encoderclose(node->encoderdev, -1);
-			printf("---- encoder closed\n");
 		}
 #endif
 		delservice(node, 0);
@@ -679,23 +669,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						while(i < readret-1)
 						{
 							if(buf[i] == 0x47)
-							{
 								buf[i+3] = buf[i+3] & 0x3f;
-								i = i + 188;
-							}
-/*							else
-							{
-								while(i < readret-1)
-								{
-									i = i + 1;
-									if(buf[i] == 0x47)
-									{
-										buf[i+3] = buf[i+3] & 0x3f;
-										i = i + 188;
-										break;
-									}
-								}	
-							}*/
+							i = i + 188;
 						}
 					}
 				}
@@ -732,7 +707,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						}
 					}*/
 //Workaround scrambled Bits
-
 #ifndef MIPSEL
 					if(servicenode->type == RECORDPLAY)
 					{
@@ -756,7 +730,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 									buf[i+3] = buf[i+3] & 0x3f;
 									i = i + 188;
 								}
-/*								else
+								else
 								{
 									while(i < readret-1)
 									{
@@ -768,7 +742,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 											break;
 										}
 									}	
-								}*/
+								}
 							}
 						}
 #ifndef MIPSEL
@@ -965,10 +939,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);	
 	tmpstr = ostrcat(tmpstr, buf1, 1, 1);
 	tmpstr = ostrcat(tmpstr, ")", 1, 0);
-	if(ostrcmp(channelname, "HDMIIN") == 0)
-		tmpstr = ostrcat(tmpstr, ".mpeg", 1, 0);
-	else
-		tmpstr = ostrcat(tmpstr, ".ts", 1, 0);
+	tmpstr = ostrcat(tmpstr, ".ts", 1, 0);
 
 	return tmpstr;
 }
@@ -999,8 +970,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 		goto end;
 	}
 
-	//hdmi record.. serviceid=65535
-	if(filefd < 0 && chnode->serviceid != 65535)
+	if(filefd < 0)
 	{
 		tpnode = chnode->transponder;
 		if(tpnode == NULL)
@@ -1009,7 +979,6 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			goto end;
 		}
 	}
-	
 
 	switch(type)
 	{
@@ -1021,7 +990,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			servicetype = RECORDSTREAM;
 			fd = recordfd;
 			break;
-		case RECSTREAMENC:
+				case RECSTREAMENC:
 			servicetype = RECORDSTREAM;
 			fd = recordfd;
 			break;
@@ -1140,7 +1109,7 @@ not needed we use wakeup_record_device on recordstartreal
 	servicenode->transponder = tpnode;
 	if(rectimernode != NULL) servicenode->rectimestamp = ostrcat(rectimernode->timestamp, NULL, 0, 0);
 
-	if(filefd < 0 && chnode->serviceid != 65535)
+	if(filefd < 0)
 	{
 		//got frontend dev
 		fenode = fegetfree(tpnode, 2, NULL);
@@ -1352,46 +1321,7 @@ not needed we use wakeup_record_device on recordstartreal
 			goto end;
 		}
 	}
-#ifdef MIPSEL
-	else if(chnode->serviceid == 65535)
-	{
-		encoderset(-1, 1, 1024*1024*8, 1280, 720, 25000, 0, 0);
-		encnode = encoderopen(0);
-		if(encnode == NULL)
-		{
-			ret = 18;
-			goto end;
-		}
-		servicenode->encoderdev = encnode;
- 		
- 		videonode = videoopen(0, encnode->decoder);
-		if(videonode == NULL)
-		{
-			ret = 19;
-			goto end;
-		} 		
-		servicenode->videodev = videonode;
-		videoselectsource(servicenode->videodev, VIDEO_SOURCE_HDMI);
-		videoplay(servicenode->videodev);
 
- 		audionode = audioopen(encnode->decoder);
- 		if(audionode == NULL)
-		{
-			ret = 20;
-			videostop(servicenode->videodev, 1);
-			videoclose(servicenode->videodev, -1);
-			goto end;
-		} 
-		servicenode->audiodev = audionode;
-		audioselectsource(servicenode->audiodev, AUDIO_SOURCE_HDMI);
-		audioplay(servicenode->audiodev);
-
- 		encnode->fd = encoderopendirect(encnode->dev);
-		servicenode->recdmxstart = 1;
-		servicenode->recsrcfd = encnode->fd;
-	}
-#endif
-		
 	if(rectimernode != NULL)
 		rectimernode->servicenode = servicenode;
 
@@ -1429,10 +1359,6 @@ not needed we use wakeup_record_device on recordstartreal
 		servicenode->recname = ostrcat(filename, NULL, 0, 0);
 		if(VFD_Recordthread == NULL && getconfigint("vfdisplayrecord", NULL) != 0)
 			VFD_Recordthread = addtimer(&vfdrecordthread, START, 10000, 1, NULL, NULL, NULL);
-#ifdef MIPSEL
-		if(chnode->serviceid == 65535)
-			servicenode->recsrcfd = encnode->fd;
-#endif
 	}
 
 	if(type != RECSTREAM && type != RECSTREAMENC && type != RECTIMESHIFT && type != RECPLAY)
@@ -1656,9 +1582,8 @@ void screenrecorddirect()
 		}
 		servicenode = servicenode->next;
 	}
-	//65535 gleich HDMIIN
-	if(status.aktservice->channel->serviceid != 65535)
-		addmenulist(&mlist, _("add recording (stop after current event)"), NULL, NULL, 0, 0);
+
+	addmenulist(&mlist, _("add recording (stop after current event)"), NULL, NULL, 0, 0);
 	addmenulist(&mlist, _("add recording (indefinitely)"), NULL, NULL, 0, 0);
 	addmenulist(&mlist, _("add recording (enter duration)"), NULL, NULL, 0, 0);
 
