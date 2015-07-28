@@ -83,13 +83,19 @@ int audioplay(struct dvbdev* node)
 		return 1;
 	}
 
-/*#ifdef MIPSEL
-	if(getconfig("audiodelaypcm", NULL) != NULL && node->devnr == 0)
+#ifdef MIPSEL
+	char* delay1 = NULL;
+	char* delay2 = NULL;
+	
+	delay1 = ostrcat(getconfig("audiodelaypcm", NULL), NULL, 0, 0);
+	if(delay1 != NULL && node->devnr == 0)
 		setaudiodelaypcm("0");
-	if(getconfig("audiodelaybitstream", NULL) != NULL && node->devnr == 0)
+
+	delay2 = ostrcat(getconfig("audiodelaybitstream", NULL), NULL, 0, 0);
+	if(delay2 != NULL && node->devnr == 0)
 		setaudiodelaybitstream("0");
 #endif
-*/
+
 
 	debug(200, "AUDIO_PLAY");
 	if(ioctl(node->fd, AUDIO_PLAY) < 0)
@@ -98,12 +104,16 @@ int audioplay(struct dvbdev* node)
 		return 1;
 	}
 
-/*#ifdef MIPSEL
-	if(getconfig("audiodelaypcm", NULL) != NULL && node->devnr == 0)
-		setaudiodelaypcm(getconfig("audiodelaypcm", NULL));
-	if(getconfig("audiodelaybitstream", NULL) != NULL && node->devnr == 0)
-		setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
-#endif*/	
+#ifdef MIPSEL
+	if(delay1 != NULL && node->devnr == 0)
+		setaudiodelaypcm(delay1);
+		
+	if(delay2 != NULL && node->devnr == 0)
+		setaudiodelaybitstream(delay2);
+		
+	free(delay1); delay1 = NULL;
+	free(delay2); delay2 = NULL;
+#endif	
 	return 0;
 }
 
