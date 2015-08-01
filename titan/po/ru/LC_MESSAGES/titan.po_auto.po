@@ -1900,8 +1900,8 @@ msgstr ""
 
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:763
-#: mc_videoplayer.h:903 play.h:1497
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
+#: mc_videoplayer.h:900 play.h:1497
 msgid "Can't start playback !"
 msgstr "Ошибка воспроизведения!"
 
@@ -3188,9 +3188,9 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:335
-#: mc_videoplayer.h:763 mc_videoplayer.h:799 mc_videoplayer.h:903
-#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
+#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
+#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
@@ -3717,7 +3717,7 @@ msgstr "Выберите цвет выделения файлов в списк�
 
 #: mc_audioplayer.h:520 mc_audioplayer.h:564 mc_audioplayer.h:684
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
-#: mc_videoplayer.h:607 mc_videoplayer.h:681 mc_videoplayer.h:869
+#: mc_videoplayer.h:605 mc_videoplayer.h:679 mc_videoplayer.h:866
 #: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
 msgid "Filelist-Mode"
 msgstr "Плейлист"
@@ -3896,7 +3896,7 @@ msgid ""
 "this again !"
 msgstr ""
 
-#: mc_videoplayer.h:799
+#: mc_videoplayer.h:796
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr "Обнаружена папка VIDEO_TS, запустить DVD плеер?"
 
@@ -5786,9 +5786,9 @@ msgstr ""
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:335
-#: mc_videoplayer.h:763 mc_videoplayer.h:799 mc_videoplayer.h:903
-#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
+#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
+#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
@@ -6364,9 +6364,9 @@ msgstr ""
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:335
-#: mc_videoplayer.h:763 mc_videoplayer.h:799 mc_videoplayer.h:903
-#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
+#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
+#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
@@ -6991,7 +6991,7 @@ msgstr "Меню плейлиста"
 msgid "Playlist download"
 msgstr ""
 
-#: mc_audioplayer.h:586 mc_pictureplayer.h:341 mc_videoplayer.h:723
+#: mc_audioplayer.h:586 mc_pictureplayer.h:341 mc_videoplayer.h:721
 msgid "Playlist-Mode"
 msgstr "Вид плейлиста"
 
@@ -7379,7 +7379,7 @@ msgid "Ram"
 msgstr "Оперативная память"
 
 #: mc_audioplayer.h:565 mc_global.h:558 mc_global.h:586 mc_global.h:1076
-#: mc_pictureplayer.h:321 mc_videoplayer.h:682 plugins_mc_skin.xml.h:44
+#: mc_pictureplayer.h:321 mc_videoplayer.h:680 plugins_mc_skin.xml.h:44
 #: skins_mc_skin.xml.h:44
 msgid "Random"
 msgstr "Наугад-Выкл"
@@ -7668,13 +7668,13 @@ msgid "Rename"
 msgstr "Переименовать"
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1081
-#: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:438
-#: mc_videoplayer.h:683 plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
+#: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:436
+#: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
 msgid "Repeat"
 msgstr "Повтор-Выкл"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
-#: mc_videoplayer.h:431
+#: mc_videoplayer.h:429
 msgid "Repeat-On"
 msgstr "Повтор-Вкл"
 
@@ -8659,7 +8659,7 @@ msgid "Sharename can't be empty!"
 msgstr "Имя папки не может быть пустым!"
 
 #: infobar.h:660 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
-#: mc_videoplayer.h:335 menu.h:215
+#: mc_videoplayer.h:333 menu.h:215
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -9095,7 +9095,7 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr "Запустить WiFi?"
 
-#: mc_videoplayer.h:919 player.h:109
+#: mc_videoplayer.h:916 player.h:109
 msgid "Start at last position ?"
 msgstr "Запустить с места последней остановки?"
 
