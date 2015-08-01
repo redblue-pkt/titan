@@ -110,17 +110,19 @@ void screenmc_videoplayer()
 		else
 			refresh = 0;
 			
-		if((status.play == 1 || status.playspeed != 0) && videooff == 0)
+		if(status.play == 1 || status.playspeed != 0)
 		{
 			playinfobarcount ++;
 			if(playinfobarstatus > 0)
 			{
-				screenplayinfobar(filename, NULL, 0, playertype, 0);
+				if(videooff == 0)
+					screenplayinfobar(filename, NULL, 0, playertype, 0);
 			}
 			if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
 			{
 				playinfobarstatus = 0;
-				screenplayinfobar(NULL, NULL, 1, playertype, 0);
+				if(videooff == 0)
+					screenplayinfobar(NULL, NULL, 1, playertype, 0);
 			}
 		}
 		else if(exit == 0 && tmpview == 3 && filelist->select != NULL && status.play == 0 && status.pause == 0)
@@ -558,13 +560,11 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcpower", NULL) && status.play == 1 && videooff == 0)
 		{
-printf("1111\n");
 			videooff = 1;
 			drawscreen(blackscreen, 0, 0);
 		}
-		else if(rcret == getrcconfigint("rcexit", NULL) && status.play == 1 && videooff == 1)
+		else if(rcret == getrcconfigint("rcexit", NULL) && videooff == 1)
 		{
-printf("2222\n");
 			videooff = 0;
 			drawscreen(skin, 0, 0);
 		}
@@ -633,6 +633,7 @@ printf("2222\n");
 		}
 		else if(rcret == getrcconfigint("rcexit", NULL))
 		{
+			videooff = 0;
 			exit = 1;
 			debug(50, "exit - save mc_vp_path: %s", filelistpath->text);
 			debug(50, "exit - save mc_vp_selectedfile: %s", filelist->select->name);
@@ -771,7 +772,8 @@ printf("2222\n");
 					}
 				#endif
 
-				screenplayinfobar(filename, NULL, 0, playertype, 0);			
+				if(videooff == 0)
+					screenplayinfobar(filename, NULL, 0, playertype, 0);			
 				status.play = 1;
 				
 				free(status.playfile); status.playfile = NULL;
@@ -934,7 +936,8 @@ printf("2222\n");
 				#endif
 
 				clearscreen(loadmediadb);
-				screenplayinfobar(filename, NULL, 0, playertype, 0);
+				if(videooff == 0)
+					screenplayinfobar(filename, NULL, 0, playertype, 0);
 				status.play = 1;
 
 				free(status.playfile); status.playfile = NULL;
@@ -973,6 +976,7 @@ printf("2222\n");
 				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
 			}
 		}
+		if(videooff = 1) drawscreen(blackscreen, 0, 0);
 	}
 
 	deinitscreensaver();
