@@ -1903,8 +1903,8 @@ msgstr ""
 
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:762
-#: mc_videoplayer.h:901 play.h:1497
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:763
+#: mc_videoplayer.h:903 play.h:1497
 msgid "Can't start playback !"
 msgstr ""
 
@@ -3205,9 +3205,9 @@ msgstr "ERROR: can't set marker in this file"
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:762 mc_videoplayer.h:797 mc_videoplayer.h:901
-#: mc_videoplayer.h:917 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:335
+#: mc_videoplayer.h:763 mc_videoplayer.h:799 mc_videoplayer.h:903
+#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
@@ -3736,7 +3736,7 @@ msgstr ""
 
 #: mc_audioplayer.h:520 mc_audioplayer.h:564 mc_audioplayer.h:684
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
-#: mc_videoplayer.h:607 mc_videoplayer.h:680 mc_videoplayer.h:867
+#: mc_videoplayer.h:607 mc_videoplayer.h:681 mc_videoplayer.h:869
 #: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
 msgid "Filelist-Mode"
 msgstr ""
@@ -3915,7 +3915,7 @@ msgid ""
 "this again !"
 msgstr ""
 
-#: mc_videoplayer.h:797
+#: mc_videoplayer.h:799
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr ""
 "A VIDEO_TS path was found.\n"
@@ -5804,9 +5804,9 @@ msgstr ""
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:762 mc_videoplayer.h:797 mc_videoplayer.h:901
-#: mc_videoplayer.h:917 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:335
+#: mc_videoplayer.h:763 mc_videoplayer.h:799 mc_videoplayer.h:903
+#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
@@ -6384,9 +6384,9 @@ msgstr ""
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:762 mc_videoplayer.h:797 mc_videoplayer.h:901
-#: mc_videoplayer.h:917 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:335
+#: mc_videoplayer.h:763 mc_videoplayer.h:799 mc_videoplayer.h:903
+#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
@@ -7011,7 +7011,7 @@ msgstr ""
 msgid "Playlist download"
 msgstr ""
 
-#: mc_audioplayer.h:586 mc_pictureplayer.h:341 mc_videoplayer.h:722
+#: mc_audioplayer.h:586 mc_pictureplayer.h:341 mc_videoplayer.h:723
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -7397,7 +7397,7 @@ msgid "Ram"
 msgstr "RAM"
 
 #: mc_audioplayer.h:565 mc_global.h:558 mc_global.h:586 mc_global.h:1076
-#: mc_pictureplayer.h:321 mc_videoplayer.h:681 plugins_mc_skin.xml.h:44
+#: mc_pictureplayer.h:321 mc_videoplayer.h:682 plugins_mc_skin.xml.h:44
 #: skins_mc_skin.xml.h:44
 msgid "Random"
 msgstr ""
@@ -7686,13 +7686,13 @@ msgid "Rename"
 msgstr ""
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1081
-#: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:436
-#: mc_videoplayer.h:682 plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
+#: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:438
+#: mc_videoplayer.h:683 plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
 msgid "Repeat"
 msgstr ""
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
-#: mc_videoplayer.h:429
+#: mc_videoplayer.h:431
 msgid "Repeat-On"
 msgstr "Repeat mode On"
 
@@ -8675,7 +8675,7 @@ msgid "Sharename can't be empty!"
 msgstr "ERROR: Sharename must be entered!"
 
 #: infobar.h:660 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
-#: mc_videoplayer.h:333 menu.h:215
+#: mc_videoplayer.h:335 menu.h:215
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -9115,7 +9115,7 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr "Start WLAN?"
 
-#: mc_videoplayer.h:917 player.h:109
+#: mc_videoplayer.h:919 player.h:109
 msgid "Start at last position ?"
 msgstr "Resume from last position?"
 
