@@ -7,6 +7,7 @@ extern struct mediadb* mediadb;
 
 void screenmc_videoplayer()
 {
+	int videooff = 0;
 	// workaround for grey background mvi
 	struct skin* loadmediadb = getscreen("loading");
 	struct skin* blackscreen = getscreen("blackscreen");
@@ -109,7 +110,7 @@ void screenmc_videoplayer()
 		else
 			refresh = 0;
 			
-		if((status.play == 1) || (status.playspeed != 0))
+		if((status.play == 1 || status.playspeed != 0) && videooff == 0)
 		{
 			playinfobarcount ++;
 			if(playinfobarstatus > 0)
@@ -554,6 +555,18 @@ void screenmc_videoplayer()
 				addscreenrc(apskin, filelist);
 				drawscreen(apskin, 0, 0);
 			}	
+		}
+		else if(rcret == getrcconfigint("rcpower", NULL) && status.play == 1 && videooff == 0)
+		{
+printf("1111\n");
+			videooff = 1;
+			drawscreen(blackscreen, 0, 0);
+		}
+		else if(rcret == getrcconfigint("rcexit", NULL) && status.play == 1 && videooff == 1)
+		{
+printf("2222\n");
+			videooff = 0;
+			drawscreen(skin, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rcstop", NULL) || (rcret == getrcconfigint("rcexit", NULL) && status.play == 1))
 		{
