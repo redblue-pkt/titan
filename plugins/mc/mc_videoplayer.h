@@ -975,8 +975,8 @@ void screenmc_videoplayer()
 				drawscreen(skin, 0, 0);
 				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
 			}
-		}
-		if(videooff = 1) drawscreen(blackscreen, 0, 0);
+
+		if(videooff == 1) drawscreen(blackscreen, 0, 0);
 	}
 
 	deinitscreensaver();
