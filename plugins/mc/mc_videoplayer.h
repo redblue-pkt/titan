@@ -115,14 +115,12 @@ void screenmc_videoplayer()
 			playinfobarcount ++;
 			if(playinfobarstatus > 0)
 			{
-				if(videooff == 0)
-					screenplayinfobar(filename, NULL, 0, playertype, 0);
+				if(videooff == 0) screenplayinfobar(filename, NULL, 0, playertype, 0);
 			}
 			if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
 			{
 				playinfobarstatus = 0;
-				if(videooff == 0)
-					screenplayinfobar(NULL, NULL, 1, playertype, 0);
+				if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, 0);
 			}
 		}
 		else if(exit == 0 && tmpview == 3 && filelist->select != NULL && status.play == 0 && status.pause == 0)
@@ -772,8 +770,7 @@ void screenmc_videoplayer()
 					}
 				#endif
 
-				if(videooff == 0)
-					screenplayinfobar(filename, NULL, 0, playertype, 0);			
+				if(videooff == 0) screenplayinfobar(filename, NULL, 0, playertype, 0);			
 				status.play = 1;
 				
 				free(status.playfile); status.playfile = NULL;
@@ -936,8 +933,7 @@ void screenmc_videoplayer()
 				#endif
 
 				clearscreen(loadmediadb);
-				if(videooff == 0)
-					screenplayinfobar(filename, NULL, 0, playertype, 0);
+				if(videooff == 0) screenplayinfobar(filename, NULL, 0, playertype, 0);
 				status.play = 1;
 
 				free(status.playfile); status.playfile = NULL;
@@ -975,9 +971,8 @@ void screenmc_videoplayer()
 				drawscreen(skin, 0, 0);
 				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
 			}
-
-		if(videooff == 1)
-			drawscreen(blackscreen, 0, 0);
+		}
+		if(videooff = 1) drawscreen(blackscreen, 0, 0);
 	}
 
 	deinitscreensaver();
@@ -1031,7 +1026,4 @@ void screenmc_videoplayer()
 	debug(50, "closed");
 }
 
-
-
 #endif
-
