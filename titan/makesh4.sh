@@ -15,8 +15,8 @@ DISTRO=${14}
 ARCH=${15}
 SRCDIR=${16}
 CPU=${17}
-TYPE1=${18}
-BOXNAME=${19}
+BOXNAME=${18}
+TYPE1=${19}
 
 rm "$HOME"/flashimg/.ipk-build-error
 
