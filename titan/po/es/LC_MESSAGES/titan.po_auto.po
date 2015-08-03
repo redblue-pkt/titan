@@ -1821,7 +1821,7 @@ msgstr ""
 "No Sintonizador libre disponible.\n"
 "Todos los sintonizadores estan en uso o sin sintonizador definido."
 
-#: record.h:1129
+#: record.h:1125
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -1829,7 +1829,7 @@ msgstr ""
 "ERROR: No se puede encontrar un sintonizador libre para la grabacion. \n"
 "Cambie a grabacion/Timeshift Canal?"
 
-#: record.h:1655
+#: record.h:1623
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 "No se puede obtener el tiempo EPG o la EPG Final de tiempo es defectuoso."
@@ -3252,7 +3252,7 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1129 record.h:1403 record.h:1655 record.h:1680
+#: record.h:387 record.h:1125 record.h:1373 record.h:1623 record.h:1648
 #: rectimer.h:577 rectimer.h:1239 rectimer.h:1386 rectimer.h:1398
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -5860,7 +5860,7 @@ msgstr "Lista de Menus"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1129 record.h:1403 record.h:1655 record.h:1680 rectimer.h:577
+#: record.h:1125 record.h:1373 record.h:1623 record.h:1648 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6449,7 +6449,7 @@ msgstr "Ö"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1129 record.h:1680 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
+#: record.h:1125 record.h:1648 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
 #: rectimer.h:1398 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -7537,7 +7537,7 @@ msgstr "Su receptor se abrio con Exito."
 msgid "Receiver unlock"
 msgstr "desbloquear receptor"
 
-#: record.h:1552 record.h:1622 skin_default_skin.xml.h:542
+#: record.h:1522 record.h:1590 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7601,7 +7601,7 @@ msgstr "grabacion activa"
 msgid "Record path"
 msgstr "Ruta Para Grabaciones"
 
-#: record.h:1680
+#: record.h:1648
 msgid "Record started"
 msgstr "Grabacion comenzada"
 
@@ -9825,7 +9825,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr "Directorio para la grabación con temporizador"
 
-#: record.h:1402
+#: record.h:1372
 msgid "Timer Record start !"
 msgstr "Temporizador de grabacion comenzo!"
 
@@ -11058,15 +11058,15 @@ msgstr "Activar"
 msgid "active"
 msgstr "activo"
 
-#: record.h:1620 record.h:1666
+#: record.h:1588 record.h:1634
 msgid "add recording (enter duration)"
 msgstr "Añadir grabacion (Introduzca duracion)"
 
-#: record.h:1619 record.h:1661
+#: record.h:1587 record.h:1629
 msgid "add recording (indefinitely)"
 msgstr "Añadir grabacion (Ilimitado)"
 
-#: record.h:1618 record.h:1648
+#: record.h:1586 record.h:1616
 msgid "add recording (stop after current event)"
 msgstr "Añadir grabacion (parada despues del evento actual)"
 
@@ -11309,7 +11309,7 @@ msgstr "Smartcard encontrado"
 msgid "center"
 msgstr ""
 
-#: record.h:1598 record.h:1607 record.h:1632
+#: record.h:1568 record.h:1577 record.h:1600
 msgid "change"
 msgstr "Cambiar"
 
@@ -12976,8 +12976,8 @@ msgstr "Paso Oeste"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1534 record.h:1543 record.h:1554
-#: record.h:1583 record.h:1592 record.h:1626 skin_default_skin.xml.h:687
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1504 record.h:1513 record.h:1524
+#: record.h:1553 record.h:1562 record.h:1594 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
