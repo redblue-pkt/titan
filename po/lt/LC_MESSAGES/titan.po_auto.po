@@ -8020,23 +8020,23 @@ msgstr "Serijinis prievadas Ok"
 msgid "SZ"
 msgstr ""
 
-#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:117
+#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:118
 msgid "Samba Server"
-msgstr ""
-
-#: tpk_showname.h:118
-msgid "Samba Server Configuration"
 msgstr ""
 
 #: skin_default_skin.xml.h:593
 msgid "Samba Server Settings"
 msgstr ""
 
-#: tpk_description.h:117
-msgid "Samba Server and Avahi configuration update"
+#: tpk_showname.h:117
+msgid "Samba and Avahi Configuration"
 msgstr ""
 
 #: tpk_description.h:116
+msgid "Samba and Avahi configuration update"
+msgstr ""
+
+#: tpk_description.h:117
 msgid "Samba file server"
 msgstr ""
 
