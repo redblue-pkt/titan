@@ -1818,7 +1818,7 @@ msgstr ""
 "Không tìm thấy tuner để ghi.\n"
 "Chuyển để ghi/Timeshift chương trình"
 
-#: record.h:1655
+#: record.h:1656
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Không có EPG!"
 
@@ -3206,7 +3206,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1129 record.h:1403 record.h:1655 record.h:1680
+#: record.h:387 record.h:1129 record.h:1404 record.h:1656 record.h:1681
 #: rectimer.h:577 rectimer.h:1239 rectimer.h:1386 rectimer.h:1398
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -5766,7 +5766,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1129 record.h:1403 record.h:1655 record.h:1680 rectimer.h:577
+#: record.h:1129 record.h:1404 record.h:1656 record.h:1681 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6355,7 +6355,7 @@ msgstr "E"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1129 record.h:1680 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
+#: record.h:1129 record.h:1681 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
 #: rectimer.h:1398 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -7430,7 +7430,7 @@ msgstr "Khóa đầu vào"
 msgid "Receiver unlock"
 msgstr "Khóa đầu vào"
 
-#: record.h:1552 record.h:1622 skin_default_skin.xml.h:542
+#: record.h:1553 record.h:1623 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7494,7 +7494,7 @@ msgstr "Đang ghi tên"
 msgid "Record path"
 msgstr "Thư mục chứa bản ghi"
 
-#: record.h:1680
+#: record.h:1681
 msgid "Record started"
 msgstr "Bắt đầu ghi"
 
@@ -9694,7 +9694,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr "Bước dịch cho bộ định thời ghi"
 
-#: record.h:1402
+#: record.h:1403
 msgid "Timer Record start !"
 msgstr "Bước dịch cho bộ định thời ghi"
 
@@ -10908,15 +10908,15 @@ msgstr "Kích hoạt"
 msgid "active"
 msgstr "cho phép"
 
-#: record.h:1620 record.h:1666
+#: record.h:1621 record.h:1667
 msgid "add recording (enter duration)"
 msgstr "thêm bản ghi (nhập thời gian)"
 
-#: record.h:1619 record.h:1661
+#: record.h:1620 record.h:1662
 msgid "add recording (indefinitely)"
 msgstr "thêm bản ghi (không giới hạn)"
 
-#: record.h:1618 record.h:1648
+#: record.h:1619 record.h:1649
 msgid "add recording (stop after current event)"
 msgstr "thêm bản ghi (sau sự kiện này)"
 
@@ -11159,7 +11159,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1598 record.h:1607 record.h:1632
+#: record.h:1599 record.h:1608 record.h:1633
 msgid "change"
 msgstr "Thay đổi"
 
@@ -11880,7 +11880,7 @@ msgstr ""
 msgid "menuprotect"
 msgstr ""
 
-#: skin_default_skin.xml.h:829 webif_help.h:51
+#: webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -12819,8 +12819,8 @@ msgstr "dịch phải"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1534 record.h:1543 record.h:1554
-#: record.h:1583 record.h:1592 record.h:1626 skin_default_skin.xml.h:687
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1535 record.h:1544 record.h:1555
+#: record.h:1584 record.h:1593 record.h:1627 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
@@ -12881,10 +12881,6 @@ msgstr ""
 msgid "system_backup_restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:831
-msgid "system_infos"
-msgstr ""
-
 #: webif_help.h:95
 msgid "system_infos_main"
 msgstr ""
@@ -12893,7 +12889,7 @@ msgstr ""
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:830 webif_help.h:96
+#: webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
