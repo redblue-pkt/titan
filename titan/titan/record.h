@@ -1325,8 +1325,9 @@ not needed we use wakeup_record_device on recordstartreal
 			goto end;
 		}
 	}
-/*#ifdef MIPSEL
-	else if(chnode->serviceid == 65535 && servicetype == RECORDDIRECT)
+#ifdef MIPSEL
+	if(filefd < 0 && chnode->serviceid == 65535)
+	//else if(chnode->serviceid == 65535 && servicetype == RECORDDIRECT)
 	{
 		ret = encoderset(-1, 1, 1024*1024*8, 1280, 720, 25000, 0, 0);
 		ret = 0;
@@ -1347,7 +1348,7 @@ not needed we use wakeup_record_device on recordstartreal
 		servicenode->recdmxstart = 1;
 		servicenode->recsrcfd = encnode->fd;
 	}
-#endif*/
+#endif
 	if(rectimernode != NULL)
 		rectimernode->servicenode = servicenode;
 
