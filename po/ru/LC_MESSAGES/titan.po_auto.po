@@ -1818,7 +1818,7 @@ msgid ""
 "All Tuners in use or no Tuner defined."
 msgstr "Не найдено свободных тюнеров, или он сейчас определяется"
 
-#: record.h:1129
+#: record.h:1130
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -1826,7 +1826,7 @@ msgstr ""
 "Не удаётся найти свободный тюнер для записи\n"
 "Переключиться на таймшифт?"
 
-#: record.h:1655
+#: record.h:1657
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Не удаётся получить время EPG или время окончания неизвестно"
 
@@ -3221,7 +3221,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1129 record.h:1403 record.h:1655 record.h:1680
+#: record.h:387 record.h:1130 record.h:1405 record.h:1657 record.h:1682
 #: rectimer.h:577 rectimer.h:1239 rectimer.h:1386 rectimer.h:1398
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -5807,7 +5807,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1129 record.h:1403 record.h:1655 record.h:1680 rectimer.h:577
+#: record.h:1130 record.h:1405 record.h:1657 record.h:1682 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6394,7 +6394,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1129 record.h:1680 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
+#: record.h:1130 record.h:1682 rectimer.h:577 rectimer.h:1239 rectimer.h:1386
 #: rectimer.h:1398 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -7478,7 +7478,7 @@ msgstr "Ресивер расблокирован!"
 msgid "Receiver unlock"
 msgstr "Блокировка приёмника"
 
-#: record.h:1552 record.h:1622 skin_default_skin.xml.h:542
+#: record.h:1554 record.h:1624 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7542,7 +7542,7 @@ msgstr "Идёт запись"
 msgid "Record path"
 msgstr "Путь записи"
 
-#: record.h:1680
+#: record.h:1682
 msgid "Record started"
 msgstr "Запись началась"
 
@@ -8007,23 +8007,23 @@ msgstr "Хороший порт"
 msgid "SZ"
 msgstr ""
 
-#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:117
+#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:118
 msgid "Samba Server"
-msgstr ""
-
-#: tpk_showname.h:118
-msgid "Samba Server Configuration"
 msgstr ""
 
 #: skin_default_skin.xml.h:593
 msgid "Samba Server Settings"
 msgstr "Параметры Samba-сервера"
 
-#: tpk_description.h:117
-msgid "Samba Server and Avahi configuration update"
+#: tpk_showname.h:117
+msgid "Samba and Avahi Configuration"
 msgstr ""
 
 #: tpk_description.h:116
+msgid "Samba and Avahi configuration update"
+msgstr ""
+
+#: tpk_description.h:117
 msgid "Samba file server"
 msgstr ""
 
@@ -9751,7 +9751,7 @@ msgstr "Список таймеров"
 msgid "Timer Record Path"
 msgstr "Путь таймера записи"
 
-#: record.h:1402
+#: record.h:1404
 msgid "Timer Record start !"
 msgstr "Таймер записи запущен!"
 
@@ -10973,15 +10973,15 @@ msgstr "Старт"
 msgid "active"
 msgstr "Автостарт вкл"
 
-#: record.h:1620 record.h:1666
+#: record.h:1622 record.h:1668
 msgid "add recording (enter duration)"
 msgstr "Начать запись (С вводом длительности)"
 
-#: record.h:1619 record.h:1661
+#: record.h:1621 record.h:1663
 msgid "add recording (indefinitely)"
 msgstr "Начать запись (Без ограничений по длительности)"
 
-#: record.h:1618 record.h:1648
+#: record.h:1620 record.h:1650
 msgid "add recording (stop after current event)"
 msgstr "Начать запись (Остановить в конце текущей передачи)"
 
@@ -11224,7 +11224,7 @@ msgstr "Карточка"
 msgid "center"
 msgstr "Центр"
 
-#: record.h:1598 record.h:1607 record.h:1632
+#: record.h:1600 record.h:1609 record.h:1634
 msgid "change"
 msgstr "Изменить"
 
@@ -12887,8 +12887,8 @@ msgstr "Шаг Запад"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1534 record.h:1543 record.h:1554
-#: record.h:1583 record.h:1592 record.h:1626 skin_default_skin.xml.h:687
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1536 record.h:1545 record.h:1556
+#: record.h:1585 record.h:1594 record.h:1628 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Стоп"
