@@ -5,6 +5,7 @@
 //flag 1: video+gui
 //flag 2: video
 //flag 3: gui
+
 void screenshoot(int flag)
 {
 	char* cmd = NULL;
