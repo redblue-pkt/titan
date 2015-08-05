@@ -692,7 +692,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				}
 				else
 				{
-				if(buf[0] != 0x47)
+				/*if(buf[0] != 0x47)
 				{
 					debug(200, "resync");
 					i = 1;
@@ -706,7 +706,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						memcpy(buf, buf + i, recbsize - i);
 						dvbreadfd(servicenode->recsrcfd, buf, recbsize - i, i, readtimeout, 0);
 					}
-				}
+				}*/
 //Workaround scrambled Bits
 #ifndef MIPSEL
 					if(servicenode->type == RECORDPLAY)
