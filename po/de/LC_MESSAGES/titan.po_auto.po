@@ -12175,7 +12175,7 @@ msgstr "Menüliste"
 msgid "menuprotect"
 msgstr "Menü schützen"
 
-#: skin_default_skin.xml.h:829 webif_help.h:51
+#: webif_help.h:51
 msgid "messagebox"
 msgstr "Mitteilungen"
 
@@ -13184,7 +13184,7 @@ msgstr "Sichern"
 msgid "system_backup_restore"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: skin_default_skin.xml.h:831
+#: skin_default_skin.xml.h:829
 msgid "system_infos"
 msgstr ""
 
@@ -13196,7 +13196,7 @@ msgstr "System Information Hauptmenü"
 msgid "system_sysinfos_main"
 msgstr "System Sysinfos Hauptmenü"
 
-#: skin_default_skin.xml.h:830 webif_help.h:96
+#: webif_help.h:96
 msgid "systeminfo"
 msgstr "System Information"
 

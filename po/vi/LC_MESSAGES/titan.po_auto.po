@@ -11880,7 +11880,7 @@ msgstr ""
 msgid "menuprotect"
 msgstr ""
 
-#: skin_default_skin.xml.h:829 webif_help.h:51
+#: webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -12881,7 +12881,7 @@ msgstr ""
 msgid "system_backup_restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:831
+#: skin_default_skin.xml.h:829
 msgid "system_infos"
 msgstr ""
 
@@ -12893,7 +12893,7 @@ msgstr ""
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:830 webif_help.h:96
+#: webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
