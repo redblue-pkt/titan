@@ -692,21 +692,21 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				}
 				else
 				{
-				/*if(buf[0] != 0x47)
+				if(buf[0] != 0x47)
 				{
-						debug(200, "resync");
-						i = 1;
-						while(i < 188)
-						{
-							if(buf[i] == 0x47) break;
-							i++;
-						}
-						if(i < 188)
-						{
-							memcpy(buf, buf + i, recbsize - i);
-							dvbreadfd(servicenode->recsrcfd, buf, recbsize - i, i, readtimeout, 0);
-						}
-					}*/
+					debug(200, "resync");
+					i = 1;
+					while(i < 188)
+					{
+						if(buf[i] == 0x47) break;
+						i++;
+					}
+					if(i < 188)
+					{
+						memcpy(buf, buf + i, recbsize - i);
+						dvbreadfd(servicenode->recsrcfd, buf, recbsize - i, i, readtimeout, 0);
+					}
+				}
 //Workaround scrambled Bits
 #ifndef MIPSEL
 					if(servicenode->type == RECORDPLAY)
@@ -1402,7 +1402,7 @@ not needed we use wakeup_record_device on recordstartreal
 	if(type == RECTIMER && status.standby == 0)
 	{
 		tmpstr = ostrcat(_("Timer Record start !"), filename, 0, 0);
-		textbox(_("Message"), tmpstr, _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 4, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 4, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
 	
