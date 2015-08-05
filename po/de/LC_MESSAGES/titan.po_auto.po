@@ -3226,7 +3226,7 @@ msgstr "FEHLER: Autotimer konnte nicht beendet werden!"
 msgid "ERROR... can't set marker in this file"
 msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 
-#: about.h:10 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
+#: about.h:9 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
 #: autotimer.c:603 avsettings.h:331 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:945 channellist.h:947 channellist.h:952
 #: channellist.h:954 channellist.h:1038 divxstage.h:36 divxstage.h:79
@@ -6506,7 +6506,7 @@ msgstr ""
 msgid "OE"
 msgstr "Ö"
 
-#: about.h:10 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
+#: about.h:9 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
 #: autotimer.c:603 avsettings.h:331 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:945 channellist.h:947
 #: channellist.h:952 channellist.h:954 channellist.h:1038 divxstage.h:36
@@ -9589,7 +9589,7 @@ msgstr ""
 "System Aktualisierung gestartet. Dies kann bis zu 5 Minuten dauern. Weitere "
 "Details am Fernseher."
 
-#: about.h:10
+#: about.h:9
 msgid "System-Info"
 msgstr "System Information"
 

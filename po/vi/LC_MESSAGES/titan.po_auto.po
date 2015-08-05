@@ -3137,7 +3137,7 @@ msgstr ""
 msgid "ERROR... can't set marker in this file"
 msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 
-#: about.h:10 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
+#: about.h:9 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
 #: autotimer.c:603 avsettings.h:331 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:945 channellist.h:947 channellist.h:952
 #: channellist.h:954 channellist.h:1038 divxstage.h:36 divxstage.h:79
@@ -6288,7 +6288,7 @@ msgstr ""
 msgid "OE"
 msgstr "E"
 
-#: about.h:10 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
+#: about.h:9 autotimer.c:537 autotimer.c:543 autotimer.c:568 autotimer.c:575
 #: autotimer.c:603 avsettings.h:331 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:945 channellist.h:947
 #: channellist.h:952 channellist.h:954 channellist.h:1038 divxstage.h:36
@@ -9343,7 +9343,7 @@ msgid ""
 "System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
 
-#: about.h:10
+#: about.h:9
 msgid "System-Info"
 msgstr ""
 
