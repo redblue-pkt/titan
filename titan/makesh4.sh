@@ -17,6 +17,7 @@ SRCDIR=${16}
 CPU=${17}
 BOXNAME=${18}
 TYPE1=${19}
+CREATE=1
 
 rm "$HOME"/flashimg/.ipk-build-error
 
@@ -549,15 +550,13 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Plugins done"
 echo "[titan]--------------------------------------------------------"
 
-if [ "$TYPE" != "whitebox" ];then
-    echo "[titan]--------------------------------------------------------"
-    echo "[titan] Update Language Po files"
-    echo "[titan]--------------------------------------------------------"
-    "$HOME"/flashimg/$SRCDIR/titan/tools/createpo.sh "$SVNUSER" "$GROUP" $SRCDIR $TYPE
-    echo "[titan]--------------------------------------------------------"
-    echo "[titan] Update Language Po files done"
-    echo "[titan]--------------------------------------------------------"
-fi
+echo "[titan]--------------------------------------------------------"
+echo "[titan] Update Language Po files"
+echo "[titan]--------------------------------------------------------"
+"$HOME"/flashimg/$SRCDIR/titan/tools/createpo.sh "$SVNUSER" "$GROUP" $SRCDIR $TYPE $CREATE
+echo "[titan]--------------------------------------------------------"
+echo "[titan] Update Language Po files done"
+echo "[titan]--------------------------------------------------------"
 
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Make Language Po files"
