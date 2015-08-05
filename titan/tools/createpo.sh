@@ -166,7 +166,8 @@ echo "[createpo.sh] check group $GROUP"
 cd "$HOME"/flashimg/$SRCDIR/po
 if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
-	svn commit -m "[titan] autoupdate po files [$BOXNAME]"
+	echo "[createpo.sh] Boxname: $BOXNAME --  Sourcedir: $SRCDIR"
+	svn commit -m "[titan] autoupdate po files ($BOXNAME)"
 	svn commit "$HOME"/flashimg/$SRCDIR/po
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
