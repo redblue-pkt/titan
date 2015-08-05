@@ -4,7 +4,7 @@ SVNUSER=$1
 GROUP=$2
 TYPE=update
 SRCDIR=$3
-BOXNAME=$4
+BOX=$4
 
 if [ -z "$1" ]; then
 	echo "[createpo.sh] usage: createpo.sh <svnuser> <update|new>"
@@ -167,7 +167,7 @@ cd "$HOME"/flashimg/$SRCDIR/po
 if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
 	echo "[createpo.sh] Boxname: $BOXNAME --  Sourcedir: $SRCDIR"
-	svn commit -m "[titan] autoupdate po files ($BOXNAME)"
+	svn commit -m "[titan] autoupdate po files ($BOX)"
 	svn commit "$HOME"/flashimg/$SRCDIR/po
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
