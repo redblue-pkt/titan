@@ -10,6 +10,7 @@ MEDIAFW=$2
 GROUP=$3
 BOX=$4
 DISTRO=$5
+SRCDIR=$6
 
 if [ -z "$STM" ]; then
 	echo "error: use makesh4.sh <stm23|stm23|stm24> <1|2>"
@@ -26,8 +27,8 @@ else
 	devflag=""
 fi
 
-cd "$HOME"/flashimg/source.titan/plugins
-ln -s "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins/titan
+cd "$HOME"/flashimg/$SRCDIR/plugins
+ln -s "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins/titan
 
 if [ $MEDIAFW = 1 ]; then
 	eplayer=EPLAYER3
@@ -54,7 +55,7 @@ compile()
 	-I $eplayerinclude \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libmmeimage \
-	-I "$HOME"/flashimg/source.titan \
+	-I "$HOME"/flashimg/$SRCDIR \
 	-c $2.c -o $2.o
 
 	if [ ! -z $3 ]; then
@@ -70,8 +71,8 @@ compile()
 	echo "[titan]--------------------------------------------------------"
 }
 
-rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.o"`
-rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.so"`
+rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.o"`
+rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.so"`
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make networkbrowser"
@@ -80,7 +81,7 @@ cd networkbrowser/netlib
 cp Makefile."$STM".sh4 Makefile
 make clean
 make
-cd "$HOME"/flashimg/source.titan/plugins
+cd "$HOME"/flashimg/$SRCDIR/plugins
 echo "[titan]--------------------------------------------------------"
 echo "[titan] networkbrowser done"
 echo "[titan]--------------------------------------------------------"
@@ -132,7 +133,7 @@ cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
 echo make curl
 make curl
 
-cd "$HOME"/flashimg/source.titan/plugins
+cd "$HOME"/flashimg/$SRCDIR/plugins
 compile "facebook" "facebook" "" "-l curl"
 
 
