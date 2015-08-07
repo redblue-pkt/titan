@@ -10,7 +10,8 @@ MEDIAFW=$2
 GROUP=$3
 BOX=$4
 DISTRO=$5
-SRCDIR=$6
+ARCH=$6
+SRCDIR=$7
 
 echo $*
 
@@ -19,7 +20,8 @@ echo MEDIAFW=$2
 echo GROUP=$3
 echo BOX=$4
 echo DISTRO=$5
-echo SRCDIR=$6
+echo ARCH=$6
+echo SRCDIR=$7
 
 if [ -z "$STM" ]; then
 	echo "error: use makesh4.sh <stm23|stm23|stm24> <1|2>"
