@@ -1402,7 +1402,7 @@ not needed we use wakeup_record_device on recordstartreal
 	if(type == RECTIMER && status.standby == 0)
 	{
 		tmpstr = ostrcat(_("Timer Record start !"), filename, 0, 0);
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 4, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 900, 200, 4, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
 	
