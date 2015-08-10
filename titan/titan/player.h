@@ -315,7 +315,11 @@ void playerresetts()
 void playercontinuets()
 {
 	videocontinue(status.aktservice->videodev);
+#ifdef MIPSEL
+	audiocontinue(status.aktservice->audiodev);
+#else
 	audioplay(status.aktservice->audiodev);
+#endif
 }
 
 void playerpausets()
