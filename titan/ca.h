@@ -1748,7 +1748,9 @@ void cathread(struct stimerthread* self, struct dvbdev* dvbnode)
 {
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return;
 	debug(620, "CA thread start (slot %d)", dvbnode->devnr);
-
+#ifdef MIPSEL
+	dvbnode->caslot->status = 100;
+#endif
 	while(self != NULL && self->aktion != STOP && self->aktion != PAUSE)
 	{
 		if(dvbnode->caslot->status != 101)
