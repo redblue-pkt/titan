@@ -11703,7 +11703,7 @@ msgstr ""
 
 #: moduleconfig.h:354
 msgid "empty"
-msgstr "kein Modul"
+msgstr "leer"
 
 #: tpk_section.h:3
 msgid "emus"
@@ -13404,7 +13404,7 @@ msgstr ""
 #: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:180
 #: zdf.h:86
 msgid "unknown"
-msgstr "Unbekannt!"
+msgstr "nicht erkannt"
 
 #: webif_help.h:115
 msgid "unlock"
