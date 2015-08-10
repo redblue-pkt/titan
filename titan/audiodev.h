@@ -75,6 +75,25 @@ int audiostop(struct dvbdev* node)
 	return 0;
 }
 
+#ifdef MIPSEL
+int audiocontinue(struct dvbdev* node)
+{
+	if(node == NULL)
+	{
+		err("NULL detect");
+		return 1;
+	}
+
+	if(ioctl(node->fd, AUDIO_CONTINUE) < 0)
+	{
+		perr("AUDIO_CONTINUE");
+		return 1;
+	}
+	
+	return 0;
+}
+#endif
+
 int audioplay(struct dvbdev* node)
 {
 	if(node == NULL)
