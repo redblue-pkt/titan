@@ -13442,12 +13442,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Repeate"
-#~ msgstr "Lập lại"
-
-#~ msgid "Repeate type"
-#~ msgstr "Chế độ lập lại"
-
-#~ msgid "repeate"
-#~ msgstr "Lập lại"
