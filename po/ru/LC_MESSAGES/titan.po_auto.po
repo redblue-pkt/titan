@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.67\n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-07-18 10:07+0100\n"
+"PO-Revision-Date: 2015-08-11 13:39+0100\n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: ru\n"
@@ -7676,7 +7676,7 @@ msgstr "Повтор-Выкл"
 
 #: skin_default_skin.xml.h:566
 msgid "Repeat type"
-msgstr ""
+msgstr "Тип повтора"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:429
