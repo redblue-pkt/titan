@@ -1059,7 +1059,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 		setchoiceboxselection(justplay, "0");
 
 	addchoicebox(repeate, "0", _("once"));
-	addchoicebox(repeate, "1", _("repeate"));
+	addchoicebox(repeate, "1", _("repeat"));
 	if(newnode == 0)
 	{
 		tmprepeate = node->repeate;
@@ -1477,7 +1477,7 @@ start:
 				if(rectimernode->repeate == 0)
 					tmpstr = ostrcat(tmpstr, _("once"), 1, 0);
 				else
-					tmpstr = ostrcat(tmpstr, _("repeate"), 1, 0);
+					tmpstr = ostrcat(tmpstr, _("repeat"), 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			}
 			else
@@ -1488,7 +1488,7 @@ start:
 				if(rectimernode->repeate == 0)
 					tmpstr = ostrcat(tmpstr, _("once"), 1, 0);
 				else
-					tmpstr = ostrcat(tmpstr, _("repeate"), 1, 0);
+					tmpstr = ostrcat(tmpstr, _("repeat"), 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			}
 
