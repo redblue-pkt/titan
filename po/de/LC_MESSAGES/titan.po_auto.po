@@ -13755,12 +13755,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Repeate"
-#~ msgstr "Wiederholen"
-
-#~ msgid "Repeate type"
-#~ msgstr "Wiederholungsmodus"
-
-#~ msgid "repeate"
-#~ msgstr "Wiederholen"

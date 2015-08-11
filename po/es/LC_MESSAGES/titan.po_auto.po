@@ -13607,12 +13607,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Repeate"
-#~ msgstr "Repita"
-
-#~ msgid "Repeate type"
-#~ msgstr "modo de repeticion"
-
-#~ msgid "repeate"
-#~ msgstr "Repita"

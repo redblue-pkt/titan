@@ -13512,12 +13512,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Repeate"
-#~ msgstr "Повтор"
-
-#~ msgid "Repeate type"
-#~ msgstr "Тип повтора"
-
-#~ msgid "repeate"
-#~ msgstr "Повтор"
