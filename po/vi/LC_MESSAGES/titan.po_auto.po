@@ -1819,7 +1819,7 @@ msgstr ""
 "Không tìm thấy tuner để ghi.\n"
 "Chuyển để ghi/Timeshift chương trình"
 
-#: record.h:1657
+#: record.h:1663
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Không có EPG!"
 
@@ -1890,7 +1890,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
-#: mc_videoplayer.h:900 play.h:1497
+#: mc_videoplayer.h:900 play.h:1503
 msgid "Can't start playback !"
 msgstr "Không thể phát lại!"
 
@@ -2496,7 +2496,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "MẶC ĐỊNH"
 
-#: play.h:1421 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1427 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:189
 #: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:3
 #: skins_weather_skin.xml.h:2
@@ -3007,7 +3007,7 @@ msgstr ""
 msgid "EJECT"
 msgstr ""
 
-#: adjust.h:71 httpdfunc.h:3891 play.h:1421 skin_default_skin.xml.h:230
+#: adjust.h:71 httpdfunc.h:3891 play.h:1427 skin_default_skin.xml.h:230
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3191,8 +3191,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:109 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
-#: play.h:1288 play.h:1497 play.h:1713 play.h:1724
+#: player.h:109 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
+#: play.h:1294 play.h:1503 play.h:1719 play.h:1730
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:5
@@ -3207,7 +3207,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1130 record.h:1657 record.h:1682 rectimer.h:577
+#: record.h:387 record.h:1130 record.h:1663 record.h:1688 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -5486,11 +5486,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1713
+#: play.h:1719
 msgid "Marker autoseek is started"
 msgstr "Đã thiết lập nhà sản xuất"
 
-#: play.h:1724
+#: play.h:1730
 msgid "Marker autoseek is stopped"
 msgstr "Đã thiết lập nhà sản xuất"
 
@@ -5761,13 +5761,13 @@ msgstr ""
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
-#: play.h:614 play.h:1287 play.h:1497 play.h:1713 play.h:1724 possetup.h:98
+#: play.h:614 play.h:1293 play.h:1503 play.h:1719 play.h:1730 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1130 record.h:1405 record.h:1657 record.h:1682 rectimer.h:577
+#: record.h:1130 record.h:1411 record.h:1663 record.h:1688 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6345,8 +6345,8 @@ msgstr "E"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:109 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1287
-#: play.h:1288 play.h:1497 play.h:1713 play.h:1724 plugins_dlna_skin.xml.h:7
+#: player.h:109 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
+#: play.h:1294 play.h:1503 play.h:1719 play.h:1730 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -6356,7 +6356,7 @@ msgstr "E"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1130 record.h:1405 record.h:1682 rectimer.h:577 rectimer.h:1239
+#: record.h:1130 record.h:1411 record.h:1688 rectimer.h:577 rectimer.h:1239
 #: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
@@ -7379,7 +7379,7 @@ msgstr "cho phép thiết bị đọc"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1288
+#: play.h:1294
 msgid "Really Delete ?"
 msgstr "Bạn muốn xóa?"
 
@@ -7431,7 +7431,7 @@ msgstr "Khóa đầu vào"
 msgid "Receiver unlock"
 msgstr "Khóa đầu vào"
 
-#: record.h:1554 record.h:1624 skin_default_skin.xml.h:542
+#: record.h:1560 record.h:1630 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7487,7 +7487,7 @@ msgstr "Bộ đinh thời ghi"
 msgid "Record cut"
 msgstr "Thư mục chứa bản ghi"
 
-#: play.h:1287
+#: play.h:1293
 msgid "Record in progress"
 msgstr "Đang ghi tên"
 
@@ -7495,7 +7495,7 @@ msgstr "Đang ghi tên"
 msgid "Record path"
 msgstr "Thư mục chứa bản ghi"
 
-#: record.h:1682
+#: record.h:1688
 msgid "Record started"
 msgstr "Bắt đầu ghi"
 
@@ -7843,7 +7843,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr "dò"
 
-#: dvdplay.h:29 play.h:1421 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1427 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "LỰA CHỌN"
 
@@ -7867,7 +7867,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1421
+#: play.h:1427
 msgid "SORT"
 msgstr "Sắp xếp"
 
@@ -9692,7 +9692,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr "Bước dịch cho bộ định thời ghi"
 
-#: record.h:1404
+#: record.h:1410
 msgid "Timer Record start !"
 msgstr "Bước dịch cho bộ định thời ghi"
 
@@ -10906,15 +10906,15 @@ msgstr "Kích hoạt"
 msgid "active"
 msgstr "cho phép"
 
-#: record.h:1622 record.h:1668
+#: record.h:1628 record.h:1674
 msgid "add recording (enter duration)"
 msgstr "thêm bản ghi (nhập thời gian)"
 
-#: record.h:1621 record.h:1663
+#: record.h:1627 record.h:1669
 msgid "add recording (indefinitely)"
 msgstr "thêm bản ghi (không giới hạn)"
 
-#: record.h:1620 record.h:1650
+#: record.h:1626 record.h:1656
 msgid "add recording (stop after current event)"
 msgstr "thêm bản ghi (sau sự kiện này)"
 
@@ -11157,7 +11157,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1600 record.h:1609 record.h:1634
+#: record.h:1606 record.h:1615 record.h:1640
 msgid "change"
 msgstr "Thay đổi"
 
@@ -12817,8 +12817,8 @@ msgstr "dịch phải"
 msgid "stock Plugin"
 msgstr "cdắm nguồn"
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1536 record.h:1545 record.h:1556
-#: record.h:1585 record.h:1594 record.h:1628 skin_default_skin.xml.h:687
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1542 record.h:1551 record.h:1562
+#: record.h:1591 record.h:1600 record.h:1634 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
