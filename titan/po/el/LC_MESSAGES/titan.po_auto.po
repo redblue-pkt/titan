@@ -7556,22 +7556,19 @@ msgstr "Όνομα χρήστη"
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1081
 #: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:436
-#: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
+#: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skin_default_skin.xml.h:565
+#: skins_mc_skin.xml.h:45
 msgid "Repeat"
 msgstr "Επανέλαβε"
+
+#: skin_default_skin.xml.h:566
+msgid "Repeat type"
+msgstr ""
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:429
 msgid "Repeat-On"
 msgstr "Επανέλαβε"
-
-#: skin_default_skin.xml.h:565
-msgid "Repeate"
-msgstr ""
-
-#: skin_default_skin.xml.h:566
-msgid "Repeate type"
-msgstr ""
 
 #: httpdfunc.h:6988 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
@@ -12376,8 +12373,8 @@ msgid "rename service"
 msgstr ""
 
 #: rectimer.h:1062 rectimer.h:1480 rectimer.h:1491
-msgid "repeate"
-msgstr "Επανέλαβε"
+msgid "repeat"
+msgstr ""
 
 #: webif_help.h:77
 msgid "resolutionsettings"
@@ -13369,3 +13366,6 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "repeate"
+#~ msgstr "Επανέλαβε"
