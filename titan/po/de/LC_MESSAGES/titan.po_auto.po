@@ -8311,7 +8311,7 @@ msgstr "Suchlauf"
 
 #: skin_default_skin.xml.h:607
 msgid "Scan Auto"
-msgstr "Automatische Sendersuche läuft ..."
+msgstr "Fortschritt automatische Sendersuche"
 
 #: skin_default_skin.xml.h:608
 msgid "Scan Auto Config"
