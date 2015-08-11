@@ -1283,9 +1283,15 @@ int playcheckdirrcret(char* file, int dirrcret)
 	}
 	if(dirrcret == 1)
 	{
+		char* subfile = NULL;
+		subfile = ostrstr(file, "/movie/");
+		if(subfile != NULL)
+			subfile = subfile + 7;
+		else
+			subfile = file;
 		if(getservicebyrecname(file, 0, 0) != NULL)
 			textbox(_("Message"), _("Record in progress"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-		else if(textbox(_("Really Delete ?"), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+		else if(textbox(_("Really Delete ?"), subfile, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 		{
 			unlink(file);
 			if(file_exist(file))
