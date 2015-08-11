@@ -7861,7 +7861,7 @@ msgstr "Wiederholen"
 
 #: skin_default_skin.xml.h:566
 msgid "Repeat type"
-msgstr ""
+msgstr "Wiederholungsmodus"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:429
