@@ -1515,7 +1515,7 @@ char* getbluebutton(struct skin* node)
 
 char* setblink(struct skin* node)
 {
-	if(node->hidden == NO)
+	if(status.skinblink == 0)
 		node->hidden = YES;
 	else
 		node->hidden = NO;

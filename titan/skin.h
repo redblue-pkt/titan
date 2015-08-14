@@ -4000,6 +4000,11 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		return 1;
 	}
 
+	if(status.skinblink == 0)
+		status.skinblink = 1;
+	else
+		status.skinblink = 0;
+
 	if(flag == 0 || flag == 4)
 		m_lock(&status.drawingmutex, 0);
 
