@@ -1513,4 +1513,13 @@ char* getbluebutton(struct skin* node)
 	return tmpstr;
 }
 
+char* setblink(struct skin* node)
+{
+	if(node->hidden == NO)
+		node->hidden = YES;
+	else
+		node->hidden = NO;
+	return NULL;
+}
+
 #endif

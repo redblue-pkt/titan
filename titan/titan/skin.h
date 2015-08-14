@@ -211,6 +211,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getsignal;
 	}
+	if(ostrcmp("setblink", value) == 0)
+	{
+		*rettype = FUNCBLINK;
+		return &setblink;
+	}
 	if(ostrcmp("getrecfreesizetext", value) == 0)
 		return &getrecfreesizetext;
 	if(ostrcmp("getwlanlinkqualitytext", value) == 0)
@@ -3745,6 +3750,8 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 			else
 				node->hidden = YES;
 		}
+		else if(node->funcrettype == FUNCBLINK)
+			tmpstr = node->skinfunc(node);
 		else
 		{
 			tmpstr = node->skinfunc(node, node->param1, node->param2);
