@@ -1559,6 +1559,8 @@ struct status
 	char* url;
 	//externer plugin Aufruf
 	char* extplugin;
+	//node oled blinken
+	int skinblink;
 } status;
 
 struct fb
