@@ -960,7 +960,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		ret = getxmlentry(line, " nodestyle=");
 		if(ret != NULL)
 		{
-			if(ostrcmp("blink", value) == 0)
+			if(ostrcmp("blink", ret) == 0)
 			{
 				newnode->nodestyle = 1;
 				free(ret);
@@ -3767,7 +3767,7 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 	if(node->nodestyle != 0)
 	{
 		if(node->nodestyle == 1)
-			setblink();
+			setblink(node);
 	}
 	if(screencalc != 2)
 	{
