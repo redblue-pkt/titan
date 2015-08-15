@@ -211,7 +211,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getsignal;
 	}
-	if(ostrcmp("setblink", value) == 0)
+	if(ostrcmp("blink", value) == 0)
 	{
 		*rettype = FUNCBLINK;
 		return &setblink;
@@ -958,6 +958,12 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 				newnode->pic = changepicpath("skin/background.png");
 				printf("use default pic: %s\n",newnode->pic);
 			}
+		}
+		ret = getxmlentry(line, " nodestyle=");
+		if(ret != NULL)
+		{
+			newnode->skinfunc = convertfunc(ret, &newnode->funcrettype);
+			free(ret);
 		}
 		ret = getxmlentry(line, " func=");
 		if(ret != NULL)
@@ -4004,6 +4010,8 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		status.skinblink = 1;
 	else
 		status.skinblink = 0;
+
+	printf("drawscreen: %i\n", status.skinblink);
 
 	if(flag == 0 || flag == 4)
 		m_lock(&status.drawingmutex, 0);
