@@ -708,47 +708,50 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					}
 				}*/
 //Workaround scrambled Bits
-#ifndef MIPSEL
-					if(servicenode->type == RECORDPLAY)
+					if(getconfigint("rec_workaround_off", NULL) == 0)
 					{
-#endif			
-						i = 0;
-						if(buf[i] != 0x47)
-						{
-							i = 1;
-							while(i <= 188)
-							{
-								if(buf[i] == 0x47) break;
-								i++;
-							}
-						}
-						if(i <= 188)
-						{
-							while(i < readret-1)
-							{
-								if(buf[i] == 0x47)
-								{
-									buf[i+3] = buf[i+3] & 0x3f;
-									i = i + 188;
-								}
-								else
-								{
-									while(i < readret-1)
-									{
-										i = i + 1;
-										if(buf[i] == 0x47)
-										{
-											buf[i+3] = buf[i+3] & 0x3f;
-											i = i + 188;
-											break;
-										}
-									}	
-								}
-							}
-						}
 #ifndef MIPSEL
-					}						
+						if(servicenode->type == RECORDPLAY)
+						{
+#endif			
+							i = 0;
+							if(buf[i] != 0x47)
+							{
+								i = 1;
+								while(i <= 188)
+								{
+									if(buf[i] == 0x47) break;
+									i++;
+								}
+							}
+							if(i <= 188)
+							{
+								while(i < readret-1)
+								{
+									if(buf[i] == 0x47)
+									{
+										buf[i+3] = buf[i+3] & 0x3f;
+										i = i + 188;
+									}
+									else
+									{
+										while(i < readret-1)
+										{
+											i = i + 1;
+											if(buf[i] == 0x47)
+											{
+												buf[i+3] = buf[i+3] & 0x3f;
+												i = i + 188;
+												break;
+											}
+										}	
+									}
+								}
+							}
+#ifndef MIPSEL
+						}						
 #endif
+					}
 //*
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 				}
