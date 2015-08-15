@@ -3757,8 +3757,6 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 			else
 				node->hidden = YES;
 		}
-		else if(node->funcrettype == FUNCBLINK)
-			tmpstr = node->skinfunc(node, node->param1, node->param2);
 		else
 		{
 			tmpstr = node->skinfunc(node, node->param1, node->param2);
