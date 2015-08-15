@@ -4011,8 +4011,6 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	else
 		status.skinblink = 0;
 
-	printf("drawscreen: %i\n", status.skinblink);
-
 	if(flag == 0 || flag == 4)
 		m_lock(&status.drawingmutex, 0);
 
