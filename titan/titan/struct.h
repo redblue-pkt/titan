@@ -913,6 +913,8 @@ struct skin
 	int usesavebg;
 	// savebg is saved date
 	char* savebg;
+	// fuer blinken
+	int nodestyle;
 };
 
 struct style
