@@ -211,11 +211,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getsignal;
 	}
-	if(ostrcmp("blink", value) == 0)
-	{
-		*rettype = FUNCBLINK;
-		return &setblink;
-	}
+
 	if(ostrcmp("getrecfreesizetext", value) == 0)
 		return &getrecfreesizetext;
 	if(ostrcmp("getwlanlinkqualitytext", value) == 0)
@@ -614,6 +610,8 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 	newnode->bgcol = -1;
 	newnode->titlebgcol = -1;
 	newnode->deaktivcol = -1;
+	
+	newnode->nodestyle = 0;
 
 	if(line != NULL)
 	{
@@ -962,8 +960,11 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		ret = getxmlentry(line, " nodestyle=");
 		if(ret != NULL)
 		{
-			newnode->skinfunc = convertfunc(ret, &newnode->funcrettype);
-			free(ret);
+			if(ostrcmp("blink", value) == 0)
+			{
+				newnode->nodestyle = 1;
+				free(ret);
+			}
 		}
 		ret = getxmlentry(line, " func=");
 		if(ret != NULL)
@@ -3765,7 +3766,11 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		}
 		free(tmpstr);
 	}
-
+	if(node->nodestyle != 0)
+	{
+		if(node->nodestyle == 1)
+			setblink();
+	}
 	if(screencalc != 2)
 	{
 		if(node->hidden == YES || parent->hidden == YES || node->locked == YES || parent->locked == YES) return 1;
