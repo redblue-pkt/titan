@@ -938,6 +938,7 @@ int main(int argc, char *argv[])
 	}
 
 	ret = readscreen(getconfig("skinfile", NULL), 0, 0);
+	ret = readscreen("/var/usr/local/share/titan/skin/default", 0, 0);
 	ret = readmainbouquet(getconfig("bouquetfile", NULL));
 	ret = readallbouquet();
 	ret = readmainplaylist(getconfig("playlistfile", NULL));
