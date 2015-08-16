@@ -948,7 +948,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		{
 			free(newnode->pic); newnode->pic = NULL;
 			newnode->pic = changepicpath(ret);
-			free(ret);
+			free(ret); ret = NULL;
 			// set default menu entry
 			if(!file_exist(newnode->pic))
 			{
@@ -963,8 +963,8 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			if(ostrcmp("blink", ret) == 0)
 			{
 				newnode->nodestyle = 1;
-				free(ret);
 			}
+			free(ret); ret = NULL;
 		}
 		ret = getxmlentry(line, " func=");
 		if(ret != NULL)
