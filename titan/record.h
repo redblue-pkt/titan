@@ -650,32 +650,31 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		{
 			if(servicenode->type == RECORDSTREAM)
 			{
-//Workaround scrambled Bits
-//#ifdef MIPSEL
-//				if(servicenode->tssize == 188)
-//				{
-//					i = 0;
-//					if(buf[i] != 0x47)
-//					{
-//						i = 1;
-//						while(i <= 188)
-//						{
-//							if(buf[i] == 0x47) break;
-//							i++;
-//						}
-//					}
-//					if(i <= 188)
-//					{
-//						while(i < readret-1)
-//						{
-//							if(buf[i] == 0x47)
-//								buf[i+3] = buf[i+3] & 0x3f;
-//							i = i + 188;
-//						}
-//					}
-//				}
-//#endif
-
+Workaround scrambled Bits
+#ifdef MIPSEL
+				if(servicenode->tssize == 188)
+				{
+					i = 0;
+					if(buf[i] != 0x47)
+					{
+						i = 1;
+						while(i <= 188)
+						{
+							if(buf[i] == 0x47) break;
+							i++;
+						}
+					}
+					if(i <= 188)
+					{
+						while(i < readret-1)
+						{
+							if(buf[i] == 0x47)
+								buf[i+3] = buf[i+3] & 0x3f;
+							i = i + 188;
+						}
+					}
+				}
+#endif
 //*
 				writeret = sockwrite(servicenode->recdstfd, buf, readret, writetimeout);
 			}
