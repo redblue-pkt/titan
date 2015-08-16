@@ -649,7 +649,7 @@ msgid ""
 "Aborting backup..."
 msgstr ""
 
-#: skin_default_skin.xml.h:100 tithek_mainmenu.h:14 webif_channellist.h:4
+#: skin_default_skin.xml.h:100 tithek_mainmenu.h:15 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -709,7 +709,7 @@ msgstr ""
 msgid "ALL"
 msgstr "ΌΛΑ"
 
-#: tithek_mainmenu.h:3
+#: tithek_mainmenu.h:4
 msgid "ARD"
 msgstr ""
 
@@ -921,6 +921,10 @@ msgstr ""
 msgid "Animation"
 msgstr "Πληροφορίες"
 
+#: tithek_mainmenu.h:3
+msgid "Animationsmenue sh4 Boxen"
+msgstr ""
+
 #: networkbrowser.h:1027 networkbrowser.h:1033 networkbrowser.h:1043
 msgid "Anonymous login Access Denied !"
 msgstr ""
@@ -1050,43 +1054,43 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr ""
 
-#: tithek_mainmenu.h:4
+#: tithek_mainmenu.h:5
 msgid "Atemio Cable Tuner scan"
 msgstr ""
 
-#: tithek_mainmenu.h:5
+#: tithek_mainmenu.h:6
 msgid "Atemio Channelsearch 4xSat"
 msgstr "Αναζήτηση Καναλιών"
 
-#: tithek_mainmenu.h:6
+#: tithek_mainmenu.h:7
 msgid "Atemio Harddisc formating"
 msgstr ""
 
-#: tithek_mainmenu.h:7
+#: tithek_mainmenu.h:8
 msgid "Atemio Network configuration stable IP"
 msgstr ""
 
-#: tithek_mainmenu.h:8
+#: tithek_mainmenu.h:9
 msgid "Atemio Series Recoding"
 msgstr ""
 
-#: tithek_mainmenu.h:9
+#: tithek_mainmenu.h:10
 msgid "Atemio Skin (Gui Design)"
 msgstr ""
 
-#: tithek_mainmenu.h:10
+#: tithek_mainmenu.h:11
 msgid "Atemio TitanNit Trailer"
 msgstr ""
 
-#: tithek_mainmenu.h:11
+#: tithek_mainmenu.h:12
 msgid "Atemio TitanNit zap Menu"
 msgstr ""
 
-#: tithek_mainmenu.h:12
+#: tithek_mainmenu.h:13
 msgid "Atemio Tuner configuration Sat"
 msgstr "Tuner"
 
-#: tithek_mainmenu.h:13
+#: tithek_mainmenu.h:14
 msgid "Atemio WLAN configuration"
 msgstr "LNB"
 
@@ -1791,13 +1795,13 @@ msgid ""
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: record.h:1133
+#: record.h:1132
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:1666
+#: record.h:1665
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -1895,7 +1899,7 @@ msgstr "Ακύρωση"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_mainmenu.h:15
+#: tithek_mainmenu.h:16
 msgid "Category"
 msgstr ""
 
@@ -3169,7 +3173,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1133 record.h:1666 record.h:1691 rectimer.h:577
+#: record.h:387 record.h:1132 record.h:1665 record.h:1690 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -3611,7 +3615,7 @@ msgstr "Γρήγορο zapping"
 msgid "Fav"
 msgstr "Αγαπημένα"
 
-#: tithek_mainmenu.h:16
+#: tithek_mainmenu.h:17
 msgid "Favoriten"
 msgstr ""
 
@@ -4581,19 +4585,23 @@ msgstr ""
 msgid "How many days"
 msgstr ""
 
-#: tithek_mainmenu.h:17
+#: tithek_mainmenu.h:18
 msgid "HowTo Feedadresse Eingeben"
 msgstr ""
 
-#: tithek_mainmenu.h:18
-msgid "HowTo Picons Einrichten"
-msgstr ""
-
 #: tithek_mainmenu.h:19
-msgid "HowTo Secret"
+msgid "HowTo HD02 Einrichten"
 msgstr ""
 
 #: tithek_mainmenu.h:20
+msgid "HowTo Picons Einrichten"
+msgstr ""
+
+#: tithek_mainmenu.h:21
+msgid "HowTo Secret"
+msgstr ""
+
+#: tithek_mainmenu.h:22
 msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
@@ -4933,7 +4941,7 @@ msgstr ""
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
-#: tithek_mainmenu.h:21
+#: tithek_mainmenu.h:23
 msgid "Internet Radio"
 msgstr "Internet Browser"
 
@@ -5069,7 +5077,7 @@ msgstr ""
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-#: tithek_mainmenu.h:22
+#: tithek_mainmenu.h:24
 msgid "KinoX"
 msgstr ""
 
@@ -5582,23 +5590,23 @@ msgstr ""
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: tithek_mainmenu.h:23
+#: tithek_mainmenu.h:25
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:24
+#: tithek_mainmenu.h:26
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:25
+#: tithek_mainmenu.h:27
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:26
+#: tithek_mainmenu.h:28
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:27
+#: tithek_mainmenu.h:29
 msgid "Mediacenter VideoPlayer Preview"
 msgstr ""
 
@@ -5716,7 +5724,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1133 record.h:1414 record.h:1666 record.h:1691 rectimer.h:577
+#: record.h:1132 record.h:1413 record.h:1665 record.h:1690 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -5874,7 +5882,7 @@ msgstr ""
 msgid "Moven"
 msgstr ""
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:30
 msgid "Movie4k"
 msgstr ""
 
@@ -5897,6 +5905,14 @@ msgstr "Multi EPG"
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:448
 msgid "Multi EPG"
+msgstr ""
+
+#: tithek_mainmenu.h:31
+msgid "Multi Image Teil 1"
+msgstr ""
+
+#: tithek_mainmenu.h:32
+msgid "Multi Image Teil 2"
 msgstr ""
 
 #: scan.h:2013
@@ -5955,7 +5971,7 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:33
 msgid "MyVideo"
 msgstr "My Video"
 
@@ -5981,6 +5997,10 @@ msgstr "Όνομα"
 
 #: skin_default_skin.xml.h:452
 msgid "Name:"
+msgstr ""
+
+#: tithek_mainmenu.h:34
+msgid "Nemesis - HDMI in"
 msgstr ""
 
 #: httpdfunc.h:5254 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
@@ -6042,7 +6062,7 @@ msgstr ""
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:35
 msgid "Netzkino"
 msgstr ""
 
@@ -6211,7 +6231,7 @@ msgstr ""
 msgid "November"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:36
 msgid "NowTv"
 msgstr ""
 
@@ -6298,7 +6318,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1133 record.h:1414 record.h:1691 rectimer.h:577 rectimer.h:1239
+#: record.h:1132 record.h:1413 record.h:1690 rectimer.h:577 rectimer.h:1239
 #: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
@@ -7222,11 +7242,11 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:38
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:37
 msgid "RTL2-Now"
 msgstr ""
 
@@ -7365,7 +7385,7 @@ msgstr ""
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1563 record.h:1633 skin_default_skin.xml.h:542
+#: record.h:1562 record.h:1632 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7429,7 +7449,7 @@ msgstr "Timer εγγραφής"
 msgid "Record path"
 msgstr ""
 
-#: record.h:1691
+#: record.h:1690
 msgid "Record started"
 msgstr "Διαδρομή φακέλλου εγγραφών"
 
@@ -8239,41 +8259,41 @@ msgstr ""
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:622 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:34 tmdb.h:898
+#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:39 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Χειροκίνητη αναζήτηση"
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:40
 msgid "Search (10)"
 msgstr ""
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:41
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:42
 msgid "Search (25)"
 msgstr ""
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:43
 msgid "Search (50)"
 msgstr ""
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:45
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:44
 msgid "Search Cast"
 msgstr ""
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:46
 msgid "Search Movie"
 msgstr ""
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:47
 msgid "Search Serie"
 msgstr ""
 
@@ -8849,7 +8869,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Επιλογή Softcam"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:48
 msgid "Solarmovie"
 msgstr ""
 
@@ -9167,7 +9187,7 @@ msgstr ""
 msgid "Sunday"
 msgstr "Κυριακή"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:49
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9594,7 +9614,7 @@ msgstr "Χρόνος εως το τέλος"
 msgid "Time to wait after seek for fill buffer"
 msgstr ""
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:50
 msgid "TimeTv"
 msgstr "Timer"
 
@@ -9623,7 +9643,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr ""
 
-#: record.h:1413
+#: record.h:1412
 msgid "Timer Record start !"
 msgstr "Διαδρομή εγγραφών του Timer"
 
@@ -9703,7 +9723,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:51
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -9836,7 +9856,7 @@ msgstr ""
 msgid "Top"
 msgstr "Επάνω"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:52
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10285,7 +10305,7 @@ msgstr "ΡΥΘΜΙΣΕΙΣ VIDEO"
 msgid "VLC Player"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:53
 msgid "VOX-Now"
 msgstr ""
 
@@ -10691,11 +10711,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:54
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:55
 msgid "XXX-XVIDEOS"
 msgstr "VIDEO"
 
@@ -10745,7 +10765,7 @@ msgid ""
 "Stop the box??? "
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:56
 msgid "Youtube"
 msgstr ""
 
@@ -10753,7 +10773,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:57
 msgid "ZDF"
 msgstr ""
 
@@ -10829,15 +10849,15 @@ msgstr "Ενεργοποίηση"
 msgid "active"
 msgstr "Απενεργοποίηση"
 
-#: record.h:1631 record.h:1677
+#: record.h:1630 record.h:1676
 msgid "add recording (enter duration)"
 msgstr ""
 
-#: record.h:1630 record.h:1672
+#: record.h:1629 record.h:1671
 msgid "add recording (indefinitely)"
 msgstr ""
 
-#: record.h:1629 record.h:1659
+#: record.h:1628 record.h:1658
 msgid "add recording (stop after current event)"
 msgstr ""
 
@@ -11080,7 +11100,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1609 record.h:1618 record.h:1643
+#: record.h:1608 record.h:1617 record.h:1642
 msgid "change"
 msgstr ""
 
@@ -12740,8 +12760,8 @@ msgstr ""
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1545 record.h:1554 record.h:1565
-#: record.h:1594 record.h:1603 record.h:1637 skin_default_skin.xml.h:687
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1544 record.h:1553 record.h:1564
+#: record.h:1593 record.h:1602 record.h:1636 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Διακοπή της εκκίνησης"
