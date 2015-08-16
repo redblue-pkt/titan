@@ -650,7 +650,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		{
 			if(servicenode->type == RECORDSTREAM)
 			{
-Workaround scrambled Bits
+//Workaround scrambled Bits
 #ifdef MIPSEL
 				if(servicenode->tssize == 188)
 				{
