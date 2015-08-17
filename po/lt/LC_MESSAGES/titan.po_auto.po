@@ -656,7 +656,7 @@ msgstr ""
 "\n"
 "Aborting Backup"
 
-#: skin_default_skin.xml.h:100 tithek_mainmenu.h:15 webif_channellist.h:4
+#: skin_default_skin.xml.h:100 tithek_mainmenu.h:14 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -716,7 +716,7 @@ msgstr ""
 msgid "ALL"
 msgstr "Visi"
 
-#: tithek_mainmenu.h:4
+#: tithek_mainmenu.h:3
 msgid "ARD"
 msgstr ""
 
@@ -930,10 +930,6 @@ msgstr "Animacijos greitis"
 msgid "Animation"
 msgstr "Animacija"
 
-#: tithek_mainmenu.h:3
-msgid "Animationsmenue sh4 Boxen"
-msgstr ""
-
 #: networkbrowser.h:1027 networkbrowser.h:1033 networkbrowser.h:1043
 msgid "Anonymous login Access Denied !"
 msgstr "Anoniminis prisijungimas - Prieiga udrausta !"
@@ -1074,28 +1070,32 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Atemio (Hotline)"
 
-#: tithek_mainmenu.h:5
+#: tithek_mainmenu.h:4
 msgid "Atemio Cable Tuner scan"
 msgstr ""
 
-#: tithek_mainmenu.h:6
+#: tithek_mainmenu.h:5
 msgid "Atemio Channelsearch 4xSat"
 msgstr "Atemio Channel search 4 Satellites"
 
-#: tithek_mainmenu.h:7
+#: tithek_mainmenu.h:6
 msgid "Atemio Harddisc formating"
 msgstr "Atemio Harddisk formating"
 
-#: tithek_mainmenu.h:8
+#: tithek_mainmenu.h:7
 msgid "Atemio Network configuration stable IP"
 msgstr "Atemio Network configuration static IP"
 
-#: tithek_mainmenu.h:9
+#: tithek_mainmenu.h:8
 msgid "Atemio Series Recoding"
 msgstr "Atemio Serial Recording"
 
-#: tithek_mainmenu.h:10
+#: tithek_mainmenu.h:9
 msgid "Atemio Skin (Gui Design)"
+msgstr ""
+
+#: tithek_mainmenu.h:10
+msgid "Atemio TitanNit Nemesis"
 msgstr ""
 
 #: tithek_mainmenu.h:11
@@ -1103,14 +1103,10 @@ msgid "Atemio TitanNit Trailer"
 msgstr ""
 
 #: tithek_mainmenu.h:12
-msgid "Atemio TitanNit zap Menu"
-msgstr ""
-
-#: tithek_mainmenu.h:13
 msgid "Atemio Tuner configuration Sat"
 msgstr "Tuner Configuration for Satellite"
 
-#: tithek_mainmenu.h:14
+#: tithek_mainmenu.h:13
 msgid "Atemio WLAN configuration"
 msgstr ""
 
@@ -1931,7 +1927,7 @@ msgstr "Ataukti"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_mainmenu.h:16
+#: tithek_mainmenu.h:15
 msgid "Category"
 msgstr ""
 
@@ -3684,7 +3680,7 @@ msgstr ""
 msgid "Fav"
 msgstr ""
 
-#: tithek_mainmenu.h:17
+#: tithek_mainmenu.h:16
 msgid "Favoriten"
 msgstr "Mgstami"
 
@@ -4684,23 +4680,23 @@ msgstr "Kartoji linija"
 msgid "How many days"
 msgstr ""
 
-#: tithek_mainmenu.h:18
+#: tithek_mainmenu.h:17
 msgid "HowTo Feedadresse Eingeben"
 msgstr "How to add a Feed address"
 
-#: tithek_mainmenu.h:19
+#: tithek_mainmenu.h:18
 msgid "HowTo HD02 Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:20
+#: tithek_mainmenu.h:19
 msgid "HowTo Picons Einrichten"
 msgstr "How to install and use Picons"
 
-#: tithek_mainmenu.h:21
+#: tithek_mainmenu.h:20
 msgid "HowTo Secret"
 msgstr "How to ad Secret Feed address"
 
-#: tithek_mainmenu.h:22
+#: tithek_mainmenu.h:21
 msgid "HowTo Sky V13 Einrichten"
 msgstr "How to setup a Sky V13 Smartcard"
 
@@ -5045,7 +5041,7 @@ msgstr "Interneto narykl"
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
-#: tithek_mainmenu.h:23
+#: tithek_mainmenu.h:22
 msgid "Internet Radio"
 msgstr ""
 
@@ -5181,7 +5177,7 @@ msgstr ""
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-#: tithek_mainmenu.h:24
+#: tithek_mainmenu.h:23
 msgid "KinoX"
 msgstr ""
 
@@ -5696,23 +5692,23 @@ msgstr "MediaDB nuskaitymas baigtas"
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: tithek_mainmenu.h:25
+#: tithek_mainmenu.h:24
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr "Audioplayer Playlist Preview"
 
-#: tithek_mainmenu.h:26
+#: tithek_mainmenu.h:25
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr "Audioplayer Screensaver preview"
 
-#: tithek_mainmenu.h:27
+#: tithek_mainmenu.h:26
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr "Wmediathek kinOx previe"
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:27
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr "Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:28
 msgid "Mediacenter VideoPlayer Preview"
 msgstr "Video Player Preview"
 
@@ -5988,7 +5984,7 @@ msgstr "Perkelti"
 msgid "Moven"
 msgstr "Filmas"
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:29
 msgid "Movie4k"
 msgstr ""
 
@@ -6012,14 +6008,6 @@ msgstr "Kanal (EPG)"
 #: skin_default_skin.xml.h:448
 msgid "Multi EPG"
 msgstr "Kanal EPG"
-
-#: tithek_mainmenu.h:31
-msgid "Multi Image Teil 1"
-msgstr ""
-
-#: tithek_mainmenu.h:32
-msgid "Multi Image Teil 2"
-msgstr ""
 
 #: scan.h:2013
 msgid "Multi Sat"
@@ -6077,7 +6065,7 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:30
 msgid "MyVideo"
 msgstr ""
 
@@ -6103,10 +6091,6 @@ msgstr "Pavadinimas"
 
 #: skin_default_skin.xml.h:452
 msgid "Name:"
-msgstr ""
-
-#: tithek_mainmenu.h:34
-msgid "Nemesis - HDMI in"
 msgstr ""
 
 #: httpdfunc.h:5254 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
@@ -6168,7 +6152,7 @@ msgstr "Rodyti nuskaitytas CIFS / NFS Dalinimosi katalogus"
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:31
 msgid "Netzkino"
 msgstr ""
 
@@ -6344,7 +6328,7 @@ msgstr ""
 msgid "November"
 msgstr ""
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:32
 msgid "NowTv"
 msgstr ""
 
@@ -7370,11 +7354,11 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:34
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:33
 msgid "RTL2-Now"
 msgstr ""
 
@@ -8387,41 +8371,41 @@ msgstr ""
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:622 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:39 tmdb.h:898
+#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:35 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Paieka"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:36
 msgid "Search (10)"
 msgstr "Search viewing 10 Results"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:37
 msgid "Search (20)"
 msgstr "Search viewing 20 Results"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:38
 msgid "Search (25)"
 msgstr "Search viewing 25 Results"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:39
 msgid "Search (50)"
 msgstr "Search viewing 50 Results"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:41
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:40
 msgid "Search Cast"
 msgstr "Search by Cast"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:42
 msgid "Search Movie"
 msgstr "Search for a Movie"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:43
 msgid "Search Serie"
 msgstr "Search for a Series"
 
@@ -8999,7 +8983,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Softcam pasirinkimas:"
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:44
 msgid "Solarmovie"
 msgstr ""
 
@@ -9325,7 +9309,7 @@ msgstr "Sek"
 msgid "Sunday"
 msgstr "Sekmadienis"
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:45
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9762,7 +9746,7 @@ msgstr "Laikas sustabdyti (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Time to wait after seek to fill buffer"
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:46
 msgid "TimeTv"
 msgstr ""
 
@@ -9877,7 +9861,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:47
 msgid "Tips und Tricks"
 msgstr "Tips and Tricks"
 
@@ -10010,7 +9994,7 @@ msgstr ""
 msgid "Top"
 msgstr "Pagrindiniai ( procesai )"
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:48
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10467,7 +10451,7 @@ msgstr "Nustatymai"
 msgid "VLC Player"
 msgstr "VLC Grotuvas"
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:49
 msgid "VOX-Now"
 msgstr ""
 
@@ -10877,11 +10861,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:54
+#: tithek_mainmenu.h:50
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:55
+#: tithek_mainmenu.h:51
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -10934,7 +10918,7 @@ msgstr ""
 "\n"
 "Do you want the Receiver to shutdown?"
 
-#: tithek_mainmenu.h:56
+#: tithek_mainmenu.h:52
 msgid "Youtube"
 msgstr ""
 
@@ -10942,7 +10926,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:57
+#: tithek_mainmenu.h:53
 msgid "ZDF"
 msgstr ""
 
