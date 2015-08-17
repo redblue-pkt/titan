@@ -13759,6 +13759,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Atemio TitanNit zap Menu"
-#~ msgstr "Atemio TitanNit zap Menü"
