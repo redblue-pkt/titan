@@ -49,8 +49,8 @@ if [ "$buildtype" = "full" ];then
 	
 		$wgetbin $ROUND0 -O cache.beeg.section."$count0".html
 	
-		tumbid=`cat cache.beeg.section."$count0".html | grep "var tumbid" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
-		tumbalt=`cat cache.beeg.section."$count0".html | grep "var tumbalt" | cut -d"[" -f2 | cut -d"]" -f1 | sed "s/','\+/|/g" | tr ' ' '_' | tr '|' ' '`
+#		tumbid=`cat cache.beeg.section."$count0".html | grep "var tumbid" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
+#		tumbalt=`cat cache.beeg.section."$count0".html | grep "var tumbalt" | cut -d"[" -f2 | cut -d"]" -f1 | sed "s/','\+/|/g" | tr ' ' '_' | tr '|' ' '`
 		tumburl=`cat cache.beeg.section."$count0".html | grep "var IMGthumb" | cut -d"'" -f2`
 
 		tumbid=`cat cache.beeg.section."$count0".html | grep "var tumb_id" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
