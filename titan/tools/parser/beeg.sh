@@ -42,7 +42,7 @@ if [ "$buildtype" = "full" ];then
 	done
 
 	echo sections $sections
-	
+
 	for ROUND0 in $sections; do
 		count0=`expr $count0 + 1`
 		echo "sections($count0)=$ROUND0"
@@ -52,6 +52,9 @@ if [ "$buildtype" = "full" ];then
 		tumbid=`cat cache.beeg.section."$count0".html | grep "var tumbid" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
 		tumbalt=`cat cache.beeg.section."$count0".html | grep "var tumbalt" | cut -d"[" -f2 | cut -d"]" -f1 | sed "s/','\+/|/g" | tr ' ' '_' | tr '|' ' '`
 		tumburl=`cat cache.beeg.section."$count0".html | grep "var IMGthumb" | cut -d"'" -f2`
+
+		tumbid=`cat cache.beeg.section."$count0".html | grep "var tumb_id" | cut -d"[" -f2 | cut -d"]" -f1 | tr ',' ' '`
+		tumbalt=`cat cache.beeg.section."$count0".html | grep "var tumb_alt" | cut -d"[" -f2 | cut -d"]" -f1 | sed "s/','\+/|/g" | tr ' ' '_' | tr '|' ' '`
 
 		count1=0
 		for ROUND1 in $tumbid; do
@@ -95,8 +98,6 @@ if [ "$buildtype" = "full" ];then
 				echo $LINE >> cache.beeg.category.titanlist
 				cat cache.beeg.category.titanlist | sort -u > _full/beeg/beeg.category.list
 			fi
-
-
 		done
 	done
 	#fi
