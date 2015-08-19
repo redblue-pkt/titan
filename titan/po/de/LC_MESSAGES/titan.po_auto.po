@@ -1082,7 +1082,7 @@ msgid "Astra 19.2 - new (matze70)"
 msgstr ""
 
 #: tpk_showname.h:5
-msgid "Astra 19.2 KabelD and all transponder | 27.06.2015"
+msgid "Astra 19.2 KabelD and all transponder"
 msgstr ""
 
 #: tpk_description.h:13
@@ -2034,7 +2034,7 @@ msgstr "Sender EPG"
 msgid "Channel Edit"
 msgstr "Senderliste bearbeiten"
 
-#: hbbtv.h:742
+#: hbbtv.h:743
 msgid "Channel HBBTV"
 msgstr "HBBTV Sender"
 
@@ -2166,7 +2166,7 @@ msgstr "Wählen Sie ein USB Gerät aus der folgenden Liste"
 msgid "Choose your Filemanager Option from the following list"
 msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
-#: hbbtv.h:758
+#: hbbtv.h:759
 msgid "Choose your HBBTV Favorite from the following list"
 msgstr "Wählen Sie das gewünschte HBBTV Lesezeichen aus der folgenden Liste"
 
@@ -4305,7 +4305,7 @@ msgstr "Schutzintervall:"
 msgid "H"
 msgstr ""
 
-#: hbbtv.h:758
+#: hbbtv.h:759
 msgid "HBBTV Favoriten"
 msgstr ""
 
@@ -8031,7 +8031,7 @@ msgid "SAT"
 msgstr "Satelliten"
 
 #: tpk_showname.h:119
-msgid "SAT/Cable 19.2 13.0 KabelD | 26.06.2015"
+msgid "SAT/Cable 19.2 13.0 KabelD | 18.08.2015"
 msgstr ""
 
 #: httpdfunc.h:4845 skin_default_skin.xml.h:595
@@ -8258,7 +8258,7 @@ msgid "Sat: Ser6 Settings Eutelsat 36.0"
 msgstr ""
 
 #: tpk_description.h:122
-msgid "Sat: default Settings Astra 19.2"
+msgid "Sat: default Settings Astra 19.2 | 18.08.2015"
 msgstr ""
 
 #: tpk_description.h:123
@@ -11243,7 +11243,7 @@ msgid "all"
 msgstr "Alle"
 
 #: tpk_description.h:4
-msgid "all: Settings Astra 19.2 KabelD all transponder"
+msgid "all: Settings Astra 19.2 KabelD all transponder | 18.08.2015"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
