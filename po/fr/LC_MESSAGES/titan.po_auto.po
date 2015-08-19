@@ -1795,13 +1795,13 @@ msgid ""
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: record.h:1154
+#: record.h:1155
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:1687
+#: record.h:1688
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -3173,7 +3173,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1154 record.h:1687 record.h:1712 rectimer.h:577
+#: record.h:387 record.h:1155 record.h:1688 record.h:1713 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -5724,7 +5724,7 @@ msgstr "Liste de Menu"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1154 record.h:1435 record.h:1687 record.h:1712 rectimer.h:577
+#: record.h:1155 record.h:1436 record.h:1688 record.h:1713 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6306,7 +6306,7 @@ msgstr "Ö"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1154 record.h:1435 record.h:1712 rectimer.h:577 rectimer.h:1239
+#: record.h:1155 record.h:1436 record.h:1713 rectimer.h:577 rectimer.h:1239
 #: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
@@ -7373,7 +7373,7 @@ msgstr ""
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1584 record.h:1654 skin_default_skin.xml.h:542
+#: record.h:1585 record.h:1655 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7437,7 +7437,7 @@ msgstr "Enregistrement chronométré"
 msgid "Record path"
 msgstr "Chemin pour Enregistrement"
 
-#: record.h:1712
+#: record.h:1713
 msgid "Record started"
 msgstr "Chemin pour Enregistrement"
 
@@ -9631,7 +9631,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr "Chemin enregistrement Programmation"
 
-#: record.h:1434
+#: record.h:1435
 msgid "Timer Record start !"
 msgstr "Chemin enregistrement chronométré"
 
@@ -10837,15 +10837,15 @@ msgstr "Activer"
 msgid "active"
 msgstr "Actif"
 
-#: record.h:1652 record.h:1698
+#: record.h:1653 record.h:1699
 msgid "add recording (enter duration)"
 msgstr ""
 
-#: record.h:1651 record.h:1693
+#: record.h:1652 record.h:1694
 msgid "add recording (indefinitely)"
 msgstr "ajout d'enregistrement (indéfiniment)"
 
-#: record.h:1650 record.h:1680
+#: record.h:1651 record.h:1681
 msgid "add recording (stop after current event)"
 msgstr "ajout d'enregistrement (stopper après l'émission)"
 
@@ -11088,7 +11088,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1630 record.h:1639 record.h:1664
+#: record.h:1631 record.h:1640 record.h:1665
 msgid "change"
 msgstr "Chaine"
 
@@ -12748,8 +12748,8 @@ msgstr "Un pas vers l'Ouest"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1566 record.h:1575 record.h:1586
-#: record.h:1615 record.h:1624 record.h:1658 skin_default_skin.xml.h:687
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1567 record.h:1576 record.h:1587
+#: record.h:1616 record.h:1625 record.h:1659 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
