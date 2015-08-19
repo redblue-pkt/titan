@@ -657,7 +657,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					i = 0;
 					if(buf[i] != 0x47)
 					{
-						debug(251, "no sync byte at beginn");
+						debug(251, "no sync byte at beginn len %i", readret);
 						i = 1;
 						while(i <= 188)
 						{
@@ -680,7 +680,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 							}
 							else
 							{
-								debug(251, "no sync byte at data");
+								debug(251, "no sync byte at data len %i", readret);
 								while(i < readret-4)
 								{
 									i = i + 1;
