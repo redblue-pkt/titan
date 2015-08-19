@@ -652,6 +652,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			{
 //Workaround scrambled Bits
 #ifdef MIPSEL
+				debug(251, "data len %i", readret);
 				if(servicenode->tssize == 188)
 				{
 					i = 0;
