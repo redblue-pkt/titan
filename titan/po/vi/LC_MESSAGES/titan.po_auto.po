@@ -7959,6 +7959,10 @@ msgstr ""
 msgid "SZ"
 msgstr "S"
 
+#: tpk_showname.h:117
+msgid "Samba Configuration"
+msgstr ""
+
 #: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:118
 msgid "Samba Server"
 msgstr ""
@@ -7967,12 +7971,8 @@ msgstr ""
 msgid "Samba Server Settings"
 msgstr "Thiết lập server Samba"
 
-#: tpk_showname.h:117
-msgid "Samba and Avahi Configuration"
-msgstr ""
-
 #: tpk_description.h:116
-msgid "Samba and Avahi configuration update"
+msgid "Samba configuration update"
 msgstr ""
 
 #: tpk_description.h:117
