@@ -1710,7 +1710,7 @@ void screenrecorddirect()
 		recordcheckret(NULL, ret, 6);
 		if(ret == 0 && newstart == 1)
 		{
-			textbox(_("Message"), _("Record started"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+			textbox(_("Message"), _("Record started"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 			if(getconfigint("recordpicture", NULL) == 1)
 				recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, NULL, NULL, NULL);
 		}
