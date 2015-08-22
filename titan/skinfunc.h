@@ -156,7 +156,10 @@ char* getrec(struct skin* node, char* path)
 			if(path != NULL) 
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
+			node->hidden = NO;
 		}
+		else
+			node->hidden = YES;
 	
 		return tmpstr;
 	}
@@ -172,7 +175,9 @@ char* getrec(struct skin* node, char* path)
 			if(path != NULL) 
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
+			node->hidden = NO;
 		}
+		node->hidden = YES;
 		
 		return tmpstr;
 	}
@@ -189,7 +194,9 @@ char* getrec(struct skin* node, char* path)
 			if(path != NULL) 
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
+			node->hidden = NO;
 		}
+		node->hidden = YES;
 		
 		return tmpstr;
 	}
@@ -206,7 +213,9 @@ char* getrec(struct skin* node, char* path)
 			if(path != NULL) 
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
+			node->hidden = NO;
 		}
+		node->hidden = YES;
 		
 		return tmpstr;
 	}
