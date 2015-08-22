@@ -651,53 +651,56 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(servicenode->type == RECORDSTREAM)
 			{
 //Workaround scrambled Bits
+				if(getconfigint("stream_workaround_off", NULL) == 0)
+					{
 #ifdef MIPSEL
-				debug(251, "data len %i", readret);
-				if(servicenode->tssize == 188)
-				{
-					i = 0;
-					if(buf[i] != 0x47)
-					{
-						debug(251, "no sync byte at beginn len %i", readret);
-						i = 1;
-						while(i <= 188)
+						debug(251, "data len %i", readret);
+						if(servicenode->tssize == 188)
 						{
-							if(buf[i] == 0x47)
+							i = 0;
+							if(buf[i] != 0x47)
 							{
-								 debug(251, "sync byte found at offset %i", i);
-								 break;
-							}
-							i++;
-						}
-					}
-					if(i <= 188)
-					{
-						while(i < readret-4)
-						{
-							if(buf[i] == 0x47)
-							{
-								buf[i+3] = buf[i+3] & 0x3f;
-								i = i + 188;
-							}
-							else
-							{
-								debug(251, "no sync byte at data len %i", readret);
-								while(i < readret-4)
+								debug(251, "no sync byte at beginn len %i", readret);
+								i = 1;
+								while(i <= 188)
 								{
-									i = i + 1;
 									if(buf[i] == 0x47)
 									{
-										debug(251, "sync byte found at offset %i", i);
+										 debug(251, "sync byte found at offset %i", i);
+										 break;
+									}
+									i++;
+								}
+							}
+							if(i <= 188)
+							{
+								while(i < readret-4)
+								{
+									if(buf[i] == 0x47)
+									{
 										buf[i+3] = buf[i+3] & 0x3f;
 										i = i + 188;
-										break;
 									}
-								}	
+									else
+									{
+										debug(251, "no sync byte at data len %i", readret);
+										while(i < readret-4)
+										{
+											i = i + 1;
+											if(buf[i] == 0x47)
+											{
+												debug(251, "sync byte found at offset %i", i);
+												buf[i+3] = buf[i+3] & 0x3f;
+												i = i + 188;
+												break;
+											}
+										}	
+									}
+								}
 							}
 						}
-					}
-				}
 #endif
+					}
 //*
 				writeret = sockwrite(servicenode->recdstfd, buf, readret, writetimeout);
 			}
