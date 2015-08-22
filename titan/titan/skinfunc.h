@@ -170,12 +170,15 @@ char* getrec(struct skin* node, char* path)
 
 		if(status.mute > 0)
 		{
+			node->hidden = NO;
+			if(node->picmem = 1)
+				return tmpstr;
+			
 			tmpstr = ostrcat("oled_mute.png", NULL, 0, 0);
 
 			if(path != NULL) 
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
-			node->hidden = NO;
 		}
 		node->hidden = YES;
 		
