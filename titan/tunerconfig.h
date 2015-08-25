@@ -486,8 +486,16 @@ start:
 			break;
 		}
 
-		if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0 || ostrcmp(listbox->select->text, _("DiSEqC")) == 0)
+		if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0)
+		{
 			b3->hidden = NO;
+			changetext(tmp, _("EDIT LNB / UNICABLE"));
+		}
+		else if(ostrcmp(listbox->select->text, _("DiSEqC")) == 0)
+		{
+			b3->hidden = NO;
+			changetext(tmp, _("EDIT DiSEqC"));
+		}
 		else
 			b3->hidden = YES;	
 		drawscreen(tunerreceptiondvbs, 0, 0);
