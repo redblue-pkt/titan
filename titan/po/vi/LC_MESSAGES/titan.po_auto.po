@@ -2790,7 +2790,7 @@ msgid "Devices"
 msgstr " Thiết bị"
 
 #: tunerconfig.h:183 tunerconfig.h:212 tunerconfig.h:243 tunerconfig.h:276
-#: tunerconfig.h:489 tunerconfig.h:557
+#: tunerconfig.h:494 tunerconfig.h:565
 msgid "DiSEqC"
 msgstr ""
 
@@ -2987,11 +2987,15 @@ msgstr ""
 msgid "EDIT"
 msgstr "chỉnh sửa"
 
+#: tunerconfig.h:497
+msgid "EDIT DiSEqC"
+msgstr ""
+
 #: tithek.h:1576 tithek.h:2191
 msgid "EDIT FAV"
 msgstr ""
 
-#: skin_default_skin.xml.h:220
+#: skin_default_skin.xml.h:220 tunerconfig.h:492
 msgid "EDIT LNB / UNICABLE"
 msgstr ""
 
@@ -3240,8 +3244,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:647
-#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
+#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
@@ -4652,7 +4656,7 @@ msgstr ""
 msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
-#: tunerconfig.h:647 tunerconfig.h:666
+#: tunerconfig.h:655 tunerconfig.h:674
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
@@ -5338,7 +5342,7 @@ msgstr "Lựa chọn danh sách"
 msgid "Lithuanian"
 msgstr ""
 
-#: tunerconfig.h:301 tunerconfig.h:489 tunerconfig.h:551
+#: tunerconfig.h:301 tunerconfig.h:489 tunerconfig.h:559
 msgid "Lnb / Unicable"
 msgstr ""
 
@@ -5792,8 +5796,8 @@ msgstr ""
 #: tithek.h:1512 tithek.h:1761 tithek.h:1921 tithek.h:2121 tithek.h:2149
 #: tithek.h:2165 tithek.h:2177 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:647
-#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:655
+#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
@@ -6389,8 +6393,8 @@ msgstr "E"
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:647
-#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
+#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
@@ -10114,7 +10118,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr ""
 
-#: tunerconfig.h:941
+#: tunerconfig.h:949
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -11316,7 +11320,7 @@ msgstr ""
 msgid "dir"
 msgstr ""
 
-#: tunerconfig.h:810
+#: tunerconfig.h:818
 msgid "direct connect"
 msgstr "kết nối trực tiếp"
 
@@ -11829,7 +11833,7 @@ msgstr ""
 msgid "logo"
 msgstr ""
 
-#: tunerconfig.h:821
+#: tunerconfig.h:829
 msgid "loop to Tuner"
 msgstr ""
 
@@ -12110,7 +12114,7 @@ msgstr "E"
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:844
 #: vfdisplay.h:66 vfdisplay.h:81
 msgid "off"
 msgstr "tắt"
