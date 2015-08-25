@@ -3073,7 +3073,7 @@ msgstr "Bearbeiten"
 
 #: tunerconfig.h:497
 msgid "EDIT DiSEqC"
-msgstr ""
+msgstr "DiSEqC konfigurieren"
 
 #: tithek.h:1576 tithek.h:2191
 msgid "EDIT FAV"
