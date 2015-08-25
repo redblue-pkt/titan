@@ -489,12 +489,12 @@ start:
 		if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0)
 		{
 			b3->hidden = NO;
-			changetext(tmp, _("EDIT LNB / UNICABLE"));
+			changetext(b3, _("EDIT LNB / UNICABLE"));
 		}
 		else if(ostrcmp(listbox->select->text, _("DiSEqC")) == 0)
 		{
 			b3->hidden = NO;
-			changetext(tmp, _("EDIT DiSEqC"));
+			changetext(b3, _("EDIT DiSEqC"));
 		}
 		else
 			b3->hidden = YES;	
