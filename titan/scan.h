@@ -2267,8 +2267,8 @@ start:
 	addchoicebox(blindscan, "1", _("yes"));
 
 	//changename
-	addchoicebox(changename, "0", _("no"));
 	addchoicebox(changename, "1", _("yes"));
+	addchoicebox(changename, "0", _("no"));
 
 	//favtype
 	addchoicebox(favtype, "0", _("Unchanged"));
