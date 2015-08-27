@@ -1,0 +1,1 @@
+﻿The own current position in latitude and longitude.
