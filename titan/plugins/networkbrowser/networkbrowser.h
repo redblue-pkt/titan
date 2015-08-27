@@ -1590,6 +1590,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	{
 		tmpstr = ostrcat(node->sharename, "-", 0, 0);
 		tmpstr = ostrcat(tmpstr, node->sharedir, 1, 0);
+		tmpstr = string_replace_all("/", "-", tmpstr, 1);
 		changeinput(skin_sharename, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
