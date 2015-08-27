@@ -11997,7 +11997,7 @@ msgstr "NFS-Server"
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1091 rectimer.h:1096 rectimer.h:1101
 #: rectimer.h:1106 rectimer.h:1111 rectimer.h:1116 rectimer.h:1121 scan.h:1775
-#: scan.h:2254 scan.h:2258 scan.h:2262 scan.h:2266 scan.h:2270 scan.h:2279
+#: scan.h:2254 scan.h:2258 scan.h:2262 scan.h:2266 scan.h:2271 scan.h:2279
 #: scan.h:2283 screensaveradjust.h:19 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
@@ -13372,7 +13372,7 @@ msgstr "Giallo"
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1092 rectimer.h:1097
 #: rectimer.h:1102 rectimer.h:1107 rectimer.h:1112 rectimer.h:1117
 #: rectimer.h:1122 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
-#: scan.h:2271 scan.h:2280 scan.h:2284 screensaveradjust.h:20
+#: scan.h:2270 scan.h:2280 scan.h:2284 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
 #: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
