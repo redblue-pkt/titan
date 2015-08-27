@@ -1584,7 +1584,15 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	setchoiceboxselection(skin_mode, node->mode);
 
 	changemask(skin_sharename, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(skin_sharename, node->sharename);
+	if(node->sharename != NULL && node->sharedir != NULL && ostrstr(node->sharename, node->sharedir) != NULL)
+	{
+		tmpstr = ostrcat(node->sharename, "-", 0, 0);
+		tmpstr = ostrcat(tmpstr, node->sharedir, 1, 0);
+		changeinput(skin_sharename, tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
+	else
+		changeinput(skin_sharename, node->sharename);
 
 	tmpstr = fixip(node->ip, 0);
 	changemask(skin_ip, "000.000.000.000");
