@@ -122,8 +122,8 @@ void screenepgsettings()
 	struct skin* mhw2epg = getscreennode(epgsettings, "mhw2epg");
 	struct skin* opentv = getscreennode(epgsettings, "opentv");
 	struct skin* epg_afterevent = getscreennode(epgsettings, "epg_afterevent");
+	struct skin* epg_primetime = getscreennode(epgsettings, "epg_primetime");
 	struct skin* b4 = getscreennode(epgsettings, "b4");
-
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 
@@ -217,6 +217,11 @@ void screenepgsettings()
 	addchoicebox(epg_afterevent, "1", _("poweroff"));
 	setchoiceboxselection(epg_afterevent, getconfig("epg_afterevent", NULL));
 
+	addchoicebox(epg_primetime, "20:15", "20:15);
+	addchoicebox(epg_primetime, "20:00", "20:00");
+	addchoicebox(epg_primetime, "20:30", "20:30");
+	setchoiceboxselection(epg_primetime, getconfig("epg_primetime", NULL));
+
 	b4->hidden = NO;
 	b4->usesavebg = 1;
 
@@ -262,6 +267,7 @@ void screenepgsettings()
 			addconfigscreencheck("mhw2epg", mhw2epg, "0");
 			addconfigscreencheck("opentv", opentv, "0");
 			addconfigscreencheck("epg_afterevent", epg_afterevent, "0");
+			addconfigscreencheck("epg_primetime", epg_primetime, "0");
 
 			if(getconfig("epg_refreshtime", NULL) == NULL || ostrcmp(getconfig("epg_refreshtime", NULL), "0") == 0)
 				epgscandeltimer();

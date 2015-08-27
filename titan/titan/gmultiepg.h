@@ -6,11 +6,23 @@ time_t calcprimetime(time_t akttime)
 	struct tm *loctime = NULL;
 	time_t ret = 0;
 
+	char* primetime = getconfig("epg_primetime", NULL);
+	int count = 0, hour = 20, min = 15;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(primetime, ":", &count);
+
+	if(ret1 != NULL && count > 1)
+	{
+		hour = atoi(ret1[0].part);
+		min = atoi(ret1[1].part);
+	}
+	free(ret), ret = NULL;
+					
 	loctime = olocaltime(&akttime);
 	if(loctime != NULL)
 	{
-		loctime->tm_hour = 20;
-		loctime->tm_min = 15;
+		loctime->tm_hour = hour; // 20;
+		loctime->tm_min = min; // 15;
 		ret = mktime(loctime);
 		if(ret < akttime) // add 1 day
 		{
