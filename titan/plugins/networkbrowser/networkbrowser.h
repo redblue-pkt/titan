@@ -1682,8 +1682,17 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 
 	if(newnode == 0 && checkhddreplacement(node->sharename) == 1)
 		tmpstr = ostrcat(tmpstr, "1", 1, 0);
-	addchoicebox(skin_hddreplacement, "0", _("no"));
-	addchoicebox(skin_hddreplacement, "1", _("yes"));
+
+	if(ostrcmp(node->sharedir, "Aufnahme") == 0 || ostrcmp(node->sharedir, "record") == 0)	
+	{
+		addchoicebox(skin_hddreplacement, "1", _("yes"));
+		addchoicebox(skin_hddreplacement, "0", _("no"));
+	}
+	else
+	{
+		addchoicebox(skin_hddreplacement, "0", _("no"));
+		addchoicebox(skin_hddreplacement, "1", _("yes"));
+	}
 	setchoiceboxselection(skin_hddreplacement, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
