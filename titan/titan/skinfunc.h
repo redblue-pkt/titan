@@ -200,7 +200,8 @@ char* getrec(struct skin* node, char* path)
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
 			node->hidden = NO;
 		}
-		node->hidden = YES;
+		else
+			node->hidden = YES;
 		
 		return tmpstr;
 	}
@@ -219,7 +220,8 @@ char* getrec(struct skin* node, char* path)
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
 			node->hidden = NO;
 		}
-		node->hidden = YES;
+		else
+			node->hidden = YES;
 		
 		return tmpstr;
 	}
