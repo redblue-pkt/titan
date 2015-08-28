@@ -915,6 +915,9 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 
 char* recordcreatefilename(char* path, char* channelname, char* moviename, int type)
 {
+printf("path: %s\n", path);
+printf("channelname: %s\n", channelname);
+printf("moviename: %s\n", moviename);
 	time_t sec;
 	struct tm *loctime;
 	char *buf = NULL, *buf1 = NULL;
@@ -940,6 +943,8 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 	else
 		tmpstr = ostrcat(tmpstr, moviename, 1, 0);
 
+printf("tmpstr1: %s\n", tmpstr);
+
 	if(type != RECTIMESHIFT && recordnamefmt == 1)
 	{
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
@@ -948,6 +953,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 		else
 			tmpstr = ostrcat(tmpstr, channelname, 1, 0);
 	}
+printf("tmpstr2: %s\n", tmpstr);
 
 	sec = time(NULL);
 	loctime = localtime(&sec);
@@ -972,6 +978,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 		tmpstr = ostrcat(tmpstr, ".mpeg", 1, 0);
 	else
 		tmpstr = ostrcat(tmpstr, ".ts", 1, 0);
+printf("tmpstr3: %s\n", tmpstr);
 
 	return tmpstr;
 }
@@ -1061,7 +1068,10 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			if(epgnode != NULL)
 			{
 				moviename = strstrip(epgnode->title);
+printf("moviename1: %s\n", moviename);
+
 				delspezchar(moviename, 2);
+printf("moviename2: %s\n", moviename);
 			}
 			break;
 	}
