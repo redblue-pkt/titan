@@ -61,6 +61,72 @@ struct dvbdev* dmxopen(struct dvbdev* fenode)
 	return node;
 }
 
+struct dvbdev* dmxopen_ro(struct dvbdev* fenode)
+{
+	int fd = -1;
+
+	if(fenode == NULL) return NULL;
+		
+	m_lock(&status.dmxdevmutex, 9);
+  struct dvbdev* node = dvbdev;
+	
+	while(node != NULL)
+	{
+		if(node->fd == -1 && node->type == DEMUXDEV && node->adapter == fenode->adapter && node->devnr == fenode->devnr)
+			break;
+		node = node->next;
+	}
+
+	if(node != NULL)
+	{
+		if((fd = open(node->dev, O_RDONLY | O_CLOEXEC)) < 0)
+		{
+			debug(200, "open dmx ro failed %s", node->dev);
+			node = NULL;
+		}
+		else
+		{
+			node->fd = fd;
+		}
+	}
+
+	m_unlock(&status.dmxdevmutex, 9);
+	return node;
+}
+
+struct dvbdev* dmxopen_rw(struct dvbdev* fenode)
+{
+	int fd = -1;
+
+	if(fenode == NULL) return NULL;
+		
+	m_lock(&status.dmxdevmutex, 9);
+  struct dvbdev* node = dvbdev;
+	
+	while(node != NULL)
+	{
+		if(node->fd == -1 && node->type == DEMUXDEV && node->adapter == fenode->adapter && node->devnr == fenode->devnr)
+			break;
+		node = node->next;
+	}
+
+	if(node != NULL)
+	{
+		if((fd = open(node->dev, O_RDWR | O_CLOEXEC)) < 0)
+		{
+			debug(200, "open dmx rw failed %s", node->dev);
+			node = NULL;
+		}
+		else
+		{
+			node->fd = fd;
+		}
+	}
+
+	m_unlock(&status.dmxdevmutex, 9);
+	return node;
+}
+
 int dmxopendirect(char *dmxdev)
 {
 	int fd = -1;
