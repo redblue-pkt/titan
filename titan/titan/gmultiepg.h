@@ -16,7 +16,7 @@ time_t calcprimetime(time_t akttime)
 		hour = atoi(ret1[0].part);
 		min = atoi(ret1[1].part);
 	}
-	free(ret), ret = NULL;
+	free(ret1), ret1 = NULL;
 					
 	loctime = olocaltime(&akttime);
 	if(loctime != NULL)
