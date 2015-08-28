@@ -1810,7 +1810,7 @@ msgid ""
 "All Tuners in use or no Tuner defined."
 msgstr "Nessun Tuner libero trovato"
 
-#: record.h:1158
+#: record.h:1168
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -1818,7 +1818,7 @@ msgstr ""
 "nessun tener trovato.\n"
 "per registrazione/Timeschift cambiare canale ?"
 
-#: record.h:1691
+#: record.h:1701
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG non puo essere trovato oppure non e ok"
 
@@ -3209,7 +3209,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1158 record.h:1691 rectimer.h:577 rectimer.h:1239
+#: record.h:387 record.h:1168 record.h:1701 rectimer.h:577 rectimer.h:1239
 #: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25
@@ -5770,7 +5770,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1158 record.h:1439 record.h:1691 record.h:1716 rectimer.h:577
+#: record.h:1168 record.h:1449 record.h:1701 record.h:1726 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6354,7 +6354,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1158 record.h:1439 record.h:1716 rectimer.h:577 rectimer.h:1239
+#: record.h:1168 record.h:1449 record.h:1726 rectimer.h:577 rectimer.h:1239
 #: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
@@ -7427,7 +7427,7 @@ msgstr "Sbloccare Ricevitore"
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1588 record.h:1658 skin_default_skin.xml.h:543
+#: record.h:1598 record.h:1668 skin_default_skin.xml.h:543
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7491,7 +7491,7 @@ msgstr "Recording name"
 msgid "Record path"
 msgstr ""
 
-#: record.h:1716
+#: record.h:1726
 msgid "Record started"
 msgstr "Partita registrazione"
 
@@ -9679,7 +9679,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr ""
 
-#: record.h:1438
+#: record.h:1448
 msgid "Timer Record start !"
 msgstr "Timer registrazione partita !"
 
@@ -10893,15 +10893,15 @@ msgstr "Disattiva"
 msgid "active"
 msgstr "Autostart attivo"
 
-#: record.h:1656 record.h:1702
+#: record.h:1666 record.h:1712
 msgid "add recording (enter duration)"
 msgstr "aggiungere registrazione (dare durata)"
 
-#: record.h:1655 record.h:1697
+#: record.h:1665 record.h:1707
 msgid "add recording (indefinitely)"
 msgstr "aggiungere registrazione (all infinito)"
 
-#: record.h:1654 record.h:1684
+#: record.h:1664 record.h:1694
 msgid "add recording (stop after current event)"
 msgstr "aggiungere registrazione (questa trasmissione)"
 
@@ -11152,7 +11152,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1634 record.h:1643 record.h:1668
+#: record.h:1644 record.h:1653 record.h:1678
 msgid "change"
 msgstr "modifica"
 
@@ -12834,8 +12834,8 @@ msgstr ""
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1570 record.h:1579 record.h:1590
-#: record.h:1619 record.h:1628 record.h:1662 skin_default_skin.xml.h:688
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1580 record.h:1589 record.h:1600
+#: record.h:1629 record.h:1638 record.h:1672 skin_default_skin.xml.h:688
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "bootstop"
