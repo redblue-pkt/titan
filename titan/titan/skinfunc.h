@@ -151,12 +151,13 @@ char* getrec(struct skin* node, char* path)
 
 		if(status.recording > 0)
 		{
+			if(node->nodestyle != 1)
+				node->hidden = NO;
 			tmpstr = ostrcat("oled_rec.png", NULL, 0, 0);
 
 			if(path != NULL) 
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
-			node->hidden = NO;
 		}
 		else
 			node->hidden = YES;
@@ -170,14 +171,13 @@ char* getrec(struct skin* node, char* path)
 
 		if(status.mute > 0)
 		{
-			node->hidden = NO;
+			if(node->nodestyle != 1)
+				node->hidden = NO;
 			if(node->picmem == 1)
 				return tmpstr;
-			
 			tmpstr = ostrcat("oled_mute.png", NULL, 0, 0);
-
 			if(path != NULL) 
-                tmpstr = ostrcat("/", tmpstr, 0, 1);
+				tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
 		}
 		else
@@ -193,12 +193,13 @@ char* getrec(struct skin* node, char* path)
 
 		if(status.timeshift > 0)
 		{
+			if(node->nodestyle != 1)
+				node->hidden = NO;
 			tmpstr = ostrcat("oled_timeshift.png", NULL, 0, 0);
 
 			if(path != NULL) 
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
-			node->hidden = NO;
 		}
 		else
 			node->hidden = YES;
@@ -213,12 +214,13 @@ char* getrec(struct skin* node, char* path)
 
 		if(status.streaming > 0)
 		{
+			if(node->nodestyle != 1)
+				node->hidden = NO;
 			tmpstr = ostrcat("oled_streaming.png", NULL, 0, 0);
 
 			if(path != NULL) 
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
-			node->hidden = NO;
 		}
 		else
 			node->hidden = YES;
