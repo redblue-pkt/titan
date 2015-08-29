@@ -667,7 +667,7 @@ msgstr ""
 "\n"
 "Бекап отменён!"
 
-#: skin_default_skin.xml.h:100 tithek_mainmenu.h:14 webif_channellist.h:4
+#: skin_default_skin.xml.h:100 tithek_mainmenu.h:15 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -727,7 +727,7 @@ msgstr ""
 msgid "ALL"
 msgstr "Все"
 
-#: tithek_mainmenu.h:3
+#: tithek_mainmenu.h:4
 msgid "ARD"
 msgstr ""
 
@@ -929,6 +929,10 @@ msgstr ""
 "Альтернативный скин для Samsung LCD - W/O Picons (Должен быть установлен "
 "отдельно)"
 
+#: tithek_mainmenu.h:3
+msgid "Amazon Prime"
+msgstr ""
+
 #: copyfile.h:839
 msgid "Amount of files: "
 msgstr "Количество файлов "
@@ -1080,43 +1084,43 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Контакты Atemio"
 
-#: tithek_mainmenu.h:4
+#: tithek_mainmenu.h:5
 msgid "Atemio Cable Tuner scan"
 msgstr "Сканирование Atemio Cable тюнера"
 
-#: tithek_mainmenu.h:5
+#: tithek_mainmenu.h:6
 msgid "Atemio Channelsearch 4xSat"
 msgstr "Поиск каналов Atemio 4xSat"
 
-#: tithek_mainmenu.h:6
+#: tithek_mainmenu.h:7
 msgid "Atemio Harddisc formating"
 msgstr "Форматирование HDD"
 
-#: tithek_mainmenu.h:7
+#: tithek_mainmenu.h:8
 msgid "Atemio Network configuration stable IP"
 msgstr "Параметры сети"
 
-#: tithek_mainmenu.h:8
+#: tithek_mainmenu.h:9
 msgid "Atemio Series Recoding"
 msgstr "Серия перекодирования"
 
-#: tithek_mainmenu.h:9
+#: tithek_mainmenu.h:10
 msgid "Atemio Skin (Gui Design)"
 msgstr "Скин (Графический дизайн)"
 
-#: tithek_mainmenu.h:10
+#: tithek_mainmenu.h:11
 msgid "Atemio TitanNit Nemesis"
 msgstr ""
 
-#: tithek_mainmenu.h:11
+#: tithek_mainmenu.h:12
 msgid "Atemio TitanNit Trailer"
 msgstr "Трейлер"
 
-#: tithek_mainmenu.h:12
+#: tithek_mainmenu.h:13
 msgid "Atemio Tuner configuration Sat"
 msgstr "Конфигурация тюнера"
 
-#: tithek_mainmenu.h:13
+#: tithek_mainmenu.h:14
 msgid "Atemio WLAN configuration"
 msgstr "WiFi конфигурация"
 
@@ -1939,7 +1943,7 @@ msgstr "Отмена"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_mainmenu.h:15
+#: tithek_mainmenu.h:16
 msgid "Category"
 msgstr "Категория"
 
@@ -3680,7 +3684,7 @@ msgstr "Быстрое переключение"
 msgid "Fav"
 msgstr "Фавориты"
 
-#: tithek_mainmenu.h:16
+#: tithek_mainmenu.h:17
 msgid "Favoriten"
 msgstr "Фавориты"
 
@@ -4674,23 +4678,23 @@ msgstr "Горячая линия"
 msgid "How many days"
 msgstr "Сколько дней хранить EPG"
 
-#: tithek_mainmenu.h:17
+#: tithek_mainmenu.h:18
 msgid "HowTo Feedadresse Eingeben"
 msgstr ""
 
-#: tithek_mainmenu.h:18
+#: tithek_mainmenu.h:19
 msgid "HowTo HD02 Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:19
+#: tithek_mainmenu.h:20
 msgid "HowTo Picons Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:20
+#: tithek_mainmenu.h:21
 msgid "HowTo Secret"
 msgstr ""
 
-#: tithek_mainmenu.h:21
+#: tithek_mainmenu.h:22
 msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
@@ -5035,7 +5039,7 @@ msgstr "Интернет браузер"
 msgid "Internet Browser Plugin not installed !"
 msgstr "Плагин браузера не установлен!"
 
-#: tithek_mainmenu.h:22
+#: tithek_mainmenu.h:23
 msgid "Internet Radio"
 msgstr "Интернет радио"
 
@@ -5171,7 +5175,7 @@ msgstr "Клавиатура"
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-#: tithek_mainmenu.h:23
+#: tithek_mainmenu.h:24
 msgid "KinoX"
 msgstr ""
 
@@ -5690,23 +5694,23 @@ msgstr "Сканиравание MediaDB завершено"
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: tithek_mainmenu.h:24
+#: tithek_mainmenu.h:25
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:25
+#: tithek_mainmenu.h:26
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:26
+#: tithek_mainmenu.h:27
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:27
+#: tithek_mainmenu.h:28
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:29
 msgid "Mediacenter VideoPlayer Preview"
 msgstr ""
 
@@ -5982,7 +5986,7 @@ msgstr "Перемещение"
 msgid "Moven"
 msgstr "Переместить"
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:30
 msgid "Movie4k"
 msgstr ""
 
@@ -6063,7 +6067,7 @@ msgstr ""
 msgid "My Video"
 msgstr "Моё видео"
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:31
 msgid "MyVideo"
 msgstr "Моё видео"
 
@@ -6150,7 +6154,7 @@ msgstr "Сканирование CIFS/NFS"
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:32
 msgid "Netzkino"
 msgstr ""
 
@@ -6324,7 +6328,7 @@ msgstr "Примечание создано"
 msgid "November"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:33
 msgid "NowTv"
 msgstr ""
 
@@ -7356,11 +7360,11 @@ msgstr "Порт RGUID"
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:34
+#: tithek_mainmenu.h:35
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:34
 msgid "RTL2-Now"
 msgstr ""
 
@@ -8367,41 +8371,41 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:623 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:35 tmdb.h:898
+#: tithek_global.h:316 tithek_global.h:318 tithek_mainmenu.h:36 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Поиск"
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:37
 msgid "Search (10)"
 msgstr "Поиск (10)"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:38
 msgid "Search (20)"
 msgstr "Поиск (20)"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:39
 msgid "Search (25)"
 msgstr "Поиск (25)"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:40
 msgid "Search (50)"
 msgstr "Поиск (50)"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:42
 msgid "Search (local)"
 msgstr "Поиск (Локально)"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:41
 msgid "Search Cast"
 msgstr "Тип поиска"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:43
 msgid "Search Movie"
 msgstr "Поиск фильмов"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:44
 msgid "Search Serie"
 msgstr "Поиск серий"
 
@@ -8979,7 +8983,7 @@ msgstr "Выбор менеджера"
 msgid "Softcam selection:"
 msgstr "Выбор эмулятора"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:45
 msgid "Solarmovie"
 msgstr ""
 
@@ -9297,7 +9301,7 @@ msgstr ""
 msgid "Sunday"
 msgstr "Воскресенье"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:46
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9732,7 +9736,7 @@ msgstr "Время до отключения (Мин)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Время ожидания автоматического заполнения буфера"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:47
 msgid "TimeTv"
 msgstr "TimeTV"
 
@@ -9845,7 +9849,7 @@ msgstr "Часовой пояс"
 msgid "Tint"
 msgstr "Оттенок"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:48
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -9978,7 +9982,7 @@ msgstr "Тональный режим"
 msgid "Top"
 msgstr "ТОР"
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:49
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10434,7 +10438,7 @@ msgstr "Настройки отображения файлов видео"
 msgid "VLC Player"
 msgstr "Плеер VLC"
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:50
 msgid "VOX-Now"
 msgstr ""
 
@@ -10842,11 +10846,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:51
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:52
 msgid "XXX-XVIDEOS"
 msgstr "ХХХ-Видео"
 
@@ -10899,7 +10903,7 @@ msgstr ""
 "\n"
 "Выключить ресивер? "
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:53
 msgid "Youtube"
 msgstr "YouTube"
 
@@ -10907,7 +10911,7 @@ msgstr "YouTube"
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:54
 msgid "ZDF"
 msgstr ""
 
