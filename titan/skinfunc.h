@@ -260,7 +260,7 @@ char* getrec(struct skin* node, char* path)
 	    return tmpstr;
     }
 
-//real aspect png
+//real aspect 16:9 png
     char* getoledchannelaspect(struct skin* node, char* path)
     {
 	    char* tmpstr = NULL;
@@ -268,43 +268,102 @@ char* getrec(struct skin* node, char* path)
 	    videoreadqwidth(status.aktservice->videodev);
 
     //	if(getaktvideosize() == 0) //videosize is ok
-    //	{
-		    if(status.videosize.aspect_ratio == 1)
-			    tmpstr = ostrcat("oled_4_3.png", NULL, 0, 0);
-		    else if(status.videosize.aspect_ratio == 3 || status.videosize.aspect_ratio == 11)
+    	{
+		    if(status.videosize.aspect_ratio == 3 || status.videosize.aspect_ratio == 11)
+				{
+				if(node->nodestyle != 1)
+					node->hidden = NO;
+				if(node->picmem == 1)
+					return tmpstr;
 			    tmpstr = ostrcat("oled_16_9.png", NULL, 0, 0);
-    //	}
-	
+				}
+		}
+		else
+			node->hidden = YES;
 	    if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
-	    tmpstr = ostrcat(path, tmpstr, 0, 1);
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
 
 	    return tmpstr;
     }
 
-//real resolution png
-    char* getoledchannelresolution(struct skin* node, char* path)
+//real resolution 576 png
+    char* getoledchannelresolution576(struct skin* node, char* path)
     {
 	    char* tmpstr = NULL;
 
 	    videoreadqwidth(status.aktservice->videodev);
 
     //	if(getaktvideosize() == 0) //videosize is ok
-    //	{
+    	{
 		    if(status.videosize.h == 576)
+				{
+				if(node->nodestyle != 1)
+					node->hidden = NO;
+				if(node->picmem == 1)
+					return tmpstr;  
 			    tmpstr = ostrcat("oled_576.png", NULL, 0, 0);
-		    else if(status.videosize.h == 720)
-			    tmpstr = ostrcat("oled_720.png", NULL, 0, 0);
-		    else if(status.videosize.h == 1080)
-			    tmpstr = ostrcat("oled_1080.png", NULL, 0, 0);
-    //	}
-	
+				}
+    	}
+		else
+			node->hidden = YES;
 	    if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
-	    tmpstr = ostrcat(path, tmpstr, 0, 1);
-
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
 	    return tmpstr;
     }
+    
+//real resolution 720 png
+    char* getoledchannelresolution720(struct skin* node, char* path)
+    {
+	    char* tmpstr = NULL;
+
+	    videoreadqwidth(status.aktservice->videodev);
+
+    //	if(getaktvideosize() == 0) //videosize is ok
+    	{
+		    if(status.videosize.h == 720)
+				{
+				if(node->nodestyle != 1)
+					node->hidden = NO;
+				if(node->picmem == 1)
+					return tmpstr;  
+			    tmpstr = ostrcat("oled_720.png", NULL, 0, 0);
+				}
+    	}
+		else
+			node->hidden = YES;
+	    if(path != NULL)
+		    tmpstr = ostrcat("/", tmpstr, 0, 1);
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
+	    return tmpstr;
+    }
+    
+//real resolution 1080 png
+    char* getoledchannelresolution1080(struct skin* node, char* path)
+    {
+	    char* tmpstr = NULL;
+
+	    videoreadqwidth(status.aktservice->videodev);
+
+    //	if(getaktvideosize() == 0) //videosize is ok
+    	{
+		    if(status.videosize.h == 1080)
+				{
+				if(node->nodestyle != 1)
+					node->hidden = NO;
+				if(node->picmem == 1)
+					return tmpstr;  
+			    tmpstr = ostrcat("oled_1080.png", NULL, 0, 0);
+				}
+    	}
+		else
+			node->hidden = YES;
+	    if(path != NULL)
+		    tmpstr = ostrcat("/", tmpstr, 0, 1);
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
+	    return tmpstr;
+    }        
 
 //hd png
     char* getoledhd(struct skin* node, char* path)
@@ -323,13 +382,13 @@ char* getrec(struct skin* node, char* path)
 					return tmpstr;  
 			    tmpstr = ostrcat("oled_hd.png", NULL, 0, 0);
 				}
-			else
-			  	node->hidden = YES;
-		    if(path != NULL)
-			    tmpstr = ostrcat("/", tmpstr, 0, 1);
-		    tmpstr = ostrcat(path, tmpstr, 0, 1);    
 		}
-	    return tmpstr;
+		else
+		  	node->hidden = YES;
+		if(path != NULL)
+		    tmpstr = ostrcat("/", tmpstr, 0, 1);
+			tmpstr = ostrcat(path, tmpstr, 0, 1);    
+		return tmpstr;
     }
 
 	

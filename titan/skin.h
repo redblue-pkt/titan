@@ -71,7 +71,19 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getoledchannelaspect;
 	}
 
-    if(ostrcmp("getoledchannelresolution", value) == 0)
+    if(ostrcmp("getoledchannelresolution576", value) == 0)
+	    {
+		    *rettype = FUNCPIC;
+		    return &getoledchannelresolution;
+	    }
+	    
+	if(ostrcmp("getoledchannelresolution720", value) == 0)
+	    {
+		    *rettype = FUNCPIC;
+		    return &getoledchannelresolution;
+	    }
+	    
+	if(ostrcmp("getoledchannelresolution1080", value) == 0)
 	    {
 		    *rettype = FUNCPIC;
 		    return &getoledchannelresolution;
