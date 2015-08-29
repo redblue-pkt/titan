@@ -329,8 +329,6 @@ char* getrec(struct skin* node, char* path)
 			    tmpstr = ostrcat("/", tmpstr, 0, 1);
 		    tmpstr = ostrcat(path, tmpstr, 0, 1);    
 		}
-			else
-				node->hidden = YES;
 	    return tmpstr;
     }
 
