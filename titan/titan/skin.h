@@ -94,6 +94,12 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getoledhd;
 	}
+	
+	if(ostrcmp("getoleddolby", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getoleddolby;
+	}
 
 #endif
 

@@ -376,7 +376,29 @@ char* getrec(struct skin* node, char* path)
 
 		return tmpstr;
     }
+    
+//dolby png
+    char* getoleddolby(struct skin* node, char* path)
+    {
+	    char* tmpstr = NULL;
 
+	    if(status.aktservice->channel->audiocodec == AC3 || status.aktservice->channel->audiocodec == DTS)
+	    {
+			if(node->nodestyle != 1)
+				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;  
+		    //tmpstr = ostrcat("oled_dolby.png", NULL, 0, 0);
+		}
+
+		else
+		  	node->hidden = YES;
+		if(path != NULL)
+		    tmpstr = ostrcat("/", tmpstr, 0, 1);
+			tmpstr = ostrcat(path, tmpstr, 0, 1);    
+
+		return tmpstr;
+    }
 	
 #endif
 
