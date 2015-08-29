@@ -77,10 +77,10 @@ void* convertfunc(char *value, uint8_t *rettype)
 		    return &getoledchannelresolution;
 	    }
 
-    if(ostrcmp("getoledsdhd", value) == 0)
+    if(ostrcmp("getoledhd", value) == 0)
 	{
 		*rettype = FUNCPIC;
-		return &getoledsdhd;
+		return &getoledhd;
 	}
 
 #endif
