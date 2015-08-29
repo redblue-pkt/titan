@@ -304,17 +304,17 @@ msgstr ""
 msgid "16 Bit Scale 200 Percent"
 msgstr ""
 
-#: global.h:1941 global.h:1952 global.h:4036 global.h:4077 global.h:4136
+#: global.h:1942 global.h:1953 global.h:4037 global.h:4078 global.h:4137
 #: videomode.h:20
 msgid "16:9_set_bestfit_to_policy_show_justscale"
 msgstr ""
 
-#: global.h:1942 global.h:1943 global.h:4038 global.h:4082 global.h:4142
+#: global.h:1943 global.h:1944 global.h:4039 global.h:4083 global.h:4143
 #: videomode.h:21
 msgid "16:9_set_letterbox_to_policy_show_panscan"
 msgstr ""
 
-#: global.h:1944 global.h:1945 global.h:4040 global.h:4087 global.h:4148
+#: global.h:1945 global.h:1946 global.h:4041 global.h:4088 global.h:4149
 #: videomode.h:22
 msgid "16:9_set_panscan_to_policy_show_pillarbox"
 msgstr ""
@@ -451,17 +451,17 @@ msgstr ""
 msgid "4 sec"
 msgstr ""
 
-#: global.h:1946 global.h:1947 global.h:4042 global.h:4098 global.h:4154
+#: global.h:1947 global.h:1948 global.h:4043 global.h:4099 global.h:4155
 #: videomode.h:23
 msgid "4:3_set_bestfit_to_policy2_show_justscale"
 msgstr ""
 
-#: global.h:1948 global.h:1949 global.h:4044 global.h:4103 global.h:4161
+#: global.h:1949 global.h:1950 global.h:4045 global.h:4104 global.h:4162
 #: videomode.h:24
 msgid "4:3_set_letterbox_to_policy2_show_letterbox"
 msgstr ""
 
-#: global.h:1950 global.h:1951 global.h:4046 global.h:4108 global.h:4168
+#: global.h:1951 global.h:1952 global.h:4047 global.h:4109 global.h:4169
 #: videomode.h:25
 msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr ""
@@ -958,7 +958,7 @@ msgstr ""
 msgid "Apple Trailer"
 msgstr ""
 
-#: global.h:6144
+#: global.h:6145
 msgid "April"
 msgstr ""
 
@@ -1159,7 +1159,7 @@ msgstr ""
 msgid "Audio/Subt."
 msgstr "Audio/Phụ đề"
 
-#: global.h:6148
+#: global.h:6149
 msgid "August"
 msgstr ""
 
@@ -1367,7 +1367,7 @@ msgstr "Thiết lập sao lưu"
 msgid "Backup / Restore Settings"
 msgstr "Sao lưu / Khôi phục cài đặt"
 
-#: global.h:7218 httpdfunc.h:6604 httpdfunc.h:6684 system_backup_restore.h:82
+#: global.h:7219 httpdfunc.h:6604 httpdfunc.h:6684 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "sao lưu thanh công"
 
@@ -2441,19 +2441,19 @@ msgstr ""
 msgid "Create Thumb Picture"
 msgstr "Tạo hình ảnh"
 
-#: global.h:6553
+#: global.h:6554
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:6551
+#: global.h:6552
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:6550
+#: global.h:6551
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:6552
+#: global.h:6553
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
@@ -2672,7 +2672,7 @@ msgstr "Chế độ gỡ lỗi"
 msgid "Debuglevel"
 msgstr ""
 
-#: global.h:6152
+#: global.h:6153
 msgid "December"
 msgstr ""
 
@@ -3127,7 +3127,7 @@ msgid ""
 "partition could not be created"
 msgstr ""
 
-#: global.h:5894 keyactions.h:205
+#: global.h:5895 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr "Lỗi không thể đọc"
 
@@ -3168,9 +3168,9 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: filemanager.h:319 filemanager.h:329 filenuke.h:46 filenuke.h:94
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:23
-#: flashx.h:68 global.h:5894 global.h:6615 global.h:6684 global.h:6703
-#: global.h:6878 global.h:7134 global.h:7147 global.h:7158 global.h:7169
-#: global.h:7180 harddisk.h:355 harddisk.h:487 harddisk.h:678 harddisk.h:686
+#: flashx.h:68 global.h:5895 global.h:6616 global.h:6685 global.h:6704
+#: global.h:6879 global.h:7135 global.h:7148 global.h:7159 global.h:7170
+#: global.h:7181 harddisk.h:355 harddisk.h:487 harddisk.h:678 harddisk.h:686
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
 #: harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3276 httpdfunc.h:6156
@@ -3413,11 +3413,11 @@ msgstr ""
 "lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh����ng thể được "
 "lưu trữ trong các MediaDB "
 
-#: global.h:6701
+#: global.h:6702
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6679
+#: global.h:6680
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
@@ -3672,7 +3672,7 @@ msgstr ""
 msgid "Favorites"
 msgstr ""
 
-#: global.h:6142
+#: global.h:6143
 msgid "February"
 msgstr ""
 
@@ -3968,11 +3968,11 @@ msgstr "Tần số"
 msgid "Frequency:"
 msgstr "Tần số:"
 
-#: global.h:6160
+#: global.h:6161
 msgid "Fri"
 msgstr ""
 
-#: global.h:6125 global.h:6135 rectimer.h:1095 skin_default_skin.xml.h:275
+#: global.h:6126 global.h:6136 rectimer.h:1095 skin_default_skin.xml.h:275
 msgid "Friday"
 msgstr "Thứ sáu"
 
@@ -5035,11 +5035,11 @@ msgstr "Tiếng Ý"
 msgid "J"
 msgstr ""
 
-#: global.h:6141
+#: global.h:6142
 msgid "January"
 msgstr ""
 
-#: global.h:6147
+#: global.h:6148
 msgid "July"
 msgstr ""
 
@@ -5052,7 +5052,7 @@ msgstr ""
 msgid "Jump To (min)"
 msgstr ""
 
-#: global.h:6146
+#: global.h:6147
 msgid "June"
 msgstr ""
 
@@ -5491,7 +5491,7 @@ msgstr "Dò bằng tay"
 msgid "Manual Search Terrestrial"
 msgstr "Dò bằng tay"
 
-#: global.h:6143
+#: global.h:6144
 msgid "March"
 msgstr ""
 
@@ -5531,7 +5531,7 @@ msgstr "Tần số cực đại"
 msgid "Maximal signalrate"
 msgstr "Tốc độ tín hiệu cực đại"
 
-#: global.h:6145
+#: global.h:6146
 msgid "May"
 msgstr ""
 
@@ -5743,10 +5743,10 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5894
-#: global.h:6615 global.h:6684 global.h:6703 global.h:6878 global.h:7134
-#: global.h:7140 global.h:7147 global.h:7151 global.h:7158 global.h:7162
-#: global.h:7169 global.h:7173 global.h:7180 global.h:7184 harddisk.h:678
+#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5895
+#: global.h:6616 global.h:6685 global.h:6704 global.h:6879 global.h:7135
+#: global.h:7141 global.h:7148 global.h:7152 global.h:7159 global.h:7163
+#: global.h:7170 global.h:7174 global.h:7181 global.h:7185 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5770 httpdfunc.h:6156
@@ -5885,11 +5885,11 @@ msgstr "Loại môđun"
 msgid "Module info"
 msgstr "Thông tin môđun"
 
-#: global.h:6156
+#: global.h:6157
 msgid "Mon"
 msgstr ""
 
-#: global.h:6121 global.h:6131 rectimer.h:1091 skin_default_skin.xml.h:440
+#: global.h:6122 global.h:6132 rectimer.h:1091 skin_default_skin.xml.h:440
 msgid "Monday"
 msgstr "Thứ hai"
 
@@ -5987,7 +5987,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "Nhiều dịch vụ"
 
-#: global.h:6500
+#: global.h:6501
 msgid "Multituner adjustable"
 msgstr ""
 
@@ -6282,7 +6282,7 @@ msgstr "các thiết lập không sử dụng "
 msgid "Note created"
 msgstr ""
 
-#: global.h:6151
+#: global.h:6152
 msgid "November"
 msgstr ""
 
@@ -6323,10 +6323,10 @@ msgstr "E"
 #: filemanager.h:319 filemanager.h:329 filenuke.h:46 filenuke.h:94
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:23
-#: flashx.h:68 global.h:5894 global.h:6615 global.h:6684 global.h:6703
-#: global.h:6878 global.h:7134 global.h:7140 global.h:7147 global.h:7151
-#: global.h:7158 global.h:7162 global.h:7169 global.h:7173 global.h:7180
-#: global.h:7184 harddisk.h:355 harddisk.h:487 harddisk.h:678 harddisk.h:686
+#: flashx.h:68 global.h:5895 global.h:6616 global.h:6685 global.h:6704
+#: global.h:6879 global.h:7135 global.h:7141 global.h:7148 global.h:7152
+#: global.h:7159 global.h:7163 global.h:7170 global.h:7174 global.h:7181
+#: global.h:7185 harddisk.h:355 harddisk.h:487 harddisk.h:678 harddisk.h:686
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
 #: harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362
 #: httpdfunc.h:1304 httpdfunc.h:3276 httpdfunc.h:6156 httpdfunc.h:6421
@@ -6464,7 +6464,7 @@ msgstr ""
 msgid "OTHER"
 msgstr "khác"
 
-#: global.h:6150
+#: global.h:6151
 msgid "October"
 msgstr ""
 
@@ -7129,7 +7129,7 @@ msgstr "Tắt bộ định thời"
 msgid "Present"
 msgstr ""
 
-#: global.h:7227 system_backup_restore.h:15
+#: global.h:7228 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -7992,7 +7992,7 @@ msgstr ""
 msgid "Samsung SPF.. Settings"
 msgstr "Thiết lập server Samba"
 
-#: global.h:6161
+#: global.h:6162
 msgid "Sat"
 msgstr "Vệ tinh"
 
@@ -8072,7 +8072,7 @@ msgstr ""
 msgid "Saturation"
 msgstr " Saturation "
 
-#: global.h:6126 global.h:6136 rectimer.h:1096 skin_default_skin.xml.h:604
+#: global.h:6127 global.h:6137 rectimer.h:1096 skin_default_skin.xml.h:604
 msgid "Saturday"
 msgstr "Thứ bảy"
 
@@ -8480,7 +8480,7 @@ msgstr "Nhà sản xuất cáp đơn"
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: global.h:6555
+#: global.h:6556
 msgid "Select Your Serach Modus"
 msgstr ""
 
@@ -8516,7 +8516,7 @@ msgstr "Gửi tất cả ID CA tới môđun"
 msgid "Send remote box into standby ?"
 msgstr "Bạn có muốn chuyển chế độ chờ không?"
 
-#: global.h:6149
+#: global.h:6150
 msgid "September"
 msgstr ""
 
@@ -8994,7 +8994,7 @@ msgstr "Cổng ftp"
 msgid "StandBy Mode"
 msgstr "Chế độ standby"
 
-#: global.h:6878
+#: global.h:6879
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -9041,23 +9041,23 @@ msgstr "Bắt đầu HTTPD"
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7134
+#: global.h:7135
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7147
+#: global.h:7148
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7169
+#: global.h:7170
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7158
+#: global.h:7159
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7180
+#: global.h:7181
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9241,11 +9241,11 @@ msgstr ""
 msgid "Sudoku Help"
 msgstr ""
 
-#: global.h:6162
+#: global.h:6163
 msgid "Sun"
 msgstr ""
 
-#: global.h:6127 global.h:6137 rectimer.h:1097 skin_default_skin.xml.h:698
+#: global.h:6128 global.h:6138 rectimer.h:1097 skin_default_skin.xml.h:698
 msgid "Sunday"
 msgstr "Chủ nhật"
 
@@ -9525,7 +9525,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7191
+#: global.h:7192
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9624,7 +9624,7 @@ msgstr "Ngưỡng"
 msgid "Thriller"
 msgstr ""
 
-#: global.h:6159
+#: global.h:6160
 msgid "Thu"
 msgstr ""
 
@@ -9632,7 +9632,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6124 global.h:6134 rectimer.h:1094 skin_default_skin.xml.h:724
+#: global.h:6125 global.h:6135 rectimer.h:1094 skin_default_skin.xml.h:724
 msgid "Thursday"
 msgstr "Thứ năm"
 
@@ -9809,7 +9809,7 @@ msgstr ""
 msgid "Titan MediaCenter"
 msgstr "Media Center"
 
-#: global.h:7140 global.h:7151 global.h:7162 global.h:7173 global.h:7184
+#: global.h:7141 global.h:7152 global.h:7163 global.h:7174 global.h:7185
 #: skinadjust.h:317 skinadjust.h:720
 msgid "Titan will be restarted!"
 msgstr ""
@@ -10057,7 +10057,7 @@ msgstr ""
 msgid "Transponder changed"
 msgstr "Bộ phát đáp đã thay đổi"
 
-#: global.h:6615
+#: global.h:6616
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
@@ -10087,11 +10087,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr ""
 
-#: global.h:6157
+#: global.h:6158
 msgid "Tue"
 msgstr ""
 
-#: global.h:6122 global.h:6132 rectimer.h:1092 skin_default_skin.xml.h:760
+#: global.h:6123 global.h:6133 rectimer.h:1092 skin_default_skin.xml.h:760
 msgid "Tuesday"
 msgstr "Thứ ba"
 
@@ -10103,7 +10103,7 @@ msgstr "Tuner lỗi"
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6491
+#: global.h:6492
 msgid "Tuner "
 msgstr ""
 
@@ -10643,11 +10643,11 @@ msgstr "Trình duyệt"
 msgid "Webbrowser Plugin"
 msgstr ""
 
-#: global.h:6158
+#: global.h:6159
 msgid "Wed"
 msgstr ""
 
-#: global.h:6123 global.h:6133 rectimer.h:1093 skin_default_skin.xml.h:817
+#: global.h:6124 global.h:6134 rectimer.h:1093 skin_default_skin.xml.h:817
 msgid "Wednesday"
 msgstr "Ngày thứ tư"
 
