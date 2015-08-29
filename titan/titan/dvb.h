@@ -324,7 +324,7 @@ unsigned char* dvbget(struct dvbdev* fenode, int pid, int type, int secnr, int t
 		return NULL;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 1);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -418,7 +418,7 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 		return NULL;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 1);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -836,7 +836,7 @@ int dvbgetdate(time_t* time, int timeout)
 		return 1;
 	}
 
-	dmxnode = dmxopen(status.aktservice->fedev);
+	dmxnode = dmxopen(status.aktservice->fedev, 1);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");

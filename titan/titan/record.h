@@ -1232,11 +1232,7 @@ printf("recordstartreal fn2: %s\n", fn);
 		servicenode->fedev = fenode;
 
 		//demux  start
-#ifdef MIPSEL		
-		dmxnode = dmxopen_ro(fenode);
-#else
-		dmxnode = dmxopen(fenode);
-#endif
+		dmxnode = dmxopen(fenode, 1);
 		if(dmxnode != NULL && dmxnode->fd >= 0)
 		{
 			servicenode->recsrcfd = dmxnode->fd;
@@ -1296,7 +1292,7 @@ printf("recordstartreal fn2: %s\n", fn);
 				encnode = encoderopen(1);
 				servicenode->encoderdev = encnode;
 				
-				servicenode->dmxaudiodev = dmxopen_rw(fenode);
+				servicenode->dmxaudiodev = dmxopen(fenode, 2);
 				dmxsetbuffersize(servicenode->dmxaudiodev, getconfigint("dmxaudiobuffersize", NULL));
 				dmxsetsource(servicenode->dmxaudiodev, fenode->fedmxsource);
 				switch(encnode->decoder)
@@ -1318,7 +1314,7 @@ printf("recordstartreal fn2: %s\n", fn);
 				else
 					audiosetbypassmode(servicenode->audiodev, 0);
 				audioplay(servicenode->audiodev);
-				servicenode->dmxvideodev = dmxopen(fenode);
+				servicenode->dmxvideodev = dmxopen(fenode, 2);
 				dmxsetbuffersize(servicenode->dmxvideodev, getconfigint("dmxvideobuffersize", NULL));
 				dmxsetsource(servicenode->dmxvideodev, fenode->fedmxsource);
 				

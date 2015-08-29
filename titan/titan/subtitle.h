@@ -1366,7 +1366,7 @@ void* subthreadfunc(void *param)
 		pthread_exit(NULL);
 	}
 
-	dmxsubnode = dmxopen(status.aktservice->fedev);
+	dmxsubnode = dmxopen(status.aktservice->fedev, 0);
 	if(dmxsubnode == NULL)
 	{
 		err("no demux dev");

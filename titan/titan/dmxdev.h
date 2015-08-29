@@ -26,7 +26,8 @@ struct dvbdev* dmxgetlast(int adapter)
 	return lastnode;
 }
 
-struct dvbdev* dmxopen(struct dvbdev* fenode)
+//flag: 0=alt, 1=ohne NONBLOCK r, 2=ohne NONBLOCK rw
+struct dvbdev* dmxopen(struct dvbdev* fenode, int flag)
 {
 	int fd = -1;
 
@@ -44,82 +45,25 @@ struct dvbdev* dmxopen(struct dvbdev* fenode)
 
 	if(node != NULL)
 	{
-		if((fd = open(node->dev, O_RDWR)) < 0)
+		if(flag == 0)
+			fd = open(node->dev, O_RDWR);
+		if(flag == 1)
+			fd = open(node->dev, O_RDONLY | O_CLOEXEC)
+		if(flag == 2)
+			fd = open(node->dev, O_RDWR | O_CLOEXEC
+		if(fd < 0)
 		{
 			debug(200, "open dmx failed %s", node->dev);
 			node = NULL;
 		}
 		else
 		{
-			fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK);
 			node->fd = fd;
-			closeonexec(fd);
-		}
-	}
-
-	m_unlock(&status.dmxdevmutex, 9);
-	return node;
-}
-
-struct dvbdev* dmxopen_ro(struct dvbdev* fenode)
-{
-	int fd = -1;
-
-	if(fenode == NULL) return NULL;
-		
-	m_lock(&status.dmxdevmutex, 9);
-  struct dvbdev* node = dvbdev;
-	
-	while(node != NULL)
-	{
-		if(node->fd == -1 && node->type == DEMUXDEV && node->adapter == fenode->adapter && node->devnr == fenode->devnr)
-			break;
-		node = node->next;
-	}
-
-	if(node != NULL)
-	{
-		if((fd = open(node->dev, O_RDONLY | O_CLOEXEC)) < 0)
-		{
-			debug(200, "open dmx ro failed %s", node->dev);
-			node = NULL;
-		}
-		else
-		{
-			node->fd = fd;
-		}
-	}
-
-	m_unlock(&status.dmxdevmutex, 9);
-	return node;
-}
-
-struct dvbdev* dmxopen_rw(struct dvbdev* fenode)
-{
-	int fd = -1;
-
-	if(fenode == NULL) return NULL;
-		
-	m_lock(&status.dmxdevmutex, 9);
-  struct dvbdev* node = dvbdev;
-	
-	while(node != NULL)
-	{
-		if(node->fd == -1 && node->type == DEMUXDEV && node->adapter == fenode->adapter && node->devnr == fenode->devnr)
-			break;
-		node = node->next;
-	}
-
-	if(node != NULL)
-	{
-		if((fd = open(node->dev, O_RDWR | O_CLOEXEC)) < 0)
-		{
-			debug(200, "open dmx rw failed %s", node->dev);
-			node = NULL;
-		}
-		else
-		{
-			node->fd = fd;
+			if(flag == 0)
+			{
+				fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK);
+				closeonexec(fd);
+			}
 		}
 	}
 

@@ -279,7 +279,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		else
 		{
 			dmxclose(status.aktservice->dmxpcrdev, -1);
-			dmxpcrnode = dmxopen(fenode);
+			dmxpcrnode = dmxopen(fenode, 2);
 		}
 		if(dmxpcrnode != NULL)
 		{
@@ -313,7 +313,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		else
 		{
 			dmxclose(status.aktservice->dmxaudiodev, -1);
-			dmxaudionode = dmxopen(fenode);
+			dmxaudionode = dmxopen(fenode, 2);
 			if(dmxsetbuffersize(dmxaudionode, getconfigint("dmxaudiobuffersize", NULL)) != 0)
 			{
 				dmxclose(dmxaudionode, -1);
@@ -352,7 +352,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		else
 		{
 			dmxclose(status.aktservice->dmxvideodev, -1);
-			dmxvideonode = dmxopen(fenode);
+			dmxvideonode = dmxopen(fenode, 2);
 			if(dmxsetbuffersize(dmxvideonode, getconfigint("dmxvideobuffersize", NULL)) != 0)
 			{
 				dmxclose(dmxvideonode, -1);

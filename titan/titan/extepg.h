@@ -851,7 +851,7 @@ int readmhwchannel(struct stimerthread* self, struct dvbdev* fenode, unsigned ch
 		return -1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -920,7 +920,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -1085,7 +1085,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode. 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -1297,7 +1297,7 @@ int readmhw2channel(struct stimerthread* self, struct dvbdev* fenode, unsigned c
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -1372,7 +1372,7 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -1557,7 +1557,7 @@ int readmhw2summary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -1851,7 +1851,7 @@ int readopentvchannel(struct stimerthread* self, struct dvbdev* fenode, struct c
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -1956,7 +1956,7 @@ int readopentvtitle(struct stimerthread* self, struct dvbdev* fenode, struct cha
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
@@ -2144,7 +2144,7 @@ int readopentvsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
