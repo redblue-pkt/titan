@@ -1505,6 +1505,7 @@ void delspezchar(char* text, int flag)
 				if(tmpstr[0] == ',') tmpstr[0] = '-';
 				if(tmpstr[0] == ';') tmpstr[0] = '-';
 				if(tmpstr[0] == '~') tmpstr[0] = '-';
+				if(tmpstr[0] == '&') tmpstr[0] = '-';
 			}
 		}
 		else if(flag == 3)
