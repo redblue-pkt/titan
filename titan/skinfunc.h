@@ -266,18 +266,15 @@ char* getrec(struct skin* node, char* path)
 	    char* tmpstr = NULL;
 	
 	    videoreadqwidth(status.aktservice->videodev);
-
-    //	if(getaktvideosize() == 0) //videosize is ok
-    	{
-		    if(status.videosize.aspect_ratio == 3 || status.videosize.aspect_ratio == 11)
-				{
-				if(node->nodestyle != 1)
-					node->hidden = NO;
-				if(node->picmem == 1)
-					return tmpstr;
-			    tmpstr = ostrcat("oled_16_9.png", NULL, 0, 0);
-				}
+	    if(status.videosize.aspect_ratio == 3 || status.videosize.aspect_ratio == 11)
+		{
+			if(node->nodestyle != 1)
+				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;
+		    tmpstr = ostrcat("oled_16_9.png", NULL, 0, 0);
 		}
+
 		else
 			node->hidden = YES;
 	    if(path != NULL)
@@ -293,23 +290,20 @@ char* getrec(struct skin* node, char* path)
 	    char* tmpstr = NULL;
 
 	    videoreadqwidth(status.aktservice->videodev);
-
-    //	if(getaktvideosize() == 0) //videosize is ok
-    	{
-		    if(status.videosize.h == 576)
-				{
-				if(node->nodestyle != 1)
-					node->hidden = NO;
-				if(node->picmem == 1)
-					return tmpstr;  
-			    tmpstr = ostrcat("oled_576.png", NULL, 0, 0);
-				}
-    	}
+       	if(status.videosize.h == 576)
+		{
+			if(node->nodestyle != 1)
+				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;  
+		    tmpstr = ostrcat("oled_576.png", NULL, 0, 0);
+		}
 		else
 			node->hidden = YES;
 	    if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
+
 	    return tmpstr;
     }
     
@@ -319,23 +313,20 @@ char* getrec(struct skin* node, char* path)
 	    char* tmpstr = NULL;
 
 	    videoreadqwidth(status.aktservice->videodev);
-
-    //	if(getaktvideosize() == 0) //videosize is ok
-    	{
-		    if(status.videosize.h == 720)
-				{
-				if(node->nodestyle != 1)
-					node->hidden = NO;
-				if(node->picmem == 1)
-					return tmpstr;  
-			    tmpstr = ostrcat("oled_720.png", NULL, 0, 0);
-				}
-    	}
+       	if(status.videosize.h == 720)
+		{
+			if(node->nodestyle != 1)
+				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;  
+		    tmpstr = ostrcat("oled_720.png", NULL, 0, 0);
+		}
 		else
 			node->hidden = YES;
 	    if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
+
 	    return tmpstr;
     }
     
@@ -345,25 +336,22 @@ char* getrec(struct skin* node, char* path)
 	    char* tmpstr = NULL;
 
 	    videoreadqwidth(status.aktservice->videodev);
-
-    //	if(getaktvideosize() == 0) //videosize is ok
-    	{
-		    if(status.videosize.h == 1080)
-				{
-				if(node->nodestyle != 1)
-					node->hidden = NO;
-				if(node->picmem == 1)
-					return tmpstr;  
-			    tmpstr = ostrcat("oled_1080.png", NULL, 0, 0);
-				}
-    	}
+       	if(status.videosize.h == 1080)
+		{
+			if(node->nodestyle != 1)
+				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;  
+		    tmpstr = ostrcat("oled_1080.png", NULL, 0, 0);
+		}
 		else
 			node->hidden = YES;
 	    if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
+
 	    return tmpstr;
-    }        
+    }
 
 //hd png
     char* getoledhd(struct skin* node, char* path)
@@ -371,23 +359,21 @@ char* getrec(struct skin* node, char* path)
 	    char* tmpstr = NULL;
 
 	    videoreadqwidth(status.aktservice->videodev);
-
-    //	if(getaktvideosize() == 0) //videosize is ok
-    	{
-		    if(status.videosize.h == 720 || status.videosize.h == 1080)
-			    {
-				if(node->nodestyle != 1)
-					node->hidden = NO;
-				if(node->picmem == 1)
-					return tmpstr;  
-			    tmpstr = ostrcat("oled_hd.png", NULL, 0, 0);
-				}
+	    if(status.videosize.h == 720 || status.videosize.h == 1080)
+	    {
+			if(node->nodestyle != 1)
+				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;  
+		    tmpstr = ostrcat("oled_hd.png", NULL, 0, 0);
 		}
+
 		else
 		  	node->hidden = YES;
 		if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);    
+
 		return tmpstr;
     }
 
