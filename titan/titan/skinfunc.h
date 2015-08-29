@@ -153,6 +153,8 @@ char* getrec(struct skin* node, char* path)
 		{
 			if(node->nodestyle != 1)
 				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;
 			tmpstr = ostrcat("oled_rec.png", NULL, 0, 0);
 
 			if(path != NULL) 
@@ -195,6 +197,8 @@ char* getrec(struct skin* node, char* path)
 		{
 			if(node->nodestyle != 1)
 				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;
 			tmpstr = ostrcat("oled_timeshift.png", NULL, 0, 0);
 
 			if(path != NULL) 
@@ -216,6 +220,8 @@ char* getrec(struct skin* node, char* path)
 		{
 			if(node->nodestyle != 1)
 				node->hidden = NO;
+			if(node->picmem == 1)
+				return tmpstr;
 			tmpstr = ostrcat("oled_streaming.png", NULL, 0, 0);
 
 			if(path != NULL) 
@@ -236,13 +242,21 @@ char* getrec(struct skin* node, char* path)
 	    if(status.aktservice->channel != NULL)
 	    {
 		    if(status.aktservice->channel->crypt > 0)
+			  {
+			  	if(node->nodestyle != 1)
+						node->hidden = NO;
+					if(node->picmem == 1)
+						return tmpstr;  
 			    tmpstr = ostrcat("oled_crypt.png", NULL, 0, 0);
-		    
+			  }
+			  else
+			  	node->hidden = YES;
 		    if(path != NULL)
 			    tmpstr = ostrcat("/", tmpstr, 0, 1);
 		    tmpstr = ostrcat(path, tmpstr, 0, 1);
 	    }
-	
+			else
+				node->hidden = YES;
 	    return tmpstr;
     }
 
