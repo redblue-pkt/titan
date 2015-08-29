@@ -158,10 +158,9 @@ char* getrec(struct skin* node, char* path)
 			tmpstr = ostrcat("oled_rec.png", NULL, 0, 0);
 
 			if(path != NULL) 
-            {
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
-				tmpstr = ostrcat(path, tmpstr, 0, 1);
-			}
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
+		}
 		else
 			node->hidden = YES;
 	
@@ -180,10 +179,9 @@ char* getrec(struct skin* node, char* path)
 				return tmpstr;
 			tmpstr = ostrcat("oled_mute.png", NULL, 0, 0);
 			if(path != NULL) 
-			{
 				tmpstr = ostrcat("/", tmpstr, 0, 1);
-				tmpstr = ostrcat(path, tmpstr, 0, 1);
-			}
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
+		}
 		else
 			node->hidden = YES;
 		
@@ -204,10 +202,9 @@ char* getrec(struct skin* node, char* path)
 			tmpstr = ostrcat("oled_timeshift.png", NULL, 0, 0);
 
 			if(path != NULL) 
-            {    
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
-				tmpstr = ostrcat(path, tmpstr, 0, 1);
-			}
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
+		}
 		else
 			node->hidden = YES;
 		
@@ -228,10 +225,9 @@ char* getrec(struct skin* node, char* path)
 			tmpstr = ostrcat("oled_streaming.png", NULL, 0, 0);
 
 			if(path != NULL) 
-            {    
                 tmpstr = ostrcat("/", tmpstr, 0, 1);
-				tmpstr = ostrcat(path, tmpstr, 0, 1);
-			}
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
+		}
 		else
 			node->hidden = YES;
 		
@@ -256,10 +252,9 @@ char* getrec(struct skin* node, char* path)
 			  else
 			  	node->hidden = YES;
 		    if(path != NULL)
-			{
 			    tmpstr = ostrcat("/", tmpstr, 0, 1);
-				tmpstr = ostrcat(path, tmpstr, 0, 1);
-			}
+		    tmpstr = ostrcat(path, tmpstr, 0, 1);
+	    }
 			else
 				node->hidden = YES;
 	    return tmpstr;
@@ -283,10 +278,9 @@ char* getrec(struct skin* node, char* path)
 		else
 			node->hidden = YES;
 	    if(path != NULL)
-		{
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
-		}
+
 	    return tmpstr;
     }
 
@@ -307,10 +301,9 @@ char* getrec(struct skin* node, char* path)
 		else
 			node->hidden = YES;
 	    if(path != NULL)
-		{
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
-		}
+
 	    return tmpstr;
     }
     
@@ -331,10 +324,9 @@ char* getrec(struct skin* node, char* path)
 		else
 			node->hidden = YES;
 	    if(path != NULL)
-		{
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
-		}
+
 	    return tmpstr;
     }
     
@@ -355,10 +347,9 @@ char* getrec(struct skin* node, char* path)
 		else
 			node->hidden = YES;
 	    if(path != NULL)
-		{
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
-		}
+
 	    return tmpstr;
     }
 
@@ -380,10 +371,9 @@ char* getrec(struct skin* node, char* path)
 		else
 		  	node->hidden = YES;
 		if(path != NULL)
-		{
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);    
-		}
+
 		return tmpstr;
     }
     
@@ -404,10 +394,9 @@ char* getrec(struct skin* node, char* path)
 		else
 		  	node->hidden = YES;
 		if(path != NULL)
-		{
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);    
-		}
+
 		return tmpstr;
     }
 	
