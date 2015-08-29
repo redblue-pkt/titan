@@ -2609,8 +2609,13 @@ char* webaddrectimer(char* param, int fmt)
 	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><font class=label>Name:&nbsp;</font></td>", &maxlen, &pos);
 	ostrcatbig(&buf, "<td><input class=inputbox type=\"text\" name=\"name\" value=\"", &maxlen, &pos);
+
 	if(epgnode != NULL)
+	{
+		epgnode->title = strstrip(epgnode->title);
+		delspezchar(epgnode->title, 2);
 		ostrcatbig(&buf, epgnode->title, &maxlen, &pos);
+	}
 	else	
 		ostrcatbig(&buf, " ", &maxlen, &pos);
 	ostrcatbig(&buf, "\" /></td></tr>", &maxlen, &pos);

@@ -614,7 +614,6 @@ void checkrectimer(struct stimerthread* self)
 
 int addrectimer(char *buf)
 {
-printf("addrectimer: %s\n", buf);
 	struct rectimer* node = NULL;
 	char* buf1 = buf;
 	char* line = NULL;
@@ -635,18 +634,9 @@ printf("addrectimer: %s\n", buf);
 			{
 				buf++;
 				snprintf(line, buf - buf1, "%s", buf1);
-				printf("1line: %s\n", line);
-				printf("1buf: %s\n", buf);
-				printf("1buf1: %s\n", buf1);
 			}
 			else
-			{
 				snprintf(line, buf - buf1 + 1, "%s", buf1);
-				printf("2line: %s\n", line);
-				printf("2buf: %s\n", buf);
-				printf("2buf1: %s\n", buf1);
-			}
-
 			buf1 = buf;
 
 			if(ostrstr(line, "<timer ") != NULL || ostrstr(line, "<log ") != NULL || ostrstr(line, "<epgscan ") != NULL)
