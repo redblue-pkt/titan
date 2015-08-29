@@ -315,7 +315,7 @@ char* getrec(struct skin* node, char* path)
 
     //	if(getaktvideosize() == 0) //videosize is ok
     	{
-		    if(status.videosize.h == 720 || 1080)
+		    if(status.videosize.h == 720 || status.videosize.h == 1080)
 			    {
 				if(node->nodestyle != 1)
 					node->hidden = NO;
