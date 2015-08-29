@@ -306,25 +306,31 @@ char* getrec(struct skin* node, char* path)
 	    return tmpstr;
     }
 
-//sh/hd png
-    char* getoledsdhd(struct skin* node, char* path)
+//hd png
+    char* getoledhd(struct skin* node, char* path)
     {
 	    char* tmpstr = NULL;
 
 	    videoreadqwidth(status.aktservice->videodev);
 
     //	if(getaktvideosize() == 0) //videosize is ok
-    //	{
-		    if(status.videosize.h == 576)
-			    tmpstr = ostrcat("oled_sd.png", NULL, 0, 0);
-		    else if(status.videosize.h == 720 || 1080)
+    	{
+		    if(status.videosize.h == 720 || 1080)
+			    {
+				if(node->nodestyle != 1)
+					node->hidden = NO;
+				if(node->picmem == 1)
+					return tmpstr;  
 			    tmpstr = ostrcat("oled_hd.png", NULL, 0, 0);
-    //	}
-	
-	    if(path != NULL)
-		    tmpstr = ostrcat("/", tmpstr, 0, 1);
-	    tmpstr = ostrcat(path, tmpstr, 0, 1);
-
+				}
+			else
+			  	node->hidden = YES;
+		    if(path != NULL)
+			    tmpstr = ostrcat("/", tmpstr, 0, 1);
+		    tmpstr = ostrcat(path, tmpstr, 0, 1);    
+		}
+			else
+				node->hidden = YES;
 	    return tmpstr;
     }
 
