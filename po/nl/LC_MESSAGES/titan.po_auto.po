@@ -1827,7 +1827,7 @@ msgstr ""
 "Kan geen tuner vinden.\n"
 "Er is geen vrije tuner beschikbaar."
 
-#: record.h:1178
+#: record.h:1159
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -1835,7 +1835,7 @@ msgstr ""
 "Er is geen vrije Tuner .\n"
 "zappen naar opname/timeshift kanaal ?"
 
-#: record.h:1715
+#: record.h:1692
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG tijd kan niet gevonden worden of is niet juist"
 
@@ -3237,8 +3237,8 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1178 record.h:1715 rectimer.h:577 rectimer.h:1239
-#: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
+#: record.h:387 record.h:1159 record.h:1692 rectimer.h:577 rectimer.h:1249
+#: rectimer.h:1396 rectimer.h:1408 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
@@ -4003,7 +4003,7 @@ msgstr ""
 msgid "Fri"
 msgstr ""
 
-#: global.h:6125 global.h:6135 rectimer.h:1085 skin_default_skin.xml.h:275
+#: global.h:6125 global.h:6135 rectimer.h:1095 skin_default_skin.xml.h:275
 msgid "Friday"
 msgstr "Vrijdag"
 
@@ -5826,8 +5826,8 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1178 record.h:1463 record.h:1715 record.h:1740 rectimer.h:577
-#: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
+#: record.h:1159 record.h:1440 record.h:1692 record.h:1717 rectimer.h:577
+#: rectimer.h:1249 rectimer.h:1396 rectimer.h:1408 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
@@ -5931,7 +5931,7 @@ msgstr "Module informatie"
 msgid "Mon"
 msgstr ""
 
-#: global.h:6121 global.h:6131 rectimer.h:1081 skin_default_skin.xml.h:440
+#: global.h:6121 global.h:6131 rectimer.h:1091 skin_default_skin.xml.h:440
 msgid "Monday"
 msgstr "Maandag"
 
@@ -6415,8 +6415,8 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1178 record.h:1463 record.h:1740 rectimer.h:577 rectimer.h:1239
-#: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
+#: record.h:1159 record.h:1440 record.h:1717 rectimer.h:577 rectimer.h:1249
+#: rectimer.h:1396 rectimer.h:1408 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
 #: scan.h:1636 scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25
@@ -7496,7 +7496,7 @@ msgstr "Ontvanger succesvol vrijgegeven"
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1612 record.h:1682 skin_default_skin.xml.h:543
+#: record.h:1589 record.h:1659 skin_default_skin.xml.h:543
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7560,7 +7560,7 @@ msgstr "Opname bezig"
 msgid "Record path"
 msgstr ""
 
-#: record.h:1740
+#: record.h:1717
 msgid "Record started"
 msgstr "Opname is gestart"
 
@@ -8116,7 +8116,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: global.h:6126 global.h:6136 rectimer.h:1086 skin_default_skin.xml.h:604
+#: global.h:6126 global.h:6136 rectimer.h:1096 skin_default_skin.xml.h:604
 msgid "Saturday"
 msgstr "Zaterdag"
 
@@ -9293,7 +9293,7 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: global.h:6127 global.h:6137 rectimer.h:1087 skin_default_skin.xml.h:698
+#: global.h:6127 global.h:6137 rectimer.h:1097 skin_default_skin.xml.h:698
 msgid "Sunday"
 msgstr "Zondag"
 
@@ -9689,7 +9689,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6124 global.h:6134 rectimer.h:1084 skin_default_skin.xml.h:724
+#: global.h:6124 global.h:6134 rectimer.h:1094 skin_default_skin.xml.h:724
 msgid "Thursday"
 msgstr "Donderdag"
 
@@ -9762,7 +9762,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr ""
 
-#: record.h:1462
+#: record.h:1439
 msgid "Timer Record start !"
 msgstr "Timer Opname gestart!"
 
@@ -10153,7 +10153,7 @@ msgstr ""
 msgid "Tue"
 msgstr ""
 
-#: global.h:6122 global.h:6132 rectimer.h:1082 skin_default_skin.xml.h:760
+#: global.h:6122 global.h:6132 rectimer.h:1092 skin_default_skin.xml.h:760
 msgid "Tuesday"
 msgstr "Dinsdag"
 
@@ -10709,7 +10709,7 @@ msgstr ""
 msgid "Wed"
 msgstr ""
 
-#: global.h:6123 global.h:6133 rectimer.h:1083 skin_default_skin.xml.h:817
+#: global.h:6123 global.h:6133 rectimer.h:1093 skin_default_skin.xml.h:817
 msgid "Wednesday"
 msgstr "Woensdag"
 
@@ -10983,15 +10983,15 @@ msgstr "Activeren"
 msgid "active"
 msgstr "Aktief"
 
-#: record.h:1680 record.h:1726
+#: record.h:1657 record.h:1703
 msgid "add recording (enter duration)"
 msgstr "Opname toevoegen (opnameduur ingeven)"
 
-#: record.h:1679 record.h:1721
+#: record.h:1656 record.h:1698
 msgid "add recording (indefinitely)"
 msgstr "Opname toevoegen (oneindig)"
 
-#: record.h:1678 record.h:1708
+#: record.h:1655 record.h:1685
 msgid "add recording (stop after current event)"
 msgstr "Opname toevoegen (deze uitzending)"
 
@@ -11090,7 +11090,7 @@ msgid "ausgehende Anrufe"
 msgstr "Uitgaand gesprek"
 
 #: adjust.h:161 autotimer.c:479 autotimer.c:512 avsettings.h:71
-#: fancontrol.h:108 httpdfunc.h:4413 httpdsettings.h:110 rectimer.h:1187
+#: fancontrol.h:108 httpdfunc.h:4413 httpdsettings.h:110 rectimer.h:1197
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
 #: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
@@ -11242,7 +11242,7 @@ msgstr "Kaart gevonden"
 msgid "center"
 msgstr ""
 
-#: record.h:1658 record.h:1667 record.h:1692
+#: record.h:1635 record.h:1644 record.h:1669
 msgid "change"
 msgstr "Wijzig"
 
@@ -11344,7 +11344,7 @@ msgstr ""
 msgid "d"
 msgstr ""
 
-#: rectimer.h:1074
+#: rectimer.h:1084
 msgid "daily"
 msgstr "Dagelijks"
 
@@ -11537,7 +11537,7 @@ msgstr ""
 msgid "epgsettings"
 msgstr ""
 
-#: rectimer.h:1519
+#: rectimer.h:1529
 msgid "error"
 msgstr "FOUT"
 
@@ -12126,9 +12126,9 @@ msgstr "NFS server"
 #: panel_settings_autostart.h:351 panel_settings_autostart.h:360
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:109 pin.h:181 pin.h:185 pin.h:199
-#: play.h:583 play.h:590 play.h:605 readerconfig.h:254 rectimer.h:1091
-#: rectimer.h:1096 rectimer.h:1101 rectimer.h:1106 rectimer.h:1111
-#: rectimer.h:1116 rectimer.h:1121 scan.h:1775 scan.h:2254 scan.h:2258
+#: play.h:583 play.h:590 play.h:605 readerconfig.h:254 rectimer.h:1101
+#: rectimer.h:1106 rectimer.h:1111 rectimer.h:1116 rectimer.h:1121
+#: rectimer.h:1126 rectimer.h:1131 scan.h:1775 scan.h:2254 scan.h:2258
 #: scan.h:2262 scan.h:2266 scan.h:2271 scan.h:2279 scan.h:2283
 #: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
@@ -12185,7 +12185,7 @@ msgid "not started akttime higher than timer endtime"
 msgstr "Niet gestart, eindtijd is reeds geweest"
 
 #: adjust.h:162 autotimer.c:480 autotimer.c:513 epgsettings.h:216
-#: httpdfunc.h:4420 rectimer.h:1188
+#: httpdfunc.h:4420 rectimer.h:1198
 msgid "nothing"
 msgstr "Niets doen"
 
@@ -12275,7 +12275,7 @@ msgstr "ouder dan 50 dagen"
 msgid "on"
 msgstr "Aan"
 
-#: rectimer.h:1061 rectimer.h:1478 rectimer.h:1489
+#: rectimer.h:1071 rectimer.h:1488 rectimer.h:1499
 msgid "once"
 msgstr "eenmalig"
 
@@ -12430,7 +12430,7 @@ msgid "possetup"
 msgstr ""
 
 #: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4434
-#: rectimer.h:1190 stopifnotused.c:111
+#: rectimer.h:1200 stopifnotused.c:111
 msgid "power off"
 msgstr "Uitschakelen"
 
@@ -12506,11 +12506,11 @@ msgstr ""
 msgid "ready"
 msgstr "Klaar"
 
-#: rectimer.h:1475
+#: rectimer.h:1485
 msgid "rec"
 msgstr "Opname"
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:585 rectimer.h:1050
+#: autotimer.c:475 autotimer.c:508 harddisk.h:585 rectimer.h:1060
 msgid "record"
 msgstr "Opname"
 
@@ -12554,7 +12554,7 @@ msgstr ""
 msgid "rename service"
 msgstr ""
 
-#: rectimer.h:1062 rectimer.h:1480 rectimer.h:1491
+#: rectimer.h:1072 rectimer.h:1490 rectimer.h:1501
 msgid "repeat"
 msgstr ""
 
@@ -12592,7 +12592,7 @@ msgstr "alleen lezen"
 msgid "rsize"
 msgstr ""
 
-#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1515 subtitle.h:1624
+#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1525 subtitle.h:1624
 msgid "running"
 msgstr "Wordt uitgevoerd"
 
@@ -12875,7 +12875,7 @@ msgid "stable"
 msgstr "Stabiel"
 
 #: adjust.h:163 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4427 rectimer.h:1189 stopifnotused.c:112 webif_help.h:92
+#: httpdfunc.h:4427 rectimer.h:1199 stopifnotused.c:112 webif_help.h:92
 #: webif_help.h:214
 msgid "standby"
 msgstr "Standby"
@@ -12924,13 +12924,13 @@ msgstr "Stap west"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1594 record.h:1603 record.h:1614
-#: record.h:1643 record.h:1652 record.h:1686 skin_default_skin.xml.h:688
+#: httpdfunc.h:5546 httpdfunc.h:5592 record.h:1571 record.h:1580 record.h:1591
+#: record.h:1620 record.h:1629 record.h:1663 skin_default_skin.xml.h:688
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
 
-#: rectimer.h:684
+#: rectimer.h:694
 msgid "stopped from user"
 msgstr "Gestopt door gebruiker"
 
@@ -12946,7 +12946,7 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-#: rectimer.h:1517
+#: rectimer.h:1527
 msgid "success"
 msgstr "Succes"
 
@@ -12954,11 +12954,11 @@ msgstr "Succes"
 msgid "swap"
 msgstr "Wisselbestand"
 
-#: rectimer.h:1486
+#: rectimer.h:1496
 msgid "switch"
 msgstr "Omschakelen"
 
-#: autotimer.c:476 autotimer.c:509 rectimer.h:1051
+#: autotimer.c:476 autotimer.c:509 rectimer.h:1061
 msgid "switch channel"
 msgstr "Zender wisselen"
 
@@ -13268,7 +13268,7 @@ msgstr "Gebruik DNS adres"
 msgid "useproxy"
 msgstr "Gebruik proxy"
 
-#: lnbconfig.h:149 rectimer.h:1077
+#: lnbconfig.h:149 rectimer.h:1087
 msgid "user defined"
 msgstr "Gebruiker gedefinieerd"
 
@@ -13364,7 +13364,7 @@ msgstr "Wacht tot stop"
 msgid "wait for stopping download"
 msgstr "Wachten, de download wordt gestopt"
 
-#: rectimer.h:1513
+#: rectimer.h:1523
 msgid "waiting"
 msgstr "Wacht"
 
@@ -13376,7 +13376,7 @@ msgstr ""
 msgid "webdir"
 msgstr ""
 
-#: rectimer.h:1075
+#: rectimer.h:1085
 msgid "weekly"
 msgstr "Weekelijks"
 
@@ -13424,7 +13424,7 @@ msgstr ""
 msgid "wlansettings"
 msgstr ""
 
-#: rectimer.h:1076
+#: rectimer.h:1086
 msgid "workdays"
 msgstr "Werkdagen"
 
@@ -13503,8 +13503,8 @@ msgstr "Geel"
 #: panel_settings_autostart.h:351 panel_settings_overclocking.h:214
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:110 pin.h:182 pin.h:200 play.h:581 play.h:588 play.h:603
-#: readerconfig.h:255 rectimer.h:1092 rectimer.h:1097 rectimer.h:1102
-#: rectimer.h:1107 rectimer.h:1112 rectimer.h:1117 rectimer.h:1122 scan.h:1776
+#: readerconfig.h:255 rectimer.h:1102 rectimer.h:1107 rectimer.h:1112
+#: rectimer.h:1117 rectimer.h:1122 rectimer.h:1127 rectimer.h:1132 scan.h:1776
 #: scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267 scan.h:2270 scan.h:2280
 #: scan.h:2284 screensaveradjust.h:20 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
