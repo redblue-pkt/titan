@@ -1838,7 +1838,7 @@ msgstr ""
 "ERROR: Can't find a free Tuner for the recording.\n"
 "Switch to Recording/Timeshift Channel?"
 
-#: record.h:1692
+#: record.h:1693
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Can't get EPG time or the EPG Endtime is faulty."
 
@@ -3255,7 +3255,7 @@ msgstr "ERROR: can't set marker in this file"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1159 record.h:1692 rectimer.h:577 rectimer.h:1239
+#: record.h:387 record.h:1159 record.h:1693 rectimer.h:577 rectimer.h:1239
 #: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25
@@ -5846,7 +5846,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1159 record.h:1440 record.h:1692 record.h:1717 rectimer.h:577
+#: record.h:1159 record.h:1441 record.h:1693 record.h:1718 rectimer.h:577
 #: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -6435,7 +6435,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1159 record.h:1440 record.h:1717 rectimer.h:577 rectimer.h:1239
+#: record.h:1159 record.h:1441 record.h:1718 rectimer.h:577 rectimer.h:1239
 #: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
@@ -7521,7 +7521,7 @@ msgstr "Your Receiver was unlocked successfully."
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1589 record.h:1659 skin_default_skin.xml.h:543
+#: record.h:1590 record.h:1660 skin_default_skin.xml.h:543
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7585,7 +7585,7 @@ msgstr "Recording active"
 msgid "Record path"
 msgstr ""
 
-#: record.h:1717
+#: record.h:1718
 msgid "Record started"
 msgstr "Recording started"
 
@@ -9793,7 +9793,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr ""
 
-#: record.h:1439
+#: record.h:1440
 msgid "Timer Record start !"
 msgstr "Timer Recording started!"
 
@@ -11021,15 +11021,15 @@ msgstr ""
 msgid "active"
 msgstr "active"
 
-#: record.h:1657 record.h:1703
+#: record.h:1658 record.h:1704
 msgid "add recording (enter duration)"
 msgstr "Add recording (Enter duration)"
 
-#: record.h:1656 record.h:1698
+#: record.h:1657 record.h:1699
 msgid "add recording (indefinitely)"
 msgstr "Add recording (Unlimited)"
 
-#: record.h:1655 record.h:1685
+#: record.h:1656 record.h:1686
 msgid "add recording (stop after current event)"
 msgstr "Add recording (stop after current event)"
 
@@ -11280,7 +11280,7 @@ msgstr "Smartcard found"
 msgid "center"
 msgstr ""
 
-#: record.h:1635 record.h:1644 record.h:1669
+#: record.h:1636 record.h:1645 record.h:1670
 msgid "change"
 msgstr "Change"
 
@@ -12962,8 +12962,8 @@ msgstr "Step West"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5551 httpdfunc.h:5597 record.h:1571 record.h:1580 record.h:1591
-#: record.h:1620 record.h:1629 record.h:1663 skin_default_skin.xml.h:688
+#: httpdfunc.h:5551 httpdfunc.h:5597 record.h:1572 record.h:1581 record.h:1592
+#: record.h:1621 record.h:1630 record.h:1664 skin_default_skin.xml.h:688
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
