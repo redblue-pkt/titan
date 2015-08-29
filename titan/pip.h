@@ -171,7 +171,7 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 		else
 		{
 			dmxclose(status.pipservice->dmxvideodev, -1);
-			dmxvideonode = dmxopen(fenode);
+			dmxvideonode = dmxopen(fenode, 2);
 			if(dmxsetbuffersize(dmxvideonode, getconfigint("dmxvideobuffersize", NULL)) != 0)
 			{
 				dmxclose(dmxvideonode, -1);

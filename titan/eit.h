@@ -1449,7 +1449,7 @@ int readeit(struct stimerthread* self, struct channel* chnode, struct dvbdev* fe
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
