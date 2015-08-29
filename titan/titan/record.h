@@ -915,9 +915,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 
 char* recordcreatefilename(char* path, char* channelname, char* moviename, int type)
 {
-printf("recordcreatefilename start path: %s\n", path);
-printf("recordcreatefilename start channelname: %s\n", channelname);
-printf("recordcreatefilename start moviename: %s\n", moviename);
 	time_t sec;
 	struct tm *loctime;
 	char *buf = NULL, *buf1 = NULL;
@@ -943,8 +940,6 @@ printf("recordcreatefilename start moviename: %s\n", moviename);
 	else
 		tmpstr = ostrcat(tmpstr, moviename, 1, 0);
 
-printf("recordcreatefilename tmpstr1: %s\n", tmpstr);
-
 	if(type != RECTIMESHIFT && recordnamefmt == 1)
 	{
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
@@ -953,7 +948,6 @@ printf("recordcreatefilename tmpstr1: %s\n", tmpstr);
 		else
 			tmpstr = ostrcat(tmpstr, channelname, 1, 0);
 	}
-printf("recordcreatefilename tmpstr2: %s\n", tmpstr);
 
 	sec = time(NULL);
 	loctime = localtime(&sec);
@@ -978,7 +972,6 @@ printf("recordcreatefilename tmpstr2: %s\n", tmpstr);
 		tmpstr = ostrcat(tmpstr, ".mpeg", 1, 0);
 	else
 		tmpstr = ostrcat(tmpstr, ".ts", 1, 0);
-printf("recordcreatefilename end tmpstr3: %s\n", tmpstr);
 
 	return tmpstr;
 }
@@ -1068,10 +1061,8 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			if(epgnode != NULL)
 			{
 				moviename = strstrip(epgnode->title);
-printf("recordstartreal moviename1: %s\n", moviename);
-
 				delspezchar(moviename, 2);
-printf("recordstartreal moviename2: %s\n", moviename);
+
 			}
 			break;
 	}
@@ -1124,22 +1115,12 @@ not needed we use wakeup_record_device on recordstartreal
 		fd = open(filename, O_WRONLY | O_CREAT | O_LARGEFILE, 0666);
 		if(fd < 0)
 		{
-printf("recordstartreal filename: %s\n", filename);
 			char* fn = strrchr(filename, '/');
-printf("recordstartreal fn: %s\n", fn);
-
 			if(fn == NULL)
-{
 				delspezchar(filename, 0);
-printf("recordstartreal if\n");
-}
 			else
-{
 				delspezchar(fn + 1, 0);
-printf("recordstartreal else\n");
-}
-printf("recordstartreal fn2: %s\n", fn);
-
+	
 			fd = open(filename, O_WRONLY | O_CREAT | O_LARGEFILE, 0666);
 			if(fd < 0)
 			{
