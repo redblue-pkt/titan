@@ -1085,7 +1085,7 @@ int readmhwsummary(struct stimerthread* self, struct dvbdev* fenode, int pid)
 		return 1;
 	}
 
-	dmxnode = dmxopen(fenode. 0);
+	dmxnode = dmxopen(fenode, 0);
 	if(dmxnode == NULL)
 	{
 		err("open demux dev");
