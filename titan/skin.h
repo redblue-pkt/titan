@@ -3738,7 +3738,13 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 
 	if(node->child != NULL && status.picbordersize > 0)
 		node->bordersize = status.picbordersize;
-
+	
+	if(node->nodestyle != 0)
+	{
+		if(node->nodestyle == 1)
+			setblink(node);
+	}
+	
 	if(node->skinfunc != NULL)
 	{
 		if(node->funcrettype == FUNCPIC)
@@ -3765,11 +3771,7 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		}
 		free(tmpstr);
 	}
-	if(node->nodestyle != 0)
-	{
-		if(node->nodestyle == 1)
-			setblink(node);
-	}
+
 	if(screencalc != 2)
 	{
 		if(node->hidden == YES || parent->hidden == YES || node->locked == YES || parent->locked == YES) return 1;
