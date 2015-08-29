@@ -48,9 +48,9 @@ struct dvbdev* dmxopen(struct dvbdev* fenode, int flag)
 		if(flag == 0)
 			fd = open(node->dev, O_RDWR);
 		if(flag == 1)
-			fd = open(node->dev, O_RDONLY | O_CLOEXEC)
+			fd = open(node->dev, O_RDONLY | O_CLOEXEC);
 		if(flag == 2)
-			fd = open(node->dev, O_RDWR | O_CLOEXEC
+			fd = open(node->dev, O_RDWR | O_CLOEXEC);
 		if(fd < 0)
 		{
 			debug(200, "open dmx failed %s", node->dev);
