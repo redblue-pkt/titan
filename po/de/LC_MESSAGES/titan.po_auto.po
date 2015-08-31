@@ -13828,9 +13828,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Mle-HD Pass"
-#~ msgstr "Mle-HD Passwort"
-
-#~ msgid "Mle-HD User"
-#~ msgstr "Mle-HD Benutzername"
