@@ -49,6 +49,7 @@
 #include "vodlocker.h"
 #include "vidto.h"
 #include "nowtv.h"
+#include "amazon.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
