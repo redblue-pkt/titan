@@ -113,7 +113,6 @@ compile "lcdpearl1" "lcdpearl1" "" ""
 compile "lcdsamsung" "lcdsamsung" "" ""
 compile "callmonitor1" "callmonitor1" "" ""
 compile "stopifnotused" "stopifnotused" "" ""
-compile "tithek" "tithek" "" ""
 compile "wins3" "wins3" "" ""
 compile "rgui" "rgui" "" ""
 compile "dvdplayer" "dvdplay" "" ""
@@ -146,6 +145,6 @@ make curl
 
 cd "$HOME"/flashimg/$SRCDIR/plugins
 compile "facebook" "facebook" "" "-l curl"
-
+compile "tithek" "tithek" "" "-l curl"
 
 #rm -r networkbrowser/networkbrowser

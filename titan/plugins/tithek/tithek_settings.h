@@ -13,8 +13,8 @@ void screentithek_settings()
 	struct skin* pay = getscreennode(tithek_settings, "pay");
 	struct skin* picratio = getscreennode(tithek_settings, "picratio");
 	struct skin* hidxxx = getscreennode(tithek_settings, "hidxxx");
-	struct skin* mlehd_user = getscreennode(tithek_settings, "mlehd_user");
-	struct skin* mlehd_pass = getscreennode(tithek_settings, "mlehd_pass");
+	struct skin* amazon_user = getscreennode(tithek_settings, "amazon_user");
+	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
 
 	addchoicebox(cover, "0", _("show auto entrys"));
 	addchoicebox(cover, "1", _("show 2 entrys"));
@@ -46,11 +46,11 @@ void screentithek_settings()
 	addchoicebox(hidxxx, "1", _("yes"));	
 	setchoiceboxselection(hidxxx, getconfig("tithek_hid_xxx", NULL));
 
-	changemask(mlehd_user, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(mlehd_user, getconfig("mlehd_user", NULL));
+	changemask(amazon_user, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(amazon_user, getconfig("amazon_user", NULL));
 
-	changemask(mlehd_pass, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(mlehd_pass, getconfig("mlehd_pass", NULL));
+	changemask(amazon_pass, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(amazon_pass, getconfig("amazon_pass", NULL));
 
 	drawscreen(tithek_settings, 0, 0);
 	addscreenrc(tithek_settings, listbox);
@@ -70,8 +70,8 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_pay", pay, NULL);
 			addconfigscreencheck("tithek_pic_ratio", picratio, NULL);
 			addconfigscreencheck("tithek_hid_xxx", hidxxx, NULL);
-			addconfigscreen("mlehd_user", mlehd_user);
-			addconfigscreen("mlehd_pass", mlehd_pass);
+			addconfigscreen("amazon_user", amazon_user);
+			addconfigscreen("amazon_pass", amazon_pass);
 			break;
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))

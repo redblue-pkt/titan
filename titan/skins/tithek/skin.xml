@@ -25,8 +25,8 @@
 		<node parent="listbox" name="picratio" text="Pic Ratio" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="pay" text="Show Pay Streams" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="hidxxx" text="Hid XXX Streams" type="choicebox" valign="middle" width="100%" height="35">
-		<node parent="listbox" name="mlehd_user" text="Mle-HD User" type="inputbox" valign="middle" width="100%" height="35">
-		<node parent="listbox" name="mlehd_pass" text="Mle-HD Pass" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="amazon_user" text="Amazon Prime User" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="amazon_pass" text="Amazon Prime Pass" type="inputbox" valign="middle" width="100%" height="35">
 	<node name="buttonbar" posx="0" posy="0" width="100%" height="50" hspace="5" fontcol="black" fontsize="25" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"    posx="0"   posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png"  posx="70"  posy="center" width="70" height="40">
