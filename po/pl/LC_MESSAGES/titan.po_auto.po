@@ -3031,7 +3031,7 @@ msgstr ""
 msgid "EPG Save Mode"
 msgstr ""
 
-#: epgsettings.h:321
+#: epgsettings.h:325
 msgid "EPG Scan Log"
 msgstr ""
 
@@ -3063,7 +3063,7 @@ msgstr ""
 msgid "EPG button on EPG Screen"
 msgstr ""
 
-#: epgsettings.h:307
+#: epgsettings.h:311
 msgid "EPG resetet and now clear."
 msgstr ""
 
@@ -3122,7 +3122,7 @@ msgstr ""
 #: blindscanadjust.h:25 channellist.h:945 channellist.h:947 channellist.h:952
 #: channellist.h:954 channellist.h:1038 divxstage.h:36 divxstage.h:79
 #: divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:307 epgsettings.h:321
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:311 epgsettings.h:325
 #: extensions.h:190 extensions.h:241 extensions.h:250 extensions.h:254
 #: extensions.h:259 extensions.h:267 extensions.h:302 extensions.h:310
 #: extensions.h:317 extensions.h:324 extensions.h:356 extensions.h:382
@@ -5688,7 +5688,7 @@ msgstr ""
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
 #: channellist.h:954 channellist.h:1038 divxstage.h:36 divxstage.h:79
 #: divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:307 extensions.h:267
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:311 extensions.h:267
 #: extensions.h:324 extensions.h:356 extensions.h:416 extensions.h:420
 #: extensions.h:456 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
@@ -6257,7 +6257,7 @@ msgstr ""
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:945 channellist.h:947
 #: channellist.h:952 channellist.h:954 channellist.h:1038 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:307 epgsettings.h:321
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:311 epgsettings.h:325
 #: extensions.h:190 extensions.h:241 extensions.h:250 extensions.h:254
 #: extensions.h:259 extensions.h:267 extensions.h:302 extensions.h:310
 #: extensions.h:317 extensions.h:324 extensions.h:356 extensions.h:382
