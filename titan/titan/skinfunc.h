@@ -158,7 +158,7 @@ char* getrec(struct skin* node, char* path)
 			tmpstr = ostrcat("oled_rec.png", NULL, 0, 0);
 
 			if(path != NULL) 
-                tmpstr = ostrcat("/", tmpstr, 0, 1);
+				tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
 		}
 		else
@@ -1624,4 +1624,34 @@ char* setblink(struct skin* node)
 	return NULL;
 }
 
+char* gettunerlock(struct skin* node, char* path, char* tuner)
+{
+	char* tmpstr = NULL;
+	int tunernr = 0;
+	int tunerlock = 0;
+	if(tuner != NULL)
+		tunernr = atoi(tuner);
+	tunerlock = fegetlock(tunernr);
+	
+	if(tunerlock > 0)
+	{
+		if(node->nodestyle != 1)
+			node->hidden = NO;	
+		if(node->picmem == 1)
+			return tmpstr;
+		//tuner?act.png
+		if(tuner != NULL)
+			tmpstr = ostrcat("tuner",tuner, 0, 0);
+		else
+			tmpstr = ostrcat("tuner","0", 0, 0);
+		tmpstr = ostrcat(tmpstr,"act.png", 1, 0);
+		if(path != NULL) 
+    	tmpstr = ostrcat("/", tmpstr, 0, 1);
+    tmpstr = ostrcat(path, tmpstr, 0, 1);
+	}
+  else
+		node->hidden = YES;	
+	return tmpstr;
+}    
+			
 #endif

@@ -1732,4 +1732,25 @@ int fecreatedummy()
 	return 0;
 }
 
+int fegetlock(int tunernr)
+{
+	struct dvbdev* dvbnode = NULL;
+	dvbnode = dvbdev;
+
+	while(dvbnode != NULL)
+	{
+		if(dvbnode->deactive == 1)
+		{
+			dvbnode = dvbnode->next;
+			continue;
+		}
+		if(dvbnode->type == FRONTENDDEV && dvbnode->devnr == tunernr)
+		{
+			return dvbnode->felock;
+		}
+		dvbnode = dvbnode->next;
+	}
+	return -1;
+}
+
 #endif
