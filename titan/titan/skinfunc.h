@@ -1624,7 +1624,7 @@ char* setblink(struct skin* node)
 	return NULL;
 }
 
-char* gettunerlock(struct skin* node, char* path, char* tuner)
+char* gettunerlockpic(struct skin* node, char* path, char* tuner)
 {
 	char* tmpstr = NULL;
 	int tunernr = 0;
@@ -1648,6 +1648,38 @@ char* gettunerlock(struct skin* node, char* path, char* tuner)
 		if(path != NULL) 
     	tmpstr = ostrcat("/", tmpstr, 0, 1);
     tmpstr = ostrcat(path, tmpstr, 0, 1);
+	}
+  else
+		node->hidden = YES;	
+	return tmpstr;
+}    
+
+char* gettunerlocktext(struct skin* node, char* onlyhidden, char* tuner)
+{
+	char* tmpstr = NULL;
+	int tunernr = 0;
+	int tunerlock = 0;
+	if(tuner != NULL)
+		tunernr = atoi(tuner);
+	tunerlock = fegetlock(tunernr);
+	
+	if(tunerlock > 0)
+	{
+		if(node->nodestyle != 1)
+			node->hidden = NO;
+		if(onlyhidden == NULL)
+		{
+			if(tunernr == 0)
+				tmpstr = ostrcat("A",NULL, 0, 0);
+			if(tunernr == 1)
+				tmpstr = ostrcat("B",NULL, 0, 0);
+			if(tunernr == 2)
+				tmpstr = ostrcat("C",NULL, 0, 0);		
+			if(tunernr == 3)
+				tmpstr = ostrcat("D",NULL, 0, 0);	
+		}
+		else
+			tmpstr = ostrcat(node->text,NULL, 0, 0);
 	}
   else
 		node->hidden = YES;	
