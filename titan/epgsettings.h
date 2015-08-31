@@ -216,9 +216,13 @@ void screenepgsettings()
 	addchoicebox(epg_afterevent, "0", _("nothing"));
 	addchoicebox(epg_afterevent, "1", _("poweroff"));
 	setchoiceboxselection(epg_afterevent, getconfig("epg_afterevent", NULL));
-
-	addchoicebox(epg_primetime, "20:15", "20:15");
+	
+	addchoicebox(epg_primetime, "18:00", "18:00");
+	addchoicebox(epg_primetime, "18:30", "18:30");
+	addchoicebox(epg_primetime, "19:00", "19:00");
+	addchoicebox(epg_primetime, "19:30", "19:30");
 	addchoicebox(epg_primetime, "20:00", "20:00");
+	addchoicebox(epg_primetime, "20:15", "20:15");
 	addchoicebox(epg_primetime, "20:30", "20:30");
 	setchoiceboxselection(epg_primetime, getconfig("epg_primetime", NULL));
 
