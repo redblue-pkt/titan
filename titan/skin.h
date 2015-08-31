@@ -102,7 +102,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 	}
 
 #endif
-
+	if(ostrcmp("gettunerlockpic", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &gettunerlockpic;
+	}
 	if(ostrcmp("getalternatepicon", value) == 0)
 	{
 		*rettype = FUNCPIC;
@@ -229,7 +233,8 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getsignal;
 	}
-
+	if(ostrcmp("gettunerlocktext", value) == 0)
+		return &gettunerlocktext;
 	if(ostrcmp("getrecfreesizetext", value) == 0)
 		return &getrecfreesizetext;
 	if(ostrcmp("getwlanlinkqualitytext", value) == 0)
