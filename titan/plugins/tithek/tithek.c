@@ -4,6 +4,7 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
+#include "jsmn.h"
 #include "tithek_header.h"
 #include "tithek.h"
 #include "tithek_settings.h"

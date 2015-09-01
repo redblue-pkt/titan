@@ -295,7 +295,6 @@ int login()
 	return ret;
 }
 
-
 int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	int ret = 1;
@@ -320,6 +319,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 	char* tmppath = NULL;
 	char* tmphost = NULL;
 	char* tmpstr = NULL;
+	char* line = NULL;
 
 	int loginret = 0;
 	loginret = login();
@@ -340,6 +340,124 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		curlretbuf = gethttps_get(url, NULL, NULL);
 		debug(99, "tmpstr: %s", curlretbuf);
 		titheklog(debuglevel, "/tmp/amazon_search_tmpstr_get", NULL, NULL, NULL, curlretbuf);		
+/////////
+char* tmpstr2 = NULL;
+		char* streamurl = NULL;
+		char* pic = NULL;
+		char* title = NULL;
+		char* year = NULL;
+		char* runtime = NULL;
+		char* menu = NULL;
+		int count1 = 0;
+		int j = 0;
+
+////////////
+//		tmpstr2 = string_resub("\"value\" : \"<div id=\\\"centerMinus\\\"", "\"tagId\" : \"centerMinus\"", curlretbuf, 0);	
+//		tmpstr2 = string_resub("\"value\" : \"<div id=\\\"centerBelowPlus\\\"", "\"tagId\" : \"centerBelowPlus\"", curlretbuf, 0);	
+		tmpstr2 = ostrcat(curlretbuf, NULL, 0, 0);
+		printf("tmpstr2: %s\n", tmpstr2);
+
+
+		tmpstr2 = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr2, 1);
+
+		count1 = 0;
+		j = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr2, "\n", &count1);
+		int incount = 0;
+
+		if(ret1 != NULL && count1 > 0)
+		{
+			int max = count1;
+			for(j = 0; j < max; j++)
+			{
+				if(ostrstr(ret1[j].part, "result_") != NULL)
+				{
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+
+					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
+					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
+					title = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
+					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
+					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
+
+					printf("(%d) streamurl: %s\n", j, streamurl);
+					printf("(%d) pic: %s\n", j, pic);
+					printf("(%d) title: %s\n", j, title);
+					printf("(%d) year: %s\n", j, year);
+					printf("(%d) runtime: %s\n", j, runtime);
+					printf("----------------------\n");
+
+					if(streamurl != NULL)
+					{
+						incount += 1;
+						line = ostrcat(line, title, 1, 0);
+						line = ostrcat(line, " (", 1, 0);
+						line = ostrcat(line, year, 1, 0);
+						line = ostrcat(line, ") ", 1, 0);
+						line = ostrcat(line, runtime, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, streamurl, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, pic, 1, 0);
+						line = ostrcat(line, "#amazon_search_", 1, 0);
+						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
+						line = ostrcat(line, ".jpg#Amazon Instant Video - Search#12\n", 1, 0);
+					}
+					
+					free(streamurl), streamurl = NULL;
+					free(pic), pic = NULL;
+					free(title), title = NULL;
+					free(year), year = NULL;
+					free(runtime), runtime = NULL;
+				}
+			}
+		}
+
+
+		if(line != NULL)
+		{
+			menu = ostrcat("/tmp/tithek/myvideo.search.list", NULL, 0, 0);
+			writesys(menu, line, 0);
+			struct tithek* tnode = (struct tithek*)listbox->select->handle;
+			createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+			ret = 0;
+		}
+
+/*
+		int i = 0, len = 0, treffer = 0, amazontoken = 1000;
+		jsmn_parser parser;
+	//	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
+		jsmntok_t tokens[amazontoken]; //TODO
+		char* buf = NULL;
+
+		if(buf == NULL)
+		{
+			err("no mem");
+			free(curlretbuf); curlretbuf = NULL;
+			curlretbufsize = 0;
+			return 1;
+		}
+	
+		jsmn_init(&parser);
+	
+	//	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
+		int ret1 = jsmn_parse(&parser, curlretbuf, tokens, amazontoken);
+		if(ret1 == JSMN_SUCCESS)
+		{
+			for(i = 0; i < amazontoken; i++)
+			{
+				if(tokens[i].start == -1) break;
+	
+				len = tokens[i].end - tokens[i].start;
+				if(len > MINMALLOC) len = MINMALLOC;
+				char* ptr = curlretbuf + tokens[i].start;
+	
+				printf("tokens[i].type=%d ptr=%s buf=%s\n", tokens[i].type, ptr, buf);
+			}
+		}
+*/
+///////
 	}
 
 	free(search), search = NULL;
