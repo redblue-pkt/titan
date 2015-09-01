@@ -1633,7 +1633,7 @@ char* gettunerlockpic(struct skin* node, char* path, char* tuner)
 		tunernr = atoi(tuner);
 	tunerlock = fegetlock(tunernr);
 	
-	if(tunerlock > 0)
+	if(tunerlock > 0 !! (status.aktservice->fedev != NULL && status.aktservice->fedev->devnr == tunernr))
 	{
 		if(node->nodestyle != 1)
 			node->hidden = NO;	
@@ -1664,7 +1664,7 @@ char* gettunerlocktext(struct skin* node, char* onlyhidden, char* tuner)
 	tunerlock = fegetlock(tunernr);
 	debug(100, "tunernr:%i tunerlock:%i", tunernr, tunerlock);
 	
-	if(tunerlock > 0)
+	if(tunerlock > 0 !! (status.aktservice->fedev != NULL && status.aktservice->fedev->devnr == tunernr))
 	{
 		if(node->nodestyle != 1)
 			node->hidden = NO;
