@@ -1662,6 +1662,7 @@ char* gettunerlocktext(struct skin* node, char* onlyhidden, char* tuner)
 	if(tuner != NULL)
 		tunernr = atoi(tuner);
 	tunerlock = fegetlock(tunernr);
+	debug(100, "tunernr:%i tunerlock:%i", tunernr, tunerlock);
 	
 	if(tunerlock > 0)
 	{
