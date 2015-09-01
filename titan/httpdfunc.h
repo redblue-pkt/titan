@@ -3278,7 +3278,14 @@ void putxmessage(struct stimerthread* timernode, char* captiontime, char* body)
 		caption = ostrcat(caption, (&ret1[0])->part, 1, 0);
 		if((&ret1[1])->part != NULL)
 			timeout = atoi((&ret1[1])->part);
-		textbox(caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 280, timeout, 0);
+		if(status.standby == 0)
+			textbox(caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 280, timeout, 0);
+		else
+		{
+			FILE* datei = fopen("/tmp/textbox_standby", "a");
+			fprintf(datei, "%s,%s,%s,%i,%s,%i,%s,%i,%s,%i,%i,%i,%i,%i\n", caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 280, timeout, 0);
+			fclose(datei);
+		}
 	}
 
 	free(caption); free(body); free(captiontime); free(ret1);
