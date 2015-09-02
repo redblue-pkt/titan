@@ -1,27 +1,6 @@
 #ifndef AMAZON_H
 #define AMAZON_H
 
-char* amazon_hoster(char* link)
-{
-printf("amazon hoster...\n");
-	debug(99, "link: %s", link);
-	char* streamurl = NULL;
-
-	streamurl = hoster(link);
-	debug(99, "streamurl1: %s", streamurl);
-
-	streamurl = string_replace_all("amp;", "", streamurl, 1);
-	debug(99, "streamurl2: %s", streamurl);
-
-	return streamurl;
-}
-
-char* amazon(char* link)
-{
-	printf("amazon...\n");
-	return link;
-}
-
 #include <curl/curl.h>
 
 int curlretbufsize = 0;
@@ -135,6 +114,76 @@ int checkamazonerror()
 		return 1;
 	}
 	return 0;
+}
+
+char* amazon_hoster(char* link)
+{
+	int debuglevel = getconfigint("debuglevel", NULL);
+
+printf("amazon hoster...\n");
+	debug(99, "link: %s", link);
+	char* streamurl = NULL;
+
+	streamurl = hoster(link);
+	debug(99, "streamurl1: %s", streamurl);
+
+	streamurl = string_replace_all("amp;", "", streamurl, 1);
+	debug(99, "streamurl2: %s", streamurl);
+
+	return streamurl;
+}
+
+char* amazon(char* link)
+{
+	int debuglevel = getconfigint("debuglevel", NULL);
+
+	printf("amazon...%s\n", link);
+	curlretbuf = gethttps_get(link, NULL, NULL);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get1", NULL, NULL, NULL, curlretbuf);	
+
+	char* customerid = string_resub("\"customerID\":\"", "\"", curlretbuf, 0);
+	char* marketplaceid = string_resub("\"marketplaceID\":\"", "\"", curlretbuf, 0);
+	char* matchtoken = string_resub("\"csrfToken\":\"", "\"", curlretbuf, 0);
+	char* devicetypeid = ostrcat("A35LWR0L7KC0TJ", NULL, 0, 0);
+
+	char* apimain = ostrcat("atv-ps-eu", NULL, 0, 0);
+
+//	apiMain = ["atv-ps", "atv-ps-eu", "atv-ps-eu"][int(siteVersion)]
+
+	url = ostrcat("https://", apimain, 0, 0);
+	url = ostrcat(url, ".amazon.com/cdp/catalog/GetASINDetails?version=2&format=json&asinlist=", 1, 0);
+	url = ostrcat(url, videoID, 1, 0);
+	url = ostrcat(url, "&deviceID=", 1, 0);
+	url = ostrcat(url, customerid, 1, 0);
+	url = ostrcat(url, "&includeRestrictions=true&deviceTypeID=", 1, 0);
+	url = ostrcat(url, devicetypeid, 1, 0);
+	url = ostrcat(url, "&firmware=WIN%2017,0,0,188%20PlugIn&NumberOfResults=1", 1, 0);
+
+	printf("customerid: %s\n", customerid);
+	printf("marketplaceid: %s\n", marketplaceid);
+	printf("matchtoken: %s\n", matchtoken);
+	printf("devicetypeid: %s\n", devicetypeid);
+	printf("apimain: %s\n", apimain);
+
+	printf("url: %s\n", url);
+	curlretbuf = gethttps_get(url, NULL, NULL);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get2", NULL, NULL, NULL, curlretbuf);	
+
+/*
+//	21:58:55 T:12892  NOTICE: u'GET /dp/B00HDWUOE0/?_encoding=UTF8 HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: www.amazon.de\r\nCookie: session-id=280-4991603-9795168; lc-acbde=de_DE; x-wl-uid=1wlNykYuueLpQ/lulK2jftX3UCpMVrBsTB4c1WLIk+6TtmkV6GhUakoN8pcy7EYcwy+iHbMpjkk8moz3G3nhshrfAjbB1FLyPAmDG+kwIukXdBtGJjFv/KY+1P733SfsYrKxplYjPYvU=; x-acbde="OiBWtVZwMAwRwWAQYqrOMfLTaO8AWl51vV@8gnufco2MIMcSdk6ZCsWnuqt@UoE7"; a-ogbcbff=1; ubid-acbde=276-9009354-0988948; session-token="fYaNh4GIv7WcA1d3KZ42GTPaYTR6GVnxWAy1JGOWzHX3UIxFpaTSnDW+UvdhmYIFrcLA5RL/sbD64Mj0cfCWknCkthvWX0ywAecwxssWUv+rdK5VQ8yocnojoBKpDetxom0nCY0wCtrTm6EJ9HCyuuJKMAjkgPIn2oQMkWGSTCoj4gdfzfMU6jWTRQNvNSxMglQx3IIVC83r6e23XYrfat5vnw0JKjr+AYgcfHdY/R0="; session-id-time=2082754801l\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; U; Linux i686; en-EN) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.127 Large Screen Safari/533.4 GoogleTV/ 162671\r\n\r\n'
+0879Z5R5M0H8YRJH4SZK
+A3T8NY6VBAVZZA
+qid=1441059874
+21:58:56 T:12892  NOTICE: u'GET /cdp/catalog/GetASINDetails?version=2&format=json&asinlist=B00HDWUOE0&deviceID=A3T8NY6VBAVZZA&includeRestrictions=true&deviceTypeID=A35LWR0L7KC0TJ&firmware=WIN%2017,0,0,188%20PlugIn&NumberOfResults=1 HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: atv-ps-eu.amazon.com\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; U; Linux i686; en-EN) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.127 Large Screen Safari/533.4 GoogleTV/ 162671\r\n\r\n'
+asincontent = getUnicodePage('https://'+apiMain+'.amazon.com/cdp/catalog/GetASINDetails?version=2&format=json&asinlist='+videoID+'&deviceID='+urllib.quote_plus(matchCID[0].encode("utf8"))+'&includeRestrictions=true&deviceTypeID='+matchDID[0]+'&firmware=WIN%2017,0,0,188%20PlugIn&NumberOfResults=1')
+
+        asincontent = getUnicodePage('https://'+apiMain+'.amazon.com/cdp/catalog/GetASINDetails?version=2&format=json&asinlist='+videoID+'&deviceID='+urllib.quote_plus(matchCID[0].encode("utf8"))+'&includeRestrictions=true&deviceTypeID='+matchDID[0]+'&firmware=WIN%2017,0,0,188%20PlugIn&NumberOfResults=1')
+
+window.$Nav && $Nav.declare('config.lightningDeals',{"activeItems":[],"marketplaceID":"A1PA6795UKMFR9","customerID":"A3T8NY6VBAVZZA"});
+u'GET /cdp/catalog/GetASINDetails?version=2&format=json&asinlist=B00HDWUOE0&deviceID=A3T8NY6VBAVZZA&includeRestrictions=true&deviceTypeID=A35LWR0L7KC0TJ&firmware=WIN%2017,0,0,188%20PlugIn&NumberOfResults=1 HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: atv-ps-eu.amazon.com\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; U; Linux i686; en-EN) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.127 Large Screen Safari/533.4 GoogleTV/ 162671\r\n\r\n'
+
+*/
+	return link;
 }
 
 int login()
@@ -342,6 +391,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		titheklog(debuglevel, "/tmp/amazon_search_tmpstr_get", NULL, NULL, NULL, curlretbuf);		
 /////////
 char* tmpstr2 = NULL;
+		char* id = NULL;
 		char* streamurl = NULL;
 		char* pic = NULL;
 		char* title = NULL;
@@ -380,8 +430,14 @@ char* tmpstr2 = NULL;
 					title = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
 					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
+					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
 
 					printf("(%d) streamurl: %s\n", j, streamurl);
+					free(streamurl), streamurl = NULL;
+					streamurl = ostrcat("http://www.amazon.de/dp/", id, 0, 0);
+					streamurl = ostrcat(streamurl, "/?_encoding=UTF8", 1, 0);
+					printf("(%d) streamurl changed: %s\n", j, streamurl);
+					printf("(%d) id: %s\n", j, id);
 					printf("(%d) pic: %s\n", j, pic);
 					printf("(%d) title: %s\n", j, title);
 					printf("(%d) year: %s\n", j, year);
@@ -402,9 +458,10 @@ char* tmpstr2 = NULL;
 						line = ostrcat(line, pic, 1, 0);
 						line = ostrcat(line, "#amazon_search_", 1, 0);
 						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
-						line = ostrcat(line, ".jpg#Amazon Instant Video - Search#12\n", 1, 0);
+						line = ostrcat(line, ".jpg#Amazon Instant Video - Search#75\n", 1, 0);
 					}
 					
+					free(id), id = NULL;
 					free(streamurl), streamurl = NULL;
 					free(pic), pic = NULL;
 					free(title), title = NULL;
@@ -417,7 +474,7 @@ char* tmpstr2 = NULL;
 
 		if(line != NULL)
 		{
-			menu = ostrcat("/tmp/tithek/myvideo.search.list", NULL, 0, 0);
+			menu = ostrcat("/tmp/tithek/amazon.search.list", NULL, 0, 0);
 			writesys(menu, line, 0);
 			struct tithek* tnode = (struct tithek*)listbox->select->handle;
 			createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
