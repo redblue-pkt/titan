@@ -878,7 +878,7 @@ msgstr ""
 msgid "Alpha Romanie G98"
 msgstr ""
 
-#: tithek.c:90
+#: tithek.c:91
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
@@ -922,7 +922,7 @@ msgstr ""
 msgid "Amazon Prime"
 msgstr ""
 
-#: amazon.h:330
+#: amazon.h:379
 msgid "Amazon Prime Login Successful!"
 msgstr ""
 
@@ -1856,7 +1856,7 @@ msgstr "không có tín hiệu"
 msgid "Can't get all TPK index !"
 msgstr "không có tín hiệu"
 
-#: amazon.h:132
+#: amazon.h:111
 msgid "Can't get data from Amazon"
 msgstr ""
 
@@ -3171,7 +3171,7 @@ msgstr ""
 msgid "ERROR... can't set marker in this file"
 msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 
-#: about.h:9 amazon.h:132 amazon.h:328 amazon.h:330 autotimer.c:537
+#: about.h:9 amazon.h:111 amazon.h:377 amazon.h:379 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: channellist.h:945 channellist.h:947 channellist.h:952 channellist.h:954
@@ -3268,7 +3268,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1035
 #: titan.c:1044 titan.c:1172 titan.c:1193 titan.c:1199 titan.c:1210
-#: titan.c:1216 tithek.c:90 tithek_global.h:260 tithek.h:668 tithek.h:1222
+#: titan.c:1216 tithek.c:91 tithek_global.h:260 tithek.h:668 tithek.h:1222
 #: tithek.h:1283 tithek.h:1498 tithek.h:1520 tithek.h:1537 tithek.h:1769
 #: tithek.h:1929 tithek.h:2134 tithek.h:2162 tithek.h:2178 tithek.h:2190
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -5752,7 +5752,7 @@ msgstr "Không thực hiện được!"
 msgid "Menulist"
 msgstr ""
 
-#: amazon.h:132 amazon.h:328 amazon.h:330 avsettings.h:331 betarobot.h:57
+#: amazon.h:111 amazon.h:377 amazon.h:379 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334
@@ -5821,7 +5821,7 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1172
-#: titan.c:1193 titan.c:1199 titan.c:1210 titan.c:1216 tithek.c:90
+#: titan.c:1193 titan.c:1199 titan.c:1210 titan.c:1216 tithek.c:91
 #: tithek_global.h:260 tithek.h:668 tithek.h:1222 tithek.h:1283 tithek.h:1498
 #: tithek.h:1520 tithek.h:1769 tithek.h:1929 tithek.h:2134 tithek.h:2162
 #: tithek.h:2178 tithek.h:2190 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6319,7 +6319,7 @@ msgstr ""
 msgid "OE"
 msgstr "E"
 
-#: about.h:9 amazon.h:132 amazon.h:328 amazon.h:330 autotimer.c:537
+#: about.h:9 amazon.h:111 amazon.h:377 amazon.h:379 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
@@ -6410,7 +6410,7 @@ msgstr "E"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1035
 #: titan.c:1044 titan.c:1172 titan.c:1193 titan.c:1199 titan.c:1210
-#: titan.c:1216 tithek.c:90 tithek_global.h:260 tithek.h:668 tithek.h:1222
+#: titan.c:1216 tithek.c:91 tithek_global.h:260 tithek.h:668 tithek.h:1222
 #: tithek.h:1283 tithek.h:1498 tithek.h:1520 tithek.h:1537 tithek.h:1769
 #: tithek.h:1929 tithek.h:2134 tithek.h:2162 tithek.h:2178 tithek.h:2190
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -6988,7 +6988,7 @@ msgstr ""
 msgid "Playlist-Mode"
 msgstr " Danh sách phát – Chế độ"
 
-#: amazon.h:328
+#: amazon.h:377
 msgid ""
 "Please Add your Amazon Prime User/Pass in Tithek Settings, and try agaun "
 "later !"
@@ -8331,7 +8331,7 @@ msgstr "cho phép thực hiện"
 msgid "Script has no output or started in background."
 msgstr "Không có đầu ra."
 
-#: amazon.h:314 amazon.h:316 amazon.h:358 amazon.h:360 ard.h:126 ard.h:128
+#: amazon.h:362 amazon.h:364 amazon.h:533 amazon.h:535 ard.h:126 ard.h:128
 #: beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193 epgsearch.h:207
 #: filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287 imdb.h:712
 #: internetradio.h:13 internetradio.h:15 internettv.h:13 internettv.h:15
@@ -9874,7 +9874,7 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr "Không thể mở file"
 
-#: tithek.c:112
+#: tithek.c:113
 msgid "Tithek - Mainmenu"
 msgstr ""
 
