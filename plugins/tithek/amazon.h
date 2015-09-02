@@ -172,7 +172,54 @@ char* amazon(char* link)
 	curlretbuf = gethttps_get(url, NULL, NULL);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get2", NULL, NULL, NULL, curlretbuf);	
 
-	return link;
+	free(url), url = NULL;
+	
+//content = getUnicodePage(urlMainS+'/gp/video/streaming/player-token.json?callback=jQuery1640'+''.join(random.choice(string.digits) for x in range(18))+'_'+str(int(time.time()*1000))+'&csrftoken='+urllib.quote_plus(matchToken[0].encode("utf8"))+'&_='+str(int(time.time()*1000)))
+
+	url = ostrcat("https://", "www.amazon.de", 0, 0);
+	url = ostrcat(url, "/gp/video/streaming/player-token.json?callback=jQuery1640", 1, 0);
+	// todo
+	url = ostrcat(url, "563195325634321267", 1, 0); //join(random.choice(string.digits) for x in range(18))
+	url = ostrcat(url, "_", 1, 0);
+	// todo
+	url = ostrcat(url, "1441140895131", 1, 0); //str(int(time.time()*1000))
+	url = ostrcat(url, "&csrftoken=", 1, 0);
+	url = ostrcat(url, matchtoken, 1, 0);
+	url = ostrcat(url, "_", 1, 0);
+	// todo
+	url = ostrcat(url, "1441140895131", 1, 0); //str(int(time.time()*1000))
+	printf("url: %s\n", url);
+	curlretbuf = gethttps_get(url, NULL, NULL);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get3", NULL, NULL, NULL, curlretbuf);	
+
+	char* token = string_resub("\"token\":\"", "\"", curlretbuf, 0);
+	printf("token: %s\n", token);
+	url = ostrcat("https://", apimain, 0, 0);
+	url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingTrailerUrls?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID=", 1, 0);
+	url = ostrcat(url, marketplaceid, 1, 0);
+	url = ostrcat(url, "&token=", 1, 0);
+	url = ostrcat(url, token, 1, 0);
+	url = ostrcat(url, "&deviceTypeID=", 1, 0);
+	url = ostrcat(url, devicetypeid, 1, 0);
+	url = ostrcat(url, "&asin=", 1, 0);
+	url = ostrcat(url, link, 1, 0);
+	url = ostrcat(url, "&customerID=", 1, 0);
+	url = ostrcat(url, customerid, 1, 0);
+	url = ostrcat(url, "&deviceID=", 1, 0);
+	// todo
+	url = ostrcat(url, "A3T8NY6VBAVZZA1441140895392B00HDWUOE0", 1, 0); //'&deviceID='+urllib.quote_plus(matchCID[0].encode("utf8"))+str(int(time.time()*1000))+videoID
+
+
+	printf("url: %s\n", url);
+	curlretbuf = gethttps_get(url, NULL, NULL);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get4", NULL, NULL, NULL, curlretbuf);	
+
+	char* streamurl = string_resub("\"url\":\"", "\"", curlretbuf, 0);
+
+// trailer
+//content = getUnicodePage('https://'+apiMain+'.amazon.com/cdp/catalog/GetStreamingTrailerUrls?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID='+urllib.quote_plus(matchMID[0].encode("utf8"))+'&token='+urllib.quote_plus(matchToken[0].encode("utf8"))+'&deviceTypeID='+matchDID[0]+'&asin='+videoID+'&customerID='+urllib.quote_plus(matchCID[0].encode("utf8"))+'&deviceID='+urllib.quote_plus(matchCID[0].encode("utf8"))+str(int(time.time()*1000))+videoID)
+
+	return streamurl;
 }
 
 int login()
