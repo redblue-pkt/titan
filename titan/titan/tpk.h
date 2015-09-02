@@ -297,11 +297,11 @@ int tpkcreatefilelist(char* mainpath, char* to, char* from, int type, off64_t en
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpstr = ostrcat(tmpstr, name, 1, 0);
 		tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-		writeret = fprintf(fd, "%s#%s#%d#%lld#%lld#%d#%d\n", tmpstr, from, type, endpos, len, major, minor);
+		writeret = fprintf(fd, "%s#%s#%d#%lli#%lli#%d#%d\n", tmpstr, from, type, endpos, len, major, minor);
 		free(tmpstr); tmpstr = NULL;
 	}
 	else
-		writeret = fprintf(fd, "%s#%s#%d#%lld#%lld#%d#%d\n", to, from, type, endpos, len, major, minor);
+		writeret = fprintf(fd, "%s#%s#%d#%lli#%lli#%d#%d\n", to, from, type, endpos, len, major, minor);
 	if(writeret < 0)
 	{
 		perr("writting file %s", file);
