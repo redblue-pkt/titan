@@ -215,6 +215,9 @@ char* amazon(char* link)
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get4", NULL, NULL, NULL, curlretbuf);	
 
 	char* streamurl = string_resub("\"url\":\"", "\"", curlretbuf, 0);
+	printf("streamurl: %s\n", streamurl);
+	streamurl = string_replace("rtmpe://azeufms-vodfs.fplive.net/azeufms-vod/mp4:", "http://azeufms-vodfs.fplive.net/", streamurl, 1);
+	printf("streamurl changed: %s\n", streamurl);
 
 // trailer
 //content = getUnicodePage('https://'+apiMain+'.amazon.com/cdp/catalog/GetStreamingTrailerUrls?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID='+urllib.quote_plus(matchMID[0].encode("utf8"))+'&token='+urllib.quote_plus(matchToken[0].encode("utf8"))+'&deviceTypeID='+matchDID[0]+'&asin='+videoID+'&customerID='+urllib.quote_plus(matchCID[0].encode("utf8"))+'&deviceID='+urllib.quote_plus(matchCID[0].encode("utf8"))+str(int(time.time()*1000))+videoID)
