@@ -319,6 +319,11 @@ char* amazon(char* link)
 	free(pic), pic = NULL;
 	free(bitrate), bitrate = NULL;
 
+///////////////////////////////////
+	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
+///////////////////////////////////
+
 	debug(99, "streamurl: %s", streamurl);
 	return streamurl;
 }
@@ -719,6 +724,12 @@ int amazon_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 		free(tmpstr), tmpstr = NULL;
 	}
 	free(search), search = NULL;
+
+///////////////////////////////////
+	free(curlretbuf); curlretbuf = NULL;
+	curlretbufsize = 0;
+///////////////////////////////////
+
 	return ret;
 }
 
