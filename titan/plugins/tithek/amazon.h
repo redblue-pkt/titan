@@ -496,7 +496,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 	unlink("/tmp/amazon_search_tmpstr_get");
 
-	char* search = NULL;
+	char* search = NULL, *line = NULL, *url = NULL, *tmpstr2 = NULL, *id = NULL, *streamurl = NULL, *pic = NULL, *title = NULL, *year = NULL, *runtime = NULL, *menu = NULL;
 
 	if(flag == 0)
 	{ 
@@ -506,12 +506,6 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			search = textinputhist(_("Search"), searchstr, "searchhist");
 	}
 
-	char* send = NULL;
-	char* tmppath = NULL;
-	char* tmphost = NULL;
-	char* tmpstr = NULL;
-	char* line = NULL;
-
 	int loginret = 0;
 	loginret = login();
 	printf("loginret=%d\n", loginret);
@@ -520,36 +514,24 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 	else
 		textbox(_("Message"), _("Amazon Prime Login Successful!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 
-//http://www.amazon.de/gp/video/watchlist/movie/?ie=UTF8&show=all&sort=DATE_ADDED_DESC
-
 	if(search != NULL || flag > 0)
 	{
 		drawscreen(load, 0, 0);
 		search = stringreplacechar(search, ' ', '+');
-		char* url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356018031&field-keywords=", search, 0, 0);
-		
+		url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356018031&field-keywords=", search, 0, 0);
+///////////////////////////
+		debug(99, "url: %s", url);
 		curlretbuf = gethttps_get(url, NULL, NULL);
-//		debug(99, "tmpstr: %s", curlretbuf);
 		titheklog(debuglevel, "/tmp/amazon_search_tmpstr_get", NULL, NULL, NULL, curlretbuf);		
-/////////
-char* tmpstr2 = NULL;
-		char* id = NULL;
-		char* streamurl = NULL;
-		char* pic = NULL;
-		char* title = NULL;
-		char* year = NULL;
-		char* runtime = NULL;
-		char* menu = NULL;
+		free(url), url = NULL;
+///////////////////////////
+
 		int count1 = 0;
 		int j = 0;
 
-////////////
 //		tmpstr2 = string_resub("\"value\" : \"<div id=\\\"centerMinus\\\"", "\"tagId\" : \"centerMinus\"", curlretbuf, 0);	
 //		tmpstr2 = string_resub("\"value\" : \"<div id=\\\"centerBelowPlus\\\"", "\"tagId\" : \"centerBelowPlus\"", curlretbuf, 0);	
 		tmpstr2 = ostrcat(curlretbuf, NULL, 0, 0);
-//		printf("tmpstr2: %s\n", tmpstr2);
-
-
 		tmpstr2 = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr2, 1);
 
 		count1 = 0;
@@ -613,7 +595,6 @@ char* tmpstr2 = NULL;
 			}
 		}
 
-
 		if(line != NULL)
 		{
 			menu = ostrcat("/tmp/tithek/amazon.search.list", NULL, 0, 0);
@@ -659,7 +640,22 @@ char* tmpstr2 = NULL;
 ///////
 	}
 
+	free(menu), menu = NULL;
+	free(runtime), runtime = NULL;
+	free(year), year = NULL;
+	free(title), title = NULL;
+	free(pic), pic = NULL;
+	free(streamurl), streamurl = NULL;
+	free(id), id = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	free(line), line = NULL;
+	free(streamurl), streamurl = NULL;
+	free(pic), pic = NULL;
+	free(title), title = NULL;
+	free(year), year = NULL;
+	free(runtime), runtime = NULL;
 	free(search), search = NULL;
+
 	return ret;
 }
 
