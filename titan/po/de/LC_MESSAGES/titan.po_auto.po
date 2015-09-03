@@ -1,4 +1,3 @@
-#: webif_help.h:123
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.67\n"
@@ -955,15 +954,15 @@ msgstr ""
 
 #: amazon.h:521
 msgid "Amazon Prime Login Successful!"
-msgstr ""
+msgstr "Amazon Prime Login erfolgreich!"
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "Amazon Prime Pass"
-msgstr ""
+msgstr "Amazon Prime Passwort"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "Amazon Prime User"
-msgstr ""
+msgstr "Amazon Prime Benutzername"
 
 #: copyfile.h:839
 msgid "Amount of files: "
@@ -7209,6 +7208,8 @@ msgstr "Playlist-Modus"
 msgid ""
 "Please add your Amazon Prime User/Pass in Tithek settings and try again!"
 msgstr ""
+"Bitte ergänzen Sie Ihre Amazon Prime Zugangsdaten in den Tithek "
+"Einstellungen und versuchen Sie es erneut!"
 
 #: skin_default_skin.xml.h:506
 msgid "Please contact Atemio for activation."
