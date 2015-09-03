@@ -7207,10 +7207,9 @@ msgstr "Playlist-Modus"
 
 #: amazon.h:513
 msgid ""
-"Please add your Amazon Prime User/Pass in Tithek settings and try again!"
+"Please Add your Amazon Prime User/Pass in Tithek Settings, and try agaun "
+"later !"
 msgstr ""
-"Bitte ergänzen Sie Ihre Amazon Prime Zugangsdaten in den Tithek "
-"Einstellungen und versuchen Sie es erneut!"
 
 #: skin_default_skin.xml.h:506
 msgid "Please contact Atemio for activation."
@@ -13828,3 +13827,9 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid ""
+#~ "Please add your Amazon Prime User/Pass in Tithek settings and try again!"
+#~ msgstr ""
+#~ "Bitte ergänzen Sie Ihre Amazon Prime Zugangsdaten in den Tithek "
+#~ "Einstellungen und versuchen Sie es erneut!"
