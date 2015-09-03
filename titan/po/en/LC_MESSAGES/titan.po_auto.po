@@ -652,7 +652,7 @@ msgid ""
 "search for new shares."
 msgstr ""
 
-#: networkbrowser.h:1790
+#: networkbrowser.h:1792
 msgid "A mount entry with this name already exists!"
 msgstr "ERROR: A mount with this sharename already exists!"
 
@@ -989,7 +989,7 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: networkbrowser.h:1947
+#: networkbrowser.h:1949
 msgid "Are you sure you want remove this share?"
 msgstr "Are you sure you want to remove this share?"
 
@@ -1031,7 +1031,7 @@ msgstr ""
 "OK = start restore\n"
 "EXIT = abort restore"
 
-#: networkbrowser.h:1795
+#: networkbrowser.h:1797
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
@@ -2192,7 +2192,7 @@ msgstr ""
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 
-#: networkbrowser.h:1915
+#: networkbrowser.h:1917
 msgid "Choose your Shares from the following list"
 msgstr ""
 
@@ -3249,8 +3249,8 @@ msgstr "ERROR: can't set marker in this file"
 #: MultiImage.c:591 MultiImage.c:671 myvideo.h:86 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
 #: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
-#: networkbrowser.h:1783 networkbrowser.h:1790 networkbrowser.h:1795
-#: networkbrowser.h:1947 network.h:284 network.h:299 network.h:335
+#: networkbrowser.h:1785 networkbrowser.h:1792 networkbrowser.h:1797
+#: networkbrowser.h:1949 network.h:284 network.h:299 network.h:335
 #: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
 #: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
@@ -5851,8 +5851,8 @@ msgstr ""
 #: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 myvideo.h:86
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
-#: networkbrowser.h:1211 networkbrowser.h:1783 networkbrowser.h:1790
-#: networkbrowser.h:1795 networkbrowser.h:1947 network.h:436 network.h:577
+#: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
+#: networkbrowser.h:1797 networkbrowser.h:1949 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
@@ -6165,7 +6165,7 @@ msgstr ""
 msgid "Networkbrowser"
 msgstr "Network Browser"
 
-#: networkbrowser.h:1915
+#: networkbrowser.h:1917
 msgid "Networkbrowser - show Shares"
 msgstr "Show shares"
 
@@ -6426,8 +6426,8 @@ msgstr ""
 #: MultiImage.c:533 MultiImage.c:591 MultiImage.c:607 MultiImage.c:671
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
-#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1783
-#: networkbrowser.h:1790 networkbrowser.h:1795 networkbrowser.h:1947
+#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
+#: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
 #: network.h:263 network.h:271 network.h:284 network.h:299 network.h:335
 #: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
 #: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
@@ -8712,7 +8712,7 @@ msgstr ""
 msgid "Setup PIP"
 msgstr ""
 
-#: networkbrowser.h:1783
+#: networkbrowser.h:1785
 msgid "Sharename can't be empty!"
 msgstr "ERROR: Sharename must be entered!"
 
@@ -11791,7 +11791,7 @@ msgstr ""
 msgid "hold"
 msgstr ""
 
-#: networkbrowser.h:1634
+#: networkbrowser.h:1636
 msgid "html"
 msgstr "HTML"
 
@@ -12173,37 +12173,37 @@ msgstr "NFS Server"
 #: mediadbsettings.h:28 mediadbsettings.h:32 mediadbsettings.h:51
 #: mediadbsettings.h:66 mediadbsettings.h:70 moduleconfig.h:243
 #: moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259 moduleconfig.h:263
-#: networkbrowser.h:1637 networkbrowser.h:1641 networkbrowser.h:1650
-#: networkbrowser.h:1655 networkbrowser.h:1659 networkbrowser.h:1689
-#: networkbrowser.h:1693 network.h:691 panel_settings_autostart.h:35
-#: panel_settings_autostart.h:96 panel_settings_autostart.h:113
-#: panel_settings_autostart.h:123 panel_settings_autostart.h:141
-#: panel_settings_autostart.h:150 panel_settings_autostart.h:159
-#: panel_settings_autostart.h:168 panel_settings_autostart.h:177
-#: panel_settings_autostart.h:193 panel_settings_autostart.h:202
-#: panel_settings_autostart.h:211 panel_settings_autostart.h:237
-#: panel_settings_autostart.h:286 panel_settings_autostart.h:295
-#: panel_settings_autostart.h:304 panel_settings_autostart.h:319
-#: panel_settings_autostart.h:328 panel_settings_autostart.h:337
-#: panel_settings_autostart.h:351 panel_settings_autostart.h:360
-#: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
-#: panel_settings_overclocking.h:244 pin.h:109 pin.h:181 pin.h:185 pin.h:199
-#: play.h:583 play.h:590 play.h:605 readerconfig.h:254 rectimer.h:1091
-#: rectimer.h:1096 rectimer.h:1101 rectimer.h:1106 rectimer.h:1111
-#: rectimer.h:1116 rectimer.h:1121 scan.h:1775 scan.h:2254 scan.h:2258
-#: scan.h:2262 scan.h:2266 scan.h:2271 scan.h:2279 scan.h:2283
-#: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
-#: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
-#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
-#: settings_autostart.h:285 settings_autostart.h:305 settings_autostart.h:316
-#: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
-#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
-#: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:59
-#: timeshiftsettings.h:63 tithek_settings.h:37 tithek_settings.h:41
-#: tithek_settings.h:45 tmc.h:531 tmc.h:535 tunerconfig.h:184
-#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277 xupnpd.h:30
+#: networkbrowser.h:1639 networkbrowser.h:1643 networkbrowser.h:1652
+#: networkbrowser.h:1657 networkbrowser.h:1661 networkbrowser.h:1695
+#: network.h:691 panel_settings_autostart.h:35 panel_settings_autostart.h:96
+#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
+#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
+#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
+#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
+#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
+#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
+#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
+#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
+#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
+#: panel_settings_autostart.h:360 panel_settings_overclocking.h:214
+#: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
+#: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
+#: readerconfig.h:254 rectimer.h:1091 rectimer.h:1096 rectimer.h:1101
+#: rectimer.h:1106 rectimer.h:1111 rectimer.h:1116 rectimer.h:1121 scan.h:1775
+#: scan.h:2254 scan.h:2258 scan.h:2262 scan.h:2266 scan.h:2271 scan.h:2279
+#: scan.h:2283 screensaveradjust.h:19 settings_autostart.h:26
+#: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
+#: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
+#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
+#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:595 settings_overclocking.h:214
+#: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:94
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
+#: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
+#: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
+#: xupnpd.h:30
 msgid "no"
 msgstr "No"
 
@@ -12646,7 +12646,7 @@ msgstr "descending size"
 msgid "right"
 msgstr ""
 
-#: networkbrowser.h:1704
+#: networkbrowser.h:1706
 msgid "ro"
 msgstr "read only"
 
@@ -12658,7 +12658,7 @@ msgstr "read buffersize"
 msgid "running"
 msgstr ""
 
-#: networkbrowser.h:1703
+#: networkbrowser.h:1705
 msgid "rw"
 msgstr "read/write"
 
@@ -12886,11 +12886,11 @@ msgstr ""
 msgid "small"
 msgstr ""
 
-#: networkbrowser.h:1633
+#: networkbrowser.h:1635
 msgid "socks4"
 msgstr "Socks4"
 
-#: networkbrowser.h:1632
+#: networkbrowser.h:1634
 msgid "socks5"
 msgstr "Socks5"
 
@@ -12919,16 +12919,16 @@ msgstr "Speed"
 msgid "spinner"
 msgstr ""
 
-#: networkbrowser.h:1629 plugins_networkbrowser_skin.xml.h:29
+#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:29
 #: skins_networkbrowser_skin.xml.h:29
 msgid "ssl"
 msgstr "SSL"
 
-#: networkbrowser.h:1628
+#: networkbrowser.h:1630
 msgid "ssl_control"
 msgstr "SSL control"
 
-#: networkbrowser.h:1627
+#: networkbrowser.h:1629
 msgid "ssl_try"
 msgstr "Try SSL"
 
@@ -13096,7 +13096,7 @@ msgstr ""
 msgid "t"
 msgstr ""
 
-#: networkbrowser.h:1700
+#: networkbrowser.h:1702
 msgid "tcp"
 msgstr "TCP"
 
@@ -13230,7 +13230,7 @@ msgstr "Type"
 msgid "u"
 msgstr ""
 
-#: networkbrowser.h:1699
+#: networkbrowser.h:1701
 msgid "udp"
 msgstr "UDP"
 
@@ -13550,31 +13550,30 @@ msgstr ""
 #: mediadbsettings.h:29 mediadbsettings.h:33 mediadbsettings.h:52
 #: mediadbsettings.h:67 mediadbsettings.h:71 moduleconfig.h:242
 #: moduleconfig.h:252 moduleconfig.h:256 moduleconfig.h:260 moduleconfig.h:264
-#: networkbrowser.h:1638 networkbrowser.h:1642 networkbrowser.h:1651
-#: networkbrowser.h:1656 networkbrowser.h:1660 networkbrowser.h:1688
-#: networkbrowser.h:1694 network.h:692 panel_settings_autostart.h:35
-#: panel_settings_autostart.h:96 panel_settings_autostart.h:113
-#: panel_settings_autostart.h:123 panel_settings_autostart.h:141
-#: panel_settings_autostart.h:150 panel_settings_autostart.h:159
-#: panel_settings_autostart.h:168 panel_settings_autostart.h:177
-#: panel_settings_autostart.h:193 panel_settings_autostart.h:202
-#: panel_settings_autostart.h:211 panel_settings_autostart.h:237
-#: panel_settings_autostart.h:286 panel_settings_autostart.h:295
-#: panel_settings_autostart.h:304 panel_settings_autostart.h:319
-#: panel_settings_autostart.h:328 panel_settings_autostart.h:337
-#: panel_settings_autostart.h:351 panel_settings_overclocking.h:214
-#: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
-#: pin.h:110 pin.h:182 pin.h:200 play.h:581 play.h:588 play.h:603
-#: readerconfig.h:255 rectimer.h:1092 rectimer.h:1097 rectimer.h:1102
-#: rectimer.h:1107 rectimer.h:1112 rectimer.h:1117 rectimer.h:1122 scan.h:1776
-#: scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267 scan.h:2270 scan.h:2280
-#: scan.h:2284 screensaveradjust.h:20 settings_autostart.h:26
-#: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
-#: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
-#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:316
-#: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
-#: settings_autostart.h:502 settings_autostart.h:568 settings_autostart.h:577
-#: settings_autostart.h:586 settings_autostart.h:595
+#: networkbrowser.h:1640 networkbrowser.h:1644 networkbrowser.h:1653
+#: networkbrowser.h:1658 networkbrowser.h:1662 networkbrowser.h:1696
+#: network.h:692 panel_settings_autostart.h:35 panel_settings_autostart.h:96
+#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
+#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
+#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
+#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
+#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
+#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
+#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
+#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
+#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
+#: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
+#: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
+#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1092 rectimer.h:1097
+#: rectimer.h:1102 rectimer.h:1107 rectimer.h:1112 rectimer.h:1117
+#: rectimer.h:1122 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
+#: scan.h:2270 scan.h:2280 scan.h:2284 screensaveradjust.h:20
+#: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
+#: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
+#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:38 tithek_settings.h:42
