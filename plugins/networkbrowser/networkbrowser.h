@@ -1591,6 +1591,8 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 		tmpstr = ostrcat(node->sharename, "-", 0, 0);
 		tmpstr = ostrcat(tmpstr, node->sharedir, 1, 0);
 		tmpstr = string_replace_all("/", "-", tmpstr, 1);
+		tmpstr = string_replace_all(" ", "-", tmpstr, 1);
+		tmpstr = string_replace_all("--", "-", tmpstr, 1);
 		changeinput(skin_sharename, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
@@ -1683,16 +1685,16 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	if(newnode == 0 && checkhddreplacement(node->sharename) == 1)
 		tmpstr = ostrcat(tmpstr, "1", 1, 0);
 
-	if(ostrcmp(node->sharedir, "Aufnahme") == 0 || ostrcmp(node->sharedir, "record") == 0)	
-	{
-		addchoicebox(skin_hddreplacement, "1", _("yes"));
+//	if(ostrcmp(node->sharedir, "Aufnahme") == 0 || ostrcmp(node->sharedir, "record") == 0)	
+//	{
+//		addchoicebox(skin_hddreplacement, "1", _("yes"));
+//		addchoicebox(skin_hddreplacement, "0", _("no"));
+//	}
+//	else
+//	{
 		addchoicebox(skin_hddreplacement, "0", _("no"));
-	}
-	else
-	{
-		addchoicebox(skin_hddreplacement, "0", _("no"));
 		addchoicebox(skin_hddreplacement, "1", _("yes"));
-	}
+//	}
 	setchoiceboxselection(skin_hddreplacement, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
