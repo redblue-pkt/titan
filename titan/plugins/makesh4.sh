@@ -70,9 +70,9 @@ compile()
 	-c $2.c -o $2.o
 
 	if [ ! -z $3 ]; then
-		$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os $devflag -shared -Wl,-soname,$2.so -o $2.so $2.o $3.a
+		$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os $devflag -shared -Wl,-soname,$2.so -o $2.so $2.o $3.a $4
 	else
-		$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os $devflag -shared -Wl,-soname,$2.so -o $2.so $2.o
+		$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os $devflag -shared -Wl,-soname,$2.so -o $2.so $2.o $4
 	fi
 
 	$HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-strip $2.so
