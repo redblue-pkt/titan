@@ -140,8 +140,8 @@ compile "xupnpd" "xupnpd" "" ""
 compile "wm2014" "wm2014" "" ""
 
 cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make curl
-make curl
+echo make libcurl
+make libcurl
 
 cd "$HOME"/flashimg/$SRCDIR/plugins
 compile "facebook" "facebook" "" "-l curl"
