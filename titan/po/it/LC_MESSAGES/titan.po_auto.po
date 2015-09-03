@@ -6971,8 +6971,7 @@ msgstr ""
 
 #: amazon.h:513
 msgid ""
-"Please Add your Amazon Prime User/Pass in Tithek Settings, and try agaun "
-"later !"
+"Please add your Amazon Prime User/Pass in Tithek settings and try again."
 msgstr ""
 
 #: skin_default_skin.xml.h:506
