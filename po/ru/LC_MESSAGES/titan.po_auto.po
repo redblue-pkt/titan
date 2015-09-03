@@ -933,7 +933,7 @@ msgstr ""
 msgid "Amazon Prime"
 msgstr ""
 
-#: amazon.h:418
+#: amazon.h:516
 msgid "Amazon Prime Login Successful!"
 msgstr ""
 
@@ -2189,7 +2189,7 @@ msgstr "Выберите способ сброса настроек из спи�
 msgid "Choose your Shares from the following list"
 msgstr "Выберите для изменения, добавления новой сетевой папки"
 
-#: ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:300 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
@@ -3185,7 +3185,7 @@ msgstr "Ошибка. Автотаймер не остановлен!"
 msgid "ERROR... can't set marker in this file"
 msgstr "Ошибка. Нельзя установить маркер на этот файл"
 
-#: about.h:9 amazon.h:111 amazon.h:416 amazon.h:418 autotimer.c:537
+#: about.h:9 amazon.h:111 amazon.h:514 amazon.h:516 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: channellist.h:945 channellist.h:947 channellist.h:952 channellist.h:954
@@ -5792,7 +5792,7 @@ msgstr "Меню не реализовано!"
 msgid "Menulist"
 msgstr ""
 
-#: amazon.h:111 amazon.h:416 amazon.h:418 avsettings.h:331 betarobot.h:57
+#: amazon.h:111 amazon.h:514 amazon.h:516 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334
@@ -6357,7 +6357,7 @@ msgstr ""
 msgid "OE"
 msgstr ""
 
-#: about.h:9 amazon.h:111 amazon.h:416 amazon.h:418 autotimer.c:537
+#: about.h:9 amazon.h:111 amazon.h:514 amazon.h:516 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
@@ -7026,7 +7026,7 @@ msgstr ""
 msgid "Playlist-Mode"
 msgstr "Вид плейлиста"
 
-#: amazon.h:416
+#: amazon.h:514
 msgid ""
 "Please Add your Amazon Prime User/Pass in Tithek Settings, and try agaun "
 "later !"
@@ -8380,7 +8380,7 @@ msgstr "Выполнение скриптов"
 msgid "Script has no output or started in background."
 msgstr "Скрипт не имеет выхода или запущен в фоне"
 
-#: amazon.h:401 amazon.h:403 amazon.h:572 amazon.h:574 ard.h:126 ard.h:128
+#: amazon.h:499 amazon.h:501 amazon.h:670 amazon.h:672 ard.h:126 ard.h:128
 #: beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193 epgsearch.h:207
 #: filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287 imdb.h:712
 #: internetradio.h:13 internetradio.h:15 internettv.h:13 internettv.h:15
@@ -9232,7 +9232,7 @@ msgstr "Стрим-конфиг (iOS)"
 msgid "Stream Link"
 msgstr ""
 
-#: ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:300 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr "Меню потока"
 
