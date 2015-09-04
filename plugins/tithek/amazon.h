@@ -450,7 +450,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 						line = ostrcat(line, pic, 1, 0);
 						line = ostrcat(line, "#amazon_search_", 1, 0);
 						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
-						line = ostrcat(line, ".jpg#Amazon Instant Video - Search#75\n", 1, 0);
+						line = ostrcat(line, ".jpg#Amazon - Search#75\n", 1, 0);
 					}
 					
 					free(id), id = NULL;
