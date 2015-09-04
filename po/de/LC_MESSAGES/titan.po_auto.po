@@ -13827,13 +13827,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Amazon Prime Login Successful!"
-#~ msgstr "Amazon Prime Login erfolgreich!"
-
-#~ msgid ""
-#~ "Please add your Amazon Prime User/Pass in Tithek settings and try again."
-#~ msgstr ""
-#~ "Bitte ergänzen Sie Ihre Amazon Prime Zugangsdaten in den Tithek "
-#~ "Einstellungen\n"
-#~ "und versuchen Sie es erneut."
