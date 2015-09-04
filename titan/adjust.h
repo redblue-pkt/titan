@@ -246,14 +246,14 @@ void screenadjust()
 	}
 	setchoiceboxselection(dualboot, getconfig("dualboot", NULL));
 
-	changemask(community_user, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(community_user, getconfig("community_user", NULL));
-
-//	changemask(community_pass, "abcdefghijklmnopqrstuvwxyz");
-//	changeinput(community_pass, getconfig("community_pass", NULL));
+	changemask(community_user, "****");
+	if(getconfig("community_user", NULL) == NULL)
+		changeinput(community_user, getconfig("community_user", NULL));
+	else
+		changeinput(community_pass, "****");
+		
 	changemask(community_pass, "****");
-
-	if(getconfig("community_pass", NULL) != NULL && strlen(getconfig("community_pass", NULL)) != 32)
+	if(getconfig("community_pass", NULL) == NULL)
 		changeinput(community_pass, getconfig("community_pass", NULL));
 	else
 		changeinput(community_pass, "****");
@@ -477,7 +477,7 @@ void screenadjust()
 	addchoicebox(playerbufferseektime, "9", "9");
 	addchoicebox(playerbufferseektime, "10", "10");
 	setchoiceboxselection(playerbufferseektime, getconfig("playerbufferseektime", NULL));
-	
+
 	drawscreen(adjust, 0, 0);
 	addscreenrc(adjust, listbox);
 
@@ -588,9 +588,16 @@ void screenadjust()
 			addconfigscreencheck("debuglevel", debuglevel, "0");
 			setdebuglevel();
 #endif
-
-			addconfigscreen("community_user", community_user);
-			// hid pass text and convert to md5sum
+			if(community_user->ret != NULL && ostrcmp(community_user->ret, "****") != 0)
+			{
+				debug(99, "community_user: write");
+				debug(99, "community_user: %s", community_user->ret);
+				addconfigscreen("community_user", community_user);
+			}
+			else
+			{
+				debug(99, "community_user: skipped");
+			}
 			if(community_pass->ret != NULL && ostrcmp(community_pass->ret, "****") != 0)
 			{
 				debug(99, "community_pass: write");
@@ -603,12 +610,12 @@ void screenadjust()
 			}
 			writeallconfig(1);
 
-			debug(99, "community_pass_read: %s", getconfig("community_pass", NULL));
+			debug(99, "community_user read: %s", getconfig("community_user", NULL));
+			debug(99, "community_pass read: %s", getconfig("community_pass", NULL));
 
 			break;
 		}
 	}
-
 	delownerrc(adjust);
 	clearscreen(adjust);
 }

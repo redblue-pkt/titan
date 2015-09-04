@@ -103,8 +103,8 @@ void screentithek_settings()
 			}
 			writeallconfig(1);
 
-			debug(99, "amazon_user_read: %s", getconfig("amazon_user", NULL));
-			debug(99, "amazon_pass_read: %s", getconfig("amazon_pass", NULL));
+			debug(99, "amazon_user read: %s", getconfig("amazon_user", NULL));
+			debug(99, "amazon_pass read: %s", getconfig("amazon_pass", NULL));
 			
 			break;
 		}
