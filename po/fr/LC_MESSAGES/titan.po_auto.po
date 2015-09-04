@@ -5345,10 +5345,6 @@ msgstr ""
 msgid "Logo 2"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
-msgid "Logout"
-msgstr ""
-
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
 msgstr ""
@@ -5693,7 +5689,7 @@ msgstr ""
 msgid "Menu Protect"
 msgstr "Protéger Menu"
 
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
 msgid "Menu Title"
 msgstr ""
 
@@ -6558,9 +6554,9 @@ msgstr ""
 msgid "PCR PID:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:12
+#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:11
 #: skin_default_skin.xml.h:492 skins_mc_skin.xml.h:39
-#: skins_tithek_skin.xml.h:12
+#: skins_tithek_skin.xml.h:11
 msgid "PICTURE"
 msgstr "Photo Player"
 
@@ -6718,7 +6714,7 @@ msgstr ""
 msgid "Pic HW-decode"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 msgid "Pic Link"
 msgstr ""
 
@@ -6726,7 +6722,7 @@ msgstr ""
 msgid "Pic Name"
 msgstr "Nom"
 
-#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Pic Ratio"
 msgstr ""
 
@@ -7512,8 +7508,8 @@ msgstr "Bouton Rouge"
 msgid "Red Key Action - Setup"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:14 skin_default_skin.xml.h:555
-#: skins_tithek_skin.xml.h:14
+#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:555
+#: skins_tithek_skin.xml.h:13
 msgid "Red-Menu"
 msgstr ""
 
@@ -7559,6 +7555,10 @@ msgstr ""
 
 #: tithek.h:1218
 msgid "Remove Cachefile ?"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
+msgid "Remove Cookies"
 msgstr ""
 
 #: httpdfunc.h:6409 httpdfunc.h:6419
@@ -12303,8 +12303,8 @@ msgstr ""
 msgid "please wait"
 msgstr ""
 
-#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:13
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1205
+#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1205
 msgid "please wait..."
 msgstr "Veuillez attendre..."
 
