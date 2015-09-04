@@ -881,6 +881,7 @@ int converte2settings(int flag);
 char* getmoviedev();
 void wakeup_record_device();
 char* getaspect();
+char* randomstring(int n);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
