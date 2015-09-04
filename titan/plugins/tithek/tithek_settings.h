@@ -117,17 +117,17 @@ void screentithek_settings()
 		{
 			unlink("/mnt/network/cookies");
 		}
+
+		if(file_exist("/mnt/network/cookies") && (ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0))
+			b4->hidden = NO;			
+		else
+			b4->hidden = YES;
 	
 		if(ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0)
-		{
 			b3->hidden = NO;
-			b4->hidden = NO;			
-		}
 		else
-		{
 			b3->hidden = YES;
-			b4->hidden = YES;
-		}
+
 		drawscreen(tithek_settings, 0, 0);
 	}
 
