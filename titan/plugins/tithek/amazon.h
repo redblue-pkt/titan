@@ -321,7 +321,6 @@ int login()
 		tmpstr = gethttps("https://www.amazon.de/ap/signin", hash);
 //		debug(99, "ret=%s", tmpstr);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_post1", NULL, NULL, NULL, tmpstr);	
-		if(checkamazonerror() == 1) return 1;
 		free(tmpstr), tmpstr = NULL;
 
 		tmpstr = gethttps("https://www.amazon.de/", NULL);
