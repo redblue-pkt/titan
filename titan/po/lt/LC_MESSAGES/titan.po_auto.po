@@ -5445,10 +5445,6 @@ msgstr ""
 msgid "Logo 2"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
-msgid "Logout"
-msgstr ""
-
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
 msgstr ""
@@ -5795,7 +5791,7 @@ msgstr "Meniu"
 msgid "Menu Protect"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
 msgid "Menu Title"
 msgstr ""
 
@@ -6667,9 +6663,9 @@ msgstr ""
 msgid "PCR PID:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:12
+#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:11
 #: skin_default_skin.xml.h:492 skins_mc_skin.xml.h:39
-#: skins_tithek_skin.xml.h:12
+#: skins_tithek_skin.xml.h:11
 msgid "PICTURE"
 msgstr "Nuotraukos"
 
@@ -6827,7 +6823,7 @@ msgstr ""
 msgid "Pic HW-decode"
 msgstr "Picture Hardware-decoder"
 
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 msgid "Pic Link"
 msgstr "Nuoroda"
 
@@ -6835,7 +6831,7 @@ msgstr "Nuoroda"
 msgid "Pic Name"
 msgstr "Vardas"
 
-#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Pic Ratio"
 msgstr "Santykis"
 
@@ -7636,8 +7632,8 @@ msgstr ""
 msgid "Red Key Action - Setup"
 msgstr "Raudonas mygtukas veiksmas - sranka"
 
-#: plugins_tithek_skin.xml.h:14 skin_default_skin.xml.h:555
-#: skins_tithek_skin.xml.h:14
+#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:555
+#: skins_tithek_skin.xml.h:13
 msgid "Red-Menu"
 msgstr ""
 
@@ -7684,6 +7680,10 @@ msgstr ""
 #: tithek.h:1218
 msgid "Remove Cachefile ?"
 msgstr "Ivalyti talpykl ?"
+
+#: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
+msgid "Remove Cookies"
+msgstr ""
 
 #: httpdfunc.h:6409 httpdfunc.h:6419
 msgid "Remove Log:"
@@ -12468,8 +12468,8 @@ msgstr ""
 msgid "please wait"
 msgstr ""
 
-#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:13
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1205
+#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1205
 msgid "please wait..."
 msgstr "Praome laukti..."
 

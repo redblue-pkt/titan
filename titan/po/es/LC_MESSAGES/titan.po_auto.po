@@ -5483,10 +5483,6 @@ msgstr "Imagen de saltos"
 msgid "Logo 2"
 msgstr "Ver imagen del desplazamiento"
 
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
-msgid "Logout"
-msgstr ""
-
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
 msgstr ""
@@ -5837,7 +5833,7 @@ msgstr ""
 msgid "Menu Protect"
 msgstr "Protejer Menu"
 
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
 msgid "Menu Title"
 msgstr "Menu Titulo"
 
@@ -6709,9 +6705,9 @@ msgstr ""
 msgid "PCR PID:"
 msgstr "PCR PID: "
 
-#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:12
+#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:11
 #: skin_default_skin.xml.h:492 skins_mc_skin.xml.h:39
-#: skins_tithek_skin.xml.h:12
+#: skins_tithek_skin.xml.h:11
 msgid "PICTURE"
 msgstr "Foto"
 
@@ -6869,7 +6865,7 @@ msgstr ""
 msgid "Pic HW-decode"
 msgstr "Foto Hardware-decodificacion"
 
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 msgid "Pic Link"
 msgstr "Link"
 
@@ -6877,7 +6873,7 @@ msgstr "Link"
 msgid "Pic Name"
 msgstr "Nombre"
 
-#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Pic Ratio"
 msgstr "Mostrar las imágenes en su formato original"
 
@@ -7684,8 +7680,8 @@ msgstr "Boton Rojo"
 msgid "Red Key Action - Setup"
 msgstr "Rojo Key - configuracion"
 
-#: plugins_tithek_skin.xml.h:14 skin_default_skin.xml.h:555
-#: skins_tithek_skin.xml.h:14
+#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:555
+#: skins_tithek_skin.xml.h:13
 msgid "Red-Menu"
 msgstr ""
 
@@ -7732,6 +7728,10 @@ msgstr ""
 #: tithek.h:1218
 msgid "Remove Cachefile ?"
 msgstr "Borrar cache?"
+
+#: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
+msgid "Remove Cookies"
+msgstr ""
 
 #: httpdfunc.h:6409 httpdfunc.h:6419
 msgid "Remove Log:"
@@ -12531,8 +12531,8 @@ msgstr ""
 msgid "please wait"
 msgstr "Por Favor Espere"
 
-#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:13
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1205
+#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1205
 msgid "please wait..."
 msgstr "Espere por favor ..."
 
