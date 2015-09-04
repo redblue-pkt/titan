@@ -1488,7 +1488,7 @@ void delspezchar(char* text, int flag)
 			if(tmpstr[0] == '/') tmpstr[0] = '-';
 			if(flag == 2)
 			{
-				if(tmpstr[0] == '§') tmpstr[0] = '-';
+				if(tmpstr[0] == 'ï¿½') tmpstr[0] = '-';
 				if(tmpstr[0] == '<') tmpstr[0] = '-';
  				if(tmpstr[0] == '>') tmpstr[0] = '-';
 				if(tmpstr[0] == ':') tmpstr[0] = '-';
@@ -7228,5 +7228,22 @@ char* create_backuprestore()
 	char* tmpstr = ostrcat(_("Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!"), NULL, 0, 0);
 	return tmpstr;
 }
+char* randomstring(int n)
+{
+    int i, wert;
+    time_t t;
+    char* tmp = malloc(n+1);
+
+    /* Intializes random number generator */
+    srand((unsigned) time(&t));
+    for( i = 0 ; i < n ; i++ ) 
+    {
+        wert = rand() % 9;
+        sprintf(tmp+i, "%d", wert);
+    }
+    tmp[i] = '\0';
+    return tmp;
+}
+
 
 #endif
