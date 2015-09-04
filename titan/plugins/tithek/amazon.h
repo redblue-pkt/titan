@@ -128,7 +128,7 @@ char* amazon(char* link)
 	int count = 0, i = 0;	
 	struct splitstr* ret1 = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
-	ret1 = strsplit(string_decode(tmpstr, 0), "\n", &count);
+	ret1 = strsplit(tmpstr, "\n", &count);
 	for(i = 0; i < count; i++)
 	{
 		if(ostrstr(ret1[i].part, "f4m") != NULL)
@@ -180,7 +180,10 @@ end:
 	free(devicetypeid), devicetypeid = NULL;
 	free(apimain), apimain = NULL;
 	free(token), token = NULL;
+	printf("11111111\n");
 	free(tmpstr), tmpstr = NULL;
+	printf("22222222\n");
+
 	free(title), title = NULL;
 	free(pic), pic = NULL;
 	free(bitrate), bitrate = NULL;
