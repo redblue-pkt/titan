@@ -31,8 +31,8 @@
 		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"    posx="0"   posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png"  posx="70"  posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b3" picmem="skin/key_text_70x40.png" posx="140" posy="center" width="70" height="40"valign="middle" >
-		<node parent="buttonbar" name="b4" picmem="skin/key_red_30x30.png" posx="220" posy="center" width="280" height="30" valign="middle" textposx="40" text="Logout">
-		<node parent="buttonbar" name="b5" picmem="skin/key_green_30x30.png" posx="420" posy="center" width="280" height="30" valign="middle" textposx="40" text="Screensaver">
+		<node parent="buttonbar" name="b4" picmem="skin/key_red_30x30.png" posx="220" posy="center" width="280" height="30" valign="middle" textposx="40" text="Remove Cookies">
+		<node parent="buttonbar" name="b5" picmem="skin/key_green_30x30.png" posx="440" posy="center" width="280" height="30" valign="middle" textposx="40" text="Screensaver">
 </screen>
 
 
