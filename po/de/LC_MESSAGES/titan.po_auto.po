@@ -1,4 +1,3 @@
-#: webif_help.h:123
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.67\n"
@@ -7212,7 +7211,8 @@ msgid ""
 "Please add your Amazon Prime User/Pass in Tithek settings and try again."
 msgstr ""
 "Bitte ergänzen Sie Ihre Amazon Prime Zugangsdaten in den Tithek "
-"Einstellungen und versuchen Sie es erneut"
+"Einstellungen\n"
+"und versuchen Sie es erneut."
 
 #: skin_default_skin.xml.h:506
 msgid "Please contact Atemio for activation."
