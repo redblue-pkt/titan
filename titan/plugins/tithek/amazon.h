@@ -378,9 +378,9 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 	loginret = login();
 	printf("loginret=%d\n", loginret);
 	if(loginret == 0)
-		textbox(_("Message"), _("Please add your Amazon Prime User/Pass in Tithek settings and try again."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 200, 0, 0);
+		textbox(_("Message"), _("Amazon login not successful! Please check Amazon Prime User/Pass in Tithek settings and try again."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 200, 0, 0);
 	else
-		textbox(_("Message"), _("Amazon Prime Login Successful!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+		textbox(_("Message"), _("Amazon Prime login successful!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 
 	if(search != NULL || flag > 0)
 	{
