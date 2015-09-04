@@ -933,7 +933,7 @@ msgstr ""
 msgid "Amazon Prime"
 msgstr ""
 
-#: amazon.h:384
+#: amazon.h:383
 msgid "Amazon Prime Login Successful!"
 msgstr ""
 
@@ -3181,7 +3181,7 @@ msgstr "Ошибка. Автотаймер не остановлен!"
 msgid "ERROR... can't set marker in this file"
 msgstr "Ошибка. Нельзя установить маркер на этот файл"
 
-#: about.h:9 amazon.h:122 amazon.h:382 amazon.h:384 autotimer.c:537
+#: about.h:9 amazon.h:122 amazon.h:381 amazon.h:383 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: channellist.h:945 channellist.h:947 channellist.h:952 channellist.h:954
@@ -5788,7 +5788,7 @@ msgstr "Меню не реализовано!"
 msgid "Menulist"
 msgstr ""
 
-#: amazon.h:122 amazon.h:382 amazon.h:384 avsettings.h:331 betarobot.h:57
+#: amazon.h:122 amazon.h:381 amazon.h:383 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334
@@ -6353,7 +6353,7 @@ msgstr ""
 msgid "OE"
 msgstr ""
 
-#: about.h:9 amazon.h:122 amazon.h:382 amazon.h:384 autotimer.c:537
+#: about.h:9 amazon.h:122 amazon.h:381 amazon.h:383 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
@@ -7022,7 +7022,7 @@ msgstr ""
 msgid "Playlist-Mode"
 msgstr "Вид плейлиста"
 
-#: amazon.h:382
+#: amazon.h:381
 msgid ""
 "Please add your Amazon Prime User/Pass in Tithek settings and try again."
 msgstr ""
@@ -8379,7 +8379,7 @@ msgstr "Выполнение скриптов"
 msgid "Script has no output or started in background."
 msgstr "Скрипт не имеет выхода или запущен в фоне"
 
-#: amazon.h:373 amazon.h:375 amazon.h:542 amazon.h:544 ard.h:126 ard.h:128
+#: amazon.h:372 amazon.h:374 amazon.h:541 amazon.h:543 ard.h:126 ard.h:128
 #: beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193 epgsearch.h:207
 #: filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287 imdb.h:712
 #: internetradio.h:13 internetradio.h:15 internettv.h:13 internettv.h:15
