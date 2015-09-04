@@ -598,8 +598,9 @@ void screenadjust()
 				addconfigscreen("community_pass", community_pass);
 			}
 			else
+			{
 				debug(99, "community_pass: skipped");
-
+			}
 			writeallconfig(1);
 
 			debug(99, "community_pass_read: %s", getconfig("community_pass", NULL));

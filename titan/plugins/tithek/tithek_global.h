@@ -67,8 +67,8 @@ char* gethttps(char* url, char* data)
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0L);
 		if(debuglevel == 99)
 			curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 1);
-		curl_easy_setopt(curl_handle, CURLOPT_COOKIEFILE, "/var/usr/local/share/titan/plugins/tithek/cookie.txt");
-		curl_easy_setopt(curl_handle, CURLOPT_COOKIEJAR, "/var/usr/local/share/titan/plugins/tithek/cookie.txt");
+		curl_easy_setopt(curl_handle, CURLOPT_COOKIEFILE, "/mnt/network/cookies");
+		curl_easy_setopt(curl_handle, CURLOPT_COOKIEJAR, "/mnt/network/cookies");
 		curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
 		curl_easy_setopt(curl_handle, CURLOPT_AUTOREFERER, 1L);
 

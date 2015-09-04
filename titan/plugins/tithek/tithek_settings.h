@@ -15,6 +15,8 @@ void screentithek_settings()
 	struct skin* hidxxx = getscreennode(tithek_settings, "hidxxx");
 	struct skin* amazon_user = getscreennode(tithek_settings, "amazon_user");
 	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
+	struct skin* b3 = getscreennode(tithek_settings, "b3");
+	struct skin* b4 = getscreennode(tithek_settings, "b4");
 
 	addchoicebox(cover, "0", _("show auto entrys"));
 	addchoicebox(cover, "1", _("show 2 entrys"));
@@ -47,10 +49,19 @@ void screentithek_settings()
 	setchoiceboxselection(hidxxx, getconfig("tithek_hid_xxx", NULL));
 
 	changemask(amazon_user, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(amazon_user, getconfig("amazon_user", NULL));
+	if(getconfig("amazon_pass", NULL) == NULL)
+		changeinput(amazon_user, getconfig("amazon_user", NULL));
+	else
+		changeinput(amazon_user, "****");
 
 	changemask(amazon_pass, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(amazon_pass, getconfig("amazon_pass", NULL));
+	if(getconfig("amazon_pass", NULL) == NULL)
+		changeinput(amazon_pass, getconfig("amazon_pass", NULL));
+	else
+		changeinput(amazon_pass, "****");
+
+	b3->hidden = YES;
+	b4->hidden = YES;
 
 	drawscreen(tithek_settings, 0, 0);
 	addscreenrc(tithek_settings, listbox);
@@ -70,16 +81,55 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_pay", pay, NULL);
 			addconfigscreencheck("tithek_pic_ratio", picratio, NULL);
 			addconfigscreencheck("tithek_hid_xxx", hidxxx, NULL);
-			addconfigscreen("amazon_user", amazon_user);
-			addconfigscreen("amazon_pass", amazon_pass);
+			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
+			{
+				debug(99, "amazon_user: write");
+				debug(99, "amazon_user: %s", amazon_user->ret);
+				addconfigscreen("amazon_user", amazon_user);
+			}
+			else
+			{
+				debug(99, "amazon_user: skipped");
+			}
+			if(amazon_pass->ret != NULL && ostrcmp(amazon_pass->ret, "****") != 0)
+			{
+				debug(99, "amazon_pass: write");
+				debug(99, "amazon_pass: %s", amazon_pass->ret);
+				addconfigscreen("amazon_pass", amazon_pass);
+			}
+			else
+			{
+				debug(99, "amazon_pass: skipped");
+			}
+			writeallconfig(1);
+
+			debug(99, "amazon_user_read: %s", getconfig("amazon_user", NULL));
+			debug(99, "amazon_pass_read: %s", getconfig("amazon_pass", NULL));
+			
 			break;
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			screenscreensaveradjust();
 			drawscreen(tithek_settings, 0, 0);
-		}	
-  }
+		}
+		else if(rcret == getrcconfigint("rcred", NULL))
+		{
+			unlink("/mnt/network/cookies");
+		}
+	
+		if(ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0)
+		{
+			b3->hidden = NO;
+			b4->hidden = NO;			
+		}
+		else
+		{
+			b3->hidden = YES;
+			b4->hidden = YES;
+		}
+		drawscreen(tithek_settings, 0, 0);
+	}
 
 	delownerrc(tithek_settings);
 	clearscreen(tithek_settings);
