@@ -5426,6 +5426,10 @@ msgstr "Лого 1"
 msgid "Logo 2"
 msgstr "Лого 2"
 
+#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
+msgid "Logout"
+msgstr ""
+
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
 msgstr "Логи"
@@ -5776,7 +5780,7 @@ msgstr "Меню"
 msgid "Menu Protect"
 msgstr "Защита меню"
 
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
+#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 msgid "Menu Title"
 msgstr "Название меню"
 
@@ -6646,9 +6650,9 @@ msgstr ""
 msgid "PCR PID:"
 msgstr "PCR PID"
 
-#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:11
+#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:12
 #: skin_default_skin.xml.h:492 skins_mc_skin.xml.h:39
-#: skins_tithek_skin.xml.h:11
+#: skins_tithek_skin.xml.h:12
 msgid "PICTURE"
 msgstr "Картинка"
 
@@ -6806,7 +6810,7 @@ msgstr "Переключение PiP"
 msgid "Pic HW-decode"
 msgstr "HW-декодирование"
 
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Pic Link"
 msgstr ""
 
@@ -6814,7 +6818,7 @@ msgstr ""
 msgid "Pic Name"
 msgstr "Имя фото"
 
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Pic Ratio"
 msgstr "Оригинальный формат изображения"
 
@@ -7617,8 +7621,8 @@ msgstr "Красная кнопка"
 msgid "Red Key Action - Setup"
 msgstr "Выбор"
 
-#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:555
-#: skins_tithek_skin.xml.h:13
+#: plugins_tithek_skin.xml.h:14 skin_default_skin.xml.h:555
+#: skins_tithek_skin.xml.h:14
 msgid "Red-Menu"
 msgstr "Поиск"
 
@@ -8204,8 +8208,8 @@ msgstr "Фантастика"
 msgid "Score:"
 msgstr "Оценка"
 
-#: adjust.h:302 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:14
-#: skins_mc_skin.xml.h:49 skins_tithek_skin.xml.h:14
+#: adjust.h:302 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:15
+#: skins_mc_skin.xml.h:49 skins_tithek_skin.xml.h:15
 msgid "Screensaver"
 msgstr "Заставка"
 
@@ -8721,7 +8725,7 @@ msgstr "Показать свободное пространство HDD"
 msgid "Show Modules"
 msgstr "Показать модули"
 
-#: plugins_tithek_skin.xml.h:15 skins_tithek_skin.xml.h:15
+#: plugins_tithek_skin.xml.h:16 skins_tithek_skin.xml.h:16
 msgid "Show Pay Streams"
 msgstr "Показывать потоки платных каналов"
 
@@ -9223,7 +9227,7 @@ msgstr "Поток"
 msgid "Stream Config (iOS)"
 msgstr "Стрим-конфиг (iOS)"
 
-#: plugins_tithek_skin.xml.h:16 skins_tithek_skin.xml.h:16
+#: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
 msgid "Stream Link"
 msgstr ""
 
@@ -9716,11 +9720,11 @@ msgstr "Четверг"
 msgid "TiTan Mediathek"
 msgstr "Медиотека TiTan"
 
-#: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
+#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
 msgid "TiThek - Favorite Edit"
 msgstr "Редактор фаворитов"
 
-#: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
+#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
 msgid "TiThek Menu"
 msgstr "Главное меню"
 
@@ -9728,7 +9732,7 @@ msgstr "Главное меню"
 msgid "TiThek Select Color"
 msgstr "Выберите цвет выделения файлов в медиатеке"
 
-#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
+#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
 msgid "TiThek Settings"
 msgstr "Настройки медиа центра"
 
@@ -9942,8 +9946,8 @@ msgstr ""
 msgid "Tithek/HTTP Header/Community"
 msgstr ""
 
-#: mediadb.h:2518 plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:738
-#: skins_tithek_skin.xml.h:18
+#: mediadb.h:2518 plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:738
+#: skins_tithek_skin.xml.h:19
 msgid "Title"
 msgstr "Название"
 
@@ -10252,8 +10256,8 @@ msgstr "Два шага приглушения звука"
 msgid "Typ"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:773
-#: skins_tithek_skin.xml.h:19
+#: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:773
+#: skins_tithek_skin.xml.h:20
 msgid "Type"
 msgstr "Тип"
 
@@ -10531,11 +10535,11 @@ msgstr "Вьетнамский"
 msgid "View"
 msgstr "Вид"
 
-#: plugins_tithek_skin.xml.h:20 skins_tithek_skin.xml.h:20
+#: plugins_tithek_skin.xml.h:21 skins_tithek_skin.xml.h:21
 msgid "View Cover"
 msgstr "Как отображать миниатюры"
 
-#: plugins_tithek_skin.xml.h:21 skins_tithek_skin.xml.h:21
+#: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
 msgid "View Sections"
 msgstr "Как отображать разделы меню"
 
@@ -12162,8 +12166,8 @@ msgstr "Автостарт NFS сервера"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_overclocking.h:214
 #: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
-#: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:39
+#: tithek_settings.h:43 tithek_settings.h:47 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 #: xupnpd.h:30
 msgid "no"
@@ -12436,8 +12440,8 @@ msgstr ""
 msgid "please wait"
 msgstr "Ждите!"
 
-#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1205
+#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:13
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1205
 msgid "please wait..."
 msgstr "Пожалуйста ждите!"
 
@@ -12776,31 +12780,31 @@ msgstr "Имя папки"
 msgid "shortepg"
 msgstr ""
 
-#: tithek_settings.h:22 tithek_settings.h:31
+#: tithek_settings.h:24 tithek_settings.h:33
 msgid "show 12 entrys"
 msgstr "По 12 на экране"
 
-#: tithek_settings.h:20 tithek_settings.h:29
+#: tithek_settings.h:22 tithek_settings.h:31
 msgid "show 2 entrys"
 msgstr "По 2 на экране"
 
-#: tithek_settings.h:23 tithek_settings.h:32
+#: tithek_settings.h:25 tithek_settings.h:34
 msgid "show 20 entrys"
 msgstr "По 20 на экране"
 
-#: tithek_settings.h:24 tithek_settings.h:33
+#: tithek_settings.h:26 tithek_settings.h:35
 msgid "show 30 entrys"
 msgstr "По 30 на экране"
 
-#: tithek_settings.h:21 tithek_settings.h:30
+#: tithek_settings.h:23 tithek_settings.h:32
 msgid "show 6 entrys"
 msgstr "По 6 на экране"
 
-#: tithek_settings.h:19 tithek_settings.h:28
+#: tithek_settings.h:21 tithek_settings.h:30
 msgid "show auto entrys"
 msgstr "Автоматически"
 
-#: tithek_settings.h:25 tithek_settings.h:34
+#: tithek_settings.h:27 tithek_settings.h:36
 msgid "show in list"
 msgstr "В виде списка"
 
@@ -13543,8 +13547,8 @@ msgstr "Жёлтая"
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:38 tithek_settings.h:42
-#: tithek_settings.h:46 tmc.h:532 tmc.h:536 xupnpd.h:30
+#: timeshiftsettings.h:62 tithek_settings.h:40 tithek_settings.h:44
+#: tithek_settings.h:48 tmc.h:532 tmc.h:536 xupnpd.h:30
 msgid "yes"
 msgstr "Да"
 
