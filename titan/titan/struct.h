@@ -62,6 +62,7 @@
 #include <regex.h>
 #include <mntent.h>
 #include <termios.h>
+#include <curl/curl.h>
 #ifndef SH4
 #include <sys/stat.h>
 #endif
@@ -1987,5 +1988,10 @@ unsigned char cec_logicalAddress;
 unsigned char cec_deviceType;
 
 #endif
+
+struct MemoryStruct {
+  char *memory;
+  size_t size;
+};
 
 #endif
