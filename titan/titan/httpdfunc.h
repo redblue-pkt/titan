@@ -3283,7 +3283,7 @@ void putxmessage(struct stimerthread* timernode, char* captiontime, char* body)
 		else
 		{
 			FILE* datei = fopen("/tmp/textbox_standby", "a");
-			fprintf(datei, "%s\n%s\n%s\n%i\n%s\n%i\n%s\n%i\n%s\n%i\n%i\n%i\n%i\n%i\n", caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), (char)NULL, 0, (char)NULL, 0, 600, 280, timeout, 0);
+			fprintf(datei, "%s\n%s\n%s\n%i\n%s\n%i\n%s\n%i\n%s\n%i\n%i\n%i\n%i\n%i\n", caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 280, timeout, 0);
 			fclose(datei);
 		}
 	}
