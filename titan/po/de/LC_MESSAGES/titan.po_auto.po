@@ -1,4 +1,3 @@
-#: webif_help.h:123
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.67\n"
@@ -8718,19 +8717,19 @@ msgstr "Wählen Sie den Such Modus"
 
 #: settings_mediabutton.h:48
 msgid "Select a function for the Media button"
-msgstr ""
+msgstr "Wählen Sie eine Funktion für die Media Taste"
 
 #: settings_pluginbutton.h:35
 msgid "Select a function for the Plugin button"
-msgstr ""
+msgstr "Wählen Sie eine Funktion für die Plugin Taste"
 
 #: settings_bluebutton.h:34
 msgid "Select a function for the blue button"
-msgstr ""
+msgstr "Wählen Sie eine Funktion für die blaue Taste"
 
 #: settings_redbutton.h:35
 msgid "Select a function for the red button"
-msgstr ""
+msgstr "Wählen Sie eine Funktion für die rote Taste"
 
 #: skin_default_skin.xml.h:626
 msgid "Select backup:"
