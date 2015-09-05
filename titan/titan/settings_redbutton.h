@@ -32,7 +32,7 @@ void screensettings_redbutton()
 	debug(60, "Redkey: %s (default)", redkey);
 	
 	setmenulistdefault(mlist, redkey);
-	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your plugin / menu item from the following list and show it so the red button"), NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, skintitle, _("Select a function for the red button"), NULL, NULL, 1, 0);
 
 	if(mbox == NULL)
 	{

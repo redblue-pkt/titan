@@ -32,7 +32,7 @@ void screensettings_pluginbutton()
 	debug(60, "Pluginkey: %s (default)", pluginkey);
 	
 	setmenulistdefault(mlist, pluginkey);
-	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your plugin / menu item from the following list and show it so the plugin button"), NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, skintitle, _("Select a function for the Plugin button"), NULL, NULL, 1, 0);
 
 	if(mbox == NULL)
 	{

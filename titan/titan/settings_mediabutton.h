@@ -45,7 +45,7 @@ void screensettings_mediabutton()
 	debug(60, "Mediakey: %s (default)", mediakey);
 	
 	setmenulistdefault(mlist, mediakey);
-	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Media plugin item from the following list and show it so the plugin button"), NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, skintitle, _("Select a function for the Media button"), NULL, NULL, 1, 0);
 
 	if(mbox == NULL)
 	{
