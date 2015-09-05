@@ -7940,6 +7940,13 @@ msgstr ""
 msgid "START"
 msgstr "bắt đầu"
 
+#: webif_index.atemio5200.h:76 webif_index.atemio6200.h:76
+#: webif_index.atemio-nemesis.h:76 webif_rc.atemio5200.h:3
+#: webif_rc.atemio6000.h:3 webif_rc.atemio6100.h:3 webif_rc.atemio6200.h:3
+#: webif_rc.atemio-nemesis.h:3 webif_rc.h:3
+msgid "STB"
+msgstr ""
+
 #: harddisk.h:530
 msgid "STICK "
 msgstr ""
@@ -9108,13 +9115,6 @@ msgstr "cập nhật"
 msgid "Status: "
 msgstr ""
 
-#: webif_index.atemio5200.h:76 webif_index.atemio6200.h:76
-#: webif_index.atemio-nemesis.h:76 webif_rc.atemio5200.h:3
-#: webif_rc.atemio6000.h:3 webif_rc.atemio6100.h:3 webif_rc.atemio6200.h:3
-#: webif_rc.atemio-nemesis.h:3 webif_rc.h:3
-msgid "Stb"
-msgstr ""
-
 #: skin_default_skin.xml.h:686
 msgid "Step frequency"
 msgstr "dịch tần số"
@@ -9447,7 +9447,15 @@ msgid "TSID:"
 msgstr ""
 
 #: channellist.h:731 channellist.h:1786 httpdfunc.h:286 httpdfunc.h:696
-#: scan.h:528
+#: scan.h:528 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
+#: webif_index.atemio5200.h:124 webif_index.atemio6200.h:68
+#: webif_index.atemio6200.h:74 webif_index.atemio6200.h:124
+#: webif_index.atemio-nemesis.h:68 webif_index.atemio-nemesis.h:74
+#: webif_index.atemio-nemesis.h:124 webif_rc.atemio5200.h:1
+#: webif_rc.atemio5200.h:51 webif_rc.atemio6000.h:1 webif_rc.atemio6000.h:51
+#: webif_rc.atemio6100.h:1 webif_rc.atemio6100.h:51 webif_rc.atemio6200.h:1
+#: webif_rc.atemio6200.h:51 webif_rc.atemio-nemesis.h:1
+#: webif_rc.atemio-nemesis.h:51 webif_rc.h:1 webif_rc.h:51
 msgid "TV"
 msgstr ""
 
@@ -9461,8 +9469,8 @@ msgstr "Độ phân giải TV (ngang):"
 
 #: settings_bluebutton.h:12 settings_pluginbutton.h:16 settings_redbutton.h:16
 #: webif_index.atemio7600.h:19 webif_index.atemio7600.h:117
-#: webif_rc.atemio510.h:9 webif_rc.atemio7600.h:50
-#: webif_rc_virtual.atemio510.h:9
+#: webif_rc.atemio510.h:9 webif_rc.atemio520.h:5 webif_rc.atemio530.h:5
+#: webif_rc.atemio7600.h:50 webif_rc_virtual.atemio510.h:9
 msgid "TV/Radio"
 msgstr ""
 
@@ -10149,22 +10157,6 @@ msgstr ""
 #: service.h:969
 msgid "Tuning to Channel failed!"
 msgstr "Không chuyển được chương trình!"
-
-#: webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
-#: webif_index.atemio5200.h:124 webif_index.atemio6200.h:68
-#: webif_index.atemio6200.h:74 webif_index.atemio6200.h:124
-#: webif_index.atemio-nemesis.h:68 webif_index.atemio-nemesis.h:74
-#: webif_index.atemio-nemesis.h:124 webif_rc.atemio5200.h:1
-#: webif_rc.atemio5200.h:51 webif_rc.atemio6000.h:1 webif_rc.atemio6000.h:51
-#: webif_rc.atemio6100.h:1 webif_rc.atemio6100.h:51 webif_rc.atemio6200.h:1
-#: webif_rc.atemio6200.h:51 webif_rc.atemio-nemesis.h:1
-#: webif_rc.atemio-nemesis.h:51 webif_rc.h:1 webif_rc.h:51
-msgid "Tv"
-msgstr ""
-
-#: webif_rc.atemio520.h:5 webif_rc.atemio530.h:5
-msgid "Tv/Radio"
-msgstr ""
 
 #: skin_default_skin.xml.h:770
 msgid "Two step mute"
