@@ -13,7 +13,7 @@ void screensettings_redbutton()
 	addmenulist(&mlist, "Auto Resolution", _("Auto Resolution"), NULL, 0, 0);
 	if(checkemu() == 1)
 		addmenulist(&mlist, "Softcam Panel", _("Softcam Panel"), NULL, 0, 0);
-	addmenulist(&mlist, "TV / Radio Switch", _("TV / Radio Switch"), NULL, 0, 0);
+	addmenulist(&mlist, "TV / Radio Switch", _("TV/Radio"), NULL, 0, 0);
 	addmenulist(&mlist, "Multi EPG", _("Multi EPG"), NULL, 0, 0);
 	addmenulist(&mlist, "Graphic Multi EPG", _("Graphic Multi EPG"), NULL, 0, 0);
 	addmenulist(&mlist, "Sleep Timer", _("Sleep Timer"), NULL, 0, 0);
