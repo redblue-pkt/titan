@@ -88,8 +88,10 @@ int tithekmlehd = 0;
 //flag 74   - watchmovies series
 //flag 75   - watchmovies local search
 //flag 75   - amazon
-//flag 76   - amazon search
-//flag 77   - amazon local search
+//flag 76   - amazon movie search
+//flag 77   - amazon series search
+//flag 78   - amazon series listed search
+//flag 80   - amazon local search
 //flag 100  - all local search
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
@@ -2127,6 +2129,16 @@ why ?
 				else if(((struct tithek*)listbox->select->handle)->flag == 76)
 				{
 					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 77)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 78)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 2) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
