@@ -362,19 +362,19 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
 
-	unlink("/tmp/amazon_search_tmpstr_get");
+	char* tmpstr2 = NULL, *tmpstr3 = NULL, *filename = NULL, *tmpstr = NULL, *search = NULL, *line = NULL, *url = NULL, *id = NULL, *streamurl = NULL, *pic = NULL, *year = NULL, *runtime = NULL, *menu = NULL;
 
-	char* tmpstr = NULL, *search = NULL, *line = NULL, *url = NULL, *tmpstr2 = NULL, *id = NULL, *streamurl = NULL, *pic = NULL, *year = NULL, *runtime = NULL, *menu = NULL;
+	tmpstr2 = ostrcat(tmpstr2, "_get", 1, 0);
 
-	if(flag == 0)
-	{ 
+	if(flag == 0 || flag == 1)
+	{
 		if(searchstr == NULL)
 			search = textinputhist(_("Search"), " ", "searchhist");
 		else
 			search = textinputhist(_("Search"), searchstr, "searchhist");
 	}
 
-	int loginret = 0;
+	int loginret = 0, type = 0;
 	loginret = login();
 	printf("loginret=%d\n", loginret);
 	if(loginret == 0)
@@ -386,11 +386,36 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 	{
 		drawscreen(load, 0, 0);
 		search = stringreplacechar(search, ' ', '+');
-		url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356018031&field-keywords=", search, 0, 0);
+		if(flag == 0)
+		{
+			filename = ostrcat("movie", NULL, 0, 0);
+			type = 75;
+			url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356018031&field-keywords=", search, 0, 0);
+		}
+		else if(flag == 1)
+		{
+			filename = ostrcat("season", NULL, 0, 0);
+			type = 78;
+			url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356019031&field-keywords=", search, 0, 0);
+		}
+		else if(flag == 2)
+		{
+			filename = ostrcat("episode", NULL, 0, 0);
+			type = 75;
+			url = ostrcat("http://www.amazon.de/dp/", link, 0, 0);
+			url = ostrcat(url, "/?_encoding=UTF8", 1, 0);		
+		}
+
+		tmpstr2 = ostrcat("/tmp/amazon_search_tmpstr_get", filename, 0, 0);
+		unlink(tmpstr2);
+
+		tmpstr3 = ostrcat(tmpstr3, "_replace", 1, 0);
+		unlink(tmpstr3);
+
 ///////////////////////////
 		debug(99, "url: %s", url);
 		tmpstr = gethttps(url, NULL);
-		titheklog(debuglevel, "/tmp/amazon_search_tmpstr_get", NULL, NULL, NULL, tmpstr);		
+		titheklog(debuglevel, tmpstr2, NULL, NULL, NULL, tmpstr);		
 		free(url), url = NULL;
 ///////////////////////////
 
@@ -399,8 +424,17 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 //		tmpstr2 = string_resub("\"value\" : \"<div id=\\\"centerMinus\\\"", "\"tagId\" : \"centerMinus\"", curlretbuf, 0);	
 //		tmpstr2 = string_resub("\"value\" : \"<div id=\\\"centerBelowPlus\\\"", "\"tagId\" : \"centerBelowPlus\"", curlretbuf, 0);	
-//		tmpstr2 = ostrcat(curlretbuf, NULL, 0, 0);
-		tmpstr = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr, 1);
+
+		if(flag == 0 || flag == 1)
+			tmpstr = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr, 1);
+		else
+		{
+			tmpstr = string_replace_all("\n", " ", tmpstr, 1);			
+			tmpstr = string_replace_all("<li class=\"selected-episode", "\n<li class=\"\">", tmpstr, 1);
+			tmpstr = string_replace_all("<li class=\"\">", "\n<li class=\"\">", tmpstr, 1);
+			tmpstr = string_replace_all("<li class=\"last-episode", "\n<li class=\"last-episode", tmpstr, 1);
+		}
+		titheklog(debuglevel, tmpstr3, NULL, NULL, NULL, tmpstr);		
 
 		count1 = 0;
 		j = 0;
@@ -415,26 +449,42 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			{
 				if(ostrstr(ret1[j].part, "result_") != NULL)
 				{
-//					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
-
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
 					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
 					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
+					if(pic == NULL)
+						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 					title = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
 					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
 					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
+				}
+				else if(ostrstr(ret1[j].part, "<li class=\"\">") != NULL)
+				{
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
+					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
+					if(pic == NULL)
+						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					title = string_resub("<span class=\"episode-title\">", "</span>", ret1[j].part, 0);
+					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
+					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
+					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
+				}
 
-//					printf("(%d) streamurl: %s\n", j, streamurl);
+				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL)
+				{
+					debug(99, "(%d) streamurl: %s", j, streamurl);
 					free(streamurl), streamurl = NULL;
 					streamurl = ostrcat("http://www.amazon.de/dp/", id, 0, 0);
 					streamurl = ostrcat(streamurl, "/?_encoding=UTF8", 1, 0);
-//					printf("(%d) streamurl changed: %s\n", j, streamurl);
-//					printf("(%d) id: %s\n", j, id);
-//					printf("(%d) pic: %s\n", j, pic);
-//					printf("(%d) title: %s\n", j, title);
-//					printf("(%d) year: %s\n", j, year);
-//					printf("(%d) runtime: %s\n", j, runtime);
-//					printf("----------------------\n");
+					debug(99, "(%d) streamurl changed: %s", j, streamurl);
+					debug(99, "(%d) id: %s", j, id);
+					debug(99, "(%d) pic: %s", j, pic);
+					debug(99, "(%d) title: %s", j, title);
+					debug(99, "(%d) year: %s", j, year);
+					debug(99, "(%d) runtime: %s", j, runtime);
+					debug(99, "----------------------");
 
 					if(streamurl != NULL)
 					{
@@ -446,11 +496,14 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 						line = ostrcat(line, runtime, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, id, 1, 0);
+//						line = ostrcat(line, streamurl, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, pic, 1, 0);
 						line = ostrcat(line, "#amazon_search_", 1, 0);
-						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
-						line = ostrcat(line, ".jpg#Amazon - Search#75\n", 1, 0);
+						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
+						line = ostrcat(line, ".jpg#Amazon - Search#", 1, 0);
+						line = ostrcat(line, oitoa(type), 1, 1);
+						line = ostrcat(line, "\n", 1, 0);
 					}
 					
 					free(id), id = NULL;
@@ -467,7 +520,10 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 		if(line != NULL)
 		{
-			menu = ostrcat("/tmp/tithek/amazon.search.list", NULL, 0, 0);
+			printf("line: %s\n", line);
+			menu = ostrcat("/tmp/tithek/amazon.", NULL, 0, 0);
+			menu = ostrcat(menu, filename, 1, 0);
+			menu = ostrcat(menu, ".list", 1, 0);
 			writesys(menu, line, 0);
 			struct tithek* tnode = (struct tithek*)listbox->select->handle;
 			createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -510,6 +566,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 ///////
 	}
 
+	free(filename), filename = NULL;
 	free(menu), menu = NULL;
 	free(runtime), runtime = NULL;
 	free(year), year = NULL;
@@ -517,7 +574,8 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 	free(pic), pic = NULL;
 	free(streamurl), streamurl = NULL;
 	free(id), id = NULL;
-//	free(tmpstr2), tmpstr2 = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	free(tmpstr3), tmpstr3 = NULL;
 	free(line), line = NULL;
 	free(streamurl), streamurl = NULL;
 	free(pic), pic = NULL;
