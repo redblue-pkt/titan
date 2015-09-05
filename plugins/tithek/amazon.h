@@ -222,7 +222,7 @@ int login()
 	strstrip(login);
 //	debug(99, "login: %s", login);
 
-	if(ostrcmp("null", login) == 0)
+	if(login == NULL || ostrcmp("null", login) == 0)
 	{
 		debug(99, "Amazon Login Error");
 		ret = 0;
@@ -339,7 +339,7 @@ int login()
 //		debug(99, "login: %s", login);
 		free(tmpstr), tmpstr = NULL;
 	
-		if(ostrcmp("null", login) == 0)
+		if(login == NULL || ostrcmp("null", login) == 0)
 		{
 			debug(99, "Amazon Login Error");
 			ret = 0;
