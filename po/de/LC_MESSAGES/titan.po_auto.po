@@ -13764,9 +13764,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Stb"
-#~ msgstr "STB"
-
-#~ msgid "Tv"
-#~ msgstr "TV"
