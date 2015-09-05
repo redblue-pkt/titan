@@ -13088,6 +13088,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "epg"
-#~ msgstr "EPG"
