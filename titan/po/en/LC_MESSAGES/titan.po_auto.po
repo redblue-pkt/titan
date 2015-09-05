@@ -5362,7 +5362,7 @@ msgid "Lib Pack (ufs910/ufs922)"
 msgstr ""
 
 #: tpk_description.h:96
-msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
+msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
 #: security.h:2083
