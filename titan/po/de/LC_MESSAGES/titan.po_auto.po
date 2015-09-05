@@ -1,4 +1,3 @@
-#: webif_help.h:123
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.67\n"
@@ -192,11 +191,480 @@ msgid "/"
 msgstr ""
 
 #: webif_help.h:3
-msgid "/home/atemio/flashimg/source.titan/help/de/:"
+msgid "/home/atemio/flashimg/source.titan/help/de/3dsettings"
 msgstr ""
 
-#: webif_help.h:124
-msgid "/home/atemio/flashimg/source.titan/help/en/:"
+#: webif_help.h:4
+msgid "/home/atemio/flashimg/source.titan/help/de/adjust"
+msgstr ""
+
+#: webif_help.h:5
+msgid "/home/atemio/flashimg/source.titan/help/de/aspectsettings"
+msgstr ""
+
+#: webif_help.h:6
+msgid "/home/atemio/flashimg/source.titan/help/de/audiotrack"
+msgstr ""
+
+#: webif_help.h:7
+msgid "/home/atemio/flashimg/source.titan/help/de/autores"
+msgstr ""
+
+#: webif_help.h:8
+msgid "/home/atemio/flashimg/source.titan/help/de/avsettings"
+msgstr ""
+
+#: webif_help.h:9
+msgid "/home/atemio/flashimg/source.titan/help/de/bgdownload"
+msgstr ""
+
+#: webif_help.h:10
+msgid "/home/atemio/flashimg/source.titan/help/de/blindscanadjust"
+msgstr ""
+
+#: webif_help.h:11
+msgid "/home/atemio/flashimg/source.titan/help/de/bouquetlist"
+msgstr ""
+
+#: webif_help.h:12
+msgid "/home/atemio/flashimg/source.titan/help/de/caidlock"
+msgstr ""
+
+#: webif_help.h:13
+msgid "/home/atemio/flashimg/source.titan/help/de/channelbynr"
+msgstr ""
+
+#: webif_help.h:14
+msgid "/home/atemio/flashimg/source.titan/help/de/channelhistory"
+msgstr ""
+
+#: webif_help.h:15
+msgid "/home/atemio/flashimg/source.titan/help/de/channellist"
+msgstr ""
+
+#: webif_help.h:16
+msgid "/home/atemio/flashimg/source.titan/help/de/channelmenu"
+msgstr ""
+
+#: webif_help.h:17
+msgid "/home/atemio/flashimg/source.titan/help/de/channelslotlist"
+msgstr ""
+
+#: webif_help.h:20
+msgid "/home/atemio/flashimg/source.titan/help/de/dir"
+msgstr ""
+
+#: webif_help.h:18
+msgid "/home/atemio/flashimg/source.titan/help/de/dirlabel"
+msgstr ""
+
+#: webif_help.h:19
+msgid "/home/atemio/flashimg/source.titan/help/de/dirsort"
+msgstr ""
+
+#: webif_help.h:21
+msgid "/home/atemio/flashimg/source.titan/help/de/diseqcscreen"
+msgstr ""
+
+#: webif_help.h:22
+msgid "/home/atemio/flashimg/source.titan/help/de/download"
+msgstr ""
+
+#: webif_help.h:26
+msgid "/home/atemio/flashimg/source.titan/help/de/epg"
+msgstr ""
+
+#: webif_help.h:23
+msgid "/home/atemio/flashimg/source.titan/help/de/epgscanlist"
+msgstr ""
+
+#: webif_help.h:24
+msgid "/home/atemio/flashimg/source.titan/help/de/epgsearch"
+msgstr ""
+
+#: webif_help.h:25
+msgid "/home/atemio/flashimg/source.titan/help/de/epgsettings"
+msgstr ""
+
+#: webif_help.h:27
+msgid "/home/atemio/flashimg/source.titan/help/de/extensionsmenu"
+msgstr ""
+
+#: webif_help.h:28
+msgid "/home/atemio/flashimg/source.titan/help/de/gmultiepg"
+msgstr ""
+
+#: webif_help.h:29
+msgid "/home/atemio/flashimg/source.titan/help/de/harddisk_main"
+msgstr ""
+
+#: webif_help.h:30
+msgid "/home/atemio/flashimg/source.titan/help/de/harddiskmenu"
+msgstr ""
+
+#: webif_help.h:31
+msgid "/home/atemio/flashimg/source.titan/help/de/helpbox"
+msgstr ""
+
+#: webif_help.h:32
+msgid "/home/atemio/flashimg/source.titan/help/de/httpdsettings"
+msgstr ""
+
+#: webif_help.h:33
+msgid "/home/atemio/flashimg/source.titan/help/de/inadynsettings"
+msgstr ""
+
+#: webif_help.h:35
+msgid "/home/atemio/flashimg/source.titan/help/de/infobar"
+msgstr ""
+
+#: webif_help.h:34
+msgid "/home/atemio/flashimg/source.titan/help/de/infobar2"
+msgstr ""
+
+#: webif_help.h:36
+msgid "/home/atemio/flashimg/source.titan/help/de/infomenu"
+msgstr ""
+
+#: webif_help.h:37
+msgid "/home/atemio/flashimg/source.titan/help/de/interfacelist"
+msgstr ""
+
+#: webif_help.h:38
+msgid "/home/atemio/flashimg/source.titan/help/de/language"
+msgstr ""
+
+#: webif_help.h:39
+msgid "/home/atemio/flashimg/source.titan/help/de/linkedchannel"
+msgstr ""
+
+#: webif_help.h:40
+msgid "/home/atemio/flashimg/source.titan/help/de/listedit"
+msgstr ""
+
+#: webif_help.h:41
+msgid "/home/atemio/flashimg/source.titan/help/de/lnbscreen"
+msgstr ""
+
+#: webif_help.h:43
+msgid "/home/atemio/flashimg/source.titan/help/de/log"
+msgstr ""
+
+#: webif_help.h:42
+msgid "/home/atemio/flashimg/source.titan/help/de/logo"
+msgstr ""
+
+#: webif_help.h:44
+msgid "/home/atemio/flashimg/source.titan/help/de/mainmenu"
+msgstr ""
+
+#: webif_help.h:45
+msgid "/home/atemio/flashimg/source.titan/help/de/manualscan"
+msgstr ""
+
+#: webif_help.h:46
+msgid "/home/atemio/flashimg/source.titan/help/de/marker"
+msgstr ""
+
+#: webif_help.h:47
+msgid "/home/atemio/flashimg/source.titan/help/de/mediadbedit"
+msgstr ""
+
+#: webif_help.h:48
+msgid "/home/atemio/flashimg/source.titan/help/de/mediadbsettings"
+msgstr ""
+
+#: webif_help.h:49
+msgid "/home/atemio/flashimg/source.titan/help/de/menulist"
+msgstr ""
+
+#: webif_help.h:50
+msgid "/home/atemio/flashimg/source.titan/help/de/menuprotect"
+msgstr ""
+
+#: webif_help.h:51
+msgid "/home/atemio/flashimg/source.titan/help/de/messagebox"
+msgstr ""
+
+#: webif_help.h:52
+msgid "/home/atemio/flashimg/source.titan/help/de/moduleadjust"
+msgstr ""
+
+#: webif_help.h:53
+msgid "/home/atemio/flashimg/source.titan/help/de/moduleconfig"
+msgstr ""
+
+#: webif_help.h:54
+msgid "/home/atemio/flashimg/source.titan/help/de/multiepg"
+msgstr ""
+
+#: webif_help.h:55
+msgid "/home/atemio/flashimg/source.titan/help/de/mute"
+msgstr ""
+
+#: webif_help.h:58
+msgid "/home/atemio/flashimg/source.titan/help/de/network"
+msgstr ""
+
+#: webif_help.h:57
+msgid "/home/atemio/flashimg/source.titan/help/de/network_test"
+msgstr ""
+
+#: webif_help.h:56
+msgid "/home/atemio/flashimg/source.titan/help/de/networkmenu"
+msgstr ""
+
+#: webif_help.h:59
+msgid "/home/atemio/flashimg/source.titan/help/de/newsletter"
+msgstr ""
+
+#: webif_help.h:60
+msgid "/home/atemio/flashimg/source.titan/help/de/numinput"
+msgstr ""
+
+#: webif_help.h:61
+msgid "/home/atemio/flashimg/source.titan/help/de/ownpos"
+msgstr ""
+
+#: webif_help.h:62
+msgid "/home/atemio/flashimg/source.titan/help/de/panel_settings_fancontrol"
+msgstr ""
+
+#: webif_help.h:64
+msgid "/home/atemio/flashimg/source.titan/help/de/pin"
+msgstr ""
+
+#: webif_help.h:63
+msgid "/home/atemio/flashimg/source.titan/help/de/pincheck"
+msgstr ""
+
+#: webif_help.h:65
+msgid "/home/atemio/flashimg/source.titan/help/de/playinfobar"
+msgstr ""
+
+#: webif_help.h:67
+msgid "/home/atemio/flashimg/source.titan/help/de/playlist"
+msgstr ""
+
+#: webif_help.h:66
+msgid "/home/atemio/flashimg/source.titan/help/de/playlist_main"
+msgstr ""
+
+#: webif_help.h:68
+msgid "/home/atemio/flashimg/source.titan/help/de/plugin"
+msgstr ""
+
+#: webif_help.h:69
+msgid "/home/atemio/flashimg/source.titan/help/de/possetup"
+msgstr ""
+
+#: webif_help.h:70
+msgid "/home/atemio/flashimg/source.titan/help/de/powerofftimerscreen"
+msgstr ""
+
+#: webif_help.h:71
+msgid "/home/atemio/flashimg/source.titan/help/de/quickmenu"
+msgstr ""
+
+#: webif_help.h:72
+msgid "/home/atemio/flashimg/source.titan/help/de/recordduration"
+msgstr ""
+
+#: webif_help.h:73
+msgid "/home/atemio/flashimg/source.titan/help/de/recordlist"
+msgstr ""
+
+#: webif_help.h:74
+msgid "/home/atemio/flashimg/source.titan/help/de/recordpath"
+msgstr ""
+
+#: webif_help.h:76
+msgid "/home/atemio/flashimg/source.titan/help/de/rectimer"
+msgstr ""
+
+#: webif_help.h:75
+msgid "/home/atemio/flashimg/source.titan/help/de/rectimerext"
+msgstr ""
+
+#: webif_help.h:77
+msgid "/home/atemio/flashimg/source.titan/help/de/resolutionsettings"
+msgstr ""
+
+#: webif_help.h:78
+msgid "/home/atemio/flashimg/source.titan/help/de/satfinder"
+msgstr ""
+
+#: webif_help.h:79
+msgid "/home/atemio/flashimg/source.titan/help/de/scan"
+msgstr ""
+
+#: webif_help.h:81
+msgid "/home/atemio/flashimg/source.titan/help/de/screensaver"
+msgstr ""
+
+#: webif_help.h:80
+msgid "/home/atemio/flashimg/source.titan/help/de/screensaveradjust"
+msgstr ""
+
+#: webif_help.h:82
+msgid "/home/atemio/flashimg/source.titan/help/de/serviceinfo"
+msgstr ""
+
+#: webif_help.h:83
+msgid "/home/atemio/flashimg/source.titan/help/de/settingsmenu"
+msgstr ""
+
+#: webif_help.h:84
+msgid "/home/atemio/flashimg/source.titan/help/de/shortepg"
+msgstr ""
+
+#: webif_help.h:85
+msgid "/home/atemio/flashimg/source.titan/help/de/singleepg"
+msgstr ""
+
+#: webif_help.h:86
+msgid "/home/atemio/flashimg/source.titan/help/de/skinadjust"
+msgstr ""
+
+#: webif_help.h:87
+msgid "/home/atemio/flashimg/source.titan/help/de/skinselect"
+msgstr ""
+
+#: webif_help.h:88
+msgid "/home/atemio/flashimg/source.titan/help/de/softcam"
+msgstr ""
+
+#: webif_help.h:89
+msgid "/home/atemio/flashimg/source.titan/help/de/spinner"
+msgstr ""
+
+#: webif_help.h:91
+msgid "/home/atemio/flashimg/source.titan/help/de/standby"
+msgstr ""
+
+#: webif_help.h:90
+msgid "/home/atemio/flashimg/source.titan/help/de/standbymenu"
+msgstr ""
+
+#: webif_help.h:92
+msgid "/home/atemio/flashimg/source.titan/help/de/subtitle"
+msgstr ""
+
+#: webif_help.h:94
+msgid "/home/atemio/flashimg/source.titan/help/de/system_backup"
+msgstr ""
+
+#: webif_help.h:93
+msgid "/home/atemio/flashimg/source.titan/help/de/system_backup_restore"
+msgstr ""
+
+#: webif_help.h:95
+msgid "/home/atemio/flashimg/source.titan/help/de/system_infos_main"
+msgstr ""
+
+#: webif_help.h:98
+msgid "/home/atemio/flashimg/source.titan/help/de/system_sysinfos_main"
+msgstr ""
+
+#: webif_help.h:96
+msgid "/home/atemio/flashimg/source.titan/help/de/systeminfo"
+msgstr ""
+
+#: webif_help.h:97
+msgid "/home/atemio/flashimg/source.titan/help/de/systemmenu"
+msgstr ""
+
+#: webif_help.h:99
+msgid ""
+"/home/atemio/flashimg/source.titan/help/de/systemupdate_flash_online_menu"
+msgstr ""
+
+#: webif_help.h:100
+msgid "/home/atemio/flashimg/source.titan/help/de/systemupdate_flash_tmp_menu"
+msgstr ""
+
+#: webif_help.h:102
+msgid "/home/atemio/flashimg/source.titan/help/de/systemupdate_usb_online_menu"
+msgstr ""
+
+#: webif_help.h:103
+msgid "/home/atemio/flashimg/source.titan/help/de/systemupdate_usb_tmp_menu"
+msgstr ""
+
+#: webif_help.h:101
+msgid "/home/atemio/flashimg/source.titan/help/de/systemupdatemenu"
+msgstr ""
+
+#: webif_help.h:105
+msgid "/home/atemio/flashimg/source.titan/help/de/textinput"
+msgstr ""
+
+#: webif_help.h:104
+msgid "/home/atemio/flashimg/source.titan/help/de/textinputhist"
+msgstr ""
+
+#: webif_help.h:106
+msgid "/home/atemio/flashimg/source.titan/help/de/timermenu"
+msgstr ""
+
+#: webif_help.h:108
+msgid "/home/atemio/flashimg/source.titan/help/de/timeshift"
+msgstr ""
+
+#: webif_help.h:107
+msgid "/home/atemio/flashimg/source.titan/help/de/timeshiftsettings"
+msgstr ""
+
+#: webif_help.h:109
+msgid "/home/atemio/flashimg/source.titan/help/de/timezone"
+msgstr ""
+
+#: webif_help.h:110
+msgid "/home/atemio/flashimg/source.titan/help/de/tpkinstall"
+msgstr ""
+
+#: webif_help.h:111
+msgid "/home/atemio/flashimg/source.titan/help/de/tunerconfig"
+msgstr ""
+
+#: webif_help.h:112
+msgid "/home/atemio/flashimg/source.titan/help/de/tunerreceptiondvbc"
+msgstr ""
+
+#: webif_help.h:113
+msgid "/home/atemio/flashimg/source.titan/help/de/tunerreceptiondvbs"
+msgstr ""
+
+#: webif_help.h:114
+msgid "/home/atemio/flashimg/source.titan/help/de/tunerreceptiondvbt"
+msgstr ""
+
+#: webif_help.h:115
+msgid "/home/atemio/flashimg/source.titan/help/de/unlock"
+msgstr ""
+
+#: webif_help.h:116
+msgid "/home/atemio/flashimg/source.titan/help/de/vfdisplay"
+msgstr ""
+
+#: webif_help.h:117
+msgid "/home/atemio/flashimg/source.titan/help/de/videomode"
+msgstr ""
+
+#: webif_help.h:118
+msgid "/home/atemio/flashimg/source.titan/help/de/videosettings"
+msgstr ""
+
+#: webif_help.h:119
+msgid "/home/atemio/flashimg/source.titan/help/de/volume"
+msgstr ""
+
+#: webif_help.h:120
+msgid "/home/atemio/flashimg/source.titan/help/de/webdir"
+msgstr ""
+
+#: webif_help.h:121
+msgid "/home/atemio/flashimg/source.titan/help/de/wlansettings"
 msgstr ""
 
 #: titan.c:1216
@@ -433,10 +901,6 @@ msgstr "3D-Modus"
 #: skin_default_skin.xml.h:37
 msgid "3D-Mode Settings"
 msgstr "3D-Einstellungen"
-
-#: webif_help.h:4 webif_help.h:125
-msgid "3dsettings"
-msgstr "3D Einstellungen"
 
 #: mc_videoplayer_settings.h:56
 msgid "3s"
@@ -11245,10 +11709,6 @@ msgstr "Aufnahme hinzufügen (diese Sendung)"
 msgid "add service"
 msgstr "Eintrag hinzufügen"
 
-#: webif_help.h:5 webif_help.h:126
-msgid "adjust"
-msgstr "Erweiterte Einstellungen"
-
 #: skin_default_skin.xml.h:64
 msgid "ae"
 msgstr "ä"
@@ -11311,10 +11771,6 @@ msgstr "horizontal"
 msgid "ask"
 msgstr "Nachfragen"
 
-#: webif_help.h:6 webif_help.h:127
-msgid "aspectsettings"
-msgstr "Seitenverhältnis"
-
 #: tmc.h:541
 msgid "audio"
 msgstr "Musik"
@@ -11322,10 +11778,6 @@ msgstr "Musik"
 #: tmc.h:545
 msgid "audio / picture"
 msgstr "Audio/Bild"
-
-#: webif_help.h:7 webif_help.h:128
-msgid "audiotrack"
-msgstr "Tonspur"
 
 #: instar.h:204 instar.h:219
 msgid "aus"
@@ -11346,21 +11798,9 @@ msgstr ""
 msgid "auto"
 msgstr "automatisch"
 
-#: webif_help.h:8 webif_help.h:129
-msgid "autores"
-msgstr "Autoresolution"
-
 #: xupnpd.h:29
 msgid "autostart"
 msgstr "Autostart"
-
-#: webif_help.h:130
-msgid "av settings"
-msgstr ""
-
-#: webif_help.h:9
-msgid "avsettings"
-msgstr "AV-Einstellungen"
 
 #: skin_default_skin.xml.h:101
 msgid "b"
@@ -11390,10 +11830,6 @@ msgstr "beste"
 msgid "bestfit"
 msgstr "Auf Bildschirmgröße verbreitern"
 
-#: webif_help.h:10 webif_help.h:131
-msgid "bgdownload"
-msgstr "Hintergrund Download"
-
 #: mc_audioplayer_settings.h:36 mc_pictureplayer_settings.h:51
 #: mc_videoplayer_settings.h:32 plugins_mc_skin.xml.h:11
 #: skins_mc_skin.xml.h:11
@@ -11403,14 +11839,6 @@ msgstr "groß"
 #: screensaveradjust.h:29
 msgid "black"
 msgstr "schwarz"
-
-#: webif_help.h:132
-msgid "blind scan adjust"
-msgstr ""
-
-#: webif_help.h:11
-msgid "blindscanadjust"
-msgstr "Blindscan"
 
 #: vfdisplay.h:82
 msgid "blink"
@@ -11436,10 +11864,6 @@ msgstr ""
 msgid "border"
 msgstr "Rahmen"
 
-#: webif_help.h:12 webif_help.h:133
-msgid "bouquetlist"
-msgstr "Favoriten Liste"
-
 #: plugins_callmonitor1_skin.xml.h:8 skins_callmonitor1_skin.xml.h:8
 msgid "broadcast"
 msgstr "Broadcast Adresse"
@@ -11455,10 +11879,6 @@ msgstr ""
 #: skin_default_skin.xml.h:127
 msgid "c"
 msgstr ""
-
-#: webif_help.h:13
-msgid "caidlock"
-msgstr "Caidlock"
 
 #: tpk_description.h:46 tpk_showname.h:14
 msgid "camd3"
@@ -11512,33 +11932,9 @@ msgstr "Sender Nr."
 msgid "channel-movie"
 msgstr "Sender-Titel"
 
-#: webif_help.h:14 webif_help.h:134
-msgid "channelbynr"
-msgstr "Senderliste (nummeriert)"
-
-#: webif_help.h:15 webif_help.h:135
-msgid "channelhistory"
-msgstr "Sender Verlauf"
-
-#: webif_help.h:16 webif_help.h:136
-msgid "channellist"
-msgstr "Senderliste"
-
-#: webif_help.h:17 webif_help.h:137
-msgid "channelmenu"
-msgstr "Senderliste Menü"
-
-#: webif_help.h:18 webif_help.h:138
-msgid "channelslotlist"
-msgstr "CI Schacht Senderzuordnung"
-
 #: tpk.h:3216 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Bitte den Secret Feed überprüfen!"
-
-#: webif_help.h:139
-msgid "child lock"
-msgstr ""
 
 #: networkbrowser.h:1581
 msgid "cifs"
@@ -11651,10 +12047,6 @@ msgstr "Details"
 msgid "dhcp"
 msgstr "Automatisch (dhcp)"
 
-#: webif_help.h:21 webif_help.h:142
-msgid "dir"
-msgstr "Dateiliste"
-
 #: tunerconfig.h:818
 msgid "direct connect"
 msgstr "Direkte Verbindung"
@@ -11663,19 +12055,11 @@ msgstr "Direkte Verbindung"
 msgid "direkter Start"
 msgstr ""
 
-#: webif_help.h:19 webif_help.h:140
-msgid "dirlabel"
-msgstr "Verzeichnisname"
-
-#: webif_help.h:20 webif_help.h:141
-msgid "dirsort"
-msgstr "Sortierung"
-
 #: network.h:394 panel_settings.h:29
 msgid "disable"
 msgstr "aus"
 
-#: skin_default_skin.xml.h:204 webif_help.h:22 webif_help.h:143
+#: skin_default_skin.xml.h:204
 msgid "diseqcscreen"
 msgstr "DiSEqC"
 
@@ -11698,10 +12082,6 @@ msgstr "DNS-Server 2"
 #: moduleconfig.h:159
 msgid "double"
 msgstr "doppel"
-
-#: webif_help.h:23 webif_help.h:144
-msgid "download"
-msgstr "Download"
 
 #: download.h:97
 msgid "download error"
@@ -11763,22 +12143,6 @@ msgstr "Suche beenden"
 msgid "endless"
 msgstr "endlos"
 
-#: webif_help.h:27 webif_help.h:148
-msgid "epg"
-msgstr "EPG"
-
-#: webif_help.h:24 webif_help.h:145
-msgid "epgscanlist"
-msgstr "EPG-Suchliste"
-
-#: webif_help.h:25 webif_help.h:146
-msgid "epgsearch"
-msgstr "EPG-Suche"
-
-#: webif_help.h:26 webif_help.h:147
-msgid "epgsettings"
-msgstr "EPG-Einstellungen"
-
 #: rectimer.h:1519
 msgid "error"
 msgstr "!!! FEHLER !!!"
@@ -11802,14 +12166,6 @@ msgstr ""
 #: tpk_description.h:67
 msgid "extended config Panel"
 msgstr ""
-
-#: webif_help.h:149
-msgid "extensions menu"
-msgstr ""
-
-#: webif_help.h:28
-msgid "extensionsmenu"
-msgstr "Erweiterungsmenü"
 
 #: adjust.h:153 adjust.h:446 httpdfunc.h:4379 httpdfunc.h:4864
 #: httpdsettings.h:50
@@ -11914,17 +12270,9 @@ msgid ""
 "config files."
 msgstr ""
 
-#: webif_help.h:29
-msgid "gmultiepg"
-msgstr "Grafisches Multi-EPG"
-
 #: possetup.h:58
 msgid "goto position"
 msgstr "Position wechseln"
-
-#: webif_help.h:150
-msgid "graphical multi epg"
-msgstr ""
 
 #: screensaveradjust.h:31
 msgid "green"
@@ -11938,14 +12286,6 @@ msgstr "grau"
 msgid "h"
 msgstr ""
 
-#: webif_help.h:30 webif_help.h:151
-msgid "harddisk_main"
-msgstr "Festplatten Hauptmenü"
-
-#: webif_help.h:31 webif_help.h:152
-msgid "harddiskmenu"
-msgstr "Festplatten Menü"
-
 #: tpk_showname.h:41
 msgid "hbbtv Browser"
 msgstr ""
@@ -11953,10 +12293,6 @@ msgstr ""
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "hddreplacement"
 msgstr "Netzwerk Freigabe als Aufnahmeort"
-
-#: webif_help.h:32 webif_help.h:153
-msgid "helpbox"
-msgstr "Hilfebox"
 
 #: adjust.h:184 httpdfunc.h:4563 pin.h:111
 msgid "hidden"
@@ -11974,14 +12310,6 @@ msgstr "Behalten"
 #: networkbrowser.h:1636
 msgid "html"
 msgstr "HTML"
-
-#: webif_help.h:154
-msgid "httpd settings"
-msgstr ""
-
-#: webif_help.h:33
-msgid "httpdsettings"
-msgstr "HTTP Einstellungen"
 
 #: skin_default_skin.xml.h:364
 msgid "i"
@@ -12015,21 +12343,9 @@ msgstr ""
 msgid "in background"
 msgstr "im Hintergrund"
 
-#: webif_help.h:34 webif_help.h:155
-msgid "inadynsettings"
-msgstr "Indyn Einstellungen"
-
-#: adjust.h:70 httpdfunc.h:3896 webif_help.h:36 webif_help.h:157
+#: adjust.h:70 httpdfunc.h:3896
 msgid "infobar"
 msgstr "Informationsleiste"
-
-#: webif_help.h:35 webif_help.h:156
-msgid "infobar2"
-msgstr "Informationsleiste 2"
-
-#: webif_help.h:37 webif_help.h:158
-msgid "infomenu"
-msgstr "Info Menü"
 
 #: tpk_section.h:6
 msgid "infos"
@@ -12046,10 +12362,6 @@ msgstr "Installieren"
 #: tpk.h:3466
 msgid "installed"
 msgstr "installiert"
-
-#: webif_help.h:38 webif_help.h:159
-msgid "interfacelist"
-msgstr "Netzwerkliste"
 
 #: adjust.h:154 adjust.h:447 httpdfunc.h:4386 httpdfunc.h:4871
 #: httpdsettings.h:49
@@ -12108,10 +12420,6 @@ msgstr ""
 msgid "lan"
 msgstr "LAN"
 
-#: webif_help.h:39 webif_help.h:160
-msgid "language"
-msgstr "Sprache"
-
 #: tpk_section.h:8
 msgid "lcdpearlskins"
 msgstr "Pearl-LCD-Skins"
@@ -12148,18 +12456,6 @@ msgstr "Begrenzung aus"
 msgid "limits on"
 msgstr "Begrenzung ein"
 
-#: webif_help.h:40 webif_help.h:161
-msgid "linkedchannel"
-msgstr "Linkedchannel"
-
-#: webif_help.h:41 webif_help.h:162
-msgid "listedit"
-msgstr "Senderliste Editor"
-
-#: webif_help.h:42 webif_help.h:163
-msgid "lnbscreen"
-msgstr "LNB Einstellungen"
-
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
 msgid "localname"
 msgstr "Lokaler Name"
@@ -12171,14 +12467,6 @@ msgstr "gesichert -> belassen"
 #: mediadbedit.h:77
 msgid "locked -> unlock it"
 msgstr "gesichert -> öffnen"
-
-#: webif_help.h:44 webif_help.h:165
-msgid "log"
-msgstr "Log"
-
-#: webif_help.h:43 webif_help.h:164
-msgid "logo"
-msgstr "Logo"
 
 #: tunerconfig.h:829
 msgid "loop to Tuner"
@@ -12193,39 +12481,11 @@ msgstr "gering"
 msgid "m"
 msgstr ""
 
-#: webif_help.h:45 webif_help.h:166
-msgid "mainmenu"
-msgstr "Hauptmenü"
-
-#: webif_help.h:46 webif_help.h:167
-msgid "manualscan"
-msgstr "Manuelle Suche"
-
-#: webif_help.h:47 webif_help.h:168
-msgid "marker"
-msgstr "Marker"
-
-#: webif_help.h:48 webif_help.h:169
-msgid "mediadbedit"
-msgstr "MediaDB bearbeiten"
-
-#: webif_help.h:49 webif_help.h:170
-msgid "mediadbsettings"
-msgstr "MediaDB Einstellungen"
-
 #: adjust.h:94 httpdfunc.h:3957
 msgid "medium"
 msgstr "mittel"
 
-#: webif_help.h:50 webif_help.h:171
-msgid "menulist"
-msgstr "Menüliste"
-
-#: webif_help.h:51 webif_help.h:172
-msgid "menuprotect"
-msgstr "Menü schützen"
-
-#: skin_default_skin.xml.h:830 webif_help.h:52 webif_help.h:173
+#: skin_default_skin.xml.h:830
 msgid "messagebox"
 msgstr "Mitteilungen"
 
@@ -12236,14 +12496,6 @@ msgstr "mittel"
 #: screensaveradjust.h:38
 msgid "mixed mode"
 msgstr "gemischter Modus"
-
-#: webif_help.h:53 webif_help.h:174
-msgid "moduleadjust"
-msgstr "CI-Module"
-
-#: webif_help.h:54 webif_help.h:175
-msgid "moduleconfig"
-msgstr "CI-Module (Menü)"
 
 #: possetup.h:38
 msgid "move east"
@@ -12260,14 +12512,6 @@ msgstr "nach West"
 #: adjust.h:197 httpdfunc.h:4637
 msgid "movie-channel"
 msgstr "Titel-Sender"
-
-#: webif_help.h:55 webif_help.h:176
-msgid "multiepg"
-msgstr "Multi-EPG"
-
-#: webif_help.h:56 webif_help.h:177
-msgid "mute"
-msgstr "Stumm"
 
 #: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32
 msgid "mvid"
@@ -12288,17 +12532,9 @@ msgstr "Nein"
 msgid "netmask"
 msgstr "Netzmaske"
 
-#: tpk_section.h:10 webif_help.h:59 webif_help.h:180
+#: tpk_section.h:10
 msgid "network"
 msgstr "Netzwerk"
-
-#: webif_help.h:58 webif_help.h:179
-msgid "network_test"
-msgstr "Netzwerk Test"
-
-#: webif_help.h:57 webif_help.h:178
-msgid "networkmenu"
-msgstr "Netzwerk Menü"
 
 #: epgsettings.h:194 mediadbsettings.h:48
 msgid "never"
@@ -12315,10 +12551,6 @@ msgstr ""
 #: tpk_description.h:109
 msgid "news Plugin"
 msgstr ""
-
-#: webif_help.h:60 webif_help.h:181
-msgid "newsletter"
-msgstr "Aktuelle Meldungen"
 
 #: networkbrowser.h:1582
 msgid "nfs"
@@ -12443,10 +12675,6 @@ msgstr "Ntfsmount"
 msgid "ntpdate"
 msgstr "Automatisch die Uhrzeit aus dem Internet laden"
 
-#: webif_help.h:61 webif_help.h:182
-msgid "numinput"
-msgstr "Numerisches Eingabefeld"
-
 #: skin_default_skin.xml.h:466
 msgid "o"
 msgstr ""
@@ -12554,17 +12782,9 @@ msgstr ""
 msgid "options"
 msgstr "Optionen"
 
-#: webif_help.h:62 webif_help.h:183
-msgid "ownpos"
-msgstr "Eigene Position"
-
 #: skin_default_skin.xml.h:487
 msgid "p"
 msgstr ""
-
-#: webif_help.h:63 webif_help.h:184
-msgid "panel_settings_fancontrol"
-msgstr "Lüftersteuerung"
 
 #: videomode.h:15
 msgid "panscan"
@@ -12610,14 +12830,6 @@ msgstr "Senderlogos"
 msgid "picture"
 msgstr "Bild"
 
-#: webif_help.h:65 webif_help.h:186
-msgid "pin"
-msgstr "Pin"
-
-#: webif_help.h:64 webif_help.h:185
-msgid "pincheck"
-msgstr "Pin Check"
-
 #: pip.h:644
 msgid "pip end"
 msgstr "PiP stoppen"
@@ -12638,18 +12850,6 @@ msgstr "Aktiviere PL2303 Kartenleser Treiber"
 msgid "player"
 msgstr "Multimedia Player"
 
-#: webif_help.h:66 webif_help.h:187
-msgid "playinfobar"
-msgstr "Wiedergabe Informationsleiste"
-
-#: webif_help.h:68 webif_help.h:189
-msgid "playlist"
-msgstr "Wiedergabeliste"
-
-#: webif_help.h:67 webif_help.h:188
-msgid "playlist_main"
-msgstr "Wiedergabeliste Menü"
-
 #: skin_default_skin.xml.h:507
 msgid "please wait"
 msgstr "bitte warten"
@@ -12659,17 +12859,9 @@ msgstr "bitte warten"
 msgid "please wait..."
 msgstr "bitte warten"
 
-#: webif_help.h:69 webif_help.h:190
-msgid "plugin"
-msgstr "Erweiterungen"
-
 #: skin_default_skin.xml.h:516
 msgid "position"
 msgstr "Position"
-
-#: webif_help.h:70 webif_help.h:191
-msgid "possetup"
-msgstr "Tuner Positions Einstellungen"
 
 #: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4446
 #: rectimer.h:1190 stopifnotused.c:111
@@ -12679,10 +12871,6 @@ msgstr "Ausschalten"
 #: epgsettings.h:217
 msgid "poweroff"
 msgstr "Ausschalten"
-
-#: webif_help.h:71 webif_help.h:192
-msgid "powerofftimerscreen"
-msgstr "Ausschalttimer"
 
 #: tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
@@ -12736,10 +12924,6 @@ msgstr "Zwischenspeichern"
 msgid "q"
 msgstr ""
 
-#: webif_help.h:72 webif_help.h:193
-msgid "quickmenu"
-msgstr "Schnellstart"
-
 #: skin_default_skin.xml.h:537
 msgid "r"
 msgstr ""
@@ -12755,26 +12939,6 @@ msgstr "Aufnahme"
 #: autotimer.c:475 autotimer.c:508 harddisk.h:585 rectimer.h:1050
 msgid "record"
 msgstr "Aufnahme"
-
-#: webif_help.h:73 webif_help.h:194
-msgid "recordduration"
-msgstr "Aufnahme (Länge)"
-
-#: webif_help.h:74 webif_help.h:195
-msgid "recordlist"
-msgstr "Timer Liste"
-
-#: webif_help.h:75 webif_help.h:196
-msgid "recordpath"
-msgstr "Aufnahmepfad"
-
-#: webif_help.h:77 webif_help.h:198
-msgid "rectimer"
-msgstr "Timer"
-
-#: webif_help.h:76 webif_help.h:197
-msgid "rectimerext"
-msgstr "Timer Ext"
 
 #: screensaveradjust.h:32
 msgid "red"
@@ -12799,10 +12963,6 @@ msgstr "Sender umbenennen"
 #: rectimer.h:1062 rectimer.h:1480 rectimer.h:1491
 msgid "repeat"
 msgstr ""
-
-#: webif_help.h:78 webif_help.h:199
-msgid "resolutionsettings"
-msgstr "Auflösung Einstellungen"
 
 #: adjust.h:103 httpdfunc.h:4008 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
@@ -12846,10 +13006,6 @@ msgstr "Lesen/Schreiben"
 msgid "s"
 msgstr ""
 
-#: webif_help.h:79 webif_help.h:200
-msgid "satfinder"
-msgstr "Empfangsqualität"
-
 #: network.h:436
 msgid "save network settings ?"
 msgstr "Einstellungen speichern?"
@@ -12858,7 +13014,7 @@ msgstr "Einstellungen speichern?"
 msgid "scam 3.60"
 msgstr ""
 
-#: epgsettings.h:149 tmc.h:389 webif_help.h:80 webif_help.h:201
+#: epgsettings.h:149 tmc.h:389
 msgid "scan"
 msgstr "Suchlauf"
 
@@ -12878,8 +13034,7 @@ msgstr "WLAN autostart"
 msgid "schaltet zurueck auf Sender"
 msgstr "Schaltet zurück auf Sender"
 
-#: skin_default_skin.xml.h:615 tpk_section.h:13 webif_help.h:82
-#: webif_help.h:203
+#: skin_default_skin.xml.h:615 tpk_section.h:13
 msgid "screensaver"
 msgstr "Bildschirmschoner"
 
@@ -12902,10 +13057,6 @@ msgstr "Bild"
 #: skin_default_skin.xml.h:621
 msgid "screensaver type"
 msgstr "Typ"
-
-#: webif_help.h:81 webif_help.h:202
-msgid "screensaveradjust"
-msgstr "Bildschirmschoner"
 
 #: tpk_description.h:131
 msgid "scriptexec Plugin"
@@ -12962,10 +13113,6 @@ msgstr "Auswahl des Datenträgers zur Formatierung"
 msgid "select the media drive from Device List for fsck"
 msgstr "Auswahl des Datenträgers zur Dateisystemüberprüfung"
 
-#: webif_help.h:83 webif_help.h:204
-msgid "serviceinfo"
-msgstr "Sender Info"
-
 #: movie4k.h:399
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
 msgstr "Ein Cookie, das in drei Tagen abläuft, wird erstellt."
@@ -12983,10 +13130,6 @@ msgstr "Startsender festlegen"
 msgid "settings"
 msgstr "Senderlisten"
 
-#: webif_help.h:84 webif_help.h:205
-msgid "settingsmenu"
-msgstr "Einstellungsmenü"
-
 #: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharedir"
 msgstr "Speicherort auf entferntem Rechner"
@@ -12994,10 +13137,6 @@ msgstr "Speicherort auf entferntem Rechner"
 #: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
 msgid "sharename"
 msgstr "Freigabename"
-
-#: webif_help.h:85 webif_help.h:206
-msgid "shortepg"
-msgstr "EPG-Kurzübersicht"
 
 #: tithek_settings.h:24 tithek_settings.h:33
 msgid "show 12 entrys"
@@ -13035,10 +13174,6 @@ msgstr "Zeige RECORD"
 msgid "showip"
 msgstr "Zeige IP Adresse im Display beim Start"
 
-#: webif_help.h:86 webif_help.h:207
-msgid "singleepg"
-msgstr "Einfach EPG"
-
 #: adjust.h:104 httpdfunc.h:4015 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
 #: plugins_mc_skin.xml.h:52 skin_default_skin.xml.h:655 skins_mc_skin.xml.h:52
@@ -13054,17 +13189,9 @@ msgstr "Größe (Voreinstellung)"
 msgid "skin (picmem jpg)"
 msgstr ""
 
-#: webif_help.h:87 webif_help.h:208
-msgid "skinadjust"
-msgstr "Skin-Einstellungen"
-
 #: tpk_section.h:15
 msgid "skins"
 msgstr "Skins"
-
-#: webif_help.h:88 webif_help.h:209
-msgid "skinselect"
-msgstr "Skin-Auswahl"
 
 #: adjust.h:180 httpdfunc.h:4541 moduleconfig.h:246 tmc.h:556
 msgid "slow"
@@ -13082,10 +13209,6 @@ msgstr ""
 msgid "socks5"
 msgstr ""
 
-#: webif_help.h:89 webif_help.h:210
-msgid "softcam"
-msgstr "Softcam"
-
 #: harddisk.h:487
 msgid "sorry found no harddisk"
 msgstr "Keine Festplatte/USB-Stick gefunden"
@@ -13102,10 +13225,6 @@ msgstr "Süd"
 #: skins_panel_skin.xml.h:18
 msgid "speed"
 msgstr "Geschwindigkeit"
-
-#: webif_help.h:90 webif_help.h:211
-msgid "spinner"
-msgstr "Spinner"
 
 #: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:29
 #: skins_networkbrowser_skin.xml.h:29
@@ -13125,14 +13244,9 @@ msgid "stable"
 msgstr "Offizieller Feed"
 
 #: adjust.h:163 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4439 rectimer.h:1189 stopifnotused.c:112 webif_help.h:92
-#: webif_help.h:213
+#: httpdfunc.h:4439 rectimer.h:1189 stopifnotused.c:112
 msgid "standby"
 msgstr "Standby"
-
-#: webif_help.h:91 webif_help.h:212
-msgid "standbymenu"
-msgstr "Standby Menü"
 
 #: vfdisplay.h:85
 msgid "star"
@@ -13192,10 +13306,6 @@ msgstr "Position speichern"
 msgid "streaminfo Plugin"
 msgstr ""
 
-#: webif_help.h:93 webif_help.h:214
-msgid "subtitle"
-msgstr "Untertitel"
-
 #: rectimer.h:1517
 msgid "success"
 msgstr "Erfolgreich"
@@ -13228,53 +13338,13 @@ msgstr "virtuelle Fernbedienung anzeigen"
 msgid "swts"
 msgstr "Lade stmdvb.ko mit der swts Option"
 
-#: webif_help.h:95 webif_help.h:216
-msgid "system_backup"
-msgstr "Sichern"
-
-#: webif_help.h:94 webif_help.h:215
-msgid "system_backup_restore"
-msgstr "Einstellungen sichern/wiederherstellen"
-
 #: skin_default_skin.xml.h:832
 msgid "system_infos"
 msgstr ""
 
-#: webif_help.h:96 webif_help.h:217
-msgid "system_infos_main"
-msgstr "System Information Hauptmenü"
-
-#: webif_help.h:99 webif_help.h:220
-msgid "system_sysinfos_main"
-msgstr "System Sysinfos Hauptmenü"
-
-#: skin_default_skin.xml.h:831 webif_help.h:97 webif_help.h:218
+#: skin_default_skin.xml.h:831
 msgid "systeminfo"
 msgstr "System Information"
-
-#: webif_help.h:98 webif_help.h:219
-msgid "systemmenu"
-msgstr "System Menü"
-
-#: webif_help.h:100 webif_help.h:221
-msgid "systemupdate_flash_online_menu"
-msgstr "Flash-Image Aktualisierung (Online)"
-
-#: webif_help.h:101 webif_help.h:222
-msgid "systemupdate_flash_tmp_menu"
-msgstr "Flash-Image Aktualisierung (Lokal)"
-
-#: webif_help.h:103 webif_help.h:224
-msgid "systemupdate_usb_online_menu"
-msgstr "USB-Image Aktualisierung (Online)"
-
-#: webif_help.h:104 webif_help.h:225
-msgid "systemupdate_usb_tmp_menu"
-msgstr "USB-Image Aktualisierung (Lokal)"
-
-#: webif_help.h:102 webif_help.h:223
-msgid "systemupdatemenu"
-msgstr "Systemaktualisierungs Menü"
 
 #: skin_default_skin.xml.h:716
 msgid "sz"
@@ -13307,14 +13377,6 @@ msgstr "Test-Transponder nicht gefunden"
 #: skinadjust.h:68
 msgid "text"
 msgstr "Text"
-
-#: webif_help.h:106 webif_help.h:227
-msgid "textinput"
-msgstr "Virtuelle Tastatur"
-
-#: webif_help.h:105 webif_help.h:226
-msgid "textinputhist"
-msgstr "Virtuelle Tastatur mit Verlauf"
 
 #: skin_default_skin.xml.h:722
 msgid "thereafter on this Channel:"
@@ -13349,22 +13411,6 @@ msgstr "Uhrzeit + Sender"
 msgid "time small"
 msgstr "Uhrzeit (klein)"
 
-#: webif_help.h:107 webif_help.h:228
-msgid "timermenu"
-msgstr "Timer"
-
-#: webif_help.h:109 webif_help.h:230
-msgid "timeshift"
-msgstr "Timeshift"
-
-#: webif_help.h:108 webif_help.h:229
-msgid "timeshiftsettings"
-msgstr "Timeshift Einstellungen"
-
-#: webif_help.h:110 webif_help.h:231
-msgid "timezone"
-msgstr "Zeitzone"
-
 #: diseqcconfig.h:10 diseqcconfig.h:17
 msgid "toneburst, committed"
 msgstr ""
@@ -13381,10 +13427,6 @@ msgstr ""
 msgid "tools"
 msgstr "Tools"
 
-#: webif_help.h:111 webif_help.h:232
-msgid "tpkinstall"
-msgstr "TPK Installation"
-
 #: mc_settings.h:13
 msgid "transparent (mvi)"
 msgstr ""
@@ -13392,22 +13434,6 @@ msgstr ""
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
 msgid "ts - cut"
 msgstr "ts - Schnitt"
-
-#: webif_help.h:112 webif_help.h:233
-msgid "tunerconfig"
-msgstr "Tunerauswahl"
-
-#: webif_help.h:113 webif_help.h:234
-msgid "tunerreceptiondvbc"
-msgstr "DVB-C Tuner einstellen"
-
-#: webif_help.h:114 webif_help.h:235
-msgid "tunerreceptiondvbs"
-msgstr "DVB-S Tuner einstellen"
-
-#: webif_help.h:115 webif_help.h:236
-msgid "tunerreceptiondvbt"
-msgstr "DVB-T Tuner einstellen"
 
 #: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:772
 #: skins_networkbrowser_skin.xml.h:30
@@ -13457,10 +13483,6 @@ msgstr ""
 #: zdf.h:86
 msgid "unknown"
 msgstr "nicht erkannt"
-
-#: webif_help.h:116 webif_help.h:237
-msgid "unlock"
-msgstr "Receiver freischalten"
 
 #: mediadbedit.h:76
 msgid "unlock -> leaf unlock"
@@ -13570,10 +13592,6 @@ msgstr "sehr langsam"
 msgid "vfddate"
 msgstr "Datum"
 
-#: webif_help.h:117 webif_help.h:238
-msgid "vfdisplay"
-msgstr "VF-Display"
-
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
 msgstr "Bildauflösung"
@@ -13590,21 +13608,9 @@ msgstr "Video/Audio"
 msgid "video / picture"
 msgstr "Video/Bild"
 
-#: webif_help.h:118 webif_help.h:239
-msgid "videomode"
-msgstr "Audio/Video"
-
-#: webif_help.h:119 webif_help.h:240
-msgid "videosettings"
-msgstr "Bild Einstellungen"
-
 #: tpk_showname.h:198
 msgid "vizcam 1.04"
 msgstr ""
-
-#: webif_help.h:120 webif_help.h:241
-msgid "volume"
-msgstr "Lautstärke"
 
 #: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
 msgid "vs"
@@ -13629,10 +13635,6 @@ msgstr "warte"
 #: tpk_description.h:167
 msgid "weather Plugin"
 msgstr "Wetter Plugin"
-
-#: webif_help.h:121 webif_help.h:242
-msgid "webdir"
-msgstr "Webdir"
 
 #: rectimer.h:1075
 msgid "weekly"
@@ -13677,10 +13679,6 @@ msgstr ""
 #: tpk_description.h:182
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
-
-#: webif_help.h:122 webif_help.h:243
-msgid "wlansettings"
-msgstr "WLAN"
 
 #: rectimer.h:1076
 msgid "workdays"
@@ -13810,3 +13808,336 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "3dsettings"
+#~ msgstr "3D Einstellungen"
+
+#~ msgid "adjust"
+#~ msgstr "Erweiterte Einstellungen"
+
+#~ msgid "aspectsettings"
+#~ msgstr "Seitenverhältnis"
+
+#~ msgid "audiotrack"
+#~ msgstr "Tonspur"
+
+#~ msgid "autores"
+#~ msgstr "Autoresolution"
+
+#~ msgid "avsettings"
+#~ msgstr "AV-Einstellungen"
+
+#~ msgid "bgdownload"
+#~ msgstr "Hintergrund Download"
+
+#~ msgid "blindscanadjust"
+#~ msgstr "Blindscan"
+
+#~ msgid "bouquetlist"
+#~ msgstr "Favoriten Liste"
+
+#~ msgid "caidlock"
+#~ msgstr "Caidlock"
+
+#~ msgid "channelbynr"
+#~ msgstr "Senderliste (nummeriert)"
+
+#~ msgid "channelhistory"
+#~ msgstr "Sender Verlauf"
+
+#~ msgid "channellist"
+#~ msgstr "Senderliste"
+
+#~ msgid "channelmenu"
+#~ msgstr "Senderliste Menü"
+
+#~ msgid "channelslotlist"
+#~ msgstr "CI Schacht Senderzuordnung"
+
+#~ msgid "dir"
+#~ msgstr "Dateiliste"
+
+#~ msgid "dirlabel"
+#~ msgstr "Verzeichnisname"
+
+#~ msgid "dirsort"
+#~ msgstr "Sortierung"
+
+#~ msgid "download"
+#~ msgstr "Download"
+
+#~ msgid "epg"
+#~ msgstr "EPG"
+
+#~ msgid "epgscanlist"
+#~ msgstr "EPG-Suchliste"
+
+#~ msgid "epgsearch"
+#~ msgstr "EPG-Suche"
+
+#~ msgid "epgsettings"
+#~ msgstr "EPG-Einstellungen"
+
+#~ msgid "extensionsmenu"
+#~ msgstr "Erweiterungsmenü"
+
+#~ msgid "gmultiepg"
+#~ msgstr "Grafisches Multi-EPG"
+
+#~ msgid "harddisk_main"
+#~ msgstr "Festplatten Hauptmenü"
+
+#~ msgid "harddiskmenu"
+#~ msgstr "Festplatten Menü"
+
+#~ msgid "helpbox"
+#~ msgstr "Hilfebox"
+
+#~ msgid "httpdsettings"
+#~ msgstr "HTTP Einstellungen"
+
+#~ msgid "inadynsettings"
+#~ msgstr "Indyn Einstellungen"
+
+#~ msgid "infobar2"
+#~ msgstr "Informationsleiste 2"
+
+#~ msgid "infomenu"
+#~ msgstr "Info Menü"
+
+#~ msgid "interfacelist"
+#~ msgstr "Netzwerkliste"
+
+#~ msgid "language"
+#~ msgstr "Sprache"
+
+#~ msgid "linkedchannel"
+#~ msgstr "Linkedchannel"
+
+#~ msgid "listedit"
+#~ msgstr "Senderliste Editor"
+
+#~ msgid "lnbscreen"
+#~ msgstr "LNB Einstellungen"
+
+#~ msgid "log"
+#~ msgstr "Log"
+
+#~ msgid "logo"
+#~ msgstr "Logo"
+
+#~ msgid "mainmenu"
+#~ msgstr "Hauptmenü"
+
+#~ msgid "manualscan"
+#~ msgstr "Manuelle Suche"
+
+#~ msgid "marker"
+#~ msgstr "Marker"
+
+#~ msgid "mediadbedit"
+#~ msgstr "MediaDB bearbeiten"
+
+#~ msgid "mediadbsettings"
+#~ msgstr "MediaDB Einstellungen"
+
+#~ msgid "menulist"
+#~ msgstr "Menüliste"
+
+#~ msgid "menuprotect"
+#~ msgstr "Menü schützen"
+
+#~ msgid "moduleadjust"
+#~ msgstr "CI-Module"
+
+#~ msgid "moduleconfig"
+#~ msgstr "CI-Module (Menü)"
+
+#~ msgid "multiepg"
+#~ msgstr "Multi-EPG"
+
+#~ msgid "mute"
+#~ msgstr "Stumm"
+
+#~ msgid "network_test"
+#~ msgstr "Netzwerk Test"
+
+#~ msgid "networkmenu"
+#~ msgstr "Netzwerk Menü"
+
+#~ msgid "newsletter"
+#~ msgstr "Aktuelle Meldungen"
+
+#~ msgid "numinput"
+#~ msgstr "Numerisches Eingabefeld"
+
+#~ msgid "ownpos"
+#~ msgstr "Eigene Position"
+
+#~ msgid "panel_settings_fancontrol"
+#~ msgstr "Lüftersteuerung"
+
+#~ msgid "pin"
+#~ msgstr "Pin"
+
+#~ msgid "pincheck"
+#~ msgstr "Pin Check"
+
+#~ msgid "playinfobar"
+#~ msgstr "Wiedergabe Informationsleiste"
+
+#~ msgid "playlist"
+#~ msgstr "Wiedergabeliste"
+
+#~ msgid "playlist_main"
+#~ msgstr "Wiedergabeliste Menü"
+
+#~ msgid "plugin"
+#~ msgstr "Erweiterungen"
+
+#~ msgid "possetup"
+#~ msgstr "Tuner Positions Einstellungen"
+
+#~ msgid "powerofftimerscreen"
+#~ msgstr "Ausschalttimer"
+
+#~ msgid "quickmenu"
+#~ msgstr "Schnellstart"
+
+#~ msgid "recordduration"
+#~ msgstr "Aufnahme (Länge)"
+
+#~ msgid "recordlist"
+#~ msgstr "Timer Liste"
+
+#~ msgid "recordpath"
+#~ msgstr "Aufnahmepfad"
+
+#~ msgid "rectimer"
+#~ msgstr "Timer"
+
+#~ msgid "rectimerext"
+#~ msgstr "Timer Ext"
+
+#~ msgid "resolutionsettings"
+#~ msgstr "Auflösung Einstellungen"
+
+#~ msgid "satfinder"
+#~ msgstr "Empfangsqualität"
+
+#~ msgid "screensaveradjust"
+#~ msgstr "Bildschirmschoner"
+
+#~ msgid "serviceinfo"
+#~ msgstr "Sender Info"
+
+#~ msgid "settingsmenu"
+#~ msgstr "Einstellungsmenü"
+
+#~ msgid "shortepg"
+#~ msgstr "EPG-Kurzübersicht"
+
+#~ msgid "singleepg"
+#~ msgstr "Einfach EPG"
+
+#~ msgid "skinadjust"
+#~ msgstr "Skin-Einstellungen"
+
+#~ msgid "skinselect"
+#~ msgstr "Skin-Auswahl"
+
+#~ msgid "softcam"
+#~ msgstr "Softcam"
+
+#~ msgid "spinner"
+#~ msgstr "Spinner"
+
+#~ msgid "standbymenu"
+#~ msgstr "Standby Menü"
+
+#~ msgid "subtitle"
+#~ msgstr "Untertitel"
+
+#~ msgid "system_backup"
+#~ msgstr "Sichern"
+
+#~ msgid "system_backup_restore"
+#~ msgstr "Einstellungen sichern/wiederherstellen"
+
+#~ msgid "system_infos_main"
+#~ msgstr "System Information Hauptmenü"
+
+#~ msgid "system_sysinfos_main"
+#~ msgstr "System Sysinfos Hauptmenü"
+
+#~ msgid "systemmenu"
+#~ msgstr "System Menü"
+
+#~ msgid "systemupdate_flash_online_menu"
+#~ msgstr "Flash-Image Aktualisierung (Online)"
+
+#~ msgid "systemupdate_flash_tmp_menu"
+#~ msgstr "Flash-Image Aktualisierung (Lokal)"
+
+#~ msgid "systemupdate_usb_online_menu"
+#~ msgstr "USB-Image Aktualisierung (Online)"
+
+#~ msgid "systemupdate_usb_tmp_menu"
+#~ msgstr "USB-Image Aktualisierung (Lokal)"
+
+#~ msgid "systemupdatemenu"
+#~ msgstr "Systemaktualisierungs Menü"
+
+#~ msgid "textinput"
+#~ msgstr "Virtuelle Tastatur"
+
+#~ msgid "textinputhist"
+#~ msgstr "Virtuelle Tastatur mit Verlauf"
+
+#~ msgid "timermenu"
+#~ msgstr "Timer"
+
+#~ msgid "timeshift"
+#~ msgstr "Timeshift"
+
+#~ msgid "timeshiftsettings"
+#~ msgstr "Timeshift Einstellungen"
+
+#~ msgid "timezone"
+#~ msgstr "Zeitzone"
+
+#~ msgid "tpkinstall"
+#~ msgstr "TPK Installation"
+
+#~ msgid "tunerconfig"
+#~ msgstr "Tunerauswahl"
+
+#~ msgid "tunerreceptiondvbc"
+#~ msgstr "DVB-C Tuner einstellen"
+
+#~ msgid "tunerreceptiondvbs"
+#~ msgstr "DVB-S Tuner einstellen"
+
+#~ msgid "tunerreceptiondvbt"
+#~ msgstr "DVB-T Tuner einstellen"
+
+#~ msgid "unlock"
+#~ msgstr "Receiver freischalten"
+
+#~ msgid "vfdisplay"
+#~ msgstr "VF-Display"
+
+#~ msgid "videomode"
+#~ msgstr "Audio/Video"
+
+#~ msgid "videosettings"
+#~ msgstr "Bild Einstellungen"
+
+#~ msgid "volume"
+#~ msgstr "Lautstärke"
+
+#~ msgid "webdir"
+#~ msgstr "Webdir"
+
+#~ msgid "wlansettings"
+#~ msgstr "WLAN"
