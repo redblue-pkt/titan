@@ -13615,6 +13615,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
-#~ msgstr "extensión protocolo de red (upnpfs/smbfs/ftpfs/rarfs)"
