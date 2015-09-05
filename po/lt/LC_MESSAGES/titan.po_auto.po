@@ -13593,27 +13593,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Choose your Media plugin item from the following list and show it so the "
-#~ "plugin button"
-#~ msgstr "Pasirinkite funkcij i toliau ivardytj srae Media mygtukas"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "blue button"
-#~ msgstr ""
-#~ "Nustatyti Mlyno Mygtuko Funkcijas : \n"
-#~ " pasirinkti i srao"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "plugin button"
-#~ msgstr "Pasirinkite funkcij i io srao u Plugin mygtukas"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "red button"
-#~ msgstr ""
-#~ "Set Red Button Function:\n"
-#~ "Choose a Function from the following list"

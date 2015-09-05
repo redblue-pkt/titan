@@ -13572,23 +13572,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Choose your Media plugin item from the following list and show it so the "
-#~ "plugin button"
-#~ msgstr "Выберите медиаплагин из списка для запуска этой кнопкой"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "blue button"
-#~ msgstr "Выберите из списка плагин для запуска синей кнопкой"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "plugin button"
-#~ msgstr "Выберите плагин из списка для запуска этой кнопкой"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "red button"
-#~ msgstr "Выберите из списка плагин для запуска синей кнопкой"
