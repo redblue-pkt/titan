@@ -13526,9 +13526,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Tv"
-#~ msgstr "ТВ"
-
-#~ msgid "Tv/Radio"
-#~ msgstr "ТВ/Радио"
