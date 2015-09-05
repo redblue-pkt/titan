@@ -1,4 +1,3 @@
-#: webif_help.h:123
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.67\n"
@@ -178,14 +177,6 @@ msgstr ""
 
 #: skin_default_skin.xml.h:15
 msgid "/"
-msgstr ""
-
-#: webif_help.h:3
-msgid "/home/atemio/flashimg/source.titan/help/de/:"
-msgstr ""
-
-#: webif_help.h:124
-msgid "/home/atemio/flashimg/source.titan/help/en/:"
 msgstr ""
 
 #: titan.c:1216
@@ -423,7 +414,7 @@ msgstr "3D режим"
 msgid "3D-Mode Settings"
 msgstr "Настройки 3D режима"
 
-#: webif_help.h:4 webif_help.h:125
+#: webif_help.h:3
 msgid "3dsettings"
 msgstr "Параметры 3D"
 
@@ -9508,16 +9499,6 @@ msgstr "TSID"
 msgid "TV"
 msgstr "ТВ"
 
-#: webif_index.atemio7600.h:19 webif_index.atemio7600.h:117
-#: webif_rc.atemio510.h:9 webif_rc.atemio7600.h:50
-#: webif_rc_virtual.atemio510.h:9
-msgid "TV / Radio"
-msgstr "ТВ/Радио"
-
-#: settings_bluebutton.h:12 settings_pluginbutton.h:16 settings_redbutton.h:16
-msgid "TV / Radio Switch"
-msgstr "Переключение ТВ/Радио"
-
 #: skin_default_skin.xml.h:768
 msgid "TV Resolution (h):"
 msgstr "Кадр (Высота)"
@@ -9525,6 +9506,13 @@ msgstr "Кадр (Высота)"
 #: skin_default_skin.xml.h:769
 msgid "TV Resolution (w):"
 msgstr "Кадр (Ширина)"
+
+#: settings_bluebutton.h:12 settings_pluginbutton.h:16 settings_redbutton.h:16
+#: webif_index.atemio7600.h:19 webif_index.atemio7600.h:117
+#: webif_rc.atemio510.h:9 webif_rc.atemio7600.h:50
+#: webif_rc_virtual.atemio510.h:9
+msgid "TV/Radio"
+msgstr ""
 
 #: scan.h:1560
 msgid "TV: "
@@ -11020,7 +11008,7 @@ msgstr "Начать запись (Остановить в конце текущ
 msgid "add service"
 msgstr "Добавить канал"
 
-#: webif_help.h:5 webif_help.h:126
+#: webif_help.h:4
 msgid "adjust"
 msgstr "Общие настройки"
 
@@ -11086,7 +11074,7 @@ msgstr "Горизонтально"
 msgid "ask"
 msgstr "Спросить"
 
-#: webif_help.h:6 webif_help.h:127
+#: webif_help.h:5
 msgid "aspectsettings"
 msgstr "Настройки"
 
@@ -11098,7 +11086,7 @@ msgstr "Аудио"
 msgid "audio / picture"
 msgstr "Аудио/Картинка"
 
-#: webif_help.h:7 webif_help.h:128
+#: webif_help.h:6
 msgid "audiotrack"
 msgstr "Аудио-трек"
 
@@ -11121,7 +11109,7 @@ msgstr "Исходящие звонки"
 msgid "auto"
 msgstr "Авто"
 
-#: webif_help.h:8 webif_help.h:129
+#: webif_help.h:7
 msgid "autores"
 msgstr "Авторазрешение"
 
@@ -11129,11 +11117,7 @@ msgstr "Авторазрешение"
 msgid "autostart"
 msgstr "Автостарт"
 
-#: webif_help.h:130
-msgid "av settings"
-msgstr ""
-
-#: webif_help.h:9
+#: webif_help.h:8
 msgid "avsettings"
 msgstr "Параметры AV"
 
@@ -11165,7 +11149,7 @@ msgstr "Лучшее"
 msgid "bestfit"
 msgstr "Растянуть"
 
-#: webif_help.h:10 webif_help.h:131
+#: webif_help.h:9
 msgid "bgdownload"
 msgstr ""
 
@@ -11179,11 +11163,7 @@ msgstr "Данные крупным шрифтом"
 msgid "black"
 msgstr "Чёрный"
 
-#: webif_help.h:132
-msgid "blind scan adjust"
-msgstr ""
-
-#: webif_help.h:11
+#: webif_help.h:10
 msgid "blindscanadjust"
 msgstr "Слепой поиск"
 
@@ -11211,7 +11191,7 @@ msgstr "Остановка загрузки"
 msgid "border"
 msgstr "Рамка"
 
-#: webif_help.h:12 webif_help.h:133
+#: webif_help.h:11
 msgid "bouquetlist"
 msgstr "Букеты"
 
@@ -11231,7 +11211,7 @@ msgstr "Древесный"
 msgid "c"
 msgstr ""
 
-#: webif_help.h:13
+#: webif_help.h:12
 msgid "caidlock"
 msgstr ""
 
@@ -11287,33 +11267,29 @@ msgstr "Номер канала"
 msgid "channel-movie"
 msgstr "Канал/Название"
 
-#: webif_help.h:14 webif_help.h:134
+#: webif_help.h:13
 msgid "channelbynr"
 msgstr ""
 
-#: webif_help.h:15 webif_help.h:135
+#: webif_help.h:14
 msgid "channelhistory"
 msgstr "История каналов"
 
-#: webif_help.h:16 webif_help.h:136
+#: webif_help.h:15
 msgid "channellist"
 msgstr "Список каналов"
 
-#: webif_help.h:17 webif_help.h:137
+#: webif_help.h:16
 msgid "channelmenu"
 msgstr "Меню каналов"
 
-#: webif_help.h:18 webif_help.h:138
+#: webif_help.h:17
 msgid "channelslotlist"
 msgstr ""
 
 #: tpk.h:3216 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Проверьте Ваш скрытый фид!"
-
-#: webif_help.h:139
-msgid "child lock"
-msgstr ""
 
 #: networkbrowser.h:1581
 msgid "cifs"
@@ -11426,7 +11402,7 @@ msgstr "Подробно"
 msgid "dhcp"
 msgstr "DHCP"
 
-#: webif_help.h:21 webif_help.h:142
+#: webif_help.h:20
 msgid "dir"
 msgstr "Директория"
 
@@ -11438,11 +11414,11 @@ msgstr "Прямое подключение"
 msgid "direkter Start"
 msgstr ""
 
-#: webif_help.h:19 webif_help.h:140
+#: webif_help.h:18
 msgid "dirlabel"
 msgstr "Имя директории"
 
-#: webif_help.h:20 webif_help.h:141
+#: webif_help.h:19
 msgid "dirsort"
 msgstr "Сортировка папок"
 
@@ -11450,7 +11426,7 @@ msgstr "Сортировка папок"
 msgid "disable"
 msgstr "Выкл"
 
-#: skin_default_skin.xml.h:204 webif_help.h:22 webif_help.h:143
+#: skin_default_skin.xml.h:204 webif_help.h:21
 msgid "diseqcscreen"
 msgstr ""
 
@@ -11474,7 +11450,7 @@ msgstr "DNS-сервер 2"
 msgid "double"
 msgstr "Двойной"
 
-#: webif_help.h:23 webif_help.h:144
+#: webif_help.h:22
 msgid "download"
 msgstr "Закачка"
 
@@ -11538,19 +11514,19 @@ msgstr "Конец поиска"
 msgid "endless"
 msgstr "Бесконечно"
 
-#: webif_help.h:27 webif_help.h:148
+#: webif_help.h:26
 msgid "epg"
 msgstr "EPG"
 
-#: webif_help.h:24 webif_help.h:145
+#: webif_help.h:23
 msgid "epgscanlist"
 msgstr "EPG сканлист"
 
-#: webif_help.h:25 webif_help.h:146
+#: webif_help.h:24
 msgid "epgsearch"
 msgstr "Поиск EPG"
 
-#: webif_help.h:26 webif_help.h:147
+#: webif_help.h:25
 msgid "epgsettings"
 msgstr "Параметры EPG"
 
@@ -11578,11 +11554,7 @@ msgstr "Внешний"
 msgid "extended config Panel"
 msgstr ""
 
-#: webif_help.h:149
-msgid "extensions menu"
-msgstr ""
-
-#: webif_help.h:28
+#: webif_help.h:27
 msgid "extensionsmenu"
 msgstr "Меню расширений"
 
@@ -11689,17 +11661,13 @@ msgid ""
 "config files."
 msgstr ""
 
-#: webif_help.h:29
+#: webif_help.h:28
 msgid "gmultiepg"
 msgstr ""
 
 #: possetup.h:58
 msgid "goto position"
 msgstr "Идти на"
-
-#: webif_help.h:150
-msgid "graphical multi epg"
-msgstr ""
 
 #: screensaveradjust.h:31
 msgid "green"
@@ -11713,11 +11681,11 @@ msgstr "Серый"
 msgid "h"
 msgstr "Ч"
 
-#: webif_help.h:30 webif_help.h:151
+#: webif_help.h:29
 msgid "harddisk_main"
 msgstr ""
 
-#: webif_help.h:31 webif_help.h:152
+#: webif_help.h:30
 msgid "harddiskmenu"
 msgstr ""
 
@@ -11729,7 +11697,7 @@ msgstr ""
 msgid "hddreplacement"
 msgstr "Использовать папку для записей"
 
-#: webif_help.h:32 webif_help.h:153
+#: webif_help.h:31
 msgid "helpbox"
 msgstr ""
 
@@ -11750,11 +11718,7 @@ msgstr "Удержать"
 msgid "html"
 msgstr ""
 
-#: webif_help.h:154
-msgid "httpd settings"
-msgstr ""
-
-#: webif_help.h:33
+#: webif_help.h:32
 msgid "httpdsettings"
 msgstr "Настройки HTTP"
 
@@ -11790,19 +11754,19 @@ msgstr "В"
 msgid "in background"
 msgstr "В фоновом режиме"
 
-#: webif_help.h:34 webif_help.h:155
+#: webif_help.h:33
 msgid "inadynsettings"
 msgstr ""
 
-#: adjust.h:70 httpdfunc.h:3896 webif_help.h:36 webif_help.h:157
+#: adjust.h:70 httpdfunc.h:3896 webif_help.h:35
 msgid "infobar"
 msgstr "Инфобар 2"
 
-#: webif_help.h:35 webif_help.h:156
+#: webif_help.h:34
 msgid "infobar2"
 msgstr ""
 
-#: webif_help.h:37 webif_help.h:158
+#: webif_help.h:36
 msgid "infomenu"
 msgstr ""
 
@@ -11822,7 +11786,7 @@ msgstr "Установить"
 msgid "installed"
 msgstr "Установлен"
 
-#: webif_help.h:38 webif_help.h:159
+#: webif_help.h:37
 msgid "interfacelist"
 msgstr ""
 
@@ -11883,7 +11847,7 @@ msgstr ""
 msgid "lan"
 msgstr "LAN"
 
-#: webif_help.h:39 webif_help.h:160
+#: webif_help.h:38
 msgid "language"
 msgstr "Язык меню"
 
@@ -11923,15 +11887,15 @@ msgstr "Лимит выкл"
 msgid "limits on"
 msgstr "Лимит вкл"
 
-#: webif_help.h:40 webif_help.h:161
+#: webif_help.h:39
 msgid "linkedchannel"
 msgstr ""
 
-#: webif_help.h:41 webif_help.h:162
+#: webif_help.h:40
 msgid "listedit"
 msgstr ""
 
-#: webif_help.h:42 webif_help.h:163
+#: webif_help.h:41
 msgid "lnbscreen"
 msgstr ""
 
@@ -11947,11 +11911,11 @@ msgstr ""
 msgid "locked -> unlock it"
 msgstr ""
 
-#: webif_help.h:44 webif_help.h:165
+#: webif_help.h:43
 msgid "log"
 msgstr "Лог"
 
-#: webif_help.h:43 webif_help.h:164
+#: webif_help.h:42
 msgid "logo"
 msgstr "Лого"
 
@@ -11968,23 +11932,23 @@ msgstr "Низкое"
 msgid "m"
 msgstr ""
 
-#: webif_help.h:45 webif_help.h:166
+#: webif_help.h:44
 msgid "mainmenu"
 msgstr ""
 
-#: webif_help.h:46 webif_help.h:167
+#: webif_help.h:45
 msgid "manualscan"
 msgstr ""
 
-#: webif_help.h:47 webif_help.h:168
+#: webif_help.h:46
 msgid "marker"
 msgstr ""
 
-#: webif_help.h:48 webif_help.h:169
+#: webif_help.h:47
 msgid "mediadbedit"
 msgstr ""
 
-#: webif_help.h:49 webif_help.h:170
+#: webif_help.h:48
 msgid "mediadbsettings"
 msgstr ""
 
@@ -11992,15 +11956,15 @@ msgstr ""
 msgid "medium"
 msgstr "Средне"
 
-#: webif_help.h:50 webif_help.h:171
+#: webif_help.h:49
 msgid "menulist"
 msgstr ""
 
-#: webif_help.h:51 webif_help.h:172
+#: webif_help.h:50
 msgid "menuprotect"
 msgstr "Защита меню"
 
-#: skin_default_skin.xml.h:830 webif_help.h:52 webif_help.h:173
+#: skin_default_skin.xml.h:830 webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -12012,11 +11976,11 @@ msgstr "Среднее"
 msgid "mixed mode"
 msgstr "Смешанный режим"
 
-#: webif_help.h:53 webif_help.h:174
+#: webif_help.h:52
 msgid "moduleadjust"
 msgstr ""
 
-#: webif_help.h:54 webif_help.h:175
+#: webif_help.h:53
 msgid "moduleconfig"
 msgstr ""
 
@@ -12036,11 +12000,11 @@ msgstr "На Запад"
 msgid "movie-channel"
 msgstr "Название/Канал"
 
-#: webif_help.h:55 webif_help.h:176
+#: webif_help.h:54
 msgid "multiepg"
 msgstr ""
 
-#: webif_help.h:56 webif_help.h:177
+#: webif_help.h:55
 msgid "mute"
 msgstr "Без звука"
 
@@ -12063,15 +12027,15 @@ msgstr "Нет"
 msgid "netmask"
 msgstr "Маска сети"
 
-#: tpk_section.h:10 webif_help.h:59 webif_help.h:180
+#: tpk_section.h:10 webif_help.h:58
 msgid "network"
 msgstr "Сеть"
 
-#: webif_help.h:58 webif_help.h:179
+#: webif_help.h:57
 msgid "network_test"
 msgstr ""
 
-#: webif_help.h:57 webif_help.h:178
+#: webif_help.h:56
 msgid "networkmenu"
 msgstr ""
 
@@ -12091,7 +12055,7 @@ msgstr ""
 msgid "news Plugin"
 msgstr ""
 
-#: webif_help.h:60 webif_help.h:181
+#: webif_help.h:59
 msgid "newsletter"
 msgstr "Новости от разработчиков"
 
@@ -12218,7 +12182,7 @@ msgstr "Монтирование NTFS"
 msgid "ntpdate"
 msgstr "Загружать время из Интернета"
 
-#: webif_help.h:61 webif_help.h:182
+#: webif_help.h:60
 msgid "numinput"
 msgstr ""
 
@@ -12329,7 +12293,7 @@ msgstr "Плагин оптимизации системы"
 msgid "options"
 msgstr "Опции"
 
-#: webif_help.h:62 webif_help.h:183
+#: webif_help.h:61
 msgid "ownpos"
 msgstr ""
 
@@ -12337,7 +12301,7 @@ msgstr ""
 msgid "p"
 msgstr ""
 
-#: webif_help.h:63 webif_help.h:184
+#: webif_help.h:62
 msgid "panel_settings_fancontrol"
 msgstr ""
 
@@ -12385,11 +12349,11 @@ msgstr "Пиконы"
 msgid "picture"
 msgstr "Картинка"
 
-#: webif_help.h:65 webif_help.h:186
+#: webif_help.h:64
 msgid "pin"
 msgstr "Пин-код"
 
-#: webif_help.h:64 webif_help.h:185
+#: webif_help.h:63
 msgid "pincheck"
 msgstr ""
 
@@ -12413,15 +12377,15 @@ msgstr ""
 msgid "player"
 msgstr "Плеер"
 
-#: webif_help.h:66 webif_help.h:187
+#: webif_help.h:65
 msgid "playinfobar"
 msgstr ""
 
-#: webif_help.h:68 webif_help.h:189
+#: webif_help.h:67
 msgid "playlist"
 msgstr "Плейлист"
 
-#: webif_help.h:67 webif_help.h:188
+#: webif_help.h:66
 msgid "playlist_main"
 msgstr ""
 
@@ -12434,7 +12398,7 @@ msgstr "Ждите!"
 msgid "please wait..."
 msgstr "Пожалуйста ждите!"
 
-#: webif_help.h:69 webif_help.h:190
+#: webif_help.h:68
 msgid "plugin"
 msgstr "Плагин"
 
@@ -12442,7 +12406,7 @@ msgstr "Плагин"
 msgid "position"
 msgstr "Позиция"
 
-#: webif_help.h:70 webif_help.h:191
+#: webif_help.h:69
 msgid "possetup"
 msgstr ""
 
@@ -12455,7 +12419,7 @@ msgstr "Выключение"
 msgid "poweroff"
 msgstr "Выключение"
 
-#: webif_help.h:71 webif_help.h:192
+#: webif_help.h:70
 msgid "powerofftimerscreen"
 msgstr ""
 
@@ -12511,7 +12475,7 @@ msgstr "Кэширование"
 msgid "q"
 msgstr ""
 
-#: webif_help.h:72 webif_help.h:193
+#: webif_help.h:71
 msgid "quickmenu"
 msgstr ""
 
@@ -12531,23 +12495,23 @@ msgstr ""
 msgid "record"
 msgstr "Запись"
 
-#: webif_help.h:73 webif_help.h:194
+#: webif_help.h:72
 msgid "recordduration"
 msgstr ""
 
-#: webif_help.h:74 webif_help.h:195
+#: webif_help.h:73
 msgid "recordlist"
 msgstr ""
 
-#: webif_help.h:75 webif_help.h:196
+#: webif_help.h:74
 msgid "recordpath"
 msgstr ""
 
-#: webif_help.h:77 webif_help.h:198
+#: webif_help.h:76
 msgid "rectimer"
 msgstr ""
 
-#: webif_help.h:76 webif_help.h:197
+#: webif_help.h:75
 msgid "rectimerext"
 msgstr ""
 
@@ -12575,7 +12539,7 @@ msgstr "Переименование каналов"
 msgid "repeat"
 msgstr ""
 
-#: webif_help.h:78 webif_help.h:199
+#: webif_help.h:77
 msgid "resolutionsettings"
 msgstr ""
 
@@ -12621,7 +12585,7 @@ msgstr "Чтение/Запись"
 msgid "s"
 msgstr ""
 
-#: webif_help.h:79 webif_help.h:200
+#: webif_help.h:78
 msgid "satfinder"
 msgstr "Уровень и качество сигнала"
 
@@ -12633,7 +12597,7 @@ msgstr "Сохранить настройки сети?"
 msgid "scam 3.60"
 msgstr ""
 
-#: epgsettings.h:149 tmc.h:389 webif_help.h:80 webif_help.h:201
+#: epgsettings.h:149 tmc.h:389 webif_help.h:79
 msgid "scan"
 msgstr "Поиск"
 
@@ -12653,8 +12617,7 @@ msgstr "Автостарт WiFi"
 msgid "schaltet zurueck auf Sender"
 msgstr "Переключает обратно на канал"
 
-#: skin_default_skin.xml.h:615 tpk_section.h:13 webif_help.h:82
-#: webif_help.h:203
+#: skin_default_skin.xml.h:615 tpk_section.h:13 webif_help.h:81
 msgid "screensaver"
 msgstr "Заставка"
 
@@ -12678,7 +12641,7 @@ msgstr "Картинка заставки"
 msgid "screensaver type"
 msgstr "Тип заставки"
 
-#: webif_help.h:81 webif_help.h:202
+#: webif_help.h:80
 msgid "screensaveradjust"
 msgstr ""
 
@@ -12730,7 +12693,7 @@ msgstr "Выберите диск или раздел диска для форм
 msgid "select the media drive from Device List for fsck"
 msgstr "Выберите диск или раздел диска для проверки файловой системы"
 
-#: webif_help.h:83 webif_help.h:204
+#: webif_help.h:82
 msgid "serviceinfo"
 msgstr "Информация о канале"
 
@@ -12753,7 +12716,7 @@ msgstr "Сделать канал стартовым"
 msgid "settings"
 msgstr "Сеттинги"
 
-#: webif_help.h:84 webif_help.h:205
+#: webif_help.h:83
 msgid "settingsmenu"
 msgstr ""
 
@@ -12765,7 +12728,7 @@ msgstr "Путь к сетевой папке на удалённом компь
 msgid "sharename"
 msgstr "Имя папки"
 
-#: webif_help.h:85 webif_help.h:206
+#: webif_help.h:84
 msgid "shortepg"
 msgstr ""
 
@@ -12805,7 +12768,7 @@ msgstr "Индикатор записи"
 msgid "showip"
 msgstr "Показать на дисплее ресивера"
 
-#: webif_help.h:86 webif_help.h:207
+#: webif_help.h:85
 msgid "singleepg"
 msgstr ""
 
@@ -12824,7 +12787,7 @@ msgstr "Размер (Умолчание)"
 msgid "skin (picmem jpg)"
 msgstr ""
 
-#: webif_help.h:87 webif_help.h:208
+#: webif_help.h:86
 msgid "skinadjust"
 msgstr ""
 
@@ -12832,7 +12795,7 @@ msgstr ""
 msgid "skins"
 msgstr "Скины"
 
-#: webif_help.h:88 webif_help.h:209
+#: webif_help.h:87
 msgid "skinselect"
 msgstr ""
 
@@ -12852,7 +12815,7 @@ msgstr ""
 msgid "socks5"
 msgstr ""
 
-#: webif_help.h:89 webif_help.h:210
+#: webif_help.h:88
 msgid "softcam"
 msgstr "Эмуляторы"
 
@@ -12873,7 +12836,7 @@ msgstr "Юг"
 msgid "speed"
 msgstr "Скорость"
 
-#: webif_help.h:90 webif_help.h:211
+#: webif_help.h:89
 msgid "spinner"
 msgstr ""
 
@@ -12895,12 +12858,11 @@ msgid "stable"
 msgstr "Официальный фид"
 
 #: adjust.h:163 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4439 rectimer.h:1189 stopifnotused.c:112 webif_help.h:92
-#: webif_help.h:213
+#: httpdfunc.h:4439 rectimer.h:1189 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Режим ожидания"
 
-#: webif_help.h:91 webif_help.h:212
+#: webif_help.h:90
 msgid "standbymenu"
 msgstr ""
 
@@ -12962,7 +12924,7 @@ msgstr "Сохранить"
 msgid "streaminfo Plugin"
 msgstr ""
 
-#: webif_help.h:93 webif_help.h:214
+#: webif_help.h:92
 msgid "subtitle"
 msgstr "Субтитры"
 
@@ -12998,11 +12960,11 @@ msgstr "Перейти к виртуальной клавиатуре"
 msgid "swts"
 msgstr "Загрузка с опцией swts"
 
-#: webif_help.h:95 webif_help.h:216
+#: webif_help.h:94
 msgid "system_backup"
 msgstr ""
 
-#: webif_help.h:94 webif_help.h:215
+#: webif_help.h:93
 msgid "system_backup_restore"
 msgstr ""
 
@@ -13010,39 +12972,39 @@ msgstr ""
 msgid "system_infos"
 msgstr ""
 
-#: webif_help.h:96 webif_help.h:217
+#: webif_help.h:95
 msgid "system_infos_main"
 msgstr ""
 
-#: webif_help.h:99 webif_help.h:220
+#: webif_help.h:98
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:831 webif_help.h:97 webif_help.h:218
+#: skin_default_skin.xml.h:831 webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
-#: webif_help.h:98 webif_help.h:219
+#: webif_help.h:97
 msgid "systemmenu"
 msgstr ""
 
-#: webif_help.h:100 webif_help.h:221
+#: webif_help.h:99
 msgid "systemupdate_flash_online_menu"
 msgstr ""
 
-#: webif_help.h:101 webif_help.h:222
+#: webif_help.h:100
 msgid "systemupdate_flash_tmp_menu"
 msgstr ""
 
-#: webif_help.h:103 webif_help.h:224
+#: webif_help.h:102
 msgid "systemupdate_usb_online_menu"
 msgstr ""
 
-#: webif_help.h:104 webif_help.h:225
+#: webif_help.h:103
 msgid "systemupdate_usb_tmp_menu"
 msgstr ""
 
-#: webif_help.h:102 webif_help.h:223
+#: webif_help.h:101
 msgid "systemupdatemenu"
 msgstr ""
 
@@ -13078,11 +13040,11 @@ msgstr "Транспондер не найден"
 msgid "text"
 msgstr "Текст"
 
-#: webif_help.h:106 webif_help.h:227
+#: webif_help.h:105
 msgid "textinput"
 msgstr ""
 
-#: webif_help.h:105 webif_help.h:226
+#: webif_help.h:104
 msgid "textinputhist"
 msgstr ""
 
@@ -13119,19 +13081,19 @@ msgstr "Время + канал"
 msgid "time small"
 msgstr "Время (Мелко)"
 
-#: webif_help.h:107 webif_help.h:228
+#: webif_help.h:106
 msgid "timermenu"
 msgstr ""
 
-#: webif_help.h:109 webif_help.h:230
+#: webif_help.h:108
 msgid "timeshift"
 msgstr ""
 
-#: webif_help.h:108 webif_help.h:229
+#: webif_help.h:107
 msgid "timeshiftsettings"
 msgstr ""
 
-#: webif_help.h:110 webif_help.h:231
+#: webif_help.h:109
 msgid "timezone"
 msgstr "Часовой пояс"
 
@@ -13151,7 +13113,7 @@ msgstr ""
 msgid "tools"
 msgstr "Утилиты"
 
-#: webif_help.h:111 webif_help.h:232
+#: webif_help.h:110
 msgid "tpkinstall"
 msgstr ""
 
@@ -13163,19 +13125,19 @@ msgstr "Прозрачность"
 msgid "ts - cut"
 msgstr ""
 
-#: webif_help.h:112 webif_help.h:233
+#: webif_help.h:111
 msgid "tunerconfig"
 msgstr "Конфигурация тюнера "
 
-#: webif_help.h:113 webif_help.h:234
+#: webif_help.h:112
 msgid "tunerreceptiondvbc"
 msgstr ""
 
-#: webif_help.h:114 webif_help.h:235
+#: webif_help.h:113
 msgid "tunerreceptiondvbs"
 msgstr ""
 
-#: webif_help.h:115 webif_help.h:236
+#: webif_help.h:114
 msgid "tunerreceptiondvbt"
 msgstr ""
 
@@ -13228,7 +13190,7 @@ msgstr "Universal"
 msgid "unknown"
 msgstr "Неизвестно"
 
-#: webif_help.h:116 webif_help.h:237
+#: webif_help.h:115
 msgid "unlock"
 msgstr ""
 
@@ -13332,7 +13294,7 @@ msgstr "Очень медленно"
 msgid "vfddate"
 msgstr "VFD"
 
-#: webif_help.h:117 webif_help.h:238
+#: webif_help.h:116
 msgid "vfdisplay"
 msgstr "Дисплей ресивера"
 
@@ -13352,11 +13314,11 @@ msgstr "Видео/Аудио"
 msgid "video / picture"
 msgstr "Видео/Картинка"
 
-#: webif_help.h:118 webif_help.h:239
+#: webif_help.h:117
 msgid "videomode"
 msgstr ""
 
-#: webif_help.h:119 webif_help.h:240
+#: webif_help.h:118
 msgid "videosettings"
 msgstr ""
 
@@ -13364,7 +13326,7 @@ msgstr ""
 msgid "vizcam 1.04"
 msgstr ""
 
-#: webif_help.h:120 webif_help.h:241
+#: webif_help.h:119
 msgid "volume"
 msgstr "Громкость"
 
@@ -13392,7 +13354,7 @@ msgstr "Ожидание"
 msgid "weather Plugin"
 msgstr "Плагин погоды"
 
-#: webif_help.h:121 webif_help.h:242
+#: webif_help.h:120
 msgid "webdir"
 msgstr ""
 
@@ -13440,7 +13402,7 @@ msgstr ""
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
-#: webif_help.h:122 webif_help.h:243
+#: webif_help.h:121
 msgid "wlansettings"
 msgstr ""
 
@@ -13572,3 +13534,9 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "TV / Radio"
+#~ msgstr "ТВ/Радио"
+
+#~ msgid "TV / Radio Switch"
+#~ msgstr "Переключение ТВ/Радио"
