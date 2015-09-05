@@ -9,7 +9,7 @@ void screensettings_bluebutton()
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 
-	addmenulist(&mlist, "TV / Radio Switch", _("TV / Radio Switch"), NULL, 0, 0);
+	addmenulist(&mlist, "TV / Radio Switch", _("TV/Radio"), NULL, 0, 0);
 	if(checkemu() == 1)
 		addmenulist(&mlist, "Softcam Panel", _("Softcam Panel"), NULL, 0, 0);
 	addmenulist(&mlist, "Extensions List", _("Extensions List"), NULL, 0, 0);
