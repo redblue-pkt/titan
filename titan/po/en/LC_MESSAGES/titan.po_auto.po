@@ -13597,27 +13597,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Choose your Media plugin item from the following list and show it so the "
-#~ "plugin button"
-#~ msgstr "Choose a Function from the following list for the Media Button"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "blue button"
-#~ msgstr ""
-#~ "Set Blue Button Function:\n"
-#~ "Choose a Function from the following list"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "plugin button"
-#~ msgstr "Choose a Function from the following list for the Plugin Button"
-
-#~ msgid ""
-#~ "Choose your plugin / menu item from the following list and show it so the "
-#~ "red button"
-#~ msgstr ""
-#~ "Set Red Button Function:\n"
-#~ "Choose a Function from the following list"
