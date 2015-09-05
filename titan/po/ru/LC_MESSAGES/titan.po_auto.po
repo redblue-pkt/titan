@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.67\n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-08-11 13:39+0100\n"
+"PO-Revision-Date: 2015-09-05 16:24+0100\n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: ru\n"
@@ -9512,7 +9512,7 @@ msgstr "Кадр (Ширина)"
 #: webif_rc.atemio510.h:9 webif_rc.atemio7600.h:50
 #: webif_rc_virtual.atemio510.h:9
 msgid "TV/Radio"
-msgstr ""
+msgstr "ТВ/Радио"
 
 #: scan.h:1560
 msgid "TV: "
