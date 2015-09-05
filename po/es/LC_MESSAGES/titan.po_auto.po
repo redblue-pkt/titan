@@ -2178,14 +2178,6 @@ msgstr "Elige su HBBTV Favorito de la lista siguiente"
 msgid "Choose your Internet Favorite from the following list"
 msgstr "Seleccione los marcadores de internet de la lista de abajo"
 
-#: settings_mediabutton.h:48
-msgid ""
-"Choose your Media plugin item from the following list and show it so the "
-"plugin button"
-msgstr ""
-"Elija una funcion de la lista siguiente para el boton de los medios de "
-"comunicacion"
-
 #: mc_global.h:609
 msgid "Choose your Playlist Mode from the following list"
 msgstr ""
@@ -2247,28 +2239,6 @@ msgstr "Elija su CIFS/NFS Compartir de la siguiente lista"
 #: unicable.h:197
 msgid "Choose your manufacturer from the following list"
 msgstr "Seleccione el fabricante de la siguiente lista"
-
-#: settings_bluebutton.h:34
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"blue button"
-msgstr ""
-"Ajuste Funcion Boton Azul:\n"
-"Elija una funcion de la siguiente lista"
-
-#: settings_pluginbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"plugin button"
-msgstr "Elija una funcion de la lista siguiente para el boton Plugin"
-
-#: settings_redbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"red button"
-msgstr ""
-"Ajuste Funcion Boton Rojo:\n"
-"Elija una funcin de la siguiente lista"
 
 #: skin_default_skin.xml.h:147
 msgid "Ci-Modul internal Menu"
@@ -8621,6 +8591,22 @@ msgstr "Seleccin de control remoto"
 msgid "Select Your Serach Modus"
 msgstr "Seleccione el modo de busqueda"
 
+#: settings_mediabutton.h:48
+msgid "Select a function for the Media button"
+msgstr ""
+
+#: settings_pluginbutton.h:35
+msgid "Select a function for the Plugin button"
+msgstr ""
+
+#: settings_bluebutton.h:34
+msgid "Select a function for the blue button"
+msgstr ""
+
+#: settings_redbutton.h:35
+msgid "Select a function for the red button"
+msgstr ""
+
 #: skin_default_skin.xml.h:626
 msgid "Select backup:"
 msgstr "Seleccionar backup: "
@@ -13675,3 +13661,29 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid ""
+#~ "Choose your Media plugin item from the following list and show it so the "
+#~ "plugin button"
+#~ msgstr ""
+#~ "Elija una funcion de la lista siguiente para el boton de los medios de "
+#~ "comunicacion"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "blue button"
+#~ msgstr ""
+#~ "Ajuste Funcion Boton Azul:\n"
+#~ "Elija una funcion de la siguiente lista"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "plugin button"
+#~ msgstr "Elija una funcion de la lista siguiente para el boton Plugin"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "red button"
+#~ msgstr ""
+#~ "Ajuste Funcion Boton Rojo:\n"
+#~ "Elija una funcin de la siguiente lista"

@@ -2161,12 +2161,6 @@ msgstr "Выберите фаворит HBBTV из списка ниже"
 msgid "Choose your Internet Favorite from the following list"
 msgstr "Выберите закладку из списка ниже"
 
-#: settings_mediabutton.h:48
-msgid ""
-"Choose your Media plugin item from the following list and show it so the "
-"plugin button"
-msgstr "Выберите медиаплагин из списка для запуска этой кнопкой"
-
 #: mc_global.h:609
 msgid "Choose your Playlist Mode from the following list"
 msgstr "Выберите режим воспроизведения из списка ниже"
@@ -2222,24 +2216,6 @@ msgstr "Выберите для изменения, добавления нов�
 #: unicable.h:197
 msgid "Choose your manufacturer from the following list"
 msgstr "Выберите нужное из списка ниже"
-
-#: settings_bluebutton.h:34
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"blue button"
-msgstr "Выберите из списка плагин для запуска синей кнопкой"
-
-#: settings_pluginbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"plugin button"
-msgstr "Выберите плагин из списка для запуска этой кнопкой"
-
-#: settings_redbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"red button"
-msgstr "Выберите из списка плагин для запуска синей кнопкой"
 
 #: skin_default_skin.xml.h:147
 msgid "Ci-Modul internal Menu"
@@ -8558,6 +8534,22 @@ msgstr "Выберите Ваш пульт управления"
 msgid "Select Your Serach Modus"
 msgstr "Выберите режим поиска"
 
+#: settings_mediabutton.h:48
+msgid "Select a function for the Media button"
+msgstr ""
+
+#: settings_pluginbutton.h:35
+msgid "Select a function for the Plugin button"
+msgstr ""
+
+#: settings_bluebutton.h:34
+msgid "Select a function for the blue button"
+msgstr ""
+
+#: settings_redbutton.h:35
+msgid "Select a function for the red button"
+msgstr ""
+
 #: skin_default_skin.xml.h:626
 msgid "Select backup:"
 msgstr "Выбор бэкапа"
@@ -13580,3 +13572,23 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid ""
+#~ "Choose your Media plugin item from the following list and show it so the "
+#~ "plugin button"
+#~ msgstr "Выберите медиаплагин из списка для запуска этой кнопкой"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "blue button"
+#~ msgstr "Выберите из списка плагин для запуска синей кнопкой"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "plugin button"
+#~ msgstr "Выберите плагин из списка для запуска этой кнопкой"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "red button"
+#~ msgstr "Выберите из списка плагин для запуска синей кнопкой"

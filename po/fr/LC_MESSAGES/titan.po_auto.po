@@ -2127,12 +2127,6 @@ msgstr ""
 msgid "Choose your Internet Favorite from the following list"
 msgstr ""
 
-#: settings_mediabutton.h:48
-msgid ""
-"Choose your Media plugin item from the following list and show it so the "
-"plugin button"
-msgstr ""
-
 #: mc_global.h:609
 msgid "Choose your Playlist Mode from the following list"
 msgstr ""
@@ -2187,24 +2181,6 @@ msgstr ""
 
 #: unicable.h:197
 msgid "Choose your manufacturer from the following list"
-msgstr ""
-
-#: settings_bluebutton.h:34
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"blue button"
-msgstr ""
-
-#: settings_pluginbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"plugin button"
-msgstr ""
-
-#: settings_redbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"red button"
 msgstr ""
 
 #: skin_default_skin.xml.h:147
@@ -8445,6 +8421,22 @@ msgstr ""
 
 #: global.h:6556
 msgid "Select Your Serach Modus"
+msgstr ""
+
+#: settings_mediabutton.h:48
+msgid "Select a function for the Media button"
+msgstr ""
+
+#: settings_pluginbutton.h:35
+msgid "Select a function for the Plugin button"
+msgstr ""
+
+#: settings_bluebutton.h:34
+msgid "Select a function for the blue button"
+msgstr ""
+
+#: settings_redbutton.h:35
+msgid "Select a function for the red button"
 msgstr ""
 
 #: skin_default_skin.xml.h:626

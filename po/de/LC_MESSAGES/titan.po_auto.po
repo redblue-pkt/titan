@@ -2208,14 +2208,6 @@ msgstr "Wählen Sie das gewünschte HBBTV Lesezeichen aus der folgenden Liste"
 msgid "Choose your Internet Favorite from the following list"
 msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
-#: settings_mediabutton.h:48
-msgid ""
-"Choose your Media plugin item from the following list and show it so the "
-"plugin button"
-msgstr ""
-"Tastenbelegung:\n"
-"Wählen Sie einen Eintrag aus der Liste für die Media Taste"
-
 #: mc_global.h:609
 msgid "Choose your Playlist Mode from the following list"
 msgstr "Wählen Sie den gewünschten Playlist Modus aus der folgenden Liste"
@@ -2283,30 +2275,6 @@ msgstr ""
 #: unicable.h:197
 msgid "Choose your manufacturer from the following list"
 msgstr "Wählen Sie den Hersteller aus der folgenden Liste"
-
-#: settings_bluebutton.h:34
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"blue button"
-msgstr ""
-"Tastenbelegung:\n"
-"Wählen Sie einen Eintrag aus der Liste für die blaue Taste"
-
-#: settings_pluginbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"plugin button"
-msgstr ""
-"Tastenbelegung:\n"
-"Wählen Sie einen Eintrag aus der Liste für die Plugin Taste"
-
-#: settings_redbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"red button"
-msgstr ""
-"Tastenbelegung:\n"
-"Wählen Sie einen Eintrag aus der Liste für die rote Taste"
 
 #: skin_default_skin.xml.h:147
 msgid "Ci-Modul internal Menu"
@@ -8748,6 +8716,22 @@ msgstr "Fernbedienungsauswahl Menü"
 msgid "Select Your Serach Modus"
 msgstr "Wählen Sie den Such Modus"
 
+#: settings_mediabutton.h:48
+msgid "Select a function for the Media button"
+msgstr ""
+
+#: settings_pluginbutton.h:35
+msgid "Select a function for the Plugin button"
+msgstr ""
+
+#: settings_bluebutton.h:34
+msgid "Select a function for the blue button"
+msgstr ""
+
+#: settings_redbutton.h:35
+msgid "Select a function for the red button"
+msgstr ""
+
 #: skin_default_skin.xml.h:626
 msgid "Select backup:"
 msgstr "Sicherung auswählen:"
@@ -13826,3 +13810,31 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid ""
+#~ "Choose your Media plugin item from the following list and show it so the "
+#~ "plugin button"
+#~ msgstr ""
+#~ "Tastenbelegung:\n"
+#~ "Wählen Sie einen Eintrag aus der Liste für die Media Taste"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "blue button"
+#~ msgstr ""
+#~ "Tastenbelegung:\n"
+#~ "Wählen Sie einen Eintrag aus der Liste für die blaue Taste"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "plugin button"
+#~ msgstr ""
+#~ "Tastenbelegung:\n"
+#~ "Wählen Sie einen Eintrag aus der Liste für die Plugin Taste"
+
+#~ msgid ""
+#~ "Choose your plugin / menu item from the following list and show it so the "
+#~ "red button"
+#~ msgstr ""
+#~ "Tastenbelegung:\n"
+#~ "Wählen Sie einen Eintrag aus der Liste für die rote Taste"
