@@ -7248,6 +7248,16 @@ char* randomstring(int n)
 
 int putmsgbuffer()
 {
+	if(file_exist("/tmp/textbox_standby") != 1)
+		return 1;
+	
+	FILE *fp = fopen("/tmp/textbox_standby" , "r");
+	if(fp == NULL) 
+	{
+		printf("Error opening file: /tmp/textbox_standby\n");
+		return(-1);
+	}
+	
 	char* caption = malloc(255);
 	char* body = malloc(255);
 	char* comtext1 = malloc(20);
@@ -7263,18 +7273,13 @@ int putmsgbuffer()
 	char* timeout = malloc(10);
 	char* flag = malloc(10);
  
-  FILE *fp = fopen("/tmp/textbox_standby" , "r");
-	if(fp == NULL) 
-	{
-		printf("Error opening file: /tmp/textbox_standby\n");
-		return(-1);
-	}
 	while(fgets(caption, 255, fp)!=NULL) 
 	{
 		string_newline(caption);
 		
 		fgets(body, 255, fp);
 		string_newline(body);
+		body = string_replace_all("\t", "\n", body, 1)
 		
 		if(comtext1 == NULL)
 			comtext1 = malloc(20);
