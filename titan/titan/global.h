@@ -7279,7 +7279,7 @@ int putmsgbuffer()
 		
 		fgets(body, 255, fp);
 		string_newline(body);
-		body = string_replace_all("\t", "\n", body, 1)
+		body = string_replace_all("\t", "\n", body, 1);
 		
 		if(comtext1 == NULL)
 			comtext1 = malloc(20);

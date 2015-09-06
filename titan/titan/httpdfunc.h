@@ -3284,7 +3284,7 @@ void putxmessage(struct stimerthread* timernode, char* captiontime, char* body)
 		{
 			FILE* datei = fopen("/tmp/textbox_standby", "a");
 			
-			body = string_replace_all("\n", "\t", body, 1)
+			body = string_replace_all("\n", "\t", body, 1);
 			fprintf(datei, "%s\n%s\n%s\n%i\n%s\n%i\n%i\n%i\n%i\n%i\n%i\n%i\n%i\n%i\n", caption, body, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), 0, 0, 0, 0, 600, 280, timeout, 0);
 			fclose(datei);
 		}
