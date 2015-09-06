@@ -179,6 +179,7 @@ void screenstandby()
 	subtitlepause(0);
 	m_unlock(&status.vfdmutex, 3);
 	status.updatevfd = START;
+	putmsgbuffer()
 }
 
 #endif
