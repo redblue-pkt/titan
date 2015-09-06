@@ -7246,4 +7246,118 @@ char* randomstring(int n)
 }
 
 
+int putmsgbuffer()
+{
+	char* caption = malloc(255);
+	char* body = malloc(255);
+	char* comtext1 = malloc(20);
+	char* com1 = malloc(10);
+	char* comtext2 = malloc(20);
+	char* com2 = malloc(10);
+	char* comtext3 = malloc(20);
+	char* com3 = malloc(10);
+	char* comtext4 = malloc(20);
+	char* com4 = malloc(10);
+	char* width = malloc(10);
+	char* height = malloc(10);
+	char* timeout = malloc(10);
+	char* flag = malloc(10);
+ 
+  FILE *fp = fopen("/tmp/textbox_standby" , "r");
+	if(fp == NULL) 
+	{
+		printf("Error opening file: /tmp/textbox_standby\n");
+		return(-1);
+	}
+	while(fgets(caption, 255, fp)!=NULL) 
+	{
+		string_newline(caption);
+		
+		fgets(body, 255, fp);
+		string_newline(body);
+		
+		if(comtext1 == NULL)
+			comtext1 = malloc(20);
+		fgets(comtext1, 20, fp);
+		string_newline(comtext1);
+		fgets(com1, 10, fp);
+		string_newline(com1);
+		
+		if(comtext2 == NULL)
+			comtext2 = malloc(20);
+		fgets(comtext2, 20, fp);
+		string_newline(comtext2);
+		fgets(com2, 10, fp);
+		string_newline(com2);
+		
+		if(comtext3 == NULL)
+			comtext3 = malloc(20);
+		fgets(comtext3, 20, fp);
+		string_newline(comtext3);
+		fgets(com3, 10, fp);
+		string_newline(com3);
+		
+		if(comtext4 == NULL)
+			comtext4 = malloc(20);
+		fgets(comtext4, 20, fp);
+		string_newline(comtext4);
+		fgets(com4, 10, fp);
+		string_newline(com4);
+		
+		fgets(width, 10, fp);
+		string_newline(width);
+		
+		fgets(height, 10, fp);
+		string_newline(height);
+		
+		fgets(timeout, 10, fp);
+		string_newline(timeout);
+		
+		fgets(flag, 10, fp);
+		string_newline(flag);
+		
+		if(atoi(com1) == 0)
+		{
+			free(comtext1);
+			comtext1 = NULL;
+		}
+		if(atoi(com2) == 0)
+		{
+			free(comtext2);
+			comtext2 = NULL;
+		}
+		if(atoi(com3) == 0)
+		{
+			free(comtext3);
+			comtext3 = NULL;
+		}
+		if(atoi(com4) == 0)
+		{
+			free(comtext4);
+			comtext4 = NULL;
+		}
+		textbox(caption, body, comtext1, atoi(com1), comtext2, atoi(com2), comtext3, atoi(com3), comtext4, atoi(com4), atoi(width), atoi(height), atoi(timeout), atoi(flag));
+	}
+	
+	fclose(fp);	
+	
+	free(caption);
+	free(body);
+	free(comtext1);
+	free(com1);
+	free(comtext2);
+	free(com2);
+	free(comtext3);
+	free(com3);
+	free(comtext4);
+	free(com4);
+	free(width);
+	free(height);
+	free(timeout);
+	free(flag);
+	
+	return 0;
+}
+
+
 #endif
