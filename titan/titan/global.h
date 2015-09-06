@@ -7345,6 +7345,7 @@ int putmsgbuffer()
 	}
 	
 	fclose(fp);	
+	system("rm /tmp/textbox_standby");
 	
 	free(caption);
 	free(body);
@@ -7360,7 +7361,7 @@ int putmsgbuffer()
 	free(height);
 	free(timeout);
 	free(flag);
-	
+		
 	return 0;
 }
 
