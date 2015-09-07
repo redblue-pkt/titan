@@ -3268,14 +3268,17 @@ void calctext(char* buf, char* buf1, unsigned int* linecount, unsigned int* page
 
 int initlocale(char *localepath)
 {
+	debug(10, "localepath: %s", localepath);
 	setlocale(LC_ALL, "");
 	if(bindtextdomain(PROGNAME, localepath) == NULL)
 	{
+		debug(10, "err set bindtextdomain");
 		err("set bindtextdomain");
 		return 1;
 	}
 	if(textdomain(PROGNAME) == NULL)
 	{
+		debug(10, "err set textdomain");
 		err("set textdomain");
 		return 1;
 	}
@@ -3288,13 +3291,33 @@ int initlocale(char *localepath)
 //copy SYS_LC_MESSAGES from other language into LC_MESSAGE
 int setlang(char *lang)
 {
+	debug(10, "lang: %s", lang);
 	char *ret;
+
+#ifdef MIPSEL
+	// old: po/de new: de_DE
+	char* tmpstr = 	NULL;
+	tmpstr = ostrcat(lang, NULL, 0, 0);
+	int count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, "/", &count);
+	if(count > 1)
+	{
+		lang = ostrcat(ret1[1].part, NULL, 0, 0);
+		lang = ostrcat(lang, "_", 1, 0);
+		lang = ostrcat(lang, string_toupper(ret1[1].part), 1, 0);
+		debug(10, "lang changed: %s", lang);
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+#endif
 
 	setenv("LANG", lang, 1);
 	setenv("LANGUAGE", lang, 1);
 	ret = setlocale(LC_MESSAGES, lang);
 	if(ret == NULL)
 	{
+		printf("can't set LC_MESSAGES to %s\n", lang);
 		err("can't set LC_MESSAGES to %s", lang);
 		return 1;
 	}
