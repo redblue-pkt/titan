@@ -3296,7 +3296,7 @@ int setlang(char *lang)
 
 #ifdef MIPSEL
 	// old: po/de new: de_DE
-	char* tmpstr = 	NULL;
+	char* tmpstr = NULL, *src = NULL, *dest = NULL;
 	tmpstr = ostrcat(lang, NULL, 0, 0);
 	int count = 0;
 	struct splitstr* ret1 = NULL;
@@ -3304,11 +3304,28 @@ int setlang(char *lang)
 	if(count > 1)
 	{
 		lang = ostrcat(ret1[1].part, NULL, 0, 0);
-		lang = ostrcat(lang, "_", 1, 0);
-		lang = ostrcat(lang, string_toupper(ret1[1].part), 1, 0);
+		lang = string_replace("de", "de_DE", lang, 1);
+		lang = string_replace("el", "el_GR", lang, 1);
+		lang = string_replace("en", "en_EN", lang, 1);
+		lang = string_replace("es", "es_ES", lang, 1);
+		lang = string_replace("fr", "fr_FR", lang, 1);
+		lang = string_replace("it", "it_IT", lang, 1);
+		lang = string_replace("lt", "lt_LT", lang, 1);
+		lang = string_replace("nl", "nl_NL", lang, 1);
+		lang = string_replace("pl", "pl_PL", lang, 1);
+		lang = string_replace("ru", "ru_RU", lang, 1);
+		lang = string_replace("vi", "vi_VN", lang, 1);
 		debug(10, "lang changed: %s", lang);
+
+		dest = ostrcat("/var/usr/local/share/titan/po/", ret1[1].part, 0, 0);
+		src = ostrcat("/var/usr/local/share/titan/po/", lang, 0, 0);
+
+		debug(10, "lang link: %s > %s", dest, src);
+		symlink(dest, src);
 	}
 	free(ret1), ret1 = NULL;
+	free(dest), dest = NULL;
+	free(src), src = NULL;
 	free(tmpstr), tmpstr = NULL;
 #endif
 
