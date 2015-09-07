@@ -12474,10 +12474,6 @@ msgstr "Älter als 5 Tage"
 msgid "older 50 day"
 msgstr "Älter als 50 Tage"
 
-#: tpk_section.h:11
-msgid "oled_skins"
-msgstr ""
-
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:424 transponder.h:257 transponder.h:266 transponder.h:416
@@ -12570,7 +12566,7 @@ msgstr "Bild 4"
 msgid "pic5"
 msgstr "Bild 5"
 
-#: tpk_section.h:12
+#: tpk_section.h:11
 msgid "picons"
 msgstr "Senderlogos"
 
@@ -12602,7 +12598,7 @@ msgstr "PiP-Zap"
 msgid "pl2303"
 msgstr "Aktiviere PL2303 Kartenleser Treiber"
 
-#: tpk_section.h:13
+#: tpk_section.h:12
 msgid "player"
 msgstr "Multimedia Player"
 
@@ -12846,7 +12842,7 @@ msgstr "WLAN autostart"
 msgid "schaltet zurueck auf Sender"
 msgstr "Schaltet zurück auf Sender"
 
-#: skin_default_skin.xml.h:615 tpk_section.h:14 webif_help.h:81
+#: skin_default_skin.xml.h:615 tpk_section.h:13 webif_help.h:81
 msgid "screensaver"
 msgstr "Bildschirmschoner"
 
@@ -12946,7 +12942,7 @@ msgstr ""
 msgid "set startchannel"
 msgstr "Startsender festlegen"
 
-#: tpk_section.h:15
+#: tpk_section.h:14
 msgid "settings"
 msgstr "Senderlisten"
 
@@ -13025,9 +13021,13 @@ msgstr ""
 msgid "skinadjust"
 msgstr "Skin-Einstellungen"
 
-#: tpk_section.h:16
+#: tpk_section.h:15
 msgid "skins"
 msgstr "Skins"
+
+#: tpk_section.h:16
+msgid "skins_oled"
+msgstr ""
 
 #: webif_help.h:87
 msgid "skinselect"
