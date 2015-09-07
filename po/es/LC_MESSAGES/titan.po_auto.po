@@ -12334,10 +12334,6 @@ msgstr "Mas de 5 dias"
 msgid "older 50 day"
 msgstr "Mas de 50 dias"
 
-#: tpk_section.h:11
-msgid "oled_skins"
-msgstr ""
-
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:424 transponder.h:257 transponder.h:266 transponder.h:416
@@ -12430,7 +12426,7 @@ msgstr "Imagen 4"
 msgid "pic5"
 msgstr "Imagen 5"
 
-#: tpk_section.h:12
+#: tpk_section.h:11
 msgid "picons"
 msgstr "Senderlogos"
 
@@ -12462,7 +12458,7 @@ msgstr ""
 msgid "pl2303"
 msgstr "PL2303 Modulo"
 
-#: tpk_section.h:13
+#: tpk_section.h:12
 msgid "player"
 msgstr "Multimedia Player"
 
@@ -12706,7 +12702,7 @@ msgstr "Exploracion WLAN"
 msgid "schaltet zurueck auf Sender"
 msgstr "vuelve al canal anterior"
 
-#: skin_default_skin.xml.h:615 tpk_section.h:14 webif_help.h:81
+#: skin_default_skin.xml.h:615 tpk_section.h:13 webif_help.h:81
 msgid "screensaver"
 msgstr "Protector de Pantalla"
 
@@ -12805,7 +12801,7 @@ msgstr "Fije la hora de la unidad sueño"
 msgid "set startchannel"
 msgstr "establecer como inicio canal"
 
-#: tpk_section.h:15
+#: tpk_section.h:14
 msgid "settings"
 msgstr "ajustes"
 
@@ -12884,9 +12880,13 @@ msgstr ""
 msgid "skinadjust"
 msgstr ""
 
-#: tpk_section.h:16
+#: tpk_section.h:15
 msgid "skins"
 msgstr "Skins"
+
+#: tpk_section.h:16
+msgid "skins_oled"
+msgstr ""
 
 #: webif_help.h:87
 msgid "skinselect"

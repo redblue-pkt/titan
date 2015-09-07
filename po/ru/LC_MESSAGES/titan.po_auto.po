@@ -12249,10 +12249,6 @@ msgstr "Старше 5 дней"
 msgid "older 50 day"
 msgstr "Старше 50 дней"
 
-#: tpk_section.h:11
-msgid "oled_skins"
-msgstr ""
-
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:424 transponder.h:257 transponder.h:266 transponder.h:416
@@ -12345,7 +12341,7 @@ msgstr ""
 msgid "pic5"
 msgstr ""
 
-#: tpk_section.h:12
+#: tpk_section.h:11
 msgid "picons"
 msgstr "Пиконы"
 
@@ -12377,7 +12373,7 @@ msgstr ""
 msgid "pl2303"
 msgstr ""
 
-#: tpk_section.h:13
+#: tpk_section.h:12
 msgid "player"
 msgstr "Плеер"
 
@@ -12621,7 +12617,7 @@ msgstr "Автостарт WiFi"
 msgid "schaltet zurueck auf Sender"
 msgstr "Переключает обратно на канал"
 
-#: skin_default_skin.xml.h:615 tpk_section.h:14 webif_help.h:81
+#: skin_default_skin.xml.h:615 tpk_section.h:13 webif_help.h:81
 msgid "screensaver"
 msgstr "Заставка"
 
@@ -12716,7 +12712,7 @@ msgstr ""
 msgid "set startchannel"
 msgstr "Сделать канал стартовым"
 
-#: tpk_section.h:15
+#: tpk_section.h:14
 msgid "settings"
 msgstr "Сеттинги"
 
@@ -12795,9 +12791,13 @@ msgstr ""
 msgid "skinadjust"
 msgstr ""
 
-#: tpk_section.h:16
+#: tpk_section.h:15
 msgid "skins"
 msgstr "Скины"
+
+#: tpk_section.h:16
+msgid "skins_oled"
+msgstr ""
 
 #: webif_help.h:87
 msgid "skinselect"
