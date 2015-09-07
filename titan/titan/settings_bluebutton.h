@@ -9,7 +9,7 @@ void screensettings_bluebutton()
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 
-	addmenulist(&mlist, "TV / Radio Switch", _("TV/Radio"), NULL, 0, 0);
+	addmenulist(&mlist, "TV/Radio", _("TV/Radio"), NULL, 0, 0);
 	if(checkemu() == 1)
 		addmenulist(&mlist, "Softcam Panel", _("Softcam Panel"), NULL, 0, 0);
 	addmenulist(&mlist, "Extensions List", _("Extensions List"), NULL, 0, 0);
@@ -40,7 +40,7 @@ void screensettings_bluebutton()
 	}
 	debug(60, "(new) Bluekey=%s", mbox->name);
 
-	if(ostrcmp(mbox->name, "TV / Radio Switch") == 0)
+	if(ostrcmp(mbox->name, "TV/Radio") == 0)
 		delconfig("bluekey");
 	else
 		addconfig("bluekey", mbox->name);
