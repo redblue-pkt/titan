@@ -47,6 +47,7 @@ int screenlanguage(int flag)
 				if(flag == 0 && change == 1)
 				{
 					textbox(_("Message"), _("Change language needs reboot"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 1000, 200, 5, 0);
+					resettvpic();
 					oshutdown(3, 1);
 				}
 				if(flag == 2 && change == 1)
@@ -66,6 +67,7 @@ int screenlanguage(int flag)
 		if(createstartscreen() != 0) return 2;
 		readscreen(getconfig("skinfile", NULL), 0, 0);
 	}
+	
 	return 0;
 }
 

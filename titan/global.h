@@ -3296,7 +3296,7 @@ int setlang(char *lang)
 
 #ifdef MIPSEL
 	// old: po/de new: de_DE
-	char* tmpstr = NULL, *src = NULL, *dest = NULL;
+	char* tmpstr = NULL, *src = NULL, *dest = NULL, *cmd = NULL;
 	tmpstr = ostrcat(lang, NULL, 0, 0);
 	int count = 0;
 	struct splitstr* ret1 = NULL;
@@ -3322,10 +3322,22 @@ int setlang(char *lang)
 
 		debug(10, "lang link: %s > %s", dest, src);
 		symlink(dest, src);
+
+		free(dest), dest = NULL;
+		dest = ostrcat("/usr/lib/locale/", lang, 0, 0);
+		debug(10, "lang check system locale: %s", dest);
+		if(!file_exist(dest))
+		{
+			cmd = ostrcat("cp -a /usr/lib/locale/en_EN ", dest, 0, 0);
+			debug(10, "lang create system locale: %s", dest);
+			debug(10, "lang cmd: %s", cmd);
+			system(cmd);
+		}
 	}
 	free(ret1), ret1 = NULL;
 	free(dest), dest = NULL;
 	free(src), src = NULL;
+	free(cmd), cmd = NULL;
 	free(tmpstr), tmpstr = NULL;
 #endif
 
