@@ -101,7 +101,8 @@ void start(void)
 	tithekkinox = 1;
 	titheksolarmovie = 1;
 	tithekmlehd = 1;
-
+	amazonlogin = 0;
+	
 //change markcolor
 	long tmplistboxselectcol = status.listboxselectcol;
 	status.listboxselectcol = convertcol("tithek_selectcol");
