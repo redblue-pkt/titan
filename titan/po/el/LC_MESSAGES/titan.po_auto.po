@@ -2134,7 +2134,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:198 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:197 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -3098,7 +3098,7 @@ msgstr ""
 msgid "ERROR... can't set marker in this file"
 msgstr ""
 
-#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:157 autotimer.c:537
+#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:156 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: channellist.h:945 channellist.h:947 channellist.h:952 channellist.h:954
@@ -5666,7 +5666,7 @@ msgstr ""
 msgid "Menulist"
 msgstr ""
 
-#: amazon.h:18 amazon.h:21 amazon.h:157 avsettings.h:331 betarobot.h:57
+#: amazon.h:18 amazon.h:21 amazon.h:156 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334
@@ -6226,7 +6226,7 @@ msgstr ""
 msgid "OE"
 msgstr ""
 
-#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:157 autotimer.c:537
+#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:156 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
@@ -8243,7 +8243,7 @@ msgstr ""
 msgid "Script has no output or started in background."
 msgstr ""
 
-#: amazon.h:31 amazon.h:36 amazon.h:408 amazon.h:410 amazon.h:671 amazon.h:673
+#: amazon.h:31 amazon.h:36 amazon.h:407 amazon.h:409 amazon.h:664 amazon.h:666
 #: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
@@ -9102,7 +9102,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:198 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:197 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
