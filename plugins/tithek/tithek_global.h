@@ -124,6 +124,31 @@ char* gethttps(char* url, char* localfile, char* data, int flag)
 	return tmpstr;
 }
 
+char* string_decode3(char* input)
+{
+	if(input == NULL) return input;
+
+	input = string_replace_all("&#196;", "Ae", input, 1);
+	input = string_replace_all("&#201;", "E", input, 1);
+	input = string_replace_all("&#233;", "e", input, 1);
+	input = string_replace_all("&#214;", "Oe", input, 1);
+	input = string_replace_all("&#246;", "oe", input, 1);
+	input = string_replace_all("&#220;", "Ue", input, 1);
+	input = string_replace_all("&#252;", "ue", input, 1);
+	input = string_replace_all("&#223;", "ss", input, 1);
+
+	input = string_replace_all("&Auml;", "Ae", input, 1);
+	input = string_replace_all("&Eacute;", "E", input, 1);
+	input = string_replace_all("&eacute;", "e", input, 1);
+	input = string_replace_all("&Ouml;", "Oe", input, 1);
+	input = string_replace_all("&ouml;", "oe", input, 1);
+	input = string_replace_all("&Uuml;", "Ue", input, 1);
+	input = string_replace_all("&uuml;", "ue", input, 1);
+	input = string_replace_all("&szlig;", "ss", input, 1);
+
+	return input;
+}
+
 char* getfilekey(char* w, char* i, char* s, char* e)
 {
 	char* ret = NULL;
