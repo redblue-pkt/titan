@@ -42,13 +42,12 @@ void amazon_init(char* titheklink, char* tithekfile)
 void amazon_deinit()
 {
 	int debuglevel = getconfigint("debuglevel", NULL);
-
-// logout
-//	curlretbuf = gethttps_get("https://www.amazon.de/ap/signin?_encoding=UTF8&openid.assoc_handle=deflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav__gno_signout%26signIn%3D1%26useRedirectOnSuccess%3D1", NULL, debuglevel);
-//	
 	char* tmpstr = NULL;
+
+	unlink("/tmp/amazon_tmpstr_get0_logout");
+
 	tmpstr = gethttps("https://www.amazon.de/ap/signin?_encoding=UTF8&openid.assoc_handle=deflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav__gno_signout%26signIn%3D1%26useRedirectOnSuccess%3D1", NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_tmpstr_get0_logout", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/tmp/amazon_tmpstr_get0_logout", NULL, NULL, NULL, tmpstr);	
 	free(tmpstr), tmpstr = NULL;
 }
 
@@ -410,15 +409,6 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			search = textinputhist(_("Search"), searchstr, "searchhist");
 	}
 
-/*
-	int loginret = 0, type = 0;
-	loginret = login();
-	printf("loginret=%d\n", loginret);
-	if(loginret == 0)
-		textbox(_("Message"), _("Amazon login not successful! Please check Amazon Prime User/Pass in Tithek settings and try again."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 200, 0, 0);
-	else
-		textbox(_("Message"), _("Amazon Prime login successful!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
-*/
 	if(search != NULL || flag > 0)
 	{
 		drawscreen(load, 0, 0);
@@ -455,8 +445,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			url = ostrcat("http://www.amazon.de/gp/video/watchlist/tv?ie=UTF8&show=all&sort=DATE_ADDED_DESC", NULL, 0, 0);
 		}
 
-//		tmpstr2 = ostrcat("/tmp/amazon_search_tmpstr_get", filename, 0, 0);
-		tmpstr2 = ostrcat("/var/usr/local/share/titan/plugins/tithek/amazon_search_tmpstr_get", filename, 0, 0);
+		tmpstr2 = ostrcat("/tmp/amazon_search_tmpstr_get", filename, 0, 0);
 		unlink(tmpstr2);
 
 		tmpstr3 = ostrcat(tmpstr3, "_replace", 1, 0);
