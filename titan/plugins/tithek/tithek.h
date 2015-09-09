@@ -10,6 +10,7 @@ int tithekmovie4k = 0;
 int tithekkinox = 0;
 int titheksolarmovie = 0;
 int tithekmlehd = 0;
+int amazonlogin = 0;
 
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
@@ -91,7 +92,8 @@ int tithekmlehd = 0;
 //flag 76   - amazon movie search
 //flag 77   - amazon series search
 //flag 78   - amazon series listed search
-//flag 80   - amazon local search
+//flag 79   - amazon watchlist movie
+//flag 80   - amazon watchlist tv
 //flag 100  - all local search
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
@@ -574,32 +576,38 @@ end:
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
-	int ret = 1, port = 80, timeout = 10000;
+	int ret = 1, port = 80, timeout = 10000, ssl = 0;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
 
 	if(link == NULL) return NULL;
-	if(ostrncmp("http://", link, 7)) return NULL;
+	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8)) return NULL;
 
-	ip = string_replace("http://", "", (char*)link, 0);
-	// tithek security
-	ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
-
-	ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
-	//ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
-
-	if(ip != NULL)
-		pos = strchr(ip, '/');
-	if(pos != NULL)
+	if(!ostrncmp("https://", link, 8))
+		ssl = 1;
+	else
 	{
-		pos[0] = '\0';
-		path = pos + 1;
-	}
-
-	if(ostrstr(ip, ":") != NULL)
-	{
-		ip = oregex("http://(.*):.*", link);
-		port = atoi(oregex("http://.*:(.*)/.*", link));
+		ip = string_replace("http://", "", (char*)link, 0);
+	
+		// tithek security
+		ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
+	
+		ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
+		//ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
+	
+		if(ip != NULL)
+			pos = strchr(ip, '/');
+		if(pos != NULL)
+		{
+			pos[0] = '\0';
+			path = pos + 1;
+		}
+	
+		if(ostrstr(ip, ":") != NULL)
+		{
+			ip = oregex("http://(.*):.*", link);
+			port = atoi(oregex("http://.*:(.*)/.*", link));
+		}
 	}
 
 	tmpstr = ostrcat(path, NULL, 0, 0);
@@ -620,6 +628,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		else
 			localfile = ostrcat(localfile, localname, 1, 0);
 	}
+	free(tmpstr); tmpstr = NULL;
 
 /*
 	debug(99, "---------------------------------------");
@@ -630,7 +639,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	debug(99, "port: %d", port);
 	debug(99, "path: %s", path);
 	debug(99, "localfile: %s", localfile);
-//	debug(99, "pw: %s", pw);
+	debug(99, "pw: %s", pw);
 	debug(99, "---------------------------------------");
 */
 	if(flag == 0)
@@ -639,7 +648,9 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		{
 			if(pic == 1)
 			{
-				if(tithekdownloadcount >= 24) //start max 24 threads
+				if(ssl == 1)
+					gethttps(link, localfile, NULL, 0);
+				else if(tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 				else
 				{
@@ -694,6 +705,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		tithekfile = ostrcat(titheklink, NULL, 0, 0);
 		localfile = 1;
 	}
+
+	amazon_init(titheklink, tithekfile);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();
@@ -2141,6 +2154,16 @@ why ?
 					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 2) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 79)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 3) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 80)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 4) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
 				{
 					textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
@@ -2226,6 +2249,8 @@ why ?
 		drawscreen(grid, 0, 0);
 		
 	}
+
+	amazon_deinit();
 
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);

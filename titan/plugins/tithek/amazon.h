@@ -1,21 +1,55 @@
 #ifndef AMAZON_H
 #define AMAZON_H
 
-char* amazon_hoster(char* link)
+void amazon_init(char* titheklink, char* tithekfile)
+{
+	int ret = 0;
+	char* tmpstr = NULL;
+	
+	if(ostrcmp("http://atemio.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
+		writesys(tithekfile, "Amazon#/tmp/tithek/amazon.mainmenu.list#http://atemio.dyndns.tv/mediathek/menu/amazon.jpg#amazon.jpg#TiThek#81", 3);
+
+	if(ostrcmp("/tmp/tithek/amazon.mainmenu.list", titheklink) == 0)
+	{
+		if(amazonlogin == 0)
+		{
+			ret = amazon_login();
+			if(ret == 0)
+				textbox(_("Message"), _("Amazon login not successful! Please check Amazon Prime User/Pass in Tithek settings and try again."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 200, 0, 0);
+			else
+			{
+				textbox(_("Message"), _("Amazon Prime login successful!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+				amazonlogin = 1;
+			}
+		}
+		unlink(tithekfile);
+		printf("add amazon mainmenu entrys\n");
+		writesys(tithekfile, "Watchlist (Movie)#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.movie.jpg#amazon.watchlist.movie.jpg#Amazon#79", 3);
+		writesys(tithekfile, "Watchlist (Tv)#/tmp/tithek/amazon.watchlist.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.tv.jpg#amazon.watchlist.tv.jpg#Amazon#80", 3);
+
+//		writesys(tithekfile, "Search (Movie)#/tmp/tithek/amazon.search.movie.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#76", 3);
+		tmpstr = ostrcat(_("Search"), " (Movie)#/tmp/tithek/amazon.search.movie.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#76", 0, 0);
+		writesys(tithekfile, tmpstr, 3);
+		free(tmpstr), tmpstr = NULL;
+
+//		writesys(tithekfile, "Search (Tv)#/tmp/tithek/amazon.search.tv.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#77", 3);
+		tmpstr = ostrcat(_("Search"), " (Tv)#/tmp/tithek/amazon.search.tv.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#77", 0, 0);
+		writesys(tithekfile, tmpstr, 3);
+	}
+	free(tmpstr), tmpstr = NULL;
+}
+
+void amazon_deinit()
 {
 	int debuglevel = getconfigint("debuglevel", NULL);
 
-printf("amazon hoster...\n");
-	debug(99, "link: %s", link);
-	char* streamurl = NULL;
-
-	streamurl = hoster(link);
-	debug(99, "streamurl1: %s", streamurl);
-
-	streamurl = string_replace_all("amp;", "", streamurl, 1);
-	debug(99, "streamurl2: %s", streamurl);
-
-	return streamurl;
+// logout
+//	curlretbuf = gethttps_get("https://www.amazon.de/ap/signin?_encoding=UTF8&openid.assoc_handle=deflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav__gno_signout%26signIn%3D1%26useRedirectOnSuccess%3D1", NULL, debuglevel);
+//	
+	char* tmpstr = NULL;
+	tmpstr = gethttps("https://www.amazon.de/ap/signin?_encoding=UTF8&openid.assoc_handle=deflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav__gno_signout%26signIn%3D1%26useRedirectOnSuccess%3D1", NULL, NULL, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_tmpstr_get0_logout", NULL, NULL, NULL, tmpstr);	
+	free(tmpstr), tmpstr = NULL;
 }
 
 char* amazon(char* link)
@@ -33,7 +67,7 @@ char* amazon(char* link)
 	url = ostrcat(url, "/?_encoding=UTF8", 1, 0);
 
 //////////////////////////////////////////////////
-	tmpstr = gethttps(url, NULL);
+	tmpstr = gethttps(url, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/amazon_streamurl_get1", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
@@ -63,7 +97,7 @@ char* amazon(char* link)
 	printf("apimain: %s\n", apimain);
 
 //////////////////////////////////////////////////	
-	tmpstr = gethttps(url, NULL);
+	tmpstr = gethttps(url, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/amazon_streamurl_get2", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
@@ -80,7 +114,7 @@ char* amazon(char* link)
 	free(tmpstr), tmpstr = NULL;
 
 //////////////////////////////////////////////////	
-	tmpstr = gethttps(url, NULL);
+	tmpstr = gethttps(url, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/amazon_streamurl_get3", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
@@ -91,9 +125,10 @@ char* amazon(char* link)
 	debug(99, "token: %s", token);
 
 	url = ostrcat("https://", apimain, 0, 0);
-	url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingUrlSets?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID=", 1, 0);
-// trailer
-//	url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingTrailerUrls?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID=", 1, 0);
+	if(amazonlogin == 1)
+		url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingUrlSets?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID=", 1, 0);
+	else // trailer
+		url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingTrailerUrls?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID=", 1, 0);
 	url = ostrcat(url, marketplaceid, 1, 0);
 	url = ostrcat(url, "&token=", 1, 0);
 	url = ostrcat(url, token, 1, 0);
@@ -111,7 +146,7 @@ char* amazon(char* link)
 	url = ostrcat(url, link, 1, 0);
 
 //////////////////////////////////////////////////	
-	tmpstr = gethttps(url, NULL);
+	tmpstr = gethttps(url, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/amazon_streamurl_get4", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
@@ -192,7 +227,8 @@ end:
 	return streamurl;
 }
 
-int login()
+
+int amazon_login()
 {
 	int ret = 0;
 	int debuglevel = getconfigint("debuglevel", NULL);
@@ -212,15 +248,15 @@ int login()
 //	curlretbuf = gethttps_get("https://www.amazon.de/ap/signin?_encoding=UTF8&openid.assoc_handle=deflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav__gno_signout%26signIn%3D1%26useRedirectOnSuccess%3D1", NULL, debuglevel);
 //	titheklog(debuglevel, "/tmp/amazon_tmpstr_get0_logout", NULL, NULL, NULL, curlretbuf);	
 
-	tmpstr = gethttps("https://www.amazon.de/", NULL);
+	tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, 1);
 //	debug(99, "tmpstr: %s", curlretbuf);
 	titheklog(debuglevel, "/tmp/amazon_tmpstr_get1_blank", NULL, NULL, NULL, tmpstr);	
 
 	login = string_resub("'config.signOutText',", ");", tmpstr, 0);
 	free(tmpstr), tmpstr = NULL;
-//	debug(99, "login: %s", login);
+	debug(99, "login: %s", login);
 	strstrip(login);
-//	debug(99, "login: %s", login);
+	debug(99, "login: %s", login);
 
 	if(login == NULL || ostrcmp("null", login) == 0)
 	{
@@ -236,7 +272,7 @@ int login()
 
 	if(ret == 0)
 	{
-		tmpstr = gethttps("https://www.amazon.de/gp/sign-in.html", NULL);
+		tmpstr = gethttps("https://www.amazon.de/gp/sign-in.html", NULL, NULL, 1);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_get2_sign-in", NULL, NULL, NULL, tmpstr);	
 
 		char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"appActionToken\" value=");
@@ -318,25 +354,25 @@ int login()
 		hash = ostrcat(hash, "&password=", 1, 0);
 		hash = ostrcat(hash, pass, 1, 1);
 	
-		tmpstr = gethttps("https://www.amazon.de/ap/signin", hash);
+		tmpstr = gethttps("https://www.amazon.de/ap/signin", NULL, hash, 1);
 //		debug(99, "ret=%s", tmpstr);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_post1", NULL, NULL, NULL, tmpstr);	
 		free(tmpstr), tmpstr = NULL;
 
-		tmpstr = gethttps("https://www.amazon.de/", NULL);
+		tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, 1);
 //		debug(99, "tmpstr: %s", tmpstr);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_get3_blank", NULL, NULL, NULL, tmpstr);	
 		free(tmpstr), tmpstr = NULL;
 
-		tmpstr = gethttps("https://www.amazon.de/", NULL);
+		tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, 1);
 //		debug(99, "tmpstr: %s", curlretbuf);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_get4_blank", NULL, NULL, NULL, tmpstr);	
 		free(tmpstr), tmpstr = NULL;
 	
 		login = string_resub("'config.signOutText',", ");", tmpstr, 0);	
-//		debug(99, "login: %s", login);
+		debug(99, "login: %s", login);
 		strstrip(login);
-//		debug(99, "login: %s", login);
+		debug(99, "login: %s", login);
 		free(tmpstr), tmpstr = NULL;
 	
 		if(login == NULL || ostrcmp("null", login) == 0)
@@ -356,13 +392,13 @@ int login()
 
 int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
-	int ret = 1;
+	int ret = 1, type = 0;
 	int debuglevel = getconfigint("debuglevel", NULL);
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
 
-	char* tmpstr2 = NULL, *tmpstr3 = NULL, *filename = NULL, *tmpstr = NULL, *search = NULL, *line = NULL, *url = NULL, *id = NULL, *streamurl = NULL, *pic = NULL, *year = NULL, *runtime = NULL, *menu = NULL;
+	char* remove = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *filename = NULL, *tmpstr = NULL, *search = NULL, *line = NULL, *url = NULL, *id = NULL, *streamurl = NULL, *pic = NULL, *year = NULL, *runtime = NULL, *menu = NULL;
 
 	tmpstr2 = ostrcat(tmpstr2, "_get", 1, 0);
 
@@ -374,6 +410,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			search = textinputhist(_("Search"), searchstr, "searchhist");
 	}
 
+/*
 	int loginret = 0, type = 0;
 	loginret = login();
 	printf("loginret=%d\n", loginret);
@@ -381,7 +418,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		textbox(_("Message"), _("Amazon login not successful! Please check Amazon Prime User/Pass in Tithek settings and try again."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 200, 0, 0);
 	else
 		textbox(_("Message"), _("Amazon Prime login successful!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
-
+*/
 	if(search != NULL || flag > 0)
 	{
 		drawscreen(load, 0, 0);
@@ -405,8 +442,21 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			url = ostrcat("http://www.amazon.de/dp/", link, 0, 0);
 			url = ostrcat(url, "/?_encoding=UTF8", 1, 0);		
 		}
+		else if(flag == 3)
+		{
+			filename = ostrcat("watchlist.movie", NULL, 0, 0);
+			type = 75;
+			url = ostrcat("http://www.amazon.de/gp/video/watchlist/movie?ie=UTF8&show=all&sort=DATE_ADDED_DESC", NULL, 0, 0);
+		}
+		else if(flag == 4)
+		{
+			filename = ostrcat("watchlist.tv", NULL, 0, 0);
+			type = 78;
+			url = ostrcat("http://www.amazon.de/gp/video/watchlist/tv?ie=UTF8&show=all&sort=DATE_ADDED_DESC", NULL, 0, 0);
+		}
 
-		tmpstr2 = ostrcat("/tmp/amazon_search_tmpstr_get", filename, 0, 0);
+//		tmpstr2 = ostrcat("/tmp/amazon_search_tmpstr_get", filename, 0, 0);
+		tmpstr2 = ostrcat("/var/usr/local/share/titan/plugins/tithek/amazon_search_tmpstr_get", filename, 0, 0);
 		unlink(tmpstr2);
 
 		tmpstr3 = ostrcat(tmpstr3, "_replace", 1, 0);
@@ -414,7 +464,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 ///////////////////////////
 		debug(99, "url: %s", url);
-		tmpstr = gethttps(url, NULL);
+		tmpstr = gethttps(url, NULL, NULL, 1);
 		titheklog(debuglevel, tmpstr2, NULL, NULL, NULL, tmpstr);		
 		free(url), url = NULL;
 ///////////////////////////
@@ -427,13 +477,20 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 		if(flag == 0 || flag == 1)
 			tmpstr = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr, 1);
-		else
+		else if(flag == 2)
 		{
 			tmpstr = string_replace_all("\n", " ", tmpstr, 1);			
 			tmpstr = string_replace_all("<li class=\"selected-episode", "\n<li class=\"\">", tmpstr, 1);
 			tmpstr = string_replace_all("<li class=\"\">", "\n<li class=\"\">", tmpstr, 1);
 			tmpstr = string_replace_all("<li class=\"last-episode", "\n<li class=\"last-episode", tmpstr, 1);
 		}
+		else if(flag == 3 || flag == 4)
+		{
+			tmpstr = string_replace_all("\n", " ", tmpstr, 1);			
+			tmpstr = string_replace_all("<div class=\"grid-list-item downloadable_", "\n<div class=\"grid-list-item downloadable_", tmpstr, 1);
+			tmpstr = string_replace_all("<script type=\"text/javascript\">", "\n<script type=\"text/javascript\">", tmpstr, 1);	
+		}
+		
 		titheklog(debuglevel, tmpstr3, NULL, NULL, NULL, tmpstr);		
 
 		count1 = 0;
@@ -471,8 +528,22 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
 					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
 				}
+				else if(ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL)
+				{
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
+					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
+					if(pic == NULL)
+						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					title = string_resub("data-title=\"", "\"", ret1[j].part, 0);
+					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
+					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
+					id = string_resub("id=\"", "\"", ret1[j].part, 0);
+					remove = string_resub("data-action=\"remove\" href=\"", "\"", ret1[j].part, 0);					
+					debug(99, "(%d) remove: %s", j, remove);
+				}
 
-				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL)
+				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL || ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL)
 				{
 					debug(99, "(%d) streamurl: %s", j, streamurl);
 					free(streamurl), streamurl = NULL;
@@ -486,7 +557,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					debug(99, "(%d) runtime: %s", j, runtime);
 					debug(99, "----------------------");
 
-					if(streamurl != NULL)
+					if(id != NULL)
 					{
 						incount += 1;
 						line = ostrcat(line, title, 1, 0);
@@ -512,6 +583,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					free(title), title = NULL;
 					free(year), year = NULL;
 					free(runtime), runtime = NULL;
+					free(remove), remove = NULL;
 				}
 			}
 		}

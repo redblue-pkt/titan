@@ -28,12 +28,17 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
   return realsize;
 }
 
-char* gethttps(char* url, char* data)
+// flag = 0 (without header in output)
+// flag = 1 (with header in output)
+char* gethttps(char* url, char* localfile, char* data, int flag)
 {
 	debug(99, "url: %s", url);
 
 	int debuglevel = getconfigint("debuglevel", NULL);
-	
+
+	char* tmpstr = NULL;
+    FILE *fp;
+
 	CURL *curl_handle;
 	CURLcode res;
 	
@@ -43,24 +48,36 @@ char* gethttps(char* url, char* data)
 	chunk.size = 0;    /* no data at this point */
 	
 	curl_global_init(CURL_GLOBAL_ALL);
-	
+
 	/* init the curl session */ 
 	curl_handle = curl_easy_init();
 	if(curl_handle)
 	{
+	    if(localfile != NULL)
+		    fp = fopen(localfile,"wb");
+	       
 		/* specify URL to get */
 		curl_easy_setopt(curl_handle, CURLOPT_URL, url);
 		if(data == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_HTTPGET, 1L);
 		else
 			curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDS, data);
-		curl_easy_setopt(curl_handle, CURLOPT_HEADER, 1L);
+		if(flag == 1)
+			curl_easy_setopt(curl_handle, CURLOPT_HEADER, 1L);
 		curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, 5);
 		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 20);
 		/* send all data to this function  */
-		curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
+	    if(localfile == NULL)
+			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
+		else
+			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, NULL);
+
 		/* we pass our 'chunk' struct to the callback function */
-		curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
+	    if(localfile == NULL)
+			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
+		else
+			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, fp);
+
 		/* some servers don't like requests that are made without a user-agent field, so we provide one */
 		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L);
@@ -93,13 +110,17 @@ char* gethttps(char* url, char* data)
 		
 		/* cleanup curl stuff */
 		curl_easy_cleanup(curl_handle);
+		if(localfile != NULL)
+			fclose(fp);
 	}
-	char* tmpstr = NULL;
+
 	tmpstr = ostrcat(chunk.memory, NULL, 0, 0);
   	free(chunk.memory);
   	/* we're done with libcurl, so clean it up */
    	curl_global_cleanup();
 
+	if(localfile != NULL) 
+		free(tmpstr), tmpstr = NULL;
 	return tmpstr;
 }
 
