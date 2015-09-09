@@ -7,7 +7,7 @@ void amazon_init(char* titheklink, char* tithekfile)
 	char* tmpstr = NULL;
 	
 	if(ostrcmp("http://atemio.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
-		writesys(tithekfile, "Amazon#/tmp/tithek/amazon.mainmenu.list#http://atemio.dyndns.tv/mediathek/menu/amazon.jpg#amazon.jpg#TiThek#81", 3);
+		writesys(tithekfile, "Amazon#/tmp/tithek/amazon.mainmenu.list#http://atemio.dyndns.tv/mediathek/menu/amazon.jpg#amazon.jpg#TiThek#0", 3);
 
 	if(ostrcmp("/tmp/tithek/amazon.mainmenu.list", titheklink) == 0)
 	{
@@ -24,6 +24,9 @@ void amazon_init(char* titheklink, char* tithekfile)
 		}
 		unlink(tithekfile);
 		printf("add amazon mainmenu entrys\n");
+
+		writesys(tithekfile, "Popularity (Movie)#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.movie.jpg#amazon.watchlist.movie.jpg#Amazon#81", 3);
+
 		writesys(tithekfile, "Watchlist (Movie)#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.movie.jpg#amazon.watchlist.movie.jpg#Amazon#79", 3);
 		writesys(tithekfile, "Watchlist (Tv)#/tmp/tithek/amazon.watchlist.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.tv.jpg#amazon.watchlist.tv.jpg#Amazon#80", 3);
 
@@ -226,6 +229,426 @@ end:
 	return streamurl;
 }
 
+int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
+{
+	int ret = 1, type = 0;
+	int debuglevel = getconfigint("debuglevel", NULL);
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
+	char* remove = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *filename = NULL, *tmpstr = NULL, *search = NULL, *line = NULL, *url = NULL, *id = NULL, *streamurl = NULL, *pic = NULL, *year = NULL, *runtime = NULL, *menu = NULL;
+	char* page = NULL, *pages = NULL, *nextpage = NULL, *tmpstr4 = NULL;
+
+	if(flag == 0 || flag == 1)
+	{
+		if(searchstr == NULL)
+			search = textinputhist(_("Search"), " ", "searchhist");
+		else
+			search = textinputhist(_("Search"), searchstr, "searchhist");
+	}
+
+	if(search != NULL || flag > 0)
+	{
+		drawscreen(load, 0, 0);
+		search = stringreplacechar(search, ' ', '+');
+		if(flag == 0)
+		{
+			filename = ostrcat("movie", NULL, 0, 0);
+			type = 75;
+			url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356018031&field-keywords=", search, 0, 0);
+		}
+		else if(flag == 1)
+		{
+			filename = ostrcat("season", NULL, 0, 0);
+			type = 78;
+			url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356019031&field-keywords=", search, 0, 0);
+		}
+		else if(flag == 2)
+		{
+			filename = ostrcat("episode", NULL, 0, 0);
+			type = 75;
+			url = ostrcat("http://www.amazon.de/dp/", link, 0, 0);
+			url = ostrcat(url, "/?_encoding=UTF8", 1, 0);		
+		}
+		else if(flag == 3)
+		{
+			filename = ostrcat("watchlist.movie", NULL, 0, 0);
+			type = 75;
+			url = ostrcat("http://www.amazon.de/gp/video/watchlist/movie?ie=UTF8&show=all&sort=DATE_ADDED_DESC", NULL, 0, 0);
+		}
+		else if(flag == 4)
+		{
+			filename = ostrcat("watchlist.tv", NULL, 0, 0);
+			type = 78;
+			url = ostrcat("http://www.amazon.de/gp/video/watchlist/tv?ie=UTF8&show=all&sort=DATE_ADDED_DESC", NULL, 0, 0);
+		}
+		else if(flag == 5)
+		{
+			filename = ostrcat("popularity.rank.tv", NULL, 0, 0);
+			type = 75;
+			url = ostrcat("http://www.amazon.de/gp/search/ajax/?_encoding=UTF8&rh=n%3A3010075031%2Cn%3A3356018031&sort=popularity-rank", NULL, 0, 0);
+		}
+		else if(flag == 6)
+		{
+			filename = ostrcat("popularity.rank.tv.nextpage", NULL, 0, 0);
+			type = 75;
+			url = ostrcat(link, NULL, 0, 0);
+		}
+
+///////////////////////////
+		debug(99, "url: %s", url);
+		tmpstr = gethttps(url, NULL, NULL, 1);
+///////////////
+		page = string_resub("<span class=\\\"pagnCur\\\">", "</span>", tmpstr, 0);	
+		pages = string_resub("<span class=\\\"pagnDisabled\\\">", "</span>", tmpstr, 0);	
+		nextpage = string_resub("<span class=\\\"pagnLink\\\"><a href=\\\"", "\\\"", tmpstr, 0);	
+
+		if(pages == NULL)
+			pages = string_resub("<span class=\"pagnDisabled\">", "</span>", tmpstr, 0);
+
+		if(page == NULL)
+			page = string_resub("<span class=\"pagnCur\">", "</span>", tmpstr, 0);
+
+		if(nextpage == NULL)
+		{
+			tmpstr4 = string_resub("class=\"pagnNext\"", ">", tmpstr, 0);	
+			nextpage = string_resub("href=\"", "\"", tmpstr4, 0);	
+			free(tmpstr4), tmpstr4 = NULL;
+		}
+
+		nextpage = string_replace_all("&amp;", "&", nextpage, 1);
+//////////////////////
+
+		tmpstr2 = ostrcat("/tmp/amazon_search_tmpstr_get", filename, 0, 0);
+		tmpstr2 = ostrcat(tmpstr2, "_page_", 1, 0);
+		tmpstr2 = ostrcat(tmpstr2, page, 1, 0);
+		tmpstr2 = ostrcat(tmpstr2, "_pages_", 1, 0);
+		tmpstr2 = ostrcat(tmpstr2, pages, 1, 0);
+		unlink(tmpstr2);
+
+		tmpstr3 = ostrcat(tmpstr2, "_replace", 0, 0);
+		unlink(tmpstr3);
+
+///////////////////////////
+		titheklog(debuglevel, tmpstr2, NULL, NULL, NULL, tmpstr);		
+		free(url), url = NULL;
+///////////////////////////
+
+		int count1 = 0;
+		int j = 0;
+
+		if(flag == 0 || flag == 1 || flag == 5)
+			tmpstr = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr, 1);
+		else if(flag == 6)
+			tmpstr = string_replace_all("<li id=\"result_", "\n<li id=\"result_", tmpstr, 1);
+		else if(flag == 2)
+		{
+			tmpstr = string_replace_all("\n", " ", tmpstr, 1);			
+			tmpstr = string_replace_all("<li class=\"selected-episode", "\n<li class=\"\">", tmpstr, 1);
+			tmpstr = string_replace_all("<li class=\"\">", "\n<li class=\"\">", tmpstr, 1);
+			tmpstr = string_replace_all("<li class=\"last-episode", "\n<li class=\"last-episode", tmpstr, 1);
+		}
+		else if(flag == 3 || flag == 4)
+		{
+			tmpstr = string_replace_all("\n", " ", tmpstr, 1);			
+			tmpstr = string_replace_all("<div class=\"grid-list-item downloadable_", "\n<div class=\"grid-list-item downloadable_", tmpstr, 1);
+			tmpstr = string_replace_all("<script type=\"text/javascript\">", "\n<script type=\"text/javascript\">", tmpstr, 1);	
+		}
+		
+		titheklog(debuglevel, tmpstr3, NULL, NULL, NULL, tmpstr);		
+
+		count1 = 0;
+		j = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "\n", &count1);
+		int incount = 0;
+
+		if(ret1 != NULL && count1 > 0)
+		{
+			int max = count1;
+			for(j = 0; j < max; j++)
+			{
+				if(ostrstr(ret1[j].part, "<li id=\\\"result_") != NULL)
+				{
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
+					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
+					if(pic == NULL)
+						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					title = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
+					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
+					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
+					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
+				}
+				if(ostrstr(ret1[j].part, "<li id=\"result_") != NULL)
+				{
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					streamurl = string_resub("\" href=\"", "\">", ret1[j].part, 0);
+					pic = string_resub("\" src=\"", "\"", ret1[j].part, 0);
+					if(pic == NULL)
+						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					title = string_resub("\" title=\"", "\"", ret1[j].part, 0);
+					year = string_resub("<span class=\"a-size-small a-color-secondary\">", "</span>", ret1[j].part, 0);
+					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
+					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
+				}
+				else if(ostrstr(ret1[j].part, "<li class=\"\">") != NULL)
+				{
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
+					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
+					if(pic == NULL)
+						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					title = string_resub("<span class=\"episode-title\">", "</span>", ret1[j].part, 0);
+					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
+					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
+					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
+				}
+				else if(ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL)
+				{
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
+					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
+					if(pic == NULL)
+						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					title = string_resub("data-title=\"", "\"", ret1[j].part, 0);
+					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
+					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
+					id = string_resub("id=\"", "\"", ret1[j].part, 0);
+					remove = string_resub("data-action=\"remove\" href=\"", "\"", ret1[j].part, 0);					
+					debug(99, "(%d) remove: %s", j, remove);
+				}
+				else if(ostrstr(ret1[j].part, "<span class=\\\"pagnLink\\\">") != NULL)
+				{
+					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
+					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
+					if(pic == NULL)
+						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					title = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
+					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
+					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
+					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
+				}
+
+
+				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL || ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL || ostrstr(ret1[j].part, "<span class=\\\"pagnLink\\\">") != NULL)
+				{
+
+					if(title != NULL)
+						title = string_decode3(title);
+
+					debug(99, "(%d) streamurl: %s", j, streamurl);
+					free(streamurl), streamurl = NULL;
+					streamurl = ostrcat("http://www.amazon.de/dp/", id, 0, 0);
+					streamurl = ostrcat(streamurl, "/?_encoding=UTF8", 1, 0);
+					debug(99, "(%d) streamurl changed: %s", j, streamurl);
+					debug(99, "(%d) id: %s", j, id);
+					debug(99, "(%d) pic: %s", j, pic);
+					debug(99, "(%d) title: %s", j, title);
+					debug(99, "(%d) year: %s", j, year);
+					debug(99, "(%d) runtime: %s", j, runtime);
+					debug(99, "----------------------");
+
+					if(id != NULL)
+					{
+						incount += 1;
+						line = ostrcat(line, title, 1, 0);
+						if(year != NULL)
+						{
+							line = ostrcat(line, " (", 1, 0);
+							line = ostrcat(line, year, 1, 0);
+							line = ostrcat(line, ") ", 1, 0);
+						}
+						if(runtime != NULL)
+							line = ostrcat(line, runtime, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, id, 1, 0);
+//						line = ostrcat(line, streamurl, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, pic, 1, 0);
+						line = ostrcat(line, "#amazon_search_", 1, 0);
+						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
+						line = ostrcat(line, ".jpg#Amazon - Search#", 1, 0);
+						line = ostrcat(line, oitoa(type), 1, 1);
+						line = ostrcat(line, "\n", 1, 0);
+					}
+					
+					free(id), id = NULL;
+					free(streamurl), streamurl = NULL;
+					free(pic), pic = NULL;
+					free(title), title = NULL;
+					free(year), year = NULL;
+					free(runtime), runtime = NULL;
+					free(remove), remove = NULL;
+				}
+			}
+		}
+		free(ret1), ret1 = NULL;		
+		free(tmpstr), tmpstr = NULL;
+
+		if(line != NULL)
+		{
+			if(nextpage != NULL)
+			{
+				type = 82;
+				url = ostrcat("http://www.amazon.de", nextpage, 0, 0);
+				incount += 1;
+				line = ostrcat(line, _("Next Page"), 1, 0);
+				line = ostrcat(line, " (", 1, 0);
+				line = ostrcat(line, page, 1, 0);
+				line = ostrcat(line, "/", 1, 0);
+				line = ostrcat(line, pages, 1, 0);
+				line = ostrcat(line, ")#", 1, 0);
+				line = ostrcat(line, url, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/next.jpg", 1, 0);
+				line = ostrcat(line, "#amazon_search_", 1, 0);
+				line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
+				line = ostrcat(line, ".jpg#Amazon - Search#", 1, 0);
+				line = ostrcat(line, oitoa(type), 1, 1);
+				line = ostrcat(line, "\n", 1, 0);
+			}
+			printf("line: %s\n", line);
+			menu = ostrcat("/tmp/tithek/amazon.", NULL, 0, 0);
+			menu = ostrcat(menu, filename, 1, 0);
+			menu = ostrcat(menu, ".page.", 1, 0);
+			menu = ostrcat(menu, page, 1, 0);
+			menu = ostrcat(menu, ".pages.", 1, 0);
+			menu = ostrcat(menu, pages, 1, 0);
+			menu = ostrcat(menu, ".nextpage.list", 1, 0);
+			writesys(menu, line, 0);
+			struct tithek* tnode = (struct tithek*)listbox->select->handle;
+			createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+			ret = 0;
+		}
+
+/*
+		int i = 0, len = 0, treffer = 0, amazontoken = 1000;
+		jsmn_parser parser;
+	//	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
+		jsmntok_t tokens[amazontoken]; //TODO
+		char* buf = NULL;
+
+		if(buf == NULL)
+		{
+			err("no mem");
+			free(curlretbuf); curlretbuf = NULL;
+			curlretbufsize = 0;
+			return 1;
+		}
+	
+		jsmn_init(&parser);
+	
+	//	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
+		int ret1 = jsmn_parse(&parser, curlretbuf, tokens, amazontoken);
+		if(ret1 == JSMN_SUCCESS)
+		{
+			for(i = 0; i < amazontoken; i++)
+			{
+				if(tokens[i].start == -1) break;
+	
+				len = tokens[i].end - tokens[i].start;
+				if(len > MINMALLOC) len = MINMALLOC;
+				char* ptr = curlretbuf + tokens[i].start;
+	
+				printf("tokens[i].type=%d ptr=%s buf=%s\n", tokens[i].type, ptr, buf);
+			}
+		}
+*/
+///////
+	}
+
+	free(url), url = NULL;
+	free(page), page = NULL;
+	free(pages), pages = NULL;
+	free(nextpage), nextpage = NULL;
+	free(filename), filename = NULL;
+	free(menu), menu = NULL;
+	free(runtime), runtime = NULL;
+	free(year), year = NULL;
+	free(title), title = NULL;
+	free(pic), pic = NULL;
+	free(streamurl), streamurl = NULL;
+	free(id), id = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	free(tmpstr3), tmpstr3 = NULL;
+	free(line), line = NULL;
+	free(streamurl), streamurl = NULL;
+	free(pic), pic = NULL;
+	free(title), title = NULL;
+	free(year), year = NULL;
+	free(runtime), runtime = NULL;
+	free(search), search = NULL;
+
+	return ret;
+}
+
+int amazon_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
+{
+	char* tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *menu = NULL, *search = NULL;
+	int ret = 1, count = 0, i = 0;
+
+	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
+		return ret;
+
+	if(searchstr == NULL)
+		search = textinputhist(_("Search"), " ", "searchhist");
+	else
+		search = textinputhist(_("Search"), searchstr, "searchhist");
+
+	if(search != NULL)
+	{
+		drawscreen(load, 0, 0);
+
+		strstrip(search);
+		string_tolower(search);
+
+		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/amazon/streams/amazon.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "\n", &count);
+
+		if(ret1 != NULL)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
+			{
+			
+				tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+				tmpstr1 = stringreplacecharonce(tmpstr1, '#', '\0');
+				string_tolower(tmpstr1);
+
+				if(ostrstr(tmpstr1, search) != NULL)
+				{
+					printf("found: %s\n", ret1[i].part);
+					int rcret = waitrc(NULL, 10, 0);
+					if(rcret == getrcconfigint("rcexit", NULL)) break;
+
+					line = ostrcat(line, ret1[i].part, 1, 0);
+					line = ostrcat(line, "\n", 0, 0);
+				}
+				free(tmpstr1), tmpstr1 = NULL;				
+			}
+			free(ret1), ret1 = NULL;
+
+			if(line != NULL)
+			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				menu = ostrcat("/tmp/tithek/amazon.search.list", NULL, 0, 0);
+				writesys(menu, line, 0);
+				struct tithek* tnode = (struct tithek*)listbox->select->handle;
+				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+				ret = 0;
+			}
+		}
+		free(tmpstr), tmpstr = NULL;
+	}
+	free(search), search = NULL;
+
+	return ret;
+}
 
 int amazon_login()
 {
@@ -385,334 +808,6 @@ int amazon_login()
 			ret = 1;
 		}
 	}
-
-	return ret;
-}
-
-int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
-{
-	int ret = 1, type = 0;
-	int debuglevel = getconfigint("debuglevel", NULL);
-
-	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
-		return ret;
-
-	char* remove = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *filename = NULL, *tmpstr = NULL, *search = NULL, *line = NULL, *url = NULL, *id = NULL, *streamurl = NULL, *pic = NULL, *year = NULL, *runtime = NULL, *menu = NULL;
-
-	tmpstr2 = ostrcat(tmpstr2, "_get", 1, 0);
-
-	if(flag == 0 || flag == 1)
-	{
-		if(searchstr == NULL)
-			search = textinputhist(_("Search"), " ", "searchhist");
-		else
-			search = textinputhist(_("Search"), searchstr, "searchhist");
-	}
-
-	if(search != NULL || flag > 0)
-	{
-		drawscreen(load, 0, 0);
-		search = stringreplacechar(search, ' ', '+');
-		if(flag == 0)
-		{
-			filename = ostrcat("movie", NULL, 0, 0);
-			type = 75;
-			url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356018031&field-keywords=", search, 0, 0);
-		}
-		else if(flag == 1)
-		{
-			filename = ostrcat("season", NULL, 0, 0);
-			type = 78;
-			url = ostrcat("http://www.amazon.de/mn/search/ajax/?_encoding=UTF8&url=node%3D3356019031&field-keywords=", search, 0, 0);
-		}
-		else if(flag == 2)
-		{
-			filename = ostrcat("episode", NULL, 0, 0);
-			type = 75;
-			url = ostrcat("http://www.amazon.de/dp/", link, 0, 0);
-			url = ostrcat(url, "/?_encoding=UTF8", 1, 0);		
-		}
-		else if(flag == 3)
-		{
-			filename = ostrcat("watchlist.movie", NULL, 0, 0);
-			type = 75;
-			url = ostrcat("http://www.amazon.de/gp/video/watchlist/movie?ie=UTF8&show=all&sort=DATE_ADDED_DESC", NULL, 0, 0);
-		}
-		else if(flag == 4)
-		{
-			filename = ostrcat("watchlist.tv", NULL, 0, 0);
-			type = 78;
-			url = ostrcat("http://www.amazon.de/gp/video/watchlist/tv?ie=UTF8&show=all&sort=DATE_ADDED_DESC", NULL, 0, 0);
-		}
-
-		tmpstr2 = ostrcat("/tmp/amazon_search_tmpstr_get", filename, 0, 0);
-		unlink(tmpstr2);
-
-		tmpstr3 = ostrcat(tmpstr3, "_replace", 1, 0);
-		unlink(tmpstr3);
-
-///////////////////////////
-		debug(99, "url: %s", url);
-		tmpstr = gethttps(url, NULL, NULL, 1);
-		titheklog(debuglevel, tmpstr2, NULL, NULL, NULL, tmpstr);		
-		free(url), url = NULL;
-///////////////////////////
-
-		int count1 = 0;
-		int j = 0;
-
-//		tmpstr2 = string_resub("\"value\" : \"<div id=\\\"centerMinus\\\"", "\"tagId\" : \"centerMinus\"", curlretbuf, 0);	
-//		tmpstr2 = string_resub("\"value\" : \"<div id=\\\"centerBelowPlus\\\"", "\"tagId\" : \"centerBelowPlus\"", curlretbuf, 0);	
-
-		if(flag == 0 || flag == 1)
-			tmpstr = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr, 1);
-		else if(flag == 2)
-		{
-			tmpstr = string_replace_all("\n", " ", tmpstr, 1);			
-			tmpstr = string_replace_all("<li class=\"selected-episode", "\n<li class=\"\">", tmpstr, 1);
-			tmpstr = string_replace_all("<li class=\"\">", "\n<li class=\"\">", tmpstr, 1);
-			tmpstr = string_replace_all("<li class=\"last-episode", "\n<li class=\"last-episode", tmpstr, 1);
-		}
-		else if(flag == 3 || flag == 4)
-		{
-			tmpstr = string_replace_all("\n", " ", tmpstr, 1);			
-			tmpstr = string_replace_all("<div class=\"grid-list-item downloadable_", "\n<div class=\"grid-list-item downloadable_", tmpstr, 1);
-			tmpstr = string_replace_all("<script type=\"text/javascript\">", "\n<script type=\"text/javascript\">", tmpstr, 1);	
-		}
-		
-		titheklog(debuglevel, tmpstr3, NULL, NULL, NULL, tmpstr);		
-
-		count1 = 0;
-		j = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "\n", &count1);
-		int incount = 0;
-
-		if(ret1 != NULL && count1 > 0)
-		{
-			int max = count1;
-			for(j = 0; j < max; j++)
-			{
-				if(ostrstr(ret1[j].part, "result_") != NULL)
-				{
-					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
-					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
-					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
-					if(pic == NULL)
-						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
-					title = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
-					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
-					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
-					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
-				}
-				else if(ostrstr(ret1[j].part, "<li class=\"\">") != NULL)
-				{
-					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
-					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
-					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
-					if(pic == NULL)
-						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
-					title = string_resub("<span class=\"episode-title\">", "</span>", ret1[j].part, 0);
-					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
-					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
-					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
-				}
-				else if(ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL)
-				{
-					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
-					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
-					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
-					if(pic == NULL)
-						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
-					title = string_resub("data-title=\"", "\"", ret1[j].part, 0);
-					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
-					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
-					id = string_resub("id=\"", "\"", ret1[j].part, 0);
-					remove = string_resub("data-action=\"remove\" href=\"", "\"", ret1[j].part, 0);					
-					debug(99, "(%d) remove: %s", j, remove);
-				}
-
-				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL || ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL)
-				{
-					debug(99, "(%d) streamurl: %s", j, streamurl);
-					free(streamurl), streamurl = NULL;
-					streamurl = ostrcat("http://www.amazon.de/dp/", id, 0, 0);
-					streamurl = ostrcat(streamurl, "/?_encoding=UTF8", 1, 0);
-					debug(99, "(%d) streamurl changed: %s", j, streamurl);
-					debug(99, "(%d) id: %s", j, id);
-					debug(99, "(%d) pic: %s", j, pic);
-					debug(99, "(%d) title: %s", j, title);
-					debug(99, "(%d) year: %s", j, year);
-					debug(99, "(%d) runtime: %s", j, runtime);
-					debug(99, "----------------------");
-
-					if(id != NULL)
-					{
-						incount += 1;
-						line = ostrcat(line, title, 1, 0);
-						if(year != NULL)
-						{
-							line = ostrcat(line, " (", 1, 0);
-							line = ostrcat(line, year, 1, 0);
-							line = ostrcat(line, ") ", 1, 0);
-						}
-						if(runtime != NULL)
-							line = ostrcat(line, runtime, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, id, 1, 0);
-//						line = ostrcat(line, streamurl, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, pic, 1, 0);
-						line = ostrcat(line, "#amazon_search_", 1, 0);
-						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
-						line = ostrcat(line, ".jpg#Amazon - Search#", 1, 0);
-						line = ostrcat(line, oitoa(type), 1, 1);
-						line = ostrcat(line, "\n", 1, 0);
-					}
-					
-					free(id), id = NULL;
-					free(streamurl), streamurl = NULL;
-					free(pic), pic = NULL;
-					free(title), title = NULL;
-					free(year), year = NULL;
-					free(runtime), runtime = NULL;
-					free(remove), remove = NULL;
-				}
-			}
-		}
-		free(ret1), ret1 = NULL;		
-		free(tmpstr), tmpstr = NULL;
-
-		if(line != NULL)
-		{
-			printf("line: %s\n", line);
-			menu = ostrcat("/tmp/tithek/amazon.", NULL, 0, 0);
-			menu = ostrcat(menu, filename, 1, 0);
-			menu = ostrcat(menu, ".list", 1, 0);
-			writesys(menu, line, 0);
-			struct tithek* tnode = (struct tithek*)listbox->select->handle;
-			createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
-			ret = 0;
-		}
-
-/*
-		int i = 0, len = 0, treffer = 0, amazontoken = 1000;
-		jsmn_parser parser;
-	//	jsmntok_t tokens[FACEMAXTOKEN]; //TODO
-		jsmntok_t tokens[amazontoken]; //TODO
-		char* buf = NULL;
-
-		if(buf == NULL)
-		{
-			err("no mem");
-			free(curlretbuf); curlretbuf = NULL;
-			curlretbufsize = 0;
-			return 1;
-		}
-	
-		jsmn_init(&parser);
-	
-	//	ret = jsmn_parse(&parser, curlretbuf, tokens, FACEMAXTOKEN);
-		int ret1 = jsmn_parse(&parser, curlretbuf, tokens, amazontoken);
-		if(ret1 == JSMN_SUCCESS)
-		{
-			for(i = 0; i < amazontoken; i++)
-			{
-				if(tokens[i].start == -1) break;
-	
-				len = tokens[i].end - tokens[i].start;
-				if(len > MINMALLOC) len = MINMALLOC;
-				char* ptr = curlretbuf + tokens[i].start;
-	
-				printf("tokens[i].type=%d ptr=%s buf=%s\n", tokens[i].type, ptr, buf);
-			}
-		}
-*/
-///////
-	}
-
-	free(filename), filename = NULL;
-	free(menu), menu = NULL;
-	free(runtime), runtime = NULL;
-	free(year), year = NULL;
-	free(title), title = NULL;
-	free(pic), pic = NULL;
-	free(streamurl), streamurl = NULL;
-	free(id), id = NULL;
-	free(tmpstr2), tmpstr2 = NULL;
-	free(tmpstr3), tmpstr3 = NULL;
-	free(line), line = NULL;
-	free(streamurl), streamurl = NULL;
-	free(pic), pic = NULL;
-	free(title), title = NULL;
-	free(year), year = NULL;
-	free(runtime), runtime = NULL;
-	free(search), search = NULL;
-
-	return ret;
-}
-
-int amazon_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
-{
-	char* tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *menu = NULL, *search = NULL;
-	int ret = 1, count = 0, i = 0;
-
-	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
-		return ret;
-
-	if(searchstr == NULL)
-		search = textinputhist(_("Search"), " ", "searchhist");
-	else
-		search = textinputhist(_("Search"), searchstr, "searchhist");
-
-	if(search != NULL)
-	{
-		drawscreen(load, 0, 0);
-
-		strstrip(search);
-		string_tolower(search);
-
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/amazon/streams/amazon.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
-
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "\n", &count);
-
-		if(ret1 != NULL)
-		{
-			int max = count;
-			for(i = 0; i < max; i++)
-			{
-			
-				tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
-				tmpstr1 = stringreplacecharonce(tmpstr1, '#', '\0');
-				string_tolower(tmpstr1);
-
-				if(ostrstr(tmpstr1, search) != NULL)
-				{
-					printf("found: %s\n", ret1[i].part);
-					int rcret = waitrc(NULL, 10, 0);
-					if(rcret == getrcconfigint("rcexit", NULL)) break;
-
-					line = ostrcat(line, ret1[i].part, 1, 0);
-					line = ostrcat(line, "\n", 0, 0);
-				}
-				free(tmpstr1), tmpstr1 = NULL;				
-			}
-			free(ret1), ret1 = NULL;
-
-			if(line != NULL)
-			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-				menu = ostrcat("/tmp/tithek/amazon.search.list", NULL, 0, 0);
-				writesys(menu, line, 0);
-				struct tithek* tnode = (struct tithek*)listbox->select->handle;
-				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
-				ret = 0;
-			}
-		}
-		free(tmpstr), tmpstr = NULL;
-	}
-	free(search), search = NULL;
 
 	return ret;
 }
