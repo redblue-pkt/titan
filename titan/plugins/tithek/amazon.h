@@ -550,10 +550,14 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					{
 						incount += 1;
 						line = ostrcat(line, title, 1, 0);
-						line = ostrcat(line, " (", 1, 0);
-						line = ostrcat(line, year, 1, 0);
-						line = ostrcat(line, ") ", 1, 0);
-						line = ostrcat(line, runtime, 1, 0);
+						if(year != NULL)
+						{
+							line = ostrcat(line, " (", 1, 0);
+							line = ostrcat(line, year, 1, 0);
+							line = ostrcat(line, ") ", 1, 0);
+						}
+						if(runtime != NULL)
+							line = ostrcat(line, runtime, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, id, 1, 0);
 //						line = ostrcat(line, streamurl, 1, 0);
