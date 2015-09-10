@@ -8298,7 +8298,7 @@ msgstr "effettuare Skript"
 msgid "Script has no output or started in background."
 msgstr ""
 
-#: amazon.h:50 amazon.h:57 amazon.h:268 amazon.h:270 amazon.h:619 amazon.h:621
+#: amazon.h:50 amazon.h:57 amazon.h:269 amazon.h:271 amazon.h:634 amazon.h:636
 #: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
