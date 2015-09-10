@@ -789,6 +789,7 @@ int setbit(int value, int bitpos);
 char* changefilenameext(char* filename, char* ext);
 void destroy();
 void htmldecode(char* to, char* from);
+void htmldecode2(char* to, char* from);
 void setosdtransparent(int value);
 char* string_shortname(char *tmpfilename, int mode);
 off64_t getfilesize(char* name);

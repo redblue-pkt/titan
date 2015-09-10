@@ -6,7 +6,7 @@
 
 char* nowtv(char* link)
 {
-	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *newlink = NULL, *newpath = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL;
 
 	ip = string_replace("https://", "", (char*)link, 0);
 
