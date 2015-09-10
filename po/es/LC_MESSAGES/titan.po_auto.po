@@ -6013,10 +6013,6 @@ msgstr "Mover"
 msgid "Moven"
 msgstr "Movimiento"
 
-#: amazon.h:31 amazon.h:38 amazon.h:52 amazon.h:66 amazon.h:80
-msgid "Movie"
-msgstr ""
-
 #: tithek_mainmenu.h:29
 msgid "Movie4k"
 msgstr ""
@@ -6025,6 +6021,7 @@ msgstr ""
 msgid "Moviepath"
 msgstr "Ruta a Peliculas"
 
+#: amazon.h:31 amazon.h:38 amazon.h:52 amazon.h:66 amazon.h:80
 #: webif_index.atemio510.h:12 webif_index.atemio5200.h:12
 #: webif_index.atemio6000.h:12 webif_index.atemio6100.h:12
 #: webif_index.atemio6200.h:12 webif_index.atemio7600.h:10
