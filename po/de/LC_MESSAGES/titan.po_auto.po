@@ -3985,7 +3985,7 @@ msgstr ""
 
 #: mc_videoplayer.h:796
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
-msgstr ""
+msgstr "DVD Struktur gefunden, mit DVD-Player abspielen?"
 
 #: network.h:895
 msgid "Found Wlan Stick and driver for: "
@@ -5143,7 +5143,7 @@ msgstr "Installieren Sie bitte das tiThek Plugin unter Erweiterungen"
 
 #: mc_wetterinfo.h:36
 msgid "Install Weather Tpk first !"
-msgstr ""
+msgstr "Installieren Sie bitte das Wetter Plugin unter Erweiterungen"
 
 #: extensions.h:121
 msgid "Install error"
@@ -8793,7 +8793,7 @@ msgstr "Serieller Anschluss"
 
 #: amazon.h:45 amazon.h:59 amazon.h:73 amazon.h:87
 msgid "Series"
-msgstr ""
+msgstr "Serien"
 
 #: plugins_rgui_skin.xml.h:3 plugins_tiwakeup_skin.xml.h:3
 #: skins_rgui_skin.xml.h:3 skins_tiwakeup_skin.xml.h:3
@@ -11552,7 +11552,7 @@ msgstr "Fenster schließen"
 
 #: mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100
 msgid "comming soon"
-msgstr ""
+msgstr "In Arbeit ..."
 
 #: network.h:284
 msgid "comming soon..."
