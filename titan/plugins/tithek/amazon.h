@@ -232,8 +232,9 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		int count1 = 0;
 		int j = 0;
 
-//		tmpstr = stringreplacechar(tmpstr, '\n', ' ');
-		tmpstr = string_replace_all("\n", " ", tmpstr, 1);
+		if(flag == 10)
+			tmpstr = stringreplacechar(tmpstr, '\n', ' ');
+//			tmpstr = string_replace_all("\n", " ", tmpstr, 1);
 
 		if(flag == 0 || flag == 1 || flag == 5 || flag == 7 || flag == 8 || flag == 9)
 			tmpstr = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr, 1);
@@ -332,8 +333,6 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL || ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL || ostrstr(ret1[j].part, "<span class=\\\"pagnLink\\\">") != NULL)
 				{
-
-
 					if(atitle == NULL)
 					{
 						atitle = string_resub("http://www.amazon.de/", "/", streamurl, 0);
