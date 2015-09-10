@@ -2,6 +2,7 @@
 #define TITHEK_HEADER_H
 
 char* gethttps(char* url, char* localfile, char* data, int flag);
+int amazon_login();
 void amazon_init(char* titheklink, char* tithekfile);
 void amazon_deinit();
 

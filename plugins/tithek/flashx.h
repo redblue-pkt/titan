@@ -6,7 +6,7 @@ char* flashx(char* link)
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *streamlink = NULL, *ip = NULL;
-	char* playurl = NULL, *tmpstr2 = NULL, *hash1tmp = NULL, *hash2tmp = NULL, *hash = NULL, *hash1 = NULL, *hash2 = NULL, *error = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *tmphost1 = NULL;
+	char* playurl = NULL, *tmpstr2 = NULL, *hash = NULL, *error = NULL;
 	char* app = NULL, *playpath = NULL, *swfUrl = NULL, *pageUrl = NULL, *swfVfy = NULL;
 	char* tmplink = NULL, *pos = NULL, *path = NULL;
 
