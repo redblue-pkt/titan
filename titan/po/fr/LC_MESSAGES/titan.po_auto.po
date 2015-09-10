@@ -2138,7 +2138,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:200 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:222 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -3102,7 +3102,7 @@ msgstr "ERREUR.. Autotimer terminé sans succès "
 msgid "ERROR... can't set marker in this file"
 msgstr ""
 
-#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:159 autotimer.c:537
+#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:181 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: channellist.h:945 channellist.h:947 channellist.h:952 channellist.h:954
@@ -5670,7 +5670,7 @@ msgstr ""
 msgid "Menulist"
 msgstr "Liste de Menu"
 
-#: amazon.h:18 amazon.h:21 amazon.h:159 avsettings.h:331 betarobot.h:57
+#: amazon.h:18 amazon.h:21 amazon.h:181 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334
@@ -5871,6 +5871,10 @@ msgstr "déplacer"
 
 #: plugins_filemanager_skin.xml.h:4 skins_filemanager_skin.xml.h:4
 msgid "Moven"
+msgstr ""
+
+#: amazon.h:30 amazon.h:37 amazon.h:51
+msgid "Movie"
 msgstr ""
 
 #: tithek_mainmenu.h:29
@@ -6097,7 +6101,7 @@ msgstr "Suivant"
 msgid "Next EPG Time"
 msgstr ""
 
-#: amazon.h:498
+#: amazon.h:520
 msgid "Next Page"
 msgstr ""
 
@@ -6234,7 +6238,7 @@ msgstr ""
 msgid "OE"
 msgstr "Ö"
 
-#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:159 autotimer.c:537
+#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:181 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
@@ -6977,6 +6981,10 @@ msgstr "Police"
 #: skin_default_skin.xml.h:515
 msgid "Polish"
 msgstr "Polski"
+
+#: amazon.h:29
+msgid "Popularity Rank"
+msgstr ""
 
 #: plugins_dlna_skin.xml.h:8 skins_dlna_skin.xml.h:8
 msgid "Port"
@@ -8251,7 +8259,7 @@ msgstr ""
 msgid "Script has no output or started in background."
 msgstr ""
 
-#: amazon.h:34 amazon.h:39 amazon.h:246 amazon.h:248 amazon.h:597 amazon.h:599
+#: amazon.h:50 amazon.h:57 amazon.h:268 amazon.h:270 amazon.h:619 amazon.h:621
 #: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
@@ -8483,6 +8491,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:631
 msgid "Serial Input"
+msgstr ""
+
+#: amazon.h:44 amazon.h:58
+msgid "Series"
 msgstr ""
 
 #: plugins_rgui_skin.xml.h:3 plugins_tiwakeup_skin.xml.h:3
@@ -9110,7 +9122,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:200 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:222 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
@@ -10549,6 +10561,10 @@ msgstr ""
 #: epgsearch.h:300
 msgid "War"
 msgstr "Réglages assisté"
+
+#: amazon.h:36 amazon.h:43
+msgid "Watchlist"
+msgstr ""
 
 #: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:200
 #: weather.h:426
