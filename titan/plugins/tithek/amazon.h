@@ -269,7 +269,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			{
 				if(ostrstr(ret1[j].part, "<li id=\\\"result_") != NULL)
 				{
-					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					debug(99, "(%d) ret1[j].part: %s", j, ret1[j].part);
 					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
 					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
 					if(pic == NULL)
@@ -281,7 +281,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 				}
 				if(ostrstr(ret1[j].part, "<li id=\"result_") != NULL)
 				{
-					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					debug(99, "(%d) ret1[j].part: %s", j, ret1[j].part);
 					streamurl = string_resub("\" href=\"", "\">", ret1[j].part, 0);
 					pic = string_resub("\" src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
@@ -293,7 +293,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 				}
 				else if(ostrstr(ret1[j].part, "<li class=\"\">") != NULL)
 				{
-					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					debug(99, "(%d) ret1[j].part: %s", j, ret1[j].part);
 					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
 					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
@@ -305,7 +305,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 				}
 				else if(ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL)
 				{
-					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					debug(99, "(%d) ret1[j].part: %s", j, ret1[j].part);
 					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
 					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
@@ -319,7 +319,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 				}
 				else if(ostrstr(ret1[j].part, "<span class=\\\"pagnLink\\\">") != NULL)
 				{
-					printf("(%d) ret1[j].part: %s\n", j, ret1[j].part);
+					debug(99, "(%d) ret1[j].part: %s", j, ret1[j].part);
 					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
 					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
 					if(pic == NULL)
@@ -415,7 +415,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 				line = ostrcat(line, oitoa(type), 1, 1);
 				line = ostrcat(line, "\n", 1, 0);
 			}
-			printf("line: %s\n", line);
+			debug(99, "line: %s", line);
 			menu = ostrcat("/tmp/tithek/amazon.", NULL, 0, 0);
 			menu = ostrcat(menu, filename, 1, 0);
 			menu = ostrcat(menu, ".page.", 1, 0);
