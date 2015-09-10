@@ -253,6 +253,7 @@ end:
 
 int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
+	printf("amazon_search start flag: %d\n", flag);
 	int ret = 1, type = 0;
 	int debuglevel = getconfigint("debuglevel", NULL);
 
@@ -260,7 +261,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		return ret;
 
 	char* remove = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *filename = NULL, *tmpstr = NULL, *search = NULL, *line = NULL, *url = NULL, *id = NULL, *streamurl = NULL, *pic = NULL, *year = NULL, *runtime = NULL, *menu = NULL;
-	char* page = NULL, *pages = NULL, *nextpage = NULL, *tmpstr4 = NULL;
+	char* page = NULL, *pages = NULL, *nextpage = NULL, *tmpstr4 = NULL, *atitle = NULL;
 
 	if(flag == 0 || flag == 1)
 	{
@@ -317,7 +318,6 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			type = 75;
 			url = ostrcat(link, NULL, 0, 0);
 		}
-
 ///////////////////////////
 		debug(99, "url: %s", url);
 		tmpstr = gethttps(url, NULL, NULL, 1);
@@ -377,7 +377,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			tmpstr = string_replace_all("<div class=\"grid-list-item downloadable_", "\n<div class=\"grid-list-item downloadable_", tmpstr, 1);
 			tmpstr = string_replace_all("<script type=\"text/javascript\">", "\n<script type=\"text/javascript\">", tmpstr, 1);	
 		}
-		
+
 		titheklog(debuglevel, tmpstr3, NULL, NULL, NULL, tmpstr);		
 
 		count1 = 0;
@@ -398,7 +398,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
 					if(pic == NULL)
 						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
-					title = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
+					atitle = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
 					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
 					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
@@ -410,7 +410,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					pic = string_resub("\" src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
 						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
-					title = string_resub("\" title=\"", "\"", ret1[j].part, 0);
+					atitle = string_resub("\" title=\"", "\"", ret1[j].part, 0);
 					year = string_resub("<span class=\"a-size-small a-color-secondary\">", "</span>", ret1[j].part, 0);
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
 					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
@@ -422,7 +422,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
 						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
-					title = string_resub("<span class=\"episode-title\">", "</span>", ret1[j].part, 0);
+					atitle = string_resub("<span class=\"episode-title\">", "</span>", ret1[j].part, 0);
 					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
 					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
 					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
@@ -434,7 +434,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
 						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
-					title = string_resub("data-title=\"", "\"", ret1[j].part, 0);
+					atitle = string_resub("data-title=\"", "\"", ret1[j].part, 0);
 					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
 					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
 					id = string_resub("id=\"", "\"", ret1[j].part, 0);
@@ -448,7 +448,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
 					if(pic == NULL)
 						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
-					title = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
+					atitle = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
 					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
 					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
@@ -458,8 +458,8 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL || ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL || ostrstr(ret1[j].part, "<span class=\\\"pagnLink\\\">") != NULL)
 				{
 
-					if(title != NULL)
-						title = string_decode3(title);
+					if(atitle != NULL)
+						atitle = string_decode3(atitle);
 
 					debug(99, "(%d) streamurl: %s", j, streamurl);
 					free(streamurl), streamurl = NULL;
@@ -468,7 +468,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					debug(99, "(%d) streamurl changed: %s", j, streamurl);
 					debug(99, "(%d) id: %s", j, id);
 					debug(99, "(%d) pic: %s", j, pic);
-					debug(99, "(%d) title: %s", j, title);
+					debug(99, "(%d) atitle: %s", j, atitle);
 					debug(99, "(%d) year: %s", j, year);
 					debug(99, "(%d) runtime: %s", j, runtime);
 					debug(99, "----------------------");
@@ -476,7 +476,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					if(id != NULL)
 					{
 						incount += 1;
-						line = ostrcat(line, title, 1, 0);
+						line = ostrcat(line, atitle, 1, 0);
 						if(year != NULL)
 						{
 							line = ostrcat(line, " (", 1, 0);
@@ -500,14 +500,14 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					free(id), id = NULL;
 					free(streamurl), streamurl = NULL;
 					free(pic), pic = NULL;
-					free(title), title = NULL;
+					free(atitle), atitle = NULL;
 					free(year), year = NULL;
 					free(runtime), runtime = NULL;
 					free(remove), remove = NULL;
 				}
 			}
 		}
-		free(ret1), ret1 = NULL;		
+		free(ret1), ret1 = NULL;
 		free(tmpstr), tmpstr = NULL;
 
 		if(line != NULL)
@@ -582,27 +582,42 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 ///////
 	}
 
+	printf("amazon_search before free url\n");
 	free(url), url = NULL;
+	printf("amazon_search before free page\n");
 	free(page), page = NULL;
+	printf("amazon_search before free pages\n");
 	free(pages), pages = NULL;
+	printf("amazon_search before free nextpage\n");
 	free(nextpage), nextpage = NULL;
+	printf("amazon_search before free filename\n");
 	free(filename), filename = NULL;
-	free(menu), menu = NULL;
+	printf("amazon_search before free runtime\n");
 	free(runtime), runtime = NULL;
+	printf("amazon_search before free year\n");
 	free(year), year = NULL;
-	free(title), title = NULL;
+	printf("amazon_search before free atitle\n");
+	free(atitle), atitle = NULL;
+	printf("amazon_search before free pic\n");
 	free(pic), pic = NULL;
+	printf("amazon_search before free streamurl\n");
 	free(streamurl), streamurl = NULL;
+	printf("amazon_search before free id\n");
 	free(id), id = NULL;
+	printf("amazon_search before free tmpstr\n");
+	free(tmpstr), tmpstr = NULL;
+	printf("amazon_search before free tmpstr2\n");
 	free(tmpstr2), tmpstr2 = NULL;
+	printf("amazon_search before free tmpstr3\n");
 	free(tmpstr3), tmpstr3 = NULL;
+	printf("amazon_search before free line\n");
 	free(line), line = NULL;
-	free(streamurl), streamurl = NULL;
-	free(pic), pic = NULL;
-	free(title), title = NULL;
-	free(year), year = NULL;
-	free(runtime), runtime = NULL;
+	printf("amazon_search before free search\n");
 	free(search), search = NULL;
+	printf("amazon_search before free menu\n");
+	free(menu), menu = NULL;
+
+	printf("amazon_search end flag: %d\n", flag);
 
 	return ret;
 }
@@ -674,6 +689,8 @@ int amazon_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 
 int amazon_login()
 {
+	printf("amazon_login start\n");
+
 	int ret = 0;
 	int debuglevel = getconfigint("debuglevel", NULL);
 
@@ -769,34 +786,34 @@ int amazon_login()
 		free(tmpstr), tmpstr = NULL;
 
 		hash = ostrcat(hash, "appActionToken=", 1, 0);
-		hash = ostrcat(hash, tmp1, 1, 1);
+		hash = ostrcat(hash, tmp1, 1, 0);
 		hash = ostrcat(hash, "&appAction=", 1, 0);
-		hash = ostrcat(hash, tmp2, 1, 1);
+		hash = ostrcat(hash, tmp2, 1, 0);
 		hash = ostrcat(hash, "&openid.pape.max_auth_age=", 1, 0);
-		hash = ostrcat(hash, tmp3, 1, 1);
+		hash = ostrcat(hash, tmp3, 1, 0);
 		hash = ostrcat(hash, "&openid.return_to=", 1, 0);
-		hash = ostrcat(hash, tmp4, 1, 1);
+		hash = ostrcat(hash, tmp4, 1, 0);
 		hash = ostrcat(hash, "&prevRID=", 1, 0);
-		hash = ostrcat(hash, tmp5, 1, 1);
+		hash = ostrcat(hash, tmp5, 1, 0);
 		hash = ostrcat(hash, "&openid.identity=", 1, 0);
-		hash = ostrcat(hash, tmp6, 1, 1);
+		hash = ostrcat(hash, tmp6, 1, 0);
 		hash = ostrcat(hash, "&openid.assoc_handle=", 1, 0);
-		hash = ostrcat(hash, tmp7, 1, 1);
+		hash = ostrcat(hash, tmp7, 1, 0);
 		hash = ostrcat(hash, "&openid.mode=", 1, 0);
-		hash = ostrcat(hash, tmp8, 1, 1);
+		hash = ostrcat(hash, tmp8, 1, 0);
 		hash = ostrcat(hash, "&openid.ns.pape=", 1, 0);
-		hash = ostrcat(hash, tmp9, 1, 1);
+		hash = ostrcat(hash, tmp9, 1, 0);
 		hash = ostrcat(hash, "&openid.claimed_id=", 1, 0);
-		hash = ostrcat(hash, tmp10, 1, 1);
+		hash = ostrcat(hash, tmp10, 1, 0);
 		hash = ostrcat(hash, "&pageId=", 1, 0);
-		hash = ostrcat(hash, tmp11, 1, 1);
+		hash = ostrcat(hash, tmp11, 1, 0);
 		hash = ostrcat(hash, "&openid.ns=", 1, 0);
-		hash = ostrcat(hash, tmp12, 1, 1);
+		hash = ostrcat(hash, tmp12, 1, 0);
 		hash = ostrcat(hash, "&email=", 1, 0);
-		hash = ostrcat(hash, user, 1, 1);
+		hash = ostrcat(hash, user, 1, 0);
 		hash = ostrcat(hash, "&create=0", 1, 0);
 		hash = ostrcat(hash, "&password=", 1, 0);
-		hash = ostrcat(hash, pass, 1, 1);
+		hash = ostrcat(hash, pass, 1, 0);
 	
 		tmpstr = gethttps("https://www.amazon.de/ap/signin", NULL, hash, 1);
 //		debug(99, "ret=%s", tmpstr);
@@ -829,7 +846,34 @@ int amazon_login()
 			debug(99, "Amazon Login Successful: %s", login);
 			ret = 1;
 		}
+
+		printf("amazon_login before free tmp1\n");
+		free(tmp1), tmp1 = NULL;
+		printf("amazon_login before free tmp2\n");
+		free(tmp2), tmp2 = NULL;
+		printf("amazon_login before free tmp3\n");
+		free(tmp3), tmp3 = NULL;
+		printf("amazon_login before free tmp4\n");
+		free(tmp4), tmp4 = NULL;
+		printf("amazon_login before free tmp5\n");
+		free(tmp5), tmp5 = NULL;
+		printf("amazon_login before free tmp6\n");
+		free(tmp6), tmp6 = NULL;
+		printf("amazon_login before free tmp7\n");
+		free(tmp7), tmp7 = NULL;
+		printf("amazon_login before free tmp8\n");
+		free(tmp8), tmp8 = NULL;
+		printf("amazon_login before free tmp9\n");
+		free(tmp9), tmp9 = NULL;
+		printf("amazon_login before free tmp10\n");
+		free(tmp10), tmp10 = NULL;
+		printf("amazon_login before free tmp11\n");
+		free(tmp11), tmp11 = NULL;
+		printf("amazon_login before free tmp12\n");
+		free(tmp12), tmp12 = NULL;
 	}
+
+	printf("amazon_login end\n");
 
 	return ret;
 }
