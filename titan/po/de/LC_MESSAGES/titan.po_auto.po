@@ -7260,11 +7260,11 @@ msgstr "Polski"
 
 #: amazon.h:37 amazon.h:44
 msgid "Popularity Kids"
-msgstr ""
+msgstr "Meistgesehen: Kinder & Familie"
 
 #: amazon.h:51 amazon.h:58
 msgid "Popularity Rank"
-msgstr ""
+msgstr "Meistgesehen:"
 
 #: plugins_dlna_skin.xml.h:8 skins_dlna_skin.xml.h:8
 msgid "Port"
