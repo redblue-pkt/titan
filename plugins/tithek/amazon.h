@@ -25,6 +25,20 @@ void amazon_init(char* titheklink, char* tithekfile)
 		unlink(tithekfile);
 		printf("add amazon mainmenu entrys\n");
 
+//		writesys(tithekfile, "Popularity Kids (Movie)#/tmp/tithek/amazon.popularity.kids.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.kids.movie.jpg#amazon.popularity.kids.movie.jpg#Amazon#84", 3);
+		tmpstr = ostrcat(_("Popularity Kids"), " (", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Movie"), 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.kids.movie.jpg#amazon.popularity.kids.movie.jpg#Amazon#84", 0, 0);
+		writesys(tithekfile, tmpstr, 3);
+		free(tmpstr), tmpstr = NULL;
+
+//		writesys(tithekfile, "Popularity Kids (Series)#/tmp/tithek/amazon.popularity.tv.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.kids.tv.jpg#amazon.popularity.kids.tv.jpg#Amazon#84", 3);
+		tmpstr = ostrcat(_("Popularity Kids"), " (", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.kids.tv.jpg#amazon.popularity.kids.tv.jpg#Amazon#85", 0, 0);
+		writesys(tithekfile, tmpstr, 3);
+		free(tmpstr), tmpstr = NULL;
+
 //		writesys(tithekfile, "Popularity (Movie)#/tmp/tithek/amazon.popularity.rank.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.rank.movie.jpg#amazon.popularity.rank.movie.jpg#Amazon#81", 3);
 		tmpstr = ostrcat(_("Popularity Rank"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movie"), 0, 0);
@@ -144,25 +158,42 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			type = 75;
 			url = ostrcat("http://www.amazon.de/gp/search/ajax/?_encoding=UTF8&rh=n%3A3010075031%2Cn%3A3356019031&sort=popularity-rank", NULL, 0, 0);
 		}
+		else if(flag == 8)
+		{
+			filename = ostrcat("popularity.kids.movie", NULL, 0, 0);
+			type = 75;
+			url = ostrcat("http://www.amazon.de/gp/search/ajax/?rh=n%3A3010075031%2Cn%3A!3010076031%2Cn%3A3015915031%2Cp_n_theme_browse-bin%3A3015972031%2Cp_85%3A3282148031&ie=UTF8", NULL, 0, 0);
+		}
+		else if(flag == 9)
+		{
+			filename = ostrcat("popularity.kids.tv", NULL, 0, 0);
+			type = 78;
+			url = ostrcat("http://www.amazon.de/gp/search/ajax/?rh=n%3A3010075031%2Cn%3A!3010076031%2Cn%3A3015916031%2Cp_n_theme_browse-bin%3A3015972031%2Cp_85%3A3282148031&ie=UTF8", NULL, 0, 0);
+		}
 
 ///////////////////////////
 		debug(99, "url: %s", url);
 		tmpstr = gethttps(url, NULL, NULL, 1);
 ///////////////
-		page = string_resub("<span class=\\\"pagnCur\\\">", "</span>", tmpstr, 0);	
 		pages = string_resub("<span class=\\\"pagnDisabled\\\">", "</span>", tmpstr, 0);	
 		nextpage = string_resub("<span class=\\\"pagnLink\\\"><a href=\\\"", "\\\"", tmpstr, 0);	
 
 		if(pages == NULL)
 			pages = string_resub("<span class=\"pagnDisabled\">", "</span>", tmpstr, 0);
 
-		if(page == NULL)
-			page = string_resub("<span class=\"pagnCur\">", "</span>", tmpstr, 0);
-
 		if(nextpage == NULL)
 		{
 			tmpstr4 = string_resub("class=\"pagnNext\"", ">", tmpstr, 0);	
 			nextpage = string_resub("href=\"", "\"", tmpstr4, 0);	
+			free(tmpstr4), tmpstr4 = NULL;
+		}
+
+		page = oregex(".*/ref=.*([0-9]{1,2})\\?rh=.*", nextpage);
+
+		if(pages == NULL)
+		{
+			tmpstr4 = string_resub("pagnCur", "pagnRA", tmpstr, 0);
+			pages = oregex(".*ref=sr_pg_([0-9]{1,2})\\?rh=.*", tmpstr4);
 			free(tmpstr4), tmpstr4 = NULL;
 		}
 
@@ -187,7 +218,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		int count1 = 0;
 		int j = 0;
 
-		if(flag == 0 || flag == 1 || flag == 5 || flag == 7)
+		if(flag == 0 || flag == 1 || flag == 5 || flag == 7 || flag == 8 || flag == 9)
 			tmpstr = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr, 1);
 		else if(flag == 6)
 			tmpstr = string_replace_all("<li id=\"result_", "\n<li id=\"result_", tmpstr, 1);

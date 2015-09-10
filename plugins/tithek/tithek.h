@@ -97,6 +97,8 @@ int amazonlogin = 0;
 //flag 81   - amazon popularity.rank movie
 //flag 82   - amazon next page
 //flag 83   - amazon popularity.rank tv
+//flag 84   - amazon popularity.kids movie
+//flag 85   - amazon popularity.kids tv
 
 //flag 100  - all local search
 //flag 1000 - menu pincode
@@ -2181,6 +2183,16 @@ why ?
 				else if(((struct tithek*)listbox->select->handle)->flag == 83)
 				{
 					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 7) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 84)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 8) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 85)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 9) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
