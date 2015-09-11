@@ -3336,7 +3336,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:228
 #: zapback.c:79 zdf.h:29
 msgid "EXIT"
-msgstr "Exit"
+msgstr "Beenden"
 
 #: epgsearch.h:332
 msgid "Eastern"
@@ -3545,7 +3545,7 @@ msgstr "Börse: "
 #: webif_rc_virtual.atemio6100.h:36 webif_rc_virtual.atemio6200.h:36
 #: webif_rc_virtual.atemio-nemesis.h:36 webif_rc_virtual.h:36
 msgid "Exit"
-msgstr "Verlassen"
+msgstr ""
 
 #: skin_default_skin.xml.h:246
 msgid "Exit Color"
@@ -3553,7 +3553,7 @@ msgstr "Exit Farbe"
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
 msgid "Exit Tithek"
-msgstr "Beenden"
+msgstr "Tithek beenden"
 
 #: tunerconfig.h:116
 msgid "Expert"
