@@ -95,6 +95,7 @@ char* letwatch(char* link);
 char* vidbull(char* link);
 char* vodlocker(char* link);
 char* vidto(char* link);
+char* thevideo(char* link);
 int internetradio_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 int internettv_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 int kinox_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
