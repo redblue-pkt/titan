@@ -656,7 +656,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			if(pic == 1)
 			{
 				if(ssl == 1)
-					gethttps(link, localfile, NULL, 0);
+					gethttps(link, localfile, NULL, NULL, NULL, 0);
 				else if(tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 				else
@@ -1405,8 +1405,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		char* skintitle = _("Choice Playback");
 		struct menulist* mlist = NULL, *mbox = NULL;
 
+#ifdef SH4
 		addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
-
+#else
+		// mipsel work, disable http direct streams without buffer, after 3mins no memory (memleak in player.h ?)
+		if(ostrncmp("http://", tmpstr1, 7))
+			addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
+#endif
 		if(!ostrncmp("http://", tmpstr1, 7))
 		{
 			// wakeup hdd for downloading
@@ -1415,6 +1420,9 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			{
 #ifdef EPLAYER3
 				addmenulist(&mlist, "Streaming Playback Caching (1MB)", _("Streaming Playback Caching (1MB)"), NULL, 0, 0);
+#else
+				// mipsel work for radio
+				addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
 #endif
 			}	
 			else if(!ostrncmp("http://", tmpstr1, 7))

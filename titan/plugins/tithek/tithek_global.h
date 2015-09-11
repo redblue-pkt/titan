@@ -30,7 +30,7 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
 
 // flag = 0 (without header in output)
 // flag = 1 (with header in output)
-char* gethttps(char* url, char* localfile, char* data, int flag)
+char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, int flag)
 {
 	debug(99, "url: %s", url);
 
@@ -58,6 +58,13 @@ char* gethttps(char* url, char* localfile, char* data, int flag)
 	       
 		/* specify URL to get */
 		curl_easy_setopt(curl_handle, CURLOPT_URL, url);
+
+		if(user != NULL && pass != NULL)
+		{
+			curl_easy_setopt(curl_handle, CURLOPT_USERNAME, user);
+			curl_easy_setopt(curl_handle, CURLOPT_PASSWORD, pass);
+			curl_easy_setopt(curl_handle, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+		}
 		if(data == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_HTTPGET, 1L);
 		else
@@ -80,7 +87,13 @@ char* gethttps(char* url, char* localfile, char* data, int flag)
 
 		/* some servers don't like requests that are made without a user-agent field, so we provide one */
 		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
+
+		// This is occassionally required to stop CURL from verifying the peers certificate.
+		// CURLOPT_SSL_VERIFYHOST may also need to be TRUE or FALSE if
+		// CURLOPT_SSL_VERIFYPEER is disabled (it defaults to 2 - check the existence of a
+		// common name and also verify that it matches the hostname provided)
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L);
+
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0L);
 		if(debuglevel == 99)
 			curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 1);
