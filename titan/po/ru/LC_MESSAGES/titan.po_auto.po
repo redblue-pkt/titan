@@ -13547,12 +13547,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "File Caching Playback (10MB / 120s)"
-#~ msgstr "Кэширование файлов воспроизведения (10Мб/120 сек)"
-
-#~ msgid "File Caching Playback (20MB / 240s)"
-#~ msgstr "Кэширование файлов воспроизведения (20Мб/240 сек)"
-
-#~ msgid "File Caching Playback (30MB / 360s)"
-#~ msgstr "Кэширование файлов воспроизведения (30Мб/360 сек)"

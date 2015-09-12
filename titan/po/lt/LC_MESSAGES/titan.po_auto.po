@@ -13569,12 +13569,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "File Caching Playback (10MB / 120s)"
-#~ msgstr "Failo padjimas  podl atkrimas ( 10MB / 120s )"
-
-#~ msgid "File Caching Playback (20MB / 240s)"
-#~ msgstr "Failo padjimas  podl atkrimas ( 20MB / 240s )"
-
-#~ msgid "File Caching Playback (30MB / 360s)"
-#~ msgstr "Failo padjimas  podl atkrimas ( 30MB / 360s )"
