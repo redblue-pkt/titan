@@ -913,11 +913,11 @@ msgstr ""
 msgid "Amazon Prime User"
 msgstr ""
 
-#: amazon.h:21
+#: amazon.h:24
 msgid "Amazon Prime login successful!"
 msgstr ""
 
-#: amazon.h:18
+#: amazon.h:21
 msgid ""
 "Amazon login not successful! Please check Amazon Prime User/Pass in Tithek "
 "settings and try again."
@@ -2110,6 +2110,10 @@ msgstr ""
 msgid "Choose your Internet Favorite from the following list"
 msgstr ""
 
+#: amazon.h:594
+msgid "Choose your Language from the following list"
+msgstr ""
+
 #: mc_global.h:609
 msgid "Choose your Playlist Mode from the following list"
 msgstr ""
@@ -2134,7 +2138,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:673 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:735 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -2438,7 +2442,7 @@ msgstr ""
 msgid "Currency: "
 msgstr "Συχνότητα:"
 
-#: amazon.h:30
+#: amazon.h:33
 msgid "Currently"
 msgstr ""
 
@@ -3102,7 +3106,7 @@ msgstr ""
 msgid "ERROR... can't set marker in this file"
 msgstr ""
 
-#: about.h:9 amazon.h:632 autotimer.c:537 autotimer.c:543 autotimer.c:568
+#: about.h:9 amazon.h:694 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 channellist.h:945 channellist.h:947
 #: channellist.h:952 channellist.h:954 channellist.h:1038 divxstage.h:36
@@ -5658,7 +5662,7 @@ msgstr ""
 msgid "Menulist"
 msgstr ""
 
-#: amazon.h:18 amazon.h:21 amazon.h:632 avsettings.h:331 betarobot.h:57
+#: amazon.h:21 amazon.h:24 amazon.h:694 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334
@@ -5869,7 +5873,7 @@ msgstr ""
 msgid "Moviepath"
 msgstr ""
 
-#: amazon.h:31 amazon.h:38 amazon.h:52 amazon.h:66 amazon.h:80
+#: amazon.h:34 amazon.h:41 amazon.h:55 amazon.h:69 amazon.h:83
 #: webif_index.atemio510.h:12 webif_index.atemio5200.h:12
 #: webif_index.atemio6000.h:12 webif_index.atemio6100.h:12
 #: webif_index.atemio6200.h:12 webif_index.atemio7600.h:10
@@ -6086,7 +6090,7 @@ msgstr ""
 msgid "Next EPG Time"
 msgstr ""
 
-#: amazon.h:408
+#: amazon.h:411
 msgid "Next Page"
 msgstr ""
 
@@ -6223,7 +6227,7 @@ msgstr ""
 msgid "OE"
 msgstr ""
 
-#: about.h:9 amazon.h:18 amazon.h:21 amazon.h:632 autotimer.c:537
+#: about.h:9 amazon.h:21 amazon.h:24 amazon.h:694 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
@@ -6967,11 +6971,11 @@ msgstr ""
 msgid "Polish"
 msgstr ""
 
-#: amazon.h:37 amazon.h:44
+#: amazon.h:40 amazon.h:47
 msgid "Popularity Kids"
 msgstr ""
 
-#: amazon.h:51 amazon.h:58
+#: amazon.h:54 amazon.h:61
 msgid "Popularity Rank"
 msgstr ""
 
@@ -8248,7 +8252,7 @@ msgstr ""
 msgid "Script has no output or started in background."
 msgstr ""
 
-#: amazon.h:79 amazon.h:86 amazon.h:111 amazon.h:113 amazon.h:724 amazon.h:726
+#: amazon.h:82 amazon.h:89 amazon.h:114 amazon.h:116 amazon.h:788 amazon.h:790
 #: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
@@ -8410,6 +8414,10 @@ msgstr "Δεύτερο Infobar"
 msgid "Section: "
 msgstr "Ανάλυση"
 
+#: amazon.h:594
+msgid "Select Language"
+msgstr ""
+
 #: skin_default_skin.xml.h:627
 msgid "Select Path"
 msgstr ""
@@ -8482,7 +8490,7 @@ msgstr ""
 msgid "Serial Input"
 msgstr ""
 
-#: amazon.h:45 amazon.h:59 amazon.h:73 amazon.h:87
+#: amazon.h:48 amazon.h:62 amazon.h:76 amazon.h:90
 msgid "Series"
 msgstr ""
 
@@ -9111,7 +9119,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:673 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:735 ard.h:96 nowtv.h:76 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
@@ -10551,7 +10559,7 @@ msgstr ""
 msgid "War"
 msgstr "Βοηθός εγκατάστασης"
 
-#: amazon.h:65 amazon.h:72
+#: amazon.h:68 amazon.h:75
 msgid "Watchlist"
 msgstr ""
 
