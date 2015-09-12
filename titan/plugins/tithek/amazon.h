@@ -163,7 +163,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		else if(flag == 7)
 		{
 			filename = ostrcat("popularity.rank.tv", NULL, 0, 0);
-			type = 75;
+			type = 78;
 			url = ostrcat("http://www.amazon.de/gp/search/ajax/?_encoding=UTF8&rh=n%3A3010075031%2Cn%3A3356019031&sort=popularity-rank", NULL, 0, 0);
 		}
 		else if(flag == 8)
