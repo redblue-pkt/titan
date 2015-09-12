@@ -1437,11 +1437,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 //#endif
 				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 				{
+/*
 #ifndef EPLAYER3
 					addmenulist(&mlist, "File Caching Playback (10MB / 120s)", _("File Caching Playback (10MB / 120s)"), NULL, 0, 0);
 					addmenulist(&mlist, "File Caching Playback (20MB / 240s)", _("File Caching Playback (20MB / 240s)"), NULL, 0, 0);
 					addmenulist(&mlist, "File Caching Playback (30MB / 360s)", _("File Caching Playback (30MB / 360s)"), NULL, 0, 0);
 #endif
+*/
 					addmenulist(&mlist, "Download Full File", _("Download Full File"), NULL, 0, 0);
 					addmenulist(&mlist, "Download Full File (background)", _("Download Full File (background)"), NULL, 0, 0);
 				}
