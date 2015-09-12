@@ -319,7 +319,8 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1, series = 0;
-	char* pos = NULL, *etitle = NULL, *episode = NULL, *session = NULL, *update = NULL, *quality = NULL, *id = NULL, *line = NULL, *hname = NULL, *tmpstr = NULL, *url = NULL, *tmpstr1 = NULL, *tmphost = NULL, *tmphname = NULL;
+	char* pos = NULL, *etitle = NULL, *episode = NULL, *session = NULL, *update = NULL, *quality = NULL, *id = NULL, *line = NULL, *hname = NULL, *tmpstr = NULL, *url = NULL, *tmphost = NULL, *tmphname = NULL;
+//	char* tmpstr1 = NULL;
 	char* pichname = NULL, *tmppath = NULL;
 	unlink("/tmp/tithek/get");
 	unlink("/tmp/tithek/get_zcat");
