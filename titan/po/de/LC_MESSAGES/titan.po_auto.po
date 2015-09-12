@@ -957,9 +957,8 @@ msgid ""
 "Amazon login not successful! Please check Amazon Prime User/Pass in Tithek "
 "settings and try again."
 msgstr ""
-"Amazon Login fehlgeschlagen! Bitte überprüfen Sie die Amazon Prime "
-"Zugangsdaten in den\n"
-"Tithek Einstellungen und versuchen Sie es erneut."
+"Amazon Login fehlgeschlagen! Bitte überprüfen Sie die Amazon Prime\n"
+"Zugangsdaten in den Tithek Einstellungen und versuchen Sie es erneut."
 
 #: copyfile.h:839
 msgid "Amount of files: "
