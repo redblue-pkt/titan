@@ -13634,12 +13634,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "File Caching Playback (10MB / 120s)"
-#~ msgstr "Buffer de reproduccin (10 MB / 120 seg)"
-
-#~ msgid "File Caching Playback (20MB / 240s)"
-#~ msgstr "Buffer Playback (20MB / 240 Seg)"
-
-#~ msgid "File Caching Playback (30MB / 360s)"
-#~ msgstr "Buffer Playback (30MB / 360 Seg)"

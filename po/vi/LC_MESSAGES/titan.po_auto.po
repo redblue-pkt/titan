@@ -13478,12 +13478,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "File Caching Playback (10MB / 120s)"
-#~ msgstr "Bộ nhớ đệm phát lại (10MB / 120s)"
-
-#~ msgid "File Caching Playback (20MB / 240s)"
-#~ msgstr " Bộ nhớ đệm phát lại (20MB / 240s)"
-
-#~ msgid "File Caching Playback (30MB / 360s)"
-#~ msgstr " Bộ nhớ đệm phát lại (30MB / 360s)"
