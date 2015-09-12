@@ -1,6 +1,9 @@
 #ifndef AMAZON_H
 #define AMAZON_H
 
+// imdb
+//http://api-doc.imdbws.com/static-content/documents/v1/de-DE/video/lovefilm_de/amzn1.dv.vcid.183d4cd2-d2f0-4d5d-8712-771b05cb0feb/events:imdb.api.video.events/data.json?Expires=1442152236&Signature=ay5qtA6EvuUQ253Ch2-MIGLt~GgrFl1gFNxhvgME9nyd5BP9vmX9nnusTJYgnqXlbDxa0XlDkPxm0zEOOlaQaRhTbxT5VOV75KZuOlJXb9PQou75KbT8fbWfhY5LJpKrHeLkqU5xSuV8TQ0L2OK997GL5N7147vf2gs3eya8PyA_&Key-Pair-Id=APKAJHKHQ2OMFVLH6TKA
+
 void amazon_init(char* titheklink, char* tithekfile)
 {
 	int ret = 0;
@@ -254,7 +257,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 		}
 		else if(flag == 3 || flag == 4)
 		{
-			tmpstr = string_replace_all("\n", " ", tmpstr, 1);			
+			tmpstr = string_replace_all("\n", " ", tmpstr, 1);
 			tmpstr = string_replace_all("<div class=\"grid-list-item downloadable_", "\n<div class=\"grid-list-item downloadable_", tmpstr, 1);
 			tmpstr = string_replace_all("<script type=\"text/javascript\">", "\n<script type=\"text/javascript\">", tmpstr, 1);	
 		}
@@ -531,21 +534,75 @@ char* amazon(char* link)
 
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* url = NULL, *customerid = NULL, *marketplaceid = NULL, *matchtoken = NULL, *devicetypeid = NULL, *apimain = NULL, *token = NULL;
-	char* tmpstr = NULL, *title = NULL, *pic = NULL, *streamurl = NULL, *bitrate = NULL, *random = NULL;
-
+	char* tmpstr = NULL, *title = NULL, *pic = NULL, *streamurl = NULL, *bitrate = NULL, *random = NULL, *lang = NULL, *langtext = NULL, *tmpstr2 = NULL;
+	
 	unlink("/tmp/amazon_streamurl_get1");
 	unlink("/tmp/amazon_streamurl_get2");
 	unlink("/tmp/amazon_streamurl_get3");
 	unlink("/tmp/amazon_streamurl_get4");
+
+	url = ostrcat("http://www.amazon.de/gp/video/detail/", link, 0, 0);
+	url = ostrcat(url, "?ie=UTF8&*Version*=1&*entries*=0", 1, 0);
 
 	url = ostrcat("http://www.amazon.de/dp/", link, 0, 0);
 	url = ostrcat(url, "/?_encoding=UTF8", 1, 0);
 
 //////////////////////////////////////////////////
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/tmp/amazon_streamurl_get1", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get1", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
+
+	tmpstr2 = string_resub("class=\"dv-toggle-box dv-tb-closed\">", "<span id=\"dv-mta-submit-announce\"", tmpstr, 0);
+	tmpstr2 = string_replace_all("\n", " ", tmpstr2, 1);
+	tmpstr2 = string_replace_all("<option value=\"", "\n<option value=\"", tmpstr2, 1);
+
+	int count = 0, i = 0;	
+	struct splitstr* ret1 = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL;
+	ret1 = strsplit(tmpstr2, "\n", &count);
+	for(i = 0; i < count; i++)
+	{
+		printf("%d round %s\n", i, ret1[i].part);
+
+		if(ostrstr(ret1[i].part, "<option value=\"") != NULL)
+		{ 
+			lang = oregex(".*<option value=\"(.*)\".*>", ret1[i].part);
+			langtext = oregex(".*>(.*)</option>", ret1[i].part);
+			strstrip(lang);
+			strstrip(langtext);
+			lang = stringreplacecharonce(lang, '\"', '\0');
+			pic = ostrcat(lang, NULL, 0, 0);
+			pic = stringreplacecharonce(pic, '_', '\0'); 
+			pic = ostrcat(pic, ".png", 1, 0);
+
+			if(ostrstr(lang, "_") != NULL && langtext != NULL)
+			{
+				debug(99, "(%d) langtext: %s lang: %s\n", i, langtext, lang);																									
+				addmenulist(&mlist, langtext, lang, pic, 0, 0);
+			}
+			free(lang), lang = NULL;
+			free(langtext), langtext = NULL;
+			free(pic), pic = NULL;
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+
+	if(mlist != NULL)
+	{
+		mbox = menulistbox(mlist, NULL, _("Select Language"), _("Choose your Language from the following list"), NULL, NULL, 1, 0);
+		if(mbox != NULL)
+		{
+
+			debug(99, "mbox->name %s", mbox->name);
+			debug(99, "mbox->text %s", mbox->text);
+			lang = ostrcat(mbox->text, NULL, 0, 0);
+		}
+	}
+	freemenulist(mlist, 0); mlist = NULL;
+
+//////////////////////////////////////////////////
 
 	customerid = string_resub("\"customerID\":\"", "\"", tmpstr, 0);
 	marketplaceid = string_resub("\"marketplaceID\":\"", "\"", tmpstr, 0);
@@ -570,10 +627,11 @@ char* amazon(char* link)
 	printf("matchtoken: %s\n", matchtoken);
 	printf("devicetypeid: %s\n", devicetypeid);
 	printf("apimain: %s\n", apimain);
+	printf("lang: %s\n", lang);
 
 //////////////////////////////////////////////////	
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/tmp/amazon_streamurl_get2", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get2", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
 
@@ -590,7 +648,7 @@ char* amazon(char* link)
 
 //////////////////////////////////////////////////	
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/tmp/amazon_streamurl_get3", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get3", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
 
@@ -601,9 +659,15 @@ char* amazon(char* link)
 
 	url = ostrcat("https://", apimain, 0, 0);
 	if(amazonlogin == 1)
-		url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingUrlSets?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID=", 1, 0);
+		url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingUrlSets?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn", 1, 0);
 	else // trailer
-		url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingTrailerUrls?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn&marketplaceID=", 1, 0);
+		url = ostrcat(url, ".amazon.com/cdp/catalog/GetStreamingTrailerUrls?version=1&format=json&firmware=WIN%2011,7,700,224%20PlugIn", 1, 0);
+	if(lang != NULL)
+	{
+		url = ostrcat(url, "&audioTrackId=", 1, 0);
+		url = ostrcat(url, lang, 1, 0);
+	}
+	url = ostrcat(url, "&marketplaceID=", 1, 0);
 	url = ostrcat(url, marketplaceid, 1, 0);
 	url = ostrcat(url, "&token=", 1, 0);
 	url = ostrcat(url, token, 1, 0);
@@ -614,8 +678,6 @@ char* amazon(char* link)
 	url = ostrcat(url, "&customerID=", 1, 0);
 	url = ostrcat(url, customerid, 1, 0);
 	url = ostrcat(url, "&deviceID=", 1, 0);
-	// todo
-//	url = ostrcat(url, "A3T8NY6VBAVZZA1441140895392B00HDWUOE0", 1, 0); //'&deviceID='+urllib.quote_plus(matchCID[0].encode("utf8"))+str(int(time.time()*1000))+videoID
 	url = ostrcat(url, customerid, 1, 0);
 	url = ostrcat(url, olutoa(time(NULL)*1000), 1, 1);
 	url = ostrcat(url, link, 1, 0);
@@ -635,12 +697,13 @@ char* amazon(char* link)
 
 	tmpstr = string_replace_all("{\"bitrate\":", "\n{\"bitrate\":", tmpstr, 1);
 
-	int count = 0, i = 0;	
-	struct splitstr* ret1 = NULL;
-	struct menulist* mlist = NULL, *mbox = NULL;
+	count = 0;
+	i = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
 	for(i = 0; i < count; i++)
 	{
+		free(streamurl), streamurl = NULL;
+
 		if(ostrstr(ret1[i].part, "f4m") != NULL)
 			pic = ostrcat("f4m.png", NULL, 0, 0);
 		else if(ostrstr(ret1[i].part, "mp4") != NULL)
@@ -664,7 +727,6 @@ char* amazon(char* link)
 		free(bitrate), bitrate = NULL;
 		free(title), title = NULL;
 		free(pic), pic = NULL;
-		free(streamurl), streamurl = NULL;
 	}
 	free(ret1), ret1 = NULL;
 
@@ -673,14 +735,16 @@ char* amazon(char* link)
 		mbox = menulistbox(mlist, NULL, _("Stream Menu"), _("Choose your Streaming Format from the following list"), NULL, NULL, 1, 0);
 		if(mbox != NULL)
 		{
-
+			free(streamurl), streamurl = NULL;
 			debug(99, "mbox->name %s", mbox->name);
 			debug(99, "mbox->text %s", mbox->text);
 			streamurl = ostrcat(mbox->text, NULL, 0, 0);
 		}
 	}
-
+	freemenulist(mlist, 0); mlist = NULL;
 end:
+	printf("amazon before free lang\n");
+	free(lang), lang = NULL;
 	printf("amazon before free random\n");
 	free(random), random = NULL;
 	printf("amazon before free url\n");
