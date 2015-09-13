@@ -29,52 +29,52 @@ void amazon_init(char* titheklink, char* tithekfile)
 		printf("add amazon mainmenu entrys\n");
 
 
-//		writesys(tithekfile, "Currently (Movie)#/tmp/tithek/amazon.currently.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.currently.movie.jpg#currently.movie.jpg#Amazon#86", 3);
+//		writesys(tithekfile, "Currently (Movie)#/tmp/tithek/amazon.currently.movie.list#http://atemio.dyndns.tv/mediathek/menu/currently.movie.jpg#currently.movie.jpg#Amazon#86", 3);
 		tmpstr = ostrcat(_("Currently"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.currently.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.currently.movie.jpg#currently.movie.jpg#Amazon#86", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.currently.movie.list#http://atemio.dyndns.tv/mediathek/menu/currently.movie.jpg#currently.movie.jpg#Amazon#86", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Popularity Kids (Movie)#/tmp/tithek/amazon.popularity.kids.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.kids.movie.jpg#popularity.kids.movie.jpg#Amazon#84", 3);
+//		writesys(tithekfile, "Popularity Kids (Movie)#/tmp/tithek/amazon.popularity.kids.movie.list#http://atemio.dyndns.tv/mediathek/menu/popularity.kids.movie.jpg#popularity.kids.movie.jpg#Amazon#84", 3);
 		tmpstr = ostrcat(_("Popularity Kids"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.kids.movie.jpg#popularity.kids.movie.jpg#Amazon#84", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.movie.list#http://atemio.dyndns.tv/mediathek/menu/popularity.kids.movie.jpg#popularity.kids.movie.jpg#Amazon#84", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Popularity Kids (Series)#/tmp/tithek/amazon.popularity.kids.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.kids.tv.jpg#popularity.kids.tv.jpg#Amazon#85", 3);
+//		writesys(tithekfile, "Popularity Kids (Series)#/tmp/tithek/amazon.popularity.kids.tv.list#http://atemio.dyndns.tv/mediathek/menu/popularity.kids.tv.jpg#popularity.kids.tv.jpg#Amazon#85", 3);
 		tmpstr = ostrcat(_("Popularity Kids"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.kids.tv.jpg#popularity.kids.tv.jpg#Amazon#85", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.tv.list#http://atemio.dyndns.tv/mediathek/menu/popularity.kids.tv.jpg#popularity.kids.tv.jpg#Amazon#85", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Popularity (Movie)#/tmp/tithek/amazon.popularity.rank.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.rank.movie.jpg#popularity.rank.movie.jpg#Amazon#81", 3);
+//		writesys(tithekfile, "Popularity (Movie)#/tmp/tithek/amazon.popularity.rank.movie.list#http://atemio.dyndns.tv/mediathek/menu/popularity.rank.movie.jpg#popularity.rank.movie.jpg#Amazon#81", 3);
 		tmpstr = ostrcat(_("Popularity Rank"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.rank.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.rank.movie.jpg#popularity.rank.movie.jpg#Amazon#81", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.rank.movie.list#http://atemio.dyndns.tv/mediathek/menu/popularity.rank.movie.jpg#popularity.rank.movie.jpg#Amazon#81", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Popularity (Series)#/tmp/tithek/amazon.popularity.rank.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.rank.tv.jpg#popularity.rank.tv.jpg#Amazon#83", 3);
+//		writesys(tithekfile, "Popularity (Series)#/tmp/tithek/amazon.popularity.rank.tv.list#http://atemio.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#Amazon#83", 3);
 		tmpstr = ostrcat(_("Popularity Rank"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.rank.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.popularity.rank.tv.jpg#popularity.rank.tv.jpg#Amazon#83", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.rank.tv.list#http://atemio.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#Amazon#83", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Watchlist (Movie)#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 3);
+//		writesys(tithekfile, "Watchlist (Movie)#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 3);
 		tmpstr = ostrcat(_("Watchlist"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Watchlist (Series)#/tmp/tithek/amazon.watchlist.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.tv.jpg#watchlist.tv.jpg#Amazon#80", 3);
+//		writesys(tithekfile, "Watchlist (Series)#/tmp/tithek/amazon.watchlist.tv.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.tv.jpg#watchlist.tv.jpg#Amazon#80", 3);
 		tmpstr = ostrcat(_("Watchlist"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.watchlist.tv.list#http://atemio.dyndns.tv/mediathek/menu/amazon.watchlist.tv.jpg#watchlist.tv.jpg#Amazon#80", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.watchlist.tv.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.tv.jpg#watchlist.tv.jpg#Amazon#80", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
