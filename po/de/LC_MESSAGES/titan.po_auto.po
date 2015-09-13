@@ -1500,7 +1500,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:117
 msgid "Blink elements"
-msgstr ""
+msgstr "Blinkende Symbole"
 
 #: webif_index.atemio5200.h:54 webif_index.atemio5200.h:110
 #: webif_index.atemio6200.h:54 webif_index.atemio6200.h:110
