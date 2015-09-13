@@ -149,6 +149,7 @@ char* string_decode3(char* input)
 	input = string_replace_all("&#220;", "Ue", input, 1);
 	input = string_replace_all("&#252;", "ue", input, 1);
 	input = string_replace_all("&#223;", "ss", input, 1);
+	input = string_replace_all("&#38;", "&", input, 1);
 
 	input = string_replace_all("&Auml;", "Ae", input, 1);
 	input = string_replace_all("&Eacute;", "E", input, 1);
@@ -158,7 +159,7 @@ char* string_decode3(char* input)
 	input = string_replace_all("&Uuml;", "Ue", input, 1);
 	input = string_replace_all("&uuml;", "ue", input, 1);
 	input = string_replace_all("&szlig;", "ss", input, 1);
-	input = string_replace_all("&uml;", "&", input, 1);
+	input = string_replace_all("&amp;", "&", input, 1);
 
 	return input;
 }
