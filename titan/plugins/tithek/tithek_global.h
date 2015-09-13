@@ -158,6 +158,7 @@ char* string_decode3(char* input)
 	input = string_replace_all("&Uuml;", "Ue", input, 1);
 	input = string_replace_all("&uuml;", "ue", input, 1);
 	input = string_replace_all("&szlig;", "ss", input, 1);
+	input = string_replace_all("&uml;", "&", input, 1);
 
 	return input;
 }
