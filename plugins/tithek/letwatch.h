@@ -10,9 +10,8 @@ char* letwatch(char* link)
 	if(link == NULL) return NULL;
 
 	unlink("/tmp/letwatch1_get");
-	unlink("/tmp/letwatch2_post");
-	unlink("/tmp/letwatch3_post");
-	unlink("/tmp/letwatch4_streamlink");
+	unlink("/tmp/letwatch2_get_jsunpack");
+	unlink("/tmp/letwatch3_streamlink");
 /////////////
 	char* tmplink = NULL, *pos = NULL, *path = NULL;
 
@@ -50,10 +49,10 @@ char* letwatch(char* link)
 
 	debug(99, "url: %s", link);
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/mightyupload1_get", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/tmp/letwatch1_get", NULL, NULL, NULL, tmpstr);	
 
 	tmpstr = jsunpack(tmpstr);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/mightyupload2_get_jsunpack", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/tmp/letwatch2_get_jsunpack", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)
 	{
@@ -67,9 +66,16 @@ char* letwatch(char* link)
 		goto end;
 	}
 
-	streamlink = string_resub("[{l:\"", "\"", tmpstr, 0);		
+	if(ostrstr(tmpstr, "Video is processing now.") != NULL)
+	{
+		textbox(_("Message"), _("Video is processing now. Conversion stage...") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
 
-	titheklog(debuglevel, "/tmp/letwatch4_streamlink", NULL, NULL, NULL, streamlink);
+//	streamlink = string_resub("[{l:\"", "\"", tmpstr, 0);		
+	streamlink = oregex(".*(http://.*v.flv).*", tmpstr);
+
+	titheklog(debuglevel, "/tmp/letwatch3_streamlink", NULL, NULL, NULL, streamlink);
 
 	free(tmpstr); tmpstr = NULL;
 
