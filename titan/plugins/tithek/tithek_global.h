@@ -141,7 +141,7 @@ char* string_decode3(char* input)
 {
 	if(input == NULL) return input;
 
-	input = string_replace_all("&#196;", "Ae", input, 1);
+	input = string_replace_all("&#196;", "Ä", input, 1);
 	input = string_replace_all("&#201;", "E", input, 1);
 	input = string_replace_all("&#233;", "e", input, 1);
 	input = string_replace_all("&#214;", "Oe", input, 1);
@@ -151,7 +151,7 @@ char* string_decode3(char* input)
 	input = string_replace_all("&#223;", "ss", input, 1);
 	input = string_replace_all("&#38;", "&", input, 1);
 
-	input = string_replace_all("&Auml;", "Ae", input, 1);
+	input = string_replace_all("&Auml;", "Ä", input, 1);
 	input = string_replace_all("&Eacute;", "E", input, 1);
 	input = string_replace_all("&eacute;", "e", input, 1);
 	input = string_replace_all("&Ouml;", "Oe", input, 1);
