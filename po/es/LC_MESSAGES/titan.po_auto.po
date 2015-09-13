@@ -179,7 +179,7 @@ msgstr ""
 msgid "/"
 msgstr ""
 
-#: titan.c:1216
+#: titan.c:1219
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -187,7 +187,7 @@ msgstr ""
 "/mnt No se puede escribir!\n"
 "Quieres tratar de repararlo?"
 
-#: titan.c:1199
+#: titan.c:1202
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1236,7 +1236,7 @@ msgstr "Busqueda Automatica"
 msgid "Automatic start last subtitle"
 msgstr "Auto iniciar ultimo SubTitulo"
 
-#: titan.c:1268
+#: titan.c:1271
 msgid "Automatic stop in 10 seconds."
 msgstr "Parada automatica en 10 segundos"
 
@@ -2178,7 +2178,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Seleccione la entrada deseada para el menú rojo de la lista de abajo"
 
-#: titan.c:994
+#: titan.c:997
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Elija su modelo de control remoto de la siguiente lista"
 
@@ -3283,8 +3283,8 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1035 titan.c:1044 titan.c:1172 titan.c:1193
-#: titan.c:1199 titan.c:1210 titan.c:1216 tithek.c:92 tithek_global.h:423
+#: titan.c:346 titan.c:355 titan.c:1038 titan.c:1047 titan.c:1175 titan.c:1196
+#: titan.c:1202 titan.c:1213 titan.c:1219 tithek.c:92 tithek_global.h:423
 #: tithek.h:688 tithek.h:1244 tithek.h:1305 tithek.h:1530 tithek.h:1552
 #: tithek.h:1569 tithek.h:1801 tithek.h:1961 tithek.h:2216 tithek.h:2244
 #: tithek.h:2260 tithek.h:2272 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -3459,27 +3459,27 @@ msgstr "ERROR: El archivo transpondedor esta vacia!"
 msgid "Error: Transponder Source file not found"
 msgstr "ERROR: Ninguna fuente transpondedor archivo encontrado!"
 
-#: titan.c:863
+#: titan.c:866
 msgid "Error: no audio device found !!"
 msgstr "ERROR: No hay dispositivo de audio Encontrado!"
 
-#: titan.c:851
+#: titan.c:854
 msgid "Error: no demux device found !!"
 msgstr "RROR: No demux Dispositivo Encontrado!"
 
-#: titan.c:845
+#: titan.c:848
 msgid "Error: no frontend device found !!"
 msgstr "ERROR: No Frontend Dispositivo Encontrado!"
 
-#: titan.c:857
+#: titan.c:860
 msgid "Error: no video device found !!"
 msgstr "ERROR: No hay Dispositivo de Video Encontrado!"
 
-#: titan.c:839
+#: titan.c:842
 msgid "Error: open rc device !!"
 msgstr "ERROR: No Control remoto Encontrado!"
 
-#: titan.c:886
+#: titan.c:889
 msgid "Error: skin not found !!"
 msgstr "ERROR: No Skin Encontrado!"
 
@@ -3785,7 +3785,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1035
+#: titan.c:1038
 msgid "First Wizzard"
 msgstr "Wizzard Primera Instalacion"
 
@@ -3990,7 +3990,7 @@ msgstr "Tasa Maxima"
 msgid "Free Space"
 msgstr "Espacion Libre disponible"
 
-#: titan.c:1210
+#: titan.c:1213
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3998,7 +3998,7 @@ msgstr ""
 "Espacio insuficiente en /mnt!\n"
 "estao causar problemas graves!"
 
-#: titan.c:1193
+#: titan.c:1196
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4873,7 +4873,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Conoce AC3 Audio Volumen reduciendo Stereo-audio en%"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1044 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1047 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5871,8 +5871,8 @@ msgstr "Lista de Menus"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1172 titan.c:1193 titan.c:1199 titan.c:1210
-#: titan.c:1216 tithek.c:92 tithek_global.h:423 tithek.h:688 tithek.h:1244
+#: titan.c:346 titan.c:355 titan.c:1175 titan.c:1196 titan.c:1202 titan.c:1213
+#: titan.c:1219 tithek.c:92 tithek_global.h:423 tithek.h:688 tithek.h:1244
 #: tithek.h:1305 tithek.h:1530 tithek.h:1552 tithek.h:1801 tithek.h:1961
 #: tithek.h:2216 tithek.h:2244 tithek.h:2260 tithek.h:2272 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
@@ -6464,8 +6464,8 @@ msgstr "Ö"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1035 titan.c:1044 titan.c:1172 titan.c:1193
-#: titan.c:1199 titan.c:1210 titan.c:1216 tithek.c:92 tithek_global.h:423
+#: titan.c:346 titan.c:355 titan.c:1038 titan.c:1047 titan.c:1175 titan.c:1196
+#: titan.c:1202 titan.c:1213 titan.c:1219 tithek.c:92 tithek_global.h:423
 #: tithek.h:688 tithek.h:1244 tithek.h:1305 tithek.h:1530 tithek.h:1552
 #: tithek.h:1569 tithek.h:1801 tithek.h:1961 tithek.h:2216 tithek.h:2244
 #: tithek.h:2260 tithek.h:2272 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7546,7 +7546,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Receptor se reiniciara ahora !!!"
 
-#: titan.c:1172
+#: titan.c:1175
 msgid "Receiver successful unlocked"
 msgstr "Su receptor se abrio con Exito."
 
@@ -7686,11 +7686,11 @@ msgstr "Marca la posicion de la pelicula"
 msgid "Remote"
 msgstr ""
 
-#: titan.c:987
+#: titan.c:990
 msgid "RemoteControl Long Version"
 msgstr "Remote Control Version larga"
 
-#: titan.c:986
+#: titan.c:989
 msgid "RemoteControl Old Version"
 msgstr "Control remoto de edad Version"
 
@@ -8596,7 +8596,7 @@ msgstr "Seleccion de trazado"
 msgid "Select Unicable Manufacturer"
 msgstr "Seleccionar fabricante Unicable"
 
-#: titan.c:994
+#: titan.c:997
 msgid "Select Your Remote Control"
 msgstr "Seleccin de control remoto"
 
@@ -8743,7 +8743,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 19.07.2015"
 msgstr ""
 
-#: titan.c:1035
+#: titan.c:1038
 msgid "Settings OK ?"
 msgstr "Guardar la configuracion?"
 
@@ -9526,7 +9526,7 @@ msgstr ""
 msgid "TMDb - Plugin"
 msgstr "TMDb"
 
-#: tpk_description.h:150
+#: tpk_description.h:151
 msgid "TMDb Movie Database Plugin"
 msgstr ""
 
@@ -9818,6 +9818,12 @@ msgstr "tiThek"
 
 #: tpk_description.h:149
 msgid "TiThek the Multimedia-thek"
+msgstr ""
+
+#: tpk_description.h:150
+msgid ""
+"TiThek the Multimedia-thek. For UFS910/922, you must install the Network/"
+"Libpack tpk."
 msgstr ""
 
 #: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
@@ -10176,47 +10182,47 @@ msgstr "Transmision"
 msgid "Transmission:"
 msgstr "Transmision: "
 
-#: tpk_description.h:152
+#: tpk_description.h:153
 msgid "Transparent Picons (dark Skins)"
 msgstr ""
 
-#: tpk_description.h:153
+#: tpk_description.h:154
 msgid "Transparent Picons (dark skins) - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:154
+#: tpk_description.h:155
 msgid "Transparent Picons (dark skins) - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:155
+#: tpk_description.h:156
 msgid "Transparent Picons (dark skins) - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:151
+#: tpk_description.h:152
 msgid "Transparent Picons 19_2 (dark skins)."
 msgstr ""
 
-#: tpk_description.h:157
+#: tpk_description.h:158
 msgid "Transparent XPicons - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:158
+#: tpk_description.h:159
 msgid "Transparent XPicons - Astra 23.5E"
 msgstr ""
 
-#: tpk_description.h:159
+#: tpk_description.h:160
 msgid "Transparent XPicons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:160
+#: tpk_description.h:161
 msgid "Transparent XPicons - Hotbird 13.0E"
 msgstr ""
 
-#: tpk_description.h:161
+#: tpk_description.h:162
 msgid "Transparent XPicons - small - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:156
+#: tpk_description.h:157
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
@@ -10242,15 +10248,15 @@ msgstr "Transpondedor: "
 msgid "Transponderlist"
 msgstr "Transpondedor Lista"
 
-#: tpk_description.h:162
+#: tpk_description.h:163
 msgid "Treiber fuer Pearl LCD V4.0"
 msgstr "Driver para Pearl LCD V4.0"
 
-#: tpk_description.h:163
+#: tpk_description.h:164
 msgid "Treiber fuer Pearl LCD V5.0"
 msgstr ""
 
-#: tpk_description.h:164
+#: tpk_description.h:165
 msgid "Treiber fuer Samsung LCD"
 msgstr "Driver para Samsung LCD"
 
@@ -10428,11 +10434,11 @@ msgstr "Producto Unicable"
 msgid "Unitymedia NRW"
 msgstr ""
 
-#: tpk_description.h:165
+#: tpk_description.h:166
 msgid "Unitymedia NRW | 12.8.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1266
+#: titan.c:1269
 msgid "Unknown Error."
 msgstr "Error desconocido"
 
@@ -10541,7 +10547,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: tpk_description.h:167
+#: tpk_description.h:168
 msgid "Version 10888 of OScam"
 msgstr ""
 
@@ -10716,7 +10722,7 @@ msgstr ""
 msgid "WM2014"
 msgstr ""
 
-#: tpk_description.h:184
+#: tpk_description.h:185
 msgid "WM2014 Plugin"
 msgstr ""
 
@@ -10807,7 +10813,7 @@ msgstr ""
 msgid "Webbrowser Netsurf"
 msgstr ""
 
-#: tpk_description.h:169
+#: tpk_description.h:170
 msgid "Webbrowser Plugin"
 msgstr "Internet Browser"
 
@@ -10819,7 +10825,7 @@ msgstr "Mier"
 msgid "Wednesday"
 msgstr "Miercoles"
 
-#: tpk_description.h:170
+#: tpk_description.h:171
 msgid "Werbezapper"
 msgstr "Publicidadzapper"
 
@@ -10832,35 +10838,35 @@ msgstr ""
 msgid "Wettervorhersage"
 msgstr "weather forecast"
 
-#: tpk_description.h:172
+#: tpk_description.h:173
 msgid "White 3D Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:173
+#: tpk_description.h:174
 msgid "White 3D Picons - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:174
+#: tpk_description.h:175
 msgid "White 3D Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:171
+#: tpk_description.h:172
 msgid "White 3D Picons Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:176
+#: tpk_description.h:177
 msgid "White70 Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:177
+#: tpk_description.h:178
 msgid "White70 Picons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:178
+#: tpk_description.h:179
 msgid "White70 Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:175
+#: tpk_description.h:176
 msgid "White70 Picons Astra 19.2"
 msgstr ""
 
@@ -10900,7 +10906,7 @@ msgstr ""
 msgid "Won"
 msgstr ""
 
-#: tpk_description.h:185
+#: tpk_description.h:186
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 
@@ -13322,7 +13328,7 @@ msgstr "Actualizacion"
 msgid "updatelist"
 msgstr "Lista actualizada"
 
-#: tpk_description.h:166
+#: tpk_description.h:167
 msgid "usbreset Plugin"
 msgstr "USB reinicio extension"
 
@@ -13458,7 +13464,7 @@ msgstr "ATENCION: Espere Descargar para detener."
 msgid "waiting"
 msgstr "esperando"
 
-#: tpk_description.h:168
+#: tpk_description.h:169
 msgid "weather Plugin"
 msgstr "Weather extension"
 
@@ -13490,23 +13496,23 @@ msgstr ""
 msgid "wireless"
 msgstr "WLAN"
 
-#: tpk_description.h:179
+#: tpk_description.h:180
 msgid "wireless 8192cu.ko model"
 msgstr ""
 
-#: tpk_description.h:180
+#: tpk_description.h:181
 msgid "wireless modul 8712u.ko"
 msgstr ""
 
-#: tpk_description.h:181
+#: tpk_description.h:182
 msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
-#: tpk_description.h:182
+#: tpk_description.h:183
 msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
-#: tpk_description.h:183
+#: tpk_description.h:184
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
@@ -13530,7 +13536,7 @@ msgstr ""
 msgid "xupnpd"
 msgstr ""
 
-#: tpk_description.h:186
+#: tpk_description.h:187
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
