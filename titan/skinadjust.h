@@ -718,6 +718,8 @@ void screenskinadjust()
 			addskinconfigscreencheck("infobar2_selection", infobar2_sel, "0");
 			if(ostrcmp(oldinfobar2_sel,getskinconfig("infobar2_selection", NULL)) != 0) reboot = 1;
 			//free(oldinfobar2_sel); oldinfobar2_sel=NULL;
+			
+			addconfig("skinblinkoff", blinkoff->ret);
 
 			writeskinconfigtmp();
 			if(reboot == 1)
