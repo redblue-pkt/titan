@@ -10,6 +10,7 @@ void screenskinadjust()
 	struct skin* fontsizeadjust = getscreennode(skinadjust, "fontsizeadjust");
 	struct skin* listboxselecttype = getscreennode(skinadjust, "listboxselecttype");
 	struct skin* osdtransparent = getscreennode(skinadjust, "osdtransparent");
+	struct skin* blinkoff = getscreennode(skinadjust, "blinkoff");
 	struct skin* leftoffset = getscreennode(skinadjust, "leftoffset");
 	struct skin* rightoffset = getscreennode(skinadjust, "rightoffset");
 	struct skin* topoffset = getscreennode(skinadjust, "topoffset");
@@ -71,6 +72,10 @@ void screenskinadjust()
 
 	changeinput(osdtransparent, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70");
 	setchoiceboxselection(osdtransparent, getskinconfig("osdtransparent", NULL));
+	
+	addchoicebox(blinkoff, "0", _("no"));
+	addchoicebox(blinkoff, "1", _("yes"));
+	setchoiceboxselection(blinkoff, getconfig("setblinkoff", NULL));
 
 #ifdef MIPSEL
 	changeinput(leftoffset, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20");

@@ -985,7 +985,10 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		{
 			if(ostrcmp("blink", ret) == 0)
 			{
-				newnode->nodestyle = 1;
+				if(getconfigint("skinblinkoff", NULL) == 0)
+					newnode->nodestyle = 1;
+				else
+					newnode->nodestyle = 0;
 			}
 			free(ret); ret = NULL;
 		}
