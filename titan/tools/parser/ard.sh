@@ -98,7 +98,7 @@ fi
 DONETIME=`date +%s`
 TIME=`expr $DONETIME - $BEGINTIME`
 echo "[ard.sh] build time: ($TIME s) done" >> _full/ard/build.log	
-echo "[ard.sh] ard: "`ls -1 _full/beeg` >> _full/ard/build.log
+echo "[ard.sh] ard: "`ls -1 _full/ard` >> _full/ard/build.log
 echo "[ard.sh] ard/streams: "`ls -1 _full/ard/streams` >> _full/ard/build.log
 
 if [ "$buildtype" != "full" ];then
