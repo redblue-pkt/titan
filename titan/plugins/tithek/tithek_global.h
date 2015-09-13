@@ -423,6 +423,8 @@ char* hoster(char* url)
 		streamurl = amazon(url);
 	else if(ostrstr(tmplink, "thevideo") != NULL)
 		streamurl = thevideo(url);
+	else if(ostrstr(tmplink, "mightyupload") != NULL)
+		streamurl = mightyupload(url);
 	else
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
@@ -535,6 +537,130 @@ int all_search_local(struct skin* grid, struct skin* listbox, struct skin* count
 	}
 	free(search), search = NULL;
 	return ret;
+}
+
+char* jsunpack(char* input)
+{
+	int debuglevel = getconfigint("debuglevel", NULL);
+
+	if(input == NULL) return input;
+
+	char* b36code = NULL, *search = NULL, *charlist = NULL, *base = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *packed = NULL;
+
+	while(ostrstr(input, "eval(function(p,a,c,k,e,d){") != NULL)
+	{
+		packed = string_resub("eval(function(p,a,c,k,e,d){", "))", input, 0);
+		titheklog(debuglevel, "/tmp/jsunpack1_packed", NULL, NULL, NULL, packed);	
+	
+//		tmpstr = string_resub(";return p}('", ");'", packed, 0);
+//		tmpstr = oregex(".*;return p}(.*)',[0-9]{2,2},[0-9]{2,2},'.*'.split.*", packed);
+		tmpstr = oregex(".*;return p}(.*)',[0-9]{1,3},[0-9]{1,3},'.*'.split.*", packed);
+
+		debug(99, "tmpstr: %s", tmpstr);
+		titheklog(debuglevel, "/tmp/jsunpack2_tmpstr", NULL, NULL, NULL, tmpstr);
+	
+//		b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", packed);
+		b36code = oregex(".*',[0-9]{1,3},[0-9]{1,3},'(.*)'.split.*", packed);
+		
+		b36code = string_replace_all("||", "| |", b36code, 1);
+		debug(99, "b36code: %s", b36code);
+		titheklog(debuglevel, "/tmp/jsunpack3_b36code", NULL, NULL, NULL, b36code);
+
+		if(!ostrncmp("|", b36code, 1))
+			b36code = ostrcat(" ", b36code, 0, 1);
+
+		struct splitstr* ret1 = NULL;
+		int count = 0;
+		int i = 0;
+		ret1 = strsplit(b36code, "|", &count);
+	
+		charlist = ostrcat(charlist, "\"", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "'", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ".", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ";", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ":", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "=", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ",", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, " ", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "\\", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "/", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "(", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ")", 1, 0);
+		charlist = ostrcat(charlist, "'", 1, 0);
+		charlist = ostrcat(charlist, "%", 1, 0);
+	
+		for(i = 0; i < count; i++)
+		{
+			if(ostrstr((&ret1[i])->part, " ") != NULL)
+			{
+				printf("continue\n");
+				continue;
+			}
+			char* x = oltostr(i, 36);
+	
+			struct splitstr* ret2 = NULL;
+			int count2 = 0;
+			int i2 = 0;
+			tmpstr2 = ostrcat(charlist, NULL, 0, 0);
+			ret2 = strsplit(tmpstr2, "|", &count2);
+			for(i2 = 0; i2 < count2; i2++)
+			{
+				struct splitstr* ret3 = NULL;
+				int count3 = 0;
+				int i3 = 0;
+				tmpstr3 = ostrcat(charlist, NULL, 0, 0);
+				ret3 = strsplit(tmpstr3, "|", &count3);
+				for(i3 = 0; i3 < count3; i3++)
+				{
+					debug(99, "-----------------------------------------------");
+					debug(99, "replace %s%s%s <> %s%s%s",(&ret2[i2])->part, x, (&ret3[i3])->part, (&ret2[i2])->part, (&ret1[i])->part, (&ret3[i3])->part);
+	
+					base = ostrcat(base, (&ret2[i2])->part, 1, 0);
+					base = ostrcat(base, x, 1, 0);
+					base = ostrcat(base, (&ret3[i3])->part, 1, 0);		
+					search = ostrcat(search, (&ret2[i2])->part, 1, 0);
+					search = ostrcat(search, (&ret1[i])->part, 1, 0);
+					search = ostrcat(search, (&ret3[i3])->part, 1, 0);
+					tmpstr = string_replace_all(base, search, tmpstr, 1);
+					free(base), base = NULL;
+					free(search), search = NULL;
+				}
+				free(ret3), ret3 = NULL;
+				free(tmpstr3), tmpstr3 = NULL;
+			}
+			free(ret2), ret2 = NULL;
+			free(tmpstr2), tmpstr2 = NULL;
+			free(x);
+		}
+		free(ret1), ret1 = NULL;
+	
+		titheklog(debuglevel, "/tmp/jsunpack_tmpstr_last", NULL, NULL, NULL, tmpstr);
+
+		if(tmpstr == NULL)
+			input = string_replace("eval(function(p,a,c,k,e,d){", "eval(function(p,a,c,k,e,d-extracted-error){", input, 1);
+		else
+		{
+			input = string_replace("eval(function(p,a,c,k,e,d){", "eval(function(p,a,c,k,e,d-extracted){", input, 1);
+			input = string_replace(packed, tmpstr, input, 1);
+		}
+		free(tmpstr),tmpstr = NULL;
+		free(packed), packed = NULL;
+		free(b36code), b36code = NULL;
+		free(charlist), charlist = NULL;
+	}
+
+	return input;
 }
 
 #endif

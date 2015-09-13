@@ -52,6 +52,7 @@
 #include "nowtv.h"
 #include "amazon.h"
 #include "thevideo.h"
+#include "mightyupload.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

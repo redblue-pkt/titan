@@ -5,8 +5,8 @@ char* letwatch(char* link)
 {
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	char* tmphost = NULL, *error = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *hashmsg = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL, *streamlink = NULL;
-	
+	char* url = NULL, *tmphost = NULL, *error = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *hashmsg = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL, *streamlink = NULL;
+
 	if(link == NULL) return NULL;
 
 	unlink("/tmp/letwatch1_get");
@@ -42,27 +42,18 @@ char* letwatch(char* link)
 		path = pos + 1;
 	}
 
-	tmppath = ostrcat("/embed-", path, 0, 0);
-	tmppath = ostrcat(tmppath, "-640x400.html", 1, 0);
+	url = ostrcat(tmphost, "/embed-", 0, 0);
+	url = ostrcat(url, path, 1, 0);
+	url = ostrcat(url, "-640x400.html", 1, 0);
 	
 //	free(path), path = NULL;
 
-/////////////
+	debug(99, "url: %s", link);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/mightyupload1_get", NULL, NULL, NULL, tmpstr);	
 
-	send = ostrcat(send, "GET ", 1, 0);
-	send = ostrcat(send, tmppath, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\n", 1, 0);
-	send = ostrcat(send, "Host: ", 1, 0);
-	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\n", 1, 0);
-	send = ostrcat(send, "Connection: close\r\n", 1, 0);
-	send = ostrcat(send, "Accept-Encoding: gzip\r\n\r\n", 1, 0);
-	debug(99, "send: %s", send);
-
-	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-	free(send), send = NULL;
-	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/letwatch1_get", NULL, NULL, NULL, tmpstr);
+	tmpstr = jsunpack(tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/mightyupload2_get_jsunpack", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)
 	{
@@ -76,7 +67,7 @@ char* letwatch(char* link)
 		goto end;
 	}
 
-	streamlink = string_resub("file:\"", "\"", tmpstr, 0);		
+	streamlink = string_resub("[{l:\"", "\"", tmpstr, 0);		
 
 	titheklog(debuglevel, "/tmp/letwatch4_streamlink", NULL, NULL, NULL, streamlink);
 
