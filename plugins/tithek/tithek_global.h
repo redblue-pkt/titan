@@ -545,7 +545,7 @@ char* jsunpack(char* input)
 
 	if(input == NULL) return input;
 
-	char* b36code = NULL, *search = NULL, *charlist = NULL, *base = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *packed = NULL;
+	char* b36code = NULL, *search = NULL, *charlist = NULL, *base = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr = NULL, *packed = NULL;
 
 	while(ostrstr(input, "eval(function(p,a,c,k,e,d){") != NULL)
 	{
