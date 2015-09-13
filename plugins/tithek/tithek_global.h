@@ -547,10 +547,10 @@ char* jsunpack(char* input)
 
 	char* b36code = NULL, *search = NULL, *charlist = NULL, *base = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr = NULL, *packed = NULL;
 
-	unlink("/tmp/jsunpack1_packed);
-	unlink("/tmp/jsunpack2_tmpstr);
-	unlink("/tmp/jsunpack3_b36code);
-	unlink("/tmp/jsunpack4_tmpstr_last);
+	unlink("/tmp/jsunpack1_packed");
+	unlink("/tmp/jsunpack2_tmpstr");
+	unlink("/tmp/jsunpack3_b36code");
+	unlink("/tmp/jsunpack4_tmpstr_last");
 
 	while(ostrstr(input, "eval(function(p,a,c,k,e,d){") != NULL)
 	{
