@@ -573,7 +573,9 @@ char* amazon(char* link)
 			strstrip(langtext);
 			lang = stringreplacecharonce(lang, '\"', '\0');
 			pic = ostrcat(lang, NULL, 0, 0);
-			pic = stringreplacecharonce(pic, '_', '\0'); 
+			pic = stringreplacecharonce(pic, '_', '\0');
+			if(pic != NULL;
+				pic[2] = '\0'; // strip string from deu > de or eng > en
 			pic = ostrcat(pic, ".png", 1, 0);
 
 			if(ostrstr(lang, "_") != NULL && langtext != NULL)
