@@ -542,7 +542,10 @@ void oshutdown(int exitcode, int flag)
 			pthread_join(writethread, &threadstatus);
 		pthread_attr_destroy(&writethreadattr);
 	}
-
+#ifdef MIPSEL
+	if(exitcode == 3)
+		system(getconfig("skriptaftertv", NULL));
+#endif
 	exit(exitcode);
 }
 
