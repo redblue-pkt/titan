@@ -1283,7 +1283,7 @@ not needed we use wakeup_record_device on recordstartreal
 				}
 				//usleep(1000);
 				if(helpsleep == 0)
-					usleep(500);	
+					usleep(1000);	
 				else
 					usleep(helpsleep);
 
