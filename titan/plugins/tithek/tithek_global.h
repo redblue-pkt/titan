@@ -547,6 +547,11 @@ char* jsunpack(char* input)
 
 	char* b36code = NULL, *search = NULL, *charlist = NULL, *base = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr = NULL, *packed = NULL;
 
+	unlink("/tmp/jsunpack1_packed);
+	unlink("/tmp/jsunpack2_tmpstr);
+	unlink("/tmp/jsunpack3_b36code);
+	unlink("/tmp/jsunpack4_tmpstr_last);
+
 	while(ostrstr(input, "eval(function(p,a,c,k,e,d){") != NULL)
 	{
 		packed = string_resub("eval(function(p,a,c,k,e,d){", "))", input, 0);
@@ -645,7 +650,7 @@ char* jsunpack(char* input)
 		}
 		free(ret1), ret1 = NULL;
 	
-		titheklog(debuglevel, "/tmp/jsunpack_tmpstr_last", NULL, NULL, NULL, tmpstr);
+		titheklog(debuglevel, "/tmp/jsunpack4_tmpstr_last", NULL, NULL, NULL, tmpstr);
 
 		if(tmpstr == NULL)
 			input = string_replace("eval(function(p,a,c,k,e,d){", "eval(function(p,a,c,k,e,d-extracted-error){", input, 1);
