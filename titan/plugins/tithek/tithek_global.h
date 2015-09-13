@@ -142,23 +142,25 @@ char* string_decode3(char* input)
 	if(input == NULL) return input;
 
 	input = string_replace_all("&#196;", "Ä", input, 1);
-	input = string_replace_all("&#201;", "E", input, 1);
-	input = string_replace_all("&#233;", "e", input, 1);
-	input = string_replace_all("&#214;", "Oe", input, 1);
-	input = string_replace_all("&#246;", "oe", input, 1);
-	input = string_replace_all("&#220;", "Ue", input, 1);
-	input = string_replace_all("&#252;", "ue", input, 1);
-	input = string_replace_all("&#223;", "ss", input, 1);
+	input = string_replace_all("&#228;", "ä", input, 1);
+	input = string_replace_all("&#201;", "É", input, 1);
+	input = string_replace_all("&#233;", "é", input, 1);
+	input = string_replace_all("&#214;", "Ö", input, 1);
+	input = string_replace_all("&#246;", "ö", input, 1);
+	input = string_replace_all("&#220;", "Ü", input, 1);
+	input = string_replace_all("&#252;", "ü", input, 1);
+	input = string_replace_all("&#223;", "ß", input, 1);
 	input = string_replace_all("&#38;", "&", input, 1);
 
 	input = string_replace_all("&Auml;", "Ä", input, 1);
-	input = string_replace_all("&Eacute;", "E", input, 1);
-	input = string_replace_all("&eacute;", "e", input, 1);
-	input = string_replace_all("&Ouml;", "Oe", input, 1);
-	input = string_replace_all("&ouml;", "oe", input, 1);
-	input = string_replace_all("&Uuml;", "Ue", input, 1);
-	input = string_replace_all("&uuml;", "ue", input, 1);
-	input = string_replace_all("&szlig;", "ss", input, 1);
+	input = string_replace_all("&auml;", "ä", input, 1);
+	input = string_replace_all("&Eacute;", "É", input, 1);
+	input = string_replace_all("&eacute;", "é", input, 1);
+	input = string_replace_all("&Ouml;", "Ö", input, 1);
+	input = string_replace_all("&ouml;", "ö", input, 1);
+	input = string_replace_all("&Uuml;", "Ü", input, 1);
+	input = string_replace_all("&uuml;", "ü", input, 1);
+	input = string_replace_all("&szlig;", "ß", input, 1);
 	input = string_replace_all("&amp;", "&", input, 1);
 
 	return input;
