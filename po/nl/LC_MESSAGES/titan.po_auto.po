@@ -3194,19 +3194,19 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:660
-#: infobar.h:784 info.h:27 keyactions.h:205 letwatch.h:30 letwatch.h:60
-#: letwatch.h:66 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
-#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
-#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
-#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
-#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
-#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
-#: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
-#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
-#: menu.h:986 mightyupload.h:26 mightyupload.h:147 mightyupload.h:153
+#: infobar.h:784 info.h:27 keyactions.h:205 letwatch.h:29 letwatch.h:59
+#: letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
+#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
+#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
+#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
+#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:63 mightyupload.h:69
 #: movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30
 #: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
 #: MultiImage.c:262 MultiImage.c:273 MultiImage.c:533 MultiImage.c:591
@@ -4650,7 +4650,7 @@ msgid "Horror"
 msgstr ""
 
 #: divxstage.h:36 faststream.h:30 filenuke.h:46 firedrive.h:33 flashx.h:23
-#: letwatch.h:30 mightyupload.h:26 movreel.h:30 movshare.h:34 novamov.h:35
+#: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:34 novamov.h:35
 #: nowvideo.h:44 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
 #: shared.h:29 streamcloud.h:31 thefile.h:34 thevideo.h:26 vidbull.h:30
 #: videoweed.h:35 vidstream.h:45 vidto.h:31 vodlocker.h:30 xvidstage.h:54
@@ -5786,29 +5786,29 @@ msgstr ""
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784
 #: keyactions.h:205 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101
-#: letwatch.h:30 letwatch.h:60 letwatch.h:66 log.h:46 log.h:48 marker.h:215
-#: marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48
+#: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
+#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:26
-#: mightyupload.h:147 mightyupload.h:153 movie4k.h:36 movie4k.h:48
-#: movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137 movshare.h:34
-#: movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
-#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 myvideo.h:86
-#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
-#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
-#: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
-#: networkbrowser.h:1797 networkbrowser.h:1949 network.h:436 network.h:577
-#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
-#: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
-#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
-#: play.h:614 play.h:1293 play.h:1503 play.h:1719 play.h:1730 possetup.h:98
+#: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
+#: mightyupload.h:63 mightyupload.h:69 movie4k.h:36 movie4k.h:48 movie4k.h:92
+#: movie4k.h:399 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
+#: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:273
+#: MultiImage.c:353 MultiImage.c:401 myvideo.h:86 networkbrowser.h:966
+#: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
+#: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
+#: networkbrowser.h:1785 networkbrowser.h:1792 networkbrowser.h:1797
+#: networkbrowser.h:1949 network.h:436 network.h:577 network.h:785
+#: network.h:793 network.h:819 network.h:823 network.h:877 novamov.h:35
+#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
+#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
+#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:109 play.h:614
+#: play.h:1293 play.h:1503 play.h:1719 play.h:1730 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -6364,35 +6364,36 @@ msgstr ""
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784
-#: info.h:27 keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:30
-#: letwatch.h:60 letwatch.h:66 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
-#: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
-#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
-#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
-#: menu.h:984 menu.h:986 mightyupload.h:26 mightyupload.h:147
-#: mightyupload.h:153 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
-#: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:46 MultiImage.c:175 MultiImage.c:244
-#: MultiImage.c:262 MultiImage.c:273 MultiImage.c:353 MultiImage.c:401
-#: MultiImage.c:533 MultiImage.c:591 MultiImage.c:607 MultiImage.c:671
-#: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
-#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
-#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
-#: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
-#: network.h:263 network.h:271 network.h:284 network.h:299 network.h:335
-#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
-#: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
-#: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
-#: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
-#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:109 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
-#: play.h:1294 play.h:1503 play.h:1719 play.h:1730 plugins_dlna_skin.xml.h:7
+#: info.h:27 keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29
+#: letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 mboxinfo.c:49
+#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
+#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
+#: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
+#: menu.h:986 mightyupload.h:27 mightyupload.h:63 mightyupload.h:69
+#: movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30
+#: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
+#: MultiImage.c:46 MultiImage.c:175 MultiImage.c:244 MultiImage.c:262
+#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 MultiImage.c:533
+#: MultiImage.c:591 MultiImage.c:607 MultiImage.c:671 myvideo.h:86
+#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
+#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
+#: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
+#: networkbrowser.h:1797 networkbrowser.h:1949 network.h:263 network.h:271
+#: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
+#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
+#: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
+#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
+#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
+#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:109 play.h:497
+#: play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294 play.h:1503
+#: play.h:1719 play.h:1730 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -9653,8 +9654,8 @@ msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:166 filenuke.h:94 filenuke.h:105 filenuke.h:117 filenuke.h:190
-#: firedrive.h:66 firedrive.h:122 firedrive.h:137 flashx.h:67 letwatch.h:60
-#: mightyupload.h:147 movreel.h:137 movshare.h:157 played.h:84 played.h:101
+#: firedrive.h:66 firedrive.h:122 firedrive.h:137 flashx.h:67 letwatch.h:59
+#: mightyupload.h:63 movreel.h:137 movshare.h:157 played.h:84 played.h:101
 #: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
 #: putlocker.h:225 shared.h:82 solarmovie.h:48 solarmovie.h:59
@@ -9669,7 +9670,7 @@ msgstr "Pagina tijdelijk niet beschikbaar"
 msgid "The page not found, file removed"
 msgstr ""
 
-#: divxstage.h:156 faststream.h:109 letwatch.h:66 mightyupload.h:153
+#: divxstage.h:156 faststream.h:109 letwatch.h:65 mightyupload.h:69
 #: movshare.h:78 movshare.h:163 thevideo.h:66 vidbull.h:73 vidto.h:73
 #: vidto.h:180 vodlocker.h:80
 msgid "The video no longer exists"
@@ -10503,6 +10504,10 @@ msgstr "Beeldscherm instellingen"
 
 #: vodlocker.h:86
 msgid "Video encoding error"
+msgstr ""
+
+#: letwatch.h:71
+msgid "Video is processing now. Conversion stage..."
 msgstr ""
 
 #: facebook.h:477
