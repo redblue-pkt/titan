@@ -15,6 +15,7 @@ void screenvfdisplay()
 	struct skin* at7000frontrun = getscreennode(vfdisplay, "at7000frontrun");
 	struct skin* at7000frontsleep = getscreennode(vfdisplay, "at7000frontsleep");
 	struct skin* oled_sel = getscreennode(vfdisplay, "oled_sel");
+	struct skin* blinkoff = getscreennode(skinadjust, "blinkoff");
 	struct skin* tmp = NULL;
 	
 	if(brightness != NULL)
@@ -45,9 +46,15 @@ void screenvfdisplay()
 		}
 		
 		setchoiceboxselection(oled_sel, getskinconfig("OLED_nemesis", NULL));
+		addchoicebox(blinkoff, "0", _("on"));
+		addchoicebox(blinkoff, "1", _("off"));
+		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
 	}
 	else
+	{
 		oled_sel->hidden = YES;
+		blinkoff->hidden = YES;
+	}
 
 	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0)
 	{
