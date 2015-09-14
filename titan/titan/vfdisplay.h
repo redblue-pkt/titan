@@ -15,7 +15,7 @@ void screenvfdisplay()
 	struct skin* at7000frontrun = getscreennode(vfdisplay, "at7000frontrun");
 	struct skin* at7000frontsleep = getscreennode(vfdisplay, "at7000frontsleep");
 	struct skin* oled_sel = getscreennode(vfdisplay, "oled_sel");
-	struct skin* blinkoff = getscreennode(skinadjust, "blinkoff");
+	struct skin* blinkoff = getscreennode(vfdisplay, "blinkoff");
 	struct skin* tmp = NULL;
 	
 	if(brightness != NULL)
