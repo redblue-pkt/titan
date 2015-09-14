@@ -186,7 +186,7 @@ void screenvfdisplay()
 			addconfigscreencheck("vfdisplayrecord", vfdrecord, "0");
 			addconfigint("vfdbrightness", vfdbrightness);
 			addconfigint("vfdstandbybrightness", vfdstandbybrightness);
-
+			
 			if(checkbox("ATEVIO7000") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("SPARK") == 1)
 			{
 				addconfigscreencheck("at7000frontrun", at7000frontrun, "0");
@@ -197,7 +197,10 @@ void screenvfdisplay()
 			}
 			
 			if(checkchipset("BCM7424") == 1) //inihdp
+			{
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
+				addconfig("skinblinkoff", blinkoff->ret);
+			}
 
 			break;
 		}
