@@ -11062,11 +11062,11 @@ msgstr ""
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:89
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:86
+#: vfdisplay.h:93
 msgid "blink star"
 msgstr "migać gwiazda"
 
@@ -11142,7 +11142,7 @@ msgstr ""
 msgid "change"
 msgstr ""
 
-#: vfdisplay.h:54
+#: vfdisplay.h:61
 msgid "channel"
 msgstr "Kanał"
 
@@ -11150,11 +11150,11 @@ msgstr "Kanał"
 msgid "channel (EPG=Current channel)"
 msgstr ""
 
-#: vfdisplay.h:55
+#: vfdisplay.h:62
 msgid "channel + time"
 msgstr "Edycja kanału"
 
-#: vfdisplay.h:62
+#: vfdisplay.h:69
 msgid "channel number"
 msgstr "Szukaj kanał"
 
@@ -11246,7 +11246,7 @@ msgstr ""
 msgid "date"
 msgstr "data"
 
-#: vfdisplay.h:69
+#: vfdisplay.h:76
 msgid "date + time"
 msgstr ""
 
@@ -11462,7 +11462,7 @@ msgstr ""
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:83
+#: vfdisplay.h:90
 msgid "fade out/in"
 msgstr ""
 
@@ -12096,7 +12096,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:77
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:844 vfdisplay.h:66 vfdisplay.h:81
+#: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:73 vfdisplay.h:88
 msgid "off"
 msgstr ""
 
@@ -12147,7 +12147,7 @@ msgstr ""
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:424 skinadjust.h:76 transponder.h:257 transponder.h:266
-#: transponder.h:416 transponder.h:425
+#: transponder.h:416 transponder.h:425 vfdisplay.h:49
 msgid "on"
 msgstr ""
 
@@ -12652,7 +12652,7 @@ msgstr ""
 msgid "show in list"
 msgstr ""
 
-#: vfdisplay.h:84
+#: vfdisplay.h:91
 msgid "show record"
 msgstr ""
 
@@ -12762,7 +12762,7 @@ msgstr "uśpienie"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:85
+#: vfdisplay.h:92
 msgid "star"
 msgstr "Gwiazda"
 
@@ -12965,15 +12965,15 @@ msgstr ""
 msgid "tiWakeup"
 msgstr ""
 
-#: vfdisplay.h:57 vfdisplay.h:60 vfdisplay.h:65
+#: vfdisplay.h:64 vfdisplay.h:67 vfdisplay.h:72
 msgid "time"
 msgstr "Hangtime"
 
-#: vfdisplay.h:56
+#: vfdisplay.h:63
 msgid "time + channel"
 msgstr "Zabezpiecz kanał"
 
-#: vfdisplay.h:61
+#: vfdisplay.h:68
 msgid "time small"
 msgstr "mały"
 
@@ -13186,7 +13186,7 @@ msgstr ""
 msgid "very slow"
 msgstr ""
 
-#: vfdisplay.h:70
+#: vfdisplay.h:77
 msgid "vfddate"
 msgstr "Data"
 
