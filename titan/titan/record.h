@@ -1270,7 +1270,7 @@ not needed we use wakeup_record_device on recordstartreal
 				
 				dmxclose(dmxnode, -1);
 
-				encnode = encoderopen(1);
+				encnode = encoderopen(0);
 				servicenode->encoderdev = encnode;
 				
 				servicenode->dmxaudiodev = dmxopen(fenode, 2);
@@ -1282,10 +1282,10 @@ not needed we use wakeup_record_device on recordstartreal
 					case 3: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO3, 0); break;
 				}
 				//usleep(1000);
-				if(helpsleep == 0)
-					usleep(1000);	
-				else
-					usleep(helpsleep);
+				//if(helpsleep == 0)
+				//	usleep(1000);	
+				//else
+				//	usleep(helpsleep);
 
 				audionode = audioopen(encnode->decoder);
 				servicenode->audiodev = audionode;
@@ -1306,14 +1306,16 @@ not needed we use wakeup_record_device on recordstartreal
 					case 3: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO3, 0); break;
 				}
 				
-				usleep(1000);
+				//usleep(1000);
 				videonode = videoopen(0, encnode->decoder);
 				servicenode->videodev = videonode;
 				videoselectsource(servicenode->videodev, VIDEO_SOURCE_DEMUX);
 				setencoding(chnode, servicenode->videodev);
 				videoplay(servicenode->videodev);
 				 
+				encnode->fd = encoderopendirect(encnode->dev);
 				servicenode->recdmxstart = 1;
+				servicenode->recsrcfd = encnode->fd;
 			}
 			else
 			{
