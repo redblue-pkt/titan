@@ -1617,11 +1617,16 @@ char* getbluebutton(struct skin* node)
 
 char* setblink(struct skin* node)
 {
-	if(status.skinblink == 0)
-		node->hidden = YES;
+	if(getconfigint("skinblinkoff", NULL) == 0)
+	{	
+		if(status.skinblink == 0)
+			node->hidden = YES;
+		else
+			node->hidden = NO;
+		return NULL;
+	}
 	else
-		node->hidden = NO;
-	return NULL;
+		node->nodestyle = 0;
 }
 
 char* gettunerlockpic(struct skin* node, char* path, char* tuner)
