@@ -8142,7 +8142,7 @@ msgid "Sat: Bulldog Settings 3x Sat | 19.07.2015"
 msgstr ""
 
 #: tpk_description.h:121
-msgid "Sat: Bulldog Settings Astra 19.2 | 18.07.2015"
+msgid "Sat: Bulldog Settings Astra 19.2 | 14.09.2015"
 msgstr ""
 
 #: tpk_description.h:122
@@ -8736,7 +8736,7 @@ msgid "Settings"
 msgstr "ajustes"
 
 #: tpk_showname.h:154
-msgid "Settings Astra 19.2 | 18.07.2015"
+msgid "Settings Astra 19.2 | 14.09.2015"
 msgstr ""
 
 #: tpk_showname.h:155
