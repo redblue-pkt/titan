@@ -988,7 +988,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 				if(getconfigint("skinblinkoff", NULL) == 0)
 					newnode->nodestyle = 1;
 				else
-					newnode->nodestyle = 0;
+					newnode->nodestyle = 2;
 			}
 			free(ret); ret = NULL;
 		}
@@ -3767,6 +3767,10 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 	
 	if(node->nodestyle != 0)
 	{
+		if(node->nodestyle == 2 && getconfigint("skinblinkoff", NULL) == 0)
+			node->nodestyle = 1;
+		else if(node->nodestyle == 1 && getconfigint("skinblinkoff", NULL) == 1)
+			node->nodestyle = 2;
 		if(node->nodestyle == 1)
 			setblink(node);
 	}

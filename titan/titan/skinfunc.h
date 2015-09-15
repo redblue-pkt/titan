@@ -1617,15 +1617,10 @@ char* getbluebutton(struct skin* node)
 
 char* setblink(struct skin* node)
 {
-	if(getconfigint("skinblinkoff", NULL) == 0)
-	{	
-		if(status.skinblink == 0)
-			node->hidden = YES;
-		else
-			node->hidden = NO;
-	}
+	if(status.skinblink == 0)
+		node->hidden = YES;
 	else
-		node->nodestyle = 0;
+		node->hidden = NO;
 	return NULL;
 }
 
