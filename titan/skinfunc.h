@@ -1623,10 +1623,10 @@ char* setblink(struct skin* node)
 			node->hidden = YES;
 		else
 			node->hidden = NO;
-		return NULL;
 	}
 	else
 		node->nodestyle = 0;
+	return NULL;
 }
 
 char* gettunerlockpic(struct skin* node, char* path, char* tuner)
