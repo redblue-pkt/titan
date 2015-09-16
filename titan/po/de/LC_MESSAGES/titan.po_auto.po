@@ -1351,6 +1351,10 @@ msgstr "SICHERUNGSFEHLER!!!"
 msgid "BACKUP LOG"
 msgstr "Backup Log"
 
+#: tithek_mainmenu.h:15
+msgid "BBC Four"
+msgstr ""
+
 #: skin_default_skin.xml.h:112
 msgid "BER:"
 msgstr ""
@@ -1992,7 +1996,7 @@ msgstr "Abbrechen"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_mainmenu.h:15
+#: tithek_mainmenu.h:16
 msgid "Category"
 msgstr "Kategorie"
 
@@ -2233,7 +2237,7 @@ msgstr ""
 "benutzen. Für den Zugriff auf passwortgeschützte Windows Freigaben\n"
 "bitte Menü drücken und die Benutzerdaten eingeben."
 
-#: amazon.h:737 ard.h:96 nowtv.h:109 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:737 ard.h:96 nowtv.h:108 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 
@@ -3752,7 +3756,7 @@ msgstr "Schnelles Umschalten"
 msgid "Fav"
 msgstr "Favoriten"
 
-#: tithek_mainmenu.h:16
+#: tithek_mainmenu.h:17
 msgid "Favoriten"
 msgstr ""
 
@@ -3821,7 +3825,7 @@ msgstr "Dateigröße (MB): "
 msgid "Filesystem Check"
 msgstr "Dateisystem prüfen"
 
-#: tithek_mainmenu.h:17
+#: tithek_mainmenu.h:18
 msgid "FilmOn"
 msgstr ""
 
@@ -4826,23 +4830,23 @@ msgstr ""
 msgid "How many days"
 msgstr "Wie viele Tage EPG im Voraus speichern"
 
-#: tithek_mainmenu.h:18
+#: tithek_mainmenu.h:19
 msgid "HowTo Feedadresse Eingeben"
 msgstr ""
 
-#: tithek_mainmenu.h:19
+#: tithek_mainmenu.h:20
 msgid "HowTo HD02 Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:20
+#: tithek_mainmenu.h:21
 msgid "HowTo Picons Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:21
+#: tithek_mainmenu.h:22
 msgid "HowTo Secret"
 msgstr ""
 
-#: tithek_mainmenu.h:22
+#: tithek_mainmenu.h:23
 msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
@@ -5193,7 +5197,7 @@ msgstr ""
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin nicht installiert!"
 
-#: tithek_mainmenu.h:23
+#: tithek_mainmenu.h:24
 msgid "Internet Radio"
 msgstr ""
 
@@ -5329,7 +5333,7 @@ msgstr "Tastatur"
 msgid "Keys Updated !"
 msgstr "aktualisiert!"
 
-#: tithek_mainmenu.h:24
+#: tithek_mainmenu.h:25
 msgid "KinoX"
 msgstr ""
 
@@ -5850,23 +5854,23 @@ msgstr "MediaDB Suche beendet"
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: tithek_mainmenu.h:25
+#: tithek_mainmenu.h:26
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:26
+#: tithek_mainmenu.h:27
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:27
+#: tithek_mainmenu.h:28
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:29
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:30
 msgid "Mediacenter VideoPlayer Preview"
 msgstr ""
 
@@ -6135,7 +6139,7 @@ msgstr "Verschieben"
 msgid "Moven"
 msgstr "Verschieben"
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:31
 msgid "Movie4k"
 msgstr ""
 
@@ -6217,7 +6221,7 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:32
 msgid "MyVideo"
 msgstr ""
 
@@ -6304,7 +6308,7 @@ msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:33
 msgid "Netzkino"
 msgstr ""
 
@@ -6486,7 +6490,7 @@ msgstr "nicht angelegt"
 msgid "November"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:34
 msgid "NowTv"
 msgstr ""
 
@@ -7545,11 +7549,11 @@ msgstr "Rguid Port"
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:36
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:34
+#: tithek_mainmenu.h:35
 msgid "RTL2-Now"
 msgstr ""
 
@@ -8567,46 +8571,46 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:797
 #: kinox.h:799 mlehd.h:90 mlehd.h:92 movie4k.h:134 movie4k.h:136 movie4k.h:291
 #: movie4k.h:293 myvideo.h:229 myvideo.h:231 myvideo.h:373 myvideo.h:375
-#: netzkino.h:13 netzkino.h:15 nowtv.h:134 nowtv.h:136 rtl2now.h:249
+#: netzkino.h:13 netzkino.h:15 nowtv.h:133 nowtv.h:135 rtl2now.h:249
 #: rtl2now.h:251 rtl2now.h:313 rtl2now.h:315 rtl2now.h:377 rtl2now.h:379
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:624 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:487 tithek_global.h:489 tithek_mainmenu.h:36 tmdb.h:898
+#: tithek_global.h:487 tithek_global.h:489 tithek_mainmenu.h:38 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Suchen"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:39
 msgid "Search (10)"
 msgstr "Suche (10)"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:40
 msgid "Search (20)"
 msgstr "Suche (20)"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:41
 msgid "Search (25)"
 msgstr "Suche (25)"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:42
 msgid "Search (50)"
 msgstr "Suche (50)"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:44
 msgid "Search (local)"
 msgstr "Suche (lokal)"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:43
 msgid "Search Cast"
 msgstr "Suche Besetzung"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:45
 msgid "Search Movie"
 msgstr "Suche Film"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:46
 msgid "Search Serie"
 msgstr "Suche Serie"
 
@@ -9208,7 +9212,7 @@ msgstr "Softcam Auswahl"
 msgid "Softcam selection:"
 msgstr "Softcam auswählen:"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:47
 msgid "Solarmovie"
 msgstr ""
 
@@ -9437,7 +9441,7 @@ msgstr "Stream Konfiguration (iOS)"
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:737 ard.h:96 nowtv.h:109 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:737 ard.h:96 nowtv.h:108 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr "Stream Menü"
 
@@ -9527,7 +9531,7 @@ msgstr "Son"
 msgid "Sunday"
 msgstr "Sonntag"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:48
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9994,7 +9998,7 @@ msgstr "Zeit bis Abschaltung (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:49
 msgid "TimeTv"
 msgstr ""
 
@@ -10111,7 +10115,7 @@ msgstr "Zeitzone"
 msgid "Tint"
 msgstr "Temperatur"
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:50
 msgid "Tips und Tricks"
 msgstr "Tipps und Tricks"
 
@@ -10244,7 +10248,7 @@ msgstr "Tone Modus"
 msgid "Top"
 msgstr "Top (Prozesse)"
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:51
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10690,7 +10694,7 @@ msgstr "Einstellungen"
 msgid "VLC Player"
 msgstr "Video abspielen"
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:52
 msgid "VOX-Now"
 msgstr ""
 
@@ -11113,11 +11117,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:53
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:54
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11172,7 +11176,7 @@ msgstr ""
 "\n"
 "Soll der Receiver ausgeschaltet werden?"
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:55
 msgid "Youtube"
 msgstr ""
 
@@ -11180,7 +11184,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:54
+#: tithek_mainmenu.h:56
 msgid "ZDF"
 msgstr ""
 
@@ -12836,6 +12840,10 @@ msgstr "Schreibgeschützt"
 #: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
 msgid "rsize"
 msgstr "Lese Puffergröße"
+
+#: tithek_mainmenu.h:37
+msgid "rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp"
+msgstr ""
 
 #: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1515 subtitle.h:1624
 msgid "running"
