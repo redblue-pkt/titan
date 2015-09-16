@@ -53,6 +53,7 @@
 #include "amazon.h"
 #include "thevideo.h"
 #include "mightyupload.h"
+#include "cloudzilla.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
