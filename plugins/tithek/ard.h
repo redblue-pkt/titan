@@ -21,7 +21,7 @@ char* ard(char* link)
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	titheklog(debuglevel, "/tmp/tithek/ard1_tmpstr", NULL, NULL, NULL,tmpstr);
 
-	tmpstr2 = string_resub("_mediaStreamArray\":[", "]}],\"_sortierArray\"", tmpstr, 0);
+	tmpstr2 = string_resub("_mediaStreamArray\":[", "],\"_sortierArray\"", tmpstr, 0);
 	titheklog(debuglevel, "/tmp/tithek/ard2_tmpstr2", NULL, NULL, NULL, tmpstr2);
 
 	tmpstr2 = string_replace_all("{", "\n", tmpstr2, 1);
