@@ -53,12 +53,8 @@ char* nowtv(char* link)
 			streamurl = string_replace_all("/voxnow/", "/voxnow/videos/", streamurl, 1);
 			streamurl = string_replace_all("/ntvnow/", "/ntvnow/videos/", streamurl, 1);
 			streamurl = string_replace_all("/nitronow/", "/nitronow/videos/", streamurl, 1);
-
-	//http://hls.fra.rtlnow.de/hls-vod-enc/abr/videos/7956/126838/V_843583_PCPW_16-16000173876_126838_abr-300_dff762627e2712ab9fda262ae7aea9a.mp4.m3u8
-//	streamurl = ostrcat("rtmpe://fms.rtl.de swfVfy=1 playpath=mp4:7956/V_843592_PCPW_16-16000173876_126838_h264-mq_d7d94f46c7d2203080f7f6b41d393d.f4v app=nitronow swfUrl=http://cdn.static-fra.de/now/vodplayer.swf pageUrl=http://nitronow.rtl.de timeout=120", NULL, 1, 0);
 */
-
-			tmpstr3 = oregex(".*/([0-9]{4,4}/.*).*", tmpstr2);
+			tmpstr3 = oregex(".*/([0-9]{1,6}/.*).*", tmpstr2);
 
 			if(ostrstr(tmpstr2, "rtlnow") != NULL)
 				app = ostrcat("rtlnow", NULL, 0, 0);
@@ -92,7 +88,10 @@ char* nowtv(char* link)
 				pic = ostrcat("flv.png", NULL, 0, 0);
 					
 			if(app != NULL)
+			{
+				debug(99, "(%d) title: %s streamurl: %s\n", i, title, streamurl);
 				addmenulist(&mlist, title, streamurl, pic, 0, 0);
+			}
 			free(title), title = NULL;
 			free(pic), pic = NULL;
 			free(streamurl), streamurl = NULL;
