@@ -672,7 +672,7 @@ msgstr ""
 "\n"
 "Sicherung wird abgebrochen ..."
 
-#: skin_default_skin.xml.h:100 tithek_mainmenu.h:14 webif_channellist.h:4
+#: skin_default_skin.xml.h:100 tithek_mainmenu.h:13 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -731,10 +731,6 @@ msgstr "Ä"
 #: skin_default_skin.xml.h:71 webif_channellist.h:1
 msgid "ALL"
 msgstr "Alle"
-
-#: tithek_mainmenu.h:3
-msgid "ARD"
-msgstr ""
 
 #: plugins_mc_skin.xml.h:6 skins_mc_skin.xml.h:6
 msgid "AUDIO"
@@ -1117,43 +1113,43 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Atemio Hotline"
 
-#: tithek_mainmenu.h:4
+#: tithek_mainmenu.h:3
 msgid "Atemio Cable Tuner scan"
 msgstr "Atemio Kabel Tuner Suche"
 
-#: tithek_mainmenu.h:5
+#: tithek_mainmenu.h:4
 msgid "Atemio Channelsearch 4xSat"
 msgstr "Atemio Sendersuchlauf 4xSat"
 
-#: tithek_mainmenu.h:6
+#: tithek_mainmenu.h:5
 msgid "Atemio Harddisc formating"
 msgstr "Atemio Festplattenformatierung"
 
-#: tithek_mainmenu.h:7
+#: tithek_mainmenu.h:6
 msgid "Atemio Network configuration stable IP"
 msgstr "Atemio Netzwerkkonfiguration Feste IP"
 
-#: tithek_mainmenu.h:8
+#: tithek_mainmenu.h:7
 msgid "Atemio Series Recoding"
 msgstr "Atemio Serienaufnahme"
 
-#: tithek_mainmenu.h:9
+#: tithek_mainmenu.h:8
 msgid "Atemio Skin (Gui Design)"
 msgstr ""
 
-#: tithek_mainmenu.h:10
+#: tithek_mainmenu.h:9
 msgid "Atemio TitanNit Nemesis"
 msgstr ""
 
-#: tithek_mainmenu.h:11
+#: tithek_mainmenu.h:10
 msgid "Atemio TitanNit Trailer"
 msgstr "Atemio TitanNit Vorschau"
 
-#: tithek_mainmenu.h:12
+#: tithek_mainmenu.h:11
 msgid "Atemio Tuner configuration Sat"
 msgstr "Atemio Tunerkonfiguration für Satellit"
 
-#: tithek_mainmenu.h:13
+#: tithek_mainmenu.h:12
 msgid "Atemio WLAN configuration"
 msgstr "Atemio WLAN Konfiguration"
 
@@ -1992,7 +1988,7 @@ msgstr "Abbrechen"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_mainmenu.h:15
+#: tithek_mainmenu.h:14
 msgid "Category"
 msgstr "Kategorie"
 
@@ -3752,7 +3748,7 @@ msgstr "Schnelles Umschalten"
 msgid "Fav"
 msgstr "Favoriten"
 
-#: tithek_mainmenu.h:16
+#: tithek_mainmenu.h:15
 msgid "Favoriten"
 msgstr ""
 
@@ -3820,6 +3816,10 @@ msgstr "Dateigröße (MB): "
 #: skin_default_skin.xml.h:262
 msgid "Filesystem Check"
 msgstr "Dateisystem prüfen"
+
+#: tithek_mainmenu.h:16
+msgid "FilmOn"
+msgstr ""
 
 #: skin_default_skin.xml.h:263
 msgid "Fine move"
@@ -6482,10 +6482,6 @@ msgstr "nicht angelegt"
 msgid "November"
 msgstr ""
 
-#: tithek_mainmenu.h:32
-msgid "NowTv"
-msgstr ""
-
 #: panel_settings.h:27 settings_autostart.h:303
 msgid "Ntfs Write"
 msgstr "NTFS-Schreibunterstützung benutzen"
@@ -7541,11 +7537,11 @@ msgstr "Rguid Port"
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:34
+#: tithek_mainmenu.h:33
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:32
 msgid "RTL2-Now"
 msgstr ""
 
@@ -8568,41 +8564,41 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:624 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:487 tithek_global.h:489 tithek_mainmenu.h:35 tmdb.h:898
+#: tithek_global.h:487 tithek_global.h:489 tithek_mainmenu.h:34 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Suchen"
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:35
 msgid "Search (10)"
 msgstr "Suche (10)"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:36
 msgid "Search (20)"
 msgstr "Suche (20)"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:37
 msgid "Search (25)"
 msgstr "Suche (25)"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:38
 msgid "Search (50)"
 msgstr "Suche (50)"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:40
 msgid "Search (local)"
 msgstr "Suche (lokal)"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:39
 msgid "Search Cast"
 msgstr "Suche Besetzung"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:41
 msgid "Search Movie"
 msgstr "Suche Film"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:42
 msgid "Search Serie"
 msgstr "Suche Serie"
 
@@ -9204,10 +9200,6 @@ msgstr "Softcam Auswahl"
 msgid "Softcam selection:"
 msgstr "Softcam auswählen:"
 
-#: tithek_mainmenu.h:44
-msgid "Solarmovie"
-msgstr ""
-
 #: extensions.h:416
 msgid ""
 "Some plugins needs restart.\n"
@@ -9523,7 +9515,7 @@ msgstr "Son"
 msgid "Sunday"
 msgstr "Sonntag"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:43
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9990,7 +9982,7 @@ msgstr "Zeit bis Abschaltung (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:44
 msgid "TimeTv"
 msgstr ""
 
@@ -10107,7 +10099,7 @@ msgstr "Zeitzone"
 msgid "Tint"
 msgstr "Temperatur"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:45
 msgid "Tips und Tricks"
 msgstr "Tipps und Tricks"
 
@@ -10240,7 +10232,7 @@ msgstr "Tone Modus"
 msgid "Top"
 msgstr "Top (Prozesse)"
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:46
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10686,7 +10678,7 @@ msgstr "Einstellungen"
 msgid "VLC Player"
 msgstr "Video abspielen"
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:47
 msgid "VOX-Now"
 msgstr ""
 
@@ -11109,11 +11101,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:48
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:49
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11168,7 +11160,7 @@ msgstr ""
 "\n"
 "Soll der Receiver ausgeschaltet werden?"
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:50
 msgid "Youtube"
 msgstr ""
 
@@ -11176,7 +11168,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:51
 msgid "ZDF"
 msgstr ""
 
