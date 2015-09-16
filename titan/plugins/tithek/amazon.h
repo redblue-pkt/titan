@@ -205,7 +205,9 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			free(tmpstr4), tmpstr4 = NULL;
 		}
 
-		page = oregex(".*/ref=.*([0-9]{1,2})\\?rh=.*", nextpage);
+		page = oregex(".*/ref=.*([0-9]{2,2})\\?rh=.*", nextpage);
+		if(page == NULL)
+			page = oregex(".*/ref=.*([0-9]{1,2})\\?rh=.*", nextpage);
 
 		if(pages == NULL)
 		{
