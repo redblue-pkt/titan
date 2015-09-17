@@ -64,6 +64,19 @@ char* novamov(char* link)
 	debug(99, "ip: %s", ip);
 	debug(99, "tmppath: %s", tmppath);
 */
+
+	if(ostrstr(link, "http://file.") != NULL)
+		tmphost = string_replace("file.", "www.", tmphost, 1);
+
+	if(ostrstr(link, "http://embed.") != NULL)
+		tmphost = string_replace("embed.", "www.", tmphost, 1);
+
+	if(ostrstr(link, "embed.php?v=") != NULL)
+	{
+		tmppath = string_replace("embed.php?v=", "video/", tmppath, 1);
+		tmppath = stringreplacecharonce(tmppath, '&', '\0');
+	}
+
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
@@ -78,6 +91,12 @@ char* novamov(char* link)
 	if(ostrstr(tmpstr, "The file is being transfered to our other servers. This may take few minutes.") != NULL)
 	{
 		textbox(_("Message"), _("The file is being transfered to our other servers. This may take few minutes.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	if(ostrstr(tmpstr, "This file no longer exists on our servers!") != NULL)
+	{
+		textbox(_("Message"), _("This file no longer exists on our servers!") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 	
