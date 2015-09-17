@@ -44,6 +44,10 @@ char* movie4k(char* link)
 		url = string_resub("<iframe src=\"", "\"", tmpstr, 0);
 
 	if(url == NULL)
+		url = oregex(".*src=\"(http://.*)&.*", tmpstr);
+//		url = oregex(".*src=\"(http://.*)\".*", tmpstr);
+
+	if(url == NULL)
 	{
 		textbox(_("Message"), _("Can not parse Main Stream URL, try again later.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
