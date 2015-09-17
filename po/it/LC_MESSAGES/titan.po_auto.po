@@ -1797,11 +1797,11 @@ msgstr ""
 msgid "Camd3 v3.902 "
 msgstr ""
 
-#: movie4k.h:48
+#: movie4k.h:52
 msgid "Can not parse Main Stream URL, try again later."
 msgstr ""
 
-#: movie4k.h:92
+#: movie4k.h:96
 msgid "Can not parse Stream URL, try again later."
 msgstr ""
 
@@ -3184,7 +3184,7 @@ msgstr ""
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:63 mightyupload.h:69
-#: movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30
+#: movie4k.h:36 movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30
 #: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
 #: MultiImage.c:262 MultiImage.c:273 MultiImage.c:533 MultiImage.c:591
 #: MultiImage.c:671 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
@@ -3194,11 +3194,11 @@ msgstr ""
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
-#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:109 play.h:497
-#: play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294 play.h:1503
-#: play.h:1719 play.h:1730 plugins_autotimer_skin.xml.h:6
+#: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
+#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
+#: play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294
+#: play.h:1503 play.h:1719 play.h:1730 plugins_autotimer_skin.xml.h:6
 #: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
 #: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
 #: plugins_instar_skin.xml.h:5 plugins_lcdpearl1_skin.xml.h:6
@@ -3376,7 +3376,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG Canali: "
 
-#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:593
+#: kinox.h:300 movie4k.h:863 movie4k.h:1111 solarmovie.h:593
 msgid "Episode"
 msgstr "Episodio"
 
@@ -5750,8 +5750,8 @@ msgstr ""
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
-#: mightyupload.h:63 mightyupload.h:69 movie4k.h:36 movie4k.h:48 movie4k.h:92
-#: movie4k.h:399 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
+#: mightyupload.h:63 mightyupload.h:69 movie4k.h:36 movie4k.h:52 movie4k.h:96
+#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:273
 #: MultiImage.c:353 MultiImage.c:401 myvideo.h:86 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
@@ -5759,10 +5759,10 @@ msgstr ""
 #: networkbrowser.h:1785 networkbrowser.h:1792 networkbrowser.h:1797
 #: networkbrowser.h:1949 network.h:436 network.h:577 network.h:785
 #: network.h:793 network.h:819 network.h:823 network.h:877 novamov.h:35
-#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
-#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:109 play.h:614
-#: play.h:1293 play.h:1503 play.h:1719 play.h:1730 possetup.h:98
+#: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
+#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
+#: play.h:614 play.h:1293 play.h:1503 play.h:1719 play.h:1730 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -6327,7 +6327,7 @@ msgstr ""
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 mightyupload.h:27 mightyupload.h:63 mightyupload.h:69
-#: movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30
+#: movie4k.h:36 movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30
 #: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
 #: MultiImage.c:46 MultiImage.c:175 MultiImage.c:244 MultiImage.c:262
 #: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 MultiImage.c:533
@@ -6339,11 +6339,11 @@ msgstr ""
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
-#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:109 play.h:497
-#: play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294 play.h:1503
-#: play.h:1719 play.h:1730 plugins_dlna_skin.xml.h:7
+#: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
+#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
+#: play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294
+#: play.h:1503 play.h:1719 play.h:1730 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -8319,8 +8319,8 @@ msgstr ""
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
 #: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:797
-#: kinox.h:799 mlehd.h:90 mlehd.h:92 movie4k.h:134 movie4k.h:136 movie4k.h:291
-#: movie4k.h:293 myvideo.h:229 myvideo.h:231 myvideo.h:373 myvideo.h:375
+#: kinox.h:799 mlehd.h:90 mlehd.h:92 movie4k.h:138 movie4k.h:140 movie4k.h:295
+#: movie4k.h:297 myvideo.h:229 myvideo.h:231 myvideo.h:373 myvideo.h:375
 #: netzkino.h:13 netzkino.h:15 nowtv.h:133 nowtv.h:135 rtl2now.h:249
 #: rtl2now.h:251 rtl2now.h:313 rtl2now.h:315 rtl2now.h:377 rtl2now.h:379
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
@@ -8464,7 +8464,7 @@ msgstr "Search on Kinox"
 msgid "Search only aktual epg ?"
 msgstr "Search on Youtube"
 
-#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:589
+#: kinox.h:296 movie4k.h:859 movie4k.h:991 movie4k.h:1107 solarmovie.h:589
 msgid "Season"
 msgstr ""
 
@@ -9561,7 +9561,7 @@ msgid ""
 "the target drive."
 msgstr ""
 
-#: divxstage.h:79 novamov.h:80 nowvideo.h:105 primeshare.h:79 shared.h:65
+#: divxstage.h:79 novamov.h:93 nowvideo.h:105 primeshare.h:79 shared.h:65
 #: thefile.h:68 videoweed.h:80
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
@@ -9634,6 +9634,10 @@ msgstr "This file doesn't exist, or has been removed"
 
 #: firedrive.h:128
 msgid "This file is private and only viewable by the owner."
+msgstr ""
+
+#: novamov.h:99
+msgid "This file no longer exists on our servers!"
 msgstr ""
 
 #: nowvideo.h:99
@@ -12658,7 +12662,7 @@ msgstr ""
 msgid "serviceinfo"
 msgstr ""
 
-#: movie4k.h:399
+#: movie4k.h:403
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
 msgstr ""
 
