@@ -81,11 +81,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.tvtoast.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.tvtoast.titanlist | grep ^"$ROUND" > cache.tvtoast.titanlist."$ROUND"
 			cat cache.tvtoast.titanlist."$ROUND" | sort -u > _full/tvtoast/streams/tvtoast.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/tvtoast/streams/tvtoast."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#TvToast#3 >> _full/tvtoast/tvtoast.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/tvtoast/streams/tvtoast."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#TvToast#0 >> _full/tvtoast/tvtoast.a-z.list
 		elif [ `cat cache.tvtoast.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.tvtoast.titanlist | grep ^"$filename" > cache.tvtoast.titanlist."$ROUND"
 			cat cache.tvtoast.titanlist."$ROUND" | sort -u > _full/tvtoast/streams/tvtoast.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/tvtoast/streams/tvtoast."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#TvToast#3 >> _full/tvtoast/tvtoast.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/tvtoast/streams/tvtoast."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#TvToast#0 >> _full/tvtoast/tvtoast.a-z.list
 		fi
 	done
 	

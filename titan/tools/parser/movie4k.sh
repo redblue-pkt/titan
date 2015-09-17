@@ -166,7 +166,7 @@ for ROUND2 in $watchlist; do
 	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.$TYPE.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/$TYPE.jpg"
 	
-	LINE="$TYPENAME#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	LINE="$TYPENAME#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 	if [ ! -z "$TYPENAME" ];then
 		echo $LINE >> cache.movie4k.category.titanlist	
 	fi
@@ -249,7 +249,7 @@ for ROUND2 in $watchlist; do
 	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.$TYPE.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/$TYPE.jpg"
 	
-	LINE="$TYPENAME#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	LINE="$TYPENAME#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 	if [ ! -z "$TYPENAME" ];then
 		echo $LINE >> cache.movie4k.category.titanlist	
 	fi
@@ -395,19 +395,19 @@ if [ "$buildtype" = "full" ];then
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.jpg"
-	LINE="Filme (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	LINE="Filme (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 	echo $LINE >> cache.movie4k.category.titanlist
 	
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.update.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
-	LINE="Filme (letzten updates)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	LINE="Filme (letzten updates)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 	echo $LINE >> cache.movie4k.category.titanlist
 	
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.movies.genre.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg"
-	LINE="Filme (genre)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	LINE="Filme (genre)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 	echo $LINE >> cache.movie4k.category.titanlist
 	
 	# filme in genres sortieren
@@ -467,7 +467,7 @@ if [ "$buildtype" = "full" ];then
 			URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list"
 			PIC="http://atemio.dyndns.tv/mediathek/menu/`echo "$TITLE" | tr 'A-Z' 'a-z'`.jpg"
 	
-			LINE="$TITLE#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+			LINE="$TITLE#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 			if [ ! -z "$TITLE" ];then
 				echo $LINE >> cache.movie4k.movies.genre.titanlist
 			fi
@@ -481,13 +481,13 @@ if [ "$buildtype" = "full" ];then
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.series.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/serien.jpg"
-	LINE="Serien (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	LINE="Serien (alle)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 	echo $LINE >> cache.movie4k.category.titanlist
 	
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.series.genre.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/serien.genre.jpg"
-	LINE="Serien (genre)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+	LINE="Serien (genre)#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 	echo $LINE >> cache.movie4k.category.titanlist
 	
 	# serien in genres sortieren
@@ -526,7 +526,7 @@ if [ "$buildtype" = "full" ];then
 			URL="http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list"
 			PIC="http://atemio.dyndns.tv/mediathek/menu/`echo "$TITLE" | tr 'A-Z' 'a-z'`.jpg"
 	
-			LINE="$TITLE#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#3"
+			LINE="$TITLE#$URL#$PIC#movie4k_$piccount.jpg#Movie4k#0"
 			if [ ! -z "$TITLE" ];then
 				echo $LINE >> cache.movie4k.series.genre.titanlist
 			fi
@@ -551,11 +551,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.movie4k.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.movie4k.titanlist | grep ^"$ROUND" > cache.movie4k.titanlist."$ROUND"
 			cat cache.movie4k.titanlist."$ROUND" | sort -u > _full/movie4k/streams/movie4k.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Movie4k#3 >> _full/movie4k/movie4k.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Movie4k#0 >> _full/movie4k/movie4k.a-z.list
 		elif [ `cat cache.movie4k.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.movie4k.titanlist | grep ^"$filename" > cache.movie4k.titanlist."$ROUND"
 			cat cache.movie4k.titanlist."$ROUND" | sort -u > _full/movie4k/streams/movie4k.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Movie4k#3 >> _full/movie4k/movie4k.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/movie4k/streams/movie4k."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Movie4k#0 >> _full/movie4k/movie4k.a-z.list
 		fi
 	done
 fi

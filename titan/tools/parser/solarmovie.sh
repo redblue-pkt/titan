@@ -242,7 +242,7 @@ for ROUND0 in $watchlist; do
 		if [ ! -z $pages ]; then
 
 			if [ "$pcount" -lt "$pages" ]; then
-				LINE="$TITLE#$URL#$PIC#solarmovie_$piccount.jpg#Solarmovie#3"
+				LINE="$TITLE#$URL#$PIC#solarmovie_$piccount.jpg#Solarmovie#0"
 				if [ ! -z "$TITLE" ]; then
 					echo $LINE >> cache.solarmovie.category.titanlist	
 				fi
@@ -304,11 +304,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.solarmovie.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.solarmovie.titanlist | grep ^"$ROUND" > cache.solarmovie.titanlist."$ROUND"
 			cat cache.solarmovie.titanlist."$ROUND" | sort -u > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#3 >> _full/solarmovie/solarmovie.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#0 >> _full/solarmovie/solarmovie.a-z.list
 		elif [ `cat cache.solarmovie.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.solarmovie.titanlist | grep ^"$filename" > cache.solarmovie.titanlist."$ROUND"
 			cat cache.solarmovie.titanlist."$ROUND" | sort -u > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#3 >> _full/solarmovie/solarmovie.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#0 >> _full/solarmovie/solarmovie.a-z.list
 		fi
 	done
 fi

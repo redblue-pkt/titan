@@ -70,7 +70,7 @@ for ROUND2 in $watchlist; do
 	URL="http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd.newest.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
 	TITLE="Letzte Uploads"
-	LINE="$TITLE#$URL#$PIC#mlehd_$piccount.jpg#Mle-HD#3"
+	LINE="$TITLE#$URL#$PIC#mlehd_$piccount.jpg#Mle-HD#0"
 	echo $LINE >> cache.mlehd.category.titanlist
 
 ###
@@ -134,7 +134,7 @@ for ROUND2 in $watchlist; do
 		TITLE="$ROUND3"
 		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-		LINE="$TITLE#$URL#$PIC#mlehd_$piccount.jpg#Mle-HD#3"
+		LINE="$TITLE#$URL#$PIC#mlehd_$piccount.jpg#Mle-HD#0"
 		echo $LINE >> cache.mlehd.category.titanlist
 	done
 done
@@ -149,11 +149,11 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	if [ `cat cache.mlehd.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 		cat cache.mlehd.titanlist | grep ^"$ROUND" >> cache.mlehd.titanlist."$ROUND"
 		cat cache.mlehd.titanlist."$ROUND" | sort -u > _full/mlehd/streams/mlehd.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Mle-HD#3 >> _full/mlehd/mlehd.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Mle-HD#0 >> _full/mlehd/mlehd.a-z.list
 	elif [ `cat cache.mlehd.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 		cat cache.mlehd.titanlist | grep ^"$filename" >> cache.mlehd.titanlist."$ROUND"
 		cat cache.mlehd.titanlist."$ROUND" | sort -u > _full/mlehd/streams/mlehd.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Mle-HD#3 >> _full/mlehd/mlehd.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/mlehd/streams/mlehd."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Mle-HD#0 >> _full/mlehd/mlehd.a-z.list
 
 	fi
 done

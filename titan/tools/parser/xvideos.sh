@@ -90,7 +90,7 @@ if [ "$buildtype" = "full" ];then
 			piccount=`expr $piccount + 1`
 			URL="http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."$filename4".list"
 			PIC="http://atemio.dyndns.tv/mediathek/menu/"$filename3".jpg"
-			LINE="$tagname#$URL#$PIC#xvideos_$piccount.jpg#XVIDEOS#3"
+			LINE="$tagname#$URL#$PIC#xvideos_$piccount.jpg#XVIDEOS#0"
 			echo $LINE >> cache.xvideos.category.titanlist
 			cat cache.xvideos."$filename4".titanlist >> _full/xvideos/streams/xvideos."$filename4".list
 		fi
@@ -104,11 +104,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.xvideos.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.xvideos.titanlist | grep ^"$ROUND" > cache.xvideos.titanlist."$ROUND"
 			cat cache.xvideos.titanlist."$ROUND" | sort -u > _full/xvideos/streams/xvideos.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#XVIDEOS#3 >> _full/xvideos/xvideos.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#XVIDEOS#0 >> _full/xvideos/xvideos.a-z.list
 		elif [ `cat cache.xvideos.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.xvideos.titanlist | grep ^"$filename" > cache.xvideos.titanlist."$ROUND"
 			cat cache.xvideos.titanlist."$ROUND" | sort -u > _full/xvideos/streams/xvideos.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#XVIDEOS#3 >> _full/xvideos/xvideos.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#XVIDEOS#0 >> _full/xvideos/xvideos.a-z.list
 		fi
 	done
 fi

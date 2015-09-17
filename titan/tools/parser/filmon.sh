@@ -34,11 +34,11 @@ if [ $old = 1 ];then
 			if [ `cat cache.filmon.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 				cat cache.filmon.titanlist | grep ^"$ROUND" > cache.filmon.titanlist."$ROUND"
 				cat cache.filmon.titanlist."$ROUND" | sort -u > _full/filmon/streams/filmon.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-				echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/filmon/streams/filmon."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#filmon#3 >> _full/filmon/filmon.a-z.list
+				echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/filmon/streams/filmon."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#filmon#0 >> _full/filmon/filmon.a-z.list
 			elif [ `cat cache.filmon.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 				cat cache.filmon.titanlist | grep ^"$filename" > cache.filmon.titanlist."$ROUND"
 				cat cache.filmon.titanlist."$ROUND" | sort -u > _full/filmon/streams/filmon.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-				echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/filmon/streams/filmon."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#filmon#3 >> _full/filmon/filmon.a-z.list
+				echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/filmon/streams/filmon."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#filmon#0 >> _full/filmon/filmon.a-z.list
 			fi
 		done
 	#fi

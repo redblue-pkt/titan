@@ -15,7 +15,7 @@ int amazonlogin = 0;
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
 //flag 2	- http (default streamurl)
-//flag 3	- menu cover
+//flag 3	- http radio
 //flag 4	- youtube
 //flag 5	- nowtv //rtl2now
 //flag 6	- nowtv pay //superrtlnow
@@ -1321,6 +1321,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
 	}						
+	else if(((struct tithek*)listbox->select->handle)->flag == 3)
+	{
+		flag = 4;
+		if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 4)
 	{
 		if(tmpstr != NULL) tmpstr1 = youtube_hoster(tmpstr);
@@ -1405,7 +1410,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		char* skintitle = _("Choice Playback");
 		struct menulist* mlist = NULL, *mbox = NULL;
 
-#ifdef SH4
+#ifndef MIPSEL
 		addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
 #else
 		// mipsel work, disable http direct streams without buffer, after 3mins no memory (memleak in player.h ?)
@@ -1418,12 +1423,12 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			wakeup_record_device();
 			if(flag == 4)
 			{
-#ifdef EPLAYER3
-				addmenulist(&mlist, "Streaming Playback Caching (1MB)", _("Streaming Playback Caching (1MB)"), NULL, 0, 0);
-#else
-				// mipsel work for radio
-				addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
-#endif
+//#ifdef EPLAYER3
+//				addmenulist(&mlist, "Streaming Playback Caching (1MB)", _("Streaming Playback Caching (1MB)"), NULL, 0, 0);
+//#else
+//				// mipsel work for radio
+//				addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
+//#endif
 			}	
 			else if(!ostrncmp("http://", tmpstr1, 7))
 			{
@@ -1976,7 +1981,7 @@ why ?
 			{
 				clearscreen(grid);
 
-				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75)
+				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75)
 				{
 					submenu(listbox, load, title);
 //					drawscreen(grid, 0, 0);
