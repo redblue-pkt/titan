@@ -86,11 +86,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.ard.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.ard.titanlist | grep ^"$ROUND" > cache.ard.titanlist."$ROUND"
 			cat cache.ard.titanlist."$ROUND" | sort -u > _full/ard/streams/ard.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/ard/streams/ard."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ARD#3 >> _full/ard/ard.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/ard/streams/ard."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ARD#0 >> _full/ard/ard.a-z.list
 		elif [ `cat cache.ard.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.ard.titanlist | grep ^"$filename" > cache.ard.titanlist."$ROUND"
 			cat cache.ard.titanlist."$ROUND" | sort -u > _full/ard/streams/ard.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/ard/streams/ard."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ARD#3 >> _full/ard/ard.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/ard/streams/ard."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ARD#0 >> _full/ard/ard.a-z.list
 		fi
 	done
 fi

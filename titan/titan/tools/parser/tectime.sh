@@ -95,7 +95,7 @@ for ROUND1 in $WATCHLIST; do
 		piccount=`expr $piccount + 1`
 		URL="http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."$filename".list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/"$tagname".jpg"
-		LINE="$tagname#$URL#$PIC#tectime$piccount.jpg#tectime#3"
+		LINE="$tagname#$URL#$PIC#tectime$piccount.jpg#tectime#0"
 		echo $LINE >> cache.tectime.category.titanlist
 		cat cache.tectime."$filename".titanlist >> _full/tectime/streams/tectime."$filename".list
 	fi
@@ -110,11 +110,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.tectime.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.tectime.titanlist | grep ^"$ROUND" > cache.tectime.titanlist."$ROUND"
 			cat cache.tectime.titanlist."$ROUND" | sort -u > _full/tectime/streams/tectime.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#TecTime#3 >> _full/tectime/tectime.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#TecTime#0 >> _full/tectime/tectime.a-z.list
 		elif [ `cat cache.tectime.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.tectime.titanlist | grep ^"$filename" > cache.tectime.titanlist."$ROUND"
 			cat cache.tectime.titanlist."$ROUND" | sort -u > _full/tectime/streams/tectime.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#TecTime#3 >> _full/tectime/tectime.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#TecTime#0 >> _full/tectime/tectime.a-z.list
 		fi
 	done
 fi

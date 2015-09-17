@@ -234,7 +234,7 @@ if [ "$buildtype" == "full" ];then
 
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ -e cache.internetradio.genre."$GENRE".titanlist ] &&  [ `cat cache.internetradio.genre."$GENRE".titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
-				LINE="$TITLE#$URL#$PIC#internetradio_$piccount.jpg#Internet Radio#2"
+				LINE="$TITLE#$URL#$PIC#internetradio_$piccount.jpg#Internet Radio#0"
 				echo $LINE >> cache.internetradio.genre."$GENRE".titanlist
 	
 				piccount=`expr $piccount + 1`
@@ -246,7 +246,7 @@ if [ "$buildtype" == "full" ];then
 				fi
 				cat cache.internetradio.genre."$GENRE".titanlist | sort -u > _full/internetradio/streams/internetradio.genre."$GENRE".list
 			elif [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ ! -e cache.internetradio.genre."$GENRE".titanlist ];then
-				LINE="$TITLE#$URL#$PIC#internetradio_$piccount.jpg#Internet Radio#2"
+				LINE="$TITLE#$URL#$PIC#internetradio_$piccount.jpg#Internet Radio#0"
 				echo $LINE >> cache.internetradio.genre."$GENRE".titanlist
 	
 				piccount=`expr $piccount + 1`
@@ -278,11 +278,11 @@ if [ "$buildtype" == "full" ];then
 			if [ `cat cache.internetradio.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 				cat cache.internetradio.titanlist | grep ^"$ROUND" >> cache.internetradio.titanlist."$ROUND"
 				cat cache.internetradio.titanlist."$ROUND" | sort -um > _full/internetradio/streams/internetradio.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-				echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/internetradio/streams/internetradio."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Internet Radio#3 >> _full/internetradio/internetradio.a-z.list
+				echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/internetradio/streams/internetradio."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Internet Radio#0 >> _full/internetradio/internetradio.a-z.list
 			elif [ `cat cache.internetradio.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 				cat cache.internetradio.titanlist | grep ^"$filename" >> cache.internetradio.titanlist."$ROUND"
 				cat cache.internetradio.titanlist."$ROUND" | sort -um > _full/internetradio/streams/internetradio.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-				echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/internetradio/streams/internetradio."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Internet Radio#3 >> _full/internetradio/internetradio.a-z.list
+				echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/internetradio/streams/internetradio."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Internet Radio#0 >> _full/internetradio/internetradio.a-z.list
 		
 			fi
 		done

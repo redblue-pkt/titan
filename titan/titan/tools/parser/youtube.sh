@@ -70,7 +70,7 @@ for SEARCH in $SEARCHLIST; do
 		echo $LINE >> cache.youtube.$filename.titanlist
 		echo $LINE >> cache.youtube.all.titanlist
 	done
-	LINE="`echo $filename | tr '_' ' '`#http://atemio.dyndns.tv/mediathek/youtube/streams/youtube.$filename.list#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#`echo "$filename" | tr 'A-Z' 'a-z'`.jpg#YouTube#3"
+	LINE="`echo $filename | tr '_' ' '`#http://atemio.dyndns.tv/mediathek/youtube/streams/youtube.$filename.list#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#`echo "$filename" | tr 'A-Z' 'a-z'`.jpg#YouTube#0"
 
 	if [ `cat cache.youtube.$filename.titanlist | wc -l` -gt 0 ];then
 		cat cache.youtube.$filename.titanlist > _full/youtube/streams/youtube.$filename.list
@@ -112,7 +112,7 @@ if [ "$buildtype" = "full" ];then
 			echo $LINE >> cache.youtube.$filename.titanlist
 			echo $LINE >> cache.youtube.all.titanlist
 		done
-		LINE="`echo $filename | tr '_' ' '`#http://atemio.dyndns.tv/mediathek/youtube/streams/youtube.$filename.list#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#`echo "$filename" | tr 'A-Z' 'a-z'`.jpg#YouTube#3"
+		LINE="`echo $filename | tr '_' ' '`#http://atemio.dyndns.tv/mediathek/youtube/streams/youtube.$filename.list#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#`echo "$filename" | tr 'A-Z' 'a-z'`.jpg#YouTube#0"
 	
 		if [ `cat cache.youtube.$filename.titanlist | wc -l` -gt 0 ];then
 			cat cache.youtube.$filename.titanlist > _full/youtube/streams/youtube.$filename.list
@@ -129,11 +129,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.youtube.all.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.youtube.all.titanlist | grep ^"$ROUND" > cache.youtube.all.titanlist."$ROUND"
 			cat cache.youtube.all.titanlist."$ROUND" | sort -u > _full/youtube/streams/youtube.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/youtube/streams/youtube."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#YouTube#3 >> _full/youtube/youtube.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/youtube/streams/youtube."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#YouTube#0 >> _full/youtube/youtube.a-z.list
 		elif [ `cat cache.youtube.all.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.youtube.all.titanlist | grep ^"$filename" > cache.youtube.all.titanlist."$ROUND"
 			cat cache.youtube.all.titanlist."$ROUND" | sort -u > _full/youtube/streams/youtube.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/youtube/streams/youtube."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#YouTube#3 >> _full/youtube/youtube.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/youtube/streams/youtube."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#YouTube#0 >> _full/youtube/youtube.a-z.list
 		fi
 	done
 fi

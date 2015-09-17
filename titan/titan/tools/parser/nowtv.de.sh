@@ -123,11 +123,11 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	if [ `cat cache.$DOMAIN.all.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 		cat cache.$DOMAIN.all.titanlist | grep ^"$ROUND" > cache.$DOMAIN.all.titanlist."$ROUND"
 		cat cache.$DOMAIN.all.titanlist."$ROUND" | sort -u > _full/$DOMAIN/streams/$DOMAIN.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://$MEDIAURL/$MEDIAPATH/$DOMAIN/streams/$DOMAIN."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://$MEDIAURL/$MEDIAPATH/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#$SHOWNAME#2 >> _full/$DOMAIN/$DOMAIN.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://$MEDIAURL/$MEDIAPATH/$DOMAIN/streams/$DOMAIN."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://$MEDIAURL/$MEDIAPATH/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#$SHOWNAME#0 >> _full/$DOMAIN/$DOMAIN.a-z.list
 	elif [ `cat cache.$DOMAIN.all.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 		cat cache.$DOMAIN.all.titanlist | grep ^"$filename" > cache.$DOMAIN.all.titanlist."$ROUND"
 		cat cache.$DOMAIN.all.titanlist."$ROUND" | sort -u > _full/$DOMAIN/streams/$DOMAIN.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://$MEDIAURL/$MEDIAPATH/$DOMAIN/streams/$DOMAIN."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://$MEDIAURL/$MEDIAPATH/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#$SHOWNAME#2 >> _full/$DOMAIN/$DOMAIN.a-z.list
+		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://$MEDIAURL/$MEDIAPATH/$DOMAIN/streams/$DOMAIN."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://$MEDIAURL/$MEDIAPATH/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#$SHOWNAME#0 >> _full/$DOMAIN/$DOMAIN.a-z.list
 	fi
 done
 

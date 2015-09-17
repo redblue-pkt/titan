@@ -144,7 +144,7 @@ for ROUND0 in $watchlist; do
 	URL="http://atemio.dyndns.tv/mediathek/watchmovies/streams/watchmovies.$filename0.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/$filename0.jpg"
 	
-	LINE="$TITLE#$URL#$PIC#watchmovies_$piccount.jpg#watchmovies#3"
+	LINE="$TITLE#$URL#$PIC#watchmovies_$piccount.jpg#watchmovies#0"
 	if [ ! -z "$TITLE" ]; then
 		echo $LINE >> cache.watchmovies.category.titanlist	
 	fi
@@ -165,11 +165,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.watchmovies.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.watchmovies.titanlist | grep ^"$ROUND" > cache.watchmovies.titanlist."$ROUND"
 			cat cache.watchmovies.titanlist."$ROUND" | sort -u > _full/watchmovies/streams/watchmovies.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/watchmovies/streams/watchmovies."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#watchmovies#3 >> _full/watchmovies/watchmovies.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/watchmovies/streams/watchmovies."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#watchmovies#0 >> _full/watchmovies/watchmovies.a-z.list
 		elif [ `cat cache.watchmovies.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.watchmovies.titanlist | grep ^"$filename" > cache.watchmovies.titanlist."$ROUND"
 			cat cache.watchmovies.titanlist."$ROUND" | sort -u > _full/watchmovies/streams/watchmovies.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/watchmovies/streams/watchmovies."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#watchmovies#3 >> _full/watchmovies/watchmovies.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/watchmovies/streams/watchmovies."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#watchmovies#0 >> _full/watchmovies/watchmovies.a-z.list
 		fi
 	done
 fi

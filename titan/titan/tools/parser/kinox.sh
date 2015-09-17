@@ -65,7 +65,7 @@ if [ "$buildtype" = "full" ];then
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/kinox/streams/kinox.movies.update.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/Movies.update.jpg"
-	LINE="Filme (letzten uploads)#$URL#$PIC#kinox_$piccount.jpg#KinoX#3"
+	LINE="Filme (letzten uploads)#$URL#$PIC#kinox_$piccount.jpg#KinoX#0"
 	echo $LINE >> cache.kinox.category.titanlist
 fi
 
@@ -103,7 +103,7 @@ for ROUND0 in $main_list; do
 	piccount=`expr $piccount + 1`
 	URL="http://atemio.dyndns.tv/mediathek/kinox/streams/kinox.$ROUND0.list"
 	PIC="http://atemio.dyndns.tv/mediathek/menu/$ROUND0.jpg"
-	LINE="$TITLE#$URL#$PIC#kinox_$piccount.jpg#KinoX#3"
+	LINE="$TITLE#$URL#$PIC#kinox_$piccount.jpg#KinoX#0"
 	if [ ! -z "$TITLE" ]; then
 		echo $LINE >> cache.kinox.category.titanlist	
 	fi
@@ -210,11 +210,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.kinox.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.kinox.titanlist | grep ^"$ROUND" > cache.kinox.titanlist."$ROUND"
 			cat cache.kinox.titanlist."$ROUND" | sort -u > _full/kinox/streams/kinox.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#3 >> _full/kinox/kinox.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#0 >> _full/kinox/kinox.a-z.list
 		elif [ `cat cache.kinox.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.kinox.titanlist | grep ^"$filename" > cache.kinox.titanlist."$ROUND"
 			cat cache.kinox.titanlist."$ROUND" | sort -u > _full/kinox/streams/kinox.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#3 >> _full/kinox/kinox.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/kinox/streams/kinox."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#KinoX#0 >> _full/kinox/kinox.a-z.list
 		fi
 	done
 fi

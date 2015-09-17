@@ -43,7 +43,7 @@ if [ "$buildtype" = "full" ];then
 		piccount=`expr $piccount + 1`
 		URL="http://atemio.dyndns.tv/mediathek/zdf/zdf.$filename.list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/$filename.jpg"
-		LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
+		LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
 		if [ ! -z "$TITLE" ] || [ ! -z "$URL" ] || [ ! -z "$PIC" ]; then
 			echo $LINE >> cache.zdf.category.titanlist
 		fi
@@ -71,7 +71,7 @@ if [ "$buildtype" = "full" ];then
 				URL="http://atemio.dyndns.tv/mediathek/zdf/zdf.$filename.$filename2.list"
 				PIC="http://atemio.dyndns.tv/mediathek/menu/$filename2.jpg"
 
-				LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
+				LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
 				if [ ! -z "$TITLE" ] || [ ! -z "$URL" ] || [ ! -z "$PIC" ]; then
 					echo "$LINE" >> cache.zdf.$filename.titanlist
 				fi
@@ -90,7 +90,7 @@ if [ "$buildtype" = "full" ];then
 					GETURL=http://www.zdf.de`echo $ROUND5 | sed 's!<a~href=!\n<a~href=!' | grep ^"<a~href=" | head -n1 | cut -d '"' -f2 | tr '~' ' '`
 
 					if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.zdf.$filename.$filename2.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
-						LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
+						LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#0"
 						echo "$LINE" >> cache.zdf.$filename.$filename2.titanlist
 					fi
 					
@@ -158,11 +158,11 @@ if [ "$buildtype" = "full" ];then
 		if [ `cat cache.zdf.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.zdf.titanlist | grep ^"$ROUND" > cache.zdf.titanlist."$ROUND"
 			cat cache.zdf.titanlist."$ROUND" | sort -u > _full/zdf/streams/zdf.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/zdf/streams/zdf."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ZDF#3 >> _full/zdf/zdf.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/zdf/streams/zdf."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ZDF#0 >> _full/zdf/zdf.a-z.list
 		elif [ `cat cache.zdf.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.zdf.titanlist | grep ^"$filename" > cache.zdf.titanlist."$ROUND"
 			cat cache.zdf.titanlist."$ROUND" | sort -u > _full/zdf/streams/zdf.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
-			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/zdf/streams/zdf."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ZDF#3 >> _full/zdf/zdf.a-z.list
+			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/zdf/streams/zdf."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ZDF#0 >> _full/zdf/zdf.a-z.list
 		fi
 	done
 fi
