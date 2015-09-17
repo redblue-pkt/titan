@@ -13589,6 +13589,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Streaming Playback Caching (1MB)"
-#~ msgstr "Воспроизведение потока с буфером (1Мб)"
