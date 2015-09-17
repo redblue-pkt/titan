@@ -13584,6 +13584,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Streaming Playback Caching (1MB)"
-#~ msgstr "Streaming afspeel buffer (1MB)"
