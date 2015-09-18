@@ -8,6 +8,71 @@ void inputhelpnum(struct skin* inputhelp, struct skin* inputbox, char num, int s
 	drawscreen(inputhelp, screencalc, flag);
 }
 
+void translateinputhelp(struct skin* inputhelp, int flag)
+{
+	struct skin* sup2grid1 = getscreennode(inputhelp, "sup2grid1");
+	struct skin* sup2grid2 = getscreennode(inputhelp, "sup2grid2");
+
+	struct skin* sup3grid1 = getscreennode(inputhelp, "sup3grid1");
+	struct skin* sup3grid2 = getscreennode(inputhelp, "sup3grid2");
+
+	struct skin* eurogrid1 = getscreennode(inputhelp, "eurogrid1");
+	struct skin* eurogrid2 = getscreennode(inputhelp, "eurogrid2");
+
+	struct skin* microgrid1 = getscreennode(inputhelp, "microgrid1");
+	struct skin* microgrid2 = getscreennode(inputhelp, "microgrid2");
+
+	struct skin* deggrid1 = getscreennode(inputhelp, "deggrid1");
+	struct skin* deggrid2 = getscreennode(inputhelp, "deggrid2");
+
+	struct skin* acutegrid1 = getscreennode(inputhelp, "acutegrid1");
+	struct skin* acutegrid2 = getscreennode(inputhelp, "acutegrid2");
+
+	struct skin* quotegrid1 = getscreennode(inputhelp, "quotegrid1");
+	struct skin* quotegrid2 = getscreennode(inputhelp, "quotegrid2");
+
+	struct skin* sectiongrid1 = getscreennode(inputhelp, "sectiongrid1");
+	struct skin* sectiongrid2 = getscreennode(inputhelp, "sectiongrid2");
+
+	struct skin* backslashgrid1 = getscreennode(inputhelp, "backslashgrid1");
+	struct skin* backslashgrid2 = getscreennode(inputhelp, "backslashgrid2");
+
+	struct skin* szliggrid1 = getscreennode(inputhelp, "szliggrid1");
+	struct skin* szliggrid2 = getscreennode(inputhelp, "szliggrid2");
+
+	changetext(sup2grid1, "²");
+	changetext(sup2grid2, "²");
+
+	changetext(sup3grid1, "³");
+	changetext(sup3grid2, "³");
+
+	changetext(eurogrid1, "€");
+	changetext(eurogrid2, "€");
+
+	changetext(microgrid1, "µ");
+	changetext(microgrid2, "µ");
+
+	changetext(deggrid1, "°");
+	changetext(deggrid2, "°");
+
+	changetext(acutegrid1, "´");
+	changetext(acutegrid2, "´");
+
+	changetext(quotegrid1, "\"");
+	changetext(quotegrid2, "\"");
+
+	changetext(sectiongrid1, "§");
+	changetext(sectiongrid2, "§");
+
+	changetext(backslashgrid1, "\\");
+	changetext(backslashgrid2, "\\");
+
+	changetext(szliggrid1, "ß");
+	changetext(szliggrid2, "ß");
+
+	drawscreen(inputhelp, 0, flag);
+}
+
 char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 {
 	int rcret = 0;
@@ -16,6 +81,7 @@ char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 	struct skin* grid1 = getscreennode(inputhelp, "grid1");
 	struct skin* grid2 = getscreennode(inputhelp, "grid2");
 	struct skin* inputbox = getscreennode(inputhelp, "inputbox");
+
 	char* tmpstr = NULL;
 
 	grid1->hidden = NO;
@@ -28,6 +94,8 @@ char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 	changeinput(inputbox, text);
 	drawscreen(inputhelp, 0, flag);
 	addscreenrc(inputhelp, grid);
+
+	translateinputhelp(inputhelp, flag);
 
 	while(1)
 	{
@@ -114,6 +182,7 @@ char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 						addscreenrc(inputhelp, grid);
 					}
 					drawscreen(inputhelp, 0, flag);
+					translateinputhelp(inputhelp, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcyellow", NULL))
