@@ -13885,9 +13885,3 @@ msgstr ""
 #: skin_default_skin.xml.h:3
 msgid "~"
 msgstr ""
-
-#~ msgid "SZ"
-#~ msgstr "ß"
-
-#~ msgid "sz"
-#~ msgstr "ß"
