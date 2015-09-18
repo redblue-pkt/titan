@@ -40,35 +40,35 @@ void translateinputhelp(struct skin* inputhelp, int flag)
 	struct skin* szliggrid1 = getscreennode(inputhelp, "szliggrid1");
 	struct skin* szliggrid2 = getscreennode(inputhelp, "szliggrid2");
 
-	changetext(sup2grid1, "²");
-	changetext(sup2grid2, "²");
+	changetext(sup2grid1, "Â²");
+	changetext(sup2grid2, "Â²");
 
-	changetext(sup3grid1, "³");
-	changetext(sup3grid2, "³");
+	changetext(sup3grid1, "Â³");
+	changetext(sup3grid2, "Â³");
 
-	changetext(eurogrid1, "€");
-	changetext(eurogrid2, "€");
+	changetext(eurogrid1, "â‚¬");
+	changetext(eurogrid2, "â‚¬");
 
-	changetext(microgrid1, "µ");
-	changetext(microgrid2, "µ");
+	changetext(microgrid1, "Âµ");
+	changetext(microgrid2, "Âµ");
 
-	changetext(deggrid1, "°");
-	changetext(deggrid2, "°");
+	changetext(deggrid1, "Â°");
+	changetext(deggrid2, "Â°");
 
-	changetext(acutegrid1, "´");
-	changetext(acutegrid2, "´");
+	changetext(acutegrid1, "Â´");
+	changetext(acutegrid2, "Â´");
 
 	changetext(quotegrid1, "\"");
 	changetext(quotegrid2, "\"");
 
-	changetext(sectiongrid1, "§");
-	changetext(sectiongrid2, "§");
+	changetext(sectiongrid1, "Â§");
+	changetext(sectiongrid2, "Â§");
 
 	changetext(backslashgrid1, "\\");
 	changetext(backslashgrid2, "\\");
 
-	changetext(szliggrid1, "ß");
-	changetext(szliggrid2, "ß");
+	changetext(szliggrid1, "ÃŸ");
+	changetext(szliggrid2, "ÃŸ");
 
 	drawscreen(inputhelp, 0, flag);
 }
