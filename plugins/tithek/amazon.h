@@ -21,7 +21,7 @@ void amazon_init(char* titheklink, char* tithekfile)
 				textbox(_("Message"), _("Amazon login not successful! Please check Amazon Prime User/Pass in Tithek settings and try again."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 200, 0, 0);
 			else
 			{
-				textbox(_("Message"), _("Amazon Prime login successful!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
+				textbox(_("Message"), _("Amazon Prime login successful!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 10, 0);
 				amazonlogin = 1;
 			}
 		}
