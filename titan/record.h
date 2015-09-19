@@ -1266,8 +1266,7 @@ not needed we use wakeup_record_device on recordstartreal
 #ifdef MIPSEL
 			if(type == RECSTREAMENC)
 			{
-				int helpsleep = getconfigint("enc_timing", NULL);
-				
+	
 				dmxclose(dmxnode, -1);
 
 				encnode = encoderopen(0);
@@ -1281,11 +1280,6 @@ not needed we use wakeup_record_device on recordstartreal
 					case 2: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO2, 0); break;
 					case 3: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO3, 0); break;
 				}
-				//usleep(1000);
-				//if(helpsleep == 0)
-				//	usleep(1000);	
-				//else
-				//	usleep(helpsleep);
 
 				audionode = audioopen(encnode->decoder);
 				servicenode->audiodev = audionode;
@@ -1306,7 +1300,6 @@ not needed we use wakeup_record_device on recordstartreal
 					case 3: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO3, 0); break;
 				}
 				
-				//usleep(1000);
 				videonode = videoopen(0, encnode->decoder);
 				servicenode->videodev = videonode;
 				videoselectsource(servicenode->videodev, VIDEO_SOURCE_DEMUX);
