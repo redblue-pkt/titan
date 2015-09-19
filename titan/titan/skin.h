@@ -3780,8 +3780,8 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		if(node->funcrettype == FUNCPIC)
 		{
 			tmpstr = node->skinfunc(node, node->param1, node->param2);
-			if(tmpstr != NULL)
-				changepic(node, tmpstr);
+			//if(tmpstr != NULL)
+			changepic(node, tmpstr);
 		}
 		else if(node->funcrettype == FUNCPROGRESS)
 		{
