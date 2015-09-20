@@ -3781,8 +3781,10 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		{
 			tmpstr = node->skinfunc(node, node->param1, node->param2);
 			if(tmpstr == NULL)
+			{
 				if(ostrstr(node->skinfunc, "oled") == NULL)
-					changepic(node, tmpstr);			
+					changepic(node, tmpstr);	
+			}		
 			else
 				changepic(node, tmpstr);
 		}
