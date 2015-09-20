@@ -37,67 +37,67 @@ void* convertfunc(char *value, uint8_t *rettype)
 #ifdef MIPSEL
 	if(ostrcmp("getoledmute", value) == 0)
 	{
-		*rettype = FUNCPIC;
+		*rettype = FUNCPICOLED;
 		return &getoledmute;
 	}
 
 	if(ostrcmp("getoledtimeshift", value) == 0)
 	{
-		*rettype = FUNCPIC;
+		*rettype = FUNCPICOLED;
 		return &getoledtimeshift;
 	}
 
 	if(ostrcmp("getoledrec", value) == 0)
 	{
-		*rettype = FUNCPIC;
+		*rettype = FUNCPICOLED;
 		return &getoledrec;
 	}
 
 	if(ostrcmp("getoledstreaming", value) == 0)
 	{
-		*rettype = FUNCPIC;
+		*rettype = FUNCPICOLED;
 		return &getoledstreaming;
 	}
 
     if(ostrcmp("getoledcrypt", value) == 0)
 	{
-		*rettype = FUNCPIC;
+		*rettype = FUNCPICOLED;
 		return &getoledcrypt;
 	}
 
     if(ostrcmp("getoledchannelaspect", value) == 0)
 	{
-		*rettype = FUNCPIC;
+		*rettype = FUNCPICOLED;
 		return &getoledchannelaspect;
 	}
 
     if(ostrcmp("getoledchannelresolution576", value) == 0)
 	    {
-		    *rettype = FUNCPIC;
+		    *rettype = FUNCPICOLED;
 		    return &getoledchannelresolution576;
 	    }
 	    
 	if(ostrcmp("getoledchannelresolution720", value) == 0)
 	    {
-		    *rettype = FUNCPIC;
+		    *rettype = FUNCPICOLED;
 		    return &getoledchannelresolution720;
 	    }
 	    
 	if(ostrcmp("getoledchannelresolution1080", value) == 0)
 	    {
-		    *rettype = FUNCPIC;
+		    *rettype = FUNCPICOLED;
 		    return &getoledchannelresolution1080;
 	    }
 
     if(ostrcmp("getoledhd", value) == 0)
 	{
-		*rettype = FUNCPIC;
+		*rettype = FUNCPICOLED;
 		return &getoledhd;
 	}
 	
 	if(ostrcmp("getoleddolby", value) == 0)
 	{
-		*rettype = FUNCPIC;
+		*rettype = FUNCPICOLED;
 		return &getoleddolby;
 	}
 
@@ -3780,13 +3780,13 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		if(node->funcrettype == FUNCPIC)
 		{
 			tmpstr = node->skinfunc(node, node->param1, node->param2);
-			if(tmpstr == NULL)
-			{
-				if(ostrstr(node->skinfunc, "oled") == NULL)
-					changepic(node, tmpstr);	
-			}		
-			else
-				changepic(node, tmpstr);
+			changepic(node, tmpstr);
+		}
+		if(node->funcrettype == FUNCPICOLED)
+		{
+			tmpstr = node->skinfunc(node, node->param1, node->param2);
+			if(tmpstr != NULL)
+				changepic(node, tmpstr);	
 		}
 		else if(node->funcrettype == FUNCPROGRESS)
 		{
