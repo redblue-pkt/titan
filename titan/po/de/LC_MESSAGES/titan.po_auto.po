@@ -59,7 +59,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:27
 msgid "\");"
-msgstr ""
+msgstr "\""
 
 #: skin_default_skin.xml.h:25
 msgid "$"
@@ -12756,7 +12756,7 @@ msgstr "Schnellstart"
 
 #: skin_default_skin.xml.h:539
 msgid "quote"
-msgstr ""
+msgstr "\""
 
 #: skin_default_skin.xml.h:540
 msgid "r"
@@ -13226,11 +13226,11 @@ msgstr "Erfolgreich"
 
 #: skin_default_skin.xml.h:702
 msgid "sup2"
-msgstr ""
+msgstr "²"
 
 #: skin_default_skin.xml.h:703
 msgid "sup3"
-msgstr ""
+msgstr "³"
 
 #: harddisk.h:561
 msgid "swap"
