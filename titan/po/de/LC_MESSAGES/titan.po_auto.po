@@ -13826,15 +13826,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "\");"
-#~ msgstr "\""
-
-#~ msgid "quote"
-#~ msgstr "\""
-
-#~ msgid "sup2"
-#~ msgstr "²"
-
-#~ msgid "sup3"
-#~ msgstr "³"
