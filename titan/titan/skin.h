@@ -3782,7 +3782,7 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 			tmpstr = node->skinfunc(node, node->param1, node->param2);
 			changepic(node, tmpstr);
 		}
-		if(node->funcrettype == FUNCPICOLED)
+		else if(node->funcrettype == FUNCPICOLED)
 		{
 			tmpstr = node->skinfunc(node, node->param1, node->param2);
 			if(tmpstr != NULL)
