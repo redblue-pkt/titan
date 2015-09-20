@@ -11082,7 +11082,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:27
 msgid "\\"
-msgstr "\"
+msgstr ""
 
 #: skin_default_skin.xml.h:21
 msgid "]"
@@ -13671,4 +13671,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
