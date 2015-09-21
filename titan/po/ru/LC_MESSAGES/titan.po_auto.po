@@ -4309,7 +4309,7 @@ msgstr "Аппаратное тестирование"
 msgid "Hello World !"
 msgstr "Всем привет!"
 
-#: httpdfunc.h:5162 skin_default_skin.xml.h:854 webif_index.atemio510.h:16
+#: httpdfunc.h:5162 skin_default_skin.xml.h:830 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -10498,11 +10498,11 @@ msgstr ""
 msgid "Vertikal"
 msgstr "Вертикальная"
 
-#: skin_default_skin.xml.h:818 tmc.h:399
+#: skin_default_skin.xml.h:800 tmc.h:399
 msgid "Video"
 msgstr "Видео"
 
-#: skin_default_skin.xml.h:822
+#: skin_default_skin.xml.h:804
 msgid "Video PID:"
 msgstr "Видео PID"
 
@@ -10510,7 +10510,7 @@ msgstr "Видео PID"
 msgid "Video Player"
 msgstr "Видео плеер"
 
-#: play.h:639 skin_default_skin.xml.h:823
+#: play.h:639 skin_default_skin.xml.h:805
 msgid "Video Settings"
 msgstr "Настройки отображения файлов видео"
 
@@ -10526,15 +10526,15 @@ msgstr ""
 msgid "Video postet"
 msgstr "Настройки видео"
 
-#: skin_default_skin.xml.h:819
+#: skin_default_skin.xml.h:801
 msgid "VideoMode Aspect Settings"
 msgstr "Параметры видеорежима"
 
-#: skin_default_skin.xml.h:820
+#: skin_default_skin.xml.h:802
 msgid "VideoMode Resolution Settings"
 msgstr "Параметры разрешения видеорежима"
 
-#: skin_default_skin.xml.h:821
+#: skin_default_skin.xml.h:803
 msgid "VideoMode Settings"
 msgstr "Параметры видеорежима"
 
@@ -10550,7 +10550,7 @@ msgstr "Видеорежим должен быть 576i для Scart"
 msgid "Videotune"
 msgstr "Настройки изображения"
 
-#: skin_default_skin.xml.h:824
+#: skin_default_skin.xml.h:806
 msgid "Vietnamese"
 msgstr "Вьетнамский"
 
@@ -10567,15 +10567,15 @@ msgstr "Как отображать миниатюры"
 msgid "View Sections"
 msgstr "Как отображать разделы меню"
 
-#: httpdfunc.h:4111 skin_default_skin.xml.h:828
+#: httpdfunc.h:4111 skin_default_skin.xml.h:807
 msgid "Virtualzap Timeout"
 msgstr "Виртуальное переключение"
 
-#: skin_default_skin.xml.h:832
+#: skin_default_skin.xml.h:808
 msgid "Vol off"
 msgstr "Громкость выкл"
 
-#: skin_default_skin.xml.h:833
+#: skin_default_skin.xml.h:809
 msgid "Voltage Mode"
 msgstr "Режим напряжения"
 
@@ -10613,11 +10613,11 @@ msgstr "Громкость вверх"
 msgid "Volume: "
 msgstr "Громкость "
 
-#: httpdfunc.h:3714 skin_default_skin.xml.h:834
+#: httpdfunc.h:3714 skin_default_skin.xml.h:810
 msgid "Volumebar Timeout"
 msgstr "Время показа уровня громкости (Сек)"
 
-#: skin_default_skin.xml.h:835
+#: skin_default_skin.xml.h:811
 msgid "Votes"
 msgstr "Голосов"
 
@@ -10625,7 +10625,7 @@ msgstr "Голосов"
 msgid "Votes:"
 msgstr "Голосов"
 
-#: skin_default_skin.xml.h:837
+#: skin_default_skin.xml.h:813
 msgid "W"
 msgstr ""
 
@@ -10641,7 +10641,7 @@ msgstr "Информация о WiFi"
 msgid "WLAN LOG"
 msgstr "Лог WLAN"
 
-#: skin_default_skin.xml.h:843
+#: skin_default_skin.xml.h:819
 msgid "WLAN Settings"
 msgstr "Параметры WLAN"
 
@@ -10671,7 +10671,7 @@ msgstr ""
 msgid "WM2014 Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:844
+#: skin_default_skin.xml.h:820
 msgid "WOL"
 msgstr ""
 
@@ -10683,7 +10683,7 @@ msgstr ""
 msgid "WPA2"
 msgstr ""
 
-#: skin_default_skin.xml.h:846
+#: skin_default_skin.xml.h:822
 msgid "WSS Mode"
 msgstr "Режим WSS"
 
@@ -10699,7 +10699,7 @@ msgstr ""
 msgid "Wait"
 msgstr "Ждите!"
 
-#: skin_default_skin.xml.h:838
+#: skin_default_skin.xml.h:814
 msgid "Wait for cam ready"
 msgstr "Ждать конца чтения"
 
@@ -10711,15 +10711,15 @@ msgstr "Дождитесь окончания сканирования кана�
 msgid "Wait for connect or press EXIT"
 msgstr "Подождите, пока соединение не будет установлено. Или нажмите Exit"
 
-#: skin_default_skin.xml.h:840
+#: skin_default_skin.xml.h:816
 msgid "Wakeup A/V Receiver"
 msgstr "Ресивер Wakeup A/V"
 
-#: skin_default_skin.xml.h:841
+#: skin_default_skin.xml.h:817
 msgid "Wakeup TV"
 msgstr "Wakeup ТВ"
 
-#: skin_default_skin.xml.h:839
+#: skin_default_skin.xml.h:815
 msgid "Wakeup all connected devices"
 msgstr "Пробуждение всех подключенных устройств"
 
@@ -10764,7 +10764,7 @@ msgstr "Веб-браузер "
 msgid "Wed"
 msgstr ""
 
-#: global.h:6176 global.h:6186 rectimer.h:1083 skin_default_skin.xml.h:842
+#: global.h:6176 global.h:6186 rectimer.h:1083 skin_default_skin.xml.h:818
 msgid "Wednesday"
 msgstr "Среда"
 
@@ -10857,7 +10857,7 @@ msgstr ""
 msgid "Write error"
 msgstr "Ошибка записи"
 
-#: skin_default_skin.xml.h:845
+#: skin_default_skin.xml.h:821
 msgid "Writer"
 msgstr "Писатель"
 
@@ -10866,7 +10866,7 @@ msgstr "Писатель"
 msgid "Writers:"
 msgstr "Авторы"
 
-#: skin_default_skin.xml.h:848
+#: skin_default_skin.xml.h:824
 msgid "X"
 msgstr ""
 
@@ -10910,7 +10910,7 @@ msgstr "ХХХ-Видео"
 msgid "Xupnpd Server"
 msgstr ""
 
-#: skin_default_skin.xml.h:850
+#: skin_default_skin.xml.h:826
 msgid "Y"
 msgstr ""
 
@@ -10918,7 +10918,7 @@ msgstr ""
 msgid "Y-Resolution"
 msgstr "Y-разрешение"
 
-#: skin_default_skin.xml.h:851
+#: skin_default_skin.xml.h:827
 msgid "Year"
 msgstr ""
 
@@ -10959,7 +10959,7 @@ msgstr ""
 msgid "Youtube"
 msgstr "YouTube"
 
-#: skin_default_skin.xml.h:853
+#: skin_default_skin.xml.h:829
 msgid "Z"
 msgstr ""
 
@@ -12011,7 +12011,7 @@ msgstr ""
 msgid "menuprotect"
 msgstr "Защита меню"
 
-#: skin_default_skin.xml.h:855 webif_help.h:51
+#: skin_default_skin.xml.h:831 webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -13023,7 +13023,7 @@ msgstr ""
 msgid "system_backup_restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:857
+#: skin_default_skin.xml.h:833
 msgid "system_infos"
 msgstr ""
 
@@ -13035,7 +13035,7 @@ msgstr ""
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:856 webif_help.h:96
+#: skin_default_skin.xml.h:832 webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
@@ -13353,78 +13353,6 @@ msgstr "VFD"
 msgid "vfdisplay"
 msgstr "Дисплей ресивера"
 
-#: skin_default_skin.xml.h:800
-msgid "vi1"
-msgstr ""
-
-#: skin_default_skin.xml.h:801
-msgid "vi10"
-msgstr ""
-
-#: skin_default_skin.xml.h:802
-msgid "vi11"
-msgstr ""
-
-#: skin_default_skin.xml.h:803
-msgid "vi12"
-msgstr ""
-
-#: skin_default_skin.xml.h:804
-msgid "vi13"
-msgstr ""
-
-#: skin_default_skin.xml.h:805
-msgid "vi14"
-msgstr ""
-
-#: skin_default_skin.xml.h:806
-msgid "vi15"
-msgstr ""
-
-#: skin_default_skin.xml.h:807
-msgid "vi16"
-msgstr ""
-
-#: skin_default_skin.xml.h:808
-msgid "vi2"
-msgstr ""
-
-#: skin_default_skin.xml.h:809
-msgid "vi3"
-msgstr ""
-
-#: skin_default_skin.xml.h:810
-msgid "vi4"
-msgstr ""
-
-#: skin_default_skin.xml.h:811
-msgid "vi5"
-msgstr ""
-
-#: skin_default_skin.xml.h:812
-msgid "vi6"
-msgstr ""
-
-#: skin_default_skin.xml.h:813
-msgid "vi7"
-msgstr ""
-
-#: skin_default_skin.xml.h:814
-msgid "vi8"
-msgstr ""
-
-#: skin_default_skin.xml.h:815
-msgid "vi9"
-msgstr ""
-
-#: skin_default_skin.xml.h:816
-msgid "vicopyright"
-msgstr ""
-
-#: skin_default_skin.xml.h:817
-msgid "videgree"
-msgstr ""
-
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
 msgstr "Разрешение изображения"
@@ -13449,30 +13377,6 @@ msgstr ""
 msgid "videosettings"
 msgstr ""
 
-#: skin_default_skin.xml.h:825
-msgid "vildangle"
-msgstr ""
-
-#: skin_default_skin.xml.h:826
-msgid "vimicro"
-msgstr ""
-
-#: skin_default_skin.xml.h:827
-msgid "vir"
-msgstr ""
-
-#: skin_default_skin.xml.h:829
-msgid "visection"
-msgstr ""
-
-#: skin_default_skin.xml.h:830
-msgid "visup2"
-msgstr ""
-
-#: skin_default_skin.xml.h:831
-msgid "visup3"
-msgstr ""
-
 #: tpk_showname.h:199
 msgid "vizcam 1.04"
 msgstr ""
@@ -13485,7 +13389,7 @@ msgstr "Громкость"
 msgid "vs"
 msgstr ""
 
-#: skin_default_skin.xml.h:836
+#: skin_default_skin.xml.h:812
 msgid "w"
 msgstr ""
 
@@ -13565,7 +13469,7 @@ msgstr "В рабочие дни"
 msgid "wsize"
 msgstr "Размер буфера записи"
 
-#: skin_default_skin.xml.h:847
+#: skin_default_skin.xml.h:823
 msgid "x"
 msgstr ""
 
@@ -13593,7 +13497,7 @@ msgstr "Xupnpd не остановлен"
 msgid "xupnpd started."
 msgstr "Xupnpd запущен"
 
-#: skin_default_skin.xml.h:849
+#: skin_default_skin.xml.h:825
 msgid "y"
 msgstr ""
 
@@ -13666,7 +13570,7 @@ msgstr ""
 msgid "yes / vzap endless"
 msgstr ""
 
-#: skin_default_skin.xml.h:852
+#: skin_default_skin.xml.h:828
 msgid "z"
 msgstr ""
 
