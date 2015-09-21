@@ -741,7 +741,7 @@ int strfreetype(char* string, FT_ULong* cret)
 			len = 1; //no utf8 char
 			break;
 		}
-		else if(cur >= 0x80 && cur < 0xC0) // disable spezial chars from utf http://www.utf8-zeichentabelle.de/unicode-utf8-table.pl
+		else if(cur >= 0xC0) // 0x80 disable spezial chars from utf http://www.utf8-zeichentabelle.de/unicode-utf8-table.pl
 		{
 			--len;
 			if(len >=0 )
