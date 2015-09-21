@@ -74,3 +74,10 @@ RAN 1 Dessau (German)#rtmp://62.113.210.250/medienasa-live/ran1_high#http://atem
 RBW (German)#rtmp://62.113.210.250/medienasa-live/rbw_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 RFH TV (German)#rtmp://62.113.210.250/medienasa-live/RFH_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 TeleBärn (Schweiz)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Wine Channel TV(English)#rtmp://mi2.gv.filmon.com:8086/live/263.high.stream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+UNRELIABLE SOURCES(English)#rtmp://mi2.gv.filmon.com:8086/live/239.high.stream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+RSquared(English)#rtmp://mi2.gv.filmon.com:8086/live/256.high.stream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Motorz(English)#rtmp://mi2.gv.filmon.com:8086/live/262.high.stream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+FilmOn Music Legends TV(English)#rtmp://mi2.gv.filmon.com:8086/live/257.high.stream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+FilmOn Martial Arts(English)#rtmp://mi2.gv.filmon.com:8086/live/10.high.stream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+FilmOn Jazz and Blues(English)#rtmp://mi2.gv.filmon.com:8086/live/530.high.stream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
