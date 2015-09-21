@@ -13826,15 +13826,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "vimicro"
-#~ msgstr "µ"
-
-#~ msgid "visection"
-#~ msgstr "§"
-
-#~ msgid "visup2"
-#~ msgstr "²"
-
-#~ msgid "visup3"
-#~ msgstr "³"
