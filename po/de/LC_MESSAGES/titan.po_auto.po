@@ -13692,7 +13692,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:826
 msgid "vimicro"
-msgstr ""
+msgstr "µ"
 
 #: skin_default_skin.xml.h:827
 msgid "vir"
@@ -13700,15 +13700,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:829
 msgid "visection"
-msgstr ""
+msgstr "§"
 
 #: skin_default_skin.xml.h:830
 msgid "visup2"
-msgstr ""
+msgstr "²"
 
 #: skin_default_skin.xml.h:831
 msgid "visup3"
-msgstr ""
+msgstr "³"
 
 #: tpk_showname.h:199
 msgid "vizcam 1.04"
