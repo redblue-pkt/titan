@@ -4316,7 +4316,7 @@ msgstr ""
 msgid "Hello World !"
 msgstr ""
 
-#: httpdfunc.h:5162 skin_default_skin.xml.h:830 webif_index.atemio510.h:16
+#: httpdfunc.h:5162 skin_default_skin.xml.h:854 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -10497,11 +10497,11 @@ msgstr ""
 msgid "Vertikal"
 msgstr "Vertikaal"
 
-#: skin_default_skin.xml.h:800 tmc.h:399
+#: skin_default_skin.xml.h:818 tmc.h:399
 msgid "Video"
 msgstr "Film"
 
-#: skin_default_skin.xml.h:804
+#: skin_default_skin.xml.h:822
 msgid "Video PID:"
 msgstr ""
 
@@ -10509,7 +10509,7 @@ msgstr ""
 msgid "Video Player"
 msgstr "Film afspelen"
 
-#: play.h:639 skin_default_skin.xml.h:805
+#: play.h:639 skin_default_skin.xml.h:823
 msgid "Video Settings"
 msgstr "Beeldscherm instellingen"
 
@@ -10525,15 +10525,15 @@ msgstr ""
 msgid "Video postet"
 msgstr "Video gepost"
 
-#: skin_default_skin.xml.h:801
+#: skin_default_skin.xml.h:819
 msgid "VideoMode Aspect Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:802
+#: skin_default_skin.xml.h:820
 msgid "VideoMode Resolution Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:803
+#: skin_default_skin.xml.h:821
 msgid "VideoMode Settings"
 msgstr ""
 
@@ -10549,7 +10549,7 @@ msgstr "Beeld instelling voor SCART moet 576i zijn"
 msgid "Videotune"
 msgstr "Beeld instellingen"
 
-#: skin_default_skin.xml.h:806
+#: skin_default_skin.xml.h:824
 msgid "Vietnamese"
 msgstr ""
 
@@ -10566,15 +10566,15 @@ msgstr "Cover zien"
 msgid "View Sections"
 msgstr "Secties zien"
 
-#: httpdfunc.h:4111 skin_default_skin.xml.h:807
+#: httpdfunc.h:4111 skin_default_skin.xml.h:828
 msgid "Virtualzap Timeout"
 msgstr ""
 
-#: skin_default_skin.xml.h:808
+#: skin_default_skin.xml.h:832
 msgid "Vol off"
 msgstr ""
 
-#: skin_default_skin.xml.h:809
+#: skin_default_skin.xml.h:833
 msgid "Voltage Mode"
 msgstr ""
 
@@ -10612,11 +10612,11 @@ msgstr ""
 msgid "Volume: "
 msgstr ""
 
-#: httpdfunc.h:3714 skin_default_skin.xml.h:810
+#: httpdfunc.h:3714 skin_default_skin.xml.h:834
 msgid "Volumebar Timeout"
 msgstr "Tijd totdat volume indicator dimt"
 
-#: skin_default_skin.xml.h:811
+#: skin_default_skin.xml.h:835
 msgid "Votes"
 msgstr ""
 
@@ -10624,7 +10624,7 @@ msgstr ""
 msgid "Votes:"
 msgstr "Stemmen:"
 
-#: skin_default_skin.xml.h:813
+#: skin_default_skin.xml.h:837
 msgid "W"
 msgstr ""
 
@@ -10640,7 +10640,7 @@ msgstr "WLAN informatie"
 msgid "WLAN LOG"
 msgstr ""
 
-#: skin_default_skin.xml.h:819
+#: skin_default_skin.xml.h:843
 msgid "WLAN Settings"
 msgstr ""
 
@@ -10672,7 +10672,7 @@ msgstr ""
 msgid "WM2014 Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:820
+#: skin_default_skin.xml.h:844
 msgid "WOL"
 msgstr ""
 
@@ -10684,7 +10684,7 @@ msgstr ""
 msgid "WPA2"
 msgstr ""
 
-#: skin_default_skin.xml.h:822
+#: skin_default_skin.xml.h:846
 msgid "WSS Mode"
 msgstr ""
 
@@ -10700,7 +10700,7 @@ msgstr ""
 msgid "Wait"
 msgstr "Wacht"
 
-#: skin_default_skin.xml.h:814
+#: skin_default_skin.xml.h:838
 msgid "Wait for cam ready"
 msgstr ""
 
@@ -10712,15 +10712,15 @@ msgstr "Wacht op beëindigen zenders zoeken"
 msgid "Wait for connect or press EXIT"
 msgstr "Wacht op verbinding of druk op EXIT"
 
-#: skin_default_skin.xml.h:816
+#: skin_default_skin.xml.h:840
 msgid "Wakeup A/V Receiver"
 msgstr ""
 
-#: skin_default_skin.xml.h:817
+#: skin_default_skin.xml.h:841
 msgid "Wakeup TV"
 msgstr ""
 
-#: skin_default_skin.xml.h:815
+#: skin_default_skin.xml.h:839
 msgid "Wakeup all connected devices"
 msgstr ""
 
@@ -10765,7 +10765,7 @@ msgstr ""
 msgid "Wed"
 msgstr ""
 
-#: global.h:6176 global.h:6186 rectimer.h:1083 skin_default_skin.xml.h:818
+#: global.h:6176 global.h:6186 rectimer.h:1083 skin_default_skin.xml.h:842
 msgid "Wednesday"
 msgstr "Woensdag"
 
@@ -10858,7 +10858,7 @@ msgstr ""
 msgid "Write error"
 msgstr "Schrijf fout"
 
-#: skin_default_skin.xml.h:821
+#: skin_default_skin.xml.h:845
 msgid "Writer"
 msgstr ""
 
@@ -10867,7 +10867,7 @@ msgstr ""
 msgid "Writers:"
 msgstr "Schrijvers:"
 
-#: skin_default_skin.xml.h:824
+#: skin_default_skin.xml.h:848
 msgid "X"
 msgstr ""
 
@@ -10911,7 +10911,7 @@ msgstr ""
 msgid "Xupnpd Server"
 msgstr ""
 
-#: skin_default_skin.xml.h:826
+#: skin_default_skin.xml.h:850
 msgid "Y"
 msgstr ""
 
@@ -10919,7 +10919,7 @@ msgstr ""
 msgid "Y-Resolution"
 msgstr "Y-Resolutie"
 
-#: skin_default_skin.xml.h:827
+#: skin_default_skin.xml.h:851
 msgid "Year"
 msgstr ""
 
@@ -10959,7 +10959,7 @@ msgstr ""
 msgid "Youtube"
 msgstr ""
 
-#: skin_default_skin.xml.h:829
+#: skin_default_skin.xml.h:853
 msgid "Z"
 msgstr ""
 
@@ -12011,7 +12011,7 @@ msgstr ""
 msgid "menuprotect"
 msgstr ""
 
-#: skin_default_skin.xml.h:831 webif_help.h:51
+#: skin_default_skin.xml.h:855 webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -13020,7 +13020,7 @@ msgstr ""
 msgid "system_backup_restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:833
+#: skin_default_skin.xml.h:857
 msgid "system_infos"
 msgstr ""
 
@@ -13032,7 +13032,7 @@ msgstr ""
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:832 webif_help.h:96
+#: skin_default_skin.xml.h:856 webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
@@ -13350,6 +13350,78 @@ msgstr "Datum"
 msgid "vfdisplay"
 msgstr ""
 
+#: skin_default_skin.xml.h:800
+msgid "vi1"
+msgstr ""
+
+#: skin_default_skin.xml.h:801
+msgid "vi10"
+msgstr ""
+
+#: skin_default_skin.xml.h:802
+msgid "vi11"
+msgstr ""
+
+#: skin_default_skin.xml.h:803
+msgid "vi12"
+msgstr ""
+
+#: skin_default_skin.xml.h:804
+msgid "vi13"
+msgstr ""
+
+#: skin_default_skin.xml.h:805
+msgid "vi14"
+msgstr ""
+
+#: skin_default_skin.xml.h:806
+msgid "vi15"
+msgstr ""
+
+#: skin_default_skin.xml.h:807
+msgid "vi16"
+msgstr ""
+
+#: skin_default_skin.xml.h:808
+msgid "vi2"
+msgstr ""
+
+#: skin_default_skin.xml.h:809
+msgid "vi3"
+msgstr ""
+
+#: skin_default_skin.xml.h:810
+msgid "vi4"
+msgstr ""
+
+#: skin_default_skin.xml.h:811
+msgid "vi5"
+msgstr ""
+
+#: skin_default_skin.xml.h:812
+msgid "vi6"
+msgstr ""
+
+#: skin_default_skin.xml.h:813
+msgid "vi7"
+msgstr ""
+
+#: skin_default_skin.xml.h:814
+msgid "vi8"
+msgstr ""
+
+#: skin_default_skin.xml.h:815
+msgid "vi9"
+msgstr ""
+
+#: skin_default_skin.xml.h:816
+msgid "vicopyright"
+msgstr ""
+
+#: skin_default_skin.xml.h:817
+msgid "videgree"
+msgstr ""
+
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
 msgstr "Video modus"
@@ -13374,6 +13446,30 @@ msgstr ""
 msgid "videosettings"
 msgstr ""
 
+#: skin_default_skin.xml.h:825
+msgid "vildangle"
+msgstr ""
+
+#: skin_default_skin.xml.h:826
+msgid "vimicro"
+msgstr ""
+
+#: skin_default_skin.xml.h:827
+msgid "vir"
+msgstr ""
+
+#: skin_default_skin.xml.h:829
+msgid "visection"
+msgstr ""
+
+#: skin_default_skin.xml.h:830
+msgid "visup2"
+msgstr ""
+
+#: skin_default_skin.xml.h:831
+msgid "visup3"
+msgstr ""
+
 #: tpk_showname.h:199
 msgid "vizcam 1.04"
 msgstr ""
@@ -13386,7 +13482,7 @@ msgstr ""
 msgid "vs"
 msgstr ""
 
-#: skin_default_skin.xml.h:812
+#: skin_default_skin.xml.h:836
 msgid "w"
 msgstr ""
 
@@ -13466,7 +13562,7 @@ msgstr "Werkdagen"
 msgid "wsize"
 msgstr ""
 
-#: skin_default_skin.xml.h:823
+#: skin_default_skin.xml.h:847
 msgid "x"
 msgstr ""
 
@@ -13492,7 +13588,7 @@ msgstr ""
 msgid "xupnpd started."
 msgstr ""
 
-#: skin_default_skin.xml.h:825
+#: skin_default_skin.xml.h:849
 msgid "y"
 msgstr ""
 
@@ -13565,7 +13661,7 @@ msgstr "Ja / VZAP 2 sek"
 msgid "yes / vzap endless"
 msgstr "Ja / VZAP oneindig"
 
-#: skin_default_skin.xml.h:828
+#: skin_default_skin.xml.h:852
 msgid "z"
 msgstr ""
 
