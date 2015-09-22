@@ -7310,6 +7310,10 @@ msgstr "Порт RGUID"
 msgid "RS232"
 msgstr ""
 
+#: tithek_mainmenu.h:37
+msgid "RTL Radio - die besten Hits aller Zeiten"
+msgstr ""
+
 #: tithek_mainmenu.h:36
 msgid "RTL-Now"
 msgstr ""
@@ -8333,41 +8337,41 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:599 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:418 tithek_global.h:420 tithek_mainmenu.h:38 tmdb.h:898
+#: tithek_global.h:418 tithek_global.h:420 tithek_mainmenu.h:39 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Поиск"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:40
 msgid "Search (10)"
 msgstr "Поиск (10)"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:41
 msgid "Search (20)"
 msgstr "Поиск (20)"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:42
 msgid "Search (25)"
 msgstr "Поиск (25)"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:43
 msgid "Search (50)"
 msgstr "Поиск (50)"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:45
 msgid "Search (local)"
 msgstr "Поиск (Локально)"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:44
 msgid "Search Cast"
 msgstr "Тип поиска"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:46
 msgid "Search Movie"
 msgstr "Поиск фильмов"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:47
 msgid "Search Serie"
 msgstr "Поиск серий"
 
@@ -8969,7 +8973,7 @@ msgstr "Выбор менеджера"
 msgid "Softcam selection:"
 msgstr "Выбор эмулятора"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:48
 msgid "Solarmovie"
 msgstr ""
 
@@ -9276,7 +9280,7 @@ msgstr ""
 msgid "Sunday"
 msgstr "Воскресенье"
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:49
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9727,7 +9731,7 @@ msgstr "Время до отключения (Мин)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Время ожидания автоматического заполнения буфера"
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:50
 msgid "TimeTv"
 msgstr "TimeTV"
 
@@ -9840,7 +9844,7 @@ msgstr "Часовой пояс"
 msgid "Tint"
 msgstr "Оттенок"
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:51
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -9973,7 +9977,7 @@ msgstr "Тональный режим"
 msgid "Top"
 msgstr "ТОР"
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:52
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10417,7 +10421,7 @@ msgstr "Настройки отображения файлов видео"
 msgid "VLC Player"
 msgstr "Плеер VLC"
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:53
 msgid "VOX-Now"
 msgstr ""
 
@@ -10833,11 +10837,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:54
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:54
+#: tithek_mainmenu.h:55
 msgid "XXX-XVIDEOS"
 msgstr "ХХХ-Видео"
 
@@ -10890,7 +10894,7 @@ msgstr ""
 "\n"
 "Выключить ресивер? "
 
-#: tithek_mainmenu.h:55
+#: tithek_mainmenu.h:56
 msgid "Youtube"
 msgstr "YouTube"
 
@@ -10898,7 +10902,7 @@ msgstr "YouTube"
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:56
+#: tithek_mainmenu.h:57
 msgid "ZDF"
 msgstr ""
 
@@ -12539,7 +12543,7 @@ msgstr "Только чтение"
 msgid "rsize"
 msgstr "Размер буфера чтения"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:38
 msgid "rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp"
 msgstr ""
 
