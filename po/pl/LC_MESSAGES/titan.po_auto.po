@@ -7197,6 +7197,10 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
+#: tithek_mainmenu.h:37
+msgid "RTL Radio - die besten Hits aller Zeiten"
+msgstr ""
+
 #: tithek_mainmenu.h:36
 msgid "RTL-Now"
 msgstr ""
@@ -8218,41 +8222,41 @@ msgstr ""
 #: rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507 rtl2now.h:569
 #: rtl2now.h:571 skin_default_skin.xml.h:599 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:418 tithek_global.h:420 tithek_mainmenu.h:38 tmdb.h:898
+#: tithek_global.h:418 tithek_global.h:420 tithek_mainmenu.h:39 tmdb.h:898
 #: tvtoast.h:837 tvtoast.h:839 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:352 youtube.h:354 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Szukaj kanał"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:40
 msgid "Search (10)"
 msgstr ""
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:41
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:42
 msgid "Search (25)"
 msgstr ""
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:43
 msgid "Search (50)"
 msgstr ""
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:45
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:44
 msgid "Search Cast"
 msgstr ""
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:46
 msgid "Search Movie"
 msgstr ""
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:47
 msgid "Search Serie"
 msgstr ""
 
@@ -8852,7 +8856,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Wybór EMU"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:48
 msgid "Solarmovie"
 msgstr ""
 
@@ -9159,7 +9163,7 @@ msgstr ""
 msgid "Sunday"
 msgstr "Niedziela"
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:49
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9602,7 +9606,7 @@ msgstr "Czas do uśpienia"
 msgid "Time to wait after seek for fill buffer"
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:50
 msgid "TimeTv"
 msgstr "Timer"
 
@@ -9711,7 +9715,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:51
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -9844,7 +9848,7 @@ msgstr ""
 msgid "Top"
 msgstr "Góra"
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:52
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10281,7 +10285,7 @@ msgstr "USTAWIENIA OBRAZU"
 msgid "VLC Player"
 msgstr "Odtwarzacz VLC"
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:53
 msgid "VOX-Now"
 msgstr ""
 
@@ -10695,11 +10699,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:54
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:54
+#: tithek_mainmenu.h:55
 msgid "XXX-XVIDEOS"
 msgstr "OBRAZ"
 
@@ -10749,7 +10753,7 @@ msgid ""
 "Stop the box??? "
 msgstr ""
 
-#: tithek_mainmenu.h:55
+#: tithek_mainmenu.h:56
 msgid "Youtube"
 msgstr ""
 
@@ -10757,7 +10761,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:56
+#: tithek_mainmenu.h:57
 msgid "ZDF"
 msgstr ""
 
@@ -12398,7 +12402,7 @@ msgstr "o"
 msgid "rsize"
 msgstr ""
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:38
 msgid "rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp"
 msgstr ""
 
