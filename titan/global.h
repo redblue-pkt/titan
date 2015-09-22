@@ -4916,7 +4916,16 @@ char* getxmlentry(char *line, char *searchstr)
 	if(buf[0] == '"')
 	{
 		buf = buf + 1;
-		buf2 = strchr(buf, '"');
+		if(buf[0] == '\\')
+		{	
+			buf = buf + 1;
+			if(buf[0] == '"')
+				buf2 = strchr(buf+1, '"');
+			else
+				buf2 = strchr(buf, '"');
+		}
+		else
+			buf2 = strchr(buf, '"');
 		if(buf2 == NULL)
 		{
 			err("strchr returns NULL");
