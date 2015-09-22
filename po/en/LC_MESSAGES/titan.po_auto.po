@@ -11022,9 +11022,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Aktion after"
-#~ msgstr "Action after"
-
-#~ msgid "internet"
-#~ msgstr "Internet"
