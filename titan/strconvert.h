@@ -710,12 +710,13 @@ char* strutf8(struct transponder* tpnode, char *data, int len, int table, int fr
 
 int strfreetype(char* string, FT_ULong* cret)
 {
-	int ret = 0, len = 0;
+	int ret = 0, len = 0, count = 0;
 	unsigned char cur = 0;
 	char* tmpstr = string;
 
 	while(*string)
 	{
+		count++;
 		cur = *string++ & 0xFF;
 
 		if(cur >= 0xC0)
@@ -741,7 +742,7 @@ int strfreetype(char* string, FT_ULong* cret)
 			len = 1; //no utf8 char
 			break;
 		}
-		else if(cur >= 0x80)
+		else if(cur >= 0x80 && count > 1)
 		{
 			--len;
 			if(len >=0 )
