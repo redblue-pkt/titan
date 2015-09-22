@@ -4938,6 +4938,22 @@ char* getxmlentry(char *line, char *searchstr)
 			return NULL;
 		}
 	}
+	else if(buf[0] == '\'')
+	{
+		buf = buf + 1;
+		buf2 = strchr(buf, '\'');
+		if(buf2 == NULL)
+		{
+			err("strchr returns NULL");
+			return NULL;
+		}
+		buf1 = strndup(buf, buf2 - buf);
+		if(buf1 == NULL)
+		{
+			err("strndup failed");
+			return NULL;
+		}
+	}
 	else
 	{
 		buf2 = strchr(buf, ' ');
