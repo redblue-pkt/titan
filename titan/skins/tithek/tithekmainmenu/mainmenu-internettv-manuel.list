@@ -52,14 +52,14 @@ ARD (512x288) (German)#rtsp://daserste.edges.wowza.gl-systemhaus.de/live/mp4:das
 ARD (960x544) (German)#rtsp://daserste.edges.wowza.gl-systemhaus.de/live/mp4:daserste_int_1600#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 Vizion Plus#rtmp://live.vizionplus.tv:1935/live/livestream2#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 Rouge TV (Music) (Switzerland)#rtsp://rtmp.infomaniak.ch/livecast/rougetv#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
-TeleBärn (Switzerland)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
+TeleBaern (Switzerland)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 NDTV (English)#http://bglive-a.bitgravity.com/ndtv/247hi/live/native#http://atemio.dyndns.tv/mediathek/menu/tv.city.crossroads.(live.webcam).jpg#internettv_26.jpg#Internet TV#2
 C TV (English)#http://cnmg.live.cdn.bitgravity.com/cnmg/live/ctv#http://atemio.dyndns.tv/mediathek/menu/tv.city.crossroads.(live.webcam).jpg#internettv_26.jpg#Internet TV#2
 Sunrise Music (Music)#http://wtv.cores.biz/relay/sunrise.flv#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 BLK online TV Burgenlandkreis (german) (Music)#rtmp://62.113.210.250/medienasa-live/BLKonline_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 bw family.tv (German)#rtmp://live.bwfamily.tv:1935/rtplive/vlc.sdp#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 Deluxe Music TV (German)#rtmp://flash.cdn.deluxemusic.tv/deluxemusic.tv-live/web_850.stream#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
-Elbekanal Schönebeck (German)#rtmp://62.113.210.250/medienasa-live/elbe_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
+Elbekanal Schoenebeck (German)#rtmp://62.113.210.250/medienasa-live/elbe_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 Filstalwelle (German)#rtmp://62.113.210.27/filstalwelle-live/livestream#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 LT - TV Baden Wuerttemberg (German)#rtmp://62.113.210.105/ltv-live/livestream#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 OK Dessau (German)#rtmp://62.113.210.250/medienasa-live/ok-dessau_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
@@ -68,12 +68,12 @@ OK Merseburg (German)#rtmp://62.113.210.250/medienasa-live/ok-merseburg_high#htt
 OK Salzwedel (German)#rtmp://62.113.210.250/medienasa-live/ok-salzwedel_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 OK Stendal (German)#rtmp://62.113.210.250/medienasa-live/ok-stendal_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 OK Wernigerode (German)#rtmp://62.113.210.250/medienasa-live/ok-wernigerode_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
-Punktum Südharz (German)#rtmp://62.113.210.250/medienasa-live/punktum_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
+Punktum Suedharz (German)#rtmp://62.113.210.250/medienasa-live/punktum_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 Ran 1 (German)#rtmp://62.113.210.250/medienasa-live/mp4:ran1_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 RAN 1 Dessau (German)#rtmp://62.113.210.250/medienasa-live/ran1_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 RBW (German)#rtmp://62.113.210.250/medienasa-live/rbw_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 RFH TV (German)#rtmp://62.113.210.250/medienasa-live/RFH_high#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
-TeleBärn (Schweiz)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
+TeleBaern (Schweiz)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 Wine Channel TV(English)#rtmp://mi2.gv.filmon.com:8086/live/263.high.stream#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 UNRELIABLE SOURCES(English)#rtmp://mi2.gv.filmon.com:8086/live/239.high.stream#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
 RSquared(English)#rtmp://mi2.gv.filmon.com:8086/live/256.high.stream#http://www.nationalflaggen.de/media/flags/animierte-flagge-deutschland.gif#category.animierte-flagge-deutschland.gif#Internet TV#2
