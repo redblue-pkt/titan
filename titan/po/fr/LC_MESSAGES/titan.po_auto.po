@@ -2101,7 +2101,7 @@ msgstr ""
 msgid "Choose your Internet Favorite from the following list"
 msgstr ""
 
-#: amazon.h:598
+#: amazon.h:599
 msgid "Choose your Language from the following list"
 msgstr ""
 
@@ -2129,7 +2129,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:739 ard.h:96 nowtv.h:108 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:740 ard.h:96 nowtv.h:108 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -3149,7 +3149,7 @@ msgstr ""
 msgid "EURONEWS (German)"
 msgstr ""
 
-#: about.h:9 amazon.h:698 autotimer.c:537 autotimer.c:543 autotimer.c:568
+#: about.h:9 amazon.h:699 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 channellist.h:945 channellist.h:947
 #: channellist.h:952 channellist.h:954 channellist.h:1038 cloudzilla.h:39
@@ -5779,7 +5779,7 @@ msgstr ""
 msgid "Menulist"
 msgstr "Liste de Menu"
 
-#: amazon.h:21 amazon.h:24 amazon.h:698 avsettings.h:331 betarobot.h:57
+#: amazon.h:21 amazon.h:24 amazon.h:699 avsettings.h:331 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
@@ -6241,7 +6241,7 @@ msgstr "Suivant"
 msgid "Next EPG Time"
 msgstr ""
 
-#: amazon.h:413
+#: amazon.h:414
 msgid "Next Page"
 msgstr ""
 
@@ -6378,7 +6378,7 @@ msgstr ""
 msgid "OE"
 msgstr "Ö"
 
-#: about.h:9 amazon.h:21 amazon.h:24 amazon.h:698 autotimer.c:537
+#: about.h:9 amazon.h:21 amazon.h:24 amazon.h:699 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
@@ -8502,7 +8502,7 @@ msgstr ""
 msgid "Script has no output or started in background."
 msgstr ""
 
-#: amazon.h:82 amazon.h:89 amazon.h:114 amazon.h:116 amazon.h:792 amazon.h:794
+#: amazon.h:82 amazon.h:89 amazon.h:114 amazon.h:116 amazon.h:793 amazon.h:795
 #: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
@@ -8664,7 +8664,7 @@ msgstr ""
 msgid "Section: "
 msgstr ""
 
-#: amazon.h:598
+#: amazon.h:599
 msgid "Select Language"
 msgstr ""
 
@@ -9373,7 +9373,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:739 ard.h:96 nowtv.h:108 tvtoast.h:808 youtube.h:204 zdf.h:112
+#: amazon.h:740 ard.h:96 nowtv.h:108 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
