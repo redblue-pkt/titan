@@ -252,6 +252,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			tmpstr = string_replace_all("<li class=\"\">", "\n<li class=\"\">", tmpstr, 1);
 //			tmpstr = string_replace_all("<li class=\"last-episode", "\n<li class=\"last-episode", tmpstr, 1);
 			tmpstr = string_replace_all("<li class=\"last-episode", "\n<li class=\"\">", tmpstr, 1);
+			tmpstr = string_replace_all("<li class=\"first-episode", "\n<li class=\"\">", tmpstr, 1);
 			tmpstr = string_replace_all("</div> </div>", "\n</div> </div>", tmpstr, 1);
 
 			
