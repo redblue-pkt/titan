@@ -100,6 +100,10 @@ int amazonlogin = 0;
 //flag 84   - amazon popularity.kids movie
 //flag 85   - amazon popularity.kids tv
 //flag 86   - amazon currently movie
+//flag 87   - amazon genre movie
+//flag 88   - amazon genre movie listed
+//flag 89   - amazon genre tv
+//flag 90   - amazon genre tv listed
 
 //flag 100  - all local search
 //flag 1000 - menu pincode
@@ -778,7 +782,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		}
 	}
 	
-	if((getconfigint("tithek_cover", NULL) == 1 && flag == 3) || (getconfigint("tithek_view", NULL) == 1 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 1 && flag == 0) || (getconfigint("tithek_view", NULL) == 1 && flag != 0))
 	{
 		height = 500;
 		width = 590;
@@ -789,7 +793,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 2;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 2 && flag == 3) || (getconfigint("tithek_view", NULL) == 2 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 2 && flag == 0) || (getconfigint("tithek_view", NULL) == 2 && flag != 0))
 	{
 		height = 280;
 		width = 390;
@@ -800,7 +804,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 6;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 3 && flag == 3) || (getconfigint("tithek_view", NULL) == 3 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 3 && flag == 0) || (getconfigint("tithek_view", NULL) == 3 && flag != 0))
 	{
 		height = 180;
 		width = 295;
@@ -811,7 +815,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 12;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 4 && flag == 3) || (getconfigint("tithek_view", NULL) == 4 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 4 && flag == 0) || (getconfigint("tithek_view", NULL) == 4 && flag != 0))
 	{
 		height = 140;
 		width = 235;
@@ -822,7 +826,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 20;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 5 && flag == 3) || (getconfigint("tithek_view", NULL) == 5 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 5 && flag == 0) || (getconfigint("tithek_view", NULL) == 5 && flag != 0))
 	{
 		height = 111;
 		width = 196;
@@ -833,7 +837,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 30;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 6 && flag == 3) || (getconfigint("tithek_view", NULL) == 6 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 6 && flag == 0) || (getconfigint("tithek_view", NULL) == 6 && flag != 0))
 	{
 		height = 50;
 		width = 1160;
@@ -2214,6 +2218,26 @@ why ?
 				else if(((struct tithek*)listbox->select->handle)->flag == 86)
 				{
 					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 10) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 87)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 11) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 88)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 12) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 89)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 13) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 90)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 14) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
