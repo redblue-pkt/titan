@@ -6914,6 +6914,10 @@ msgstr "Eröffnung: "
 msgid "OpenTV EPG"
 msgstr ""
 
+#: settings_autostart.h:603
+msgid "OpenVPN"
+msgstr ""
+
 #: tpk_description.h:111
 msgid "Openvpn Server Tool for external Network access"
 msgstr ""
@@ -12636,12 +12640,12 @@ msgstr "NFSD Kernel Server autostart"
 #: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
-#: settings_autostart.h:595 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:39
-#: tithek_settings.h:43 tithek_settings.h:47 tmc.h:531 tmc.h:535
-#: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
-#: xupnpd.h:30
+#: settings_autostart.h:595 settings_autostart.h:604
+#: settings_overclocking.h:214 settings_overclocking.h:234
+#: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:59
+#: timeshiftsettings.h:63 tithek_settings.h:39 tithek_settings.h:43
+#: tithek_settings.h:47 tmc.h:531 tmc.h:535 tunerconfig.h:184
+#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277 xupnpd.h:30
 msgid "no"
 msgstr "Nein"
 
@@ -14036,10 +14040,10 @@ msgstr "gelb"
 #: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
-#: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:40 tithek_settings.h:44
-#: tithek_settings.h:48 tmc.h:532 tmc.h:536 xupnpd.h:30
+#: settings_autostart.h:604 settings_overclocking.h:214
+#: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:93
+#: timeshiftsettings.h:58 timeshiftsettings.h:62 tithek_settings.h:40
+#: tithek_settings.h:44 tithek_settings.h:48 tmc.h:532 tmc.h:536 xupnpd.h:30
 msgid "yes"
 msgstr "Ja"
 
