@@ -64,6 +64,20 @@ void amazon_init(char* titheklink, char* tithekfile)
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
+//		writesys(tithekfile, "Genre (Movie)#/tmp/tithek/amazon.genre.movie.list#http://atemio.dyndns.tv/mediathek/menu/genre.movie.jpg#watchlist.movie.jpg#Amazon#87", 3);
+		tmpstr = ostrcat(_("Genre"), " (", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.genre.movie.list#http://atemio.dyndns.tv/mediathek/menu/genre.movie.jpg#watchlist.movie.jpg#Amazon#87", 0, 0);
+		writesys(tithekfile, tmpstr, 3);
+		free(tmpstr), tmpstr = NULL;
+
+//		writesys(tithekfile, "Genre (Series)#/tmp/tithek/amazon.genre.tv.list#http://atemio.dyndns.tv/mediathek/menu/genre.tv.jpg#watchlist.movie.jpg#Amazon#89", 3);
+		tmpstr = ostrcat(_("Genre"), " (", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.genre.tv.list#http://atemio.dyndns.tv/mediathek/menu/genre.tv.jpg#watchlist.movie.jpg#Amazon#89", 0, 0);
+		writesys(tithekfile, tmpstr, 3);
+		free(tmpstr), tmpstr = NULL;
+
 //		writesys(tithekfile, "Watchlist (Movie)#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 3);
 		tmpstr = ostrcat(_("Watchlist"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
@@ -187,6 +201,30 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			type = 75;
 			url = ostrcat("http://www.amazon.de/s/?n=4963842031&_encoding=UTF", NULL, 0, 0);
 		}
+		else if(flag == 11)
+		{
+			filename = ostrcat("genre.movie", NULL, 0, 0);
+			type = 88;
+			url = ostrcat("http://www.amazon.de/gp/search/other/?rh=n%3A3279204031%2Cn%3A!3010076031%2Cn%3A3356018031&pickerToList=theme_browse-bin&ie=UTF8", NULL, 0, 0);
+		}
+		else if(flag == 12)
+		{
+			filename = ostrcat("genre.movie.listed", NULL, 0, 0);
+			type = 75;
+			url = ostrcat(link, NULL, 0, 0);
+		}
+		else if(flag == 13)
+		{
+			filename = ostrcat("genre.tv", NULL, 0, 0);
+			type = 90;
+			url = ostrcat("http://www.amazon.de/gp/search/other/?rh=n%3A3279204031%2Cn%3A!3010076031%2Cn%3A3356019031&pickerToList=theme_browse-bin&ie=UTF8", NULL, 0, 0);
+		}
+		else if(flag == 14)
+		{
+			filename = ostrcat("genre.tv.listed", NULL, 0, 0);
+			type = 78;
+			url = ostrcat(link, NULL, 0, 0);
+		}
 
 ///////////////////////////
 		debug(99, "url: %s", url);
@@ -241,7 +279,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 			tmpstr = stringreplacechar(tmpstr, '\n', ' ');
 //			tmpstr = string_replace_all("\n", " ", tmpstr, 1);
 
-		if(flag == 0 || flag == 1 || flag == 5 || flag == 7 || flag == 8 || flag == 9)
+		if(flag == 0 || flag == 1 || flag == 5 || flag == 7 || flag == 8 || flag == 9 || flag == 12 || flag == 14)
 			tmpstr = string_replace_all("<li id=\\\"result_", "\n<li id=\\\"result_", tmpstr, 1);
 		else if(flag == 6 || flag == 10)
 			tmpstr = string_replace_all("<li id=\"result_", "\n<li id=\"result_", tmpstr, 1);
@@ -253,16 +291,20 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 //			tmpstr = string_replace_all("<li class=\"last-episode", "\n<li class=\"last-episode", tmpstr, 1);
 			tmpstr = string_replace_all("<li class=\"last-episode", "\n<li class=\"\">", tmpstr, 1);
 			tmpstr = string_replace_all("<li class=\"first-episode", "\n<li class=\"\">", tmpstr, 1);
-			tmpstr = string_replace_all("</div> </div>", "\n</div> </div>", tmpstr, 1);
-
-			
-			
+			tmpstr = string_replace_all("<li class=\"has-watched", "\n<li class=\"\">", tmpstr, 1);
+			tmpstr = string_replace_all("</div> </div>", "\n</div> </div>", tmpstr, 1);	
 		}
 		else if(flag == 3 || flag == 4)
 		{
 			tmpstr = string_replace_all("\n", " ", tmpstr, 1);
 			tmpstr = string_replace_all("<div class=\"grid-list-item downloadable_", "\n<div class=\"grid-list-item downloadable_", tmpstr, 1);
 			tmpstr = string_replace_all("<script type=\"text/javascript\">", "\n<script type=\"text/javascript\">", tmpstr, 1);	
+		}
+		else if(flag == 11 || flag == 13)
+		{
+			tmpstr = string_replace_all("\n", " ", tmpstr, 1);
+			tmpstr = string_replace_all("<a href=\"/s/ref=sr_in_", "\n<a href=\"/s/ref=sr_in_", tmpstr, 1);
+			tmpstr = string_replace_all("</div></div>", "\n</div></div>", tmpstr, 1);
 		}
 
 		titheklog(debuglevel, tmpstr3, NULL, NULL, NULL, tmpstr);		
@@ -340,9 +382,19 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
 					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
 				}
+				else if(ostrstr(ret1[j].part, "<a href=\"/s/ref=sr_in_") != NULL)
+				{
+					debug(99, "(%d) ret1[j].part: %s", j, ret1[j].part);
+					streamurl = string_resub("<a href=\"", "\">", ret1[j].part, 0);
+					streamurl = string_replace_all("/s/", "https://www.amazon.de/mn/search/ajax/", streamurl, 1);
+					streamurl = string_replace_all("&amp;", "&", streamurl, 1);
+					pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					atitle = string_resub("<span class=\"refinementLink\">", "</span>", ret1[j].part, 0);
+//					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
+					id = string_resub("bbn=", "&", streamurl, 0);
+				}
 
-
-				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL || ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL || ostrstr(ret1[j].part, "<span class=\\\"pagnLink\\\">") != NULL)
+				if(ostrstr(ret1[j].part, "result_") != NULL || ostrstr(ret1[j].part, "<li class=\"\">") != NULL || ostrstr(ret1[j].part, "<div class=\"grid-list-item downloadable_") != NULL || ostrstr(ret1[j].part, "<span class=\\\"pagnLink\\\">") != NULL || ostrstr(ret1[j].part, "<a href=\"/s/ref=sr_in_") != NULL)
 				{
 					if(atitle == NULL)
 					{
@@ -356,10 +408,17 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 						htmldecode2(atitle, atitle);
 
 					debug(99, "(%d) streamurl: %s", j, streamurl);
-					free(streamurl), streamurl = NULL;
-					streamurl = ostrcat("http://www.amazon.de/dp/", id, 0, 0);
-					streamurl = ostrcat(streamurl, "/?_encoding=UTF8", 1, 0);
-					debug(99, "(%d) streamurl changed: %s", j, streamurl);
+					if(flag != 11 && flag != 13)
+					{
+						free(streamurl), streamurl = NULL;					
+						streamurl = ostrcat("http://www.amazon.de/dp/", id, 0, 0);
+						streamurl = ostrcat(streamurl, "/?_encoding=UTF8", 1, 0);
+						debug(99, "(%d) streamurl changed: %s", j, streamurl);
+					}
+					else
+					{
+						debug(99, "(%d) streamurl: %s", j, streamurl);
+					}					
 					debug(99, "(%d) id: %s", j, id);
 					debug(99, "(%d) pic: %s", j, pic);
 					debug(99, "(%d) atitle: %s", j, atitle);
@@ -380,8 +439,10 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 						if(runtime != NULL)
 							line = ostrcat(line, runtime, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, id, 1, 0);
-//						line = ostrcat(line, streamurl, 1, 0);
+						if(flag == 11 || flag == 13)
+							line = ostrcat(line, streamurl, 1, 0);
+						else
+							line = ostrcat(line, id, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, pic, 1, 0);
 						line = ostrcat(line, "#amazon_search_", 1, 0);
