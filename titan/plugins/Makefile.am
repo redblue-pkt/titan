@@ -16,6 +16,7 @@ SUBDIRS = \
 	imdbapi \
 	instar \
 	keylock \
+	kravencfg \
 	lcdpearl1 \
 	lcdsamsung \
 	mboxinfo \

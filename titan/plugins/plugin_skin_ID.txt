@@ -17,6 +17,7 @@ optimize: 198
 dlna: 207
 weather: 208
 news: 210
+kravencfg: 211
 stock: 220
 streaminfo: 225
 tmc: 230
