@@ -1346,7 +1346,7 @@ msgstr ""
 msgid "Background2 Color"
 msgstr ""
 
-#: httpdfunc.h:6659 skin_default_skin.xml.h:81
+#: httpdfunc.h:6706 skin_default_skin.xml.h:81
 msgid "Backup"
 msgstr "Sao lưu"
 
@@ -1359,7 +1359,7 @@ msgstr "Thiết lập sao lưu"
 msgid "Backup / Restore Settings"
 msgstr "Sao lưu / Khôi phục cài đặt"
 
-#: global.h:7296 httpdfunc.h:6618 httpdfunc.h:6698 system_backup_restore.h:82
+#: global.h:7296 httpdfunc.h:6665 httpdfunc.h:6745 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "sao lưu thanh công"
 
@@ -1832,7 +1832,7 @@ msgstr "Không có EPG!"
 msgid "Can't get Streamurl !"
 msgstr "không có tín hiệu"
 
-#: extensions.h:444 httpdfunc.h:6477
+#: extensions.h:444 httpdfunc.h:6524
 msgid "Can't get all TPK index !"
 msgstr "không có tín hiệu"
 
@@ -1840,7 +1840,7 @@ msgstr "không có tín hiệu"
 msgid "Can't get data from facebook"
 msgstr ""
 
-#: extensions.h:190 httpdfunc.h:6063
+#: extensions.h:190 httpdfunc.h:6110
 msgid "Can't install Package. Package to big."
 msgstr ""
 
@@ -1911,7 +1911,7 @@ msgstr ""
 msgid "Can't start timeshift play !"
 msgstr "Không thể phát timeshift"
 
-#: extensions.h:448 httpdfunc.h:6489
+#: extensions.h:448 httpdfunc.h:6536
 msgid "Can't update all packages !"
 msgstr "Không thể phát lại!"
 
@@ -2085,7 +2085,7 @@ msgstr "Khóa trẻ em"
 msgid "Child safety"
 msgstr "Khóa trẻ em"
 
-#: extensions.h:184 httpdfunc.h:5995
+#: extensions.h:184 httpdfunc.h:6042
 msgid "Choice Install Medium"
 msgstr ""
 
@@ -3207,7 +3207,7 @@ msgstr ""
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
 #: harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
-#: httpdfunc.h:6170 httpdfunc.h:6435 httpdfunc.h:6506 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:6217 httpdfunc.h:6482 httpdfunc.h:6553 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -3923,11 +3923,11 @@ msgstr ""
 msgid "Format HDD"
 msgstr "Định dạng ổ cứng"
 
-#: httpdfunc.h:6772 httpdfunc.h:6823 restoredefault.h:65
+#: httpdfunc.h:6819 httpdfunc.h:6870 restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr ""
 
-#: httpdfunc.h:6767 httpdfunc.h:6814 restoredefault.h:64
+#: httpdfunc.h:6814 httpdfunc.h:6861 restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr ""
 
@@ -5008,7 +5008,7 @@ msgstr ""
 msgid "Install File Manager Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
-#: httpdfunc.h:6138 httpdfunc.h:6146 httpdfunc.h:6156
+#: httpdfunc.h:6185 httpdfunc.h:6193 httpdfunc.h:6203
 msgid "Install Log:"
 msgstr ""
 
@@ -5032,15 +5032,15 @@ msgstr "cài đặt trình duyệt web"
 msgid "Install success"
 msgstr "Cài đặt thành công!"
 
-#: extensions.h:157 httpdfunc.h:6029
+#: extensions.h:157 httpdfunc.h:6076
 msgid "Install to FLASH"
 msgstr "Cài đặt lỗi !"
 
-#: extensions.h:145 httpdfunc.h:6011
+#: extensions.h:145 httpdfunc.h:6058
 msgid "Install to MNT"
 msgstr "Cài đặt lỗi !"
 
-#: extensions.h:171 httpdfunc.h:6049
+#: extensions.h:171 httpdfunc.h:6096
 msgid "Install to SWAP"
 msgstr "Cài đặt lỗi !"
 
@@ -5845,8 +5845,8 @@ msgstr ""
 #: global.h:7247 global.h:7251 global.h:7258 global.h:7262 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
-#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5784 httpdfunc.h:6170
-#: httpdfunc.h:6435 httpdfunc.h:6506 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5831 httpdfunc.h:6217
+#: httpdfunc.h:6482 httpdfunc.h:6553 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -6326,19 +6326,19 @@ msgid ""
 "Create device?"
 msgstr ""
 
-#: httpdfunc.h:6250
+#: httpdfunc.h:6297
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr ""
 
-#: httpdfunc.h:6254
+#: httpdfunc.h:6301
 msgid "No Tpk Files Found on Media Devices."
 msgstr ""
 
-#: httpdfunc.h:5903 httpdfunc.h:6057 httpdfunc.h:6318
+#: httpdfunc.h:5950 httpdfunc.h:6104 httpdfunc.h:6365
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5839
+#: httpdfunc.h:5886
 msgid "No Tpk Sections Found."
 msgstr ""
 
@@ -6346,7 +6346,7 @@ msgstr ""
 msgid "No Tuner configured"
 msgstr "Cài đặt tuner"
 
-#: httpdfunc.h:6696 system_backup_restore.h:51
+#: httpdfunc.h:6743 system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -6457,8 +6457,8 @@ msgstr "E"
 #: harddisk.h:487 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304
-#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6170 httpdfunc.h:6435
-#: httpdfunc.h:6506 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6217 httpdfunc.h:6482
+#: httpdfunc.h:6553 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
@@ -7672,8 +7672,8 @@ msgstr ""
 msgid "Recall"
 msgstr ""
 
-#: httpdfunc.h:6806 httpdfunc.h:6816 httpdfunc.h:6825 httpdfunc.h:6915
-#: httpdfunc.h:6927 httpdfunc.h:6937 httpdfunc.h:6947 httpdfunc.h:6957
+#: httpdfunc.h:6853 httpdfunc.h:6863 httpdfunc.h:6872 httpdfunc.h:6962
+#: httpdfunc.h:6974 httpdfunc.h:6984 httpdfunc.h:6994 httpdfunc.h:7004
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
 msgstr "Đầu thu đang khởi động lại !!!"
@@ -7838,7 +7838,7 @@ msgstr "Xóa tập tin lưu trữ ?"
 msgid "Remove Cookies"
 msgstr ""
 
-#: httpdfunc.h:6411 httpdfunc.h:6421
+#: httpdfunc.h:6458 httpdfunc.h:6468
 msgid "Remove Log:"
 msgstr ""
 
@@ -7895,7 +7895,7 @@ msgstr "Chế độ lập lại"
 msgid "Repeat-On"
 msgstr "Lập lại"
 
-#: httpdfunc.h:7002 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
+#: httpdfunc.h:7049 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
 msgstr ""
@@ -7942,27 +7942,27 @@ msgstr "Khởi động lại mạng?"
 msgid "Restart Oscam ?"
 msgstr "Khởi động lại"
 
-#: httpdfunc.h:6654 skin_default_skin.xml.h:550
+#: httpdfunc.h:6701 skin_default_skin.xml.h:550
 msgid "Restore"
 msgstr "Khôi phục"
 
-#: httpdfunc.h:6866 httpdfunc.h:6925 skin_default_skin.xml.h:551
+#: httpdfunc.h:6913 httpdfunc.h:6972 skin_default_skin.xml.h:551
 msgid "Restore Default Bouquets"
 msgstr ""
 
-#: httpdfunc.h:6861 httpdfunc.h:6913 skin_default_skin.xml.h:553
+#: httpdfunc.h:6908 httpdfunc.h:6960 skin_default_skin.xml.h:553
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-#: httpdfunc.h:6871 httpdfunc.h:6935 skin_default_skin.xml.h:552
+#: httpdfunc.h:6918 httpdfunc.h:6982 skin_default_skin.xml.h:552
 msgid "Restore Default Channels"
 msgstr ""
 
-#: httpdfunc.h:6876 httpdfunc.h:6945 skin_default_skin.xml.h:554
+#: httpdfunc.h:6923 httpdfunc.h:6992 skin_default_skin.xml.h:554
 msgid "Restore Default Providers"
 msgstr ""
 
-#: httpdfunc.h:6881 httpdfunc.h:6955 skin_default_skin.xml.h:555
+#: httpdfunc.h:6928 httpdfunc.h:7002 skin_default_skin.xml.h:555
 msgid "Restore Default Sats"
 msgstr ""
 
@@ -7970,11 +7970,11 @@ msgstr ""
 msgid "Restore Settings"
 msgstr "Thiết lập khôi phục lại"
 
-#: httpdfunc.h:6855 webif_settings.h:4
+#: httpdfunc.h:6902 webif_settings.h:4
 msgid "Restore channel settings"
 msgstr ""
 
-#: httpdfunc.h:6755 httpdfunc.h:6762 httpdfunc.h:6804 restoredefault.h:63
+#: httpdfunc.h:6802 httpdfunc.h:6809 httpdfunc.h:6851 restoredefault.h:63
 #: restoredefault.h:67 skin_default_skin.xml.h:556 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Thiết lập mặc định"
@@ -8783,11 +8783,11 @@ msgstr ""
 msgid "Selected:"
 msgstr "Chọn sao lưu:"
 
-#: httpdfunc.h:6997 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
+#: httpdfunc.h:7044 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr ""
 
-#: httpdfunc.h:6988
+#: httpdfunc.h:7035
 msgid "Send Telnet Command"
 msgstr ""
 
@@ -8840,7 +8840,7 @@ msgstr "Tên server"
 msgid "Server Name"
 msgstr "Tên server"
 
-#: httpdfunc.h:6535 skin_default_skin.xml.h:608 webif_info.h:1
+#: httpdfunc.h:6582 skin_default_skin.xml.h:608 webif_info.h:1
 msgid "Service"
 msgstr "Dịch vụ"
 
@@ -8898,7 +8898,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
-#: httpdfunc.h:6643 skin_default_skin.xml.h:616 webif_system.h:4
+#: httpdfunc.h:6690 skin_default_skin.xml.h:616 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Thiết lập sao lưu/khôi phục lại"
 
@@ -9606,11 +9606,11 @@ msgstr " Hệ thống – Cập nhật qua USB (trực tuyến)"
 msgid "System - Usbupdate (tmp)"
 msgstr "Hệ thống – Cập nhật qua USB (tmp)"
 
-#: httpdfunc.h:6570 skin_default_skin.xml.h:683 webif_system.h:3
+#: httpdfunc.h:6617 skin_default_skin.xml.h:683 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:6612
+#: httpdfunc.h:6659
 msgid "System Backup on your Box not Supported"
 msgstr ""
 
@@ -9628,12 +9628,12 @@ msgstr "Thông tin hệ thống"
 msgid "System Status"
 msgstr "Cập nhật hệ thống"
 
-#: httpdfunc.h:5665 httpdfunc.h:5774 skin_default_skin.xml.h:689
+#: httpdfunc.h:5665 httpdfunc.h:5821 skin_default_skin.xml.h:689
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Cập nhật hệ thống"
 
-#: httpdfunc.h:5793
+#: httpdfunc.h:5840
 msgid ""
 "System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
@@ -9678,11 +9678,11 @@ msgstr ""
 msgid "TPK"
 msgstr ""
 
-#: extensions.h:267 httpdfunc.h:6170 httpdfunc.h:6172 httpdfunc.h:6437
+#: extensions.h:267 httpdfunc.h:6217 httpdfunc.h:6219 httpdfunc.h:6484
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:324 httpdfunc.h:6435
+#: extensions.h:324 httpdfunc.h:6482
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 
@@ -9690,7 +9690,7 @@ msgstr ""
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:456 httpdfunc.h:6506
+#: extensions.h:456 httpdfunc.h:6553
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 
@@ -9698,7 +9698,7 @@ msgstr ""
 msgid "TPK install (online)"
 msgstr ""
 
-#: httpdfunc.h:6207 skin_default_skin.xml.h:727 webif_system_extensions.h:5
+#: httpdfunc.h:6254 skin_default_skin.xml.h:727 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
@@ -9706,7 +9706,7 @@ msgstr ""
 msgid "TPK remove"
 msgstr ""
 
-#: httpdfunc.h:6205 skin_default_skin.xml.h:729 webif_system_extensions.h:4
+#: httpdfunc.h:6252 skin_default_skin.xml.h:729 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr ""
 
@@ -9880,7 +9880,7 @@ msgstr ""
 msgid "The video no longer exists"
 msgstr ""
 
-#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6149
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6196
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -10253,7 +10253,7 @@ msgid ""
 "Coming soon ..."
 msgstr ""
 
-#: extensions.h:222 httpdfunc.h:5890 skin_default_skin.xml.h:725
+#: extensions.h:222 httpdfunc.h:5937 skin_default_skin.xml.h:725
 msgid "Tpk Install - select file"
 msgstr ""
 
@@ -10261,7 +10261,7 @@ msgstr ""
 msgid "Tpk Install - select install medium"
 msgstr ""
 
-#: extensions.h:217 httpdfunc.h:5826
+#: extensions.h:217 httpdfunc.h:5873
 msgid "Tpk Install - select section"
 msgstr ""
 
@@ -10269,15 +10269,15 @@ msgstr ""
 msgid "Tpk Install Info"
 msgstr "Cài đặt lỗi !"
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:6114 httpdfunc.h:6116
+#: extensions.h:254 extensions.h:259 httpdfunc.h:6161 httpdfunc.h:6163
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
-#: extensions.h:250 httpdfunc.h:6112
+#: extensions.h:250 httpdfunc.h:6159
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:291 httpdfunc.h:6305
+#: extensions.h:291 httpdfunc.h:6352
 msgid "Tpk Remove - select file"
 msgstr ""
 
@@ -10285,19 +10285,19 @@ msgstr ""
 msgid "Tpk Remove Info"
 msgstr "xóa"
 
-#: extensions.h:317 httpdfunc.h:6389
+#: extensions.h:317 httpdfunc.h:6436
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr ""
 
-#: extensions.h:310 httpdfunc.h:6385
+#: extensions.h:310 httpdfunc.h:6432
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:444 extensions.h:448 httpdfunc.h:6474 httpdfunc.h:6486
+#: extensions.h:444 extensions.h:448 httpdfunc.h:6521 httpdfunc.h:6533
 msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
-#: httpdfunc.h:6496
+#: httpdfunc.h:6543
 msgid "Tpk Update Info - Update OK"
 msgstr ""
 
@@ -11564,7 +11564,7 @@ msgstr "sao chép dịch vụ"
 msgid "cover"
 msgstr "full cover"
 
-#: httpdfunc.h:6581 httpdfunc.h:6606 skin_default_skin.xml.h:150
+#: httpdfunc.h:6628 httpdfunc.h:6653 skin_default_skin.xml.h:150
 msgid "create System Backup"
 msgstr ""
 
@@ -13122,7 +13122,7 @@ msgstr "Đang bắt đầu"
 msgid "starting Full Update (from backup) ?"
 msgstr "bắt đầu cập nhật?"
 
-#: httpdfunc.h:5788 system_update.h:220
+#: httpdfunc.h:5835 system_update.h:220
 msgid "starting Full Update ?"
 msgstr "bắt đầu cập nhật?"
 
