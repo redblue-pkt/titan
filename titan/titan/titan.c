@@ -938,6 +938,10 @@ int main(int argc, char *argv[])
 	}
 
 	ret = readscreen(getconfig("skinfile", NULL), 0, 0);
+	if(getconfig("keyskin_file", NULL) == NULL)
+		ret = readscreen("/var/usr/local/share/titan/skin/default/keyskin.xml", 0, 0);
+	else
+		ret = readscreen(getconfig("keyskin_file", NULL), 0, 0);
 	if(checkchipset("BCM7424") == 1) //inihdp
 	{
 		if(getconfig("oledskin_file", NULL) == NULL)
@@ -945,7 +949,6 @@ int main(int argc, char *argv[])
 		else
 			ret = readscreen(getconfig("oledskin_file", NULL), 0, 0);
 	}
-	ret = readscreen("/var/usr/local/share/titan/skin/default/oledskin.xml", 0, 0);
 	ret = readmainbouquet(getconfig("bouquetfile", NULL));
 	ret = readallbouquet();
 	ret = readmainplaylist(getconfig("playlistfile", NULL));
