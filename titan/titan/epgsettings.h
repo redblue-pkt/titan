@@ -226,9 +226,8 @@ void screenepgsettings()
 	addchoicebox(epg_primetime, "20:30", "20:30");
 	setchoiceboxselection(epg_primetime, getconfig("epg_primetime", NULL));
 
-	b4->hidden = NO;
 	b4->usesavebg = 1;
-
+	
 	drawscreen(epgsettings, 0, 0);
 	addscreenrc(epgsettings, listbox);
 
@@ -236,6 +235,13 @@ void screenepgsettings()
 	while(1)
 	{
 		addscreenrc(epgsettings, tmp);
+
+		if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgpath") == 0)
+			b4->hidden = NO;
+		else
+			b4->hidden = YES;
+		drawscreen(epgsettings, 0, 0);
+		
 		rcret = waitrc(epgsettings, 0, 0);
 		tmp = listbox->select;
 
@@ -326,12 +332,6 @@ void screenepgsettings()
 			free(log); log = NULL;
 			drawscreen(epgsettings, 0, 0);
 		}
-
-		if(ostrcmp(listbox->select->name, "epgpath") == 0)
-			b4->hidden = NO;
-		else
-			b4->hidden = YES;
-		drawscreen(epgsettings, 0, 0);
 	}
 
 	delownerrc(epgsettings);
