@@ -138,6 +138,7 @@ compile "usbreset" "usbreset" "" ""
 compile "tsSchnitt" "tsSchnitt" "" ""
 compile "xupnpd" "xupnpd" "" ""
 compile "wm2014" "wm2014" "" ""
+compile "kravencfg" "kravencfg" "" ""
 
 cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
 echo make libcurl
