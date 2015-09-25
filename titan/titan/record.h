@@ -994,7 +994,8 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	int input = DMX_IN_FRONTEND;
 
 	//wakeup hdd work
-	wakeup_record_device();
+	if(type != RECSTREAM && type != RECSTREAMENC)
+		wakeup_record_device();
 
 	if(chnode == NULL && filefd < 0)
 	{
@@ -1023,7 +1024,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			servicetype = RECORDSTREAM;
 			fd = recordfd;
 			break;
-				case RECSTREAMENC:
+		case RECSTREAMENC:
 			servicetype = RECORDSTREAM;
 			fd = recordfd;
 			break;
