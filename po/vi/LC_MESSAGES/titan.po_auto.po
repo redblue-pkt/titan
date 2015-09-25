@@ -3093,7 +3093,7 @@ msgstr "Xem lịch chương trình"
 msgid "EPG Save Mode"
 msgstr "Chế độ ghi lịch chương trình"
 
-#: epgsettings.h:325
+#: epgsettings.h:331
 msgid "EPG Scan Log"
 msgstr "Chế độ ghi lịch chương trình"
 
@@ -3125,7 +3125,7 @@ msgstr ""
 msgid "EPG button on EPG Screen"
 msgstr "lịch chương trình"
 
-#: epgsettings.h:311
+#: epgsettings.h:317
 msgid "EPG resetet and now clear."
 msgstr "không có lịch chương trình"
 
@@ -3189,7 +3189,7 @@ msgstr ""
 #: channellist.h:952 channellist.h:954 channellist.h:1038 cloudzilla.h:39
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36 divxstage.h:79
 #: divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:311 epgsettings.h:325
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 epgsettings.h:331
 #: extensions.h:190 extensions.h:241 extensions.h:250 extensions.h:254
 #: extensions.h:259 extensions.h:267 extensions.h:302 extensions.h:310
 #: extensions.h:317 extensions.h:324 extensions.h:356 extensions.h:382
@@ -5831,7 +5831,7 @@ msgstr ""
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:311 extensions.h:267
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:267
 #: extensions.h:324 extensions.h:356 extensions.h:416 extensions.h:420
 #: extensions.h:456 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
@@ -6439,7 +6439,7 @@ msgstr "E"
 #: channellist.h:954 channellist.h:1038 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:79 divxstage.h:150
 #: divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
-#: epgsearch.h:27 epgsettings.h:311 epgsettings.h:325 extensions.h:190
+#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
 #: extensions.h:267 extensions.h:302 extensions.h:310 extensions.h:317
 #: extensions.h:324 extensions.h:356 extensions.h:382 extensions.h:413
