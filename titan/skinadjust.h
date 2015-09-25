@@ -251,8 +251,6 @@ void screenskinadjust()
 		emuaktivecol->hidden = NO;
 		emurunningcol->hidden = NO;
 	}
-					
-	b5->hidden = YES;
 
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
@@ -262,6 +260,84 @@ void screenskinadjust()
 	{
 		int offsetchange = 0;
 		addscreenrc(skinadjust, tmp);
+
+		if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "filelistselect") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol2") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bordercol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_fontcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol2") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bordercol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_fontcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "okcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "exitcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "deaktivcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol2") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebgcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "progresscol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "markcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "cpmode_bgcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "cpmode_fontcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "editmode_bgcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "editmode_fontcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_fontcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "protectmode_bgcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "protectmode_fontcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "rec_progress") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol1") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol2") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol3") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "emuaktivecol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "emurunningcol") == 0)
+			b5->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "favcol") == 0)
+			b5->hidden = NO;
+		else
+			b5->hidden = YES;
+
+		drawscreen(skinadjust, 0, 0);
+
 		rcret = waitrc(skinadjust, 0, 0);
 		tmp = listbox->select;
 
@@ -730,83 +806,6 @@ void screenskinadjust()
 
 			break;
 		}
-
-		if(ostrcmp(listbox->select->name, "listboxselect") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "filelistselect") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "buttonbar_bgcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "buttonbar_bgcol2") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "buttonbar_bordercol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "buttonbar_fontcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "titlebar_bgcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "titlebar_bgcol2") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "titlebar_bordercol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "titlebar_fontcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "okcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "exitcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "deaktivcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "bgcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "bgcol2") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "fontcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "bordercol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "titlebgcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "progresscol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "markcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "cpmode_bgcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "cpmode_fontcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "editmode_bgcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "editmode_fontcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "mvmode_fontcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "protectmode_bgcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "protectmode_fontcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "rec_progress") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "epgcol1") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "epgcol2") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "epgcol3") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "emuaktivecol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "emurunningcol") == 0)
-			b5->hidden = NO;
-		else if(ostrcmp(listbox->select->name, "favcol") == 0)
-			b5->hidden = NO;
-		else
-			b5->hidden = YES;
-
-		drawscreen(skinadjust, 0, 0);
 	}
 
 	delskinconfigtmpall();

@@ -68,12 +68,12 @@ void screentithek_settings()
 	{
 		addscreenrc(tithek_settings, tmp);
 
-		if(file_exist("/mnt/network/cookies") && (ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0))
+		if(file_exist("/mnt/network/cookies") && listbox->select != NULL && (ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0))
 			b4->hidden = NO;			
 		else
 			b4->hidden = YES;
 	
-		if(ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0)
+		if(listbox->select != NULL && (ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0))
 			b3->hidden = NO;
 		else
 			b3->hidden = YES;
