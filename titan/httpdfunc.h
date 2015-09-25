@@ -5679,8 +5679,13 @@ char* webgetupdatelist(char* param, int fmt)
 	if(mode == 0)
 		tmpstr = command("ls -1 /tmp/online | grep .img | sort -r");
 	else
-		tmpstr = command("ls -1 /tmp | grep .img | sort -r");
-	
+	{
+		if(file_exist("/var/backup"))
+			tmpstr = command("ls -1 /var/backup/ | grep .img | sort -r");
+		else
+			tmpstr = command("ls -1 /tmp | grep .img | sort -r");
+	}
+printf("tmpstr: %s\n", tmpstr);
 	int count, i, max;
 	count = 0;
 	struct splitstr* ret1 = NULL;
@@ -5735,9 +5740,51 @@ char* webgetupdatelist(char* param, int fmt)
 				free(tmpstr1), tmpstr1 = NULL;
 				free(cmd), cmd = NULL;
 			}
+			else if(ostrstr(ret1[i].part, "_FULLBACKUP_") != NULL)
+			{
+				cmd = ostrcat(cmd, "/sbin/update.sh ", 1, 0);
+				cmd = ostrcat(cmd, node->type, 1, 0);
+				cmd = ostrcat(cmd, " ", 1, 0);
+
+				cmd = ostrcat(cmd, "full ", 1, 0);
+
+				if(file_exist("/var/backup"))
+					cmd = ostrcat(cmd, "/var/backup/", 1, 0);
+				else
+					cmd = ostrcat(cmd, "/tmp/", 1, 0);
+				cmd = ostrcat(cmd, ret1[i].part, 1, 0);
+
+				cmd = ostrcat(cmd, node->auth, 1, 0);
+				if(node->imgtype == 1)
+					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
+				else
+					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+				if(file_exist("/var/swap"))
+				{
+					if(!file_exist("/var/swap/logs"))
+						 mkdir("/var/swap/logs", 777);
+				
+					if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
+						cmd = ostrcat(cmd, " > /var/swap/logs/update_debug.log 2>&1", 1, 0);		
+				}
+				else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
+				{
+					if(!file_exist("/mnt/logs"))
+						 mkdir("/mnt/logs", 777);
+				
+					if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
+						cmd = ostrcat(cmd, " > /mnt/logs/update_debug.log 2>&1", 1, 0);
+				}
+
+				tmpstr1 = htmlencode(cmd);
+				buf = ostrcat(buf, tmpstr1, 1, 0);
+				free(tmpstr1), tmpstr1 = NULL;
+				free(cmd), cmd = NULL;
+			}
 
 			buf = ostrcat(buf, " target=main>", 1, 0);
-			buf = ostrcat(buf, _(stringreplacecharonce(ret1[i].part, '.', '\0')), 1, 0);
+//			buf = ostrcat(buf, _(stringreplacecharonce(ret1[i].part, '.', '\0')), 1, 0);
+			buf = ostrcat(buf, ret1[i].part, 1, 0);
 			buf = ostrcat(buf, "</a>", 1, 0);
 			buf = ostrcat(buf, "</br></br>", 1, 0);
 		}
