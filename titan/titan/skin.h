@@ -1135,6 +1135,7 @@ int readscreen(char *filename, int del, int flag)
 
 	buf = readfiletomem(filename, 1);
 	
+/*
 	if(debug_level == 9999)
 	{
 		int i = 1;
@@ -1143,7 +1144,7 @@ int readscreen(char *filename, int del, int flag)
 			printf("%c", pos[i]);
 		printf("\n");
 	}
-
+*/
 	if(buf != NULL)
 	{
 		addscreen(buf, del, flag);

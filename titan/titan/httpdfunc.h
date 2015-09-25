@@ -5685,7 +5685,7 @@ char* webgetupdatelist(char* param, int fmt)
 		else
 			tmpstr = command("ls -1 /tmp | grep .img | sort -r");
 	}
-printf("tmpstr: %s\n", tmpstr);
+
 	int count, i, max;
 	count = 0;
 	struct splitstr* ret1 = NULL;
