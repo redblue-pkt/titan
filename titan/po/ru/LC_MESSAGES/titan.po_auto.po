@@ -5258,6 +5258,10 @@ msgstr ""
 msgid "KravenHD skin for transparent xpicons"
 msgstr ""
 
+#: kravencfg.c:248
+msgid "KravenHD skin isn't active!"
+msgstr ""
+
 #: skin_default_keyskin.xml.h:43
 msgid "L"
 msgstr ""
@@ -5892,10 +5896,11 @@ msgstr ""
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784
-#: keyactions.h:205 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101
-#: letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48
-#: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
-#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: keyactions.h:205 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
+#: language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:59
+#: letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -6414,6 +6419,10 @@ msgstr "ОШИБКА: Недостаточно памяти"
 msgid "No plugin found."
 msgstr "Плагины не найдены"
 
+#: kravencfg.c:66
+msgid "No skin snippets found!"
+msgstr ""
+
 #: skinselector.h:231
 msgid ""
 "No skinconfig found in skin.\n"
@@ -6502,19 +6511,19 @@ msgstr ""
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784 info.h:27
-#: keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29
-#: letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 mboxinfo.c:49
-#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
-#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
-#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
-#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
-#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
-#: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
-#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
-#: menu.h:986 mightyupload.h:27 mightyupload.h:63 mightyupload.h:69
+#: keyactions.h:205 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
+#: lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:59 letwatch.h:65
+#: letwatch.h:71 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
+#: mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
+#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
+#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
+#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
+#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
+#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:63 mightyupload.h:69
 #: movie4k.h:36 movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30
 #: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
 #: MultiImage.c:46 MultiImage.c:175 MultiImage.c:244 MultiImage.c:262
@@ -10178,7 +10187,7 @@ msgid "Titan MediaCenter"
 msgstr "Медиацент Titan"
 
 #: global.h:7218 global.h:7229 global.h:7240 global.h:7251 global.h:7262
-#: skinadjust.h:398 skinadjust.h:803
+#: kravencfg.c:212 skinadjust.h:398 skinadjust.h:803
 msgid "Titan will be restarted!"
 msgstr "Titan будет перезагружен!"
 
