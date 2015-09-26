@@ -70,6 +70,12 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	streamlink = string_resub("'label' : '360p', 'file' : '", "'", tmpstr, 0);
 	if(streamlink == NULL)
 		streamlink = string_resub("'label' : '240p', 'file' : '", "'", tmpstr, 0);		
+	if(streamlink == NULL)
+		streamlink = string_resub("label: '240p', file: '", "'", tmpstr, 0);		
+	if(streamlink == NULL)
+		streamlink = string_resub("label: '360p', file: '", "'", tmpstr, 0);		
+	if(streamlink == NULL)
+		streamlink = oregex(".*(http://.*v.mp4).*", tmpstr);
 
 	titheklog(debuglevel, "/tmp/thevideo1_streamlink", NULL, NULL, NULL, streamlink);
 
