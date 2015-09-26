@@ -5421,6 +5421,10 @@ msgstr "aktualisiert!"
 msgid "KinoX"
 msgstr ""
 
+#: plugins_kravencfg_skin.xml.h:1 skins_kravencfg_skin.xml.h:1
+msgid "KravenHD Config"
+msgstr ""
+
 #: tpk_description.h:95
 msgid "KravenHD skin for transparent xpicons"
 msgstr ""
