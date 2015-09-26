@@ -1,0 +1,12 @@
+#kravencfg, fullscreen
+<screen name="kravencfg" posx="0" posy="0" width="1280" height="720" picmem="background/bg_02.png" transparent="1">
+	<node name="listbox" type="listbox" scrollbar="no" font="Regular" fontsize="28" fontcol="white" posx="60" posy="60" width="610" height="490">
+		<node parent="listbox" name="dummy" hspace="20" vspace="15" valign="middle" width="100%" height="60" hidden="yes">
+	<node name="box" font="Regular" fontsize="40" fontcol="white" posx="670" posy="60" width="550" height="490">
+		<node parent="box" name="titletext" text="KravenHD Config" posx="0" posy="0" width="100%" height="32" halign="center" valign="middle">
+		<node parent="box" name="png" bgcol="titlebgcol" posx="center" posy="105" width="222" height="190" picwidth="192" picheight="160" halign="center" valign="middle" bordercol="black" bordersize="1" borderradius="8">
+		<node parent="box" name="time" func="gettime" param1="%H:%M" posx="0" posy="360" width="300" height="40" halign="right" valign="middle">
+		<node parent="box" name="sec" func="gettime" param1=":%S" posx="300" posy="370" width="100" height="30" halign="left" valign="middle">
+		<node parent="box" name="day" func="gettime" param1="%A" posx="center" posy="410" width="400" height="30" halign="center" valign="middle">
+		<node parent="box" name="date" func="gettime" param1="%e. %B" posx="center" posy="450" width="400" height="30" halign="center" valign="middle">
+</screen>
