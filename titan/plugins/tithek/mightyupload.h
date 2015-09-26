@@ -72,7 +72,15 @@ char* mightyupload(char* link)
 
 	streamlink = string_resub("name=\"src\"value=\"", "\"", tmpstr, 0);
 	if(streamlink == NULL)
+		streamlink = string_resub("'label' : '360p', 'file' : '", "'", tmpstr, 0);
+	if(streamlink == NULL)
 		streamlink = string_resub("'label' : '240p', 'file' : '", "'", tmpstr, 0);		
+	if(streamlink == NULL)
+		streamlink = string_resub("label: '240p', file: '", "'", tmpstr, 0);		
+	if(streamlink == NULL)
+		streamlink = string_resub("label: '360p', file: '", "'", tmpstr, 0);		
+	if(streamlink == NULL)
+		streamlink = oregex(".*(http://.*v.mp4).*", tmpstr);
 
 	titheklog(debuglevel, "/tmp/mightyupload3_streamlink", NULL, NULL, NULL, streamlink);
 
