@@ -3,8 +3,8 @@
 
 char* cam1 = NULL;
 char* cam2 = NULL;
-char* cam11 = NULL;
-char* cam21 = NULL;
+//char* cam11 = NULL;
+//char* cam21 = NULL;
 struct skin* instar_screen = NULL; 
 struct skin* instar_pic1 = NULL;
 struct skin* instar_actcam1 = NULL;
@@ -32,14 +32,16 @@ int show_control()
 	
 	while(1)
 	{
-		if(getconfigint("instar_1", NULL) == 2 && cam11 != NULL)
-			system(cam11);
-		else
-		{
+		//if(getconfigint("instar_1", NULL) == 2 && cam11 != NULL)
+		//	system(cam11);
+		//else
+		//{
 			if(cam1 != NULL)
 			{
 				if(getconfigint("instar_1", NULL) == 1)
 					tmpstr = ostrcat(cam1, "/image/jpeg.cgi", 0, 0);
+				else if(getconfigint("instar_1", NULL) == 2)
+					tmpstr = ostrcat(cam1, "/tmpfs/auto.jpg", 0, 0);
 				else
 					tmpstr = ostrcat(cam1, "/snapshot.cgi", 0, 0);
 				system(tmpstr);
@@ -48,13 +50,15 @@ int show_control()
 			if(cam2 != NULL)
 			{
 				if(getconfigint("instar_2", NULL) == 1)
-					tmpstr = ostrcat(cam1, "/image/jpeg.cgi", 0, 0);
+					tmpstr = ostrcat(cam2, "/image/jpeg.cgi", 0, 0);
+				else if(getconfigint("instar_2", NULL) == 2)
+					tmpstr = ostrcat(cam2, "/tmpfs/auto.jpg", 0, 0);
 				else
-					tmpstr = ostrcat(cam1, "/snapshot.cgi", 0, 0);
+					tmpstr = ostrcat(cam2, "/snapshot.cgi", 0, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
-		}
+		//}
 				
 		drawscreen(instar_screen, 0, 0);
 		rcret = waitrc(instar_screen, 100, 0);
@@ -309,16 +313,16 @@ void instar_main()
 				cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1Port", NULL), 1, 0);
 				
 						
-				if(getconfigint("instar_1", NULL) == 2)
-				{
-					cam11 = ostrcat("wget --output-document=/tmp/instar1.jpg http://",getlist(myconfig, "InstarCam1IP", NULL), 0, 0);
-					cam11 = ostrcat(cam11, ":", 1, 0);
-					cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Port", NULL), 1, 0);
-					cam11 = ostrcat(cam11, "/tmpfs/auto.jpg?usr=", 1, 0);
-					cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1User", NULL), 1, 0);
-					cam11 = ostrcat(cam11, "&pwd=", 1, 0);
-					cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
-				}
+				//if(getconfigint("instar_1", NULL) == 2)
+				//{
+				//	cam11 = ostrcat("wget --output-document=/tmp/instar1.jpg http://",getlist(myconfig, "InstarCam1IP", NULL), 0, 0);
+				//	cam11 = ostrcat(cam11, ":", 1, 0);
+				//	cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Port", NULL), 1, 0);
+				//	cam11 = ostrcat(cam11, "/tmpfs/auto.jpg?usr=", 1, 0);
+				//	cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1User", NULL), 1, 0);
+				//	cam11 = ostrcat(cam11, "&pwd=", 1, 0);
+				//	cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
+				//}
 			}
 			
 		
@@ -355,8 +359,8 @@ void instar_main()
 	
 			free(cam1), cam1 = NULL;
 			free(cam2), cam2 = NULL;
-			free(cam11), cam11 = NULL;
-			free(cam21), cam21 = NULL;
+			//free(cam11), cam11 = NULL;
+			//free(cam21), cam21 = NULL;
 			
 			if(rcode == 0)
 				break;
