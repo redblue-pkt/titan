@@ -44,20 +44,7 @@ grep code:
 and get to youtube
 */
 
-// ssl workaround
-		unlink("/tmp/.youtube.cache");
-		char* cmd = NULL;
-		cmd = ostrcat("wget --no-check-certificate \"http://", ip, 0, 0);
-		cmd = ostrcat(cmd, "/", 1, 0);
-		cmd = ostrcat(cmd, tmppath, 1, 0);
-		cmd = ostrcat(cmd, "\" -O /tmp/.youtube.cache", 1, 0);
-		debug(99, "cmd: %s", cmd);
-		system(cmd);
-		free(cmd), cmd = NULL;
-		tmpstr = command("cat /tmp/.solar.cache");
-		debug(99, "tmpstr: %s", tmpstr);
-// ssl workaround end
-//	tmpstr = gethttp(ip, tmppath, 80, NULL, NULL, 10000, NULL, 0);
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, 1);
 	writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr", tmpstr, 0);
 
 //	if(flag == 1)
@@ -271,18 +258,60 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 			path = ostrcat(path, "&max-results=25", 1, 0);
 		else if(((struct tithek*)listbox->select->handle)->flag == 11)
 			path = ostrcat(path, "&max-results=50", 1, 0);
-					
-		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-//		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr1", tmpstr, 0);
+
+
+		char* url = NULL;
+		url = ostrcat("https://www.googleapis.com/youtube/v3/search?q=", search, 0, 0);
+		url = ostrcat(url, "&regionCode=US&part=snippet&hl=en_US&key=AIzaSyBAdxZCHbeJwnQ7dDZQJNfcaF46MdqJ24E&type=video&maxResults=50", 1, 0);
+
+//12:39:28 T:11340  NOTICE: 'GET /youtube/v3/search?q=pink&regionCode=US&part=snippet&hl=en_US&key=AIzaSyBAdxZCHbeJwnQ7dDZQJNfcaF46MdqJ24E&type=video&maxResults=50 HTTP/1.1\r\nHost: www.googleapis.com\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.36 Safari/537.36\r\nConnection: close\r\nAccept-Encoding: gzip, deflate\r\n\r\n'
+
+		char* tmpstr = NULL;
+		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);		
+//		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr1", tmpstr, 0);
+printf("ALLE\n");
+
+		tmpstr = stringreplacechar(tmpstr, '\n', ' ');
+
+		tmpstr = string_replace_all("\"etag\":", "\n\"etag\":", tmpstr, 1);
 
 		tmpstr = string_replace_all("media:thumbnail", "\nthumbnail", tmpstr, 1);
-//		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr2", tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr2", tmpstr, 0);
+/*
 
+//12:39:28 T:11340  NOTICE: 'GET /youtube/v3/videos?part=snippet%2CcontentDetails&id=eOxPED0TunI%2CsojYfBmdvlE%2Cj-ocHL0eudY%2CHQBia-CfqbE%2CmHLwXQoG4CU%2Cw5VFOKKAbQQ%2CvnoQ5lkBVhU%2CeocCPDxKq1o%2ChSjIz8oQuko%2CJDKGWaCglRM%2CbZsqdTrr1eM%2CyTCDVfMz15M%2CHq2DINl2MxI%2CnB2Hsh1XqyA%2C41aGCrXM20E%2Cuc8OpUnUNNU%2Cv4UkD7U88NQ%2CAlMa52Xkoj0%2CocDlOD1Hw9k%2CG6ZLZQGydPc%2CxXvBkwihOE8%2CNJWIbIe0N90%2CwCqs2uJWwZs%2CPl-TCZSRhy4%2C0TDTEEXZtLs%2CXIId4uESVeA%2ClHSl-yz5FqA%2CRzriJpYiGjw%2CjT5RwB5ML30%2C5r9vdqAFCY4%2CzsmUOdmm02A%2C8WmZW7JB3GY%2C3NrNWISh5CE%2CeDtMxamBxI8%2CBR4yQFZK9YM%2CRAcNZo7-f0g%2CXjVNlG5cZyQ%2CasaCQOZpqUQ%2CWWYLM9opelw%2CqOfkpu6749w%2CBJLWNWDqK-k%2COpQFFLBMEPI%2Cm-6ir-gFpbA%2C3stsDXki__U%2C57KVfhWcEk0%2CFJfFZqTlWrQ%2CSNjFTxaeWug%2CumM9Ls0SaiU%2Cw7JRWHCKkIY%2C6lyq05OWuVM&key=AIzaSyBAdxZCHbeJwnQ7dDZQJNfcaF46MdqJ24E HTTP/1.1\r\nHost: www.googleapis.com\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.36 Safari/537.36\r\nConnection: close\r\nAccept-Encoding: gzip, deflate\r\n\r\n'
+/youtube/v3/videos?part=snippet%2CcontentDetails
+&id=
+eOxPED0TunI
+%2
+CsojYfBmdvlE
+%2
+Cj-ocHL0eudY
+%2
+CHQBia-CfqbE
+%2
+CmHLwXQoG4CU
+%2
+Cw5VFOKKAbQQ%2CvnoQ5lkBVhU%2CeocCPDxKq1o%2ChSjIz8oQuko%2CJDKGWaCglRM%2CbZsqdTrr1eM%2CyTCDVfMz15M%2CHq2DINl2MxI%2CnB2Hsh1XqyA
+%2C41aGCrXM20E%2Cuc8OpUnUNNU%2Cv4UkD7U88NQ%2CAlMa52Xkoj0%2CocDlOD1Hw9k%2CG6ZLZQGydPc%2CxXvBkwihOE8%2CNJWIbIe0N90%2CwCqs2uJWwZs%2CPl-TCZSRhy4
+%2C0TDTEEXZtLs%2CXIId4uESVeA%2ClHSl-yz5FqA%2CRzriJpYiGjw%2CjT5RwB5ML30%2C5r9vdqAFCY4%2CzsmUOdmm02A%2C8WmZW7JB3GY%2C3NrNWISh5CE%2CeDtMxamBxI8
+%2CBR4yQFZK9YM%2CRAcNZo7-f0g%2CXjVNlG5cZyQ%2CasaCQOZpqUQ%2CWWYLM9opelw%2CqOfkpu6749w%2CBJLWNWDqK-k
+%2COpQFFLBMEPI%2Cm-6ir-gFpbA
+%2C3stsDXki__U%2C57KVfhWcEk0%2CFJfFZqTlWrQ%2CSNjFTxaeWug%2CumM9Ls0SaiU%2Cw7JRWHCKkIY%2C6lyq05OWuVM
+
+&key=AIzaSyBAdxZCHbeJwnQ7dDZQJNfcaF46MdqJ24E HTTP/1.1\r\nHost: www.googleapis.com\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.36 Safari/537.36\r\nConnection: close\r\nAccept-Encoding: gzip, deflate\r\n\r\n'
+
+"title": "
+"videoId": "
+"url": "
+*/
 		int count = 0;
 		int incount = 0;
 		int i = 0;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
+//part="etag": "\"jOXstHOM20qemPbHbyzf7ztZ7rI/zJExHKkQXAGmI7-mKIkjbmndgJ0\"",    "id": {     "kind": "youtube#video",     "videoId": "57KVfhWcEk0"    },    "snippet": {     "publishedAt": "2015-09-19T02:06:39.000Z",     "channelId": "UCwehWhlhepFE8mFdlC1ebAw",     "title": "Pink - Mindless Self Indulgence FULL ALBUM",     "description": "JIMMY SAYS TO BUY THE FUCKING ALBUM Tracklist: 01. Personal Jesus 02. This Hurts 03. Be Like Superman 04. Memory Of Heaven 05. Vanity 06. Married ...",     "thumbnails": {      "default": {       "url": "https://i.ytimg.com/vi/57KVfhWcEk0/default.jpg"      },      "medium": {       "url": "https://i.ytimg.com/vi/57KVfhWcEk0/mqdefault.jpg"      },      "high": {       "url": "https://i.ytimg.com/vi/57KVfhWcEk0/hqdefault.jpg"      }     },     "channelTitle": "",     "liveBroadcastContent": "none"    }   }  ] }
 
 		if(ret1 != NULL)
 		{
@@ -290,11 +319,11 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 			for(i = 0; i < max; i++)
 			{
 				debug(99, "ret1[i].part=%s", ret1[i].part);
-				if(ostrstr(ret1[i].part, "http://i.ytimg.com/vi/") != NULL)
+				if(ostrstr(ret1[i].part, "videoId") != NULL)
 				{
-					pic = oregex(".*thumbnail url=\'(http://i.ytimg.com/vi/.*/.*.jpg).*media:title.*", ret1[i].part);
-					id = oregex(".*thumbnail url=\'http://i.ytimg.com/vi/(.*)/.*.jpg.*media:title.*", ret1[i].part);
-					title = oregex(".*<media:title type='plain'>(.*)</media:title>.*", ret1[i].part);
+					pic = string_resub("\"url\": \"", "\"", ret1[i].part, 0);
+					id = string_resub("\"videoId\": \"", "\"", ret1[i].part, 0);
+					title = string_resub("\"title\": \"", "\"", ret1[i].part, 0);
 
 					debug(99, "title=%s", title);
 					debug(99, "id=%s", id);
@@ -310,8 +339,9 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 						path = ostrcat("watch?v=", id, 0, 0);
 
 						line = ostrcat(line, title, 1, 0);
-						line = ostrcat(line, "#http://www.youtube.com/get_video_info?&video_id=", 1, 0);
+						line = ostrcat(line, "#http://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=", 1, 0);
 						line = ostrcat(line, id, 1, 0);
+						line = ostrcat(line, "&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1", 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, pic, 1, 0);
 						line = ostrcat(line, "#youtube_search_", 1, 0);
