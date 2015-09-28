@@ -2183,7 +2183,7 @@ msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste
 
 #: amazon.h:660
 msgid "Choose your Language from the following list"
-msgstr ""
+msgstr "Wählen Sie eine Sprache aus der folgenden Liste"
 
 #: mc_global.h:609
 msgid "Choose your Playlist Mode from the following list"
