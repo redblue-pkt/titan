@@ -2535,7 +2535,7 @@ msgstr "Währung: "
 
 #: amazon.h:33
 msgid "Currently"
-msgstr "Aktuell im TV - Werbefrei und in HD"
+msgstr "Aktuell im TV"
 
 #: tsSchnitt.c:129
 msgid "Cut finished with error!"
