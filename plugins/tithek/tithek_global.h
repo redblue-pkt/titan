@@ -159,7 +159,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, i
 		if(flag == 1)
 			curl_easy_setopt(curl_handle, CURLOPT_HEADER, 1L);
 		curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, 5);
-		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 20);
+		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 100);
 		/* send all data to this function  */
 	    if(localfile == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
@@ -179,7 +179,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, i
 		// CURLOPT_SSL_VERIFYHOST may also need to be TRUE or FALSE if
 		// CURLOPT_SSL_VERIFYPEER is disabled (it defaults to 2 - check the existence of a
 		// common name and also verify that it matches the hostname provided)
-		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L);
+		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 1L);
 
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0L);
 		if(debuglevel == 99)
