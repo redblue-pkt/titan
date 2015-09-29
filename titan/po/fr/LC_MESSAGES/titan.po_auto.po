@@ -8533,7 +8533,7 @@ msgstr ""
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
 #: tectime.h:13 tectime.h:15 tithek_global.h:418 tithek_global.h:420
 #: tithek_mainmenu.h:109 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
-#: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:382 youtube.h:384
+#: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:354 youtube.h:356
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr ""
