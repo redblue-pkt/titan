@@ -3273,7 +3273,7 @@ msgstr ""
 #: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
 #: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
 #: readerconfig.h:498 record.h:90 record.h:387 record.h:1160 record.h:1689
-#: rectimer.h:577 rectimer.h:1239 rectimer.h:1386 rectimer.h:1398
+#: rectimer.h:577 rectimer.h:1257 rectimer.h:1404 rectimer.h:1416
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
@@ -4057,7 +4057,7 @@ msgstr "Частота"
 msgid "Fri"
 msgstr ""
 
-#: global.h:6203 global.h:6213 rectimer.h:1085 skin_default_skin.xml.h:221
+#: global.h:6203 global.h:6213 rectimer.h:1103 skin_default_skin.xml.h:221
 msgid "Friday"
 msgstr "Пятница"
 
@@ -5939,7 +5939,7 @@ msgstr ""
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
 #: record.h:1160 record.h:1437 record.h:1689 record.h:1714 rectimer.h:577
-#: rectimer.h:1239 rectimer.h:1386 rectimer.h:1398 restoredefault.h:10
+#: rectimer.h:1257 rectimer.h:1404 rectimer.h:1416 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
@@ -6035,7 +6035,7 @@ msgstr "Модули"
 msgid "Mon"
 msgstr ""
 
-#: global.h:6199 global.h:6209 rectimer.h:1081 skin_default_skin.xml.h:372
+#: global.h:6199 global.h:6209 rectimer.h:1099 skin_default_skin.xml.h:372
 msgid "Monday"
 msgstr "Понедельник"
 
@@ -6562,8 +6562,8 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1239
-#: rectimer.h:1386 rectimer.h:1398 restoredefault.h:10 restoredefault.h:19
+#: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1257
+#: rectimer.h:1404 rectimer.h:1416 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
 #: scan.h:1636 scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25
@@ -8395,7 +8395,7 @@ msgstr "Уровень и качество сигнала"
 msgid "Saturation"
 msgstr "Насыщенность"
 
-#: global.h:6204 global.h:6214 rectimer.h:1086 skin_default_skin.xml.h:521
+#: global.h:6204 global.h:6214 rectimer.h:1104 skin_default_skin.xml.h:521
 msgid "Saturday"
 msgstr "Суббота"
 
@@ -9586,7 +9586,7 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: global.h:6205 global.h:6215 rectimer.h:1087 skin_default_skin.xml.h:614
+#: global.h:6205 global.h:6215 rectimer.h:1105 skin_default_skin.xml.h:614
 msgid "Sunday"
 msgstr "Воскресенье"
 
@@ -10007,7 +10007,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6202 global.h:6212 rectimer.h:1084 skin_default_skin.xml.h:636
+#: global.h:6202 global.h:6212 rectimer.h:1102 skin_default_skin.xml.h:636
 msgid "Thursday"
 msgstr "Четверг"
 
@@ -10477,7 +10477,7 @@ msgstr ""
 msgid "Tue"
 msgstr ""
 
-#: global.h:6200 global.h:6210 rectimer.h:1082 skin_default_skin.xml.h:672
+#: global.h:6200 global.h:6210 rectimer.h:1100 skin_default_skin.xml.h:672
 msgid "Tuesday"
 msgstr "Вторник"
 
@@ -11037,7 +11037,7 @@ msgstr "Веб-браузер "
 msgid "Wed"
 msgstr ""
 
-#: global.h:6201 global.h:6211 rectimer.h:1083 skin_default_skin.xml.h:721
+#: global.h:6201 global.h:6211 rectimer.h:1101 skin_default_skin.xml.h:721
 msgid "Wednesday"
 msgstr "Среда"
 
@@ -11407,7 +11407,7 @@ msgid "ausgehende Anrufe"
 msgstr "Исходящие звонки"
 
 #: adjust.h:161 autotimer.c:479 autotimer.c:512 avsettings.h:71
-#: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1187
+#: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1205
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
 #: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
@@ -11653,7 +11653,7 @@ msgstr "Резка записанных файлов"
 msgid "d"
 msgstr ""
 
-#: rectimer.h:1074
+#: rectimer.h:1092
 msgid "daily"
 msgstr "Ежедневно"
 
@@ -11842,7 +11842,7 @@ msgstr "Поиск EPG"
 msgid "epgsettings"
 msgstr "Параметры EPG"
 
-#: rectimer.h:1519
+#: rectimer.h:1537
 msgid "error"
 msgstr "ОШИБКА!"
 
@@ -12419,8 +12419,8 @@ msgstr "Автостарт NFS сервера"
 #: panel_settings_autostart.h:360 panel_settings_overclocking.h:214
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
-#: readerconfig.h:254 rectimer.h:1091 rectimer.h:1096 rectimer.h:1101
-#: rectimer.h:1106 rectimer.h:1111 rectimer.h:1116 rectimer.h:1121 scan.h:1775
+#: readerconfig.h:254 rectimer.h:1109 rectimer.h:1114 rectimer.h:1119
+#: rectimer.h:1124 rectimer.h:1129 rectimer.h:1134 rectimer.h:1139 scan.h:1775
 #: scan.h:2254 scan.h:2258 scan.h:2262 scan.h:2266 scan.h:2271 scan.h:2279
 #: scan.h:2283 screensaveradjust.h:19 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
@@ -12478,7 +12478,7 @@ msgid "not started akttime higher than timer endtime"
 msgstr "ОШИБКА: Текущее время больше, чем время окончания записи"
 
 #: adjust.h:162 autotimer.c:480 autotimer.c:513 epgsettings.h:216
-#: httpdfunc.h:4434 rectimer.h:1188
+#: httpdfunc.h:4434 rectimer.h:1206
 msgid "nothing"
 msgstr "Ничего"
 
@@ -12568,7 +12568,7 @@ msgstr "Старше 50 дней"
 msgid "on"
 msgstr "Вкл"
 
-#: rectimer.h:1061 rectimer.h:1478 rectimer.h:1489
+#: rectimer.h:1079 rectimer.h:1496 rectimer.h:1507
 msgid "once"
 msgstr "Один раз"
 
@@ -12723,7 +12723,7 @@ msgid "possetup"
 msgstr ""
 
 #: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
-#: rectimer.h:1190 stopifnotused.c:111
+#: rectimer.h:1208 stopifnotused.c:111
 msgid "power off"
 msgstr "Выключение"
 
@@ -12799,11 +12799,11 @@ msgstr ""
 msgid "ready"
 msgstr "Готово"
 
-#: rectimer.h:1475
+#: rectimer.h:1493
 msgid "rec"
 msgstr ""
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:585 rectimer.h:1050
+#: autotimer.c:475 autotimer.c:508 harddisk.h:585 rectimer.h:1068
 msgid "record"
 msgstr "Запись"
 
@@ -12847,7 +12847,7 @@ msgstr "Перенесение каналов"
 msgid "rename service"
 msgstr "Переименование каналов"
 
-#: rectimer.h:1062 rectimer.h:1480 rectimer.h:1491
+#: rectimer.h:1080 rectimer.h:1498 rectimer.h:1509
 msgid "repeat"
 msgstr ""
 
@@ -12889,7 +12889,7 @@ msgstr "Размер буфера чтения"
 msgid "rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp"
 msgstr ""
 
-#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1515 subtitle.h:1624
+#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1533 subtitle.h:1624
 msgid "running"
 msgstr "Активен"
 
@@ -13174,7 +13174,7 @@ msgid "stable"
 msgstr "Официальный фид"
 
 #: adjust.h:163 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4441 rectimer.h:1189 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4441 rectimer.h:1207 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Режим ожидания"
 
@@ -13244,7 +13244,7 @@ msgstr ""
 msgid "subtitle"
 msgstr "Субтитры"
 
-#: rectimer.h:1517
+#: rectimer.h:1535
 msgid "success"
 msgstr "Сделано"
 
@@ -13252,11 +13252,11 @@ msgstr "Сделано"
 msgid "swap"
 msgstr "SWAР"
 
-#: rectimer.h:1486
+#: rectimer.h:1504
 msgid "switch"
 msgstr "Перключить"
 
-#: autotimer.c:476 autotimer.c:509 rectimer.h:1051
+#: autotimer.c:476 autotimer.c:509 rectimer.h:1069
 msgid "switch channel"
 msgstr "После переключения на канал"
 
@@ -13566,7 +13566,7 @@ msgstr "Испоьзовать DNS адрес"
 msgid "useproxy"
 msgstr "Использовать прокси"
 
-#: lnbconfig.h:149 rectimer.h:1077
+#: lnbconfig.h:149 rectimer.h:1095
 msgid "user defined"
 msgstr "Пользовательский"
 
@@ -13662,7 +13662,7 @@ msgstr "Дождитесь остановки"
 msgid "wait for stopping download"
 msgstr "Дождитесь конца загрузки"
 
-#: rectimer.h:1513
+#: rectimer.h:1531
 msgid "waiting"
 msgstr "Ожидание"
 
@@ -13674,7 +13674,7 @@ msgstr "Плагин погоды"
 msgid "webdir"
 msgstr ""
 
-#: rectimer.h:1075
+#: rectimer.h:1093
 msgid "weekly"
 msgstr "Еженедельно"
 
@@ -13722,7 +13722,7 @@ msgstr ""
 msgid "wlansettings"
 msgstr ""
 
-#: rectimer.h:1076
+#: rectimer.h:1094
 msgid "workdays"
 msgstr "В рабочие дни"
 
@@ -13802,9 +13802,9 @@ msgstr "Жёлтая"
 #: panel_settings_autostart.h:337 panel_settings_autostart.h:351
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
-#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1092 rectimer.h:1097
-#: rectimer.h:1102 rectimer.h:1107 rectimer.h:1112 rectimer.h:1117
-#: rectimer.h:1122 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
+#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1110 rectimer.h:1115
+#: rectimer.h:1120 rectimer.h:1125 rectimer.h:1130 rectimer.h:1135
+#: rectimer.h:1140 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
 #: scan.h:2270 scan.h:2280 scan.h:2284 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
