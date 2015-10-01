@@ -1592,7 +1592,7 @@ start:
 			goto start;
 		}
 		
-		if(flag == 1 && rcret == getrcconfigint("rcyellow" NULL)) // delete all log entrys
+		if(flag == 1 && rcret == getrcconfigint("rcyellow", NULL)) // delete all log entrys
 		{
 			flag = 1;
 			deloldrectimerlog();
