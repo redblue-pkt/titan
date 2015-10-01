@@ -749,6 +749,24 @@ void deloldrectimer()
 	}
 }
 
+void deloldrectimerlog()
+{
+	struct rectimer* rectimernode = NULL;
+	
+	rectimernode = rectimer;
+	while(rectimernode != NULL)
+	{
+		if(rectimernode->status == 2 || rectimernode->status == 3)
+			delrectimer(rectimernode, 0, 0);	
+		else
+			rectimernode = rectimernode->next;
+	}
+	m_lock(&status.rectimermutex, 1);
+	writerectimer(getconfig("rectimerfile", NULL), 1);
+	m_unlock(&status.rectimermutex, 1);
+}
+
+
 void freerectimer()
 {
 	struct rectimer *node = rectimer, *prev = rectimer;
@@ -1570,6 +1588,14 @@ start:
 			flag = 1;
 			delrectimer((struct rectimer*)listbox->select->handle, 1, 0);
 			
+			delmarkedscreennodes(recordtimer, 1);
+			goto start;
+		}
+		
+		if(flag == 1 && rcret == getrcconfigint("rcyellow" NULL)) // delete all log entrys
+		{
+			flag = 1;
+			deloldrectimerlog();
 			delmarkedscreennodes(recordtimer, 1);
 			goto start;
 		}
