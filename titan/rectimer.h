@@ -1565,7 +1565,7 @@ start:
 			delmarkedscreennodes(recordtimer, 1);
 			goto start;
 		}
-		if(flag == 1 && rcret == getrcconfigint("rcred", NULL)) // delete log
+		if(flag == 1 && rcret == getrcconfigint("rcred", NULL) && listbox->select != NULL) // delete log
 		{
 			flag = 1;
 			delrectimer((struct rectimer*)listbox->select->handle, 1, 0);
