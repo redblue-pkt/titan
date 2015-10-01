@@ -43,7 +43,7 @@ void setdefaults()
 	addconfigdef("vs_contrast", "128");
 	addconfigdef("vs_tint", "128");
 	addconfigdef("vs_saturation", "128");
-	addconfigdef("epgfreespace", "300");
+	addconfigdef("epgfreespace", "900");
 	addconfigdef("pincode", "0000");
 	addconfigdef("pincodemenu", "0000");
 	addconfigdef("httpdstart", "0");
