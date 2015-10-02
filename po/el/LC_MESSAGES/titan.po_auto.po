@@ -8527,7 +8527,7 @@ msgstr ""
 #: rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505
 #: rtl2now.h:507 rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:540
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
-#: tectime.h:13 tectime.h:15 tithek_global.h:418 tithek_global.h:420
+#: tectime.h:13 tectime.h:15 tithek_global.h:421 tithek_global.h:423
 #: tithek_mainmenu.h:109 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:354 youtube.h:356
 #: zdf.h:147 zdf.h:149
