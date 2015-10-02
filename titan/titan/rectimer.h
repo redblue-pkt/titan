@@ -760,7 +760,7 @@ void deloldrectimerlog()
 		rectimernodenext = rectimernode->next;
 		if(rectimernode->status == 2 || rectimernode->status == 3)
 			delrectimer(rectimernode, 0, 0);	
-		rectimernode = rectimernodenex;
+		rectimernode = rectimernodenext;
 	}
 	m_lock(&status.rectimermutex, 1);
 	writerectimer(getconfig("rectimerfile", NULL), 1);
