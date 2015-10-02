@@ -752,13 +752,15 @@ void deloldrectimer()
 void deloldrectimerlog()
 {
 	struct rectimer* rectimernode = NULL;
+	struct rectimer* rectimernodenext = NULL;
 	
 	rectimernode = rectimer;
 	while(rectimernode != NULL)
 	{
+		rectimernodenext = rectimernode->next;
 		if(rectimernode->status == 2 || rectimernode->status == 3)
 			delrectimer(rectimernode, 0, 0);	
-		rectimernode = rectimernode->next;
+		rectimernode = rectimernodenex;
 	}
 	m_lock(&status.rectimermutex, 1);
 	writerectimer(getconfig("rectimerfile", NULL), 1);
