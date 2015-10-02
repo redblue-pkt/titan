@@ -3259,7 +3259,7 @@ msgstr ""
 #: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
 #: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
 #: readerconfig.h:498 record.h:90 record.h:387 record.h:1160 record.h:1689
-#: rectimer.h:577 rectimer.h:1256 rectimer.h:1403 rectimer.h:1415
+#: rectimer.h:577 rectimer.h:1258 rectimer.h:1405 rectimer.h:1417
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
@@ -4031,7 +4031,7 @@ msgstr "Tần số:"
 msgid "Fri"
 msgstr ""
 
-#: global.h:6203 global.h:6213 rectimer.h:1102 skin_default_skin.xml.h:221
+#: global.h:6203 global.h:6213 rectimer.h:1104 skin_default_skin.xml.h:221
 msgid "Friday"
 msgstr "Thứ sáu"
 
@@ -5899,7 +5899,7 @@ msgstr ""
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
 #: record.h:1160 record.h:1437 record.h:1689 record.h:1714 rectimer.h:577
-#: rectimer.h:1256 rectimer.h:1403 rectimer.h:1415 restoredefault.h:10
+#: rectimer.h:1258 rectimer.h:1405 rectimer.h:1417 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
@@ -5995,7 +5995,7 @@ msgstr "Thông tin môđun"
 msgid "Mon"
 msgstr ""
 
-#: global.h:6199 global.h:6209 rectimer.h:1098 skin_default_skin.xml.h:372
+#: global.h:6199 global.h:6209 rectimer.h:1100 skin_default_skin.xml.h:372
 msgid "Monday"
 msgstr "Thứ hai"
 
@@ -6524,8 +6524,8 @@ msgstr "E"
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1256
-#: rectimer.h:1403 rectimer.h:1415 restoredefault.h:10 restoredefault.h:19
+#: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
+#: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
 #: scan.h:1636 scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25
@@ -8346,7 +8346,7 @@ msgstr ""
 msgid "Saturation"
 msgstr " Saturation "
 
-#: global.h:6204 global.h:6214 rectimer.h:1103 skin_default_skin.xml.h:521
+#: global.h:6204 global.h:6214 rectimer.h:1105 skin_default_skin.xml.h:521
 msgid "Saturday"
 msgstr "Thứ bảy"
 
@@ -9538,7 +9538,7 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: global.h:6205 global.h:6215 rectimer.h:1104 skin_default_skin.xml.h:614
+#: global.h:6205 global.h:6215 rectimer.h:1106 skin_default_skin.xml.h:614
 msgid "Sunday"
 msgstr "Chủ nhật"
 
@@ -9951,7 +9951,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6202 global.h:6212 rectimer.h:1101 skin_default_skin.xml.h:636
+#: global.h:6202 global.h:6212 rectimer.h:1103 skin_default_skin.xml.h:636
 msgid "Thursday"
 msgstr "Thứ năm"
 
@@ -10416,7 +10416,7 @@ msgstr ""
 msgid "Tue"
 msgstr ""
 
-#: global.h:6200 global.h:6210 rectimer.h:1099 skin_default_skin.xml.h:672
+#: global.h:6200 global.h:6210 rectimer.h:1101 skin_default_skin.xml.h:672
 msgid "Tuesday"
 msgstr "Thứ ba"
 
@@ -10976,7 +10976,7 @@ msgstr ""
 msgid "Wed"
 msgstr ""
 
-#: global.h:6201 global.h:6211 rectimer.h:1100 skin_default_skin.xml.h:721
+#: global.h:6201 global.h:6211 rectimer.h:1102 skin_default_skin.xml.h:721
 msgid "Wednesday"
 msgstr "Ngày thứ tư"
 
@@ -11343,7 +11343,7 @@ msgid "ausgehende Anrufe"
 msgstr ""
 
 #: adjust.h:161 autotimer.c:479 autotimer.c:512 avsettings.h:71
-#: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1204
+#: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1206
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
 #: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
@@ -11589,7 +11589,7 @@ msgstr ""
 msgid "d"
 msgstr ""
 
-#: rectimer.h:1091
+#: rectimer.h:1093
 msgid "daily"
 msgstr "hàng ngày"
 
@@ -11778,7 +11778,7 @@ msgstr ""
 msgid "epgsettings"
 msgstr ""
 
-#: rectimer.h:1536
+#: rectimer.h:1538
 msgid "error"
 msgstr "Lỗi khởi động"
 
@@ -12355,8 +12355,8 @@ msgstr "NFS-Server"
 #: panel_settings_autostart.h:360 panel_settings_overclocking.h:214
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
-#: readerconfig.h:254 rectimer.h:1108 rectimer.h:1113 rectimer.h:1118
-#: rectimer.h:1123 rectimer.h:1128 rectimer.h:1133 rectimer.h:1138 scan.h:1775
+#: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1775
 #: scan.h:2254 scan.h:2258 scan.h:2262 scan.h:2266 scan.h:2271 scan.h:2279
 #: scan.h:2283 screensaveradjust.h:19 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
@@ -12414,7 +12414,7 @@ msgid "not started akttime higher than timer endtime"
 msgstr " không bắt đầu khi kết thúc thời gian hẹn giờ"
 
 #: adjust.h:162 autotimer.c:480 autotimer.c:513 epgsettings.h:216
-#: httpdfunc.h:4434 rectimer.h:1205
+#: httpdfunc.h:4434 rectimer.h:1207
 msgid "nothing"
 msgstr "không"
 
@@ -12504,7 +12504,7 @@ msgstr ""
 msgid "on"
 msgstr "BẬT"
 
-#: rectimer.h:1078 rectimer.h:1495 rectimer.h:1506
+#: rectimer.h:1080 rectimer.h:1497 rectimer.h:1508
 msgid "once"
 msgstr "một lần"
 
@@ -12659,7 +12659,7 @@ msgid "possetup"
 msgstr ""
 
 #: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
-#: rectimer.h:1207 stopifnotused.c:111
+#: rectimer.h:1209 stopifnotused.c:111
 msgid "power off"
 msgstr "tắt nguồn"
 
@@ -12735,11 +12735,11 @@ msgstr ""
 msgid "ready"
 msgstr "sẵn sàng"
 
-#: rectimer.h:1492
+#: rectimer.h:1494
 msgid "rec"
 msgstr "màu đỏ"
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:585 rectimer.h:1067
+#: autotimer.c:475 autotimer.c:508 harddisk.h:585 rectimer.h:1069
 msgid "record"
 msgstr "Ghi"
 
@@ -12783,7 +12783,7 @@ msgstr "xóa dịch vụ"
 msgid "rename service"
 msgstr "đổi tên chương trình"
 
-#: rectimer.h:1079 rectimer.h:1497 rectimer.h:1508
+#: rectimer.h:1081 rectimer.h:1499 rectimer.h:1510
 msgid "repeat"
 msgstr ""
 
@@ -12825,7 +12825,7 @@ msgstr ""
 msgid "rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp"
 msgstr ""
 
-#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1532 subtitle.h:1624
+#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1534 subtitle.h:1624
 msgid "running"
 msgstr "Đang chạy"
 
@@ -13107,7 +13107,7 @@ msgid "stable"
 msgstr "Tắt"
 
 #: adjust.h:163 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4441 rectimer.h:1206 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4441 rectimer.h:1208 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Standby"
 
@@ -13177,7 +13177,7 @@ msgstr "Streaming"
 msgid "subtitle"
 msgstr ""
 
-#: rectimer.h:1534
+#: rectimer.h:1536
 msgid "success"
 msgstr "Đã hủy thành công!"
 
@@ -13185,11 +13185,11 @@ msgstr "Đã hủy thành công!"
 msgid "swap"
 msgstr "Trao đổi"
 
-#: rectimer.h:1503
+#: rectimer.h:1505
 msgid "switch"
 msgstr "Chuyển"
 
-#: autotimer.c:476 autotimer.c:509 rectimer.h:1068
+#: autotimer.c:476 autotimer.c:509 rectimer.h:1070
 msgid "switch channel"
 msgstr "chuyển chương trình"
 
@@ -13499,7 +13499,7 @@ msgstr "Sử dụng DNS"
 msgid "useproxy"
 msgstr "sử dụng proxy"
 
-#: lnbconfig.h:149 rectimer.h:1094
+#: lnbconfig.h:149 rectimer.h:1096
 msgid "user defined"
 msgstr "Định nghĩa người dùng"
 
@@ -13595,7 +13595,7 @@ msgstr ""
 msgid "wait for stopping download"
 msgstr "vui long đợi để dừng download."
 
-#: rectimer.h:1530
+#: rectimer.h:1532
 msgid "waiting"
 msgstr "Đang bắt đầu"
 
@@ -13607,7 +13607,7 @@ msgstr "thông tin thời tiết"
 msgid "webdir"
 msgstr ""
 
-#: rectimer.h:1092
+#: rectimer.h:1094
 msgid "weekly"
 msgstr "hàng tuần"
 
@@ -13655,7 +13655,7 @@ msgstr ""
 msgid "wlansettings"
 msgstr ""
 
-#: rectimer.h:1093
+#: rectimer.h:1095
 msgid "workdays"
 msgstr "các ngày làm việc"
 
@@ -13733,9 +13733,9 @@ msgstr ""
 #: panel_settings_autostart.h:337 panel_settings_autostart.h:351
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
-#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1109 rectimer.h:1114
-#: rectimer.h:1119 rectimer.h:1124 rectimer.h:1129 rectimer.h:1134
-#: rectimer.h:1139 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
+#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
+#: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
+#: rectimer.h:1141 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
 #: scan.h:2270 scan.h:2280 scan.h:2284 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
