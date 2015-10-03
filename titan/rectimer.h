@@ -1402,7 +1402,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			{
 				if(ret == 2)
 				{
-					ret = textbox(_("Message"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					ret = textbox(_("Error"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					if(ret == 2)
 						ret = 99;
 					else
@@ -1414,7 +1414,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					free(node->errstr); node->errstr = NULL;
 					node->errstr = ostrcat(checkret, NULL, 0, 0);
 					stringreplacecharonce(node->errstr, '\n', '\0');
-					if(ret == 1) textbox(_("Message"), checkret, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					if(ret == 1) textbox(_("Error"), checkret, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
 
