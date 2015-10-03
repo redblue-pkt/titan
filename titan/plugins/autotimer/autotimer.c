@@ -385,7 +385,7 @@ void init(void)
 	tmpstr = createpluginpath("/autotimer/skin.xml", 0);
 	readscreen(tmpstr, 120, 1);
 	free(tmpstr); tmpstr = NULL;
-	debug(10, "Autot Timer Plugin loaded !!!");
+	debug(10, "Auto Timer Plugin loaded !!!");
 	if(getconfig("at1_akt", NULL) != NULL)
 	{
 		if(getconfigint("at1_running", NULL) == 1)
@@ -445,9 +445,9 @@ void start(void)
 	autostart = 10;
 	
 	if(autotimerthread == NULL)
-		changetext(autotimer_blue, "start");
+		changetext(autotimer_blue, "Autostart");
 	else
-		changetext(autotimer_blue, "stop");
+		changetext(autotimer_blue, "Stop");
 
 	//**** Block1
 	addchoicebox(autotimer_akt, "0", _("no"));
@@ -534,13 +534,13 @@ void start(void)
 				sleep(3);
 				if(autotimerthread == NULL)
 				{
-					textbox(_("Stop AutoTimer"), _("AutoTimer succesfull stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
-					changetext(autotimer_blue, "start");
+					textbox(_("Stop AutoTimer"), _("AutoTimer succesfully stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);	
+					changetext(autotimer_blue, "Autostart");
 					addconfigint("at1_running", 0);
 				}
 				else
 				{
-					textbox(_("Stop AutoTimer"), _("ERROR... AutoTimer not stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);		
+					textbox(_("Stop AutoTimer"), _("ERROR... AutoTimer not stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);		
 					addconfigint("at1_running", 1);
 				}
 			}
@@ -565,14 +565,14 @@ void start(void)
 				sleep(1);
 				if(autotimerthread != NULL)
 				{
-					textbox(_("Start AutoTimer"), _("AutoTimer succesfull started"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
-					changetext(autotimer_blue, "stop");
+					textbox(_("Start AutoTimer"), _("AutoTimer succesfully started"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);	
+					changetext(autotimer_blue, "Stop");
 					addconfigint("at1_running", 1);
 				}
 				else
 				{
 					addconfigint("at1_running", 0);
-					textbox(_("Start AutoTimer"), _("ERROR... AutoTimer not started"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);		
+					textbox(_("Start AutoTimer"), _("ERROR... AutoTimer not started"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);		
 				}
 			}
 		}
@@ -600,7 +600,7 @@ void start(void)
 				if(autotimerthread == NULL)
 					autotimerthread = addtimer(&autotimer_thread, START, 10000, 1, NULL, NULL, NULL);
 			}
-			textbox(_("Save Settings"), _("Settings succesfull saved"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Save Settings"), _("Settings succesfully saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 		if (rcret == getrcconfigint("rcepg", NULL))
 		{
