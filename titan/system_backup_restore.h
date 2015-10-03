@@ -28,7 +28,7 @@ void screensystem_backup_restore()
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(backup_restore);
-			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
+			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
 			{
 				changetext(info, _("Please wait ...\n\nAll Settings are restored.\n\nBox will start in few seconds."));
 				drawscreen(backup_restore, 0, 0);
@@ -37,10 +37,10 @@ void screensystem_backup_restore()
 				{
 					ret = system("/sbin/settings.sh restore > /tmp/backup.log 2>&1");
 					if(ret != 0)
-						textbox(_("Message"), _("Restore failed, see log"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+						textbox(_("Message"), _("Restore failed, see log"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 					else
 					{
-						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 							screenextensions(3, NULL, NULL, 1); 
 						ret = system("init 6");
 					}
@@ -48,7 +48,7 @@ void screensystem_backup_restore()
 				else
 				{
 					//clearscreen(backup_restore);
-					textbox(_("RESTORE ERROR"), _("No backup folders found!!!\n\nAborting restoring..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("RESTORE ERROR"), _("No backup folders found!!!\n\nAborting restoring..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 					changetext(info, _(infotext));
 					drawscreen(backup_restore, 0, 0);
 				}
@@ -77,15 +77,15 @@ void screensystem_backup_restore()
 				info->textposx = 0;
 				b_red->hidden = NO; b_green->hidden = NO; b_yellow->hidden = NO; b_blue->hidden = NO;
 				if(ret != 0)
-					textbox(_("Message"), _("Backup failed, see log"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+					textbox(_("Message"), _("Backup failed, see log"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 				else
-					textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+					textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 				drawscreen(backup_restore, 0, 0);
 			}
 			else
 			{
 				clearscreen(backup_restore);
-				textbox(_("BACKUP ERROR"), _("A record hdd or a swapstick must be mounted!\n\nAborting backup..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("BACKUP ERROR"), _("A record hdd or a swapstick must be mounted!\n\nAborting backup..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				drawscreen(backup_restore, 0, 0);
 			}
 		}
