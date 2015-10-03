@@ -1219,7 +1219,7 @@ msgstr "Autotimer erfolgreich gestartet"
 
 #: autotimer.c:537
 msgid "AutoTimer succesfully stopped"
-msgstr "Autotimer wurde erfolgreich beendet"
+msgstr "AutoTimer erfolgreich beendet"
 
 #: skin_default_skin.xml.h:44
 msgid "Autocheck cam can decrypt"
