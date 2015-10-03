@@ -13863,9 +13863,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "AutoTimer succesfull started"
-#~ msgstr "Autotimer successfully started"
-
-#~ msgid "AutoTimer succesfull stopped"
-#~ msgstr "Autotimer successfully stopped"
