@@ -1562,13 +1562,15 @@ start:
 		b2->hidden = NO;
 		b3->hidden = NO;
 		b4->hidden = NO;
+		changetext(b3,_("STOP/START"));
 	}
 	else
 	{
 		b1->hidden = NO;
 		b2->hidden = YES;
-		b3->hidden = YES;
+		b3->hidden = NO;
 		b4->hidden = YES;
+		changetext(b3,_("delete all"));
 	}
 
 	drawscreen(recordtimer, 0, 0);
