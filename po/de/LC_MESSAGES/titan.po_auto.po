@@ -2275,7 +2275,7 @@ msgstr "Vor der Suche löschen"
 
 #: rectimer.h:1578 rectimer.h:1580
 msgid "Clear list"
-msgstr ""
+msgstr "Liste leeren"
 
 #: stock.h:241
 msgid "Close: "
