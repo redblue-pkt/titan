@@ -14065,14 +14065,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "Timer conflicts with other timer\n"
-#~ "Would you add the timer?"
-#~ msgstr "Timer Konflikt! Timer trotzdem erstellen?"
-
-#~ msgid "Timer endtime shorter than aktual time"
-#~ msgstr "FEHLER: Endzeit liegt in der Vergangenheit!"
-
-#~ msgid "Timer endtime shorter than start time"
-#~ msgstr "FEHLER: Endzeit liegt vor Startzeit!"

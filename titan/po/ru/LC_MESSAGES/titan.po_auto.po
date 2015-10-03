@@ -13835,14 +13835,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "Timer conflicts with other timer\n"
-#~ "Would you add the timer?"
-#~ msgstr "Обнаружен конфликт таймеров. Добавить этот таймер?"
-
-#~ msgid "Timer endtime shorter than aktual time"
-#~ msgstr "ОШИБКА: Время окончания записи меньше текущего!"
-
-#~ msgid "Timer endtime shorter than start time"
-#~ msgstr "ОШИБКА: Время окончания записи меньше времени начала!"

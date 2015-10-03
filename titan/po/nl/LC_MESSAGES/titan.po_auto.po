@@ -13830,9 +13830,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Timer endtime shorter than aktual time"
-#~ msgstr "Timer eind tijd in verleden tijd"
-
-#~ msgid "Timer endtime shorter than start time"
-#~ msgstr "Timer eind tijd voor start tijd"

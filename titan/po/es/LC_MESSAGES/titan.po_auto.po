@@ -13920,16 +13920,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "Timer conflicts with other timer\n"
-#~ "Would you add the timer?"
-#~ msgstr ""
-#~ "Temporizador choca con un temporizador ajustado.\n"
-#~ " desea configurar el temporizador?"
-
-#~ msgid "Timer endtime shorter than aktual time"
-#~ msgstr "ERROR: Temporizador fin de tiempo en el pasado"
-
-#~ msgid "Timer endtime shorter than start time"
-#~ msgstr "ERROR: establecer final antes de ajustar la hora de inicio"
