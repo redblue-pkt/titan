@@ -1938,8 +1938,9 @@ msgstr "ERROR: No se han actualizado todos los plugins!"
 
 #: harddisk.h:355 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
 #: harddisk.h:776 harddisk.h:778 harddisk.h:860 play.h:1294
-#: plugins_panel_skin.xml.h:7 restoredefault.h:10 restoredefault.h:32
-#: restoredefault.h:47 skin_default_skin.xml.h:85 skins_panel_skin.xml.h:7
+#: plugins_panel_skin.xml.h:7 rectimer.h:577 rectimer.h:1405
+#: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47
+#: skin_default_skin.xml.h:85 skins_panel_skin.xml.h:7
 #: system_backup_restore.h:31 system_backup_restore.h:43 system_update.h:263
 msgid "Cancel"
 msgstr "Cancelar"
@@ -2236,6 +2237,10 @@ msgstr "Limpiar"
 #: skin_default_skin.xml.h:100
 msgid "Clear before scan"
 msgstr "Limpiar antes de buscar?"
+
+#: rectimer.h:1578 rectimer.h:1580
+msgid "Clear list"
+msgstr ""
 
 #: stock.h:241
 msgid "Close: "
@@ -3300,8 +3305,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1258
-#: rectimer.h:1405 rectimer.h:1417 rgui.h:30 rgui.h:118 rgui.h:134
+#: record.h:387 record.h:1160 record.h:1689 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:663 security.h:680 security.h:1916 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skin_default_skin.xml.h:192
@@ -4536,7 +4540,7 @@ msgstr ""
 msgid ""
 "Here you can create, delete and edit timer events. Press ok to edit the "
 "selected timer. Press blue to check the timer log. Then choose red to delete "
-"a single entry or yellow to clean the complete list."
+"a single entry or yellow to clear the list."
 msgstr ""
 
 #: skin_default_skin.xml.h:257
@@ -10164,18 +10168,16 @@ msgstr "Temporizador y EPG"
 #: rectimer.h:166
 msgid ""
 "Timer conflicts with other timer\n"
-"Would you add the timer?"
+"Add timer anyway?"
 msgstr ""
-"Temporizador choca con un temporizador ajustado.\n"
-" desea configurar el temporizador?"
-
-#: rectimer.h:145
-msgid "Timer endtime shorter than aktual time"
-msgstr "ERROR: Temporizador fin de tiempo en el pasado"
 
 #: rectimer.h:150
-msgid "Timer endtime shorter than start time"
-msgstr "ERROR: establecer final antes de ajustar la hora de inicio"
+msgid "Timer end is before start time"
+msgstr ""
+
+#: rectimer.h:145
+msgid "Timer end is in the past"
+msgstr ""
 
 #: rectimer.h:155
 msgid "Timer service ID not ok"
@@ -11779,10 +11781,6 @@ msgstr "Eliminar inicio de canal"
 #: optimize.h:254 skin_default_skin.xml.h:140
 msgid "delete"
 msgstr "Eliminar"
-
-#: rectimer.h:1578 rectimer.h:1580
-msgid "delete all"
-msgstr ""
 
 #: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
 msgid "details"
@@ -13922,3 +13920,16 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid ""
+#~ "Timer conflicts with other timer\n"
+#~ "Would you add the timer?"
+#~ msgstr ""
+#~ "Temporizador choca con un temporizador ajustado.\n"
+#~ " desea configurar el temporizador?"
+
+#~ msgid "Timer endtime shorter than aktual time"
+#~ msgstr "ERROR: Temporizador fin de tiempo en el pasado"
+
+#~ msgid "Timer endtime shorter than start time"
+#~ msgstr "ERROR: establecer final antes de ajustar la hora de inicio"
