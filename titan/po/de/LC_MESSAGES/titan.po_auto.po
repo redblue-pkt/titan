@@ -11570,7 +11570,7 @@ msgid "all"
 msgstr "Alle"
 
 #: tpk_description.h:4
-msgid "all: Settings Astra 19.2 KabelD all transponder | 18.08.2015"
+msgid "all: Settings Astra 19.2 KabelD all transponder | 03.10.2015"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
