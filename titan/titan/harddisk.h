@@ -352,7 +352,7 @@ void screenconfigurehdd(char* dev)
 				path = ostrcat(mountpath, "movie", 0, 0);
 				if(file_exist(path))
 				{
-					if(textbox("Message", _("Are you sure, you want to delete the record directory on this drive?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+					if(textbox("Message", _("Are you sure, you want to delete the record directory on this drive?"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 					{
 						drawscreen(load, 0, 0);
 						cmd = ostrcat("rm -rf ", path, 0, 0);
@@ -484,7 +484,7 @@ start:
 
 	if(hdd == NULL)
 	{
-		textbox(_("Harddisk"), _("sorry found no harddisk"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+		textbox(_("Harddisk"), _("sorry found no harddisk"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 600, 0, 0);
 		return;
 	}
 
@@ -683,7 +683,7 @@ void hddformat(char* dev, char* filesystem)
 
 	if(node->partition == 0)
 	{
-		if(textbox(_("Message"), _("Are you sure you want to remove all Partitions\non this device and create a new Partition 1?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+		if(textbox(_("Message"), _("Are you sure you want to remove all Partitions\non this device and create a new Partition 1?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 		{
 			cmd = ostrcat("/sbin/parter.sh /dev/" , dev, 0, 0);
 			cmd = ostrcat(cmd , " create 1 ", 1, 0);
@@ -717,7 +717,7 @@ void hddformat(char* dev, char* filesystem)
 	}
 	else
 	{
-		if(textbox(_("Message"), _("Are you sure you want to format this Partition?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+		if(textbox(_("Message"), _("Are you sure you want to format this Partition?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 		{
 			printf("dev: %s\n", dev);
 
@@ -766,16 +766,16 @@ void hddformat(char* dev, char* filesystem)
 	{
 		int record = 0, ext = 0, swap = 0, backup = 0;
 		
-		if(textbox(_("Message"), _("use medium for record"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+		if(textbox(_("Message"), _("use medium for record"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 			record = 1;
 		
 		if(status.expertmodus > 9)
 		{
-			if(textbox(_("Message"), _("use medium for extension"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			if(textbox(_("Message"), _("use medium for extension"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				ext = 1;
-			if(textbox(_("Message"), _("use medium for swap"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			if(textbox(_("Message"), _("use medium for swap"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				swap = 1;
-			if(textbox(_("Message"), _("use medium for backup"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			if(textbox(_("Message"), _("use medium for backup"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				backup = 1;
 		}
 			
@@ -835,7 +835,7 @@ void hddformat(char* dev, char* filesystem)
 		free(cmd); cmd = NULL;
 		if(rc != 0)
 		{
-			textbox(_("Message"), _("ERROR\npartition could not be created"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			textbox(_("Message"), _("ERROR\npartition could not be created"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 			return;
 		}
 	}
@@ -857,7 +857,7 @@ int hddfsck(char* dev)
 		textbox(_("Message"), _("Information: This hard drive size can take a file\nsystem check between 30 minutes and 1.5 hours."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 	}
 
-	if(textbox(_("Message"), _("Are you sure you want to check this Partition?\nBox reboots after check"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Are you sure you want to check this Partition?\nBox reboots after check"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 	{
 		if(ostrcmp(node->filesystem, "vfat") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.fat.gui -a -v\" /dev/" , dev, 0, 0);

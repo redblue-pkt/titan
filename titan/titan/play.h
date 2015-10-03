@@ -1291,7 +1291,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 			subfile = file;
 		if(getservicebyrecname(file, 0, 0) != NULL)
 			textbox(_("Message"), _("Record in progress"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-		else if(textbox(_("Really Delete ?"), subfile, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+		else if(textbox(_("Really Delete ?"), subfile, _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 		{
 			unlink(file);
 			if(file_exist(file))
@@ -1500,7 +1500,7 @@ playerstart:
 #ifndef SIMULATE
 		if(rcret != 0)
 		{
-			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+			textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 			writevfdmenu("Player");
 			
 			if(startfile == NULL)
@@ -1716,7 +1716,7 @@ playerstart:
 					char* asfile = changefilenameext(file, ".as");
 					if(status.autoseek == 0) {
 						status.autoseek = 1;
-						textbox(_("Message"), _("Marker autoseek is started"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+						textbox(_("Message"), _("Marker autoseek is started"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 10, 0);
 						addtimer(&markerautoseek_thread, START, 10000, 1, NULL, NULL, NULL);
 						FILE* testseek = fopen(asfile, "w");
 						if(testseek != NULL)
@@ -1727,7 +1727,7 @@ playerstart:
 					}
 					else {
 						status.autoseek = 0;
-						textbox(_("Message"), _("Marker autoseek is stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+						textbox(_("Message"), _("Marker autoseek is stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 10, 0);
 						unlink(asfile);
 					}
 					free(asfile); asfile = NULL;
