@@ -13855,16 +13855,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "Timer conflicts with other timer\n"
-#~ "Would you add the timer?"
-#~ msgstr ""
-#~ "Laikmatis susiduria su rinkiniu timer.\n"
-#~ "Do js vis dar norite nustatyti laikmat ?"
-
-#~ msgid "Timer endtime shorter than aktual time"
-#~ msgstr "KLAIDA: Laikmatis Endtime prityje"
-
-#~ msgid "Timer endtime shorter than start time"
-#~ msgstr "KLAIDA: Nustatyti pabaiga yra prie nustatyt Pradios laikas"

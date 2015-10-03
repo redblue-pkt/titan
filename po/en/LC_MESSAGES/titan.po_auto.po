@@ -13856,16 +13856,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "Timer conflicts with other timer\n"
-#~ "Would you add the timer?"
-#~ msgstr ""
-#~ "Timer collides with a set timer.\n"
-#~ "Do you still want to set the timer?"
-
-#~ msgid "Timer endtime shorter than aktual time"
-#~ msgstr "ERROR: Timer Endtime in the past"
-
-#~ msgid "Timer endtime shorter than start time"
-#~ msgstr "ERROR: Set End is before set Start time"
