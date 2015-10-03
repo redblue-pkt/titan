@@ -1448,6 +1448,7 @@ void screenrectimer()
 	struct skin* b1 = getscreennode(recordtimer, "b1");
 	struct skin* b2 = getscreennode(recordtimer, "b2");
 	struct skin* b3 = getscreennode(recordtimer, "b3");
+	struct skin* t3 = getscreennode(recordtimer, "t3");
 	struct skin* b4 = getscreennode(recordtimer, "b4");
 	struct skin* tmp = NULL;
 	struct rectimer* rectimernode = NULL;
@@ -1562,7 +1563,10 @@ start:
 		b2->hidden = NO;
 		b3->hidden = NO;
 		b4->hidden = NO;
-		changetext(b3,_("STOP/START"));
+		if(t3 == NULL)
+			changetext(b3,_("STOP/START"));
+		else
+			changetext(t3,_("STOP/START"));
 	}
 	else
 	{
@@ -1570,7 +1574,10 @@ start:
 		b2->hidden = YES;
 		b3->hidden = NO;
 		b4->hidden = YES;
-		changetext(b3,_("delete all"));
+		if(t3 == NULL)
+			changetext(b3,_("delete all"));
+		else
+			changetext(t3,_("delete all"));
 	}
 
 	drawscreen(recordtimer, 0, 0);
