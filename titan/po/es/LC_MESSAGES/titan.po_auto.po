@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.68\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2015-10-03 14:16+0100\n"
+"PO-Revision-Date: 2015-10-03 21:52+0100\n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: es\n"
@@ -10174,14 +10174,16 @@ msgid ""
 "Timer conflicts with other timer\n"
 "Add timer anyway?"
 msgstr ""
+"Temporizador choca con un temporizador ajustado. Desea configurar el "
+"temporizador?"
 
 #: rectimer.h:150
 msgid "Timer end is before start time"
-msgstr ""
+msgstr "Establecer final antes de ajustar la hora de inicio"
 
 #: rectimer.h:145
 msgid "Timer end is in the past"
-msgstr ""
+msgstr "Temporizador fin de tiempo en el pasado"
 
 #: rectimer.h:155
 msgid "Timer service ID not ok"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.68\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-10-03 14:33+0100\n"
+"PO-Revision-Date: 2015-10-03 21:54+0100\n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: lt\n"
@@ -10124,14 +10124,16 @@ msgid ""
 "Timer conflicts with other timer\n"
 "Add timer anyway?"
 msgstr ""
+"Laikmatis susiduria su rinkiniu timer. Do js vis dar norite nustatyti "
+"laikmat?"
 
 #: rectimer.h:150
 msgid "Timer end is before start time"
-msgstr ""
+msgstr "Nustatyti pabaiga yra prie nustatyt Pradios laikas"
 
 #: rectimer.h:145
 msgid "Timer end is in the past"
-msgstr ""
+msgstr "Laikmatis Endtime prityje"
 
 #: rectimer.h:155
 msgid "Timer service ID not ok"
