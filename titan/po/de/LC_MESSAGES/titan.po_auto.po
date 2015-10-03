@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.67\n"
+"Project-Id-Version: TitanNit 1.68\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
@@ -1215,11 +1215,11 @@ msgstr "Einstellungen"
 
 #: autotimer.c:568
 msgid "AutoTimer succesfully started"
-msgstr ""
+msgstr "Autotimer erfolgreich gestartet"
 
 #: autotimer.c:537
 msgid "AutoTimer succesfully stopped"
-msgstr ""
+msgstr "Autotimer wurde erfolgreich beendet"
 
 #: skin_default_skin.xml.h:44
 msgid "Autocheck cam can decrypt"
