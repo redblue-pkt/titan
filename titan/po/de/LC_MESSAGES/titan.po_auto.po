@@ -3513,7 +3513,7 @@ msgstr "Folge"
 
 #: rectimer.h:1405 rectimer.h:1417
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: record.h:43
 msgid "Error create filename"
@@ -4622,6 +4622,16 @@ msgid ""
 "selected timer. Press blue to check the timer log. Then choose red to delete "
 "a single entry or yellow to clear the list."
 msgstr ""
+"Hier können Sie Timer\n"
+"erstellen, löschen und\n"
+"bearbeiten. OK um den\n"
+"ausgewählten Timer zu\n"
+"bearbeiten. Blau um\n"
+"den Timer Verlauf zu\n"
+"prüfen. Dort können\n"
+"Sie mit Rot Einträge\n"
+"löschen oder mit\n"
+"Gelb die Liste leeren."
 
 #: skin_default_skin.xml.h:257
 msgid "Here you can define channels or favorites for EPG scan/refresh."
@@ -10307,15 +10317,15 @@ msgstr "Timer und EPG"
 msgid ""
 "Timer conflicts with other timer\n"
 "Add timer anyway?"
-msgstr ""
+msgstr "Timer Konflikt! Timer trotzdem erstellen?"
 
 #: rectimer.h:150
 msgid "Timer end is before start time"
-msgstr ""
+msgstr "Timer Ende liegt vor Startzeit!"
 
 #: rectimer.h:145
 msgid "Timer end is in the past"
-msgstr ""
+msgstr "Timer Ende liegt in der Vergangenheit!"
 
 #: rectimer.h:155
 msgid "Timer service ID not ok"
