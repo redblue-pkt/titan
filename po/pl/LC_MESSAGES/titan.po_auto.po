@@ -1892,7 +1892,7 @@ msgid "Can't update all packages !"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:7 skin_default_skin.xml.h:86
-#: skins_panel_skin.xml.h:7
+#: skins_panel_skin.xml.h:7 system_update.h:263
 msgid "Cancel"
 msgstr "anuluj"
 
@@ -3241,9 +3241,9 @@ msgstr ""
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:51 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_backup_restore.h:88
-#: system_backup_restore.h:95 system_update.h:257 system_update.h:263
-#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
-#: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: system_backup_restore.h:95 system_update.h:257 system_update.h:270
+#: thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26 thevideo.h:60
+#: thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1038
 #: titan.c:1047 titan.c:1175 titan.c:1196 titan.c:1202 titan.c:1213
 #: titan.c:1219 tithek.c:94 tithek_global.h:75 tithek.h:692 tithek.h:1248
