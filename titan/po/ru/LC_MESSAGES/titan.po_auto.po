@@ -4495,8 +4495,8 @@ msgstr ""
 #: skin_default_skin.xml.h:256
 msgid ""
 "Here you can create, delete and edit timer events. Press ok to edit the "
-"selected timer. Additionally, you can check the results of elapsed timer "
-"events."
+"selected timer. Press blue to check the timer log. Then choose red to delete "
+"a single entry or yellow to clean the complete list."
 msgstr ""
 
 #: skin_default_skin.xml.h:257
@@ -13836,6 +13836,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "cancel"
-#~ msgstr "Отмена"
