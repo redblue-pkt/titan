@@ -1563,7 +1563,7 @@ start:
 		b2->hidden = NO;
 		b3->hidden = NO;
 		b4->hidden = NO;
-		if(t3 == NULL)
+		if(t3 == status.skinerr)
 			changetext(b3,_("STOP/START"));
 		else
 			changetext(t3,_("STOP/START"));
@@ -1574,7 +1574,7 @@ start:
 		b2->hidden = YES;
 		b3->hidden = NO;
 		b4->hidden = YES;
-		if(t3 == NULL)
+		if(t3 == status.skinerr)
 			changetext(b3,_("Clear list"));
 		else
 			changetext(t3,_("Clear list"));
