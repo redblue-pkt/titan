@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.68\n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-10-03 14:34+0100\n"
+"PO-Revision-Date: 2015-10-03 21:56+0100\n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: ru\n"
@@ -10103,15 +10103,15 @@ msgstr "Таймер и EPG"
 msgid ""
 "Timer conflicts with other timer\n"
 "Add timer anyway?"
-msgstr ""
+msgstr "Обнаружен конфликт таймеров. Добавить этот таймер?"
 
 #: rectimer.h:150
 msgid "Timer end is before start time"
-msgstr ""
+msgstr "Время окончания записи меньше времени начала!"
 
 #: rectimer.h:145
 msgid "Timer end is in the past"
-msgstr ""
+msgstr "Время окончания записи меньше текущего!"
 
 #: rectimer.h:155
 msgid "Timer service ID not ok"
