@@ -8198,7 +8198,7 @@ msgstr ""
 msgid "STOP"
 msgstr ""
 
-#: rectimer.h:1565 skin_default_skin.xml.h:606
+#: rectimer.h:1567 rectimer.h:1569 skin_default_skin.xml.h:606
 msgid "STOP/START"
 msgstr ""
 
@@ -11609,7 +11609,7 @@ msgstr ""
 msgid "delete"
 msgstr "rimuove"
 
-#: rectimer.h:1573
+#: rectimer.h:1578 rectimer.h:1580
 msgid "delete all"
 msgstr ""
 
@@ -11749,7 +11749,7 @@ msgstr ""
 msgid "epgsettings"
 msgstr ""
 
-#: rectimer.h:1538
+#: rectimer.h:1539
 msgid "error"
 msgstr "Errorboot"
 
@@ -12475,7 +12475,7 @@ msgstr ""
 msgid "on"
 msgstr "ON"
 
-#: rectimer.h:1080 rectimer.h:1497 rectimer.h:1508
+#: rectimer.h:1080 rectimer.h:1498 rectimer.h:1509
 msgid "once"
 msgstr "unico"
 
@@ -12706,7 +12706,7 @@ msgstr ""
 msgid "ready"
 msgstr "Pronto"
 
-#: rectimer.h:1494
+#: rectimer.h:1495
 msgid "rec"
 msgstr "rosso"
 
@@ -12754,7 +12754,7 @@ msgstr ""
 msgid "rename service"
 msgstr ""
 
-#: rectimer.h:1081 rectimer.h:1499 rectimer.h:1510
+#: rectimer.h:1081 rectimer.h:1500 rectimer.h:1511
 msgid "repeat"
 msgstr ""
 
@@ -12796,7 +12796,7 @@ msgstr ""
 msgid "rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp"
 msgstr ""
 
-#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1534 subtitle.h:1624
+#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1535 subtitle.h:1624
 msgid "running"
 msgstr ""
 
@@ -13148,7 +13148,7 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-#: rectimer.h:1536
+#: rectimer.h:1537
 msgid "success"
 msgstr "Remove success"
 
@@ -13156,7 +13156,7 @@ msgstr "Remove success"
 msgid "swap"
 msgstr "Swap"
 
-#: rectimer.h:1505
+#: rectimer.h:1506
 msgid "switch"
 msgstr "cambia"
 
@@ -13566,7 +13566,7 @@ msgstr ""
 msgid "wait for stopping download"
 msgstr ""
 
-#: rectimer.h:1532
+#: rectimer.h:1533
 msgid "waiting"
 msgstr "starting"
 
