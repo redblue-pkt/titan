@@ -142,12 +142,12 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 	}
 	if(recnode->end <= time(NULL))
 	{
-		*ret = _("Timer endtime shorter than aktual time");
+		*ret = _("Timer end is in the past");
 		return 1;
 	}
 	if(recnode->end <= recnode->begin)
 	{
-		*ret = _("Timer endtime shorter than start time");
+		*ret = _("Timer end is before start time");
 		return 1;
 	}
 	if(recnode->serviceid < 1)
@@ -163,7 +163,7 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 
 	if(checkrectimerconflict(recnode) != 0)
 	{
-		*ret = _("Timer conflicts with other timer\nWould you add the timer?");
+		*ret = _("Timer conflicts with other timer\nAdd timer anyway?");
 		return 2;
 	}
 
@@ -574,7 +574,7 @@ void checkrectimer(struct stimerthread* self)
 
 			if(status.standby == 0)
 			{
-				int tret = textbox(_("Message"), _("EPG Scan activate standby?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 20, 0);
+				int tret = textbox(_("Message"), _("EPG Scan activate standby?"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 20, 0);
 
 				if(tret == 0 || tret == 1)
 				{
@@ -838,7 +838,7 @@ int writerectimer(const char *filename, int flag)
 
 		if(ret < 0)
 		{
-			perr("writting file %s", filename);
+			perr("writing file %s", filename);
 		}
 
 		//get wakeup time
@@ -1255,7 +1255,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 				else
 				{
 					debug(10, "error: cant create Folder: %s", tmppath);
-					textbox(_("Message"), "Can't create Path", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), "Can't create Path", _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			
 				drawscreen(rectimerext, 0, 0);
@@ -1402,7 +1402,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			{
 				if(ret == 2)
 				{
-					ret = textbox(_("Message"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					ret = textbox(_("Message"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					if(ret == 2)
 						ret = 99;
 					else
@@ -1414,7 +1414,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					free(node->errstr); node->errstr = NULL;
 					node->errstr = ostrcat(checkret, NULL, 0, 0);
 					stringreplacecharonce(node->errstr, '\n', '\0');
-					if(ret == 1) textbox(_("Message"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					if(ret == 1) textbox(_("Message"), checkret, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
 
@@ -1575,9 +1575,9 @@ start:
 		b3->hidden = NO;
 		b4->hidden = YES;
 		if(t3 == NULL)
-			changetext(b3,_("delete all"));
+			changetext(b3,_("Clear list"));
 		else
-			changetext(t3,_("delete all"));
+			changetext(t3,_("Clear list"));
 	}
 
 	drawscreen(recordtimer, 0, 0);
