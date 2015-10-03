@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.65\n"
+"Project-Id-Version: TitanNit 1.68\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-09-05 16:23+0100\n"
+"PO-Revision-Date: 2015-10-03 14:33+0100\n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: lt\n"
@@ -1187,11 +1187,11 @@ msgstr "AutoTimer Nustatymai"
 
 #: autotimer.c:568
 msgid "AutoTimer succesfully started"
-msgstr ""
+msgstr "Automatinis Laikmatis skmingai paleistas"
 
 #: autotimer.c:537
 msgid "AutoTimer succesfully stopped"
-msgstr ""
+msgstr "Automatinis Laikmatis skmingai sustabdytas"
 
 #: skin_default_skin.xml.h:44
 msgid "Autocheck cam can decrypt"

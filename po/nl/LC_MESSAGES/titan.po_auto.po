@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.67\n"
+"Project-Id-Version: TitanNit 1.68\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-07-18 10:05+0100\n"
+"PO-Revision-Date: 2015-10-03 14:33+0100\n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: nl\n"
@@ -1185,11 +1185,11 @@ msgstr "Auto timer instellingen"
 
 #: autotimer.c:568
 msgid "AutoTimer succesfully started"
-msgstr ""
+msgstr "AutoTimer succesvol gestart"
 
 #: autotimer.c:537
 msgid "AutoTimer succesfully stopped"
-msgstr ""
+msgstr "AutoTimer succesvol gestopt"
 
 #: skin_default_skin.xml.h:44
 msgid "Autocheck cam can decrypt"
