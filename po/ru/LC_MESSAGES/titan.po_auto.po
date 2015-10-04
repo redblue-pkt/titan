@@ -1926,14 +1926,17 @@ msgstr "Таймшифт не запущен!"
 msgid "Can't update all packages !"
 msgstr "Обновления для плагинов не найдены!"
 
-#: harddisk.h:355 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
-#: harddisk.h:776 harddisk.h:778 harddisk.h:860 play.h:1294
-#: plugins_panel_skin.xml.h:7 rectimer.h:577 rectimer.h:1405
-#: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47
-#: skin_default_skin.xml.h:85 skins_panel_skin.xml.h:7
-#: system_backup_restore.h:31 system_backup_restore.h:43 system_update.h:263
+#: plugins_panel_skin.xml.h:7 skin_default_skin.xml.h:85
+#: skins_panel_skin.xml.h:7
 msgid "Cancel"
 msgstr "Отмена"
+
+#: harddisk.h:355 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
+#: harddisk.h:776 harddisk.h:778 harddisk.h:860 play.h:1294 rectimer.h:577
+#: rectimer.h:1405 restoredefault.h:10 restoredefault.h:32 restoredefault.h:47
+#: system_backup_restore.h:31 system_backup_restore.h:43 system_update.h:263
+msgid "Cancel(Exit)"
+msgstr ""
 
 #: plugins_catcatch_skin.xml.h:6 skins_catcatch_skin.xml.h:6 tpk_showname.h:16
 msgid "Cat-Catch"
@@ -8357,7 +8360,7 @@ msgid "Sat: Ser6 Settings Eutelsat 36.0"
 msgstr ""
 
 #: tpk_description.h:123
-msgid "Sat: default Settings Astra 19.2 | 18.08.2015"
+msgid "Sat: default Settings Astra 19.2 | 04.10.2015"
 msgstr ""
 
 #: tpk_description.h:124
