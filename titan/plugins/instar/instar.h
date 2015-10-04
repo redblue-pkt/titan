@@ -42,6 +42,8 @@ int show_control()
 					tmpstr = ostrcat(cam1, "/image/jpeg.cgi", 0, 0);
 				else if(getconfigint("instar_1", NULL) == 2)
 					tmpstr = ostrcat(cam1, "/tmpfs/auto.jpg", 0, 0);
+				else if(getconfigint("instar_1", NULL) == 3)
+					tmpstr = ostrcat(cam1, "/onvif/GetSnapshotUri", 0, 0);
 				else
 					tmpstr = ostrcat(cam1, "/snapshot.cgi", 0, 0);
 				system(tmpstr);
@@ -53,6 +55,8 @@ int show_control()
 					tmpstr = ostrcat(cam2, "/image/jpeg.cgi", 0, 0);
 				else if(getconfigint("instar_2", NULL) == 2)
 					tmpstr = ostrcat(cam2, "/tmpfs/auto.jpg", 0, 0);
+				else if(getconfigint("instar_2", NULL) == 3)
+					tmpstr = ostrcat(cam2, "/onvif/GetSnapshotUri", 0, 0);
 				else
 					tmpstr = ostrcat(cam2, "/snapshot.cgi", 0, 0);
 				system(tmpstr);
@@ -218,6 +222,7 @@ int instar_settings()
 	addchoicebox(typCam1, "0", "0");
 	addchoicebox(typCam1, "1", "1");
 	addchoicebox(typCam1, "2", "2");
+	addchoicebox(typCam1, "3", "3");
 	setchoiceboxselection(typCam1, getconfig("instar_1", NULL));
 	changemask(ipCam1, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam1, getlist(myconfig, "InstarCam1IP", NULL));
@@ -233,6 +238,8 @@ int instar_settings()
 	setchoiceboxselection(onCam2, getlist(myconfig, "InstarCam2", NULL));	
 	addchoicebox(typCam2, "0", "0");
 	addchoicebox(typCam2, "1", "1");
+	addchoicebox(typCam2, "2", "2");
+	addchoicebox(typCam2, "3", "3");
 	setchoiceboxselection(typCam2, getconfig("instar_2", NULL));
 	changemask(ipCam2, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam2, getlist(myconfig, "InstarCam2IP", NULL));
