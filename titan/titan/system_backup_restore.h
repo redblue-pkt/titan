@@ -28,7 +28,7 @@ void screensystem_backup_restore()
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(backup_restore);
-			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
+			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel(Exit)"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
 			{
 				changetext(info, _("Please wait ...\n\nAll Settings are restored.\n\nBox will start in few seconds."));
 				drawscreen(backup_restore, 0, 0);
@@ -40,7 +40,7 @@ void screensystem_backup_restore()
 						textbox(_("Message"), _("Restore failed, see log"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 					else
 					{
-						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel(Exit)"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 							screenextensions(3, NULL, NULL, 1); 
 						ret = system("init 6");
 					}

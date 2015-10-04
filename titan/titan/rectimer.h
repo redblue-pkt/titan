@@ -574,7 +574,7 @@ void checkrectimer(struct stimerthread* self)
 
 			if(status.standby == 0)
 			{
-				int tret = textbox(_("Message"), _("EPG Scan activate standby?"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 20, 0);
+				int tret = textbox(_("Message"), _("EPG Scan activate standby?"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel(Exit)"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 20, 0);
 
 				if(tret == 0 || tret == 1)
 				{
@@ -1402,7 +1402,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			{
 				if(ret == 2)
 				{
-					ret = textbox(_("Error"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("Cancel"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					ret = textbox(_("Error"), checkret, _("OK"), getrcconfigint("rcok", NULL), _("Cancel(Exit)"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					if(ret == 2)
 						ret = 99;
 					else
