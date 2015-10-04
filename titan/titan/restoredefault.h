@@ -7,7 +7,7 @@ void screenrestoredefault()
 	char* tmpstr = NULL;
 	struct skin* load = getscreen("loading");
 
-	ret = textbox(_("Message"), _("Really restore default settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel(Exit)"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	ret = textbox(_("Message"), _("Really restore default settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 	if(ret == 1)
 	{
@@ -29,7 +29,7 @@ void screeneraseswap()
 {
 	struct skin* load = getscreen("loading");
 
-	if(textbox(_("Message"), _("Do you really want to erase all data and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel(Exit)"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Do you really want to erase all data and backups from Swap?\nThe Box will reboot and the erase will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	{
 		debug(40, "Erase-Mtd");
 		drawscreen(load, 0, 0);
@@ -44,7 +44,7 @@ void screenbackuperaseswap()
 {
 	struct skin* load = getscreen("loading");
 
-	if(textbox(_("Message"), _("Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("Cancel(Exit)"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	{
 		debug(40, "Erase-Mtd with settings restore");
 		drawscreen(load, 0, 0);
