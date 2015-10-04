@@ -1976,7 +1976,7 @@ msgstr "Abbrechen"
 #: rectimer.h:1405 restoredefault.h:10 restoredefault.h:32 restoredefault.h:47
 #: system_backup_restore.h:31 system_backup_restore.h:43 system_update.h:263
 msgid "Cancel(Exit)"
-msgstr ""
+msgstr "Abbrechen(Exit)"
 
 #: plugins_catcatch_skin.xml.h:6 skins_catcatch_skin.xml.h:6 tpk_showname.h:16
 msgid "Cat-Catch"
