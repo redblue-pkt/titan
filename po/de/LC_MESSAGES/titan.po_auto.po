@@ -3384,7 +3384,7 @@ msgstr ""
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
 #: zapback.c:79 zdf.h:29
 msgid "EXIT"
-msgstr "Beenden"
+msgstr ""
 
 #: epgsearch.h:332
 msgid "Eastern"
