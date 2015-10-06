@@ -11263,7 +11263,7 @@ msgstr ""
 msgid "audiotrack"
 msgstr ""
 
-#: instar.h:219 instar.h:236
+#: instar.h:222 instar.h:239
 msgid "aus"
 msgstr ""
 
@@ -11655,7 +11655,7 @@ msgstr ""
 msgid "east"
 msgstr ""
 
-#: instar.h:220 instar.h:237
+#: instar.h:223 instar.h:240
 msgid "ein"
 msgstr "Start"
 
@@ -11986,7 +11986,7 @@ msgid "j"
 msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
-#: callmon_main.h:123 callmon_main.h:127 instar.h:216 lcdpearl1.c:507
+#: callmon_main.h:123 callmon_main.h:127 instar.h:219 lcdpearl1.c:507
 #: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:982 lcdsamsung.c:986
 #: lcdsamsung.c:990
 msgid "ja"
@@ -12190,7 +12190,7 @@ msgid "n"
 msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
-#: callmon_main.h:124 callmon_main.h:128 instar.h:215 lcdpearl1.c:506
+#: callmon_main.h:124 callmon_main.h:128 instar.h:218 lcdpearl1.c:506
 #: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:981 lcdsamsung.c:985
 #: lcdsamsung.c:989
 msgid "nein"
