@@ -30,6 +30,9 @@ int show_control()
 	
 	setfbtransparent(255);
 	
+	printf("[ip-cam] Aufruf1: %s\n", cam1);
+	printf("[ip-cam] Aufruf2: %s\n", cam2);
+	
 	while(1)
 	{
 		//if(getconfigint("instar_1", NULL) == 2 && cam11 != NULL)
