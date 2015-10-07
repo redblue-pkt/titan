@@ -49,6 +49,8 @@ int show_control()
 					tmpstr = ostrcat(cam1, "/onvif/GetSnapshotUri", 0, 0);
 				else
 					tmpstr = ostrcat(cam1, "/snapshot.cgi", 0, 0);
+				if(getconfigint("instar_alterwebif", NULL) == 1)
+					tmpstr = ostrcat(cam1, " > /tmp/instar1.jpg", 0, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
@@ -62,6 +64,8 @@ int show_control()
 					tmpstr = ostrcat(cam2, "/onvif/GetSnapshotUri", 0, 0);
 				else
 					tmpstr = ostrcat(cam2, "/snapshot.cgi", 0, 0);
+				if(getconfigint("instar_alterwebif", NULL) == 1)
+					tmpstr = ostrcat(cam2, " > /tmp/instar2.jpg", 0, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
@@ -199,6 +203,7 @@ int instar_settings()
 	
 	struct skin* instar_einstellungen = getscreen("instar_einstellungen");
 	struct skin* listbox = getscreennode(instar_einstellungen, "listbox");
+	struct skin* alterwebif = getscreennode(instar_einstellungen, "alterwebif");
 	struct skin* autoCam = getscreennode(instar_einstellungen, "autoCam");
 	struct skin* onCam1 = getscreennode(instar_einstellungen, "onCam1");
 	struct skin* typCam1 = getscreennode(instar_einstellungen, "typCam1");
@@ -218,6 +223,10 @@ int instar_settings()
   addchoicebox(autoCam, "nein", _("nein"));
 	addchoicebox(autoCam, "ja", _("ja"));
 	setchoiceboxselection(autoCam, getlist(myconfig, "InstarCamAutostart", NULL));
+	
+	addchoicebox(alterwebif, "0", "off");
+	addchoicebox(alterwebif, "1", "on");
+	setchoiceboxselection(alterwebif, getconfig("instar_alterwebif", NULL));
   
   addchoicebox(onCam1, "aus", _("aus"));
 	addchoicebox(onCam1, "ein", _("ein"));
@@ -280,6 +289,7 @@ int instar_settings()
 			writelist(myconfig, instarconf);
 			addconfig("instar_1", typCam1->ret);
 			addconfig("instar_2", typCam2->ret);
+			addconfig("instar_alterwebif", alterwebif->ret);
 			if(rcret == getrcconfigint("rcblue", NULL))
 			{
 				rcode = 1;
@@ -297,9 +307,12 @@ int instar_settings()
 void instar_main()
 {
 	int rcode = 0;
-
+	
 	instarconf = createpluginpath("/instar/instar.conf", 0);
 	readconfig(instarconf, myconfig);
+
+	char* CURL = NULL;
+	CURL = createpluginpath("/instar/curl", 0);
 	
   if(ostrcmp(getlist(myconfig, "InstarCamAutostart", NULL), "ja") == 0)
 		rcode = 1;
@@ -314,7 +327,13 @@ void instar_main()
 		{
 			if(ostrcmp(getlist(myconfig, "InstarCam1", NULL), "ein") == 0)
 			{
-				cam1 = ostrcat("wget --output-document=/tmp/instar1.jpg http://", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
+				if(getconfigint("instar_alterwebif", NULL) == 0)
+					cam1 = ostrcat("wget --output-document=/tmp/instar1.jpg http://", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
+				else
+				{
+					cam1 = ostrcat(CURL, " http://", 0, 0);
+					cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1User", NULL), 1, 0);
+				}
 				cam1 = ostrcat(cam1, ":",1, 0);
 				cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
 				cam1 = ostrcat(cam1, "@",1, 0);
@@ -339,7 +358,13 @@ void instar_main()
 			
 			if(ostrcmp(getlist(myconfig, "InstarCam2", NULL), "ein") == 0)
 			{
-				cam2 = ostrcat("wget --output-document=/tmp/instar2.jpg http://", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
+				if(getconfigint("instar_alterwebif", NULL) == 0)
+					cam2 = ostrcat("wget --output-document=/tmp/instar2.jpg http://", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
+				else
+				{
+					cam2 = ostrcat(CURL, " http://", 0, 0);
+					cam2 = ostrcat(cam1, getlist(myconfig, "InstarCam2User", NULL), 1, 0);
+				}
 				cam2 = ostrcat(cam2, ":",1, 0);
 				cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
 				cam2 = ostrcat(cam2, "@",1, 0);
@@ -386,4 +411,5 @@ void instar_main()
 	writelist(myconfig, instarconf);
 	freelist(myconfig);
 	free(instarconf); instarconf = NULL;
+	free(CURL); CURL = NULL;
 }
