@@ -1401,11 +1401,11 @@ msgstr ""
 msgid "Behavior at recording"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
+#: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
 msgid "Benutzer-Kamera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
+#: plugins_instar_skin.xml.h:3 skins_instar_skin.xml.h:3
 msgid "Benutzer-Kamera 2"
 msgstr ""
 
@@ -1700,7 +1700,7 @@ msgstr ""
 msgid "CAM Ports found: "
 msgstr "CAM poorten: "
 
-#: plugins_instar_skin.xml.h:3 skins_instar_skin.xml.h:3
+#: plugins_instar_skin.xml.h:4 skins_instar_skin.xml.h:4
 msgid "CAMx"
 msgstr ""
 
@@ -3265,7 +3265,7 @@ msgstr ""
 #: play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
-#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:5
+#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:6
 #: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
 #: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
 #: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
@@ -3285,7 +3285,7 @@ msgstr ""
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
 #: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
-#: skins_instar_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:6
+#: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 #: skins_lcdsamsung_skin.xml.h:7 skins_mboxinfo_skin.xml.h:1
 #: skins_mc_skin.xml.h:19 skins_multiimage_skin.xml.h:5
 #: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
@@ -4851,15 +4851,15 @@ msgstr ""
 msgid "IP-Kamera"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:6 skins_instar_skin.xml.h:6
+#: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
 msgid "IP-Kamera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
+#: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
 msgid "IP-Kamera 2"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:17 skins_instar_skin.xml.h:17
+#: plugins_instar_skin.xml.h:18 skins_instar_skin.xml.h:18
 msgid "IP-Kamera Einstellungen"
 msgstr ""
 
@@ -5223,11 +5223,11 @@ msgstr ""
 msgid "Kabelplus ORF | 16.12.2014 (Olbord)"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
+#: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
 msgid "Kamera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
+#: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
 msgid "Kamera 2 (Umschalten mit Rot)"
 msgstr ""
 
@@ -6923,11 +6923,11 @@ msgstr "Wachtwoord"
 msgid "Passwort-FritzBox"
 msgstr "Wachtwoord-FritzBox"
 
-#: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
+#: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
 msgid "Passwort-Kamera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
+#: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
 msgid "Passwort-Kamera 2"
 msgstr ""
 
@@ -7288,11 +7288,11 @@ msgstr ""
 msgid "Port"
 msgstr "Poort"
 
-#: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
+#: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
 msgid "Port-Kamera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
+#: plugins_instar_skin.xml.h:14 skins_instar_skin.xml.h:14
 msgid "Port-Kamera 2"
 msgstr ""
 
@@ -8132,13 +8132,13 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:7 plugins_callmonitor1_skin.xml.h:17
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
-#: plugins_instar_skin.xml.h:14 plugins_lcdpearl1_skin.xml.h:10
+#: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:10
 #: plugins_lcdsamsung_skin.xml.h:13 plugins_panel_skin.xml.h:16
 #: plugins_stock_skin.xml.h:4 plugins_stopifnotused_skin.xml.h:4
 #: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:521
 #: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:17
 #: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
-#: skins_instar_skin.xml.h:14 skins_lcdpearl1_skin.xml.h:10
+#: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:10
 #: skins_lcdsamsung_skin.xml.h:13 skins_panel_skin.xml.h:16
 #: skins_stock_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
 #: skins_tmdb_skin.xml.h:7
@@ -8246,12 +8246,12 @@ msgid "SSID"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:9 plugins_dlna_skin.xml.h:11
-#: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
+#: plugins_instar_skin.xml.h:16 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:16
 #: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
 #: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:597
 #: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
-#: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
+#: skins_instar_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:11
 #: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:16
 #: skins_stopifnotused_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:7
 #: skins_xupnpd_skin.xml.h:2
@@ -10542,7 +10542,7 @@ msgstr "Kanaal niet beschikbaar !"
 msgid "Two step mute"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:16 skins_instar_skin.xml.h:16
+#: plugins_instar_skin.xml.h:17 skins_instar_skin.xml.h:17
 msgid "Typ"
 msgstr ""
 
@@ -11367,6 +11367,10 @@ msgstr "TS bestand altijd wissen"
 msgid "alpha"
 msgstr "Alfabetisch"
 
+#: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
+msgid "alternate WebIF"
+msgstr ""
+
 #: epgsettings.h:192 epgsettings.h:203 epgsettings.h:208 epgsettings.h:213
 #: mediadbsettings.h:36
 msgid "always"
@@ -11724,7 +11728,7 @@ msgstr ""
 msgid "direct connect"
 msgstr "Direkte verbinding"
 
-#: plugins_instar_skin.xml.h:4 skins_instar_skin.xml.h:4
+#: plugins_instar_skin.xml.h:5 skins_instar_skin.xml.h:5
 msgid "direkter Start"
 msgstr "Start regisseur"
 
