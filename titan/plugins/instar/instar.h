@@ -363,7 +363,7 @@ void instar_main()
 				else
 				{
 					cam2 = ostrcat(CURL, " http://", 0, 0);
-					cam2 = ostrcat(cam1, getlist(myconfig, "InstarCam2User", NULL), 1, 0);
+					cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2User", NULL), 1, 0);
 				}
 				cam2 = ostrcat(cam2, ":",1, 0);
 				cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
