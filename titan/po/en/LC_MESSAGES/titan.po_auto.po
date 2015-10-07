@@ -11394,7 +11394,7 @@ msgid "alpha"
 msgstr "alphabetic"
 
 #: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
-msgid "alternate WebIF"
+msgid "alternate WebIf"
 msgstr ""
 
 #: epgsettings.h:192 epgsettings.h:203 epgsettings.h:208 epgsettings.h:213
