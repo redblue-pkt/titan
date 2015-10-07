@@ -313,6 +313,11 @@ void instar_main()
 
 	char* CURL = NULL;
 	CURL = createpluginpath("/instar/curl", 0);
+	if(!file_exist(CURL))
+	{
+		free(CURL); CURL = NULL;
+		CURL = ostrcat("curl", NULL, 0, 0);
+	}
 	
   if(ostrcmp(getlist(myconfig, "InstarCamAutostart", NULL), "ja") == 0)
 		rcode = 1;
