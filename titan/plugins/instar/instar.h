@@ -50,7 +50,7 @@ int show_control()
 				else
 					tmpstr = ostrcat(cam1, "/snapshot.cgi", 0, 0);
 				if(getconfigint("instar_alterwebif", NULL) == 1)
-					tmpstr = ostrcat(cam1, " > /tmp/instar1.jpg", 0, 0);
+					tmpstr = ostrcat(tmpstr, " > /tmp/instar1.jpg", 1, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
@@ -65,7 +65,7 @@ int show_control()
 				else
 					tmpstr = ostrcat(cam2, "/snapshot.cgi", 0, 0);
 				if(getconfigint("instar_alterwebif", NULL) == 1)
-					tmpstr = ostrcat(cam2, " > /tmp/instar2.jpg", 0, 0);
+					tmpstr = ostrcat(tmpstr, " > /tmp/instar2.jpg", 1, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
