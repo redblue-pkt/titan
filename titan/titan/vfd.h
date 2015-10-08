@@ -280,7 +280,7 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, len);
 			tmpvalue[4] = '\0';
 		}
-		else if(checkbox("SPARK7162") == 1)
+		else if(checkbox("SPARK7162") == 1 || checkbox("ATEMIO6200" == 1)
 		{
 			memcpy(tmpvalue, value, len);
 			tmpvalue[8] = '\0';
