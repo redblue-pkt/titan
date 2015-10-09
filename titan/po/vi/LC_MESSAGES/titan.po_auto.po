@@ -1359,9 +1359,13 @@ msgstr "Thiết lập sao lưu"
 msgid "Backup / Restore Settings"
 msgstr "Sao lưu / Khôi phục cài đặt"
 
-#: global.h:7298 httpdfunc.h:6665 httpdfunc.h:6745 system_backup_restore.h:82
+#: global.h:7299 httpdfunc.h:6665 httpdfunc.h:6745 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "sao lưu thanh công"
+
+#: global.h:7301
+msgid "Backup ended with error"
+msgstr ""
 
 #: system_backup_restore.h:80
 msgid "Backup failed, see log"
@@ -7330,7 +7334,7 @@ msgstr "Tắt bộ định thời"
 msgid "Present"
 msgstr ""
 
-#: global.h:7308 system_backup_restore.h:15
+#: global.h:7311 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
