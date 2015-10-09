@@ -7296,6 +7296,7 @@ char* create_backup(char* input, int flag)
 	{
 		cmd = ostrcat(cmd, " &", 1, 0);
 		system(cmd);
+		tmpstr = NULL;
 	}
 	else
 	{
