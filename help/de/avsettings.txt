@@ -1,1 +1,19 @@
-Audio und Video Einstellungen
+Standardauflösung: Stellt die Standard Auflösung ein
+Aktuelle Auflösung:	Zeigt die aktuelle Auflösung an
+Autom. Auflösung: stellt die vom Sender ausgestrahlte Auflösung automatisch ein
+Bildeinstellungen: Anzeigeformat von nicht 16:9 Bildinhalten
+Seitenverhältnis: Stellt das Seitenverhältnis des Bildes ein
+Farb Format: Stellt das Farbformat für die HDMI Ausgabe ein
+Farb Format Scart/ Composite: Stellt das Farbformat für den SCART Ausgang ein
+Audio Quelle: stellt das Audio Format ein
+AC3 standardmäßig: Dolby AC3 Ton wird standardmäßig ausgegeben
+AC3 Modus: Auswahl von downmix oder passthrough
+Audio Verzögerung: Synchronisationsinstellungen Audio - Video
+AC3-Angleichung durch Stereotonabsenkung in %: Angleichung der AC3 Lautstärke an das Stereo Tonsignal
+3D Modus: Anpassung der Menüausgabe für den 3D - Modus des TV
+Zwei Stufen Stummschaltung:	Verstellt die Funktion der MUTE Taste
+Automatischer Untertitel Start	
+Sound Verstärkung (TV-Modus / interner Player)	erhöht die Grundlautstärke im TV Modus und des Interen (.ts) Players
+Sound Verstärkung (externer Player)	erhöht die Grundlautstärke des externen Players / Streams
+
+Um diese Einstellungen zu speichern drücken sie "OK", oder "EXIT" um die Änderungen zu Verwerfen und das Menü zu verlassen.
