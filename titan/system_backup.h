@@ -40,6 +40,7 @@ void screensystem_backup()
 		{
 			if(listbox->select != NULL && listbox->select->ret != NULL)
 			{
+				clearscreen(backup);
 				//drawscreen(loading, 0, 0);
 				tmpstr = create_backup(listbox->select->ret, 1);
 				//clearscreen(loading);
