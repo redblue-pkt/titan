@@ -7293,9 +7293,12 @@ char* create_backup(char* input, int flag)
 			cmd = ostrcat(cmd, " > /mnt/logs/backup_debug.log 2>&1", 1, 0);
 	}
 
-	tmpstr = command(cmd);
-	if(tmpstr == NULL)
+	//tmpstr = command(cmd);
+	if(system(cmd) == 0)
+	//if(tmpstr == NULL)
 		tmpstr = ostrcat(tmpstr, _("Backup created successfully"), 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, _("Backup ended with error"), 1, 0);
 
 	free(cmd); cmd = NULL;
 	status.sec = merksec;
