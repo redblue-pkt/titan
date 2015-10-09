@@ -1393,7 +1393,7 @@ msgstr "Einstellungen werden gesichert"
 msgid "Backup / Restore Settings"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: global.h:7296 httpdfunc.h:6665 httpdfunc.h:6745 system_backup_restore.h:82
+#: global.h:7298 httpdfunc.h:6665 httpdfunc.h:6745 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Die Sicherung wurde erfolgreich erstellt"
 
@@ -7554,7 +7554,7 @@ msgstr "Ausschalttimer"
 msgid "Present"
 msgstr "vorhanden"
 
-#: global.h:7305 system_backup_restore.h:15
+#: global.h:7308 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
