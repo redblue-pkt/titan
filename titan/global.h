@@ -7270,6 +7270,8 @@ char* create_backup(char* input, int flag)
 	if(flag == 0) return infotext;
 
 	char* tmpstr = NULL, *cmd = NULL;
+	int merksec = status.sec;
+	
 	status.sec = 0; //deaktivate spinner
 	cmd = ostrcat(cmd, "backup.sh ", 1, 0);
 	cmd = ostrcat(cmd, input, 1, 0);
@@ -7296,7 +7298,8 @@ char* create_backup(char* input, int flag)
 		tmpstr = ostrcat(tmpstr, _("Backup created successfully"), 1, 0);
 
 	free(cmd); cmd = NULL;
-
+	status.sec = merksec;
+	
 	return tmpstr;
 }
 
