@@ -5,6 +5,7 @@ struct stimerthread* backupthread = NULL;
 
 void backup_thread()
 {
+	sleep(4);
 	while (backupthread->aktion != STOP)
 	{
 		sleep(3);
