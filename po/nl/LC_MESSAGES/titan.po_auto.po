@@ -1363,12 +1363,12 @@ msgstr "Backup - Instellingen"
 msgid "Backup / Restore Settings"
 msgstr "Backup instellingen"
 
-#: global.h:7305 httpdfunc.h:6665 httpdfunc.h:6745 system_backup.h:13
+#: global.h:7306 httpdfunc.h:6665 httpdfunc.h:6745 system_backup.h:14
 #: system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Backup gelukt"
 
-#: global.h:7307 system_backup.h:19
+#: global.h:7308 system_backup.h:20
 msgid "Backup ended with error"
 msgstr ""
 
@@ -5957,8 +5957,8 @@ msgstr ""
 #: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:48 solarmovie.h:60
 #: solarmovie.h:362 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
 #: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
-#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup.h:13
-#: system_backup.h:19 system_backup_restore.h:40 system_backup_restore.h:43
+#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup.h:14
+#: system_backup.h:20 system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
@@ -6588,7 +6588,7 @@ msgstr ""
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
-#: stream.h:33 system_backup.h:13 system_backup.h:19
+#: stream.h:33 system_backup.h:14 system_backup.h:20
 #: system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
@@ -7380,7 +7380,7 @@ msgstr ""
 msgid "Present"
 msgstr "Aanwezig"
 
-#: global.h:7318 system_backup_restore.h:15
+#: global.h:7319 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
