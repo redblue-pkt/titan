@@ -5,7 +5,6 @@ struct stimerthread* backupthread = NULL;
 
 void backup_thread()
 {
-	char* cmd = NULL;
 	while (backupthread->aktion != STOP)
 	{
 		sleep(3);
@@ -36,7 +35,6 @@ void screensystem_backup()
 	struct skin* listbox = getscreennode(backup, "listbox");
 	struct skin *listfield = getscreennode(backup, "listfield");
 	struct skin* info = getscreennode(backup, "info");
-	struct skin* loading = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *infotext = NULL;
 
@@ -68,6 +66,8 @@ void screensystem_backup()
 		{
 			if(listbox->select != NULL && listbox->select->ret != NULL)
 			{
+				delownerrc(backup);
+				clearscreen(backup);
 				backupthread = addtimer(&backup_thread, START, 10000, 1, NULL, NULL, NULL);
 				tmpstr = create_backup(listbox->select->ret, 2);
 				break;
@@ -78,9 +78,11 @@ void screensystem_backup()
 //	infotext = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(infotext), infotext = NULL;
-
-	delownerrc(backup);
-	clearscreen(backup);
+	if(rcret != getrcconfigint("rcred", NULL))
+	{
+		delownerrc(backup);
+		clearscreen(backup);
+	}
 }
 
 
