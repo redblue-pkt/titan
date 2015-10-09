@@ -32,7 +32,7 @@ void screensystem_backup()
 	while(1)
 	{
 		addscreenrc(backup, tmp);
-		rcret = waitrc(backup, 0, 0);
+		rcret = waitrc(backup, 1000, 0);
 		tmp = listbox->select;
 		
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -40,11 +40,12 @@ void screensystem_backup()
 		{
 			if(listbox->select != NULL && listbox->select->ret != NULL)
 			{
-				drawscreen(loading, 0, 0);
+				//drawscreen(loading, 0, 0);
 				tmpstr = create_backup(listbox->select->ret, 1);
-				clearscreen(loading);
+				//clearscreen(loading);
 				changetext(info, tmpstr);
-				sleep(30);
+				//sleep(30);
+				drawscreen(backup, 0, 0);
 			}
 		}
 	}
