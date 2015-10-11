@@ -3317,9 +3317,8 @@ msgstr ""
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
-#: vodlocker.h:80 vodlocker.h:86 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
-#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
-#: zdf.h:29
+#: vodlocker.h:80 vodlocker.h:86 xvidstage.h:54 xvidstage.h:100
+#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Exit"
 
