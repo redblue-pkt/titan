@@ -41,16 +41,14 @@ void screensystem_backup()
 		{
 			if(listbox->select != NULL && listbox->select->ret != NULL)
 			{
-				delmarkedscreennodes(backup, 1);
-				clearscreen(backup);
 				drawscreen(loading, 0, 0);
 				tmpstr = create_backup(listbox->select->ret, 2);
 				clearscreen(loading);
 				changetext(info, tmpstr);
 				//sleep(30);
-				drawscreen(backup, 0, 0);
 			}
 		}
+		drawscreen(backup, 0, 0);
 	}
 
 //	infotext = NULL;
