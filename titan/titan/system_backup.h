@@ -1,34 +1,6 @@
 #ifndef SYSTEM_BACKUP_H
 #define SYSTEM_BACKUP_H
 
-struct stimerthread* backupthread = NULL;
-
-void backup_thread()
-{
-	sleep(4);
-	while (backupthread->aktion != STOP)
-	{
-		sleep(3);
-		if(file_exist("/tmp/.backup_ok") == 1)
-		{
-			textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
-			remove("/tmp/.backup_ok");
-			break;
-		}
-		if(file_exist("/tmp/.backup_start") == 0)
-		{
-			textbox(_("Message"), _("Backup ended with error"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
-			remove("/tmp/.backup_ok");
-			break;
-		}
-	}
-	if(backupthread->aktion == STOP)
-	{
-		system("killall backup.sh");
-	}
-	backupthread = NULL;
-}
-
 void screensystem_backup()
 {
 	int rcret = 0;
@@ -36,9 +8,11 @@ void screensystem_backup()
 	struct skin* listbox = getscreennode(backup, "listbox");
 	struct skin *listfield = getscreennode(backup, "listfield");
 	struct skin* info = getscreennode(backup, "info");
+	struct skin* loading = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *infotext = NULL;
 
+	delmarkedscreennodes(backup, 1);
 	infotext = create_backup(NULL, 0);
 
 	changetext(info, infotext);
@@ -67,11 +41,14 @@ void screensystem_backup()
 		{
 			if(listbox->select != NULL && listbox->select->ret != NULL)
 			{
-				delownerrc(backup);
+				delmarkedscreennodes(backup, 1);
 				clearscreen(backup);
-				backupthread = addtimer(&backup_thread, START, 10000, 1, NULL, NULL, NULL);
+				drawscreen(loading, 0, 0);
 				tmpstr = create_backup(listbox->select->ret, 2);
-				break;
+				clearscreen(loading);
+				changetext(info, tmpstr);
+				//sleep(30);
+				drawscreen(backup, 0, 0);
 			}
 		}
 	}
@@ -79,13 +56,10 @@ void screensystem_backup()
 //	infotext = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(infotext), infotext = NULL;
-	if(rcret != getrcconfigint("rcred", NULL))
-	{
-		delownerrc(backup);
-		clearscreen(backup);
-	}
+
+	delownerrc(backup);
+	delmarkedscreennodes(backup, 1);
+	clearscreen(backup);
 }
-
-
 
 #endif
