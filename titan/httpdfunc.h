@@ -6658,7 +6658,7 @@ char* webgetcreatebackup(int fmt)
 #ifdef MIPSEL
 	tmpstr = ostrcat(tmpstr, _("System Backup on your Box not Supported"), 1, 0);
 #else
-	tmpstr = create_backup("full", 1);
+	tmpstr = create_backup("full", 2);
 	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
 
 	tmpstr = ostrcat(tmpstr, "<br>", 1, 0);
