@@ -134,13 +134,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1219
+#: titan.c:1223
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1202
+#: titan.c:1206
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1191,7 +1191,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1271
+#: titan.c:1275
 msgid "Automatic stop in 10 seconds."
 msgstr "Restart in 5 Secondi !"
 
@@ -2128,7 +2128,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:997
+#: titan.c:1001
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -3275,9 +3275,9 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1038
-#: titan.c:1047 titan.c:1175 titan.c:1196 titan.c:1202 titan.c:1213
-#: titan.c:1219 tithek.c:94 tithek_global.h:75 tithek.h:692 tithek.h:1248
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1042
+#: titan.c:1051 titan.c:1179 titan.c:1200 titan.c:1206 titan.c:1217
+#: titan.c:1223 tithek.c:94 tithek_global.h:75 tithek.h:692 tithek.h:1248
 #: tithek.h:1309 tithek.h:1539 tithek.h:1561 tithek.h:1578 tithek.h:1810
 #: tithek.h:1970 tithek.h:2245 tithek.h:2273 tithek.h:2289 tithek.h:2301
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3806,7 +3806,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1038
+#: titan.c:1042
 msgid "First Wizzard"
 msgstr "Start Assistent"
 
@@ -3990,7 +3990,7 @@ msgstr "Maximae Rate"
 msgid "Free Space"
 msgstr "Spazio Libero"
 
-#: titan.c:1213
+#: titan.c:1217
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3998,7 +3998,7 @@ msgstr ""
 "non abbastanza spazio libero in /var\n"
 "questo puo prtare problemi !"
 
-#: titan.c:1196
+#: titan.c:1200
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4873,7 +4873,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1047 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1051 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5904,8 +5904,8 @@ msgstr ""
 #: system_backup_restore.h:82 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1175
-#: titan.c:1196 titan.c:1202 titan.c:1213 titan.c:1219 tithek.c:94
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1179
+#: titan.c:1200 titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:94
 #: tithek_global.h:75 tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539
 #: tithek.h:1561 tithek.h:1810 tithek.h:1970 tithek.h:2245 tithek.h:2273
 #: tithek.h:2289 tithek.h:2301 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6532,8 +6532,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1038 titan.c:1047 titan.c:1175 titan.c:1196
-#: titan.c:1202 titan.c:1213 titan.c:1219 tithek.c:94 tithek_global.h:75
+#: titan.c:346 titan.c:355 titan.c:1042 titan.c:1051 titan.c:1179 titan.c:1200
+#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:94 tithek_global.h:75
 #: tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539 tithek.h:1561
 #: tithek.h:1578 tithek.h:1810 tithek.h:1970 tithek.h:2245 tithek.h:2273
 #: tithek.h:2289 tithek.h:2301 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7671,7 +7671,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Decoder Riparte adesso!"
 
-#: titan.c:1175
+#: titan.c:1179
 msgid "Receiver successful unlocked"
 msgstr "Sbloccare Ricevitore"
 
@@ -7811,11 +7811,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:990
+#: titan.c:994
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:989
+#: titan.c:993
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -8738,7 +8738,7 @@ msgstr ""
 msgid "Select Unicable Manufacturer"
 msgstr ""
 
-#: titan.c:997
+#: titan.c:1001
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8889,7 +8889,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 14.09.2015"
 msgstr ""
 
-#: titan.c:1038
+#: titan.c:1042
 msgid "Settings OK ?"
 msgstr "Salvare Impostazioni?"
 
@@ -10570,7 +10570,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1269
+#: titan.c:1273
 msgid "Unknown Error."
 msgstr "Errore Sconosciuto"
 
