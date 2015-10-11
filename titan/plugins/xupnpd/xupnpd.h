@@ -47,7 +47,7 @@ void screenxupnpd()
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
-		if(rcret == getrcconfigint("rcok", NULL)) {
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL)) {
 			writeownconfigtmp();
 			writeallconfig(1);
 			break;
@@ -57,7 +57,7 @@ void screenxupnpd()
 		{
 			debug(10, "cmd: %s", xupnpdstop);
 			system(xupnpdstop);
-			textbox(_("Message"), _("xupnpd now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+			textbox(_("Message"), _("xupnpd now stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(xupnpd, 0, 0);
 		}
 
@@ -68,9 +68,9 @@ void screenxupnpd()
 			debug(10, "cmd: %s", xupnpdstart);
 			ret = system(xupnpdstart);
 			if(ret == 0)
-				textbox(_("Message"), _("xupnpd started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				textbox(_("Message"), _("xupnpd started."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			else
-				textbox(_("Message"), _("xupnpd not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				textbox(_("Message"), _("xupnpd not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(xupnpd, 0, 0);
 		}
 	}
