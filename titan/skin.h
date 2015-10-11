@@ -943,7 +943,18 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			unsigned char* buf = NULL;
 
 			newnode->picmem = 1;
-			newnode->pic = changepicpath(ret);
+			if(ostrstr(newnode->name, "oled") != NULL)
+			{
+				if(getconfig("oledskin_file", NULL) != NULL)
+				{	
+					newnode->pic = ostrcat(getconfig("oledskin_file", NULL),"/", 0, 0);
+					newnode->pic = ostrcat(getconfig(newnode->pic, NULL),ret, 1, 0);
+				}
+				else
+					newnode->pic = ostrcat("/var/usr/local/share/titan/skin/default/",ret, 0, 0);
+			}
+			else
+				newnode->pic = changepicpath(ret);
 			free(ret);
 
 			// set default menu entry

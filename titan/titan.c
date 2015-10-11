@@ -947,7 +947,11 @@ int main(int argc, char *argv[])
 		if(getconfig("oledskin_file", NULL) == NULL)
 			ret = readscreen("/var/usr/local/share/titan/skin/default/oledskin.xml", 0, 0);
 		else
-			ret = readscreen(getconfig("oledskin_file", NULL), 0, 0);
+		{
+			tmpstr = ostrcat(getconfig("oledskin_file", NULL),"/oledskin.xml", 0, 0);
+			ret = readscreen(tmpstr, 0, 0);
+			free(tmpstr);tmpstr=NULL;
+		}
 	}
 	ret = readmainbouquet(getconfig("bouquetfile", NULL));
 	ret = readallbouquet();
