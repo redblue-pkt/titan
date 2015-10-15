@@ -2574,7 +2574,7 @@ msgid "DIR"
 msgstr ""
 
 #: tpk_showname.h:23
-msgid "DLNA (Minidlna Server)"
+msgid "DLNA (MiniDLNA Server)"
 msgstr ""
 
 #: gmediarender.h:156
@@ -2621,7 +2621,7 @@ msgstr "JUEV"
 msgid "DTS Downmix"
 msgstr ""
 
-#: tpk_description.h:60
+#: tpk_description.h:59
 msgid "DTS-Downmix firmware "
 msgstr ""
 
@@ -2641,7 +2641,7 @@ msgstr "DVB-S2"
 msgid "DVD Player"
 msgstr ""
 
-#: tpk_description.h:61
+#: tpk_description.h:60
 msgid "DVD-Player plugin"
 msgstr ""
 
@@ -3060,7 +3060,7 @@ msgstr "DVBapi (habilitado)"
 msgid "E"
 msgstr ""
 
-#: tpk_description.h:62
+#: tpk_description.h:61
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
@@ -3392,7 +3392,7 @@ msgstr ""
 msgid "Emu Active Color"
 msgstr ""
 
-#: tpk_description.h:63
+#: tpk_description.h:62
 msgid "Emu Camd3 v3.902 for your box"
 msgstr "Softcam camd3.902"
 
@@ -3400,7 +3400,7 @@ msgstr "Softcam camd3.902"
 msgid "Emu Control"
 msgstr "Softcam control"
 
-#: tpk_description.h:64
+#: tpk_description.h:63
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr "Softcam MGCamd V1.38"
 
@@ -3408,7 +3408,7 @@ msgstr "Softcam MGCamd V1.38"
 msgid "Emu Running Color"
 msgstr ""
 
-#: tpk_description.h:67
+#: tpk_description.h:66
 msgid "Emu Wicardd v1.15 for config for ntv,tricolor,ntv_hd"
 msgstr ""
 
@@ -3416,11 +3416,11 @@ msgstr ""
 msgid "Emu not found"
 msgstr "Softcam no encontrado"
 
-#: tpk_description.h:65
+#: tpk_description.h:64
 msgid "Emu scam 3.60 for your box"
 msgstr "Softcam SCam V3.60"
 
-#: tpk_description.h:66
+#: tpk_description.h:65
 msgid "Emu vizcam 1.04 for your box"
 msgstr "Softcam vizcam V1.04"
 
@@ -3782,7 +3782,7 @@ msgstr ""
 msgid "Feed"
 msgstr "Por Favor intruducir direccion de fuente"
 
-#: tpk_description.h:69 tpk_showname.h:32
+#: tpk_description.h:68 tpk_showname.h:32
 msgid "File Manager"
 msgstr "Administrador de archivos"
 
@@ -3898,51 +3898,51 @@ msgstr "Actualizacion de software (Linea)"
 msgid "Flashupdate (tmp)"
 msgstr "Actualizacion de software (Local)"
 
-#: tpk_description.h:71
+#: tpk_description.h:70
 msgid "Font 'Action Man Italic' "
 msgstr "Fuente 'Accion Man Italic'"
 
-#: tpk_description.h:72
+#: tpk_description.h:71
 msgid "Font 'Alpha Romanie G98'"
 msgstr "Fuente 'Alpha Romanie G98'"
 
-#: tpk_description.h:73
+#: tpk_description.h:72
 msgid "Font 'Croissant' "
 msgstr "Fuentet 'Croissant'"
 
-#: tpk_description.h:74
+#: tpk_description.h:73
 msgid "Font 'Digiface Regular' "
 msgstr "Fuente 'Digiface Regular'"
 
-#: tpk_description.h:75
+#: tpk_description.h:74
 msgid "Font 'Goodtime'"
 msgstr "Fuente 'Goodtime'"
 
-#: tpk_description.h:76
+#: tpk_description.h:75
 msgid "Font 'I Hate Comic Sans'"
 msgstr "Fuente 'I Hate Comic Sans'"
 
-#: tpk_description.h:77
+#: tpk_description.h:76
 msgid "Font 'Lydian Bolt Italic BT' "
 msgstr "Fuente 'Lydian Bolt Italic BT' "
 
-#: tpk_description.h:78
+#: tpk_description.h:77
 msgid "Font 'Mighty Zeo Caps'"
 msgstr "Fuente 'Mighty Zeo Caps'"
 
-#: tpk_description.h:79
+#: tpk_description.h:78
 msgid "Font 'Monoglyceride DemiBold'"
 msgstr "Fuentet 'Monoglyceride DemiBold'"
 
-#: tpk_description.h:80
+#: tpk_description.h:79
 msgid "Font 'New Gothic BT'"
 msgstr "Fuente 'New Gothic BT'"
 
-#: tpk_description.h:81
+#: tpk_description.h:80
 msgid "Font 'Paddington Bold'"
 msgstr "Fuente 'Paddington Bold'"
 
-#: tpk_description.h:82
+#: tpk_description.h:81
 msgid "Font 'Plover Bold'"
 msgstr "Fuente 'Plover Bold'"
 
@@ -4164,7 +4164,7 @@ msgstr ""
 msgid "GMediaRender"
 msgstr ""
 
-#: tpk_description.h:84
+#: tpk_description.h:83
 msgid "GMediaRender is a UPnP media renderer for POSIX-compliant systems"
 msgstr ""
 
@@ -4252,19 +4252,19 @@ msgstr "Ir a Posicion de inicio"
 msgid "Goals"
 msgstr ""
 
-#: tpk_description.h:86
+#: tpk_description.h:85
 msgid "Gold Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:87
+#: tpk_description.h:86
 msgid "Gold Picons - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:88
+#: tpk_description.h:87
 msgid "Gold Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:85
+#: tpk_description.h:84
 msgid "Gold Picons Astra 19.2"
 msgstr ""
 
@@ -4910,7 +4910,7 @@ msgstr ""
 msgid "IP-Kamera Einstellungen"
 msgstr ""
 
-#: tpk_description.h:91
+#: tpk_description.h:90
 msgid "IP-Kamera zB. Firma INSTAR"
 msgstr "IP Camera eg. INSTAR"
 
@@ -4954,11 +4954,11 @@ msgstr ""
 msgid "Image name: "
 msgstr ""
 
-#: tpk_description.h:90
+#: tpk_description.h:89
 msgid "ImdB Info Plugin"
 msgstr "IMDb Info"
 
-#: tpk_description.h:89
+#: tpk_description.h:88
 msgid "ImdBapi Info Plugin"
 msgstr "IMDbapi Info"
 
@@ -5239,7 +5239,7 @@ msgstr "Rojo"
 msgid "Kabel BW (sofatester)"
 msgstr ""
 
-#: tpk_description.h:92
+#: tpk_description.h:91
 msgid "Kabel BW transparent Picons"
 msgstr ""
 
@@ -5247,7 +5247,7 @@ msgstr ""
 msgid "Kabel Deutschland"
 msgstr ""
 
-#: tpk_description.h:93
+#: tpk_description.h:92
 msgid "Kabel Deutschland Picons black3d"
 msgstr ""
 
@@ -5255,7 +5255,7 @@ msgstr ""
 msgid "Kabel Deutschland UH-Kreis"
 msgstr ""
 
-#: tpk_description.h:94
+#: tpk_description.h:93
 msgid "Kabel Deutschland transparent Picons"
 msgstr ""
 
@@ -5267,7 +5267,7 @@ msgstr ""
 msgid "Kabelplus ORF"
 msgstr ""
 
-#: tpk_description.h:95
+#: tpk_description.h:94
 msgid "Kabelplus ORF | 16.12.2014 (Olbord)"
 msgstr ""
 
@@ -5320,7 +5320,7 @@ msgstr ""
 msgid "KravenHD Config"
 msgstr ""
 
-#: tpk_description.h:96
+#: tpk_description.h:95
 msgid "KravenHD skin for transparent xpicons"
 msgstr ""
 
@@ -5510,7 +5510,7 @@ msgstr "Nivel:"
 msgid "Lib Pack (ufs910/ufs922)"
 msgstr ""
 
-#: tpk_description.h:97
+#: tpk_description.h:96
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
@@ -5879,19 +5879,19 @@ msgstr "Video Player vista preliminar"
 msgid "Mediathek"
 msgstr "En linea Mediathek"
 
-#: tpk_description.h:98
+#: tpk_description.h:97
 msgid "MegaStyle blue Mini TV Skin"
 msgstr ""
 
-#: tpk_description.h:99
+#: tpk_description.h:98
 msgid "MegaStyle blue Skin"
 msgstr ""
 
-#: tpk_description.h:100
+#: tpk_description.h:99
 msgid "MegaStyle grey MiniTV Skin"
 msgstr ""
 
-#: tpk_description.h:101
+#: tpk_description.h:100
 msgid "MegaStyle grey Skin"
 msgstr ""
 
@@ -6025,7 +6025,7 @@ msgstr "Lista de Menus"
 msgid "Message"
 msgstr "Mensaje"
 
-#: tpk_description.h:102
+#: tpk_description.h:101
 msgid "MetrixHD skin for transparent xpicons"
 msgstr ""
 
@@ -6035,6 +6035,10 @@ msgstr ""
 
 #: tpk_showname.h:74
 msgid "Mighty Zeo Caps"
+msgstr ""
+
+#: tpk_description.h:102
+msgid "MiniDLNA Medien Server (upnp)"
 msgstr ""
 
 #: adjust.h:266
@@ -11832,10 +11836,6 @@ msgstr "discapacitado"
 msgid "diseqcscreen"
 msgstr "DiSEqC"
 
-#: tpk_description.h:58
-msgid "dlna Medien Server (upnp)"
-msgstr "DLNA Media Server UPNP)"
-
 #: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
 msgid "dnsaddresse"
 msgstr "DNS Direccion"
@@ -11864,7 +11864,7 @@ msgstr "ERROR: Descarga Fallida!"
 msgid "dropbear ssh (server & client)"
 msgstr ""
 
-#: tpk_description.h:59
+#: tpk_description.h:58
 msgid "dropbear ssh (server & client) and openssh sftp (server) for sh4"
 msgstr ""
 
@@ -11952,7 +11952,7 @@ msgstr ""
 msgid "ext"
 msgstr ""
 
-#: tpk_description.h:68
+#: tpk_description.h:67
 msgid "extended config Panel"
 msgstr "Menú Configuración avanzada"
 
@@ -12004,7 +12004,7 @@ msgstr "Alternativa archivo resultado"
 msgid "first slot"
 msgstr "Primera ranura"
 
-#: tpk_description.h:70
+#: tpk_description.h:69
 msgid "first titan game"
 msgstr "El primer juego Titan"
 
@@ -12057,7 +12057,7 @@ msgstr "Juegos"
 msgid "gateway"
 msgstr "Puerta de Enlace"
 
-#: tpk_description.h:83
+#: tpk_description.h:82
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
@@ -13934,3 +13934,6 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "dlna Medien Server (upnp)"
+#~ msgstr "DLNA Media Server UPNP)"
