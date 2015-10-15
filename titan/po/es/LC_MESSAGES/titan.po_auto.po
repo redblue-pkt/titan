@@ -13934,6 +13934,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "dlna Medien Server (upnp)"
-#~ msgstr "DLNA Media Server UPNP)"
