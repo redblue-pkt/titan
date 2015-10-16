@@ -4,78 +4,47 @@
 buildtype=$1
 wgetbin="wget -T2 -t2 --waitretry=2"
 
-rm cache.*
-rm _liste
 rm -rf _full/tectime
 mkdir -p _full/tectime/streams
-rm cache.*
+rm cache.tectime.*
 touch cache.tectime.titanlist
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[tectime.sh] START (buildtype: $buildtype): $DATENAME" > _full/tectime/build.log
 
-if [ "$buildtype" = "full" ];then
-WATCHLIST="
-neueste-videos
-sendungen/multimedia/dr-dish-magazin
-sendungen/multimedia/hard-soft
-sendungen/wissen
-sendungen/app-der-woche
-sendungen/check
-sendungen/pixel
-sendungen/standpunkt
-sendungen/tectime
-sendungen/hands-on
-sendungen/etv
-sendungen/esa-tv
-sendungen/portalzine-tv
-tv-programm
-"
-else
-WATCHLIST="
-neueste-videos
-"
+WATCHLIST=`$wgetbin http://www.tectime.tv -O - | sed 's/<li><a href=/\n<li><a href=/g' | grep '<li><a href=' | grep -v '<ul class="nav2">' | grep -E "(aktuelle-videos|sendungen)" | cut -d'"' -f2 | sed s'/.$//'`
+if [ "$buildtype" != "full" ];then
+	echo Buildtyp: $buildtype
+	WATCHLIST=`echo $WATCHLIST | cut -d" " -f1`
 fi
 
 for ROUND1 in $WATCHLIST; do
 	count=`expr $count + 1`
 	filename=`echo $ROUND1 | tr '-' '.' | tr '/' '.'`
+	touch cache.tectime."$filename".titanlist
 	tagname=`echo $ROUND1 | tr '/' '\n' | tail -n1`
 
-	$wgetbin http://www.tectime.tv/$ROUND1/ -O cache.tectime."$filename"."$count"
-	LIST=`cat cache.tectime."$filename"."$count" | grep youtube | sed 's!src="//www.youtube.com!http://www.youtube.com!g' | tr ' ' '\n' | sed 's!?&amp;!\n?&amp;!g' | grep ^http://`
+	tectimeurl=`$wgetbin http://www.tectime.tv/$ROUND1/ -O - | sed 's/<iframe src=/\n<iframe src=/g' | grep '<iframe src=' | cut -d'"' -f2`
 
-	for ROUND2 in $LIST; do
+	$wgetbin http://www.tectime.tv/$tectimeurl -O cache.tectime."$filename"."$count"
+	LIST=`cat cache.tectime."$filename"."$count" | sed 's/<li class="yt_preview"><a href=/\n<li class="yt_preview"><a href=/g' | sed 's/<\/p><\/a><\/li>/\n<\/p><\/a><\/li>/g' | grep '<li class="yt_preview"><a href=' | tr "\'" '"' | sed 's/class="yt_preview_text">/"/g' | cut -d'"' -f4`
+
+	for ROUND2 in `echo $LIST | cut -d' ' -f1`; do
 		count=`expr $count + 1`
 		$wgetbin $ROUND2 -O cache.tectime."$filename"."$count"
-		ls cache.tectime."$filename"."$count"	
 
-		videoid=`cat cache.tectime."$filename"."$count" | sed 's!"video_id": "!\nvideoid="!g' | grep ^videoid= | cut -d'"' -f2`
-		echo videoid $videoid
+		cat cache.tectime."$filename"."$count" | tr '\n' ' ' | sed 's/<li class="yt-uix/\n<li class="yt-uix/g' | sed 's/<\/ol>/\n<\/ol>/g' |grep '<li class="yt-uix' >cache.tectime.temp
 
-		playlist=`cat cache.tectime."$filename"."$count" | sed 's!"list": "!\nlist="!g' | grep ^list= | cut -d'"' -f2`
-		echo playlist $playlist
-
-		URL="http://www.youtube.com/watch?v=$videoid&list=$playlist"
-		count=`expr $count + 1`
-		echo URL $URL
-		$wgetbin $URL -O cache.tectime."$filename"."$count"
-
-		VLIST=`cat cache.tectime."$filename"."$count" | grep /watch? | sed 's!/watch?v=!\nwatch="!g' | grep ^watch | cut -d'"' -f2 | sort -u`
-
-		for ROUND3 in $VLIST; do
-			count=`expr $count + 1`
-			$wgetbin http://www.youtube.com/watch?v=$ROUND3 -O cache.tectime."$filename"."$count"
-	
-			ROUND3=`echo $ROUND3 | cut -d'&' -f1`
-	
-			TITLE=`cat cache.tectime."$filename"."$count" | grep '<meta property="og:title"' | cut -d'"' -f4`
-	
-			URL="http://www.youtube.com/get_video_info?&video_id=$ROUND3"
-			PIC=http://i.ytimg.com/vi/"$ROUND3"/0.jpg
-				
+		while read -u 3 ROUND3; do
+			TITLE=`echo $ROUND3 | sed 's/data-video-title=/\ndata-video-title=/g' | grep 'data-video-title=' | cut -d'"' -f2`
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+			URL="http://www.youtube.com/get_video_info?&video_id="`echo $ROUND3 | sed 's/data-video-id=/\ndata-video-id=/g' | grep 'data-video-id=' | cut -d'"' -f2`
+			PIC=`echo $ROUND3 | sed 's/data-thumb=/\ndata-thumb=/g' | grep 'data-thumb=' | cut -d'"' -f2`
+			if [ -z "$PIC" ];then
+				PIC=`echo $ROUND3 | sed 's/ src=/\n src=/g' | tail -n 1 | cut -d'"' -f2`
+			fi
+			PIC="http:"`echo $PIC | sed 's/default.jpg/hqdefault.jpg/g'`
 	
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 				piccount=`expr $piccount + 1`
@@ -87,7 +56,7 @@ for ROUND1 in $WATCHLIST; do
 					echo $LINE >> cache.tectime.titanlist
 				fi
 			fi
-		done
+		done 3<cache.tectime.temp
 	done
 
 
@@ -100,6 +69,42 @@ for ROUND1 in $WATCHLIST; do
 		cat cache.tectime."$filename".titanlist >> _full/tectime/streams/tectime."$filename".list
 	fi
 done
+
+ROUND1="tv-programm"
+count=`expr $count + 1`
+filename=`echo $ROUND1 | tr '-' '.' | tr '/' '.'`
+tagname=`echo $ROUND1 | tr '/' '\n' | tail -n1`
+
+$wgetbin http://www.tectime.tv/$ROUND1/ -O cache.tectime."$filename"."$count"
+
+cat cache.tectime."$filename"."$count" | tr '\r' ' ' | tr '\n' '\r' | sed 's/<div class="sendeplan-item/\n<div class="sendeplan-item/g' | sed 's/<div id="footer/\n<div id="footer/g' | grep '^<div class="sendeplan-item' >cache.tectime.temp
+
+while read -u 3 ROUND3; do
+	YT_ID=`echo $ROUND3 | sed 's/<a href=/\n<a href=/g' | grep '^<a href=' | cut -d'"' -f2 | cut -d'/' -f4`
+	TV_TIME=`echo $ROUND3 | sed 's/class="sendestart/\nclass="sendestart/g' | grep '^class="sendestart' | cut -d'>' -f2 | cut -d'<' -f1`
+	TT_TL=`cat cache.tectime.titanlist | grep $YT_ID`
+	if [ ! -z "$TT_TL" ] ; then
+		echo "$TV_TIME $TT_TL" >> cache.tectime."$filename".titanlist
+	else
+		piccount=`expr $piccount + 1`
+		TV_SENDUNG=`echo $ROUND3 | sed 's/class="sendestart/\nclass="sendestart/g' | grep '^class="sendestart' | cut -d'>' -f3 | cut -d'<' -f1`
+		TV_INHALT=`echo $ROUND3 | sed 's/class="sendeinhalt/\nclass="sendeinhalt/g' | grep '^class="sendeinhalt' | cut -d'>' -f2 | cut -d'
+' -f1`
+		PIC=`echo $ROUND3 | sed 's/<img src=/\n<img src=/g' | grep '^<img src=' | cut -d'"' -f2`
+		LINE="$TV_SENDUNG: $TV_INHALT#http://www.youtube.com/get_video_info?&video_id=$YT_ID#$PIC#tectime_$piccount.jpg#TecTime#4"
+		echo "$LINE" >> cache.tectime.titanlist
+		echo "$TV_TIME $LINE" >> cache.tectime."$filename".titanlist
+	fi
+done 3<cache.tectime.temp
+
+if [ -e cache.tectime."$filename".titanlist ];then
+	piccount=`expr $piccount + 1`
+	URL="http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."$filename".list"
+	PIC="http://atemio.dyndns.tv/mediathek/menu/"$tagname".jpg"
+	LINE="$tagname#$URL#$PIC#tectime$piccount.jpg#tectime#0"
+	echo $LINE >> cache.tectime.category.titanlist
+	cat cache.tectime."$filename".titanlist >> _full/tectime/streams/tectime."$filename".list
+fi
 
 if [ "$buildtype" = "full" ];then
 	cat cache.tectime.titanlist | sort -u > _full/tectime/streams/tectime.all-sorted.list
