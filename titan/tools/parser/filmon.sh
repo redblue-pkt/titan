@@ -42,7 +42,10 @@ if [ $old = 1 ];then
 			fi
 		done
 	#fi
-	
+
+	sed 's/#FilmOn#3/#FilmOn#0/' -i _full/filmon/filmon.category.list
+	sed 's/#FilmOn#3/#FilmOn#0/' -i _full/filmon/filmon.a-z.list
+
 	DONETIME=`date +%s`
 	TIME=`expr $DONETIME - $BEGINTIME`
 	echo "[filmon.sh] build time: ($TIME s) done" >> _full/filmon/build.log	
