@@ -1350,7 +1350,7 @@ msgstr ""
 msgid "Background2 Color"
 msgstr ""
 
-#: httpdfunc.h:6709 skin_default_skin.xml.h:60
+#: httpdfunc.h:6707 skin_default_skin.xml.h:60
 msgid "Backup"
 msgstr ""
 
@@ -1363,7 +1363,7 @@ msgstr "Backup - Instellingen"
 msgid "Backup / Restore Settings"
 msgstr "Backup instellingen"
 
-#: global.h:7301 httpdfunc.h:6668 httpdfunc.h:6748 system_backup_restore.h:82
+#: global.h:7301 httpdfunc.h:6666 httpdfunc.h:6746 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Backup gelukt"
 
@@ -3960,11 +3960,11 @@ msgstr ""
 msgid "Format HDD"
 msgstr ""
 
-#: httpdfunc.h:6822 httpdfunc.h:6873 restoredefault.h:65
+#: httpdfunc.h:6820 httpdfunc.h:6871 restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr "Formatteer MNT (alles)"
 
-#: httpdfunc.h:6817 httpdfunc.h:6864 restoredefault.h:64
+#: httpdfunc.h:6815 httpdfunc.h:6862 restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatteer MNT tijdens Backup/Restore"
 
@@ -6414,7 +6414,7 @@ msgstr ""
 msgid "No Tuner configured"
 msgstr "Geen tuner geconfigureerd"
 
-#: httpdfunc.h:6746 system_backup_restore.h:51
+#: httpdfunc.h:6744 system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -7739,8 +7739,8 @@ msgstr ""
 msgid "Recall"
 msgstr ""
 
-#: httpdfunc.h:6856 httpdfunc.h:6866 httpdfunc.h:6875 httpdfunc.h:6965
-#: httpdfunc.h:6977 httpdfunc.h:6987 httpdfunc.h:6997 httpdfunc.h:7007
+#: httpdfunc.h:6854 httpdfunc.h:6864 httpdfunc.h:6873 httpdfunc.h:6963
+#: httpdfunc.h:6975 httpdfunc.h:6985 httpdfunc.h:6995 httpdfunc.h:7005
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
 msgstr "Ontvanger herstart nu!!"
@@ -7962,7 +7962,7 @@ msgstr ""
 msgid "Repeat-On"
 msgstr "Herhalen Aan"
 
-#: httpdfunc.h:7052 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
+#: httpdfunc.h:7050 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
 msgstr ""
@@ -8009,27 +8009,27 @@ msgstr "Netwerk herstarten?"
 msgid "Restart Oscam ?"
 msgstr "Oscam opnieuw starten?"
 
-#: httpdfunc.h:6704 skin_default_skin.xml.h:492
+#: httpdfunc.h:6702 skin_default_skin.xml.h:492
 msgid "Restore"
 msgstr ""
 
-#: httpdfunc.h:6916 httpdfunc.h:6975 skin_default_skin.xml.h:493
+#: httpdfunc.h:6914 httpdfunc.h:6973 skin_default_skin.xml.h:493
 msgid "Restore Default Bouquets"
 msgstr ""
 
-#: httpdfunc.h:6911 httpdfunc.h:6963 skin_default_skin.xml.h:495
+#: httpdfunc.h:6909 httpdfunc.h:6961 skin_default_skin.xml.h:495
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-#: httpdfunc.h:6921 httpdfunc.h:6985 skin_default_skin.xml.h:494
+#: httpdfunc.h:6919 httpdfunc.h:6983 skin_default_skin.xml.h:494
 msgid "Restore Default Channels"
 msgstr ""
 
-#: httpdfunc.h:6926 httpdfunc.h:6995 skin_default_skin.xml.h:496
+#: httpdfunc.h:6924 httpdfunc.h:6993 skin_default_skin.xml.h:496
 msgid "Restore Default Providers"
 msgstr ""
 
-#: httpdfunc.h:6931 httpdfunc.h:7005 skin_default_skin.xml.h:497
+#: httpdfunc.h:6929 httpdfunc.h:7003 skin_default_skin.xml.h:497
 msgid "Restore Default Sats"
 msgstr ""
 
@@ -8037,11 +8037,11 @@ msgstr ""
 msgid "Restore Settings"
 msgstr "Instellingen terugzetten"
 
-#: httpdfunc.h:6905 webif_settings.h:4
+#: httpdfunc.h:6903 webif_settings.h:4
 msgid "Restore channel settings"
 msgstr ""
 
-#: httpdfunc.h:6805 httpdfunc.h:6812 httpdfunc.h:6854 restoredefault.h:63
+#: httpdfunc.h:6803 httpdfunc.h:6810 httpdfunc.h:6852 restoredefault.h:63
 #: restoredefault.h:67 skin_default_skin.xml.h:498 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Fabrieksinstelling terugzetten"
@@ -8850,11 +8850,11 @@ msgstr ""
 msgid "Selected:"
 msgstr "Geselecteerd:"
 
-#: httpdfunc.h:7047 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
+#: httpdfunc.h:7045 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr ""
 
-#: httpdfunc.h:7038
+#: httpdfunc.h:7036
 msgid "Send Telnet Command"
 msgstr ""
 
@@ -8965,7 +8965,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Instellingen Ok?"
 
-#: httpdfunc.h:6693 skin_default_skin.xml.h:556 webif_system.h:4
+#: httpdfunc.h:6691 skin_default_skin.xml.h:556 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Instellingen backuppen/terugzetten"
 
@@ -9681,11 +9681,11 @@ msgstr ""
 msgid "System - Usbupdate (tmp)"
 msgstr ""
 
-#: httpdfunc.h:6619 skin_default_skin.xml.h:622 webif_system.h:3
+#: httpdfunc.h:6617 skin_default_skin.xml.h:622 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:6662
+#: httpdfunc.h:6660
 msgid "System Backup on your Box not Supported"
 msgstr ""
 
@@ -11655,7 +11655,7 @@ msgstr ""
 msgid "cover"
 msgstr "Hoes"
 
-#: httpdfunc.h:6631 httpdfunc.h:6656 skin_default_skin.xml.h:125
+#: httpdfunc.h:6629 httpdfunc.h:6654 skin_default_skin.xml.h:125
 msgid "create System Backup"
 msgstr ""
 
