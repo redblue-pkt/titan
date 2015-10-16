@@ -2798,7 +2798,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:139
 msgid "Del EPG before scan"
-msgstr "Lösche EPG vor der Suche"
+msgstr "Lösche EPG vor der Suche (Standard Ja)"
 
 #: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:3
 #: plugins_tmc_skin.xml.h:2 skins_filemanager_skin.xml.h:2
@@ -2812,7 +2812,7 @@ msgstr "Alle löschen"
 
 #: skin_default_skin.xml.h:141
 msgid "Delete EPG after read"
-msgstr "Lösche EPG Datei nach dem Einlesen"
+msgstr "Lösche EPG Datei nach dem Einlesen (Standard Nein)"
 
 #: play.h:647
 msgid "Delete File"
@@ -3161,11 +3161,11 @@ msgstr "EPG-Info"
 
 #: skin_default_skin.xml.h:183
 msgid "EPG List Mode"
-msgstr "Hintergrundsuche"
+msgstr "Hintergrundsuche (ausschalten bei einem Tuner)"
 
 #: skin_default_skin.xml.h:184
 msgid "EPG Path"
-msgstr "Speicherpfad"
+msgstr "Speicherpfad (mit interne Festplatte /media/hdd)"
 
 #: skin_default_skin.xml.h:185
 msgid "EPG Refresh Time"
@@ -3181,7 +3181,7 @@ msgstr "EPG-Kurzübersicht"
 
 #: skin_default_skin.xml.h:187
 msgid "EPG Save Mode"
-msgstr "EPG-Daten sichern"
+msgstr "EPG-Daten sichern (Standard immer)"
 
 #: epgsettings.h:331
 msgid "EPG Scan Log"
