@@ -10011,7 +10011,7 @@ msgstr "Tsid:"
 msgid "TV"
 msgstr ""
 
-#: tithek_mainmenu.h:130
+#: tithek_mainmenu.h:131
 msgid "TV Baden Wuerttemberg rtmp (German)"
 msgstr ""
 
@@ -10055,10 +10055,14 @@ msgid "Team 2"
 msgstr "Gruppe 2"
 
 #: tithek_mainmenu.h:125
-msgid "TeleBaern (Schweiz)"
+msgid "TecTime"
 msgstr ""
 
 #: tithek_mainmenu.h:126
+msgid "TeleBaern (Schweiz)"
+msgstr ""
+
+#: tithek_mainmenu.h:127
 msgid "TeleBaern (Switzerland)"
 msgstr ""
 
@@ -10282,7 +10286,7 @@ msgstr "Zeit bis Abschaltung (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
-#: tithek_mainmenu.h:127
+#: tithek_mainmenu.h:128
 msgid "TimeTv"
 msgstr ""
 
@@ -10399,7 +10403,7 @@ msgstr "Zeitzone"
 msgid "Tint"
 msgstr "Temperatur"
 
-#: tithek_mainmenu.h:128
+#: tithek_mainmenu.h:129
 msgid "Tips und Tricks"
 msgstr "Tipps und Tricks"
 
@@ -10532,7 +10536,7 @@ msgstr "Tone Modus"
 msgid "Top"
 msgstr "Top (Prozesse)"
 
-#: tithek_mainmenu.h:129
+#: tithek_mainmenu.h:130
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10813,7 +10817,7 @@ msgstr "Unbekannt!"
 msgid "UNLOAD"
 msgstr "Deaktivieren"
 
-#: tithek_mainmenu.h:131
+#: tithek_mainmenu.h:132
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -10982,7 +10986,7 @@ msgstr "Einstellungen"
 msgid "VLC Player"
 msgstr "Video abspielen"
 
-#: tithek_mainmenu.h:133
+#: tithek_mainmenu.h:134
 msgid "VOX-Now"
 msgstr ""
 
@@ -11073,7 +11077,7 @@ msgstr "Menü Ansicht"
 msgid "Virtualzap Timeout"
 msgstr "Virtuelles Umschalten"
 
-#: tithek_mainmenu.h:132
+#: tithek_mainmenu.h:133
 msgid "Vizion Plus"
 msgstr ""
 
@@ -11327,7 +11331,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:134
+#: tithek_mainmenu.h:135
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11413,11 +11417,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:136
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:137
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11472,7 +11476,7 @@ msgstr ""
 "\n"
 "Soll der Receiver ausgeschaltet werden?"
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:138
 msgid "Youtube"
 msgstr ""
 
@@ -11480,7 +11484,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:139
 msgid "ZDF"
 msgstr ""
 

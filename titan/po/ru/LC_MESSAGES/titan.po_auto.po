@@ -9810,7 +9810,7 @@ msgstr "TSID"
 msgid "TV"
 msgstr "ТВ"
 
-#: tithek_mainmenu.h:130
+#: tithek_mainmenu.h:131
 msgid "TV Baden Wuerttemberg rtmp (German)"
 msgstr ""
 
@@ -9854,10 +9854,14 @@ msgid "Team 2"
 msgstr ""
 
 #: tithek_mainmenu.h:125
-msgid "TeleBaern (Schweiz)"
+msgid "TecTime"
 msgstr ""
 
 #: tithek_mainmenu.h:126
+msgid "TeleBaern (Schweiz)"
+msgstr ""
+
+#: tithek_mainmenu.h:127
 msgid "TeleBaern (Switzerland)"
 msgstr ""
 
@@ -10071,7 +10075,7 @@ msgstr "Время до отключения (Мин)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Время ожидания автоматического заполнения буфера"
 
-#: tithek_mainmenu.h:127
+#: tithek_mainmenu.h:128
 msgid "TimeTv"
 msgstr "TimeTV"
 
@@ -10184,7 +10188,7 @@ msgstr "Часовой пояс"
 msgid "Tint"
 msgstr "Оттенок"
 
-#: tithek_mainmenu.h:128
+#: tithek_mainmenu.h:129
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -10317,7 +10321,7 @@ msgstr "Тональный режим"
 msgid "Top"
 msgstr "ТОР"
 
-#: tithek_mainmenu.h:129
+#: tithek_mainmenu.h:130
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10596,7 +10600,7 @@ msgstr "Неизвестно"
 msgid "UNLOAD"
 msgstr "Выгрузить"
 
-#: tithek_mainmenu.h:131
+#: tithek_mainmenu.h:132
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -10765,7 +10769,7 @@ msgstr "Настройки отображения файлов видео"
 msgid "VLC Player"
 msgstr "Плеер VLC"
 
-#: tithek_mainmenu.h:133
+#: tithek_mainmenu.h:134
 msgid "VOX-Now"
 msgstr ""
 
@@ -10854,7 +10858,7 @@ msgstr "Как отображать разделы меню"
 msgid "Virtualzap Timeout"
 msgstr "Виртуальное переключение"
 
-#: tithek_mainmenu.h:132
+#: tithek_mainmenu.h:133
 msgid "Vizion Plus"
 msgstr ""
 
@@ -11104,7 +11108,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:134
+#: tithek_mainmenu.h:135
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11189,11 +11193,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:136
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:137
 msgid "XXX-XVIDEOS"
 msgstr "ХХХ-Видео"
 
@@ -11246,7 +11250,7 @@ msgstr ""
 "\n"
 "Выключить ресивер? "
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:138
 msgid "Youtube"
 msgstr "YouTube"
 
@@ -11254,7 +11258,7 @@ msgstr "YouTube"
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:139
 msgid "ZDF"
 msgstr ""
 

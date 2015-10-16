@@ -9814,7 +9814,7 @@ msgstr ""
 msgid "TV"
 msgstr ""
 
-#: tithek_mainmenu.h:130
+#: tithek_mainmenu.h:131
 msgid "TV Baden Wuerttemberg rtmp (German)"
 msgstr ""
 
@@ -9858,10 +9858,14 @@ msgid "Team 2"
 msgstr ""
 
 #: tithek_mainmenu.h:125
-msgid "TeleBaern (Schweiz)"
+msgid "TecTime"
 msgstr ""
 
 #: tithek_mainmenu.h:126
+msgid "TeleBaern (Schweiz)"
+msgstr ""
+
+#: tithek_mainmenu.h:127
 msgid "TeleBaern (Switzerland)"
 msgstr ""
 
@@ -10072,7 +10076,7 @@ msgstr "Tijd tot stop (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Wachttijd na zoeken om buffer te vullen"
 
-#: tithek_mainmenu.h:127
+#: tithek_mainmenu.h:128
 msgid "TimeTv"
 msgstr ""
 
@@ -10187,7 +10191,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:128
+#: tithek_mainmenu.h:129
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -10320,7 +10324,7 @@ msgstr ""
 msgid "Top"
 msgstr "Top (processen)"
 
-#: tithek_mainmenu.h:129
+#: tithek_mainmenu.h:130
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10595,7 +10599,7 @@ msgstr "Onbekend"
 msgid "UNLOAD"
 msgstr ""
 
-#: tithek_mainmenu.h:131
+#: tithek_mainmenu.h:132
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -10764,7 +10768,7 @@ msgstr "Beeldscherm instellingen"
 msgid "VLC Player"
 msgstr "VLC speler"
 
-#: tithek_mainmenu.h:133
+#: tithek_mainmenu.h:134
 msgid "VOX-Now"
 msgstr ""
 
@@ -10853,7 +10857,7 @@ msgstr "Secties zien"
 msgid "Virtualzap Timeout"
 msgstr ""
 
-#: tithek_mainmenu.h:132
+#: tithek_mainmenu.h:133
 msgid "Vizion Plus"
 msgstr ""
 
@@ -11105,7 +11109,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:134
+#: tithek_mainmenu.h:135
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11190,11 +11194,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:136
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:137
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11246,7 +11250,7 @@ msgstr ""
 "Backup wordt opgeslagen in /tmp\n"
 "Vanaf daar veilig stellen naar uw PC m.b.v. van FTP"
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:138
 msgid "Youtube"
 msgstr ""
 
@@ -11254,7 +11258,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:139
 msgid "ZDF"
 msgstr ""
 
