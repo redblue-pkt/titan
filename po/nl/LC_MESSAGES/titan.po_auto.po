@@ -11655,7 +11655,7 @@ msgstr ""
 msgid "cover"
 msgstr "Hoes"
 
-#: httpdfunc.h:6630 httpdfunc.h:6656 skin_default_skin.xml.h:125
+#: httpdfunc.h:6631 httpdfunc.h:6656 skin_default_skin.xml.h:125
 msgid "create System Backup"
 msgstr ""
 
