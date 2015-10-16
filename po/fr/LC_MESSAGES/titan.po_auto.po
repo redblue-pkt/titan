@@ -1332,7 +1332,7 @@ msgstr ""
 msgid "Background2 Color"
 msgstr ""
 
-#: httpdfunc.h:6706 skin_default_skin.xml.h:60
+#: httpdfunc.h:6709 skin_default_skin.xml.h:60
 msgid "Backup"
 msgstr "Sauvegarde"
 
@@ -1345,7 +1345,7 @@ msgstr "Sauvegarde/Restauration "
 msgid "Backup / Restore Settings"
 msgstr "Sauvegarde/Restauration "
 
-#: global.h:7301 httpdfunc.h:6665 httpdfunc.h:6745 system_backup_restore.h:82
+#: global.h:7301 httpdfunc.h:6668 httpdfunc.h:6748 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr ""
 
@@ -3896,11 +3896,11 @@ msgstr ""
 msgid "Format HDD"
 msgstr "Disque Dur Format"
 
-#: httpdfunc.h:6819 httpdfunc.h:6870 restoredefault.h:65
+#: httpdfunc.h:6822 httpdfunc.h:6873 restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr ""
 
-#: httpdfunc.h:6814 httpdfunc.h:6861 restoredefault.h:64
+#: httpdfunc.h:6817 httpdfunc.h:6864 restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr ""
 
@@ -6323,7 +6323,7 @@ msgstr ""
 msgid "No Tuner configured"
 msgstr "Config Tuner"
 
-#: httpdfunc.h:6743 system_backup_restore.h:51
+#: httpdfunc.h:6746 system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -7633,8 +7633,8 @@ msgstr ""
 msgid "Recall"
 msgstr ""
 
-#: httpdfunc.h:6853 httpdfunc.h:6863 httpdfunc.h:6872 httpdfunc.h:6962
-#: httpdfunc.h:6974 httpdfunc.h:6984 httpdfunc.h:6994 httpdfunc.h:7004
+#: httpdfunc.h:6856 httpdfunc.h:6866 httpdfunc.h:6875 httpdfunc.h:6965
+#: httpdfunc.h:6977 httpdfunc.h:6987 httpdfunc.h:6997 httpdfunc.h:7007
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
 msgstr ""
@@ -7856,7 +7856,7 @@ msgstr "Type de répétition"
 msgid "Repeat-On"
 msgstr "répéter"
 
-#: httpdfunc.h:7049 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
+#: httpdfunc.h:7052 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
 msgstr "Réinitialiser"
@@ -7903,27 +7903,27 @@ msgstr "Redémarrer Réseau?"
 msgid "Restart Oscam ?"
 msgstr "Redémarrer Titan"
 
-#: httpdfunc.h:6701 skin_default_skin.xml.h:492
+#: httpdfunc.h:6704 skin_default_skin.xml.h:492
 msgid "Restore"
 msgstr "Restaurer"
 
-#: httpdfunc.h:6913 httpdfunc.h:6972 skin_default_skin.xml.h:493
+#: httpdfunc.h:6916 httpdfunc.h:6975 skin_default_skin.xml.h:493
 msgid "Restore Default Bouquets"
 msgstr ""
 
-#: httpdfunc.h:6908 httpdfunc.h:6960 skin_default_skin.xml.h:495
+#: httpdfunc.h:6911 httpdfunc.h:6963 skin_default_skin.xml.h:495
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-#: httpdfunc.h:6918 httpdfunc.h:6982 skin_default_skin.xml.h:494
+#: httpdfunc.h:6921 httpdfunc.h:6985 skin_default_skin.xml.h:494
 msgid "Restore Default Channels"
 msgstr ""
 
-#: httpdfunc.h:6923 httpdfunc.h:6992 skin_default_skin.xml.h:496
+#: httpdfunc.h:6926 httpdfunc.h:6995 skin_default_skin.xml.h:496
 msgid "Restore Default Providers"
 msgstr ""
 
-#: httpdfunc.h:6928 httpdfunc.h:7002 skin_default_skin.xml.h:497
+#: httpdfunc.h:6931 httpdfunc.h:7005 skin_default_skin.xml.h:497
 msgid "Restore Default Sats"
 msgstr ""
 
@@ -7931,11 +7931,11 @@ msgstr ""
 msgid "Restore Settings"
 msgstr "Réglages de Rotor"
 
-#: httpdfunc.h:6902 webif_settings.h:4
+#: httpdfunc.h:6905 webif_settings.h:4
 msgid "Restore channel settings"
 msgstr ""
 
-#: httpdfunc.h:6802 httpdfunc.h:6809 httpdfunc.h:6851 restoredefault.h:63
+#: httpdfunc.h:6805 httpdfunc.h:6812 httpdfunc.h:6854 restoredefault.h:63
 #: restoredefault.h:67 skin_default_skin.xml.h:498 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Réglage adaptateur réseau"
@@ -8744,11 +8744,11 @@ msgstr ""
 msgid "Selected:"
 msgstr "Séléction de sauvegarde"
 
-#: httpdfunc.h:7044 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
+#: httpdfunc.h:7047 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr ""
 
-#: httpdfunc.h:7035
+#: httpdfunc.h:7038
 msgid "Send Telnet Command"
 msgstr ""
 
@@ -8859,7 +8859,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Réglages"
 
-#: httpdfunc.h:6690 skin_default_skin.xml.h:556 webif_system.h:4
+#: httpdfunc.h:6693 skin_default_skin.xml.h:556 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Réglages sauvegarde/restauration"
 
@@ -9568,11 +9568,11 @@ msgstr "System - USB-Update (online)"
 msgid "System - Usbupdate (tmp)"
 msgstr "System - USB-Update (tmp)"
 
-#: httpdfunc.h:6617 skin_default_skin.xml.h:622 webif_system.h:3
+#: httpdfunc.h:6619 skin_default_skin.xml.h:622 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:6659
+#: httpdfunc.h:6662
 msgid "System Backup on your Box not Supported"
 msgstr ""
 
@@ -11518,7 +11518,7 @@ msgstr "Copier Service"
 msgid "cover"
 msgstr "Couverture complète"
 
-#: httpdfunc.h:6628 httpdfunc.h:6653 skin_default_skin.xml.h:125
+#: httpdfunc.h:6630 httpdfunc.h:6656 skin_default_skin.xml.h:125
 msgid "create System Backup"
 msgstr ""
 
