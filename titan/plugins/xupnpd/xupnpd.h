@@ -47,7 +47,17 @@ void screenxupnpd()
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
-		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL)) {
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			debug(10, "cmd: %s", xupnpdstop);
+			system(xupnpdstop);
+			debug(10, "cmd: %s", xupnpdstart);
+			ret = system(xupnpdstart);
+			if(ret == 0)
+				textbox(_("Message"), _("xupnpd started and config saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			else
+				textbox(_("Message"), _("xupnpd not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			drawscreen(xupnpd, 0, 0);			
 			writeownconfigtmp();
 			writeallconfig(1);
 			break;
