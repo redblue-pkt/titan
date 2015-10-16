@@ -717,7 +717,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		localfile = 1;
 	}
 
-	amazon_init(titheklink, tithekfile);
+//	amazon_init(titheklink, tithekfile);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();
