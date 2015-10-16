@@ -6609,7 +6609,7 @@ char* webgetbackup(int fmt)
 
 	if(fmt == 0) 
 	{
-		if(checkbox("UFS910") == 1 || checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1);		
+		if(checkbox("UFS910") == 1 && checkbox("ATEMIO510") == 1 && checkbox("ATEMIO520") == 1);		
 		{			
 			buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 			buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
