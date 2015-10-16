@@ -9881,7 +9881,7 @@ msgstr "TSID: "
 msgid "TV"
 msgstr ""
 
-#: tithek_mainmenu.h:130
+#: tithek_mainmenu.h:131
 msgid "TV Baden Wuerttemberg rtmp (German)"
 msgstr ""
 
@@ -9925,10 +9925,14 @@ msgid "Team 2"
 msgstr ""
 
 #: tithek_mainmenu.h:125
-msgid "TeleBaern (Schweiz)"
+msgid "TecTime"
 msgstr ""
 
 #: tithek_mainmenu.h:126
+msgid "TeleBaern (Schweiz)"
+msgstr ""
+
+#: tithek_mainmenu.h:127
 msgid "TeleBaern (Switzerland)"
 msgstr ""
 
@@ -10141,7 +10145,7 @@ msgstr "Es hora de dejar (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Tiempo de espera despues de tratar de llenar bufer"
 
-#: tithek_mainmenu.h:127
+#: tithek_mainmenu.h:128
 msgid "TimeTv"
 msgstr ""
 
@@ -10258,7 +10262,7 @@ msgstr "Tiempo Zona"
 msgid "Tint"
 msgstr "Matiz"
 
-#: tithek_mainmenu.h:128
+#: tithek_mainmenu.h:129
 msgid "Tips und Tricks"
 msgstr "Consejos yTrucos"
 
@@ -10391,7 +10395,7 @@ msgstr "Modo Tono"
 msgid "Top"
 msgstr "Top (Procesos)"
 
-#: tithek_mainmenu.h:129
+#: tithek_mainmenu.h:130
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10673,7 +10677,7 @@ msgstr "Desconocido"
 msgid "UNLOAD"
 msgstr "Desactivar"
 
-#: tithek_mainmenu.h:131
+#: tithek_mainmenu.h:132
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -10842,7 +10846,7 @@ msgstr "Video Ajustes"
 msgid "VLC Player"
 msgstr "Reproducir Video"
 
-#: tithek_mainmenu.h:133
+#: tithek_mainmenu.h:134
 msgid "VOX-Now"
 msgstr ""
 
@@ -10931,7 +10935,7 @@ msgstr "Seleccionar Menu"
 msgid "Virtualzap Timeout"
 msgstr "Virtual interruptor"
 
-#: tithek_mainmenu.h:132
+#: tithek_mainmenu.h:133
 msgid "Vizion Plus"
 msgstr ""
 
@@ -11185,7 +11189,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:134
+#: tithek_mainmenu.h:135
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11270,11 +11274,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:136
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:137
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11327,7 +11331,7 @@ msgstr ""
 "\n"
 "Quieres que el receptor se apague?"
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:138
 msgid "Youtube"
 msgstr ""
 
@@ -11335,7 +11339,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:139
 msgid "ZDF"
 msgstr ""
 

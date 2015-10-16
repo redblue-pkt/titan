@@ -9693,7 +9693,7 @@ msgstr ""
 msgid "TV"
 msgstr ""
 
-#: tithek_mainmenu.h:130
+#: tithek_mainmenu.h:131
 msgid "TV Baden Wuerttemberg rtmp (German)"
 msgstr ""
 
@@ -9737,10 +9737,14 @@ msgid "Team 2"
 msgstr ""
 
 #: tithek_mainmenu.h:125
-msgid "TeleBaern (Schweiz)"
+msgid "TecTime"
 msgstr ""
 
 #: tithek_mainmenu.h:126
+msgid "TeleBaern (Schweiz)"
+msgstr ""
+
+#: tithek_mainmenu.h:127
 msgid "TeleBaern (Switzerland)"
 msgstr ""
 
@@ -9946,7 +9950,7 @@ msgstr "Χρόνος εως το τέλος"
 msgid "Time to wait after seek for fill buffer"
 msgstr ""
 
-#: tithek_mainmenu.h:127
+#: tithek_mainmenu.h:128
 msgid "TimeTv"
 msgstr "Timer"
 
@@ -10055,7 +10059,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:128
+#: tithek_mainmenu.h:129
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -10188,7 +10192,7 @@ msgstr ""
 msgid "Top"
 msgstr "Επάνω"
 
-#: tithek_mainmenu.h:129
+#: tithek_mainmenu.h:130
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10460,7 +10464,7 @@ msgstr "Άγνωστο"
 msgid "UNLOAD"
 msgstr ""
 
-#: tithek_mainmenu.h:131
+#: tithek_mainmenu.h:132
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -10629,7 +10633,7 @@ msgstr "ΡΥΘΜΙΣΕΙΣ VIDEO"
 msgid "VLC Player"
 msgstr ""
 
-#: tithek_mainmenu.h:133
+#: tithek_mainmenu.h:134
 msgid "VOX-Now"
 msgstr ""
 
@@ -10718,7 +10722,7 @@ msgstr ""
 msgid "Virtualzap Timeout"
 msgstr ""
 
-#: tithek_mainmenu.h:132
+#: tithek_mainmenu.h:133
 msgid "Vizion Plus"
 msgstr ""
 
@@ -10966,7 +10970,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:134
+#: tithek_mainmenu.h:135
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11051,11 +11055,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:136
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:137
 msgid "XXX-XVIDEOS"
 msgstr "VIDEO"
 
@@ -11105,7 +11109,7 @@ msgid ""
 "Stop the box??? "
 msgstr ""
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:138
 msgid "Youtube"
 msgstr ""
 
@@ -11113,7 +11117,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:139
 msgid "ZDF"
 msgstr ""
 
