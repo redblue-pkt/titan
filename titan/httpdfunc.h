@@ -6603,38 +6603,41 @@ char* webgetserviceinfo(int fmt)
 
 char* webgetbackup(int fmt)
 {
-	if(status.security == 0) return NULL;
+	if(checkbox("UFS910") == 1 || checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1)
+	{			
+		if(status.security == 0) return NULL;
 
-	char* buf = NULL, *tmpstr = NULL;
+		char* buf = NULL, *tmpstr = NULL;
 
-	if(fmt == 0) 
-	{
-		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
-		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"backup\"><center>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
-		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("System Backup"), 1, 0);
-		buf = ostrcat(buf, "</h1>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
+		if(fmt == 0) 
+		{
+			buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+			buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+			buf = ostrcat(buf, "</head><body class=body id=\"backup\"><center>", 1, 0);
+			buf = ostrcat(buf, "<br>", 1, 0);
+			buf = ostrcat(buf, "<h1>", 1, 0);
+			buf = ostrcat(buf, _("System Backup"), 1, 0);
+			buf = ostrcat(buf, "</h1>", 1, 0);
+			buf = ostrcat(buf, "<br>", 1, 0);
+		}
+
+		tmpstr = create_backup(NULL, 0);
+	
+		tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+		buf = ostrcat(buf, tmpstr, 1, 1);
+		buf = ostrcat(buf, "</br></br>", 1, 0);
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getcreatebackup target=main>", 1, 0);
+		buf = ostrcat(buf, _("create System Backup"), 1, 0);
+		buf = ostrcat(buf, "</a>", 1, 0);
+		buf = ostrcat(buf, "</br></br>", 1, 0);
+
+		if(fmt == 0)
+		{
+			buf = ostrcat(buf, "</center></body></html>", 1, 0);
+		}	
+	
+		return buf;
 	}
-
-	tmpstr = create_backup(NULL, 0);
-	
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
-	buf = ostrcat(buf, tmpstr, 1, 1);
-	buf = ostrcat(buf, "</br></br>", 1, 0);
-	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getcreatebackup target=main>", 1, 0);
-	buf = ostrcat(buf, _("create System Backup"), 1, 0);
-	buf = ostrcat(buf, "</a>", 1, 0);
-	buf = ostrcat(buf, "</br></br>", 1, 0);
-
-	if(fmt == 0)
-	{
-		buf = ostrcat(buf, "</center></body></html>", 1, 0);
-	}	
-	
-	return buf;
 }
 
 char* webgetcreatebackup(int fmt)
