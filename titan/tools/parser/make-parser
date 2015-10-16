@@ -43,7 +43,7 @@ mv -f "$HOME"/parser/BUILD/mediathek/* /var/www/atemio/web/mediathek
 mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 
 # disable beeg
-#rm "$HOME"/parser/BUILD/beeg.sh
+rm "$HOME"/parser/BUILD/beeg.sh
 #rm "$HOME"/parser/BUILD/kinox.sh
 #rm "$HOME"/parser/BUILD/myvideo.sh
 #rm "$HOME"/parser/BUILD/netzkino.sh
