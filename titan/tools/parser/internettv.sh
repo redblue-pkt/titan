@@ -133,7 +133,7 @@ gcount=`expr $gcount + 1`
 			if [ "$filename" == "Xxx" ];then
 				ptype=1000
 			else
-				ptype=3
+				ptype=0
 			fi
 			LINE="$filename#$URL2#$PIC#internettv_$piccount.jpg#Internet Tv#$ptype"
 			echo $LINE >> cache.category.titanlist
