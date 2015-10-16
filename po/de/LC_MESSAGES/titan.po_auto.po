@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.68\n"
+"Project-Id-Version: TitanNit 1.69\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
@@ -14005,7 +14005,7 @@ msgstr "xupnpd wurde gestoppt"
 
 #: xupnpd.h:57
 msgid "xupnpd started and config saved"
-msgstr ""
+msgstr "xupnpd gestartet und Einstellungen gespeichert"
 
 #: xupnpd.h:81
 msgid "xupnpd started."
