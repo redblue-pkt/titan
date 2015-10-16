@@ -6602,8 +6602,7 @@ char* webgetserviceinfo(int fmt)
 }
 
 char* webgetbackup(int fmt)
-{
-	if(checkbox("UFS910") == 1 || checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1)
+	if(checkbox("UFS910") == 1 || checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1);
 	{			
 		if(status.security == 0) return NULL;
 
@@ -6638,7 +6637,7 @@ char* webgetbackup(int fmt)
 	
 		return buf;
 	}
-}
+
 
 char* webgetcreatebackup(int fmt)
 {
