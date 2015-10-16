@@ -8242,7 +8242,7 @@ msgstr "Gefundene Liste"
 
 #: tithek.h:916
 msgid "Results"
-msgstr "Ergebnis"
+msgstr "Treffer"
 
 #: httpdfunc.h:4604 skin_default_skin.xml.h:499
 msgid "Resync Recording immediately"
