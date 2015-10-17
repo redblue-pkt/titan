@@ -6657,7 +6657,7 @@ char* webgetcreatebackup(int fmt)
 		buf = ostrcat(buf, "<br>", 1, 0);
 	}
 
-#ifdef MIPSEL
+/*#ifdef MIPSEL
 	tmpstr = ostrcat(tmpstr, _("System Backup on your Box not Supported"), 1, 0);
 #else
 	tmpstr = create_backup("full", 2);
@@ -6665,14 +6665,25 @@ char* webgetcreatebackup(int fmt)
 
 	tmpstr = ostrcat(tmpstr, "<br>", 1, 0);
 	tmpstr = ostrcat(tmpstr, _("Backup created successfully"), 1, 0);
-#endif
+#endif*/
+
+if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("UFS910") == 1)
+	tmpstr = create_backup("full", 2);
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	tmpstr = ostrcat(tmpstr, "<br>", 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Backup created successfully"), 1, 0);
+
+
 	buf = ostrcat(buf, tmpstr, 1, 1);
 
 	if(fmt == 0)
 	{
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
-	
+else
+	tmpstr = ostrcat(tmpstr, _("System Backup on your Box not Supported"), 1, 0);
+		
 	return buf;
 }
 
