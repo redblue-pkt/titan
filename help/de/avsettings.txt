@@ -4,9 +4,9 @@ Autom. Auflösung: Ausgabeauflösung folgt der Quellauflösung
 Bildeinstellungen: Anzeigeformat von nicht 16:9 Bildinhalten
 Seitenverhältnis (sh4): Seitenverhältnis des Bildes
 Farb Format: Farbformat der HDMI Ausgabe
-Farb Format Scart/ Composite (sh4): Farbformat des SCART Ausgangs
+Farb Format Scart/ Composite (sh4): Farbformat des\nSCART Ausgangs
 Audio Quelle (sh4): Audio Ausgabe Format
-AC3 standardmäßig: Dolby AC3 Ton wird standardmäßig ausgegeben
+AC3 standardmäßig: Dolby AC3 Ton wird standardmäßig\nausgegeben
 AC3 Modus: Auswahl von downmix oder passthrough
 Audio Verzögerung: Synchronisation Audio/Video
 AC3-Angleichung ... (sh4): Angleichung der AC3/Stereo Lautstärke
