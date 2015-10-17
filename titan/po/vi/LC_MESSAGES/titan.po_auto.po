@@ -13803,12 +13803,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Search (10)"
-#~ msgstr "Dò"
-
-#~ msgid "Search (25)"
-#~ msgstr "Dò"
-
-#~ msgid "Search (50)"
-#~ msgstr "Dò"

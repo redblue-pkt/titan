@@ -13777,12 +13777,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Search (10)"
-#~ msgstr "Cerca"
-
-#~ msgid "Search (25)"
-#~ msgstr "Cerca"
-
-#~ msgid "Search (50)"
-#~ msgstr "Cerca"
