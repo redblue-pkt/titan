@@ -1384,7 +1384,7 @@ msgstr "Hintergrundfarbe"
 msgid "Background2 Color"
 msgstr "Hintergrundfarbe 2"
 
-#: httpdfunc.h:6708 skin_default_skin.xml.h:60
+#: httpdfunc.h:6719 skin_default_skin.xml.h:60
 msgid "Backup"
 msgstr "Sichern"
 
@@ -1397,7 +1397,7 @@ msgstr "Einstellungen werden gesichert"
 msgid "Backup / Restore Settings"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: global.h:7301 httpdfunc.h:6667 httpdfunc.h:6747 system_backup_restore.h:82
+#: global.h:7301 httpdfunc.h:6675 httpdfunc.h:6758 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Die Sicherung wurde erfolgreich erstellt"
 
@@ -4064,11 +4064,11 @@ msgstr "Formatieren"
 msgid "Format HDD"
 msgstr "Datenträger formatieren"
 
-#: httpdfunc.h:6821 httpdfunc.h:6872 restoredefault.h:65
+#: httpdfunc.h:6832 httpdfunc.h:6883 restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr "Auslieferzustand"
 
-#: httpdfunc.h:6816 httpdfunc.h:6863 restoredefault.h:64
+#: httpdfunc.h:6827 httpdfunc.h:6874 restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatiere MNT mit anschließender Wiederherstellung"
 
@@ -6613,7 +6613,7 @@ msgstr "TPK Auswahl nicht vorhanden"
 msgid "No Tuner configured"
 msgstr "FEHLER: Es ist kein Tuner eingerichtet!"
 
-#: httpdfunc.h:6745 system_backup_restore.h:51
+#: httpdfunc.h:6756 system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -7951,8 +7951,8 @@ msgstr "Aufnahme Fortschritt Farbe"
 msgid "Recall"
 msgstr ""
 
-#: httpdfunc.h:6855 httpdfunc.h:6865 httpdfunc.h:6874 httpdfunc.h:6964
-#: httpdfunc.h:6976 httpdfunc.h:6986 httpdfunc.h:6996 httpdfunc.h:7006
+#: httpdfunc.h:6866 httpdfunc.h:6876 httpdfunc.h:6885 httpdfunc.h:6975
+#: httpdfunc.h:6987 httpdfunc.h:6997 httpdfunc.h:7007 httpdfunc.h:7017
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
 msgstr "Receiver startet jetzt neu!"
@@ -8174,7 +8174,7 @@ msgstr "Wiederholungsmodus"
 msgid "Repeat-On"
 msgstr "Wiederholen-An"
 
-#: httpdfunc.h:7051 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
+#: httpdfunc.h:7062 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
 msgstr "Zurücksetzen"
@@ -8221,27 +8221,27 @@ msgstr "Netzwerk neu starten?"
 msgid "Restart Oscam ?"
 msgstr "OScam Neustart?"
 
-#: httpdfunc.h:6703 skin_default_skin.xml.h:492
+#: httpdfunc.h:6714 skin_default_skin.xml.h:492
 msgid "Restore"
 msgstr "Wiederherstellen"
 
-#: httpdfunc.h:6915 httpdfunc.h:6974 skin_default_skin.xml.h:493
+#: httpdfunc.h:6926 httpdfunc.h:6985 skin_default_skin.xml.h:493
 msgid "Restore Default Bouquets"
 msgstr "Standard Bouquet Liste wiederherstellen"
 
-#: httpdfunc.h:6910 httpdfunc.h:6962 skin_default_skin.xml.h:495
+#: httpdfunc.h:6921 httpdfunc.h:6973 skin_default_skin.xml.h:495
 msgid "Restore Default Channel Settings"
 msgstr "Komplette Standard Sender Liste wiederherstellen"
 
-#: httpdfunc.h:6920 httpdfunc.h:6984 skin_default_skin.xml.h:494
+#: httpdfunc.h:6931 httpdfunc.h:6995 skin_default_skin.xml.h:494
 msgid "Restore Default Channels"
 msgstr "Standard Sender Liste wiederherstellen"
 
-#: httpdfunc.h:6925 httpdfunc.h:6994 skin_default_skin.xml.h:496
+#: httpdfunc.h:6936 httpdfunc.h:7005 skin_default_skin.xml.h:496
 msgid "Restore Default Providers"
 msgstr "Standard Anbieter Liste wiederherstellen"
 
-#: httpdfunc.h:6930 httpdfunc.h:7004 skin_default_skin.xml.h:497
+#: httpdfunc.h:6941 httpdfunc.h:7015 skin_default_skin.xml.h:497
 msgid "Restore Default Sats"
 msgstr "Standard SAT Liste wiederherstellen"
 
@@ -8249,11 +8249,11 @@ msgstr "Standard SAT Liste wiederherstellen"
 msgid "Restore Settings"
 msgstr "Einstellungen wiederherstellen"
 
-#: httpdfunc.h:6904 webif_settings.h:4
+#: httpdfunc.h:6915 webif_settings.h:4
 msgid "Restore channel settings"
 msgstr "Senderlisten wiederherstellen"
 
-#: httpdfunc.h:6804 httpdfunc.h:6811 httpdfunc.h:6853 restoredefault.h:63
+#: httpdfunc.h:6815 httpdfunc.h:6822 httpdfunc.h:6864 restoredefault.h:63
 #: restoredefault.h:67 skin_default_skin.xml.h:498 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Werkseinstellungen"
@@ -9054,11 +9054,11 @@ msgstr "Ausgewähltes Image"
 msgid "Selected:"
 msgstr "ausgewählt:"
 
-#: httpdfunc.h:7046 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
+#: httpdfunc.h:7057 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr "Senden"
 
-#: httpdfunc.h:7037
+#: httpdfunc.h:7048
 msgid "Send Telnet Command"
 msgstr "Sende Telnet Kommando"
 
@@ -9169,7 +9169,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Einstellungen speichern?"
 
-#: httpdfunc.h:6692 skin_default_skin.xml.h:556 webif_system.h:4
+#: httpdfunc.h:6703 skin_default_skin.xml.h:556 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Einstellungen sichern/wiederherstellen"
 
@@ -9892,7 +9892,7 @@ msgstr "USB-Image Aktualisieren (Lokal)"
 msgid "System Backup"
 msgstr "System Sicherung"
 
-#: httpdfunc.h:6661
+#: httpdfunc.h:6685
 msgid "System Backup on your Box not Supported"
 msgstr "System Sicherung wird auf Ihrem Receiver nicht unterstützt."
 
