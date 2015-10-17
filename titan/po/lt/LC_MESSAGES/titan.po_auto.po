@@ -1945,6 +1945,30 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
+#: tithek_mainmenu.h:29
+msgid "Category (DE)"
+msgstr ""
+
+#: tithek_mainmenu.h:30
+msgid "Category (FR)"
+msgstr ""
+
+#: tithek_mainmenu.h:31
+msgid "Category (GB)"
+msgstr ""
+
+#: tithek_mainmenu.h:32
+msgid "Category (IT)"
+msgstr ""
+
+#: tithek_mainmenu.h:33
+msgid "Category (PL)"
+msgstr ""
+
+#: tithek_mainmenu.h:34
+msgid "Category (US)"
+msgstr ""
+
 #: skin_default_skin.xml.h:86
 msgid "Change Channelname"
 msgstr ""
@@ -2519,15 +2543,15 @@ msgstr ""
 msgid "D"
 msgstr ""
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:35
 msgid "DAF m3u8 1024*578 (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:36
 msgid "DAF rtmp (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:37
 msgid "DAS NEUE TV rtmp (German)"
 msgstr ""
 
@@ -2784,7 +2808,7 @@ msgstr "Itrinti nenaudotjamus raus prie nuskaitym"
 msgid "Delete wrong inputs"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:38
 msgid "Deluxe Music TV (German)"
 msgstr ""
 
@@ -2815,23 +2839,23 @@ msgstr ""
 "KILL = Raudona\n"
 "BOOT = alia"
 
-#: tithek_mainmenu.h:34
+#: tithek_mainmenu.h:40
 msgid "Deutsche Welle (Asia) (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:41
 msgid "Deutsche Welle (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:42
 msgid "Deutsche Welle (L.A) (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:43
 msgid "Deutsche Welle (U.S.A) (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:39
 msgid "Deutsches Anlegerfernsehen (German)"
 msgstr ""
 
@@ -2959,7 +2983,7 @@ msgstr "Dokumentika"
 msgid "Don't clear TV on zap (only with fastzap)"
 msgstr ""
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:44
 msgid "Donau TV rtmp (German)"
 msgstr ""
 
@@ -3013,7 +3037,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:45
 msgid "Dresden Fernsehen rtmp (German)"
 msgstr ""
 
@@ -3082,7 +3106,7 @@ msgstr ""
 msgid "EJECT"
 msgstr "Istumti"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:46
 msgid "ELBEKANAL rtmp (German)"
 msgstr ""
 
@@ -3219,7 +3243,7 @@ msgstr "KLAIDA: Automatinis Laikmatis nebuvo sustabdytas"
 msgid "ERROR... can't set marker in this file"
 msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:48
 msgid "EURONEWS (German)"
 msgstr ""
 
@@ -3365,7 +3389,7 @@ msgstr "Redaguoti"
 msgid "Edit this Favorite ?"
 msgstr "Redaguoti  Pamgt viet?"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:47
 msgid "Elbekanal Schoenebeck (German)"
 msgstr ""
 
@@ -3634,7 +3658,7 @@ msgstr ""
 msgid "FILELIST MANAGER"
 msgstr "Fail srao valdiklis"
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:56
 msgid "FILSTALWELLE rtmp (German)"
 msgstr ""
 
@@ -3662,7 +3686,7 @@ msgstr ""
 msgid "Failed open split file"
 msgstr "ERROR: Can't open split file"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:49
 msgid "Family TV rtmp (German)"
 msgstr ""
 
@@ -3750,7 +3774,7 @@ msgstr ""
 msgid "Fav"
 msgstr ""
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:50
 msgid "Favoriten"
 msgstr "Mgstami"
 
@@ -3819,23 +3843,23 @@ msgstr ""
 msgid "Filesystem Check"
 msgstr ""
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:51
 msgid "FilmOn"
 msgstr ""
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:52
 msgid "FilmOn Jazz and Blues(English)"
 msgstr ""
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:53
 msgid "FilmOn Martial Arts(English)"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:54
 msgid "FilmOn Music Legends TV(English)"
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:55
 msgid "Filstalwelle (German)"
 msgstr ""
 
@@ -4306,7 +4330,7 @@ msgstr ""
 msgid "H"
 msgstr ""
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:58
 msgid "HALLE TV rtmp (German)"
 msgstr ""
 
@@ -4347,7 +4371,7 @@ msgstr ""
 msgid "HOSTNAME"
 msgstr ""
 
-#: tithek_mainmenu.h:58
+#: tithek_mainmenu.h:64
 msgid "HT1 mms (German)"
 msgstr ""
 
@@ -4363,7 +4387,7 @@ msgstr ""
 msgid "HTTPD Port"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:57
 msgid "Halle  m3u8 720*576 (German)"
 msgstr ""
 
@@ -4770,23 +4794,23 @@ msgstr "Kartoji linija"
 msgid "How many days"
 msgstr ""
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:59
 msgid "HowTo Feedadresse Eingeben"
 msgstr "How to add a Feed address"
 
-#: tithek_mainmenu.h:54
+#: tithek_mainmenu.h:60
 msgid "HowTo HD02 Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:55
+#: tithek_mainmenu.h:61
 msgid "HowTo Picons Einrichten"
 msgstr "How to install and use Picons"
 
-#: tithek_mainmenu.h:56
+#: tithek_mainmenu.h:62
 msgid "HowTo Secret"
 msgstr "How to ad Secret Feed address"
 
-#: tithek_mainmenu.h:57
+#: tithek_mainmenu.h:63
 msgid "HowTo Sky V13 Einrichten"
 msgstr "How to setup a Sky V13 Smartcard"
 
@@ -5131,7 +5155,7 @@ msgstr "Interneto narykl"
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
-#: tithek_mainmenu.h:59
+#: tithek_mainmenu.h:65
 msgid "Internet Radio"
 msgstr ""
 
@@ -5165,11 +5189,11 @@ msgstr ""
 msgid "J"
 msgstr ""
 
-#: tithek_mainmenu.h:60
+#: tithek_mainmenu.h:66
 msgid "JOIZ DE (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:61
+#: tithek_mainmenu.h:67
 msgid "JOIZ DE HD (German)"
 msgstr ""
 
@@ -5198,7 +5222,7 @@ msgstr ""
 msgid "K"
 msgstr ""
 
-#: tithek_mainmenu.h:62
+#: tithek_mainmenu.h:68
 msgid "KIEL TV rtmp (German)"
 msgstr ""
 
@@ -5279,7 +5303,7 @@ msgstr ""
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-#: tithek_mainmenu.h:63
+#: tithek_mainmenu.h:69
 msgid "KinoX"
 msgstr ""
 
@@ -5367,7 +5391,7 @@ msgstr ""
 msgid "LED - brightness standby"
 msgstr ""
 
-#: tithek_mainmenu.h:65
+#: tithek_mainmenu.h:71
 msgid "LL mms(German)"
 msgstr ""
 
@@ -5431,7 +5455,7 @@ msgstr ""
 msgid "LOG"
 msgstr ""
 
-#: tithek_mainmenu.h:66
+#: tithek_mainmenu.h:72
 msgid "LT - TV Baden Wuerttemberg (German)"
 msgstr ""
 
@@ -5489,7 +5513,7 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: tithek_mainmenu.h:64
+#: tithek_mainmenu.h:70
 msgid "Light Channel TV Deutschland rtmp (German)"
 msgstr ""
 
@@ -5637,7 +5661,7 @@ msgstr "Keli EPG - Tiekjai"
 msgid "MULTI EPG - Satellites"
 msgstr "Multi EPG - Palydovai"
 
-#: tithek_mainmenu.h:74
+#: tithek_mainmenu.h:80
 msgid "MUNCHEN TV rtmp (German)"
 msgstr ""
 
@@ -5822,23 +5846,23 @@ msgstr "MediaDB nuskaitymas baigtas"
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: tithek_mainmenu.h:67
+#: tithek_mainmenu.h:73
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr "Audioplayer Playlist Preview"
 
-#: tithek_mainmenu.h:68
+#: tithek_mainmenu.h:74
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr "Audioplayer Screensaver preview"
 
-#: tithek_mainmenu.h:69
+#: tithek_mainmenu.h:75
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr "Wmediathek kinOx previe"
 
-#: tithek_mainmenu.h:70
+#: tithek_mainmenu.h:76
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr "Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 
-#: tithek_mainmenu.h:71
+#: tithek_mainmenu.h:77
 msgid "Mediacenter VideoPlayer Preview"
 msgstr "Video Player Preview"
 
@@ -6072,7 +6096,7 @@ msgstr ""
 msgid "More audio/video formats playable"
 msgstr ""
 
-#: tithek_mainmenu.h:72
+#: tithek_mainmenu.h:78
 msgid "Motorz(English)"
 msgstr ""
 
@@ -6117,7 +6141,7 @@ msgstr "Perkelti"
 msgid "Moven"
 msgstr "Filmas"
 
-#: tithek_mainmenu.h:73
+#: tithek_mainmenu.h:79
 msgid "Movie4k"
 msgstr ""
 
@@ -6199,7 +6223,7 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-#: tithek_mainmenu.h:75
+#: tithek_mainmenu.h:81
 msgid "MyVideo"
 msgstr ""
 
@@ -6207,31 +6231,31 @@ msgstr ""
 msgid "N"
 msgstr ""
 
-#: tithek_mainmenu.h:76
+#: tithek_mainmenu.h:82
 msgid "N24 (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:77
+#: tithek_mainmenu.h:83
 msgid "NDR Hamburg (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:78
+#: tithek_mainmenu.h:84
 msgid "NDR Hamburg HD (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:79
+#: tithek_mainmenu.h:85
 msgid "NDR Meck.-Vorp. (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:80
+#: tithek_mainmenu.h:86
 msgid "NDR Meck.-Vorp. HD (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:82
+#: tithek_mainmenu.h:88
 msgid "NDR Schleswig-Hol. HD (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:81
+#: tithek_mainmenu.h:87
 msgid "NDR Schleswig-Hol.(German)"
 msgstr ""
 
@@ -6314,7 +6338,7 @@ msgstr "Rodyti nuskaitytas CIFS / NFS Dalinimosi katalogus"
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:83
+#: tithek_mainmenu.h:89
 msgid "Netzkino"
 msgstr ""
 
@@ -6498,7 +6522,7 @@ msgstr ""
 msgid "November"
 msgstr ""
 
-#: tithek_mainmenu.h:84
+#: tithek_mainmenu.h:90
 msgid "NowTv"
 msgstr ""
 
@@ -6641,27 +6665,27 @@ msgstr "Gerai"
 msgid "OK = select image for boot"
 msgstr ""
 
-#: tithek_mainmenu.h:86
+#: tithek_mainmenu.h:92
 msgid "OK Dessau (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:87
+#: tithek_mainmenu.h:93
 msgid "OK Magdeburg (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:88
+#: tithek_mainmenu.h:94
 msgid "OK Merseburg (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:89
+#: tithek_mainmenu.h:95
 msgid "OK Salzwedel (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:90
+#: tithek_mainmenu.h:96
 msgid "OK Stendal (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:91
+#: tithek_mainmenu.h:97
 msgid "OK Wernigerode (German)"
 msgstr ""
 
@@ -6709,7 +6733,7 @@ msgstr "Kiti"
 msgid "October"
 msgstr ""
 
-#: tithek_mainmenu.h:85
+#: tithek_mainmenu.h:91
 msgid "Offener Kanal Ludwigshafen rtsp(German)"
 msgstr ""
 
@@ -6893,7 +6917,7 @@ msgstr "Ankstesnis"
 msgid "PSK 8"
 msgstr ""
 
-#: tithek_mainmenu.h:93
+#: tithek_mainmenu.h:99
 msgid "PUNKTum  m3u8 720*576 (German)"
 msgstr ""
 
@@ -6924,7 +6948,7 @@ msgstr "Atemio skydas"
 msgid "Parental"
 msgstr ""
 
-#: tithek_mainmenu.h:92
+#: tithek_mainmenu.h:98
 msgid "Parlamentsfernsehen1 (German)"
 msgstr ""
 
@@ -7500,7 +7524,7 @@ msgstr "Process Information"
 msgid "Prozesslist"
 msgstr "Proces sraas"
 
-#: tithek_mainmenu.h:94
+#: tithek_mainmenu.h:100
 msgid "Punktum Suedharz (German)"
 msgstr ""
 
@@ -7541,15 +7565,15 @@ msgstr ""
 msgid "R"
 msgstr ""
 
-#: tithek_mainmenu.h:95
+#: tithek_mainmenu.h:101
 msgid "RAN 1 Dessau (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:98
+#: tithek_mainmenu.h:104
 msgid "RBW (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:99
+#: tithek_mainmenu.h:105
 msgid "RBW rtmp (German)"
 msgstr ""
 
@@ -7585,7 +7609,7 @@ msgstr ""
 msgid "RESTORE ERROR"
 msgstr "ATKRIMO KLAIDA"
 
-#: tithek_mainmenu.h:100
+#: tithek_mainmenu.h:106
 msgid "RFH TV (German)"
 msgstr ""
 
@@ -7601,7 +7625,7 @@ msgstr ""
 msgid "RGUID Port"
 msgstr ""
 
-#: tithek_mainmenu.h:101
+#: tithek_mainmenu.h:107
 msgid "RIC (German)"
 msgstr ""
 
@@ -7609,23 +7633,23 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:103
+#: tithek_mainmenu.h:109
 msgid "RSquared(English)"
 msgstr ""
 
-#: tithek_mainmenu.h:106
+#: tithek_mainmenu.h:112
 msgid "RTL Radio - die besten Hits aller Zeiten"
 msgstr ""
 
-#: tithek_mainmenu.h:105
+#: tithek_mainmenu.h:111
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:104
+#: tithek_mainmenu.h:110
 msgid "RTL2-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:108
+#: tithek_mainmenu.h:114
 msgid "RTV AU mms (German)"
 msgstr ""
 
@@ -7664,11 +7688,11 @@ msgstr ""
 msgid "Ram"
 msgstr "RAM"
 
-#: tithek_mainmenu.h:96
+#: tithek_mainmenu.h:102
 msgid "Ran 1 (German)"
 msgstr ""
 
-#: tithek_mainmenu.h:97
+#: tithek_mainmenu.h:103
 msgid "Ran 1 rtmp (German)"
 msgstr ""
 
@@ -8117,7 +8141,7 @@ msgstr ""
 msgid "Rotor Settings"
 msgstr ""
 
-#: tithek_mainmenu.h:102
+#: tithek_mainmenu.h:108
 msgid "Rouge TV (Music) (Switzerland)"
 msgstr ""
 
@@ -8200,7 +8224,7 @@ msgstr "Pasirinkti"
 msgid "SEND"
 msgstr ""
 
-#: tithek_mainmenu.h:119
+#: tithek_mainmenu.h:122
 msgid "SERVUS TV (German)"
 msgstr ""
 
@@ -8220,7 +8244,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: tithek_mainmenu.h:121
+#: tithek_mainmenu.h:124
 msgid "SONNENKLAR rtmp (German)"
 msgstr ""
 
@@ -8307,7 +8331,7 @@ msgstr "Stabdyti"
 msgid "STOP/START"
 msgstr ""
 
-#: tithek_mainmenu.h:122
+#: tithek_mainmenu.h:125
 msgid "STUDIO 47 Duisburg rtmp (German)"
 msgstr ""
 
@@ -8667,41 +8691,29 @@ msgstr ""
 #: rtl2now.h:507 rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:539
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
 #: tectime.h:13 tectime.h:15 tithek_global.h:421 tithek_global.h:423
-#: tithek_mainmenu.h:109 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
+#: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:354 youtube.h:356
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Paieka"
 
-#: tithek_mainmenu.h:110
-msgid "Search (10)"
-msgstr "Search viewing 10 Results"
-
-#: tithek_mainmenu.h:111
+#: tithek_mainmenu.h:116
 msgid "Search (20)"
 msgstr "Search viewing 20 Results"
 
-#: tithek_mainmenu.h:112
-msgid "Search (25)"
-msgstr "Search viewing 25 Results"
-
-#: tithek_mainmenu.h:113
-msgid "Search (50)"
-msgstr "Search viewing 50 Results"
-
-#: tithek_mainmenu.h:115
+#: tithek_mainmenu.h:118
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_mainmenu.h:114
+#: tithek_mainmenu.h:117
 msgid "Search Cast"
 msgstr "Search by Cast"
 
-#: tithek_mainmenu.h:116
+#: tithek_mainmenu.h:119
 msgid "Search Movie"
 msgstr "Search for a Movie"
 
-#: tithek_mainmenu.h:117
+#: tithek_mainmenu.h:120
 msgid "Search Serie"
 msgstr "Search for a Series"
 
@@ -8934,7 +8946,7 @@ msgstr "Apie kanal"
 msgid "Serviceinfo"
 msgstr ""
 
-#: tithek_mainmenu.h:118
+#: tithek_mainmenu.h:121
 msgid "ServusTV DE HD (German)"
 msgstr ""
 
@@ -9311,7 +9323,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Softcam pasirinkimas:"
 
-#: tithek_mainmenu.h:120
+#: tithek_mainmenu.h:123
 msgid "Solarmovie"
 msgstr ""
 
@@ -9626,11 +9638,11 @@ msgstr "Sek"
 msgid "Sunday"
 msgstr "Sekmadienis"
 
-#: tithek_mainmenu.h:123
+#: tithek_mainmenu.h:126
 msgid "Sunrise Music (Music)"
 msgstr ""
 
-#: tithek_mainmenu.h:124
+#: tithek_mainmenu.h:127
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9840,7 +9852,7 @@ msgstr ""
 msgid "TV"
 msgstr "Televizija"
 
-#: tithek_mainmenu.h:131
+#: tithek_mainmenu.h:134
 msgid "TV Baden Wuerttemberg rtmp (German)"
 msgstr ""
 
@@ -9883,15 +9895,15 @@ msgstr ""
 msgid "Team 2"
 msgstr ""
 
-#: tithek_mainmenu.h:125
+#: tithek_mainmenu.h:128
 msgid "TecTime"
 msgstr ""
 
-#: tithek_mainmenu.h:126
+#: tithek_mainmenu.h:129
 msgid "TeleBaern (Schweiz)"
 msgstr ""
 
-#: tithek_mainmenu.h:127
+#: tithek_mainmenu.h:130
 msgid "TeleBaern (Switzerland)"
 msgstr ""
 
@@ -10099,7 +10111,7 @@ msgstr "Laikas sustabdyti (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Time to wait after seek to fill buffer"
 
-#: tithek_mainmenu.h:128
+#: tithek_mainmenu.h:131
 msgid "TimeTv"
 msgstr ""
 
@@ -10214,7 +10226,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:129
+#: tithek_mainmenu.h:132
 msgid "Tips und Tricks"
 msgstr "Tips and Tricks"
 
@@ -10347,7 +10359,7 @@ msgstr ""
 msgid "Top"
 msgstr "Pagrindiniai ( procesai )"
 
-#: tithek_mainmenu.h:130
+#: tithek_mainmenu.h:133
 msgid "Top 100 Single Charts"
 msgstr ""
 
@@ -10627,7 +10639,7 @@ msgstr "Neinomas"
 msgid "UNLOAD"
 msgstr ""
 
-#: tithek_mainmenu.h:132
+#: tithek_mainmenu.h:135
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -10796,7 +10808,7 @@ msgstr "Nustatymai"
 msgid "VLC Player"
 msgstr "VLC Grotuvas"
 
-#: tithek_mainmenu.h:134
+#: tithek_mainmenu.h:137
 msgid "VOX-Now"
 msgstr ""
 
@@ -10885,7 +10897,7 @@ msgstr "Perirti Profiliai"
 msgid "Virtualzap Timeout"
 msgstr ""
 
-#: tithek_mainmenu.h:133
+#: tithek_mainmenu.h:136
 msgid "Vizion Plus"
 msgstr ""
 
@@ -11137,7 +11149,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:138
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11222,11 +11234,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:139
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:140
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11279,7 +11291,7 @@ msgstr ""
 "\n"
 "Do you want the Receiver to shutdown?"
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:141
 msgid "Youtube"
 msgstr ""
 
@@ -11287,7 +11299,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:139
+#: tithek_mainmenu.h:142
 msgid "ZDF"
 msgstr ""
 
@@ -12928,7 +12940,7 @@ msgstr "tik skaityti"
 msgid "rsize"
 msgstr "read buffersize"
 
-#: tithek_mainmenu.h:107
+#: tithek_mainmenu.h:113
 msgid "rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp"
 msgstr ""
 
@@ -13882,3 +13894,12 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Search (10)"
+#~ msgstr "Search viewing 10 Results"
+
+#~ msgid "Search (25)"
+#~ msgstr "Search viewing 25 Results"
+
+#~ msgid "Search (50)"
+#~ msgstr "Search viewing 50 Results"
