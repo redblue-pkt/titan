@@ -5133,7 +5133,7 @@ char* webgethelp(char* param, int fmt)
 	tmpstr1 = readfiletomem(tmpstr, 1);
 
 	buf = ostrcat(buf, _(tmpstr1), 1, 0);
-	buf = string_replace_all("\n" "<br>", buf, 1);
+	buf = string_replace_all("\n", "<br>", buf, 1);
 
 // segfault ??
 //	free(helppath), helppath = NULL;
