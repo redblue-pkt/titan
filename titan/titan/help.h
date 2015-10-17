@@ -30,6 +30,7 @@ void screenhelp(struct skin* node)
 		free(tmpstr); tmpstr = NULL;
 		return;
 	}
+	buf = string_replace_all("\n", _("\n"), buf, 1);
 	changetext(textbox, buf);
 
 	free(tmpstr); tmpstr = NULL;
