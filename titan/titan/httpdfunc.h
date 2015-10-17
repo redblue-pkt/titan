@@ -6681,10 +6681,9 @@ if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("UFS910"
 	{
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
+	return buf;
 else
 	tmpstr = ostrcat(tmpstr, _("System Backup on your Box not Supported"), 1, 0);
-		
-	return buf;
 }
 
 char* webgetrestore(int fmt)
