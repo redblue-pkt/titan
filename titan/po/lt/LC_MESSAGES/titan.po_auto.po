@@ -12,6 +12,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.7.5\n"
 
+#: help.h:33
+msgid "\n"
+msgstr ""
+
 #: hwtest.h:442
 msgid " - OKAY!"
 msgstr " Gerai !"
@@ -704,7 +708,7 @@ msgstr "Settings"
 msgid "AV Settings"
 msgstr "Garso / Vaizdo nustatymai"
 
-#: httpdfunc.h:5401 skin_default_skin.xml.h:8 webif_info.h:3
+#: httpdfunc.h:5402 skin_default_skin.xml.h:8 webif_info.h:3
 msgid "About"
 msgstr "Apie Titan"
 
@@ -1352,7 +1356,7 @@ msgstr ""
 msgid "Background2 Color"
 msgstr ""
 
-#: httpdfunc.h:6707 skin_default_skin.xml.h:60
+#: httpdfunc.h:6708 skin_default_skin.xml.h:60
 msgid "Backup"
 msgstr ""
 
@@ -1365,7 +1369,7 @@ msgstr ""
 msgid "Backup / Restore Settings"
 msgstr "Backup / Restore Nustatymus"
 
-#: global.h:7301 httpdfunc.h:6666 httpdfunc.h:6746 system_backup_restore.h:82
+#: global.h:7301 httpdfunc.h:6667 httpdfunc.h:6747 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Atsargin skmingai sukurtas"
 
@@ -1723,7 +1727,7 @@ msgstr ""
 msgid "COPY"
 msgstr "Copy"
 
-#: httpdfunc.h:5306 skin_default_skin.xml.h:120 webif_info_sysinfos.h:2
+#: httpdfunc.h:5307 skin_default_skin.xml.h:120 webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr "Procesorius"
 
@@ -1839,7 +1843,7 @@ msgstr "Can't get EPG time or the EPG Endtime is faulty."
 msgid "Can't get Streamurl !"
 msgstr "Streamurl nra pasiekiami !"
 
-#: extensions.h:444 httpdfunc.h:6524
+#: extensions.h:444 httpdfunc.h:6525
 msgid "Can't get all TPK index !"
 msgstr "DMESIO : Nepavyko gauti vis skiepi indeks !"
 
@@ -1847,7 +1851,7 @@ msgstr "DMESIO : Nepavyko gauti vis skiepi indeks !"
 msgid "Can't get data from facebook"
 msgstr ""
 
-#: extensions.h:190 httpdfunc.h:6110
+#: extensions.h:190 httpdfunc.h:6111
 msgid "Can't install Package. Package to big."
 msgstr ""
 "KLAIDA:paskirta paketas yra pernelyg didelis\n"
@@ -1924,7 +1928,7 @@ msgstr "KLAIDA: Nepavyko paleisti Systemupdate ! "
 msgid "Can't start timeshift play !"
 msgstr "Nepavyko paleisti Timeshift atkrim !"
 
-#: extensions.h:448 httpdfunc.h:6536
+#: extensions.h:448 httpdfunc.h:6537
 msgid "Can't update all packages !"
 msgstr "KLAIDA: Ne visi papildiniai buvo atnaujinti !"
 
@@ -2107,7 +2111,7 @@ msgstr "Tv kontrol"
 msgid "Child safety"
 msgstr "Tv kontrol"
 
-#: extensions.h:184 httpdfunc.h:6042
+#: extensions.h:184 httpdfunc.h:6043
 msgid "Choice Install Medium"
 msgstr "Pasirinkite diegimo laikmen"
 
@@ -2843,7 +2847,7 @@ msgstr ""
 msgid "Device:"
 msgstr ""
 
-#: httpdfunc.h:5314 skin_default_skin.xml.h:147 system_infos_sysinfo.h:23
+#: httpdfunc.h:5315 skin_default_skin.xml.h:147 system_infos_sysinfo.h:23
 #: webif_info_sysinfos.h:6
 msgid "Devices"
 msgstr "renginiai"
@@ -3199,7 +3203,7 @@ msgstr "KLAIDA: negaliu skaityti rezoliucijos"
 msgid "ERROR cant start LCD driver"
 msgstr "KLAIDA: Nepavyko paleisti LCD valdiklio"
 
-#: httpdfunc.h:5636
+#: httpdfunc.h:5637
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
 
@@ -3241,7 +3245,7 @@ msgstr ""
 #: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
 #: harddisk.h:776 harddisk.h:778 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
-#: httpdfunc.h:6217 httpdfunc.h:6482 httpdfunc.h:6553 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:6218 httpdfunc.h:6483 httpdfunc.h:6554 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -3965,11 +3969,11 @@ msgstr ""
 msgid "Format HDD"
 msgstr ""
 
-#: httpdfunc.h:6820 httpdfunc.h:6871 restoredefault.h:65
+#: httpdfunc.h:6821 httpdfunc.h:6872 restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr "Format complete MNT Filesystem"
 
-#: httpdfunc.h:6815 httpdfunc.h:6862 restoredefault.h:64
+#: httpdfunc.h:6816 httpdfunc.h:6863 restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr "Format MNT Filesystem with a settings backup/restore"
 
@@ -4037,7 +4041,7 @@ msgstr ""
 msgid "Framerate"
 msgstr "Maksimalus greitis"
 
-#: httpdfunc.h:5262 system_infos.h:16
+#: httpdfunc.h:5263 system_infos.h:16
 msgid "Free Space"
 msgstr "Laisvos vietos"
 
@@ -4197,7 +4201,7 @@ msgstr ""
 msgid "Giantgirl"
 msgstr ""
 
-#: httpdfunc.h:5362 skin_default_skin.xml.h:225 webif_info_logs.h:3
+#: httpdfunc.h:5363 skin_default_skin.xml.h:225 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr "Git Pasikeitimai"
 
@@ -4205,7 +4209,7 @@ msgstr "Git Pasikeitimai"
 msgid "Git Changelog (Extern)"
 msgstr ""
 
-#: httpdfunc.h:5368
+#: httpdfunc.h:5369
 msgid "Git Changelog Full"
 msgstr "Git Pasikeitimai Pilnas"
 
@@ -4403,7 +4407,7 @@ msgstr "rangos testas"
 msgid "Hello World !"
 msgstr ""
 
-#: httpdfunc.h:5162 skin_default_skin.xml.h:726 webif_index.atemio510.h:16
+#: httpdfunc.h:5163 skin_default_skin.xml.h:726 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -4758,7 +4762,7 @@ msgstr "Siaubo"
 msgid "Hoster Url not http://"
 msgstr "The hosters URL is not http://"
 
-#: httpdfunc.h:5358
+#: httpdfunc.h:5359
 msgid "Hotline"
 msgstr "Kartoji linija"
 
@@ -5067,7 +5071,7 @@ msgstr ""
 msgid "Install File Manager Tpk first !"
 msgstr " Pirma diekite File Manager TPK!"
 
-#: httpdfunc.h:6185 httpdfunc.h:6193 httpdfunc.h:6203
+#: httpdfunc.h:6186 httpdfunc.h:6194 httpdfunc.h:6204
 msgid "Install Log:"
 msgstr ""
 
@@ -5091,15 +5095,15 @@ msgstr "Pirma diekite netsurf Internetbrowser TPK !"
 msgid "Install success"
 msgstr "Diegimas skmingai baigsi"
 
-#: extensions.h:157 httpdfunc.h:6076
+#: extensions.h:157 httpdfunc.h:6077
 msgid "Install to FLASH"
 msgstr "Diegti FLASH"
 
-#: extensions.h:145 httpdfunc.h:6058
+#: extensions.h:145 httpdfunc.h:6059
 msgid "Install to MNT"
 msgstr "Diegti MNT ( Flash )"
 
-#: extensions.h:171 httpdfunc.h:6096
+#: extensions.h:171 httpdfunc.h:6097
 msgid "Install to SWAP"
 msgstr "Diegti SWAP (USB ar HDD)"
 
@@ -5107,7 +5111,7 @@ msgstr "Diegti SWAP (USB ar HDD)"
 msgid "Installation start"
 msgstr "Diegimas pradtas"
 
-#: httpdfunc.h:5673 security.h:2056 skin_default_skin.xml.h:314
+#: httpdfunc.h:5674 security.h:2056 skin_default_skin.xml.h:314
 msgid "Installed:"
 msgstr "Instaliuota:"
 
@@ -5246,7 +5250,7 @@ msgstr ""
 msgid "Kamera 2 (Umschalten mit Rot)"
 msgstr ""
 
-#: httpdfunc.h:5264 skin_default_skin.xml.h:322 system_infos.h:18
+#: httpdfunc.h:5265 skin_default_skin.xml.h:322 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr "branduolio"
@@ -5597,7 +5601,7 @@ msgstr "WED"
 msgid "MO"
 msgstr "MON"
 
-#: httpdfunc.h:5310 skin_default_skin.xml.h:378 webif_info_sysinfos.h:4
+#: httpdfunc.h:5311 skin_default_skin.xml.h:378 webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr "Memory Technology Device (MTD)"
 
@@ -5858,7 +5862,7 @@ msgstr ""
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: httpdfunc.h:5308 skin_default_skin.xml.h:357 webif_info_sysinfos.h:3
+#: httpdfunc.h:5309 skin_default_skin.xml.h:357 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Atmintis"
 
@@ -5918,8 +5922,8 @@ msgstr ""
 #: global.h:7247 global.h:7251 global.h:7258 global.h:7262 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
-#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5831 httpdfunc.h:6217
-#: httpdfunc.h:6482 httpdfunc.h:6553 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5832 httpdfunc.h:6218
+#: httpdfunc.h:6483 httpdfunc.h:6554 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -6036,7 +6040,7 @@ msgstr ""
 msgid "Modulation:"
 msgstr ""
 
-#: httpdfunc.h:5312 skin_default_skin.xml.h:369 webif_info_sysinfos.h:5
+#: httpdfunc.h:5313 skin_default_skin.xml.h:369 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr "modulis"
 
@@ -6072,7 +6076,7 @@ msgstr ""
 msgid "Motorz(English)"
 msgstr ""
 
-#: httpdfunc.h:5266 skin_default_skin.xml.h:372 system_infos.h:20
+#: httpdfunc.h:5267 skin_default_skin.xml.h:372 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr "Montuots"
@@ -6251,7 +6255,7 @@ msgstr "Pavadinimas"
 msgid "Name:"
 msgstr ""
 
-#: httpdfunc.h:5268 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
+#: httpdfunc.h:5269 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:34 plugins_panel_skin.xml.h:13
 #: skin_default_skin.xml.h:383 skins_mc_skin.xml.h:34
 #: skins_panel_skin.xml.h:13 system_infos.h:22 webif_info_systeminfos.h:6
@@ -6346,7 +6350,7 @@ msgstr ""
 msgid "News"
 msgstr "Naujienos"
 
-#: adjust.h:375 httpdfunc.h:4647 httpdfunc.h:5433 skin_default_skin.xml.h:391
+#: adjust.h:375 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:391
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Naujienlaikis"
@@ -6386,7 +6390,7 @@ msgstr "Nra garso sinchronizavimo"
 msgid "No Linux partition found on this device."
 msgstr ""
 
-#: httpdfunc.h:5578 stream.h:33
+#: httpdfunc.h:5579 stream.h:33
 msgid "No Live Stream running"
 msgstr ""
 
@@ -6404,19 +6408,19 @@ msgid ""
 "Create device?"
 msgstr ""
 
-#: httpdfunc.h:6297
+#: httpdfunc.h:6298
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr ""
 
-#: httpdfunc.h:6301
+#: httpdfunc.h:6302
 msgid "No Tpk Files Found on Media Devices."
 msgstr ""
 
-#: httpdfunc.h:5950 httpdfunc.h:6104 httpdfunc.h:6365
+#: httpdfunc.h:5951 httpdfunc.h:6105 httpdfunc.h:6366
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5886
+#: httpdfunc.h:5887
 msgid "No Tpk Sections Found."
 msgstr ""
 
@@ -6424,7 +6428,7 @@ msgstr ""
 msgid "No Tuner configured"
 msgstr "ERROR: No tuner configured!"
 
-#: httpdfunc.h:6744 system_backup_restore.h:51
+#: httpdfunc.h:6745 system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -6539,8 +6543,8 @@ msgstr ""
 #: harddisk.h:487 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304
-#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6217 httpdfunc.h:6482
-#: httpdfunc.h:6553 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6218 httpdfunc.h:6483
+#: httpdfunc.h:6554 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
@@ -7492,7 +7496,7 @@ msgstr "No. Teikj :"
 msgid "Prozess Info"
 msgstr "Process Information"
 
-#: httpdfunc.h:5320 skin_default_skin.xml.h:456 webif_info_sysinfos.h:9
+#: httpdfunc.h:5321 skin_default_skin.xml.h:456 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr "Proces sraas"
 
@@ -7655,7 +7659,7 @@ msgstr "Radijas :"
 msgid "Radiotext"
 msgstr ""
 
-#: httpdfunc.h:5270 skin_default_skin.xml.h:458 system_infos.h:24
+#: httpdfunc.h:5271 skin_default_skin.xml.h:458 system_infos.h:24
 #: webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr "RAM"
@@ -7754,8 +7758,8 @@ msgstr ""
 msgid "Recall"
 msgstr ""
 
-#: httpdfunc.h:6854 httpdfunc.h:6864 httpdfunc.h:6873 httpdfunc.h:6963
-#: httpdfunc.h:6975 httpdfunc.h:6985 httpdfunc.h:6995 httpdfunc.h:7005
+#: httpdfunc.h:6855 httpdfunc.h:6865 httpdfunc.h:6874 httpdfunc.h:6964
+#: httpdfunc.h:6976 httpdfunc.h:6986 httpdfunc.h:6996 httpdfunc.h:7006
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
 msgstr "Imtuv perkrauti dabar !!!"
@@ -7920,7 +7924,7 @@ msgstr "Ivalyti talpykl ?"
 msgid "Remove Cookies"
 msgstr ""
 
-#: httpdfunc.h:6458 httpdfunc.h:6468
+#: httpdfunc.h:6459 httpdfunc.h:6469
 msgid "Remove Log:"
 msgstr ""
 
@@ -7977,7 +7981,7 @@ msgstr ""
 msgid "Repeat-On"
 msgstr "Kartojimo reimas Ijungtas"
 
-#: httpdfunc.h:7050 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
+#: httpdfunc.h:7051 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
 msgstr "Perjungti"
@@ -8024,27 +8028,27 @@ msgstr "I naujo paleisti tinkl?"
 msgid "Restart Oscam ?"
 msgstr "Restart OScam?"
 
-#: httpdfunc.h:6702 skin_default_skin.xml.h:492
+#: httpdfunc.h:6703 skin_default_skin.xml.h:492
 msgid "Restore"
 msgstr ""
 
-#: httpdfunc.h:6914 httpdfunc.h:6973 skin_default_skin.xml.h:493
+#: httpdfunc.h:6915 httpdfunc.h:6974 skin_default_skin.xml.h:493
 msgid "Restore Default Bouquets"
 msgstr ""
 
-#: httpdfunc.h:6909 httpdfunc.h:6961 skin_default_skin.xml.h:495
+#: httpdfunc.h:6910 httpdfunc.h:6962 skin_default_skin.xml.h:495
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-#: httpdfunc.h:6919 httpdfunc.h:6983 skin_default_skin.xml.h:494
+#: httpdfunc.h:6920 httpdfunc.h:6984 skin_default_skin.xml.h:494
 msgid "Restore Default Channels"
 msgstr ""
 
-#: httpdfunc.h:6924 httpdfunc.h:6993 skin_default_skin.xml.h:496
+#: httpdfunc.h:6925 httpdfunc.h:6994 skin_default_skin.xml.h:496
 msgid "Restore Default Providers"
 msgstr ""
 
-#: httpdfunc.h:6929 httpdfunc.h:7003 skin_default_skin.xml.h:497
+#: httpdfunc.h:6930 httpdfunc.h:7004 skin_default_skin.xml.h:497
 msgid "Restore Default Sats"
 msgstr ""
 
@@ -8052,11 +8056,11 @@ msgstr ""
 msgid "Restore Settings"
 msgstr "Atkurti nustatymus"
 
-#: httpdfunc.h:6903 webif_settings.h:4
+#: httpdfunc.h:6904 webif_settings.h:4
 msgid "Restore channel settings"
 msgstr ""
 
-#: httpdfunc.h:6803 httpdfunc.h:6810 httpdfunc.h:6852 restoredefault.h:63
+#: httpdfunc.h:6804 httpdfunc.h:6811 httpdfunc.h:6853 restoredefault.h:63
 #: restoredefault.h:67 skin_default_skin.xml.h:498 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Atstatyti gamyklinius nustatymus"
@@ -8865,11 +8869,11 @@ msgstr ""
 msgid "Selected:"
 msgstr ""
 
-#: httpdfunc.h:7045 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
+#: httpdfunc.h:7046 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr ""
 
-#: httpdfunc.h:7036
+#: httpdfunc.h:7037
 msgid "Send Telnet Command"
 msgstr ""
 
@@ -8922,7 +8926,7 @@ msgstr ""
 msgid "Server Name"
 msgstr "Serverio pavadinimas"
 
-#: httpdfunc.h:6582 skin_default_skin.xml.h:548 webif_info.h:1
+#: httpdfunc.h:6583 skin_default_skin.xml.h:548 webif_info.h:1
 msgid "Service"
 msgstr "Apie kanal"
 
@@ -8980,7 +8984,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Save Settings?"
 
-#: httpdfunc.h:6691 skin_default_skin.xml.h:556 webif_system.h:4
+#: httpdfunc.h:6692 skin_default_skin.xml.h:556 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Nustatymai atsargin kopija / atkurti"
 
@@ -9557,7 +9561,7 @@ msgstr ""
 msgid "Streaminfo"
 msgstr "Stream Informacija"
 
-#: httpdfunc.h:5544 skin_default_skin.xml.h:608 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5545 skin_default_skin.xml.h:608 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr "Srautinimas"
 
@@ -9573,7 +9577,7 @@ msgstr "Srautinio atkrimas djimas ( 10MB )"
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Srautinio atkrimas djimas ( 5MB )"
 
-#: httpdfunc.h:5633
+#: httpdfunc.h:5634
 msgid "Streaming succesfull stopped."
 msgstr ""
 
@@ -9638,15 +9642,15 @@ msgstr ""
 msgid "Sure to delete Image?\n"
 msgstr ""
 
-#: httpdfunc.h:5360
+#: httpdfunc.h:5361
 msgid "Svn Changelog"
 msgstr "Svn Pasikeitimai"
 
-#: httpdfunc.h:5366
+#: httpdfunc.h:5367
 msgid "Svn Changelog Full"
 msgstr "Svn Pasikeitimai Pilnas"
 
-#: httpdfunc.h:5316 panel_settings_autostart.h:210 settings_autostart.h:315
+#: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
 #: skin_default_skin.xml.h:615 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr ""
@@ -9699,11 +9703,11 @@ msgstr ""
 msgid "System - Usbupdate (tmp)"
 msgstr ""
 
-#: httpdfunc.h:6617 skin_default_skin.xml.h:622 webif_system.h:3
+#: httpdfunc.h:6618 skin_default_skin.xml.h:622 webif_system.h:3
 msgid "System Backup"
 msgstr "Sistemos atsargin kopija"
 
-#: httpdfunc.h:6660
+#: httpdfunc.h:6661
 msgid "System Backup on your Box not Supported"
 msgstr ""
 
@@ -9716,17 +9720,17 @@ msgstr "sistemos informacija"
 msgid "System Infos"
 msgstr "Sistemos Info"
 
-#: httpdfunc.h:5260 skin_default_skin.xml.h:627 system_infos.h:14
+#: httpdfunc.h:5261 skin_default_skin.xml.h:627 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr "sistemos bsena"
 
-#: httpdfunc.h:5665 httpdfunc.h:5821 skin_default_skin.xml.h:628
+#: httpdfunc.h:5666 httpdfunc.h:5822 skin_default_skin.xml.h:628
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Sistemos Atnaujinimas"
 
-#: httpdfunc.h:5840
+#: httpdfunc.h:5841
 msgid ""
 "System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
@@ -9771,13 +9775,13 @@ msgstr ""
 msgid "TPK"
 msgstr ""
 
-#: extensions.h:267 httpdfunc.h:6217 httpdfunc.h:6219 httpdfunc.h:6484
+#: extensions.h:267 httpdfunc.h:6218 httpdfunc.h:6220 httpdfunc.h:6485
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "diegta \n"
 " imtuvas persikraus dabar"
 
-#: extensions.h:324 httpdfunc.h:6482
+#: extensions.h:324 httpdfunc.h:6483
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 "Paalino \n"
@@ -9789,7 +9793,7 @@ msgstr ""
 "Skmingai diegta i tmp.\n"
 " imtuvas persikraus dabar"
 
-#: extensions.h:456 httpdfunc.h:6553
+#: extensions.h:456 httpdfunc.h:6554
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 "Atnaujinta.\n"
@@ -9799,7 +9803,7 @@ msgstr ""
 msgid "TPK install (online)"
 msgstr "TPK diegti (online)"
 
-#: httpdfunc.h:6254 skin_default_skin.xml.h:662 webif_system_extensions.h:5
+#: httpdfunc.h:6255 skin_default_skin.xml.h:662 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "TPK Diegimas ( Lokal )"
 
@@ -9807,7 +9811,7 @@ msgstr "TPK Diegimas ( Lokal )"
 msgid "TPK remove"
 msgstr "TPK paalinti"
 
-#: httpdfunc.h:6252 skin_default_skin.xml.h:664 webif_system_extensions.h:4
+#: httpdfunc.h:6253 skin_default_skin.xml.h:664 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "TPK tmp ( tmp )"
 
@@ -9985,7 +9989,7 @@ msgstr ""
 msgid "The video no longer exists"
 msgstr "Vaizdo nebeegzistuoja"
 
-#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6196
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6197
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -10222,7 +10226,7 @@ msgstr ""
 msgid "Titan Changelog (Extern)"
 msgstr ""
 
-#: httpdfunc.h:5364 webif_info_logs.h:4
+#: httpdfunc.h:5365 webif_info_logs.h:4
 msgid "Titan Log"
 msgstr "Titan urnalas"
 
@@ -10339,7 +10343,7 @@ msgstr ""
 msgid "Tone Mode"
 msgstr ""
 
-#: httpdfunc.h:5318 skin_default_skin.xml.h:658 webif_info_sysinfos.h:8
+#: httpdfunc.h:5319 skin_default_skin.xml.h:658 webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "Pagrindiniai ( procesai )"
 
@@ -10365,7 +10369,7 @@ msgstr ""
 "\n"
 "Coming greiiau ....."
 
-#: extensions.h:222 httpdfunc.h:5937 skin_default_skin.xml.h:660
+#: extensions.h:222 httpdfunc.h:5938 skin_default_skin.xml.h:660
 msgid "Tpk Install - select file"
 msgstr "TPK diegimas - pasirinkite fail"
 
@@ -10373,7 +10377,7 @@ msgstr "TPK diegimas - pasirinkite fail"
 msgid "Tpk Install - select install medium"
 msgstr ""
 
-#: extensions.h:217 httpdfunc.h:5873
+#: extensions.h:217 httpdfunc.h:5874
 msgid "Tpk Install - select section"
 msgstr "Diegimas - Pasirinkite kategorij"
 
@@ -10381,15 +10385,15 @@ msgstr "Diegimas - Pasirinkite kategorij"
 msgid "Tpk Install Info"
 msgstr "TPK Diegimo Informacija"
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:6161 httpdfunc.h:6163
+#: extensions.h:254 extensions.h:259 httpdfunc.h:6162 httpdfunc.h:6164
 msgid "Tpk Install Info - Install ERROR"
 msgstr "KLAIDA: Nepavyko diegti !"
 
-#: extensions.h:250 httpdfunc.h:6159
+#: extensions.h:250 httpdfunc.h:6160
 msgid "Tpk Install Info - Install OK"
 msgstr "Skmingai diegta"
 
-#: extensions.h:291 httpdfunc.h:6352
+#: extensions.h:291 httpdfunc.h:6353
 msgid "Tpk Remove - select file"
 msgstr "Paalinti - Pasirinkt"
 
@@ -10397,19 +10401,19 @@ msgstr "Paalinti - Pasirinkt"
 msgid "Tpk Remove Info"
 msgstr "TPK Paalinti"
 
-#: extensions.h:317 httpdfunc.h:6436
+#: extensions.h:317 httpdfunc.h:6437
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "KLAIDA : alinimas nepavyko"
 
-#: extensions.h:310 httpdfunc.h:6432
+#: extensions.h:310 httpdfunc.h:6433
 msgid "Tpk Remove Info - Remove OK"
 msgstr "skmingai paalintas"
 
-#: extensions.h:444 extensions.h:448 httpdfunc.h:6521 httpdfunc.h:6533
+#: extensions.h:444 extensions.h:448 httpdfunc.h:6522 httpdfunc.h:6534
 msgid "Tpk Update Info - Update ERROR"
 msgstr "KLAIDA: Nepavyko atnaujinti !"
 
-#: httpdfunc.h:6543
+#: httpdfunc.h:6544
 msgid "Tpk Update Info - Update OK"
 msgstr ""
 
@@ -10627,7 +10631,7 @@ msgstr ""
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
-#: httpdfunc.h:5322 skin_default_skin.xml.h:694 webif_info_sysinfos.h:10
+#: httpdfunc.h:5323 skin_default_skin.xml.h:694 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
@@ -11684,7 +11688,7 @@ msgstr ""
 msgid "cover"
 msgstr "virelis"
 
-#: httpdfunc.h:6629 httpdfunc.h:6654 skin_default_skin.xml.h:125
+#: httpdfunc.h:6630 httpdfunc.h:6655 skin_default_skin.xml.h:125
 msgid "create System Backup"
 msgstr ""
 
@@ -13236,7 +13240,7 @@ msgstr "Startuoja"
 msgid "starting Full Update (from backup) ?"
 msgstr "Pradti Full Update i atsargins kopijos ?"
 
-#: httpdfunc.h:5835 system_update.h:220
+#: httpdfunc.h:5836 system_update.h:220
 msgid "starting Full Update ?"
 msgstr "Pradti Full Update ?"
 
@@ -13260,7 +13264,7 @@ msgstr "ingsnis  vakarus"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5560 httpdfunc.h:5606 record.h:1568 record.h:1577 record.h:1588
+#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1568 record.h:1577 record.h:1588
 #: record.h:1617 record.h:1626 record.h:1660 skin_default_skin.xml.h:603
 #: stream.h:15 stream.h:37
 msgid "stop"
@@ -13534,7 +13538,7 @@ msgid "universal"
 msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
-#: httpdfunc.h:5567 httpdfunc.h:5613 hwtest.h:478 moduleconfig.h:345
+#: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:345
 #: security.h:2124 skin_default_skin.xml.h:690 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
