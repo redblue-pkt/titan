@@ -5141,7 +5141,7 @@ char* webgethelp(char* param, int fmt)
 	free(lang), lang = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
-	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+	buf = string_replace_all("\n", "<br>", buf, 1);
 
 //	if(fmt == 0)
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
