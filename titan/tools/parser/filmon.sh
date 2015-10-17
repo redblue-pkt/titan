@@ -53,6 +53,8 @@ if [ $old = 1 ];then
 	rm -rf _full/filmontmp
 else
 	/opt/gs/filmon/create.sh _full/filmon
+	sed 's/#FilmOn#3/#FilmOn#0/' -i _full/filmon/filmon.category.list
+	sed 's/#FilmOn#3/#FilmOn#0/' -i _full/filmon/filmon.a-z.list
 	cp -a _full/filmon/* /var/www/atemio/web/mediathek/filmon
 	DONETIME=`date +%s`
 	TIME=`expr $DONETIME - $BEGINTIME`
@@ -64,8 +66,6 @@ fi
 
 if [ "$buildtype" != "full" ];then
 	cp -a _full/filmon/* /var/www/atemio/web/mediathek/filmon
-	sed 's/#FilmOn#0/#FilmOn#0/' -i /var/www/atemio/web/mediathe/filmon/filmon.category.list
-	sed 's/#FilmOn#0/#FilmOn#0/' -i /var/www/atemio/web/mediathe/filmon/filmon.a-z.list
 fi
 
 rm cache.*
