@@ -959,7 +959,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 		return NULL;
 	}
 
-	strftime(buf, MINMALLOC, "%Y%m%d%H%M%S", loctime);
+	strftime(buf, MINMALLOC, "%Y%m%d%H%M", loctime);
 	buf1 = ostrcat(buf, NULL, 1, 0);
 
 	if(type != RECTIMESHIFT && recordnamefmt == 1)
