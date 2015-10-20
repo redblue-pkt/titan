@@ -1881,7 +1881,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
-#: mc_videoplayer.h:900 play.h:1503
+#: mc_videoplayer.h:900 play.h:1505
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2513,7 +2513,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr ""
 
-#: play.h:1427 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1429 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:138 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
@@ -3050,7 +3050,7 @@ msgstr ""
 msgid "ELBEKANAL rtmp (German)"
 msgstr ""
 
-#: adjust.h:71 httpdfunc.h:3905 play.h:1427 skin_default_skin.xml.h:177
+#: adjust.h:71 httpdfunc.h:3905 play.h:1429 skin_default_skin.xml.h:177
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -5596,11 +5596,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1719
+#: play.h:1721
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1730
+#: play.h:1732
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -5874,7 +5874,7 @@ msgstr ""
 #: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
-#: play.h:614 play.h:1293 play.h:1503 play.h:1719 play.h:1730 possetup.h:98
+#: play.h:614 play.h:1293 play.h:1505 play.h:1721 play.h:1732 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -6493,7 +6493,7 @@ msgstr ""
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
 #: play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294
-#: play.h:1503 play.h:1719 play.h:1730 plugins_dlna_skin.xml.h:7
+#: play.h:1505 play.h:1721 play.h:1732 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -8091,7 +8091,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr ""
 
-#: dvdplay.h:29 play.h:1427 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1429 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr ""
 
@@ -8123,7 +8123,7 @@ msgstr ""
 msgid "SONNENKLAR rtmp (German)"
 msgstr ""
 
-#: play.h:1427
+#: play.h:1429
 msgid "SORT"
 msgstr "Sortuj"
 
