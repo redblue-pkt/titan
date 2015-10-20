@@ -21,7 +21,7 @@ char* youtube_hoster(char* link)
 char* youtube(char* link)
 {
 	debug(99, "link: %s", link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *tmppath = NULL, *streamurl = NULL, *title = NULL, *tmpstr = NULL, *murl = NULL, *sig = NULL, *pic = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *tmppath = NULL, *streamurl = NULL, *title = NULL, *tmpstr = NULL, *murl = NULL, *sig = NULL, *pic = NULL, *tmplink = NULL;
 
 	ip = string_replace("http://", "", (char*)link, 0);
 
