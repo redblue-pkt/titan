@@ -35,6 +35,10 @@ char* youtube(char* link)
 	tmppath = ostrcat(path, NULL, 0, 0);
 	tmppath = string_replace_all("watch?v=", "get_video_info?&video_id=", tmppath, 1);
 
+	tmplink = ostrcat(link, NULL, 0, 0);
+	tmplink = string_replace_all("watch?v=", "get_video_info?&video_id=", tmplink, 1);
+	tmplink = string_replace_all("/youtu.be", "/www.youtube.com", tmplink, 1);
+
 /* spox.com
 
 http://www.spox.com/de/sport/ussport/nba/live-stream/1310/miami-heat-washington-wizards-frank-buschmann.html
@@ -44,8 +48,9 @@ grep code:
 and get to youtube
 */
 
-	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, 1);
 	writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr", tmpstr, 0);
+	free(tmplink), tmplink = NULL;
 
 //	if(flag == 1)
 //	{
