@@ -1375,6 +1375,8 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	int skip46 = getconfigint("skip46", NULL);
 	int skip79 = getconfigint("skip79", NULL);
 
+	resettvpic();
+
 	if(startfolder == 0 && flag != 3)
 	{
 		rcret = servicestop(status.aktservice, 1, 1);
