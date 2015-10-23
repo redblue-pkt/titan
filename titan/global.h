@@ -256,7 +256,11 @@ int setcecstandby(int flag)
 		if(flag == 0)
 			cecwakeup();
 		else
+		{
 			cecstandby();
+			sleep(1);
+			cecstandby();
+		}
 #endif
 	}
 
