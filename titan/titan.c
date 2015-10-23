@@ -944,11 +944,11 @@ int main(int argc, char *argv[])
 		ret = readscreen(getconfig("keyskin_file", NULL), 0, 0);
 	if(checkchipset("BCM7424") == 1) //inihdp
 	{
-		if(getconfig("oledskin_file", NULL) == NULL)
+		if(getconfig("oledskin_path", NULL) == NULL)
 			ret = readscreen("/var/usr/local/share/titan/skin/default/oledskin.xml", 0, 0);
 		else
 		{
-			tmpstr = ostrcat(getconfig("oledskin_file", NULL),"/oledskin.xml", 0, 0);
+			tmpstr = ostrcat(getconfig("oledskin_path", NULL),"/oledskin.xml", 0, 0);
 			ret = readscreen(tmpstr, 0, 0);
 			free(tmpstr);tmpstr=NULL;
 		}

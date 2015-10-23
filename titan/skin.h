@@ -945,9 +945,9 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->picmem = 1;
 			if(ostrstr(newnode->name, "oled") != NULL)
 			{
-				if(getconfig("oledskin_file", NULL) != NULL)
+				if(getconfig("oledskin_path", NULL) != NULL)
 				{	
-					newnode->pic = ostrcat(getconfig("oledskin_file", NULL),"/", 0, 0);
+					newnode->pic = ostrcat(getconfig("oledskin_path", NULL),"/", 0, 0);
 					newnode->pic = ostrcat(getconfig(newnode->pic, NULL),ret, 1, 0);
 				}
 				else
