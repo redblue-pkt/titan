@@ -948,7 +948,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 				if(getconfig("oledskin_path", NULL) != NULL)
 				{	
 					newnode->pic = ostrcat(getconfig("oledskin_path", NULL),"/", 0, 0);
-					newnode->pic = ostrcat(getconfig(newnode->pic, NULL),ret, 1, 0);
+					newnode->pic = ostrcat(newnode->pic, ret, 1, 0);
 				}
 				else
 					newnode->pic = ostrcat("/var/usr/local/share/titan/skin/default/",ret, 0, 0);
