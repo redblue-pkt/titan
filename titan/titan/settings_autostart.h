@@ -628,6 +628,26 @@ void screensettings_autostart_network()
 			writeallconfig(1);
 			break;
 		}
+		/*if(rcret == getrcconfigint("rcred", NULL))
+		{
+			debug(10, "cmd: %s", netservicestop);
+			system(netservicestop);
+			textbox(_("Message"), _("service stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			drawscreen(xupnpd, 0, 0);
+		}
+
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			debug(10, "cmd: %s", netservicestop);
+			system(xupnpdstop);
+			debug(10, "cmd: %s", netservicestart);
+			ret = system(netservicestart);
+			if(ret == 0)
+				textbox(_("Message"), _("service started."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			else
+				textbox(_("Message"), _("service not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			drawscreen(xupnpd, 0, 0);
+		}*/
 	}
 
 	delownconfigtmpall();
