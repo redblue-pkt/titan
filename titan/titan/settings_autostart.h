@@ -629,7 +629,7 @@ void screensettings_autostart_network()
 			writeallconfig(1);
 			break;
 		}
-		/*if(rcret == getrcconfigint("rcred", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			debug(10, "cmd: %s", netservicestop);
 			system(netservicestop);
@@ -648,7 +648,7 @@ void screensettings_autostart_network()
 			else
 				textbox(_("Message"), _("service not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(settings_autostart, 0, 0);
-		}*/
+		}
 	}
 
 	delownconfigtmpall();
