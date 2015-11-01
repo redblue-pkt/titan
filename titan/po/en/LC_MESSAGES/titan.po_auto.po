@@ -6806,7 +6806,7 @@ msgstr ""
 msgid "OpenTV EPG"
 msgstr ""
 
-#: settings_autostart.h:603
+#: settings_autostart.h:604
 msgid "OpenVPN"
 msgstr ""
 
@@ -8347,7 +8347,7 @@ msgstr "Serial Port is OK"
 msgid "SZ"
 msgstr ""
 
-#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:118
+#: panel_settings_autostart.h:327 settings_autostart.h:577 tpk_showname.h:118
 msgid "Samba Server"
 msgstr ""
 
@@ -12431,7 +12431,7 @@ msgstr ""
 msgid "nfs"
 msgstr "NFS"
 
-#: panel_settings_autostart.h:318 settings_autostart.h:567
+#: panel_settings_autostart.h:318 settings_autostart.h:568
 msgid "nfs server"
 msgstr "NFS Server"
 
@@ -12484,8 +12484,8 @@ msgstr "NFS Server"
 #: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
 #: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
-#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
-#: settings_autostart.h:595 settings_autostart.h:604
+#: settings_autostart.h:569 settings_autostart.h:578 settings_autostart.h:587
+#: settings_autostart.h:596 settings_autostart.h:605
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:59
 #: timeshiftsettings.h:63 tithek_settings.h:39 tithek_settings.h:43
@@ -12546,7 +12546,7 @@ msgstr "NTFS-3g"
 msgid "ntfsmount"
 msgstr "NTFS-mount"
 
-#: settings_autostart.h:594
+#: settings_autostart.h:595
 msgid "ntpdate"
 msgstr ""
 
@@ -12981,7 +12981,7 @@ msgstr ""
 msgid "scan and whitelist"
 msgstr "Scan and White list"
 
-#: panel_settings_autostart.h:336 settings_autostart.h:585
+#: panel_settings_autostart.h:336 settings_autostart.h:586
 msgid "scan wlan"
 msgstr "Scan WLAN"
 
@@ -13865,9 +13865,9 @@ msgstr ""
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
 #: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
 #: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
-#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
-#: settings_autostart.h:604 settings_overclocking.h:214
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:569
+#: settings_autostart.h:578 settings_autostart.h:587 settings_autostart.h:596
+#: settings_autostart.h:605 settings_overclocking.h:214
 #: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:93
 #: timeshiftsettings.h:58 timeshiftsettings.h:62 tithek_settings.h:40
 #: tithek_settings.h:44 tithek_settings.h:48 tmc.h:532 tmc.h:536 xupnpd.h:30
