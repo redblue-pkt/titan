@@ -548,7 +548,7 @@ void screensettings_autostart_safety()
 
 void screensettings_autostart_network()
 {
-	int rcret = 0;
+	int rcret = 0; ret = 0;
 	struct skin* settings_autostart = getscreen("settings_autostart_network");
 	struct skin* listbox = getscreennode(settings_autostart, "listbox");
 	char* tmpstr = NULL, *netservicestop = NULL, *netservicestart = NULL;
