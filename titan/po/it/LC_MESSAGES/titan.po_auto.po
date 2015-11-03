@@ -635,8 +635,8 @@ msgstr ""
 msgid "ADD BOUQUET"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1631
-#: tithek.h:2321
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1630
+#: tithek.h:2320
 msgid "ADD FAV"
 msgstr "AggiungereFav"
 
@@ -759,11 +759,11 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: tithek.h:2290
+#: tithek.h:2289
 msgid "Add this link as Favorite ?"
 msgstr "importare questo Favorito ?"
 
-#: tithek.h:1811 tithek.h:1971
+#: tithek.h:1810 tithek.h:1970
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -1826,7 +1826,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG non puo essere trovato oppure non e ok"
 
-#: tithek.h:1562
+#: tithek.h:1561
 msgid "Can't get Streamurl !"
 msgstr "Can't get Streamurl"
 
@@ -1887,7 +1887,7 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr ""
 
-#: tithek.h:1310
+#: tithek.h:1309
 msgid ""
 "Can't start download.\n"
 "Please try later."
@@ -2116,7 +2116,7 @@ msgstr ""
 msgid "Choice Menu"
 msgstr "Power Menu"
 
-#: tithek.h:1415
+#: tithek.h:1414
 msgid "Choice Playback"
 msgstr "Start Playback"
 
@@ -2176,7 +2176,7 @@ msgstr ""
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
-#: tithek.h:1462
+#: tithek.h:1461
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
@@ -2472,7 +2472,7 @@ msgstr ""
 msgid "Create new"
 msgstr "Crea Cartella"
 
-#: tithek.h:1796 tithek.h:1956
+#: tithek.h:1795 tithek.h:1955
 msgid "Create sub folder"
 msgstr ""
 
@@ -2978,11 +2978,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr "Move (KB): "
 
-#: tithek.h:1457
+#: tithek.h:1456
 msgid "Download Full File"
 msgstr ""
 
-#: tithek.h:1458
+#: tithek.h:1457
 msgid "Download Full File (background)"
 msgstr ""
 
@@ -3053,7 +3053,7 @@ msgstr "Editare"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1626 tithek.h:2316
+#: tithek.h:1625 tithek.h:2315
 msgid "EDIT FAV"
 msgstr ""
 
@@ -3305,9 +3305,9 @@ msgstr ""
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1042
 #: titan.c:1051 titan.c:1179 titan.c:1200 titan.c:1206 titan.c:1217
-#: titan.c:1223 tithek.c:94 tithek_global.h:75 tithek.h:692 tithek.h:1249
-#: tithek.h:1310 tithek.h:1540 tithek.h:1562 tithek.h:1579 tithek.h:1811
-#: tithek.h:1971 tithek.h:2246 tithek.h:2274 tithek.h:2290 tithek.h:2302
+#: titan.c:1223 tithek.c:94 tithek_global.h:77 tithek.h:692 tithek.h:1248
+#: tithek.h:1309 tithek.h:1539 tithek.h:1561 tithek.h:1578 tithek.h:1810
+#: tithek.h:1970 tithek.h:2245 tithek.h:2273 tithek.h:2289 tithek.h:2301
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -3316,9 +3316,9 @@ msgstr ""
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
-#: vodlocker.h:80 vodlocker.h:86 xvidstage.h:54 xvidstage.h:100
-#: xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
+#: vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
+#: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Exit"
 
@@ -3350,7 +3350,7 @@ msgstr "Editare Playlist"
 msgid "Edit mode"
 msgstr "edit Mode"
 
-#: tithek.h:2302
+#: tithek.h:2301
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -3739,7 +3739,7 @@ msgstr "Favoriti"
 msgid "Favoriten"
 msgstr ""
 
-#: tithek.h:1010
+#: tithek.h:1009
 msgid "Favorites"
 msgstr ""
 
@@ -3778,7 +3778,7 @@ msgstr ""
 msgid "Filelist-Mode"
 msgstr ""
 
-#: tithek.h:1533 tithek.h:1552
+#: tithek.h:1532 tithek.h:1551
 msgid "Filename"
 msgstr ""
 
@@ -5935,19 +5935,20 @@ msgstr ""
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1179
 #: titan.c:1200 titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:94
-#: tithek_global.h:75 tithek.h:692 tithek.h:1249 tithek.h:1310 tithek.h:1540
-#: tithek.h:1562 tithek.h:1811 tithek.h:1971 tithek.h:2246 tithek.h:2274
-#: tithek.h:2290 tithek.h:2302 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek_global.h:77 tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539
+#: tithek.h:1561 tithek.h:1810 tithek.h:1970 tithek.h:2245 tithek.h:2273
+#: tithek.h:2289 tithek.h:2301 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:655
 #: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
-#: vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59
-#: xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:54 xvidstage.h:100
-#: xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
+#: vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
+#: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86
+#: webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
+#: xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:220
+#: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Messaggio"
 
@@ -6567,10 +6568,10 @@ msgstr ""
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1042 titan.c:1051 titan.c:1179 titan.c:1200
-#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:94 tithek_global.h:75
-#: tithek.h:692 tithek.h:1249 tithek.h:1310 tithek.h:1540 tithek.h:1562
-#: tithek.h:1579 tithek.h:1811 tithek.h:1971 tithek.h:2246 tithek.h:2274
-#: tithek.h:2290 tithek.h:2302 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:94 tithek_global.h:77
+#: tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539 tithek.h:1561
+#: tithek.h:1578 tithek.h:1810 tithek.h:1970 tithek.h:2245 tithek.h:2273
+#: tithek.h:2289 tithek.h:2301 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -6578,17 +6579,17 @@ msgstr ""
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73
 #: videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
 #: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
-#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30
-#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 webif_index.atemio5200.h:38
-#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
-#: webif_index.atemio-nemesis.h:38 webif_rc.atemio510.h:33
-#: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
-#: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
-#: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
-#: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
-#: webif_rc_virtual.h:20 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
-#: xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:220
-#: zapback.c:79 zdf.h:29
+#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
+#: vodlocker.h:86 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
+#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
+#: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
+#: webif_rc_virtual.atemio5200.h:20 webif_rc_virtual.atemio520.h:20
+#: webif_rc_virtual.atemio530.h:20 webif_rc_virtual.atemio6000.h:20
+#: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
+#: webif_rc_virtual.atemio-nemesis.h:20 webif_rc_virtual.h:20 xupnpd.h:57
+#: xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "Ok"
 
@@ -6856,7 +6857,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1663
+#: tithek.h:1662
 msgid "Page"
 msgstr "Pagina"
 
@@ -7858,7 +7859,7 @@ msgstr ""
 msgid "Remotecontrol Power Aktion"
 msgstr ""
 
-#: tithek.h:1245
+#: tithek.h:1244
 msgid "Remove Cachefile ?"
 msgstr ""
 
@@ -7890,7 +7891,7 @@ msgstr "remove share"
 msgid "Remove success"
 msgstr ""
 
-#: tithek.h:2274
+#: tithek.h:2273
 msgid "Remove this Favorite ?"
 msgstr "cancellare questo favorito ?"
 
@@ -8015,7 +8016,7 @@ msgstr "Backup mancato, Info si possono vedere nel Log"
 msgid "Result List"
 msgstr ""
 
-#: tithek.h:917
+#: tithek.h:916
 msgid "Results"
 msgstr "Risultati"
 
@@ -8610,7 +8611,7 @@ msgstr ""
 #: rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505
 #: rtl2now.h:507 rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:539
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
-#: tectime.h:13 tectime.h:15 tithek_global.h:421 tithek_global.h:423
+#: tectime.h:13 tectime.h:15 tithek_global.h:420 tithek_global.h:422
 #: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361
 #: zdf.h:147 zdf.h:149
@@ -9390,7 +9391,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr ""
 
-#: tithek.h:1540
+#: tithek.h:1539
 msgid "Start playback"
 msgstr "Avviare la riproduzione?"
 
@@ -9487,15 +9488,15 @@ msgstr "Streaming"
 msgid "Streaming"
 msgstr ""
 
-#: tithek.h:1419 tithek.h:1423
+#: tithek.h:1418 tithek.h:1422
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1445
+#: tithek.h:1444
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1442
+#: tithek.h:1441
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9869,7 +9870,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:75 tithek.h:2246
+#: tithek_global.h:77 tithek.h:2245
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -9889,7 +9890,8 @@ msgstr ""
 #: solarmovie.h:48 solarmovie.h:59 streamcloud.h:90 streamcloud.h:103
 #: streamcloud.h:134 streamcloud.h:193 thevideo.h:60 vidbull.h:67
 #: vidstream.h:86 vidstream.h:97 vidstream.h:167 vidto.h:67 vidto.h:94
-#: vidto.h:128 vidto.h:174 vodlocker.h:74 xvidstage.h:100 xvidstage.h:177
+#: vidto.h:128 vidto.h:174 vivo.h:38 vivo.h:61 vodlocker.h:74 xvidstage.h:100
+#: xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr ""
 
@@ -9899,7 +9901,7 @@ msgstr ""
 
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:156 faststream.h:109
 #: letwatch.h:65 mightyupload.h:69 movshare.h:78 movshare.h:163 thevideo.h:66
-#: vidbull.h:73 vidto.h:73 vidto.h:180 vodlocker.h:80
+#: vidbull.h:73 vidto.h:73 vidto.h:180 vivo.h:44 vivo.h:67 vodlocker.h:80
 msgid "The video no longer exists"
 msgstr ""
 
@@ -10169,7 +10171,7 @@ msgstr ""
 msgid "TitanNit Leather"
 msgstr ""
 
-#: tithek.h:1579
+#: tithek.h:1578
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
@@ -10188,8 +10190,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek.h:1624 tithek.h:1758 tithek.h:2270 tithek.h:2286 tithek.h:2298
-#: tithek.h:2314
+#: tithek.h:1623 tithek.h:1757 tithek.h:2269 tithek.h:2285 tithek.h:2297
+#: tithek.h:2313
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
@@ -12648,7 +12650,7 @@ msgid "please wait"
 msgstr ""
 
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1232
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1231
 msgid "please wait..."
 msgstr "Si prega di attendere"
 
