@@ -3313,8 +3313,8 @@ msgstr ""
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
-#: filemanager.h:329 filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118
-#: filenuke.h:190 firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
+#: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
+#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5976
 #: global.h:6697 global.h:6766 global.h:6785 global.h:6960 global.h:7216
 #: global.h:7229 global.h:7240 global.h:7251 global.h:7262 harddisk.h:355
@@ -4919,7 +4919,7 @@ msgstr ""
 msgid "Horror"
 msgstr ""
 
-#: divxstage.h:36 faststream.h:30 filenuke.h:46 firedrive.h:33 flashx.h:23
+#: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:23
 #: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:34 novamov.h:35
 #: nowvideo.h:44 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
 #: shared.h:29 streamcloud.h:31 thefile.h:34 thevideo.h:26 vidbull.h:30
@@ -6091,33 +6091,33 @@ msgstr "Menüliste"
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
-#: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
-#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5976
-#: global.h:6697 global.h:6766 global.h:6785 global.h:6960 global.h:7216
-#: global.h:7222 global.h:7229 global.h:7233 global.h:7240 global.h:7244
-#: global.h:7251 global.h:7255 global.h:7262 global.h:7266 harddisk.h:678
-#: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
-#: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
-#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5832 httpdfunc.h:6218
-#: httpdfunc.h:6483 httpdfunc.h:6554 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784
-#: keyactions.h:205 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
-#: language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:59
-#: letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
-#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
+#: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
+#: firedrive.h:66 firedrive.h:72 firedrive.h:122 firedrive.h:128
+#: firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5976 global.h:6697
+#: global.h:6766 global.h:6785 global.h:6960 global.h:7216 global.h:7222
+#: global.h:7229 global.h:7233 global.h:7240 global.h:7244 global.h:7251
+#: global.h:7255 global.h:7262 global.h:7266 harddisk.h:678 harddisk.h:686
+#: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
+#: harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362 hello.c:37
+#: httpdfunc.h:1304 httpdfunc.h:5832 httpdfunc.h:6218 httpdfunc.h:6483
+#: httpdfunc.h:6554 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784 keyactions.h:205
+#: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:49 lcdpearl1.c:49
+#: lcdsamsung.c:101 letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
+#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
+#: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
 #: mightyupload.h:63 mightyupload.h:69 movie4k.h:36 movie4k.h:52 movie4k.h:96
 #: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:273
@@ -6715,8 +6715,8 @@ msgstr "Ö"
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
-#: filemanager.h:329 filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118
-#: filenuke.h:190 firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
+#: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
+#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5976
 #: global.h:6697 global.h:6766 global.h:6785 global.h:6960 global.h:7216
 #: global.h:7222 global.h:7229 global.h:7233 global.h:7240 global.h:7244
@@ -10160,17 +10160,16 @@ msgstr ""
 "Bitte kopieren Sie die zip Datei nach /tmp."
 
 #: cloudzilla.h:39 divxstage.h:150 faststream.h:79 faststream.h:90
-#: faststream.h:102 faststream.h:166 filenuke.h:94 filenuke.h:105
-#: filenuke.h:117 filenuke.h:190 firedrive.h:66 firedrive.h:122
-#: firedrive.h:137 flashx.h:67 letwatch.h:59 mightyupload.h:63 movreel.h:137
-#: movshare.h:157 played.h:84 played.h:101 played.h:113 played.h:171
-#: primeshare.h:73 primeshare.h:124 promptfile.h:94 promptfile.h:136
-#: putlocker.h:79 putlocker.h:142 putlocker.h:151 putlocker.h:225 shared.h:82
-#: solarmovie.h:48 solarmovie.h:59 streamcloud.h:90 streamcloud.h:103
-#: streamcloud.h:134 streamcloud.h:193 thevideo.h:60 vidbull.h:67
-#: vidstream.h:86 vidstream.h:97 vidstream.h:167 vidto.h:67 vidto.h:94
-#: vidto.h:128 vidto.h:174 vivo.h:38 vivo.h:61 vodlocker.h:74 xvidstage.h:100
-#: xvidstage.h:177
+#: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
+#: firedrive.h:122 firedrive.h:137 flashx.h:67 letwatch.h:59 mightyupload.h:63
+#: movreel.h:137 movshare.h:157 played.h:84 played.h:101 played.h:113
+#: played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
+#: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
+#: putlocker.h:225 shared.h:82 solarmovie.h:48 solarmovie.h:59
+#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: thevideo.h:60 vidbull.h:67 vidstream.h:86 vidstream.h:97 vidstream.h:167
+#: vidto.h:67 vidto.h:94 vidto.h:128 vidto.h:174 vivo.h:38 vivo.h:61
+#: vodlocker.h:74 xvidstage.h:100 xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr "Die gewünschte Seite ist vorübergehend nicht erreichbar"
 
@@ -10179,8 +10178,9 @@ msgid "The page not found, file removed"
 msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:156 faststream.h:109
-#: letwatch.h:65 mightyupload.h:69 movshare.h:78 movshare.h:163 thevideo.h:66
-#: vidbull.h:73 vidto.h:73 vidto.h:180 vivo.h:44 vivo.h:67 vodlocker.h:80
+#: filenuke.h:73 letwatch.h:65 mightyupload.h:69 movshare.h:78 movshare.h:163
+#: thevideo.h:66 vidbull.h:73 vidto.h:73 vidto.h:180 vivo.h:44 vivo.h:67
+#: vodlocker.h:80
 msgid "The video no longer exists"
 msgstr "Dieses Video existiert nicht mehr."
 
@@ -11036,7 +11036,7 @@ msgstr "Video-Einstellungen"
 msgid "Video encoding error"
 msgstr ""
 
-#: letwatch.h:71
+#: filenuke.h:79 letwatch.h:71
 msgid "Video is processing now. Conversion stage..."
 msgstr ""
 
