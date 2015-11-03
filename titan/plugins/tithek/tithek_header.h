@@ -99,6 +99,7 @@ char* vidto(char* link);
 char* thevideo(char* link);
 char* mightyupload(char* link);
 char* cloudzilla(char* link);
+char* vivo(char* link);
 int internetradio_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 int internettv_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 int kinox_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);

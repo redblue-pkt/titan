@@ -49,7 +49,7 @@ char* hoster(char* url)
 		streamurl = shared(url);
 	else if(ostrstr(tmplink, "thefile") != NULL)
 		streamurl = thefile(url);
-	else if(ostrstr(tmplink, "youtu") != NULL)
+	else if(ostrstr(tmplink, "youtube") != NULL)
 		streamurl = youtube(url);
 	else if(ostrstr(tmplink, "myvideo") != NULL)
 		streamurl = myvideo(url);
@@ -71,6 +71,8 @@ char* hoster(char* url)
 		streamurl = mightyupload(url);
 	else if(ostrstr(tmplink, "cloudzilla") != NULL)
 		streamurl = cloudzilla(url);
+	else if(ostrstr(tmplink, "vivo") != NULL)
+		streamurl = vivo(url);
 	else
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
@@ -159,7 +161,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, i
 		if(flag == 1)
 			curl_easy_setopt(curl_handle, CURLOPT_HEADER, 1L);
 		curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, 5);
-		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 20);
+		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 100);
 		/* send all data to this function  */
 	    if(localfile == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
@@ -179,11 +181,8 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, i
 		// CURLOPT_SSL_VERIFYHOST may also need to be TRUE or FALSE if
 		// CURLOPT_SSL_VERIFYPEER is disabled (it defaults to 2 - check the existence of a
 		// common name and also verify that it matches the hostname provided)
-#ifdef MIPSEL
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 1L);
-#else
-		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L);
-#endif
+
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0L);
 		if(debuglevel == 99)
 			curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 1);
