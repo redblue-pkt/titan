@@ -717,7 +717,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		localfile = 1;
 	}
 
-//	amazon_init(titheklink, tithekfile);
+	amazon_init(titheklink, tithekfile);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();
@@ -909,7 +909,6 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	tmpstr = oitoa(sumcount);
 
 	char* tmpstr1 = ostrcat(_("found"), NULL, 0, 0);
-	tmpstr1 = ostrcat(tmpstr1, ":", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, " ", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
 	free(tmpstr); tmpstr = NULL;
