@@ -1506,6 +1506,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			if(clear == 1)
 			{
 				freechannel(1);
+				delunusedsat();
 				delunusedtransponder();
 				delunusedchannel();
 				delunusedbouquet();

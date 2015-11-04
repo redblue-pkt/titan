@@ -7454,6 +7454,22 @@ int putmsgbuffer()
 	return 0;
 }
 
+void delunusedsat()
+{
+	struct sat* node = sat;
+	struct sat* prev = NULL;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		
+		if(prev->scan != 1)
+			delsat(prev);	
+	}
+
+}
+
 void delunusedtransponder()
 {
 	struct transponder* node = transponder;
