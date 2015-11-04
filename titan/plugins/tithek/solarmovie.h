@@ -154,7 +154,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 		search = stringreplacechar(search, ' ', '+');
 		debug(99, "search: %s", search);
 
-		ip = ostrcat("www.solarmovie.is", NULL, 0, 0);
+		ip = ostrcat("www.solarmovie.ph", NULL, 0, 0);
 		if(flag == 0)
 			path = ostrcat("movie/search/", search, 0, 0);
 		else
@@ -201,7 +201,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 			pic = string_resub("<img src=\"", "\"", tmpstr1, 0);
 			title = string_resub("<a title=\"", "\"", tmpstr1, 0);
 	
-			url = ostrcat("http://www.solarmovie.is", path, 0, 0);
+			url = ostrcat("http://www.solarmovie.ph", path, 0, 0);
 	
 			debug(99, "---------------------------");
 			debug(99, "pic: %s", pic);
@@ -454,7 +454,7 @@ printf("11111111111111111111111111111\n");
 					line = ostrcat(line, ")", 1, 0);					
 				}					
 				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, "http://www.solarmovie.is/link/play/", 1, 0);
+				line = ostrcat(line, "http://www.solarmovie.ph/link/play/", 1, 0);
 				line = ostrcat(line, id, 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 				line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
@@ -536,7 +536,7 @@ printf("11111111111111111111111111111\n");
 						line = ostrcat(line, ")", 1, 0);					
 					}					
 					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://www.solarmovie.is/link/play/", 1, 0);
+					line = ostrcat(line, "http://www.solarmovie.ph/link/play/", 1, 0);
 					line = ostrcat(line, id, 1, 0);
 					line = ostrcat(line, "#", 1, 0);
 					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
@@ -601,7 +601,7 @@ printf("22222222222222222222222222222222\n");
 //				line = ostrcat(line, ") ", 1, 0);
 //				line = ostrcat(line, etitle, 1, 0);
 
-				line = ostrcat(line, "#http://www.solarmovie.is", 1, 0);
+				line = ostrcat(line, "#http://www.solarmovie.ph", 1, 0);
 				line = ostrcat(line, url, 1, 0);
 //				line = ostrcat(line, ";", 1, 0);
 //				line = ostrcat(line, session, 1, 0);
