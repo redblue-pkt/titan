@@ -832,7 +832,7 @@ msgid ""
 "OK?"
 msgstr ""
 
-#: scan.h:1636
+#: scan.h:1637
 msgid "All new channels added!"
 msgstr "Pridti Visi nauji kanalai !"
 
@@ -1169,7 +1169,7 @@ msgstr ""
 msgid "Auto Resolution"
 msgstr ""
 
-#: scan.h:2024
+#: scan.h:2025
 msgid "Auto Scan"
 msgstr "Automatinis nuskaitymas"
 
@@ -1452,7 +1452,7 @@ msgstr ""
 msgid "Blindscan Settings"
 msgstr ""
 
-#: scan.h:1584
+#: scan.h:1585
 msgid "Blindscan: "
 msgstr "Blindscan :"
 
@@ -2081,13 +2081,13 @@ msgstr ""
 msgid "Channel or Transponder is empty"
 msgstr "ERROR: Channel or Transponder is empty"
 
-#: scan.h:1606
+#: scan.h:1607
 msgid "Channel scan ended."
 msgstr ""
 "Kanal skenavimas baigtas.\n"
 " Isaugoti Kanalus naudojant spalvotus klavius Pultelyje."
 
-#: scan.h:1604 scan.h:1634
+#: scan.h:1605 scan.h:1635
 msgid ""
 "Channel scan ended.\n"
 "Nothing found."
@@ -2499,7 +2499,7 @@ msgstr ""
 msgid "Create Transponder List"
 msgstr ""
 
-#: scan.h:2275
+#: scan.h:2276
 msgid "Create new"
 msgstr "Sukurti nauj"
 
@@ -2678,7 +2678,7 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: scan.h:1576
+#: scan.h:1577
 msgid "Data: "
 msgstr "Duomenys:"
 
@@ -2780,7 +2780,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Trinti"
 
-#: scan.h:2276
+#: scan.h:2277
 msgid "Delete All"
 msgstr "Itrinti visus"
 
@@ -3318,7 +3318,7 @@ msgstr ""
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2359 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
@@ -5986,8 +5986,8 @@ msgstr ""
 #: record.h:1160 record.h:1437 record.h:1689 record.h:1714 rectimer.h:577
 #: rectimer.h:1258 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646
-#: scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1916
+#: rtl2now.h:34 scan.h:1605 scan.h:1607 scan.h:1635 scan.h:1637 scan.h:1647
+#: scan.h:1902 scan.h:1993 scan.h:2359 scart.h:12 scart.h:25 security.h:1916
 #: service.h:738 service.h:983 settings_autostart.h:636
 #: settings_autostart.h:647 settings_autostart.h:649 shared.h:29 shared.h:65
 #: shared.h:82 skinadjust.h:398 skinadjust.h:803 skinselector.h:231 sock.h:954
@@ -6169,7 +6169,7 @@ msgstr "Kanal (EPG)"
 msgid "Multi EPG"
 msgstr "Kanal EPG"
 
-#: scan.h:2013
+#: scan.h:2014
 msgid "Multi Sat"
 msgstr "Keli Palydovai"
 
@@ -6450,7 +6450,7 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: scan.h:1992
+#: scan.h:1993
 msgid "No Tuner configured"
 msgstr "ERROR: No tuner configured!"
 
@@ -6618,8 +6618,8 @@ msgstr ""
 #: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
-#: scan.h:1636 scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1605 scan.h:1607 scan.h:1635
+#: scan.h:1637 scan.h:1902 scan.h:1993 scan.h:2359 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 settings_autostart.h:636 settings_autostart.h:647
 #: settings_autostart.h:649 shared.h:29 shared.h:65 shared.h:82
@@ -7678,7 +7678,7 @@ msgstr ""
 msgid "Radio Player"
 msgstr "Radijo grotuvas"
 
-#: scan.h:1568
+#: scan.h:1569
 msgid "Radio: "
 msgstr "Radijas :"
 
@@ -8382,7 +8382,7 @@ msgstr ""
 msgid "Sat Finder"
 msgstr ""
 
-#: scan.h:1544
+#: scan.h:1545
 msgid "Sat/Provider: "
 msgstr "Sat / teikjas :"
 
@@ -8482,7 +8482,7 @@ msgstr ""
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: scan.h:1901
+#: scan.h:1902
 msgid "Scan is not allowed if record or stream is running !"
 msgstr "ERROR: Scan is not allowed during an active recording / stream!"
 
@@ -9110,11 +9110,11 @@ msgstr "Kanalo EPG"
 msgid "Single LNB"
 msgstr ""
 
-#: scan.h:2019
+#: scan.h:2020
 msgid "Single Provider"
 msgstr "Vienas teikjas"
 
-#: scan.h:2012
+#: scan.h:2013
 msgid "Single Sat"
 msgstr "Vienas Palydovas"
 
@@ -9122,7 +9122,7 @@ msgstr "Vienas Palydovas"
 msgid "Single Service"
 msgstr "Viena Paslauga"
 
-#: scan.h:2011 scan.h:2018
+#: scan.h:2012 scan.h:2019
 msgid "Single Transponder"
 msgstr "Vienintelis transponderis"
 
@@ -9874,7 +9874,7 @@ msgstr ""
 msgid "TV/Radio"
 msgstr "TV/Radija"
 
-#: scan.h:1560
+#: scan.h:1561
 msgid "TV: "
 msgstr "TV:"
 
@@ -10497,7 +10497,7 @@ msgstr ""
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
-#: scan.h:2358
+#: scan.h:2359
 msgid "Transponder changed"
 msgstr "Sistuvas pakeistas"
 
@@ -10510,7 +10510,7 @@ msgstr ""
 "Praom atlikti nauj kanal skenavim po sistemos persikrovimo.\n"
 " imtuvas perkraunamas !"
 
-#: optimize.h:272 scan.h:1550
+#: optimize.h:272 scan.h:1551
 msgid "Transponder: "
 msgstr "Sistuvo :"
 
@@ -10679,7 +10679,7 @@ msgstr ""
 msgid "UltraPlus F-9000HD RC config"
 msgstr ""
 
-#: scan.h:2274
+#: scan.h:2275
 msgid "Unchanged"
 msgstr "Nekeiskite"
 
@@ -11039,7 +11039,7 @@ msgstr ""
 msgid "Wait for cam ready"
 msgstr ""
 
-#: scan.h:1646
+#: scan.h:1647
 msgid "Wait for channel scan end"
 msgstr "Praome palaukti, kol baigsis skenavimas"
 
@@ -12479,9 +12479,9 @@ msgstr "NFS serveris"
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1775
-#: scan.h:2254 scan.h:2258 scan.h:2262 scan.h:2266 scan.h:2271 scan.h:2279
-#: scan.h:2283 screensaveradjust.h:19 settings_autostart.h:26
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1776
+#: scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267 scan.h:2272 scan.h:2280
+#: scan.h:2284 screensaveradjust.h:19 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
 #: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
@@ -13878,8 +13878,8 @@ msgstr "Geltona"
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
-#: scan.h:2270 scan.h:2280 scan.h:2284 screensaveradjust.h:20
+#: rectimer.h:1141 scan.h:1777 scan.h:2256 scan.h:2260 scan.h:2264 scan.h:2268
+#: scan.h:2271 scan.h:2281 scan.h:2285 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
 #: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
