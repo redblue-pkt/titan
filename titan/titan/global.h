@@ -7454,5 +7454,83 @@ int putmsgbuffer()
 	return 0;
 }
 
+void delunusedtransponder()
+{
+	struct transponder* node = transponder;
+	struct transponder* prev = NULL;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+
+		if(getsatbyorbitalpos(prev->orbitalpos) == NULL)
+			deltransponder(prev);
+	}
+}
+
+void delunusedchannel()
+{
+	struct channel* node = channel;
+	struct channel* prev = NULL;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+
+		if(prev->transponder == NULL)
+			delchannel(prev->serviceid, prev->transponderid, 0);
+	}
+}
+
+void delunusedbouquet()
+{
+	struct mainbouquet* mnode = mainbouquet;
+	struct bouquet* first = NULL;
+	struct bouquet* node = NULL;
+	struct bouquet* prev = NULL;
+
+	while(mnode != NULL)
+	{
+		first = mnode->bouquet;
+		node = mnode->bouquet;
+		while(node != NULL)
+		{
+			prev = node;	
+			node = node->next;
+			if(getchannel(prev->serviceid, prev->transponderid) == NULL)
+				delbouquet(prev->serviceid, prev->transponderid, &first);
+		}
+		mnode = mnode->next;
+	}
+}
+
+void delunusedepgchannel()
+{
+	struct epgscanlist* node = epgscanlist;
+	struct epgscanlist* prev = NULL;
+
+	while(node != NULL)
+	{
+		prev = node;	
+		node = node->next;
+		if(getchannel(prev->serviceid, prev->transponderid) == NULL)
+			delepgscanlist(node->serviceid, node->transponderid);
+	}
+}
+
+void delunusedprovider()
+{
+	struct provider* node = provider;
+	struct provider* prev = NULL;
+
+	while(node != NULL)
+	{
+		prev = node;	
+		node = node->next;
+		delprovidernotused(prev);
+	}
+}
 
 #endif
