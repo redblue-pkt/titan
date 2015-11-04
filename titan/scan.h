@@ -1504,7 +1504,6 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			b3->hidden = YES;
 			//del all channel for auto. search
 			if(clear == 1) freechannel(1);
-			if(clear == 1) freetransponder();
 		}
 		satnode = sat;
 		while(satnode != NULL)
