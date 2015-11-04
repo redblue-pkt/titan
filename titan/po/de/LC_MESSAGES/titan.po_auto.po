@@ -851,7 +851,7 @@ msgstr ""
 "Alle Daten auf diesem Datenträger werden gelöscht!\n"
 "Fortfahren?"
 
-#: scan.h:1636
+#: scan.h:1644
 msgid "All new channels added!"
 msgstr "Alle neuen Sender gespeichert!"
 
@@ -1191,7 +1191,7 @@ msgstr ""
 msgid "Auto Resolution"
 msgstr "Automatische Auflösung"
 
-#: scan.h:2024
+#: scan.h:2032
 msgid "Auto Scan"
 msgstr "automatisch"
 
@@ -1479,7 +1479,7 @@ msgstr "Blindscan"
 msgid "Blindscan Settings"
 msgstr "Blindscan"
 
-#: scan.h:1584
+#: scan.h:1592
 msgid "Blindscan: "
 msgstr ""
 
@@ -2117,13 +2117,13 @@ msgstr "Sender nicht verfügbar"
 msgid "Channel or Transponder is empty"
 msgstr "FEHLER: Sender oder Transponder ist leer!"
 
-#: scan.h:1606
+#: scan.h:1614
 msgid "Channel scan ended."
 msgstr ""
 "Sendersuchlauf beendet.\n"
 "Bitte speichern Sie mit den Farbtasten Ihre Suche ab."
 
-#: scan.h:1604 scan.h:1634
+#: scan.h:1612 scan.h:1642
 msgid ""
 "Channel scan ended.\n"
 "Nothing found."
@@ -2547,7 +2547,7 @@ msgstr "Erstelle Transponder (Terrestrisch)"
 msgid "Create Transponder List"
 msgstr "Transponder Liste importieren"
 
-#: scan.h:2275
+#: scan.h:2283
 msgid "Create new"
 msgstr "Neu erstellen"
 
@@ -2726,7 +2726,7 @@ msgstr "DYNDNS gestartet"
 msgid "Data"
 msgstr ""
 
-#: scan.h:1576
+#: scan.h:1584
 msgid "Data: "
 msgstr ""
 
@@ -2828,7 +2828,7 @@ msgstr "Lösche EPG vor der Suche (Standard Ja)"
 msgid "Delete"
 msgstr "Löschen"
 
-#: scan.h:2276
+#: scan.h:2284
 msgid "Delete All"
 msgstr "Alle löschen"
 
@@ -3370,7 +3370,7 @@ msgstr ""
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2358 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2366 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
@@ -6139,8 +6139,8 @@ msgstr "Menüliste"
 #: record.h:1160 record.h:1437 record.h:1689 record.h:1714 rectimer.h:577
 #: rectimer.h:1258 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646
-#: scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1916
+#: rtl2now.h:34 scan.h:1612 scan.h:1614 scan.h:1642 scan.h:1644 scan.h:1654
+#: scan.h:1909 scan.h:2000 scan.h:2366 scart.h:12 scart.h:25 security.h:1916
 #: service.h:738 service.h:983 settings_autostart.h:636
 #: settings_autostart.h:647 settings_autostart.h:649 shared.h:29 shared.h:65
 #: shared.h:82 skinadjust.h:398 skinadjust.h:803 skinselector.h:231 sock.h:954
@@ -6322,7 +6322,7 @@ msgstr ""
 msgid "Multi EPG"
 msgstr "Multi-EPG"
 
-#: scan.h:2013
+#: scan.h:2021
 msgid "Multi Sat"
 msgstr "Multi Satelliten"
 
@@ -6605,7 +6605,7 @@ msgstr "TPK Pakete nicht vorhanden"
 msgid "No Tpk Sections Found."
 msgstr "TPK Auswahl nicht vorhanden"
 
-#: scan.h:1992
+#: scan.h:2000
 msgid "No Tuner configured"
 msgstr "FEHLER: Es ist kein Tuner eingerichtet!"
 
@@ -6773,8 +6773,8 @@ msgstr "Ö"
 #: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634
-#: scan.h:1636 scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1612 scan.h:1614 scan.h:1642
+#: scan.h:1644 scan.h:1909 scan.h:2000 scan.h:2366 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 settings_autostart.h:636 settings_autostart.h:647
 #: settings_autostart.h:649 shared.h:29 shared.h:65 shared.h:82
@@ -7839,7 +7839,7 @@ msgstr ""
 msgid "Radio Player"
 msgstr "Radio"
 
-#: scan.h:1568
+#: scan.h:1576
 msgid "Radio: "
 msgstr ""
 
@@ -8547,7 +8547,7 @@ msgstr "Satelliten"
 msgid "Sat Finder"
 msgstr "Empfangsqualität"
 
-#: scan.h:1544
+#: scan.h:1552
 msgid "Sat/Provider: "
 msgstr "Satellit/Anbieter: "
 
@@ -8647,7 +8647,7 @@ msgstr "Suchlauf manuell Einstellungen"
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: scan.h:1901
+#: scan.h:1909
 msgid "Scan is not allowed if record or stream is running !"
 msgstr ""
 "FEHLER: Beenden Sie laufende Aufnahmen oder Streams\n"
@@ -9277,11 +9277,11 @@ msgstr "Einfach-EPG"
 msgid "Single LNB"
 msgstr "Einzel LNB"
 
-#: scan.h:2019
+#: scan.h:2027
 msgid "Single Provider"
 msgstr "Einzelner Anbieter"
 
-#: scan.h:2012
+#: scan.h:2020
 msgid "Single Sat"
 msgstr "Einzelner Satellit"
 
@@ -9289,7 +9289,7 @@ msgstr "Einzelner Satellit"
 msgid "Single Service"
 msgstr "Einzelsender"
 
-#: scan.h:2011 scan.h:2018
+#: scan.h:2019 scan.h:2026
 msgid "Single Transponder"
 msgstr "Einzelner Transponder"
 
@@ -10043,7 +10043,7 @@ msgstr "Auflösung Sender (B):"
 msgid "TV/Radio"
 msgstr ""
 
-#: scan.h:1560
+#: scan.h:1568
 msgid "TV: "
 msgstr ""
 
@@ -10684,7 +10684,7 @@ msgstr ""
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
-#: scan.h:2358
+#: scan.h:2366
 msgid "Transponder changed"
 msgstr "Transponder wurde geändert"
 
@@ -10697,7 +10697,7 @@ msgstr ""
 "Bitte führen Sie einen Sendersuchlauf nach dem Reboot durch.\n"
 "Ihre Box wird nun neu gestartet!"
 
-#: optimize.h:272 scan.h:1550
+#: optimize.h:272 scan.h:1558
 msgid "Transponder: "
 msgstr ""
 
@@ -10867,7 +10867,7 @@ msgstr ""
 msgid "UltraPlus F-9000HD RC config"
 msgstr ""
 
-#: scan.h:2274
+#: scan.h:2282
 msgid "Unchanged"
 msgstr "Unverändert"
 
@@ -11229,7 +11229,7 @@ msgstr "Warten"
 msgid "Wait for cam ready"
 msgstr "Wartezeit für CI-Module"
 
-#: scan.h:1646
+#: scan.h:1654
 msgid "Wait for channel scan end"
 msgstr "Bitte warten, Sendersuchlauf wird abgebrochen."
 
@@ -12673,9 +12673,9 @@ msgstr "NFSD Kernel Server autostart"
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1775
-#: scan.h:2254 scan.h:2258 scan.h:2262 scan.h:2266 scan.h:2271 scan.h:2279
-#: scan.h:2283 screensaveradjust.h:19 settings_autostart.h:26
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1783
+#: scan.h:2262 scan.h:2266 scan.h:2270 scan.h:2274 scan.h:2279 scan.h:2287
+#: scan.h:2291 screensaveradjust.h:19 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
 #: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
@@ -14088,8 +14088,8 @@ msgstr "gelb"
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
-#: scan.h:2270 scan.h:2280 scan.h:2284 screensaveradjust.h:20
+#: rectimer.h:1141 scan.h:1784 scan.h:2263 scan.h:2267 scan.h:2271 scan.h:2275
+#: scan.h:2278 scan.h:2288 scan.h:2292 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
 #: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
