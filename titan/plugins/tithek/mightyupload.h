@@ -44,15 +44,20 @@ char* mightyupload(char* link)
 
 	char* id = oregex("http://.*/(.*)/.*", link);
 	debug(99, "id: %s", id);
-
+	if(id == NULL)
+	{
+		id = oregex("http://.*/(.*).html.*", link);
+		debug(99, "id2: %s", id);
+	}
+	
 	debug(99, "tmppath: %s", tmppath);
 	debug(99, "tmphost: %s", tmphost);
 	url = ostrcat("www.mightyupload.com/embed-", id, 0, 0);
 	url = ostrcat(url, ".html", 1, 0);
 	free(id), id = NULL;
 
-	debug(99, "url: %s", link);
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
+	debug(99, "url: %s", url);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/mightyupload1_get", NULL, NULL, NULL, tmpstr);	
 	tmpstr = jsunpack(tmpstr);
 	titheklog(debuglevel, "/tmp/mightyupload2_get_jsunpack", NULL, NULL, NULL, tmpstr);	
@@ -70,7 +75,9 @@ char* mightyupload(char* link)
 		goto end;
 	}
 
-	streamlink = string_resub("name=\"src\"value=\"", "\"", tmpstr, 0);
+	streamlink = string_resub("file: '", "'", tmpstr, 0);
+	if(streamlink == NULL)
+		streamlink = string_resub("name=\"src\"value=\"", "\"", tmpstr, 0);
 	if(streamlink == NULL)
 		streamlink = string_resub("'label' : '360p', 'file' : '", "'", tmpstr, 0);
 	if(streamlink == NULL)

@@ -21,7 +21,7 @@ char* nowtv(char* link)
 
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *title = NULL, *pic = NULL, *app = NULL;
 
-	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/tithek/nowtv_get1", NULL, NULL, NULL, tmpstr);	
 	
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
