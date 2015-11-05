@@ -10611,6 +10611,10 @@ msgstr ""
 msgid "Tuning to Channel failed!"
 msgstr "ERROR: Channel not available"
 
+#: tithek_mainmenu.h:135
+msgid "TvToast"
+msgstr ""
+
 #: skin_default_skin.xml.h:685
 msgid "Two step mute"
 msgstr ""
@@ -10660,7 +10664,7 @@ msgstr "Unknown"
 msgid "UNLOAD"
 msgstr ""
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:136
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -10829,7 +10833,7 @@ msgstr "Settings"
 msgid "VLC Player"
 msgstr ""
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:138
 msgid "VOX-Now"
 msgstr ""
 
@@ -10918,7 +10922,7 @@ msgstr ""
 msgid "Virtualzap Timeout"
 msgstr ""
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:137
 msgid "Vizion Plus"
 msgstr ""
 
@@ -11170,7 +11174,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:139
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11255,11 +11259,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:139
+#: tithek_mainmenu.h:140
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:140
+#: tithek_mainmenu.h:141
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11312,7 +11316,7 @@ msgstr ""
 "\n"
 "Do you want the Receiver to shutdown?"
 
-#: tithek_mainmenu.h:141
+#: tithek_mainmenu.h:142
 msgid "Youtube"
 msgstr ""
 
@@ -11320,7 +11324,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:142
+#: tithek_mainmenu.h:143
 msgid "ZDF"
 msgstr ""
 

@@ -10660,6 +10660,10 @@ msgstr "Tuner Tipo"
 msgid "Tuning to Channel failed!"
 msgstr "ERROR: Canal no disponible"
 
+#: tithek_mainmenu.h:135
+msgid "TvToast"
+msgstr ""
+
 #: skin_default_skin.xml.h:685
 msgid "Two step mute"
 msgstr "Dos pasos silencio"
@@ -10709,7 +10713,7 @@ msgstr "Desconocido"
 msgid "UNLOAD"
 msgstr "Desactivar"
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:136
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -10878,7 +10882,7 @@ msgstr "Video Ajustes"
 msgid "VLC Player"
 msgstr "Reproducir Video"
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:138
 msgid "VOX-Now"
 msgstr ""
 
@@ -10967,7 +10971,7 @@ msgstr "Seleccionar Menu"
 msgid "Virtualzap Timeout"
 msgstr "Virtual interruptor"
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:137
 msgid "Vizion Plus"
 msgstr ""
 
@@ -11221,7 +11225,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:139
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11306,11 +11310,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:139
+#: tithek_mainmenu.h:140
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:140
+#: tithek_mainmenu.h:141
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11363,7 +11367,7 @@ msgstr ""
 "\n"
 "Quieres que el receptor se apague?"
 
-#: tithek_mainmenu.h:141
+#: tithek_mainmenu.h:142
 msgid "Youtube"
 msgstr ""
 
@@ -11371,7 +11375,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:142
+#: tithek_mainmenu.h:143
 msgid "ZDF"
 msgstr ""
 
