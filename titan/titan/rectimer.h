@@ -269,7 +269,7 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 {
 	char *ret = NULL;
 	struct rectimer *newnode = NULL, *prev = NULL, *node = rectimer;
-	
+
 	newnode = (struct rectimer*)calloc(1, sizeof(struct rectimer));
 	if(newnode == NULL)
 	{
@@ -369,10 +369,10 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 		newnode->disabled = 1;
 		newnode->afterevent = getconfigint("def_rectimer_after", NULL);
 	}
-	
-	if(newnode->timestamp == NULL) 
+
+	if(newnode->timestamp == NULL)
 		newnode->timestamp = gettimestamp();
-	
+
 	if(last == NULL)
 	{
 		while(node != NULL && newnode->begin >= node->begin)
@@ -402,7 +402,7 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 
 struct rectimer* getrectimerbytimediff(time_t timediff)
 {
-	struct rectimer* node = rectimer;	
+	struct rectimer* node = rectimer;
 	time_t akttime = time(NULL);
 
 	while(node != NULL)
@@ -418,7 +418,7 @@ struct rectimer* getrectimerbytimediff(time_t timediff)
 
 struct rectimer* getrectimerbytimestamp(char* timestamp)
 {
-	struct rectimer* node = rectimer;	
+	struct rectimer* node = rectimer;
 
 	while(node != NULL)
 	{
@@ -433,7 +433,7 @@ struct rectimer* getrectimerbytimestamp(char* timestamp)
 
 struct rectimer* getrectimerbyservice(struct service* servicenode)
 {
-	struct rectimer* node = rectimer;	
+	struct rectimer* node = rectimer;
 
 	while(node != NULL)
 	{
@@ -458,7 +458,7 @@ void checkrectimer(struct stimerthread* self)
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
-	
+
 	//on first start read rectimer and set cec
 	if(self->delay == 1000)
 	{
@@ -472,7 +472,7 @@ void checkrectimer(struct stimerthread* self)
 		readrectimer(getconfig("rectimerfile", NULL));
 		checkboxstart();
 	}
-		
+
 	//wait for start all programs
 	ret = 30;
 	while(self->aktion != STOP && ret != 0)
@@ -481,7 +481,7 @@ void checkrectimer(struct stimerthread* self)
 		ret = ret - 1;
 	}
 	ret = 0;
-	
+
 	//on first start read rectimer
 	if(self->delay == 1000)
 	{
@@ -494,7 +494,7 @@ void checkrectimer(struct stimerthread* self)
 	m_lock(&status.rectimermutex, 1);
 	t = time(NULL);
 	node = rectimer;
-	
+
 	while(node != NULL)
 	{
 		if(node->disabled != 0)
@@ -502,7 +502,7 @@ void checkrectimer(struct stimerthread* self)
 			node = node->next;
 			continue;
 		}
-		
+
 		if(node->justplay == 1)
 		{
 			begin = node->begin;
@@ -704,7 +704,7 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag)
 
 			free(node->name);
 			node->name = NULL;
-			
+
 			free(node->timestamp);
 			node->timestamp = NULL;
 
@@ -716,7 +716,7 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag)
 
 			free(node->errstr);
 			node->errstr = NULL;
-			
+
 			free(node->pincode);
 			node->pincode = NULL;
 
@@ -753,13 +753,13 @@ void deloldrectimerlog()
 {
 	struct rectimer* rectimernode = NULL;
 	struct rectimer* rectimernodenext = NULL;
-	
+
 	rectimernode = rectimer;
 	while(rectimernode != NULL)
 	{
 		rectimernodenext = rectimernode->next;
 		if(rectimernode->status == 2 || rectimernode->status == 3)
-			delrectimer(rectimernode, 0, 0);	
+			delrectimer(rectimernode, 0, 0);
 		rectimernode = rectimernodenext;
 	}
 	m_lock(&status.rectimermutex, 1);
@@ -1062,7 +1062,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 	begin->aktpage = 0;
 	end->aktpage = 0;
 	name->aktpage = 0;
-	
+
 	changeinput(name, node->name);
 
 	if(status.pvr == 1)
@@ -1213,7 +1213,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 		setchoiceboxselection(after, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
-		
+
 	changemask(pincode, "0000");
 	if(newnode == 0)
 		changeinput(pincode, node->pincode);
@@ -1229,17 +1229,17 @@ void screenrectimerext(struct rectimer* node, int flag)
 		addscreenrc(rectimerext, tmp);
 		rcret = waitrc(rectimerext, 0, 2);
 		tmp = listbox->select;
-		
-		if(rcret == getrcconfigint("rcred", NULL))
+
+		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(name->ret != NULL && strlen(name->ret) > 0)
 			{
 				char* tmppath = NULL;
-				
+
 				tmppath = ostrcat(tmppath, name->ret, 1, 0);
 				tmppath = strstrip(tmppath);
 				delspezchar(tmppath, 2);
-				tmppath = ostrcat("/", tmppath, 0, 1);				
+				tmppath = ostrcat("/", tmppath, 0, 1);
 				tmppath = ostrcat(getconfig("rec_path", NULL), tmppath, 0, 1);
 
 				if(tmppath != NULL && file_exist(tmppath))
@@ -1257,7 +1257,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 					debug(10, "error: cant create Folder: %s", tmppath);
 					textbox(_("Message"), "Can't create Path", _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
-			
+
 				drawscreen(rectimerext, 0, 0);
 				free(tmppath); tmppath = NULL;
 			}
@@ -1348,7 +1348,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			if(begin->ret != NULL)
 			{
 				loctime->tm_isdst = bdaylight;
-				tmpstr = strptime(begin->ret, "%H:%M %d-%m-%Y", loctime); 
+				tmpstr = strptime(begin->ret, "%H:%M %d-%m-%Y", loctime);
 				if(tmpstr != NULL)
 					node->begin = mktime(loctime);
 
@@ -1363,7 +1363,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			if(end->ret != NULL && node->justplay == 0)
 			{
 				loctime->tm_isdst = edaylight;
-				tmpstr = strptime(end->ret, "%H:%M %d-%m-%Y", loctime); 
+				tmpstr = strptime(end->ret, "%H:%M %d-%m-%Y", loctime);
 				if(tmpstr != NULL)
 					node->end = mktime(loctime);
 
@@ -1373,7 +1373,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			}
 			if(after->ret != NULL)
 				node->afterevent = atoi(after->ret);
-				
+
 			if(pincode->ret != NULL)
 				node->pincode = ostrcat(pincode->ret, NULL, 0, 0);
 			else
@@ -1424,7 +1424,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 			if(tmpservice != NULL)
 				tmpservice->recendtime = node->end;
 			m_unlock(&status.servicemutex, 2);
-				
+
 			if(newnode == 1 || flag == 1) node->disabled = 0;
 			status.writerectimer = 1;
 			writerectimer(getconfig("rectimerfile", NULL), 0);
@@ -1544,7 +1544,7 @@ start:
 				tmpstr = ostrcat(tmpstr, rectimernode->errstr, 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 			}
-			
+
 			changetext(tmp, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			tmp->handle = (char*)rectimernode;
@@ -1597,11 +1597,11 @@ start:
 		{
 			flag = 1;
 			delrectimer((struct rectimer*)listbox->select->handle, 1, 0);
-			
+
 			delmarkedscreennodes(recordtimer, 1);
 			goto start;
 		}
-		
+
 		if(flag == 1 && rcret == getrcconfigint("rcyellow", NULL)) // delete all log entrys
 		{
 			flag = 1;
@@ -1609,7 +1609,7 @@ start:
 			delmarkedscreennodes(recordtimer, 1);
 			goto start;
 		}
-		
+
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			if(flag == 0)
@@ -1640,7 +1640,7 @@ start:
 			if(rcret == getrcconfigint("rcred", NULL))
 			{
 				delrectimer((struct rectimer*)listbox->select->handle, 1, 0);
-				
+
 				delmarkedscreennodes(recordtimer, 1);
 				goto start;
 			}
