@@ -7456,6 +7456,7 @@ int putmsgbuffer()
 
 void delunusedsat()
 {
+	debug(10, "delunusedsat: start");
 	struct sat* node = sat;
 	struct sat* prev = NULL;
 
@@ -7465,13 +7466,14 @@ void delunusedsat()
 		node = node->next;
 		
 		if(prev->scan != 1)
-			delsat(prev);	
+			delsat(prev->name);	
 	}
-
+	debug(10, "delunusedsat: end");
 }
 
 void delunusedtransponder()
 {
+	debug(10, "delunusedtransponder: start");
 	struct transponder* node = transponder;
 	struct transponder* prev = NULL;
 
@@ -7483,10 +7485,12 @@ void delunusedtransponder()
 		if(getsatbyorbitalpos(prev->orbitalpos) == NULL)
 			deltransponder(prev);
 	}
+	debug(10, "delunusedtransponder: end");
 }
 
 void delunusedchannel()
 {
+	debug(10, "delunusedchannel: start");
 	struct channel* node = channel;
 	struct channel* prev = NULL;
 
@@ -7498,10 +7502,12 @@ void delunusedchannel()
 		if(prev->transponder == NULL)
 			delchannel(prev->serviceid, prev->transponderid, 0);
 	}
+	debug(10, "delunusedchannel: end");
 }
 
 void delunusedbouquet()
 {
+	debug(10, "delunusedbouquet: start");
 	struct mainbouquet* mnode = mainbouquet;
 	struct bouquet* first = NULL;
 	struct bouquet* node = NULL;
@@ -7520,10 +7526,12 @@ void delunusedbouquet()
 		}
 		mnode = mnode->next;
 	}
+	debug(10, "delunusedbouquet: end");
 }
 
 void delunusedepgchannel()
 {
+	debug(10, "delunusedepgchannel: start");
 	struct epgscanlist* node = epgscanlist;
 	struct epgscanlist* prev = NULL;
 
@@ -7534,10 +7542,12 @@ void delunusedepgchannel()
 		if(getchannel(prev->serviceid, prev->transponderid) == NULL)
 			delepgscanlist(node->serviceid, node->transponderid);
 	}
+	debug(10, "delunusedepgchannel: end");
 }
 
 void delunusedprovider()
 {
+	debug(10, "delunusedprovider: start");
 	struct provider* node = provider;
 	struct provider* prev = NULL;
 
@@ -7547,6 +7557,7 @@ void delunusedprovider()
 		node = node->next;
 		delprovidernotused(prev);
 	}
+	debug(10, "delunusedprovider: end");
 }
 
 #endif
