@@ -2202,7 +2202,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1128 youtube.h:235 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1128 youtube.h:224 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -3356,7 +3356,7 @@ msgstr ""
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
 #: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:259 zapback.c:79 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:248 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Exit"
 
@@ -6013,7 +6013,7 @@ msgstr ""
 #: vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
 #: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86
 #: webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
-#: xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:259
+#: xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:248
 #: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr ""
@@ -6660,7 +6660,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
 #: webif_rc_virtual.atemio-nemesis.h:20 webif_rc_virtual.h:20 xupnpd.h:57
 #: xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:259 zapback.c:79 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:248 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr ""
 
@@ -8711,7 +8711,7 @@ msgstr ""
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
 #: tectime.h:13 tectime.h:15 tithek_global.h:428 tithek_global.h:430
 #: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:1157 tvtoast.h:1159 xvideos.h:56
-#: xvideos.h:58 youtube.h:284 youtube.h:286 youtube.h:439 youtube.h:441
+#: xvideos.h:58 youtube.h:273 youtube.h:275 youtube.h:428 youtube.h:430
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr ""
@@ -9571,7 +9571,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1128 youtube.h:235 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1128 youtube.h:224 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
@@ -13593,7 +13593,7 @@ msgstr ""
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
-#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:211
+#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:200
 #: zdf.h:86
 msgid "unknown"
 msgstr ""
