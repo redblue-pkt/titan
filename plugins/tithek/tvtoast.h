@@ -248,7 +248,7 @@ char* streamliveold(char* tmpurl1, char* tmppath1, int www, int incount)
 	char* urlid = NULL;
 	char* tokenid = NULL;
 
-				tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+				tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 ///////					
 				// fix espn
 				referer = ostrcat(tmpurl, NULL, 0, 0);
@@ -299,7 +299,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 
 						free(send), send = NULL;
 ///////
-						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 ///////
 
 						titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
@@ -330,7 +330,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 
 							free(send), send = NULL;
 ///////
-						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 ///////
 							titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
 			//				free(tmppath), tmppath = NULL;
@@ -412,7 +412,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 							free(tmpstr), tmpstr = NULL;
 
 							free(send), send = NULL;
-	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 
 							titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
 			//				free(tmppath), tmppath = NULL;
@@ -481,7 +481,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 								free(referer), referer = NULL;
 
 
-	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 								titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
 				//				free(tmppath), tmppath = NULL;
 				//				free(tmphost), tmphost = NULL;
@@ -500,7 +500,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 	return streamurl1;
 }
 
-char* streamlive(char* tmpurl1, char* tmppath1, int www, int incount)
+char* streamlive(char* tmpurl1, char* tmppath1, char* referer1, int www, int incount)
 {
 	debug(99, "tmpurl %s", tmpurl1);
 	debug(99, "tmppath %s", tmppath1);
@@ -533,7 +533,7 @@ char* streamlive(char* tmpurl1, char* tmppath1, int www, int incount)
 	char* urlid = NULL;
 	char* tokenid = NULL;
 
-				tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+				tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 ///////					
 				// fix espn
 				referer = ostrcat(tmpurl, NULL, 0, 0);
@@ -584,7 +584,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 
 						free(send), send = NULL;
 ///////
-						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 ///////
 
 						titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
@@ -615,7 +615,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 
 							free(send), send = NULL;
 ///////
-						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 ///////
 							titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
 			//				free(tmppath), tmppath = NULL;
@@ -697,7 +697,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 							free(tmpstr), tmpstr = NULL;
 
 							free(send), send = NULL;
-	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 
 							titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
 			//				free(tmppath), tmppath = NULL;
@@ -766,7 +766,7 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 								free(referer), referer = NULL;
 
 
-	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 								titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
 				//				free(tmppath), tmppath = NULL;
 				//				free(tmphost), tmphost = NULL;
@@ -783,6 +783,196 @@ printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
 	debug(99, "streamurl %s", streamurl);
 	debug(99, "streamurl1 %s", streamurl1);
 	return streamurl1;
+}
+
+char* zerocast(char* tmpurl, char* tmppath, char* referer, int www, int incount)
+{
+	debug(99, "tmpurl %s", tmpurl);
+	debug(99, "tmppath %s", tmppath);
+	debug(99, "referer %s", referer);
+	debug(99, "www %d", www);
+	debug(99, "incount %d", incount);
+	char* streamurl = NULL;
+
+	debug(99, "streamurl %s", streamurl);
+	return streamurl;
+}
+
+char* usachannels(char* tmpurl, char* tmppath, char* referer, int www, int incount)
+{
+	debug(99, "tmpurl %s", tmpurl);
+	debug(99, "tmppath %s", tmppath);
+	debug(99, "referer %s", referer);
+	debug(99, "www %d", www);
+	debug(99, "incount %d", incount);
+	char* streamurl = NULL;
+
+	debug(99, "streamurl %s", streamurl);
+	return streamurl;
+}
+
+char* cricfree(char* tmpurl, char* tmphost, char* referer, int www, int incount)
+{
+	int debuglevel = getconfigint("debuglevel", NULL);
+	debug(99, "tmpurl %s", tmpurl);
+	debug(99, "tmphost %s", tmphost);
+	debug(99, "referer %s", referer);
+	debug(99, "www %d", www);
+	debug(99, "incount %d", incount);
+
+	char* url = NULL;
+	char* token = NULL;
+	char* streamurl = NULL;
+	char* tmpstr = NULL;
+	char* tmplink = NULL;
+	char* fid = NULL;
+	char* width = NULL;
+	char* height = NULL;
+	char* pageurl = NULL;
+
+	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, referer, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), tmphost, NULL, tmpstr);
+
+//<script type='text/javascript'>id='espnuk'; width='620'; height='490';</script><script type='text/javascript' src='http://theactionlive.com/livegamecr.js'></script>
+//document.write('<iframe width="'+width+'" height="'+height+'" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" src="http://theactionlive.com/livegamecr2.php?id='+id+'&width='+width+'&height='+height+'&stretching='+stretching+'"></iframe>');
+
+	fid = string_resub("id='", "'", tmpstr, 0);
+	width = string_resub("v_width=", ";", tmpstr, 0);
+	height = string_resub("v_height=", ";", tmpstr, 0);
+	url = string_resub("src='", "'", tmpstr, 0);
+
+	if(width == NULL)
+		width = string_resub("width='", "'", tmpstr, 0);
+	if(height == NULL)
+		height = string_resub("height='", "'", tmpstr, 0);
+
+	if(width == NULL)
+		width = string_resub("var width = '", "'", tmpstr, 0);
+	if(height == NULL)
+		height = string_resub("var height = '", "'", tmpstr, 0);
+
+	debug(99, "fid: %s", fid);
+	debug(99, "width: %s", width);
+	debug(99, "height: %s", height);
+	debug(99, "url: %s", url);
+
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, tmpurl, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), tmphost, NULL, tmpstr);
+	pageurl = string_resub("src=\"", "\"", tmpstr, 0);
+	pageurl = string_replace_all(" ", "", pageurl, 1);
+	pageurl = string_replace_all("+v_", "+", pageurl, 1);
+	pageurl = string_replace("'+fid+'", "'+id+'", pageurl, 1);
+	pageurl = string_replace("'+id+'", fid, pageurl, 1);
+	pageurl = string_replace("'+width+'", width, pageurl, 1);
+	pageurl = string_replace("'+height+'", height, pageurl, 1);
+	pageurl = string_replace("'+stretching+'", "", pageurl, 1);
+
+	debug(99, "pageurl: %s", pageurl);
+	tmpstr = gethttps(pageurl, NULL, NULL, NULL, NULL, tmpurl, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), tmphost, NULL, tmpstr);
+
+	url = string_resub("file: \"", "\"", tmpstr, 0);
+
+	if(url == NULL)
+	{
+//		biggestplayer.me
+//		url: http://biggestplayer.me/playercr.js, file=tithek_global.h, func=gethttps, line=124
+
+		fid = string_resub("id='", "'", tmpstr, 0);
+		url = string_resub("src='", "'", tmpstr, 0);
+
+		debug(99, "url: %s", url);
+		debug(99, "fid: %s", fid);
+		debug(99, "width: %s", width);
+		debug(99, "height: %s", height);
+
+		url = string_replace_all(" ", "", url, 1);
+		url = string_replace_all("+v_", "+", url, 1);
+		url = string_replace_all("'+", "+", url, 1);
+		url = string_replace_all("+'", "+", url, 1);
+		url = string_replace("+fid+", "+id+", url, 1);
+		url = string_replace("+id+", fid, url, 1);
+		url = string_replace("+width+", width, url, 1);
+		url = string_replace("+height+", height, url, 1);
+		url = string_replace("+stretching+", "", url, 1);
+
+		debug(99, "url: %s", url);
+		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, tmpurl, 1);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), tmphost, NULL, tmpstr);
+
+//		url: http://biggestplayer.me/streamcrnoscrape.php?id=+id+&width=&height=,
+
+		url = string_resub("src=\"", "\"", tmpstr, 0);		
+		url = string_replace_all(" ", "", url, 1);
+		url = string_replace_all("+v_", "+", url, 1);
+		url = string_replace_all("'+", "+", url, 1);
+		url = string_replace_all("+'", "+", url, 1);
+		url = string_replace("+fid+", "+id+", url, 1);
+		url = string_replace("+id+", fid, url, 1);
+		url = string_replace("+width+", width, url, 1);
+		url = string_replace("+height+", height, url, 1);
+		url = string_replace("+stretching+", "", url, 1);
+
+		debug(99, "url: %s", url);
+		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, pageurl, 1);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast8_tmpstr", oitoa(incount), tmphost, NULL, tmpstr);
+		streamurl = string_resub("file: \"", "\"", tmpstr, 0);
+	}
+	else
+	{
+
+		token = string_resub("securetoken: \"", "\"", tmpstr, 0);
+		debug(99, "url: %s", url);
+		debug(99, "token: %s", token);
+
+		streamurl = ostrcat(streamurl, url, 1, 0);
+		streamurl = ostrcat(streamurl, " swfUrl=http://p.jwpcdn.com/6/11/jwplayer.flash.swf", 1, 0);
+	//	streamurl = ostrcat(streamurl, swfUrl, 1, 0);
+		streamurl = ostrcat(streamurl, " live=1", 1, 0);
+		streamurl = ostrcat(streamurl, " token=", 1, 0);
+		streamurl = ostrcat(streamurl, token, 1, 0);
+		streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
+		streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
+		streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, pageurl, 1, 0);
+	}
+/*
+
+	
+	streamurl = ostrcat(streamerl, " app=", 0, 0);
+	streamurl = ostrcat(streamurl, app, 1, 0);
+	streamurl = ostrcat(streamurl, " playpath=", 1, 0);
+	streamurl = ostrcat(streamurl, playpath, 1, 0);
+
+rtmp://31.220.2.148/redirect/espnusa swfUrl=http://p.jwpcdn.com/6/11/jwplayer.flash.swf live=1 token=%Zrey(nKa@#Z timeout=14 swfVfy=1 pageUrl=http://yotv.co/embed.php?live=espnusa&vw=620&vh=490
+rtmp://31.220.2.148/redirect/espnusa 
+swfUrl=http://p.jwpcdn.com/6/11/jwplayer.flash.swf 
+live=1 
+token=%Zrey(nKa@#Z 
+timeout=14 
+swfVfy=1 
+pageUrl=http://yotv.co/embed.php?live=espnusa&vw=620&vh=490
+
+<script type="text/javascript">
+    var playerInstance = jwplayer("myElement");
+    playerInstance.setup({
+    file: "rtmp://31.220.2.148/redirect/espnusa",
+    aboutlink: "http://yotv.co",
+    abouttext: "Yotv",
+    skin: "glow",
+    width: "620",
+    height: "490",
+    autostart: "true",
+    repeat: "true",
+    rtmp: {
+           securetoken: "%Zrey(nKa@#Z"
+       }
+      });
+</script>
+*/
+
+	debug(99, "streamurl %s", streamurl);
+	return streamurl;
 }
 
 char* tvtoast(char* link)
@@ -809,7 +999,9 @@ char* tvtoast(char* link)
 	char* cmd = NULL;
 	char* urlid = NULL;
 	char* tokenid = NULL;
-			
+
+
+
 	ip = string_replace("http://", "", (char*)link, 0);
 
 	if(ip != NULL)
@@ -825,7 +1017,7 @@ char* tvtoast(char* link)
 	char* tmplink = ostrcat(link, NULL, 0, 0);
 
 	debug(99, "link: %s", tmplink);
-	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast1_tmpstr", "1", tmphost, tmppath, tmpstr);
 
@@ -862,7 +1054,7 @@ char* tvtoast(char* link)
 //				tmpstr = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
 				tmplink = string_resub("<a href=\"", "\"", ret1[i].part, 0);
 				tmplink = string_replace_all(" ", "%20", tmplink, 1);
-				tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, 1);
+				tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
 
 				titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast3_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
 				free(tmppath), tmppath = NULL;
@@ -879,431 +1071,23 @@ char* tvtoast(char* link)
 				tmppath = string_replace_all(tmphost, "", tmpurl, 0);
 				tmppath = string_replace_all("http://", "", tmppath, 1);
 
-
+				debug(99, "tmpurl%d tmpurl: %s", incount, tmpurl);
+printf("test\n");
 				if(ostrstr(tmpurl, "www.streamlive.to") != NULL)
-					streamurl = streamlive(tmpurl, tmphost, www, incount);
+					streamurl = streamlive(tmpurl, tmphost, tmplink, www, incount);
+
+				if(ostrstr(tmpurl, "zerocast.tv") != NULL)
+					streamurl = zerocast(tmpurl, tmphost, tmplink, www, incount);
+
+				if(ostrstr(tmpurl, "usachannels.tv") != NULL)
+					streamurl = usachannels(tmpurl, tmphost, tmplink, www, incount);
+
+				if(ostrstr(tmpurl, "cricfree.sx") != NULL)
+					streamurl = cricfree(tmpurl, tmphost, tmplink, www, incount);
 
 				debug(99, "streamurl%d streamurl: %s", incount, streamurl);
 
-//////////////////////////////////////////
-if(streamurl == NULL)
-{
-//////////////////////////////////////////
 
-///////
-				tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
-///////					
-				// fix espn
-				referer = ostrcat(tmpurl, NULL, 0, 0);
-				fid = string_resub("fid=\"", "\"", tmpstr, 0);
-				if(fid == NULL)
-					fid = string_resub("fid='", "'", tmpstr, 0);
-
-				debug(99, "tvtoast3_tmpstr%d fid: %s", incount, fid);
-
-				titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
-				free(tmppath), tmppath = NULL;
-//				free(tmphost), tmphost = NULL;
-				free(tmpurl), tmpurl = NULL;
-
-				if(ostrstr(tmpstr, "rtmp://") != NULL || ostrstr(tmpstr, "rtmpe://") != NULL)
-				{
-					streamurl = getrtmp(tmpstr, tmphost, tmppath, &typemsg, fid, incount);
-				}
-
-				if(www == 1)
-				{
-printf("tvtoast4_tmpstr%d: if www\n", incount);
-					if(ostrstr(tmpstr, "Moved Permanently") != NULL && ostrstr(tmphost, "www.") == NULL)
-					{
-printf("tvtoast4_tmpstr%d: if www if Moved Permanently\n", incount);
-						printf("found Moved Permanently\n");
-						free(tmpstr), tmpstr = NULL;
-						tmpstr = ostrcat("www.", tmphost, 0, 0);
-						free(tmphost), tmphost = NULL;
-						tmphost = ostrcat(tmpstr, NULL, 0, 0);
-					}
-					else
-					{
-printf("tvtoast4_tmpstr%d: if www else Moved Permanently\n", incount);
-
-						if(fid == NULL)
-							fid = string_resub("fid='", "'", tmpstr, 0);
-						free(tmppath), tmppath = NULL;
-						free(tmphost), tmphost = NULL;
-						tmpurl = string_resub("src='", "'", tmpstr, 0);
-//						if(tmpurl == NULL)
-//							tmpurl = string_resub("src=\"", "\"", tmpstr, 0);
-							
-						free(tmpstr), tmpstr = NULL;						
-						tmphost = string_resub("http://", "/", tmpurl, 0);		
-						tmppath = string_replace_all(tmphost, "", tmpurl, 0);
-						tmppath = string_replace_all("http://", "", tmppath, 1);
-
-						free(send), send = NULL;
-///////
-						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
-///////
-
-						titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
-		//				free(tmppath), tmppath = NULL;
-		//				free(tmphost), tmphost = NULL;
-		//				free(tmpurl), tmpurl = NULL;
-
-						streamer = string_resub("streamer: \"", "\"", tmpstr, 0);
-						debug(99, "tvtoast5_tmpstr%d streamer: %s", incount, streamer);
-						debug(99, "tvtoast5_tmpstr%d fid: %s", incount, fid);
-
-						if(streamer == NULL)// && fid == NULL)
-						{
-							printf("streamer and fid null\n");
-						
-							tmpurl = string_resub("src='", "'", tmpstr, 0);
-							if(tmpurl == NULL || ostrncmp("http://", tmpurl, 7))
-								tmpurl = string_resub("src=\"", "\"", tmpstr, 0);
-							if(tmpurl == NULL || ostrncmp("http://", tmpurl, 7))
-								tmpurl = string_resub("var url = '", "'", tmpstr, 0);
-
-							debug(99, "tvtoast5_tmpstr%d tmpurl=%s", tmpurl)
-
-							free(tmpstr), tmpstr = NULL;						
-							tmphost = string_resub("http://", "/", tmpurl, 0);		
-							tmppath = string_replace_all(tmphost, "", tmpurl, 0);
-							tmppath = string_replace_all("http://", "", tmppath, 1);
-
-							free(send), send = NULL;
-///////
-						tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
-///////
-							titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
-			//				free(tmppath), tmppath = NULL;
-			//				free(tmphost), tmphost = NULL;
-							free(tmpurl), tmpurl = NULL;
-
-/////////////////////////
-
-							swfUrl = string_resub("<script type=\"text/javascript\" src=\"", "\"", tmpstr, 0);
-							fid = string_resub("'file':               '", "',", tmpstr, 0);
-
-							debug(99, "tvtoast6_tmpstr%d swfUrl=%s", swfUrl)
-							debug(99, "tvtoast6_tmpstr%d fid=%s", fid)
-
-							if(ostrstr(tmpstr, "rtmp://") != NULL)
-							{
-								streamurl = getrtmp(tmpstr, tmphost, tmppath, &typemsg, fid, incount);
-								debug(99, "tvtoast6_tmpstr%d set streamurl=%s", streamurl)
-
-								//rtmp://37.220.32.52:443/liverepeater playpath=stream3 swfUrl=http://static.surk.tv/player.swf pageUrl=http://1cdn.filotv.pw/stream3.html token=#atd%#$ZH
-							}
-						}
-
-						debug(99, "tvtoast6_tmpstr%d streamurl=%s", streamurl)
-						
-						if(streamurl == NULL)
-						{
-							streamer = string_replace_all("\\", "", streamer, 1);
-						
-							playpath = string_resub("file: \"", "\"", tmpstr, 0);
-							playpath = string_replace_all(".flv", "", playpath, 1);
-						
-							swfUrl = string_resub("type: 'flash', src: '", "'", tmpstr, 0);
-							swfUrl = string_replace_all("//", "http://", swfUrl, 1);
-
-					//		pageUrl = ostrcat("http://www.ilive.to", NULL, 0, 0);
-							printf("streamer: %s\n", streamer);
-							app = string_resub("/edge/", "\0", streamer, 0);
-							
-							app = oregex(".*(/edge/) .*", streamer);
-						
-							app = ostrcat(streamer, NULL, 0, 0);
-							url = string_resub("rtmp://", "/", app, 0);		
-							app = string_replace(url, "", app, 0);
-							app = string_replace_all("rtmp:///", "", app, 1);
-						}
-
-						while(ostrstr(tmpstr, "Set-Cookie:") != NULL)
-						{
-							tmpstr4 = string_resub("Set-Cookie:", ";", tmpstr, 0);
-							
-							if(tmpstr4 != NULL)
-							{
-								tmpstr5 = ostrcat("Set-Cookie: ", tmpstr4, 0, 0);
-								tmpstr5 = ostrcat(tmpstr5, ";", 1, 0);
-								tmpstr = string_replace(tmpstr5, "", tmpstr, 1);
-								tmpstr4 = ostrcat(tmpstr4, "; ", 1, 0);
-								Cookie1 = ostrcat(Cookie1, tmpstr4, 1, 0);
-							}
-							free(tmpstr4), tmpstr4 = NULL; 
-							free(tmpstr5), tmpstr5 = NULL; 
-						}
-
-						debug(99, "tvtoast6_tmpstr%d check getJSON")
-
-						if(ostrstr(tmpstr, "getJSON(\"") != NULL)
-						{
-						debug(99, "tvtoast6_tmpstr%d found getJSON")
-
-							printf("found getJSON\n");
-							tmpurl = string_resub("getJSON(\"", "\"", tmpstr, 0);
-							tmpurl = string_replace_all("//", "http://", tmpurl, 1);
-
-							printf("tmpurl: %s\n", tmpurl);
-							tmphost = string_resub("http://", "/", tmpurl, 0);			
-							tmppath = string_replace_all(tmphost, "", tmpurl, 0);
-							tmppath = string_replace_all("http://", "", tmppath, 1);
-							free(fid), fid = NULL;
-							free(tmpstr), tmpstr = NULL;
-
-							free(send), send = NULL;
-	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
-
-							titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
-			//				free(tmppath), tmppath = NULL;
-							free(tmphost), tmphost = NULL;
-		//					free(tmpurl), tmpurl = NULL;
-
-
-							token = string_resub("{\"token\":\"", "\"", tmpstr, 0);
-
-							streamurl1 = ostrcat(streamer, " app=", 0, 0);
-							streamurl1 = ostrcat(streamurl1, app, 1, 0);
-							streamurl1 = ostrcat(streamurl1, " playpath=", 1, 0);
-							streamurl1 = ostrcat(streamurl1, playpath, 1, 0);
-							streamurl1 = ostrcat(streamurl1, " swfUrl=", 1, 0);
-							streamurl1 = ostrcat(streamurl1, swfUrl, 1, 0);
-							streamurl1 = ostrcat(streamurl1, " live=1", 1, 0);
-							streamurl1 = ostrcat(streamurl1, " timeout=15", 1, 0);
-							streamurl1 = ostrcat(streamurl1, " token=", 1, 0);
-							streamurl1 = ostrcat(streamurl1, token, 1, 0);
-//							streamurl1 = ostrcat(streamurl1, " pageUrl=http://", 1, 0);
-//							streamurl1 = ostrcat(streamurl1, tmphost, 1, 0);
-							streamurl1 = ostrcat(streamurl1, " pageUrl=", 1, 0);
-							streamurl1 = ostrcat(streamurl1, tmpurl, 1, 0);
-							typemsg = ostrcat(tmphost, NULL, 0, 0);
-						}
-						else if(fid != NULL)
-						{
-							printf("found fid: %s\n", fid);
-							tmpurl = string_resub("src=\"", "'", tmpstr, 0);
-
-							tmphost = string_resub("http://", "/", tmpurl, 0);			
-							tmppath = string_replace_all(tmphost, "", tmpurl, 0);
-							tmppath = string_replace_all("http://", "", tmppath, 1);
-							tmppath = ostrcat(tmppath, fid, 1, 0);
-
-							//free(fid), fid = NULL;
-							free(tmpstr), tmpstr = NULL;
-						}
-						else
-						{
-							printf("found no fid: %s\n", fid);
-							streamurl1 = string_resub("streamer: \"", "\"", tmpstr, 0);
-							if(streamurl1 != NULL)
-								streamurl1 = string_replace_all("\\", "", streamurl1, 1);
-
-							if(streamurl1 == NULL)	
-							{				
-								free(tmppath), tmppath = NULL;
-								free(tmphost), tmphost = NULL;
-								free(tmpurl), tmpurl = NULL;
-								tmpurl = string_resub("var url = '", "'", tmpstr, 0);
-
-								if(tmpurl == NULL)
-									tmpurl = string_resub("src='", "'", tmpstr, 0);
-								if(tmpurl == NULL)
-									tmpurl = string_resub("src=\"", "\"", tmpstr, 0);
-								
-								if(ostrstr(tmpstr, "<h1>This channel can only work in") != NULL)
-									referer = string_resub("<h1>This channel can only work in <a href='", "'", tmpstr, 0);
-
-								free(tmpstr), tmpstr = NULL;		
-								tmphost = string_resub("http://", "/", tmpurl, 0);
-								tmppath = string_replace_all(tmphost, "", tmpurl, 0);
-								tmppath = string_replace_all("http://", "", tmppath, 1);
-
-								free(referer), referer = NULL;
-
-
-	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
-								titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
-				//				free(tmppath), tmppath = NULL;
-				//				free(tmphost), tmphost = NULL;
-								free(tmpurl), tmpurl = NULL;
-
-
-							}
-
-							streamurl1 = string_resub("streamer: \"", "\"", tmpurl, 0);
-						}
-					}
-				}
-				else
-				{
-					printf("found www\n");
-
-					free(tmppath), tmppath = NULL;
-					free(tmphost), tmphost = NULL;
-					free(tmpurl), tmpurl = NULL;
-					tmpurl = string_resub("var url = '", "'", tmpstr, 0);
-					free(tmpstr), tmpstr = NULL;		
-					
-					tmphost = string_resub("http://", "/", tmpurl, 0);
-					tmppath = string_replace_all(tmphost, "", tmpurl, 0);
-					tmppath = string_replace_all("http://", "", tmppath, 1);
-				}
-
-				if(ostrstr(tmpstr, "<h1>This channel can only work in") != NULL)
-				{
-					referer = string_resub("<h1>This channel can only work in <a href='", "'", tmpstr, 0);
-				}								
-
-				free(tmpstr), tmpstr = NULL;
-				free(send), send = NULL;
-
-	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, 1);
-
-				titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast8_tmpstr", oitoa(incount), tmphost, tmppath, tmpstr);
-//				free(tmppath), tmppath = NULL;
-//				free(tmphost), tmphost = NULL;
-				free(tmpurl), tmpurl = NULL;
-
-
-				swfUrl = string_resub("<script type=\"text/javascript\" src=\"", "\"", tmpstr, 0);
-
-				if(ostrstr(tmpstr, "rtmpe://") != NULL)
-				{
-					streamurl = getrtmp(tmpstr, tmphost, tmppath, &typemsg, fid, incount);
-				}
-
-				free(tmphost), tmphost = NULL;				
-				if(streamurl1 == NULL)
-					streamurl1 = string_resub("file: \"", "\"", tmpstr, 0);			
-
-				if(streamurl1 == NULL)
-				{
-					streamid = string_resub("stream=\"", "\"", tmpstr, 0);
-					if(streamid != NULL)
-					{
-						tmpstr1 = string_resub("<div style=\"visibility:hidden;\">", "</body>", tmpstr, 0);				
-						tmpurl = string_resub("type=\"text/javascript\" src=\"", "\"", tmpstr1, 0);				
-
-						tmphost = string_resub("http://", "/", tmpurl, 0);
-						tmppath = string_replace_all(tmphost, "", tmpurl, 0);
-						tmppath = string_replace_all("http://", "", tmppath, 1);
-
-						tmpstr = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
-
-						while(ostrstr(tmpstr, "\\") != NULL)
-						{
-							tmpstr1 = string_resub("\"", "\"", tmpstr, 0);
-							tmpstr2 = string_replace_all("\\x", "%", tmpstr1, 0);
-							
-							if(tmpstr2 != NULL)
-							{
-								htmldecode(tmpstr2, tmpstr2);
-
-								tmpstr3 = ostrcat("\"", tmpstr1, 0, 0);
-								tmpstr3 = ostrcat(tmpstr3, "\"", 1, 0);
-
-								tmpstr4 = ostrcat("'", tmpstr2, 0, 0);
-								tmpstr4 = ostrcat(tmpstr4, "'", 1, 0);
-
-								tmpstr = string_replace(tmpstr3, tmpstr4, tmpstr, 1);
-								free(tmpstr1), tmpstr1 = NULL;
-								free(tmpstr2), tmpstr2 = NULL;
-							}
-							else
-								break;
-
-							free(tmpstr1), tmpstr1 = NULL; 
-							free(tmpstr2), tmpstr2 = NULL; 
-							free(tmpstr3), tmpstr3 = NULL;
-							free(tmpstr4), tmpstr4 = NULL;
-						}
-
-
-						titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast_tmpstr9", oitoa(incount), tmphost, tmppath, tmpstr);
-		//				free(tmppath), tmppath = NULL;
-		//				free(tmphost), tmphost = NULL;
-						free(tmpurl), tmpurl = NULL;
-
-
-						urlid = oregex(".*\\[(.*)\\]\\+stream.*", tmpstr);
-						tokenid = oregex(".*securetoken:_0x.*\\[(.*)\\].*", tmpstr);
-						pageurlid = oregex(".*abouttext:_0x.*\\[(.*)\\],width.*", tmpstr);
-
-						tmpstr1 = string_resub("[", "]", tmpstr, 0);
-						int count2 = 0;
-						struct splitstr* ret2 = NULL;
-						ret2 = strsplit(tmpstr1, ",", &count2);
-
-						if(count2 > atoi(urlid)) url = string_resub("'", "'", ret2[atoi(urlid)].part, 0);
-						if(count2 > atoi(tokenid)) token = string_resub("'", "'", ret2[atoi(tokenid)].part, 0);
-						if(count2 > atoi(pageurlid)) pageurl = string_resub("'", "'", ret2[atoi(pageurlid)].part, 0);
-
-						printf("urlid: %s\n",urlid);
-						printf("tokenid: %s\n",tokenid);
-						printf("pageurlid: %s\n",pageurlid);
-						printf("url: %s\n",url);
-						printf("token: %s\n",token);
-						printf("1pageurl: %s\n",pageurl);
-
-						free(ret2), ret2 = NULL;
-
-//rtmpdump -r rtmpe://strm.ukcast.tv/redirect -y bhousaa0 --debug
-
-						cmd = ostrcat("rtmpdump -r ", NULL, 0, 0);
-						cmd = ostrcat(cmd, url, 1, 0);
-						cmd = ostrcat(cmd, streamid, 1, 0);
-						cmd = ostrcat(cmd, " --debug > /tmp/tithek/rtmp.log 2>&1", 1, 0);												
-						system("rm -rf /tmp/tithek/rtmp.log");
-						
-						free(tmpstr), tmpstr = NULL;
-						printf("cmd: %s\n",cmd);
-						system(cmd);
-						free(cmd),cmd = NULL;
-
-						tmpstr = command("cat /tmp/tithek/rtmp.log");
-
-						streamip = string_resub("redirect, STRING:", ">", tmpstr, 0);
-						strstrip(streamip);
-
-						free(tmpstr), tmpstr = NULL;
-		
-						streamurl = ostrcat(streamip, NULL, 0, 0);
-						streamurl = ostrcat(streamurl, " playpath=", 1, 0);
-						streamurl = ostrcat(streamurl, streamid, 1, 0);
-//						streamurl = ostrcat(streamurl, " swfUrl=http://b17014255105be61b178-d8c0dbd82389bad2adcb7a22d1883b64.r92.cf5.rackcdn.com/jwplayer.flash.swf live=1 pageUrl=http://envivo.pw/ token=OOG17t.x#K9Vh#|", 1, 0);
-
-//						streamurl = ostrcat(streamurl, " swfUrl=http://b17014255105be61b178-d8c0dbd82389bad2adcb7a22d1883b64.r92.cf5.rackcdn.com/jwplayer.flash.swf", 1, 0);
-						streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
-						streamurl = ostrcat(streamurl, swfUrl, 1, 0);
-						streamurl = ostrcat(streamurl, " live=1", 1, 0);
-//						streamurl = ostrcat(streamurl, " pageUrl=http://envivo.pw/", 1, 0);
-//						streamurl = ostrcat(streamurl, pageUrl, 1, 0);
-						streamurl = ostrcat(streamurl, " pageUrl=http://", 1, 0);
-						streamurl = ostrcat(streamurl, pageurl, 1, 0);
-						streamurl = ostrcat(streamurl, "/", 1, 0);
-//						typemsg = ostrcat(pageurl, NULL, 0, 0);
-							
-						streamurl = ostrcat(streamurl, " token=", 1, 0);
-						streamurl = ostrcat(streamurl, token, 1, 0);
-						
-						free(urlid), urlid = NULL;
-						free(tokenid), tokenid = NULL;
-						free(pageurlid), pageurlid = NULL;
-						free(url), url = NULL;
-						free(token), token = NULL;
-						free(pageurl), pageurl = NULL;
-						
-					}
-				}
-				else
-					streamurl = ostrcat(streamurl1, NULL, 0, 0);
-
-				free(streamurl1), streamurl1 = NULL;
-////////////////////
-}
 ////////////////////
 				title = ostrcat("Rtmpe Stream (", NULL, 0, 0);
 				title = ostrcat(title, oitoa(incount), 1, 1);
