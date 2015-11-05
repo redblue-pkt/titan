@@ -119,7 +119,7 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
 
 // flag = 0 (without header in output)
 // flag = 1 (with header in output)
-char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, int flag)
+char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, char* referer, int flag)
 {
 	debug(99, "url: %s", url);
 
@@ -176,6 +176,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, i
 
 		/* some servers don't like requests that are made without a user-agent field, so we provide one */
 		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
+//		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko");
 
 		// This is occassionally required to stop CURL from verifying the peers certificate.
 		// CURLOPT_SSL_VERIFYHOST may also need to be TRUE or FALSE if
@@ -193,7 +194,10 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, i
 		curl_easy_setopt(curl_handle, CURLOPT_COOKIEFILE, "/mnt/network/cookies");
 		curl_easy_setopt(curl_handle, CURLOPT_COOKIEJAR, "/mnt/network/cookies");
 		curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
-		curl_easy_setopt(curl_handle, CURLOPT_AUTOREFERER, 1L);
+		if(referer == NULL)
+			curl_easy_setopt(curl_handle, CURLOPT_AUTOREFERER, 1L);
+		else
+			curl_easy_setopt(curl_handle, CURLOPT_REFERER, referer);
 
 		/* get it! */
 		res = curl_easy_perform(curl_handle);

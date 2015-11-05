@@ -52,7 +52,7 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	debug(99, "tmphost: %s", tmphost);
 	url = ostrcat(tmphost, tmppath, 0, 0);
 	debug(99, "url: %s", url);
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/thevideo1_get", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)

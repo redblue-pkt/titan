@@ -228,7 +228,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 
 ///////////////////////////
 		debug(99, "url: %s", url);
-		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
+		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 ///////////////
 		pages = string_resub("<span class=\\\"pagnDisabled\\\">", "</span>", tmpstr, 0);	
 		nextpage = string_resub("<span class=\\\"pagnLink\\\"><a href=\\\"", "\\\"", tmpstr, 0);	
@@ -586,7 +586,7 @@ void amazon_deinit()
 
 	unlink("/tmp/amazon_tmpstr_get0_logout");
 
-	tmpstr = gethttps("https://www.amazon.de/ap/signin?_encoding=UTF8&openid.assoc_handle=deflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav__gno_signout%26signIn%3D1%26useRedirectOnSuccess%3D1", NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps("https://www.amazon.de/ap/signin?_encoding=UTF8&openid.assoc_handle=deflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26action%3Dsign-out%26path%3D%252Fgp%252Fyourstore%252Fhome%26ref_%3Dnav__gno_signout%26signIn%3D1%26useRedirectOnSuccess%3D1", NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/amazon_tmpstr_get0_logout", NULL, NULL, NULL, tmpstr);	
 	free(tmpstr), tmpstr = NULL;
 	printf("amazon_deinit end\n");
@@ -612,7 +612,7 @@ char* amazon(char* link)
 	url = ostrcat(url, "/?_encoding=UTF8", 1, 0);
 
 //////////////////////////////////////////////////
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get1", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
@@ -696,7 +696,7 @@ char* amazon(char* link)
 	printf("lang: %s\n", lang);
 
 //////////////////////////////////////////////////	
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get2", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
@@ -713,7 +713,7 @@ char* amazon(char* link)
 	free(tmpstr), tmpstr = NULL;
 
 //////////////////////////////////////////////////	
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get3", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
@@ -749,7 +749,7 @@ char* amazon(char* link)
 	url = ostrcat(url, link, 1, 0);
 
 //////////////////////////////////////////////////	
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/amazon_streamurl_get4", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
@@ -925,7 +925,7 @@ int amazon_login()
 	unlink("/tmp/amazon_tmpstr_get3_blank");
 	unlink("/tmp/amazon_tmpstr_get4_blank");
 
-	tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, NULL, NULL, NULL, 1);
 //	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/amazon_tmpstr_get1_blank", NULL, NULL, NULL, tmpstr);	
 
@@ -949,7 +949,7 @@ int amazon_login()
 
 	if(ret == 0)
 	{
-		tmpstr = gethttps("https://www.amazon.de/gp/sign-in.html", NULL, NULL, NULL, NULL, 1);
+		tmpstr = gethttps("https://www.amazon.de/gp/sign-in.html", NULL, NULL, NULL, NULL, NULL, 1);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_get2_sign-in", NULL, NULL, NULL, tmpstr);	
 
 		char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"appActionToken\" value=");
@@ -1031,17 +1031,17 @@ int amazon_login()
 		hash = ostrcat(hash, "&password=", 1, 0);
 		hash = ostrcat(hash, pass, 1, 0);
 	
-		tmpstr = gethttps("https://www.amazon.de/ap/signin", NULL, hash, NULL, NULL, 1);
+		tmpstr = gethttps("https://www.amazon.de/ap/signin", NULL, hash, NULL, NULL, NULL, 1);
 //		debug(99, "ret=%s", tmpstr);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_post1", NULL, NULL, NULL, tmpstr);	
 		free(tmpstr), tmpstr = NULL;
 
-		tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, NULL, NULL, 1);
+		tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, NULL, NULL, NULL, 1);
 //		debug(99, "tmpstr: %s", tmpstr);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_get3_blank", NULL, NULL, NULL, tmpstr);	
 		free(tmpstr), tmpstr = NULL;
 
-		tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, NULL, NULL, 1);
+		tmpstr = gethttps("https://www.amazon.de/", NULL, NULL, NULL, NULL, NULL, 1);
 //		debug(99, "tmpstr: %s", curlretbuf);
 		titheklog(debuglevel, "/tmp/amazon_tmpstr_get4_blank", NULL, NULL, NULL, tmpstr);	
 		free(tmpstr), tmpstr = NULL;

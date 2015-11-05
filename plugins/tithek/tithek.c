@@ -54,6 +54,7 @@
 #include "thevideo.h"
 #include "mightyupload.h"
 #include "cloudzilla.h"
+#include "vivo.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

@@ -660,7 +660,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			if(pic == 1)
 			{
 				if(ssl == 1)
-					gethttps(link, localfile, NULL, NULL, NULL, 0);
+					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
 				else if(tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 				else

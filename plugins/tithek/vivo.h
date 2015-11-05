@@ -30,7 +30,7 @@ http://bella.storage.vivo.sx:8080/get/0000106725?e=1446588963&s=300&m=video/mp4&
 */
 
 	debug(99, "link: %s", tmplink);
-	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/vivo1_get", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)
@@ -53,7 +53,7 @@ http://bella.storage.vivo.sx:8080/get/0000106725?e=1446588963&s=300&m=video/mp4&
 	post = ostrcat(post, hash, 1, 0);
 	debug(99, "post: %s", post);
 
-	tmpstr = gethttps(tmplink, NULL, post, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, post, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/vivo2_post", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)
@@ -70,7 +70,7 @@ http://bella.storage.vivo.sx:8080/get/0000106725?e=1446588963&s=300&m=video/mp4&
 
 	streamlink = string_resub("data-url=\"", "\"", tmpstr, 0);
 
-	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/vivo3_get", NULL, NULL, NULL, tmpstr);	
 
 	titheklog(debuglevel, "/tmp/vivo1_streamlink", NULL, NULL, NULL, streamlink);

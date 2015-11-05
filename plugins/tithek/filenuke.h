@@ -39,7 +39,7 @@ http://37.252.3.244/d3/788e480510b692c80b6cc4bcbc2f541f/v.flv|User-Agent=Mozilla
 	}
 
 	debug(99, "url: %s", tmplink);
-	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/filenuke1_get", NULL, NULL, NULL, tmpstr);	
 
 	tmppath = string_resub("id=\"go-next\" href=\"", "\"", tmpstr, 0);		
@@ -55,7 +55,7 @@ http://37.252.3.244/d3/788e480510b692c80b6cc4bcbc2f541f/v.flv|User-Agent=Mozilla
 	debug(99, "tmplink: %s", tmplink);
 
 	debug(99, "url: %s", tmplink);
-	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/filenuke2_get", NULL, NULL, NULL, tmpstr);	
 
 // not needed
