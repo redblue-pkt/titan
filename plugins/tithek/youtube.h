@@ -35,6 +35,11 @@ char* youtube(char* link)
 	tmppath = ostrcat(path, NULL, 0, 0);
 	tmppath = string_replace_all("watch?v=", "get_video_info?&video_id=", tmppath, 1);
 
+
+	tmplink = ostrcat(link, NULL, 0, 0);
+	tmplink = string_replace_all("watch?v=", "get_video_info?&video_id=", tmplink, 1);
+	tmplink = string_replace_all("/youtu.be", "/www.youtube.com", tmplink, 1);
+
 /* spox.com
 
 http://www.spox.com/de/sport/ussport/nba/live-stream/1310/miami-heat-washington-wizards-frank-buschmann.html
@@ -93,20 +98,13 @@ and get to youtube
 			if(tmpstr != NULL)
 			{
 				htmldecode(tmpstr,tmpstr);
-				writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr_htmldecode1", tmpstr, 0);
 				htmldecode(tmpstr,tmpstr);
-				writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr_htmldecode2", tmpstr, 0);
 				htmldecode(tmpstr,tmpstr);
-				writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr_htmldecode3", tmpstr, 0);
 				htmldecode(tmpstr,tmpstr);
-				writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr_htmldecode4", tmpstr, 0);
 				htmldecode(tmpstr,tmpstr);
-				writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr_htmldecode5", tmpstr, 0);
 				tmpstr = string_replace_all("\n", " ", tmpstr, 1);
 				tmpstr = string_replace_all("&url=", "\n", tmpstr, 1);
-				writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr_string_replace_all", tmpstr, 0);
 
-//				ret1 = strsplit(string_decode(tmpstr,0),",",&count);
 				ret1 = strsplit(tmpstr,"\n",&count);
 
 				for(i = 0; i < count; i++)
@@ -124,17 +122,8 @@ and get to youtube
 						streamurl = ostrcat(ret1[i].part, NULL, 0, 0);
 						streamurl = string_replace_all(",itag=", "\0", streamurl, 1);
 
-//						free(streamurl), streamurl = NULL;
-//						if(murl != NULL && sig != NULL)
-//						if(murl != NULL)
 						if(streamurl != NULL)
 						{
-/*
-							streamurl = ostrcat(murl, NULL, 0, 0);
-							streamurl = ostrcat(streamurl, "&signature=", 1, 0);
-							streamurl = ostrcat(streamurl, sig, 1, 0);
-							streamurl = string_decode(streamurl,0);
-*/															
 							if(ostrstr(ret1[i].part, "itag=85") != NULL)
 							{
 								title = ostrcat("MP4 520p H.264 3D", NULL, 0, 0);
@@ -387,7 +376,7 @@ Cw5VFOKKAbQQ%2CvnoQ5lkBVhU%2CeocCPDxKq1o%2ChSjIz8oQuko%2CJDKGWaCglRM%2CbZsqdTrr1
 						path = ostrcat("watch?v=", id, 0, 0);
 
 						line = ostrcat(line, title, 1, 0);
-						line = ostrcat(line, "#https://www.youtube.com/get_video_info?&video_id=", 1, 0);
+						line = ostrcat(line, "#http://www.youtube.com/get_video_info?&video_id=", 1, 0);
 						line = ostrcat(line, id, 1, 0);
 						                                                
 //						line = ostrcat(line, "#http://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=", 1, 0);
