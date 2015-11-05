@@ -836,7 +836,7 @@ msgstr ""
 msgid "Alpha Romanie G98"
 msgstr ""
 
-#: tithek.c:94
+#: tithek.c:95
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
@@ -2172,7 +2172,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1344 youtube.h:196 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1128 youtube.h:235 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -3252,7 +3252,7 @@ msgstr ""
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
-#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:63 mightyupload.h:69
+#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie4k.h:36 movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30
 #: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
 #: MultiImage.c:262 MultiImage.c:273 MultiImage.c:533 MultiImage.c:591
@@ -3305,7 +3305,7 @@ msgstr ""
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1042
 #: titan.c:1051 titan.c:1179 titan.c:1200 titan.c:1206 titan.c:1217
-#: titan.c:1223 tithek.c:94 tithek_global.h:77 tithek.h:692 tithek.h:1248
+#: titan.c:1223 tithek.c:95 tithek_global.h:77 tithek.h:692 tithek.h:1248
 #: tithek.h:1309 tithek.h:1539 tithek.h:1561 tithek.h:1578 tithek.h:1810
 #: tithek.h:1970 tithek.h:2245 tithek.h:2273 tithek.h:2289 tithek.h:2301
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3318,7 +3318,7 @@ msgstr ""
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
 #: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:259 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Exit"
 
@@ -5899,7 +5899,7 @@ msgstr ""
 #: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
 #: mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
-#: mightyupload.h:63 mightyupload.h:69 movie4k.h:36 movie4k.h:52 movie4k.h:96
+#: mightyupload.h:68 mightyupload.h:74 movie4k.h:36 movie4k.h:52 movie4k.h:96
 #: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:273
 #: MultiImage.c:353 MultiImage.c:401 myvideo.h:86 networkbrowser.h:966
@@ -5934,7 +5934,7 @@ msgstr ""
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1179
-#: titan.c:1200 titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:94
+#: titan.c:1200 titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:95
 #: tithek_global.h:77 tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539
 #: tithek.h:1561 tithek.h:1810 tithek.h:1970 tithek.h:2245 tithek.h:2273
 #: tithek.h:2289 tithek.h:2301 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -5947,7 +5947,7 @@ msgstr ""
 #: vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
 #: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86
 #: webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
-#: xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:220
+#: xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:259
 #: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Messaggio"
@@ -6517,7 +6517,7 @@ msgstr ""
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
-#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:63 mightyupload.h:69
+#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie4k.h:36 movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30
 #: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
 #: MultiImage.c:46 MultiImage.c:175 MultiImage.c:244 MultiImage.c:262
@@ -6568,7 +6568,7 @@ msgstr ""
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1042 titan.c:1051 titan.c:1179 titan.c:1200
-#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:94 tithek_global.h:77
+#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:95 tithek_global.h:77
 #: tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539 tithek.h:1561
 #: tithek.h:1578 tithek.h:1810 tithek.h:1970 tithek.h:2245 tithek.h:2273
 #: tithek.h:2289 tithek.h:2301 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6589,7 +6589,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
 #: webif_rc_virtual.atemio-nemesis.h:20 webif_rc_virtual.h:20 xupnpd.h:57
 #: xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:259 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "Ok"
 
@@ -8627,9 +8627,9 @@ msgstr ""
 #: rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505
 #: rtl2now.h:507 rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:543
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
-#: tectime.h:13 tectime.h:15 tithek_global.h:424 tithek_global.h:426
-#: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:1373 tvtoast.h:1375 xvideos.h:56
-#: xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361
+#: tectime.h:13 tectime.h:15 tithek_global.h:428 tithek_global.h:430
+#: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:1157 tvtoast.h:1159 xvideos.h:56
+#: xvideos.h:58 youtube.h:284 youtube.h:286 youtube.h:439 youtube.h:441
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Cerca"
@@ -9479,7 +9479,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1344 youtube.h:196 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1128 youtube.h:235 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
@@ -9898,7 +9898,7 @@ msgstr ""
 
 #: cloudzilla.h:39 divxstage.h:150 faststream.h:79 faststream.h:90
 #: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
-#: firedrive.h:122 firedrive.h:137 flashx.h:67 letwatch.h:59 mightyupload.h:63
+#: firedrive.h:122 firedrive.h:137 flashx.h:67 letwatch.h:59 mightyupload.h:68
 #: movreel.h:137 movshare.h:157 played.h:84 played.h:101 played.h:113
 #: played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
@@ -9915,7 +9915,7 @@ msgid "The page not found, file removed"
 msgstr ""
 
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:156 faststream.h:109
-#: filenuke.h:73 letwatch.h:65 mightyupload.h:69 movshare.h:78 movshare.h:163
+#: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:78 movshare.h:163
 #: thevideo.h:66 vidbull.h:73 vidto.h:73 vidto.h:180 vivo.h:44 vivo.h:67
 #: vodlocker.h:80
 msgid "The video no longer exists"
@@ -10202,7 +10202,7 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:117
+#: tithek.c:118
 msgid "Tithek - Mainmenu"
 msgstr ""
 
@@ -13477,7 +13477,7 @@ msgstr ""
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
-#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:172
+#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:211
 #: zdf.h:86
 msgid "unknown"
 msgstr "sconosciuto"
