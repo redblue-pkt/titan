@@ -299,7 +299,6 @@ char* tvtoast(char* link)
 	char* streamurl = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	char* title = NULL, *pic = NULL;
 	char* typemsg = NULL;
-	char* referer = NULL;
 	char* host = NULL;
 	char* path = NULL;
 	char* url = NULL;
@@ -336,7 +335,7 @@ char* tvtoast(char* link)
 
 				url = string_resub("<a href=\"", "\"", ret1[i].part, 0);
 				url = string_replace_all(" ", "%20", url, 1);
-				tmpstr = gethttps(referer, NULL, NULL, NULL, NULL, NULL, 1);
+				tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 				host = string_resub("http://", "/", url, 0);
 				path = string_replace_all(host, "", url, 0);
 				path = string_replace_all("http://", "", path, 1);
