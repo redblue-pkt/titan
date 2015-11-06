@@ -73,6 +73,14 @@ char* hoster(char* url)
 		streamurl = cloudzilla(url);
 	else if(ostrstr(tmplink, "vivo") != NULL)
 		streamurl = vivo(url);
+	else if(ostrstr(tmplink, "streamlive") != NULL)
+		streamurl = streamlive(url, 0);
+	else if(ostrstr(tmplink, "cricfree") != NULL)
+		streamurl = cricfree(url, 0);
+	else if(ostrstr(tmplink, "zerocast") != NULL)
+		streamurl = zerocast(url, 0);
+	else if(ostrstr(tmplink, "usachannels") != NULL)
+		streamurl = usachannels(url, 0);
 	else
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
