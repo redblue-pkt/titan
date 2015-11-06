@@ -1,9 +1,9 @@
 #ifndef TVTOAST_H
 #define TVTOAST_H
 
-char* streamlive(char* link, char* referer, int incount)
+char* streamlive(char* link, int incount)
 {
-	debug(99, "streamlive(%d) link=%s referer=%s", incount, link, referer);
+	debug(99, "streamlive(%d) link=%s", incount, link);
 
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* streamurl = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
@@ -100,9 +100,9 @@ char* streamlive(char* link, char* referer, int incount)
 	return streamurl;
 }
 
-char* zerocast(char* link, char* referer, int incount)
+char* zerocast(char* link, int incount)
 {
-	debug(99, "zerocast(%d) link=%s referer=%s", incount, link, referer);
+	debug(99, "zerocast(%d) link=%s ", incount, link);
 	char* streamurl = NULL;
 	char* host = NULL;
 
@@ -113,9 +113,9 @@ char* zerocast(char* link, char* referer, int incount)
 	return streamurl;
 }
 
-char* usachannels(char* link, char* referer, int incount)
+char* usachannels(char* link, int incount)
 {
-	debug(99, "usachannels(%d) link=%s referer=%s", incount, link, referer);
+	debug(99, "usachannels(%d) link=%s", incount, link);
 	char* streamurl = NULL;
 	char* host = NULL;
 
@@ -126,9 +126,9 @@ char* usachannels(char* link, char* referer, int incount)
 	return streamurl;
 }
 
-char* cricfree(char* link, char* referer, int incount)
+char* cricfree(char* link, int incount)
 {
-	debug(99, "cricfree(%d) link=%s referer=%s", incount, link, referer);
+	debug(99, "cricfree(%d) link=%s", incount, link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 
 	char* url = NULL;
@@ -143,7 +143,6 @@ char* cricfree(char* link, char* referer, int incount)
 	char* host = NULL;
 	char* path = NULL;
 
-//	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, referer, 1);
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 	host = string_resub("http://", "/", link, 0);
 	path = string_replace_all(host, "", link, 0);
@@ -335,29 +334,29 @@ char* tvtoast(char* link)
 				incount++;
 				printf("####################### start (%d) ############################\n", incount);
 
-				referer = string_resub("<a href=\"", "\"", ret1[i].part, 0);
-				referer = string_replace_all(" ", "%20", referer, 1);
+				url = string_resub("<a href=\"", "\"", ret1[i].part, 0);
+				url = string_replace_all(" ", "%20", url, 1);
 				tmpstr = gethttps(referer, NULL, NULL, NULL, NULL, NULL, 1);
-				host = string_resub("http://", "/", referer, 0);
-				path = string_replace_all(host, "", referer, 0);
+				host = string_resub("http://", "/", url, 0);
+				path = string_replace_all(host, "", url, 0);
 				path = string_replace_all("http://", "", path, 1);
 				path = string_replace_all(" ", "%20", path, 1);
 				titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast3_tmpstr", oitoa(incount), host, path, tmpstr);
-
+				free(url), url = NULL;
 				url = string_resub("src=\"", "\"", tmpstr, 0);				
 				typemsg = string_resub("http://", "/", url, 0);
 
 				if(ostrstr(url, "www.streamlive.to") != NULL)
-					streamurl = streamlive(url, referer, incount);
+					streamurl = streamlive(url, incount);
 
 				if(ostrstr(url, "zerocast.tv") != NULL)
-					streamurl = zerocast(url, referer, incount);
+					streamurl = zerocast(url, incount);
 
 				if(ostrstr(url, "usachannels.tv") != NULL)
-					streamurl = usachannels(url, referer, incount);
+					streamurl = usachannels(url, incount);
 
 				if(ostrstr(url, "cricfree.sx") != NULL)
-					streamurl = cricfree(url, referer, incount);
+					streamurl = cricfree(url, incount);
 
 				debug(99, "streamurl%d streamurl: %s", incount, streamurl);
 
@@ -387,7 +386,6 @@ char* tvtoast(char* link)
 				free(pic), pic = NULL;
 				free(streamurl), streamurl = NULL;
 				free(typemsg), typemsg = NULL;
-				free(referer), referer = NULL;
 				free(url), url = NULL;
 				free(host), host = NULL;
 				free(path), path = NULL;
