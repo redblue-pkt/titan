@@ -2,7 +2,7 @@
 #
 
 buildtype=$1
-wgetbin="wget -T2 -t2 --waitretry=2"
+wgetbin="wget -T2 -t2 --waitretry=2 --no-check-certificate"
 
 rm -rf _full/tectime
 mkdir -p _full/tectime/streams
@@ -13,7 +13,7 @@ BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[tectime.sh] START (buildtype: $buildtype): $DATENAME" > _full/tectime/build.log
 
-WATCHLIST=`$wgetbin http://www.tectime.tv -O - | sed 's/<li><a href=/\n<li><a href=/g' | grep '<li><a href=' | grep -v '<ul class="nav2">' | grep -E "(aktuelle-videos|sendungen)" | cut -d'"' -f2 | sed s'/.$//'`
+WATCHLIST=`$wgetbin http://www.tectime.tv -O - | sed 's/<li><a href=/\n<li><a href=/g' | grep '<li><a href=' | grep -v '<ul class="nav2">' | grep -E "(neue-videos|sendungen)" | cut -d'"' -f2 | sed s'/.$//'`
 if [ "$buildtype" != "full" ];then
 	echo Buildtyp: $buildtype
 	WATCHLIST=`echo $WATCHLIST | cut -d" " -f1`
@@ -46,14 +46,15 @@ for ROUND1 in $WATCHLIST; do
 			fi
 			PIC="http:"`echo $PIC | sed 's/default.jpg/hqdefault.jpg/g'`
 	
-			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
-				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$URL#$PIC#tectime_$piccount.jpg#TecTime#4"
-				if [ `cat cache.tectime."$filename".titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
-					echo $LINE >> cache.tectime."$filename".titanlist
-				fi
+			if [ ! -z "$TITLE" ] && [ "$TITLE" != "[Privates Video]" ] && [ ! -z "$URL" ];then
 				if [ `cat cache.tectime.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
-					echo $LINE >> cache.tectime.titanlist
+					piccount=`expr $piccount + 1`
+					echo "$TITLE#$URL#$PIC#tectime_$piccount.jpg#TecTime#4" >> cache.tectime.titanlist
+				else
+					piccount=`cat cache.tectime.titanlist | grep "#$URL#" | head -n1 | cut -d"#" -f4 | cut -d'_' -f2 | cut -d'.' -f1`
+				fi
+				if [ `cat cache.tectime."$filename".titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
+					echo "$TITLE#$URL#$PIC#tectime_$piccount.jpg#TecTime#4" >> cache.tectime."$filename".titanlist
 				fi
 			fi
 		done 3<cache.tectime.temp
@@ -61,11 +62,13 @@ for ROUND1 in $WATCHLIST; do
 
 
 	if [ -e cache.tectime."$filename".titanlist ];then
-		piccount=`expr $piccount + 1`
-		URL="http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."$filename".list"
-		PIC="http://atemio.dyndns.tv/mediathek/menu/"$tagname".jpg"
-		LINE="$tagname#$URL#$PIC#tectime$piccount.jpg#tectime#0"
-		echo $LINE >> cache.tectime.category.titanlist
+		if [ "$filename" != "neue.videos" ];then
+			piccount=`expr $piccount + 1`
+			URL="http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."$filename".list"
+			PIC="http://atemio.dyndns.tv/mediathek/menu/"$tagname".jpg"
+			LINE="$tagname#$URL#$PIC#tectime$piccount.jpg#tectime#0"
+			echo $LINE >> cache.tectime.category.titanlist
+		fi
 		cat cache.tectime."$filename".titanlist >> _full/tectime/streams/tectime."$filename".list
 	fi
 done
@@ -98,11 +101,6 @@ while read -u 3 ROUND3; do
 done 3<cache.tectime.temp
 
 if [ -e cache.tectime."$filename".titanlist ];then
-	piccount=`expr $piccount + 1`
-	URL="http://atemio.dyndns.tv/mediathek/tectime/streams/tectime."$filename".list"
-	PIC="http://atemio.dyndns.tv/mediathek/menu/"$tagname".jpg"
-	LINE="$tagname#$URL#$PIC#tectime$piccount.jpg#tectime#0"
-	echo $LINE >> cache.tectime.category.titanlist
 	cat cache.tectime."$filename".titanlist >> _full/tectime/streams/tectime."$filename".list
 fi
 
