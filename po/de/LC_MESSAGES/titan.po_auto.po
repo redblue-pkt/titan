@@ -2242,7 +2242,7 @@ msgstr ""
 "benutzen. Für den Zugriff auf passwortgeschützte Windows Freigaben\n"
 "bitte Menü drücken und die Benutzerdaten eingeben."
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1128 youtube.h:208 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:399 youtube.h:208 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 
@@ -3392,7 +3392,7 @@ msgstr ""
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1042
 #: titan.c:1051 titan.c:1179 titan.c:1200 titan.c:1206 titan.c:1217
-#: titan.c:1223 tithek.c:95 tithek_global.h:77 tithek.h:692 tithek.h:1248
+#: titan.c:1223 tithek.c:95 tithek_global.h:85 tithek.h:692 tithek.h:1248
 #: tithek.h:1309 tithek.h:1539 tithek.h:1561 tithek.h:1578 tithek.h:1810
 #: tithek.h:1970 tithek.h:2245 tithek.h:2273 tithek.h:2289 tithek.h:2301
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -6154,7 +6154,7 @@ msgstr "Menüliste"
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1179
 #: titan.c:1200 titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:95
-#: tithek_global.h:77 tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539
+#: tithek_global.h:85 tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539
 #: tithek.h:1561 tithek.h:1810 tithek.h:1970 tithek.h:2245 tithek.h:2273
 #: tithek.h:2289 tithek.h:2301 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
@@ -6794,7 +6794,7 @@ msgstr "Ö"
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1042 titan.c:1051 titan.c:1179 titan.c:1200
-#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:95 tithek_global.h:77
+#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:95 tithek_global.h:85
 #: tithek.h:692 tithek.h:1248 tithek.h:1309 tithek.h:1539 tithek.h:1561
 #: tithek.h:1578 tithek.h:1810 tithek.h:1970 tithek.h:2245 tithek.h:2273
 #: tithek.h:2289 tithek.h:2301 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -8876,8 +8876,8 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505
 #: rtl2now.h:507 rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:543
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
-#: tectime.h:13 tectime.h:15 tithek_global.h:428 tithek_global.h:430
-#: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:1157 tvtoast.h:1159 xvideos.h:56
+#: tectime.h:13 tectime.h:15 tithek_global.h:436 tithek_global.h:438
+#: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:430 tvtoast.h:432 xvideos.h:56
 #: xvideos.h:58 youtube.h:257 youtube.h:259 youtube.h:412 youtube.h:414
 #: zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9738,7 +9738,7 @@ msgstr "Stream Konfiguration (iOS)"
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:1128 youtube.h:208 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:399 youtube.h:208 zdf.h:112
 msgid "Stream Menu"
 msgstr "Stream Menü"
 
@@ -10052,6 +10052,10 @@ msgstr "Auflösung Sender (H):"
 msgid "TV Resolution (w):"
 msgstr "Auflösung Sender (B):"
 
+#: tithek_mainmenu.h:135
+msgid "TV-Programm"
+msgstr ""
+
 #: settings_bluebutton.h:12 settings_pluginbutton.h:16 settings_redbutton.h:16
 #: webif_index.atemio7600.h:19 webif_index.atemio7600.h:117
 #: webif_rc.atemio510.h:9 webif_rc.atemio520.h:5 webif_rc.atemio530.h:5
@@ -10163,7 +10167,7 @@ msgstr ""
 "Die gesuchte Datei konnte nicht gefunden werden, wir bitten um "
 "Entschuldigung."
 
-#: tithek_global.h:77 tithek.h:2245
+#: tithek_global.h:85 tithek.h:2245
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -10798,7 +10802,7 @@ msgstr "Tuner Typ"
 msgid "Tuning to Channel failed!"
 msgstr "Sender nicht verfügbar!"
 
-#: tithek_mainmenu.h:135
+#: tithek_mainmenu.h:136
 msgid "TvToast"
 msgstr ""
 
@@ -10851,7 +10855,7 @@ msgstr "Unbekannt!"
 msgid "UNLOAD"
 msgstr "Deaktivieren"
 
-#: tithek_mainmenu.h:136
+#: tithek_mainmenu.h:137
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
@@ -11020,7 +11024,7 @@ msgstr "Einstellungen"
 msgid "VLC Player"
 msgstr "Video abspielen"
 
-#: tithek_mainmenu.h:138
+#: tithek_mainmenu.h:139
 msgid "VOX-Now"
 msgstr ""
 
@@ -11111,7 +11115,7 @@ msgstr "Menü Ansicht"
 msgid "Virtualzap Timeout"
 msgstr "Virtuelles Umschalten"
 
-#: tithek_mainmenu.h:137
+#: tithek_mainmenu.h:138
 msgid "Vizion Plus"
 msgstr ""
 
@@ -11365,7 +11369,7 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: tithek_mainmenu.h:139
+#: tithek_mainmenu.h:140
 msgid "Wine Channel TV(English)"
 msgstr ""
 
@@ -11450,11 +11454,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:140
+#: tithek_mainmenu.h:141
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:141
+#: tithek_mainmenu.h:142
 msgid "XXX-XVIDEOS"
 msgstr ""
 
@@ -11509,7 +11513,7 @@ msgstr ""
 "\n"
 "Soll der Receiver ausgeschaltet werden?"
 
-#: tithek_mainmenu.h:142
+#: tithek_mainmenu.h:143
 msgid "Youtube"
 msgstr ""
 
@@ -11517,7 +11521,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:143
+#: tithek_mainmenu.h:144
 msgid "ZDF"
 msgstr ""
 
