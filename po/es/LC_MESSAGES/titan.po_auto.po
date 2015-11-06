@@ -8466,7 +8466,7 @@ msgid "Sat: default Settings Astra 19.2 | 04.10.2015"
 msgstr ""
 
 #: tpk_description.h:124
-msgid "Sat: matze70 Astra 19.2 | 28.06.2015"
+msgid "Sat: matze70 Astra 19.2 | 06.11.2015"
 msgstr ""
 
 #: tpk_description.h:125
