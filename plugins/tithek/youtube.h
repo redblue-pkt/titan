@@ -36,7 +36,7 @@ char* youtube(char* link)
 	tmppath = string_replace_all("watch?v=", "get_video_info?&video_id=", tmppath, 1);
 
 
-	tmplink = ostrcat(link, NULL, 0, 0);
+	char* tmplink = ostrcat(link, NULL, 0, 0);
 	tmplink = string_replace_all("watch?v=", "get_video_info?&video_id=", tmplink, 1);
 	tmplink = string_replace_all("/youtu.be", "/www.youtube.com", tmplink, 1);
 
@@ -45,27 +45,11 @@ char* youtube(char* link)
 http://www.spox.com/de/sport/ussport/nba/live-stream/1310/miami-heat-washington-wizards-frank-buschmann.html
 grep code:
 <div id="spxliveplayer"><iframe frameborder="0" width="640px" height="360px" scrolling="no" src="http://www.youtube.com/embed/SjMEn0d6ByU" id="spxliveiframe" ></iframe></div>
-
-and get to youtube
-
-// ssl workaround
-		unlink("/tmp/.youtube.cache");
-		char* cmd = NULL;
-		cmd = ostrcat("wget --no-check-certificate \"http://", ip, 0, 0);
-		cmd = ostrcat(cmd, "/", 1, 0);
-		cmd = ostrcat(cmd, tmppath, 1, 0);
-		cmd = ostrcat(cmd, "\" -O /tmp/.youtube.cache", 1, 0);
-		debug(99, "cmd: %s", cmd);
-		system(cmd);
-		free(cmd), cmd = NULL;
-		tmpstr = command("cat /tmp/.solar.cache");
-		debug(99, "tmpstr: %s", tmpstr);
-// ssl workaround end
-//	tmpstr = gethttp(ip, tmppath, 80, NULL, NULL, 10000, NULL, 0);
 */
 
-	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
 	writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr", tmpstr, 0);
+	free(tmplink), tmplink = NULL;
 
 //13:50:32 T:2532  NOTICE: 'GET /youtube/v3/channels?part=snippet%2CcontentDetails%2CbrandingSettings&id=UC_fV2pzmw2SujuQgIm6YcbQ%2CUCWp1qqITrK2hQBpFTmE9uVg%2CUCClNRixXlagwAd--5MwJKCw%2CUCz6Lv-YT2Fjhi3GyXdXt4Vw%2CUC0g5OdpoCTfpHUelY9PLWSQ%2CUCXJDX1KK6t121Z9FLhu5o2A%2CUCboe4JAAUOI-OzKBj_pkYFg%2CUCT-_4GqC-yLY1xtTHhwY0hA%2CUCsW36751Gy-EAbHQwe9WBNw%2CUC1fIyfhQtm1fSljyKBf2uKA%2CUCy-dXLczRuq-ZtuWmUo52PA%2CUCq-Fj5jknLsUf-MWSy4_brA%2CUCe2r4-wNZjYmQhHrYAR2WUA%2CUC-v9ZU8TO8chuAOsh3UO-gQ%2CUCa6vGFO9ty8v5KZJXQxdhaw%2CUC5zGJZpxeZPFcds5gFcDE7Q%2CUC0y2acrGZ3NH-3ycSGYuIPQ%2CUCqyYNNx60mBgvNKKR5VhUCA%2CUCCgDVqiPU10shxzmwkMwJ6A%2CUCFeUyPY6W8qX8w2o6oSiRmw%2CUCl0kP-Cfe-GGic7Ilnk-u_Q%2CUCXkQVG6OdyB2ct4xOOZjmPQ%2CUCu17Sme-KE87ca9OTzP0p7g%2CUC2nZMhZ2qG5-xpqb440WLYg%2CUCYdIDs5a3Pt-o4SiD-ih24g&key=AIzaSyBAdxZCHbeJwnQ7dDZQJNfcaF46MdqJ24E HTTP/1.1\r\nHost: www.googleapis.com\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.36 Safari/537.36\r\nConnection: close\r\nAccept-Encoding: gzip, deflate\r\n\r\n'
 
