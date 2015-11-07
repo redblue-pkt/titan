@@ -5978,9 +5978,8 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1613 scan.h:1615 scan.h:1643 scan.h:1645 scan.h:1655
 #: scan.h:1916 scan.h:2007 scan.h:2415 scart.h:12 scart.h:25 security.h:1916
-#: service.h:738 service.h:983 settings_autostart.h:636
-#: settings_autostart.h:647 settings_autostart.h:649 shared.h:29 shared.h:65
-#: shared.h:82 skinadjust.h:398 skinadjust.h:803 skinselector.h:231 sock.h:954
+#: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
+#: skinadjust.h:398 skinadjust.h:803 skinselector.h:231 sock.h:954
 #: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:48 solarmovie.h:60
 #: solarmovie.h:362 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
 #: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
@@ -6611,10 +6610,9 @@ msgstr ""
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1613 scan.h:1615 scan.h:1643
 #: scan.h:1645 scan.h:1916 scan.h:2007 scan.h:2415 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
-#: service.h:983 settings_autostart.h:636 settings_autostart.h:647
-#: settings_autostart.h:649 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:398 skinadjust.h:803 skins_dlna_skin.xml.h:7
-#: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
+#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
+#: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
+#: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
@@ -6799,7 +6797,7 @@ msgstr ""
 msgid "OpenTV EPG"
 msgstr ""
 
-#: settings_autostart.h:604
+#: settings_autostart.h:603
 msgid "OpenVPN"
 msgstr ""
 
@@ -8351,7 +8349,7 @@ msgstr "SUCCES seriële poort"
 msgid "SZ"
 msgstr ""
 
-#: panel_settings_autostart.h:327 settings_autostart.h:577 tpk_showname.h:118
+#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:118
 msgid "Samba Server"
 msgstr ""
 
@@ -12433,7 +12431,7 @@ msgstr ""
 msgid "nfs"
 msgstr "NFS"
 
-#: panel_settings_autostart.h:318 settings_autostart.h:568
+#: panel_settings_autostart.h:318 settings_autostart.h:567
 msgid "nfs server"
 msgstr "NFS server"
 
@@ -12486,9 +12484,9 @@ msgstr "NFS server"
 #: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
 #: settings_autostart.h:285 settings_autostart.h:305 settings_autostart.h:316
 #: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
-#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:569
-#: settings_autostart.h:578 settings_autostart.h:587 settings_autostart.h:596
-#: settings_autostart.h:605 settings_overclocking.h:214
+#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
+#: settings_autostart.h:604 settings_overclocking.h:214
 #: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:39
 #: tithek_settings.h:43 tithek_settings.h:47 tmc.h:531 tmc.h:535
@@ -12549,7 +12547,7 @@ msgstr ""
 msgid "ntfsmount"
 msgstr ""
 
-#: settings_autostart.h:595
+#: settings_autostart.h:594
 msgid "ntpdate"
 msgstr ""
 
@@ -12984,7 +12982,7 @@ msgstr "Scan map"
 msgid "scan and whitelist"
 msgstr "Scan & whitelist"
 
-#: panel_settings_autostart.h:336 settings_autostart.h:586
+#: panel_settings_autostart.h:336 settings_autostart.h:585
 msgid "scan wlan"
 msgstr "Scan WLAN"
 
@@ -13067,20 +13065,6 @@ msgstr "Selecteer de schijf uit de lijst om te formatteren"
 #: harddisk.h:501
 msgid "select the media drive from Device List for fsck"
 msgstr "Selecteer de schijf uit de lijst om te controleren"
-
-#: settings_autostart.h:649
-msgid ""
-"service not started,\n"
-"Please check your config."
-msgstr ""
-
-#: settings_autostart.h:647
-msgid "service started."
-msgstr ""
-
-#: settings_autostart.h:636
-msgid "service stopped"
-msgstr ""
 
 #: webif_help.h:82
 msgid "serviceinfo"
@@ -13883,8 +13867,8 @@ msgstr "Geel"
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
 #: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:316
 #: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
-#: settings_autostart.h:502 settings_autostart.h:569 settings_autostart.h:578
-#: settings_autostart.h:587 settings_autostart.h:596 settings_autostart.h:605
+#: settings_autostart.h:502 settings_autostart.h:568 settings_autostart.h:577
+#: settings_autostart.h:586 settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:40 tithek_settings.h:44
