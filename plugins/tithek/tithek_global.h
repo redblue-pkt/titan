@@ -3,103 +3,6 @@
 
 #include <curl/curl.h>
 
-char* hoster(char* url)
-{
-	debug(99, "url: %s", url);
-	char* streamurl = NULL, *tmplink = NULL;
-
-	tmplink = ostrcat(url, NULL, 0, 0);
-	string_tolower(tmplink);
-
-	if(ostrstr(tmplink, "sockshare") != NULL)
-		streamurl = putlocker(url);
-	else if(ostrstr(tmplink, "putlocker") != NULL)
-		streamurl = firedrive(url);
-	else if(ostrstr(tmplink, "filenuke") != NULL)
-		streamurl = filenuke(url);
-	else if(ostrstr(tmplink, "streamcloud") != NULL)
-		streamurl = streamcloud(url);
-	else if(ostrstr(tmplink, "vidstream") != NULL)
-		streamurl = vidstream(url);
-	else if(ostrstr(tmplink, "flashx") != NULL)
-		streamurl = flashx(url);
-	else if(ostrstr(tmplink, "xvidstage") != NULL)
-		streamurl = xvidstage(url);
-	else if(ostrstr(tmplink, "nowvideo") != NULL)
-		streamurl = nowvideo(url);
-	else if(ostrstr(tmplink, "movshare") != NULL)
-		streamurl = movshare(url);
-	else if(ostrstr(tmplink, "movreel") != NULL)
-		streamurl = movreel(url);
-	else if(ostrstr(tmplink, "novamov") != NULL)
-		streamurl = novamov(url);
-	else if(ostrstr(tmplink, "divxstage") != NULL || ostrstr(tmplink, "cloudtime") != NULL)
-		streamurl = divxstage(url);
-	else if(ostrstr(tmplink, "primeshare") != NULL)
-		streamurl = primeshare(url);
-	else if(ostrstr(tmplink, "faststream") != NULL || ostrstr(tmplink, "fastvideo") != NULL)
-		streamurl = faststream(url);
-	else if(ostrstr(tmplink, "played") != NULL)
-		streamurl = played(url);
-	else if(ostrstr(tmplink, "videoweed") != NULL)
-		streamurl = videoweed(url);
-	else if(ostrstr(tmplink, "firedrive") != NULL)
-		streamurl = firedrive(url);
-	else if(ostrstr(tmplink, "shared") != NULL)
-		streamurl = shared(url);
-	else if(ostrstr(tmplink, "thefile") != NULL)
-		streamurl = thefile(url);
-	else if(ostrstr(tmplink, "youtu") != NULL)
-		streamurl = youtube(url);
-	else if(ostrstr(tmplink, "myvideo") != NULL)
-		streamurl = myvideo(url);
-	else if(ostrstr(tmplink, "promptfile") != NULL)
-		streamurl = promptfile(url);
-	else if(ostrstr(tmplink, "letwatch") != NULL || ostrstr(tmplink, "realvid") != NULL)
-		streamurl = letwatch(url);
-	else if(ostrstr(tmplink, "vidbull") != NULL)
-		streamurl = vidbull(url);
-	else if(ostrstr(tmplink, "vodlocker") != NULL)
-		streamurl = vodlocker(url);
-	else if(ostrstr(tmplink, "vidto") != NULL)
-		streamurl = vidto(url);
-	else if(ostrstr(tmplink, "amazon") != NULL)
-		streamurl = amazon(url);
-	else if(ostrstr(tmplink, "thevideo") != NULL)
-		streamurl = thevideo(url);
-	else if(ostrstr(tmplink, "mightyupload") != NULL)
-		streamurl = mightyupload(url);
-	else if(ostrstr(tmplink, "cloudzilla") != NULL)
-		streamurl = cloudzilla(url);
-	else if(ostrstr(tmplink, "vivo") != NULL)
-		streamurl = vivo(url);
-	else if(ostrstr(tmplink, "streamlive") != NULL)
-		streamurl = streamlive(url, 0);
-	else if(ostrstr(tmplink, "cricfree") != NULL)
-		streamurl = cricfree(url, 0);
-	else if(ostrstr(tmplink, "zerocast") != NULL)
-		streamurl = zerocast(url, 0);
-	else if(ostrstr(tmplink, "usachannels") != NULL)
-		streamurl = usachannels(url, 0);
-	else
-		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
-
-
-	debug(99, "Streamurl1: %s", streamurl);
-
-	streamurl = string_replace_all("amp;", "", streamurl, 1);
-	debug(99, "Streamurl2: %s", streamurl);
-
-	free(tmplink), tmplink = NULL;
-	if(ostrncmp("http", streamurl, 4) && ostrncmp("rtmp", streamurl, 4) && ostrncmp("mms", streamurl, 3) && ostrncmp("rtsp", streamurl, 4))
-	{
-		printf("Streamurl3: not http*|rtmp*|mms*|rtsp* Streamurl: %s\n", streamurl); 
-		free(streamurl),streamurl = NULL;
-	}
-
-	return streamurl;
-}
-
 struct MemoryStruct {
   char *memory;
   size_t size;
@@ -125,17 +28,12 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
   return realsize;
 }
 
-// flag = 0 (without header in output)
-// flag = 1 (with header in output)
-char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, char* referer, int flag)
+char* gethttps(char* url, char* data)
 {
 	debug(99, "url: %s", url);
 
 	int debuglevel = getconfigint("debuglevel", NULL);
-
-	char* tmpstr = NULL;
-    FILE *fp;
-
+	
 	CURL *curl_handle;
 	CURLcode res;
 	
@@ -145,67 +43,34 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 	chunk.size = 0;    /* no data at this point */
 	
 	curl_global_init(CURL_GLOBAL_ALL);
-
+	
 	/* init the curl session */ 
 	curl_handle = curl_easy_init();
 	if(curl_handle)
 	{
-	    if(localfile != NULL)
-		    fp = fopen(localfile,"wb");
-	       
 		/* specify URL to get */
 		curl_easy_setopt(curl_handle, CURLOPT_URL, url);
-
-		if(user != NULL && pass != NULL)
-		{
-			curl_easy_setopt(curl_handle, CURLOPT_USERNAME, user);
-			curl_easy_setopt(curl_handle, CURLOPT_PASSWORD, pass);
-			curl_easy_setopt(curl_handle, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-		}
 		if(data == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_HTTPGET, 1L);
 		else
 			curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDS, data);
-		if(flag == 1)
-			curl_easy_setopt(curl_handle, CURLOPT_HEADER, 1L);
+		curl_easy_setopt(curl_handle, CURLOPT_HEADER, 1L);
 		curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, 5);
 		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 20);
 		/* send all data to this function  */
-	    if(localfile == NULL)
-			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
-		else
-			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, NULL);
-
+		curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
 		/* we pass our 'chunk' struct to the callback function */
-	    if(localfile == NULL)
-			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
-		else
-			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, fp);
-
+		curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
 		/* some servers don't like requests that are made without a user-agent field, so we provide one */
 		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
-//		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko");
-
-		// This is occassionally required to stop CURL from verifying the peers certificate.
-		// CURLOPT_SSL_VERIFYHOST may also need to be TRUE or FALSE if
-		// CURLOPT_SSL_VERIFYPEER is disabled (it defaults to 2 - check the existence of a
-		// common name and also verify that it matches the hostname provided)
-#ifdef MIPSEL
-		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 1L);
-#else
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L);
-#endif
-
 		curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0L);
 		if(debuglevel == 99)
 			curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 1);
 		curl_easy_setopt(curl_handle, CURLOPT_COOKIEFILE, "/mnt/network/cookies");
 		curl_easy_setopt(curl_handle, CURLOPT_COOKIEJAR, "/mnt/network/cookies");
 		curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
-		if(referer == NULL)
-			curl_easy_setopt(curl_handle, CURLOPT_AUTOREFERER, 1L);
-		else
-			curl_easy_setopt(curl_handle, CURLOPT_REFERER, referer);
+		curl_easy_setopt(curl_handle, CURLOPT_AUTOREFERER, 1L);
 
 		/* get it! */
 		res = curl_easy_perform(curl_handle);
@@ -228,47 +93,14 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		
 		/* cleanup curl stuff */
 		curl_easy_cleanup(curl_handle);
-		if(localfile != NULL)
-			fclose(fp);
 	}
-
+	char* tmpstr = NULL;
 	tmpstr = ostrcat(chunk.memory, NULL, 0, 0);
   	free(chunk.memory);
   	/* we're done with libcurl, so clean it up */
    	curl_global_cleanup();
 
-	if(localfile != NULL) 
-		free(tmpstr), tmpstr = NULL;
 	return tmpstr;
-}
-
-char* string_decode3(char* input)
-{
-	if(input == NULL) return input;
-
-	input = string_replace_all("&#196;", "Ä", input, 1);
-	input = string_replace_all("&#228;", "ä", input, 1);
-	input = string_replace_all("&#201;", "É", input, 1);
-	input = string_replace_all("&#233;", "é", input, 1);
-	input = string_replace_all("&#214;", "Ö", input, 1);
-	input = string_replace_all("&#246;", "ö", input, 1);
-	input = string_replace_all("&#220;", "Ü", input, 1);
-	input = string_replace_all("&#252;", "ü", input, 1);
-	input = string_replace_all("&#223;", "ß", input, 1);
-	input = string_replace_all("&#38;", "&", input, 1);
-
-	input = string_replace_all("&Auml;", "Ä", input, 1);
-	input = string_replace_all("&auml;", "ä", input, 1);
-	input = string_replace_all("&Eacute;", "É", input, 1);
-	input = string_replace_all("&eacute;", "é", input, 1);
-	input = string_replace_all("&Ouml;", "Ö", input, 1);
-	input = string_replace_all("&ouml;", "ö", input, 1);
-	input = string_replace_all("&Uuml;", "Ü", input, 1);
-	input = string_replace_all("&uuml;", "ü", input, 1);
-	input = string_replace_all("&szlig;", "ß", input, 1);
-	input = string_replace_all("&amp;", "&", input, 1);
-
-	return input;
 }
 
 char* getfilekey(char* w, char* i, char* s, char* e)
@@ -393,6 +225,158 @@ char* getfilekey(char* w, char* i, char* s, char* e)
 	return ret;
 }
 
+char* hoster(char* url)
+{
+	debug(99, "url: %s", url);
+	char* streamurl = NULL, *tmplink = NULL;
+
+/*
+		if re.match(".*?http://www.putlocker.com/(file|embed)/", link, re.S):
+		elif re.match(".*?http://www.sockshare.com/(file|embed)/", link, re.S):
+		elif re.match(".*?http://www.videoslasher.com/embed/", link, re.S):
+		elif re.match('.*?http://faststream.in', link, re.S):
+		elif re.match('.*?http:/.*?flashx.tv', link, re.S):
+		elif re.match('.*?http://streamcloud.eu', link, re.S):
+		elif re.match('.*?http://vidstream.in', link, re.S):
+		elif re.match('.*?http://xvidstage.com', link, re.S):
+		elif re.match('.*?http://embed.nowvideo.eu', link, re.S):
+		elif re.match('.*?.movshare.net', link, re.S):
+		elif re.match('.*?(embed.divxstage.eu|divxstage.eu/video)', link, re.S):
+		elif re.match('.*?videoweed.es', link, re.S):
+		elif re.match('.*?novamov.com', link, re.S):
+		elif re.match('.*primeshare', link, re.S):
+		elif re.match('.*?videomega.tv', link, re.S):
+		elif re.match('.*?bitshare.com', link, re.S):
+		elif re.match('.*?http://movreel.com/', link, re.S):
+		elif re.match('.*?uploadc.com', link, re.S):
+		elif re.match('.*?http://filenuke.com', link, re.S):
+		elif re.match('.*?http://www.youtube.com/watch', link, re.S):
+		elif re.match('.*?http://www.mightyupload.com/embed', link, re.S):
+		elif re.match('.*?180upload', link, re.S):
+		elif re.match('.*?ecostream.tv', link, re.S):
+
+	tmplink = ostrcat(url, NULL, 0, 0);
+
+	if(ostrstr(tmpstr, "/Out/?s=") != NULL)
+	{
+		tmplink = string_replace("/Out/?s=", "", tmplink, 1);
+		debug(99, "remove out string: %s", tmplink);
+	}
+
+
+						if(ostrcmp(tmphname, "Sockshare") == 0)
+							hname = ostrcat("Sockshare.com", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Putlocker") == 0)
+							hname = ostrcat("Putlocker.com", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Filenuke") == 0)
+							hname = ostrcat("FileNuke.com", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Streamclou") == 0)
+							hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Streamcloud") == 0)
+							hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "VidStream") == 0)
+							hname = ostrcat("VidStream.in", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Flashx") == 0)
+							hname = ostrcat("FlashX.tv", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "PrimeShare") == 0)
+							hname = ostrcat("PrimeShare.tv", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Xvidstage") == 0)
+							hname = ostrcat("XvidStage.com", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Nowvideo") == 0)
+							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Movshare") == 0)
+							hname = ostrcat("MovShare.net", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "MovReel") == 0)
+							hname = ostrcat("MovReel.com", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "NovaMov") == 0)
+							hname = ostrcat("NovaMov", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "DivXStage") == 0)
+							hname = ostrcat("DivXStage", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "PrimeShare") == 0)
+							hname = ostrcat("PrimeShare.tv", NULL, 0, 0);
+						else
+						{
+							hname = ostrcat(tmphname, " (coming soon)", 0, 0);
+							type = 66;
+						}												
+*/
+
+	tmplink = ostrcat(url, NULL, 0, 0);
+	string_tolower(tmplink);
+
+	if(ostrstr(tmplink, "sockshare") != NULL)
+		streamurl = putlocker(url);
+	else if(ostrstr(tmplink, "putlocker") != NULL)
+		streamurl = firedrive(url);
+	else if(ostrstr(tmplink, "filenuke") != NULL)
+		streamurl = filenuke(url);
+	else if(ostrstr(tmplink, "streamcloud") != NULL)
+		streamurl = streamcloud(url);
+	else if(ostrstr(tmplink, "vidstream") != NULL)
+		streamurl = vidstream(url);
+	else if(ostrstr(tmplink, "flashx") != NULL)
+		streamurl = flashx(url);
+	else if(ostrstr(tmplink, "xvidstage") != NULL)
+		streamurl = xvidstage(url);
+	else if(ostrstr(tmplink, "nowvideo") != NULL)
+		streamurl = nowvideo(url);
+	else if(ostrstr(tmplink, "movshare") != NULL)
+		streamurl = movshare(url);
+	else if(ostrstr(tmplink, "movreel") != NULL)
+		streamurl = movreel(url);
+	else if(ostrstr(tmplink, "novamov") != NULL)
+		streamurl = novamov(url);
+	else if(ostrstr(tmplink, "divxstage") != NULL || ostrstr(tmplink, "cloudtime") != NULL)
+		streamurl = divxstage(url);
+	else if(ostrstr(tmplink, "primeshare") != NULL)
+		streamurl = primeshare(url);
+	else if(ostrstr(tmplink, "faststream") != NULL || ostrstr(tmplink, "fastvideo") != NULL)
+		streamurl = faststream(url);
+	else if(ostrstr(tmplink, "played") != NULL)
+		streamurl = played(url);
+	else if(ostrstr(tmplink, "videoweed") != NULL)
+		streamurl = videoweed(url);
+	else if(ostrstr(tmplink, "firedrive") != NULL)
+		streamurl = firedrive(url);
+	else if(ostrstr(tmplink, "shared") != NULL)
+		streamurl = shared(url);
+	else if(ostrstr(tmplink, "thefile") != NULL)
+		streamurl = thefile(url);
+	else if(ostrstr(tmplink, "youtube") != NULL)
+		streamurl = youtube(url);
+	else if(ostrstr(tmplink, "myvideo") != NULL)
+		streamurl = myvideo(url);
+	else if(ostrstr(tmplink, "promptfile") != NULL)
+		streamurl = promptfile(url);
+	else if(ostrstr(tmplink, "letwatch") != NULL)
+		streamurl = letwatch(url);
+	else if(ostrstr(tmplink, "vidbull") != NULL)
+		streamurl = vidbull(url);
+	else if(ostrstr(tmplink, "vodlocker") != NULL)
+		streamurl = vodlocker(url);
+	else if(ostrstr(tmplink, "vidto") != NULL)
+		streamurl = vidto(url);
+	else if(ostrstr(tmplink, "amazon") != NULL)
+		streamurl = amazon(url);
+	else
+		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+
+
+	debug(99, "Streamurl1: %s", streamurl);
+
+	streamurl = string_replace_all("amp;", "", streamurl, 1);
+	debug(99, "Streamurl2: %s", streamurl);
+
+	free(tmplink), tmplink = NULL;
+	if(ostrncmp("http", streamurl, 4) && ostrncmp("rtmp", streamurl, 4) && ostrncmp("mms", streamurl, 3) && ostrncmp("rtsp", streamurl, 4))
+	{
+		printf("Streamurl3: not http*|rtmp*|mms*|rtsp* Streamurl: %s\n", streamurl); 
+		free(streamurl),streamurl = NULL;
+	}
+
+	return streamurl;
+}
+
 int screenlistbox(struct skin* grid, struct skin* listbox,struct skin* countlabel, char* title, char* titheklink, int* pagecount, int* tithekexit, int* oaktpage, int* oaktline, int* ogridcol, int flag, int cflag)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
@@ -486,135 +470,6 @@ int all_search_local(struct skin* grid, struct skin* listbox, struct skin* count
 	}
 	free(search), search = NULL;
 	return ret;
-}
-
-char* jsunpack(char* input)
-{
-	int debuglevel = getconfigint("debuglevel", NULL);
-
-	if(input == NULL) return input;
-
-	char* b36code = NULL, *search = NULL, *charlist = NULL, *base = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr = NULL, *packed = NULL;
-
-	unlink("/tmp/jsunpack1_packed");
-	unlink("/tmp/jsunpack2_tmpstr");
-	unlink("/tmp/jsunpack3_b36code");
-	unlink("/tmp/jsunpack4_tmpstr_last");
-
-	while(ostrstr(input, "eval(function(p,a,c,k,e,d){") != NULL)
-	{
-		packed = string_resub("eval(function(p,a,c,k,e,d){", "))", input, 0);
-		titheklog(debuglevel, "/tmp/jsunpack1_packed", NULL, NULL, NULL, packed);	
-	
-//		tmpstr = string_resub(";return p}('", ");'", packed, 0);
-//		tmpstr = oregex(".*;return p}(.*)',[0-9]{2,2},[0-9]{2,2},'.*'.split.*", packed);
-		tmpstr = oregex(".*;return p}(.*)',[0-9]{1,3},[0-9]{1,3},'.*'.split.*", packed);
-
-		debug(99, "tmpstr: %s", tmpstr);
-		titheklog(debuglevel, "/tmp/jsunpack2_tmpstr", NULL, NULL, NULL, tmpstr);
-	
-//		b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", packed);
-		b36code = oregex(".*',[0-9]{1,3},[0-9]{1,3},'(.*)'.split.*", packed);
-		
-		b36code = string_replace_all("||", "| |", b36code, 1);
-		debug(99, "b36code: %s", b36code);
-		titheklog(debuglevel, "/tmp/jsunpack3_b36code", NULL, NULL, NULL, b36code);
-
-		if(!ostrncmp("|", b36code, 1))
-			b36code = ostrcat(" ", b36code, 0, 1);
-
-		struct splitstr* ret1 = NULL;
-		int count = 0;
-		int i = 0;
-		ret1 = strsplit(b36code, "|", &count);
-	
-		charlist = ostrcat(charlist, "\"", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, "'", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, ".", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, ";", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, ":", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, "=", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, ",", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, " ", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, "\\", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, "/", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, "(", 1, 0);
-		charlist = ostrcat(charlist, "|", 1, 0);
-		charlist = ostrcat(charlist, ")", 1, 0);
-		charlist = ostrcat(charlist, "'", 1, 0);
-		charlist = ostrcat(charlist, "%", 1, 0);
-	
-		for(i = 0; i < count; i++)
-		{
-			if(ostrstr((&ret1[i])->part, " ") != NULL)
-			{
-				printf("continue\n");
-				continue;
-			}
-			char* x = oltostr(i, 36);
-	
-			struct splitstr* ret2 = NULL;
-			int count2 = 0;
-			int i2 = 0;
-			tmpstr2 = ostrcat(charlist, NULL, 0, 0);
-			ret2 = strsplit(tmpstr2, "|", &count2);
-			for(i2 = 0; i2 < count2; i2++)
-			{
-				struct splitstr* ret3 = NULL;
-				int count3 = 0;
-				int i3 = 0;
-				tmpstr3 = ostrcat(charlist, NULL, 0, 0);
-				ret3 = strsplit(tmpstr3, "|", &count3);
-				for(i3 = 0; i3 < count3; i3++)
-				{
-					debug(99, "-----------------------------------------------");
-					debug(99, "replace %s%s%s <> %s%s%s",(&ret2[i2])->part, x, (&ret3[i3])->part, (&ret2[i2])->part, (&ret1[i])->part, (&ret3[i3])->part);
-	
-					base = ostrcat(base, (&ret2[i2])->part, 1, 0);
-					base = ostrcat(base, x, 1, 0);
-					base = ostrcat(base, (&ret3[i3])->part, 1, 0);		
-					search = ostrcat(search, (&ret2[i2])->part, 1, 0);
-					search = ostrcat(search, (&ret1[i])->part, 1, 0);
-					search = ostrcat(search, (&ret3[i3])->part, 1, 0);
-					tmpstr = string_replace_all(base, search, tmpstr, 1);
-					free(base), base = NULL;
-					free(search), search = NULL;
-				}
-				free(ret3), ret3 = NULL;
-				free(tmpstr3), tmpstr3 = NULL;
-			}
-			free(ret2), ret2 = NULL;
-			free(tmpstr2), tmpstr2 = NULL;
-			free(x);
-		}
-		free(ret1), ret1 = NULL;
-	
-		titheklog(debuglevel, "/tmp/jsunpack4_tmpstr_last", NULL, NULL, NULL, tmpstr);
-
-		if(tmpstr == NULL)
-			input = string_replace("eval(function(p,a,c,k,e,d){", "eval(function(p,a,c,k,e,d-extracted-error){", input, 1);
-		else
-		{
-			input = string_replace("eval(function(p,a,c,k,e,d){", "eval(function(p,a,c,k,e,d-extracted){", input, 1);
-			input = string_replace(packed, tmpstr, input, 1);
-		}
-		free(tmpstr),tmpstr = NULL;
-		free(packed), packed = NULL;
-		free(b36code), b36code = NULL;
-		free(charlist), charlist = NULL;
-	}
-
-	return input;
 }
 
 #endif
