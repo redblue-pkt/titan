@@ -10,11 +10,12 @@ int tithekmovie4k = 0;
 int tithekkinox = 0;
 int titheksolarmovie = 0;
 int tithekmlehd = 0;
+int amazonlogin = 0;
 
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
 //flag 2	- http (default streamurl)
-//flag 3	- menu cover
+//flag 3	- http radio
 //flag 4	- youtube
 //flag 5	- nowtv //rtl2now
 //flag 6	- nowtv pay //superrtlnow
@@ -88,8 +89,23 @@ int tithekmlehd = 0;
 //flag 74   - watchmovies series
 //flag 75   - watchmovies local search
 //flag 75   - amazon
-//flag 76   - amazon search
-//flag 77   - amazon local search
+//flag 76   - amazon movie search
+//flag 77   - amazon series search
+//flag 78   - amazon series listed search
+//flag 79   - amazon watchlist movie
+//flag 80   - amazon watchlist tv
+//flag 81   - amazon popularity.rank movie
+//flag 82   - amazon next page
+//flag 83   - amazon popularity.rank tv
+//flag 84   - amazon popularity.kids movie
+//flag 85   - amazon popularity.kids tv
+//flag 86   - amazon currently movie
+//flag 87   - amazon genre movie
+//flag 88   - amazon genre movie listed
+//flag 89   - amazon genre tv
+//flag 90   - amazon genre tv listed
+//flag 91   - streamlive
+
 //flag 100  - all local search
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
@@ -226,7 +242,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, ".sola", 1, 0);
 		cmd = ostrcat(cmd, "rmovi", 1, 0);
 		cmd = ostrcat(cmd, "e.", 1, 0);
-		cmd = ostrcat(cmd, "is", 1, 0);
+		cmd = ostrcat(cmd, "ph", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
@@ -572,32 +588,38 @@ end:
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
-	int ret = 1, port = 80, timeout = 10000;
+	int ret = 1, port = 80, timeout = 10000, ssl = 0;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
 
 	if(link == NULL) return NULL;
-	if(ostrncmp("http://", link, 7)) return NULL;
+	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8)) return NULL;
 
-	ip = string_replace("http://", "", (char*)link, 0);
-	// tithek security
-	ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
-
-	ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
-	//ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
-
-	if(ip != NULL)
-		pos = strchr(ip, '/');
-	if(pos != NULL)
+	if(!ostrncmp("https://", link, 8))
+		ssl = 1;
+	else
 	{
-		pos[0] = '\0';
-		path = pos + 1;
-	}
-
-	if(ostrstr(ip, ":") != NULL)
-	{
-		ip = oregex("http://(.*):.*", link);
-		port = atoi(oregex("http://.*:(.*)/.*", link));
+		ip = string_replace("http://", "", (char*)link, 0);
+	
+		// tithek security
+		ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
+	
+		ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
+		//ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
+	
+		if(ip != NULL)
+			pos = strchr(ip, '/');
+		if(pos != NULL)
+		{
+			pos[0] = '\0';
+			path = pos + 1;
+		}
+	
+		if(ostrstr(ip, ":") != NULL)
+		{
+			ip = oregex("http://(.*):.*", link);
+			port = atoi(oregex("http://.*:(.*)/.*", link));
+		}
 	}
 
 	tmpstr = ostrcat(path, NULL, 0, 0);
@@ -618,6 +640,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		else
 			localfile = ostrcat(localfile, localname, 1, 0);
 	}
+	free(tmpstr); tmpstr = NULL;
 
 /*
 	debug(99, "---------------------------------------");
@@ -628,7 +651,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	debug(99, "port: %d", port);
 	debug(99, "path: %s", path);
 	debug(99, "localfile: %s", localfile);
-//	debug(99, "pw: %s", pw);
+	debug(99, "pw: %s", pw);
 	debug(99, "---------------------------------------");
 */
 	if(flag == 0)
@@ -637,7 +660,9 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		{
 			if(pic == 1)
 			{
-				if(tithekdownloadcount >= 24) //start max 24 threads
+				if(ssl == 1)
+					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
+				else if(tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 				else
 				{
@@ -692,6 +717,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		tithekfile = ostrcat(titheklink, NULL, 0, 0);
 		localfile = 1;
 	}
+
+//	amazon_init(titheklink, tithekfile);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();
@@ -756,7 +783,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		}
 	}
 	
-	if((getconfigint("tithek_cover", NULL) == 1 && flag == 3) || (getconfigint("tithek_view", NULL) == 1 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 1 && flag == 0) || (getconfigint("tithek_view", NULL) == 1 && flag != 0))
 	{
 		height = 500;
 		width = 590;
@@ -767,7 +794,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 2;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 2 && flag == 3) || (getconfigint("tithek_view", NULL) == 2 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 2 && flag == 0) || (getconfigint("tithek_view", NULL) == 2 && flag != 0))
 	{
 		height = 280;
 		width = 390;
@@ -778,7 +805,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 6;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 3 && flag == 3) || (getconfigint("tithek_view", NULL) == 3 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 3 && flag == 0) || (getconfigint("tithek_view", NULL) == 3 && flag != 0))
 	{
 		height = 180;
 		width = 295;
@@ -789,7 +816,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 12;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 4 && flag == 3) || (getconfigint("tithek_view", NULL) == 4 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 4 && flag == 0) || (getconfigint("tithek_view", NULL) == 4 && flag != 0))
 	{
 		height = 140;
 		width = 235;
@@ -800,7 +827,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 20;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 5 && flag == 3) || (getconfigint("tithek_view", NULL) == 5 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 5 && flag == 0) || (getconfigint("tithek_view", NULL) == 5 && flag != 0))
 	{
 		height = 111;
 		width = 196;
@@ -811,7 +838,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 30;
 	}
 
-	if((getconfigint("tithek_cover", NULL) == 6 && flag == 3) || (getconfigint("tithek_view", NULL) == 6 && flag != 3))
+	if((getconfigint("tithek_cover", NULL) == 6 && flag == 0) || (getconfigint("tithek_view", NULL) == 6 && flag != 0))
 	{
 		height = 50;
 		width = 1160;
@@ -1299,6 +1326,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
 	}						
+	else if(((struct tithek*)listbox->select->handle)->flag == 3)
+	{
+		flag = 4;
+		if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 4)
 	{
 		if(tmpstr != NULL) tmpstr1 = youtube_hoster(tmpstr);
@@ -1355,6 +1387,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = amazon(tmpstr);
 	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 91)
+	{
+		if(tmpstr != NULL) tmpstr1 = streamlive(tmpstr, 1);
+	}
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr2); tmpstr2 = NULL;
@@ -1383,17 +1419,25 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		char* skintitle = _("Choice Playback");
 		struct menulist* mlist = NULL, *mbox = NULL;
 
+#ifndef MIPSEL
 		addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
-
+#else
+		// mipsel work, disable http direct streams without buffer, after 3mins no memory (memleak in player.h ?)
+		if(ostrncmp("http://", tmpstr1, 7))
+			addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
+#endif
 		if(!ostrncmp("http://", tmpstr1, 7))
 		{
 			// wakeup hdd for downloading
 			wakeup_record_device();
 			if(flag == 4)
 			{
-#ifdef EPLAYER3
-				addmenulist(&mlist, "Streaming Playback Caching (1MB)", _("Streaming Playback Caching (1MB)"), NULL, 0, 0);
-#endif
+//#ifdef EPLAYER3
+//				addmenulist(&mlist, "Streaming Playback Caching (1MB)", _("Streaming Playback Caching (1MB)"), NULL, 0, 0);
+//#else
+//				// mipsel work for radio
+//				addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
+//#endif
 			}	
 			else if(!ostrncmp("http://", tmpstr1, 7))
 			{
@@ -1407,11 +1451,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 //#endif
 				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 				{
+/*
 #ifndef EPLAYER3
 					addmenulist(&mlist, "File Caching Playback (10MB / 120s)", _("File Caching Playback (10MB / 120s)"), NULL, 0, 0);
 					addmenulist(&mlist, "File Caching Playback (20MB / 240s)", _("File Caching Playback (20MB / 240s)"), NULL, 0, 0);
 					addmenulist(&mlist, "File Caching Playback (30MB / 360s)", _("File Caching Playback (30MB / 360s)"), NULL, 0, 0);
 #endif
+*/
 					addmenulist(&mlist, "Download Full File", _("Download Full File"), NULL, 0, 0);
 					addmenulist(&mlist, "Download Full File (background)", _("Download Full File (background)"), NULL, 0, 0);
 				}
@@ -1944,7 +1990,7 @@ why ?
 			{
 				clearscreen(grid);
 
-				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75)
+				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75 || ((struct tithek*)listbox->select->handle)->flag == 91)
 				{
 					submenu(listbox, load, title);
 //					drawscreen(grid, 0, 0);
@@ -2129,6 +2175,76 @@ why ?
 					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 77)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 78)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 2) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 79)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 3) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 80)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 4) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 81)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 5) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 82)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 6) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 83)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 7) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 84)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 8) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 85)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 9) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 86)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 10) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 87)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 11) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 88)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 12) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 89)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 13) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 90)
+				{
+					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 14) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
 				{
 					textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
@@ -2214,6 +2330,8 @@ why ?
 		drawscreen(grid, 0, 0);
 		
 	}
+
+	amazon_deinit();
 
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
