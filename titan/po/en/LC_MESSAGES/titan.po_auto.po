@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.62\n"
+"Project-Id-Version: TitanNit 1.69\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-02-21 22:33+0100\n"
-"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"PO-Revision-Date: 2015-11-08 19:39+0100\n"
+"Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #: help.h:33
 msgid "\n"
@@ -7979,27 +7979,27 @@ msgstr "DO you want to remove the selected Entry from your Favourites?"
 
 #: skin_default_skin.xml.h:482
 msgid "Remove unused Channels"
-msgstr ""
+msgstr "Remove unavailable Channels"
 
 #: skin_default_skin.xml.h:483
 msgid "Remove unused Channels in Bouquets"
-msgstr ""
+msgstr "Remove unavailable Channels in Bouquets"
 
 #: skin_default_skin.xml.h:484
 msgid "Remove unused Provider"
-msgstr ""
+msgstr "Remove unavailable Providers"
 
 #: skin_default_skin.xml.h:485
 msgid "Remove unused Sats"
-msgstr ""
+msgstr "Remove unavailable Satellites"
 
 #: skin_default_skin.xml.h:486
 msgid "Remove unused Transponder"
-msgstr ""
+msgstr "Remove unavailable Transponders"
 
 #: extensions.h:297
 msgid "Removeing"
-msgstr ""
+msgstr "Removing"
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
 #: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13

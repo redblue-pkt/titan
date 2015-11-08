@@ -8148,23 +8148,23 @@ msgstr "Möchten Sie diesen Eintrag aus Ihren Favoriten löschen?"
 
 #: skin_default_skin.xml.h:482
 msgid "Remove unused Channels"
-msgstr "Lösche ungenutzte Sender"
+msgstr "Lösche nicht verfügbare Sender"
 
 #: skin_default_skin.xml.h:483
 msgid "Remove unused Channels in Bouquets"
-msgstr "Lösche nicht empfangbare Sender in Bouquets"
+msgstr "Lösche nicht verfügbare Sender in Bouquets"
 
 #: skin_default_skin.xml.h:484
 msgid "Remove unused Provider"
-msgstr "Lösche ungenutzte Anbieter"
+msgstr "Lösche nicht verfügbare Anbieter"
 
 #: skin_default_skin.xml.h:485
 msgid "Remove unused Sats"
-msgstr "Lösche ungenutzte Satelliten"
+msgstr "Lösche nicht verfügbare Satelliten"
 
 #: skin_default_skin.xml.h:486
 msgid "Remove unused Transponder"
-msgstr "Lösche ungenutzte Transponder"
+msgstr "Lösche nicht verfügbare Transponder"
 
 #: extensions.h:297
 msgid "Removeing"
