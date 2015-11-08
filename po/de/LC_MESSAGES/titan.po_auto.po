@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: help.h:33
@@ -8148,7 +8148,7 @@ msgstr "Möchten Sie diesen Eintrag aus Ihren Favoriten löschen?"
 
 #: skin_default_skin.xml.h:482
 msgid "Remove unused Channels"
-msgstr ""
+msgstr "Lösche ungenutzte Sender"
 
 #: skin_default_skin.xml.h:483
 msgid "Remove unused Channels in Bouquets"
@@ -8156,15 +8156,15 @@ msgstr "Lösche nicht empfangbare Sender in Bouquets"
 
 #: skin_default_skin.xml.h:484
 msgid "Remove unused Provider"
-msgstr ""
+msgstr "Lösche ungenutzte Anbieter"
 
 #: skin_default_skin.xml.h:485
 msgid "Remove unused Sats"
-msgstr ""
+msgstr "Lösche ungenutzte Satelliten"
 
 #: skin_default_skin.xml.h:486
 msgid "Remove unused Transponder"
-msgstr ""
+msgstr "Lösche ungenutzte Transponder"
 
 #: extensions.h:297
 msgid "Removeing"
