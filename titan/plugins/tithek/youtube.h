@@ -48,7 +48,7 @@ grep code:
 and get to youtube
 */
 
-	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
 	writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr", tmpstr, 0);
 	free(tmplink), tmplink = NULL;
 
@@ -272,7 +272,7 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 //12:39:28 T:11340  NOTICE: 'GET /youtube/v3/search?q=pink&regionCode=US&part=snippet&hl=en_US&key=AIzaSyBAdxZCHbeJwnQ7dDZQJNfcaF46MdqJ24E&type=video&maxResults=50 HTTP/1.1\r\nHost: www.googleapis.com\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.36 Safari/537.36\r\nConnection: close\r\nAccept-Encoding: gzip, deflate\r\n\r\n'
 
 		char* tmpstr = NULL;
-		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, 1);		
+		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);		
 		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr1", tmpstr, 0);
 
 		tmpstr = stringreplacechar(tmpstr, '\n', ' ');
