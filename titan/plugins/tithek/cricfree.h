@@ -17,13 +17,32 @@ char* cricfree(char* link, int incount)
 	char* swfurl = NULL;
 	char* host = NULL;
 	char* path = NULL;
+/*
+http://cricfree.sx/sky-sports-1-live-stream-5
+http://cricfree.sx/update/tsn1.php,
+*/
+	if(ostrstr(link, "/update/") == NULL)
+	{
+		tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+		host = string_resub("http://", "/", link, 0);
+		path = string_replace_all(host, "", link, 0);
+		path = string_replace_all("http://", "", path, 1);
+		path = string_replace_all(" ", "%20", path, 1);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+		url = string_resub("src=\"", "\"", tmpstr, 0);
+	}
+	else
+		url = ostrcat(link, NULL, 0, 0);
 
-	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
-	host = string_resub("http://", "/", link, 0);
-	path = string_replace_all(host, "", link, 0);
+	printf("url: %s\n", url);
+
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", url, 0);
+	path = string_replace_all(host, "", url, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+	free(url), url = NULL;
 
 //<script type='text/javascript'>id='espnuk'; width='620'; height='490';</script><script type='text/javascript' src='http://theactionlive.com/livegamecr.js'></script>
 //document.write('<iframe width="'+width+'" height="'+height+'" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" src="http://theactionlive.com/livegamecr2.php?id='+id+'&width='+width+'&height='+height+'&stretching='+stretching+'"></iframe>');
@@ -52,7 +71,7 @@ char* cricfree(char* link, int incount)
 	path = string_replace_all(host, "", url, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	pageurl = string_resub("src=\"", "\"", tmpstr, 0);
 	pageurl = string_replace_all(" ", "", pageurl, 1);
@@ -70,7 +89,7 @@ char* cricfree(char* link, int incount)
 	path = string_replace_all(host, "", pageurl, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	url = string_resub("file: \"", "\"", tmpstr, 0);
 
@@ -101,7 +120,7 @@ char* cricfree(char* link, int incount)
 		path = string_replace_all(host, "", url, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast8_tmpstr", oitoa(incount), host, path, tmpstr);
 
 //		url: http://biggestplayer.me/streamcrnoscrape.php?id=+id+&width=&height=,
 
@@ -123,7 +142,7 @@ char* cricfree(char* link, int incount)
 		path = string_replace_all(host, "", url, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast8_tmpstr", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast9_tmpstr", oitoa(incount), host, path, tmpstr);
 		streamurl = string_resub("file: \"", "\"", tmpstr, 0);
 /*
 		http://178.18.31.52:8081/liverepeater/224731/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9MTEvNi8yMDE1IDM6MDc6MDIgUE0maGFzaF92YWx1ZT1TUUJsM3JoVWNLKzIwVytTdVdRVThRPT0mdmFsaWRtaW51dGVzPTQ=
