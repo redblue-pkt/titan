@@ -2195,7 +2195,7 @@ msgstr "Выберите способ сброса настроек из спи�
 msgid "Choose your Shares from the following list"
 msgstr "Выберите для изменения, добавления новой сетевой папки"
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:513 youtube.h:196 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:143 youtube.h:196 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
@@ -8698,7 +8698,7 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: rtl2now.h:507 rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:543
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
 #: tectime.h:13 tectime.h:15 tithek_global.h:436 tithek_global.h:438
-#: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:544 tvtoast.h:546 xvideos.h:56
+#: tithek_mainmenu.h:115 tmdb.h:898 tvtoast.h:174 tvtoast.h:176 xvideos.h:56
 #: xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361
 #: zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9551,7 +9551,7 @@ msgstr "Стрим-конфиг (iOS)"
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:513 youtube.h:196 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:143 youtube.h:196 zdf.h:112
 msgid "Stream Menu"
 msgstr "Меню потока"
 
