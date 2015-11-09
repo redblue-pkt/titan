@@ -2336,7 +2336,7 @@ why ?
 		
 	}
 
-	amazon_deinit();
+//	amazon_deinit();
 
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
