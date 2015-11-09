@@ -52,7 +52,7 @@ if [ $old = 1 ];then
 	
 	rm -rf _full/youtubetmp
 else
-	/opt/gs/youtube/create.sh -key AIzaSyDxUusIumLmhHCzDZbKPJMK_5pas8WDD_4 -loc "de_de,de_at,en_gb,en_us,fr_fr,it_it,pl_pl" -thumbnail -d _full/youtube
+	/opt/gs/youtube/create.sh -key AIzaSyAd-YEOqZz9nXVzGtn3KWzYLbLaajhqIDA -loc "de_de,de_at,en_gb,en_us,fr_fr,it_it,pl_pl" -thumbnail -d _full/youtube
 #	/opt/gs/youtube/create.sh -key AIzaSyDxUusIumLmhHCzDZbKPJMK_5pas8WDD_4 -loc "de_de,de_at,en_gb,en_us,fr_fr,it_it,pl_pl" -d _full/youtube
 	cp -a _full/youtube/* /var/www/atemio/web/mediathek/youtube
 	DONETIME=`date +%s`
