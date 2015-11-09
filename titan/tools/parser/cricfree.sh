@@ -20,9 +20,9 @@ count=0
 
 $wgetbin "http://cricfree.sx/" -O cache.cricfree.cache
 
-cat cache.cricfree.cache | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="has-sub">!\n<li class="has-sub">!g' | grep ^'<li class="has-sub">' | sed 's!href=!\n<a href=!g' | grep ^'<a href=' | grep "http://cricfree.sx" | cut -d '"' -f2 > cache.cricfree1.cache
+#cat cache.cricfree.cache | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="has-sub">!\n<li class="has-sub">!g' | grep ^'<li class="has-sub">' | sed 's!href=!\n<a href=!g' | grep ^'<a href=' | grep "http://cricfree.sx" | grep -v "/watch/live/" | cut -d '"' -f2 > cache.cricfree1.cache
 
-LIST=`cat cache.cricfree.cache | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="has-sub">!\n<li class="has-sub">!g' | grep ^'<li class="has-sub">' | sed 's!href=!\n<a href=!g' | grep ^'<a href=' | grep "http://cricfree.sx" | cut -d '"' -f2`
+LIST=`cat cache.cricfree.cache | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="has-sub">!\n<li class="has-sub">!g' | grep ^'<li class="has-sub">' | sed 's!href=!\n<a href=!g' | grep ^'<a href=' | grep "http://cricfree.sx" | grep -v "/watch/live/" | cut -d '"' -f2`
 echo LIST $LIST
 
 count1=0
