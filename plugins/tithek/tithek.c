@@ -55,6 +55,8 @@
 #include "mightyupload.h"
 #include "cloudzilla.h"
 #include "vivo.h"
+#include "cricfree.h"
+#include "streamlive.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
