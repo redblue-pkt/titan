@@ -57,6 +57,115 @@ char* liveonlinetv(char* link, int incount)
 	return streamurl;
 }
 
+char* akamaistream(char* link, int incount)
+{
+	int debuglevel = getconfigint("debuglevel", NULL);
+
+	debug(99, "akamaistream(%d) link=%s", incount, link);
+	char* streamurl = NULL;
+	char* host = NULL;
+	char* path = NULL;
+	char* streamurl1 = NULL;
+	char* streamurl2 = NULL;
+	char* tmpstr = NULL;
+	char* tmpstr2 = NULL;
+	char* title = NULL;
+	char* pic = NULL;
+	char* typemsg = NULL;
+
+	typemsg = string_resub("http://", "/", link, 0);
+
+	host = string_resub("http://", "/", link, 0);
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", link, 0);
+	path = string_replace_all(host, "", link, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+
+	streamurl1 = string_resub("Ref1=", "\n", tmpstr, 0);
+	streamurl2 = string_resub("Ref2=", "\n", tmpstr, 0);
+
+	streamurl1 = string_replace_all("&amp;", "&", streamurl1, 0);
+	streamurl2 = string_replace_all("&amp;", "&", streamurl2, 0);
+
+printf("streamurl1: %s\n", streamurl1);
+printf("streamurl2: %s\n", streamurl2);
+
+	streamurl = ostrcat(streamurl1, NULL, 0, 0);
+	if(streamurl == NULL)
+		streamurl = ostrcat(streamurl2, NULL, 0, 0);
+
+	if(incount == -1 && streamurl1 != NULL)
+	{
+		tmpstr2 = ostrcat(streamurl1, "\n", 0, 0);
+		tmpstr2 = ostrcat(tmpstr2, streamurl2, 1, 0);
+
+		int count = 0, i = 0;
+		struct splitstr* ret1 = NULL;
+		struct menulist* mlist = NULL, *mbox = NULL;
+		ret1 = strsplit(tmpstr2, "\n", &count);
+		for(i = 0; i < count; i++)
+		{
+			incount++;
+
+			free(streamurl), streamurl = NULL;
+			streamurl = ostrcat(ret1[i].part, NULL, 0, 0);
+
+			if(ostrstr(streamurl, "rtmp") != NULL)
+				title = ostrcat("Rtmpe Stream (", NULL, 0, 0);
+			else
+				title = ostrcat("Http Stream (", NULL, 0, 0);
+	
+			title = ostrcat(title, oitoa(incount), 1, 1);
+			title = ostrcat(title, ")", 1, 0);
+			if(typemsg != NULL)
+			{
+				title = ostrcat(title, " (", 1, 0);
+				title = ostrcat(title, typemsg, 1, 0);
+				title = ostrcat(title, ")", 1, 0);
+			}
+			pic = ostrcat("flv.png", NULL, 0, 0);
+			
+			if(streamurl != NULL)
+			{
+				debug(99, "(%d) title: %s streamurl: %s\n", i, title, streamurl);																									
+				addmenulist(&mlist, title, streamurl, pic, 0, 0);
+			}
+	
+			free(title), title = NULL;
+			free(pic), pic = NULL;
+		}
+		free(ret1), ret1 = NULL;
+		if(mlist != NULL)
+		{
+			mbox = menulistbox(mlist, NULL, _("Stream Menu"), _("Choose your Streaming Format from the following list"), NULL, NULL, 1, 0);
+			if(mbox != NULL)
+			{
+				free(streamurl), streamurl = NULL;
+	
+				debug(99, "mbox->name %s", mbox->name);
+				debug(99, "mbox->text %s", mbox->text);
+				streamurl = ostrcat(mbox->text, NULL, 0, 0);
+	
+			}
+		}
+	}
+	free(streamurl1), streamurl1 = NULL;
+	free(streamurl2), streamurl2 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	free(title), title = NULL;
+	free(pic), pic = NULL;
+	free(typemsg), typemsg = NULL;
+
+	free(host), host = NULL;
+	free(path), path = NULL;
+
+	debug(99, "streamurl %s", streamurl);
+	return streamurl;
+}
+
 char* tvtoast(char* link)
 {
 	debug(99, "link %s", link);
@@ -120,6 +229,8 @@ char* tvtoast(char* link)
 					streamurl = cricfree(url, incount);
 				else if(ostrstr(url, "liveonlinetv") != NULL)
 					streamurl = liveonlinetv(url, incount);
+				else if(ostrstr(url, "akamaistream") != NULL)
+					streamurl = akamaistream(url, incount);
 				else
 				{
 					printf("found unused (%d) url=%s\n", incount, url);
