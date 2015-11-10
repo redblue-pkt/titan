@@ -106,6 +106,7 @@ int amazonlogin = 0;
 //flag 90   - amazon genre tv listed
 //flag 91   - streamlive
 //flag 92   - cricfree
+//flag 93   - liveonlinetv
 
 //flag 100  - all local search
 //flag 1000 - menu pincode
@@ -1396,6 +1397,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = cricfree(tmpstr, -1);
 	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 93)
+	{
+		if(tmpstr != NULL) tmpstr1 = liveonlinetv(tmpstr, -1);
+	}
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr2); tmpstr2 = NULL;
@@ -1995,7 +2000,7 @@ why ?
 			{
 				clearscreen(grid);
 
-				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75 || ((struct tithek*)listbox->select->handle)->flag == 91 || ((struct tithek*)listbox->select->handle)->flag == 92)
+				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75 || ((struct tithek*)listbox->select->handle)->flag == 91 || ((struct tithek*)listbox->select->handle)->flag == 92 || ((struct tithek*)listbox->select->handle)->flag == 93)
 				{
 					submenu(listbox, load, title);
 //					drawscreen(grid, 0, 0);
