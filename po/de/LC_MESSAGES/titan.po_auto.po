@@ -2236,7 +2236,7 @@ msgstr ""
 "benutzen. Für den Zugriff auf passwortgeschützte Windows Freigaben\n"
 "bitte Menü drücken und die Benutzerdaten eingeben."
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:143 youtube.h:196 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:175 youtube.h:196 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 
@@ -8873,7 +8873,7 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: rtl2now.h:507 rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:543
 #: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
 #: tectime.h:13 tectime.h:15 tithek_global.h:436 tithek_global.h:438
-#: tithek_mainmenu.h:113 tmdb.h:898 tvtoast.h:174 tvtoast.h:176 xvideos.h:56
+#: tithek_mainmenu.h:113 tmdb.h:898 tvtoast.h:206 tvtoast.h:208 xvideos.h:56
 #: xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361
 #: zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9734,7 +9734,7 @@ msgstr "Stream Konfiguration (iOS)"
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:143 youtube.h:196 zdf.h:112
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:175 youtube.h:196 zdf.h:112
 msgid "Stream Menu"
 msgstr "Stream Menü"
 
