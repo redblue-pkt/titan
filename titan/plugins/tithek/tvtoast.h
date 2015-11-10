@@ -27,6 +27,36 @@ char* usachannels(char* link, int incount)
 	return streamurl;
 }
 
+char* liveonlinetv(char* link, int incount)
+{
+	int debuglevel = getconfigint("debuglevel", NULL);
+
+	debug(99, "liveonlinetv(%d) link=%s", incount, link);
+	char* streamurl = NULL;
+	char* host = NULL;
+	char* path = NULL;
+	char* tmpstr = NULL;
+
+	host = string_resub("http://", "/", link, 0);
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", link, 0);
+	path = string_replace_all(host, "", link, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+
+	streamurl = string_resub("hls: \"", "\"", tmpstr, 0);
+	if(streamurl == NULL)
+		streamurl = string_resub("progressive: \"", "\"", tmpstr, 0);
+
+	free(tmpstr), tmpstr = NULL;
+	free(host), host = NULL;
+	free(path), path = NULL;
+
+	debug(99, "streamurl %s", streamurl);
+	return streamurl;
+}
+
 char* tvtoast(char* link)
 {
 	debug(99, "link %s", link);
@@ -88,6 +118,8 @@ char* tvtoast(char* link)
 					streamurl = usachannels(url, incount);
 				else if(ostrstr(url, "cricfree.sx") != NULL)
 					streamurl = cricfree(url, incount);
+				else if(ostrstr(url, "liveonlinetv") != NULL)
+					streamurl = liveonlinetv(url, incount);
 				else
 				{
 					printf("found unused (%d) url=%s\n", incount, url);
