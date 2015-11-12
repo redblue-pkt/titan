@@ -13187,24 +13187,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Atemio Channelsearch 4xSat"
-#~ msgstr "Αναζήτηση Καναλιών"
-
-#~ msgid "Atemio Tuner configuration Sat"
-#~ msgstr "Tuner"
-
-#~ msgid "Atemio WLAN configuration"
-#~ msgstr "LNB"
-
-#~ msgid "Internet Radio"
-#~ msgstr "Internet Browser"
-
-#~ msgid "MyVideo"
-#~ msgstr "My Video"
-
-#~ msgid "TimeTv"
-#~ msgstr "Timer"
-
-#~ msgid "XXX-XVIDEOS"
-#~ msgstr "VIDEO"
