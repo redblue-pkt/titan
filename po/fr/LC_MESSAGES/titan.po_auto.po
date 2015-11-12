@@ -13191,12 +13191,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Atemio Channelsearch 4xSat"
-#~ msgstr "Recherche de chaine"
-
-#~ msgid "Atemio Tuner configuration Sat"
-#~ msgstr "Configuration de Tuner"
-
-#~ msgid "Atemio WLAN configuration"
-#~ msgstr "Configuration LNB"
