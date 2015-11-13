@@ -361,7 +361,7 @@ printf("-----------------------------------------------------\n");
 					}
 					free(tmpstr1), tmpstr1 = NULL;
 */
-					int type = 41;
+					int type = 94;
 					
 					debug(99, "(%d/%d) %s url: %s",i ,max ,tmphname, url);
 
