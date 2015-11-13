@@ -631,8 +631,8 @@ msgstr ""
 msgid "ADD BOUQUET"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1645
-#: tithek.h:2335
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1654
+#: tithek.h:2349
 msgid "ADD FAV"
 msgstr ""
 
@@ -723,11 +723,11 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: tithek.h:2304
+#: tithek.h:2318
 msgid "Add this link as Favorite ?"
 msgstr ""
 
-#: tithek.h:1825 tithek.h:1985
+#: tithek.h:1834 tithek.h:1994
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -792,7 +792,7 @@ msgstr ""
 msgid "Alpha Romanie G98"
 msgstr ""
 
-#: tithek.c:97
+#: tithek.c:98
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
@@ -1678,7 +1678,7 @@ msgstr ""
 msgid "Can not parse Main Stream URL, try again later."
 msgstr ""
 
-#: movie4k.h:96
+#: movie2k.h:32 movie4k.h:96
 msgid "Can not parse Stream URL, try again later."
 msgstr ""
 
@@ -1714,7 +1714,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
-#: tithek.h:1576
+#: tithek.h:1585
 msgid "Can't get Streamurl !"
 msgstr ""
 
@@ -1772,7 +1772,7 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr ""
 
-#: tithek.h:1312
+#: tithek.h:1317
 msgid ""
 "Can't start download.\n"
 "Please try later."
@@ -1973,7 +1973,7 @@ msgstr ""
 msgid "Choice Menu"
 msgstr "Προστασία Μενού με PIN"
 
-#: tithek.h:1429
+#: tithek.h:1438
 msgid "Choice Playback"
 msgstr ""
 
@@ -2029,12 +2029,12 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:142 tvtoast.h:286 youtube.h:196
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:142 tvtoast.h:343 youtube.h:196
 #: zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
-#: tithek.h:1476
+#: tithek.h:1485
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
@@ -2190,7 +2190,7 @@ msgstr ""
 msgid "Connect with Hoster wait 7 seconds"
 msgstr ""
 
-#: movie4k.h:36
+#: movie2k.h:23 movie4k.h:36
 msgid "Connection Error, try again later."
 msgstr ""
 
@@ -2330,7 +2330,7 @@ msgstr ""
 msgid "Create new"
 msgstr "Δημιουργία backup"
 
-#: tithek.h:1810 tithek.h:1970
+#: tithek.h:1819 tithek.h:1979
 msgid "Create sub folder"
 msgstr ""
 
@@ -2784,11 +2784,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr ""
 
-#: tithek.h:1471
+#: tithek.h:1480
 msgid "Download Full File"
 msgstr ""
 
-#: tithek.h:1472
+#: tithek.h:1481
 msgid "Download Full File (background)"
 msgstr ""
 
@@ -2855,7 +2855,7 @@ msgstr ""
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1640 tithek.h:2330
+#: tithek.h:1649 tithek.h:2344
 msgid "EDIT FAV"
 msgstr ""
 
@@ -3047,72 +3047,73 @@ msgstr ""
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
-#: movie4k.h:36 movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30
-#: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
-#: MultiImage.c:262 MultiImage.c:273 MultiImage.c:533 MultiImage.c:591
-#: MultiImage.c:671 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
-#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
-#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
-#: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
-#: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
-#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
-#: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
-#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
-#: play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294
-#: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
-#: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
-#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:6
-#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
-#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
-#: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
-#: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
-#: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
-#: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
-#: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2415 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
-#: service.h:983 shared.h:29 shared.h:65 shared.h:82
-#: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
-#: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
-#: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
-#: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
-#: skins_lcdsamsung_skin.xml.h:7 skins_mboxinfo_skin.xml.h:1
-#: skins_mc_skin.xml.h:19 skins_multiimage_skin.xml.h:5
-#: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
-#: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
-#: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
-#: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
-#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
-#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
-#: system_backup_restore.h:95 system_update.h:257 system_update.h:263
-#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
-#: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1042
-#: titan.c:1051 titan.c:1179 titan.c:1200 titan.c:1206 titan.c:1217
-#: titan.c:1223 tithek.c:97 tithek_global.h:85 tithek.h:695 tithek.h:1251
-#: tithek.h:1312 tithek.h:1554 tithek.h:1576 tithek.h:1593 tithek.h:1825
-#: tithek.h:1985 tithek.h:2260 tithek.h:2288 tithek.h:2304 tithek.h:2316
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
-#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
-#: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
+#: movie2k.h:23 movie2k.h:32 movie4k.h:36 movie4k.h:52 movie4k.h:96
+#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
+#: movshare.h:157 movshare.h:163 MultiImage.c:262 MultiImage.c:273
+#: MultiImage.c:533 MultiImage.c:591 MultiImage.c:671 myvideo.h:86
+#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
+#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
+#: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
+#: networkbrowser.h:1797 networkbrowser.h:1949 network.h:284 network.h:299
+#: network.h:335 network.h:436 network.h:577 network.h:785 network.h:793
+#: network.h:819 network.h:823 network.h:877 network.h:884 network.h:906
+#: newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:93 novamov.h:99
+#: nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
+#: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
+#: played.h:114 played.h:171 player.h:109 play.h:497 play.h:614 play.h:1272
+#: play.h:1278 play.h:1293 play.h:1294 plugins_autotimer_skin.xml.h:6
+#: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
+#: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
+#: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:6
+#: plugins_lcdsamsung_skin.xml.h:7 plugins_mboxinfo_skin.xml.h:1
+#: plugins_mc_skin.xml.h:19 plugins_multiimage_skin.xml.h:5
+#: plugins_optimize_skin.xml.h:1 plugins_panel_skin.xml.h:10
+#: plugins_rgui_skin.xml.h:1 plugins_stopifnotused_skin.xml.h:3
+#: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:1
+#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
+#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
+#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
+#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
+#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
+#: readerconfig.h:498 record.h:90 record.h:387 record.h:1160 record.h:1689
+#: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
+#: scan.h:2415 scart.h:12 scart.h:25 scriptexec.h:41 security.h:663
+#: security.h:680 security.h:1916 service.h:738 service.h:983 shared.h:29
+#: shared.h:65 shared.h:82 skin_default_skin.xml.h:192
+#: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
+#: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
+#: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:6
+#: skins_lcdpearl1_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:7
+#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:19
+#: skins_multiimage_skin.xml.h:5 skins_optimize_skin.xml.h:1
+#: skins_panel_skin.xml.h:10 skins_rgui_skin.xml.h:1
+#: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
+#: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
+#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:48 solarmovie.h:60
+#: solarmovie.h:362 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
+#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
+#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:257
+#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
+#: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
+#: titan.c:346 titan.c:355 titan.c:1042 titan.c:1051 titan.c:1179 titan.c:1200
+#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:98 tithek_global.h:85
+#: tithek.h:700 tithek.h:1256 tithek.h:1317 tithek.h:1563 tithek.h:1585
+#: tithek.h:1602 tithek.h:1834 tithek.h:1994 tithek.h:2274 tithek.h:2302
+#: tithek.h:2318 tithek.h:2330 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
+#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73
+#: videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
+#: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
+#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
+#: vodlocker.h:86 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:220
+#: zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr ""
 
@@ -3144,7 +3145,7 @@ msgstr "playlist"
 msgid "Edit mode"
 msgstr ""
 
-#: tithek.h:2316
+#: tithek.h:2330
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -3234,7 +3235,8 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "Κανάλι"
 
-#: kinox.h:300 movie4k.h:863 movie4k.h:1111 solarmovie.h:593
+#: kinox.h:300 movie2k.h:502 movie2k.h:750 movie4k.h:863 movie4k.h:1111
+#: solarmovie.h:593
 msgid "Episode"
 msgstr ""
 
@@ -3517,7 +3519,7 @@ msgstr "Γρήγορο zapping"
 msgid "Fav"
 msgstr "Αγαπημένα"
 
-#: tithek.h:1012
+#: tithek.h:1017
 msgid "Favorites"
 msgstr ""
 
@@ -3537,7 +3539,7 @@ msgstr ""
 msgid "File Operation"
 msgstr ""
 
-#: tithek.h:695
+#: tithek.h:700
 msgid "File exist, overwrite?"
 msgstr ""
 
@@ -3556,7 +3558,7 @@ msgstr ""
 msgid "Filelist-Mode"
 msgstr "Filelist Mode"
 
-#: tithek.h:1547 tithek.h:1566
+#: tithek.h:1556 tithek.h:1575
 msgid "Filename"
 msgstr ""
 
@@ -5559,22 +5561,22 @@ msgstr ""
 #: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
 #: mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
-#: mightyupload.h:68 mightyupload.h:74 movie4k.h:36 movie4k.h:52 movie4k.h:96
-#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
-#: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:273
-#: MultiImage.c:353 MultiImage.c:401 myvideo.h:86 networkbrowser.h:966
-#: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
-#: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
-#: networkbrowser.h:1785 networkbrowser.h:1792 networkbrowser.h:1797
-#: networkbrowser.h:1949 network.h:436 network.h:577 network.h:785
-#: network.h:793 network.h:819 network.h:823 network.h:877 novamov.h:35
-#: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
-#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
-#: play.h:614 play.h:1293 play.h:1505 play.h:1721 play.h:1732 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: mightyupload.h:68 mightyupload.h:74 movie2k.h:23 movie2k.h:32 movie4k.h:36
+#: movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30 movreel.h:137
+#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
+#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 myvideo.h:86
+#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
+#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
+#: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
+#: networkbrowser.h:1797 networkbrowser.h:1949 network.h:436 network.h:577
+#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
+#: novamov.h:35 novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99
+#: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
+#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
+#: player.h:109 play.h:614 play.h:1293 play.h:1505 play.h:1721 play.h:1732
+#: possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
+#: primeshare.h:124 promptfile.h:46 promptfile.h:94 promptfile.h:136
+#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
 #: record.h:1160 record.h:1437 record.h:1689 record.h:1714 rectimer.h:577
@@ -5593,10 +5595,10 @@ msgstr ""
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1179
-#: titan.c:1200 titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:97
-#: tithek_global.h:85 tithek.h:695 tithek.h:1251 tithek.h:1312 tithek.h:1554
-#: tithek.h:1576 tithek.h:1825 tithek.h:1985 tithek.h:2260 tithek.h:2288
-#: tithek.h:2304 tithek.h:2316 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: titan.c:1200 titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:98
+#: tithek_global.h:85 tithek.h:700 tithek.h:1256 tithek.h:1317 tithek.h:1563
+#: tithek.h:1585 tithek.h:1834 tithek.h:1994 tithek.h:2274 tithek.h:2302
+#: tithek.h:2318 tithek.h:2330 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:655
 #: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
@@ -6127,42 +6129,43 @@ msgstr ""
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
-#: movie4k.h:36 movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30
-#: movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
-#: MultiImage.c:46 MultiImage.c:175 MultiImage.c:244 MultiImage.c:262
-#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 MultiImage.c:533
-#: MultiImage.c:591 MultiImage.c:607 MultiImage.c:671 myvideo.h:86
-#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
-#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
-#: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
-#: networkbrowser.h:1797 networkbrowser.h:1949 network.h:263 network.h:271
-#: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
-#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
-#: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
-#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
-#: play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294
-#: play.h:1505 play.h:1721 play.h:1732 plugins_dlna_skin.xml.h:7
-#: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
-#: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
-#: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
-#: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:3 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
-#: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
-#: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1613 scan.h:1615 scan.h:1643
-#: scan.h:1645 scan.h:1916 scan.h:2007 scan.h:2415 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
-#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
-#: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
-#: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
-#: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
+#: movie2k.h:23 movie2k.h:32 movie4k.h:36 movie4k.h:52 movie4k.h:96
+#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
+#: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:175
+#: MultiImage.c:244 MultiImage.c:262 MultiImage.c:273 MultiImage.c:353
+#: MultiImage.c:401 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
+#: MultiImage.c:671 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
+#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
+#: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
+#: network.h:263 network.h:271 network.h:284 network.h:299 network.h:335
+#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
+#: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
+#: newsletter.h:292 novamov.h:35 novamov.h:93 novamov.h:99 nowvideo.h:44
+#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
+#: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
+#: played.h:114 played.h:171 player.h:109 play.h:497 play.h:614 play.h:1272
+#: play.h:1278 play.h:1293 play.h:1294 play.h:1505 play.h:1721 play.h:1732
+#: plugins_dlna_skin.xml.h:7 plugins_facebook_skin.xml.h:3
+#: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:35
+#: plugins_optimize_skin.xml.h:2 plugins_rgui_skin.xml.h:2
+#: plugins_sudoku_skin.xml.h:13 plugins_tiwakeup_skin.xml.h:2
+#: plugins_wins3_skin.xml.h:3 possetup.h:98 primeshare.h:29 primeshare.h:73
+#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
+#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
+#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
+#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
+#: readerconfig.h:498 record.h:387 record.h:1160 record.h:1437 record.h:1714
+#: rectimer.h:577 rectimer.h:1258 rectimer.h:1405 rectimer.h:1417
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:34 scan.h:1613 scan.h:1615 scan.h:1643 scan.h:1645 scan.h:1916
+#: scan.h:2007 scan.h:2415 scart.h:12 scart.h:25 scriptexec.h:41
+#: security.h:663 security.h:680 security.h:1916 service.h:738 service.h:983
+#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398 skinadjust.h:803
+#: skins_dlna_skin.xml.h:7 skinselector.h:231 skins_facebook_skin.xml.h:3
+#: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:35
+#: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
@@ -6176,10 +6179,10 @@ msgstr ""
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1042 titan.c:1051 titan.c:1179 titan.c:1200
-#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:97 tithek_global.h:85
-#: tithek.h:695 tithek.h:1251 tithek.h:1312 tithek.h:1554 tithek.h:1576
-#: tithek.h:1593 tithek.h:1825 tithek.h:1985 tithek.h:2260 tithek.h:2288
-#: tithek.h:2304 tithek.h:2316 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:98 tithek_global.h:85
+#: tithek.h:700 tithek.h:1256 tithek.h:1317 tithek.h:1563 tithek.h:1585
+#: tithek.h:1602 tithek.h:1834 tithek.h:1994 tithek.h:2274 tithek.h:2302
+#: tithek.h:2318 tithek.h:2330 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -6433,7 +6436,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1677
+#: tithek.h:1686
 msgid "Page"
 msgstr ""
 
@@ -7377,7 +7380,7 @@ msgstr ""
 msgid "Remotecontrol Power Aktion"
 msgstr ""
 
-#: tithek.h:1247
+#: tithek.h:1252
 msgid "Remove Cachefile ?"
 msgstr ""
 
@@ -7409,7 +7412,7 @@ msgstr "Επανεκκίνηση"
 msgid "Remove success"
 msgstr "Διαγραφή σταθμού"
 
-#: tithek.h:2288
+#: tithek.h:2302
 msgid "Remove this Favorite ?"
 msgstr ""
 
@@ -7550,7 +7553,7 @@ msgstr ""
 msgid "Result List"
 msgstr ""
 
-#: tithek.h:919
+#: tithek.h:924
 msgid "Results"
 msgstr ""
 
@@ -8120,16 +8123,17 @@ msgstr ""
 #: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15
 #: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
 #: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179
-#: kinox.h:181 kinox.h:797 kinox.h:799 mlehd.h:90 mlehd.h:92 movie4k.h:138
-#: movie4k.h:140 movie4k.h:295 movie4k.h:297 myvideo.h:229 myvideo.h:231
-#: myvideo.h:373 myvideo.h:375 netzkino.h:13 netzkino.h:15 nowtv.h:133
-#: nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313 rtl2now.h:315
-#: rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505
-#: rtl2now.h:507 rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:543
-#: solarmovie.h:135 solarmovie.h:137 solarmovie.h:262 solarmovie.h:264
-#: tectime.h:13 tectime.h:15 tithek_global.h:436 tithek_global.h:438
-#: tmdb.h:898 tvtoast.h:317 tvtoast.h:319 xvideos.h:56 xvideos.h:58
-#: youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361 zdf.h:147 zdf.h:149
+#: kinox.h:181 kinox.h:797 kinox.h:799 mlehd.h:90 mlehd.h:92 movie2k.h:74
+#: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:138 movie4k.h:140
+#: movie4k.h:295 movie4k.h:297 myvideo.h:229 myvideo.h:231 myvideo.h:373
+#: myvideo.h:375 netzkino.h:13 netzkino.h:15 nowtv.h:133 nowtv.h:135
+#: rtl2now.h:249 rtl2now.h:251 rtl2now.h:313 rtl2now.h:315 rtl2now.h:377
+#: rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507
+#: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:543 solarmovie.h:135
+#: solarmovie.h:137 solarmovie.h:262 solarmovie.h:264 tectime.h:13
+#: tectime.h:15 tithek_global.h:436 tithek_global.h:438 tmdb.h:898
+#: tvtoast.h:374 tvtoast.h:376 xvideos.h:56 xvideos.h:58 youtube.h:245
+#: youtube.h:247 youtube.h:359 youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Χειροκίνητη αναζήτηση"
 
@@ -8233,7 +8237,8 @@ msgstr ""
 msgid "Search only aktual epg ?"
 msgstr ""
 
-#: kinox.h:296 movie4k.h:859 movie4k.h:991 movie4k.h:1107 solarmovie.h:589
+#: kinox.h:296 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:859
+#: movie4k.h:991 movie4k.h:1107 solarmovie.h:589
 msgid "Season"
 msgstr ""
 
@@ -8878,7 +8883,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr ""
 
-#: tithek.h:1554
+#: tithek.h:1563
 msgid "Start playback"
 msgstr ""
 
@@ -8950,7 +8955,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:142 tvtoast.h:286 youtube.h:196
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:142 tvtoast.h:343 youtube.h:196
 #: zdf.h:112
 msgid "Stream Menu"
 msgstr ""
@@ -8976,15 +8981,15 @@ msgstr "Streaming"
 msgid "Streaming"
 msgstr ""
 
-#: tithek.h:1433 tithek.h:1437
+#: tithek.h:1442 tithek.h:1446
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1459
+#: tithek.h:1468
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1456
+#: tithek.h:1465
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9334,7 +9339,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:85 tithek.h:2260
+#: tithek_global.h:85 tithek.h:2274
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -9623,7 +9628,7 @@ msgstr ""
 msgid "TitanNit Leather"
 msgstr ""
 
-#: tithek.h:1593
+#: tithek.h:1602
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
@@ -9638,12 +9643,12 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:120
+#: tithek.c:121
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek.h:1638 tithek.h:1772 tithek.h:2284 tithek.h:2300 tithek.h:2312
-#: tithek.h:2328
+#: tithek.h:1647 tithek.h:1781 tithek.h:2298 tithek.h:2314 tithek.h:2326
+#: tithek.h:2342
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
@@ -11274,7 +11279,7 @@ msgstr ""
 msgid "fonts"
 msgstr ""
 
-#: tithek.h:914
+#: tithek.h:919
 msgid "found"
 msgstr "Ήχος"
 
@@ -12059,7 +12064,7 @@ msgid "please wait"
 msgstr ""
 
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1234
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1239
 msgid "please wait..."
 msgstr ""
 
