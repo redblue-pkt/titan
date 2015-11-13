@@ -27,7 +27,7 @@ int amazonlogin = 0;
 //flag 12	- myvideo
 //flag 13	- myvideo search 50
 //flag 14	- kinox play
-//flag 15	- unbenutzt... old: hoster filenuke
+//flag 15	- giga old: hoster filenuke
 //flag 16	- superrtlnow pay
 //flag 17	- rtlnow pay
 //flag 18	- voxnow pay
