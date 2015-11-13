@@ -110,6 +110,7 @@ int amazonlogin = 0;
 //flag 94   - movie2k 41 movie4k
 //flag 95	- movie2k 34 movie4k hoster de
 //flag 96	- movie2k 35 movie4k hoster other
+//flag 97   - movie2k 26 movie4k local serach
 
 //flag 100  - all local search
 //flag 1000 - menu pincode
@@ -2267,6 +2268,11 @@ why ?
 				else if((((struct tithek*)listbox->select->handle)->flag == 95) || (((struct tithek*)listbox->select->handle)->flag == 96))
 				{
 					if(movie2k_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 97)
+				{
+					if(movie2k_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
