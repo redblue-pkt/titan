@@ -107,6 +107,9 @@ int amazonlogin = 0;
 //flag 91   - streamlive
 //flag 92   - cricfree
 //flag 93   - liveonlinetv
+//flag 94   - movie2k 41 movie4k
+//flag 95	- movie2k 34 movie4k hoster de
+//flag 96	- movie2k 35 movie4k hoster other
 
 //flag 100  - all local search
 //flag 1000 - menu pincode
@@ -237,6 +240,8 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	else if(node->flag == 1 && pay == 0)
 		skip = 1;
 	else if(node->flag == 35 && pay == 0)
+		skip = 1;
+	else if(node->flag == 96 && pay == 0)
 		skip = 1;
 	else if(titheksolarmovie == 1 && node->flag == 9996 && sos == 0)
 	{
@@ -1401,6 +1406,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = liveonlinetv(tmpstr, -1);
 	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 94)
+	{
+		if(tmpstr != NULL) tmpstr1 = movie2k(tmpstr);
+	}
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr2); tmpstr2 = NULL;
@@ -2000,7 +2009,7 @@ why ?
 			{
 				clearscreen(grid);
 
-				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75 || ((struct tithek*)listbox->select->handle)->flag == 91 || ((struct tithek*)listbox->select->handle)->flag == 92 || ((struct tithek*)listbox->select->handle)->flag == 93)
+				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75 || ((struct tithek*)listbox->select->handle)->flag == 91 || ((struct tithek*)listbox->select->handle)->flag == 92 || ((struct tithek*)listbox->select->handle)->flag == 93 || ((struct tithek*)listbox->select->handle)->flag == 94)
 				{
 					submenu(listbox, load, title);
 //					drawscreen(grid, 0, 0);
@@ -2253,6 +2262,11 @@ why ?
 				else if(((struct tithek*)listbox->select->handle)->flag == 90)
 				{
 					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 14) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
+				else if((((struct tithek*)listbox->select->handle)->flag == 95) || (((struct tithek*)listbox->select->handle)->flag == 96))
+				{
+					if(movie2k_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))

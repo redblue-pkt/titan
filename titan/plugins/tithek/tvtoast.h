@@ -166,6 +166,61 @@ printf("streamurl2: %s\n", streamurl2);
 	return streamurl;
 }
 
+char* tvnanet(char* link, int incount)
+{
+	int debuglevel = getconfigint("debuglevel", NULL);
+
+	debug(99, "tvnanet(%d) link=%s", incount, link);
+	char* streamurl = NULL;
+	char* host = NULL;
+	char* path = NULL;
+	char* tmpstr = NULL;
+	char* url = NULL;
+	char* streamer = NULL;
+	char* pageurl = NULL;
+
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", link, 0);
+	path = string_replace_all(host, "", link, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+
+	url = string_resub("SRC=\"", "\"", tmpstr, 0);
+	free(tmpstr), tmpstr = NULL;
+	free(host), host = NULL;
+	free(path), path = NULL;
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", link, 0);
+	path = string_replace_all(host, "", link, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+
+	streamer = string_resub("streamer=", "\"", tmpstr, 0);
+	pageurl = ostrcat(link, NULL, 0, 0);
+
+	streamurl = ostrcat(streamurl, streamer, 1, 0);
+	streamurl = ostrcat(streamurl, " swfUrl=http://livecast.cc/live/player.swf", 1, 0);
+	streamurl = ostrcat(streamurl, " live=1", 1, 0);
+	streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
+	streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
+	streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);
+	streamurl = ostrcat(streamurl, pageurl, 1, 0);
+
+//gst-launch-1.0 playbin uri=rtmpe://r.livecast.cc/rl/&autostart=true&bufferlength=1&displayclick=fullscreen&stretching=exactfit&&screencolor=000000  swfUrl=http://livecast.cc/ads/popunder.js
+
+	free(tmpstr), tmpstr = NULL;
+	free(host), host = NULL;
+	free(path), path = NULL;
+	free(url), url = NULL;
+	free(streamer), streamer = NULL;
+	free(pageurl), pageurl = NULL;
+
+	debug(99, "streamurl %s", streamurl);
+	return streamurl;
+}
+
 char* tvtoast(char* link)
 {
 	debug(99, "link %s", link);
@@ -223,14 +278,16 @@ char* tvtoast(char* link)
 					streamurl = streamlive(url, incount);
 				else if(ostrstr(url, "zerocast.tv") != NULL)
 					streamurl = zerocast(url, incount);
-				else if(ostrstr(url, "usachannels.tv") != NULL)
-					streamurl = usachannels(url, incount);
 				else if(ostrstr(url, "cricfree.sx") != NULL)
 					streamurl = cricfree(url, incount);
 				else if(ostrstr(url, "liveonlinetv") != NULL)
 					streamurl = liveonlinetv(url, incount);
 				else if(ostrstr(url, "akamaistream") != NULL)
 					streamurl = akamaistream(url, incount);
+				else if(ostrstr(url, "tvnanet") != NULL)
+					streamurl = tvnanet(url, incount);
+//				else if(ostrstr(url, "usachannels.tv") != NULL)
+//					streamurl = usachannels(url, incount);
 				else
 				{
 					printf("found unused (%d) url=%s\n", incount, url);

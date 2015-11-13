@@ -57,6 +57,7 @@
 #include "vivo.h"
 #include "cricfree.h"
 #include "streamlive.h"
+#include "movie2k.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
