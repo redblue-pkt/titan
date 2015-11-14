@@ -1359,6 +1359,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = kinox(tmpstr);
 	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 15)
+	{
+		if(tmpstr != NULL) tmpstr1 = giga(tmpstr);
+	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 20)
 	{
 		if(tmpstr != NULL) tmpstr1 = nbastream(tmpstr);
