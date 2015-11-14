@@ -14,6 +14,74 @@ char* zerocast(char* link, int incount)
 	return streamurl;
 }
 
+int isbase641(char c)
+{
+	if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '+' || c == '/' || c == '=')
+		return 1;
+	return 0;
+}
+
+char decodebase641(char c)
+{
+	if(c >= 'A' && c <= 'Z') return(c - 'A');
+	if(c >= 'a' && c <= 'z') return(c - 'a' + 26);
+	if(c >= '0' && c <= '9') return(c - '0' + 52);
+	if(c == '+') return(62);
+	return 63;
+}
+
+int b64dec1(char* dest, char* src)
+{
+	if(src && *src)
+	{
+		char* p = dest;
+		int k, l = strlen(src) + 1;
+		char* buf = NULL;
+
+		buf = malloc(l);
+		if(buf == NULL) return 0;
+
+		for(k = 0, l = 0; src[k]; k++)
+		{
+			if(isbase641(src[k]))
+				buf[l++] = src[k];
+		}
+
+		for(k = 0; k < l; k += 4)
+		{
+			char c1 = 'A', c2 = 'A', c3 = 'A', c4 = 'A';
+			char b1 = 0, b2 = 0, b3 = 0, b4 = 0;
+
+			c1 = buf[k];
+			if(k + 1 < l)
+				c2 = buf[k + 1];
+			if(k + 2 < l)
+				c3 = buf[k + 2];
+			if(k + 3 < l)
+				c4 = buf[k + 3];
+
+			b1 = decodebase641(c1);
+			b2 = decodebase641(c2);
+			b3 = decodebase641(c3);
+			b4 = decodebase641(c4);
+			*p++ = ((b1 << 2) | (b2 >> 4));
+
+			if(c3 != '=')
+				*p++ = (((b2 & 0xf) << 4) | (b3 >> 2));
+			if(c4 != '=')
+				*p++ = (((b3 & 0x3) << 6) | b4);
+
+			// strip last unchanged chars
+			if(k == l-4)
+				*p++ = '\0';
+		}
+
+		free(buf);
+		return(p - dest);
+	}
+	return 0;
+}
+
 char* usachannels(char* link, int incount)
 {
 	int debuglevel = getconfigint("debuglevel", NULL);
@@ -62,16 +130,18 @@ char* usachannels(char* link, int incount)
 //curl = "cnRtcDovLzE4NS42My4yNTUuMTA6MTkzNS9saXZlZWRnZS8/d21zQXV0aFNpZ249YzJWeWRtVnlYM1JwYldVOU1URXZNVFF2TWpBeE5TQXhNVG94TlRveU5pQkJUU1pvWVhOb1gzWmhiSFZsUFhvdlJXd3dNSE5LYWtOS05VdGpZblZLZW5JeFRFRTlQU1oyWVd4cFpHMXBiblYwWlhNOU1UQT0vaGJvb3V1XzBkOXJxa2Mz";
 //stretching = "exactfit";
 	curlstring = string_resub("curl = \"", "\"", tmpstr, 0);
+	if(curlstring == NULL) goto end;
+
 	stretching = string_resub("stretching = \"", "\"", tmpstr, 0);
 	printf("curlstring input: %s\n", curlstring);
-	b64dec(curlstring, curlstring);
+	b64dec1(curlstring, curlstring);
 	printf("curlstring decod: %s\n", curlstring);
 	printf("stretching: %s\n", stretching);
 
 	if(tmpstr == NULL || ostrstr(tmpstr, "This channel is domain protected") != NULL)
 	{
 		textbox(_("Message"), _("This channel is domain protected") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
-		goto end;
+//		goto end;
 	}
 
 	app = oregex("rtmp://.*/(liveedge.*).*", curlstring);
@@ -89,15 +159,14 @@ char* usachannels(char* link, int incount)
 	streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
 	streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);
 	streamurl = ostrcat(streamurl, url, 1, 0);
-
 end:
 
-	free(tmpstr), tmpstr = NULL;
 	free(host), host = NULL;
 	free(path), path = NULL;
+	free(tmpstr), tmpstr = NULL;
 	free(url), url = NULL;
-	free(stretching), stretching = NULL;
 	free(curlstring), curlstring = NULL;
+	free(stretching), stretching = NULL;
 	free(app), app = NULL;
 
 	debug(99, "streamurl %s", streamurl);
