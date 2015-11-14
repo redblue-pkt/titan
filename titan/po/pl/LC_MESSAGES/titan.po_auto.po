@@ -2029,7 +2029,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:219 tvtoast.h:420 youtube.h:196
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:288 tvtoast.h:489 youtube.h:196
 #: zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
@@ -3107,7 +3107,7 @@ msgstr ""
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:949 tvtoast.h:73 unlock.h:20 unlock.h:66
+#: tunerconfig.h:674 tunerconfig.h:949 tvtoast.h:143 unlock.h:20 unlock.h:66
 #: unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73
 #: videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
 #: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
@@ -5602,7 +5602,7 @@ msgstr ""
 #: tithek.h:2284 tithek.h:2312 tithek.h:2328 tithek.h:2340 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
 #: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 tvtoast.h:73
+#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 tvtoast.h:143
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67
 #: vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67
@@ -6187,7 +6187,7 @@ msgstr ""
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
-#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 tvtoast.h:73
+#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 tvtoast.h:143
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67
 #: vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67
@@ -8134,8 +8134,8 @@ msgstr ""
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:543 solarmovie.h:135 solarmovie.h:137
 #: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
-#: tithek_global.h:436 tithek_global.h:438 tmdb.h:898 tvtoast.h:451
-#: tvtoast.h:453 xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247
+#: tithek_global.h:436 tithek_global.h:438 tmdb.h:898 tvtoast.h:520
+#: tvtoast.h:522 xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247
 #: youtube.h:359 youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Szukaj kanał"
@@ -8958,7 +8958,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:219 tvtoast.h:420 youtube.h:196
+#: amazon.h:801 ard.h:96 nowtv.h:108 tvtoast.h:288 tvtoast.h:489 youtube.h:196
 #: zdf.h:112
 msgid "Stream Menu"
 msgstr ""
@@ -9391,7 +9391,7 @@ msgid ""
 "Realy run it?"
 msgstr ""
 
-#: tvtoast.h:73
+#: tvtoast.h:143
 msgid "This channel is domain protected"
 msgstr ""
 
