@@ -32,7 +32,7 @@ int amazonlogin = 0;
 //flag 17	- rtlnow pay
 //flag 18	- voxnow pay
 //flag 19	- rtl2now pay
-//flag 20	- unbenutzt... old: hoster StreamCloud
+//flag 20	- netstream old: hoster StreamCloud
 //flag 21	- kinox search
 //flag 22	- kinox hoster
 //flag 23	- kinox hoster serie
@@ -1358,6 +1358,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	else if(((struct tithek*)listbox->select->handle)->flag == 14)
 	{
 		if(tmpstr != NULL) tmpstr1 = kinox(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 20)
+	{
+		if(tmpstr != NULL) tmpstr1 = nbastream(tmpstr);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 38)
 	{

@@ -428,9 +428,11 @@ int all_search_local(struct skin* grid, struct skin* listbox, struct skin* count
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *menu = NULL, *search = NULL;
 	int ret = 1, count = 0, i = 0;
-
+printf("1111111111111\n");
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
+
+printf("2222222222222\n");
 
 	if(searchstr == NULL)
 		search = textinputhist(_("Search"), " ", "searchhist");
@@ -443,8 +445,10 @@ int all_search_local(struct skin* grid, struct skin* listbox, struct skin* count
 
 		strstrip(search);
 		string_tolower(search);
+	int debuglevel = getconfigint("debuglevel", NULL);
 
 		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/all/all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/all-sorted.list", NULL, NULL, NULL, tmpstr);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);

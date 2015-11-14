@@ -862,6 +862,10 @@ int b64dec(char* dest, char* src)
 			if(c4 != '=')
 				*p++ = (((b3 & 0x3) << 6) | b4);
 
+			// strip last unchanged chars
+			if(k == l-4)
+				*p++ = '\0';
+
 		}
 
 		free(buf);
