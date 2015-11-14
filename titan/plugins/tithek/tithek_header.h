@@ -106,6 +106,7 @@ char* thevideo(char* link);
 char* mightyupload(char* link);
 char* cloudzilla(char* link);
 char* vivo(char* link);
+char* nbastream(char* link);
 char* streamlive(char* link, int incount);
 char* cricfree(char* link, int incount);
 char* zerocast(char* link, int incount);

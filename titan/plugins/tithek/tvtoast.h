@@ -16,12 +16,89 @@ char* zerocast(char* link, int incount)
 
 char* usachannels(char* link, int incount)
 {
+	int debuglevel = getconfigint("debuglevel", NULL);
+
 	debug(99, "usachannels(%d) link=%s", incount, link);
 	char* streamurl = NULL;
 	char* host = NULL;
+	char* path = NULL;
+	char* tmpstr = NULL;
+	char* url = NULL;
+	char* curlstring = NULL;
+	char* stretching = NULL;
+	char* app = NULL;
 
 	host = string_resub("http://", "/", link, 0);
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", link, 0);
+	path = string_replace_all(host, "", link, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+
+//	<script type="text/javascript" src="http://miplayer.net/embed.php?id=hboouu&width=630&height=470&autoplay=true"></script>
+	url = string_resub("src=\"", "\"", tmpstr, 0);
+	free(tmpstr), tmpstr = NULL;
+
+	host = string_resub("http://", "/", url, 0);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", url, 0);
+	path = string_replace_all(host, "", url, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+
+//document.write("<iframe src='http://miplayer.net/embedplayer.php?width=630&height=470&id=hboouu&autoplay=true&strech=exactfit' frameborder='0' marginheight='0' marginwidth='0' scrolling='no' width='630' height='470' allowfullscreen></iframe>");
+	url = string_resub("iframe src='", "'", tmpstr, 0);
+	free(tmpstr), tmpstr = NULL;
+
+	host = string_resub("http://", "/", url, 0);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, link, 1);
+	host = string_resub("http://", "/", url, 0);
+	path = string_replace_all(host, "", url, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
+//curl = "cnRtcDovLzE4NS42My4yNTUuMTA6MTkzNS9saXZlZWRnZS8/d21zQXV0aFNpZ249YzJWeWRtVnlYM1JwYldVOU1URXZNVFF2TWpBeE5TQXhNVG94TlRveU5pQkJUU1pvWVhOb1gzWmhiSFZsUFhvdlJXd3dNSE5LYWtOS05VdGpZblZLZW5JeFRFRTlQU1oyWVd4cFpHMXBiblYwWlhNOU1UQT0vaGJvb3V1XzBkOXJxa2Mz";
+//stretching = "exactfit";
+	curlstring = string_resub("curl = \"", "\"", tmpstr, 0);
+	stretching = string_resub("stretching = \"", "\"", tmpstr, 0);
+	printf("curlstring input: %s\n", curlstring);
+	b64dec(curlstring, curlstring);
+	printf("curlstring decod: %s\n", curlstring);
+	printf("stretching: %s\n", stretching);
+
+	if(tmpstr == NULL || ostrstr(tmpstr, "This channel is domain protected") != NULL)
+	{
+		textbox(_("Message"), _("This channel is domain protected") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	app = oregex("rtmp://.*/(liveedge.*).*", curlstring);
+
+	streamurl = ostrcat(curlstring, NULL, 0, 0);
+//	streamurl = ostrcat(streamurl, url, 1, 0);
+	streamurl = ostrcat(streamurl, " swfUrl=http://cdn.ibrod.tv/player/jwplayer.flash.swf", 1, 0);
+//	streamurl = ostrcat(streamurl, swfurl, 1, 0);
+	streamurl = ostrcat(streamurl, " app=", 1, 0);
+	streamurl = ostrcat(streamurl, app, 1, 0);
+	streamurl = ostrcat(streamurl, " live=1", 1, 0);
+//	streamurl = ostrcat(streamurl, " token=", 1, 0);
+//	streamurl = ostrcat(streamurl, token, 1, 0);
+	streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
+	streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
+	streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);
+	streamurl = ostrcat(streamurl, url, 1, 0);
+
+end:
+
+	free(tmpstr), tmpstr = NULL;
 	free(host), host = NULL;
+	free(path), path = NULL;
+	free(url), url = NULL;
+	free(stretching), stretching = NULL;
+	free(curlstring), curlstring = NULL;
+	free(app), app = NULL;
 
 	debug(99, "streamurl %s", streamurl);
 	return streamurl;
@@ -286,8 +363,8 @@ char* tvtoast(char* link)
 					streamurl = akamaistream(url, incount);
 				else if(ostrstr(url, "tvnanet") != NULL)
 					streamurl = tvnanet(url, incount);
-//				else if(ostrstr(url, "usachannels.tv") != NULL)
-//					streamurl = usachannels(url, incount);
+				else if(ostrstr(url, "usachannels.tv") != NULL)
+					streamurl = usachannels(url, incount);
 				else
 				{
 					printf("found unused (%d) url=%s\n", incount, url);
