@@ -101,7 +101,7 @@ char* nbastream(char* link)
 	if(curlstring == NULL)
 		curlstring = ostrcat("aHR0cDovL2xpdmUucDJwY2FzdC50djo4MDEwL3R2Mi81MDQ5MTcubTN1OD9zZj1OVFl5TW1SbFpXTmpaVEV5TlE9PSZ0b2tlbj0=", NULL, 0 ,0);
 	printf("curlstring input: %s\n", curlstring);
-	b64dec1(curlstring, curlstring);
+	b64dec(curlstring, curlstring);
 	printf("curlstring decod: %s\n", curlstring);
 
 //aHR0cDovL2xpdmUucDJwY2FzdC50djo4MDEwL3R2Mi81MDQ5MTcubTN1OD9zZj1OVFl5TW1SbFpXTmpaVEV5TlE9PSZ0b2tlbj0=
