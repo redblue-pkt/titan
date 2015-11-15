@@ -183,8 +183,8 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, fp);
 
 		/* some servers don't like requests that are made without a user-agent field, so we provide one */
-		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
-//		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko");
+//		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
+		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36");
 
 		// This is occassionally required to stop CURL from verifying the peers certificate.
 		// CURLOPT_SSL_VERIFYHOST may also need to be TRUE or FALSE if

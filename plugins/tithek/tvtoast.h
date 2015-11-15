@@ -3,83 +3,81 @@
 
 char* zerocast(char* link, int incount)
 {
+	int debuglevel = getconfigint("debuglevel", NULL);
+
 	debug(99, "zerocast(%d) link=%s ", incount, link);
 	char* streamurl = NULL;
+	char* tmpstr = NULL;
+	char* path = NULL;
 	char* host = NULL;
+	char* url1 = NULL;
+	char* url2 = NULL;
+	char* streamer = NULL;
 
+//<script type="text/javascript" src="http://zerocast.tv/channel.php?a=305&width=650&height=480&autostart=true"></script>
 	host = string_resub("http://", "/", link, 0);
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, link, 1);
+	host = string_resub("http://", "/", link, 0);
+	path = string_replace_all(host, "", link, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+
+//var url = 'http://zerocast.tv/embed.php?a=305&id=&width=650&height=480&autostart=true&strech=exactfit';
+	url1 = string_resub("var url = '", "'", tmpstr, 0);
+	host = string_resub("http://", "/", url1, 0);
+	tmpstr = gethttps(url1, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", url1, 0);
+	path = string_replace_all(host, "", url1, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+
+//curl = "cnRtcDovLzM3LjQ4LjgzLjY6MTkzNS9nb0xpdmUvP3dtc0F1dGhTaWduPWMyVnlkbVZ5WDNScGJXVTlNVEV2TVRVdk1qQXhOU0F6T2pFMU9qQTNJRkJOSm1oaGMyaGZkbUZzZFdVOVdUa3ZiazVtZFVaMWVUWk9Ra3RUVTJ4ME5rbG9VVDA5Sm5aaGJHbGtiV2x1ZFhSbGN6MDEvOXB4R0N0UDNhRW5KWWdvQkZGSDg=";
+	streamer = string_resub("curl = \"", "\"", tmpstr, 0);
+	if(streamer == NULL) goto end;
+	printf("streamer input: %s\n", streamer);
+	b64dec(streamer, streamer);
+	printf("streamer decod: %s\n", streamer);
+
+//<iframe src="online.php?c=fox" frameborder="0" width="10" height="10" scrolling="no"></iframe>
+	url2 = string_resub("<iframe src=\"", "\"", tmpstr, 0);
+	url2 = ostrcat("http://zerocast.tv/", url2, 0, 1);
+
+	host = string_resub("http://", "/", url2, 0);
+	tmpstr = gethttps(url2, NULL, NULL, NULL, NULL, url1, 1);
+	host = string_resub("http://", "/", url2, 0);
+	path = string_replace_all(host, "", url2, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
+
+/*
+	rtmp://37.48.83.6:1935/goLive/?wmsAuthSign=c2VydmVyX3RpbWU9MTEvMTUvMjAxNSAyOjI0OjE5IFBNJmhhc2hfdmFsdWU9aFMremI4MmZCc0FtbFFkUWFYNXlpdz09JnZhbGlkbWludXRlcz01/9pxGCtP3aEnJYgoBFFH8 swfUrl=http://p.jwpcdn.com/6/12/jwplayer.flash.swf flashver=WIN\2019,0,0,226 timeout=15 live=true swfVfy=1 pageUrl=http://zerocast.tv/embed.php?a=305&id=&width=640&height=480&autostart=true&strech=exactfit
+*/
+	if(streamer != NULL)
+	{
+		streamurl = ostrcat(streamer, NULL, 0, 0);
+		streamurl = ostrcat(streamurl, " swfUrl=http://p.jwpcdn.com/6/12/jwplayer.flash.swf", 1, 0);
+//(titan:10759): GStreamer-WARNING **: Trying to set string on structure field 'uri', but string is not valid UTF-8. Please file a bug.
+//		streamurl = ostrcat(streamurl, " flashver=WIN\2019,0,0,226", 1, 0);
+		streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
+		streamurl = ostrcat(streamurl, " live=true", 1, 0);
+		streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
+		streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, url1, 1, 0);
+	}
+end:
+
 	free(host), host = NULL;
+	free(path), path = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(url1), url1 = NULL;
+	free(url2), url2 = NULL;
+	free(streamer), streamer = NULL;
 
 	debug(99, "streamurl %s", streamurl);
 	return streamurl;
-}
-
-int isbase641(char c)
-{
-	if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '+' || c == '/' || c == '=')
-		return 1;
-	return 0;
-}
-
-char decodebase641(char c)
-{
-	if(c >= 'A' && c <= 'Z') return(c - 'A');
-	if(c >= 'a' && c <= 'z') return(c - 'a' + 26);
-	if(c >= '0' && c <= '9') return(c - '0' + 52);
-	if(c == '+') return(62);
-	return 63;
-}
-
-int b64dec1(char* dest, char* src)
-{
-	if(src && *src)
-	{
-		char* p = dest;
-		int k, l = strlen(src) + 1;
-		char* buf = NULL;
-
-		buf = malloc(l);
-		if(buf == NULL) return 0;
-
-		for(k = 0, l = 0; src[k]; k++)
-		{
-			if(isbase641(src[k]))
-				buf[l++] = src[k];
-		}
-
-		for(k = 0; k < l; k += 4)
-		{
-			char c1 = 'A', c2 = 'A', c3 = 'A', c4 = 'A';
-			char b1 = 0, b2 = 0, b3 = 0, b4 = 0;
-
-			c1 = buf[k];
-			if(k + 1 < l)
-				c2 = buf[k + 1];
-			if(k + 2 < l)
-				c3 = buf[k + 2];
-			if(k + 3 < l)
-				c4 = buf[k + 3];
-
-			b1 = decodebase641(c1);
-			b2 = decodebase641(c2);
-			b3 = decodebase641(c3);
-			b4 = decodebase641(c4);
-			*p++ = ((b1 << 2) | (b2 >> 4));
-
-			if(c3 != '=')
-				*p++ = (((b2 & 0xf) << 4) | (b3 >> 2));
-			if(c4 != '=')
-				*p++ = (((b3 & 0x3) << 6) | b4);
-
-			// strip last unchanged chars
-			if(k == l-4)
-				*p++ = '\0';
-		}
-
-		free(buf);
-		return(p - dest);
-	}
-	return 0;
 }
 
 char* usachannels(char* link, int incount)
@@ -91,11 +89,12 @@ char* usachannels(char* link, int incount)
 	char* host = NULL;
 	char* path = NULL;
 	char* tmpstr = NULL;
-	char* url = NULL;
-	char* curlstring = NULL;
-	char* stretching = NULL;
-	char* app = NULL;
+	char* url1 = NULL;
+	char* url2 = NULL;
+	char* url3 = NULL;
+	char* streamer = NULL;
 
+//<iframe width="650" height="480" frameborder="0" src="http://usachannels.tv/fox_live.php?vw=650&vh=480" scrolling="no" allowtransparency="yes"></iframe>
 	host = string_resub("http://", "/", link, 0);
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 	host = string_resub("http://", "/", link, 0);
@@ -104,70 +103,81 @@ char* usachannels(char* link, int incount)
 	path = string_replace_all(" ", "%20", path, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 
-//	<script type="text/javascript" src="http://miplayer.net/embed.php?id=hboouu&width=630&height=470&autoplay=true"></script>
-	url = string_resub("src=\"", "\"", tmpstr, 0);
+//<script type="text/javascript" src="http://miplayer.net/embed.php?id=hboouu&width=630&height=470&autoplay=true"></script>
+	url1 = string_resub("src=\"", "\"", tmpstr, 0);
 	free(tmpstr), tmpstr = NULL;
 
-	host = string_resub("http://", "/", url, 0);
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
-	host = string_resub("http://", "/", url, 0);
-	path = string_replace_all(host, "", url, 0);
+	host = string_resub("http://", "/", url1, 0);
+	tmpstr = gethttps(url1, NULL, NULL, NULL, NULL, link, 1);
+	host = string_resub("http://", "/", url1, 0);
+	path = string_replace_all(host, "", url1, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
 
 //document.write("<iframe src='http://miplayer.net/embedplayer.php?width=630&height=470&id=hboouu&autoplay=true&strech=exactfit' frameborder='0' marginheight='0' marginwidth='0' scrolling='no' width='630' height='470' allowfullscreen></iframe>");
-	url = string_resub("iframe src='", "'", tmpstr, 0);
+	url2 = string_resub("iframe src='", "'", tmpstr, 0);
 	free(tmpstr), tmpstr = NULL;
 
-	host = string_resub("http://", "/", url, 0);
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, link, 1);
-	host = string_resub("http://", "/", url, 0);
-	path = string_replace_all(host, "", url, 0);
+	host = string_resub("http://", "/", url2, 0);
+	tmpstr = gethttps(url2, NULL, NULL, NULL, NULL, url1, 1);
+	host = string_resub("http://", "/", url2, 0);
+	path = string_replace_all(host, "", url2, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
+
 //curl = "cnRtcDovLzE4NS42My4yNTUuMTA6MTkzNS9saXZlZWRnZS8/d21zQXV0aFNpZ249YzJWeWRtVnlYM1JwYldVOU1URXZNVFF2TWpBeE5TQXhNVG94TlRveU5pQkJUU1pvWVhOb1gzWmhiSFZsUFhvdlJXd3dNSE5LYWtOS05VdGpZblZLZW5JeFRFRTlQU1oyWVd4cFpHMXBiblYwWlhNOU1UQT0vaGJvb3V1XzBkOXJxa2Mz";
-//stretching = "exactfit";
-	curlstring = string_resub("curl = \"", "\"", tmpstr, 0);
-	if(curlstring == NULL) goto end;
+	streamer = string_resub("curl = \"", "\"", tmpstr, 0);
+	if(streamer == NULL) goto end;
 
-	stretching = string_resub("stretching = \"", "\"", tmpstr, 0);
-	printf("curlstring input: %s\n", curlstring);
-	b64dec1(curlstring, curlstring);
-	printf("curlstring decod: %s\n", curlstring);
-	printf("stretching: %s\n", stretching);
+	printf("streamer input: %s\n", streamer);
+	b64dec(streamer, streamer);
+	printf("streamer decod: %s\n", streamer);
 
+//top.location = "http://miplayer.net/channel.php?id=fox998";
+	url3 = string_resub("top.location = \"", "\"", tmpstr, 0);
+	free(tmpstr), tmpstr = NULL;
+
+	host = string_resub("http://", "/", url3, 0);
+	tmpstr = gethttps(url3, NULL, NULL, NULL, NULL, url2, 1);
+	host = string_resub("http://", "/", url3, 0);
+	path = string_replace_all(host, "", url3, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), host, path, tmpstr);
+/*
 	if(tmpstr == NULL || ostrstr(tmpstr, "This channel is domain protected") != NULL)
 	{
 		textbox(_("Message"), _("This channel is domain protected") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
-//		goto end;
+		goto end;
 	}
+*/
 
-	app = oregex("rtmp://.*/(liveedge.*).*", curlstring);
-
-	streamurl = ostrcat(curlstring, NULL, 0, 0);
-//	streamurl = ostrcat(streamurl, url, 1, 0);
-	streamurl = ostrcat(streamurl, " swfUrl=http://cdn.ibrod.tv/player/jwplayer.flash.swf", 1, 0);
-//	streamurl = ostrcat(streamurl, swfurl, 1, 0);
-	streamurl = ostrcat(streamurl, " app=", 1, 0);
-	streamurl = ostrcat(streamurl, app, 1, 0);
-	streamurl = ostrcat(streamurl, " live=1", 1, 0);
-//	streamurl = ostrcat(streamurl, " token=", 1, 0);
-//	streamurl = ostrcat(streamurl, token, 1, 0);
-	streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
-	streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
-	streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);
-	streamurl = ostrcat(streamurl, url, 1, 0);
+/*
+rtmp://185.63.255.10:1935/liveedge/?wmsAuthSign=c2VydmVyX3RpbWU9MTEvMTUvMjAxNSAzOjA2OjExIFBNJmhhc2hfdmFsdWU9eUxSVjk2VytYMmh2RTFrazF1QVU3dz09JnZhbGlkbWludXRlcz0xMA==/fox998_kjz4ti73 swfUrl=http://otronivel.me/jw7/jwplayer.flash.swf flashver=WIN\2019,0,0,226 timeout=15 live=true swfVfy=1 pageUrl=http://miplayer.net/embedplayer.php?width=630&height=470&id=fox998&autoplay=true&strech=exactfit
+*/
+	if(streamer != NULL)
+	{
+		streamurl = ostrcat(streamer, NULL, 0, 0);
+		streamurl = ostrcat(streamurl, " swfUrl=http://cdn.ibrod.tv/player/jwplayer.flash.swf", 1, 0);
+//(titan:10759): GStreamer-WARNING **: Trying to set string on structure field 'uri', but string is not valid UTF-8. Please file a bug.
+//		streamurl = ostrcat(streamurl, " flashver=WIN\2019,0,0,226", 1, 0);
+		streamurl = ostrcat(streamurl, " live=1", 1, 0);
+		streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
+		streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
+		streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, url2, 1, 0);
+	}
 end:
 
 	free(host), host = NULL;
 	free(path), path = NULL;
 	free(tmpstr), tmpstr = NULL;
-	free(url), url = NULL;
-	free(curlstring), curlstring = NULL;
-	free(stretching), stretching = NULL;
-	free(app), app = NULL;
+	free(url1), url1 = NULL;
+	free(url2), url2 = NULL;
+	free(url3), url3 = NULL;
+	free(streamer), streamer = NULL;
 
 	debug(99, "streamurl %s", streamurl);
 	return streamurl;
