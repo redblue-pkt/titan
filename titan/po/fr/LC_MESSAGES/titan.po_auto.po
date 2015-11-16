@@ -1523,7 +1523,7 @@ msgstr "favori Navigateur Internet "
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1252
+#: player.h:1287
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
