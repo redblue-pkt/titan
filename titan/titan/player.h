@@ -943,18 +943,53 @@ int playerstart(char* file)
 		if(size > 0 && ostrstr(tmpfile, "file://") == NULL)
 			status.prefillbuffer = 1;
 
-		if(ostrstr(file, "|User-Agent=") != NULL)
+        if (g_object_class_find_property(G_OBJECT_GET_CLASS(pipeline), "user-agent") != 0)
+			printf("11111111111111\n");
+        if (g_object_class_find_property(G_OBJECT_GET_CLASS(pipeline), "cookie") != 0)
+			printf("22222222222222\n");
+        if (g_object_class_find_property(G_OBJECT_GET_CLASS(pipeline), "extra-headers") != 0)
+			printf("22222222222222\n");
+
+		if(ostrstr(file, "|User-Agent=") != NULL || ostrstr(file, "|Cookie=") != NULL || ostrstr(file, "|Referer=") != NULL)
 		{
-			char* tmpstr = NULL;
+			char* tmpstr = NULL, *tmpstr1 = NULL;
 			tmpstr = ostrcat(file, NULL, 0, 0);
-			tmpstr = string_replace("|User-Agent=", "|", tmpstr, 1);
-			int count1 = 0;
+//			tmpstr = string_replace("|User-Agent=", "|", tmpstr, 1);
+			int count1 = 0, i = 0;
 			struct splitstr* ret1 = NULL;
 			ret1 = strsplit(tmpstr, "|", &count1);
-			if(ret1 != NULL && count1 >= 2)
+
+			int max = count1;
+			for(i = 0; i < max; i++)
 			{
-				printf("[player.h] set user-agent: %s\n",ret1[1].part);
-				g_object_set(G_OBJECT(pipeline), "user-agent", ret1[1].part, NULL);
+				if(ostrstr(ret1[i].part, "User-Agent=") != NULL)
+				{
+					tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+					tmpstr1 = string_replace("User-Agent=", "", tmpstr1, 1);
+					printf("[player.h] set user-agent: %s\n", tmpstr1);
+					g_object_set(G_OBJECT(pipeline), "user-agent", tmpstr1, NULL);
+					free(tmpstr1), tmpstr1 = NULL;
+				}
+				if(ostrstr(ret1[i].part, "Cookie=") != NULL)
+				{
+					tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+					tmpstr1 = string_replace("Cookie=", "", tmpstr1, 1);
+					printf("[player.h] set cookie: %s\n", tmpstr1);
+
+					gchar **cookie;
+//					cookie = g_strsplit ("foo=1234,bar=9871615348162523726337x99FB", ",", -1);
+					cookie = g_strsplit (tmpstr1, ",", -1);
+					g_object_set (G_OBJECT(pipeline), "cookie", cookie, NULL);
+					g_strfreev (cookie);
+					free(tmpstr1), tmpstr1 = NULL;
+				}
+				if(ostrstr(ret1[i].part, "Referer=") != NULL)
+				{
+					tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+					tmpstr1 = string_replace("Referer=", "", tmpstr1, 1);
+					printf("[player.h] set referer dummy: %s\n", tmpstr1);
+					free(tmpstr1), tmpstr1 = NULL;
+				}
 			}
 			free(ret1), ret1 = NULL;
 			free(tmpstr), tmpstr = NULL;
