@@ -795,6 +795,95 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 }
 #endif
 
+
+void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
+{
+	printf("[player.h] playbinNotifySource: %s\n", file);
+	GstElement *source = NULL;
+	g_object_get(object, "source", &source, NULL);
+	if (source)
+	{
+		if(ostrstr(file, "|") != NULL)
+		{
+			if (g_object_class_find_property(G_OBJECT_GET_CLASS(source), "extra-headers") != 0)
+			{					
+	#if GST_VERSION_MAJOR < 1
+				GstStructure *extras = gst_structure_empty_new("extras");
+	#else
+				GstStructure *extras = gst_structure_new_empty("extras");
+	#endif
+				char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+				tmpstr1 = ostrcat(file, NULL, 0, 0);
+				int count1 = 0, i = 0;
+				struct splitstr* ret1 = NULL;
+				ret1 = strsplit(tmpstr1, "|", &count1);
+	
+				int max = count1;
+				for(i = 0; i < max; i++)
+				{
+					if(i == 0)
+					{
+						printf("[player.h] playbinNotifySource: skip url string: %s\n", ret1[i].part);
+						continue;
+					}
+					tmpstr2 = ostrcat(ret1[i].part, NULL, 0, 0);
+	
+					int count2 = 0;
+					struct splitstr* ret2 = NULL;
+					ret2 = strsplit(tmpstr2, "=", &count2);
+	
+					if(ret2 != NULL && count2 >= 2)
+					{
+						if(ostrstr(ret2[0].part, "User-Agent") != NULL)
+						{
+							printf("[player.h] set user-agent: %s\n", ret2[1].part);
+							g_object_set(G_OBJECT(pipeline), "user-agent", ret2[1].part, NULL);
+						}
+						else
+						{
+							if (g_object_class_find_property(G_OBJECT_GET_CLASS(source), "extra-headers") != 0)
+							{					
+								GValue header;
+								// eDebug("setting extra-header '%s:%s'", name.c_str(), value.c_str());
+								printf("[player.h] set extra-header %s: %s\n", ret2[0].part, ret2[1].part);
+								
+								tmpstr3 = ostrcat(ret2[1].part, NULL, 0, 0);
+								htmldecode(tmpstr3, tmpstr3);
+								printf("[player.h] set extra-header decode %s: %s\n", ret2[0].part, tmpstr3);
+
+								memset(&header, 0, sizeof(GValue));
+								g_value_init(&header, G_TYPE_STRING);
+								//value
+								g_value_set_string(&header, tmpstr3);
+								//name
+								gst_structure_set_value(extras, ret2[0].part, &header);
+								free(tmpstr3), tmpstr3 = NULL;
+							}
+						}
+					}
+					free(ret2), ret2 = NULL;
+					free(tmpstr2), tmpstr2 = NULL;
+				}
+				free(ret1), ret1 = NULL;
+				free(tmpstr1), tmpstr1 = NULL;
+
+				if (gst_structure_n_fields(extras) > 0)
+				{
+					g_object_set(G_OBJECT(source), "extra-headers", extras, NULL);
+				}
+				gst_structure_free(extras);
+			}
+		}
+
+		if (g_object_class_find_property(G_OBJECT_GET_CLASS(source), "ssl-strict") != 0)
+		{
+			printf("[player.h] set ssl-strict\n");
+			g_object_set(G_OBJECT(source), "ssl-strict", FALSE, NULL);
+		}
+	}
+	gst_object_unref(source);
+}
+
 //extern player
 int playerstart(char* file)
 {
@@ -943,12 +1032,13 @@ int playerstart(char* file)
 		if(size > 0 && ostrstr(tmpfile, "file://") == NULL)
 			status.prefillbuffer = 1;
 
+/*
         if (g_object_class_find_property(G_OBJECT_GET_CLASS(pipeline), "user-agent") != 0)
 			printf("11111111111111\n");
         if (g_object_class_find_property(G_OBJECT_GET_CLASS(pipeline), "cookie") != 0)
 			printf("22222222222222\n");
         if (g_object_class_find_property(G_OBJECT_GET_CLASS(pipeline), "extra-headers") != 0)
-			printf("22222222222222\n");
+			printf("33333333333333\n");
 
 		if(ostrstr(file, "|User-Agent=") != NULL || ostrstr(file, "|Cookie=") != NULL || ostrstr(file, "|Referer=") != NULL)
 		{
@@ -979,7 +1069,7 @@ int playerstart(char* file)
 					gchar **cookie;
 //					cookie = g_strsplit ("foo=1234,bar=9871615348162523726337x99FB", ",", -1);
 					cookie = g_strsplit (tmpstr1, ",", -1);
-					g_object_set (G_OBJECT(pipeline), "cookie", cookie, NULL);
+					g_object_set (G_OBJECT(pipeline), "http-headers", cookie, NULL);
 					g_strfreev (cookie);
 					free(tmpstr1), tmpstr1 = NULL;
 				}
@@ -997,6 +1087,9 @@ int playerstart(char* file)
 			stringreplacechar(tmpfile, '|', '\0');
 			printf("tmpfile changed: %s\n", tmpfile);
 		}
+*/
+// strip url
+		stringreplacechar(tmpfile, '|', '\0');
 
 		g_object_set(G_OBJECT(pipeline), "buffer-duration", size * GST_SECOND, NULL);
 		g_object_set(G_OBJECT(pipeline), "buffer-size", size, NULL);
@@ -1020,6 +1113,7 @@ int playerstart(char* file)
 		{
 //			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
 			g_signal_connect (subsink, "new-buffer", G_CALLBACK (playersubtitleAvail), NULL);
+
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 
 #if GST_VERSION_MAJOR < 1
@@ -1032,6 +1126,13 @@ int playerstart(char* file)
 			subtitleflag = 1;
 			//g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
 		}
+
+//////////////////////////
+printf("11###############################\n");
+		g_signal_connect(G_OBJECT(pipeline), "notify::source", G_CALLBACK(playbinNotifySource), file);
+
+printf("22###############################\n");
+//////////////////////////
 
 //gpointer this;
 //memset (&this, 0, sizeof (this));
