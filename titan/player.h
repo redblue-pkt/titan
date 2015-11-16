@@ -795,7 +795,7 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 }
 #endif
 
-
+// set http extra-header and user-agent
 void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 {
 	printf("[player.h] playbinNotifySource: %s\n", file);
@@ -836,8 +836,9 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 					{
 						if(ostrstr(ret2[0].part, "User-Agent") != NULL)
 						{
+//							printf("[player.h] skip set user-agent: %s\n", ret2[1].part);
 							printf("[player.h] set user-agent: %s\n", ret2[1].part);
-							g_object_set(G_OBJECT(pipeline), "user-agent", ret2[1].part, NULL);
+							g_object_set(G_OBJECT(source), "user-agent", ret2[1].part, NULL);
 						}
 						else
 						{
@@ -1088,6 +1089,7 @@ int playerstart(char* file)
 			printf("tmpfile changed: %s\n", tmpfile);
 		}
 */
+
 // strip url
 		stringreplacechar(tmpfile, '|', '\0');
 
