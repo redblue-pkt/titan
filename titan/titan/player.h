@@ -58,6 +58,7 @@ int playerstartts(char* file, int flag)
 	struct dvbdev* fenode = NULL;
 	struct dvbdev* dvrnode = NULL;
 	status.prefillbuffer = 0;
+	status.bufferpercent = 0;
 
 	//supermagic = getsupermagic(file);
 
@@ -890,6 +891,7 @@ int playerstart(char* file)
 {
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
+	status.bufferpercent = 0;
 	
 	if(file != NULL)
 	{
@@ -1372,10 +1374,16 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 //			if (data->is_live) break;
 //			gst_message_parse_buffering (msg, &status.bufferpercent);
 
+			printf("status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d\n", status.cleaninfobar, status.prefillbuffer, status.bufferpercent); 
+
 			if(status.prefillbuffer == 1) 
  			{
 //				gint percent = 0;
-				if (data->is_live) break;
+				if (data->is_live)
+				{
+					printf("data->is_live break: status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d\n", status.cleaninfobar, status.prefillbuffer, status.bufferpercent); 
+					break;
+				}
 				gst_message_parse_buffering (msg, &status.bufferpercent);
 				g_print ("Buffering (%3d%%)\r", status.bufferpercent);
 
@@ -1594,8 +1602,12 @@ int playerisplaying()
 		{
 			ret = gstbuscall(bus, message, &data);
 			gst_message_unref(message);
+			printf("222222222status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d\n", status.cleaninfobar, status.prefillbuffer, status.bufferpercent); 
+
 		}		
 
+		printf("333333333status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d\n", status.cleaninfobar, status.prefillbuffer, status.bufferpercent); 
+			
 // eof workaround for some mp4 files.
 		gint64 pts = 0, len = 0, rest = 0;
 		gint64 nanos_pts = 0, nanos_len = 0;
