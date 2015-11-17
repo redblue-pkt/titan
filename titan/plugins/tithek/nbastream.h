@@ -8,7 +8,11 @@ char* nbastream(char* link)
 	char* streamurl = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	char* host = NULL;
 	char* path = NULL;
-	char* url = NULL;
+	char* url1 = NULL;
+	char* url2 = NULL;
+	char* url3 = NULL;
+	char* url4 = NULL;
+	char* url5 = NULL;
 	char* id = NULL;
 	char* width = NULL;
 	char* height = NULL;
@@ -28,59 +32,90 @@ char* nbastream(char* link)
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream1_tmpstr", NULL, host, path, tmpstr);
 
 
-	url = string_resub("<iframe  src=\"", "\"", tmpstr, 0);
-	url = ostrcat("http://nbastream.net/", url, 0, 1);
+	url1 = string_resub("<iframe  src=\"", "\"", tmpstr, 0);
+	url1 = ostrcat("http://nbastream.net/", url1, 0, 1);
+
 /*
 	http://nbastream.net/streams/nbanhl8.html
 	<script type='text/javascript'>id='504917'; width='670'; height='390';</script><script type='text/javascript' src='http://js.p2pcast.tv/p2pcast/player.js'></script>
 */
 	free(tmpstr), tmpstr = NULL;
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(url1, NULL, NULL, NULL, NULL, NULL, 1);
 	free(host), host = NULL;
 	free(path), path = NULL;
-	host = string_resub("http://", "/", url, 0);
-	path = string_replace_all(host, "", url, 0);
+	host = string_resub("http://", "/", url1, 0);
+	path = string_replace_all(host, "", url1, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream2_tmpstr", NULL, host, path, tmpstr);
 
-	free(url), url = NULL;
-	url = string_resub("src='", "'", tmpstr, 0);
+	url2 = string_resub("src='", "'", tmpstr, 0);
 	id = string_resub("id='", "'", tmpstr, 0);
 	width = string_resub("id='", "'", tmpstr, 0);
 	height = string_resub("id='", "'", tmpstr, 0);
+
+///////////////
+	char* url7 = ostrcat("http://www.google-analytics.com/analytics.js", NULL, 0, 0);
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = gethttps(url7, NULL, NULL, NULL, NULL, link, 1);
+	free(host), host = NULL;
+	free(path), path = NULL;
+	host = string_resub("http://", "/", url7, 0);
+	path = string_replace_all(host, "", url7, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream2a_tmpstr", NULL, host, path, tmpstr);
+///////////////
 
 /*
 	http://js.p2pcast.tv/p2pcast/player.js
 	document.write('<iframe allowfullscreen width="'+width+'" height="'+height+'" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" src="http://p2pcast.tv/stream.php?id='+id+'&live='+live+'&p2p='+p2p+'&stretching='+stretching+'"></iframe>');
 */
+
 	free(tmpstr), tmpstr = NULL;
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(url2, NULL, NULL, NULL, NULL, url1, 1);
 	free(host), host = NULL;
 	free(path), path = NULL;
-	host = string_resub("http://", "/", url, 0);
-	path = string_replace_all(host, "", url, 0);
+	host = string_resub("http://", "/", url2, 0);
+	path = string_replace_all(host, "", url2, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream3_tmpstr", NULL, host, path, tmpstr);
+
+
+	char* url8 = ostrcat("http://ax2.adit-media.com/asw/fm.js?c=1033&a=0&f=&n=2019&r=141&d=9&adm=&q=&$=&s=901&ct=&z=0.4985966447275132&tt=0&tz=1&pu=http%3A%2F%2Fnbastream.net%2Fstreams%2Fnbanhl2.html&ru=http%3A%2F%2Fnbastream.net%2Forlando-magic-at-washington-wizards-live-stream.html&pi=1447548879638&ce=UTF-8&zpu=nbastream.net_nbastream.net__0_2&tpu=0", NULL, 0, 0);
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = gethttps(url8, NULL, NULL, NULL, NULL, url1, 1);
+	free(host), host = NULL;
+	free(path), path = NULL;
+	host = string_resub("http://", "/", url7, 0);
+	path = string_replace_all(host, "", url7, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream3a_tmpstr", NULL, host, path, tmpstr);
 
 /*
 	http://p2pcast.tv/stream.php?id=504917&live=0&p2p=0&stretching=uniform
     curl = "aHR0cDovL2xpdmUucDJwY2FzdC50djo4MDEwL3R2Mi81MDQ5MTcubTN1OD9zZj1OVFl5TW1SbFpXTmpaVEV5TlE9PSZ0b2tlbj0=";
 	<script src="http://js.p2pcast.tv/p2pcast/pplayer.10.js"></script>
 */
-	free(url), url = NULL;
-	url = string_resub("src=\"", "\"", tmpstr, 0);
-	url = string_replace_all("'+id+'", id, url, 1);
-	url = string_replace_all("'+live+'", "0", url, 1);
-	url = string_replace_all("'+p2p+'", "0", url, 1);
-	url = string_replace_all("'+stretching+'", "uniform", url, 1);
+/*
+
+	url3 = string_resub("src=\"", "\"", tmpstr, 0);
+	url3 = string_replace_all("'+id+'", id, url3, 1);
+	url3 = string_replace_all("'+live+'", "0", url3, 1);
+	url3 = string_replace_all("'+p2p+'", "0", url3, 1);
+	url3 = string_replace_all("'+stretching+'", "uniform", url3, 1);
+*/
+	url3 = ostrcat("http://p2pcast.tv/stream.php?id=", id, 0, 0);
+	url3 = ostrcat(url3, "&live=0&p2p=0&stretching=uniform", 1, 0);
+
 	free(tmpstr), tmpstr = NULL;
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(url3, NULL, NULL, NULL, NULL, url1, 1);
 	free(host), host = NULL;
 	free(path), path = NULL;
-	host = string_resub("http://", "/", url, 0);
-	path = string_replace_all(host, "", url, 0);
+	host = string_resub("http://", "/", url3, 0);
+	path = string_replace_all(host, "", url3, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream4_tmpstr", NULL, host, path, tmpstr);
@@ -106,18 +141,31 @@ char* nbastream(char* link)
 
 //aHR0cDovL2xpdmUucDJwY2FzdC50djo4MDEwL3R2Mi81MDQ5MTcubTN1OD9zZj1OVFl5TW1SbFpXTmpaVEV5TlE9PSZ0b2tlbj0=
 //decode base64 = http://live.p2pcast.tv:8010/tv2/504917.m3u8?sf=NTYyMmRlZWNjZTEyNQ==&token=
-
-
-//	url = oregex(".*<script src=\"(http://.*)\"></script>.*", tmpstr);
+/////////////////////
+/*
+//	http://js.p2pcast.tv/p2pcast/live.htm?channel=504715
+	url4 = ostrcat("http://js.p2pcast.tv/p2pcast/live.htm?channel=", id, 0, 0);
 	free(tmpstr), tmpstr = NULL;
-	tmpstr = gethttps("http://p2pcast.tv/getToken.php", NULL, NULL, NULL, NULL, url, 1);
+	tmpstr = gethttps(url4, NULL, NULL, NULL, NULL, url3, 1);
 	free(host), host = NULL;
 	free(path), path = NULL;
-	host = string_resub("http://", "/", url, 0);
-	path = string_replace_all(host, "", url, 0);
+	host = string_resub("http://", "/", url4, 0);
+	path = string_replace_all(host, "", url4, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream5_tmpstr", NULL, host, path, tmpstr);
+*/
+//	url = oregex(".*<script src=\"(http://.*)\"></script>.*", tmpstr);
+	url5 = ostrcat("http://p2pcast.tv/getToken.php", NULL, 0, 0);
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = gethttps(url5, NULL, NULL, NULL, NULL, url3, 1);
+	free(host), host = NULL;
+	free(path), path = NULL;
+	host = string_resub("http://", "/", url5, 0);
+	path = string_replace_all(host, "", url5, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream6_tmpstr", NULL, host, path, tmpstr);
 
 //	{"token":"I-OAZrLqbye4LgcL6nhHkQ"}
 	token = string_resub("{\"token\":\"", "\"", tmpstr, 0);
@@ -125,13 +173,32 @@ char* nbastream(char* link)
 
 	streamurl = ostrcat(curlstring, NULL, 0, 0);
 	streamurl = ostrcat(streamurl, token, 1, 0);
+
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = gethttps(streamurl, NULL, NULL, NULL, NULL, "http://cdn.p2pcast.tv/jwplayer.flash.swf", 1);
+	free(host), host = NULL;
+	free(path), path = NULL;
+	host = string_resub("http://", "/", streamurl, 0);
+	path = string_replace_all(host, "", streamurl, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbastream7_tmpstr", NULL, host, path, tmpstr);
+
+
+	if(streamurl != NULL)
+		streamurl = ostrcat(streamurl, "|User-Agent=libcurl-agent/1.0|Referer=http://cdn.p2pcast.tv/jwplayer.flash.swf", 1, 0);
+
 end:
 
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
 	free(host), host = NULL;
 	free(path), path = NULL;
-	free(url), url = NULL;
+	free(url1), url1 = NULL;
+	free(url2), url2 = NULL;
+	free(url3), url3 = NULL;
+	free(url4), url4 = NULL;
+	free(url5), url5 = NULL;
 	free(id), id = NULL;
 	free(width), width = NULL;
 	free(height), height = NULL;
