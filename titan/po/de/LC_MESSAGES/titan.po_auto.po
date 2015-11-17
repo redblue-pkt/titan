@@ -1576,7 +1576,7 @@ msgstr ""
 msgid "Browser Resolution"
 msgstr "Browser Auflösung"
 
-#: player.h:1390
+#: player.h:1398
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Stream wird zwischengespeichert - abbrechen mit Exit"
 
@@ -3180,7 +3180,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
 #: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:109
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:110
 #: play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
@@ -5835,7 +5835,7 @@ msgstr "Menüliste"
 #: network.h:823 network.h:877 novamov.h:35 novamov.h:93 novamov.h:99
 #: nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
-#: played.h:114 played.h:171 player.h:109 play.h:614 play.h:1293 play.h:1505
+#: played.h:114 played.h:171 player.h:110 play.h:614 play.h:1293 play.h:1505
 #: play.h:1721 play.h:1732 possetup.h:98 primeshare.h:29 primeshare.h:73
 #: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
 #: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
@@ -6415,7 +6415,7 @@ msgstr "Ö"
 #: network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:93
 #: novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
-#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:109 play.h:497
+#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:110 play.h:497
 #: play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294 play.h:1505
 #: play.h:1721 play.h:1732 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
@@ -9173,7 +9173,7 @@ msgstr "Standard SAT Liste wiederherstellen?"
 msgid "Start Wlan ?"
 msgstr "Möchten Sie WLAN jetzt starten?"
 
-#: mc_videoplayer.h:916 player.h:109
+#: mc_videoplayer.h:916 player.h:110
 msgid "Start at last position ?"
 msgstr "An letzter Stelle fortsetzen?"
 
