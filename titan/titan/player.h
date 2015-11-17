@@ -804,10 +804,16 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 	g_object_get(object, "source", &source, NULL);
 	if (source)
 	{
+		if (g_object_class_find_property(G_OBJECT_GET_CLASS(source), "cookiejar-file-name") != 0)
+		{
+			printf("[player.h] set cookiejar-file-name: /mnt/network/cookies\n");
+			g_object_set(G_OBJECT(source), "cookiejar-file-name", "/mnt/network/cookies", NULL);
+		}
+
 		if(ostrstr(file, "|") != NULL)
 		{
 			if (g_object_class_find_property(G_OBJECT_GET_CLASS(source), "extra-headers") != 0)
-			{					
+			{
 	#if GST_VERSION_MAJOR < 1
 				GstStructure *extras = gst_structure_empty_new("extras");
 	#else
