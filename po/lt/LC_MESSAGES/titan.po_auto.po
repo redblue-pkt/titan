@@ -3113,7 +3113,7 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 MultiImage.c:262 MultiImage.c:273
 #: MultiImage.c:533 MultiImage.c:591 MultiImage.c:671 myvideo.h:86
-#: nbastream.h:91 networkbrowser.h:966 networkbrowser.h:1027
+#: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
 #: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
@@ -5668,7 +5668,7 @@ msgstr ""
 #: movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
 #: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 myvideo.h:86
-#: nbastream.h:91 networkbrowser.h:966 networkbrowser.h:1027
+#: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
 #: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
@@ -6244,7 +6244,7 @@ msgstr ""
 #: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:175
 #: MultiImage.c:244 MultiImage.c:262 MultiImage.c:273 MultiImage.c:353
 #: MultiImage.c:401 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
-#: MultiImage.c:671 myvideo.h:86 nbastream.h:91 networkbrowser.h:966
+#: MultiImage.c:671 myvideo.h:86 nbastream.h:126 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
 #: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
 #: networkbrowser.h:1785 networkbrowser.h:1792 networkbrowser.h:1797
@@ -8251,7 +8251,7 @@ msgstr ""
 #: kinox.h:181 kinox.h:797 kinox.h:799 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:138 movie4k.h:140
 #: movie4k.h:295 movie4k.h:297 myvideo.h:229 myvideo.h:231 myvideo.h:373
-#: myvideo.h:375 nbastream.h:154 nbastream.h:156 netzkino.h:13 netzkino.h:15
+#: myvideo.h:375 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
 #: nowtv.h:133 nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
