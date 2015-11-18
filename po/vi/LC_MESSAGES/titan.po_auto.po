@@ -7914,11 +7914,11 @@ msgid "Sat: default Settings Astra 19.2 | 04.10.2015"
 msgstr ""
 
 #: tpk_description.h:124
-msgid "Sat: matze70 Astra 19.2 | 06.11.2015"
+msgid "Sat: matze70 Astra 19.2 | 18.11.2015"
 msgstr ""
 
 #: tpk_description.h:125
-msgid "Sat: matze70 new design Astra 19.2 | 05.11.2015"
+msgid "Sat: matze70 new design Astra 19.2 | 18.11.2015"
 msgstr ""
 
 #: tpk_description.h:127
