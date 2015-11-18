@@ -7869,15 +7869,15 @@ msgid "Sat: "
 msgstr ""
 
 #: tpk_description.h:120
-msgid "Sat: Bulldog Settings 3x Sat | 14.09.2015"
+msgid "Sat: Bulldog Settings 3x Sat | 18.11.2015"
 msgstr ""
 
 #: tpk_description.h:121
-msgid "Sat: Bulldog Settings Astra 19.2 | 14.09.2015"
+msgid "Sat: Bulldog Settings Astra 19.2 | 18.11.2015"
 msgstr ""
 
 #: tpk_description.h:122
-msgid "Sat: Bulldog Settings Hotbird 13.0 + Astra 19.2 | 14.09.2015"
+msgid "Sat: Bulldog Settings Hotbird 13.0 + Astra 19.2 | 18.11.2015"
 msgstr ""
 
 #: tpk_description.h:126
@@ -8438,7 +8438,7 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: tpk_showname.h:154
-msgid "Settings Astra 19.2 | 14.09.2015"
+msgid "Settings Astra 19.2 | 18.11.2015"
 msgstr ""
 
 #: tpk_showname.h:155
@@ -8446,11 +8446,11 @@ msgid "Settings Eutelsat 36.0"
 msgstr ""
 
 #: tpk_showname.h:156
-msgid "Settings Hotbird 13.0, Astra 19.2 | 14.09.2015"
+msgid "Settings Hotbird 13.0, Astra 19.2 | 18.11.2015"
 msgstr ""
 
 #: tpk_showname.h:157
-msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 14.09.2015"
+msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 18.11.2015"
 msgstr ""
 
 #: titan.c:1042
