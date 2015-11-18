@@ -427,11 +427,11 @@ struct tithek* createtithek(struct tithek* update, char* title, char* link, char
 	return tnode;
 }
 
-int readtithek(const char* filename)
+int readtithek(char* filename)
 {
 	debug(1000, "in");
 	FILE *fd = NULL;
-	char *fileline = NULL;
+	char *fileline = NULL, *file = NULL;
 	int linecount = 0, len = 0, pay = 0;
 	struct tithek* last = NULL, *tmplast = NULL;
 
@@ -442,10 +442,23 @@ int readtithek(const char* filename)
 		return 1;
 	}
 
-	fd = fopen(filename, "r");
+//	if(cmpfilenameext(filename, ".sh") == 0)
+	if(ostrstr(filename, ".sh ") != NULL && ostrstr(filename, ".sh init") == NULL)
+	{
+		printf("[tithek] cmd: %s\n", filename);
+		debug(10, "cmd: %s", filename);
+		file = command(filename);
+		file = string_newline(file);
+		printf("[tithek] file: %s\n", file);
+		debug(10, "file: %s", file);
+	}
+	else
+		file = ostrcat(filename, NULL, 0, 0);	
+
+	fd = fopen(file, "r");
 	if(fd == NULL)
 	{
-		perr("can't open %s", filename);
+		perr("can't open %s", file);
 		free(fileline);
 		return 1;
 	}
@@ -727,6 +740,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	}
 
 //	amazon_init(titheklink, tithekfile);
+//init locale parser
+	localscript_init(titheklink, tithekfile);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();

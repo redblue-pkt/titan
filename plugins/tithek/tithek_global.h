@@ -617,4 +617,58 @@ char* jsunpack(char* input)
 	return input;
 }
 
+void localscript_init(char* titheklink, char* tithekfile)
+{
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *line = NULL, *path = NULL;
+
+	if(ostrcmp("http://atemio.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
+	{
+		path = createpluginpath("/tithek", 0);
+		path = ostrcat(path, "/parser", 1, 0);
+
+		if(!file_exist("/mnt/parser"))
+			mkdir("/mnt/parser", 0777);
+		if(!file_exist(path))
+			mkdir(path, 0777);
+
+		cmd = ostrcat("ls -1 ", path, 0, 0);
+		cmd = ostrcat(cmd, "/*.sh", 1, 0);
+
+		free(path), path = NULL;
+		tmpstr1 = command("ls -1 /mnt/parser/*.sh");
+		tmpstr2 = command(cmd);
+		free(cmd), cmd = NULL;
+		tmpstr = ostrcat(tmpstr1, "\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, tmpstr2, 1, 0);
+
+		int count = 0, i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "\n", &count);
+	
+		int max = count;
+		for(i = 0; i < max; i++)
+		{
+			if(file_exist(ret1[i].part) && cmpfilenameext(ret1[i].part, ".sh") == 0)
+			{
+				cmd = ostrcat(ret1[i].part, " ", 0, 0);
+				cmd = ostrcat(cmd, ret1[i].part, 1, 0);
+				cmd = ostrcat(cmd, " init", 1, 0);
+
+				printf("[tithek] cmd: %s\n", cmd);
+				debug(10, "cmd: %s", cmd);
+				line = command(cmd);
+				printf("[tithek] add main menuentry: %s\n", line);
+				debug(10, "add main menuentry: %s", line);
+				writesys(tithekfile, line, 3);
+				free(cmd), cmd = NULL;
+				free(line), line = NULL;
+			}
+		}
+		free(ret1), ret1 = NULL;
+		free(tmpstr), tmpstr = NULL;
+		free(tmpstr1), tmpstr1 = NULL;
+		free(tmpstr2), tmpstr2 = NULL;
+	}
+}
+
 #endif

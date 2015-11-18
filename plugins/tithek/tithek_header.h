@@ -6,6 +6,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 int amazon_login();
 void amazon_init(char* titheklink, char* tithekfile);
 void amazon_deinit();
+void localscript_init(char* titheklink, char* tithekfile);
 
 void titheklog(int debuglevel, char* name1, char* name2, char* name3, char* name4, char* content)
 {
