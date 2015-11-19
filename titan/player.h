@@ -796,6 +796,7 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 }
 #endif
 
+#ifdef EPLAYER4
 // set http extra-header and user-agent
 void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 {
@@ -891,14 +892,16 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 	}
 	gst_object_unref(source);
 }
+#endif
 
 //extern player
 int playerstart(char* file)
 {
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
+#ifdef EPLAYER4
 	status.bufferpercent = 0;
-	
+#endif	
 	if(file != NULL)
 	{
 #ifdef EPLAYER3
@@ -1138,10 +1141,8 @@ int playerstart(char* file)
 		}
 
 //////////////////////////
-printf("11###############################\n");
+// enable soup user-agent / extra-headers
 		g_signal_connect(G_OBJECT(pipeline), "notify::source", G_CALLBACK(playbinNotifySource), file);
-
-printf("22###############################\n");
 //////////////////////////
 
 //gpointer this;
@@ -1608,11 +1609,11 @@ int playerisplaying()
 		{
 			ret = gstbuscall(bus, message, &data);
 			gst_message_unref(message);
-			printf("222222222status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d\n", status.cleaninfobar, status.prefillbuffer, status.bufferpercent); 
 
 		}		
-
-		printf("333333333status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d\n", status.cleaninfobar, status.prefillbuffer, status.bufferpercent); 
+// fix buffering on filenuke
+		if(status.cleaninfobar == 0 && status.prefillbuffer == 1 && status.bufferpercent == 0)
+			gst_element_set_state (pipeline, GST_STATE_PAUSED);
 			
 // eof workaround for some mp4 files.
 		gint64 pts = 0, len = 0, rest = 0;
