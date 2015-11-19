@@ -7860,7 +7860,7 @@ msgid "Sat: matze70 new design Astra 19.2 | 18.11.2015"
 msgstr ""
 
 #: tpk_description.h:127
-msgid "Sat: uljanow Sat 19.2 plus 13.0 | 18.11.2015"
+msgid "Sat: uljanow Sat 19.2 plus 13.0 | 19.11.2015"
 msgstr ""
 
 #: optimize.h:264
