@@ -8173,7 +8173,7 @@ msgstr "Satelliten"
 
 #: skin_default_skin.xml.h:521
 msgid "Satfinder"
-msgstr "Empfangsqualität"
+msgstr "Empfangsqualität (Satfinder)"
 
 #: skin_default_skin.xml.h:523
 msgid "Saturation"
