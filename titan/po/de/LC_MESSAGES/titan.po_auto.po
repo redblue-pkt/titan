@@ -1526,7 +1526,7 @@ msgstr "Rahmenfarbe"
 
 #: skin_default_skin.xml.h:74
 msgid "Bouquet Color"
-msgstr "Bouquet Farbe"
+msgstr "Favoriten Farbe"
 
 #: skin_default_skin.xml.h:75
 msgid "Bouquet List"
@@ -1542,11 +1542,11 @@ msgstr "Favoriten Einträge"
 
 #: optimize.h:288
 msgid "BouquetCount: "
-msgstr "Bouquets: "
+msgstr "Favoriten: "
 
 #: optimize.h:296
 msgid "BouquetEntrys: "
-msgstr "Bouqueteinträge: "
+msgstr "Favoriteneinträge: "
 
 #: channellist.h:739 channellist.h:1259 channellist.h:1468
 #: webif_channellist.h:5
@@ -7688,7 +7688,7 @@ msgstr "Entfernen Log:"
 
 #: skin_default_skin.xml.h:479
 msgid "Remove empty Bouquet"
-msgstr "Lösche leeres Bouquet"
+msgstr "Lösche leere Favoriten"
 
 #: extensions.h:125
 msgid "Remove error"
@@ -7716,7 +7716,7 @@ msgstr "Lösche nicht verfügbare Sender"
 
 #: skin_default_skin.xml.h:483
 msgid "Remove unused Channels in Bouquets"
-msgstr "Lösche nicht verfügbare Sender in Bouquets"
+msgstr "Lösche nicht verfügbare Sender aus Favoriten Liste"
 
 #: skin_default_skin.xml.h:484
 msgid "Remove unused Provider"
@@ -7808,23 +7808,23 @@ msgstr "Wiederherstellen"
 
 #: httpdfunc.h:6913 httpdfunc.h:6972 skin_default_skin.xml.h:497
 msgid "Restore Default Bouquets"
-msgstr "Standard Bouquet Liste wiederherstellen"
+msgstr "Favoriten Liste (Werkseinstellung)"
 
 #: httpdfunc.h:6908 httpdfunc.h:6960 skin_default_skin.xml.h:499
 msgid "Restore Default Channel Settings"
-msgstr "Komplette Standard Sender Liste wiederherstellen"
+msgstr "Komplette Liste (Werkseinstellung)"
 
 #: httpdfunc.h:6918 httpdfunc.h:6982 skin_default_skin.xml.h:498
 msgid "Restore Default Channels"
-msgstr "Standard Sender Liste wiederherstellen"
+msgstr "Sender Liste (Werkseinstellung)"
 
 #: httpdfunc.h:6923 httpdfunc.h:6992 skin_default_skin.xml.h:500
 msgid "Restore Default Providers"
-msgstr "Standard Anbieter Liste wiederherstellen"
+msgstr "Anbieter Liste (Werkseinstellung)"
 
 #: httpdfunc.h:6928 httpdfunc.h:7002 skin_default_skin.xml.h:501
 msgid "Restore Default Sats"
-msgstr "Standard SAT Liste wiederherstellen"
+msgstr "Sat/Kabel/Ter Liste (Werkseinstellung)"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -9151,23 +9151,23 @@ msgstr "Aufnahme starten"
 
 #: global.h:7221
 msgid "Start Restore Default Bouquets ?"
-msgstr "Standard Bouquets wiederherstellen?"
+msgstr "Favoriten Liste (Werkseinstellung) wiederherstellen?"
 
 #: global.h:7234
 msgid "Start Restore Default Channel Settings ?"
-msgstr "Komplette Standard Senderliste wiederherstellen?"
+msgstr "Komplette Liste (Werkseinstellung) wiederherstellen?"
 
 #: global.h:7256
 msgid "Start Restore Default Channels ?"
-msgstr "Standard Senderliste wiederherstellen?"
+msgstr "Sender Liste (Werkseinstellung) wiederherstellen?"
 
 #: global.h:7245
 msgid "Start Restore Default Providers ?"
-msgstr "Standard Anbieterliste wiederherstellen?"
+msgstr "Anbieter Liste (Werkseinstellung) wiederherstellen?"
 
 #: global.h:7267
 msgid "Start Restore Default Sats ?"
-msgstr "Standard SAT Liste wiederherstellen?"
+msgstr "Sat/Kabel/Terrestrische Liste (Werkseinstellung) wiederherstellen?"
 
 #: network.h:793
 msgid "Start Wlan ?"
