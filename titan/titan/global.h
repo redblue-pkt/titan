@@ -6895,17 +6895,18 @@ int converte2settings(int flag)
 				}
 				line = ostrcat(line, "#", 1, 0);
 
-				if(checkbox("UFS910") == 1)
+// not needed
+//				if(checkbox("UFS910") == 1)
 					line = ostrcat(line, "1", 1, 0); //pilot
-				else
-					line = ostrcat(line, "2", 1, 0); //pilot
-				line = ostrcat(line, "#", 1, 0);
+//				else
+//					line = ostrcat(line, "2", 1, 0); //pilot
+//				line = ostrcat(line, "#", 1, 0);
 
-				if(checkbox("UFS910") == 1)
+//				if(checkbox("UFS910") == 1)
 					line = ostrcat(line, "0", 1, 0); //rolloff
-				else
-					line = ostrcat(line, "3", 1, 0); //rolloff
-				line = ostrcat(line, "#", 1, 0);
+//				else
+//					line = ostrcat(line, "3", 1, 0); //rolloff
+//				line = ostrcat(line, "#", 1, 0);
 
 				line = ostrcat(line, "2", 1, 0); //inversion
 				line = ostrcat(line, "#", 1, 0);
