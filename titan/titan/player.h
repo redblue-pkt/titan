@@ -58,8 +58,9 @@ int playerstartts(char* file, int flag)
 	struct dvbdev* fenode = NULL;
 	struct dvbdev* dvrnode = NULL;
 	status.prefillbuffer = 0;
+#ifdef EPLAYER4
 	status.bufferpercent = 0;
-
+#endif
 	//supermagic = getsupermagic(file);
 
 	if(supermagic == NFS_SUPER_MAGIC || supermagic == SMB_SUPER_MAGIC)
