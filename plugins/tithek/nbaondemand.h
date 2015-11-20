@@ -3,79 +3,120 @@
 
 char* nbaondemand(char* link)
 {
- int incount = 0;
 	int debuglevel = getconfigint("debuglevel", NULL);
+	system("rm -f /var/usr/local/share/titan/plugins/tithek/nbaondemand*");
 
-	debug(99, "nbaondemand(%d) link=%s ", incount, link);
-	char* streamurl = NULL;
+	debug(99, "nbaondemand link=%s ", link);
+	char* streamurl = NULL, *title = NULL, *pic = NULL, *label = NULL;
 	char* tmpstr = NULL;
 	char* path = NULL;
 	char* host = NULL;
-	char* url1 = NULL;
-	char* url2 = NULL;
-	char* streamer = NULL;
+	char* url = NULL;
+	char* id = NULL;
+	char* type = NULL;
 
-//<script type="text/javascript" src="http://zerocast.tv/channel.php?a=305&width=650&height=480&autostart=true"></script>
 	host = string_resub("http://", "/", link, 0);
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, link, 1);
 	host = string_resub("http://", "/", link, 0);
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbaondemand1_tmpstr", NULL, host, path, tmpstr);
 
-//var url = 'http://zerocast.tv/embed.php?a=305&id=&width=650&height=480&autostart=true&strech=exactfit';
-	url1 = string_resub("var url = '", "'", tmpstr, 0);
-	host = string_resub("http://", "/", url1, 0);
-	tmpstr = gethttps(url1, NULL, NULL, NULL, NULL, NULL, 1);
-	host = string_resub("http://", "/", url1, 0);
-	path = string_replace_all(host, "", url1, 0);
-	path = string_replace_all("http://", "", path, 1);
-	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+//<iframe src='http://videoapi.my.mail.ru/videos/embed/mail/eccovskiy/_myvideo/3848.html' width='626' height='367' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	url = string_resub("<iframe src='", "'", tmpstr, 0);
 
-//curl = "cnRtcDovLzM3LjQ4LjgzLjY6MTkzNS9nb0xpdmUvP3dtc0F1dGhTaWduPWMyVnlkbVZ5WDNScGJXVTlNVEV2TVRVdk1qQXhOU0F6T2pFMU9qQTNJRkJOSm1oaGMyaGZkbUZzZFdVOVdUa3ZiazVtZFVaMWVUWk9Ra3RUVTJ4ME5rbG9VVDA5Sm5aaGJHbGtiV2x1ZFhSbGN6MDEvOXB4R0N0UDNhRW5KWWdvQkZGSDg=";
-	streamer = string_resub("curl = \"", "\"", tmpstr, 0);
-	if(streamer == NULL) goto end;
-	printf("streamer input: %s\n", streamer);
-	b64dec(streamer, streamer);
-	printf("streamer decod: %s\n", streamer);
+	type = string_resub("/mail/", "/", url, 0);
+	id = string_resub("/_myvideo/", ".html", url, 0);
 
-//<iframe src="online.php?c=fox" frameborder="0" width="10" height="10" scrolling="no"></iframe>
-	url2 = string_resub("<iframe src=\"", "\"", tmpstr, 0);
-	url2 = ostrcat("http://zerocast.tv/", url2, 0, 1);
-
-	host = string_resub("http://", "/", url2, 0);
-	tmpstr = gethttps(url2, NULL, NULL, NULL, NULL, url1, 1);
-	host = string_resub("http://", "/", url2, 0);
-	path = string_replace_all(host, "", url2, 0);
-	path = string_replace_all("http://", "", path, 1);
-	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
-
-/*
-	rtmp://37.48.83.6:1935/goLive/?wmsAuthSign=c2VydmVyX3RpbWU9MTEvMTUvMjAxNSAyOjI0OjE5IFBNJmhhc2hfdmFsdWU9aFMremI4MmZCc0FtbFFkUWFYNXlpdz09JnZhbGlkbWludXRlcz01/9pxGCtP3aEnJYgoBFFH8 swfUrl=http://p.jwpcdn.com/6/12/jwplayer.flash.swf flashver=WIN\2019,0,0,226 timeout=15 live=true swfVfy=1 pageUrl=http://zerocast.tv/embed.php?a=305&id=&width=640&height=480&autostart=true&strech=exactfit
-*/
-	if(streamer != NULL)
+	if(type == NULL || id == NULL)
 	{
-		streamurl = ostrcat(streamer, NULL, 0, 0);
-		streamurl = ostrcat(streamurl, " swfUrl=http://p.jwpcdn.com/6/12/jwplayer.flash.swf", 1, 0);
-//(titan:10759): GStreamer-WARNING **: Trying to set string on structure field 'uri', but string is not valid UTF-8. Please file a bug.
-//		streamurl = ostrcat(streamurl, " flashver=WIN\2019,0,0,226", 1, 0);
-		streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
-		streamurl = ostrcat(streamurl, " live=true", 1, 0);
-		streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
-		streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);
-		streamurl = ostrcat(streamurl, url1, 1, 0);
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
 	}
+
+	free(url), url = NULL;
+    url = ostrcat("http://videoapi.my.mail.ru/videos/mail/", type, 0, 0);
+    url = ostrcat(url, "/_myvideo/", 1, 0);
+    url = ostrcat(url, id, 1, 0);
+    url = ostrcat(url, ".json?ver=0.2.60", 1, 0);
+	free(id), id = NULL;
+	free(type), type = NULL;
+
+	host = string_resub("http://", "/", url, 0);
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", url, 0);
+	path = string_replace_all(host, "", url, 0);
+	path = string_replace_all("http://", "", path, 1);
+	path = string_replace_all(" ", "%20", path, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbaondemand2_tmpstr", NULL, host, path, tmpstr);
+
+///////////////
+	tmpstr = string_replace_all("\n", " ", tmpstr, 1);
+	tmpstr = string_replace_all("{\"key\":", "\nkey=", tmpstr, 1);
+	
+	int incount = 0, count = 0, i = 0;	
+	struct splitstr* ret1 = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	for(i = 0; i < count; i++)
+	{
+//		if(ostrstr(ret1[i].part, "key=") != NULL)
+		if(!ostrncmp("key=", ret1[i].part, 4))
+		{
+			incount++;
+			free(streamurl), streamurl = NULL;			
+			streamurl = string_resub("\"url\":\"", "\"", ret1[i].part, 0);
+	
+			if(ostrstr(streamurl, "rtmp") != NULL)
+				title = ostrcat("Rtmpe Stream (", NULL, 0, 0);
+			else
+				title = ostrcat("Http Stream (", NULL, 0, 0);
+	
+			label = string_resub("key=\"", "\"", ret1[i].part, 0);
+			title = ostrcat(title, label, 1, 0);
+			title = ostrcat(title, ")", 1, 0);
+			
+			if(ostrstr(streamurl, "mp4") != NULL)
+				pic = ostrcat("mp4.png", NULL, 0, 0);
+			else
+				pic = ostrcat("m3u8.png", NULL, 0, 0);
+
+			if(streamurl != NULL)
+			{
+				debug(99, "(%d) title: %s streamurl: %s\n", i, title, streamurl);																									
+				addmenulist(&mlist, title, streamurl, pic, 0, 0);
+			}
+
+			free(label), label = NULL;
+			free(title), title = NULL;
+			free(pic), pic = NULL;
+		}
+	}
+	free(ret1), ret1 = NULL;
+	if(mlist != NULL)
+	{
+		mbox = menulistbox(mlist, NULL, _("Stream Menu"), _("Choose your Streaming Format from the following list"), NULL, NULL, 1, 0);
+		if(mbox != NULL)
+		{
+			free(streamurl), streamurl = NULL;
+
+			debug(99, "mbox->name %s", mbox->name);
+			debug(99, "mbox->text %s", mbox->text);
+			streamurl = ostrcat(mbox->text, NULL, 0, 0);
+
+		}
+	}
+/////////////
+
 end:
 
 	free(host), host = NULL;
 	free(path), path = NULL;
 	free(tmpstr), tmpstr = NULL;
-	free(url1), url1 = NULL;
-	free(url2), url2 = NULL;
-	free(streamer), streamer = NULL;
+	free(url), url = NULL;
+	free(type), type = NULL;
+	free(id), id = NULL;
 
 	debug(99, "streamurl %s", streamurl);
 	return streamurl;
