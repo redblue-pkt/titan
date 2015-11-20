@@ -1269,11 +1269,11 @@ msgstr "Настройки бекапа"
 msgid "Backup / Restore Settings"
 msgstr "Бэкап/ресторе настроек"
 
-#: global.h:7309 httpdfunc.h:6666 httpdfunc.h:6745 system_backup_restore.h:82
+#: global.h:7310 httpdfunc.h:6666 httpdfunc.h:6745 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Бекап создан успешно"
 
-#: global.h:7311
+#: global.h:7312
 msgid "Backup ended with error"
 msgstr ""
 
@@ -3075,8 +3075,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980
-#: global.h:6701 global.h:6770 global.h:6789 global.h:6964 global.h:7220
-#: global.h:7233 global.h:7244 global.h:7255 global.h:7266 harddisk.h:355
+#: global.h:6701 global.h:6770 global.h:6789 global.h:6965 global.h:7221
+#: global.h:7234 global.h:7245 global.h:7256 global.h:7267 harddisk.h:355
 #: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
 #: harddisk.h:776 harddisk.h:778 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -5628,9 +5628,9 @@ msgstr ""
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:66 firedrive.h:72 firedrive.h:122 firedrive.h:128
 #: firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980 global.h:6701
-#: global.h:6770 global.h:6789 global.h:6964 global.h:7220 global.h:7226
-#: global.h:7233 global.h:7237 global.h:7244 global.h:7248 global.h:7255
-#: global.h:7259 global.h:7266 global.h:7270 harddisk.h:678 harddisk.h:686
+#: global.h:6770 global.h:6789 global.h:6965 global.h:7221 global.h:7227
+#: global.h:7234 global.h:7238 global.h:7245 global.h:7249 global.h:7256
+#: global.h:7260 global.h:7267 global.h:7271 harddisk.h:678 harddisk.h:686
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
 #: harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362 hello.c:37
 #: httpdfunc.h:1304 httpdfunc.h:5832 httpdfunc.h:6218 httpdfunc.h:6483
@@ -6199,9 +6199,9 @@ msgstr ""
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980
-#: global.h:6701 global.h:6770 global.h:6789 global.h:6964 global.h:7220
-#: global.h:7226 global.h:7233 global.h:7237 global.h:7244 global.h:7248
-#: global.h:7255 global.h:7259 global.h:7266 global.h:7270 harddisk.h:355
+#: global.h:6701 global.h:6770 global.h:6789 global.h:6965 global.h:7221
+#: global.h:7227 global.h:7234 global.h:7238 global.h:7245 global.h:7249
+#: global.h:7256 global.h:7260 global.h:7267 global.h:7271 harddisk.h:355
 #: harddisk.h:487 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304
@@ -7028,7 +7028,7 @@ msgstr "Таймер выключения"
 msgid "Present"
 msgstr ""
 
-#: global.h:7321 system_backup_restore.h:15
+#: global.h:7322 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -8915,7 +8915,7 @@ msgstr "Спорт"
 msgid "StandBy Mode"
 msgstr "Режим выключеня"
 
-#: global.h:6964
+#: global.h:6965
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -8962,23 +8962,23 @@ msgstr "Старт RGUID"
 msgid "Start Record"
 msgstr "Старт записи"
 
-#: global.h:7220
+#: global.h:7221
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7233
+#: global.h:7234
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7255
+#: global.h:7256
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7244
+#: global.h:7245
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7266
+#: global.h:7267
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9437,7 +9437,7 @@ msgstr "Текст"
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7277
+#: global.h:7278
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9733,7 +9733,7 @@ msgstr "Лог Titan"
 msgid "Titan MediaCenter"
 msgstr "Медиацент Titan"
 
-#: global.h:7226 global.h:7237 global.h:7248 global.h:7259 global.h:7270
+#: global.h:7227 global.h:7238 global.h:7249 global.h:7260 global.h:7271
 #: kravencfg.c:212 skinadjust.h:398 skinadjust.h:803
 msgid "Titan will be restarted!"
 msgstr "Titan будет перезагружен!"
