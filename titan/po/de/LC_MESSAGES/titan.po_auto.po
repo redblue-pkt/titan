@@ -2372,7 +2372,7 @@ msgstr "Erstellen"
 
 #: skin_default_skin.xml.h:121
 msgid "Create Default Favorites"
-msgstr "Standard Favoriten laden"
+msgstr "Favoritenliste (Werkseinstellung)"
 
 #: play.h:654
 msgid "Create Favorites sub folder"
@@ -2424,7 +2424,7 @@ msgstr "Erstelle Transponder (Terrestrisch)"
 
 #: skin_default_skin.xml.h:127
 msgid "Create Transponder List"
-msgstr "Transponder Liste importieren"
+msgstr "Transponderliste importieren"
 
 #: scan.h:2290
 msgid "Create new"
@@ -7808,23 +7808,23 @@ msgstr "Wiederherstellen"
 
 #: httpdfunc.h:6913 httpdfunc.h:6972 skin_default_skin.xml.h:497
 msgid "Restore Default Bouquets"
-msgstr "Favoriten Liste (Werkseinstellung)"
+msgstr "Favoritenliste (Werkseinstellung)"
 
 #: httpdfunc.h:6908 httpdfunc.h:6960 skin_default_skin.xml.h:499
 msgid "Restore Default Channel Settings"
-msgstr "Komplette Liste (Werkseinstellung)"
+msgstr "Kompletteliste (Werkseinstellung)"
 
 #: httpdfunc.h:6918 httpdfunc.h:6982 skin_default_skin.xml.h:498
 msgid "Restore Default Channels"
-msgstr "Sender Liste (Werkseinstellung)"
+msgstr "Senderliste (Werkseinstellung)"
 
 #: httpdfunc.h:6923 httpdfunc.h:6992 skin_default_skin.xml.h:500
 msgid "Restore Default Providers"
-msgstr "Anbieter Liste (Werkseinstellung)"
+msgstr "Anbieterliste (Werkseinstellung)"
 
 #: httpdfunc.h:6928 httpdfunc.h:7002 skin_default_skin.xml.h:501
 msgid "Restore Default Sats"
-msgstr "Sat/Kabel/Ter Liste (Werkseinstellung)"
+msgstr "Satellitenliste (Werkseinstellung)"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -9151,7 +9151,7 @@ msgstr "Aufnahme starten"
 
 #: global.h:7221
 msgid "Start Restore Default Bouquets ?"
-msgstr "Favoriten Liste (Werkseinstellung) wiederherstellen?"
+msgstr "Favoritenliste (Werkseinstellung) wiederherstellen?"
 
 #: global.h:7234
 msgid "Start Restore Default Channel Settings ?"
@@ -9159,15 +9159,15 @@ msgstr "Komplette Liste (Werkseinstellung) wiederherstellen?"
 
 #: global.h:7256
 msgid "Start Restore Default Channels ?"
-msgstr "Sender Liste (Werkseinstellung) wiederherstellen?"
+msgstr "Senderliste (Werkseinstellung) wiederherstellen?"
 
 #: global.h:7245
 msgid "Start Restore Default Providers ?"
-msgstr "Anbieter Liste (Werkseinstellung) wiederherstellen?"
+msgstr "Anbieterliste (Werkseinstellung) wiederherstellen?"
 
 #: global.h:7267
 msgid "Start Restore Default Sats ?"
-msgstr "Sat/Kabel/Terrestrische Liste (Werkseinstellung) wiederherstellen?"
+msgstr "Satellitenliste (Werkseinstellung) wiederherstellen?"
 
 #: network.h:793
 msgid "Start Wlan ?"
@@ -11238,7 +11238,7 @@ msgstr "Rahmen"
 
 #: webif_help.h:11
 msgid "bouquetlist"
-msgstr "Favoriten Liste"
+msgstr "Favoritenliste"
 
 #: plugins_callmonitor1_skin.xml.h:8 skins_callmonitor1_skin.xml.h:8
 msgid "broadcast"
@@ -12539,7 +12539,7 @@ msgstr "Aufnahme (Länge)"
 
 #: webif_help.h:73
 msgid "recordlist"
-msgstr "Timer Liste"
+msgstr "Timerliste"
 
 #: webif_help.h:74
 msgid "recordpath"
