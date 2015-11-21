@@ -1755,7 +1755,7 @@ msgstr ""
 msgid "Can't get Streamurl !"
 msgstr "STREAMURL no es accesible!"
 
-#: extensions.h:444 httpdfunc.h:6525
+#: extensions.h:453 httpdfunc.h:6525
 msgid "Can't get all TPK index !"
 msgstr "ATENCION: No se puede recuperar el indice complemento completo!"
 
@@ -1840,7 +1840,7 @@ msgstr "ERROR: No se puede iniciar Sistema Actualizacion! Archivo Corrupto!"
 msgid "Can't start timeshift play !"
 msgstr "No se puede iniciar la reproduccion diferida!"
 
-#: extensions.h:448 httpdfunc.h:6537
+#: extensions.h:457 httpdfunc.h:6537
 msgid "Can't update all packages !"
 msgstr "ERROR: No se han actualizado todos los plugins!"
 
@@ -3094,10 +3094,9 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
-#: extensions.h:267 extensions.h:302 extensions.h:310 extensions.h:317
-#: extensions.h:324 extensions.h:356 extensions.h:382 extensions.h:413
-#: extensions.h:420 extensions.h:444 extensions.h:448 extensions.h:456
-#: extensions.h:502 facebook.h:66 facebook.h:157 facebook.h:167
+#: extensions.h:305 extensions.h:313 extensions.h:320 extensions.h:362
+#: extensions.h:388 extensions.h:419 extensions.h:453 extensions.h:457
+#: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
@@ -4916,7 +4915,7 @@ msgstr "La instalacion comenzo"
 msgid "Installed:"
 msgstr "Instalado:"
 
-#: extensions.h:232 extensions.h:374
+#: extensions.h:232 extensions.h:380
 msgid "Installing"
 msgstr "Instalacion"
 
@@ -5657,9 +5656,9 @@ msgstr ""
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:267
-#: extensions.h:324 extensions.h:356 extensions.h:416 extensions.h:420
-#: extensions.h:456 facebook.h:66 facebook.h:157 facebook.h:167
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:268
+#: extensions.h:328 extensions.h:362 extensions.h:422 extensions.h:427
+#: extensions.h:466 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
@@ -6159,7 +6158,7 @@ msgstr ""
 msgid "No memory"
 msgstr "ERROR: No Memoria"
 
-#: extensions.h:356 extensions.h:502
+#: extensions.h:362 extensions.h:514
 msgid "No plugin found."
 msgstr "No se encontro Plugin"
 
@@ -6228,10 +6227,10 @@ msgstr ""
 #: divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
-#: extensions.h:267 extensions.h:302 extensions.h:310 extensions.h:317
-#: extensions.h:324 extensions.h:356 extensions.h:382 extensions.h:413
-#: extensions.h:420 extensions.h:444 extensions.h:448 extensions.h:456
-#: extensions.h:502 facebook.h:66 facebook.h:157 facebook.h:167
+#: extensions.h:268 extensions.h:305 extensions.h:313 extensions.h:320
+#: extensions.h:328 extensions.h:362 extensions.h:388 extensions.h:419
+#: extensions.h:427 extensions.h:453 extensions.h:457 extensions.h:466
+#: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
@@ -7587,7 +7586,7 @@ msgstr ""
 msgid "Remove unused Transponder"
 msgstr ""
 
-#: extensions.h:297
+#: extensions.h:300
 msgid "Removeing"
 msgstr "Borrar"
 
@@ -7769,7 +7768,7 @@ msgid "SAT"
 msgstr "Satelite"
 
 #: tpk_showname.h:119
-msgid "SAT/Cable 19.2 13.0 KabelD | 03.10.2015"
+msgid "SAT/Cable 19.2 13.0 KabelD | 21.11.2015"
 msgstr ""
 
 #: httpdfunc.h:4859 skin_default_skin.xml.h:516
@@ -8894,7 +8893,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Softcam seleccion: "
 
-#: extensions.h:416
+#: extensions.h:422
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -9339,25 +9338,19 @@ msgstr ""
 msgid "TPK"
 msgstr ""
 
-#: extensions.h:267 httpdfunc.h:6218 httpdfunc.h:6220 httpdfunc.h:6485
+#: httpdfunc.h:6218 httpdfunc.h:6220 httpdfunc.h:6485
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "Instalado con Exito.\n"
 "Su receptor se reiniciara ahora"
 
-#: extensions.h:324 httpdfunc.h:6483
+#: httpdfunc.h:6483
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 "Eliminado con Exito.\n"
 "Su receptor se reiniciara ahora"
 
-#: extensions.h:420
-msgid "TPK Tmp Install done, your system will reboot !"
-msgstr ""
-"Instalado con Exito de tmp.\n"
-"Su receptor se reiniciara ahora"
-
-#: extensions.h:456 httpdfunc.h:6554
+#: httpdfunc.h:6554
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 "Actualizado con Exito.\n"
@@ -9543,7 +9536,7 @@ msgstr "La página no encontrada, archivo eliminado"
 msgid "The video no longer exists"
 msgstr ""
 
-#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6197
+#: extensions.h:227 extensions.h:254 extensions.h:416 httpdfunc.h:6197
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -9782,6 +9775,7 @@ msgstr ""
 msgid "Titan MediaCenter"
 msgstr ""
 
+#: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7211 global.h:7231 global.h:7251 global.h:7271 global.h:7291
 #: kravencfg.c:212 skinadjust.h:398 skinadjust.h:803
 msgid "Titan will be restarted!"
@@ -9925,7 +9919,7 @@ msgstr ""
 msgid "Tpk Install - select section"
 msgstr "Instalacion - Elegir Categoria"
 
-#: extensions.h:190 extensions.h:241 extensions.h:502
+#: extensions.h:190 extensions.h:241 extensions.h:514
 msgid "Tpk Install Info"
 msgstr "Informacion de instalacion"
 
@@ -9937,23 +9931,23 @@ msgstr "ERROR: Instalacion fallida!"
 msgid "Tpk Install Info - Install OK"
 msgstr "Paquete instalado correctamente"
 
-#: extensions.h:291 httpdfunc.h:6353
+#: extensions.h:294 httpdfunc.h:6353
 msgid "Tpk Remove - select file"
 msgstr "Elimina - Seleccion"
 
-#: extensions.h:302
+#: extensions.h:305
 msgid "Tpk Remove Info"
 msgstr "Eliminar Informacion"
 
-#: extensions.h:317 httpdfunc.h:6437
+#: extensions.h:320 httpdfunc.h:6437
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "ERROR: Eliminacion Fallida!"
 
-#: extensions.h:310 httpdfunc.h:6433
+#: extensions.h:313 httpdfunc.h:6433
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Eliminado con Exito"
 
-#: extensions.h:444 extensions.h:448 httpdfunc.h:6522 httpdfunc.h:6534
+#: extensions.h:453 extensions.h:457 httpdfunc.h:6522 httpdfunc.h:6534
 msgid "Tpk Update Info - Update ERROR"
 msgstr "ERROR: Actualizacion Fallida!"
 
@@ -12745,7 +12739,7 @@ msgstr "Iniciar"
 msgid "started"
 msgstr "Iniciando"
 
-#: extensions.h:238 extensions.h:378
+#: extensions.h:238 extensions.h:384
 msgid "starting"
 msgstr "Comenzando"
 
@@ -13398,3 +13392,8 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "TPK Tmp Install done, your system will reboot !"
+#~ msgstr ""
+#~ "Instalado con Exito de tmp.\n"
+#~ "Su receptor se reiniciara ahora"
