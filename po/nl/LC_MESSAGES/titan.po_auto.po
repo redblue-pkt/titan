@@ -13322,8 +13322,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "TPK Tmp Install done, your system will reboot !"
-#~ msgstr ""
-#~ "TPK tmp installatie klaar\n"
-#~ "uw ontvanger wordt opnieuw gestart!"
