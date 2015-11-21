@@ -4,9 +4,17 @@
 SRC=$1
 INPUT=$2
 PAGE=$3
+
+ARCH=`cat /etc/.arch`
 URL=http://livetv.sx
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=`echo ${PARSER^}`
+
+if [ "$ARCH" = "mipsel" ];then
+	NAME=`echo ${PARSER^}`
+else
+	NAME=`echo $PARSER | sed 's/.*/\u&/'`
+fi
+
 wgetbin="wget -q -T2"
 TMP=/tmp/parser
 TMP=/var/usr/local/share/titan/plugins/tithek/parser/tmp
@@ -67,7 +75,12 @@ listvideos()
 			fi
 	
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
-				piccount=$[$piccount+1]
+				if [ "$ARCH" = "mipsel" ];then
+					piccount=$[$piccount+1] 
+				else
+					piccount=`expr $piccount + 1`
+				fi
+
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#98"
 				echo "$LINE" >> /tmp/tithek/$PARSER.$INPUT.list
 			fi

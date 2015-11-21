@@ -4,9 +4,17 @@
 SRC=$1
 INPUT=$2
 PAGE=$3
+
+ARCH=`cat /etc/.arch`
 URL=http://www.giga.de
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=`echo ${PARSER^}`
+
+if [ "$ARCH" = "mipsel" ];then
+	NAME=`echo ${PARSER^}`
+else
+	NAME=`echo $PARSER | sed 's/.*/\u&/'`
+fi
+
 wgetbin="wget -q -T2"
 TMP=/tmp/parser
 
@@ -49,8 +57,11 @@ category()
 			tags="$tags~"$ROUND0"/page/$i"
 			TITLE="`echo ${ROUND0^} | sed 's!/! !g' | sed 's!-! !g'` Page $i"
 			echo "$TITLE#$SRC $SRC page $ROUND0/page/$i#http://atemio.dyndns.tv/mediathek/menu/page.jpg#page.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
-		
-			i=$[$i+1]
+			if [ "$ARCH" = "mipsel" ];then
+				i=`expr $i + 1` 
+			else
+				i=$[$i+1]
+			fi
 			done
 		done
 	fi
@@ -81,7 +92,12 @@ page()
 			TITLE=`echo $TITLE | sed -e 's/ &amp; / und /g' -e 's/&amp;/ und /g' -e "s/&#8217;/'/g" -e 's/&#8211;/-/g' -e 's/&#8230;/.../g' -e 's/&#8220;/"/g' -e 's/&#8221;/"/g' -e "s/&#8216;/'/g" -e 's/#//g'`
 		
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
-				piccount=$[$piccount+1]
+				if [ "$ARCH" = "mipsel" ];then
+					piccount=$[$piccount+1] 
+				else
+					piccount=`expr $piccount + 1`
+				fi
+				
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.$PICEXT#$NAME#15"
 				echo "$LINE" >> /tmp/tithek/$PARSER.$INPUT.list
 			fi
