@@ -1008,7 +1008,19 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-			
+
+	if(getconfigint("autoscan", NULL) == 1)
+	{
+		status.updatevfd = PAUSE;
+		resettvpic();
+		screenscanconfig(1);
+		resettvpic();
+		writevfd("");
+		status.updatevfd = START;
+		drawscreen(skin, 0, 0);
+		addconfig("autoscan", "0");
+	}
+		
 	//first wizzard
 	if(getconfigint("nofirstwizzard", NULL) < 2)
 	{
