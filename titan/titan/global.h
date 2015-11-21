@@ -6698,14 +6698,15 @@ void convertsettings()
 	}
 
 //	free(tmpstr), tmpstr = NULL;
-	if(textbox(_("Message"), _("Transponder/Satellite Convert done, please use channel search on next Boot.\nYour System will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
-	{	
-		//write only config file
-		system("sync");
-		writeallconfig(3);
-		oshutdown(2,2);
-		system("init 6");
-	}
+	textbox(_("Message"), _("Transponder/Satellite Convert done, please use channel search.\n\nTitan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
+	//sync usb
+	system("sync");
+	//enable autoscan after guirestart
+	addconfig("autoscan", "1");
+	//write only config file
+	writeallconfig(3);
+	//gui restart and write no config
+	oshutdown(3, 2);
 }
 
 // flag 0 = sat
@@ -6895,16 +6896,15 @@ int converte2settings(int flag)
 				}
 				line = ostrcat(line, "#", 1, 0);
 
-// not needed
-//				if(checkbox("UFS910") == 1)
-//					line = ostrcat(line, "1", 1, 0); //pilot
-//				else
+				if(checkbox("UFS910") == 1)
+					line = ostrcat(line, "1", 1, 0); //pilot
+				else
 					line = ostrcat(line, "2", 1, 0); //pilot
 				line = ostrcat(line, "#", 1, 0);
 
-//				if(checkbox("UFS910") == 1)
-//					line = ostrcat(line, "0", 1, 0); //rolloff
-//				else
+				if(checkbox("UFS910") == 1)
+					line = ostrcat(line, "0", 1, 0); //rolloff
+				else
 					line = ostrcat(line, "3", 1, 0); //rolloff
 				line = ostrcat(line, "#", 1, 0);
 
@@ -6952,24 +6952,6 @@ int converte2settings(int flag)
 	free(fetype), fetype = NULL;
 			
 	return 1;
-}
-
-void createfav()
-{
-	struct skin* load = getscreen("loading");
-	drawscreen(load, 0, 0);
-
-	system("rm -rf /mnt/settings/bouquets*");
-	system("cp -a /etc/titan.restore/mnt/settings/bouquets* /mnt/settings");
-
-	if(textbox(_("Message"), _("Standard favorites have been successfully applied.\nYour System will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
-	{
-		//write only config file
-		system("sync");
-		writeallconfig(3);
-		oshutdown(2,2);
-		system("init 6");
-	}
 }
 
 char* system_infos(int mode)
@@ -7220,12 +7202,19 @@ void setdefaultbouquets()
 {
 	if(textbox(_("Message"), _("Start Restore Default Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
+	
 		system("rm -f /mnt/settings/bouquets.* > /dev/null 2>&1");
-		system("cp -a /etc/titan.restore/mnt/settings/bouquets.cfg /mnt/settings/bouquets.cfg > /dev/null 2>&1");
-		system("cp -a /etc/titan.restore/mnt/settings/bouquets.*.tv /mnt/settings > /dev/null 2>&1");
-		system("cp -a /etc/titan.restore/mnt/settings/bouquets.*.radio /mnt/settings > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/bouquets* /mnt/settings > /dev/null 2>&1");
+
 		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-		oshutdown(3, 0);
+		//sync usb
+		system("sync");
+		//write only config file
+		writeallconfig(3);
+		//gui restart and write no config
+		oshutdown(3, 2);
 	}
 }
 
@@ -7233,10 +7222,19 @@ void setdefaultsettings()
 {
 	if(textbox(_("Message"), _("Start Restore Default Channel Settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
+	
 		system("rm -rf /mnt/settings/* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/* /mnt/settings > /dev/null 2>&1");
+
 		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-		oshutdown(3, 0);
+		//sync usb
+		system("sync");
+		//write only config file
+		writeallconfig(3);
+		//gui restart and write no config
+		oshutdown(3, 2);
 	}
 }
 
@@ -7244,10 +7242,19 @@ void setdefaultproviders()
 {
 	if(textbox(_("Message"), _("Start Restore Default Providers ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
+	
 		system("rm -f /mnt/settings/provider > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/provider /mnt/settings > /dev/null 2>&1");
+
 		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-		oshutdown(3, 0);
+		//sync usb
+		system("sync");
+		//write only config file
+		writeallconfig(3);
+		//gui restart and write no config
+		oshutdown(3, 2);
 	}
 }
 
@@ -7255,10 +7262,19 @@ void setdefaultchannels()
 {
 	if(textbox(_("Message"), _("Start Restore Default Channels ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
+	
 		system("rm -f /mnt/settings/channel > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/channel /mnt/settings > /dev/null 2>&1");
+
 		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-		oshutdown(3, 0);
+		//sync usb
+		system("sync");
+		//write only config file
+		writeallconfig(3);
+		//gui restart and write no config
+		oshutdown(3, 2);
 	}
 }
 
@@ -7266,10 +7282,19 @@ void setdefaultsats()
 {
 	if(textbox(_("Message"), _("Start Restore Default Sats ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
+		struct skin* load = getscreen("loading");
+		drawscreen(load, 0, 0);
+	
 		system("rm -f /mnt/settings/satellites > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/satellites /mnt/settings > /dev/null 2>&1");
+
 		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-		oshutdown(3, 0);
+		//sync usb
+		system("sync");
+		//write only config file
+		writeallconfig(3);
+		//gui restart and write no config
+		oshutdown(3, 2);
 	}
 }
 

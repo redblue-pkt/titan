@@ -691,7 +691,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("createfav", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		createfav();
+		setdefaultbouquets();
 	}
 	else if(ostrcmp("autosearch", menuentry->name) == 0)
 	{
