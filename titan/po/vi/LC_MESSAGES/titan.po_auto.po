@@ -995,11 +995,11 @@ msgid "Astra 19.2 - new (matze70)"
 msgstr ""
 
 #: tpk_showname.h:5
-msgid "Astra 19.2 KabelD and all transponder"
+msgid "Astra 19.2 KabelD and all transponder | 22.11.2015"
 msgstr ""
 
 #: tpk_description.h:13
-msgid "Astra 19.2e Hotbird 13.0e KabelDeutschland (andy)"
+msgid "Astra 19.2e Hotbird 13.0e KabelDeutschland (andy) | 22.11.2015"
 msgstr ""
 
 #: tpk_showname.h:9
@@ -7682,7 +7682,7 @@ msgid "SAT"
 msgstr "Vệ tinh"
 
 #: tpk_showname.h:119
-msgid "SAT/Cable 19.2 13.0 KabelD | 21.11.2015"
+msgid "SAT/Cable 19.2 13.0 KabelD | 22.11.2015"
 msgstr ""
 
 #: httpdfunc.h:4859 skin_default_skin.xml.h:516
@@ -10772,7 +10772,7 @@ msgid "all"
 msgstr "TẤT CẢ"
 
 #: tpk_description.h:4
-msgid "all: Settings Astra 19.2 KabelD all transponder | 21.11.2015"
+msgid "all: Settings Astra 19.2 Hitbird 13 KabelD all transponder | 22.11.2015"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
