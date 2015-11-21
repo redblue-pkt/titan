@@ -138,13 +138,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1235
+#: titan.c:1223
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1218
+#: titan.c:1206
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1100,7 +1100,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1287
+#: titan.c:1275
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -1248,11 +1248,11 @@ msgstr "ustawienia kopii/ odzyskiwania"
 msgid "Backup / Restore Settings"
 msgstr "ustawienia kopii/ odzyskiwania"
 
-#: global.h:7335 httpdfunc.h:6666 httpdfunc.h:6745 system_backup_restore.h:82
+#: global.h:7310 httpdfunc.h:6666 httpdfunc.h:6745 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr ""
 
-#: global.h:7337
+#: global.h:7312
 msgid "Backup ended with error"
 msgstr ""
 
@@ -1718,7 +1718,7 @@ msgstr ""
 msgid "Can't get Streamurl !"
 msgstr ""
 
-#: extensions.h:453 httpdfunc.h:6525
+#: extensions.h:444 httpdfunc.h:6525
 msgid "Can't get all TPK index !"
 msgstr ""
 
@@ -1795,7 +1795,7 @@ msgstr ""
 msgid "Can't start timeshift play !"
 msgstr ""
 
-#: extensions.h:457 httpdfunc.h:6537
+#: extensions.h:448 httpdfunc.h:6537
 msgid "Can't update all packages !"
 msgstr ""
 
@@ -3013,39 +3013,40 @@ msgstr ""
 #: divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
-#: extensions.h:305 extensions.h:313 extensions.h:320 extensions.h:362
-#: extensions.h:388 extensions.h:419 extensions.h:453 extensions.h:457
-#: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
+#: extensions.h:267 extensions.h:302 extensions.h:310 extensions.h:317
+#: extensions.h:324 extensions.h:356 extensions.h:382 extensions.h:413
+#: extensions.h:420 extensions.h:444 extensions.h:448 extensions.h:456
+#: extensions.h:502 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980
-#: global.h:6771 global.h:6790 global.h:7203 global.h:7223 global.h:7243
-#: global.h:7263 global.h:7283 harddisk.h:355 harddisk.h:678 harddisk.h:686
-#: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
-#: harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37
-#: httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6218
-#: httpdfunc.h:6483 httpdfunc.h:6554 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784
-#: info.h:27 keyactions.h:205 letwatch.h:29 letwatch.h:59 letwatch.h:65
-#: letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
-#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
-#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
-#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
-#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
-#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
-#: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
-#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
-#: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
+#: global.h:6701 global.h:6770 global.h:6789 global.h:6965 global.h:7221
+#: global.h:7234 global.h:7245 global.h:7256 global.h:7267 harddisk.h:355
+#: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
+#: harddisk.h:776 harddisk.h:778 harddisk.h:857 harddisk.h:860 harddisk.h:1091
+#: hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
+#: httpdfunc.h:6218 httpdfunc.h:6483 httpdfunc.h:6554 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:660
+#: infobar.h:784 info.h:27 keyactions.h:205 letwatch.h:29 letwatch.h:59
+#: letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
+#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
+#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
+#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
+#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie2k.h:23 movie2k.h:32 movie4k.h:36 movie4k.h:52 movie4k.h:96
 #: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 MultiImage.c:262 MultiImage.c:273
@@ -3097,9 +3098,9 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1054
-#: titan.c:1063 titan.c:1191 titan.c:1212 titan.c:1218 titan.c:1229
-#: titan.c:1235 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1042
+#: titan.c:1051 titan.c:1179 titan.c:1200 titan.c:1206 titan.c:1217
+#: titan.c:1223 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1592 tithek.h:1614 tithek.h:1631 tithek.h:1863
 #: tithek.h:2023 tithek.h:2308 tithek.h:2336 tithek.h:2352 tithek.h:2364
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3267,11 +3268,11 @@ msgstr ""
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
 
-#: global.h:6788
+#: global.h:6787
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6766
+#: global.h:6765
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
@@ -3593,7 +3594,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1054
+#: titan.c:1042
 msgid "First Wizzard"
 msgstr "Wizard"
 
@@ -3773,13 +3774,13 @@ msgstr ""
 msgid "Free Space"
 msgstr "wolne miejsce"
 
-#: titan.c:1229
+#: titan.c:1217
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1212
+#: titan.c:1200
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4618,7 +4619,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1063 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1051 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -4792,7 +4793,7 @@ msgstr ""
 msgid "Installed:"
 msgstr "instalacja"
 
-#: extensions.h:232 extensions.h:380
+#: extensions.h:232 extensions.h:374
 msgid "Installing"
 msgstr "instalacja"
 
@@ -5527,38 +5528,39 @@ msgstr ""
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:268
-#: extensions.h:328 extensions.h:362 extensions.h:422 extensions.h:427
-#: extensions.h:466 facebook.h:66 facebook.h:157 facebook.h:167
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:267
+#: extensions.h:324 extensions.h:356 extensions.h:416 extensions.h:420
+#: extensions.h:456 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:66 firedrive.h:72 firedrive.h:122 firedrive.h:128
 #: firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980 global.h:6701
-#: global.h:6771 global.h:6790 global.h:7203 global.h:7211 global.h:7223
-#: global.h:7231 global.h:7243 global.h:7251 global.h:7263 global.h:7271
-#: global.h:7283 global.h:7291 harddisk.h:678 harddisk.h:686 harddisk.h:720
-#: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838
-#: harddisk.h:857 harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
-#: httpdfunc.h:5832 httpdfunc.h:6218 httpdfunc.h:6483 httpdfunc.h:6554
-#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
-#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
-#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
-#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
-#: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:660 infobar.h:784 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
-#: kravencfg.c:248 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29
-#: letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215
-#: marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
-#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
+#: global.h:6770 global.h:6789 global.h:6965 global.h:7221 global.h:7227
+#: global.h:7234 global.h:7238 global.h:7245 global.h:7249 global.h:7256
+#: global.h:7260 global.h:7267 global.h:7271 harddisk.h:678 harddisk.h:686
+#: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
+#: harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362 hello.c:37
+#: httpdfunc.h:1304 httpdfunc.h:5832 httpdfunc.h:6218 httpdfunc.h:6483
+#: httpdfunc.h:6554 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784 keyactions.h:205
+#: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:49 lcdpearl1.c:49
+#: lcdsamsung.c:101 letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
+#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
+#: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
 #: mightyupload.h:68 mightyupload.h:74 movie2k.h:23 movie2k.h:32 movie4k.h:36
 #: movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
@@ -5593,8 +5595,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1191 titan.c:1212 titan.c:1218 titan.c:1229
-#: titan.c:1235 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: titan.c:346 titan.c:355 titan.c:1179 titan.c:1200 titan.c:1206 titan.c:1217
+#: titan.c:1223 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1592 tithek.h:1614 tithek.h:1863 tithek.h:2023
 #: tithek.h:2308 tithek.h:2336 tithek.h:2352 tithek.h:2364 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
@@ -6024,7 +6026,7 @@ msgstr ""
 msgid "No memory"
 msgstr "Pamięć"
 
-#: extensions.h:362 extensions.h:514
+#: extensions.h:356 extensions.h:502
 msgid "No plugin found."
 msgstr ""
 
@@ -6091,34 +6093,34 @@ msgstr ""
 #: divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
-#: extensions.h:268 extensions.h:305 extensions.h:313 extensions.h:320
-#: extensions.h:328 extensions.h:362 extensions.h:388 extensions.h:419
-#: extensions.h:427 extensions.h:453 extensions.h:457 extensions.h:466
-#: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
+#: extensions.h:267 extensions.h:302 extensions.h:310 extensions.h:317
+#: extensions.h:324 extensions.h:356 extensions.h:382 extensions.h:413
+#: extensions.h:420 extensions.h:444 extensions.h:448 extensions.h:456
+#: extensions.h:502 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
 #: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980
-#: global.h:6701 global.h:6771 global.h:6790 global.h:7203 global.h:7211
-#: global.h:7223 global.h:7231 global.h:7243 global.h:7251 global.h:7263
-#: global.h:7271 global.h:7283 global.h:7291 harddisk.h:355 harddisk.h:487
-#: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
-#: harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860
-#: harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
-#: httpdfunc.h:3288 httpdfunc.h:6218 httpdfunc.h:6483 httpdfunc.h:6554
-#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
-#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
-#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
-#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
-#: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:660 infobar.h:784 info.h:27 keyactions.h:205 kravencfg.c:66
-#: kravencfg.c:212 kravencfg.c:248 lcdpearl1.c:49 lcdsamsung.c:101
-#: letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48
-#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: global.h:6701 global.h:6770 global.h:6789 global.h:6965 global.h:7221
+#: global.h:7227 global.h:7234 global.h:7238 global.h:7245 global.h:7249
+#: global.h:7256 global.h:7260 global.h:7267 global.h:7271 harddisk.h:355
+#: harddisk.h:487 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
+#: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304
+#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6218 httpdfunc.h:6483
+#: httpdfunc.h:6554 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:660 infobar.h:784 info.h:27
+#: keyactions.h:205 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
+#: lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:59 letwatch.h:65
+#: letwatch.h:71 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
+#: mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
+#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -6176,8 +6178,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1054 titan.c:1063 titan.c:1191 titan.c:1212
-#: titan.c:1218 titan.c:1229 titan.c:1235 tithek.c:100 tithek_global.h:85
+#: titan.c:346 titan.c:355 titan.c:1042 titan.c:1051 titan.c:1179 titan.c:1200
+#: titan.c:1206 titan.c:1217 titan.c:1223 tithek.c:100 tithek_global.h:85
 #: tithek.h:715 tithek.h:1273 tithek.h:1334 tithek.h:1592 tithek.h:1614
 #: tithek.h:1631 tithek.h:1863 tithek.h:2023 tithek.h:2308 tithek.h:2336
 #: tithek.h:2352 tithek.h:2364 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6923,7 +6925,7 @@ msgstr ""
 msgid "Present"
 msgstr ""
 
-#: global.h:7347 system_backup_restore.h:15
+#: global.h:7322 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -7226,7 +7228,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr ""
 
-#: titan.c:1191
+#: titan.c:1179
 msgid "Receiver successful unlocked"
 msgstr ""
 
@@ -7434,7 +7436,7 @@ msgstr ""
 msgid "Remove unused Transponder"
 msgstr ""
 
-#: extensions.h:300
+#: extensions.h:297
 msgid "Removeing"
 msgstr ""
 
@@ -7616,7 +7618,7 @@ msgid "SAT"
 msgstr ""
 
 #: tpk_showname.h:119
-msgid "SAT/Cable 19.2 13.0 KabelD | 21.11.2015"
+msgid "SAT/Cable 19.2 13.0 KabelD | 03.10.2015"
 msgstr ""
 
 #: httpdfunc.h:4859 skin_default_skin.xml.h:516
@@ -7854,7 +7856,7 @@ msgid "Sat: matze70 new design Astra 19.2 | 18.11.2015"
 msgstr ""
 
 #: tpk_description.h:127
-msgid "Sat: uljanow Sat 19.2 plus 13.0 | 21.11.2015"
+msgid "Sat: uljanow Sat 19.2 plus 13.0 | 19.11.2015"
 msgstr ""
 
 #: optimize.h:264
@@ -8408,7 +8410,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1054
+#: titan.c:1042
 msgid "Settings OK ?"
 msgstr "Ustawienia"
 
@@ -8737,7 +8739,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Wybór EMU"
 
-#: extensions.h:422
+#: extensions.h:416
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -8796,6 +8798,12 @@ msgstr "Port ftp"
 msgid "StandBy Mode"
 msgstr ""
 
+#: global.h:6965
+msgid ""
+"Standard favorites have been successfully applied.\n"
+"Your System will reboot !"
+msgstr ""
+
 #: adjust.h:112 adjust.h:118 httpdfunc.h:4067 httpdfunc.h:4103
 #: powerofftimer.h:118 skin_default_skin.xml.h:597 webif_index.atemio510.h:7
 #: webif_index.atemio5200.h:7 webif_index.atemio6000.h:7
@@ -8837,23 +8845,23 @@ msgstr ""
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7203
+#: global.h:7221
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7223
+#: global.h:7234
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7263
+#: global.h:7256
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7243
+#: global.h:7245
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7283
+#: global.h:7267
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9176,15 +9184,19 @@ msgstr ""
 msgid "TPK"
 msgstr ""
 
-#: httpdfunc.h:6218 httpdfunc.h:6220 httpdfunc.h:6485
+#: extensions.h:267 httpdfunc.h:6218 httpdfunc.h:6220 httpdfunc.h:6485
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
-#: httpdfunc.h:6483
+#: extensions.h:324 httpdfunc.h:6483
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 
-#: httpdfunc.h:6554
+#: extensions.h:420
+msgid "TPK Tmp Install done, your system will reboot !"
+msgstr ""
+
+#: extensions.h:456 httpdfunc.h:6554
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 
@@ -9308,7 +9320,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7303
+#: global.h:7278
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9363,7 +9375,7 @@ msgstr ""
 msgid "The video no longer exists"
 msgstr ""
 
-#: extensions.h:227 extensions.h:254 extensions.h:416 httpdfunc.h:6197
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6197
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -9592,8 +9604,7 @@ msgstr ""
 msgid "Titan MediaCenter"
 msgstr ""
 
-#: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
-#: global.h:7211 global.h:7231 global.h:7251 global.h:7271 global.h:7291
+#: global.h:7227 global.h:7238 global.h:7249 global.h:7260 global.h:7271
 #: kravencfg.c:212 skinadjust.h:398 skinadjust.h:803
 msgid "Titan will be restarted!"
 msgstr ""
@@ -9733,7 +9744,7 @@ msgstr ""
 msgid "Tpk Install - select section"
 msgstr "Instalacja IPK - wybierz plik"
 
-#: extensions.h:190 extensions.h:241 extensions.h:514
+#: extensions.h:190 extensions.h:241 extensions.h:502
 msgid "Tpk Install Info"
 msgstr ""
 
@@ -9745,23 +9756,23 @@ msgstr ""
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:294 httpdfunc.h:6353
+#: extensions.h:291 httpdfunc.h:6353
 msgid "Tpk Remove - select file"
 msgstr "Instalacja IPK - wybierz plik"
 
-#: extensions.h:305
+#: extensions.h:302
 msgid "Tpk Remove Info"
 msgstr ""
 
-#: extensions.h:320 httpdfunc.h:6437
+#: extensions.h:317 httpdfunc.h:6437
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr ""
 
-#: extensions.h:313 httpdfunc.h:6433
+#: extensions.h:310 httpdfunc.h:6433
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:453 extensions.h:457 httpdfunc.h:6522 httpdfunc.h:6534
+#: extensions.h:444 extensions.h:448 httpdfunc.h:6522 httpdfunc.h:6534
 msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
@@ -9839,9 +9850,8 @@ msgstr "Transponder:"
 
 #: global.h:6701
 msgid ""
-"Transponder/Satellite Convert done, please use channel search.\n"
-"\n"
-"Titan will be restarted!"
+"Transponder/Satellite Convert done, please use channel search on next Boot.\n"
+"Your System will reboot !"
 msgstr ""
 
 #: optimize.h:272 scan.h:1559
@@ -10039,7 +10049,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1285
+#: titan.c:1273
 msgid "Unknown Error."
 msgstr ""
 
@@ -12532,7 +12542,7 @@ msgstr "Gwiazda"
 msgid "started"
 msgstr "Restart"
 
-#: extensions.h:238 extensions.h:384
+#: extensions.h:238 extensions.h:378
 msgid "starting"
 msgstr "Restart"
 
