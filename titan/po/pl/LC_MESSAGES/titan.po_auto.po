@@ -7844,7 +7844,7 @@ msgid "Sat: Ser6 Settings Eutelsat 36.0"
 msgstr ""
 
 #: tpk_description.h:123
-msgid "Sat: default Settings Astra 19.2 | 04.10.2015"
+msgid "Sat: default Settings Astra 19.2 | 21.11.2015"
 msgstr ""
 
 #: tpk_description.h:124
@@ -10705,7 +10705,7 @@ msgid "all"
 msgstr "WSZYSTKIE"
 
 #: tpk_description.h:4
-msgid "all: Settings Astra 19.2 KabelD all transponder | 03.10.2015"
+msgid "all: Settings Astra 19.2 KabelD all transponder | 21.11.2015"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
