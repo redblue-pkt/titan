@@ -48,9 +48,9 @@ mainmenu()
 category()
 {
 	echo "Latest#$SRC $SRC listvideos latest en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Games#$SRC $SRC submenu games en/videotourney/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+#	echo "Games#$SRC $SRC submenu games en/videotourney/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 #	echo "Highlights#$SRC $SRC submenu highlights en/videotourney/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-#	echo "Teams#$SRC $SRC submenu teams en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Teams#$SRC $SRC submenu teams en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
