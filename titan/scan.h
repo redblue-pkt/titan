@@ -125,7 +125,7 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 	}
 */
 	// write allways transponder and delete old entry
-	deltransponderbyid(id);	
+	deltransponderbyorbitalposandid(orbitalpos, id);
 	tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
 	status.writetransponder = 1;
 
@@ -216,7 +216,7 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	}
 */
 	// write allways transponder and delete old entry
-	deltransponderbyid(id);	
+	deltransponderbyorbitalposandid(orbitalpos, id);
 	tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
 	status.writetransponder = 1;
 
@@ -322,7 +322,7 @@ struct transponder* terrsystemdesc(unsigned char* buf, uint64_t transportid, uns
 	}
 */
 	// write allways transponder and delete old entry
-	deltransponderbyid(id);	
+	deltransponderbyorbitalposandid(orbitalpos, id);
 	tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, INVERSION_AUTO, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
 	status.writetransponder = 1;
 

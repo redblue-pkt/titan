@@ -884,6 +884,19 @@ void deltransponderbyid(uint64_t transponderid)
 	}
 }
 
+void deltransponderbyorbitalposandid(uint64_t transponderid, int orbitalpos)
+{
+	struct transponder *node = transponder, *prev = transponder;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL && prev->orbitalpos == orbitalpos && prev->id == transponderid)
+			deltransponder(prev);
+	}
+}
+
 struct transponder* gettransponderbydetail(uint64_t id, int fetype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int system, int useid)
 {
 	int divisor = 1000000;
