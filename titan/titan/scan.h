@@ -117,11 +117,17 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 
 	id = ((onid << 16) | transportid) & 0xffffffff;
 
+/*
 	if(gettransponder(id) == NULL)
 	{
 		tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
 		status.writetransponder = 1;
 	}
+*/
+	// write allways transponder and delete old entry
+	deltransponderbyid(id);	
+	tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
+	status.writetransponder = 1;
 
 	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d pol=%d modulation=%d system=%d tpnode=%p", id, frequency, symbolrate, fec, polarization, modulation, system, tpnode);
 
