@@ -10683,7 +10683,7 @@ msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
 #: tpk_showname.h:213
-msgid "XPicons LightTransparent (small - Astra 19.2E)"
+msgid "XPicons LightTransparent (small - Astra 19.2E)25.11.2015"
 msgstr ""
 
 #: plugins_xupnpd_skin.xml.h:4 skins_xupnpd_skin.xml.h:4
