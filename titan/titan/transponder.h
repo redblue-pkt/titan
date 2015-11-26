@@ -12,7 +12,7 @@ void changetransponderid(struct transponder* tpnode, uint64_t transponderid)
 	struct bouquet* node7 = NULL;
 
 	if(tpnode == NULL) return;
-	if(gettransponder(transponderid) != NULL) return;
+	if(gettransponder(transponderid, tpnode->orbitalpos) != NULL) return;
 
 	while(node1 != NULL)
 	{
@@ -74,9 +74,9 @@ void changetransponderid(struct transponder* tpnode, uint64_t transponderid)
 		node6 = node6->next;
 	}
 
-	deltranspondercache(tpnode->id, tpnode);
+	deltranspondercache(tpnode->id, tpnode->orbitalpos, tpnode);
 	tpnode->id = transponderid;
-	modifytranspondercache(tpnode->id, tpnode);
+	modifytranspondercache(tpnode->id, tpnode->orbitalpos, tpnode);
 }
 
 void deltransponderlastepg()
@@ -630,7 +630,7 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 
 	if(newnode->id != 99) status.writetransponder = 1;
 	
-	modifytranspondercache(newnode->id, newnode);
+	modifytranspondercache(newnode->id, newnode->orbitalpos, newnode);
 
 	if(last == NULL)
 	{
@@ -716,7 +716,7 @@ int copytransponder(struct transponder* tp1, struct transponder* tp2, uint64_t t
 	}
 	else if(tp1 != NULL && tp2 == NULL && transponderid != 99)
 	{
-		if(gettransponder(transponderid) == NULL && createtransponder(transponderid, tp1->fetype, tp1->orbitalpos, tp1->frequency, tp1->inversion, tp1->symbolrate, tp1->polarization, tp1->fec, tp1->modulation, tp1->rolloff, tp1->pilot, tp1->system) != NULL)
+		if(gettransponder(transponderid, tp1->orbitalpos) == NULL && createtransponder(transponderid, tp1->fetype, tp1->orbitalpos, tp1->frequency, tp1->inversion, tp1->symbolrate, tp1->polarization, tp1->fec, tp1->modulation, tp1->rolloff, tp1->pilot, tp1->system) != NULL)
 		{
 			status.writetransponder = 1;
 			ret = 0;
@@ -759,13 +759,33 @@ int readtransponder(const char* filename)
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		linecount++;
-		
-		if(last == NULL) last = tmplast;
-		last = addtransponder(fileline, linecount, last);
-		if(last != NULL) tmplast = last;
-	}
+		uint64_t id = 0;
+		int orbitalpos = 0;
+		uint8_t fetype;
+		uint8_t polarization;
+		uint8_t modulation;
+		uint8_t fec;
+		uint8_t pilot;
+		uint8_t rolloff;
+		uint8_t inversion;
+		uint8_t system;
+		unsigned int frequency;
+		unsigned int symbolrate;
 
+		sscanf(fileline, "%llu#%"SCNu8"#%d#%"SCNu8"#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu8, &id, &fetype, &frequency, &polarization, &orbitalpos, &symbolrate, &modulation, &fec, &pilot, &rolloff, &inversion, &system);
+		
+		if(id == 0 || gettransponder(id, orbitalpos) == NULL)
+		{
+			linecount++;
+			
+			if(last == NULL) last = tmplast;
+			last = addtransponder(fileline, linecount, last);
+			if(last != NULL) tmplast = last;
+		}
+		else
+			printf("skip double transponderline: %s\n", fileline);
+
+	}
 	status.writetransponder = 0;
 	free(fileline);
 	fclose(fd);
@@ -809,10 +829,11 @@ int readtransponderencoding(const char* filename)
 		tpnode = NULL;
 
 		uint64_t transponderid = 0;
+		int orbitalpos = 0;
 		int encoding = 0;
-		if(sscanf(fileline, "%llu#%d", &transponderid, &encoding) == 2)
+		if(sscanf(fileline, "%llu#%d#%d", &transponderid, &orbitalpos, &encoding) == 2)
 		{
-			tpnode = gettransponder(transponderid);
+			tpnode = gettransponder(transponderid, orbitalpos);
 			if(tpnode != NULL) tpnode->encoding = encoding;
 		}
 		else
@@ -854,8 +875,10 @@ void deltransponder(struct transponder* tpnode)
 				dvbnode = dvbnode->next;
 			}
 
+			scaninfo.tpdel++;
+
 			if(node->id != 99) delchannelbytransponder(node->id);
-			deltranspondercache(node->id, NULL);
+			deltranspondercache(node->id, node->orbitalpos, NULL);
 
 			free(node);
 			node = NULL;
@@ -884,7 +907,20 @@ void deltransponderbyid(uint64_t transponderid)
 	}
 }
 
-void deltransponderbyorbitalposandid(uint64_t transponderid, int orbitalpos)
+void deltransponderonscan(uint64_t transponderid, unsigned int frequency, int orbitalpos)
+{
+	struct transponder *node = transponder, *prev = transponder;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL && prev->id == transponderid && prev->orbitalpos == orbitalpos && prev->frequency == frequency)
+			deltransponder(prev);
+	}
+}
+
+void deltransponderbynitscan(uint64_t transponderid, int orbitalpos)
 {
 	struct transponder *node = transponder, *prev = transponder;
 
@@ -893,7 +929,12 @@ void deltransponderbyorbitalposandid(uint64_t transponderid, int orbitalpos)
 		prev = node;
 		node = node->next;
 		if(prev != NULL && prev->orbitalpos == orbitalpos && prev->id == transponderid)
+		{
+			debug(500, "-----------------------------------------------------------------------------------");
+			debug(500, "nitscan: del id=%llu freq=%d orbitalpos=%d tpnode=%p", prev->id, prev->frequency, prev->orbitalpos, prev);
+			debug(500, "-----------------------------------------------------------------------------------");
 			deltransponder(prev);
+		}
 	}
 }
 

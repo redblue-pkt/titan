@@ -86,12 +86,12 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "20150113"
+#define DRIVER "ini-800 - 3.14.2 r5 - 20150708"
 #define OVERSION "1.69"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 1
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -540,6 +540,7 @@ struct scaninfo
 	int tpmax;
 	int tpnew;
 	int tvcount;
+	int tpdel;
 	int newtvcount;
 	int radiocount;
 	int newradiocount;
@@ -732,6 +733,7 @@ struct rectimer
 	int servicetype;
 	char* channellist;
 	int serviceid;
+	int orbitalpos;
 	//0 = nothing
 	//1 = running
 	//2 = end
@@ -788,6 +790,7 @@ struct channelcache
 struct transpondercache
 {
 	uint64_t transponderid;
+	int orbitalpos;
 	struct transponder* tpnode;
 	struct transpondercache* next;
 };
@@ -1137,6 +1140,7 @@ struct channel
 	int16_t pmtpid;
 	int16_t aitpid;
 	uint8_t protect;
+	int orbitalpos;
 	char* hbbtvurl;
 	struct transponder *transponder;
 	struct provider *provider;
@@ -1563,6 +1567,7 @@ struct status
 	char* extplugin;
 	//node oled blinken
 	int skinblink;
+	int deltransponder;
 } status;
 
 struct fb
