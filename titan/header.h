@@ -428,7 +428,7 @@ void screennetwork_wlan();
 
 //channel.h
 int writechannel(const char *filename);
-struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect, int pcrpid);
+struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect, int pcrpid, int orbitalpos);
 void delchannelbytransponder(uint64_t transponderid);
 struct channel* gettmpchannel();
 int delchannel(int serviceid, uint64_t transponderid, int flag);
@@ -437,7 +437,7 @@ int movechannelup(struct channel* node);
 struct channel* sortchannel();
 
 //transponder.h
-struct transponder* gettransponder(uint64_t transponderid);
+struct transponder* gettransponder(uint64_t transponderid, int orbitalpos);
 int writetransponder(const char *filename);
 void deltransponderbyorbitalpos(int orbitalpos);
 void deltransponder(struct transponder* tpnode);
