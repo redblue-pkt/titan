@@ -286,7 +286,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 	}
 	if(ret == 12)
 	{
-		newnode->orbitalpos = 0;
+		newnode->orbitalpos = 192;
 		ret++;
 	}
 	if(ret != 13 || getchannel(newnode->serviceid, newnode->transponderid) != NULL)
