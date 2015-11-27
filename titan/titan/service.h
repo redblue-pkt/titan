@@ -121,7 +121,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0)
 	{
 		if(chnode->transponder == NULL)
-			tpnode = gettransponder(chnode->transponderid, chnode->orbitalpos);
+			tpnode = gettransponder(chnode->transponderid);
 		else
 			tpnode = chnode->transponder;
 	}
@@ -1019,8 +1019,8 @@ void servicefullHDMIin_start()
 	status.aktservice->type = HDMIIN;
 	chnode = getchannel(65535, 0);
 	if(chnode == NULL)
-		//chnode = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1, 0);
-		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1, 0);
+		//chnode = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
+		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1);
 	status.aktservice->channel = chnode;
 }
 #endif

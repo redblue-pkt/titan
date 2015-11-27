@@ -53,7 +53,7 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 	if(flag == 0)
 	{
 		if(chnode->transponder == NULL)
-			tpnode = gettransponder(chnode->transponderid, chnode->orbitalpos);
+			tpnode = gettransponder(chnode->transponderid);
 		else
 			tpnode = chnode->transponder;
 	}
