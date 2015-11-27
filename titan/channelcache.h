@@ -26,7 +26,7 @@ struct channel* getchannel(int serviceid, uint64_t transponderid)
 	unsigned int hash; 
 	struct channelcache* node = NULL;
 
-	hash = (transponderid * serviceid) % CHANNELCACHEMAX;
+	hash = (transponderid + serviceid) % CHANNELCACHEMAX;
 	if(hash < 0 || hash >= CHANNELCACHEMAX) hash = 0;
 
 	m_lock(&status.channelmutex, 5);
@@ -52,7 +52,7 @@ struct channelcache* modifychannelcache(int serviceid, uint64_t transponderid, s
 	unsigned int hash; 
 	struct channelcache* node = NULL, *newnode = NULL;
 
-	hash = (transponderid * serviceid) % CHANNELCACHEMAX;
+	hash = (transponderid + serviceid) % CHANNELCACHEMAX;
 	if(hash < 0 || hash >= CHANNELCACHEMAX) hash = 0;
 
 	newnode = (struct channelcache*)calloc(1, sizeof(struct channelcache));
@@ -78,7 +78,7 @@ void delchannelcache(int serviceid, uint64_t transponderid)
 	unsigned int hash; 
 	struct channelcache *node = NULL, *prev = NULL;
 
-	hash = (transponderid * serviceid) % CHANNELCACHEMAX;
+	hash = (transponderid + serviceid) % CHANNELCACHEMAX;
 	if(hash < 0 || hash >= CHANNELCACHEMAX) hash = 0;
 	node = channelcache[hash];
 	prev = channelcache[hash];
