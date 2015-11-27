@@ -117,11 +117,17 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 
 	id = ((onid << 16) | transportid) & 0xffffffff;
 
+/*
 	if(gettransponder(id) == NULL)
 	{
 		tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
 		status.writetransponder = 1;
 	}
+*/
+	// write allways transponder and delete old entry
+	deltransponderbyorbitalposandid(orbitalpos, id);
+	tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
+	status.writetransponder = 1;
 
 	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d pol=%d modulation=%d system=%d tpnode=%p", id, frequency, symbolrate, fec, polarization, modulation, system, tpnode);
 
@@ -202,11 +208,17 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	id = ((onid << 16) | transportid) & 0xffffffff;
 	id = id | ((uint64_t)1 << 32);
 
+/*
 	if(gettransponder(id) == NULL)
 	{
 		tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
 		status.writetransponder = 1;
 	}
+*/
+	// write allways transponder and delete old entry
+	deltransponderbyorbitalposandid(orbitalpos, id);
+	tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
+	status.writetransponder = 1;
 
 	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d modulation=%d tpnode=%p", id, frequency, symbolrate, fec, modulation, tpnode);
 
@@ -302,11 +314,17 @@ struct transponder* terrsystemdesc(unsigned char* buf, uint64_t transportid, uns
 	id = ((onid << 16) | transportid) & 0xffffffff;
 	id = id | ((uint64_t)2 << 32);
 
+/*
 	if(gettransponder(id) == NULL)
 	{
 		tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, INVERSION_AUTO, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
 		status.writetransponder = 1;
 	}
+*/
+	// write allways transponder and delete old entry
+	deltransponderbyorbitalposandid(orbitalpos, id);
+	tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, INVERSION_AUTO, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
+	status.writetransponder = 1;
 
 	debug(500, "nitscan: id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 
@@ -465,7 +483,10 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	{
 		tphelp = gettransponder(transponderid);
 		if(tphelp != NULL)
+		{
 			changetransponderid(tphelp, 0);
+			debug(500, "set old tid: %d to 0", transponderid);
+		}
 
 		changetransponderid(tpnode, transponderid);
 		status.writetransponder = 1;
@@ -1398,7 +1419,7 @@ void delchannelbymultisat()
 	}
 }
 
-void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int system, int favtype, int emptybouquet, int unusedbouquetchannels, int timeout, int flag)
+void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int system, int favtype, int emptybouquet, int unusedbouquetchannels, int unusedsats, int unusedtransponder, int unusedchannels, int unusedprovider, int timeout, int flag)
 {
 	int rcret = 0, tpmax = 0, i = 0, alladded = 0, endmsgshow = 0;
 
@@ -1509,8 +1530,17 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			b2->hidden = YES;
 			b3->hidden = YES;
 			//del all channel for auto. search
-			if(clear == 1) freechannel(1);
+			if(clear == 1)
+			{
+				freechannel(1);
+				if(unusedsats == 1) delunusedsat();
+				if(unusedtransponder == 1) delunusedtransponder();
+				if(unusedchannels == 1) delunusedchannel();
+				//if(unusedepgchannel == 1) delunusedepgchannel();
+				if(unusedprovider == 1) delunusedprovider();
+			}
 		}
+
 		satnode = sat;
 		while(satnode != NULL)
 		{
@@ -1691,9 +1721,9 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	clearscreen(scan);
 	resetsatscan();
 	drawscreen(load, 0, 0);
-  sortchannel();
-  sortprovider();
-  clearscreen(load);
+	sortchannel();
+	sortprovider();
+	clearscreen(load);
 }
 
 void changescantype(char* scantype, struct skin* scan, struct skin* listbox, struct skin* tuner, struct skin* satellite, struct skin* id, struct skin* system, struct skin* frequency, struct skin* inversion, struct skin* symbolrate, struct skin* polarization, struct skin* fec, struct skin* modulation, struct skin* rolloff, struct skin* pilot, struct skin* hp, struct skin* lp, struct skin* bandwidth, struct skin* transmission, struct skin* guardinterval, struct skin* hierarchy, struct skin* b4, struct skin* b5, int flag)
@@ -1855,6 +1885,8 @@ void screenscanconfig(int flag)
 	int ifec = -1, imodulation = -1, irolloff = -1, ipilot = -1, isystem = -1;
 	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1, ichangename = -1;
 	int ifavtype = -1, iemptybouquet = -1, iunusedbouquetchannels = -1;
+	int iunusedsats = -1, iunusedtransponder = -1, iunusedchannels = -1, iunusedprovider = -1;
+
 	int i = 0, treffer = 0, tunercount = 0;
 	
 	struct skin* scan = NULL;
@@ -1891,7 +1923,11 @@ void screenscanconfig(int flag)
 	struct skin* favtype = getscreennode(scan, "favtype");
 	struct skin* emptybouquet = getscreennode(scan, "emptybouquet");
 	struct skin* unusedbouquetchannels = getscreennode(scan, "unusedbouquetchannels");
-	
+	struct skin* unusedsats = getscreennode(scan, "unusedsats");
+	struct skin* unusedtransponder = getscreennode(scan, "unusedtransponder");
+	struct skin* unusedchannels = getscreennode(scan, "unusedchannels");
+	struct skin* unusedprovider = getscreennode(scan, "unusedprovider");
+
 	struct skin* b4 = getscreennode(scan, "b4");
 	struct skin* b5 = getscreennode(scan, "b5");
 	struct skin* tmp = NULL;
@@ -2289,6 +2325,23 @@ start:
 	addchoicebox(unusedbouquetchannels, "0", _("no"));
 	addchoicebox(unusedbouquetchannels, "1", _("yes"));
 
+	//unusedsats
+	addchoicebox(unusedsats, "0", _("no"));
+	addchoicebox(unusedsats, "1", _("yes"));
+
+	//unusedtransponder
+	addchoicebox(unusedtransponder, "0", _("no"));
+	addchoicebox(unusedtransponder, "1", _("yes"));
+
+	//unusedchannels
+	addchoicebox(unusedchannels, "0", _("no"));
+	addchoicebox(unusedchannels, "1", _("yes"));
+
+	//unusedprovider
+	addchoicebox(unusedprovider, "0", _("no"));
+	addchoicebox(unusedprovider, "1", _("yes"));
+
+
 	drawscreen(scan, 2, 0);
 	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, hp, lp, bandwidth, transmission, guardinterval, hierarchy, b4, b5, flag);
 	drawscreen(scan, 0, 0);
@@ -2298,6 +2351,27 @@ start:
 	while(1)
 	{
 		addscreenrc(scan, tmp);
+
+		if(clear->ret != NULL && ostrcmp(clear->ret, "1") == 0)
+		{
+			emptybouquet->hidden = NO;
+			unusedbouquetchannels->hidden = NO;
+			unusedsats->hidden = NO;
+			unusedtransponder->hidden = NO;
+			unusedchannels->hidden = NO;
+			unusedprovider->hidden = NO;
+		}
+		else
+		{
+			emptybouquet->hidden = YES;
+			unusedbouquetchannels->hidden = YES;
+			unusedsats->hidden = YES;
+			unusedtransponder->hidden = YES;
+			unusedchannels->hidden = YES;
+			unusedprovider->hidden = YES;
+		}
+		drawscreen(scan, 0, 0);
+
 		rcret = waitrc(scan, 0, 0);
 		tmp = listbox->select;
 
@@ -2331,6 +2405,10 @@ start:
 		if(favtype->ret != NULL) ifavtype = atoi(favtype->ret);
 		if(emptybouquet->ret != NULL) iemptybouquet = atoi(emptybouquet->ret);
 		if(unusedbouquetchannels->ret != NULL) iunusedbouquetchannels = atoi(unusedbouquetchannels->ret);
+		if(unusedsats->ret != NULL) iunusedsats = atoi(unusedsats->ret);
+		if(unusedtransponder->ret != NULL) iunusedtransponder = atoi(unusedtransponder->ret);
+		if(unusedchannels->ret != NULL) iunusedchannels = atoi(unusedchannels->ret);
+		if(unusedprovider->ret != NULL) iunusedprovider = atoi(unusedprovider->ret);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
@@ -2353,7 +2431,7 @@ start:
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(scan);
-			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, ichangename, isystem, ifavtype, iemptybouquet, iunusedbouquetchannels, 5000000, flag);
+			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, ichangename, isystem, ifavtype, iemptybouquet, iunusedbouquetchannels, iunusedsats, iunusedtransponder, iunusedchannels, iunusedprovider, 5000000, flag);
 			drawscreen(scan, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL) && tpnode != NULL && iscantype == 0)
