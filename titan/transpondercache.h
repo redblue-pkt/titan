@@ -26,7 +26,7 @@ struct transponder* gettransponder(uint64_t transponderid, int orbitalpos)
 	unsigned int hash; 
 	struct transpondercache* node = NULL;
 
-	hash = (transponderid * orbitalpos) % TRANSPONDERCACHEMAX;
+	hash = (transponderid + orbitalpos) % TRANSPONDERCACHEMAX;
 	if(hash < 0 || hash >= TRANSPONDERCACHEMAX) hash = 0;
 	node = transpondercache[hash];
 
@@ -46,7 +46,7 @@ struct transpondercache* modifytranspondercache(uint64_t transponderid, int orbi
 	//struct transpondercache* node = NULL, *prev = NULL, *newnode = NULL;
 	struct transpondercache* node = NULL, *newnode = NULL;
 
-	hash = (transponderid * orbitalpos) % TRANSPONDERCACHEMAX;
+	hash = (transponderid + orbitalpos) % TRANSPONDERCACHEMAX;
 	if(hash < 0 || hash >= TRANSPONDERCACHEMAX) hash = 0;
 
 	newnode = (struct transpondercache*)calloc(1, sizeof(struct transpondercache));
@@ -86,7 +86,7 @@ void deltranspondercache(uint64_t transponderid, int orbitalpos, struct transpon
 	unsigned int hash; 
 	struct transpondercache *node = NULL, *prev = NULL;
 
-	hash = (transponderid * orbitalpos) % TRANSPONDERCACHEMAX;
+	hash = (transponderid + orbitalpos) % TRANSPONDERCACHEMAX;
 	if(hash < 0 || hash >= TRANSPONDERCACHEMAX) hash = 0;
 	node = transpondercache[hash];
 	prev = transpondercache[hash];
