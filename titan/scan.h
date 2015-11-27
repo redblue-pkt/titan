@@ -549,12 +549,13 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 
 						changeparam1(node, tmpstr1);
 						changeparam2(node, tmpstr2);
-						tmpuint64 = (uint64_t*)calloc(1, sizeof(uint64_t) * 3);
+						tmpuint64 = (uint64_t*)calloc(1, sizeof(uint64_t) * 4);
 						if(tmpuint64 != NULL)
 						{
 							tmpuint64[0] = serviceid;
 							tmpuint64[1] = transponderid;
 							tmpuint64[2] = servicetype;
+							tmpuint64[3] = tpnode->orbitalpos;
 						}
 						free(node->name);
 						node->name = (char*)tmpuint64;
@@ -1280,6 +1281,7 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 	uint64_t transponderid = 0;
 	int servicetype = 0;
 	int providerid = 0;
+	int orbitalpos = 0;
 	struct provider* providernode = NULL;
 	char* tmpstr = NULL;
 	struct transponder* tp2 = NULL;
@@ -1290,6 +1292,7 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 	serviceid = ((uint64_t*)node->name)[0];
 	transponderid = ((uint64_t*)node->name)[1];
 	servicetype = ((uint64_t*)node->name)[2];
+	orbitalpos = ((uint64_t*)node->name)[3];
 
 	chnode = getchannel(serviceid, transponderid);
 	if(chnode == NULL || (chnode != NULL && chnode->transponder == NULL))
@@ -1332,7 +1335,7 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 
 		if(chnode == NULL)
 		{
-			if(createchannel(node->param2, transponderid, providerid, serviceid, servicetype, 0, -1, -1, -1, -1, 0, -1, tp1->orbitalpos) != NULL)
+			if(createchannel(node->param2, transponderid, providerid, serviceid, servicetype, 0, -1, -1, -1, -1, 0, -1, orbitalpos) != NULL)
 				node->fontcol = convertcol("deaktivcol");
 		}
 		else
