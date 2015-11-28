@@ -912,15 +912,18 @@ void linkagedesc(struct channel* chnode, struct epg* epgnode, void *buf)
 	int tid = HILO(evtlink->transport_stream_id);
 	int onid = HILO(evtlink->original_network_id);
 	int serviceid = HILO(evtlink->service_id);
-	
+
+	int orbitalpos = getorbitalpos(chnode->transponderid);
+
 	transponderid = ((onid << 16) | tid) & 0xffffffff;
+	transponderid = transponderid | ((uint64_t)orbitalpos << 32);
 
 	if(chnode != NULL && chnode->transponder != NULL)
 	{
-		if(chnode->transponder->fetype == FE_QAM)
-			transponderid = transponderid | ((uint64_t)1 << 32);
-		else if(chnode->transponder->fetype == FE_OFDM)
-			transponderid = transponderid | ((uint64_t)2 << 32);
+//		if(chnode->transponder->fetype == FE_QAM)
+//			transponderid = transponderid | ((uint64_t)1 << 32);
+//		else if(chnode->transponder->fetype == FE_OFDM)
+//			transponderid = transponderid | ((uint64_t)2 << 32);
 
 		if(getlinkedchannel(chnode, serviceid, transponderid, epgnode->starttime, epgnode->endtime) == NULL)
 			addlinkedchannel(chnode, serviceid, transponderid, epgnode->starttime, epgnode->endtime, NULL);
@@ -1123,6 +1126,21 @@ void parseeitdesc(struct channel* chnode, struct epg* epgnode, unsigned char *bu
 	}
 }
 
+int getorbitalpos(uint64_t transponderid)
+{
+	struct transponder *node = transponder, *prev = transponder;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL && prev->id == transponderid)
+			return (prev->orbitalpos);
+	}
+
+	return 0;
+}
+
 // Parse Event Information Table
 //flag 0 = from epg thread
 //flag 1 = from epg scan
@@ -1142,6 +1160,8 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 
 	len -= 4; //remove CRC
 	if(chnode == NULL) chnode = status.aktservice->channel;
+	
+	int orbitalpos = getorbitalpos(chnode->transponderid);
 
 	// For each event listing
 	for (p = (unsigned char*)&eit->data; p < buf + len; p += EITEVENTLEN + GETEITDESCLEN(p))
@@ -1157,12 +1177,14 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			return;
 		
 		transponderid = ((HILO(eit->original_network_id) << 16) | HILO(eit->transport_stream_id)) & 0xffffffff;
+		transponderid = transponderid | ((uint64_t)orbitalpos << 32);
+
 		if(chnode->transponder != NULL)
 		{
-			if(chnode->transponder->fetype == FE_QAM)
-				transponderid = transponderid | ((uint64_t)1 << 32);
-			else if(chnode->transponder->fetype == FE_OFDM)
-				transponderid = transponderid | ((uint64_t)2 << 32);
+//			if(chnode->transponder->fetype == FE_QAM)
+//				transponderid = transponderid | ((uint64_t)1 << 32);
+//			else if(chnode->transponder->fetype == FE_OFDM)
+//				transponderid = transponderid | ((uint64_t)2 << 32);
 		}
 
 		serviceid = HILO(eit->service_id);

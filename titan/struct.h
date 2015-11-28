@@ -86,12 +86,12 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "20150113"
+#define DRIVER "ini-800 - 3.14.2 r5 - 20150708"
 #define OVERSION "1.69"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 1
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -548,6 +548,7 @@ struct scaninfo
 	int blindcount;
 	int newblindcount;
 	int changename;
+	int tpdel;
 	unsigned int blindmax;
 } scaninfo;
 
