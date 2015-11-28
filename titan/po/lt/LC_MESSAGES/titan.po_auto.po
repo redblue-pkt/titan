@@ -139,7 +139,7 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1237
+#: titan.c:1235
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -147,7 +147,7 @@ msgstr ""
 "/ mnt nra raomus ! \n"
 "Do norite pabandyti ir j itaisyti ?"
 
-#: titan.c:1220
+#: titan.c:1218
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -788,7 +788,7 @@ msgid ""
 "OK?"
 msgstr ""
 
-#: scan.h:1691
+#: scan.h:1655
 msgid "All new channels added!"
 msgstr "Pridti Visi nauji kanalai !"
 
@@ -1081,7 +1081,7 @@ msgstr ""
 msgid "Auto Resolution"
 msgstr ""
 
-#: scan.h:2085
+#: scan.h:2049
 msgid "Auto Scan"
 msgstr "Automatinis nuskaitymas"
 
@@ -1121,7 +1121,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1289
+#: titan.c:1287
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatinis Stop 10 Seconds."
 
@@ -1352,7 +1352,7 @@ msgstr ""
 msgid "Blindscan Settings"
 msgstr ""
 
-#: scan.h:1639
+#: scan.h:1603
 msgid "Blindscan: "
 msgstr "Blindscan :"
 
@@ -1953,13 +1953,13 @@ msgstr ""
 msgid "Channel or Transponder is empty"
 msgstr "ERROR: Channel or Transponder is empty"
 
-#: scan.h:1661
+#: scan.h:1625
 msgid "Channel scan ended."
 msgstr ""
 "Kanal skenavimas baigtas.\n"
 " Isaugoti Kanalus naudojant spalvotus klavius Pultelyje."
 
-#: scan.h:1659 scan.h:1689
+#: scan.h:1623 scan.h:1653
 msgid ""
 "Channel scan ended.\n"
 "Nothing found."
@@ -2372,7 +2372,7 @@ msgstr ""
 msgid "Create Transponder List"
 msgstr ""
 
-#: scan.h:2336
+#: scan.h:2300
 msgid "Create new"
 msgstr "Sukurti nauj"
 
@@ -2535,11 +2535,11 @@ msgstr ""
 msgid "DYNDNS started."
 msgstr ""
 
-#: scan.h:535
+#: scan.h:537
 msgid "Data"
 msgstr ""
 
-#: scan.h:1631
+#: scan.h:1595
 msgid "Data: "
 msgstr "Duomenys:"
 
@@ -2641,7 +2641,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Trinti"
 
-#: scan.h:2337
+#: scan.h:2301
 msgid "Delete All"
 msgstr "Itrinti visus"
 
@@ -3139,7 +3139,7 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2461 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2425 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
@@ -3159,9 +3159,9 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1056
-#: titan.c:1065 titan.c:1193 titan.c:1214 titan.c:1220 titan.c:1231
-#: titan.c:1237 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1054
+#: titan.c:1063 titan.c:1191 titan.c:1212 titan.c:1218 titan.c:1229
+#: titan.c:1235 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1592 tithek.h:1614 tithek.h:1631 tithek.h:1863
 #: tithek.h:2023 tithek.h:2308 tithek.h:2336 tithek.h:2352 tithek.h:2364
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3661,7 +3661,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1056
+#: titan.c:1054
 msgid "First Wizzard"
 msgstr "First Installation Wizzard"
 
@@ -3855,7 +3855,7 @@ msgstr "Maksimalus greitis"
 msgid "Free Space"
 msgstr "Laisvos vietos"
 
-#: titan.c:1231
+#: titan.c:1229
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3863,7 +3863,7 @@ msgstr ""
 "Nepakankama erdv / mnt ! \n"
 "Tai sukels rimt problem !"
 
-#: titan.c:1214
+#: titan.c:1212
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4717,7 +4717,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1065 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1063 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5684,8 +5684,8 @@ msgstr ""
 #: record.h:1714 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: scan.h:1659 scan.h:1661 scan.h:1689 scan.h:1691 scan.h:1701 scan.h:1962
-#: scan.h:2053 scan.h:2461 scart.h:12 scart.h:25 security.h:1916 service.h:738
+#: scan.h:1623 scan.h:1625 scan.h:1653 scan.h:1655 scan.h:1665 scan.h:1926
+#: scan.h:2017 scan.h:2425 scart.h:12 scart.h:25 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
@@ -5696,8 +5696,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1193 titan.c:1214 titan.c:1220 titan.c:1231
-#: titan.c:1237 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: titan.c:346 titan.c:355 titan.c:1191 titan.c:1212 titan.c:1218 titan.c:1229
+#: titan.c:1235 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1592 tithek.h:1614 tithek.h:1863 tithek.h:2023
 #: tithek.h:2308 tithek.h:2336 tithek.h:2352 tithek.h:2364 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
@@ -5857,7 +5857,7 @@ msgstr "Kanal (EPG)"
 msgid "Multi EPG"
 msgstr "Kanal EPG"
 
-#: scan.h:2074
+#: scan.h:2038
 msgid "Multi Sat"
 msgstr "Keli Palydovai"
 
@@ -6102,7 +6102,7 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: scan.h:2053
+#: scan.h:2017
 msgid "No Tuner configured"
 msgstr "ERROR: No tuner configured!"
 
@@ -6267,8 +6267,8 @@ msgstr ""
 #: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1659 scan.h:1661 scan.h:1689
-#: scan.h:1691 scan.h:1962 scan.h:2053 scan.h:2461 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1623 scan.h:1625 scan.h:1653
+#: scan.h:1655 scan.h:1926 scan.h:2017 scan.h:2425 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -6286,8 +6286,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1056 titan.c:1065 titan.c:1193 titan.c:1214
-#: titan.c:1220 titan.c:1231 titan.c:1237 tithek.c:100 tithek_global.h:85
+#: titan.c:346 titan.c:355 titan.c:1054 titan.c:1063 titan.c:1191 titan.c:1212
+#: titan.c:1218 titan.c:1229 titan.c:1235 tithek.c:100 tithek_global.h:85
 #: tithek.h:715 tithek.h:1273 tithek.h:1334 tithek.h:1592 tithek.h:1614
 #: tithek.h:1631 tithek.h:1863 tithek.h:2023 tithek.h:2308 tithek.h:2336
 #: tithek.h:2352 tithek.h:2364 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7225,7 +7225,7 @@ msgid "RS232"
 msgstr ""
 
 #: channellist.h:726 channellist.h:1791 httpdfunc.h:292 httpdfunc.h:701
-#: scan.h:533 skin_default_skin.xml.h:457 webif_index.atemio5200.h:69
+#: scan.h:535 skin_default_skin.xml.h:457 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
 #: webif_index.atemio-nemesis.h:125 webif_rc.atemio5200.h:52
@@ -7246,7 +7246,7 @@ msgstr ""
 msgid "Radio Player"
 msgstr "Radijo grotuvas"
 
-#: scan.h:1623
+#: scan.h:1587
 msgid "Radio: "
 msgstr "Radijas :"
 
@@ -7351,7 +7351,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Imtuv perkrauti dabar !!!"
 
-#: titan.c:1193
+#: titan.c:1191
 msgid "Receiver successful unlocked"
 msgstr "Js imtuvas buvo pilnai atrakintas."
 
@@ -7942,7 +7942,7 @@ msgstr ""
 msgid "Sat Finder"
 msgstr ""
 
-#: scan.h:1597
+#: scan.h:1561
 msgid "Sat/Provider: "
 msgstr "Sat / teikjas :"
 
@@ -8042,7 +8042,7 @@ msgstr ""
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: scan.h:1962
+#: scan.h:1926
 msgid "Scan is not allowed if record or stream is running !"
 msgstr "ERROR: Scan is not allowed during an active recording / stream!"
 
@@ -8533,7 +8533,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1056
+#: titan.c:1054
 msgid "Settings OK ?"
 msgstr "Save Settings?"
 
@@ -8648,11 +8648,11 @@ msgstr "Kanalo EPG"
 msgid "Single LNB"
 msgstr ""
 
-#: scan.h:2080
+#: scan.h:2044
 msgid "Single Provider"
 msgstr "Vienas teikjas"
 
-#: scan.h:2073
+#: scan.h:2037
 msgid "Single Sat"
 msgstr "Vienas Palydovas"
 
@@ -8660,7 +8660,7 @@ msgstr "Vienas Palydovas"
 msgid "Single Service"
 msgstr "Viena Paslauga"
 
-#: scan.h:2072 scan.h:2079
+#: scan.h:2036 scan.h:2043
 msgid "Single Transponder"
 msgstr "Vienintelis transponderis"
 
@@ -9356,7 +9356,7 @@ msgid "TSID:"
 msgstr ""
 
 #: channellist.h:731 channellist.h:1786 httpdfunc.h:286 httpdfunc.h:696
-#: scan.h:531 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
+#: scan.h:533 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
 #: webif_index.atemio5200.h:124 webif_index.atemio6200.h:68
 #: webif_index.atemio6200.h:74 webif_index.atemio6200.h:124
 #: webif_index.atemio-nemesis.h:68 webif_index.atemio-nemesis.h:74
@@ -9383,7 +9383,7 @@ msgstr ""
 msgid "TV/Radio"
 msgstr "TV/Radija"
 
-#: scan.h:1615
+#: scan.h:1579
 msgid "TV: "
 msgstr "TV:"
 
@@ -9983,7 +9983,7 @@ msgstr ""
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
-#: scan.h:2461
+#: scan.h:2425
 msgid "Transponder changed"
 msgstr "Sistuvas pakeistas"
 
@@ -9994,7 +9994,7 @@ msgid ""
 "Titan will be restarted!"
 msgstr ""
 
-#: optimize.h:272 scan.h:1603
+#: optimize.h:272 scan.h:1567
 msgid "Transponder: "
 msgstr "Sistuvo :"
 
@@ -10159,7 +10159,7 @@ msgstr ""
 msgid "UltraPlus F-9000HD RC config"
 msgstr ""
 
-#: scan.h:2335
+#: scan.h:2299
 msgid "Unchanged"
 msgstr "Nekeiskite"
 
@@ -10191,7 +10191,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1287
+#: titan.c:1285
 msgid "Unknown Error."
 msgstr ""
 
@@ -10511,7 +10511,7 @@ msgstr ""
 msgid "Wait for cam ready"
 msgstr ""
 
-#: scan.h:1701
+#: scan.h:1665
 msgid "Wait for channel scan end"
 msgstr "Praome palaukti, kol baigsis skenavimas"
 
@@ -11927,9 +11927,9 @@ msgstr "NFS serveris"
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1830
-#: scan.h:2315 scan.h:2319 scan.h:2323 scan.h:2327 scan.h:2332 scan.h:2340
-#: scan.h:2344 scan.h:2348 scan.h:2352 scan.h:2356 scan.h:2360
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1794
+#: scan.h:2279 scan.h:2283 scan.h:2287 scan.h:2291 scan.h:2296 scan.h:2304
+#: scan.h:2308 scan.h:2312 scan.h:2316 scan.h:2320 scan.h:2324
 #: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
 #: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
@@ -13309,9 +13309,9 @@ msgstr "Geltona"
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1831 scan.h:2316 scan.h:2320 scan.h:2324 scan.h:2328
-#: scan.h:2331 scan.h:2341 scan.h:2345 scan.h:2349 scan.h:2353 scan.h:2357
-#: scan.h:2361 screensaveradjust.h:20 settings_autostart.h:26
+#: rectimer.h:1141 scan.h:1795 scan.h:2280 scan.h:2284 scan.h:2288 scan.h:2292
+#: scan.h:2295 scan.h:2305 scan.h:2309 scan.h:2313 scan.h:2317 scan.h:2321
+#: scan.h:2325 screensaveradjust.h:20 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
 #: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:316
