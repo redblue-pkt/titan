@@ -549,6 +549,7 @@ struct scaninfo
 	int blindcount;
 	int newblindcount;
 	int changename;
+	int unusedtransponder;
 	unsigned int blindmax;
 } scaninfo;
 
