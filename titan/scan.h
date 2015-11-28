@@ -445,6 +445,8 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	uint8_t providerlen = 0;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	uint64_t* tmpuint64 = NULL;
+	
+	struct transponder* tphelp = NULL;
 
 	if(buf == NULL || fenode == NULL || fenode->feinfo == NULL) return ret;
 
@@ -461,6 +463,12 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 		transponderid = transponderid | ((uint64_t)2 << 32);
 	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
+		tphelp = gettransponder(transponderid);
+		if(tphelp != NULL)
+		{
+			changetransponderid(tphelp, 0);
+			debug(500, "set old tid: %d to 0", transponderid);
+		}
 		changetransponderid(tpnode, transponderid);
 		status.writetransponder = 1;
 	}
