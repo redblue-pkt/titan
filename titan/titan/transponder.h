@@ -854,8 +854,6 @@ void deltransponder(struct transponder* tpnode)
 				dvbnode = dvbnode->next;
 			}
 
-			scaninfo.tpdel++;
-
 			if(node->id != 99) delchannelbytransponder(node->id);
 			deltranspondercache(node->id, NULL);
 
@@ -939,19 +937,6 @@ void deltransponderbyorbitalpos(int orbitalpos)
 	}
 }
 
-void deltransponderonscan(uint64_t transponderid)
-{
-	struct transponder *node = transponder, *prev = transponder;
-
-	while(node != NULL)
-	{
-		prev = node;
-		node = node->next;
-		if(prev != NULL && prev->id == transponderid)
-			deltransponder(prev);
-	}
-}
- 	
 void freetransponder()
 {
 	struct transponder *node = transponder, *prev = transponder;
