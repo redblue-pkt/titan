@@ -1131,6 +1131,7 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbs(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
+					deltransponderonscan(tpnode->id);
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1142,6 +1143,7 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbc(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
+					deltransponderonscan(tpnode->id);
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1153,6 +1155,7 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbt(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
+					deltransponderonscan(tpnode->id);
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1173,6 +1176,7 @@ void doscan(struct stimerthread* timernode)
 			if(festatus != 0)
 			{
 				scaninfo.tpcount++;
+				deltransponderonscan(tpnode->id);
 				tpnode = tpnode->next;
 				debug(500, "tuning failed last");
 				if(scaninfo.scantype == 0) break;

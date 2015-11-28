@@ -248,7 +248,7 @@ struct channelslot *channelslot = NULL;
 #endif
 
 
-#define TIMECODE ""
+#define TIMECODE "1448668559"
 
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
