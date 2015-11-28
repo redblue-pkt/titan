@@ -467,7 +467,7 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 		if(tphelp != NULL)
 		{
 			changetransponderid(tphelp, 0);
-			debug(500, "set old tid: %d to 0", transponderid);
+			debug(500, "set old tid: %llu to 0", transponderid);
 		}
 		changetransponderid(tpnode, transponderid);
 		status.writetransponder = 1;
@@ -753,7 +753,7 @@ unsigned int satblindscan(struct stimerthread* timernode, int onlycalc)
 									if(tphelp != NULL)
 									{
 										deltransponderbyid(transponderid);
-										debug(500, "delete old tid: %d to 0", transponderid);
+										debug(500, "delete old tid: %llu to 0", transponderid);
 									}
 									scaninfo.newblindcount++;
 									changetransponderid(tpnode, transponderid);
@@ -903,7 +903,7 @@ unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc)
 							if(tphelp != NULL)
 							{
 								deltransponderbyid(transponderid);
-								debug(500, "delete old tid: %d to 0", transponderid);
+								debug(500, "delete old tid: %llu to 0", transponderid);
 							}
 							scaninfo.newblindcount++;
 							changetransponderid(tpnode, transponderid);
@@ -1040,7 +1040,7 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 											if(tphelp != NULL)
 											{
 												deltransponderbyid(transponderid);
-												debug(500, "delete old tid: %d to 0", transponderid);
+												debug(500, "delete old tid: %llu to 0", transponderid);
 											}
 											scaninfo.newblindcount++;
 											changetransponderid(tpnode, transponderid);
