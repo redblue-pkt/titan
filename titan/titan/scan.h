@@ -899,6 +899,12 @@ unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc)
 
 						if(tpnode->id != transponderid)
 						{
+							struct transponder* tphelp = gettransponder(transponderid);
+							if(tphelp != NULL)
+							{
+								deltransponderbyid(transponderid);
+								debug(500, "delete old tid: %d to 0", transponderid);
+							}
 							scaninfo.newblindcount++;
 							changetransponderid(tpnode, transponderid);
 							status.writetransponder = 1;
@@ -1030,6 +1036,12 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 	
 										if(tpnode->id != transponderid)
 										{
+											struct transponder* tphelp = gettransponder(transponderid);
+											if(tphelp != NULL)
+											{
+												deltransponderbyid(transponderid);
+												debug(500, "delete old tid: %d to 0", transponderid);
+											}
 											scaninfo.newblindcount++;
 											changetransponderid(tpnode, transponderid);
 											status.writetransponder = 1;
