@@ -116,7 +116,6 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 	if(frequency > 15000000) return NULL;
 
 	id = ((onid << 16) | transportid) & 0xffffffff;
-	id = id | ((uint64_t)orbitalpos << 32);
 
 	if(gettransponder(id) == NULL)
 	{
@@ -201,8 +200,7 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	}
 
 	id = ((onid << 16) | transportid) & 0xffffffff;
-//	id = id | ((uint64_t)1 << 32);
-	id = id | ((uint64_t)orbitalpos << 32);
+	id = id | ((uint64_t)1 << 32);
 
 	if(gettransponder(id) == NULL)
 	{
@@ -302,8 +300,7 @@ struct transponder* terrsystemdesc(unsigned char* buf, uint64_t transportid, uns
 	//other_frequency_flag = (buf[8] & 0x01);
 
 	id = ((onid << 16) | transportid) & 0xffffffff;
-//	id = id | ((uint64_t)2 << 32);
-	id = id | ((uint64_t)orbitalpos << 32);
+	id = id | ((uint64_t)2 << 32);
 
 	if(gettransponder(id) == NULL)
 	{
@@ -458,12 +455,10 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	onid = (buf[8] << 8) | buf[9];
 	
 	transponderid = ((onid << 16) | tid) & 0xffffffff;
-//	if(fenode->feinfo->type == FE_QAM)
-//		transponderid = transponderid | ((uint64_t)1 << 32);
-//	else if(fenode->feinfo->type == FE_OFDM)
-//		transponderid = transponderid | ((uint64_t)2 << 32);
-	transponderid = transponderid | ((uint64_t)tpnode->orbitalpos << 32);
-
+	if(fenode->feinfo->type == FE_QAM)
+		transponderid = transponderid | ((uint64_t)1 << 32);
+	else if(fenode->feinfo->type == FE_OFDM)
+		transponderid = transponderid | ((uint64_t)2 << 32);
 	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
 		changetransponderid(tpnode, transponderid);
@@ -594,12 +589,10 @@ uint64_t findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 	
 	transponderid = ((onid << 16) | tid) & 0xffffffff;
 
-//	if(fenode->feinfo->type == FE_QAM)
-//		transponderid = transponderid | ((uint64_t)1 << 32);
-//	else if(fenode->feinfo->type == FE_OFDM)
-//		transponderid = transponderid | ((uint64_t)2 << 32);
-
-	transponderid = transponderid | ((uint64_t)scaninfo.orbitalpos << 32);
+	if(fenode->feinfo->type == FE_QAM)
+		transponderid = transponderid | ((uint64_t)1 << 32);
+	else if(fenode->feinfo->type == FE_OFDM)
+		transponderid = transponderid | ((uint64_t)2 << 32);
 
 	debug(500, "found SDT transponderid: %llu", transponderid);
 
@@ -1131,7 +1124,6 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbs(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
-					deltransponderonscan(tpnode->id);
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1143,7 +1135,6 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbc(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
-					deltransponderonscan(tpnode->id);
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1155,7 +1146,6 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbt(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
-					deltransponderonscan(tpnode->id);
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1176,7 +1166,6 @@ void doscan(struct stimerthread* timernode)
 			if(festatus != 0)
 			{
 				scaninfo.tpcount++;
-				deltransponderonscan(tpnode->id);
 				tpnode = tpnode->next;
 				debug(500, "tuning failed last");
 				if(scaninfo.scantype == 0) break;
@@ -1405,7 +1394,7 @@ void delchannelbymultisat()
 
 void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int system, int favtype, int emptybouquet, int unusedbouquetchannels, int unusedsats, int unusedtransponder, int unusedchannels, int unusedprovider, int timeout, int flag)
 {
-	int rcret = 0, tpmax = 0, i = 0, alladded = 0, endmsgshow = 0, tpdel = 0;
+	int rcret = 0, tpmax = 0, i = 0, alladded = 0, endmsgshow = 0;
 
 	struct skin* scan = NULL;
 	if(flag == 1)
@@ -1556,7 +1545,6 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	scaninfo.changename = ichangename;
 	scaninfo.clear = clear;
 	scaninfo.tpmax = tpmax;
-	scaninfo.tpdel = tpdel;
 	timernode = addtimer(&doscan, START, 1000, 1, NULL, NULL, NULL);
 
 	while(1)
@@ -1572,10 +1560,8 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpcount), 1, 1);
 		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpmax), 1, 1);
-		tmpstr = ostrcat(tmpstr, " New: ", 1, 0);
+		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpnew), 1, 1);
-		tmpstr = ostrcat(tmpstr, " Del: ", 1, 0);
-		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpdel), 1, 1);
 		changetext(tpcount, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
