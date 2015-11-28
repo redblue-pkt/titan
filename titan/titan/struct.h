@@ -539,6 +539,7 @@ struct scaninfo
 	int tpcount;
 	int tpmax;
 	int tpnew;
+	int tpdel;
 	int tvcount;
 	int newtvcount;
 	int radiocount;
