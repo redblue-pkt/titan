@@ -202,7 +202,8 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	id = ((onid << 16) | transportid) & 0xffffffff;
 	id = id | ((uint64_t)1 << 32);
 
-	if(gettransponder(id) == NULL)
+	//if(gettransponder(id) == NULL)
+	if(gettransponderbydetail(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0, 0) == NULL)	
 	{
 		tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
 		status.writetransponder = 1;
