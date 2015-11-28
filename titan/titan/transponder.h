@@ -854,6 +854,8 @@ void deltransponder(struct transponder* tpnode)
 				dvbnode = dvbnode->next;
 			}
 
+			scaninfo.tpdel++;
+
 			if(node->id != 99) delchannelbytransponder(node->id);
 			deltranspondercache(node->id, NULL);
 
