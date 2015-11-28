@@ -117,17 +117,11 @@ struct transponder* satsystemdesc(unsigned char* buf, uint64_t transportid, unsi
 
 	id = ((onid << 16) | transportid) & 0xffffffff;
 
-/*
 	if(gettransponder(id) == NULL)
 	{
 		tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
 		status.writetransponder = 1;
 	}
-*/
-	// write allways transponder and delete old entry
-	deltransponderbyorbitalposandid(orbitalpos, id);
-	tpnode = createtransponder(id, FE_QPSK, orbitalpos, frequency, INVERSION_AUTO, symbolrate, polarization, fec, modulation, rolloff, 0, system);
-	status.writetransponder = 1;
 
 	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d pol=%d modulation=%d system=%d tpnode=%p", id, frequency, symbolrate, fec, polarization, modulation, system, tpnode);
 
@@ -208,17 +202,11 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	id = ((onid << 16) | transportid) & 0xffffffff;
 	id = id | ((uint64_t)1 << 32);
 
-/*
 	if(gettransponder(id) == NULL)
 	{
 		tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
 		status.writetransponder = 1;
 	}
-*/
-	// write allways transponder and delete old entry
-	deltransponderbyorbitalposandid(orbitalpos, id);
-	tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
-	status.writetransponder = 1;
 
 	debug(500, "nitscan: id=%llu freq=%d sr=%d fec=%d modulation=%d tpnode=%p", id, frequency, symbolrate, fec, modulation, tpnode);
 
@@ -314,17 +302,11 @@ struct transponder* terrsystemdesc(unsigned char* buf, uint64_t transportid, uns
 	id = ((onid << 16) | transportid) & 0xffffffff;
 	id = id | ((uint64_t)2 << 32);
 
-/*
 	if(gettransponder(id) == NULL)
 	{
 		tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, INVERSION_AUTO, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
 		status.writetransponder = 1;
 	}
-*/
-	// write allways transponder and delete old entry
-	deltransponderbyorbitalposandid(orbitalpos, id);
-	tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, INVERSION_AUTO, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
-	status.writetransponder = 1;
 
 	debug(500, "nitscan: id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 
@@ -463,8 +445,6 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	uint8_t providerlen = 0;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	uint64_t* tmpuint64 = NULL;
-	
-	struct transponder* tphelp = NULL;
 
 	if(buf == NULL || fenode == NULL || fenode->feinfo == NULL) return ret;
 
@@ -481,13 +461,6 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 		transponderid = transponderid | ((uint64_t)2 << 32);
 	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
-		tphelp = gettransponder(transponderid);
-		if(tphelp != NULL)
-		{
-			changetransponderid(tphelp, 0);
-			debug(500, "set old tid: %d to 0", transponderid);
-		}
-
 		changetransponderid(tpnode, transponderid);
 		status.writetransponder = 1;
 	}

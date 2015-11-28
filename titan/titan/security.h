@@ -1,7 +1,7 @@
 #ifndef SECURITY_H
 #define SECURITY_H
 
-#define BUILDCODE 1448565703
+#define BUILDCODE 1424136341
 #define TRT 1183000
 
 int checklowflash()
