@@ -202,8 +202,8 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	id = ((onid << 16) | transportid) & 0xffffffff;
 	id = id | ((uint64_t)1 << 32);
 
-	//if(gettransponder(id) == NULL)
-	if(gettransponderbydetail(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0, 0) == NULL)	
+	if(gettransponder(id) == NULL)
+	//if(gettransponderbydetail(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0, 0) == NULL)	
 	{
 		tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
 		status.writetransponder = 1;
@@ -462,7 +462,8 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 		transponderid = transponderid | ((uint64_t)1 << 32);
 	else if(fenode->feinfo->type == FE_OFDM)
 		transponderid = transponderid | ((uint64_t)2 << 32);
-	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
+		
+	if(tpnode != NULL && (tpnode->id != transponderid || scaninfo.fenode->feinfo->type == FE_QAM || scaninfo.fenode->feinfo->type == FE_OFDM) && tpnode->id != 99)
 	{
 		tphelp = gettransponder(transponderid);
 		if(tphelp != NULL)
