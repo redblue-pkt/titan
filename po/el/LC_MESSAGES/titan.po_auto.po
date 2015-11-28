@@ -780,7 +780,7 @@ msgid ""
 "OK?"
 msgstr ""
 
-#: scan.h:1655
+#: scan.h:1645
 msgid "All new channels added!"
 msgstr ""
 
@@ -1060,7 +1060,7 @@ msgstr ""
 msgid "Auto Resolution"
 msgstr "Αυτόματη Ανάλυση"
 
-#: scan.h:2049
+#: scan.h:2039
 msgid "Auto Scan"
 msgstr "Σάρωση Δικτύου"
 
@@ -1331,7 +1331,7 @@ msgstr ""
 msgid "Blindscan Settings"
 msgstr ""
 
-#: scan.h:1603
+#: scan.h:1593
 msgid "Blindscan: "
 msgstr ""
 
@@ -1917,11 +1917,11 @@ msgstr ""
 msgid "Channel or Transponder is empty"
 msgstr ""
 
-#: scan.h:1625
+#: scan.h:1615
 msgid "Channel scan ended."
 msgstr ""
 
-#: scan.h:1623 scan.h:1653
+#: scan.h:1613 scan.h:1643
 msgid ""
 "Channel scan ended.\n"
 "Nothing found."
@@ -2326,7 +2326,7 @@ msgstr ""
 msgid "Create Transponder List"
 msgstr ""
 
-#: scan.h:2300
+#: scan.h:2290
 msgid "Create new"
 msgstr "Δημιουργία backup"
 
@@ -2485,11 +2485,11 @@ msgstr ""
 msgid "DYNDNS started."
 msgstr ""
 
-#: scan.h:537
+#: scan.h:532
 msgid "Data"
 msgstr ""
 
-#: scan.h:1595
+#: scan.h:1585
 msgid "Data: "
 msgstr ""
 
@@ -2591,7 +2591,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: scan.h:2301
+#: scan.h:2291
 msgid "Delete All"
 msgstr ""
 
@@ -3077,7 +3077,7 @@ msgstr ""
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2425 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2415 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
@@ -5581,8 +5581,8 @@ msgstr ""
 #: record.h:1714 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: scan.h:1623 scan.h:1625 scan.h:1653 scan.h:1655 scan.h:1665 scan.h:1926
-#: scan.h:2017 scan.h:2425 scart.h:12 scart.h:25 security.h:1916 service.h:738
+#: scan.h:1613 scan.h:1615 scan.h:1643 scan.h:1645 scan.h:1655 scan.h:1916
+#: scan.h:2007 scan.h:2415 scart.h:12 scart.h:25 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
@@ -5754,7 +5754,7 @@ msgstr "Multi EPG"
 msgid "Multi EPG"
 msgstr ""
 
-#: scan.h:2038
+#: scan.h:2028
 msgid "Multi Sat"
 msgstr "Multi EPG"
 
@@ -5997,7 +5997,7 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: scan.h:2017
+#: scan.h:2007
 msgid "No Tuner configured"
 msgstr "Ρυθμίσεις Tuner"
 
@@ -6157,8 +6157,8 @@ msgstr ""
 #: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1623 scan.h:1625 scan.h:1653
-#: scan.h:1655 scan.h:1926 scan.h:2017 scan.h:2425 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1613 scan.h:1615 scan.h:1643
+#: scan.h:1645 scan.h:1916 scan.h:2007 scan.h:2415 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -7100,7 +7100,7 @@ msgid "RS232"
 msgstr ""
 
 #: channellist.h:726 channellist.h:1791 httpdfunc.h:292 httpdfunc.h:701
-#: scan.h:535 skin_default_skin.xml.h:457 webif_index.atemio5200.h:69
+#: scan.h:530 skin_default_skin.xml.h:457 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
 #: webif_index.atemio-nemesis.h:125 webif_rc.atemio5200.h:52
@@ -7121,7 +7121,7 @@ msgstr ""
 msgid "Radio Player"
 msgstr ""
 
-#: scan.h:1587
+#: scan.h:1577
 msgid "Radio: "
 msgstr "Ευρεθέντα Radio:"
 
@@ -7817,7 +7817,7 @@ msgstr ""
 msgid "Sat Finder"
 msgstr ""
 
-#: scan.h:1561
+#: scan.h:1553
 msgid "Sat/Provider: "
 msgstr "Παροχέας:"
 
@@ -7917,7 +7917,7 @@ msgstr ""
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: scan.h:1926
+#: scan.h:1916
 msgid "Scan is not allowed if record or stream is running !"
 msgstr ""
 
@@ -8521,11 +8521,11 @@ msgstr "Μονό EPG"
 msgid "Single LNB"
 msgstr "Μονό EPG"
 
-#: scan.h:2044
+#: scan.h:2034
 msgid "Single Provider"
 msgstr "Παροχέας:"
 
-#: scan.h:2037
+#: scan.h:2027
 msgid "Single Sat"
 msgstr "Μονό EPG"
 
@@ -8533,7 +8533,7 @@ msgstr "Μονό EPG"
 msgid "Single Service"
 msgstr "Ρύθμιση - Αναζήτηση Καναλιών"
 
-#: scan.h:2036 scan.h:2043
+#: scan.h:2026 scan.h:2033
 msgid "Single Transponder"
 msgstr "Transponder:"
 
@@ -9217,7 +9217,7 @@ msgid "TSID:"
 msgstr ""
 
 #: channellist.h:731 channellist.h:1786 httpdfunc.h:286 httpdfunc.h:696
-#: scan.h:533 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
+#: scan.h:528 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
 #: webif_index.atemio5200.h:124 webif_index.atemio6200.h:68
 #: webif_index.atemio6200.h:74 webif_index.atemio6200.h:124
 #: webif_index.atemio-nemesis.h:68 webif_index.atemio-nemesis.h:74
@@ -9244,7 +9244,7 @@ msgstr ""
 msgid "TV/Radio"
 msgstr ""
 
-#: scan.h:1579
+#: scan.h:1569
 msgid "TV: "
 msgstr ""
 
@@ -9833,7 +9833,7 @@ msgstr ""
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
-#: scan.h:2425
+#: scan.h:2415
 msgid "Transponder changed"
 msgstr "Transponder:"
 
@@ -9844,7 +9844,7 @@ msgid ""
 "Titan will be restarted!"
 msgstr ""
 
-#: optimize.h:272 scan.h:1567
+#: optimize.h:272 scan.h:1559
 msgid "Transponder: "
 msgstr "Transponder:"
 
@@ -10007,7 +10007,7 @@ msgstr ""
 msgid "UltraPlus F-9000HD RC config"
 msgstr ""
 
-#: scan.h:2299
+#: scan.h:2289
 msgid "Unchanged"
 msgstr ""
 
@@ -10355,7 +10355,7 @@ msgstr ""
 msgid "Wait for cam ready"
 msgstr ""
 
-#: scan.h:1665
+#: scan.h:1655
 msgid "Wait for channel scan end"
 msgstr "Σάρωση μόνο για ελεύθερα κανάλια"
 
@@ -11768,9 +11768,9 @@ msgstr "NFS server"
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1794
-#: scan.h:2279 scan.h:2283 scan.h:2287 scan.h:2291 scan.h:2296 scan.h:2304
-#: scan.h:2308 scan.h:2312 scan.h:2316 scan.h:2320 scan.h:2324
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1784
+#: scan.h:2269 scan.h:2273 scan.h:2277 scan.h:2281 scan.h:2286 scan.h:2294
+#: scan.h:2298 scan.h:2302 scan.h:2306 scan.h:2310 scan.h:2314
 #: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
 #: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
@@ -13148,9 +13148,9 @@ msgstr ""
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1795 scan.h:2280 scan.h:2284 scan.h:2288 scan.h:2292
-#: scan.h:2295 scan.h:2305 scan.h:2309 scan.h:2313 scan.h:2317 scan.h:2321
-#: scan.h:2325 screensaveradjust.h:20 settings_autostart.h:26
+#: rectimer.h:1141 scan.h:1785 scan.h:2270 scan.h:2274 scan.h:2278 scan.h:2282
+#: scan.h:2285 scan.h:2295 scan.h:2299 scan.h:2303 scan.h:2307 scan.h:2311
+#: scan.h:2315 screensaveradjust.h:20 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
 #: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:316
