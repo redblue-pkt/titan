@@ -784,7 +784,7 @@ msgid ""
 "OK?"
 msgstr ""
 
-#: scan.h:1671
+#: scan.h:1659
 msgid "All new channels added!"
 msgstr "Tất cả các chương trình mới được thêm vào!"
 
@@ -1075,7 +1075,7 @@ msgstr "tự động"
 msgid "Auto Resolution"
 msgstr "Độ phân giải tự động"
 
-#: scan.h:2065
+#: scan.h:2053
 msgid "Auto Scan"
 msgstr "Tự động dò"
 
@@ -1349,7 +1349,7 @@ msgstr "Điều chỉnh quét mành"
 msgid "Blindscan Settings"
 msgstr "Thiết lập quét mành"
 
-#: scan.h:1619
+#: scan.h:1607
 msgid "Blindscan: "
 msgstr "Điều chỉnh quét mành"
 
@@ -1941,11 +1941,11 @@ msgstr ""
 msgid "Channel or Transponder is empty"
 msgstr "Danh sách kênh trống"
 
-#: scan.h:1641
+#: scan.h:1629
 msgid "Channel scan ended."
 msgstr "Vui long đợi."
 
-#: scan.h:1639 scan.h:1669
+#: scan.h:1627 scan.h:1657
 msgid ""
 "Channel scan ended.\n"
 "Nothing found."
@@ -2350,7 +2350,7 @@ msgstr ""
 msgid "Create Transponder List"
 msgstr ""
 
-#: scan.h:2316
+#: scan.h:2304
 msgid "Create new"
 msgstr "Tạo thư mục"
 
@@ -2513,11 +2513,11 @@ msgstr "DYNDNS đã dừng"
 msgid "DYNDNS started."
 msgstr "bắt đầu DYNDNS"
 
-#: scan.h:558
+#: scan.h:540
 msgid "Data"
 msgstr ""
 
-#: scan.h:1611
+#: scan.h:1599
 msgid "Data: "
 msgstr ""
 
@@ -2619,7 +2619,7 @@ msgstr "Xóa lịch chương trình trước khi dò"
 msgid "Delete"
 msgstr "Xóa"
 
-#: scan.h:2317
+#: scan.h:2305
 msgid "Delete All"
 msgstr "Xóa file"
 
@@ -3115,7 +3115,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2441 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2429 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
@@ -5632,8 +5632,8 @@ msgstr ""
 #: record.h:1714 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: scan.h:1639 scan.h:1641 scan.h:1669 scan.h:1671 scan.h:1681 scan.h:1942
-#: scan.h:2033 scan.h:2441 scart.h:12 scart.h:25 security.h:1916 service.h:738
+#: scan.h:1627 scan.h:1629 scan.h:1657 scan.h:1659 scan.h:1669 scan.h:1930
+#: scan.h:2021 scan.h:2429 scart.h:12 scart.h:25 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
@@ -5805,7 +5805,7 @@ msgstr "EPG"
 msgid "Multi EPG"
 msgstr "EPG"
 
-#: scan.h:2054
+#: scan.h:2042
 msgid "Multi Sat"
 msgstr "Nhiều vệ tinh"
 
@@ -6050,7 +6050,7 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: scan.h:2033
+#: scan.h:2021
 msgid "No Tuner configured"
 msgstr "Cài đặt tuner"
 
@@ -6215,8 +6215,8 @@ msgstr "E"
 #: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1639 scan.h:1641 scan.h:1669
-#: scan.h:1671 scan.h:1942 scan.h:2033 scan.h:2441 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1627 scan.h:1629 scan.h:1657
+#: scan.h:1659 scan.h:1930 scan.h:2021 scan.h:2429 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -7166,7 +7166,7 @@ msgid "RS232"
 msgstr ""
 
 #: channellist.h:726 channellist.h:1791 httpdfunc.h:292 httpdfunc.h:701
-#: scan.h:556 skin_default_skin.xml.h:457 webif_index.atemio5200.h:69
+#: scan.h:538 skin_default_skin.xml.h:457 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
 #: webif_index.atemio-nemesis.h:125 webif_rc.atemio5200.h:52
@@ -7187,7 +7187,7 @@ msgstr ""
 msgid "Radio Player"
 msgstr ""
 
-#: scan.h:1603
+#: scan.h:1591
 msgid "Radio: "
 msgstr "Tìm thấy Radio:"
 
@@ -7883,7 +7883,7 @@ msgstr "Thiết lập vệ tinh"
 msgid "Sat Finder"
 msgstr "Tìm thấy vệ tinh"
 
-#: scan.h:1579
+#: scan.h:1567
 msgid "Sat/Provider: "
 msgstr "Nhà cung cấp:"
 
@@ -7983,7 +7983,7 @@ msgstr ""
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: scan.h:1942
+#: scan.h:1930
 msgid "Scan is not allowed if record or stream is running !"
 msgstr "Cấu hình tuner này không cho phép ghi"
 
@@ -8587,11 +8587,11 @@ msgstr "EPG"
 msgid "Single LNB"
 msgstr "LNB đơn"
 
-#: scan.h:2060
+#: scan.h:2048
 msgid "Single Provider"
 msgstr "Một dịch vụ"
 
-#: scan.h:2053
+#: scan.h:2041
 msgid "Single Sat"
 msgstr "Một vệ tinh"
 
@@ -8599,7 +8599,7 @@ msgstr "Một vệ tinh"
 msgid "Single Service"
 msgstr "Một dịch vụ"
 
-#: scan.h:2052 scan.h:2059
+#: scan.h:2040 scan.h:2047
 msgid "Single Transponder"
 msgstr "Một bộ phát đáp"
 
@@ -9286,7 +9286,7 @@ msgid "TSID:"
 msgstr ""
 
 #: channellist.h:731 channellist.h:1786 httpdfunc.h:286 httpdfunc.h:696
-#: scan.h:554 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
+#: scan.h:536 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
 #: webif_index.atemio5200.h:124 webif_index.atemio6200.h:68
 #: webif_index.atemio6200.h:74 webif_index.atemio6200.h:124
 #: webif_index.atemio-nemesis.h:68 webif_index.atemio-nemesis.h:74
@@ -9313,7 +9313,7 @@ msgstr "Độ phân giải TV (ngang):"
 msgid "TV/Radio"
 msgstr ""
 
-#: scan.h:1595
+#: scan.h:1583
 msgid "TV: "
 msgstr ""
 
@@ -9906,7 +9906,7 @@ msgstr ""
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
-#: scan.h:2441
+#: scan.h:2429
 msgid "Transponder changed"
 msgstr "Bộ phát đáp đã thay đổi"
 
@@ -9917,7 +9917,7 @@ msgid ""
 "Titan will be restarted!"
 msgstr ""
 
-#: optimize.h:272 scan.h:1585
+#: optimize.h:272 scan.h:1573
 msgid "Transponder: "
 msgstr "Bộ pháp đáp:"
 
@@ -10080,7 +10080,7 @@ msgstr "KHỞI ĐỘNG LẠI"
 msgid "UltraPlus F-9000HD RC config"
 msgstr ""
 
-#: scan.h:2315
+#: scan.h:2303
 msgid "Unchanged"
 msgstr "Thay đổi"
 
@@ -10432,7 +10432,7 @@ msgstr ""
 msgid "Wait for cam ready"
 msgstr "Đang kiểm tra thẻ vui lòng đợi"
 
-#: scan.h:1681
+#: scan.h:1669
 msgid "Wait for channel scan end"
 msgstr "Vui long đợi."
 
@@ -11845,9 +11845,9 @@ msgstr "NFS-Server"
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1810
-#: scan.h:2295 scan.h:2299 scan.h:2303 scan.h:2307 scan.h:2312 scan.h:2320
-#: scan.h:2324 scan.h:2328 scan.h:2332 scan.h:2336 scan.h:2340
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1798
+#: scan.h:2283 scan.h:2287 scan.h:2291 scan.h:2295 scan.h:2300 scan.h:2308
+#: scan.h:2312 scan.h:2316 scan.h:2320 scan.h:2324 scan.h:2328
 #: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
 #: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
@@ -13225,9 +13225,9 @@ msgstr ""
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1811 scan.h:2296 scan.h:2300 scan.h:2304 scan.h:2308
-#: scan.h:2311 scan.h:2321 scan.h:2325 scan.h:2329 scan.h:2333 scan.h:2337
-#: scan.h:2341 screensaveradjust.h:20 settings_autostart.h:26
+#: rectimer.h:1141 scan.h:1799 scan.h:2284 scan.h:2288 scan.h:2292 scan.h:2296
+#: scan.h:2299 scan.h:2309 scan.h:2313 scan.h:2317 scan.h:2321 scan.h:2325
+#: scan.h:2329 screensaveradjust.h:20 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
 #: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:316
