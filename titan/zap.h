@@ -160,7 +160,7 @@ start:
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
-			pipstart(node, NULL, 0); 
+			pipstart(node, NULL, 0);
 	}
 	return 0;
 }

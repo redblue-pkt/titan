@@ -3205,7 +3205,7 @@ int tpkgetindex(int flag)
 
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
-//			if(ostrcmp(path, "//svn/ipk/atemio510-rev12841/sh4/titan") == 0)
+//			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
 
 #ifdef SH4
 			if(ostrcmp(path, "/svn/tpk/nightly-sh4-secret") == 0)

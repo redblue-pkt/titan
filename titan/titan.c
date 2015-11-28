@@ -248,7 +248,7 @@ struct channelslot *channelslot = NULL;
 #endif
 
 
-#define TIMECODE "1448565703"
+#define TIMECODE ""
 
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
@@ -1012,8 +1012,6 @@ int main(int argc, char *argv[])
 	if(getconfigint("autoscan", NULL) == 1)
 	{
 		status.updatevfd = PAUSE;
-		resettvpic();
-		screentunerconfig();
 		resettvpic();
 		screenscanconfig(1);
 		resettvpic();
