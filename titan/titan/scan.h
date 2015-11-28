@@ -753,7 +753,7 @@ unsigned int satblindscan(struct stimerthread* timernode, int onlycalc)
 									if(tphelp != NULL)
 									{
 										deltransponderbyid(transponderid);
-										debug(500, "delete old tid: %llu to 0", transponderid);
+										debug(500, "delete old tid: %llu", transponderid);
 									}
 									scaninfo.newblindcount++;
 									changetransponderid(tpnode, transponderid);
@@ -903,7 +903,7 @@ unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc)
 							if(tphelp != NULL)
 							{
 								deltransponderbyid(transponderid);
-								debug(500, "delete old tid: %llu to 0", transponderid);
+								debug(500, "delete old tid: %llu", transponderid);
 							}
 							scaninfo.newblindcount++;
 							changetransponderid(tpnode, transponderid);
@@ -1040,7 +1040,7 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 											if(tphelp != NULL)
 											{
 												deltransponderbyid(transponderid);
-												debug(500, "delete old tid: %llu to 0", transponderid);
+												debug(500, "delete old tid: %llu", transponderid);
 											}
 											scaninfo.newblindcount++;
 											changetransponderid(tpnode, transponderid);
@@ -1150,6 +1150,15 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbs(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
+					if(scaninfo.unusedtransponder == 1)
+					{
+						struct transponder* tphelp = gettransponder(tpnode->id);
+						if(tphelp != NULL)
+						{
+							deltransponderbyid(tpnode->id);
+							debug(500, "delete tuning failed tid: %llu", tpnode->id);
+						}
+					}
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1161,6 +1170,15 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbc(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
+					if(scaninfo.unusedtransponder == 1)
+					{
+						struct transponder* tphelp = gettransponder(tpnode->id);
+						if(tphelp != NULL)
+						{
+							deltransponderbyid(tpnode->id);
+							debug(500, "delete tuning failed tid: %llu", tpnode->id);
+						}
+					}
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1172,6 +1190,15 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbt(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
+					if(scaninfo.unusedtransponder == 1)
+					{
+						struct transponder* tphelp = gettransponder(tpnode->id);
+						if(tphelp != NULL)
+						{
+							deltransponderbyid(tpnode->id);
+							debug(500, "delete tuning failed tid: %llu", tpnode->id);
+						}
+					}
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
 					if(scaninfo.scantype == 0) break;
@@ -1192,6 +1219,15 @@ void doscan(struct stimerthread* timernode)
 			if(festatus != 0)
 			{
 				scaninfo.tpcount++;
+				if(scaninfo.unusedtransponder == 1)
+				{
+					struct transponder* tphelp = gettransponder(tpnode->id);
+					if(tphelp != NULL)
+					{
+						deltransponderbyid(tpnode->id);
+						debug(500, "delete tuning failed tid: %llu", tpnode->id);
+					}
+				}
 				tpnode = tpnode->next;
 				debug(500, "tuning failed last");
 				if(scaninfo.scantype == 0) break;
@@ -1572,6 +1608,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	scaninfo.clear = clear;
 	scaninfo.tpmax = tpmax;
 	scaninfo.tpdel = tpdel;
+	scaninfo.unusedtransponder = unusedtransponder;
 	timernode = addtimer(&doscan, START, 1000, 1, NULL, NULL, NULL);
 
 	while(1)
