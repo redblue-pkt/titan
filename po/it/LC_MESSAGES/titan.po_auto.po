@@ -11071,7 +11071,7 @@ msgstr ""
 msgid "deactivate"
 msgstr "spento"
 
-#: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:148 epgsettings.h:154
+#: adjust.h:121 adjust.h:131 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
 msgid "deaktiv"
 msgstr "spento"
@@ -12430,6 +12430,10 @@ msgstr ""
 
 #: webif_help.h:84
 msgid "shortepg"
+msgstr ""
+
+#: adjust.h:185
+msgid "show"
 msgstr ""
 
 #: tithek_settings.h:24 tithek_settings.h:33
