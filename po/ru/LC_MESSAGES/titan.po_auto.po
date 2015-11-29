@@ -139,7 +139,7 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1235
+#: titan.c:1237
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -147,7 +147,7 @@ msgstr ""
 "/mnt не для записи!\n"
 "Исправить это?"
 
-#: titan.c:1218
+#: titan.c:1220
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1121,7 +1121,7 @@ msgstr "Поиск каналов (Авто)"
 msgid "Automatic start last subtitle"
 msgstr "Автоматический запуск старых субтитров"
 
-#: titan.c:1287
+#: titan.c:1289
 msgid "Automatic stop in 10 seconds."
 msgstr "Автостоп через 10 сек"
 
@@ -3149,9 +3149,9 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1054
-#: titan.c:1063 titan.c:1191 titan.c:1212 titan.c:1218 titan.c:1229
-#: titan.c:1235 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1056
+#: titan.c:1065 titan.c:1193 titan.c:1214 titan.c:1220 titan.c:1231
+#: titan.c:1237 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1592 tithek.h:1614 tithek.h:1631 tithek.h:1863
 #: tithek.h:2023 tithek.h:2308 tithek.h:2336 tithek.h:2352 tithek.h:2364
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3649,7 +3649,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1054
+#: titan.c:1056
 msgid "First Wizzard"
 msgstr "Мастер настроек"
 
@@ -3844,7 +3844,7 @@ msgstr "Частота кадров"
 msgid "Free Space"
 msgstr "Свободное место"
 
-#: titan.c:1229
+#: titan.c:1231
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3852,7 +3852,7 @@ msgstr ""
 "Мало места в /mnt!\n"
 "Могут быть проблемы!"
 
-#: titan.c:1212
+#: titan.c:1214
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4701,7 +4701,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Аудио Inc. AC3 в %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1063 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1065 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5684,8 +5684,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1191 titan.c:1212 titan.c:1218 titan.c:1229
-#: titan.c:1235 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: titan.c:346 titan.c:355 titan.c:1193 titan.c:1214 titan.c:1220 titan.c:1231
+#: titan.c:1237 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1592 tithek.h:1614 tithek.h:1863 tithek.h:2023
 #: tithek.h:2308 tithek.h:2336 tithek.h:2352 tithek.h:2364 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
@@ -6272,8 +6272,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1054 titan.c:1063 titan.c:1191 titan.c:1212
-#: titan.c:1218 titan.c:1229 titan.c:1235 tithek.c:100 tithek_global.h:85
+#: titan.c:346 titan.c:355 titan.c:1056 titan.c:1065 titan.c:1193 titan.c:1214
+#: titan.c:1220 titan.c:1231 titan.c:1237 tithek.c:100 tithek_global.h:85
 #: tithek.h:715 tithek.h:1273 tithek.h:1334 tithek.h:1592 tithek.h:1614
 #: tithek.h:1631 tithek.h:1863 tithek.h:2023 tithek.h:2308 tithek.h:2336
 #: tithek.h:2352 tithek.h:2364 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7339,7 +7339,7 @@ msgstr "Возврат"
 msgid "Receiver reboots now !!!"
 msgstr "Ресивер перезагружается!"
 
-#: titan.c:1191
+#: titan.c:1193
 msgid "Receiver successful unlocked"
 msgstr "Ресивер расблокирован!"
 
@@ -8515,7 +8515,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1054
+#: titan.c:1056
 msgid "Settings OK ?"
 msgstr "Настройки в порядке?"
 
@@ -10165,7 +10165,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1285
+#: titan.c:1287
 msgid "Unknown Error."
 msgstr "Неизвестная ошибка!"
 
