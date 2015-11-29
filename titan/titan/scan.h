@@ -1158,7 +1158,7 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbs(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
-					if(scaninfo.unusedtransponder == 1)
+					if(scaninfo.cleartransponder == 1)
 					{
 						struct transponder* tphelp = gettransponder(tpnode->id);
 						if(tphelp != NULL)
@@ -1178,7 +1178,7 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbc(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
-					if(scaninfo.unusedtransponder == 1)
+					if(scaninfo.cleartransponder == 1)
 					{
 						struct transponder* tphelp = gettransponder(tpnode->id);
 						if(tphelp != NULL)
@@ -1198,7 +1198,7 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbt(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
-					if(scaninfo.unusedtransponder == 1)
+					if(scaninfo.cleartransponder == 1)
 					{
 						struct transponder* tphelp = gettransponder(tpnode->id);
 						if(tphelp != NULL)
@@ -1227,7 +1227,7 @@ void doscan(struct stimerthread* timernode)
 			if(festatus != 0)
 			{
 				scaninfo.tpcount++;
-				if(scaninfo.unusedtransponder == 1)
+				if(scaninfo.cleartransponder == 1)
 				{
 					struct transponder* tphelp = gettransponder(tpnode->id);
 					if(tphelp != NULL)
@@ -1462,7 +1462,7 @@ void delchannelbymultisat()
 	}
 }
 
-void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int system, int favtype, int emptybouquet, int unusedbouquetchannels, int unusedsats, int unusedtransponder, int unusedchannels, int unusedprovider, int timeout, int flag)
+void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int system, int favtype, int emptybouquet, int unusedbouquetchannels, int unusedsatprovider, int cleartransponder, int timeout, int flag)
 {
 	int rcret = 0, tpmax = 0, i = 0, alladded = 0, endmsgshow = 0, tpdel = 0;
 
@@ -1576,11 +1576,14 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			if(clear == 1)
 			{
 				freechannel(1);
-				if(unusedsats == 1) delunusedsat();
-				if(unusedtransponder == 1) delunusedtransponder();
-				if(unusedchannels == 1) delunusedchannel();
-				//if(unusedepgchannel == 1) delunusedepgchannel();
-				if(unusedprovider == 1) delunusedprovider();
+				if(unusedsatprovider == 1)
+				{
+					delunusedsat();
+					delunusedtransponder();
+					delunusedchannel();
+					//delunusedepgchannel();
+					delunusedprovider();
+				}
 			}
 		}
 
@@ -1616,7 +1619,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	scaninfo.clear = clear;
 	scaninfo.tpmax = tpmax;
 	scaninfo.tpdel = tpdel;
-	scaninfo.unusedtransponder = unusedtransponder;
+	scaninfo.cleartransponder = cleartransponder;
 	timernode = addtimer(&doscan, START, 1000, 1, NULL, NULL, NULL);
 
 	while(1)
@@ -1932,7 +1935,7 @@ void screenscanconfig(int flag)
 	int ifec = -1, imodulation = -1, irolloff = -1, ipilot = -1, isystem = -1;
 	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1, ichangename = -1;
 	int ifavtype = -1, iemptybouquet = -1, iunusedbouquetchannels = -1;
-	int iunusedsats = -1, iunusedtransponder = -1, iunusedchannels = -1, iunusedprovider = -1;
+	int iunusedsatprovider = -1, icleartransponder = -1;
 
 	int i = 0, treffer = 0, tunercount = 0;
 	
@@ -1969,11 +1972,9 @@ void screenscanconfig(int flag)
 	struct skin* changename = getscreennode(scan, "changename");
 	struct skin* favtype = getscreennode(scan, "favtype");
 	struct skin* emptybouquet = getscreennode(scan, "emptybouquet");
+	struct skin* unusedsatprovider = getscreennode(scan, "unusedsatprovider");
+	struct skin* cleartransponder = getscreennode(scan, "cleartransponder");
 	struct skin* unusedbouquetchannels = getscreennode(scan, "unusedbouquetchannels");
-	struct skin* unusedsats = getscreennode(scan, "unusedsats");
-	struct skin* unusedtransponder = getscreennode(scan, "unusedtransponder");
-	struct skin* unusedchannels = getscreennode(scan, "unusedchannels");
-	struct skin* unusedprovider = getscreennode(scan, "unusedprovider");
 
 	struct skin* b4 = getscreennode(scan, "b4");
 	struct skin* b5 = getscreennode(scan, "b5");
@@ -2372,22 +2373,13 @@ start:
 	addchoicebox(unusedbouquetchannels, "0", _("no"));
 	addchoicebox(unusedbouquetchannels, "1", _("yes"));
 
-	//unusedsats
-	addchoicebox(unusedsats, "0", _("no"));
-	addchoicebox(unusedsats, "1", _("yes"));
+	//unusedsatprovider
+	addchoicebox(unusedsatprovider, "0", _("no"));
+	addchoicebox(unusedsatprovider, "1", _("yes"));
 
-	//unusedtransponder
-	addchoicebox(unusedtransponder, "0", _("no"));
-	addchoicebox(unusedtransponder, "1", _("yes"));
-
-	//unusedchannels
-	addchoicebox(unusedchannels, "0", _("no"));
-	addchoicebox(unusedchannels, "1", _("yes"));
-
-	//unusedprovider
-	addchoicebox(unusedprovider, "0", _("no"));
-	addchoicebox(unusedprovider, "1", _("yes"));
-
+	//cleartransponder
+	addchoicebox(cleartransponder, "0", _("no"));
+	addchoicebox(cleartransponder, "1", _("yes"));
 
 	drawscreen(scan, 2, 0);
 	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, hp, lp, bandwidth, transmission, guardinterval, hierarchy, b4, b5, flag);
@@ -2403,19 +2395,15 @@ start:
 		{
 			emptybouquet->hidden = NO;
 			unusedbouquetchannels->hidden = NO;
-			unusedsats->hidden = NO;
-			unusedtransponder->hidden = NO;
-			unusedchannels->hidden = NO;
-			unusedprovider->hidden = NO;
+			unusedsatprovider->hidden = NO;
+			cleartransponder->hidden = NO;
 		}
 		else
 		{
 			emptybouquet->hidden = YES;
 			unusedbouquetchannels->hidden = YES;
-			unusedsats->hidden = YES;
-			unusedtransponder->hidden = YES;
-			unusedchannels->hidden = YES;
-			unusedprovider->hidden = YES;
+			unusedsatprovider->hidden = YES;
+			cleartransponder->hidden = YES;
 		}
 		drawscreen(scan, 0, 0);
 
@@ -2452,10 +2440,8 @@ start:
 		if(favtype->ret != NULL) ifavtype = atoi(favtype->ret);
 		if(emptybouquet->ret != NULL) iemptybouquet = atoi(emptybouquet->ret);
 		if(unusedbouquetchannels->ret != NULL) iunusedbouquetchannels = atoi(unusedbouquetchannels->ret);
-		if(unusedsats->ret != NULL) iunusedsats = atoi(unusedsats->ret);
-		if(unusedtransponder->ret != NULL) iunusedtransponder = atoi(unusedtransponder->ret);
-		if(unusedchannels->ret != NULL) iunusedchannels = atoi(unusedchannels->ret);
-		if(unusedprovider->ret != NULL) iunusedprovider = atoi(unusedprovider->ret);
+		if(unusedsatprovider->ret != NULL) iunusedsatprovider = atoi(unusedsatprovider->ret);
+		if(cleartransponder->ret != NULL) icleartransponder = atoi(cleartransponder->ret);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
@@ -2478,7 +2464,7 @@ start:
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(scan);
-			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, ichangename, isystem, ifavtype, iemptybouquet, iunusedbouquetchannels, iunusedsats, iunusedtransponder, iunusedchannels, iunusedprovider, 5000000, flag);
+			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, ichangename, isystem, ifavtype, iemptybouquet, iunusedbouquetchannels, iunusedsatprovider, icleartransponder, 5000000, flag);
 			drawscreen(scan, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL) && tpnode != NULL && iscantype == 0)
