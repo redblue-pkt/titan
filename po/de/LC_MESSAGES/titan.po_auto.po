@@ -7714,11 +7714,11 @@ msgstr "Lösche nicht verfügbare Sender aus Favoriten Liste"
 
 #: skin_default_skin.xml.h:483
 msgid "Remove unused Satellites/Providers"
-msgstr ""
+msgstr "Lösche nicht verfügbare Satelliten/Anbieter"
 
 #: skin_default_skin.xml.h:484
 msgid "Remove unused Transponder on used Satellites/Providers"
-msgstr ""
+msgstr "Lösche nicht verfügbare Transponder vom aktiven Satelliten/Anbieter"
 
 #: extensions.h:300
 msgid "Removeing"
