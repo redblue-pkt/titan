@@ -1013,6 +1013,8 @@ int main(int argc, char *argv[])
 	{
 		status.updatevfd = PAUSE;
 		resettvpic();
+		screentunerconfig();
+		resettvpic();
 		screenscanconfig(1);
 		resettvpic();
 		writevfd("");
