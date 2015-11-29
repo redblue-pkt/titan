@@ -469,8 +469,13 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 		tphelp = gettransponder(transponderid);
 		if(tphelp != NULL)
 		{
-			changetransponderid(tphelp, 0);
+			deltranspondercache(tphelp->id, tphelp);
+			tphelp->id = 0;
+			modifytranspondercache(tphelp->id, tphelp);
 			debug(500, "set old tid: %llu to 0", transponderid);
+	
+			//changetransponderid(tphelp, 0);
+			//debug(500, "set old tid: %llu to 0", transponderid);
 		}
 		changetransponderid(tpnode, transponderid);
 		status.writetransponder = 1;
