@@ -13552,9 +13552,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Delete unused Satellite / Providers"
-#~ msgstr "Lösche nicht verfügbare Satelliten / Anbieter"
-
-#~ msgid "Optimize used Satellite / Providers"
-#~ msgstr "Optimiere verfügbare Satelliten / Anbieter"
