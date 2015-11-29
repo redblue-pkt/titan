@@ -2717,7 +2717,7 @@ msgstr "Ausgewählten Eintrag löschen?"
 
 #: skin_default_skin.xml.h:144
 msgid "Delete unused Satellite / Providers"
-msgstr ""
+msgstr "Lösche nicht verfügbare Satelliten / Anbieter"
 
 #: mediadb.h:1087 play.h:585 skin_default_skin.xml.h:143
 msgid "Delete unused entrys before scan"
@@ -6616,7 +6616,7 @@ msgstr "optimieren"
 
 #: skin_default_skin.xml.h:404
 msgid "Optimize used Satellite / Providers"
-msgstr ""
+msgstr "Optimiere verfügbare Satelliten / Anbieter"
 
 #: skin_default_skin.xml.h:405
 msgid "Orbital Position:"
