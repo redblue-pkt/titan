@@ -150,7 +150,7 @@ msgstr ""
 msgid "->swap<-"
 msgstr "Tauschen"
 
-#: titan.c:1235
+#: titan.c:1237
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -158,7 +158,7 @@ msgstr ""
 "FEHLER: /mnt ist nicht beschreibbar!\n"
 "Soll ein Reparaturversuch gestartet werden?"
 
-#: titan.c:1218
+#: titan.c:1220
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1149,7 +1149,7 @@ msgstr "Automatische Sendersuche"
 msgid "Automatic start last subtitle"
 msgstr "Automatischer Untertitel Start"
 
-#: titan.c:1287
+#: titan.c:1289
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatisches Beenden in 10 Sekunden."
 
@@ -3217,9 +3217,9 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1054
-#: titan.c:1063 titan.c:1191 titan.c:1212 titan.c:1218 titan.c:1229
-#: titan.c:1235 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1056
+#: titan.c:1065 titan.c:1193 titan.c:1214 titan.c:1220 titan.c:1231
+#: titan.c:1237 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1592 tithek.h:1614 tithek.h:1631 tithek.h:1863
 #: tithek.h:2023 tithek.h:2308 tithek.h:2336 tithek.h:2352 tithek.h:2364
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3724,7 +3724,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1054
+#: titan.c:1056
 msgid "First Wizzard"
 msgstr "Erstinstallationsassistent"
 
@@ -3929,7 +3929,7 @@ msgstr "Bildfrequenz"
 msgid "Free Space"
 msgstr "Freier Speicher"
 
-#: titan.c:1229
+#: titan.c:1231
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3937,7 +3937,7 @@ msgstr ""
 "FEHLER: Der Speicher in /mnt ist nicht ausreichend!\n"
 "Das kann zu Problemen führen!"
 
-#: titan.c:1212
+#: titan.c:1214
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4870,7 +4870,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "AC3-Angleichung durch Stereotonabsenkung in %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1063 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1065 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5855,8 +5855,8 @@ msgstr "Menüliste"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1191 titan.c:1212 titan.c:1218 titan.c:1229
-#: titan.c:1235 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: titan.c:346 titan.c:355 titan.c:1193 titan.c:1214 titan.c:1220 titan.c:1231
+#: titan.c:1237 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1592 tithek.h:1614 tithek.h:1863 tithek.h:2023
 #: tithek.h:2308 tithek.h:2336 tithek.h:2352 tithek.h:2364 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
@@ -6447,8 +6447,8 @@ msgstr "Ö"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1054 titan.c:1063 titan.c:1191 titan.c:1212
-#: titan.c:1218 titan.c:1229 titan.c:1235 tithek.c:100 tithek_global.h:85
+#: titan.c:346 titan.c:355 titan.c:1056 titan.c:1065 titan.c:1193 titan.c:1214
+#: titan.c:1220 titan.c:1231 titan.c:1237 tithek.c:100 tithek_global.h:85
 #: tithek.h:715 tithek.h:1273 tithek.h:1334 tithek.h:1592 tithek.h:1614
 #: tithek.h:1631 tithek.h:1863 tithek.h:2023 tithek.h:2308 tithek.h:2336
 #: tithek.h:2352 tithek.h:2364 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7520,7 +7520,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Receiver startet jetzt neu!"
 
-#: titan.c:1191
+#: titan.c:1193
 msgid "Receiver successful unlocked"
 msgstr "Ihr Receiver wurde erfolgreich freigeschaltet"
 
@@ -8698,7 +8698,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1054
+#: titan.c:1056
 msgid "Settings OK ?"
 msgstr "Einstellungen speichern?"
 
@@ -10377,7 +10377,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1285
+#: titan.c:1287
 msgid "Unknown Error."
 msgstr "unbekannter Fehler"
 
