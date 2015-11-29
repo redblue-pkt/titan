@@ -1163,8 +1163,11 @@ void doscan(struct stimerthread* timernode)
 						struct transponder* tphelp = gettransponder(tpnode->id);
 						if(tphelp != NULL)
 						{
-							deltransponderbyid(tpnode->id);
 							debug(500, "delete tuning failed tid: %llu", tpnode->id);
+							deltranspondercache(tphelp->id, tphelp);
+							tphelp->id = 99;
+							modifytranspondercache(tphelp->id, tphelp);
+							status.writetransponder = 1;
 						}
 					}
 					tpnode = tpnode->next;
@@ -1183,8 +1186,11 @@ void doscan(struct stimerthread* timernode)
 						struct transponder* tphelp = gettransponder(tpnode->id);
 						if(tphelp != NULL)
 						{
-							deltransponderbyid(tpnode->id);
 							debug(500, "delete tuning failed tid: %llu", tpnode->id);
+							deltranspondercache(tphelp->id, tphelp);
+							tphelp->id = 99;
+							modifytranspondercache(tphelp->id, tphelp);
+							status.writetransponder = 1;
 						}
 					}
 					tpnode = tpnode->next;
@@ -1203,8 +1209,11 @@ void doscan(struct stimerthread* timernode)
 						struct transponder* tphelp = gettransponder(tpnode->id);
 						if(tphelp != NULL)
 						{
-							deltransponderbyid(tpnode->id);
 							debug(500, "delete tuning failed tid: %llu", tpnode->id);
+							deltranspondercache(tphelp->id, tphelp);
+							tphelp->id = 99;
+							modifytranspondercache(tphelp->id, tphelp);
+							status.writetransponder = 1;
 						}
 					}
 					tpnode = tpnode->next;
@@ -1232,8 +1241,11 @@ void doscan(struct stimerthread* timernode)
 					struct transponder* tphelp = gettransponder(tpnode->id);
 					if(tphelp != NULL)
 					{
-						deltransponderbyid(tpnode->id);
 						debug(500, "delete tuning failed tid: %llu", tpnode->id);
+						deltranspondercache(tphelp->id, tphelp);
+						tphelp->id = 99;
+						modifytranspondercache(tphelp->id, tphelp);
+						status.writetransponder = 1;
 					}
 				}
 				tpnode = tpnode->next;
