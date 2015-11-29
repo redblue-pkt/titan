@@ -790,7 +790,7 @@ msgid ""
 "OK?"
 msgstr ""
 
-#: scan.h:1722
+#: scan.h:1734
 msgid "All new channels added!"
 msgstr "Todos los nuevos canales añadidos!"
 
@@ -1083,7 +1083,7 @@ msgstr "automatico"
 msgid "Auto Resolution"
 msgstr "Resolucion Automatica"
 
-#: scan.h:2114
+#: scan.h:2126
 msgid "Auto Scan"
 msgstr "Exploracion automatica"
 
@@ -1358,7 +1358,7 @@ msgstr "Busqueda Ciega"
 msgid "Blindscan Settings"
 msgstr "Busqueda Ciega"
 
-#: scan.h:1670
+#: scan.h:1682
 msgid "Blindscan: "
 msgstr ""
 
@@ -1965,14 +1965,14 @@ msgstr ""
 msgid "Channel or Transponder is empty"
 msgstr "ERROR: El canal o transpondedor esta vacia"
 
-#: scan.h:1692
+#: scan.h:1704
 msgid "Channel scan ended."
 msgstr ""
 "busqueda de canales completada.\n"
 "Ahorra Canales utilizando teclas de colores que se muestaran en su control "
 "remoto."
 
-#: scan.h:1690 scan.h:1720
+#: scan.h:1702 scan.h:1732
 msgid ""
 "Channel scan ended.\n"
 "Nothing found."
@@ -2391,7 +2391,7 @@ msgstr "Crear Transpondedor (Terrestre)"
 msgid "Create Transponder List"
 msgstr "Importar Lista de Transpondedores"
 
-#: scan.h:2365
+#: scan.h:2377
 msgid "Create new"
 msgstr "Crear Nuevo"
 
@@ -2558,7 +2558,7 @@ msgstr "DYNDNS iniciado"
 msgid "Data"
 msgstr ""
 
-#: scan.h:1662
+#: scan.h:1674
 msgid "Data: "
 msgstr ""
 
@@ -2660,7 +2660,7 @@ msgstr "Eliminar EPG antes del escaneo"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: scan.h:2366
+#: scan.h:2378
 msgid "Delete All"
 msgstr "Eliminar todo"
 
@@ -3158,7 +3158,7 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2475 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2487 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
@@ -5721,8 +5721,8 @@ msgstr "Lista de Menus"
 #: record.h:1714 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: scan.h:1690 scan.h:1692 scan.h:1720 scan.h:1722 scan.h:1732 scan.h:1991
-#: scan.h:2082 scan.h:2475 scart.h:12 scart.h:25 security.h:1916 service.h:738
+#: scan.h:1702 scan.h:1704 scan.h:1732 scan.h:1734 scan.h:1744 scan.h:2003
+#: scan.h:2094 scan.h:2487 scart.h:12 scart.h:25 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
@@ -5894,7 +5894,7 @@ msgstr ""
 msgid "Multi EPG"
 msgstr "Multi-EPG"
 
-#: scan.h:2103
+#: scan.h:2115
 msgid "Multi Sat"
 msgstr "Multi Satelite"
 
@@ -6139,7 +6139,7 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: scan.h:2082
+#: scan.h:2094
 msgid "No Tuner configured"
 msgstr "ERROR: Tuner no Configurado!"
 
@@ -6304,8 +6304,8 @@ msgstr "Ö"
 #: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1690 scan.h:1692 scan.h:1720
-#: scan.h:1722 scan.h:1991 scan.h:2082 scan.h:2475 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1702 scan.h:1704 scan.h:1732
+#: scan.h:1734 scan.h:2003 scan.h:2094 scan.h:2487 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -7289,7 +7289,7 @@ msgstr ""
 msgid "Radio Player"
 msgstr "Radio"
 
-#: scan.h:1654
+#: scan.h:1666
 msgid "Radio: "
 msgstr ""
 
@@ -7570,10 +7570,6 @@ msgstr "ERROR: Eliminacion Fallida!"
 msgid "Remove mode"
 msgstr "Eliminar"
 
-#: skin_default_skin.xml.h:481
-msgid "Remove not receivable Transponder"
-msgstr ""
-
 #: extensions.h:104
 msgid "Remove start"
 msgstr "Extraccion comenzo"
@@ -7586,12 +7582,16 @@ msgstr "Eliminado con eExito"
 msgid "Remove this Favorite ?"
 msgstr "Desea eliminar la entrada seleccionada de sus favoritos?"
 
-#: skin_default_skin.xml.h:483
+#: skin_default_skin.xml.h:482
 msgid "Remove unused Channels in Bouquets"
 msgstr "Retire Canales no utilizados de favoritos"
 
+#: skin_default_skin.xml.h:483
+msgid "Remove unused Satellites/Providers"
+msgstr ""
+
 #: skin_default_skin.xml.h:484
-msgid "Remove unused Satellite / Providers"
+msgid "Remove unused Transponder on used Satellites/Providers"
 msgstr ""
 
 #: extensions.h:300
@@ -7977,7 +7977,7 @@ msgstr "Satelite(s)"
 msgid "Sat Finder"
 msgstr "Recepcion Satfinder"
 
-#: scan.h:1628
+#: scan.h:1640
 msgid "Sat/Provider: "
 msgstr "Satelite/Provider"
 
@@ -8077,7 +8077,7 @@ msgstr ""
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: scan.h:1991
+#: scan.h:2003
 msgid "Scan is not allowed if record or stream is running !"
 msgstr ""
 "ERROR: Exploracion no esta permitido durante una grabacion / corriente "
@@ -8685,11 +8685,11 @@ msgstr "Unico-EPG"
 msgid "Single LNB"
 msgstr "Unico LNB"
 
-#: scan.h:2109
+#: scan.h:2121
 msgid "Single Provider"
 msgstr "Unico Provider"
 
-#: scan.h:2102
+#: scan.h:2114
 msgid "Single Sat"
 msgstr "Unico Satelite"
 
@@ -8697,7 +8697,7 @@ msgstr "Unico Satelite"
 msgid "Single Service"
 msgstr "Unico Servicio"
 
-#: scan.h:2101 scan.h:2108
+#: scan.h:2113 scan.h:2120
 msgid "Single Transponder"
 msgstr "Unico Transpondedor"
 
@@ -9420,7 +9420,7 @@ msgstr "TV Resolucion (w): "
 msgid "TV/Radio"
 msgstr ""
 
-#: scan.h:1646
+#: scan.h:1658
 msgid "TV: "
 msgstr ""
 
@@ -10027,7 +10027,7 @@ msgstr ""
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
-#: scan.h:2475
+#: scan.h:2487
 msgid "Transponder changed"
 msgstr "Transpondedor Cambiado"
 
@@ -10038,7 +10038,7 @@ msgid ""
 "Titan will be restarted!"
 msgstr ""
 
-#: optimize.h:272 scan.h:1634
+#: optimize.h:272 scan.h:1646
 msgid "Transponder: "
 msgstr "Transpondedor: "
 
@@ -10204,7 +10204,7 @@ msgstr ""
 msgid "UltraPlus F-9000HD RC config"
 msgstr ""
 
-#: scan.h:2364
+#: scan.h:2376
 msgid "Unchanged"
 msgstr "No cambie"
 
@@ -10556,7 +10556,7 @@ msgstr "Espere"
 msgid "Wait for cam ready"
 msgstr "Espere a que la CAM esta listo"
 
-#: scan.h:1732
+#: scan.h:1744
 msgid "Wait for channel scan end"
 msgstr "Por favor espere a que la exploracion del canal para finalizar"
 
@@ -11976,9 +11976,9 @@ msgstr "NFS Servidor"
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1861
-#: scan.h:2344 scan.h:2348 scan.h:2352 scan.h:2356 scan.h:2361 scan.h:2369
-#: scan.h:2373 scan.h:2377 scan.h:2381 screensaveradjust.h:19
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1873
+#: scan.h:2356 scan.h:2360 scan.h:2364 scan.h:2368 scan.h:2373 scan.h:2381
+#: scan.h:2385 scan.h:2389 scan.h:2393 screensaveradjust.h:19
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
 #: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
@@ -12395,7 +12395,7 @@ msgstr "Boton Rojo"
 msgid "remote Desktop Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:482
+#: skin_default_skin.xml.h:481
 msgid "remove service"
 msgstr "Eliminar de los favoritos"
 
@@ -13364,8 +13364,8 @@ msgstr "amarillo"
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1862 scan.h:2345 scan.h:2349 scan.h:2353 scan.h:2357
-#: scan.h:2360 scan.h:2370 scan.h:2374 scan.h:2378 scan.h:2382
+#: rectimer.h:1141 scan.h:1874 scan.h:2357 scan.h:2361 scan.h:2365 scan.h:2369
+#: scan.h:2372 scan.h:2382 scan.h:2386 scan.h:2390 scan.h:2394
 #: screensaveradjust.h:20 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
 #: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
