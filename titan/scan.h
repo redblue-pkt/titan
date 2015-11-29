@@ -463,7 +463,8 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	else if(fenode->feinfo->type == FE_OFDM)
 		transponderid = transponderid | ((uint64_t)2 << 32);
 		
-	if(tpnode != NULL && (tpnode->id != transponderid || scaninfo.fenode->feinfo->type == FE_QAM || scaninfo.fenode->feinfo->type == FE_OFDM) && tpnode->id != 99)
+	//if(tpnode != NULL && (tpnode->id != transponderid || scaninfo.fenode->feinfo->type == FE_QAM || scaninfo.fenode->feinfo->type == FE_OFDM) && tpnode->id != 99)
+	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
 		tphelp = gettransponder(transponderid);
 		if(tphelp != NULL)
