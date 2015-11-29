@@ -13334,15 +13334,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Remove unused Channels"
-#~ msgstr "Remove unavailable Channels"
-
-#~ msgid "Remove unused Provider"
-#~ msgstr "Remove unavailable Providers"
-
-#~ msgid "Remove unused Sats"
-#~ msgstr "Remove unavailable Satellites"
-
-#~ msgid "Remove unused Transponder"
-#~ msgstr "Remove unavailable Transponders"
