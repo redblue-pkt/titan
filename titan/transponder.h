@@ -886,7 +886,7 @@ void deltransponderbyid(uint64_t transponderid)
 	}
 }
 
-void deltransponderbyorbitalposandid(uint64_t transponderid, int orbitalpos)
+void deltransponderonscan(uint64_t transponderid, unsigned int frequency, int orbitalpos)
 {
 	struct transponder *node = transponder, *prev = transponder;
 
@@ -894,7 +894,7 @@ void deltransponderbyorbitalposandid(uint64_t transponderid, int orbitalpos)
 	{
 		prev = node;
 		node = node->next;
-		if(prev != NULL && prev->orbitalpos == orbitalpos && prev->id == transponderid)
+		if(prev != NULL && prev->id == transponderid && prev->orbitalpos == orbitalpos && prev->frequency == frequency)
 			deltransponder(prev);
 	}
 }

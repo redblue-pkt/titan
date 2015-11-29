@@ -1160,15 +1160,8 @@ void doscan(struct stimerthread* timernode)
 					scaninfo.tpcount++;
 					if(scaninfo.cleartransponder == 1)
 					{
-						struct transponder* tphelp = gettransponder(tpnode->id);
-						if(tphelp != NULL)
-						{
-							debug(500, "delete tuning failed tid: %llu", tpnode->id);
-							deltranspondercache(tphelp->id, tphelp);
-							tphelp->id = 99;
-							modifytranspondercache(tphelp->id, tphelp);
-							status.writetransponder = 1;
-						}
+						debug(500, "delete tuning failed id=%llu freq=%d orbitalpos=%d tpnode=%p", tpnode->id, tpnode->frequency, tpnode->orbitalpos, tpnode);
+						deltransponderonscan(tpnode->id, tpnode->frequency, tpnode->orbitalpos);
 					}
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
@@ -1183,15 +1176,8 @@ void doscan(struct stimerthread* timernode)
 					scaninfo.tpcount++;
 					if(scaninfo.cleartransponder == 1)
 					{
-						struct transponder* tphelp = gettransponder(tpnode->id);
-						if(tphelp != NULL)
-						{
-							debug(500, "delete tuning failed tid: %llu", tpnode->id);
-							deltranspondercache(tphelp->id, tphelp);
-							tphelp->id = 99;
-							modifytranspondercache(tphelp->id, tphelp);
-							status.writetransponder = 1;
-						}
+						debug(500, "delete tuning failed id=%llu freq=%d orbitalpos=%d tpnode=%p", tpnode->id, tpnode->frequency, tpnode->orbitalpos, tpnode);
+						deltransponderonscan(tpnode->id, tpnode->frequency, tpnode->orbitalpos);
 					}
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
@@ -1206,15 +1192,8 @@ void doscan(struct stimerthread* timernode)
 					scaninfo.tpcount++;
 					if(scaninfo.cleartransponder == 1)
 					{
-						struct transponder* tphelp = gettransponder(tpnode->id);
-						if(tphelp != NULL)
-						{
-							debug(500, "delete tuning failed tid: %llu", tpnode->id);
-							deltranspondercache(tphelp->id, tphelp);
-							tphelp->id = 99;
-							modifytranspondercache(tphelp->id, tphelp);
-							status.writetransponder = 1;
-						}
+						debug(500, "delete tuning failed id=%llu freq=%d orbitalpos=%d tpnode=%p", tpnode->id, tpnode->frequency, tpnode->orbitalpos, tpnode);
+						deltransponderonscan(tpnode->id, tpnode->frequency, tpnode->orbitalpos);
 					}
 					tpnode = tpnode->next;
 					debug(500, "tuning failed");
@@ -1238,15 +1217,8 @@ void doscan(struct stimerthread* timernode)
 				scaninfo.tpcount++;
 				if(scaninfo.cleartransponder == 1)
 				{
-					struct transponder* tphelp = gettransponder(tpnode->id);
-					if(tphelp != NULL)
-					{
-						debug(500, "delete tuning failed tid: %llu", tpnode->id);
-						deltranspondercache(tphelp->id, tphelp);
-						tphelp->id = 99;
-						modifytranspondercache(tphelp->id, tphelp);
-						status.writetransponder = 1;
-					}
+					debug(500, "delete tuning failed id=%llu freq=%d orbitalpos=%d tpnode=%p", tpnode->id, tpnode->frequency, tpnode->orbitalpos, tpnode);
+					deltransponderonscan(tpnode->id, tpnode->frequency, tpnode->orbitalpos);
 				}
 				tpnode = tpnode->next;
 				debug(500, "tuning failed last");
