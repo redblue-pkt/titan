@@ -13337,6 +13337,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Select Your Serach Modus"
-#~ msgstr "Select your search mode"

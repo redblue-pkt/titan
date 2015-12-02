@@ -13321,18 +13321,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Create Transponder (All)"
-#~ msgstr "Создать транспондер (Все)"
-
-#~ msgid "Create Transponder (Cable)"
-#~ msgstr "Создать транспондер (Кабельное)"
-
-#~ msgid "Create Transponder (Sat)"
-#~ msgstr "Создать транспондер (Спутник)"
-
-#~ msgid "Create Transponder (Terrestrial)"
-#~ msgstr "Создать транспондер (Наземное)"
-
-#~ msgid "Select Your Serach Modus"
-#~ msgstr "Выберите режим поиска"
