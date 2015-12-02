@@ -1618,7 +1618,7 @@ msgstr "Συχνότητα ελέγχου"
 msgid "CPU info"
 msgstr ""
 
-#: blindscanadjust.h:121 tunerconfig.h:339
+#: blindscanadjust.h:121
 msgid "Cable"
 msgstr ""
 
@@ -2298,6 +2298,10 @@ msgstr ""
 msgid "Create Record Picture"
 msgstr ""
 
+#: skin_default_skin.xml.h:124
+msgid "Create Satellites/Provider"
+msgstr ""
+
 #: global.h:6639
 msgid "Create Satellites/Provider (All)"
 msgstr ""
@@ -2314,16 +2318,12 @@ msgstr ""
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
-#: skin_default_skin.xml.h:124
+#: skin_default_skin.xml.h:125
 msgid "Create Settings Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:126
-msgid "Create Thumb Picture"
-msgstr ""
-
 #: skin_default_skin.xml.h:127
-msgid "Create Transponder List"
+msgid "Create Thumb Picture"
 msgstr ""
 
 #: scan.h:2349
@@ -7002,6 +7002,14 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
+#: tunerconfig.h:339
+msgid "Provider (DVB-C)"
+msgstr ""
+
+#: tunerconfig.h:417
+msgid "Provider (DVB-T)"
+msgstr ""
+
 #: skin_default_skin.xml.h:455
 msgid "Provider:"
 msgstr ""
@@ -9278,10 +9286,6 @@ msgstr ""
 msgid "Terrestrial: "
 msgstr ""
 
-#: tunerconfig.h:417
-msgid "Terrestrisch"
-msgstr ""
-
 #: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:633
 #: skins_panel_skin.xml.h:19
 msgid "Test"
@@ -10984,7 +10988,7 @@ msgstr ""
 msgid "cover"
 msgstr "fullcover"
 
-#: httpdfunc.h:6630 httpdfunc.h:6655 skin_default_skin.xml.h:125
+#: httpdfunc.h:6630 httpdfunc.h:6655 skin_default_skin.xml.h:126
 msgid "create System Backup"
 msgstr ""
 

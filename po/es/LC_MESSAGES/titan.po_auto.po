@@ -1645,7 +1645,7 @@ msgstr "CPU Frecuencia"
 msgid "CPU info"
 msgstr "CPU Informacion"
 
-#: blindscanadjust.h:121 tunerconfig.h:339
+#: blindscanadjust.h:121
 msgid "Cable"
 msgstr ""
 
@@ -2363,6 +2363,10 @@ msgstr "Crear Ruta"
 msgid "Create Record Picture"
 msgstr "Crear Grabar Previo"
 
+#: skin_default_skin.xml.h:124
+msgid "Create Satellites/Provider"
+msgstr ""
+
 #: global.h:6639
 msgid "Create Satellites/Provider (All)"
 msgstr ""
@@ -2379,17 +2383,13 @@ msgstr ""
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
-#: skin_default_skin.xml.h:124
+#: skin_default_skin.xml.h:125
 msgid "Create Settings Menu"
 msgstr "Menu de creacion de Transpondedor"
 
-#: skin_default_skin.xml.h:126
+#: skin_default_skin.xml.h:127
 msgid "Create Thumb Picture"
 msgstr "Crear miniaturas"
-
-#: skin_default_skin.xml.h:127
-msgid "Create Transponder List"
-msgstr "Importar Lista de Transpondedores"
 
 #: scan.h:2349
 msgid "Create new"
@@ -7170,6 +7170,14 @@ msgstr "Proveedor"
 msgid "Provider"
 msgstr "Proveedor"
 
+#: tunerconfig.h:339
+msgid "Provider (DVB-C)"
+msgstr ""
+
+#: tunerconfig.h:417
+msgid "Provider (DVB-T)"
+msgstr ""
+
 #: skin_default_skin.xml.h:455
 msgid "Provider:"
 msgstr "Proveedor: "
@@ -9462,10 +9470,6 @@ msgstr "Terrestre"
 msgid "Terrestrial: "
 msgstr "Terrestre"
 
-#: tunerconfig.h:417
-msgid "Terrestrisch"
-msgstr "Terrestre"
-
 #: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:633
 #: skins_panel_skin.xml.h:19
 msgid "Test"
@@ -11198,7 +11202,7 @@ msgstr "Copiar servicios a Favoritos"
 msgid "cover"
 msgstr "Cubierto"
 
-#: httpdfunc.h:6630 httpdfunc.h:6655 skin_default_skin.xml.h:125
+#: httpdfunc.h:6630 httpdfunc.h:6655 skin_default_skin.xml.h:126
 msgid "create System Backup"
 msgstr "Crear una copia de seguridad del sistema"
 
@@ -13402,3 +13406,9 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Create Transponder List"
+#~ msgstr "Importar Lista de Transpondedores"
+
+#~ msgid "Terrestrisch"
+#~ msgstr "Terrestre"
