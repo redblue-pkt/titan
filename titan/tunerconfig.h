@@ -336,7 +336,7 @@ void createcablelist(struct dvbdev* tuner, struct skin* tunerreceptiondvbc, stru
 	if(tmp != NULL)
 	{
 		tmp->type = CHOICEBOX;
-		changetext(tmp, _("Cable"));
+		changetext(tmp, _("Provider (DVB-C)"));
 
 		tmpstr = ostrcat(_("undefined"), "\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, satstring, 1, 0);
@@ -414,7 +414,7 @@ void createterrlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbt, struc
 	if(tmp != NULL)
 	{
 		tmp->type = CHOICEBOX;
-		changetext(tmp, _("Terrestrisch"));
+		changetext(tmp, _("Provider (DVB-T)"));
 
 		tmpstr = ostrcat(_("undefined"), "\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, satstring, 1, 0);
