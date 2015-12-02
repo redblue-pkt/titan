@@ -6698,7 +6698,7 @@ void convertsettings()
 	}
 
 //	free(tmpstr), tmpstr = NULL;
-	textbox(_("Message"), _("Satellite/Provider import done, Titan will be restarted!\nPlease check tuner config and execute a channel search after restart."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
+	textbox(_("Message"), _("Satellite/Provider import done, Titan will be restarted!\nPlease check tuner config and execute a channel search after restart."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 200, 0, 0);
 	//sync usb
 	system("sync");
 	//enable autoscan after guirestart
