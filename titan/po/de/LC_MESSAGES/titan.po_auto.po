@@ -2398,6 +2398,22 @@ msgstr "Verzeichnis anlegen"
 msgid "Create Record Picture"
 msgstr "Erstelle Aufnahme Vorschaubild"
 
+#: global.h:6639
+msgid "Create Satellites/Provider (All)"
+msgstr ""
+
+#: global.h:6637
+msgid "Create Satellites/Provider (Cable)"
+msgstr ""
+
+#: global.h:6636
+msgid "Create Satellites/Provider (Sat)"
+msgstr ""
+
+#: global.h:6638
+msgid "Create Satellites/Provider (Terrestrial)"
+msgstr ""
+
 #: skin_default_skin.xml.h:124
 msgid "Create Settings Menu"
 msgstr "Transponder Erstellungsmenü"
@@ -2405,22 +2421,6 @@ msgstr "Transponder Erstellungsmenü"
 #: skin_default_skin.xml.h:126
 msgid "Create Thumb Picture"
 msgstr "Vorschaubilder erstellen"
-
-#: global.h:6639
-msgid "Create Transponder (All)"
-msgstr "Erstelle Transponder (Alle)"
-
-#: global.h:6637
-msgid "Create Transponder (Cable)"
-msgstr "Erstelle Transponder (Kabel)"
-
-#: global.h:6636
-msgid "Create Transponder (Sat)"
-msgstr "Erstelle Transponder (Sat)"
-
-#: global.h:6638
-msgid "Create Transponder (Terrestrial)"
-msgstr "Erstelle Transponder (Terrestrisch)"
 
 #: skin_default_skin.xml.h:127
 msgid "Create Transponder List"
@@ -4863,6 +4863,10 @@ msgstr ""
 
 #: tpk_description.h:88
 msgid "ImdBapi Info Plugin"
+msgstr ""
+
+#: global.h:6641
+msgid "Import mode"
 msgstr ""
 
 #: skin_default_skin.xml.h:307
@@ -8157,6 +8161,12 @@ msgstr "Satelliten Auswahl"
 msgid "Satellite"
 msgstr "Satellit"
 
+#: global.h:6701
+msgid ""
+"Satellite/Provider import done, Titan will be restarted!\n"
+"Please check tuner config and execute a channel search after restart."
+msgstr ""
+
 #: channellist.h:770 channellist.h:1292 channellist.h:1541
 msgid "Satellites"
 msgstr "Satelliten"
@@ -8554,10 +8564,6 @@ msgstr "Unicable Hersteller auswählen"
 #: titan.c:1001
 msgid "Select Your Remote Control"
 msgstr "Fernbedienungsauswahl Menü"
-
-#: global.h:6641
-msgid "Select Your Serach Modus"
-msgstr "Wählen Sie den Such Modus"
 
 #: settings_mediabutton.h:48
 msgid "Select a function for the Media button"
@@ -10171,13 +10177,6 @@ msgstr ""
 #: scan.h:2459
 msgid "Transponder changed"
 msgstr "Transponder wurde geändert"
-
-#: global.h:6701
-msgid ""
-"Transponder/Satellite Convert done, please use channel search.\n"
-"\n"
-"Titan will be restarted!"
-msgstr ""
 
 #: optimize.h:272 scan.h:1618
 msgid "Transponder: "
@@ -13556,3 +13555,18 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Create Transponder (All)"
+#~ msgstr "Erstelle Transponder (Alle)"
+
+#~ msgid "Create Transponder (Cable)"
+#~ msgstr "Erstelle Transponder (Kabel)"
+
+#~ msgid "Create Transponder (Sat)"
+#~ msgstr "Erstelle Transponder (Sat)"
+
+#~ msgid "Create Transponder (Terrestrial)"
+#~ msgstr "Erstelle Transponder (Terrestrisch)"
+
+#~ msgid "Select Your Serach Modus"
+#~ msgstr "Wählen Sie den Such Modus"

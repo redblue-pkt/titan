@@ -2298,28 +2298,28 @@ msgstr ""
 msgid "Create Record Picture"
 msgstr ""
 
+#: global.h:6639
+msgid "Create Satellites/Provider (All)"
+msgstr ""
+
+#: global.h:6637
+msgid "Create Satellites/Provider (Cable)"
+msgstr ""
+
+#: global.h:6636
+msgid "Create Satellites/Provider (Sat)"
+msgstr ""
+
+#: global.h:6638
+msgid "Create Satellites/Provider (Terrestrial)"
+msgstr ""
+
 #: skin_default_skin.xml.h:124
 msgid "Create Settings Menu"
 msgstr ""
 
 #: skin_default_skin.xml.h:126
 msgid "Create Thumb Picture"
-msgstr ""
-
-#: global.h:6639
-msgid "Create Transponder (All)"
-msgstr ""
-
-#: global.h:6637
-msgid "Create Transponder (Cable)"
-msgstr ""
-
-#: global.h:6636
-msgid "Create Transponder (Sat)"
-msgstr ""
-
-#: global.h:6638
-msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
 #: skin_default_skin.xml.h:127
@@ -4611,6 +4611,10 @@ msgstr ""
 
 #: tpk_description.h:88
 msgid "ImdBapi Info Plugin"
+msgstr ""
+
+#: global.h:6641
+msgid "Import mode"
 msgstr ""
 
 #: skin_default_skin.xml.h:307
@@ -7861,6 +7865,12 @@ msgstr "Satelita"
 msgid "Satellite"
 msgstr ""
 
+#: global.h:6701
+msgid ""
+"Satellite/Provider import done, Titan will be restarted!\n"
+"Please check tuner config and execute a channel search after restart."
+msgstr ""
+
 #: channellist.h:770 channellist.h:1292 channellist.h:1541
 msgid "Satellites"
 msgstr ""
@@ -8255,10 +8265,6 @@ msgstr ""
 
 #: titan.c:1001
 msgid "Select Your Remote Control"
-msgstr ""
-
-#: global.h:6641
-msgid "Select Your Serach Modus"
 msgstr ""
 
 #: settings_mediabutton.h:48
@@ -9828,13 +9834,6 @@ msgstr ""
 #: scan.h:2459
 msgid "Transponder changed"
 msgstr "Transponder:"
-
-#: global.h:6701
-msgid ""
-"Transponder/Satellite Convert done, please use channel search.\n"
-"\n"
-"Titan will be restarted!"
-msgstr ""
 
 #: optimize.h:272 scan.h:1618
 msgid "Transponder: "
