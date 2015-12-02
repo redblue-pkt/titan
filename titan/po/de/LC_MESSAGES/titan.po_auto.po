@@ -13559,6 +13559,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Create Transponder List"
-#~ msgstr "Transponderliste importieren"

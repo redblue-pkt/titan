@@ -13341,6 +13341,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Terrestrisch"
-#~ msgstr "Terrestrial"
