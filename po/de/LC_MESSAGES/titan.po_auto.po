@@ -2400,23 +2400,23 @@ msgstr "Erstelle Aufnahme Vorschaubild"
 
 #: skin_default_skin.xml.h:124
 msgid "Create Satellites/Provider"
-msgstr ""
+msgstr "Erzeuge Satelliten/Anbieter"
 
 #: global.h:6639
 msgid "Create Satellites/Provider (All)"
-msgstr ""
+msgstr "Erzeuge Satelliten/Anbieter (Alle)"
 
 #: global.h:6637
 msgid "Create Satellites/Provider (Cable)"
-msgstr ""
+msgstr "Erzeuge Satelliten/Anbieter (Kabel)"
 
 #: global.h:6636
 msgid "Create Satellites/Provider (Sat)"
-msgstr ""
+msgstr "Erzeuge Satelliten/Anbieter (Sat)"
 
 #: global.h:6638
 msgid "Create Satellites/Provider (Terrestrial)"
-msgstr ""
+msgstr "Erzeuge Satelliten/Anbieter (Terrestrisch)"
 
 #: skin_default_skin.xml.h:125
 msgid "Create Settings Menu"
@@ -7296,11 +7296,11 @@ msgstr "Anbieter"
 
 #: tunerconfig.h:339
 msgid "Provider (DVB-C)"
-msgstr ""
+msgstr "Anbieter (DVB-C)"
 
 #: tunerconfig.h:417
 msgid "Provider (DVB-T)"
-msgstr ""
+msgstr "Anbieter (DVB-T)"
 
 #: skin_default_skin.xml.h:455
 msgid "Provider:"
@@ -8174,6 +8174,9 @@ msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and execute a channel search after restart."
 msgstr ""
+"Satelliten/Anbieter Import fertig, Titan wird nun neu gestartet!\n"
+"Bitte prüfen Sie nach dem Neustart die Tuner Konfiguration und führen Sie "
+"eine Sendersuche durch. "
 
 #: channellist.h:770 channellist.h:1292 channellist.h:1541
 msgid "Satellites"
@@ -12754,7 +12757,7 @@ msgstr "EPG-Kurzübersicht"
 
 #: adjust.h:185
 msgid "show"
-msgstr ""
+msgstr "anzeigen"
 
 #: tithek_settings.h:24 tithek_settings.h:33
 msgid "show 12 entrys"
