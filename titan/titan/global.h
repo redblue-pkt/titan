@@ -6633,12 +6633,12 @@ void convertsettings()
 	int flag = 0, ret = 0;
 	char* tmpstr = NULL;
 
-	addmenulist(&mlist, "Create Transponder (Sat)", _("Create Transponder (Sat)"), NULL, 0, 0);
-	addmenulist(&mlist, "Create Transponder (Cable)", _("Create Transponder (Cable)"), NULL, 0, 0);
-	addmenulist(&mlist, "Create Transponder (Terrestrial)", _("Create Transponder (Terrestrial)"), NULL, 0, 0);
-	addmenulist(&mlist, "Create Transponder (All)", _("Create Transponder (All)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Transponder (Sat)", _("Create Satellites/Provider (Sat)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Transponder (Cable)", _("Create Satellites/Provider (Cable)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Transponder (Terrestrial)", _("Create Satellites/Provider (Terrestrial)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Transponder (All)", _("Create Satellites/Provider (All)"), NULL, 0, 0);
 
-	mbox = menulistbox(mlist, "createsettings", _("Select Your Serach Modus"), NULL, NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, "createsettings", _("Import mode"), NULL, NULL, NULL, 1, 0);
 	if(mbox != NULL) tmpstr = mbox->name;
 
 	if(ostrcmp(tmpstr, "Create Transponder (Sat)") == 0)
@@ -6698,7 +6698,7 @@ void convertsettings()
 	}
 
 //	free(tmpstr), tmpstr = NULL;
-	textbox(_("Message"), _("Transponder/Satellite Convert done, please use channel search.\n\nTitan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
+	textbox(_("Message"), _("Satellite/Provider import done, Titan will be restarted!\nPlease check tuner config and execute a channel search after restart."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 	//sync usb
 	system("sync");
 	//enable autoscan after guirestart
