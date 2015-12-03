@@ -1749,6 +1749,9 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			delunusedbouquetchannels(0);
 		else
 			delunusedbouquetchannels(1);
+		
+		if(cleartransponder == 1 && unusedsatprovider == 1)
+			deltransponderbyid(0);
 	}
 	delmarkedscreennodes(scan, 1);
 	delownerrc(scan);
