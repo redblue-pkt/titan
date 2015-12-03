@@ -6633,21 +6633,21 @@ void convertsettings()
 	int flag = 0, ret = 0;
 	char* tmpstr = NULL;
 
-	addmenulist(&mlist, "Create Transponder (Sat)", _("Create Satellites/Provider (Sat)"), NULL, 0, 0);
-	addmenulist(&mlist, "Create Transponder (Cable)", _("Create Satellites/Provider (Cable)"), NULL, 0, 0);
-	addmenulist(&mlist, "Create Transponder (Terrestrial)", _("Create Satellites/Provider (Terrestrial)"), NULL, 0, 0);
-	addmenulist(&mlist, "Create Transponder (All)", _("Create Satellites/Provider (All)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Satellites/Provider (Sat)", _("Create Satellites/Provider (Sat)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Satellites/Provider (Cable)", _("Create Satellites/Provider (Cable)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Satellites/Provider (Terrestrial)", _("Create Satellites/Provider (Terrestrial)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Satellites/Provider (All)", _("Create Satellites/Provider (All)"), NULL, 0, 0);
 
 	mbox = menulistbox(mlist, "createsettings", _("Import mode"), NULL, NULL, NULL, 1, 0);
 	if(mbox != NULL) tmpstr = mbox->name;
 
-	if(ostrcmp(tmpstr, "Create Transponder (Sat)") == 0)
+	if(ostrcmp(tmpstr, "Create Satellites/Provider (Sat)") == 0)
 		flag = 0;
-	else if(ostrcmp(tmpstr, "Create Transponder (Cable)") == 0)
+	else if(ostrcmp(tmpstr, "Create Satellites/Provider (Cable)") == 0)
 		flag = 1;
-	else if(ostrcmp(tmpstr, "Create Transponder (Terrestrial)") == 0)
+	else if(ostrcmp(tmpstr, "Create Satellites/Provider (Terrestrial)") == 0)
 		flag = 2;
-	else if(ostrcmp(tmpstr, "Create Transponder (All)") == 0)
+	else if(ostrcmp(tmpstr, "Create Satellites/Provider (All)") == 0)
 		flag = 3;
 	else
 	{
