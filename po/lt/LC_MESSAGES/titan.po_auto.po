@@ -1081,7 +1081,7 @@ msgstr ""
 msgid "Auto Resolution"
 msgstr ""
 
-#: scan.h:2101
+#: scan.h:2098
 msgid "Auto Scan"
 msgstr "Automatinis nuskaitymas"
 
@@ -2372,7 +2372,7 @@ msgstr ""
 msgid "Create Thumb Picture"
 msgstr ""
 
-#: scan.h:2352
+#: scan.h:2349
 msgid "Create new"
 msgstr "Sukurti nauj"
 
@@ -2641,7 +2641,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Trinti"
 
-#: scan.h:2353
+#: scan.h:2350
 msgid "Delete All"
 msgstr "Itrinti visus"
 
@@ -3139,7 +3139,7 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2459 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
@@ -5688,8 +5688,8 @@ msgstr ""
 #: record.h:1714 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716 scan.h:1978
-#: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1916 service.h:738
+#: scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716 scan.h:1975
+#: scan.h:2066 scan.h:2459 scart.h:12 scart.h:25 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
@@ -5861,7 +5861,7 @@ msgstr "Kanal (EPG)"
 msgid "Multi EPG"
 msgstr "Kanal EPG"
 
-#: scan.h:2090
+#: scan.h:2087
 msgid "Multi Sat"
 msgstr "Keli Palydovai"
 
@@ -6106,7 +6106,7 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: scan.h:2069
+#: scan.h:2066
 msgid "No Tuner configured"
 msgstr "ERROR: No tuner configured!"
 
@@ -6272,7 +6272,7 @@ msgstr ""
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
-#: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
+#: scan.h:1706 scan.h:1975 scan.h:2066 scan.h:2459 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -8052,7 +8052,7 @@ msgstr ""
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: scan.h:1978
+#: scan.h:1975
 msgid "Scan is not allowed if record or stream is running !"
 msgstr "ERROR: Scan is not allowed during an active recording / stream!"
 
@@ -8654,11 +8654,11 @@ msgstr "Kanalo EPG"
 msgid "Single LNB"
 msgstr ""
 
-#: scan.h:2096
+#: scan.h:2093
 msgid "Single Provider"
 msgstr "Vienas teikjas"
 
-#: scan.h:2089
+#: scan.h:2086
 msgid "Single Sat"
 msgstr "Vienas Palydovas"
 
@@ -8666,7 +8666,7 @@ msgstr "Vienas Palydovas"
 msgid "Single Service"
 msgstr "Viena Paslauga"
 
-#: scan.h:2088 scan.h:2095
+#: scan.h:2085 scan.h:2092
 msgid "Single Transponder"
 msgstr "Vienintelis transponderis"
 
@@ -9985,7 +9985,7 @@ msgstr ""
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
-#: scan.h:2462
+#: scan.h:2459
 msgid "Transponder changed"
 msgstr "Sistuvas pakeistas"
 
@@ -10154,7 +10154,7 @@ msgstr ""
 msgid "UltraPlus F-9000HD RC config"
 msgstr ""
 
-#: scan.h:2351
+#: scan.h:2348
 msgid "Unchanged"
 msgstr "Nekeiskite"
 
@@ -11922,9 +11922,9 @@ msgstr "NFS serveris"
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1848
-#: scan.h:2331 scan.h:2335 scan.h:2339 scan.h:2343 scan.h:2348 scan.h:2356
-#: scan.h:2360 scan.h:2364 scan.h:2368 screensaveradjust.h:19
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1845
+#: scan.h:2328 scan.h:2332 scan.h:2336 scan.h:2340 scan.h:2345 scan.h:2353
+#: scan.h:2357 scan.h:2361 scan.h:2365 screensaveradjust.h:19
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
 #: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
@@ -13307,8 +13307,8 @@ msgstr "Geltona"
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1849 scan.h:2332 scan.h:2336 scan.h:2340 scan.h:2344
-#: scan.h:2347 scan.h:2357 scan.h:2361 scan.h:2365 scan.h:2369
+#: rectimer.h:1141 scan.h:1846 scan.h:2329 scan.h:2333 scan.h:2337 scan.h:2341
+#: scan.h:2344 scan.h:2354 scan.h:2358 scan.h:2362 scan.h:2366
 #: screensaveradjust.h:20 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
 #: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
