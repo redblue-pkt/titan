@@ -13560,11 +13560,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "Satellite/Provider import done, Titan will be restarted!\n"
-#~ "Please check tuner config and execute a channel search after restart."
-#~ msgstr ""
-#~ "Satelliten/Anbieter Import fertig, Titan wird nun neu gestartet!\n"
-#~ "Bitte prüfen Sie nach dem Neustart die Tuner Konfiguration und führen Sie "
-#~ "eine Sendersuche durch. "
