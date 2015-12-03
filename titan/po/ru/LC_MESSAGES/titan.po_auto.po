@@ -7991,7 +7991,8 @@ msgstr "Спутник"
 #: global.h:6701
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
-"Please check tuner config and execute a channel search after restart."
+"Please check tuner config and\n"
+"execute a channel search after restart."
 msgstr ""
 
 #: channellist.h:770 channellist.h:1292 channellist.h:1541
