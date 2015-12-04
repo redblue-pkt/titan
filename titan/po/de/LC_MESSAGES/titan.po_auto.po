@@ -8175,6 +8175,9 @@ msgid ""
 "Please check tuner config and\n"
 "execute a channel search after restart."
 msgstr ""
+"Satelliten/Anbieter Import fertig, Titan wird nun neu gestartet!\n"
+"Bitte prüfen Sie nach dem Neustart die Tuner Konfiguration\n"
+"und führen Sie eine Sendersuche durch."
 
 #: channellist.h:770 channellist.h:1292 channellist.h:1541
 msgid "Satellites"
