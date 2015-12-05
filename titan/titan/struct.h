@@ -62,9 +62,9 @@
 #include <regex.h>
 #include <mntent.h>
 #include <termios.h>
-#ifndef SH4
+//#ifndef SH4
 #include <sys/stat.h>
-#endif
+//#endif
 
 //for freetype
 #include <ft2build.h>
