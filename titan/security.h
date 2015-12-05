@@ -1297,8 +1297,12 @@ char* getrealboxtype()
 	if(status.realboxtype == NULL)
 	{
 #ifdef MIPSEL
-		if(isfile("/proc/stb/info/boxtype")	== 0) return 0;
-		status.realboxtype = string_toupper(readsys("/proc/stb/info/boxtype", 1));
+		if(isfile("/proc/stb/info/boxtype"))
+			status.realboxtype = string_toupper(readsys("/proc/stb/info/boxtype", 1));
+		else if(isfile("/proc/stb/info/model"))
+			status.realboxtype = string_toupper(readsys("/proc/stb/info/model", 1));
+		else
+			return 0;
 #else
 		if(isfile("/proc/stb/info/model") == 0) return 0;
 		status.realboxtype = string_toupper(readsys("/proc/stb/info/model", 1));
@@ -1312,13 +1316,16 @@ int checkchipset(char* input)
 {
 	int ret = 0;
 #ifdef MIPSEL
-	char* chipset = NULL;
-	chipset = string_toupper(readsys("/proc/stb/info/chipset", 1));
+	if(isfile("/proc/stb/info/chipset"))
+	{
+		char* chipset = NULL;
+		chipset = string_toupper(readsys("/proc/stb/info/chipset", 1));
 
-	if(ostrcmp(chipset, input) == 0)
-		ret = 1;
+		if(ostrcmp(chipset, input) == 0)
+			ret = 1;
 
-	free(chipset); chipset = NULL;
+		free(chipset); chipset = NULL;
+	}
 #endif
 	return ret;
 }
@@ -1329,8 +1336,11 @@ int checkrealbox(char* box)
 	int ret = 0;
 
 #ifdef MIPSEL
-	if(isfile("/proc/stb/info/boxtype")	== 0) return 0;
-	boxversion = string_toupper(readsys("/proc/stb/info/boxtype", 1));
+	if(isfile("/proc/stb/info/boxtype")	== 0))
+		boxversion = string_toupper(readsys("/proc/stb/info/boxtype", 1));
+	else if(isfile("/proc/stb/info/boxtype"))
+		boxversion = string_toupper(readsys("proc/stb/info/model", 1));
+	else return 0;
 #else
 	if(isfile("/proc/stb/info/model") == 0) return 0;
 	boxversion = string_toupper(readsys("/proc/stb/info/model", 1));
