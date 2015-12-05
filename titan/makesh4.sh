@@ -177,236 +177,6 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Tpkdir done"
 echo "[titan]--------------------------------------------------------"
 
-if [ $BUILDTYPE == 222 ]; then
-    echo "[titan]--------------------------------------------------------"
-    echo "[titan] netsurf"
-    echo "[titan]--------------------------------------------------------"
-    
-    cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-    echo make curl
-    make curl
-            
-    cd "$HOME"/flashimg/$SRCDIR/netsurf
-    ./makesh4.sh $STM
-    cd "$HOME"/flashimg/$SRCDIR/titan
-    if [ ! -e "$HOME"/flashimg/$SRCDIR/netsurf/netsurf-2.8/nsfb ]; then
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] netsurf building error !!!"
-        echo "[titan] check your src"
-        echo "[titan]--------------------------------------------------------"
-        touch "$HOME"/flashimg/.ipk-build-error
-        exit 1
-    fi
-    
-    echo "[titan]--------------------------------------------------------"
-    echo "[titan] netsurf done"
-    echo "[titan]--------------------------------------------------------"
-    
-    echo "[titan]--------------------------------------------------------"
-    echo "[titan] minidlna"
-    echo "[titan]--------------------------------------------------------"
-    
-    cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-    echo make minidlna-clean
-    make minidlna-clean
-    echo make minidlna
-    make minidlna
-    cd "$HOME"/flashimg/$SRCDIR/titan
-    
-    if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin/minidlna ]; then
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] minidlna building error !!!"
-        echo "[titan] check your src"
-        echo "[titan]--------------------------------------------------------"
-        touch "$HOME"/flashimg/.ipk-build-error
-        exit 1
-    fi
-    
-    echo "[titan]--------------------------------------------------------"
-    echo "[titan] minidlna done"
-    echo "[titan]--------------------------------------------------------"
-    
-    if [ $STM != "stm23" ] ;then
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] curlftpfs"
-        echo "[titan]--------------------------------------------------------"
-        cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-        echo make curlftpfs-clean
-        make curlftpfs-clean
-        echo make curlftpfs
-        make curlftpfs
-        cd "$HOME"/flashimg/$SRCDIR/titan
-        
-        if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/curlftpfs ]; then
-            echo "[titan]--------------------------------------------------------"
-            echo "[titan] curlftpfs building error !!!"
-            echo "[titan] check your src"
-            echo "[titan]--------------------------------------------------------"
-            touch "$HOME"/flashimg/.ipk-build-error
-            exit 1
-        fi
-        
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] curlftpfs done"
-        echo "[titan]--------------------------------------------------------"
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] djmount"
-        echo "[titan]--------------------------------------------------------"
-        cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-        echo make djmount-clean
-        make djmount-clean
-        echo make djmount
-        make djmount
-        cd "$HOME"/flashimg/$SRCDIR/titan
-        
-        if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount ]; then
-            echo "[titan]--------------------------------------------------------"
-            echo "[titan] djmount building error !!!"
-            echo "[titan] check your src"
-            echo "[titan]--------------------------------------------------------"
-            touch "$HOME"/flashimg/.ipk-build-error
-            exit 1
-        fi
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] djmount done"
-        echo "[titan]--------------------------------------------------------"
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] sshfs"
-        echo "[titan]--------------------------------------------------------"
-        
-        cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-        echo make sshfs-clean
-        make sshfs-clean
-        echo make sshfs
-        make sshfs
-        cd "$HOME"/flashimg/$SRCDIR/titan
-        
-        if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshfs ]; then
-            echo "[titan]--------------------------------------------------------"
-            echo "[titan] sshfs building error !!!"
-            echo "[titan] check your src"
-            echo "[titan]--------------------------------------------------------"
-            touch "$HOME"/flashimg/.ipk-build-error
-            exit 1
-        fi
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] sshfs done"
-        echo "[titan]--------------------------------------------------------"
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] rarfs"
-        echo "[titan]--------------------------------------------------------"
-        
-        cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-        echo make rarfs-clean
-        make rarfs-clean
-        echo make rarfs
-        make rarfs
-        cd "$HOME"/flashimg/$SRCDIR/titan
-        
-        if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs ]; then
-            echo "[titan]--------------------------------------------------------"
-            echo "[titan] sshfs building error !!!"
-            echo "[titan] check your src"
-            echo "[titan]--------------------------------------------------------"
-            touch "$HOME"/flashimg/.ipk-build-error
-            exit 1
-        fi
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] rarfs done"
-        echo "[titan]--------------------------------------------------------"
-    
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] gst"
-        echo "[titan]--------------------------------------------------------"
-        
-        cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-        echo make gst_plugins_dvbmediasink-clean
-        make gst_plugins_dvbmediasink-clean
-        echo make gst_plugins_dvbmediasink
-        make gst_plugins_dvbmediasink
-        cd "$HOME"/flashimg/$SRCDIR/titan
-        
-        if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/gstreamer-0.10 ]; then
-            echo "[titan]--------------------------------------------------------"
-            echo "[titan] gst building error !!!"
-            echo "[titan] check your src"
-            echo "[titan]--------------------------------------------------------"
-            touch "$HOME"/flashimg/.ipk-build-error
-            exit 1
-        fi
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] gst done"
-        echo "[titan]--------------------------------------------------------"
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] directfb"
-        echo "[titan]--------------------------------------------------------"
-        
-        cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-        echo make directfb-clean
-        make directfb-clean
-        echo make directfb
-        make directfb
-        cd "$HOME"/flashimg/$SRCDIR/titan
-        
-        if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 ]; then
-            echo "[titan]--------------------------------------------------------"
-            echo "[titan] directfb building error !!!"
-            echo "[titan] check your src"
-            echo "[titan]--------------------------------------------------------"
-            touch "$HOME"/flashimg/.ipk-build-error
-            exit 1
-        fi
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] directfb done"
-        echo "[titan]--------------------------------------------------------"
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] gmediarender"
-        echo "[titan]--------------------------------------------------------"
-
-
-        "$HOME"/flashimg/$SRCDIR/gmediarender/makesh4.sh $STM $MEDIAFW
-        if [ ! -e "$HOME"/flashimg/$SRCDIR/gmediarender/src/gmediarender ]; then
-            echo "[titan]--------------------------------------------------------"
-            echo "[titan] gmediarender building error !!!"
-            echo "[titan] check your src"
-            echo "[titan]--------------------------------------------------------"
-            touch "$HOME"/flashimg/.ipk-build-error
-            exit 1
-        fi
-        
-        cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-        echo make gmediarender-clean
-        make gmediarender-clean
-        echo make gmediarender
-        make gmediarender
-        cd "$HOME"/flashimg/$SRCDIR/titan
-        
-        if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender ]; then
-            echo "[titan]--------------------------------------------------------"
-            echo "[titan] gmediarender building error !!!"
-            echo "[titan] check your src"
-            echo "[titan]--------------------------------------------------------"
-            touch "$HOME"/flashimg/.ipk-build-error
-            exit 1
-        fi
-        
-        echo "[titan]--------------------------------------------------------"
-        echo "[titan] gmediarender done"
-        echo "[titan]--------------------------------------------------------"
-    fi
-fi
-
 if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
     #echo "[titan]--------------------------------------------------------"
     #echo "[titan] libipkg"
@@ -466,14 +236,14 @@ echo "[titan]--------------------------------------------------------"
 
 if [ $MEDIAFW = 1 ]; then
     eplayer=EPLAYER3
-    eplayerinclude="$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libeplayer3/include
+    eplayerinclude="$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/misc/tools/libeplayer3/include
     eplayerlib=eplayer3
 else
     eplayer=EPLAYER4
-    eplayerinclude="$HOME/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include/gstreamer-0.10
-             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include/glib-2.0
-             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include/libxml2
-             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/lib/glib-2.0/include"
+    eplayerinclude="$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/gstreamer-0.10
+             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/glib-2.0
+             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/libxml2
+             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib/glib-2.0/include"
     eplayerlib=gstreamer-0.10
 fi
 
@@ -483,12 +253,12 @@ else
     devflag=""
 fi
 
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable \
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/include/freetype2 \
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable \
+    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/freetype2 \
     -I $eplayerinclude \
     -I "$HOME"/flashimg/$SRCDIR/libdreamdvd \
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libmmeimage \
+    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/driver/bpamem \
+    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/misc/tools/libmmeimage \
     -I "$HOME"/flashimg/$SRCDIR \
     -c titan.c
     
@@ -499,10 +269,10 @@ fi
 #cd "$HOME"/flashimg/$SRCDIR/titan
 #mkdir .deps
 
-#"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I. -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include/freetype2 -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/driver/bpamem -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/apps/misc/tools/libeplayer3/include -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/apps/misc/tools/libmmeimage -I"$HOME"/flashimg/$SRCDIR/titan  -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/driver/bpamem -I"$HOME"/flashimg/$SRCDIR/libdreamdvd -DSH4 -DEPLAYER3 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -MT titan-titan.o -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
-/bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/host/bin/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DSH4 -Deplayer3 -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/lib -L/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/lib -L/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/lib -o titan titan.o -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host 
+#"$HOME"/flashimg/BUILDGIT/checkout_$STM/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I. -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include/freetype2 -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/driver/bpamem -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/apps/misc/tools/libeplayer3/include -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/apps/misc/tools/libmmeimage -I"$HOME"/flashimg/$SRCDIR/titan  -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/driver/bpamem -I"$HOME"/flashimg/$SRCDIR/libdreamdvd -DSH4 -DEPLAYER3 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -MT titan-titan.o -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
+/bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/apps/titan/titan/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_$STM/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DSH4 -Deplayer3 -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/lib -L/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/lib -L/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/lib -o titan titan.o -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host 
 cp "$HOME"/flashimg/$SRCDIR/titan/.libs/titan "$HOME"/flashimg/$SRCDIR/titan
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-strip titan
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-strip titan
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] titan done"
