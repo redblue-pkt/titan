@@ -1336,9 +1336,9 @@ int checkrealbox(char* box)
 	int ret = 0;
 
 #ifdef MIPSEL
-	if(isfile("/proc/stb/info/boxtype")	== 0))
+	if(isfile("/proc/stb/info/boxtype"))
 		boxversion = string_toupper(readsys("/proc/stb/info/boxtype", 1));
-	else if(isfile("/proc/stb/info/boxtype"))
+	else if(isfile("/proc/stb/info/model"))
 		boxversion = string_toupper(readsys("proc/stb/info/model", 1));
 	else return 0;
 #else
