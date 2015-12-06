@@ -24,7 +24,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr " : No se pudo!"
 
-#: security.h:678 security.h:2096
+#: security.h:678 security.h:2106
 msgid " Days "
 msgstr ""
 
@@ -1018,7 +1018,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Atemio (Hotline)"
 
-#: security.h:2101
+#: security.h:2111
 msgid "Atemio free license"
 msgstr ""
 
@@ -2323,7 +2323,7 @@ msgstr "ATENCION: Canales no copiados"
 msgid "Copy satlist successfull"
 msgstr "Canales copiados con Exito"
 
-#: security.h:2110
+#: security.h:2120
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2715,7 +2715,7 @@ msgstr ""
 "Rojo = kill del Proceso\n"
 "Verde = reiniciar Sistema"
 
-#: security.h:2103
+#: security.h:2113
 msgid "Dev free license"
 msgstr ""
 
@@ -2889,7 +2889,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2078
+#: security.h:2088
 msgid "Driver"
 msgstr ""
 
@@ -3159,7 +3159,7 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
+#: scriptexec.h:41 security.h:663 security.h:680 security.h:1926 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -3443,7 +3443,7 @@ msgstr "Extensiones"
 msgid "Extensions List"
 msgstr "Lista de Extensiones"
 
-#: security.h:2067 security.h:2072
+#: security.h:2077 security.h:2082
 msgid "External Player"
 msgstr ""
 
@@ -3942,7 +3942,7 @@ msgstr "VFD Display"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2061
+#: security.h:2071
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4722,7 +4722,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2049
+#: security.h:2059
 msgid "Image"
 msgstr ""
 
@@ -4926,7 +4926,7 @@ msgstr "Instalar para SWAP (USB o HDD)"
 msgid "Installation start"
 msgstr "La instalacion comenzo"
 
-#: httpdfunc.h:5674 security.h:2056 skin_default_skin.xml.h:314
+#: httpdfunc.h:5674 security.h:2066 skin_default_skin.xml.h:314
 msgid "Installed:"
 msgstr "Instalado:"
 
@@ -5272,7 +5272,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2083
+#: security.h:2093
 msgid "License"
 msgstr ""
 
@@ -5726,7 +5726,7 @@ msgstr "Lista de Menus"
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716 scan.h:1978
-#: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1916 service.h:738
+#: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1926 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
@@ -6310,7 +6310,7 @@ msgstr "Ö"
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:663 security.h:680 security.h:1916 service.h:738
+#: scriptexec.h:41 security.h:663 security.h:680 security.h:1926 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
@@ -10062,7 +10062,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr "Driver para Samsung LCD"
 
-#: security.h:676 security.h:2093
+#: security.h:676 security.h:2103
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10078,7 +10078,7 @@ msgstr "Martes"
 msgid "Tune to channel failed"
 msgstr "ERROR: Para sintonizar Canal fracaso"
 
-#: security.h:2119 skin_default_skin.xml.h:674
+#: security.h:2129 skin_default_skin.xml.h:674
 msgid "Tuner"
 msgstr ""
 
@@ -10119,7 +10119,7 @@ msgstr ""
 "grabacion\n"
 "o corriente durante la reproduccion"
 
-#: security.h:2126 skin_default_skin.xml.h:680
+#: security.h:2136 skin_default_skin.xml.h:680
 msgid "Tunertype"
 msgstr "Tuner Tipo"
 
@@ -10160,7 +10160,7 @@ msgstr ""
 msgid "UE"
 msgstr "Ü"
 
-#: security.h:2099
+#: security.h:2109
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10341,7 +10341,7 @@ msgstr "Video Ajustes"
 msgid "VLC Player"
 msgstr "Reproducir Video"
 
-#: security.h:2052
+#: security.h:2062
 msgid "Version"
 msgstr ""
 
@@ -11412,7 +11412,7 @@ msgstr "Evento"
 msgid "expert (11)"
 msgstr "Modo Experto (11)"
 
-#: security.h:2105
+#: security.h:2115
 msgid "expired"
 msgstr ""
 
@@ -13061,7 +13061,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:345
-#: security.h:2124 skin_default_skin.xml.h:692 skinselector.h:138 stream.h:22
+#: security.h:2134 skin_default_skin.xml.h:692 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13154,7 +13154,7 @@ msgstr "use SSL"
 msgid "v"
 msgstr ""
 
-#: security.h:2086
+#: security.h:2096
 msgid "valid"
 msgstr ""
 
