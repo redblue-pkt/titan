@@ -223,7 +223,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] update git cdkroot"
 echo "[titan]--------------------------------------------------------"
 
-#cp "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libdreamdvd/.libs/* $HOME/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib
+#cp "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/cvs/apps/misc/tools/libdreamdvd/.libs/* $HOME/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] update git cdkroot done"
@@ -237,14 +237,17 @@ echo "[titan]--------------------------------------------------------"
 if [ $MEDIAFW = 1 ]; then
     eplayer=EPLAYER3
     eplayerinclude="$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libeplayer3/include
-    eplayerlib=eplayer3
+    eplayerlib="eplayer3"
+	linking="-lm -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz"
 else
     eplayer=EPLAYER4
-    eplayerinclude="$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/gstreamer-0.10
+    eplayerinclude="$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/gstreamer-1.0
              -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/glib-2.0
              -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/libxml2
-             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib/glib-2.0/include"
-    eplayerlib=gstreamer-0.10
+             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib/glib-2.0/include
+             -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib/gstreamer-1.0/include"
+    eplayerlib=gstreamer-1.0
+	linking="-lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -lgstreamer-1.0 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz"
 fi
 
 if [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
@@ -263,11 +266,12 @@ fi
     -I "$HOME"/flashimg/$SRCDIR \
     -c titan.c
 
-#"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I. -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/freetype2 -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/driver/bpamem -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/titan/libdreamdvd -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libeplayer3/include -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libmmeimage -I"$HOME"/flashimg/$SRCDIR  -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/driver/bpamem -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/ -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/cdk/linux-sh4-2.6.32.61_stm24_0217/include -D__STDC_CONSTANT_MACROS   -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include -MT titan-titan.o -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
-/bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/apps/titan/titan/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/lib -o titan titan.o -lm -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz 
+/bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/apps/titan/titan/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/lib -o titan titan.o $linking
 
 cp "$HOME"/flashimg/$SRCDIR/titan/.libs/titan "$HOME"/flashimg/$SRCDIR/titan
 "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-strip titan
+
+################
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] titan done"
