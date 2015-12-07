@@ -1,4 +1,4 @@
-ALL_CFLAGS= -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable
+ALL_CFLAGS= -DSH4 -DEPLAYER4 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable
 
 INCLUDES = \
 	-I../../../tufsbox/cdkroot/usr/include \
@@ -13,5 +13,5 @@ bin_PROGRAMS = titan
 
 titan_SOURCES =	titan.c
 
-titan_LDADD = -lm -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz
+titan_LDADD = -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -lgstreamer-1.0 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz
 titan_CFLAGS = $(ALL_CFLAGS)
