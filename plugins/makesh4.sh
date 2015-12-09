@@ -85,67 +85,82 @@ compile()
 rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.o"`
 rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.so"`
 
-echo "[titan]--------------------------------------------------------"
-echo "[titan] Make networkbrowser"
-echo "[titan]--------------------------------------------------------"
-cd networkbrowser/netlib
-cp Makefile."$STM".sh4 Makefile
-make clean
-make
-cd "$HOME"/flashimg/$SRCDIR/plugins
-echo "[titan]--------------------------------------------------------"
-echo "[titan] networkbrowser done"
-echo "[titan]--------------------------------------------------------"
-
-#dir, file, extralib
-compile "networkbrowser" "networkbrowser" "netlib/netlib" ""
-compile "hello" "hello" "" ""
-compile "panel" "panel" "" ""
-compile "mc" "mc" "" ""
-compile "TopfieldVFD" "TopfieldVFD" "" ""
-compile "mboxinfo" "mboxinfo" "" ""
-compile "browser" "browser" "" ""
-compile "keylock" "keylock" "" ""
-compile "permtime" "permtime" "" ""
-compile "zapback" "zapback" "" ""
-compile "imdbapi" "imdbapi" "" ""
-compile "lcdpearl1" "lcdpearl1" "" ""
-compile "lcdsamsung" "lcdsamsung" "" ""
-compile "callmonitor1" "callmonitor1" "" ""
-compile "stopifnotused" "stopifnotused" "" ""
-compile "wins3" "wins3" "" ""
-compile "rgui" "rgui" "" ""
-compile "dvdplayer" "dvdplay" "" ""
-compile "scriptexec" "scriptexec" "" ""
-compile "optimize" "optimize" "" ""
-compile "weather" "weather" "" ""
-compile "tinews" "tinews" "" ""
-compile "stock" "stock" "" ""
-compile "streaminfo" "streaminfo" "" ""
-compile "tmc" "tmc" "" ""
-compile "dlna" "dlna" "" ""
-compile "hbbtv_sh4" "hbbtv" "" ""
-compile "instar" "instar" "" ""
-compile "tmdb" "tmdb" "" ""
-compile "gmediarender" "gmediarender" "" ""
-compile "imdb" "imdb" "" ""
-compile "filemanager" "filemanager" "" ""
-compile "catcatch" "catcatch" "" ""
-compile "readerconfig" "readerconfig" "" ""
-compile "tiwakeup" "tiwakeup" "" ""
-compile "autotimer" "autotimer" "" ""
-compile "usbreset" "usbreset" "" ""
-compile "tsSchnitt" "tsSchnitt" "" ""
-compile "xupnpd" "xupnpd" "" ""
-compile "wm2014" "wm2014" "" ""
-compile "kravencfg" "kravencfg" "" ""
-
-cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
-echo make libcurl
-make libcurl
-
-cd "$HOME"/flashimg/$SRCDIR/plugins
-compile "facebook" "facebook" "" "-l curl"
-compile "tithek" "tithek" "" "-l curl"
-
-#rm -r networkbrowser/networkbrowser
+if [ $MEDIAFW = 1 ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] Make networkbrowser"
+	echo "[titan]--------------------------------------------------------"
+	cd networkbrowser/netlib
+	cp Makefile."$STM".sh4 Makefile
+	make clean
+	make
+	cd "$HOME"/flashimg/$SRCDIR/plugins
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] networkbrowser done"
+	echo "[titan]--------------------------------------------------------"
+	
+	#dir, file, extralib
+	compile "networkbrowser" "networkbrowser" "netlib/netlib" ""
+	compile "hello" "hello" "" ""
+	compile "panel" "panel" "" ""
+	compile "mc" "mc" "" ""
+	compile "TopfieldVFD" "TopfieldVFD" "" ""
+	compile "mboxinfo" "mboxinfo" "" ""
+	compile "browser" "browser" "" ""
+	compile "keylock" "keylock" "" ""
+	compile "permtime" "permtime" "" ""
+	compile "zapback" "zapback" "" ""
+	compile "imdbapi" "imdbapi" "" ""
+	compile "lcdpearl1" "lcdpearl1" "" ""
+	compile "lcdsamsung" "lcdsamsung" "" ""
+	compile "callmonitor1" "callmonitor1" "" ""
+	compile "stopifnotused" "stopifnotused" "" ""
+	compile "wins3" "wins3" "" ""
+	compile "rgui" "rgui" "" ""
+	compile "dvdplayer" "dvdplay" "" ""
+	compile "scriptexec" "scriptexec" "" ""
+	compile "optimize" "optimize" "" ""
+	compile "weather" "weather" "" ""
+	compile "tinews" "tinews" "" ""
+	compile "stock" "stock" "" ""
+	compile "streaminfo" "streaminfo" "" ""
+	compile "tmc" "tmc" "" ""
+	compile "dlna" "dlna" "" ""
+	compile "hbbtv_sh4" "hbbtv" "" ""
+	compile "instar" "instar" "" ""
+	compile "tmdb" "tmdb" "" ""
+	compile "gmediarender" "gmediarender" "" ""
+	compile "imdb" "imdb" "" ""
+	compile "filemanager" "filemanager" "" ""
+	compile "catcatch" "catcatch" "" ""
+	compile "readerconfig" "readerconfig" "" ""
+	compile "tiwakeup" "tiwakeup" "" ""
+	compile "autotimer" "autotimer" "" ""
+	compile "usbreset" "usbreset" "" ""
+	compile "tsSchnitt" "tsSchnitt" "" ""
+	compile "xupnpd" "xupnpd" "" ""
+	compile "wm2014" "wm2014" "" ""
+	compile "kravencfg" "kravencfg" "" ""
+else
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+	echo make libcurl
+	make libcurl
+	
+	cd "$HOME"/flashimg/$SRCDIR/plugins
+	compile "facebook" "facebook" "" "-l curl"
+	compile "tithek" "tithek" "" "-l curl"
+	
+	rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.o"`
+	rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.so"`
+	
+	cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/cdk
+	make titan-plugins-distclean
+	make titan-plugins
+	
+#	cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/titan/plugins/* "$HOME"/flashimg/$SRCDIR/plugins
+	cd "$HOME"/flashimg/$SRCDIR/plugins
+	LIST=`ls -d1 */`
+	for ROUND in $LIST; do
+		file=`echo $ROUND | sed 's!/!!'`
+		cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/titan/plugins/$file/.libs/lib$file.so.0.0.0 "$HOME"/flashimg/$SRCDIR/plugins/$file/$file.so
+	done
+fi
