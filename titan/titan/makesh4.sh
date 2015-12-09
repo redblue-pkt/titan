@@ -266,7 +266,7 @@ fi
     -I "$HOME"/flashimg/$SRCDIR \
     -c titan.c
 
-/bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/apps/titan/titan/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/lib -o titan titan.o $linking
+/bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/apps/titan/titan/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -I"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/lib -o titan titan.o $linking
 
 cp "$HOME"/flashimg/$SRCDIR/titan/.libs/titan "$HOME"/flashimg/$SRCDIR/titan
 "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-strip titan
