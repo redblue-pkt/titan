@@ -10,7 +10,6 @@ SUBDIRS = \
 	facebook \
 	filemanager \
 	gmediarender \
-	hbbtv \
 	hello \
 	imdb \
 	imdbapi \

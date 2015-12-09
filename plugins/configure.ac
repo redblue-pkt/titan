@@ -40,7 +40,6 @@ dvdplayer/Makefile
 facebook/Makefile
 filemanager/Makefile
 gmediarender/Makefile
-hbbtv/Makefile
 hello/Makefile
 imdb/Makefile
 imdbapi/Makefile
