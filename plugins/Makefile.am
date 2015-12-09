@@ -33,6 +33,7 @@ SUBDIRS = \
 	sudoku \
 	tinews \
 	tithek \
+	tiwakeup \
 	tsSchnitt \
 	tmc \
 	tmdb \
@@ -41,4 +42,5 @@ SUBDIRS = \
 	weather \
 	wins3 \
 	wm2014 \
+	xupnpd \
 	zapback

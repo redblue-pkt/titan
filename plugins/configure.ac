@@ -62,6 +62,7 @@ stopifnotused/Makefile
 streaminfo/Makefile
 tinews/Makefile
 tithek/Makefile
+tiwakeup/Makefile
 tmc/Makefile
 tmdb/Makefile
 TopfieldVFD/Makefile
@@ -71,5 +72,6 @@ usbreset/Makefile
 weather/Makefile
 wins3/Makefile
 wm2014/Makefile
+xupnpd/Makefile
 zapback/Makefile
 ])
