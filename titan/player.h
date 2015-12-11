@@ -947,11 +947,11 @@ int playerstart(char* file)
 		player->manager = &ManagerHandler;
 		
 		//add container befor open, so we can set buffer size
-		char* ext = getfilenameext(tmpfile);
-		if(ext != NULL)
+		char* extffm = getfilenameext(tmpfile);
+		if(extffm != NULL)
 		{
-			player->container->Command(player, CONTAINER_ADD, ext);
-			free(ext); ext = NULL;
+			player->container->Command(player, CONTAINER_ADD, extffm);
+			free(extffm); extffm = NULL;
 		}
 
 		//select container_ffmpeg, if we does not found a container with extensions
