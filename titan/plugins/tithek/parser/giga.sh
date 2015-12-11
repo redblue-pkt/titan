@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # first sh box parser for titannit mfg obi
 
 SRC=$1
@@ -8,12 +8,7 @@ PAGE=$3
 ARCH=`cat /etc/.arch`
 URL=http://www.giga.de
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-
-if [ "$ARCH" = "mipsel" ];then
-	NAME=`echo ${PARSER^}`
-else
-	NAME=`echo $PARSER | sed 's/.*/\u&/'`
-fi
+NAME=Giga
 
 wgetbin="wget -q -T2"
 TMP=/tmp/parser
@@ -55,13 +50,9 @@ category()
 			until [ "$i" -gt "$tagcount" ]
 			do
 			tags="$tags~"$ROUND0"/page/$i"
-			TITLE="`echo ${ROUND0^} | sed 's!/! !g' | sed 's!-! !g'` Page $i"
+			TITLE="`echo $ROUND0 | sed 's!/! !g' | sed 's!-! !g'` Page $i"
 			echo "$TITLE#$SRC $SRC page $ROUND0/page/$i#http://atemio.dyndns.tv/mediathek/menu/page.jpg#page.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
-			if [ "$ARCH" = "mipsel" ];then
-				i=`expr $i + 1` 
-			else
-				i=$[$i+1]
-			fi
+			i=`expr $i + 1` 
 			done
 		done
 	fi
@@ -74,6 +65,8 @@ page()
 		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER."$filename"."1"
 		cat $TMP/cache.$PARSER."$filename"."1" | tr '\r' ' ' | tr '\n' '\r' | tr '\t' ' ' | sed 's/<section/\n<section/g' | grep '^<section id="content">' | sed 's/<li id="/\n<li id="/g' | grep '^<li id="' | sed 's/&quot;/"/g' >$TMP/cache.$PARSER."$filename"."2"
 		
+		piccount=0
+
 		while read -u 3 ROUND2; do
 			PIC=`echo $ROUND2 | sed 's/<img /\n<img /g' | grep '^<img ' | cut -d'"' -f2 | cut -d'"' -f1`
 			URL=`echo $ROUND2 | sed 's/iframe src="/\niframe src="/g' | grep '^iframe src=' | cut -d'"' -f2 | cut -d'?' -f1`
@@ -92,11 +85,7 @@ page()
 			TITLE=`echo $TITLE | sed -e 's/ &amp; / und /g' -e 's/&amp;/ und /g' -e "s/&#8217;/'/g" -e 's/&#8211;/-/g' -e 's/&#8230;/.../g' -e 's/&#8220;/"/g' -e 's/&#8221;/"/g' -e "s/&#8216;/'/g" -e 's/#//g'`
 		
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
-				if [ "$ARCH" = "mipsel" ];then
-					piccount=$[$piccount+1] 
-				else
-					piccount=`expr $piccount + 1`
-				fi
+				piccount=`expr $piccount + 1`
 				
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.$PICEXT#$NAME#15"
 				echo "$LINE" >> /tmp/tithek/$PARSER.$INPUT.list

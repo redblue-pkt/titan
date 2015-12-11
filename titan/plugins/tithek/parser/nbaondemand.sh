@@ -9,12 +9,7 @@ PAGE=$4
 ARCH=`cat /etc/.arch`
 URL=http://livetv.sx
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-
-if [ "$ARCH" = "mipsel" ];then
-	NAME=`echo ${PARSER^}`
-else
-	NAME=`echo $PARSER | sed 's/.*/\u&/'`
-fi
+NAME=NBA-On-Demand
 
 wgetbin="wget -q -T2"
 TMP=/tmp/parser
@@ -79,11 +74,7 @@ listvideos()
 			fi
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ "$URL" != "http://xlivetv.sx" ] && [ `cat $TMP/$PARSER.$INPUT.$FROM.list | grep "#$URL#" | wc -l` -eq 0 ];then
-				if [ "$ARCH" = "mipsel" ];then
-					piccount=$[$piccount+1] 
-				else
-					piccount=`expr $piccount + 1`
-				fi
+				piccount=`expr $piccount + 1`
 
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#98"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.list
