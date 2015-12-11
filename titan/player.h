@@ -907,98 +907,100 @@ int playerstart(char* file)
 	{
 #ifdef EPLAYER3
 		//use eplayer
-
-		if(player != NULL)
+		if(!ostrncmp("/", file, 1))
 		{
-			debug(150, "eplayer allready running");
-			playerstop();
-		}
-
-		player = calloc(1, sizeof(Context_t));
-
-		if(player == NULL)
-		{
-			err("no mem");
-			return 1;
-		}
-
-		if(ostrstr(file, "://") == NULL)
-			tmpfile = ostrcat("file://", file, 0, 0);
-		else
-			tmpfile = ostrcat(file, NULL, 0, 0);
-
-		if(tmpfile == NULL)
-		{
-			err("no mem");
-			free(player); player = NULL;
-			return 1;
-		}
+			if(player != NULL)
+			{
+				debug(150, "eplayer allready running");
+				playerstop();
+			}
+	
+			player = calloc(1, sizeof(Context_t));
+	
+			if(player == NULL)
+			{
+				err("no mem");
+				return 1;
+			}
+	
+			if(ostrstr(file, "://") == NULL)
+				tmpfile = ostrcat("file://", file, 0, 0);
+			else
+				tmpfile = ostrcat(file, NULL, 0, 0);
+	
+			if(tmpfile == NULL)
+			{
+				err("no mem");
+				free(player); player = NULL;
+				return 1;
+			}
 // move to mc
-//		set_player_sound(0);
-
-		if(ostrstr(tmpfile, "file://") == NULL)
-			status.playercan = 0x4650;
-		else
-			status.playercan = 0xFFFF;
-		
-		player->playback = &PlaybackHandler;
-		player->output = &OutputHandler;
-		player->container = &ContainerHandler;
-		player->manager = &ManagerHandler;
-		
-		//add container befor open, so we can set buffer size
-		char* extffm = getfilenameext(tmpfile);
-		if(extffm != NULL)
-		{
-			player->container->Command(player, CONTAINER_ADD, extffm);
-			free(extffm); extffm = NULL;
-		}
-
-		//select container_ffmpeg, if we does not found a container with extensions
-		if(player->container->selectedContainer == NULL)
-			player->container->Command(player, CONTAINER_ADD, "mp3");
-
-		if(player && player->container && player->container->selectedContainer)
-		{
-			int size = getconfigint("playerbuffersize", NULL);
-			int seektime = getconfigint("playerbufferseektime", NULL);
-			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
-			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);
-		}
-		
-		debug(150, "eplayername = %s", player->output->Name);
-
-		//Registrating output devices
-		player->output->Command(player, OUTPUT_ADD, "audio");
-		player->output->Command(player, OUTPUT_ADD, "video");
-		player->output->Command(player, OUTPUT_ADD, "subtitle");
-		
-		//for subtitle
-		SubtitleOutputDef_t subout;
-
-		subout.screen_width = skinfb->width;
-		subout.screen_height = skinfb->height;
-		subout.framebufferFD = skinfb->fd;
-		subout.destination = skinfb->fb;
-		subout.destStride = skinfb->pitch;
-		subout.shareFramebuffer = 1;
-		subout.framebufferBlit = blitfb1;
-
-		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
-		
-		if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
-		{
-			free(player); player = NULL;
+//			set_player_sound(0);
+	
+			if(ostrstr(tmpfile, "file://") == NULL)
+				status.playercan = 0x4650;
+			else
+				status.playercan = 0xFFFF;
+			
+			player->playback = &PlaybackHandler;
+			player->output = &OutputHandler;
+			player->container = &ContainerHandler;
+			player->manager = &ManagerHandler;
+			
+			//add container befor open, so we can set buffer size
+			char* extffm = getfilenameext(tmpfile);
+			if(extffm != NULL)
+			{
+				player->container->Command(player, CONTAINER_ADD, extffm);
+				free(extffm); extffm = NULL;
+			}
+	
+			//select container_ffmpeg, if we does not found a container with extensions
+			if(player->container->selectedContainer == NULL)
+				player->container->Command(player, CONTAINER_ADD, "mp3");
+	
+			if(player && player->container && player->container->selectedContainer)
+			{
+				int size = getconfigint("playerbuffersize", NULL);
+				int seektime = getconfigint("playerbufferseektime", NULL);
+				player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
+				player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);
+			}
+			
+			debug(150, "eplayername = %s", player->output->Name);
+	
+			//Registrating output devices
+			player->output->Command(player, OUTPUT_ADD, "audio");
+			player->output->Command(player, OUTPUT_ADD, "video");
+			player->output->Command(player, OUTPUT_ADD, "subtitle");
+			
+			//for subtitle
+			SubtitleOutputDef_t subout;
+	
+			subout.screen_width = skinfb->width;
+			subout.screen_height = skinfb->height;
+			subout.framebufferFD = skinfb->fd;
+			subout.destination = skinfb->fb;
+			subout.destStride = skinfb->pitch;
+			subout.shareFramebuffer = 1;
+			subout.framebufferBlit = blitfb1;
+	
+			player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
+			
+			if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
+			{
+				free(player); player = NULL;
+				free(tmpfile);
+				return 1;
+			}
+	
+			player->output->Command(player, OUTPUT_OPEN, NULL);
+			player->playback->Command(player, PLAYBACK_PLAY, NULL);
+	
 			free(tmpfile);
-			return 1;
+	
+			return 0;
 		}
-
-		player->output->Command(player, OUTPUT_OPEN, NULL);
-		player->playback->Command(player, PLAYBACK_PLAY, NULL);
-
-		free(tmpfile);
-
-		return 0;
 #endif
 
 #ifdef EPLAYER4
