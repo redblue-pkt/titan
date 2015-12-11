@@ -4,8 +4,8 @@ OBJS = list.o nbtscan.o range.o showmount.o smbinfo.o statusq.o
 
 DEPS = $(patsubst %.o,%.d,$(OBJS))
 
-CC = $(HOME)/flashimg/BUILDGIT/checkout_stm24/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc
-AR = $(HOME)/flashimg/BUILDGIT/checkout_stm24/tdt/tufsbox/devkit/sh4/bin/sh4-linux-ar
+CC = $(HOME)/flashimg/BUILDGIT/checkout_stm24/tufsbox/cross/bin/sh4-linux-gcc
+AR = $(HOME)/flashimg/BUILDGIT/checkout_stm24/tufsbox/cross/bin/sh4-linux-ar
 
 CFLAGS = -Os -Wall -fPIC -I.
 
