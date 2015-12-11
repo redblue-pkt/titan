@@ -234,6 +234,9 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Make titan"
 echo "[titan]--------------------------------------------------------"
 
+# set eplayer as default
+MEDIAFW=1
+
 if [ $MEDIAFW = 1 ]; then
     eplayer=EPLAYER3
     eplayerinclude="$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libeplayer3/include
