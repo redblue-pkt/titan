@@ -979,7 +979,7 @@ int playerstart(char* file)
 		subout.screen_width = skinfb->width;
 		subout.screen_height = skinfb->height;
 		subout.framebufferFD = skinfb->fd;
-		subout.destination = (uint32_t *)skinfb->fb;
+		subout.destination = skinfb->fb;
 		subout.destStride = skinfb->pitch;
 		subout.shareFramebuffer = 1;
 		subout.framebufferBlit = blitfb1;
