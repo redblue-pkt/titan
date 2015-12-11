@@ -252,7 +252,7 @@ if [ $MEDIAFW = 2 ]; then
 	linking="-lm -lglib-2.0 -lgobject-2.0 -lgio-2.0 -lpthread -ldl -lz -lpng -lfreetype -lgstreamer-1.0 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz"
 fi
 if [ $MEDIAFW = 4 ]; then
-    eplayer=EPLAYER3 -DEPLAYER4
+    eplayer="EPLAYER3 -DEPLAYER4"
     eplayerinclude="$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/gstreamer-1.0
              -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/glib-2.0
              -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/libxml2
