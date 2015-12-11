@@ -115,7 +115,7 @@ compile()
 	
 		cp .libs/lib$2.so $2.so
 	else
-		$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-gcc -D$eplayer -Os $devflag -fPIC -Wall -Wno-unused-but-set-variable $4 -I$eplayerinclude -c $2.c -o $2.o
+		$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-gcc -D$eplayer -Os $devflag -fPIC -Wall -Wno-unused-but-set-variable -Wno-unused-variable $4 -I$eplayerinclude -c $2.c -o $2.o
 		$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-gcc  -shared  -fPIC -DPIC  $2.o    $devflag -DSH4 -D$eplayer -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,lib$2.so.0 -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/lib $LIB -o $2.so $4
 	fi
 
