@@ -1482,7 +1482,7 @@ playerstart:
 			rcret = playerstart(file);
 		else
 		{
-#ifdef EPLAYER3
+#ifndef EPLAYER4
 			if(ostrstr(file, "http://") == file)
 			{
 				struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
