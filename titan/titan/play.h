@@ -1565,19 +1565,46 @@ playerstart:
 					}
 				}
 #else
-				playinfobarcount++;
-				if(playinfobarstatus > 0)
-					screenplayinfobar(file, showname, 0, playertype, flag);
-				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+				if(playertype == 1 || playertype == 2)
 				{
-					playinfobarstatus = 0;
-					screenplayinfobar(NULL, NULL, 1, playertype, flag);
+// eplayer
+					playinfobarcount++;
+					if(playinfobarstatus > 0)
+						screenplayinfobar(file, showname, 0, playertype, flag);
+					if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+					{
+						playinfobarstatus = 0;
+						screenplayinfobar(NULL, NULL, 1, playertype, flag);
+					}
+	
+					if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
+					{
+						screenplayinfobar(file, showname, 0, playertype, flag);
+						waitofbuffer = 0;
+					}
 				}
-
-				if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
+				else
 				{
-					screenplayinfobar(file, showname, 0, playertype, flag);
-					waitofbuffer = 0;
+// gst
+					if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && status.cleaninfobar == 1)
+					{
+						drawscreen(skin, 0, 0);
+						screenplayinfobar(file, showname, 0, playertype, flag);
+						waitofbuffer = 0;
+						status.cleaninfobar = 0;
+						
+					}
+					else if(waitofbuffer == 0 && status.prefillbuffer == 0 && status.cleaninfobar == 0)
+					{
+						playinfobarcount++;
+						if(playinfobarstatus > 0)
+							screenplayinfobar(file, showname, 0, playertype, flag);
+						if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+						{
+							playinfobarstatus = 0;
+							screenplayinfobar(NULL, NULL, 1, playertype, flag);
+						}
+					}
 				}
 #endif
 				if(flag == 4)
