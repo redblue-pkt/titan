@@ -1467,13 +1467,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		char* skintitle = _("Choice Playback");
 		struct menulist* mlist = NULL, *mbox = NULL;
 
-#ifndef MIPSEL
-		addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
-#else
-		// mipsel work, disable http direct streams without buffer, after 3mins no memory (memleak in player.h ?)
+//#ifndef MIPSEL
+//		addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
+//#else
+//		// mipsel work, disable http direct streams without buffer, after 3mins no memory (memleak in player.h ?)
 		if(ostrncmp("http://", tmpstr1, 7))
 			addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
-#endif
+//#endif
 		if(!ostrncmp("http://", tmpstr1, 7))
 		{
 			// wakeup hdd for downloading
