@@ -1565,6 +1565,8 @@ struct status
 	char* extplugin;
 	//node oled blinken
 	int skinblink;
+	//BCM accel interface 
+	int bcm;
 } status;
 
 struct fb

@@ -32,6 +32,7 @@ static int exec_list(void);
 
 int bcm_accel_init(void)
 {
+	status.bcm = 0;
 	fb_fd = open("/dev/fb0", O_RDWR);
 	if (fb_fd < 0)
 	{
@@ -45,6 +46,7 @@ int bcm_accel_init(void)
 		fb_fd = -1;
 		return 1;
 	}
+	status.bcm = 1;
 	/* now test for blending flags support */
 	P(0x80, 0);
 	if (exec_list())
