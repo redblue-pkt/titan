@@ -518,28 +518,36 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 
 	if(mode == 0 || mode == 2)
 	{
-		int yend = (posy + height) * tmpfb->width;
-		posy *= tmpfb->width;
-		int xend = posx + width;
-//		int xlen = (xend - posx) * tmpfb->colbytes;
-		int r = 0;
-		unsigned char* from = tmpfb->fb + (posy + posx) * tmpfb->colbytes;
-
-		for(y = posy; y < yend; y += tmpfb->width)
+		
+		if(status.bcm == 1)
 		{
-			if(r == 0)
+			bcm_accel_fill(tmpfb->fb, tmpfb->width, tmpfb->height, tmpfb->pitch, posx, posy, width, height, tmpcol);
+		}
+		else
+		{
+			int yend = (posy + height) * tmpfb->width;
+			posy *= tmpfb->width;
+			int xend = posx + width;
+//		int xlen = (xend - posx) * tmpfb->colbytes;
+			int r = 0;
+			unsigned char* from = tmpfb->fb + (posy + posx) * tmpfb->colbytes;
+
+			for(y = posy; y < yend; y += tmpfb->width)	
 			{
-				r = 1;
-				for(x = posx; x < xend; x++)
-					drawpixelfastfb(tmpfb, x, y, tmpcol);
-			}
-			else
-			{
-				//memcpy(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, xlen);
-  			memcpy_area(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, posx * 4, height-1, width*4, tmpfb->width*4);
-				y = yend;
-			}
+				if(r == 0)
+				{
+					r = 1;
+					for(x = posx; x < xend; x++)
+						drawpixelfastfb(tmpfb, x, y, tmpcol);
+				}
+				else
+				{
+					//memcpy(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, xlen);
+  				memcpy_area(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, posx * 4, height-1, width*4, tmpfb->width*4);
+					y = yend;
+				}
 				
+			}
 		}
 	}
 	else if(mode == 1 || mode == 3)
@@ -676,9 +684,12 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 #ifdef BLITHELP
 	unsigned char *quelle = NULL; 
 	unsigned char *ziehl = NULL;
-	unsigned char *helpbuf = NULL;
 	int zpitch = 0;
 	int zheight = 0;
+	int zwidth = 0;
+	int qpitch = 0;
+	int qheight = 0;
+	int qwidth = 0;
 
 	if(scalewidth == 0) scalewidth = width;
 	if(scaleheight == 0) scaleheight = height;
@@ -700,31 +711,55 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	if(flag == 0)
 	{
 		quelle = accelfb->fb;
-		ziehl = skinfb->fb + (posy * skinfb->pitch) + (posx*4);
+		if(status.bcm == 1)
+			ziehl = skinfb->fb
+		else
+			ziehl = skinfb->fb + (posy * skinfb->pitch) + (posx*4);
 		zpitch = skinfb->pitch;
 		zheight = skinfb->height;
+		zwidth = skinfb->width;
+		qpitch = accelfb->pitch;
+		qheight = accelfb->height;
+		qwidth = accelfb->width;
 	}
 	else
 	{
 		quelle = skinfb->fb;
-		ziehl = accelfb->fb + (posy * accelfb->pitch) + (posx*4);
+		if(status.bcm == 1)
+			ziehl =  accelfb->fb
+		else
+			ziehl = accelfb->fb + (posy * accelfb->pitch) + (posx*4);
 		zpitch = accelfb->pitch;
 		zheight = accelfb->height;
+		zwidth = accelfb->width;
+		qpitch = skinfb->pitch;
+		qheight = skinfb->height;
+		qwidth = skinfb->width;
 	}
-	helpbuf = scale(quelle, width, height, 4, scalewidth, scaleheight, 0);
 	
-	size_t helpb = 0;
-	size_t helpz = 0;
-	size_t help = 0;
-	
-	while(helpz < scaleheight && helpz < (zheight - posy)) {
-		memcpy(ziehl[help], helpbuf[helpb], scalewidth*4);
-		help = help + zpitch;
-		helpb = helpb + scalewidth*4;
-		helpz = helpz + 1;
+	if(status.bcm == 1)
+	{
+		bcm_accel_blit(quelle, qwidth, qheight, qpitch, 0, ziehl, zwidth, zheight, zpitch, posx, posy, width, height, posx, posy, scalewidth, scaleheight, 0, 0);
 	}
-		
-	free(helpbuf);
+	else
+	{
+		unsigned char *helpbuf = NULL;
+		helpbuf = scale(quelle, width, height, 4, scalewidth, scaleheight, 0);
+	
+		size_t helpb = 0;
+		size_t helpz = 0;
+		size_t help = 0;
+	
+		while(helpz < scaleheight && helpz < (zheight - posy)) {
+			memcpy(ziehl[help], helpbuf[helpb], scalewidth*4);
+			help = help + zpitch;
+			helpb = helpb + scalewidth*4;
+			helpz = helpz + 1;
+		}
+		free(helpbuf);
+	}
+	
+	
 	if(flag == 0)
 		blit();
 
