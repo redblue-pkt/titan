@@ -1483,7 +1483,7 @@ playerstart:
 		else
 		{
 #ifdef EPLAYER3
-			if(ostrstr(file, "http://") == file && ostrstr(file, ".m3u8") == NULL))
+			if(ostrstr(file, "http://") == file && ostrstr(file, ".m3u8") == NULL)
 			{
 				struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
 				rcret = playerstart(file);
