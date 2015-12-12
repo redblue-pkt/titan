@@ -9114,7 +9114,7 @@ msgstr "Stream Informacija"
 msgid "Streaming"
 msgstr "Srautinimas"
 
-#: tithek.h:1471 tithek.h:1475
+#: tithek.h:1475
 msgid "Streaming Playback (default)"
 msgstr "Tiesiogin transliacija ( pagal nutyljim)"
 

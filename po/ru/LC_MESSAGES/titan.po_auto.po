@@ -9098,7 +9098,7 @@ msgstr "Инфо о потоке"
 msgid "Streaming"
 msgstr "Стриминг"
 
-#: tithek.h:1471 tithek.h:1475
+#: tithek.h:1475
 msgid "Streaming Playback (default)"
 msgstr "Воспроизведение потока (По умолчанию)"
 
