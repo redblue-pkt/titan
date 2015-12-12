@@ -268,7 +268,7 @@ else
     devflag=""
 fi
 
-"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-unused-variable \
+"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable \
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include \
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/freetype2 \
     -I $eplayerinclude \
