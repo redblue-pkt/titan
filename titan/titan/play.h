@@ -1482,7 +1482,7 @@ playerstart:
 			rcret = playerstart(file);
 		else
 		{
-#ifndef EPLAYER4
+#ifdef EPLAYER3
 			if(ostrstr(file, "http://") == file)
 			{
 				struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
@@ -1565,46 +1565,19 @@ playerstart:
 					}
 				}
 #else
-				if(playertype == 1 || playertype == 2)
+				playinfobarcount++;
+				if(playinfobarstatus > 0)
+					screenplayinfobar(file, showname, 0, playertype, flag);
+				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
 				{
-// eplayer
-					playinfobarcount++;
-					if(playinfobarstatus > 0)
-						screenplayinfobar(file, showname, 0, playertype, flag);
-					if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
-					{
-						playinfobarstatus = 0;
-						screenplayinfobar(NULL, NULL, 1, playertype, flag);
-					}
-	
-					if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
-					{
-						screenplayinfobar(file, showname, 0, playertype, flag);
-						waitofbuffer = 0;
-					}
+					playinfobarstatus = 0;
+					screenplayinfobar(NULL, NULL, 1, playertype, flag);
 				}
-				else
+
+				if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
 				{
-// gst
-					if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && status.cleaninfobar == 1)
-					{
-						drawscreen(skin, 0, 0);
-						screenplayinfobar(file, showname, 0, playertype, flag);
-						waitofbuffer = 0;
-						status.cleaninfobar = 0;
-						
-					}
-					else if(waitofbuffer == 0 && status.prefillbuffer == 0 && status.cleaninfobar == 0)
-					{
-						playinfobarcount++;
-						if(playinfobarstatus > 0)
-							screenplayinfobar(file, showname, 0, playertype, flag);
-						if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
-						{
-							playinfobarstatus = 0;
-							screenplayinfobar(NULL, NULL, 1, playertype, flag);
-						}
-					}
+					screenplayinfobar(file, showname, 0, playertype, flag);
+					waitofbuffer = 0;
 				}
 #endif
 				if(flag == 4)
