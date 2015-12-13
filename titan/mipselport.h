@@ -521,7 +521,7 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 		
 		if(status.bcm == 1)
 		{
-			bcm_accel_fill(tmpfb->fb, tmpfb->width, tmpfb->height, tmpfb->pitch, posx, posy, width, height, tmpcol);
+			bcm_accel_fill((int)tmpfb->fb, tmpfb->width, tmpfb->height, tmpfb->pitch, posx, posy, width, height, tmpcol);
 		}
 		else
 		{
@@ -739,7 +739,7 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	
 	if(status.bcm == 1)
 	{
-		bcm_accel_blit(quelle, qwidth, qheight, qpitch, 0, ziehl, zwidth, zheight, zpitch, posx, posy, width, height, posx, posy, scalewidth, scaleheight, 0, 0);
+		bcm_accel_blit((int)quelle, qwidth, qheight, qpitch, 0, (int)ziehl, zwidth, zheight, zpitch, posx, posy, width, height, posx, posy, scalewidth, scaleheight, 0, 0);
 	}
 	else
 	{
