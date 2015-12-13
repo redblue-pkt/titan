@@ -796,12 +796,12 @@ int main(int argc, char *argv[])
 
 	if(status.usedirectfb != 1)
 	{
-		skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, fb->fd, fb->fb + fb->varfbsize, fb->fixfbsize);
+		skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, fb->fd, fb->fb + fb->varfbsize, fb->fixfbsize, 0);
 		if(skinfb != NULL)
 		{
 			ret = getfbsize(0);
 			if(ret > 0)
-				accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize);
+				accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize, 0);
 		}
 		else
 		{
@@ -815,7 +815,7 @@ int main(int argc, char *argv[])
 #ifndef MIPSEL
 		ret = getfbsize(0);
 		if(ret > 0) 
-			accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize);
+			accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize, 0);
 #endif
 	}
 

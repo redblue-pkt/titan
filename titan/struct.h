@@ -1582,6 +1582,7 @@ struct fb
 	unsigned long fixfbsize;
 	unsigned long varfbsize;
 	int colbytes;
+	unsigned long data_phys;
 	struct fb *next;
 };
 

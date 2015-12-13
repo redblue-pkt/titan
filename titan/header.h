@@ -7,6 +7,8 @@
 
 #ifndef HEADER_H
 #define HEADER_H
+//bcm.h
+void bcm_accel_fill(int dst_addr, int dst_width, int dst_height, int dst_stride, int x, int y, int width, int height, unsigned long color);
 
 //security.h
 void checkgthread();
@@ -515,7 +517,7 @@ void blitfb(int flag);
 void blitfb1();
 void changefbresolution(char *value, int flag);
 void setfbtransparent(int value);
-struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize);
+struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize, unsigned long data_phys);
 void blitfb2(struct fb* fbnode, int flag);
 void delfb(char *name);
 void fb2png_thread();

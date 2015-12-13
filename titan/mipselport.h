@@ -519,9 +519,9 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 	if(mode == 0 || mode == 2)
 	{
 		
-		if(status.bcm == 1)
+		if(status.bcm == 1 && tmpfb->data_phys != 0)
 		{
-			bcm_accel_fill((int)tmpfb->fb, tmpfb->width, tmpfb->height, tmpfb->pitch, posx, posy, width, height, tmpcol);
+			bcm_accel_fill(tmpfb->data_phys, tmpfb->width, tmpfb->height, tmpfb->pitch, posx, posy, width, height, tmpcol);
 		}
 		else
 		{
