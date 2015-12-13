@@ -48,7 +48,7 @@ long getfbsize(int dev)
 	return fix_screeninfo.smem_len - fbmemcount;
 }
 
-struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize)
+struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize, unsigned long data_phys)
 {
 	struct fb *newnode = NULL, *node = fb;
 	char *name = NULL;
@@ -80,6 +80,7 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	newnode->fblong = (unsigned long*)newnode->fb;
 	newnode->fd = fd;
 	newnode->fixfbsize = fixfbsize;
+	newnode->data_phys = data_phys;
 	
 	if(ostrcmp(name, FB) == 0)
 		setfbvarsize(newnode);
@@ -231,7 +232,8 @@ struct fb* openfb(char *fbdev, int devnr)
 	}
 
 	debug(444, "%dk video mem", fix_screeninfo.smem_len/1024);
-
+	
+	unsigned long data_phys = 0;
 #ifdef MIPSEL
 	lfb = (unsigned char*)mmap(0, fix_screeninfo.smem_len, PROT_WRITE|PROT_READ, MAP_SHARED, fd, 0);
 	if (!lfb)
@@ -246,20 +248,21 @@ struct fb* openfb(char *fbdev, int devnr)
 		closefb();
 		return 0;
 	}
+	data_phys = fix_screeninfo.smem_start;
 #endif
 
 
 	if(devnr == 0)
-		node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len);
+		node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
 	if(devnr == 1)
-		node = addfb(FB1, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len);
+		node = addfb(FB1, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
 
 #else
 	mmapfb = malloc(16 * 1024 * 1024);
 	if(devnr == 0)
-		node = addfb(FB, devnr, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, -1, mmapfb, 16*1024*1024);
+		node = addfb(FB, devnr, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, -1, mmapfb, 16*1024*1024, 0);
 	if(devnr == 1)
-		node = addfb(FB1, devnr, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, -1, mmapfb, 16*1024*1024);
+		node = addfb(FB1, devnr, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, -1, mmapfb, 16*1024*1024, 0);
 
 #endif
 

@@ -742,7 +742,7 @@ int dvdsetfb()
 	int width = 720, height = 576, colbytes = 4;
 
 	if(dvdskinfb == NULL)
-		dvdskinfb = addfb("dvdskinfb", 1001, width, height, colbytes, -1, fb->fb + (fb->width * fb->height * fb->colbytes), width * height * colbytes);
+		dvdskinfb = addfb("dvdskinfb", 1001, width, height, colbytes, -1, fb->fb + (fb->width * fb->height * fb->colbytes), width * height * colbytes, 0);
 
 	if(dvdskinfb == NULL) return 1;
 	if(ddvdconfig == NULL) return 1;
