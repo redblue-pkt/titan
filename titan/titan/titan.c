@@ -790,7 +790,8 @@ int main(int argc, char *argv[])
 
 #ifdef MIPSEL
 	waitvsync();
-	setfbosd();
+	if(checkbox("DM7020HD") == 0)
+		setfbosd();
 	status.usedirectfb = 1;
 #endif
 
