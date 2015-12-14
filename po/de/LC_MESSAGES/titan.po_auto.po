@@ -13575,12 +13575,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Streaming Playback (default)"
-#~ msgstr "Direktes Streamen (standard)"
-
-#~ msgid "Streaming Playback Caching (10MB)"
-#~ msgstr "Direktes Streamen mit Puffer (10MB)"
-
-#~ msgid "Streaming Playback Caching (5MB)"
-#~ msgstr "Direktes Streamen mit Puffer (5MB)"

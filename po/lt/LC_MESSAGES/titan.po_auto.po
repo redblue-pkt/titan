@@ -13355,12 +13355,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Streaming Playback (default)"
-#~ msgstr "Tiesiogin transliacija ( pagal nutyljim)"
-
-#~ msgid "Streaming Playback Caching (10MB)"
-#~ msgstr "Srautinio atkrimas djimas ( 10MB )"
-
-#~ msgid "Streaming Playback Caching (5MB)"
-#~ msgstr "Srautinio atkrimas djimas ( 5MB )"

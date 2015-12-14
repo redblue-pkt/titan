@@ -13338,12 +13338,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Streaming Playback (default)"
-#~ msgstr "Воспроизведение потока (По умолчанию)"
-
-#~ msgid "Streaming Playback Caching (10MB)"
-#~ msgstr "Воспроизведение потока с буфером (10Мб)"
-
-#~ msgid "Streaming Playback Caching (5MB)"
-#~ msgstr "Воспроизведение потока с буфером (5Мб)"
