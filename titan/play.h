@@ -1483,15 +1483,20 @@ playerstart:
 		else
 		{
 #ifdef EPLAYER3
-			if(ostrstr(file, "http://") == file && ostrstr(file, ".m3u8") == NULL)
+			if(status.extplayer != 2)
 			{
-				struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
-				rcret = playerstart(file);
-				if(bufferstatus != NULL && gettimer(bufferstatus) != NULL)
+				if(ostrstr(file, "http://") == file && ostrstr(file, ".m3u8") == NULL)
 				{
-					bufferstatus->aktion = STOP;
-					usleep(100000);
+					struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
+					rcret = playerstart(file);
+					if(bufferstatus != NULL && gettimer(bufferstatus) != NULL)
+					{
+						bufferstatus->aktion = STOP;
+						usleep(100000);
+					}
 				}
+				else
+					rcret = playerstart(file);
 			}
 			else
 				rcret = playerstart(file);
@@ -1544,16 +1549,8 @@ playerstart:
 			while((playertype == 0 && playerisplaying()) || (playertype == 1 && playerisplayingts()))
 			{
 				rcret = waitrc(playinfobar, rcwait, 0);
-#ifdef MIPSEL
-				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && status.cleaninfobar == 1)
-				{
-					drawscreen(skin, 0, 0);
-					screenplayinfobar(file, showname, 0, playertype, flag);
-					waitofbuffer = 0;
-					status.cleaninfobar = 0;
-					
-				}
-				else if(waitofbuffer == 0 && status.prefillbuffer == 0 && status.cleaninfobar == 0)
+#ifdef EPLAYER3
+				if(status.extplayer != 2)
 				{
 					playinfobarcount++;
 					if(playinfobarstatus > 0)
@@ -1563,21 +1560,36 @@ playerstart:
 						playinfobarstatus = 0;
 						screenplayinfobar(NULL, NULL, 1, playertype, flag);
 					}
+	
+					if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
+					{
+						screenplayinfobar(file, showname, 0, playertype, flag);
+						waitofbuffer = 0;
+					}
 				}
-#else
-				playinfobarcount++;
-				if(playinfobarstatus > 0)
-					screenplayinfobar(file, showname, 0, playertype, flag);
-				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+#endif
+#ifdef EPLAYER4
+				if(status.extplayer != 1)
 				{
-					playinfobarstatus = 0;
-					screenplayinfobar(NULL, NULL, 1, playertype, flag);
-				}
-
-				if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
-				{
-					screenplayinfobar(file, showname, 0, playertype, flag);
-					waitofbuffer = 0;
+					if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && status.cleaninfobar == 1)
+					{
+						drawscreen(skin, 0, 0);
+						screenplayinfobar(file, showname, 0, playertype, flag);
+						waitofbuffer = 0;
+						status.cleaninfobar = 0;
+						
+					}
+					else if(waitofbuffer == 0 && status.prefillbuffer == 0 && status.cleaninfobar == 0)
+					{
+						playinfobarcount++;
+						if(playinfobarstatus > 0)
+							screenplayinfobar(file, showname, 0, playertype, flag);
+						if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+						{
+							playinfobarstatus = 0;
+							screenplayinfobar(NULL, NULL, 1, playertype, flag);
+						}
+					}
 				}
 #endif
 				if(flag == 4)
