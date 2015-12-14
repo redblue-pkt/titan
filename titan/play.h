@@ -1654,6 +1654,11 @@ playerstart:
 						continue;
 					}
 					playrcstop(playertype, flag);
+#ifdef MIPSEL
+					status.extplayer = 2;
+#else
+					status.extplayer = 1;
+#endif
 					if(startfile == NULL)
 					{						
 						if(startfolder == 1 && flag != 3) playstartservice();
