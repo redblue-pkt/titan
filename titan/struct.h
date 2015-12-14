@@ -1327,6 +1327,7 @@ struct status
 	int slowspeed;
 	int prefillbuffer;
 	int playpic;
+	int extplayer;
 #ifdef EPLAYER4
 	int bufferpercent;
 	int cleaninfobar;
