@@ -907,6 +907,7 @@ int playerstart(char* file)
 	{
 #ifdef EPLAYER3
 		if(status.extplayer != 2)
+		{
 			//use eplayer
 	
 			if(player != NULL)
