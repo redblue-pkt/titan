@@ -898,6 +898,7 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 //extern player
 int playerstart(char* file)
 {
+printf("status.extplayer: %d\n", status.extplayer);
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
 #ifdef EPLAYER4
