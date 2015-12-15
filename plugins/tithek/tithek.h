@@ -1471,10 +1471,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		addmenulist(&mlist, "Streaming Playback FFM (default)", _("Streaming Playback FFM (default)"), NULL, 0, 0);
 #endif
 #ifdef EPLAYER4
-#ifdef MIPSEL
 		// mipsel work, disable http direct streams without buffer, after 3mins no memory (memleak in player.h ?)
 		if(ostrncmp("http://", tmpstr1, 7))
-#endif
 			addmenulist(&mlist, "Streaming Playback GST (default)", _("Streaming Playback GST (default)"), NULL, 0, 0);
 #endif
 
