@@ -1523,7 +1523,7 @@ msgstr "favori Navigateur Internet "
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1413
+#: player.h:1406
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -1785,7 +1785,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
-#: mc_videoplayer.h:900 play.h:1510
+#: mc_videoplayer.h:900 play.h:1505
 msgid "Can't start playback !"
 msgstr ""
 
@@ -5322,11 +5322,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1738
+#: play.h:1721
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1749
+#: play.h:1732
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -5579,8 +5579,8 @@ msgstr "Liste de Menu"
 #: network.h:823 network.h:877 novamov.h:35 novamov.h:93 novamov.h:99
 #: nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
-#: played.h:114 played.h:171 player.h:111 play.h:614 play.h:1293 play.h:1510
-#: play.h:1738 play.h:1749 possetup.h:98 primeshare.h:29 primeshare.h:73
+#: played.h:114 played.h:171 player.h:111 play.h:614 play.h:1293 play.h:1505
+#: play.h:1721 play.h:1732 possetup.h:98 primeshare.h:29 primeshare.h:73
 #: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
 #: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
 #: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
@@ -6152,7 +6152,7 @@ msgstr "Ö"
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:111
 #: play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293 play.h:1294
-#: play.h:1510 play.h:1738 play.h:1749 plugins_dlna_skin.xml.h:7
+#: play.h:1505 play.h:1721 play.h:1732 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
