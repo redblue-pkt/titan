@@ -9,6 +9,7 @@
 #define HEADER_H
 //bcm.h
 void bcm_accel_fill(int dst_addr, int dst_width, int dst_height, int dst_stride, int x, int y, int width, int height, unsigned long color);
+void bcm_accel_blit(int src_addr, int src_width, int src_height, int src_stride, int src_format, int dst_addr, int dst_width, int dst_height, int dst_stride, int src_x, int src_y, int width, int height, int dst_x, int dst_y, int dwidth, int dheight, int pal_addr, int flags);
 
 //security.h
 void checkgthread();
