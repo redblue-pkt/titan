@@ -690,6 +690,8 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	int qpitch = 0;
 	int qheight = 0;
 	int qwidth = 0;
+	unsigned long source_phys = 0;
+	unsigned long target_phys = 0;
 
 	if(scalewidth == 0) scalewidth = width;
 	if(scaleheight == 0) scaleheight = height;
@@ -711,8 +713,8 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	if(flag == 0)
 	{
 		source = accelfb->fb;
-		source_phys = accelfb->data_phys
-		target_phys = skinfb->data_phys
+		source_phys = accelfb->data_phys;
+		target_phys = skinfb->data_phys;
 
 		target = skinfb->fb + (posy * skinfb->pitch) + (posx*4);
 		zpitch = skinfb->pitch;
@@ -725,8 +727,8 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	else
 	{
 		source = skinfb->fb;
-		source_phys = skinfb->data_phys
-		target_phys = accelfb->data_phys
+		source_phys = skinfb->data_phys;
+		target_phys = accelfb->data_phys;
 
 		target = accelfb->fb + (posy * accelfb->pitch) + (posx*4);
 		zpitch = accelfb->pitch;
@@ -751,7 +753,8 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 		size_t help = 0;
 	
 		while(helpz < scaleheight && helpz < (zheight - posy)) {
-			memcpy(target[help], helpbuf[helpb], scalewidth*4);
+			//memcpy(target[help], helpbuf[helpb], scalewidth*4);
+			memcpy(target+help, helpbuf+helpb, scalewidth*4);
 			help = help + zpitch;
 			helpb = helpb + scalewidth*4;
 			helpz = helpz + 1;
