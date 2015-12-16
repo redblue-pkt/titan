@@ -1483,7 +1483,7 @@ playerstart:
 		else
 		{
 #ifdef EPLAYER3
-			if(ostrstr(file, "http://") == file)
+			if(ostrstr(file, "http://") == file || ostrstr(file, "https://") == file)
 			{
 				struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
 				rcret = playerstart(file);
