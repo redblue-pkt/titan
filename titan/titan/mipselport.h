@@ -26,7 +26,7 @@ int g_manual_blit = 0;
 struct fb_fix_screeninfo fix_screeninfo;
 struct fb_var_screeninfo var_screeninfo;
 
-void memcpy_area(unsigned char* ziehlADDR, unsigned char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs);
+void memcpy_area(unsigned char* targetADDR, unsigned char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs);
 
 int setmixer(struct dvbdev* node, int left, int right)
 {
@@ -681,9 +681,9 @@ return -1;
 void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag)
 {
 #ifndef SIMULATE
-#ifdef BLITHELP
-	unsigned char *quelle = NULL; 
-	unsigned char *ziehl = NULL;
+//#ifdef BLITHELP
+	unsigned char *source = NULL; 
+	unsigned char *target = NULL;
 	int zpitch = 0;
 	int zheight = 0;
 	int zwidth = 0;
@@ -710,11 +710,11 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	}
 	if(flag == 0)
 	{
-		quelle = accelfb->fb;
-		if(status.bcm == 1)
-			ziehl = skinfb->fb
-		else
-			ziehl = skinfb->fb + (posy * skinfb->pitch) + (posx*4);
+		source = accelfb->fb;
+		source_phys = accelfb->data_phys
+		target_phys = skinfb->data_phys
+
+		target = skinfb->fb + (posy * skinfb->pitch) + (posx*4);
 		zpitch = skinfb->pitch;
 		zheight = skinfb->height;
 		zwidth = skinfb->width;
@@ -724,11 +724,11 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	}
 	else
 	{
-		quelle = skinfb->fb;
-		if(status.bcm == 1)
-			ziehl =  accelfb->fb
-		else
-			ziehl = accelfb->fb + (posy * accelfb->pitch) + (posx*4);
+		source = skinfb->fb;
+		source_phys = skinfb->data_phys
+		target_phys = accelfb->data_phys
+
+		target = accelfb->fb + (posy * accelfb->pitch) + (posx*4);
 		zpitch = accelfb->pitch;
 		zheight = accelfb->height;
 		zwidth = accelfb->width;
@@ -737,21 +737,21 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 		qwidth = skinfb->width;
 	}
 	
-	if(status.bcm == 1)
+	if(status.bcm == 1 && source_phys > 0 && target_phys >0)
 	{
-		bcm_accel_blit((int)quelle, qwidth, qheight, qpitch, 0, (int)ziehl, zwidth, zheight, zpitch, posx, posy, width, height, posx, posy, scalewidth, scaleheight, 0, 0);
+		bcm_accel_blit(source_phys, qwidth, qheight, qpitch, 0, target_phys, zwidth, zheight, zpitch, posx, posy, width, height, posx, posy, scalewidth, scaleheight, 0, 0);
 	}
 	else
 	{
 		unsigned char *helpbuf = NULL;
-		helpbuf = scale(quelle, width, height, 4, scalewidth, scaleheight, 0);
+		helpbuf = scale(source, width, height, 4, scalewidth, scaleheight, 0);
 	
 		size_t helpb = 0;
 		size_t helpz = 0;
 		size_t help = 0;
 	
 		while(helpz < scaleheight && helpz < (zheight - posy)) {
-			memcpy(ziehl[help], helpbuf[helpb], scalewidth*4);
+			memcpy(target[help], helpbuf[helpb], scalewidth*4);
 			help = help + zpitch;
 			helpb = helpb + scalewidth*4;
 			helpz = helpz + 1;
@@ -763,7 +763,7 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	if(flag == 0)
 		blit();
 
-#endif
+//#endif
 
 /*
 	STMFBIO_BLT_DATA  blt_data;
@@ -1236,12 +1236,12 @@ void memcpy_byte(char* dest, char* src, long anzb)
 }
 
 
-void memcpy_area(unsigned char* ziehlADDR, unsigned char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs)
+void memcpy_area(unsigned char* targetADDR, unsigned char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs)
 {
 
 	asm(	
 
-				"		lw    $t3, %[ziehlADDR]													\n"
+				"		lw    $t3, %[targetADDR]													\n"
 				"		lw    $t4, %[startADDR]													\n"
 				"		lw		$t5, %[pxAbs]															\n"
 				"		lw    $t6, %[widthAbs]													\n"
@@ -1275,7 +1275,7 @@ void memcpy_area(unsigned char* ziehlADDR, unsigned char* startADDR, long pxAbs,
 
 				"p3End:																								\n"
 				"		nop																								\n"	
-				::[ziehlADDR] "m" (ziehlADDR), [startADDR] "m" (startADDR), [pxAbs] "m" (pxAbs), [widthAbs] "m" (widthAbs), [FBwidthAbs] "m" (FBwidthAbs), [hight] "m" (hight)
+				::[targetADDR] "m" (targetADDR), [startADDR] "m" (startADDR), [pxAbs] "m" (pxAbs), [widthAbs] "m" (widthAbs), [FBwidthAbs] "m" (FBwidthAbs), [hight] "m" (hight)
 				);
 				
 	return;
