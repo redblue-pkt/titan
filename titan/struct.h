@@ -1567,6 +1567,8 @@ struct status
 	int skinblink;
 	//BCM accel interface 
 	int bcm;
+	//Volume
+	int volume;
 } status;
 
 struct fb
