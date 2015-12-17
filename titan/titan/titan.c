@@ -767,6 +767,7 @@ int main(int argc, char *argv[])
 	openfont(getskinconfig("fontfile5", NULL));
 
 
+	status.volume = -1;
 	setvol(getconfigint("vol", NULL));
 
 	

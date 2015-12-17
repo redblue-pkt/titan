@@ -68,7 +68,7 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 		free(name);
 		return NULL;
 	}
-
+	
 	memset(newnode, 0, sizeof(struct fb));
 	newnode->name = name;
 	newnode->dev = dev;
@@ -85,7 +85,11 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	if(ostrcmp(name, FB) == 0)
 		setfbvarsize(newnode);
 	else if(ostrcmp(name, FB1) == 0)
+#ifdef MIPSEL
+		newnode->varfbsize = width * height * newnode->colbytes;
+#else		
 		newnode->varfbsize = 720 * 576 * newnode->colbytes;
+#endif
 	else
 		newnode->varfbsize = width * height * newnode->colbytes;
 	
@@ -112,7 +116,7 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 		return NULL;
 	}
 
-	debug(444, "fbname=%s, fbwidth=%d, fbheight=%d, fbcol=%d, fbsize=%ld", newnode->name, newnode->width, newnode->height, newnode->colbytes, newnode->varfbsize);
+	debug(444, "fbname=%s, fbwidth=%d, fbheight=%d, fbcol=%d, fbsize=%ld, phys_addr=%lu", newnode->name, newnode->width, newnode->height, newnode->colbytes, newnode->varfbsize);
 	return newnode;
 }
 
@@ -256,6 +260,7 @@ struct fb* openfb(char *fbdev, int devnr)
 		node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
 	if(devnr == 1)
 		node = addfb(FB1, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
+			
 
 #else
 	mmapfb = malloc(16 * 1024 * 1024);

@@ -4838,8 +4838,10 @@ int setvol(int value)
 		else
 		{
 			status.volmute = -1;
-			ret = writesysint(voldev, value, 0);
-
+			if(file_exist(voldev))
+				ret = writesysint(voldev, value, 0);
+			else
+				ret = 0;
 #ifdef MIPSEL
 			struct dvbdev *audionode = NULL;
 			int openaudio = 0;
@@ -4856,6 +4858,9 @@ int setvol(int value)
 		
 				if(ret == 0 && audionode != NULL)
 					ret = setmixer(audionode, value, value);
+					
+				if(ret == 0)
+					status.volume = value;
 				
 				if(openaudio == 1)
 					audioclose(audionode, -1);
@@ -4886,16 +4891,24 @@ int getvol()
 		return 0;
 	}
 	if(status.volmute == -1)
-		value = readsys(voldev, 1);
+	{
+		if(file_exist(voldev))
+			value = readsys(voldev, 1);
+	}
 	else
 		tmpvol = status.volmute;
-	if(value == NULL && tmpvol == -1)
+	if((value == NULL && status.volume == -1) && tmpvol == -1)
 	{
 		err("NULL detect");
 		return 0;
 	}
 	if(status.volmute == -1)
-		tmpvol = atoi(value);
+	{
+		if(file_exist(voldev))
+			tmpvol = atoi(value);
+		else
+			tmpvol = status.volume;
+	}
 	free(value);
 	tmpvol = 100 - tmpvol * 100 / 63;
 	if(status.volautochangevalue != 0)
