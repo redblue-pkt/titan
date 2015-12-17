@@ -139,13 +139,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1238
+#: titan.c:1239
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1221
+#: titan.c:1222
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -894,7 +894,7 @@ msgstr ""
 msgid "Apple Trailer"
 msgstr ""
 
-#: global.h:6230
+#: global.h:6243
 msgid "April"
 msgstr ""
 
@@ -1055,7 +1055,7 @@ msgstr ""
 msgid "Audio/Subt."
 msgstr "Audio/Phụ đề"
 
-#: global.h:6234
+#: global.h:6247
 msgid "August"
 msgstr ""
 
@@ -1115,7 +1115,7 @@ msgstr "Tự động dò"
 msgid "Automatic start last subtitle"
 msgstr "Tự động bắt đầu phụ đề"
 
-#: titan.c:1290
+#: titan.c:1291
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
@@ -1263,11 +1263,11 @@ msgstr "Thiết lập sao lưu"
 msgid "Backup / Restore Settings"
 msgstr "Sao lưu / Khôi phục cài đặt"
 
-#: global.h:7335 httpdfunc.h:6666 httpdfunc.h:6745 system_backup_restore.h:82
+#: global.h:7348 httpdfunc.h:6666 httpdfunc.h:6745 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "sao lưu thanh công"
 
-#: global.h:7337
+#: global.h:7350
 msgid "Backup ended with error"
 msgstr ""
 
@@ -2037,7 +2037,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:1002
+#: titan.c:1003
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -2326,19 +2326,19 @@ msgstr "Ghi âm"
 msgid "Create Satellites/Provider"
 msgstr ""
 
-#: global.h:6639
+#: global.h:6652
 msgid "Create Satellites/Provider (All)"
 msgstr ""
 
-#: global.h:6637
+#: global.h:6650
 msgid "Create Satellites/Provider (Cable)"
 msgstr ""
 
-#: global.h:6636
+#: global.h:6649
 msgid "Create Satellites/Provider (Sat)"
 msgstr ""
 
-#: global.h:6638
+#: global.h:6651
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
@@ -2565,7 +2565,7 @@ msgstr "Chế độ gỡ lỗi"
 msgid "Debuglevel"
 msgstr ""
 
-#: global.h:6238
+#: global.h:6251
 msgid "December"
 msgstr ""
 
@@ -3020,7 +3020,7 @@ msgid ""
 "partition could not be created"
 msgstr ""
 
-#: global.h:5980 keyactions.h:205
+#: global.h:5993 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr "Lỗi không thể đọc"
 
@@ -3059,9 +3059,9 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980
-#: global.h:6771 global.h:6790 global.h:7203 global.h:7223 global.h:7243
-#: global.h:7263 global.h:7283 harddisk.h:355 harddisk.h:678 harddisk.h:686
+#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5993
+#: global.h:6784 global.h:6803 global.h:7216 global.h:7236 global.h:7256
+#: global.h:7276 global.h:7296 harddisk.h:355 harddisk.h:678 harddisk.h:686
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
 #: harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37
 #: httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6218
@@ -3135,9 +3135,9 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1057
-#: titan.c:1066 titan.c:1194 titan.c:1215 titan.c:1221 titan.c:1232
-#: titan.c:1238 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1058
+#: titan.c:1067 titan.c:1195 titan.c:1216 titan.c:1222 titan.c:1233
+#: titan.c:1239 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1594 tithek.h:1616 tithek.h:1633 tithek.h:1865
 #: tithek.h:2025 tithek.h:2310 tithek.h:2338 tithek.h:2354 tithek.h:2366
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3307,35 +3307,35 @@ msgstr ""
 "lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh����ng thể được "
 "lưu trữ trong các MediaDB "
 
-#: global.h:6788
+#: global.h:6801
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6766
+#: global.h:6779
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: titan.c:864
+#: titan.c:865
 msgid "Error: no audio device found !!"
 msgstr " Lỗi: không tìm thấy thiết bị audio!!"
 
-#: titan.c:852
+#: titan.c:853
 msgid "Error: no demux device found !!"
 msgstr "Lỗi: không tìm thấy các thiết bị tách kênh!"
 
-#: titan.c:846
+#: titan.c:847
 msgid "Error: no frontend device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị vào!"
 
-#: titan.c:858
+#: titan.c:859
 msgid "Error: no video device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị video !!"
 
-#: titan.c:840
+#: titan.c:841
 msgid "Error: open rc device !!"
 msgstr " Lỗi: mở thiết bị rc !"
 
-#: titan.c:887
+#: titan.c:888
 msgid "Error: skin not found !!"
 msgstr "Lỗi: không tìm thấy nền!"
 
@@ -3562,7 +3562,7 @@ msgstr ""
 msgid "Favorites"
 msgstr ""
 
-#: global.h:6228
+#: global.h:6241
 msgid "February"
 msgstr ""
 
@@ -3633,7 +3633,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1057
+#: titan.c:1058
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
@@ -3818,7 +3818,7 @@ msgstr "Tỷ lệ lớn nhất"
 msgid "Free Space"
 msgstr "Dung lượng còn trống"
 
-#: titan.c:1232
+#: titan.c:1233
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3826,7 +3826,7 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1215
+#: titan.c:1216
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -3846,11 +3846,11 @@ msgstr "Tần số"
 msgid "Frequency:"
 msgstr "Tần số:"
 
-#: global.h:6246
+#: global.h:6259
 msgid "Fri"
 msgstr ""
 
-#: global.h:6211 global.h:6221 rectimer.h:1104 skin_default_skin.xml.h:220
+#: global.h:6224 global.h:6234 rectimer.h:1104 skin_default_skin.xml.h:220
 msgid "Friday"
 msgstr "Thứ sáu"
 
@@ -4664,7 +4664,7 @@ msgstr ""
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: global.h:6641
+#: global.h:6654
 msgid "Import mode"
 msgstr ""
 
@@ -4673,7 +4673,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Audio AC3 %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1066 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1067 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -4893,11 +4893,11 @@ msgstr "Tiếng Ý"
 msgid "J"
 msgstr ""
 
-#: global.h:6227
+#: global.h:6240
 msgid "January"
 msgstr ""
 
-#: global.h:6233
+#: global.h:6246
 msgid "July"
 msgstr ""
 
@@ -4910,7 +4910,7 @@ msgstr ""
 msgid "Jump To (min)"
 msgstr ""
 
-#: global.h:6232
+#: global.h:6245
 msgid "June"
 msgstr ""
 
@@ -5357,7 +5357,7 @@ msgstr "Dò bằng tay"
 msgid "Manual Search Terrestrial"
 msgstr "Dò bằng tay"
 
-#: global.h:6229
+#: global.h:6242
 msgid "March"
 msgstr ""
 
@@ -5397,7 +5397,7 @@ msgstr "Tần số cực đại"
 msgid "Maximal signalrate"
 msgstr "Tốc độ tín hiệu cực đại"
 
-#: global.h:6231
+#: global.h:6244
 msgid "May"
 msgstr ""
 
@@ -5590,10 +5590,10 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:66 firedrive.h:72 firedrive.h:122 firedrive.h:128
-#: firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980 global.h:6701
-#: global.h:6771 global.h:6790 global.h:7203 global.h:7211 global.h:7223
-#: global.h:7231 global.h:7243 global.h:7251 global.h:7263 global.h:7271
-#: global.h:7283 global.h:7291 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5993 global.h:6714
+#: global.h:6784 global.h:6803 global.h:7216 global.h:7224 global.h:7236
+#: global.h:7244 global.h:7256 global.h:7264 global.h:7276 global.h:7284
+#: global.h:7296 global.h:7304 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838
 #: harddisk.h:857 harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:5832 httpdfunc.h:6218 httpdfunc.h:6483 httpdfunc.h:6554
@@ -5648,8 +5648,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1194 titan.c:1215 titan.c:1221 titan.c:1232
-#: titan.c:1238 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: titan.c:346 titan.c:355 titan.c:1195 titan.c:1216 titan.c:1222 titan.c:1233
+#: titan.c:1239 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1594 tithek.h:1616 tithek.h:1865 tithek.h:2025
 #: tithek.h:2310 tithek.h:2338 tithek.h:2354 tithek.h:2366 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
@@ -5730,11 +5730,11 @@ msgstr "Loại môđun"
 msgid "Module info"
 msgstr "Thông tin môđun"
 
-#: global.h:6242
+#: global.h:6255
 msgid "Mon"
 msgstr ""
 
-#: global.h:6207 global.h:6217 rectimer.h:1100 skin_default_skin.xml.h:371
+#: global.h:6220 global.h:6230 rectimer.h:1100 skin_default_skin.xml.h:371
 msgid "Monday"
 msgstr "Thứ hai"
 
@@ -5829,7 +5829,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "Nhiều dịch vụ"
 
-#: global.h:6586
+#: global.h:6599
 msgid "Multituner adjustable"
 msgstr ""
 
@@ -6124,7 +6124,7 @@ msgstr "các thiết lập không sử dụng "
 msgid "Note created"
 msgstr ""
 
-#: global.h:6237
+#: global.h:6250
 msgid "November"
 msgstr ""
 
@@ -6162,10 +6162,10 @@ msgstr "E"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5980
-#: global.h:6701 global.h:6771 global.h:6790 global.h:7203 global.h:7211
-#: global.h:7223 global.h:7231 global.h:7243 global.h:7251 global.h:7263
-#: global.h:7271 global.h:7283 global.h:7291 harddisk.h:355 harddisk.h:487
+#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5993
+#: global.h:6714 global.h:6784 global.h:6803 global.h:7216 global.h:7224
+#: global.h:7236 global.h:7244 global.h:7256 global.h:7264 global.h:7276
+#: global.h:7284 global.h:7296 global.h:7304 harddisk.h:355 harddisk.h:487
 #: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
 #: harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860
 #: harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
@@ -6238,8 +6238,8 @@ msgstr "E"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1057 titan.c:1066 titan.c:1194 titan.c:1215
-#: titan.c:1221 titan.c:1232 titan.c:1238 tithek.c:100 tithek_global.h:85
+#: titan.c:346 titan.c:355 titan.c:1058 titan.c:1067 titan.c:1195 titan.c:1216
+#: titan.c:1222 titan.c:1233 titan.c:1239 tithek.c:100 tithek_global.h:85
 #: tithek.h:715 tithek.h:1273 tithek.h:1334 tithek.h:1594 tithek.h:1616
 #: tithek.h:1633 tithek.h:1865 tithek.h:2025 tithek.h:2310 tithek.h:2338
 #: tithek.h:2354 tithek.h:2366 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6308,7 +6308,7 @@ msgstr ""
 msgid "OTHER"
 msgstr "khác"
 
-#: global.h:6236
+#: global.h:6249
 msgid "October"
 msgstr ""
 
@@ -6985,7 +6985,7 @@ msgstr "Tắt bộ định thời"
 msgid "Present"
 msgstr ""
 
-#: global.h:7347 system_backup_restore.h:15
+#: global.h:7360 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -7304,7 +7304,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Đầu thu đang khởi động lại !!!"
 
-#: titan.c:1194
+#: titan.c:1195
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
@@ -7444,11 +7444,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:995
+#: titan.c:996
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:994
+#: titan.c:995
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -7871,7 +7871,7 @@ msgstr ""
 msgid "Samsung SPF.. Settings"
 msgstr "Thiết lập server Samba"
 
-#: global.h:6247
+#: global.h:6260
 msgid "Sat"
 msgstr "Vệ tinh"
 
@@ -7939,7 +7939,7 @@ msgstr "Loại vệ tinh"
 msgid "Satellite"
 msgstr "Vệ tinh"
 
-#: global.h:6701
+#: global.h:6714
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and\n"
@@ -7958,7 +7958,7 @@ msgstr ""
 msgid "Saturation"
 msgstr " Saturation "
 
-#: global.h:6212 global.h:6222 rectimer.h:1105 skin_default_skin.xml.h:522
+#: global.h:6225 global.h:6235 rectimer.h:1105 skin_default_skin.xml.h:522
 msgid "Saturday"
 msgstr "Thứ bảy"
 
@@ -8338,7 +8338,7 @@ msgstr "Lựa chọn đường dẫn"
 msgid "Select Unicable Manufacturer"
 msgstr "Nhà sản xuất cáp đơn"
 
-#: titan.c:1002
+#: titan.c:1003
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8390,7 +8390,7 @@ msgstr "Gửi tất cả ID CA tới môđun"
 msgid "Send remote box into standby ?"
 msgstr "Bạn có muốn chuyển chế độ chờ không?"
 
-#: global.h:6235
+#: global.h:6248
 msgid "September"
 msgstr ""
 
@@ -8481,7 +8481,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1057
+#: titan.c:1058
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
@@ -8913,23 +8913,23 @@ msgstr "Bắt đầu HTTPD"
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7203
+#: global.h:7216
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7223
+#: global.h:7236
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7263
+#: global.h:7276
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7243
+#: global.h:7256
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7283
+#: global.h:7296
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9103,11 +9103,11 @@ msgstr ""
 msgid "Sudoku Help"
 msgstr ""
 
-#: global.h:6248
+#: global.h:6261
 msgid "Sun"
 msgstr ""
 
-#: global.h:6213 global.h:6223 rectimer.h:1106 skin_default_skin.xml.h:615
+#: global.h:6226 global.h:6236 rectimer.h:1106 skin_default_skin.xml.h:615
 msgid "Sunday"
 msgstr "Chủ nhật"
 
@@ -9380,7 +9380,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7303
+#: global.h:7316
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9485,7 +9485,7 @@ msgstr "Ngưỡng"
 msgid "Thriller"
 msgstr ""
 
-#: global.h:6245
+#: global.h:6258
 msgid "Thu"
 msgstr ""
 
@@ -9493,7 +9493,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6210 global.h:6220 rectimer.h:1103 skin_default_skin.xml.h:637
+#: global.h:6223 global.h:6233 rectimer.h:1103 skin_default_skin.xml.h:637
 msgid "Thursday"
 msgstr "Thứ năm"
 
@@ -9669,7 +9669,7 @@ msgid "Titan MediaCenter"
 msgstr "Media Center"
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
-#: global.h:7211 global.h:7231 global.h:7251 global.h:7271 global.h:7291
+#: global.h:7224 global.h:7244 global.h:7264 global.h:7284 global.h:7304
 #: kravencfg.c:212 skinadjust.h:398 skinadjust.h:803
 msgid "Titan will be restarted!"
 msgstr ""
@@ -9937,11 +9937,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr ""
 
-#: global.h:6243
+#: global.h:6256
 msgid "Tue"
 msgstr ""
 
-#: global.h:6208 global.h:6218 rectimer.h:1101 skin_default_skin.xml.h:673
+#: global.h:6221 global.h:6231 rectimer.h:1101 skin_default_skin.xml.h:673
 msgid "Tuesday"
 msgstr "Thứ ba"
 
@@ -9953,7 +9953,7 @@ msgstr "Tuner lỗi"
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6577
+#: global.h:6590
 msgid "Tuner "
 msgstr ""
 
@@ -10108,7 +10108,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1288
+#: titan.c:1289
 msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
@@ -10485,11 +10485,11 @@ msgstr "Trình duyệt"
 msgid "Webbrowser Plugin"
 msgstr ""
 
-#: global.h:6244
+#: global.h:6257
 msgid "Wed"
 msgstr ""
 
-#: global.h:6209 global.h:6219 rectimer.h:1102 skin_default_skin.xml.h:722
+#: global.h:6222 global.h:6232 rectimer.h:1102 skin_default_skin.xml.h:722
 msgid "Wednesday"
 msgstr "Ngày thứ tư"
 
