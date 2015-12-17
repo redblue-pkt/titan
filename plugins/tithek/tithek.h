@@ -1467,16 +1467,14 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		char* skintitle = _("Choice Playback");
 		struct menulist* mlist = NULL, *mbox = NULL;
 
-#ifdef EPLAYER3
-		addmenulist(&mlist, "Streaming Playback FFM (default)", _("Streaming Playback FFM (default)"), NULL, 0, 0);
-#endif
-#ifdef EPLAYER4
+#ifndef MIPSEL
+		addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
+#else
 		// mipsel work, disable http direct streams without buffer, after 3mins no memory (memleak in player.h ?)
-		if(ostrncmp("http://", tmpstr1, 7))
-			addmenulist(&mlist, "Streaming Playback GST (default)", _("Streaming Playback GST (default)"), NULL, 0, 0);
+		if(ostrncmp("http://", tmpstr1, 7) && ostrncmp("https://", tmpstr1, 8))
+			addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
 #endif
-
-		if(!ostrncmp("http://", tmpstr1, 7))
+		if(!ostrncmp("http://", tmpstr1, 7) || !ostrncmp("https://", tmpstr1, 8))
 		{
 			// wakeup hdd for downloading
 			wakeup_record_device();
@@ -1485,31 +1483,22 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 //#ifdef EPLAYER3
 //				addmenulist(&mlist, "Streaming Playback Caching (1MB)", _("Streaming Playback Caching (1MB)"), NULL, 0, 0);
 //#else
-//				// mipsel work for radio
-//				addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
+#ifdef MIPSEL
+				// mipsel work for radio
+				addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
+#endif
 //#endif
 			}	
-			else if(!ostrncmp("http://", tmpstr1, 7))
+			else if(!ostrncmp("http://", tmpstr1, 7) || !ostrncmp("https://", tmpstr1, 8))
 			{
+//#ifdef EPLAYER3
 				if(checkbox("UFS910") == 1 && !file_exist("/var/swapdir/swapfile"))
-				{
-#ifdef EPLAYER3
-					addmenulist(&mlist, "Streaming Playback FFM (5MB)", _("Streaming Playback FFM (5MB)"), NULL, 0, 0);
-#endif
-#ifdef EPLAYER4
-					addmenulist(&mlist, "Streaming Playback GST (5MB)", _("Streaming Playback GST (5MB)"), NULL, 0, 0);
-#endif
-				}
+					addmenulist(&mlist, "Streaming Playback Caching (5MB)", _("Streaming Playback Caching (5MB)"), NULL, 0, 0);
 				else
 				{
-#ifdef EPLAYER3
-					addmenulist(&mlist, "Streaming Playback FFM (10MB)", _("Streaming Playback FFM (10MB)"), NULL, 0, 0);
-#endif
-#ifdef EPLAYER4
-					addmenulist(&mlist, "Streaming Playback GST (10MB)", _("Streaming Playback GST (10MB)"), NULL, 0, 0);
-#endif
+					addmenulist(&mlist, "Streaming Playback Caching (10MB)", _("Streaming Playback Caching (10MB)"), NULL, 0, 0);
 				}
-
+//#endif
 				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 				{
 /*
@@ -1527,58 +1516,56 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Streaming Playback Modus from the following list"), NULL, NULL, 1, 0);
 		if(mbox != NULL) keyconf = mbox->name;
 		debug(99, "tmpstr1: %s filename: %s flag: %d", tmpstr1, filename, flag);
-		if(ostrcmp(keyconf, "Streaming Playback FFM (default)") == 0)
+		if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 		{
-			status.extplayer = 1;
 			addconfigtmp("playerbuffersize", "0");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 		}
-		else if(ostrcmp(keyconf, "Streaming Playback GST (default)") == 0)
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
 		{
-			status.extplayer = 2;
-			addconfigtmp("playerbuffersize", "0");
+			addconfigtmp("playerbuffersize", "524288");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 		}
-		else if(ostrcmp(keyconf, "Streaming Playback FFM (1MB)") == 0)
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
 		{
-			status.extplayer = 1;
 			addconfigtmp("playerbuffersize", "1048576");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 		}
-		else if(ostrcmp(keyconf, "Streaming Playback GST (1MB)") == 0)
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
 		{
-			status.extplayer = 2;
-			addconfigtmp("playerbuffersize", "1048576");
+			addconfigtmp("playerbuffersize", "2097152");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 		}
-		else if(ostrcmp(keyconf, "Streaming Playback FFM (5MB)") == 0)
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
 		{
-			status.extplayer = 1;
+			addconfigtmp("playerbuffersize", "3145728");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "4194304");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
+		{
 			addconfigtmp("playerbuffersize", "5242880");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 		}
-		else if(ostrcmp(keyconf, "Streaming Playback GST (5MB)") == 0)
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (7.5MB)") == 0)
 		{
-			status.extplayer = 2;
-			addconfigtmp("playerbuffersize", "5242880");
+			addconfigtmp("playerbuffersize", "7864320");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 		}
-		else if(ostrcmp(keyconf, "Streaming Playback FFM (10MB)") == 0)
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (10MB)") == 0)
 		{
-			status.extplayer = 1;
-			addconfigtmp("playerbuffersize", "10485760");
-			screenplay(tmpstr1, filename, 2, flag);
-			delconfigtmp("playerbuffersize");
-		}
-		else if(ostrcmp(keyconf, "Streaming Playback GST (10MB)") == 0)
-		{
-			status.extplayer = 2;
 			addconfigtmp("playerbuffersize", "10485760");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
