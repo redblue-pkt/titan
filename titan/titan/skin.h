@@ -4206,8 +4206,18 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		m_lock(&status.oledmutex, 25);
 		if(oledskinfb == NULL) {
 			if(node->name != NULL && ostrstr(node->name, "OLED_nemesis") != NULL) {
-				debug(100, "alloc OLED framebuffer");
+				debug(100, "alloc OLED_nemesis framebuffer");
 				oledskinfb = oledaddfb(256, 64);
+				if(oledskinfb == NULL)
+				{
+					if(flag == 0 || flag == 4)
+						m_unlock(&status.drawingmutex, 0);
+					return -2;
+				}
+			}
+			else if(node->name != NULL && ostrstr(node->name, "OLED_dream1") != NULL) {
+				debug(100, "alloc OLED_dream1 framebuffer");
+				oledskinfb = oledaddfb(128, 64);
 				if(oledskinfb == NULL)
 				{
 					if(flag == 0 || flag == 4)
