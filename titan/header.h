@@ -1010,6 +1010,7 @@ void markerautoseek_thread();
 void write2oled(unsigned char *buf, int xres, int yres);
 struct fb* oledaddfb(int width, int height);
 int oledtext(char *value);
+void initOLEDdream1();
 
 #ifdef MIPSEL
 //cec.h

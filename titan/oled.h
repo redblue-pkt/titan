@@ -4,8 +4,10 @@
 void write2oled(unsigned char *buf, int xres, int yres)
 {
 	unsigned char* lfb1 = NULL;
+	unsigned char* lfb2 = NULL;
 	int i = 0;
 	int bi = 0;
+	int ret = 0;
 	
 	lfb1 = malloc(xres * yres);
 	if(lfb1 == NULL)
@@ -18,8 +20,36 @@ void write2oled(unsigned char *buf, int xres, int yres)
 		bi = bi + 4;
 	}
 	
-	int lcdfd1 = open("/dev/dbox/oled0", O_RDWR);
-	write(lcdfd1, lfb1, xres * yres);
+	int lcdfd1 = open(getconfig("vfddev", NULL), O_RDWR);
+	
+	if(checkchipset("BCM7424") == 1)
+	{
+		ret = write(lcdfd1, lfb1, xres * yres);
+		if(ret != xres * yres)
+			err("write to oled - %s - was not ok", getconfig("vfddev", NULL));
+	}
+	//Die Displays der dm7020hd, dm7025+(?), dm7080 und dm8000 haben 128*64*4bpp, DM800se hat 96*64*16bpp (RGB565), dm800 und dm7025(?) haben 132*64*1bpp (ältere ggf. 120*64 oder 128*64)
+	else if(checkbox("DM7020HD") == 1)
+	{
+		unsigned char byte;
+		bi = 0;
+		lfb2 = malloc(xres * yres / 2);
+		if(lfb2 == NULL)
+			return;
+		for(i = 0; i <= xres*yres; i = i + 2)
+		{
+			byte = lfb1[i] * 15 / 255;
+			lfb2[bi] = (byte << 4) & 0xf0;
+			byte = lfb1[i+1] * 15 / 255;
+			lfb2[bi] |= byte & 0x0f;
+			bi = bi + 1;
+		}
+		ret = write(lcdfd1, lfb2, xres * yres / 2);
+		if(ret != xres * yres / 2)
+			err("write to oled - %s - was not ok", getconfig("vfddev", NULL));
+		free(lfb2);
+	}
+		
 	close(lcdfd1);
 	
 	free(lfb1);
@@ -28,43 +58,52 @@ void write2oled(unsigned char *buf, int xres, int yres)
 
 int oledtext(char *value)
 {
-	struct skin* OLED_nemesis = NULL;
+	struct skin* OLED_all = NULL;
 	
 	if(getconfigint("oled_off", NULL) == 1)
 		return 0;
-	
- 	//if(getconfigint("oled_mutex", NULL) == 1)
-	//{
+
 	m_lock(&status.drawingmutex, 0);
-	//}
 	
-	if(status.updatevfd == PAUSE)
-		OLED_nemesis = getscreen("OLED_nemesis_menu");
-	else if(status.standby > 0)
-		OLED_nemesis = getscreen("OLED_nemesis_standby");
-	else
+	if(checkchipset("BCM7424") == 1)
 	{
-		if(getskinconfig("OLED_nemesis", NULL) == NULL)
-			OLED_nemesis = getscreen("OLED_nemesis");
+		if(status.updatevfd == PAUSE)
+			OLED_all = getscreen("OLED_nemesis_menu");
+		else if(status.standby > 0)
+			OLED_all = getscreen("OLED_nemesis_standby");
 		else
-			OLED_nemesis = getscreen(getskinconfig("OLED_nemesis", NULL));
+		{
+			if(getskinconfig("OLED_nemesis", NULL) == NULL)
+				OLED_all = getscreen("OLED_nemesis");
+			else
+				OLED_all = getscreen(getskinconfig("OLED_nemesis", NULL));
+		}
 	}
+	else if(checkbox("DM7020HD") == 1)
+	{
+		if(status.updatevfd == PAUSE)
+			OLED_all = getscreen("OLED_dream1_menu");
+		else if(status.standby > 0)
+			OLED_all = getscreen("OLED_dream1_standby");
+		else
+		{
+			if(getskinconfig("OLED_dream1", NULL) == NULL)
+				OLED_all = getscreen("OLED_dream1");
+			else
+				OLED_all = getscreen(getskinconfig("OLED_dream1", NULL));
+		}
+	}	
+		
 	
-	struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
+	struct skin* textbox = getscreennode(OLED_all, "textbox");
 	
 	if(status.standby == 2 && status.epgscanlistthread != NULL)
 		changetext(textbox, "EPG-Scan");
 	else
 		changetext(textbox, value);
-	//if(getconfigint("oled_mutex", NULL) == 1)
-	//{
-	drawscreen(OLED_nemesis, 0, 2);
+
+	drawscreen(OLED_all, 0, 2);
 	m_unlock(&status.drawingmutex, 0);
-	//}
-	//else
-	//	drawscreen(OLED_nemesis, 0, 0);
-	
-	
 	
 	return 0;
 }
@@ -89,8 +128,28 @@ struct fb* oledaddfb(int width, int height)
 	newnode->fblong = (unsigned long*)newnode->fb;
 	newnode->fd = -1;
 	newnode->fixfbsize = 4 * width * height;
+	newnode->data_phys = 0;
 	
 	return newnode;
+}
+
+void initOLEDdream1()
+{
+#ifndef LCD_IOCTL_ASC_MODE
+#define LCDSET                  0x1000
+#define LCD_IOCTL_ASC_MODE		(21|LCDSET)
+#define	LCD_MODE_ASC			0
+#define	LCD_MODE_BIN			1
+#endif
+
+	int i=LCD_MODE_BIN;
+	//int lcdfd = open("/dev/dbox/oled0", O_RDWR);
+	int lcdfd1 = open(getconfig("vfddev", NULL), O_RDWR);
+	if(lcdfd1 > -1)
+	{
+		ioctl(lcdfd1, LCD_IOCTL_ASC_MODE, &i);
+		close(lcdfd1);
+	}
 }	
 
 #endif	
