@@ -11045,11 +11045,11 @@ msgstr "Negro"
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:89
+#: vfdisplay.h:110
 msgid "blink"
 msgstr "Parpadear"
 
-#: vfdisplay.h:93
+#: vfdisplay.h:114
 msgid "blink star"
 msgstr "Iniciar Parpadeo"
 
@@ -11121,7 +11121,7 @@ msgstr ""
 msgid "change"
 msgstr "Cambiar"
 
-#: vfdisplay.h:61
+#: vfdisplay.h:82
 msgid "channel"
 msgstr "Canal"
 
@@ -11129,11 +11129,11 @@ msgstr "Canal"
 msgid "channel (EPG=Current channel)"
 msgstr "Canales (EPG=activar Canales)"
 
-#: vfdisplay.h:62
+#: vfdisplay.h:83
 msgid "channel + time"
 msgstr "Canal y Hora"
 
-#: vfdisplay.h:69
+#: vfdisplay.h:90
 msgid "channel number"
 msgstr "Numero de Canal"
 
@@ -11225,7 +11225,7 @@ msgstr "Diaria"
 msgid "date"
 msgstr "Fecha"
 
-#: vfdisplay.h:76
+#: vfdisplay.h:97
 msgid "date + time"
 msgstr "Fecha y Hora"
 
@@ -11437,7 +11437,7 @@ msgstr "externa"
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:90
+#: vfdisplay.h:111
 msgid "fade out/in"
 msgstr "Mostrar/ocultar"
 
@@ -12073,7 +12073,8 @@ msgstr "Ö"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:77
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:73 vfdisplay.h:88
+#: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:94
+#: vfdisplay.h:109
 msgid "off"
 msgstr "Off"
 
@@ -12124,7 +12125,7 @@ msgstr "Mas de 50 dias"
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:424 skinadjust.h:76 transponder.h:257 transponder.h:266
-#: transponder.h:416 transponder.h:425 vfdisplay.h:49
+#: transponder.h:416 transponder.h:425 vfdisplay.h:49 vfdisplay.h:70
 msgid "on"
 msgstr "en"
 
@@ -12640,7 +12641,7 @@ msgstr "Mostrar entradas (Auto amount)"
 msgid "show in list"
 msgstr "Mostrar en lista"
 
-#: vfdisplay.h:91
+#: vfdisplay.h:112
 msgid "show record"
 msgstr "Mostrar Grabar"
 
@@ -12746,7 +12747,7 @@ msgstr "Reposo"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:92
+#: vfdisplay.h:113
 msgid "star"
 msgstr "Iniciar"
 
@@ -12949,15 +12950,15 @@ msgstr ""
 msgid "tiWakeup"
 msgstr "Despertarse"
 
-#: vfdisplay.h:64 vfdisplay.h:67 vfdisplay.h:72
+#: vfdisplay.h:85 vfdisplay.h:88 vfdisplay.h:93
 msgid "time"
 msgstr "Hora"
 
-#: vfdisplay.h:63
+#: vfdisplay.h:84
 msgid "time + channel"
 msgstr "Hora y Canal"
 
-#: vfdisplay.h:68
+#: vfdisplay.h:89
 msgid "time small"
 msgstr "Hora pequeña"
 
@@ -13170,7 +13171,7 @@ msgstr "muy rapido"
 msgid "very slow"
 msgstr "Muy lentamente"
 
-#: vfdisplay.h:77
+#: vfdisplay.h:98
 msgid "vfddate"
 msgstr ""
 

@@ -10882,11 +10882,11 @@ msgstr "nero"
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:89
+#: vfdisplay.h:110
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:93
+#: vfdisplay.h:114
 msgid "blink star"
 msgstr ""
 
@@ -10958,7 +10958,7 @@ msgstr ""
 msgid "change"
 msgstr "modifica"
 
-#: vfdisplay.h:61
+#: vfdisplay.h:82
 msgid "channel"
 msgstr "Nome Canale"
 
@@ -10966,11 +10966,11 @@ msgstr "Nome Canale"
 msgid "channel (EPG=Current channel)"
 msgstr ""
 
-#: vfdisplay.h:62
+#: vfdisplay.h:83
 msgid "channel + time"
 msgstr "Nome canale + tempo"
 
-#: vfdisplay.h:69
+#: vfdisplay.h:90
 msgid "channel number"
 msgstr "Nome canale"
 
@@ -11062,7 +11062,7 @@ msgstr "giornagliero"
 msgid "date"
 msgstr "Data"
 
-#: vfdisplay.h:76
+#: vfdisplay.h:97
 msgid "date + time"
 msgstr "Data + Tempo"
 
@@ -11274,7 +11274,7 @@ msgstr ""
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:90
+#: vfdisplay.h:111
 msgid "fade out/in"
 msgstr ""
 
@@ -11908,7 +11908,8 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:77
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:73 vfdisplay.h:88
+#: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:94
+#: vfdisplay.h:109
 msgid "off"
 msgstr ""
 
@@ -11959,7 +11960,7 @@ msgstr ""
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:424 skinadjust.h:76 transponder.h:257 transponder.h:266
-#: transponder.h:416 transponder.h:425 vfdisplay.h:49
+#: transponder.h:416 transponder.h:425 vfdisplay.h:49 vfdisplay.h:70
 msgid "on"
 msgstr "ON"
 
@@ -12468,7 +12469,7 @@ msgstr ""
 msgid "show in list"
 msgstr ""
 
-#: vfdisplay.h:91
+#: vfdisplay.h:112
 msgid "show record"
 msgstr ""
 
@@ -12574,7 +12575,7 @@ msgstr "Standby"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:92
+#: vfdisplay.h:113
 msgid "star"
 msgstr ""
 
@@ -12777,15 +12778,15 @@ msgstr ""
 msgid "tiWakeup"
 msgstr ""
 
-#: vfdisplay.h:64 vfdisplay.h:67 vfdisplay.h:72
+#: vfdisplay.h:85 vfdisplay.h:88 vfdisplay.h:93
 msgid "time"
 msgstr ""
 
-#: vfdisplay.h:63
+#: vfdisplay.h:84
 msgid "time + channel"
 msgstr ""
 
-#: vfdisplay.h:68
+#: vfdisplay.h:89
 msgid "time small"
 msgstr ""
 
@@ -12998,7 +12999,7 @@ msgstr "molto veloce"
 msgid "very slow"
 msgstr "molto lento"
 
-#: vfdisplay.h:77
+#: vfdisplay.h:98
 msgid "vfddate"
 msgstr "Data"
 
