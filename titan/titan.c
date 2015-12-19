@@ -667,6 +667,7 @@ int main(int argc, char *argv[])
 	if(file_exist("/etc/.stable") && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1))
 		status.pvr = 0;
 
+/*
 	if(getconfigint("sos", NULL) == 0)
 	{
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
@@ -733,10 +734,11 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
+*/
 		status.security = 5;
 		startnet();
 		setskinnodeslocked(0);
-	}
+//	}
 #endif
 
 	if(file_exist("/mnt/config/dualboot.enigma2"))
