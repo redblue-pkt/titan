@@ -24,7 +24,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: security.h:678 security.h:2106
+#: security.h:678 security.h:2107
 msgid " Days "
 msgstr ""
 
@@ -139,13 +139,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1243
+#: titan.c:1245
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1226
+#: titan.c:1228
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1010,7 +1010,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr ""
 
-#: security.h:2111
+#: security.h:2112
 msgid "Atemio free license"
 msgstr ""
 
@@ -1115,7 +1115,7 @@ msgstr "Tự động dò"
 msgid "Automatic start last subtitle"
 msgstr "Tự động bắt đầu phụ đề"
 
-#: titan.c:1295
+#: titan.c:1297
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
@@ -2037,7 +2037,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:1007
+#: titan.c:1009
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -2282,7 +2282,7 @@ msgstr ""
 msgid "Copy satlist successfull"
 msgstr ""
 
-#: security.h:2120
+#: security.h:2121
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2674,7 +2674,7 @@ msgstr ""
 "KẾT THÚC QUÁ TRÌNH = Nút màu đỏ\n"
 "KHỞI ĐỘNG LẠI = Nút power"
 
-#: security.h:2113
+#: security.h:2114
 msgid "Dev free license"
 msgstr ""
 
@@ -2848,7 +2848,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2088
+#: security.h:2089
 msgid "Driver"
 msgstr ""
 
@@ -3116,7 +3116,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:663 security.h:680 security.h:1926 service.h:738
+#: scriptexec.h:41 security.h:663 security.h:680 security.h:1927 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -3135,9 +3135,9 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1062
-#: titan.c:1071 titan.c:1199 titan.c:1220 titan.c:1226 titan.c:1237
-#: titan.c:1243 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1064
+#: titan.c:1073 titan.c:1201 titan.c:1222 titan.c:1228 titan.c:1239
+#: titan.c:1245 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1594 tithek.h:1616 tithek.h:1633 tithek.h:1865
 #: tithek.h:2025 tithek.h:2310 tithek.h:2338 tithek.h:2354 tithek.h:2366
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3315,27 +3315,27 @@ msgstr ""
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: titan.c:869
+#: titan.c:871
 msgid "Error: no audio device found !!"
 msgstr " Lỗi: không tìm thấy thiết bị audio!!"
 
-#: titan.c:857
+#: titan.c:859
 msgid "Error: no demux device found !!"
 msgstr "Lỗi: không tìm thấy các thiết bị tách kênh!"
 
-#: titan.c:851
+#: titan.c:853
 msgid "Error: no frontend device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị vào!"
 
-#: titan.c:863
+#: titan.c:865
 msgid "Error: no video device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị video !!"
 
-#: titan.c:845
+#: titan.c:847
 msgid "Error: open rc device !!"
 msgstr " Lỗi: mở thiết bị rc !"
 
-#: titan.c:892
+#: titan.c:894
 msgid "Error: skin not found !!"
 msgstr "Lỗi: không tìm thấy nền!"
 
@@ -3399,7 +3399,7 @@ msgstr "Mở rộng"
 msgid "Extensions List"
 msgstr "Danh sách mở rộng"
 
-#: security.h:2077 security.h:2082
+#: security.h:2078 security.h:2083
 msgid "External Player"
 msgstr ""
 
@@ -3633,7 +3633,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1062
+#: titan.c:1064
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
@@ -3818,7 +3818,7 @@ msgstr "Tỷ lệ lớn nhất"
 msgid "Free Space"
 msgstr "Dung lượng còn trống"
 
-#: titan.c:1237
+#: titan.c:1239
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3826,7 +3826,7 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1220
+#: titan.c:1222
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -3874,7 +3874,7 @@ msgstr "Hiển thị VF"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2071
+#: security.h:2072
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4642,7 +4642,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2059
+#: security.h:2060
 msgid "Image"
 msgstr ""
 
@@ -4673,7 +4673,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Audio AC3 %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1071 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1073 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -4843,7 +4843,7 @@ msgstr "Cài đặt lỗi !"
 msgid "Installation start"
 msgstr "Đang cài đặt"
 
-#: httpdfunc.h:5674 security.h:2066 skin_default_skin.xml.h:314
+#: httpdfunc.h:5674 security.h:2067 skin_default_skin.xml.h:314
 msgid "Installed:"
 msgstr "Cài đặt"
 
@@ -5189,7 +5189,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2093
+#: security.h:2094
 msgid "License"
 msgstr ""
 
@@ -5637,7 +5637,7 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716 scan.h:1978
-#: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1926 service.h:738
+#: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1927 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
@@ -5648,8 +5648,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1199 titan.c:1220 titan.c:1226 titan.c:1237
-#: titan.c:1243 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
+#: titan.c:346 titan.c:355 titan.c:1201 titan.c:1222 titan.c:1228 titan.c:1239
+#: titan.c:1245 tithek.c:100 tithek_global.h:85 tithek.h:715 tithek.h:1273
 #: tithek.h:1334 tithek.h:1594 tithek.h:1616 tithek.h:1865 tithek.h:2025
 #: tithek.h:2310 tithek.h:2338 tithek.h:2354 tithek.h:2366 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
@@ -6221,7 +6221,7 @@ msgstr "E"
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:663 security.h:680 security.h:1926 service.h:738
+#: scriptexec.h:41 security.h:663 security.h:680 security.h:1927 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:398
 #: skinadjust.h:803 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
@@ -6238,8 +6238,8 @@ msgstr "E"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1062 titan.c:1071 titan.c:1199 titan.c:1220
-#: titan.c:1226 titan.c:1237 titan.c:1243 tithek.c:100 tithek_global.h:85
+#: titan.c:346 titan.c:355 titan.c:1064 titan.c:1073 titan.c:1201 titan.c:1222
+#: titan.c:1228 titan.c:1239 titan.c:1245 tithek.c:100 tithek_global.h:85
 #: tithek.h:715 tithek.h:1273 tithek.h:1334 tithek.h:1594 tithek.h:1616
 #: tithek.h:1633 tithek.h:1865 tithek.h:2025 tithek.h:2310 tithek.h:2338
 #: tithek.h:2354 tithek.h:2366 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7304,7 +7304,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Đầu thu đang khởi động lại !!!"
 
-#: titan.c:1199
+#: titan.c:1201
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
@@ -7444,11 +7444,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:1000
+#: titan.c:1002
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:999
+#: titan.c:1001
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -8338,7 +8338,7 @@ msgstr "Lựa chọn đường dẫn"
 msgid "Select Unicable Manufacturer"
 msgstr "Nhà sản xuất cáp đơn"
 
-#: titan.c:1007
+#: titan.c:1009
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8481,7 +8481,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1062
+#: titan.c:1064
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
@@ -9933,7 +9933,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:676 security.h:2103
+#: security.h:676 security.h:2104
 msgid "Trial period ends in"
 msgstr ""
 
@@ -9949,7 +9949,7 @@ msgstr "Thứ ba"
 msgid "Tune to channel failed"
 msgstr "Tuner lỗi"
 
-#: security.h:2129 skin_default_skin.xml.h:674
+#: security.h:2130 skin_default_skin.xml.h:674
 msgid "Tuner"
 msgstr ""
 
@@ -9987,7 +9987,7 @@ msgid ""
 "or stream is running !"
 msgstr "Cấu hình tuner này không cho phép ghi"
 
-#: security.h:2136 skin_default_skin.xml.h:680
+#: security.h:2137 skin_default_skin.xml.h:680
 msgid "Tunertype"
 msgstr ""
 
@@ -10028,7 +10028,7 @@ msgstr ""
 msgid "UE"
 msgstr "E"
 
-#: security.h:2109
+#: security.h:2110
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10108,7 +10108,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1293
+#: titan.c:1295
 msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
@@ -10209,7 +10209,7 @@ msgstr "THIẾT LẬP HIỂN THỊ"
 msgid "VLC Player"
 msgstr "Phát VLC"
 
-#: security.h:2062
+#: security.h:2063
 msgid "Version"
 msgstr ""
 
@@ -11275,7 +11275,7 @@ msgstr ""
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2115
+#: security.h:2116
 msgid "expired"
 msgstr ""
 
@@ -12916,7 +12916,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:345
-#: security.h:2134 skin_default_skin.xml.h:692 skinselector.h:138 stream.h:22
+#: security.h:2135 skin_default_skin.xml.h:692 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13009,7 +13009,7 @@ msgstr ""
 msgid "v"
 msgstr ""
 
-#: security.h:2096
+#: security.h:2097
 msgid "valid"
 msgstr ""
 
