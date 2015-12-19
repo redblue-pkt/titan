@@ -974,6 +974,7 @@ unsigned long getsysinfo()
 
 void destroy()
 {
+return;
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
