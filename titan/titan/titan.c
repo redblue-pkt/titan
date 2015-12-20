@@ -667,26 +667,25 @@ int main(int argc, char *argv[])
 	if(file_exist("/etc/.stable") && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1))
 		status.pvr = 0;
 
-/*
 	if(getconfigint("sos", NULL) == 0)
 	{
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 		{
 			printf("error: 1\n");
 			destroy();
-			exit(100);
+//			exit(100);
 		}
 		if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
 		{
 			printf("error: 2\n");		
 			destroy();
-			exit(100);
+//			exit(100);
 		}
 		if(checkreseller() != 0)
 		{
 			printf("error: 3\n");		
 			destroy();
-			exit(100);
+//			exit(100);
 		}
 		if(ret > 0)
 		{
@@ -694,14 +693,14 @@ int main(int argc, char *argv[])
 			{
 				printf("error: 4\n");		
 				destroy();
-				exit(100);
+//				exit(100);
 			}
 		}
 		if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 		{
 			printf("error: 5\n");		
 			destroy();
-			exit(100);
+//			exit(100);
 		}
 		if(ret > 0)
 		{
@@ -709,7 +708,7 @@ int main(int argc, char *argv[])
 			{
 				printf("error: 6\n");		
 				destroy();
-				exit(100);
+//				exit(100);
 			}
 		}
 		if(ret > 0)
@@ -718,14 +717,14 @@ int main(int argc, char *argv[])
 			{
 				printf("error: 7\n");		
 				destroy();
-				exit(100);
+//				exit(100);
 			}
 		}
 		if(checkbox("UFS910") == 1 && checklowflash() != 0)
 		{
 			printf("error: 8\n");		
 			destroy();
-			exit(100);
+//			exit(100);
 		}
 	
 		char* cpuid = getcpuid();
@@ -734,11 +733,10 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-*/
 		status.security = 5;
 		startnet();
 		setskinnodeslocked(0);
-//	}
+	}
 #endif
 
 	if(file_exist("/mnt/config/dualboot.enigma2"))
