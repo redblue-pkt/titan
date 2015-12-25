@@ -362,7 +362,8 @@ void screenskinadjust()
 		drawscreen(skinadjust, 0, 0);
 
 #ifdef MIPSEL
-		setfbosd();
+		if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
+			setfbosd();
 #endif
 
 		if(rcret == getrcconfigint("rcexit", NULL))
