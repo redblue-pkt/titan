@@ -29,7 +29,7 @@ void write2oled(unsigned char *buf, int xres, int yres)
 			err("write to oled - %s - was not ok", getconfig("vfddev", NULL));
 	}
 	//Die Displays der dm7020hd, dm7025+(?), dm7080 und dm8000 haben 128*64*4bpp, DM800se hat 96*64*16bpp (RGB565), dm800 und dm7025(?) haben 132*64*1bpp (ältere ggf. 120*64 oder 128*64)
-	else if(checkbox("DM7020HD") == 1)
+	else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
 		unsigned char byte;
 		bi = 0;
@@ -79,7 +79,7 @@ int oledtext(char *value)
 				OLED_all = getscreen(getskinconfig("OLED_nemesis", NULL));
 		}
 	}
-	else if(checkbox("DM7020HD") == 1)
+	else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
 		if(status.updatevfd == PAUSE)
 			OLED_all = getscreen("OLED_dream1_menu");

@@ -50,7 +50,7 @@ void screenvfdisplay()
 		addchoicebox(blinkoff, "1", _("off"));
 		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
 	}
-	else if(checkbox("DM7020HD") == 1)
+	else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
 		char *tmp1 = NULL, *tmp2 = NULL;		
 		int i = 0;		
@@ -101,7 +101,7 @@ void screenvfdisplay()
 
 //record
 
-	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1) //inihdp
+	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1) //inihdp
 		vfdrecord->hidden = YES;
 	else
 	{
@@ -148,7 +148,7 @@ void screenvfdisplay()
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		
-		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) &&  (checkbox("DM7020HD") == 1 || checkchipset("BCM7424") == 1) && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0) // inihdp
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) &&  (checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkchipset("BCM7424") == 1) && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0) // inihdp
 		{
 			tmpstr = ostrcat(tmpstr, oled_sel->ret, 0, 0);
 			struct skin* OLED_all = getscreen(tmpstr);
@@ -156,7 +156,7 @@ void screenvfdisplay()
 			{
 				if(checkchipset("BCM7424") == 1)
 					OLED_all = getscreen("OLED_nemesis");
-				else if(checkbox("DM7020HD") == 1)
+				else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 					OLED_all = getscreen("OLED_dream1");
 			}	
 			struct skin* textbox = getscreennode(OLED_all, "textbox");
@@ -227,7 +227,7 @@ void screenvfdisplay()
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
 				addconfig("skinblinkoff", blinkoff->ret);
 			}
-			else if(checkbox("DM7020HD") != 1) //inihdp
+			else if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1) //inihdp
 			{
 				addskinconfigscreencheck("OLED_dream1", oled_sel, "0");
 				addconfig("skinblinkoff", blinkoff->ret);
