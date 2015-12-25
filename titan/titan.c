@@ -948,7 +948,7 @@ int main(int argc, char *argv[])
 		ret = readscreen("/var/usr/local/share/titan/skin/default/keyskin.xml", 0, 0);
 	else
 		ret = readscreen(getconfig("keyskin_file", NULL), 0, 0);
-	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1) //inihdp
+	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)  //inihdp
 	{
 		if(getconfig("oledskin_path", NULL) == NULL)
 			ret = readscreen("/var/usr/local/share/titan/skin/default/oledskin.xml", 0, 0);
