@@ -13349,15 +13349,11 @@ msgstr "Video/Picture"
 msgid "videomode"
 msgstr ""
 
-#: webif_help.h:118
-msgid "videosettings"
-msgstr ""
-
 #: tpk_showname.h:199
 msgid "vizcam 1.04"
 msgstr ""
 
-#: webif_help.h:119
+#: webif_help.h:118
 msgid "volume"
 msgstr ""
 
@@ -13385,7 +13381,7 @@ msgstr ""
 msgid "weather Plugin"
 msgstr ""
 
-#: webif_help.h:120
+#: webif_help.h:119
 msgid "webdir"
 msgstr ""
 
@@ -13433,7 +13429,7 @@ msgstr ""
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
-#: webif_help.h:121
+#: webif_help.h:120
 msgid "wlansettings"
 msgstr ""
 
