@@ -142,6 +142,8 @@ void initOLEDdream1()
 #define	LCD_MODE_BIN			1
 #endif
 
+return; //wird nicht benötigt
+
 	int i=LCD_MODE_BIN;
 	//int lcdfd = open("/dev/dbox/oled0", O_RDWR);
 	int lcdfd1 = open(getconfig("vfddev", NULL), O_RDWR);
