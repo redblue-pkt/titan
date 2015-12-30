@@ -28,6 +28,14 @@ msgstr " : Fehlerhaft!"
 msgid " Days "
 msgstr " Tage "
 
+#: scan.h:1624
+msgid " Del: "
+msgstr ""
+
+#: scan.h:1622
+msgid " New: "
+msgstr ""
+
 #: titan.c:282
 msgid "!!! This is a DEMO Version !!!"
 msgstr "!!! Dies ist eine Demoversion !!!"
@@ -847,10 +855,6 @@ msgid ""
 msgstr ""
 "Alle Daten auf diesem Datenträger werden gelöscht!\n"
 "Fortfahren?"
-
-#: scan.h:1706
-msgid "All new channels added!"
-msgstr "Alle neuen Sender gespeichert!"
 
 #: skin_default_skin.xml.h:28
 msgid "Allowed Zapping via Streamlink"
@@ -8011,6 +8015,10 @@ msgstr "Gefundene Liste"
 msgid "Results"
 msgstr "Treffer"
 
+#: scan.h:1706
+msgid "Results have been saved."
+msgstr ""
+
 #: httpdfunc.h:4604 skin_default_skin.xml.h:501
 msgid "Resync Recording immediately"
 msgstr "Synchronisiere Aufnahmen sofort (Schreibcache aus)"
@@ -13777,3 +13785,6 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "All new channels added!"
+#~ msgstr "Alle neuen Sender gespeichert!"
