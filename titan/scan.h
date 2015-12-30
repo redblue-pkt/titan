@@ -203,7 +203,7 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 	id = id | ((uint64_t)1 << 32);
 
 	if(gettransponder(id) == NULL)
-	//if(gettransponderbydetail(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0, 0) == NULL)	
+	//if(gettransponderbydetail(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0, 0) == NULL)
 	{
 		tpnode = createtransponder(id, FE_QAM, orbitalpos, frequency, INVERSION_AUTO, symbolrate, 0, fec, modulation, 0, 0, 0);
 		status.writetransponder = 1;
@@ -446,7 +446,7 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	uint8_t providerlen = 0;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	uint64_t* tmpuint64 = NULL;
-	
+
 	struct transponder* tphelp = NULL;
 
 	if(buf == NULL || fenode == NULL || fenode->feinfo == NULL) return ret;
@@ -456,13 +456,13 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 	*lastsecnr = buf[7];
 	tid = (buf[3] << 8) | buf[4];
 	onid = (buf[8] << 8) | buf[9];
-	
+
 	transponderid = ((onid << 16) | tid) & 0xffffffff;
 	if(fenode->feinfo->type == FE_QAM)
 		transponderid = transponderid | ((uint64_t)1 << 32);
 	else if(fenode->feinfo->type == FE_OFDM)
 		transponderid = transponderid | ((uint64_t)2 << 32);
-		
+
 	//if(tpnode != NULL && (tpnode->id != transponderid || scaninfo.fenode->feinfo->type == FE_QAM || scaninfo.fenode->feinfo->type == FE_OFDM) && tpnode->id != 99)
 	if(tpnode != NULL && tpnode->id != transponderid && tpnode->id != 99)
 	{
@@ -473,7 +473,7 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 			tphelp->id = 0;
 			modifytranspondercache(tphelp->id, tphelp);
 			debug(500, "set old tid: %llu to 0", transponderid);
-	
+
 			//changetransponderid(tphelp, 0);
 			//debug(500, "set old tid: %llu to 0", transponderid);
 		}
@@ -501,7 +501,7 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 					servicetype = buf[pos2 + 2];
 					servicetype = changeservicetype(servicetype);
 					providerlen = buf[pos2 + 3];
-					
+
 					//providername
 					tmpstr1 = strndup((char*)&(buf[pos2 + 4]), providerlen);
 					//channelname
@@ -572,14 +572,14 @@ int findchannel(struct dvbdev* fenode, struct transponder* tpnode, unsigned char
 						free(node->name);
 						node->name = (char*)tmpuint64;
 					}
-					
+
 					if(flag == 1 && chnode != NULL && ostrcmp(chnode->name, tmpstr2) != 0)
 					{
 						free(chnode->name);
 						chnode->name = ostrcat(tmpstr2, NULL, 0, 0);
 						status.writechannel = 1;
 					}
-					
+
 					free(tmpstr); tmpstr = NULL;
 					free(tmpstr1); tmpstr1 = NULL;
 					free(tmpstr2); tmpstr2 = NULL;
@@ -602,7 +602,7 @@ uint64_t findtransponderid(struct dvbdev* fenode, unsigned char *buf)
 
 	tid = (buf[3] << 8) | buf[4];
 	onid = (buf[8] << 8) | buf[9];
-	
+
 	transponderid = ((onid << 16) | tid) & 0xffffffff;
 
 	if(fenode->feinfo->type == FE_QAM)
@@ -635,7 +635,7 @@ unsigned int satblindscan(struct stimerthread* timernode, int onlycalc)
 	unsigned int usedefaultsr = getconfigint("blindusedefaultsr", NULL);
 	unsigned int onlydvbs = getconfigint("blindonlydvbs", NULL);
 	unsigned int usedefaultfec = getconfigint("blindusedefaultfec", NULL);
-	
+
 	int minmodulation = 1, maxmodulation = 2, stepmodulation = 1;
 	int minpolarization = 0, maxpolarization = 1, steppolarization = 1;
 	int minsystem = 0, maxsystem = 1, stepsystem = 1;
@@ -663,7 +663,7 @@ unsigned int satblindscan(struct stimerthread* timernode, int onlycalc)
 	int countpolarization = ((maxpolarization + steppolarization) - minpolarization) / steppolarization;
 	int countfec = ((maxfec + stepfec) - minfec) / stepfec;
 	int systemcount = ((maxsystem + stepsystem) - minsystem) / stepsystem;
-	
+
 	if(onlycalc == 1) return systemcount * countpolarization * countmodulation * countsymbolrate * countfrequency * countfec;
 
 	if(scaninfo.fenode == NULL || timernode == NULL) return -1;
@@ -697,7 +697,7 @@ unsigned int satblindscan(struct stimerthread* timernode, int onlycalc)
 
 			for(modulation = minmodulation; modulation <= maxmodulation; modulation += stepmodulation)
 			{
-				
+
 				for(polarization = minpolarization; polarization <= maxpolarization; polarization += steppolarization)
 				{
 
@@ -781,7 +781,7 @@ unsigned int satblindscan(struct stimerthread* timernode, int onlycalc)
 		}
 		if(timernode->aktion != START) break;
 	}
-	
+
 	return 0;
 }
 
@@ -804,7 +804,7 @@ unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc)
 	unsigned int stepsymbolrate = getconfigint("cblindstepsignalrate", NULL) * 1000;
 	unsigned int usedefaultsr = getconfigint("cblindusedefaultsr", NULL);
 	unsigned int usedefaultfec = getconfigint("cblindusedefaultfec", NULL);
-	
+
 	int minmodulation = 0, maxmodulation = 4, stepmodulation = 1;
 	int minfec = 0, maxfec = 8, stepfec = 1;
 
@@ -822,9 +822,9 @@ unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc)
 	int countsymbolrate = ((maxsymbolrate + stepsymbolrate) - minsymbolrate) / stepsymbolrate;
 	int countmodulation = ((maxmodulation + stepmodulation) - minmodulation) / stepmodulation;
 	int countfec = ((maxfec + stepfec) - minfec) / stepfec;
-	
+
 	if(onlycalc == 1) return countmodulation * countsymbolrate * countfrequency * countfec;
-	
+
 	if(scaninfo.fenode == NULL || timernode == NULL) return -1;
 	int timeout = scaninfo.timeout / 5;
 	if(timeout < 1000000) timeout = 1000000;
@@ -927,7 +927,7 @@ unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc)
 		}
 		if(timernode->aktion != START) break;
 	}
-	
+
 	return 0;
 }
 
@@ -945,7 +945,7 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 	unsigned int minfrequency = getconfigint("tblindminfrequency", NULL) * 1000;
 	unsigned int maxfrequency = getconfigint("tblindmaxfrequency", NULL) * 1000;
 	unsigned int stepfrequency = getconfigint("tblindstepfrequency", NULL) * 1000;
-	
+
 	int minhp = 0, maxhp = 3, stephp = 1;
 	int minlp = 0, maxlp = 3, steplp = 1;
 	int minmodulation = 0, maxmodulation = 2, stepmodulation = 1;
@@ -962,9 +962,9 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 	int counttransmission = ((maxtransmission + steptransmission) - mintransmission) / steptransmission;
 	int countguardinterval = ((maxguardinterval + stepguardinterval) - minguardinterval) / stepguardinterval;
 	int counthierarchy = ((maxhierarchy + stephierarchy) - minhierarchy) / stephierarchy;
-	
+
 	if(onlycalc == 1) return counthierarchy * countguardinterval * countmodulation * counttransmission * countfrequency * countbandwidth * countlp * counthp;
-	
+
 	if(scaninfo.fenode == NULL || timernode == NULL) return -1;
 	int timeout = scaninfo.timeout / 5;
 	if(timeout < 1000000) timeout = 1000000;
@@ -987,21 +987,21 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 
 						for(transmission = mintransmission; transmission <= maxtransmission; transmission += steptransmission)
 						{
-						
+
 							for(guardinterval = minguardinterval; guardinterval <= maxguardinterval; guardinterval += stepguardinterval)
 							{
-						
+
 								for(hierarchy = minhierarchy; hierarchy <= maxhierarchy; hierarchy += stephierarchy)
 								{
 									scaninfo.blindcount++;
-	
+
 									tpnode = createtransponder(99, scaninfo.fenode->feinfo->type, scaninfo.orbitalpos, frequency, INVERSION_AUTO, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
-	
+
 									debug(500, "blindscan: frequ=%d, modulation=%d, hp=%d, lp=%d, bandwidth=%d, guardinterval=%d, transmission=%d, hierarchy=%d, orbitalpos=%d", frequency, modulation, hp, lp, bandwidth, guardinterval, transmission, hierarchy, scaninfo.orbitalpos);
-	
+
 									if(tpnode != NULL)
 									{
-	
+
 										fenode = fegetfree(tpnode, 0, scaninfo.fenode);
 										if(fenode == NULL )
 										{
@@ -1009,7 +1009,7 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 											deltransponderbyid(99);
 											continue;
 										}
-	
+
 										//frontend tune
 										if(fenode->feinfo->type == FE_OFDM)
 										{
@@ -1022,7 +1022,7 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 											deltransponderbyid(99);
 											continue;
 										}
-		
+
 										festatus = fewait(fenode);
 										if(debug_level == 200) fereadstatus(fenode);
 										if(festatus != 0)
@@ -1031,17 +1031,17 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 											deltransponderbyid(99);
 											continue;
 										}
-		
+
 										buf = dvbgetsdt(fenode, 0, timeout);
 										transponderid = findtransponderid(fenode, buf);
 										free(buf); buf = NULL;
-		
+
 										if(transponderid == 0 || gettransponder(transponderid) != NULL)
 										{
 											deltransponderbyid(99);
 											continue;
 										}
-	
+
 										if(tpnode->id != transponderid)
 										{
 											struct transponder* tphelp = gettransponder(transponderid);
@@ -1072,14 +1072,14 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 		}
 		if(timernode->aktion != START) break;
 	}
-	
+
 	return 0;
 }
 
 void blindscan(struct stimerthread* timernode)
 {
 	if(scaninfo.fenode == NULL) return;
-	
+
 	if(scaninfo.fenode->feinfo->type == FE_QPSK)
 		satblindscan(timernode, 0);
 	else if(scaninfo.fenode->feinfo->type == FE_QAM)
@@ -1129,7 +1129,7 @@ void doscan(struct stimerthread* timernode)
 		}
 
 		if(scaninfo.blindscan == 1) blindscan(timernode);
-		
+
 		nitscan = 1;
 		//transponder loop
 		while(tpnode != NULL && timernode->aktion == START)
@@ -1140,7 +1140,7 @@ void doscan(struct stimerthread* timernode)
 				if(scaninfo.scantype == 0) break;
 				continue;
 			}
-	
+
 			fenode = fegetfree(tpnode, 0, scaninfo.fenode);
 			if(fenode == NULL || (scaninfo.scantype != 3 && fenode != scaninfo.fenode))
 			{
@@ -1276,7 +1276,7 @@ void doscan(struct stimerthread* timernode)
 				free(buf); buf = NULL;
 				secnr++;
 			}
-	
+
 			scaninfo.tpcount++;
 			if(scaninfo.scantype == 0) break;
 			tpnode = tpnode->next;
@@ -1619,9 +1619,9 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpcount), 1, 1);
 		tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpmax), 1, 1);
-		tmpstr = ostrcat(tmpstr, " New: ", 1, 0);
+		tmpstr = ostrcat(tmpstr, _(" New: "), 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpnew), 1, 1);
-		tmpstr = ostrcat(tmpstr, " Del: ", 1, 0);
+		tmpstr = ostrcat(tmpstr, _(" Del: "), 1, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(scaninfo.tpdel), 1, 1);
 		changetext(tpcount, tmpstr);
 		free(tmpstr); tmpstr = NULL;
@@ -1667,14 +1667,14 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 
 		drawscreen(scan, 0, 0);
 		rcret = waitrc(scan, 1000, 0);
-		
+
 		if(scantype != 3 && scaninfo.threadend == 1 && endmsgshow == 0)
 		{
 			if(scaninfo.tvcount + scaninfo.radiocount + scaninfo.datacount == 0)
 				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 			else
 				textbox(_("Message"), _("Channel scan ended."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
-			endmsgshow = 1;		
+			endmsgshow = 1;
 		}
 
 		if(scantype != 3 && rcret == getrcconfigint("rcred", NULL))
@@ -1703,7 +1703,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			if(scaninfo.tvcount + scaninfo.radiocount + scaninfo.datacount == 0)
 				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 			else
-				textbox(_("Message"), _("All new channels added!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Results have been saved."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL))
@@ -1732,7 +1732,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		{
 			freemainbouquet(1);
 			struct provider *pnode = provider;
-			
+
 			while(pnode != NULL)
 			{
 				provider2bouquet(pnode->providerid, 1);
@@ -1744,12 +1744,12 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 
 		if(emptybouquet == 1)
 			delemptymainbouquet(1);
-		
+
 		if(unusedbouquetchannels == 1)
 			delunusedbouquetchannels(0);
 		else
 			delunusedbouquetchannels(1);
-		
+
 		if(cleartransponder == 1 && unusedsatprovider == 1)
 			deltransponderbyid(0);
 	}
@@ -1925,7 +1925,7 @@ void screenscanconfig(int flag)
 	int iunusedsatprovider = -1, icleartransponder = -1;
 
 	int i = 0, treffer = 0, tunercount = 0;
-	
+
 	struct skin* scan = NULL;
 	if(flag == 1)
 		scan = getscreen("scanadjustauto");
@@ -1969,7 +1969,7 @@ void screenscanconfig(int flag)
 	char* tmpstr = NULL, *tmpnr = NULL, *feshortname = NULL;
 	struct transponder* tpnode = NULL;
 	struct dvbdev* dvbnode = dvbdev;
-	
+
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
@@ -2075,7 +2075,7 @@ void screenscanconfig(int flag)
 
 	if(status.aktservice->channel != NULL)
 		tpnode = status.aktservice->channel->transponder;
-		
+
 	//clear akt and last channel, so all channel can delete
 	freechannelhistory();
 	status.lastservice->channel = NULL;
@@ -2510,7 +2510,7 @@ start:
 		}
 		chnode = chnode->next;
 	}
-	
+
 	writeallconfig(1);
 }
 
