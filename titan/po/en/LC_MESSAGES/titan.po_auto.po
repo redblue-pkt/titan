@@ -28,6 +28,14 @@ msgstr ""
 msgid " Days "
 msgstr ""
 
+#: scan.h:1624
+msgid " Del: "
+msgstr ""
+
+#: scan.h:1622
+msgid " New: "
+msgstr ""
+
 #: titan.c:282
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
@@ -826,10 +834,6 @@ msgid ""
 "All data on this device will be deleted!\n"
 "OK?"
 msgstr ""
-
-#: scan.h:1706
-msgid "All new channels added!"
-msgstr "All new channels added!"
 
 #: skin_default_skin.xml.h:28
 msgid "Allowed Zapping via Streamlink"
@@ -7840,6 +7844,10 @@ msgstr ""
 msgid "Results"
 msgstr ""
 
+#: scan.h:1706
+msgid "Results have been saved."
+msgstr ""
+
 #: httpdfunc.h:4604 skin_default_skin.xml.h:501
 msgid "Resync Recording immediately"
 msgstr "Resync Recording immediately (No write cache)"
@@ -13556,3 +13564,6 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "All new channels added!"
+#~ msgstr "All new channels added!"

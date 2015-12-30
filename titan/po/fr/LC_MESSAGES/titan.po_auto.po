@@ -28,6 +28,14 @@ msgstr ""
 msgid " Days "
 msgstr ""
 
+#: scan.h:1624
+msgid " Del: "
+msgstr ""
+
+#: scan.h:1622
+msgid " New: "
+msgstr ""
+
 #: titan.c:282
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
@@ -818,10 +826,6 @@ msgstr "tous les chaines"
 msgid ""
 "All data on this device will be deleted!\n"
 "OK?"
-msgstr ""
-
-#: scan.h:1706
-msgid "All new channels added!"
 msgstr ""
 
 #: skin_default_skin.xml.h:28
@@ -7717,6 +7721,10 @@ msgstr ""
 
 #: tithek.h:941
 msgid "Results"
+msgstr ""
+
+#: scan.h:1706
+msgid "Results have been saved."
 msgstr ""
 
 #: httpdfunc.h:4604 skin_default_skin.xml.h:501
