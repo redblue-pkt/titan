@@ -7834,10 +7834,6 @@ msgstr "Список результатов"
 msgid "Results"
 msgstr "Результат"
 
-#: scan.h:1706
-msgid "Results have been saved."
-msgstr ""
-
 #: httpdfunc.h:4604 skin_default_skin.xml.h:501
 msgid "Resync Recording immediately"
 msgstr "Немедленная синхронизация записи (Нужно отключить кэш)"
@@ -8210,6 +8206,10 @@ msgstr "Параметры ручного сканирования"
 
 #: tpk_description.h:128
 msgid "Scan and manage cifs/nfs/ftp shares"
+msgstr ""
+
+#: scan.h:1706
+msgid "Scan completed, changes have been saved."
 msgstr ""
 
 #: scan.h:1978
@@ -13548,6 +13548,3 @@ msgstr ""
 #: tpk_showname.h:215
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "All new channels added!"
-#~ msgstr "Все новые каналы сохранены!"
