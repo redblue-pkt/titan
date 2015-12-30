@@ -1703,7 +1703,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			if(scaninfo.tvcount + scaninfo.radiocount + scaninfo.datacount == 0)
 				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 			else
-				textbox(_("Message"), _("Results have been saved."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Scan completed, changes have been saved."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL))
