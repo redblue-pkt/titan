@@ -30,11 +30,11 @@ msgstr " Tage "
 
 #: scan.h:1624
 msgid " Del: "
-msgstr ""
+msgstr " Entf: "
 
 #: scan.h:1622
 msgid " New: "
-msgstr ""
+msgstr " Neu: "
 
 #: titan.c:282
 msgid "!!! This is a DEMO Version !!!"
@@ -8394,7 +8394,7 @@ msgstr "Suche und Verwaltung von CIFS/SMB, NFS und FTP Freigaben"
 
 #: scan.h:1706
 msgid "Scan completed, changes have been saved."
-msgstr ""
+msgstr "Suchlauf abgeschlossen, Änderungen wurden gespeichert."
 
 #: scan.h:1978
 msgid "Scan is not allowed if record or stream is running !"
