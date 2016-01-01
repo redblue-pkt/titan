@@ -1695,7 +1695,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 	else
 		row_stride = width * colbytes; 
 
-	if(accelfb != NULL && checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && accelfb->varfbsize > width8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
+	if(accelfb != NULL && accelfb->varfbsize > width8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
 		if(halign == CENTER)
 			posx += (mwidth >> 1) - (scalewidth >> 1);
