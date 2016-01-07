@@ -11240,7 +11240,7 @@ msgstr "Broadcast address"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Browser"
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
@@ -11528,7 +11528,7 @@ msgstr "No Module"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: weather.h:137
 msgid "en-GB"
@@ -11640,7 +11640,7 @@ msgstr ""
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Fonts"
 
 #: tithek.h:936
 msgid "found"
@@ -11804,7 +11804,7 @@ msgstr ""
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: moduleconfig.h:356
 msgid "initializing"
@@ -11885,11 +11885,11 @@ msgstr ""
 
 #: tpk_section.h:8
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl LCD Skins"
 
 #: tpk_section.h:9
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung LCD Skins"
 
 #: sudoku.c:167
 msgid "left"
@@ -12378,7 +12378,7 @@ msgstr "Picture 5"
 
 #: tpk_section.h:11
 msgid "picons"
-msgstr ""
+msgstr "Picons"
 
 #: skinadjust.h:70 tmc.h:542
 msgid "picture"
@@ -12410,7 +12410,7 @@ msgstr "PL2303 Module"
 
 #: tpk_section.h:12
 msgid "player"
-msgstr ""
+msgstr "Player"
 
 #: webif_help.h:65
 msgid "playinfobar"
@@ -12746,7 +12746,7 @@ msgstr ""
 
 #: tpk_section.h:14
 msgid "settings"
-msgstr ""
+msgstr "Settings"
 
 #: webif_help.h:83
 msgid "settingsmenu"
@@ -12829,7 +12829,7 @@ msgstr ""
 
 #: tpk_section.h:15
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: webif_help.h:87
 msgid "skinselect"
@@ -13150,7 +13150,7 @@ msgstr ""
 
 #: tpk_section.h:16
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 #: webif_help.h:110
 msgid "tpkinstall"
