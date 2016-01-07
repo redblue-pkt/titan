@@ -376,7 +376,7 @@ msgstr ""
 
 #: tpk_showname.h:1
 msgid "3 Wins"
-msgstr ""
+msgstr "3 conexiones"
 
 #: stopifnotused.c:100
 msgid "30"
@@ -622,6 +622,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
+"Una bonita selección de imágenes para el Media Center reproductor de vídeo y "
+"de la cubierta preliminar!"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid ""
@@ -1177,7 +1179,7 @@ msgstr ""
 
 #: tpk_description.h:14
 msgid "Automatisch Timer setzen"
-msgstr ""
+msgstr "automaticamente ajustar el temporizador"
 
 #: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4
 msgid "Automount"
@@ -1713,7 +1715,7 @@ msgstr ""
 
 #: tpk_description.h:41
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Cable: Lista de canales por cable estándar Alemania"
 
 #: tpk_description.h:44
 msgid "Cable: sofatester Kabel BW"
@@ -1740,6 +1742,8 @@ msgstr ""
 #: tpk_description.h:45
 msgid "Callmonitor Plugin"
 msgstr ""
+"monitor de llamada para la visualización de las llamadas entrantes y "
+"salientes"
 
 #: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:84
 #: skins_panel_skin.xml.h:6
@@ -2681,11 +2685,11 @@ msgstr "General"
 
 #: tpk_description.h:50 tpk_showname.h:21
 msgid "Default Font"
-msgstr ""
+msgstr "Fuente por Defecto"
 
 #: tpk_description.h:52
 msgid "Default Skin"
-msgstr ""
+msgstr "Standard Skin"
 
 #: tpk_description.h:51
 msgid "Default mod by maenne79"
@@ -2693,7 +2697,7 @@ msgstr ""
 
 #: tpk_description.h:54
 msgid "Default skin without MiniTV"
-msgstr ""
+msgstr "Standard Skin sin MiniTV"
 
 #: tpk_description.h:55
 msgid "Default skin without MiniTV mod by maenne79"
@@ -3306,7 +3310,7 @@ msgstr ""
 
 #: tpk_description.h:62
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "Softcam camd3.902"
 
 #: panel_settings_autostart.h:285 settings_autostart.h:429
 msgid "Emu Control"
@@ -3314,7 +3318,7 @@ msgstr "Softcam control"
 
 #: tpk_description.h:63
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "Softcam MGCamd V1.38"
 
 #: skin_default_skin.xml.h:173
 msgid "Emu Running Color"
@@ -3330,11 +3334,11 @@ msgstr "Softcam no encontrado"
 
 #: tpk_description.h:64
 msgid "Emu scam 3.60 for your box"
-msgstr ""
+msgstr "Softcam SCam V3.60"
 
 #: tpk_description.h:65
 msgid "Emu vizcam 1.04 for your box"
-msgstr ""
+msgstr "Softcam vizcam V1.04"
 
 #: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
 msgid "Enable"
@@ -3700,7 +3704,7 @@ msgstr "Por Favor intruducir direccion de fuente"
 
 #: tpk_description.h:68 tpk_showname.h:32
 msgid "File Manager"
-msgstr ""
+msgstr "Administrador de archivos"
 
 #: adjust.h:407
 msgid "File Operation"
@@ -3796,51 +3800,51 @@ msgstr "Actualizacion de software (Local)"
 
 #: tpk_description.h:70
 msgid "Font 'Action Man Italic' "
-msgstr ""
+msgstr "Fuente 'Accion Man Italic'"
 
 #: tpk_description.h:71
 msgid "Font 'Alpha Romanie G98'"
-msgstr ""
+msgstr "Fuente 'Alpha Romanie G98'"
 
 #: tpk_description.h:72
 msgid "Font 'Croissant' "
-msgstr ""
+msgstr "Fuentet 'Croissant'"
 
 #: tpk_description.h:73
 msgid "Font 'Digiface Regular' "
-msgstr ""
+msgstr "Fuente 'Digiface Regular'"
 
 #: tpk_description.h:74
 msgid "Font 'Goodtime'"
-msgstr ""
+msgstr "Fuente 'Goodtime'"
 
 #: tpk_description.h:75
 msgid "Font 'I Hate Comic Sans'"
-msgstr ""
+msgstr "Fuente 'I Hate Comic Sans'"
 
 #: tpk_description.h:76
 msgid "Font 'Lydian Bolt Italic BT' "
-msgstr ""
+msgstr "Fuente 'Lydian Bolt Italic BT' "
 
 #: tpk_description.h:77
 msgid "Font 'Mighty Zeo Caps'"
-msgstr ""
+msgstr "Fuente 'Mighty Zeo Caps'"
 
 #: tpk_description.h:78
 msgid "Font 'Monoglyceride DemiBold'"
-msgstr ""
+msgstr "Fuentet 'Monoglyceride DemiBold'"
 
 #: tpk_description.h:79
 msgid "Font 'New Gothic BT'"
-msgstr ""
+msgstr "Fuente 'New Gothic BT'"
 
 #: tpk_description.h:80
 msgid "Font 'Paddington Bold'"
-msgstr ""
+msgstr "Fuente 'Paddington Bold'"
 
 #: tpk_description.h:81
 msgid "Font 'Plover Bold'"
-msgstr ""
+msgstr "Fuente 'Plover Bold'"
 
 #: skin_default_skin.xml.h:212
 msgid "Font Color"
@@ -4785,7 +4789,7 @@ msgstr ""
 
 #: tpk_description.h:90
 msgid "IP-Kamera zB. Firma INSTAR"
-msgstr ""
+msgstr "IP Camera eg. INSTAR"
 
 #: tpk_showname.h:42
 msgid "Ice Age Scrap likes UFS910"
@@ -4829,11 +4833,11 @@ msgstr ""
 
 #: tpk_description.h:89
 msgid "ImdB Info Plugin"
-msgstr ""
+msgstr "IMDb Info"
 
 #: tpk_description.h:88
 msgid "ImdBapi Info Plugin"
-msgstr ""
+msgstr "IMDbapi Info"
 
 #: global.h:6654
 msgid "Import mode"
@@ -6134,7 +6138,7 @@ msgstr "Prueba de Conexion"
 
 #: tpk_description.h:105
 msgid "Network browser extension for better Win7 compatibility"
-msgstr ""
+msgstr "extensión del navegador de red para una mejor compatibilidad Win7"
 
 #: adjust.h:286 skin_default_skin.xml.h:386 tpk_showname.h:77
 msgid "Networkbrowser"
@@ -6154,7 +6158,7 @@ msgstr "Mostrar escaneado CIFS/NFS-Compartidos"
 
 #: tpk_description.h:106
 msgid "Networkfile libsmbclient 3.0.28b"
-msgstr ""
+msgstr "SMB (Windows) libsmbclient 3.0.28b"
 
 #: tpk_description.h:107 tpk_showname.h:78
 msgid "Neutrino Keymap"
@@ -6740,7 +6744,7 @@ msgstr ""
 
 #: tpk_description.h:113
 msgid "Partitions Tool fuer HDD > 2TB"
-msgstr ""
+msgstr "Herramienta de Partición de disco duro> 2 TB"
 
 #: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:411
 #: skins_networkbrowser_skin.xml.h:17
@@ -6792,7 +6796,7 @@ msgstr ""
 
 #: tpk_description.h:114
 msgid "Permanente Uhrzeit am Bildschirm"
-msgstr ""
+msgstr "Muestra permanente la hora en la pantalla"
 
 #: facebook.h:478
 msgid "Photos postet"
@@ -7209,7 +7213,7 @@ msgstr "Apagado Temporizado"
 
 #: tpk_description.h:115
 msgid "Power off if box not used"
-msgstr ""
+msgstr "Apagar el receptor si no se utiliza."
 
 #: webif_boxcontrol.h:1
 msgid "PowerControl"
@@ -9629,7 +9633,7 @@ msgstr "TXT PID: "
 
 #: tpk_description.h:147
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
-msgstr ""
+msgstr "Bloqueo de teclas Plugin - desbloquearlo con rojo/rojo/verde"
 
 #: plugins_wm2014_skin.xml.h:13 skins_wm2014_skin.xml.h:13
 msgid "Team"
@@ -10244,7 +10248,7 @@ msgstr "Transpondedor Lista"
 
 #: tpk_description.h:163
 msgid "Treiber fuer Pearl LCD V4.0"
-msgstr ""
+msgstr "Driver para Pearl LCD V4.0"
 
 #: tpk_description.h:164
 msgid "Treiber fuer Pearl LCD V5.0"
@@ -10252,7 +10256,7 @@ msgstr ""
 
 #: tpk_description.h:165
 msgid "Treiber fuer Samsung LCD"
-msgstr ""
+msgstr "Driver para Samsung LCD"
 
 #: security.h:676 security.h:2105
 msgid "Trial period ends in"
@@ -10824,7 +10828,7 @@ msgstr ""
 
 #: tpk_description.h:170
 msgid "Webbrowser Plugin"
-msgstr ""
+msgstr "Internet Browser"
 
 #: global.h:6257
 msgid "Wed"
@@ -10836,7 +10840,7 @@ msgstr "Miercoles"
 
 #: tpk_description.h:171
 msgid "Werbezapper"
-msgstr ""
+msgstr "Publicidadzapper"
 
 #: epgsearch.h:324
 msgid "Western"
@@ -11270,7 +11274,7 @@ msgstr "Azul"
 
 #: tpk_section.h:1
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 #: panel_settings_autostart.h:44
 msgid "bootstop"
@@ -11290,7 +11294,7 @@ msgstr "direccion de difusion"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Navegador de Red"
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
@@ -11421,7 +11425,7 @@ msgstr "Crear una copia de seguridad del sistema"
 
 #: tpk_description.h:49
 msgid "cut record files"
-msgstr ""
+msgstr "ts cutter - cortar grabaciones locales"
 
 #: skin_default_keyskin.xml.h:25
 msgid "d"
@@ -11578,7 +11582,7 @@ msgstr "No Modulo"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: weather.h:137
 msgid "en-GB"
@@ -11634,7 +11638,7 @@ msgstr ""
 
 #: tpk_description.h:67
 msgid "extended config Panel"
-msgstr ""
+msgstr "Menú Configuración avanzada"
 
 #: webif_help.h:27
 msgid "extensionsmenu"
@@ -11686,11 +11690,11 @@ msgstr "Primera ranura"
 
 #: tpk_description.h:69
 msgid "first titan game"
-msgstr ""
+msgstr "El primer juego Titan"
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Fuentes"
 
 #: tithek.h:936
 msgid "found"
@@ -11731,7 +11735,7 @@ msgstr ""
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Juegos"
 
 #: skin_default_skin.xml.h:222
 msgid "gateway"
@@ -11742,6 +11746,8 @@ msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
+"gbox 806 con autoident para hd tarjeta + y Skyde Incluyendo todos los "
+"archivos de configuración necesarios"
 
 #: webif_help.h:28
 msgid "gmultiepg"
@@ -11854,7 +11860,7 @@ msgstr ""
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: moduleconfig.h:356
 msgid "initializing"
@@ -11919,7 +11925,7 @@ msgstr ""
 
 #: tpk_section.h:7
 msgid "keymaps"
-msgstr ""
+msgstr "Keymaps"
 
 #: skin_default_keyskin.xml.h:42
 msgid "l"
@@ -11935,11 +11941,11 @@ msgstr "Lenguaje"
 
 #: tpk_section.h:8
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "LCD Pearl Skins"
 
 #: tpk_section.h:9
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "LCD Samsung Skins"
 
 #: sudoku.c:167
 msgid "left"
@@ -12131,11 +12137,11 @@ msgstr "Nunca elimine archivo Timeshift"
 
 #: tpk_description.h:108
 msgid "newcs including all necessary config files."
-msgstr ""
+msgstr "NewCS + configs"
 
 #: tpk_description.h:110
 msgid "news Plugin"
-msgstr ""
+msgstr "Plugins nuevos"
 
 #: webif_help.h:59
 msgid "newsletter"
@@ -12372,7 +12378,7 @@ msgstr ""
 
 #: tpk_description.h:112
 msgid "optimize Plugin"
-msgstr ""
+msgstr "Optimizacion de Lista de Canales"
 
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "options"
@@ -12428,7 +12434,7 @@ msgstr "Imagen 5"
 
 #: tpk_section.h:11
 msgid "picons"
-msgstr ""
+msgstr "Senderlogos"
 
 #: skinadjust.h:70 tmc.h:542
 msgid "picture"
@@ -12460,7 +12466,7 @@ msgstr "PL2303 Modulo"
 
 #: tpk_section.h:12
 msgid "player"
-msgstr ""
+msgstr "Multimedia Player"
 
 #: webif_help.h:65
 msgid "playinfobar"
@@ -12732,7 +12738,7 @@ msgstr ""
 
 #: tpk_description.h:132
 msgid "scriptexec Plugin"
-msgstr ""
+msgstr "scripts personalizados (/mnt/scripts) run"
 
 #: possetup.h:37
 msgid "search east"
@@ -12803,7 +12809,7 @@ msgstr "establecer como inicio canal"
 
 #: tpk_section.h:14
 msgid "settings"
-msgstr ""
+msgstr "ajustes"
 
 #: webif_help.h:83
 msgid "settingsmenu"
@@ -12886,7 +12892,7 @@ msgstr ""
 
 #: tpk_section.h:15
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: webif_help.h:87
 msgid "skinselect"
@@ -12997,7 +13003,7 @@ msgstr "Paso Oeste"
 
 #: tpk_description.h:144
 msgid "stock Plugin"
-msgstr ""
+msgstr "Cuota Mercado"
 
 #: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1568 record.h:1577 record.h:1588
 #: record.h:1617 record.h:1626 record.h:1660 skin_default_skin.xml.h:605
@@ -13207,7 +13213,7 @@ msgstr ""
 
 #: tpk_section.h:16
 msgid "tools"
-msgstr ""
+msgstr "Herramientas"
 
 #: webif_help.h:110
 msgid "tpkinstall"
@@ -13312,7 +13318,7 @@ msgstr "Lista actualizada"
 
 #: tpk_description.h:167
 msgid "usbreset Plugin"
-msgstr ""
+msgstr "USB reinicio extension"
 
 #: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "use last Directory"
@@ -13448,7 +13454,7 @@ msgstr "esperando"
 
 #: tpk_description.h:169
 msgid "weather Plugin"
-msgstr ""
+msgstr "Weather extension"
 
 #: webif_help.h:120
 msgid "webdir"
@@ -13476,7 +13482,7 @@ msgstr ""
 
 #: tpk_section.h:17
 msgid "wireless"
-msgstr ""
+msgstr "WLAN"
 
 #: tpk_description.h:180
 msgid "wireless 8192cu.ko model"
