@@ -14,7 +14,7 @@ void screenrecordpath()
 	char* ret = NULL;
 
 
-	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || status.expertmodus >= 11)
+//	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || status.expertmodus >= 11)
 		changeinput(moviepath, getconfig("rec_moviepath", NULL));
 
 	changeinput(timerpath, getconfig("rec_timerpath", NULL));
@@ -32,7 +32,7 @@ void screenrecordpath()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || status.expertmodus >= 11)
+//			if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || status.expertmodus >= 11)
 				addconfigscreen("rec_moviepath", moviepath);
 			addconfigscreen("rec_timerpath", timerpath);
 			addconfigscreen("rec_path", recpath);
