@@ -32,6 +32,7 @@ struct vfdiconstate* vfdiconstates = 0;
 
 // Currently displayed text in VFD:
 char vfdtext[64];
+int durchlauf = 0;
 
 // Set the brightness of the VFD
 int setvfdbrightness(int value)
@@ -238,7 +239,15 @@ int writevfd(char *value)
 		m_unlock(&status.vfdmutex, 3);
 		return oledret;
 	}
-
+	
+	if(durchlauf > 4)
+	{
+		*vfdtext='\0';
+		durchlauf = 0;
+	}
+	else
+		durchlauf = durchlauf + 1;
+		
 	vfddev = getconfig("vfddev", NULL);
 
 	if(vfddev != NULL && value != NULL && strncmp(value, vfdtext, 63))
@@ -387,6 +396,7 @@ void initvfd()
 		return; // Do not initialize twice
 
 	*vfdtext='\0';
+	durchlauf = 0;
 	tmpstr = ostrcat(tmpstr, "<", 1, 0);
 	tmpstr = ostrcat(tmpstr, PROGNAME, 1, 0);
 	tmpstr = ostrcat(tmpstr, ">", 1, 0);
