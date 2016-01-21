@@ -415,6 +415,13 @@ void initvfd()
 		initOLEDdream1();
 	else
 		setallvfdsymbols(0);
+	
+	if(checkbox("ATEVIO7000") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("SPARK") == 1)
+	{
+		tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
+		system(tmpstr);
+		free(tmpstr); tmpstr=NULL;
+	}
 }
 
 void cleanupvfd()
