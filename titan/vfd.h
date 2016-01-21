@@ -418,9 +418,12 @@ void initvfd()
 	
 	if(checkbox("ATEVIO7000") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("SPARK") == 1)
 	{
-		tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
-		system(tmpstr);
-		free(tmpstr); tmpstr=NULL;
+		if(getconfig("at7000frontrun", NULL) != NULL)
+		{
+			tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
+			system(tmpstr);
+			free(tmpstr); tmpstr=NULL;
+		}
 	}
 }
 
