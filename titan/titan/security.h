@@ -974,7 +974,8 @@ unsigned long getsysinfo()
 
 void destroy()
 {
-	return;
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+		return;
 
 	FILE* fd = NULL;
 	char mtd[10];
