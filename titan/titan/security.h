@@ -1174,6 +1174,14 @@ void setskinnodeslocked(int flag)
 // disable Reader Config manual start
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
+			// hid not ready menus
+			if(checkrealbox("DM7020HD") == 1)
+			{
+				if(ostrcmp("systemupdatemenu", child->name) == 0) child->locked = 1;
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
+				if(ostrcmp("restoredefault", child->name) == 0) child->locked = 1;
+			}
+
 			// hide this menu on all boxes without ATEMIO530
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFC960") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEVIO700") == 1 || checkbox("ATEVIO7000") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 			{
