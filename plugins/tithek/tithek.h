@@ -705,7 +705,12 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 				}
 			}
 			else
-				gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);			
+			{
+				if(ssl == 1)
+					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
+				else
+					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);			
+			}
 		}
 	}
 	else
