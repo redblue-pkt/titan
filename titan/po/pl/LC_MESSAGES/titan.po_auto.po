@@ -3161,7 +3161,7 @@ msgstr ""
 #: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
 #: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
+#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:372 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
@@ -3306,7 +3306,7 @@ msgid "EpgChannels: "
 msgstr "Kanał"
 
 #: kinox.h:300 movie2k.h:502 movie2k.h:750 movie4k.h:863 movie4k.h:1111
-#: solarmovie.h:593
+#: solarmovie.h:603
 msgid "Episode"
 msgstr ""
 
@@ -5704,7 +5704,7 @@ msgstr ""
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1942 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:399
 #: skinadjust.h:804 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
+#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:372 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
@@ -6296,7 +6296,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:362 spinner.h:18
+#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:372 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
@@ -8308,8 +8308,8 @@ msgstr ""
 #: nowtv.h:133 nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
-#: skin_default_skin.xml.h:541 solarmovie.h:135 solarmovie.h:137
-#: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
+#: skin_default_skin.xml.h:541 solarmovie.h:138 solarmovie.h:140
+#: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:436 tithek_global.h:438 tmdb.h:898 tvtoast.h:530
 #: tvtoast.h:532 xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247
 #: youtube.h:359 youtube.h:361 zdf.h:147 zdf.h:149
@@ -8417,7 +8417,7 @@ msgid "Search only aktual epg ?"
 msgstr ""
 
 #: kinox.h:296 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:859
-#: movie4k.h:991 movie4k.h:1107 solarmovie.h:589
+#: movie4k.h:991 movie4k.h:1107 solarmovie.h:599
 msgid "Season"
 msgstr ""
 
@@ -9539,7 +9539,7 @@ msgstr ""
 #: movreel.h:137 movshare.h:157 nbaondemand.h:34 played.h:84 played.h:101
 #: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
-#: putlocker.h:225 shared.h:82 solarmovie.h:48 solarmovie.h:59
+#: putlocker.h:225 shared.h:82 solarmovie.h:51 solarmovie.h:62
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: thevideo.h:60 vidbull.h:67 vidstream.h:86 vidstream.h:97 vidstream.h:167
 #: vidto.h:67 vidto.h:94 vidto.h:128 vidto.h:174 vivo.h:38 vivo.h:61
@@ -9576,7 +9576,7 @@ msgstr ""
 msgid "This direct link will be available for your IP next 8 hours"
 msgstr ""
 
-#: solarmovie.h:362
+#: solarmovie.h:372
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
