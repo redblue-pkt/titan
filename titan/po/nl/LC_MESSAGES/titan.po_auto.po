@@ -3216,7 +3216,7 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
 #: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:372 spinner.h:18
+#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
@@ -3363,7 +3363,7 @@ msgid "EpgChannels: "
 msgstr "EPG Kanalen: "
 
 #: kinox.h:300 movie2k.h:502 movie2k.h:750 movie4k.h:863 movie4k.h:1111
-#: solarmovie.h:603
+#: solarmovie.h:606
 msgid "Episode"
 msgstr "Aflevering"
 
@@ -5797,7 +5797,7 @@ msgstr ""
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1942 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:399
 #: skinadjust.h:804 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:372 spinner.h:18
+#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
@@ -6396,7 +6396,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:372 spinner.h:18
+#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
@@ -8527,7 +8527,7 @@ msgid "Search only aktual epg ?"
 msgstr "Alleen in actuele EPG zoeken?"
 
 #: kinox.h:296 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:859
-#: movie4k.h:991 movie4k.h:1107 solarmovie.h:599
+#: movie4k.h:991 movie4k.h:1107 solarmovie.h:602
 msgid "Season"
 msgstr "Seizoen"
 
@@ -9700,7 +9700,7 @@ msgstr ""
 msgid "This direct link will be available for your IP next 8 hours"
 msgstr ""
 
-#: solarmovie.h:372
+#: solarmovie.h:375
 msgid "This file doesn't exist, or has been removed"
 msgstr "Bestand bestaat niet of is verplaatst"
 
