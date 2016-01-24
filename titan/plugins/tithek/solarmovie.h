@@ -351,6 +351,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 		tmppath = pos + 1;
 	}
 
+/*
 // ssl workaround
 	unlink("/tmp/.solar.cache");
 	char* cmd = NULL;
@@ -366,6 +367,8 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 // ssl workaround end
 
 //	tmpstr = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
+*/
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 	
 	if(tmpstr == NULL)
 	{
@@ -464,7 +467,7 @@ printf("11111111111111111111111111111\n");
 					line = ostrcat(line, ")", 1, 0);					
 				}					
 				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, "http://www.solarmovie.ph/link/play/", 1, 0);
+				line = ostrcat(line, "https://www.solarmovie.ph/link/play/", 1, 0);
 				line = ostrcat(line, id, 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 				line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
@@ -546,7 +549,7 @@ printf("11111111111111111111111111111\n");
 						line = ostrcat(line, ")", 1, 0);					
 					}					
 					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://www.solarmovie.ph/link/play/", 1, 0);
+					line = ostrcat(line, "https://www.solarmovie.ph/link/play/", 1, 0);
 					line = ostrcat(line, id, 1, 0);
 					line = ostrcat(line, "#", 1, 0);
 					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
@@ -611,7 +614,7 @@ printf("22222222222222222222222222222222\n");
 //				line = ostrcat(line, ") ", 1, 0);
 //				line = ostrcat(line, etitle, 1, 0);
 
-				line = ostrcat(line, "#http://www.solarmovie.ph", 1, 0);
+				line = ostrcat(line, "#https://www.solarmovie.ph", 1, 0);
 				line = ostrcat(line, url, 1, 0);
 //				line = ostrcat(line, ";", 1, 0);
 //				line = ostrcat(line, session, 1, 0);
