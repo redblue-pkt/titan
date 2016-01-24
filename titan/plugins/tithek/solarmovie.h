@@ -7,7 +7,7 @@ char* solarmovie(char* link)
 	char* tmpstr = NULL, *tmpstr1 = NULL, *pos = NULL, *url = NULL, *streamurl = NULL, *tmphost = NULL, *tmppath = NULL;
 	char* error = NULL;
 
-	if(link == NULL || ostrncmp("http://", link, 7)) return NULL;
+	if(link == NULL || (ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8))) return NULL;
 
 	tmphost = string_replace("http://", "", (char*)link, 0);
 
@@ -26,6 +26,7 @@ char* solarmovie(char* link)
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 
+/*
 // ssl workaround
 	unlink("/tmp/.solar.cache");
 	char* cmd = NULL;
@@ -40,6 +41,8 @@ char* solarmovie(char* link)
 	debug(99, "tmpstr: %s", tmpstr);
 // ssl workaround end
 //	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+*/
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 	free(send); send = NULL;
 
@@ -159,7 +162,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 			path = ostrcat("movie/search/", search, 0, 0);
 		else
 			path = ostrcat("tv/search/", search, 0, 0);
-
+/*
 // ssl workaround
 		unlink("/tmp/.solar.cache");
 		char* cmd = NULL;
@@ -175,6 +178,13 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 // ssl workaround end
 
 //		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+*/
+		url = ostrcat("https://", ip, 0, 0);
+		url = ostrcat(url, "/", 1, 0);
+		url = ostrcat(url, path, 1, 0);
+		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
+		free(url), url = NULL;
+
 		titheklog(debuglevel, "/tmp/solarmovie_tmpstr", NULL, NULL, NULL, tmpstr);
 
 		while(ostrstr(tmpstr, "<div class=\"typicalGrey coverGroup\">") != NULL)
@@ -201,7 +211,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 			pic = string_resub("<img src=\"", "\"", tmpstr1, 0);
 			title = string_resub("<a title=\"", "\"", tmpstr1, 0);
 	
-			url = ostrcat("http://www.solarmovie.ph", path, 0, 0);
+			url = ostrcat("https://www.solarmovie.ph", path, 0, 0);
 	
 			debug(99, "---------------------------");
 			debug(99, "pic: %s", pic);
