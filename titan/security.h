@@ -73,6 +73,11 @@ int checkhighflash()
 		cmd = ostrcat(cmd, "mtd1", 1, 0); 
 		size = ostrcat("5f500000", NULL, 0, 0); 
 	}
+	else if(checkrealbox("DM7020HD") == 1)
+	{
+		cmd = ostrcat(cmd, "mtd3", 1, 0); 
+		size = ostrcat("3f780000", NULL, 0, 0); 
+	}
 	else if(checkbox("UFS913") == 1)
 	{
 		cmd = ostrcat(cmd, "mtd10", 1, 0); 
@@ -974,7 +979,7 @@ unsigned long getsysinfo()
 
 void destroy()
 {
-	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	if(checkrealbox("DM7020HD") == 1)
 		return;
 
 	FILE* fd = NULL;
