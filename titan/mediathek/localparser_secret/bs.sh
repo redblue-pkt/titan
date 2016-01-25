@@ -7,7 +7,7 @@ PARAM=$3
 PARAM2=$4
 URL="http://bs.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME="Burning Series"
+NAME="burningseries"
 wgetbin="wget -q -T2"
 TMP=/tmp/parser
 
