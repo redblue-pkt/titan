@@ -649,6 +649,16 @@ void localscript_init(char* titheklink, char* tithekfile)
 			free(cmd), cmd = NULL;
 		}
 
+		cmd = ostrcat("chmod -R 755 ", path, 0, 0);
+		printf(cmd: %s\n", cmd);
+		system(cmd);
+		free(cmd), cmd = NULL;
+
+		cmd = ostrcat("chmod -R 755 /tmp/parser", NULL, 0, 0);
+		printf(cmd: %s\n", cmd);
+		system(cmd);
+		free(cmd), cmd = NULL;
+
 		cmd = ostrcat("ls -1 ", path, 0, 0);
 		cmd = ostrcat(cmd, "/*.sh", 1, 0);
 
