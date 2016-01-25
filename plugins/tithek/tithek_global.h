@@ -632,12 +632,22 @@ void localscript_init(char* titheklink, char* tithekfile)
 			mkdir(path, 0777);
 
 		unlink("/tmp/parser.tar");
-		gethttp("atemio.dyndns.tv", "/mediathek/parser.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
+		gethttp("atemio.dyndns.tv", "/mediathek/parser_free.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
 
 		cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
 		printf(cmd: %s\n", cmd);
 		system(cmd);
 		free(cmd), cmd = NULL;
+
+		if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
+		{
+			unlink("/tmp/parser.tar");
+			gethttp("atemio.dyndns.tv", "/mediathek/parser_secret.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
+			cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
+			printf(cmd: %s\n", cmd);
+			system(cmd);
+			free(cmd), cmd = NULL;
+		}
 
 		cmd = ostrcat("ls -1 ", path, 0, 0);
 		cmd = ostrcat(cmd, "/*.sh", 1, 0);
