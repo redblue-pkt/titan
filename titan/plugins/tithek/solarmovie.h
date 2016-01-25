@@ -80,18 +80,18 @@ printf("url: %s\n",url);
 	{
 		free(url), url = NULL;
 
-		if(ostrstr(tmpstr, "<div class=\"thirdPartyEmbContainer\"") != NULL)
+		if(ostrstr(tmpstr, "<div class=\"thirdPartyEmbContainer") != NULL)
 		{
-			tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\"", "</div>", tmpstr, 0);
+			tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer", "</div>", tmpstr, 0);
 			stringreplacechar(tmpstr1, '\n', ' ');
 	
-			url = oregex(".*(http://.*).*\"", tmpstr1);
+			url = oregex(".*(http.*).*\"", tmpstr1);
 			stringreplacechar(url, '"', '\0');
 	
 			if(url == NULL)
-				url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
+				url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
 			if(url == NULL)
-				url = string_resub("<center><IFRAME SRC=\"", "\"", tmpstr1, 0);
+				url = string_resub("<IFRAME SRC=\"", "\"", tmpstr1, 0);
 	
 			if(url == NULL || ostrncmp("http://", url, 7) == 1)
 			{
