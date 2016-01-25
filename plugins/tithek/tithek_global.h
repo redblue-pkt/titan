@@ -635,7 +635,7 @@ void localscript_init(char* titheklink, char* tithekfile)
 		gethttp("atemio.dyndns.tv", "/mediathek/parser_free.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
 
 		cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
-		printf(cmd: %s\n", cmd);
+		printf("cmd: %s\n", cmd);
 		system(cmd);
 		free(cmd), cmd = NULL;
 
@@ -644,18 +644,18 @@ void localscript_init(char* titheklink, char* tithekfile)
 			unlink("/tmp/parser.tar");
 			gethttp("atemio.dyndns.tv", "/mediathek/parser_secret.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
 			cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
-			printf(cmd: %s\n", cmd);
+			printf("cmd: %s\n", cmd);
 			system(cmd);
 			free(cmd), cmd = NULL;
 		}
 
 		cmd = ostrcat("chmod -R 755 ", path, 0, 0);
-		printf(cmd: %s\n", cmd);
+		printf("cmd: %s\n", cmd);
 		system(cmd);
 		free(cmd), cmd = NULL;
 
 		cmd = ostrcat("chmod -R 755 /tmp/parser", NULL, 0, 0);
-		printf(cmd: %s\n", cmd);
+		printf("cmd: %s\n", cmd);
 		system(cmd);
 		free(cmd), cmd = NULL;
 
