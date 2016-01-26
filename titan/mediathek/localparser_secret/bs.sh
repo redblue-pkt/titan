@@ -184,7 +184,8 @@ BEGIN { in_hoster = 0
                  i = index($0, "</span> ") + 8
                  j = index(substr($0, i), "</a>") - 1
                  title = substr($0, i, j)
-                 print title "#" SRC " " SRC " video " url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#0"
+#                 print title "#" SRC " " SRC " video " url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#0"
+                 print SRC " " SRC " video " url
               }
               next
             }
@@ -213,7 +214,13 @@ BEGIN { in_hoster = 0
                   i = index($0, "<a href=\"") + 9
                   j = index(substr($0, i), "\"") - 1
                   url = substr($0, i, j)
-                  print "Originalvideo#" url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#14"
+
+                  i = index($0, "<a href=\"") + 16
+                  j = index(substr($0, i), "/") - 1
+                  title = substr($0, i, j)
+                  
+#                  print "Originalvideo#" url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#14"
+                  print title "#" url "#http://atemio.dyndns.tv/mediathek/menu/" title ".jpg#" title ".jpg#" NAME "#14"
                }
                next
              }
@@ -223,7 +230,7 @@ BEGIN { in_hoster = 0
           }
 
 ' >/tmp/tithek/$PARSER.video.list
-	echo "/tmp/tithek/$PARSER.video.list"
+	cat "/tmp/tithek/$PARSER.video.list"
 }
 
 case $INPUT in

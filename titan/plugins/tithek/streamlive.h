@@ -20,8 +20,8 @@ char* streamlive(char* link, int incount)
 	char* id = NULL;
 
 	char* streamurl1 = NULL;
-	char* title = NULL;
-	char* pic = NULL;
+//	char* title = NULL;
+//	char* pic = NULL;
 	char* typemsg = NULL;
 
 	typemsg = string_resub("http://", "/", link, 0);

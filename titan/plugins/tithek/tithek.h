@@ -444,9 +444,18 @@ int readtithek(char* filename)
 	}
 
 //	if(cmpfilenameext(filename, ".sh") == 0)
-	if(ostrstr(filename, ".sh ") != NULL && ostrstr(filename, ".sh init") == NULL)
+	if(ostrstr(filename, ".sh ") != NULL && ostrstr(filename, ".sh init") == NULL && ostrstr(filename, ".sh video") == NULL)
 	{
 		printf("[tithek] cmd: %s\n", filename);
+		debug(10, "cmd: %s", filename);
+		file = command(filename);
+		file = string_newline(file);
+		printf("[tithek] file: %s\n", file);
+		debug(10, "file: %s", file);
+	}
+	else if(ostrstr(filename, ".sh video") != NULL)
+	{
+		printf("[tithek] video..... cmd: %s\n", filename);
 		debug(10, "cmd: %s", filename);
 		file = command(filename);
 		file = string_newline(file);
@@ -466,21 +475,42 @@ int readtithek(char* filename)
 
 	pay = getconfigint("tithek_pay", NULL);
 
+	char* tmpstr = NULL;
+
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
 		if(fileline[0] == '\n')
 			continue;
-		len = strlen(fileline) - 1;
-		if(fileline[len] == '\n')
-			fileline[len] = '\0';
-		if(fileline[len - 1] == '\r')
-			fileline[len - 1] = '\0';
 
+		if(ostrstr(filename, ".sh hoster") != NULL)
+		{
+			printf("[tithek] hoster fileline: %s\n", fileline);
+			tmpstr = command(fileline);
+			printf("[tithek] hoster tmpstr: %s\n", tmpstr);
+
+			len = strlen(tmpstr) - 1;
+			if(tmpstr[len] == '\n')
+				tmpstr[len] = '\0';
+			if(tmpstr[len - 1] == '\r')
+				tmpstr[len - 1] = '\0';
+		}
+		else
+		{
+			len = strlen(fileline) - 1;
+			if(fileline[len] == '\n')
+				fileline[len] = '\0';
+			if(fileline[len - 1] == '\r')
+				fileline[len - 1] = '\0';
+		}
 		linecount++;
 
 		if(last == NULL) last = tmplast;
-		last = addtithek(fileline, len + 2, linecount, last, pay);
+		if(ostrstr(filename, ".sh hoster") != NULL)
+			last = addtithek(tmpstr, len + 2, linecount, last, pay);
+		else
+			last = addtithek(fileline, len + 2, linecount, last, pay);
 		if(last != NULL) tmplast = last;
+		free(tmpstr), tmpstr = NULL;
 	}
 
 	free(fileline);

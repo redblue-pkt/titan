@@ -3,7 +3,7 @@
 
 char* giga(char* link)
 {
-	int debuglevel = getconfigint("debuglevel", NULL);
+//	int debuglevel = getconfigint("debuglevel", NULL);
 	char* streamurl = NULL, *tmpstr = NULL, *title = NULL, *pic = NULL, *label = NULL;
 
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
