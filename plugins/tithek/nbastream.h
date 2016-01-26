@@ -188,7 +188,7 @@ char* nbastream(char* link)
 	if(streamurl != NULL)
 		streamurl = ostrcat(streamurl, "|User-Agent=libcurl-agent/1.0|Referer=http://cdn.p2pcast.tv/jwplayer.flash.swf", 1, 0);
 
-end:
+//end:
 
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;

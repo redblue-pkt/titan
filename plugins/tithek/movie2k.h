@@ -5,7 +5,7 @@ char* movie2k(char* link)
 {
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *url = NULL, *streamurl = NULL, *tmppath = NULL, *tmphost = NULL, *pos = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *url = NULL, *streamurl = NULL, *tmphost = NULL;
 	titheklog(debuglevel, "/tmp/movie2k_streamurl_url0", NULL, NULL, NULL, link);
 
 	if(link == NULL || ostrncmp("http://", link, 7)) return NULL;
