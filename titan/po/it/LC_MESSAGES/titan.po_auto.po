@@ -679,7 +679,7 @@ msgid "ADD BOUQUET"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1698
-#: tithek.h:2405
+#: tithek.h:2407
 msgid "ADD FAV"
 msgstr "AggiungereFav"
 
@@ -770,7 +770,7 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: tithek.h:2374
+#: tithek.h:2376
 msgid "Add this link as Favorite ?"
 msgstr "importare questo Favorito ?"
 
@@ -2949,7 +2949,7 @@ msgstr "Editare"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1693 tithek.h:2400
+#: tithek.h:1693 tithek.h:2402
 msgid "EDIT FAV"
 msgstr ""
 
@@ -3199,7 +3199,7 @@ msgstr ""
 #: titan.c:1071 titan.c:1199 titan.c:1220 titan.c:1226 titan.c:1237
 #: titan.c:1243 tithek.c:100 tithek_global.h:85 tithek.h:724 tithek.h:1282
 #: tithek.h:1343 tithek.h:1607 tithek.h:1629 tithek.h:1646 tithek.h:1878
-#: tithek.h:2038 tithek.h:2323 tithek.h:2358 tithek.h:2374 tithek.h:2386
+#: tithek.h:2038 tithek.h:2323 tithek.h:2360 tithek.h:2376 tithek.h:2388
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -3242,7 +3242,7 @@ msgstr "Editare Playlist"
 msgid "Edit mode"
 msgstr "edit Mode"
 
-#: tithek.h:2386
+#: tithek.h:2388
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -5752,7 +5752,7 @@ msgstr ""
 #: titan.c:346 titan.c:355 titan.c:1199 titan.c:1220 titan.c:1226 titan.c:1237
 #: titan.c:1243 tithek.c:100 tithek_global.h:85 tithek.h:724 tithek.h:1282
 #: tithek.h:1343 tithek.h:1607 tithek.h:1629 tithek.h:1878 tithek.h:2038
-#: tithek.h:2323 tithek.h:2358 tithek.h:2374 tithek.h:2386 tiwakeup.h:66
+#: tithek.h:2323 tithek.h:2360 tithek.h:2376 tithek.h:2388 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
 #: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
@@ -6348,8 +6348,8 @@ msgstr ""
 #: titan.c:346 titan.c:355 titan.c:1062 titan.c:1071 titan.c:1199 titan.c:1220
 #: titan.c:1226 titan.c:1237 titan.c:1243 tithek.c:100 tithek_global.h:85
 #: tithek.h:724 tithek.h:1282 tithek.h:1343 tithek.h:1607 tithek.h:1629
-#: tithek.h:1646 tithek.h:1878 tithek.h:2038 tithek.h:2323 tithek.h:2358
-#: tithek.h:2374 tithek.h:2386 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1646 tithek.h:1878 tithek.h:2038 tithek.h:2323 tithek.h:2360
+#: tithek.h:2376 tithek.h:2388 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -7622,7 +7622,7 @@ msgstr "remove share"
 msgid "Remove success"
 msgstr ""
 
-#: tithek.h:2358
+#: tithek.h:2360
 msgid "Remove this Favorite ?"
 msgstr "cancellare questo favorito ?"
 
@@ -8353,8 +8353,8 @@ msgstr ""
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:541 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:436 tithek_global.h:438 tithek_global.h:722
-#: tithek_global.h:724 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:56
+#: tithek_global.h:436 tithek_global.h:438 tithek_global.h:729
+#: tithek_global.h:731 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:56
 #: xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361
 #: zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9884,8 +9884,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek.h:1691 tithek.h:1825 tithek.h:2354 tithek.h:2370 tithek.h:2382
-#: tithek.h:2398
+#: tithek.h:1691 tithek.h:1825 tithek.h:2356 tithek.h:2372 tithek.h:2384
+#: tithek.h:2400
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
