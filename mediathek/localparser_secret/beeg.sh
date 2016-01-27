@@ -34,7 +34,7 @@ mainmenu()
         echo "Popular Tags#$SRC $SRC tags popular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
         echo "All Tags#$SRC $SRC tags nonpopular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
         echo "Long Videos#$SRC $SRC videos tag/0/pc?tag=long+videos#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-        echo "Search#$SRC $SRC videos index/search/0/pc?query=cathy%20legs#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
+        echo "Search#$SRC $SRC videos index/search/0/pc?query=cathy%20legs#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>/tmp/tithek/$PARSER.list
 	echo "/tmp/tithek/$PARSER.list"
 }
 
