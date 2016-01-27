@@ -444,18 +444,9 @@ int readtithek(char* filename)
 	}
 
 //	if(cmpfilenameext(filename, ".sh") == 0)
-	if(ostrstr(filename, ".sh ") != NULL && ostrstr(filename, ".sh init") == NULL && ostrstr(filename, ".sh video") == NULL)
+	if(ostrstr(filename, ".sh ") != NULL && ostrstr(filename, ".sh init") == NULL)
 	{
 		printf("[tithek] cmd: %s\n", filename);
-		debug(10, "cmd: %s", filename);
-		file = command(filename);
-		file = string_newline(file);
-		printf("[tithek] file: %s\n", file);
-		debug(10, "file: %s", file);
-	}
-	else if(ostrstr(filename, ".sh video") != NULL)
-	{
-		printf("[tithek] video..... cmd: %s\n", filename);
 		debug(10, "cmd: %s", filename);
 		file = command(filename);
 		file = string_newline(file);
@@ -482,33 +473,16 @@ int readtithek(char* filename)
 		if(fileline[0] == '\n')
 			continue;
 
-		if(ostrstr(filename, ".sh hoster") != NULL)
-		{
-			printf("[tithek] hoster fileline: %s\n", fileline);
-			tmpstr = command(fileline);
-			printf("[tithek] hoster tmpstr: %s\n", tmpstr);
+		len = strlen(fileline) - 1;
+		if(fileline[len] == '\n')
+			fileline[len] = '\0';
+		if(fileline[len - 1] == '\r')
+			fileline[len - 1] = '\0';
 
-			len = strlen(tmpstr) - 1;
-			if(tmpstr[len] == '\n')
-				tmpstr[len] = '\0';
-			if(tmpstr[len - 1] == '\r')
-				tmpstr[len - 1] = '\0';
-		}
-		else
-		{
-			len = strlen(fileline) - 1;
-			if(fileline[len] == '\n')
-				fileline[len] = '\0';
-			if(fileline[len - 1] == '\r')
-				fileline[len - 1] = '\0';
-		}
 		linecount++;
 
 		if(last == NULL) last = tmplast;
-		if(ostrstr(filename, ".sh hoster") != NULL)
-			last = addtithek(tmpstr, len + 2, linecount, last, pay);
-		else
-			last = addtithek(fileline, len + 2, linecount, last, pay);
+		last = addtithek(fileline, len + 2, linecount, last, pay);
 		if(last != NULL) tmplast = last;
 		free(tmpstr), tmpstr = NULL;
 	}
@@ -1380,11 +1354,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	drawscreen(load, 0, 0);
 	tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 	tmpstr2 = ostrcat(((struct tithek*)listbox->select->handle)->title, NULL, 0, 0);
-		
+
 	if(((struct tithek*)listbox->select->handle)->flag == 2)
 	{
 		if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
-	}						
+	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 3)
 	{
 		flag = 4;
@@ -1473,6 +1447,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	else if(((struct tithek*)listbox->select->handle)->flag == 98)
 	{
 		if(tmpstr != NULL) tmpstr1 = nbaondemand(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 111)
+	{
+		if(tmpstr != NULL) tmpstr1 = localparser_hoster(tmpstr);
 	}
 
 	free(tmpstr); tmpstr = NULL;
@@ -2075,7 +2053,7 @@ why ?
 			{
 				clearscreen(grid);
 
-				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75 || ((struct tithek*)listbox->select->handle)->flag == 91 || ((struct tithek*)listbox->select->handle)->flag == 92 || ((struct tithek*)listbox->select->handle)->flag == 93 || ((struct tithek*)listbox->select->handle)->flag == 94 || ((struct tithek*)listbox->select->handle)->flag == 98)
+				if(((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3 || ((struct tithek*)listbox->select->handle)->flag == 4 || ((struct tithek*)listbox->select->handle)->flag == 5 || ((struct tithek*)listbox->select->handle)->flag == 6 || ((struct tithek*)listbox->select->handle)->flag == 12 || ((struct tithek*)listbox->select->handle)->flag == 14 || ((struct tithek*)listbox->select->handle)->flag == 15 || ((struct tithek*)listbox->select->handle)->flag == 20 || ((struct tithek*)listbox->select->handle)->flag == 38 || ((struct tithek*)listbox->select->handle)->flag == 42 || ((struct tithek*)listbox->select->handle)->flag == 45 || ((struct tithek*)listbox->select->handle)->flag == 46 || ((struct tithek*)listbox->select->handle)->flag == 64 || ((struct tithek*)listbox->select->handle)->flag == 50 || ((struct tithek*)listbox->select->handle)->flag == 41 || ((struct tithek*)listbox->select->handle)->flag == 43 || ((struct tithek*)listbox->select->handle)->flag == 75 || ((struct tithek*)listbox->select->handle)->flag == 91 || ((struct tithek*)listbox->select->handle)->flag == 92 || ((struct tithek*)listbox->select->handle)->flag == 93 || ((struct tithek*)listbox->select->handle)->flag == 94 || ((struct tithek*)listbox->select->handle)->flag == 98 || ((struct tithek*)listbox->select->handle)->flag == 111)
 				{
 					submenu(listbox, load, title);
 //					drawscreen(grid, 0, 0);
@@ -2345,6 +2323,13 @@ why ?
 					textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 					continue;
 				}	
+				else if((((struct tithek*)listbox->select->handle)->flag == 112))
+				{
+//					if(localparser_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
+//						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+					if(localparser_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 3))
 				{
 					int pincheck = 0;

@@ -8,6 +8,8 @@ void amazon_init(char* titheklink, char* tithekfile);
 void amazon_deinit();
 void localscript_init(char* titheklink, char* tithekfile);
 int b64dec(char* dest, char* src);
+char* localparser_hoster(char* link);
+int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 
 void titheklog(int debuglevel, char* name1, char* name2, char* name3, char* name4, char* content)
 {
