@@ -63,7 +63,7 @@ BEGIN { table = ""
         next
       }
 /^\}/ { if (table == "videos") {
-           print title "#" SRC " " SRC " stream video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#0"
+           print title "#" SRC " " SRC " stream video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
            title = ""
            id = ""
         }   
@@ -138,7 +138,8 @@ BEGIN { table = ""
            video = decrypt_url(v720p)
         }
         if (video != "null") {
-           print title "#https:" video "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#2"
+#           print title "#https:" video "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#2"
+           print "https:" video
            }
         title = ""
         id = ""
@@ -224,7 +225,8 @@ function decrypt_url(url)
         return substr(url, 1, key_von - 1) r substr(url, key_bis)
       }
 ' >/tmp/tithek/$PARSER.list
-	echo "/tmp/tithek/$PARSER.list"
+#	echo "/tmp/tithek/$PARSER.list"
+	cat "/tmp/tithek/$PARSER.list"
 }
 
 tags()

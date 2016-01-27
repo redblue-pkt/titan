@@ -2325,6 +2325,8 @@ why ?
 				}	
 				else if((((struct tithek*)listbox->select->handle)->flag == 112))
 				{
+printf("check localparser_search: %s\n", link);
+
 //					if(localparser_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 //						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 					if(localparser_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)

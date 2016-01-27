@@ -79,8 +79,8 @@ char* hoster(char* url)
 		streamurl = cricfree(url, 0);
 	else if(ostrstr(tmplink, "zerocast") != NULL)
 		streamurl = zerocast(url, 0);
-	else if(ostrstr(tmplink, "usachannels") != NULL)
-		streamurl = usachannels(url, 0);
+	else if(ostrstr(tmplink, "beeg") != NULL)
+		streamurl = beeg(url);
 	else
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
@@ -701,8 +701,13 @@ char* localparser_hoster(char* link)
 
 	tmpstr = command(link);
 	tmpstr = string_newline(tmpstr);
-	
+
+printf("tmpstr: %s\n", tmpstr);	
 	streamurl = hoster(tmpstr);
+	if(streamurl == NULL)
+		streamurl = ostrcat(tmpstr, NULL, 0, 0);
+printf("streamurl: %s\n", streamurl);	
+
 	free(tmpstr), tmpstr = NULL;
 
 	return streamurl;
@@ -712,6 +717,8 @@ char* localparser_hoster(char* link)
 //int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
+printf("localparser_search: %s\n", link);
+
 	char* tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *menu = NULL, *search = NULL;
 	int ret = 1, count = 0, i = 0;
 
@@ -730,44 +737,23 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/youtube/streams/youtube.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		char* cmd = ostrcat(link, search, 0, 0);
+		char* filename = command(cmd);
+		filename = string_newline(filename);
+		tmpstr = readfiletomem(filename, 1);
+		free(cmd), cmd = NULL;
 
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "\n", &count);
-
-		if(ret1 != NULL)
+		if(tmpstr != NULL)
 		{
-			int max = count;
-			for(i = 0; i < max; i++)
-			{
-			
-				tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
-				tmpstr1 = stringreplacecharonce(tmpstr1, '#', '\0');
-				string_tolower(tmpstr1);
-
-				if(ostrstr(tmpstr1, search) != NULL)
-				{
-					printf("found: %s\n", ret1[i].part);
-					int rcret = waitrc(NULL, 10, 0);
-					if(rcret == getrcconfigint("rcexit", NULL)) break;
-
-					line = ostrcat(line, ret1[i].part, 1, 0);
-					line = ostrcat(line, "\n", 0, 0);
-				}
-				free(tmpstr1), tmpstr1 = NULL;				
-			}
-			free(ret1), ret1 = NULL;
-
-			if(line != NULL)
-			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-				menu = ostrcat("/tmp/tithek/youtube.search.list", NULL, 0, 0);
-				writesys(menu, line, 0);
-				struct tithek* tnode = (struct tithek*)listbox->select->handle;
-				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
-				ret = 0;
-			}
+			tmpstr = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", tmpstr, 1);
+			menu = ostrcat(filename, NULL, 0, 0);
+//			writesys(menu, tmpstr, 0);
+			struct tithek* tnode = (struct tithek*)listbox->select->handle;
+			createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+			ret = 0;
 		}
+
+		free(filename), filename = NULL;
 		free(tmpstr), tmpstr = NULL;
 	}
 	free(search), search = NULL;
