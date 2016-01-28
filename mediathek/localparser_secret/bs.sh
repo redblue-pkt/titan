@@ -1,3 +1,4 @@
+
 #!/bin/bash
 # titannit box parser for burning series
 
@@ -144,7 +145,7 @@ BEGIN { in_table_row = 0
 
 /<\/tr>/ { if (in_table_row == 1) {
              if (episode != "") {
-                print title "#" SRC " " SRC " hoster " url "#http://atemio.dyndns.tv/mediathek/menu/s" PARAM2 "e" episode ".jpg#s" PARAM2 "e" episode ".jpg#" NAME "#0"
+                print title "#" SRC " " SRC " hosterlist " url "#http://atemio.dyndns.tv/mediathek/menu/s" PARAM2 "e" episode ".jpg#s" PARAM2 "e" episode ".jpg#" NAME "#0"
                 title = ""
                 url = ""
                 episode = ""
@@ -160,19 +161,19 @@ BEGIN { in_table_row = 0
 	echo "/tmp/tithek/$PARSER.episode.list"
 }
 
-hoster()
+hosterlist()
 {
 	$wgetbin $URL$PARAM -O - | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
-BEGIN { in_hoster = 0
+BEGIN { in_hosterlist = 0
         url = ""
         title = ""
       }
 
-/<h3>Hoster dieser Episode<\/h3>/ { in_hoster = 1
+/<h3>Hoster dieser Episode<\/h3>/ { in_hosterlist = 1
                                     next
                                   }
 
-/href=\"/ { if (in_hoster == 1) {
+/href=\"/ { if (in_hosterlist == 1) {
                i = index($0, "href=\"") + 6
                j = index(substr($0, i), "\">") - 1
                url = substr($0, i, j)
@@ -180,36 +181,40 @@ BEGIN { in_hoster = 0
             next
           }
 
-/<\/span> / { if (in_hoster == 1) {
+/<\/span> / { if (in_hosterlist == 1) {
                  i = index($0, "</span> ") + 8
                  j = index(substr($0, i), "</a>") - 1
                  title = substr($0, i, j)
-                 print title "#" SRC " " SRC " video " url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#111"
+                 i = index($0, "</span> ") + 8
+                 j = index(substr($0, i), " -") - 1
+                 pic = substr($0, i, j)
+                 pic = tolower(pic)
+                 print title "#" SRC " " SRC " hoster " url "#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
               }
               next
             }
 
-/<\/ul>/ { in_hoster = 0
+/<\/ul>/ { in_hosterlist = 0
           next
         }
 
-' >/tmp/tithek/$PARSER.hoster.list
-	echo "/tmp/tithek/$PARSER.hoster.list"
+' >/tmp/tithek/$PARSER.hosterlist.list
+	echo "/tmp/tithek/$PARSER.hosterlist.list"
 }
 
-video()
+hoster()
 {
 	$wgetbin $URL$PARAM -O - | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
-BEGIN { in_hoster = 0
+BEGIN { in_hosterlist = 0
         url = ""
         title = ""
       }
 
-/<div id=\"video_actions\">/ { in_video = 1
+/<div id=\"video_actions\">/ { in_hoster = 1
                                next
                              }
 
-/<a href=\"/ { if (in_video == 1) {
+/<a href=\"/ { if (in_hoster == 1) {
                   i = index($0, "<a href=\"") + 9
                   j = index(substr($0, i), "\"") - 1
                   url = substr($0, i, j)
@@ -225,13 +230,13 @@ BEGIN { in_hoster = 0
                next
              }
 
-/<\/div>/ { in_video = 0
+/<\/div>/ { in_hoster = 0
             next
           }
 
-' >/tmp/tithek/$PARSER.video.list
-#	echo "/tmp/tithek/$PARSER.video.list"
-	cat	"/tmp/tithek/$PARSER.video.list"
+' >/tmp/tithek/$PARSER.hoster.list
+#	echo "/tmp/tithek/$PARSER.hoster.list"
+	cat	"/tmp/tithek/$PARSER.hoster.list"
 }
 
 case $INPUT in
@@ -241,7 +246,7 @@ case $INPUT in
 	series) $INPUT;;
 	staffel) $INPUT;;
 	episode) $INPUT;;
+	hosterlist) $INPUT;;
 	hoster) $INPUT;;
-	video) $INPUT;;
 esac
 

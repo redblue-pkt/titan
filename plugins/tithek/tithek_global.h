@@ -79,8 +79,6 @@ char* hoster(char* url)
 		streamurl = cricfree(url, 0);
 	else if(ostrstr(tmplink, "zerocast") != NULL)
 		streamurl = zerocast(url, 0);
-	else if(ostrstr(tmplink, "beeg") != NULL)
-		streamurl = beeg(url);
 	else
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
@@ -702,23 +700,18 @@ char* localparser_hoster(char* link)
 	tmpstr = command(link);
 	tmpstr = string_newline(tmpstr);
 
-printf("tmpstr: %s\n", tmpstr);	
-	streamurl = hoster(tmpstr);
-	if(streamurl == NULL)
+	if(ostrstr(link, ".sh play") != NULL)
 		streamurl = ostrcat(tmpstr, NULL, 0, 0);
-printf("streamurl: %s\n", streamurl);	
+	else if(ostrstr(link, ".sh hoster") != NULL)
+		streamurl = hoster(tmpstr);
 
 	free(tmpstr), tmpstr = NULL;
 
 	return streamurl;
 }
 
-
-//int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
-printf("localparser_search: %s\n", link);
-
 	char* tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *menu = NULL, *search = NULL;
 	int ret = 1, count = 0, i = 0;
 
