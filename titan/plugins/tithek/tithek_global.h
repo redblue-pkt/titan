@@ -700,9 +700,9 @@ char* localparser_hoster(char* link)
 	tmpstr = command(link);
 	tmpstr = string_newline(tmpstr);
 
-	if(ostrstr(link, ".sh play") != NULL)
+	if(ostrstr(link, ".sh play ") != NULL)
 		streamurl = ostrcat(tmpstr, NULL, 0, 0);
-	else if(ostrstr(link, ".sh hoster") != NULL)
+	else if(ostrstr(link, ".sh hoster ") != NULL)
 		streamurl = hoster(tmpstr);
 
 	free(tmpstr), tmpstr = NULL;
