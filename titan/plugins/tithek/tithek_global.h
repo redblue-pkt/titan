@@ -615,7 +615,7 @@ char* jsunpack(char* input)
 	return input;
 }
 
-void localscript_init(char* titheklink, char* tithekfile)
+void localparser_init(char* titheklink, char* tithekfile)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *line = NULL, *path = NULL;
 
@@ -692,7 +692,7 @@ void localscript_init(char* titheklink, char* tithekfile)
 
 char* localparser_hoster(char* link)
 {
-	debug(99, "local_parser link: %s", link);
+	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1;
 	char* tmpstr = NULL, *streamurl = NULL;
@@ -712,6 +712,7 @@ char* localparser_hoster(char* link)
 
 int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
+	debug(99, "link: %s", link);
 	char* tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *menu = NULL, *search = NULL;
 	int ret = 1, count = 0, i = 0;
 

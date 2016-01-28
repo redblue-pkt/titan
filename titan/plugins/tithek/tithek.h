@@ -114,6 +114,8 @@ int amazonlogin = 0;
 //flag 98   - nbaondemand
 
 //flag 100  - all local search
+//flag 111  - local parser parser.sh hoster/play
+//flag 112  - local parser parser.sh search
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
 
@@ -751,7 +753,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 //	amazon_init(titheklink, tithekfile);
 //init locale parser
-	localscript_init(titheklink, tithekfile);
+	localparser_init(titheklink, tithekfile);
 
 	delmarkedscreennodes(grid, 1);
 	freetithek();
