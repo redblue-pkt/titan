@@ -63,7 +63,7 @@ BEGIN { table = ""
         next
       }
 /^\}/ { if (table == "videos") {
-           print title "#" SRC " " SRC " stream video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
+           print title "#" SRC " " SRC " play video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
            title = ""
            id = ""
         }   
@@ -94,7 +94,7 @@ BEGIN { table = ""
 	echo "/tmp/tithek/$PARSER.list"
 }
 
-stream()
+play()
 {
 	$curlbin -o - $URL$PARAM | sed -e 's/{/{\n/g' -e 's/,/,\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v PARSER=$PARSER -v NAME=$NAME '
 BEGIN { table = ""
@@ -272,7 +272,7 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	videos) $INPUT;;
-	stream) $INPUT;;
+	play) $INPUT;;
 	tags) $INPUT;;
 	page) $INPUT;;
 esac
