@@ -195,6 +195,10 @@ void blitfb2(struct fb* fbnode, int flag)
 			fb->width, fb->height, fb->colbytes,
 			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
 	}
+	
+	if(status.bcm == 1 && status.usedirectfb == 0) 
+		bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, 0, 0, fb->width, fb->height, 0, 0);
+	
 /*	
 	int xRes, yRes, stride, bpp;
 	

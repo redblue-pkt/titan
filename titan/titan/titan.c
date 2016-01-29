@@ -821,7 +821,16 @@ int main(int argc, char *argv[])
 #else
 		ret = getfbsize(0);
 		if(ret > 0 && status.bcm == 1) 
-			accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize, fb->data_phys + fb->varfbsize);
+		{
+			skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, fb->fd, fb->fb + fb->varfbsize, fb->fixfbsize, fb->data_phys + fb->varfbsize);
+			if(skinfb != NULL)
+			{
+				status.usedirectfb = 0;
+				ret = getfbsize(0);
+				if(ret > 0)
+					accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize, skinfb->data_phys + skinfb->varfbsize);
+			}
+		}
 #endif
 	}
 
