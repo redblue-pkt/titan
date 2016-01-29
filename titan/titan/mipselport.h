@@ -720,9 +720,9 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 		zpitch = skinfb->pitch;
 		zheight = skinfb->height;
 		zwidth = skinfb->width;
-		qpitch = accelfb->pitch;
-		qheight = accelfb->height;
-		qwidth = accelfb->width;
+		qpitch = width*4;
+		qheight = height;
+		qwidth = width;
 	}
 	else
 	{
@@ -734,14 +734,15 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 		zpitch = accelfb->pitch;
 		zheight = accelfb->height;
 		zwidth = accelfb->width;
-		qpitch = skinfb->pitch;
-		qheight = skinfb->height;
-		qwidth = skinfb->width;
+		qpitch = width*4;
+		qheight = height;
+		qwidth = width;
 	}
 	
 	if(status.bcm == 1 && source_phys > 0 && target_phys >0)
 	{
-		bcm_accel_blit(source_phys, qwidth, qheight, qpitch, 0, target_phys, zwidth, zheight, zpitch, posx, posy, width, height, posx, posy, scalewidth, scaleheight, 0, 0);
+		bcm_accel_blit(source_phys, qwidth, qheight, qpitch, 0, target_phys, zwidth, zheight, zpitch, 0, 0, width, height, posx, posy, scalewidth, scaleheight, 0, 0);
+		flag = 1;
 	}
 	else
 	{
@@ -1185,7 +1186,8 @@ void memcpy_word(char* dest, char* src, long anzw)
 	memcpy_word_src = src;
 	memcpy_word_dest = dest;
 	memcpy_word_anzw = anzw;
-	
+
+#ifndef ARM	
 	asm(	
 				"		lw	  $8, memcpy_word_src		\n"
 				"		lw	  $9, memcpy_word_dest	\n"				
@@ -1199,6 +1201,8 @@ void memcpy_word(char* dest, char* src, long anzw)
 				"		addi	$10, $10, -1					\n" 
 				"		bgez	$10, loop1						\n"
 			);
+#endif
+
 }
 
 void memcpy_byte(char* dest, char* src, long anzb)
@@ -1212,6 +1216,7 @@ void memcpy_byte(char* dest, char* src, long anzb)
 	memcpy_byte_dest = dest;
 	memcpy_byte_anzb = anzb;
 	
+#ifndef ARM	
 	asm (	
 				"		li    $12, 4								\n"
 				"		lw	  $8, memcpy_byte_src		\n"
@@ -1236,12 +1241,14 @@ void memcpy_byte(char* dest, char* src, long anzb)
 				"end:														\n"
 				"		nop													\n"	  
 			);
+#endif
 }
 
 
 void memcpy_area(unsigned char* targetADDR, unsigned char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs)
 {
 
+#ifndef ARM
 	asm(	
 
 				"		lw    $t3, %[targetADDR]													\n"
@@ -1280,6 +1287,7 @@ void memcpy_area(unsigned char* targetADDR, unsigned char* startADDR, long pxAbs
 				"		nop																								\n"	
 				::[targetADDR] "m" (targetADDR), [startADDR] "m" (startADDR), [pxAbs] "m" (pxAbs), [widthAbs] "m" (widthAbs), [FBwidthAbs] "m" (FBwidthAbs), [hight] "m" (hight)
 				);
+#endif
 				
 	return;
 }
