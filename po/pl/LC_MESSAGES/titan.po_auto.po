@@ -146,13 +146,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1243
+#: titan.c:1252
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1226
+#: titan.c:1235
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1146,7 +1146,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1295
+#: titan.c:1304
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -2074,7 +2074,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:1007
+#: titan.c:1016
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -3168,9 +3168,9 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1062
-#: titan.c:1071 titan.c:1199 titan.c:1220 titan.c:1226 titan.c:1237
-#: titan.c:1243 tithek.c:100 tithek_global.h:83 tithek.h:726 tithek.h:1284
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1071
+#: titan.c:1080 titan.c:1208 titan.c:1229 titan.c:1235 titan.c:1246
+#: titan.c:1252 tithek.c:100 tithek_global.h:83 tithek.h:726 tithek.h:1284
 #: tithek.h:1345 tithek.h:1609 tithek.h:1631 tithek.h:1648 tithek.h:1880
 #: tithek.h:2040 tithek.h:2325 tithek.h:2362 tithek.h:2378 tithek.h:2390
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3346,27 +3346,27 @@ msgstr ""
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: titan.c:869
+#: titan.c:878
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:857
+#: titan.c:866
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:851
+#: titan.c:860
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:863
+#: titan.c:872
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:845
+#: titan.c:854
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:892
+#: titan.c:901
 msgid "Error: skin not found !!"
 msgstr ""
 
@@ -3679,7 +3679,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1062
+#: titan.c:1071
 msgid "First Wizzard"
 msgstr "Wizard"
 
@@ -3859,13 +3859,13 @@ msgstr ""
 msgid "Free Space"
 msgstr "wolne miejsce"
 
-#: titan.c:1237
+#: titan.c:1246
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1220
+#: titan.c:1229
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4717,7 +4717,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1071 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1080 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5712,8 +5712,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1199 titan.c:1220 titan.c:1226 titan.c:1237
-#: titan.c:1243 tithek.c:100 tithek_global.h:83 tithek.h:726 tithek.h:1284
+#: titan.c:346 titan.c:355 titan.c:1208 titan.c:1229 titan.c:1235 titan.c:1246
+#: titan.c:1252 tithek.c:100 tithek_global.h:83 tithek.h:726 tithek.h:1284
 #: tithek.h:1345 tithek.h:1609 tithek.h:1631 tithek.h:1880 tithek.h:2040
 #: tithek.h:2325 tithek.h:2362 tithek.h:2378 tithek.h:2390 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
@@ -6306,8 +6306,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1062 titan.c:1071 titan.c:1199 titan.c:1220
-#: titan.c:1226 titan.c:1237 titan.c:1243 tithek.c:100 tithek_global.h:83
+#: titan.c:346 titan.c:355 titan.c:1071 titan.c:1080 titan.c:1208 titan.c:1229
+#: titan.c:1235 titan.c:1246 titan.c:1252 tithek.c:100 tithek_global.h:83
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1609 tithek.h:1631
 #: tithek.h:1648 tithek.h:1880 tithek.h:2040 tithek.h:2325 tithek.h:2362
 #: tithek.h:2378 tithek.h:2390 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7389,7 +7389,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr ""
 
-#: titan.c:1199
+#: titan.c:1208
 msgid "Receiver successful unlocked"
 msgstr ""
 
@@ -7537,11 +7537,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:1000
+#: titan.c:1009
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:999
+#: titan.c:1008
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -8442,7 +8442,7 @@ msgstr ""
 msgid "Select Unicable Manufacturer"
 msgstr ""
 
-#: titan.c:1007
+#: titan.c:1016
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8586,7 +8586,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1062
+#: titan.c:1071
 msgid "Settings OK ?"
 msgstr "Ustawienia"
 
@@ -10232,7 +10232,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1293
+#: titan.c:1302
 msgid "Unknown Error."
 msgstr ""
 
