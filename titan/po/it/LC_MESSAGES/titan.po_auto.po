@@ -2105,7 +2105,7 @@ msgstr ""
 msgid "Choose your Shares from the following list"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:99 nowtv.h:108 tvtoast.h:298
+#: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:110 nowtv.h:108 tvtoast.h:298
 #: tvtoast.h:499 youtube.h:196 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
@@ -3148,7 +3148,7 @@ msgstr ""
 #: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 MultiImage.c:262 MultiImage.c:273
 #: MultiImage.c:533 MultiImage.c:591 MultiImage.c:671 myvideo.h:86
-#: nbaondemand.h:34 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
+#: nbaondemand.h:45 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
 #: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
@@ -5719,7 +5719,7 @@ msgstr ""
 #: movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
 #: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 myvideo.h:86
-#: nbaondemand.h:34 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
+#: nbaondemand.h:45 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
 #: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
@@ -6301,7 +6301,7 @@ msgstr ""
 #: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:175
 #: MultiImage.c:244 MultiImage.c:262 MultiImage.c:273 MultiImage.c:353
 #: MultiImage.c:401 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
-#: MultiImage.c:671 myvideo.h:86 nbaondemand.h:34 nbastream.h:126
+#: MultiImage.c:671 myvideo.h:86 nbaondemand.h:45 nbastream.h:126
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
 #: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
@@ -9180,7 +9180,7 @@ msgstr ""
 msgid "Stream Link"
 msgstr ""
 
-#: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:99 nowtv.h:108 tvtoast.h:298
+#: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:110 nowtv.h:108 tvtoast.h:298
 #: tvtoast.h:499 youtube.h:196 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
@@ -9580,7 +9580,7 @@ msgstr ""
 #: cloudzilla.h:39 divxstage.h:150 faststream.h:79 faststream.h:90
 #: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
 #: firedrive.h:122 firedrive.h:137 flashx.h:67 letwatch.h:59 mightyupload.h:68
-#: movreel.h:137 movshare.h:157 nbaondemand.h:34 played.h:84 played.h:101
+#: movreel.h:137 movshare.h:157 nbaondemand.h:45 played.h:84 played.h:101
 #: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
 #: putlocker.h:225 shared.h:82 solarmovie.h:51 solarmovie.h:62
