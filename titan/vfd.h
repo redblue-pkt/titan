@@ -38,6 +38,14 @@ int durchlauf = 0;
 int setvfdbrightness(int value)
 {
 
+if(checkbox("UFS913") == 1)
+{
+	if(value == 0)
+		value = 1;
+	if(value == 7)
+		value = 6;
+}
+
 #ifdef MIPSEL
 	FILE *f=fopen("/proc/stb/lcd/oled_brightness", "w");
 	if (!f)
