@@ -49,7 +49,7 @@ mainmenu()
 
 category()
 {
-	echo "Live#$SRC $SRC live init#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Live#$SRC $SRC live init#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#live.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "Latest#$SRC $SRC videos latest en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Teams#$SRC $SRC submenu teams en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
@@ -259,7 +259,7 @@ case $INPUT in
 	category) $INPUT;;
 	live) $INPUT;;
 	hoster) $INPUT;;
-	video) $INPUT;;
+	videos) $INPUT;;
 	play) $INPUT;;
 	submenu) $INPUT;;
 esac
