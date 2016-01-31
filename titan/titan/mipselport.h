@@ -196,8 +196,14 @@ void blitfb2(struct fb* fbnode, int flag)
 			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
 	}
 	
-	if(status.bcm == 1 && status.usedirectfb == 0) 
-		bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, 0, 0, fb->width, fb->height, 0, 0);
+	if(status.bcm == 1 && status.usedirectfb == 0)
+	{
+		int posx = getconfigint("fbleftoffset", NULL) * 5;
+		int posy = getconfigint("fbtopoffset", NULL) * 5;
+		int width = (fb->width - posx) - (getconfigint("fbrightoffset", NULL) * 5);
+		int height = (fb->height - posy) - (getconfigint("fbbottomoffset", NULL) * 5);
+		bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+	}
 	
 /*	
 	int xRes, yRes, stride, bpp;
