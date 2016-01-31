@@ -13,9 +13,11 @@ fi
 ARCH=`cat /etc/.arch`
 URL=http://livetv.sx
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=NBA-On-Demand
+NAME=MNT-NBA-On-Demand
 
-curlbin="curl -k -s -v -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies --user-agent 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'"
+curlbin='curl -k -s -v -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies --url'
+useragent="Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36"
+
 wgetbin="wget -q -T2"
 TMP=/tmp/parser
 #TMP=/mnt/parser/tmp
@@ -36,6 +38,7 @@ fi
 
 init()
 {
+	rm -f /mnt/network/cookies > /dev/null 2>&1
 	rm -rf $TMP > /dev/null 2>&1
 	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
@@ -49,7 +52,7 @@ mainmenu()
 
 category()
 {
-	echo "Live#$SRC $SRC live init#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#live.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Live#$SRC $SRC live init de#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "Latest#$SRC $SRC videos latest en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Teams#$SRC $SRC submenu teams en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
@@ -59,9 +62,9 @@ live()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
-		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$FILENAME.1	
+		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$FROM.$FILENAME.1
 
-		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed 's!<img width=27!\nfound=!g' | grep '^found=' | grep nba.gif | grep -v nhl >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		zcat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed 's!<img width=27!\nfound=!g' | grep '^found=' | grep nba.gif | grep -v nhl >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1`
@@ -106,7 +109,7 @@ hoster()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
-		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$FILENAME.1	
+		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$FILENAME.1	$curlopt
 		
 		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!show_webplayer('!\nfound=('!g" | sed 's!src="!\nsrc="!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 
@@ -127,7 +130,7 @@ hoster()
 				fi
 				piccount=`expr $piccount + 1`
 
-				URL="$SRC $SRC videos $FROM $URL"
+				URL="$URL"
 
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#98"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
