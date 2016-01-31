@@ -13,7 +13,7 @@ fi
 ARCH=`cat /etc/.arch`
 URL=http://livetv.sx
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=MNT-NBA-On-Demand
+NAME=NBA-On-Demand
 
 curlbin='curl -k -s -v -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies --url'
 useragent="Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36"
