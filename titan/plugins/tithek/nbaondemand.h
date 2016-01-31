@@ -23,15 +23,31 @@ char* nbaondemand(char* link)
 	path = string_replace_all(" ", "%20", path, 1);
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbaondemand1_tmpstr", NULL, host, path, tmpstr);
 
-//<script src="//cdn.playwire.com/bolt/js/zeus/embed.js" data-config="//config.playwire.com/19004/videos/v2/4546546/zeus.json" data-width="600" data-height="343"  type="text/javascript" charset="utf-8"></script>
-//GET https://cdn.video.playwire.com/19004/videos/4546546/video-sd.mp4?hosting_id=19004 HTTP/1.1
-
-	id = string_resub("config.playwire.com/19004/videos/v2/", "/zeus.json", tmpstr, 0);
-	if(id != NULL)
+	url = string_resub("scrolling='no'src=\"", "\"", tmpstr, 0);
+	if(url != NULL)
 	{
-	    streamurl = ostrcat("https://cdn.video.playwire.com/19004/videos/", id, 0, 0);
-    	streamurl = ostrcat(streamurl, "/video-sd.mp4?hosting_id=19004", 1, 0);
-    }
+		free(tmpstr), tmpstr = NULL;
+		host = string_resub("http://", "/", link, 0);
+		tmpstr = gethttps(link, NULL, NULL, NULL, NULL, link, 1);
+		host = string_resub("http://", "/", link, 0);
+		path = string_replace_all(host, "", link, 0);
+		path = string_replace_all("http://", "", path, 1);
+		path = string_replace_all(" ", "%20", path, 1);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbaondemand1a_tmpstr", NULL, host, path, tmpstr);
+		streamurl = string_resub("video height='480' width='700' src='", "'", tmpstr, 0);
+	}
+	else if(ostrstr(tmpstr, "config.playwire.com/19004/videos/v2/") != NULL)
+	{
+		id = string_resub("config.playwire.com/19004/videos/v2/", "/zeus.json", tmpstr, 0);
+		if(id != NULL)
+		{
+	//<script src="//cdn.playwire.com/bolt/js/zeus/embed.js" data-config="//config.playwire.com/19004/videos/v2/4546546/zeus.json" data-width="600" data-height="343"  type="text/javascript" charset="utf-8"></script>
+	//GET https://cdn.video.playwire.com/19004/videos/4546546/video-sd.mp4?hosting_id=19004 HTTP/1.1
+	
+		    streamurl = ostrcat("https://cdn.video.playwire.com/19004/videos/", id, 0, 0);
+	    	streamurl = ostrcat(streamurl, "/video-sd.mp4?hosting_id=19004", 1, 0);
+	    }
+	}
     else
     {
 //<iframe src='http://videoapi.my.mail.ru/videos/embed/mail/eccovskiy/_myvideo/3848.html' width='626' height='367' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
