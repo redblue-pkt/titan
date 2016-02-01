@@ -45,16 +45,16 @@ init()
 
 mainmenu()
 {
-	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 #	echo "Suche#$SRC $SRC suche#http://atemio.dyndns.tv/mediathek/menu/search.jpg#giga.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 category()
 {
-	echo "Live#$SRC $SRC live init de#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Latest#$SRC $SRC videos latest en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Teams#$SRC $SRC submenu teams en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Live#$SRC $SRC live init de#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Latest#$SRC $SRC videos latest en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Teams#$SRC $SRC submenu teams en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -69,8 +69,8 @@ live()
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1`
 			TITLE=`echo $ROUND | sed "s!$URL\">!\ntitle=<!g" | grep ^title= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`
-			SCORE=`echo $ROUND | sed 's!&nbsp; !\nscore=<!g' | grep ^score= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`			
-			EXTRA=`echo $ROUND | sed 's!<span class="evdesc">!\nextra=<!g' | grep ^extra= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`			
+			SCORE=`echo $ROUND | sed 's!&nbsp; !\nscore=<!g' | grep ^score= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`
+			EXTRA=`echo $ROUND | sed 's!<span class="evdesc">!\nextra=<!g' | grep ^extra= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`
 
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 
@@ -98,7 +98,7 @@ live()
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#0"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
-	
+
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
@@ -110,13 +110,13 @@ hoster()
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
 		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$FILENAME.1	$curlopt
-		
+
 		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!show_webplayer('!\nfound=('!g" | sed 's!src="!\nsrc="!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1 | sed 's!/webplayer.php!/export/webplayer.iframe.php!'`
 			TITLE=`echo $ROUND | cut -d"'" -f2`
-			EXTRA=`echo $ROUND | cut -d"'" -f4`			
+			EXTRA=`echo $ROUND | cut -d"'" -f4`
 
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 
@@ -135,7 +135,7 @@ hoster()
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#98"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
-	
+
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
@@ -153,7 +153,7 @@ videos()
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!<a href="/en/eventinfo/!\nurl="/en/eventinfo/!g' | grep ^url= | cut -d'"' -f2 | head -n1`
 			TITLE=`echo $ROUND | sed 's!width="30%"> <b>!\ntitle=<!g' | grep ^title= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`
-			SCORE=`echo $ROUND | sed 's!<font color="#949494"><b>!\nextra=<!g' | grep ^extra= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`			
+			SCORE=`echo $ROUND | sed 's!<font color="#949494"><b>!\nextra=<!g' | grep ^extra= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`
 
 			if [ `echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | grep "Full match record" | cut -d'"' -f2 | head -n1 | wc -l` -eq 0 ];then
 				FULLVIDEO=""
@@ -191,7 +191,7 @@ videos()
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#0"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
-	
+
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
@@ -220,7 +220,7 @@ play()
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#98"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
-	
+
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
@@ -240,7 +240,7 @@ submenu()
 			URL="$SRC $SRC videos $FROM `echo $ROUND | cut -d'"' -f2 | sed 's!/calendar/!/video/!g'`"
 			TITLE=`echo $ROUND | sed 's!<b>!\ntitle=<!g' | grep ^title= | cut -d'<' -f2`
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-	
+
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 				if [ ! -e $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list ];then
 					touch $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
@@ -249,7 +249,7 @@ submenu()
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#0"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
-	
+
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
