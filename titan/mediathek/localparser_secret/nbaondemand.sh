@@ -21,9 +21,9 @@ curlbin='curl -k -s -v -L --cookie /mnt/network/cookies --cookie-jar /mnt/networ
 wgetbin="wget -q -T2"
 TMP=/tmp/parser
 #TMP=/mnt/parser/tmp
-TMP=/var/usr/local/share/titan/plugins/tithek/parser/tmp
+#TMP=/var/usr/local/share/titan/plugins/tithek/parser/tmp
 
-#rm -rf $TMP > /dev/null 2>&1
+rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
 
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then
@@ -52,9 +52,9 @@ mainmenu()
 
 category()
 {
-	echo "Live#$SRC $SRC live $INPUT de#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Latest#$SRC $SRC videos $INPUT en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Teams#$SRC $SRC submenu $INPUT en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Live#$SRC $SRC livelist live de#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Latest#$SRC $SRC videos latest en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Teams#$SRC $SRC submenu teams en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -62,9 +62,9 @@ videos()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
-		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$FROM.$FILENAME.1
+		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
 
-		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed 's!height=27!\nfound=!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | sed 's!height=27!\nfound=!g' | grep '^found=' >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!<a href="/en/eventinfo/!\nurl="/en/eventinfo/!g' | grep ^url= | cut -d'"' -f2 | head -n1`
@@ -108,7 +108,7 @@ videos()
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
 	
-		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		done 3<$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
@@ -118,26 +118,24 @@ play()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
-		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$FROM.$FILENAME.1
+		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
 
-		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<td width="33%">!\nfound=!g' | sed 's!<br> </td>!\n<br> </td>!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<td width="33%">!\nfound=!g' | sed 's!<br> </td>!\n<br> </td>!g' | grep '^found=' >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
+
 		while read -u 3 ROUND; do
-
 			URL=http://xlivetv.sx`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1`
 			TITLE=`echo $ROUND | sed 's!<a alt="!\ntitle="!g' | grep ^title= | cut -d'"' -f2 | sed 's!&ndash;!-!g'`
-
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ "$URL" != "http://xlivetv.sx" ] && [ `cat $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list | grep "#$URL#" | wc -l` -eq 0 ];then
 				if [ ! -e $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list ];then
 					touch $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 				fi
-
 				piccount=`expr $piccount + 1`
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#98"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
 	
-		done 3<$TMP/cache.$PARSER.$input.$FILENAME.2
+		done 3<$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
@@ -172,7 +170,7 @@ submenu()
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
 
-live()
+livelist()
 {
 	rm $TMP/cache.* > /dev/null 2>&1
 	rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list > /dev/null 2>&1
@@ -309,7 +307,7 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	category) $INPUT;;
-	live) $INPUT;;
+	livelist) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 	videos) $INPUT;;
