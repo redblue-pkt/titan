@@ -617,7 +617,7 @@ char* jsunpack(char* input)
 	return input;
 }
 
-void localscript_init(char* titheklink, char* tithekfile)
+void localparser_init(char* titheklink, char* tithekfile)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *line = NULL, *path = NULL;
 
@@ -694,7 +694,7 @@ void localscript_init(char* titheklink, char* tithekfile)
 
 char* localparser_hoster(char* link)
 {
-	debug(99, "local_parser link: %s", link);
+	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1;
 	char* tmpstr = NULL, *streamurl = NULL;
