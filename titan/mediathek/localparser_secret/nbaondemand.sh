@@ -23,7 +23,7 @@ TMP=/tmp/parser
 #TMP=/mnt/parser/tmp
 #TMP=/var/usr/local/share/titan/plugins/tithek/parser/tmp
 
-rm -rf $TMP > /dev/null 2>&1
+#rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
 
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then
