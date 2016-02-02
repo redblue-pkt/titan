@@ -60,6 +60,7 @@
 #include "movie2k.h"
 #include "nbastream.h"
 #include "nbaondemand.h"
+#include "p2pcast.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

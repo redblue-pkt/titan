@@ -113,6 +113,7 @@ char* vivo(char* link);
 char* nbastream(char* link);
 char* giga(char* link);
 char* nbaondemand(char* link);
+char* p2pcast(char* link);
 char* streamlive(char* link, int incount);
 char* cricfree(char* link, int incount);
 char* zerocast(char* link, int incount);
