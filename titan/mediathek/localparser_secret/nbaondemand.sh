@@ -305,60 +305,6 @@ hoster()
 	echo $URL
 }
 
-hoster1()
-{
-rm $TMP/cache.* > /dev/null 2>&1
-rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list > /dev/null 2>&1
-
-	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
-		piccount=0
-		FILENAME=GET
-		$wgetbin "$PAGE" -O $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
-
-#		zcat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 > $TMP/cache.$PARSER.$FROM.$FILENAME.2
-		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!<iframe scrolling!\nfound=!g" | grep '^found=' >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
-		zcat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!<iframe scrolling!\nfound=!g" | grep '^found=' >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
-
-		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed "s!src=!\nsrc=!g" | grep '^src=' | cut -d'"' -f2`
-		URL2=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | sed "s!src=!\nsrc=!g" | grep '^src=' | cut -d'"' -f2`
-
-#		URL2=`cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!<iframe scrolling=!\nfound=!g" | grep '^found=' | cut -d'"' -f4`
-
-echo URL$URL
-exit
-echo URL2 $URL2
-exit
-		$wgetbin "$URL2" -O $TMP/cache.$PARSER.$FROM.$FILENAME.2
-#		echo URL2 $URL2
-#domain=www.streamhd.eu
-
-		found=`cat $TMP/cache.$PARSER.$FROM.$FILENAME.2 | sed 's!fid=!\nfid=!g' | grep '^fid='`
-		fid=`echo $found | cut -d'"' -f2`
-		width=640
-		height=400
-		URL3=`echo $found | cut -d'"' -f6`
-		$wgetbin "$URL3" -O $TMP/cache.$PARSER.$FROM.$FILENAME.3
-		found=`cat $TMP/cache.$PARSER.$FROM.$FILENAME.3`
-		URL4=`echo $found | cut -d'"' -f2`
-		URL4=`echo $URL4 | sed "s/'+ fid +'/$fid/"`
-
-		URL4=`echo $URL4 | sed "s/'+v_width+'/$width/"`
-		URL4=`echo $URL4 | sed "s/'+v_height+'/$height/"`
-		URL4=`echo $URL4 | sed "s/'+document.domain+'/$domain/"`
-		$curlbin --referer $URL2 "$URL4" -o $TMP/cache.$PARSER.$FROM.$FILENAME.4
-
-		streamer=`cat $TMP/cache.$PARSER.$FROM.$FILENAME.4 | sed 's!var video =!\nfound=!g' | grep '^found=' | cut -d'"' -f2`
-		swfurl=`cat $TMP/cache.$PARSER.$FROM.$FILENAME.4 | sed 's!flashplayer:!\nfound=!g' | grep '^found=' | cut -d'"' -f2`
-		app=`echo $streamer | sed 's!/app/!\napp=!g' | grep '^app='`
-
-		LINE="RTMP STREAM#$streamer $app swfUrl=$swfurl live=1 timeout=15 swfVfy=1 pageUrl=$URL2#pic#$PARSER_$piccount.jpg#$NAME#2"
-		echo "$LINE" >> $TMP/$PARSER.RTMPSTREAM.list
-	
-	fi
-	echo "$TMP/$PARSER.RTMPSTREAM.list"
-}
-
-
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
