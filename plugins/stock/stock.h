@@ -304,7 +304,7 @@ start:
       setfbtransparent(255);
       
       drawscreen(skin, 0, 0);
-      tmpstr = ostrcat("http://www.google.com", node->symbol_lookup_url, 0, 0);
+      tmpstr = ostrcat("nsfb.sh --scale=100 -f linux -b 32 http://www.google.com", node->symbol_lookup_url, 0, 0);
       system(tmpstr);
       free(tmpstr); tmpstr = NULL;
       
