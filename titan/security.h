@@ -1974,7 +1974,6 @@ struct update* createupdatelist(int mode)
 
 	newnode->auth = ostrcat(newnode->auth, " aUtzhFRTzuDFa", 1, 0);
 	newnode->auth = ostrcat(newnode->auth, " JNHZbghnjuz", 1, 0);
-	char* filelistmasj
 	newnode->imgtype = 0;
 
 	if(file_exist("/etc/.beta")) newnode->imgtype = 1;	
