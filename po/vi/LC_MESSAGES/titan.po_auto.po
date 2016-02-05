@@ -1859,7 +1859,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "Không thể phát lại!"
 
-#: system_update.h:270
+#: system_update.h:251
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -3203,8 +3203,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
 #: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
 #: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
-#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:257
-#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
+#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:238
+#: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1071 titan.c:1080 titan.c:1208 titan.c:1229
@@ -3357,7 +3357,7 @@ msgstr ""
 msgid "Error create filename"
 msgstr "Tạo tên file lỗi"
 
-#: system_update.h:257
+#: system_update.h:238
 msgid "Error file not supported"
 msgstr "Lỗi tập tin không được hỗ trợ!"
 
@@ -5761,8 +5761,8 @@ msgstr ""
 #: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
 #: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:257 system_update.h:263
-#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
+#: system_backup_restore.h:82 system_update.h:238 system_update.h:244
+#: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1208
 #: titan.c:1229 titan.c:1235 titan.c:1246 titan.c:1252 tithek.c:101
@@ -6362,8 +6362,8 @@ msgstr "E"
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
-#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:238
+#: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1071 titan.c:1080 titan.c:1208 titan.c:1229
@@ -12834,13 +12834,17 @@ msgstr "Đã bắt đầu"
 msgid "starting"
 msgstr "Đang bắt đầu"
 
-#: system_update.h:250
+#: system_update.h:229
 msgid "starting Full Update (from backup) ?"
 msgstr "bắt đầu cập nhật?"
 
-#: httpdfunc.h:5836 system_update.h:220
+#: httpdfunc.h:5836 system_update.h:227
 msgid "starting Full Update ?"
 msgstr "bắt đầu cập nhật?"
+
+#: system_update.h:231
+msgid "starting Nfi Update ?"
+msgstr ""
 
 #: possetup.h:63
 msgid "startposition"
