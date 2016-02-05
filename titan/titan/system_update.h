@@ -190,39 +190,15 @@ void screensystem_update(int mode)
 				writeallconfig(1);
 
 				debug(40, "Update: update with log");
-				if(ostrstr(filelist->select->text, "_FULL_") != NULL)
+				if(ostrstr(filelist->select->text, "_FULL_") != NULL || ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL || ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 				{
-					cmd = ostrcat(cmd, "full ", 1, 0);
-					cmd = ostrcat(cmd, tmpstr, 1, 0);
-					cmd = ostrcat(cmd, node->auth, 1, 0);
-					if(node->imgtype == 1)
-						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
-					else
-						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+					if(ostrstr(filelist->select->text, "_FULL_") != NULL)
+						cmd = ostrcat(cmd, "full ", 1, 0);
+					else if(ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL)
+						cmd = ostrcat(cmd, "fullbackup ", 1, 0);
+					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
+						cmd = ostrcat(cmd, "updatenfi ", 1, 0);
 
-					if(file_exist("/var/swap"))
-					{
-						if(!file_exist("/var/swap/logs"))
-							 mkdir("/var/swap/logs", 777);
-					
-						if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
-							cmd = ostrcat(cmd, " > /var/swap/logs/update_debug.log 2>&1", 1, 0);		
-					}
-					else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
-					{
-						if(!file_exist("/mnt/logs"))
-							 mkdir("/mnt/logs", 777);
-					
-						if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
-							cmd = ostrcat(cmd, " > /mnt/logs/update_debug.log 2>&1", 1, 0);
-					}
-		
-					msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
-				}
-
-				if(ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL)
-				{
-					cmd = ostrcat(cmd, "fullbackup ", 1, 0);
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, node->auth, 1, 0);
 					if(node->imgtype == 1)
@@ -247,7 +223,12 @@ void screensystem_update(int mode)
 							cmd = ostrcat(cmd, " > /mnt/logs/update_debug.log 2>&1", 1, 0);
 					}
 
-					msgtxt = ostrcat(msgtxt, _("starting Full Update (from backup) ?"), 1, 0);
+					if(ostrstr(filelist->select->text, "_FULL_") != NULL)
+						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
+					else if(ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL)
+						msgtxt = ostrcat(msgtxt, _("starting Full Update (from backup) ?"), 1, 0);
+					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
+						msgtxt = ostrcat(msgtxt, _("starting Nfi Update ?"), 1, 0);
 				}
 
 				clearscreen(systemupdate);
