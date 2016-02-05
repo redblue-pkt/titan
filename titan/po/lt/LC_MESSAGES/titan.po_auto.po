@@ -24,7 +24,7 @@ msgstr " Gerai !"
 msgid " : NOT OKAY!"
 msgstr ": Negerai !"
 
-#: security.h:683 security.h:2122
+#: security.h:683 security.h:2121
 msgid " Days "
 msgstr ""
 
@@ -1059,7 +1059,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Atemio (Hotline)"
 
-#: security.h:2127
+#: security.h:2126
 msgid "Atemio free license"
 msgstr ""
 
@@ -2365,7 +2365,7 @@ msgstr "DMESIO : kanalai nenukopijuoti"
 msgid "Copy satlist successfull"
 msgstr "Kanalai skmingai nukopijuoti"
 
-#: security.h:2136
+#: security.h:2135
 msgid "Copyright"
 msgstr "© Autorins teiss"
 
@@ -2759,7 +2759,7 @@ msgstr ""
 "KILL = Raudona\n"
 "BOOT = alia"
 
-#: security.h:2129
+#: security.h:2128
 msgid "Dev free license"
 msgstr ""
 
@@ -2937,7 +2937,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2104
+#: security.h:2103
 msgid "Driver"
 msgstr ""
 
@@ -3499,7 +3499,7 @@ msgstr "Ipltimai"
 msgid "Extensions List"
 msgstr ""
 
-#: security.h:2093 security.h:2098
+#: security.h:2092 security.h:2097
 msgid "External Player"
 msgstr ""
 
@@ -3998,7 +3998,7 @@ msgstr "LCD Ekranas"
 msgid "Front Key"
 msgstr "Priekinis Mygtukas"
 
-#: security.h:2087
+#: security.h:2086
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4786,7 +4786,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2075
+#: security.h:2074
 msgid "Image"
 msgstr ""
 
@@ -4994,7 +4994,7 @@ msgstr "Diegti SWAP (USB ar HDD)"
 msgid "Installation start"
 msgstr "Diegimas pradtas"
 
-#: httpdfunc.h:5674 security.h:2082 skin_default_skin.xml.h:314
+#: httpdfunc.h:5674 security.h:2081 skin_default_skin.xml.h:314
 msgid "Installed:"
 msgstr "Instaliuota:"
 
@@ -5348,7 +5348,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2109
+#: security.h:2108
 msgid "License"
 msgstr ""
 
@@ -10209,7 +10209,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:681 security.h:2119
+#: security.h:681 security.h:2118
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10225,7 +10225,7 @@ msgstr "Antradienis"
 msgid "Tune to channel failed"
 msgstr "ERROR: Tuning to Channel failed"
 
-#: security.h:2145 skin_default_skin.xml.h:674
+#: security.h:2144 skin_default_skin.xml.h:674
 msgid "Tuner"
 msgstr "Imtuvas"
 
@@ -10265,7 +10265,7 @@ msgstr ""
 "ERROR: Tuner configuration is not allowed during a recording\n"
 "or during Stream Playback"
 
-#: security.h:2152 skin_default_skin.xml.h:680
+#: security.h:2151 skin_default_skin.xml.h:680
 msgid "Tunertype"
 msgstr "Imtuvo Tipas"
 
@@ -10306,7 +10306,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2125
+#: security.h:2124
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10491,7 +10491,7 @@ msgstr "Nustatymai"
 msgid "VLC Player"
 msgstr "VLC Grotuvas"
 
-#: security.h:2078
+#: security.h:2077
 msgid "Version"
 msgstr "Versija"
 
@@ -11576,7 +11576,7 @@ msgstr "vykis"
 msgid "expert (11)"
 msgstr "Expert mode (11)"
 
-#: security.h:2131
+#: security.h:2130
 msgid "expired"
 msgstr ""
 
@@ -13228,7 +13228,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:345
-#: security.h:2150 skin_default_skin.xml.h:692 skinselector.h:138 stream.h:22
+#: security.h:2149 skin_default_skin.xml.h:692 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13321,7 +13321,7 @@ msgstr "use SSL"
 msgid "v"
 msgstr ""
 
-#: security.h:2112
+#: security.h:2111
 msgid "valid"
 msgstr ""
 
