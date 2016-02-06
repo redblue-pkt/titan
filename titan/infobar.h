@@ -461,7 +461,12 @@ void screeninfobar()
 			continue;
 		}
 		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
-			rcret = getrcconfigint("rctvradio", NULL);
+		{
+			if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
+				rcret = getrcconfigint("rctvradio", NULL);
+			else
+				rcret = getrcconfigint("rcepg", NULL);
+		}
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL) || rcret == getrcconfigint("rctv", NULL) || rcret == getrcconfigint("rcradio", NULL) || (status.crosscontrol == 0 && status.play == 0 && status.pause == 0 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL))))
 		{
 			int tmpservicetype = status.servicetype;
