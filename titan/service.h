@@ -422,6 +422,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}
 		if(videonode != NULL)
 		{
+			videocontinue(videonode);
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
 			setencoding(chnode, videonode);
 			if(videoplay(videonode)!= 0) {
