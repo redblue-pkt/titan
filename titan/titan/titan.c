@@ -1022,6 +1022,11 @@ int main(int argc, char *argv[])
 				writeallconfig(1);				
 			}
 		}
+		if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+		{
+			addconfig("remotecontrol", "0");
+			writeallconfig(1);	
+		}			
 	}
 
 	if(getconfigint("autoscan", NULL) == 1)
