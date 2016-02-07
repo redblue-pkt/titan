@@ -1592,6 +1592,8 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		boxpath = ostrcat("/forum/forumdisplay.php?432", NULL, 0, 0);
 	else if(checkbox("SPARK7162") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?433", NULL, 0, 0);
+	else
+		boxpath = ostrcat("/forum/forumdisplay.php?390", NULL, 0, 0);
 
 	if(user != NULL && pass != NULL)
 	{	
