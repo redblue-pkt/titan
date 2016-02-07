@@ -1331,7 +1331,7 @@ msgstr "Hintergrundfarbe"
 msgid "Background2 Color"
 msgstr "Hintergrundfarbe 2"
 
-#: httpdfunc.h:6706 skin_default_skin.xml.h:60
+#: httpdfunc.h:6685 skin_default_skin.xml.h:60
 msgid "Backup"
 msgstr "Sichern"
 
@@ -1344,7 +1344,7 @@ msgstr "Einstellungen werden gesichert"
 msgid "Backup / Restore Settings"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: global.h:7351 httpdfunc.h:6666 httpdfunc.h:6745 system_backup_restore.h:82
+#: global.h:7351 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Die Sicherung wurde erfolgreich erstellt"
 
@@ -1834,7 +1834,7 @@ msgstr "EPG-Zeit kann nicht gefunden werden oder ist nicht korrekt!"
 msgid "Can't get Streamurl !"
 msgstr "Streamadresse ist nicht erreichbar!"
 
-#: extensions.h:453 httpdfunc.h:6525
+#: extensions.h:453 httpdfunc.h:6504
 msgid "Can't get all TPK index !"
 msgstr "Fehler beim Download der Paket Listen!"
 
@@ -1842,7 +1842,7 @@ msgstr "Fehler beim Download der Paket Listen!"
 msgid "Can't get data from facebook"
 msgstr "Keine Verbindung zu Facebook"
 
-#: extensions.h:190 httpdfunc.h:6111
+#: extensions.h:190 httpdfunc.h:6090
 msgid "Can't install Package. Package to big."
 msgstr "Paket zu groß. Installation nicht möglich."
 
@@ -1920,7 +1920,7 @@ msgstr ""
 msgid "Can't start timeshift play !"
 msgstr "Timeshift Wiedergabe kann nicht gestartet werden!"
 
-#: extensions.h:457 httpdfunc.h:6537
+#: extensions.h:457 httpdfunc.h:6516
 msgid "Can't update all packages !"
 msgstr ""
 "Es konnten nicht alle Erweiterungen\n"
@@ -2108,7 +2108,7 @@ msgstr "Jugendschutz"
 msgid "Child safety"
 msgstr "Jugendschutz"
 
-#: extensions.h:184 httpdfunc.h:6043
+#: extensions.h:184 httpdfunc.h:6022
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
 
@@ -3217,8 +3217,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: global.h:7279 global.h:7299 harddisk.h:355 harddisk.h:678 harddisk.h:686
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
 #: harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37
-#: httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6218
-#: httpdfunc.h:6483 httpdfunc.h:6554 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197
+#: httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -3937,11 +3937,11 @@ msgstr "Formatieren"
 msgid "Format HDD"
 msgstr "Datenträger formatieren"
 
-#: httpdfunc.h:6819 httpdfunc.h:6870 restoredefault.h:65
+#: httpdfunc.h:6798 httpdfunc.h:6849 restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr "Auslieferzustand"
 
-#: httpdfunc.h:6814 httpdfunc.h:6861 restoredefault.h:64
+#: httpdfunc.h:6793 httpdfunc.h:6840 restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatiere MNT mit anschließender Wiederherstellung"
 
@@ -5107,7 +5107,7 @@ msgstr "Installieren"
 msgid "Install File Manager Tpk first !"
 msgstr "Installieren Sie bitte das Datei Browser Plugin unter Erweiterungen"
 
-#: httpdfunc.h:6186 httpdfunc.h:6194 httpdfunc.h:6204
+#: httpdfunc.h:6165 httpdfunc.h:6173 httpdfunc.h:6183
 msgid "Install Log:"
 msgstr "Installations Log:"
 
@@ -5131,15 +5131,15 @@ msgstr "Internetbrowser Netsurf ist nicht installiert"
 msgid "Install success"
 msgstr "Installation erfolgreich"
 
-#: extensions.h:157 httpdfunc.h:6077
+#: extensions.h:157 httpdfunc.h:6056
 msgid "Install to FLASH"
 msgstr "FLASH Installation (FLASH)"
 
-#: extensions.h:145 httpdfunc.h:6059
+#: extensions.h:145 httpdfunc.h:6038
 msgid "Install to MNT"
 msgstr "MNT Installation (FLASH)"
 
-#: extensions.h:171 httpdfunc.h:6097
+#: extensions.h:171 httpdfunc.h:6076
 msgid "Install to SWAP"
 msgstr "SWAP Installation (USB oder HDD)"
 
@@ -5923,7 +5923,7 @@ msgstr "Menüliste"
 #: global.h:7299 global.h:7307 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838
 #: harddisk.h:857 harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
-#: httpdfunc.h:5832 httpdfunc.h:6218 httpdfunc.h:6483 httpdfunc.h:6554
+#: httpdfunc.h:5811 httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533
 #: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
 #: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
@@ -6379,19 +6379,19 @@ msgstr ""
 "Kein MultiImage Datenträger gefunden.\n"
 "Datenträger erstellen?"
 
-#: httpdfunc.h:6298
+#: httpdfunc.h:6277
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr "TPK Datei in /tmp nicht gefunden"
 
-#: httpdfunc.h:6302
+#: httpdfunc.h:6281
 msgid "No Tpk Files Found on Media Devices."
 msgstr "TPK wurde auf dem Medium nicht gefunden"
 
-#: httpdfunc.h:5951 httpdfunc.h:6105 httpdfunc.h:6366
+#: httpdfunc.h:5930 httpdfunc.h:6084 httpdfunc.h:6345
 msgid "No Tpk Files Found."
 msgstr "TPK Pakete nicht vorhanden"
 
-#: httpdfunc.h:5887
+#: httpdfunc.h:5866
 msgid "No Tpk Sections Found."
 msgstr "TPK Auswahl nicht vorhanden"
 
@@ -6399,7 +6399,7 @@ msgstr "TPK Auswahl nicht vorhanden"
 msgid "No Tuner configured"
 msgstr "FEHLER: Es ist kein Tuner eingerichtet!"
 
-#: httpdfunc.h:6743 system_backup_restore.h:51
+#: httpdfunc.h:6722 system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -6510,7 +6510,7 @@ msgstr "Ö"
 #: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
 #: harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860
 #: harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
-#: httpdfunc.h:3288 httpdfunc.h:6218 httpdfunc.h:6483 httpdfunc.h:6554
+#: httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533
 #: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
 #: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
@@ -7679,8 +7679,8 @@ msgstr "Aufnahme Fortschritt Farbe"
 msgid "Recall"
 msgstr ""
 
-#: httpdfunc.h:6853 httpdfunc.h:6863 httpdfunc.h:6872 httpdfunc.h:6962
-#: httpdfunc.h:6974 httpdfunc.h:6984 httpdfunc.h:6994 httpdfunc.h:7004
+#: httpdfunc.h:6832 httpdfunc.h:6842 httpdfunc.h:6851 httpdfunc.h:6941
+#: httpdfunc.h:6953 httpdfunc.h:6963 httpdfunc.h:6973 httpdfunc.h:6983
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
 msgstr "Receiver startet jetzt neu!"
@@ -7853,7 +7853,7 @@ msgstr "Zwischenspeicher leeren?"
 msgid "Remove Cookies"
 msgstr "Lösche Cookies"
 
-#: httpdfunc.h:6459 httpdfunc.h:6469
+#: httpdfunc.h:6438 httpdfunc.h:6448
 msgid "Remove Log:"
 msgstr "Entfernen Log:"
 
@@ -7918,7 +7918,7 @@ msgstr "Wiederholungsmodus"
 msgid "Repeat-On"
 msgstr "Wiederholen-An"
 
-#: httpdfunc.h:7049 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
+#: httpdfunc.h:7028 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
 msgstr "Zurücksetzen"
@@ -7966,27 +7966,27 @@ msgstr "Netzwerk neu starten?"
 msgid "Restart Oscam ?"
 msgstr "OScam Neustart?"
 
-#: httpdfunc.h:6701 skin_default_skin.xml.h:494
+#: httpdfunc.h:6680 skin_default_skin.xml.h:494
 msgid "Restore"
 msgstr "Wiederherstellen"
 
-#: httpdfunc.h:6913 httpdfunc.h:6972 skin_default_skin.xml.h:495
+#: httpdfunc.h:6892 httpdfunc.h:6951 skin_default_skin.xml.h:495
 msgid "Restore Default Bouquets"
 msgstr "Favoritenliste (Werkseinstellung)"
 
-#: httpdfunc.h:6908 httpdfunc.h:6960 skin_default_skin.xml.h:497
+#: httpdfunc.h:6887 httpdfunc.h:6939 skin_default_skin.xml.h:497
 msgid "Restore Default Channel Settings"
 msgstr "Kompletteliste (Werkseinstellung)"
 
-#: httpdfunc.h:6918 httpdfunc.h:6982 skin_default_skin.xml.h:496
+#: httpdfunc.h:6897 httpdfunc.h:6961 skin_default_skin.xml.h:496
 msgid "Restore Default Channels"
 msgstr "Senderliste (Werkseinstellung)"
 
-#: httpdfunc.h:6923 httpdfunc.h:6992 skin_default_skin.xml.h:498
+#: httpdfunc.h:6902 httpdfunc.h:6971 skin_default_skin.xml.h:498
 msgid "Restore Default Providers"
 msgstr "Anbieterliste (Werkseinstellung)"
 
-#: httpdfunc.h:6928 httpdfunc.h:7002 skin_default_skin.xml.h:499
+#: httpdfunc.h:6907 httpdfunc.h:6981 skin_default_skin.xml.h:499
 msgid "Restore Default Sats"
 msgstr "Satellitenliste (Werkseinstellung)"
 
@@ -7994,11 +7994,11 @@ msgstr "Satellitenliste (Werkseinstellung)"
 msgid "Restore Settings"
 msgstr "Einstellungen wiederherstellen"
 
-#: httpdfunc.h:6902 webif_settings.h:4
+#: httpdfunc.h:6881 webif_settings.h:4
 msgid "Restore channel settings"
 msgstr "Senderlisten wiederherstellen"
 
-#: httpdfunc.h:6802 httpdfunc.h:6809 httpdfunc.h:6851 restoredefault.h:63
+#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:63
 #: restoredefault.h:67 skin_default_skin.xml.h:500 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Werkseinstellungen"
@@ -8781,11 +8781,11 @@ msgstr "Ausgewähltes Image"
 msgid "Selected:"
 msgstr "ausgewählt:"
 
-#: httpdfunc.h:7044 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
+#: httpdfunc.h:7023 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr "Senden"
 
-#: httpdfunc.h:7035
+#: httpdfunc.h:7014
 msgid "Send Telnet Command"
 msgstr "Sende Telnet Kommando"
 
@@ -8838,7 +8838,7 @@ msgstr ""
 msgid "Server Name"
 msgstr ""
 
-#: httpdfunc.h:6583 skin_default_skin.xml.h:550 webif_info.h:1
+#: httpdfunc.h:6562 skin_default_skin.xml.h:550 webif_info.h:1
 msgid "Service"
 msgstr "Sender"
 
@@ -8893,7 +8893,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Einstellungen speichern?"
 
-#: httpdfunc.h:6690 skin_default_skin.xml.h:558 webif_system.h:4
+#: httpdfunc.h:6669 skin_default_skin.xml.h:558 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Einstellungen sichern/wiederherstellen"
 
@@ -9607,11 +9607,11 @@ msgstr "USB-Image Aktualisieren (Online)"
 msgid "System - Usbupdate (tmp)"
 msgstr "USB-Image Aktualisieren (Lokal)"
 
-#: httpdfunc.h:6618 skin_default_skin.xml.h:624 webif_system.h:3
+#: httpdfunc.h:6597 skin_default_skin.xml.h:624 webif_system.h:3
 msgid "System Backup"
 msgstr "System Sicherung"
 
-#: httpdfunc.h:6661
+#: httpdfunc.h:6640
 msgid "System Backup on your Box not Supported"
 msgstr "System Sicherung wird auf Ihrem Receiver nicht unterstützt."
 
@@ -9629,12 +9629,12 @@ msgstr "System Informationen"
 msgid "System Status"
 msgstr ""
 
-#: httpdfunc.h:5666 httpdfunc.h:5822 skin_default_skin.xml.h:630
+#: httpdfunc.h:5666 httpdfunc.h:5801 skin_default_skin.xml.h:630
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Softwareaktualisierung"
 
-#: httpdfunc.h:5841
+#: httpdfunc.h:5820
 msgid ""
 "System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
@@ -9681,19 +9681,19 @@ msgstr "TMDb Filmdatenbank"
 msgid "TPK"
 msgstr ""
 
-#: httpdfunc.h:6218 httpdfunc.h:6220 httpdfunc.h:6485
+#: httpdfunc.h:6197 httpdfunc.h:6199 httpdfunc.h:6464
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "TPK Installation abgeschlossen\n"
 "Ihr Receiver wird neu gestartet"
 
-#: httpdfunc.h:6483
+#: httpdfunc.h:6462
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 "Die Erweiterung wurde erfolgreich entfernt.\n"
 "Ihr Receiver wird jetzt neu starten."
 
-#: httpdfunc.h:6554
+#: httpdfunc.h:6533
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 "Aktualisierung abgeschlossen\n"
@@ -9703,7 +9703,7 @@ msgstr ""
 msgid "TPK install (online)"
 msgstr "Installieren (Online)"
 
-#: httpdfunc.h:6255 skin_default_skin.xml.h:664 webif_system_extensions.h:5
+#: httpdfunc.h:6234 skin_default_skin.xml.h:664 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Installieren (Media)"
 
@@ -9711,7 +9711,7 @@ msgstr "Installieren (Media)"
 msgid "TPK remove"
 msgstr "Entfernen"
 
-#: httpdfunc.h:6253 skin_default_skin.xml.h:666 webif_system_extensions.h:4
+#: httpdfunc.h:6232 skin_default_skin.xml.h:666 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Installieren (tmp)"
 
@@ -9888,7 +9888,7 @@ msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 msgid "The video no longer exists"
 msgstr "Dieses Video existiert nicht mehr."
 
-#: extensions.h:227 extensions.h:254 extensions.h:416 httpdfunc.h:6197
+#: extensions.h:227 extensions.h:254 extensions.h:416 httpdfunc.h:6176
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -10269,7 +10269,7 @@ msgstr ""
 "\n"
 "Folgt bald"
 
-#: extensions.h:222 httpdfunc.h:5938 skin_default_skin.xml.h:662
+#: extensions.h:222 httpdfunc.h:5917 skin_default_skin.xml.h:662
 msgid "Tpk Install - select file"
 msgstr "TPK installieren - Datei wählen"
 
@@ -10277,7 +10277,7 @@ msgstr "TPK installieren - Datei wählen"
 msgid "Tpk Install - select install medium"
 msgstr "Installieren - Installationsmedium auswählen"
 
-#: extensions.h:217 httpdfunc.h:5874
+#: extensions.h:217 httpdfunc.h:5853
 msgid "Tpk Install - select section"
 msgstr "TPK installieren - Kategorie wählen"
 
@@ -10285,15 +10285,15 @@ msgstr "TPK installieren - Kategorie wählen"
 msgid "Tpk Install Info"
 msgstr "Info zur TPK Installation"
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:6162 httpdfunc.h:6164
+#: extensions.h:254 extensions.h:259 httpdfunc.h:6141 httpdfunc.h:6143
 msgid "Tpk Install Info - Install ERROR"
 msgstr "Paket konnte nicht installiert werden"
 
-#: extensions.h:250 httpdfunc.h:6160
+#: extensions.h:250 httpdfunc.h:6139
 msgid "Tpk Install Info - Install OK"
 msgstr "Paket erfolgreich installiert"
 
-#: extensions.h:294 httpdfunc.h:6353
+#: extensions.h:294 httpdfunc.h:6332
 msgid "Tpk Remove - select file"
 msgstr "Erweiterung löschen"
 
@@ -10301,19 +10301,19 @@ msgstr "Erweiterung löschen"
 msgid "Tpk Remove Info"
 msgstr "Info zur TPK Deinstallation"
 
-#: extensions.h:320 httpdfunc.h:6437
+#: extensions.h:320 httpdfunc.h:6416
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "Erweiterung konnte nicht gelöscht werden"
 
-#: extensions.h:313 httpdfunc.h:6433
+#: extensions.h:313 httpdfunc.h:6412
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Erweiterung erfolgreich gelöscht"
 
-#: extensions.h:453 extensions.h:457 httpdfunc.h:6522 httpdfunc.h:6534
+#: extensions.h:453 extensions.h:457 httpdfunc.h:6501 httpdfunc.h:6513
 msgid "Tpk Update Info - Update ERROR"
 msgstr "Erweiterung Update Info - Update Fehler"
 
-#: httpdfunc.h:6544
+#: httpdfunc.h:6523
 msgid "Tpk Update Info - Update OK"
 msgstr ""
 
@@ -11571,7 +11571,7 @@ msgstr "zu Favoriten kopieren"
 msgid "cover"
 msgstr "Cover"
 
-#: httpdfunc.h:6630 httpdfunc.h:6655 skin_default_skin.xml.h:126
+#: httpdfunc.h:6609 httpdfunc.h:6634 skin_default_skin.xml.h:126
 msgid "create System Backup"
 msgstr "System Sicherung erstellen"
 
@@ -13132,7 +13132,7 @@ msgstr "durchführen"
 msgid "starting Full Update (from backup) ?"
 msgstr "Beginne Flashvorgang eines gesicherten Systemabbilds"
 
-#: httpdfunc.h:5836 system_update.h:227
+#: httpdfunc.h:5815 system_update.h:227
 msgid "starting Full Update ?"
 msgstr "Flashvorgang starten?"
 
