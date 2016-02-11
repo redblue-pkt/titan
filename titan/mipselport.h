@@ -197,72 +197,111 @@ void blitfb2(struct fb* fbnode, int flag)
 			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
 	}
 	
+	int posx = getconfigint("fbleftoffset", NULL) * 5;
+	int posy = getconfigint("fbtopoffset", NULL) * 5;
+	int width = 0;
+	int height = 0;
+	
 	if(status.bcm == 1 && status.usedirectfb == 0)
 	{
-		int posx = getconfigint("fbleftoffset", NULL) * 5;
-		int posy = getconfigint("fbtopoffset", NULL) * 5;
-		int width = (fb->width - posx) - (getconfigint("fbrightoffset", NULL) * 5);
-		int height = (fb->height - posy) - (getconfigint("fbbottomoffset", NULL) * 5);
+		width = (fb->width - posx) - (getconfigint("fbrightoffset", NULL) * 5);
+		height = (fb->height - posy) - (getconfigint("fbbottomoffset", NULL) * 5);
+	}
+	else
+	{
+		width = (720 - posx) - (getconfigint("fbrightoffset", NULL));
+		height = (576 - posy) - (getconfigint("fbbottomoffset", NULL));
+	}
+	
+	//printf("posx:%i posy:%i width:%i height:%i\n", posx, posy, width, height);
+
+	int i = 0, max = 1, wstep = 0, hstep = 0;
+	int dst_left = 0, dst_width = 0, dst_top = 0, dst_height = 0;
+	int mode3d = 0;
+
+	if(flag == 0)
+	{
+		if(status.bcm == 1 && status.usedirectfb == 0)
+			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+		else
+			blit();
+	}
+	
+	if(flag == 1 && status.screenanim > 0 && mode3d == 0)
+	{
+		doblit = 0;
+		max = 25;
+		dst_left = posx;
+		dst_width = width;
+		dst_top = posy;
+		dst_height = height;
 		
-		int i = 0, max = 1, wstep = 0, hstep = 0;
-		int dst_left = 0, dst_width = 0, dst_top = 0, dst_height = 0;
-		int mode3d = 0;
-		
-		if(flag == 1 && status.screenanim > 0 && mode3d == 0)
-		{
-			doblit = 0;
-			max = 25;
-			dst_left = posx;
-			dst_width = width;
-			dst_top = posy;
-			dst_height = height;
+		char* fbleftdev = "/proc/stb/fb/dst_left";
+		char* fbwidthdev = "/proc/stb/fb/dst_width";
+		char* fbtopdev = "/proc/stb/fb/dst_top";
+		char* fbheightdev = "/proc/stb/fb/dst_height";
 			
+		if(status.screenanim == 1 || status.screenanim == 3)
+		{
+			dst_left = (width / 2) - 1;
+			dst_width = 2;
+		}
+		if(status.screenanim == 2 || status.screenanim == 3)
+		{
+			dst_top = (height / 2) - 1;
+			dst_height = 2;
+		}
+		wstep = width / max;
+		hstep = height / max;
+			
+		for(i = 0; i <= max; i++)
+		{
 			if(status.screenanim == 1 || status.screenanim == 3)
 			{
-				dst_left = (width / 2) - 1;
-				dst_width = 2;
+				int tmpleft = dst_left - (wstep/2);
+				int tmpwidth = dst_width + wstep;
+				if(tmpleft < posx)
+					tmpleft = posx;
+				if(tmpwidth > width)
+					tmpwidth = width;
+				dst_left = tmpleft;
+				dst_width = tmpwidth;
 			}
 			if(status.screenanim == 2 || status.screenanim == 3)
 			{
-				dst_top = (height / 2) - 1;
-				dst_height = 2;
+				int tmptop = dst_top - (hstep/2);
+				int tmpheight = dst_height + hstep;
+				if(tmptop < posy)
+					tmptop = posy;
+				if(tmpheight > height)
+					tmpheight = height;
+				dst_top = tmptop;
+				dst_height = tmpheight;
 			}
-			wstep = width / max;
-			hstep = height / max;
 			
-			for(i = 0; i <= max; i++)
-			{
-				if(status.screenanim == 1 || status.screenanim == 3)
-				{
-					int tmpleft = dst_left - (wstep/2);
-					int tmpwidth = dst_width + wstep;
-					if(tmpleft < posx)
-						tmpleft = posx;
-					if(tmpwidth > width)
-						tmpwidth = width;
-					dst_left = tmpleft;
-					dst_width = tmpwidth;
-				}
-				if(status.screenanim == 2 || status.screenanim == 3)
-				{
-					int tmptop = dst_top - (hstep/2);
-					int tmpheight = dst_height + hstep;
-					if(tmptop < posy)
-						tmptop = posy;
-					if(tmpheight > height)
-						tmpheight = height;
-					dst_top = tmptop;
-					dst_height = tmpheight;
-				}
+			if((dst_width + dst_left) > width)
+				dst_left = dst_left - 1;
+			
+			if((dst_height + dst_top) > height)
+				dst_height = dst_height - 1;
 				
-				if(status.screenanim > 0) usleep(status.screenanimspeed * 1000);
+			if(status.screenanim > 0) usleep(status.screenanimspeed * 1000);
+			
+			//printf("left:%i width:%i top:%i height:%i\n", dst_left, dst_width, dst_top, dst_height);
+			if(status.bcm == 1 && status.usedirectfb == 0)
 				bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, dst_left, dst_top, dst_width, dst_height, 0, 0);
-				blit();
+			else
+			{
+				setfbosddev(fbleftdev, dst_left);
+				setfbosddev(fbwidthdev, dst_width);
+				setfbosddev(fbtopdev, dst_top);
+				setfbosddev(fbheightdev, dst_height);
 			}
+			blit();
 		}
-		else
-			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
 	}
+	else
+		bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
 	
 	if(doblit == 1)
 		blit();
