@@ -1081,7 +1081,7 @@ void screeninfobar()
 			}
 		}
 		// pip atemio7600 ??
-		if(rcret == getrcconfigint("rcpip", NULL) && (checkchipset("BCM7424") == 1 || checkbox("UFS922") == 1 || checkbox("UFS913") == 1))
+		if(rcret == getrcconfigint("rcpip", NULL) && (checkchipset("BCM7424") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("UFS922") == 1 || checkbox("UFS913") == 1))
 		{
 			if(status.pipservice->videodev == NULL)
 			{
