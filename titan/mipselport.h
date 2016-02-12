@@ -288,6 +288,7 @@ void blitfb2(struct fb* fbnode, int flag)
 			if(status.screenanim > 0) usleep(status.screenanimspeed * 1000);
 			
 			//printf("left:%i width:%i top:%i height:%i\n", dst_left, dst_width, dst_top, dst_height);
+			waitvsync();
 			if(status.bcm == 1 && status.usedirectfb == 0)
 				bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, dst_left, dst_top, dst_width, dst_height, 0, 0);
 			else
@@ -1289,10 +1290,10 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 
 void memcpy_word(char* dest, char* src, long anzw)
 {
-	// Folgende Werte müssen volatile definiert sein 
+	// Folgende Werte mï¿½ssen volatile definiert sein 
 	// char* memcpy_word_src ---> pointer Quelle
 	// char* memcpy_word_dest ---> pointer Ziehl
-	// long  memcpy_word_anzw ---> Anzahl der Wörter (4 byte) die kopiert werden sollen.
+	// long  memcpy_word_anzw ---> Anzahl der Wï¿½rter (4 byte) die kopiert werden sollen.
 	
 	memcpy_word_src = src;
 	memcpy_word_dest = dest;
@@ -1318,7 +1319,7 @@ void memcpy_word(char* dest, char* src, long anzw)
 
 void memcpy_byte(char* dest, char* src, long anzb)
 {
-	// Folgende Werte müssen volatile definiert sein 
+	// Folgende Werte mï¿½ssen volatile definiert sein 
 	// char* memcpy_byte_src ---> pointer Quelle
 	// char* memcpy_byte_dest ---> pointer Ziehl
 	// long  memcpy_byte_anzb ---> Anzahl bytes die kopiert werden sollen.
