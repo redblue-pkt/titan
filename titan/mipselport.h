@@ -197,8 +197,8 @@ void blitfb2(struct fb* fbnode, int flag)
 			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
 	}
 	
-	int posx = getconfigint("fbleftoffset", NULL) * 5;
-	int posy = getconfigint("fbtopoffset", NULL) * 5;
+	int posx = 0;
+	int posy = 0;
 	int width = 0;
 	int height = 0;
 	
@@ -206,11 +206,15 @@ void blitfb2(struct fb* fbnode, int flag)
 	{
 		width = (fb->width - posx) - (getconfigint("fbrightoffset", NULL) * 5);
 		height = (fb->height - posy) - (getconfigint("fbbottomoffset", NULL) * 5);
+		posx = getconfigint("fbleftoffset", NULL) * 5;
+		posy = getconfigint("fbtopoffset", NULL) * 5;
 	}
 	else
 	{
 		width = (720 - posx) - (getconfigint("fbrightoffset", NULL));
 		height = (576 - posy) - (getconfigint("fbbottomoffset", NULL));
+		posx = getconfigint("fbleftoffset", NULL);
+		posy = getconfigint("fbtopoffset", NULL);
 	}
 	
 	//printf("posx:%i posy:%i width:%i height:%i\n", posx, posy, width, height);
@@ -280,11 +284,11 @@ void blitfb2(struct fb* fbnode, int flag)
 			}
 			
 			if((dst_width + dst_left) > width)
-				dst_left = dst_left - 1;
-			
+				dst_width = dst_width - dst_left;
+							
 			if((dst_height + dst_top) > height)
-				dst_height = dst_height - 1;
-				
+				dst_height = dst_height - dst_top;
+								
 			if(status.screenanim > 0) usleep(status.screenanimspeed * 1000);
 			
 			//printf("left:%i width:%i top:%i height:%i\n", dst_left, dst_width, dst_top, dst_height);
