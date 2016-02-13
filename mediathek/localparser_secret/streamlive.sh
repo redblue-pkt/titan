@@ -1,3 +1,4 @@
+
 #!/bin/sh
 # first sh box parser for titannit mfg obi
 
@@ -5,13 +6,16 @@ SRC=$1
 INPUT=$2
 FROM=$3
 PAGE=$4
+
 FILENAME=`echo $PAGE | tr '/' '.'`
+FILENAME=`echo $FILENAME | tr '&' '.'`
+
 if [ -z "$PAGE" ]; then
 	FILENAME=none
 fi
 
 ARCH=`cat /etc/.arch`
-URL=http://cricfree.sx/
+URL=www.streamlive.to
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=StreamLive
 
@@ -51,19 +55,35 @@ mainmenu()
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
+#category()
+#{
+#	echo "Channels#$SRC $SRC list channels /#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+#  	echo "$TMP/$PARSER.$INPUT.list"
+#}
+
 category()
 {
-	echo "Channels#$SRC $SRC list channels /#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-  	echo "$TMP/$PARSER.$INPUT.list"
+	if [ ! -e "/tmp/tithek/$PARSER.$INPUT.list" ]; then
+		tagcount=60
+		i=1
+		until [ "$i" -gt "$tagcount" ]
+		do
+		TITLE="Page $i"
+		echo "$TITLE#$SRC $SRC page category '?p=$i&q=&sort=1'#http://atemio.dyndns.tv/mediathek/menu/page.jpg#page.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
+		i=`expr $i + 1` 
+		done
+	fi
+	echo "/tmp/tithek/$PARSER.$INPUT.list"
 }
 
-list()
+page()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
 
 #		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$FROM.$FILENAME.1
-		$curlbin "http://www.streamlive.to/?p=1&q=&sort=1" -o $TMP/cache.$PARSER.$FROM.$FILENAME.1
+#		$curlbin "http://www.streamlive.to/?p=1&q=&sort=1" -o $TMP/cache.$PARSER.$FROM.$FILENAME.1
+		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$FILENAME.1
 
 #		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="has-sub">!\n<li class="has-sub">!g' | grep ^'<li class="has-sub">' | sed 's!href=!\n<a href=!g' | grep ^'<a href=' | grep "http://cricfree.sx" | grep -v "/watch/live/" | cut -d '"' -f2 >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<a href="http://www.streamlive.to/view/!\nhttp://www.streamlive.to/view/!g' | grep ^"http://www.streamlive.to/view/" | grep -v "<strong>" | grep -v "premium_only" >$TMP/cache.$PARSER.$FROM.$FILENAME.2
@@ -103,5 +123,5 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	category) $INPUT;;
-	list) $INPUT;;
+	page) $INPUT;;
 esac
