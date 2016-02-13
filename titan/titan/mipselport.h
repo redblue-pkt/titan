@@ -223,12 +223,13 @@ void blitfb2(struct fb* fbnode, int flag)
 	int dst_left = 0, dst_width = 0, dst_top = 0, dst_height = 0;
 	int mode3d = 0;
 
-	if(flag == 0)
+	if(flag == 0 || checkbox("ATEMIO5200") == 1)
 	{
 		if(status.bcm == 1 && status.usedirectfb == 0)
 			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
 		else
 			blit();
+		return;
 	}
 	
 	if(flag == 1 && status.screenanim > 0 && mode3d == 0)
