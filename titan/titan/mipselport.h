@@ -246,6 +246,18 @@ void blitfb2(struct fb* fbnode, int flag)
 		char* fbtopdev = "/proc/stb/fb/dst_top";
 		char* fbheightdev = "/proc/stb/fb/dst_height";
 			
+		if(status.bcm == 1 && status.usedirectfb == 0)
+		{
+			if(status.screenanimspeed == 1 || status.screenanimspeed == 0)
+				max = 4;
+			else if(status.screenanimspeed == 5)
+				max = 8;
+			else
+				screenanimspeed = status.screenanimspeed;
+		}
+		else
+			screenanimspeed = status.screenanimspeed;
+			
 		if(status.screenanim == 1 || status.screenanim == 3)
 		{
 			dst_left = (width / 2) - 1;
