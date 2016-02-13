@@ -172,6 +172,10 @@ void screenadjust()
 	addchoicebox(screenanim, "1", _("anim. width"));
 	addchoicebox(screenanim, "2", _("anim. height"));
 	addchoicebox(screenanim, "3", _("anim. both"));
+#ifdef MIPSEL
+	addchoicebox(screenanim, "4", _("left to right"));
+	addchoicebox(screenanim, "5", _("top to bottom"));
+#endif
 	setchoiceboxselection(screenanim, getconfig("screenanim", NULL));
 	
 	addchoicebox(screenanimspeed, "1", _("very fast"));

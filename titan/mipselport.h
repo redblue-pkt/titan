@@ -256,6 +256,21 @@ void blitfb2(struct fb* fbnode, int flag)
 			dst_top = (height / 2) - 1;
 			dst_height = 2;
 		}
+		if(status.screenanim == 4)
+		{
+			dst_top = posy;
+			dst_height = height;
+			dst_left = posx;
+			dst_width = 2;
+		}
+		if(status.screenanim == 5)
+		{
+			dst_top = posy;
+			dst_height = 2;
+			dst_left = posx;
+			dst_width = width;
+		}
+		
 		wstep = width / max;
 		hstep = height / max;
 			
@@ -281,6 +296,20 @@ void blitfb2(struct fb* fbnode, int flag)
 				if(tmpheight > height)
 					tmpheight = height;
 				dst_top = tmptop;
+				dst_height = tmpheight;
+			}
+			if(status.screenanim == 4)
+			{
+				int tmpwidth = dst_width + wstep;
+				if(tmpwidth > width)
+					tmpwidth = width;
+				dst_width = tmpwidth;
+			}
+			if(status.screenanim == 5)
+			{
+				int tmpheight = dst_height + hstep;
+				if(tmpheight > height)
+					tmpheight = height;
 				dst_height = tmpheight;
 			}
 			
