@@ -312,14 +312,14 @@ void blitfb2(struct fb* fbnode, int flag)
 				dst_top = tmptop;
 				dst_height = tmpheight;
 			}
-			if(status.screenanim == 4)
+			if(status.screenanim == 4 || status.screenanim == 11)
 			{
 				int tmpwidth = dst_width + wstep;
 				if(tmpwidth > width)
 					tmpwidth = width;
 				dst_width = tmpwidth;
 			}
-			if(status.screenanim == 5)
+			if(status.screenanim == 5 || status.screenanim == 12)
 			{
 				int tmpheight = dst_height + hstep;
 				if(tmpheight > height)
@@ -336,7 +336,18 @@ void blitfb2(struct fb* fbnode, int flag)
 			//printf("left:%i width:%i top:%i height:%i\n", dst_left, dst_width, dst_top, dst_height);
 			//waitvsync();
 			if(status.bcm == 1 && status.usedirectfb == 0)
-				bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, dst_left, dst_top, dst_width, dst_height, 0, 0);
+			{
+				if(status.screenanim < 10)
+					bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, dst_left, dst_top, dst_width, dst_height, 0, 0);
+				else
+				{
+					int dswidth = dst_width * skinfb->width / width;
+					int dsheight = dst_height * skinfb->height / height;
+					int dsleft = skinfb->width - dswidth;
+					int dstop = skinfb->height - dsheight;
+					bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, dsleft, dstop, dswidth, dsheight, dst_left, dst_top, dst_width, dst_height, 0, 0);
+				}	
+			}	
 			else
 			{
 				setfbosddev(fbleftdev, dst_left);
