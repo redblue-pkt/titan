@@ -93,5 +93,5 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	category) $INPUT;;
-	live) $INPUT;;
+	list) $INPUT;;
 esac
