@@ -234,7 +234,8 @@ void blitfb2(struct fb* fbnode, int flag)
 	if(flag == 1 && status.screenanim > 0 && mode3d == 0)
 	{
 		doblit = 0;
-		max = 25;
+		//max = 25;
+		max = 8;
 		dst_left = posx;
 		dst_width = width;
 		dst_top = posy;
@@ -289,10 +290,8 @@ void blitfb2(struct fb* fbnode, int flag)
 			if((dst_height + dst_top) > height)
 				dst_height = dst_height - dst_top;
 								
-			if(status.screenanim > 0) usleep(status.screenanimspeed * 1000);
-			
 			//printf("left:%i width:%i top:%i height:%i\n", dst_left, dst_width, dst_top, dst_height);
-			waitvsync();
+			//waitvsync();
 			if(status.bcm == 1 && status.usedirectfb == 0)
 				bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, dst_left, dst_top, dst_width, dst_height, 0, 0);
 			else
@@ -301,9 +300,21 @@ void blitfb2(struct fb* fbnode, int flag)
 				setfbosddev(fbwidthdev, dst_width);
 				setfbosddev(fbtopdev, dst_top);
 				setfbosddev(fbheightdev, dst_height);
+				usleep(1000);
 			}
+			if(status.screenanim > 0) usleep(status.screenanimspeed * 1000);
 			blit();
 		}
+		if(status.bcm == 1 && status.usedirectfb == 0)
+			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+		else
+		{
+			setfbosddev(fbleftdev, posx);
+			setfbosddev(fbwidthdev, width);
+			setfbosddev(fbtopdev, posy);
+			setfbosddev(fbheightdev, height);
+		}
+		blit();
 	}
 	else
 		bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
