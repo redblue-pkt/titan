@@ -245,7 +245,9 @@ void blitfb2(struct fb* fbnode, int flag)
 		char* fbwidthdev = "/proc/stb/fb/dst_width";
 		char* fbtopdev = "/proc/stb/fb/dst_top";
 		char* fbheightdev = "/proc/stb/fb/dst_height";
-			
+		
+		int screenanimspeed = 0;	
+		
 		if(status.bcm == 1 && status.usedirectfb == 0)
 		{
 			if(status.screenanimspeed == 1 || status.screenanimspeed == 0)
