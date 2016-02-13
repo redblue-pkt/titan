@@ -40,17 +40,46 @@ http://www.streamlive.to/view/72736/BT_Sport_2-live-stream-channel
 		url1 = ostrcat(link, NULL, 0, 0);
 
 //<script type="text/javascript" src="http://www.streamlive.to/embed/69654&width=650&height=480&autoplay=true"></script>
-	tmpstr = gethttps(url1, NULL, NULL, NULL, NULL, NULL, 1);
-	host = string_resub("http://", "/", url1, 0);
-	path = string_replace_all(host, "", url1, 0);
+//	tmpstr = gethttps(url1, NULL, NULL, NULL, NULL, NULL, 1);
+//	host = string_resub("http://", "/", url1, 0);
+//	path = string_replace_all(host, "", url1, 0);
+
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", link, 0);
+	path = string_replace_all(host, "", link, 0);
+
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);	
 	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+
+	if(ostrstr(tmpstr, "<h1>To prove that you are not bot, please answer the question to continue</h1>") != NULL)
+	{
+//		Question: Type this word in the box: walking dead<br /><br />
+//		Question: Type the following word in the box: lovelivetv<br /><br />
+//		Question: Type this Honda car SUV in the box: crvhonda<br
+		printf("tmpstr: %s\n", tmpstr);
+
+		char* data = oregex(".*Question:.*: (.*)<br /><br />.*", tmpstr);
+
+		data = ostrcat("captcha=", data, 0, 1);
+		printf("data: %s\n", data);
+
+		free(tmpstr), tmpstr = NULL;
+		tmpstr = gethttps(link, NULL, data, NULL, NULL, link, 1);
+		free(data), data = NULL;
+
+		host = string_resub("http://", "/", link, 0);
+		path = string_replace_all(host, "", link, 0);
+		path = string_replace_all("http://", "", path, 1);
+		path = string_replace_all(" ", "%20", path, 1);	
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4a_tmpstr", oitoa(incount), host, path, tmpstr);
+	}
 
 	if(ostrstr(tmpstr, "'file': 'http") != NULL)
 	{
 		streamurl1 = string_resub("'file': 'http", "'", tmpstr, 0);
 		streamurl1 = ostrcat("http", streamurl1, 0, 1);
+		printf("1streamurl1: %s\n", streamurl1);
 	}
 
 	if(ostrstr(tmpstr, "rtmp") == NULL)
@@ -72,6 +101,7 @@ http://www.streamlive.to/view/72736/BT_Sport_2-live-stream-channel
 	{
 		streamurl1 = string_resub("'file': 'http", "'", tmpstr, 0);
 		streamurl1 = ostrcat("http", streamurl1, 0, 1);
+		printf("2streamurl1: %s\n", streamurl1);
 	}
 
 //streamer: "rtmp:\/\/163.172.8.19:1935\/edge\/_definst_\/?xs=_we_eXVtN2d4emZubWNnYXd0fDE0NDc2ODg2ODR8OTUuOTEuNi4yNXw1NjQ4YTg2Yzg5ZWEwfDVhOTkxZWIzY2JiNzA0NjYyM2Y4ODVlODY0NDhhZTJmNDM0OTc4ODI.",
@@ -85,7 +115,7 @@ http://www.streamlive.to/view/72736/BT_Sport_2-live-stream-channel
 		debug(99, "tvtoast5_tmpstr%d playpath=%s", incount, playpath)
 	
 		swfurl = string_resub("type: 'flash', src: '", "'", tmpstr, 0);
-		swfurl = string_replace_all("//", "http://", swfurl, 1);
+//		swfurl = string_replace_all("//", "http://", swfurl, 1);
 		debug(99, "tvtoast5_tmpstr%d swfurl=%s", incount, swfurl)
 	
 		app = ostrcat(streamer, NULL, 0, 0);
@@ -97,7 +127,7 @@ http://www.streamlive.to/view/72736/BT_Sport_2-live-stream-channel
 
 //$.getJSON("//www.streamlive.to/server.php?id=1447602284", function(json){
 		url3 = string_resub("getJSON(\"", "\"", tmpstr, 0);
-		url3 = string_replace_all("//", "http://", url3, 1);
+//		url3 = string_replace_all("//", "http://", url3, 1);
 		free(tmpstr), tmpstr = NULL;
 	
 		tmpstr = gethttps(url3, NULL, NULL, NULL, NULL, url2, 1);
