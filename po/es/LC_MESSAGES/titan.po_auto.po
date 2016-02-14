@@ -3251,7 +3251,7 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1076 titan.c:1085 titan.c:1213 titan.c:1234
-#: titan.c:1240 titan.c:1251 titan.c:1257 tithek.c:101 tithek_global.h:85
+#: titan.c:1240 titan.c:1251 titan.c:1257 tithek.c:101 tithek_global.h:91
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1609 tithek.h:1631
 #: tithek.h:1648 tithek.h:1880 tithek.h:2040 tithek.h:2325 tithek.h:2362
 #: tithek.h:2378 tithek.h:2390 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -5855,7 +5855,7 @@ msgstr "Lista de Menus"
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1213
 #: titan.c:1234 titan.c:1240 titan.c:1251 titan.c:1257 tithek.c:101
-#: tithek_global.h:85 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1609
+#: tithek_global.h:91 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1609
 #: tithek.h:1631 tithek.h:1880 tithek.h:2040 tithek.h:2325 tithek.h:2362
 #: tithek.h:2378 tithek.h:2390 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
@@ -6456,7 +6456,7 @@ msgstr "Ö"
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1076 titan.c:1085 titan.c:1213 titan.c:1234
-#: titan.c:1240 titan.c:1251 titan.c:1257 tithek.c:101 tithek_global.h:85
+#: titan.c:1240 titan.c:1251 titan.c:1257 tithek.c:101 tithek_global.h:91
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1609 tithek.h:1631
 #: tithek.h:1648 tithek.h:1880 tithek.h:2040 tithek.h:2325 tithek.h:2362
 #: tithek.h:2378 tithek.h:2390 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -8482,8 +8482,8 @@ msgstr "El guión no tiene salida o se inició en el fondo"
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:541 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:436 tithek_global.h:438 tithek_global.h:724
-#: tithek_global.h:726 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:56
+#: tithek_global.h:442 tithek_global.h:444 tithek_global.h:730
+#: tithek_global.h:732 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:56
 #: xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361
 #: zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9715,7 +9715,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:85 tithek.h:2325
+#: tithek_global.h:91 tithek.h:2325
 msgid "The hoster is not yet supported !"
 msgstr "El proveedor de alojamiento no se admite en la actualidad!"
 
