@@ -204,26 +204,21 @@ void blitfb2(struct fb* fbnode, int flag)
 	
 	if(status.bcm == 1 && status.usedirectfb == 0)
 	{
-		width = (fb->width - posx) - (getconfigint("fbrightoffset", NULL) * 5);
-		height = (fb->height - posy) - (getconfigint("fbbottomoffset", NULL) * 5);
 		posx = getconfigint("fbleftoffset", NULL) * 5;
 		posy = getconfigint("fbtopoffset", NULL) * 5;
+		width = (fb->width - posx) - (getconfigint("fbrightoffset", NULL) * 5);
+		height = (fb->height - posy) - (getconfigint("fbbottomoffset", NULL) * 5);
 	}
 	else
 	{
-		width = (720 - posx) - (getconfigint("fbrightoffset", NULL));
-		height = (576 - posy) - (getconfigint("fbbottomoffset", NULL));
 		posx = getconfigint("fbleftoffset", NULL);
 		posy = getconfigint("fbtopoffset", NULL);
+		width = (720 - posx) - (getconfigint("fbrightoffset", NULL));
+		height = (576 - posy) - (getconfigint("fbbottomoffset", NULL));
 	}
-	
 	//printf("posx:%i posy:%i width:%i height:%i\n", posx, posy, width, height);
 
-	int i = 0, max = 1, wstep = 0, hstep = 0;
-	int dst_left = 0, dst_width = 0, dst_top = 0, dst_height = 0;
-	int mode3d = 0;
-
-	if(flag == 0 || checkbox("ATEMIO5200") == 1)
+	if(flag == 0 || checkbox("ATEMIO5200") == 1 || status.screenanim == 0)
 	{
 		if(status.bcm == 1 && status.usedirectfb == 0)
 			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
@@ -231,6 +226,11 @@ void blitfb2(struct fb* fbnode, int flag)
 		return;
 	}
 	
+
+	int i = 0, max = 1, wstep = 0, hstep = 0;
+	int dst_left = 0, dst_width = 0, dst_top = 0, dst_height = 0;
+	int mode3d = 0;
+
 	if(flag == 1 && status.screenanim > 0 && mode3d == 0)
 	{
 		doblit = 0;
@@ -270,14 +270,14 @@ void blitfb2(struct fb* fbnode, int flag)
 			dst_top = (height / 2) - 1;
 			dst_height = 2;
 		}
-		if(status.screenanim == 4)
+		if(status.screenanim == 4 || status.screenanim == 11)
 		{
 			dst_top = posy;
 			dst_height = height;
 			dst_left = posx;
 			dst_width = 2;
 		}
-		if(status.screenanim == 5)
+		if(status.screenanim == 5 || status.screenanim == 12)
 		{
 			dst_top = posy;
 			dst_height = 2;
@@ -371,8 +371,10 @@ void blitfb2(struct fb* fbnode, int flag)
 		blit();
 	}
 	else
-		bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
-	
+	{
+		if(status.bcm == 1 && status.usedirectfb == 0)
+			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+	}
 	if(doblit == 1)
 		blit();
 	
