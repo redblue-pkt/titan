@@ -341,10 +341,14 @@ void blitfb2(struct fb* fbnode, int flag)
 					bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, dst_left, dst_top, dst_width, dst_height, 0, 0);
 				else
 				{
-					int dswidth = dst_width * skinfb->width / width;
-					int dsheight = dst_height * skinfb->height / height;
+					int dswidth = (dst_width + posx*2) * skinfb->width / (width + posx*2);
+					int dsheight = (dst_height + posy*2) * skinfb->height / (height + posy*2);
 					int dsleft = skinfb->width - dswidth;
 					int dstop = skinfb->height - dsheight;
+					if(status.screenanim == 11)
+						dstop = 0;
+					if(status.screenanim == 12)
+						dsleft = 0;
 					bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, dsleft, dstop, dswidth, dsheight, dst_left, dst_top, dst_width, dst_height, 0, 0);
 				}	
 			}	
