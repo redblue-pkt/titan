@@ -175,6 +175,11 @@ void screenadjust()
 #ifdef MIPSEL
 	addchoicebox(screenanim, "4", _("left to right"));
 	addchoicebox(screenanim, "5", _("top to bottom"));
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	{
+		addchoicebox(screenanim, "11", _("slide from left"));
+		addchoicebox(screenanim, "12", _("slide from bottom"));
+	}
 #endif
 	setchoiceboxselection(screenanim, getconfig("screenanim", NULL));
 	
