@@ -1,6 +1,7 @@
-
 #!/bin/bash
 # titannit box parser for burning series
+
+. /tmp/localhoster/hoster.sh
 
 SRC=$1
 INPUT=$2
