@@ -631,7 +631,7 @@ void localparser_init(char* titheklink, char* tithekfile)
 	{
 //		path = createpluginpath("/tithek", 0);
 //		path = ostrcat(path, "/parser", 1, 0);
-		path = ostrcat("/tmp/localparser", 0, 0);
+		path = ostrcat("/tmp/localparser", NULL, 0, 0);
 
 		if(!file_exist("/tmp/hoster"))
 			mkdir("/tmp/hoster", 0777);
