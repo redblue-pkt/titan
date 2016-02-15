@@ -14,17 +14,9 @@ if [ -z "$PAGE" ]; then
 	FILENAME=none
 fi
 
-ARCH=`cat /etc/.arch`
 URL=www.streamlive.to
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=StreamLive
-
-debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
-curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
-if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
-
-wgetbin="wget -q -T2"
-TMP=/tmp/localcache
 
 mkdir $TMP > /dev/null 2>&1
 
