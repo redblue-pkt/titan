@@ -30,5 +30,3 @@ ecostream()
 case $hoster in
 	ecostream) ecostream $1;;
 esac
-
-exit
