@@ -1,6 +1,8 @@
 #!/bin/bash
 # box parser for titannit
 
+. /tmp/localhoster/hoster.sh
+
 SRC=$1
 INPUT=$2
 PARAM=$3

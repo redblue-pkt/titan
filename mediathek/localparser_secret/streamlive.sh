@@ -1,6 +1,7 @@
-
 #!/bin/sh
 # first sh box parser for titannit mfg obi
+
+. /tmp/localhoster/hoster.sh
 
 SRC=$1
 INPUT=$2
