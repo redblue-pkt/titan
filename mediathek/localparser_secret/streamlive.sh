@@ -19,15 +19,13 @@ URL=www.streamlive.to
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=StreamLive
 
-curlbin='curl -k -s -v -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
-#useragent="Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36"
+debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
+curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
+if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 
 wgetbin="wget -q -T2"
-TMP=/tmp/parser
-#TMP=/mnt/parser/tmp
-#TMP=/var/usr/local/share/titan/plugins/tithek/parser/tmp
+TMP=/tmp/localcache
 
-#rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
 
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then
@@ -55,12 +53,6 @@ mainmenu()
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
-#category()
-#{
-#	echo "Channels#$SRC $SRC list channels /#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-#  	echo "$TMP/$PARSER.$INPUT.list"
-#}
-
 category()
 {
 	if [ ! -e "/tmp/tithek/$PARSER.$INPUT.list" ]; then
@@ -81,11 +73,8 @@ page()
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
 
-#		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$FROM.$FILENAME.1
-#		$curlbin "http://www.streamlive.to/?p=1&q=&sort=1" -o $TMP/cache.$PARSER.$FROM.$FILENAME.1
 		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$FILENAME.1
 
-#		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="has-sub">!\n<li class="has-sub">!g' | grep ^'<li class="has-sub">' | sed 's!href=!\n<a href=!g' | grep ^'<a href=' | grep "http://cricfree.sx" | grep -v "/watch/live/" | cut -d '"' -f2 >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<a href="http://www.streamlive.to/view/!\nhttp://www.streamlive.to/view/!g' | grep ^"http://www.streamlive.to/view/" | grep -v "<strong>" | grep -v "premium_only" >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do

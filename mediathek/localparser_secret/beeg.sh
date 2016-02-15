@@ -7,8 +7,13 @@ PARAM=$3
 URL="https://beeg.com/api/v5/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
-curlbin="curl -k -s"
-TMP=/tmp/parser
+
+debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
+curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
+if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
+
+wgetbin="wget -q -T2"
+TMP=/tmp/localcache
 
 rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1

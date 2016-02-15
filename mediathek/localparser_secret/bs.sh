@@ -9,8 +9,13 @@ PARAM2=$4
 URL="http://bs.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME="burningseries"
+
+debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
+curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
+if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
+
 wgetbin="wget -q -T2"
-TMP=/tmp/parser
+TMP=/tmp/localcache
 
 rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
