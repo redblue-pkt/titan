@@ -15,13 +15,12 @@ URL=http://cricfree.sx/
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=CricFree
 
-curlbin='curl -k -s -v -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
-#useragent="Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36"
+debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
+curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
+if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 
 wgetbin="wget -q -T2"
-TMP=/tmp/parser
-#TMP=/mnt/parser/tmp
-#TMP=/var/usr/local/share/titan/plugins/tithek/parser/tmp
+TMP=/tmp/localcache
 
 #rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1

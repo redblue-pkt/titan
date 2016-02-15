@@ -633,8 +633,8 @@ void localparser_init(char* titheklink, char* tithekfile)
 //		path = ostrcat(path, "/parser", 1, 0);
 		path = ostrcat("/tmp/localparser", NULL, 0, 0);
 
-		if(!file_exist("/tmp/hoster"))
-			mkdir("/tmp/hoster", 0777);
+		if(!file_exist("/tmp/localhoster"))
+			mkdir("/tmp/localhoster", 0777);
 		if(!file_exist("/mnt/parser"))
 			mkdir("/mnt/parser", 0777);
 		if(!file_exist(path))
@@ -658,7 +658,7 @@ void localparser_init(char* titheklink, char* tithekfile)
 
 		unlink("/tmp/hoster.tar");
 		gethttp("atemio.dyndns.tv", "/mediathek/hoster.tar", 80, "/tmp/hoster.tar", HTTPAUTH, 5000, NULL, 0);
-		cmd = ostrcat("tar -xvf /tmp/hoster.tar -C ", "/tmp/hoster", 0, 0);
+		cmd = ostrcat("tar -xvf /tmp/hoster.tar -C ", "/tmp/localhoster", 0, 0);
 		system(cmd);
 		free(cmd), cmd = NULL;
 
@@ -666,7 +666,7 @@ void localparser_init(char* titheklink, char* tithekfile)
 		system(cmd);
 		free(cmd), cmd = NULL;
 
-		cmd = ostrcat("chmod -R 755 /tmp/hoster", NULL, 0, 0);
+		cmd = ostrcat("chmod -R 755 /tmp/localhoster", NULL, 0, 0);
 		system(cmd);
 		free(cmd), cmd = NULL;
 
