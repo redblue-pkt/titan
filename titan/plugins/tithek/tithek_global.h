@@ -666,6 +666,10 @@ void localparser_init(char* titheklink, char* tithekfile)
 		system(cmd);
 		free(cmd), cmd = NULL;
 
+		cmd = ostrcat("chmod -R 755 /mnt/parser", NULL, 0, 0);
+		system(cmd);
+		free(cmd), cmd = NULL;
+
 		cmd = ostrcat("chmod -R 755 /tmp/localhoster", NULL, 0, 0);
 		system(cmd);
 		free(cmd), cmd = NULL;
