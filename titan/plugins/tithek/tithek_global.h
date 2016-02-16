@@ -86,6 +86,7 @@ char* hoster(char* url)
 		char* cmd = NULL;
 		cmd = ostrcat("/tmp/localhoster/hoster.sh ", url, 0, 0);
 		streamurl = command(cmd);
+		streamurl = string_newline(streamurl);
 		free(cmd), cmd = NULL;
 		if(streamurl == NULL)
 			textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
