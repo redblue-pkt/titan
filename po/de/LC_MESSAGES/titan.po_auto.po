@@ -4057,7 +4057,7 @@ msgid "FritzBook"
 msgstr "Fritzbook"
 
 #: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
-msgid "Fritzbox Firmware... >= 05.50"
+msgid "Fritzbox Firmware... >= 06.30"
 msgstr ""
 
 #: filemanager.h:194
