@@ -507,7 +507,7 @@ void screenhwtest()
 				tmpwr[2] = 'C'; //67
 				tmpwr[3] = 'D'; //68
 
-				if(!file_exist(SERIALDEV) == 1)
+				if(!file_exist(SERIALDEV))
 				{
 					mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
 					exist = 0;

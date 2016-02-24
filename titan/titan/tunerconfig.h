@@ -848,7 +848,7 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 
 //flag 0: del tunerconfig that are loop
 //flag 1: del all tunerconfig greater than maxsat
-void deltunerconfig(flag)
+void deltunerconfig(int flag)
 {
 	struct dvbdev* dvbnode = dvbdev;
 	int i, start = 0, end = 0;
