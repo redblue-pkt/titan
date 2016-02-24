@@ -883,7 +883,7 @@ void startnet()
 			system(cmd);
 
 		free(cmd); cmd = NULL;
-		if(!file_exist(SERIALDEV) == 1)
+		if(!file_exist(SERIALDEV))
 			mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
 	}
 }

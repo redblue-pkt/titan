@@ -1,7 +1,7 @@
 #ifndef SCREENSAVER_H
 #define SCREENSAVER_H
 
-void screensaversetfontcol(bgcol)
+void screensaversetfontcol(int bgcol)
 {
 	if(screensaver == NULL) return;
 

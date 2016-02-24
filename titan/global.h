@@ -2231,7 +2231,7 @@ void closeonexec(int fd)
 		fcntl(fd, F_SETFD, fcntl(fd, F_GETFD) | FD_CLOEXEC);
 }
 
-void startnewsletter(flag)
+void startnewsletter(int flag)
 {
 	if(flag == 1)
 	{
@@ -2245,7 +2245,7 @@ void startnewsletter(flag)
 	}
 }
 
-void startthumb(flag)
+void startthumb(int flag)
 {
 	if(flag == 1)
 	{
@@ -2259,7 +2259,7 @@ void startthumb(flag)
 	}
 }
 
-void starthttpd(flag)
+void starthttpd(int flag)
 {
 	if(flag == 1)
 	{
@@ -2277,7 +2277,7 @@ void starthttpd(flag)
 	}
 }
 
-void startrguid(flag)
+void startrguid(int flag)
 {
 	if(flag == 1)
 	{
@@ -4730,7 +4730,7 @@ int setsataswitch(char* value)
 	return 0;
 }
 
-int setprogress(value)
+int setprogress(int value)
 {
 	char *progressdev;
 

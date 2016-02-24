@@ -209,7 +209,7 @@ char* id3readtag(int fd, int taglen, int maxtaglen)
 	return tmpstr;
 }
 
-int id3tagsize(fd)
+int id3tagsize(int fd)
 {
 	int size = 0;
 
