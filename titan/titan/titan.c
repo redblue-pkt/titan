@@ -978,7 +978,7 @@ int main(int argc, char *argv[])
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
 	
 	if(checkbox("VUSOLO2") == 1)
-		system("fbset 1280x720-1");
+		system("fbset 1920x1080-32");
 
 
 	//check to remove preinstalled tpk packages
@@ -1262,6 +1262,14 @@ firstwizzardstep1:
 			}
 			rmdir("/mnt/writetest");
 		}
+	}
+
+	if(checkbox("VUSOLO2") == 1)
+	{
+		// work for black screen
+		servicestop(status.aktservice, 1, 1);
+		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
+		servicestart(status.lastservice->channel, status.lastservice->channellist, NULL, 0);
 	}
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);

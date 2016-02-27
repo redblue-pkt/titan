@@ -346,8 +346,7 @@ void changefbresolution(char *value, int flag)
 {
 	debug(444, "fb->colbytes: %d", fb->colbytes);
 #ifdef MIPSEL
-	if(checkbox("VUSOLO2") == 0)
-		return;
+	return;
 #endif
 
 	if(ostrcmp("pal", value) == 0)
