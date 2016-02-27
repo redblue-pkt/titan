@@ -1146,7 +1146,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1400
+#: titan.c:1344
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -10234,7 +10234,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1398
+#: titan.c:1342
 msgid "Unknown Error."
 msgstr ""
 
