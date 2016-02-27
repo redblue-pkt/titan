@@ -1161,7 +1161,7 @@ msgstr "Tự động dò"
 msgid "Automatic start last subtitle"
 msgstr "Tự động bắt đầu phụ đề"
 
-#: titan.c:1309
+#: titan.c:1317
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
@@ -10307,7 +10307,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1307
+#: titan.c:1315
 msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
