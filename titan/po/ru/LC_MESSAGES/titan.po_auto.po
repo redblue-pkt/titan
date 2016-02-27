@@ -1167,7 +1167,7 @@ msgstr "Поиск каналов (Авто)"
 msgid "Automatic start last subtitle"
 msgstr "Автоматический запуск старых субтитров"
 
-#: titan.c:1317
+#: titan.c:1400
 msgid "Automatic stop in 10 seconds."
 msgstr "Автостоп через 10 сек"
 
@@ -10368,7 +10368,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1315
+#: titan.c:1398
 msgid "Unknown Error."
 msgstr "Неизвестная ошибка!"
 
