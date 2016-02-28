@@ -1167,7 +1167,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1317
+#: titan.c:1309
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatic Stop in 10 Seconds."
 
@@ -1774,7 +1774,7 @@ msgstr "Can't create directory!"
 msgid "Can't create service"
 msgstr "ERROR: Can't create Service"
 
-#: service.h:988
+#: service.h:971
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -1824,7 +1824,7 @@ msgstr "ERROR: Can't open Frontend Device"
 msgid "Can't open file"
 msgstr "ERROR: Can't open File"
 
-#: service.h:994
+#: service.h:977
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "ERROR: Can't open Frontend Device or\n"
@@ -2035,7 +2035,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "No. of Channels: "
 
-#: service.h:999
+#: service.h:982
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "ERROR: Channellist empty or corrupt\n"
@@ -3215,7 +3215,7 @@ msgstr "ERROR: can't set marker in this file"
 #: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1944 service.h:760 service.h:1005 shared.h:29
+#: security.h:685 security.h:1944 service.h:743 service.h:988 shared.h:29
 #: shared.h:65 shared.h:82 skin_default_skin.xml.h:192
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
@@ -5806,7 +5806,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
-#: service.h:760 service.h:1005 shared.h:29 shared.h:65 shared.h:82
+#: service.h:743 service.h:988 shared.h:29 shared.h:65 shared.h:82
 #: skinadjust.h:399 skinadjust.h:804 skinselector.h:231 sock.h:954
 #: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51 solarmovie.h:63
 #: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
@@ -6401,8 +6401,8 @@ msgstr ""
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:760
-#: service.h:1005 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:399
+#: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
+#: service.h:988 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:399
 #: skinadjust.h:804 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
@@ -9898,7 +9898,7 @@ msgstr ""
 "Timeshift file to short\n"
 "Please wait a little and try again"
 
-#: service.h:760
+#: service.h:743
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -10270,7 +10270,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr ""
 
-#: service.h:991
+#: service.h:974
 msgid "Tuning to Channel failed!"
 msgstr "ERROR: Channel not available"
 
@@ -10387,7 +10387,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1315
+#: titan.c:1307
 msgid "Unknown Error."
 msgstr ""
 
