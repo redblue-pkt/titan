@@ -1264,14 +1264,6 @@ firstwizzardstep1:
 		}
 	}
 
-	if(checkbox("VUSOLO2") == 1)
-	{
-		// work for black screen
-		servicestop(status.aktservice, 1, 1);
-		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
-		servicestart(status.lastservice->channel, status.lastservice->channellist, NULL, 0);
-	}
-
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
 	startinternreader(1);
  	
