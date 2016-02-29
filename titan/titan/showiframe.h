@@ -35,8 +35,12 @@ int singlepicstart(const char *filename, int flag)
 
 			videosetformat(videonode, VIDEO_FORMAT_16_9);
 			videosetstreamtype(videonode, MPEGV);
-			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
-				videofreeze(videonode);
+
+			if(checkbox("VUSOLO2") == 1) //fixt mvi background on tithek
+			{
+				videocontinue(videonode);
+				videoclearbuffer(videonode);
+			}
 			videoplay(videonode);
 		}	
 		else
