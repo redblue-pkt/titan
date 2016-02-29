@@ -976,10 +976,6 @@ int main(int argc, char *argv[])
 	ret = readepgscanlist(getconfig("epgchannelfile", NULL));
 	ret = settimezone(getconfig("timezone", NULL));
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
-	
-	if(checkbox("VUSOLO2") == 1)
-		system("fbset 1920x1080-32");
-
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
