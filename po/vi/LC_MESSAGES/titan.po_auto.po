@@ -147,13 +147,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1257
+#: titan.c:1253
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1240
+#: titan.c:1236
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1161,7 +1161,7 @@ msgstr "Tự động dò"
 msgid "Automatic start last subtitle"
 msgstr "Tự động bắt đầu phụ đề"
 
-#: titan.c:1309
+#: titan.c:1305
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
@@ -2098,7 +2098,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:1016
+#: titan.c:1012
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -3207,8 +3207,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1076 titan.c:1085 titan.c:1213 titan.c:1234
-#: titan.c:1240 titan.c:1251 titan.c:1257 tithek.c:101 tithek_global.h:92
+#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
+#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101 tithek_global.h:92
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1609 tithek.h:1631
 #: tithek.h:1648 tithek.h:1880 tithek.h:2040 tithek.h:2325 tithek.h:2362
 #: tithek.h:2378 tithek.h:2390 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -3720,7 +3720,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1076
+#: titan.c:1072
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
@@ -3905,7 +3905,7 @@ msgstr "Tỷ lệ lớn nhất"
 msgid "Free Space"
 msgstr "Dung lượng còn trống"
 
-#: titan.c:1251
+#: titan.c:1247
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3913,7 +3913,7 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1234
+#: titan.c:1230
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4769,7 +4769,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Audio AC3 %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1085 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1081 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5764,8 +5764,8 @@ msgstr ""
 #: system_backup_restore.h:82 system_update.h:238 system_update.h:244
 #: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1213
-#: titan.c:1234 titan.c:1240 titan.c:1251 titan.c:1257 tithek.c:101
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1209
+#: titan.c:1230 titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101
 #: tithek_global.h:92 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1609
 #: tithek.h:1631 tithek.h:1880 tithek.h:2040 tithek.h:2325 tithek.h:2362
 #: tithek.h:2378 tithek.h:2390 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6366,8 +6366,8 @@ msgstr "E"
 #: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1076 titan.c:1085 titan.c:1213 titan.c:1234
-#: titan.c:1240 titan.c:1251 titan.c:1257 tithek.c:101 tithek_global.h:92
+#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
+#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101 tithek_global.h:92
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1609 tithek.h:1631
 #: tithek.h:1648 tithek.h:1880 tithek.h:2040 tithek.h:2325 tithek.h:2362
 #: tithek.h:2378 tithek.h:2390 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7457,7 +7457,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Đầu thu đang khởi động lại !!!"
 
-#: titan.c:1213
+#: titan.c:1209
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
@@ -7605,11 +7605,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:1009
+#: titan.c:1005
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:1008
+#: titan.c:1004
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -8510,7 +8510,7 @@ msgstr "Lựa chọn đường dẫn"
 msgid "Select Unicable Manufacturer"
 msgstr "Nhà sản xuất cáp đơn"
 
-#: titan.c:1016
+#: titan.c:1012
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8654,7 +8654,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1076
+#: titan.c:1072
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
@@ -10307,7 +10307,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1307
+#: titan.c:1303
 msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
