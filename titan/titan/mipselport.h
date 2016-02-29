@@ -133,10 +133,10 @@ void blitfb2(struct fb* fbnode, int flag)
 
 	var_screeninfo.xres_virtual = fb->width;
 	var_screeninfo.xres = fb->width;
-	if(checkbox("VUSOLO2") == 0)
+//	if(checkbox("VUSOLO2") == 0)
 		var_screeninfo.yres_virtual = fb->height * 2;
-	else
-		var_screeninfo.yres_virtual = fb->height;
+//	else
+//		var_screeninfo.yres_virtual = fb->height;
 	var_screeninfo.yres = fb->height;
 	var_screeninfo.height = 0;
 	var_screeninfo.width = 0;
