@@ -269,9 +269,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		//setmute(1);
 		audiosetmute(status.aktservice->audiodev, 1);
 	}
-#endif
-	if(checkbox("VUSOLO2") == 1)
-		audioclearbuffer(status.aktservice->audiodev);	
+#endif		
 	audiostop(status.aktservice->audiodev);
 	//demux pcr start
 	if(flag == 0 && chnode->pcrpid > 0)
@@ -765,11 +763,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag != 2) node->type = NOTHING;
 		if(flag == 4) node->type = STILLPIC;
 		
-		if(checkbox("VUSOLO2") == 1)
-			audioclearbuffer(node->audiodev);
 		audiostop(node->audiodev);
-		if(checkbox("VUSOLO2") == 1)
-			videoclearbuffer(node->videodev);
 		videostop(node->videodev, clear);
 		
 		int fastzap = getconfigint("fastzap", NULL);
@@ -818,8 +812,6 @@ void servicechangeaudio(struct channel* chnode, struct audiotrack* tracknode)
 	chnode->audiocodec = tracknode->audiocodec;
 
 	status.writechannel = 1;
-	if(checkbox("VUSOLO2") == 1)
-		audioclearbuffer(status.aktservice->audiodev);
 	audiostop(status.aktservice->audiodev);
 	audiosetbypassmode(status.aktservice->audiodev, chnode->audiocodec);
 	//clear videobuffer on playback for syncing video / audio
