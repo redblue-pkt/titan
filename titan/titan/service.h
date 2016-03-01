@@ -269,7 +269,9 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		//setmute(1);
 		audiosetmute(status.aktservice->audiodev, 1);
 	}
-#endif		
+#endif
+	if(checkbox("VUSOLO2") == 1)
+		audioclearbuffer(status.aktservice->audiodev);	
 	audiostop(status.aktservice->audiodev);
 	//demux pcr start
 	if(flag == 0 && chnode->pcrpid > 0)
@@ -425,7 +427,10 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			videocontinue(videonode);
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
 			setencoding(chnode, videonode);
-
+			
+			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
+				videofreeze(videonode);
+		
 			if(videoplay(videonode)!= 0) {
 				usleep(500000);
 				videoplay(videonode);
@@ -760,7 +765,11 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag != 2) node->type = NOTHING;
 		if(flag == 4) node->type = STILLPIC;
 		
+		if(checkbox("VUSOLO2") == 1)
+			audioclearbuffer(node->audiodev);
 		audiostop(node->audiodev);
+		if(checkbox("VUSOLO2") == 1)
+			videoclearbuffer(node->videodev);
 		videostop(node->videodev, clear);
 		
 		int fastzap = getconfigint("fastzap", NULL);
@@ -809,6 +818,8 @@ void servicechangeaudio(struct channel* chnode, struct audiotrack* tracknode)
 	chnode->audiocodec = tracknode->audiocodec;
 
 	status.writechannel = 1;
+	if(checkbox("VUSOLO2") == 1)
+		audioclearbuffer(status.aktservice->audiodev);
 	audiostop(status.aktservice->audiodev);
 	audiosetbypassmode(status.aktservice->audiodev, chnode->audiocodec);
 	//clear videobuffer on playback for syncing video / audio
