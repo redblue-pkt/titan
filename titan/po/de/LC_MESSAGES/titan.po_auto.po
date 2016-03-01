@@ -1810,7 +1810,7 @@ msgstr "Verzeichnis konnte nicht erstellt werden!"
 msgid "Can't create service"
 msgstr "FEHLER: Sender kann nicht erzeugt werden!"
 
-#: service.h:971
+#: service.h:968
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -1860,7 +1860,7 @@ msgstr ""
 msgid "Can't open file"
 msgstr "FEHLER: Kann Datei nicht öffnen!"
 
-#: service.h:977
+#: service.h:974
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
 
@@ -2074,7 +2074,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "Kanäle: "
 
-#: service.h:982
+#: service.h:979
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Senderliste fehlerhaft (Kanal nicht gefunden)!"
 
@@ -3270,7 +3270,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1944 service.h:743 service.h:988 shared.h:29
+#: security.h:685 security.h:1944 service.h:740 service.h:985 shared.h:29
 #: shared.h:65 shared.h:82 skin_default_skin.xml.h:192
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
@@ -5965,7 +5965,7 @@ msgstr "Menüliste"
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
-#: service.h:743 service.h:988 shared.h:29 shared.h:65 shared.h:82
+#: service.h:740 service.h:985 shared.h:29 shared.h:65 shared.h:82
 #: skinadjust.h:399 skinadjust.h:804 skinselector.h:231 sock.h:954
 #: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51 solarmovie.h:63
 #: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
@@ -6562,8 +6562,8 @@ msgstr "Ö"
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:988 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:399
+#: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:740
+#: service.h:985 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:399
 #: skinadjust.h:804 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
@@ -10092,7 +10092,7 @@ msgstr ""
 "Timeshift: Datei ist zu klein\n"
 "Bitte später versuchen."
 
-#: service.h:743
+#: service.h:740
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -10466,7 +10466,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr "Tuner Typ"
 
-#: service.h:974
+#: service.h:971
 msgid "Tuning to Channel failed!"
 msgstr "Sender nicht verfügbar!"
 
