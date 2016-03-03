@@ -2230,7 +2230,7 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 		node = node->next;
 	}
 
-	if(maxcount > MAXHTMLLINE)
+	if(fmt == 0 && maxcount > MAXHTMLLINE)
 	{
 		int i;
 		ostrcatbig(&buf, "<tr><td align=center><br>", &maxlen, &pos);
