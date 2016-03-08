@@ -7108,6 +7108,9 @@ char* system_logs(int mode)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *path = NULL, *boxversion = NULL;
 
+	if(file_exist("/etc/.beta"))
+		path = ostrcat("/svn/image-beta/changelog.", NULL, 0, 0);
+
 	if(mode == 0)
 	{
 		tmpstr1 = readfiletomem("/etc/motd", 0);
@@ -7123,36 +7126,28 @@ char* system_logs(int mode)
 		if(isfile("/etc/model")	== 0) return NULL;
 		boxversion = string_tolower(readsys("/etc/model", 1));
 
-//		if(file_exist("/etc/.beta"))
-			path = ostrcat(path, "/svn/image-beta/changelog.", 1, 0);
-//		else
-//			path = ostrcat(path, "/svn/image/changelog.", 1, 0);
-
 		path = ostrcat(path, boxversion, 1, 0);
 		path = ostrcat(path, ".titan", 1, 0);
 
-//		if(file_exist("/etc/.beta"))
+		if(file_exist("/etc/.beta"))
 			tmpstr1 = gethttp("beta.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
-//		else
-//			tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		else
+			tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		tmpstr = readfromlinetoline(tmpstr1, 37, 537, 1);
 	}
 	else if(mode == 2)
 	{
-//		if(file_exist("/etc/.beta"))
 #ifdef MIPSEL
-			path = ostrcat(path, "/svn/image-beta/changelog.git.mipsel", 1, 0);
+		path = ostrcat(path, "git.mipsel", 1, 0);
 #else
-			path = ostrcat(path, "/svn/image-beta/changelog.git.sh4", 1, 0);
+		path = ostrcat(path, "git.sh4", 1, 0);
 #endif
-//		else
-//			path = ostrcat(path, "/svn/image/changelog.git", 1, 0);
 
-//		if(file_exist("/etc/.beta"))
+		if(file_exist("/etc/.beta"))
 			tmpstr1 = gethttp("beta.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
-//		else
-//			tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		else
+			tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
 	}
