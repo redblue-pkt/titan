@@ -7110,6 +7110,8 @@ char* system_logs(int mode)
 
 	if(file_exist("/etc/.beta"))
 		path = ostrcat("/svn/image-beta/changelog.", NULL, 0, 0);
+	else
+		path = ostrcat("/svn/image/changelog.", NULL, 0, 0);
 
 	if(mode == 0)
 	{
