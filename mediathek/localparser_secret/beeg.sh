@@ -138,8 +138,8 @@ BEGIN { table = ""
            video = decrypt_url(v720p)
         }
         if (video != "null") {
-#           print title "#https:" video "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#2"
-           print "https:" video
+#           print title "#http:" video "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#2"
+           print "http:" video
            }
         title = ""
         id = ""
@@ -213,12 +213,12 @@ function decrypt_url(url)
         }
         print "KEY2: " o >>"/mnt/parser/beeg.log"
         r = ""
-        for (i = length(o) - 2; i > -3; i = i - 3) {
+        for (i = length(o) - 2; i > -2; i = i - 3) {
            if (i > 0) {
-              r = r substr(o, i, 3)A
+              r = r substr(o, i, 3)
            }
            else {
-              r = r substr(o, 1, 2 - i)
+              r = r substr(o, 1, 2 + i)
            }
         }
         print "KEY3: " r >>"/mnt/parser/beeg.log"
