@@ -764,10 +764,9 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag == 4) node->type = STILLPIC;
 		
 		audiostop(node->audiodev);
-		if(checkbox("VUSOLO2") == 1)
-			videocontinue(node->videodev);
+		if(checkbox("VUSOLO2") == 1) videoclearbuffer(node->videodev);
 		videostop(node->videodev, clear);
-		
+
 		int fastzap = getconfigint("fastzap", NULL);
 
 		if(flag == 3) flag = 0;
