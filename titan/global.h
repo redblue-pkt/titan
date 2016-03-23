@@ -24,6 +24,7 @@ void screenshoot(int flag)
 
 	if(cmd != NULL)
 	{
+		unlink("/tmp/screenshot.jpg");
 		system(cmd);
 		printf("cmd1: %s\n", cmd);
 		free(cmd), cmd = NULL;
