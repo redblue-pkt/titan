@@ -683,7 +683,7 @@ msgid "ADD BOUQUET"
 msgstr "thêm 1"
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1705
-#: tithek.h:2414
+#: tithek.h:2412
 msgid "ADD FAV"
 msgstr "Thêm ưu thích"
 
@@ -774,7 +774,7 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: tithek.h:2383
+#: tithek.h:2381
 msgid "Add this link as Favorite ?"
 msgstr " Muốn thêm vào mục ưa thích này?"
 
@@ -2960,7 +2960,7 @@ msgstr "chỉnh sửa"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1700 tithek.h:2409
+#: tithek.h:1700 tithek.h:2407
 msgid "EDIT FAV"
 msgstr ""
 
@@ -3210,8 +3210,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
 #: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101 tithek_global.h:92
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
-#: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2367
-#: tithek.h:2383 tithek.h:2395 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
+#: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -3254,7 +3254,7 @@ msgstr "Chỉnh sửa danh sách"
 msgid "Edit mode"
 msgstr "chỉnh sửa"
 
-#: tithek.h:2395
+#: tithek.h:2393
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -5767,8 +5767,8 @@ msgstr ""
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1209
 #: titan.c:1230 titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101
 #: tithek_global.h:92 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614
-#: tithek.h:1636 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2367
-#: tithek.h:2383 tithek.h:2395 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1636 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
+#: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:655
 #: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
@@ -6369,8 +6369,8 @@ msgstr "E"
 #: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
 #: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101 tithek_global.h:92
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
-#: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2367
-#: tithek.h:2383 tithek.h:2395 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
+#: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -7649,7 +7649,7 @@ msgstr "xóa chia sẻ"
 msgid "Remove success"
 msgstr "Đã hủy thành công!"
 
-#: tithek.h:2367
+#: tithek.h:2365
 msgid "Remove this Favorite ?"
 msgstr "Hủy bỏ ưu thích này ?"
 
@@ -8378,8 +8378,8 @@ msgstr "Không có đầu ra."
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:541 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:443 tithek_global.h:445 tithek_global.h:744
-#: tithek_global.h:746 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:56
+#: tithek_global.h:443 tithek_global.h:445 tithek_global.h:743
+#: tithek_global.h:745 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:56
 #: xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361
 #: zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9912,8 +9912,8 @@ msgstr "Không thể mở file"
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek.h:1698 tithek.h:1832 tithek.h:2363 tithek.h:2379 tithek.h:2391
-#: tithek.h:2407
+#: tithek.h:1698 tithek.h:1832 tithek.h:2361 tithek.h:2377 tithek.h:2389
+#: tithek.h:2405
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
