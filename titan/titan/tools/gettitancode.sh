@@ -15,6 +15,8 @@ rm tmp
 rm tmp.gz
 rm tmp.lzma
 
+echo KERNELDIR $KERNELDIR
+
 if [ "$CPU" = "sh4" ];then
 	#if [ $TYPE == "ufs910" ];then
 	#	dd if=$KERNELDIR of=tmp.lzma bs=1 skip=64
