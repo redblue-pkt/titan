@@ -37,14 +37,12 @@ void screenshoot(int flag)
 			file = ostrcat("screenshot", oitoa(status.screenshot), 0, 1);
 		file = ostrcat(file, ".jpg", 1, 0);
 
-		cmd = ostrcat("mv -f /tmp/screenshot.jpg /tmp/", 0, 0);
-		cmd = ostrcat(cmd, file, 1, 0);
+		cmd = ostrcat("mv -f /tmp/screenshot.jpg /tmp/", file, 0, 0);
 		printf("cmd2: %s\n", cmd);
 		system(cmd);
 
 		free(cmd), cmd = NULL;
-		cmd = ostrcat("ln -sf /tmp/", 0, 0);
-		cmd = ostrcat(cmd, file, 1, 0);
+		cmd = ostrcat("ln -sf /tmp/", file, 0, 0);
 		cmd = ostrcat(cmd, " /tmp/screenshot.jpg", 1, 0);
 		printf("cmd3: %s\n", cmd);
 		system(cmd);
