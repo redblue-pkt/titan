@@ -8,7 +8,7 @@
 
 void screenshoot(int flag)
 {
-	char* cmd = NULL;
+	char* cmd = NULL, *file = NULL;
 	if(flag == 0 || flag == 2)
 	{
 		videofreeze(status.aktservice->videodev);
@@ -23,11 +23,36 @@ void screenshoot(int flag)
 		cmd = ostrcat("grab -o -j 100 -r 960", NULL, 0, 0);
 
 	if(cmd != NULL)
+	{
+		system(cmd);
+		printf("cmd1: %s\n", cmd);
+		free(cmd), cmd = NULL;
+
+		status.screenshot++;
+		if(status.screenshot < 10)
+			file = ostrcat("screenshot00", oitoa(status.screenshot), 0, 1);
+		else if(status.screenshot < 100)
+			file = ostrcat("screenshot0", oitoa(status.screenshot), 0, 1);
+		else
+			file = ostrcat("screenshot", oitoa(status.screenshot), 0, 1);
+		file = ostrcat(file, ".jpg", 1, 0);
+
+		cmd = ostrcat("mv -f /tmp/screenshot.jpg /tmp/", 0, 0);
+		cmd = ostrcat(cmd, file, 1, 0);
+		printf("cmd2: %s\n", cmd);
 		system(cmd);
 
+		free(cmd), cmd = NULL;
+		cmd = ostrcat("ln -sf /tmp/", 0, 0);
+		cmd = ostrcat(cmd, file, 1, 0);
+		cmd = ostrcat(cmd, " /tmp/screenshot.jpg", 1, 0);
+		printf("cmd3: %s\n", cmd);
+		system(cmd);
+	}
 	if(flag == 0 || flag == 2)
 		videocontinue(status.aktservice->videodev);
-	
+
+	free(file), file = NULL;	
 	free(cmd), cmd = NULL;
 }
 

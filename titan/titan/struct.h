@@ -1569,6 +1569,7 @@ struct status
 	int bcm;
 	//Volume
 	int volume;
+	int screenshot;
 } status;
 
 struct fb
