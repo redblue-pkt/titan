@@ -339,15 +339,15 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 		tnode->year = getxmlentry(tmpstr, "\"Year\":");
 
 		tmpstr2 = getxmlentry(tmpstr, "\"poster_path\":");
-		tnode->thumb = ostrcat("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w300", tmpstr2, 0, 0);
+		tnode->thumb = ostrcat("http://image.tmdb.org/t/p/w300", tmpstr2, 0, 0);
 		free(tmpstr2), tmpstr2 = NULL;
 
 		tmpstr2 = getxmlentry(tmpstr, "\"poster_path\":");
-		tnode->cover = ostrcat("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w300", tmpstr2, 0, 0);
+		tnode->cover = ostrcat("http://image.tmdb.org/t/p/w300", tmpstr2, 0, 0);
 		free(tmpstr2), tmpstr2 = NULL;
 
 		tmpstr2 = getxmlentry(tmpstr, "\"poster_path\":");
-		tnode->postermid = ostrcat("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500", tmpstr2, 0, 0);
+		tnode->postermid = ostrcat("http://image.tmdb.org/t/p/w500", tmpstr2, 0, 0);
 		free(tmpstr2), tmpstr2 = NULL;
 			
 		tnode->year = getxmlentry(tmpstr, "\"release_date\":");
