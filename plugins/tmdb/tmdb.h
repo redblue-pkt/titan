@@ -285,7 +285,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 				if(ostrstr(ret1[i].part, "\"backdrop_path\"") != NULL)
 				{
 					tmpstr2 = string_resub("\"backdrop_path\":\"", "\"", ret1[i].part, 0);
-					tmpstr3 = ostrcat("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w1280", tmpstr2, 0, 0);
+					tmpstr3 = ostrcat("http://image.tmdb.org/t/p/w1280", tmpstr2, 0, 0);
 					tnode->backdrop = ostrcat(tnode->backdrop, tmpstr3, 1, 0);
 					tnode->backdrop = ostrcat(tnode->backdrop, "\n", 1, 0);
 	
