@@ -7,9 +7,10 @@ SRC=$1
 INPUT=$2
 PARAM=$3
 PARAM2=$4
-URL="http://bs.to/"
+URL="https://bs.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME="burningseries"
+curlbin="curl -k -s"
 
 rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
@@ -39,7 +40,7 @@ mainmenu()
 
 genres()
 {
-	$wgetbin $URL"andere-serien" -O - | awk -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL"andere-serien" | awk -v SRC=$SRC -v NAME=$NAME '
 BEGIN { in_genres = 0
       }
 
@@ -61,7 +62,7 @@ BEGIN { in_genres = 0
 
 series()
 {
-	$wgetbin $URL"andere-serien" -O - | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL"andere-serien" | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
 /<span><strong>/ { i = index($0, "<span><strong>") + 14
                    j = index($0, "</strong></span>") - i
                    genre = substr($0, i, j)
@@ -84,7 +85,7 @@ series()
 
 staffel()
 {
-	$wgetbin $URL$PARAM -O - | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
 /<li class=\" current\">/ { sub(/<li class=\" current\">/, "<li class=\" \">", $0)
                           }
 
@@ -102,7 +103,7 @@ staffel()
 
 episode()
 {
-	$wgetbin $URL$PARAM -O - | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
 BEGIN { in_table_row = 0
         episode = ""
         url = ""
@@ -162,7 +163,7 @@ BEGIN { in_table_row = 0
 
 hosterlist()
 {
-	$wgetbin $URL$PARAM -O - | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
 BEGIN { in_hosterlist = 0
         url = ""
         title = ""
@@ -203,7 +204,7 @@ BEGIN { in_hosterlist = 0
 
 hoster()
 {
-	$wgetbin $URL$PARAM -O - | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
 BEGIN { in_hosterlist = 0
         url = ""
         title = ""
