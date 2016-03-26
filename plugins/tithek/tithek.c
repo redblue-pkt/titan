@@ -61,6 +61,8 @@
 #include "nbastream.h"
 #include "nbaondemand.h"
 #include "p2pcast.h"
+#include "ecostream.h"
+#include "vidzi.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
