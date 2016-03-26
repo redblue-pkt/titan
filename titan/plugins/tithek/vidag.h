@@ -47,7 +47,7 @@ char* vidag(char* link)
 	titheklog(debuglevel, "/tmp/vidag1_get", NULL, NULL, NULL, tmpstr);	
 
 	tmpstr = jsunpack(tmpstr);
-	titheklog(debuglevel, "/tmp/vidag3_get_jsunpack", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/tmp/vidag2_get_jsunpack", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)
 	{
@@ -70,7 +70,7 @@ char* vidag(char* link)
 //	streamlink = string_resub("[{l:\"", "\"", tmpstr, 0);		
 	streamlink = oregex(".*(http://.*v.mp4).*", tmpstr);
 
-	titheklog(debuglevel, "/tmp/vidag4_streamlink", NULL, NULL, NULL, streamlink);
+	titheklog(debuglevel, "/tmp/vidag3_streamlink", NULL, NULL, NULL, streamlink);
 
 	free(tmpstr); tmpstr = NULL;
 
