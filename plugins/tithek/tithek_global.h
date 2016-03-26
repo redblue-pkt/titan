@@ -83,6 +83,8 @@ char* hoster(char* url)
 		streamurl = p2pcast(url);
 	else if(ostrstr(tmplink, "vidzi") != NULL)
 		streamurl = vidzi(url);
+	else if(ostrstr(tmplink, "vid.ag") != NULL)
+		streamurl = vidag(url);
 	else
 	{
 		char* cmd = NULL;
