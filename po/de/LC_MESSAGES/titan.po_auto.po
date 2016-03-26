@@ -864,7 +864,7 @@ msgstr "Erlaube Umschalten durch Live Stream"
 msgid "Alpha Romanie G98"
 msgstr ""
 
-#: tithek.c:101
+#: tithek.c:103
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
@@ -3290,7 +3290,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
-#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101 tithek_global.h:92
+#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103 tithek_global.h:96
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
 #: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
 #: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -3301,10 +3301,10 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73
 #: videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
 #: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
-#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:220
-#: zapback.c:79 zdf.h:29
+#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:29 vidzi.h:58
+#: vidzi.h:64 vidzi.h:70 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
+#: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr ""
 
@@ -4799,7 +4799,8 @@ msgstr ""
 #: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:34 novamov.h:35
 #: nowvideo.h:44 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
 #: shared.h:29 streamcloud.h:31 thefile.h:34 thevideo.h:26 vidbull.h:30
-#: videoweed.h:35 vidstream.h:45 vidto.h:31 vodlocker.h:30 xvidstage.h:54
+#: videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:29 vodlocker.h:30
+#: xvidstage.h:54
 msgid "Hoster Url not http://"
 msgstr "Die eingegebene http Adresse wird nicht unterstützt!"
 
@@ -5976,8 +5977,8 @@ msgstr "Menüliste"
 #: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1209
-#: titan.c:1230 titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101
-#: tithek_global.h:92 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614
+#: titan.c:1230 titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103
+#: tithek_global.h:96 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614
 #: tithek.h:1636 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
 #: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
@@ -5986,11 +5987,11 @@ msgstr "Menüliste"
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
-#: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86
-#: webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
-#: xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:220
-#: zapback.c:79 zdf.h:29
+#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:29 vidzi.h:58 vidzi.h:64
+#: vidzi.h:70 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2
+#: xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Mitteilung"
 
@@ -6580,7 +6581,7 @@ msgstr "Ö"
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
-#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:101 tithek_global.h:92
+#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103 tithek_global.h:96
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
 #: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
 #: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6591,9 +6592,10 @@ msgstr "Ö"
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73
 #: videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
 #: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
-#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
+#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:29 vidzi.h:58
+#: vidzi.h:64 vidzi.h:70 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67
+#: vodlocker.h:30 vodlocker.h:74 vodlocker.h:80 vodlocker.h:86
+#: webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
 #: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
 #: webif_index.dm7020hd.h:38 webif_index.dm7020hdv2.h:38
 #: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
@@ -8613,8 +8615,8 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:541 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:443 tithek_global.h:445 tithek_global.h:743
-#: tithek_global.h:745 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:56
+#: tithek_global.h:450 tithek_global.h:452 tithek_global.h:750
+#: tithek_global.h:752 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:56
 #: xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359 youtube.h:361
 #: zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9851,7 +9853,7 @@ msgstr ""
 "Die gesuchte Datei konnte nicht gefunden werden, wir bitten um "
 "Entschuldigung."
 
-#: tithek_global.h:92 tithek.h:2330
+#: tithek_global.h:96 tithek.h:2330
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -9872,8 +9874,8 @@ msgstr ""
 #: putlocker.h:225 shared.h:82 solarmovie.h:51 solarmovie.h:62
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: thevideo.h:60 vidbull.h:67 vidstream.h:86 vidstream.h:97 vidstream.h:167
-#: vidto.h:67 vidto.h:94 vidto.h:128 vidto.h:174 vivo.h:38 vivo.h:61
-#: vodlocker.h:74 xvidstage.h:100 xvidstage.h:177
+#: vidto.h:67 vidto.h:94 vidto.h:128 vidto.h:174 vidzi.h:58 vivo.h:38
+#: vivo.h:61 vodlocker.h:74 xvidstage.h:100 xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr "Die gewünschte Seite ist vorübergehend nicht erreichbar"
 
@@ -9883,8 +9885,8 @@ msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:156 faststream.h:109
 #: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:78 movshare.h:163
-#: thevideo.h:66 vidbull.h:73 vidto.h:73 vidto.h:180 vivo.h:44 vivo.h:67
-#: vodlocker.h:80
+#: thevideo.h:66 vidbull.h:73 vidto.h:73 vidto.h:180 vidzi.h:64 vivo.h:44
+#: vivo.h:67 vodlocker.h:80
 msgid "The video no longer exists"
 msgstr "Dieses Video existiert nicht mehr."
 
@@ -10178,7 +10180,7 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:124
+#: tithek.c:126
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
 
@@ -10720,7 +10722,7 @@ msgstr "Video-Einstellungen"
 msgid "Video encoding error"
 msgstr ""
 
-#: filenuke.h:79 letwatch.h:71
+#: filenuke.h:79 letwatch.h:71 vidzi.h:70
 msgid "Video is processing now. Conversion stage..."
 msgstr ""
 
