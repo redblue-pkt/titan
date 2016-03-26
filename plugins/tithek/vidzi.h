@@ -10,8 +10,9 @@ char* vidzi(char* link)
 	if(link == NULL) return NULL;
 
 	unlink("/tmp/vidzi1_get");
-	unlink("/tmp/vidzi2_get_jsunpack");
-	unlink("/tmp/vidzi3_streamlink");
+	unlink("/tmp/vidzi2_get");
+	unlink("/tmp/vidzi3_get_jsunpack");
+	unlink("/tmp/vidzi4_streamlink");
 /////////////
 	char* tmplink = NULL, *pos = NULL, *path = NULL;
 
