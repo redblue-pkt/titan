@@ -3182,10 +3182,10 @@ msgstr ""
 #: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:29 vidzi.h:58 vidzi.h:64
-#: vidzi.h:70 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:54 xvidstage.h:100
-#: xvidstage.h:177 youtube.h:220 zapback.c:79 zdf.h:29
+#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
+#: vidzi.h:71 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:29 xvidstage.h:58
+#: xvidstage.h:64 xvidstage.h:70 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr ""
 
@@ -4557,8 +4557,8 @@ msgstr ""
 #: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:34 novamov.h:35
 #: nowvideo.h:44 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
 #: shared.h:29 streamcloud.h:31 thefile.h:34 thevideo.h:26 vidag.h:29
-#: vidbull.h:30 videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:29
-#: vodlocker.h:30 xvidstage.h:54
+#: vidbull.h:30 videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:30
+#: vodlocker.h:30 xvidstage.h:29
 msgid "Hoster Url not http://"
 msgstr ""
 
@@ -5727,11 +5727,11 @@ msgstr ""
 #: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:80
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31
 #: vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94 vidto.h:128 vidto.h:174
-#: vidto.h:180 vidzi.h:29 vidzi.h:58 vidzi.h:64 vidzi.h:70 vivo.h:38 vivo.h:44
+#: vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65 vidzi.h:71 vivo.h:38 vivo.h:44
 #: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
 #: vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70
-#: xupnpd.h:81 xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177
-#: youtube.h:220 zapback.c:79 zdf.h:29
+#: xupnpd.h:81 xupnpd.h:83 xvidstage.h:29 xvidstage.h:58 xvidstage.h:64
+#: xvidstage.h:70 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr ""
 
@@ -6324,8 +6324,8 @@ msgstr ""
 #: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:29 vidzi.h:58 vidzi.h:64
-#: vidzi.h:70 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
+#: vidzi.h:71 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
 #: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 webif_index.atemio5200.h:38
 #: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
 #: webif_index.atemio-nemesis.h:38 webif_index.dm7020hd.h:38
@@ -6336,8 +6336,8 @@ msgstr ""
 #: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
 #: webif_rc_virtual.dm7020hd.h:20 webif_rc_virtual.dm7020hdv2.h:20
 #: webif_rc_virtual.h:20 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
-#: xupnpd.h:83 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:220
-#: zapback.c:79 zdf.h:29
+#: xupnpd.h:83 xvidstage.h:29 xvidstage.h:58 xvidstage.h:64 xvidstage.h:70
+#: youtube.h:220 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr ""
 
@@ -9550,8 +9550,8 @@ msgstr ""
 #: putlocker.h:225 shared.h:82 solarmovie.h:51 solarmovie.h:62
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: thevideo.h:60 vidag.h:54 vidbull.h:67 vidstream.h:86 vidstream.h:97
-#: vidstream.h:167 vidto.h:67 vidto.h:94 vidto.h:128 vidto.h:174 vidzi.h:58
-#: vivo.h:38 vivo.h:61 vodlocker.h:74 xvidstage.h:100 xvidstage.h:177
+#: vidstream.h:167 vidto.h:67 vidto.h:94 vidto.h:128 vidto.h:174 vidzi.h:59
+#: vivo.h:38 vivo.h:61 vodlocker.h:74 xvidstage.h:58
 msgid "The page is temporarily unavailable"
 msgstr ""
 
@@ -9561,8 +9561,8 @@ msgstr ""
 
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:156 faststream.h:109
 #: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:78 movshare.h:163
-#: thevideo.h:66 vidag.h:60 vidbull.h:73 vidto.h:73 vidto.h:180 vidzi.h:64
-#: vivo.h:44 vivo.h:67 vodlocker.h:80
+#: thevideo.h:66 vidag.h:60 vidbull.h:73 vidto.h:73 vidto.h:180 vidzi.h:65
+#: vivo.h:44 vivo.h:67 vodlocker.h:80 xvidstage.h:64
 msgid "The video no longer exists"
 msgstr ""
 
@@ -10376,7 +10376,7 @@ msgstr "ΡΥΘΜΙΣΕΙΣ VIDEO"
 msgid "Video encoding error"
 msgstr ""
 
-#: filenuke.h:79 letwatch.h:71 vidag.h:66 vidzi.h:70
+#: filenuke.h:79 letwatch.h:71 vidag.h:66 vidzi.h:71 xvidstage.h:70
 msgid "Video is processing now. Conversion stage..."
 msgstr ""
 
