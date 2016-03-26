@@ -73,6 +73,12 @@ char* xvidstage(char* link)
 
 //	streamlink = string_resub("[{l:\"", "\"", tmpstr, 0);		
 	streamlink = oregex(".*(http://.*video.mkv).*", tmpstr);
+	if(streamlink == NULL)
+		streamlink = oregex(".*(http://.*video.mp4).*", tmpstr);
+	if(streamlink == NULL)
+		streamlink = oregex(".*(http://.*video.avi).*", tmpstr);
+	if(streamlink == NULL)
+		streamlink = oregex(".*(http://.*video.flv).*", tmpstr);
 
 	titheklog(debuglevel, "/tmp/xvidstage3_streamlink", NULL, NULL, NULL, streamlink);
 
