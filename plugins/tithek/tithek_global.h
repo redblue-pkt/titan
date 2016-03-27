@@ -27,7 +27,7 @@ char* hoster(char* url)
 		streamurl = xvidstage(url);
 	else if(ostrstr(tmplink, "nowvideo") != NULL)
 		streamurl = nowvideo(url);
-	else if(ostrstr(tmplink, "movshare") != NULL)
+	else if(ostrstr(tmplink, "movshare") != NULL || ostrstr(tmplink, "wholecloud") != NULL)
 		streamurl = movshare(url);
 	else if(ostrstr(tmplink, "movreel") != NULL)
 		streamurl = movreel(url);
