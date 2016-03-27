@@ -31,7 +31,7 @@ char* hoster(char* url)
 		streamurl = movshare(url);
 	else if(ostrstr(tmplink, "movreel") != NULL)
 		streamurl = movreel(url);
-	else if(ostrstr(tmplink, "novamov") != NULL)
+	else if(ostrstr(tmplink, "novamov") != NULL || ostrstr(tmplink, "auroravid") != NULL)
 		streamurl = novamov(url);
 	else if(ostrstr(tmplink, "divxstage") != NULL || ostrstr(tmplink, "cloudtime") != NULL)
 		streamurl = divxstage(url);
