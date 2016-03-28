@@ -63,6 +63,10 @@ char* divxstage(char* link)
 	debug(99, "ip: %s", ip);
 	debug(99, "tmppath: %s", tmppath);
 */
+
+	tmppath = string_replace("/video/", "/embed/?v=", tmppath, 1);
+	tmphost = ostrcat("www.cloudtime.to", NULL, 0, 0);
+
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
@@ -80,13 +84,13 @@ char* divxstage(char* link)
 		goto end;
 	}
 
-	file = string_replace("/video/", "", tmppath, 0);
+	file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
+	if(file == NULL)
+		file = string_replace("/video/", "", tmppath, 0);
 	if(file == NULL)
 		file = string_resub("login.php?return=/video/", "\">Log In", tmpstr, 0);
 	if(file == NULL)
 		file = string_resub("<a href=\"/share.php?id=", "&title=", tmpstr, 0);
-	if(file == NULL)
-		file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
 	
 	char* r1 = NULL, *r2 = NULL, *r3 = NULL, *r4 = NULL;
 	pos = ostrstr(tmpstr, ");}('");

@@ -77,6 +77,9 @@ char* novamov(char* link)
 		tmppath = stringreplacecharonce(tmppath, '&', '\0');
 	}
 
+	if(ostrstr(link, "auroravid.to/video/") != NULL)
+		tmppath = string_replace("/video/", "/embed/?v=", tmppath, 1);
+
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
@@ -99,14 +102,14 @@ char* novamov(char* link)
 		textbox(_("Message"), _("This file no longer exists on our servers!") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
-	
-	file = string_replace("/video/", "", tmppath, 0);
+
+	file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);	
+	if(file == NULL)
+		file = string_replace("/video/", "", tmppath, 0);
 	if(file == NULL)
 		file = string_resub("login.php?return=/video/", "\"", tmpstr, 0);
 	if(file == NULL)
 		file = string_resub("<a href=\"/share.php?id=", "&title=", tmpstr, 0);
-	if(file == NULL)
-		file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
 	
 	char* r1 = NULL, *r2 = NULL, *r3 = NULL, *r4 = NULL;
 	pos = ostrstr(tmpstr, ");}('");
