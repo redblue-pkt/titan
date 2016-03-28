@@ -3200,8 +3200,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: about.h:9 amazon.h:760 avsettings.h:331 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:945 channellist.h:947 channellist.h:952
 #: channellist.h:954 channellist.h:1038 cloudzilla.h:39 cloudzilla.h:45
-#: cloudzilla.h:51 divxstage.h:36 divxstage.h:79 divxstage.h:150
-#: divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
+#: cloudzilla.h:51 divxstage.h:36 divxstage.h:83 divxstage.h:154
+#: divxstage.h:160 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
 #: extensions.h:305 extensions.h:313 extensions.h:320 extensions.h:362
@@ -3212,7 +3212,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:6020
+#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020
 #: global.h:6811 global.h:6830 global.h:7240 global.h:7260 global.h:7280
 #: global.h:7300 global.h:7320 harddisk.h:355 harddisk.h:678 harddisk.h:686
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
@@ -3238,8 +3238,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie2k.h:23 movie2k.h:32 movie4k.h:36 movie4k.h:52 movie4k.h:96
-#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
-#: movshare.h:157 movshare.h:163 MultiImage.c:262 MultiImage.c:273
+#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:80
+#: movshare.h:159 movshare.h:165 MultiImage.c:262 MultiImage.c:273
 #: MultiImage.c:533 MultiImage.c:591 MultiImage.c:671 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
@@ -3248,7 +3248,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
+#: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:111 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
@@ -3300,7 +3300,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
 #: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
 #: vidzi.h:71 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
@@ -4798,7 +4798,7 @@ msgstr ""
 
 #: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:23
 #: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:34 novamov.h:35
-#: nowvideo.h:44 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
+#: nowvideo.h:43 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
 #: shared.h:29 streamcloud.h:31 thefile.h:34 thevideo.h:26 vidag.h:29
 #: vidbull.h:30 videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:30
 #: vodlocker.h:30 xvidstage.h:29
@@ -5910,7 +5910,7 @@ msgstr "Menüliste"
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
 #: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
-#: divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336
+#: divxstage.h:83 divxstage.h:154 divxstage.h:160 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:268
 #: extensions.h:328 extensions.h:362 extensions.h:422 extensions.h:427
 #: extensions.h:466 facebook.h:66 facebook.h:157 facebook.h:167
@@ -5919,7 +5919,7 @@ msgstr "Menüliste"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:66 firedrive.h:72 firedrive.h:122 firedrive.h:128
-#: firedrive.h:138 flashx.h:23 flashx.h:68 global.h:6020 global.h:6741
+#: firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020 global.h:6741
 #: global.h:6811 global.h:6830 global.h:7240 global.h:7248 global.h:7260
 #: global.h:7268 global.h:7280 global.h:7288 global.h:7300 global.h:7308
 #: global.h:7320 global.h:7328 harddisk.h:678 harddisk.h:686 harddisk.h:720
@@ -5945,15 +5945,15 @@ msgstr "Menüliste"
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
 #: mightyupload.h:68 mightyupload.h:74 movie2k.h:23 movie2k.h:32 movie4k.h:36
 #: movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30 movreel.h:137
-#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
+#: movshare.h:34 movshare.h:80 movshare.h:159 movshare.h:165 MultiImage.c:46
 #: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
 #: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
 #: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
-#: network.h:823 network.h:877 novamov.h:35 novamov.h:93 novamov.h:99
-#: nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 p2pcast.h:41 panel_main.h:29
+#: network.h:823 network.h:877 novamov.h:35 novamov.h:96 novamov.h:102
+#: nowvideo.h:43 nowvideo.h:100 nowvideo.h:106 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
 #: played.h:90 played.h:102 played.h:114 played.h:171 player.h:111 play.h:614
 #: play.h:1293 play.h:1505 play.h:1721 play.h:1732 possetup.h:98
@@ -5986,7 +5986,7 @@ msgstr "Menüliste"
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:655
 #: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60 vidag.h:66 vidbull.h:30
-#: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:80
+#: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:85
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31
 #: vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94 vidto.h:128 vidto.h:174
 #: vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65 vidzi.h:71 vivo.h:38 vivo.h:44
@@ -6493,8 +6493,8 @@ msgstr "Ö"
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
 #: channellist.h:954 channellist.h:1038 cloudzilla.h:39 cloudzilla.h:45
-#: cloudzilla.h:51 divxstage.h:36 divxstage.h:79 divxstage.h:150
-#: divxstage.h:156 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
+#: cloudzilla.h:51 divxstage.h:36 divxstage.h:83 divxstage.h:154
+#: divxstage.h:160 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
 #: extensions.h:268 extensions.h:305 extensions.h:313 extensions.h:320
@@ -6506,7 +6506,7 @@ msgstr "Ö"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:6020
+#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020
 #: global.h:6741 global.h:6811 global.h:6830 global.h:7240 global.h:7248
 #: global.h:7260 global.h:7268 global.h:7280 global.h:7288 global.h:7300
 #: global.h:7308 global.h:7320 global.h:7328 harddisk.h:355 harddisk.h:487
@@ -6534,8 +6534,8 @@ msgstr "Ö"
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie2k.h:23 movie2k.h:32 movie4k.h:36 movie4k.h:52 movie4k.h:96
-#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
-#: movshare.h:157 movshare.h:163 MultiImage.c:46 MultiImage.c:175
+#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:80
+#: movshare.h:159 movshare.h:165 MultiImage.c:46 MultiImage.c:175
 #: MultiImage.c:244 MultiImage.c:262 MultiImage.c:273 MultiImage.c:353
 #: MultiImage.c:401 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
 #: MultiImage.c:671 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
@@ -6546,7 +6546,7 @@ msgstr "Ö"
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:93 novamov.h:99 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
+#: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:111 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
@@ -6593,7 +6593,7 @@ msgstr "Ö"
 #: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
 #: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
 #: vidzi.h:71 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
@@ -9841,8 +9841,8 @@ msgstr ""
 "werden.\n"
 "Es muss ein Ordner mit dem Namen 'backup' auf dem Datenträger sein."
 
-#: divxstage.h:79 novamov.h:93 nowvideo.h:105 primeshare.h:79 shared.h:65
-#: thefile.h:68 videoweed.h:80
+#: divxstage.h:83 novamov.h:96 nowvideo.h:106 primeshare.h:79 shared.h:65
+#: thefile.h:68 videoweed.h:85
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
@@ -9868,10 +9868,10 @@ msgstr ""
 "Der Installations Vorgang sucht in /tmp nach einem Image.\n"
 "Bitte kopieren Sie die zip Datei nach /tmp."
 
-#: cloudzilla.h:39 divxstage.h:150 faststream.h:79 faststream.h:90
+#: cloudzilla.h:39 divxstage.h:154 faststream.h:79 faststream.h:90
 #: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
-#: firedrive.h:122 firedrive.h:137 flashx.h:67 letwatch.h:59 mightyupload.h:68
-#: movreel.h:137 movshare.h:157 nbaondemand.h:61 played.h:84 played.h:101
+#: firedrive.h:122 firedrive.h:137 flashx.h:55 letwatch.h:59 mightyupload.h:68
+#: movreel.h:137 movshare.h:159 nbaondemand.h:61 played.h:84 played.h:101
 #: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
 #: putlocker.h:225 shared.h:82 solarmovie.h:51 solarmovie.h:62
@@ -9886,8 +9886,8 @@ msgstr "Die gewünschte Seite ist vorübergehend nicht erreichbar"
 msgid "The page not found, file removed"
 msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 
-#: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:156 faststream.h:109
-#: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:78 movshare.h:163
+#: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:160 faststream.h:109
+#: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:80 movshare.h:165
 #: thevideo.h:66 vidag.h:60 vidbull.h:73 vidto.h:73 vidto.h:180 vidzi.h:65
 #: vivo.h:44 vivo.h:67 vodlocker.h:80 xvidstage.h:64
 msgid "The video no longer exists"
@@ -9929,11 +9929,11 @@ msgstr "Die ausgewählte Datei existiert nicht oder wurde entfernt."
 msgid "This file is private and only viewable by the owner."
 msgstr "Diese Datei ist privat und nur für den Eigentümer sichtbar."
 
-#: novamov.h:99
+#: novamov.h:102
 msgid "This file no longer exists on our servers!"
 msgstr ""
 
-#: nowvideo.h:99
+#: nowvideo.h:100
 msgid "This file no longer exists on our servers."
 msgstr "Die angeforderte Datei ist existiert nicht mehr."
 
