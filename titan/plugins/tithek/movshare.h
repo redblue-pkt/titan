@@ -56,7 +56,9 @@ char* movshare(char* link)
 	host = ostrcat(tmphost, NULL, 0, 0);
 	tmppath = string_replace("/video/", "/embed.php?v=", tmppath, 1);
 	free(tmphost), tmphost = NULL;
-	tmphost = ostrcat("embed.movshare.net", NULL, 0, 0);
+//	tmphost = ostrcat("embed.movshare.net", NULL, 0, 0);
+	tmphost = ostrcat("www.wholecloud.net", NULL, 0, 0);
+
 /////////////
 /*
 	tmppath = ostrcat("/embed.php?v=", file, 0, 0);
@@ -79,9 +81,9 @@ char* movshare(char* link)
 		goto end;
 	}
 
-	file = string_replace("/embed.php?v=", "", tmppath, 0);
+	file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
 	if(file == NULL)
-		file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
+		file = string_replace("/embed.php?v=", "", tmppath, 0);	
 	
 	char* r1 = NULL, *r2 = NULL, *r3 = NULL, *r4 = NULL;
 	pos = ostrstr(tmpstr, ");}('");

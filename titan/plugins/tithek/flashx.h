@@ -36,27 +36,15 @@ char* flashx(char* link)
 	}
 
 	tmppath = ostrcat("/embed-", path, 0, 0);
-	tmphost = string_replace("www.", "", tmphost, 0);
+//	tmphost = string_replace("www.", "", tmphost, 0);
+	char* tmpurl = ostrcat(tmphost, "/", 0, 0);
+	tmpurl = ostrcat(tmpurl, tmppath, 1, 0);
 
-	send = ostrcat(send, "GET ", 1, 0);
-	send = ostrcat(send, tmppath, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
-	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\n", 1, 0);	
-	send = ostrcat(send, "User-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\n", 1, 0);	
-	send = ostrcat(send, "Referer: http://flashx.tv", 1, 0);
-	send = ostrcat(send, tmppath, 1, 0);
-	send = ostrcat(send, "\r\n", 1, 0);	
-	send = ostrcat(send, "Connection: close\r\n", 1, 0);	
-	send = ostrcat(send, "Accept-Encoding: gzip\r\n\r\n", 1, 0);	
-
-	debug(99, "#############################################################################################################");
-	debug(99, "send1: %s", send);
-	debug(99, "#############################################################################################################");
-
-	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/flashx_tmpstr_get1", NULL, NULL, NULL, tmpstr);
+	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get1", NULL, NULL, NULL, tmpstr);	
+	free(tmpurl), tmpurl = NULL;
+	tmpstr = jsunpack(tmpstr);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get2_jsunpack", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL || ostrstr(tmpstr, "<center>Video not found, deleted or abused, sorry!<br") != NULL)
 	{
@@ -69,52 +57,56 @@ char* flashx(char* link)
 		goto end;
 	}
 
-//	tmpstr2 = oregex(".*(luq4qk.*)\|.*", tmpstr);
-	tmpstr2 = string_resub("|luq4", "|", tmpstr, 0);
-	tmpstr2 = ostrcat("/luq4", tmpstr2, 0, 1);
-	tmpstr2 = ostrcat(tmpstr2, ".smil", 1, 0);
-	free(tmpstr), tmpstr = NULL;
-	free(send), send = NULL;
+	streamlink = oregex(".*(http://.*normal.mp4).*", tmpstr);
 
-	send = ostrcat(send, "GET ", 1, 0);
-	send = ostrcat(send, tmpstr2, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
-	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\n", 1, 0);	
-	send = ostrcat(send, "User-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\n", 1, 0);	
-	send = ostrcat(send, "Referer: http://flashx.tv", 1, 0);
-	send = ostrcat(send, tmppath, 1, 0);
-	send = ostrcat(send, "\r\n", 1, 0);	
-	send = ostrcat(send, "Connection: close\r\n", 1, 0);	
-	send = ostrcat(send, "Accept-Encoding: gzip\r\n\r\n", 1, 0);	
-
-	debug(99, "#############################################################################################################");
-	debug(99, "send2: %s", send);
-	debug(99, "#############################################################################################################");
-
-	tmpstr = gethttpreal(tmphost, tmpstr2, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/flashx_tmpstr_get2", NULL, NULL, NULL, tmpstr);
-
-	playurl = string_resub("<meta base=\"", "vod/\"", tmpstr, 0);
-	app = ostrcat("vod/", NULL, 0, 0);
-	playpath = string_resub("<video src=\"", "\"", tmpstr, 0);
-	swfUrl= ostrcat("http://static.flashx.tv/player6/jwplayer.flash.swf", NULL, 0, 0); 
-	pageUrl = ostrcat(link, NULL, 0, 0);
-	swfVfy = ostrcat("true", NULL, 0, 0);
+	if(streamlink == NULL)
+	{
+	//	tmpstr2 = oregex(".*(luq4qk.*)\|.*", tmpstr);
+		tmpstr2 = string_resub("|luq4", "|", tmpstr, 0);
+		tmpstr2 = ostrcat("/luq4", tmpstr2, 0, 1);
+		tmpstr2 = ostrcat(tmpstr2, ".smil", 1, 0);
+		free(tmpstr), tmpstr = NULL;
+		free(send), send = NULL;
 	
-	streamlink = ostrcat(streamlink, playurl, 1, 0);
-	streamlink = ostrcat(streamlink, " app=", 1, 0);
-	streamlink = ostrcat(streamlink, app, 1, 0);
-	streamlink = ostrcat(streamlink, " playpath=", 1, 0);
-	streamlink = ostrcat(streamlink, playpath, 1, 0);
-	streamlink = ostrcat(streamlink, " swfUrl=", 1, 0);
-	streamlink = ostrcat(streamlink, swfUrl, 1, 0);
-	streamlink = ostrcat(streamlink, " pageUrl=", 1, 0);
-	streamlink = ostrcat(streamlink, pageUrl, 1, 0);
-	streamlink = ostrcat(streamlink, " swfVfy=", 1, 0);
-	streamlink = ostrcat(streamlink, swfVfy, 1, 0);
-
+		send = ostrcat(send, "GET ", 1, 0);
+		send = ostrcat(send, tmpstr2, 1, 0);
+		send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+		send = ostrcat(send, tmphost, 1, 0);
+		send = ostrcat(send, "\r\n", 1, 0);	
+		send = ostrcat(send, "User-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\n", 1, 0);	
+		send = ostrcat(send, "Referer: http://flashx.tv", 1, 0);
+		send = ostrcat(send, tmppath, 1, 0);
+		send = ostrcat(send, "\r\n", 1, 0);	
+		send = ostrcat(send, "Connection: close\r\n", 1, 0);	
+		send = ostrcat(send, "Accept-Encoding: gzip\r\n\r\n", 1, 0);	
+	
+		debug(99, "#############################################################################################################");
+		debug(99, "send2: %s", send);
+		debug(99, "#############################################################################################################");
+	
+		tmpstr = gethttpreal(tmphost, tmpstr2, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+		debug(99, "tmpstr: %s", tmpstr);
+		titheklog(debuglevel, "/tmp/flashx_tmpstr_get2", NULL, NULL, NULL, tmpstr);
+	
+		playurl = string_resub("<meta base=\"", "vod/\"", tmpstr, 0);
+		app = ostrcat("vod/", NULL, 0, 0);
+		playpath = string_resub("<video src=\"", "\"", tmpstr, 0);
+		swfUrl= ostrcat("http://static.flashx.tv/player6/jwplayer.flash.swf", NULL, 0, 0); 
+		pageUrl = ostrcat(link, NULL, 0, 0);
+		swfVfy = ostrcat("true", NULL, 0, 0);
+		
+		streamlink = ostrcat(streamlink, playurl, 1, 0);
+		streamlink = ostrcat(streamlink, " app=", 1, 0);
+		streamlink = ostrcat(streamlink, app, 1, 0);
+		streamlink = ostrcat(streamlink, " playpath=", 1, 0);
+		streamlink = ostrcat(streamlink, playpath, 1, 0);
+		streamlink = ostrcat(streamlink, " swfUrl=", 1, 0);
+		streamlink = ostrcat(streamlink, swfUrl, 1, 0);
+		streamlink = ostrcat(streamlink, " pageUrl=", 1, 0);
+		streamlink = ostrcat(streamlink, pageUrl, 1, 0);
+		streamlink = ostrcat(streamlink, " swfVfy=", 1, 0);
+		streamlink = ostrcat(streamlink, swfVfy, 1, 0);
+	}
 	titheklog(debuglevel, "flashx_streamlink", NULL, NULL, NULL, tmpstr);
 
 end:

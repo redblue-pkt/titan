@@ -35,9 +35,8 @@ char* nowvideo(char* link)
 //[titan] link: http://www.nowvideo.sx/video/17ba02abf1b74, file=nowvideo.h, func=nowvideo, line=6
 //[titan] send: GET /video/17ba02abf1b74 HTTP/1.1
 
-	if(ostrstr(link, "/embed.php?v=") != NULL)
-		tmplink = string_replace("/embed.php?v=", "/video/", tmplink, 1);
-
+//	if(ostrstr(link, "/embed.php?v=") != NULL)
+//		tmplink = string_replace("/embed.php?v=", "/video/", tmplink, 1);
 
 	if(tmplink == NULL || ostrncmp("http://", tmplink, 7))
 	{
@@ -74,6 +73,8 @@ char* nowvideo(char* link)
 		tmppath = stringreplacecharonce(tmppath, '&', '\0');
 	}
 
+	tmppath = string_replace("/video/", "/embed/?v=", tmppath, 1);
+	tmphost = ostrcat("embed.nowvideo.sx", NULL, 0, 0);
 /*
 	tmphost = ostrcat(host, NULL, 0, 0);
 	tmppath = ostrcat("/video/", file, 0, 0);
@@ -106,13 +107,13 @@ char* nowvideo(char* link)
 		goto end;
 	}
 
-  file = string_replace("/video/", "", tmppath, 0);
+	file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
+	if(file == NULL)
+		file = string_replace("/video/", "", tmppath, 0);
 	if(file == NULL)
 		file = string_resub("login.php?return=/video/", "\">Log In", tmpstr, 0);
 	if(file == NULL)
 		file = string_resub("<a href=\"/share.php?id=", "&title=", tmpstr, 0);
-	if(file == NULL)
-		file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
 	
 	char* r1 = NULL, *r2 = NULL, *r3 = NULL, *r4 = NULL;
 	pos = ostrstr(tmpstr, ");}('");
