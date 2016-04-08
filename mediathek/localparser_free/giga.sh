@@ -67,7 +67,7 @@ page()
 
 		while read -u 3 ROUND2; do
 			PIC=`echo $ROUND2 | sed 's/<img /\n<img /g' | grep '^<img ' | cut -d'"' -f2 | cut -d'"' -f1`
-			URL=`echo $ROUND2 | sed 's/iframe src="/\niframe src="/g' | grep '^iframe src=' | cut -d'"' -f2 | cut -d'?' -f1`
+			URL=`echo $ROUND2 | sed 's/iframe data-tracking-origin-url="/\niframe data-tracking-origin-url="/g' | grep '^iframe data-tracking-origin-url=' | cut -d'"' -f2 | cut -d'?' -f1`
 			TITLE=`echo $ROUND2 | sed 's/ alt="/\n alt="/g' | grep '^ alt=' | cut -d'"' -f2 | cut -d'"' -f1`
 		
 			if [ -z "$PIC" ]; then  
