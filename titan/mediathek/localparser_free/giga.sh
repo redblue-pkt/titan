@@ -85,7 +85,7 @@ page()
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 				piccount=`expr $piccount + 1`
 				
-				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.$PICEXT#$NAME#15"
+				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.$PICEXT#$NAME#14"
 				echo "$LINE" >> /tmp/tithek/$PARSER.$INPUT.list
 			fi
 		done 3<$TMP/cache.$PARSER."$filename"."2"

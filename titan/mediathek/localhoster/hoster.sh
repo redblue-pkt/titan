@@ -28,8 +28,31 @@ ecostream()
 	fi
 }
 
+giga()
+{
+	streampage=`$curlbin $INPUT | grep "<iframe src=" | cut -d'"' -f2 | head -n1`
+	streamurl=`$curlbin $streampage | grep '{file:' | cut -d'"' -f2 | grep 1080p`
+	if [ -z "$streamurl" ];then
+		streamurl=`$curlbin $streampage | grep '{file:' | cut -d'"' -f2 | grep 720p`
+	fi
+	if [ -z "$streamurl" ];then
+		streamurl=`$curlbin $streampage | grep '{file:' | cut -d'"' -f2 | grep 480p`
+	fi
+	if [ -z "$streamurl" ];then
+		streamurl=`$curlbin $streampage | grep '{file:' | cut -d'"' -f2 | grep 360p`
+	fi
+	if [ -z "$streamurl" ];then
+		streamurl=`$curlbin $streampage | grep '{file:' | cut -d'"' -f2 | grep 240p`
+	fi
+	if [ -z "$streamurl" ];then
+		streamurl=`$curlbin $streampage | grep '{file:' | cut -d'"' -f2 | grep 180p`
+	fi
+	echo $streamurl
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
+		giga) giga $INPUT;;
 	esac
 fi
