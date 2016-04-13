@@ -87,8 +87,8 @@ BEGIN { kz_parts=0
         count=1
       }
 
-/<ul class="m">/ { kz_parts=1
-                   next
+/<div class="mediabar">/ { kz_parts=1
+                           next
                  }
 
 /<a href="/ { if(kz_parts!=0) {
@@ -111,8 +111,8 @@ BEGIN { kz_parts=0
               }
             }
 
-/<\/ul>/ { kz_parts=0
-           next
+/<div class="ad leaderboard">/ { kz_parts=0
+                                 next
          }
 ' >/tmp/tithek/$PARSER.list
 	echo "/tmp/tithek/$PARSER.list"
