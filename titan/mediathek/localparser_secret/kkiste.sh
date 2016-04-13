@@ -31,7 +31,8 @@ init()
 
 mainmenu()
 {
-	echo "Kinofilme#$SRC $SRC videos aktuelle-kinofilme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
+	echo "Neue Filme#$SRC $SRC videos neue-filme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
+	echo "Kinofilme#$SRC $SRC videos aktuelle-kinofilme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
 #	echo "Serien#$SRC $SRC videos serien/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
 #	echo "Popular Tags#$SRC $SRC tags popular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
 #	echo "All Tags#$SRC $SRC tags nonpopular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
@@ -122,9 +123,15 @@ hoster()
 {
 	i=`expr $PAGE \* 2`
 	data=`$curlbin -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies "$URL$PARAM" | grep "data-det=" | cut -d'"' -f4`
-	id=`$curlbin -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies --header "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" -X POST --data "$data" --referer $URL$PARAM http://kkiste.to/xhr/link/ | cut -d'"' -f$i`
+	if [ ! -z "$data" ];then
+		id=`$curlbin -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies --header "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" -X POST --data "$data" --referer $URL$PARAM http://kkiste.to/xhr/link/ | cut -d'"' -f$i`
+	fi
+	if [ -z "$id" ];then
+		id=`$curlbin -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies "$URL$PARAM" | grep "http://www.ecostream.tv/stream" | sed 's#http://www.ecostream.tv/stream/#\nlink=.#g' | cut -d"." -f2`
+	fi
 	echo "http://www.ecostream.tv/stream/$id.html"
 }
+
 
 tags()
 {
