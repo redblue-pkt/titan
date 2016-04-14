@@ -6,7 +6,7 @@
 SRC=$1
 INPUT=$2
 PARAM=$3
-URL="https://beeg.com/api/v6/1740/"
+URL="https://beeg.com/api/v6/1760/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 
@@ -107,7 +107,7 @@ BEGIN { table = ""
         for (i = 0; i <= 255; i++) {
            ord[sprintf("%c", i)] = i
         }
-        crc = "00bD4mj2FMx0VcXnr3HZEhJn"
+        crc = "v4Ig0GQ2AUAQuGaHWApkY"
       }
 /\"/  { m = 1
         while (m == 1) {
@@ -209,7 +209,7 @@ function decrypt_url(url)
         print "KEY1: " key >>"/mnt/parser/beeg.log"
         o = ""
         for (i = 1; i <= length(key); i++) {
-           o = o sprintf("%c", ord[substr(key, i, 1)] - (ord[substr(crc, i % length(crc), 1)] % 21))
+           o = o sprintf("%c", ord[substr(key, i, 1)] - (ord[substr(crc, ((i - 1) % length(crc)) + 1, 1)] % 21))
         }
         print "KEY2: " o >>"/mnt/parser/beeg.log"
         r = ""
