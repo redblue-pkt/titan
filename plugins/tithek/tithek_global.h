@@ -758,7 +758,12 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 		strstrip(search);
 		string_tolower(search);
 
-		char* cmd = ostrcat(link, search, 0, 0);
+		char* cmd = ostrcat(link, NULL, 0, 0);
+		if(ostrstr(cmd, "%search%") != NULL)
+			cmd = string_replace_all("%search%", "search", cmd, 1);
+		else
+			cmd = ostrcat(link, search, 0, 0);
+
 		char* filename = command(cmd);
 		filename = string_newline(filename);
 		tmpstr = readfiletomem(filename, 1);
