@@ -740,7 +740,7 @@ char* localparser_hoster(char* link)
 
 int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
-	char* tmpstr = NULL, *menu = NULL, *search = NULL;
+	char* tmpstr = NULL, *menu = NULL, *search = NULL, *cmd = NULL;
 	int ret = 1;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
@@ -757,10 +757,12 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 
 		strstrip(search);
 		string_tolower(search);
+		search = stringreplacechar(search, ' ', '+');
 
-		char* cmd = ostrcat(link, NULL, 0, 0);
+		cmd = ostrcat(link, NULL, 0, 0);
+
 		if(ostrstr(cmd, "%search%") != NULL)
-			cmd = string_replace_all("%search%", "search", cmd, 1);
+			cmd = string_replace_all("%search%", search, cmd, 1);
 		else
 			cmd = ostrcat(link, search, 0, 0);
 
