@@ -29,7 +29,8 @@ http://cricfree.sx/update/tsn1.php,
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
 		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
-		url = string_resub("src=\"", "\"", tmpstr, 0);
+//		url = string_resub("src=\"", "\"", tmpstr, 0);
+		url = oregex(".*src=\"(http://cricfree.sx.*)\" id=\"iframe\".*", tmpstr);	
 	}
 	else
 		url = ostrcat(link, NULL, 0, 0);
@@ -121,6 +122,8 @@ http://cricfree.sx/update/tsn1.php,
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
 		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast8_tmpstr", oitoa(incount), host, path, tmpstr);
+		tmpstr = jsunpack(tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast8a_tmpstr_jsunpack", oitoa(incount), host, path, tmpstr);
 
 //		url: http://biggestplayer.me/streamcrnoscrape.php?id=+id+&width=&height=,
 
@@ -134,6 +137,13 @@ http://cricfree.sx/update/tsn1.php,
 		url = string_replace("+width+", width, url, 1);
 		url = string_replace("+height+", height, url, 1);
 		url = string_replace("+stretching+", "", url, 1);
+// work start
+		free(url), url = NULL;
+		url = ostrcat("http://chupala.biggestplayer.me/streamcr.php?id=", fid, 0, 0);
+		url = ostrcat(url, "&width=620&height=460", 1, 0);
+// work end
+
+//		http://chupala.biggestplayer.me/streamcr.php?id=234556&width=620&height=460
 
 		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, pageurl, 1);
 		free(host), host = NULL;
