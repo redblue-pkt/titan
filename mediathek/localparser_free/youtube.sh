@@ -33,11 +33,8 @@ fi
 
 init()
 {
-	if [ "$ARCH" != "sh4" ] || [ -e /etc/.beta ];then
-		rm -f /mnt/network/cookies > /dev/null 2>&1
-		rm -rf $TMP > /dev/null 2>&1
-		echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
-	fi
+	rm -rf $TMP > /dev/null 2>&1
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
