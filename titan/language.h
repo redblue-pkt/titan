@@ -50,18 +50,26 @@ int screenlanguage(int flag)
 					if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1)
 					{
 						char* file = ostrcat("/mnt/swapextensions/usr/local/share/titan/", listbox->select->name, 0, 0);
+						printf("file=%s\n",file);
 						if(!file_exist(file))
 							check = 0;
 						free(file), file = NULL;
 					}
+					printf("check=%d\n",check);
+
 					if(check == 1)
 					{
+						printf("2check=%d\n",check);
+
 						textbox(_("Message"), _("Change language needs reboot"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 1000, 200, 5, 0);
 						resettvpic();
 						oshutdown(3, 1);
 					}
 					else
+					{
+						printf("3check=%d\n",check);
 						textbox(_("Message"), _("Install language Package"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 1000, 200, 5, 0);
+					}
 				}
 				if(flag == 2 && change == 1)
 					reloadskin = 1;
