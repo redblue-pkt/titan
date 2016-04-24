@@ -47,7 +47,7 @@ int screenlanguage(int flag)
 				if(flag == 0 && change == 1)
 				{
 					check = 1;
-					if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1)
+					if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFS912") == 1)
 					{
 						char* file = ostrcat("/mnt/swapextensions/usr/local/share/titan/", listbox->select->name, 0, 0);
 						printf("file=%s\n",file);
@@ -55,7 +55,7 @@ int screenlanguage(int flag)
 							check = 0;
 						free(file), file = NULL;
 					}
-					printf("check=%d\n",check);
+					printf("1check=%d\n",check);
 
 					if(check == 1)
 					{
