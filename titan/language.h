@@ -6,7 +6,7 @@
 //flag 2: reload skin
 int screenlanguage(int flag)
 {
-	int rcret = 0, change = 0, reloadskin = 0;
+	int rcret = 0, change = 0, reloadskin = 0, check = 0;
 	struct skin* language = getscreen("language");
 	struct skin* listbox = getscreennode(language, "listbox");
 
@@ -46,9 +46,22 @@ int screenlanguage(int flag)
 
 				if(flag == 0 && change == 1)
 				{
-					textbox(_("Message"), _("Change language needs reboot"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 1000, 200, 5, 0);
-					resettvpic();
-					oshutdown(3, 1);
+					check = 1;
+					if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1)
+					{
+						char* file = ostrcat("/mnt/swapextensions/usr/local/share/titan/", listbox->select->name, 0, 0);
+						if(!file_exist(file))
+							check = 0;
+						free(file), file = NULL;
+					}
+					if(check == 1)
+					{
+						textbox(_("Message"), _("Change language needs reboot"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 1000, 200, 5, 0);
+						resettvpic();
+						oshutdown(3, 1);
+					}
+					else
+						textbox(_("Message"), _("Install language Package"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 1000, 200, 5, 0);
 				}
 				if(flag == 2 && change == 1)
 					reloadskin = 1;
