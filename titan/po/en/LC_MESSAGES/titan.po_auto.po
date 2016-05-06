@@ -66,7 +66,7 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr ""
 
-#: skin_default_skin.xml.h:607
+#: skin_default_skin.xml.h:606
 msgid "(Stop)"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgstr "--Author--"
 msgid "->"
 msgstr ""
 
-#: pip.h:640 skin_default_skin.xml.h:617
+#: pip.h:640 skin_default_skin.xml.h:616
 msgid "->swap<-"
 msgstr ""
 
@@ -1962,7 +1962,7 @@ msgstr ""
 msgid "Channel Edit"
 msgstr ""
 
-#: hbbtv.h:742
+#: hbbtv.h:743
 msgid "Channel HBBTV"
 msgstr ""
 
@@ -2099,7 +2099,7 @@ msgstr ""
 msgid "Choose your Filemanager Option from the following list"
 msgstr ""
 
-#: hbbtv.h:758
+#: hbbtv.h:759
 msgid "Choose your HBBTV Favorite from the following list"
 msgstr "Choose your HBBTV Favourite from the following list"
 
@@ -4214,7 +4214,7 @@ msgstr ""
 msgid "H"
 msgstr ""
 
-#: hbbtv.h:758
+#: hbbtv.h:759
 msgid "HBBTV Favoriten"
 msgstr "HBBTV Favourites"
 
@@ -5510,7 +5510,7 @@ msgstr ""
 msgid "MC VideoPlayer View Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:359
+#: skin_default_skin.xml.h:360
 msgid "MENUPROTECT"
 msgstr ""
 
@@ -5799,7 +5799,7 @@ msgstr "Memory Information"
 msgid "Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:360
+#: skin_default_skin.xml.h:359
 msgid "Menu Protect"
 msgstr ""
 
@@ -8132,7 +8132,7 @@ msgid "STICK "
 msgstr "Stick"
 
 #: plugins_dlna_skin.xml.h:13 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:606
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:607
 #: skins_dlna_skin.xml.h:13 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -9452,7 +9452,7 @@ msgid "Svn Changelog Full"
 msgstr ""
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:616 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:617 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr ""
 

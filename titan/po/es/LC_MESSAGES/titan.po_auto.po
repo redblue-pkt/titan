@@ -66,7 +66,7 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr "( --Voto-- )"
 
-#: skin_default_skin.xml.h:607
+#: skin_default_skin.xml.h:606
 msgid "(Stop)"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgstr "--Autor--"
 msgid "->"
 msgstr ""
 
-#: pip.h:640 skin_default_skin.xml.h:617
+#: pip.h:640 skin_default_skin.xml.h:616
 msgid "->swap<-"
 msgstr ""
 
@@ -1971,7 +1971,7 @@ msgstr "Canal EPG"
 msgid "Channel Edit"
 msgstr "Editar Lista de Canales"
 
-#: hbbtv.h:742
+#: hbbtv.h:743
 msgid "Channel HBBTV"
 msgstr "HBBTV Canales"
 
@@ -2109,7 +2109,7 @@ msgstr "Seleccione el dispositivo USB de la siguiente lista"
 msgid "Choose your Filemanager Option from the following list"
 msgstr "seleccione la opcion administrador de archivos de la lista de abajo"
 
-#: hbbtv.h:758
+#: hbbtv.h:759
 msgid "Choose your HBBTV Favorite from the following list"
 msgstr "Elige su HBBTV Favorito de la lista siguiente"
 
@@ -4240,7 +4240,7 @@ msgstr "Intervalo de guardar"
 msgid "H"
 msgstr ""
 
-#: hbbtv.h:758
+#: hbbtv.h:759
 msgid "HBBTV Favoriten"
 msgstr "HBBTV Favoritos"
 
@@ -5543,7 +5543,7 @@ msgstr "MC Video Player orden de ajustes"
 msgid "MC VideoPlayer View Settings"
 msgstr "MC VideoPlayer Ver Configuracion"
 
-#: skin_default_skin.xml.h:359
+#: skin_default_skin.xml.h:360
 msgid "MENUPROTECT"
 msgstr "Proteccion Menu"
 
@@ -5836,7 +5836,7 @@ msgstr "Memoria Informacion"
 msgid "Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:360
+#: skin_default_skin.xml.h:359
 msgid "Menu Protect"
 msgstr "Protejer Menu"
 
@@ -8175,7 +8175,7 @@ msgid "STICK "
 msgstr "Stick"
 
 #: plugins_dlna_skin.xml.h:13 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:606
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:607
 #: skins_dlna_skin.xml.h:13 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -9497,7 +9497,7 @@ msgid "Svn Changelog Full"
 msgstr ""
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:616 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:617 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Swap (RAM extensión)"
 
