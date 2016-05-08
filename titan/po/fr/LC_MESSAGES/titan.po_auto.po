@@ -147,18 +147,6 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1253
-msgid ""
-"/mnt not writeable!\n"
-"Repair it?"
-msgstr ""
-
-#: titan.c:1236
-msgid ""
-"/var not writeable!\n"
-"Repair it?"
-msgstr ""
-
 #: plugins_catcatch_skin.xml.h:1 plugins_sudoku_skin.xml.h:2
 #: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:5
 #: skins_catcatch_skin.xml.h:1 skins_sudoku_skin.xml.h:2
@@ -1147,7 +1135,7 @@ msgstr "RechercheAutomatique"
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1305
+#: titan.c:1306
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -3173,17 +3161,16 @@ msgstr ""
 #: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
-#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103 tithek_global.h:96
-#: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
-#: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
-#: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
-#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
-#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
-#: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
+#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 tithek.c:103
+#: tithek_global.h:96 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614
+#: tithek.h:1636 tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330
+#: tithek.h:2365 tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
+#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
+#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54
+#: vidag.h:60 vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
@@ -3864,18 +3851,6 @@ msgstr "Taux Maximale"
 #: httpdfunc.h:5263 system_infos.h:16
 msgid "Free Space"
 msgstr "Esapce Libre"
-
-#: titan.c:1247
-msgid ""
-"Free space in /mnt to little!\n"
-"This can make problems!"
-msgstr ""
-
-#: titan.c:1230
-msgid ""
-"Free space in /var to little!\n"
-"This can make problems!"
-msgstr ""
 
 #: skin_default_skin.xml.h:217
 msgid "French"
@@ -5788,22 +5763,22 @@ msgstr "Liste de Menu"
 #: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1209
-#: titan.c:1230 titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103
-#: tithek_global.h:96 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614
-#: tithek.h:1636 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
-#: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60 vidag.h:66 vidbull.h:30
-#: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:85
-#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31
-#: vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94 vidto.h:128 vidto.h:174
-#: vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65 vidzi.h:71 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70
-#: xupnpd.h:81 xupnpd.h:83 xvidstage.h:29 xvidstage.h:58 xvidstage.h:64
-#: xvidstage.h:70 youtube.h:220 zapback.c:79 zdf.h:29
+#: tithek.c:103 tithek_global.h:96 tithek.h:726 tithek.h:1284 tithek.h:1345
+#: tithek.h:1614 tithek.h:1636 tithek.h:1885 tithek.h:2045 tithek.h:2330
+#: tithek.h:2365 tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
+#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
+#: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
+#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
+#: vidzi.h:71 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2
+#: xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
+#: xvidstage.h:58 xvidstage.h:64 xvidstage.h:70 youtube.h:220 zapback.c:79
+#: zdf.h:29
 msgid "Message"
 msgstr ""
 
@@ -6383,17 +6358,16 @@ msgstr "Ö"
 #: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
-#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103 tithek_global.h:96
-#: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
-#: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
-#: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
-#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
-#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
-#: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
+#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 tithek.c:103
+#: tithek_global.h:96 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614
+#: tithek.h:1636 tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330
+#: tithek.h:2365 tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
+#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
+#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54
+#: vidag.h:60 vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
@@ -10311,7 +10285,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1303
+#: titan.c:1304
 msgid "Unknown Error."
 msgstr ""
 
