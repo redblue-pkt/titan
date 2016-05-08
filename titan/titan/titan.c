@@ -1222,7 +1222,7 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-/*
+
 	if(checkbox("UFS910") == 0 && checkbox("UFS922") == 0)
 	{
 		//check free space in /var
@@ -1252,14 +1252,22 @@ firstwizzardstep1:
 			{
 				if(textbox(_("Message"), _("/mnt not writeable!\nRepair it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
 				{
-					system("repairjffs2.sh mnt &"); //this script kills titan an reboot
-					sleep(10);
+					if(file_exist("/mnt/swapextensions/epg.dat"))
+					{
+						unlink("/mnt/swapextensions/epg.dat");
+						system("sync");
+						oshutdown(3, 0);
+					}
+					else
+					{
+						system("repairjffs2.sh mnt &"); //this script kills titan an reboot
+						sleep(10);
+					}
 				}
 			}
 			rmdir("/mnt/writetest");
 		}
 	}
-*/
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
 	startinternreader(1);
