@@ -1222,7 +1222,7 @@ firstwizzardstep1:
 			err("set sigsegjump");
 		}
 	}
-	
+/*
 	if(checkbox("UFS910") == 0 && checkbox("UFS922") == 0)
 	{
 		//check free space in /var
@@ -1259,6 +1259,7 @@ firstwizzardstep1:
 			rmdir("/mnt/writetest");
 		}
 	}
+*/
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
 	startinternreader(1);
