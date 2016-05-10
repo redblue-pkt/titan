@@ -535,12 +535,12 @@ void screenmc_videoplayer()
 			if(status.play == 0 && status.pause == 0)
 			{
 				drawscreen(blackscreen, 0, 0);
-				if(filelist->select != NULL && filelist->select->input == NULL)
-				{
+//				if(filelist->select != NULL && filelist->select->input == NULL)
+//				{
 					filename = createpath(filelistpath->text, filelist->select->name);
 					debug(133, "filename: %s", filename);				
 					playrcred(filename, NULL, playinfobarstatus, playertype, flag);
-				}
+//				}
 			}
 			else
 				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);

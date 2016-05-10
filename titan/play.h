@@ -644,8 +644,11 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		addmenulist(&mlist, "MediaDB Edit", _("MediaDB Edit"), NULL, 0, 0);
 	
 		if(status.play == 0)
+		{
 			addmenulist(&mlist, "Delete File", _("Delete File"), NULL, 0, 0);
-			
+			addmenulist(&mlist, "Rename File", _("Delete File"), NULL, 0, 0);
+			addmenulist(&mlist, "Create Folder", _("Create Folder"), NULL, 0, 0);
+		}
 		if(status.mediadbfiles > 0)
 			addmenulist(&mlist, "MediaDB Scan Info", _("MediaDB Scan Info"), NULL, 0, 0);
 	}
@@ -730,6 +733,16 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		else if(ostrcmp(mbox->name, "Delete File") == 0)
 		{
 			playcheckdirrcret(file, 1);
+			ret = 9999;
+		}
+		else if(ostrcmp(mbox->name, "Rename File") == 0)
+		{
+			playcheckdirrcret(file, 5);
+			ret = 9999;
+		}
+		else if(ostrcmp(mbox->name, "Create Folder") == 0)
+		{
+			playcheckdirrcret(file, 6);
 			ret = 9999;
 		}
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
@@ -1317,7 +1330,131 @@ int playcheckdirrcret(char* file, int dirrcret)
 		}
 		ret = 1;
 	}
-	
+	if(dirrcret == 5)
+	{
+		char* subfile = NULL, *dname = NULL, *searchext = NULL;
+		int overwrite;
+		subfile = ostrstr(file, "/movie/");
+		if(subfile != NULL)
+			subfile = subfile + 7;
+		else
+			subfile = file;
+		if(getservicebyrecname(file, 0, 0) != NULL)
+			textbox(_("Message"), _("Record in progress"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+		else if(textbox(_("Really Rename ?"), subfile, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+		{
+			tmpstr = ostrcat(basename(file), NULL, 0, 0);
+
+			char* search = textinput(_("Rename"), tmpstr);
+			free(tmpstr), tmpstr = NULL;
+
+			if(search != NULL)
+			{
+				dname = ostrcat(file, NULL, 0, 0);
+				dname = dirname(dname);
+				tmpstr = createpath(dname, search);
+				if(file_exist(tmpstr))
+				{
+					if(textbox(_("File Exist, Really Rename and Overwrite exist File ?"), search, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+						overwrite = 1;
+					else
+						overwrite = 0;
+				}
+				else
+					overwrite = 1;
+
+				if(overwrite == 1)
+				{
+					debug(10, "rename %s > %s", file, tmpstr);
+					ret = rename(file, tmpstr);
+					free(tmpstr), tmpstr = NULL;
+					free(dname), dname = NULL;
+		
+					epgfilename = changefilenameext(file, ".epg");
+					if(file_exist(epgfilename))
+					{
+						tmpstr = ostrcat(basename(epgfilename), NULL, 0, 0);
+						dname = ostrcat(epgfilename, NULL, 0, 0);
+						dname = dirname(dname);
+						searchext = changefilenameext(search, ".epg");
+						tmpstr = createpath(dname, searchext);
+						debug(10, "rename %s > %s", epgfilename, tmpstr);
+						ret = rename(epgfilename, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+						free(dname), dname = NULL;
+					}
+					free(epgfilename); epgfilename = NULL;
+		
+					epgfilename = changefilenameext(file, ".se");
+					if(file_exist(epgfilename))
+					{
+						tmpstr = ostrcat(basename(epgfilename), NULL, 0, 0);
+						dname = ostrcat(epgfilename, NULL, 0, 0);
+						dname = dirname(dname);
+						searchext = changefilenameext(search, ".se");
+						tmpstr = createpath(dname, searchext);
+						debug(10, "rename %s > %s", epgfilename, tmpstr);
+						ret = rename(epgfilename, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+						free(dname), dname = NULL;
+					}
+					free(epgfilename); epgfilename = NULL;
+		
+					epgfilename = changefilenameext(file, ".ma");
+					if(file_exist(epgfilename))
+					{
+						tmpstr = ostrcat(basename(epgfilename), NULL, 0, 0);
+						dname = ostrcat(epgfilename, NULL, 0, 0);
+						dname = dirname(dname);
+						searchext = changefilenameext(search, ".ma");
+						tmpstr = createpath(dname, searchext);
+						debug(10, "rename %s > %s", epgfilename, tmpstr);
+						ret = rename(epgfilename, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+						free(dname), dname = NULL;
+					}
+					free(epgfilename); epgfilename = NULL;
+		
+					epgfilename = changefilenameext(file, ".as");
+					if(file_exist(epgfilename))
+					{
+						tmpstr = ostrcat(basename(epgfilename), NULL, 0, 0);
+						dname = ostrcat(epgfilename, NULL, 0, 0);
+						dname = dirname(dname);
+						searchext = changefilenameext(search, ".as");
+						tmpstr = createpath(dname, searchext);
+						debug(10, "rename %s > %s", epgfilename, tmpstr);
+						ret = rename(epgfilename, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+						free(dname), dname = NULL;
+					}
+					free(epgfilename); epgfilename = NULL;
+				}
+			}
+		}
+//		ret = 1;
+	}
+	if(dirrcret == 6)
+	{
+		char* dname = NULL;
+		dname = ostrcat(file, NULL, 0, 0);
+		dname = dirname(dname);
+		if(textbox(_("Really Create Folder in ?"), dname, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+		{
+			tmpstr = ostrcat(basename(file), NULL, 0, 0);
+
+			char* search = textinput(_("Create Folder"), "New Folder");
+			free(tmpstr), tmpstr = NULL;
+
+			if(search != NULL)
+			{
+				tmpstr = createpath(dname, search);
+				debug(10, "create %s", tmpstr);
+				ret = mkdir(tmpstr, 0777);
+			}
+		}
+//		ret = 1;
+	}
 	return ret;
 }
 
