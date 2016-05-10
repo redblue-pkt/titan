@@ -1866,7 +1866,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
-#: mc_videoplayer.h:900 play.h:1505
+#: mc_videoplayer.h:900 play.h:1642
 msgid "Can't start playback !"
 msgstr "Ошибка воспроизведения!"
 
@@ -2108,7 +2108,7 @@ msgstr ""
 msgid "Choose your Playlist Mode from the following list"
 msgstr "Выберите режим воспроизведения из списка ниже"
 
-#: play.h:711
+#: play.h:714
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Выберите нужное из списка ниже"
 
@@ -2373,15 +2373,15 @@ msgstr ""
 msgid "Create Default Favorites"
 msgstr "Импорт стандартных букетов"
 
-#: play.h:654
+#: play.h:657
 msgid "Create Favorites sub folder"
 msgstr ""
 
-#: play.h:655
+#: play.h:658
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1446
 msgid "Create Folder"
 msgstr "Создать папку"
 
@@ -2473,7 +2473,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "По умолчанию"
 
-#: play.h:1429 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1566 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:138 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
@@ -2702,7 +2702,7 @@ msgstr "Удалить всё"
 msgid "Delete EPG after read"
 msgstr "Удалить EPG после чтения"
 
-#: play.h:647
+#: play.h:648 play.h:649
 msgid "Delete File"
 msgstr "Удалить файл"
 
@@ -2915,7 +2915,7 @@ msgstr "Загрузить весь файл (В фоновом режиме)"
 msgid "Download finished!"
 msgstr "Загрузка завершена!"
 
-#: keyactions.h:84 play.h:689 settings_bluebutton.h:21
+#: keyactions.h:84 play.h:692 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:161
 msgid "Downloads"
@@ -2994,7 +2994,7 @@ msgstr "Параметры тюнера"
 msgid "EJECT"
 msgstr "Извлечь"
 
-#: adjust.h:71 httpdfunc.h:3905 play.h:1429 skin_default_skin.xml.h:177
+#: adjust.h:71 httpdfunc.h:3905 play.h:1566 skin_default_skin.xml.h:177
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3015,7 +3015,7 @@ msgstr "Извлечь"
 msgid "EPG"
 msgstr ""
 
-#: play.h:1272 play.h:1278 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1285 play.h:1291 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "EPG Info"
 msgstr "EPG инфо"
 
@@ -3183,61 +3183,62 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:111 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
-#: play.h:1294 plugins_autotimer_skin.xml.h:6
-#: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
-#: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
-#: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:6
-#: plugins_lcdsamsung_skin.xml.h:7 plugins_mboxinfo_skin.xml.h:1
-#: plugins_mc_skin.xml.h:19 plugins_multiimage_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:1 plugins_panel_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:1 plugins_stopifnotused_skin.xml.h:3
-#: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:1
-#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
-#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
-#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:90 record.h:387 record.h:1160 record.h:1689
-#: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1944 service.h:743 service.h:989 shared.h:29
-#: shared.h:65 shared.h:82 skin_default_skin.xml.h:192
-#: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
-#: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
-#: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:6
-#: skins_lcdpearl1_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:7
-#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:19
-#: skins_multiimage_skin.xml.h:5 skins_optimize_skin.xml.h:1
-#: skins_panel_skin.xml.h:10 skins_rgui_skin.xml.h:1
-#: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
-#: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
-#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51 solarmovie.h:63
-#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
-#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
-#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:238
-#: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
-#: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
-#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103 tithek_global.h:96
-#: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
-#: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
-#: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
-#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
-#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
-#: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
-#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
-#: vidzi.h:71 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:29 xvidstage.h:58
-#: xvidstage.h:64 xvidstage.h:70 youtube.h:220 zapback.c:79 zdf.h:29
+#: player.h:111 play.h:497 play.h:614 play.h:1285 play.h:1291 play.h:1306
+#: play.h:1307 play.h:1343 play.h:1344 play.h:1358 play.h:1442
+#: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
+#: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
+#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:6
+#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
+#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
+#: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
+#: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
+#: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
+#: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
+#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
+#: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
+#: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
+#: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82
+#: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
+#: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
+#: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
+#: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
+#: skins_lcdsamsung_skin.xml.h:7 skins_mboxinfo_skin.xml.h:1
+#: skins_mc_skin.xml.h:19 skins_multiimage_skin.xml.h:5
+#: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
+#: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
+#: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
+#: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:411 softcam.h:474
+#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
+#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
+#: system_backup_restore.h:95 system_update.h:238 system_update.h:244
+#: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
+#: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1072
+#: titan.c:1081 titan.c:1209 titan.c:1230 titan.c:1236 titan.c:1247
+#: titan.c:1253 tithek.c:103 tithek_global.h:96 tithek.h:726 tithek.h:1284
+#: tithek.h:1345 tithek.h:1614 tithek.h:1636 tithek.h:1653 tithek.h:1885
+#: tithek.h:2045 tithek.h:2330 tithek.h:2365 tithek.h:2381 tithek.h:2393
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
+#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
+#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60 vidag.h:66 vidbull.h:30
+#: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:85
+#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31
+#: vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94 vidto.h:128 vidto.h:174
+#: vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65 vidzi.h:71 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
+#: vodlocker.h:86 xvidstage.h:29 xvidstage.h:58 xvidstage.h:64 xvidstage.h:70
+#: youtube.h:220 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Выход"
 
@@ -3673,6 +3674,10 @@ msgstr ""
 #: extensions.h:25
 msgid "Feed"
 msgstr "Введите адрес фида"
+
+#: play.h:1358
+msgid "File Exist, Really Rename and Overwrite exist File ?"
+msgstr ""
 
 #: tpk_description.h:68 tpk_showname.h:32
 msgid "File Manager"
@@ -5048,7 +5053,7 @@ msgstr ""
 msgid "Jump"
 msgstr ""
 
-#: play.h:1194
+#: play.h:1207
 msgid "Jump To (min)"
 msgstr "Перейти к (Мин)"
 
@@ -5582,11 +5587,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1721
+#: play.h:1858
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1732
+#: play.h:1869
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -5696,7 +5701,7 @@ msgstr ""
 "Путь не найден!\n"
 "Задайте его в настройках MediaDB"
 
-#: keyactions.h:24 play.h:650
+#: keyactions.h:24 play.h:653
 msgid "MediaDB Scan Info"
 msgstr ""
 
@@ -5853,7 +5858,7 @@ msgstr ""
 #: nowvideo.h:43 nowvideo.h:100 nowvideo.h:106 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
 #: played.h:90 played.h:102 played.h:114 played.h:171 player.h:111 play.h:614
-#: play.h:1293 play.h:1505 play.h:1721 play.h:1732 possetup.h:98
+#: play.h:1306 play.h:1343 play.h:1642 play.h:1858 play.h:1869 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -6442,8 +6447,9 @@ msgstr ""
 #: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:111 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
-#: play.h:1294 play.h:1505 play.h:1721 play.h:1732 plugins_dlna_skin.xml.h:7
+#: player.h:111 play.h:497 play.h:614 play.h:1285 play.h:1291 play.h:1306
+#: play.h:1307 play.h:1343 play.h:1344 play.h:1358 play.h:1442 play.h:1642
+#: play.h:1858 play.h:1869 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -7531,9 +7537,17 @@ msgstr "Ридер активен"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1294
+#: play.h:1442
+msgid "Really Create Folder in ?"
+msgstr ""
+
+#: play.h:1307
 msgid "Really Delete ?"
 msgstr "Удалить?"
+
+#: play.h:1344
+msgid "Really Rename ?"
+msgstr ""
 
 #: filemanager.h:178
 msgid "Really copy this file/dir?"
@@ -7645,7 +7659,7 @@ msgstr "Параметры записи"
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1293
+#: play.h:1306 play.h:1343
 msgid "Record in progress"
 msgstr "Идёт запись"
 
@@ -7789,7 +7803,7 @@ msgstr ""
 msgid "Removeing"
 msgstr "Удаление"
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1348
 #: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
 msgid "Rename"
 msgstr "Переименовать"
@@ -8024,7 +8038,7 @@ msgstr "SCART 4:3/16:9"
 msgid "SEARCH"
 msgstr "Поиск"
 
-#: dvdplay.h:29 play.h:1429 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1566 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Выбрать"
 
@@ -8048,7 +8062,7 @@ msgstr ""
 msgid "SNR:"
 msgstr "SNR"
 
-#: play.h:1429
+#: play.h:1566
 msgid "SORT"
 msgstr "Сортировка"
 
@@ -8507,99 +8521,99 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 msgid "Search"
 msgstr "Поиск"
 
-#: play.h:678
+#: play.h:681
 msgid "Search on ARD (local)"
 msgstr ""
 
-#: play.h:685
+#: play.h:688
 msgid "Search on All (local)"
 msgstr ""
 
-#: play.h:669
+#: play.h:672
 msgid "Search on Beeg (local)"
 msgstr ""
 
-#: play.h:671
+#: play.h:674
 msgid "Search on FilmOn (local)"
 msgstr ""
 
-#: play.h:681
+#: play.h:684
 msgid "Search on Giga (local)"
 msgstr ""
 
-#: play.h:684
+#: play.h:687
 msgid "Search on InternetRadio (local)"
 msgstr ""
 
-#: play.h:683
+#: play.h:686
 msgid "Search on InternetTv (local)"
 msgstr ""
 
-#: play.h:661
+#: play.h:664
 msgid "Search on KinoX"
 msgstr "Поиск в KinoX"
 
-#: play.h:662
+#: play.h:665
 msgid "Search on KinoX (local)"
 msgstr "Поиск в KinoX (Локально)"
 
-#: play.h:668
+#: play.h:671
 msgid "Search on Mle-HD (local)"
 msgstr ""
 
-#: play.h:663
+#: play.h:666
 msgid "Search on Movie4k"
 msgstr "Поиск в Movie4k"
 
-#: play.h:664
+#: play.h:667
 msgid "Search on Movie4k (local)"
 msgstr "Поиск в Movie4k (Локально)"
 
-#: play.h:676
+#: play.h:679
 msgid "Search on MyVideo"
 msgstr ""
 
-#: play.h:677
+#: play.h:680
 msgid "Search on MyVideo (local)"
 msgstr ""
 
-#: play.h:673
+#: play.h:676
 msgid "Search on Netzkino (local)"
 msgstr ""
 
-#: play.h:682
+#: play.h:685
 msgid "Search on NowTv (local)"
 msgstr ""
 
-#: play.h:667
+#: play.h:670
 msgid "Search on Solarmovies (local)"
 msgstr ""
 
-#: play.h:665
+#: play.h:668
 msgid "Search on Solarmovies (movie)"
 msgstr ""
 
-#: play.h:666
+#: play.h:669
 msgid "Search on Solarmovies (serie)"
 msgstr ""
 
-#: play.h:680
+#: play.h:683
 msgid "Search on TecTime (local)"
 msgstr ""
 
-#: play.h:670
+#: play.h:673
 msgid "Search on Xvideos (local)"
 msgstr ""
 
-#: play.h:674
+#: play.h:677
 msgid "Search on Youtube"
 msgstr ""
 
-#: play.h:675
+#: play.h:678
 msgid "Search on Youtube (local)"
 msgstr ""
 
-#: play.h:679
+#: play.h:682
 msgid "Search on ZDF (local)"
 msgstr ""
 
