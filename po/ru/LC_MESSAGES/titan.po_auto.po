@@ -1859,7 +1859,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
-#: mc_videoplayer.h:900 play.h:1642
+#: mc_videoplayer.h:900 play.h:1650
 msgid "Can't start playback !"
 msgstr "Ошибка воспроизведения!"
 
@@ -2374,7 +2374,7 @@ msgstr ""
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1446
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1454
 msgid "Create Folder"
 msgstr "Создать папку"
 
@@ -2466,7 +2466,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "По умолчанию"
 
-#: play.h:1566 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1574 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:138 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
@@ -2987,7 +2987,7 @@ msgstr "Параметры тюнера"
 msgid "EJECT"
 msgstr "Извлечь"
 
-#: adjust.h:71 httpdfunc.h:3905 play.h:1566 skin_default_skin.xml.h:177
+#: adjust.h:71 httpdfunc.h:3905 play.h:1574 skin_default_skin.xml.h:177
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3008,7 +3008,7 @@ msgstr "Извлечь"
 msgid "EPG"
 msgstr ""
 
-#: play.h:1285 play.h:1291 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1293 play.h:1299 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "EPG Info"
 msgstr "EPG инфо"
 
@@ -3176,8 +3176,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:111 play.h:497 play.h:614 play.h:1285 play.h:1291 play.h:1306
-#: play.h:1307 play.h:1343 play.h:1344 play.h:1358 play.h:1442
+#: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
+#: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:6
@@ -3668,7 +3668,7 @@ msgstr ""
 msgid "Feed"
 msgstr "Введите адрес фида"
 
-#: play.h:1358
+#: play.h:1366
 msgid "File Exist, Really Rename and Overwrite exist File ?"
 msgstr ""
 
@@ -5580,11 +5580,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1858
+#: play.h:1866
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1869
+#: play.h:1877
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -5851,7 +5851,7 @@ msgstr ""
 #: nowvideo.h:43 nowvideo.h:100 nowvideo.h:106 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
 #: played.h:90 played.h:102 played.h:114 played.h:171 player.h:111 play.h:614
-#: play.h:1306 play.h:1343 play.h:1642 play.h:1858 play.h:1869 possetup.h:98
+#: play.h:1314 play.h:1351 play.h:1650 play.h:1866 play.h:1877 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -6440,9 +6440,9 @@ msgstr ""
 #: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:111 play.h:497 play.h:614 play.h:1285 play.h:1291 play.h:1306
-#: play.h:1307 play.h:1343 play.h:1344 play.h:1358 play.h:1442 play.h:1642
-#: play.h:1858 play.h:1869 plugins_dlna_skin.xml.h:7
+#: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
+#: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450 play.h:1650
+#: play.h:1866 play.h:1877 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -7530,15 +7530,15 @@ msgstr "Ридер активен"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1442
+#: play.h:1450
 msgid "Really Create Folder in ?"
 msgstr ""
 
-#: play.h:1307
+#: play.h:1315
 msgid "Really Delete ?"
 msgstr "Удалить?"
 
-#: play.h:1344
+#: play.h:1352
 msgid "Really Rename ?"
 msgstr ""
 
@@ -7652,7 +7652,7 @@ msgstr "Параметры записи"
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1306 play.h:1343
+#: play.h:1314 play.h:1351
 msgid "Record in progress"
 msgstr "Идёт запись"
 
@@ -7796,7 +7796,7 @@ msgstr ""
 msgid "Removeing"
 msgstr "Удаление"
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1348
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1356
 #: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
 msgid "Rename"
 msgstr "Переименовать"
@@ -8031,7 +8031,7 @@ msgstr "SCART 4:3/16:9"
 msgid "SEARCH"
 msgstr "Поиск"
 
-#: dvdplay.h:29 play.h:1566 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1574 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Выбрать"
 
@@ -8055,7 +8055,7 @@ msgstr ""
 msgid "SNR:"
 msgstr "SNR"
 
-#: play.h:1566
+#: play.h:1574
 msgid "SORT"
 msgstr "Сортировка"
 
