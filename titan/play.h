@@ -737,12 +737,12 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		}
 		else if(ostrcmp(mbox->name, "Rename File") == 0)
 		{
-			playcheckdirrcret(file, 5);
+			playcheckdirrcret(file, 6);
 			ret = 9999;
 		}
 		else if(ostrcmp(mbox->name, "Create Folder") == 0)
 		{
-			playcheckdirrcret(file, 6);
+			playcheckdirrcret(file, 7);
 			ret = 9999;
 		}
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
@@ -1265,6 +1265,14 @@ void playchangecodec(int playertype)
 	}
 }
 
+// dirrcret 1 = delete
+// dirrcret 2 = 
+// dirrcret 3 = epg info
+// dirrcret 4 = sort
+// dirrcret 5 = exit
+// dirrcret 6 = rename
+// dirrcret 7 = create folder
+
 int playcheckdirrcret(char* file, int dirrcret)
 {
 	int ret = 0;
@@ -1330,7 +1338,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 		}
 		ret = 1;
 	}
-	if(dirrcret == 5)
+	if(dirrcret == 6)
 	{
 		char* subfile = NULL, *dname = NULL, *searchext = NULL;
 		int overwrite;
@@ -1434,7 +1442,7 @@ int playcheckdirrcret(char* file, int dirrcret)
 		}
 //		ret = 1;
 	}
-	if(dirrcret == 6)
+	if(dirrcret == 7)
 	{
 		char* dname = NULL;
 		dname = ostrcat(file, NULL, 0, 0);
