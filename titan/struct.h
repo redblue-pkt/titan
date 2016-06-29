@@ -65,6 +65,36 @@
 //#ifndef SH4
 #include <sys/stat.h>
 //#endif
+#include <openssl/aes.h>
+#include <openssl/dh.h>
+#include <openssl/rsa.h>
+#include <openssl/sha.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <stdint.h>
+#include <inttypes.h>
+#include <arpa/inet.h>
+#include <time.h>
+#include <linux/dvb/ca.h>
+#include <sys/types.h>
+
+#include <fcntl.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <time.h>
+
+#include <openssl/pem.h>
+#include <openssl/x509.h>
+#include <openssl/x509v3.h>
+#include <openssl/sha.h>
+#include <openssl/aes.h>
 
 //for freetype
 #include <ft2build.h>
@@ -86,12 +116,12 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "20150113"
+#define DRIVER " -   - "
 #define OVERSION "1.75"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 37718
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -499,6 +529,11 @@ struct caslot
 	char* name;
 	int fastrun;
 	char* caids;
+#ifdef SH4
+	unsigned char lastKey[32];
+	uint8_t lastParity;
+	unsigned char scrambled;
+#endif
 };
 
 struct hdd
@@ -1994,6 +2029,19 @@ unsigned char cec_physicalAddress[2];
 unsigned char cec_logicalAddress;
 unsigned char cec_deviceType;
 
+#endif
+
+#ifdef SH4
+struct aes_xcbc_mac_ctx {
+	uint8_t K[3][16];
+	uint8_t IV[16];
+	AES_KEY key;
+	int buflen;
+};
+
+#define ROOT_CERT     "/etc/pem/root.pem"
+#define CUSTOMER_CERT "/etc/pem/customer.pem"
+#define DEVICE_CERT   "/etc/pem/device.pem"
 #endif
 
 #endif

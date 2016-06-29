@@ -240,7 +240,7 @@ echo "[titan]--------------------------------------------------------"
 if [ $MEDIAFW = 1 ]; then
     eplayer=EPLAYER3
     eplayerinclude="$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libeplayer3/include
-	linking="-lm -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz"
+	linking="-lm -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz -lssl -lcrypto"
 fi
 if [ $MEDIAFW = 2 ]; then
     eplayer=EPLAYER4
@@ -271,10 +271,12 @@ fi
 "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable \
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include \
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/freetype2 \
+    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/openssl \
     -I $eplayerinclude \
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/titan/libdreamdvd \
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libmmeimage  \
+	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/cdk/linux-sh4-2.6.32.61_stm24_0217/include  \
     -I "$HOME"/flashimg/$SRCDIR \
     -c titan.c
 

@@ -7,6 +7,65 @@
 
 #ifndef HEADER_H
 #define HEADER_H
+
+#ifdef SH4
+//	bool data_initialize(tSlot *tslot);
+//	bool ci_ccmgr_cc_data_req(tSlot *tslot, const uint8_t *data, unsigned int len);
+//	bool ci_ccmgr_cc_sac_data_req(tSlot *tslot, const uint8_t *data, unsigned int len);
+//	bool ci_ccmgr_cc_sac_send(tSlot *tslot, const uint8_t *tag, uint8_t *data, unsigned int pos);
+//	int data_initialize(tSlot *tslot);
+//	int ci_ccmgr_cc_data_req(tSlot *tslot, const uint8_t *data, unsigned int len);
+//	int ci_ccmgr_cc_sac_data_req(tSlot *tslot, const uint8_t *data, unsigned int len);
+//	int ci_ccmgr_cc_sac_send(tSlot *tslot, const uint8_t *tag, uint8_t *data, unsigned int pos);
+
+//	void ci_ccmgr_cc_sac_sync_req(tSlot *tslot, const uint8_t *data, unsigned int len);
+	void ci_ccmgr_cc_sync_req();
+//	void ci_ccmgr_cc_open_cnf(tSlot *slot);
+
+//	enum {
+//		stateFinal=statePrivate
+//	};
+	int receivedAPDU(const unsigned char *tag, const void *data, int len);
+	int doAction();
+//public:
+//	eDVBCIContentControlManagerSession(tSlot *tslot);
+//	~eDVBCIContentControlManagerSession();
+//	void ci_ccmgr_doClose(tSlot *tslot);
+//	void resendKey(tSlot *tslot);
+
+void hexdump(const uint8_t *data, unsigned int len);
+
+int parseLengthField(const unsigned char *pkt, int *len);
+
+int get_random(unsigned char *dest, int len);
+
+int add_padding(uint8_t *dest, unsigned int len, unsigned int blocklen);
+
+void str2bin(uint8_t *dst, char *data, int len);
+
+uint32_t UINT32(const uint8_t *in, unsigned int len);
+
+int BYTE32(uint8_t *dest, uint32_t val);
+int BYTE16(uint8_t *dest, uint16_t val);
+
+int dh_gen_exp(uint8_t *dest, int dest_len, uint8_t *dh_g, int dh_g_len, uint8_t *dh_p, int dh_p_len);
+int dh_mod_exp(uint8_t *dest, int dest_len, uint8_t *base, int base_len, uint8_t *mod, int mod_len, uint8_t *exp, int exp_len);
+int dh_dhph_signature(uint8_t *out, uint8_t *nonce, uint8_t *dhph, RSA *r);
+
+int descrambler_init(void);
+void descrambler_deinit(void);
+//bool descrambler_open(void);
+int descrambler_open(void);
+void descrambler_close(void);
+int descrambler_set_key(int index, int parity, unsigned char *data);
+/* we don't use this for ci cam ! */
+//int descrambler_set_pid(int index, int enable, int pid);
+
+int aes_xcbc_mac_init(struct aes_xcbc_mac_ctx *ctx, const uint8_t *key);
+int aes_xcbc_mac_process(struct aes_xcbc_mac_ctx *ctx, const uint8_t *in, unsigned int len);
+int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out);
+#endif
+
 //bcm.h
 void bcm_accel_fill(int dst_addr, int dst_width, int dst_height, int dst_stride, int x, int y, int width, int height, unsigned long color);
 void bcm_accel_blit(int src_addr, int src_width, int src_height, int src_stride, int src_format, int dst_addr, int dst_width, int dst_height, int dst_stride, int src_x, int src_y, int width, int height, int dst_x, int dst_y, int dwidth, int dheight, int pal_addr, int flags);
