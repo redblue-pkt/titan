@@ -6,7 +6,7 @@
 SRC=$1
 INPUT=$2
 PARAM=$3
-URL="https://beeg.com/api/v6/1859/"
+URL="https://beeg.com/api/v6/1863/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 
@@ -107,7 +107,7 @@ BEGIN { table = ""
         for (i = 0; i <= 255; i++) {
            ord[sprintf("%c", i)] = i
         }
-        crc = "0SNf85WbZ6pJqFaRRiayPl6m0hu3dKQkrp7fhSAyofwJEj5jB"
+        crc = "DNHEuqifWqtMzidy"
       }
 /\"/  { m = 1
         while (m == 1) {
