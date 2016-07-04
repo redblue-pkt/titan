@@ -117,7 +117,7 @@
 #endif
 
 #define DRIVER " -   - "
-#define OVERSION "1.75"
+#define OVERSION "1.76"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
