@@ -840,7 +840,7 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 			debug(620, "state caresenquiry");
 			unsigned char tag[3] = {0x9F, 0x80, 0x11};
 
-			if(checkcerts()
+			if(checkcerts() == 1)
 			{
 				unsigned char data[][4]=
 				{
