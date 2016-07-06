@@ -1610,8 +1610,8 @@ struct status
 	//Volume
 	int volume;
 	int screenshot;
-	int status.certchecked;
-	int status.certok;
+	int certchecked;
+	int certok;
 } status;
 
 struct fb
