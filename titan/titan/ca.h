@@ -3619,4 +3619,15 @@ static int data_req_loop(struct cc_ctrl_data *cc_data, unsigned char *dest, cons
 }
 #endif
 
+int checkcerts(void)
+{
+	if(status.certchecked == 0)
+	{
+		if (access(ROOT_CERT, F_OK) == 0 && access(ROOT_CERT, F_OK) == 0 && access(ROOT_CERT, F_OK) == 0)
+			status.certok = 1;
+		status.certchecked = 1;
+	}
+	return status.certok;
+}
+
 #endif
