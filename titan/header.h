@@ -64,6 +64,7 @@ int descrambler_set_key(int index, int parity, unsigned char *data);
 int aes_xcbc_mac_init(struct aes_xcbc_mac_ctx *ctx, const uint8_t *key);
 int aes_xcbc_mac_process(struct aes_xcbc_mac_ctx *ctx, const uint8_t *in, unsigned int len);
 int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out);
+int checkcerts(void)
 #endif
 
 //bcm.h
