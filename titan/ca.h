@@ -736,6 +736,8 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 
 int caccAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
+	debug(620, "cc manager caccAPDU start");
+
 	int i = 0;
 	struct casession* casession = NULL;
 
@@ -1237,7 +1239,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			break;
 		case 0x00400041:
 			casession[sessionnr].inuse = 1;
-			casession[sessionnr].ccmanager = 1;
+			casession[sessionnr].mmimanager = 1;
 			//neutrino sessions[session_nb - 1] = new eDVBCIMMISession(slot);
 			debug(620, "create session mmi manager");
 			break;
@@ -1245,7 +1247,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 		{
 			case 0x008c1001:
 				casession[sessionnr].inuse = 1;
-				casession[sessionnr].mmimanager = 1;
+				casession[sessionnr].ccmanager = 1;
 				//neutrino [session_nb - 1] = new eDVBCIContentControlManagerSession(slot);
 				debug(620, "create session cc manager");
 				break;
@@ -1341,8 +1343,6 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 		switch(tag)
 		{
 			case 0x90:
-// test
-				ci_ccmgr_cc_open_cnf(dvbnode, sessionnr);
 				break;
 			case 0x94:
 				debug(620, "recv create session response %02x", pkt[0]);
@@ -1399,6 +1399,11 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 				if(caappAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
+			else if(casession->ccmanager == 1)
+			{
+				if(caccAPDU(dvbnode, sessionnr, tag, pkt, alen))
+					casession->action = 1;
+			}
 			else if(casession->camanager == 1)
 			{
 				if(cacaAPDU(dvbnode, sessionnr, tag, pkt, alen))
@@ -1414,11 +1419,7 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 				if(cammiAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
-			else if(casession->ccmanager == 1)
-			{
-				if(caccAPDU(dvbnode, sessionnr, tag, pkt, alen))
-					casession->action = 1;
-			}
+
 			pkt += alen;
 			len -= alen;
 		}
@@ -3694,7 +3695,7 @@ void ci_ccmgr_cc_open_cnf(struct dvbdev* dvbnode, int sessionnr)
 	ci_ccmgr_cc_data_initialize(dvbnode);
 
 //	sendAPDU(dvbnode, sessionnr, tag, data, 1);
-	sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
+	sendAPDU(dvbnode, sessionnr, tag, &bitmap, 1);
 
 //	sendAPDU(tag, &bitmap, 1);
 }
