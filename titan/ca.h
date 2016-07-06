@@ -1184,6 +1184,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			debug(620, "create session res manager");
 			break;
 		case 0x00020041:
+		case 0x00020043:
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].appmanager = 1;
 			debug(620, "create session app manager");
@@ -1201,8 +1202,18 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 		case 0x00400041:
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].mmimanager = 1;
+			//neutrino sessions[session_nb - 1] = new eDVBCIMMISession(slot);
 			debug(620, "create session mmi manager");
 			break;
+		if(checkcerts())
+		{
+			case 0x008c1001:
+				casession[sessionnr].inuse = 1;
+				casession[sessionnr].mmimanager = 1;
+				//neutrino [session_nb - 1] = new eDVBCIContentControlManagerSession(slot);
+				debug(620, "create session cc manager");
+				break;
+		}
 		case 0x00100041:
 			debug(620, "create session auth manager");
 		case 0x00200041:
