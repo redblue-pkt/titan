@@ -116,7 +116,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER " -   - "
+#define DRIVER "Wed Jul  6 21:54:48 CEST 2016"
 #define OVERSION "1.76"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
@@ -517,6 +517,7 @@ struct casession
 	int datetimemanager;
 	int appmanager;
 	int resmanager;
+	int ccmanager;
 	char* mmititle;
 	char* mmisubtitle;
 	char* mmitext;
@@ -538,6 +539,7 @@ struct caslot
 	unsigned char lastKey[32];
 	uint8_t lastParity;
 	unsigned char scrambled;
+	void *private_data;
 #endif
 };
 

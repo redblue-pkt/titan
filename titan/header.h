@@ -65,6 +65,10 @@ int aes_xcbc_mac_init(struct aes_xcbc_mac_ctx *ctx, const uint8_t *key);
 int aes_xcbc_mac_process(struct aes_xcbc_mac_ctx *ctx, const uint8_t *in, unsigned int len);
 int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out);
 int checkcerts(void);
+void ci_ccmgr_cc_open_cnf(struct dvbdev* dvbnode, int sessionnr);
+int ci_ccmgr_cc_data_initialize(struct dvbdev* dvbnode);
+int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, const uint8_t *data, unsigned int len);
+
 #endif
 
 //bcm.h
