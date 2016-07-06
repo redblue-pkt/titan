@@ -734,6 +734,42 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 	return 0;
 }
 
+int caccAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
+{
+	int i = 0;
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "cc manager %02x %02x %02x", tag[0], tag[1], tag[2]);
+
+	if(debug_level == 620)
+	{
+		i = 0;
+		printf("CC manager data (len %d): > ", len);
+		for(i = 0; i < len; i++)
+			printf("%02x ", ((unsigned char*)data)[i]);
+		printf("\n");
+	}
+
+	if(tag[0] == 0x9f && tag[1] == 0x90)
+	{
+		switch(tag[2])
+		{
+			case 0x01: ci_ccmgr_cc_open_cnf(dvbnode, sessionnr); break;
+			case 0x03: ci_ccmgr_cc_data_req(dvbnode, sessionnr, (const uint8_t*)data, len); break;
+//			case 0x05: ci_ccmgr_cc_sync_req(); break;
+//			case 0x07: ci_ccmgr_cc_sac_data_req(dvbnode, sessionnr, (const uint8_t*)data, len); break;
+//			case 0x09: ci_ccmgr_cc_sac_sync_req(dvbnode, sessionnr, (const uint8_t*)data, len); break;
+			default:
+				debug(620, "unknown APDU tag 9F 80 %02x\n", tag[2]);
+				break;
+		}
+	}
+	return 0;
+}
+
 //datetime functions
 
 int cadatetimeaction(struct dvbdev* dvbnode, int sessionnr)
@@ -1201,7 +1237,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			break;
 		case 0x00400041:
 			casession[sessionnr].inuse = 1;
-			casession[sessionnr].mmimanager = 1;
+			casession[sessionnr].ccmanager = 1;
 			//neutrino sessions[session_nb - 1] = new eDVBCIMMISession(slot);
 			debug(620, "create session mmi manager");
 			break;
@@ -1305,6 +1341,8 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 		switch(tag)
 		{
 			case 0x90:
+// test
+				ci_ccmgr_cc_open_cnf(dvbnode, sessionnr);
 				break;
 			case 0x94:
 				debug(620, "recv create session response %02x", pkt[0]);
@@ -1374,6 +1412,11 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 			else if(casession->mmimanager == 1)
 			{
 				if(cammiAPDU(dvbnode, sessionnr, tag, pkt, alen))
+					casession->action = 1;
+			}
+			else if(casession->ccmanager == 1)
+			{
+				if(caccAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
 			pkt += alen;
@@ -3628,6 +3671,7 @@ static int data_req_loop(struct cc_ctrl_data *cc_data, unsigned char *dest, cons
 
 	return pos;
 }
+
 #endif
 
 int checkcerts(void)
@@ -3639,6 +3683,120 @@ int checkcerts(void)
 		status.certchecked = 1;
 	}
 	return status.certok;
+}
+
+void ci_ccmgr_cc_open_cnf(struct dvbdev* dvbnode, int sessionnr)
+{
+	uint8_t tag[3] = { 0x9f, 0x90, 0x02 };
+	uint8_t bitmap = 0x01;
+	printf("%s -> %s\n", FILENAME, __FUNCTION__);
+
+	ci_ccmgr_cc_data_initialize(dvbnode);
+
+//	sendAPDU(dvbnode, sessionnr, tag, data, 1);
+	sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
+
+//	sendAPDU(tag, &bitmap, 1);
+}
+
+int ci_ccmgr_cc_data_initialize(struct dvbdev* dvbnode)
+{
+	struct cc_ctrl_data *data;
+	uint8_t buf[32], host_id[8];
+
+	printf("%s -> %s\n", FILENAME, __FUNCTION__);
+
+//	dvbnode->caslot->private_data = NULL;
+	if (dvbnode->caslot->private_data) {
+		fprintf(stderr, "strange private_data not null!\n");
+		return 0;
+	}
+
+	data = (struct cc_ctrl_data*)calloc(1, sizeof(struct cc_ctrl_data));
+	if (!data) {
+		fprintf(stderr, "out of memory\n");
+		return 0;
+	}
+
+	/* parent */
+	data->slot = dvbnode->caslot;
+
+	/* clear storage of credentials */
+	element_init(data);
+
+	/* set status field - OK */
+	memset(buf, 0, 1);
+	if (!element_set(data, 30, buf, 1))
+		fprintf(stderr, "cannot set status in elements\n");
+
+	/* set uri_versions */
+	memset(buf, 0, 32);
+	buf[31] = 1;
+	if (!element_set(data, 29, buf, 32))
+		fprintf(stderr, "cannot set uri_versions in elements\n");
+
+	/* load first AKH */
+	data->akh_index = 0;
+	if (!get_authdata(host_id, data->dhsk, buf, dvbnode->caslot->connid, data->akh_index)) {
+		/* no AKH available */
+		memset(buf, 0, sizeof(buf));
+		data->akh_index = 5;    /* last one */
+	}
+
+	if (!element_set(data, 22, buf, 32))
+		fprintf(stderr, "cannot set AKH in elements\n");
+
+	if (!element_set(data, 5, host_id, 8))
+		fprintf(stderr, "cannot set host_id elements\n");
+
+	dvbnode->caslot->private_data = data;
+
+	return 1;
+}
+
+//bool eDVBCIContentControlManagerSession::ci_ccmgr_cc_data_req(tSlot *tslot, const uint8_t *data, unsigned int len)
+int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, const uint8_t *data, unsigned int len)
+{
+//	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(tslot->private_data);
+	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
+	uint8_t cc_data_cnf_tag[3] = { 0x9f, 0x90, 0x04 };
+	uint8_t dest[2048 * 2];
+	int dt_nr;
+	int id_bitmask;
+	int answ_len;
+	unsigned int rp = 0;
+
+	printf("%s -> %s\n", FILENAME, __FUNCTION__);
+
+	if (len < 2)
+		return 0;
+
+	id_bitmask = data[rp++];
+
+	/* handle data loop */
+	dt_nr = data[rp++];
+	rp += data_get_loop(cc_data, &data[rp], len - rp, dt_nr);
+
+	if (len < rp + 1)
+		return 0;
+
+	/* handle req_data loop */
+	dt_nr = data[rp++];
+
+	dest[0] = id_bitmask;
+	dest[1] = dt_nr;
+
+	answ_len = data_req_loop(cc_data, &dest[2], &data[rp], len - rp, dt_nr);
+	if (answ_len <= 0) {
+		fprintf(stderr, "cannot req data\n");
+		return 0;
+	}
+
+	answ_len += 2;
+
+	sendAPDU(dvbnode, sessionnr, cc_data_cnf_tag, dest, answ_len);
+
+	return 1;
 }
 
 #endif
