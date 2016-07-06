@@ -67,7 +67,11 @@ int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out);
 int checkcerts(void);
 void ci_ccmgr_cc_open_cnf(struct dvbdev* dvbnode, int sessionnr);
 int ci_ccmgr_cc_data_initialize(struct dvbdev* dvbnode);
-int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, const uint8_t *data, unsigned int len);
+int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len);
+void ci_ccmgr_cc_sync_req(struct dvbdev* dvbnode, int sessionnr);
+int ci_ccmgr_cc_sac_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len);
+int ci_ccmgr_cc_sac_send(struct dvbdev* dvbnode, int sessionnr, uint8_t *tag, uint8_t *data, unsigned int pos);
+void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len);
 
 #endif
 

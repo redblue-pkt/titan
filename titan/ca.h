@@ -760,10 +760,10 @@ int caccAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 		switch(tag[2])
 		{
 			case 0x01: ci_ccmgr_cc_open_cnf(dvbnode, sessionnr); break;
-			case 0x03: ci_ccmgr_cc_data_req(dvbnode, sessionnr, (const uint8_t*)data, len); break;
-//			case 0x05: ci_ccmgr_cc_sync_req(); break;
-//			case 0x07: ci_ccmgr_cc_sac_data_req(dvbnode, sessionnr, (const uint8_t*)data, len); break;
-//			case 0x09: ci_ccmgr_cc_sac_sync_req(dvbnode, sessionnr, (const uint8_t*)data, len); break;
+			case 0x03: ci_ccmgr_cc_data_req(dvbnode, sessionnr, (uint8_t*)data, len); break;
+			case 0x05: ci_ccmgr_cc_sync_req(dvbnode, sessionnr); break;
+			case 0x07: ci_ccmgr_cc_sac_data_req(dvbnode, sessionnr, (uint8_t*)data, len); break;
+			case 0x09: ci_ccmgr_cc_sac_sync_req(dvbnode, sessionnr, (uint8_t*)data, len); break;
 			default:
 				debug(620, "unknown APDU tag 9F 80 %02x\n", tag[2]);
 				break;
@@ -3756,7 +3756,7 @@ int ci_ccmgr_cc_data_initialize(struct dvbdev* dvbnode)
 }
 
 //bool eDVBCIContentControlManagerSession::ci_ccmgr_cc_data_req(tSlot *tslot, const uint8_t *data, unsigned int len)
-int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, const uint8_t *data, unsigned int len)
+int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len)
 {
 //	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(tslot->private_data);
 	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
@@ -3798,6 +3798,134 @@ int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, const uint8_t *d
 	sendAPDU(dvbnode, sessionnr, cc_data_cnf_tag, dest, answ_len);
 
 	return 1;
+}
+
+void ci_ccmgr_cc_sync_req(struct dvbdev* dvbnode, int sessionnr)
+{
+	uint8_t tag[3] = { 0x9f, 0x90, 0x06 };
+	uint8_t sync_req_status = 0x00;    /* OK */
+
+	printf("%s -> %s\n", FILENAME, __FUNCTION__);
+	sendAPDU(dvbnode, sessionnr, tag, &sync_req_status, 1);
+}
+
+//bool eDVBCIContentControlManagerSession::ci_ccmgr_cc_sac_data_req(tSlot *tslot, const uint8_t *data, unsigned int len)
+int ci_ccmgr_cc_sac_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len)
+{
+//	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(tslot->private_data);
+	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
+	uint8_t data_cnf_tag[3] = { 0x9f, 0x90, 0x08 };
+	uint8_t dest[2048];
+	uint8_t tmp[len];
+	int id_bitmask, dt_nr;
+	unsigned int serial;
+	int answ_len;
+	int pos = 0;
+	unsigned int rp = 0;
+	printf("%s -> %s\n", FILENAME, __FUNCTION__);
+
+	if (len < 10)
+		return 0;
+
+	memcpy(tmp, data, 8);
+	sac_crypt(&tmp[8], &data[8], len - 8, cc_data->sek, AES_DECRYPT);
+	data = tmp;
+#if y_debug
+	printf("decryted > ");
+	for (unsigned int i = 0; i < len; i++)
+		printf("%02x ", data[i]);
+	printf("\n");
+#endif
+	if (!sac_check_auth(data, len, cc_data->sak)) {
+		fprintf(stderr, "check_auth of message failed\n");
+		return 0;
+	}
+
+	serial = UINT32(&data[rp], 4);
+
+	/* skip serial & header */
+	rp += 8;
+
+	id_bitmask = data[rp++];
+
+	/* handle data loop */
+	dt_nr = data[rp++];
+	rp += data_get_loop(cc_data, &data[rp], len - rp, dt_nr);
+
+	if (len < rp + 1)
+		return 0;
+
+	dt_nr = data[rp++];
+
+	/* create answer */
+	pos += BYTE32(&dest[pos], serial);
+	pos += BYTE32(&dest[pos], 0x01000000);
+
+	dest[pos++] = id_bitmask;
+	dest[pos++] = dt_nr;    /* dt_nbr */
+
+	answ_len = data_req_loop(cc_data, &dest[pos], &data[rp], len - rp, dt_nr);
+	if (answ_len <= 0) {
+		fprintf(stderr, "cannot req data\n");
+		return 0;
+	}
+	pos += answ_len;
+
+	return ci_ccmgr_cc_sac_send(dvbnode, sessionnr, data_cnf_tag, dest, pos);
+}
+
+//bool eDVBCIContentControlManagerSession::ci_ccmgr_cc_sac_send(tSlot *tslot, const uint8_t *tag, uint8_t *data, unsigned int pos)
+int ci_ccmgr_cc_sac_send(struct dvbdev* dvbnode, int sessionnr, uint8_t *tag, uint8_t *data, unsigned int pos)
+{
+//	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(tslot->private_data);
+	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
+
+	printf("%s -> %s (%02X%02X%02X) \n", FILENAME, __FUNCTION__, tag[0], tag[1], tag[2]);
+
+	if (pos < 8)
+		return 0;
+
+	pos += add_padding(&data[pos], pos - 8, 16);
+	BYTE16(&data[6], pos - 8);      /* len in header */
+
+	pos += sac_gen_auth(&data[pos], data, pos, cc_data->sak);
+#if y_debug
+	printf("Data for encrypt > ");
+	for (unsigned int i = 0; i < pos; i++)
+		printf("%02x ", data[i]);
+	printf("\n");
+#endif
+	sac_crypt(&data[8], &data[8], pos - 8, cc_data->sek, AES_ENCRYPT);
+
+//	sendAPDU(tag, data, pos);
+	sendAPDU(dvbnode, sessionnr, tag, data, pos);
+
+	return 1;
+}
+
+//void eDVBCIContentControlManagerSession::ci_ccmgr_cc_sac_sync_req(tSlot *tslot, const uint8_t *data, unsigned int len)
+void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len)
+{
+	uint8_t sync_cnf_tag[3] = { 0x9f, 0x90, 0x10 };
+	uint8_t dest[64];
+	unsigned int serial;
+	int pos = 0;
+
+	printf("%s -> %s\n", FILENAME, __FUNCTION__);
+#if y_debug
+	hexdump(data, len);
+#endif
+	serial = UINT32(data, 4);
+
+	pos += BYTE32(&dest[pos], serial);
+	pos += BYTE32(&dest[pos], 0x01000000);
+
+	/* status OK */
+	dest[pos++] = 0;
+
+	ci_ccmgr_cc_sac_send(dvbnode, sessionnr, sync_cnf_tag, dest, pos);
+//	tslot->ccmgr_ready = true;
+	dvbnode->caslot->ccmgr_ready = 1;
 }
 
 #endif
