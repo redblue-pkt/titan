@@ -116,7 +116,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "Wed Jul  6 21:54:48 CEST 2016"
+#define DRIVER "Wed Jul  6 22:41:04 CEST 2016"
 #define OVERSION "1.76"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
