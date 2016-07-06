@@ -853,7 +853,7 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 					{0x00, 0x24, 0x00, 0x41},	// date-time
 					{0x00, 0x8c, 0x10, 0x01}	// content control
 //					{0x00, 0x10, 0x00, 0x41}	// auth.
-				}
+				};
 			}
 			else
 			{			
@@ -866,7 +866,7 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 					{0x00, 0x24, 0x00, 0x41},
 					{0x00, 0x40, 0x00, 0x41}
 					//{0x00, 0x10, 0x00, 0x41} //auth.
-				}
+				};
 			};
 			sendAPDU(dvbnode, sessionnr, tag, data, sizeof(data));
 			casession[sessionnr].state = CASESSIONFINAL;
