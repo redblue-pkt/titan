@@ -116,7 +116,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "Wed Jul  6 23:22:20 CEST 2016"
+#define DRIVER "Thu Jul  7 10:43:10 CEST 2016"
 #define OVERSION "1.76"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
@@ -535,11 +535,13 @@ struct caslot
 	char* name;
 	int fastrun;
 	char* caids;
+#ifdef SH4
 	unsigned char lastKey[32];
 	uint8_t lastParity;
 	unsigned char scrambled;
 	void *private_data;
 	int ccmgr_ready;
+#endif
 };
 
 struct hdd
@@ -2039,11 +2041,14 @@ unsigned char cec_deviceType;
 
 #endif
 
+#ifdef SH4
 struct aes_xcbc_mac_ctx {
 	uint8_t K[3][16];
 	uint8_t IV[16];
 	AES_KEY key;
 	int buflen;
 };
+
+#endif
 
 #endif

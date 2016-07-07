@@ -709,7 +709,19 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 					dvbnode->caslot->caids = ostrcat(dvbnode->caslot->caids, "#", 1, 0);
 					dvbnode->caslot->caids = ostrcat(dvbnode->caslot->caids, oitoa((((unsigned char*)data)[i] << 8) | ((unsigned char*)data)[i + 1]), 1, 1);
 					dvbnode->caslot->caids = ostrcat(dvbnode->caslot->caids, "#", 1, 0);
+printf("dvbnode->caslot->caids %d: %s\n", i, dvbnode->caslot->caids);
 				}
+//				if ((caids[0] & 0xFF00) == 0x1800)
+				if ((dvbnode->caslot->caids[0] & 0xFF00) == 0x1800)
+				{
+					printf("%04x", 0x186A);
+					dvbnode->caslot->caids = ostrcat(dvbnode->caslot->caids, "#", 1, 0);
+					dvbnode->caslot->caids = ostrcat(dvbnode->caslot->caids, oitoa(0x186A), 1, 1);
+					dvbnode->caslot->caids = ostrcat(dvbnode->caslot->caids, "#", 1, 0);
+printf("dvbnode->caslot->caids last: %s\n", dvbnode->caslot->caids);
+
+				}
+				
 				break;
 			case 0x33: //ca pmt reply
 				if(len > 3)
@@ -732,34 +744,6 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 		}
 	}
 	return 0;
-}
-
-//cc functions
-
-#include "cacc.h"
-
-int caccaction(struct dvbdev* dvbnode, int sessionnr)
-{
-
-	struct casession* casession = NULL;
-
-	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
-	casession = dvbnode->caslot->casession;
-
-	debug(620, "caccaction nr %d, stat %d", sessionnr, casession[sessionnr].state);
-	
-	switch (casession[sessionnr].state)
-	{
-		case CASESSIONSTART:
-		{
-			casession[sessionnr].state = CASESSIONFINAL;
-			return 0;
-		}
-		case CASESSIONFINAL:
-			printf("stateFinal und action! kann doch garnicht sein ;)\n");
-		default:
-			return 0;
-	}
 }
 
 int caccAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
@@ -1148,11 +1132,6 @@ int getfreecasession(struct dvbdev* dvbnode, int type, int value)
 				dvbnode->caslot->casession[i].inuse = value;
 				return i;
 			}
-			if(type == 5 && dvbnode->caslot->casession[i].ccmanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //ccmanager
-			{
-				dvbnode->caslot->casession[i].inuse = value;
-				return i;
-			}
         	}
 	}
 	return -1;
@@ -1209,8 +1188,6 @@ int casessionpoll(struct dvbdev* dvbnode)
 					casession[sessionnr].action = cadatetimeaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].mmimanager == 1)
 					casession[sessionnr].action = cammiaction(dvbnode, sessionnr);
-				else if(casession[sessionnr].ccmanager == 1)
-					casession[sessionnr].action = caccaction(dvbnode, sessionnr);
 				return 1;
 			}
 		}
@@ -1452,10 +1429,6 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 			else if(casession->mmimanager == 1)
 			{
 				if(cammiAPDU(dvbnode, sessionnr, tag, pkt, alen))
-					casession->action = 1;
-			else if(casession->ccmanager == 1)
-			{
-				if(caccAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
 
