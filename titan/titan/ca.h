@@ -1083,28 +1083,6 @@ int caappAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 	return 0;
 }
 
-//cc functions
-int caccAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
-{
-	{
-	printf("SESSION(%d)/CC %02x %02x %02x: ", session_nb, tag[0], tag[1], tag[2]);
-	printf("\n");
-
-	if ((tag[0] == 0x9f) && (tag[1] == 0x90)) {
-		switch (tag[2]) {
-		case 0x01: ci_ccmgr_cc_open_cnf(dvbnode->devnr); break;
-		case 0x03: ci_ccmgr_cc_data_req(dvbnode->devnr, (const uint8_t*)data, len); break;
-		case 0x05: ci_ccmgr_cc_sync_req(); break;
-		case 0x07: ci_ccmgr_cc_sac_data_req(dvbnode->devnr, (const uint8_t*)data, len); break;
-		case 0x09: ci_ccmgr_cc_sac_sync_req(dvbnode->devnr, (const uint8_t*)data, len); break;
-		default:
-			fprintf(stderr, "unknown apdu tag %02x\n", tag[2]);
-			break;
-		}
-	}
-	return 0;
-}
-
 //session functions
 
 //inuse: 1 is only that the session is in use
