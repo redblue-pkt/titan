@@ -711,7 +711,15 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 					dvbnode->caslot->caids = ostrcat(dvbnode->caslot->caids, "#", 1, 0);
 printf("dvbnode->caslot->caids %d: %s\n", i, dvbnode->caslot->caids);
 				}
-//				if ((caids[0] & 0xFF00) == 0x1800)
+/*
+neutrino work for hdpluss
+if (!caids.empty())
+	if ((caids[0] & 0xFF00) == 0x1800)
+	{
+		caids.push_back(0x186A);
+		printf("%04x", 0x186A);
+	}
+
 				if ((dvbnode->caslot->caids[0] & 0xFF00) == 0x1800)
 				{
 					printf("%04x", 0x186A);
@@ -721,7 +729,7 @@ printf("dvbnode->caslot->caids %d: %s\n", i, dvbnode->caslot->caids);
 printf("dvbnode->caslot->caids last: %s\n", dvbnode->caslot->caids);
 
 				}
-				
+*/				
 				break;
 			case 0x33: //ca pmt reply
 				if(len > 3)
