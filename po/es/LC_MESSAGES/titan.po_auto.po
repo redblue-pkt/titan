@@ -36,7 +36,7 @@ msgstr ""
 msgid " New: "
 msgstr ""
 
-#: titan.c:283
+#: titan.c:282
 msgid "!!! This is a DEMO Version !!!"
 msgstr "!!!Esta es una versión de demostración !!!"
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr "( --Voto-- )"
 
-#: skin_default_skin.xml.h:606
+#: skin_default_skin.xml.h:607
 msgid "(Stop)"
 msgstr ""
 
@@ -143,11 +143,11 @@ msgstr "--Autor--"
 msgid "->"
 msgstr ""
 
-#: pip.h:640 skin_default_skin.xml.h:616
+#: pip.h:640 skin_default_skin.xml.h:617
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1254
+#: titan.c:1253
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -155,7 +155,7 @@ msgstr ""
 "/mnt No se puede escribir!\n"
 "Quieres tratar de repararlo?"
 
-#: titan.c:1237
+#: titan.c:1236
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -376,7 +376,7 @@ msgstr ""
 
 #: tpk_showname.h:1
 msgid "3 Wins"
-msgstr ""
+msgstr "3 conexiones"
 
 #: stopifnotused.c:100
 msgid "30"
@@ -622,6 +622,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
+"Una bonita selección de imágenes para el Media Center reproductor de vídeo y "
+"de la cubierta preliminar!"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid ""
@@ -1167,7 +1169,7 @@ msgstr "Busqueda Automatica"
 msgid "Automatic start last subtitle"
 msgstr "Auto iniciar ultimo SubTitulo"
 
-#: titan.c:1315
+#: titan.c:1305
 msgid "Automatic stop in 10 seconds."
 msgstr "Parada automatica en 10 segundos"
 
@@ -1177,7 +1179,7 @@ msgstr ""
 
 #: tpk_description.h:14
 msgid "Automatisch Timer setzen"
-msgstr ""
+msgstr "automaticamente ajustar el temporizador"
 
 #: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4
 msgid "Automount"
@@ -1713,7 +1715,7 @@ msgstr ""
 
 #: tpk_description.h:41
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Cable: Lista de canales por cable estándar Alemania"
 
 #: tpk_description.h:44
 msgid "Cable: sofatester Kabel BW"
@@ -1740,6 +1742,8 @@ msgstr ""
 #: tpk_description.h:45
 msgid "Callmonitor Plugin"
 msgstr ""
+"monitor de llamada para la visualización de las llamadas entrantes y "
+"salientes"
 
 #: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:84
 #: skins_panel_skin.xml.h:6
@@ -1874,7 +1878,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
-#: mc_videoplayer.h:900 play.h:1650
+#: mc_videoplayer.h:900 play.h:1505
 msgid "Can't start playback !"
 msgstr "La Reproduccion no se pudo iniciar"
 
@@ -1967,7 +1971,7 @@ msgstr "Canal EPG"
 msgid "Channel Edit"
 msgstr "Editar Lista de Canales"
 
-#: hbbtv.h:743
+#: hbbtv.h:742
 msgid "Channel HBBTV"
 msgstr "HBBTV Canales"
 
@@ -2105,7 +2109,7 @@ msgstr "Seleccione el dispositivo USB de la siguiente lista"
 msgid "Choose your Filemanager Option from the following list"
 msgstr "seleccione la opcion administrador de archivos de la lista de abajo"
 
-#: hbbtv.h:759
+#: hbbtv.h:758
 msgid "Choose your HBBTV Favorite from the following list"
 msgstr "Elige su HBBTV Favorito de la lista siguiente"
 
@@ -2122,11 +2126,11 @@ msgid "Choose your Playlist Mode from the following list"
 msgstr ""
 "seleccione el modo de lista de reproduccion que desee de la lista siguiente"
 
-#: play.h:714
+#: play.h:711
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Seleccione la entrada deseada para el menú rojo de la lista de abajo"
 
-#: titan.c:1013
+#: titan.c:1012
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Elija su modelo de control remoto de la siguiente lista"
 
@@ -2396,15 +2400,15 @@ msgstr ""
 msgid "Create Default Favorites"
 msgstr "Crear favoritos predeterminados"
 
-#: play.h:657
+#: play.h:654
 msgid "Create Favorites sub folder"
 msgstr ""
 
-#: play.h:658
+#: play.h:655
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1454
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97
 msgid "Create Folder"
 msgstr "Crear Carpeta"
 
@@ -2496,7 +2500,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "Defecto"
 
-#: play.h:1574 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1429 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:138 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
@@ -2681,11 +2685,11 @@ msgstr "General"
 
 #: tpk_description.h:50 tpk_showname.h:21
 msgid "Default Font"
-msgstr ""
+msgstr "Fuente por Defecto"
 
 #: tpk_description.h:52
 msgid "Default Skin"
-msgstr ""
+msgstr "Standard Skin"
 
 #: tpk_description.h:51
 msgid "Default mod by maenne79"
@@ -2693,7 +2697,7 @@ msgstr ""
 
 #: tpk_description.h:54
 msgid "Default skin without MiniTV"
-msgstr ""
+msgstr "Standard Skin sin MiniTV"
 
 #: tpk_description.h:55
 msgid "Default skin without MiniTV mod by maenne79"
@@ -2725,7 +2729,7 @@ msgstr "Eliminar todo"
 msgid "Delete EPG after read"
 msgstr "Eliminar archivo EPG despues de la carga"
 
-#: play.h:648 play.h:649
+#: play.h:647
 msgid "Delete File"
 msgstr "Eliminar Archivo"
 
@@ -2938,7 +2942,7 @@ msgstr "Descargar archivo completo a Stream camino en fondo"
 msgid "Download finished!"
 msgstr "Descargar terminado!"
 
-#: keyactions.h:84 play.h:692 settings_bluebutton.h:21
+#: keyactions.h:84 play.h:689 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:161
 msgid "Downloads"
@@ -3017,7 +3021,7 @@ msgstr "Configurar Tuner"
 msgid "EJECT"
 msgstr "Expulsar"
 
-#: adjust.h:71 httpdfunc.h:3905 play.h:1574 skin_default_skin.xml.h:177
+#: adjust.h:71 httpdfunc.h:3905 play.h:1429 skin_default_skin.xml.h:177
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3038,7 +3042,7 @@ msgstr "Expulsar"
 msgid "EPG"
 msgstr ""
 
-#: play.h:1293 play.h:1299 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1272 play.h:1278 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "EPG Info"
 msgstr ""
 
@@ -3180,7 +3184,7 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:666 infobar.h:790
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:665 infobar.h:789
 #: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:59
 #: letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
@@ -3208,62 +3212,61 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
-#: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450
-#: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
-#: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
-#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:6
-#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
-#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
-#: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
-#: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
-#: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
-#: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
-#: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82
-#: skin_default_skin.xml.h:192 skins_autotimer_skin.xml.h:6
-#: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
-#: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
-#: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
-#: skins_lcdsamsung_skin.xml.h:7 skins_mboxinfo_skin.xml.h:1
-#: skins_mc_skin.xml.h:19 skins_multiimage_skin.xml.h:5
-#: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
-#: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
-#: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
-#: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
-#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
-#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
-#: system_backup_restore.h:95 system_update.h:238 system_update.h:244
-#: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
-#: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:283 titan.c:347 titan.c:356 titan.c:1073
-#: titan.c:1082 titan.c:1210 titan.c:1231 titan.c:1237 titan.c:1248
-#: titan.c:1254 tithek.c:103 tithek_global.h:96 tithek.h:726 tithek.h:1284
-#: tithek.h:1345 tithek.h:1614 tithek.h:1636 tithek.h:1653 tithek.h:1885
-#: tithek.h:2045 tithek.h:2330 tithek.h:2365 tithek.h:2381 tithek.h:2393
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
-#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60 vidag.h:66 vidbull.h:30
-#: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:85
-#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31
-#: vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94 vidto.h:128 vidto.h:174
-#: vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65 vidzi.h:71 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 xvidstage.h:29 xvidstage.h:58 xvidstage.h:64 xvidstage.h:70
-#: youtube.h:220 zapback.c:79 zdf.h:29
+#: player.h:111 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
+#: play.h:1294 plugins_autotimer_skin.xml.h:6
+#: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
+#: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
+#: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:6
+#: plugins_lcdsamsung_skin.xml.h:7 plugins_mboxinfo_skin.xml.h:1
+#: plugins_mc_skin.xml.h:19 plugins_multiimage_skin.xml.h:5
+#: plugins_optimize_skin.xml.h:1 plugins_panel_skin.xml.h:10
+#: plugins_rgui_skin.xml.h:1 plugins_stopifnotused_skin.xml.h:3
+#: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:1
+#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
+#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
+#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
+#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
+#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
+#: readerconfig.h:498 record.h:90 record.h:387 record.h:1160 record.h:1689
+#: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
+#: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
+#: security.h:685 security.h:1944 service.h:743 service.h:989 shared.h:29
+#: shared.h:65 shared.h:82 skin_default_skin.xml.h:192
+#: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
+#: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
+#: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:6
+#: skins_lcdpearl1_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:7
+#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:19
+#: skins_multiimage_skin.xml.h:5 skins_optimize_skin.xml.h:1
+#: skins_panel_skin.xml.h:10 skins_rgui_skin.xml.h:1
+#: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
+#: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
+#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51 solarmovie.h:63
+#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
+#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
+#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:238
+#: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
+#: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
+#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
+#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103 tithek_global.h:96
+#: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
+#: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
+#: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
+#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
+#: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
+#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
+#: vidzi.h:71 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:29 xvidstage.h:58
+#: xvidstage.h:64 xvidstage.h:70 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Salir"
 
@@ -3309,7 +3312,7 @@ msgstr ""
 
 #: tpk_description.h:62
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "Softcam camd3.902"
 
 #: panel_settings_autostart.h:285 settings_autostart.h:429
 msgid "Emu Control"
@@ -3317,7 +3320,7 @@ msgstr "Softcam control"
 
 #: tpk_description.h:63
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "Softcam MGCamd V1.38"
 
 #: skin_default_skin.xml.h:173
 msgid "Emu Running Color"
@@ -3333,11 +3336,11 @@ msgstr "Softcam no encontrado"
 
 #: tpk_description.h:64
 msgid "Emu scam 3.60 for your box"
-msgstr ""
+msgstr "Softcam SCam V3.60"
 
 #: tpk_description.h:65
 msgid "Emu vizcam 1.04 for your box"
-msgstr ""
+msgstr "Softcam vizcam V1.04"
 
 #: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
 msgid "Enable"
@@ -3429,27 +3432,27 @@ msgstr "ERROR: El archivo transpondedor esta vacia!"
 msgid "Error: Transponder Source file not found"
 msgstr "ERROR: Ninguna fuente transpondedor archivo encontrado!"
 
-#: titan.c:879
+#: titan.c:878
 msgid "Error: no audio device found !!"
 msgstr "ERROR: No hay dispositivo de audio Encontrado!"
 
-#: titan.c:867
+#: titan.c:866
 msgid "Error: no demux device found !!"
 msgstr "RROR: No demux Dispositivo Encontrado!"
 
-#: titan.c:861
+#: titan.c:860
 msgid "Error: no frontend device found !!"
 msgstr "ERROR: No Frontend Dispositivo Encontrado!"
 
-#: titan.c:873
+#: titan.c:872
 msgid "Error: no video device found !!"
 msgstr "ERROR: No hay Dispositivo de Video Encontrado!"
 
-#: titan.c:855
+#: titan.c:854
 msgid "Error: open rc device !!"
 msgstr "ERROR: No Control remoto Encontrado!"
 
-#: titan.c:902
+#: titan.c:901
 msgid "Error: skin not found !!"
 msgstr "ERROR: No Skin Encontrado!"
 
@@ -3701,13 +3704,9 @@ msgstr ""
 msgid "Feed"
 msgstr "Por Favor intruducir direccion de fuente"
 
-#: play.h:1366
-msgid "File Exist, Really Rename and Overwrite exist File ?"
-msgstr ""
-
 #: tpk_description.h:68 tpk_showname.h:32
 msgid "File Manager"
-msgstr ""
+msgstr "Administrador de archivos"
 
 #: adjust.h:416
 msgid "File Operation"
@@ -3770,7 +3769,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1073
+#: titan.c:1072
 msgid "First Wizzard"
 msgstr "Wizzard Primera Instalacion"
 
@@ -3803,51 +3802,51 @@ msgstr "Actualizacion de software (Local)"
 
 #: tpk_description.h:70
 msgid "Font 'Action Man Italic' "
-msgstr ""
+msgstr "Fuente 'Accion Man Italic'"
 
 #: tpk_description.h:71
 msgid "Font 'Alpha Romanie G98'"
-msgstr ""
+msgstr "Fuente 'Alpha Romanie G98'"
 
 #: tpk_description.h:72
 msgid "Font 'Croissant' "
-msgstr ""
+msgstr "Fuentet 'Croissant'"
 
 #: tpk_description.h:73
 msgid "Font 'Digiface Regular' "
-msgstr ""
+msgstr "Fuente 'Digiface Regular'"
 
 #: tpk_description.h:74
 msgid "Font 'Goodtime'"
-msgstr ""
+msgstr "Fuente 'Goodtime'"
 
 #: tpk_description.h:75
 msgid "Font 'I Hate Comic Sans'"
-msgstr ""
+msgstr "Fuente 'I Hate Comic Sans'"
 
 #: tpk_description.h:76
 msgid "Font 'Lydian Bolt Italic BT' "
-msgstr ""
+msgstr "Fuente 'Lydian Bolt Italic BT' "
 
 #: tpk_description.h:77
 msgid "Font 'Mighty Zeo Caps'"
-msgstr ""
+msgstr "Fuente 'Mighty Zeo Caps'"
 
 #: tpk_description.h:78
 msgid "Font 'Monoglyceride DemiBold'"
-msgstr ""
+msgstr "Fuentet 'Monoglyceride DemiBold'"
 
 #: tpk_description.h:79
 msgid "Font 'New Gothic BT'"
-msgstr ""
+msgstr "Fuente 'New Gothic BT'"
 
 #: tpk_description.h:80
 msgid "Font 'Paddington Bold'"
-msgstr ""
+msgstr "Fuente 'Paddington Bold'"
 
 #: tpk_description.h:81
 msgid "Font 'Plover Bold'"
-msgstr ""
+msgstr "Fuente 'Plover Bold'"
 
 #: skin_default_skin.xml.h:212
 msgid "Font Color"
@@ -3941,7 +3940,7 @@ msgstr ""
 "Se ha encontrado nuevo Stick\n"
 "Puede configurar en el menu de disco duro"
 
-#: titan.c:356
+#: titan.c:355
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
@@ -3949,7 +3948,7 @@ msgstr ""
 "Encontrado un activo en descarga\n"
 "Realmente apagarlo?"
 
-#: titan.c:347
+#: titan.c:346
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
@@ -3975,7 +3974,7 @@ msgstr "Tasa Maxima"
 msgid "Free Space"
 msgstr "Espacion Libre disponible"
 
-#: titan.c:1248
+#: titan.c:1247
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3983,7 +3982,7 @@ msgstr ""
 "Espacio insuficiente en /mnt!\n"
 "estao causar problemas graves!"
 
-#: titan.c:1231
+#: titan.c:1230
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4241,7 +4240,7 @@ msgstr "Intervalo de guardar"
 msgid "H"
 msgstr ""
 
-#: hbbtv.h:759
+#: hbbtv.h:758
 msgid "HBBTV Favoriten"
 msgstr "HBBTV Favoritos"
 
@@ -4793,7 +4792,7 @@ msgstr ""
 
 #: tpk_description.h:90
 msgid "IP-Kamera zB. Firma INSTAR"
-msgstr ""
+msgstr "IP Camera eg. INSTAR"
 
 #: tpk_showname.h:42
 msgid "Ice Age Scrap likes UFS910"
@@ -4837,11 +4836,11 @@ msgstr ""
 
 #: tpk_description.h:89
 msgid "ImdB Info Plugin"
-msgstr ""
+msgstr "IMDb Info"
 
 #: tpk_description.h:88
 msgid "ImdBapi Info Plugin"
-msgstr ""
+msgstr "IMDbapi Info"
 
 #: global.h:6681
 msgid "Import mode"
@@ -4852,7 +4851,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Conoce AC3 Audio Volumen reduciendo Stereo-audio en%"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1082 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1081 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5050,7 +5049,7 @@ msgstr ""
 msgid "Internet Browser"
 msgstr ""
 
-#: infobar.h:790
+#: infobar.h:789
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin no instalado!"
 
@@ -5098,7 +5097,7 @@ msgstr ""
 msgid "Jump"
 msgstr "Saltar"
 
-#: play.h:1207
+#: play.h:1194
 msgid "Jump To (min)"
 msgstr "Saltar a Posicion (min)"
 
@@ -5544,7 +5543,7 @@ msgstr "MC Video Player orden de ajustes"
 msgid "MC VideoPlayer View Settings"
 msgstr "MC VideoPlayer Ver Configuracion"
 
-#: skin_default_skin.xml.h:360
+#: skin_default_skin.xml.h:359
 msgid "MENUPROTECT"
 msgstr "Proteccion Menu"
 
@@ -5632,13 +5631,13 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1866
+#: play.h:1721
 msgid "Marker autoseek is started"
 msgstr ""
 "autoseek marcador se pone en marchaBúsqueda automática de marcadores\n"
 "comenzado comenzo marcador Autoseek"
 
-#: play.h:1877
+#: play.h:1732
 msgid "Marker autoseek is stopped"
 msgstr "Autoseek Marcador detuvo"
 
@@ -5748,7 +5747,7 @@ msgstr ""
 "MediaDB ruta no encontrada!\n"
 " Configurar en MediaDB Ajustes"
 
-#: keyactions.h:24 play.h:653
+#: keyactions.h:24 play.h:650
 msgid "MediaDB Scan Info"
 msgstr "MediaDB informacion exploracion"
 
@@ -5837,7 +5836,7 @@ msgstr "Memoria Informacion"
 msgid "Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:359
+#: skin_default_skin.xml.h:360
 msgid "Menu Protect"
 msgstr "Protejer Menu"
 
@@ -5878,7 +5877,7 @@ msgstr "Lista de Menus"
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:666 infobar.h:790 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
+#: infobar.h:665 infobar.h:789 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
 #: kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:101
 #: letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
@@ -5903,7 +5902,7 @@ msgstr "Lista de Menus"
 #: nowvideo.h:43 nowvideo.h:100 nowvideo.h:106 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
 #: played.h:90 played.h:102 played.h:114 played.h:171 player.h:111 play.h:614
-#: play.h:1314 play.h:1351 play.h:1650 play.h:1866 play.h:1877 possetup.h:98
+#: play.h:1293 play.h:1505 play.h:1721 play.h:1732 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -5924,8 +5923,8 @@ msgstr "Lista de Menus"
 #: system_backup_restore.h:82 system_update.h:238 system_update.h:244
 #: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:283 titan.c:347 titan.c:356 titan.c:1210
-#: titan.c:1231 titan.c:1237 titan.c:1248 titan.c:1254 tithek.c:103
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1209
+#: titan.c:1230 titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103
 #: tithek_global.h:96 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614
 #: tithek.h:1636 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
 #: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6212,7 +6211,7 @@ msgstr "Prueba de Conexion"
 
 #: tpk_description.h:113
 msgid "Network browser extension for better Win7 compatibility"
-msgstr ""
+msgstr "extensión del navegador de red para una mejor compatibilidad Win7"
 
 #: adjust.h:295 skin_default_skin.xml.h:386 tpk_showname.h:85
 msgid "Networkbrowser"
@@ -6232,7 +6231,7 @@ msgstr "Mostrar escaneado CIFS/NFS-Compartidos"
 
 #: tpk_description.h:114
 msgid "Networkfile libsmbclient 3.0.28b"
-msgstr ""
+msgstr "SMB (Windows) libsmbclient 3.0.28b"
 
 #: tpk_description.h:115 tpk_showname.h:86
 msgid "Neutrino Keymap"
@@ -6464,7 +6463,7 @@ msgstr "Ö"
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:666 infobar.h:790 info.h:27 keyactions.h:205 kravencfg.c:66
+#: infobar.h:665 infobar.h:789 info.h:27 keyactions.h:205 kravencfg.c:66
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
@@ -6494,9 +6493,8 @@ msgstr "Ö"
 #: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
-#: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450 play.h:1650
-#: play.h:1866 play.h:1877 plugins_dlna_skin.xml.h:7
+#: player.h:111 play.h:497 play.h:614 play.h:1272 play.h:1278 play.h:1293
+#: play.h:1294 play.h:1505 play.h:1721 play.h:1732 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -6527,9 +6525,9 @@ msgstr "Ö"
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:238
 #: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:283
-#: titan.c:347 titan.c:356 titan.c:1073 titan.c:1082 titan.c:1210 titan.c:1231
-#: titan.c:1237 titan.c:1248 titan.c:1254 tithek.c:103 tithek_global.h:96
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
+#: titan.c:346 titan.c:355 titan.c:1072 titan.c:1081 titan.c:1209 titan.c:1230
+#: titan.c:1236 titan.c:1247 titan.c:1253 tithek.c:103 tithek_global.h:96
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
 #: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
 #: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6821,7 +6819,7 @@ msgstr ""
 
 #: tpk_description.h:121
 msgid "Partitions Tool fuer HDD > 2TB"
-msgstr ""
+msgstr "Herramienta de Partición de disco duro> 2 TB"
 
 #: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:411
 #: skins_networkbrowser_skin.xml.h:17
@@ -6873,7 +6871,7 @@ msgstr ""
 
 #: tpk_description.h:122
 msgid "Permanente Uhrzeit am Bildschirm"
-msgstr ""
+msgstr "Muestra permanente la hora en la pantalla"
 
 #: facebook.h:478
 msgid "Photos postet"
@@ -7290,7 +7288,7 @@ msgstr "Apagado Temporizado"
 
 #: tpk_description.h:123
 msgid "Power off if box not used"
-msgstr ""
+msgstr "Apagar el receptor si no se utiliza."
 
 #: webif_boxcontrol.h:1
 msgid "PowerControl"
@@ -7588,17 +7586,9 @@ msgstr "Activar Reader"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1450
-msgid "Really Create Folder in ?"
-msgstr ""
-
-#: play.h:1315
+#: play.h:1294
 msgid "Really Delete ?"
 msgstr "Realmente Eliminar?"
-
-#: play.h:1352
-msgid "Really Rename ?"
-msgstr ""
 
 #: filemanager.h:178
 msgid "Really copy this file/dir?"
@@ -7642,7 +7632,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Receptor se reiniciara ahora !!!"
 
-#: titan.c:1210
+#: titan.c:1209
 msgid "Receiver successful unlocked"
 msgstr "Su receptor se abrio con Exito."
 
@@ -7710,7 +7700,7 @@ msgstr "Grabacion Programada"
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1314 play.h:1351
+#: play.h:1293
 msgid "Record in progress"
 msgstr "grabacion activa"
 
@@ -7790,11 +7780,11 @@ msgstr "Marca la posicion de la pelicula"
 msgid "Remote"
 msgstr ""
 
-#: titan.c:1006
+#: titan.c:1005
 msgid "RemoteControl Long Version"
 msgstr "Remote Control Version larga"
 
-#: titan.c:1005
+#: titan.c:1004
 msgid "RemoteControl Old Version"
 msgstr "Control remoto de edad Version"
 
@@ -7854,7 +7844,7 @@ msgstr ""
 msgid "Removeing"
 msgstr "Borrar"
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1356
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92
 #: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
 msgid "Rename"
 msgstr "Renombrar"
@@ -8087,7 +8077,7 @@ msgstr "SCART 4:3/16:9"
 msgid "SEARCH"
 msgstr "Buscar"
 
-#: dvdplay.h:29 play.h:1574 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1429 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Seleccionar"
 
@@ -8111,7 +8101,7 @@ msgstr ""
 msgid "SNR:"
 msgstr "SNR: "
 
-#: play.h:1574
+#: play.h:1429
 msgid "SORT"
 msgstr "especie"
 
@@ -8185,7 +8175,7 @@ msgid "STICK "
 msgstr "Stick"
 
 #: plugins_dlna_skin.xml.h:13 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:607
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:606
 #: skins_dlna_skin.xml.h:13 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -8572,99 +8562,99 @@ msgstr "El guión no tiene salida o se inició en el fondo"
 msgid "Search"
 msgstr "Buscar"
 
-#: play.h:681
+#: play.h:678
 msgid "Search on ARD (local)"
 msgstr "Buscar este objeto en ARD (local)"
 
-#: play.h:688
+#: play.h:685
 msgid "Search on All (local)"
 msgstr ""
 
-#: play.h:672
+#: play.h:669
 msgid "Search on Beeg (local)"
 msgstr "Buscar este objeto en Beeg (local)"
 
-#: play.h:674
+#: play.h:671
 msgid "Search on FilmOn (local)"
 msgstr ""
 
-#: play.h:684
+#: play.h:681
 msgid "Search on Giga (local)"
 msgstr "Buscar este objeto en Giga (local)"
 
-#: play.h:687
+#: play.h:684
 msgid "Search on InternetRadio (local)"
 msgstr "Buscar este objeto en Internet-Radio (local)"
 
-#: play.h:686
+#: play.h:683
 msgid "Search on InternetTv (local)"
 msgstr "Buscar este objeto en Internet-Tv (local)"
 
-#: play.h:664
+#: play.h:661
 msgid "Search on KinoX"
 msgstr "Buscar este título en KinoX"
 
-#: play.h:665
+#: play.h:662
 msgid "Search on KinoX (local)"
 msgstr "Buscar este título en KINOX (local)"
 
-#: play.h:671
+#: play.h:668
 msgid "Search on Mle-HD (local)"
 msgstr "Buscar este título en Mle-HD (local)"
 
-#: play.h:666
+#: play.h:663
 msgid "Search on Movie4k"
 msgstr "Buscar este título en Movie4k"
 
-#: play.h:667
+#: play.h:664
 msgid "Search on Movie4k (local)"
 msgstr "Buscar este título en Movie4k (local)"
 
-#: play.h:679
+#: play.h:676
 msgid "Search on MyVideo"
 msgstr "Buscar este objeto en Mis Videos"
 
-#: play.h:680
+#: play.h:677
 msgid "Search on MyVideo (local)"
 msgstr "Buscar este objeto en Mis Videos (local)"
 
-#: play.h:676
+#: play.h:673
 msgid "Search on Netzkino (local)"
 msgstr "Buscar este objeto en Netzkino (local)"
 
-#: play.h:685
+#: play.h:682
 msgid "Search on NowTv (local)"
 msgstr ""
 
-#: play.h:670
+#: play.h:667
 msgid "Search on Solarmovies (local)"
 msgstr "Buscar este título en solo peliculas(local)"
 
-#: play.h:668
+#: play.h:665
 msgid "Search on Solarmovies (movie)"
 msgstr "Buscar en Solo peliculas (peliculas)"
 
-#: play.h:669
+#: play.h:666
 msgid "Search on Solarmovies (serie)"
 msgstr "Buscar en Solo peliculas (series)"
 
-#: play.h:683
+#: play.h:680
 msgid "Search on TecTime (local)"
 msgstr "Buscar este objeto en TecTime (local)"
 
-#: play.h:673
+#: play.h:670
 msgid "Search on Xvideos (local)"
 msgstr "Buscar este objeto en Xvideos (local)"
 
-#: play.h:677
+#: play.h:674
 msgid "Search on Youtube"
 msgstr "Buscar este objeto en Youtube"
 
-#: play.h:678
+#: play.h:675
 msgid "Search on Youtube (local)"
 msgstr "Buscar este objeto en Youtube (local)"
 
-#: play.h:682
+#: play.h:679
 msgid "Search on ZDF (local)"
 msgstr "Buscar este objeto eni ZDF (local)"
 
@@ -8697,7 +8687,7 @@ msgstr "Seleccion de trazado"
 msgid "Select Unicable Manufacturer"
 msgstr "Seleccionar fabricante Unicable"
 
-#: titan.c:1013
+#: titan.c:1012
 msgid "Select Your Remote Control"
 msgstr "Seleccin de control remoto"
 
@@ -8841,7 +8831,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 20.11.2015"
 msgstr ""
 
-#: titan.c:1073
+#: titan.c:1072
 msgid "Settings OK ?"
 msgstr "Guardar la configuracion?"
 
@@ -8869,7 +8859,7 @@ msgstr ""
 msgid "Sharename can't be empty!"
 msgstr "ERROR: nombre de recurso compartido debe ingresar!"
 
-#: infobar.h:666 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
+#: infobar.h:665 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
 #: mc_videoplayer.h:333 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -9507,7 +9497,7 @@ msgid "Svn Changelog Full"
 msgstr ""
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:617 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:616 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Swap (RAM extensión)"
 
@@ -9719,7 +9709,7 @@ msgstr "TXT PID: "
 
 #: tpk_description.h:155
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
-msgstr ""
+msgstr "Bloqueo de teclas Plugin - desbloquearlo con rojo/rojo/verde"
 
 #: plugins_wm2014_skin.xml.h:13 skins_wm2014_skin.xml.h:13
 msgid "Team"
@@ -10334,7 +10324,7 @@ msgstr "Transpondedor Lista"
 
 #: tpk_description.h:171
 msgid "Treiber fuer Pearl LCD V4.0"
-msgstr ""
+msgstr "Driver para Pearl LCD V4.0"
 
 #: tpk_description.h:172
 msgid "Treiber fuer Pearl LCD V5.0"
@@ -10342,7 +10332,7 @@ msgstr ""
 
 #: tpk_description.h:173
 msgid "Treiber fuer Samsung LCD"
-msgstr ""
+msgstr "Driver para Samsung LCD"
 
 #: security.h:681 security.h:2120
 msgid "Trial period ends in"
@@ -10522,7 +10512,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1313
+#: titan.c:1303
 msgid "Unknown Error."
 msgstr "Error desconocido"
 
@@ -10914,7 +10904,7 @@ msgstr ""
 
 #: tpk_description.h:178
 msgid "Webbrowser Plugin"
-msgstr ""
+msgstr "Internet Browser"
 
 #: global.h:6284
 msgid "Wed"
@@ -10926,7 +10916,7 @@ msgstr "Miercoles"
 
 #: tpk_description.h:179
 msgid "Werbezapper"
-msgstr ""
+msgstr "Publicidadzapper"
 
 #: epgsearch.h:324
 msgid "Western"
@@ -11360,7 +11350,7 @@ msgstr "Azul"
 
 #: tpk_section.h:1
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 #: panel_settings_autostart.h:44
 msgid "bootstop"
@@ -11380,7 +11370,7 @@ msgstr "direccion de difusion"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Navegador de Red"
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
@@ -11511,7 +11501,7 @@ msgstr "Crear una copia de seguridad del sistema"
 
 #: tpk_description.h:49
 msgid "cut record files"
-msgstr ""
+msgstr "ts cutter - cortar grabaciones locales"
 
 #: skin_default_keyskin.xml.h:25
 msgid "d"
@@ -11668,7 +11658,7 @@ msgstr "No Modulo"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: weather.h:137
 msgid "en-GB"
@@ -11724,7 +11714,7 @@ msgstr ""
 
 #: tpk_description.h:67
 msgid "extended config Panel"
-msgstr ""
+msgstr "Menú Configuración avanzada"
 
 #: webif_help.h:27
 msgid "extensionsmenu"
@@ -11776,11 +11766,11 @@ msgstr "Primera ranura"
 
 #: tpk_description.h:69
 msgid "first titan game"
-msgstr ""
+msgstr "El primer juego Titan"
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Fuentes"
 
 #: tithek.h:947
 msgid "found"
@@ -11821,7 +11811,7 @@ msgstr ""
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Juegos"
 
 #: skin_default_skin.xml.h:222
 msgid "gateway"
@@ -11832,6 +11822,8 @@ msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
+"gbox 806 con autoident para hd tarjeta + y Skyde Incluyendo todos los "
+"archivos de configuración necesarios"
 
 #: webif_help.h:28
 msgid "gmultiepg"
@@ -11944,7 +11936,7 @@ msgstr ""
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: moduleconfig.h:356
 msgid "initializing"
@@ -12009,7 +12001,7 @@ msgstr ""
 
 #: tpk_section.h:7
 msgid "keymaps"
-msgstr ""
+msgstr "Keymaps"
 
 #: skin_default_keyskin.xml.h:42
 msgid "l"
@@ -12025,11 +12017,11 @@ msgstr "Lenguaje"
 
 #: tpk_section.h:9
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "LCD Pearl Skins"
 
 #: tpk_section.h:10
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "LCD Samsung Skins"
 
 #: sudoku.c:167
 msgid "left"
@@ -12225,11 +12217,11 @@ msgstr "Nunca elimine archivo Timeshift"
 
 #: tpk_description.h:116
 msgid "newcs including all necessary config files."
-msgstr ""
+msgstr "NewCS + configs"
 
 #: tpk_description.h:118
 msgid "news Plugin"
-msgstr ""
+msgstr "Plugins nuevos"
 
 #: webif_help.h:59
 msgid "newsletter"
@@ -12466,7 +12458,7 @@ msgstr ""
 
 #: tpk_description.h:120
 msgid "optimize Plugin"
-msgstr ""
+msgstr "Optimizacion de Lista de Canales"
 
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "options"
@@ -12522,7 +12514,7 @@ msgstr "Imagen 5"
 
 #: tpk_section.h:12
 msgid "picons"
-msgstr ""
+msgstr "Senderlogos"
 
 #: skinadjust.h:70 tmc.h:542
 msgid "picture"
@@ -12554,7 +12546,7 @@ msgstr "PL2303 Modulo"
 
 #: tpk_section.h:13
 msgid "player"
-msgstr ""
+msgstr "Multimedia Player"
 
 #: webif_help.h:65
 msgid "playinfobar"
@@ -12826,7 +12818,7 @@ msgstr ""
 
 #: tpk_description.h:140
 msgid "scriptexec Plugin"
-msgstr ""
+msgstr "scripts personalizados (/mnt/scripts) run"
 
 #: possetup.h:37
 msgid "search east"
@@ -12897,7 +12889,7 @@ msgstr "establecer como inicio canal"
 
 #: tpk_section.h:15
 msgid "settings"
-msgstr ""
+msgstr "ajustes"
 
 #: webif_help.h:83
 msgid "settingsmenu"
@@ -12980,7 +12972,7 @@ msgstr ""
 
 #: tpk_section.h:16
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: webif_help.h:87
 msgid "skinselect"
@@ -13103,7 +13095,7 @@ msgstr "Paso Oeste"
 
 #: tpk_description.h:152
 msgid "stock Plugin"
-msgstr ""
+msgstr "Cuota Mercado"
 
 #: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1568 record.h:1577 record.h:1588
 #: record.h:1617 record.h:1626 record.h:1660 skin_default_skin.xml.h:605
@@ -13313,7 +13305,7 @@ msgstr ""
 
 #: tpk_section.h:17
 msgid "tools"
-msgstr ""
+msgstr "Herramientas"
 
 #: adjust.h:177
 msgid "top to bottom"
@@ -13422,7 +13414,7 @@ msgstr "Lista actualizada"
 
 #: tpk_description.h:175
 msgid "usbreset Plugin"
-msgstr ""
+msgstr "USB reinicio extension"
 
 #: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "use last Directory"
@@ -13558,7 +13550,7 @@ msgstr "esperando"
 
 #: tpk_description.h:177
 msgid "weather Plugin"
-msgstr ""
+msgstr "Weather extension"
 
 #: webif_help.h:120
 msgid "webdir"
@@ -13586,7 +13578,7 @@ msgstr ""
 
 #: tpk_section.h:18
 msgid "wireless"
-msgstr ""
+msgstr "WLAN"
 
 #: tpk_description.h:188
 msgid "wireless 8192cu.ko model"
