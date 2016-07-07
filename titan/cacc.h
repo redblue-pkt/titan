@@ -1832,6 +1832,35 @@ static int data_req_loop(struct cc_ctrl_data *cc_data, unsigned char *dest, cons
 	return pos;
 }
 
+//void eDVBCIContentControlManagerSession::ci_ccmgr_cc_sac_sync_req(tSlot *tslot, const uint8_t *data, unsigned int len)
+void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len)
+{
+	debug(620, "start");
+
+	uint8_t sync_cnf_tag[3] = { 0x9f, 0x90, 0x10 };
+	uint8_t dest[64];
+	unsigned int serial;
+	int pos = 0;
+
+//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
+
+#if y_debug
+	hexdump(data, len);
+#endif
+	serial = UINT32(data, 4);
+
+	pos += BYTE32(&dest[pos], serial);
+	pos += BYTE32(&dest[pos], 0x01000000);
+
+	/* status OK */
+	dest[pos++] = 0;
+
+	ci_ccmgr_cc_sac_send(dvbnode, sessionnr, sync_cnf_tag, dest, pos);
+//	tslot->ccmgr_ready = true;
+	dvbnode->caslot->ccmgr_ready = 1;
+	debug(620, "end");
+}
+
 int checkcerts(void)
 {
 	debug(620, "start");
@@ -2082,33 +2111,6 @@ int ci_ccmgr_cc_sac_send(struct dvbdev* dvbnode, int sessionnr, uint8_t *tag, ui
 	return 1;
 }
 
-//void eDVBCIContentControlManagerSession::ci_ccmgr_cc_sac_sync_req(tSlot *tslot, const uint8_t *data, unsigned int len)
-void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len)
-{
-	debug(620, "start");
 
-	uint8_t sync_cnf_tag[3] = { 0x9f, 0x90, 0x10 };
-	uint8_t dest[64];
-	unsigned int serial;
-	int pos = 0;
-
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-
-#if y_debug
-	hexdump(data, len);
-#endif
-	serial = UINT32(data, 4);
-
-	pos += BYTE32(&dest[pos], serial);
-	pos += BYTE32(&dest[pos], 0x01000000);
-
-	/* status OK */
-	dest[pos++] = 0;
-
-	ci_ccmgr_cc_sac_send(dvbnode, sessionnr, sync_cnf_tag, dest, pos);
-//	tslot->ccmgr_ready = true;
-	dvbnode->caslot->ccmgr_ready = 1;
-	debug(620, "end");
-}
 
 #endif
