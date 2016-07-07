@@ -1083,6 +1083,28 @@ int caappAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 	return 0;
 }
 
+//cc functions
+int caccAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
+{
+	{
+	printf("SESSION(%d)/CC %02x %02x %02x: ", session_nb, tag[0], tag[1], tag[2]);
+	printf("\n");
+
+	if ((tag[0] == 0x9f) && (tag[1] == 0x90)) {
+		switch (tag[2]) {
+		case 0x01: ci_ccmgr_cc_open_cnf(dvbnode->devnr); break;
+		case 0x03: ci_ccmgr_cc_data_req(dvbnode->devnr, (const uint8_t*)data, len); break;
+		case 0x05: ci_ccmgr_cc_sync_req(); break;
+		case 0x07: ci_ccmgr_cc_sac_data_req(dvbnode->devnr, (const uint8_t*)data, len); break;
+		case 0x09: ci_ccmgr_cc_sac_sync_req(dvbnode->devnr, (const uint8_t*)data, len); break;
+		default:
+			fprintf(stderr, "unknown apdu tag %02x\n", tag[2]);
+			break;
+		}
+	}
+	return 0;
+}
+
 //session functions
 
 //inuse: 1 is only that the session is in use
@@ -1116,6 +1138,11 @@ int getfreecasession(struct dvbdev* dvbnode, int type, int value)
 				return i;
 			}
 			if(type == 4 && dvbnode->caslot->casession[i].mmimanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //mmimemanager
+			{
+				dvbnode->caslot->casession[i].inuse = value;
+				return i;
+			}
+			if(type == 5 && dvbnode->caslot->casession[i].ccmanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //ccmanager
 			{
 				dvbnode->caslot->casession[i].inuse = value;
 				return i;
@@ -1176,6 +1203,8 @@ int casessionpoll(struct dvbdev* dvbnode)
 					casession[sessionnr].action = cadatetimeaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].mmimanager == 1)
 					casession[sessionnr].action = cammiaction(dvbnode, sessionnr);
+				else if(casession[sessionnr].ccmanager == 1)
+					casession[sessionnr].action = caccaction(dvbnode, sessionnr);
 				return 1;
 			}
 		}
@@ -1417,6 +1446,10 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 			else if(casession->mmimanager == 1)
 			{
 				if(cammiAPDU(dvbnode, sessionnr, tag, pkt, alen))
+					casession->action = 1;
+			else if(casession->ccmanager == 1)
+			{
+				if(caccAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
 
@@ -3926,6 +3959,30 @@ void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *da
 	ci_ccmgr_cc_sac_send(dvbnode, sessionnr, sync_cnf_tag, dest, pos);
 //	tslot->ccmgr_ready = true;
 	dvbnode->caslot->ccmgr_ready = 1;
+}
+
+int caccaction(struct dvbdev* dvbnode, int sessionnr)
+{
+
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "caccaction nr %d, stat %d", sessionnr, casession[sessionnr].state);
+	
+	switch (casession[sessionnr].state)
+	{
+		case CASESSIONSTART:
+		{
+			casession[sessionnr].state = CASESSIONFINAL;
+			return 0;
+		}
+		case CASESSIONFINAL:
+			printf("stateFinal und action! kann doch garnicht sein ;)\n");
+		default:
+			return 0;
+	}
 }
 
 #endif
