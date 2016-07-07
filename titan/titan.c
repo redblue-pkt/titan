@@ -247,9 +247,9 @@ struct channelslot *channelslot = NULL;
 #include "encoder.h"
 #endif
 #include "cacc.h"
+#include "descr.h"
 
-
-#define TIMECODE "1467880990"
+#define TIMECODE "1467888657"
 
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
