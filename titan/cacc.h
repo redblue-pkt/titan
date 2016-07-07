@@ -1,6 +1,29 @@
 #ifndef CACC_H
 #define CACC_H
 
+#ifdef MIPSEL
+
+enum ca_descr_data_type {
+	CA_DATA_IV,
+	CA_DATA_KEY,
+};
+
+enum ca_descr_parity {
+	CA_PARITY_EVEN,
+	CA_PARITY_ODD,
+};
+
+struct ca_descr_data {
+	unsigned int index;
+	enum ca_descr_parity parity;
+	enum ca_descr_data_type data_type;
+	unsigned int length;
+	unsigned char *data;
+};
+#define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
+
+#endif
+
 unsigned char dh_p[256] = {       /* prime */
 	0xd6, 0x27, 0x14, 0x7a, 0x7c, 0x0c, 0x26, 0x63, 0x9d, 0x82, 0xeb, 0x1f, 0x4a, 0x18, 0xff, 0x6c,
 	0x34, 0xad, 0xea, 0xa6, 0xc0, 0x23, 0xe6, 0x65, 0xfc, 0x8e, 0x32, 0xc3, 0x33, 0xf4, 0x91, 0xa7,
