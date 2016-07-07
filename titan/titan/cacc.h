@@ -2119,6 +2119,10 @@ void resendKey(struct dvbdev* dvbnode, int sessionnr)
 //	if (!dvbnode->caslot->sidblacklisted && (dvbnode->caslot->inuse || dvbnode->caslot->slot == cCA::GetInstance()->GetLiveSlot()))
 //		descrambler_set_key((int)dvbnode->caslot->source, dvbnode->caslot->lastParity, dvbnode->caslot->lastKey);
 
+struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
+
+descrambler_set_key1(dvbnode, 256, cc_data->slot->lastParity, cc_data->slot->lastKey);
+
 }
 
 #endif
