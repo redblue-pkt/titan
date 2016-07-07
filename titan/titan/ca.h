@@ -746,6 +746,29 @@ printf("dvbnode->caslot->caids last: %s\n", dvbnode->caslot->caids);
 	return 0;
 }
 
+//cc functions
+int caccaction(struct dvbdev* dvbnode, int sessionnr) 
+{ 
+	struct casession* casession = NULL; 
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0; 
+		casession = dvbnode->caslot->casession; 
+
+	debug(620, "caccaction nr %d, stat %d", sessionnr, casession[sessionnr].state); 
+
+	switch (casession[sessionnr].state) 
+	{ 
+		case CASESSIONSTART: 
+		{ 
+			casession[sessionnr].state = CASESSIONFINAL; 
+			return 0; 
+		} 
+		case CASESSIONFINAL: 
+			printf("stateFinal und action! kann doch garnicht sein ;)\n"); 
+		default: 
+			return 0; 
+	} 
+} 
+
 int caccAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
 	debug(620, "cc manager caccAPDU start");
@@ -1132,6 +1155,11 @@ int getfreecasession(struct dvbdev* dvbnode, int type, int value)
 				dvbnode->caslot->casession[i].inuse = value;
 				return i;
 			}
+			if(type == 5 && dvbnode->caslot->casession[i].ccmanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //ccmanager
+			{
+				dvbnode->caslot->casession[i].inuse = value;
+				return i;
+			}
         	}
 	}
 	return -1;
@@ -1182,6 +1210,8 @@ int casessionpoll(struct dvbdev* dvbnode)
 					casession[sessionnr].action = caresaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].appmanager == 1)
 					casession[sessionnr].action = caappaction(dvbnode, sessionnr);
+				else if(casession[sessionnr].ccmanager == 1)
+					casession[sessionnr].action = caccaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].camanager == 1)
 					casession[sessionnr].action = cacaaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].datetimemanager == 1)
