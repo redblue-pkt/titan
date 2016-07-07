@@ -384,6 +384,7 @@ void screenrestoredefaultchoice();
 //ca.h
 int getfreecasession(struct dvbdev* dvbnode, int type, int value);
 void caappmenu(struct dvbdev* dvbnode);
+void sendAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len);
 
 //cam.h
 int getcaservicebyslot(struct caslot* caslot, int flag);

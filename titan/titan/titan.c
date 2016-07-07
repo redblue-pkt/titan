@@ -99,6 +99,8 @@ struct channelslot *channelslot = NULL;
 #include "cidev.h"
 #include "cadev.h"
 #include "scdev.h"
+#include "cacc.h"
+#include "descr.h"
 #include "ca.h"
 #include "dvrdev.h"
 #include "cam.h"
@@ -246,8 +248,6 @@ struct channelslot *channelslot = NULL;
 #include "cec.h"
 #include "encoder.h"
 #endif
-#include "cacc.h"
-#include "descr.h"
 
 #define TIMECODE "1467888657"
 

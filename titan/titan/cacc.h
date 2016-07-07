@@ -137,6 +137,29 @@ static const char *descrambler_filename = "/dev/dvb/adapter0/ca3";
 static int desc_fd = -1;
 static int desc_user_count = 0;
 
+void descrambler_close(void)
+{
+	debug(620, "start");
+
+	close(desc_fd);
+	desc_fd = -1;
+	debug(620, "end");
+
+}
+
+void hexdump(const uint8_t *data, unsigned int len)
+{
+	debug(620, "start");
+
+	while (len--)
+		printf("%02x ", *data++);
+	printf("\n");
+	debug(620, "end");
+
+}
+
+
+
 /* Byte 0 to 15 are AES Key, Byte 16 to 31 are IV */
 
 int descrambler_set_key(int index, int parity, unsigned char *data)
@@ -215,16 +238,6 @@ int descrambler_open(void)
 	debug(620, "end");
 
 	return 1;
-}
-
-void descrambler_close(void)
-{
-	debug(620, "start");
-
-	close(desc_fd);
-	desc_fd = -1;
-	debug(620, "end");
-
 }
 
 int descrambler_init(void)
@@ -503,17 +516,6 @@ int dh_dhph_signature(uint8_t *out, uint8_t *nonce, uint8_t *dhph, RSA *r)
 	debug(620, "end");
 
 	return 0;
-}
-
-void hexdump(const uint8_t *data, unsigned int len)
-{
-	debug(620, "start");
-
-	while (len--)
-		printf("%02x ", *data++);
-	printf("\n");
-	debug(620, "end");
-
 }
 
 int get_random(unsigned char *dest, int len)
