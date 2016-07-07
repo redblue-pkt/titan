@@ -650,7 +650,7 @@ static void get_authdata_filename(char *dest, size_t len, unsigned int slot)
 {
 	debug(620, "start");
 
-	snprintf(dest, len, "/etc/ci_auth_slot_%u.bin", slot);
+	snprintf(dest, len, "/mnt/ci_auth_slot_%u.bin", slot);
 	CheckFile(dest);
 	debug(620, "end");
 
