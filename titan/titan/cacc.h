@@ -2111,6 +2111,14 @@ int ci_ccmgr_cc_sac_send(struct dvbdev* dvbnode, int sessionnr, uint8_t *tag, ui
 	return 1;
 }
 
+//void eDVBCIContentControlManagerSession::resendKey(tSlot *tslot)
+void resendKey(struct dvbdev* dvbnode, int sessionnr)
+{
+//	if (!tslot->SidBlackListed && (tslot->inUse || tslot->slot == cCA::GetInstance()->GetLiveSlot()))
+//		descrambler_set_key((int)tslot->source, tslot->lastParity, tslot->lastKey);
+//	if (!dvbnode->caslot->sidblacklisted && (dvbnode->caslot->inuse || dvbnode->caslot->slot == cCA::GetInstance()->GetLiveSlot()))
+//		descrambler_set_key((int)dvbnode->caslot->source, dvbnode->caslot->lastParity, dvbnode->caslot->lastKey);
 
+}
 
 #endif
