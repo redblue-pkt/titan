@@ -116,7 +116,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "Thu Jul  7 10:43:10 CEST 2016"
+#define DRIVER "Thu Jul  7 12:31:05 CEST 2016"
 #define OVERSION "1.76"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
@@ -541,6 +541,11 @@ struct caslot
 	unsigned char scrambled;
 	void *private_data;
 	int ccmgr_ready;
+//	void resendKey(connid);
+	int inuse;
+	int sidblacklisted;
+	uint8_t source;
+	unsigned int slot;
 };
 
 struct hdd
