@@ -2143,7 +2143,7 @@ int sendnullpmt(struct dvbdev* dvbnode, int sessionnr)
 {
 	debug(620, "start");
 
-	if ((dvbnode->fd > 0) //&& (dvbnode->caslot->ccmgr_ready)// && (slot->hasCAManager))
+	if ((dvbnode->fd > 0) && (dvbnode->caslot->ccmgr_ready))// && (slot->hasCAManager))
 	{
 		sendSPDU(dvbnode, 0x90, NULL, 0, sessionnr, NullPMT, 50);
 	}
