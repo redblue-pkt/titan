@@ -1,10 +1,10 @@
 #ifndef CACC_H
 #define CACC_H
 
-#define yy_debug    1
+#define xx_debug    0
+#define yy_debug    0
 
-//static const char *descrambler_filename = "/dev/dvb/adapter0/ca3";
-static const char *descrambler_filename = "/dev/dvb/adapter0/ca0";
+static const char *descrambler_filename = "/dev/dvb/adapter0/ca3";
 static int desc_fd = -1;
 static int desc_user_count = 0;
 
@@ -56,6 +56,8 @@ int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned ch
 	}
 
 	struct ca_descr_data d;
+
+	index |= 0x100;
 
 #ifdef MIPSEL
 
