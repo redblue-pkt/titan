@@ -116,7 +116,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "Thu Jul  7 12:50:57 CEST 2016"
+#define DRIVER "Fri Jul  8 08:43:47 CEST 2016"
 #define OVERSION "1.76"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
@@ -204,6 +204,10 @@
 #define ROOT_CERT     "/etc/pem/root.pem"
 #define CUSTOMER_CERT "/etc/pem/customer.pem"
 #define DEVICE_CERT   "/etc/pem/device.pem"
+#define MAX_ELEMENTS    33
+#ifdef MIPSEL
+#define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
+#endif
 
 //Start Function Entry Point
 #define STARTFUNC
@@ -2048,11 +2052,82 @@ unsigned char cec_deviceType;
 #endif
 
 // cacc
+#ifdef MIPSEL
+
+enum ca_descr_data_type {
+	CA_DATA_IV,
+	CA_DATA_KEY,
+};
+
+enum ca_descr_parity {
+	CA_PARITY_EVEN,
+	CA_PARITY_ODD,
+};
+
+struct ca_descr_data {
+	unsigned int index;
+	enum ca_descr_parity parity;
+	enum ca_descr_data_type data_type;
+	unsigned int length;
+	unsigned char *data;
+};
+
+#endif
+
 struct aes_xcbc_mac_ctx {
 	uint8_t K[3][16];
 	uint8_t IV[16];
 	AES_KEY key;
 	int buflen;
+};
+
+uint32_t datatype_sizes[MAX_ELEMENTS] = {
+	0, 50, 0, 0, 0, 8, 8, 0,
+	0, 0, 0, 0, 32, 256, 256, 0,
+	0, 256, 256, 32, 8, 8, 32, 32,
+	0, 8, 2, 32, 1, 32, 1, 0,
+	32
+};
+
+struct element {
+	uint8_t *data;
+	uint32_t size;
+	/* buffer valid */
+//	bool valid;
+	int valid;
+};
+
+struct cc_ctrl_data {
+	/* parent */
+	//struct ci_session *session;
+//	tSlot *slot;
+	struct caslot* slot;
+//	struct caservice* slot;
+
+	/* ci+ credentials */
+	struct element elements[MAX_ELEMENTS];
+
+	/* DHSK */
+	uint8_t dhsk[256];
+
+	/* KS_host */
+	uint8_t ks_host[32];
+
+	/* derived keys */
+	uint8_t sek[16];
+	uint8_t sak[16];
+
+	/* AKH checks - module performs 5 tries to get correct AKH */
+	unsigned int akh_index;
+
+	/* authentication data */
+	uint8_t dh_exp[256];
+
+	/* certificates */
+	struct cert_ctx *cert_ctx;
+
+	/* private key of device-cert */
+	RSA *rsa_device_key;
 };
 
 #endif

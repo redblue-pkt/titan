@@ -1,28 +1,9 @@
 #ifndef CACC_H
 #define CACC_H
 
-#ifdef MIPSEL
-
-enum ca_descr_data_type {
-	CA_DATA_IV,
-	CA_DATA_KEY,
-};
-
-enum ca_descr_parity {
-	CA_PARITY_EVEN,
-	CA_PARITY_ODD,
-};
-
-struct ca_descr_data {
-	unsigned int index;
-	enum ca_descr_parity parity;
-	enum ca_descr_data_type data_type;
-	unsigned int length;
-	unsigned char *data;
-};
-#define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
-
-#endif
+static const char *descrambler_filename = "/dev/dvb/adapter0/ca3";
+static int desc_fd = -1;
+static int desc_user_count = 0;
 
 unsigned char dh_p[256] = {       /* prime */
 	0xd6, 0x27, 0x14, 0x7a, 0x7c, 0x0c, 0x26, 0x63, 0x9d, 0x82, 0xeb, 0x1f, 0x4a, 0x18, 0xff, 0x6c,
@@ -62,6 +43,37 @@ unsigned char dh_g[256] = {       /* generator */
 	0x69, 0x87, 0x83, 0x06, 0x51, 0x80, 0xa5, 0x6e, 0xa6, 0x19, 0x7d, 0x3b, 0xef, 0xfb, 0xe0, 0x4a
 };
 
+int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned char *data)
+{
+	
+	if(node == NULL)
+	{
+		err("NULL detect");
+		return 1;
+	}
+	
+	struct ca_descr_data d;
+
+	d.index = index;
+	d.parity = parity;
+	d.data_type = CA_DATA_KEY;
+	d.length = 16;
+	d.data = data;
+
+	if (ioctl(node->fd, CA_SET_DESCR_DATA, &d))
+		printf("CA_SET_DESCR_DATA\n");
+
+	d.index = index;
+	d.parity = parity;
+	d.data_type = CA_DATA_IV;
+	d.length = 16;
+	d.data = data + 16;
+
+	if (ioctl(node->fd, CA_SET_DESCR_DATA, &d))
+		printf("CA_SET_DESCR_DATA\n");
+
+	return 0;
+}
 
 int aes_xcbc_mac_init(struct aes_xcbc_mac_ctx *ctx, const uint8_t *key)
 {
@@ -131,12 +143,6 @@ int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out)
 	return 0;
 }
 
-static const char * FILENAME = "[descrambler]";
-
-static const char *descrambler_filename = "/dev/dvb/adapter0/ca3";
-static int desc_fd = -1;
-static int desc_user_count = 0;
-
 void descrambler_close(void)
 {
 	debug(620, "start");
@@ -167,8 +173,6 @@ int descrambler_set_key(int index, int parity, unsigned char *data)
 	debug(620, "start");
 
 	struct ca_descr_data d;
-
-	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 
 	index |= 0x100;
 
@@ -247,7 +251,6 @@ int descrambler_init(void)
 	desc_user_count++;
 	debug(620, "desc_user_count: %d", desc_user_count);
 
-//	printf("%s -> %s %d\n", FILENAME, __FUNCTION__, desc_user_count);
 	debug(620, "end");
 
 	return 0;
@@ -691,8 +694,6 @@ static int get_authdata(uint8_t *host_id, uint8_t *dhsk, uint8_t *akh, unsigned 
 	uint8_t chunk[8 + 256 + 32];
 	unsigned int i;
 
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-
 	/* 5 pairs of data only */
 	if (index > 5)
 	{
@@ -738,8 +739,6 @@ static int get_authdata(uint8_t *host_id, uint8_t *dhsk, uint8_t *akh, unsigned 
 static int write_authdata(unsigned int slot, const uint8_t *host_id, const uint8_t *dhsk, const uint8_t *akh)
 {
 	debug(620, "start");
-
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 
 	char filename[FILENAME_MAX];
 	int fd;
@@ -988,61 +987,6 @@ static X509 *certificate_import_and_check(struct cert_ctx *ctx, const uint8_t *d
 
 	return cert;
 }
-
-
-/* CI+ credentials */
-
-#define MAX_ELEMENTS    33
-
-uint32_t datatype_sizes[MAX_ELEMENTS] = {
-	0, 50, 0, 0, 0, 8, 8, 0,
-	0, 0, 0, 0, 32, 256, 256, 0,
-	0, 256, 256, 32, 8, 8, 32, 32,
-	0, 8, 2, 32, 1, 32, 1, 0,
-	32
-};
-
-struct element {
-	uint8_t *data;
-	uint32_t size;
-	/* buffer valid */
-//	bool valid;
-	int valid;
-};
-
-struct cc_ctrl_data {
-	/* parent */
-	//struct ci_session *session;
-//	tSlot *slot;
-	struct caslot* slot;
-//	struct caservice* slot;
-
-	/* ci+ credentials */
-	struct element elements[MAX_ELEMENTS];
-
-	/* DHSK */
-	uint8_t dhsk[256];
-
-	/* KS_host */
-	uint8_t ks_host[32];
-
-	/* derived keys */
-	uint8_t sek[16];
-	uint8_t sak[16];
-
-	/* AKH checks - module performs 5 tries to get correct AKH */
-	unsigned int akh_index;
-
-	/* authentication data */
-	uint8_t dh_exp[256];
-
-	/* certificates */
-	struct cert_ctx *cert_ctx;
-
-	/* private key of device-cert */
-	RSA *rsa_device_key;
-};
-
 
 static struct element *element_get(struct cc_ctrl_data *cc_data, unsigned int id)
 {
@@ -1386,9 +1330,7 @@ static int sac_crypt(uint8_t *dst, const uint8_t *src, unsigned int len, const u
 	AES_KEY key;
 
 	/* AES_ENCRYPT is '1' */
-#if x_debug
-	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-#endif
+
 	if (encrypt)
 		AES_set_encrypt_key(key_data, 128, &key);
 	else
@@ -1410,8 +1352,6 @@ static X509 *import_ci_certificates(struct cc_ctrl_data *cc_data, unsigned int i
 	uint8_t buf[2048];
 	unsigned int len;
 
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-
 	len = element_get_buf(cc_data, buf, id);
 
 	cert = certificate_import_and_check(ctx, buf, len);
@@ -1429,8 +1369,6 @@ static int check_ci_certificates(struct cc_ctrl_data *cc_data)
 	debug(620, "start");
 
 	struct cert_ctx *ctx = cc_data->cert_ctx;
-
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 
 	/* check if both certificates are available before we push and verify them */
 
@@ -1480,8 +1418,6 @@ static int generate_akh(struct cc_ctrl_data *cc_data)
 	uint8_t akh[32];
 	SHA256_CTX sha;
 
-//	printf("%s>%s\n", FILENAME, __FUNCTION__);
-
 	SHA256_Init(&sha);
 	SHA256_Update(&sha, element_get_ptr(cc_data, 6), element_get_buf(cc_data, NULL, 6));
 	SHA256_Update(&sha, element_get_ptr(cc_data, 5), element_get_buf(cc_data, NULL, 5));
@@ -1498,8 +1434,6 @@ static int generate_akh(struct cc_ctrl_data *cc_data)
 static int check_dh_challenge(struct cc_ctrl_data *cc_data)
 {
 	debug(620, "start");
-
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 
 	/* check if every element for calculation of DHSK & AKH is available */
 
@@ -1556,8 +1490,6 @@ static int restart_dh_challenge(struct cc_ctrl_data *cc_data)
 
 	uint8_t dhph[256], sign_A[256];
 	struct cert_ctx *ctx;
-
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 
 	if (!cc_data->cert_ctx) {
 		ctx = (struct cert_ctx*)calloc(1, sizeof(struct cert_ctx));
@@ -1626,8 +1558,6 @@ static int generate_uri_confirm(struct cc_ctrl_data *cc_data, const uint8_t *sak
 	uint8_t uck[32];
 	uint8_t uri_confirm[32];
 
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-
 	/* calculate UCK (uri confirmation key) */
 	SHA256_Init(&sha);
 	SHA256_Update(&sha, sak, 16);
@@ -1656,9 +1586,7 @@ static void check_new_key(struct cc_ctrl_data *cc_data)
 	uint8_t *kp;
 	uint8_t slot;
 	unsigned int i;
-#if x_debug
-	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-#endif
+
 	/* check for keyprecursor */
 	if (!element_valid(cc_data, 12))
 		return;
@@ -1693,10 +1621,8 @@ static void check_new_key(struct cc_ctrl_data *cc_data)
 static int data_get_handle_new(struct cc_ctrl_data *cc_data, unsigned int id)
 {
 	debug(620, "start");
+	debug(620, "ID = (%d)", id);
 
-#if x_debug
-	printf("%s -> %s ID = (%d)\n", FILENAME, __FUNCTION__, id);
-#endif
 	/* handle trigger events */
 
 	/* depends on new received items */
@@ -1748,10 +1674,8 @@ static int data_get_handle_new(struct cc_ctrl_data *cc_data, unsigned int id)
 static int data_req_handle_new(struct cc_ctrl_data *cc_data, unsigned int id)
 {
 	debug(620, "start");
+	debug(620, "ID = (%d)", id);
 
-#if x_debug
-	printf("%s -> %s ID = (%d)\n", FILENAME, __FUNCTION__, id);
-#endif
 	switch (id) {
 	case 22:                /* AKH */
 	{
@@ -1783,9 +1707,7 @@ static int data_get_loop(struct cc_ctrl_data *cc_data, const unsigned char *data
 	unsigned int i;
 	int dt_id, dt_len;
 	unsigned int pos = 0;
-#if x_debug
-	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-#endif
+
 	for (i = 0; i < items; i++) {
 		if (pos + 3 > datalen)
 			return 0;
@@ -1823,9 +1745,7 @@ static int data_req_loop(struct cc_ctrl_data *cc_data, unsigned char *dest, cons
 	unsigned int i;
 	int pos = 0;
 	int len;
-#if x_debug
-	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-#endif
+
 	if (items > datalen)
 		return -1;
 
@@ -1867,8 +1787,6 @@ void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *da
 	unsigned int serial;
 	int pos = 0;
 
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-
 #if y_debug
 	hexdump(data, len);
 #endif
@@ -1906,7 +1824,6 @@ void ci_ccmgr_cc_open_cnf(struct dvbdev* dvbnode, int sessionnr)
 
 	uint8_t tag[3] = { 0x9f, 0x90, 0x02 };
 	uint8_t bitmap = 0x01;
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 
 	ci_ccmgr_cc_data_initialize(dvbnode);
 
@@ -1924,7 +1841,6 @@ int ci_ccmgr_cc_data_initialize(struct dvbdev* dvbnode)
 	struct cc_ctrl_data *data;
 	uint8_t buf[32], host_id[8];
 
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 
 //	dvbnode->caslot->private_data = NULL;
 	if (dvbnode->caslot->private_data) {
@@ -1989,8 +1905,6 @@ int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, u
 	int answ_len;
 	unsigned int rp = 0;
 
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
-
 	if (len < 2)
 		return 0;
 
@@ -2030,7 +1944,6 @@ void ci_ccmgr_cc_sync_req(struct dvbdev* dvbnode, int sessionnr)
 	uint8_t tag[3] = { 0x9f, 0x90, 0x06 };
 	uint8_t sync_req_status = 0x00;    /* OK */
 
-	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 	sendAPDU(dvbnode, sessionnr, tag, &sync_req_status, 1);
 	debug(620, "end");
 }
@@ -2050,7 +1963,6 @@ int ci_ccmgr_cc_sac_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *dat
 	int answ_len;
 	int pos = 0;
 	unsigned int rp = 0;
-//	printf("%s -> %s\n", FILENAME, __FUNCTION__);
 
 	if (len < 10)
 		return 0;
@@ -2111,8 +2023,6 @@ int ci_ccmgr_cc_sac_send(struct dvbdev* dvbnode, int sessionnr, uint8_t *tag, ui
 	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
 	debug(620, "start");
 	debug(620, "(%02X%02X%02X)", tag[0], tag[1], tag[2]);
-
-//	printf("%s -> %s (%02X%02X%02X) \n", FILENAME, __FUNCTION__, tag[0], tag[1], tag[2]);
 
 	if (pos < 8)
 		return 0;
