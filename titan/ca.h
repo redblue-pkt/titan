@@ -1926,6 +1926,8 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 
 	if(node == NULL && dvbnode == NULL) return 1;
 
+	dvbnode->caslot->scrambled = 0;
+
 	if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
 	{
 		//check if crypt can onyl handle single service
@@ -2111,8 +2113,9 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 				caservice[caservicenr].cmdpos = cmdpos;
 			}
 			debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
-			if(dvbnode->caslot->private_data != NULL)
-				resendKey(dvbnode);
+			//if(dvbnode->caslot->private_data != NULL)
+			//	resendKey(dvbnode);
+			dvbnode->caslot->scrambled = 1;
 			return 0;
 		}
 		else
