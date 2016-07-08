@@ -200,7 +200,7 @@
 #define AUDIO_SOURCE_HDMI 2
 #endif
 
-//cipluss cert check
+//cacc cert check
 #define ROOT_CERT     "/etc/pem/root.pem"
 #define CUSTOMER_CERT "/etc/pem/customer.pem"
 #define DEVICE_CERT   "/etc/pem/device.pem"
@@ -535,7 +535,7 @@ struct caslot
 	char* name;
 	int fastrun;
 	char* caids;
-	// cipluss
+	// cacc
 	unsigned char lastKey[32];
 	uint8_t lastParity;
 	unsigned char scrambled;
@@ -1617,8 +1617,10 @@ struct status
 	//Volume
 	int volume;
 	int screenshot;
+	// cacc
 	int certchecked;
 	int certok;
+	int liveslot;
 } status;
 
 struct fb
@@ -2045,7 +2047,7 @@ unsigned char cec_deviceType;
 
 #endif
 
-// cipluss
+// cacc
 struct aes_xcbc_mac_ctx {
 	uint8_t K[3][16];
 	uint8_t IV[16];
