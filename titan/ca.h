@@ -2111,6 +2111,8 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 				caservice[caservicenr].cmdpos = cmdpos;
 			}
 			debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
+			if(dvbnode->caslot->private_data != NULL)
+				resendKey(dvbnode);
 			return 0;
 		}
 		else
