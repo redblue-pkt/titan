@@ -46,7 +46,9 @@ unsigned char dh_g[256] = {       /* generator */
 	0x69, 0x87, 0x83, 0x06, 0x51, 0x80, 0xa5, 0x6e, 0xa6, 0x19, 0x7d, 0x3b, 0xef, 0xfb, 0xe0, 0x4a
 };
 
-int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned char *data)
+/* Byte 0 to 15 are AES Key, Byte 16 to 31 are IV */
+
+int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned char *data)
 {
 	
 	if(node == NULL)
@@ -88,6 +90,9 @@ int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned ch
 		d.length = 32;
 		d.data = data;
 
+		printf("Index: %d Parity: (%d) -> ", d.index, d.parity);
+		hexdump(d.data, 32);
+		
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
 			printf("CA_SET_DESCR_DATA\n");
 	}
@@ -118,7 +123,7 @@ void resendKey(struct dvbdev* dvbnode)
 
 struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
 
-descrambler_set_key1(dvbnode, 0, cc_data->slot->lastParity, cc_data->slot->lastKey);
+descrambler_set_key(dvbnode, 0, cc_data->slot->lastParity, cc_data->slot->lastKey);
 
 }
 
@@ -209,46 +214,6 @@ void hexdump(const uint8_t *data, unsigned int len)
 	printf("\n");
 	debug(620, "end");
 
-}
-
-
-
-/* Byte 0 to 15 are AES Key, Byte 16 to 31 are IV */
-
-int descrambler_set_key(int index, int parity, unsigned char *data)
-{
-	debug(620, "start");
-
-	struct ca_descr_data d;
-
-	index |= 0x100;
-
-	if (descrambler_open())
-	{
-		d.index = index;
-// old
-//		d.parity = (ca_descr_parity)parity;
-// new start
-		enum ca_descr_parity* e = NULL;
-		d.parity = (e)[parity];
-// new end
-
-		d.data_type = CA_DATA_KEY;
-		d.length = 32;
-		d.data = data;
-
-		printf("Index: %d Parity: (%d) -> ", d.index, d.parity);
-		hexdump(d.data, 32);
-
-		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
-		{
-			//printf("CA_SET_DESCR_DATA\n");
-		}
-		descrambler_close();
-	}
-	debug(620, "end");
-
-	return 0;
 }
 
 /* we don't use this for ci cam ! */

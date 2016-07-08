@@ -1926,7 +1926,9 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 
 	if(node == NULL && dvbnode == NULL) return 1;
 
+	// cacc
 	dvbnode->caslot->scrambled = 0;
+	debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
 
 	if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
 	{
@@ -2113,9 +2115,10 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 				caservice[caservicenr].cmdpos = cmdpos;
 			}
 			debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
-			//if(dvbnode->caslot->private_data != NULL)
-			//	resendKey(dvbnode);
+			// cacc
 			dvbnode->caslot->scrambled = 1;
+			debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
+
 			return 0;
 		}
 		else

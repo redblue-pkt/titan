@@ -28,7 +28,6 @@ void descrambler_deinit(void);
 //bool descrambler_open(void);
 int descrambler_open(void);
 void descrambler_close(void);
-int descrambler_set_key(int index, int parity, unsigned char *data);
 /* we don't use this for ci cam ! */
 //int descrambler_set_pid(int index, int enable, int pid);
 int aes_xcbc_mac_init(struct aes_xcbc_mac_ctx *ctx, const uint8_t *key);
@@ -42,7 +41,7 @@ void ci_ccmgr_cc_sync_req(struct dvbdev* dvbnode, int sessionnr);
 int ci_ccmgr_cc_sac_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len);
 int ci_ccmgr_cc_sac_send(struct dvbdev* dvbnode, int sessionnr, uint8_t *tag, uint8_t *data, unsigned int pos);
 void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, unsigned int len);
-int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned char *data);
+int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned char *data);
 int sendnullpmt(struct dvbdev* dvbnode, int sessionnr);
 
 //bcm.h
