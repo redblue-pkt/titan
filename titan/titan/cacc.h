@@ -1,6 +1,8 @@
 #ifndef CACC_H
 #define CACC_H
 
+#define yy_debug    1
+
 static const char *descrambler_filename = "/dev/dvb/adapter0/ca3";
 static int desc_fd = -1;
 static int desc_user_count = 0;
