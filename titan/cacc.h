@@ -1653,7 +1653,8 @@ static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 
 //obi	if (cc_data->slot->scrambled)
 //obi		cc_data->slot->ccmgrSession->resendKey(cc_data->slot);
-if(dvbnode->caslot->scrambled == 1)
+//if(dvbnode->caslot->scrambled == 1)
+	printf("++++ resendKey\n");
 	resendKey(dvbnode);
 	
 	/* reset */
