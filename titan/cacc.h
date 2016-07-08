@@ -77,7 +77,7 @@ int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned ch
 		printf("CA_SET_DESCR_DATA\n");
 
 #else
-	/*if (descrambler_open())
+	if (descrambler_open())
 	{
 		d.index = index;
 		d.parity = parity;
@@ -88,16 +88,16 @@ int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned ch
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
 			printf("CA_SET_DESCR_DATA\n");
 	}
-	descrambler_close();*/
+	descrambler_close();
 	
-	d.index = index;
+	/*d.index = index;
 	d.parity = parity;
 	d.data_type = CA_DATA_KEY;
 	d.length = 32;
 	d.data = data;
 
 	if (ioctl(node->fd, CA_SET_DESCR_DATA, &d))
-		printf("CA_SET_DESCR_DATA\n");
+		printf("CA_SET_DESCR_DATA\n");*/
 
 #endif
 
