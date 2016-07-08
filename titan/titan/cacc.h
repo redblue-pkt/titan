@@ -75,7 +75,7 @@ int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned ch
 		printf("CA_SET_DESCR_DATA\n");
 
 #else
-	if (descrambler_open())
+	/*if (descrambler_open())
 	{
 		d.index = index;
 		d.parity = parity;
@@ -86,11 +86,35 @@ int descrambler_set_key1(struct dvbdev* node, int index, int parity, unsigned ch
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
 			printf("CA_SET_DESCR_DATA\n");
 	}
-	descrambler_close();
+	descrambler_close();*/
+	
+	d.index = index;
+	d.parity = parity;
+	d.data_type = CA_DATA_KEY;
+	d.length = 32;
+	d.data = data;
+
+	if (ioctl(node->fd, CA_SET_DESCR_DATA, &d))
+		printf("CA_SET_DESCR_DATA\n");
 
 #endif
 
 	return 0;
+}
+
+//void eDVBCIContentControlManagerSession::resendKey(tSlot *tslot)
+//void resendKey(struct dvbdev* dvbnode, int sessionnr)
+void resendKey(struct dvbdev* dvbnode)
+{
+//	if (!tslot->SidBlackListed && (tslot->inUse || tslot->slot == cCA::GetInstance()->GetLiveSlot()))
+//		descrambler_set_key((int)tslot->source, tslot->lastParity, tslot->lastKey);
+//	if (!dvbnode->caslot->sidblacklisted && (dvbnode->caslot->inuse || dvbnode->caslot->slot == cCA::GetInstance()->GetLiveSlot()))
+//		descrambler_set_key((int)dvbnode->caslot->source, dvbnode->caslot->lastParity, dvbnode->caslot->lastKey);
+
+struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
+
+descrambler_set_key1(dvbnode, 0, cc_data->slot->lastParity, cc_data->slot->lastKey);
+
 }
 
 int aes_xcbc_mac_init(struct aes_xcbc_mac_ctx *ctx, const uint8_t *key)
@@ -1594,7 +1618,7 @@ static int generate_uri_confirm(struct cc_ctrl_data *cc_data, const uint8_t *sak
 	return 0;
 }
 
-static void check_new_key(struct cc_ctrl_data *cc_data)
+static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 {
 	debug(620, "start");
 
@@ -1629,14 +1653,16 @@ static void check_new_key(struct cc_ctrl_data *cc_data)
 
 //obi	if (cc_data->slot->scrambled)
 //obi		cc_data->slot->ccmgrSession->resendKey(cc_data->slot);
-
+if(dvbnode->caslot->scrambled == 1)
+	resendKey(dvbnode);
+	
 	/* reset */
 	element_invalidate(cc_data, 12);
 	element_invalidate(cc_data, 28);
 	debug(620, "end");
 }
 
-static int data_get_handle_new(struct cc_ctrl_data *cc_data, unsigned int id)
+static int data_get_handle_new(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data, unsigned int id)
 {
 	debug(620, "start");
 	debug(620, "ID = (%d)", id);
@@ -1671,13 +1697,13 @@ static int data_get_handle_new(struct cc_ctrl_data *cc_data, unsigned int id)
 	/* SAC data messages */
 
 	case 12:                //keyprecursor
-		check_new_key(cc_data);
+		check_new_key(dvbnode, cc_data);
 		break;
 	case 25:                //uri_message
 		generate_uri_confirm(cc_data, cc_data->sak);
 		break;
 	case 28:                //key register
-		check_new_key(cc_data);
+		check_new_key(dvbnode, cc_data);
 		break;
 
 	default:
@@ -1718,7 +1744,7 @@ static int data_req_handle_new(struct cc_ctrl_data *cc_data, unsigned int id)
 	return 0;
 }
 
-static int data_get_loop(struct cc_ctrl_data *cc_data, const unsigned char *data, unsigned int datalen, unsigned int items)
+static int data_get_loop(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data, const unsigned char *data, unsigned int datalen, unsigned int items)
 {
 	debug(620, "start");
 
@@ -1746,7 +1772,7 @@ static int data_get_loop(struct cc_ctrl_data *cc_data, const unsigned char *data
 #endif
 		element_set(cc_data, dt_id, &data[pos], dt_len);
 
-		data_get_handle_new(cc_data, dt_id);
+		data_get_handle_new(dvbnode, cc_data, dt_id);
 
 		pos += dt_len;
 	}
@@ -1930,7 +1956,7 @@ int ci_ccmgr_cc_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *data, u
 
 	/* handle data loop */
 	dt_nr = data[rp++];
-	rp += data_get_loop(cc_data, &data[rp], len - rp, dt_nr);
+	rp += data_get_loop(dvbnode, cc_data, &data[rp], len - rp, dt_nr);
 
 	if (len < rp + 1)
 		return 0;
@@ -2008,7 +2034,7 @@ int ci_ccmgr_cc_sac_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *dat
 
 	/* handle data loop */
 	dt_nr = data[rp++];
-	rp += data_get_loop(cc_data, &data[rp], len - rp, dt_nr);
+	rp += data_get_loop(dvbnode, cc_data, &data[rp], len - rp, dt_nr);
 
 	if (len < rp + 1)
 		return 0;
@@ -2080,19 +2106,5 @@ int sendnullpmt(struct dvbdev* dvbnode, int sessionnr)
 	return 1;
 }
 
-//void eDVBCIContentControlManagerSession::resendKey(tSlot *tslot)
-//void resendKey(struct dvbdev* dvbnode, int sessionnr)
-void resendKey(struct dvbdev* dvbnode)
-{
-//	if (!tslot->SidBlackListed && (tslot->inUse || tslot->slot == cCA::GetInstance()->GetLiveSlot()))
-//		descrambler_set_key((int)tslot->source, tslot->lastParity, tslot->lastKey);
-//	if (!dvbnode->caslot->sidblacklisted && (dvbnode->caslot->inuse || dvbnode->caslot->slot == cCA::GetInstance()->GetLiveSlot()))
-//		descrambler_set_key((int)dvbnode->caslot->source, dvbnode->caslot->lastParity, dvbnode->caslot->lastKey);
-
-struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
-
-descrambler_set_key1(dvbnode, 0, cc_data->slot->lastParity, cc_data->slot->lastKey);
-
-}
 
 #endif
