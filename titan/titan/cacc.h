@@ -2063,7 +2063,8 @@ int sendnullpmt(struct dvbdev* dvbnode, int sessionnr)
 }
 
 //void eDVBCIContentControlManagerSession::resendKey(tSlot *tslot)
-void resendKey(struct dvbdev* dvbnode, int sessionnr)
+//void resendKey(struct dvbdev* dvbnode, int sessionnr)
+void resendKey(struct dvbdev* dvbnode)
 {
 //	if (!tslot->SidBlackListed && (tslot->inUse || tslot->slot == cCA::GetInstance()->GetLiveSlot()))
 //		descrambler_set_key((int)tslot->source, tslot->lastParity, tslot->lastKey);
@@ -2072,7 +2073,7 @@ void resendKey(struct dvbdev* dvbnode, int sessionnr)
 
 struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
 
-descrambler_set_key1(dvbnode, 256, cc_data->slot->lastParity, cc_data->slot->lastKey);
+descrambler_set_key1(dvbnode, 0, cc_data->slot->lastParity, cc_data->slot->lastKey);
 
 }
 
