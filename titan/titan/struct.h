@@ -2052,8 +2052,21 @@ unsigned char cec_deviceType;
 #endif
 
 // cacc
-#ifdef MIPSEL
+/* CI+ certificates */
 
+struct cert_ctx {
+	X509_STORE *store;
+
+	/* Host */
+	X509 *cust_cert;
+	X509 *device_cert;
+
+	/* Module */
+	X509 *ci_cust_cert;
+	X509 *ci_device_cert;
+};
+
+#ifdef MIPSEL
 enum ca_descr_data_type {
 	CA_DATA_IV,
 	CA_DATA_KEY,
