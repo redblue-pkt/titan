@@ -545,11 +545,9 @@ struct caslot
 	unsigned char scrambled;
 	void *private_data;
 	int ccmgr_ready;
-//	void resendKey(connid);
+	// not in used currently
 	int inuse;
 	int sidblacklisted;
-	uint8_t source;
-	unsigned int slot;
 };
 
 struct hdd
@@ -2106,16 +2104,12 @@ struct element {
 	uint8_t *data;
 	uint32_t size;
 	/* buffer valid */
-//	bool valid;
 	int valid;
 };
 
 struct cc_ctrl_data {
 	/* parent */
-	//struct ci_session *session;
-//	tSlot *slot;
 	struct caslot* slot;
-//	struct caservice* slot;
 
 	/* ci+ credentials */
 	struct element elements[MAX_ELEMENTS];
