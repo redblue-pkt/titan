@@ -117,7 +117,7 @@
 #endif
 
 #define DRIVER "Fri Jul  8 08:43:47 CEST 2016"
-#define OVERSION "1.76"
+#define OVERSION "1.77"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
