@@ -20,5 +20,6 @@ cat ../tpk.h | sed s!97.74.32.10!$URLSECRET! > tpk.h.tmp
 mv tpk.h.tmp ../tpk.h
 
 echo add pluginversionsnummer to: $VERSION
-cat ../struct.h | sed s/"^#define PLUGINVERSION 0"/"#define PLUGINVERSION $VERSION"/ > struct.h.tmp
+#cat ../struct.h | sed s/"^#define PLUGINVERSION 0"/"#define PLUGINVERSION $VERSION"/ > struct.h.tmp
+cat ../struct.h | sed "s/^#define PLUGINVERSION .*/#define PLUGINVERSION $VERSION/" > struct.h.tmp
 mv struct.h.tmp ../struct.h
