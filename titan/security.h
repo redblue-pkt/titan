@@ -1355,7 +1355,7 @@ int checkrealbox(char* box)
 	if(isfile("/proc/stb/info/boxtype"))
 		boxversion = string_toupper(readsys("/proc/stb/info/boxtype", 1));
 	else if(isfile("/proc/stb/info/model"))
-		boxversion = string_toupper(readsys("proc/stb/info/model", 1));
+		boxversion = string_toupper(readsys("/proc/stb/info/model", 1));
 	else return 0;
 #else
 	if(isfile("/proc/stb/info/model") == 0) return 0;
