@@ -2064,7 +2064,7 @@ struct cert_ctx {
 	X509 *ci_device_cert;
 };
 
-#ifdef MIPSEL
+#ifdef MIPSEL1
 enum ca_descr_data_type {
 	CA_DATA_IV,
 	CA_DATA_KEY,
