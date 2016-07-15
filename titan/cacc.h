@@ -63,27 +63,31 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 	}
 
 	struct ca_descr_data d;
-	index |= 0x100;
 
 #ifdef MIPSEL
-	d.index = index;
-	d.parity = parity;
-	d.data_type = CA_DATA_KEY;
-	d.length = 16;
-	d.data = data;
+	if (descrambler_open())
+	{
+		d.index = index;
+		d.parity = parity;
+		d.data_type = CA_DATA_KEY;
+		d.length = 16;
+		d.data = data;
 
-	if (ioctl(node->fd, CA_SET_DESCR_DATA, &d))
-		printf("CA_SET_DESCR_DATA\n");
+		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
+			printf("CA_SET_DESCR_DATA\n");
 
-	d.index = index;
-	d.parity = parity;
-	d.data_type = CA_DATA_IV;
-	d.length = 16;
-	d.data = data + 16;
+		d.index = index;
+		d.parity = parity;
+		d.data_type = CA_DATA_IV;
+		d.length = 16;
+		d.data = data + 16;
 
-	if (ioctl(node->fd, CA_SET_DESCR_DATA, &d))
-		printf("CA_SET_DESCR_DATA\n");
+		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
+			printf("CA_SET_DESCR_DATA\n");
+	}
+	descrambler_close();
 #else
+	index |= 0x100;
 	if (descrambler_open())
 	{
 		d.index = index;
@@ -99,15 +103,6 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 			printf("CA_SET_DESCR_DATA\n");
 	}
 	descrambler_close();
-	
-	/*d.index = index;
-	d.parity = parity;
-	d.data_type = CA_DATA_KEY;
-	d.length = 32;
-	d.data = data;
-
-	if (ioctl(node->fd, CA_SET_DESCR_DATA, &d))
-		printf("CA_SET_DESCR_DATA\n");*/
 #endif
 
 	return 0;
