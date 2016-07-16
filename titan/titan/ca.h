@@ -2098,6 +2098,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			// cacc
 			dvbnode->caslot->scrambled = 1;
 			debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
+			resendKey(dvbnode);
 
 			return 0;
 		}
