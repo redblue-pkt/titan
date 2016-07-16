@@ -542,7 +542,8 @@ struct caslot
 	// cacc
 	unsigned char lastKey[32];
 	uint8_t lastParity;
-	unsigned char scrambled;
+//	unsigned char scrambled;
+	int scrambled;
 	void *private_data;
 	int ccmgr_ready;
 	// not in used currently
