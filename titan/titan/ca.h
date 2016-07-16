@@ -2101,10 +2101,10 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			// cacc
 			dvbnode->caslot->scrambled = 1;
 			debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
-			debug(620, "scrambled=%d ccmgr_ready=%d ccmanager=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, caservice[caservicenr].camanager);
-			if(dvbnode->caslot->ccmgr_ready == 1 && caservice[caservicenr].camanager == 1)
+			debug(620, "scrambled=%d ccmgr_ready=%d ccmanager=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse);
+			if(dvbnode->caslot->ccmgr_ready == 1 && dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse == 1)
 				resendKey(dvbnode);
-
+ 
 			return 0;
 		}
 		else
