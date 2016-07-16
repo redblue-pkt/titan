@@ -1411,7 +1411,7 @@ static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 	cc_data->slot->lastParity = slot;
 
 	debug(620, "check scrambled=%d", dvbnode->caslot->scrambled);
-	if(dvbnode->caslot->scrambled == 1)
+//	if(dvbnode->caslot->scrambled == 1)
 		resendKey(dvbnode);
 	
 	/* reset */
