@@ -1673,6 +1673,9 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 				{
 					debug(620, "cam (slot %d) status changed, cam now present", dvbnode->devnr);
 					canode->connid = dvbnode->devnr + 1;
+					// cacc start
+					dvbnode->caslot->ccmgr_ready = 0;
+					// cacc end
 					if(cacreatetc(dvbnode) == 5)
 					{
 						casessionfree(dvbnode);
