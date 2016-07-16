@@ -562,7 +562,7 @@ int main(int argc, char *argv[])
 	status.security = 1;
 #endif
 
-	printf("[%s] copyright by %s - version %s\n", PROGNAME, COPYRIGHT, OVERSION);
+	printf("[%s] copyright by %s - version %s (%d)\n", PROGNAME, COPYRIGHT, OVERSION, PLUGINVERSION);
 	printf("[%s] crontribut: %s\n", PROGNAME, CRONTRIBUT);
 
 	sa.sa_handler = (void *)sighandler;
