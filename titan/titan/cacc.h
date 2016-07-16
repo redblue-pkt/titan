@@ -224,8 +224,10 @@ int descrambler_set_pid(int index, int enable, int pid)
 
 int descrambler_open(void)
 {
-	debug(620, "end");
+	debug(620, "start");
 	desc_fd = open(descrambler_filename, O_RDWR | O_NONBLOCK );
+	debug(620, "descrambler_filename: %s desc_fd: %d", descrambler_filename, desc_fd);
+
 	if (desc_fd <= 0) {
 		printf("cannot open %s\n", descrambler_filename);
 		return 0;
