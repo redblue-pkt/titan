@@ -73,7 +73,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		d.length = 16;
 		d.data = data;
 
-		printf("Index CA_DATA_KEY: %d Parity: (%d) -> ", d.index, d.parity);
+		printf("[titan] Index CA_DATA_KEY: %d Parity: (%d) -> ", d.index, d.parity);
 		hexdump(d.data, 16);
 
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
@@ -85,7 +85,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		d.length = 16;
 		d.data = data + 16;
 
-		printf("Index CA_DATA_IV: %d Parity: (%d) -> ", d.index, d.parity);
+		printf("[titan] Index CA_DATA_IV: %d Parity: (%d) -> ", d.index, d.parity);
 		hexdump(d.data, 16);
 
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
@@ -102,7 +102,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		d.length = 32;
 		d.data = data;
 
-		printf("Index: %d Parity: (%d) -> ", d.index, d.parity);
+		printf("[titan] Index: %d Parity: (%d) -> ", d.index, d.parity);
 		hexdump(d.data, 32);
 		
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
@@ -195,11 +195,11 @@ void descrambler_close(void)
 
 void hexdump(const uint8_t *data, unsigned int len)
 {
-	debug(620, "start");
 	while (len--)
 		printf("%02x ", *data++);
 	printf("\n");
-	debug(620, "end");
+// move to end is better log
+	debug(620, "start");
 }
 
 /* we don't use this for ci cam ! */
@@ -1411,7 +1411,7 @@ static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 	cc_data->slot->lastParity = slot;
 
 	debug(620, "check scrambled=%d", dvbnode->caslot->scrambled);
-//	if(dvbnode->caslot->scrambled == 1)
+	if(dvbnode->caslot->scrambled == 1)
 		resendKey(dvbnode);
 	
 	/* reset */
