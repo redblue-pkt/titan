@@ -205,7 +205,7 @@
 #define CUSTOMER_CERT "/etc/pem/customer.pem"
 #define DEVICE_CERT   "/etc/pem/device.pem"
 #define MAX_ELEMENTS    33
-#ifdef MIPSEL1
+#ifdef MIPSEL
 #define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
 #endif
 
@@ -2065,7 +2065,7 @@ struct cert_ctx {
 	X509 *ci_device_cert;
 };
 
-#ifdef MIPSEL1
+#ifdef MIPSEL
 enum ca_descr_data_type {
 	CA_DATA_IV,
 	CA_DATA_KEY,
