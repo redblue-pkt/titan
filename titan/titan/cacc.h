@@ -77,7 +77,9 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		hexdump(d.data, 16);
 
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
-			printf("CA_SET_DESCR_DATA -> CA_DATA_KEY\n");
+			printf("\nCA_SET_DESCR_DATA -> CA_DATA_KEY\n");
+		else
+			printf("\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY\n");
 
 		d.index = index;
 		d.parity = parity;
@@ -89,7 +91,10 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		hexdump(d.data, 16);
 
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
-			printf("CA_SET_DESCR_DATA -> CA_DATA_IV\n");
+			printf("\nCA_SET_DESCR_DATA -> CA_DATA_IV\n");
+		else
+			printf("\nERROR - CA_SET_DESCR_DATA -> CA_DATA_IV\n");
+
 	}
 	descrambler_close();
 #else
@@ -106,7 +111,10 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		hexdump(d.data, 32);
 		
 		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
-			printf("CA_SET_DESCR_DATA\n");
+			printf("\nCA_SET_DESCR_DATA -> CA_DATA_KEY\n");
+		else
+			printf("\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY\n");
+
 	}
 	descrambler_close();
 #endif
