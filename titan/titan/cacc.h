@@ -61,7 +61,8 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		err("NULL detect");
 		return 1;
 	}
-
+	
+	int rc = 0;
 	struct ca_descr_data d;
 
 #ifdef MIPSEL
@@ -76,10 +77,12 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		printf("[titan] Index CA_DATA_KEY: %d Parity: (%d) -> ", d.index, d.parity);
 		hexdump(d.data, 16);
 
-		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
+		//if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
+		rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d)
+		if (rc)
 			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
 		else
-			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
+			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY RCode: %i\n###############\n", rc);
 
 		d.index = index;
 		d.parity = parity;
@@ -90,10 +93,12 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		printf("[titan] Index CA_DATA_IV: %d Parity: (%d) -> ", d.index, d.parity);
 		hexdump(d.data, 16);
 
-		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
+		//if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
+		rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d)
+		if (rc)
 			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_IV\n###############\n");
 		else
-			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_IV\n###############\n");
+			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_IV RCode: %i\n###############\n", rc);
 
 	}
 	descrambler_close();
@@ -110,10 +115,12 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		printf("[titan] Index: %d Parity: (%d) -> ", d.index, d.parity);
 		hexdump(d.data, 32);
 		
-		if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
+		//if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
+		rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d)
+		if (rc)
 			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
 		else
-			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
+			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY RCode: %i\n###############\n", rc);
 
 	}
 	descrambler_close();
