@@ -1426,9 +1426,13 @@ static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 	cc_data->slot->lastParity = slot;
 
 	debug(620, "check scrambled=%d", dvbnode->caslot->scrambled);
-//	if(dvbnode->caslot->scrambled == 1)
-		//resendKey(dvbnode);
-		descrambler_set_key(dvbnode, 0, slot, dec);
+
+#ifdef MIPSEL
+	descrambler_set_key(dvbnode, 0, slot, dec);
+#else
+	if(dvbnode->caslot->scrambled == 1)
+		resendKey(dvbnode);
+#endif
 	
 	/* reset */
 	element_invalidate(cc_data, 12);
