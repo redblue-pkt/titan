@@ -1427,7 +1427,8 @@ static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 
 	debug(620, "check scrambled=%d", dvbnode->caslot->scrambled);
 	if(dvbnode->caslot->scrambled == 1)
-		resendKey(dvbnode);
+		//resendKey(dvbnode);
+		descrambler_set_key(dvbnode, 0, slot, dec);
 	
 	/* reset */
 	element_invalidate(cc_data, 12);
