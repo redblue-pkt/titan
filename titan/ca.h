@@ -1853,6 +1853,19 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 		}
 	}
 
+/*
+		if (slot->hasCAManager && slot->hasAppManager && slot->newCapmt && !slot->SidBlackListed)
+		{
+			SendCaPMT(slot);
+			slot->newCapmt = false;
+			if (slot->ccmgr_ready && slot->hasCCManager && slot->scrambled)
+				slot->ccmgrSession->resendKey(slot);
+		}
+*/
+	debug(620, "scrambled=%d ccmgr_ready=%d ccmanager=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse);
+	if(dvbnode->caslot->ccmgr_ready == 1 && dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse == 1 && dvbnode->caslot->scrambled == 1)
+		resendKey(dvbnode);
+
 	free(buf); buf = NULL;
 }
 
