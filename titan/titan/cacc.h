@@ -80,9 +80,9 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		//if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
 		rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
 		if (rc)
-			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
+			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
 		else
-			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY RCode: %i\n###############\n", rc);
+			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_KEY RCode: %i\n###############\n", rc);
 
 		d.index = index;
 		d.parity = parity;
@@ -96,9 +96,9 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		//if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
 		rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
 		if (rc)
-			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_IV\n###############\n");
+			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_IV\n###############\n");
 		else
-			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_IV RCode: %i\n###############\n", rc);
+			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_IV RCode: %i\n###############\n", rc);
 
 	}
 	descrambler_close();
@@ -118,9 +118,9 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		//if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
 		rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
 		if (rc)
-			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
+			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
 		else
-			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY RCode: %i\n###############\n", rc);
+			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_KEY RCode: %i\n###############\n", rc);
 
 	}
 	descrambler_close();
@@ -1427,12 +1427,12 @@ static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 
 	debug(620, "check scrambled=%d", dvbnode->caslot->scrambled);
 
-#ifdef MIPSEL
-	descrambler_set_key(dvbnode, 0, slot, dec);
-#else
+//#ifdef MIPSEL
+//	descrambler_set_key(dvbnode, 0, slot, dec);
+//#else
 	if(dvbnode->caslot->scrambled == 1)
 		resendKey(dvbnode);
-#endif
+//#endif
 	
 	/* reset */
 	element_invalidate(cc_data, 12);
