@@ -225,17 +225,19 @@ int descrambler_set_pid(int index, int enable, int pid)
 	struct ca_pid p;
 	unsigned int flags = 0x80;
 
-	if (index)
-		flags |= 0x40;
-
-	if (enable)
-		flags |= 0x20;
-
-	p.pid = pid;
-	p.index = flags;
-	
+	if(desc_fd == -1)
+		descrambler_open();
 	if (desc_fd > 0)
 	{
+		if (index)
+			flags |= 0x40;
+
+		if (enable)
+			flags |= 0x20;
+
+		p.pid = pid;
+		p.index = flags;
+	
 		if (ioctl(desc_fd, CA_SET_PID, &p))
 			printf("CA_SET_PID\n");
 	}
