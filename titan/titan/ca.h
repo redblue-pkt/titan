@@ -1861,7 +1861,6 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 			if (slot->ccmgr_ready && slot->hasCCManager && slot->scrambled)
 				slot->ccmgrSession->resendKey(slot);
 		}
-*/
 
 	debug(620, "scrambled=%d ccmgr_ready=%d camanager=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, caservice[0].camanager);
 
@@ -1871,7 +1870,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 //		dvbnode->caslot->scrambled = 0;
 //		debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
 	}
-
+*/
 	free(buf); buf = NULL;
 }
 
