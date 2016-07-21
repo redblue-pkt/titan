@@ -66,7 +66,8 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 	struct ca_descr_data d;
 
 #ifdef MIPSEL
-	if (descrambler_open())
+	if(desc_fd == -1)
+		descrambler_open();
 	{
 		d.index = index;
 		d.parity = parity;
@@ -101,7 +102,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_IV RCode: %i\n###############\n", rc);
 
 	}
-	descrambler_close();
+	//descrambler_close();
 #else
 	index |= 0x100;
 	if (descrambler_open())
