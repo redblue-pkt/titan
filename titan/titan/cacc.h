@@ -203,7 +203,7 @@ int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out)
 
 void descrambler_close(void)
 {
-	debug(620, "start");
+//	debug(620, "start");
 	close(desc_fd);
 	desc_fd = -1;
 }
@@ -239,7 +239,7 @@ int descrambler_set_pid(int index, int enable, int pid)
 
 int descrambler_open(void)
 {
-	debug(620, "start");
+//	debug(620, "start");
 	desc_fd = open(descrambler_filename, O_RDWR | O_NONBLOCK );
 	debug(620, "descrambler_filename: %s desc_fd: %d", descrambler_filename, desc_fd);
 
