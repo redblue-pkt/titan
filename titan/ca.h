@@ -1928,7 +1928,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 		
 		int foundcaid = 0;
 		
-    //check if channel used this slot
+	    //check if channel used this slot
 		if(node->channel != NULL)
 		{
 			struct channelslot *channelslotnode = channelslot; 
@@ -1936,15 +1936,15 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			{
 				if(channelslotnode->transponderid == node->channel->transponderid && channelslotnode->serviceid == node->channel->serviceid)
 				{
-          if(channelslotnode->slot == dvbnode->devnr)
-          {
+					if(channelslotnode->slot == dvbnode->devnr)
+					{
 						debug(620, "channel support cam (channelslot=%d, slot=%d)", channelslotnode->slot, dvbnode->devnr);
 						foundcaid = 1;
 						break;
-          }
-          else
-          {
-          	debug(620, "channel not support cam (channelslot=%d, slot=%d)", channelslotnode->slot, dvbnode->devnr);
+					}
+					else
+					{
+			          	debug(620, "channel not support cam (channelslot=%d, slot=%d)", channelslotnode->slot, dvbnode->devnr);
 						return 1;
 					}
 				}			
@@ -1966,6 +1966,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 					debug(620, "cam-ciads=%s", dvbnode->caslot->caids);
 					debug(620, "videopid=%d, audiopid=%d, ac3pid=%d, capid=%d, caid=%d", node->channel->videopid, node->channel->audiopid, node->channel->ac3audiopid, nodecadesc->pid, nodecadesc->systemid);
 					tmpstr = oitoa(nodecadesc->systemid);
+					
 					if(ostrstr(dvbnode->caslot->caids, tmpstr) != NULL)
 					{
 						//check if caid is in cams blacklist
@@ -1978,7 +1979,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 							debug(620, "caid is in blacklist (%s -> %s)", tmpstr, blacklist);
 					}
 					free(tmpstr); tmpstr = NULL;
-	    		nodecadesc = nodecadesc->next;
+	    			nodecadesc = nodecadesc->next;
 				}
 			}
 			free(tmpstr); tmpstr = NULL;
@@ -2026,7 +2027,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 					status.checkcamdecrypt--;
 					usleep(30000);
 				}
-    		if(status.checkcamdecrypt == -2)
+				if(status.checkcamdecrypt == -2)
 				{
 					dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse = 1;
 					caservice[caservicenr].camanager = -1;
