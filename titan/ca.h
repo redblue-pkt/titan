@@ -2105,12 +2105,13 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			debug(620, "scrambled=%d ccmgr_ready=%d camanager=%d caservicenr=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, caservice[caservicenr].camanager, caservicenr);
 			if(dvbnode->caslot->ccmgr_ready == 1 && caservice[caservicenr].camanager == 5)
 			{
+#ifdef MIPSEL
 				for (i = 0; i < 8192; i++)
-					//descrambler_set_pid(0, 0, i); //
 					descrambler_set_pid(0, 1, i); //workaround... activate all pids
 					
-				//printf("++++++++ pmtpid: %d\n", status.aktservice->channel->pmtpid);
 				descrambler_set_pid(0, 1, status.aktservice->channel->pmtpid);	
+#endif
+
 				resendKey(dvbnode);
 			}
  
