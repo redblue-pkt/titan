@@ -1854,24 +1854,6 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 		}
 	}
 
-/*
-		if (slot->hasCAManager && slot->hasAppManager && slot->newCapmt && !slot->SidBlackListed)
-		{
-			SendCaPMT(slot);
-			slot->newCapmt = false;
-			if (slot->ccmgr_ready && slot->hasCCManager && slot->scrambled)
-				slot->ccmgrSession->resendKey(slot);
-		}
-
-	debug(620, "scrambled=%d ccmgr_ready=%d camanager=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, caservice[0].camanager);
-
-	if(dvbnode->caslot->ccmgr_ready == 1 && dvbnode->caslot->scrambled == 1 && caservice[0].camanager == 5)
-	{
-		resendKey(dvbnode);
-//		dvbnode->caslot->scrambled = 0;
-//		debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
-	}
-*/
 	free(buf); buf = NULL;
 }
 
@@ -2120,10 +2102,17 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			// cacc
 			dvbnode->caslot->scrambled = 1;
 			debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
-			debug(620, "scrambled=%d ccmgr_ready=%d camanager=%d caservicenr=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, caservice[caservicenr].camanager, caservicenr);
-
-			if(dvbnode->caslot->ccmgr_ready == 1 && caservice[caservicenr].camanager == 5)
+			debug(620, "scrambled=%d ccmgr_ready=%d ccmanager=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse);
+			if(dvbnode->caslot->ccmgr_ready == 1 && dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse == 1)
+			{
+				for (i = 0; i < 8192; i++)
+					//descrambler_set_pid(0, 1, i); //
+					descrambler_set_pid(0, 1, i); //workaround... activate all pids
+					
+				//printf("++++++++ pmtpid: %d\n", status.aktservice->channel->pmtpid);
+				descrambler_set_pid(0, 1, status.aktservice->channel->pmtpid);	
 				resendKey(dvbnode);
+			}
  
 			return 0;
 		}
