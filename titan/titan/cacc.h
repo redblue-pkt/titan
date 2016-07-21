@@ -203,7 +203,7 @@ int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out)
 
 void descrambler_close(void)
 {
-//	debug(620, "start");
+	//debug(620, "start");
 	close(desc_fd);
 	desc_fd = -1;
 }
@@ -217,6 +217,27 @@ void hexdump(const uint8_t *data, unsigned int len)
 //	debug(620, "start");
 }
 
+#ifdef MIPSEL
+int descrambler_set_pid(int index, int enable, int pid)
+{
+	struct ca_pid p;
+	unsigned int flags = 0x80;
+
+	if (index)
+		flags |= 0x40;
+
+	if (enable)
+		flags |= 0x20;
+
+	p.pid = pid;
+	p.index = flags;
+
+	if (ioctl(desc_fd, CA_SET_PID, &p))
+		printf("CA_SET_PID\n");
+
+	return 0;
+}
+#else
 /* we don't use this for ci cam ! */
 /*
 int descrambler_set_pid(int index, int enable, int pid)
@@ -236,10 +257,11 @@ int descrambler_set_pid(int index, int enable, int pid)
 	return 0;
 }
 */
+#endif
 
 int descrambler_open(void)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	desc_fd = open(descrambler_filename, O_RDWR | O_NONBLOCK );
 	debug(620, "descrambler_filename: %s desc_fd: %d", descrambler_filename, desc_fd);
 
@@ -1611,7 +1633,7 @@ void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *da
 	ci_ccmgr_cc_sac_send(dvbnode, sessionnr, sync_cnf_tag, dest, pos);
 	dvbnode->caslot->ccmgr_ready = 1;
 	debug(620, "set ccmgr_ready=%d", dvbnode->caslot->ccmgr_ready);
-//	debug(620, "end");
+	//debug(620, "end");
 }
 
 int checkcerts(void)
