@@ -1675,6 +1675,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 					canode->connid = dvbnode->devnr + 1;
 					// cacc start
 					dvbnode->caslot->ccmgr_ready = 0;
+					debug(620, "set ccmgr_ready=%d", dvbnode->caslot->ccmgr_ready);
 					// cacc end
 					if(cacreatetc(dvbnode) == 5)
 					{

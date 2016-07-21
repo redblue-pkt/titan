@@ -1610,7 +1610,8 @@ void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *da
 
 	ci_ccmgr_cc_sac_send(dvbnode, sessionnr, sync_cnf_tag, dest, pos);
 	dvbnode->caslot->ccmgr_ready = 1;
-	debug(620, "end");
+	debug(620, "set ccmgr_ready=%d", dvbnode->caslot->ccmgr_ready);
+//	debug(620, "end");
 }
 
 int checkcerts(void)
