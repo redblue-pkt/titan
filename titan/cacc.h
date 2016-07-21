@@ -68,6 +68,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 #ifdef MIPSEL
 	if(desc_fd == -1)
 		descrambler_open();
+	if (desc_fd > 0)
 	{
 		d.index = index;
 		d.parity = parity;
@@ -232,10 +233,12 @@ int descrambler_set_pid(int index, int enable, int pid)
 
 	p.pid = pid;
 	p.index = flags;
-
-	if (ioctl(desc_fd, CA_SET_PID, &p))
-		printf("CA_SET_PID\n");
-
+	
+	if (desc_fd > 0)
+	{
+		if (ioctl(desc_fd, CA_SET_PID, &p))
+			printf("CA_SET_PID\n");
+	}
 	return 0;
 }
 #else

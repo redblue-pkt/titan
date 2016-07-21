@@ -2106,7 +2106,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			if(dvbnode->caslot->ccmgr_ready == 1 && dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse == 1)
 			{
 				for (i = 0; i < 8192; i++)
-					//descrambler_set_pid(0, 1, i); //
+					//descrambler_set_pid(0, 0, i); //
 					descrambler_set_pid(0, 1, i); //workaround... activate all pids
 					
 				//printf("++++++++ pmtpid: %d\n", status.aktservice->channel->pmtpid);
