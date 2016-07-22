@@ -2107,10 +2107,21 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			if(dvbnode->caslot->ccmgr_ready == 1 && caservice[caservicenr].camanager == 5)
 			{
 #ifdef MIPSEL
-				for (i = 0; i < 8192; i++)
+				/*for (i = 0; i < 8192; i++)
 					descrambler_set_pid(0, 1, i); //workaround... activate all pids
 					
-				descrambler_set_pid(0, 1, status.aktservice->channel->pmtpid);	
+				descrambler_set_pid(0, 1, status.aktservice->channel->pmtpid);*/	
+				
+				struct esinfo* esinfonode = status.aktservice->channel->esinfo;
+				for (i = 0; i < 8192; i++)
+					descrambler_set_pid(0, 0, i); 
+					
+				while(esinfonode != NULL)
+				{
+					descrambler_set_pid(0, 1,esinfonode->pid);
+					esinfonode = esinfonode->next;
+				}
+				
 #endif
 
 				resendKey(dvbnode);
