@@ -735,8 +735,9 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 				}
 				else
 				{
+					printf("befor memcpy_area\n");
 					//memcpy(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, xlen);
-  				memcpy_area(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, posx * 4, height-1, width*4, tmpfb->width*4);
+  					memcpy_area(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, posx * 4, height-1, width*4, tmpfb->width*4);
 					y = yend;
 				}
 				
