@@ -248,7 +248,7 @@ struct channelslot *channelslot = NULL;
 #include "encoder.h"
 #endif
 
-#define TIMECODE "1467960227"
+#define TIMECODE "1469471993"
 
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
@@ -583,8 +583,10 @@ int main(int argc, char *argv[])
 	printf("[%s] using config: %s\n", PROGNAME, status.configfile);
 	ret = readconfig(status.configfile, config);
 	if(ret != 0)
+	{
+		printf("error: status.configfile ret=%d\n", ret);
 		return 100;
-	
+	}
 	//Workaround da ansonsten DVR4 nicht funktioniert (Treiberproblem)
 	status.setdvr0 = 0;
 	
@@ -597,6 +599,7 @@ int main(int argc, char *argv[])
 	if(ret)
 	{
 		err("create timer thread");
+		printf("error: create timer thread\n");
 		return 100;
 	}
 
@@ -747,11 +750,15 @@ int main(int argc, char *argv[])
 
 	ret = initfont();
 	if(ret != 0)
+	{
+		printf("error: initfont\n");
 		return 100;
+	}
 	ret = openfont(getconfig("fontfile1", NULL));
 	if(ret != 0)
 	{
 		err("open fontfile1 font");
+		printf("error: open fontfile1 font\n");
 		return 100;
 	}
 	openfont(getconfig("fontfile2", NULL));
@@ -780,7 +787,10 @@ int main(int argc, char *argv[])
 
 	fb = openfb(getconfig("fbdev", NULL), 0);
 	if(fb == NULL)
+	{
+		printf("error: openfb %s\n", getconfig("fbdev", NULL));
 		return 100;
+	}
 	clearfball();
 	enablemanualblit();
 	
@@ -845,8 +855,11 @@ int main(int argc, char *argv[])
 	//}
 
 	ret = createstartscreen();
-	if(ret != 0) return 100;
-
+	if(ret != 0)
+	{
+		printf("error: createstartscreen\n");
+		return 100;
+	}
 	//from here we can use starterror screen
 	ret = openrc();
 	if(ret != 0)
@@ -1088,8 +1101,11 @@ firstwizzardstep1:
 	}
 	else
 	{
+printf("11111111111111\n");
+
 		// workaround, remove bootlogo on startup
 		drawscreen(skin, 0, 0);
+printf("22222222222222\n");
 
 		//check servicestart
 		if(serviceret != 21) // no message if startchannel empty
@@ -1316,5 +1332,6 @@ starterror:
 	drawscreen(starterror, 0, 0);
 	sleep(10);
 	free(tmpstr);
+	printf("error: starterror\n");
 	return 100;
 }
