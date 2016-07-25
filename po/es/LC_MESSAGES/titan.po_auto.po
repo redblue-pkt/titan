@@ -147,7 +147,7 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1269
+#: titan.c:1266
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -155,7 +155,7 @@ msgstr ""
 "/mnt No se puede escribir!\n"
 "Quieres tratar de repararlo?"
 
-#: titan.c:1252
+#: titan.c:1249
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1169,7 +1169,7 @@ msgstr "Busqueda Automatica"
 msgid "Automatic start last subtitle"
 msgstr "Auto iniciar ultimo SubTitulo"
 
-#: titan.c:1330
+#: titan.c:1327
 msgid "Automatic stop in 10 seconds."
 msgstr "Parada automatica en 10 segundos"
 
@@ -3251,8 +3251,8 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1085
-#: titan.c:1094 titan.c:1225 titan.c:1246 titan.c:1252 titan.c:1263
-#: titan.c:1269 tithek.c:103 tithek_global.h:96 tithek.h:726 tithek.h:1284
+#: titan.c:1094 titan.c:1222 titan.c:1243 titan.c:1249 titan.c:1260
+#: titan.c:1266 tithek.c:103 tithek_global.h:96 tithek.h:726 tithek.h:1284
 #: tithek.h:1345 tithek.h:1614 tithek.h:1636 tithek.h:1653 tithek.h:1885
 #: tithek.h:2045 tithek.h:2330 tithek.h:2365 tithek.h:2381 tithek.h:2393
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3979,7 +3979,7 @@ msgstr "Tasa Maxima"
 msgid "Free Space"
 msgstr "Espacion Libre disponible"
 
-#: titan.c:1263
+#: titan.c:1260
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3987,7 +3987,7 @@ msgstr ""
 "Espacio insuficiente en /mnt!\n"
 "estao causar problemas graves!"
 
-#: titan.c:1246
+#: titan.c:1243
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -5928,8 +5928,8 @@ msgstr "Lista de Menus"
 #: system_backup_restore.h:82 system_update.h:238 system_update.h:244
 #: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:26
 #: thevideo.h:60 thevideo.h:66 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1225
-#: titan.c:1246 titan.c:1252 titan.c:1263 titan.c:1269 tithek.c:103
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1222
+#: titan.c:1243 titan.c:1249 titan.c:1260 titan.c:1266 tithek.c:103
 #: tithek_global.h:96 tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614
 #: tithek.h:1636 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
 #: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6532,8 +6532,8 @@ msgstr "Ö"
 #: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:26 thevideo.h:60 thevideo.h:66 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1085 titan.c:1094 titan.c:1225 titan.c:1246
-#: titan.c:1252 titan.c:1263 titan.c:1269 tithek.c:103 tithek_global.h:96
+#: titan.c:346 titan.c:355 titan.c:1085 titan.c:1094 titan.c:1222 titan.c:1243
+#: titan.c:1249 titan.c:1260 titan.c:1266 tithek.c:103 tithek_global.h:96
 #: tithek.h:726 tithek.h:1284 tithek.h:1345 tithek.h:1614 tithek.h:1636
 #: tithek.h:1653 tithek.h:1885 tithek.h:2045 tithek.h:2330 tithek.h:2365
 #: tithek.h:2381 tithek.h:2393 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -7646,7 +7646,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Receptor se reiniciara ahora !!!"
 
-#: titan.c:1225
+#: titan.c:1222
 msgid "Receiver successful unlocked"
 msgstr "Su receptor se abrio con Exito."
 
@@ -10535,7 +10535,7 @@ msgstr ""
 msgid "Unitymedia NRW | 30.9.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1328
+#: titan.c:1325
 msgid "Unknown Error."
 msgstr "Error desconocido"
 
