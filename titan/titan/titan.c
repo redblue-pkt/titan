@@ -1101,11 +1101,8 @@ firstwizzardstep1:
 	}
 	else
 	{
-printf("11111111111111\n");
-
 		// workaround, remove bootlogo on startup
 		drawscreen(skin, 0, 0);
-printf("22222222222222\n");
 
 		//check servicestart
 		if(serviceret != 21) // no message if startchannel empty
@@ -1331,7 +1328,7 @@ starterror:
 	changetext(starterror, _(tmpstr));
 	drawscreen(starterror, 0, 0);
 	sleep(10);
+	printf("error: starterror=%s\n", tmpstr);
 	free(tmpstr);
-	printf("error: starterror\n");
 	return 100;
 }

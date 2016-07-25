@@ -721,7 +721,7 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 			int yend = (posy + height) * tmpfb->width;
 			posy *= tmpfb->width;
 			int xend = posx + width;
-//		int xlen = (xend - posx) * tmpfb->colbytes;
+			int xlen = (xend - posx) * tmpfb->colbytes;
 			int r = 0;
 			unsigned char* from = tmpfb->fb + (posy + posx) * tmpfb->colbytes;
 
@@ -735,9 +735,10 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 				}
 				else
 				{
-					printf("befor memcpy_area\n");
-					//memcpy(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, xlen);
-  					memcpy_area(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, posx * 4, height-1, width*4, tmpfb->width*4);
+//					printf("befor memcpy_area\n");
+					memcpy(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, xlen);
+					// return 100 error on branch 3.4
+//  					memcpy_area(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, posx * 4, height-1, width*4, tmpfb->width*4);
 					y = yend;
 				}
 				
