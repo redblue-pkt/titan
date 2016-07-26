@@ -1273,15 +1273,15 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			//neutrino sessions[session_nb - 1] = new eDVBCIMMISession(slot);
 			debug(620, "create session mmi manager");
 			break;
-		if(checkcerts())
-		{
-			case 0x008c1001:
+		case 0x008c1001:
+			if(checkcerts())
+			{
 				casession[sessionnr].inuse = 1;
 				casession[sessionnr].ccmanager = 1;
 				//neutrino [session_nb - 1] = new eDVBCIContentControlManagerSession(slot);
 				debug(620, "create session cc manager");
-				break;
-		}
+			}
+			break;
 		case 0x00100041:
 			debug(620, "create session auth manager");
 		case 0x00200041:
