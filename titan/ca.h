@@ -621,7 +621,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 					}
 					tmpstr1 = ostrcat(tmpstr1, casession->mmibottom, 1, 0);
 					if(getconfigint("nocamsg", NULL) == 0)
-						textbox(_(tmpstr), _(tmpstr1), NULL, getrcconfigint("rcok", NULL), NULL, getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 300, 7, 0);
+						textbox(_(tmpstr), _(tmpstr1), NULL, getrcconfigint("rcok", NULL), NULL, getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 7, 0);
 					free(tmpstr); tmpstr = NULL;
 					free(tmpstr1); tmpstr1 = NULL;
 					free(casession->mmititle); casession->mmititle = NULL;
@@ -734,6 +734,67 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 	return 0;
 }
 
+//cc functions
+int caccaction(struct dvbdev* dvbnode, int sessionnr) 
+{ 
+	struct casession* casession = NULL; 
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0; 
+		casession = dvbnode->caslot->casession; 
+
+	debug(620, "caccaction nr %d, stat %d", sessionnr, casession[sessionnr].state); 
+
+	switch (casession[sessionnr].state) 
+	{ 
+		case CASESSIONSTART: 
+		{ 
+			casession[sessionnr].state = CASESSIONFINAL; 
+			return 0; 
+		} 
+		case CASESSIONFINAL: 
+			printf("stateFinal und action! kann doch garnicht sein ;)\n"); 
+		default: 
+			return 0; 
+	} 
+} 
+
+int caccAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
+{
+	debug(620, "cc manager caccAPDU start");
+
+	int i = 0;
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "cc manager %02x %02x %02x", tag[0], tag[1], tag[2]);
+
+	if(debug_level == 620)
+	{
+		i = 0;
+		printf("CC manager data (len %d): > ", len);
+		for(i = 0; i < len; i++)
+			printf("%02x ", ((unsigned char*)data)[i]);
+		printf("\n");
+	}
+
+	if(tag[0] == 0x9f && tag[1] == 0x90)
+	{
+		switch(tag[2])
+		{
+			case 0x01: ci_ccmgr_cc_open_cnf(dvbnode, sessionnr); break;
+			case 0x03: ci_ccmgr_cc_data_req(dvbnode, sessionnr, (uint8_t*)data, len); break;
+			case 0x05: ci_ccmgr_cc_sync_req(dvbnode, sessionnr); break;
+			case 0x07: ci_ccmgr_cc_sac_data_req(dvbnode, sessionnr, (uint8_t*)data, len); break;
+			case 0x09: ci_ccmgr_cc_sac_sync_req(dvbnode, sessionnr, (uint8_t*)data, len); break;
+			default:
+				debug(620, "unknown APDU tag 9F 80 %02x\n", tag[2]);
+				break;
+		}
+	}
+	return 0;
+}
+
 //datetime functions
 
 int cadatetimeaction(struct dvbdev* dvbnode, int sessionnr)
@@ -817,6 +878,7 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 		{
 			debug(620, "state cares sessionstart");
 			unsigned char tag[3] = {0x9F, 0x80, 0x10}; //profile enquiry
+			checkcerts();
 			sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
 			casession[sessionnr].state = CARESFIRSTENQUIRY;
 			return 0;
@@ -838,17 +900,37 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 		{
 			debug(620, "state caresenquiry");
 			unsigned char tag[3] = {0x9F, 0x80, 0x11};
-			unsigned char data[][4]=
+
+			if(checkcerts() == 1)
 			{
-				{0x00, 0x01, 0x00, 0x41},
-				{0x00, 0x02, 0x00, 0x41},
-				{0x00, 0x03, 0x00, 0x41},
-				//{0x00, 0x20, 0x00, 0x41}, //host control
-				{0x00, 0x24, 0x00, 0x41},
-				{0x00, 0x40, 0x00, 0x41}
-				//{0x00, 0x10, 0x00, 0x41} //auth.
+				unsigned char data[][4]=
+				{
+					{0x00, 0x01, 0x00, 0x41},	// resource
+					{0x00, 0x02, 0x00, 0x41},	// application V1
+					{0x00, 0x02, 0x00, 0x43},	// application V3
+					{0x00, 0x03, 0x00, 0x41},	// conditional access
+//					{0x00, 0x20, 0x00, 0x41},	// host control
+					{0x00, 0x40, 0x00, 0x41},	// mmi
+					{0x00, 0x24, 0x00, 0x41},	// date-time
+					{0x00, 0x8c, 0x10, 0x01}	// content control
+//					{0x00, 0x10, 0x00, 0x41}	// auth.
+				};
+				sendAPDU(dvbnode, sessionnr, tag, data, sizeof(data));
+			}
+			else
+			{			
+				unsigned char data[][4]=
+				{
+					{0x00, 0x01, 0x00, 0x41},
+					{0x00, 0x02, 0x00, 0x41},
+					{0x00, 0x03, 0x00, 0x41},
+					//{0x00, 0x20, 0x00, 0x41}, //host control
+					{0x00, 0x24, 0x00, 0x41},
+					{0x00, 0x40, 0x00, 0x41}
+					//{0x00, 0x10, 0x00, 0x41} //auth.
+				};
+				sendAPDU(dvbnode, sessionnr, tag, data, sizeof(data));
 			};
-			sendAPDU(dvbnode, sessionnr, tag, data, sizeof(data));
 			casession[sessionnr].state = CASESSIONFINAL;
 			return 0;
 		}
@@ -1061,6 +1143,11 @@ int getfreecasession(struct dvbdev* dvbnode, int type, int value)
 				dvbnode->caslot->casession[i].inuse = value;
 				return i;
 			}
+			if(type == 5 && dvbnode->caslot->casession[i].ccmanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //ccmanager
+			{
+				dvbnode->caslot->casession[i].inuse = value;
+				return i;
+			}
         	}
 	}
 	return -1;
@@ -1111,6 +1198,8 @@ int casessionpoll(struct dvbdev* dvbnode)
 					casession[sessionnr].action = caresaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].appmanager == 1)
 					casession[sessionnr].action = caappaction(dvbnode, sessionnr);
+				else if(casession[sessionnr].ccmanager == 1)
+					casession[sessionnr].action = caccaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].camanager == 1)
 					casession[sessionnr].action = cacaaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].datetimemanager == 1)
@@ -1163,6 +1252,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			debug(620, "create session res manager");
 			break;
 		case 0x00020041:
+		case 0x00020043:
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].appmanager = 1;
 			debug(620, "create session app manager");
@@ -1180,7 +1270,17 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 		case 0x00400041:
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].mmimanager = 1;
+			//neutrino sessions[session_nb - 1] = new eDVBCIMMISession(slot);
 			debug(620, "create session mmi manager");
+			break;
+		case 0x008c1001:
+			if(checkcerts())
+			{
+				casession[sessionnr].inuse = 1;
+				casession[sessionnr].ccmanager = 1;
+				//neutrino [session_nb - 1] = new eDVBCIContentControlManagerSession(slot);
+				debug(620, "create session cc manager");
+			}
 			break;
 		case 0x00100041:
 			debug(620, "create session auth manager");
@@ -1329,6 +1429,11 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 				if(caappAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
+			else if(casession->ccmanager == 1)
+			{
+				if(caccAPDU(dvbnode, sessionnr, tag, pkt, alen))
+					casession->action = 1;
+			}
 			else if(casession->camanager == 1)
 			{
 				if(cacaAPDU(dvbnode, sessionnr, tag, pkt, alen))
@@ -1344,6 +1449,7 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 				if(cammiAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
+
 			pkt += alen;
 			len -= alen;
 		}
@@ -1567,6 +1673,10 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 				{
 					debug(620, "cam (slot %d) status changed, cam now present", dvbnode->devnr);
 					canode->connid = dvbnode->devnr + 1;
+					// cacc start
+					dvbnode->caslot->ccmgr_ready = 0;
+					debug(620, "set ccmgr_ready=%d", dvbnode->caslot->ccmgr_ready);
+					// cacc end
 					if(cacreatetc(dvbnode) == 5)
 					{
 						casessionfree(dvbnode);
@@ -1800,6 +1910,10 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 
 	if(node == NULL && dvbnode == NULL) return 1;
 
+	// cacc
+	dvbnode->caslot->scrambled = 0;
+	debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
+
 	if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
 	{
 		//check if crypt can onyl handle single service
@@ -1814,7 +1928,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 		
 		int foundcaid = 0;
 		
-    //check if channel used this slot
+	    //check if channel used this slot
 		if(node->channel != NULL)
 		{
 			struct channelslot *channelslotnode = channelslot; 
@@ -1822,15 +1936,15 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			{
 				if(channelslotnode->transponderid == node->channel->transponderid && channelslotnode->serviceid == node->channel->serviceid)
 				{
-          if(channelslotnode->slot == dvbnode->devnr)
-          {
+					if(channelslotnode->slot == dvbnode->devnr)
+					{
 						debug(620, "channel support cam (channelslot=%d, slot=%d)", channelslotnode->slot, dvbnode->devnr);
 						foundcaid = 1;
 						break;
-          }
-          else
-          {
-          	debug(620, "channel not support cam (channelslot=%d, slot=%d)", channelslotnode->slot, dvbnode->devnr);
+					}
+					else
+					{
+			          	debug(620, "channel not support cam (channelslot=%d, slot=%d)", channelslotnode->slot, dvbnode->devnr);
 						return 1;
 					}
 				}			
@@ -1852,6 +1966,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 					debug(620, "cam-ciads=%s", dvbnode->caslot->caids);
 					debug(620, "videopid=%d, audiopid=%d, ac3pid=%d, capid=%d, caid=%d", node->channel->videopid, node->channel->audiopid, node->channel->ac3audiopid, nodecadesc->pid, nodecadesc->systemid);
 					tmpstr = oitoa(nodecadesc->systemid);
+					
 					if(ostrstr(dvbnode->caslot->caids, tmpstr) != NULL)
 					{
 						//check if caid is in cams blacklist
@@ -1864,7 +1979,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 							debug(620, "caid is in blacklist (%s -> %s)", tmpstr, blacklist);
 					}
 					free(tmpstr); tmpstr = NULL;
-	    		nodecadesc = nodecadesc->next;
+	    			nodecadesc = nodecadesc->next;
 				}
 			}
 			free(tmpstr); tmpstr = NULL;
@@ -1912,7 +2027,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 					status.checkcamdecrypt--;
 					usleep(30000);
 				}
-    		if(status.checkcamdecrypt == -2)
+				if(status.checkcamdecrypt == -2)
 				{
 					dvbnode->caslot->casession[caservice[caservicenr].camanager].inuse = 1;
 					caservice[caservicenr].camanager = -1;
@@ -1985,6 +2100,33 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 				caservice[caservicenr].cmdpos = cmdpos;
 			}
 			debug(620, "found cam for decrypt (slot=%d)", dvbnode->devnr);
+			// cacc
+			dvbnode->caslot->scrambled = 1;
+			debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
+			debug(620, "scrambled=%d ccmgr_ready=%d camanager=%d caservicenr=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, caservice[caservicenr].camanager, caservicenr);
+			if(dvbnode->caslot->ccmgr_ready == 1 && caservice[caservicenr].camanager == 5)
+			{
+#ifdef MIPSEL
+				/*for (i = 0; i < 8192; i++)
+					descrambler_set_pid(0, 1, i); //workaround... activate all pids
+					
+				descrambler_set_pid(0, 1, status.aktservice->channel->pmtpid);*/	
+				
+				struct esinfo* esinfonode = status.aktservice->channel->esinfo;
+				for (i = 0; i < 8192; i++)
+					descrambler_set_pid(0, 0, i); 
+					
+				while(esinfonode != NULL)
+				{
+					descrambler_set_pid(0, 1,esinfonode->pid);
+					esinfonode = esinfonode->next;
+				}
+				
+#endif
+
+				resendKey(dvbnode);
+			}
+ 
 			return 0;
 		}
 		else
