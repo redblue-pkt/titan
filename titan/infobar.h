@@ -615,11 +615,13 @@ void screeninfobar()
 					close(status.fdrctxt);
 					status.fdrctxt = -1;
 				}
-				enablemanualblit();
 				system("resetfb.sh");
+				enablemanualblit();
 #else
 				system(tmpstr);
 #endif				
+				if(status.aktservice != NULL)
+					resetvmpeg(status.aktservice->videodev);
 				status.tuxtxt = 0;
 				free(tmpstr); tmpstr = NULL; tmpnr = NULL;
 				drawscreen(skin, 0, 0);
