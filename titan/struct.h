@@ -201,9 +201,9 @@
 #endif
 
 //cacc cert check
-#define ROOT_CERT     "/etc/pem/root.pem"
-#define CUSTOMER_CERT "/etc/pem/customer.pem"
-#define DEVICE_CERT   "/etc/pem/device.pem"
+#define ROOT_CERT     "/mnt/swapextensions/etc/pem/root.pem"
+#define CUSTOMER_CERT "/mnt/swapextensions/etc/pem/customer.pem"
+#define DEVICE_CERT   "/mnt/swapextensions/etc/pem/device.pem"
 #define MAX_ELEMENTS    33
 #ifdef MIPSEL
 #define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
