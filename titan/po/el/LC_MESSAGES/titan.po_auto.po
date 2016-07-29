@@ -3103,7 +3103,7 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:668 infobar.h:792
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:671 infobar.h:795
 #: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:59
 #: letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
@@ -4920,7 +4920,7 @@ msgstr "Common Interface"
 msgid "Internet Browser"
 msgstr ""
 
-#: infobar.h:792
+#: infobar.h:795
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
@@ -5742,7 +5742,7 @@ msgstr ""
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:668 infobar.h:792 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
+#: infobar.h:671 infobar.h:795 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
 #: kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:101
 #: letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
@@ -6321,7 +6321,7 @@ msgstr ""
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:668 infobar.h:792 info.h:27 keyactions.h:205 kravencfg.c:66
+#: infobar.h:671 infobar.h:795 info.h:27 keyactions.h:205 kravencfg.c:66
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
@@ -8712,7 +8712,7 @@ msgstr ""
 msgid "Sharename can't be empty!"
 msgstr ""
 
-#: infobar.h:668 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
+#: infobar.h:671 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
 #: mc_videoplayer.h:333 menu.h:215
 msgid ""
 "Shooting Background done !\n"
