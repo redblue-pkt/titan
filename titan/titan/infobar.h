@@ -619,9 +619,12 @@ void screeninfobar()
 				enablemanualblit();
 #else
 				system(tmpstr);
-#endif				
+#endif
+#ifdef MIPSEL
+
 				if(status.aktservice != NULL)
 					resetvmpeg(status.aktservice->videodev);
+#endif
 				status.tuxtxt = 0;
 				free(tmpstr); tmpstr = NULL; tmpnr = NULL;
 				drawscreen(skin, 0, 0);
