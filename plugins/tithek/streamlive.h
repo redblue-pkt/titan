@@ -30,23 +30,38 @@ char* streamlive(char* link, int incount)
 http://www.streamlive.to/embedplayer_new.php?width=640&height=480&channel=71562&autoplay=true
 http://www.streamlive.to/view/72736/BT_Sport_2-live-stream-channel
 */
+printf("111111111\n");
+
 	if(ostrstr(link, "http://www.streamlive.to/view/") != NULL)
 	{
+printf("222222222\n");
+
 		id = string_resub("/view/", "/", link, 0);
 		url1 = ostrcat("http://www.streamlive.to/embedplayer_new.php?width=640&height=480&channel=", id, 0, 0);
 		url1 = ostrcat(url1, "&autoplay=true", 1, 0);
 	}
 	else
+	{
+printf("333333333\n");
+
 		url1 = ostrcat(link, NULL, 0, 0);
+	}
+printf("444444444\n");
+
+	printf("############################################################\n");
+	printf("url1234: %s\n", url1);
+	printf("############################################################\n");
+
+
 
 //<script type="text/javascript" src="http://www.streamlive.to/embed/69654&width=650&height=480&autoplay=true"></script>
-//	tmpstr = gethttps(url1, NULL, NULL, NULL, NULL, NULL, 1);
-//	host = string_resub("http://", "/", url1, 0);
-//	path = string_replace_all(host, "", url1, 0);
+	tmpstr = gethttps(url1, NULL, NULL, NULL, NULL, NULL, 1);
+	host = string_resub("http://", "/", url1, 0);
+	path = string_replace_all(host, "", url1, 0);
 
-	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
-	host = string_resub("http://", "/", link, 0);
-	path = string_replace_all(host, "", link, 0);
+//	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+//	host = string_resub("http://", "/", link, 0);
+//	path = string_replace_all(host, "", link, 0);
 
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);	

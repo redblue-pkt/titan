@@ -21,6 +21,7 @@ char* cricfree(char* link, int incount)
 http://cricfree.sx/sky-sports-1-live-stream-5
 http://cricfree.sx/update/tsn1.php,
 */
+
 	if(ostrstr(link, "/update/") == NULL)
 	{
 		tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
@@ -30,12 +31,14 @@ http://cricfree.sx/update/tsn1.php,
 		path = string_replace_all(" ", "%20", path, 1);
 		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 //		url = string_resub("src=\"", "\"", tmpstr, 0);
-		url = oregex(".*src=\"(http://cricfree.sx.*)\" id=\"iframe\".*", tmpstr);	
+		url = oregex(".*src=\"(http://cricfree.*)\" id=\"iframe\".*", tmpstr);	
+//<iframe frameborder="0" marginheight="0" allowfullscreen="true" marginwidth="0" height="555" src="http://cricfree.sc/update/bbc2.php" id="iframe" name="iframe_a" scrolling="no" width="620">Your Browser Do not Support Iframe</iframe>
+
 	}
 	else
+	{
 		url = ostrcat(link, NULL, 0, 0);
-
-	printf("url: %s\n", url);
+	}
 
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 	host = string_resub("http://", "/", url, 0);
