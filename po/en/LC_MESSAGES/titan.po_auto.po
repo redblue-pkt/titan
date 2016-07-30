@@ -1750,11 +1750,11 @@ msgstr "Load stmdvb.ko with CamRouting Otion"
 msgid "Camd3 v3.902 "
 msgstr ""
 
-#: movie4k.h:52
+#: movie4k.h:60
 msgid "Can not parse Main Stream URL, try again later."
 msgstr ""
 
-#: movie2k.h:32 movie4k.h:96
+#: movie2k.h:32 movie4k.h:104
 msgid "Can not parse Stream URL, try again later."
 msgstr ""
 
@@ -2308,7 +2308,7 @@ msgstr "Connecting to Host, please wait 20 seconds"
 msgid "Connect with Hoster wait 7 seconds"
 msgstr ""
 
-#: movie2k.h:23 movie4k.h:36
+#: movie2k.h:23 movie4k.h:38
 msgid "Connection Error, try again later."
 msgstr ""
 
@@ -3190,9 +3190,9 @@ msgstr "ERROR: can't set marker in this file"
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
-#: movie2k.h:23 movie2k.h:32 movie4k.h:36 movie4k.h:52 movie4k.h:96
-#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:80
-#: movshare.h:159 movshare.h:165 MultiImage.c:262 MultiImage.c:273
+#: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
+#: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:96
+#: movshare.h:186 movshare.h:192 MultiImage.c:262 MultiImage.c:273
 #: MultiImage.c:533 MultiImage.c:591 MultiImage.c:671 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
@@ -3383,7 +3383,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG Channels: "
 
-#: kinox.h:300 movie2k.h:502 movie2k.h:750 movie4k.h:863 movie4k.h:1111
+#: kinox.h:300 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
 #: solarmovie.h:606
 msgid "Episode"
 msgstr ""
@@ -4663,7 +4663,7 @@ msgid "Horror"
 msgstr ""
 
 #: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:23
-#: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:34 novamov.h:35
+#: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:40 novamov.h:35
 #: nowvideo.h:43 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
 #: shared.h:29 streamcloud.h:31 thefile.h:34 thevideo.h:26 vidag.h:29
 #: vidbull.h:30 videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:30
@@ -5865,9 +5865,9 @@ msgstr ""
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
-#: mightyupload.h:68 mightyupload.h:74 movie2k.h:23 movie2k.h:32 movie4k.h:36
-#: movie4k.h:52 movie4k.h:96 movie4k.h:403 movreel.h:30 movreel.h:137
-#: movshare.h:34 movshare.h:80 movshare.h:159 movshare.h:165 MultiImage.c:46
+#: mightyupload.h:68 mightyupload.h:74 movie2k.h:23 movie2k.h:32 movie4k.h:38
+#: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:137
+#: movshare.h:40 movshare.h:96 movshare.h:186 movshare.h:192 MultiImage.c:46
 #: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
@@ -6453,9 +6453,9 @@ msgstr ""
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
-#: movie2k.h:23 movie2k.h:32 movie4k.h:36 movie4k.h:52 movie4k.h:96
-#: movie4k.h:403 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:80
-#: movshare.h:159 movshare.h:165 MultiImage.c:46 MultiImage.c:175
+#: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
+#: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:96
+#: movshare.h:186 movshare.h:192 MultiImage.c:46 MultiImage.c:175
 #: MultiImage.c:244 MultiImage.c:262 MultiImage.c:273 MultiImage.c:353
 #: MultiImage.c:401 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
 #: MultiImage.c:671 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
@@ -8528,8 +8528,8 @@ msgstr ""
 #: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
 #: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179
 #: kinox.h:181 kinox.h:797 kinox.h:799 mlehd.h:90 mlehd.h:92 movie2k.h:74
-#: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:138 movie4k.h:140
-#: movie4k.h:295 movie4k.h:297 myvideo.h:229 myvideo.h:231 myvideo.h:373
+#: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
+#: movie4k.h:303 movie4k.h:305 myvideo.h:229 myvideo.h:231 myvideo.h:373
 #: myvideo.h:375 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
 #: nowtv.h:133 nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
@@ -8643,8 +8643,8 @@ msgstr ""
 msgid "Search only aktual epg ?"
 msgstr "Search within actual EPG"
 
-#: kinox.h:296 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:859
-#: movie4k.h:991 movie4k.h:1107 solarmovie.h:602
+#: kinox.h:296 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
+#: movie4k.h:999 movie4k.h:1115 solarmovie.h:602
 msgid "Season"
 msgstr ""
 
@@ -9784,7 +9784,7 @@ msgstr ""
 #: cloudzilla.h:39 divxstage.h:154 faststream.h:79 faststream.h:90
 #: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
 #: firedrive.h:122 firedrive.h:137 flashx.h:55 letwatch.h:59 mightyupload.h:68
-#: movreel.h:137 movshare.h:159 nbaondemand.h:61 played.h:84 played.h:101
+#: movreel.h:137 movshare.h:186 nbaondemand.h:61 played.h:84 played.h:101
 #: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
 #: putlocker.h:225 shared.h:82 solarmovie.h:51 solarmovie.h:62
@@ -9800,7 +9800,7 @@ msgid "The page not found, file removed"
 msgstr ""
 
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:160 faststream.h:109
-#: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:80 movshare.h:165
+#: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:96 movshare.h:192
 #: thevideo.h:66 vidag.h:60 vidbull.h:73 vidto.h:73 vidto.h:180 vidzi.h:65
 #: vivo.h:44 vivo.h:67 vodlocker.h:80 xvidstage.h:64
 msgid "The video no longer exists"
@@ -12847,7 +12847,7 @@ msgstr "Select the drive from the list you wish to check"
 msgid "serviceinfo"
 msgstr ""
 
-#: movie4k.h:403
+#: movie4k.h:411
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
 msgstr ""
 
