@@ -23,7 +23,9 @@ char* movie4k(char* link)
 		tmppath = pos + 1;
 	}
 
-	tmpstr1 = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
+//	tmpstr1 = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
+	tmpstr1 = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+
 	titheklog(debuglevel, "/tmp/movie4k_streamurl_tmpstr1_a", NULL, NULL, NULL, tmpstr1);
 
 	tmpstr = string_resub("question.png", "underplayer", tmpstr1, 0);
@@ -48,12 +50,18 @@ char* movie4k(char* link)
 //		url = oregex(".*src=\"(http://.*)\".*", tmpstr);
 
 	if(url == NULL)
+		url = oregex(".*src=\"(https://.*)&.*", tmpstr);
+
+	if(url == NULL)
+		url = oregex(".*src=\"(https://.*)\".*", tmpstr);
+
+	if(url == NULL)
 	{
 		textbox(_("Message"), _("Can not parse Main Stream URL, try again later.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 	
-	if(ostrstr(url, "http://") == NULL)
+	if(ostrstr(url, "http") == NULL)
 	{
 		free(url), url = NULL;
 		url = string_resub("<iframe src=", "\" width", tmpstr, 0);
