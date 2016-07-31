@@ -2074,7 +2074,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 #ifdef MIPSEL
 				if(getconfig("ciclockdev", NULL) != NULL);
 				{
-					setciclock(dvbnode->devnr, "high")
+					setciclock(dvbnode->devnr, "high");
 					debug(620, "set ci clock to high -> Slot: %i", dvbnode->devnr);
 				}
 #endif
