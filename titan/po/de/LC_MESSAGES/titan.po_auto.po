@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.70\n"
+"Project-Id-Version: TitanNit 1.77\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
@@ -8495,7 +8495,7 @@ msgstr "Suche und Verwaltung von CIFS/SMB, NFS und FTP Freigaben"
 
 #: scan.h:1706
 msgid "Scan completed, changes have been saved."
-msgstr "Suchlauf abgeschlossen, Änderungen wurden gespeichert."
+msgstr "Suchlauf abgeschlossen\nÄnderungen wurden gespeichert."
 
 #: scan.h:1978
 msgid "Scan is not allowed if record or stream is running !"
