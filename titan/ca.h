@@ -1678,21 +1678,21 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 					debug(620, "cam (slot %d) status changed, cam now present", dvbnode->devnr);
 					
 #ifdef MIPSEL
-					char *buf = NULL, *cadev = NULL;
+					char *buf1 = NULL, *cadev = NULL;
 					cadev = getconfig("cadev", NULL);
 					if(cadev != NULL)
 					{
-						buf = malloc(MINMALLOC);
-						if(buf != NULL)
+						buf1 = malloc(MINMALLOC);
+						if(buf1 != NULL)
 						{
-							sprintf(buf, cadev, 0, dvbnode->devnr);
-							fd = caopendirect(buf);
+							sprintf(buf1, cadev, 0, dvbnode->devnr);
+							fd = caopendirect(buf1);
 							if(fd >= 0)
 							{
 								cainit(fd);
 								caclose(NULL, fd);
 							}
-							free(buf);
+							free(buf1);
 						}
 					}
 #endif					
