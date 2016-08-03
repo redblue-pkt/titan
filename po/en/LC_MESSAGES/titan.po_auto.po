@@ -1595,7 +1595,7 @@ msgstr "Favourites"
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1419
+#: player.h:1424
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
