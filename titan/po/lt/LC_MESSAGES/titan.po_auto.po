@@ -1595,7 +1595,7 @@ msgstr "Mgstami"
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1410
+#: player.h:1406
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
