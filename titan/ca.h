@@ -1676,8 +1676,25 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 				if(info.flags & CA_CI_MODULE_READY)
 				{
 					debug(620, "cam (slot %d) status changed, cam now present", dvbnode->devnr);
+					
 #ifdef MIPSEL
-					cainit(dvbnode->fd);
+					char *buf = NULL, *cadev = NULL;
+					cadev = getconfig("cadev", NULL);
+					if(cadev != NULL)
+					{
+						buf = malloc(MINMALLOC);
+						if(buf != NULL)
+						{
+							sprintf(buf, cadev, 0, dvbnode->devnr);
+							fd = caopendirect(buf);
+							if(fd >= 0)
+							{
+								cainit(fd);
+								caclose(NULL, fd);
+							}
+							free(buf);
+						}
+					}
 #endif					
 					canode->connid = dvbnode->devnr + 1;
 					// cacc start
