@@ -811,7 +811,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:26
 msgid "Aktion after"
-msgstr ""
+msgstr "Action after"
 
 #: plugins_callmonitor1_skin.xml.h:3 skins_callmonitor1_skin.xml.h:3
 msgid "Aktion wenn standby"
@@ -1595,7 +1595,7 @@ msgstr "Favourites"
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1410
+#: player.h:1406
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -7809,7 +7809,7 @@ msgstr "DO you want to remove the selected Entry from your Favourites?"
 
 #: skin_default_skin.xml.h:482
 msgid "Remove unused Channels in Bouquets"
-msgstr ""
+msgstr "Remove unavailable Channels in Bouquets"
 
 #: skin_default_skin.xml.h:483
 msgid "Remove unused Satellites/Providers"
@@ -11940,7 +11940,7 @@ msgstr "internal"
 
 #: skin_default_skin.xml.h:315
 msgid "internet"
-msgstr ""
+msgstr "Internet"
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62
 msgid "ip"
