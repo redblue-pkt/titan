@@ -1662,7 +1662,11 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 			if(dvbnode->caslot->status == 101) break; //titan end
 
 			//reset the module an wait max 10 sek
+#ifdef MIPSEL
+			careseting(self, dvbnode, 1);
+#else
 			careseting(self, dvbnode, 0);
+#endif
 
 			info.num = dvbnode->devnr;
 			if(cagetslotinfo(dvbnode, &info) == 0)
@@ -1672,6 +1676,9 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 				if(info.flags & CA_CI_MODULE_READY)
 				{
 					debug(620, "cam (slot %d) status changed, cam now present", dvbnode->devnr);
+#ifdef MIPSEL
+					cainit(dvbnode->fd);
+#endif					
 					canode->connid = dvbnode->devnr + 1;
 					// cacc start
 					dvbnode->caslot->ccmgr_ready = 0;
@@ -2041,9 +2048,6 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			//change ciX_input and inputX
 			if(clear == 0 && node->fedev != NULL)
 			{
-#ifdef MIPSEL
-				cainit(dvbnode->fd);
-#endif
 				char* ci = NULL;
 				debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
 				switch(node->fedev->devnr)
