@@ -2041,6 +2041,9 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			//change ciX_input and inputX
 			if(clear == 0 && node->fedev != NULL)
 			{
+#ifdef MIPSEL
+				cainit(dvbnode->fd);
+#endif
 				char* ci = NULL;
 				debug(620, "set ci slot %d to tuner %d", dvbnode->devnr, node->fedev->devnr);
 				switch(node->fedev->devnr)
