@@ -2078,10 +2078,10 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 						break;
 				}
 				
-#ifdef MIPSEL
+/*#ifdef MIPSEL
 					setciclock(dvbnode->devnr, "high");
 					debug(620, "set ci clock to high -> Slot: %i", dvbnode->devnr);
-#endif
+#endif*/
 
 			}
 			//send all saved capmt first
