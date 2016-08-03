@@ -1015,6 +1015,8 @@ int playerstart(char* file)
 		else
 			tmpfile = ostrcat(file, NULL, 0, 0);
 
+		printf("[player.h] file: %s\n", file);
+
 		if(tmpfile == NULL)
 		{
 			err("no mem");
@@ -1145,6 +1147,8 @@ int playerstart(char* file)
 // enable soup user-agent / extra-headers
 		g_signal_connect(G_OBJECT(pipeline), "notify::source", G_CALLBACK(playbinNotifySource), file);
 //////////////////////////
+
+		printf("[player.h] file changed: %s\n", file);
 
 //gpointer this;
 //memset (&this, 0, sizeof (this));
