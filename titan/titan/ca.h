@@ -1680,6 +1680,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 #ifdef MIPSEL
 					char *buf1 = NULL, *cadev = NULL;
 					cadev = getconfig("cadev", NULL);
+					int fd = -1;
 					if(cadev != NULL)
 					{
 						buf1 = malloc(MINMALLOC);
