@@ -238,7 +238,7 @@ int cagetdev()
 			fd = caopendirect(buf);
 			if(fd >= 0)
 			{
-#ifdef MIPSEL
+#ifndef MIPSEL
 				cainit(fd);
 #endif
 				caclose(NULL, fd);
