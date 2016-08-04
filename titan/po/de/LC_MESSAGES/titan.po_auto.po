@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.77\n"
+"Project-Id-Version: TitanNit 1.70\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
@@ -1628,7 +1628,7 @@ msgstr ""
 msgid "Browser Resolution"
 msgstr "Browser Auflösung"
 
-#: player.h:1410
+#: player.h:1426
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Stream wird zwischengespeichert - abbrechen mit Exit"
 
@@ -8495,9 +8495,7 @@ msgstr "Suche und Verwaltung von CIFS/SMB, NFS und FTP Freigaben"
 
 #: scan.h:1706
 msgid "Scan completed, changes have been saved."
-msgstr ""
-"Suchlauf abgeschlossen\n"
-"Änderungen wurden gespeichert."
+msgstr "Suchlauf abgeschlossen, Änderungen wurden gespeichert."
 
 #: scan.h:1978
 msgid "Scan is not allowed if record or stream is running !"
