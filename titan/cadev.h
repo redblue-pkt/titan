@@ -238,7 +238,9 @@ int cagetdev()
 			fd = caopendirect(buf);
 			if(fd >= 0)
 			{
+#ifdef MIPSEL
 				cainit(fd);
+#endif
 				caclose(NULL, fd);
 				count++;
 				adddvbdev(buf, i, y, -1, CADEV, NULL, NULL, NULL, 0);
