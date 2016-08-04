@@ -1677,7 +1677,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 				{
 					debug(620, "cam (slot %d) status changed, cam now present", dvbnode->devnr);
 					
-/*#ifdef MIPSEL
+#ifdef MIPSEL
 					char *buf1 = NULL, *cadev = NULL;
 					cadev = getconfig("cadev", NULL);
 					int fd = -1;
@@ -1696,7 +1696,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 							free(buf1);
 						}
 					}
-#endif*/					
+#endif					
 					canode->connid = dvbnode->devnr + 1;
 					// cacc start
 					dvbnode->caslot->ccmgr_ready = 0;
