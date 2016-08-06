@@ -4639,7 +4639,8 @@ msgstr "Hier können Sie die Einstellungen für CI-Module anpassen"
 
 #: skin_default_skin.xml.h:273
 msgid "Here you can make your network autostart settings."
-msgstr "Hier können Sie den Autostart für verschiedene Netzwerkdienste konfigurieren"
+msgstr ""
+"Hier können Sie den Autostart für verschiedene Netzwerkdienste konfigurieren"
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can make your overclock settings."
