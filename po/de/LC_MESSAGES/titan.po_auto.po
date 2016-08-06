@@ -172,7 +172,7 @@ msgid ""
 "Repair it?"
 msgstr ""
 "FEHLER: /var ist nicht beschreibbar!\n"
-"Reparatur starten??"
+"Reparatur starten?"
 
 #: plugins_catcatch_skin.xml.h:1 plugins_sudoku_skin.xml.h:2
 #: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:5
