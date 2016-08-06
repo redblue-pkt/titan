@@ -176,11 +176,7 @@ int careset(struct dvbdev* node, int slot)
 	}
 
 	debug(201, "CA_RESET");
-#ifdef MIPSEL
-	if(ioctl(node->fd, 0) < 0)
-#else
 	if(ioctl(node->fd, CA_RESET, slot) < 0)
-#endif
 	{
 		perr("CA_RESET");
 		return 1;
