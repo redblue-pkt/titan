@@ -164,7 +164,7 @@ msgid ""
 "Repair it?"
 msgstr ""
 "FEHLER: /mnt ist nicht beschreibbar!\n"
-"Soll ein Reparaturversuch gestartet werden?"
+"Reparatur starten?"
 
 #: titan.c:1249
 msgid ""
@@ -172,7 +172,7 @@ msgid ""
 "Repair it?"
 msgstr ""
 "FEHLER: /var ist nicht beschreibbar!\n"
-"Soll es repariert werden?"
+"Reparatur starten??"
 
 #: plugins_catcatch_skin.xml.h:1 plugins_sudoku_skin.xml.h:2
 #: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:5
@@ -280,11 +280,11 @@ msgstr "1500 U/Min"
 
 #: browser.h:214
 msgid "16 Bit Scale 100 Percent"
-msgstr "16 Bit Skalieren auf 100%"
+msgstr "16 Bit skalieren auf 100%"
 
 #: browser.h:215
 msgid "16 Bit Scale 200 Percent"
-msgstr "16 Bit Skalieren auf 200%"
+msgstr "16 Bit skalieren auf 200%"
 
 #: global.h:1974 global.h:1985 global.h:4121 global.h:4162 global.h:4221
 #: videomode.h:20
@@ -395,11 +395,11 @@ msgstr ""
 
 #: browser.h:212
 msgid "32 Bit Scale 100 Percent"
-msgstr "32 Bit Skalieren auf 100%"
+msgstr "32 Bit skalieren auf 100%"
 
 #: browser.h:213
 msgid "32 Bit Scale 200 Percent"
-msgstr "32 Bit Skalieren auf 200%"
+msgstr "32 Bit skalieren auf 200%"
 
 #: skin_default_skin.xml.h:3 videomode.h:34 videomode.h:96
 msgid "3D Mode"
@@ -415,7 +415,7 @@ msgstr "3D Einstellungen"
 
 #: mc_videoplayer_settings.h:56
 msgid "3s"
-msgstr "3 Sek"
+msgstr "3 Sekunden"
 
 #: callmon_main.h:136 mediadbsettings.h:59 skin_default_keyskin.xml.h:9
 #: webif_index.atemio5200.h:24 webif_index.atemio5200.h:80
@@ -495,7 +495,7 @@ msgstr "500 U/Min"
 
 #: mc_videoplayer_settings.h:58
 msgid "5s (default)"
-msgstr "5 Sek (Standard)"
+msgstr "5 Sekunden (Standard)"
 
 #: callmon_main.h:138 skin_default_keyskin.xml.h:11
 #: webif_index.atemio5200.h:26 webif_index.atemio5200.h:82
@@ -4639,7 +4639,7 @@ msgstr "Hier können Sie die Einstellungen für CI-Module anpassen"
 
 #: skin_default_skin.xml.h:273
 msgid "Here you can make your network autostart settings."
-msgstr "Hier können Sie den Netzwerk Autostart konfigurieren"
+msgstr "Hier können Sie den Autostart für verschiedene Netzwerkdienste konfigurieren"
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can make your overclock settings."
@@ -12417,7 +12417,7 @@ msgstr "NFS"
 
 #: panel_settings_autostart.h:318 settings_autostart.h:567
 msgid "nfs server"
-msgstr "NFSD Kernel Server autostart"
+msgstr "NFSD Kernel Server"
 
 #: adjust.h:69 adjust.h:84 adjust.h:93 adjust.h:98 adjust.h:127 adjust.h:157
 #: adjust.h:167 adjust.h:171 adjust.h:197 adjust.h:201 adjust.h:209
@@ -12532,7 +12532,7 @@ msgstr "Ntfsmount"
 
 #: settings_autostart.h:594
 msgid "ntpdate"
-msgstr "Automatisch die Uhrzeit aus dem Internet laden"
+msgstr "NTP Client"
 
 #: webif_help.h:60
 msgid "numinput"
@@ -12966,7 +12966,7 @@ msgstr "Suchlauf und Weiße Liste"
 
 #: panel_settings_autostart.h:336 settings_autostart.h:585
 msgid "scan wlan"
-msgstr "WLAN autostart"
+msgstr "WLAN"
 
 #: plugins_zapback_skin.xml.h:4 skins_zapback_skin.xml.h:4
 msgid "schaltet zurueck auf Sender"
