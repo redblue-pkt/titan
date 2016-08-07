@@ -9495,7 +9495,7 @@ msgstr "Символьная скорость"
 msgid "Sysinfo"
 msgstr "Информация о системе"
 
-#: skin_default_skin.xml.h:622 webif_index.h:14
+#: skin_default_skin.xml.h:622 tpk_section.h:17 webif_index.h:14
 msgid "System"
 msgstr "Система"
 
@@ -13102,10 +13102,6 @@ msgstr "Перейти к виртуальной клавиатуре"
 #: settings_autostart.h:206
 msgid "swts"
 msgstr "Загрузка с опцией swts"
-
-#: tpk_section.h:17
-msgid "system"
-msgstr ""
 
 #: webif_help.h:94
 msgid "system_backup"
