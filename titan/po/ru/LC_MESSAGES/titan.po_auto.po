@@ -1673,6 +1673,10 @@ msgstr ""
 msgid "CCcam 2.3.0"
 msgstr ""
 
+#: tpk_description.h:48 tpk_showname.h:18
+msgid "CI Plus Extensions"
+msgstr ""
+
 #: skin_default_skin.xml.h:98
 msgid "CI-MENU"
 msgstr "CI-Меню"
@@ -2160,14 +2164,6 @@ msgstr "Выберите для изменения, добавления нов�
 #: unicable.h:197
 msgid "Choose your manufacturer from the following list"
 msgstr "Выберите нужное из списка ниже"
-
-#: tpk_showname.h:18
-msgid "Ci Pluss Extensions"
-msgstr ""
-
-#: tpk_description.h:48
-msgid "Ci Pluss Extensios"
-msgstr ""
 
 #: skin_default_skin.xml.h:99
 msgid "Ci-Modul internal Menu"
