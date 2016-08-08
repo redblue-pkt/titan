@@ -2110,7 +2110,8 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			dvbnode->caslot->scrambled = 1;
 			debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
 			debug(620, "scrambled=%d ccmgr_ready=%d camanager=%d caservicenr=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, caservice[caservicenr].camanager, caservicenr);
-			if(dvbnode->caslot->ccmgr_ready == 1 && caservice[caservicenr].camanager == 5)
+//atemio5200 camanager=6
+			if(dvbnode->caslot->ccmgr_ready == 1 && (caservice[caservicenr].camanager == 5 || caservice[caservicenr].camanager == 6))
 			{
 #ifdef MIPSEL
 				/*for (i = 0; i < 8192; i++)
