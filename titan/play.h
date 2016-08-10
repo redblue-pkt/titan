@@ -1690,7 +1690,9 @@ playerstart:
 			{
 				rcret = waitrc(playinfobar, rcwait, 0);
 #ifdef MIPSEL
-				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && status.cleaninfobar == 1)
+				debug(150, "waitofbuffer=%d status.cleaninfobar=%d status.prefillbuffer=%d status.prefillbuffercount=%d playinfobarstatus=%d playinfobarcount=%d",waitofbuffer , status.cleaninfobar, status.prefillbuffer, status.prefillbuffercount, playinfobarstatus, playinfobarcount);
+
+				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && (status.cleaninfobar == 1 || status.prefillbuffercount == 200))
 				{
 					drawscreen(skin, 0, 0);
 					screenplayinfobar(file, showname, 0, playertype, flag);
@@ -1698,7 +1700,7 @@ playerstart:
 					status.cleaninfobar = 0;
 					
 				}
-				else if(waitofbuffer == 0 && status.prefillbuffer == 0 && status.cleaninfobar == 0)
+				else if(waitofbuffer == 0 && status.prefillbuffer == 0 && (status.cleaninfobar == 0 || status.prefillbuffercount == 200))
 				{
 					playinfobarcount++;
 					if(playinfobarstatus > 0)

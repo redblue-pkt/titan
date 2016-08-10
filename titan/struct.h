@@ -116,12 +116,12 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "Fri Jul  8 08:43:47 CEST 2016"
+#define DRIVER "Wed Aug 10 10:12:41 CEST 2016"
 #define OVERSION "1.77"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
-#define PLUGINVERSION 37718
+#define PLUGINVERSION 1
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -1378,6 +1378,7 @@ struct status
 	int prefillbuffer;
 	int playpic;
 #ifdef EPLAYER4
+	int prefillbuffercount;
 	int bufferpercent;
 	int cleaninfobar;
 //	gint avgInRate;

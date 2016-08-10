@@ -901,6 +901,7 @@ int playerstart(char* file)
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
 #ifdef EPLAYER4
+	status.prefillbuffercount = 0;
 	status.bufferpercent = 0;
 #endif	
 	if(file != NULL)
@@ -1386,8 +1387,17 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 //			if (data->is_live) break;
 //			gst_message_parse_buffering (msg, &status.bufferpercent);
 
-			printf("status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d\n", status.cleaninfobar, status.prefillbuffer, status.bufferpercent); 
-
+			if(status.prefillbuffer == 1)
+			{
+				status.prefillbuffercount++;
+				if(status.prefillbuffercount >= 200 && status.bufferpercent < 2)
+				{
+					printf("status.prefillbuffercount >= 200 set status.prefillbuffer=2\n"); 
+					status.prefillbuffer = 2;
+				}
+			}
+			debug(150, "status.prefillbuffercount=%d status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d",status.prefillbuffercount , status.cleaninfobar, status.prefillbuffer, status.bufferpercent);
+			
 			if(status.prefillbuffer == 1) 
  			{
 //				gint percent = 0;
@@ -1396,6 +1406,7 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 					printf("data->is_live break: status.cleaninfobar=%d status.prefillbuffer=%d status.bufferpercent=%d\n", status.cleaninfobar, status.prefillbuffer, status.bufferpercent); 
 					break;
 				}
+
 				gst_message_parse_buffering (msg, &status.bufferpercent);
 				g_print ("Buffering (%3d%%)\r", status.bufferpercent);
 
@@ -1438,7 +1449,14 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 				drawscreen(skin, 0, 0);
 				status.cleaninfobar = 0;
 			}
-
+			else
+			{
+//			printf("else\n"); 
+				gst_message_parse_buffering (msg, &status.bufferpercent);
+				g_print ("Buffering (%3d%%)\r", status.bufferpercent);
+//				drawscreen(skin, 0, 0);
+//				status.cleaninfobar = 0;
+			}
 			break;
  
 /*
