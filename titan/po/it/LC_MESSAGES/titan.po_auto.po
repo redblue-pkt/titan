@@ -5543,11 +5543,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1866
+#: play.h:1868
 msgid "Marker autoseek is started"
 msgstr "Marker has been set."
 
-#: play.h:1877
+#: play.h:1879
 msgid "Marker autoseek is stopped"
 msgstr "Marker has been set."
 
@@ -5808,7 +5808,7 @@ msgstr ""
 #: nowvideo.h:43 nowvideo.h:100 nowvideo.h:106 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
 #: played.h:90 played.h:102 played.h:114 played.h:171 player.h:111 play.h:614
-#: play.h:1314 play.h:1351 play.h:1650 play.h:1866 play.h:1877 possetup.h:98
+#: play.h:1314 play.h:1351 play.h:1650 play.h:1868 play.h:1879 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -6396,7 +6396,7 @@ msgstr ""
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
 #: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450 play.h:1650
-#: play.h:1866 play.h:1877 plugins_dlna_skin.xml.h:7
+#: play.h:1868 play.h:1879 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
