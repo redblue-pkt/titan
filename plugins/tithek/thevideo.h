@@ -77,6 +77,9 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	if(streamlink == NULL)
 		streamlink = oregex(".*(http://.*v.mp4).*", tmpstr);
 
+	if(streamlink != NULL)
+		streamlink = ostrcat(streamlink, "?direct=false&ua=1&vt=1", 1, 0);
+
 	titheklog(debuglevel, "/tmp/thevideo1_streamlink", NULL, NULL, NULL, streamlink);
 
 end:
