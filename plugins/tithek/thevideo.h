@@ -6,10 +6,13 @@ char* thevideo(char* link)
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL, *tmplink = NULL, *tmppath = NULL, *tmpstr = NULL, *streamlink = NULL, *pos = NULL, *path = NULL, *url = NULL;
+	char* vhash = NULL, *gfk = NULL, *fname = NULL, *hash = NULL, *post = NULL, *inhu = NULL, *op = NULL, *vt = NULL, *tmpstr1 = NULL;
 
 	if(link == NULL) return NULL;
 
-	unlink("/tmp/thevideo1_get");
+	unlink("/var/usr/local/share/titan/plugins/tithek/thevideo1_get");
+	unlink("/var/usr/local/share/titan/plugins/tithek/thevideo2_post");
+
 	unlink("/tmp/thevideo2_streamlink");
 /////////////
 
@@ -41,6 +44,8 @@ char* thevideo(char* link)
 	tmppath = ostrcat("/embed-", path, 0, 0);
 	tmppath = ostrcat(tmppath, ".html", 1, 0);
 
+//	tmppath = ostrcat("/", path, 0, 0);
+
 /*
 http://thevideo.me/g5oi83o7260u
 'GET /embed-g5oi83o7260u.html HTTP/1.1\r\nHost: thevideo.me\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n'
@@ -52,8 +57,8 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	debug(99, "tmphost: %s", tmphost);
 	url = ostrcat(tmphost, tmppath, 0, 0);
 	debug(99, "url: %s", url);
-	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/tmp/thevideo1_get", NULL, NULL, NULL, tmpstr);	
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thevideo1_get", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)
 	{
@@ -67,6 +72,37 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 		goto end;
 	}
 
+	vhash = string_resub("'_vhash', value: '", "'", tmpstr, 0);
+	gfk = string_resub("'gfk', value: '", "'", tmpstr, 0);
+	fname = string_resub("name=\"fname\" value=\"", "\"", tmpstr, 0);
+	hash = string_resub("name=\"hash\" value=\"", "\"", tmpstr, 0);
+	op = string_resub("name=\"op\" value=\"", "\"", tmpstr, 0);
+	inhu = string_resub("name=\"inhu\" value=\"", "\"", tmpstr, 0);
+	free(tmpstr); tmpstr = NULL;
+
+	post = ostrcat("_vhash=", vhash, 0, 0);
+	post = ostrcat(post, "&gfk=", 1, 0);
+	post = ostrcat(post, gfk, 1, 0);
+	post = ostrcat(post, "&op=", 1, 0);
+	post = ostrcat(post, op, 1, 0);
+	post = ostrcat(post, "&usr_login=&id=", 1, 0);
+	post = ostrcat(post, path, 1, 0);
+	post = ostrcat(post, "&fname=", 1, 0);
+	post = ostrcat(post, fname, 1, 0);
+	post = ostrcat(post, "&referer=http%3A%2F%2Fthevideo.me%2F", 1, 0);
+	post = ostrcat(post, path, 1, 0);
+	post = ostrcat(post, "&hash=", 1, 0);
+	post = ostrcat(post, hash, 1, 0);
+	post = ostrcat(post, "&inhu=", 1, 0);
+	post = ostrcat(post, inhu, 1, 0);
+	post = ostrcat(post, "&imhuman=", 1, 0);
+
+	debug(99, "post: %s", post);
+
+	debug(99, "url: %s", url);
+	tmpstr = gethttps(link, NULL, post, NULL, NULL, link, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thevideo2_post", NULL, NULL, NULL, tmpstr);	
+
 	streamlink = string_resub("'label' : '360p', 'file' : '", "'", tmpstr, 0);
 	if(streamlink == NULL)
 		streamlink = string_resub("'label' : '240p', 'file' : '", "'", tmpstr, 0);		
@@ -77,18 +113,68 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	if(streamlink == NULL)
 		streamlink = oregex(".*(http://.*v.mp4).*", tmpstr);
 
+	tmpstr1 = string_resub("<div class=\"container main-container\">", "</div>", tmpstr, 0);
+	debug(99, "tmpstr1: %s", tmpstr1);
+	free(tmpstr), tmpstr = NULL;
+
+	url = string_resub("<script src=\"", "\"></script>", tmpstr1, 0);
+	free(tmpstr1), tmpstr1 = NULL;
+
+/*
+	<script src="https://thevideo.me/jwjsv/sfqlqb288ft2"></script>
+	https://thevideo.me/jwjsv/sfqlqb288ft2
+*/
+
+	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, link, 1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thevideo3_get", NULL, NULL, NULL, tmpstr);	
+
+	tmpstr1 = string_resub("[],30,'", "'.split('|')", tmpstr, 0);
+	int count = 0;
+	int j;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr1, "|", &count);
+
+	if(ret1 != NULL && count > 0)
+	{
+		for(j = 0; j < count; j++)
+		{
+			if(strlen(ret1[j].part) > 50)
+				vt = ostrcat(ret1[j].part, NULL, 0, 0);
+		}
+	}
+	free(ret1); ret1 = NULL;
+
+/*
+	https://d4242.thevideo.me:8777/gwjta3agywoammfvg7sfgcmaglluse7vcwc6gn6frivojkuv2dk6h7fk77bpqtu5v6uxlvg6okwz2hdqdykueqnd5hllm5bnwwveiqijxa5b6wzozls26gn3f7ci6pvr44jhdqjt3ndyur5ecocf2pz4mlwtmdzps4xtk7jdce3ezweuna7ww2u4pmujltietcuedpvveh4tc6sjv3oxljsajrq5hz22vtwthssqknhd3v5psrp2rur2gxroejzewfek5dbr/v.mp4?direct=false&ua=1&vt=osv3jha2zaetuu35h7nm4hpodzb7raf5clkelbe2gmgew3qcowp257vjk347pb6fshhj3uku2vggcte3ix4tqwp6gy5twendw4wrkj76ms437ghk76hhb5iimrpmjgt4uee4hdhctjvy72pfx7us3usbvyiwxpizl5mbo2alkrb4g253pznnrqn5ub4a7w36p3lirdnfoxogogs7pnsspgmxi6wqinys7orguna
+*/
+
 	if(streamlink != NULL)
-		streamlink = ostrcat(streamlink, "?direct=false&ua=1&vt=1", 1, 0);
+	{
+		streamlink = ostrcat(streamlink, "?direct=false&ua=1&vt=", 1, 0);
+		if(vt != NULL)
+			streamlink = ostrcat(streamlink, vt, 1, 0);
+		else
+			streamlink = ostrcat(streamlink, "1", 1, 0);
+	}
 
 	titheklog(debuglevel, "/tmp/thevideo1_streamlink", NULL, NULL, NULL, streamlink);
 
 end:
 
+	free(vhash); vhash = NULL;
+	free(gfk); gfk = NULL;
+	free(fname); fname = NULL;
+	free(hash); hash = NULL;
+	free(post); post = NULL;
+	free(inhu); inhu = NULL;
+	free(op); op = NULL;
+	free(vt); vt = NULL;
 	free(url); url = NULL;
 	free(tmphost); tmphost = NULL;
 	free(tmppath); tmppath = NULL;
 	free(tmplink); tmplink = NULL;
 	free(tmpstr); tmpstr = NULL;
+	free(tmpstr1); tmpstr1 = NULL;
 
 	return streamlink;
 }
