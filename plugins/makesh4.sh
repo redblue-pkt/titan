@@ -73,7 +73,7 @@ else
     devflag=""
 fi
 
-if [ "$GROUP" = "dev" ];then
+#if [ "$GROUP" = "dev" ];then
 	eplayerinclude="$eplayerinclude
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/freetype2
@@ -83,17 +83,17 @@ if [ "$GROUP" = "dev" ];then
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libmme_image
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/build_tmp/linux-sh4-2.6.32.71_stm24_0217/include
     -I "$HOME"/flashimg/$SRCDIR"
-else
-	eplayerinclude="$eplayerinclude
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/freetype2
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/openssl
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/titan/libdreamdvd
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/driver/bpamem
-	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libmme_image
-	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/cdk/linux-sh4-2.6.32.61_stm24_0217/include
-    -I "$HOME"/flashimg/$SRCDIR"
-fi
+#else
+#	eplayerinclude="$eplayerinclude
+#    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include
+#    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/freetype2
+#    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/openssl
+#    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/titan/libdreamdvd
+#    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/driver/bpamem
+#	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libmme_image
+#	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/cdk/linux-sh4-2.6.32.61_stm24_0217/include
+#    -I "$HOME"/flashimg/$SRCDIR"
+#fi
 
 compile()
 {
