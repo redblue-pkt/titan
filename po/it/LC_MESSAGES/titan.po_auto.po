@@ -1672,17 +1672,14 @@ msgstr ""
 msgid "COPY"
 msgstr "Copia"
 
-#: httpdfunc.h:5307 skin_default_skin.xml.h:120 webif_info_sysinfos.h:2
+#: httpdfunc.h:5307 skin_default_skin.xml.h:120 system_infos_sysinfo.h:15
+#: webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr "Processore"
 
 #: panel_settings_overclocking.h:222 settings_overclocking.h:222
 msgid "CPU frequency"
 msgstr "Frequenza processore"
-
-#: system_infos_sysinfo.h:15
-msgid "CPU info"
-msgstr "Informazioni Processore"
 
 #: blindscanadjust.h:121
 msgid "Cable"
@@ -5074,7 +5071,7 @@ msgstr ""
 msgid "Kernel"
 msgstr ""
 
-#: skin_default_skin.xml.h:323
+#: skin_default_skin.xml.h:323 system_infos_sysinfo.h:21
 msgid "Kernel Modules"
 msgstr ""
 
@@ -5479,16 +5476,13 @@ msgstr ""
 msgid "MO"
 msgstr ""
 
-#: httpdfunc.h:5311 skin_default_skin.xml.h:378 webif_info_sysinfos.h:4
+#: httpdfunc.h:5311 skin_default_skin.xml.h:378 system_infos_sysinfo.h:19
+#: webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr "Flash divisione"
 
 #: adjust.h:279
 msgid "MTD Operation/System Update"
-msgstr ""
-
-#: system_infos_sysinfo.h:19
-msgid "MTD info"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:60
@@ -5717,13 +5711,10 @@ msgstr ""
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: httpdfunc.h:5309 skin_default_skin.xml.h:358 webif_info_sysinfos.h:3
+#: httpdfunc.h:5309 skin_default_skin.xml.h:358 system_infos_sysinfo.h:17
+#: webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Memoria"
-
-#: system_infos_sysinfo.h:17
-msgid "Memory info"
-msgstr "Info Memoria"
 
 #: filemanager.h:84 play.h:633 plugins_sudoku_skin.xml.h:10
 #: skins_sudoku_skin.xml.h:10 webif_index.atemio5200.h:36
@@ -5912,10 +5903,6 @@ msgstr ""
 #: moduleconfig.h:373
 msgid "Module Type"
 msgstr ""
-
-#: system_infos_sysinfo.h:21
-msgid "Module info"
-msgstr "Informazione Moduli"
 
 #: global.h:6282
 msgid "Mon"
@@ -7233,7 +7220,7 @@ msgstr "Precedente"
 msgid "Prime Time"
 msgstr ""
 
-#: skin_default_skin.xml.h:446
+#: skin_default_skin.xml.h:446 system_infos_sysinfo.h:29
 msgid "Processlist"
 msgstr ""
 
@@ -7298,10 +7285,6 @@ msgstr ""
 msgid "ProviderCount: "
 msgstr "Numero Provider: "
 
-#: system_infos_sysinfo.h:29
-msgid "Prozess Info"
-msgstr "Info Programma"
-
 #: httpdfunc.h:5321 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr ""
@@ -7343,7 +7326,7 @@ msgstr "QPSK automatico"
 msgid "R"
 msgstr ""
 
-#: skin_default_skin.xml.h:458
+#: skin_default_skin.xml.h:458 system_infos.h:24
 msgid "RAM"
 msgstr ""
 
@@ -7428,7 +7411,7 @@ msgstr "Trovati Radio:"
 msgid "Radiotext"
 msgstr ""
 
-#: httpdfunc.h:5271 system_infos.h:24 webif_info_systeminfos.h:7
+#: httpdfunc.h:5271 webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr "Spazio libero"
 
@@ -9400,7 +9383,8 @@ msgid "Svn Changelog Full"
 msgstr ""
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:617 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:617 system_infos_sysinfo.h:25
+#: webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr ""
 
@@ -9411,10 +9395,6 @@ msgstr "swap_max_sectors"
 #: panel_settings_autostart.h:219 settings_autostart.h:324
 msgid "Swap Size"
 msgstr "Swap"
-
-#: system_infos_sysinfo.h:25
-msgid "Swap info"
-msgstr "Informazioni Sistema"
 
 #: skin_default_skin.xml.h:618
 msgid "Switch TV to the correct input"
@@ -10062,13 +10042,10 @@ msgstr ""
 msgid "Tone Mode"
 msgstr ""
 
-#: httpdfunc.h:5319 skin_default_skin.xml.h:660 webif_info_sysinfos.h:8
+#: httpdfunc.h:5319 skin_default_skin.xml.h:660 system_infos_sysinfo.h:27
+#: webif_info_sysinfos.h:8
 msgid "Top"
 msgstr ""
-
-#: system_infos_sysinfo.h:27
-msgid "Top Info"
-msgstr "TV (Info)"
 
 #: TopfieldVFD.c:72
 msgid "TopfieldVFD plugin not available, wrong box!"
@@ -10328,17 +10305,14 @@ msgstr "sconosciuto"
 msgid "UNLOAD"
 msgstr ""
 
-#: httpdfunc.h:5323 skin_default_skin.xml.h:696 webif_info_sysinfos.h:10
+#: httpdfunc.h:5323 skin_default_skin.xml.h:696 system_infos_sysinfo.h:31
+#: webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
 #: hwtest.h:438 hwtest.h:451
 msgid "USB "
 msgstr ""
-
-#: system_infos_sysinfo.h:31
-msgid "USB Info"
-msgstr "Info"
 
 #: hwtest.h:182 hwtest.h:416
 msgid "USB Port"
@@ -13597,3 +13571,24 @@ msgstr ""
 #: tpk_showname.h:226
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "CPU info"
+#~ msgstr "Informazioni Processore"
+
+#~ msgid "Memory info"
+#~ msgstr "Info Memoria"
+
+#~ msgid "Module info"
+#~ msgstr "Informazione Moduli"
+
+#~ msgid "Prozess Info"
+#~ msgstr "Info Programma"
+
+#~ msgid "Swap info"
+#~ msgstr "Informazioni Sistema"
+
+#~ msgid "Top Info"
+#~ msgstr "TV (Info)"
+
+#~ msgid "USB Info"
+#~ msgstr "Info"
