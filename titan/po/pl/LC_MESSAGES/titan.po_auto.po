@@ -13520,21 +13520,3 @@ msgstr ""
 #: tpk_showname.h:226
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Memory info"
-#~ msgstr "Pamięć"
-
-#~ msgid "Module info"
-#~ msgstr "Moduł"
-
-#~ msgid "Prozess Info"
-#~ msgstr "Info o programie"
-
-#~ msgid "Swap info"
-#~ msgstr "Informacje o systemie"
-
-#~ msgid "Top Info"
-#~ msgstr "Info"
-
-#~ msgid "USB Info"
-#~ msgstr "Info"

@@ -13664,27 +13664,3 @@ msgstr ""
 #: tpk_showname.h:226
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "CPU info"
-#~ msgstr "Процессор"
-
-#~ msgid "MTD info"
-#~ msgstr "Распределение FLASH"
-
-#~ msgid "Memory info"
-#~ msgstr "Память"
-
-#~ msgid "Module info"
-#~ msgstr "Модули"
-
-#~ msgid "Prozess Info"
-#~ msgstr "Список"
-
-#~ msgid "Swap info"
-#~ msgstr "SWAP"
-
-#~ msgid "Top Info"
-#~ msgstr "ТОР"
-
-#~ msgid "USB Info"
-#~ msgstr "USB устройства"
