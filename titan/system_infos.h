@@ -21,7 +21,7 @@ void screensystem_infos(int mode)
 	else if(mode == 4)
 		changetitle(system_info, _("Network"));
 	else if(mode == 5)
-		changetitle(system_info, _("Ram"));
+		changetitle(system_info, _("RAM"));
 
 	drawscreen(system_info, 0, 0);
 
