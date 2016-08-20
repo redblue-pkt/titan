@@ -5089,6 +5089,10 @@ msgid "Kernel"
 msgstr ""
 
 #: skin_default_skin.xml.h:323
+msgid "Kernel Modules"
+msgstr ""
+
+#: skin_default_skin.xml.h:324
 msgid "Key"
 msgstr "khóa"
 
@@ -5104,7 +5108,7 @@ msgstr ""
 msgid "KeyLock"
 msgstr ""
 
-#: skin_default_skin.xml.h:325
+#: skin_default_skin.xml.h:326
 msgid "Keyboard"
 msgstr "Bàn phím"
 
@@ -5188,11 +5192,11 @@ msgstr ""
 msgid "LCD Samsung skin wooden clock"
 msgstr ""
 
-#: skin_default_skin.xml.h:331
+#: skin_default_skin.xml.h:332
 msgid "LED - brightness running"
 msgstr ""
 
-#: skin_default_skin.xml.h:332
+#: skin_default_skin.xml.h:333
 msgid "LED - brightness standby"
 msgstr ""
 
@@ -5224,7 +5228,7 @@ msgstr ""
 msgid "LNB 18V / 22K off: OK"
 msgstr ""
 
-#: skin_default_skin.xml.h:337
+#: skin_default_skin.xml.h:338
 msgid "LNB Settings"
 msgstr "Thiết lập LNB"
 
@@ -5240,23 +5244,23 @@ msgstr ""
 msgid "LOAD-FritzBook"
 msgstr ""
 
-#: skin_default_skin.xml.h:340
+#: skin_default_skin.xml.h:341
 msgid "LOF / UNICABLE"
 msgstr ""
 
-#: skin_default_skin.xml.h:338
+#: skin_default_skin.xml.h:339
 msgid "LOF/H"
 msgstr ""
 
-#: skin_default_skin.xml.h:339
+#: skin_default_skin.xml.h:340
 msgid "LOF/L"
 msgstr ""
 
-#: skin_default_skin.xml.h:341
+#: skin_default_skin.xml.h:342
 msgid "LOG"
 msgstr ""
 
-#: skin_default_skin.xml.h:329
+#: skin_default_skin.xml.h:330
 msgid "Language"
 msgstr ""
 
@@ -5342,7 +5346,7 @@ msgstr ""
 msgid "Last: "
 msgstr ""
 
-#: skin_default_skin.xml.h:330
+#: skin_default_skin.xml.h:331
 msgid "Latitude"
 msgstr "Vĩ độ"
 
@@ -5381,7 +5385,7 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: skin_default_skin.xml.h:333
+#: skin_default_skin.xml.h:334
 msgid "Limit"
 msgstr "giới hạn"
 
@@ -5393,15 +5397,15 @@ msgstr ""
 msgid "Linuxgirl"
 msgstr ""
 
-#: skin_default_skin.xml.h:334
+#: skin_default_skin.xml.h:335
 msgid "Listbox Select"
 msgstr "Lựa chọn danh sách"
 
-#: skin_default_skin.xml.h:335
+#: skin_default_skin.xml.h:336
 msgid "Listbox Select Color"
 msgstr "Lựa chọn danh sách"
 
-#: skin_default_skin.xml.h:336
+#: skin_default_skin.xml.h:337
 msgid "Lithuanian"
 msgstr ""
 
@@ -5433,7 +5437,7 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
-#: skin_default_skin.xml.h:342
+#: skin_default_skin.xml.h:343
 msgid "Longitude"
 msgstr "Vĩ độ"
 
@@ -5469,15 +5473,15 @@ msgstr "Cài đặt sắp xếp VideoPlayer MC"
 msgid "MC VideoPlayer View Settings"
 msgstr "Cài đặt hiển thị VideoPlayer MC"
 
-#: skin_default_skin.xml.h:360
+#: skin_default_skin.xml.h:361
 msgid "MENUPROTECT"
 msgstr ""
 
-#: skin_default_skin.xml.h:362
+#: skin_default_skin.xml.h:363
 msgid "MHW EPG"
 msgstr "EPG"
 
-#: skin_default_skin.xml.h:361
+#: skin_default_skin.xml.h:362
 msgid "MHW2 EPG"
 msgstr ""
 
@@ -5525,7 +5529,7 @@ msgstr ""
 msgid "MULTI EPG - Satellites"
 msgstr "EPG – Tất cả các chương trình"
 
-#: skin_default_skin.xml.h:343
+#: skin_default_skin.xml.h:344
 msgid "Main Menu"
 msgstr "Menu chính"
 
@@ -5533,15 +5537,15 @@ msgstr "Menu chính"
 msgid "Manage MultiImage"
 msgstr ""
 
-#: skin_default_skin.xml.h:344
+#: skin_default_skin.xml.h:345
 msgid "Manual Search"
 msgstr "Dò bằng tay"
 
-#: skin_default_skin.xml.h:345
+#: skin_default_skin.xml.h:346
 msgid "Manual Search Cable"
 msgstr "Dò bằng tay"
 
-#: skin_default_skin.xml.h:346
+#: skin_default_skin.xml.h:347
 msgid "Manual Search Terrestrial"
 msgstr "Dò bằng tay"
 
@@ -5549,11 +5553,11 @@ msgstr "Dò bằng tay"
 msgid "March"
 msgstr ""
 
-#: skin_default_skin.xml.h:347
+#: skin_default_skin.xml.h:348
 msgid "Mark Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:348
+#: skin_default_skin.xml.h:349
 msgid "Marker"
 msgstr ""
 
@@ -5577,11 +5581,11 @@ msgstr "Đã thiết lập nhà sản xuất"
 msgid "Market cap: "
 msgstr ""
 
-#: skin_default_skin.xml.h:349
+#: skin_default_skin.xml.h:350
 msgid "Maximal frequency"
 msgstr "Tần số cực đại"
 
-#: skin_default_skin.xml.h:350
+#: skin_default_skin.xml.h:351
 msgid "Maximal signalrate"
 msgstr "Tốc độ tín hiệu cực đại"
 
@@ -5603,11 +5607,11 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: skin_default_skin.xml.h:351
+#: skin_default_skin.xml.h:352
 msgid "Media Button"
 msgstr ""
 
-#: skin_default_skin.xml.h:352
+#: skin_default_skin.xml.h:353
 msgid "Media Center"
 msgstr ""
 
@@ -5631,7 +5635,7 @@ msgstr " Medie Dir 4"
 msgid "Media Key Action - Setup"
 msgstr ""
 
-#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:356
+#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:357
 msgid "Media Player"
 msgstr ""
 
@@ -5655,11 +5659,11 @@ msgstr ""
 msgid "MediaDB Debug"
 msgstr "Chế độ gỡ lỗi MediaDB"
 
-#: play.h:644 skin_default_skin.xml.h:353
+#: play.h:644 skin_default_skin.xml.h:354
 msgid "MediaDB Edit"
 msgstr "Chỉnh sửa MediaDB"
 
-#: skin_default_skin.xml.h:354
+#: skin_default_skin.xml.h:355
 msgid "MediaDB Path"
 msgstr "Đường dẫn MediaDB"
 
@@ -5673,7 +5677,7 @@ msgstr ""
 msgid "MediaDB Scan Info"
 msgstr "Thông tin quét MediaDB"
 
-#: skin_default_skin.xml.h:355
+#: skin_default_skin.xml.h:356
 msgid "MediaDB Settings"
 msgstr "Thiết lập MediaDB"
 
@@ -5727,7 +5731,7 @@ msgstr ""
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: httpdfunc.h:5309 skin_default_skin.xml.h:357 webif_info_sysinfos.h:3
+#: httpdfunc.h:5309 skin_default_skin.xml.h:358 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Bộ nhớ"
 
@@ -5756,7 +5760,7 @@ msgstr "Thông tin bộ nhớ"
 msgid "Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:359
+#: skin_default_skin.xml.h:360
 msgid "Menu Protect"
 msgstr "Khóa Menu"
 
@@ -5768,7 +5772,7 @@ msgstr ""
 msgid "Menu not implemented !"
 msgstr "Không thực hiện được!"
 
-#: skin_default_skin.xml.h:358
+#: skin_default_skin.xml.h:359
 msgid "Menulist"
 msgstr ""
 
@@ -5883,11 +5887,11 @@ msgstr ""
 msgid "Minimal"
 msgstr ""
 
-#: skin_default_skin.xml.h:363
+#: skin_default_skin.xml.h:364
 msgid "Minimal frequency"
 msgstr "Tần số nhỏ nhất"
 
-#: skin_default_skin.xml.h:364
+#: skin_default_skin.xml.h:365
 msgid "Minimal signalrate"
 msgstr "Tốc độ độ tín hiệu nhỏ nhất"
 
@@ -5895,23 +5899,23 @@ msgstr "Tốc độ độ tín hiệu nhỏ nhất"
 msgid "Minuten"
 msgstr " Phút"
 
-#: skin_default_skin.xml.h:365
+#: skin_default_skin.xml.h:366
 msgid "Minutes"
 msgstr " Phút"
 
-#: skin_default_skin.xml.h:366
+#: skin_default_skin.xml.h:367
 msgid "Minutes:"
 msgstr "Phút:"
 
-#: skin_default_skin.xml.h:367
+#: skin_default_skin.xml.h:368
 msgid "Modulation"
 msgstr "Điều chế"
 
-#: skin_default_skin.xml.h:368
+#: skin_default_skin.xml.h:369
 msgid "Modulation:"
 msgstr "Điều chế:"
 
-#: httpdfunc.h:5313 skin_default_skin.xml.h:369 webif_info_sysinfos.h:5
+#: httpdfunc.h:5313 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr "Môđun"
 
@@ -7255,6 +7259,10 @@ msgid "Prime Time"
 msgstr ""
 
 #: skin_default_skin.xml.h:446
+msgid "Processlist"
+msgstr ""
+
+#: skin_default_skin.xml.h:447
 msgid "Program Info"
 msgstr "Thông tin chương trình"
 
@@ -7262,27 +7270,27 @@ msgstr "Thông tin chương trình"
 msgid "Program started successfully"
 msgstr ""
 
-#: skin_default_skin.xml.h:447
+#: skin_default_skin.xml.h:448
 msgid "Progress Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:448
+#: skin_default_skin.xml.h:449
 msgid "Protect Channel"
 msgstr "Khóa chương trình"
 
-#: skin_default_skin.xml.h:449
+#: skin_default_skin.xml.h:450
 msgid "Protect Channel Freetime (min)"
 msgstr "khóa kênh miễn phí"
 
-#: skin_default_skin.xml.h:450
+#: skin_default_skin.xml.h:451
 msgid "Protect Menu"
 msgstr "Khóa menu"
 
-#: skin_default_skin.xml.h:451
+#: skin_default_skin.xml.h:452
 msgid "Protect Modus Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:452
+#: skin_default_skin.xml.h:453
 msgid "Protect Modus Font Color"
 msgstr ""
 
@@ -7290,7 +7298,7 @@ msgstr ""
 msgid "Protect mode"
 msgstr "khóa"
 
-#: skin_default_skin.xml.h:454
+#: skin_default_skin.xml.h:455
 msgid "Prov"
 msgstr "Nhà cung cấp"
 
@@ -7307,7 +7315,7 @@ msgstr ""
 msgid "Provider (DVB-T)"
 msgstr ""
 
-#: skin_default_skin.xml.h:455
+#: skin_default_skin.xml.h:456
 msgid "Provider:"
 msgstr "Nhà cung cấp:"
 
@@ -7319,7 +7327,7 @@ msgstr "số lượng nhà cung cấp: "
 msgid "Prozess Info"
 msgstr "Thông tin chương trình"
 
-#: httpdfunc.h:5321 skin_default_skin.xml.h:456 webif_info_sysinfos.h:9
+#: httpdfunc.h:5321 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr ""
 
@@ -7358,6 +7366,10 @@ msgstr "QPSK tự động"
 
 #: skin_default_keyskin.xml.h:58
 msgid "R"
+msgstr ""
+
+#: skin_default_skin.xml.h:458
+msgid "RAM"
 msgstr ""
 
 #: tpk_description.h:125
@@ -7441,8 +7453,7 @@ msgstr "Tìm thấy Radio:"
 msgid "Radiotext"
 msgstr ""
 
-#: httpdfunc.h:5271 skin_default_skin.xml.h:458 system_infos.h:24
-#: webif_info_systeminfos.h:7
+#: httpdfunc.h:5271 system_infos.h:24 webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr ""
 
@@ -11879,15 +11890,15 @@ msgstr ""
 msgid "k"
 msgstr ""
 
-#: skin_default_skin.xml.h:324
+#: skin_default_skin.xml.h:325
 msgid "key 0"
 msgstr ""
 
-#: skin_default_skin.xml.h:326
+#: skin_default_skin.xml.h:327
 msgid "key channel up/down"
 msgstr ""
 
-#: skin_default_skin.xml.h:327
+#: skin_default_skin.xml.h:328
 msgid "key pip"
 msgstr ""
 
@@ -11899,7 +11910,7 @@ msgstr ""
 msgid "l"
 msgstr ""
 
-#: skin_default_skin.xml.h:328
+#: skin_default_skin.xml.h:329
 msgid "lan"
 msgstr ""
 
@@ -12498,7 +12509,7 @@ msgstr ""
 msgid "progress"
 msgstr "thanh tiến trình"
 
-#: skin_default_skin.xml.h:453
+#: skin_default_skin.xml.h:454
 msgid "protect service"
 msgstr "Khóa dịch vụ"
 
