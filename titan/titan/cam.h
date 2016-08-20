@@ -501,6 +501,8 @@ void sendcapmt(struct service* node, int clear, int flag)
 			return;
 		}
 
+		int foundcam = 0;
+
 		while(dvbnode != NULL)
 		{
 			if(dvbnode->type == CIDEV && dvbnode->fd > -1 && dvbnode->caslot != NULL && dvbnode->caslot->status == 2 && dvbnode->caslot->caids != NULL)
@@ -511,14 +513,18 @@ void sendcapmt(struct service* node, int clear, int flag)
 					len = createcapmt(dvbnode, node, buf, &lenbytes, 0);
 					if(len > -1)
 					{
-						if(sendcapmttocam(dvbnode, node, buf, len, caservicenr, lenbytes + 9, clear) == 0) break;
+						if(sendcapmttocam(dvbnode, node, buf, len, caservicenr, lenbytes + 9, clear) == 0)
+						{
+							foundcam = 1;
+							break;
+						}
 					}
 				}
 			}
 			dvbnode = dvbnode->next;
 		}
 
-		if(caservice[caservicenr].camsockfd < 0)
+		if(caservice[caservicenr].camsockfd < 0 && foundcam == 0)
 		{
 			lenbytes = 0;
 			len = createcapmt(NULL, node, buf, &lenbytes, 1);
@@ -551,10 +557,9 @@ void sendcapmt(struct service* node, int clear, int flag)
 
 void checkcam()
 {
-	int i = 0; 
-
+	int i = 0;
 	if(status.pmtmode == 1) return;
- 
+
 	//struct can change from another thread
 	m_lock(&status.servicemutex, 2);
 	for(i = 0; i < MAXCASERVICE; i++)
@@ -562,7 +567,7 @@ void checkcam()
 		if(caservice[i].service != NULL)
 		{
 			sockcheck(&caservice[i].camsockfd);
-			if(caservice[i].camsockfd < 0 || caservice[i].caslot == NULL)
+			if((caservice[i].camsockfd < 0 && caservice[i].camanager == -1) || caservice[i].caslot == NULL)
 				sendcapmt(caservice[i].service, 0, 1);
 		}
 	}
