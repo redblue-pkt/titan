@@ -5172,6 +5172,10 @@ msgid "Kernel"
 msgstr ""
 
 #: skin_default_skin.xml.h:323
+msgid "Kernel Modules"
+msgstr ""
+
+#: skin_default_skin.xml.h:324
 msgid "Key"
 msgstr "key"
 
@@ -5187,7 +5191,7 @@ msgstr ""
 msgid "KeyLock"
 msgstr ""
 
-#: skin_default_skin.xml.h:325
+#: skin_default_skin.xml.h:326
 msgid "Keyboard"
 msgstr "teclado"
 
@@ -5271,11 +5275,11 @@ msgstr ""
 msgid "LCD Samsung skin wooden clock"
 msgstr ""
 
-#: skin_default_skin.xml.h:331
+#: skin_default_skin.xml.h:332
 msgid "LED - brightness running"
 msgstr "LED - Brillo mientras se ejecuta"
 
-#: skin_default_skin.xml.h:332
+#: skin_default_skin.xml.h:333
 msgid "LED - brightness standby"
 msgstr "LED - Brillo en modo de espera"
 
@@ -5307,7 +5311,7 @@ msgstr "LNB 18V/22K Aus: NO OK"
 msgid "LNB 18V / 22K off: OK"
 msgstr "LNB 18V/22K Aus: OK"
 
-#: skin_default_skin.xml.h:337
+#: skin_default_skin.xml.h:338
 msgid "LNB Settings"
 msgstr "LNB ajustes"
 
@@ -5323,23 +5327,23 @@ msgstr "LNB Aus/22K Aus: OK"
 msgid "LOAD-FritzBook"
 msgstr "Cargue Fritzbook"
 
-#: skin_default_skin.xml.h:340
+#: skin_default_skin.xml.h:341
 msgid "LOF / UNICABLE"
 msgstr "LOF/Unicable"
 
-#: skin_default_skin.xml.h:338
+#: skin_default_skin.xml.h:339
 msgid "LOF/H"
 msgstr ""
 
-#: skin_default_skin.xml.h:339
+#: skin_default_skin.xml.h:340
 msgid "LOF/L"
 msgstr ""
 
-#: skin_default_skin.xml.h:341
+#: skin_default_skin.xml.h:342
 msgid "LOG"
 msgstr "Log"
 
-#: skin_default_skin.xml.h:329
+#: skin_default_skin.xml.h:330
 msgid "Language"
 msgstr "Lenguaje"
 
@@ -5425,7 +5429,7 @@ msgstr ""
 msgid "Last: "
 msgstr "Final: "
 
-#: skin_default_skin.xml.h:330
+#: skin_default_skin.xml.h:331
 msgid "Latitude"
 msgstr "Latitud"
 
@@ -5464,7 +5468,7 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: skin_default_skin.xml.h:333
+#: skin_default_skin.xml.h:334
 msgid "Limit"
 msgstr "Limites"
 
@@ -5476,15 +5480,15 @@ msgstr "Enlace publicado"
 msgid "Linuxgirl"
 msgstr ""
 
-#: skin_default_skin.xml.h:334
+#: skin_default_skin.xml.h:335
 msgid "Listbox Select"
 msgstr "establecer tipo de Cursor"
 
-#: skin_default_skin.xml.h:335
+#: skin_default_skin.xml.h:336
 msgid "Listbox Select Color"
 msgstr "Seleccion de color del cursor"
 
-#: skin_default_skin.xml.h:336
+#: skin_default_skin.xml.h:337
 msgid "Lithuanian"
 msgstr ""
 
@@ -5516,7 +5520,7 @@ msgstr "Ver imagen del desplazamiento"
 msgid "Logs"
 msgstr ""
 
-#: skin_default_skin.xml.h:342
+#: skin_default_skin.xml.h:343
 msgid "Longitude"
 msgstr "Longitud"
 
@@ -5552,15 +5556,15 @@ msgstr "MC Video Player orden de ajustes"
 msgid "MC VideoPlayer View Settings"
 msgstr "MC VideoPlayer Ver Configuracion"
 
-#: skin_default_skin.xml.h:360
+#: skin_default_skin.xml.h:361
 msgid "MENUPROTECT"
 msgstr "Proteccion Menu"
 
-#: skin_default_skin.xml.h:362
+#: skin_default_skin.xml.h:363
 msgid "MHW EPG"
 msgstr ""
 
-#: skin_default_skin.xml.h:361
+#: skin_default_skin.xml.h:362
 msgid "MHW2 EPG"
 msgstr ""
 
@@ -5608,7 +5612,7 @@ msgstr "Multi EPG - Proveedores"
 msgid "MULTI EPG - Satellites"
 msgstr "Multi EPG - Satelites"
 
-#: skin_default_skin.xml.h:343
+#: skin_default_skin.xml.h:344
 msgid "Main Menu"
 msgstr "Menu Principal"
 
@@ -5616,15 +5620,15 @@ msgstr "Menu Principal"
 msgid "Manage MultiImage"
 msgstr ""
 
-#: skin_default_skin.xml.h:344
+#: skin_default_skin.xml.h:345
 msgid "Manual Search"
 msgstr "Busqueda Manual"
 
-#: skin_default_skin.xml.h:345
+#: skin_default_skin.xml.h:346
 msgid "Manual Search Cable"
 msgstr "busqueda cable Manual"
 
-#: skin_default_skin.xml.h:346
+#: skin_default_skin.xml.h:347
 msgid "Manual Search Terrestrial"
 msgstr "Bsqueda Manual terrestre"
 
@@ -5632,11 +5636,11 @@ msgstr "Bsqueda Manual terrestre"
 msgid "March"
 msgstr ""
 
-#: skin_default_skin.xml.h:347
+#: skin_default_skin.xml.h:348
 msgid "Mark Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:348
+#: skin_default_skin.xml.h:349
 msgid "Marker"
 msgstr ""
 
@@ -5662,11 +5666,11 @@ msgstr "Su bandera fue cambiada correctamente"
 msgid "Market cap: "
 msgstr "Cuota de mercado: "
 
-#: skin_default_skin.xml.h:349
+#: skin_default_skin.xml.h:350
 msgid "Maximal frequency"
 msgstr "Maxima Frecuencia"
 
-#: skin_default_skin.xml.h:350
+#: skin_default_skin.xml.h:351
 msgid "Maximal signalrate"
 msgstr "Velocidad maxima de la señal"
 
@@ -5688,11 +5692,11 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: skin_default_skin.xml.h:351
+#: skin_default_skin.xml.h:352
 msgid "Media Button"
 msgstr "Boton Media"
 
-#: skin_default_skin.xml.h:352
+#: skin_default_skin.xml.h:353
 msgid "Media Center"
 msgstr ""
 
@@ -5716,7 +5720,7 @@ msgstr "Media ruta 4"
 msgid "Media Key Action - Setup"
 msgstr "botón Media - Menú Asignación"
 
-#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:356
+#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:357
 msgid "Media Player"
 msgstr "MiniPlayer (juego de Medios)"
 
@@ -5740,11 +5744,11 @@ msgstr ""
 msgid "MediaDB Debug"
 msgstr "MediaDB Debug "
 
-#: play.h:644 skin_default_skin.xml.h:353
+#: play.h:644 skin_default_skin.xml.h:354
 msgid "MediaDB Edit"
 msgstr ""
 
-#: skin_default_skin.xml.h:354
+#: skin_default_skin.xml.h:355
 msgid "MediaDB Path"
 msgstr "MediaDB Ruta"
 
@@ -5760,7 +5764,7 @@ msgstr ""
 msgid "MediaDB Scan Info"
 msgstr "MediaDB informacion exploracion"
 
-#: skin_default_skin.xml.h:355
+#: skin_default_skin.xml.h:356
 msgid "MediaDB Settings"
 msgstr "MediaDB Ajustes"
 
@@ -5816,7 +5820,7 @@ msgstr ""
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: httpdfunc.h:5309 skin_default_skin.xml.h:357 webif_info_sysinfos.h:3
+#: httpdfunc.h:5309 skin_default_skin.xml.h:358 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Memoria"
 
@@ -5845,7 +5849,7 @@ msgstr "Memoria Informacion"
 msgid "Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:359
+#: skin_default_skin.xml.h:360
 msgid "Menu Protect"
 msgstr "Protejer Menu"
 
@@ -5857,7 +5861,7 @@ msgstr "Menu Titulo"
 msgid "Menu not implemented !"
 msgstr "Menu no disponible!"
 
-#: skin_default_skin.xml.h:358
+#: skin_default_skin.xml.h:359
 msgid "Menulist"
 msgstr "Lista de Menus"
 
@@ -5972,11 +5976,11 @@ msgstr ""
 msgid "Minimal"
 msgstr ""
 
-#: skin_default_skin.xml.h:363
+#: skin_default_skin.xml.h:364
 msgid "Minimal frequency"
 msgstr "Minima Frecuencia"
 
-#: skin_default_skin.xml.h:364
+#: skin_default_skin.xml.h:365
 msgid "Minimal signalrate"
 msgstr "Tasa minima de señal"
 
@@ -5984,23 +5988,23 @@ msgstr "Tasa minima de señal"
 msgid "Minuten"
 msgstr "Minutos"
 
-#: skin_default_skin.xml.h:365
+#: skin_default_skin.xml.h:366
 msgid "Minutes"
 msgstr "Minutos"
 
-#: skin_default_skin.xml.h:366
+#: skin_default_skin.xml.h:367
 msgid "Minutes:"
 msgstr "Minutos: "
 
-#: skin_default_skin.xml.h:367
+#: skin_default_skin.xml.h:368
 msgid "Modulation"
 msgstr "Modulacion"
 
-#: skin_default_skin.xml.h:368
+#: skin_default_skin.xml.h:369
 msgid "Modulation:"
 msgstr "Modulacion: "
 
-#: httpdfunc.h:5313 skin_default_skin.xml.h:369 webif_info_sysinfos.h:5
+#: httpdfunc.h:5313 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr "Modulo"
 
@@ -7357,6 +7361,10 @@ msgid "Prime Time"
 msgstr ""
 
 #: skin_default_skin.xml.h:446
+msgid "Processlist"
+msgstr ""
+
+#: skin_default_skin.xml.h:447
 msgid "Program Info"
 msgstr "Informacion de programa"
 
@@ -7364,27 +7372,27 @@ msgstr "Informacion de programa"
 msgid "Program started successfully"
 msgstr ""
 
-#: skin_default_skin.xml.h:447
+#: skin_default_skin.xml.h:448
 msgid "Progress Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:448
+#: skin_default_skin.xml.h:449
 msgid "Protect Channel"
 msgstr "Bloqueo de canal con PIN"
 
-#: skin_default_skin.xml.h:449
+#: skin_default_skin.xml.h:450
 msgid "Protect Channel Freetime (min)"
 msgstr "Tiempo para la Proteccion del Canal para desactivar (Min)"
 
-#: skin_default_skin.xml.h:450
+#: skin_default_skin.xml.h:451
 msgid "Protect Menu"
 msgstr "Bloqueo de menU con PIN"
 
-#: skin_default_skin.xml.h:451
+#: skin_default_skin.xml.h:452
 msgid "Protect Modus Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:452
+#: skin_default_skin.xml.h:453
 msgid "Protect Modus Font Color"
 msgstr ""
 
@@ -7392,7 +7400,7 @@ msgstr ""
 msgid "Protect mode"
 msgstr "Proteger"
 
-#: skin_default_skin.xml.h:454
+#: skin_default_skin.xml.h:455
 msgid "Prov"
 msgstr "Proveedor"
 
@@ -7409,7 +7417,7 @@ msgstr ""
 msgid "Provider (DVB-T)"
 msgstr ""
 
-#: skin_default_skin.xml.h:455
+#: skin_default_skin.xml.h:456
 msgid "Provider:"
 msgstr "Proveedor: "
 
@@ -7421,7 +7429,7 @@ msgstr "Numero de Providers: "
 msgid "Prozess Info"
 msgstr "Process Information"
 
-#: httpdfunc.h:5321 skin_default_skin.xml.h:456 webif_info_sysinfos.h:9
+#: httpdfunc.h:5321 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr "Lista de Procesos"
 
@@ -7460,6 +7468,10 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:58
 msgid "R"
+msgstr ""
+
+#: skin_default_skin.xml.h:458
+msgid "RAM"
 msgstr ""
 
 #: tpk_description.h:125
@@ -7543,8 +7555,7 @@ msgstr ""
 msgid "Radiotext"
 msgstr ""
 
-#: httpdfunc.h:5271 skin_default_skin.xml.h:458 system_infos.h:24
-#: webif_info_systeminfos.h:7
+#: httpdfunc.h:5271 system_infos.h:24 webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr "RAM"
 
@@ -12018,15 +12029,15 @@ msgstr "Si"
 msgid "k"
 msgstr ""
 
-#: skin_default_skin.xml.h:324
+#: skin_default_skin.xml.h:325
 msgid "key 0"
 msgstr ""
 
-#: skin_default_skin.xml.h:326
+#: skin_default_skin.xml.h:327
 msgid "key channel up/down"
 msgstr ""
 
-#: skin_default_skin.xml.h:327
+#: skin_default_skin.xml.h:328
 msgid "key pip"
 msgstr ""
 
@@ -12038,7 +12049,7 @@ msgstr "Keymaps"
 msgid "l"
 msgstr ""
 
-#: skin_default_skin.xml.h:328
+#: skin_default_skin.xml.h:329
 msgid "lan"
 msgstr "LAN"
 
@@ -12637,7 +12648,7 @@ msgstr "Primer tiempo igual"
 msgid "progress"
 msgstr "Progreso"
 
-#: skin_default_skin.xml.h:453
+#: skin_default_skin.xml.h:454
 msgid "protect service"
 msgstr "Bloqueo de servicio con PIN"
 
