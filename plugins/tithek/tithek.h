@@ -249,11 +249,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if(titheksolarmovie == 1 && node->flag == 9996 && sos == 0)
 	{
-		cmd = ostrcat(cmd, "cinema", 1, 0);
-		cmd = ostrcat(cmd, ".sola", 1, 0);
-		cmd = ostrcat(cmd, "rmovi", 1, 0);
-		cmd = ostrcat(cmd, "e.", 1, 0);
-		cmd = ostrcat(cmd, "ph", 1, 0);
+		cmd = ostrcat(cmd, "www.thesolarmovie.me", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
@@ -268,11 +264,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	}
 	else if(tithekmovie4k == 1 && node->flag == 9997 && sos == 0)
 	{
-		cmd = ostrcat(cmd, "ww", 1, 0);
-		cmd = ostrcat(cmd, "w.mov", 1, 0);
-		cmd = ostrcat(cmd, "ie4k", 1, 0);
-		cmd = ostrcat(cmd, ".", 1, 0);
-		cmd = ostrcat(cmd, "to", 1, 0);
+		cmd = ostrcat(cmd, "www.movie4k.to", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
@@ -287,11 +279,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	}		
 	else if(tithekmlehd == 1 && node->flag == 9998 && sos == 0)
 	{
-		cmd = ostrcat(cmd, "ww", 1, 0);
-		cmd = ostrcat(cmd, "w.mle", 1, 0);
-		cmd = ostrcat(cmd, "-hd", 1, 0);
-		cmd = ostrcat(cmd, ".", 1, 0);
-		cmd = ostrcat(cmd, "se", 1, 0);
+		cmd = ostrcat(cmd, "www.mle-hd.se", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
@@ -306,10 +294,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	}
 	else if(tithekkinox == 1 && node->flag == 9999 && sos == 0)
 	{
-		cmd = ostrcat(cmd, "kin", 1, 0);
-		cmd = ostrcat(cmd, "ox", 1, 0);
-		cmd = ostrcat(cmd, ".", 1, 0);
-		cmd = ostrcat(cmd, "me", 1, 0);
+		cmd = ostrcat(cmd, "kinox.me", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
