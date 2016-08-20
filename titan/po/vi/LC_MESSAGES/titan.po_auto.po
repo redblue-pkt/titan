@@ -1680,17 +1680,14 @@ msgstr "Xóa đầu vào"
 msgid "COPY"
 msgstr "sao chép"
 
-#: httpdfunc.h:5307 skin_default_skin.xml.h:120 webif_info_sysinfos.h:2
+#: httpdfunc.h:5307 skin_default_skin.xml.h:120 system_infos_sysinfo.h:15
+#: webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr ""
 
 #: panel_settings_overclocking.h:222 settings_overclocking.h:222
 msgid "CPU frequency"
 msgstr "Tần số CPU"
-
-#: system_infos_sysinfo.h:15
-msgid "CPU info"
-msgstr "Thông tin CPU"
 
 #: blindscanadjust.h:121
 msgid "Cable"
@@ -5088,7 +5085,7 @@ msgstr ""
 msgid "Kernel"
 msgstr ""
 
-#: skin_default_skin.xml.h:323
+#: skin_default_skin.xml.h:323 system_infos_sysinfo.h:21
 msgid "Kernel Modules"
 msgstr ""
 
@@ -5493,17 +5490,14 @@ msgstr "I"
 msgid "MO"
 msgstr "M"
 
-#: httpdfunc.h:5311 skin_default_skin.xml.h:378 webif_info_sysinfos.h:4
+#: httpdfunc.h:5311 skin_default_skin.xml.h:378 system_infos_sysinfo.h:19
+#: webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr ""
 
 #: adjust.h:279
 msgid "MTD Operation/System Update"
 msgstr ""
-
-#: system_infos_sysinfo.h:19
-msgid "MTD info"
-msgstr "Thông tin MTD"
 
 #: mc_pictureplayer_settings.h:60
 msgid "MTH House"
@@ -5731,13 +5725,10 @@ msgstr ""
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: httpdfunc.h:5309 skin_default_skin.xml.h:358 webif_info_sysinfos.h:3
+#: httpdfunc.h:5309 skin_default_skin.xml.h:358 system_infos_sysinfo.h:17
+#: webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Bộ nhớ"
-
-#: system_infos_sysinfo.h:17
-msgid "Memory info"
-msgstr "Thông tin bộ nhớ"
 
 #: filemanager.h:84 play.h:633 plugins_sudoku_skin.xml.h:10
 #: skins_sudoku_skin.xml.h:10 webif_index.atemio5200.h:36
@@ -5926,10 +5917,6 @@ msgstr "Cấu hình môđun"
 #: moduleconfig.h:373
 msgid "Module Type"
 msgstr "Loại môđun"
-
-#: system_infos_sysinfo.h:21
-msgid "Module info"
-msgstr "Thông tin môđun"
 
 #: global.h:6282
 msgid "Mon"
@@ -7258,7 +7245,7 @@ msgstr "trước đó"
 msgid "Prime Time"
 msgstr ""
 
-#: skin_default_skin.xml.h:446
+#: skin_default_skin.xml.h:446 system_infos_sysinfo.h:29
 msgid "Processlist"
 msgstr ""
 
@@ -7323,10 +7310,6 @@ msgstr "Nhà cung cấp:"
 msgid "ProviderCount: "
 msgstr "số lượng nhà cung cấp: "
 
-#: system_infos_sysinfo.h:29
-msgid "Prozess Info"
-msgstr "Thông tin chương trình"
-
 #: httpdfunc.h:5321 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr ""
@@ -7368,7 +7351,7 @@ msgstr "QPSK tự động"
 msgid "R"
 msgstr ""
 
-#: skin_default_skin.xml.h:458
+#: skin_default_skin.xml.h:458 system_infos.h:24
 msgid "RAM"
 msgstr ""
 
@@ -7453,7 +7436,7 @@ msgstr "Tìm thấy Radio:"
 msgid "Radiotext"
 msgstr ""
 
-#: httpdfunc.h:5271 system_infos.h:24 webif_info_systeminfos.h:7
+#: httpdfunc.h:5271 webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr ""
 
@@ -9426,7 +9409,8 @@ msgid "Svn Changelog Full"
 msgstr ""
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:617 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:617 system_infos_sysinfo.h:25
+#: webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Trao đổi"
 
@@ -9437,10 +9421,6 @@ msgstr "swap_max_sectors"
 #: panel_settings_autostart.h:219 settings_autostart.h:324
 msgid "Swap Size"
 msgstr "Trao đổi"
-
-#: system_infos_sysinfo.h:25
-msgid "Swap info"
-msgstr "Thông tin hệ thống"
 
 #: skin_default_skin.xml.h:618
 msgid "Switch TV to the correct input"
@@ -10088,13 +10068,10 @@ msgstr ""
 msgid "Tone Mode"
 msgstr "Chế độ tone"
 
-#: httpdfunc.h:5319 skin_default_skin.xml.h:660 webif_info_sysinfos.h:8
+#: httpdfunc.h:5319 skin_default_skin.xml.h:660 system_infos_sysinfo.h:27
+#: webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "Về đầu"
-
-#: system_infos_sysinfo.h:27
-msgid "Top Info"
-msgstr "TV (Thông tin)"
 
 #: TopfieldVFD.c:72
 msgid "TopfieldVFD plugin not available, wrong box!"
@@ -10354,17 +10331,14 @@ msgstr "không biết"
 msgid "UNLOAD"
 msgstr "KHÔNG TẢI ĐƯỢC"
 
-#: httpdfunc.h:5323 skin_default_skin.xml.h:696 webif_info_sysinfos.h:10
+#: httpdfunc.h:5323 skin_default_skin.xml.h:696 system_infos_sysinfo.h:31
+#: webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
 #: hwtest.h:438 hwtest.h:451
 msgid "USB "
 msgstr ""
-
-#: system_infos_sysinfo.h:31
-msgid "USB Info"
-msgstr "Thông tin"
 
 #: hwtest.h:182 hwtest.h:416
 msgid "USB Port"
@@ -13623,3 +13597,27 @@ msgstr ""
 #: tpk_showname.h:226
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "CPU info"
+#~ msgstr "Thông tin CPU"
+
+#~ msgid "MTD info"
+#~ msgstr "Thông tin MTD"
+
+#~ msgid "Memory info"
+#~ msgstr "Thông tin bộ nhớ"
+
+#~ msgid "Module info"
+#~ msgstr "Thông tin môđun"
+
+#~ msgid "Prozess Info"
+#~ msgstr "Thông tin chương trình"
+
+#~ msgid "Swap info"
+#~ msgstr "Thông tin hệ thống"
+
+#~ msgid "Top Info"
+#~ msgstr "TV (Thông tin)"
+
+#~ msgid "USB Info"
+#~ msgstr "Thông tin"
