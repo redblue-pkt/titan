@@ -12,23 +12,23 @@ void screensystem_infos_sysinfo(int mode)
 	addscreenrc(system_info, info);
 
 	if(mode == 0)
-		changetitle(system_info, _("CPU info"));
+		changetitle(system_info, _("CPU"));
 	else if(mode == 1)
-		changetitle(system_info, _("Memory info"));
+		changetitle(system_info, _("Memory"));
 	else if(mode == 2)
-		changetitle(system_info, _("MTD info"));
+		changetitle(system_info, _("MTD"));
 	else if(mode == 3)
-		changetitle(system_info, _("Module info"));
+		changetitle(system_info, _("Kernel Modules"));
 	else if(mode == 4)
 		changetitle(system_info, _("Devices"));
 	else if(mode == 5)
-		changetitle(system_info, _("Swap info"));
+		changetitle(system_info, _("Swap"));
 	else if(mode == 6)
-		changetitle(system_info, _("Top Info"));
+		changetitle(system_info, _("Top"));
 	else if(mode == 7)
-		changetitle(system_info, _("Prozess Info"));
+		changetitle(system_info, _("Processlist"));
 	else if(mode == 8)
-		changetitle(system_info, _("USB Info"));
+		changetitle(system_info, _("USB"));
 
 	drawscreen(system_info, 0, 0);
 
