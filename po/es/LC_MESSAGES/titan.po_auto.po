@@ -9808,8 +9808,9 @@ msgstr "El proveedor de alojamiento no se admite en la actualidad!"
 
 #: MultiImage.c:607
 msgid ""
-"The install process will look in /tmp for an image.\n"
-"Please copy the zip file to /tmp."
+"The install process will look in /tmp for an image zip file.\n"
+"Please copy the image to /tmp.\n"
+"The filename must not contain blanks."
 msgstr ""
 
 #: cloudzilla.h:39 divxstage.h:154 faststream.h:79 faststream.h:90
