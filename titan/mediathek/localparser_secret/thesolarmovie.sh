@@ -46,60 +46,62 @@ mainmenu()
 
 category()
 {
+	echo "Movies (Year)#$SRC $SRC movieyear#http://atemio.dyndns.tv/mediathek/menu/movie.year.jpg#movie.year.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Movies (Genre)#$SRC $SRC moviegenre#http://atemio.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Series#$SRC $SRC page category 'free/tv-series/page/' 1#http://atemio.dyndns.tv/mediathek/menu/series.jpg#series.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+movieyear()
+{
+	rm $TMP/$PARSER.$INPUT.list > /dev/null 2>&1
+
+	WATCHLIST="tag/movies"
+
+	if [ ! -e "/tmp/tithek/$PARSER.$INPUT.list" ]; then
+		for ROUND0 in $WATCHLIST; do
+			tags=""
+			tagcount=`date +"%Y"`
+			i=1950
+			until [ "$i" -gt "$tagcount" ]
+			do
+			echo "$i#$SRC $SRC page category '$ROUND0-$i/page/' 1#http://atemio.dyndns.tv/mediathek/menu/$i.jpg#$i.jpg#$NAME#0" | sort -r >> $TMP/$PARSER.$INPUT.list
+			i=`expr $i + 1` 
+			done
+		done
+	fi
+
+  	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+moviegenre()
+{
 	watchlist="
-		tag/movies-2016
-		tag/movies-2015
-		tag/movies-2014
-		tag/movies-2013
-		tag/movies-2012
-		tag/movies-2011
-		tag/movies-2010
-		tag/movies-2009
-		tag/movies-2008
-		tag/movies-2007
-		tag/movies-2006
-		tag/movies-2005
-		tag/movies-2004
-		tag/movies-2003
-		tag/movies-2002
-		tag/movies-2001
-		tag/movies-2000
-		tag/movies-1999
-		tag/movies-1998
-		tag/movies-1997
-		tag/movies-1996
-		tag/movies-1995
-		tag/movies-1994
-		tag/movies-1993
-		tag/movies-1992
-		tag/movies-1991
-		tag/movies-1990
-		tag/movies-1989
-		tag/movies-1988
-		tag/movies-1987
-		tag/movies-1986
-		tag/movies-1985
-		tag/movies-1984
-		tag/movies-1983
-		tag/movies-1982
-		tag/movies-1981
-		tag/movies-1980
-		tag/movies-1979
-		tag/movies-1978
-		tag/movies-1977
-		tag/movies-1976
-		tag/movies-1975
-		tag/movies-1974
-		tag/movies-1973
-		tag/movies-1972
-		tag/movies-1971
-		tag/movies-1970
+		free/action
+		free/adventure
+		free/animation
+		free/biography
+		free/comedy
+		free/crime
+		free/documentary
+		free/drama
+		free/family
+		free/history
+		free/horror
+		free/music
+		free/mystery
+		free/romance
+		free/sci-fi
+		free/sport
+		free/thriller
+		free/war
+		free/western
 		"
 	rm $TMP/$PARSER.$INPUT.list > /dev/null 2>&1
 
 	for ROUND0 in $watchlist; do
-		TITLE=`echo $ROUND0 | tr '/' '-' | sed 's/tag-//g'`
-		filename=`echo $TITLE | sed 's/movies-//g'`	
+		TITLE=`echo $ROUND0 | tr '/' '-' | sed 's/free-//g'`
+		filename=`echo $TITLE`	
 		echo "$TITLE#$SRC $SRC page category '$ROUND0/page/' 1#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	done
   	echo "$TMP/$PARSER.$INPUT.list"
@@ -138,7 +140,7 @@ page()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page $NEXTPAGE#$SRC $SRC page category '$PAGE' $NEXTPAGE#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC page category '$PAGE' $NEXTPAGE#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list
 		fi
 		rm $TMP/cache.* > /dev/null 2>&1
@@ -174,6 +176,8 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	category) $INPUT;;
+	moviegenre) $INPUT;;
+	movieyear) $INPUT;;
 	page) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
