@@ -421,6 +421,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct casession* casession = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
+	int ca0autopin = 0;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
 	casession = dvbnode->caslot->casession;
@@ -476,7 +477,16 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 
 				int i = 0;
 				for(i = 0; i < alen; i++) tmpstr1 = ostrcat(tmpstr1, "0", 1, 0);
-				tmpstr = textinput(str, tmpstr1);
+				if(ostrstr(str, "Bitte geben Sie Ihre Jugendschutz-PIN ein") != NULL)
+				{ 
+				  if(getconfig("ca0_pin", NULL) != NULL)
+				  {
+				  	ca0autopin = 1;
+				  	ostrcat(tmpstr, getconfig("ca0_pin", NULL), 0, 0);
+				  }
+				}
+				if(ca0autopin == 0)  	 
+					tmpstr = textinput(str, tmpstr1);
 				if(tmpstr == NULL)
 					cammicancelenq(dvbnode, sessionnr);
 				else
