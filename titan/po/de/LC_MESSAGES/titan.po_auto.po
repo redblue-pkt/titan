@@ -9949,8 +9949,8 @@ msgid ""
 "Please copy the image to /tmp.\n"
 "The filename must not contain blanks."
 msgstr ""
-"Der Installations Vorgang sucht in /tmp nach einem Image im zip Format.\n"
-"Bitte kopieren Sie das Image nach /tmp.\n"
+"Der Installations Vorgang sucht in /tmp nach einem Image\n"
+"im zip Format. Bitte kopieren Sie das Image nach /tmp.\n"
 "Der Dateiname darf keine Leerzeichen enthalten."
 
 #: cloudzilla.h:39 divxstage.h:154 faststream.h:79 faststream.h:90
