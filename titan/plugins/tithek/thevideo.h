@@ -6,7 +6,7 @@ char* thevideo(char* link)
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL, *tmplink = NULL, *tmppath = NULL, *tmpstr = NULL, *streamlink = NULL, *pos = NULL, *path = NULL, *url = NULL;
-	char* vhash = NULL, *gfk = NULL, *fname = NULL, *hash = NULL, *post = NULL, *inhu = NULL, *op = NULL, *vt = NULL, *tmpstr1 = NULL;
+	char* vhash = NULL, *gfk = NULL, *fname = NULL, *hash = NULL, *post = NULL, *inhu = NULL, *op = NULL, *vt = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 
 	if(link == NULL) return NULL;
 
@@ -114,15 +114,29 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 		streamlink = oregex(".*(http://.*v.mp4).*", tmpstr);
 
 	tmpstr1 = string_resub("<div class=\"container main-container\">", "</div>", tmpstr, 0);
-	debug(99, "tmpstr1: %s", tmpstr1);
 	free(tmpstr), tmpstr = NULL;
-
+	debug(99, "tmpstr1: %s", tmpstr1);
 	url = string_resub("<script src=\"", "\"></script>", tmpstr1, 0);
-	free(tmpstr1), tmpstr1 = NULL;
 
+	if(url == NULL)
+	{
+		tmpstr2 = string_resub("' + '", "'.concat", tmpstr1, 0);
+		tmpstr3 = string_resub("var tksucks='", "';", tmpstr1, 0);
+		url = ostrcat("http://thevideo.me", tmpstr2, 0, 0);
+		url = ostrcat(url, "/", 1, 0);
+		url = ostrcat(url, tmpstr3, 1, 0);
+		free(tmpstr2), tmpstr2 = NULL;
+		free(tmpstr3), tmpstr3 = NULL;
+	}
+	free(tmpstr1), tmpstr1 = NULL;
+	
 /*
 	<script src="https://thevideo.me/jwjsv/sfqlqb288ft2"></script>
 	https://thevideo.me/jwjsv/sfqlqb288ft2
+
+
+	var tksucks='LDw2JVcsJyVSPEchUz4zMUcK';document.write('<script s'.concat( 'rc="' + '/jwv'.concat( '/'+tksucks+'">\x3C/script>' ) ) )
+	http://thevideo.me/jwv/LDlHJFE+RihWPEMtUz5DKUM
 */
 
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, link, 1);
