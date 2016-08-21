@@ -49,6 +49,7 @@ category()
 	echo "Movies (Year)#$SRC $SRC movieyear#http://atemio.dyndns.tv/mediathek/menu/movie.year.jpg#movie.year.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "Movies (Genre)#$SRC $SRC moviegenre#http://atemio.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Series#$SRC $SRC page category 'free/tv-series/page/' 1#http://atemio.dyndns.tv/mediathek/menu/series.jpg#series.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+    echo "Search#$SRC $SRC page category '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -109,9 +110,15 @@ moviegenre()
 
 page()
 {
+	if [ -z "$NEXT" ]; then NEXT="search"; fi
+
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list" ]; then
 		piccount=0
-		$curlbin $URL/$PAGE/$NEXT -o $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1
+		if [ "$NEXT" == "search" ]; then
+			$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1
+		else
+			$curlbin $URL/$PAGE/$NEXT -o $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1
+		fi
 		cat $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/<a class="coverImage"/\nfound=/g' | grep ^found=  | sed 's/data-original/\r\n/g' | tr ' ' '~' >$TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.2
 
 		pages=`cat $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1 | grep "<span class='pages'>" | sed 's! of !\npage<!' | grep ^"page<" | cut -d'<' -f2`
