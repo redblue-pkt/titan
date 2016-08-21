@@ -13896,10 +13896,3 @@ msgstr ""
 #: tpk_showname.h:226
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "The install process will look in /tmp for an image.\n"
-#~ "Please copy the zip file to /tmp."
-#~ msgstr ""
-#~ "Der Installations Vorgang sucht in /tmp nach einem Image.\n"
-#~ "Bitte kopieren Sie die zip Datei nach /tmp."
