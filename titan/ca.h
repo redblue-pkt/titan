@@ -459,7 +459,6 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 				int alen = *tmpdata++;
 
 				debug(620, "mmi manager text len: %d, blind: %d", textlen, blind);
-
 				if(tmpdata + textlen > max) break;
 
 				char* str = malloc(textlen + 1);
