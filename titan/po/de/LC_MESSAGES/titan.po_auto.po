@@ -9945,11 +9945,10 @@ msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
 #: MultiImage.c:607
 msgid ""
-"The install process will look in /tmp for an image.\n"
-"Please copy the zip file to /tmp."
+"The install process will look in /tmp for an image zip file.\n"
+"Please copy the image to /tmp.\n"
+"The filename must not contain blanks."
 msgstr ""
-"Der Installations Vorgang sucht in /tmp nach einem Image.\n"
-"Bitte kopieren Sie die zip Datei nach /tmp."
 
 #: cloudzilla.h:39 divxstage.h:154 faststream.h:79 faststream.h:90
 #: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
@@ -13897,3 +13896,10 @@ msgstr ""
 #: tpk_showname.h:226
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid ""
+#~ "The install process will look in /tmp for an image.\n"
+#~ "Please copy the zip file to /tmp."
+#~ msgstr ""
+#~ "Der Installations Vorgang sucht in /tmp nach einem Image.\n"
+#~ "Bitte kopieren Sie die zip Datei nach /tmp."
