@@ -1455,10 +1455,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	
 	if(tmpstr1 != NULL)
 	{
-		char* filename = ostrcat(title, "_", 0, 0);
-		
-		char* tmpstr2 = ostrcat(title, "_", 0, 0);
-		
+		char* filename = ostrcat(title, "_", 0, 0);		
 		filename = string_replace_all(_("Tithek - Mainmenu - Favoriten"), "", filename, 1);
 		filename = string_replace_all(_("Tithek - Mainmenu"), "", filename, 1);
 		filename = string_replace_all(_("Category"), "", filename, 1);
@@ -1484,7 +1481,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		filename = string_replace_all(" ", ".", filename, 1);
 		filename = string_replace_all("-", "_", filename, 1);
 		filename = string_replace_all("._.", "_", filename, 1);
-		filename = string_replace_all(".._", "", filename, 1);
+		filename = string_replace_all(".._", "_", filename, 1);
 		debug(99, "filename: %s", filename);
 			
 		char* keyconf = NULL;
