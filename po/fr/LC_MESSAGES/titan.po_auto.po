@@ -8834,20 +8834,20 @@ msgstr "Thème"
 msgid "Skin 0Acht5Zehn (black)"
 msgstr ""
 
-#: tpk_showname.h:169
-msgid "Skin 0Acht5Zehn (grey)"
-msgstr ""
-
 #: tpk_showname.h:170
 msgid "Skin 0Acht5Zehn (white)"
 msgstr ""
 
-#: tpk_description.h:143
-msgid "Skin 0Acht5Zehn black for black picons"
+#: tpk_showname.h:169
+msgid "Skin 0Acht5Zehn Multi"
 msgstr ""
 
 #: tpk_description.h:144
-msgid "Skin 0Acht5Zehn grey for grey picons"
+msgid "Skin 0Acht5Zehn Multi for (grey/black/white) picons"
+msgstr ""
+
+#: tpk_description.h:143
+msgid "Skin 0Acht5Zehn black for black picons"
 msgstr ""
 
 #: tpk_description.h:145
