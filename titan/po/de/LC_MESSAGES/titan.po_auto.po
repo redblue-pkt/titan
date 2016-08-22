@@ -65,7 +65,7 @@ msgstr ""
 "Email info@atemio.de\n"
 "Website www.atemio.de"
 
-#: skinadjust.h:127
+#: skinadjust.h:156
 msgid "%"
 msgstr ""
 
@@ -4105,7 +4105,7 @@ msgstr "Vollbildmodus"
 msgid "G"
 msgstr ""
 
-#: skinadjust.h:128
+#: skinadjust.h:157
 msgid "GB"
 msgstr ""
 
@@ -6039,32 +6039,33 @@ msgstr "Menüliste"
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:399 skinadjust.h:804 skinselector.h:231 sock.h:954
-#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51 solarmovie.h:63
-#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
-#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:238 system_update.h:244
-#: system_update.h:251 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:29
-#: thevideo.h:65 thevideo.h:71 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1222
-#: titan.c:1243 titan.c:1249 titan.c:1260 titan.c:1266 tithek.c:103
-#: tithek_global.h:96 tithek.h:711 tithek.h:1269 tithek.h:1330 tithek.h:1620
-#: tithek.h:1642 tithek.h:1891 tithek.h:2051 tithek.h:2336 tithek.h:2371
-#: tithek.h:2387 tithek.h:2399 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60 vidag.h:66 vidbull.h:30
-#: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:85
-#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31
-#: vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94 vidto.h:128 vidto.h:174
-#: vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65 vidzi.h:71 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70
-#: xupnpd.h:81 xupnpd.h:83 xvidstage.h:29 xvidstage.h:58 xvidstage.h:64
-#: xvidstage.h:70 youtube.h:220 zapback.c:79 zdf.h:29
+#: skinadjust.h:428 skinadjust.h:822 skinadjust.h:855 skinselector.h:231
+#: sock.h:954 softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51
+#: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
+#: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
+#: streamcloud.h:103 streamcloud.h:134 streamcloud.h:193 stream.h:33
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:238
+#: system_update.h:244 system_update.h:251 thefile.h:34 thefile.h:68
+#: thefile.h:205 thevideo.h:29 thevideo.h:65 thevideo.h:71 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
+#: titan.c:346 titan.c:355 titan.c:1222 titan.c:1243 titan.c:1249 titan.c:1260
+#: titan.c:1266 tithek.c:103 tithek_global.h:96 tithek.h:711 tithek.h:1269
+#: tithek.h:1330 tithek.h:1620 tithek.h:1642 tithek.h:1891 tithek.h:2051
+#: tithek.h:2336 tithek.h:2371 tithek.h:2387 tithek.h:2399 tiwakeup.h:66
+#: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
+#: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
+#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
+#: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
+#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
+#: vidzi.h:71 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2
+#: xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
+#: xvidstage.h:58 xvidstage.h:64 xvidstage.h:70 youtube.h:220 zapback.c:79
+#: zdf.h:29
 msgid "Message"
 msgstr "Mitteilung"
 
@@ -6417,7 +6418,7 @@ msgstr ""
 msgid "Nfs Server Settings"
 msgstr "NFS Server Einstellungen"
 
-#: skinadjust.h:126
+#: skinadjust.h:155
 msgid "No"
 msgstr "Nein"
 
@@ -6634,9 +6635,9 @@ msgstr "Ö"
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:399
-#: skinadjust.h:804 skins_dlna_skin.xml.h:7 skinselector.h:231
-#: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:428
+#: skinadjust.h:822 skinadjust.h:855 skins_dlna_skin.xml.h:7
+#: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
@@ -10232,7 +10233,7 @@ msgstr ""
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
-#: kravencfg.c:212 skinadjust.h:399 skinadjust.h:804
+#: kravencfg.c:212 skinadjust.h:428 skinadjust.h:822 skinadjust.h:855
 msgid "Titan will be restarted!"
 msgstr "Titan wird neu gestartet!"
 
@@ -11465,7 +11466,7 @@ msgstr ""
 msgid "backup"
 msgstr "Sichern"
 
-#: skinadjust.h:68
+#: skinadjust.h:73
 msgid "bar"
 msgstr "Balken Farbe"
 
@@ -11523,7 +11524,7 @@ msgstr ""
 msgid "bootstop"
 msgstr ""
 
-#: skinadjust.h:67
+#: skinadjust.h:72
 msgid "border"
 msgstr "Rahmen"
 
@@ -12532,7 +12533,7 @@ msgstr "ö"
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:77
+#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:82
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:94
 #: vfdisplay.h:109
@@ -12585,7 +12586,7 @@ msgstr "Älter als 50 Tage"
 
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
-#: readerconfig.h:424 skinadjust.h:76 transponder.h:257 transponder.h:266
+#: readerconfig.h:424 skinadjust.h:81 transponder.h:257 transponder.h:266
 #: transponder.h:416 transponder.h:425 vfdisplay.h:49 vfdisplay.h:70
 msgid "on"
 msgstr "ein"
@@ -12681,7 +12682,7 @@ msgstr "Bild 5"
 msgid "picons"
 msgstr ""
 
-#: skinadjust.h:70 tmc.h:542
+#: skinadjust.h:75 tmc.h:542
 msgid "picture"
 msgstr "Bild"
 
@@ -13395,7 +13396,7 @@ msgstr "Test-Transponder Eintrag fehlerhaft"
 msgid "testtransponder not found"
 msgstr "Test-Transponder nicht gefunden"
 
-#: skinadjust.h:69
+#: skinadjust.h:74
 msgid "text"
 msgstr "Text"
 
