@@ -55,6 +55,11 @@ void screenskinadjust()
 
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
 	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
+
+	struct skin* filelist = getscreennode(skinadjust, "filelist");
+	struct skin* skinstyle_sel = getscreennode(skinadjust, "skinstyle_sel");
+	struct skin* node = NULL;
+
 //	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 //	struct skin* pic2 = getscreennode(skinadjust, "pic2");
 	struct skin* b5 = getscreennode(skinadjust, "b5");
@@ -122,6 +127,30 @@ void screenskinadjust()
 	if(checkscreen("infobar2_v3") != status.skinerr)
 		addchoicebox(infobar2_sel, "infobar2_v3","v3");
 	setchoiceboxselection(infobar2_sel, getskinconfig("infobar2_selection", NULL));
+
+	if(file_exist(getconfig("skinpath", NULL)))
+	{
+		delmarkedscreennodes(skinadjust, FILELISTDELMARK);
+		changeinput(filelist, getconfig("skinpath", NULL));
+		changemask(filelist, "*");
+		createfilelist(skinadjust, filelist, 0);
+		
+		node = filelist;
+		while(node != NULL)
+		{
+			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
+			{
+				if(!ostrncmp("skinconfig.", node->text, 11))
+				{
+					tmpstr = string_replace("skinconfig.", "", node->text, 0);
+					addchoicebox(skinstyle_sel, node->text, tmpstr);
+					free(tmpstr), tmpstr = NULL;
+				}
+			}
+			node = node->next;
+		}
+		setchoiceboxselection(skinstyle_sel, getconfig("skinstyle", NULL));
+	}
 
 	addchoicebox(showrecfreesize, "0", _("No"));
 	addchoicebox(showrecfreesize, "1", _("%"));
@@ -773,6 +802,27 @@ void screenskinadjust()
 
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
+			char* oldskinstyle_sel = getconfig("skinstyle", NULL);
+			addconfigscreencheck("skinstyle", skinstyle_sel, "0");
+			if(ostrcmp(oldskinstyle_sel,getconfig("skinstyle", NULL)) != 0)
+			{
+				writeconfigtmp();
+
+				char* cmd = NULL;
+				cmd = ostrcat(cmd, "cp -a ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, skinstyle_sel->ret, 1, 0);
+				cmd = ostrcat(cmd, " ", 1, 0);	
+				cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+				printf("cmd: %s\n", cmd);	
+				system(cmd);
+				free(cmd); cmd = NULL;
+
+				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				oshutdown(3, 0);
+			}
+			
 			int oldfontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
 			addskinconfigscreencheck("fontsizeadjust", fontsizeadjust, "0");
 			if(oldfontsizeadjust != getskinconfigint("fontsizeadjust", NULL)) reboot = 1;
@@ -799,6 +849,7 @@ void screenskinadjust()
 			addconfig("skinblinkoff", blinkoff->ret);
 
 			writeskinconfigtmp();
+
 			if(reboot == 1)
 			{
 				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
