@@ -680,7 +680,18 @@ void addscreenrcchannellist(struct skin* channellist, struct skin* listbox)
 //flag 3: edit modus
 int screenchannellist(struct channel** retchannel, char** retchannellist, int flag)
 {
-	struct skin* channellist = getscreen("channellist");
+	char* channellist_sel = getskinconfig("channellist_selection", NULL);
+	debug(10, "get initial channellist=%s", channellist_sel);
+
+	if(channellist_sel == NULL) {
+		channellist_sel = ostrcat(channellist_sel, "channellist", 1, 0); // fallback to default
+		debug(10, "fallback to default, set channellist=%s", channellist_sel);
+	}
+
+	struct skin* channellist = getscreen(channellist_sel);
+	debug(10, "final channellist=%s", channellist_sel);
+
+//	struct skin* channellist = getscreen("channellist");
 	struct skin* listbox = getscreennode(channellist, "listbox");
 	struct skin* channeltimeline = getscreennode(channellist, "channeltimeline");
 	struct skin* b1 = getscreennode(channellist, "b1");
