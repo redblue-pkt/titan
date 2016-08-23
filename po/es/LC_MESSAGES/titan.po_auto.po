@@ -54,7 +54,7 @@ msgid ""
 "Website www.atemio.de"
 msgstr ""
 
-#: skinadjust.h:156
+#: skinadjust.h:165
 msgid "%"
 msgstr ""
 
@@ -825,7 +825,7 @@ msgstr "Activar nueva configuracion de red?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:804 channellist.h:1244
+#: channellist.h:815 channellist.h:1255
 msgid "All Channels"
 msgstr "Todos los Canales"
 
@@ -1570,7 +1570,7 @@ msgstr "Numero de Bouquets: "
 msgid "BouquetEntrys: "
 msgstr "Bouquet Entradas: "
 
-#: channellist.h:739 channellist.h:1259 channellist.h:1468
+#: channellist.h:750 channellist.h:1270 channellist.h:1479
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Favoritos"
@@ -1836,7 +1836,7 @@ msgstr ""
 "ERROR: No se puede abrir DispositivoFrontend o\n"
 "Tipo Frontend es desconocido."
 
-#: channellist.h:1038
+#: channellist.h:1049
 msgid "Can't remove akive Service"
 msgstr "No se puede quitar el servicio activo"
 
@@ -1937,7 +1937,7 @@ msgstr "Cambiar a la salida SCART"
 msgid "Change: "
 msgstr "Cambio: "
 
-#: channellist.h:755 channellist.h:1606 skin_default_skin.xml.h:89
+#: channellist.h:766 channellist.h:1617 skin_default_skin.xml.h:89
 msgid "Channel"
 msgstr "Canal"
 
@@ -2054,7 +2054,7 @@ msgstr "Lista de canales vacíos o corruptos (canal no encontrado)!"
 msgid "Channellist view"
 msgstr "Ver Lista de Canales"
 
-#: channellist.h:1325
+#: channellist.h:1336
 msgid "Channels A-Z"
 msgstr "Canales A-Z"
 
@@ -2369,19 +2369,19 @@ msgstr ""
 msgid "Copy mode"
 msgstr "Copiar"
 
-#: channellist.h:947
+#: channellist.h:958
 msgid "Copy providerlist not ok"
 msgstr "ATENCION: Providers no copiados"
 
-#: channellist.h:945
+#: channellist.h:956
 msgid "Copy providerlist successfull"
 msgstr "Proveedores copiados con Exito"
 
-#: channellist.h:954
+#: channellist.h:965
 msgid "Copy satlist not ok"
 msgstr "ATENCION: Canales no copiados"
 
-#: channellist.h:952
+#: channellist.h:963
 msgid "Copy satlist successfull"
 msgstr "Canales copiados con Exito"
 
@@ -3160,8 +3160,8 @@ msgid "ERROR... can't set marker in this file"
 msgstr "ERROR: No se puede establecer marcadores en este archivo"
 
 #: about.h:9 amazon.h:760 avsettings.h:331 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 channellist.h:945 channellist.h:947 channellist.h:952
-#: channellist.h:954 channellist.h:1038 cloudzilla.h:39 cloudzilla.h:45
+#: blindscanadjust.h:25 channellist.h:956 channellist.h:958 channellist.h:963
+#: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:83 divxstage.h:154
 #: divxstage.h:160 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
@@ -4064,7 +4064,7 @@ msgstr "modo de pantalla completo"
 msgid "G"
 msgstr ""
 
-#: skinadjust.h:157
+#: skinadjust.h:166
 msgid "GB"
 msgstr ""
 
@@ -5857,8 +5857,8 @@ msgid "Menulist"
 msgstr "Lista de Menus"
 
 #: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:331 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
-#: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:956
+#: channellist.h:958 channellist.h:963 channellist.h:965 channellist.h:1049
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:83 divxstage.h:154 divxstage.h:160 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:268
@@ -5918,7 +5918,7 @@ msgstr "Lista de Menus"
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:428 skinadjust.h:822 skinadjust.h:855 skinselector.h:231
+#: skinadjust.h:437 skinadjust.h:831 skinadjust.h:869 skinselector.h:231
 #: sock.h:954 softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51
 #: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
@@ -6297,7 +6297,7 @@ msgstr ""
 msgid "Nfs Server Settings"
 msgstr "NFS Servidor Ajustes"
 
-#: skinadjust.h:155
+#: skinadjust.h:164
 msgid "No"
 msgstr ""
 
@@ -6436,8 +6436,8 @@ msgstr "Ö"
 #: about.h:9 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
-#: callmon_main.h:39 channellist.h:945 channellist.h:947 channellist.h:952
-#: channellist.h:954 channellist.h:1038 cloudzilla.h:39 cloudzilla.h:45
+#: callmon_main.h:39 channellist.h:956 channellist.h:958 channellist.h:963
+#: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:83 divxstage.h:154
 #: divxstage.h:160 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
@@ -6512,8 +6512,8 @@ msgstr "Ö"
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:428
-#: skinadjust.h:822 skinadjust.h:855 skins_dlna_skin.xml.h:7
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:437
+#: skinadjust.h:831 skinadjust.h:869 skins_dlna_skin.xml.h:7
 #: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
@@ -7392,7 +7392,7 @@ msgstr "Proteger"
 msgid "Prov"
 msgstr "Proveedor"
 
-#: channellist.h:786 channellist.h:1358 channellist.h:1682
+#: channellist.h:797 channellist.h:1369 channellist.h:1693
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr "Proveedor"
@@ -7506,7 +7506,7 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
-#: channellist.h:726 channellist.h:1791 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:737 channellist.h:1802 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:546 skin_default_skin.xml.h:457 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
@@ -8305,7 +8305,7 @@ msgid ""
 "execute a channel search after restart."
 msgstr ""
 
-#: channellist.h:770 channellist.h:1292 channellist.h:1541
+#: channellist.h:781 channellist.h:1303 channellist.h:1552
 msgid "Satellites"
 msgstr "Satelite"
 
@@ -9690,7 +9690,7 @@ msgstr "Editar Transpondedor "
 msgid "TSID:"
 msgstr "TSID: "
 
-#: channellist.h:731 channellist.h:1786 httpdfunc.h:286 httpdfunc.h:696
+#: channellist.h:742 channellist.h:1797 httpdfunc.h:286 httpdfunc.h:696
 #: scan.h:544 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
 #: webif_index.atemio5200.h:124 webif_index.atemio6200.h:68
 #: webif_index.atemio6200.h:74 webif_index.atemio6200.h:124
@@ -10091,7 +10091,7 @@ msgstr ""
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
-#: kravencfg.c:212 skinadjust.h:428 skinadjust.h:822 skinadjust.h:855
+#: kravencfg.c:212 skinadjust.h:437 skinadjust.h:831 skinadjust.h:869
 msgid "Titan will be restarted!"
 msgstr ""
 
@@ -11320,7 +11320,7 @@ msgstr ""
 msgid "backup"
 msgstr "Copia de seguridad"
 
-#: skinadjust.h:73
+#: skinadjust.h:74
 msgid "bar"
 msgstr "Barra"
 
@@ -11378,7 +11378,7 @@ msgstr ""
 msgid "bootstop"
 msgstr "parada de arranque"
 
-#: skinadjust.h:72
+#: skinadjust.h:73
 msgid "border"
 msgstr "Borde"
 
@@ -12387,7 +12387,7 @@ msgstr "Ö"
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:82
+#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:83
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:94
 #: vfdisplay.h:109
@@ -12440,7 +12440,7 @@ msgstr "Mas de 50 dias"
 
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
-#: readerconfig.h:424 skinadjust.h:81 transponder.h:257 transponder.h:266
+#: readerconfig.h:424 skinadjust.h:82 transponder.h:257 transponder.h:266
 #: transponder.h:416 transponder.h:425 vfdisplay.h:49 vfdisplay.h:70
 msgid "on"
 msgstr "en"
@@ -12536,7 +12536,7 @@ msgstr "Imagen 5"
 msgid "picons"
 msgstr ""
 
-#: skinadjust.h:75 tmc.h:542
+#: skinadjust.h:76 tmc.h:542
 msgid "picture"
 msgstr "Foto"
 
@@ -13249,7 +13249,7 @@ msgstr "Test-Transponder Error de entrada"
 msgid "testtransponder not found"
 msgstr "Test-Transpondedor no encontrado"
 
-#: skinadjust.h:74
+#: skinadjust.h:75
 msgid "text"
 msgstr "Texto"
 
