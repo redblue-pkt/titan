@@ -13,7 +13,7 @@ void screensystem_infos(int mode)
 	if(mode == 0)
 		changetitle(system_info, _("System Status"));
 	else if(mode == 1)
-		changetitle(system_info, _("Free Space"));
+		changetitle(system_info, _("File System Usage"));
 	else if(mode == 2)
 		changetitle(system_info, _("Kernel"));
 	else if(mode == 3)
@@ -21,7 +21,7 @@ void screensystem_infos(int mode)
 	else if(mode == 4)
 		changetitle(system_info, _("Network"));
 	else if(mode == 5)
-		changetitle(system_info, _("RAM"));
+		changetitle(system_info, _("Memory"));
 
 	drawscreen(system_info, 0, 0);
 
