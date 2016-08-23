@@ -3640,6 +3640,10 @@ msgstr ""
 msgid "File Operation"
 msgstr ""
 
+#: system_infos.h:16
+msgid "File System Usage"
+msgstr ""
+
 #: tithek.h:711
 msgid "File exist, overwrite?"
 msgstr ""
@@ -3871,7 +3875,7 @@ msgstr ""
 msgid "Framerate"
 msgstr "maxrate"
 
-#: httpdfunc.h:5263 system_infos.h:16
+#: httpdfunc.h:5263
 msgid "Free Space"
 msgstr "Ελεύθερη μνήμη"
 
@@ -5682,8 +5686,8 @@ msgstr ""
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: httpdfunc.h:5309 skin_default_skin.xml.h:359 system_infos_sysinfo.h:17
-#: webif_info_sysinfos.h:3
+#: httpdfunc.h:5309 skin_default_skin.xml.h:359 system_infos.h:24
+#: system_infos_sysinfo.h:17 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Μνήμη"
 
@@ -7294,7 +7298,7 @@ msgstr ""
 msgid "R"
 msgstr ""
 
-#: skin_default_skin.xml.h:459 system_infos.h:24
+#: skin_default_skin.xml.h:459
 msgid "RAM"
 msgstr ""
 
