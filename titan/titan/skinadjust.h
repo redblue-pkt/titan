@@ -55,6 +55,7 @@ void screenskinadjust()
 
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
 	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
+	struct skin* channellist_sel = getscreennode(skinadjust, "channellist_sel");
 
 	struct skin* filelist = getscreennode(skinadjust, "filelist");
 	struct skin* skinstyle_sel = getscreennode(skinadjust, "skinstyle_sel");
@@ -127,6 +128,14 @@ void screenskinadjust()
 	if(checkscreen("infobar2_v3") != status.skinerr)
 		addchoicebox(infobar2_sel, "infobar2_v3","v3");
 	setchoiceboxselection(infobar2_sel, getskinconfig("infobar2_selection", NULL));
+
+	if(checkscreen("channellist") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist", "v1");
+	if(checkscreen("channellist_v2") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist_v2","v2");
+	if(checkscreen("channellist_v3") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist_v3","v3");
+	setchoiceboxselection(channellist_sel, getskinconfig("channellist_selection", NULL));
 
 	if(file_exist(getconfig("skinpath", NULL)))
 	{
@@ -845,7 +854,12 @@ void screenskinadjust()
 			addskinconfigscreencheck("infobar2_selection", infobar2_sel, "0");
 			if(ostrcmp(oldinfobar2_sel,getskinconfig("infobar2_selection", NULL)) != 0) reboot = 1;
 			//free(oldinfobar2_sel); oldinfobar2_sel=NULL;
-			
+
+			char* oldchannellist_sel = getskinconfig("channellist_selection", NULL);
+			addskinconfigscreencheck("channellist_selection", channellist_sel, "0");
+			if(ostrcmp(oldchannellist_sel,getskinconfig("channellist_selection", NULL)) != 0) reboot = 1;
+			//free(oldchannellist_sel); oldchannellist_sel=NULL;
+
 			addconfig("skinblinkoff", blinkoff->ret);
 
 			writeskinconfigtmp();
