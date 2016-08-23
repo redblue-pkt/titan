@@ -119,6 +119,10 @@ void screenskinadjust()
 		addchoicebox(infobar_sel, "infobar_v2","v2");
 	if(checkscreen("infobar_v3") != status.skinerr)
 		addchoicebox(infobar_sel, "infobar_v3","v3");
+	if(checkscreen("infobar_v4") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar_v4","v4");
+	if(checkscreen("infobar_v5") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar_v5","v5");
 	setchoiceboxselection(infobar_sel, getskinconfig("infobar_selection", NULL));
 
 	if(checkscreen("infobar2") != status.skinerr)
@@ -127,6 +131,10 @@ void screenskinadjust()
 		addchoicebox(infobar2_sel, "infobar2_v2","v2");
 	if(checkscreen("infobar2_v3") != status.skinerr)
 		addchoicebox(infobar2_sel, "infobar2_v3","v3");
+	if(checkscreen("infobar2_v4") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2_v4","v4");
+	if(checkscreen("infobar2_v5") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2_v5","v5");
 	setchoiceboxselection(infobar2_sel, getskinconfig("infobar2_selection", NULL));
 
 	if(checkscreen("channellist") != status.skinerr)
@@ -135,6 +143,10 @@ void screenskinadjust()
 		addchoicebox(channellist_sel, "channellist_v2","v2");
 	if(checkscreen("channellist_v3") != status.skinerr)
 		addchoicebox(channellist_sel, "channellist_v3","v3");
+	if(checkscreen("channellist_v4") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist_v4","v4");
+	if(checkscreen("channellist_v5") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist_v5","v5");
 	setchoiceboxselection(channellist_sel, getskinconfig("channellist_selection", NULL));
 
 	if(file_exist(getconfig("skinpath", NULL)))
