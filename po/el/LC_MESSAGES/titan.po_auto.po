@@ -1842,7 +1842,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr ""
 
-#: system_update.h:254
+#: system_update.h:260
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -3179,8 +3179,8 @@ msgstr ""
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
-#: system_backup_restore.h:95 system_update.h:238 system_update.h:244
-#: system_update.h:254 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:29
+#: system_backup_restore.h:95 system_update.h:244 system_update.h:250
+#: system_update.h:260 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:29
 #: thevideo.h:65 thevideo.h:71 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1059 titan.c:1068 titan.c:1196
 #: titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240 tithek.c:103
@@ -3333,7 +3333,7 @@ msgstr ""
 msgid "Error create filename"
 msgstr ""
 
-#: system_update.h:238
+#: system_update.h:244
 msgid "Error file not supported"
 msgstr ""
 
@@ -5800,8 +5800,8 @@ msgstr ""
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
 #: streamcloud.h:103 streamcloud.h:134 streamcloud.h:193 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:238
-#: system_update.h:244 system_update.h:254 thefile.h:34 thefile.h:68
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:244
+#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:29 thevideo.h:65 thevideo.h:71 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1196 titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240
@@ -6393,8 +6393,8 @@ msgstr ""
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:238
-#: system_update.h:244 system_update.h:254 thefile.h:34 thefile.h:68
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:244
+#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:68
 #: thefile.h:205 thevideo.h:29 thevideo.h:65 thevideo.h:71 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1059 titan.c:1068 titan.c:1196 titan.c:1217 titan.c:1223
@@ -12888,16 +12888,20 @@ msgstr "Επανεκκίνηση"
 msgid "starting"
 msgstr "Επανεκκίνηση Titan"
 
-#: system_update.h:229
+#: system_update.h:233
 msgid "starting Full Update (from backup) ?"
 msgstr ""
 
-#: httpdfunc.h:5815 system_update.h:227
+#: httpdfunc.h:5815 system_update.h:231
 msgid "starting Full Update ?"
 msgstr ""
 
-#: system_update.h:231
+#: system_update.h:235
 msgid "starting Nfi Update ?"
+msgstr ""
+
+#: system_update.h:237
+msgid "starting Usb Update ?"
 msgstr ""
 
 #: possetup.h:63
