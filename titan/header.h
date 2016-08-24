@@ -588,6 +588,7 @@ int rectimergetaktday();
 int addrectimer(char *buf);
 struct rectimer* addrectimernode(char* line, struct rectimer* last);
 int checkrectimerconflict(struct rectimer* recnode);
+struct rectimer* getrectimerbytimediff(time_t timediff);
 
 //dvb.h
 unsigned char* dvbgetsdt(struct dvbdev* fenode, int secnr, int timeout);
