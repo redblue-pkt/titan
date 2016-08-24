@@ -103,7 +103,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_IV RCode: %i\n###############\n", rc);
 
 	}
-	//descrambler_close();
+	descrambler_close();
 #else
 	index |= 0x100;
 	if (descrambler_open())
@@ -145,7 +145,7 @@ void resendKey(struct dvbdev* dvbnode)
 
 int aes_xcbc_mac_init(struct aes_xcbc_mac_ctx *ctx, const uint8_t *key)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	AES_KEY aes_key;
 	int y, x;
 
@@ -168,7 +168,7 @@ int aes_xcbc_mac_init(struct aes_xcbc_mac_ctx *ctx, const uint8_t *key)
 
 int aes_xcbc_mac_process(struct aes_xcbc_mac_ctx *ctx, const uint8_t *in, unsigned int len)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	while (len) {
 		if (ctx->buflen == 16) {
 			AES_ecb_encrypt(ctx->IV, ctx->IV, &ctx->key, 1);
@@ -183,7 +183,7 @@ int aes_xcbc_mac_process(struct aes_xcbc_mac_ctx *ctx, const uint8_t *in, unsign
 
 int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	int i;
 
 	if (ctx->buflen == 16) {
@@ -205,7 +205,7 @@ int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out)
 
 void descrambler_close(void)
 {
-	//debug(620, "start");
+	debug(620, "start");
 	close(desc_fd);
 	desc_fd = -1;
 }
@@ -216,7 +216,7 @@ void hexdump(const uint8_t *data, unsigned int len)
 		printf("%02x ", *data++);
 	printf("\n");
 // move to end is better log
-//	debug(620, "start");
+	debug(620, "start");
 }
 
 #ifdef MIPSEL
@@ -298,7 +298,7 @@ void descrambler_deinit(void)
 
 static int pkcs_1_mgf1(const uint8_t *seed, unsigned long seedlen, uint8_t *mask, unsigned long masklen)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	unsigned long hLen, x;
 	uint32_t counter;
 	uint8_t *buf;
@@ -341,7 +341,7 @@ static int pkcs_1_pss_encode(const uint8_t *msghash, unsigned int msghashlen,
 			     unsigned long saltlen, unsigned long modulus_bitlen,
 			     uint8_t *out, unsigned int outlen)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	unsigned char *DB, *mask, *salt, *hash;
 	unsigned long x, y, hLen, modulus_len;
 	int err = -1;
@@ -432,7 +432,7 @@ LBL_ERR:
 
 int dh_gen_exp(uint8_t *dest, int dest_len, uint8_t *dh_g, int dh_g_len, uint8_t *dh_p, int dh_p_len)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	DH *dh;
 	int len;
 	unsigned int gap;
@@ -463,7 +463,7 @@ int dh_gen_exp(uint8_t *dest, int dest_len, uint8_t *dh_g, int dh_g_len, uint8_t
 /* dest = base ^ exp % mod */
 int dh_mod_exp(uint8_t *dest, int dest_len, uint8_t *base, int base_len, uint8_t *mod, int mod_len, uint8_t *exp, int exp_len)
 {
-//	debug(620, "start");
+	debug(620, "start");
 
 	BIGNUM *bn_dest, *bn_base, *bn_exp, *bn_mod;
 	BN_CTX *ctx;
@@ -499,7 +499,7 @@ int dh_mod_exp(uint8_t *dest, int dest_len, uint8_t *base, int base_len, uint8_t
 
 int dh_dhph_signature(uint8_t *out, uint8_t *nonce, uint8_t *dhph, RSA *r)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	unsigned char dest[302];
 	uint8_t hash[20];
 	unsigned char dbuf[256];
@@ -538,7 +538,7 @@ int dh_dhph_signature(uint8_t *out, uint8_t *nonce, uint8_t *dhph, RSA *r)
 
 int get_random(unsigned char *dest, int len)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	int fd;
 	const char *urnd = "/dev/urandom";
 
@@ -561,7 +561,7 @@ int get_random(unsigned char *dest, int len)
 
 int parseLengthField(const unsigned char *pkt, int *len)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	int i;
 
 	*len = 0;
@@ -579,7 +579,7 @@ int parseLengthField(const unsigned char *pkt, int *len)
 
 int add_padding(uint8_t *dest, unsigned int len, unsigned int blocklen)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	uint8_t padding = 0x80;
 	int count = 0;
 
@@ -595,7 +595,7 @@ int add_padding(uint8_t *dest, unsigned int len, unsigned int blocklen)
 
 static int get_bin_from_nibble(int in)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	if ((in >= '0') && (in <= '9'))
 		return in - 0x30;
 
@@ -612,7 +612,7 @@ static int get_bin_from_nibble(int in)
 
 void str2bin(uint8_t *dst, char *data, int len)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	int i;
 
 	for (i = 0; i < len; i += 2)
@@ -622,7 +622,7 @@ void str2bin(uint8_t *dst, char *data, int len)
 
 uint32_t UINT32(const unsigned char *in, unsigned int len)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	uint32_t val = 0;
 	unsigned int i;
 
@@ -636,7 +636,7 @@ uint32_t UINT32(const unsigned char *in, unsigned int len)
 
 int BYTE32(unsigned char *dest, uint32_t val)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	*dest++ = val >> 24;
 	*dest++ = val >> 16;
 	*dest++ = val >> 8;
@@ -647,7 +647,7 @@ int BYTE32(unsigned char *dest, uint32_t val)
 
 int BYTE16(unsigned char *dest, uint16_t val)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	*dest++ = val >> 8;
 	*dest++ = val;
 
@@ -656,7 +656,7 @@ int BYTE16(unsigned char *dest, uint16_t val)
 
 static void CheckFile(char *file)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	if (access(file, F_OK) != 0) {
 		printf("No File: %s\n", file);
 		FILE* fd;
@@ -667,7 +667,7 @@ static void CheckFile(char *file)
 
 static void get_authdata_filename(char *dest, size_t len, unsigned int slot)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	snprintf(dest, len, "/mnt/ci_auth_slot_%u.bin", slot);
 	CheckFile(dest);
 }
@@ -782,7 +782,7 @@ end:
 
 static int verify_cb(int ok, X509_STORE_CTX *ctx)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	if (X509_STORE_CTX_get_error(ctx) == X509_V_ERR_CERT_NOT_YET_VALID) {
 		time_t now = time(NULL);
 		struct tm *t = localtime(&now);
@@ -800,7 +800,7 @@ static int verify_cb(int ok, X509_STORE_CTX *ctx)
 
 static RSA *rsa_privatekey_open(const char *filename)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	FILE *fp;
 	RSA *r = NULL;
 
@@ -821,7 +821,7 @@ static RSA *rsa_privatekey_open(const char *filename)
 
 static X509 *certificate_open(const char *filename)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	FILE *fp;
 	X509 *cert;
 
@@ -843,7 +843,7 @@ static X509 *certificate_open(const char *filename)
 //static bool certificate_validate(struct cert_ctx *ctx, X509 *cert)
 static int certificate_validate(struct cert_ctx *ctx, X509 *cert)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	X509_STORE_CTX *store_ctx;
 	int ret;
 
@@ -865,7 +865,7 @@ static int certificate_validate(struct cert_ctx *ctx, X509 *cert)
 
 static X509 *certificate_load_and_check(struct cert_ctx *ctx, const char *filename)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	X509 *cert;
 
 	if (!ctx->store) {
@@ -908,7 +908,7 @@ static X509 *certificate_load_and_check(struct cert_ctx *ctx, const char *filena
 
 static X509 *certificate_import_and_check(struct cert_ctx *ctx, const uint8_t *data, int len)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	X509 *cert;
 
 	cert = d2i_X509(NULL, &data, len);
@@ -930,7 +930,7 @@ static X509 *certificate_import_and_check(struct cert_ctx *ctx, const uint8_t *d
 
 static struct element *element_get(struct cc_ctrl_data *cc_data, unsigned int id)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	/* array index */
 	if ((id < 1) || (id >= MAX_ELEMENTS)) {
 		fprintf(stderr, "element_get: invalid id\n");
@@ -942,7 +942,7 @@ static struct element *element_get(struct cc_ctrl_data *cc_data, unsigned int id
 
 static void element_invalidate(struct cc_ctrl_data *cc_data, unsigned int id)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	struct element *e;
 
 	e = element_get(cc_data, id);
@@ -954,7 +954,7 @@ static void element_invalidate(struct cc_ctrl_data *cc_data, unsigned int id)
 
 static void element_init(struct cc_ctrl_data *cc_data)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	unsigned int i;
 
 	for (i = 1; i < MAX_ELEMENTS; i++)
@@ -963,7 +963,7 @@ static void element_init(struct cc_ctrl_data *cc_data)
 
 static int element_set(struct cc_ctrl_data *cc_data, unsigned int id, const uint8_t *data, uint32_t size)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	struct element *e;
 
 	e = element_get(cc_data, id);
@@ -989,7 +989,7 @@ static int element_set(struct cc_ctrl_data *cc_data, unsigned int id, const uint
 
 static int element_set_certificate(struct cc_ctrl_data *cc_data, unsigned int id, X509 *cert)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	unsigned char *cert_der = NULL;
 	int cert_len;
 
@@ -1009,7 +1009,7 @@ static int element_set_certificate(struct cc_ctrl_data *cc_data, unsigned int id
 
 static int element_set_hostid_from_certificate(struct cc_ctrl_data *cc_data, unsigned int id, X509 *cert)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	X509_NAME *subject;
 	int nid_cn = OBJ_txt2nid("CN");
 	char hostid[20];
@@ -1040,7 +1040,7 @@ static int element_set_hostid_from_certificate(struct cc_ctrl_data *cc_data, uns
 
 static int element_valid(struct cc_ctrl_data *cc_data, unsigned int id)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	struct element *e;
 
 	e = element_get(cc_data, id);
@@ -1050,7 +1050,7 @@ static int element_valid(struct cc_ctrl_data *cc_data, unsigned int id)
 
 static unsigned int element_get_buf(struct cc_ctrl_data *cc_data, uint8_t *dest, unsigned int id)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	struct element *e;
 
 	e = element_get(cc_data, id);
@@ -1075,7 +1075,7 @@ static unsigned int element_get_buf(struct cc_ctrl_data *cc_data, uint8_t *dest,
 
 static unsigned int element_get_req(struct cc_ctrl_data *cc_data, uint8_t *dest, unsigned int id)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	unsigned int len = element_get_buf(cc_data, &dest[3], id);
 
 	if (len == 0) {
@@ -1092,7 +1092,7 @@ static unsigned int element_get_req(struct cc_ctrl_data *cc_data, uint8_t *dest,
 
 static uint8_t *element_get_ptr(struct cc_ctrl_data *cc_data, unsigned int id)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	struct element *e;
 
 	e = element_get(cc_data, id);
@@ -1117,7 +1117,7 @@ static uint8_t *element_get_ptr(struct cc_ctrl_data *cc_data, unsigned int id)
 
 static int sac_check_auth(const uint8_t *data, unsigned int len, uint8_t *sak)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	struct aes_xcbc_mac_ctx ctx;
 	uint8_t calced_signature[16];
 
@@ -1141,7 +1141,7 @@ static int sac_check_auth(const uint8_t *data, unsigned int len, uint8_t *sak)
 
 static int sac_gen_auth(uint8_t *out, uint8_t *in, unsigned int len, uint8_t *sak)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	struct aes_xcbc_mac_ctx ctx;
 	aes_xcbc_mac_init(&ctx, sak);
 	aes_xcbc_mac_process(&ctx, (uint8_t *)"\x04", 1);        /* header len */
@@ -1153,7 +1153,7 @@ static int sac_gen_auth(uint8_t *out, uint8_t *in, unsigned int len, uint8_t *sa
 
 static void generate_key_seed(struct cc_ctrl_data *cc_data)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	/* this is triggered by new ns_module */
 
 	/* generate new key_seed -> SEK/SAK key derivation */
@@ -1169,7 +1169,7 @@ static void generate_key_seed(struct cc_ctrl_data *cc_data)
 
 static void generate_ns_host(struct cc_ctrl_data *cc_data)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	uint8_t buf[8];
 
 	get_random(buf, sizeof(buf));
@@ -1178,7 +1178,7 @@ static void generate_ns_host(struct cc_ctrl_data *cc_data)
 
 static int generate_SAK_SEK(uint8_t *sak, uint8_t *sek, const uint8_t *ks_host)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	AES_KEY key;
 	const uint8_t key_data[16] = { 0xea, 0x74, 0xf4, 0x71, 0x99, 0xd7, 0x6f, 0x35, 0x89, 0xf0, 0xd1, 0xdf, 0x0f, 0xee, 0xe3, 0x00 };
 	uint8_t dec[32];
@@ -1202,7 +1202,7 @@ static int generate_SAK_SEK(uint8_t *sak, uint8_t *sek, const uint8_t *ks_host)
 
 static int sac_crypt(uint8_t *dst, const uint8_t *src, unsigned int len, const uint8_t *key_data, int encrypt)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	uint8_t iv[16] = { 0xf7, 0x70, 0xb0, 0x36, 0x03, 0x61, 0xf7, 0x96, 0x65, 0x74, 0x8a, 0x26, 0xea, 0x4e, 0x85, 0x41 };
 	AES_KEY key;
 
@@ -1337,7 +1337,7 @@ static int check_dh_challenge(struct cc_ctrl_data *cc_data)
 
 static int restart_dh_challenge(struct cc_ctrl_data *cc_data)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	uint8_t dhph[256], sign_A[256];
 	struct cert_ctx *ctx;
 
@@ -1400,7 +1400,7 @@ static int restart_dh_challenge(struct cc_ctrl_data *cc_data)
 
 static int generate_uri_confirm(struct cc_ctrl_data *cc_data, const uint8_t *sak)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	SHA256_CTX sha;
 	uint8_t uck[32];
 	uint8_t uri_confirm[32];
@@ -1423,7 +1423,7 @@ static int generate_uri_confirm(struct cc_ctrl_data *cc_data, const uint8_t *sak
 
 static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	const uint8_t s_key[16] = { 0x3e, 0x20, 0x15, 0x84, 0x2c, 0x37, 0xce, 0xe3, 0xd6, 0x14, 0x57, 0x3e, 0x3a, 0xab, 0x91, 0xb6 };
 	AES_KEY aes_ctx;
 	uint8_t dec[32];
@@ -1469,8 +1469,8 @@ static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 
 static int data_get_handle_new(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data, unsigned int id)
 {
-//	debug(620, "start");
-//	debug(620, "ID = (%d)", id);
+	debug(620, "start");
+	debug(620, "ID = (%d)", id);
 
 	/* handle trigger events */
 
@@ -1520,8 +1520,8 @@ static int data_get_handle_new(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_d
 
 static int data_req_handle_new(struct cc_ctrl_data *cc_data, unsigned int id)
 {
-//	debug(620, "start");
-//	debug(620, "ID = (%d)", id);
+	debug(620, "start");
+	debug(620, "ID = (%d)", id);
 
 	switch (id) {
 	case 22:                /* AKH */
@@ -1546,7 +1546,7 @@ static int data_req_handle_new(struct cc_ctrl_data *cc_data, unsigned int id)
 
 static int data_get_loop(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data, const unsigned char *data, unsigned int datalen, unsigned int items)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	unsigned int i;
 	int dt_id, dt_len;
 	unsigned int pos = 0;
@@ -1581,7 +1581,7 @@ static int data_get_loop(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data, c
 
 static int data_req_loop(struct cc_ctrl_data *cc_data, unsigned char *dest, const unsigned char *data, unsigned int datalen, unsigned int items)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	int dt_id;
 	unsigned int i;
 	int pos = 0;
@@ -1639,7 +1639,7 @@ void ci_ccmgr_cc_sac_sync_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *da
 	ci_ccmgr_cc_sac_send(dvbnode, sessionnr, sync_cnf_tag, dest, pos);
 	dvbnode->caslot->ccmgr_ready = 1;
 	debug(620, "set ccmgr_ready=%d", dvbnode->caslot->ccmgr_ready);
-	//debug(620, "end");
+	debug(620, "end");
 }
 
 int checkcerts(void)
@@ -1834,7 +1834,7 @@ int ci_ccmgr_cc_sac_data_req(struct dvbdev* dvbnode, int sessionnr, uint8_t *dat
 
 int ci_ccmgr_cc_sac_send(struct dvbdev* dvbnode, int sessionnr, uint8_t *tag, uint8_t *data, unsigned int pos)
 {
-//	debug(620, "start");
+	debug(620, "start");
 	debug(620, "Tag: %02X%02X%02X", tag[0], tag[1], tag[2]);
 	struct cc_ctrl_data *cc_data = (struct cc_ctrl_data*)(dvbnode->caslot->private_data);
 
