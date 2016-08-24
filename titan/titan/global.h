@@ -7627,4 +7627,40 @@ void delunusedprovider()
 	debug(10, "delunusedprovider: end");
 }
 
+int checkshutdown(int flag)
+{
+	int i = 0;
+
+	//check if record running
+	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5) && (status.streaming > 0 || status.recording > 0 || getrectimerbytimediff(300) != NULL))
+	{
+		if(flag == 4 && status.fixpowerofftime > 1)
+		{
+				status.fixpowerofftime = time(NULL) + 900; //check powerofftimer again in 15min
+				return 1;
+		}
+		if(flag == 5 && status.sd_timer != NULL && status.sd_timer->active)
+		{
+				status.sd_timer->shutdown_time = time(NULL) + 900; //check powerofftimer again in 15min
+				return 1;
+		}
+
+		if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+			return 1;
+	}
+
+	//check if download is running
+	for(i = 0; i < MAXBGDOWNLOAD; i++)
+	{
+		if(bgdownload[i] != NULL && bgdownload[i]->ret == -1)
+		{
+	 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+				return 1;
+			break;
+		}
+	}
+	
+	return 0;
+}
+
 #endif

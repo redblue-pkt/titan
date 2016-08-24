@@ -248,7 +248,7 @@ struct channelslot *channelslot = NULL;
 #include "encoder.h"
 #endif
 
-#define TIMECODE "1469471993"
+#define TIMECODE "1472042241"
 
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
@@ -329,34 +329,8 @@ void oshutdown(int exitcode, int flag)
 	if(status.timeshift == 1)
 		timeshiftstop(3);
 
-	//check if record running
-	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5) && (status.streaming > 0 || status.recording > 0 || getrectimerbytimediff(300) != NULL))
-	{
-		if(flag == 4 && status.fixpowerofftime > 1)
-		{
-				status.fixpowerofftime = time(NULL) + 900; //check powerofftimer again in 15min
-				return;
-		}
-		if(flag == 5 && status.sd_timer != NULL && status.sd_timer->active)
-		{
-				status.sd_timer->shutdown_time = time(NULL) + 900; //check powerofftimer again in 15min
-				return;
-		}
-
-		if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
-			return;
-	}
-
-	//check if download is running
-	for(i = 0; i < MAXBGDOWNLOAD; i++)
-	{
-		if(bgdownload[i] != NULL && bgdownload[i]->ret == -1)
-		{
-	 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
-				return;
-			break;
-		}
-	}
+	ret = checkshutdown(flag);
+	if(ret == 1) return;
 
 	ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
