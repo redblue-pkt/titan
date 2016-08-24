@@ -10,10 +10,10 @@ char* thevideo(char* link)
 
 	if(link == NULL) return NULL;
 
-	unlink("/var/usr/local/share/titan/plugins/tithek/thevideo1_get");
-	unlink("/var/usr/local/share/titan/plugins/tithek/thevideo2_post");
-
-	unlink("/tmp/thevideo2_streamlink");
+	unlink("/tmp/thevideo1_get");
+	unlink("/tmp/thevideo2_post");
+	unlink("/tmp/thevideo3_get");
+	unlink("/tmp/thevideo4_streamlink");
 /////////////
 
 	tmplink = ostrcat(link, NULL, 0, 0);
@@ -58,7 +58,7 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	url = ostrcat(tmphost, tmppath, 0, 0);
 	debug(99, "url: %s", url);
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thevideo1_get", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/tmp/thevideo1_get", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)
 	{
@@ -101,7 +101,7 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 
 	debug(99, "url: %s", url);
 	tmpstr = gethttps(link, NULL, post, NULL, NULL, link, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thevideo2_post", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/tmp/thevideo2_post", NULL, NULL, NULL, tmpstr);	
 
 	streamlink = string_resub("'label' : '360p', 'file' : '", "'", tmpstr, 0);
 	if(streamlink == NULL)
@@ -121,7 +121,9 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	if(url == NULL)
 	{
 		tmpstr2 = string_resub("' + '", "'.concat", tmpstr1, 0);
-		tmpstr3 = string_resub("var tksucks='", "';", tmpstr1, 0);
+//		tmpstr3 = string_resub("var tksucks='", "';", tmpstr1, 0);
+		tmpstr3 = oregex("var .*='(.*)';.*", tmpstr1);
+
 		url = ostrcat("http://thevideo.me", tmpstr2, 0, 0);
 		url = ostrcat(url, "/", 1, 0);
 		url = ostrcat(url, tmpstr3, 1, 0);
@@ -140,7 +142,7 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 */
 
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, link, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thevideo3_get", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/tmp/thevideo3_get", NULL, NULL, NULL, tmpstr);	
 
 	tmpstr1 = string_resub("[],30,'", "'.split('|')", tmpstr, 0);
 	int count = 0;
@@ -171,7 +173,7 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 			streamlink = ostrcat(streamlink, "1", 1, 0);
 	}
 
-	titheklog(debuglevel, "/tmp/thevideo1_streamlink", NULL, NULL, NULL, streamlink);
+	titheklog(debuglevel, "/tmp/thevideo4_streamlink", NULL, NULL, NULL, streamlink);
 
 end:
 
