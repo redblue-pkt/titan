@@ -4,7 +4,7 @@
 void screensystem_update(int mode)
 {
 	debug(50, "(start) mode=%d", mode);
-	int rcret = 0;
+	int rcret = 0, ret = 0;
 
 	status.hangtime = 99999;
 	struct skin* load = getscreen("loading");
@@ -245,11 +245,15 @@ void screensystem_update(int mode)
 				{
 					debug(40, "update started cmd: %s", cmd);
 					status.sec = 0; //deactivate spinner
-					
-					system(cmd);
-					//should only reached if system fails
-					textbox(_("Message"), _("Can't start system update\nSyntax Error on updatefile"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
-					debug(40, "update error cmd: %s", cmd);
+
+					ret = checkshutdown(1);
+					if(ret == 0)
+					{
+						system(cmd);
+						//should only reached if system fails
+						textbox(_("Message"), _("Can't start system update\nSyntax Error on updatefile"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+						debug(40, "update error cmd: %s", cmd);
+					}
 					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, node->filepath, node->filemask, 0, NULL);
 					addscreenrc(systemupdate, filelist);
