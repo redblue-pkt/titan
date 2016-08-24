@@ -190,7 +190,7 @@ void screensystem_update(int mode)
 				writeallconfig(1);
 
 				debug(40, "Update: update with log");
-				if(ostrstr(filelist->select->text, "_FULL_") != NULL || ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL || ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
+				if(ostrstr(filelist->select->text, "_USB_") != NULL || ostrstr(filelist->select->text, "_FULL_") != NULL || ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL || ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 				{
 					if(ostrstr(filelist->select->text, "_FULL_") != NULL)
 						cmd = ostrcat(cmd, "full ", 1, 0);
@@ -198,7 +198,11 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "fullbackup ", 1, 0);
 					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 						cmd = ostrcat(cmd, "updatenfi ", 1, 0);
-
+					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
+					{
+						cmd = ostrcat(cmd, device->ret, 1, 0);
+						cmd = ostrcat(cmd, " ", 1, 0);
+					}
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, node->auth, 1, 0);
 					if(node->imgtype == 1)
@@ -229,6 +233,8 @@ void screensystem_update(int mode)
 						msgtxt = ostrcat(msgtxt, _("starting Full Update (from backup) ?"), 1, 0);
 					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 						msgtxt = ostrcat(msgtxt, _("starting Nfi Update ?"), 1, 0);
+					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
+						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 				}
 
 				clearscreen(systemupdate);
