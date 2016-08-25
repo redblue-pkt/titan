@@ -823,20 +823,20 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			newnode->fontsize = atoi(ret);
-			if(newnode->fontsize + status.fontsizeadjust >= 10)
+			if(newnode->fontsize + status.fontsizeadjust >= 15)
 				newnode->fontsize += status.fontsizeadjust;
-			else if(newnode->fontsize >= 10)
-				newnode->fontsize = 10;
+			else if(newnode->fontsize >= 15)
+				newnode->fontsize = 15;
 			free(ret);
 		}
 		ret = getxmlentry(line, " fontsize2=");
 		if(ret != NULL)
 		{
 			newnode->fontsize2 = atoi(ret);
-			if(newnode->fontsize2 + status.fontsizeadjust >= 10)
+			if(newnode->fontsize2 + status.fontsizeadjust >= 15)
 				newnode->fontsize2 += status.fontsizeadjust;
-			else if(newnode->fontsize2 >= 10)
-				newnode->fontsize2 = 10;
+			else if(newnode->fontsize2 >= 15)
+				newnode->fontsize2 = 15;
 			free(ret);
 		}
 		ret = getxmlentry(line, " fontcol=");
