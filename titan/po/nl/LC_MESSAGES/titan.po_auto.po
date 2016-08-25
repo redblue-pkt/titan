@@ -1871,7 +1871,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
-#: mc_videoplayer.h:900 play.h:1650
+#: mc_videoplayer.h:900 play.h:1651
 msgid "Can't start playback !"
 msgstr "Weergave kan niet gestart worden!"
 
@@ -2487,7 +2487,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr ""
 
-#: play.h:1574 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1575 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:139 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
@@ -3008,7 +3008,7 @@ msgstr ""
 msgid "EJECT"
 msgstr "Uitwerpen"
 
-#: adjust.h:71 httpdfunc.h:3905 play.h:1574 skin_default_skin.xml.h:178
+#: adjust.h:71 httpdfunc.h:3905 play.h:1575 skin_default_skin.xml.h:178
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -5608,11 +5608,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1868
+#: play.h:1879
 msgid "Marker autoseek is started"
 msgstr "Markering automatisch zoeken is gestart"
 
-#: play.h:1879
+#: play.h:1890
 msgid "Marker autoseek is stopped"
 msgstr "Markering automatisch zoeken is gestopt"
 
@@ -5875,8 +5875,8 @@ msgstr ""
 #: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:111 play.h:614 play.h:1314 play.h:1351 play.h:1650 play.h:1868
-#: play.h:1879 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
+#: player.h:111 play.h:614 play.h:1314 play.h:1351 play.h:1651 play.h:1879
+#: play.h:1890 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
 #: primeshare.h:124 promptfile.h:46 promptfile.h:94 promptfile.h:136
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
@@ -6464,8 +6464,8 @@ msgstr ""
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
-#: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450 play.h:1650
-#: play.h:1868 play.h:1879 plugins_dlna_skin.xml.h:7
+#: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450 play.h:1651
+#: play.h:1879 play.h:1890 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -8044,7 +8044,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr "Zoek"
 
-#: dvdplay.h:29 play.h:1574 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1575 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Selecteer"
 
@@ -8068,7 +8068,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1574
+#: play.h:1575
 msgid "SORT"
 msgstr "Sorteren"
 
