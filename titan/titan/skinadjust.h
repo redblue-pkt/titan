@@ -67,7 +67,7 @@ void screenskinadjust()
 
 	struct skin* tmp = NULL;
 
-	changeinput(fontsizeadjust, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n-15\n-14\n-13\n-12\n-11\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1");
+	changeinput(fontsizeadjust, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n-15\n-14\n-13\n-12\n-11\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1");
 	setchoiceboxselection(fontsizeadjust, getskinconfig("fontsizeadjust", NULL));
 
 	addchoicebox(listboxselecttype, "0", _("border"));
