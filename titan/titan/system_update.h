@@ -198,7 +198,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "fullbackup ", 1, 0);
 					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 						cmd = ostrcat(cmd, "updatenfi ", 1, 0);
-					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
+					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
 					{
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
@@ -233,7 +233,7 @@ void screensystem_update(int mode)
 						msgtxt = ostrcat(msgtxt, _("starting Full Update (from backup) ?"), 1, 0);
 					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 						msgtxt = ostrcat(msgtxt, _("starting Nfi Update ?"), 1, 0);
-					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
+					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 				}
 
