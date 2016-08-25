@@ -1506,7 +1506,7 @@ void playstartservice()
 // startfolder 2 = do nothing with playstop/playstart
 int screenplay(char* startfile, char* showname, int startfolder, int flag)
 {
-	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0, holdselection = 0, waitofbuffer = 0;
+	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0, holdselection = 0, waitofbuffer = 0, videooff = 0;
 	char* file = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
@@ -1514,6 +1514,7 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	struct skin* playinfobar = getscreen("playinfobar");
 	struct skin* sprogress = getscreennode(playinfobar, "progress");
 	struct skin* load = getscreen("loading");
+	struct skin* blackscreen = getscreen("blackscreen");
 
 	int oldsort = getconfigint("dirsort", NULL);
 	int skip13 = getconfigint("skip13", NULL);
@@ -1695,7 +1696,7 @@ playerstart:
 				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && (status.cleaninfobar == 1 || status.prefillbuffercount == 200))
 				{
 					drawscreen(skin, 0, 0);
-					screenplayinfobar(file, showname, 0, playertype, flag);
+					if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
 					waitofbuffer = 0;
 					status.cleaninfobar = 0;
 					
@@ -1704,26 +1705,26 @@ playerstart:
 				{
 					playinfobarcount++;
 					if(playinfobarstatus > 0)
-						screenplayinfobar(file, showname, 0, playertype, flag);
+						if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
 					if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
 					{
 						playinfobarstatus = 0;
-						screenplayinfobar(NULL, NULL, 1, playertype, flag);
+						if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
 					}
 				}
 #else
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
-					screenplayinfobar(file, showname, 0, playertype, flag);
+					if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
 				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
 				{
 					playinfobarstatus = 0;
-					screenplayinfobar(NULL, NULL, 1, playertype, flag);
+					if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
 				}
 
 				if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
 				{
-					screenplayinfobar(file, showname, 0, playertype, flag);
+					if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
 					waitofbuffer = 0;
 				}
 #endif
@@ -1780,8 +1781,18 @@ playerstart:
 
 				if(rcret == getrcconfigint("rcinfo", NULL))
 					playrcinfo(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
-				
-				if(rcret == getrcconfigint("rcstop", NULL) || rcret == getrcconfigint("rcexit", NULL))
+
+				if(rcret == getrcconfigint("rcpower", NULL) && status.play == 1 && videooff == 0)
+				{
+					videooff = 1;
+					drawscreen(blackscreen, 0, 0);
+				}
+				else if(rcret == getrcconfigint("rcexit", NULL) && videooff == 1)
+				{
+					videooff = 0;
+					drawscreen(skin, 0, 0);
+				}
+				else if(rcret == getrcconfigint("rcstop", NULL) || rcret == getrcconfigint("rcexit", NULL))
 				{
 					if(status.prefillbuffer == 1)
 					{
