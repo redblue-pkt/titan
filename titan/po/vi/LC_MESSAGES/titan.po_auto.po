@@ -3145,29 +3145,30 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020
 #: global.h:6811 global.h:6830 global.h:7240 global.h:7260 global.h:7280
-#: global.h:7300 global.h:7320 global.h:7648 global.h:7657 harddisk.h:355
-#: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
-#: harddisk.h:776 harddisk.h:778 harddisk.h:857 harddisk.h:860 harddisk.h:1091
-#: hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
-#: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
-#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
-#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
-#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
-#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:671
-#: infobar.h:795 info.h:27 keyactions.h:205 language.h:54 letwatch.h:29
-#: letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215
-#: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
-#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
-#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
+#: global.h:7300 global.h:7320 global.h:7649 global.h:7654 global.h:7666
+#: global.h:7671 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
+#: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
+#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
+#: httpdfunc.h:6533 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:671 infobar.h:795 info.h:27
+#: keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:59 letwatch.h:65
+#: letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
+#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
+#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
+#: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
+#: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:96
 #: movshare.h:186 movshare.h:192 MultiImage.c:262 MultiImage.c:273
@@ -3893,7 +3894,7 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr ""
 
-#: global.h:7657
+#: global.h:7671
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
@@ -3901,7 +3902,14 @@ msgstr ""
 "Bản ghi đang chạy.\n"
 "Bạn muốn tắt?"
 
-#: global.h:7648
+#: global.h:7649 global.h:7666
+msgid ""
+"Found running record\n"
+"or record is starting in next time.\n"
+"Really System Update ?"
+msgstr ""
+
+#: global.h:7654
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
@@ -5798,21 +5806,21 @@ msgstr ""
 #: firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020 global.h:6741
 #: global.h:6811 global.h:6830 global.h:7240 global.h:7248 global.h:7260
 #: global.h:7268 global.h:7280 global.h:7288 global.h:7300 global.h:7308
-#: global.h:7320 global.h:7328 global.h:7648 global.h:7657 harddisk.h:678
-#: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
-#: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
-#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811 httpdfunc.h:6197
-#: httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:671 infobar.h:795
-#: keyactions.h:205 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
-#: language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29
-#: letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 marker.h:215
-#: marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: global.h:7320 global.h:7328 global.h:7649 global.h:7654 global.h:7666
+#: global.h:7671 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
+#: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
+#: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:671
+#: infobar.h:795 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
+#: kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:101
+#: letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48
+#: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
+#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -6381,30 +6389,31 @@ msgstr "E"
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020
 #: global.h:6741 global.h:6811 global.h:6830 global.h:7240 global.h:7248
 #: global.h:7260 global.h:7268 global.h:7280 global.h:7288 global.h:7300
-#: global.h:7308 global.h:7320 global.h:7328 global.h:7648 global.h:7657
-#: harddisk.h:355 harddisk.h:487 harddisk.h:678 harddisk.h:686 harddisk.h:720
-#: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838
-#: harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304
-#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
-#: httpdfunc.h:6533 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
-#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
-#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
-#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:671 infobar.h:795 info.h:27
-#: keyactions.h:205 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
-#: language.h:54 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:59
-#: letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
-#: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
-#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
-#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
-#: menu.h:984 menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
+#: global.h:7308 global.h:7320 global.h:7328 global.h:7649 global.h:7654
+#: global.h:7666 global.h:7671 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
+#: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
+#: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
+#: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:671
+#: infobar.h:795 info.h:27 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
+#: kravencfg.c:248 language.h:54 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29
+#: letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 mboxinfo.c:49
+#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
+#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
+#: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
+#: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:96
 #: movshare.h:186 movshare.h:192 MultiImage.c:46 MultiImage.c:175
