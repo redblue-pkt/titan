@@ -9073,7 +9073,7 @@ msgid "Skin Style selection"
 msgstr ""
 
 #: tpk_showname.h:188
-msgid "Skin Tobayer01"
+msgid "Skin Tobayer01 Multi"
 msgstr ""
 
 #: tpk_showname.h:189
@@ -9085,7 +9085,7 @@ msgid "Skin UFS912 style for white picons"
 msgstr ""
 
 #: tpk_description.h:152
-msgid "Skin tobayer01 for grey picons"
+msgid "Skin tobayer01 for (grey/blue/black) picons"
 msgstr ""
 
 #: httpdfunc.h:4280 skin_default_skin.xml.h:578
