@@ -9099,18 +9099,18 @@ msgid "Skin MetrixHD"
 msgstr ""
 
 #: tpk_showname.h:185
-msgid "Skin Nogfx"
-msgstr ""
-
-#: tpk_showname.h:186
 msgid "Skin Nogfx (grey)"
 msgstr ""
 
-#: tpk_description.h:149
-msgid "Skin Nogfx black for black picons"
+#: tpk_showname.h:186
+msgid "Skin Nogfx Multi"
 msgstr ""
 
 #: tpk_description.h:150
+msgid "Skin Nogfx Multi for (black/grey) picons"
+msgstr ""
+
+#: tpk_description.h:149
 msgid "Skin Nogfx grey"
 msgstr ""
 
