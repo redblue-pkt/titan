@@ -252,7 +252,7 @@ void screensystem_update(int mode)
 					debug(40, "update started cmd: %s", cmd);
 					status.sec = 0; //deactivate spinner
 
-					ret = checkshutdown(1);
+					ret = checkshutdown(6);
 					if(ret == 0)
 					{
 						system(cmd);

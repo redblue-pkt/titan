@@ -7644,9 +7644,16 @@ int checkshutdown(int flag)
 				status.sd_timer->shutdown_time = time(NULL) + 900; //check powerofftimer again in 15min
 				return 1;
 		}
-
-		if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
-			return 1;
+		else if(flag == 6)
+		{
+			if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally System Update ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+				return 1;
+		}
+		else
+		{
+			if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+				return 1;
+		}
 	}
 
 	//check if download is running
@@ -7654,9 +7661,18 @@ int checkshutdown(int flag)
 	{
 		if(bgdownload[i] != NULL && bgdownload[i]->ret == -1)
 		{
-	 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
-				return 1;
+			if(flag == 6)
+			{
+				if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally System Update ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+					return 1;
+			}
+			else
+			{
+		 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+					return 1;
+			}
 			break;
+
 		}
 	}
 	
