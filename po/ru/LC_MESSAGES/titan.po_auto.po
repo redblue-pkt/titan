@@ -3920,13 +3920,6 @@ msgstr ""
 "Идёт закачка\n"
 "Продолжить?"
 
-#: global.h:7649 global.h:7666
-msgid ""
-"Found running record\n"
-"or record is starting in next time.\n"
-"Really System Update ?"
-msgstr ""
-
 #: global.h:7654
 msgid ""
 "Found running record\n"
@@ -3937,6 +3930,14 @@ msgstr ""
 "в ближайшие время будет запущена запись по\n"
 "таймеру\n"
 "Продолжить?"
+
+#: global.h:7649 global.h:7666
+msgid ""
+"Found running record\n"
+"or record is starting soon.\n"
+"Proceed System Update?\n"
+"OK to proceed, Exit to cancel"
+msgstr ""
 
 #: tsSchnitt.c:347
 msgid "Frage"

@@ -3944,13 +3944,6 @@ msgstr ""
 "Found a active download\n"
 "Really shutdown?"
 
-#: global.h:7649 global.h:7666
-msgid ""
-"Found running record\n"
-"or record is starting in next time.\n"
-"Really System Update ?"
-msgstr ""
-
 #: global.h:7654
 msgid ""
 "Found running record\n"
@@ -3960,6 +3953,14 @@ msgstr ""
 "Found a active recording.\n"
 "or recording is starting soon.\n"
 "Really shutdown?"
+
+#: global.h:7649 global.h:7666
+msgid ""
+"Found running record\n"
+"or record is starting soon.\n"
+"Proceed System Update?\n"
+"OK to proceed, Exit to cancel"
+msgstr ""
 
 #: tsSchnitt.c:347
 msgid "Frage"
