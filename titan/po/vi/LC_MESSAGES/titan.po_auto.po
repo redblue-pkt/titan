@@ -5732,12 +5732,12 @@ msgstr ""
 msgid "Mediathek"
 msgstr "Thư viện trực tuyến"
 
-#: tpk_description.h:106
+#: tpk_description.h:107
 msgid "MegaStyle blue Mini TV Skin"
 msgstr ""
 
-#: tpk_description.h:107
-msgid "MegaStyle blue Skin"
+#: tpk_description.h:106
+msgid "MegaStyle blue default picons"
 msgstr ""
 
 #: tpk_description.h:108
@@ -9014,7 +9014,7 @@ msgid "Skin Nogfx Multi"
 msgstr ""
 
 #: tpk_description.h:150
-msgid "Skin Nogfx Multi for (black/grey) default picons"
+msgid "Skin Nogfx Multi (black/grey) default picons"
 msgstr ""
 
 #: tpk_description.h:149
