@@ -91,6 +91,10 @@ printf("33333333333333333333333333\n");
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/movshare1_get", NULL, NULL, NULL, tmpstr);
 
+	streamlink = string_resub("<source src=\"", "\"", tmpstr, 0);
+	if(streamlink != NULL)
+		goto end;
+
 	if(tmpstr == NULL || ostrstr(tmpstr, "error=1&error_msg=The video no longer exists") != NULL)
 	{
 		textbox(_("Message"), _("The video no longer exists") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
