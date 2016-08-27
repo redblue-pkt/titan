@@ -1,0 +1,401 @@
+package gs.youtube;
+
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.util.Joiner;
+import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.model.*;
+
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * Created by swiatek on 17.08.2015.
+ */
+public class Client {
+	static class VideoInfo {
+		String id;
+		String title;
+		String thumbnail;
+		String streamUrl;
+		String category;
+	}
+
+	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+	private static final JsonFactory JSON_FACTORY = new JacksonFactory();
+	private static final String API_KEY = "AIzaSyDxUusIumLmhHCzDZbKPJMK_5pas8WDD_4";
+	private static final long MAX_RESULTS = 50;
+
+	private static void guideCategories(String region, String lang) throws IOException {
+		YouTube youtube = new YouTube.Builder(HTTP_TRANSPORT, JSON_FACTORY, new HttpRequestInitializer() {
+			public void initialize(HttpRequest request) throws IOException {
+			}
+		}).setApplicationName("titan").build();
+
+		YouTube.GuideCategories.List categories = youtube.guideCategories().list("id,snippet");
+		categories.setKey(API_KEY);
+		categories.setRegionCode(region);
+		categories.setHl(lang);
+
+		GuideCategoryListResponse response = categories.execute();
+
+		for (GuideCategory cat : response.getItems()) {
+			System.out.println("id=" + cat.getId() + ", kind=" + cat.getKind() + ", snippet=" + cat.getSnippet());
+		}
+	}
+
+	private static List<VideoInfo> mostPopularByCategory(String region, String lang) throws IOException {
+		YouTube youtube = new YouTube.Builder(HTTP_TRANSPORT, JSON_FACTORY, new HttpRequestInitializer() {
+			public void initialize(HttpRequest request) throws IOException {
+			}
+		}).setApplicationName("titan").build();
+
+		YouTube.VideoCategories.List categories = youtube.videoCategories().list("id,snippet");
+		categories.setKey(API_KEY);
+		categories.setRegionCode(region);
+		categories.setHl(lang);
+
+		VideoCategoryListResponse response = categories.execute();
+
+		List<VideoInfo> videos = new ArrayList<>();
+
+		String category;
+
+		for (VideoCategory cat : response.getItems()) {
+
+			System.out.println("id=" + cat.getId() + ", kind=" + cat.getKind() + ", snippet=" + cat.getSnippet());
+
+			if (Boolean.FALSE.equals(cat.getSnippet().getAssignable())) {
+				//continue;
+			}
+
+			category = cat.getSnippet().getTitle();
+
+			YouTube.Videos.List listVideosRequest = youtube.videos().list("id,snippet");
+			listVideosRequest.setKey(API_KEY);
+			listVideosRequest.setRegionCode(region).setChart("mostPopular").setVideoCategoryId(cat.getId());
+			listVideosRequest.setMaxResults(MAX_RESULTS);
+			VideoListResponse listResponse = listVideosRequest.execute();
+
+			for (Video v: listResponse.getItems()) {
+
+				VideoInfo info = new VideoInfo();
+				info.category = category;
+				info.id = v.getId();
+
+				info.title = v.getSnippet().getTitle();
+
+				videos.add(info);
+
+				ThumbnailDetails thumbnails = v.getSnippet().getThumbnails();
+
+				if (thumbnails != null) {
+					Thumbnail thumbnail = thumbnails.getHigh();
+
+					if (thumbnail == null) {
+						thumbnail = thumbnails.getMedium();
+
+						if (thumbnail == null) {
+							thumbnail = thumbnails.getStandard();
+						}
+					}
+
+					if (thumbnail != null) {
+						info.thumbnail = thumbnail.getUrl();
+					}
+				}
+			}
+		}
+
+		System.out.println("Total: " + videos.size());
+
+		long t = System.currentTimeMillis();
+
+		for (VideoInfo info : videos) {
+			try {
+				info.streamUrl = getStreamUrlFromVideoId(info.id);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		long t2 = System.currentTimeMillis();
+		System.out.println("Process time (ms): " + (t2 - t));
+
+		return videos;
+	}
+
+	private static String getStreamUrlFromContent(String line) {
+
+		String res = null;
+
+		if (line == null) {
+			return res;
+		}
+
+		String token =  "url_encoded_fmt_stream_map\":\"";
+
+		int pos = line.indexOf(token);
+
+		if (pos != -1) {
+			line = line.substring(pos + token.length());
+
+			pos = line.indexOf('"');
+
+			if (pos != -1) {
+				line = line.substring(0, pos);
+			}
+		}
+
+		List<String> parts = new ArrayList<>();
+
+		String delim = "\\u0026";
+
+		pos = line.indexOf(delim);
+
+		while (pos != -1) {
+			parts.add(line.substring(0, pos));
+			line = line.substring(pos + delim.length());
+			pos = line.indexOf(delim);
+		}
+
+		parts.add(line);
+
+		String urlToken = "url=";
+
+		for (String s : parts) {
+			if (s.startsWith(urlToken)) {
+				res = s.substring(urlToken.length());
+				break;
+			}
+		}
+
+		if (res != null) {
+			res = res.replaceAll("%3A", ":").replaceAll("%2F", "/").replaceAll("%3F", "?").replaceAll("%26", "&").replaceAll("%3D", "=").replaceAll("%25", "%");
+		}
+
+		return res;
+	}
+
+	private static String getStreamUrlFromVideoId(String id) throws IOException {
+
+		String streamUrl;
+		String streamLine = null;
+
+		try {
+			URL url = new URL("https://www.youtube.com/watch?v=" + id);
+			HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+
+
+			try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+				String line = br.readLine();
+
+				while (line != null) {
+
+					if (line.contains("videoplayback")) {
+						streamLine = line;
+						break;
+					}
+
+					line = br.readLine();
+				}
+			}
+		} finally {
+
+		}
+
+		streamUrl = getStreamUrlFromContent(streamLine);
+
+		return streamUrl;
+	}
+
+	private static void search(String query) throws IOException {
+		YouTube youtube = new YouTube.Builder(HTTP_TRANSPORT, JSON_FACTORY, new HttpRequestInitializer() {
+			public void initialize(HttpRequest request) throws IOException {
+			}
+		}).setApplicationName("test").build();
+
+		// Prompt the user to enter a query term.
+		String queryTerm = query;
+
+		// Define the API request for retrieving search results.
+		YouTube.Search.List search = youtube.search().list("id,snippet");
+
+		// Set your developer key from the {{ Google Cloud Console }} for
+		// non-authenticated requests. See:
+		// {{ https://cloud.google.com/console }}
+		search.setKey(API_KEY);
+		search.setQ(queryTerm);
+
+		// Restrict the search results to only include videos. See:
+		// https://developers.google.com/youtube/v3/docs/search/list#type
+		search.setType("video");
+
+		// To increase efficiency, only retrieve the fields that the
+		// application uses.
+		search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url)");
+		search.setMaxResults(MAX_RESULTS);
+
+		// Call the API and print results.
+		SearchListResponse searchResponse = search.execute();
+		List<SearchResult> searchResultList = searchResponse.getItems();
+		List<String> videoIds = new ArrayList<String>();
+
+		if (searchResultList != null) {
+			prettyXPrint(searchResultList.iterator(), queryTerm);
+
+			Joiner stringJoiner = Joiner.on(',');
+			String videoId = stringJoiner.join(videoIds);
+
+			// Call the YouTube Data API's youtube.videos.list method to
+			// retrieve the resources that represent the specified videos.
+			YouTube.Videos.List listVideosRequest = youtube.videos().list("snippet, recordingDetails").setId(videoId);
+			listVideosRequest.setKey(API_KEY);
+			VideoListResponse listResponse = listVideosRequest.execute();
+
+			List<Video> videoList = listResponse.getItems();
+
+			if (videoList != null && !videoList.isEmpty()) {
+				prettyPrint(videoList.iterator(), queryTerm);
+			}
+
+
+		}
+
+	}
+
+	private static void store(List<VideoInfo> videos, String fileName) throws IOException {
+
+		try (BufferedWriter w = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName), "utf-8"))) {
+			w.write("<!DOCTYPE html>");
+			w.newLine();
+			w.write("<html>");
+			w.newLine();
+			w.write("<head><title>Youtube</title><meta charset=\"utf-8\"></head>");
+			w.newLine();
+			w.write("<body>");
+			w.newLine();
+
+			String lastCategory = "";
+
+			for (VideoInfo v : videos) {
+				if (!lastCategory.equals(v.category)) {
+					w.write("<h1>");
+					w.write(v.category);
+					w.write("</h1>");
+					w.newLine();
+
+					lastCategory = v.category;
+				}
+
+				if (v.streamUrl != null && v.thumbnail != null) {
+					w.write("<div>");
+					w.write("<a href=\"");
+					w.write(v.streamUrl);
+					w.write("\">");
+					w.write("<figure>");
+					w.write("<img src=\"");
+					w.write(v.thumbnail);
+					w.write("\">");
+
+					if (v.title != null) {
+						w.write("<figcaption>");
+						w.write(v.title);
+						w.write("</figcaption>");
+					}
+
+					w.write("</figure>");
+					w.write("</a>");
+					w.write("</div>");
+					w.newLine();
+				}
+			}
+
+			w.write("</body>");
+			w.newLine();
+			w.write("</html>");
+
+			w.flush();
+		}
+	}
+
+	public static void main(String[] args) {
+		try {
+			//search(args.length > 0 ? args[0] : "Madonna");
+			//System.out.println("Guide categories");
+			//guideCategories("de", "de");
+
+			System.out.println("Video categories");
+			List<VideoInfo> videos = mostPopularByCategory("us", "en");
+			store(videos, "youtube.html");
+			//getStreamUrlFromVideoId("TjsI5EkDZCU");
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void prettyXPrint(Iterator<SearchResult> iteratorSearchResults, String query) {
+
+		System.out.println("\n=============================================================");
+		System.out.println(
+				"   First " + 50 + " videos for search on \"" + query + "\".");
+		System.out.println("=============================================================\n");
+
+		if (!iteratorSearchResults.hasNext()) {
+			System.out.println(" There aren't any results for your query.");
+		}
+
+		while (iteratorSearchResults.hasNext()) {
+
+			SearchResult singleVideo = iteratorSearchResults.next();
+			ResourceId rId = singleVideo.getId();
+
+			// Confirm that the result represents a video. Otherwise, the
+			// item will not contain a video ID.
+			if (rId.getKind().equals("youtube#video")) {
+				Thumbnail thumbnail = singleVideo.getSnippet().getThumbnails().getDefault();
+
+				System.out.println(" Video Id" + rId.getVideoId());
+				System.out.println(" Title: " + singleVideo.getSnippet().getTitle());
+				System.out.println(" Thumbnail: " + thumbnail.getUrl());
+				System.out.println("\n-------------------------------------------------------------\n");
+			}
+		}
+	}
+
+	private static void prettyPrint(Iterator<Video> iteratorVideoResults, String query) {
+
+		System.out.println("\n=============================================================");
+		System.out.println(
+				"   First " + 50 + " videos for search on \"" + query + "\".");
+		System.out.println("=============================================================\n");
+
+		if (!iteratorVideoResults.hasNext()) {
+			System.out.println(" There aren't any results for your query.");
+		}
+
+		while (iteratorVideoResults.hasNext()) {
+
+			Video singleVideo = iteratorVideoResults.next();
+
+			Thumbnail thumbnail = singleVideo.getSnippet().getThumbnails().getDefault();
+			GeoPoint location = singleVideo.getRecordingDetails().getLocation();
+
+			System.out.println(" Video Id" + singleVideo.getId());
+			System.out.println(" Title: " + singleVideo.getSnippet().getTitle());
+			System.out.println(" Location: " + location.getLatitude() + ", " + location.getLongitude());
+			System.out.println(" Thumbnail: " + thumbnail.getUrl());
+			System.out.println("\n-------------------------------------------------------------\n");
+		}
+	}
+
+}
