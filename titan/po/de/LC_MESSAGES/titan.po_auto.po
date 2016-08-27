@@ -9168,7 +9168,7 @@ msgid "Skin 0Acht5Zehn Multi"
 msgstr ""
 
 #: tpk_description.h:145
-msgid "Skin 0Acht5Zehn Multi for (grey/black/white) picons"
+msgid "Skin 0Acht5Zehn Multi (grey/black/white) default picons"
 msgstr ""
 
 #: tpk_description.h:144
@@ -9284,7 +9284,7 @@ msgid "Skin UFS912 style for white picons"
 msgstr ""
 
 #: tpk_description.h:152
-msgid "Skin tobayer01 for (grey/blue/black) picons"
+msgid "Skin tobayer01 (grey/blue/black) default picons"
 msgstr ""
 
 #: httpdfunc.h:4280 skin_default_skin.xml.h:578
