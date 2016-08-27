@@ -3194,8 +3194,8 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
-#: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:96
-#: movshare.h:186 movshare.h:192 MultiImage.c:262 MultiImage.c:273
+#: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:100
+#: movshare.h:190 movshare.h:196 MultiImage.c:262 MultiImage.c:273
 #: MultiImage.c:533 MultiImage.c:591 MultiImage.c:671 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
@@ -5883,7 +5883,7 @@ msgstr ""
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
 #: mightyupload.h:68 mightyupload.h:74 movie2k.h:23 movie2k.h:32 movie4k.h:38
 #: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:137
-#: movshare.h:40 movshare.h:96 movshare.h:186 movshare.h:192 MultiImage.c:46
+#: movshare.h:40 movshare.h:100 movshare.h:190 movshare.h:196 MultiImage.c:46
 #: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 MultiImage.c:607
 #: myvideo.h:86 nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
@@ -6468,8 +6468,8 @@ msgstr ""
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
-#: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:96
-#: movshare.h:186 movshare.h:192 MultiImage.c:46 MultiImage.c:175
+#: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:100
+#: movshare.h:190 movshare.h:196 MultiImage.c:46 MultiImage.c:175
 #: MultiImage.c:244 MultiImage.c:262 MultiImage.c:273 MultiImage.c:353
 #: MultiImage.c:401 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
 #: MultiImage.c:671 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
@@ -9813,7 +9813,7 @@ msgstr ""
 #: cloudzilla.h:39 divxstage.h:154 faststream.h:79 faststream.h:90
 #: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
 #: firedrive.h:122 firedrive.h:137 flashx.h:55 letwatch.h:59 mightyupload.h:68
-#: movreel.h:137 movshare.h:186 nbaondemand.h:61 played.h:84 played.h:101
+#: movreel.h:137 movshare.h:190 nbaondemand.h:61 played.h:84 played.h:101
 #: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
 #: putlocker.h:225 shared.h:82 solarmovie.h:51 solarmovie.h:62
@@ -9829,7 +9829,7 @@ msgid "The page not found, file removed"
 msgstr ""
 
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:160 faststream.h:109
-#: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:96 movshare.h:192
+#: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:100 movshare.h:196
 #: thevideo.h:71 vidag.h:60 vidbull.h:73 vidto.h:73 vidto.h:180 vidzi.h:65
 #: vivo.h:44 vivo.h:67 vodlocker.h:80 xvidstage.h:64
 msgid "The video no longer exists"
