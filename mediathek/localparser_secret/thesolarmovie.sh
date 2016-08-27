@@ -122,6 +122,10 @@ page()
 		cat $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/<a class="coverImage"/\nfound=/g' | grep ^found=  | sed 's/data-original/\r\n/g' | tr ' ' '~' >$TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.2
 
 		pages=`cat $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1 | grep "<span class='pages'>" | sed 's! of !\npage<!' | grep ^"page<" | cut -d'<' -f2`
+		if [ -z "$pages" ]; then
+			pages=`cat $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1 | sed 's/"page larger" href=/\ntreffer=/g' | grep "treffer="  | sed 's!</a>!\n!g' | grep treffer | cut -d ">" -f2 | tail -n1`
+		fi
+
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | cut -d '"' -f2 | tr '~' ' ' | sed 's/#/%/'`
 			if [ `echo $TITLE | grep ^"//" | wc -l` -eq 0 ];then
