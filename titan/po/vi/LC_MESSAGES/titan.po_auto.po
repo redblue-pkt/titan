@@ -3902,13 +3902,6 @@ msgstr ""
 "Bản ghi đang chạy.\n"
 "Bạn muốn tắt?"
 
-#: global.h:7649 global.h:7666
-msgid ""
-"Found running record\n"
-"or record is starting in next time.\n"
-"Really System Update ?"
-msgstr ""
-
 #: global.h:7654
 msgid ""
 "Found running record\n"
@@ -3918,6 +3911,14 @@ msgstr ""
 "Bản ghi đang chạy\n"
 "hoặc đang bắt đầu ghi.\n"
 "Bạn muốn tắt ?"
+
+#: global.h:7649 global.h:7666
+msgid ""
+"Found running record\n"
+"or record is starting soon.\n"
+"Proceed System Update?\n"
+"OK to proceed, Exit to cancel"
+msgstr ""
 
 #: tsSchnitt.c:347
 msgid "Frage"

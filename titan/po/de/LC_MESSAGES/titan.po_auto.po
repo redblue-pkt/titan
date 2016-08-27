@@ -4007,13 +4007,6 @@ msgstr ""
 "ACHTUNG: Eine Datei wird heruntergeladen.\n"
 "Das Herunterladen abbrechen und System neu starten?"
 
-#: global.h:7649 global.h:7666
-msgid ""
-"Found running record\n"
-"or record is starting in next time.\n"
-"Really System Update ?"
-msgstr ""
-
 #: global.h:7654
 msgid ""
 "Found running record\n"
@@ -4023,6 +4016,14 @@ msgstr ""
 "ACHTUNG: Eine Aufnahme wird aufgezeichnet\n"
 "oder eine zeitgesteuerte Aufnahme startet gleich.\n"
 "Soll TitanNit trotzdem neu gestartet werden?"
+
+#: global.h:7649 global.h:7666
+msgid ""
+"Found running record\n"
+"or record is starting soon.\n"
+"Proceed System Update?\n"
+"OK to proceed, Exit to cancel"
+msgstr ""
 
 #: tsSchnitt.c:347
 msgid "Frage"
