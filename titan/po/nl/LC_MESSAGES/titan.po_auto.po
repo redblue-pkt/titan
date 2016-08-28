@@ -5775,12 +5775,12 @@ msgstr ""
 msgid "Mediathek"
 msgstr "Online Mediatheek"
 
-#: tpk_description.h:107
+#: tpk_description.h:106
 msgid "MegaStyle blue Mini TV Skin"
 msgstr ""
 
-#: tpk_description.h:106
-msgid "MegaStyle blue default picons"
+#: tpk_description.h:107
+msgid "MegaStyle blue with MiniTv (Skinadjust)"
 msgstr ""
 
 #: tpk_description.h:108
