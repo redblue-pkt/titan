@@ -418,7 +418,7 @@ int cammiaction(struct dvbdev* dvbnode, int sessionnr)
 
 int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
-	char* tmpstr = NULL, *tmpstr1 = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	struct casession* casession = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	int ca0autopin = 0;
@@ -483,9 +483,12 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 				  	ca0autopin = 1;
 				  	ostrcat(tmpstr, getconfig("ca0_pin", NULL), 0, 0);
 				  }
+				  tmpstr2 = ostrcat(tmpstr2, "ca0_pin", 1, 0);
 				}
+				if(ostrstr(str, "Bitte versuchen Sie es erneut") != NULL)
+					tmpstr2 = ostrcat(tmpstr2, "ca0_pin", 1, 0);
 				if(ca0autopin == 0)  	 
-					tmpstr = textinput(str, tmpstr1);
+					tmpstr = textinputsave(str, tmpstr1, tmpstr2);
 				if(tmpstr == NULL)
 					cammicancelenq(dvbnode, sessionnr);
 				else
@@ -495,6 +498,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 				}
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
+				free(tmpstr2); tmpstr2 = NULL;
 
 			}
 			break;
