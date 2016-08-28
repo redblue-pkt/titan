@@ -4958,7 +4958,7 @@ msgstr ""
 msgid "Input 9"
 msgstr ""
 
-#: textinput.h:15 textinputhist.h:122
+#: textinput.h:15 textinput.h:86 textinputhist.h:122
 msgid "Input field"
 msgstr ""
 
