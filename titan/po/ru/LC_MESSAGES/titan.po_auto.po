@@ -8994,12 +8994,16 @@ msgstr ""
 msgid "Skin Adjust"
 msgstr "Настройки скина"
 
-#: tpk_description.h:147 tpk_showname.h:171
+#: tpk_showname.h:171
 msgid "Skin Cool"
 msgstr ""
 
-#: tpk_description.h:148 tpk_showname.h:172
+#: tpk_description.h:147 tpk_showname.h:172
 msgid "Skin Cool MiniTV"
+msgstr ""
+
+#: tpk_description.h:148
+msgid "Skin Cool with MiniTv (skinadjust)"
 msgstr ""
 
 #: tpk_showname.h:177
