@@ -5121,7 +5121,7 @@ msgstr "Anschluss 8"
 msgid "Input 9"
 msgstr "Anschluss 9"
 
-#: textinput.h:15 textinputhist.h:122
+#: textinput.h:15 textinput.h:86 textinputhist.h:122
 msgid "Input field"
 msgstr "Eingabe Feld"
 
