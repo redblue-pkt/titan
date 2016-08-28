@@ -5779,7 +5779,7 @@ msgid "MegaStyle grey MiniTV Skin"
 msgstr ""
 
 #: tpk_description.h:109
-msgid "MegaStyle grey Skin"
+msgid "MegaStyle grey with MiniTv (Skinadjust)"
 msgstr ""
 
 #: httpdfunc.h:5309 skin_default_skin.xml.h:359 system_infos.h:24
