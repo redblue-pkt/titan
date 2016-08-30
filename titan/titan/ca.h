@@ -476,17 +476,24 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 
 				int i = 0;
 				for(i = 0; i < alen; i++) tmpstr1 = ostrcat(tmpstr1, "0", 1, 0);
+				if(dvbnode->caslot->connid > 0)
+				{
+					tmpstr2 = ostrcat(tmpstr2, "ca", 1, 0);
+				  tmpstr2 = ostrcat(tmpstr2, oitoa(dvbnode->caslot->connid - 1), 1, 1);
+				  tmpstr2 = ostrcat(tmpstr2, "_pin", 1, 0);
+				}
 				if(ostrstr(str, "Bitte geben Sie Ihre Jugendschutz-PIN ein") != NULL)
 				{ 
-				  if(getconfig("ca0_pin", NULL) != NULL)
+				  if(getconfig(tmpstr2, NULL) != NULL)
 				  {
 				  	ca0autopin = 1;
-				  	ostrcat(tmpstr, getconfig("ca0_pin", NULL), 0, 0);
+				  	tmpstr = ostrcat(tmpstr, getconfig(tmpstr2, NULL), 1, 0);
 				  }
-				  tmpstr2 = ostrcat(tmpstr2, "ca0_pin", 1, 0);
 				}
 				if(ostrstr(str, "Bitte versuchen Sie es erneut") != NULL)
-					tmpstr2 = ostrcat(tmpstr2, "ca0_pin", 1, 0);
+				{
+					delconfig(tmpstr2);
+				}
 				if(ca0autopin == 0)  	 
 					tmpstr = textinputsave(str, tmpstr1, tmpstr2);
 				if(tmpstr == NULL)
