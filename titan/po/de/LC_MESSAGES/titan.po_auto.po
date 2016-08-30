@@ -9232,7 +9232,7 @@ msgid "Skin SevenHD Multi"
 msgstr ""
 
 #: tpk_description.h:146
-msgid "Skin SevenHD Multi (blue/black/grey/black2/red)"
+msgid "Skin SevenHD Multi (blue/black/grey/black2/red) Xpicons"
 msgstr ""
 
 #: tpk_showname.h:182
