@@ -218,6 +218,8 @@ void mc_changeview(int view, struct skin* filelist, struct skin* apskin, int fla
 		album->hidden = YES;
 		stars->hidden = YES;
 	}
+
+	filelist->fontsize += status.fontsizeadjust;
 }
 
 /*

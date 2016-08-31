@@ -172,6 +172,8 @@ void mc_main()
 	mc_main = getscreen("mc_main_mvi"); 
 		
 	struct skin* listbox = getscreennode(mc_main, "listbox");
+	listbox->fontsize += status.fontsizeadjust;
+
 	struct skin* mc_main_selected = getscreennode(mc_main, "mc_main_selected_pic");
 
 	struct skin* mc_audioplayer = getscreennode(mc_main, "mc_audioplayer");
