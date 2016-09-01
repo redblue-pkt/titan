@@ -1308,6 +1308,9 @@ int setvmpegrect(struct dvbdev* node, int posx, int posy, int wh, int flag)
 		ret = setvmpeg(node, wh, 3);
 		ret = setvmpeg(node, (int)((float)wh * 1.2), 2);
 	}
+	
+	setvmpeg(node, 0, 99); 
+	
 	return ret;
 }
 	
