@@ -172,7 +172,7 @@ void mc_main()
 	mc_main = getscreen("mc_main_mvi"); 
 		
 	struct skin* listbox = getscreennode(mc_main, "listbox");
-	listbox->fontsize += status.fontsizeadjust;
+	listbox->width += status.fontsizeadjust;
 
 	struct skin* mc_main_selected = getscreennode(mc_main, "mc_main_selected_pic");
 
@@ -196,7 +196,15 @@ void mc_main()
 	mc_dateibrowser->usesavebg = 2;
 	mc_internetbrowser->usesavebg = 2;
 	mc_wetterinfo->usesavebg = 2;
-		
+
+	mc_audioplayer->height += status.fontsizeadjust;
+	mc_videoplayer->height += status.fontsizeadjust;
+	mc_pictureplayer->height += status.fontsizeadjust;
+	mc_mediathek->height += status.fontsizeadjust;
+	mc_dateibrowser->height += status.fontsizeadjust;
+	mc_internetbrowser->height += status.fontsizeadjust;
+	mc_wetterinfo->height += status.fontsizeadjust;
+
 	drawscreen(mc_main, 0, 0);
 	addscreenrc(mc_main, listbox);
 	int first = 1;
