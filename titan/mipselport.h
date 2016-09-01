@@ -1276,7 +1276,8 @@ int setvmpeg(struct dvbdev* node, int value, int flag)
 
 //flag 0: wh = width
 //flag 1: wh = height
-int setvmpegrect(struct dvbdev* node, int left, int top, int wh, int flag)
+//int setvmpegrect(struct dvbdev* node, int left, int top, int wh, int flag)
+int setvmpegrect(struct dvbdev* node, int posx, int posy, int wh, int flag)
 {
 	int ret = 0;
 	int leftoffset = status.leftoffset;
