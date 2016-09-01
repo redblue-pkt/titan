@@ -1285,8 +1285,8 @@ int setvmpegrect(struct dvbdev* node, int posx, int posy, int wh, int flag)
 	int topoffset = status.topoffset;
 	int bottomoffset = status.bottomoffset;
 
-	rx = (float)720 / (float)(720 - leftoffset - rightoffset);
-	ry = (float)576 / (float)(576 - topoffset - bottomoffset);
+	float rx = (float)720 / (float)(720 - leftoffset - rightoffset);
+	float ry = (float)576 / (float)(576 - topoffset - bottomoffset);
 
 	posx = (float)posx / rx;
 	posx += leftoffset;
