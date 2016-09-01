@@ -656,7 +656,7 @@ msgstr ""
 "\n"
 "Sicherung wird abgebrochen ..."
 
-#: skin_default_skin.xml.h:56 tithek.h:1516 webif_channellist.h:4
+#: skin_default_skin.xml.h:56 tithek.h:1518 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -699,8 +699,8 @@ msgstr "Alle Sender hinzufügen"
 msgid "ADD BOUQUET"
 msgstr "Favoriten hinzufügen"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1752
-#: tithek.h:2459
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1754
+#: tithek.h:2461
 msgid "ADD FAV"
 msgstr "Fav Hinzufügen"
 
@@ -791,11 +791,11 @@ msgstr "Timer hinzufügen"
 msgid "Add iMDB manuel"
 msgstr "Manuell IMDb hinzufügen"
 
-#: tithek.h:2428
+#: tithek.h:2430
 msgid "Add this link as Favorite ?"
 msgstr "Möchten Sie diesen Link zu Ihren Favoriten hinzufügen?"
 
-#: tithek.h:1932 tithek.h:2092
+#: tithek.h:1934 tithek.h:2094
 msgid "Add this sub folder as Favorite ?"
 msgstr "Diesen Unterordner den Favoriten hinzufügen?"
 
@@ -846,7 +846,7 @@ msgstr ""
 msgid "All Channels"
 msgstr "Alle Sender"
 
-#: tithek.h:1512
+#: tithek.h:1514
 msgid "All Sorted"
 msgstr ""
 
@@ -1833,7 +1833,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG-Zeit kann nicht gefunden werden oder ist nicht korrekt!"
 
-#: tithek.h:1683
+#: tithek.h:1685
 msgid "Can't get Streamurl !"
 msgstr "Streamadresse ist nicht erreichbar!"
 
@@ -1896,7 +1896,7 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr "Diese Datei kann nicht angezeigt werden"
 
-#: tithek.h:1332
+#: tithek.h:1334
 msgid ""
 "Can't start download.\n"
 "Please try later."
@@ -1938,7 +1938,7 @@ msgstr "Abbrechen"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek.h:1492
+#: tithek.h:1494
 msgid "Category"
 msgstr ""
 
@@ -2127,7 +2127,7 @@ msgstr "Installation Auswahl"
 msgid "Choice Menu"
 msgstr "Auswahlmenü"
 
-#: tithek.h:1529
+#: tithek.h:1531
 msgid "Choice Playback"
 msgstr "Wiedergabe auswählen"
 
@@ -2197,7 +2197,7 @@ msgstr ""
 msgid "Choose your Streaming Format from the following list"
 msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 
-#: tithek.h:1583
+#: tithek.h:1585
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 "Wählen Sie den gewünschten Stream Playback Modus aus der folgenden Liste"
@@ -2502,7 +2502,7 @@ msgstr "Vorschaubilder erstellen"
 msgid "Create new"
 msgstr "Neu erstellen"
 
-#: tithek.h:1917 tithek.h:2077
+#: tithek.h:1919 tithek.h:2079
 msgid "Create sub folder"
 msgstr "Ordner anlegen"
 
@@ -2978,11 +2978,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr ""
 
-#: tithek.h:1578
+#: tithek.h:1580
 msgid "Download Full File"
 msgstr "Datei in Streampfad herunterladen"
 
-#: tithek.h:1579
+#: tithek.h:1581
 msgid "Download Full File (background)"
 msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
 
@@ -3049,7 +3049,7 @@ msgstr "Bearbeiten"
 msgid "EDIT DiSEqC"
 msgstr "DiSEqC konfigurieren"
 
-#: tithek.h:1747 tithek.h:2454
+#: tithek.h:1749 tithek.h:2456
 msgid "EDIT FAV"
 msgstr "Fav Bearbeiten"
 
@@ -3241,8 +3241,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
 #: mc_global.h:775 mc_global.h:1022 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:276
-#: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:284
+#: mc_main.h:293 mc_mediathek.h:35 mc_pictureplayer.h:100
 #: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
 #: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
@@ -3303,9 +3303,9 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: thevideo.h:65 thevideo.h:71 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1059 titan.c:1068 titan.c:1196
 #: titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240 tithek.c:103
-#: tithek_global.h:96 tithek.h:711 tithek.h:1271 tithek.h:1332 tithek.h:1661
-#: tithek.h:1683 tithek.h:1700 tithek.h:1932 tithek.h:2092 tithek.h:2377
-#: tithek.h:2412 tithek.h:2428 tithek.h:2440 tiwakeup.h:66 tiwakeup.h:68
+#: tithek_global.h:96 tithek.h:711 tithek.h:1273 tithek.h:1334 tithek.h:1663
+#: tithek.h:1685 tithek.h:1702 tithek.h:1934 tithek.h:2094 tithek.h:2379
+#: tithek.h:2414 tithek.h:2430 tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -3349,7 +3349,7 @@ msgstr "Wiedergabeliste bearbeiten"
 msgid "Edit mode"
 msgstr "Umbenennen"
 
-#: tithek.h:2440
+#: tithek.h:2442
 msgid "Edit this Favorite ?"
 msgstr "Diesen Favoriten bearbeiten?"
 
@@ -3747,7 +3747,7 @@ msgstr "Schnelles Umschalten"
 msgid "Fav"
 msgstr "Favoriten"
 
-#: tithek.h:1032
+#: tithek.h:1034
 msgid "Favorites"
 msgstr "Favoriten"
 
@@ -3796,7 +3796,7 @@ msgstr "Cursor Farbe für Datei Liste"
 msgid "Filelist-Mode"
 msgstr "Datei-Modus"
 
-#: tithek.h:1654 tithek.h:1673
+#: tithek.h:1656 tithek.h:1675
 msgid "Filename"
 msgstr "Dateiname"
 
@@ -5988,7 +5988,7 @@ msgstr "Menü schützen"
 msgid "Menu Title"
 msgstr "Menü Titel"
 
-#: mc_main.h:285 menu.h:160 panel_main.h:29 panel_main.h:135
+#: mc_main.h:293 menu.h:160 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr "Menü noch nicht verfügbar!"
 
@@ -6028,7 +6028,7 @@ msgstr "Menüliste"
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
 #: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:775 mc_global.h:1022
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
+#: mc_main.h:100 mc_main.h:284 mc_main.h:293 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
@@ -6070,9 +6070,9 @@ msgstr "Menüliste"
 #: thefile.h:205 thevideo.h:29 thevideo.h:65 thevideo.h:71 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1196 titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240
-#: tithek.c:103 tithek_global.h:96 tithek.h:711 tithek.h:1271 tithek.h:1332
-#: tithek.h:1661 tithek.h:1683 tithek.h:1932 tithek.h:2092 tithek.h:2377
-#: tithek.h:2412 tithek.h:2428 tithek.h:2440 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.c:103 tithek_global.h:96 tithek.h:711 tithek.h:1273 tithek.h:1334
+#: tithek.h:1663 tithek.h:1685 tithek.h:1934 tithek.h:2094 tithek.h:2379
+#: tithek.h:2414 tithek.h:2430 tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
@@ -6614,8 +6614,8 @@ msgstr "Ö"
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
 #: mc_global.h:775 mc_global.h:1022 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:276
-#: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:284
+#: mc_main.h:293 mc_mediathek.h:35 mc_pictureplayer.h:100
 #: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
 #: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
@@ -6674,9 +6674,9 @@ msgstr "Ö"
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1059 titan.c:1068 titan.c:1196 titan.c:1217 titan.c:1223
 #: titan.c:1234 titan.c:1240 tithek.c:103 tithek_global.h:96 tithek.h:711
-#: tithek.h:1271 tithek.h:1332 tithek.h:1661 tithek.h:1683 tithek.h:1700
-#: tithek.h:1932 tithek.h:2092 tithek.h:2377 tithek.h:2412 tithek.h:2428
-#: tithek.h:2440 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
+#: tithek.h:1273 tithek.h:1334 tithek.h:1663 tithek.h:1685 tithek.h:1702
+#: tithek.h:1934 tithek.h:2094 tithek.h:2379 tithek.h:2414 tithek.h:2430
+#: tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
@@ -6936,7 +6936,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1784
+#: tithek.h:1786
 msgid "Page"
 msgstr "Seite"
 
@@ -7951,7 +7951,7 @@ msgstr "Fernbedienung alte Version"
 msgid "Remotecontrol Power Aktion"
 msgstr "Aktion bei Power Taste der Fernbedienung"
 
-#: tithek.h:1267
+#: tithek.h:1269
 msgid "Remove Cachefile ?"
 msgstr "Zwischenspeicher leeren?"
 
@@ -7983,7 +7983,7 @@ msgstr "Entfernen gestartet"
 msgid "Remove success"
 msgstr "Löschen erfolgreich"
 
-#: tithek.h:2412
+#: tithek.h:2414
 msgid "Remove this Favorite ?"
 msgstr "Möchten Sie diesen Eintrag aus Ihren Favoriten löschen?"
 
@@ -8119,7 +8119,7 @@ msgstr ""
 msgid "Result List"
 msgstr "Gefundene Liste"
 
-#: tithek.h:939
+#: tithek.h:941
 msgid "Results"
 msgstr "Treffer"
 
@@ -8726,21 +8726,21 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: skin_default_skin.xml.h:541 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:450 tithek_global.h:452 tithek_global.h:750
-#: tithek_global.h:752 tithek.h:1508 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:752 tithek.h:1510 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359
 #: youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Suchen"
 
-#: tithek.h:1500
+#: tithek.h:1502
 msgid "Search (20)"
 msgstr ""
 
-#: tithek.h:1496
+#: tithek.h:1498
 msgid "Search (local)"
 msgstr ""
 
-#: tithek.h:1504
+#: tithek.h:1506
 msgid "Search Cast"
 msgstr ""
 
@@ -9046,7 +9046,7 @@ msgstr "PiP-Einstellungen"
 msgid "Sharename can't be empty!"
 msgstr "Freigabename darf nicht leer sein!"
 
-#: infobar.h:671 mc_audioplayer.h:333 mc_main.h:276 mc_pictureplayer.h:124
+#: infobar.h:671 mc_audioplayer.h:333 mc_main.h:284 mc_pictureplayer.h:124
 #: mc_videoplayer.h:333 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -9481,7 +9481,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "automatischer Start"
 
-#: tithek.h:1661
+#: tithek.h:1663
 msgid "Start playback"
 msgstr "Beginne Wiedergabe"
 
@@ -9583,15 +9583,15 @@ msgstr ""
 msgid "Streaming"
 msgstr ""
 
-#: tithek.h:1534 tithek.h:1538 tithek.h:1542 tithek.h:1555
+#: tithek.h:1536 tithek.h:1540 tithek.h:1544 tithek.h:1557
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1566
+#: tithek.h:1568
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1563
+#: tithek.h:1565
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9957,7 +9957,7 @@ msgstr ""
 "Die gesuchte Datei konnte nicht gefunden werden, wir bitten um "
 "Entschuldigung."
 
-#: tithek_global.h:96 tithek.h:2377
+#: tithek_global.h:96 tithek.h:2379
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -10274,7 +10274,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1700
+#: tithek.h:1702
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek Haftungsausschluss:"
 
@@ -10290,12 +10290,12 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:126 tithek.h:1466
+#: tithek.c:126 tithek.h:1468
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
 
-#: tithek.h:1462 tithek.h:1745 tithek.h:1879 tithek.h:2408 tithek.h:2424
-#: tithek.h:2436 tithek.h:2452
+#: tithek.h:1464 tithek.h:1747 tithek.h:1881 tithek.h:2410 tithek.h:2426
+#: tithek.h:2438 tithek.h:2454
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "TiThek - Hauptmenü - Favoriten"
 
@@ -11961,7 +11961,7 @@ msgstr ""
 msgid "fonts"
 msgstr ""
 
-#: tithek.h:934
+#: tithek.h:936
 msgid "found"
 msgstr "gefunden"
 
@@ -12752,7 +12752,7 @@ msgid "please wait"
 msgstr "bitte warten"
 
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1254
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1256
 msgid "please wait..."
 msgstr "bitte warten"
 
