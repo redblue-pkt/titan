@@ -867,9 +867,11 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		zcount = 1;
 		fontsize = 25;
 		pcount = 1;
+		height += status.fontsizeadjust;
 	}
 
 	fontsize += status.fontsizeadjust;
+	height += status.fontsizeadjust;
 
 	if(getconfigint("tithek_pic_ratio", NULL) == 1)
 	{
