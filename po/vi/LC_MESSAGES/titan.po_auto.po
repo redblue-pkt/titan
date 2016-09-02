@@ -13625,27 +13625,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "CPU info"
-#~ msgstr "Thông tin CPU"
-
-#~ msgid "MTD info"
-#~ msgstr "Thông tin MTD"
-
-#~ msgid "Memory info"
-#~ msgstr "Thông tin bộ nhớ"
-
-#~ msgid "Module info"
-#~ msgstr "Thông tin môđun"
-
-#~ msgid "Prozess Info"
-#~ msgstr "Thông tin chương trình"
-
-#~ msgid "Swap info"
-#~ msgstr "Thông tin hệ thống"
-
-#~ msgid "Top Info"
-#~ msgstr "TV (Thông tin)"
-
-#~ msgid "USB Info"
-#~ msgstr "Thông tin"
