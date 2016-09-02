@@ -45,7 +45,6 @@ void screenadjust()
 	struct skin* infobarprogram = getscreennode(adjust, "infobarprogram");
 	struct skin* crosscontrol = getscreennode(adjust, "crosscontrol");
 	struct skin* emucontrol = getscreennode(adjust, "emucontrol");
-	struct skin* minitv = getscreennode(adjust, "choiceminitv");
 	struct skin* usecec = getscreennode(adjust, "usecec");
 	struct skin* playerbuffersize = getscreennode(adjust, "playerbuffersize");
 	struct skin* playerbufferseektime = getscreennode(adjust, "playerbufferseektime");
@@ -234,10 +233,6 @@ void screenadjust()
 	addchoicebox(emucontrol, "0", _("no"));
 	addchoicebox(emucontrol, "1", _("yes"));
 	setchoiceboxselection(emucontrol, getconfig("emucontrol", NULL));
-
-	addchoicebox(minitv, "0", _("no"));
-	addchoicebox(minitv, "1", _("yes"));
-	setchoiceboxselection(minitv, getconfig("minitv", NULL));
 
 	addchoicebox(usecec, "0", _("no"));
 	addchoicebox(usecec, "1", _("yes"));
@@ -566,9 +561,6 @@ void screenadjust()
 			//addconfigscreencheck("crosscontrol", crosscontrol, "0");
 			status.crosscontrol = getconfigint("crosscontrol", NULL);
 			addconfigscreencheck("emucontrol", emucontrol, "0");
-
-			if(ostrcmp(minitv->ret, "1") == 0) resettvpic();
-			addconfigscreencheck("minitv", minitv, "0");
 
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 				addconfigscreencheck("usecec", usecec, "0");

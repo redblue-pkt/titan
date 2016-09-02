@@ -52,6 +52,7 @@ void screenskinadjust()
 	struct skin* emuaktivecol = getscreennode(skinadjust, "emuaktivecol");
 	struct skin* emurunningcol = getscreennode(skinadjust, "emurunningcol");
 	struct skin* favcol = getscreennode(skinadjust, "favcol");
+	struct skin* minitv = getscreennode(skinadjust, "choiceminitv");
 
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
 	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
@@ -177,6 +178,10 @@ void screenskinadjust()
 	addchoicebox(showrecfreesize, "1", _("%"));
 	addchoicebox(showrecfreesize, "2", _("GB"));
 	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
+
+	addchoicebox(minitv, "0", _("no"));
+	addchoicebox(minitv, "1", _("yes"));
+	setchoiceboxselection(minitv, getskinconfig("minitv", NULL));
 
 	addchoicebox(listboxselect, "0", getskinconfig("listboxselect", NULL));
 	addchoicebox(tithek_selectcol, "1", getskinconfig("tithek_selectcol", NULL));
@@ -843,7 +848,10 @@ void screenskinadjust()
 				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				oshutdown(3, 0);
 			}
-			
+
+			if(ostrcmp(minitv->ret, "1") == 0) resettvpic();
+			addskinconfigscreencheck("minitv", minitv, "0");
+
 			int oldfontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
 			addskinconfigscreencheck("fontsizeadjust", fontsizeadjust, "0");
 			if(oldfontsizeadjust != getskinconfigint("fontsizeadjust", NULL)) reboot = 1;
