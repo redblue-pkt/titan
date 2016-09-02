@@ -13597,18 +13597,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "Found running download\n"
-#~ "Really shutdown ?"
-#~ msgstr ""
-#~ "Reggistrzione in corso , oh sta per iniziare.\n"
-#~ "Sicuro di vuoler Spegnere?"
-
-#~ msgid ""
-#~ "Found running record\n"
-#~ "or record is starting in next time.\n"
-#~ "Really shutdown ?"
-#~ msgstr ""
-#~ "Reggistrzione in corso , oh sta per iniziare.\n"
-#~ "Sicuro di vuoler Spegnere?"

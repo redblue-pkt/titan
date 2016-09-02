@@ -13685,18 +13685,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "Found running download\n"
-#~ "Really shutdown ?"
-#~ msgstr ""
-#~ "Download bezig\n"
-#~ "Echt afsluiten?"
-
-#~ msgid ""
-#~ "Found running record\n"
-#~ "or record is starting in next time.\n"
-#~ "Really shutdown ?"
-#~ msgstr ""
-#~ "Letop! er loopt een opname, of start binnenkort.\n"
-#~ "Wilt u nu werkelijk uitschakelen?"
