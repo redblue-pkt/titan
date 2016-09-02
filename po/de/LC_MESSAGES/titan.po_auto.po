@@ -2986,11 +2986,11 @@ msgstr ""
 
 #: tithek.h:1580
 msgid "Download Full File"
-msgstr "Datei in Streampfad herunterladen"
+msgstr "Datei in Streampfad laden"
 
 #: tithek.h:1581
 msgid "Download Full File (background)"
-msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
+msgstr "Datei in Streampfad laden (im Hintergrund)"
 
 #: sock.h:952
 msgid "Download finished!"
@@ -3970,7 +3970,7 @@ msgstr "Auslieferzustand"
 
 #: httpdfunc.h:6793 httpdfunc.h:6840 restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
-msgstr "Formatiere MNT mit anschließender Wiederherstellung"
+msgstr "Formatiere MNT mit Wiederherstellung"
 
 #: putlocker.h:91
 msgid "Found Firedrive.com Link, supporting comming soon..."
