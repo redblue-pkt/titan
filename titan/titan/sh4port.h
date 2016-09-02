@@ -745,7 +745,7 @@ int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 	if(status.tvpic == 1 && (posx != 0 || posy != 0 || width != 0 || height != 0))
 		return 0;
 
-	if(getconfigint("minitv", NULL) == 1) 
+	if(getskinconfigint("minitv", NULL) == 1) 
  		return 0;
  	
 	char* vmpegdev = NULL, *tmpstr = NULL, *buf = NULL;

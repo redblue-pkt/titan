@@ -1235,6 +1235,9 @@ int setvmpeg(struct dvbdev* node, int value, int flag)
 	char* vmpegdev = NULL, *tmpstr = NULL, *buf = NULL;
 	int ret = 0;
 
+	if(getskinconfigint("minitv", NULL) == 1) 
+ 		return 0;
+
 	if(node == NULL) return 1;
 	if(flag == 0)  vmpegdev = getconfig("vmpegleftdev", NULL);
 	if(flag == 1)  vmpegdev = getconfig("vmpegtopdev", NULL);
