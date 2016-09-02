@@ -4012,20 +4012,9 @@ msgstr ""
 #: global.h:7671
 msgid ""
 "Found running download\n"
-"Really shutdown ?"
+"Proceed shutdown?\n"
+"OK to proceed, Exit to cancel"
 msgstr ""
-"ACHTUNG: Eine Datei wird heruntergeladen.\n"
-"Das Herunterladen abbrechen und System neu starten?"
-
-#: global.h:7654
-msgid ""
-"Found running record\n"
-"or record is starting in next time.\n"
-"Really shutdown ?"
-msgstr ""
-"ACHTUNG: Eine Aufnahme wird aufgezeichnet\n"
-"oder eine zeitgesteuerte Aufnahme startet gleich.\n"
-"Soll TitanNit trotzdem neu gestartet werden?"
 
 #: global.h:7649 global.h:7666
 msgid ""
@@ -4037,6 +4026,14 @@ msgstr ""
 "Aufnahme läuft oder startet bald.\n"
 "Update trotzdem durchführen?\n"
 "OK zum fortfahren, Exit um abzubrechen."
+
+#: global.h:7654
+msgid ""
+"Found running record\n"
+"or record is starting soon.\n"
+"Proceed shutdown?\n"
+"OK to proceed, Exit to cancel"
+msgstr ""
 
 #: tsSchnitt.c:347
 msgid "Frage"
@@ -13933,3 +13930,19 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid ""
+#~ "Found running download\n"
+#~ "Really shutdown ?"
+#~ msgstr ""
+#~ "ACHTUNG: Eine Datei wird heruntergeladen.\n"
+#~ "Das Herunterladen abbrechen und System neu starten?"
+
+#~ msgid ""
+#~ "Found running record\n"
+#~ "or record is starting in next time.\n"
+#~ "Really shutdown ?"
+#~ msgstr ""
+#~ "ACHTUNG: Eine Aufnahme wird aufgezeichnet\n"
+#~ "oder eine zeitgesteuerte Aufnahme startet gleich.\n"
+#~ "Soll TitanNit trotzdem neu gestartet werden?"
