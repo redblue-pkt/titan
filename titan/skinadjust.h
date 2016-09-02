@@ -446,7 +446,7 @@ void screenskinadjust()
 			system(cmd);
 			free(cmd); cmd = NULL;
 
-			textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 			oshutdown(3, 0);
 
 			break;
@@ -840,7 +840,7 @@ void screenskinadjust()
 				system(cmd);
 				free(cmd); cmd = NULL;
 
-				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				oshutdown(3, 0);
 			}
 			
@@ -878,7 +878,7 @@ void screenskinadjust()
 
 			if(reboot == 1)
 			{
-				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 				oshutdown(3, 0);
 			}
 

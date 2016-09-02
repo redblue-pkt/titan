@@ -330,7 +330,7 @@ void screenmc_videoplayer()
 		if (rcret == getrcconfigint("rcrecord", NULL))
 		{
 			system("grab -j 100");
-			textbox(_("Message"), _("Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			textbox(_("Message"), _("Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rc2", NULL))
 		{
@@ -758,7 +758,7 @@ void screenmc_videoplayer()
 						status.play = 0;
 						playlist = 0;
 						status.playspeed = 0;
-						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 
 						changetext(filelistpath, _(getconfig("mc_vp_path", NULL)));
 						filelist->hidden = NO;
@@ -793,7 +793,7 @@ void screenmc_videoplayer()
 					struct skin* dvdplayer = getplugin("DVD Player");
 					if(dvdplayer != NULL)
 					{
-						if(textbox(_("Message"), _("Found VIDEO_TS Folder, start with DVD-Player ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
+						if(textbox(_("Message"), _("Found VIDEO_TS Folder, start with DVD-Player ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
 						{
 							void (*startplugin)(char*, int);
 							startplugin = dlsym(dvdplayer->pluginhandle, "screendvdplay");
@@ -897,7 +897,7 @@ void screenmc_videoplayer()
 						writevfdmenu("VideoPlayer Filelist-Mode");
 						status.play = 0;
 						status.playspeed = 0;
-						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						textbox(_("Message"), _("Can't start playback !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 						addscreenrc(apskin, filelist);
 //						drawscreen(apskin, 0, 0);
 						continue;
@@ -913,7 +913,7 @@ void screenmc_videoplayer()
 							FILE* fbseek = fopen(fileseek, "r");
 							if(fbseek != NULL)
 							{
-								if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+								if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
 								{
 									char* skip1 = calloc(1, 20); 
 									if(skip1 != NULL) 
