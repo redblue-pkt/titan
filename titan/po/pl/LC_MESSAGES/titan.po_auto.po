@@ -3861,14 +3861,8 @@ msgstr ""
 #: global.h:7671
 msgid ""
 "Found running download\n"
-"Really shutdown ?"
-msgstr ""
-
-#: global.h:7654
-msgid ""
-"Found running record\n"
-"or record is starting in next time.\n"
-"Really shutdown ?"
+"Proceed shutdown?\n"
+"OK to proceed, Exit to cancel"
 msgstr ""
 
 #: global.h:7649 global.h:7666
@@ -3876,6 +3870,14 @@ msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
 "Proceed System Update?\n"
+"OK to proceed, Exit to cancel"
+msgstr ""
+
+#: global.h:7654
+msgid ""
+"Found running record\n"
+"or record is starting soon.\n"
+"Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
