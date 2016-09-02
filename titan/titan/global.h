@@ -4584,7 +4584,7 @@ void switchvideomode()
 			writesys("/var/etc/.scart", "0", 0);
 		}
 		/*
-		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+		int ret = textbox(_("Message"), _("Is this Videomode ok ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 10, 0);
 		if(ret == 1 || ret == 2)
 		{
 			setvideomode(tmpstr, 0);
@@ -6017,7 +6017,7 @@ void setaktres()
 	{
 		if(status.restimer->aktion != START) goto end;
 		if(status.servicetype == 0)
-			textbox(_("Message"), _("ERROR cant read res"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+			textbox(_("Message"), _("ERROR cant read res"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
 	}
 
 end:
@@ -7237,7 +7237,7 @@ void wakeup_record_device()
 
 void setdefaultbouquets()
 {
-	if(textbox(_("Message"), _("Start Restore Default Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Start Restore Default Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
@@ -7245,7 +7245,7 @@ void setdefaultbouquets()
 		system("rm -f /mnt/settings/bouquets.* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/bouquets* /mnt/settings > /dev/null 2>&1");
 
-		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		//sync usb
 		system("sync");
 		//write only config file
@@ -7257,7 +7257,7 @@ void setdefaultbouquets()
 
 void setdefaultsettings()
 {
-	if(textbox(_("Message"), _("Start Restore Default Channel Settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Start Restore Default Channel Settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
@@ -7265,7 +7265,7 @@ void setdefaultsettings()
 		system("rm -rf /mnt/settings/* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/* /mnt/settings > /dev/null 2>&1");
 
-		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		//sync usb
 		system("sync");
 		//write only config file
@@ -7277,7 +7277,7 @@ void setdefaultsettings()
 
 void setdefaultproviders()
 {
-	if(textbox(_("Message"), _("Start Restore Default Providers ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Start Restore Default Providers ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
@@ -7285,7 +7285,7 @@ void setdefaultproviders()
 		system("rm -f /mnt/settings/provider > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/provider /mnt/settings > /dev/null 2>&1");
 
-		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		//sync usb
 		system("sync");
 		//write only config file
@@ -7297,7 +7297,7 @@ void setdefaultproviders()
 
 void setdefaultchannels()
 {
-	if(textbox(_("Message"), _("Start Restore Default Channels ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Start Restore Default Channels ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
@@ -7305,7 +7305,7 @@ void setdefaultchannels()
 		system("rm -f /mnt/settings/channel > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/channel /mnt/settings > /dev/null 2>&1");
 
-		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		//sync usb
 		system("sync");
 		//write only config file
@@ -7317,7 +7317,7 @@ void setdefaultchannels()
 
 void setdefaultsats()
 {
-	if(textbox(_("Message"), _("Start Restore Default Sats ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Start Restore Default Sats ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
@@ -7325,7 +7325,7 @@ void setdefaultsats()
 		system("rm -f /mnt/settings/satellites > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/satellites /mnt/settings > /dev/null 2>&1");
 
-		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		//sync usb
 		system("sync");
 		//write only config file
@@ -7646,12 +7646,12 @@ int checkshutdown(int flag)
 		}
 		else if(flag == 6)
 		{
-			if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed System Update?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+			if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed System Update?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
 				return 1;
 		}
 		else
 		{
-			if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+			if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
 				return 1;
 		}
 	}
@@ -7663,12 +7663,12 @@ int checkshutdown(int flag)
 		{
 			if(flag == 6)
 			{
-				if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed System Update?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+				if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed System Update?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
 					return 1;
 			}
 			else
 			{
-		 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
+		 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
 					return 1;
 			}
 			break;

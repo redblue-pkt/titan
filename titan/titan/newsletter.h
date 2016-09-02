@@ -249,7 +249,7 @@ void screennewsletter()
 				tmpstr = ostrcat(((struct newsletter*)listbox->select->handle)->title, NULL, 0, 0);
 				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				tmpstr = ostrcat(tmpstr, ((struct newsletter*)listbox->select->handle)->date, 1, 0);
-				textbox(tmpstr, ((struct newsletter*)listbox->select->handle)->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
+				textbox(tmpstr, ((struct newsletter*)listbox->select->handle)->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 800, 0, 2);
 				free(tmpstr); tmpstr = NULL;
 				drawscreen(skinnewsletter, 0, 0);
 			}
@@ -289,7 +289,7 @@ void newsletterthreadfunc(struct stimerthread* self)
 				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				tmpstr = ostrcat(tmpstr, node->date, 1, 0);
 
-				ret = textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 15, 2);
+				ret = textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 800, 15, 2);
 				free(tmpstr); tmpstr = NULL;
 
 				//mark only if no timeout
