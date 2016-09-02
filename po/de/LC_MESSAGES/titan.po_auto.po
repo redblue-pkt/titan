@@ -7506,7 +7506,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:447 system_infos_sysinfo.h:29
 msgid "Processlist"
-msgstr ""
+msgstr "Prozessliste"
 
 #: skin_default_skin.xml.h:448
 msgid "Program Info"
