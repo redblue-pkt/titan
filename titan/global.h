@@ -1,7 +1,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-//flag 0: video+gui+freez 
+//flag 0: video+gui+freez
 //flag 1: video+gui
 //flag 2: video
 //flag 3: gui
@@ -51,7 +51,7 @@ void screenshoot(int flag)
 	if(flag == 0 || flag == 2)
 		videocontinue(status.aktservice->videodev);
 
-	free(file), file = NULL;	
+	free(file), file = NULL;
 	free(cmd), cmd = NULL;
 }
 
@@ -100,11 +100,11 @@ void waitmsgbar(int sec, int exit, char* text, int flag)
 {
 	if(sec < 1) return;
 	int maxsec = sec, rcret = -1;
-	
+
 	char* tmpstr = NULL;
 	struct skin* waitmsgbar = getscreen("waitmsgbar");
 	struct skin* load = getscreen("loading");
-	
+
 	waitmsgbar->progresssize = 0;
 	if(text == NULL)
 		tmpstr = ostrcat("0%", NULL, 0, 0);
@@ -112,13 +112,13 @@ void waitmsgbar(int sec, int exit, char* text, int flag)
 		tmpstr = ostrcat(text, " (0%)", 0, 0);
 	changetext(waitmsgbar, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	
+
 	if(flag == 0) drawscreen(load, 0, 0);
-	
+
 	while(sec > 0)
 	{
 		drawscreen(waitmsgbar, 0, 0);
-		
+
 		if(exit == 0)
 			sleep(1);
 		else
@@ -126,13 +126,13 @@ void waitmsgbar(int sec, int exit, char* text, int flag)
 			rcret = waitrc(0, 1000, 0);
 			if(rcret == getrcconfigint("rcexit", NULL))
 				break;
-				
+
 			if(rcret != RCTIMEOUT) continue;
 		}
-		
+
 		sec--;
 		waitmsgbar->progresssize = ((maxsec - sec) * 100) / maxsec;
-		
+
 		if(text == NULL)
 			tmpstr = ostrcat(oitoa(waitmsgbar->progresssize), "%", 1, 0);
 		else
@@ -144,7 +144,7 @@ void waitmsgbar(int sec, int exit, char* text, int flag)
 		changetext(waitmsgbar, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
-	
+
 	free(tmpstr); tmpstr = NULL;
 	if(flag == 0) clearscreen(load);
 	clearscreen(waitmsgbar);
@@ -157,16 +157,16 @@ char* createpluginpath(char* text, int flag)
 {
 	char* tmpstr = NULL;
 	if(text == NULL) return NULL;
-	
+
 	if(flag == 0)
 	{
 	  tmpstr = ostrcat(getconfig("pluginpath", NULL), text, 0, 0);
 	  if(file_exist(tmpstr) == 1) return tmpstr;
-	  
+
 	  free(tmpstr); tmpstr = NULL;
 	  tmpstr = ostrcat(getconfig("pluginpath1", NULL), text, 0, 0);
 	  if(file_exist(tmpstr) == 1) return tmpstr;
-	  
+
 	  free(tmpstr); tmpstr = NULL;
 	  tmpstr = ostrcat(getconfig("pluginpath2", NULL), text, 0, 0);
 	  if(file_exist(tmpstr) == 1) return tmpstr;
@@ -174,22 +174,22 @@ char* createpluginpath(char* text, int flag)
 	else
 	{
 		if(strlen(text) < 13) return NULL;
-		
+
 		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[12], 0, 0);
 		if(file_exist(tmpstr) == 1) return tmpstr;
-		
+
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat(getconfig("pluginpath1", NULL), &text[12], 0, 0);
 		if(file_exist(tmpstr) == 1) return tmpstr;
-		
+
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat(getconfig("pluginpath2", NULL), &text[12], 0, 0);
 		if(file_exist(tmpstr) == 1) return tmpstr;
 	}
-	
+
 	free(tmpstr); tmpstr = NULL;
 	return NULL;
-} 
+}
 
 int osystem(char* cmd, int timeout)
 {
@@ -262,7 +262,7 @@ int setcecstandby(int flag)
 {
 	if(getconfigint("usecec", NULL) == 1 || getconfigint("cec_on", NULL) == 1)
 	{
-#ifndef MIPSEL		
+#ifndef MIPSEL
 		if(flag == 0)
 			writesys("/proc/stb/cec/onetouchplay", "0", 1);
 		else
@@ -307,7 +307,7 @@ char* mask(char* input, int count, char* maskchar)
 	else
 	{
 		for(i = 0; i < count; i++)
-			tmpstr = ostrcat(maskchar, tmpstr, 0, 1);	
+			tmpstr = ostrcat(maskchar, tmpstr, 0, 1);
 	}
 
 	return tmpstr;
@@ -377,7 +377,7 @@ char **str_split(char *string, char *delim)
 	char *working = NULL;
 	char *token = NULL;
 	int idx = 0;
-	
+
 	if(string == NULL) return NULL;
 
 	tokens = malloc(sizeof(char*) * MAXTOKENS);
@@ -436,7 +436,7 @@ char* readfromlinetoline(char* str, int start, int end, int flag)
 	{
 		free(str), str = NULL;
 	}
-	return tmpstr;	
+	return tmpstr;
 }
 
 char* ltostr(char* str, long val, unsigned base)
@@ -529,7 +529,7 @@ char* delmountpart(char* filename, int free1)
 		err("no mem");
 		return NULL;
 	}
-	
+
 	rpath = realpath(filename, NULL);
 	if(rpath == NULL) return NULL;
 
@@ -770,7 +770,7 @@ struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count)
 			free(tmparray);
 			return NULL;
 		}
-      
+
 		(&array[(*count) - 1])->part = oregex(regex, tmpstr);
 		tmpstr = strtok(NULL, tok);
 	}
@@ -782,13 +782,13 @@ void freeoregexsplit(struct splitstr* tmparray, int len)
 {
 	if(tmparray == NULL) return;
 	int i = 0;
-	
+
 	for(i = 0; i < len; i++)
 	{
 		free(tmparray[i].part);
-		tmparray[i].part = NULL; 
+		tmparray[i].part = NULL;
 	}
-	
+
 	free(tmparray);
 }
 
@@ -961,7 +961,7 @@ char* createpiconpath(struct channel* chnode, int flag)
 			free(picon);
 			return tmpstr;
 		}
-		
+
 		free(tmpstr); tmpstr = NULL;
 		if(flag == 1)
 			tmpstr = ostrcat("/var/swap/usr/local/share/titan/picons/alternate", picon, 0, 0);
@@ -972,7 +972,7 @@ char* createpiconpath(struct channel* chnode, int flag)
 			free(picon);
 			return tmpstr;
 		}
-		
+
 		free(tmpstr); tmpstr = NULL;
 		if(flag == 1)
 			tmpstr = ostrcat("/var/usr/local/share/titan/picons/alternate", picon, 0, 0);
@@ -984,7 +984,7 @@ char* createpiconpath(struct channel* chnode, int flag)
 			return tmpstr;
 		}
 	}
-	
+
 	free(tmpstr); tmpstr = NULL;
 	tmpstr = ostrcat(tmpstr, getconfig("defskinpath", NULL), 1, 0);
 	tmpstr = ostrcat(tmpstr, "/skin/", 1, 0);
@@ -1672,7 +1672,7 @@ void debugstack(int sig, void* address, void* address1)
 		fprintf(stderr, "Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
 	else
 		fprintf(stderr, "Error in Thread: %x\n", (unsigned int)pthread_self());
-	
+
 	fprintf(stderr, "\nObtaining %zd stack frames:\n\n", size);
 	for(i = 0; i < size; i++)
 		fprintf(stderr, "%s\n", strings[i]);
@@ -1681,7 +1681,7 @@ void debugstack(int sig, void* address, void* address1)
 	fprintf(stderr, "%s\n", aktstring[0]);
 	fprintf(stderr, "%s\n", aktstring[1]);
 
-#ifdef BETA	
+#ifdef BETA
 	for(i = 0; i < MAXSTACKTRACE; i++)
 	{
 		if(stacktrace[i].pos > 0)
@@ -1704,16 +1704,16 @@ void debugstack(int sig, void* address, void* address1)
 		char* tmplogdir = dirname(logdir);
 		if(tmplogdir != NULL)
 		{
-			if(!file_exist(tmplogdir))   
+			if(!file_exist(tmplogdir))
 				mkdir(tmplogdir, 0777);
 		}
 		free(logdir); logdir = NULL;
 	}
-	
+
 	//del file if greater 100KB
 	if(getfilesize(getconfig("tracelog", NULL)) > 102400)
-		unlink(getconfig("tracelog", NULL)); 
-			
+		unlink(getconfig("tracelog", NULL));
+
 	fd = fopen(getconfig("tracelog", NULL), "a");
 	if(fd != NULL)
 	{
@@ -1729,16 +1729,16 @@ void debugstack(int sig, void* address, void* address1)
 			fprintf(fd, "Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
 		else
 			fprintf(fd, "Error in Thread: %x\n", (unsigned int)pthread_self());
-			
+
 		fprintf(fd, "\nObtaining %zd stack frames:\n\n", size);
 		for(i = 0; i < size; i++)
 			fprintf(fd, "%s\n", strings[i]);
-			
+
 		fprintf(fd, "\nLast functions:\n\n");
 		fprintf(fd, "%s\n", aktstring[0]);
 		fprintf(fd, "%s\n", aktstring[1]);
 
-#ifdef BETA		
+#ifdef BETA
 		for(i = 0; i < MAXSTACKTRACE; i++)
 		{
 			if(stacktrace[i].pos > 0)
@@ -1752,7 +1752,7 @@ void debugstack(int sig, void* address, void* address1)
 			}
 		}
 #endif
-		
+
 		fprintf(fd, "--------------------------------------\n\n");
 		fclose(fd);
 		sync();
@@ -1865,7 +1865,7 @@ void checkboxstart()
 	struct rectimer* node = rectimer;
 	int timediff = getconfigint("rectimer_timediff", NULL);
 	int test = 0;
-	
+
 	if(node == NULL)
 	{
 		setcecstandby(0);
@@ -1923,7 +1923,7 @@ int setrtctime(int value)
 	char *rtctimedev = NULL, *tmpstr = NULL;
 	int ret = 0;
 
-	value += 7200; 
+	value += 7200;
 
 	rtctimedev = getconfig("rtctimedev", NULL);
 
@@ -2131,7 +2131,7 @@ char* getfilenamepng(char* filename)
 	char* tmpstr = NULL;
 
 	if(filename == NULL) return NULL;
-	
+
 	if(!filelistflt(".avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", filename))
 		tmpstr = ostrcat("movie", NULL, 0, 0);
 	else if(!filelistflt(".mp3 .flac .ogg .wma .ra .wav", filename))
@@ -2344,8 +2344,8 @@ int setoverclockfreq(int mode)
 int checkdev(char* dev)
 {
 	char* cmd = NULL;
-	cmd = ostrcat(cmd, "cat ", 1, 0); 
-	cmd = ostrcat(cmd, dev, 1, 0); 
+	cmd = ostrcat(cmd, "cat ", 1, 0);
+	cmd = ostrcat(cmd, dev, 1, 0);
 
 	char* tmpstr = NULL;
 	tmpstr = string_newline(command(cmd));
@@ -2360,7 +2360,7 @@ int checkdev(char* dev)
 	{
 		return 0;
 	}
-	
+
 	free(tmpstr), tmpstr = NULL;
 	return 1;
 }
@@ -2430,7 +2430,7 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 {
 	int ret = 0;
 	z_stream stream;
-	
+
 	if(inbuf == NULL || outbuf == NULL || inlen == 0) return 1;
 
 	stream.zalloc = Z_NULL;
@@ -2455,7 +2455,7 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 
 	stream.avail_in = inlen;
 	stream.next_in = (void*)inbuf;
-  
+
 	do
 	{
 		stream.avail_out = inlen;
@@ -2470,21 +2470,21 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 		}
 	}
 	while(stream.avail_out == 0);
-	
-	char* tmpoutbuf = *outbuf;	
+
+	char* tmpoutbuf = *outbuf;
 	*outlen = inlen - stream.avail_out;
 	*outbuf = realloc(*outbuf, *outlen);
 	if(*outbuf == NULL)
 	{
 		if(*outlen > 0)
 		{
-			err("no mem");	
+			err("no mem");
 			free(tmpoutbuf);
 		}
 		*outlen = 0;
 		(void)deflateEnd(&stream);
 		return 1;
-	}	
+	}
 
 	(void)deflateEnd(&stream);
 	return 0;
@@ -2498,7 +2498,7 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 {
 	int ret = 0;
 	z_stream stream;
-	
+
 	if(inbuf == NULL || outbuf == NULL || maxbuf == 0) return 1;
 	if(flag == 1 && *outbuf == NULL) return 1;
 
@@ -2539,7 +2539,7 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 	do
 	{
 		stream.avail_out = maxbuf;
-		
+
 		if(flag == 0 && round > 0)
 		{
 			char* tmpoutbuf = *outbuf;
@@ -2561,9 +2561,9 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 		{
 			if(flag == 0)
 			{
-				free(*outbuf); 
+				free(*outbuf);
 				*outbuf = NULL;
-			}				
+			}
 			(void)inflateEnd(&stream);
 			return 1;
 		}
@@ -2571,7 +2571,7 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 		round++;
 	}
 	while(stream.avail_out == 0);
-	
+
 	if(flag == 0)
 	{
 		char* tmpoutbuf = *outbuf;
@@ -2584,10 +2584,10 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 			*outlen = 0;
 			(void)inflateEnd(&stream);
 			return 1;
-		}	
+		}
 	}
 	else
-		*outlen = maxbuf - stream.avail_out;			
+		*outlen = maxbuf - stream.avail_out;
 
 	(void)inflateEnd(&stream);
 	return 0;
@@ -3632,7 +3632,7 @@ char* getcolorformatchoices(int flag)
 		err("NULL detect");
 		return NULL;
 	}
-	
+
 	if(flag == 1)
 	{
 		value = string_replace("rgb", NULL, value, 1);
@@ -4118,17 +4118,17 @@ char* getpolicychoices()
 #ifdef MIPSEL
 	free(value), value = NULL;
 //	value = ostrcat("16:9_set_bestfit_to_policy_show_justscale 16:9_set_letterbox_to_policy_show_panscan 16:9_set_panscan_to_policy_show_pillarbox 4:3_set_bestfit_to_policy2_show_justscale 4:3_set_letterbox_to_policy2_show_letterbox 4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
-	value = ostrcat(_("16:9_set_bestfit_to_policy_show_justscale"), NULL, 0, 0); 
-	value = ostrcat(value, "\n", 1, 0); 
-	value = ostrcat(value, _("16:9_set_letterbox_to_policy_show_panscan"), 1, 0); 
-	value = ostrcat(value, "\n", 1, 0); 
-	value = ostrcat(value, _("16:9_set_panscan_to_policy_show_pillarbox"), 1, 0); 
-	value = ostrcat(value, "\n", 1, 0); 
-	value = ostrcat(value, _("4:3_set_bestfit_to_policy2_show_justscale"), 1, 0); 
-	value = ostrcat(value, "\n", 1, 0); 
-	value = ostrcat(value, _("4:3_set_letterbox_to_policy2_show_letterbox"), 1, 0); 
-	value = ostrcat(value, "\n", 1, 0); 
-	value = ostrcat(value, _("4:3_set_panscan_to_policy2_show_panscan"), 1, 0); 
+	value = ostrcat(_("16:9_set_bestfit_to_policy_show_justscale"), NULL, 0, 0);
+	value = ostrcat(value, "\n", 1, 0);
+	value = ostrcat(value, _("16:9_set_letterbox_to_policy_show_panscan"), 1, 0);
+	value = ostrcat(value, "\n", 1, 0);
+	value = ostrcat(value, _("16:9_set_panscan_to_policy_show_pillarbox"), 1, 0);
+	value = ostrcat(value, "\n", 1, 0);
+	value = ostrcat(value, _("4:3_set_bestfit_to_policy2_show_justscale"), 1, 0);
+	value = ostrcat(value, "\n", 1, 0);
+	value = ostrcat(value, _("4:3_set_letterbox_to_policy2_show_letterbox"), 1, 0);
+	value = ostrcat(value, "\n", 1, 0);
+	value = ostrcat(value, _("4:3_set_panscan_to_policy2_show_panscan"), 1, 0);
 #else
 	value = convertspacetolf(value);
 #endif
@@ -4235,7 +4235,7 @@ int setpolicy(char* value)
 			tmpstr = ostrcat("panscan", NULL, 0, 0);
 			tmpstr2 = ostrcat("16:9_set_panscan_to_policy_show_pillarbox", NULL, 0, 0);
 			setaspect("set_16:9");
-		}			
+		}
 		else if(ostrcmp(_("4:3_set_bestfit_to_policy2_show_justscale"), _(value)) == 0)
 		{
 			policydev = getconfig("policy2dev", NULL);
@@ -4264,7 +4264,7 @@ int setpolicy(char* value)
 		ret = writesys(policydev, tmpstr, 0);
 
 #ifdef MIPSEL
-		if(ret == 0) 
+		if(ret == 0)
 		{
 			debug(10, "write %s to /mnt/config/titan.cfg", tmpstr2);
 			addconfig("av_policy", tmpstr2);
@@ -4360,7 +4360,7 @@ int setaspect(char* value)
 			if(ret == 0)
 			{
 				addconfig("av_aspect", value);
-	
+
 				//set policy new after change aspect
 				char* tmpstr = getpolicy();
 				setpolicy(tmpstr);
@@ -4540,10 +4540,10 @@ void switchvideomode()
 {
 	int rcret = 0;
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
-	tmpstr = getvideomode();	
+	tmpstr = getvideomode();
 	struct skin* playpolicy = getscreen("playpolicy");
 	tmpstr2 = getcolorformat(2);
-		
+
 	if(tmpstr != NULL)
 	{
 		if((ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0) && ostrncmp("yuv", tmpstr2, 3) == 0)
@@ -4572,7 +4572,7 @@ void switchvideomode()
 			tmpstr3 = ostrcat(tmpstr3, ")", 1, 0);
 			changetext(playpolicy, tmpstr3);
 			writevfdmenu(tmpstr3);
-			unlink("/var/etc/.scart");			
+			unlink("/var/etc/.scart");
 		}
 		else if(ostrncmp("1080", tmpstr, 4) == 0)
 		{
@@ -4631,7 +4631,7 @@ int setcolorformat(char* value, int flag)
 	char* colorformatdev;
 	int ret = 0;
 
-	colorformatdev = getconfig("colorformatdev", NULL); 
+	colorformatdev = getconfig("colorformatdev", NULL);
 
 	if(colorformatdev != NULL && value != NULL)
 	{
@@ -4788,7 +4788,7 @@ int setmute(int value)
 		tmpvol = tmpvol * 50 / 100;
 		status.mute = value;
 		setvol(tmpvol);
-	} 
+	}
 	else
 	{
 		mutedev = getconfig("mutedev", NULL);
@@ -4816,7 +4816,7 @@ int setmute(int value)
 #else
 			ret = writesysint(mutedev, value, 0);
 #endif
-		
+
 			if(ret == 0) status.mute = value;
 			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
 //			if(value == 1)
@@ -4847,7 +4847,7 @@ int setvol(int value)
 	int ret = 0, tmpvol = value;
 
 	voldev = getconfig("voldev", NULL);
-	
+
 	if(voldev != NULL)
 	{
 		if(value > 100) value = 100;
@@ -4872,7 +4872,7 @@ int setvol(int value)
 #ifdef MIPSEL
 			struct dvbdev *audionode = NULL;
 			int openaudio = 0;
-	
+
 			if(ret == 0 && status.aktservice != NULL)
 			{
 				if(status.aktservice->audiodev == NULL)
@@ -4882,13 +4882,13 @@ int setvol(int value)
 				}
 				else
 					audionode = status.aktservice->audiodev;
-		
+
 				if(ret == 0 && audionode != NULL)
 					ret = setmixer(audionode, value, value);
-					
+
 				if(ret == 0)
 					status.volume = value;
-				
+
 				if(openaudio == 1)
 					audioclose(audionode, -1);
 			}
@@ -4965,7 +4965,7 @@ char* getxmlentry(char *line, char *searchstr)
 	{
 		buf = buf + 1;
 		if(buf[0] == '\\')
-		{	
+		{
 			buf = buf + 1;
 			if(buf[0] == '"')
 				buf2 = strchr(buf+1, '"');
@@ -5008,7 +5008,7 @@ char* getxmlentry(char *line, char *searchstr)
 		if(buf2 == NULL)
 		{
 			buf2 = ostrstr(buf, "/>");
-			if(buf2 == NULL) 
+			if(buf2 == NULL)
 			{
 				buf2 = strchr(buf, '>');
 				if(buf2 == NULL)
@@ -5174,7 +5174,7 @@ char* readeittomem(const char* filename)
 				sprintf(buf,"%c%s\n\n", byte, zeichen);
 			else
 				sprintf(buf,"%s\n\n", zeichen);
-				
+
 			buf1oldsize = buf1size;
 			buf1size += strlen(buf);
 			tmpbuf1 = buf1; buf1 = realloc(buf1, buf1size + 1);
@@ -5211,7 +5211,7 @@ char* readeittomem(const char* filename)
 					sprintf(buf, "%c%s", byte, zeichen);
 				else
 					sprintf(buf, "%s", zeichen);
-			}	
+			}
 
 			buf1oldsize = buf1size;
 			buf1size += strlen(buf);
@@ -5225,7 +5225,7 @@ char* readeittomem(const char* filename)
 				fclose(fil);
 				return NULL;
 			}
-			sprintf(buf1 + buf1oldsize, "%s", buf);      
+			sprintf(buf1 + buf1oldsize, "%s", buf);
 
 		}
 		else
@@ -5233,7 +5233,7 @@ char* readeittomem(const char* filename)
 			byte = fgetc(fil);
 			len= byte;
 			fgets(zeichen, len + 1, fil);
-		}  
+		}
 	}
 	free(zeichen);
 	free(buf);
@@ -5246,7 +5246,7 @@ char* command(char* input)
 	int maxlen = 0, pos = 0;
 	char* tmpstr = NULL, *fileline = NULL;
 	FILE *iopipe = NULL;
-	
+
 	if(input == NULL) return NULL;
 
 	fileline = malloc(MINMALLOC);
@@ -5267,7 +5267,7 @@ char* command(char* input)
 		if(fgets(fileline, MINMALLOC, iopipe) != NULL)
 			ostrcatbig(&tmpstr, fileline, &maxlen, &pos);
 	}
-	
+
 	if(pos > 0)
 	{
 		char* tmp = tmpstr;
@@ -5290,7 +5290,7 @@ char* string_tolower(char *str)
 
 	while(*p1 != '\0')
 		*p1++ = tolower(*p1);
-	
+
 	return str;
 */
 	if(str == NULL) return NULL;
@@ -5313,7 +5313,7 @@ char* string_toupper(char *str)
 
 	while(*p1 != '\0')
 		*p1++ = toupper(*p1);
-	
+
 */
 	if(str == NULL) return NULL;
 
@@ -5337,8 +5337,8 @@ char* stringreplacecharonce(char *str, char c1, char c2)
 		if(*p1 == c1)
 		{
 			*p1 = c2;
-			break;			
-		}			
+			break;
+		}
 		p1++;
 	}
 
@@ -5372,7 +5372,7 @@ char* string_removechar(char *str)
 		if(*p1 == '.') *p1 = ' ';
 		else if(*p1 == '-') *p1 = ' ';
 		else if(*p1 == '_') *p1 = ' ';
-		else if(*p1 == '/') *p1 = ' '; 
+		else if(*p1 == '/') *p1 = ' ';
 		p1++;
 	}
 
@@ -5487,7 +5487,7 @@ char* string_replace_all(char *search, char *replace, char *string, int free1)
 		return tmpstr;
 	}
 
-	len = 0;	
+	len = 0;
 	char* str = string;
 	char* tmp = tmpstr;
 	searchpos = strstr(str, search);
@@ -5674,7 +5674,7 @@ struct splitstr* strsplit(char *str, char *tok, int* count)
 			free(tmparray);
 			return NULL;
 		}
-		
+
 		(&array[(*count) - 1])->part = tmpstr;
 		tmpstr = strtok(NULL, tok);
 	}
@@ -5725,7 +5725,7 @@ char* string_shortname(char *tmpfilename, int mode)
 		for(j = 0; j < count2; j++)
 		{
 			if(j > 0)
-			{					
+			{
 				if(ostrcmp((&ret1[i])->part, (&ret2[j])->part) == 0)
 				{
 					if(mode==1)
@@ -5759,7 +5759,7 @@ char* string_shortname(char *tmpfilename, int mode)
 							break;
 						}
 					}
-				}				
+				}
 			}
 		}
 		free(ret2); ret2 = NULL;
@@ -5779,9 +5779,9 @@ char* get_uuid(char* device)
 {
 	debug(60, "in %s", device);
 	char* cmd = NULL, *tmpstr = NULL;
-	
+
 	if(device == NULL) return NULL;
-#ifdef MIPSEL		
+#ifdef MIPSEL
 	cmd = ostrcat(cmd, "blkid -w /dev/null -c /dev/null -s UUID /dev/", 1, 0);
 #else
 	cmd = ostrcat(cmd, "/bin/blkid -w /dev/null -c /dev/null -s UUID /dev/", 1, 0);
@@ -5811,7 +5811,7 @@ char* get_label(char* device)
 	cmd = ostrcat(cmd, "blkid -w /dev/null -c /dev/null -s LABEL /dev/", 1, 0);
 #else
 	cmd = ostrcat(cmd, "/bin/blkid -w /dev/null -c /dev/null -s LABEL /dev/", 1, 0);
-#endif	
+#endif
 	cmd = ostrcat(cmd, device, 1, 0);
 	cmd = ostrcat(cmd, " | cut -d'\"' -f2", 1, 0);
 
@@ -5863,7 +5863,7 @@ char* fixip(char* ipinput, int flag)
 	int ret = 0;
 	char* ipout = NULL;
 	unsigned char ip[4];
-	
+
 	ip[0] = 0;
 	ip[1] = 0;
 	ip[2] = 0;
@@ -5898,7 +5898,7 @@ void setfanspeed(int speed, int aktion)
 		base = 100;
 	else
 		base = -15;
-		
+
 
 	if(speed < 0)
 	{
@@ -6031,13 +6031,13 @@ char* gettimestamp()
 {
 	char* timestamp = NULL;
 	struct timeval numtime;
-		
+
 	gettimeofday(&numtime, 0);
 	timestamp = ostrcat(timestamp, olutoa(numtime.tv_sec), 1, 1);
 	timestamp = ostrcat(timestamp, olutoa(numtime.tv_usec), 1, 1);
 
 	return timestamp;
-} 
+}
 
 char* string_decode(char* input, int flag)
 {
@@ -6070,7 +6070,7 @@ char* string_decode(char* input, int flag)
 		input = string_replace("&lt;", "<", input, 1);
 		debug(210, "input: %s", input);
 	}
-	
+
 	while(ostrstr(input, "&quot;") != NULL)
 	{
 		debug(210, "input: %s", input);
@@ -6084,19 +6084,19 @@ char* string_decode(char* input, int flag)
 		input = string_replace("&#x", "%", input, 1);
 		debug(210, "input: %s", input);
 	}
-	
+
 	while(ostrstr(input, "&#") != NULL)
 	{
 		debug(210, "input: %s", input);
 		input = string_replace("&#", "%", input, 1);
 		debug(210, "input: %s", input);
 	}
-	
+
 	if(flag == 1)
 		htmldecode2(input, input);
 	else
 		htmldecode(input, input);
-			
+
 	while(ostrstr(input, ";") != NULL)
 	{
 		debug(210, "input: %s", input);
@@ -6139,7 +6139,7 @@ char* string_striptags(char* str)
 	int i = 0, len = 0;
 
 	if(str == NULL) return 0;
-	
+
 	len = strlen(str);
 
 	int skip = 0;
@@ -6154,7 +6154,7 @@ char* string_striptags(char* str)
 		}
 		if(skip == 1)
 			str[i] = ' ';
-	}	
+	}
 
 	return strstrip(str);
 }
@@ -6199,7 +6199,7 @@ char* ostrstrcase(char* str, char* sub)
 	while(*str)
 	{
 		if(toupper(*str) == toupper(*sub) && strncasecmp(str, sub, len) == 0)
-			return str;	
+			return str;
 		++str;
 	}
 	return NULL;
@@ -6220,14 +6220,14 @@ char* fixport(char* input, int flag)
 			for(i = 0; i < 5 - plen; i++)
 				tmpstr = ostrcat(tmpstr, "0", 1, 0);
 		}
-		tmpstr = ostrcat(tmpstr, input, 1, 0);		
+		tmpstr = ostrcat(tmpstr, input, 1, 0);
 	}
 	else
 	{
-		while (*input && *input == '0') 
+		while (*input && *input == '0')
 		input++;
-	
-		tmpstr = ostrcat(tmpstr, input, 1, 0);		
+
+		tmpstr = ostrcat(tmpstr, input, 1, 0);
 	}
 	return tmpstr;
 }
@@ -6240,7 +6240,7 @@ char* translate_time(char* input, int flag)
 {
 	char* tmpstr = NULL;
 	if(input == NULL) return tmpstr;
-	tmpstr = ostrcat(tmpstr, input, 1, 1);	
+	tmpstr = ostrcat(tmpstr, input, 1, 1);
 
 	if(flag == 0)
 	{
@@ -6403,18 +6403,18 @@ char* gethypridtunerchoicesvalue(int dev)
 			start = ostrcat("Mode ", ret1[i].part, 0, 0);
 			start = ostrcat(start, ":", 1, 0);
 			tmpstr2 = string_resub(start, "\n", tmpstr1, 0);
-		
+
 			if(i > 0)
 				value = ostrcat(value, "\n", 1, 0);
-		
+
 			if(tmpstr2 != NULL)
 				value = ostrcat(value, tmpstr2, 1, 0);
-				
+
 			free(tmpstr2), tmpstr2 = NULL;
 			free(start), start = NULL;
 		}
 	}
-	free(ret1), ret1 = NULL;			
+	free(ret1), ret1 = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
 	free(hypridlist), hypridlist = NULL;
 #else
@@ -6468,7 +6468,7 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 	start = ostrcat(start, ":", 1, 0);
 
 	tmpstr2 = string_resub(start, "\n", tmpstr1, 0);
-	
+
 	if(tmpstr2 != NULL)
 		value = ostrcat(value, tmpstr2, 1, 0);
 
@@ -6496,7 +6496,7 @@ int sethypridtuner(int dev, char* value)
 	char* buf = NULL, *hypridtuner = NULL, *tmpstr = NULL;
 
 	hypridtuner = getconfig("hypridtuner", NULL);
-	
+
 	if(hypridtuner != NULL)
 	{
 		buf = malloc(MINMALLOC);
@@ -6534,7 +6534,7 @@ int sethypridtuner(int dev, char* value)
 int phpkit_userauth(char* link, char* user, char* pass)
 {
 	debug(99, "phpkit user: %s", user);
-	debug(99, "phpkit pass: %s", pass);	
+	debug(99, "phpkit pass: %s", pass);
 	debug(99, "phpkit url: %s", link);
 
 	int skip = 0;
@@ -6557,9 +6557,9 @@ int phpkit_userauth(char* link, char* user, char* pass)
 
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
 	debug(99, "#############################################################################################################");
 	debug(99, "send1: %s", send);
 	debug(99, "#############################################################################################################");
@@ -6576,7 +6576,7 @@ int phpkit_userauth(char* link, char* user, char* pass)
 	hash = ostrcat(hash, "&userpw=", 1, 0);
 	hash = ostrcat(hash, pass, 1, 1);
 	hashlen = oitoa(strlen(hash));
-	
+
 	send = ostrcat(send, "POST ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
@@ -6585,9 +6585,9 @@ int phpkit_userauth(char* link, char* user, char* pass)
 	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nCookie: pageredir=", 1, 0);
 	send = ostrcat(send, cookie1, 1, 0);
-	send = ostrcat(send, "; PHPSESSID=", 1, 0);	
+	send = ostrcat(send, "; PHPSESSID=", 1, 0);
 	send = ostrcat(send, cookie2, 1, 0);
-	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);	
+	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 	free(hash); hash = NULL;
 	free(hashlen); hashlen = NULL;
@@ -6655,7 +6655,7 @@ char* gethypridtunername(int dev, char* hyprid)
 	free(start), start = NULL;
 
 	tmpstr2 = string_resub("Name: ", "\n", tmpstr1, 0);
-	
+
 	if(tmpstr2 != NULL)
 		value = ostrcat(value, tmpstr2, 1, 0);
 
@@ -6756,7 +6756,7 @@ int converte2settings(int flag)
 {
 	char* path = NULL, *buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
 	int incount = 0;
-	
+
 	if(flag == 0)
 	{
 		system("rm -rf /tmp/transponder.sat");
@@ -6824,7 +6824,7 @@ int converte2settings(int flag)
 	buf = readfiletomem(filename, 1);
 	if(buf == NULL)
 	{
-		printf("buf: %s\n", buf);	
+		printf("buf: %s\n", buf);
 		tmptext = ostrcat(_("Error: Transponder Source file no data"), "\nfilename: ", 0, 0);
 		tmptext = ostrcat(tmptext, transponderfile, 1, 0);
 		textbox(_("Message"), tmptext, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
@@ -6838,7 +6838,7 @@ int converte2settings(int flag)
 		free(transponderfile), transponderfile = NULL;
 		return 0;
 	}
-	
+
 //	writesys("/tmp/convert.log", buf, 1);
 
 	while(ostrstr(buf, start) != NULL)
@@ -6846,20 +6846,20 @@ int converte2settings(int flag)
 		incount++;
 		tmpstr = string_resub(start, end, buf, 0);
 		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
-		
+
 		//printf("name: %s\n", getxmlentry(ret1[i].part, "name="));
 		//printf("position: %s\n", getxmlentry(ret1[i].part, "position="));
-		
+
 		name = getxmlentry(tmpstr, "name=");
 		if(flag == 0)
 			orbitalpos = getxmlentry(tmpstr, "position=");
 		else
 			orbitalpos = ostrcat(oitoa(incount), NULL, 1, 0);
-			
+
 		flags = getxmlentry(tmpstr, "flags=");
 		//string_decode(name, 0);
 		name = string_replace_all("&amp;", "und", name, 1);
-	
+
 		line = ostrcat(line, name, 1, 0); //name
 		line = ostrcat(line, "#", 1, 0);
 //		line = ostrcat(line, flags, 1, 0); //flag
@@ -6872,7 +6872,7 @@ int converte2settings(int flag)
 		printf("%s: %s\n", satfile, line);
 		writesys(satfile, line, 3);
 		free(line), line = NULL;
-				
+
 		int count = 0;
 
 		int i = 0;
@@ -6958,39 +6958,39 @@ int converte2settings(int flag)
 				line = ostrcat(line, "\n", 1, 0);
 			}
 		}
-	
+
 		tmpstr2 = ostrcat(start, tmpstr, 0, 0);
-	
+
 		buf = string_replace(tmpstr2, NULL, buf, 1);
-	
+
 	//	outfile = ostrcat("/tmp/convert.", oitoa(incount), 0, 1);
-	//	outfile = ostrcat(outfile, ".log", 1, 0);	
+	//	outfile = ostrcat(outfile, ".log", 1, 0);
 	//	writesys(outfile, buf, 2);
 	//	writesys("/tmp/convert.log", buf, 3);
-	
+
 		writesys(transponderfile, line, 2);
 		free(line), line = NULL;
-	
-		free(tmpstr), tmpstr = NULL;	
+
+		free(tmpstr), tmpstr = NULL;
 		free(tmpstr1), tmpstr1 = NULL;
 		free(tmpstr2), tmpstr2 = NULL;
 		free(ret1), ret1 = NULL;
 		free(name), name = NULL;
 		free(orbitalpos), orbitalpos = NULL;
 		free(flags), flags = NULL;
-		free(outfile), outfile = NULL;	
+		free(outfile), outfile = NULL;
 	}
 
 	free(path), path = NULL;
 	free(filename), filename = NULL;
 	free(satfile), satfile = NULL;
 	free(transponderfile), transponderfile = NULL;
-		
+
 	free(buf), buf = NULL;
 	free(start), start = NULL;
 	free(end), end = NULL;
 	free(fetype), fetype = NULL;
-			
+
 	return 1;
 }
 
@@ -7007,7 +7007,7 @@ char* system_infos(int mode)
 		tmpstr1 = ostrcat("\nTime = ", "", 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, gettime(NULL, "%H:%M:%S"), 1, 1);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1);
-		
+
 		tmpstr1 = ostrcat("\nUptime = ", "", 0, 0);
 		tmpstr2 = command("uptime");
 		if(tmpstr2 != NULL) tmpstr2 = strtok(tmpstr2, ",");
@@ -7241,7 +7241,7 @@ void setdefaultbouquets()
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
-	
+
 		system("rm -f /mnt/settings/bouquets.* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/bouquets* /mnt/settings > /dev/null 2>&1");
 
@@ -7261,7 +7261,7 @@ void setdefaultsettings()
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
-	
+
 		system("rm -rf /mnt/settings/* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/* /mnt/settings > /dev/null 2>&1");
 
@@ -7281,7 +7281,7 @@ void setdefaultproviders()
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
-	
+
 		system("rm -f /mnt/settings/provider > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/provider /mnt/settings > /dev/null 2>&1");
 
@@ -7301,7 +7301,7 @@ void setdefaultchannels()
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
-	
+
 		system("rm -f /mnt/settings/channel > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/channel /mnt/settings > /dev/null 2>&1");
 
@@ -7321,7 +7321,7 @@ void setdefaultsats()
 	{
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
-	
+
 		system("rm -f /mnt/settings/satellites > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/satellites /mnt/settings > /dev/null 2>&1");
 
@@ -7342,27 +7342,27 @@ char* create_backup(char* input, int flag)
 
 	char* tmpstr = NULL, *cmd = NULL;
 	int merksec = status.sec;
-	
+
 	status.sec = 0; //deaktivate spinner
 	cmd = ostrcat(cmd, "backup.sh ", 1, 0);
 	cmd = ostrcat(cmd, input, 1, 0);
 
 	if(flag == 2)
 		cmd = ostrcat(cmd, " 1", 1, 0);
-	
+
 	if(file_exist("/var/swap"))
 	{
 		if(!file_exist("/var/swap/logs"))
 			 mkdir("/var/swap/logs", 777);
-	
+
 		if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
-			cmd = ostrcat(cmd, " > /var/swap/logs/backup_debug.log 2>&1", 1, 0);		
+			cmd = ostrcat(cmd, " > /var/swap/logs/backup_debug.log 2>&1", 1, 0);
 	}
 	else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
 	{
 		if(!file_exist("/mnt/logs"))
 			 mkdir("/mnt/logs", 777);
-	
+
 		if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
 			cmd = ostrcat(cmd, " > /mnt/logs/backup_debug.log 2>&1", 1, 0);
 	}
@@ -7375,7 +7375,7 @@ char* create_backup(char* input, int flag)
 
 	free(cmd); cmd = NULL;
 	status.sec = merksec;
-	
+
 	return tmpstr;
 }
 
@@ -7392,7 +7392,7 @@ char* randomstring(int n)
 
     /* Intializes random number generator */
     srand((unsigned) time(&t));
-    for( i = 0 ; i < n ; i++ ) 
+    for( i = 0 ; i < n ; i++ )
     {
         wert = rand() % 9;
         sprintf(tmp+i, "%d", wert);
@@ -7406,14 +7406,14 @@ int putmsgbuffer()
 {
 	if(file_exist("/tmp/textbox_standby") != 1)
 		return 1;
-	
+
 	FILE *fp = fopen("/tmp/textbox_standby" , "r");
-	if(fp == NULL) 
+	if(fp == NULL)
 	{
 		printf("Error opening file: /tmp/textbox_standby\n");
 		return(-1);
 	}
-	
+
 	char* caption = malloc(255);
 	char* body = malloc(255);
 	char* comtext1 = malloc(20);
@@ -7428,55 +7428,55 @@ int putmsgbuffer()
 	char* height = malloc(10);
 	char* timeout = malloc(10);
 	char* flag = malloc(10);
- 
-	while(fgets(caption, 255, fp)!=NULL) 
+
+	while(fgets(caption, 255, fp)!=NULL)
 	{
 		string_newline(caption);
-		
+
 		fgets(body, 255, fp);
 		string_newline(body);
 		body = string_replace_all("\t", "\n", body, 1);
-		
+
 		if(comtext1 == NULL)
 			comtext1 = malloc(20);
 		fgets(comtext1, 20, fp);
 		string_newline(comtext1);
 		fgets(com1, 10, fp);
 		string_newline(com1);
-		
+
 		if(comtext2 == NULL)
 			comtext2 = malloc(20);
 		fgets(comtext2, 20, fp);
 		string_newline(comtext2);
 		fgets(com2, 10, fp);
 		string_newline(com2);
-		
+
 		if(comtext3 == NULL)
 			comtext3 = malloc(20);
 		fgets(comtext3, 20, fp);
 		string_newline(comtext3);
 		fgets(com3, 10, fp);
 		string_newline(com3);
-		
+
 		if(comtext4 == NULL)
 			comtext4 = malloc(20);
 		fgets(comtext4, 20, fp);
 		string_newline(comtext4);
 		fgets(com4, 10, fp);
 		string_newline(com4);
-		
+
 		fgets(width, 10, fp);
 		string_newline(width);
-		
+
 		fgets(height, 10, fp);
 		string_newline(height);
-		
+
 		fgets(timeout, 10, fp);
 		string_newline(timeout);
-		
+
 		fgets(flag, 10, fp);
 		string_newline(flag);
-		
+
 		if(atoi(com1) == 0)
 		{
 			free(comtext1);
@@ -7499,10 +7499,10 @@ int putmsgbuffer()
 		}
 		textbox(caption, body, comtext1, atoi(com1), comtext2, atoi(com2), comtext3, atoi(com3), comtext4, atoi(com4), atoi(width), atoi(height), atoi(timeout), atoi(flag));
 	}
-	
-	fclose(fp);	
+
+	fclose(fp);
 	system("rm /tmp/textbox_standby");
-	
+
 	free(caption);
 	free(body);
 	free(comtext1);
@@ -7517,7 +7517,7 @@ int putmsgbuffer()
 	free(height);
 	free(timeout);
 	free(flag);
-		
+
 	return 0;
 }
 
@@ -7531,9 +7531,9 @@ void delunusedsat()
 	{
 		prev = node;
 		node = node->next;
-		
+
 		if(prev->scan != 1)
-			delsat(prev->name);	
+			delsat(prev->name);
 	}
 	debug(10, "delunusedsat: end");
 }
@@ -7586,7 +7586,7 @@ void delunusedbouquet()
 		node = mnode->bouquet;
 		while(node != NULL)
 		{
-			prev = node;	
+			prev = node;
 			node = node->next;
 			if(getchannel(prev->serviceid, prev->transponderid) == NULL)
 				delbouquet(prev->serviceid, prev->transponderid, &first);
@@ -7604,7 +7604,7 @@ void delunusedepgchannel()
 
 	while(node != NULL)
 	{
-		prev = node;	
+		prev = node;
 		node = node->next;
 		if(getchannel(prev->serviceid, prev->transponderid) == NULL)
 			delepgscanlist(node->serviceid, node->transponderid);
@@ -7620,7 +7620,7 @@ void delunusedprovider()
 
 	while(node != NULL)
 	{
-		prev = node;	
+		prev = node;
 		node = node->next;
 		delprovidernotused(prev);
 	}
@@ -7651,7 +7651,7 @@ int checkshutdown(int flag)
 		}
 		else
 		{
-			if(textbox(_("Message"), _("Found running record\nor record is starting in next time.\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
+			if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed shutdown?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
 				return 1;
 		}
 	}
@@ -7668,14 +7668,14 @@ int checkshutdown(int flag)
 			}
 			else
 			{
-		 		if(textbox(_("Message"), _("Found running download\nReally shutdown ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
+		 		if(textbox(_("Message"), _("Found running download\nProceed shutdown?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
 					return 1;
 			}
 			break;
 
 		}
 	}
-	
+
 	return 0;
 }
 
