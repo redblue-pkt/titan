@@ -108,7 +108,7 @@ int playerstartts(char* file, int flag)
 			FILE* fbseek = fopen(fileseek, "r");
 			if(fbseek != NULL)
 			{
-				ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 10, 0);
 				if(ret == 0 || ret == 1)
 				{
 					char* skip1 = calloc(1, 20);
