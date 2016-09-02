@@ -54,7 +54,7 @@ msgid ""
 "Website www.atemio.de"
 msgstr ""
 
-#: skinadjust.h:177
+#: skinadjust.h:178
 msgid "%"
 msgstr ""
 
@@ -210,11 +210,11 @@ msgstr ""
 msgid "1"
 msgstr ""
 
-#: adjust.h:132 httpdfunc.h:4185
+#: adjust.h:131 httpdfunc.h:4185
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:122 httpdfunc.h:4125
+#: adjust.h:121 httpdfunc.h:4125
 msgid "1 sec"
 msgstr ""
 
@@ -318,7 +318,7 @@ msgstr "s"
 msgid "2"
 msgstr ""
 
-#: adjust.h:133 httpdfunc.h:4192
+#: adjust.h:132 httpdfunc.h:4192
 msgid "2 GB"
 msgstr ""
 
@@ -326,7 +326,7 @@ msgstr ""
 msgid "2 Khz"
 msgstr ""
 
-#: adjust.h:123 avsettings.h:80 httpdfunc.h:4132
+#: adjust.h:122 avsettings.h:80 httpdfunc.h:4132
 msgid "2 sec"
 msgstr ""
 
@@ -366,7 +366,7 @@ msgstr "s"
 msgid "3"
 msgstr ""
 
-#: adjust.h:134 httpdfunc.h:4199
+#: adjust.h:133 httpdfunc.h:4199
 msgid "3 GB"
 msgstr ""
 
@@ -422,7 +422,7 @@ msgstr "s"
 msgid "4"
 msgstr ""
 
-#: adjust.h:135 httpdfunc.h:4206
+#: adjust.h:134 httpdfunc.h:4206
 msgid "4 GB"
 msgstr ""
 
@@ -1619,11 +1619,11 @@ msgstr ""
 msgid "C-Band"
 msgstr "Bande C"
 
-#: adjust.h:400
+#: adjust.h:395
 msgid "CA"
 msgstr ""
 
-#: adjust.h:343
+#: adjust.h:338
 msgid "CA Device"
 msgstr ""
 
@@ -1932,7 +1932,7 @@ msgstr ""
 msgid "Channel Down"
 msgstr ""
 
-#: adjust.h:72 epgsettings.h:139 httpdfunc.h:3912
+#: adjust.h:71 epgsettings.h:139 httpdfunc.h:3912
 msgid "Channel EPG"
 msgstr "EPG Canal"
 
@@ -1960,7 +1960,7 @@ msgstr ""
 msgid "Channel List selection"
 msgstr ""
 
-#: adjust.h:392
+#: adjust.h:387
 msgid "Channel Scan"
 msgstr ""
 
@@ -2529,7 +2529,7 @@ msgstr ""
 msgid "DTS-Downmix firmware "
 msgstr ""
 
-#: adjust.h:339
+#: adjust.h:334
 msgid "DVB Devices"
 msgstr ""
 
@@ -2541,7 +2541,7 @@ msgstr ""
 msgid "DVBS2"
 msgstr ""
 
-#: adjust.h:367 tpk_showname.h:27
+#: adjust.h:362 tpk_showname.h:27
 msgid "DVD Player"
 msgstr ""
 
@@ -2894,7 +2894,7 @@ msgstr ""
 msgid "Draw"
 msgstr ""
 
-#: adjust.h:396
+#: adjust.h:391
 msgid "Draw Screen"
 msgstr ""
 
@@ -2963,7 +2963,7 @@ msgstr ""
 msgid "EJECT"
 msgstr ""
 
-#: adjust.h:71 httpdfunc.h:3905 play.h:1575 skin_default_skin.xml.h:178
+#: adjust.h:70 httpdfunc.h:3905 play.h:1575 skin_default_skin.xml.h:178
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3036,7 +3036,7 @@ msgstr "Chemin EPG"
 msgid "EPG Settings"
 msgstr "Réglages EPG"
 
-#: adjust.h:375
+#: adjust.h:370
 msgid "EPG Task"
 msgstr ""
 
@@ -3648,7 +3648,7 @@ msgstr ""
 msgid "File Manager"
 msgstr ""
 
-#: adjust.h:416
+#: adjust.h:411
 msgid "File Operation"
 msgstr ""
 
@@ -3889,7 +3889,7 @@ msgstr ""
 msgid "Frage"
 msgstr ""
 
-#: adjust.h:388
+#: adjust.h:383
 msgid "Framebuffer"
 msgstr ""
 
@@ -3981,7 +3981,7 @@ msgstr ""
 msgid "G"
 msgstr ""
 
-#: skinadjust.h:178
+#: skinadjust.h:179
 msgid "GB"
 msgstr ""
 
@@ -4017,7 +4017,7 @@ msgstr ""
 msgid "GREEN"
 msgstr "vert"
 
-#: adjust.h:114 httpdfunc.h:4081 skin_default_skin.xml.h:236
+#: adjust.h:113 httpdfunc.h:4081 skin_default_skin.xml.h:236
 #: webif_index.atemio510.h:6 webif_index.atemio5200.h:6
 #: webif_index.atemio6000.h:6 webif_index.atemio6100.h:6
 #: webif_index.atemio6200.h:6 webif_index.atemio7600.h:4
@@ -4066,7 +4066,7 @@ msgstr ""
 msgid "Git Changelog Full"
 msgstr ""
 
-#: adjust.h:319
+#: adjust.h:314
 msgid "Global"
 msgstr ""
 
@@ -4195,7 +4195,7 @@ msgstr ""
 msgid "HOSTNAME"
 msgstr ""
 
-#: adjust.h:347
+#: adjust.h:342
 msgid "HTTP Server/Stream/Record"
 msgstr ""
 
@@ -4215,7 +4215,7 @@ msgstr ""
 msgid "Hard"
 msgstr ""
 
-#: adjust.h:303 harddisk.h:487 skin_default_skin.xml.h:238
+#: adjust.h:298 harddisk.h:487 skin_default_skin.xml.h:238
 msgid "Harddisk"
 msgstr "Disque Dur"
 
@@ -4626,7 +4626,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: adjust.h:355
+#: adjust.h:350
 msgid "ID3"
 msgstr ""
 
@@ -5080,7 +5080,7 @@ msgstr "clé"
 msgid "Key Action - Plugins"
 msgstr ""
 
-#: adjust.h:291
+#: adjust.h:286
 msgid "Key Actions"
 msgstr ""
 
@@ -5478,7 +5478,7 @@ msgstr "M"
 msgid "MTD"
 msgstr ""
 
-#: adjust.h:279
+#: adjust.h:274
 msgid "MTD Operation/System Update"
 msgstr ""
 
@@ -5620,7 +5620,7 @@ msgstr "Lecteur de médias"
 msgid "Media Plugins List"
 msgstr ""
 
-#: adjust.h:283 tpk_showname.h:80
+#: adjust.h:278 tpk_showname.h:80
 msgid "MediaCenter"
 msgstr ""
 
@@ -5628,7 +5628,7 @@ msgstr ""
 msgid "MediaCenter FolderIcons"
 msgstr ""
 
-#: adjust.h:404
+#: adjust.h:399
 msgid "MediaDB"
 msgstr ""
 
@@ -5684,7 +5684,7 @@ msgstr ""
 msgid "MediaDB scan finished"
 msgstr ""
 
-#: adjust.h:331
+#: adjust.h:326
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
@@ -5805,7 +5805,7 @@ msgstr "Liste de Menu"
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:449 skinadjust.h:843 skinadjust.h:881 skinselector.h:231
+#: skinadjust.h:454 skinadjust.h:848 skinadjust.h:889 skinselector.h:231
 #: sock.h:954 softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51
 #: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
@@ -5851,7 +5851,7 @@ msgstr ""
 msgid "MiniDLNA Medien Server (upnp)"
 msgstr ""
 
-#: adjust.h:275
+#: adjust.h:270
 msgid "Minimal"
 msgstr ""
 
@@ -5983,7 +5983,7 @@ msgstr ""
 msgid "MultiGUI Plugin"
 msgstr ""
 
-#: adjust.h:307 tpk_showname.h:85
+#: adjust.h:302 tpk_showname.h:85
 msgid "MultiImage"
 msgstr ""
 
@@ -6030,7 +6030,7 @@ msgstr "Musique"
 msgid "Mute"
 msgstr ""
 
-#: adjust.h:412
+#: adjust.h:407
 msgid "Mutex"
 msgstr ""
 
@@ -6077,7 +6077,7 @@ msgstr "Réglage adaptateur réseau"
 msgid "Network Adapter Test"
 msgstr "Test adaptateur réseau"
 
-#: adjust.h:287
+#: adjust.h:282
 msgid "Network Interface"
 msgstr ""
 
@@ -6101,7 +6101,7 @@ msgstr "Test de Réseau"
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: adjust.h:295 skin_default_skin.xml.h:387 tpk_showname.h:86
+#: adjust.h:290 skin_default_skin.xml.h:387 tpk_showname.h:86
 msgid "Networkbrowser"
 msgstr "Navigateur Réseau"
 
@@ -6153,7 +6153,7 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-#: adjust.h:384 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:392
+#: adjust.h:379 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:392
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "letterbox"
@@ -6184,7 +6184,7 @@ msgstr ""
 msgid "Nfs Server Settings"
 msgstr "Réglages NFS Serveur"
 
-#: skinadjust.h:176
+#: skinadjust.h:177
 msgid "No"
 msgstr ""
 
@@ -6393,8 +6393,8 @@ msgstr "Ö"
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:449
-#: skinadjust.h:843 skinadjust.h:881 skins_dlna_skin.xml.h:7
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:454
+#: skinadjust.h:848 skinadjust.h:889 skins_dlna_skin.xml.h:7
 #: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
@@ -6510,7 +6510,7 @@ msgstr ""
 msgid "Old Audiofw"
 msgstr "oldaudio Firmware"
 
-#: adjust.h:380
+#: adjust.h:375
 msgid "Old Entry"
 msgstr ""
 
@@ -6760,7 +6760,7 @@ msgstr ""
 msgid "Photos postet"
 msgstr ""
 
-#: adjust.h:424 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
+#: adjust.h:419 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
 #: webif_index.atemio6200.h:64 webif_index.atemio6200.h:120
 #: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
 #: webif_index.atemio-nemesis.h:64 webif_index.atemio-nemesis.h:120
@@ -7144,11 +7144,11 @@ msgstr ""
 msgid "Power = reboot receiver"
 msgstr ""
 
-#: adjust.h:110 httpdfunc.h:4053
+#: adjust.h:109 httpdfunc.h:4053
 msgid "Power Menu"
 msgstr "Menu d'éteindre "
 
-#: adjust.h:111 adjust.h:117 httpdfunc.h:4060 httpdfunc.h:4096
+#: adjust.h:110 adjust.h:116 httpdfunc.h:4060 httpdfunc.h:4096
 #: skin_default_skin.xml.h:441 webif_index.atemio510.h:4
 #: webif_index.atemio5200.h:4 webif_index.atemio6000.h:4
 #: webif_index.atemio6100.h:4 webif_index.atemio6200.h:4
@@ -7395,7 +7395,7 @@ msgstr ""
 msgid "Radio: "
 msgstr "Radio trouvées:"
 
-#: adjust.h:351
+#: adjust.h:346
 msgid "Radiotext"
 msgstr ""
 
@@ -7765,7 +7765,7 @@ msgstr "Réglages Résolution"
 msgid "Resolution:"
 msgstr "Résolution"
 
-#: adjust.h:113 httpdfunc.h:4074 skin_default_skin.xml.h:493 softcam.h:292
+#: adjust.h:112 httpdfunc.h:4074 skin_default_skin.xml.h:493 softcam.h:292
 #: softcam.h:460 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
@@ -7966,7 +7966,7 @@ msgstr "SID"
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr ""
 
-#: adjust.h:420
+#: adjust.h:415
 msgid "SMTP"
 msgstr ""
 
@@ -8245,7 +8245,7 @@ msgstr ""
 msgid "Score:"
 msgstr ""
 
-#: adjust.h:311 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:15
+#: adjust.h:306 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:15
 #: skins_mc_skin.xml.h:49 skins_tithek_skin.xml.h:15
 msgid "Screensaver"
 msgstr ""
@@ -9096,7 +9096,7 @@ msgstr "Port ftp"
 msgid "StandBy Mode"
 msgstr "Mode Veille"
 
-#: adjust.h:112 adjust.h:118 httpdfunc.h:4067 httpdfunc.h:4103
+#: adjust.h:111 adjust.h:117 httpdfunc.h:4067 httpdfunc.h:4103
 #: powerofftimer.h:118 skin_default_skin.xml.h:596 webif_index.atemio510.h:7
 #: webif_index.atemio5200.h:7 webif_index.atemio6000.h:7
 #: webif_index.atemio6100.h:7 webif_index.atemio6200.h:7
@@ -9296,7 +9296,7 @@ msgstr ""
 msgid "Streaming succesfull stopped."
 msgstr ""
 
-#: adjust.h:323
+#: adjust.h:318
 msgid "Stringconvert"
 msgstr ""
 
@@ -9313,7 +9313,7 @@ msgstr ""
 msgid "Subservices"
 msgstr "SousServices"
 
-#: adjust.h:359 skin_default_skin.xml.h:615 webif_index.atemio5200.h:65
+#: adjust.h:354 skin_default_skin.xml.h:615 webif_index.atemio5200.h:65
 #: webif_index.atemio5200.h:121 webif_index.atemio6200.h:65
 #: webif_index.atemio6200.h:121 webif_index.atemio7600.h:27
 #: webif_index.atemio7600.h:79 webif_index.atemio-nemesis.h:65
@@ -9478,7 +9478,7 @@ msgstr ""
 msgid "TMDb Movie Database Plugin"
 msgstr ""
 
-#: adjust.h:327
+#: adjust.h:322
 msgid "TPK"
 msgstr ""
 
@@ -9728,7 +9728,7 @@ msgstr ""
 msgid "Thu"
 msgstr ""
 
-#: adjust.h:363
+#: adjust.h:358
 msgid "Thumbnails"
 msgstr ""
 
@@ -9908,7 +9908,7 @@ msgstr ""
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
-#: kravencfg.c:212 skinadjust.h:449 skinadjust.h:843 skinadjust.h:881
+#: kravencfg.c:212 skinadjust.h:454 skinadjust.h:848 skinadjust.h:889
 msgid "Titan will be restarted!"
 msgstr ""
 
@@ -9965,7 +9965,7 @@ msgstr ""
 msgid "Tithek Hoster URL with http://"
 msgstr ""
 
-#: adjust.h:315
+#: adjust.h:310
 msgid "Tithek/HTTP Header/Community"
 msgstr ""
 
@@ -10713,7 +10713,7 @@ msgstr "Infos de Météo"
 msgid "Weather Infos"
 msgstr "Infos de Météo"
 
-#: adjust.h:299
+#: adjust.h:294
 msgid "Web Adjust"
 msgstr ""
 
@@ -11044,7 +11044,7 @@ msgstr ""
 msgid "allways del file"
 msgstr ""
 
-#: adjust.h:102 httpdfunc.h:4003 mc_audioplayer_settings.h:27
+#: adjust.h:101 httpdfunc.h:4003 mc_audioplayer_settings.h:27
 #: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:23
 #: plugins_mc_skin.xml.h:4 skin_default_skin.xml.h:29 skins_mc_skin.xml.h:4
 msgid "alpha"
@@ -11059,15 +11059,15 @@ msgstr ""
 msgid "always"
 msgstr ""
 
-#: adjust.h:174 httpdfunc.h:4507
+#: adjust.h:173 httpdfunc.h:4507
 msgid "anim. both"
 msgstr "Animation tous les deux"
 
-#: adjust.h:173 httpdfunc.h:4500
+#: adjust.h:172 httpdfunc.h:4500
 msgid "anim. height"
 msgstr "Animation hauteur"
 
-#: adjust.h:172 httpdfunc.h:4493
+#: adjust.h:171 httpdfunc.h:4493
 msgid "anim. width"
 msgstr "Animation largeur"
 
@@ -11099,7 +11099,7 @@ msgstr ""
 msgid "ausgehende Anrufe"
 msgstr ""
 
-#: adjust.h:161 autotimer.c:479 autotimer.c:512 avsettings.h:71
+#: adjust.h:160 autotimer.c:479 autotimer.c:512 avsettings.h:71
 #: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1206
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
@@ -11130,7 +11130,7 @@ msgstr ""
 msgid "backup"
 msgstr "Sauvegarde"
 
-#: skinadjust.h:74
+#: skinadjust.h:75
 msgid "bar"
 msgstr ""
 
@@ -11188,7 +11188,7 @@ msgstr ""
 msgid "bootstop"
 msgstr "Demarrage stopé"
 
-#: skinadjust.h:73
+#: skinadjust.h:74
 msgid "border"
 msgstr ""
 
@@ -11260,7 +11260,7 @@ msgstr "Chaine + Temps"
 msgid "channel number"
 msgstr "Chaine + Temps"
 
-#: adjust.h:205 httpdfunc.h:4632
+#: adjust.h:204 httpdfunc.h:4632
 msgid "channel-movie"
 msgstr ""
 
@@ -11343,7 +11343,7 @@ msgstr ""
 msgid "daily"
 msgstr "quotidien"
 
-#: adjust.h:106 httpdfunc.h:4031 mc_audioplayer_settings.h:31
+#: adjust.h:105 httpdfunc.h:4031 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
 #: plugins_mc_skin.xml.h:13 skin_default_skin.xml.h:129 skins_mc_skin.xml.h:13
 msgid "date"
@@ -11362,7 +11362,7 @@ msgstr "Date"
 msgid "deactivate"
 msgstr "Désactiver"
 
-#: adjust.h:121 adjust.h:131 epgsettings.h:148 epgsettings.h:154
+#: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
 msgid "deaktiv"
 msgstr "inactif"
@@ -11468,7 +11468,7 @@ msgstr ""
 msgid "e"
 msgstr ""
 
-#: adjust.h:335
+#: adjust.h:330
 msgid "ePlayer"
 msgstr ""
 
@@ -11504,7 +11504,7 @@ msgstr "Activer"
 msgid "end search"
 msgstr "Recharche Manuelle"
 
-#: adjust.h:124 httpdfunc.h:4139 pin.h:193
+#: adjust.h:123 httpdfunc.h:4139 pin.h:193
 msgid "endless"
 msgstr "sans fin"
 
@@ -11532,7 +11532,7 @@ msgstr "Erreur"
 msgid "event"
 msgstr ""
 
-#: adjust.h:220 httpdfunc.h:4712
+#: adjust.h:219 httpdfunc.h:4712
 msgid "expert (11)"
 msgstr ""
 
@@ -11552,7 +11552,7 @@ msgstr ""
 msgid "extensionsmenu"
 msgstr ""
 
-#: adjust.h:153 adjust.h:455 httpdfunc.h:4381 httpdfunc.h:4866
+#: adjust.h:152 adjust.h:450 httpdfunc.h:4381 httpdfunc.h:4866
 #: httpdsettings.h:50
 msgid "extern"
 msgstr "externe"
@@ -11565,7 +11565,7 @@ msgstr ""
 msgid "fade out/in"
 msgstr ""
 
-#: adjust.h:95 adjust.h:187 httpdfunc.h:3966 httpdfunc.h:4529
+#: adjust.h:94 adjust.h:186 httpdfunc.h:3966 httpdfunc.h:4529
 #: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
 #: mc_videoplayer_settings.h:31 moduleconfig.h:248 plugins_mc_skin.xml.h:20
 #: skins_mc_skin.xml.h:20
@@ -11695,7 +11695,7 @@ msgstr "Replacement de Disque Dur"
 msgid "helpbox"
 msgstr ""
 
-#: adjust.h:193 httpdfunc.h:4565 pin.h:111
+#: adjust.h:192 httpdfunc.h:4565 pin.h:111
 msgid "hidden"
 msgstr "caché"
 
@@ -11752,7 +11752,7 @@ msgstr "Arriére plan Screensaver"
 msgid "inadynsettings"
 msgstr ""
 
-#: adjust.h:70 httpdfunc.h:3898 webif_help.h:35
+#: adjust.h:69 httpdfunc.h:3898 webif_help.h:35
 msgid "infobar"
 msgstr "Barre d'infos"
 
@@ -11784,7 +11784,7 @@ msgstr ""
 msgid "interfacelist"
 msgstr ""
 
-#: adjust.h:154 adjust.h:456 httpdfunc.h:4388 httpdfunc.h:4873
+#: adjust.h:153 adjust.h:451 httpdfunc.h:4388 httpdfunc.h:4873
 #: httpdsettings.h:49
 msgid "intern"
 msgstr "interne"
@@ -11857,7 +11857,7 @@ msgstr ""
 msgid "left"
 msgstr ""
 
-#: adjust.h:176
+#: adjust.h:175
 msgid "left to right"
 msgstr ""
 
@@ -11950,7 +11950,7 @@ msgstr ""
 msgid "mediadbsettings"
 msgstr ""
 
-#: adjust.h:94 httpdfunc.h:3959
+#: adjust.h:93 httpdfunc.h:3959
 msgid "medium"
 msgstr "médium"
 
@@ -11994,7 +11994,7 @@ msgstr "Déplacer service"
 msgid "move west"
 msgstr "Déplacer vers l'ouest"
 
-#: adjust.h:206 httpdfunc.h:4639
+#: adjust.h:205 httpdfunc.h:4639
 msgid "movie-channel"
 msgstr ""
 
@@ -12065,24 +12065,24 @@ msgstr "Infos"
 msgid "nfs server"
 msgstr "NFS Serveur"
 
-#: adjust.h:69 adjust.h:84 adjust.h:93 adjust.h:98 adjust.h:127 adjust.h:157
-#: adjust.h:167 adjust.h:171 adjust.h:197 adjust.h:201 adjust.h:209
-#: adjust.h:213 adjust.h:217 adjust.h:223 adjust.h:227 adjust.h:234
-#: adjust.h:238 adjust.h:242 adjust.h:248 adjust.h:254 adjust.h:464
-#: autotimer.c:453 autotimer.c:486 avsettings.h:162 avsettings.h:213
-#: avsettings.h:218 avsettings.h:230 avsettings.h:242 avsettings.h:255
-#: blindscanadjust.h:150 blindscanadjust.h:154 blindscanadjust.h:158
-#: blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143 cec.h:147 cec.h:151
-#: cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171 cec.h:175 dlna.h:276
-#: epgsettings.h:135 epgsettings.h:188 epgsettings.h:197 epgsettings.h:201
-#: epgsettings.h:206 epgsettings.h:211 harddisk.h:236 harddisk.h:241
-#: harddisk.h:255 harddisk.h:260 harddisk.h:274 harddisk.h:279 harddisk.h:293
-#: harddisk.h:298 httpdfunc.h:3891 httpdfunc.h:3929 httpdfunc.h:3952
-#: httpdfunc.h:3981 httpdfunc.h:4154 httpdfunc.h:4403 httpdfunc.h:4463
-#: httpdfunc.h:4486 httpdfunc.h:4587 httpdfunc.h:4611 httpdfunc.h:4654
-#: httpdfunc.h:4676 httpdfunc.h:4698 httpdfunc.h:4727 httpdfunc.h:4749
-#: httpdfunc.h:4794 httpdfunc.h:4817 httpdfunc.h:4841 httpdfunc.h:4955
-#: httpdsettings.h:27 httpdsettings.h:57 httpdsettings.h:65 inadyn.h:138
+#: adjust.h:68 adjust.h:83 adjust.h:92 adjust.h:97 adjust.h:126 adjust.h:156
+#: adjust.h:166 adjust.h:170 adjust.h:196 adjust.h:200 adjust.h:208
+#: adjust.h:212 adjust.h:216 adjust.h:222 adjust.h:226 adjust.h:233
+#: adjust.h:237 adjust.h:243 adjust.h:249 adjust.h:459 autotimer.c:453
+#: autotimer.c:486 avsettings.h:162 avsettings.h:213 avsettings.h:218
+#: avsettings.h:230 avsettings.h:242 avsettings.h:255 blindscanadjust.h:150
+#: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
+#: blindscanadjust.h:191 cec.h:143 cec.h:147 cec.h:151 cec.h:155 cec.h:159
+#: cec.h:163 cec.h:167 cec.h:171 cec.h:175 dlna.h:276 epgsettings.h:135
+#: epgsettings.h:188 epgsettings.h:197 epgsettings.h:201 epgsettings.h:206
+#: epgsettings.h:211 harddisk.h:236 harddisk.h:241 harddisk.h:255
+#: harddisk.h:260 harddisk.h:274 harddisk.h:279 harddisk.h:293 harddisk.h:298
+#: httpdfunc.h:3891 httpdfunc.h:3929 httpdfunc.h:3952 httpdfunc.h:3981
+#: httpdfunc.h:4154 httpdfunc.h:4403 httpdfunc.h:4463 httpdfunc.h:4486
+#: httpdfunc.h:4587 httpdfunc.h:4611 httpdfunc.h:4654 httpdfunc.h:4676
+#: httpdfunc.h:4698 httpdfunc.h:4727 httpdfunc.h:4749 httpdfunc.h:4794
+#: httpdfunc.h:4817 httpdfunc.h:4841 httpdfunc.h:4955 httpdsettings.h:27
+#: httpdsettings.h:57 httpdsettings.h:65 inadyn.h:138
 #: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
 #: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
 #: mc_videoplayer_settings.h:39 mc_videoplayer_settings.h:43
@@ -12117,10 +12117,11 @@ msgstr "NFS Serveur"
 #: settings_autostart.h:511 settings_autostart.h:568 settings_autostart.h:577
 #: settings_autostart.h:586 settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:59
-#: timeshiftsettings.h:63 tithek_settings.h:39 tithek_settings.h:43
-#: tithek_settings.h:47 tmc.h:531 tmc.h:535 tunerconfig.h:184
-#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277 xupnpd.h:30
+#: settings_overclocking.h:244 skinadjust.h:182 stopifnotused.c:94
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:39
+#: tithek_settings.h:43 tithek_settings.h:47 tmc.h:531 tmc.h:535
+#: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
+#: xupnpd.h:30
 msgid "no"
 msgstr "non"
 
@@ -12150,7 +12151,7 @@ msgstr "aucun"
 msgid "nonlinear"
 msgstr ""
 
-#: adjust.h:188 fancontrol.h:65 httpdfunc.h:4536 timeshiftsettings.h:49
+#: adjust.h:187 fancontrol.h:65 httpdfunc.h:4536 timeshiftsettings.h:49
 #: tmc.h:557
 msgid "normal"
 msgstr ""
@@ -12163,7 +12164,7 @@ msgstr "Nord"
 msgid "not started akttime higher than timer endtime"
 msgstr ""
 
-#: adjust.h:162 autotimer.c:480 autotimer.c:513 epgsettings.h:216
+#: adjust.h:161 autotimer.c:480 autotimer.c:513 epgsettings.h:216
 #: httpdfunc.h:4434 rectimer.h:1207
 msgid "nothing"
 msgstr "rien"
@@ -12197,7 +12198,7 @@ msgstr "Ö"
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:83
+#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:84
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:94
 #: vfdisplay.h:109
@@ -12250,7 +12251,7 @@ msgstr ""
 
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
-#: readerconfig.h:424 skinadjust.h:82 transponder.h:257 transponder.h:266
+#: readerconfig.h:424 skinadjust.h:83 transponder.h:257 transponder.h:266
 #: transponder.h:416 transponder.h:425 vfdisplay.h:49 vfdisplay.h:70
 msgid "on"
 msgstr "marche"
@@ -12346,7 +12347,7 @@ msgstr ""
 msgid "picons"
 msgstr ""
 
-#: skinadjust.h:76 tmc.h:542
+#: skinadjust.h:77 tmc.h:542
 msgid "picture"
 msgstr "Photo Player"
 
@@ -12411,7 +12412,7 @@ msgstr ""
 msgid "possetup"
 msgstr ""
 
-#: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
+#: adjust.h:163 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
 #: rectimer.h:1209 stopifnotused.c:111
 msgid "power off"
 msgstr "Arrét"
@@ -12544,19 +12545,19 @@ msgstr ""
 msgid "resolutionsettings"
 msgstr ""
 
-#: adjust.h:103 httpdfunc.h:4010 mc_audioplayer_settings.h:28
+#: adjust.h:102 httpdfunc.h:4010 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
 #: plugins_mc_skin.xml.h:46 skin_default_skin.xml.h:502 skins_mc_skin.xml.h:46
 msgid "reverse alpha"
 msgstr "Alpha Inversé"
 
-#: adjust.h:107 httpdfunc.h:4038 mc_audioplayer_settings.h:32
+#: adjust.h:106 httpdfunc.h:4038 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
 #: plugins_mc_skin.xml.h:47 skin_default_skin.xml.h:503 skins_mc_skin.xml.h:47
 msgid "reverse date"
 msgstr "Date Inversé"
 
-#: adjust.h:105 httpdfunc.h:4024 mc_audioplayer_settings.h:30
+#: adjust.h:104 httpdfunc.h:4024 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:504 skins_mc_skin.xml.h:48
 msgid "reverse size"
@@ -12730,7 +12731,7 @@ msgstr "Nom de Paprtage"
 msgid "shortepg"
 msgstr ""
 
-#: adjust.h:194
+#: adjust.h:193
 msgid "show"
 msgstr ""
 
@@ -12774,7 +12775,7 @@ msgstr "Afficher Adresse IP "
 msgid "singleepg"
 msgstr ""
 
-#: adjust.h:104 httpdfunc.h:4017 mc_audioplayer_settings.h:29
+#: adjust.h:103 httpdfunc.h:4017 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
 #: plugins_mc_skin.xml.h:52 skin_default_skin.xml.h:573 skins_mc_skin.xml.h:52
 msgid "size"
@@ -12801,15 +12802,15 @@ msgstr ""
 msgid "skinselect"
 msgstr ""
 
-#: adjust.h:181
+#: adjust.h:180
 msgid "slide from bottom"
 msgstr ""
 
-#: adjust.h:180
+#: adjust.h:179
 msgid "slide from left"
 msgstr ""
 
-#: adjust.h:189 httpdfunc.h:4543 moduleconfig.h:246 tmc.h:556
+#: adjust.h:188 httpdfunc.h:4543 moduleconfig.h:246 tmc.h:556
 msgid "slow"
 msgstr "lente"
 
@@ -12867,7 +12868,7 @@ msgstr ""
 msgid "stable"
 msgstr "Désactiver"
 
-#: adjust.h:163 autotimer.c:481 autotimer.c:514 fancontrol.h:72
+#: adjust.h:162 autotimer.c:481 autotimer.c:514 fancontrol.h:72
 #: httpdfunc.h:4441 rectimer.h:1208 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Veille"
@@ -13056,7 +13057,7 @@ msgstr ""
 msgid "testtransponder not found"
 msgstr ""
 
-#: skinadjust.h:75
+#: skinadjust.h:76
 msgid "text"
 msgstr ""
 
@@ -13134,7 +13135,7 @@ msgstr ""
 msgid "tools"
 msgstr ""
 
-#: adjust.h:177
+#: adjust.h:176
 msgid "top to bottom"
 msgstr ""
 
@@ -13307,11 +13308,11 @@ msgstr ""
 msgid "verwerfen"
 msgstr "jeter"
 
-#: adjust.h:186 httpdfunc.h:4522
+#: adjust.h:185 httpdfunc.h:4522
 msgid "very fast"
 msgstr "très rapide"
 
-#: adjust.h:190 httpdfunc.h:4550
+#: adjust.h:189 httpdfunc.h:4550
 msgid "very slow"
 msgstr "très lent"
 
@@ -13481,69 +13482,69 @@ msgstr ""
 msgid "yellow"
 msgstr "jaune"
 
-#: adjust.h:85 adjust.h:99 adjust.h:128 adjust.h:158 adjust.h:168 adjust.h:198
-#: adjust.h:202 adjust.h:210 adjust.h:214 adjust.h:218 adjust.h:224
-#: adjust.h:228 adjust.h:235 adjust.h:239 adjust.h:243 adjust.h:249
-#: adjust.h:253 autotimer.c:454 autotimer.c:487 avsettings.h:163
-#: avsettings.h:214 blindscanadjust.h:151 blindscanadjust.h:155
-#: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144
-#: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
-#: cec.h:176 dlna.h:277 epgsettings.h:136 epgsettings.h:189 epgsettings.h:198
-#: harddisk.h:235 harddisk.h:242 harddisk.h:254 harddisk.h:261 harddisk.h:273
-#: harddisk.h:280 harddisk.h:292 harddisk.h:299 httpdfunc.h:3936
-#: httpdfunc.h:3988 httpdfunc.h:4161 httpdfunc.h:4410 httpdfunc.h:4470
-#: httpdfunc.h:4594 httpdfunc.h:4618 httpdfunc.h:4661 httpdfunc.h:4683
-#: httpdfunc.h:4705 httpdfunc.h:4734 httpdfunc.h:4756 httpdfunc.h:4801
-#: httpdfunc.h:4824 httpdfunc.h:4848 httpdfunc.h:4963 httpdsettings.h:28
-#: httpdsettings.h:58 httpdsettings.h:66 inadyn.h:139
-#: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
-#: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
-#: mc_videoplayer_settings.h:40 mc_videoplayer_settings.h:44
-#: mc_videoplayer_settings.h:50 mediadb.h:1083 mediadb.h:1090 mediadb.h:1105
-#: mediadbsettings.h:29 mediadbsettings.h:33 mediadbsettings.h:52
-#: mediadbsettings.h:67 mediadbsettings.h:71 moduleconfig.h:242
-#: moduleconfig.h:252 moduleconfig.h:256 moduleconfig.h:260 moduleconfig.h:264
-#: networkbrowser.h:1640 networkbrowser.h:1644 networkbrowser.h:1653
-#: networkbrowser.h:1658 networkbrowser.h:1662 networkbrowser.h:1696
-#: network.h:692 panel_settings_autostart.h:35 panel_settings_autostart.h:96
-#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
-#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
-#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
-#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
-#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
-#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
-#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
-#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
-#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
-#: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
-#: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
-#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
-#: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1849 scan.h:2332 scan.h:2336 scan.h:2340 scan.h:2344
-#: scan.h:2347 scan.h:2357 scan.h:2361 scan.h:2365 scan.h:2369
-#: screensaveradjust.h:20 settings_autostart.h:26 settings_autostart.h:132
-#: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
-#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
-#: settings_autostart.h:285 settings_autostart.h:316 settings_autostart.h:430
-#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:502
-#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
-#: settings_autostart.h:595 settings_autostart.h:604
-#: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:40 tithek_settings.h:44
-#: tithek_settings.h:48 tmc.h:532 tmc.h:536 xupnpd.h:30
+#: adjust.h:84 adjust.h:98 adjust.h:127 adjust.h:157 adjust.h:167 adjust.h:197
+#: adjust.h:201 adjust.h:209 adjust.h:213 adjust.h:217 adjust.h:223
+#: adjust.h:227 adjust.h:234 adjust.h:238 adjust.h:244 adjust.h:248
+#: autotimer.c:454 autotimer.c:487 avsettings.h:163 avsettings.h:214
+#: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
+#: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144 cec.h:148 cec.h:152
+#: cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172 cec.h:176 dlna.h:277
+#: epgsettings.h:136 epgsettings.h:189 epgsettings.h:198 harddisk.h:235
+#: harddisk.h:242 harddisk.h:254 harddisk.h:261 harddisk.h:273 harddisk.h:280
+#: harddisk.h:292 harddisk.h:299 httpdfunc.h:3936 httpdfunc.h:3988
+#: httpdfunc.h:4161 httpdfunc.h:4410 httpdfunc.h:4470 httpdfunc.h:4594
+#: httpdfunc.h:4618 httpdfunc.h:4661 httpdfunc.h:4683 httpdfunc.h:4705
+#: httpdfunc.h:4734 httpdfunc.h:4756 httpdfunc.h:4801 httpdfunc.h:4824
+#: httpdfunc.h:4848 httpdfunc.h:4963 httpdsettings.h:28 httpdsettings.h:58
+#: httpdsettings.h:66 inadyn.h:139 mc_audioplayer_settings.h:46
+#: mc_audioplayer_settings.h:52 mc_audioplayer_settings.h:56
+#: mc_pictureplayer_settings.h:76 mc_videoplayer_settings.h:40
+#: mc_videoplayer_settings.h:44 mc_videoplayer_settings.h:50 mediadb.h:1083
+#: mediadb.h:1090 mediadb.h:1105 mediadbsettings.h:29 mediadbsettings.h:33
+#: mediadbsettings.h:52 mediadbsettings.h:67 mediadbsettings.h:71
+#: moduleconfig.h:242 moduleconfig.h:252 moduleconfig.h:256 moduleconfig.h:260
+#: moduleconfig.h:264 networkbrowser.h:1640 networkbrowser.h:1644
+#: networkbrowser.h:1653 networkbrowser.h:1658 networkbrowser.h:1662
+#: networkbrowser.h:1696 network.h:692 panel_settings_autostart.h:35
+#: panel_settings_autostart.h:96 panel_settings_autostart.h:113
+#: panel_settings_autostart.h:123 panel_settings_autostart.h:141
+#: panel_settings_autostart.h:150 panel_settings_autostart.h:159
+#: panel_settings_autostart.h:168 panel_settings_autostart.h:177
+#: panel_settings_autostart.h:193 panel_settings_autostart.h:202
+#: panel_settings_autostart.h:211 panel_settings_autostart.h:237
+#: panel_settings_autostart.h:286 panel_settings_autostart.h:295
+#: panel_settings_autostart.h:304 panel_settings_autostart.h:319
+#: panel_settings_autostart.h:328 panel_settings_autostart.h:337
+#: panel_settings_autostart.h:351 panel_settings_overclocking.h:214
+#: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
+#: pin.h:110 pin.h:182 pin.h:200 play.h:581 play.h:588 play.h:603
+#: readerconfig.h:255 rectimer.h:1111 rectimer.h:1116 rectimer.h:1121
+#: rectimer.h:1126 rectimer.h:1131 rectimer.h:1136 rectimer.h:1141 scan.h:1849
+#: scan.h:2332 scan.h:2336 scan.h:2340 scan.h:2344 scan.h:2347 scan.h:2357
+#: scan.h:2361 scan.h:2365 scan.h:2369 screensaveradjust.h:20
+#: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
+#: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
+#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
+#: settings_autostart.h:604 settings_overclocking.h:214
+#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:183
+#: stopifnotused.c:93 timeshiftsettings.h:58 timeshiftsettings.h:62
+#: tithek_settings.h:40 tithek_settings.h:44 tithek_settings.h:48 tmc.h:532
+#: tmc.h:536 xupnpd.h:30
 msgid "yes"
 msgstr "oui"
 
-#: adjust.h:229 httpdfunc.h:4763
+#: adjust.h:228 httpdfunc.h:4763
 msgid "yes / vzap 1 sec"
 msgstr "oui / vzap 1 sec"
 
-#: adjust.h:230 httpdfunc.h:4770
+#: adjust.h:229 httpdfunc.h:4770
 msgid "yes / vzap 2 sec"
 msgstr "oui / vzap 2 sec"
 
-#: adjust.h:231 httpdfunc.h:4777
+#: adjust.h:230 httpdfunc.h:4777
 msgid "yes / vzap endless"
 msgstr "oui / vzap sans fin"
 
