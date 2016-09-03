@@ -1735,7 +1735,7 @@ msgstr "CPU-Frequenz"
 
 #: skin_default_skin.xml.h:128
 msgid "CREATE STYLE"
-msgstr ""
+msgstr "Style Hinzufügen"
 
 #: blindscanadjust.h:121
 msgid "Cable"
@@ -2518,7 +2518,7 @@ msgstr "Neu erstellen"
 
 #: skinadjust.h:465
 msgid "Create new Skinstyle ?"
-msgstr ""
+msgstr "Einen neuen Skin Style hinzufügen ?"
 
 #: tithek.h:1919 tithek.h:2079
 msgid "Create sub folder"
