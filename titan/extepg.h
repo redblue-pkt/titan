@@ -117,7 +117,7 @@ void freeopentv()
 int loadfreesat(int tableid, char *filename)
 {
 	char buf[1024];
-	char **from = NULL, **to = NULL, **binary = NULL;
+	char *from = NULL, *to = NULL, *binary = NULL;
 	FILE *fp = NULL;
 
 	tableid--;
