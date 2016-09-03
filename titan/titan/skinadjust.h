@@ -175,6 +175,30 @@ void screenskinadjust()
 		setchoiceboxselection(skinstyle_sel, getconfig("skinstyle", NULL));
 	}
 
+	if(file_exist(getconfig("skinpath", NULL)))
+	{
+		delmarkedscreennodes(skinadjust, FILELISTDELMARK);
+		changeinput(filelist, getconfig("skinpath", NULL));
+		changemask(filelist, "*");
+		createfilelist(skinadjust, filelist, 0);
+		
+		node = filelist;
+		while(node != NULL)
+		{
+			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
+			{
+				if(!ostrncmp("skinconfig.", node->text, 11))
+				{
+					tmpstr = string_replace("skinconfig.", "", node->text, 0);
+					addchoicebox(skinstyle_sel, node->text, tmpstr);
+					free(tmpstr), tmpstr = NULL;
+				}
+			}
+			node = node->next;
+		}
+		setchoiceboxselection(skinstyle_sel, getconfig("skinstyle", NULL));
+	}
+
 	addchoicebox(showrecfreesize, "0", _("No"));
 	addchoicebox(showrecfreesize, "1", _("%"));
 	addchoicebox(showrecfreesize, "2", _("GB"));
@@ -460,7 +484,7 @@ void screenskinadjust()
 			break;
 		}
 
-		if(rcret == getrcconfigint("rcred", NULL))
+		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(textbox(_("Message"), _("Create new Skinstyle ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 			{
@@ -503,7 +527,7 @@ void screenskinadjust()
 			break;
 		}
 
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			setfbtransparent(255);
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
