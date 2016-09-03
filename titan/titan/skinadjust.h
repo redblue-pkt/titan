@@ -69,6 +69,8 @@ void screenskinadjust()
 
 	struct skin* tmp = NULL;
 
+start:
+
 	changeinput(fontsizeadjust, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n-15\n-14\n-13\n-12\n-11\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1");
 	setchoiceboxselection(fontsizeadjust, getskinconfig("fontsizeadjust", NULL));
 
@@ -522,6 +524,12 @@ void screenskinadjust()
 					printf("cmd: %s\n", cmd);	
 					system(cmd);
 					free(cmd); cmd = NULL;
+					
+					delskinconfigtmpall();
+					delownerrc(skinadjust);
+					clearscreen(skinadjust);
+
+					goto start;
 				}
 			}
 			break;
@@ -921,7 +929,9 @@ void screenskinadjust()
 			}
 
 			if(ostrcmp(minitv->ret, "1") == 0) resettvpic();
+			int oldminitv = getskinconfigint("minitv", NULL);
 			addskinconfigscreencheck("minitv", minitv, "0");
+			if(oldminitv != getskinconfigint("minitv", NULL)) reboot = 1;
 
 			int oldfontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
 			addskinconfigscreencheck("fontsizeadjust", fontsizeadjust, "0");
