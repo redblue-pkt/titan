@@ -504,7 +504,7 @@ start:
 					printf("cmd: %s\n", cmd);	
 					system(cmd);
 					free(cmd); cmd = NULL;
-					writeconfigtmp();
+					writeskinconfigtmp();
 
 					cmd = ostrcat(cmd, "mv -f ", 1, 0);
 					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
