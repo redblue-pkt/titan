@@ -459,6 +459,7 @@ void screenskinadjust()
 
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
+			setfbtransparent(0);
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
 			{
 				long oldlistboxselectcol = convertcol("listboxselect");
@@ -818,7 +819,7 @@ void screenskinadjust()
 				if(oldfavcol != convertcol("favcol")) reboot = 1;
 				favcol->fontcol2 = convertcol(tmpstr);
 			}
-
+			setosdtransparent(getskinconfigint("osdtransparent", NULL));
 			drawscreen(skinadjust, 0, 0);
 
 			debug(10, "%s set %s", listbox->select->name, tmpstr);
