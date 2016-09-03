@@ -272,8 +272,6 @@ void screenskinadjust()
 		okcol->hidden = YES;
 		exitcol->hidden = YES;
 		deaktivcol->hidden = YES;
-		bgcol->hidden = YES;
-		bgcol2->hidden = YES;
 		fontcol->hidden = YES;
 		bordercol->hidden = YES;
 		progresscol->hidden = YES;
