@@ -7646,12 +7646,12 @@ int checkshutdown(int flag)
 		}
 		else if(flag == 6)
 		{
-			if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed System Update?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
+			if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed System Update?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
 				return 1;
 		}
 		else
 		{
-			if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed shutdown?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
+			if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed shutdown?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
 				return 1;
 		}
 	}
@@ -7663,12 +7663,12 @@ int checkshutdown(int flag)
 		{
 			if(flag == 6)
 			{
-				if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed System Update?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
+				if(textbox(_("Message"), _("Found running record\nor record is starting soon.\nProceed System Update?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
 					return 1;
 			}
 			else
 			{
-		 		if(textbox(_("Message"), _("Found running download\nProceed shutdown?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0) != 1)
+		 		if(textbox(_("Message"), _("Found running download\nProceed shutdown?\nOK to proceed, Exit to cancel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) != 1)
 					return 1;
 			}
 			break;
