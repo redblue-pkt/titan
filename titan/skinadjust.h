@@ -65,6 +65,7 @@ void screenskinadjust()
 //	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 //	struct skin* pic2 = getscreennode(skinadjust, "pic2");
 	struct skin* b6 = getscreennode(skinadjust, "b6");
+	struct skin* load = getscreen("loading");
 
 	struct skin* tmp = NULL;
 
