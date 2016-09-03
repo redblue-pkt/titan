@@ -459,7 +459,7 @@ void screenskinadjust()
 
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
-			setfbtransparent(0);
+			setfbtransparent(255);
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
 			{
 				long oldlistboxselectcol = convertcol("listboxselect");
