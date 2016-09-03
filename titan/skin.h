@@ -76,13 +76,13 @@ void* convertfunc(char *value, uint8_t *rettype)
 		    *rettype = FUNCPICOLED;
 		    return &getoledchannelresolution576;
 	    }
-	    
+
 	if(ostrcmp("getoledchannelresolution720", value) == 0)
 	    {
 		    *rettype = FUNCPICOLED;
 		    return &getoledchannelresolution720;
 	    }
-	    
+
 	if(ostrcmp("getoledchannelresolution1080", value) == 0)
 	    {
 		    *rettype = FUNCPICOLED;
@@ -94,7 +94,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPICOLED;
 		return &getoledhd;
 	}
-	
+
 	if(ostrcmp("getoleddolby", value) == 0)
 	{
 		*rettype = FUNCPICOLED;
@@ -174,7 +174,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 	}
 	if(ostrcmp("getreccount", value) == 0)
 		return &getreccount;
-	
+
 	if(ostrcmp("getrec", value) == 0)
 	{
 		*rettype = FUNCPIC;
@@ -582,7 +582,7 @@ struct skin* getlastscreennode(struct skin* node)
 char* changepicpath(char* picname)
 {
 	char* tmpstr = NULL;
-	
+
 	if(picname == NULL || picname[0] == '\0') return NULL;
 
 	if(picname[0] != '/')
@@ -633,7 +633,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 	newnode->bgcol = -1;
 	newnode->titlebgcol = -1;
 	newnode->deaktivcol = -1;
-	
+
 	newnode->nodestyle = 0;
 
 	if(line != NULL)
@@ -946,7 +946,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			if(ostrstr(newnode->name, "oled") != NULL)
 			{
 				if(getconfig("oledskin_path", NULL) != NULL)
-				{	
+				{
 					newnode->pic = ostrcat(getconfig("oledskin_path", NULL),"/", 0, 0);
 					newnode->pic = ostrcat(newnode->pic, ret, 1, 0);
 				}
@@ -966,7 +966,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			}
 
 			if(getpic(newnode->pic) == NULL && newnode->pic != NULL)
-			{				
+			{
 				length = strlen(newnode->pic);
 				if(newnode->pic[length - 1] == 'g' && newnode->pic[length - 2] == 'n' && newnode->pic[length - 3] == 'p')
 					buf = readpng(newnode->pic, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
@@ -1145,7 +1145,7 @@ int readscreen(char *filename, int del, int flag)
 	if(filename == NULL) return 1;
 
 	buf = readfiletomem(filename, 1);
-	
+
 /*
 	if(debug_level == 9999)
 	{
@@ -1161,7 +1161,7 @@ int readscreen(char *filename, int del, int flag)
 		addscreen(buf, del, flag);
 		free(buf);
 	}
-	
+
 	return 0;
 }
 
@@ -1232,7 +1232,7 @@ void freenodecontent(struct skin* node)
 
 	free(node->font);
 	node->font = NULL;
-	
+
 	free(node->selectpic);
 	node->selectpic = NULL;
 
@@ -1468,12 +1468,12 @@ inline void drawpixel(int posx, int posy, unsigned long color)
 	skinfb->fblong[(skinfb->width * posy) + posx] = color;
 }
 
-inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color)
+extern inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color)
 {
 	node->fblong[posy + posx] = color;
 }
 
-inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color)
+extern inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color)
 {
 	node->fblong[(node->width * posy) + posx] = color;
 }
@@ -1590,11 +1590,11 @@ unsigned char *loadjpg(char *filename, unsigned long *width, unsigned long *heig
 	ciptr->scale_denom = denom;
 
 	jpeg_start_decompress(ciptr);
-	
+
 	*width = ciptr->output_width;
 	*height = ciptr->output_height;
 	*channels = ciptr->output_components;
-	*rowbytes = ciptr->output_width * ciptr->output_components;    
+	*rowbytes = ciptr->output_width * ciptr->output_components;
 
 	if(ciptr->output_components == 3)
 	{
@@ -1693,7 +1693,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 		buffer = (cinfo->mem->alloc_sarray) ((j_common_ptr) cinfo, JPOOL_IMAGE, row_stride, 1);
 	}
 	else
-		row_stride = width * colbytes; 
+		row_stride = width * colbytes;
 
 	if(accelfb != NULL && accelfb->varfbsize > width8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
@@ -1705,7 +1705,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			posy += (mheight >> 1) - (scaleheight >> 1);
 		else if(valign == BOTTOM)
 			posy += mheight - scaleheight;
-	
+
 		int nposy = posy;
 		py = -1;
 
@@ -1815,24 +1815,24 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			posy += (mheight >> 1) - (scaleheight >> 1);
 		else if(valign == BOTTOM)
 			posy += mheight - scaleheight;
-		
+
 		int i = 0;
 		int location = 0;
-		tmpbuf = (unsigned char*)malloc(width*height*3);	
+		tmpbuf = (unsigned char*)malloc(width*height*3);
 		aktline = cinfo->output_scanline;
 		while(aktline < height)
 		{
 			jpeg_read_scanlines(cinfo, buffer, 1);
 			aktline = cinfo->output_scanline;
-			for(i=0; i<width*3; i++) 
+			for(i=0; i<width*3; i++)
  				tmpbuf[location++] = buffer[0][i];
  		}
 		//extendet_scale wegen schreibfehler in alter config
 		if(getconfigint("extended_scale", NULL) == 1 || getconfigint("extendet_scale", NULL) == 1)
 			scalebuf = resize(tmpbuf, width, height, scalewidth, scaleheight, 2, NULL, 1);
-		else	
+		else
 			scalebuf = resize(tmpbuf, width, height, scalewidth, scaleheight, 1, NULL, 1);
-		
+
 		aktline = 0;
 		while(aktline < scaleheight)
 		{
@@ -1851,13 +1851,13 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 				}
 				else
 					color = (255 << 24) | (red << 16) | (red << 8) | red;
-			
+
 				drawpixelfast(posx + x, py, color);
 			}
 			aktline++;
 		}
 		free(scalebuf);
-	}	
+	}
 	else
 	{
 		if(width > mwidth) width = mwidth;
@@ -1882,7 +1882,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			}
 			else
 				aktline++;
-				
+
 			aktline1 = (aktline - 1) * row_stride;
 
 			py = (posy + aktline - 1) * skinfb->width;
@@ -2063,7 +2063,7 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 		err("%s unknown error (png_jmpbuf = NULL)", filename);
 		free(sig);
 		fclose(fd);
-		return NULL;	
+		return NULL;
 	}
 
 	ret = setjmp(png_jmpbuf(png_ptr));
@@ -2192,7 +2192,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 			calcautoscale(width, height, mwidth, mheight, &scalewidth, &scaleheight);
 		else if(scalewidth == 2 && scaleheight == 2)
 			calcautoscale(width, height, mwidth, mheight - 25, &scalewidth, &scaleheight);
-	
+
 		if(scalewidth == 0) scalewidth = width;
 		if(scaleheight == 0) scaleheight = height;
 		if(picnode == NULL)
@@ -2277,7 +2277,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 						}
 						else
 						{
-							ralpha = 255 - src[3]; 
+							ralpha = 255 - src[3];
 							alpha_composite(r, src[0], src[3], ralpha, (skinfb->fblong[x] & 0xff0000) >> 16);
 							alpha_composite(g, src[1], src[3], ralpha, (skinfb->fblong[x] & 0x00ff00) >> 8);
 							alpha_composite(b, src[2], src[3], ralpha, skinfb->fblong[x] & 0xff);
@@ -2491,7 +2491,7 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 		max = 150;
 		min = 100;
 	}
-	
+
 	red = (color & 0xff0000) >> 16;
 	green = (color & 0x00ff00) >> 8;
 	blue = color & 0xff;
@@ -2499,11 +2499,11 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 	tmpcol = color | transparent << 24;
 	posy = posy + height - sbit->top;
 	posx = posx + sbit->left + kerning.x;
-		
+
 	py = (posy * skinfb->width) + posx;
 	pyh = py + (sbit->height * skinfb->width);
 	src = sbit->buffer;
-		
+
 	for(y = py; y < pyh; y += skinfb->width)
 	{
 		pxw = y + sbit->pitch;
@@ -2516,7 +2516,7 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 					skinfb->fblong[x] = tmpcol;
 				else
 				{
-					ralpha = 255 - src[0]; 
+					ralpha = 255 - src[0];
 					alpha_composite(r, red, src[0], ralpha, (skinfb->fblong[x] & 0xff0000) >> 16);
 					alpha_composite(g, green, src[0], ralpha, (skinfb->fblong[x] & 0x00ff00) >> 8);
 					alpha_composite(b, blue, src[0], ralpha, skinfb->fblong[x] & 0xff);
@@ -2636,7 +2636,7 @@ void wrapstr(char* string, char* fontname, int fontsize, int mwidth, int charspa
 		}
 
 		if(posx > mwidth && tmpstr > origstr)
-		{	
+		{
 			tmpstr--;
 			*tmpstr = '\n';
 			posx = stringwidth;
@@ -2660,17 +2660,17 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	char* tmpstr = NULL;
 
 	if(string == NULL || color == -1) return 1;
-	
+
 	if(flag == 1)
 	{
 		string = mask(NULL, strlen(string), "*");
 		tmpstr = string;
-	}	
+	}
 
 	if(flag == 2)
 	{
 		color = convertcol(string);
-	}	
+	}
 
 	transparent = (transparent - 255) * -1;
 
@@ -2747,7 +2747,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	}
 	if(lastposx != NULL) *lastposx = posx;
 	if(lastposy != NULL) *lastposy = posy + fontsize;
-	
+
 	if(flag == 1) free(tmpstr);
 	return ret;
 }
@@ -2963,7 +2963,7 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 		g3 = (g1 * p + g2 * i) / steps;
 		b3 = (b1 * p + b2 * i) / steps;
 		col = (transparent << 24) | (r3 << 16) | (g3 << 8) | b3;
-		
+
 		r = 0;
 		for(y = posy; y < yend; y += skinfb->width)
 		{
@@ -2983,7 +2983,7 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 			xcount += xstep;
 			xend = posx + xstep;
 		}
-		else 
+		else
 		{
 			tmp = ystep * skinfb->width;
 			posy += tmp;
@@ -3001,7 +3001,7 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 			g3 = (g2 * p + g1 * i) / steps;
 			b3 = (b2 * p + b1 * i) / steps;
 			col = (transparent << 24) | (r3 << 16) | (g3 << 8) | b3;
-		
+
 			r = 0;
 			for(y = posy; y < yend; y += skinfb->width)
 			{
@@ -3014,14 +3014,14 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 				else
 					memcpy(skinfb->fb + (y + posx) * skinfb->colbytes, skinfb->fb + (posy + posx) * skinfb->colbytes, (xend - posx) * skinfb->colbytes);
 			}
-			
+
 			if(flag == LEFTMIDDLE)
 			{
 				posx += xstep;
 				xcount += xstep;
 				xend = posx + xstep;
 			}
-			else 
+			else
 			{
 				tmp = ystep * skinfb->width;
 				posy += tmp;
@@ -3112,7 +3112,7 @@ void drawmultiprogressbar(struct skin* node)
 
 	while(epgrecord != NULL)
 	{
-		
+
 		if(epgrecord->posx > 100) epgrecord->posx = 100;
 		val1 = (((node->iwidth * 100) / 100) * epgrecord->posx) / 100;
 		if(epgrecord->size > 100) epgrecord->size = 100;
@@ -3262,7 +3262,7 @@ void drawnode(struct skin* node, int flag)
 	long color = 0, color2 = 0;
 	int len = 0;
 	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
-	
+
 	node->flag = setbit(node->flag, 0);
 
 	if(node->bordersize > 0)
@@ -3506,7 +3506,7 @@ int calclistbox(struct skin* node)
 		{
 			child = child->next;
 			continue;
-		}		
+		}
 
 		calcrheight(child, node);
 
@@ -3558,7 +3558,7 @@ int calclistbox(struct skin* node)
 		found = last;
 		node->aktline = node->linecount;
 	}
-	
+
 	if(found != NULL)
 	{
 		if(node->aktline == -2) node->aktline = node->linecount;
@@ -3776,7 +3776,7 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 
 	if(node->child != NULL && status.picbordersize > 0)
 		node->bordersize = status.picbordersize;
-	
+
 	if(node->nodestyle != 0)
 	{
 		if(node->nodestyle == 2 && getconfigint("skinblinkoff", NULL) == 0)
@@ -3786,7 +3786,7 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		if(node->nodestyle == 1)
 			setblink(node);
 	}
-	
+
 	if(node->skinfunc != NULL)
 	{
 		if(node->funcrettype == FUNCPIC)
@@ -3798,7 +3798,7 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		{
 			tmpstr = node->skinfunc(node, node->param1, node->param2);
 			if(tmpstr != NULL)
-				changepic(node, tmpstr);	
+				changepic(node, tmpstr);
 		}
 		else if(node->funcrettype == FUNCPROGRESS)
 		{
@@ -3989,7 +3989,7 @@ int drawscreenalways(struct skin* node, int screencalc)
 {
 	int i, ret = 0;
 	int tmp = sizeof(status.drawallways) / sizeof(skin);
-	
+
 	m_lock(&status.oledmutex, 25);
 	for(i = 0; i < tmp; i++)
 	{
@@ -4005,7 +4005,7 @@ int drawscreenalways(struct skin* node, int screencalc)
 		}
 	}
 	m_unlock(&status.oledmutex, 25);
-	
+
 	return ret;
 }
 
@@ -4082,7 +4082,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		m_lock(&status.oledmutex, 25);
 		if(lcdskinfb == NULL) {
-#ifndef MIPSEL			
+#ifndef MIPSEL
 			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL) {
 				unsigned char *newskinfb = calloc(1, 4 * 800 * 480);
 				if(newskinfb == NULL)
@@ -4171,20 +4171,20 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, newskinfb, 4 * 320 * 240, 0);
 			}
-#else	
-			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL) 
+#else
+			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL)
 				lcdskinfb = oledaddfb(800, 480);
-			else if(node->name != NULL && ostrstr(node->name, "LCD_spf72") != NULL) 
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf72") != NULL)
 				lcdskinfb = oledaddfb(800, 480);
-			else if(node->name != NULL && ostrstr(node->name, "LCD_spf83") != NULL) 
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf83") != NULL)
 				lcdskinfb = oledaddfb(800, 600);
-			else if(node->name != NULL && ostrstr(node->name, "LCD_spf85") != NULL) 
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf85") != NULL)
 				lcdskinfb = oledaddfb(800, 600);
-			else if(node->name != NULL && ostrstr(node->name, "LCD_spf75") != NULL) 
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf75") != NULL)
 				lcdskinfb = oledaddfb(800, 480);
-			else if(node->name != NULL && ostrstr(node->name, "LCD_spf107") != NULL) 
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf107") != NULL)
 				lcdskinfb = oledaddfb(1024, 600);
-			else if(node->name != NULL && ostrstr(node->name, "LCD_spf105") != NULL) 
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf105") != NULL)
 				lcdskinfb = oledaddfb(1024, 600);
 			else
 				lcdskinfb = oledaddfb(320, 240);
@@ -4260,16 +4260,16 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(screencalc == 0)
 		{
-			if(merkskinfb != NULL) 
-			{	
-				if(node->name != NULL && ostrstr(node->name, "LCD_spf") != NULL) 
+			if(merkskinfb != NULL)
+			{
+				if(node->name != NULL && ostrstr(node->name, "LCD_spf") != NULL)
 					write_FB_to_JPEG_file(skinfb->fb, skinfb->width, skinfb->height, "/tmp/titanlcd.jpg", 75);
 				else if(node->name != NULL && ostrstr(node->name, "OLED_") != NULL)
 					write2oled(skinfb->fb, skinfb->width, skinfb->height);
-				else			
+				else
 					pngforlcd(skinfb->fb, skinfb->width, skinfb->height);
 			}
-			else	
+			else
 			{
 				status.drawscreencount++;
 				drawscreenalways(node, screencalc);
@@ -4297,7 +4297,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		else
 		{
 			debug(100, "free lcdskinfb");
-			free(skinfb->fb); skinfb->fb = NULL;  
+			free(skinfb->fb); skinfb->fb = NULL;
 			skinfb = merkskinfb;
 			merkskinfb = NULL;
 			delfb("lcdskinfb");
@@ -4642,7 +4642,7 @@ unsigned char * resize(unsigned char *origin, int ox, int oy, int dx, int dy, in
 {
 	unsigned char * cr;
 
-	if(dst == NULL) 
+	if(dst == NULL)
 	{
 		cr = (unsigned char*) malloc(dx*dy*3);
 
@@ -4651,11 +4651,11 @@ unsigned char * resize(unsigned char *origin, int ox, int oy, int dx, int dy, in
 			printf("Error: malloc\n");
 			return(origin);
 		}
-	} 
+	}
 	else
 		cr = dst;
 
-	if(type == 1) 
+	if(type == 1)
 	{
 		unsigned char *p,*l;
 		int i,j,k,ip;
@@ -4670,8 +4670,8 @@ unsigned char * resize(unsigned char *origin, int ox, int oy, int dx, int dy, in
 				memmove(l+k, p+ip, 3);
 			}
 		}
-	} 
-	else 
+	}
+	else
 	{
 		unsigned char *p,*q;
 		int i,j,k,l,ya,yb;
@@ -4683,14 +4683,14 @@ unsigned char * resize(unsigned char *origin, int ox, int oy, int dx, int dy, in
 		for(i=0;i<dx;i++)
 			xa_v[i] = i*ox/dx;
 		int xb_v[dx+1];
-		
+
 		for(i=0;i<dx;i++)
 		{
 			xb_v[i]= (i+1)*ox/dx;
 			if(xb_v[i]>=ox)
 				xb_v[i]=ox-1;
 		}
-		
+
 		for(j=0;j<dy;j++)
 		{
 			ya= j*oy/dy;
@@ -4709,10 +4709,10 @@ unsigned char * resize(unsigned char *origin, int ox, int oy, int dx, int dy, in
 			}
 		}
 	}
-	
+
 	if(flag == 1)
 		free(origin);
-	
+
 	return(cr);
 }
 
