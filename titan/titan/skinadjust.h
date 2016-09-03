@@ -496,31 +496,12 @@ start:
 				{
 					drawscreen(load, 0, 0);
 					char* cmd = NULL;
-					cmd = ostrcat(cmd, "mv -f ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
-					cmd = ostrcat(cmd, " ", 1, 0);	
-					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/skinconfig.backup", 1, 0);
-					printf("cmd: %s\n", cmd);	
-					system(cmd);
-					free(cmd); cmd = NULL;
-					writeskinconfigtmp();
-
-					cmd = ostrcat(cmd, "mv -f ", 1, 0);
+					cmd = ostrcat(cmd, "cp ", 1, 0);
 					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
 					cmd = ostrcat(cmd, " ", 1, 0);	
 					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
 					cmd = ostrcat(cmd, "/skinconfig.", 1, 0);
 					cmd = ostrcat(cmd, search, 1, 0);
-					printf("cmd: %s\n", cmd);	
-					system(cmd);
-					free(cmd); cmd = NULL;
-
-					cmd = ostrcat(cmd, "mv -f ", 1, 0);
-					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/skinconfig.backup", 1, 0);
-					cmd = ostrcat(cmd, " ", 1, 0);	
-					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
 					printf("cmd: %s\n", cmd);	
 					system(cmd);
 					free(cmd); cmd = NULL;
