@@ -64,7 +64,7 @@ void screenskinadjust()
 
 //	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 //	struct skin* pic2 = getscreennode(skinadjust, "pic2");
-	struct skin* b5 = getscreennode(skinadjust, "b5");
+	struct skin* b6 = getscreennode(skinadjust, "b6");
 
 	struct skin* tmp = NULL;
 
@@ -317,79 +317,79 @@ void screenskinadjust()
 		addscreenrc(skinadjust, tmp);
 
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "filelistselect") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol2") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bordercol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_fontcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol2") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bordercol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_fontcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "okcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "exitcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "deaktivcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol2") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebgcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "progresscol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "markcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "cpmode_bgcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "cpmode_fontcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "editmode_bgcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "editmode_fontcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_fontcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "protectmode_bgcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "protectmode_fontcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "rec_progress") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol1") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol2") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol3") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "emuaktivecol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "emurunningcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "favcol") == 0)
-			b5->hidden = NO;
+			b6->hidden = NO;
 		else
-			b5->hidden = YES;
+			b6->hidden = YES;
 
 		drawscreen(skinadjust, 0, 0);
 
@@ -437,23 +437,68 @@ void screenskinadjust()
 
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			char* cmd = NULL;
-			if(ostrcmp(getconfig("skinconfig", NULL), "/mnt/config/skinconfig") == 0)				
-				cmd = ostrcat("cp -a /etc/titan.restore/mnt/config/skinconfig ", getconfig("skinconfig", NULL), 0, 0);
-			else
+			if(textbox(_("Message"), _("Reset your Skin Settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 			{
-				cmd = ostrcat(cmd, "cp -a ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
-				cmd = ostrcat(cmd, ".default ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+				char* cmd = NULL;
+				if(ostrcmp(getconfig("skinconfig", NULL), "/mnt/config/skinconfig") == 0)				
+					cmd = ostrcat("cp -a /etc/titan.restore/mnt/config/skinconfig ", getconfig("skinconfig", NULL), 0, 0);
+				else
+				{
+					cmd = ostrcat(cmd, "cp -a ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+					cmd = ostrcat(cmd, ".default ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+				}
+				printf("cmd: %s\n", cmd);	
+				system(cmd);
+				free(cmd); cmd = NULL;
+
+				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+				oshutdown(3, 0);
 			}
-			printf("cmd: %s\n", cmd);	
-			system(cmd);
-			free(cmd); cmd = NULL;
+			break;
+		}
 
-			textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
-			oshutdown(3, 0);
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			if(textbox(_("Message"), _("Create new Skinstyle ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			{
+				char* search = NULL;
+				search = textinputhist(_("Skinstyle Name"), " ", "searchhist");
+				if(search != NULL)
+				{
+					drawscreen(load, 0, 0);
+					char* cmd = NULL;
+					cmd = ostrcat(cmd, "mv -f ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+					cmd = ostrcat(cmd, " ", 1, 0);	
+					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/skinconfig.backup", 1, 0);
+					printf("cmd: %s\n", cmd);	
+					system(cmd);
+					free(cmd); cmd = NULL;
+					writeconfigtmp();
 
+					cmd = ostrcat(cmd, "mv -f ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+					cmd = ostrcat(cmd, " ", 1, 0);	
+					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/skinconfig.", 1, 0);
+					cmd = ostrcat(cmd, ret1[i].part, 1, 0);
+					printf("cmd: %s\n", cmd);	
+					system(cmd);
+					free(cmd); cmd = NULL;
+
+					cmd = ostrcat(cmd, "mv -f ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/skinconfig.backup", 1, 0);
+					cmd = ostrcat(cmd, " ", 1, 0);	
+					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+					printf("cmd: %s\n", cmd);	
+					system(cmd);
+					free(cmd); cmd = NULL;
+				}
+			}
 			break;
 		}
 
