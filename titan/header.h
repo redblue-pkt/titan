@@ -52,7 +52,7 @@ void bcm_accel_blit(int src_addr, int src_width, int src_height, int src_stride,
 void checkgthread();
 int checkrealbox(char* box);
 int checkchipset(char* input);
-	
+
 //encoder.h
 void encoderclose(struct dvbdev* node, int fd);
 
@@ -733,8 +733,8 @@ int changemask(struct skin* node, char* text);
 int changepicmem(struct skin* node, char* text, int timeout, int del);
 int convertxmlentry(char *value, uint8_t *proz);
 unsigned char* savejpg(char* filename, int width, int height, int channels, int newwidth, int newheight, int quality, unsigned char *buf);
-inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color);
-inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color);
+extern inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color);
+extern inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color);
 unsigned char * resize(unsigned char *origin, int ox, int oy, int dx, int dy, int type, unsigned char * dst, int flag);
 
 //volume.h
