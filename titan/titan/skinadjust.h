@@ -485,7 +485,7 @@ void screenskinadjust()
 					cmd = ostrcat(cmd, " ", 1, 0);	
 					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
 					cmd = ostrcat(cmd, "/skinconfig.", 1, 0);
-					cmd = ostrcat(cmd, ret1[i].part, 1, 0);
+					cmd = ostrcat(cmd, search, 1, 0);
 					printf("cmd: %s\n", cmd);	
 					system(cmd);
 					free(cmd); cmd = NULL;
