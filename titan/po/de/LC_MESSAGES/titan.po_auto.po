@@ -7205,12 +7205,16 @@ msgstr "Pilot (für HD Empfang 'ein' auswählen)"
 msgid "Pilot:"
 msgstr ""
 
-#: tpk_description.h:124
+#: tpk_description.h:125
 msgid "Pimpert XPicons - Astra 19.2E"
 msgstr ""
 
 #: tpk_description.h:123
 msgid "Pimpert rounded XPicons - Astra 19.2E"
+msgstr ""
+
+#: tpk_description.h:124
+msgid "Pimpert rounded XPicons - Hotbird 13,0E"
 msgstr ""
 
 #: panel_settings_autostart.h:359 settings_autostart.h:510
@@ -7448,7 +7452,7 @@ msgstr "Ausschalten"
 msgid "Power Off Timer"
 msgstr "Ausschalttimer"
 
-#: tpk_description.h:125
+#: tpk_description.h:126
 msgid "Power off if box not used"
 msgstr ""
 
@@ -7614,7 +7618,7 @@ msgstr ""
 msgid "R"
 msgstr ""
 
-#: tpk_description.h:126
+#: tpk_description.h:127
 msgid "RC configuration only for UltraPlus F-9000HD"
 msgstr "RC Konfiguration nur für Ultraplus F-9000HD"
 
@@ -8378,7 +8382,7 @@ msgstr ""
 msgid "Samba Server Settings"
 msgstr "Samba Server Einstellungen"
 
-#: tpk_description.h:128
+#: tpk_description.h:129
 msgid "Samba file server"
 msgstr ""
 
@@ -8390,7 +8394,7 @@ msgstr "Einstellungen"
 msgid "Sat"
 msgstr "Sam"
 
-#: tpk_description.h:129
+#: tpk_description.h:130
 msgid "Sat Astra ORF | 08.01.2015 (Olbord)"
 msgstr ""
 
@@ -8410,39 +8414,39 @@ msgstr "Satellit/Anbieter: "
 msgid "Sat: "
 msgstr ""
 
-#: tpk_description.h:131
+#: tpk_description.h:132
 msgid "Sat: Bulldog Settings 3x Sat and UnityMedia | 24.05.2016"
 msgstr ""
 
-#: tpk_description.h:130
+#: tpk_description.h:131
 msgid "Sat: Bulldog Settings 3x Sat | 16.05.2016"
 msgstr ""
 
-#: tpk_description.h:132
+#: tpk_description.h:133
 msgid "Sat: Bulldog Settings Astra 19.2 | 16.05.2016"
 msgstr ""
 
-#: tpk_description.h:133
+#: tpk_description.h:134
 msgid "Sat: Bulldog Settings Hotbird 13.0 + Astra 19.2 | 16.05.2016"
 msgstr ""
 
-#: tpk_description.h:137
+#: tpk_description.h:138
 msgid "Sat: Ser6 Settings Eutelsat 36.0"
 msgstr ""
 
-#: tpk_description.h:134
+#: tpk_description.h:135
 msgid "Sat: default Settings Astra 19.2 | 17.07.2016"
 msgstr ""
 
-#: tpk_description.h:135
+#: tpk_description.h:136
 msgid "Sat: matze70 Astra 19.2 | 18.11.2015"
 msgstr ""
 
-#: tpk_description.h:136
+#: tpk_description.h:137
 msgid "Sat: matze70 new design Astra 19.2 | 03.06.2016"
 msgstr ""
 
-#: tpk_description.h:138
+#: tpk_description.h:139
 msgid "Sat: uljanow Sat 19.2 plus 13.0 | 14.06.2016"
 msgstr ""
 
@@ -8512,7 +8516,7 @@ msgstr "Suchlauf manuell"
 msgid "Scan Manual Config"
 msgstr "Suchlauf manuell Einstellungen"
 
-#: tpk_description.h:139
+#: tpk_description.h:140
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr "Suche und Verwaltung von CIFS/SMB, NFS und FTP Freigaben"
 
@@ -8615,7 +8619,7 @@ msgstr ""
 msgid "Screensaver Eisriesenwelt"
 msgstr ""
 
-#: tpk_description.h:140
+#: tpk_description.h:141
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
@@ -8640,7 +8644,7 @@ msgstr ""
 msgid "Screensaver HDR-Pictures"
 msgstr ""
 
-#: tpk_description.h:141
+#: tpk_description.h:142
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
@@ -8693,7 +8697,7 @@ msgstr ""
 msgid "Screensaver Travel World"
 msgstr ""
 
-#: tpk_description.h:142
+#: tpk_description.h:143
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
@@ -9169,7 +9173,7 @@ msgstr "Skin-Auswahl"
 msgid "Skin 0Acht5Zehn Multi"
 msgstr ""
 
-#: tpk_description.h:144
+#: tpk_description.h:145
 msgid "Skin 0Acht5Zehn Multi (grey/black/white) default picons"
 msgstr ""
 
@@ -9181,7 +9185,7 @@ msgstr "Skin-Einstellungen"
 msgid "Skin Cool"
 msgstr ""
 
-#: tpk_description.h:145
+#: tpk_description.h:146
 msgid "Skin Cool with MiniTv (skinadjust)"
 msgstr ""
 
@@ -9229,7 +9233,7 @@ msgstr ""
 msgid "Skin Nogfx Multi"
 msgstr ""
 
-#: tpk_description.h:146
+#: tpk_description.h:147
 msgid "Skin Nogfx Multi (black/grey) default picons"
 msgstr ""
 
@@ -9241,7 +9245,7 @@ msgstr "Skin-Auswahl"
 msgid "Skin SevenHD Multi"
 msgstr ""
 
-#: tpk_description.h:147
+#: tpk_description.h:148
 msgid "Skin SevenHD Multi (blue/black/grey/black2/red) Xpicons"
 msgstr ""
 
@@ -9249,7 +9253,7 @@ msgstr ""
 msgid "Skin SmartTV"
 msgstr ""
 
-#: tpk_description.h:148
+#: tpk_description.h:149
 msgid "Skin SmartTV for alternate picons"
 msgstr ""
 
@@ -9265,11 +9269,11 @@ msgstr ""
 msgid "Skin UFS912 style"
 msgstr ""
 
-#: tpk_description.h:150
+#: tpk_description.h:151
 msgid "Skin UFS912 style for white picons"
 msgstr ""
 
-#: tpk_description.h:149
+#: tpk_description.h:150
 msgid "Skin tobayer01 (grey/blue/black) default picons"
 msgstr ""
 
@@ -9327,7 +9331,7 @@ msgstr "Smartcard Ports gefunden"
 msgid "SmbClient (Win7)"
 msgstr ""
 
-#: tpk_description.h:151
+#: tpk_description.h:152
 msgid "Social Network Client for Facebook."
 msgstr ""
 
@@ -9641,7 +9645,7 @@ msgstr "Unterkanäle"
 msgid "Subtitle"
 msgstr "Untertitel"
 
-#: tpk_description.h:154 tpk_showname.h:190
+#: tpk_description.h:155 tpk_showname.h:190
 msgid "Sudoku"
 msgstr ""
 
@@ -9789,7 +9793,7 @@ msgstr ""
 msgid "TMDb - Plugin"
 msgstr "TMDb"
 
-#: tpk_description.h:159
+#: tpk_description.h:160
 msgid "TMDb Movie Database Plugin"
 msgstr "TMDb Filmdatenbank"
 
@@ -9883,7 +9887,7 @@ msgstr ""
 msgid "TXT PID:"
 msgstr "Txt Pid:"
 
-#: tpk_description.h:155
+#: tpk_description.h:156
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
@@ -10096,11 +10100,11 @@ msgstr "Cursor Farbe für TiThek"
 msgid "TiThek Settings"
 msgstr "TiThek Einstellungen"
 
-#: tpk_description.h:157
+#: tpk_description.h:158
 msgid "TiThek the Multimedia-thek"
 msgstr "TiThek die Online Mediathek"
 
-#: tpk_description.h:158
+#: tpk_description.h:159
 msgid ""
 "TiThek the Multimedia-thek. For UFS910/922, you must install the Network/"
 "Libpack tpk."
@@ -10250,7 +10254,7 @@ msgstr "Titan Änderungsprotokoll (extern)"
 msgid "Titan Log"
 msgstr "Titan-Protokoll"
 
-#: tpk_description.h:156 tpk_showname.h:192
+#: tpk_description.h:157 tpk_showname.h:192
 msgid "Titan MediaCenter"
 msgstr "Titan Media Center"
 
@@ -10456,47 +10460,47 @@ msgstr "Übertragung"
 msgid "Transmission:"
 msgstr "Übertragung:"
 
-#: tpk_description.h:161
+#: tpk_description.h:162
 msgid "Transparent Picons (dark Skins)"
 msgstr ""
 
-#: tpk_description.h:162
+#: tpk_description.h:163
 msgid "Transparent Picons (dark skins) - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:163
+#: tpk_description.h:164
 msgid "Transparent Picons (dark skins) - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:164
+#: tpk_description.h:165
 msgid "Transparent Picons (dark skins) - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:160
+#: tpk_description.h:161
 msgid "Transparent Picons 19_2 (dark skins)."
 msgstr ""
 
-#: tpk_description.h:166
+#: tpk_description.h:167
 msgid "Transparent XPicons - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:167
+#: tpk_description.h:168
 msgid "Transparent XPicons - Astra 23.5E"
 msgstr ""
 
-#: tpk_description.h:168
+#: tpk_description.h:169
 msgid "Transparent XPicons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:169
+#: tpk_description.h:170
 msgid "Transparent XPicons - Hotbird 13.0E"
 msgstr ""
 
-#: tpk_description.h:170
+#: tpk_description.h:171
 msgid "Transparent XPicons - small - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:165
+#: tpk_description.h:166
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
@@ -10512,15 +10516,15 @@ msgstr ""
 msgid "Transponderlist"
 msgstr "Transponderliste"
 
-#: tpk_description.h:171
+#: tpk_description.h:172
 msgid "Treiber fuer Pearl LCD V4.0"
 msgstr ""
 
-#: tpk_description.h:172
+#: tpk_description.h:173
 msgid "Treiber fuer Pearl LCD V5.0"
 msgstr ""
 
-#: tpk_description.h:173
+#: tpk_description.h:174
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
@@ -10695,7 +10699,7 @@ msgstr "Unicable Produkt"
 msgid "Unitymedia NRW"
 msgstr ""
 
-#: tpk_description.h:174
+#: tpk_description.h:175
 msgid "Unitymedia NRW | 1.8.2016 (caliban)"
 msgstr ""
 
@@ -10808,7 +10812,7 @@ msgstr "Video abspielen"
 msgid "Version"
 msgstr ""
 
-#: tpk_description.h:176
+#: tpk_description.h:177
 msgid "Version 11049 of OScam"
 msgstr ""
 
@@ -10997,7 +11001,7 @@ msgstr ""
 msgid "WM2014"
 msgstr ""
 
-#: tpk_description.h:194
+#: tpk_description.h:195
 msgid "WM2014 Plugin"
 msgstr ""
 
@@ -11091,7 +11095,7 @@ msgstr ""
 msgid "Webbrowser Netsurf"
 msgstr ""
 
-#: tpk_description.h:178
+#: tpk_description.h:179
 msgid "Webbrowser Plugin"
 msgstr ""
 
@@ -11103,7 +11107,7 @@ msgstr "Mit"
 msgid "Wednesday"
 msgstr "Mittwoch"
 
-#: tpk_description.h:179
+#: tpk_description.h:180
 msgid "Werbezapper"
 msgstr ""
 
@@ -11116,35 +11120,35 @@ msgstr ""
 msgid "Wettervorhersage"
 msgstr ""
 
-#: tpk_description.h:181
+#: tpk_description.h:182
 msgid "White 3D Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:182
+#: tpk_description.h:183
 msgid "White 3D Picons - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:183
+#: tpk_description.h:184
 msgid "White 3D Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:180
+#: tpk_description.h:181
 msgid "White 3D Picons Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:185
+#: tpk_description.h:186
 msgid "White70 Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:186
+#: tpk_description.h:187
 msgid "White70 Picons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:187
+#: tpk_description.h:188
 msgid "White70 Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:184
+#: tpk_description.h:185
 msgid "White70 Picons Astra 19.2"
 msgstr ""
 
@@ -11188,7 +11192,7 @@ msgstr ""
 msgid "Won"
 msgstr "Gewonnen"
 
-#: tpk_description.h:195
+#: tpk_description.h:196
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 "Alternativer Skin für Samsung-LCD (analoge Uhr aus Holz) - Standby-Modus"
@@ -11244,6 +11248,10 @@ msgstr ""
 
 #: tpk_showname.h:222
 msgid "XPicons Pimpert rounded (Astra 19.2E)"
+msgstr ""
+
+#: tpk_showname.h:223
+msgid "XPicons Pimpert rounded (Hotbird 13,0E)"
 msgstr ""
 
 #: plugins_xupnpd_skin.xml.h:4 skins_xupnpd_skin.xml.h:4
@@ -11313,7 +11321,7 @@ msgstr "Zurückschalten"
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
 
-#: tpk_showname.h:225
+#: tpk_showname.h:226
 msgid "Zombie"
 msgstr ""
 
@@ -12897,7 +12905,7 @@ msgstr "rot"
 msgid "redKey"
 msgstr "Rote Taste"
 
-#: tpk_description.h:127
+#: tpk_description.h:128
 msgid "remote Desktop Plugin"
 msgstr ""
 
@@ -13019,7 +13027,7 @@ msgstr "Typ"
 msgid "screensaveradjust"
 msgstr "Bildschirmschoner"
 
-#: tpk_description.h:143
+#: tpk_description.h:144
 msgid "scriptexec Plugin"
 msgstr ""
 
@@ -13301,7 +13309,7 @@ msgstr "Schritt nach Ost"
 msgid "step west"
 msgstr "Schritt nach West"
 
-#: tpk_description.h:152
+#: tpk_description.h:153
 msgid "stock Plugin"
 msgstr ""
 
@@ -13319,7 +13327,7 @@ msgstr "Abbruch durch Benutzer"
 msgid "store position"
 msgstr "Position speichern"
 
-#: tpk_description.h:153
+#: tpk_description.h:154
 msgid "streaminfo Plugin"
 msgstr ""
 
@@ -13620,7 +13628,7 @@ msgstr "Aktualisieren"
 msgid "updatelist"
 msgstr "Update Liste"
 
-#: tpk_description.h:175
+#: tpk_description.h:176
 msgid "usbreset Plugin"
 msgstr "USB-Reset"
 
@@ -13764,7 +13772,7 @@ msgstr "Warten, Download wird beendet."
 msgid "waiting"
 msgstr "warte"
 
-#: tpk_description.h:177
+#: tpk_description.h:178
 msgid "weather Plugin"
 msgstr "Wetter Plugin"
 
@@ -13796,27 +13804,27 @@ msgstr "wird vom Plugin eingestellt"
 msgid "wireless"
 msgstr "Wireless LAN"
 
-#: tpk_description.h:188
+#: tpk_description.h:189
 msgid "wireless 8192cu.ko model"
 msgstr ""
 
-#: tpk_description.h:189
+#: tpk_description.h:190
 msgid "wireless 8192du.ko model"
 msgstr ""
 
-#: tpk_description.h:190
+#: tpk_description.h:191
 msgid "wireless modul 8712u.ko"
 msgstr ""
 
-#: tpk_description.h:191
+#: tpk_description.h:192
 msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
-#: tpk_description.h:192
+#: tpk_description.h:193
 msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
-#: tpk_description.h:193
+#: tpk_description.h:194
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
@@ -13836,11 +13844,11 @@ msgstr "Schreib Puffergröße"
 msgid "x"
 msgstr ""
 
-#: tpk_showname.h:223
+#: tpk_showname.h:224
 msgid "xupnpd"
 msgstr ""
 
-#: tpk_description.h:196
+#: tpk_description.h:197
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
@@ -13942,6 +13950,6 @@ msgstr "Ja/VZAP unendlich"
 msgid "z"
 msgstr ""
 
-#: tpk_showname.h:224
+#: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
