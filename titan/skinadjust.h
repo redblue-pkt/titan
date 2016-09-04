@@ -64,7 +64,7 @@ void screenskinadjust()
 
 //	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 //	struct skin* pic2 = getscreennode(skinadjust, "pic2");
-	struct skin* b6 = getscreennode(skinadjust, "b6");
+	struct skin* b7 = getscreennode(skinadjust, "b7");
 	struct skin* load = getscreen("loading");
 
 	struct skin* tmp = NULL;
@@ -344,79 +344,79 @@ start:
 		addscreenrc(skinadjust, tmp);
 
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "filelistselect") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol2") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bordercol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_fontcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol2") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bordercol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_fontcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "okcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "exitcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "deaktivcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol2") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebgcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "progresscol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "markcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "cpmode_bgcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "cpmode_fontcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "editmode_bgcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "editmode_fontcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_fontcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "protectmode_bgcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "protectmode_fontcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "rec_progress") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol1") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol2") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol3") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "emuaktivecol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "emurunningcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "favcol") == 0)
-			b6->hidden = NO;
+			b7->hidden = NO;
 		else
-			b6->hidden = YES;
+			b7->hidden = YES;
 
 		drawscreen(skinadjust, 0, 0);
 
@@ -517,6 +517,38 @@ start:
 		}
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			if(ostrcmp(skinstyle_sel->ret, "skinconfig.default") != 0)
+			{
+				tmpstr = string_replace("skinconfig.", "", skinstyle_sel->ret, 0);
+				char* msg = ostrcat(_("Remove Skinstyle"), NULL, 0, 0);
+				msg = ostrcat(msg, " ", 1, 0);
+				msg = ostrcat(msg, tmpstr, 1, 0);
+				msg = ostrcat(msg, " ?", 1, 0);
+				free(tmpstr), tmpstr = NULL;
+				free(msg), msg = NULL;
+
+				if(textbox(_("Message"), _("Remove new Skinstyle ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+				{
+					char* cmd = NULL;
+					cmd = ostrcat(cmd, "rm ", 1, 0);
+					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, "/", 1, 0);
+					cmd = ostrcat(cmd, skinstyle_sel->ret, 1, 0);
+					printf("cmd: %s\n", cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+	
+					delskinconfigtmpall();
+					delownerrc(skinadjust);
+					clearscreen(skinadjust);
+	
+					goto start;
+				}
+			}
+		}
+
+		if(rcret == getrcconfigint("rcblue", NULL))
 		{
 			setfbtransparent(255);
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
