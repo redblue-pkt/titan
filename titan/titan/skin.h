@@ -360,8 +360,7 @@ long convertcol(char *value)
 int convertxmlentry(char *value, uint8_t *proz)
 {
 	int ret = -1;
-	char *buf = NULL, *tmpstr = NULL;
-	tmpstr = ostrcat(value, NULL, 0, 0);
+	char *buf = NULL;
 
 	if(strcasecmp(value, "left") == 0)
 		ret = LEFT;
@@ -431,33 +430,33 @@ int convertxmlentry(char *value, uint8_t *proz)
 		ret = TEXTBOTTOM;
 	else if(strcasecmp(value, "minitvsize") == 0)
 	{
-		free(tmpstr), tmpstr = NULL;
 		if(getskinconfigint("minitv", NULL) == 1)
-			tmpstr = ostrcat("100%", NULL, 0, 0);
+			value = getskinconfig("minitvsizemax", NULL);
 		else
-			tmpstr = getskinconfig(value, NULL);
-printf("11111111=%s tmpstr=%s ret=%d\n", value, tmpstr, ret);
+			value = getskinconfig(value, NULL);
 
+		if(value == NULL)
+			value = ostrcat("100%", NULL, 0, 0);
 	}
 
 	if(proz != NULL && ret == -1)
 	{
-		buf = strchr(tmpstr, '%');
-
+		buf = strchr(value, '%');
 		if(buf != NULL)
 		{
 			buf[0] = '\0';
-			ret = atoi(tmpstr);
+			ret = atoi(value);
 			*proz = 1;
 			buf[0] = '%';
 		}
 		else
-			ret = atoi(tmpstr);
+			ret = atoi(value);
 	}
-//	free(tmpstr), tmpstr = NULL;
+	printf("55555555\n");
 
 	return ret;
 }
+
 
 struct skin* checkscreen(char* screenname)
 {
@@ -3278,12 +3277,6 @@ void drawnode(struct skin* node, int flag)
 
 	node->flag = setbit(node->flag, 0);
 
-	if(node->name != NULL && ostrstr(node->name, "minitvbg") != NULL && getskinconfigint("minitv", NULL) == 1)
-	{
-		printf("hid node: %s\n", node->name );
-		node->hidden = YES;
-	}
-
 	if(node->bordersize > 0)
 	{
 		if((node->child != NULL && status.borderradius > 0) || node->borderradius > 0)
@@ -4019,6 +4012,7 @@ int drawscreenalways(struct skin* node, int screencalc)
 				if(status.drawallwaysbg[i] != NULL)
 					free(status.drawallwaysbg[i]);
 				status.drawallwaysbg[i] = savescreen(status.drawallways[i]);
+	
 				ret = drawscreen(status.drawallways[i], screencalc, 1);
 			}
 		}
@@ -4036,6 +4030,7 @@ int drawscreennode(struct skin *node, char* nodename, int screencalc)
 	if(node != status.skinerr)
 		drawnode(node, 1);
 	drawscreenalways(node, screencalc);
+
 	blitfb(0);
 	m_unlock(&status.drawingmutex, 0);
 
@@ -4269,6 +4264,10 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		}
 		else
 			parent = oldparent;
+
+		// hid minitvbg
+		if(child->name != NULL && ostrstr(child->name, "minitvbg") != NULL && getskinconfigint("minitv", NULL) == 1)
+			child->hidden = YES;
 
 		if(setnodeattr(child, parent, screencalc) == 0 && screencalc == 0)
 			drawnode(child, 1);
