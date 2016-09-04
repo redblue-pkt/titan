@@ -5950,24 +5950,25 @@ msgstr "Lista de Menus"
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
 #: skinadjust.h:467 skinadjust.h:483 skinadjust.h:491 skinadjust.h:531
-#: skinadjust.h:942 skinadjust.h:985 skinselector.h:231 sock.h:954
-#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51 solarmovie.h:63
-#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
-#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:244 system_update.h:250
-#: system_update.h:260 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:29
-#: thevideo.h:65 thevideo.h:71 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:1196 titan.c:1217 titan.c:1223
-#: titan.c:1234 titan.c:1240 tithek.c:103 tithek_global.h:96 tithek.h:711
-#: tithek.h:1273 tithek.h:1334 tithek.h:1663 tithek.h:1685 tithek.h:1934
-#: tithek.h:2094 tithek.h:2379 tithek.h:2414 tithek.h:2430 tithek.h:2442
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
-#: tpk.new.h:3167 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54
-#: vidag.h:60 vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
+#: skinadjust.h:548 skinadjust.h:944 skinadjust.h:987 skinselector.h:231
+#: sock.h:954 softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51
+#: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
+#: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
+#: streamcloud.h:103 streamcloud.h:134 streamcloud.h:193 stream.h:33
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:244
+#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:68
+#: thefile.h:205 thevideo.h:29 thevideo.h:65 thevideo.h:71 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
+#: titan.c:1196 titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240
+#: tithek.c:103 tithek_global.h:96 tithek.h:711 tithek.h:1273 tithek.h:1334
+#: tithek.h:1663 tithek.h:1685 tithek.h:1934 tithek.h:2094 tithek.h:2379
+#: tithek.h:2414 tithek.h:2430 tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
+#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
+#: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:30 vidzi.h:59 vidzi.h:65
@@ -6545,9 +6546,9 @@ msgstr "Ö"
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
 #: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:467
-#: skinadjust.h:483 skinadjust.h:491 skinadjust.h:531 skinadjust.h:942
-#: skinadjust.h:985 skins_dlna_skin.xml.h:7 skinselector.h:231
-#: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
+#: skinadjust.h:483 skinadjust.h:491 skinadjust.h:531 skinadjust.h:548
+#: skinadjust.h:944 skinadjust.h:987 skins_dlna_skin.xml.h:7
+#: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
@@ -10136,7 +10137,8 @@ msgstr ""
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
-#: kravencfg.c:212 skinadjust.h:483 skinadjust.h:942 skinadjust.h:985
+#: kravencfg.c:212 skinadjust.h:483 skinadjust.h:548 skinadjust.h:944
+#: skinadjust.h:987
 msgid "Titan will be restarted!"
 msgstr ""
 
