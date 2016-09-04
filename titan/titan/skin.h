@@ -428,6 +428,13 @@ int convertxmlentry(char *value, uint8_t *proz)
 		ret = LEFTMIDDLE;
 	else if(strcasecmp(value, "textbottom") == 0)
 		ret = TEXTBOTTOM;
+	else if(strcasecmp(value, "minitvsize") == 0)
+	{
+		if(getskinconfigint("minitv", NULL) == 1)
+			value = ostrcat("100%", NULL, 0, 0);
+		else
+			value = getskinconfig(value, NULL);
+	}
 
 	if(proz != NULL && ret == -1)
 	{
@@ -3264,6 +3271,12 @@ void drawnode(struct skin* node, int flag)
 	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
 
 	node->flag = setbit(node->flag, 0);
+
+	if(node->name != NULL && ostrstr(node->name, "minitvbg") != NULL && getskinconfigint("minitv", NULL) == 1)
+	{
+		printf("hid node: %s\n", node->name );
+		node->hidden = YES;
+	}
 
 	if(node->bordersize > 0)
 	{
