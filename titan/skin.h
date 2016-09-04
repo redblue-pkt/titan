@@ -428,10 +428,10 @@ int convertxmlentry(char *value, uint8_t *proz)
 		ret = LEFTMIDDLE;
 	else if(strcasecmp(value, "textbottom") == 0)
 		ret = TEXTBOTTOM;
-	else if(strcasecmp(value, "minitvsize") == 0)
+	else if(strcasecmp(value, "titlebar_width") == 0)
 	{
 		if(getskinconfigint("minitv", NULL) == 1)
-			value = getskinconfig("minitvsizemax", NULL);
+			value = getskinconfig("titlebar_width_max", NULL);
 		else
 			value = getskinconfig(value, NULL);
 
