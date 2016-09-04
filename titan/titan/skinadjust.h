@@ -498,10 +498,11 @@ start:
 					char* cmd = NULL;
 					cmd = ostrcat(cmd, "cp ", 1, 0);
 					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
-					cmd = ostrcat(cmd, " ", 1, 0);	
+					cmd = ostrcat(cmd, " \"", 1, 0);
 					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
 					cmd = ostrcat(cmd, "/skinconfig.", 1, 0);
 					cmd = ostrcat(cmd, search, 1, 0);
+					cmd = ostrcat(cmd, " \"", 1, 0);
 					printf("cmd: %s\n", cmd);	
 					system(cmd);
 					free(cmd); cmd = NULL;
@@ -526,15 +527,15 @@ start:
 				msg = ostrcat(msg, tmpstr, 1, 0);
 				msg = ostrcat(msg, " ?", 1, 0);
 				free(tmpstr), tmpstr = NULL;
-				free(msg), msg = NULL;
 
-				if(textbox(_("Message"), _("Remove new Skinstyle ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+				if(textbox(_("Message"), msg, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				{
 					char* cmd = NULL;
-					cmd = ostrcat(cmd, "rm ", 1, 0);
+					cmd = ostrcat(cmd, "rm \"", 1, 0);
 					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
 					cmd = ostrcat(cmd, "/", 1, 0);
 					cmd = ostrcat(cmd, skinstyle_sel->ret, 1, 0);
+					cmd = ostrcat(cmd, "\"", 1, 0);
 					printf("cmd: %s\n", cmd);
 					system(cmd);
 					free(cmd); cmd = NULL;
@@ -545,6 +546,7 @@ start:
 	
 					goto start;
 				}
+				free(msg), msg = NULL;
 			}
 		}
 
