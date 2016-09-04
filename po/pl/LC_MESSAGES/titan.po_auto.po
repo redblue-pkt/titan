@@ -5815,7 +5815,7 @@ msgstr ""
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
 #: skinadjust.h:467 skinadjust.h:483 skinadjust.h:491 skinadjust.h:531
-#: skinadjust.h:940 skinadjust.h:983 skinselector.h:231 sock.h:954
+#: skinadjust.h:942 skinadjust.h:985 skinselector.h:231 sock.h:954
 #: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51 solarmovie.h:63
 #: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
 #: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
@@ -6403,8 +6403,8 @@ msgstr ""
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
 #: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:467
-#: skinadjust.h:483 skinadjust.h:491 skinadjust.h:531 skinadjust.h:940
-#: skinadjust.h:983 skins_dlna_skin.xml.h:7 skinselector.h:231
+#: skinadjust.h:483 skinadjust.h:491 skinadjust.h:531 skinadjust.h:942
+#: skinadjust.h:985 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
@@ -7699,7 +7699,7 @@ msgstr ""
 msgid "Remove Log:"
 msgstr ""
 
-#: skinadjust.h:524
+#: skinadjust.h:525
 msgid "Remove Skinstyle"
 msgstr ""
 
@@ -7713,10 +7713,6 @@ msgstr "unuś serwis"
 
 #: channellist.h:631
 msgid "Remove mode"
-msgstr ""
-
-#: skinadjust.h:531
-msgid "Remove new Skinstyle ?"
 msgstr ""
 
 #: extensions.h:104
@@ -9946,7 +9942,7 @@ msgstr ""
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
-#: kravencfg.c:212 skinadjust.h:483 skinadjust.h:940 skinadjust.h:983
+#: kravencfg.c:212 skinadjust.h:483 skinadjust.h:942 skinadjust.h:985
 msgid "Titan will be restarted!"
 msgstr ""
 
