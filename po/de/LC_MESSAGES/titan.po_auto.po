@@ -2036,7 +2036,7 @@ msgstr "Senderliste"
 
 #: skin_default_skin.xml.h:93
 msgid "Channel List selection"
-msgstr ""
+msgstr "Senderlisten Ansicht"
 
 #: adjust.h:387
 msgid "Channel Scan"
@@ -7654,7 +7654,7 @@ msgstr "Eintrag löschen"
 
 #: skin_default_skin.xml.h:484
 msgid "REMOVE STYLE"
-msgstr ""
+msgstr "Folgenden Skin Style entfernen"
 
 #: MultiImage.c:322
 msgid "RENAME"
@@ -9289,7 +9289,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:580
 msgid "Skin Style selection"
-msgstr ""
+msgstr "Skin Style Auswahl"
 
 #: tpk_showname.h:183
 msgid "Skin Tobayer01 Multi"
