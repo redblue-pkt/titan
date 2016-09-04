@@ -212,7 +212,7 @@ void epgscanlistthread(struct stimerthread* self)
 		if(epgdelete == 0 && chnode == status.aktservice->channel)
 		{
 			debug(400, "epgscan channel same as aktchannel channel=%s sid=%d, tid=%llu", chname, node->serviceid, node->transponderid);
-			if(fd != NULL) fprintf(fd, "channel same as activ channel channel=%s sid=%d, tid=%llu\n", chname, node->serviceid, node->transponderid);
+			if(fd != NULL) fprintf(fd, "channel same as active channel channel=%s sid=%d, tid=%llu\n", chname, node->serviceid, node->transponderid);
 			node = node->next;
 			continue;
 		}
