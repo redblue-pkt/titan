@@ -168,30 +168,7 @@ start:
 				if(!ostrncmp("skinconfig.", node->text, 11))
 				{
 					tmpstr = string_replace("skinconfig.", "", node->text, 0);
-					addchoicebox(skinstyle_sel, node->text, tmpstr);
-					free(tmpstr), tmpstr = NULL;
-				}
-			}
-			node = node->next;
-		}
-		setchoiceboxselection(skinstyle_sel, getconfig("skinstyle", NULL));
-	}
-
-	if(file_exist(getconfig("skinpath", NULL)))
-	{
-		delmarkedscreennodes(skinadjust, FILELISTDELMARK);
-		changeinput(filelist, getconfig("skinpath", NULL));
-		changemask(filelist, "*");
-		createfilelist(skinadjust, filelist, 0);
-		
-		node = filelist;
-		while(node != NULL)
-		{
-			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
-			{
-				if(!ostrncmp("skinconfig.", node->text, 11))
-				{
-					tmpstr = string_replace("skinconfig.", "", node->text, 0);
+					strstrip(tmpstr);
 					addchoicebox(skinstyle_sel, node->text, tmpstr);
 					free(tmpstr), tmpstr = NULL;
 				}
