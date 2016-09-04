@@ -360,7 +360,8 @@ long convertcol(char *value)
 int convertxmlentry(char *value, uint8_t *proz)
 {
 	int ret = -1;
-	char *buf = NULL;
+	char *buf = NULL, *tmpstr = NULL;
+	tmpstr = ostrcat(value, NULL, 0, 0);
 
 	if(strcasecmp(value, "left") == 0)
 		ret = LEFT;
@@ -430,25 +431,30 @@ int convertxmlentry(char *value, uint8_t *proz)
 		ret = TEXTBOTTOM;
 	else if(strcasecmp(value, "minitvsize") == 0)
 	{
+		free(tmpstr), tmpstr = NULL;
 		if(getskinconfigint("minitv", NULL) == 1)
-			value = ostrcat("100%", NULL, 0, 0);
+			tmpstr = ostrcat("100%", NULL, 0, 0);
 		else
-			value = getskinconfig(value, NULL);
+			tmpstr = getskinconfig(value, NULL);
+printf("11111111=%s tmpstr=%s ret=%d\n", value, tmpstr, ret);
+
 	}
 
 	if(proz != NULL && ret == -1)
 	{
-		buf = strchr(value, '%');
+		buf = strchr(tmpstr, '%');
+
 		if(buf != NULL)
 		{
 			buf[0] = '\0';
-			ret = atoi(value);
+			ret = atoi(tmpstr);
 			*proz = 1;
 			buf[0] = '%';
 		}
 		else
-			ret = atoi(value);
+			ret = atoi(tmpstr);
 	}
+//	free(tmpstr), tmpstr = NULL;
 
 	return ret;
 }
