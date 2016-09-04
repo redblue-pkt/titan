@@ -430,22 +430,13 @@ int convertxmlentry(char *value, uint8_t *proz)
 		ret = TEXTBOTTOM;
 	else if(strcasecmp(value, "minitvsize") == 0)
 	{
-	printf("1111111 value=%s\n", value);
 		if(getskinconfigint("minitv", NULL) == 1)
 			value = getskinconfig("minitvsizemax", NULL);
 		else
 			value = getskinconfig(value, NULL);
 
-	printf("2222222222 value=%s\n", value);
-
 		if(value == NULL)
-		{
-//			value = "100%";
 			value = ostrcat("100%", NULL, 0, 0);
-	printf("33333333\n");
-		}
-	printf("444444 value=%s\n", value);
-
 	}
 
 	if(proz != NULL && ret == -1)
@@ -461,7 +452,6 @@ int convertxmlentry(char *value, uint8_t *proz)
 		else
 			ret = atoi(value);
 	}
-	printf("55555555\n");
 
 	return ret;
 }
