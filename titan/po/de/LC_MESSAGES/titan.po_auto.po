@@ -7655,7 +7655,7 @@ msgstr "Eintrag löschen"
 
 #: skin_default_skin.xml.h:484
 msgid "REMOVE STYLE"
-msgstr "Folgenden Skin Style entfernen"
+msgstr "Style entfernen"
 
 #: MultiImage.c:322
 msgid "RENAME"
@@ -8000,7 +8000,7 @@ msgstr "Entfernen Log:"
 
 #: skinadjust.h:525
 msgid "Remove Skinstyle"
-msgstr ""
+msgstr "Folgenden Style entfernen"
 
 #: skin_default_skin.xml.h:481
 msgid "Remove empty Bouquet"

@@ -492,6 +492,7 @@ start:
 			{
 				char* search = NULL;
 				search = textinputhist(_("Skinstyle Name"), " ", "searchhist");
+				strstrip(search);
 				if(search != NULL)
 				{
 					drawscreen(load, 0, 0);
@@ -523,9 +524,9 @@ start:
 			{
 				tmpstr = string_replace("skinconfig.", "", skinstyle_sel->ret, 0);
 				char* msg = ostrcat(_("Remove Skinstyle"), NULL, 0, 0);
-				msg = ostrcat(msg, " ", 1, 0);
+				msg = ostrcat(msg, " '", 1, 0);
 				msg = ostrcat(msg, tmpstr, 1, 0);
-				msg = ostrcat(msg, " ?", 1, 0);
+				msg = ostrcat(msg, "' ?", 1, 0);
 				free(tmpstr), tmpstr = NULL;
 
 				if(textbox(_("Message"), msg, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
