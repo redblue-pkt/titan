@@ -132,9 +132,9 @@ void epgscanlistthread(struct stimerthread* self)
 	struct channel* chnode = NULL;
 	char* tmpstr = NULL, *chname = NULL;
 	FILE* fd = NULL;
-	
+
 	debug(400, "epgscan thread start, wait for right time");
-	
+
 	//fd = fopen(EPGSCANLOG, "w");
 	//if(fd == NULL)
 	//{
@@ -166,7 +166,7 @@ void epgscanlistthread(struct stimerthread* self)
 	}
 	else
 		fprintf(fd, "epgscan thread start, wait for right time\n");
-	
+
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
@@ -189,17 +189,17 @@ void epgscanlistthread(struct stimerthread* self)
 
 	while(node != NULL && self->aktion != STOP)
 	{
-		
+
 		//wait for end recording
 		while(self->aktion != STOP && (status.recording > 0 || status.timeshift > 0))
 			usleep(1 * 1000000);
-		if(self->aktion == STOP) break;  
-		
+		if(self->aktion == STOP) break;
+
 		chnode = getchannel(node->serviceid, node->transponderid);
 		if(chnode == NULL)
 		{
 			debug(400, "epgscan channel not found sid=%d, tid=%llu", node->serviceid, node->transponderid);
-			if(fd != NULL) fprintf(fd, "epgscan channel not found sid=%d, tid=%llu\n", node->serviceid, node->transponderid);
+			if(fd != NULL) fprintf(fd, "channel not found sid=%d, tid=%llu\n", node->serviceid, node->transponderid);
 			node = node->next;
 			continue;
 		}
@@ -212,7 +212,7 @@ void epgscanlistthread(struct stimerthread* self)
 		if(epgdelete == 0 && chnode == status.aktservice->channel)
 		{
 			debug(400, "epgscan channel same as aktchannel channel=%s sid=%d, tid=%llu", chname, node->serviceid, node->transponderid);
-			if(fd != NULL) fprintf(fd, "epgscan channel same as aktchannel channel=%s sid=%d, tid=%llu\n", chname, node->serviceid, node->transponderid);
+			if(fd != NULL) fprintf(fd, "channel same as activ channel channel=%s sid=%d, tid=%llu\n", chname, node->serviceid, node->transponderid);
 			node = node->next;
 			continue;
 		}
@@ -221,7 +221,7 @@ void epgscanlistthread(struct stimerthread* self)
 		if(tmpepgscannode != NULL && tmpepgscannode->scantime != 0)
 		{
 			debug(400, "epgscan transponer already scanned channel=%s tid=%llu", chname, node->transponderid);
-			if(fd != NULL) fprintf(fd, "epgscan transponer already scanned channel=%s tid=%llu\n", chname, node->transponderid);
+			if(fd != NULL) fprintf(fd, "transponder already scanned channel=%s tid=%llu\n", chname, node->transponderid);
 			node = node->next;
 			continue;
 		}
@@ -233,7 +233,7 @@ void epgscanlistthread(struct stimerthread* self)
 		if(fenode == NULL || (status.standby == 0 && fenode == status.aktservice->fedev))
 		{
 			debug(400, "epgscan no free frontend found channel=%s", chname);
-			if(fd != NULL) fprintf(fd, "epgscan no free frontend found channel=%s\n", chname);
+			if(fd != NULL) fprintf(fd, "no free frontend found channel=%s\n", chname);
 			node = node->next;
 			continue;
 		}
@@ -253,7 +253,7 @@ void epgscanlistthread(struct stimerthread* self)
 			else
 			{
 				debug(400, "epgscan unknown frontend channel=%s", chname);
-				if(fd != NULL) fprintf(fd, "epgscan unknown frontend channel=%s\n", chname);
+				if(fd != NULL) fprintf(fd, "unknown frontend channel=%s\n", chname);
 				node = node->next;
 				continue;
 			}
@@ -262,13 +262,13 @@ void epgscanlistthread(struct stimerthread* self)
 			if(festatus != 0)
 			{
 				debug(400, "epgscan frontend tune failed channel=%s", chname);
-				if(fd != NULL) fprintf(fd, "epgscan frontend tune failed channel=%s\n", chname);
+				if(fd != NULL) fprintf(fd, "frontend tune failed channel=%s\n", chname);
 				node = node->next;
 				continue;
 			}
 
 			debug(400, "epgscan scanning channel=%s, sid=%d, tid=%llu, frontend=%s", chname, chnode->serviceid, chnode->transponderid, fenode->feshortname);
-			if(fd != NULL) fprintf(fd, "epgscan scanning channel=%s, sid=%d, tid=%llu, frontend=%s\n", chname, chnode->serviceid, chnode->transponderid, fenode->feshortname);
+			if(fd != NULL) fprintf(fd, "scanning channel=%s, sid=%d, tid=%llu, frontend=%s\n", chname, chnode->serviceid, chnode->transponderid, fenode->feshortname);
 
 			if(chnode->transponder != NULL) chnode->transponder->lastepg = 0;
 			readeit(self, chnode, fenode, 1);
@@ -283,18 +283,18 @@ void epgscanlistthread(struct stimerthread* self)
 		else
 		{
 			debug(400, "epgscan frontend locked channel=%s frontend=%s", chname, fenode->feshortname);
-			if(fd != NULL) fprintf(fd, "epgscan frontend locked channel=%s frontend=%s\n", chname, fenode->feshortname);
+			if(fd != NULL) fprintf(fd, "frontend locked channel=%s frontend=%s\n", chname, fenode->feshortname);
 		}
 
 		node = node->next;
 	}
-	
+
 	//write only epg
 	writeallconfig(2);
 
 end:
 	epgscanlistclearscantime();
-	
+
 	if(fd != NULL)
 	{
 		fprintf(fd, "epgscan thread end\n");
@@ -508,7 +508,7 @@ int writeepgscanlist(const char *filename)
 		ret = fprintf(fd, "%d#%llu\n", node->serviceid, node->transponderid);
 		if(ret < 0)
 		{
-			perr("writting file %s", filename);
+			perr("writing file %s", filename);
 		}
 		node = node->next;
 	}
