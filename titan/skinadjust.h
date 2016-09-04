@@ -540,11 +540,13 @@ start:
 					system(cmd);
 					free(cmd); cmd = NULL;
 	
-					delskinconfigtmpall();
-					delownerrc(skinadjust);
-					clearscreen(skinadjust);
+//					delskinconfigtmpall();
+//					delownerrc(skinadjust);
+//					clearscreen(skinadjust);
 	
-					goto start;
+//					goto start;
+					textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+					oshutdown(3, 0);
 				}
 				free(msg), msg = NULL;
 			}
