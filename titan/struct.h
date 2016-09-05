@@ -116,7 +116,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "Wed Aug 10 10:12:41 CEST 2016"
+#define DRIVER " -   - "
 #define OVERSION "1.77"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
@@ -1625,6 +1625,15 @@ struct status
 	int certchecked;
 	int certok;
 	int liveslot;
+	// dynamic default skin infobar
+	int getepgaktstart;
+	int getepgaktend;
+	int getepgakttitle;
+	int getepgakttimeremaining;
+	int getepgnextstart;
+	int getepgnextend;
+	int getepgnexttitle;
+	int getepgnexttimeremaining;
 } status;
 
 struct fb
