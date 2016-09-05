@@ -16,7 +16,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf72 posx=0 posy=0 width=800 height=480 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=15 posy=15 width=770 height=80 fontcol=fontcol/>
-<node func=getpicon posx=350 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=center posy=175 width=780 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R - " posx="50" posy="210" width="150" height="30">
 <node func="getepgaktend" param1="%R" posx="50" posy="265" width="150" height="30">
@@ -28,7 +28,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf72_Wetter posx=0 posy=0 width=800 height=480 bgcol=000000>
 <node fontsize=50 halign=center text="" func=getaktchannelname name=channelname posx=10 posy=20 width=690 height=100 fontcol=fontcol/>
-<node func=getpicon posx=300 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=5 posy=175 width=695 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R - " posx="5" posy="215" width="150" height="30">
 <node func="getepgaktend" param1="%R" posx="5" posy="265" width="150" height="30">
@@ -82,7 +82,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf75 posx=0 posy=0 width=800 height=480 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=15 posy=15 width=770 height=80 fontcol=fontcol/>
-<node func=getpicon posx=350 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=center posy=175 width=780 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R - " posx="50" posy="210" width="150" height="30">
 <node func="getepgaktend" param1="%R" posx="50" posy="265" width="150" height="30">
@@ -94,7 +94,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf75_Wetter posx=0 posy=0 width=800 height=480 bgcol=000000>
 <node fontsize=50 halign=center text="" func=getaktchannelname name=channelname posx=10 posy=20 width=690 height=100 fontcol=fontcol/>
-<node func=getpicon posx=300 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=5 posy=175 width=695 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R - " posx="5" posy="215" width="150" height="30">
 <node func="getepgaktend" param1="%R" posx="5" posy="265" width="150" height="30">
@@ -148,7 +148,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf83 posx=0 posy=0 width=800 height=600 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=15 posy=15 width=770 height=80 fontcol=fontcol/>
-<node func=getpicon posx=350 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=center posy=175 width=780 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R - " posx="50" posy="210" width="150" height="30">
 <node func="getepgaktend" param1="%R" posx="50" posy="265" width="150" height="30">
@@ -160,7 +160,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf83_Wetter posx=0 posy=0 width=800 height=600 bgcol=000000>
 <node fontsize=50 halign=center text="" func=getaktchannelname name=channelname posx=10 posy=20 width=690 height=100 fontcol=fontcol/>
-<node func=getpicon posx=300 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=5 posy=175 width=695 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R - " posx="5" posy="215" width="150" height="30">
 <node func="getepgaktend" param1="%R" posx="5" posy="265" width="150" height="30">
@@ -214,7 +214,8 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf85 posx=0 posy=0 width=800 height=600 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=15 posy=15 width=770 height=80 fontcol=fontcol/>
-<node func=getpicon posx=350 posy=100 width=100 height=60/>
+#<node func=getpicon posx=350 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=center posy=175 width=780 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R - " posx="50" posy="210" width="150" height="30">
 <node func="getepgaktend" param1="%R" posx="50" posy="265" width="150" height="30">
@@ -226,7 +227,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf85_Wetter posx=0 posy=0 width=800 height=600 bgcol=000000>
 <node fontsize=50 halign=center text="" func=getaktchannelname name=channelname posx=10 posy=20 width=690 height=100 fontcol=fontcol/>
-<node func=getpicon posx=300 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=5 posy=175 width=695 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R - " posx="5" posy="215" width="150" height="30">
 <node func="getepgaktend" param1="%R" posx="5" posy="265" width="150" height="30">
@@ -292,7 +293,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf87 posx=0 posy=0 width=800 height=480 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=15 posy=10 width=770 height=80 fontcol=fontcol/>
-<node func=getpicon posx=350 posy=90 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=center posy=150 width=780 height=35 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R  " posx="50" posy="200" width="150" height="20" halign=left fontsize=20>
 <node func="getepgaktend" param1="%R" posx="600" posy="200" width="150" height="20" halign=right fontsize=20>
@@ -307,7 +308,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf87_Wetter posx=0 posy=0 width=800 height=480 bgcol=000000>
 <node fontsize=70 halign=center text="" func=getaktchannelname name=channelname posx=10 posy=10 width=690 height=70 fontcol=fontcol/>
-<node func=getpicon posx=300 posy=80 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=5 posy=140 width=695 height=50 fontcol=fontcol/>
 <node func="getepgaktstart" param1="%R " posx="5" posy="205" width="150" height="20" halign=left fontsize=20>
 <node func="getepgaktend" param1="%R" posx="540" posy="205" width="150" height="20" halign=right fontsize=20>
@@ -368,7 +369,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf105 posx=0 posy=0 width=1024 height=600 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=15 posy=15 width=770 height=80 fontcol=fontcol/>
-<node func=getpicon posx=350 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=center posy=175 width=780 height=50 fontcol=fontcol/>
 <node halign=center bordersize=2 progresscol=CD661D bgcol=white halign=left func=getepgakttimeline bordercol=CD661D borderradius=5 name=epgline posy=230 posx=center width=700 height=20/>
 <node halign=center text="" name=akttime fontsize=100 posx=center posy=275 width=700 height=100/>
@@ -377,7 +378,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf105_Wetter posx=0 posy=0 width=1024 height=600 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=10 posy=15 width=690 height=80 fontcol=fontcol/>
-<node func=getpicon posx=300 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=5 posy=175 width=695 height=50 fontcol=fontcol/>
 <node halign=center bordersize=2 progresscol=CD661D bgcol=white halign=left func=getepgakttimeline bordercol=CD661D borderradius=5 name=epgline posy=230 posx=5 width=695 height=20/>
 <node halign=center text=" " name=akttime fontsize=100 posx=5 posy=275 width=695 height=100/>
@@ -428,7 +429,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf107 posx=0 posy=0 width=1024 height=600 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=15 posy=15 width=770 height=80 fontcol=fontcol/>
-<node func=getpicon posx=350 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=center posy=175 width=780 height=50 fontcol=fontcol/>
 <node halign=center bordersize=2 progresscol=CD661D bgcol=white halign=left func=getepgakttimeline bordercol=CD661D borderradius=5 name=epgline posy=230 posx=center width=700 height=20/>
 <node halign=center text="" name=akttime fontsize=100 posx=center posy=275 width=700 height=100/>
@@ -437,7 +438,7 @@
 
 <screen halign=center fontcol=fontcol fontsize=30 name=LCD_spf107_Wetter posx=0 posy=0 width=1024 height=600 bgcol=000000>
 <node fontsize=80 halign=center text="" func=getaktchannelname name=channelname posx=10 posy=15 width=690 height=80 fontcol=fontcol/>
-<node func=getpicon posx=300 posy=100 width=100 height=60/>
+<node func=getpicon posx=300 posy=100 width=100 height=60 picwidth=1 picheight=1/>
 <node halign=center func=getepgakttitle bordersize=0 bordercol=bordercol fontsize=35 posx=5 posy=175 width=695 height=50 fontcol=fontcol/>
 <node halign=center bordersize=2 progresscol=CD661D bgcol=white halign=left func=getepgakttimeline bordercol=CD661D borderradius=5 name=epgline posy=230 posx=5 width=695 height=20/>
 <node halign=center text=" " name=akttime fontsize=100 posx=5 posy=275 width=695 height=100/>
