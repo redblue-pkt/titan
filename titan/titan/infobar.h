@@ -29,6 +29,29 @@ void screeninfobar()
 	struct skin* infobar = infobar1;
 	struct skin* infobarm = infobar1;
 
+// dynamic default skin infobar start
+	struct skin* infobar1_bottombar = getscreennode(infobar1, "bottombar");
+	status.getepgaktstart = 0;
+	status.getepgaktend = 0;
+	status.getepgakttitle = 0;
+	status.getepgakttimeremaining = 0;
+	status.getepgnextstart = 0;
+	status.getepgnextend = 0;
+	status.getepgnexttitle = 0;
+	status.getepgnexttimeremaining = 0;
+
+	if(status.fontsizeadjust > 0)
+	{
+		infobar1->height += (status.fontsizeadjust * 2);
+		infobar1->posy -= (status.fontsizeadjust * 2);
+		infobar1_bottombar->posy += (status.fontsizeadjust * 2);
+
+//		infobar2->height += (status.fontsizeadjust * 2);
+//		infobar2->posy -= (status.fontsizeadjust * 4);
+		infobar2->posy -= (status.fontsizeadjust * 2);
+	}
+// dynamic default skin infobar end
+
 	struct skin* standbymenu = NULL;
 	char* tmpstr = NULL; char* tmpnr = NULL;
 	struct skin* pluginnode = NULL;

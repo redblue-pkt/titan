@@ -799,6 +799,52 @@ char* getepgtime(struct skin* node, char* format, int akt, int type)
 	if(akt == 0) chnode = status.markedchannel;
 	if(akt == 1 || akt == 2) chnode = status.aktservice->channel;
 
+// dynamic default skin infobar start
+	if(status.fontsizeadjust > 0 && status.getepgaktstart == 0 && ostrcmp(node->name, "infobar_getepgaktstart") == 0)
+	{
+		status.getepgaktstart++;
+		node->height += status.fontsizeadjust;
+		node->width += (status.fontsizeadjust * 2);
+	}
+	else if(status.fontsizeadjust > 0 && status.getepgnextstart == 0 && ostrcmp(node->name, "infobar_getepgnextstart") == 0)
+	{
+		status.getepgnextstart++;
+		node->height += status.fontsizeadjust;
+		node->posy += status.fontsizeadjust;
+		node->width += (status.fontsizeadjust * 2);
+	}
+	else if(status.fontsizeadjust > 0 && status.getepgaktend == 0 && ostrcmp(node->name, "infobar_getepgaktend") == 0)
+	{
+		status.getepgaktend++;
+		node->height += status.fontsizeadjust;
+		node->posx += (status.fontsizeadjust * 2.4);
+		node->width += (status.fontsizeadjust * 2);
+	}
+	else if(status.fontsizeadjust > 0 && status.getepgnextend == 0 && ostrcmp(node->name, "infobar_getepgnextend") == 0)
+	{
+		status.getepgnextend++;
+		node->height += status.fontsizeadjust;
+		node->posx += (status.fontsizeadjust * 2.4);
+		node->posy += status.fontsizeadjust;
+		node->width += (status.fontsizeadjust * 2);
+	}
+	else if(status.fontsizeadjust > 0 && status.getepgakttimeremaining == 0 && ostrcmp(node->name, "infobar_getepgakttimeremaining") == 0)
+	{
+		status.getepgakttimeremaining++;
+		node->height += status.fontsizeadjust;
+		node->posx -= (status.fontsizeadjust * 4);
+		node->width += (status.fontsizeadjust * 4);
+	}
+	else if(status.fontsizeadjust > 0 && status.getepgnexttimeremaining == 0 && ostrcmp(node->name, "infobar_getepgnexttimeremaining") == 0)
+	{
+		status.getepgnexttimeremaining++;
+		node->height += status.fontsizeadjust;
+		node->posx -= (status.fontsizeadjust * 4);
+		node->posy += status.fontsizeadjust;
+		node->width += (status.fontsizeadjust * 4);
+	}
+// dynamic default skin infobar end
+
 	if(chnode != NULL)
 	{
 		epgnode = getepgakt(chnode);
@@ -907,6 +953,17 @@ char* getepgakttitle(struct skin* node)
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL;
 
+// dynamic default skin infobar start
+	if(status.fontsizeadjust > 0 && status.getepgakttitle == 0 && ostrcmp(node->name,"infobar_getepgakttitle") == 0)
+	{
+		status.getepgakttitle++;
+		node->height += status.fontsizeadjust;
+		node->posx += (status.fontsizeadjust * 4.8);
+		node->width -= (status.fontsizeadjust * 6);
+		printf("set fontsize on name=%s\n", node->name);
+	}
+// dynamic default skin infobar end
+		
 	if(status.aktservice->type == HDMIIN)
 	{
 		tmpstr = ostrcat(tmpstr, "HDMI-in", 1, 0);
@@ -927,6 +984,18 @@ char* getepgnexttitle(struct skin* node)
 {
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL;
+
+// dynamic default skin infobar start
+	if(status.fontsizeadjust > 0 && status.getepgnexttitle == 0 && ostrcmp(node->name,"infobar_getepgnexttitle") == 0)
+	{
+		status.getepgnexttitle++;
+		node->height += status.fontsizeadjust;
+		node->posx += (status.fontsizeadjust * 4.8);
+		node->posy += status.fontsizeadjust;
+		node->width -= (status.fontsizeadjust * 6);
+		printf("set fontsize on name=%s\n", node->name);
+	}
+// dynamic default skin infobar end
 
 	epgnode = getepgakt(status.aktservice->channel);
 	if(epgnode != NULL)
