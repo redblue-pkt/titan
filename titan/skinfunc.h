@@ -1165,6 +1165,30 @@ char* getalternatepicon(struct skin* node)
 	return tmpstr;
 }
 
+char* getallpicon(struct skin* node, char* firstpath)
+{
+	char* tmpstr = NULL;
+	int p1 = 0;
+	int p2 = 1;
+	
+	if(firstpath != NULL)
+	{
+		if(ostrcmp("alternate", firstpath) == 0)
+		{
+			p1 = 1;
+			p2 = 0;
+		}
+	}
+	
+	tmpstr = createpiconpath(status.aktservice->channel, p1);
+	if(ostrstr(tmpstr, "defpicon.png") != NULL)
+	{
+		free(tmpstr); tmpstr=NULL;
+		tmpstr = createpiconpath(status.aktservice->channel, p2);
+	}
+	return tmpstr;
+}
+
 char* gettime(struct skin* node, char* format)
 {
 	time_t sec;
