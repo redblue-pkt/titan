@@ -137,6 +137,9 @@ void fillmenubox()
 
 	delmarkedscreennodes(screen, 1);
 
+	int height = 22;
+	height += status.fontsizeadjust;
+					
 	for(i = 0; i < LISTHASHSIZE; i++)
 	{
 		elist = emulist[i];
@@ -150,7 +153,7 @@ void fillmenubox()
 				{
 					changetext(node, _(elist->key));
 					changename(node, elist->value);
-					node->height = 22;
+					node->height = height;
 	
 					// change font color, depending emu is running/active
 					if(ostrstr(node->text, "active") != 0)
