@@ -1129,7 +1129,15 @@ char* getepgalternatepicon(struct skin* node)
 	char* tmpstr = NULL;
 	
 	if(status.epgchannel != NULL)
+	{
 		tmpstr = createpiconpath(status.epgchannel, 1);
+		if(ostrstr(tmpstr, "defpicon.png") != NULL)
+		{
+			free(tmpstr); tmpstr=NULL;
+			tmpstr = createpiconpath(status.epgchannel, 0);
+		}
+	}
+	
 	return tmpstr;
 }
 
@@ -1147,7 +1155,15 @@ char* getmarkedalternatepicon(struct skin* node)
 	char* tmpstr = NULL;
 	
 	if(status.markedchannel != NULL)
+	{
 		tmpstr = createpiconpath(status.markedchannel, 1);
+		if(ostrstr(tmpstr, "defpicon.png") != NULL)
+		{
+			free(tmpstr); tmpstr=NULL;
+			tmpstr = createpiconpath(status.markedchannel, 0);
+		}
+	}	
+	
 	return tmpstr;
 }
 
@@ -1162,6 +1178,11 @@ char* getalternatepicon(struct skin* node)
 {
 	char* tmpstr = NULL;
 	tmpstr = createpiconpath(status.aktservice->channel, 1);
+	if(ostrstr(tmpstr, "defpicon.png") != NULL)
+	{
+		free(tmpstr); tmpstr=NULL;
+		tmpstr = createpiconpath(status.aktservice->channel, 0);
+	}
 	return tmpstr;
 }
 
