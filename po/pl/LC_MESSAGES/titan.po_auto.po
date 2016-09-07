@@ -724,7 +724,7 @@ msgstr "opcje:"
 msgid "Action Man Italic"
 msgstr ""
 
-#: skin_default_skin.xml.h:11 softcam.h:294
+#: skin_default_skin.xml.h:11 softcam.h:297
 msgid "Activate"
 msgstr "Aktywuj"
 
@@ -2603,7 +2603,7 @@ msgstr "Dzień"
 msgid "Day: "
 msgstr ""
 
-#: skin_default_skin.xml.h:133 softcam.h:291
+#: skin_default_skin.xml.h:133 softcam.h:294
 msgid "Deactivate"
 msgstr "Deaktywuj"
 
@@ -3192,7 +3192,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:10 skins_rgui_skin.xml.h:1
 #: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
 #: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
-#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51 solarmovie.h:63
+#: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
 #: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
 #: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
 #: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
@@ -5101,7 +5101,7 @@ msgstr ""
 msgid "Keyboard"
 msgstr ""
 
-#: softcam.h:458
+#: softcam.h:461
 msgid "Keys Updated !"
 msgstr "Updated !"
 
@@ -5816,7 +5816,7 @@ msgstr ""
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
 #: skinadjust.h:443 skinadjust.h:459 skinadjust.h:467 skinadjust.h:508
 #: skinadjust.h:525 skinadjust.h:921 skinadjust.h:964 skinselector.h:231
-#: sock.h:954 softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:51
+#: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
 #: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
 #: streamcloud.h:103 streamcloud.h:134 streamcloud.h:193 stream.h:33
@@ -6409,8 +6409,8 @@ msgstr ""
 #: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
-#: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
+#: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:414 softcam.h:477
+#: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
@@ -7452,7 +7452,7 @@ msgstr ""
 msgid "Reader Config"
 msgstr "Konfiguracja Beta"
 
-#: softcam.h:411
+#: softcam.h:414
 msgid "Reader Config Plugin not installed !"
 msgstr ""
 
@@ -7653,7 +7653,7 @@ msgid "Reduce Standby frequency"
 msgstr "Częśtotliwość testowa"
 
 #: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:476
-#: skins_wm2014_skin.xml.h:12 softcam.h:293
+#: skins_wm2014_skin.xml.h:12 softcam.h:296
 msgid "Refresh"
 msgstr "Odświerz"
 
@@ -7796,8 +7796,8 @@ msgstr "Ustawienia rozdzielczości obrazu"
 msgid "Resolution:"
 msgstr ""
 
-#: adjust.h:112 httpdfunc.h:4074 skin_default_skin.xml.h:496 softcam.h:292
-#: softcam.h:460 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
+#: adjust.h:112 httpdfunc.h:4074 skin_default_skin.xml.h:496 softcam.h:295
+#: softcam.h:463 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
 #: webif_index.atemio-nemesis.h:5 webif_index.dm7020hd.h:5
@@ -9068,7 +9068,7 @@ msgstr "Panel EMU"
 msgid "Softcam Selection"
 msgstr ""
 
-#: softcam.h:290
+#: softcam.h:293
 msgid "Softcam selection:"
 msgstr "Wybór EMU"
 
