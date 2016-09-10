@@ -82,7 +82,7 @@ start:
 
 	changeinput(osdtransparent, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70");
 	setchoiceboxselection(osdtransparent, getskinconfig("osdtransparent", NULL));
-	
+
 	addchoicebox(blinkoff, "0", _("on"));
 	addchoicebox(blinkoff, "1", _("off"));
 	setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
@@ -113,7 +113,7 @@ start:
 	setchoiceboxselection(bottomoffset, getconfig("fbbottomoffset", NULL));
 #endif
 	oleftoffset = getconfigint("fbleftoffset", NULL);
-	orightoffset = getconfigint("fbrightoffset", NULL); 
+	orightoffset = getconfigint("fbrightoffset", NULL);
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
 
@@ -159,7 +159,7 @@ start:
 		changeinput(filelist, getconfig("skinpath", NULL));
 		changemask(filelist, "*");
 		createfilelist(skinadjust, filelist, 0);
-		
+
 		node = filelist;
 		while(node != NULL)
 		{
@@ -298,7 +298,7 @@ start:
 		emurunningcol->hidden = YES;
 		favcol->hidden = YES;
 	}
-	
+
 	if(status.security == 0 || checkemu() == 0)
 	{
 		emuaktivecol->hidden = YES;
@@ -400,7 +400,7 @@ start:
 		tmp = listbox->select;
 
 		addconfigscreencheck("fbleftoffset", leftoffset, "0");
-		if(status.leftoffset != getconfigint("fbleftoffset", NULL)) offsetchange = 1; 
+		if(status.leftoffset != getconfigint("fbleftoffset", NULL)) offsetchange = 1;
 		status.leftoffset = getconfigint("fbleftoffset", NULL);
 
 		addconfigscreencheck("fbrightoffset", rightoffset, "0");
@@ -443,7 +443,7 @@ start:
 			if(textbox(_("Message"), _("Reset your Skin Settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 			{
 				char* cmd = NULL;
-				if(ostrcmp(getconfig("skinconfig", NULL), "/mnt/config/skinconfig") == 0)				
+				if(ostrcmp(getconfig("skinconfig", NULL), "/mnt/config/skinconfig") == 0)
 					cmd = ostrcat("cp -a /etc/titan.restore/mnt/config/skinconfig ", getconfig("skinconfig", NULL), 0, 0);
 				else
 				{
@@ -452,7 +452,7 @@ start:
 					cmd = ostrcat(cmd, ".default ", 1, 0);
 					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
 				}
-				printf("cmd: %s\n", cmd);	
+				printf("cmd: %s\n", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
 
@@ -477,13 +477,13 @@ start:
 					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
 					cmd = ostrcat(cmd, " \"", 1, 0);
 					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/skinconfig.", 1, 0);
+					cmd = ostrcat(cmd, "/skinconfig.user.", 1, 0);
 					cmd = ostrcat(cmd, search, 1, 0);
 					cmd = ostrcat(cmd, "\"", 1, 0);
-					printf("cmd: %s\n", cmd);	
+					printf("cmd: %s\n", cmd);
 					system(cmd);
 					free(cmd); cmd = NULL;
-					
+
 					delskinconfigtmpall();
 					delownerrc(skinadjust);
 					clearscreen(skinadjust);
@@ -498,7 +498,7 @@ start:
 		{
 			if(ostrcmp(skinstyle_sel->ret, "skinconfig.default") != 0)
 			{
-				tmpstr = string_replace("skinconfig.", "", skinstyle_sel->ret, 0);
+				tmpstr = string_replace("skinconfig.user.", "", skinstyle_sel->ret, 0);
 				char* msg = ostrcat(_("Remove Skinstyle"), NULL, 0, 0);
 				msg = ostrcat(msg, " '", 1, 0);
 				msg = ostrcat(msg, tmpstr, 1, 0);
@@ -516,11 +516,11 @@ start:
 					printf("cmd: %s\n", cmd);
 					system(cmd);
 					free(cmd); cmd = NULL;
-	
+
 //					delskinconfigtmpall();
 //					delownerrc(skinadjust);
 //					clearscreen(skinadjust);
-	
+
 //					goto start;
 					textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					oshutdown(3, 0);
@@ -840,7 +840,7 @@ start:
 					addskinconfigtmp("epgcol1", tmpstr);
 				if(oldepgcol1 != convertcol("epgcol1")) reboot = 1;
 				epgcol1->fontcol2 = convertcol(tmpstr);
-			}						
+			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol2") == 0)
 			{
@@ -912,9 +912,9 @@ start:
 				cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
 				cmd = ostrcat(cmd, "/", 1, 0);
 				cmd = ostrcat(cmd, skinstyle_sel->ret, 1, 0);
-				cmd = ostrcat(cmd, " ", 1, 0);	
+				cmd = ostrcat(cmd, " ", 1, 0);
 				cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
-				printf("cmd: %s\n", cmd);	
+				printf("cmd: %s\n", cmd);
 				system(cmd);
 				free(cmd); cmd = NULL;
 
