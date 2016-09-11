@@ -154,7 +154,7 @@ start:
 	setchoiceboxselection(channellist_sel, getskinconfig("channellist_selection", NULL));
 
 	char* skinpath = NULL;
-	if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") != 0)
+	if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") == 0)
 		skinpath = ostrcat("/mnt/config", NULL, 0, 0);
 	else
 		skinpath = ostrcat(getconfig("skinpath", NULL), NULL, 0, 0);
