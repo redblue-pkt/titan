@@ -193,8 +193,8 @@ void screencaidlock(struct dvbdev* dvbnode)
 				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				addchoicebox(tmp, "0", _("Active"));
-				addchoicebox(tmp, "1", _("Inactive"));
+				addchoicebox(tmp, "0", _("used"));
+				addchoicebox(tmp, "1", _("locked"));
 				if(ostrstr(lockcaids, ret[i].part) != NULL)
 					setchoiceboxselection(tmp, "1");
 				else
