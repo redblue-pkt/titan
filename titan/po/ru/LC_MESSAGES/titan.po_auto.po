@@ -745,10 +745,6 @@ msgstr "Активировать (Автостарт)"
 msgid "Activate CEC"
 msgstr "Активировать HDMI-CEC"
 
-#: moduleconfig.h:196
-msgid "Active"
-msgstr ""
-
 #: skin_default_skin.xml.h:14
 msgid "Actors"
 msgstr "Актёры"
@@ -4843,10 +4839,6 @@ msgstr ""
 
 #: global.h:6681
 msgid "Import mode"
-msgstr ""
-
-#: moduleconfig.h:197
-msgid "Inactive"
 msgstr ""
 
 #: skin_default_skin.xml.h:310
@@ -12078,6 +12070,10 @@ msgstr ""
 msgid "localname"
 msgstr "Имя"
 
+#: moduleconfig.h:197
+msgid "locked"
+msgstr ""
+
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
 msgstr ""
@@ -13447,6 +13443,10 @@ msgstr "Использовать для расширения памяти (Swap)
 #: panel_settings_autostart.h:95 settings_autostart.h:226
 msgid "useUnknown910"
 msgstr "Загрузка с опцией Unknown910"
+
+#: moduleconfig.h:196
+msgid "used"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "usedns"

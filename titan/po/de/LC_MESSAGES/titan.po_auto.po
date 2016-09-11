@@ -759,10 +759,6 @@ msgstr "Aktivieren (Autostart)"
 msgid "Activate CEC"
 msgstr "CEC einschalten"
 
-#: moduleconfig.h:196
-msgid "Active"
-msgstr ""
-
 #: skin_default_skin.xml.h:14
 msgid "Actors"
 msgstr "Darsteller"
@@ -5022,10 +5018,6 @@ msgstr ""
 
 #: global.h:6681
 msgid "Import mode"
-msgstr ""
-
-#: moduleconfig.h:197
-msgid "Inactive"
 msgstr ""
 
 #: skin_default_skin.xml.h:310
@@ -12313,6 +12305,10 @@ msgstr "LNB Einstellungen"
 msgid "localname"
 msgstr "Lokaler Name"
 
+#: moduleconfig.h:197
+msgid "locked"
+msgstr ""
+
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
 msgstr "gesichert -> belassen"
@@ -13695,6 +13691,10 @@ msgstr ""
 #: panel_settings_autostart.h:95 settings_autostart.h:226
 msgid "useUnknown910"
 msgstr "Lade stmdvb.ko mit der useUnknown910 Option"
+
+#: moduleconfig.h:196
+msgid "used"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "usedns"

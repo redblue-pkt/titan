@@ -744,10 +744,6 @@ msgstr ""
 msgid "Activate CEC"
 msgstr "CEC inschakelen"
 
-#: moduleconfig.h:196
-msgid "Active"
-msgstr ""
-
 #: skin_default_skin.xml.h:14
 msgid "Actors"
 msgstr ""
@@ -4849,10 +4845,6 @@ msgstr ""
 
 #: global.h:6681
 msgid "Import mode"
-msgstr ""
-
-#: moduleconfig.h:197
-msgid "Inactive"
 msgstr ""
 
 #: skin_default_skin.xml.h:310
@@ -12080,6 +12072,10 @@ msgstr ""
 msgid "localname"
 msgstr ""
 
+#: moduleconfig.h:197
+msgid "locked"
+msgstr ""
+
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
 msgstr "vergrendelen -> vergrendeld laten"
@@ -13445,6 +13441,10 @@ msgstr "Gebruik apparaat voor wisselbestand"
 
 #: panel_settings_autostart.h:95 settings_autostart.h:226
 msgid "useUnknown910"
+msgstr ""
+
+#: moduleconfig.h:196
+msgid "used"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
