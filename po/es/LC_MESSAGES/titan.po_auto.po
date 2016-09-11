@@ -746,6 +746,10 @@ msgstr "Activacion (Autoinicio)"
 msgid "Activate CEC"
 msgstr "Activar CEC"
 
+#: moduleconfig.h:196
+msgid "Active"
+msgstr ""
+
 #: skin_default_skin.xml.h:14
 msgid "Actors"
 msgstr "Actores:"
@@ -4888,6 +4892,10 @@ msgstr "IMDbapi Info"
 
 #: global.h:6681
 msgid "Import mode"
+msgstr ""
+
+#: moduleconfig.h:197
+msgid "Inactive"
 msgstr ""
 
 #: skin_default_skin.xml.h:310
@@ -11234,10 +11242,6 @@ msgstr ""
 msgid "abc/ABC"
 msgstr ""
 
-#: moduleconfig.h:196
-msgid "activate"
-msgstr "Activar"
-
 #: softcam.h:93 softcam.h:105
 msgid "active"
 msgstr "activo"
@@ -11610,10 +11614,6 @@ msgstr "Fecha y Hora"
 #: mc_videoplayer_settings.h:36
 msgid "datetime"
 msgstr "Fecha y Hora"
-
-#: moduleconfig.h:197
-msgid "deactivate"
-msgstr "desactivar"
 
 #: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
@@ -13819,3 +13819,9 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "activate"
+#~ msgstr "Activar"
+
+#~ msgid "deactivate"
+#~ msgstr "desactivar"

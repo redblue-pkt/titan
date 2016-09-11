@@ -736,6 +736,10 @@ msgstr ""
 msgid "Activate CEC"
 msgstr "Attiva CEC"
 
+#: moduleconfig.h:196
+msgid "Active"
+msgstr ""
+
 #: skin_default_skin.xml.h:14
 msgid "Actors"
 msgstr ""
@@ -4795,6 +4799,10 @@ msgstr ""
 
 #: global.h:6681
 msgid "Import mode"
+msgstr ""
+
+#: moduleconfig.h:197
+msgid "Inactive"
 msgstr ""
 
 #: skin_default_skin.xml.h:310
@@ -11072,10 +11080,6 @@ msgstr ""
 msgid "abc/ABC"
 msgstr ""
 
-#: moduleconfig.h:196
-msgid "activate"
-msgstr "Disattiva"
-
 #: softcam.h:93 softcam.h:105
 msgid "active"
 msgstr "Autostart attivo"
@@ -11448,10 +11452,6 @@ msgstr "Data + Tempo"
 #: mc_videoplayer_settings.h:36
 msgid "datetime"
 msgstr ""
-
-#: moduleconfig.h:197
-msgid "deactivate"
-msgstr "spento"
 
 #: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
@@ -13646,3 +13646,9 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "activate"
+#~ msgstr "Disattiva"
+
+#~ msgid "deactivate"
+#~ msgstr "spento"
