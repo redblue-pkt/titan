@@ -155,7 +155,17 @@ start:
 
 	char* skinpath = NULL;
 	if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") == 0)
+	{
 		skinpath = ostrcat("/mnt/config", NULL, 0, 0);
+		if(!file_exist("/mnt/config/skinconfig.default"))
+		{
+			char* cmd = NULL;
+			cmd = ostrcat(cmd, "cp -a /var/usr/local/share/titan/skin/default/skinconfig.* /mnt/config", 1, 0);
+			printf("cmd: %s\n", cmd);
+			system(cmd);
+			free(cmd); cmd = NULL;
+		}
+	}
 	else
 		skinpath = ostrcat(getconfig("skinpath", NULL), NULL, 0, 0);
 
