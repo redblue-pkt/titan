@@ -153,10 +153,16 @@ start:
 		addchoicebox(channellist_sel, "channellist_v5","v5");
 	setchoiceboxselection(channellist_sel, getskinconfig("channellist_selection", NULL));
 
-	if(file_exist(getconfig("skinpath", NULL)))
+	char* skinpath = NULL;
+	if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") != 0)
+		skinpath = ostrcat("/mnt/config", NULL, 0, 0);
+	else
+		skinpath = ostrcat(getconfig("skinpath", NULL), NULL, 0, 0);
+
+	if(file_exist(skinpath))
 	{
 		delmarkedscreennodes(skinadjust, FILELISTDELMARK);
-		changeinput(filelist, getconfig("skinpath", NULL));
+		changeinput(filelist, skinpath);
 		changemask(filelist, "*");
 		createfilelist(skinadjust, filelist, 0);
 
@@ -476,8 +482,8 @@ start:
 					cmd = ostrcat(cmd, "cp ", 1, 0);
 					cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
 					cmd = ostrcat(cmd, " \"", 1, 0);
-					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
-					cmd = ostrcat(cmd, "/skinconfig.user.", 1, 0);
+					cmd = ostrcat(cmd, skinpath, 1, 0);
+					cmd = ostrcat(cmd, "/skinconfig.", 1, 0);
 					cmd = ostrcat(cmd, search, 1, 0);
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					printf("cmd: %s\n", cmd);
@@ -498,7 +504,7 @@ start:
 		{
 			if(ostrcmp(skinstyle_sel->ret, "skinconfig.default") != 0)
 			{
-				tmpstr = string_replace("skinconfig.user.", "", skinstyle_sel->ret, 0);
+				tmpstr = string_replace("skinconfig.", "", skinstyle_sel->ret, 0);
 				char* msg = ostrcat(_("Remove Skinstyle"), NULL, 0, 0);
 				msg = ostrcat(msg, " '", 1, 0);
 				msg = ostrcat(msg, tmpstr, 1, 0);
@@ -509,7 +515,7 @@ start:
 				{
 					char* cmd = NULL;
 					cmd = ostrcat(cmd, "rm \"", 1, 0);
-					cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+					cmd = ostrcat(cmd, skinpath, 1, 0);
 					cmd = ostrcat(cmd, "/", 1, 0);
 					cmd = ostrcat(cmd, skinstyle_sel->ret, 1, 0);
 					cmd = ostrcat(cmd, "\"", 1, 0);
@@ -909,7 +915,7 @@ start:
 
 				char* cmd = NULL;
 				cmd = ostrcat(cmd, "cp -a ", 1, 0);
-				cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, skinpath, 1, 0);
 				cmd = ostrcat(cmd, "/", 1, 0);
 				cmd = ostrcat(cmd, skinstyle_sel->ret, 1, 0);
 				cmd = ostrcat(cmd, " ", 1, 0);
@@ -958,6 +964,20 @@ start:
 			addconfig("skinblinkoff", blinkoff->ret);
 
 			writeskinconfigtmp();
+
+			if(ostrcmp(skinstyle_sel->ret, "skinconfig.default") != 0)
+			{
+				char* cmd = NULL;
+				cmd = ostrcat(cmd, "cp -a ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+				cmd = ostrcat(cmd, " ", 1, 0);
+				cmd = ostrcat(cmd, skinpath, 1, 0);
+				cmd = ostrcat(cmd, "/", 1, 0);
+				cmd = ostrcat(cmd, skinstyle_sel->ret, 1, 0);
+				printf("cmd: %s\n", cmd);
+				system(cmd);
+				free(cmd); cmd = NULL;
+			}
 
 			if(reboot == 1)
 			{
