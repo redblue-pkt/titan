@@ -13646,9 +13646,3 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "activate"
-#~ msgstr "Disattiva"
-
-#~ msgid "deactivate"
-#~ msgstr "spento"
