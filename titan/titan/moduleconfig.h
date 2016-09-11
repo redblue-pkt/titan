@@ -90,11 +90,11 @@ void screenchannelslot(int slot)
 		{
 			clearscreen(channelslotlist);
 			struct mainbouquet* mbouquet = screenmainbouquet();
-			
+
 			mainbouquet2channelslot(mbouquet, slot);
 			delmarkedscreennodes(channelslotlist, 1);
 			createchannelslotlist(channelslotlist, listbox, slot);
-			
+
 			drawscreen(channelslotlist, 0, 0);
 		}
 	}
@@ -193,8 +193,8 @@ void screencaidlock(struct dvbdev* dvbnode)
 				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				addchoicebox(tmp, "0", _("activate"));
-				addchoicebox(tmp, "1", _("deactivate"));
+				addchoicebox(tmp, "0", _("Active"));
+				addchoicebox(tmp, "1", _("Inactive"));
 				if(ostrstr(lockcaids, ret[i].part) != NULL)
 					setchoiceboxselection(tmp, "1");
 				else
@@ -434,7 +434,7 @@ start:
 			addscreenrc(moduleconfig, tmp);
 		rcret = waitrc(moduleconfig, 2000, 0);
 		tmp = listbox->select;
-		
+
 		printf("listbox->select->text: %s\n",listbox->select->text);
 		printf("listbox->select->name: %s\n",listbox->select->name);
 
@@ -512,7 +512,7 @@ start:
 			reset = 0;
 			drawscreen(moduleconfig, 0, 0);
 		}
-		
+
 		if(rcret == RCTIMEOUT) goto start;
 	}
 
