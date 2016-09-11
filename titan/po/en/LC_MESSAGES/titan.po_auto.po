@@ -5999,7 +5999,7 @@ msgstr ""
 msgid "Module Config"
 msgstr ""
 
-#: moduleconfig.h:373
+#: moduleconfig.h:401
 msgid "Module Type"
 msgstr ""
 
@@ -6099,7 +6099,7 @@ msgstr ""
 msgid "MultiImage Install/Rename"
 msgstr ""
 
-#: moduleconfig.h:375
+#: moduleconfig.h:403
 msgid "Multiple Service"
 msgstr ""
 
@@ -8999,7 +8999,7 @@ msgstr ""
 msgid "Single Sat"
 msgstr "Single Satellite"
 
-#: moduleconfig.h:374
+#: moduleconfig.h:402
 msgid "Single Service"
 msgstr ""
 
@@ -9157,7 +9157,7 @@ msgstr ""
 msgid "Sleep Timer"
 msgstr ""
 
-#: hwtest.h:472 moduleconfig.h:338 scconfig.h:31
+#: hwtest.h:472 moduleconfig.h:366 scconfig.h:31
 msgid "Slot "
 msgstr ""
 
@@ -9357,7 +9357,7 @@ msgstr ""
 msgid "Status update"
 msgstr ""
 
-#: moduleconfig.h:350
+#: moduleconfig.h:378
 msgid "Status: "
 msgstr ""
 
@@ -11180,7 +11180,7 @@ msgstr ""
 msgid "abc/ABC"
 msgstr ""
 
-#: moduleconfig.h:168
+#: moduleconfig.h:196
 msgid "activate"
 msgstr ""
 
@@ -11557,7 +11557,7 @@ msgstr "Date + Time"
 msgid "datetime"
 msgstr "Date Time"
 
-#: moduleconfig.h:169
+#: moduleconfig.h:197
 msgid "deactivate"
 msgstr ""
 
@@ -11639,7 +11639,7 @@ msgstr ""
 msgid "dnsserver 2"
 msgstr ""
 
-#: moduleconfig.h:159
+#: moduleconfig.h:178
 msgid "double"
 msgstr ""
 
@@ -11683,7 +11683,7 @@ msgstr "On"
 msgid "eingehende Anrufe"
 msgstr "Incoming call"
 
-#: moduleconfig.h:354
+#: moduleconfig.h:382
 msgid "empty"
 msgstr "No Module"
 
@@ -11766,7 +11766,7 @@ msgstr "Fade in/out"
 
 #: adjust.h:94 adjust.h:186 httpdfunc.h:3966 httpdfunc.h:4529
 #: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
-#: mc_videoplayer_settings.h:31 moduleconfig.h:248 plugins_mc_skin.xml.h:20
+#: mc_videoplayer_settings.h:31 moduleconfig.h:276 plugins_mc_skin.xml.h:20
 #: skins_mc_skin.xml.h:20
 msgid "fast"
 msgstr ""
@@ -11967,7 +11967,7 @@ msgstr ""
 msgid "infos"
 msgstr "Infos"
 
-#: moduleconfig.h:356
+#: moduleconfig.h:384
 msgid "initializing"
 msgstr "initializing"
 
@@ -12165,7 +12165,7 @@ msgstr ""
 msgid "messagebox"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:30 moduleconfig.h:247
+#: mc_pictureplayer_settings.h:30 moduleconfig.h:275
 msgid "middle"
 msgstr ""
 
@@ -12287,8 +12287,8 @@ msgstr "NFS Server"
 #: mc_videoplayer_settings.h:39 mc_videoplayer_settings.h:43
 #: mc_videoplayer_settings.h:49 mediadb.h:1085 mediadb.h:1092 mediadb.h:1107
 #: mediadbsettings.h:28 mediadbsettings.h:32 mediadbsettings.h:51
-#: mediadbsettings.h:66 mediadbsettings.h:70 moduleconfig.h:243
-#: moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259 moduleconfig.h:263
+#: mediadbsettings.h:66 mediadbsettings.h:70 moduleconfig.h:271
+#: moduleconfig.h:279 moduleconfig.h:283 moduleconfig.h:287 moduleconfig.h:291
 #: networkbrowser.h:1639 networkbrowser.h:1643 networkbrowser.h:1652
 #: networkbrowser.h:1657 networkbrowser.h:1661 networkbrowser.h:1695
 #: network.h:691 panel_settings_autostart.h:35 panel_settings_autostart.h:96
@@ -12684,7 +12684,7 @@ msgstr ""
 msgid "r"
 msgstr ""
 
-#: moduleconfig.h:358
+#: moduleconfig.h:386
 msgid "ready"
 msgstr "Ready"
 
@@ -13009,7 +13009,7 @@ msgstr ""
 msgid "slide from left"
 msgstr ""
 
-#: adjust.h:188 httpdfunc.h:4543 moduleconfig.h:246 tmc.h:556
+#: adjust.h:188 httpdfunc.h:4543 moduleconfig.h:274 tmc.h:556
 msgid "slow"
 msgstr ""
 
@@ -13405,7 +13405,7 @@ msgid "universal"
 msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
-#: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:345
+#: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:373
 #: security.h:2151 skin_default_skin.xml.h:696 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
@@ -13701,8 +13701,8 @@ msgstr ""
 #: mc_videoplayer_settings.h:44 mc_videoplayer_settings.h:50 mediadb.h:1083
 #: mediadb.h:1090 mediadb.h:1105 mediadbsettings.h:29 mediadbsettings.h:33
 #: mediadbsettings.h:52 mediadbsettings.h:67 mediadbsettings.h:71
-#: moduleconfig.h:242 moduleconfig.h:252 moduleconfig.h:256 moduleconfig.h:260
-#: moduleconfig.h:264 networkbrowser.h:1640 networkbrowser.h:1644
+#: moduleconfig.h:270 moduleconfig.h:280 moduleconfig.h:284 moduleconfig.h:288
+#: moduleconfig.h:292 networkbrowser.h:1640 networkbrowser.h:1644
 #: networkbrowser.h:1653 networkbrowser.h:1658 networkbrowser.h:1662
 #: networkbrowser.h:1696 network.h:692 panel_settings_autostart.h:35
 #: panel_settings_autostart.h:96 panel_settings_autostart.h:113
