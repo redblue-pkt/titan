@@ -152,15 +152,43 @@ void screencaidlock(struct dvbdev* dvbnode)
 			{
 				tmp->type = CHOICEBOX;
 
+				// show caid in hex
+				int caid_int = 0;
+				char* caid = ostrcat(ret[i].part, NULL, 0, 0);
+				sscanf(caid, "%X", &caid_int);
+				caid_int = strtol(caid , NULL, 16);
+				free(caid), caid = NULL;
+
+				char* caid_hex = malloc(50);
+				if(caid_hex != NULL)
+					sprintf(caid_hex, "%d", caid_int);
+
 				if(checkdoublecaid(dvbnode, ret[i].part) == 1)
 				{
 					tmpstr = ostrcat(tmpstr, ret[i].part, 1, 0);
-					tmpstr = ostrcat(tmpstr, " (", 1, 0);
+					if(caid_hex != NULL)
+					{
+						tmpstr = ostrcat(tmpstr, " (", 1, 0);
+						tmpstr = ostrcat(tmpstr, caid_hex, 1, 0);
+						tmpstr = ostrcat(tmpstr, ") (", 1, 0);
+					}
+					else
+						tmpstr = ostrcat(tmpstr, " (", 1, 0);
+
 					tmpstr = ostrcat(tmpstr, _("double"), 1, 0);
 					tmpstr = ostrcat(tmpstr, ")", 1, 0);
 				}
 				else
+				{
 					tmpstr = ostrcat(tmpstr, ret[i].part, 1, 0);
+					if(caid_hex != NULL)
+					{
+						tmpstr = ostrcat(tmpstr, " (", 1, 0);
+						tmpstr = ostrcat(tmpstr, caid_hex, 1, 0);
+						tmpstr = ostrcat(tmpstr, ")", 1, 0);
+					}
+				}
+				free(caid_hex);
 
 				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
