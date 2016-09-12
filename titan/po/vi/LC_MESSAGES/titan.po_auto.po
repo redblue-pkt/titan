@@ -11097,6 +11097,10 @@ msgstr ""
 msgid "abc/ABC"
 msgstr ""
 
+#: moduleconfig.h:196
+msgid "activate"
+msgstr "Kích hoạt"
+
 #: softcam.h:93 softcam.h:105
 msgid "active"
 msgstr "cho phép"
@@ -11469,6 +11473,10 @@ msgstr "ngày + giờ"
 #: mc_videoplayer_settings.h:36
 msgid "datetime"
 msgstr "ngày giờ"
+
+#: moduleconfig.h:197
+msgid "deactivate"
+msgstr "tắt"
 
 #: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
@@ -12007,10 +12015,6 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
 msgid "localname"
-msgstr ""
-
-#: moduleconfig.h:197
-msgid "locked"
 msgstr ""
 
 #: mediadbedit.h:78
@@ -13379,10 +13383,6 @@ msgstr "Sử dụng công cụ để hoán đổi"
 #: panel_settings_autostart.h:95 settings_autostart.h:226
 msgid "useUnknown910"
 msgstr "không biết"
-
-#: moduleconfig.h:196
-msgid "used"
-msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "usedns"

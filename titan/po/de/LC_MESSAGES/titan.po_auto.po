@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.79\n"
+"Project-Id-Version: TitanNit 1.77\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
@@ -11393,6 +11393,10 @@ msgstr ""
 msgid "abc/ABC"
 msgstr ""
 
+#: moduleconfig.h:196
+msgid "activate"
+msgstr "aktivieren"
+
 #: softcam.h:93 softcam.h:105
 msgid "active"
 msgstr "Autostart aktiviert"
@@ -11765,6 +11769,10 @@ msgstr "Datum + Uhrzeit"
 #: mc_videoplayer_settings.h:36
 msgid "datetime"
 msgstr "Datum Uhrzeit"
+
+#: moduleconfig.h:197
+msgid "deactivate"
+msgstr "deaktivieren"
 
 #: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
@@ -12304,10 +12312,6 @@ msgstr "LNB Einstellungen"
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
 msgid "localname"
 msgstr "Lokaler Name"
-
-#: moduleconfig.h:197
-msgid "locked"
-msgstr "gesperrt"
 
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
@@ -13691,10 +13695,6 @@ msgstr ""
 #: panel_settings_autostart.h:95 settings_autostart.h:226
 msgid "useUnknown910"
 msgstr "Lade stmdvb.ko mit der useUnknown910 Option"
-
-#: moduleconfig.h:196
-msgid "used"
-msgstr "verwendet"
 
 #: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "usedns"
