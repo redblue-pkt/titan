@@ -123,17 +123,6 @@ int checkdoublecaid(struct dvbdev* excdvbnode, char* caid)
 	return 0;
 }
 
-void dw2hex(unsigned int num,char* buffer)
-{
-	for(unsigned int i=7,tmp;!(i&0x80000000);i--)
-	{
-		tmp = num&0xf;
-		buffer[i]= (tmp<10)?(tmp+0x30):(tmp+0x37);
-		num = num>>4;		
-	}
-	buffer[8]=0;
-}
-
 void screencaidlock(struct dvbdev* dvbnode)
 {
 	int rcret = -1, count = 0, i = 0;
