@@ -90,11 +90,11 @@ void screenchannelslot(int slot)
 		{
 			clearscreen(channelslotlist);
 			struct mainbouquet* mbouquet = screenmainbouquet();
-
+			
 			mainbouquet2channelslot(mbouquet, slot);
 			delmarkedscreennodes(channelslotlist, 1);
 			createchannelslotlist(channelslotlist, listbox, slot);
-
+			
 			drawscreen(channelslotlist, 0, 0);
 		}
 	}
@@ -121,6 +121,17 @@ int checkdoublecaid(struct dvbdev* excdvbnode, char* caid)
 		dvbnode = dvbnode->next;
 	}
 	return 0;
+}
+
+void dw2hex(unsigned int num,char* buffer)
+{
+	for(unsigned int i=7,tmp;!(i&0x80000000);i--)
+	{
+		tmp = num&0xf;
+		buffer[i]= (tmp<10)?(tmp+0x30):(tmp+0x37);
+		num = num>>4;		
+	}
+	buffer[8]=0;
 }
 
 void screencaidlock(struct dvbdev* dvbnode)
@@ -153,22 +164,16 @@ void screencaidlock(struct dvbdev* dvbnode)
 				tmp->type = CHOICEBOX;
 
 				// show caid in hex
-				int caid_int = 0;
-				char* caid = ostrcat(ret[i].part, NULL, 0, 0);
-				sscanf(caid, "%X", &caid_int);
-				caid_int = strtol(caid , NULL, 16);
-				free(caid), caid = NULL;
-
-				char* caid_hex = malloc(50);
-				if(caid_hex != NULL)
-					sprintf(caid_hex, "%d", caid_int);
+				char* caid_hex = ostrcat(ret[i].part, NULL, 0, 0);
+				int caid_dec = atoi(ret[i].part);
+				sprintf(caid_hex, "%x", caid_dec);
 
 				if(checkdoublecaid(dvbnode, ret[i].part) == 1)
 				{
 					tmpstr = ostrcat(tmpstr, ret[i].part, 1, 0);
 					if(caid_hex != NULL)
 					{
-						tmpstr = ostrcat(tmpstr, " (", 1, 0);
+						tmpstr = ostrcat(tmpstr, " (0x", 1, 0);
 						tmpstr = ostrcat(tmpstr, caid_hex, 1, 0);
 						tmpstr = ostrcat(tmpstr, ") (", 1, 0);
 					}
@@ -183,7 +188,7 @@ void screencaidlock(struct dvbdev* dvbnode)
 					tmpstr = ostrcat(tmpstr, ret[i].part, 1, 0);
 					if(caid_hex != NULL)
 					{
-						tmpstr = ostrcat(tmpstr, " (", 1, 0);
+						tmpstr = ostrcat(tmpstr, " (0x", 1, 0);
 						tmpstr = ostrcat(tmpstr, caid_hex, 1, 0);
 						tmpstr = ostrcat(tmpstr, ")", 1, 0);
 					}
@@ -193,8 +198,8 @@ void screencaidlock(struct dvbdev* dvbnode)
 				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				addchoicebox(tmp, "0", _("used"));
-				addchoicebox(tmp, "1", _("locked"));
+				addchoicebox(tmp, "0", _("activate"));
+				addchoicebox(tmp, "1", _("deactivate"));
 				if(ostrstr(lockcaids, ret[i].part) != NULL)
 					setchoiceboxselection(tmp, "1");
 				else
@@ -434,7 +439,7 @@ start:
 			addscreenrc(moduleconfig, tmp);
 		rcret = waitrc(moduleconfig, 2000, 0);
 		tmp = listbox->select;
-
+		
 		printf("listbox->select->text: %s\n",listbox->select->text);
 		printf("listbox->select->name: %s\n",listbox->select->name);
 
@@ -512,7 +517,7 @@ start:
 			reset = 0;
 			drawscreen(moduleconfig, 0, 0);
 		}
-
+		
 		if(rcret == RCTIMEOUT) goto start;
 	}
 
