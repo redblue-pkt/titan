@@ -11179,6 +11179,10 @@ msgstr ""
 msgid "abc/ABC"
 msgstr ""
 
+#: moduleconfig.h:196
+msgid "activate"
+msgstr "Aktyvuok"
+
 #: softcam.h:93 softcam.h:105
 msgid "active"
 msgstr "aktyvus"
@@ -11551,6 +11555,10 @@ msgstr "Date + Time"
 #: mc_videoplayer_settings.h:36
 msgid "datetime"
 msgstr "data Laikas"
+
+#: moduleconfig.h:197
+msgid "deactivate"
+msgstr "ijungti"
 
 #: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
@@ -12090,10 +12098,6 @@ msgstr ""
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
 msgid "localname"
 msgstr "vietinis pavadinimas"
-
-#: moduleconfig.h:197
-msgid "locked"
-msgstr ""
 
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
@@ -13462,10 +13466,6 @@ msgstr "Naudoti kaip apsikeitimo (SWAP) prietais"
 
 #: panel_settings_autostart.h:95 settings_autostart.h:226
 msgid "useUnknown910"
-msgstr ""
-
-#: moduleconfig.h:196
-msgid "used"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
