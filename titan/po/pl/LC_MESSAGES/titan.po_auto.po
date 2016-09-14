@@ -3109,8 +3109,8 @@ msgstr ""
 #: about.h:9 amazon.h:760 avsettings.h:331 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:956 channellist.h:958 channellist.h:963
 #: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
-#: cloudzilla.h:51 divxstage.h:36 divxstage.h:83 divxstage.h:154
-#: divxstage.h:160 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
+#: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
+#: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
 #: extensions.h:305 extensions.h:313 extensions.h:320 extensions.h:362
@@ -5755,7 +5755,7 @@ msgstr ""
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:956
 #: channellist.h:958 channellist.h:963 channellist.h:965 channellist.h:1049
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
-#: divxstage.h:83 divxstage.h:154 divxstage.h:160 dlna.h:334 dlna.h:336
+#: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:268
 #: extensions.h:328 extensions.h:362 extensions.h:422 extensions.h:427
 #: extensions.h:466 facebook.h:66 facebook.h:157 facebook.h:167
@@ -6328,8 +6328,8 @@ msgstr ""
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:956 channellist.h:958 channellist.h:963
 #: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
-#: cloudzilla.h:51 divxstage.h:36 divxstage.h:83 divxstage.h:154
-#: divxstage.h:160 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
+#: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
+#: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
 #: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
 #: extensions.h:268 extensions.h:305 extensions.h:313 extensions.h:320
@@ -9662,7 +9662,7 @@ msgid ""
 "the target drive."
 msgstr ""
 
-#: divxstage.h:83 novamov.h:96 nowvideo.h:107 primeshare.h:79 shared.h:65
+#: divxstage.h:86 novamov.h:96 nowvideo.h:107 primeshare.h:79 shared.h:65
 #: thefile.h:68 videoweed.h:85
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
@@ -9684,7 +9684,7 @@ msgid ""
 "The filename must not contain blanks."
 msgstr ""
 
-#: cloudzilla.h:39 divxstage.h:154 faststream.h:79 faststream.h:90
+#: cloudzilla.h:39 divxstage.h:178 faststream.h:79 faststream.h:90
 #: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
 #: firedrive.h:122 firedrive.h:137 flashx.h:55 letwatch.h:59 mightyupload.h:68
 #: movreel.h:137 movshare.h:190 nbaondemand.h:61 played.h:84 played.h:101
@@ -9702,7 +9702,7 @@ msgstr ""
 msgid "The page not found, file removed"
 msgstr ""
 
-#: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:160 faststream.h:109
+#: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:184 faststream.h:109
 #: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:100 movshare.h:196
 #: thevideo.h:71 vidag.h:60 vidbull.h:73 vidto.h:73 vidto.h:180 vidzi.h:65
 #: vivo.h:44 vivo.h:67 vodlocker.h:80 xvidstage.h:64
