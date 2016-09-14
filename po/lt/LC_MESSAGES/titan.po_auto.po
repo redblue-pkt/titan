@@ -3220,7 +3220,7 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
+#: novamov.h:96 novamov.h:102 nowvideo.h:44 nowvideo.h:101 nowvideo.h:107
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
@@ -4695,7 +4695,7 @@ msgstr "Siaubo"
 
 #: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:23
 #: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:40 novamov.h:35
-#: nowvideo.h:43 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
+#: nowvideo.h:44 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
 #: shared.h:29 streamcloud.h:31 thefile.h:34 thevideo.h:29 vidag.h:29
 #: vidbull.h:30 videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:30
 #: vodlocker.h:30 xvidstage.h:29
@@ -5897,7 +5897,7 @@ msgstr ""
 #: networkbrowser.h:1785 networkbrowser.h:1792 networkbrowser.h:1797
 #: networkbrowser.h:1949 network.h:436 network.h:577 network.h:785
 #: network.h:793 network.h:819 network.h:823 network.h:877 novamov.h:35
-#: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
+#: novamov.h:96 novamov.h:102 nowvideo.h:44 nowvideo.h:101 nowvideo.h:107
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:111 play.h:614 play.h:1314 play.h:1351 play.h:1651 play.h:1879
@@ -6487,7 +6487,7 @@ msgstr ""
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:96 novamov.h:102 nowvideo.h:43 nowvideo.h:100 nowvideo.h:106
+#: novamov.h:96 novamov.h:102 nowvideo.h:44 nowvideo.h:101 nowvideo.h:107
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
@@ -9796,7 +9796,7 @@ msgid ""
 "the target drive."
 msgstr ""
 
-#: divxstage.h:83 novamov.h:96 nowvideo.h:106 primeshare.h:79 shared.h:65
+#: divxstage.h:83 novamov.h:96 nowvideo.h:107 primeshare.h:79 shared.h:65
 #: thefile.h:68 videoweed.h:85
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
@@ -9879,7 +9879,7 @@ msgstr "is failas yra privatus ir matomas tik savininkui."
 msgid "This file no longer exists on our servers!"
 msgstr ""
 
-#: nowvideo.h:100
+#: nowvideo.h:101
 msgid "This file no longer exists on our servers."
 msgstr "is failas nebeegzistuoja ms serveriuose."
 
