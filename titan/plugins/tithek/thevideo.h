@@ -6,7 +6,7 @@ char* thevideo(char* link)
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL, *tmplink = NULL, *tmppath = NULL, *tmpstr = NULL, *streamlink = NULL, *pos = NULL, *path = NULL, *url = NULL;
-	char* vhash = NULL, *gfk = NULL, *fname = NULL, *hash = NULL, *post = NULL, *inhu = NULL, *op = NULL, *vt = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+	char* vhash = NULL, *gfk = NULL, *fname = NULL, *hash = NULL, *post = NULL, *inhu = NULL, *op = NULL, *vt = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr4 = NULL;
 
 	if(link == NULL) return NULL;
 
@@ -113,11 +113,44 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	if(streamlink == NULL)
 		streamlink = oregex(".*(http://.*v.mp4).*", tmpstr);
 
+//	var mpri_Key='LCw2QFU8N0hRPFdBWi4zLVgK';
+//	eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('3.2(\'<0 4\'.1(\'8="\'+\'/5\'.1(\'/\'+7+\'">\\6/0>\')))',9,9,'script|concat|write|document|s|jwv|x3C|mpri_Key|rc'.split('|'),0,{}))
+
 	tmpstr1 = string_resub("<div class=\"container main-container\">", "</div>", tmpstr, 0);
 	free(tmpstr), tmpstr = NULL;
 	debug(99, "tmpstr1: %s", tmpstr1);
 	url = string_resub("<script src=\"", "\"></script>", tmpstr1, 0);
 
+	if(url == NULL)
+	{
+		tmpstr2 = string_resub(",9,9,'", "'.split", tmpstr1, 0);
+	
+		int count = 0;
+		int j;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr2, "|", &count);
+		if(ret1 != NULL && count > 0)
+		{
+			for(j = 0; j < count; j++)
+			{
+				if(ostrcmp(ret1[j].part, "script") != 0 && ostrcmp(ret1[j].part, "concat") != 0 && ostrcmp(ret1[j].part, "write") != 0 && ostrcmp(ret1[j].part, "document") != 0 && ostrcmp(ret1[j].part, "s") != 0 && ostrcmp(ret1[j].part, "x3C") != 0 && ostrcmp(ret1[j].part, "mpri_Key") != 0 && ostrcmp(ret1[j].part, "rc") != 0)
+					tmpstr3 = ostrcat("/", ret1[j].part, 0, 0);
+			}
+		}
+		free(ret1); ret1 = NULL;
+	//  script|concat|write|document|s|jwv|x3C|mpri_Key|rc
+
+		tmpstr4 = oregex("var .*='(.*)';.*", tmpstr1);
+
+		url = ostrcat("http://thevideo.me", tmpstr3, 0, 0);
+		url = ostrcat(url, "/", 1, 0);
+		url = ostrcat(url, tmpstr4, 1, 0);
+		free(tmpstr2), tmpstr2 = NULL;
+		free(tmpstr3), tmpstr3 = NULL;
+		free(tmpstr4), tmpstr4 = NULL;
+	}
+	
+/*	
 	if(url == NULL)
 	{
 		tmpstr2 = string_resub("' + '", "'.concat", tmpstr1, 0);
@@ -130,6 +163,7 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 		free(tmpstr2), tmpstr2 = NULL;
 		free(tmpstr3), tmpstr3 = NULL;
 	}
+*/
 	free(tmpstr1), tmpstr1 = NULL;
 	
 /*
