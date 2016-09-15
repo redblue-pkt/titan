@@ -468,7 +468,7 @@ start:
 			setfbtransparent(255);
 
 			tmpstr = ostrcat(tmpstr, getconfig("skinpath", NULL), 1, 0);
-			tmpstr = ostrcat(tmpstr, "/", 1, 0);
+			tmpstr = ostrcat(tmpstr, "/preview/", 1, 0);
 			tmpstr = ostrcat(tmpstr, channellist_sel->ret, 1, 0);
 			tmpstr = ostrcat(tmpstr, "_preview.png", 0, 0);
 			printf("preview pic: %s\n", tmpstr);
