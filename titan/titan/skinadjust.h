@@ -122,7 +122,7 @@ start:
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
 
 	if(checkscreen("infobar") != status.skinerr)
-		addchoicebox(infobar_sel, "infobar", "v1");
+		addchoicebox(infobar_sel, "infobar", "default");
 	if(checkscreen("infobar_v2") != status.skinerr)
 		addchoicebox(infobar_sel, "infobar_v2","v2");
 	if(checkscreen("infobar_v3") != status.skinerr)
@@ -142,7 +142,7 @@ start:
 	setchoiceboxselection(infobar_sel, getskinconfig("infobar_selection", NULL));
 
 	if(checkscreen("infobar2") != status.skinerr)
-		addchoicebox(infobar2_sel, "infobar2", "v1");
+		addchoicebox(infobar2_sel, "infobar2", "default");
 	if(checkscreen("infobar2_v2") != status.skinerr)
 		addchoicebox(infobar2_sel, "infobar2_v2","v2");
 	if(checkscreen("infobar2_v3") != status.skinerr)
@@ -162,7 +162,7 @@ start:
 	setchoiceboxselection(infobar2_sel, getskinconfig("infobar2_selection", NULL));
 
 	if(checkscreen("channellist") != status.skinerr)
-		addchoicebox(channellist_sel, "channellist", "v1");
+		addchoicebox(channellist_sel, "channellist", "default");
 	if(checkscreen("channellist_v2") != status.skinerr)
 		addchoicebox(channellist_sel, "channellist_v2","v2");
 	if(checkscreen("channellist_v3") != status.skinerr)
@@ -182,7 +182,7 @@ start:
 	setchoiceboxselection(channellist_sel, getskinconfig("channellist_selection", NULL));
 
 	if(checkscreen("gmultiepg") != status.skinerr)
-		addchoicebox(gmultiepg_sel, "gmultiepg", "v1");
+		addchoicebox(gmultiepg_sel, "gmultiepg", "default");
 	if(checkscreen("gmultiepg_v2") != status.skinerr)
 		addchoicebox(gmultiepg_sel, "gmultiepg_v2","v2");
 	if(checkscreen("gmultiepg_v3") != status.skinerr)
