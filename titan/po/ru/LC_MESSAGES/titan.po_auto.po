@@ -54,7 +54,7 @@ msgid ""
 "Website www.atemio.de"
 msgstr ""
 
-#: skinadjust.h:197
+#: skinadjust.h:242
 msgid "%"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr "Голосов"
 
-#: skin_default_skin.xml.h:610
+#: skin_default_skin.xml.h:611
 msgid "(Stop)"
 msgstr "(Стоп)"
 
@@ -95,11 +95,11 @@ msgstr ""
 msgid "--- PLZ"
 msgstr ""
 
-#: skin_default_skin.xml.h:543
+#: skin_default_skin.xml.h:544
 msgid "--- SD resolution"
 msgstr "SD разрешение"
 
-#: skin_default_skin.xml.h:649
+#: skin_default_skin.xml.h:650
 msgid "--- Time to switch"
 msgstr "Время переключения"
 
@@ -143,7 +143,7 @@ msgstr "Авторы"
 msgid "->"
 msgstr ""
 
-#: pip.h:640 skin_default_skin.xml.h:620
+#: pip.h:640 skin_default_skin.xml.h:621
 msgid "->swap<-"
 msgstr ""
 
@@ -2454,7 +2454,7 @@ msgstr "Кэшировать изображение"
 msgid "Create new"
 msgstr "Создать новый"
 
-#: skinadjust.h:483
+#: skinadjust.h:528
 msgid "Create new Skinstyle ?"
 msgstr ""
 
@@ -3233,8 +3233,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:459
-#: skinadjust.h:483 skinadjust.h:524 skin_default_skin.xml.h:195
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:504
+#: skinadjust.h:528 skinadjust.h:569 skin_default_skin.xml.h:195
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
 #: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:6
@@ -4059,7 +4059,7 @@ msgstr "На весь экран"
 msgid "G"
 msgstr ""
 
-#: skinadjust.h:198
+#: skinadjust.h:243
 msgid "GB"
 msgstr ""
 
@@ -4071,23 +4071,23 @@ msgstr ""
 msgid "GMediaRender is a UPnP media renderer for POSIX-compliant systems"
 msgstr ""
 
-#: gmultiepg.h:626
+#: gmultiepg.h:638
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "Все каналы"
 
-#: gmultiepg.h:574 gmultiepg.h:772 httpdfunc.h:710
+#: gmultiepg.h:586 gmultiepg.h:784 httpdfunc.h:710
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Фавориты"
 
-#: gmultiepg.h:587
+#: gmultiepg.h:599
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Каналы"
 
-#: gmultiepg.h:613
+#: gmultiepg.h:625
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Провайдеры"
 
-#: gmultiepg.h:600
+#: gmultiepg.h:612
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Спутники"
 
@@ -4095,7 +4095,7 @@ msgstr "Спутники"
 msgid "GREEN"
 msgstr "Зелёная"
 
-#: adjust.h:113 httpdfunc.h:4081 skin_default_skin.xml.h:238
+#: adjust.h:113 httpdfunc.h:4081 skin_default_skin.xml.h:239
 #: webif_index.atemio510.h:6 webif_index.atemio5200.h:6
 #: webif_index.atemio6000.h:6 webif_index.atemio6100.h:6
 #: webif_index.atemio6200.h:6 webif_index.atemio7600.h:4
@@ -4203,6 +4203,10 @@ msgid "Graphic Multi EPG"
 msgstr "Графический EPG"
 
 #: skin_default_skin.xml.h:235
+msgid "Graphic Multi EPG selection"
+msgstr ""
+
+#: skin_default_skin.xml.h:236
 msgid "Greek"
 msgstr "Греческий"
 
@@ -4229,11 +4233,11 @@ msgstr "Зелёная"
 msgid "Group created"
 msgstr "Группа создана"
 
-#: skin_default_skin.xml.h:236
+#: skin_default_skin.xml.h:237
 msgid "Guardinterval"
 msgstr "Интервал защиты"
 
-#: skin_default_skin.xml.h:237
+#: skin_default_skin.xml.h:238
 msgid "Guardinterval:"
 msgstr "Интервал защиты"
 
@@ -4263,15 +4267,15 @@ msgstr ""
 "HDD не настроен!\n"
 "Не удаётся найти путь записи"
 
-#: skin_default_skin.xml.h:241
+#: skin_default_skin.xml.h:242
 msgid "HDMI-CEC"
 msgstr ""
 
-#: skin_default_skin.xml.h:242
+#: skin_default_skin.xml.h:243
 msgid "HDMI-in"
 msgstr "Вход HDMI"
 
-#: skin_default_skin.xml.h:304
+#: skin_default_skin.xml.h:305
 msgid "HOSTNAME"
 msgstr "Имя хоста"
 
@@ -4279,15 +4283,15 @@ msgstr "Имя хоста"
 msgid "HTTP Server/Stream/Record"
 msgstr ""
 
-#: skin_default_skin.xml.h:307
+#: skin_default_skin.xml.h:308
 msgid "HTTP Settings"
 msgstr "Параметры HTTP"
 
-#: skin_default_skin.xml.h:306
+#: skin_default_skin.xml.h:307
 msgid "HTTPD Port"
 msgstr "HTTPD порт"
 
-#: httpdfunc.h:3853 skin_default_skin.xml.h:239
+#: httpdfunc.h:3853 skin_default_skin.xml.h:240
 msgid "Hangtime"
 msgstr "Время предупреждения (Сек)"
 
@@ -4295,7 +4299,7 @@ msgstr "Время предупреждения (Сек)"
 msgid "Hard"
 msgstr ""
 
-#: adjust.h:298 harddisk.h:487 skin_default_skin.xml.h:240
+#: adjust.h:298 harddisk.h:487 skin_default_skin.xml.h:241
 msgid "Harddisk"
 msgstr "Жёсткий диск"
 
@@ -4327,7 +4331,7 @@ msgstr "Аппаратное тестирование"
 msgid "Hello World !"
 msgstr "Всем привет!"
 
-#: httpdfunc.h:5163 skin_default_skin.xml.h:732 webif_index.atemio510.h:16
+#: httpdfunc.h:5163 skin_default_skin.xml.h:733 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -4352,48 +4356,48 @@ msgstr ""
 msgid "Here you can add and configure your network shares."
 msgstr ""
 
-#: skin_default_skin.xml.h:243
+#: skin_default_skin.xml.h:244
 msgid "Here you can adjust the LNB/Unicable values for the selected tuner."
 msgstr ""
 
-#: skin_default_skin.xml.h:245
+#: skin_default_skin.xml.h:246
 msgid "Here you can adjust the PiP functions."
 msgstr ""
 
-#: skin_default_skin.xml.h:244
+#: skin_default_skin.xml.h:245
 msgid "Here you can adjust the network interface."
 msgstr ""
 
-#: skin_default_skin.xml.h:246
+#: skin_default_skin.xml.h:247
 msgid ""
 "Here you can adjust your rotor equipment. Enter the latitude and longitude "
 "values by using the number keys."
 msgstr ""
 
-#: skin_default_skin.xml.h:247
+#: skin_default_skin.xml.h:248
 msgid "Here you can assign channels to a specific CI-Module."
 msgstr ""
 
-#: skin_default_skin.xml.h:248
+#: skin_default_skin.xml.h:249
 msgid "Here you can backup and restore your configuration."
 msgstr ""
 
-#: skin_default_skin.xml.h:249
+#: skin_default_skin.xml.h:250
 msgid "Here you can check the signal quality of the current transponder."
 msgstr ""
 
-#: skin_default_skin.xml.h:250
+#: skin_default_skin.xml.h:251
 msgid ""
 "Here you can choose a tuner for configuration. For a channel search, the "
 "tuner(s) have to be configured before. Rotor equipment requires additional "
 "adjustments."
 msgstr ""
 
-#: skin_default_skin.xml.h:251
+#: skin_default_skin.xml.h:252
 msgid "Here you can configure dynamic DNS services."
 msgstr ""
 
-#: skin_default_skin.xml.h:254
+#: skin_default_skin.xml.h:255
 msgid "Here you can configure your CI-Modules."
 msgstr ""
 
@@ -4401,7 +4405,7 @@ msgstr ""
 msgid "Here you can configure your OSCam reader."
 msgstr ""
 
-#: skin_default_skin.xml.h:253
+#: skin_default_skin.xml.h:254
 msgid ""
 "Here you can configure your cable tuner. Choose your cable provider and "
 "start an automatic search."
@@ -4413,134 +4417,134 @@ msgid ""
 "protected shares."
 msgstr ""
 
-#: skin_default_skin.xml.h:255
+#: skin_default_skin.xml.h:256
 msgid ""
 "Here you can configure your satellite tuner. First, select the satellite. "
 "When using DiSEqC, also define the used port. For advanced LNB/Unicable "
 "configuration, navigate to LNB/Unicable and press the red button."
 msgstr ""
 
-#: skin_default_skin.xml.h:256
+#: skin_default_skin.xml.h:257
 msgid ""
 "Here you can configure your terrestrial tuner. Activate the terrestrial "
 "tuner and start an automatic search."
 msgstr ""
 
-#: skin_default_skin.xml.h:252
+#: skin_default_skin.xml.h:253
 msgid "Here you can configure: Webinterface, Transcoding and RGUI"
 msgstr ""
 
-#: skin_default_skin.xml.h:257
+#: skin_default_skin.xml.h:258
 msgid ""
 "Here you can connect to your wireless network. 1. Use search button, select "
 "your SSID and press ok 2. Choose encryption type and enter key, accept with "
 "ok 3. Set automatic start if wanted and start with green."
 msgstr ""
 
-#: skin_default_skin.xml.h:258
+#: skin_default_skin.xml.h:259
 msgid "Here you can control the fan mode."
 msgstr ""
 
-#: skin_default_skin.xml.h:259
+#: skin_default_skin.xml.h:260
 msgid ""
 "Here you can create, delete and edit timer events. Press ok to edit the "
 "selected timer. Press blue to check the timer log. Then choose red to delete "
 "a single entry or yellow to clear the list."
 msgstr ""
 
-#: skin_default_skin.xml.h:260
+#: skin_default_skin.xml.h:261
 msgid "Here you can define channels or favorites for EPG scan/refresh."
 msgstr ""
 
-#: skin_default_skin.xml.h:261
+#: skin_default_skin.xml.h:262
 msgid "Here you can define the paths for record, timeshift and movie player."
 msgstr ""
 
-#: skin_default_skin.xml.h:262
+#: skin_default_skin.xml.h:263
 msgid "Here you can edit the channel list."
 msgstr ""
 
-#: skin_default_skin.xml.h:263
+#: skin_default_skin.xml.h:264
 msgid "Here you can edit timer events."
 msgstr ""
 
-#: skin_default_skin.xml.h:264
+#: skin_default_skin.xml.h:265
 msgid "Here you can enter the menu of your Ci-Module."
 msgstr ""
 
-#: skin_default_skin.xml.h:265
+#: skin_default_skin.xml.h:266
 msgid "Here you can install plugins and extensions from our online offer."
 msgstr ""
 
-#: skin_default_skin.xml.h:266
+#: skin_default_skin.xml.h:267
 msgid "Here you can make advanced settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:268
+#: skin_default_skin.xml.h:269
 msgid "Here you can make your Audio/Video settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:271
+#: skin_default_skin.xml.h:272
 msgid "Here you can make your EPG settings."
 msgstr "Здесь Вы можете настроить EPG"
 
-#: skin_default_skin.xml.h:273
+#: skin_default_skin.xml.h:274
 msgid "Here you can make your HDMI-CEC settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:279
+#: skin_default_skin.xml.h:280
 msgid "Here you can make your PIN security settings for menu access."
 msgstr ""
 
-#: skin_default_skin.xml.h:278
+#: skin_default_skin.xml.h:279
 msgid "Here you can make your PIN security settings."
 msgstr "Здесь Вы можете изменить PIN-код"
 
-#: skin_default_skin.xml.h:283
+#: skin_default_skin.xml.h:284
 msgid "Here you can make your USB autostart settings."
 msgstr "Здесь Вы можете настроить автозапуск USB устройств"
 
-#: skin_default_skin.xml.h:267
+#: skin_default_skin.xml.h:268
 msgid "Here you can make your audio/video autostart settings."
 msgstr "Здесь Вы можете настроить автозапуск аудио/видео"
 
-#: skin_default_skin.xml.h:269
+#: skin_default_skin.xml.h:270
 msgid "Here you can make your child safety autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:270
+#: skin_default_skin.xml.h:271
 msgid "Here you can make your display settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:272
+#: skin_default_skin.xml.h:273
 msgid "Here you can make your general autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:274
+#: skin_default_skin.xml.h:275
 msgid "Here you can make your mediadb settings."
 msgstr "Здесь Вы можете настроить MediaDB"
 
-#: skin_default_skin.xml.h:275
+#: skin_default_skin.xml.h:276
 msgid "Here you can make your module settings."
 msgstr "Здесь Вы можете настроить модули"
 
-#: skin_default_skin.xml.h:276
+#: skin_default_skin.xml.h:277
 msgid "Here you can make your network autostart settings."
 msgstr "Здесь Вы можете настроить автозапуск сети"
 
-#: skin_default_skin.xml.h:277
+#: skin_default_skin.xml.h:278
 msgid "Here you can make your overclock settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:280
+#: skin_default_skin.xml.h:281
 msgid "Here you can make your screensaver settings."
 msgstr "Здесь Вы можете настроить экранную заставку"
 
-#: skin_default_skin.xml.h:281
+#: skin_default_skin.xml.h:282
 msgid "Here you can make your softcam/USB cardreader autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:282
+#: skin_default_skin.xml.h:283
 msgid "Here you can make your timeshift settings."
 msgstr "Здесь Вы можете настроить таймшифт"
 
@@ -4548,27 +4552,27 @@ msgstr "Здесь Вы можете настроить таймшифт"
 msgid "Here you can make your xupnpd autostart settings."
 msgstr "Здесь Вы можете настроить параметры автозапуска xupnpd"
 
-#: skin_default_skin.xml.h:284
+#: skin_default_skin.xml.h:285
 msgid "Here you can reset the smartcard reader(s)."
 msgstr ""
 
-#: skin_default_skin.xml.h:285
+#: skin_default_skin.xml.h:286
 msgid "Here you can search the EPG for specific genre or keyword."
 msgstr ""
 
-#: skin_default_skin.xml.h:286
+#: skin_default_skin.xml.h:287
 msgid "Here you can see the progress of all current downloads."
 msgstr ""
 
-#: skin_default_skin.xml.h:287
+#: skin_default_skin.xml.h:288
 msgid "Here you can select a skin from the following list."
 msgstr ""
 
-#: skin_default_skin.xml.h:288
+#: skin_default_skin.xml.h:289
 msgid "Here you can select from the following list."
 msgstr "Здесь Вы можете выбрать нужное из следующего списка"
 
-#: skin_default_skin.xml.h:289
+#: skin_default_skin.xml.h:290
 msgid ""
 "Here you can select the Transponder Mode. Please use a channel search after "
 "the Restart"
@@ -4576,59 +4580,59 @@ msgstr ""
 "Здесь Вы можете выбрать тип транспондера. Пожалуйста, используйте поиск "
 "каналов после рестарта системы"
 
-#: skin_default_skin.xml.h:290
+#: skin_default_skin.xml.h:291
 msgid ""
 "Here you can select your hard disks and USB flash drives for configuration."
 msgstr ""
 "Здесь Вы можете выбрать и настроить жесткие диски и флэш-накопители USB"
 
-#: skin_default_skin.xml.h:291
+#: skin_default_skin.xml.h:292
 msgid "Here you can select your network interface."
 msgstr "Здесь Вы можете выбрать сетевой интерфейс"
 
-#: skin_default_skin.xml.h:292
+#: skin_default_skin.xml.h:293
 msgid "Here you can select your remote control type."
 msgstr ""
 
-#: skin_default_skin.xml.h:293
+#: skin_default_skin.xml.h:294
 msgid ""
 "Here you can set your channel search options. Very important, before channel "
 "scan, the tuner must be configured correctly."
 msgstr ""
 
-#: skin_default_skin.xml.h:294
+#: skin_default_skin.xml.h:295
 msgid "Here you can set your hybrid tuner. Choose the required tuner mode."
 msgstr ""
 
-#: skin_default_skin.xml.h:295
+#: skin_default_skin.xml.h:296
 msgid "Here you can set your language."
 msgstr "Здесь Вы можете выбрать язык интерфейса"
 
-#: skin_default_skin.xml.h:296
+#: skin_default_skin.xml.h:297
 msgid ""
 "Here you can set your manual channel search options. Very important, before "
 "channel scan, the tuner must be configured correctly."
 msgstr ""
 
-#: skin_default_skin.xml.h:297
+#: skin_default_skin.xml.h:298
 msgid "Here you can set your timezone."
 msgstr "Здесь Вы можете выбрать Вашу временную зону"
 
-#: skin_default_skin.xml.h:298
+#: skin_default_skin.xml.h:299
 msgid ""
 "Here you can start a blind scan, depending on your satellite configuration, "
 "this process can take very long."
 msgstr ""
 
-#: skin_default_skin.xml.h:299
+#: skin_default_skin.xml.h:300
 msgid "Here you can start and manage your additional plugins."
 msgstr ""
 
-#: skin_default_skin.xml.h:300
+#: skin_default_skin.xml.h:301
 msgid "Here you can test your network."
 msgstr "Здесь Вы можете сделать тест своей сети"
 
-#: skin_default_skin.xml.h:301
+#: skin_default_skin.xml.h:302
 msgid "Here you can view the current channel information."
 msgstr "Здесь Вы можете посмотреть информацию о текущем канале"
 
@@ -4636,11 +4640,11 @@ msgstr "Здесь Вы можете посмотреть информацию �
 msgid "Hid XXX Streams"
 msgstr "Скрывать потоки ХХХ-видео"
 
-#: skin_default_skin.xml.h:302
+#: skin_default_skin.xml.h:303
 msgid "Hierarchy"
 msgstr "Иерархия"
 
-#: skin_default_skin.xml.h:303
+#: skin_default_skin.xml.h:304
 msgid "Hierarchy:"
 msgstr "Иерархия"
 
@@ -4689,7 +4693,7 @@ msgstr ""
 msgid "Hotline"
 msgstr "Горячая линия"
 
-#: skin_default_skin.xml.h:305
+#: skin_default_skin.xml.h:306
 msgid "How many days"
 msgstr "Сколько дней хранить EPG"
 
@@ -4705,7 +4709,7 @@ msgstr ""
 msgid "I Hate Comic Sans"
 msgstr ""
 
-#: skin_default_skin.xml.h:308 tpchoice.h:52
+#: skin_default_skin.xml.h:309 tpchoice.h:52
 msgid "ID"
 msgstr ""
 
@@ -4713,7 +4717,7 @@ msgstr ""
 msgid "ID3"
 msgstr ""
 
-#: skin_default_skin.xml.h:309
+#: skin_default_skin.xml.h:310
 msgid "ID:"
 msgstr "ID"
 
@@ -4761,7 +4765,7 @@ msgstr ""
 msgid "INSTALL"
 msgstr ""
 
-#: skin_default_skin.xml.h:322
+#: skin_default_skin.xml.h:323
 msgid "IP for Stream"
 msgstr "IP потока"
 
@@ -4841,7 +4845,7 @@ msgstr ""
 msgid "Import mode"
 msgstr ""
 
-#: skin_default_skin.xml.h:310
+#: skin_default_skin.xml.h:311
 msgid "Inc. AC3 Audio in %"
 msgstr "Аудио Inc. AC3 в %"
 
@@ -4870,23 +4874,23 @@ msgstr "Аудио Inc. AC3 в %"
 msgid "Info"
 msgstr "Инфо"
 
-#: skin_default_skin.xml.h:311
+#: skin_default_skin.xml.h:312
 msgid "Info bar 2 selection"
 msgstr "Инфобар 2"
 
-#: skin_default_skin.xml.h:312
+#: skin_default_skin.xml.h:313
 msgid "Info bar selection"
 msgstr "Инфобар"
 
-#: httpdfunc.h:3767 skin_default_skin.xml.h:313
+#: httpdfunc.h:3767 skin_default_skin.xml.h:314
 msgid "Infobar Sleep"
 msgstr "Время ожидания инфобара (Сек)"
 
-#: httpdfunc.h:3735 skin_default_skin.xml.h:314
+#: httpdfunc.h:3735 skin_default_skin.xml.h:315
 msgid "Infobar Timeout"
 msgstr "Время показа инфобара (Сек)"
 
-#: skin_default_skin.xml.h:315 tsSchnitt.c:108
+#: skin_default_skin.xml.h:316 tsSchnitt.c:108
 msgid "Information"
 msgstr "Информация"
 
@@ -5027,7 +5031,7 @@ msgstr "Установка в SWAP (USB или HDD)"
 msgid "Installation start"
 msgstr "Запуск установки"
 
-#: httpdfunc.h:5674 security.h:2083 skin_default_skin.xml.h:317
+#: httpdfunc.h:5674 security.h:2083 skin_default_skin.xml.h:318
 msgid "Installed:"
 msgstr "Установлено"
 
@@ -5051,11 +5055,11 @@ msgstr "Плагин браузера не установлен!"
 msgid "Interval"
 msgstr "Интервал"
 
-#: skin_default_skin.xml.h:319
+#: skin_default_skin.xml.h:320
 msgid "Inversion"
 msgstr "Инверсия"
 
-#: skin_default_skin.xml.h:320
+#: skin_default_skin.xml.h:321
 msgid "Inversion:"
 msgstr "Инверсия"
 
@@ -5070,7 +5074,7 @@ msgstr ""
 msgid "Is this Videomode ok ?"
 msgstr "Так устраивает?"
 
-#: skin_default_skin.xml.h:323
+#: skin_default_skin.xml.h:324
 msgid "Italian"
 msgstr "Итальянский"
 
@@ -5087,7 +5091,7 @@ msgid "July"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
-#: skin_default_skin.xml.h:324
+#: skin_default_skin.xml.h:325
 msgid "Jump"
 msgstr ""
 
@@ -5151,16 +5155,16 @@ msgstr ""
 msgid "Kamera 2 (Umschalten mit Rot)"
 msgstr ""
 
-#: httpdfunc.h:5265 skin_default_skin.xml.h:325 system_infos.h:18
+#: httpdfunc.h:5265 skin_default_skin.xml.h:326 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr "Ядро"
 
-#: skin_default_skin.xml.h:326 system_infos_sysinfo.h:21
+#: skin_default_skin.xml.h:327 system_infos_sysinfo.h:21
 msgid "Kernel Modules"
 msgstr ""
 
-#: skin_default_skin.xml.h:327
+#: skin_default_skin.xml.h:328
 msgid "Key"
 msgstr "Ключ"
 
@@ -5176,7 +5180,7 @@ msgstr ""
 msgid "KeyLock"
 msgstr ""
 
-#: skin_default_skin.xml.h:329
+#: skin_default_skin.xml.h:330
 msgid "Keyboard"
 msgstr "Клавиатура"
 
@@ -5260,11 +5264,11 @@ msgstr ""
 msgid "LCD Samsung skin wooden clock"
 msgstr ""
 
-#: skin_default_skin.xml.h:335
+#: skin_default_skin.xml.h:336
 msgid "LED - brightness running"
 msgstr "LED - яркость в работе"
 
-#: skin_default_skin.xml.h:336
+#: skin_default_skin.xml.h:337
 msgid "LED - brightness standby"
 msgstr "LED - яркость в режиме ожидания"
 
@@ -5296,7 +5300,7 @@ msgstr ""
 msgid "LNB 18V / 22K off: OK"
 msgstr ""
 
-#: skin_default_skin.xml.h:341
+#: skin_default_skin.xml.h:342
 msgid "LNB Settings"
 msgstr "Параметры LNB"
 
@@ -5312,23 +5316,23 @@ msgstr ""
 msgid "LOAD-FritzBook"
 msgstr ""
 
-#: skin_default_skin.xml.h:344
+#: skin_default_skin.xml.h:345
 msgid "LOF / UNICABLE"
 msgstr ""
 
-#: skin_default_skin.xml.h:342
+#: skin_default_skin.xml.h:343
 msgid "LOF/H"
 msgstr ""
 
-#: skin_default_skin.xml.h:343
+#: skin_default_skin.xml.h:344
 msgid "LOF/L"
 msgstr ""
 
-#: skin_default_skin.xml.h:345
+#: skin_default_skin.xml.h:346
 msgid "LOG"
 msgstr "Лог"
 
-#: skin_default_skin.xml.h:333
+#: skin_default_skin.xml.h:334
 msgid "Language"
 msgstr "Язык меню"
 
@@ -5414,7 +5418,7 @@ msgstr "Сейчас"
 msgid "Last: "
 msgstr "Последний "
 
-#: skin_default_skin.xml.h:334
+#: skin_default_skin.xml.h:335
 msgid "Latitude"
 msgstr "Широта"
 
@@ -5453,7 +5457,7 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: skin_default_skin.xml.h:337
+#: skin_default_skin.xml.h:338
 msgid "Limit"
 msgstr "Предел"
 
@@ -5465,15 +5469,15 @@ msgstr "Ссылка размещена"
 msgid "Linuxgirl"
 msgstr ""
 
-#: skin_default_skin.xml.h:338
+#: skin_default_skin.xml.h:339
 msgid "Listbox Select"
 msgstr "Метод выделения из списка"
 
-#: skin_default_skin.xml.h:339
+#: skin_default_skin.xml.h:340
 msgid "Listbox Select Color"
 msgstr "Выберите цвет выделения пунктов меню"
 
-#: skin_default_skin.xml.h:340
+#: skin_default_skin.xml.h:341
 msgid "Lithuanian"
 msgstr "Литовский"
 
@@ -5505,7 +5509,7 @@ msgstr "Лого 2"
 msgid "Logs"
 msgstr "Логи"
 
-#: skin_default_skin.xml.h:346
+#: skin_default_skin.xml.h:347
 msgid "Longitude"
 msgstr "Долгота"
 
@@ -5541,15 +5545,15 @@ msgstr "Настройки сортировки"
 msgid "MC VideoPlayer View Settings"
 msgstr "Настройки просмотра"
 
-#: skin_default_skin.xml.h:364
+#: skin_default_skin.xml.h:365
 msgid "MENUPROTECT"
 msgstr "Защита меню"
 
-#: skin_default_skin.xml.h:366
+#: skin_default_skin.xml.h:367
 msgid "MHW EPG"
 msgstr ""
 
-#: skin_default_skin.xml.h:365
+#: skin_default_skin.xml.h:366
 msgid "MHW2 EPG"
 msgstr ""
 
@@ -5561,7 +5565,7 @@ msgstr "I"
 msgid "MO"
 msgstr "M"
 
-#: httpdfunc.h:5311 skin_default_skin.xml.h:381 system_infos_sysinfo.h:19
+#: httpdfunc.h:5311 skin_default_skin.xml.h:382 system_infos_sysinfo.h:19
 #: webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr "Распределение FLASH"
@@ -5594,7 +5598,7 @@ msgstr "Провайдеры"
 msgid "MULTI EPG - Satellites"
 msgstr "Спутники"
 
-#: skin_default_skin.xml.h:347
+#: skin_default_skin.xml.h:348
 msgid "Main Menu"
 msgstr "Главное меню"
 
@@ -5602,15 +5606,15 @@ msgstr "Главное меню"
 msgid "Manage MultiImage"
 msgstr ""
 
-#: skin_default_skin.xml.h:348
+#: skin_default_skin.xml.h:349
 msgid "Manual Search"
 msgstr "Поиск каналов (Ручной)"
 
-#: skin_default_skin.xml.h:349
+#: skin_default_skin.xml.h:350
 msgid "Manual Search Cable"
 msgstr "Ручной поиск кабельного ТВ"
 
-#: skin_default_skin.xml.h:350
+#: skin_default_skin.xml.h:351
 msgid "Manual Search Terrestrial"
 msgstr "Ручной поиск наземного ТВ"
 
@@ -5618,11 +5622,11 @@ msgstr "Ручной поиск наземного ТВ"
 msgid "March"
 msgstr ""
 
-#: skin_default_skin.xml.h:351
+#: skin_default_skin.xml.h:352
 msgid "Mark Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:352
+#: skin_default_skin.xml.h:353
 msgid "Marker"
 msgstr ""
 
@@ -5646,11 +5650,11 @@ msgstr "Маркер установлен"
 msgid "Market cap: "
 msgstr "Рыночная капитализация "
 
-#: skin_default_skin.xml.h:353
+#: skin_default_skin.xml.h:354
 msgid "Maximal frequency"
 msgstr "Макс частота"
 
-#: skin_default_skin.xml.h:354
+#: skin_default_skin.xml.h:355
 msgid "Maximal signalrate"
 msgstr "Макс сигнал"
 
@@ -5672,11 +5676,11 @@ msgstr ""
 msgid "Media"
 msgstr "Медиа"
 
-#: skin_default_skin.xml.h:355
+#: skin_default_skin.xml.h:356
 msgid "Media Button"
 msgstr "Медиа кнопка"
 
-#: skin_default_skin.xml.h:356
+#: skin_default_skin.xml.h:357
 msgid "Media Center"
 msgstr "Медиацентр"
 
@@ -5700,7 +5704,7 @@ msgstr "Медиа папка 4"
 msgid "Media Key Action - Setup"
 msgstr "Выбор"
 
-#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:360
+#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:361
 msgid "Media Player"
 msgstr "Медиаплеер"
 
@@ -5724,11 +5728,11 @@ msgstr "Плагин MediaDB"
 msgid "MediaDB Debug"
 msgstr "Отладка MediaDB"
 
-#: play.h:644 skin_default_skin.xml.h:357
+#: play.h:644 skin_default_skin.xml.h:358
 msgid "MediaDB Edit"
 msgstr "Плагин MediaDB"
 
-#: skin_default_skin.xml.h:358
+#: skin_default_skin.xml.h:359
 msgid "MediaDB Path"
 msgstr "Путь MediaDB"
 
@@ -5744,7 +5748,7 @@ msgstr ""
 msgid "MediaDB Scan Info"
 msgstr ""
 
-#: skin_default_skin.xml.h:359
+#: skin_default_skin.xml.h:360
 msgid "MediaDB Settings"
 msgstr "Настройки MediaDB"
 
@@ -5794,7 +5798,7 @@ msgstr ""
 msgid "MegaStyle grey with MiniTv (Skinadjust)"
 msgstr ""
 
-#: httpdfunc.h:5309 skin_default_skin.xml.h:361 system_infos.h:24
+#: httpdfunc.h:5309 skin_default_skin.xml.h:362 system_infos.h:24
 #: system_infos_sysinfo.h:17 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Память"
@@ -5820,7 +5824,7 @@ msgstr "Память"
 msgid "Menu"
 msgstr "Меню"
 
-#: skin_default_skin.xml.h:363
+#: skin_default_skin.xml.h:364
 msgid "Menu Protect"
 msgstr "Защита меню"
 
@@ -5832,7 +5836,7 @@ msgstr "Название меню"
 msgid "Menu not implemented !"
 msgstr "Меню не реализовано!"
 
-#: skin_default_skin.xml.h:362
+#: skin_default_skin.xml.h:363
 msgid "Menulist"
 msgstr ""
 
@@ -5899,8 +5903,8 @@ msgstr ""
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:459 skinadjust.h:475 skinadjust.h:483 skinadjust.h:524
-#: skinadjust.h:541 skinadjust.h:937 skinadjust.h:994 skinselector.h:231
+#: skinadjust.h:504 skinadjust.h:520 skinadjust.h:528 skinadjust.h:569
+#: skinadjust.h:586 skinadjust.h:982 skinadjust.h:1044 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
 #: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
@@ -5950,11 +5954,11 @@ msgstr ""
 msgid "Minimal"
 msgstr "Минимал"
 
-#: skin_default_skin.xml.h:367
+#: skin_default_skin.xml.h:368
 msgid "Minimal frequency"
 msgstr "Мин частота"
 
-#: skin_default_skin.xml.h:368
+#: skin_default_skin.xml.h:369
 msgid "Minimal signalrate"
 msgstr "Мин сигнал"
 
@@ -5962,19 +5966,19 @@ msgstr "Мин сигнал"
 msgid "Minuten"
 msgstr "Минуты"
 
-#: skin_default_skin.xml.h:369
+#: skin_default_skin.xml.h:370
 msgid "Minutes"
 msgstr "Выключить через (Мин)"
 
-#: skin_default_skin.xml.h:370
+#: skin_default_skin.xml.h:371
 msgid "Minutes:"
 msgstr "Минуты"
 
-#: skin_default_skin.xml.h:371
+#: skin_default_skin.xml.h:372
 msgid "Modulation"
 msgstr "Модуляция"
 
-#: skin_default_skin.xml.h:372
+#: skin_default_skin.xml.h:373
 msgid "Modulation:"
 msgstr "Модуляция"
 
@@ -5982,7 +5986,7 @@ msgstr "Модуляция"
 msgid "Module"
 msgstr "Модули"
 
-#: skin_default_skin.xml.h:373
+#: skin_default_skin.xml.h:374
 msgid "Module Config"
 msgstr "Параметры модуля"
 
@@ -5994,7 +5998,7 @@ msgstr "Тип модуля"
 msgid "Mon"
 msgstr ""
 
-#: global.h:6247 global.h:6257 rectimer.h:1100 skin_default_skin.xml.h:374
+#: global.h:6247 global.h:6257 rectimer.h:1100 skin_default_skin.xml.h:375
 msgid "Monday"
 msgstr "Понедельник"
 
@@ -6006,12 +6010,12 @@ msgstr ""
 msgid "More audio/video formats playable"
 msgstr ""
 
-#: httpdfunc.h:5267 skin_default_skin.xml.h:375 system_infos.h:20
+#: httpdfunc.h:5267 skin_default_skin.xml.h:376 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr "Примонтировано"
 
-#: skin_default_skin.xml.h:376
+#: skin_default_skin.xml.h:377
 msgid "Move"
 msgstr "Перемещение"
 
@@ -6031,11 +6035,11 @@ msgstr ""
 msgid "Move File"
 msgstr "Перемещение файла(ов)"
 
-#: skin_default_skin.xml.h:377
+#: skin_default_skin.xml.h:378
 msgid "Move Modus Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:378
+#: skin_default_skin.xml.h:379
 msgid "Move Modus Font Color"
 msgstr ""
 
@@ -6047,7 +6051,7 @@ msgstr "Перемещение"
 msgid "Moven"
 msgstr "Переместить"
 
-#: skin_default_skin.xml.h:380
+#: skin_default_skin.xml.h:381
 msgid "Moviepath"
 msgstr "Путь перемещения"
 
@@ -6066,7 +6070,7 @@ msgstr "Мульти EPG"
 
 #: epgsettings.h:141 epgsettings.h:182 keyactions.h:79
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
-#: skin_default_skin.xml.h:382
+#: skin_default_skin.xml.h:383
 msgid "Multi EPG"
 msgstr "Мульти EPG"
 
@@ -6149,26 +6153,26 @@ msgstr "Далее"
 msgid "NONE"
 msgstr "Ничего"
 
-#: skin_default_skin.xml.h:383 stock.h:270
+#: skin_default_skin.xml.h:384 stock.h:270
 msgid "Name"
 msgstr "Имя"
 
-#: skin_default_skin.xml.h:384
+#: skin_default_skin.xml.h:385
 msgid "Name:"
 msgstr "Имя"
 
 #: httpdfunc.h:5269 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:34 plugins_panel_skin.xml.h:13
-#: skin_default_skin.xml.h:386 skins_mc_skin.xml.h:34
+#: skin_default_skin.xml.h:387 skins_mc_skin.xml.h:34
 #: skins_panel_skin.xml.h:13 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "Сеть"
 
-#: skin_default_skin.xml.h:387
+#: skin_default_skin.xml.h:388
 msgid "Network Adapter Settings"
 msgstr "Параметры сетевого адаптера"
 
-#: skin_default_skin.xml.h:388
+#: skin_default_skin.xml.h:389
 msgid "Network Adapter Test"
 msgstr "Тест сетевого адаптера"
 
@@ -6176,19 +6180,19 @@ msgstr "Тест сетевого адаптера"
 msgid "Network Interface"
 msgstr ""
 
-#: skin_default_skin.xml.h:390
+#: skin_default_skin.xml.h:391
 msgid "Network Interfacelist"
 msgstr "Список сетевых интерфейсов"
 
-#: skin_default_skin.xml.h:391
+#: skin_default_skin.xml.h:392
 msgid "Network Restart"
 msgstr "Рестарт сети"
 
-#: skin_default_skin.xml.h:392
+#: skin_default_skin.xml.h:393
 msgid "Network Scan"
 msgstr "Сканирование сети"
 
-#: skin_default_skin.xml.h:393
+#: skin_default_skin.xml.h:394
 msgid "Network Test"
 msgstr "Тест сети"
 
@@ -6196,7 +6200,7 @@ msgstr "Тест сети"
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: adjust.h:290 skin_default_skin.xml.h:389 tpk_showname.h:86
+#: adjust.h:290 skin_default_skin.xml.h:390 tpk_showname.h:86
 msgid "Networkbrowser"
 msgstr "Сетевой браузер"
 
@@ -6248,7 +6252,7 @@ msgstr ""
 msgid "News"
 msgstr "Последние новости"
 
-#: adjust.h:379 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:394
+#: adjust.h:379 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:395
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Новости от разработчиков"
@@ -6267,7 +6271,7 @@ msgstr "Новости от разработчиков"
 msgid "Next"
 msgstr "Далее"
 
-#: skin_default_skin.xml.h:395
+#: skin_default_skin.xml.h:396
 msgid "Next EPG Time"
 msgstr "Следующий EPG"
 
@@ -6275,11 +6279,11 @@ msgstr "Следующий EPG"
 msgid "Next Page"
 msgstr ""
 
-#: skin_default_skin.xml.h:396
+#: skin_default_skin.xml.h:397
 msgid "Nfs Server Settings"
 msgstr "Параметры Nfs сервера"
 
-#: skinadjust.h:196
+#: skinadjust.h:241
 msgid "No"
 msgstr ""
 
@@ -6373,7 +6377,7 @@ msgstr ""
 msgid "No space left on device"
 msgstr "ОШИБКА: Нет свободного места на накопителе"
 
-#: skin_default_skin.xml.h:397
+#: skin_default_skin.xml.h:398
 msgid "Normal/Standby"
 msgstr "Нормальный/Режим ожидания"
 
@@ -6493,9 +6497,9 @@ msgstr ""
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:459
-#: skinadjust.h:475 skinadjust.h:483 skinadjust.h:524 skinadjust.h:541
-#: skinadjust.h:937 skinadjust.h:994 skins_dlna_skin.xml.h:7
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:504
+#: skinadjust.h:520 skinadjust.h:528 skinadjust.h:569 skinadjust.h:586
+#: skinadjust.h:982 skinadjust.h:1044 skins_dlna_skin.xml.h:7
 #: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
@@ -6544,23 +6548,23 @@ msgstr "ОК"
 msgid "OK = select image for boot"
 msgstr ""
 
-#: skin_default_skin.xml.h:399
+#: skin_default_skin.xml.h:400
 msgid "OLED selection"
 msgstr "Выбор OLED"
 
-#: skin_default_skin.xml.h:400
+#: skin_default_skin.xml.h:401
 msgid "ONID:"
 msgstr "ONID"
 
-#: skin_default_skin.xml.h:407
+#: skin_default_skin.xml.h:408
 msgid "OSD Bottom Overscan"
 msgstr "Маска экрана (Снизу)"
 
-#: skin_default_skin.xml.h:408
+#: skin_default_skin.xml.h:409
 msgid "OSD Left Overscan"
 msgstr "Маска экрана (Слева)"
 
-#: skin_default_skin.xml.h:409
+#: skin_default_skin.xml.h:410
 msgid "OSD Right Overscan"
 msgstr "Маска экрана (Справа)"
 
@@ -6568,11 +6572,11 @@ msgstr "Маска экрана (Справа)"
 msgid "OSD Screenshot"
 msgstr "OSD"
 
-#: skin_default_skin.xml.h:410
+#: skin_default_skin.xml.h:411
 msgid "OSD Top Overscan"
 msgstr "Маска экрана (Сверху)"
 
-#: skin_default_skin.xml.h:411
+#: skin_default_skin.xml.h:412
 msgid "OSD Transparent"
 msgstr "Прозрачность"
 
@@ -6603,7 +6607,7 @@ msgstr "Помощь (Офлайн)"
 msgid "Ok"
 msgstr "ОК"
 
-#: skin_default_skin.xml.h:398
+#: skin_default_skin.xml.h:399
 msgid "Ok Color"
 msgstr ""
 
@@ -6627,19 +6631,19 @@ msgstr "Помощь (Онлайн)"
 msgid "Only Boot Overclock"
 msgstr "Разгон только при загрузке"
 
-#: skin_default_skin.xml.h:403
+#: skin_default_skin.xml.h:404
 msgid "Only DVBS"
 msgstr "Только DVBS"
 
-#: skin_default_skin.xml.h:401
+#: skin_default_skin.xml.h:402
 msgid "Only default FEC"
 msgstr "Только FEC"
 
-#: skin_default_skin.xml.h:402
+#: skin_default_skin.xml.h:403
 msgid "Only default signalrate"
 msgstr "Только скорость сигнала"
 
-#: skin_default_skin.xml.h:404
+#: skin_default_skin.xml.h:405
 msgid "Only free scan"
 msgstr "Только бесплатные"
 
@@ -6655,7 +6659,7 @@ msgstr "Открыть параметры меню"
 msgid "Open: "
 msgstr "Открыто "
 
-#: skin_default_skin.xml.h:405
+#: skin_default_skin.xml.h:406
 msgid "OpenTV EPG"
 msgstr "EPG OpenTV"
 
@@ -6679,7 +6683,7 @@ msgstr ""
 msgid "Optimize"
 msgstr "Оптимизатор"
 
-#: skin_default_skin.xml.h:406
+#: skin_default_skin.xml.h:407
 msgid "Orbital Position:"
 msgstr "Орбитальная позиция"
 
@@ -6707,12 +6711,12 @@ msgstr ""
 msgid "OverClock Settings"
 msgstr "Настройки разгона процессора"
 
-#: plugins_panel_skin.xml.h:14 skin_default_skin.xml.h:412
+#: plugins_panel_skin.xml.h:14 skin_default_skin.xml.h:413
 #: skins_panel_skin.xml.h:14
 msgid "Overclocking"
 msgstr "Разгон процессора"
 
-#: skin_default_skin.xml.h:413
+#: skin_default_skin.xml.h:414
 msgid "Overclocking Settings"
 msgstr "Разгон процессора"
 
@@ -6720,12 +6724,12 @@ msgstr "Разгон процессора"
 msgid "P"
 msgstr ""
 
-#: skin_default_skin.xml.h:415
+#: skin_default_skin.xml.h:416
 msgid "PCR PID:"
 msgstr "PCR PID"
 
 #: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:11
-#: skin_default_skin.xml.h:417 skins_mc_skin.xml.h:39
+#: skin_default_skin.xml.h:418 skins_mc_skin.xml.h:39
 #: skins_tithek_skin.xml.h:11
 msgid "PICTURE"
 msgstr "Картинка"
@@ -6734,27 +6738,27 @@ msgstr "Картинка"
 msgid "PICTURE SETTINGS"
 msgstr "Настройки отображения фото"
 
-#: skin_default_skin.xml.h:418
+#: skin_default_skin.xml.h:419
 msgid "PIDs"
 msgstr "Пиды"
 
-#: skin_default_skin.xml.h:425
+#: skin_default_skin.xml.h:426
 msgid "PIN Settings"
 msgstr "Пин-код настроек"
 
-#: skin_default_skin.xml.h:421
+#: skin_default_skin.xml.h:422
 msgid "PIN:"
 msgstr "Пин-код"
 
-#: skin_default_skin.xml.h:426
+#: skin_default_skin.xml.h:427
 msgid "PIP functions"
 msgstr "Функции PiP"
 
-#: skin_default_skin.xml.h:427
+#: skin_default_skin.xml.h:428
 msgid "PLAY"
 msgstr "Играть"
 
-#: skin_default_skin.xml.h:436
+#: skin_default_skin.xml.h:437
 msgid "PMT PID:"
 msgstr "PMT PID"
 
@@ -6805,7 +6809,7 @@ msgstr ""
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:414
+#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:415
 #: skins_networkbrowser_skin.xml.h:17
 msgid "Password"
 msgstr "Пароль"
@@ -7015,7 +7019,7 @@ msgstr ""
 msgid "Picons White70 (Hotbird 13.0)"
 msgstr ""
 
-#: skin_default_skin.xml.h:416 tmc.h:417
+#: skin_default_skin.xml.h:417 tmc.h:417
 msgid "Picture"
 msgstr "Картинка"
 
@@ -7027,11 +7031,11 @@ msgstr "Просмотр фото"
 msgid "Pid's not ok"
 msgstr "PID плохой"
 
-#: skin_default_skin.xml.h:419
+#: skin_default_skin.xml.h:420
 msgid "Pilot"
 msgstr "Пилот"
 
-#: skin_default_skin.xml.h:420
+#: skin_default_skin.xml.h:421
 msgid "Pilot:"
 msgstr "Пилот"
 
@@ -7051,15 +7055,15 @@ msgstr ""
 msgid "Pin"
 msgstr "Пин-код"
 
-#: skin_default_skin.xml.h:422
+#: skin_default_skin.xml.h:423
 msgid "Pin Code"
 msgstr "Пин-код"
 
-#: skin_default_skin.xml.h:423
+#: skin_default_skin.xml.h:424
 msgid "Pin Code Channel"
 msgstr "Пин-код канала"
 
-#: skin_default_skin.xml.h:424
+#: skin_default_skin.xml.h:425
 msgid "Pin Code menu"
 msgstr "Пин-код меню"
 
@@ -7082,11 +7086,11 @@ msgstr "Играть"
 msgid "Play Movie (URL)"
 msgstr "Кино (URL)"
 
-#: skin_default_skin.xml.h:430
+#: skin_default_skin.xml.h:431
 msgid "PlayList"
 msgstr "Плейлист"
 
-#: skin_default_skin.xml.h:428
+#: skin_default_skin.xml.h:429
 msgid "Playbackbuffer Size"
 msgstr "Размер буфера"
 
@@ -7098,7 +7102,7 @@ msgstr ""
 msgid "Player"
 msgstr "Плеер"
 
-#: httpdfunc.h:4374 skin_default_skin.xml.h:429
+#: httpdfunc.h:4374 skin_default_skin.xml.h:430
 msgid "Player for .ts"
 msgstr "Плеер для файлов *.ts"
 
@@ -7120,7 +7124,7 @@ msgstr ""
 msgid "Playlist-Mode"
 msgstr "Вид плейлиста"
 
-#: skin_default_skin.xml.h:431
+#: skin_default_skin.xml.h:432
 msgid "Please contact Atemio for activation."
 msgstr "Пожалуйста, свяжитесь с Atemio для активации"
 
@@ -7138,7 +7142,7 @@ msgstr ""
 "\n"
 "Ресивер перезагрузится через несколько секунд"
 
-#: skin_default_skin.xml.h:433
+#: skin_default_skin.xml.h:434
 msgid "Plot"
 msgstr "Участок"
 
@@ -7163,7 +7167,7 @@ msgstr ""
 msgid "Plugin"
 msgstr "Плагин"
 
-#: skin_default_skin.xml.h:434
+#: skin_default_skin.xml.h:435
 msgid "Plugin Button"
 msgstr "Кнопка плагина"
 
@@ -7171,7 +7175,7 @@ msgstr "Кнопка плагина"
 msgid "Plugin Key Action - Setup"
 msgstr "Установки"
 
-#: skin_default_skin.xml.h:435
+#: skin_default_skin.xml.h:436
 msgid "Plugins"
 msgstr "Плагины"
 
@@ -7179,19 +7183,19 @@ msgstr "Плагины"
 msgid "Points"
 msgstr ""
 
-#: lnbconfig.h:137 skin_default_skin.xml.h:437
+#: lnbconfig.h:137 skin_default_skin.xml.h:438
 msgid "Polarization"
 msgstr "Поляризация"
 
-#: skin_default_skin.xml.h:438
+#: skin_default_skin.xml.h:439
 msgid "Polarization:"
 msgstr "Поляризация"
 
-#: skin_default_skin.xml.h:439
+#: skin_default_skin.xml.h:440
 msgid "Policy"
 msgstr "Видеорежим"
 
-#: skin_default_skin.xml.h:440
+#: skin_default_skin.xml.h:441
 msgid "Polish"
 msgstr "Польский"
 
@@ -7223,7 +7227,7 @@ msgstr ""
 "Настройки позиции не доступны, если запись\n"
 "или стриминг запущены!"
 
-#: skin_default_skin.xml.h:442
+#: skin_default_skin.xml.h:443
 msgid "Positioner Setup"
 msgstr "Параметры позиционера"
 
@@ -7265,7 +7269,7 @@ msgid "Power Menu"
 msgstr "Меню выключения"
 
 #: adjust.h:110 adjust.h:116 httpdfunc.h:4060 httpdfunc.h:4096
-#: skin_default_skin.xml.h:443 webif_index.atemio510.h:4
+#: skin_default_skin.xml.h:444 webif_index.atemio510.h:4
 #: webif_index.atemio5200.h:4 webif_index.atemio6000.h:4
 #: webif_index.atemio6100.h:4 webif_index.atemio6200.h:4
 #: webif_index.atemio7600.h:2 webif_index.atemio-nemesis.h:4
@@ -7274,7 +7278,7 @@ msgstr "Меню выключения"
 msgid "Power Off"
 msgstr "Выключение"
 
-#: skin_default_skin.xml.h:445
+#: skin_default_skin.xml.h:446
 msgid "Power Off Timer"
 msgstr "Таймер выключения"
 
@@ -7290,7 +7294,7 @@ msgstr "Меню выключения"
 msgid "Poweroff"
 msgstr "Выключение"
 
-#: skin_default_skin.xml.h:444
+#: skin_default_skin.xml.h:445
 msgid "Poweroff Timer"
 msgstr "Таймер выключения"
 
@@ -7322,7 +7326,7 @@ msgstr ""
 msgid "Press Front Key"
 msgstr "Нажмите кнопку на панеле"
 
-#: skin_default_skin.xml.h:446
+#: skin_default_skin.xml.h:447
 msgid "Press OK after scan has ended."
 msgstr ""
 
@@ -7334,15 +7338,15 @@ msgstr "Нажмите ОК или EXIT"
 msgid "Preview"
 msgstr "Предварительный просмотр"
 
-#: skin_default_skin.xml.h:448
+#: skin_default_skin.xml.h:449
 msgid "Prime Time"
 msgstr ""
 
-#: skin_default_skin.xml.h:449 system_infos_sysinfo.h:29
+#: skin_default_skin.xml.h:450 system_infos_sysinfo.h:29
 msgid "Processlist"
 msgstr ""
 
-#: skin_default_skin.xml.h:450
+#: skin_default_skin.xml.h:451
 msgid "Program Info"
 msgstr "Инфо программы"
 
@@ -7350,27 +7354,27 @@ msgstr "Инфо программы"
 msgid "Program started successfully"
 msgstr "Программа успешно стартовала"
 
-#: skin_default_skin.xml.h:451
+#: skin_default_skin.xml.h:452
 msgid "Progress Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:452
+#: skin_default_skin.xml.h:453
 msgid "Protect Channel"
 msgstr "Защитить канал"
 
-#: skin_default_skin.xml.h:453
+#: skin_default_skin.xml.h:454
 msgid "Protect Channel Freetime (min)"
 msgstr "Защищать канал (Мин)"
 
-#: skin_default_skin.xml.h:454
+#: skin_default_skin.xml.h:455
 msgid "Protect Menu"
 msgstr "Защитить меню"
 
-#: skin_default_skin.xml.h:455
+#: skin_default_skin.xml.h:456
 msgid "Protect Modus Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:456
+#: skin_default_skin.xml.h:457
 msgid "Protect Modus Font Color"
 msgstr ""
 
@@ -7378,7 +7382,7 @@ msgstr ""
 msgid "Protect mode"
 msgstr "Защита"
 
-#: skin_default_skin.xml.h:458
+#: skin_default_skin.xml.h:459
 msgid "Prov"
 msgstr "Провайдер"
 
@@ -7395,7 +7399,7 @@ msgstr ""
 msgid "Provider (DVB-T)"
 msgstr ""
 
-#: skin_default_skin.xml.h:459
+#: skin_default_skin.xml.h:460
 msgid "Provider:"
 msgstr "Провайдер"
 
@@ -7456,15 +7460,15 @@ msgstr "ID ресивера"
 msgid "RED"
 msgstr "Красная"
 
-#: skin_default_skin.xml.h:478
+#: skin_default_skin.xml.h:479
 msgid "RELOAD"
 msgstr "Загрузить все"
 
-#: skin_default_skin.xml.h:482
+#: skin_default_skin.xml.h:483
 msgid "REMOVE ENTRY"
 msgstr "Отменить выбор"
 
-#: skin_default_skin.xml.h:484
+#: skin_default_skin.xml.h:485
 msgid "REMOVE STYLE"
 msgstr ""
 
@@ -7472,7 +7476,7 @@ msgstr ""
 msgid "RENAME"
 msgstr ""
 
-#: skin_default_skin.xml.h:491
+#: skin_default_skin.xml.h:492
 msgid "RESET"
 msgstr "Сброс"
 
@@ -7488,7 +7492,7 @@ msgstr ""
 msgid "RGUI Client"
 msgstr "RGUI клиент"
 
-#: skin_default_skin.xml.h:508
+#: skin_default_skin.xml.h:509
 msgid "RGUID Port"
 msgstr "Порт RGUID"
 
@@ -7497,7 +7501,7 @@ msgid "RS232"
 msgstr ""
 
 #: channellist.h:737 channellist.h:1802 httpdfunc.h:292 httpdfunc.h:701
-#: scan.h:546 skin_default_skin.xml.h:460 webif_index.atemio5200.h:69
+#: scan.h:546 skin_default_skin.xml.h:461 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
 #: webif_index.atemio-nemesis.h:125 webif_index.dm7020hd.h:69
@@ -7543,7 +7547,7 @@ msgstr "Наугад-Выкл"
 msgid "Random-On"
 msgstr "Наугад-Вкл"
 
-#: skin_default_skin.xml.h:461
+#: skin_default_skin.xml.h:462
 msgid "Rating"
 msgstr "Рейтинг"
 
@@ -7613,7 +7617,7 @@ msgstr "Восстановить настройки по умолчанию?"
 msgid "Really stop download ?"
 msgstr "Остановить загрузку?"
 
-#: skin_default_skin.xml.h:473
+#: skin_default_skin.xml.h:474
 msgid "Rec Progress Color"
 msgstr ""
 
@@ -7639,11 +7643,11 @@ msgstr "Ресивер перезагружается!"
 msgid "Receiver successful unlocked"
 msgstr "Ресивер расблокирован!"
 
-#: skin_default_skin.xml.h:462
+#: skin_default_skin.xml.h:463
 msgid "Receiver unlock"
 msgstr "Блокировка приёмника"
 
-#: record.h:1586 record.h:1656 skin_default_skin.xml.h:463
+#: record.h:1586 record.h:1656 skin_default_skin.xml.h:464
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7667,7 +7671,7 @@ msgstr "Запись"
 msgid "Record / Timeshift / Stream"
 msgstr "Запись/Таймшифт/Стриминг"
 
-#: httpdfunc.h:4216 skin_default_skin.xml.h:464
+#: httpdfunc.h:4216 skin_default_skin.xml.h:465
 msgid "Record Forerun (min)"
 msgstr "Включение перед записью (Мин)"
 
@@ -7675,15 +7679,15 @@ msgstr "Включение перед записью (Мин)"
 msgid "Record Max Sectors"
 msgstr "Максимальный сектор записей"
 
-#: httpdfunc.h:4248 skin_default_skin.xml.h:467
+#: httpdfunc.h:4248 skin_default_skin.xml.h:468
 msgid "Record Overrun (min)"
 msgstr "Выключение после записи (Мин)"
 
-#: skin_default_skin.xml.h:469
+#: skin_default_skin.xml.h:470
 msgid "Record Path"
 msgstr "Путь записи"
 
-#: skin_default_skin.xml.h:470
+#: skin_default_skin.xml.h:471
 msgid "Record Path settings"
 msgstr "Параметры пути записи"
 
@@ -7691,11 +7695,11 @@ msgstr "Параметры пути записи"
 msgid "Record Player"
 msgstr "Воспроизведение записей"
 
-#: httpdfunc.h:4171 skin_default_skin.xml.h:471
+#: httpdfunc.h:4171 skin_default_skin.xml.h:472
 msgid "Record Split Size"
 msgstr "Деление файлов на части при записи (Мб)"
 
-#: skin_default_skin.xml.h:472
+#: skin_default_skin.xml.h:473
 msgid "Record Timer"
 msgstr "Параметры записи"
 
@@ -7707,7 +7711,7 @@ msgstr ""
 msgid "Record in progress"
 msgstr "Идёт запись"
 
-#: skin_default_skin.xml.h:468
+#: skin_default_skin.xml.h:469
 msgid "Record path"
 msgstr "Путь записи"
 
@@ -7715,11 +7719,11 @@ msgstr "Путь записи"
 msgid "Record started"
 msgstr "Запись началась"
 
-#: httpdfunc.h:4625 skin_default_skin.xml.h:465
+#: httpdfunc.h:4625 skin_default_skin.xml.h:466
 msgid "Recording name"
 msgstr "Названия файлов записи"
 
-#: skin_default_skin.xml.h:466
+#: skin_default_skin.xml.h:467
 msgid "Recordlist"
 msgstr ""
 
@@ -7742,7 +7746,7 @@ msgstr ""
 msgid "Red"
 msgstr "Красная"
 
-#: skin_default_skin.xml.h:474
+#: skin_default_skin.xml.h:475
 msgid "Red Button"
 msgstr "Красная кнопка"
 
@@ -7750,7 +7754,7 @@ msgstr "Красная кнопка"
 msgid "Red Key Action - Setup"
 msgstr "Выбор"
 
-#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:475
+#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:476
 #: skins_tithek_skin.xml.h:13
 msgid "Red-Menu"
 msgstr "Поиск"
@@ -7759,7 +7763,7 @@ msgstr "Поиск"
 msgid "Reduce Standby frequency"
 msgstr "Снижать частоту процессора в режиме ожидания"
 
-#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:476
+#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:477
 #: skins_wm2014_skin.xml.h:12 softcam.h:296
 msgid "Refresh"
 msgstr "Обновить"
@@ -7771,11 +7775,11 @@ msgstr "Обновить"
 msgid "Release:"
 msgstr "Релиз"
 
-#: skin_default_skin.xml.h:477
+#: skin_default_skin.xml.h:478
 msgid "Released"
 msgstr "Релиз"
 
-#: skin_default_skin.xml.h:479
+#: skin_default_skin.xml.h:480
 msgid "Remember film position"
 msgstr "Запоминать позицию при проигрывании фильмов"
 
@@ -7791,7 +7795,7 @@ msgstr "Пульт управления последней версии"
 msgid "RemoteControl Old Version"
 msgstr "Пульты управления всех версий"
 
-#: httpdfunc.h:4046 skin_default_skin.xml.h:480
+#: httpdfunc.h:4046 skin_default_skin.xml.h:481
 msgid "Remotecontrol Power Aktion"
 msgstr "Кнопка питания"
 
@@ -7807,11 +7811,11 @@ msgstr ""
 msgid "Remove Log:"
 msgstr "Лог удаления"
 
-#: skinadjust.h:518
+#: skinadjust.h:563
 msgid "Remove Skinstyle"
 msgstr ""
 
-#: skin_default_skin.xml.h:481
+#: skin_default_skin.xml.h:482
 msgid "Remove empty Bouquet"
 msgstr ""
 
@@ -7835,15 +7839,15 @@ msgstr "Удаление завершено"
 msgid "Remove this Favorite ?"
 msgstr "Удалить этот фаворит?"
 
-#: skin_default_skin.xml.h:485
+#: skin_default_skin.xml.h:486
 msgid "Remove unused Channels in Bouquets"
 msgstr "Удаление неиспользуемых каналов в букетах"
 
-#: skin_default_skin.xml.h:486
+#: skin_default_skin.xml.h:487
 msgid "Remove unused Satellites/Providers"
 msgstr ""
 
-#: skin_default_skin.xml.h:487
+#: skin_default_skin.xml.h:488
 msgid "Remove unused Transponder on used Satellites/Providers"
 msgstr ""
 
@@ -7858,12 +7862,12 @@ msgstr "Переименовать"
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1083
 #: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:436
-#: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skin_default_skin.xml.h:489
+#: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skin_default_skin.xml.h:490
 #: skins_mc_skin.xml.h:45
 msgid "Repeat"
 msgstr "Повтор-Выкл"
 
-#: skin_default_skin.xml.h:490
+#: skin_default_skin.xml.h:491
 msgid "Repeat type"
 msgstr "Тип повтора"
 
@@ -7877,21 +7881,21 @@ msgstr "Повтор-Вкл"
 msgid "Reset"
 msgstr "Сброс"
 
-#: skinadjust.h:459
+#: skinadjust.h:504
 msgid "Reset your Skin Settings ?"
 msgstr ""
 
-#: skin_default_skin.xml.h:492 webif_index.atemio7600.h:18
+#: skin_default_skin.xml.h:493 webif_index.atemio7600.h:18
 #: webif_index.atemio7600.h:118 webif_rc.atemio520.h:4 webif_rc.atemio530.h:4
 #: webif_rc.atemio7600.h:51
 msgid "Resolution"
 msgstr "Разрешение"
 
-#: skin_default_skin.xml.h:494
+#: skin_default_skin.xml.h:495
 msgid "Resolution (current)"
 msgstr "Разрешение (Текущее)"
 
-#: skin_default_skin.xml.h:495
+#: skin_default_skin.xml.h:496
 msgid "Resolution (default)"
 msgstr "Разрешение (Умолчание)"
 
@@ -7899,11 +7903,11 @@ msgstr "Разрешение (Умолчание)"
 msgid "Resolution Settings"
 msgstr "Настройка разрешения видео"
 
-#: skin_default_skin.xml.h:493
+#: skin_default_skin.xml.h:494
 msgid "Resolution:"
 msgstr "Разрешение"
 
-#: adjust.h:112 httpdfunc.h:4074 skin_default_skin.xml.h:496 softcam.h:295
+#: adjust.h:112 httpdfunc.h:4074 skin_default_skin.xml.h:497 softcam.h:295
 #: softcam.h:463 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
@@ -7924,27 +7928,27 @@ msgstr "Перезапустить сеть?"
 msgid "Restart Oscam ?"
 msgstr "Перезапустить Oscam?"
 
-#: httpdfunc.h:6680 skin_default_skin.xml.h:497
+#: httpdfunc.h:6680 skin_default_skin.xml.h:498
 msgid "Restore"
 msgstr "Восстановить"
 
-#: httpdfunc.h:6892 httpdfunc.h:6951 skin_default_skin.xml.h:498
+#: httpdfunc.h:6892 httpdfunc.h:6951 skin_default_skin.xml.h:499
 msgid "Restore Default Bouquets"
 msgstr ""
 
-#: httpdfunc.h:6887 httpdfunc.h:6939 skin_default_skin.xml.h:500
+#: httpdfunc.h:6887 httpdfunc.h:6939 skin_default_skin.xml.h:501
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-#: httpdfunc.h:6897 httpdfunc.h:6961 skin_default_skin.xml.h:499
+#: httpdfunc.h:6897 httpdfunc.h:6961 skin_default_skin.xml.h:500
 msgid "Restore Default Channels"
 msgstr ""
 
-#: httpdfunc.h:6902 httpdfunc.h:6971 skin_default_skin.xml.h:501
+#: httpdfunc.h:6902 httpdfunc.h:6971 skin_default_skin.xml.h:502
 msgid "Restore Default Providers"
 msgstr ""
 
-#: httpdfunc.h:6907 httpdfunc.h:6981 skin_default_skin.xml.h:502
+#: httpdfunc.h:6907 httpdfunc.h:6981 skin_default_skin.xml.h:503
 msgid "Restore Default Sats"
 msgstr ""
 
@@ -7957,7 +7961,7 @@ msgid "Restore channel settings"
 msgstr ""
 
 #: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:63
-#: restoredefault.h:67 skin_default_skin.xml.h:503 webif_settings.h:3
+#: restoredefault.h:67 skin_default_skin.xml.h:504 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Сброс настроек"
 
@@ -7975,7 +7979,7 @@ msgstr "Список результатов"
 msgid "Results"
 msgstr "Результат"
 
-#: httpdfunc.h:4604 skin_default_skin.xml.h:504
+#: httpdfunc.h:4604 skin_default_skin.xml.h:505
 msgid "Resync Recording immediately"
 msgstr "Немедленная синхронизация записи (Нужно отключить кэш)"
 
@@ -8003,23 +8007,23 @@ msgstr "Перемотка назад"
 msgid "Right"
 msgstr "Вправо"
 
-#: skin_default_skin.xml.h:509
+#: skin_default_skin.xml.h:510
 msgid "Rolloff"
 msgstr "Крен"
 
-#: skin_default_skin.xml.h:510
+#: skin_default_skin.xml.h:511
 msgid "Rolloff:"
 msgstr "Крен"
 
-#: skin_default_skin.xml.h:511
+#: skin_default_skin.xml.h:512
 msgid "Rotor Position"
 msgstr "Позиция мотора"
 
-#: skin_default_skin.xml.h:512
+#: skin_default_skin.xml.h:513
 msgid "Rotor Settings"
 msgstr "Параметры мотора"
 
-#: skin_default_skin.xml.h:513
+#: skin_default_skin.xml.h:514
 msgid "Runtime"
 msgstr "Время выполнения"
 
@@ -8027,7 +8031,7 @@ msgstr "Время выполнения"
 msgid "Runtime:"
 msgstr "Время выполнения"
 
-#: skin_default_skin.xml.h:514
+#: skin_default_skin.xml.h:515
 msgid "Russian"
 msgstr "Русский"
 
@@ -8035,7 +8039,7 @@ msgstr "Русский"
 msgid "S"
 msgstr ""
 
-#: blindscanadjust.h:120 skin_default_skin.xml.h:516 webif_channellist.h:2
+#: blindscanadjust.h:120 skin_default_skin.xml.h:517 webif_channellist.h:2
 msgid "SAT"
 msgstr ""
 
@@ -8043,15 +8047,15 @@ msgstr ""
 msgid "SAT/Cable 19.2 13.0 KabelD | 03.08.2016"
 msgstr ""
 
-#: httpdfunc.h:4859 skin_default_skin.xml.h:517
+#: httpdfunc.h:4859 skin_default_skin.xml.h:518
 msgid "SATA Connector"
 msgstr "Коннектор SATA"
 
-#: skin_default_skin.xml.h:519
+#: skin_default_skin.xml.h:520
 msgid "SATCR Frequency"
 msgstr "Частота SATCR"
 
-#: skin_default_skin.xml.h:520
+#: skin_default_skin.xml.h:521
 msgid "SATCR Number"
 msgstr "Номер SATCR"
 
@@ -8060,7 +8064,7 @@ msgstr "Номер SATCR"
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:10
 #: plugins_lcdsamsung_skin.xml.h:13 plugins_panel_skin.xml.h:16
 #: plugins_stock_skin.xml.h:4 plugins_stopifnotused_skin.xml.h:4
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:526
+#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:527
 #: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:17
 #: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
 #: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:10
@@ -8070,11 +8074,11 @@ msgstr "Номер SATCR"
 msgid "SAVE"
 msgstr "Сохранить"
 
-#: skin_default_skin.xml.h:528
+#: skin_default_skin.xml.h:529
 msgid "SAVETRANSPONDER"
 msgstr "Сохранить транспондер"
 
-#: skin_default_skin.xml.h:535
+#: skin_default_skin.xml.h:536
 msgid "SCANSTART"
 msgstr "Старт сканирования"
 
@@ -8084,7 +8088,7 @@ msgstr "SCART 4:3/16:9"
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
 #: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
-#: skin_default_skin.xml.h:545 skins_imdbapi_skin.xml.h:8
+#: skin_default_skin.xml.h:546 skins_imdbapi_skin.xml.h:8
 #: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
@@ -8094,11 +8098,11 @@ msgstr "Поиск"
 msgid "SELECT"
 msgstr "Выбрать"
 
-#: skin_default_skin.xml.h:550
+#: skin_default_skin.xml.h:551
 msgid "SEND"
 msgstr "Отправка"
 
-#: skin_default_skin.xml.h:572
+#: skin_default_skin.xml.h:573
 msgid "SID:"
 msgstr "SID"
 
@@ -8110,7 +8114,7 @@ msgstr "SMB клиент"
 msgid "SMTP"
 msgstr ""
 
-#: skin_default_skin.xml.h:586
+#: skin_default_skin.xml.h:587
 msgid "SNR:"
 msgstr "SNR"
 
@@ -8158,7 +8162,7 @@ msgstr ""
 msgid "SR"
 msgstr ""
 
-#: skin_default_skin.xml.h:597
+#: skin_default_skin.xml.h:598
 msgid "SSID"
 msgstr ""
 
@@ -8166,7 +8170,7 @@ msgstr ""
 #: plugins_instar_skin.xml.h:16 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:16
 #: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
-#: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:603
+#: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:604
 #: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
 #: skins_instar_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:11
 #: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:16
@@ -8188,13 +8192,13 @@ msgid "STICK "
 msgstr "Стик "
 
 #: plugins_dlna_skin.xml.h:13 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:611
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:612
 #: skins_dlna_skin.xml.h:13 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
 msgstr "Стоп"
 
-#: rectimer.h:1567 rectimer.h:1569 skin_default_skin.xml.h:612
+#: rectimer.h:1567 rectimer.h:1569 skin_default_skin.xml.h:613
 msgid "STOP/START"
 msgstr "Стоп/Старт"
 
@@ -8214,7 +8218,7 @@ msgstr ""
 msgid "Samba Server"
 msgstr ""
 
-#: skin_default_skin.xml.h:515
+#: skin_default_skin.xml.h:516
 msgid "Samba Server Settings"
 msgstr "Параметры Samba-сервера"
 
@@ -8234,11 +8238,11 @@ msgstr ""
 msgid "Sat Astra ORF | 08.01.2015 (Olbord)"
 msgstr ""
 
-#: skin_default_skin.xml.h:518
+#: skin_default_skin.xml.h:519
 msgid "Sat Config"
 msgstr "Параметры приёма"
 
-#: skin_default_skin.xml.h:523
+#: skin_default_skin.xml.h:524
 msgid "Sat Finder"
 msgstr "Сатфиндер"
 
@@ -8294,7 +8298,7 @@ msgstr "Спутников "
 msgid "Satelite Type"
 msgstr "Тип спутника"
 
-#: skin_default_skin.xml.h:521
+#: skin_default_skin.xml.h:522
 msgid "Satellite"
 msgstr "Спутник"
 
@@ -8309,15 +8313,15 @@ msgstr ""
 msgid "Satellites"
 msgstr "Спутники"
 
-#: skin_default_skin.xml.h:522
+#: skin_default_skin.xml.h:523
 msgid "Satfinder"
 msgstr "Уровень и качество сигнала"
 
-#: skin_default_skin.xml.h:524
+#: skin_default_skin.xml.h:525
 msgid "Saturation"
 msgstr "Насыщенность"
 
-#: global.h:6252 global.h:6262 rectimer.h:1105 skin_default_skin.xml.h:525
+#: global.h:6252 global.h:6262 rectimer.h:1105 skin_default_skin.xml.h:526
 msgid "Saturday"
 msgstr "Суббота"
 
@@ -8325,7 +8329,7 @@ msgstr "Суббота"
 msgid "Save"
 msgstr "Сохранить"
 
-#: autotimer.c:603 menu.h:984 menu.h:986 skin_default_skin.xml.h:527
+#: autotimer.c:603 menu.h:984 menu.h:986 skin_default_skin.xml.h:528
 msgid "Save Settings"
 msgstr "Сохранить настройки"
 
@@ -8333,19 +8337,19 @@ msgstr "Сохранить настройки"
 msgid "Scan"
 msgstr "Поиск"
 
-#: skin_default_skin.xml.h:529
+#: skin_default_skin.xml.h:530
 msgid "Scan Auto"
 msgstr "Автосканирование"
 
-#: skin_default_skin.xml.h:530
+#: skin_default_skin.xml.h:531
 msgid "Scan Auto Config"
 msgstr "Параметры автосканирования"
 
-#: skin_default_skin.xml.h:533
+#: skin_default_skin.xml.h:534
 msgid "Scan Manual"
 msgstr "Ручное сканирование"
 
-#: skin_default_skin.xml.h:534
+#: skin_default_skin.xml.h:535
 msgid "Scan Manual Config"
 msgstr "Параметры ручного сканирования"
 
@@ -8361,11 +8365,11 @@ msgstr ""
 msgid "Scan is not allowed if record or stream is running !"
 msgstr "Сканирование не доступно, если ведётся запись!"
 
-#: skin_default_skin.xml.h:532
+#: skin_default_skin.xml.h:533
 msgid "Scan locking"
 msgstr "Блок сканирования"
 
-#: skin_default_skin.xml.h:531
+#: skin_default_skin.xml.h:532
 msgid "ScanList"
 msgstr "Лист сканирования"
 
@@ -8390,7 +8394,7 @@ msgstr "Оценка"
 msgid "Screensaver"
 msgstr "Заставка"
 
-#: skin_default_skin.xml.h:537
+#: skin_default_skin.xml.h:538
 msgid "Screensaver Adjust"
 msgstr "Настройки заставки"
 
@@ -8568,7 +8572,7 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: nowtv.h:133 nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
-#: skin_default_skin.xml.h:544 solarmovie.h:138 solarmovie.h:140
+#: skin_default_skin.xml.h:545 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:450 tithek_global.h:452 tithek_global.h:750
 #: tithek_global.h:752 tithek.h:1510 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
@@ -8694,7 +8698,7 @@ msgstr "Обновить данные EPG до актуальных?"
 msgid "Season"
 msgstr "Сезон"
 
-#: httpdfunc.h:3884 skin_default_skin.xml.h:546
+#: httpdfunc.h:3884 skin_default_skin.xml.h:547
 msgid "Second Infobar"
 msgstr "Второй инфобар (Двойное нажатие INFO)"
 
@@ -8706,11 +8710,11 @@ msgstr "Секция "
 msgid "Select Language"
 msgstr ""
 
-#: skin_default_skin.xml.h:548
+#: skin_default_skin.xml.h:549
 msgid "Select Path"
 msgstr "Выбрать путь"
 
-#: skin_default_skin.xml.h:549
+#: skin_default_skin.xml.h:550
 msgid "Select Unicable Manufacturer"
 msgstr "Выберите провайдера"
 
@@ -8734,7 +8738,7 @@ msgstr ""
 msgid "Select a function for the red button"
 msgstr ""
 
-#: skin_default_skin.xml.h:547
+#: skin_default_skin.xml.h:548
 msgid "Select backup:"
 msgstr "Выбор бэкапа"
 
@@ -8758,7 +8762,7 @@ msgstr "Отправка"
 msgid "Send Telnet Command"
 msgstr ""
 
-#: skin_default_skin.xml.h:551
+#: skin_default_skin.xml.h:552
 msgid "Send all CAID to modules"
 msgstr "Отправить все CAID модулей"
 
@@ -8770,7 +8774,7 @@ msgstr "Отправить дистанционно ресивер в режим
 msgid "September"
 msgstr ""
 
-#: skin_default_skin.xml.h:552
+#: skin_default_skin.xml.h:553
 msgid "Serial Input"
 msgstr "Последовательный вход"
 
@@ -8807,32 +8811,32 @@ msgstr "Сервер 5"
 msgid "Server Name"
 msgstr "Имя сервера"
 
-#: httpdfunc.h:6562 skin_default_skin.xml.h:553 webif_info.h:1
+#: httpdfunc.h:6562 skin_default_skin.xml.h:554 webif_info.h:1
 msgid "Service"
 msgstr "Канал"
 
-#: skin_default_skin.xml.h:554
+#: skin_default_skin.xml.h:555
 msgid "Serviceinfo"
 msgstr "Информация о канале"
 
-#: httpdfunc.h:4420 skin_default_skin.xml.h:555
+#: httpdfunc.h:4420 skin_default_skin.xml.h:556
 msgid "Set action after rec"
 msgstr "Действие после записи"
 
-#: skin_default_skin.xml.h:557
+#: skin_default_skin.xml.h:558
 msgid "Set standby A/V Receiver"
 msgstr "Перевести в режим ожидания A/V ресивер"
 
-#: skin_default_skin.xml.h:558
+#: skin_default_skin.xml.h:559
 msgid "Set standby TV"
 msgstr "Перевести в режим ожидания ТВ"
 
-#: skin_default_skin.xml.h:556
+#: skin_default_skin.xml.h:557
 msgid "Set standby all connected devices"
 msgstr "Перевести в режим ожидания все устройства"
 
 #: plugins_mc_skin.xml.h:50 plugins_panel_skin.xml.h:17
-#: plugins_panel_skin.xml.h:27 skin_default_skin.xml.h:560
+#: plugins_panel_skin.xml.h:27 skin_default_skin.xml.h:561
 #: skins_mc_skin.xml.h:50 skins_panel_skin.xml.h:17 skins_panel_skin.xml.h:27
 #: webif_index.atemio510.h:14 webif_index.atemio5200.h:14
 #: webif_index.atemio6000.h:14 webif_index.atemio6100.h:14
@@ -8867,7 +8871,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Настройки в порядке?"
 
-#: httpdfunc.h:6669 skin_default_skin.xml.h:561 webif_system.h:4
+#: httpdfunc.h:6669 skin_default_skin.xml.h:562 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Бэкап/ресторе настроек"
 
@@ -8879,11 +8883,11 @@ msgstr "Настройки успешно сохранены"
 msgid "Settings succesfully saved"
 msgstr ""
 
-#: skin_default_skin.xml.h:562
+#: skin_default_skin.xml.h:563
 msgid "Setup HDMI-CEC"
 msgstr "Параметры HDMI-CEC"
 
-#: skin_default_skin.xml.h:563
+#: skin_default_skin.xml.h:564
 msgid "Setup PIP"
 msgstr "Параметры PiP"
 
@@ -8904,15 +8908,15 @@ msgstr ""
 msgid "Should Timeshift File deleted ?"
 msgstr "Удалить файл таймшифта?"
 
-#: skin_default_skin.xml.h:564
+#: skin_default_skin.xml.h:565
 msgid "Show EPG screen (EPG button)"
 msgstr "Показать EPG (Кнопка EPG)"
 
-#: skin_default_skin.xml.h:565
+#: skin_default_skin.xml.h:566
 msgid "Show HDD freesize"
 msgstr "Показать свободное пространство HDD"
 
-#: skin_default_skin.xml.h:570
+#: skin_default_skin.xml.h:571
 msgid "Show Modules"
 msgstr "Показать модули"
 
@@ -8932,23 +8936,23 @@ msgstr "Показывать имена файлов"
 msgid "Show Signal Infos"
 msgstr "Показать качество сигнала"
 
-#: httpdfunc.h:4456 skin_default_skin.xml.h:571
+#: httpdfunc.h:4456 skin_default_skin.xml.h:572
 msgid "Show Timeline in Channellist"
 msgstr "Показывать шкалу времени в списке каналов"
 
-#: httpdfunc.h:4669 skin_default_skin.xml.h:566
+#: httpdfunc.h:4669 skin_default_skin.xml.h:567
 msgid "Show hidden files"
 msgstr "Показывать скрытые файлы"
 
-#: skin_default_skin.xml.h:568
+#: skin_default_skin.xml.h:569
 msgid "Show in Standby"
 msgstr "Показать в режиме ожидания"
 
-#: skin_default_skin.xml.h:569
+#: skin_default_skin.xml.h:570
 msgid "Show in VFD"
 msgstr "Показать на дисплее ресивера"
 
-#: httpdfunc.h:4720 skin_default_skin.xml.h:567
+#: httpdfunc.h:4720 skin_default_skin.xml.h:568
 msgid "Show infobar on program change"
 msgstr "Показывать инфобар в начале/конце телепередачи"
 
@@ -8963,16 +8967,16 @@ msgstr "Использовать диалог 'Продолжить с мест�
 msgid "Show/Hide Remote Control"
 msgstr "Показать/Скрыть пульт"
 
-#: skin_default_skin.xml.h:573
+#: skin_default_skin.xml.h:574
 msgid "Signal:"
 msgstr "Сигнал"
 
-#: epg.h:183 skin_default_skin.xml.h:575
+#: epg.h:183 skin_default_skin.xml.h:576
 msgid "Single (EPG)"
 msgstr "Простой EPG"
 
 #: epgsettings.h:140 epgsettings.h:181 httpdfunc.h:302
-#: skin_default_skin.xml.h:574
+#: skin_default_skin.xml.h:575
 msgid "Single EPG"
 msgstr "Простой EPG"
 
@@ -8996,7 +9000,7 @@ msgstr "Одиночный канал"
 msgid "Single Transponder"
 msgstr "Одиночный транспондер"
 
-#: skin_default_skin.xml.h:577
+#: skin_default_skin.xml.h:578
 msgid "Skin"
 msgstr "Выбор скина"
 
@@ -9008,7 +9012,7 @@ msgstr ""
 msgid "Skin 0Acht5Zehn Multi (grey/black/white) default picons"
 msgstr ""
 
-#: skin_default_skin.xml.h:578 webif_settings.h:2
+#: skin_default_skin.xml.h:579 webif_settings.h:2
 msgid "Skin Adjust"
 msgstr "Настройки скина"
 
@@ -9068,7 +9072,7 @@ msgstr ""
 msgid "Skin Nogfx Multi (black/grey) default picons"
 msgstr ""
 
-#: skin_default_skin.xml.h:579
+#: skin_default_skin.xml.h:580
 msgid "Skin Select"
 msgstr "Выбор скина"
 
@@ -9088,7 +9092,7 @@ msgstr ""
 msgid "Skin SmartTV for alternate picons"
 msgstr ""
 
-#: skin_default_skin.xml.h:580
+#: skin_default_skin.xml.h:581
 msgid "Skin Style selection"
 msgstr ""
 
@@ -9108,23 +9112,23 @@ msgstr ""
 msgid "Skin tobayer01 (grey/blue/black) default picons"
 msgstr ""
 
-#: skinadjust.h:486
+#: skinadjust.h:531
 msgid "Skinstyle Name"
 msgstr ""
 
-#: httpdfunc.h:4280 skin_default_skin.xml.h:581
+#: httpdfunc.h:4280 skin_default_skin.xml.h:582
 msgid "Skip 1/3"
 msgstr "Перемотка кнопками 1 или 3 (Сек)"
 
-#: httpdfunc.h:4312 skin_default_skin.xml.h:582
+#: httpdfunc.h:4312 skin_default_skin.xml.h:583
 msgid "Skip 4/6"
 msgstr "Перемотка кнопками 4 или 6 (Сек)"
 
-#: httpdfunc.h:4344 skin_default_skin.xml.h:583
+#: httpdfunc.h:4344 skin_default_skin.xml.h:584
 msgid "Skip 7/9"
 msgstr "Перемотка кнопками 7 или 9 (Сек)"
 
-#: skin_default_skin.xml.h:584
+#: skin_default_skin.xml.h:585
 msgid "Skip privat CA descriptor"
 msgstr "Пропустить CA дескриптор"
 
@@ -9150,7 +9154,7 @@ msgstr "Таймер сна"
 msgid "Slot "
 msgstr "Слот"
 
-#: skin_default_skin.xml.h:585
+#: skin_default_skin.xml.h:586
 msgid "SmartCard Reader"
 msgstr "Смарт-карта"
 
@@ -9171,11 +9175,11 @@ msgid "Social Network Client for Facebook."
 msgstr ""
 
 #: keyactions.h:77 settings_bluebutton.h:14 settings_pluginbutton.h:15
-#: settings_redbutton.h:15 skin_default_skin.xml.h:587
+#: settings_redbutton.h:15 skin_default_skin.xml.h:588
 msgid "Softcam Panel"
 msgstr "Эмуляторы"
 
-#: skin_default_skin.xml.h:588
+#: skin_default_skin.xml.h:589
 msgid "Softcam Selection"
 msgstr "Выбор менеджера"
 
@@ -9198,7 +9202,7 @@ msgstr "Текст (Имя песни, канала, станции)"
 msgid "Sort"
 msgstr "Сортировка"
 
-#: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:589 skins_mc_skin.xml.h:55
+#: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:590 skins_mc_skin.xml.h:55
 msgid "Sorting"
 msgstr "Сортировка"
 
@@ -9206,11 +9210,11 @@ msgstr "Сортировка"
 msgid "Sound"
 msgstr "Звук"
 
-#: skin_default_skin.xml.h:592
+#: skin_default_skin.xml.h:593
 msgid "Sound amplifier (TV-Modus / internal Player)"
 msgstr "Усилитель звука (ТВ-Modus/Внутренний плеер)"
 
-#: skin_default_skin.xml.h:591
+#: skin_default_skin.xml.h:592
 msgid "Sound amplifier (external Player)"
 msgstr "Усилитель звука (Внешний плеер)"
 
@@ -9218,7 +9222,7 @@ msgstr "Усилитель звука (Внешний плеер)"
 msgid "Space"
 msgstr "Пробел"
 
-#: skin_default_skin.xml.h:593
+#: skin_default_skin.xml.h:594
 msgid "Spanish"
 msgstr "Испанский"
 
@@ -9226,11 +9230,11 @@ msgstr "Испанский"
 msgid "Spezialfunctions unlocked, no input required"
 msgstr "Приёмник разблокирован, ввода кода не требуется!"
 
-#: httpdfunc.h:3789 skin_default_skin.xml.h:595
+#: httpdfunc.h:3789 skin_default_skin.xml.h:596
 msgid "Spinnerspeed"
 msgstr "Скорость спиннера"
 
-#: httpdfunc.h:3821 skin_default_skin.xml.h:596
+#: httpdfunc.h:3821 skin_default_skin.xml.h:597
 msgid "Spinnertime"
 msgstr "Время появления спиннера"
 
@@ -9238,12 +9242,12 @@ msgstr "Время появления спиннера"
 msgid "Sport"
 msgstr "Спорт"
 
-#: skin_default_skin.xml.h:601
+#: skin_default_skin.xml.h:602
 msgid "StandBy Mode"
 msgstr "Режим выключеня"
 
 #: adjust.h:111 adjust.h:117 httpdfunc.h:4067 httpdfunc.h:4103
-#: powerofftimer.h:118 skin_default_skin.xml.h:599 webif_index.atemio510.h:7
+#: powerofftimer.h:118 skin_default_skin.xml.h:600 webif_index.atemio510.h:7
 #: webif_index.atemio5200.h:7 webif_index.atemio6000.h:7
 #: webif_index.atemio6100.h:7 webif_index.atemio6200.h:7
 #: webif_index.atemio7600.h:5 webif_index.atemio-nemesis.h:7
@@ -9252,11 +9256,11 @@ msgstr "Режим выключеня"
 msgid "Standby"
 msgstr "Режим ожидания"
 
-#: skin_default_skin.xml.h:602
+#: skin_default_skin.xml.h:603
 msgid "Standby / Poweroff"
 msgstr "Меню выключения"
 
-#: skin_default_skin.xml.h:600
+#: skin_default_skin.xml.h:601
 msgid "Standby Brightness"
 msgstr "Яркость в режиме ожидания"
 
@@ -9269,11 +9273,11 @@ msgstr "Частота процессора в режиме ожидания"
 msgid "Start AutoTimer"
 msgstr "Старт автотаймера"
 
-#: skin_default_skin.xml.h:604
+#: skin_default_skin.xml.h:605
 msgid "Start HTTPD"
 msgstr "Старт HTTPD"
 
-#: skin_default_skin.xml.h:606
+#: skin_default_skin.xml.h:607
 msgid "Start RGUID"
 msgstr "Старт RGUID"
 
@@ -9319,7 +9323,7 @@ msgid ""
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
 
-#: plugins_dlna_skin.xml.h:12 skin_default_skin.xml.h:605
+#: plugins_dlna_skin.xml.h:12 skin_default_skin.xml.h:606
 #: skins_dlna_skin.xml.h:12
 msgid "Start on boot"
 msgstr "Запускать при загрузке"
@@ -9344,11 +9348,11 @@ msgstr "Статус обновления"
 msgid "Status: "
 msgstr "Статус"
 
-#: skin_default_skin.xml.h:607
+#: skin_default_skin.xml.h:608
 msgid "Step frequency"
 msgstr "Шаг частоты"
 
-#: skin_default_skin.xml.h:608
+#: skin_default_skin.xml.h:609
 msgid "Step signalrate"
 msgstr "Шаг силы сигнала"
 
@@ -9384,7 +9388,7 @@ msgstr "Остановить автотаймер"
 msgid "Stop if not used"
 msgstr ""
 
-#: skin_default_skin.xml.h:613
+#: skin_default_skin.xml.h:614
 msgid "Storage position"
 msgstr "Номер позиции"
 
@@ -9405,11 +9409,11 @@ msgstr ""
 msgid "Stream Menu"
 msgstr "Меню потока"
 
-#: skin_default_skin.xml.h:615
+#: skin_default_skin.xml.h:616
 msgid "Stream Path"
 msgstr "Путь потока"
 
-#: skin_default_skin.xml.h:616 webif_streamconfig.h:6
+#: skin_default_skin.xml.h:617 webif_streamconfig.h:6
 msgid "Stream Port"
 msgstr "Порт потока"
 
@@ -9422,7 +9426,7 @@ msgstr ""
 msgid "Streaminfo"
 msgstr "Инфо о потоке"
 
-#: httpdfunc.h:5545 skin_default_skin.xml.h:614 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5545 skin_default_skin.xml.h:615 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr "Стриминг"
 
@@ -9455,11 +9459,11 @@ msgstr "Стиль"
 msgid "Subchannel"
 msgstr "Субканал"
 
-#: skin_default_skin.xml.h:617
+#: skin_default_skin.xml.h:618
 msgid "Subservices"
 msgstr "Субканал"
 
-#: adjust.h:354 skin_default_skin.xml.h:618 webif_index.atemio5200.h:65
+#: adjust.h:354 skin_default_skin.xml.h:619 webif_index.atemio5200.h:65
 #: webif_index.atemio5200.h:121 webif_index.atemio6200.h:65
 #: webif_index.atemio6200.h:121 webif_index.atemio7600.h:27
 #: webif_index.atemio7600.h:79 webif_index.atemio-nemesis.h:65
@@ -9486,7 +9490,7 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: global.h:6253 global.h:6263 rectimer.h:1106 skin_default_skin.xml.h:619
+#: global.h:6253 global.h:6263 rectimer.h:1106 skin_default_skin.xml.h:620
 msgid "Sunday"
 msgstr "Воскресенье"
 
@@ -9507,7 +9511,7 @@ msgid "Svn Changelog Full"
 msgstr "Журнал изменений SVN (Полный)"
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:621 system_infos_sysinfo.h:25
+#: skin_default_skin.xml.h:622 system_infos_sysinfo.h:25
 #: webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "SWAР"
@@ -9520,43 +9524,43 @@ msgstr "Максимальный сектор SWAP"
 msgid "Swap Size"
 msgstr "Размер SWAP"
 
-#: skin_default_skin.xml.h:622
+#: skin_default_skin.xml.h:623
 msgid "Switch TV to the correct input"
 msgstr "Включите ТВ к правильному входу"
 
-#: skin_default_skin.xml.h:624
+#: skin_default_skin.xml.h:625
 msgid "Symbol rate:"
 msgstr "Символьная скорость"
 
-#: skin_default_skin.xml.h:623
+#: skin_default_skin.xml.h:624
 msgid "Symbolrate"
 msgstr "Символьная скорость"
 
-#: skin_default_skin.xml.h:625
+#: skin_default_skin.xml.h:626
 msgid "Sysinfo"
 msgstr "Информация о системе"
 
-#: skin_default_skin.xml.h:626 tpk_section.h:17 webif_index.h:14
+#: skin_default_skin.xml.h:627 tpk_section.h:17 webif_index.h:14
 msgid "System"
 msgstr "Система"
 
-#: skin_default_skin.xml.h:629
+#: skin_default_skin.xml.h:630
 msgid "System - Flashupdate (online)"
 msgstr "Обновление системы (Онлайн)"
 
-#: skin_default_skin.xml.h:630
+#: skin_default_skin.xml.h:631
 msgid "System - Flashupdate (tmp)"
 msgstr "Обновление системы (Локально)"
 
-#: skin_default_skin.xml.h:635
+#: skin_default_skin.xml.h:636
 msgid "System - Usbupdate (online)"
 msgstr "Обновление системы (Онлайн)"
 
-#: skin_default_skin.xml.h:636
+#: skin_default_skin.xml.h:637
 msgid "System - Usbupdate (tmp)"
 msgstr "Обновление системы (Локально)"
 
-#: httpdfunc.h:6597 skin_default_skin.xml.h:628 webif_system.h:3
+#: httpdfunc.h:6597 skin_default_skin.xml.h:629 webif_system.h:3
 msgid "System Backup"
 msgstr "Бекап системы"
 
@@ -9564,21 +9568,21 @@ msgstr "Бекап системы"
 msgid "System Backup on your Box not Supported"
 msgstr ""
 
-#: skin_default_skin.xml.h:631 webif_info.h:6 webif_systeminfo.h:1
+#: skin_default_skin.xml.h:632 webif_info.h:6 webif_systeminfo.h:1
 msgid "System Info"
 msgstr "Информация о системе"
 
-#: skin_default_skin.xml.h:632 webif_info_systeminfos.h:1
+#: skin_default_skin.xml.h:633 webif_info_systeminfos.h:1
 #: webif_info_systeminfos.h:8
 msgid "System Infos"
 msgstr "Информация о системе"
 
-#: httpdfunc.h:5261 skin_default_skin.xml.h:633 system_infos.h:14
+#: httpdfunc.h:5261 skin_default_skin.xml.h:634 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr "Статус системы"
 
-#: httpdfunc.h:5666 httpdfunc.h:5801 skin_default_skin.xml.h:634
+#: httpdfunc.h:5666 httpdfunc.h:5801 skin_default_skin.xml.h:635
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Обновление системы"
@@ -9592,7 +9596,7 @@ msgstr "Начато обновление системы. Это может за
 msgid "System-Info"
 msgstr "Системная информация"
 
-#: skin_default_skin.xml.h:627
+#: skin_default_skin.xml.h:628
 msgid "System:"
 msgstr "Система"
 
@@ -9604,11 +9608,11 @@ msgstr ""
 msgid "TERR"
 msgstr "Наземное"
 
-#: skin_default_skin.xml.h:638
+#: skin_default_skin.xml.h:639
 msgid "TEST"
 msgstr "Тест"
 
-#: skin_default_skin.xml.h:656
+#: skin_default_skin.xml.h:657
 msgid "TITLE"
 msgstr "Название"
 
@@ -9640,31 +9644,31 @@ msgstr "Удаление плагина завершено. Ресивер бу�
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr "Плагины обновлены. Ресивер будет перезагружен"
 
-#: skin_default_skin.xml.h:665 webif_system_extensions.h:3
+#: skin_default_skin.xml.h:666 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr "Установка плагинов (Фид)"
 
-#: httpdfunc.h:6234 skin_default_skin.xml.h:668 webif_system_extensions.h:5
+#: httpdfunc.h:6234 skin_default_skin.xml.h:669 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Установка плагинов из /media"
 
-#: skin_default_skin.xml.h:669 webif_system_extensions.h:6
+#: skin_default_skin.xml.h:670 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Удаление плагинов"
 
-#: httpdfunc.h:6232 skin_default_skin.xml.h:670 webif_system_extensions.h:4
+#: httpdfunc.h:6232 skin_default_skin.xml.h:671 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Установка плагинов из /tmp"
 
-#: skin_default_skin.xml.h:671 webif_system_extensions.h:2
+#: skin_default_skin.xml.h:672 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr "Обновление плагинов (Фид)"
 
-#: skin_default_skin.xml.h:675
+#: skin_default_skin.xml.h:676
 msgid "TRANSPONDEREDIT"
 msgstr "Выбор транспондера"
 
-#: skin_default_skin.xml.h:676
+#: skin_default_skin.xml.h:677
 msgid "TSID:"
 msgstr "TSID"
 
@@ -9685,11 +9689,11 @@ msgstr "TSID"
 msgid "TV"
 msgstr "ТВ"
 
-#: skin_default_skin.xml.h:685
+#: skin_default_skin.xml.h:686
 msgid "TV Resolution (h):"
 msgstr "Кадр (Высота)"
 
-#: skin_default_skin.xml.h:686
+#: skin_default_skin.xml.h:687
 msgid "TV Resolution (w):"
 msgstr "Кадр (Ширина)"
 
@@ -9704,7 +9708,7 @@ msgstr "ТВ/Радио"
 msgid "TV: "
 msgstr "ТВ"
 
-#: skin_default_skin.xml.h:688
+#: skin_default_skin.xml.h:689
 msgid "TXT PID:"
 msgstr "TXT PID"
 
@@ -9736,7 +9740,7 @@ msgstr "Наземный"
 msgid "Terrestrial: "
 msgstr "Наземные"
 
-#: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:637
+#: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:638
 #: skins_panel_skin.xml.h:19
 msgid "Test"
 msgstr "Тест"
@@ -9870,7 +9874,7 @@ msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 "Это видео было удалено. Приносим свои извинения за доставленные неудобства"
 
-#: skin_default_skin.xml.h:640
+#: skin_default_skin.xml.h:641
 msgid "Threshold"
 msgstr ""
 
@@ -9886,7 +9890,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6250 global.h:6260 rectimer.h:1103 skin_default_skin.xml.h:641
+#: global.h:6250 global.h:6260 rectimer.h:1103 skin_default_skin.xml.h:642
 msgid "Thursday"
 msgstr "Четверг"
 
@@ -9902,7 +9906,7 @@ msgstr "Редактор фаворитов"
 msgid "TiThek Menu"
 msgstr "Главное меню"
 
-#: skin_default_skin.xml.h:654
+#: skin_default_skin.xml.h:655
 msgid "TiThek Select Color"
 msgstr "Выберите цвет выделения файлов в медиатеке"
 
@@ -9924,7 +9928,7 @@ msgstr ""
 msgid "Time"
 msgstr "Время"
 
-#: harddisk.h:928 skin_default_skin.xml.h:648
+#: harddisk.h:928 skin_default_skin.xml.h:649
 msgid "Time to sleep"
 msgstr "Время до отключения "
 
@@ -9932,11 +9936,11 @@ msgstr "Время до отключения "
 msgid "Time to stop "
 msgstr "Время до отключения (Мин)"
 
-#: httpdfunc.h:4884 skin_default_skin.xml.h:650
+#: httpdfunc.h:4884 skin_default_skin.xml.h:651
 msgid "Time to wait after seek for fill buffer"
 msgstr "Время ожидания автоматического заполнения буфера"
 
-#: skin_default_skin.xml.h:642 webif_index.atemio510.h:13
+#: skin_default_skin.xml.h:643 webif_index.atemio510.h:13
 #: webif_index.atemio5200.h:13 webif_index.atemio5200.h:60
 #: webif_index.atemio5200.h:116 webif_index.atemio6000.h:13
 #: webif_index.atemio6100.h:13 webif_index.atemio6200.h:13
@@ -9960,7 +9964,7 @@ msgstr "Архив таймеров"
 msgid "Timer List"
 msgstr "Список таймеров"
 
-#: skin_default_skin.xml.h:644
+#: skin_default_skin.xml.h:645
 msgid "Timer Record Path"
 msgstr "Путь таймера записи"
 
@@ -9968,7 +9972,7 @@ msgstr "Путь таймера записи"
 msgid "Timer Record start !"
 msgstr "Таймер записи запущен!"
 
-#: skin_default_skin.xml.h:643
+#: skin_default_skin.xml.h:644
 msgid "Timer and EPG"
 msgstr "Таймер и EPG"
 
@@ -10006,11 +10010,11 @@ msgstr "Таймер 1 активен"
 msgid "Timer2 activ"
 msgstr "Таймер 2 активен"
 
-#: skin_default_skin.xml.h:645
+#: skin_default_skin.xml.h:646
 msgid "Timeshift Path"
 msgstr "Путь таймшифта"
 
-#: skin_default_skin.xml.h:646
+#: skin_default_skin.xml.h:647
 msgid "Timeshift Settings"
 msgstr "Параметры таймшифта"
 
@@ -10036,19 +10040,19 @@ msgstr ""
 "Настройки таймшифта не доступны\n"
 "если он запущен!"
 
-#: skin_default_skin.xml.h:647
+#: skin_default_skin.xml.h:648
 msgid "Timeshifttype"
 msgstr "Тип таймшифта"
 
-#: skin_default_skin.xml.h:651
+#: skin_default_skin.xml.h:652
 msgid "Timezone"
 msgstr "Часовой пояс"
 
-#: skin_default_skin.xml.h:652
+#: skin_default_skin.xml.h:653
 msgid "Tint"
 msgstr "Оттенок"
 
-#: skin_default_skin.xml.h:653 webif_info_logs.h:2
+#: skin_default_skin.xml.h:654 webif_info_logs.h:2
 msgid "Titan Changelog"
 msgstr "Журнал изменений"
 
@@ -10066,8 +10070,8 @@ msgstr "Медиацент Titan"
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
-#: kravencfg.c:212 skinadjust.h:475 skinadjust.h:541 skinadjust.h:937
-#: skinadjust.h:994
+#: kravencfg.c:212 skinadjust.h:520 skinadjust.h:586 skinadjust.h:982
+#: skinadjust.h:1044
 msgid "Titan will be restarted!"
 msgstr "Titan будет перезагружен!"
 
@@ -10128,12 +10132,12 @@ msgstr ""
 msgid "Tithek/HTTP Header/Community"
 msgstr ""
 
-#: mediadb.h:2518 plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:655
+#: mediadb.h:2518 plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:656
 #: skins_tithek_skin.xml.h:19
 msgid "Title"
 msgstr "Название"
 
-#: skin_default_skin.xml.h:661
+#: skin_default_skin.xml.h:662
 msgid "Title Color"
 msgstr ""
 
@@ -10144,19 +10148,19 @@ msgstr ""
 msgid "Title:"
 msgstr "Название"
 
-#: skin_default_skin.xml.h:657
+#: skin_default_skin.xml.h:658
 msgid "Titlebar Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:658
+#: skin_default_skin.xml.h:659
 msgid "Titlebar Background Color 2"
 msgstr ""
 
-#: skin_default_skin.xml.h:659
+#: skin_default_skin.xml.h:660
 msgid "Titlebar Border Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:660
+#: skin_default_skin.xml.h:661
 msgid "Titlebar Font Color"
 msgstr ""
 
@@ -10172,15 +10176,15 @@ msgstr "Много ошибок чтения"
 msgid "Tonburst A/B"
 msgstr "Tone Brust A/B"
 
-#: skin_default_skin.xml.h:662
+#: skin_default_skin.xml.h:663
 msgid "Tone Burst"
 msgstr "Тон"
 
-#: skin_default_skin.xml.h:663
+#: skin_default_skin.xml.h:664
 msgid "Tone Mode"
 msgstr "Тональный режим"
 
-#: httpdfunc.h:5319 skin_default_skin.xml.h:664 system_infos_sysinfo.h:27
+#: httpdfunc.h:5319 skin_default_skin.xml.h:665 system_infos_sysinfo.h:27
 #: webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "ТОР"
@@ -10199,11 +10203,11 @@ msgstr ""
 "\n"
 "Ждите реализации"
 
-#: extensions.h:222 httpdfunc.h:5917 skin_default_skin.xml.h:666
+#: extensions.h:222 httpdfunc.h:5917 skin_default_skin.xml.h:667
 msgid "Tpk Install - select file"
 msgstr "Выбор файла"
 
-#: skin_default_skin.xml.h:667
+#: skin_default_skin.xml.h:668
 msgid "Tpk Install - select install medium"
 msgstr "Выберите пакет"
 
@@ -10255,15 +10259,15 @@ msgstr "Дорожка"
 msgid "Trade time: "
 msgstr "Дата сделки "
 
-#: skin_default_skin.xml.h:672
+#: skin_default_skin.xml.h:673
 msgid "Transcode Stream"
 msgstr "Транскодер потока"
 
-#: skin_default_skin.xml.h:673
+#: skin_default_skin.xml.h:674
 msgid "Transmission"
 msgstr "Передача"
 
-#: skin_default_skin.xml.h:674
+#: skin_default_skin.xml.h:675
 msgid "Transmission:"
 msgstr "Передача"
 
@@ -10343,7 +10347,7 @@ msgstr ""
 msgid "Tue"
 msgstr ""
 
-#: global.h:6248 global.h:6258 rectimer.h:1101 skin_default_skin.xml.h:677
+#: global.h:6248 global.h:6258 rectimer.h:1101 skin_default_skin.xml.h:678
 msgid "Tuesday"
 msgstr "Вторник"
 
@@ -10351,7 +10355,7 @@ msgstr "Вторник"
 msgid "Tune to channel failed"
 msgstr "Не удалось настроиться на канал"
 
-#: security.h:2146 skin_default_skin.xml.h:678
+#: security.h:2146 skin_default_skin.xml.h:679
 msgid "Tuner"
 msgstr "Тюнер"
 
@@ -10359,15 +10363,15 @@ msgstr "Тюнер"
 msgid "Tuner "
 msgstr "Тюнер"
 
-#: skin_default_skin.xml.h:681
+#: skin_default_skin.xml.h:682
 msgid "Tuner Configuration"
 msgstr "Параметры тюнера"
 
-#: skin_default_skin.xml.h:682
+#: skin_default_skin.xml.h:683
 msgid "Tuner List"
 msgstr "Список тюнеров"
 
-#: skin_default_skin.xml.h:683
+#: skin_default_skin.xml.h:684
 msgid "Tuner Reception"
 msgstr "Приём тюнера"
 
@@ -10375,11 +10379,11 @@ msgstr "Приём тюнера"
 msgid "Tuner Type"
 msgstr "Тип тюнера"
 
-#: skin_default_skin.xml.h:679
+#: skin_default_skin.xml.h:680
 msgid "Tuner:"
 msgstr "Тюнер"
 
-#: skin_default_skin.xml.h:680
+#: skin_default_skin.xml.h:681
 msgid "Tunerconfig"
 msgstr "Конфигурация тюнера "
 
@@ -10391,7 +10395,7 @@ msgstr ""
 "Настройка тюнера не доступна\n"
 "при записи или стриминге!"
 
-#: security.h:2153 skin_default_skin.xml.h:684
+#: security.h:2153 skin_default_skin.xml.h:685
 msgid "Tunertype"
 msgstr "Тип тюнера"
 
@@ -10399,7 +10403,7 @@ msgstr "Тип тюнера"
 msgid "Tuning to Channel failed!"
 msgstr "Канал не доступен!"
 
-#: skin_default_skin.xml.h:687
+#: skin_default_skin.xml.h:688
 msgid "Two step mute"
 msgstr "Два шага приглушения звука"
 
@@ -10407,16 +10411,16 @@ msgstr "Два шага приглушения звука"
 msgid "Typ"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:690
+#: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:691
 #: skins_tithek_skin.xml.h:20
 msgid "Type"
 msgstr "Тип"
 
-#: skin_default_skin.xml.h:692
+#: skin_default_skin.xml.h:693
 msgid "Type of Scan"
 msgstr "Тип сканирования"
 
-#: skin_default_skin.xml.h:691
+#: skin_default_skin.xml.h:692
 msgid "Type:"
 msgstr "Команда на запись"
 
@@ -10436,7 +10440,7 @@ msgstr ""
 msgid "UFS910 free license"
 msgstr ""
 
-#: skin_default_skin.xml.h:693
+#: skin_default_skin.xml.h:694
 msgid "UNC:"
 msgstr "UNC"
 
@@ -10444,11 +10448,11 @@ msgstr "UNC"
 msgid "UNKNOWN"
 msgstr "Неизвестно"
 
-#: skin_default_skin.xml.h:697
+#: skin_default_skin.xml.h:698
 msgid "UNLOAD"
 msgstr "Выгрузить"
 
-#: httpdfunc.h:5323 skin_default_skin.xml.h:700 system_infos_sysinfo.h:31
+#: httpdfunc.h:5323 skin_default_skin.xml.h:701 system_infos_sysinfo.h:31
 #: webif_info_sysinfos.h:10
 msgid "USB"
 msgstr "USB устройства "
@@ -10481,11 +10485,11 @@ msgstr ""
 msgid "Unchanged"
 msgstr "Не изменять"
 
-#: skin_default_skin.xml.h:694
+#: skin_default_skin.xml.h:695
 msgid "Uncommitted Diseqc command"
 msgstr "Нефиксированные команды Diseqc"
 
-#: skin_default_skin.xml.h:695
+#: skin_default_skin.xml.h:696
 msgid "Unicable Configuration"
 msgstr "Параметры Unicable"
 
@@ -10536,24 +10540,24 @@ msgstr "Вверх"
 msgid "Update Plugins to new Version?"
 msgstr "Обновить установленные плагины?"
 
-#: skin_default_skin.xml.h:699
+#: skin_default_skin.xml.h:700
 msgid "Update entrys on scan"
 msgstr "Обновлять данные при сканировании"
 
-#: plugins_panel_skin.xml.h:20 skin_default_skin.xml.h:701
+#: plugins_panel_skin.xml.h:20 skin_default_skin.xml.h:702
 #: skins_panel_skin.xml.h:20
 msgid "Usb Device"
 msgstr "USB устройства"
 
-#: skin_default_skin.xml.h:702
+#: skin_default_skin.xml.h:703
 msgid "Usbupdate (online)"
 msgstr "Обновление на USB (Онлайн)"
 
-#: skin_default_skin.xml.h:703
+#: skin_default_skin.xml.h:704
 msgid "Usbupdate (tmp)"
 msgstr "Обновление на USB (Локально)"
 
-#: skin_default_skin.xml.h:705
+#: skin_default_skin.xml.h:706
 msgid "Use EPG Endtime"
 msgstr "Использовать время окончания EPG"
 
@@ -10577,19 +10581,19 @@ msgstr "Использование конфигурации с Flash (Време
 msgid "Use config from Stick or HDD"
 msgstr "Использование конфигурации с USB или HDD"
 
-#: httpdfunc.h:4742 skin_default_skin.xml.h:704
+#: httpdfunc.h:4742 skin_default_skin.xml.h:705
 msgid "Use cross control for fast zapping and vol"
 msgstr "Использовать джойстик для переключения каналов и громкости"
 
-#: skin_default_skin.xml.h:706
+#: skin_default_skin.xml.h:707
 msgid "Use fixed physical address"
 msgstr "Использовать фиксированный физический адрес"
 
-#: skin_default_skin.xml.h:707
+#: skin_default_skin.xml.h:708
 msgid "Use numeric keys"
 msgstr "Использовать цифровые клавиши"
 
-#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:708
+#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:709
 #: skins_networkbrowser_skin.xml.h:33
 msgid "User"
 msgstr "Пользователь"
@@ -10598,7 +10602,7 @@ msgstr "Пользователь"
 msgid "V"
 msgstr ""
 
-#: skin_default_skin.xml.h:709
+#: skin_default_skin.xml.h:710
 msgid "VFDisplay"
 msgstr "Дисплей ресивера"
 
@@ -10626,11 +10630,11 @@ msgstr ""
 msgid "Vertikal"
 msgstr "Вертикальная"
 
-#: skin_default_skin.xml.h:710 tmc.h:399
+#: skin_default_skin.xml.h:711 tmc.h:399
 msgid "Video"
 msgstr "Видео"
 
-#: skin_default_skin.xml.h:714
+#: skin_default_skin.xml.h:715
 msgid "Video PID:"
 msgstr "Видео PID"
 
@@ -10638,7 +10642,7 @@ msgstr "Видео PID"
 msgid "Video Player"
 msgstr "Видео плеер"
 
-#: play.h:639 skin_default_skin.xml.h:715
+#: play.h:639 skin_default_skin.xml.h:716
 msgid "Video Settings"
 msgstr "Настройки отображения файлов видео"
 
@@ -10654,15 +10658,15 @@ msgstr ""
 msgid "Video postet"
 msgstr "Настройки видео"
 
-#: skin_default_skin.xml.h:711
+#: skin_default_skin.xml.h:712
 msgid "VideoMode Aspect Settings"
 msgstr "Параметры видеорежима"
 
-#: skin_default_skin.xml.h:712
+#: skin_default_skin.xml.h:713
 msgid "VideoMode Resolution Settings"
 msgstr "Параметры разрешения видеорежима"
 
-#: skin_default_skin.xml.h:713
+#: skin_default_skin.xml.h:714
 msgid "VideoMode Settings"
 msgstr "Параметры видеорежима"
 
@@ -10678,7 +10682,7 @@ msgstr "Видеорежим должен быть 576i для Scart"
 msgid "Videotune"
 msgstr "Настройки изображения"
 
-#: skin_default_skin.xml.h:716
+#: skin_default_skin.xml.h:717
 msgid "Vietnamese"
 msgstr "Вьетнамский"
 
@@ -10695,15 +10699,15 @@ msgstr "Как отображать миниатюры"
 msgid "View Sections"
 msgstr "Как отображать разделы меню"
 
-#: httpdfunc.h:4111 skin_default_skin.xml.h:717
+#: httpdfunc.h:4111 skin_default_skin.xml.h:718
 msgid "Virtualzap Timeout"
 msgstr "Виртуальное переключение"
 
-#: skin_default_skin.xml.h:718
+#: skin_default_skin.xml.h:719
 msgid "Vol off"
 msgstr "Громкость выкл"
 
-#: skin_default_skin.xml.h:719
+#: skin_default_skin.xml.h:720
 msgid "Voltage Mode"
 msgstr "Режим напряжения"
 
@@ -10749,11 +10753,11 @@ msgstr "Громкость вверх"
 msgid "Volume: "
 msgstr "Громкость "
 
-#: httpdfunc.h:3714 skin_default_skin.xml.h:720
+#: httpdfunc.h:3714 skin_default_skin.xml.h:721
 msgid "Volumebar Timeout"
 msgstr "Время показа уровня громкости (Сек)"
 
-#: skin_default_skin.xml.h:721
+#: skin_default_skin.xml.h:722
 msgid "Votes"
 msgstr "Голосов"
 
@@ -10777,7 +10781,7 @@ msgstr "Информация о WiFi"
 msgid "WLAN LOG"
 msgstr "Лог WLAN"
 
-#: skin_default_skin.xml.h:727
+#: skin_default_skin.xml.h:728
 msgid "WLAN Settings"
 msgstr "Параметры WLAN"
 
@@ -10807,7 +10811,7 @@ msgstr ""
 msgid "WM2014 Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:728
+#: skin_default_skin.xml.h:729
 msgid "WOL"
 msgstr ""
 
@@ -10819,7 +10823,7 @@ msgstr ""
 msgid "WPA2"
 msgstr ""
 
-#: skin_default_skin.xml.h:730
+#: skin_default_skin.xml.h:731
 msgid "WSS Mode"
 msgstr "Режим WSS"
 
@@ -10838,7 +10842,7 @@ msgstr ""
 msgid "Wait"
 msgstr "Ждите!"
 
-#: skin_default_skin.xml.h:722
+#: skin_default_skin.xml.h:723
 msgid "Wait for cam ready"
 msgstr "Ждать конца чтения"
 
@@ -10850,15 +10854,15 @@ msgstr "Дождитесь окончания сканирования кана�
 msgid "Wait for connect or press EXIT"
 msgstr "Подождите, пока соединение не будет установлено. Или нажмите Exit"
 
-#: skin_default_skin.xml.h:724
+#: skin_default_skin.xml.h:725
 msgid "Wakeup A/V Receiver"
 msgstr "Ресивер Wakeup A/V"
 
-#: skin_default_skin.xml.h:725
+#: skin_default_skin.xml.h:726
 msgid "Wakeup TV"
 msgstr "Wakeup ТВ"
 
-#: skin_default_skin.xml.h:723
+#: skin_default_skin.xml.h:724
 msgid "Wakeup all connected devices"
 msgstr "Пробуждение всех подключенных устройств"
 
@@ -10903,7 +10907,7 @@ msgstr "Веб-браузер "
 msgid "Wed"
 msgstr ""
 
-#: global.h:6249 global.h:6259 rectimer.h:1102 skin_default_skin.xml.h:726
+#: global.h:6249 global.h:6259 rectimer.h:1102 skin_default_skin.xml.h:727
 msgid "Wednesday"
 msgstr "Среда"
 
@@ -11000,7 +11004,7 @@ msgstr ""
 msgid "Write error"
 msgstr "Ошибка записи"
 
-#: skin_default_skin.xml.h:729
+#: skin_default_skin.xml.h:730
 msgid "Writer"
 msgstr "Писатель"
 
@@ -11065,7 +11069,7 @@ msgstr ""
 msgid "Y-Resolution"
 msgstr "Y-разрешение"
 
-#: skin_default_skin.xml.h:731
+#: skin_default_skin.xml.h:732
 msgid "Year"
 msgstr ""
 
@@ -11307,7 +11311,7 @@ msgstr ""
 msgid "backup"
 msgstr "Сохранить"
 
-#: skinadjust.h:78
+#: skinadjust.h:79
 msgid "bar"
 msgstr "Бар"
 
@@ -11365,7 +11369,7 @@ msgstr "Бутлого"
 msgid "bootstop"
 msgstr "Остановка загрузки"
 
-#: skinadjust.h:77
+#: skinadjust.h:78
 msgid "border"
 msgstr "Рамка"
 
@@ -11949,7 +11953,7 @@ msgstr "Информаторы"
 msgid "initializing"
 msgstr "Инициализация"
 
-#: skin_default_skin.xml.h:316
+#: skin_default_skin.xml.h:317
 msgid "install"
 msgstr "Установить"
 
@@ -11966,7 +11970,7 @@ msgstr ""
 msgid "intern"
 msgstr "Внутренний"
 
-#: skin_default_skin.xml.h:318
+#: skin_default_skin.xml.h:319
 msgid "internet"
 msgstr "Интернет"
 
@@ -11974,7 +11978,7 @@ msgstr "Интернет"
 msgid "ip"
 msgstr "IP"
 
-#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:321
+#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:322
 #: skins_networkbrowser_skin.xml.h:14
 msgid "ipaddress"
 msgstr "IP адрес"
@@ -11994,15 +11998,15 @@ msgstr "Да"
 msgid "k"
 msgstr ""
 
-#: skin_default_skin.xml.h:328
+#: skin_default_skin.xml.h:329
 msgid "key 0"
 msgstr ""
 
-#: skin_default_skin.xml.h:330
+#: skin_default_skin.xml.h:331
 msgid "key channel up/down"
 msgstr "Кнопка канала вверх/вниз"
 
-#: skin_default_skin.xml.h:331
+#: skin_default_skin.xml.h:332
 msgid "key pip"
 msgstr "Кнопка PiP"
 
@@ -12014,7 +12018,7 @@ msgstr "Клавиатура"
 msgid "l"
 msgstr ""
 
-#: skin_default_skin.xml.h:332
+#: skin_default_skin.xml.h:333
 msgid "lan"
 msgstr "LAN"
 
@@ -12139,7 +12143,7 @@ msgstr ""
 msgid "menuprotect"
 msgstr "Защита меню"
 
-#: skin_default_skin.xml.h:733 webif_help.h:51
+#: skin_default_skin.xml.h:734 webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -12163,7 +12167,7 @@ msgstr ""
 msgid "move east"
 msgstr "На Восток"
 
-#: skin_default_skin.xml.h:379
+#: skin_default_skin.xml.h:380
 msgid "move service"
 msgstr "Перемещение каналов"
 
@@ -12198,7 +12202,7 @@ msgstr ""
 msgid "nein"
 msgstr "Нет"
 
-#: skin_default_skin.xml.h:385
+#: skin_default_skin.xml.h:386
 msgid "netmask"
 msgstr "Маска сети"
 
@@ -12294,7 +12298,7 @@ msgstr "Автостарт NFS сервера"
 #: settings_autostart.h:511 settings_autostart.h:568 settings_autostart.h:577
 #: settings_autostart.h:586 settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:201 stopifnotused.c:94
+#: settings_overclocking.h:244 skinadjust.h:246 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:39
 #: tithek_settings.h:43 tithek_settings.h:47 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -12375,7 +12379,7 @@ msgstr ""
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:87
+#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:88
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:94
 #: vfdisplay.h:109
@@ -12428,7 +12432,7 @@ msgstr "Старше 50 дней"
 
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
-#: readerconfig.h:424 skinadjust.h:86 transponder.h:257 transponder.h:266
+#: readerconfig.h:424 skinadjust.h:87 transponder.h:257 transponder.h:266
 #: transponder.h:416 transponder.h:425 vfdisplay.h:49 vfdisplay.h:70
 msgid "on"
 msgstr "Вкл"
@@ -12524,7 +12528,7 @@ msgstr ""
 msgid "picons"
 msgstr "Пиконы"
 
-#: skinadjust.h:80 tmc.h:542
+#: skinadjust.h:81 tmc.h:542
 msgid "picture"
 msgstr "Картинка"
 
@@ -12568,7 +12572,7 @@ msgstr "Плейлист"
 msgid "playlist_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:432
+#: skin_default_skin.xml.h:433
 msgid "please wait"
 msgstr "Ждите!"
 
@@ -12581,7 +12585,7 @@ msgstr "Пожалуйста ждите!"
 msgid "plugin"
 msgstr "Плагин"
 
-#: skin_default_skin.xml.h:441
+#: skin_default_skin.xml.h:442
 msgid "position"
 msgstr "Позиция"
 
@@ -12606,7 +12610,7 @@ msgstr ""
 msgid "press red"
 msgstr "Нажмите красную кнопку"
 
-#: skin_default_skin.xml.h:447
+#: skin_default_skin.xml.h:448
 msgid "prime time"
 msgstr "Запись"
 
@@ -12614,7 +12618,7 @@ msgstr "Запись"
 msgid "progress"
 msgstr "Прогресс"
 
-#: skin_default_skin.xml.h:457
+#: skin_default_skin.xml.h:458
 msgid "protect service"
 msgstr "Блокировка каналов"
 
@@ -12706,11 +12710,11 @@ msgstr "Красная кнопка"
 msgid "remote Desktop Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:483
+#: skin_default_skin.xml.h:484
 msgid "remove service"
 msgstr "Перенесение каналов"
 
-#: skin_default_skin.xml.h:488
+#: skin_default_skin.xml.h:489
 msgid "rename service"
 msgstr "Переименование каналов"
 
@@ -12724,19 +12728,19 @@ msgstr ""
 
 #: adjust.h:102 httpdfunc.h:4010 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
-#: plugins_mc_skin.xml.h:46 skin_default_skin.xml.h:505 skins_mc_skin.xml.h:46
+#: plugins_mc_skin.xml.h:46 skin_default_skin.xml.h:506 skins_mc_skin.xml.h:46
 msgid "reverse alpha"
 msgstr "Обратный алфавит"
 
 #: adjust.h:106 httpdfunc.h:4038 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
-#: plugins_mc_skin.xml.h:47 skin_default_skin.xml.h:506 skins_mc_skin.xml.h:47
+#: plugins_mc_skin.xml.h:47 skin_default_skin.xml.h:507 skins_mc_skin.xml.h:47
 msgid "reverse date"
 msgstr "Дата по убыванию"
 
 #: adjust.h:104 httpdfunc.h:4024 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
-#: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:507 skins_mc_skin.xml.h:48
+#: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:508 skins_mc_skin.xml.h:48
 msgid "reverse size"
 msgstr "Размер по убыванию"
 
@@ -12796,27 +12800,27 @@ msgstr "Автостарт WiFi"
 msgid "schaltet zurueck auf Sender"
 msgstr "Переключает обратно на канал"
 
-#: skin_default_skin.xml.h:536 tpk_section.h:14 webif_help.h:81
+#: skin_default_skin.xml.h:537 tpk_section.h:14 webif_help.h:81
 msgid "screensaver"
 msgstr "Заставка"
 
-#: skin_default_skin.xml.h:538
+#: skin_default_skin.xml.h:539
 msgid "screensaver background"
 msgstr "Цвет фона заставки"
 
-#: skin_default_skin.xml.h:539
+#: skin_default_skin.xml.h:540
 msgid "screensaver delay"
 msgstr "Задержка запуска заставки (Сек)"
 
-#: skin_default_skin.xml.h:540
+#: skin_default_skin.xml.h:541
 msgid "screensaver interval"
 msgstr "Интервал появления иконки (Сек)"
 
-#: skin_default_skin.xml.h:541
+#: skin_default_skin.xml.h:542
 msgid "screensaver pic"
 msgstr "Картинка заставки"
 
-#: skin_default_skin.xml.h:542
+#: skin_default_skin.xml.h:543
 msgid "screensaver type"
 msgstr "Тип заставки"
 
@@ -12887,7 +12891,7 @@ msgstr ""
 "дисков. Диски будут отключены, если они не активны\n"
 "в течении выбранного промежутка времени"
 
-#: skin_default_skin.xml.h:559
+#: skin_default_skin.xml.h:560
 msgid "set startchannel"
 msgstr "Сделать канал стартовым"
 
@@ -12957,7 +12961,7 @@ msgstr ""
 
 #: adjust.h:103 httpdfunc.h:4017 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
-#: plugins_mc_skin.xml.h:52 skin_default_skin.xml.h:576 skins_mc_skin.xml.h:52
+#: plugins_mc_skin.xml.h:52 skin_default_skin.xml.h:577 skins_mc_skin.xml.h:52
 msgid "size"
 msgstr "Размер"
 
@@ -13014,7 +13018,7 @@ msgstr "Эмуляторы"
 msgid "sorry found no harddisk"
 msgstr "Диски не найдены"
 
-#: skin_default_skin.xml.h:590
+#: skin_default_skin.xml.h:591
 msgid "sort service"
 msgstr "Сортировка каналов"
 
@@ -13022,7 +13026,7 @@ msgstr "Сортировка каналов"
 msgid "south"
 msgstr "Юг"
 
-#: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:594
+#: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:595
 #: skins_panel_skin.xml.h:18
 msgid "speed"
 msgstr "Скорость"
@@ -13044,7 +13048,7 @@ msgstr "Контроль SSL"
 msgid "ssl_try"
 msgstr ""
 
-#: skin_default_skin.xml.h:598 system_update.h:25 system_update.h:147
+#: skin_default_skin.xml.h:599 system_update.h:25 system_update.h:147
 msgid "stable"
 msgstr "Официальный фид"
 
@@ -13106,7 +13110,7 @@ msgid "stock Plugin"
 msgstr ""
 
 #: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1568 record.h:1577 record.h:1588
-#: record.h:1617 record.h:1626 record.h:1660 skin_default_skin.xml.h:609
+#: record.h:1617 record.h:1626 record.h:1660 skin_default_skin.xml.h:610
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Стоп"
@@ -13169,7 +13173,7 @@ msgstr ""
 msgid "system_backup_restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:735
+#: skin_default_skin.xml.h:736
 msgid "system_infos"
 msgstr ""
 
@@ -13181,7 +13185,7 @@ msgstr ""
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:734 webif_help.h:96
+#: skin_default_skin.xml.h:735 webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
@@ -13237,7 +13241,7 @@ msgstr "Ошибка транспондера"
 msgid "testtransponder not found"
 msgstr "Транспондер не найден"
 
-#: skinadjust.h:79
+#: skinadjust.h:80
 msgid "text"
 msgstr "Текст"
 
@@ -13249,7 +13253,7 @@ msgstr ""
 msgid "textinputhist"
 msgstr ""
 
-#: skin_default_skin.xml.h:639
+#: skin_default_skin.xml.h:640
 msgid "thereafter on this Channel:"
 msgstr "После этого на этом канале"
 
@@ -13347,7 +13351,7 @@ msgstr ""
 msgid "tunerreceptiondvbt"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:689
+#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:690
 #: skins_networkbrowser_skin.xml.h:30
 msgid "type"
 msgstr "Тип"
@@ -13387,7 +13391,7 @@ msgstr "Universal"
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2151 skin_default_skin.xml.h:696 skinselector.h:138 stream.h:22
+#: security.h:2151 skin_default_skin.xml.h:697 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13412,7 +13416,7 @@ msgstr ""
 msgid "unstable"
 msgstr "Бэта фид"
 
-#: skin_default_skin.xml.h:698
+#: skin_default_skin.xml.h:699
 msgid "update"
 msgstr "Обновить"
 
@@ -13711,7 +13715,7 @@ msgstr "Жёлтая"
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_autostart.h:604 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:202
+#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:247
 #: stopifnotused.c:93 timeshiftsettings.h:58 timeshiftsettings.h:62
 #: tithek_settings.h:40 tithek_settings.h:44 tithek_settings.h:48 tmc.h:532
 #: tmc.h:536 xupnpd.h:30
