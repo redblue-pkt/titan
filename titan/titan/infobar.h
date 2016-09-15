@@ -1006,7 +1006,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcrecall", NULL) || (status.play == 0 && status.pause == 0 && getrcconfigint("rcrecall", NULL) == NULL && rcret == getrcconfigint("rcexit", NULL)))
+		if(rcret == getrcconfigint("rcrecall", NULL) || (status.play == 0 && status.pause == 0 && getrcconfigint("rcrecall", NULL) == 0 && rcret == getrcconfigint("rcexit", NULL)))
 		{
 			subtitlepause(1);
 			clearscreen(infobar);
