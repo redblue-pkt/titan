@@ -2440,7 +2440,7 @@ msgstr "Tạo hình ảnh"
 msgid "Create new"
 msgstr "Tạo thư mục"
 
-#: skinadjust.h:555
+#: skinadjust.h:600
 msgid "Create new Skinstyle ?"
 msgstr ""
 
@@ -3219,8 +3219,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:531
-#: skinadjust.h:555 skinadjust.h:596 skin_default_skin.xml.h:195
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:576
+#: skinadjust.h:600 skinadjust.h:641 skin_default_skin.xml.h:195
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
 #: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:6
@@ -5864,8 +5864,8 @@ msgstr ""
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:531 skinadjust.h:547 skinadjust.h:555 skinadjust.h:596
-#: skinadjust.h:613 skinadjust.h:1008 skinadjust.h:1070 skinselector.h:231
+#: skinadjust.h:576 skinadjust.h:592 skinadjust.h:600 skinadjust.h:641
+#: skinadjust.h:658 skinadjust.h:1053 skinadjust.h:1115 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
 #: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
@@ -6460,9 +6460,9 @@ msgstr "E"
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
 #: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:531
-#: skinadjust.h:547 skinadjust.h:555 skinadjust.h:596 skinadjust.h:613
-#: skinadjust.h:1008 skinadjust.h:1070 skins_dlna_skin.xml.h:7
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:576
+#: skinadjust.h:592 skinadjust.h:600 skinadjust.h:641 skinadjust.h:658
+#: skinadjust.h:1053 skinadjust.h:1115 skins_dlna_skin.xml.h:7
 #: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
@@ -7765,7 +7765,7 @@ msgstr ""
 msgid "Remove Log:"
 msgstr ""
 
-#: skinadjust.h:590
+#: skinadjust.h:635
 msgid "Remove Skinstyle"
 msgstr ""
 
@@ -7835,7 +7835,7 @@ msgstr "Lập lại"
 msgid "Reset"
 msgstr ""
 
-#: skinadjust.h:531
+#: skinadjust.h:576
 msgid "Reset your Skin Settings ?"
 msgstr ""
 
@@ -9062,7 +9062,7 @@ msgstr ""
 msgid "Skin tobayer01 (grey/blue/black) default picons"
 msgstr ""
 
-#: skinadjust.h:558
+#: skinadjust.h:603
 msgid "Skinstyle Name"
 msgstr ""
 
@@ -10015,8 +10015,8 @@ msgstr "Media Center"
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
-#: kravencfg.c:212 skinadjust.h:547 skinadjust.h:613 skinadjust.h:1008
-#: skinadjust.h:1070
+#: kravencfg.c:212 skinadjust.h:592 skinadjust.h:658 skinadjust.h:1053
+#: skinadjust.h:1115
 msgid "Titan will be restarted!"
 msgstr ""
 
