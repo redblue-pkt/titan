@@ -304,6 +304,14 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] titan done"
 echo "[titan]--------------------------------------------------------"
 
+if [ "$HOME" == "/home/aaf-svn" ];then
+    echo "[titan]--------------------------------------------------------"
+    echo "[titan] manuel build stop po building !!!"
+    echo "[titan]--------------------------------------------------------"
+    touch "$HOME"/flashimg/.ipk-build-error
+    exit 1
+fi
+
 if [ "$SRCDIR" = "source.titan.building" ]; then exit 1; fi
 
 rm -rf "$HOME"/flashimg/BUILD/titan
