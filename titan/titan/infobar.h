@@ -548,7 +548,7 @@ void screeninfobar()
 			infobartimeout = 0;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcexit", NULL))
+		if(rcret == getrcconfigint("rcexit", NULL) && status.infobar == 1)
 		{
 			if(status.timeshift == 1 && status.playing == 1)
 				screenplayinfobar(NULL, NULL, 1, 1, 4);
@@ -1006,7 +1006,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcrecall", NULL) || (status.play == 0 && status.pause == 0 && getrcconfigint("rcrecall", NULL) == 0 && rcret == getrcconfigint("rcexit", NULL)))
+		if(rcret == getrcconfigint("rcrecall", NULL) || rcret == getrcconfigint("rcexit", NULL))
 		{
 			subtitlepause(1);
 			clearscreen(infobar);
