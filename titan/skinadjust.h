@@ -374,6 +374,8 @@ start:
 		emurunningcol->hidden = NO;
 	}
 
+	setfbtransparent(255);
+
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
 
@@ -465,8 +467,6 @@ start:
 //////////////			
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "channellist_sel") == 0)
 		{
-			setfbtransparent(255);
-
 			tmpstr = ostrcat(tmpstr, getconfig("skinpath", NULL), 1, 0);
 			tmpstr = ostrcat(tmpstr, "/preview/", 1, 0);
 			tmpstr = ostrcat(tmpstr, channellist_sel->ret, 1, 0);
@@ -979,7 +979,6 @@ start:
 				if(oldfavcol != convertcol("favcol")) reboot = 1;
 				favcol->fontcol2 = convertcol(tmpstr);
 			}
-			setosdtransparent(getskinconfigint("osdtransparent", NULL));
 			drawscreen(skinadjust, 0, 0);
 
 			debug(10, "%s set %s", listbox->select->name, tmpstr);
@@ -1075,6 +1074,8 @@ start:
 			break;
 		}
 	}
+
+	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 
 	delskinconfigtmpall();
 	delownerrc(skinadjust);
