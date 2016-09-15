@@ -68,6 +68,9 @@ void screenskinadjust()
 	struct skin* b7 = getscreennode(skinadjust, "b7");
 	struct skin* load = getscreen("loading");
 
+	struct skin* preview = getscreennode(skinadjust, "preview");
+	preview->hidden = YES;
+
 	struct skin* tmp = NULL;
 
 start:
@@ -455,7 +458,31 @@ start:
 		else
 			b7->hidden = YES;
 
+		preview->hidden = YES;
+
 		drawscreen(skinadjust, 0, 0);
+
+//////////////			
+		if(listbox->select != NULL && ostrcmp(listbox->select->name, "channellist_sel") == 0)
+		{
+			setfbtransparent(255);
+
+			tmpstr = ostrcat(tmpstr, getconfig("skinpath", NULL), 1, 0);
+			tmpstr = ostrcat(tmpstr, "/", 1, 0);
+			tmpstr = ostrcat(tmpstr, channellist_sel->ret, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_preview.png", 0, 0);
+			printf("preview pic: %s\n", tmpstr);
+			if(file_exist(tmpstr))
+			{
+				changepic(preview, tmpstr);
+				preview->hidden = NO;
+			}
+			free(tmpstr), tmpstr = NULL;
+			drawscreen(preview, 0, 0);
+		}
+		else
+			preview->hidden = YES;
+///////////////
 
 		rcret = waitrc(skinadjust, 0, 0);
 		tmp = listbox->select;
