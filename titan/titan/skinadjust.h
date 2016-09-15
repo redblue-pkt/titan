@@ -464,8 +464,53 @@ start:
 
 		drawscreen(skinadjust, 0, 0);
 
-//////////////			
-		if(listbox->select != NULL && ostrcmp(listbox->select->name, "channellist_sel") == 0)
+//////////////
+		if(listbox->select != NULL && ostrcmp(listbox->select->name, "infobar_sel") == 0)
+		{
+			tmpstr = ostrcat(tmpstr, getconfig("skinpath", NULL), 1, 0);
+			tmpstr = ostrcat(tmpstr, "/preview/", 1, 0);
+			tmpstr = ostrcat(tmpstr, infobar_sel->ret, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_preview.png", 0, 0);
+			printf("preview pic: %s\n", tmpstr);
+			if(file_exist(tmpstr))
+			{
+				changepic(preview, tmpstr);
+				preview->hidden = NO;
+			}
+			free(tmpstr), tmpstr = NULL;
+			drawscreen(preview, 0, 0);
+		}
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "infobar2_sel") == 0)
+		{
+			tmpstr = ostrcat(tmpstr, getconfig("skinpath", NULL), 1, 0);
+			tmpstr = ostrcat(tmpstr, "/preview/", 1, 0);
+			tmpstr = ostrcat(tmpstr, infobar2_sel->ret, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_preview.png", 0, 0);
+			printf("preview pic: %s\n", tmpstr);
+			if(file_exist(tmpstr))
+			{
+				changepic(preview, tmpstr);
+				preview->hidden = NO;
+			}
+			free(tmpstr), tmpstr = NULL;
+			drawscreen(preview, 0, 0);
+		}
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "gmultiepg_sel") == 0)
+		{
+			tmpstr = ostrcat(tmpstr, getconfig("skinpath", NULL), 1, 0);
+			tmpstr = ostrcat(tmpstr, "/preview/", 1, 0);
+			tmpstr = ostrcat(tmpstr, gmultiepg_sel->ret, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_preview.png", 0, 0);
+			printf("preview pic: %s\n", tmpstr);
+			if(file_exist(tmpstr))
+			{
+				changepic(preview, tmpstr);
+				preview->hidden = NO;
+			}
+			free(tmpstr), tmpstr = NULL;
+			drawscreen(preview, 0, 0);
+		}
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "channellist_sel") == 0)
 		{
 			tmpstr = ostrcat(tmpstr, getconfig("skinpath", NULL), 1, 0);
 			tmpstr = ostrcat(tmpstr, "/preview/", 1, 0);
