@@ -510,7 +510,19 @@ void gmultiepgchangesize(struct skin* gmultiepg, struct skin* listbox, struct sk
 int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
 	int rcret = 0, ret = 0, epgscreenconf = 0, end = 0;
-	struct skin* gmultiepg = getscreen("gmultiepg");
+
+	char* gmultiepg_sel = getskinconfig("gmultiepg_selection", NULL);
+	debug(10, "get initial gmultiepg=%s", gmultiepg_sel);
+
+	if(gmultiepg_sel == NULL) {
+		gmultiepg_sel = ostrcat(gmultiepg_sel, "gmultiepg", 1, 0); // fallback to default
+		debug(10, "fallback to default, set gmultiepg=%s", gmultiepg_sel);
+	}
+
+	struct skin* gmultiepg = getscreen(gmultiepg_sel);
+	debug(10, "final gmultiepg=%s", gmultiepg_sel);
+
+//	struct skin* gmultiepg = getscreen("gmultiepg");
 	struct skin* listbox = getscreennode(gmultiepg, "listbox");
 	struct skin* channellistbox = getscreennode(gmultiepg, "channellistbox");
 	struct skin* epgdesc = getscreennode(gmultiepg, "epgdesc");

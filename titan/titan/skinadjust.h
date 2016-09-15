@@ -57,6 +57,7 @@ void screenskinadjust()
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
 	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
 	struct skin* channellist_sel = getscreennode(skinadjust, "channellist_sel");
+	struct skin* gmultiepg_sel = getscreennode(skinadjust, "gmultiepg_sel");
 
 	struct skin* filelist = getscreennode(skinadjust, "filelist");
 	struct skin* skinstyle_sel = getscreennode(skinadjust, "skinstyle_sel");
@@ -127,6 +128,14 @@ start:
 		addchoicebox(infobar_sel, "infobar_v4","v4");
 	if(checkscreen("infobar_v5") != status.skinerr)
 		addchoicebox(infobar_sel, "infobar_v5","v5");
+	if(checkscreen("infobar_v6") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar_v6","v6");
+	if(checkscreen("infobar_v7") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar_v7","v7");
+	if(checkscreen("infobar_v8") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar_v8","v8");
+	if(checkscreen("infobar_v9") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar_v9","v9");
 	setchoiceboxselection(infobar_sel, getskinconfig("infobar_selection", NULL));
 
 	if(checkscreen("infobar2") != status.skinerr)
@@ -139,6 +148,14 @@ start:
 		addchoicebox(infobar2_sel, "infobar2_v4","v4");
 	if(checkscreen("infobar2_v5") != status.skinerr)
 		addchoicebox(infobar2_sel, "infobar2_v5","v5");
+	if(checkscreen("infobar2_v6") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2_v6","v6");
+	if(checkscreen("infobar2_v7") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2_v7","v7");
+	if(checkscreen("infobar2_v8") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2_v8","v8");
+	if(checkscreen("infobar2_v9") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2_v9","v9");
 	setchoiceboxselection(infobar2_sel, getskinconfig("infobar2_selection", NULL));
 
 	if(checkscreen("channellist") != status.skinerr)
@@ -151,7 +168,35 @@ start:
 		addchoicebox(channellist_sel, "channellist_v4","v4");
 	if(checkscreen("channellist_v5") != status.skinerr)
 		addchoicebox(channellist_sel, "channellist_v5","v5");
+	if(checkscreen("channellist_v6") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist_v6","v6");
+	if(checkscreen("channellist_v7") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist_v7","v7");
+	if(checkscreen("channellist_v8") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist_v8","v8");
+	if(checkscreen("channellist_v9") != status.skinerr)
+		addchoicebox(channellist_sel, "channellist_v9","v9");
 	setchoiceboxselection(channellist_sel, getskinconfig("channellist_selection", NULL));
+
+	if(checkscreen("gmultiepg") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg", "v1");
+	if(checkscreen("gmultiepg_v2") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg_v2","v2");
+	if(checkscreen("gmultiepg_v3") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg_v3","v3");
+	if(checkscreen("gmultiepg_v4") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg_v4","v4");
+	if(checkscreen("gmultiepg_v5") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg_v5","v5");
+	if(checkscreen("gmultiepg_v6") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg_v6","v6");
+	if(checkscreen("gmultiepg_v7") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg_v7","v7");
+	if(checkscreen("gmultiepg_v8") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg_v8","v8");
+	if(checkscreen("gmultiepg_v9") != status.skinerr)
+		addchoicebox(gmultiepg_sel, "gmultiepg_v9","v9");
+	setchoiceboxselection(gmultiepg_sel, getskinconfig("gmultiepg_selection", NULL));
 
 	char* skinpath = NULL;
 	if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") == 0)
@@ -970,6 +1015,11 @@ start:
 			addskinconfigscreencheck("channellist_selection", channellist_sel, "0");
 			if(ostrcmp(oldchannellist_sel,getskinconfig("channellist_selection", NULL)) != 0) reboot = 1;
 			//free(oldchannellist_sel); oldchannellist_sel=NULL;
+
+			char* oldgmultiepg_sel = getskinconfig("gmultiepg_selection", NULL);
+			addskinconfigscreencheck("gmultiepg_selection", gmultiepg_sel, "0");
+			if(ostrcmp(oldgmultiepg_sel,getskinconfig("gmultiepg_selection", NULL)) != 0) reboot = 1;
+			//free(oldgmultiepg_sel); oldgmultiepg_sel=NULL;
 
 			addconfig("skinblinkoff", blinkoff->ret);
 
