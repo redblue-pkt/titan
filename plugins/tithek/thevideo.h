@@ -115,12 +115,29 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 
 //	var mpri_Key='LCw2QFU8N0hRPFdBWi4zLVgK';
 //	eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('3.2(\'<0 4\'.1(\'8="\'+\'/5\'.1(\'/\'+7+\'">\\6/0>\')))',9,9,'script|concat|write|document|s|jwv|x3C|mpri_Key|rc'.split('|'),0,{}))
+	tmpstr = jsunpack(tmpstr);
+	titheklog(debuglevel, "/tmp/thevideo3_post_jsunpack", NULL, NULL, NULL, tmpstr);	
 
 	tmpstr1 = string_resub("<div class=\"container main-container\">", "</div>", tmpstr, 0);
 	free(tmpstr), tmpstr = NULL;
 	debug(99, "tmpstr1: %s", tmpstr1);
 	url = string_resub("<script src=\"", "\"></script>", tmpstr1, 0);
 
+	if(url == NULL)
+	{
+		tmpstr2 = string_resub("+\\'", "\\'.concat", tmpstr1, 0);
+//		tmpstr3 = string_resub("var tksucks='", "';", tmpstr1, 0);
+		tmpstr3 = oregex("var .*='(.*)';.*", tmpstr1);
+
+		url = ostrcat("http://thevideo.me", tmpstr2, 0, 0);
+		url = ostrcat(url, "/", 1, 0);
+		url = ostrcat(url, tmpstr3, 1, 0);
+		free(tmpstr2), tmpstr2 = NULL;
+		free(tmpstr3), tmpstr3 = NULL;
+	}
+
+/*
+//old
 	if(url == NULL)
 	{
 		tmpstr2 = string_resub(",9,9,'", "'.split", tmpstr1, 0);
@@ -149,8 +166,8 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 		free(tmpstr3), tmpstr3 = NULL;
 		free(tmpstr4), tmpstr4 = NULL;
 	}
-	
-/*	
+
+// old	
 	if(url == NULL)
 	{
 		tmpstr2 = string_resub("' + '", "'.concat", tmpstr1, 0);
@@ -163,7 +180,8 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 		free(tmpstr2), tmpstr2 = NULL;
 		free(tmpstr3), tmpstr3 = NULL;
 	}
-*/
+*/	
+
 	free(tmpstr1), tmpstr1 = NULL;
 	
 /*
