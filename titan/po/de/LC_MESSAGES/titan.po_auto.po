@@ -13984,9 +13984,3 @@ msgstr ""
 #: tpk_showname.h:224
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Default mod by maenne79"
-#~ msgstr "Standard Skin mod | maenne79"
-
-#~ msgid "Default skin without MiniTV"
-#~ msgstr "Standard Skin ohne MiniTV"
