@@ -33,6 +33,7 @@ char* vidzi(char* link)
 	titheklog(debuglevel, "/tmp/vidzi1_get", NULL, NULL, NULL, tmpstr);	
 	url = string_resub("<IFRAME SRC=\"", "\"", tmpstr, 0);
 
+	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/vidzi2_get", NULL, NULL, NULL, tmpstr);	
 
