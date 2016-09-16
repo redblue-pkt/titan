@@ -3173,11 +3173,11 @@ msgstr ""
 #: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
 #: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:79
+#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
+#: putlocker.h:225 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:387
+#: record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
@@ -4608,11 +4608,15 @@ msgstr ""
 
 #: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:23
 #: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:40 novamov.h:35
-#: nowvideo.h:44 played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32
-#: shared.h:29 streamcloud.h:31 thefile.h:34 thevideo.h:29 vidag.h:29
-#: vidbull.h:30 videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:30
-#: vodlocker.h:30 xvidstage.h:29
+#: nowvideo.h:44 played.h:30 primeshare.h:29 putlocker.h:32 shared.h:29
+#: streamcloud.h:31 thefile.h:34 thevideo.h:29 vidag.h:29 vidbull.h:30
+#: videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:30 vodlocker.h:30
+#: xvidstage.h:29
 msgid "Hoster Url not http://"
+msgstr ""
+
+#: promptfile.h:26
+msgid "Hoster Url not http:// or https://"
 msgstr ""
 
 #: httpdfunc.h:5359
@@ -5808,8 +5812,8 @@ msgstr ""
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:111 play.h:614 play.h:1314 play.h:1351 play.h:1651 play.h:1879
 #: play.h:1890 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
-#: primeshare.h:124 promptfile.h:46 promptfile.h:94 promptfile.h:136
-#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: primeshare.h:124 promptfile.h:26 promptfile.h:35 putlocker.h:32
+#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
 #: record.h:1160 record.h:1437 record.h:1689 record.h:1714 rectimer.h:577
@@ -6397,20 +6401,20 @@ msgstr ""
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
 #: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:3 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1160 record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258
-#: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
-#: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704
-#: scan.h:1706 scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:576
-#: skinadjust.h:592 skinadjust.h:600 skinadjust.h:641 skinadjust.h:658
-#: skinadjust.h:1053 skinadjust.h:1115 skins_dlna_skin.xml.h:7
-#: skinselector.h:231 skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:79
+#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
+#: putlocker.h:225 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
+#: record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
+#: rectimer.h:1417 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
+#: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
+#: security.h:668 security.h:685 security.h:1944 service.h:743 service.h:989
+#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:576 skinadjust.h:592
+#: skinadjust.h:600 skinadjust.h:641 skinadjust.h:658 skinadjust.h:1053
+#: skinadjust.h:1115 skins_dlna_skin.xml.h:7 skinselector.h:231
+#: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:414 softcam.h:477
@@ -9692,13 +9696,13 @@ msgstr ""
 #: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
 #: firedrive.h:122 firedrive.h:137 flashx.h:55 letwatch.h:59 mightyupload.h:68
 #: movreel.h:137 movshare.h:190 nbaondemand.h:61 played.h:84 played.h:101
-#: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
-#: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
-#: putlocker.h:225 shared.h:82 solarmovie.h:51 solarmovie.h:62
-#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
-#: thevideo.h:65 vidag.h:54 vidbull.h:67 vidstream.h:86 vidstream.h:97
-#: vidstream.h:167 vidto.h:67 vidto.h:94 vidto.h:128 vidto.h:174 vidzi.h:59
-#: vivo.h:38 vivo.h:61 vodlocker.h:74 xvidstage.h:58
+#: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:35
+#: putlocker.h:79 putlocker.h:142 putlocker.h:151 putlocker.h:225 shared.h:82
+#: solarmovie.h:51 solarmovie.h:62 streamcloud.h:90 streamcloud.h:103
+#: streamcloud.h:134 streamcloud.h:193 thevideo.h:65 vidag.h:54 vidbull.h:67
+#: vidstream.h:86 vidstream.h:97 vidstream.h:167 vidto.h:67 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidzi.h:59 vivo.h:38 vivo.h:61 vodlocker.h:74
+#: xvidstage.h:58
 msgid "The page is temporarily unavailable"
 msgstr ""
 
