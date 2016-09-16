@@ -13818,6 +13818,3 @@ msgstr ""
 #: tpk_showname.h:224
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Default skin without MiniTV"
-#~ msgstr "Standard Skin sin MiniTV"
