@@ -46,24 +46,36 @@ char* promptfile(char* link)
 	debug(99, "extra: %s", extra);
 	debug(99, "chashvalue: %s", chashvalue);
 
-	post = ostrcat(chashname, "=", 0, 0);
-	post = ostrcat(post, extra, 1, 0);
-	post = ostrcat(post, chashvalue, 1, 0);
-	free(chashname), chashname = NULL;
-	free(extra), extra = NULL;
-	free(chashvalue), chashvalue = NULL;
+	if(chashname != NULL)
+	{
+		post = ostrcat(chashname, "=", 0, 0);
+		post = ostrcat(post, extra, 1, 0);
+		post = ostrcat(post, chashvalue, 1, 0);
+		free(chashname), chashname = NULL;
+		free(extra), extra = NULL;
+		free(chashvalue), chashvalue = NULL;
+	
+		debug(99, "post: %s", post);
+	
+		free(tmpstr), tmpstr = NULL;
+		tmpstr = gethttps(tmplink, NULL, post, NULL, NULL, tmplink, 1);
+		titheklog(debuglevel, "/tmp/promptfile2_post", NULL, NULL, NULL, tmpstr);
+	}
 
-	debug(99, "post: %s", post);
-
-	tmpstr = gethttps(tmplink, NULL, post, NULL, NULL, tmplink, 1);
-	titheklog(debuglevel, "/tmp/promptfile2_post", NULL, NULL, NULL, tmpstr);
-
-	tmpstr2 = string_resub("flowplayer(container", "native_fullscreen", tmpstr, 0);
 // src:  "http://www.promptfile.com/file/eyJpIjoiRDFEM0M1MEZGNC00MTBDRTA2RDY5IiwiZSI6MTQ3NDAxNTU0OSwidCI6Im1vYmlsZSIsImgiOiJlZmE1ZmQ2NzBlMDJiOWQ4ZjEzMTBlZjg5NzVlYTBlNzUzZjU1YzViIiwicyI6MX0=" }
+	tmpstr2 = string_resub("flowplayer(container", "native_fullscreen", tmpstr, 0);
 
-	streamlink = oregex("src:.*\"(.*)\" }.*", tmpstr);
+	if(tmpstr2 != NULL)
+		streamlink = oregex("src:.*\"(.*)\" }.*", tmpstr2);
+
+	if(streamlink == NULL)
+	{
+// $f("player", getjspath()+"player.swf", {
+		tmpstr2 = string_resub("function initPlayer", "autoBuffering", tmpstr, 0);
+		streamlink = string_resub("url: '", "',", tmpstr2, 0);
+	}
 	titheklog(debuglevel, "/tmp/promptfile3_streamlink", NULL, NULL, NULL, streamlink);
-
+	
 end:
 
 	free(tmpstr); tmpstr = NULL;
