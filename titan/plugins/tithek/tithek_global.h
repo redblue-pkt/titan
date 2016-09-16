@@ -515,24 +515,32 @@ char* jsunpack(char* input)
 	unlink("/tmp/jsunpack3_b36code");
 	unlink("/tmp/jsunpack4_tmpstr_last");
 
+//eval(function(p,a,c,k,e,d){while(c--)if(k[c])p=p.replace(new RegExp('\\b'+c.toString(a)+'\\b','g'),k[c]);return p}('1k.1j(\'<c 13="1i"1h="1g:1f-1e-1d-1c-1b"u="t"s="r"1a="3://h.9.g/f/19.18"><2 1="y"0="x"/><2 1="w"0="v"/><2 1="a"0="3://8.7.6.5/i/q/p.o"/><2 1="l"0="4"><2 1="m"0="4"/><2 1="k"0="j"/><2 1="n"0="4"/><2 1="12"0="3://8.7.6.5:11/d/10/b.z"/><e 13="17"16="b/9"12="3://8.7.6.5:11/d/10/b.z"y="x"w="v"u="t"s="r"a="3://8.7.6.5/i/q/p.o"n="4"m="4"a=""l="4"k="j"15="3://h.9.g/f/14/"></e></c>\');',36,57,'value|name|param|http|false|240|30|56|185|divx|previewImage|video|object||embed|plugin|com|go||Play|previewMessage|allowContextMenu|bannerEnabled|autoPlay|jpg|rezh7ogkvg6b|00004|380|height|715|width|transparent|wmode|Stage6|custommode|mkv|s4umuuk7gii5uaadrm5a76s7fd4bjlcti2r3v6bsa5d6yryt4dawmiqg|182|src|id|download|pluginspage|type|np_vid|cab|DivXBrowserPlugin|codebase|CC0F21721616|9C46|41fa|D0AB|67DABFBF|clsid|classid|ie_vid|write|document'.split('|')))
+
+//eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('3.2(\'<0 4\'.1(\'8="\'+\'/5\'.1(\'/\'+7+\'">\\6/0>\')))',9,9,'script|concat|write|document|s|jwv|x3C|mpri_Key|rc'.split('|'),0,{}))
+
 	while(ostrstr(input, "eval(function(p,a,c,k,e,d){") != NULL)
 	{
-		packed = string_resub("eval(function(p,a,c,k,e,d){", "))", input, 0);
+		packed = string_resub("eval(function(p,a,c,k,e,d){", "}))", input, 0);
+		if(packed == NULL)
+			packed = string_resub("eval(function(p,a,c,k,e,d){", "))", input, 0);
+
 		titheklog(debuglevel, "/tmp/jsunpack1_packed", NULL, NULL, NULL, packed);	
 	
 //		tmpstr = string_resub(";return p}('", ");'", packed, 0);
 //		tmpstr = oregex(".*;return p}(.*)',[0-9]{2,2},[0-9]{2,2},'.*'.split.*", packed);
-		tmpstr = oregex(".*;return p}(.*)',[0-9]{1,3},[0-9]{1,3},'.*'.split.*", packed);
+//		tmpstr = oregex(".*;return p}(.*)',[0-9]{1,3},[0-9]{1,3},'.*'.split.*", packed);
+		tmpstr = oregex(".*return p}(.*)',[0-9]{1,3},[0-9]{1,3},'.*'.split.*", packed);
 
 		debug(99, "tmpstr: %s", tmpstr);
-		titheklog(debuglevel, "/tmp/jsunpack2_tmpstr", NULL, NULL, NULL, tmpstr);
+		titheklog(debuglevel, "/tmp/jsunpack2_packed_tmpstr", NULL, NULL, NULL, tmpstr);
 	
 //		b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", packed);
 		b36code = oregex(".*',[0-9]{1,3},[0-9]{1,3},'(.*)'.split.*", packed);
 		
 		b36code = string_replace_all("||", "| |", b36code, 1);
 		debug(99, "b36code: %s", b36code);
-		titheklog(debuglevel, "/tmp/jsunpack3_b36code", NULL, NULL, NULL, b36code);
+		titheklog(debuglevel, "/tmp/jsunpack3_packed_b36code", NULL, NULL, NULL, b36code);
 
 		if(!ostrncmp("|", b36code, 1))
 			b36code = ostrcat(" ", b36code, 0, 1);
@@ -613,7 +621,122 @@ char* jsunpack(char* input)
 		}
 		free(ret1), ret1 = NULL;
 	
-		titheklog(debuglevel, "/tmp/jsunpack4_tmpstr_last", NULL, NULL, NULL, tmpstr);
+		titheklog(debuglevel, "/tmp/jsunpack4_packed_tmpstr_last", NULL, NULL, NULL, tmpstr);
+
+		if(tmpstr == NULL)
+			input = string_replace("eval(function(p,a,c,k,e,d){", "eval(function(p,a,c,k,e,d-extracted-error){", input, 1);
+		else
+		{
+			input = string_replace("eval(function(p,a,c,k,e,d){", "eval(function(p,a,c,k,e,d-extracted){", input, 1);
+			input = string_replace(packed, tmpstr, input, 1);
+		}
+		free(tmpstr),tmpstr = NULL;
+		free(packed), packed = NULL;
+		free(b36code), b36code = NULL;
+		free(charlist), charlist = NULL;
+	}
+
+//eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[2-9k-t]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('k p(a){5 b="s=1",c="t=l";7(a&&a.8&&a.8.9>0)6(5 d=0;d<a.8.9;d++){5 e=a.8[d],f=["r","m"];6(5 g n f){5 h=f[g];7(e&&e[h])6(5 i=e[h],j=0;j<i.9;j++)i[j]&&i[j].2&&(i[j].2+=(-1==i[j].2.o("?")?"?":"&")+"4=3&"+b+"&"+c)}}q a}',[],30,'||file|false|direct|var|for|if|playlist|length|||||||||||function|g2wppbatyvegydjngpim4hp5rl6ammlhkneq3sdgfqh5woiym753qlis6o6737kceon73boksojlkppwz744cta5i2kpzwwdsh3hrjqq3eiwcysqmy6aerlaeszaptrregtvpdfsdaiy4idwqdlack4abotyacmth2a253x5lrvvul7dxs6kligge5dufn6eofjjxex7vzljmvrrv4dnb4xlbn3hvb67c2pgc7y|httpfallback|in|indexOf|jwConfig|return|sources|ua|vt'.split('|'),0,{}))
+
+	while(ostrstr(input, "eval(function(p,a,c,k,e,r){") != NULL)
+	{
+		packed = string_resub("eval(function(p,a,c,k,e,r){", "))", input, 0);
+		titheklog(debuglevel, "/tmp/jsunpack1_packed", NULL, NULL, NULL, packed);	
+	
+//		tmpstr = string_resub(";return p}('", ");'", packed, 0);
+//		tmpstr = oregex(".*;return p}(.*)',[0-9]{2,2},[0-9]{2,2},'.*'.split.*", packed);
+		tmpstr = oregex(".*;return p}(.*)',[0-9]{1,3},[0-9]{1,3},'.*'.split.*", packed);
+
+		debug(99, "tmpstr: %s", tmpstr);
+		titheklog(debuglevel, "/tmp/jsunpack2_packed_tmpstr", NULL, NULL, NULL, tmpstr);
+	
+//		b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", packed);
+		b36code = oregex(".*',[0-9]{1,3},[0-9]{1,3},'(.*)'.split.*", packed);
+		
+		b36code = string_replace_all("||", "| |", b36code, 1);
+		debug(99, "b36code: %s", b36code);
+		titheklog(debuglevel, "/tmp/jsunpack3_packed_b36code", NULL, NULL, NULL, b36code);
+
+		if(!ostrncmp("|", b36code, 1))
+			b36code = ostrcat(" ", b36code, 0, 1);
+
+		struct splitstr* ret1 = NULL;
+		int count = 0;
+		int i = 0;
+		ret1 = strsplit(b36code, "|", &count);
+	
+		charlist = ostrcat(charlist, "\"", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "'", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ".", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ";", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ":", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "=", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ",", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, " ", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "\\", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "/", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "(", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ")", 1, 0);
+		charlist = ostrcat(charlist, "'", 1, 0);
+		charlist = ostrcat(charlist, "%", 1, 0);
+	
+		for(i = 0; i < count; i++)
+		{
+			if(ostrstr((&ret1[i])->part, " ") != NULL)
+			{
+				printf("continue\n");
+				continue;
+			}
+			char* x = oltostr(i, 36);
+	
+			struct splitstr* ret2 = NULL;
+			int count2 = 0;
+			int i2 = 0;
+			tmpstr2 = ostrcat(charlist, NULL, 0, 0);
+			ret2 = strsplit(tmpstr2, "|", &count2);
+			for(i2 = 0; i2 < count2; i2++)
+			{
+				struct splitstr* ret3 = NULL;
+				int count3 = 0;
+				int i3 = 0;
+				tmpstr3 = ostrcat(charlist, NULL, 0, 0);
+				ret3 = strsplit(tmpstr3, "|", &count3);
+				for(i3 = 0; i3 < count3; i3++)
+				{
+					debug(99, "-----------------------------------------------");
+					debug(99, "replace %s%s%s <> %s%s%s",(&ret2[i2])->part, x, (&ret3[i3])->part, (&ret2[i2])->part, (&ret1[i])->part, (&ret3[i3])->part);
+	
+					base = ostrcat(base, (&ret2[i2])->part, 1, 0);
+					base = ostrcat(base, x, 1, 0);
+					base = ostrcat(base, (&ret3[i3])->part, 1, 0);		
+					search = ostrcat(search, (&ret2[i2])->part, 1, 0);
+					search = ostrcat(search, (&ret1[i])->part, 1, 0);
+					search = ostrcat(search, (&ret3[i3])->part, 1, 0);
+					tmpstr = string_replace_all(base, search, tmpstr, 1);
+					free(base), base = NULL;
+					free(search), search = NULL;
+				}
+				free(ret3), ret3 = NULL;
+				free(tmpstr3), tmpstr3 = NULL;
+			}
+			free(ret2), ret2 = NULL;
+			free(tmpstr2), tmpstr2 = NULL;
+			free(x);
+		}
+		free(ret1), ret1 = NULL;
+	
+		titheklog(debuglevel, "/tmp/jsunpack4_packed_tmpstr_last", NULL, NULL, NULL, tmpstr);
 
 		if(tmpstr == NULL)
 			input = string_replace("eval(function(p,a,c,k,e,d){", "eval(function(p,a,c,k,e,d-extracted-error){", input, 1);
