@@ -13,7 +13,7 @@
 		<node parent="buttonbar" name="b4" picmem="skin/key_green_30x30.png"  textposx="40" valign="middle" posx="360" posy="center" width="200" height="40" text="EDIT">
 		<node parent="buttonbar" name="b5" picmem="skin/key_yellow_30x30.png" textposx="40" valign="middle" posx="570" posy="center" width="180" height="40" text="DEL">
 		<node parent="buttonbar" name="b6" picmem="skin/key_blue_30x30.png"   textposx="40" valign="middle" posx="760" posy="center" width="150" height="40" text="SEARCH">
-		<node parent="buttonbar" name="b7" picmem="skin/key_menu_70x40.png"   textposx="80" valign="middle" posx="920" posy="center" width="220" height="40" text="AUTH SETTINGS">
+		<node parent="buttonbar" name="b7" picmem="skin/key_menu_70x40.png"   textposx="80" valign="middle" posx="920" posy="center" width="290" height="40" text="AUTH SETTINGS">
 </screen>
 
 
@@ -72,7 +72,7 @@
 
 
 #networkbrowser_settings fullscreen, max 1220x660, Xspace=30 !
-<screen name="networkbrowser_settings" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
+<screen name="networkbrowser_settings" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="23">
 	<node name="titletext" text="Auth Settings" fontcol="titlebar_fontcol" fontsize="36" posx="0" posy="0" width="titlebar_width" height="50" hspace="5" valign="middle" halign="center" bordercol="titlebar_bordercol" bordersize="1" borderradius="8" bgcol="titlebar_bgcol" bgcol2="titlebar_bgcol2" gradient="topmiddle">
 	<node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="titlebar_width" height="145" hspace="10" vspace="10" text="Here you can configure your login credentials for accessing password protected shares.">
 	<node name="minitv" func="gettvpic" param1="494:24:205">
