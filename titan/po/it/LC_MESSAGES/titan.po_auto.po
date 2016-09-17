@@ -53,7 +53,7 @@ msgid ""
 "Website www.atemio.de"
 msgstr ""
 
-#: skinadjust.h:245
+#: skinadjust.h:246
 msgid "%"
 msgstr ""
 
@@ -2435,7 +2435,7 @@ msgstr ""
 msgid "Create new"
 msgstr "Crea Cartella"
 
-#: skinadjust.h:600
+#: skinadjust.h:606
 msgid "Create new Skinstyle ?"
 msgstr ""
 
@@ -3192,8 +3192,8 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:576
-#: skinadjust.h:600 skinadjust.h:641 skin_default_skin.xml.h:195
+#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:582
+#: skinadjust.h:606 skinadjust.h:647 skin_default_skin.xml.h:195
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
 #: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:6
@@ -4005,7 +4005,7 @@ msgstr ""
 msgid "G"
 msgstr ""
 
-#: skinadjust.h:246
+#: skinadjust.h:247
 msgid "GB"
 msgstr ""
 
@@ -5846,8 +5846,8 @@ msgstr ""
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:576 skinadjust.h:592 skinadjust.h:600 skinadjust.h:641
-#: skinadjust.h:658 skinadjust.h:1053 skinadjust.h:1115 skinselector.h:231
+#: skinadjust.h:582 skinadjust.h:598 skinadjust.h:606 skinadjust.h:647
+#: skinadjust.h:664 skinadjust.h:1069 skinadjust.h:1131 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
 #: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
@@ -6230,7 +6230,7 @@ msgstr ""
 msgid "Nfs Server Settings"
 msgstr ""
 
-#: skinadjust.h:244
+#: skinadjust.h:245
 msgid "No"
 msgstr ""
 
@@ -6441,9 +6441,9 @@ msgstr ""
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:668 security.h:685 security.h:1944 service.h:743 service.h:989
-#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:576 skinadjust.h:592
-#: skinadjust.h:600 skinadjust.h:641 skinadjust.h:658 skinadjust.h:1053
-#: skinadjust.h:1115 skins_dlna_skin.xml.h:7 skinselector.h:231
+#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:582 skinadjust.h:598
+#: skinadjust.h:606 skinadjust.h:647 skinadjust.h:664 skinadjust.h:1069
+#: skinadjust.h:1131 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
@@ -7740,7 +7740,7 @@ msgstr ""
 msgid "Remove Log:"
 msgstr ""
 
-#: skinadjust.h:635
+#: skinadjust.h:641
 msgid "Remove Skinstyle"
 msgstr ""
 
@@ -7810,7 +7810,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: skinadjust.h:576
+#: skinadjust.h:582
 msgid "Reset your Skin Settings ?"
 msgstr ""
 
@@ -9019,7 +9019,7 @@ msgstr ""
 msgid "Skin tobayer01 (grey/blue/black) default picons"
 msgstr ""
 
-#: skinadjust.h:603
+#: skinadjust.h:609
 msgid "Skinstyle Name"
 msgstr ""
 
@@ -9969,8 +9969,8 @@ msgstr ""
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
-#: kravencfg.c:212 skinadjust.h:592 skinadjust.h:658 skinadjust.h:1053
-#: skinadjust.h:1115
+#: kravencfg.c:212 skinadjust.h:598 skinadjust.h:664 skinadjust.h:1069
+#: skinadjust.h:1131
 msgid "Titan will be restarted!"
 msgstr ""
 
@@ -11208,7 +11208,7 @@ msgstr ""
 msgid "backup"
 msgstr "Crea Backup"
 
-#: skinadjust.h:82
+#: skinadjust.h:83
 msgid "bar"
 msgstr ""
 
@@ -11266,7 +11266,7 @@ msgstr ""
 msgid "bootstop"
 msgstr ""
 
-#: skinadjust.h:81
+#: skinadjust.h:82
 msgid "border"
 msgstr ""
 
@@ -12195,7 +12195,7 @@ msgstr "NFS-Server"
 #: settings_autostart.h:511 settings_autostart.h:568 settings_autostart.h:577
 #: settings_autostart.h:586 settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:249 stopifnotused.c:94
+#: settings_overclocking.h:244 skinadjust.h:250 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:39
 #: tithek_settings.h:43 tithek_settings.h:47 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -12276,7 +12276,7 @@ msgstr ""
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:91
+#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:92
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:94
 #: vfdisplay.h:109
@@ -12329,7 +12329,7 @@ msgstr ""
 
 #: avsettings.h:87 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
-#: readerconfig.h:424 skinadjust.h:90 transponder.h:257 transponder.h:266
+#: readerconfig.h:424 skinadjust.h:91 transponder.h:257 transponder.h:266
 #: transponder.h:416 transponder.h:425 vfdisplay.h:49 vfdisplay.h:70
 msgid "on"
 msgstr "ON"
@@ -12425,7 +12425,7 @@ msgstr ""
 msgid "picons"
 msgstr ""
 
-#: skinadjust.h:84 tmc.h:542
+#: skinadjust.h:85 tmc.h:542
 msgid "picture"
 msgstr ""
 
@@ -13135,7 +13135,7 @@ msgstr ""
 msgid "testtransponder not found"
 msgstr ""
 
-#: skinadjust.h:83
+#: skinadjust.h:84
 msgid "text"
 msgstr ""
 
@@ -13607,7 +13607,7 @@ msgstr "Giallo"
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_autostart.h:604 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:250
+#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:251
 #: stopifnotused.c:93 timeshiftsettings.h:58 timeshiftsettings.h:62
 #: tithek_settings.h:40 tithek_settings.h:44 tithek_settings.h:48 tmc.h:532
 #: tmc.h:536 xupnpd.h:30
