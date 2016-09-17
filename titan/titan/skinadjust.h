@@ -31,6 +31,8 @@ void screenskinadjust()
 	struct skin* bgcol2 = getscreennode(skinadjust, "bgcol2");
 	struct skin* bgcol3 = getscreennode(skinadjust, "bgcol3");
 	struct skin* fontcol = getscreennode(skinadjust, "fontcol");
+	struct skin* fontcol2 = getscreennode(skinadjust, "fontcol2");
+	struct skin* fontcol3 = getscreennode(skinadjust, "fontcol3");
 	struct skin* bordercol = getscreennode(skinadjust, "bordercol");
 	struct skin* progresscol = getscreennode(skinadjust, "progresscol");
 	struct skin* titlebgcol = getscreennode(skinadjust, "titlebgcol");
@@ -269,24 +271,26 @@ start:
 	addchoicebox(bgcol2, "15", getskinconfig("bgcol2", NULL));
 	addchoicebox(bgcol3, "16", getskinconfig("bgcol3", NULL));
 	addchoicebox(fontcol, "17", getskinconfig("fontcol", NULL));
-	addchoicebox(bordercol, "18", getskinconfig("bordercol", NULL));
-	addchoicebox(progresscol, "19", getskinconfig("progresscol", NULL));
-	addchoicebox(titlebgcol, "20", getskinconfig("titlebgcol", NULL));
-	addchoicebox(markcol, "21", getskinconfig("markcol", NULL));
-	addchoicebox(cpmode_bgcol, "22", getskinconfig("cpmode_bgcol", NULL));
-	addchoicebox(cpmode_fontcol, "23", getskinconfig("cpmode_fontcol", NULL));
-	addchoicebox(editmode_bgcol, "24", getskinconfig("editmode_bgcol", NULL));
-	addchoicebox(editmode_fontcol, "25", getskinconfig("editmode_fontcol", NULL));
-	addchoicebox(mvmode_fontcol, "26", getskinconfig("mvmode_fontcol", NULL));
-	addchoicebox(protectmode_bgcol, "27", getskinconfig("protectmode_bgcol", NULL));
-	addchoicebox(protectmode_fontcol, "28", getskinconfig("protectmode_fontcol", NULL));
-	addchoicebox(rec_progress, "29", getskinconfig("rec_progress", NULL));
-	addchoicebox(epgcol1, "30", getskinconfig("epgcol1", NULL));
-	addchoicebox(epgcol2, "31", getskinconfig("epgcol2", NULL));
-	addchoicebox(epgcol3, "32", getskinconfig("epgcol3", NULL));
-	addchoicebox(emuaktivecol, "33", getskinconfig("emuaktivecol", NULL));
-	addchoicebox(emurunningcol, "34", getskinconfig("emurunningcol", NULL));
-	addchoicebox(favcol, "35", getskinconfig("favcol", NULL));
+	addchoicebox(fontcol2, "18", getskinconfig("fontcol2", NULL));
+	addchoicebox(fontcol3, "19", getskinconfig("fontcol3", NULL));
+	addchoicebox(bordercol, "20", getskinconfig("bordercol", NULL));
+	addchoicebox(progresscol, "21", getskinconfig("progresscol", NULL));
+	addchoicebox(titlebgcol, "22", getskinconfig("titlebgcol", NULL));
+	addchoicebox(markcol, "23", getskinconfig("markcol", NULL));
+	addchoicebox(cpmode_bgcol, "24", getskinconfig("cpmode_bgcol", NULL));
+	addchoicebox(cpmode_fontcol, "25", getskinconfig("cpmode_fontcol", NULL));
+	addchoicebox(editmode_bgcol, "26", getskinconfig("editmode_bgcol", NULL));
+	addchoicebox(editmode_fontcol, "27", getskinconfig("editmode_fontcol", NULL));
+	addchoicebox(mvmode_fontcol, "28", getskinconfig("mvmode_fontcol", NULL));
+	addchoicebox(protectmode_bgcol, "29", getskinconfig("protectmode_bgcol", NULL));
+	addchoicebox(protectmode_fontcol, "30", getskinconfig("protectmode_fontcol", NULL));
+	addchoicebox(rec_progress, "31", getskinconfig("rec_progress", NULL));
+	addchoicebox(epgcol1, "32", getskinconfig("epgcol1", NULL));
+	addchoicebox(epgcol2, "33", getskinconfig("epgcol2", NULL));
+	addchoicebox(epgcol3, "34", getskinconfig("epgcol3", NULL));
+	addchoicebox(emuaktivecol, "35", getskinconfig("emuaktivecol", NULL));
+	addchoicebox(emurunningcol, "36", getskinconfig("emurunningcol", NULL));
+	addchoicebox(favcol, "37", getskinconfig("favcol", NULL));
 
 	listboxselect->fontcol2 = convertcol(getskinconfig("listboxselect", NULL));
 	tithek_selectcol->fontcol2 = convertcol(getskinconfig("tithek_selectcol", NULL));
@@ -306,6 +310,8 @@ start:
 	bgcol2->fontcol2 = convertcol(getskinconfig("bgcol2", NULL));
 	bgcol3->fontcol2 = convertcol(getskinconfig("bgcol3", NULL));
 	fontcol->fontcol2 = convertcol(getskinconfig("fontcol", NULL));
+	fontcol2->fontcol2 = convertcol(getskinconfig("fontcol2", NULL));
+	fontcol3->fontcol2 = convertcol(getskinconfig("fontcol3", NULL));
 	bordercol->fontcol2 = convertcol(getskinconfig("bordercol", NULL));
 	progresscol->fontcol2 = convertcol(getskinconfig("progresscol", NULL));
 	titlebgcol->fontcol2 = convertcol(getskinconfig("titlebgcol", NULL));
@@ -346,6 +352,8 @@ start:
 //		bgcol2->hidden = YES;
 //		bgcol3->hidden = YES;
 		fontcol->hidden = YES;
+		fontcol2->hidden = YES;
+		fontcol3->hidden = YES;
 		bordercol->hidden = YES;
 		progresscol->hidden = YES;
 		titlebgcol->hidden = YES;
@@ -424,6 +432,10 @@ start:
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol3") == 0)
 			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol") == 0)
+			b7->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol2") == 0)
+			b7->hidden = NO;
+		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol3") == 0)
 			b7->hidden = NO;
 		else if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercol") == 0)
 			b7->hidden = NO;
@@ -849,6 +861,26 @@ start:
 					addskinconfigtmp("fontcol", tmpstr);
 				if(oldfontcol != convertcol("fontcol")) reboot = 1;
 				fontcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol2") == 0)
+			{
+				long oldfontcol2 = convertcol("fontcol2");
+				tmpstr = screencolorpicker(getskinconfig("fontcol2", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("fontcol2", tmpstr);
+				if(oldfontcol2 != convertcol("fontcol2")) reboot = 1;
+				fontcol2->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol3") == 0)
+			{
+				long oldfontcol3 = convertcol("fontcol3");
+				tmpstr = screencolorpicker(getskinconfig("fontcol3", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("fontcol3", tmpstr);
+				if(oldfontcol3 != convertcol("fontcol3")) reboot = 1;
+				fontcol3->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercol") == 0)
