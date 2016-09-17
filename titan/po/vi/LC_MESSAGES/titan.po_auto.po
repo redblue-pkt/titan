@@ -66,7 +66,7 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr ""
 
-#: skin_default_skin.xml.h:611
+#: skin_default_skin.xml.h:614
 msgid "(Stop)"
 msgstr ""
 
@@ -95,11 +95,11 @@ msgstr ""
 msgid "--- PLZ"
 msgstr ""
 
-#: skin_default_skin.xml.h:544
+#: skin_default_skin.xml.h:547
 msgid "--- SD resolution"
 msgstr "--- Độ phân giải SD"
 
-#: skin_default_skin.xml.h:650
+#: skin_default_skin.xml.h:653
 msgid "--- Time to switch"
 msgstr "--- Thời gian chuyển"
 
@@ -143,7 +143,7 @@ msgstr ""
 msgid "->"
 msgstr ""
 
-#: pip.h:640 skin_default_skin.xml.h:621
+#: pip.h:640 skin_default_skin.xml.h:624
 msgid "->swap<-"
 msgstr ""
 
@@ -1254,7 +1254,7 @@ msgstr "!!! LỖI SAO LƯU !!!"
 msgid "BACKUP LOG"
 msgstr "!!! LỖI SAO LƯU !!!"
 
-#: skin_default_skin.xml.h:66
+#: skin_default_skin.xml.h:67
 msgid "BER:"
 msgstr ""
 
@@ -1293,7 +1293,7 @@ msgstr "Số lượt tải hình nền"
 msgid "Backdrop Interval"
 msgstr ""
 
-#: skin_default_skin.xml.h:59
+#: skin_default_skin.xml.h:60
 msgid "Background Color"
 msgstr ""
 
@@ -1301,7 +1301,11 @@ msgstr ""
 msgid "Background2 Color"
 msgstr ""
 
-#: httpdfunc.h:6685 skin_default_skin.xml.h:60
+#: skin_default_skin.xml.h:59
+msgid "Background3 Color"
+msgstr ""
+
+#: httpdfunc.h:6685 skin_default_skin.xml.h:61
 msgid "Backup"
 msgstr "Sao lưu"
 
@@ -1309,7 +1313,7 @@ msgstr "Sao lưu"
 msgid "Backup - Settings"
 msgstr "Thiết lập sao lưu"
 
-#: skin_default_skin.xml.h:61 system_backup_restore.h:18
+#: skin_default_skin.xml.h:62 system_backup_restore.h:18
 #: system_backup_restore.h:75
 msgid "Backup / Restore Settings"
 msgstr "Sao lưu / Khôi phục cài đặt"
@@ -1340,19 +1344,19 @@ msgstr ""
 msgid "Band"
 msgstr ""
 
-#: skin_default_skin.xml.h:62
+#: skin_default_skin.xml.h:63
 msgid "Bandwidth"
 msgstr "chiều rộng"
 
-#: skin_default_skin.xml.h:63
+#: skin_default_skin.xml.h:64
 msgid "Bandwidth:"
 msgstr "chiều rộng"
 
-#: skin_default_skin.xml.h:64
+#: skin_default_skin.xml.h:65
 msgid "Begin"
 msgstr ""
 
-#: skin_default_skin.xml.h:65
+#: skin_default_skin.xml.h:66
 msgid "Behavior at recording"
 msgstr "Chạy trong quá trình ghi"
 
@@ -1368,7 +1372,7 @@ msgstr ""
 msgid "Bikergirl"
 msgstr ""
 
-#: skin_default_skin.xml.h:67
+#: skin_default_skin.xml.h:68
 msgid "Bitrate"
 msgstr ""
 
@@ -1388,15 +1392,15 @@ msgstr ""
 msgid "Black Picons - Eutelsat 36.0E."
 msgstr ""
 
-#: skin_default_skin.xml.h:68
+#: skin_default_skin.xml.h:69
 msgid "Blindscan"
 msgstr "Điều chỉnh quét mành"
 
-#: skin_default_skin.xml.h:69
+#: skin_default_skin.xml.h:70
 msgid "Blindscan Adjust"
 msgstr "Điều chỉnh quét mành"
 
-#: skin_default_skin.xml.h:70
+#: skin_default_skin.xml.h:71
 msgid "Blindscan Settings"
 msgstr "Thiết lập quét mành"
 
@@ -1404,7 +1408,7 @@ msgstr "Thiết lập quét mành"
 msgid "Blindscan: "
 msgstr "Điều chỉnh quét mành"
 
-#: skin_default_skin.xml.h:71
+#: skin_default_skin.xml.h:72
 msgid "Blink elements"
 msgstr ""
 
@@ -1427,7 +1431,7 @@ msgstr ""
 msgid "Blue"
 msgstr ""
 
-#: skin_default_skin.xml.h:72
+#: skin_default_skin.xml.h:73
 msgid "Blue Button"
 msgstr "Nút màu xanh da trời"
 
@@ -1543,15 +1547,15 @@ msgstr ""
 msgid "Bootlogo 'Zombie'"
 msgstr ""
 
-#: skin_default_skin.xml.h:73
+#: skin_default_skin.xml.h:74
 msgid "Border Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:74
+#: skin_default_skin.xml.h:75
 msgid "Bouquet Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:75
+#: skin_default_skin.xml.h:76
 msgid "Bouquet List"
 msgstr "Danh sach nhóm"
 
@@ -1559,7 +1563,7 @@ msgstr "Danh sach nhóm"
 msgid "Bouquet Name"
 msgstr ""
 
-#: skin_default_skin.xml.h:76
+#: skin_default_skin.xml.h:77
 msgid "Bouquet Type"
 msgstr "Nhóm"
 
@@ -1588,7 +1592,7 @@ msgstr ""
 msgid "Boxcontrol"
 msgstr ""
 
-#: skin_default_skin.xml.h:77
+#: skin_default_skin.xml.h:78
 msgid "Brightness"
 msgstr "Độ sáng"
 
@@ -1608,19 +1612,19 @@ msgstr ""
 msgid "Button 1..8 => Group A..H"
 msgstr ""
 
-#: skin_default_skin.xml.h:78
+#: skin_default_skin.xml.h:79
 msgid "Buttonbar Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:79
+#: skin_default_skin.xml.h:80
 msgid "Buttonbar Background Color 2"
 msgstr ""
 
-#: skin_default_skin.xml.h:80
+#: skin_default_skin.xml.h:81
 msgid "Buttonbar Border Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:81
+#: skin_default_skin.xml.h:82
 msgid "Buttonbar Font Color"
 msgstr ""
 
@@ -1648,11 +1652,11 @@ msgstr ""
 msgid "CABLE"
 msgstr ""
 
-#: skin_default_skin.xml.h:82
+#: skin_default_skin.xml.h:83
 msgid "CAID"
 msgstr ""
 
-#: skin_default_skin.xml.h:83
+#: skin_default_skin.xml.h:84
 msgid "CAID Lock"
 msgstr ""
 
@@ -1676,11 +1680,11 @@ msgstr ""
 msgid "CI Plus Extensions"
 msgstr ""
 
-#: skin_default_skin.xml.h:99
+#: skin_default_skin.xml.h:100
 msgid "CI-MENU"
 msgstr ""
 
-#: skin_default_skin.xml.h:102
+#: skin_default_skin.xml.h:103
 msgid "CLEAR INPUT"
 msgstr "Xóa đầu vào"
 
@@ -1688,7 +1692,7 @@ msgstr "Xóa đầu vào"
 msgid "COPY"
 msgstr "sao chép"
 
-#: httpdfunc.h:5307 skin_default_skin.xml.h:122 system_infos_sysinfo.h:15
+#: httpdfunc.h:5307 skin_default_skin.xml.h:123 system_infos_sysinfo.h:15
 #: webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr ""
@@ -1697,7 +1701,7 @@ msgstr ""
 msgid "CPU frequency"
 msgstr "Tần số CPU"
 
-#: skin_default_skin.xml.h:128
+#: skin_default_skin.xml.h:129
 msgid "CREATE STYLE"
 msgstr ""
 
@@ -1748,7 +1752,7 @@ msgstr ""
 msgid "Callmonitor Plugin"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:84
+#: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:85
 #: skins_panel_skin.xml.h:6
 msgid "Cam / Emu"
 msgstr ""
@@ -1892,7 +1896,7 @@ msgstr "Không thể phát timeshift"
 msgid "Can't update all packages !"
 msgstr "Không thể phát lại!"
 
-#: plugins_panel_skin.xml.h:7 skin_default_skin.xml.h:85
+#: plugins_panel_skin.xml.h:7 skin_default_skin.xml.h:86
 #: skins_panel_skin.xml.h:7
 msgid "Cancel"
 msgstr "hủy"
@@ -1905,15 +1909,15 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: skin_default_skin.xml.h:86
+#: skin_default_skin.xml.h:87
 msgid "Change Channelname"
 msgstr "Tự động thay đổi tên chương trình"
 
-#: httpdfunc.h:4396 skin_default_skin.xml.h:87
+#: httpdfunc.h:4396 skin_default_skin.xml.h:88
 msgid "Change Channelname auto."
 msgstr "Tự động thay đổi tên chương trình"
 
-#: skin_default_skin.xml.h:88
+#: skin_default_skin.xml.h:89
 msgid "Change Feed"
 msgstr ""
 
@@ -1933,11 +1937,11 @@ msgstr "Danh sách kênh"
 msgid "Change: "
 msgstr "Change Feed"
 
-#: channellist.h:766 channellist.h:1617 skin_default_skin.xml.h:89
+#: channellist.h:766 channellist.h:1617 skin_default_skin.xml.h:90
 msgid "Channel"
 msgstr "chương trình"
 
-#: skin_default_skin.xml.h:90
+#: skin_default_skin.xml.h:91
 msgid "Channel Allocation"
 msgstr "Danh sách kênh"
 
@@ -1964,7 +1968,7 @@ msgstr ""
 msgid "Channel EPG"
 msgstr "EPG"
 
-#: skin_default_skin.xml.h:91
+#: skin_default_skin.xml.h:92
 msgid "Channel Edit"
 msgstr "Sửa chương trình"
 
@@ -1972,7 +1976,7 @@ msgstr "Sửa chương trình"
 msgid "Channel HBBTV"
 msgstr "Chương trình"
 
-#: skin_default_skin.xml.h:92
+#: skin_default_skin.xml.h:93
 msgid "Channel History"
 msgstr "Danh sách kênh"
 
@@ -1984,7 +1988,7 @@ msgstr "Danh sách kênh"
 msgid "Channel List"
 msgstr ""
 
-#: skin_default_skin.xml.h:93
+#: skin_default_skin.xml.h:94
 msgid "Channel List selection"
 msgstr ""
 
@@ -1992,11 +1996,11 @@ msgstr ""
 msgid "Channel Scan"
 msgstr ""
 
-#: skin_default_skin.xml.h:95
+#: skin_default_skin.xml.h:96
 msgid "Channel Search"
 msgstr "Dò chương trình"
 
-#: skin_default_skin.xml.h:96
+#: skin_default_skin.xml.h:97
 msgid "Channel Service"
 msgstr ""
 
@@ -2045,7 +2049,7 @@ msgstr "số lượng kênh: "
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Danh sách chương trình rỗng(không tìm thấy chương trình) !"
 
-#: httpdfunc.h:4558 skin_default_skin.xml.h:94
+#: httpdfunc.h:4558 skin_default_skin.xml.h:95
 msgid "Channellist view"
 msgstr "xem trước"
 
@@ -2066,11 +2070,11 @@ msgid "Child"
 msgstr ""
 
 #: keyactions.h:82 settings_bluebutton.h:19 settings_pluginbutton.h:20
-#: settings_redbutton.h:20 skin_default_skin.xml.h:97
+#: settings_redbutton.h:20 skin_default_skin.xml.h:98
 msgid "Child Protection"
 msgstr "Khóa trẻ em"
 
-#: plugins_panel_skin.xml.h:8 skin_default_skin.xml.h:98
+#: plugins_panel_skin.xml.h:8 skin_default_skin.xml.h:99
 #: skins_panel_skin.xml.h:8
 msgid "Child safety"
 msgstr "Khóa trẻ em"
@@ -2172,7 +2176,7 @@ msgstr ""
 msgid "Choose your manufacturer from the following list"
 msgstr ""
 
-#: skin_default_skin.xml.h:100
+#: skin_default_skin.xml.h:101
 msgid "Ci-Modul internal Menu"
 msgstr ""
 
@@ -2184,7 +2188,7 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: skin_default_skin.xml.h:101
+#: skin_default_skin.xml.h:102
 msgid "Clear before scan"
 msgstr "Xóa trước khi dò"
 
@@ -2204,11 +2208,11 @@ msgstr "Password không đúng, vui lòng nhập lại"
 msgid "Code ok"
 msgstr "Passwword đúng"
 
-#: skin_default_skin.xml.h:103
+#: skin_default_skin.xml.h:104
 msgid "Code1"
 msgstr "mã 1:"
 
-#: skin_default_skin.xml.h:104
+#: skin_default_skin.xml.h:105
 msgid "Code2"
 msgstr "mã 2: "
 
@@ -2216,19 +2220,19 @@ msgstr "mã 2: "
 msgid "Codecpack"
 msgstr ""
 
-#: skin_default_skin.xml.h:105
+#: skin_default_skin.xml.h:106
 msgid "Coderate HP"
 msgstr "Tạo đường dẫn"
 
-#: skin_default_skin.xml.h:106
+#: skin_default_skin.xml.h:107
 msgid "Coderate HP:"
 msgstr "Tạo đường dẫn"
 
-#: skin_default_skin.xml.h:107
+#: skin_default_skin.xml.h:108
 msgid "Coderate LP"
 msgstr "Tạo đường dẫn"
 
-#: skin_default_skin.xml.h:108
+#: skin_default_skin.xml.h:109
 msgid "Coderate LP:"
 msgstr "Tạo đường dẫn"
 
@@ -2236,15 +2240,15 @@ msgstr "Tạo đường dẫn"
 msgid "Color Bar"
 msgstr " Định dạng màu "
 
-#: skin_default_skin.xml.h:109
+#: skin_default_skin.xml.h:110
 msgid "Color Format"
 msgstr " Định dạng màu "
 
-#: skin_default_skin.xml.h:110
+#: skin_default_skin.xml.h:111
 msgid "Color Format Scart / Composite"
 msgstr "Định dạng màu Scart"
 
-#: skin_default_skin.xml.h:111
+#: skin_default_skin.xml.h:112
 msgid "Colorpicker"
 msgstr ""
 
@@ -2260,19 +2264,19 @@ msgstr "Không thể tạo đường dẫn"
 msgid "Comment:"
 msgstr ""
 
-#: skin_default_skin.xml.h:112
+#: skin_default_skin.xml.h:113
 msgid "Committed command"
 msgstr "Lệnh điều khiển"
 
-#: skin_default_skin.xml.h:113
+#: skin_default_skin.xml.h:114
 msgid "Common Interface"
 msgstr "Giao diện"
 
-#: skin_default_skin.xml.h:114
+#: skin_default_skin.xml.h:115
 msgid "Community Pass"
 msgstr ""
 
-#: skin_default_skin.xml.h:115
+#: skin_default_skin.xml.h:116
 msgid "Community User"
 msgstr ""
 
@@ -2288,7 +2292,7 @@ msgstr "trạng thái: "
 msgid "Configuration plugin for KravenHD skin"
 msgstr ""
 
-#: skin_default_skin.xml.h:116
+#: skin_default_skin.xml.h:117
 msgid "Configure"
 msgstr "Cấu hình"
 
@@ -2316,7 +2320,7 @@ msgstr "Verbindung zum Server verloren!"
 msgid "Content of selected device"
 msgstr ""
 
-#: skin_default_skin.xml.h:117
+#: skin_default_skin.xml.h:118
 msgid "Contrast"
 msgstr "Độ tương phản"
 
@@ -2336,7 +2340,7 @@ msgstr ""
 msgid "Copy (MB): "
 msgstr ""
 
-#: skin_default_skin.xml.h:120
+#: skin_default_skin.xml.h:121
 msgid "Copy / Move"
 msgstr "sao chép"
 
@@ -2344,11 +2348,11 @@ msgstr "sao chép"
 msgid "Copy File"
 msgstr "sao chép"
 
-#: skin_default_skin.xml.h:118
+#: skin_default_skin.xml.h:119
 msgid "Copy Modus Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:119
+#: skin_default_skin.xml.h:120
 msgid "Copy Modus Font Color"
 msgstr ""
 
@@ -2384,7 +2388,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: skin_default_skin.xml.h:123
+#: skin_default_skin.xml.h:124
 msgid "Create Default Favorites"
 msgstr ""
 
@@ -2404,15 +2408,15 @@ msgstr "Tạo thư mục"
 msgid "Create MultiImage device"
 msgstr ""
 
-#: skin_default_skin.xml.h:124
+#: skin_default_skin.xml.h:125
 msgid "Create Path"
 msgstr "Tạo đường dẫn"
 
-#: skin_default_skin.xml.h:125
+#: skin_default_skin.xml.h:126
 msgid "Create Record Picture"
 msgstr "Ghi âm"
 
-#: skin_default_skin.xml.h:126
+#: skin_default_skin.xml.h:127
 msgid "Create Satellites/Provider"
 msgstr ""
 
@@ -2432,11 +2436,11 @@ msgstr ""
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
-#: skin_default_skin.xml.h:127
+#: skin_default_skin.xml.h:128
 msgid "Create Settings Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:130
+#: skin_default_skin.xml.h:131
 msgid "Create Thumb Picture"
 msgstr "Tạo hình ảnh"
 
@@ -2488,13 +2492,13 @@ msgstr ""
 msgid "D"
 msgstr ""
 
-#: skin_default_skin.xml.h:139
+#: skin_default_skin.xml.h:140
 msgid "DEFAULT"
 msgstr "MẶC ĐỊNH"
 
 #: play.h:1575 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
-#: skin_default_skin.xml.h:141 skins_networkbrowser_skin.xml.h:6
+#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Xóa"
@@ -2503,7 +2507,7 @@ msgstr "Xóa"
 msgid "DEL FAV"
 msgstr "Xóa ưu thích"
 
-#: skin_default_skin.xml.h:148
+#: skin_default_skin.xml.h:149
 msgid "DESC"
 msgstr ""
 
@@ -2547,11 +2551,11 @@ msgstr "Dừng DLNA"
 msgid "DLNA started."
 msgstr "bắt đầu DLNA"
 
-#: skin_default_skin.xml.h:158
+#: skin_default_skin.xml.h:159
 msgid "DNS Name"
 msgstr "Tên"
 
-#: skin_default_skin.xml.h:161
+#: skin_default_skin.xml.h:162
 msgid "DNS System"
 msgstr "Hệ thống"
 
@@ -2587,7 +2591,7 @@ msgstr "Phát VLC"
 msgid "DVD-Player plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:168
+#: skin_default_skin.xml.h:169
 msgid "DYNDNS Settings"
 msgstr "Thiết lập DYNDNS"
 
@@ -2623,7 +2627,7 @@ msgstr "ngày"
 msgid "Datei Browser"
 msgstr "Trình duyệt tập tin"
 
-#: skin_default_skin.xml.h:132
+#: skin_default_skin.xml.h:133
 msgid "Day"
 msgstr "Ngày"
 
@@ -2635,27 +2639,27 @@ msgstr "Ngày"
 msgid "Day: "
 msgstr "Ngày: "
 
-#: skin_default_skin.xml.h:133 softcam.h:294
+#: skin_default_skin.xml.h:134 softcam.h:294
 msgid "Deactivate"
 msgstr "Tắt"
 
-#: httpdfunc.h:4787 skin_default_skin.xml.h:134
+#: httpdfunc.h:4787 skin_default_skin.xml.h:135
 msgid "Deactivate Crypt Support on Media Playback"
 msgstr ""
 
-#: httpdfunc.h:4810 skin_default_skin.xml.h:135
+#: httpdfunc.h:4810 skin_default_skin.xml.h:136
 msgid "Deactivate MiniTV"
 msgstr "Tắt cửa sổ xem trước MIniTV"
 
-#: skin_default_skin.xml.h:136
+#: skin_default_skin.xml.h:137
 msgid "Deaktive Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:138
+#: skin_default_skin.xml.h:139
 msgid "Debug Modus"
 msgstr "Chế độ gỡ lỗi"
 
-#: httpdfunc.h:4908 skin_default_skin.xml.h:137
+#: httpdfunc.h:4908 skin_default_skin.xml.h:138
 msgid "Debuglevel"
 msgstr ""
 
@@ -2671,7 +2675,7 @@ msgstr "Standby"
 msgid "Default"
 msgstr "MẶC ĐỊNH"
 
-#: skin_default_skin.xml.h:140
+#: skin_default_skin.xml.h:141
 msgid "Default Autostart"
 msgstr "Tự động khởi động"
 
@@ -2683,7 +2687,7 @@ msgstr "Biểu tượng mặc định"
 msgid "Default Skin"
 msgstr "Biểu tượng mặc định"
 
-#: skin_default_skin.xml.h:142
+#: skin_default_skin.xml.h:143
 msgid "Del EPG before scan"
 msgstr "Xóa lịch chương trình trước khi dò"
 
@@ -2697,7 +2701,7 @@ msgstr "Xóa"
 msgid "Delete All"
 msgstr "Xóa file"
 
-#: skin_default_skin.xml.h:144
+#: skin_default_skin.xml.h:145
 msgid "Delete EPG after read"
 msgstr "Xóa EPG sau khi đọc"
 
@@ -2705,7 +2709,7 @@ msgstr "Xóa EPG sau khi đọc"
 msgid "Delete File"
 msgstr "Xóa file"
 
-#: mediadb.h:1080 play.h:578 skin_default_skin.xml.h:145
+#: mediadb.h:1080 play.h:578 skin_default_skin.xml.h:146
 msgid "Delete MediaDB before scan"
 msgstr "Xóa MediaDB trước khi dò"
 
@@ -2713,7 +2717,7 @@ msgstr "Xóa MediaDB trước khi dò"
 msgid "Delete selected entry ?"
 msgstr "Xóa dữ liệu không sử dụng trước khi dò"
 
-#: mediadb.h:1087 play.h:585 skin_default_skin.xml.h:146
+#: mediadb.h:1087 play.h:585 skin_default_skin.xml.h:147
 msgid "Delete unused entrys before scan"
 msgstr "Xóa dữ liệu không sử dụng trước khi dò"
 
@@ -2758,11 +2762,11 @@ msgstr ""
 msgid "Device"
 msgstr "thiết bị"
 
-#: skin_default_skin.xml.h:149
+#: skin_default_skin.xml.h:150
 msgid "Device:"
 msgstr "Thiết bị:"
 
-#: httpdfunc.h:5315 skin_default_skin.xml.h:150 system_infos_sysinfo.h:23
+#: httpdfunc.h:5315 skin_default_skin.xml.h:151 system_infos_sysinfo.h:23
 #: webif_info_sysinfos.h:6
 msgid "Devices"
 msgstr " Thiết bị"
@@ -2800,7 +2804,7 @@ msgstr "DiSEqC"
 msgid "DiSEqC A/B/C/D/E/F/G/H"
 msgstr ""
 
-#: skin_default_skin.xml.h:154
+#: skin_default_skin.xml.h:155
 msgid "DiSEqC Mode"
 msgstr "Chế độ DiSEqC"
 
@@ -2816,7 +2820,7 @@ msgstr ""
 msgid "Digital clock blue - Samsung LCD Skin Channel"
 msgstr ""
 
-#: skin_default_skin.xml.h:151
+#: skin_default_skin.xml.h:152
 msgid "Director"
 msgstr "Thư mục Imdb"
 
@@ -2826,19 +2830,19 @@ msgstr "Thư mục Imdb"
 msgid "Director:"
 msgstr "Thư mục Imdb"
 
-#: httpdfunc.h:3996 skin_default_skin.xml.h:152
+#: httpdfunc.h:3996 skin_default_skin.xml.h:153
 msgid "Dirsort"
 msgstr ""
 
-#: skin_default_skin.xml.h:153
+#: skin_default_skin.xml.h:154
 msgid "Diseqc Command Order"
 msgstr "Điều khiển Diseqc"
 
-#: skin_default_skin.xml.h:157
+#: skin_default_skin.xml.h:158
 msgid "Diseqc Settings"
 msgstr "Thiết lập DiSEqC"
 
-#: skin_default_skin.xml.h:155
+#: skin_default_skin.xml.h:156
 msgid "Diseqc repeats"
 msgstr "lập lại DiSEqC "
 
@@ -2870,7 +2874,7 @@ msgstr ""
 msgid "Doku"
 msgstr ""
 
-#: httpdfunc.h:3922 skin_default_skin.xml.h:162
+#: httpdfunc.h:3922 skin_default_skin.xml.h:163
 msgid "Don't clear TV on zap (only with fastzap)"
 msgstr "Không thể xóa"
 
@@ -2894,7 +2898,7 @@ msgstr "Không thể xóa"
 msgid "Down"
 msgstr ""
 
-#: skin_default_skin.xml.h:163
+#: skin_default_skin.xml.h:164
 msgid "Download"
 msgstr ""
 
@@ -2916,7 +2920,7 @@ msgstr "Tải thành công !"
 
 #: keyactions.h:84 play.h:692 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
-#: skin_default_skin.xml.h:164
+#: skin_default_skin.xml.h:165
 msgid "Downloads"
 msgstr "Tải về lỗi"
 
@@ -2932,11 +2936,11 @@ msgstr ""
 msgid "Driver"
 msgstr ""
 
-#: httpdfunc.h:4947 skin_default_skin.xml.h:165
+#: httpdfunc.h:4947 skin_default_skin.xml.h:166
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: skin_default_skin.xml.h:167
+#: skin_default_skin.xml.h:168
 msgid "Dutch"
 msgstr ""
 
@@ -2963,7 +2967,7 @@ msgid ""
 msgstr ""
 
 #: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:8
-#: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:169
+#: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:170
 #: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:8
 #: skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
@@ -2977,15 +2981,15 @@ msgstr ""
 msgid "EDIT FAV"
 msgstr ""
 
-#: skin_default_skin.xml.h:170 tunerconfig.h:492
+#: skin_default_skin.xml.h:171 tunerconfig.h:492
 msgid "EDIT LNB / UNICABLE"
 msgstr ""
 
-#: skin_default_skin.xml.h:173
+#: skin_default_skin.xml.h:174
 msgid "EDIT MOTOR"
 msgstr ""
 
-#: skin_default_skin.xml.h:174
+#: skin_default_skin.xml.h:175
 msgid "EDIT TUNER"
 msgstr ""
 
@@ -2993,7 +2997,7 @@ msgstr ""
 msgid "EJECT"
 msgstr ""
 
-#: adjust.h:70 httpdfunc.h:3905 play.h:1575 skin_default_skin.xml.h:180
+#: adjust.h:70 httpdfunc.h:3905 play.h:1575 skin_default_skin.xml.h:181
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3018,27 +3022,27 @@ msgstr ""
 msgid "EPG Info"
 msgstr "Thông tin EPG"
 
-#: skin_default_skin.xml.h:186
+#: skin_default_skin.xml.h:187
 msgid "EPG List Mode"
 msgstr "Chế độ danh sách EPG"
 
-#: skin_default_skin.xml.h:187
+#: skin_default_skin.xml.h:188
 msgid "EPG Path"
 msgstr "Đường dẫn EPG"
 
-#: skin_default_skin.xml.h:188
+#: skin_default_skin.xml.h:189
 msgid "EPG Refresh Time"
 msgstr "Thời gian cập nhật EPG"
 
-#: skin_default_skin.xml.h:189
+#: skin_default_skin.xml.h:190
 msgid "EPG Reset"
 msgstr "Xóa EPG"
 
-#: skin_default_skin.xml.h:194
+#: skin_default_skin.xml.h:195
 msgid "EPG SHORT VIEW"
 msgstr "Xem lịch chương trình"
 
-#: skin_default_skin.xml.h:190
+#: skin_default_skin.xml.h:191
 msgid "EPG Save Mode"
 msgstr "Chế độ ghi lịch chương trình"
 
@@ -3050,11 +3054,11 @@ msgstr "Chế độ ghi lịch chương trình"
 msgid "EPG Scan activate standby?"
 msgstr " kích hoạt quét EPG ở chế độ chờ?"
 
-#: skin_default_skin.xml.h:191
+#: skin_default_skin.xml.h:192
 msgid "EPG Scanlist"
 msgstr "Đường dẫn EPG"
 
-#: skin_default_skin.xml.h:192 webif_index.atemio510.h:17
+#: skin_default_skin.xml.h:193 webif_index.atemio510.h:17
 #: webif_index.atemio5200.h:17 webif_index.atemio6000.h:17
 #: webif_index.atemio6100.h:17 webif_index.atemio6200.h:17
 #: webif_index.atemio7600.h:15 webif_index.atemio-nemesis.h:17
@@ -3062,7 +3066,7 @@ msgstr "Đường dẫn EPG"
 msgid "EPG Search"
 msgstr "Tìm lịch chương trình"
 
-#: skin_default_skin.xml.h:193
+#: skin_default_skin.xml.h:194
 msgid "EPG Settings"
 msgstr "Thiết lập"
 
@@ -3070,7 +3074,7 @@ msgstr "Thiết lập"
 msgid "EPG Task"
 msgstr ""
 
-#: skin_default_skin.xml.h:181
+#: skin_default_skin.xml.h:182
 msgid "EPG button on EPG Screen"
 msgstr "lịch chương trình"
 
@@ -3078,7 +3082,7 @@ msgstr "lịch chương trình"
 msgid "EPG resetet and now clear."
 msgstr "không có lịch chương trình"
 
-#: skin_default_skin.xml.h:185
+#: skin_default_skin.xml.h:186
 msgid "EPGfreespace (KB)"
 msgstr "Freier EPG Speicher"
 
@@ -3204,7 +3208,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
 #: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
 #: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:594
-#: skinadjust.h:618 skinadjust.h:659 skin_default_skin.xml.h:195
+#: skinadjust.h:618 skinadjust.h:659 skin_default_skin.xml.h:196
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
 #: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:6
@@ -3254,11 +3258,11 @@ msgstr ""
 msgid "Edit"
 msgstr "chỉnh sửa"
 
-#: skin_default_skin.xml.h:171
+#: skin_default_skin.xml.h:172
 msgid "Edit Modus Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:172
+#: skin_default_skin.xml.h:173
 msgid "Edit Modus Font Color"
 msgstr ""
 
@@ -3278,7 +3282,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: skin_default_skin.xml.h:175
+#: skin_default_skin.xml.h:176
 msgid "Emu Active Color"
 msgstr ""
 
@@ -3294,7 +3298,7 @@ msgstr ""
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr ""
 
-#: skin_default_skin.xml.h:176
+#: skin_default_skin.xml.h:177
 msgid "Emu Running Color"
 msgstr ""
 
@@ -3318,15 +3322,15 @@ msgstr ""
 msgid "Enable"
 msgstr "cho phép"
 
-#: skin_default_skin.xml.h:177
+#: skin_default_skin.xml.h:178
 msgid "End"
 msgstr "Kết thúc"
 
-#: skin_default_skin.xml.h:178
+#: skin_default_skin.xml.h:179
 msgid "Engine Systems"
 msgstr "Hệ thống"
 
-#: skin_default_skin.xml.h:179
+#: skin_default_skin.xml.h:180
 msgid "English"
 msgstr "Tiếng Anh"
 
@@ -3344,15 +3348,15 @@ msgid ""
 "receiver to facebook"
 msgstr ""
 
-#: skin_default_skin.xml.h:182
+#: skin_default_skin.xml.h:183
 msgid "Epg Color 1"
 msgstr ""
 
-#: skin_default_skin.xml.h:183
+#: skin_default_skin.xml.h:184
 msgid "Epg Color 2"
 msgstr ""
 
-#: skin_default_skin.xml.h:184
+#: skin_default_skin.xml.h:185
 msgid "Epg Color 3"
 msgstr ""
 
@@ -3458,7 +3462,7 @@ msgstr "Thay đổi"
 msgid "Exit"
 msgstr ""
 
-#: skin_default_skin.xml.h:196
+#: skin_default_skin.xml.h:197
 msgid "Exit Color"
 msgstr ""
 
@@ -3470,11 +3474,11 @@ msgstr ""
 msgid "Expert"
 msgstr " Expert Modus "
 
-#: httpdfunc.h:4691 skin_default_skin.xml.h:197
+#: httpdfunc.h:4691 skin_default_skin.xml.h:198
 msgid "Expert Modus"
 msgstr " Expert Modus "
 
-#: skin_default_skin.xml.h:199
+#: skin_default_skin.xml.h:200
 msgid "Ext. Modul detect (needs reboot)"
 msgstr "Tìm modul mở rộng (cần khởi động lại)"
 
@@ -3482,7 +3486,7 @@ msgstr "Tìm modul mở rộng (cần khởi động lại)"
 msgid "Extended System Infos"
 msgstr ""
 
-#: skin_default_skin.xml.h:198 webif_system_extensions.h:1 webif_system.h:1
+#: skin_default_skin.xml.h:199 webif_system_extensions.h:1 webif_system.h:1
 msgid "Extensions"
 msgstr "Mở rộng"
 
@@ -3532,11 +3536,11 @@ msgstr ""
 msgid "FDMA bypass"
 msgstr "Bỏ qua FDMA"
 
-#: skin_default_skin.xml.h:206
+#: skin_default_skin.xml.h:207
 msgid "FEC"
 msgstr ""
 
-#: skin_default_skin.xml.h:207
+#: skin_default_skin.xml.h:208
 msgid "FEC:"
 msgstr ""
 
@@ -3566,11 +3570,11 @@ msgstr ""
 msgid "Failed open split file"
 msgstr "Không mở được file"
 
-#: skin_default_skin.xml.h:201
+#: skin_default_skin.xml.h:202
 msgid "Fan mode"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:24 skin_default_skin.xml.h:200
+#: plugins_panel_skin.xml.h:24 skin_default_skin.xml.h:201
 #: skins_panel_skin.xml.h:24
 msgid "FanControl"
 msgstr "Điều khiển quạt"
@@ -3636,19 +3640,19 @@ msgstr ""
 msgid "Fast Rewind"
 msgstr ""
 
-#: httpdfunc.h:4147 skin_default_skin.xml.h:203
+#: httpdfunc.h:4147 skin_default_skin.xml.h:204
 msgid "Fast Text Render"
 msgstr "Dịch văn bản nhanh"
 
-#: httpdfunc.h:3974 skin_default_skin.xml.h:202
+#: httpdfunc.h:3974 skin_default_skin.xml.h:203
 msgid "Faststop"
 msgstr "Dừng nhanh"
 
-#: httpdfunc.h:3945 skin_default_skin.xml.h:204
+#: httpdfunc.h:3945 skin_default_skin.xml.h:205
 msgid "Fastzap"
 msgstr "Schnelles Umschalten"
 
-#: skin_default_skin.xml.h:205 webif_index.atemio5200.h:35
+#: skin_default_skin.xml.h:206 webif_index.atemio5200.h:35
 #: webif_index.atemio5200.h:91 webif_index.atemio6200.h:35
 #: webif_index.atemio6200.h:91 webif_index.atemio7600.h:84
 #: webif_index.atemio-nemesis.h:35 webif_index.atemio-nemesis.h:91
@@ -3685,7 +3689,7 @@ msgstr ""
 msgid "File Operation"
 msgstr ""
 
-#: skin_default_skin.xml.h:210 system_infos.h:16
+#: skin_default_skin.xml.h:211 system_infos.h:16
 msgid "File System Usage"
 msgstr ""
 
@@ -3697,7 +3701,7 @@ msgstr "file đã tồn tại, có ghi đè không?"
 msgid "File not found !!"
 msgstr ""
 
-#: skin_default_skin.xml.h:208
+#: skin_default_skin.xml.h:209
 msgid "Filelist Select Color"
 msgstr ""
 
@@ -3728,11 +3732,11 @@ msgstr ""
 msgid "Filesize (MB): "
 msgstr ""
 
-#: skin_default_skin.xml.h:209
+#: skin_default_skin.xml.h:210
 msgid "Filesystem Check"
 msgstr "Kiểm tra tập tin hệ thống"
 
-#: skin_default_skin.xml.h:211
+#: skin_default_skin.xml.h:212
 msgid "Fine move"
 msgstr "di chuyển chính xác"
 
@@ -3748,7 +3752,7 @@ msgstr ""
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
-#: skin_default_skin.xml.h:212
+#: skin_default_skin.xml.h:213
 msgid "Fix Shutdown Time"
 msgstr "đặt thời gian tắt"
 
@@ -3756,17 +3760,17 @@ msgstr "đặt thời gian tắt"
 msgid "Flash/Nand Check"
 msgstr ""
 
-#: skin_default_skin.xml.h:213
+#: skin_default_skin.xml.h:214
 msgid ""
 "Flash: Flash range is deleted after update, mnt: flash range to permanently "
 "update available, swap: USB medium permanently"
 msgstr ""
 
-#: skin_default_skin.xml.h:214 webif_system_update.h:2
+#: skin_default_skin.xml.h:215 webif_system_update.h:2
 msgid "Flashupdate (online)"
 msgstr "Cập nhật flash (trực tuyến)"
 
-#: skin_default_skin.xml.h:215 webif_system_update.h:3
+#: skin_default_skin.xml.h:216 webif_system_update.h:3
 msgid "Flashupdate (tmp)"
 msgstr "Cập nhật flash (tmp)"
 
@@ -3818,11 +3822,19 @@ msgstr ""
 msgid "Font 'Plover Bold'"
 msgstr ""
 
-#: skin_default_skin.xml.h:216
+#: skin_default_skin.xml.h:217
 msgid "Font Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:217
+#: skin_default_skin.xml.h:218
+msgid "Font Color 2"
+msgstr ""
+
+#: skin_default_skin.xml.h:219
+msgid "Font Color 3"
+msgstr ""
+
+#: skin_default_skin.xml.h:220
 msgid "Fontsize adjust in pixel"
 msgstr "Cỡ chữ theo pixel"
 
@@ -3835,7 +3847,7 @@ msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
 
-#: skin_default_skin.xml.h:218
+#: skin_default_skin.xml.h:221
 msgid ""
 "For getting Signal/SNR/BER values, zap to a channel of the satellite you are "
 "searching."
@@ -3853,7 +3865,7 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
-#: skin_default_skin.xml.h:219
+#: skin_default_skin.xml.h:222
 msgid "Format HDD"
 msgstr "Định dạng ổ cứng"
 
@@ -3950,15 +3962,15 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: skin_default_skin.xml.h:220
+#: skin_default_skin.xml.h:223
 msgid "French"
 msgstr "Tiếng Pháp"
 
-#: skin_default_skin.xml.h:221
+#: skin_default_skin.xml.h:224
 msgid "Frequency"
 msgstr "Tần số"
 
-#: skin_default_skin.xml.h:222
+#: skin_default_skin.xml.h:225
 msgid "Frequency:"
 msgstr "Tần số:"
 
@@ -3966,7 +3978,7 @@ msgstr "Tần số:"
 msgid "Fri"
 msgstr ""
 
-#: global.h:6251 global.h:6261 rectimer.h:1104 skin_default_skin.xml.h:223
+#: global.h:6251 global.h:6261 rectimer.h:1104 skin_default_skin.xml.h:226
 msgid "Friday"
 msgstr "Thứ sáu"
 
@@ -3998,7 +4010,7 @@ msgstr ""
 msgid "Frontend type unknown"
 msgstr "Không biết kiểu đầu vào"
 
-#: httpdfunc.h:4089 skin_default_skin.xml.h:224
+#: httpdfunc.h:4089 skin_default_skin.xml.h:227
 msgid "Frontpanel Power Aktion"
 msgstr ""
 
@@ -4054,7 +4066,7 @@ msgstr "Nhóm lịch chương trình"
 msgid "GREEN"
 msgstr ""
 
-#: adjust.h:113 httpdfunc.h:4081 skin_default_skin.xml.h:239
+#: adjust.h:113 httpdfunc.h:4081 skin_default_skin.xml.h:242
 #: webif_index.atemio510.h:6 webif_index.atemio5200.h:6
 #: webif_index.atemio6000.h:6 webif_index.atemio6100.h:6
 #: webif_index.atemio6200.h:6 webif_index.atemio7600.h:4
@@ -4067,7 +4079,7 @@ msgstr "Khởi động lại GUI"
 msgid "Gbox 806"
 msgstr ""
 
-#: amazon.h:68 amazon.h:75 skin_default_skin.xml.h:226
+#: amazon.h:68 amazon.h:75 skin_default_skin.xml.h:229
 msgid "Genre"
 msgstr ""
 
@@ -4079,7 +4091,7 @@ msgstr ""
 msgid "Genre:"
 msgstr ""
 
-#: skin_default_skin.xml.h:227
+#: skin_default_skin.xml.h:230
 msgid "German"
 msgstr "Tiếng Đức"
 
@@ -4091,7 +4103,7 @@ msgstr ""
 msgid "Giantgirl"
 msgstr ""
 
-#: httpdfunc.h:5363 skin_default_skin.xml.h:228 webif_info_logs.h:3
+#: httpdfunc.h:5363 skin_default_skin.xml.h:231 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr "Chương trình"
 
@@ -4107,7 +4119,7 @@ msgstr ""
 msgid "Global"
 msgstr ""
 
-#: skin_default_skin.xml.h:229
+#: skin_default_skin.xml.h:232
 msgid "Go to startpos"
 msgstr "Tới vị trí bắt đầu"
 
@@ -4139,33 +4151,33 @@ msgstr ""
 msgid "Goodtime"
 msgstr "thời gian"
 
-#: skin_default_skin.xml.h:230
+#: skin_default_skin.xml.h:233
 msgid "Graph. EPG"
 msgstr "Lịch chương trình"
 
-#: skin_default_skin.xml.h:231
+#: skin_default_skin.xml.h:234
 msgid "Graphic EPG"
 msgstr "Lịch chương trình"
 
-#: skin_default_skin.xml.h:232
+#: skin_default_skin.xml.h:235
 msgid "Graphic EPG Picon"
 msgstr "Thu nhỏ lịch chương trình"
 
-#: skin_default_skin.xml.h:233
+#: skin_default_skin.xml.h:236
 msgid "Graphic EPG Zoom"
 msgstr "Phóng to lịch chương trinh "
 
 #: epgsettings.h:142 keyactions.h:80 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
-#: skin_default_skin.xml.h:234
+#: skin_default_skin.xml.h:237
 msgid "Graphic Multi EPG"
 msgstr "Lịch chương trình"
 
-#: skin_default_skin.xml.h:235
+#: skin_default_skin.xml.h:238
 msgid "Graphic Multi EPG selection"
 msgstr ""
 
-#: skin_default_skin.xml.h:236
+#: skin_default_skin.xml.h:239
 msgid "Greek"
 msgstr "Tiếng Hy Lạp"
 
@@ -4192,11 +4204,11 @@ msgstr ""
 msgid "Group created"
 msgstr "lập lại"
 
-#: skin_default_skin.xml.h:237
+#: skin_default_skin.xml.h:240
 msgid "Guardinterval"
 msgstr "Intervall"
 
-#: skin_default_skin.xml.h:238
+#: skin_default_skin.xml.h:241
 msgid "Guardinterval:"
 msgstr "Intervall"
 
@@ -4226,15 +4238,15 @@ msgstr ""
 "Không cấu hình được ổ cứng\n"
 "không tìm thấy đường dẫn"
 
-#: skin_default_skin.xml.h:242
+#: skin_default_skin.xml.h:245
 msgid "HDMI-CEC"
 msgstr ""
 
-#: skin_default_skin.xml.h:243
+#: skin_default_skin.xml.h:246
 msgid "HDMI-in"
 msgstr ""
 
-#: skin_default_skin.xml.h:306
+#: skin_default_skin.xml.h:309
 msgid "HOSTNAME"
 msgstr ""
 
@@ -4242,15 +4254,15 @@ msgstr ""
 msgid "HTTP Server/Stream/Record"
 msgstr ""
 
-#: skin_default_skin.xml.h:309
+#: skin_default_skin.xml.h:312
 msgid "HTTP Settings"
 msgstr "Thiết lập HTTP"
 
-#: skin_default_skin.xml.h:308
+#: skin_default_skin.xml.h:311
 msgid "HTTPD Port"
 msgstr "Cổng HTPTD"
 
-#: httpdfunc.h:3853 skin_default_skin.xml.h:240
+#: httpdfunc.h:3853 skin_default_skin.xml.h:243
 msgid "Hangtime"
 msgstr "Hang time"
 
@@ -4258,7 +4270,7 @@ msgstr "Hang time"
 msgid "Hard"
 msgstr ""
 
-#: adjust.h:298 harddisk.h:487 skin_default_skin.xml.h:241
+#: adjust.h:298 harddisk.h:487 skin_default_skin.xml.h:244
 msgid "Harddisk"
 msgstr "Ổ cứng"
 
@@ -4290,7 +4302,7 @@ msgstr ""
 msgid "Hello World !"
 msgstr ""
 
-#: httpdfunc.h:5163 skin_default_skin.xml.h:733 webif_index.atemio510.h:16
+#: httpdfunc.h:5163 skin_default_skin.xml.h:736 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -4307,7 +4319,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: skin_default_skin.xml.h:244
+#: skin_default_skin.xml.h:247
 msgid "Here you can activate or deactivate the CAID Lock."
 msgstr ""
 
@@ -4319,48 +4331,48 @@ msgstr ""
 msgid "Here you can add and configure your network shares."
 msgstr ""
 
-#: skin_default_skin.xml.h:245
+#: skin_default_skin.xml.h:248
 msgid "Here you can adjust the LNB/Unicable values for the selected tuner."
 msgstr ""
 
-#: skin_default_skin.xml.h:247
+#: skin_default_skin.xml.h:250
 msgid "Here you can adjust the PiP functions."
 msgstr ""
 
-#: skin_default_skin.xml.h:246
+#: skin_default_skin.xml.h:249
 msgid "Here you can adjust the network interface."
 msgstr ""
 
-#: skin_default_skin.xml.h:248
+#: skin_default_skin.xml.h:251
 msgid ""
 "Here you can adjust your rotor equipment. Enter the latitude and longitude "
 "values by using the number keys."
 msgstr ""
 
-#: skin_default_skin.xml.h:249
+#: skin_default_skin.xml.h:252
 msgid "Here you can assign channels to a specific CI-Module."
 msgstr ""
 
-#: skin_default_skin.xml.h:250
+#: skin_default_skin.xml.h:253
 msgid "Here you can backup and restore your configuration."
 msgstr ""
 
-#: skin_default_skin.xml.h:251
+#: skin_default_skin.xml.h:254
 msgid "Here you can check the signal quality of the current transponder."
 msgstr ""
 
-#: skin_default_skin.xml.h:252
+#: skin_default_skin.xml.h:255
 msgid ""
 "Here you can choose a tuner for configuration. For a channel search, the "
 "tuner(s) have to be configured before. Rotor equipment requires additional "
 "adjustments."
 msgstr ""
 
-#: skin_default_skin.xml.h:253
+#: skin_default_skin.xml.h:256
 msgid "Here you can configure dynamic DNS services."
 msgstr ""
 
-#: skin_default_skin.xml.h:256
+#: skin_default_skin.xml.h:259
 msgid "Here you can configure your CI-Modules."
 msgstr ""
 
@@ -4368,7 +4380,7 @@ msgstr ""
 msgid "Here you can configure your OSCam reader."
 msgstr ""
 
-#: skin_default_skin.xml.h:255
+#: skin_default_skin.xml.h:258
 msgid ""
 "Here you can configure your cable tuner. Choose your cable provider and "
 "start an automatic search."
@@ -4380,134 +4392,134 @@ msgid ""
 "protected shares."
 msgstr ""
 
-#: skin_default_skin.xml.h:257
+#: skin_default_skin.xml.h:260
 msgid ""
 "Here you can configure your satellite tuner. First, select the satellite. "
 "When using DiSEqC, also define the used port. For advanced LNB/Unicable "
 "configuration, navigate to LNB/Unicable and press the red button."
 msgstr ""
 
-#: skin_default_skin.xml.h:258
+#: skin_default_skin.xml.h:261
 msgid ""
 "Here you can configure your terrestrial tuner. Activate the terrestrial "
 "tuner and start an automatic search."
 msgstr ""
 
-#: skin_default_skin.xml.h:254
+#: skin_default_skin.xml.h:257
 msgid "Here you can configure: Webinterface, Transcoding and RGUI"
 msgstr ""
 
-#: skin_default_skin.xml.h:259
+#: skin_default_skin.xml.h:262
 msgid ""
 "Here you can connect to your wireless network. 1. Use search button, select "
 "your SSID and press ok 2. Choose encryption type and enter key, accept with "
 "ok 3. Set automatic start if wanted and start with green."
 msgstr ""
 
-#: skin_default_skin.xml.h:260
+#: skin_default_skin.xml.h:263
 msgid "Here you can control the fan mode."
 msgstr ""
 
-#: skin_default_skin.xml.h:261
+#: skin_default_skin.xml.h:264
 msgid ""
 "Here you can create, delete and edit timer events. Press ok to edit the "
 "selected timer. Press blue to check the timer log. Then choose red to delete "
 "a single entry or yellow to clear the list."
 msgstr ""
 
-#: skin_default_skin.xml.h:262
+#: skin_default_skin.xml.h:265
 msgid "Here you can define channels or favorites for EPG scan/refresh."
 msgstr ""
 
-#: skin_default_skin.xml.h:263
+#: skin_default_skin.xml.h:266
 msgid "Here you can define the paths for record, timeshift and movie player."
 msgstr ""
 
-#: skin_default_skin.xml.h:264
+#: skin_default_skin.xml.h:267
 msgid "Here you can edit the channel list."
 msgstr ""
 
-#: skin_default_skin.xml.h:265
+#: skin_default_skin.xml.h:268
 msgid "Here you can edit timer events."
 msgstr ""
 
-#: skin_default_skin.xml.h:266
+#: skin_default_skin.xml.h:269
 msgid "Here you can enter the menu of your Ci-Module."
 msgstr ""
 
-#: skin_default_skin.xml.h:267
+#: skin_default_skin.xml.h:270
 msgid "Here you can install plugins and extensions from our online offer."
 msgstr ""
 
-#: skin_default_skin.xml.h:268
+#: skin_default_skin.xml.h:271
 msgid "Here you can make advanced settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:270
+#: skin_default_skin.xml.h:273
 msgid "Here you can make your Audio/Video settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:273
+#: skin_default_skin.xml.h:276
 msgid "Here you can make your EPG settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:275
+#: skin_default_skin.xml.h:278
 msgid "Here you can make your HDMI-CEC settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:281
+#: skin_default_skin.xml.h:284
 msgid "Here you can make your PIN security settings for menu access."
 msgstr ""
 
-#: skin_default_skin.xml.h:280
+#: skin_default_skin.xml.h:283
 msgid "Here you can make your PIN security settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:285
+#: skin_default_skin.xml.h:288
 msgid "Here you can make your USB autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:269
+#: skin_default_skin.xml.h:272
 msgid "Here you can make your audio/video autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:271
+#: skin_default_skin.xml.h:274
 msgid "Here you can make your child safety autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:272
+#: skin_default_skin.xml.h:275
 msgid "Here you can make your display settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:274
+#: skin_default_skin.xml.h:277
 msgid "Here you can make your general autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:276
+#: skin_default_skin.xml.h:279
 msgid "Here you can make your mediadb settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:277
+#: skin_default_skin.xml.h:280
 msgid "Here you can make your module settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:278
+#: skin_default_skin.xml.h:281
 msgid "Here you can make your network autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:279
+#: skin_default_skin.xml.h:282
 msgid "Here you can make your overclock settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:282
+#: skin_default_skin.xml.h:285
 msgid "Here you can make your screensaver settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:283
+#: skin_default_skin.xml.h:286
 msgid "Here you can make your softcam/USB cardreader autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:284
+#: skin_default_skin.xml.h:287
 msgid "Here you can make your timeshift settings."
 msgstr ""
 
@@ -4515,84 +4527,84 @@ msgstr ""
 msgid "Here you can make your xupnpd autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:286
+#: skin_default_skin.xml.h:289
 msgid "Here you can reset the smartcard reader(s)."
 msgstr ""
 
-#: skin_default_skin.xml.h:287
+#: skin_default_skin.xml.h:290
 msgid "Here you can search the EPG for specific genre or keyword."
 msgstr ""
 
-#: skin_default_skin.xml.h:288
+#: skin_default_skin.xml.h:291
 msgid "Here you can see the progress of all current downloads."
 msgstr ""
 
-#: skin_default_skin.xml.h:289
+#: skin_default_skin.xml.h:292
 msgid "Here you can select a skin from the following list."
 msgstr ""
 
-#: skin_default_skin.xml.h:290
+#: skin_default_skin.xml.h:293
 msgid "Here you can select from the following list."
 msgstr ""
 
-#: skin_default_skin.xml.h:291
+#: skin_default_skin.xml.h:294
 msgid ""
 "Here you can select the Transponder Mode. Please use a channel search after "
 "the Restart"
 msgstr ""
 
-#: skin_default_skin.xml.h:292
+#: skin_default_skin.xml.h:295
 msgid ""
 "Here you can select your hard disks and USB flash drives for configuration."
 msgstr ""
 
-#: skin_default_skin.xml.h:293
+#: skin_default_skin.xml.h:296
 msgid "Here you can select your network interface."
 msgstr ""
 
-#: skin_default_skin.xml.h:294
+#: skin_default_skin.xml.h:297
 msgid "Here you can select your remote control type."
 msgstr ""
 
-#: skin_default_skin.xml.h:295
+#: skin_default_skin.xml.h:298
 msgid ""
 "Here you can set your channel search options. Very important, before channel "
 "scan, the tuner must be configured correctly."
 msgstr ""
 
-#: skin_default_skin.xml.h:296
+#: skin_default_skin.xml.h:299
 msgid "Here you can set your hybrid tuner. Choose the required tuner mode."
 msgstr ""
 
-#: skin_default_skin.xml.h:297
+#: skin_default_skin.xml.h:300
 msgid "Here you can set your language."
 msgstr ""
 
-#: skin_default_skin.xml.h:298
+#: skin_default_skin.xml.h:301
 msgid ""
 "Here you can set your manual channel search options. Very important, before "
 "channel scan, the tuner must be configured correctly."
 msgstr ""
 
-#: skin_default_skin.xml.h:299
+#: skin_default_skin.xml.h:302
 msgid "Here you can set your timezone."
 msgstr ""
 
-#: skin_default_skin.xml.h:300
+#: skin_default_skin.xml.h:303
 msgid ""
 "Here you can start a blind scan, depending on your satellite configuration, "
 "this process can take very long."
 msgstr ""
 
-#: skin_default_skin.xml.h:301
+#: skin_default_skin.xml.h:304
 msgid "Here you can start and manage your additional plugins."
 msgstr ""
 
-#: skin_default_skin.xml.h:302
+#: skin_default_skin.xml.h:305
 msgid "Here you can test your network."
 msgstr ""
 
-#: skin_default_skin.xml.h:303
+#: skin_default_skin.xml.h:306
 msgid "Here you can view the current channel information."
 msgstr ""
 
@@ -4600,11 +4612,11 @@ msgstr ""
 msgid "Hid XXX Streams"
 msgstr ""
 
-#: skin_default_skin.xml.h:304
+#: skin_default_skin.xml.h:307
 msgid "Hierarchy"
 msgstr "Dò"
 
-#: skin_default_skin.xml.h:305
+#: skin_default_skin.xml.h:308
 msgid "Hierarchy:"
 msgstr "Dò"
 
@@ -4656,7 +4668,7 @@ msgstr ""
 msgid "Hotline"
 msgstr ""
 
-#: skin_default_skin.xml.h:307
+#: skin_default_skin.xml.h:310
 msgid "How many days"
 msgstr "Bao nhiêu ngày"
 
@@ -4672,7 +4684,7 @@ msgstr ""
 msgid "I Hate Comic Sans"
 msgstr ""
 
-#: skin_default_skin.xml.h:310 tpchoice.h:52
+#: skin_default_skin.xml.h:313 tpchoice.h:52
 msgid "ID"
 msgstr "D"
 
@@ -4680,7 +4692,7 @@ msgstr "D"
 msgid "ID3"
 msgstr ""
 
-#: skin_default_skin.xml.h:311
+#: skin_default_skin.xml.h:314
 msgid "ID:"
 msgstr "SID:"
 
@@ -4725,7 +4737,7 @@ msgstr ""
 msgid "INSTALL"
 msgstr ""
 
-#: skin_default_skin.xml.h:324
+#: skin_default_skin.xml.h:327
 msgid "IP for Stream"
 msgstr ""
 
@@ -4805,7 +4817,7 @@ msgstr ""
 msgid "Import mode"
 msgstr ""
 
-#: skin_default_skin.xml.h:312
+#: skin_default_skin.xml.h:315
 msgid "Inc. AC3 Audio in %"
 msgstr "Audio AC3 %"
 
@@ -4834,23 +4846,23 @@ msgstr "Audio AC3 %"
 msgid "Info"
 msgstr ""
 
-#: skin_default_skin.xml.h:313
+#: skin_default_skin.xml.h:316
 msgid "Info bar 2 selection"
 msgstr ""
 
-#: skin_default_skin.xml.h:314
+#: skin_default_skin.xml.h:317
 msgid "Info bar selection"
 msgstr ""
 
-#: httpdfunc.h:3767 skin_default_skin.xml.h:315
+#: httpdfunc.h:3767 skin_default_skin.xml.h:318
 msgid "Infobar Sleep"
 msgstr "Thời gian thanh thông tin hiển thị"
 
-#: httpdfunc.h:3735 skin_default_skin.xml.h:316
+#: httpdfunc.h:3735 skin_default_skin.xml.h:319
 msgid "Infobar Timeout"
 msgstr "Thời gian ẩn thanh thông tin"
 
-#: skin_default_skin.xml.h:317 tsSchnitt.c:108
+#: skin_default_skin.xml.h:320 tsSchnitt.c:108
 msgid "Information"
 msgstr " Thông tin "
 
@@ -4989,7 +5001,7 @@ msgstr "Cài đặt lỗi !"
 msgid "Installation start"
 msgstr "Đang cài đặt"
 
-#: httpdfunc.h:5674 security.h:2083 skin_default_skin.xml.h:319
+#: httpdfunc.h:5674 security.h:2083 skin_default_skin.xml.h:322
 msgid "Installed:"
 msgstr "Cài đặt"
 
@@ -5013,11 +5025,11 @@ msgstr ""
 msgid "Interval"
 msgstr "Intervall"
 
-#: skin_default_skin.xml.h:321
+#: skin_default_skin.xml.h:324
 msgid "Inversion"
 msgstr "Nghịch đảo"
 
-#: skin_default_skin.xml.h:322
+#: skin_default_skin.xml.h:325
 msgid "Inversion:"
 msgstr "Nghịch đảo:"
 
@@ -5032,7 +5044,7 @@ msgstr ""
 msgid "Is this Videomode ok ?"
 msgstr "Chế độ này ok?"
 
-#: skin_default_skin.xml.h:325
+#: skin_default_skin.xml.h:328
 msgid "Italian"
 msgstr "Tiếng Ý"
 
@@ -5049,7 +5061,7 @@ msgid "July"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
-#: skin_default_skin.xml.h:326
+#: skin_default_skin.xml.h:329
 msgid "Jump"
 msgstr ""
 
@@ -5117,16 +5129,16 @@ msgstr ""
 msgid "Kamera 2 (Umschalten mit Rot)"
 msgstr ""
 
-#: httpdfunc.h:5265 skin_default_skin.xml.h:327 system_infos.h:18
+#: httpdfunc.h:5265 skin_default_skin.xml.h:330 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr ""
 
-#: skin_default_skin.xml.h:328 system_infos_sysinfo.h:21
+#: skin_default_skin.xml.h:331 system_infos_sysinfo.h:21
 msgid "Kernel Modules"
 msgstr ""
 
-#: skin_default_skin.xml.h:329
+#: skin_default_skin.xml.h:332
 msgid "Key"
 msgstr "khóa"
 
@@ -5142,7 +5154,7 @@ msgstr ""
 msgid "KeyLock"
 msgstr ""
 
-#: skin_default_skin.xml.h:331
+#: skin_default_skin.xml.h:334
 msgid "Keyboard"
 msgstr "Bàn phím"
 
@@ -5226,11 +5238,11 @@ msgstr ""
 msgid "LCD Samsung skin wooden clock"
 msgstr ""
 
-#: skin_default_skin.xml.h:337
+#: skin_default_skin.xml.h:340
 msgid "LED - brightness running"
 msgstr ""
 
-#: skin_default_skin.xml.h:338
+#: skin_default_skin.xml.h:341
 msgid "LED - brightness standby"
 msgstr ""
 
@@ -5262,7 +5274,7 @@ msgstr ""
 msgid "LNB 18V / 22K off: OK"
 msgstr ""
 
-#: skin_default_skin.xml.h:343
+#: skin_default_skin.xml.h:346
 msgid "LNB Settings"
 msgstr "Thiết lập LNB"
 
@@ -5278,23 +5290,23 @@ msgstr ""
 msgid "LOAD-FritzBook"
 msgstr ""
 
-#: skin_default_skin.xml.h:346
+#: skin_default_skin.xml.h:349
 msgid "LOF / UNICABLE"
 msgstr ""
 
-#: skin_default_skin.xml.h:344
+#: skin_default_skin.xml.h:347
 msgid "LOF/H"
 msgstr ""
 
-#: skin_default_skin.xml.h:345
+#: skin_default_skin.xml.h:348
 msgid "LOF/L"
 msgstr ""
 
-#: skin_default_skin.xml.h:347
+#: skin_default_skin.xml.h:350
 msgid "LOG"
 msgstr ""
 
-#: skin_default_skin.xml.h:335
+#: skin_default_skin.xml.h:338
 msgid "Language"
 msgstr ""
 
@@ -5380,7 +5392,7 @@ msgstr ""
 msgid "Last: "
 msgstr ""
 
-#: skin_default_skin.xml.h:336
+#: skin_default_skin.xml.h:339
 msgid "Latitude"
 msgstr "Vĩ độ"
 
@@ -5419,7 +5431,7 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: skin_default_skin.xml.h:339
+#: skin_default_skin.xml.h:342
 msgid "Limit"
 msgstr "giới hạn"
 
@@ -5431,15 +5443,15 @@ msgstr ""
 msgid "Linuxgirl"
 msgstr ""
 
-#: skin_default_skin.xml.h:340
+#: skin_default_skin.xml.h:343
 msgid "Listbox Select"
 msgstr "Lựa chọn danh sách"
 
-#: skin_default_skin.xml.h:341
+#: skin_default_skin.xml.h:344
 msgid "Listbox Select Color"
 msgstr "Lựa chọn danh sách"
 
-#: skin_default_skin.xml.h:342
+#: skin_default_skin.xml.h:345
 msgid "Lithuanian"
 msgstr ""
 
@@ -5471,7 +5483,7 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
-#: skin_default_skin.xml.h:348
+#: skin_default_skin.xml.h:351
 msgid "Longitude"
 msgstr "Vĩ độ"
 
@@ -5507,15 +5519,15 @@ msgstr "Cài đặt sắp xếp VideoPlayer MC"
 msgid "MC VideoPlayer View Settings"
 msgstr "Cài đặt hiển thị VideoPlayer MC"
 
-#: skin_default_skin.xml.h:366
+#: skin_default_skin.xml.h:369
 msgid "MENUPROTECT"
 msgstr ""
 
-#: skin_default_skin.xml.h:368
+#: skin_default_skin.xml.h:371
 msgid "MHW EPG"
 msgstr "EPG"
 
-#: skin_default_skin.xml.h:367
+#: skin_default_skin.xml.h:370
 msgid "MHW2 EPG"
 msgstr ""
 
@@ -5527,7 +5539,7 @@ msgstr "I"
 msgid "MO"
 msgstr "M"
 
-#: httpdfunc.h:5311 skin_default_skin.xml.h:383 system_infos_sysinfo.h:19
+#: httpdfunc.h:5311 skin_default_skin.xml.h:386 system_infos_sysinfo.h:19
 #: webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr ""
@@ -5560,7 +5572,7 @@ msgstr ""
 msgid "MULTI EPG - Satellites"
 msgstr "EPG – Tất cả các chương trình"
 
-#: skin_default_skin.xml.h:349
+#: skin_default_skin.xml.h:352
 msgid "Main Menu"
 msgstr "Menu chính"
 
@@ -5568,15 +5580,15 @@ msgstr "Menu chính"
 msgid "Manage MultiImage"
 msgstr ""
 
-#: skin_default_skin.xml.h:350
+#: skin_default_skin.xml.h:353
 msgid "Manual Search"
 msgstr "Dò bằng tay"
 
-#: skin_default_skin.xml.h:351
+#: skin_default_skin.xml.h:354
 msgid "Manual Search Cable"
 msgstr "Dò bằng tay"
 
-#: skin_default_skin.xml.h:352
+#: skin_default_skin.xml.h:355
 msgid "Manual Search Terrestrial"
 msgstr "Dò bằng tay"
 
@@ -5584,11 +5596,11 @@ msgstr "Dò bằng tay"
 msgid "March"
 msgstr ""
 
-#: skin_default_skin.xml.h:353
+#: skin_default_skin.xml.h:356
 msgid "Mark Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:354
+#: skin_default_skin.xml.h:357
 msgid "Marker"
 msgstr ""
 
@@ -5612,11 +5624,11 @@ msgstr "Đã thiết lập nhà sản xuất"
 msgid "Market cap: "
 msgstr ""
 
-#: skin_default_skin.xml.h:355
+#: skin_default_skin.xml.h:358
 msgid "Maximal frequency"
 msgstr "Tần số cực đại"
 
-#: skin_default_skin.xml.h:356
+#: skin_default_skin.xml.h:359
 msgid "Maximal signalrate"
 msgstr "Tốc độ tín hiệu cực đại"
 
@@ -5638,11 +5650,11 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: skin_default_skin.xml.h:357
+#: skin_default_skin.xml.h:360
 msgid "Media Button"
 msgstr ""
 
-#: skin_default_skin.xml.h:358
+#: skin_default_skin.xml.h:361
 msgid "Media Center"
 msgstr ""
 
@@ -5666,7 +5678,7 @@ msgstr " Medie Dir 4"
 msgid "Media Key Action - Setup"
 msgstr ""
 
-#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:362
+#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:365
 msgid "Media Player"
 msgstr ""
 
@@ -5690,11 +5702,11 @@ msgstr ""
 msgid "MediaDB Debug"
 msgstr "Chế độ gỡ lỗi MediaDB"
 
-#: play.h:644 skin_default_skin.xml.h:359
+#: play.h:644 skin_default_skin.xml.h:362
 msgid "MediaDB Edit"
 msgstr "Chỉnh sửa MediaDB"
 
-#: skin_default_skin.xml.h:360
+#: skin_default_skin.xml.h:363
 msgid "MediaDB Path"
 msgstr "Đường dẫn MediaDB"
 
@@ -5708,7 +5720,7 @@ msgstr ""
 msgid "MediaDB Scan Info"
 msgstr "Thông tin quét MediaDB"
 
-#: skin_default_skin.xml.h:361
+#: skin_default_skin.xml.h:364
 msgid "MediaDB Settings"
 msgstr "Thiết lập MediaDB"
 
@@ -5754,7 +5766,7 @@ msgstr ""
 msgid "MegaStyle grey with MiniTv (Skinadjust)"
 msgstr ""
 
-#: httpdfunc.h:5309 skin_default_skin.xml.h:363 system_infos.h:24
+#: httpdfunc.h:5309 skin_default_skin.xml.h:366 system_infos.h:24
 #: system_infos_sysinfo.h:17 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Bộ nhớ"
@@ -5780,7 +5792,7 @@ msgstr "Bộ nhớ"
 msgid "Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:365
+#: skin_default_skin.xml.h:368
 msgid "Menu Protect"
 msgstr "Khóa Menu"
 
@@ -5792,7 +5804,7 @@ msgstr ""
 msgid "Menu not implemented !"
 msgstr "Không thực hiện được!"
 
-#: skin_default_skin.xml.h:364
+#: skin_default_skin.xml.h:367
 msgid "Menulist"
 msgstr ""
 
@@ -5910,11 +5922,11 @@ msgstr ""
 msgid "Minimal"
 msgstr ""
 
-#: skin_default_skin.xml.h:369
+#: skin_default_skin.xml.h:372
 msgid "Minimal frequency"
 msgstr "Tần số nhỏ nhất"
 
-#: skin_default_skin.xml.h:370
+#: skin_default_skin.xml.h:373
 msgid "Minimal signalrate"
 msgstr "Tốc độ độ tín hiệu nhỏ nhất"
 
@@ -5922,11 +5934,11 @@ msgstr "Tốc độ độ tín hiệu nhỏ nhất"
 msgid "Minuten"
 msgstr " Phút"
 
-#: skin_default_skin.xml.h:371
+#: skin_default_skin.xml.h:374
 msgid "Minutes"
 msgstr " Phút"
 
-#: skin_default_skin.xml.h:372
+#: skin_default_skin.xml.h:375
 msgid "Minutes:"
 msgstr "Phút:"
 
@@ -5934,11 +5946,11 @@ msgstr "Phút:"
 msgid "MirrorGlass3D XPicons - KabelD"
 msgstr ""
 
-#: skin_default_skin.xml.h:373
+#: skin_default_skin.xml.h:376
 msgid "Modulation"
 msgstr "Điều chế"
 
-#: skin_default_skin.xml.h:374
+#: skin_default_skin.xml.h:377
 msgid "Modulation:"
 msgstr "Điều chế:"
 
@@ -5946,7 +5958,7 @@ msgstr "Điều chế:"
 msgid "Module"
 msgstr "Môđun"
 
-#: skin_default_skin.xml.h:375
+#: skin_default_skin.xml.h:378
 msgid "Module Config"
 msgstr "Cấu hình môđun"
 
@@ -5958,7 +5970,7 @@ msgstr "Loại môđun"
 msgid "Mon"
 msgstr ""
 
-#: global.h:6247 global.h:6257 rectimer.h:1100 skin_default_skin.xml.h:376
+#: global.h:6247 global.h:6257 rectimer.h:1100 skin_default_skin.xml.h:379
 msgid "Monday"
 msgstr "Thứ hai"
 
@@ -5970,12 +5982,12 @@ msgstr ""
 msgid "More audio/video formats playable"
 msgstr ""
 
-#: httpdfunc.h:5267 skin_default_skin.xml.h:377 system_infos.h:20
+#: httpdfunc.h:5267 skin_default_skin.xml.h:380 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr ""
 
-#: skin_default_skin.xml.h:378
+#: skin_default_skin.xml.h:381
 msgid "Move"
 msgstr "di chuyển"
 
@@ -5995,11 +6007,11 @@ msgstr ""
 msgid "Move File"
 msgstr "di chuyển"
 
-#: skin_default_skin.xml.h:379
+#: skin_default_skin.xml.h:382
 msgid "Move Modus Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:380
+#: skin_default_skin.xml.h:383
 msgid "Move Modus Font Color"
 msgstr ""
 
@@ -6011,7 +6023,7 @@ msgstr "di chuyển"
 msgid "Moven"
 msgstr "Di chuyển"
 
-#: skin_default_skin.xml.h:382
+#: skin_default_skin.xml.h:385
 msgid "Moviepath"
 msgstr "Thư mục phim"
 
@@ -6030,7 +6042,7 @@ msgstr "EPG"
 
 #: epgsettings.h:141 epgsettings.h:182 keyactions.h:79
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
-#: skin_default_skin.xml.h:384
+#: skin_default_skin.xml.h:387
 msgid "Multi EPG"
 msgstr "EPG"
 
@@ -6113,26 +6125,26 @@ msgstr ""
 msgid "NONE"
 msgstr "không"
 
-#: skin_default_skin.xml.h:385 stock.h:270
+#: skin_default_skin.xml.h:388 stock.h:270
 msgid "Name"
 msgstr "Tên"
 
-#: skin_default_skin.xml.h:386
+#: skin_default_skin.xml.h:389
 msgid "Name:"
 msgstr " Tên:"
 
 #: httpdfunc.h:5269 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:34 plugins_panel_skin.xml.h:13
-#: skin_default_skin.xml.h:388 skins_mc_skin.xml.h:34
+#: skin_default_skin.xml.h:391 skins_mc_skin.xml.h:34
 #: skins_panel_skin.xml.h:13 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "mạng"
 
-#: skin_default_skin.xml.h:389
+#: skin_default_skin.xml.h:392
 msgid "Network Adapter Settings"
 msgstr "Cài đặt cạc mạng"
 
-#: skin_default_skin.xml.h:390
+#: skin_default_skin.xml.h:393
 msgid "Network Adapter Test"
 msgstr "Kiểm tra cạc mạng"
 
@@ -6140,19 +6152,19 @@ msgstr "Kiểm tra cạc mạng"
 msgid "Network Interface"
 msgstr ""
 
-#: skin_default_skin.xml.h:392
+#: skin_default_skin.xml.h:395
 msgid "Network Interfacelist"
 msgstr "Danh sách giao diện mạng"
 
-#: skin_default_skin.xml.h:393
+#: skin_default_skin.xml.h:396
 msgid "Network Restart"
 msgstr "Khởi động lại mạng"
 
-#: skin_default_skin.xml.h:394
+#: skin_default_skin.xml.h:397
 msgid "Network Scan"
 msgstr "Dò tìm mạng"
 
-#: skin_default_skin.xml.h:395
+#: skin_default_skin.xml.h:398
 msgid "Network Test"
 msgstr "Kiểm tra mạng"
 
@@ -6160,7 +6172,7 @@ msgstr "Kiểm tra mạng"
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: adjust.h:290 skin_default_skin.xml.h:391 tpk_showname.h:87
+#: adjust.h:290 skin_default_skin.xml.h:394 tpk_showname.h:87
 msgid "Networkbrowser"
 msgstr "Trình duyệt mạng"
 
@@ -6212,7 +6224,7 @@ msgstr ""
 msgid "News"
 msgstr "Mới"
 
-#: adjust.h:379 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:396
+#: adjust.h:379 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:399
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr ""
@@ -6231,7 +6243,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: skin_default_skin.xml.h:397
+#: skin_default_skin.xml.h:400
 msgid "Next EPG Time"
 msgstr "sử dụng lịch chương trình"
 
@@ -6239,7 +6251,7 @@ msgstr "sử dụng lịch chương trình"
 msgid "Next Page"
 msgstr ""
 
-#: skin_default_skin.xml.h:398
+#: skin_default_skin.xml.h:401
 msgid "Nfs Server Settings"
 msgstr "Thiết lập Server NFS"
 
@@ -6339,7 +6351,7 @@ msgstr ""
 msgid "No space left on device"
 msgstr "Lỗi ổ cứng/USB"
 
-#: skin_default_skin.xml.h:399
+#: skin_default_skin.xml.h:402
 msgid "Normal/Standby"
 msgstr "Standby"
 
@@ -6510,23 +6522,23 @@ msgstr "k"
 msgid "OK = select image for boot"
 msgstr ""
 
-#: skin_default_skin.xml.h:401
+#: skin_default_skin.xml.h:404
 msgid "OLED selection"
 msgstr ""
 
-#: skin_default_skin.xml.h:402
+#: skin_default_skin.xml.h:405
 msgid "ONID:"
 msgstr ""
 
-#: skin_default_skin.xml.h:409
+#: skin_default_skin.xml.h:412
 msgid "OSD Bottom Overscan"
 msgstr "Quét bên dưới"
 
-#: skin_default_skin.xml.h:410
+#: skin_default_skin.xml.h:413
 msgid "OSD Left Overscan"
 msgstr "Quét bên trái"
 
-#: skin_default_skin.xml.h:411
+#: skin_default_skin.xml.h:414
 msgid "OSD Right Overscan"
 msgstr "Quét bên phải"
 
@@ -6534,11 +6546,11 @@ msgstr "Quét bên phải"
 msgid "OSD Screenshot"
 msgstr ""
 
-#: skin_default_skin.xml.h:412
+#: skin_default_skin.xml.h:415
 msgid "OSD Top Overscan"
 msgstr "Quét bên trên"
 
-#: skin_default_skin.xml.h:413
+#: skin_default_skin.xml.h:416
 msgid "OSD Transparent"
 msgstr "Độ trong suốt"
 
@@ -6569,7 +6581,7 @@ msgstr ""
 msgid "Ok"
 msgstr "k"
 
-#: skin_default_skin.xml.h:400
+#: skin_default_skin.xml.h:403
 msgid "Ok Color"
 msgstr ""
 
@@ -6593,19 +6605,19 @@ msgstr ""
 msgid "Only Boot Overclock"
 msgstr ""
 
-#: skin_default_skin.xml.h:405
+#: skin_default_skin.xml.h:408
 msgid "Only DVBS"
 msgstr "DVB-S"
 
-#: skin_default_skin.xml.h:403
+#: skin_default_skin.xml.h:406
 msgid "Only default FEC"
 msgstr "Mặc định FEC"
 
-#: skin_default_skin.xml.h:404
+#: skin_default_skin.xml.h:407
 msgid "Only default signalrate"
 msgstr " Sử dụng tỷ lệ tín hiệu tiêu chuẩn "
 
-#: skin_default_skin.xml.h:406
+#: skin_default_skin.xml.h:409
 msgid "Only free scan"
 msgstr "Dò các chương trình miễn phí"
 
@@ -6621,7 +6633,7 @@ msgstr ""
 msgid "Open: "
 msgstr ""
 
-#: skin_default_skin.xml.h:407
+#: skin_default_skin.xml.h:410
 msgid "OpenTV EPG"
 msgstr ""
 
@@ -6645,7 +6657,7 @@ msgstr ""
 msgid "Optimize"
 msgstr "Tối ưu hóa"
 
-#: skin_default_skin.xml.h:408
+#: skin_default_skin.xml.h:411
 msgid "Orbital Position:"
 msgstr "Vị trí quỹ đạo:"
 
@@ -6673,12 +6685,12 @@ msgstr ""
 msgid "OverClock Settings"
 msgstr "Thiết lập ép xung"
 
-#: plugins_panel_skin.xml.h:14 skin_default_skin.xml.h:414
+#: plugins_panel_skin.xml.h:14 skin_default_skin.xml.h:417
 #: skins_panel_skin.xml.h:14
 msgid "Overclocking"
 msgstr "Ép xung"
 
-#: skin_default_skin.xml.h:415
+#: skin_default_skin.xml.h:418
 msgid "Overclocking Settings"
 msgstr "Thiết lập ép xung"
 
@@ -6686,12 +6698,12 @@ msgstr "Thiết lập ép xung"
 msgid "P"
 msgstr ""
 
-#: skin_default_skin.xml.h:417
+#: skin_default_skin.xml.h:420
 msgid "PCR PID:"
 msgstr "PID PCR:"
 
 #: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:11
-#: skin_default_skin.xml.h:419 skins_mc_skin.xml.h:39
+#: skin_default_skin.xml.h:422 skins_mc_skin.xml.h:39
 #: skins_tithek_skin.xml.h:11
 msgid "PICTURE"
 msgstr "Hình ảnh"
@@ -6700,27 +6712,27 @@ msgstr "Hình ảnh"
 msgid "PICTURE SETTINGS"
 msgstr "THIẾT LẬP HÌNH ẢNH"
 
-#: skin_default_skin.xml.h:420
+#: skin_default_skin.xml.h:423
 msgid "PIDs"
 msgstr ""
 
-#: skin_default_skin.xml.h:427
+#: skin_default_skin.xml.h:430
 msgid "PIN Settings"
 msgstr "Thiết lập mật khẩu"
 
-#: skin_default_skin.xml.h:423
+#: skin_default_skin.xml.h:426
 msgid "PIN:"
 msgstr "MẬT KHẨU:"
 
-#: skin_default_skin.xml.h:428
+#: skin_default_skin.xml.h:431
 msgid "PIP functions"
 msgstr ""
 
-#: skin_default_skin.xml.h:429
+#: skin_default_skin.xml.h:432
 msgid "PLAY"
 msgstr ""
 
-#: skin_default_skin.xml.h:438
+#: skin_default_skin.xml.h:441
 msgid "PMT PID:"
 msgstr "PID PMT:"
 
@@ -6771,7 +6783,7 @@ msgstr "Đã bắt đầu"
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:416
+#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:419
 #: skins_networkbrowser_skin.xml.h:17
 msgid "Password"
 msgstr "Mật khẩu"
@@ -6981,7 +6993,7 @@ msgstr ""
 msgid "Picons White70 (Hotbird 13.0)"
 msgstr ""
 
-#: skin_default_skin.xml.h:418 tmc.h:417
+#: skin_default_skin.xml.h:421 tmc.h:417
 msgid "Picture"
 msgstr "Hình ảnh"
 
@@ -6993,11 +7005,11 @@ msgstr ""
 msgid "Pid's not ok"
 msgstr "Pid không đúng"
 
-#: skin_default_skin.xml.h:421
+#: skin_default_skin.xml.h:424
 msgid "Pilot"
 msgstr ""
 
-#: skin_default_skin.xml.h:422
+#: skin_default_skin.xml.h:425
 msgid "Pilot:"
 msgstr "Pilot"
 
@@ -7017,15 +7029,15 @@ msgstr ""
 msgid "Pin"
 msgstr ""
 
-#: skin_default_skin.xml.h:424
+#: skin_default_skin.xml.h:427
 msgid "Pin Code"
 msgstr "Mật khẩu"
 
-#: skin_default_skin.xml.h:425
+#: skin_default_skin.xml.h:428
 msgid "Pin Code Channel"
 msgstr "Mật khẩu của chương trình"
 
-#: skin_default_skin.xml.h:426
+#: skin_default_skin.xml.h:429
 msgid "Pin Code menu"
 msgstr "Mật khẩu của menu"
 
@@ -7048,11 +7060,11 @@ msgstr ""
 msgid "Play Movie (URL)"
 msgstr ""
 
-#: skin_default_skin.xml.h:432
+#: skin_default_skin.xml.h:435
 msgid "PlayList"
 msgstr ""
 
-#: skin_default_skin.xml.h:430
+#: skin_default_skin.xml.h:433
 msgid "Playbackbuffer Size"
 msgstr "Kích thước bộ nhớ đệm"
 
@@ -7064,7 +7076,7 @@ msgstr ""
 msgid "Player"
 msgstr ""
 
-#: httpdfunc.h:4374 skin_default_skin.xml.h:431
+#: httpdfunc.h:4374 skin_default_skin.xml.h:434
 msgid "Player for .ts"
 msgstr "phát định dạng .ts"
 
@@ -7086,7 +7098,7 @@ msgstr ""
 msgid "Playlist-Mode"
 msgstr " Danh sách phát – Chế độ"
 
-#: skin_default_skin.xml.h:433
+#: skin_default_skin.xml.h:436
 msgid "Please contact Atemio for activation."
 msgstr ""
 
@@ -7099,7 +7111,7 @@ msgid ""
 "Box will start in few seconds."
 msgstr ""
 
-#: skin_default_skin.xml.h:435
+#: skin_default_skin.xml.h:438
 msgid "Plot"
 msgstr ""
 
@@ -7124,7 +7136,7 @@ msgstr ""
 msgid "Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:436
+#: skin_default_skin.xml.h:439
 msgid "Plugin Button"
 msgstr "Nút màu xanh da trời"
 
@@ -7132,7 +7144,7 @@ msgstr "Nút màu xanh da trời"
 msgid "Plugin Key Action - Setup"
 msgstr "Nút màu xanh da trời – Cài đặt"
 
-#: skin_default_skin.xml.h:437
+#: skin_default_skin.xml.h:440
 msgid "Plugins"
 msgstr "cdắm nguồn"
 
@@ -7140,19 +7152,19 @@ msgstr "cdắm nguồn"
 msgid "Points"
 msgstr ""
 
-#: lnbconfig.h:137 skin_default_skin.xml.h:439
+#: lnbconfig.h:137 skin_default_skin.xml.h:442
 msgid "Polarization"
 msgstr "Phân cực"
 
-#: skin_default_skin.xml.h:440
+#: skin_default_skin.xml.h:443
 msgid "Polarization:"
 msgstr "Phân cực:"
 
-#: skin_default_skin.xml.h:441
+#: skin_default_skin.xml.h:444
 msgid "Policy"
 msgstr "Chính sách"
 
-#: skin_default_skin.xml.h:442
+#: skin_default_skin.xml.h:445
 msgid "Polish"
 msgstr "Tiếng Ba Lan"
 
@@ -7182,7 +7194,7 @@ msgid ""
 "or stream is running !"
 msgstr ""
 
-#: skin_default_skin.xml.h:444
+#: skin_default_skin.xml.h:447
 msgid "Positioner Setup"
 msgstr "thiết lập vị trí"
 
@@ -7224,7 +7236,7 @@ msgid "Power Menu"
 msgstr "Đóng menu"
 
 #: adjust.h:110 adjust.h:116 httpdfunc.h:4060 httpdfunc.h:4096
-#: skin_default_skin.xml.h:445 webif_index.atemio510.h:4
+#: skin_default_skin.xml.h:448 webif_index.atemio510.h:4
 #: webif_index.atemio5200.h:4 webif_index.atemio6000.h:4
 #: webif_index.atemio6100.h:4 webif_index.atemio6200.h:4
 #: webif_index.atemio7600.h:2 webif_index.atemio-nemesis.h:4
@@ -7233,7 +7245,7 @@ msgstr "Đóng menu"
 msgid "Power Off"
 msgstr "tắt nguồn"
 
-#: skin_default_skin.xml.h:447
+#: skin_default_skin.xml.h:450
 msgid "Power Off Timer"
 msgstr "Ausschalttimer"
 
@@ -7249,7 +7261,7 @@ msgstr ""
 msgid "Poweroff"
 msgstr "Tắt nguồn"
 
-#: skin_default_skin.xml.h:446
+#: skin_default_skin.xml.h:449
 msgid "Poweroff Timer"
 msgstr "Tắt bộ định thời"
 
@@ -7279,7 +7291,7 @@ msgstr ""
 msgid "Press Front Key"
 msgstr ""
 
-#: skin_default_skin.xml.h:448
+#: skin_default_skin.xml.h:451
 msgid "Press OK after scan has ended."
 msgstr ""
 
@@ -7291,15 +7303,15 @@ msgstr ""
 msgid "Preview"
 msgstr "trước đó"
 
-#: skin_default_skin.xml.h:450
+#: skin_default_skin.xml.h:453
 msgid "Prime Time"
 msgstr ""
 
-#: skin_default_skin.xml.h:451 system_infos_sysinfo.h:29
+#: skin_default_skin.xml.h:454 system_infos_sysinfo.h:29
 msgid "Processlist"
 msgstr ""
 
-#: skin_default_skin.xml.h:452
+#: skin_default_skin.xml.h:455
 msgid "Program Info"
 msgstr "Thông tin chương trình"
 
@@ -7307,27 +7319,27 @@ msgstr "Thông tin chương trình"
 msgid "Program started successfully"
 msgstr ""
 
-#: skin_default_skin.xml.h:453
+#: skin_default_skin.xml.h:456
 msgid "Progress Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:454
+#: skin_default_skin.xml.h:457
 msgid "Protect Channel"
 msgstr "Khóa chương trình"
 
-#: skin_default_skin.xml.h:455
+#: skin_default_skin.xml.h:458
 msgid "Protect Channel Freetime (min)"
 msgstr "khóa kênh miễn phí"
 
-#: skin_default_skin.xml.h:456
+#: skin_default_skin.xml.h:459
 msgid "Protect Menu"
 msgstr "Khóa menu"
 
-#: skin_default_skin.xml.h:457
+#: skin_default_skin.xml.h:460
 msgid "Protect Modus Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:458
+#: skin_default_skin.xml.h:461
 msgid "Protect Modus Font Color"
 msgstr ""
 
@@ -7335,7 +7347,7 @@ msgstr ""
 msgid "Protect mode"
 msgstr "khóa"
 
-#: skin_default_skin.xml.h:460
+#: skin_default_skin.xml.h:463
 msgid "Prov"
 msgstr "Nhà cung cấp"
 
@@ -7352,7 +7364,7 @@ msgstr ""
 msgid "Provider (DVB-T)"
 msgstr ""
 
-#: skin_default_skin.xml.h:461
+#: skin_default_skin.xml.h:464
 msgid "Provider:"
 msgstr "Nhà cung cấp:"
 
@@ -7413,15 +7425,15 @@ msgstr "ID: "
 msgid "RED"
 msgstr ""
 
-#: skin_default_skin.xml.h:479
+#: skin_default_skin.xml.h:482
 msgid "RELOAD"
 msgstr "TẢI LẠI"
 
-#: skin_default_skin.xml.h:483
+#: skin_default_skin.xml.h:486
 msgid "REMOVE ENTRY"
 msgstr "Hủy bỏ dữ liệu"
 
-#: skin_default_skin.xml.h:485
+#: skin_default_skin.xml.h:488
 msgid "REMOVE STYLE"
 msgstr ""
 
@@ -7429,7 +7441,7 @@ msgstr ""
 msgid "RENAME"
 msgstr ""
 
-#: skin_default_skin.xml.h:492
+#: skin_default_skin.xml.h:495
 msgid "RESET"
 msgstr ""
 
@@ -7445,7 +7457,7 @@ msgstr ""
 msgid "RGUI Client"
 msgstr ""
 
-#: skin_default_skin.xml.h:509
+#: skin_default_skin.xml.h:512
 msgid "RGUID Port"
 msgstr "Cổng HTPTD"
 
@@ -7454,7 +7466,7 @@ msgid "RS232"
 msgstr ""
 
 #: channellist.h:737 channellist.h:1802 httpdfunc.h:292 httpdfunc.h:701
-#: scan.h:546 skin_default_skin.xml.h:462 webif_index.atemio5200.h:69
+#: scan.h:546 skin_default_skin.xml.h:465 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
 #: webif_index.atemio-nemesis.h:125 webif_index.dm7020hd.h:69
@@ -7500,7 +7512,7 @@ msgstr "Ngẫu nhiên"
 msgid "Random-On"
 msgstr "Ngẫu nhiên-Bật"
 
-#: skin_default_skin.xml.h:463
+#: skin_default_skin.xml.h:466
 msgid "Rating"
 msgstr "Đang bắt đầu"
 
@@ -7570,7 +7582,7 @@ msgstr "Bạn muốn khôi phục lại các thiết lập mặc định?"
 msgid "Really stop download ?"
 msgstr ""
 
-#: skin_default_skin.xml.h:474
+#: skin_default_skin.xml.h:477
 msgid "Rec Progress Color"
 msgstr ""
 
@@ -7596,7 +7608,7 @@ msgstr "Đầu thu đang khởi động lại !!!"
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
-#: skin_default_skin.xml.h:464
+#: skin_default_skin.xml.h:467
 msgid "Receiver unlock"
 msgstr "Khóa đầu vào"
 
@@ -7624,7 +7636,7 @@ msgstr "Ghi"
 msgid "Record / Timeshift / Stream"
 msgstr ""
 
-#: httpdfunc.h:4216 skin_default_skin.xml.h:465
+#: httpdfunc.h:4216 skin_default_skin.xml.h:468
 msgid "Record Forerun (min)"
 msgstr "Thời gian ghi (phút)"
 
@@ -7632,15 +7644,15 @@ msgstr "Thời gian ghi (phút)"
 msgid "Record Max Sectors"
 msgstr "record_max_sectors "
 
-#: httpdfunc.h:4248 skin_default_skin.xml.h:468
+#: httpdfunc.h:4248 skin_default_skin.xml.h:471
 msgid "Record Overrun (min)"
 msgstr "Thời gian theo dõi (phút)"
 
-#: skin_default_skin.xml.h:470
+#: skin_default_skin.xml.h:473
 msgid "Record Path"
 msgstr "Thư mục chứa bản ghi"
 
-#: skin_default_skin.xml.h:471
+#: skin_default_skin.xml.h:474
 msgid "Record Path settings"
 msgstr "thiết lập ghi"
 
@@ -7648,11 +7660,11 @@ msgstr "thiết lập ghi"
 msgid "Record Player"
 msgstr ""
 
-#: httpdfunc.h:4171 skin_default_skin.xml.h:472
+#: httpdfunc.h:4171 skin_default_skin.xml.h:475
 msgid "Record Split Size"
 msgstr "Kích thước chia bản ghi"
 
-#: skin_default_skin.xml.h:473
+#: skin_default_skin.xml.h:476
 msgid "Record Timer"
 msgstr "Bộ đinh thời ghi"
 
@@ -7664,7 +7676,7 @@ msgstr "Thư mục chứa bản ghi"
 msgid "Record in progress"
 msgstr "Đang ghi tên"
 
-#: skin_default_skin.xml.h:469
+#: skin_default_skin.xml.h:472
 msgid "Record path"
 msgstr "Thư mục chứa bản ghi"
 
@@ -7672,11 +7684,11 @@ msgstr "Thư mục chứa bản ghi"
 msgid "Record started"
 msgstr "Bắt đầu ghi"
 
-#: httpdfunc.h:4625 skin_default_skin.xml.h:466
+#: httpdfunc.h:4625 skin_default_skin.xml.h:469
 msgid "Recording name"
 msgstr "Đang ghi tên"
 
-#: skin_default_skin.xml.h:467
+#: skin_default_skin.xml.h:470
 msgid "Recordlist"
 msgstr ""
 
@@ -7699,7 +7711,7 @@ msgstr ""
 msgid "Red"
 msgstr ""
 
-#: skin_default_skin.xml.h:475
+#: skin_default_skin.xml.h:478
 msgid "Red Button"
 msgstr "Nút màu đỏ"
 
@@ -7707,7 +7719,7 @@ msgstr "Nút màu đỏ"
 msgid "Red Key Action - Setup"
 msgstr "Rote-Taste Belegungsmenü "
 
-#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:476
+#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:479
 #: skins_tithek_skin.xml.h:13
 msgid "Red-Menu"
 msgstr "Đỏ-Menu"
@@ -7716,7 +7728,7 @@ msgstr "Đỏ-Menu"
 msgid "Reduce Standby frequency"
 msgstr "Giảm tần số ở chế độ chờ"
 
-#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:477
+#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:480
 #: skins_wm2014_skin.xml.h:12 softcam.h:296
 msgid "Refresh"
 msgstr "Làm mới"
@@ -7728,11 +7740,11 @@ msgstr "Làm mới"
 msgid "Release:"
 msgstr ""
 
-#: skin_default_skin.xml.h:478
+#: skin_default_skin.xml.h:481
 msgid "Released"
 msgstr ""
 
-#: skin_default_skin.xml.h:480
+#: skin_default_skin.xml.h:483
 msgid "Remember film position"
 msgstr ""
 
@@ -7748,7 +7760,7 @@ msgstr ""
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: httpdfunc.h:4046 skin_default_skin.xml.h:481
+#: httpdfunc.h:4046 skin_default_skin.xml.h:484
 msgid "Remotecontrol Power Aktion"
 msgstr ""
 
@@ -7768,7 +7780,7 @@ msgstr ""
 msgid "Remove Skinstyle"
 msgstr ""
 
-#: skin_default_skin.xml.h:482
+#: skin_default_skin.xml.h:485
 msgid "Remove empty Bouquet"
 msgstr ""
 
@@ -7792,15 +7804,15 @@ msgstr "Đã hủy thành công!"
 msgid "Remove this Favorite ?"
 msgstr "Hủy bỏ ưu thích này ?"
 
-#: skin_default_skin.xml.h:486
+#: skin_default_skin.xml.h:489
 msgid "Remove unused Channels in Bouquets"
 msgstr ""
 
-#: skin_default_skin.xml.h:487
+#: skin_default_skin.xml.h:490
 msgid "Remove unused Satellites/Providers"
 msgstr ""
 
-#: skin_default_skin.xml.h:488
+#: skin_default_skin.xml.h:491
 msgid "Remove unused Transponder on used Satellites/Providers"
 msgstr ""
 
@@ -7815,12 +7827,12 @@ msgstr "Đổi tên"
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1083
 #: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:436
-#: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skin_default_skin.xml.h:490
+#: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skin_default_skin.xml.h:493
 #: skins_mc_skin.xml.h:45
 msgid "Repeat"
 msgstr "Lặp lại"
 
-#: skin_default_skin.xml.h:491
+#: skin_default_skin.xml.h:494
 msgid "Repeat type"
 msgstr "Chế độ lập lại"
 
@@ -7838,17 +7850,17 @@ msgstr ""
 msgid "Reset your Skin Settings ?"
 msgstr ""
 
-#: skin_default_skin.xml.h:493 webif_index.atemio7600.h:18
+#: skin_default_skin.xml.h:496 webif_index.atemio7600.h:18
 #: webif_index.atemio7600.h:118 webif_rc.atemio520.h:4 webif_rc.atemio530.h:4
 #: webif_rc.atemio7600.h:51
 msgid "Resolution"
 msgstr ""
 
-#: skin_default_skin.xml.h:495
+#: skin_default_skin.xml.h:498
 msgid "Resolution (current)"
 msgstr "Độ phân giải"
 
-#: skin_default_skin.xml.h:496
+#: skin_default_skin.xml.h:499
 msgid "Resolution (default)"
 msgstr " Độ phân giải (mặc định)"
 
@@ -7856,11 +7868,11 @@ msgstr " Độ phân giải (mặc định)"
 msgid "Resolution Settings"
 msgstr "Thiết lập độ phân giải "
 
-#: skin_default_skin.xml.h:494
+#: skin_default_skin.xml.h:497
 msgid "Resolution:"
 msgstr "Độ phân giải"
 
-#: adjust.h:112 httpdfunc.h:4074 skin_default_skin.xml.h:497 softcam.h:295
+#: adjust.h:112 httpdfunc.h:4074 skin_default_skin.xml.h:500 softcam.h:295
 #: softcam.h:463 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
@@ -7881,27 +7893,27 @@ msgstr "Khởi động lại mạng?"
 msgid "Restart Oscam ?"
 msgstr "Khởi động lại"
 
-#: httpdfunc.h:6680 skin_default_skin.xml.h:498
+#: httpdfunc.h:6680 skin_default_skin.xml.h:501
 msgid "Restore"
 msgstr "Khôi phục"
 
-#: httpdfunc.h:6892 httpdfunc.h:6951 skin_default_skin.xml.h:499
+#: httpdfunc.h:6892 httpdfunc.h:6951 skin_default_skin.xml.h:502
 msgid "Restore Default Bouquets"
 msgstr ""
 
-#: httpdfunc.h:6887 httpdfunc.h:6939 skin_default_skin.xml.h:501
+#: httpdfunc.h:6887 httpdfunc.h:6939 skin_default_skin.xml.h:504
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-#: httpdfunc.h:6897 httpdfunc.h:6961 skin_default_skin.xml.h:500
+#: httpdfunc.h:6897 httpdfunc.h:6961 skin_default_skin.xml.h:503
 msgid "Restore Default Channels"
 msgstr ""
 
-#: httpdfunc.h:6902 httpdfunc.h:6971 skin_default_skin.xml.h:502
+#: httpdfunc.h:6902 httpdfunc.h:6971 skin_default_skin.xml.h:505
 msgid "Restore Default Providers"
 msgstr ""
 
-#: httpdfunc.h:6907 httpdfunc.h:6981 skin_default_skin.xml.h:503
+#: httpdfunc.h:6907 httpdfunc.h:6981 skin_default_skin.xml.h:506
 msgid "Restore Default Sats"
 msgstr ""
 
@@ -7914,7 +7926,7 @@ msgid "Restore channel settings"
 msgstr ""
 
 #: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:63
-#: restoredefault.h:67 skin_default_skin.xml.h:504 webif_settings.h:3
+#: restoredefault.h:67 skin_default_skin.xml.h:507 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Thiết lập mặc định"
 
@@ -7930,7 +7942,7 @@ msgstr ""
 msgid "Results"
 msgstr "Liên kết được tìm thấy"
 
-#: httpdfunc.h:4604 skin_default_skin.xml.h:505
+#: httpdfunc.h:4604 skin_default_skin.xml.h:508
 msgid "Resync Recording immediately"
 msgstr "Đồng bộ khi ghi"
 
@@ -7958,23 +7970,23 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: skin_default_skin.xml.h:510
+#: skin_default_skin.xml.h:513
 msgid "Rolloff"
 msgstr " Roll off "
 
-#: skin_default_skin.xml.h:511
+#: skin_default_skin.xml.h:514
 msgid "Rolloff:"
 msgstr " Roll off:"
 
-#: skin_default_skin.xml.h:512
+#: skin_default_skin.xml.h:515
 msgid "Rotor Position"
 msgstr "Vị trí roto"
 
-#: skin_default_skin.xml.h:513
+#: skin_default_skin.xml.h:516
 msgid "Rotor Settings"
 msgstr "Thiết lập roto"
 
-#: skin_default_skin.xml.h:514
+#: skin_default_skin.xml.h:517
 msgid "Runtime"
 msgstr "thời gian"
 
@@ -7982,7 +7994,7 @@ msgstr "thời gian"
 msgid "Runtime:"
 msgstr "thời gian"
 
-#: skin_default_skin.xml.h:515
+#: skin_default_skin.xml.h:518
 msgid "Russian"
 msgstr "Tiếng Nga"
 
@@ -7990,7 +8002,7 @@ msgstr "Tiếng Nga"
 msgid "S"
 msgstr ""
 
-#: blindscanadjust.h:120 skin_default_skin.xml.h:517 webif_channellist.h:2
+#: blindscanadjust.h:120 skin_default_skin.xml.h:520 webif_channellist.h:2
 msgid "SAT"
 msgstr "Vệ tinh"
 
@@ -7998,15 +8010,15 @@ msgstr "Vệ tinh"
 msgid "SAT/Cable 19.2 13.0 KabelD | 03.08.2016"
 msgstr ""
 
-#: httpdfunc.h:4859 skin_default_skin.xml.h:518
+#: httpdfunc.h:4859 skin_default_skin.xml.h:521
 msgid "SATA Connector"
 msgstr ""
 
-#: skin_default_skin.xml.h:520
+#: skin_default_skin.xml.h:523
 msgid "SATCR Frequency"
 msgstr "Tần số"
 
-#: skin_default_skin.xml.h:521
+#: skin_default_skin.xml.h:524
 msgid "SATCR Number"
 msgstr ""
 
@@ -8015,7 +8027,7 @@ msgstr ""
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:10
 #: plugins_lcdsamsung_skin.xml.h:13 plugins_panel_skin.xml.h:16
 #: plugins_stock_skin.xml.h:4 plugins_stopifnotused_skin.xml.h:4
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:527
+#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:530
 #: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:17
 #: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
 #: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:10
@@ -8025,11 +8037,11 @@ msgstr ""
 msgid "SAVE"
 msgstr "Lưu"
 
-#: skin_default_skin.xml.h:529
+#: skin_default_skin.xml.h:532
 msgid "SAVETRANSPONDER"
 msgstr ""
 
-#: skin_default_skin.xml.h:536
+#: skin_default_skin.xml.h:539
 msgid "SCANSTART"
 msgstr "bắt đầu"
 
@@ -8039,7 +8051,7 @@ msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
 #: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
-#: skin_default_skin.xml.h:546 skins_imdbapi_skin.xml.h:8
+#: skin_default_skin.xml.h:549 skins_imdbapi_skin.xml.h:8
 #: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
@@ -8049,11 +8061,11 @@ msgstr "dò"
 msgid "SELECT"
 msgstr "LỰA CHỌN"
 
-#: skin_default_skin.xml.h:551
+#: skin_default_skin.xml.h:554
 msgid "SEND"
 msgstr ""
 
-#: skin_default_skin.xml.h:573
+#: skin_default_skin.xml.h:576
 msgid "SID:"
 msgstr ""
 
@@ -8065,7 +8077,7 @@ msgstr ""
 msgid "SMTP"
 msgstr ""
 
-#: skin_default_skin.xml.h:587
+#: skin_default_skin.xml.h:590
 msgid "SNR:"
 msgstr ""
 
@@ -8113,7 +8125,7 @@ msgstr ""
 msgid "SR"
 msgstr "R"
 
-#: skin_default_skin.xml.h:598
+#: skin_default_skin.xml.h:601
 msgid "SSID"
 msgstr ""
 
@@ -8121,7 +8133,7 @@ msgstr ""
 #: plugins_instar_skin.xml.h:16 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:16
 #: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
-#: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:604
+#: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:607
 #: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
 #: skins_instar_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:11
 #: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:16
@@ -8143,13 +8155,13 @@ msgid "STICK "
 msgstr ""
 
 #: plugins_dlna_skin.xml.h:13 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:612
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:615
 #: skins_dlna_skin.xml.h:13 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
 msgstr ""
 
-#: rectimer.h:1567 rectimer.h:1569 skin_default_skin.xml.h:613
+#: rectimer.h:1567 rectimer.h:1569 skin_default_skin.xml.h:616
 msgid "STOP/START"
 msgstr ""
 
@@ -8169,7 +8181,7 @@ msgstr ""
 msgid "Samba Server"
 msgstr ""
 
-#: skin_default_skin.xml.h:516
+#: skin_default_skin.xml.h:519
 msgid "Samba Server Settings"
 msgstr "Thiết lập server Samba"
 
@@ -8189,11 +8201,11 @@ msgstr "Vệ tinh"
 msgid "Sat Astra ORF | 08.01.2015 (Olbord)"
 msgstr ""
 
-#: skin_default_skin.xml.h:519
+#: skin_default_skin.xml.h:522
 msgid "Sat Config"
 msgstr "Thiết lập vệ tinh"
 
-#: skin_default_skin.xml.h:524
+#: skin_default_skin.xml.h:527
 msgid "Sat Finder"
 msgstr "Tìm thấy vệ tinh"
 
@@ -8249,7 +8261,7 @@ msgstr "số lượng vệ tinh: "
 msgid "Satelite Type"
 msgstr "Loại vệ tinh"
 
-#: skin_default_skin.xml.h:522
+#: skin_default_skin.xml.h:525
 msgid "Satellite"
 msgstr "Vệ tinh"
 
@@ -8264,15 +8276,15 @@ msgstr ""
 msgid "Satellites"
 msgstr "Vệ tinh"
 
-#: skin_default_skin.xml.h:523
+#: skin_default_skin.xml.h:526
 msgid "Satfinder"
 msgstr ""
 
-#: skin_default_skin.xml.h:525
+#: skin_default_skin.xml.h:528
 msgid "Saturation"
 msgstr " Saturation "
 
-#: global.h:6252 global.h:6262 rectimer.h:1105 skin_default_skin.xml.h:526
+#: global.h:6252 global.h:6262 rectimer.h:1105 skin_default_skin.xml.h:529
 msgid "Saturday"
 msgstr "Thứ bảy"
 
@@ -8280,7 +8292,7 @@ msgstr "Thứ bảy"
 msgid "Save"
 msgstr "Lưu"
 
-#: autotimer.c:603 menu.h:984 menu.h:986 skin_default_skin.xml.h:528
+#: autotimer.c:603 menu.h:984 menu.h:986 skin_default_skin.xml.h:531
 msgid "Save Settings"
 msgstr "Lưu các thiết lập"
 
@@ -8288,19 +8300,19 @@ msgstr "Lưu các thiết lập"
 msgid "Scan"
 msgstr "Dò"
 
-#: skin_default_skin.xml.h:530
+#: skin_default_skin.xml.h:533
 msgid "Scan Auto"
 msgstr ""
 
-#: skin_default_skin.xml.h:531
+#: skin_default_skin.xml.h:534
 msgid "Scan Auto Config"
 msgstr ""
 
-#: skin_default_skin.xml.h:534
+#: skin_default_skin.xml.h:537
 msgid "Scan Manual"
 msgstr ""
 
-#: skin_default_skin.xml.h:535
+#: skin_default_skin.xml.h:538
 msgid "Scan Manual Config"
 msgstr ""
 
@@ -8316,11 +8328,11 @@ msgstr ""
 msgid "Scan is not allowed if record or stream is running !"
 msgstr "Cấu hình tuner này không cho phép ghi"
 
-#: skin_default_skin.xml.h:533
+#: skin_default_skin.xml.h:536
 msgid "Scan locking"
 msgstr "Cấu hình dò"
 
-#: skin_default_skin.xml.h:532
+#: skin_default_skin.xml.h:535
 msgid "ScanList"
 msgstr "Dò"
 
@@ -8345,7 +8357,7 @@ msgstr ""
 msgid "Screensaver"
 msgstr "màn hình chờ"
 
-#: skin_default_skin.xml.h:538
+#: skin_default_skin.xml.h:541
 msgid "Screensaver Adjust"
 msgstr "Điều chỉnh màn hình chờ"
 
@@ -8523,7 +8535,7 @@ msgstr "Không có đầu ra."
 #: nowtv.h:133 nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
-#: skin_default_skin.xml.h:545 solarmovie.h:138 solarmovie.h:140
+#: skin_default_skin.xml.h:548 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:450 tithek_global.h:452 tithek_global.h:873
 #: tithek_global.h:875 tithek.h:1510 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
@@ -8649,7 +8661,7 @@ msgstr ""
 msgid "Season"
 msgstr ""
 
-#: httpdfunc.h:3884 skin_default_skin.xml.h:547
+#: httpdfunc.h:3884 skin_default_skin.xml.h:550
 msgid "Second Infobar"
 msgstr "Thanh thông tin thứ hai"
 
@@ -8661,11 +8673,11 @@ msgstr "thực thi"
 msgid "Select Language"
 msgstr ""
 
-#: skin_default_skin.xml.h:549
+#: skin_default_skin.xml.h:552
 msgid "Select Path"
 msgstr "Lựa chọn đường dẫn"
 
-#: skin_default_skin.xml.h:550
+#: skin_default_skin.xml.h:553
 msgid "Select Unicable Manufacturer"
 msgstr "Nhà sản xuất cáp đơn"
 
@@ -8689,7 +8701,7 @@ msgstr ""
 msgid "Select a function for the red button"
 msgstr ""
 
-#: skin_default_skin.xml.h:548
+#: skin_default_skin.xml.h:551
 msgid "Select backup:"
 msgstr "Chọn sao lưu:"
 
@@ -8713,7 +8725,7 @@ msgstr ""
 msgid "Send Telnet Command"
 msgstr ""
 
-#: skin_default_skin.xml.h:552
+#: skin_default_skin.xml.h:555
 msgid "Send all CAID to modules"
 msgstr "Gửi tất cả ID CA tới môđun"
 
@@ -8725,7 +8737,7 @@ msgstr "Bạn có muốn chuyển chế độ chờ không?"
 msgid "September"
 msgstr ""
 
-#: skin_default_skin.xml.h:553
+#: skin_default_skin.xml.h:556
 msgid "Serial Input"
 msgstr "Đầu vào nối tiếp"
 
@@ -8762,32 +8774,32 @@ msgstr "Tên server"
 msgid "Server Name"
 msgstr "Tên server"
 
-#: httpdfunc.h:6562 skin_default_skin.xml.h:554 webif_info.h:1
+#: httpdfunc.h:6562 skin_default_skin.xml.h:557 webif_info.h:1
 msgid "Service"
 msgstr "Dịch vụ"
 
-#: skin_default_skin.xml.h:555
+#: skin_default_skin.xml.h:558
 msgid "Serviceinfo"
 msgstr ""
 
-#: httpdfunc.h:4420 skin_default_skin.xml.h:556
+#: httpdfunc.h:4420 skin_default_skin.xml.h:559
 msgid "Set action after rec"
 msgstr "thiết lập sau khi ghi"
 
-#: skin_default_skin.xml.h:558
+#: skin_default_skin.xml.h:561
 msgid "Set standby A/V Receiver"
 msgstr ""
 
-#: skin_default_skin.xml.h:559
+#: skin_default_skin.xml.h:562
 msgid "Set standby TV"
 msgstr ""
 
-#: skin_default_skin.xml.h:557
+#: skin_default_skin.xml.h:560
 msgid "Set standby all connected devices"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:50 plugins_panel_skin.xml.h:17
-#: plugins_panel_skin.xml.h:27 skin_default_skin.xml.h:561
+#: plugins_panel_skin.xml.h:27 skin_default_skin.xml.h:564
 #: skins_mc_skin.xml.h:50 skins_panel_skin.xml.h:17 skins_panel_skin.xml.h:27
 #: webif_index.atemio510.h:14 webif_index.atemio5200.h:14
 #: webif_index.atemio6000.h:14 webif_index.atemio6100.h:14
@@ -8822,7 +8834,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
-#: httpdfunc.h:6669 skin_default_skin.xml.h:562 webif_system.h:4
+#: httpdfunc.h:6669 skin_default_skin.xml.h:565 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Thiết lập sao lưu/khôi phục lại"
 
@@ -8834,11 +8846,11 @@ msgstr "Đã lưu các thiết lập"
 msgid "Settings succesfully saved"
 msgstr ""
 
-#: skin_default_skin.xml.h:563
+#: skin_default_skin.xml.h:566
 msgid "Setup HDMI-CEC"
 msgstr ""
 
-#: skin_default_skin.xml.h:564
+#: skin_default_skin.xml.h:567
 msgid "Setup PIP"
 msgstr ""
 
@@ -8857,15 +8869,15 @@ msgstr ""
 msgid "Should Timeshift File deleted ?"
 msgstr "Xóa các tập tin timeshift?"
 
-#: skin_default_skin.xml.h:565
+#: skin_default_skin.xml.h:568
 msgid "Show EPG screen (EPG button)"
 msgstr "Hiển thị EPG (nút EPG)"
 
-#: skin_default_skin.xml.h:566
+#: skin_default_skin.xml.h:569
 msgid "Show HDD freesize"
 msgstr ""
 
-#: skin_default_skin.xml.h:571
+#: skin_default_skin.xml.h:574
 msgid "Show Modules"
 msgstr "Các module"
 
@@ -8885,23 +8897,23 @@ msgstr "hiển thị ảnh"
 msgid "Show Signal Infos"
 msgstr ""
 
-#: httpdfunc.h:4456 skin_default_skin.xml.h:572
+#: httpdfunc.h:4456 skin_default_skin.xml.h:575
 msgid "Show Timeline in Channellist"
 msgstr "đưa thanh thời gian ở danh sách kênh"
 
-#: httpdfunc.h:4669 skin_default_skin.xml.h:567
+#: httpdfunc.h:4669 skin_default_skin.xml.h:570
 msgid "Show hidden files"
 msgstr "Đưa các file ẩn"
 
-#: skin_default_skin.xml.h:569
+#: skin_default_skin.xml.h:572
 msgid "Show in Standby"
 msgstr "Hiển thị chế độ chờ"
 
-#: skin_default_skin.xml.h:570
+#: skin_default_skin.xml.h:573
 msgid "Show in VFD"
 msgstr "Hiển thị trong VFD"
 
-#: httpdfunc.h:4720 skin_default_skin.xml.h:568
+#: httpdfunc.h:4720 skin_default_skin.xml.h:571
 msgid "Show infobar on program change"
 msgstr "Hiển thị thanh thông tin khi thay đổi chương trình"
 
@@ -8916,16 +8928,16 @@ msgstr "Đưa vị trí quét cuối cùng"
 msgid "Show/Hide Remote Control"
 msgstr ""
 
-#: skin_default_skin.xml.h:574
+#: skin_default_skin.xml.h:577
 msgid "Signal:"
 msgstr "Tín hiệu:"
 
-#: epg.h:183 skin_default_skin.xml.h:576
+#: epg.h:183 skin_default_skin.xml.h:579
 msgid "Single (EPG)"
 msgstr "EPG"
 
 #: epgsettings.h:140 epgsettings.h:181 httpdfunc.h:302
-#: skin_default_skin.xml.h:575
+#: skin_default_skin.xml.h:578
 msgid "Single EPG"
 msgstr "EPG"
 
@@ -8949,7 +8961,7 @@ msgstr "Một dịch vụ"
 msgid "Single Transponder"
 msgstr "Một bộ phát đáp"
 
-#: skin_default_skin.xml.h:578
+#: skin_default_skin.xml.h:581
 msgid "Skin"
 msgstr "Nền"
 
@@ -8961,7 +8973,7 @@ msgstr ""
 msgid "Skin 0Acht5Zehn Multi (grey/black/white) default picons"
 msgstr ""
 
-#: skin_default_skin.xml.h:579 webif_settings.h:2
+#: skin_default_skin.xml.h:582 webif_settings.h:2
 msgid "Skin Adjust"
 msgstr "Điều chỉnh nền"
 
@@ -9001,7 +9013,7 @@ msgstr ""
 msgid "Skin Nogfx Multi (black/grey) default picons"
 msgstr ""
 
-#: skin_default_skin.xml.h:580
+#: skin_default_skin.xml.h:583
 msgid "Skin Select"
 msgstr "Chọn nền"
 
@@ -9021,7 +9033,7 @@ msgstr "Chọn nền"
 msgid "Skin SmartTV for alternate picons"
 msgstr ""
 
-#: skin_default_skin.xml.h:581
+#: skin_default_skin.xml.h:584
 msgid "Skin Style selection"
 msgstr ""
 
@@ -9045,19 +9057,19 @@ msgstr ""
 msgid "Skinstyle Name"
 msgstr ""
 
-#: httpdfunc.h:4280 skin_default_skin.xml.h:582
+#: httpdfunc.h:4280 skin_default_skin.xml.h:585
 msgid "Skip 1/3"
 msgstr "Đợi 1/3"
 
-#: httpdfunc.h:4312 skin_default_skin.xml.h:583
+#: httpdfunc.h:4312 skin_default_skin.xml.h:586
 msgid "Skip 4/6"
 msgstr "Đợi 4/6"
 
-#: httpdfunc.h:4344 skin_default_skin.xml.h:584
+#: httpdfunc.h:4344 skin_default_skin.xml.h:587
 msgid "Skip 7/9"
 msgstr "Đợi 7/9"
 
-#: skin_default_skin.xml.h:585
+#: skin_default_skin.xml.h:588
 msgid "Skip privat CA descriptor"
 msgstr ""
 
@@ -9083,7 +9095,7 @@ msgstr "Tắt bộ định thời"
 msgid "Slot "
 msgstr ""
 
-#: skin_default_skin.xml.h:586
+#: skin_default_skin.xml.h:589
 msgid "SmartCard Reader"
 msgstr ""
 
@@ -9104,11 +9116,11 @@ msgid "Social Network Client for Facebook."
 msgstr ""
 
 #: keyactions.h:77 settings_bluebutton.h:14 settings_pluginbutton.h:15
-#: settings_redbutton.h:15 skin_default_skin.xml.h:588
+#: settings_redbutton.h:15 skin_default_skin.xml.h:591
 msgid "Softcam Panel"
 msgstr ""
 
-#: skin_default_skin.xml.h:589
+#: skin_default_skin.xml.h:592
 msgid "Softcam Selection"
 msgstr "Chọn thiết bị đọc"
 
@@ -9134,7 +9146,7 @@ msgstr "Song Title Text"
 msgid "Sort"
 msgstr "Sắp xếp"
 
-#: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:590 skins_mc_skin.xml.h:55
+#: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:593 skins_mc_skin.xml.h:55
 msgid "Sorting"
 msgstr "Sắp xếp"
 
@@ -9142,11 +9154,11 @@ msgstr "Sắp xếp"
 msgid "Sound"
 msgstr "Âm thanh"
 
-#: skin_default_skin.xml.h:593
+#: skin_default_skin.xml.h:596
 msgid "Sound amplifier (TV-Modus / internal Player)"
 msgstr ""
 
-#: skin_default_skin.xml.h:592
+#: skin_default_skin.xml.h:595
 msgid "Sound amplifier (external Player)"
 msgstr ""
 
@@ -9154,7 +9166,7 @@ msgstr ""
 msgid "Space"
 msgstr "Không gian"
 
-#: skin_default_skin.xml.h:594
+#: skin_default_skin.xml.h:597
 msgid "Spanish"
 msgstr "Español"
 
@@ -9162,11 +9174,11 @@ msgstr "Español"
 msgid "Spezialfunctions unlocked, no input required"
 msgstr "Chức năng đã được bật, không có đầu vào"
 
-#: httpdfunc.h:3789 skin_default_skin.xml.h:596
+#: httpdfunc.h:3789 skin_default_skin.xml.h:599
 msgid "Spinnerspeed"
 msgstr "Tốc độ quay"
 
-#: httpdfunc.h:3821 skin_default_skin.xml.h:597
+#: httpdfunc.h:3821 skin_default_skin.xml.h:600
 msgid "Spinnertime"
 msgstr "Thời gian quay"
 
@@ -9174,12 +9186,12 @@ msgstr "Thời gian quay"
 msgid "Sport"
 msgstr "Cổng ftp"
 
-#: skin_default_skin.xml.h:602
+#: skin_default_skin.xml.h:605
 msgid "StandBy Mode"
 msgstr "Chế độ standby"
 
 #: adjust.h:111 adjust.h:117 httpdfunc.h:4067 httpdfunc.h:4103
-#: powerofftimer.h:118 skin_default_skin.xml.h:600 webif_index.atemio510.h:7
+#: powerofftimer.h:118 skin_default_skin.xml.h:603 webif_index.atemio510.h:7
 #: webif_index.atemio5200.h:7 webif_index.atemio6000.h:7
 #: webif_index.atemio6100.h:7 webif_index.atemio6200.h:7
 #: webif_index.atemio7600.h:5 webif_index.atemio-nemesis.h:7
@@ -9188,11 +9200,11 @@ msgstr "Chế độ standby"
 msgid "Standby"
 msgstr ""
 
-#: skin_default_skin.xml.h:603
+#: skin_default_skin.xml.h:606
 msgid "Standby / Poweroff"
 msgstr "Standby / Tắt nguồn"
 
-#: skin_default_skin.xml.h:601
+#: skin_default_skin.xml.h:604
 msgid "Standby Brightness"
 msgstr "Độ sáng ở chế độ standby"
 
@@ -9205,11 +9217,11 @@ msgstr "Tần số standby"
 msgid "Start AutoTimer"
 msgstr ""
 
-#: skin_default_skin.xml.h:605
+#: skin_default_skin.xml.h:608
 msgid "Start HTTPD"
 msgstr "Bắt đầu HTTPD"
 
-#: skin_default_skin.xml.h:607
+#: skin_default_skin.xml.h:610
 msgid "Start RGUID"
 msgstr "Bắt đầu HTTPD"
 
@@ -9255,7 +9267,7 @@ msgid ""
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
 
-#: plugins_dlna_skin.xml.h:12 skin_default_skin.xml.h:606
+#: plugins_dlna_skin.xml.h:12 skin_default_skin.xml.h:609
 #: skins_dlna_skin.xml.h:12
 msgid "Start on boot"
 msgstr "Bắt đầu khởi động"
@@ -9280,11 +9292,11 @@ msgstr "cập nhật"
 msgid "Status: "
 msgstr ""
 
-#: skin_default_skin.xml.h:608
+#: skin_default_skin.xml.h:611
 msgid "Step frequency"
 msgstr "dịch tần số"
 
-#: skin_default_skin.xml.h:609
+#: skin_default_skin.xml.h:612
 msgid "Step signalrate"
 msgstr "dịch tốc độ tín hiệu"
 
@@ -9320,7 +9332,7 @@ msgstr ""
 msgid "Stop if not used"
 msgstr ""
 
-#: skin_default_skin.xml.h:614
+#: skin_default_skin.xml.h:617
 msgid "Storage position"
 msgstr "vị trí lưu trữ"
 
@@ -9341,11 +9353,11 @@ msgstr ""
 msgid "Stream Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:616
+#: skin_default_skin.xml.h:619
 msgid "Stream Path"
 msgstr ""
 
-#: skin_default_skin.xml.h:617 webif_streamconfig.h:6
+#: skin_default_skin.xml.h:620 webif_streamconfig.h:6
 msgid "Stream Port"
 msgstr ""
 
@@ -9358,7 +9370,7 @@ msgstr ""
 msgid "Streaminfo"
 msgstr "Streaming"
 
-#: httpdfunc.h:5545 skin_default_skin.xml.h:615 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5545 skin_default_skin.xml.h:618 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr ""
 
@@ -9391,11 +9403,11 @@ msgstr "Loại"
 msgid "Subchannel"
 msgstr "Các chương trình phụ"
 
-#: skin_default_skin.xml.h:618
+#: skin_default_skin.xml.h:621
 msgid "Subservices"
 msgstr "Các dịch vụ phụ"
 
-#: adjust.h:354 skin_default_skin.xml.h:619 webif_index.atemio5200.h:65
+#: adjust.h:354 skin_default_skin.xml.h:622 webif_index.atemio5200.h:65
 #: webif_index.atemio5200.h:121 webif_index.atemio6200.h:65
 #: webif_index.atemio6200.h:121 webif_index.atemio7600.h:27
 #: webif_index.atemio7600.h:79 webif_index.atemio-nemesis.h:65
@@ -9422,7 +9434,7 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: global.h:6253 global.h:6263 rectimer.h:1106 skin_default_skin.xml.h:620
+#: global.h:6253 global.h:6263 rectimer.h:1106 skin_default_skin.xml.h:623
 msgid "Sunday"
 msgstr "Chủ nhật"
 
@@ -9443,7 +9455,7 @@ msgid "Svn Changelog Full"
 msgstr ""
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:622 system_infos_sysinfo.h:25
+#: skin_default_skin.xml.h:625 system_infos_sysinfo.h:25
 #: webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Trao đổi"
@@ -9456,43 +9468,43 @@ msgstr "swap_max_sectors"
 msgid "Swap Size"
 msgstr "Trao đổi"
 
-#: skin_default_skin.xml.h:623
+#: skin_default_skin.xml.h:626
 msgid "Switch TV to the correct input"
 msgstr ""
 
-#: skin_default_skin.xml.h:625
+#: skin_default_skin.xml.h:628
 msgid "Symbol rate:"
 msgstr "Tốc độ mẫu:"
 
-#: skin_default_skin.xml.h:624
+#: skin_default_skin.xml.h:627
 msgid "Symbolrate"
 msgstr " Tốc độ mẫu"
 
-#: skin_default_skin.xml.h:626
+#: skin_default_skin.xml.h:629
 msgid "Sysinfo"
 msgstr "Thông tin hệ thống"
 
-#: skin_default_skin.xml.h:627 tpk_section.h:17 webif_index.h:14
+#: skin_default_skin.xml.h:630 tpk_section.h:17 webif_index.h:14
 msgid "System"
 msgstr "Hệ thống"
 
-#: skin_default_skin.xml.h:630
+#: skin_default_skin.xml.h:633
 msgid "System - Flashupdate (online)"
 msgstr " Hệ thống – Cập nhật qua flash (trực tuyến"
 
-#: skin_default_skin.xml.h:631
+#: skin_default_skin.xml.h:634
 msgid "System - Flashupdate (tmp)"
 msgstr " Hệ thống – Cập nhật qua flash (tmp)"
 
-#: skin_default_skin.xml.h:636
+#: skin_default_skin.xml.h:639
 msgid "System - Usbupdate (online)"
 msgstr " Hệ thống – Cập nhật qua USB (trực tuyến)"
 
-#: skin_default_skin.xml.h:637
+#: skin_default_skin.xml.h:640
 msgid "System - Usbupdate (tmp)"
 msgstr "Hệ thống – Cập nhật qua USB (tmp)"
 
-#: httpdfunc.h:6597 skin_default_skin.xml.h:629 webif_system.h:3
+#: httpdfunc.h:6597 skin_default_skin.xml.h:632 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
@@ -9500,21 +9512,21 @@ msgstr ""
 msgid "System Backup on your Box not Supported"
 msgstr ""
 
-#: skin_default_skin.xml.h:632 webif_info.h:6 webif_systeminfo.h:1
+#: skin_default_skin.xml.h:635 webif_info.h:6 webif_systeminfo.h:1
 msgid "System Info"
 msgstr "Thông tin hệ thống"
 
-#: skin_default_skin.xml.h:633 webif_info_systeminfos.h:1
+#: skin_default_skin.xml.h:636 webif_info_systeminfos.h:1
 #: webif_info_systeminfos.h:8
 msgid "System Infos"
 msgstr "Thông tin hệ thống"
 
-#: httpdfunc.h:5261 skin_default_skin.xml.h:634 system_infos.h:14
+#: httpdfunc.h:5261 skin_default_skin.xml.h:637 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr "Cập nhật hệ thống"
 
-#: httpdfunc.h:5666 httpdfunc.h:5801 skin_default_skin.xml.h:635
+#: httpdfunc.h:5666 httpdfunc.h:5801 skin_default_skin.xml.h:638
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Cập nhật hệ thống"
@@ -9528,7 +9540,7 @@ msgstr ""
 msgid "System-Info"
 msgstr ""
 
-#: skin_default_skin.xml.h:628
+#: skin_default_skin.xml.h:631
 msgid "System:"
 msgstr "Hệ thống:"
 
@@ -9540,11 +9552,11 @@ msgstr ""
 msgid "TERR"
 msgstr ""
 
-#: skin_default_skin.xml.h:639
+#: skin_default_skin.xml.h:642
 msgid "TEST"
 msgstr "KIỂM TRA"
 
-#: skin_default_skin.xml.h:657
+#: skin_default_skin.xml.h:660
 msgid "TITLE"
 msgstr "nhan đề"
 
@@ -9576,31 +9588,31 @@ msgstr ""
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 
-#: skin_default_skin.xml.h:666 webif_system_extensions.h:3
+#: skin_default_skin.xml.h:669 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr ""
 
-#: httpdfunc.h:6234 skin_default_skin.xml.h:669 webif_system_extensions.h:5
+#: httpdfunc.h:6234 skin_default_skin.xml.h:672 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: skin_default_skin.xml.h:670 webif_system_extensions.h:6
+#: skin_default_skin.xml.h:673 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr ""
 
-#: httpdfunc.h:6232 skin_default_skin.xml.h:671 webif_system_extensions.h:4
+#: httpdfunc.h:6232 skin_default_skin.xml.h:674 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr ""
 
-#: skin_default_skin.xml.h:672 webif_system_extensions.h:2
+#: skin_default_skin.xml.h:675 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr "Cập nhật USB (trực tuyến)"
 
-#: skin_default_skin.xml.h:676
+#: skin_default_skin.xml.h:679
 msgid "TRANSPONDEREDIT"
 msgstr ""
 
-#: skin_default_skin.xml.h:677
+#: skin_default_skin.xml.h:680
 msgid "TSID:"
 msgstr ""
 
@@ -9621,11 +9633,11 @@ msgstr ""
 msgid "TV"
 msgstr ""
 
-#: skin_default_skin.xml.h:686
+#: skin_default_skin.xml.h:689
 msgid "TV Resolution (h):"
 msgstr "Độ phân giải TV (dọc):"
 
-#: skin_default_skin.xml.h:687
+#: skin_default_skin.xml.h:690
 msgid "TV Resolution (w):"
 msgstr "Độ phân giải TV (ngang):"
 
@@ -9640,7 +9652,7 @@ msgstr ""
 msgid "TV: "
 msgstr ""
 
-#: skin_default_skin.xml.h:689
+#: skin_default_skin.xml.h:692
 msgid "TXT PID:"
 msgstr "PID TXT:"
 
@@ -9672,7 +9684,7 @@ msgstr ""
 msgid "Terrestrial: "
 msgstr ""
 
-#: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:638
+#: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:641
 #: skins_panel_skin.xml.h:19
 msgid "Test"
 msgstr "KIỂM TRA"
@@ -9798,7 +9810,7 @@ msgstr ""
 msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 
-#: skin_default_skin.xml.h:641
+#: skin_default_skin.xml.h:644
 msgid "Threshold"
 msgstr "Ngưỡng"
 
@@ -9814,7 +9826,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6250 global.h:6260 rectimer.h:1103 skin_default_skin.xml.h:642
+#: global.h:6250 global.h:6260 rectimer.h:1103 skin_default_skin.xml.h:645
 msgid "Thursday"
 msgstr "Thứ năm"
 
@@ -9830,7 +9842,7 @@ msgstr ""
 msgid "TiThek Menu"
 msgstr "Menü …"
 
-#: skin_default_skin.xml.h:655
+#: skin_default_skin.xml.h:658
 msgid "TiThek Select Color"
 msgstr ""
 
@@ -9852,7 +9864,7 @@ msgstr ""
 msgid "Time"
 msgstr "thời gian"
 
-#: harddisk.h:928 skin_default_skin.xml.h:649
+#: harddisk.h:928 skin_default_skin.xml.h:652
 msgid "Time to sleep"
 msgstr "Thời gian tắt"
 
@@ -9860,11 +9872,11 @@ msgstr "Thời gian tắt"
 msgid "Time to stop "
 msgstr "thời gian để dừng lại"
 
-#: httpdfunc.h:4884 skin_default_skin.xml.h:651
+#: httpdfunc.h:4884 skin_default_skin.xml.h:654
 msgid "Time to wait after seek for fill buffer"
 msgstr "Thời gian đợi sau khi tìm kiếm bộ đệm khác"
 
-#: skin_default_skin.xml.h:643 webif_index.atemio510.h:13
+#: skin_default_skin.xml.h:646 webif_index.atemio510.h:13
 #: webif_index.atemio5200.h:13 webif_index.atemio5200.h:60
 #: webif_index.atemio5200.h:116 webif_index.atemio6000.h:13
 #: webif_index.atemio6100.h:13 webif_index.atemio6200.h:13
@@ -9888,7 +9900,7 @@ msgstr ""
 msgid "Timer List"
 msgstr ""
 
-#: skin_default_skin.xml.h:645
+#: skin_default_skin.xml.h:648
 msgid "Timer Record Path"
 msgstr "Bước dịch cho bộ định thời ghi"
 
@@ -9896,7 +9908,7 @@ msgstr "Bước dịch cho bộ định thời ghi"
 msgid "Timer Record start !"
 msgstr "Bước dịch cho bộ định thời ghi"
 
-#: skin_default_skin.xml.h:644
+#: skin_default_skin.xml.h:647
 msgid "Timer and EPG"
 msgstr ""
 
@@ -9934,11 +9946,11 @@ msgstr "cho phép thiết bị đọc"
 msgid "Timer2 activ"
 msgstr "cho phép thiết bị đọc"
 
-#: skin_default_skin.xml.h:646
+#: skin_default_skin.xml.h:649
 msgid "Timeshift Path"
 msgstr " Bước dịch cho timeshift"
 
-#: skin_default_skin.xml.h:647
+#: skin_default_skin.xml.h:650
 msgid "Timeshift Settings"
 msgstr "thiết lập timeshift"
 
@@ -9964,19 +9976,19 @@ msgid ""
 "if timeshift is running !"
 msgstr ""
 
-#: skin_default_skin.xml.h:648
+#: skin_default_skin.xml.h:651
 msgid "Timeshifttype"
 msgstr "kiểu timeshift"
 
-#: skin_default_skin.xml.h:652
+#: skin_default_skin.xml.h:655
 msgid "Timezone"
 msgstr ""
 
-#: skin_default_skin.xml.h:653
+#: skin_default_skin.xml.h:656
 msgid "Tint"
 msgstr "màu sắc"
 
-#: skin_default_skin.xml.h:654 webif_info_logs.h:2
+#: skin_default_skin.xml.h:657 webif_info_logs.h:2
 msgid "Titan Changelog"
 msgstr ""
 
@@ -10056,12 +10068,12 @@ msgstr ""
 msgid "Tithek/HTTP Header/Community"
 msgstr ""
 
-#: mediadb.h:2518 plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:656
+#: mediadb.h:2518 plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:659
 #: skins_tithek_skin.xml.h:19
 msgid "Title"
 msgstr "nhan đề"
 
-#: skin_default_skin.xml.h:662
+#: skin_default_skin.xml.h:665
 msgid "Title Color"
 msgstr ""
 
@@ -10072,19 +10084,19 @@ msgstr ""
 msgid "Title:"
 msgstr ""
 
-#: skin_default_skin.xml.h:658
+#: skin_default_skin.xml.h:661
 msgid "Titlebar Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:659
+#: skin_default_skin.xml.h:662
 msgid "Titlebar Background Color 2"
 msgstr ""
 
-#: skin_default_skin.xml.h:660
+#: skin_default_skin.xml.h:663
 msgid "Titlebar Border Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:661
+#: skin_default_skin.xml.h:664
 msgid "Titlebar Font Color"
 msgstr ""
 
@@ -10100,15 +10112,15 @@ msgstr "file có nhiều lỗi"
 msgid "Tonburst A/B"
 msgstr "Tone Burst"
 
-#: skin_default_skin.xml.h:663
+#: skin_default_skin.xml.h:666
 msgid "Tone Burst"
 msgstr ""
 
-#: skin_default_skin.xml.h:664
+#: skin_default_skin.xml.h:667
 msgid "Tone Mode"
 msgstr "Chế độ tone"
 
-#: httpdfunc.h:5319 skin_default_skin.xml.h:665 system_infos_sysinfo.h:27
+#: httpdfunc.h:5319 skin_default_skin.xml.h:668 system_infos_sysinfo.h:27
 #: webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "Về đầu"
@@ -10124,11 +10136,11 @@ msgid ""
 "Coming soon ..."
 msgstr ""
 
-#: extensions.h:222 httpdfunc.h:5917 skin_default_skin.xml.h:667
+#: extensions.h:222 httpdfunc.h:5917 skin_default_skin.xml.h:670
 msgid "Tpk Install - select file"
 msgstr ""
 
-#: skin_default_skin.xml.h:668
+#: skin_default_skin.xml.h:671
 msgid "Tpk Install - select install medium"
 msgstr ""
 
@@ -10180,15 +10192,15 @@ msgstr ""
 msgid "Trade time: "
 msgstr "ngày + giờ"
 
-#: skin_default_skin.xml.h:673
+#: skin_default_skin.xml.h:676
 msgid "Transcode Stream"
 msgstr ""
 
-#: skin_default_skin.xml.h:674
+#: skin_default_skin.xml.h:677
 msgid "Transmission"
 msgstr ""
 
-#: skin_default_skin.xml.h:675
+#: skin_default_skin.xml.h:678
 msgid "Transmission:"
 msgstr "Bộ pháp đáp:"
 
@@ -10268,7 +10280,7 @@ msgstr ""
 msgid "Tue"
 msgstr ""
 
-#: global.h:6248 global.h:6258 rectimer.h:1101 skin_default_skin.xml.h:678
+#: global.h:6248 global.h:6258 rectimer.h:1101 skin_default_skin.xml.h:681
 msgid "Tuesday"
 msgstr "Thứ ba"
 
@@ -10276,7 +10288,7 @@ msgstr "Thứ ba"
 msgid "Tune to channel failed"
 msgstr "Tuner lỗi"
 
-#: security.h:2146 skin_default_skin.xml.h:679
+#: security.h:2146 skin_default_skin.xml.h:682
 msgid "Tuner"
 msgstr ""
 
@@ -10284,15 +10296,15 @@ msgstr ""
 msgid "Tuner "
 msgstr ""
 
-#: skin_default_skin.xml.h:682
+#: skin_default_skin.xml.h:685
 msgid "Tuner Configuration"
 msgstr " Cài đặt tuner"
 
-#: skin_default_skin.xml.h:683
+#: skin_default_skin.xml.h:686
 msgid "Tuner List"
 msgstr ""
 
-#: skin_default_skin.xml.h:684
+#: skin_default_skin.xml.h:687
 msgid "Tuner Reception"
 msgstr "Nhận tuner"
 
@@ -10300,11 +10312,11 @@ msgstr "Nhận tuner"
 msgid "Tuner Type"
 msgstr ""
 
-#: skin_default_skin.xml.h:680
+#: skin_default_skin.xml.h:683
 msgid "Tuner:"
 msgstr ""
 
-#: skin_default_skin.xml.h:681
+#: skin_default_skin.xml.h:684
 msgid "Tunerconfig"
 msgstr ""
 
@@ -10314,7 +10326,7 @@ msgid ""
 "or stream is running !"
 msgstr "Cấu hình tuner này không cho phép ghi"
 
-#: security.h:2153 skin_default_skin.xml.h:685
+#: security.h:2153 skin_default_skin.xml.h:688
 msgid "Tunertype"
 msgstr ""
 
@@ -10322,7 +10334,7 @@ msgstr ""
 msgid "Tuning to Channel failed!"
 msgstr "Không chuyển được chương trình!"
 
-#: skin_default_skin.xml.h:688
+#: skin_default_skin.xml.h:691
 msgid "Two step mute"
 msgstr " Two step mute"
 
@@ -10330,16 +10342,16 @@ msgstr " Two step mute"
 msgid "Typ"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:691
+#: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:694
 #: skins_tithek_skin.xml.h:20
 msgid "Type"
 msgstr "Kiểu"
 
-#: skin_default_skin.xml.h:693
+#: skin_default_skin.xml.h:696
 msgid "Type of Scan"
 msgstr "Kiểu dò"
 
-#: skin_default_skin.xml.h:692
+#: skin_default_skin.xml.h:695
 msgid "Type:"
 msgstr "Kiểu:"
 
@@ -10359,7 +10371,7 @@ msgstr "E"
 msgid "UFS910 free license"
 msgstr ""
 
-#: skin_default_skin.xml.h:694
+#: skin_default_skin.xml.h:697
 msgid "UNC:"
 msgstr ""
 
@@ -10367,11 +10379,11 @@ msgstr ""
 msgid "UNKNOWN"
 msgstr "không biết"
 
-#: skin_default_skin.xml.h:698
+#: skin_default_skin.xml.h:701
 msgid "UNLOAD"
 msgstr "KHÔNG TẢI ĐƯỢC"
 
-#: httpdfunc.h:5323 skin_default_skin.xml.h:701 system_infos_sysinfo.h:31
+#: httpdfunc.h:5323 skin_default_skin.xml.h:704 system_infos_sysinfo.h:31
 #: webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
@@ -10404,11 +10416,11 @@ msgstr ""
 msgid "Unchanged"
 msgstr "Thay đổi"
 
-#: skin_default_skin.xml.h:695
+#: skin_default_skin.xml.h:698
 msgid "Uncommitted Diseqc command"
 msgstr "Lệnh điều khiển"
 
-#: skin_default_skin.xml.h:696
+#: skin_default_skin.xml.h:699
 msgid "Unicable Configuration"
 msgstr "Cấu hình cáp đơn"
 
@@ -10459,24 +10471,24 @@ msgstr ""
 msgid "Update Plugins to new Version?"
 msgstr ""
 
-#: skin_default_skin.xml.h:700
+#: skin_default_skin.xml.h:703
 msgid "Update entrys on scan"
 msgstr "Cập nhật dữ liệu trong khi dò"
 
-#: plugins_panel_skin.xml.h:20 skin_default_skin.xml.h:702
+#: plugins_panel_skin.xml.h:20 skin_default_skin.xml.h:705
 #: skins_panel_skin.xml.h:20
 msgid "Usb Device"
 msgstr "Thiết bị USB"
 
-#: skin_default_skin.xml.h:703
+#: skin_default_skin.xml.h:706
 msgid "Usbupdate (online)"
 msgstr "Cập nhật USB (trực tuyến)"
 
-#: skin_default_skin.xml.h:704
+#: skin_default_skin.xml.h:707
 msgid "Usbupdate (tmp)"
 msgstr " Cập nhật USB (tmp)"
 
-#: skin_default_skin.xml.h:706
+#: skin_default_skin.xml.h:709
 msgid "Use EPG Endtime"
 msgstr "sử dụng lịch chương trình"
 
@@ -10500,19 +10512,19 @@ msgstr ""
 msgid "Use config from Stick or HDD"
 msgstr ""
 
-#: httpdfunc.h:4742 skin_default_skin.xml.h:705
+#: httpdfunc.h:4742 skin_default_skin.xml.h:708
 msgid "Use cross control for fast zapping and vol"
 msgstr "Sử dụng các phím di chuyển để sửa đổi"
 
-#: skin_default_skin.xml.h:707
+#: skin_default_skin.xml.h:710
 msgid "Use fixed physical address"
 msgstr ""
 
-#: skin_default_skin.xml.h:708
+#: skin_default_skin.xml.h:711
 msgid "Use numeric keys"
 msgstr "Sử dụng các phím số"
 
-#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:709
+#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:712
 #: skins_networkbrowser_skin.xml.h:33
 msgid "User"
 msgstr "Người dùng"
@@ -10521,7 +10533,7 @@ msgstr "Người dùng"
 msgid "V"
 msgstr ""
 
-#: skin_default_skin.xml.h:710
+#: skin_default_skin.xml.h:713
 msgid "VFDisplay"
 msgstr ""
 
@@ -10549,11 +10561,11 @@ msgstr ""
 msgid "Vertikal"
 msgstr ""
 
-#: skin_default_skin.xml.h:711 tmc.h:399
+#: skin_default_skin.xml.h:714 tmc.h:399
 msgid "Video"
 msgstr ""
 
-#: skin_default_skin.xml.h:715
+#: skin_default_skin.xml.h:718
 msgid "Video PID:"
 msgstr "PID video:"
 
@@ -10561,7 +10573,7 @@ msgstr "PID video:"
 msgid "Video Player"
 msgstr "Phát video"
 
-#: play.h:639 skin_default_skin.xml.h:716
+#: play.h:639 skin_default_skin.xml.h:719
 msgid "Video Settings"
 msgstr "THIẾT LẬP HIỂN THỊ"
 
@@ -10577,15 +10589,15 @@ msgstr ""
 msgid "Video postet"
 msgstr "điều chỉnh video"
 
-#: skin_default_skin.xml.h:712
+#: skin_default_skin.xml.h:715
 msgid "VideoMode Aspect Settings"
 msgstr "thiết lập khuôn hình"
 
-#: skin_default_skin.xml.h:713
+#: skin_default_skin.xml.h:716
 msgid "VideoMode Resolution Settings"
 msgstr "thiết lập độ phân giải"
 
-#: skin_default_skin.xml.h:714
+#: skin_default_skin.xml.h:717
 msgid "VideoMode Settings"
 msgstr "thiết lập chế độ hiển thị"
 
@@ -10601,7 +10613,7 @@ msgstr ""
 msgid "Videotune"
 msgstr "điều chỉnh video"
 
-#: skin_default_skin.xml.h:717
+#: skin_default_skin.xml.h:720
 msgid "Vietnamese"
 msgstr "Đổi tên"
 
@@ -10618,15 +10630,15 @@ msgstr " View Cover"
 msgid "View Sections"
 msgstr "Xem các menu"
 
-#: httpdfunc.h:4111 skin_default_skin.xml.h:718
+#: httpdfunc.h:4111 skin_default_skin.xml.h:721
 msgid "Virtualzap Timeout"
 msgstr " Virtualzap Timeout"
 
-#: skin_default_skin.xml.h:719
+#: skin_default_skin.xml.h:722
 msgid "Vol off"
 msgstr "Tắt âm lượng"
 
-#: skin_default_skin.xml.h:720
+#: skin_default_skin.xml.h:723
 msgid "Voltage Mode"
 msgstr "Chế độ điện áp"
 
@@ -10672,11 +10684,11 @@ msgstr ""
 msgid "Volume: "
 msgstr "Tắt âm lượng "
 
-#: httpdfunc.h:3714 skin_default_skin.xml.h:721
+#: httpdfunc.h:3714 skin_default_skin.xml.h:724
 msgid "Volumebar Timeout"
 msgstr "Vượt quá giới hạn"
 
-#: skin_default_skin.xml.h:722
+#: skin_default_skin.xml.h:725
 msgid "Votes"
 msgstr ""
 
@@ -10700,7 +10712,7 @@ msgstr "Thông tin"
 msgid "WLAN LOG"
 msgstr ""
 
-#: skin_default_skin.xml.h:728
+#: skin_default_skin.xml.h:731
 msgid "WLAN Settings"
 msgstr "thiết lập WLAN"
 
@@ -10732,7 +10744,7 @@ msgstr ""
 msgid "WM2014 Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:729
+#: skin_default_skin.xml.h:732
 msgid "WOL"
 msgstr ""
 
@@ -10744,7 +10756,7 @@ msgstr ""
 msgid "WPA2"
 msgstr ""
 
-#: skin_default_skin.xml.h:731
+#: skin_default_skin.xml.h:734
 msgid "WSS Mode"
 msgstr ""
 
@@ -10763,7 +10775,7 @@ msgstr ""
 msgid "Wait"
 msgstr ""
 
-#: skin_default_skin.xml.h:723
+#: skin_default_skin.xml.h:726
 msgid "Wait for cam ready"
 msgstr "Đang kiểm tra thẻ vui lòng đợi"
 
@@ -10775,15 +10787,15 @@ msgstr "Vui long đợi."
 msgid "Wait for connect or press EXIT"
 msgstr ""
 
-#: skin_default_skin.xml.h:725
+#: skin_default_skin.xml.h:728
 msgid "Wakeup A/V Receiver"
 msgstr ""
 
-#: skin_default_skin.xml.h:726
+#: skin_default_skin.xml.h:729
 msgid "Wakeup TV"
 msgstr ""
 
-#: skin_default_skin.xml.h:724
+#: skin_default_skin.xml.h:727
 msgid "Wakeup all connected devices"
 msgstr ""
 
@@ -10828,7 +10840,7 @@ msgstr ""
 msgid "Wed"
 msgstr ""
 
-#: global.h:6249 global.h:6259 rectimer.h:1102 skin_default_skin.xml.h:727
+#: global.h:6249 global.h:6259 rectimer.h:1102 skin_default_skin.xml.h:730
 msgid "Wednesday"
 msgstr "Ngày thứ tư"
 
@@ -10925,7 +10937,7 @@ msgstr ""
 msgid "Write error"
 msgstr "ghi lỗi"
 
-#: skin_default_skin.xml.h:730
+#: skin_default_skin.xml.h:733
 msgid "Writer"
 msgstr "ghi lỗi"
 
@@ -10994,7 +11006,7 @@ msgstr ""
 msgid "Y-Resolution"
 msgstr "Độ phân giải"
 
-#: skin_default_skin.xml.h:732
+#: skin_default_skin.xml.h:735
 msgid "Year"
 msgstr ""
 
@@ -11421,7 +11433,7 @@ msgstr ""
 msgid "committed, uncommitted, toneburst"
 msgstr ""
 
-#: skin_default_skin.xml.h:121
+#: skin_default_skin.xml.h:122
 msgid "copy service"
 msgstr "sao chép dịch vụ"
 
@@ -11430,7 +11442,7 @@ msgstr "sao chép dịch vụ"
 msgid "cover"
 msgstr "full cover"
 
-#: httpdfunc.h:6609 httpdfunc.h:6634 skin_default_skin.xml.h:129
+#: httpdfunc.h:6609 httpdfunc.h:6634 skin_default_skin.xml.h:130
 msgid "create System Backup"
 msgstr ""
 
@@ -11448,7 +11460,7 @@ msgstr "hàng ngày"
 
 #: adjust.h:105 httpdfunc.h:4031 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
-#: plugins_mc_skin.xml.h:13 skin_default_skin.xml.h:131 skins_mc_skin.xml.h:13
+#: plugins_mc_skin.xml.h:13 skin_default_skin.xml.h:132 skins_mc_skin.xml.h:13
 msgid "date"
 msgstr "ngày"
 
@@ -11487,11 +11499,11 @@ msgstr "MẶC ĐỊNH"
 msgid "default Directory"
 msgstr "Thư mục mặc định"
 
-#: skin_default_skin.xml.h:147
+#: skin_default_skin.xml.h:148
 msgid "del startchannel"
 msgstr "bắt đầu xóa chương trình"
 
-#: optimize.h:254 skin_default_skin.xml.h:143
+#: optimize.h:254 skin_default_skin.xml.h:144
 msgid "delete"
 msgstr "Xóa"
 
@@ -11527,7 +11539,7 @@ msgstr ""
 msgid "disable"
 msgstr "Tắt"
 
-#: skin_default_skin.xml.h:156 webif_help.h:21
+#: skin_default_skin.xml.h:157 webif_help.h:21
 msgid "diseqcscreen"
 msgstr ""
 
@@ -11535,11 +11547,11 @@ msgstr ""
 msgid "dnsaddresse"
 msgstr "Địa chỉ DNS"
 
-#: skin_default_skin.xml.h:159
+#: skin_default_skin.xml.h:160
 msgid "dnsserver 1"
 msgstr "DNS-Server 1"
 
-#: skin_default_skin.xml.h:160
+#: skin_default_skin.xml.h:161
 msgid "dnsserver 2"
 msgstr "DNS-Server 2"
 
@@ -11563,7 +11575,7 @@ msgstr ""
 msgid "dropbear ssh (server & client) and openssh sftp (server) for sh4"
 msgstr ""
 
-#: skin_default_skin.xml.h:166
+#: skin_default_skin.xml.h:167
 msgid "dummy"
 msgstr ""
 
@@ -11748,7 +11760,7 @@ msgstr ""
 msgid "games"
 msgstr "trò chơ"
 
-#: skin_default_skin.xml.h:225
+#: skin_default_skin.xml.h:228
 msgid "gateway"
 msgstr ""
 
@@ -11875,7 +11887,7 @@ msgstr "thông tin"
 msgid "initializing"
 msgstr "khởi tạo"
 
-#: skin_default_skin.xml.h:318
+#: skin_default_skin.xml.h:321
 msgid "install"
 msgstr "cài đặt"
 
@@ -11892,7 +11904,7 @@ msgstr ""
 msgid "intern"
 msgstr ""
 
-#: skin_default_skin.xml.h:320
+#: skin_default_skin.xml.h:323
 msgid "internet"
 msgstr "mạng"
 
@@ -11900,7 +11912,7 @@ msgstr "mạng"
 msgid "ip"
 msgstr "i"
 
-#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:323
+#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:326
 #: skins_networkbrowser_skin.xml.h:14
 msgid "ipaddress"
 msgstr "Địa chỉ IP"
@@ -11920,15 +11932,15 @@ msgstr ""
 msgid "k"
 msgstr ""
 
-#: skin_default_skin.xml.h:330
+#: skin_default_skin.xml.h:333
 msgid "key 0"
 msgstr ""
 
-#: skin_default_skin.xml.h:332
+#: skin_default_skin.xml.h:335
 msgid "key channel up/down"
 msgstr ""
 
-#: skin_default_skin.xml.h:333
+#: skin_default_skin.xml.h:336
 msgid "key pip"
 msgstr ""
 
@@ -11940,7 +11952,7 @@ msgstr ""
 msgid "l"
 msgstr ""
 
-#: skin_default_skin.xml.h:334
+#: skin_default_skin.xml.h:337
 msgid "lan"
 msgstr ""
 
@@ -12065,7 +12077,7 @@ msgstr ""
 msgid "menuprotect"
 msgstr ""
 
-#: skin_default_skin.xml.h:734 webif_help.h:51
+#: skin_default_skin.xml.h:737 webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -12089,7 +12101,7 @@ msgstr ""
 msgid "move east"
 msgstr "dịch chuyển sang trái"
 
-#: skin_default_skin.xml.h:381
+#: skin_default_skin.xml.h:384
 msgid "move service"
 msgstr "chuyển dịch vụ"
 
@@ -12124,7 +12136,7 @@ msgstr ""
 msgid "nein"
 msgstr ""
 
-#: skin_default_skin.xml.h:387
+#: skin_default_skin.xml.h:390
 msgid "netmask"
 msgstr ""
 
@@ -12494,7 +12506,7 @@ msgstr ""
 msgid "playlist_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:434
+#: skin_default_skin.xml.h:437
 msgid "please wait"
 msgstr ""
 
@@ -12507,7 +12519,7 @@ msgstr "Vui lòng đợi …"
 msgid "plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:443
+#: skin_default_skin.xml.h:446
 msgid "position"
 msgstr ""
 
@@ -12532,7 +12544,7 @@ msgstr ""
 msgid "press red"
 msgstr "bấm nút màu đỏ"
 
-#: skin_default_skin.xml.h:449
+#: skin_default_skin.xml.h:452
 msgid "prime time"
 msgstr ""
 
@@ -12540,7 +12552,7 @@ msgstr ""
 msgid "progress"
 msgstr "thanh tiến trình"
 
-#: skin_default_skin.xml.h:459
+#: skin_default_skin.xml.h:462
 msgid "protect service"
 msgstr "Khóa dịch vụ"
 
@@ -12632,11 +12644,11 @@ msgstr ""
 msgid "remote Desktop Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:484
+#: skin_default_skin.xml.h:487
 msgid "remove service"
 msgstr "xóa dịch vụ"
 
-#: skin_default_skin.xml.h:489
+#: skin_default_skin.xml.h:492
 msgid "rename service"
 msgstr "đổi tên chương trình"
 
@@ -12650,19 +12662,19 @@ msgstr ""
 
 #: adjust.h:102 httpdfunc.h:4010 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
-#: plugins_mc_skin.xml.h:46 skin_default_skin.xml.h:506 skins_mc_skin.xml.h:46
+#: plugins_mc_skin.xml.h:46 skin_default_skin.xml.h:509 skins_mc_skin.xml.h:46
 msgid "reverse alpha"
 msgstr "đảo ngược thứ tự alpha"
 
 #: adjust.h:106 httpdfunc.h:4038 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
-#: plugins_mc_skin.xml.h:47 skin_default_skin.xml.h:507 skins_mc_skin.xml.h:47
+#: plugins_mc_skin.xml.h:47 skin_default_skin.xml.h:510 skins_mc_skin.xml.h:47
 msgid "reverse date"
 msgstr "đảo ngược ngày"
 
 #: adjust.h:104 httpdfunc.h:4024 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
-#: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:508 skins_mc_skin.xml.h:48
+#: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:511 skins_mc_skin.xml.h:48
 msgid "reverse size"
 msgstr "đảo ngược kích thước"
 
@@ -12722,27 +12734,27 @@ msgstr "Dò Wlan"
 msgid "schaltet zurueck auf Sender"
 msgstr ""
 
-#: skin_default_skin.xml.h:537 tpk_section.h:14 webif_help.h:81
+#: skin_default_skin.xml.h:540 tpk_section.h:14 webif_help.h:81
 msgid "screensaver"
 msgstr "màn hình chờ"
 
-#: skin_default_skin.xml.h:539
+#: skin_default_skin.xml.h:542
 msgid "screensaver background"
 msgstr "nền màn hình chờ"
 
-#: skin_default_skin.xml.h:540
+#: skin_default_skin.xml.h:543
 msgid "screensaver delay"
 msgstr "độ trễ màn hình chờ"
 
-#: skin_default_skin.xml.h:541
+#: skin_default_skin.xml.h:544
 msgid "screensaver interval"
 msgstr "khoảng thời gian màn hình chờ"
 
-#: skin_default_skin.xml.h:542
+#: skin_default_skin.xml.h:545
 msgid "screensaver pic"
 msgstr "hình ảnh màn hình chờ"
 
-#: skin_default_skin.xml.h:543
+#: skin_default_skin.xml.h:546
 msgid "screensaver type"
 msgstr "kiểu màn hình chờ"
 
@@ -12810,7 +12822,7 @@ msgstr ""
 msgid "set here the default sleeptime for all your media drives"
 msgstr ""
 
-#: skin_default_skin.xml.h:560
+#: skin_default_skin.xml.h:563
 msgid "set startchannel"
 msgstr "thiết lập chương trình"
 
@@ -12880,7 +12892,7 @@ msgstr ""
 
 #: adjust.h:103 httpdfunc.h:4017 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
-#: plugins_mc_skin.xml.h:52 skin_default_skin.xml.h:577 skins_mc_skin.xml.h:52
+#: plugins_mc_skin.xml.h:52 skin_default_skin.xml.h:580 skins_mc_skin.xml.h:52
 msgid "size"
 msgstr "kích thước"
 
@@ -12937,7 +12949,7 @@ msgstr ""
 msgid "sorry found no harddisk"
 msgstr "xin lỗi không tìm thấy ổ cứng"
 
-#: skin_default_skin.xml.h:591
+#: skin_default_skin.xml.h:594
 msgid "sort service"
 msgstr "sao chép dịch vụ"
 
@@ -12945,7 +12957,7 @@ msgstr "sao chép dịch vụ"
 msgid "south"
 msgstr "xuống"
 
-#: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:595
+#: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:598
 #: skins_panel_skin.xml.h:18
 msgid "speed"
 msgstr "tốc độ"
@@ -12967,7 +12979,7 @@ msgstr "Điều khiển quạt"
 msgid "ssl_try"
 msgstr ""
 
-#: skin_default_skin.xml.h:599 system_update.h:25 system_update.h:147
+#: skin_default_skin.xml.h:602 system_update.h:25 system_update.h:147
 msgid "stable"
 msgstr "Tắt"
 
@@ -13029,7 +13041,7 @@ msgid "stock Plugin"
 msgstr "cdắm nguồn"
 
 #: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1568 record.h:1577 record.h:1588
-#: record.h:1617 record.h:1626 record.h:1660 skin_default_skin.xml.h:610
+#: record.h:1617 record.h:1626 record.h:1660 skin_default_skin.xml.h:613
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
@@ -13092,7 +13104,7 @@ msgstr ""
 msgid "system_backup_restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:736
+#: skin_default_skin.xml.h:739
 msgid "system_infos"
 msgstr ""
 
@@ -13104,7 +13116,7 @@ msgstr ""
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:735 webif_help.h:96
+#: skin_default_skin.xml.h:738 webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
@@ -13172,7 +13184,7 @@ msgstr ""
 msgid "textinputhist"
 msgstr ""
 
-#: skin_default_skin.xml.h:640
+#: skin_default_skin.xml.h:643
 msgid "thereafter on this Channel:"
 msgstr "sau chương trình này:"
 
@@ -13270,7 +13282,7 @@ msgstr ""
 msgid "tunerreceptiondvbt"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:690
+#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:693
 #: skins_networkbrowser_skin.xml.h:30
 msgid "type"
 msgstr "Kiểu"
@@ -13310,7 +13322,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2151 skin_default_skin.xml.h:697 skinselector.h:138 stream.h:22
+#: security.h:2151 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13335,7 +13347,7 @@ msgstr ""
 msgid "unstable"
 msgstr "Bật"
 
-#: skin_default_skin.xml.h:699
+#: skin_default_skin.xml.h:702
 msgid "update"
 msgstr "cập nhật"
 
