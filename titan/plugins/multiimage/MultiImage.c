@@ -264,7 +264,8 @@ int no_mdev()
 			free(mdev); mdev = NULL;
 			return 1;
 		}
-		cmd = ostrcat("mkfs.ext2.gui /dev/" , mdev, 0, 0);
+		//cmd = ostrcat("mkfs.ext2.gui /dev/" , mdev, 0, 0);
+		cmd = ostrcat("mkfs.ext3.gui -T largefile -m0 -O dir_index /dev/" , mdev, 0, 0);
 		debug(81, "format cmd: %s", cmd);
 		ret = system(cmd);
 		free(cmd); cmd = NULL;
