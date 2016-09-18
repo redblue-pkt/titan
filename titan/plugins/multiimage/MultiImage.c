@@ -271,7 +271,7 @@ int no_mdev()
 		free(cmd); cmd = NULL;
 		if(ret != 0)
 		{
-			textbox(_("Message"), _("ERROR\nPartition could not be created"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+			textbox(_("ERROR"), _("Partition could not be created"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
 			return 1;
 		}
 		path = getconfig("mountpath", NULL);
@@ -351,7 +351,7 @@ int multiimage_install(char* imagefile, char* mdev, int type)
 			if(file_exist(path3) == 1)
 			{
 				free(path3); path3=NULL;
-				textbox(_("Message"), _("ERROR\nImage already present!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
+				textbox(_("ERROR"), _("Image already present!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
 				continue;
 			}
 			if(type == 1)
