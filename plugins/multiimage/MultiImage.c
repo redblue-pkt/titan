@@ -55,7 +55,7 @@ void multiimage_thread()
 		cmd = ostrcat("rm -r ",imagepath, 0, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
-		
+
 	}
 	else
 	{
@@ -77,7 +77,7 @@ char* find_multiimage_dev()
 {
 	char* mdev = NULL;
 	char* path = NULL;
-	
+
 	char* pos = NULL;
 	FILE* fd = NULL;
 	char* fileline = NULL;
@@ -117,7 +117,7 @@ char* find_multiimage_dev()
 	 		break;
 	}
 	free(fileline);
-	fclose(fd);	
+	fclose(fd);
 
 	return mdev;
 }
@@ -130,15 +130,15 @@ int no_mdev()
 	char* dirall = NULL;
 	char* cmd = NULL;
 	struct skin* tmp = NULL;
-	int ret = 0;	
-	int rcret = 0;	
+	int ret = 0;
+	int rcret = 0;
 	int ren = 0;
-	 
+
 	struct skin* multipart = getscreen("multipart");
 	struct skin* listbox = getscreennode(multipart, "listbox");
 	struct skin* device = getscreennode(multipart, "device");
 	struct skin* text2 = getscreennode(multipart, "textbox2");
-			
+
 	char* pos = NULL;
 	FILE* fd = NULL;
 	char* fileline = NULL;
@@ -169,7 +169,7 @@ int no_mdev()
 		}
 	}
 	free(fileline);
-	fclose(fd);	
+	fclose(fd);
 	if(mdev == NULL)
 	{
 		textbox("MultiImage", _("No device available"), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
@@ -179,15 +179,15 @@ int no_mdev()
 	path = getconfig("mountpath", NULL);
 	path = ostrcat(path, "/", 0, 0);
 	path = ostrcat(path, mdev, 1, 0);
-	
+
 	dirall = get_dir(path);
 	free(path); path = NULL;
-	
+
 	changetext(text2, dirall);
 	free(dirall); dirall = NULL;
-	
+
 	free(mdev); mdev=NULL;
-	
+
 	drawscreen(multipart, 0, 0);
 	addscreenrc(multipart, listbox);
 	tmp = listbox->select;
@@ -195,9 +195,9 @@ int no_mdev()
 	{
 		addscreenrc(multipart, tmp);
 		rcret = waitrc(multipart, 2000, 0);
-		tmp = listbox->select; 
+		tmp = listbox->select;
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		
+
 		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && listbox->select != NULL && ostrcmp(listbox->select->name, "device") == 0)
 		{
 			mdev = ostrcat(mdev, device->ret, 1, 0);
@@ -226,7 +226,7 @@ int no_mdev()
 			path = getconfig("mountpath", NULL);
 			path = ostrcat(path, "/", 0, 0);
 			path = ostrcat(path, mdev, 1, 0);
-			
+
 			cmd = ostrcat("mount | grep ", mdev, 0, 0);
 			cmd = ostrcat(cmd, " | grep ext[2,3,4]", 1, 0);
 			ret = system(cmd);
@@ -241,24 +241,24 @@ int no_mdev()
 			}
 			else
 			{
-				textbox("ERROR", _("No Linux partition found on this device."), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("ERROR"), _("No Linux partition found on this device."), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				ren = 0;
 			}
 			free(path); path=NULL;
 			free(mdev); mdev=NULL;
 			if(ren == 1)
 				break;
-		} 
+		}
 		drawscreen(multipart, 0, 0);
 	}
 	delownerrc(multipart);
 	clearscreen(multipart);
-	
+
 	if(mdev == NULL)
-		return 1;	
-	
+		return 1;
+
 	if(ren != 1)
-	{ 
+	{
 		if(textbox("MultiImage", _("All data on this device will be deleted!\nOK?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 650, 200, 0, 0) == 2)
 		{
 			free(mdev); mdev = NULL;
@@ -289,11 +289,11 @@ int no_mdev()
 		free(path); path = NULL;
 		free(mdev); mdev = NULL;
 		system ("echo MultiImage > /dev/vfd");
-	}	
-	
+	}
+
 	return 0;
 }
-	
+
 // type 1 = install image
 // type 2 = rename image
 int multiimage_install(char* imagefile, char* mdev, int type)
@@ -323,17 +323,17 @@ int multiimage_install(char* imagefile, char* mdev, int type)
 		changetext(b2, _("RENAME"));
 		changeinput(imagename, imagefile);
 	}
-	
+
 	path = getconfig("mountpath", NULL);
 	path = ostrcat(path, "/", 0, 0);
 	path = ostrcat(path, mdev, 1, 0);
 
 	path2 = ostrcat(path, "/", 0, 0);
 	path2 = ostrcat(path2,"titan_multi", 1, 0);
-		
+
 	changetext(text1, imagefile);
-	
-	
+
+
 	drawscreen(multiinstall, 0, 0);
 	addscreenrc(multiinstall, listbox);
 	tmp = listbox->select;
@@ -341,7 +341,7 @@ int multiimage_install(char* imagefile, char* mdev, int type)
 	{
 		addscreenrc(multiinstall, tmp);
 		rcret = waitrc(multiinstall, 2000, 0);
-		tmp = listbox->select; 
+		tmp = listbox->select;
 		if(rcret == getrcconfigint("rcexit", NULL))
 			break;
 		if(rcret == getrcconfigint("rcred", NULL))
@@ -403,9 +403,9 @@ int multiimage_install(char* imagefile, char* mdev, int type)
 		Multi_Image_thread = addtimer(&multiimage_thread, START, 10000, 1, NULL, NULL, NULL);
 	}
 
-	free(path); path=NULL;	
-	free(path2); path2=NULL;	
-	free(path3); path3=NULL;	
+	free(path); path=NULL;
+	free(path2); path2=NULL;
+	free(path3); path3=NULL;
 	return rc;
 }
 
@@ -414,35 +414,35 @@ int multiimage_screen(char* mdev)
 	struct skin* tmp = NULL;
 	char* path = NULL;
 	char* cmd = NULL;
-	char* tmpstr = NULL; 
+	char* tmpstr = NULL;
 	char* selimage = NULL;
-	struct dirent* dirzeiger;	
+	struct dirent* dirzeiger;
 	DIR *dir = NULL;
-	int rcret = 0;	
+	int rcret = 0;
 	int rc = 0;
 	int test = 0;
 	int test2 = 0;
-	
+
 	struct skin* multiimage = getscreen("multiimage");
 	struct skin* listbox = getscreennode(multiimage, "listbox");
 	struct skin* images = getscreennode(multiimage, "images");
 	struct skin* chnode1 = NULL;
-	
+
 	path = getconfig("mountpath", NULL);
 	path = ostrcat(path, "/", 0, 0);
 	path = ostrcat(path, mdev, 1, 0);
 	path = ostrcat(path, "/", 1, 0);
 	path = ostrcat(path,"titan_multi", 1, 0);
-	
+
 	delmarkedscreennodes(multiimage, 1);
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
-	
+
 	tmpstr = ostrcat(path, "/", 0, 0);
 	tmpstr = ostrcat(tmpstr, ".multi_image", 1, 0);
 	selimage = readsys(tmpstr, 1);
 	free(tmpstr); tmpstr=NULL;
-	
+
 	test2 = 0;
 	dir = opendir(path);
 	if (dir != 0)
@@ -465,12 +465,12 @@ int multiimage_screen(char* mdev)
 					chnode1->name = ostrcat(dirzeiger->d_name, NULL, 0, 0);
 					if(selimage != NULL && ostrcmp(selimage, dirzeiger->d_name) == 0)
 					{
-						tmpstr = ostrcat(dirzeiger->d_name, "  (selected)", 0, 0);	
+						tmpstr = ostrcat(dirzeiger->d_name, "  (selected)", 0, 0);
 						changetext(chnode1, tmpstr);
 						free(tmpstr); tmpstr=NULL;
 						test2 = 1;
 					}
-					else		
+					else
 						changetext(chnode1, dirzeiger->d_name);
 				}
 			}
@@ -479,7 +479,7 @@ int multiimage_screen(char* mdev)
 		free(selimage); selimage = NULL;
 		if(test == 0)
 			images->hidden = NO;
-		else 
+		else
 		{
 			images->hidden = YES;
 			chnode1 = addlistbox(multiimage, listbox, chnode1, 1);
@@ -507,11 +507,11 @@ int multiimage_screen(char* mdev)
 	{
 		addscreenrc(multiimage, tmp);
 		rcret = waitrc(multiimage, 2000, 0);
-		tmp = listbox->select; 
+		tmp = listbox->select;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(listbox->select != NULL)
-			{	
+			{
 				rc = 1;
 				tmpstr = ostrcat(path, "/", 0, 0);
 				tmpstr = ostrcat(tmpstr, ".multi_image", 1, 0);
@@ -528,7 +528,7 @@ int multiimage_screen(char* mdev)
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL)
-			{	
+			{
 				rc = 1;
 				cmd = ostrcat(_("Sure to delete Image?\n"), listbox->select->name, 0, 0);
 				if(textbox("MultiImage", cmd, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
@@ -557,7 +557,7 @@ int multiimage_screen(char* mdev)
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			rc = 1;
-			selimage = ostrcat(listbox->select->name, NULL, 0, 0); 
+			selimage = ostrcat(listbox->select->name, NULL, 0, 0);
 			break;
 		}
 		if(rcret == getrcconfigint("rcpower", NULL))
@@ -584,28 +584,28 @@ void multi_main(void)
 	char* mdev = NULL;
 	char* imagefile = NULL;
 	int ret = 0;
-		
+
 	mdev = find_multiimage_dev();
-	
+
 	while (mdev == NULL)
 	{
 		if(textbox("MultiImage", _("No MultiImage device found.\nCreate device?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
 			return;
 		if(no_mdev() != 0)
-			return;		
+			return;
 		mdev = find_multiimage_dev();
 	}
 	while(1)
 	{
 		ret = multiimage_screen(mdev);
-		
+
 		if(ret == 0)
 			break;
 		if(ret == 1)
 			continue;
 		if(ret == 2)
 		{
-			textbox(_("Message"), _("The install process will look in /tmp for an image zip file.\nPlease copy the image to /tmp.\nThe filename must not contain blanks."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);					
+			textbox(_("Message"), _("The install process will look in /tmp for an image zip file.\nPlease copy the image to /tmp.\nThe filename must not contain blanks."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 			imagefile = screendir("/tmp", "*.zip", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 			if(imagefile != NULL)
 			{
@@ -621,7 +621,7 @@ void multi_main(void)
 		if(ret == 3)
 		{
 			if(no_mdev() != 0)
-				continue;		
+				continue;
 			free(mdev); mdev=NULL;
 			mdev = find_multiimage_dev();
 		}
@@ -633,15 +633,15 @@ void multi_main(void)
 	}
 	free(mdev); mdev=NULL;
 }
-	
-	
-		
+
+
+
 //wird beim laden ausgefuehrt
 void init(void)
 {
 	char* tmpstr = NULL;
 	pluginaktiv = 1;
-	
+
 	tmpstr = createpluginpath("/multiimage/skin.xml", 0);
 	readscreen(tmpstr, 122, 1);
 
