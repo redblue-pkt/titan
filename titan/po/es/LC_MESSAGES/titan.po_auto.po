@@ -3131,13 +3131,13 @@ msgstr "Memoria disponible libre (KB)"
 msgid "ERROR"
 msgstr "!!! ERROR !!!"
 
-#: MultiImage.c:353
+#: MultiImage.c:354
 msgid ""
 "ERROR\n"
 "Image already present!"
 msgstr ""
 
-#: MultiImage.c:273
+#: MultiImage.c:274
 msgid ""
 "ERROR\n"
 "Partition could not be created"
@@ -3218,8 +3218,8 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:100
-#: movshare.h:190 movshare.h:196 MultiImage.c:262 MultiImage.c:273
-#: MultiImage.c:533 MultiImage.c:591 MultiImage.c:671 myvideo.h:86
+#: movshare.h:190 movshare.h:196 MultiImage.c:262 MultiImage.c:274
+#: MultiImage.c:534 MultiImage.c:592 MultiImage.c:672 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
@@ -3543,7 +3543,7 @@ msgstr "Lista de Extensiones"
 msgid "External Player"
 msgstr ""
 
-#: MultiImage.c:401
+#: MultiImage.c:402
 msgid ""
 "Extracting will take a few minutes ...\n"
 "\n"
@@ -4813,7 +4813,7 @@ msgid ""
 "Image extracted"
 msgstr ""
 
-#: MultiImage.c:317
+#: MultiImage.c:318
 msgid "INSTALL"
 msgstr ""
 
@@ -4875,7 +4875,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: MultiImage.c:671
+#: MultiImage.c:672
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5938,7 +5938,7 @@ msgstr "Lista de Menus"
 #: mightyupload.h:68 mightyupload.h:74 movie2k.h:23 movie2k.h:32 movie4k.h:38
 #: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:137
 #: movshare.h:40 movshare.h:100 movshare.h:190 movshare.h:196 MultiImage.c:46
-#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 MultiImage.c:607
+#: MultiImage.c:274 MultiImage.c:354 MultiImage.c:402 MultiImage.c:608
 #: myvideo.h:86 nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
 #: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
@@ -6368,7 +6368,7 @@ msgstr ""
 "No Directorio MediaDB encontrado\n"
 "Pulse Aceptar para crearla"
 
-#: MultiImage.c:591
+#: MultiImage.c:592
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6529,9 +6529,9 @@ msgstr "Ö"
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:100
 #: movshare.h:190 movshare.h:196 MultiImage.c:46 MultiImage.c:175
-#: MultiImage.c:244 MultiImage.c:262 MultiImage.c:273 MultiImage.c:353
-#: MultiImage.c:401 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
-#: MultiImage.c:671 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
+#: MultiImage.c:244 MultiImage.c:262 MultiImage.c:274 MultiImage.c:354
+#: MultiImage.c:402 MultiImage.c:534 MultiImage.c:592 MultiImage.c:608
+#: MultiImage.c:672 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
 #: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
@@ -7539,7 +7539,7 @@ msgstr "Eliminar entrada"
 msgid "REMOVE STYLE"
 msgstr ""
 
-#: MultiImage.c:322
+#: MultiImage.c:323
 msgid "RENAME"
 msgstr ""
 
@@ -9551,7 +9551,7 @@ msgstr "Domingo"
 msgid "Sure to cancel the cut process?"
 msgstr "esta seguro de que desea cancelar corte?"
 
-#: MultiImage.c:532
+#: MultiImage.c:533
 msgid "Sure to delete Image?\n"
 msgstr ""
 
@@ -9856,7 +9856,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr "El proveedor de alojamiento no se admite en la actualidad!"
 
-#: MultiImage.c:607
+#: MultiImage.c:608
 msgid ""
 "The install process will look in /tmp for an image zip file.\n"
 "Please copy the image to /tmp.\n"
