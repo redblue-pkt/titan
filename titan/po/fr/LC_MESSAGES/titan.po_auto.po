@@ -3052,7 +3052,8 @@ msgstr ""
 msgid "EPGfreespace (KB)"
 msgstr "Espace libre EPG"
 
-#: network.h:265 network.h:273 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
+#: MultiImage.c:244 network.h:265 network.h:273 tsSchnitt.c:129
+#: tsSchnitt.c:327 tsSchnitt.c:342
 msgid "ERROR"
 msgstr "Erreur"
 
