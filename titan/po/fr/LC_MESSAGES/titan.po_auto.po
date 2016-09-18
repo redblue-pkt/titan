@@ -11409,8 +11409,7 @@ msgstr "Date"
 msgid "deactivate"
 msgstr "Désactiver"
 
-#: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
-#: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
+#: httpdfunc.h:4572
 msgid "deaktiv"
 msgstr "inactif"
 
@@ -11467,7 +11466,9 @@ msgstr ""
 msgid "dirsort"
 msgstr "Trier"
 
-#: network.h:394 panel_settings.h:29
+#: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
+#: httpdfunc.h:4118 httpdfunc.h:4178 network.h:394 network.h:612
+#: panel_settings.h:29
 msgid "disable"
 msgstr "Désactiver"
 

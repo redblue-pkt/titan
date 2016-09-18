@@ -11452,8 +11452,7 @@ msgstr ""
 msgid "deactivate"
 msgstr "spento"
 
-#: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
-#: httpdfunc.h:4118 httpdfunc.h:4178 httpdfunc.h:4572 network.h:612
+#: httpdfunc.h:4572
 msgid "deaktiv"
 msgstr "spento"
 
@@ -11510,7 +11509,9 @@ msgstr ""
 msgid "dirsort"
 msgstr ""
 
-#: network.h:394 panel_settings.h:29
+#: adjust.h:120 adjust.h:130 epgsettings.h:148 epgsettings.h:154
+#: httpdfunc.h:4118 httpdfunc.h:4178 network.h:394 network.h:612
+#: panel_settings.h:29
 msgid "disable"
 msgstr "Spento"
 
