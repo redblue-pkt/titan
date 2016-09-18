@@ -54,7 +54,7 @@ int readwlan(const char* filename, char** type, char** ssid, char** key)
 				tmpstr[strlen(tmpstr) -1] = '\0';
 				free(*ssid); *ssid = NULL;
 				*ssid = ostrcat(tmpstr, NULL, 0, 0);
-			}				
+			}
 		}
 		tmpstr = ostrstrcase(fileline, "psk=\"");
 		if(tmpstr != NULL)
@@ -65,7 +65,7 @@ int readwlan(const char* filename, char** type, char** ssid, char** key)
 				tmpstr[strlen(tmpstr) -1] = '\0';
 				free(*key); *key = NULL;
 				*key = ostrcat(tmpstr, NULL, 0, 0);
-			}				
+			}
 		}
 		tmpstr = ostrstrcase(fileline, "wep_key0=");
 		if(tmpstr != NULL)
@@ -78,7 +78,7 @@ int readwlan(const char* filename, char** type, char** ssid, char** key)
 				*key = ostrcat(tmpstr, NULL, 0, 0);
 				free(*type); *type = NULL;
 				*type = ostrcat("1", NULL, 0, 0);
-			}				
+			}
 		}
 	}
 
@@ -90,9 +90,9 @@ int readwlan(const char* filename, char** type, char** ssid, char** key)
 int writewlan(const char* filename, int type, char* ssid, char* key)
 {
 	char* savesettings = NULL;
-	
+
 	char* tmpstr = "\nkey_mgmt=NONE\nscan_ssid=1";
-	
+
 	if(type == 1) //WEP
 		tmpstr = "\nkey_mgmt=NONE\nscan_ssid=1\nwep_tx_keyidx=0\nwep_key0=";
 	if(type == 2) //WPA
@@ -104,14 +104,14 @@ int writewlan(const char* filename, int type, char* ssid, char* key)
 	savesettings = ostrcat(savesettings, ssid, 1, 0);
 	savesettings = ostrcat(savesettings, "\"", 1, 0);
 	savesettings = ostrcat(savesettings, tmpstr, 1, 0);
-	
+
 	if(type == 2 || type == 3)
 		savesettings = ostrcat(savesettings, "\"", 1, 0);
 	if(type == 1 || type == 2 || type == 3)
 		savesettings = ostrcat(savesettings, key, 1, 0);
 	if(type == 2 || type == 3)
 		savesettings = ostrcat(savesettings, "\"", 1, 0);
-	
+
 	savesettings = ostrcat(savesettings, "\n}", 1, 0);
 
 	FILE* fd = fopen(filename, "w");
@@ -203,14 +203,14 @@ int writeinterfaces()
 			if(savedns != NULL)
 			{
 				debug(55, "[NETWORK] save resolv.conf: %s\n", savedns);
-				
+
 				savedns = ostrcat(savedns, "\n", 1, 0);
 				if(dnscount == 1)
 					savedns = ostrcat(savedns, "options timeout:3 attempts:1", 1, 0);
 				else
 					savedns = ostrcat(savedns, "options timeout:2 attempts:1", 1, 0);
 
-				
+
 				FILE* fd1 = fopen("/mnt/network/resolv.conf", "w");
 				if(fd1)
 				{
@@ -243,7 +243,7 @@ void screennetwork_test()
 	struct skin* internet = getscreennode(network, "internet");
 	struct skin* lan = getscreennode(network, "lan");
 	char* tmpstr = NULL;
-		
+
 	drawscreen(network, 0, 0);
 	addscreenrc(network, lan);
 	while(1)
@@ -259,7 +259,7 @@ void screennetwork_test()
 
 			tmpstr = ostrcat(tmpstr, "ping -c1 -W1 ", 1, 0);
 			tmpstr = ostrcat(tmpstr, fixip(status.gateway, 1), 1, 0);
-			if(system(tmpstr) == 0) 
+			if(system(tmpstr) == 0)
 				changetext(lan, _("OK"));
 			else
 				changetext(lan, _("ERROR"));
@@ -267,7 +267,7 @@ void screennetwork_test()
 
 			tmpstr = ostrcat(tmpstr, "ping -c1 -W1 ", 1, 0);
 			tmpstr = ostrcat(tmpstr, "www.google.de", 1, 0);
-			if(system(tmpstr) == 0) 
+			if(system(tmpstr) == 0)
 				changetext(internet, _("OK"));
 			else
 				changetext(internet, _("ERROR"));
@@ -295,7 +295,7 @@ void screennetwork_restart(struct inetwork *net, int flag)
 		tmpstr = ostrcat(_("Restart Network ?"), NULL, 0, 0);
 	else if(flag == 1)
 		tmpstr = ostrcat(_("Aktivate new network config ?"), NULL, 0, 0);
-	
+
 	if(flag == 2 || textbox(_("Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		debug(10, "%s", tmpstr);
@@ -390,11 +390,11 @@ void screennetwork_adapterext(int mode, char* interface)
 	addchoicebox(type, "1", _("dhcp"));
 	addchoicebox(type, "0", _("static"));
 	addchoicebox(type, "2", _("off"));
-	
+
 	addchoicebox(wol, "0", _("disable"));
 	addchoicebox(wol, "1", _("enable"));
 	setchoiceboxselection(wol, getconfig("wol", NULL));
-		
+
 	if(ostrcmp(interface, "eth0") != 0 || file_exist("/proc/stb/fp/wol") == 0)
 		wol->hidden = YES;
 	else
@@ -492,7 +492,7 @@ void screennetwork_adapterext(int mode, char* interface)
 			else
 				system("echo disable > /proc/stb/fp/wol");
 		}
-		
+
 		debug(55, "save settings");
 		debug(55, "type: %i", tmp_type);
 		debug(55, "ipaddress: %s", tmp_ipaddress);
@@ -555,12 +555,12 @@ void screenhostname()
 {
 	int ret = 0;
 	char* hostname = NULL, *newhostname = NULL, *cmd = NULL;
-	
+
 	hostname = command("hostname");
 	hostname = strstrip(hostname);
 	newhostname = textinput(NULL, hostname);
 	newhostname = strstrip(newhostname);
-	
+
 	if(newhostname != NULL && strlen(newhostname) > 0)
 	{
 		ret = writesys("/etc/hostname", newhostname, 1);
@@ -572,10 +572,10 @@ void screenhostname()
 			ret = system(cmd);
 		}
 	}
-	
+
 	if(ret != 0)
-			textbox(_("Message"), _("Can't change hostname !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
-	
+			textbox(_("Message"), _("Can't change hostname !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+
 	free(cmd); cmd = NULL;
 	free(hostname); hostname = NULL;
 	free(newhostname); newhostname = NULL;
@@ -609,7 +609,7 @@ start:
 		{
 			tmpstr = ostrcat(inetworknode->device, " (", 0, 0);
 			if(inetworknode->type == 2)
-				tmpstr = ostrcat(tmpstr, _("deaktiv"), 1, 0);
+				tmpstr = ostrcat(tmpstr, _("disable"), 1, 0);
 			else
 				tmpstr = ostrcat(tmpstr, inetworknode->ip, 1, 0);
 			tmpstr = ostrcat(tmpstr, ")", 1, 0);
@@ -746,7 +746,7 @@ void screennetwork_wlan()
 			if(scan == 1)
 			{
 				if(listbox->select != NULL)
-				{	
+				{
 					ssid->linecount = 0;
 					ssid->pagecount = 0;
 					ssid->poscount = 0;
@@ -795,15 +795,15 @@ void screennetwork_wlan()
 						drawscreen(load, 0, 0);
 						ret = wlanstart();
 						clearscreen(load);
-						
+
 						if(ret == 0)
 						{
 							net = getinetworkfirstwlan();
-							if(net != NULL) 
+							if(net != NULL)
 							{
 								net->type = 1; //dhcp
 								screennetwork_adapterext(0, net->device);
-							}	
+							}
 						}
 					}
 					break;
@@ -877,7 +877,7 @@ void screennetwork_wlan()
 			textbox(_("Message"), _("WLAN now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(wlan, 0, 0);
 		}
-		
+
 		if(rcret == getrcconfigint("rcblue", NULL) && scan == 0)
 		{
 			tmpstr = readfiletomem("/tmp/wlan.log", 0);
@@ -907,7 +907,7 @@ void screennetwork_wlan()
 			free(tmpstr); tmpstr = NULL;
 			drawscreen(wlan, 0, 0);
 		}
-		
+
 		if(rcret == RCTIMEOUT)
 			drawscreen(wlan, 0, 0);
 	}
