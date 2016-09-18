@@ -86,11 +86,11 @@ void screenepgscanlist()
 		{
 			clearscreen(scanlist);
 			struct mainbouquet* mbouquet = screenmainbouquet();
-			
+
 			mainbouquet2epgscanlist(mbouquet);
 			delmarkedscreennodes(scanlist, 1);
 			createepgscanlist(scanlist, listbox);
-			
+
 			drawscreen(scanlist, 0, 0);
 		}
 	}
@@ -145,13 +145,13 @@ void screenepgsettings()
 	changeinput(epgfreespace, "50\n100\n200\n300\n400\n500\n600\n700\n800\n900\n1000");
 	setchoiceboxselection(epgfreespace, getconfig("epgfreespace", NULL));
 
-	addchoicebox(epglistmode, "0", _("deaktiv"));
+	addchoicebox(epglistmode, "0", _("disable"));
 	addchoicebox(epglistmode, "1", _("scan"));
 	addchoicebox(epglistmode, "2", _("whitelist"));
 	addchoicebox(epglistmode, "3", _("scan and whitelist"));
 	setchoiceboxselection(epglistmode, getconfig("epg_listmode", NULL));
 
-	addchoicebox(epgrefresh, "0", _("deaktiv"));
+	addchoicebox(epgrefresh, "0", _("disable"));
 	addchoicebox(epgrefresh, "01:00", "01:00");
 	addchoicebox(epgrefresh, "02:00", "02:00");
 	addchoicebox(epgrefresh, "03:00", "03:00");
@@ -177,18 +177,18 @@ void screenepgsettings()
 	addchoicebox(epgrefresh, "23:00", "23:00");
 	addchoicebox(epgrefresh, "23:59", "24:00");
 	setchoiceboxselection(epgrefresh, getconfig("epg_refreshtime", NULL));
-		
-	addchoicebox(epgbutton, "0", _("Single EPG")); 	 	 
-	addchoicebox(epgbutton, "1", _("Multi EPG")); 	 	 
+
+	addchoicebox(epgbutton, "0", _("Single EPG"));
+	addchoicebox(epgbutton, "1", _("Multi EPG"));
 	setchoiceboxselection(epgbutton, getconfig("epgbutton", NULL));
 
 	changeinput(epgzoom, "1\n2\n3\n4\n5\n6\n7");
 	setchoiceboxselection(epgzoom, getconfig("gmultiepgzoom", NULL));
-	
+
 	addchoicebox(epgpicon, "0", _("no"));
 	addchoicebox(epgpicon, "1", _("yes"));
 	setchoiceboxselection(epgpicon, getconfig("epgpicon", NULL));
-	
+
 	addchoicebox(epgsave, "0", _("always"));
 	addchoicebox(epgsave, "1", _("only on power off / restart"));
 	addchoicebox(epgsave, "2", _("never"));
@@ -216,7 +216,7 @@ void screenepgsettings()
 	addchoicebox(epg_afterevent, "0", _("nothing"));
 	addchoicebox(epg_afterevent, "1", _("poweroff"));
 	setchoiceboxselection(epg_afterevent, getconfig("epg_afterevent", NULL));
-	
+
 	addchoicebox(epg_primetime, "18:00", "18:00");
 	addchoicebox(epg_primetime, "18:30", "18:30");
 	addchoicebox(epg_primetime, "19:00", "19:00");
@@ -227,7 +227,7 @@ void screenepgsettings()
 	setchoiceboxselection(epg_primetime, getconfig("epg_primetime", NULL));
 
 	b4->usesavebg = 1;
-	
+
 	drawscreen(epgsettings, 0, 0);
 	addscreenrc(epgsettings, listbox);
 
@@ -241,7 +241,7 @@ void screenepgsettings()
 		else
 			b4->hidden = YES;
 		drawscreen(epgsettings, 0, 0);
-		
+
 		rcret = waitrc(epgsettings, 0, 0);
 		tmp = listbox->select;
 
@@ -255,7 +255,7 @@ void screenepgsettings()
 			epgrefresh->hidden = NO;
 			epg_afterevent->hidden = NO;
 		}
-			
+
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -283,14 +283,14 @@ void screenepgsettings()
 				epgscandeltimer();
 			else
 				epgscancreatetimer();
-			
+
 			if(getconfig("epg_refreshtime", NULL) != NULL || getconfigint("epg_afterevent", NULL) != 0)
-			{   	
+			{
 				if(getconfigint("epg_listmode", NULL) == 1 || getconfigint("epg_listmode", NULL) == 3)
 				{
 //					textbox(_("Message"), _("Deavtivate Refresh Time and After EPG in scan-mode"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 15, 0);
 					delconfig("epg_refreshtime");
-					delconfig("epg_afterevent");		
+					delconfig("epg_afterevent");
 				}
 			}
 

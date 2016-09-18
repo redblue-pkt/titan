@@ -5,7 +5,7 @@ void screenadjust()
 {
 	int rcret = 0;
 	char* tmpstr = NULL;
-	
+
 	struct skin* adjust = getscreen("adjust");
 	struct skin* listbox = getscreennode(adjust, "listbox");
 	struct skin* volbartimeout = getscreennode(adjust, "volbartimeout");
@@ -88,7 +88,7 @@ void screenadjust()
 		fastzap->hidden = YES;
 	else
 		fastzap->hidden = NO;
-	
+
 	addchoicebox(fastzap, "0", _("no"));
 	addchoicebox(fastzap, "2", _("medium"));
 	addchoicebox(fastzap, "1", _("fast"));
@@ -117,17 +117,17 @@ void screenadjust()
 	addchoicebox(frontpoweraktion, "2", _("Standby"));
 	setchoiceboxselection(frontpoweraktion, getconfig("frontpoweraktion", NULL));
 
-	addchoicebox(virtualzap, "0", _("deaktiv"));
+	addchoicebox(virtualzap, "0", _("disable"));
 	addchoicebox(virtualzap, "1", _("1 sec"));
 	addchoicebox(virtualzap, "2", _("2 sec"));
 	addchoicebox(virtualzap, "9999", _("endless"));
 	setchoiceboxselection(virtualzap, getconfig("virtualzap", NULL));
-	
+
 	addchoicebox(fasttextrender, "0", _("no"));
 	addchoicebox(fasttextrender, "1", _("yes"));
 	setchoiceboxselection(fasttextrender, getconfig("fasttextrender", NULL));
 
-	addchoicebox(recsplitsize, "0", _("deaktiv"));
+	addchoicebox(recsplitsize, "0", _("disable"));
 	addchoicebox(recsplitsize, "1", _("1 GB"));
 	addchoicebox(recsplitsize, "2", _("2 GB"));
 	addchoicebox(recsplitsize, "3", _("3 GB"));
@@ -148,11 +148,11 @@ void screenadjust()
 
 	changeinput(skip79, "15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200");
 	setchoiceboxselection(skip79, getconfig("skip79", NULL));
-	
+
 	addchoicebox(playertype, "0", _("extern"));
 	addchoicebox(playertype, "1", _("intern"));
 	setchoiceboxselection(playertype, getconfig("playertype", NULL));
-	
+
 	addchoicebox(autochangechannelname, "0", _("no"));
 	addchoicebox(autochangechannelname, "1", _("yes"));
 	setchoiceboxselection(autochangechannelname, getconfig("autochangechannelname", NULL));
@@ -162,11 +162,11 @@ void screenadjust()
 	addchoicebox(def_rectimer_after, "2", _("standby"));
 	addchoicebox(def_rectimer_after, "3", _("power off"));
 	setchoiceboxselection(def_rectimer_after, getconfig("def_rectimer_after", NULL));
-	
+
 	addchoicebox(showchanneltimeline, "0", _("no"));
 	addchoicebox(showchanneltimeline, "1", _("yes"));
 	setchoiceboxselection(showchanneltimeline, getconfig("showchanneltimeline", NULL));
-	
+
 	addchoicebox(screenanim, "0", _("no"));
 	addchoicebox(screenanim, "1", _("anim. width"));
 	addchoicebox(screenanim, "2", _("anim. height"));
@@ -181,7 +181,7 @@ void screenadjust()
 	}
 #endif
 	setchoiceboxselection(screenanim, getconfig("screenanim", NULL));
-	
+
 	addchoicebox(screenanimspeed, "1", _("very fast"));
 	addchoicebox(screenanimspeed, "5", _("fast"));
 	addchoicebox(screenanimspeed, "10", _("normal"));
@@ -193,11 +193,11 @@ void screenadjust()
 	addchoicebox(channellistview, "1", _("show"));
 	setchoiceboxselection(channellistview, getconfig("channellistview", NULL));
 
-	addchoicebox(showlastpos, "0", _("no"));	
+	addchoicebox(showlastpos, "0", _("no"));
 	addchoicebox(showlastpos, "1", _("yes"));
 	setchoiceboxselection(showlastpos, getconfig("showlastpos", NULL));
 
-	addchoicebox(recsync, "0", _("no"));	
+	addchoicebox(recsync, "0", _("no"));
 	addchoicebox(recsync, "1", _("yes"));
 	setchoiceboxselection(recsync, getconfig("recsync", NULL));
 
@@ -255,171 +255,171 @@ void screenadjust()
 		changeinput(community_user, getconfig("community_user", NULL));
 	else
 		changeinput(community_pass, "****");
-		
+
 	changemask(community_pass, "****");
 	if(getconfig("community_pass", NULL) == NULL)
 		changeinput(community_pass, getconfig("community_pass", NULL));
 	else
 		changeinput(community_pass, "****");
-	
+
 
 // setdebuglevel
 #ifndef BETA
 	debuglevel->hidden = YES;
 #else
-	tmpstr = ostrcat("10 - ", _("Minimal"), 0, 0);	
+	tmpstr = ostrcat("10 - ", _("Minimal"), 0, 0);
 	addchoicebox(debuglevel, "10", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("40 - ", _("MTD Operation/System Update"), 0, 0);	
+
+	tmpstr = ostrcat("40 - ", _("MTD Operation/System Update"), 0, 0);
 	addchoicebox(debuglevel, "40", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("50 - ", _("MediaCenter"), 0, 0);	
+
+	tmpstr = ostrcat("50 - ", _("MediaCenter"), 0, 0);
 	addchoicebox(debuglevel, "50", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("55 - ", _("Network Interface"), 0, 0);	
+
+	tmpstr = ostrcat("55 - ", _("Network Interface"), 0, 0);
 	addchoicebox(debuglevel, "55", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("60 - ", _("Key Actions"), 0, 0);	
+
+	tmpstr = ostrcat("60 - ", _("Key Actions"), 0, 0);
 	addchoicebox(debuglevel, "60", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("70 - ", _("Networkbrowser"), 0, 0);	
+
+	tmpstr = ostrcat("70 - ", _("Networkbrowser"), 0, 0);
 	addchoicebox(debuglevel, "70", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("77 - ", _("Web Adjust"), 0, 0);	
+
+	tmpstr = ostrcat("77 - ", _("Web Adjust"), 0, 0);
 	addchoicebox(debuglevel, "77", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("80 - ", _("Harddisk"), 0, 0);	
+
+	tmpstr = ostrcat("80 - ", _("Harddisk"), 0, 0);
 	addchoicebox(debuglevel, "80", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("81 - ", _("MultiImage"), 0, 0);	
+
+	tmpstr = ostrcat("81 - ", _("MultiImage"), 0, 0);
 	addchoicebox(debuglevel, "81", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("90 - ", _("Screensaver"), 0, 0);	
+
+	tmpstr = ostrcat("90 - ", _("Screensaver"), 0, 0);
 	addchoicebox(debuglevel, "90", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("99 - ", _("Tithek/HTTP Header/Community"), 0, 0);	
+
+	tmpstr = ostrcat("99 - ", _("Tithek/HTTP Header/Community"), 0, 0);
 	addchoicebox(debuglevel, "99", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("100 - ", _("Global"), 0, 0);	
+
+	tmpstr = ostrcat("100 - ", _("Global"), 0, 0);
 	addchoicebox(debuglevel, "100", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("110 - ", _("Stringconvert"), 0, 0);	
+
+	tmpstr = ostrcat("110 - ", _("Stringconvert"), 0, 0);
 	addchoicebox(debuglevel, "110", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("130 - ", _("TPK"), 0, 0);	
+
+	tmpstr = ostrcat("130 - ", _("TPK"), 0, 0);
 	addchoicebox(debuglevel, "130", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("133 - ", _("MediaDB/IMDb/TMDb"), 0, 0);	
+
+	tmpstr = ostrcat("133 - ", _("MediaDB/IMDb/TMDb"), 0, 0);
 	addchoicebox(debuglevel, "133", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("150 - ", _("ePlayer"), 0, 0);	
+
+	tmpstr = ostrcat("150 - ", _("ePlayer"), 0, 0);
 	addchoicebox(debuglevel, "150", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("200 - ", _("DVB Devices"), 0, 0);	
+
+	tmpstr = ostrcat("200 - ", _("DVB Devices"), 0, 0);
 	addchoicebox(debuglevel, "200", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("201 - ", _("CA Device"), 0, 0);	
+
+	tmpstr = ostrcat("201 - ", _("CA Device"), 0, 0);
 	addchoicebox(debuglevel, "201", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("250 - ", _("HTTP Server/Stream/Record"), 0, 0);	
+
+	tmpstr = ostrcat("250 - ", _("HTTP Server/Stream/Record"), 0, 0);
 	addchoicebox(debuglevel, "250", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("270 - ", _("Radiotext"), 0, 0);	
+
+	tmpstr = ostrcat("270 - ", _("Radiotext"), 0, 0);
 	addchoicebox(debuglevel, "270", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("278 - ", _("ID3"), 0, 0);	
+
+	tmpstr = ostrcat("278 - ", _("ID3"), 0, 0);
 	addchoicebox(debuglevel, "278", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("300 - ", _("Subtitle"), 0, 0);	
+
+	tmpstr = ostrcat("300 - ", _("Subtitle"), 0, 0);
 	addchoicebox(debuglevel, "300", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("307 - ", _("Thumbnails"), 0, 0);	
+
+	tmpstr = ostrcat("307 - ", _("Thumbnails"), 0, 0);
 	addchoicebox(debuglevel, "307", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("333 - ", _("DVD Player"), 0, 0);	
+
+	tmpstr = ostrcat("333 - ", _("DVD Player"), 0, 0);
 	addchoicebox(debuglevel, "333", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-/*	
-	tmpstr = ostrcat("369 - ", _("Facebook"), 0, 0);	
+/*
+	tmpstr = ostrcat("369 - ", _("Facebook"), 0, 0);
 	addchoicebox(debuglevel, "369", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-*/	
-	tmpstr = ostrcat("400 - ", _("EPG Task"), 0, 0);	
+*/
+	tmpstr = ostrcat("400 - ", _("EPG Task"), 0, 0);
 	addchoicebox(debuglevel, "400", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	
-	tmpstr = ostrcat("401 - ", _("Old Entry"), 0, 0);	
+
+
+	tmpstr = ostrcat("401 - ", _("Old Entry"), 0, 0);
 	addchoicebox(debuglevel, "401", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("427 - ", _("Newsletter"), 0, 0);	
+
+	tmpstr = ostrcat("427 - ", _("Newsletter"), 0, 0);
 	addchoicebox(debuglevel, "427", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("444 - ", _("Framebuffer"), 0, 0);	
+
+	tmpstr = ostrcat("444 - ", _("Framebuffer"), 0, 0);
 	addchoicebox(debuglevel, "444", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("500 - ", _("Channel Scan"), 0, 0);	
+
+	tmpstr = ostrcat("500 - ", _("Channel Scan"), 0, 0);
 	addchoicebox(debuglevel, "500", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("555 - ", _("Draw Screen"), 0, 0);	
+
+	tmpstr = ostrcat("555 - ", _("Draw Screen"), 0, 0);
 	addchoicebox(debuglevel, "555", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("620 - ", _("CA"), 0, 0);	
+
+	tmpstr = ostrcat("620 - ", _("CA"), 0, 0);
 	addchoicebox(debuglevel, "620", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("777 - ", _("MediaDB"), 0, 0);	
+
+	tmpstr = ostrcat("777 - ", _("MediaDB"), 0, 0);
 	addchoicebox(debuglevel, "777", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-/*	
-	tmpstr = ostrcat("788 - ", _("HbbTV"), 0, 0);	
+/*
+	tmpstr = ostrcat("788 - ", _("HbbTV"), 0, 0);
 	addchoicebox(debuglevel, "788", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-*/	
-	tmpstr = ostrcat("900 - ", _("Mutex"), 0, 0);	
+*/
+	tmpstr = ostrcat("900 - ", _("Mutex"), 0, 0);
 	addchoicebox(debuglevel, "900", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("913 - ", _("File Operation"), 0, 0);	
+
+	tmpstr = ostrcat("913 - ", _("File Operation"), 0, 0);
 	addchoicebox(debuglevel, "913", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("975 - ", _("SMTP"), 0, 0);	
+
+	tmpstr = ostrcat("975 - ", _("SMTP"), 0, 0);
 	addchoicebox(debuglevel, "975", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
-	tmpstr = ostrcat("4440 - ", _("PiP"), 0, 0);	
+
+	tmpstr = ostrcat("4440 - ", _("PiP"), 0, 0);
 	addchoicebox(debuglevel, "4440", tmpstr);
 	free(tmpstr), tmpstr = NULL;
-	
+
 	setchoiceboxselection(debuglevel, getconfig("debuglevel", NULL));
 #endif
 
@@ -455,7 +455,7 @@ void screenadjust()
 	}
 	else
 		sataswitch->hidden = YES;
-	
+
 	addchoicebox(playerbuffersize, "0", _("no"));
 	addchoicebox(playerbuffersize, "524288", "512KB");
 	addchoicebox(playerbuffersize, "1048576", "1MB");
@@ -468,7 +468,7 @@ void screenadjust()
 	addchoicebox(playerbuffersize, "4718592", "4,5MB");
 	addchoicebox(playerbuffersize, "5242880", "5MB");
 	setchoiceboxselection(playerbuffersize, getconfig("playerbuffersize", NULL));
-	
+
 	addchoicebox(playerbufferseektime, "0", "0");
 	addchoicebox(playerbufferseektime, "1", "1");
 	addchoicebox(playerbufferseektime, "2", "2");
@@ -498,7 +498,7 @@ void screenadjust()
 			addconfigscreen("volbartimeout", volbartimeout);
 			addconfigscreen("infobartimeout", infobartimeout);
 			addconfigscreen("infobarsleep", infobarsleep);
-			addconfigscreencheck("secondinfobar", secondinfobar, "0");		
+			addconfigscreencheck("secondinfobar", secondinfobar, "0");
 			addconfigscreen("spinnerspeed", spinnerspeed);
 			status.spinnerspeed = getconfigint("spinnerspeed", NULL);
 			addconfigscreen("spinnertime", spinnertime);
@@ -554,7 +554,7 @@ void screenadjust()
 			addconfigscreen("showhiddenfiles", showhiddenfiles);
 			status.showhiddenfiles = getconfigint("showhiddenfiles", NULL);
 			addconfigscreencheck("expertmodus", expertmodus, "0");
-			status.expertmodus = getconfigint("expertmodus", NULL);					
+			status.expertmodus = getconfigint("expertmodus", NULL);
 			addconfigscreencheck("infobarprogram", infobarprogram, "0");
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
 			addconfigscreen("crosscontrol", crosscontrol);
