@@ -13980,17 +13980,3 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid ""
-#~ "ERROR\n"
-#~ "Image already present!"
-#~ msgstr ""
-#~ "FEHLER\n"
-#~ "Image Name schon vorhanden!"
-
-#~ msgid ""
-#~ "ERROR\n"
-#~ "Partition could not be created"
-#~ msgstr ""
-#~ "FEHLER\n"
-#~ "Partition konnte nicht erstellt werden!"
