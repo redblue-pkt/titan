@@ -13766,9 +13766,3 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Can't restore settings"
-#~ msgstr "ERROR: Can't restore settings"
-
-#~ msgid "Really restore default settings ?"
-#~ msgstr "Are you sure to restore Factory-settings?"
