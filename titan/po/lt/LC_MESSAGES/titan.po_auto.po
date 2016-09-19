@@ -1860,7 +1860,7 @@ msgstr "Negalima paalinti failo / direktorijos !"
 msgid "Can't rename file !"
 msgstr "Negalima pervadinti failo !"
 
-#: restoredefault.h:23
+#: restoredefault.h:23 restoredefault.h:49
 msgid "Can't restore settings"
 msgstr "KLAIDA: Nemanoma atkurti nustatymus"
 
@@ -2153,7 +2153,7 @@ msgstr "Choose your Remote control Model from the following list"
 msgid "Choose your Resolution"
 msgstr ""
 
-#: restoredefault.h:67
+#: restoredefault.h:94
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 
@@ -2868,7 +2868,7 @@ msgstr ""
 msgid "Diseqc repeats"
 msgstr ""
 
-#: restoredefault.h:47
+#: restoredefault.h:73
 msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
@@ -2876,7 +2876,7 @@ msgstr ""
 "Do you really want to erase the Swap-Filesystem?\n"
 "Your Settings are retained. Your Receiver will Reboot and erase."
 
-#: restoredefault.h:32
+#: restoredefault.h:58
 msgid ""
 "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
@@ -3217,45 +3217,46 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: putlocker.h:225 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
 #: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:387
 #: record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
-#: restoredefault.h:10 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:668 security.h:685 security.h:1944 service.h:743
-#: service.h:989 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:594
-#: skinadjust.h:618 skinadjust.h:659 skin_default_skin.xml.h:196
-#: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
-#: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
-#: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:6
-#: skins_lcdpearl1_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:7
-#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:19
-#: skins_multiimage_skin.xml.h:5 skins_optimize_skin.xml.h:1
-#: skins_panel_skin.xml.h:10 skins_rgui_skin.xml.h:1
-#: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
-#: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
-#: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
-#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
-#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
-#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:244
-#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:68
-#: thefile.h:205 thevideo.h:29 thevideo.h:65 thevideo.h:71 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:1059 titan.c:1068 titan.c:1196 titan.c:1217 titan.c:1223
-#: titan.c:1234 titan.c:1240 tithek.c:103 tithek_global.h:96 tithek.h:711
-#: tithek.h:1273 tithek.h:1334 tithek.h:1663 tithek.h:1685 tithek.h:1702
-#: tithek.h:1934 tithek.h:2094 tithek.h:2379 tithek.h:2414 tithek.h:2430
-#: tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
-#: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
-#: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60 vidag.h:66 vidbull.h:30
-#: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:85
-#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31
-#: vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94 vidto.h:128 vidto.h:174
-#: vidto.h:180 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
-#: xvidstage.h:77 youtube.h:220 zapback.c:79 zdf.h:29
+#: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
+#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
+#: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
+#: security.h:685 security.h:1944 service.h:743 service.h:989 shared.h:29
+#: shared.h:65 shared.h:82 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
+#: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
+#: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
+#: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
+#: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
+#: skins_lcdsamsung_skin.xml.h:7 skins_mboxinfo_skin.xml.h:1
+#: skins_mc_skin.xml.h:19 skins_multiimage_skin.xml.h:5
+#: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
+#: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
+#: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
+#: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:414 softcam.h:477
+#: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
+#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
+#: system_backup_restore.h:95 system_update.h:244 system_update.h:250
+#: system_update.h:260 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:29
+#: thevideo.h:65 thevideo.h:71 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: timeshiftsettings.h:45 titan.c:282 titan.c:1059 titan.c:1068 titan.c:1196
+#: titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240 tithek.c:103
+#: tithek_global.h:96 tithek.h:711 tithek.h:1273 tithek.h:1334 tithek.h:1663
+#: tithek.h:1685 tithek.h:1702 tithek.h:1934 tithek.h:2094 tithek.h:2379
+#: tithek.h:2414 tithek.h:2430 tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
+#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
+#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54
+#: vidag.h:60 vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
+#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:28 vidzi.h:51 vidzi.h:57
+#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:29 xvidstage.h:59
+#: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:220 zapback.c:79
+#: zdf.h:29
 msgid "EXIT"
 msgstr "Ieiti"
 
@@ -3891,11 +3892,11 @@ msgstr ""
 msgid "Format HDD"
 msgstr ""
 
-#: httpdfunc.h:6798 httpdfunc.h:6849 restoredefault.h:65
+#: httpdfunc.h:6798 httpdfunc.h:6849 restoredefault.h:92
 msgid "Format MNT (all)"
 msgstr "Format complete MNT Filesystem"
 
-#: httpdfunc.h:6793 httpdfunc.h:6840 restoredefault.h:64
+#: httpdfunc.h:6793 httpdfunc.h:6840 restoredefault.h:91
 msgid "Format MNT with Backup/Restore"
 msgstr "Format MNT Filesystem with a settings backup/restore"
 
@@ -5912,7 +5913,8 @@ msgstr ""
 #: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
 #: record.h:1437 record.h:1689 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
+#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
@@ -6512,7 +6514,8 @@ msgstr ""
 #: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
 #: record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
 #: rectimer.h:1417 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
+#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:668 security.h:685 security.h:1944 service.h:743 service.h:989
@@ -7634,6 +7637,10 @@ msgstr "Tikrai perkelti  fail / direktorij ?"
 msgid "Really restore default settings ?"
 msgstr "Ar tikrai norite atstatyti gamykloje nustatymus?"
 
+#: restoredefault.h:34
+msgid "Really restore default settings without Channelsettings ?"
+msgstr ""
+
 #: bgdownload.h:176
 msgid "Really stop download ?"
 msgstr "DMESIO: Ar norite nutraukti siuntim ?"
@@ -7656,7 +7663,7 @@ msgstr ""
 
 #: httpdfunc.h:6832 httpdfunc.h:6842 httpdfunc.h:6851 httpdfunc.h:6941
 #: httpdfunc.h:6953 httpdfunc.h:6963 httpdfunc.h:6973 httpdfunc.h:6983
-#: restoredefault.h:19
+#: restoredefault.h:19 restoredefault.h:45
 msgid "Receiver reboots now !!!"
 msgstr "Imtuv perkrauti dabar !!!"
 
@@ -7981,10 +7988,14 @@ msgstr "Atkurti nustatymus"
 msgid "Restore channel settings"
 msgstr ""
 
-#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:63
-#: restoredefault.h:67 skin_default_skin.xml.h:507 webif_settings.h:3
+#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:89
+#: restoredefault.h:94 skin_default_skin.xml.h:507 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Atstatyti gamyklinius nustatymus"
+
+#: restoredefault.h:90
+msgid "Restore default without Channelsettings"
+msgstr ""
 
 #: system_backup_restore.h:40
 msgid "Restore failed, see log"
