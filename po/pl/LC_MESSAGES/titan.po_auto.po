@@ -13611,6 +13611,3 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Can't restore settings"
-#~ msgstr "ustawienia kopii/ odzyskiwania"
