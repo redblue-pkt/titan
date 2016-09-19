@@ -1861,8 +1861,8 @@ msgid "Can't rename file !"
 msgstr "Ошибка переименования!"
 
 #: restoredefault.h:23 restoredefault.h:49
-msgid "Can't restore settings"
-msgstr "ОШИБКА: Невозможно восстановить настройки!"
+msgid "Can't restore default"
+msgstr ""
 
 #: unlock.h:66
 msgid ""
@@ -7621,11 +7621,11 @@ msgid "Really move this file/dir?"
 msgstr "Переместить файл/папку?"
 
 #: restoredefault.h:10
-msgid "Really restore default settings ?"
-msgstr "Восстановить настройки по умолчанию?"
+msgid "Really restore default ?"
+msgstr ""
 
 #: restoredefault.h:34
-msgid "Really restore default settings without Channelsettings ?"
+msgid "Really restore default without Channelsettings ?"
 msgstr ""
 
 #: bgdownload.h:176
@@ -7975,8 +7975,12 @@ msgstr "Восстановление настроек"
 msgid "Restore channel settings"
 msgstr ""
 
-#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:89
-#: restoredefault.h:94 skin_default_skin.xml.h:507 webif_settings.h:3
+#: restoredefault.h:89
+msgid "Restore default"
+msgstr ""
+
+#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:94
+#: skin_default_skin.xml.h:507 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Сброс настроек"
 
@@ -13745,3 +13749,9 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Can't restore settings"
+#~ msgstr "ОШИБКА: Невозможно восстановить настройки!"
+
+#~ msgid "Really restore default settings ?"
+#~ msgstr "Восстановить настройки по умолчанию?"

@@ -8164,8 +8164,12 @@ msgstr "Einstellungen wiederherstellen"
 msgid "Restore channel settings"
 msgstr "Senderlisten wiederherstellen"
 
-#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:89
-#: restoredefault.h:94 skin_default_skin.xml.h:507 webif_settings.h:3
+#: restoredefault.h:89
+msgid "Restore default"
+msgstr ""
+
+#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:94
+#: skin_default_skin.xml.h:507 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Werkseinstellungen"
 

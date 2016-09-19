@@ -1864,8 +1864,8 @@ msgid "Can't rename file !"
 msgstr "Can't rename file!"
 
 #: restoredefault.h:23 restoredefault.h:49
-msgid "Can't restore settings"
-msgstr "ERROR: Can't restore settings"
+msgid "Can't restore default"
+msgstr ""
 
 #: unlock.h:66
 msgid ""
@@ -7634,11 +7634,11 @@ msgid "Really move this file/dir?"
 msgstr ""
 
 #: restoredefault.h:10
-msgid "Really restore default settings ?"
-msgstr "Are you sure to restore Factory-settings?"
+msgid "Really restore default ?"
+msgstr ""
 
 #: restoredefault.h:34
-msgid "Really restore default settings without Channelsettings ?"
+msgid "Really restore default without Channelsettings ?"
 msgstr ""
 
 #: bgdownload.h:176
@@ -7988,8 +7988,12 @@ msgstr ""
 msgid "Restore channel settings"
 msgstr ""
 
-#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:89
-#: restoredefault.h:94 skin_default_skin.xml.h:507 webif_settings.h:3
+#: restoredefault.h:89
+msgid "Restore default"
+msgstr ""
+
+#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:94
+#: skin_default_skin.xml.h:507 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Restore Factory settings"
 
@@ -13762,3 +13766,9 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Can't restore settings"
+#~ msgstr "ERROR: Can't restore settings"
+
+#~ msgid "Really restore default settings ?"
+#~ msgstr "Are you sure to restore Factory-settings?"
