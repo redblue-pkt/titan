@@ -25,6 +25,32 @@ void screenrestoredefault()
 	clearscreen(load);
 }
 
+void screenrestoredefault_without_channelsettings()
+{
+	int ret = 0;
+	char* tmpstr = NULL;
+	struct skin* load = getscreen("loading");
+
+	ret = textbox(_("Message"), _("Really restore default settings without Channelsettings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+
+	if(ret == 1)
+	{
+		drawscreen(load, 0, 0);
+		tmpstr = getconfig("restorecmd", NULL);
+		if(tmpstr != NULL)
+		{
+			tmpstr = ostrcat(tmpstr, " without_channelsettings", 1, 0);
+			printf("cmd: %s\n", tmpstr);
+			system(tmpstr);
+			textbox(_("Message"), _("Receiver reboots now !!!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+			oshutdown(2, 2);;
+		}
+		else
+			textbox(_("Message"), _("Can't restore settings"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+	}
+	clearscreen(load);
+}
+
 void screeneraseswap()
 {
 	struct skin* load = getscreen("loading");
@@ -61,6 +87,7 @@ void screenrestoredefaultchoice()
 	struct menulist* mlist = NULL, *mbox = NULL;
 
 	addmenulist(&mlist, "Restore default settings", _("Restore default settings"), NULL, 0, 0);
+	addmenulist(&mlist, "Restore default without Channelsettings", _("Restore default without Channelsettings"), NULL, 0, 0);
 	addmenulist(&mlist, "Format MNT with Backup/Restore", _("Format MNT with Backup/Restore"), NULL, 0, 0);
 	addmenulist(&mlist, "Format MNT (all)", _("Format MNT (all)"), NULL, 0, 0);
 
@@ -71,6 +98,10 @@ void screenrestoredefaultchoice()
 		if(ostrcmp(mbox->name, "Restore default settings") == 0)
 		{
 			screenrestoredefault();
+		}
+		else if(ostrcmp(mbox->name, "Restore default without Channelsettings") == 0)
+		{
+			screenrestoredefault_without_channelsettings();
 		}
 		else if(ostrcmp(mbox->name, "Format MNT with Backup/Restore") == 0)
 		{

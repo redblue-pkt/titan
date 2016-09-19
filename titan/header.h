@@ -227,9 +227,6 @@ int delmediadb(struct mediadb* mnode, int flag);
 void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag);
 char* createshortname(char* file, int *isrec, int *iscam, int flag);
 
-//eraseswap.h
-void screeneraseswap();
-
 //softcam.h
 void screensoftcam();
 
@@ -349,6 +346,8 @@ void screenhelp(struct skin* node);
 //restoredefault.h
 void screenrestoredefault();
 void screenrestoredefaultchoice();
+void screeneraseswap();
+void screenrestoredefault_without_channelsettings();
 
 //ca.h
 int getfreecasession(struct dvbdev* dvbnode, int type, int value);
