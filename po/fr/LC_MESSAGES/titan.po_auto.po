@@ -1836,8 +1836,8 @@ msgid "Can't rename file !"
 msgstr ""
 
 #: restoredefault.h:23 restoredefault.h:49
-msgid "Can't restore settings"
-msgstr "Sauvegarde/Restauration "
+msgid "Can't restore default"
+msgstr ""
 
 #: unlock.h:66
 msgid ""
@@ -7518,11 +7518,11 @@ msgid "Really move this file/dir?"
 msgstr ""
 
 #: restoredefault.h:10
-msgid "Really restore default settings ?"
+msgid "Really restore default ?"
 msgstr ""
 
 #: restoredefault.h:34
-msgid "Really restore default settings without Channelsettings ?"
+msgid "Really restore default without Channelsettings ?"
 msgstr ""
 
 #: bgdownload.h:176
@@ -7872,8 +7872,12 @@ msgstr "Réglages de Rotor"
 msgid "Restore channel settings"
 msgstr ""
 
-#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:89
-#: restoredefault.h:94 skin_default_skin.xml.h:507 webif_settings.h:3
+#: restoredefault.h:89
+msgid "Restore default"
+msgstr ""
+
+#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:94
+#: skin_default_skin.xml.h:507 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Réglage adaptateur réseau"
 
@@ -13611,3 +13615,6 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Can't restore settings"
+#~ msgstr "Sauvegarde/Restauration "
