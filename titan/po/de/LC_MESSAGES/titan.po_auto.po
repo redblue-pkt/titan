@@ -1898,7 +1898,7 @@ msgid "Can't rename file !"
 msgstr "Datei konnte nicht umbenannt werden!"
 
 #: restoredefault.h:23 restoredefault.h:49
-msgid "Can't restore settings"
+msgid "Can't restore default"
 msgstr "FEHLER: Wiederherstellung kann nicht durchgeführt werden!"
 
 #: unlock.h:66
@@ -7810,12 +7810,12 @@ msgid "Really move this file/dir?"
 msgstr "Möchten Sie diese Datei verschieben?"
 
 #: restoredefault.h:10
-msgid "Really restore default settings ?"
+msgid "Really restore default ?"
 msgstr "Standardeinstellungen wiederherstellen?"
 
 #: restoredefault.h:34
-msgid "Really restore default settings without Channelsettings ?"
-msgstr ""
+msgid "Really restore default without Channelsettings ?"
+msgstr "Standardeinstellungen ohne Senderlisten wiederherstellen?"
 
 #: bgdownload.h:176
 msgid "Really stop download ?"
@@ -8171,7 +8171,7 @@ msgstr "Werkseinstellungen"
 
 #: restoredefault.h:90
 msgid "Restore default without Channelsettings"
-msgstr ""
+msgstr "Werkseinstellung ohne Senderliste"
 
 #: system_backup_restore.h:40
 msgid "Restore failed, see log"

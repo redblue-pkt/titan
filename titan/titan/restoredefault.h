@@ -7,7 +7,7 @@ void screenrestoredefault()
 	char* tmpstr = NULL;
 	struct skin* load = getscreen("loading");
 
-	ret = textbox(_("Message"), _("Really restore default settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	ret = textbox(_("Message"), _("Really restore default ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 	if(ret == 1)
 	{
@@ -20,7 +20,7 @@ void screenrestoredefault()
 			oshutdown(2, 2);;
 		}
 		else
-			textbox(_("Message"), _("Can't restore settings"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+			textbox(_("Message"), _("Can't restore default"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 	}
 	clearscreen(load);
 }
@@ -31,7 +31,7 @@ void screenrestoredefault_without_channelsettings()
 	char* tmpstr = NULL;
 	struct skin* load = getscreen("loading");
 
-	ret = textbox(_("Message"), _("Really restore default settings without Channelsettings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	ret = textbox(_("Message"), _("Really restore default without Channelsettings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
 	if(ret == 1)
 	{
@@ -46,7 +46,7 @@ void screenrestoredefault_without_channelsettings()
 			oshutdown(2, 2);;
 		}
 		else
-			textbox(_("Message"), _("Can't restore settings"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+			textbox(_("Message"), _("Can't restore default"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 	}
 	clearscreen(load);
 }
@@ -86,7 +86,7 @@ void screenrestoredefaultchoice()
 {
 	struct menulist* mlist = NULL, *mbox = NULL;
 
-	addmenulist(&mlist, "Restore default settings", _("Restore default settings"), NULL, 0, 0);
+	addmenulist(&mlist, "Restore default", _("Restore default"), NULL, 0, 0);
 	addmenulist(&mlist, "Restore default without Channelsettings", _("Restore default without Channelsettings"), NULL, 0, 0);
 	addmenulist(&mlist, "Format MNT with Backup/Restore", _("Format MNT with Backup/Restore"), NULL, 0, 0);
 	addmenulist(&mlist, "Format MNT (all)", _("Format MNT (all)"), NULL, 0, 0);
@@ -95,7 +95,7 @@ void screenrestoredefaultchoice()
 
 	if(mbox != NULL)
 	{
-		if(ostrcmp(mbox->name, "Restore default settings") == 0)
+		if(ostrcmp(mbox->name, "Restore default") == 0)
 		{
 			screenrestoredefault();
 		}
