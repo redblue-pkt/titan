@@ -8166,7 +8166,7 @@ msgstr "Senderlisten wiederherstellen"
 
 #: restoredefault.h:89
 msgid "Restore default"
-msgstr ""
+msgstr "Werkseinstellung"
 
 #: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:94
 #: skin_default_skin.xml.h:507 webif_settings.h:3
