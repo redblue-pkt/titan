@@ -1337,7 +1337,7 @@ msgstr "Hintergrundfarbe 2"
 
 #: skin_default_skin.xml.h:59
 msgid "Background3 Color"
-msgstr ""
+msgstr "Hintergrundfarbe 3"
 
 #: httpdfunc.h:6685 skin_default_skin.xml.h:61
 msgid "Backup"
@@ -1650,19 +1650,19 @@ msgstr ""
 
 #: skin_default_skin.xml.h:79
 msgid "Buttonbar Background Color"
-msgstr ""
+msgstr "Tastenleiste - Hintergrundfarbe"
 
 #: skin_default_skin.xml.h:80
 msgid "Buttonbar Background Color 2"
-msgstr ""
+msgstr "Tastenleiste - Hintergrundfarbe 2"
 
 #: skin_default_skin.xml.h:81
 msgid "Buttonbar Border Color"
-msgstr ""
+msgstr "Tastenleiste - Rahmenfarbe"
 
 #: skin_default_skin.xml.h:82
 msgid "Buttonbar Font Color"
-msgstr ""
+msgstr "Tastenleiste - Schriftfarbe"
 
 #: webif_streamconfig.h:3
 msgid "BuzzPlayer"
@@ -2426,11 +2426,11 @@ msgstr "Datei(en) kopieren"
 
 #: skin_default_skin.xml.h:119
 msgid "Copy Modus Background Color"
-msgstr ""
+msgstr "Kopier Modus - Hintergrundfarbe"
 
 #: skin_default_skin.xml.h:120
 msgid "Copy Modus Font Color"
-msgstr ""
+msgstr "Kopier Modus - Schriftfarbe"
 
 #: channellist.h:639
 msgid "Copy mode"
@@ -2729,7 +2729,7 @@ msgstr "Deaktiviere MiniTV Vorschau Fenster"
 
 #: skin_default_skin.xml.h:137
 msgid "Deaktive Color"
-msgstr ""
+msgstr "Deaktiviert Farbe"
 
 #: skin_default_skin.xml.h:139
 msgid "Debug Modus"
@@ -3328,11 +3328,11 @@ msgstr "Bearbeiten"
 
 #: skin_default_skin.xml.h:172
 msgid "Edit Modus Background Color"
-msgstr "Bearbeiten Modus Hintergrundfarbe"
+msgstr "Bearbeiten Modus - Hintergrundfarbe"
 
 #: skin_default_skin.xml.h:173
 msgid "Edit Modus Font Color"
-msgstr "Bearbeiten Modus Schriftfarbe"
+msgstr "Bearbeiten Modus - Schriftfarbe"
 
 #: mc_global.h:609
 msgid "Edit Playlist"
@@ -3420,15 +3420,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:183
 msgid "Epg Color 1"
-msgstr ""
+msgstr "EPG Farbe 1"
 
 #: skin_default_skin.xml.h:184
 msgid "Epg Color 2"
-msgstr ""
+msgstr "EPG Farbe 2"
 
 #: skin_default_skin.xml.h:185
 msgid "Epg Color 3"
-msgstr ""
+msgstr "EPG Farbe 3"
 
 #: optimize.h:304
 msgid "EpgChannels: "
@@ -3534,7 +3534,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:197
 msgid "Exit Color"
-msgstr "Exit Farbe"
+msgstr "EXIT Farbe"
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
 msgid "Exit Tithek"
@@ -3908,11 +3908,11 @@ msgstr "Schriftfarbe"
 
 #: skin_default_skin.xml.h:218
 msgid "Font Color 2"
-msgstr ""
+msgstr "Schriftfarbe 2"
 
 #: skin_default_skin.xml.h:219
 msgid "Font Color 3"
-msgstr ""
+msgstr "Schriftfarbe 3"
 
 #: skin_default_skin.xml.h:220
 msgid "Fontsize adjust in pixel"
@@ -4281,7 +4281,7 @@ msgstr "Grafisches Multi-EPG"
 
 #: skin_default_skin.xml.h:238
 msgid "Graphic Multi EPG selection"
-msgstr ""
+msgstr "Grafischen Multi EPG auswählen"
 
 #: skin_default_skin.xml.h:239
 msgid "Greek"
@@ -4430,7 +4430,7 @@ msgstr "Hilfe"
 
 #: skin_default_skin.xml.h:247
 msgid "Here you can activate or deactivate the CAID Lock."
-msgstr ""
+msgstr "Hier können Sie die CAID Sperren aktivieren bzw. deaktivieren."
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid "Here you can activate/deactivate you OSCam readers."
@@ -6220,11 +6220,11 @@ msgstr "Datei(en) verschieben"
 
 #: skin_default_skin.xml.h:382
 msgid "Move Modus Background Color"
-msgstr ""
+msgstr "Verschieben Modus - Hintergrundfarbe"
 
 #: skin_default_skin.xml.h:383
 msgid "Move Modus Font Color"
-msgstr ""
+msgstr "Verschieben Modus - Schriftfarbe"
 
 #: channellist.h:623
 msgid "Move mode"
@@ -6799,7 +6799,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:403
 msgid "Ok Color"
-msgstr ""
+msgstr "OK Farbe"
 
 #: panel_settings_autostart.h:112
 msgid "Old Audiofw"
@@ -7562,7 +7562,7 @@ msgstr "Sender mit PIN sperren"
 
 #: skin_default_skin.xml.h:458
 msgid "Protect Channel Freetime (min)"
-msgstr "Senderschutzzeit aus (min)"
+msgstr "Sendersperrzeit aus (min)"
 
 #: skin_default_skin.xml.h:459
 msgid "Protect Menu"
@@ -7570,11 +7570,11 @@ msgstr "Menü sperren"
 
 #: skin_default_skin.xml.h:460
 msgid "Protect Modus Background Color"
-msgstr ""
+msgstr "Sperr Modus - Hintergrundfarbe"
 
 #: skin_default_skin.xml.h:461
 msgid "Protect Modus Font Color"
-msgstr ""
+msgstr "Sperr Modus - Schriftfarbe"
 
 #: channellist.h:647
 msgid "Protect mode"
@@ -7823,7 +7823,7 @@ msgstr "Download wirklich beenden?"
 
 #: skin_default_skin.xml.h:477
 msgid "Rec Progress Color"
-msgstr "Aufnahme Fortschritt Farbe"
+msgstr "Farbe Aufnahme Fortschritt"
 
 #: webif_index.atemio5200.h:101 webif_index.atemio6200.h:101
 #: webif_index.atemio7600.h:28 webif_index.atemio7600.h:85
@@ -10376,19 +10376,19 @@ msgstr "Titel: "
 
 #: skin_default_skin.xml.h:661
 msgid "Titlebar Background Color"
-msgstr ""
+msgstr "Titelleiste - Hintergrundfarbe"
 
 #: skin_default_skin.xml.h:662
 msgid "Titlebar Background Color 2"
-msgstr ""
+msgstr "Titelleiste - Hintergrundfarbe 2"
 
 #: skin_default_skin.xml.h:663
 msgid "Titlebar Border Color"
-msgstr ""
+msgstr "Titelleiste - Rahmenfarbe"
 
 #: skin_default_skin.xml.h:664
 msgid "Titlebar Font Color"
-msgstr ""
+msgstr "Titelleiste - Schriftfarbe"
 
 #: filemanager.h:198
 msgid "To"
