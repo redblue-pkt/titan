@@ -179,11 +179,17 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		{
 			curl_easy_setopt(curl_handle, CURLOPT_POST, 1);
 			curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDS, data);
+
+			/* example.com is redirected, so we tell libcurl to send POST on 301, 302 and
+		     303 HTTP response codes */
+			curl_easy_setopt(curl_handle, CURLOPT_POSTREDIR, CURL_REDIR_POST_ALL);
 		}
 		if(flag == 1)
 			curl_easy_setopt(curl_handle, CURLOPT_HEADER, 1L);
 		curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, 5);
-		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 20);
+		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 3);
+//		curl_easy_setopt(curl_handle, CURLOPT_RETURNTRANSFER, 1);
+
 		/* send all data to this function  */
 	    if(localfile == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
@@ -197,8 +203,8 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, fp);
 
 		/* some servers don't like requests that are made without a user-agent field, so we provide one */
-		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
-//		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36");
+//		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
+		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36");
 
 		// This is occassionally required to stop CURL from verifying the peers certificate.
 		// CURLOPT_SSL_VERIFYHOST may also need to be TRUE or FALSE if
@@ -215,7 +221,14 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 			curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 1);
 		curl_easy_setopt(curl_handle, CURLOPT_COOKIEFILE, "/mnt/network/cookies");
 		curl_easy_setopt(curl_handle, CURLOPT_COOKIEJAR, "/mnt/network/cookies");
+		/* enable redirect following */
 		curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
+		/* allow three redirects */
+		curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 3L);
+
+		/* enable all supported built-in compressions */
+		curl_easy_setopt(curl_handle, CURLOPT_ACCEPT_ENCODING, "");
+  
 		if(referer == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_AUTOREFERER, 1L);
 		else
