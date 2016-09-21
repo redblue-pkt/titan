@@ -12,7 +12,7 @@ PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME="burningseries"
 curlbin="curl -k -s"
 
-rm -rf $TMP > /dev/null 2>&1
+#rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
 
 if [ `echo $SRC | grep ^"/mnt/parser" |wc -l` -gt 0 ];then
@@ -202,6 +202,28 @@ BEGIN { in_hosterlist = 0
 	echo "/tmp/tithek/$PARSER.hosterlist.list"
 }
 
+
+###################
+# in_hoster
+###################
+#<div id="video_actions">
+#                <div>
+#            <a href="http://vivo.sx/dcd747a9af" target="_blank"><span class="icon link_go"></span> Link zum Originalvideo</a>
+#                    </div>
+#            </div>
+#    <br style="clear:both;"/>
+
+###################
+# in_hoster_iframe
+###################
+#<iframe scrolling='no' frameborder='no' width='630' height='390' allowfullscreen='ture' webkitallowfullscreen='true' mozallowfullscreen='true' src='https://openload.co/embed/r3Qxa6zWdwM/Die.Simpsons.S01E01.Es.weihnachtet.schwer.German.DVDRiP.XviD.iNTERNAL-UTOPiA.mkv'></iframe>
+#        <div id="video_actions">
+#                <div>
+#            <a href="javascript:alert(&#039;Nicht möglich&#039;);" target="_blank"><span class="icon link_go"></span> Link zum Originalvideo</a>
+#                    </div>
+#            </div>
+#    <br style="clear:both;"/>
+    
 hoster()
 {
 	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
@@ -210,11 +232,30 @@ BEGIN { in_hosterlist = 0
         title = ""
       }
 
+/<iframe scrolling=/ { in_hoster_iframe = 1
+                               prew
+                             }
+
+/src=/ { if (in_hoster_iframe == 1) {
+                  i = index($0, "src=") + 5
+                  j = index(substr($0, i), ">") - 2
+                  url = substr($0, i, j)
+                  i = index($0, "<a href=\"") + 16
+                  j = index(substr($0, i), "/") - 1
+                  title = substr($0, i, j)
+                  
+#                  print "Originalvideo#" url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#140"
+#                  print title "#" url "#http://atemio.dyndns.tv/mediathek/menu/" title ".jpg#" title ".jpg#" NAME "#14"
+                  print url
+               }
+               next
+             }
+
 /<div id=\"video_actions\">/ { in_hoster = 1
                                next
                              }
 
-/<a href=\"/ { if (in_hoster == 1) {
+/<a href=\"/ { if (in_hoster == 1 && in_hoster_iframe == 0) {
                   i = index($0, "<a href=\"") + 9
                   j = index(substr($0, i), "\"") - 1
                   url = substr($0, i, j)
@@ -231,6 +272,7 @@ BEGIN { in_hosterlist = 0
              }
 
 /<\/div>/ { in_hoster = 0
+			in_hoster_iframe = 0
             next
           }
 
