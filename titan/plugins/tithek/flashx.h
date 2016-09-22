@@ -18,13 +18,14 @@ char* flashx(char* link)
 		debug(99, "remove out string: %s", tmplink);
 	}
 
-	if(tmplink == NULL || ostrncmp("http://", tmplink, 7))
+	if(tmplink == NULL || ostrncmp("http", tmplink, 4))
 	{
-		textbox(_("Message"), _("Hoster Url not http://") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		textbox(_("Message"), _("Hoster Url not http:// or https://") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 
 	tmphost = string_replace("http://", "", tmplink, 0);
+	tmphost = string_replace("https://", "", tmphost, 1);
 	free(tmplink) , tmplink = NULL;
 
 	if(tmphost != NULL)

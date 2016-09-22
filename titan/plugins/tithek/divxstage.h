@@ -198,7 +198,6 @@ end:
 	free(tmphost); tmphost = NULL;
 	free(tmppath); tmppath = NULL;
 	free(tmpstr); tmpstr = NULL;
-	free(tmpstr2); tmpstr2 = NULL;
 	free(send); send = NULL;
 	free(filekey); filekey = NULL;
 	free(ip); ip = NULL;
