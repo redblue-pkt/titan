@@ -10,6 +10,7 @@ curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/c
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 wgetbin="wget -q -T2"
 TMP=/tmp/localcache
+CMD=/tmp/localhoster
 
 hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!http://!!' | sed 's!https://!!' | cut -d'/' -f1 | sed 's/www.//' | tr '.' '\n' | head -n1`
 
@@ -50,9 +51,22 @@ giga()
 	echo $streamurl
 }
 
+vidup()
+{
+	python $CMD/vidup.py $INPUT
+}
+
+nosvideo()
+{
+	python $CMD/nosvideo.py $INPUT
+}
+
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
+		vidup) vidup $INPUT;;
+		nosvideo) nosvideo $INPUT;;
 	esac
 fi
