@@ -169,8 +169,8 @@ hosterlist()
 		NEWPAGE=`echo $ROUND | sed s'!go.php?url=!\nurl="!' | grep ^'url="' | cut -d '"' -f2`
 		TITLE=`echo $ROUND | sed s'!target="_blank">!\nurl=<!' | grep ^'url=<' | cut -d '<' -f2`
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
-			PIC=`echo $TITLE | tr [A-Z] [a-z]`
-			LINE="$TITLE#$SRC $SRC hoster page $NEWPAGE $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC#$PIC.jpg#$NAME#111"
+			PIC="`echo $TITLE | tr [A-Z] [a-z] | cut -d "." -f1`.jpg"
+			LINE="$TITLE#$SRC $SRC hoster page $NEWPAGE $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC#$PIC#$NAME#111"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list
 		fi
 	done 3<$TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.2
