@@ -1,32 +1,27 @@
-'''
-Nosvideo urlresolver plugin
-Copyright (C) 2013 Vinnydude
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
-'''
-
+import sys
 import re
-from urlresolver import common
-from urlresolver.resolver import UrlResolver, ResolverError
+from net import Net
 
-class NosvideoResolver(UrlResolver):
+class NosvideoResolver(object):
     name = "nosvideo"
     domains = ["nosvideo.com", "noslocker.com"]
     pattern = '(?://|\.)(nosvideo.com|noslocker.com)/(?:\?v\=|embed/|.+?\u=)?([0-9a-zA-Z]+)'
 
     def __init__(self):
-        self.net = common.Net()
+        self.net = Net()
+        url = str(sys.argv[1])
+        host = self.get_host_and_id(url)[0]
+        media_id = self.get_host_and_id(url)[1]
+
+        return self.get_media_url(host, media_id)
+
+    def get_host_and_id(self, url):
+        r = re.search(self.pattern, url, re.I)
+        if r:
+            return r.groups()
+        else:
+            return False
 
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
@@ -50,8 +45,10 @@ class NosvideoResolver(UrlResolver):
 
         stream_url = '%s playpath=%s' % (streamer, playpath)
 
-        return stream_url
+        print stream_url
 
     def get_url(self, host, media_id):
         return 'http://nosvideo.com/%s' % media_id
+
+sys.stdout = NosvideoResolver()
 
