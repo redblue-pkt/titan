@@ -1320,11 +1320,11 @@ msgstr ""
 msgid "Backup / Restore Settings"
 msgstr ""
 
-#: global.h:7372 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
+#: global.h:7363 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr ""
 
-#: global.h:7374
+#: global.h:7365
 msgid "Backup ended with error"
 msgstr ""
 
@@ -3160,9 +3160,9 @@ msgstr "ERROR: can't set marker in this file"
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
 #: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020
-#: global.h:6811 global.h:6830 global.h:7240 global.h:7260 global.h:7280
-#: global.h:7300 global.h:7320 global.h:7649 global.h:7654 global.h:7666
-#: global.h:7671 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: global.h:6811 global.h:6830 global.h:7231 global.h:7251 global.h:7271
+#: global.h:7291 global.h:7311 global.h:7640 global.h:7645 global.h:7657
+#: global.h:7662 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
@@ -3935,14 +3935,14 @@ msgstr ""
 "A new Stick/Harddisk was found.\n"
 "You can configure it in the Device Menu."
 
-#: global.h:7671
+#: global.h:7662
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7649 global.h:7666
+#: global.h:7640 global.h:7657
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3950,7 +3950,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7654
+#: global.h:7645
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -5865,10 +5865,10 @@ msgstr ""
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
 #: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020 global.h:6741
-#: global.h:6811 global.h:6830 global.h:7240 global.h:7248 global.h:7260
-#: global.h:7268 global.h:7280 global.h:7288 global.h:7300 global.h:7308
-#: global.h:7320 global.h:7328 global.h:7649 global.h:7654 global.h:7666
-#: global.h:7671 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: global.h:6811 global.h:6830 global.h:7231 global.h:7239 global.h:7251
+#: global.h:7259 global.h:7271 global.h:7279 global.h:7291 global.h:7299
+#: global.h:7311 global.h:7319 global.h:7640 global.h:7645 global.h:7657
+#: global.h:7662 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
 #: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
@@ -6454,10 +6454,10 @@ msgstr ""
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
 #: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020
-#: global.h:6741 global.h:6811 global.h:6830 global.h:7240 global.h:7248
-#: global.h:7260 global.h:7268 global.h:7280 global.h:7288 global.h:7300
-#: global.h:7308 global.h:7320 global.h:7328 global.h:7649 global.h:7654
-#: global.h:7666 global.h:7671 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: global.h:6741 global.h:6811 global.h:6830 global.h:7231 global.h:7239
+#: global.h:7251 global.h:7259 global.h:7271 global.h:7279 global.h:7291
+#: global.h:7299 global.h:7311 global.h:7319 global.h:7640 global.h:7645
+#: global.h:7657 global.h:7662 harddisk.h:355 harddisk.h:487 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -7323,7 +7323,7 @@ msgstr ""
 msgid "Present"
 msgstr ""
 
-#: global.h:7384 system_backup_restore.h:15
+#: global.h:7375 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -9302,23 +9302,23 @@ msgstr ""
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7240
+#: global.h:7231
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7260
+#: global.h:7251
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7300
+#: global.h:7291
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7280
+#: global.h:7271
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7320
+#: global.h:7311
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9791,7 +9791,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7340
+#: global.h:7331
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -10089,7 +10089,7 @@ msgid "Titan MediaCenter"
 msgstr ""
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
-#: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
+#: global.h:7239 global.h:7259 global.h:7279 global.h:7299 global.h:7319
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
 msgid "Titan will be restarted!"
