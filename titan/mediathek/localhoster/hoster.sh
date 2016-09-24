@@ -61,6 +61,10 @@ nosvideo()
 	python $CMD/nosvideo.py $INPUT
 }
 
+allmyvideos()
+{
+	python $CMD/allmyvideos.py $INPUT
+}
 
 if [ "$TYPE" == "get" ];then
 	case $hoster in
@@ -68,5 +72,6 @@ if [ "$TYPE" == "get" ];then
 		giga) giga $INPUT;;
 		vidup) vidup $INPUT;;
 		nosvideo) nosvideo $INPUT;;
+		allmyvideos) allmyvideos $INPUT;;
 	esac
 fi

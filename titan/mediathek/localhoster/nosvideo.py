@@ -1,7 +1,7 @@
 
 import sys
 import re
-from net import Net
+from lib.net import Net
 
 class NosvideoResolver(object):
     name = "nosvideo"
