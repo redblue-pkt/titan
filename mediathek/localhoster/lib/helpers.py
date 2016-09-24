@@ -16,9 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 import re
-import xbmcgui
-from urlresolver import common
-from urlresolver.resolver import ResolverError
+#import xbmcgui
+#from urlresolver import common
+#from urlresolver.resolver import ResolverError
 
 def get_hidden(html, form_id=None):
     hidden = {}
@@ -34,7 +34,7 @@ def get_hidden(html, form_id=None):
             if match and match1:
                 hidden[match.group(1)] = match1.group(1)
             
-    common.log_utils.log_debug('Hidden fields are: %s' % (hidden))
+#    common.log_utils.log_debug('Hidden fields are: %s' % (hidden))
     return hidden
 
 def pick_source(sources, auto_pick=False):
@@ -44,7 +44,7 @@ def pick_source(sources, auto_pick=False):
         if auto_pick:
             return sources[0][1]
         else:
-            result = xbmcgui.Dialog().select('Choose the link', [source[0] if source[0] else 'Uknown' for source in sources])
+#           result = xbmcgui.Dialog().select('Choose the link', [source[0] if source[0] else 'Uknown' for source in sources])
             if result == -1:
                 raise ResolverError('No link selected')
             else:
