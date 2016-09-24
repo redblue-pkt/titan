@@ -6,7 +6,7 @@ import urlparse
 from lib import helpers
 import sys
 from lib.net import Net
-from lib.common import common
+import lib.common as common
 
 class AllmyvideosResolver(object):
     name = "allmyvideos"
