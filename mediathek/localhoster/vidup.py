@@ -2,7 +2,7 @@
 import sys
 import re
 from lib import jsunpack
-from net import Net
+from lib.net import Net
 
 class VidUpMeResolver(object):
     name = "vidup.me"
