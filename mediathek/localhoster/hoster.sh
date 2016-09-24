@@ -13,9 +13,9 @@ TMP=/tmp/localcache
 CMD=/tmp/localhoster
 BIN=python
 
-if [ "$ARCH" == "sh4" ];then
+if [ "$ARCH" = "sh4" ];then
 	BIN="$CMD/bin/$BIN"
-	export PYTHONHOME=/tmp/localhoste
+	export PYTHONHOME=/tmp/localhoster
 fi
 
 hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!http://!!' | sed 's!https://!!' | cut -d'/' -f1 | sed 's/www.//' | tr '.' '\n' | head -n1`
