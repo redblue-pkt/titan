@@ -81,7 +81,7 @@ char* myvideo(char* link)
 
 	titheklog(debuglevel, "/tmp/myvideo_tmpstr_error", NULL, NULL, NULL, tmpstr);
 				
-	if(ostrstr(error, "<div class='error sBold' id='error_screen_body'>") == NULL)
+	if(ostrstr(error, "<div class='error sBold' id='error_screen_body'>") == NULL && error != NULL)
 	{
 		textbox(_("Message"), _(error) , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		debug(99, "error msg: %s", error);
@@ -126,7 +126,8 @@ char* myvideo(char* link)
 		}
 		free(ret1), ret1 = NULL;
 
-		b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", MDString(video_id), 0, 1);
+		if(video_id != NULL)
+			b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", MDString(video_id), 0, 1);
 		debug(99, "b64=%s", b64);
 
 		key = MDString(b64);
