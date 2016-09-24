@@ -10533,7 +10533,7 @@ msgid "Unitymedia NRW"
 msgstr ""
 
 #: tpk_description.h:172
-msgid "Unitymedia NRW | 1.8.2016 (caliban)"
+msgid "Unitymedia NRW | 24.09.2016 (caliban)"
 msgstr ""
 
 #: titan.c:1299
