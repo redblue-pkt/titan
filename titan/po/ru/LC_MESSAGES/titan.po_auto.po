@@ -712,7 +712,7 @@ msgstr "Аудио"
 msgid "AUDIO SETTINGS"
 msgstr "Настройки отображения аудио файлов"
 
-#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "AUTH SETTINGS"
 msgstr "Аутентификация"
 
@@ -1118,10 +1118,6 @@ msgstr ""
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 msgid "Auswahl"
 msgstr "Выбор"
-
-#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
-msgid "Auth Settings"
-msgstr "Аутентификация"
 
 #: httpdsettings.h:80
 msgid "Auto"
@@ -1697,7 +1693,7 @@ msgstr "CI-Меню"
 msgid "CLEAR INPUT"
 msgstr "Чистый вход"
 
-#: plugins_networkbrowser_skin.xml.h:5 skins_networkbrowser_skin.xml.h:5
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "COPY"
 msgstr "Копировать"
 
@@ -2510,9 +2506,9 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "По умолчанию"
 
-#: play.h:1575 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1575 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
-#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:6
+#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:5
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Удалить"
@@ -2980,9 +2976,9 @@ msgid ""
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:8
+#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:7
 #: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:170
-#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:8
+#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:7
 #: skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
 msgstr "Изменить"
@@ -4342,7 +4338,7 @@ msgstr ""
 msgid "Here you can activate/deactivate you OSCam readers."
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "Here you can add and configure your network shares."
 msgstr ""
 
@@ -4401,7 +4397,7 @@ msgid ""
 "start an automatic search."
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
+#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your login credentials for accessing password "
 "protected shares."
@@ -4807,7 +4803,7 @@ msgstr "Иконка 3"
 msgid "Icon 4"
 msgstr "Иконка 4"
 
-#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
 "If you don't find Windows shares, you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
@@ -6821,8 +6817,8 @@ msgstr ""
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:419
-#: skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:16 skin_default_skin.xml.h:419
+#: skins_networkbrowser_skin.xml.h:16
 msgid "Password"
 msgstr "Пароль"
 
@@ -8111,9 +8107,9 @@ msgid "SCART 4:3 / 16:9"
 msgstr "SCART 4:3/16:9"
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
-#: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
 #: skin_default_skin.xml.h:549 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
+#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr "Поиск"
@@ -10597,8 +10593,8 @@ msgstr "Использовать фиксированный физический
 msgid "Use numeric keys"
 msgstr "Использовать цифровые клавиши"
 
-#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:712
-#: skins_networkbrowser_skin.xml.h:33
+#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:712
+#: skins_networkbrowser_skin.xml.h:32
 msgid "User"
 msgstr "Пользователь"
 
@@ -11618,7 +11614,7 @@ msgstr "Выкл"
 msgid "diseqcscreen"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
+#: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
 msgid "dnsaddresse"
 msgstr "DNS адрес"
 
@@ -11818,7 +11814,7 @@ msgstr ""
 msgid "ftpfs"
 msgstr "FTPfs"
 
-#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 msgid "ftpport"
 msgstr "FTP порт"
 
@@ -11877,7 +11873,7 @@ msgstr ""
 msgid "hbbtv Browser"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "hddreplacement"
 msgstr "Использовать папку для записей"
 
@@ -11987,8 +11983,8 @@ msgstr "Интернет"
 msgid "ip"
 msgstr "IP"
 
-#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:326
-#: skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:326
+#: skins_networkbrowser_skin.xml.h:13
 msgid "ipaddress"
 msgstr "IP адрес"
 
@@ -12481,7 +12477,7 @@ msgstr "Открыть в новом окне"
 msgid "optimize Plugin"
 msgstr "Плагин оптимизации системы"
 
-#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
 msgid "options"
 msgstr "Опции"
 
@@ -12501,7 +12497,7 @@ msgstr ""
 msgid "panscan"
 msgstr "PanScan"
 
-#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "password"
 msgstr "Пароль"
 
@@ -12631,31 +12627,31 @@ msgstr "Прогресс"
 msgid "protect service"
 msgstr "Блокировка каналов"
 
-#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
+#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 msgid "protocol"
 msgstr "Протокол"
 
-#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "proxy"
 msgstr "Прокси"
 
-#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxyauth"
 msgstr "Прокси авторизация"
 
-#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyip"
 msgstr "IP для прокси"
 
-#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
+#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxypass"
 msgstr "Пароль для проки"
 
-#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxyport"
 msgstr "Порт для прокси"
 
-#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyuser"
 msgstr "Логин для прокси"
 
@@ -12761,7 +12757,7 @@ msgstr "Вправо"
 msgid "ro"
 msgstr "Только чтение"
 
-#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
+#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "rsize"
 msgstr "Размер буфера чтения"
 
@@ -12912,11 +12908,11 @@ msgstr "Сеттинги"
 msgid "settingsmenu"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
+#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
 msgid "sharedir"
 msgstr "Путь к сетевой папке на удалённом компьютере"
 
-#: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharename"
 msgstr "Имя папки"
 
@@ -13044,8 +13040,8 @@ msgstr "Скорость"
 msgid "spinner"
 msgstr ""
 
-#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:29
-#: skins_networkbrowser_skin.xml.h:29
+#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:28
+#: skins_networkbrowser_skin.xml.h:28
 msgid "ssl"
 msgstr "SSL"
 
@@ -13360,8 +13356,8 @@ msgstr ""
 msgid "tunerreceptiondvbt"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:693
-#: skins_networkbrowser_skin.xml.h:30
+#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:693
+#: skins_networkbrowser_skin.xml.h:29
 msgid "type"
 msgstr "Тип"
 
@@ -13461,11 +13457,11 @@ msgstr "Использовать для расширения памяти (Swap)
 msgid "useUnknown910"
 msgstr "Загрузка с опцией Unknown910"
 
-#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
+#: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
 msgid "usedns"
 msgstr "Испоьзовать DNS адрес"
 
-#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
+#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "useproxy"
 msgstr "Использовать прокси"
 
@@ -13477,15 +13473,15 @@ msgstr "Пользовательский"
 msgid "user unicable"
 msgstr "Пользовательский"
 
-#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
+#: plugins_networkbrowser_skin.xml.h:33 skins_networkbrowser_skin.xml.h:33
 msgid "userauth"
 msgstr "Использовать авторизацию"
 
-#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
+#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
 msgid "username"
 msgstr "Имя пользователя"
 
-#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
+#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "usessl"
 msgstr "Использовать SSL"
 
@@ -13633,7 +13629,7 @@ msgstr ""
 msgid "workdays"
 msgstr "В рабочие дни"
 
-#: plugins_networkbrowser_skin.xml.h:37 skins_networkbrowser_skin.xml.h:37
+#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "wsize"
 msgstr "Размер буфера записи"
 
@@ -13750,3 +13746,6 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Auth Settings"
+#~ msgstr "Аутентификация"
