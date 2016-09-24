@@ -11,89 +11,97 @@ char* hoster(char* url)
 	tmplink = ostrcat(url, NULL, 0, 0);
 	string_tolower(tmplink);
 
-	if(ostrstr(tmplink, "sockshare") != NULL)
-		streamurl = putlocker(url);
-	else if(ostrstr(tmplink, "putlocker") != NULL)
-		streamurl = firedrive(url);
-	else if(ostrstr(tmplink, "filenuke") != NULL)
-		streamurl = filenuke(url);
-	else if(ostrstr(tmplink, "streamcloud") != NULL)
-		streamurl = streamcloud(url);
-	else if(ostrstr(tmplink, "vidstream") != NULL)
-		streamurl = vidstream(url);
-	else if(ostrstr(tmplink, "flashx") != NULL)
-		streamurl = flashx(url);
-	else if(ostrstr(tmplink, "xvidstage") != NULL)
-		streamurl = xvidstage(url);
-	else if(ostrstr(tmplink, "nowvideo") != NULL)
-		streamurl = nowvideo(url);
-	else if(ostrstr(tmplink, "movshare") != NULL || ostrstr(tmplink, "wholecloud") != NULL)
-		streamurl = movshare(url);
-	else if(ostrstr(tmplink, "movreel") != NULL)
-		streamurl = movreel(url);
-	else if(ostrstr(tmplink, "novamov") != NULL || ostrstr(tmplink, "auroravid") != NULL)
-		streamurl = novamov(url);
-	else if(ostrstr(tmplink, "divxstage") != NULL || ostrstr(tmplink, "cloudtime") != NULL)
-		streamurl = divxstage(url);
-	else if(ostrstr(tmplink, "primeshare") != NULL)
-		streamurl = primeshare(url);
-	else if(ostrstr(tmplink, "faststream") != NULL || ostrstr(tmplink, "fastvideo") != NULL)
-		streamurl = faststream(url);
-	else if(ostrstr(tmplink, "played") != NULL)
-		streamurl = played(url);
-	else if(ostrstr(tmplink, "videoweed") != NULL)
-		streamurl = videoweed(url);
-	else if(ostrstr(tmplink, "firedrive") != NULL)
-		streamurl = firedrive(url);
-	else if(ostrstr(tmplink, "shared") != NULL)
-		streamurl = shared(url);
-	else if(ostrstr(tmplink, "thefile") != NULL)
-		streamurl = thefile(url);
-	else if(ostrstr(tmplink, "youtu") != NULL)
-		streamurl = youtube(url);
-	else if(ostrstr(tmplink, "myvideo") != NULL)
-		streamurl = myvideo(url);
-	else if(ostrstr(tmplink, "promptfile") != NULL)
-		streamurl = promptfile(url);
-	else if(ostrstr(tmplink, "letwatch") != NULL || ostrstr(tmplink, "realvid") != NULL)
-		streamurl = letwatch(url);
-	else if(ostrstr(tmplink, "vidbull") != NULL)
-		streamurl = vidbull(url);
-	else if(ostrstr(tmplink, "vodlocker") != NULL)
-		streamurl = vodlocker(url);
-	else if(ostrstr(tmplink, "vidto") != NULL)
-		streamurl = vidto(url);
-	else if(ostrstr(tmplink, "amazon") != NULL)
-		streamurl = amazon(url);
-	else if(ostrstr(tmplink, "thevideo") != NULL)
-		streamurl = thevideo(url);
-	else if(ostrstr(tmplink, "mightyupload") != NULL)
-		streamurl = mightyupload(url);
-	else if(ostrstr(tmplink, "cloudzilla") != NULL)
-		streamurl = cloudzilla(url);
-	else if(ostrstr(tmplink, "vivo") != NULL)
-		streamurl = vivo(url);
-	else if(ostrstr(tmplink, "streamlive") != NULL)
-		streamurl = streamlive(url, -1);
-	else if(ostrstr(tmplink, "cricfree") != NULL)
-		streamurl = cricfree(url, 0);
-	else if(ostrstr(tmplink, "zerocast") != NULL)
-		streamurl = zerocast(url, 0);
-	else if(ostrstr(tmplink, "p2pcast") != NULL)
-		streamurl = p2pcast(url);
-	else if(ostrstr(tmplink, "vidzi") != NULL)
-		streamurl = vidzi(url);
-	else if(ostrstr(tmplink, "vid.ag") != NULL)
-		streamurl = vidag(url);
-	else
+	char* cmd = NULL;
+	cmd = ostrcat("/tmp/localhoster/hoster.sh get ", tmplink, 0, 0);
+	streamurl = command(cmd);
+	streamurl = string_newline(streamurl);
+	free(cmd), cmd = NULL;
+		
+	if(streamurl == NULL)
 	{
-		char* cmd = NULL;
-		cmd = ostrcat("/tmp/localhoster/hoster.sh get ", url, 0, 0);
-		streamurl = command(cmd);
-		streamurl = string_newline(streamurl);
-		free(cmd), cmd = NULL;
-		if(streamurl == NULL)
-			textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+		if(ostrstr(tmplink, "sockshare") != NULL)
+			streamurl = putlocker(url);
+		else if(ostrstr(tmplink, "putlocker") != NULL)
+			streamurl = firedrive(url);
+		else if(ostrstr(tmplink, "filenuke") != NULL)
+			streamurl = filenuke(url);
+		else if(ostrstr(tmplink, "streamcloud") != NULL)
+			streamurl = streamcloud(url);
+		else if(ostrstr(tmplink, "vidstream") != NULL)
+			streamurl = vidstream(url);
+		else if(ostrstr(tmplink, "flashx") != NULL)
+			streamurl = flashx(url);
+		else if(ostrstr(tmplink, "xvidstage") != NULL)
+			streamurl = xvidstage(url);
+		else if(ostrstr(tmplink, "nowvideo") != NULL)
+			streamurl = nowvideo(url);
+		else if(ostrstr(tmplink, "movshare") != NULL || ostrstr(tmplink, "wholecloud") != NULL)
+			streamurl = movshare(url);
+		else if(ostrstr(tmplink, "movreel") != NULL)
+			streamurl = movreel(url);
+		else if(ostrstr(tmplink, "novamov") != NULL || ostrstr(tmplink, "auroravid") != NULL)
+			streamurl = novamov(url);
+		else if(ostrstr(tmplink, "divxstage") != NULL || ostrstr(tmplink, "cloudtime") != NULL)
+			streamurl = divxstage(url);
+		else if(ostrstr(tmplink, "primeshare") != NULL)
+			streamurl = primeshare(url);
+		else if(ostrstr(tmplink, "faststream") != NULL || ostrstr(tmplink, "fastvideo") != NULL)
+			streamurl = faststream(url);
+		else if(ostrstr(tmplink, "played") != NULL)
+			streamurl = played(url);
+		else if(ostrstr(tmplink, "videoweed") != NULL)
+			streamurl = videoweed(url);
+		else if(ostrstr(tmplink, "firedrive") != NULL)
+			streamurl = firedrive(url);
+		else if(ostrstr(tmplink, "shared") != NULL)
+			streamurl = shared(url);
+		else if(ostrstr(tmplink, "thefile") != NULL)
+			streamurl = thefile(url);
+		else if(ostrstr(tmplink, "youtu") != NULL)
+			streamurl = youtube(url);
+		else if(ostrstr(tmplink, "myvideo") != NULL)
+			streamurl = myvideo(url);
+		else if(ostrstr(tmplink, "promptfile") != NULL)
+			streamurl = promptfile(url);
+		else if(ostrstr(tmplink, "letwatch") != NULL || ostrstr(tmplink, "realvid") != NULL)
+			streamurl = letwatch(url);
+		else if(ostrstr(tmplink, "vidbull") != NULL)
+			streamurl = vidbull(url);
+		else if(ostrstr(tmplink, "vodlocker") != NULL)
+			streamurl = vodlocker(url);
+		else if(ostrstr(tmplink, "vidto") != NULL)
+			streamurl = vidto(url);
+		else if(ostrstr(tmplink, "amazon") != NULL)
+			streamurl = amazon(url);
+		else if(ostrstr(tmplink, "thevideo") != NULL)
+			streamurl = thevideo(url);
+		else if(ostrstr(tmplink, "mightyupload") != NULL)
+			streamurl = mightyupload(url);
+		else if(ostrstr(tmplink, "cloudzilla") != NULL)
+			streamurl = cloudzilla(url);
+		else if(ostrstr(tmplink, "vivo") != NULL)
+			streamurl = vivo(url);
+		else if(ostrstr(tmplink, "streamlive") != NULL)
+			streamurl = streamlive(url, -1);
+		else if(ostrstr(tmplink, "cricfree") != NULL)
+			streamurl = cricfree(url, 0);
+		else if(ostrstr(tmplink, "zerocast") != NULL)
+			streamurl = zerocast(url, 0);
+		else if(ostrstr(tmplink, "p2pcast") != NULL)
+			streamurl = p2pcast(url);
+		else if(ostrstr(tmplink, "vidzi") != NULL)
+			streamurl = vidzi(url);
+		else if(ostrstr(tmplink, "vid.ag") != NULL)
+			streamurl = vidag(url);
+		else
+		{
+			cmd = ostrcat("/tmp/localhoster/hoster.sh get ", url, 0, 0);
+			streamurl = command(cmd);
+			streamurl = string_newline(streamurl);
+			free(cmd), cmd = NULL;
+			if(streamurl == NULL)
+				textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+		}
 	}
 
 	debug(99, "Streamurl1: %s", streamurl);
