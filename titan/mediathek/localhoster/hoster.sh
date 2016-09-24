@@ -66,6 +66,16 @@ allmyvideos()
 	python $CMD/allmyvideos.py $INPUT
 }
 
+flashx()
+{
+	python $CMD/flashx.py $INPUT
+}
+
+openload()
+{
+	python $CMD/openload.py $INPUT
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -73,5 +83,7 @@ if [ "$TYPE" == "get" ];then
 		vidup) vidup $INPUT;;
 		nosvideo) nosvideo $INPUT;;
 		allmyvideos) allmyvideos $INPUT;;
+		flashx) flashx $INPUT;;
+		openload) openload $INPUT;;
 	esac
 fi
