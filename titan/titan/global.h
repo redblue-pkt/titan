@@ -7132,10 +7132,7 @@ char* system_logs(int mode)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *path = NULL, *boxversion = NULL;
 
-	if(file_exist("/etc/.beta"))
-		path = ostrcat("/svn/image-beta/changelog.", NULL, 0, 0);
-	else
-		path = ostrcat("/svn/image/changelog.", NULL, 0, 0);
+	path = ostrcat("/svn/image/changelog.", NULL, 0, 0);
 
 	if(mode == 0)
 	{
@@ -7155,10 +7152,7 @@ char* system_logs(int mode)
 		path = ostrcat(path, boxversion, 1, 0);
 		path = ostrcat(path, ".titan", 1, 0);
 
-		if(file_exist("/etc/.beta"))
-			tmpstr1 = gethttp("beta.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
-		else
-			tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		tmpstr = readfromlinetoline(tmpstr1, 37, 537, 1);
 	}
@@ -7170,10 +7164,7 @@ char* system_logs(int mode)
 		path = ostrcat(path, "git.sh4", 1, 0);
 #endif
 
-		if(file_exist("/etc/.beta"))
-			tmpstr1 = gethttp("beta.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
-		else
-			tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
 	}
