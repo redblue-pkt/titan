@@ -704,7 +704,7 @@ msgstr "oldaudiofw"
 msgid "AUDIO SETTINGS"
 msgstr "Ρυθμίσεις Audio"
 
-#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "AUTH SETTINGS"
 msgstr "Ρυθμίσεις Audio"
 
@@ -1098,10 +1098,6 @@ msgstr ""
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 msgid "Auswahl"
 msgstr ""
-
-#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
-msgid "Auth Settings"
-msgstr "Ρυθμίσεις Audio / Video"
 
 #: httpdsettings.h:80
 msgid "Auto"
@@ -1671,7 +1667,7 @@ msgstr ""
 msgid "CLEAR INPUT"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:5 skins_networkbrowser_skin.xml.h:5
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "COPY"
 msgstr ""
 
@@ -2473,9 +2469,9 @@ msgstr ""
 msgid "DEFAULT"
 msgstr ""
 
-#: play.h:1575 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1575 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
-#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:6
+#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:5
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Σβήσιμο"
@@ -2929,9 +2925,9 @@ msgid ""
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:8
+#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:7
 #: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:170
-#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:8
+#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:7
 #: skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
 msgstr ""
@@ -4272,7 +4268,7 @@ msgstr ""
 msgid "Here you can activate/deactivate you OSCam readers."
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "Here you can add and configure your network shares."
 msgstr ""
 
@@ -4331,7 +4327,7 @@ msgid ""
 "start an automatic search."
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
+#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your login credentials for accessing password "
 "protected shares."
@@ -4731,7 +4727,7 @@ msgstr ""
 msgid "Icon 4"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
 "If you don't find Windows shares, you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
@@ -6732,8 +6728,8 @@ msgstr ""
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:419
-#: skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:16 skin_default_skin.xml.h:419
+#: skins_networkbrowser_skin.xml.h:16
 msgid "Password"
 msgstr ""
 
@@ -8003,9 +7999,9 @@ msgid "SCART 4:3 / 16:9"
 msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
-#: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
 #: skin_default_skin.xml.h:549 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
+#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr ""
@@ -10470,8 +10466,8 @@ msgstr ""
 msgid "Use numeric keys"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:712
-#: skins_networkbrowser_skin.xml.h:33
+#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:712
+#: skins_networkbrowser_skin.xml.h:32
 msgid "User"
 msgstr ""
 
@@ -11486,7 +11482,7 @@ msgstr "Απενεργοποίηση"
 msgid "diseqcscreen"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
+#: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
 msgid "dnsaddresse"
 msgstr "Διεύθυνση IP"
 
@@ -11686,7 +11682,7 @@ msgstr "Ενεργοποίηση οδηγών ftdi"
 msgid "ftpfs"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 msgid "ftpport"
 msgstr ""
 
@@ -11745,7 +11741,7 @@ msgstr ""
 msgid "hbbtv Browser"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "hddreplacement"
 msgstr "Αντικατάσταση Σκληρού Δίσκου"
 
@@ -11855,8 +11851,8 @@ msgstr ""
 msgid "ip"
 msgstr "i"
 
-#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:326
-#: skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:326
+#: skins_networkbrowser_skin.xml.h:13
 msgid "ipaddress"
 msgstr "Διεύθυνση IP"
 
@@ -12349,7 +12345,7 @@ msgstr ""
 msgid "optimize Plugin"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
 msgid "options"
 msgstr "Επιλογές"
 
@@ -12369,7 +12365,7 @@ msgstr ""
 msgid "panscan"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "password"
 msgstr "Password"
 
@@ -12499,31 +12495,31 @@ msgstr "progressbar"
 msgid "protect service"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
+#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 msgid "protocol"
 msgstr "Πρωτόκολλο"
 
-#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "proxy"
 msgstr "IP για Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxyauth"
 msgstr "Πιστοποίηση Proxy"
 
-#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyip"
 msgstr "IP για Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
+#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxypass"
 msgstr "Password για Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxyport"
 msgstr "Πύλη για Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyuser"
 msgstr "Ονομα χρήστη για Proxyserver"
 
@@ -12629,7 +12625,7 @@ msgstr ""
 msgid "ro"
 msgstr "o"
 
-#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
+#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "rsize"
 msgstr ""
 
@@ -12777,11 +12773,11 @@ msgstr ""
 msgid "settingsmenu"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
+#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
 msgid "sharedir"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharename"
 msgstr "Sharename"
 
@@ -12909,8 +12905,8 @@ msgstr "Ταχύτητα"
 msgid "spinner"
 msgstr ""
 
-#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:29
-#: skins_networkbrowser_skin.xml.h:29
+#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:28
+#: skins_networkbrowser_skin.xml.h:28
 msgid "ssl"
 msgstr ""
 
@@ -13225,8 +13221,8 @@ msgstr ""
 msgid "tunerreceptiondvbt"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:693
-#: skins_networkbrowser_skin.xml.h:30
+#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:693
+#: skins_networkbrowser_skin.xml.h:29
 msgid "type"
 msgstr "Πληκτρολόγησε"
 
@@ -13326,11 +13322,11 @@ msgstr ""
 msgid "useUnknown910"
 msgstr "Άγνωστο"
 
-#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
+#: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
 msgid "usedns"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
+#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "useproxy"
 msgstr "use proxy"
 
@@ -13342,15 +13338,15 @@ msgstr "Όνομα χρήστη"
 msgid "user unicable"
 msgstr "Όνομα χρήστη"
 
-#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
+#: plugins_networkbrowser_skin.xml.h:33 skins_networkbrowser_skin.xml.h:33
 msgid "userauth"
 msgstr "Επιβεβαίωση χρήστη"
 
-#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
+#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
 msgid "username"
 msgstr "Όνομα χρήστη"
 
-#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
+#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "usessl"
 msgstr ""
 
@@ -13498,7 +13494,7 @@ msgstr ""
 msgid "workdays"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:37 skins_networkbrowser_skin.xml.h:37
+#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "wsize"
 msgstr ""
 
@@ -13613,3 +13609,6 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Auth Settings"
+#~ msgstr "Ρυθμίσεις Audio / Video"
