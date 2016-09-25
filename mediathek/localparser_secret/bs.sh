@@ -33,7 +33,7 @@ init()
 mainmenu()
 {
         echo "Genres#$SRC $SRC genres#http://atemio.dyndns.tv/mediathek/menu/serien.genre.jpg#serien.genre.jpg#$NAME#0" >/tmp/tithek/$PARSER.mainmenu.list
-        echo "All Series#$SRC $SRC allseries#http://atemio.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
+        echo "All Series#$SRC $SRC series#http://atemio.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
         echo "Search#$SRC $SRC search#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
 	echo "/tmp/tithek/$PARSER.mainmenu.list"
 }
@@ -50,12 +50,12 @@ BEGIN { in_genres = 0
 
 /<span><strong>/ { i = index($0, "<span><strong>") + 14
                    j = index($0, "</strong></span>") - i
-                   title = substr($0, i, j) 
-                   pic = tolower(title) 
+                   title = substr($0, i, j)
+                   pic = tolower(title)
                    print title "#" SRC " " SRC " series " title "#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
                    next
                  }
-                  
+
 ' >/tmp/tithek/$PARSER.genres.list
 	echo "/tmp/tithek/$PARSER.genres.list"
 }
@@ -223,7 +223,7 @@ BEGIN { in_hosterlist = 0
 #                    </div>
 #            </div>
 #    <br style="clear:both;"/>
-    
+
 hoster()
 {
 	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
@@ -243,7 +243,7 @@ BEGIN { in_hosterlist = 0
                   i = index($0, "<a href=\"") + 16
                   j = index(substr($0, i), "/") - 1
                   title = substr($0, i, j)
-                  
+
 #                  print "Originalvideo#" url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#140"
 #                  print title "#" url "#http://atemio.dyndns.tv/mediathek/menu/" title ".jpg#" title ".jpg#" NAME "#14"
                   print url
@@ -263,7 +263,7 @@ BEGIN { in_hosterlist = 0
                   i = index($0, "<a href=\"") + 16
                   j = index(substr($0, i), "/") - 1
                   title = substr($0, i, j)
-                  
+
 #                  print "Originalvideo#" url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#140"
 #                  print title "#" url "#http://atemio.dyndns.tv/mediathek/menu/" title ".jpg#" title ".jpg#" NAME "#14"
                   print url
