@@ -1519,9 +1519,18 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
 
+		filename = string_replace_all("(Flash - Shell script) - ", "", filename, 1);
+		filename = string_replace_all("Genres - ", "", filename, 1);
+		filename = string_replace_all("All Series - ", "", filename, 1);
+		filename = string_replace_all("Channels - ", "", filename, 1);
+		filename = string_replace_all("Kinofilme - ", "", filename, 1);
+		filename = string_replace_all("Neue Filme - ", "", filename, 1);
+		filename = string_replace_all("Movies (Year) - ", "", filename, 1);
+		filename = string_replace_all("Movies (Genre) - ", "", filename, 1);
+		filename = string_replace_all("Series - ", "", filename, 1);
+
 		filename = ostrcat(filename, ((struct tithek*)listbox->select->handle)->title, 1, 0);
 		filename = ostrcat(filename, ".mp4", 1, 0);
-		filename = string_replace_all("(Flash - Shell script) - ", "", filename, 1);
 		filename = string_replace_all(" ", ".", filename, 1);
 		filename = string_replace_all("-", "_", filename, 1);
 		filename = string_replace_all("._.", "_", filename, 1);
