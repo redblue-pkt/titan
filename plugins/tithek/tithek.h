@@ -1491,6 +1491,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		filename = string_replace_all("TheSolarMovie ", "", filename, 1);
 		filename = string_replace_all("Youtube ", "", filename, 1);
 
+		tmpstr2 = ostrcat(_("(Flash - Shell script)"), " - ", 0, 0);
+		filename = string_replace_all(tmpstr2, "", filename, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
 		tmpstr2 = ostrcat(_("Category"), " - ", 0, 0);
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
