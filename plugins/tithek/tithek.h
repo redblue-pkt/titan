@@ -21,7 +21,7 @@ int amazonlogin = 0;
 //flag 6	- nowtv pay //superrtlnow
 //flag 7	- nowtv local serach //rtlnow
 //flag 8	- nowtv search //voxnow
-//flag 9	- youtube suche 10 
+//flag 9	- youtube suche 10
 //flag 10	- youtube suche 25
 //flag 11	- youtube suche 50
 //flag 12	- myvideo
@@ -48,7 +48,7 @@ int amazonlogin = 0;
 //flag 33	- movie4k search : serie > open seasons and list episode flag=40 > hoster listed flag=34
 //flag 34	- movie4k hoster de
 //flag 35	- movie4k hoster other
-//flag 36	- movie4k series de > open seasons and list episode flag=39 > hoster listed flag=34 
+//flag 36	- movie4k series de > open seasons and list episode flag=39 > hoster listed flag=34
 //flag 37	- movie4k series other > open seasons and list episode flag=39 > hoster listed flag=34
 //flag 38	- mlehd
 //flag 39   - movie4k_hoster_listed
@@ -161,7 +161,7 @@ struct tithek
 	char* link;
 	char* pic;
 	char* localname;
-	char* menutitle;	
+	char* menutitle;
 	int flag;
 	struct tithek* prev;
 	struct tithek* next;
@@ -232,7 +232,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	}
 
 	if(flag != NULL) node->flag = atoi(flag);
-	
+
 	sos = getconfigint("sos", NULL);
 	hid = getconfigint("tithek_hid_xxx", NULL);
 	if(node->flag == 1000 && hid == 1)
@@ -250,7 +250,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	else if(titheksolarmovie == 1 && node->flag == 9996 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "www.thesolarmovie.me", 1, 0);
-		
+
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
@@ -265,7 +265,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	else if(tithekmovie4k == 1 && node->flag == 9997 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "www.movie4k.to", 1, 0);
-		
+
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
@@ -276,11 +276,11 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 			skip = 1;
 
 		tithekmovie4k = 0;
-	}		
+	}
 	else if(tithekmlehd == 1 && node->flag == 9998 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "www.mle-hd.se", 1, 0);
-		
+
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
@@ -295,7 +295,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	else if(tithekkinox == 1 && node->flag == 9999 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "kinox.me", 1, 0);
-		
+
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
@@ -316,7 +316,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 	free(tmp); tmp = NULL;
 	free(cmd), cmd = NULL;
-		
+
 	return 0;
 }
 
@@ -377,7 +377,7 @@ struct tithek* createtithek(struct tithek* update, char* title, char* link, char
 	int pay = 0;
 	struct tithek* tnode = NULL;
 	char* tmpstr = NULL;
-	
+
 	pay = getconfigint("tithek_pay", NULL);
 
 	title = stringreplacechar(title, '#', ' ');
@@ -385,7 +385,7 @@ struct tithek* createtithek(struct tithek* update, char* title, char* link, char
 	pic = stringreplacechar(pic, '#', ' ');
 	localname = stringreplacechar(localname, '#', ' ');
 	menutitle = stringreplacechar(menutitle, '#', ' ');
-	
+
 	tmpstr = ostrcat(tmpstr, title, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, link, 1, 0);
@@ -441,7 +441,7 @@ int readtithek(char* filename)
 		debug(10, "file: %s", file);
 	}
 	else
-		file = ostrcat(filename, NULL, 0, 0);	
+		file = ostrcat(filename, NULL, 0, 0);
 
 	fd = fopen(file, "r");
 	if(fd == NULL)
@@ -613,13 +613,13 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	else
 	{
 		ip = string_replace("http://", "", (char*)link, 0);
-	
+
 		// tithek security
 		ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
-	
+
 		ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
 		//ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
-	
+
 		if(ip != NULL)
 			pos = strchr(ip, '/');
 		if(pos != NULL)
@@ -627,7 +627,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			pos[0] = '\0';
 			path = pos + 1;
 		}
-	
+
 		if(ostrstr(ip, ":") != NULL)
 		{
 			ip = oregex("http://(.*):.*", link);
@@ -700,13 +700,13 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 				if(ssl == 1)
 					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
 				else
-					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);			
+					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 			}
 		}
 	}
 	else
 	{
-	
+
 		if(localfile != NULL && file_exist(localfile))
 			ret = textbox(_("Message"), _("File exist, overwrite?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
@@ -745,7 +745,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 //	if(readtithek(tithekfile) != 0) return 1;
 	int linecount = readtithek(tithekfile);
 //	if(linecount == 0) return 1;
-	
+
 	struct tithek* titheknode = tithek;
 
 	int height = 500;
@@ -768,7 +768,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			fontsize = 20;
 			pcount = 6;
 		}
-	 
+
 		if(linecount > 8)
 		{
 			height = 180;
@@ -790,7 +790,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			fontsize = 16;
 			pcount = 20;
 		}
-	
+
 		if(linecount > 25)
 		{
 			height = 111;
@@ -802,7 +802,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			pcount = 30;
 		}
 	}
-	
+
 	if((getconfigint("tithek_cover", NULL) == 1 && flag == 0) || (getconfigint("tithek_view", NULL) == 1 && flag != 0))
 	{
 		height = 500;
@@ -895,7 +895,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 			tmp->picheight = picheight;
 			tmp->picwidth = picwidth;
-								
+
 			tmp->fontsize = fontsize;
 			tmp->height = height;
 			tmp->width = width;
@@ -917,7 +917,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 				posx = 0;
 				gridbr = 0;
 			}
-			
+
 			if(count1 >= pcount)
 			{
 				count1 = 0;
@@ -944,7 +944,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 	if(localfile == 0)
 		unlink(tithekfile);
-	
+
 	free(tithekfile); tithekfile = NULL;
 	return pagecount;
 }
@@ -966,9 +966,9 @@ void removefav(char* title, char* link, char* pic, char* localname, char* menuti
 	input = ostrcat(input, menutitle, 1, 0);
 	input = ostrcat(input, "#", 1, 0);
 	input = ostrcat(input, oitoa(flag), 1, 1);
-	
+
 	tmpstr = readfiletomem(getconfig("tithek_fav", NULL), 0);
-	
+
 	ret = strsplit(tmpstr, "\n", &count);
 
 	if(ret != NULL)
@@ -1054,7 +1054,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	}
 	else
 		savefile = ostrcat(getconfig("tithek_fav", NULL), NULL, 0, 0);
-				
+
 	input = ostrcat(input, title, 1, 0);
 	input = ostrcat(input, "#", 1, 0);
 	input = ostrcat(input, link, 1, 0);
@@ -1068,7 +1068,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	input = ostrcat(input, oitoa(flag), 1, 1);
 	// tithek security
 	input = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", input, 1);
-	
+
 	tmpstr1 = ostrcat(tmpstr1, input, 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
 
@@ -1160,7 +1160,7 @@ void cacheplay(char* link, char* filename, int flag)
 	struct skin* load = getscreen("loadingproz");
 	struct skin* proztext = getscreennode(load, "proztext");
 
-	drawscreen(load, 0, 0);	
+	drawscreen(load, 0, 0);
 	int port = 80, count = 0, mcount = 0;
 	off64_t size = 0, msize = 0;
 	char* host = NULL, *pos = NULL, *path = NULL, *file = NULL, *tmpstr = NULL;
@@ -1191,15 +1191,15 @@ void cacheplay(char* link, char* filename, int flag)
 	debug(99, "path: %s", path);
 	debug(99, "local: %s", file);
 	debug(99, "---------------------------------------");
-	
-	
+
+
 	struct download* dnode = NULL;
 	dnode = calloc(1, sizeof(struct download));
 	if(dnode == NULL)
 	{
 		err("no mem");
 		return;
-	}		
+	}
 	dnode->host = host;
 	dnode->page = path;
 	dnode->port = port;
@@ -1208,7 +1208,7 @@ void cacheplay(char* link, char* filename, int flag)
 	dnode->connfd = -1;
 	dnode->ret = -1;
 	dnode->timeout = 30000;
-	
+
 	addtimer(&gethttpstruct, START, 1000, 1, (void*)dnode, NULL, NULL);
 
 	if(flag == 1)
@@ -1218,15 +1218,15 @@ void cacheplay(char* link, char* filename, int flag)
 	}
 	else if(flag == 2)
 	{
-		mcount = 240; 
+		mcount = 240;
 		msize = 20971520;
 	}
 	else if(flag == 3)
 	{
-		mcount = 360; 
+		mcount = 360;
 		msize = 31457280;
 	}
-			
+
 	while(count < mcount || size >= msize)
 	{
 		sleep(1);
@@ -1240,7 +1240,7 @@ void cacheplay(char* link, char* filename, int flag)
 
 		int proz2 = count * 100 / mcount;
 		debug(99, "time (%dprozent)", proz2);
-		
+
 		if(proz1 > proz2)
 			proz = proz1;
 		else
@@ -1252,7 +1252,7 @@ void cacheplay(char* link, char* filename, int flag)
 			break;
 		if(count >= mcount)
 			break;
-		
+
 		tmpstr = ostrcat(_("please wait..."), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, oitoa(proz), 1, 1);
 		tmpstr = ostrcat(tmpstr, "%)", 1, 0);
@@ -1269,7 +1269,7 @@ void cacheplay(char* link, char* filename, int flag)
 	tmpstr = ostrcat(tmpstr, _("Remove Cachefile ?"), 1, 0);
 	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
 	tmpstr = ostrcat(tmpstr, file, 1, 0);
-	
+
 	if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		unlink(file);
@@ -1310,7 +1310,7 @@ void backgrounddl(char* link, char* filename)
 	debug(99, "path: %s", path);
 	debug(99, "local: %s", file);
 	debug(99, "---------------------------------------");
-		
+
 	if(ostrstr(path, "|User-Agent=") != NULL)
 	{
 		stringreplacechar(path, '|', '\0');
@@ -1332,16 +1332,16 @@ void backgrounddl(char* link, char* filename)
 
 	if(ret == 1)
 		textbox(_("Message"), _("Can't start download.\nPlease try later."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-					
+
 	free(tmpstr), tmpstr = NULL;
 	free(file), file = NULL;
 	free(host), host = NULL;
 }
-	
+
 void submenu(struct skin* listbox, struct skin* load, char* title)
 {
 	int flag = 0;
-	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL; 
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	drawscreen(load, 0, 0);
 	tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 	tmpstr2 = ostrcat(((struct tithek*)listbox->select->handle)->title, NULL, 0, 0);
@@ -1358,7 +1358,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	else if(((struct tithek*)listbox->select->handle)->flag == 4)
 	{
 		if(tmpstr != NULL) tmpstr1 = youtube_hoster(tmpstr);
-	}						
+	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 5)
 	{
 		if(tmpstr != NULL) tmpstr1 = nowtv(tmpstr);
@@ -1456,16 +1456,16 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		tmpstr1 = string_replace_all("&amp;", "&", tmpstr1, 1);
 		printf("change streamurl to: %s\n", tmpstr1);
 	}
-	
+
 	if(tmpstr1 != NULL)
 	{
-		char* filename = ostrcat(title, "_", 0, 0);		
+		char* filename = ostrcat(title, "_", 0, 0);
 
-		tmpstr2 = ostrcat(_("Tithek - Mainmenu - Favoriten"), " - ", 0, 0);		
+		tmpstr2 = ostrcat(_("Tithek - Mainmenu - Favoriten"), " - ", 0, 0);
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
-	
-		tmpstr2 = ostrcat(_("Tithek - Mainmenu"), " - ", 0, 0);		
+
+		tmpstr2 = ostrcat(_("Tithek - Mainmenu"), " - ", 0, 0);
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
 
@@ -1481,33 +1481,33 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		filename = string_replace_all("Movie4k - ", "", filename, 1);
 		filename = string_replace_all("Movie2k - ", "", filename, 1);
 
-		filename = string_replace_all("Beeg - ", "", filename, 1);
-		filename = string_replace_all("Burning Series - ", "", filename, 1);
-		filename = string_replace_all("CricFree - ", "", filename, 1);
-		filename = string_replace_all("Giga - ", "", filename, 1);
-		filename = string_replace_all("KKiste - ", "", filename, 1);
-		filename = string_replace_all("NBA-On-Demand - ", "", filename, 1);
-		filename = string_replace_all("StreamLive - ", "", filename, 1);
-		filename = string_replace_all("TheSolarMovie - ", "", filename, 1);
-		filename = string_replace_all("Youtube - ", "", filename, 1);
+		filename = string_replace_all("Beeg ", "", filename, 1);
+		filename = string_replace_all("Burning Series ", "", filename, 1);
+		filename = string_replace_all("CricFree ", "", filename, 1);
+		filename = string_replace_all("Giga ", "", filename, 1);
+		filename = string_replace_all("KKiste ", "", filename, 1);
+		filename = string_replace_all("NBA-On-Demand ", "", filename, 1);
+		filename = string_replace_all("StreamLive ", "", filename, 1);
+		filename = string_replace_all("TheSolarMovie ", "", filename, 1);
+		filename = string_replace_all("Youtube ", "", filename, 1);
 
-		tmpstr2 = ostrcat(_("Category"), " - ", 0, 0);		
+		tmpstr2 = ostrcat(_("Category"), " - ", 0, 0);
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
 
-		tmpstr2 = ostrcat(_("Search (local)"), " - ", 0, 0);		
+		tmpstr2 = ostrcat(_("Search (local)"), " - ", 0, 0);
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
 
-		tmpstr2 = ostrcat(_("Search (20)"), " - ", 0, 0);		
+		tmpstr2 = ostrcat(_("Search (20)"), " - ", 0, 0);
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
 
-		tmpstr2 = ostrcat(_("Search Cast"), " - ", 0, 0);		
+		tmpstr2 = ostrcat(_("Search Cast"), " - ", 0, 0);
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
 
-		tmpstr2 = ostrcat(_("Search"), " - ", 0, 0);		
+		tmpstr2 = ostrcat(_("Search"), " - ", 0, 0);
 		filename = string_replace_all(tmpstr2, "", filename, 1);
 		free(tmpstr2); tmpstr2 = NULL;
 
@@ -1526,7 +1526,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		filename = string_replace_all("._.", "_", filename, 1);
 		filename = string_replace_all(".._", "_", filename, 1);
 		debug(99, "filename: %s", filename);
-			
+
 		char* keyconf = NULL;
 		char* skintitle = _("Choice Playback");
 		struct menulist* mlist = NULL, *mbox = NULL;
@@ -1557,7 +1557,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				addmenulist(&mlist, "Streaming Playback (default)", _("Streaming Playback (default)"), NULL, 0, 0);
 #endif
 //#endif
-			}	
+			}
 			else if(!ostrncmp("http://", tmpstr1, 7) || !ostrncmp("https://", tmpstr1, 8))
 			{
 //#ifdef EPLAYER3
@@ -1655,11 +1655,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		{
 			char* search = textinput(_("Filename"), filename);
 			if(search != NULL)
-			{	
+			{
 				char* tmpstr2 = tithekdownload(tmpstr1, search, NULL, 0, 1);
 //						drawscreen(grid, 0, 0);
 				free(tmpstr2); tmpstr2 = NULL;
-			
+
 				if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				{
 					tmpstr2 = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
@@ -1677,13 +1677,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				backgrounddl(tmpstr1, search);
 			free(search), search = NULL;
 		}
-		 
+
 		free(filename), filename = NULL;
 		freemenulist(mlist, 1); mlist = NULL;
 	}
 	else
 		textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-	
+
 	free(tmpstr1); tmpstr1 = NULL;
 }
 
@@ -1691,17 +1691,17 @@ void screentithekplay(char* titheklink, char* title, int first)
 {
 	int savevol = 0;
 	if(!file_exist("/mnt/swapextensions/player"))
-		mkdir("/mnt/swapextensions/player", 0777); 
+		mkdir("/mnt/swapextensions/player", 0777);
 
 	char* disclaimer = NULL;
 	disclaimer = ostrcat(disclaimer, "/mnt/swapextensions/player/tithek_disclaimer_accepted", 1, 0);
-				
+
 	if(!file_exist(disclaimer))
 	{
 		char* tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/disclaimer.txt", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 		if(textbox(_("TitanNit Tithek disclaimer"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 650, 0, 0) == 1)
 		{
-			writesys(disclaimer, tmpstr, 0);				
+			writesys(disclaimer, tmpstr, 0);
 			free(tmpstr), tmpstr = NULL;
 		}
 		else
@@ -1715,10 +1715,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0, pagecount = 0;
 
-	writesysint("/proc/sys/vm/drop_caches", 3, 0); 
+	writesysint("/proc/sys/vm/drop_caches", 3, 0);
 
 	if(first == 1)
-	{ 
+	{
 		savevol = getvol();
 
 		mkdir("/tmp/tithek", 777);
@@ -1756,9 +1756,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 	}
 
 	drawscreen(load, 0, 0);
-	
+
 	if(titheklink == NULL) return;
-	
+
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 	listbox->gridcol = 0;
@@ -1770,7 +1770,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	changetitle(grid, _(title));
 	drawscreen(grid, 0, 0);
 	addscreenrc(grid, listbox);
-				
+
 	while(1)
 	{
 		changetitle(grid, _(title));
@@ -1798,14 +1798,14 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 					/* not working with thread download
 					off64_t checkpic = getfilesize(tithekpic);
-			
+
 					if(checkpic < 1000)
 					{
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
 					*/
-			
+
 					changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
@@ -1836,7 +1836,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				tmp = tmp->next;
 			}
 		}
-		
+
 		int count = getfilecount(TITHEKPATH);
 		if(count > 500)
 			delallfiles(TITHEKPATH, ".jpg");
@@ -1910,7 +1910,7 @@ waitrcstart:
 				tmpstr = string_replace(" (\?\?)", "", tmpstr, 1);
 				tmpstr = string_replace_all("_", " ", tmpstr, 1);
 				tmpstr = string_replace_all("-", " ", tmpstr, 1);
-				tmpstr = string_replace_all(".", " ", tmpstr, 1);				
+				tmpstr = string_replace_all(".", " ", tmpstr, 1);
 				debug(99, "tmpstr: %s", tmpstr);
 
 				int check = playrcred(tmpstr, NULL, 1, 0, 99);
@@ -2097,7 +2097,7 @@ why ?
 						free(tmpstr1), tmpstr1 = NULL;
 					}
 					free(search), search = NULL;
-	
+
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 					if(pagecount == 0) return;
 				}
@@ -2378,7 +2378,7 @@ why ?
 				{
 					textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 					continue;
-				}	
+				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 112))
 				{
 //					if(localparser_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
@@ -2404,7 +2404,7 @@ why ?
 				}
 // new osd musst disable this
 				drawscreen(grid, 0, 0);
-			}			
+			}
 		}
 //		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
 		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
@@ -2413,10 +2413,10 @@ why ?
 			{
 				if(textbox(_("Message"), _("Remove this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
-					removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
+					removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 					if(pagecount == 0) return;
-						
+
 //					drawscreen(grid, 0, 0);
 				}
 			}
@@ -2429,7 +2429,7 @@ why ?
 			{
 				if(textbox(_("Message"), _("Add this link as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
-					addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
+					addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);
 				}
 			}
 		}
@@ -2441,10 +2441,10 @@ why ?
 			{
 				if(textbox(_("Message"), _("Edit this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
-					editfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
+					editfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 					if(pagecount == 0) return;
-						
+
 //					drawscreen(grid, 0, 0);
 				}
 			}
@@ -2461,10 +2461,10 @@ why ?
 			changetext(b4, _("ADD FAV"));
 			b5->hidden = YES;
 		}
-		
+
 // new osd musst disable this
 		drawscreen(grid, 0, 0);
-		
+
 	}
 
 //	amazon_deinit();
