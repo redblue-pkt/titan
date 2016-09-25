@@ -33,7 +33,7 @@ init()
 mainmenu()
 {
         echo "Genres#$SRC $SRC genres#http://atemio.dyndns.tv/mediathek/menu/serien.genre.jpg#serien.genre.jpg#$NAME#0" >/tmp/tithek/$PARSER.mainmenu.list
-        echo "All Series#$SRC $SRC series#http://atemio.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
+        echo "All Series#$SRC $SRC allseries#http://atemio.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
         echo "Search#$SRC $SRC search#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
 	echo "/tmp/tithek/$PARSER.mainmenu.list"
 }
@@ -81,6 +81,29 @@ series()
                  }
 ' >/tmp/tithek/$PARSER.series.list
 	echo "/tmp/tithek/$PARSER.series.list"
+}
+
+allseries()
+{
+	$curlbin -o - $URL"andere-serien" | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
+/<span><strong>/ { i = index($0, "<span><strong>") + 14
+                   j = index($0, "</strong></span>") - i
+                   genre = substr($0, i, j)
+                 }
+
+/<li><a href=\"/ { if (genre == PARAM) {
+                      i = index($0, "<li><a href=\"") + 13
+                      j = index(substr($0, i), "\">") - 1
+                      url = substr($0, i, j)
+                      k = i + j + 2
+                      l = index(substr($0, k), "</a></li>") - 1
+                      title = substr($0, k, l)
+                      print title "#" SRC " " SRC " staffel " url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#0"
+                   }
+                   next
+                 }
+' >/tmp/tithek/$PARSER.allseries.list
+	echo "/tmp/tithek/$PARSER.allseries.list"
 }
 
 staffel()
@@ -286,6 +309,7 @@ case $INPUT in
 	mainmenu) $INPUT;;
 	genres) $INPUT;;
 	series) $INPUT;;
+	allseries) $INPUT;;
 	staffel) $INPUT;;
 	episode) $INPUT;;
 	hosterlist) $INPUT;;
