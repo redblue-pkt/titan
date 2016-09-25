@@ -1521,7 +1521,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 		filename = ostrcat(filename, ((struct tithek*)listbox->select->handle)->title, 1, 0);
 		filename = ostrcat(filename, ".mp4", 1, 0);
-		filename = string_replace_all("(Flash - Shell script)", "", filename, 1);
+		filename = string_replace_all("(Flash - Shell script) - ", "", filename, 1);
 		filename = string_replace_all(" ", ".", filename, 1);
 		filename = string_replace_all("-", "_", filename, 1);
 		filename = string_replace_all("._.", "_", filename, 1);
