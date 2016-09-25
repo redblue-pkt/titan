@@ -775,45 +775,45 @@ char* jsunpack(char* input)
 	return input;
 }
 
-void localparser_init(char* titheklink, char* tithekfile)
+void localparser_init(char* titheklink, char* tithekfile, int flag)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *line = NULL, *path = NULL;
 
 	if(ostrcmp("http://atemio.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
 	{
-//		path = createpluginpath("/tithek", 0);
-//		path = ostrcat(path, "/parser", 1, 0);
 		path = ostrcat("/tmp/localparser", NULL, 0, 0);
 
-		if(!file_exist("/tmp/localhoster"))
-			mkdir("/tmp/localhoster", 0777);
-		if(!file_exist("/mnt/parser"))
-			mkdir("/mnt/parser", 0777);
-		if(!file_exist(path))
-			mkdir(path, 0777);
-
-		unlink("/tmp/parser.tar");
-		gethttp("atemio.dyndns.tv", "/mediathek/parser_free.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
-
-		cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-
-		if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
+		if(flag == 1)
 		{
+			if(!file_exist("/tmp/localhoster"))
+				mkdir("/tmp/localhoster", 0777);
+			if(!file_exist("/mnt/parser"))
+				mkdir("/mnt/parser", 0777);
+			if(!file_exist(path))
+				mkdir(path, 0777);
+	
 			unlink("/tmp/parser.tar");
-			gethttp("atemio.dyndns.tv", "/mediathek/parser_secret.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
+			gethttp("atemio.dyndns.tv", "/mediathek/parser_free.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
+	
 			cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
 			system(cmd);
 			free(cmd), cmd = NULL;
+	
+			if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
+			{
+				unlink("/tmp/parser.tar");
+				gethttp("atemio.dyndns.tv", "/mediathek/parser_secret.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
+				cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
+				system(cmd);
+				free(cmd), cmd = NULL;
+			}
+	
+			unlink("/tmp/hoster.tar");
+			gethttp("atemio.dyndns.tv", "/mediathek/hoster.tar", 80, "/tmp/hoster.tar", HTTPAUTH, 5000, NULL, 0);
+			cmd = ostrcat("tar -xvf /tmp/hoster.tar -C ", "/tmp/localhoster", 0, 0);
+			system(cmd);
+			free(cmd), cmd = NULL;
 		}
-
-		unlink("/tmp/hoster.tar");
-		gethttp("atemio.dyndns.tv", "/mediathek/hoster.tar", 80, "/tmp/hoster.tar", HTTPAUTH, 5000, NULL, 0);
-		cmd = ostrcat("tar -xvf /tmp/hoster.tar -C ", "/tmp/localhoster", 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-
 		cmd = ostrcat("chmod -R 755 ", path, 0, 0);
 		system(cmd);
 		free(cmd), cmd = NULL;
@@ -849,7 +849,6 @@ void localparser_init(char* titheklink, char* tithekfile)
 				cmd = ostrcat(cmd, ret1[i].part, 1, 0);
 				cmd = ostrcat(cmd, " init", 1, 0);
 				line = command(cmd);
-				printf("[tithek] add main menuentry: %s\n", line);
 				debug(10, "add main menuentry: %s", line);
 				writesys(tithekfile, line, 3);
 				free(cmd), cmd = NULL;
