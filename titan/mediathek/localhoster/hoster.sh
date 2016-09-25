@@ -16,6 +16,7 @@ BIN=python
 if [ "$ARCH" = "sh4" ];then
 	BIN="$CMD/bin/$BIN"
 	export PYTHONHOME=/tmp/localhoster
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 fi
 
 hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!http://!!' | sed 's!https://!!' | cut -d'/' -f1 | sed 's/www.//' | tr '.' '\n' | head -n1`
