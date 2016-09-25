@@ -85,7 +85,7 @@ series()
 
 allseries()
 {
-	$curlbin -o - $URL"andere-serien" | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL"serie-alphabet" | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
 /<span><strong>/ { i = index($0, "<span><strong>") + 14
                    j = index($0, "</strong></span>") - i
                    genre = substr($0, i, j)
