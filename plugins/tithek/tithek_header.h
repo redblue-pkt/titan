@@ -6,7 +6,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 int amazon_login();
 void amazon_init(char* titheklink, char* tithekfile);
 void amazon_deinit();
-void localparser_init(char* titheklink, char* tithekfile);
+void localparser_init(char* titheklink, char* tithekfile, int flag);
 int b64dec(char* dest, char* src);
 char* localparser_hoster(char* link);
 int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
