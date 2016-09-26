@@ -2488,10 +2488,6 @@ why ?
 		setvol(savevol);
 
 		freetithek();
-		delallfiles("/tmp/localhoster", NULL);
-		delallfiles("/tmp/localparser", NULL);
-		delallfiles("/tmp/localcache", NULL);
-		delallfiles("/tmp/parser", NULL);
 		delallfiles("/tmp/tithek", NULL);
 
 		if(status.mcaktiv == 0)
