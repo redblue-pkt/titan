@@ -91,6 +91,12 @@ openload()
 	$BIN $CMD/openload.py $INPUT
 }
 
+briskfile()
+{
+	$BIN $CMD/briskfile.py $INPUT
+}
+
+echo INPUT $INPUT
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -100,5 +106,6 @@ if [ "$TYPE" == "get" ];then
 		allmyvideos) allmyvideos $INPUT;;
 		flashx) flashx $INPUT;;
 		openload) openload $INPUT;;
+		briskfile) briskfile $INPUT;;
 	esac
 fi
