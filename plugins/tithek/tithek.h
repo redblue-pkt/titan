@@ -1737,10 +1737,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 			rcret = servicestop(status.aktservice, 1, 1);
 			if(rcret == 1) return;
 		}
-		delallfiles("/tmp/localhoster", NULL);
-		delallfiles("/tmp/localparser", NULL);
-		delallfiles("/tmp/localcache", NULL);
-		delallfiles("/tmp/parser", NULL);
 	}
 
 	struct skin* grid = getscreen("titheklist");
@@ -2493,6 +2489,10 @@ why ?
 
 		freetithek();
 		delallfiles("/tmp/tithek", NULL);
+		system("rm -rf /tmp/localhoster");
+		system("rm -rf /tmp/localparser");
+		system("rm -rf /tmp/localcache");
+		system("rm -rf /tmp/parser");
 
 		if(status.mcaktiv == 0)
 			servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
