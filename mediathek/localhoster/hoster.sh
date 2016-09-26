@@ -5,6 +5,7 @@ TYPE=$1
 INPUT=$2
 
 ARCH=`cat /etc/.arch`
+BOX=`cat /etc/model`
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
 curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
@@ -12,11 +13,19 @@ wgetbin="wget -q -T2"
 TMP=/tmp/localcache
 CMD=/tmp/localhoster
 
-BIN="$CMD/bin/$BIN.$ARCH"
-ln -fs /tmp/localhoster/lib/python2.7/lib-dynload.$ARCH /tmp/localhoster/lib/python2.7/lib-dynload
-ln -fs /tmp/localhoster/lib/libpython2.7.so.1.0.$ARCH /tmp/localhoster/lib/libpython2.7.so.1.0
+BIN="$CMD"/bin/python."$ARCH"
+ln -fs /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" /tmp/localhoster/lib/python2.7/lib-dynload
+ln -fs /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" /tmp/localhoster/lib/libpython2.7.so.1.0
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
+
+if [ -e "$TMP/hoster.tar" ]; then rm -f $TMP/hoster.tar; fi
+if [ -e "$TMP/parser.tar" ]; then rm -f $TMP/parser.tar; fi
+
+if [ "$ARCH" == "sh4" ] && [ "$BOX" != "ufs912" ]; then
+	if [ -e "$CMD/lib/python2.7/lib-dynload.mipsel" ]; then rm -f $CMD/lib/python2.7/lib-dynload.mipsel; fi
+	if [ -e "$CMD/lib/libpython2.7.so.1.0.mipsel" ]; then rm -f $CMD/lib/libpython2.7.so.1.0.mipsel; fi
+fi
 
 hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!http://!!' | sed 's!https://!!' | cut -d'/' -f1 | sed 's/www.//' | tr '.' '\n' | head -n1`
 
