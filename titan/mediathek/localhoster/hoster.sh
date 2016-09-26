@@ -96,7 +96,6 @@ briskfile()
 	$BIN $CMD/briskfile.py $INPUT
 }
 
-echo INPUT $INPUT
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
