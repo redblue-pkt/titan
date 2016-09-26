@@ -1737,6 +1737,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 			rcret = servicestop(status.aktservice, 1, 1);
 			if(rcret == 1) return;
 		}
+		delallfiles("/tmp/localhoster", NULL);
+		delallfiles("/tmp/localparser", NULL);
+		delallfiles("/tmp/localcache", NULL);
+		delallfiles("/tmp/parser", NULL);
 	}
 
 	struct skin* grid = getscreen("titheklist");
