@@ -11,13 +11,11 @@ if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 wgetbin="wget -q -T2"
 TMP=/tmp/localcache
 CMD=/tmp/localhoster
-BIN=python
 
-if [ "$ARCH" = "sh4" ];then
-	BIN="$CMD/bin/$BIN"
-	export PYTHONHOME=/tmp/localhoster
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
-fi
+BIN="$CMD/bin/$BIN.$ARCH"
+ln -fs /tmp/localhoster/lib/python2.7/lib-dynload.$ARCH /tmp/localhoster/lib/python2.7/lib-dynload
+export PYTHONHOME=/tmp/localhoster
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
 hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!http://!!' | sed 's!https://!!' | cut -d'/' -f1 | sed 's/www.//' | tr '.' '\n' | head -n1`
 
