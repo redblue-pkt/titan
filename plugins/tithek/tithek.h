@@ -2483,15 +2483,20 @@ why ?
 	delownerrc(grid);
 	clearscreen(grid);
 
-	if(first == 1)
-	{
+//	if(first == 1)
+//	{
 		setvol(savevol);
 
 		freetithek();
+		delallfiles("/tmp/localhoster", NULL);
+		delallfiles("/tmp/localparser", NULL);
+		delallfiles("/tmp/localcache", NULL);
+		delallfiles("/tmp/parser", NULL);
 		delallfiles("/tmp/tithek", NULL);
+
 		if(status.mcaktiv == 0)
 			servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
-	}
+//	}
 }
 
 #endif
