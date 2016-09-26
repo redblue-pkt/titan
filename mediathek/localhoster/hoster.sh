@@ -14,6 +14,7 @@ CMD=/tmp/localhoster
 
 BIN="$CMD/bin/$BIN.$ARCH"
 ln -fs /tmp/localhoster/lib/python2.7/lib-dynload.$ARCH /tmp/localhoster/lib/python2.7/lib-dynload
+ln -fs /tmp/localhoster/lib/libpython2.7.so.1.0.$ARCH /tmp/localhoster/lib/libpython2.7.so.1.0
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
