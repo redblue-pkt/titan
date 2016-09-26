@@ -813,18 +813,19 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			cmd = ostrcat("tar -xvf /tmp/hoster.tar -C ", "/tmp/localhoster", 0, 0);
 			system(cmd);
 			free(cmd), cmd = NULL;
+
+			cmd = ostrcat("chmod -R 755 ", path, 0, 0);
+			system(cmd);
+			free(cmd), cmd = NULL;
+	
+			cmd = ostrcat("chmod -R 755 /mnt/parser", NULL, 0, 0);
+			system(cmd);
+			free(cmd), cmd = NULL;
+	
+			cmd = ostrcat("chmod -R 755 /tmp/localhoster", NULL, 0, 0);
+			system(cmd);
+			free(cmd), cmd = NULL;
 		}
-		cmd = ostrcat("chmod -R 755 ", path, 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-
-		cmd = ostrcat("chmod -R 755 /mnt/parser", NULL, 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
-
-		cmd = ostrcat("chmod -R 755 /tmp/localhoster", NULL, 0, 0);
-		system(cmd);
-		free(cmd), cmd = NULL;
 
 		cmd = ostrcat("ls -1 ", path, 0, 0);
 		cmd = ostrcat(cmd, "/*.sh", 1, 0);
@@ -849,7 +850,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				cmd = ostrcat(cmd, ret1[i].part, 1, 0);
 				cmd = ostrcat(cmd, " init", 1, 0);
 				line = command(cmd);
-				debug(10, "add main menuentry: %s", line);
+				debug(99, "add main menuentry: %s", line);
 				writesys(tithekfile, line, 3);
 				free(cmd), cmd = NULL;
 				free(line), line = NULL;
