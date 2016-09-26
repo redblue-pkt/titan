@@ -2483,8 +2483,8 @@ why ?
 	delownerrc(grid);
 	clearscreen(grid);
 
-//	if(first == 1)
-//	{
+	if(first == 1)
+	{
 		setvol(savevol);
 
 		freetithek();
@@ -2496,7 +2496,7 @@ why ?
 
 		if(status.mcaktiv == 0)
 			servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
-//	}
+	}
 }
 
 #endif
