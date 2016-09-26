@@ -96,6 +96,26 @@ briskfile()
 	$BIN $CMD/briskfile.py $INPUT
 }
 
+vodlocker()
+{
+	$BIN $CMD/vodlocker.py $INPUT
+}
+
+videoweed()
+{
+	$BIN $CMD/videoweed.py $INPUT
+}
+
+vodzi()
+{
+	$BIN $CMD/vodzi.py $INPUT
+}
+
+youwatch()
+{
+	$BIN $CMD/youwatch.py $INPUT
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -106,5 +126,11 @@ if [ "$TYPE" == "get" ];then
 		flashx) flashx $INPUT;;
 		openload) openload $INPUT;;
 		briskfile) briskfile $INPUT;;
+		bitvid) videoweed $INPUT;;
+		videoweed) videoweed $INPUT;;
+		vodlocker) vodlocker $INPUT;;
+		vodzi) vodzi $INPUT;;
+		youwatch) youwatch $INPUT;;
+		chouhaa) youwatch $INPUT;;
 	esac
 fi
