@@ -130,7 +130,8 @@ char* myvideo(char* link)
 			b64 = ostrcat("c8407a08b3c71ea418ec9dc662f2a56e40cbd6d5a114aa50fb1e1079e17f2b83", MDString(video_id), 0, 1);
 		debug(99, "b64=%s", b64);
 
-		key = MDString(b64);
+		if(b64 != NULL)
+			key = MDString(b64);
 		int slen = 0;
 		int klen = 0;
 		if(tmpstr_uni != NULL) slen = strlen(tmpstr_uni);
