@@ -778,10 +778,12 @@ char* jsunpack(char* input)
 void localparser_init(char* titheklink, char* tithekfile, int flag)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *line = NULL, *path = NULL;
+	struct skin* load = getscreen("loading");
 
 	if(ostrcmp("http://atemio.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
 	{
 		path = ostrcat("/tmp/localparser", NULL, 0, 0);
+		drawscreen(load, 0, 0);
 
 		if(flag == 1)
 		{
@@ -860,6 +862,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 		free(tmpstr), tmpstr = NULL;
 		free(tmpstr1), tmpstr1 = NULL;
 		free(tmpstr2), tmpstr2 = NULL;
+		clearscreen(load);
 	}
 }
 
