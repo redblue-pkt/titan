@@ -3,6 +3,7 @@ import re, time
 from lib import jsunpack
 import sys
 from lib.net import Net
+import lib.common as common
 
 class FlashxResolver(object):
     name = "flashx"
@@ -32,30 +33,49 @@ class FlashxResolver(object):
         cfduid = re.search('cfduid=(.*?);', cfdcookie).group(1)
         file_id = re.search("'file_id', '(.*?)'", html).group(1)
         aff = re.search("'aff', '(.*?)'", html).group(1)
-        headers = { 'Referer': web_url,
-                    'Cookie': '__cfduid=' + cfduid + '; lang=1'}
-        surl = re.search('src="(.*?' + file_id + ')',html).group(1)
+        headers = {'User-Agent': common.IE_USER_AGENT,
+                   'Referer': web_url,
+                   'Cookie': '__cfduid=' + cfduid + '; lang=1'}
+        surl = re.search('src="(.*?' + file_id + ')', html, re.IGNORECASE).group(1)
         dummy = self.net.http_GET(url=surl, headers=headers).content
-        headers = { 'Referer': web_url,
-                    'Cookie': '__cfduid=' + cfduid + '; lang=1; file_id=' + file_id + '; aff=' + aff }
+        headers = {'User-Agent': common.IE_USER_AGENT,
+                   'Referer': web_url,
+                   'Cookie': '__cfduid=' + cfduid + '; lang=1; file_id=' + file_id + '; aff=' + aff}
         html = self.net.http_GET(url=web_url, headers=headers).content
         fname = re.search('name="fname" value="(.*?)"', html).group(1)
         hash = re.search('name="hash" value="(.*?)"', html).group(1)
-        fdata = { 'op': 'download1',
-                  'usr_login': '',
-                  'id': media_id,
-                  'fname': fname,
-                  'referer': '',
-                  'hash': hash,
-                  'imhuman': 'Proceed to video' }
-        furl = 'http://www.flashx.tv/dl?' + media_id
+        fdata = {'op': 'download1',
+                 'usr_login': '',
+                 'id': media_id,
+                 'fname': fname,
+                 'referer': '',
+                 'hash': hash,
+                 'imhuman': 'Proceed to video'}
+        furl = 'http://www.flashx.tv/dl'# + media_id
         time.sleep(5)
         html = self.net.http_POST(url=furl, form_data=fdata, headers=headers).content
-        strhtml = jsunpack.unpack(re.search('(eval\(function.*?)</script>', html, re.DOTALL).group(1))
-        stream = re.search('file:"([^"]*)",label', strhtml).group(1)
 
+        js_data = re.findall('(eval\(function.*?)</script>', html.replace('\n', ''))
+
+        for i in js_data:
+            try: html += jsunpack.unpack(i)
+            except: pass
+
+        stream = re.search('file:"([^"]*/high.*)",label', html).group(1)
         if stream:
             print stream
+        else:
+            stream = re.search('file:"([^"]*/normal.*)",label', html).group(1)
+            if stream:
+                print stream
+            else:
+                stream = re.search('file:"([^"]*/low.*)",label', html).group(1)
+                if stream:
+                    print stream
+                else:
+                    stream = re.search('file:"([^"]*)",label', html).group(1)
+                    if stream:
+                        print stream
 
     def get_url(self, host, media_id):
         return 'http://www.flashx.tv/%s.html' % media_id
