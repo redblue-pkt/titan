@@ -24,7 +24,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: security.h:689 security.h:2161
+#: security.h:689 security.h:2162
 msgid " Days "
 msgstr ""
 
@@ -1043,7 +1043,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr ""
 
-#: security.h:2166
+#: security.h:2167
 msgid "Atemio free license"
 msgstr ""
 
@@ -2349,7 +2349,7 @@ msgstr ""
 msgid "Copy satlist successfull"
 msgstr ""
 
-#: security.h:2175
+#: security.h:2176
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2719,7 +2719,7 @@ msgid ""
 "BOOT = Green"
 msgstr ""
 
-#: security.h:2168
+#: security.h:2169
 msgid "Dev free license"
 msgstr ""
 
@@ -2891,7 +2891,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2143
+#: security.h:2144
 msgid "Driver"
 msgstr ""
 
@@ -3155,7 +3155,7 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:692 security.h:1980 service.h:743 service.h:989 shared.h:29
+#: security.h:692 security.h:1981 service.h:743 service.h:989 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
 #: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -3442,7 +3442,7 @@ msgstr "Επεκτάσεις"
 msgid "Extensions List"
 msgstr "Επεκτάσεις"
 
-#: security.h:2132 security.h:2137
+#: security.h:2133 security.h:2138
 msgid "External Player"
 msgstr ""
 
@@ -3945,7 +3945,7 @@ msgstr "VFDisplay"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2126
+#: security.h:2127
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4733,7 +4733,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2114
+#: security.h:2115
 msgid "Image"
 msgstr ""
 
@@ -4947,7 +4947,7 @@ msgstr ""
 msgid "Installation start"
 msgstr ""
 
-#: httpdfunc.h:5674 security.h:2121 skin_default_skin.xml.h:322
+#: httpdfunc.h:5674 security.h:2122 skin_default_skin.xml.h:322
 msgid "Installed:"
 msgstr "Εγκατάσταση"
 
@@ -5373,7 +5373,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2148
+#: security.h:2149
 msgid "License"
 msgstr ""
 
@@ -5816,7 +5816,7 @@ msgstr ""
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
-#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1980
+#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1981
 #: service.h:743 service.h:989 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
 #: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
@@ -6411,7 +6411,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:692 security.h:1980 service.h:743 service.h:989
+#: security.h:668 security.h:692 security.h:1981 service.h:743 service.h:989
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -10214,7 +10214,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:685 security.h:2158
+#: security.h:685 security.h:2159
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10230,7 +10230,7 @@ msgstr "Τρίτη"
 msgid "Tune to channel failed"
 msgstr ""
 
-#: security.h:2184 skin_default_skin.xml.h:682
+#: security.h:2185 skin_default_skin.xml.h:682
 msgid "Tuner"
 msgstr ""
 
@@ -10268,7 +10268,7 @@ msgid ""
 "or stream is running !"
 msgstr ""
 
-#: security.h:2191 skin_default_skin.xml.h:688
+#: security.h:2192 skin_default_skin.xml.h:688
 msgid "Tunertype"
 msgstr ""
 
@@ -10309,7 +10309,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2164
+#: security.h:2165
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10491,7 +10491,7 @@ msgstr "ΡΥΘΜΙΣΕΙΣ VIDEO"
 msgid "VLC Player"
 msgstr ""
 
-#: security.h:2117
+#: security.h:2118
 msgid "Version"
 msgstr ""
 
@@ -11590,7 +11590,7 @@ msgstr ""
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2170
+#: security.h:2171
 msgid "expired"
 msgstr ""
 
@@ -13261,7 +13261,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2189 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
+#: security.h:2190 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13354,7 +13354,7 @@ msgstr ""
 msgid "v"
 msgstr ""
 
-#: security.h:2151
+#: security.h:2152
 msgid "valid"
 msgstr ""
 
