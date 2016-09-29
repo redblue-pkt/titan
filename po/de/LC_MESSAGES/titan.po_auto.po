@@ -24,7 +24,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr " : Fehlerhaft!"
 
-#: security.h:689 security.h:2162
+#: security.h:691 security.h:2188
 msgid " Days "
 msgstr " Tage "
 
@@ -1091,7 +1091,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Atemio Hotline"
 
-#: security.h:2167
+#: security.h:2193
 msgid "Atemio free license"
 msgstr "Kostenlose Atemio Lizenz"
 
@@ -2448,7 +2448,7 @@ msgstr "Kopieren des Satelliten abgebrochen"
 msgid "Copy satlist successfull"
 msgstr "Satelliten erfolgreich kopiert"
 
-#: security.h:2176
+#: security.h:2202
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2826,7 +2826,7 @@ msgstr ""
 "Rot = Prozess beenden\n"
 "Grün = System neu starten"
 
-#: security.h:2169
+#: security.h:2195
 msgid "Dev free license"
 msgstr "Kostenlose Entwickler Lizenz"
 
@@ -3006,7 +3006,7 @@ msgstr "Unentschieden"
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2144
+#: security.h:2170
 msgid "Driver"
 msgstr "Treiber"
 
@@ -3270,7 +3270,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:692 security.h:1981 service.h:743 service.h:989 shared.h:29
+#: security.h:695 security.h:2007 service.h:743 service.h:989 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
 #: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -3561,7 +3561,7 @@ msgstr "Erweiterungen"
 msgid "Extensions List"
 msgstr "Erweiterungsliste"
 
-#: security.h:2133 security.h:2138
+#: security.h:2159 security.h:2164
 msgid "External Player"
 msgstr ""
 
@@ -4104,7 +4104,7 @@ msgstr ""
 msgid "Front Key"
 msgstr "Front Taste"
 
-#: security.h:2127
+#: security.h:2153
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4982,7 +4982,7 @@ msgstr ""
 "Sollten keine Windows Freigaben sichtbar sein, muss 'Passwortgeschützte "
 "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
-#: security.h:2115
+#: security.h:2141
 msgid "Image"
 msgstr ""
 
@@ -5018,7 +5018,7 @@ msgstr ""
 msgid "Inc. AC3 Audio in %"
 msgstr "AC3-Angleichung durch Stereotonabsenkung in %"
 
-#: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:692
+#: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:695
 #: skins_tmc_skin.xml.h:8 titan.c:1068 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
@@ -5200,7 +5200,7 @@ msgstr "SWAP Installation (USB oder HDD)"
 msgid "Installation start"
 msgstr "Installation gestartet"
 
-#: httpdfunc.h:5674 security.h:2122 skin_default_skin.xml.h:322
+#: httpdfunc.h:5674 security.h:2148 skin_default_skin.xml.h:322
 msgid "Installed:"
 msgstr "Installiert:"
 
@@ -5626,7 +5626,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2149
+#: security.h:2175
 msgid "License"
 msgstr "Lizenz"
 
@@ -6077,7 +6077,7 @@ msgstr "Menüliste"
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
-#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1981
+#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:2007
 #: service.h:743 service.h:989 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
 #: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
@@ -6683,7 +6683,7 @@ msgstr "Ö"
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:692 security.h:1981 service.h:743 service.h:989
+#: security.h:668 security.h:695 security.h:2007 service.h:743 service.h:989
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -10564,7 +10564,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:685 security.h:2159
+#: security.h:687 security.h:2185
 msgid "Trial period ends in"
 msgstr "14 Tägige Testphase endet in"
 
@@ -10580,7 +10580,7 @@ msgstr "Dienstag"
 msgid "Tune to channel failed"
 msgstr "Sender kann nicht angesteuert werden"
 
-#: security.h:2185 skin_default_skin.xml.h:682
+#: security.h:2211 skin_default_skin.xml.h:682
 msgid "Tuner"
 msgstr ""
 
@@ -10621,7 +10621,7 @@ msgstr ""
 "Aufnahme oder einer Streamwiedergabe nicht\n"
 "möglich ."
 
-#: security.h:2192 skin_default_skin.xml.h:688
+#: security.h:2218 skin_default_skin.xml.h:688
 msgid "Tunertype"
 msgstr "Tuner Typ"
 
@@ -10662,7 +10662,7 @@ msgstr ""
 msgid "UE"
 msgstr "Ü"
 
-#: security.h:2165
+#: security.h:2191
 msgid "UFS910 free license"
 msgstr "Kostenlose UFS910 Lizenz"
 
@@ -10844,7 +10844,7 @@ msgstr "Einstellungen"
 msgid "VLC Player"
 msgstr "Video abspielen"
 
-#: security.h:2118
+#: security.h:2144
 msgid "Version"
 msgstr ""
 
@@ -11957,7 +11957,7 @@ msgstr "Ereignis"
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2171
+#: security.h:2197
 msgid "expired"
 msgstr "abgelaufen"
 
@@ -13636,7 +13636,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2190 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
+#: security.h:2216 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13737,7 +13737,7 @@ msgstr "SSL verwenden"
 msgid "v"
 msgstr ""
 
-#: security.h:2152
+#: security.h:2178
 msgid "valid"
 msgstr "gültig"
 
