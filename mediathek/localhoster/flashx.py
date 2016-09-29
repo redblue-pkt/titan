@@ -61,23 +61,27 @@ class FlashxResolver(object):
             try: html += jsunpack.unpack(i)
             except: pass
 
-        stream = re.search('file:"([^"]*/high.*)",label', html).group(1)
-        if stream:
-            print stream
-        else:
-            stream = re.search('file:"([^"]*/normal.*)",label', html).group(1)
-            if stream:
-                print stream
-            else:
-                stream = re.search('file:"([^"]*/low.*)",label', html).group(1)
-                if stream:
-                    print stream
-                else:
-                    stream = re.search('file:"([^"]*)",label', html).group(1)
-                    if stream:
-                        print stream
+        print self.get_best_source(html)
 
     def get_url(self, host, media_id):
         return 'http://www.flashx.tv/%s.html' % media_id
- 
+
+
+    def get_best_source(self, html):
+        stream = re.search('file:"([^"]*/high.*)",label', html)
+        if stream:
+            return re.search('file:"([^"]*/high.*)",label', html).group(1)
+        else:
+            stream = re.search('file:"([^"]*/normal.*)",label', html)
+            if stream:
+                return re.search('file:"([^"]*/normal.*)",label', html).group(1)
+            else:
+                stream = re.search('file:"([^"]*/low.*)",label', html)
+                if stream:
+                    return re.search('file:"([^"]*/low.*)",label', html).group(1)
+                else:
+                    stream = re.search('file:"([^"]*)",label', html)
+                    if stream:
+                        return re.search('file:"([^"]*)",label', html).group(1)
+                        
 sys.stdout = FlashxResolver()
