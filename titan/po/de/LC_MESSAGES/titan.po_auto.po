@@ -13978,15 +13978,3 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Background3 Color"
-#~ msgstr "Hintergrundfarbe 3"
-
-#~ msgid "Font Color 2"
-#~ msgstr "Schriftfarbe 2"
-
-#~ msgid "Font Color 3"
-#~ msgstr "Schriftfarbe 3"
-
-#~ msgid "Here you can activate or deactivate the CAID Lock."
-#~ msgstr "Hier können Sie die CAID Sperren aktivieren bzw. deaktivieren."
