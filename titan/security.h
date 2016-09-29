@@ -672,32 +672,19 @@ void trialendemodethread(struct stimerthread* self)
 void trialcheckmodethread(struct stimerthread* self)
 {
 	sleep(30);
-printf("trialcheckmodethread start\n");
-printf("trialcheckmodethread status.security=%d\n", status.security);
 
 	off64_t currtime = time(NULL);
 	off64_t buildtime = BUILDCODE;
 	int trt = TRT;
 
-printf("trialcheckmodethread tr=%d\n", currtime);
-printf("trialcheckmodethread buildtime=%d\n", buildtime);
-printf("trialcheckmodethread trt=%d\n", trt);
-
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(_("Trial period ends in"), " ", 0, 0);
 	tmpstr = ostrcat(tmpstr, convert_dtimesec(buildtime + trt - currtime), 1, 1);
-printf("trialcheckmodethread 222222\n");
-
 	tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
-printf("trialcheckmodethread 333333\n");
 printf("trialcheckmodethread tmpstr: %s\n", tmpstr);
-printf("trialcheckmodethread 444444\n");
 	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 10, 0);
-printf("trialcheckmodethread 555555\n");
 
 	free(tmpstr), tmpstr = NULL;
-printf("trialcheckmodethread 666666\n");
-
 }
 
 // status.security = 0 expired
@@ -799,15 +786,13 @@ void checkserial(char* input)
 		free(ret); ret = NULL;
 		free(blackfile);
 	}
-printf("checkserial 1111111111\n");
-system("date");
+
 //#ifdef BETA
 	if(status.security == 0 && blacklist == 0)
 	{
 		off64_t currtime = time(NULL);
 		off64_t buildtime = BUILDCODE;
 		int trt = TRT;
-printf("checkserial 2222222222\n");
 
 		if(currtime >= buildtime + trt)
 			addtimer(&trialendemodethread, START, 7200000, -1, NULL, NULL, NULL);
@@ -818,7 +803,6 @@ printf("checkserial 2222222222\n");
 		}
 	}
 //#endif
-printf("checkserial 3333333333\n");
 
 	if(status.security == 1)
 	{
@@ -835,27 +819,21 @@ printf("checkserial 3333333333\n");
 		else if(checkbox("ATEMIO520") == 1 && checkrealbox("ATEMIO520") == 1)
 			status.security = 4;
 	}
-printf("checkserial 444444444444\n");				
+
 	if(status.security >= 1)
 	{
 		startnet();
-printf("checkserial 555555555555\n");
 		setskinnodeslocked(0);
 	}
 
 	if(status.security == 0)
 		unlink(filename);
-printf("checkserial 6666666666666\n");
 
 	killnet();
-printf("checkserial 77777777777777\n");
-
 }
 
 int checkprozess(char* input)
 {
-printf("checkprozess 11111111111\n");
-
 	char* tmpstr = NULL;
 	char* cmd = NULL;
 	int ret = 0;
@@ -877,7 +855,6 @@ printf("checkprozess 11111111111\n");
 
 //	printf("checkprozess: ret=%d\n", ret);
 	free(tmpstr), tmpstr = NULL;
-printf("checkprozess 22222222222222\n");
 
 	return ret;
 }
@@ -885,13 +862,10 @@ printf("checkprozess 22222222222222\n");
 void startnet()
 {
 	char* cmd = NULL, *tmpstr = NULL;
-printf("startnet 11111111111\n");
 
 	if(status.security >= 1)
 	{
-printf("startnet 22222222222\n");
-
-		tmpstr = string_newline(command("ip -o addr"));
+		tmpstr = string_newline(command("gotnetlink eth0"));
 printf("startnet checklan1: %s\n", tmpstr);
 		free(tmpstr); tmpstr = NULL;
 
@@ -899,17 +873,12 @@ printf("startnet checklan1: %s\n", tmpstr);
 		cmd = ostrcat(cmd, "ifconfig eth0 up > /dev/null 2>&1", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
-printf("startnet 33333333333\n");
-
-		tmpstr = string_newline(command("ip -o addr"));
-printf("startnet checklan2: %s\n", tmpstr);
-		free(tmpstr); tmpstr = NULL;
 
 
-		tmpstr = string_newline(command("ip -o addr | grep 'eth0:' | grep 'link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff' | wc -l"));
+		tmpstr = string_newline(command("gotnetlink eth0 | grep 'Link detected: yes' | head -n1 | wc -l"));
 printf("startnet checklan3: %s\n", tmpstr);
 
-		if(ostrcmp(tmpstr, "0") == 0)
+		if(ostrcmp(tmpstr, "1") == 0)
 		{
 printf("startnet checklan if\n");
 
@@ -1567,7 +1536,6 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	debug(199, "vbulletin user: %s", user);
 	debug(199, "vbulletin pass: %s", pass);	
 	debug(199, "vbulletin url: %s", link);
-printf("vbulletin_userauth 1111111111111\n");
 
 	int ret = 0;
 	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *cookie4 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL, *boxpath = NULL, *id = NULL, *mac = NULL;
@@ -1586,8 +1554,6 @@ printf("vbulletin_userauth 1111111111111\n");
 	}
 
 	tmppath = ostrcat("/", path, 0, 0);
-
-	printf("getrealboxtype: %s\n", getrealboxtype());
 
 	if(checkbox("ATEMIO-NEMESIS") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?390", NULL, 0, 0);
@@ -1859,8 +1825,6 @@ printf("vbulletin_userauth 1111111111111\n");
 		free(ret1),ret1 = NULL;
 		free(authfile),authfile = NULL;
 
-printf("vbulletin_userauth 2222222222\n");
-
 //#ifdef BETA
 	if(status.security == 2)
 	{
@@ -1877,7 +1841,6 @@ printf("vbulletin_userauth 2222222222\n");
 		}
 	}
 //#endif
-printf("vbulletin_userauth 3333333333\n");
 
 /////////////
 	
@@ -1888,7 +1851,6 @@ printf("vbulletin_userauth 3333333333\n");
 			ip = getispip();
 		if(ip == NULL)
 			ip = getispip();
-printf("vbulletin_userauth 44444444444\n");
 	
 		struct inetwork* net = getinetworkbydevice("eth0");
 	
@@ -1901,7 +1863,6 @@ printf("vbulletin_userauth 44444444444\n");
 		}
 		else
 			mac = ostrcat(mac, "error", 1, 0);
-printf("vbulletin_userauth 55555555555\n");
 	
 		hash = ostrcat(hash, "id => ", 1, 0);
 		hash = ostrcat(hash, id, 1, 0);
@@ -1965,7 +1926,6 @@ printf("vbulletin_userauth 55555555555\n");
 		free(buf), buf = NULL;
 		hash = ostrcat(hash, "&len=", 1, 0);
 		hash = ostrcat(hash, oitoa(buflen), 1, 1);
-printf("vbulletin_userauth 6666666666\n");
 		
 #ifdef OBI
 		debug(299, "hash: %s", hash);
@@ -2008,7 +1968,6 @@ printf("vbulletin_userauth 6666666666\n");
 			free(usererrormsg), usererrormsg = NULL;
 		}
 	}
-printf("vbulletin_userauth 77777777777777\n");
 
 	free(tmpstr); tmpstr = NULL;
 	free(hashlen); hashlen = NULL;
@@ -2022,7 +1981,6 @@ printf("vbulletin_userauth 77777777777777\n");
 	free(tmppath); tmppath = NULL;
 	free(send); send = NULL;
 	free(ip); ip = NULL;
-printf("vbulletin_userauth 88888888888888\n");
 
 	return ret;
 }
