@@ -1529,6 +1529,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	debug(199, "vbulletin user: %s", user);
 	debug(199, "vbulletin pass: %s", pass);	
 	debug(199, "vbulletin url: %s", link);
+printf("vbulletin_userauth 1111111111111\n");
 
 	int ret = 0;
 	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *cookie4 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL, *boxpath = NULL, *id = NULL, *mac = NULL;
@@ -1820,6 +1821,8 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		free(ret1),ret1 = NULL;
 		free(authfile),authfile = NULL;
 
+printf("vbulletin_userauth 2222222222\n");
+
 //#ifdef BETA
 	if(status.security == 2)
 	{
@@ -1836,6 +1839,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		}
 	}
 //#endif
+printf("vbulletin_userauth 3333333333\n");
 
 /////////////
 	
@@ -1846,6 +1850,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 			ip = getispip();
 		if(ip == NULL)
 			ip = getispip();
+printf("vbulletin_userauth 44444444444\n");
 	
 		struct inetwork* net = getinetworkbydevice("eth0");
 	
@@ -1858,6 +1863,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		}
 		else
 			mac = ostrcat(mac, "error", 1, 0);
+printf("vbulletin_userauth 55555555555\n");
 	
 		hash = ostrcat(hash, "id => ", 1, 0);
 		hash = ostrcat(hash, id, 1, 0);
@@ -1921,6 +1927,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		free(buf), buf = NULL;
 		hash = ostrcat(hash, "&len=", 1, 0);
 		hash = ostrcat(hash, oitoa(buflen), 1, 1);
+printf("vbulletin_userauth 6666666666\n");
 		
 #ifdef OBI
 		debug(299, "hash: %s", hash);
@@ -1963,6 +1970,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 			free(usererrormsg), usererrormsg = NULL;
 		}
 	}
+printf("vbulletin_userauth 77777777777777\n");
 
 	free(tmpstr); tmpstr = NULL;
 	free(hashlen); hashlen = NULL;
@@ -1976,6 +1984,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	free(tmppath); tmppath = NULL;
 	free(send); send = NULL;
 	free(ip); ip = NULL;
+printf("vbulletin_userauth 88888888888888\n");
 
 	return ret;
 }
