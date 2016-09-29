@@ -865,27 +865,17 @@ void startnet()
 
 	if(status.security >= 1)
 	{
-		tmpstr = string_newline(command("gotnetlink eth0"));
-printf("startnet checklan1: %s\n", tmpstr);
-		free(tmpstr); tmpstr = NULL;
-
-
 		cmd = ostrcat(cmd, "ifconfig eth0 up > /dev/null 2>&1", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
 
-
 		tmpstr = string_newline(command("gotnetlink eth0 | grep 'Link detected: yes' | head -n1 | wc -l"));
-printf("startnet checklan3: %s\n", tmpstr);
 
 		if(ostrcmp(tmpstr, "1") == 0)
 		{
-printf("startnet checklan if\n");
-
 			cmd = ostrcat(cmd, "/etc/init.d/networking -i eth0 -s no start > /dev/null 2>&1", 1, 0);
 			system(cmd);
 			free(cmd); cmd = NULL;
-	printf("startnet 44444444444\n");
 	
 			cmd = ostrcat(cmd, "/", 1, 0);
 			cmd = ostrcat(cmd, "usr", 1, 0);
@@ -895,22 +885,17 @@ printf("startnet checklan if\n");
 			cmd = ostrcat(cmd, "inetd", 1, 0);
 			cmd = ostrcat(cmd, " ", 1, 0);
 			cmd = ostrcat(cmd, "&", 1, 0);
-	printf("startnet 55555555555\n");
 	
 			if(!checkprozess("inetd"))
 				system(cmd);
-	printf("startnet 66666666666\n");
 	
 			free(cmd); cmd = NULL;
-	printf("startnet 77777777777\n");
 	
 			if(!file_exist(SERIALDEV))
 				mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
 		}
 		free(tmpstr); tmpstr = NULL;
 	}
-printf("startnet 8888888888888\n");
-
 }
 
 void killnet()
