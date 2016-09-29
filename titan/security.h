@@ -672,15 +672,22 @@ void trialendemodethread(struct stimerthread* self)
 void trialcheckmodethread(struct stimerthread* self)
 {
 	sleep(30);
-
+printf("trialcheckmodethread start\n");
 	off64_t currtime = time(NULL);
 	off64_t buildtime = BUILDCODE;
 	int trt = TRT;
 
+printf("trialcheckmodethread tr=%d\n", currtime);
+printf("trialcheckmodethread buildtime=%d\n", buildtime);
+printf("trialcheckmodethread trt=%d\n", trt);
+
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(_("Trial period ends in"), " ", 0, 0);
 	tmpstr = ostrcat(tmpstr, convert_dtimesec(buildtime + trt - currtime), 1, 1);
+printf("trialcheckmodethread 222222\n");
+
 	tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
+printf("trialcheckmodethread 333333\n");
 
 	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 10, 0);
 	free(tmpstr), tmpstr = NULL;
@@ -785,6 +792,7 @@ void checkserial(char* input)
 		free(ret); ret = NULL;
 		free(blackfile);
 	}
+printf("checkserial 1111111111\n");
 
 //#ifdef BETA
 	if(status.security == 0 && blacklist == 0)
@@ -792,6 +800,7 @@ void checkserial(char* input)
 		off64_t currtime = time(NULL);
 		off64_t buildtime = BUILDCODE;
 		int trt = TRT;
+printf("checkserial 2222222222\n");
 
 		if(currtime >= buildtime + trt)
 			addtimer(&trialendemodethread, START, 7200000, -1, NULL, NULL, NULL);
@@ -802,6 +811,7 @@ void checkserial(char* input)
 		}
 	}
 //#endif
+printf("checkserial 3333333333\n");
 
 	if(status.security == 1)
 	{
@@ -827,8 +837,11 @@ void checkserial(char* input)
 
 	if(status.security == 0)
 		unlink(filename);
+printf("checkserial 444444444444\n");
 
 	killnet();
+printf("checkserial 555555555555\n");
+
 }
 
 int checkprozess(char* input)
@@ -860,9 +873,12 @@ int checkprozess(char* input)
 void startnet()
 {
 	char* cmd = NULL;
+printf("startnet 11111111111\n");
 
 	if(status.security >= 1)
 	{
+printf("startnet 22222222222\n");
+
 		cmd = ostrcat(cmd, "ifconfig eth0 up > /dev/null 2>&1", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
@@ -886,6 +902,8 @@ void startnet()
 		if(!file_exist(SERIALDEV))
 			mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
 	}
+printf("startnet 333333333333\n");
+
 }
 
 void killnet()
