@@ -688,9 +688,14 @@ printf("trialcheckmodethread 222222\n");
 
 	tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
 printf("trialcheckmodethread 333333\n");
-
+printf("trialcheckmodethread tmpstr: %s\n", tmpstr);
+printf("trialcheckmodethread 444444\n");
 	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 10, 0);
+printf("trialcheckmodethread 555555\n");
+
 	free(tmpstr), tmpstr = NULL;
+printf("trialcheckmodethread 666666\n");
+
 }
 
 // status.security = 0 expired
