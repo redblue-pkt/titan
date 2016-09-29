@@ -24,7 +24,7 @@ msgstr " - OKÉ!"
 msgid " : NOT OKAY!"
 msgstr " : NIET OKÉ!"
 
-#: security.h:689 security.h:2141
+#: security.h:689 security.h:2150
 msgid " Days "
 msgstr ""
 
@@ -1061,7 +1061,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr ""
 
-#: security.h:2146
+#: security.h:2155
 msgid "Atemio free license"
 msgstr ""
 
@@ -2387,7 +2387,7 @@ msgstr "Satelietlijst kopiëren niet gelukt"
 msgid "Copy satlist successfull"
 msgstr "Satelietlijst kopiëren gelukt"
 
-#: security.h:2155
+#: security.h:2164
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2765,7 +2765,7 @@ msgstr ""
 "Rood = Hangend proces afbreken\n"
 "Groen = Herstart systeem"
 
-#: security.h:2148
+#: security.h:2157
 msgid "Dev free license"
 msgstr ""
 
@@ -2943,7 +2943,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2123
+#: security.h:2132
 msgid "Driver"
 msgstr ""
 
@@ -3209,7 +3209,7 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:692 security.h:1962 service.h:743 service.h:989 shared.h:29
+#: security.h:692 security.h:1969 service.h:743 service.h:989 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
 #: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -3500,7 +3500,7 @@ msgstr "Plugins"
 msgid "Extensions List"
 msgstr "Plugin overzichtslijst"
 
-#: security.h:2112 security.h:2117
+#: security.h:2121 security.h:2126
 msgid "External Player"
 msgstr ""
 
@@ -4020,7 +4020,7 @@ msgstr "VFDisplay"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2106
+#: security.h:2115
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4815,7 +4815,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2094
+#: security.h:2103
 msgid "Image"
 msgstr ""
 
@@ -5031,7 +5031,7 @@ msgstr "Installeer in SWAP"
 msgid "Installation start"
 msgstr "Start installatie"
 
-#: httpdfunc.h:5674 security.h:2101 skin_default_skin.xml.h:322
+#: httpdfunc.h:5674 security.h:2110 skin_default_skin.xml.h:322
 msgid "Installed:"
 msgstr "Geïnstalleerd:"
 
@@ -5457,7 +5457,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2128
+#: security.h:2137
 msgid "License"
 msgstr ""
 
@@ -5904,7 +5904,7 @@ msgstr ""
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
-#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1962
+#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1969
 #: service.h:743 service.h:989 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
 #: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
@@ -6506,7 +6506,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:692 security.h:1962 service.h:743 service.h:989
+#: security.h:668 security.h:692 security.h:1969 service.h:743 service.h:989
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -10342,7 +10342,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:685 security.h:2138
+#: security.h:685 security.h:2147
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10358,7 +10358,7 @@ msgstr "Dinsdag"
 msgid "Tune to channel failed"
 msgstr "Afstemmen op kanaal is niet gelukt"
 
-#: security.h:2164 skin_default_skin.xml.h:682
+#: security.h:2173 skin_default_skin.xml.h:682
 msgid "Tuner"
 msgstr ""
 
@@ -10396,7 +10396,7 @@ msgid ""
 "or stream is running !"
 msgstr "Tuner instellingen niet toegestaan/nbij lopende opname of stream!"
 
-#: security.h:2171 skin_default_skin.xml.h:688
+#: security.h:2180 skin_default_skin.xml.h:688
 msgid "Tunertype"
 msgstr "Tuner type"
 
@@ -10437,7 +10437,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2144
+#: security.h:2153
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10619,7 +10619,7 @@ msgstr "Beeldscherm instellingen"
 msgid "VLC Player"
 msgstr "VLC speler"
 
-#: security.h:2097
+#: security.h:2106
 msgid "Version"
 msgstr "Versie"
 
@@ -11724,7 +11724,7 @@ msgstr "Gebeurtenis"
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2150
+#: security.h:2159
 msgid "expired"
 msgstr ""
 
@@ -13395,7 +13395,7 @@ msgstr "Universeel"
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2169 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
+#: security.h:2178 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13488,7 +13488,7 @@ msgstr ""
 msgid "v"
 msgstr ""
 
-#: security.h:2131
+#: security.h:2140
 msgid "valid"
 msgstr ""
 
