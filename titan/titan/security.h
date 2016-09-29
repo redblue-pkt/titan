@@ -909,7 +909,7 @@ printf("startnet checklan2: %s\n", tmpstr);
 		tmpstr = string_newline(command("ip -o addr | grep 'eth0:' | grep 'link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff' | wc -l"));
 printf("startnet checklan3: %s\n", tmpstr);
 
-		if(ostrcmp(tmpstr, "0") == 0) ret = 1;
+		if(ostrcmp(tmpstr, "0") == 0)
 		{
 printf("startnet checklan if\n");
 
