@@ -847,7 +847,7 @@ printf("checkserial 77777777777777\n");
 
 int checkprozess(char* input)
 {
-printf("startnet 11111111111\n");
+printf("checkprozess 11111111111\n");
 
 	char* tmpstr = NULL;
 	char* cmd = NULL;
@@ -870,49 +870,68 @@ printf("startnet 11111111111\n");
 
 //	printf("checkprozess: ret=%d\n", ret);
 	free(tmpstr), tmpstr = NULL;
-printf("startnet 22222222222222\n");
+printf("checkprozess 22222222222222\n");
 
 	return ret;
 }
 
 void startnet()
 {
-	char* cmd = NULL;
+	char* cmd = NULL, *tmpstr = NULL;
 printf("startnet 11111111111\n");
 
 	if(status.security >= 1)
 	{
 printf("startnet 22222222222\n");
 
+		tmpstr = string_newline(command("ip -o addr"));
+printf("startnet checklan1: %s\n", tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+
 		cmd = ostrcat(cmd, "ifconfig eth0 up > /dev/null 2>&1", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
 printf("startnet 33333333333\n");
 
-		cmd = ostrcat(cmd, "/etc/init.d/networking -i eth0 -s no start > /dev/null 2>&1", 1, 0);
-		system(cmd);
-		free(cmd); cmd = NULL;
-printf("startnet 44444444444\n");
+		tmpstr = string_newline(command("ip -o addr"));
+printf("startnet checklan2: %s\n", tmpstr);
+		free(tmpstr); tmpstr = NULL;
 
-		cmd = ostrcat(cmd, "/", 1, 0);
-		cmd = ostrcat(cmd, "usr", 1, 0);
-		cmd = ostrcat(cmd, "/", 1, 0);
-		cmd = ostrcat(cmd, "sbin", 1, 0);
-		cmd = ostrcat(cmd, "/", 1, 0);
-		cmd = ostrcat(cmd, "inetd", 1, 0);
-		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "&", 1, 0);
-printf("startnet 55555555555\n");
 
-		if(!checkprozess("inetd"))
+		tmpstr = string_newline(command("ip -o addr | grep 'eth0:' | grep 'link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff' | wc -l"));
+printf("startnet checklan3: %s\n", tmpstr);
+
+		if(ostrcmp(tmpstr, "0") == 0) ret = 1;
+		{
+printf("startnet checklan if\n");
+
+			cmd = ostrcat(cmd, "/etc/init.d/networking -i eth0 -s no start > /dev/null 2>&1", 1, 0);
 			system(cmd);
-printf("startnet 66666666666\n");
-
-		free(cmd); cmd = NULL;
-printf("startnet 77777777777\n");
-
-		if(!file_exist(SERIALDEV))
-			mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
+			free(cmd); cmd = NULL;
+	printf("startnet 44444444444\n");
+	
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "usr", 1, 0);
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "sbin", 1, 0);
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, "inetd", 1, 0);
+			cmd = ostrcat(cmd, " ", 1, 0);
+			cmd = ostrcat(cmd, "&", 1, 0);
+	printf("startnet 55555555555\n");
+	
+			if(!checkprozess("inetd"))
+				system(cmd);
+	printf("startnet 66666666666\n");
+	
+			free(cmd); cmd = NULL;
+	printf("startnet 77777777777\n");
+	
+			if(!file_exist(SERIALDEV))
+				mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
+		}
+		free(tmpstr); tmpstr = NULL;
 	}
 printf("startnet 8888888888888\n");
 
