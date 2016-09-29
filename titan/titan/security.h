@@ -828,19 +828,20 @@ printf("checkserial 3333333333\n");
 		else if(checkbox("ATEMIO520") == 1 && checkrealbox("ATEMIO520") == 1)
 			status.security = 4;
 	}
-				
+printf("checkserial 444444444444\n");				
 	if(status.security >= 1)
 	{
 		startnet();
+printf("checkserial 555555555555\n");
 		setskinnodeslocked(0);
 	}
 
 	if(status.security == 0)
 		unlink(filename);
-printf("checkserial 444444444444\n");
+printf("checkserial 6666666666666\n");
 
 	killnet();
-printf("checkserial 555555555555\n");
+printf("checkserial 77777777777777\n");
 
 }
 
