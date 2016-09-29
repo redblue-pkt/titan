@@ -673,6 +673,8 @@ void trialcheckmodethread(struct stimerthread* self)
 {
 	sleep(30);
 printf("trialcheckmodethread start\n");
+printf("trialcheckmodethread status.security=%d\n", status.security);
+
 	off64_t currtime = time(NULL);
 	off64_t buildtime = BUILDCODE;
 	int trt = TRT;
