@@ -793,7 +793,7 @@ void checkserial(char* input)
 		free(blackfile);
 	}
 printf("checkserial 1111111111\n");
-
+system("date");
 //#ifdef BETA
 	if(status.security == 0 && blacklist == 0)
 	{
