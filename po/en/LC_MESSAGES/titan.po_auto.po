@@ -11225,12 +11225,3 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Aktion after"
-#~ msgstr "Action after"
-
-#~ msgid "Remove unused Channels in Bouquets"
-#~ msgstr "Remove unavailable Channels in Bouquets"
-
-#~ msgid "internet"
-#~ msgstr "Internet"
