@@ -13990,35 +13990,3 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Auth Settings"
-#~ msgstr "Authentifizierung"
-
-#~ msgid "Can't restore settings"
-#~ msgstr "FEHLER: Wiederherstellung kann nicht durchgeführt werden!"
-
-#~ msgid "Default mod by maenne79"
-#~ msgstr "Standard Skin mod | maenne79"
-
-#~ msgid "Default skin without MiniTV"
-#~ msgstr "Standard Skin ohne MiniTV"
-
-#~ msgid "Default skin without MiniTV mod by maenne79"
-#~ msgstr "Standard Skin mod ohne MiniTV | maenne79"
-
-#~ msgid ""
-#~ "ERROR\n"
-#~ "Image already present!"
-#~ msgstr ""
-#~ "FEHLER\n"
-#~ "Image Name schon vorhanden!"
-
-#~ msgid ""
-#~ "ERROR\n"
-#~ "Partition could not be created"
-#~ msgstr ""
-#~ "FEHLER\n"
-#~ "Partition konnte nicht erstellt werden!"
-
-#~ msgid "Really restore default settings ?"
-#~ msgstr "Standardeinstellungen wiederherstellen?"
