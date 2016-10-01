@@ -46,7 +46,7 @@ mainmenu()
 
 category()
 {
-    echo "NEW#$SRC $SRC page category '/'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+    echo "Kinofilme#$SRC $SRC page category '/'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 #	echo "Movies (Year)#$SRC $SRC movieyear#http://atemio.dyndns.tv/mediathek/menu/movie.year.jpg#movie.year.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 #	echo "Movies (Genre)#$SRC $SRC moviegenre#http://atemio.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 #	echo "Series#$SRC $SRC page category 'free/tv-series/page/' 1#http://atemio.dyndns.tv/mediathek/menu/series.jpg#series.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
