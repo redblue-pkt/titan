@@ -13655,12 +13655,3 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Auth Settings"
-#~ msgstr "AV Settings"
-
-#~ msgid "Can't restore settings"
-#~ msgstr "il restauro non puo essere effetuato"
-
-#~ msgid "Really restore default settings ?"
-#~ msgstr "Ripristinare Inpostazioni di Fabbrica"
