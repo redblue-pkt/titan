@@ -1540,7 +1540,7 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	if(startfolder == 1)
 		formats = ostrcat(formats, ".ts", 1, 0);
 	else if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
-		formats = ostrcat(formats, ".flac .ogg .mp3 .avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", 1, 0);
+		formats = ostrcat(formats, ".m3u8 .flac .ogg .mp3 .avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", 1, 0);
 	else
 		formats = ostrcat(formats, ".avi .mkv .mpg .mpeg .ts .mp3 .flac .ogg", 1, 0);
 

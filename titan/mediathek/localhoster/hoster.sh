@@ -23,8 +23,8 @@ if [ -e "$TMP/hoster.tar" ]; then rm -f $TMP/hoster.tar; fi
 if [ -e "$TMP/parser.tar" ]; then rm -f $TMP/parser.tar; fi
 
 if [ "$ARCH" == "sh4" ] && [ "$BOX" != "ufs912" ]; then
-	if [ -e "$CMD/lib/python2.7/lib-dynload.mipsel" ]; then rm -f $CMD/lib/python2.7/lib-dynload.mipsel; fi
-	if [ -e "$CMD/lib/libpython2.7.so.1.0.mipsel" ]; then rm -f $CMD/lib/libpython2.7.so.1.0.mipsel; fi
+	if [ -e "$CMD/lib/python2.7/lib-dynload.mipsel" ]; then rm -rf $CMD/lib/python2.7/lib-dynload.mipsel; fi
+	if [ -e "$CMD/lib/libpython2.7.so.1.0.mipsel" ]; then rm -rf $CMD/lib/libpython2.7.so.1.0.mipsel; fi
 fi
 
 hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!http://!!' | sed 's!https://!!' | cut -d'/' -f1 | sed 's/www.//' | tr '.' '\n' | head -n1`
