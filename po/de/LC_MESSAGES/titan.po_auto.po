@@ -24,7 +24,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr " : Fehlerhaft!"
 
-#: security.h:683 security.h:2123
+#: security.h:683 security.h:2131
 msgid " Days "
 msgstr " Tage "
 
@@ -701,8 +701,8 @@ msgstr "Alle Sender hinzufügen"
 msgid "ADD BOUQUET"
 msgstr "Favoriten hinzufügen"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1754
-#: tithek.h:2461
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1764
+#: tithek.h:2471
 msgid "ADD FAV"
 msgstr "Fav Hinzufügen"
 
@@ -726,7 +726,7 @@ msgstr "Musik"
 msgid "AUDIO SETTINGS"
 msgstr "Audio"
 
-#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "AUTH SETTINGS"
 msgstr "Authentifizierung"
 
@@ -793,11 +793,11 @@ msgstr "Timer hinzufügen"
 msgid "Add iMDB manuel"
 msgstr "Manuell IMDb hinzufügen"
 
-#: tithek.h:2430
+#: tithek.h:2440
 msgid "Add this link as Favorite ?"
 msgstr "Möchten Sie diesen Link zu Ihren Favoriten hinzufügen?"
 
-#: tithek.h:1934 tithek.h:2094
+#: tithek.h:1944 tithek.h:2104
 msgid "Add this sub folder as Favorite ?"
 msgstr "Diesen Unterordner den Favoriten hinzufügen?"
 
@@ -1091,7 +1091,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Atemio Hotline"
 
-#: security.h:2128
+#: security.h:2136
 msgid "Atemio free license"
 msgstr "Kostenlose Atemio Lizenz"
 
@@ -1146,10 +1146,6 @@ msgstr ""
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 msgid "Auswahl"
 msgstr ""
-
-#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
-msgid "Auth Settings"
-msgstr "Authentifizierung"
 
 #: httpdsettings.h:80
 msgid "Auto"
@@ -1352,11 +1348,11 @@ msgstr "Einstellungen werden gesichert"
 msgid "Backup / Restore Settings"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: global.h:7372 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
+#: global.h:7363 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Die Sicherung wurde erfolgreich erstellt"
 
-#: global.h:7374
+#: global.h:7365
 msgid "Backup ended with error"
 msgstr ""
 
@@ -1724,7 +1720,7 @@ msgstr "CI-Menü"
 msgid "CLEAR INPUT"
 msgstr "Eingabefeld löschen"
 
-#: plugins_networkbrowser_skin.xml.h:5 skins_networkbrowser_skin.xml.h:5
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "COPY"
 msgstr "Kopieren"
 
@@ -1851,7 +1847,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG-Zeit kann nicht gefunden werden oder ist nicht korrekt!"
 
-#: tithek.h:1685
+#: tithek.h:1695
 msgid "Can't get Streamurl !"
 msgstr "Streamadresse ist nicht erreichbar!"
 
@@ -2145,7 +2141,7 @@ msgstr "Installation Auswahl"
 msgid "Choice Menu"
 msgstr "Auswahlmenü"
 
-#: tithek.h:1531
+#: tithek.h:1541
 msgid "Choice Playback"
 msgstr "Wiedergabe auswählen"
 
@@ -2215,7 +2211,7 @@ msgstr ""
 msgid "Choose your Streaming Format from the following list"
 msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 
-#: tithek.h:1585
+#: tithek.h:1595
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 "Wählen Sie den gewünschten Stream Playback Modus aus der folgenden Liste"
@@ -2370,15 +2366,15 @@ msgstr ""
 msgid "Configure"
 msgstr "Datenträger konfigurieren"
 
-#: faststream.h:113 played.h:118 vidto.h:83
+#: faststream.h:114 played.h:119 vidto.h:84
 msgid "Connect with Hoster wait 10 seconds"
 msgstr "Verbinde mit dem Hoster, warten Sie 10 Sekunden"
 
-#: primeshare.h:82
+#: primeshare.h:83
 msgid "Connect with Hoster wait 20 seconds"
 msgstr "Verbinde mit dem Hoster, warten Sie 20 Sekunden"
 
-#: shared.h:61
+#: shared.h:62
 msgid "Connect with Hoster wait 7 seconds"
 msgstr ""
 "Verbindung zum Hoster wird hergestellt.\n"
@@ -2452,7 +2448,7 @@ msgstr "Kopieren des Satelliten abgebrochen"
 msgid "Copy satlist successfull"
 msgstr "Satelliten erfolgreich kopiert"
 
-#: security.h:2137
+#: security.h:2145
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2528,7 +2524,7 @@ msgstr "Neu erstellen"
 msgid "Create new Skinstyle ?"
 msgstr "Einen neuen Skin Style hinzufügen ?"
 
-#: tithek.h:1919 tithek.h:2079
+#: tithek.h:1929 tithek.h:2089
 msgid "Create sub folder"
 msgstr "Ordner anlegen"
 
@@ -2572,9 +2568,9 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "Voreinstellung"
 
-#: play.h:1575 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1575 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
-#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:6
+#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:5
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Löschen"
@@ -2830,7 +2826,7 @@ msgstr ""
 "Rot = Prozess beenden\n"
 "Grün = System neu starten"
 
-#: security.h:2130
+#: security.h:2138
 msgid "Dev free license"
 msgstr "Kostenlose Entwickler Lizenz"
 
@@ -2984,11 +2980,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr ""
 
-#: tithek.h:1580
+#: tithek.h:1590
 msgid "Download Full File"
 msgstr "Datei in Streampfad laden"
 
-#: tithek.h:1581
+#: tithek.h:1591
 msgid "Download Full File (background)"
 msgstr "Datei in Streampfad laden (im Hintergrund)"
 
@@ -3010,7 +3006,7 @@ msgstr "Unentschieden"
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2105
+#: security.h:2113
 msgid "Driver"
 msgstr "Treiber"
 
@@ -3044,9 +3040,9 @@ msgid ""
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:8
+#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:7
 #: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:170
-#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:8
+#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:7
 #: skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
 msgstr "Bearbeiten"
@@ -3055,7 +3051,7 @@ msgstr "Bearbeiten"
 msgid "EDIT DiSEqC"
 msgstr "DiSEqC konfigurieren"
 
-#: tithek.h:1749 tithek.h:2456
+#: tithek.h:1759 tithek.h:2466
 msgid "EDIT FAV"
 msgstr "Fav Bearbeiten"
 
@@ -3209,15 +3205,15 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: extensions.h:305 extensions.h:313 extensions.h:320 extensions.h:362
 #: extensions.h:388 extensions.h:419 extensions.h:453 extensions.h:457
 #: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
-#: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
-#: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
+#: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
+#: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
-#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020
-#: global.h:6811 global.h:6830 global.h:7240 global.h:7260 global.h:7280
-#: global.h:7300 global.h:7320 global.h:7649 global.h:7654 global.h:7666
-#: global.h:7671 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
+#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020
+#: global.h:6811 global.h:6830 global.h:7231 global.h:7251 global.h:7271
+#: global.h:7291 global.h:7311 global.h:7640 global.h:7645 global.h:7657
+#: global.h:7662 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
@@ -3227,8 +3223,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:694 infobar.h:818 info.h:27
-#: keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:59 letwatch.h:65
-#: letwatch.h:71 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
+#: keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:60 letwatch.h:66
+#: letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
 #: mc_global.h:775 mc_global.h:1022 mc_internetbrowser.h:36 mc_main.h:50
@@ -3239,10 +3235,10 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
-#: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
+#: menu.h:986 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
-#: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:100
-#: movshare.h:190 movshare.h:196 MultiImage.c:262 MultiImage.c:274
+#: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
+#: movshare.h:191 movshare.h:197 MultiImage.c:262 MultiImage.c:274
 #: MultiImage.c:534 MultiImage.c:592 MultiImage.c:672 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
@@ -3251,9 +3247,9 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:96 novamov.h:102 nowvideo.h:44 nowvideo.h:101 nowvideo.h:107
+#: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
-#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
+#: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
 #: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
 #: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
@@ -3265,17 +3261,17 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
 #: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
 #: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
-#: putlocker.h:225 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
+#: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
 #: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:387
 #: record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1944 service.h:743 service.h:989 shared.h:29
-#: shared.h:65 shared.h:82 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
+#: security.h:685 security.h:1952 service.h:743 service.h:989 shared.h:29
+#: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
 #: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
 #: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
@@ -3287,28 +3283,28 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
 #: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:414 softcam.h:477
 #: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
-#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
+#: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
 #: system_backup_restore.h:95 system_update.h:244 system_update.h:250
-#: system_update.h:260 thefile.h:34 thefile.h:68 thefile.h:205 thevideo.h:29
-#: thevideo.h:65 thevideo.h:71 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: system_update.h:260 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
+#: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1059 titan.c:1068 titan.c:1196
 #: titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240 tithek.c:103
-#: tithek_global.h:96 tithek.h:711 tithek.h:1273 tithek.h:1334 tithek.h:1663
-#: tithek.h:1685 tithek.h:1702 tithek.h:1934 tithek.h:2094 tithek.h:2379
-#: tithek.h:2414 tithek.h:2430 tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68
+#: tithek_global.h:103 tithek.h:711 tithek.h:1273 tithek.h:1334 tithek.h:1673
+#: tithek.h:1695 tithek.h:1712 tithek.h:1944 tithek.h:2104 tithek.h:2389
+#: tithek.h:2424 tithek.h:2440 tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54
-#: vidag.h:60 vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
-#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:28 vidzi.h:51 vidzi.h:57
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
+#: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
+#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
+#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
 #: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xvidstage.h:29 xvidstage.h:59
+#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 xvidstage.h:29 xvidstage.h:59
 #: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:220 zapback.c:79
 #: zdf.h:29
 msgid "EXIT"
@@ -3342,7 +3338,7 @@ msgstr "Wiedergabeliste bearbeiten"
 msgid "Edit mode"
 msgstr "Umbenennen"
 
-#: tithek.h:2442
+#: tithek.h:2452
 msgid "Edit this Favorite ?"
 msgstr "Diesen Favoriten bearbeiten?"
 
@@ -3565,7 +3561,7 @@ msgstr "Erweiterungen"
 msgid "Extensions List"
 msgstr "Erweiterungsliste"
 
-#: security.h:2094 security.h:2099
+#: security.h:2102 security.h:2107
 msgid "External Player"
 msgstr ""
 
@@ -3789,7 +3785,7 @@ msgstr "Cursor Farbe für Datei Liste"
 msgid "Filelist-Mode"
 msgstr "Datei-Modus"
 
-#: tithek.h:1656 tithek.h:1675
+#: tithek.h:1666 tithek.h:1685
 msgid "Filename"
 msgstr "Dateiname"
 
@@ -3967,7 +3963,7 @@ msgstr "Auslieferzustand"
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatiere MNT mit Wiederherstellung"
 
-#: putlocker.h:91
+#: putlocker.h:92
 msgid "Found Firedrive.com Link, supporting comming soon..."
 msgstr "Firedrive.com Link gefunden. Dieser wird zur Zeit nicht unterstützt."
 
@@ -4004,7 +4000,7 @@ msgstr ""
 "Neuer Datenträger erkannt.\n"
 "Sie können diesen im Festplatten Menü konfigurieren."
 
-#: global.h:7671
+#: global.h:7662
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
@@ -4014,7 +4010,7 @@ msgstr ""
 "Receiver trotzdem herunterfahren?\n"
 "OK zum fortfahren, Exit um abzubrechen."
 
-#: global.h:7649 global.h:7666
+#: global.h:7640 global.h:7657
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4025,7 +4021,7 @@ msgstr ""
 "Update trotzdem durchführen?\n"
 "OK zum fortfahren, Exit um abzubrechen."
 
-#: global.h:7654
+#: global.h:7645
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4108,7 +4104,7 @@ msgstr ""
 msgid "Front Key"
 msgstr "Front Taste"
 
-#: security.h:2088
+#: security.h:2096
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4436,7 +4432,7 @@ msgstr "Hier können Sie die CAID Sperren aktivieren bzw. deaktivieren."
 msgid "Here you can activate/deactivate you OSCam readers."
 msgstr "Hier können Sie Ihre OSCam Reader aktivieren bzw. deaktivieren."
 
-#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "Here you can add and configure your network shares."
 msgstr "Hier können Sie Freigaben hinzufügen und konfigurieren."
 
@@ -4511,7 +4507,7 @@ msgstr ""
 "automatischen Suchlauf durch.\n"
 "Bei der Kabelsuche sollte die Option \"Netzwerk durchsuchen\" aktiviert sein."
 
-#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
+#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your login credentials for accessing password "
 "protected shares."
@@ -4839,15 +4835,16 @@ msgstr ""
 msgid "Horror"
 msgstr ""
 
-#: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:23
-#: letwatch.h:29 mightyupload.h:27 movreel.h:30 movshare.h:40 novamov.h:35
-#: nowvideo.h:44 played.h:30 primeshare.h:29 putlocker.h:32 shared.h:29
-#: streamcloud.h:31 thefile.h:34 thevideo.h:29 vidag.h:29 vidbull.h:30
-#: videoweed.h:35 vidstream.h:45 vidto.h:31 vodlocker.h:30
+#: divxstage.h:36
 msgid "Hoster Url not http://"
 msgstr "Die eingegebene http Adresse wird nicht unterstützt!"
 
-#: promptfile.h:26 vidzi.h:28 xvidstage.h:29
+#: faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:23 letwatch.h:29
+#: mightyupload.h:27 movreel.h:30 movshare.h:40 novamov.h:35 nowvideo.h:44
+#: played.h:30 primeshare.h:29 promptfile.h:26 putlocker.h:32 shared.h:29
+#: streamcloud.h:31 thefile.h:34 thevideo.h:29 vidag.h:29 vidbull.h:30
+#: videoweed.h:35 vidstream.h:45 vidto.h:31 vidzi.h:28 vodlocker.h:30
+#: xvidstage.h:29
 msgid "Hoster Url not http:// or https://"
 msgstr ""
 
@@ -4977,7 +4974,7 @@ msgstr ""
 msgid "Icon 4"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
 "If you don't find Windows shares, you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
@@ -4985,7 +4982,7 @@ msgstr ""
 "Sollten keine Windows Freigaben sichtbar sein, muss 'Passwortgeschützte "
 "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
-#: security.h:2076
+#: security.h:2084
 msgid "Image"
 msgstr ""
 
@@ -5203,7 +5200,7 @@ msgstr "SWAP Installation (USB oder HDD)"
 msgid "Installation start"
 msgstr "Installation gestartet"
 
-#: httpdfunc.h:5674 security.h:2083 skin_default_skin.xml.h:322
+#: httpdfunc.h:5674 security.h:2091 skin_default_skin.xml.h:322
 msgid "Installed:"
 msgstr "Installiert:"
 
@@ -5629,7 +5626,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2110
+#: security.h:2118
 msgid "License"
 msgstr "Lizenz"
 
@@ -6026,16 +6023,16 @@ msgstr "Menüliste"
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:268
 #: extensions.h:328 extensions.h:362 extensions.h:422 extensions.h:427
 #: extensions.h:466 facebook.h:66 facebook.h:157 facebook.h:167
-#: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
-#: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
+#: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
+#: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
-#: firedrive.h:66 firedrive.h:72 firedrive.h:122 firedrive.h:128
-#: firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020 global.h:6741
-#: global.h:6811 global.h:6830 global.h:7240 global.h:7248 global.h:7260
-#: global.h:7268 global.h:7280 global.h:7288 global.h:7300 global.h:7308
-#: global.h:7320 global.h:7328 global.h:7649 global.h:7654 global.h:7666
-#: global.h:7671 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
+#: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020 global.h:6741
+#: global.h:6811 global.h:6830 global.h:7231 global.h:7239 global.h:7251
+#: global.h:7259 global.h:7271 global.h:7279 global.h:7291 global.h:7299
+#: global.h:7311 global.h:7319 global.h:7640 global.h:7645 global.h:7657
+#: global.h:7662 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
 #: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
@@ -6046,7 +6043,7 @@ msgstr "Menüliste"
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:694
 #: infobar.h:818 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
 #: kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:101
-#: letwatch.h:29 letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48
+#: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
 #: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:775 mc_global.h:1022
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
@@ -6056,57 +6053,57 @@ msgstr "Menüliste"
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
 #: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
-#: mightyupload.h:68 mightyupload.h:74 movie2k.h:23 movie2k.h:32 movie4k.h:38
-#: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:137
-#: movshare.h:40 movshare.h:100 movshare.h:190 movshare.h:196 MultiImage.c:46
+#: mightyupload.h:69 mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38
+#: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138
+#: movshare.h:40 movshare.h:101 movshare.h:191 movshare.h:197 MultiImage.c:46
 #: MultiImage.c:402 MultiImage.c:608 myvideo.h:86 nbaondemand.h:61
 #: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
 #: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
 #: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
-#: network.h:823 network.h:877 novamov.h:35 novamov.h:96 novamov.h:102
-#: nowvideo.h:44 nowvideo.h:101 nowvideo.h:107 p2pcast.h:41 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
-#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:111 play.h:614
+#: network.h:823 network.h:877 novamov.h:35 novamov.h:97 novamov.h:103
+#: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
+#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
+#: played.h:91 played.h:103 played.h:115 played.h:172 player.h:111 play.h:614
 #: play.h:1314 play.h:1351 play.h:1651 play.h:1879 play.h:1890 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
-#: putlocker.h:225 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
+#: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
 #: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
 #: record.h:1437 record.h:1689 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
-#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
-#: service.h:743 service.h:989 shared.h:29 shared.h:65 shared.h:82
+#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1952
+#: service.h:743 service.h:989 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
 #: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
 #: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
-#: streamcloud.h:31 streamcloud.h:74 streamcloud.h:80 streamcloud.h:90
-#: streamcloud.h:103 streamcloud.h:134 streamcloud.h:193 stream.h:33
+#: streamcloud.h:31 streamcloud.h:75 streamcloud.h:81 streamcloud.h:91
+#: streamcloud.h:104 streamcloud.h:135 streamcloud.h:194 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:244
-#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:68
-#: thefile.h:205 thevideo.h:29 thevideo.h:65 thevideo.h:71 timeshift.h:113
+#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:69
+#: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1196 titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240
-#: tithek.c:103 tithek_global.h:96 tithek.h:711 tithek.h:1273 tithek.h:1334
-#: tithek.h:1663 tithek.h:1685 tithek.h:1934 tithek.h:2094 tithek.h:2379
-#: tithek.h:2414 tithek.h:2430 tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1273 tithek.h:1334
+#: tithek.h:1673 tithek.h:1695 tithek.h:1944 tithek.h:2104 tithek.h:2389
+#: tithek.h:2424 tithek.h:2440 tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60
-#: vidag.h:66 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
-#: videoweed.h:35 videoweed.h:85 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vidzi.h:28 vidzi.h:51 vidzi.h:57
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
+#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
+#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
+#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
 #: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2
+#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 webif_boxcontrol.h:2
 #: xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
 #: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:220
 #: zapback.c:79 zdf.h:29
@@ -6619,16 +6616,16 @@ msgstr "Ö"
 #: extensions.h:328 extensions.h:362 extensions.h:388 extensions.h:419
 #: extensions.h:427 extensions.h:453 extensions.h:457 extensions.h:466
 #: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
-#: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
-#: faststream.h:109 faststream.h:166 filemanager.h:95 filemanager.h:100
+#: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
+#: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
-#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:56 global.h:6020
-#: global.h:6741 global.h:6811 global.h:6830 global.h:7240 global.h:7248
-#: global.h:7260 global.h:7268 global.h:7280 global.h:7288 global.h:7300
-#: global.h:7308 global.h:7320 global.h:7328 global.h:7649 global.h:7654
-#: global.h:7666 global.h:7671 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
+#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020
+#: global.h:6741 global.h:6811 global.h:6830 global.h:7231 global.h:7239
+#: global.h:7251 global.h:7259 global.h:7271 global.h:7279 global.h:7291
+#: global.h:7299 global.h:7311 global.h:7319 global.h:7640 global.h:7645
+#: global.h:7657 global.h:7662 harddisk.h:355 harddisk.h:487 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -6640,7 +6637,7 @@ msgstr "Ö"
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:694
 #: infobar.h:818 info.h:27 keyactions.h:205 kravencfg.c:66 kravencfg.c:212
 #: kravencfg.c:248 language.h:54 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29
-#: letwatch.h:59 letwatch.h:65 letwatch.h:71 log.h:46 log.h:48 mboxinfo.c:49
+#: letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
 #: mc_global.h:775 mc_global.h:1022 mc_internetbrowser.h:36 mc_main.h:50
@@ -6651,10 +6648,10 @@ msgstr "Ö"
 #: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
-#: menu.h:986 mightyupload.h:27 mightyupload.h:68 mightyupload.h:74
+#: menu.h:986 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
-#: movie4k.h:411 movreel.h:30 movreel.h:137 movshare.h:40 movshare.h:100
-#: movshare.h:190 movshare.h:196 MultiImage.c:46 MultiImage.c:175
+#: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
+#: movshare.h:191 movshare.h:197 MultiImage.c:46 MultiImage.c:175
 #: MultiImage.c:244 MultiImage.c:262 MultiImage.c:274 MultiImage.c:354
 #: MultiImage.c:402 MultiImage.c:534 MultiImage.c:592 MultiImage.c:608
 #: MultiImage.c:672 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
@@ -6665,9 +6662,9 @@ msgstr "Ö"
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:96 novamov.h:102 nowvideo.h:44 nowvideo.h:101 nowvideo.h:107
+#: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
-#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
+#: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
 #: player.h:111 play.h:497 play.h:614 play.h:1293 play.h:1299 play.h:1314
 #: play.h:1315 play.h:1351 play.h:1352 play.h:1366 play.h:1450 play.h:1651
 #: play.h:1879 play.h:1890 plugins_dlna_skin.xml.h:7
@@ -6675,10 +6672,10 @@ msgstr "Ö"
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
 #: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:3 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
-#: putlocker.h:225 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
+#: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
 #: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
 #: record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
 #: rectimer.h:1417 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
@@ -6686,8 +6683,8 @@ msgstr "Ö"
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1944 service.h:743 service.h:989
-#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:594 skinadjust.h:610
+#: security.h:668 security.h:685 security.h:1952 service.h:743 service.h:989
+#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
@@ -6695,31 +6692,31 @@ msgstr "Ö"
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:414 softcam.h:477
 #: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
-#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
+#: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:244
-#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:68
-#: thefile.h:205 thevideo.h:29 thevideo.h:65 thevideo.h:71 timeshift.h:113
+#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:69
+#: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1059 titan.c:1068 titan.c:1196 titan.c:1217 titan.c:1223
-#: titan.c:1234 titan.c:1240 tithek.c:103 tithek_global.h:96 tithek.h:711
-#: tithek.h:1273 tithek.h:1334 tithek.h:1663 tithek.h:1685 tithek.h:1702
-#: tithek.h:1934 tithek.h:2094 tithek.h:2379 tithek.h:2414 tithek.h:2430
-#: tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
+#: titan.c:1234 titan.c:1240 tithek.c:103 tithek_global.h:103 tithek.h:711
+#: tithek.h:1273 tithek.h:1334 tithek.h:1673 tithek.h:1695 tithek.h:1712
+#: tithek.h:1944 tithek.h:2104 tithek.h:2389 tithek.h:2424 tithek.h:2440
+#: tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
 #: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:54 vidag.h:60 vidag.h:66 vidbull.h:30
-#: vidbull.h:67 vidbull.h:73 videomode.h:67 videoweed.h:35 videoweed.h:85
-#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 vidto.h:31
-#: vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94 vidto.h:128 vidto.h:174
-#: vidto.h:180 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
+#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
+#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
+#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
+#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
+#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
+#: vodlocker.h:87 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
 #: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
 #: webif_index.dm7020hd.h:38 webif_index.dm7020hdv2.h:38
 #: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
@@ -6968,7 +6965,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1786
+#: tithek.h:1796
 msgid "Page"
 msgstr "Seite"
 
@@ -7003,8 +7000,8 @@ msgstr "Partition konnte nicht erstellt werden!"
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:419
-#: skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:16 skin_default_skin.xml.h:419
+#: skins_networkbrowser_skin.xml.h:16
 msgid "Password"
 msgstr "Passwort"
 
@@ -7500,7 +7497,7 @@ msgstr "Ausschalttimer"
 msgid "Present"
 msgstr "vorhanden"
 
-#: global.h:7384 system_backup_restore.h:15
+#: global.h:7375 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -8039,7 +8036,7 @@ msgstr "Entfernen gestartet"
 msgid "Remove success"
 msgstr "Löschen erfolgreich"
 
-#: tithek.h:2414
+#: tithek.h:2424
 msgid "Remove this Favorite ?"
 msgstr "Möchten Sie diesen Eintrag aus Ihren Favoriten löschen?"
 
@@ -8299,9 +8296,9 @@ msgid "SCART 4:3 / 16:9"
 msgstr "SCART 4:3/16:9"
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
-#: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
 #: skin_default_skin.xml.h:549 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
+#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr "Suchen"
@@ -8784,15 +8781,15 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179
 #: kinox.h:181 kinox.h:797 kinox.h:799 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
-#: movie4k.h:303 movie4k.h:305 myvideo.h:229 myvideo.h:231 myvideo.h:373
-#: myvideo.h:375 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
+#: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
+#: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
 #: nowtv.h:133 nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:548 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:463 tithek_global.h:465 tithek_global.h:886
-#: tithek_global.h:888 tithek.h:1510 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:471 tithek_global.h:473 tithek_global.h:897
+#: tithek_global.h:899 tithek.h:1510 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359
 #: youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9488,23 +9485,23 @@ msgstr "Autostart RGUID"
 msgid "Start Record"
 msgstr "Aufnahme starten"
 
-#: global.h:7240
+#: global.h:7231
 msgid "Start Restore Default Bouquets ?"
 msgstr "Favoritenliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7260
+#: global.h:7251
 msgid "Start Restore Default Channel Settings ?"
 msgstr "Komplette Liste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7300
+#: global.h:7291
 msgid "Start Restore Default Channels ?"
 msgstr "Senderliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7280
+#: global.h:7271
 msgid "Start Restore Default Providers ?"
 msgstr "Anbieterliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7320
+#: global.h:7311
 msgid "Start Restore Default Sats ?"
 msgstr "Satellitenliste (Werkseinstellung) wiederherstellen?"
 
@@ -9531,7 +9528,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "automatischer Start"
 
-#: tithek.h:1663
+#: tithek.h:1673
 msgid "Start playback"
 msgstr "Beginne Wiedergabe"
 
@@ -9633,15 +9630,15 @@ msgstr ""
 msgid "Streaming"
 msgstr ""
 
-#: tithek.h:1536 tithek.h:1540 tithek.h:1544 tithek.h:1557
+#: tithek.h:1546 tithek.h:1550 tithek.h:1554 tithek.h:1567
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1568
+#: tithek.h:1578
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1565
+#: tithek.h:1575
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9979,7 +9976,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7340
+#: global.h:7331
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9992,22 +9989,22 @@ msgstr ""
 "werden.\n"
 "Es muss ein Ordner mit dem Namen 'backup' auf dem Datenträger sein."
 
-#: divxstage.h:86 novamov.h:96 nowvideo.h:107 primeshare.h:79 shared.h:65
-#: thefile.h:68 videoweed.h:85
+#: divxstage.h:86 novamov.h:97 nowvideo.h:108 primeshare.h:80 shared.h:66
+#: thefile.h:69 videoweed.h:86
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
 "Die gewünschte Datei wird verschoben.\n"
 "Bitte versuchen Sie es in wenigen Minuten erneut!"
 
-#: vidto.h:79
+#: vidto.h:80
 msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 "Die gesuchte Datei konnte nicht gefunden werden, wir bitten um "
 "Entschuldigung."
 
-#: tithek_global.h:96 tithek.h:2379
+#: tithek_global.h:103 tithek.h:2389
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -10021,28 +10018,28 @@ msgstr ""
 "im zip Format. Bitte kopieren Sie das Image nach /tmp.\n"
 "Der Dateiname darf keine Leerzeichen enthalten."
 
-#: cloudzilla.h:39 divxstage.h:178 faststream.h:79 faststream.h:90
-#: faststream.h:102 faststream.h:166 filenuke.h:67 firedrive.h:66
-#: firedrive.h:122 firedrive.h:137 flashx.h:55 letwatch.h:59 mightyupload.h:68
-#: movreel.h:137 movshare.h:190 nbaondemand.h:61 played.h:84 played.h:101
-#: played.h:113 played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:35
-#: putlocker.h:79 putlocker.h:142 putlocker.h:151 putlocker.h:225 shared.h:82
-#: solarmovie.h:51 solarmovie.h:62 streamcloud.h:90 streamcloud.h:103
-#: streamcloud.h:134 streamcloud.h:193 thevideo.h:65 vidag.h:54 vidbull.h:67
-#: vidstream.h:86 vidstream.h:97 vidstream.h:167 vidto.h:67 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidzi.h:51 vivo.h:38 vivo.h:61 vodlocker.h:74
+#: cloudzilla.h:39 divxstage.h:178 faststream.h:80 faststream.h:91
+#: faststream.h:103 faststream.h:167 filenuke.h:67 firedrive.h:67
+#: firedrive.h:123 firedrive.h:138 flashx.h:56 letwatch.h:60 mightyupload.h:69
+#: movreel.h:138 movshare.h:191 nbaondemand.h:61 played.h:85 played.h:102
+#: played.h:114 played.h:172 primeshare.h:74 primeshare.h:125 promptfile.h:35
+#: putlocker.h:80 putlocker.h:143 putlocker.h:152 putlocker.h:226 shared.h:83
+#: solarmovie.h:51 solarmovie.h:62 streamcloud.h:91 streamcloud.h:104
+#: streamcloud.h:135 streamcloud.h:194 thevideo.h:66 vidag.h:55 vidbull.h:68
+#: vidstream.h:87 vidstream.h:98 vidstream.h:168 vidto.h:68 vidto.h:95
+#: vidto.h:129 vidto.h:175 vidzi.h:51 vivo.h:38 vivo.h:61 vodlocker.h:75
 #: xvidstage.h:59
 msgid "The page is temporarily unavailable"
 msgstr "Die gewünschte Seite ist vorübergehend nicht erreichbar"
 
-#: streamcloud.h:74 streamcloud.h:80
+#: streamcloud.h:75 streamcloud.h:81
 msgid "The page not found, file removed"
 msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 
-#: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:184 faststream.h:109
-#: filenuke.h:73 letwatch.h:65 mightyupload.h:74 movshare.h:100 movshare.h:196
-#: thevideo.h:71 vidag.h:60 vidbull.h:73 vidto.h:73 vidto.h:180 vidzi.h:57
-#: vivo.h:44 vivo.h:67 vodlocker.h:80 xvidstage.h:65 xvidstage.h:71
+#: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:184 faststream.h:110
+#: filenuke.h:73 letwatch.h:66 mightyupload.h:75 movshare.h:101 movshare.h:197
+#: thevideo.h:72 vidag.h:61 vidbull.h:74 vidto.h:74 vidto.h:181 vidzi.h:57
+#: vivo.h:44 vivo.h:67 vodlocker.h:81 xvidstage.h:65 xvidstage.h:71
 msgid "The video no longer exists"
 msgstr "Dieses Video existiert nicht mehr."
 
@@ -10066,7 +10063,7 @@ msgstr ""
 "könnte Ihre Einstellungen ändern.\n"
 "Möchten Sie es dennoch ausführen?"
 
-#: thefile.h:205
+#: thefile.h:206
 msgid "This direct link will be available for your IP next 8 hours"
 msgstr "Der Link ist von Ihrer IP die nächsten 8 Stunden erreichbar."
 
@@ -10074,23 +10071,23 @@ msgstr "Der Link ist von Ihrer IP die nächsten 8 Stunden erreichbar."
 msgid "This file doesn't exist, or has been removed"
 msgstr "FEHLER: Diese Datei existiert nicht oder wurde entfernt."
 
-#: firedrive.h:72 putlocker.h:85
+#: firedrive.h:73 putlocker.h:86
 msgid "This file doesn't exist, or has been removed."
 msgstr "Die ausgewählte Datei existiert nicht oder wurde entfernt."
 
-#: firedrive.h:128
+#: firedrive.h:129
 msgid "This file is private and only viewable by the owner."
 msgstr "Diese Datei ist privat und nur für den Eigentümer sichtbar."
 
-#: novamov.h:102
+#: novamov.h:103
 msgid "This file no longer exists on our servers!"
 msgstr ""
 
-#: nowvideo.h:101
+#: nowvideo.h:102
 msgid "This file no longer exists on our servers."
 msgstr "Die angeforderte Datei ist existiert nicht mehr."
 
-#: played.h:90
+#: played.h:91
 msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 "Dieses Video wurde gelöscht. Wir entschuldigen uns für die "
@@ -10295,7 +10292,7 @@ msgid "Titan MediaCenter"
 msgstr "Titan Media Center"
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
-#: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
+#: global.h:7239 global.h:7259 global.h:7279 global.h:7299 global.h:7319
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
 msgid "Titan will be restarted!"
@@ -10325,7 +10322,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1702
+#: tithek.h:1712
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek Haftungsausschluss:"
 
@@ -10345,8 +10342,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
 
-#: tithek.h:1464 tithek.h:1747 tithek.h:1881 tithek.h:2410 tithek.h:2426
-#: tithek.h:2438 tithek.h:2454
+#: tithek.h:1464 tithek.h:1757 tithek.h:1891 tithek.h:2420 tithek.h:2436
+#: tithek.h:2448 tithek.h:2464
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "TiThek - Hauptmenü - Favoriten"
 
@@ -10565,7 +10562,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:681 security.h:2120
+#: security.h:681 security.h:2128
 msgid "Trial period ends in"
 msgstr "14 Tägige Testphase endet in"
 
@@ -10581,7 +10578,7 @@ msgstr "Dienstag"
 msgid "Tune to channel failed"
 msgstr "Sender kann nicht angesteuert werden"
 
-#: security.h:2146 skin_default_skin.xml.h:682
+#: security.h:2154 skin_default_skin.xml.h:682
 msgid "Tuner"
 msgstr ""
 
@@ -10622,7 +10619,7 @@ msgstr ""
 "Aufnahme oder einer Streamwiedergabe nicht\n"
 "möglich ."
 
-#: security.h:2153 skin_default_skin.xml.h:688
+#: security.h:2161 skin_default_skin.xml.h:688
 msgid "Tunertype"
 msgstr "Tuner Typ"
 
@@ -10663,7 +10660,7 @@ msgstr ""
 msgid "UE"
 msgstr "Ü"
 
-#: security.h:2126
+#: security.h:2134
 msgid "UFS910 free license"
 msgstr "Kostenlose UFS910 Lizenz"
 
@@ -10737,7 +10734,7 @@ msgid "Unitymedia NRW"
 msgstr ""
 
 #: tpk_description.h:172
-msgid "Unitymedia NRW | 1.8.2016 (caliban)"
+msgid "Unitymedia NRW | 24.09.2016 (caliban)"
 msgstr ""
 
 #: titan.c:1299
@@ -10820,8 +10817,8 @@ msgstr "Benutze feste physikalische Adresse"
 msgid "Use numeric keys"
 msgstr "Nummerntasten zur Eingabe nutzen"
 
-#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:712
-#: skins_networkbrowser_skin.xml.h:33
+#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:712
+#: skins_networkbrowser_skin.xml.h:32
 msgid "User"
 msgstr "Benutzer"
 
@@ -10845,7 +10842,7 @@ msgstr "Einstellungen"
 msgid "VLC Player"
 msgstr "Video abspielen"
 
-#: security.h:2079
+#: security.h:2087
 msgid "Version"
 msgstr ""
 
@@ -10873,11 +10870,11 @@ msgstr "Filme abspielen"
 msgid "Video Settings"
 msgstr "Video-Einstellungen"
 
-#: vodlocker.h:86
+#: vodlocker.h:87
 msgid "Video encoding error"
 msgstr ""
 
-#: filenuke.h:79 letwatch.h:71 vidag.h:66 vidzi.h:63 xvidstage.h:77
+#: filenuke.h:79 letwatch.h:72 vidag.h:67 vidzi.h:63 xvidstage.h:77
 msgid "Video is processing now. Conversion stage..."
 msgstr ""
 
@@ -11850,7 +11847,7 @@ msgstr "aus"
 msgid "diseqcscreen"
 msgstr "DiSEqC"
 
-#: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
+#: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
 msgid "dnsaddresse"
 msgstr "DNS Adresse"
 
@@ -11958,7 +11955,7 @@ msgstr "Ereignis"
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2132
+#: security.h:2140
 msgid "expired"
 msgstr "abgelaufen"
 
@@ -12050,7 +12047,7 @@ msgstr "Aktiviere FTDI Kartenleser Treiber"
 msgid "ftpfs"
 msgstr "FTPFS"
 
-#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 msgid "ftpport"
 msgstr "FTP Port"
 
@@ -12109,7 +12106,7 @@ msgstr "Festplatten Menü"
 msgid "hbbtv Browser"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "hddreplacement"
 msgstr "Netzwerk Freigabe als Aufnahmeort"
 
@@ -12219,8 +12216,8 @@ msgstr "Internet"
 msgid "ip"
 msgstr "IP"
 
-#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:326
-#: skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:326
+#: skins_networkbrowser_skin.xml.h:13
 msgid "ipaddress"
 msgstr "IP Adresse"
 
@@ -12713,7 +12710,7 @@ msgstr "in neuem Fenster öffnen"
 msgid "optimize Plugin"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
 msgid "options"
 msgstr "Optionen"
 
@@ -12733,7 +12730,7 @@ msgstr "Lüftersteuerung"
 msgid "panscan"
 msgstr "Zoom mit Randbeschnitt"
 
-#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "password"
 msgstr "Passwort"
 
@@ -12863,31 +12860,31 @@ msgstr "Fortschritt"
 msgid "protect service"
 msgstr "Sender sperren"
 
-#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
+#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 msgid "protocol"
 msgstr "Protokoll"
 
-#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "proxy"
 msgstr "Proxy"
 
-#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxyauth"
 msgstr "Proxy Authentifizierung"
 
-#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyip"
 msgstr "IP für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
+#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxypass"
 msgstr "Passwort für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxyport"
 msgstr "Port für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyuser"
 msgstr "Benutzername für Proxyserver"
 
@@ -12993,7 +12990,7 @@ msgstr "rechts"
 msgid "ro"
 msgstr "Schreibgeschützt"
 
-#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
+#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "rsize"
 msgstr "Lese Puffergröße"
 
@@ -13149,11 +13146,11 @@ msgstr "Senderlisten"
 msgid "settingsmenu"
 msgstr "Einstellungsmenü"
 
-#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
+#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
 msgid "sharedir"
 msgstr "Speicherort auf entferntem Rechner"
 
-#: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharename"
 msgstr "Freigabename"
 
@@ -13281,8 +13278,8 @@ msgstr "Geschwindigkeit"
 msgid "spinner"
 msgstr "Spinner"
 
-#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:29
-#: skins_networkbrowser_skin.xml.h:29
+#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:28
+#: skins_networkbrowser_skin.xml.h:28
 msgid "ssl"
 msgstr "SSL"
 
@@ -13597,8 +13594,8 @@ msgstr "DVB-S Tuner einstellen"
 msgid "tunerreceptiondvbt"
 msgstr "DVB-T Tuner einstellen"
 
-#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:693
-#: skins_networkbrowser_skin.xml.h:30
+#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:693
+#: skins_networkbrowser_skin.xml.h:29
 msgid "type"
 msgstr "Typ"
 
@@ -13637,7 +13634,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2151 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
+#: security.h:2159 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13706,11 +13703,11 @@ msgstr ""
 msgid "useUnknown910"
 msgstr "Lade stmdvb.ko mit der useUnknown910 Option"
 
-#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
+#: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
 msgid "usedns"
 msgstr "Benutze DNS Adresse"
 
-#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
+#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "useproxy"
 msgstr "Benutze Proxy"
 
@@ -13722,15 +13719,15 @@ msgstr "Benutzerdefiniert"
 msgid "user unicable"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
+#: plugins_networkbrowser_skin.xml.h:33 skins_networkbrowser_skin.xml.h:33
 msgid "userauth"
 msgstr "Benutzer Authentifizierung"
 
-#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
+#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
 msgid "username"
 msgstr "Benutzername"
 
-#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
+#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "usessl"
 msgstr "SSL verwenden"
 
@@ -13738,7 +13735,7 @@ msgstr "SSL verwenden"
 msgid "v"
 msgstr ""
 
-#: security.h:2113
+#: security.h:2121
 msgid "valid"
 msgstr "gültig"
 
@@ -13878,7 +13875,7 @@ msgstr "WLAN"
 msgid "workdays"
 msgstr "Werktags"
 
-#: plugins_networkbrowser_skin.xml.h:37 skins_networkbrowser_skin.xml.h:37
+#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "wsize"
 msgstr "Schreib Puffergröße"
 
@@ -13995,3 +13992,6 @@ msgstr ""
 #: tpk_showname.h:222
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Auth Settings"
+#~ msgstr "Authentifizierung"
