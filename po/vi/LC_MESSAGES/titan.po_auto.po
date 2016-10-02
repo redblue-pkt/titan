@@ -4093,7 +4093,7 @@ msgstr ""
 msgid "Giantgirl"
 msgstr ""
 
-#: httpdfunc.h:5363 skin_default_skin.xml.h:231 webif_info_logs.h:3
+#: httpdfunc.h:5363 info.h:49 skin_default_skin.xml.h:231 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr "Chương trình"
 
@@ -4867,8 +4867,7 @@ msgid ""
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
 
-#: info.h:45 info.h:47 info.h:49 plugins_panel_skin.xml.h:12
-#: skins_panel_skin.xml.h:12
+#: info.h:45 plugins_panel_skin.xml.h:12 skins_panel_skin.xml.h:12
 msgid "Infos"
 msgstr "thông tin"
 
@@ -10001,7 +10000,7 @@ msgstr ""
 msgid "Tint"
 msgstr "màu sắc"
 
-#: skin_default_skin.xml.h:657 webif_info_logs.h:2
+#: info.h:47 skin_default_skin.xml.h:657 webif_info_logs.h:2
 msgid "Titan Changelog"
 msgstr ""
 
