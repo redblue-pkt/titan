@@ -24,7 +24,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: security.h:683 security.h:2131
+#: security.h:683 security.h:2123
 msgid " Days "
 msgstr ""
 
@@ -686,8 +686,8 @@ msgstr ""
 msgid "ADD BOUQUET"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1764
-#: tithek.h:2471
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1754
+#: tithek.h:2461
 msgid "ADD FAV"
 msgstr "Add"
 
@@ -711,7 +711,7 @@ msgstr "Audio"
 msgid "AUDIO SETTINGS"
 msgstr "Audio Settings"
 
-#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "AUTH SETTINGS"
 msgstr "Settings"
 
@@ -778,11 +778,11 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr "Manually add IMDB"
 
-#: tithek.h:2440
+#: tithek.h:2430
 msgid "Add this link as Favorite ?"
 msgstr "Do you want to add this link to your Favourites?"
 
-#: tithek.h:1944 tithek.h:2104
+#: tithek.h:1934 tithek.h:2094
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -1063,7 +1063,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Atemio (Hotline)"
 
-#: security.h:2136
+#: security.h:2128
 msgid "Atemio free license"
 msgstr ""
 
@@ -1118,6 +1118,10 @@ msgstr ""
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 msgid "Auswahl"
 msgstr "selection"
+
+#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
+msgid "Auth Settings"
+msgstr "Authentication"
 
 #: httpdsettings.h:80
 msgid "Auto"
@@ -1320,11 +1324,11 @@ msgstr ""
 msgid "Backup / Restore Settings"
 msgstr ""
 
-#: global.h:7363 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
+#: global.h:7372 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr ""
 
-#: global.h:7365
+#: global.h:7374
 msgid "Backup ended with error"
 msgstr ""
 
@@ -1687,7 +1691,7 @@ msgstr ""
 msgid "CLEAR INPUT"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+#: plugins_networkbrowser_skin.xml.h:5 skins_networkbrowser_skin.xml.h:5
 msgid "COPY"
 msgstr "Copy"
 
@@ -1811,7 +1815,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Can't get EPG time or the EPG Endtime is faulty."
 
-#: tithek.h:1695
+#: tithek.h:1685
 msgid "Can't get Streamurl !"
 msgstr "Streamurl is not reachable!"
 
@@ -2104,7 +2108,7 @@ msgstr "Choose the installation medium"
 msgid "Choice Menu"
 msgstr "Selection Menu"
 
-#: tithek.h:1541
+#: tithek.h:1531
 msgid "Choice Playback"
 msgstr "Choose Playback"
 
@@ -2165,7 +2169,7 @@ msgstr ""
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
-#: tithek.h:1595
+#: tithek.h:1585
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
@@ -2397,7 +2401,7 @@ msgstr "ATTENTION: Channels not copied"
 msgid "Copy satlist successfull"
 msgstr "Channels copied successfully"
 
-#: security.h:2145
+#: security.h:2137
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2473,7 +2477,7 @@ msgstr ""
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:1929 tithek.h:2089
+#: tithek.h:1919 tithek.h:2079
 msgid "Create sub folder"
 msgstr ""
 
@@ -2517,9 +2521,9 @@ msgstr ""
 msgid "DEFAULT"
 msgstr ""
 
-#: play.h:1575 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:3
+#: play.h:1575 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
-#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:5
+#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Delete"
@@ -2775,7 +2779,7 @@ msgstr ""
 "Red = Kill Process\n"
 "Green = Reboot System"
 
-#: security.h:2138
+#: security.h:2130
 msgid "Dev free license"
 msgstr ""
 
@@ -2927,11 +2931,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr ""
 
-#: tithek.h:1590
+#: tithek.h:1580
 msgid "Download Full File"
 msgstr "Download Full File to Stream Path"
 
-#: tithek.h:1591
+#: tithek.h:1581
 msgid "Download Full File (background)"
 msgstr "Download Full File to Stream path in background"
 
@@ -2953,7 +2957,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2113
+#: security.h:2105
 msgid "Driver"
 msgstr ""
 
@@ -2987,9 +2991,9 @@ msgid ""
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:7
+#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:8
 #: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:170
-#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:7
+#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:8
 #: skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
 msgstr "Edit"
@@ -2998,7 +3002,7 @@ msgstr "Edit"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1759 tithek.h:2466
+#: tithek.h:1749 tithek.h:2456
 msgid "EDIT FAV"
 msgstr "Edit Favourites"
 
@@ -3160,9 +3164,9 @@ msgstr "ERROR: can't set marker in this file"
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
 #: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020
-#: global.h:6811 global.h:6830 global.h:7231 global.h:7251 global.h:7271
-#: global.h:7291 global.h:7311 global.h:7640 global.h:7645 global.h:7657
-#: global.h:7662 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: global.h:6811 global.h:6830 global.h:7240 global.h:7260 global.h:7280
+#: global.h:7300 global.h:7320 global.h:7649 global.h:7654 global.h:7666
+#: global.h:7671 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
@@ -3219,7 +3223,7 @@ msgstr "ERROR: can't set marker in this file"
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1952 service.h:743 service.h:989 shared.h:29
+#: security.h:685 security.h:1944 service.h:743 service.h:989 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
 #: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -3240,9 +3244,9 @@ msgstr "ERROR: can't set marker in this file"
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1059 titan.c:1068 titan.c:1196
 #: titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240 tithek.c:103
-#: tithek_global.h:103 tithek.h:711 tithek.h:1273 tithek.h:1334 tithek.h:1673
-#: tithek.h:1695 tithek.h:1712 tithek.h:1944 tithek.h:2104 tithek.h:2389
-#: tithek.h:2424 tithek.h:2440 tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68
+#: tithek_global.h:96 tithek.h:711 tithek.h:1273 tithek.h:1334 tithek.h:1663
+#: tithek.h:1685 tithek.h:1702 tithek.h:1934 tithek.h:2094 tithek.h:2379
+#: tithek.h:2414 tithek.h:2430 tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -3287,7 +3291,7 @@ msgstr ""
 msgid "Edit mode"
 msgstr "Edit"
 
-#: tithek.h:2452
+#: tithek.h:2442
 msgid "Edit this Favorite ?"
 msgstr "Edit this Favourite?"
 
@@ -3508,7 +3512,7 @@ msgstr ""
 msgid "Extensions List"
 msgstr ""
 
-#: security.h:2102 security.h:2107
+#: security.h:2094 security.h:2099
 msgid "External Player"
 msgstr ""
 
@@ -3729,7 +3733,7 @@ msgstr ""
 msgid "Filelist-Mode"
 msgstr ""
 
-#: tithek.h:1666 tithek.h:1685
+#: tithek.h:1656 tithek.h:1675
 msgid "Filename"
 msgstr ""
 
@@ -3935,14 +3939,14 @@ msgstr ""
 "A new Stick/Harddisk was found.\n"
 "You can configure it in the Device Menu."
 
-#: global.h:7662
+#: global.h:7671
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7640 global.h:7657
+#: global.h:7649 global.h:7666
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3950,7 +3954,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7645
+#: global.h:7654
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4030,7 +4034,7 @@ msgstr "VFDisplay"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2096
+#: security.h:2088
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4358,7 +4362,7 @@ msgstr ""
 msgid "Here you can activate/deactivate you OSCam readers."
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid "Here you can add and configure your network shares."
 msgstr ""
 
@@ -4417,7 +4421,7 @@ msgid ""
 "start an automatic search."
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
+#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
 "Here you can configure your login credentials for accessing password "
 "protected shares."
@@ -4820,13 +4824,13 @@ msgstr ""
 msgid "Icon 4"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
+#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 msgid ""
 "If you don't find Windows shares, you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2084
+#: security.h:2076
 msgid "Image"
 msgstr ""
 
@@ -5042,7 +5046,7 @@ msgstr "Install to SWAP (USB oder HDD)"
 msgid "Installation start"
 msgstr "Installation started"
 
-#: httpdfunc.h:5674 security.h:2091 skin_default_skin.xml.h:322
+#: httpdfunc.h:5674 security.h:2083 skin_default_skin.xml.h:322
 msgid "Installed:"
 msgstr ""
 
@@ -5468,7 +5472,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2118
+#: security.h:2110
 msgid "License"
 msgstr ""
 
@@ -5865,10 +5869,10 @@ msgstr ""
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
 #: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020 global.h:6741
-#: global.h:6811 global.h:6830 global.h:7231 global.h:7239 global.h:7251
-#: global.h:7259 global.h:7271 global.h:7279 global.h:7291 global.h:7299
-#: global.h:7311 global.h:7319 global.h:7640 global.h:7645 global.h:7657
-#: global.h:7662 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: global.h:6811 global.h:6830 global.h:7240 global.h:7248 global.h:7260
+#: global.h:7268 global.h:7280 global.h:7288 global.h:7300 global.h:7308
+#: global.h:7320 global.h:7328 global.h:7649 global.h:7654 global.h:7666
+#: global.h:7671 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
 #: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
@@ -5913,7 +5917,7 @@ msgstr ""
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
-#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1952
+#: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1944
 #: service.h:743 service.h:989 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
 #: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
@@ -5927,9 +5931,9 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1196 titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240
-#: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1273 tithek.h:1334
-#: tithek.h:1673 tithek.h:1695 tithek.h:1944 tithek.h:2104 tithek.h:2389
-#: tithek.h:2424 tithek.h:2440 tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.c:103 tithek_global.h:96 tithek.h:711 tithek.h:1273 tithek.h:1334
+#: tithek.h:1663 tithek.h:1685 tithek.h:1934 tithek.h:2094 tithek.h:2379
+#: tithek.h:2414 tithek.h:2430 tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
@@ -6454,10 +6458,10 @@ msgstr ""
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
 #: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6020
-#: global.h:6741 global.h:6811 global.h:6830 global.h:7231 global.h:7239
-#: global.h:7251 global.h:7259 global.h:7271 global.h:7279 global.h:7291
-#: global.h:7299 global.h:7311 global.h:7319 global.h:7640 global.h:7645
-#: global.h:7657 global.h:7662 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: global.h:6741 global.h:6811 global.h:6830 global.h:7240 global.h:7248
+#: global.h:7260 global.h:7268 global.h:7280 global.h:7288 global.h:7300
+#: global.h:7308 global.h:7320 global.h:7328 global.h:7649 global.h:7654
+#: global.h:7666 global.h:7671 harddisk.h:355 harddisk.h:487 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -6515,7 +6519,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1952 service.h:743 service.h:989
+#: security.h:668 security.h:685 security.h:1944 service.h:743 service.h:989
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -6534,10 +6538,10 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1059 titan.c:1068 titan.c:1196 titan.c:1217 titan.c:1223
-#: titan.c:1234 titan.c:1240 tithek.c:103 tithek_global.h:103 tithek.h:711
-#: tithek.h:1273 tithek.h:1334 tithek.h:1673 tithek.h:1695 tithek.h:1712
-#: tithek.h:1944 tithek.h:2104 tithek.h:2389 tithek.h:2424 tithek.h:2440
-#: tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
+#: titan.c:1234 titan.c:1240 tithek.c:103 tithek_global.h:96 tithek.h:711
+#: tithek.h:1273 tithek.h:1334 tithek.h:1663 tithek.h:1685 tithek.h:1702
+#: tithek.h:1934 tithek.h:2094 tithek.h:2379 tithek.h:2414 tithek.h:2430
+#: tithek.h:2442 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
@@ -6797,7 +6801,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1796
+#: tithek.h:1786
 msgid "Page"
 msgstr ""
 
@@ -6832,8 +6836,8 @@ msgstr ""
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:16 skin_default_skin.xml.h:419
-#: skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:419
+#: skins_networkbrowser_skin.xml.h:17
 msgid "Password"
 msgstr "Password"
 
@@ -7323,7 +7327,7 @@ msgstr ""
 msgid "Present"
 msgstr ""
 
-#: global.h:7375 system_backup_restore.h:15
+#: global.h:7384 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -7860,7 +7864,7 @@ msgstr "Removing started"
 msgid "Remove success"
 msgstr "Removed successfully"
 
-#: tithek.h:2424
+#: tithek.h:2414
 msgid "Remove this Favorite ?"
 msgstr "DO you want to remove the selected Entry from your Favourites?"
 
@@ -8118,9 +8122,9 @@ msgid "SCART 4:3 / 16:9"
 msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
-#: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
 #: skin_default_skin.xml.h:549 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
+#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr "Search"
@@ -8598,15 +8602,15 @@ msgstr ""
 #: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179
 #: kinox.h:181 kinox.h:797 kinox.h:799 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
-#: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
-#: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
+#: movie4k.h:303 movie4k.h:305 myvideo.h:229 myvideo.h:231 myvideo.h:373
+#: myvideo.h:375 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
 #: nowtv.h:133 nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:548 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:471 tithek_global.h:473 tithek_global.h:897
-#: tithek_global.h:899 tithek.h:1510 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:463 tithek_global.h:465 tithek_global.h:886
+#: tithek_global.h:888 tithek.h:1510 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359
 #: youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9302,23 +9306,23 @@ msgstr ""
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7231
+#: global.h:7240
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7251
+#: global.h:7260
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7291
+#: global.h:7300
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7271
+#: global.h:7280
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7311
+#: global.h:7320
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9345,7 +9349,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr ""
 
-#: tithek.h:1673
+#: tithek.h:1663
 msgid "Start playback"
 msgstr "Start playback"
 
@@ -9447,15 +9451,15 @@ msgstr "Stream Information"
 msgid "Streaming"
 msgstr ""
 
-#: tithek.h:1546 tithek.h:1550 tithek.h:1554 tithek.h:1567
+#: tithek.h:1536 tithek.h:1540 tithek.h:1544 tithek.h:1557
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1578
+#: tithek.h:1568
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1575
+#: tithek.h:1565
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9791,7 +9795,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7331
+#: global.h:7340
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9813,7 +9817,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:103 tithek.h:2389
+#: tithek_global.h:96 tithek.h:2379
 msgid "The hoster is not yet supported !"
 msgstr "The hoster is not supported at present!"
 
@@ -10089,7 +10093,7 @@ msgid "Titan MediaCenter"
 msgstr ""
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
-#: global.h:7239 global.h:7259 global.h:7279 global.h:7299 global.h:7319
+#: global.h:7248 global.h:7268 global.h:7288 global.h:7308 global.h:7328
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
 msgid "Titan will be restarted!"
@@ -10119,7 +10123,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1712
+#: tithek.h:1702
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek disclaimer"
 
@@ -10139,8 +10143,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Mainmenu"
 
-#: tithek.h:1464 tithek.h:1757 tithek.h:1891 tithek.h:2420 tithek.h:2436
-#: tithek.h:2448 tithek.h:2464
+#: tithek.h:1464 tithek.h:1747 tithek.h:1881 tithek.h:2410 tithek.h:2426
+#: tithek.h:2438 tithek.h:2454
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
@@ -10359,7 +10363,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:681 security.h:2128
+#: security.h:681 security.h:2120
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10375,7 +10379,7 @@ msgstr ""
 msgid "Tune to channel failed"
 msgstr "ERROR: Tuning to Channel failed"
 
-#: security.h:2154 skin_default_skin.xml.h:682
+#: security.h:2146 skin_default_skin.xml.h:682
 msgid "Tuner"
 msgstr ""
 
@@ -10415,7 +10419,7 @@ msgstr ""
 "ERROR: Tuner configuration is not allowed during a recording\n"
 "or during Stream Playback"
 
-#: security.h:2161 skin_default_skin.xml.h:688
+#: security.h:2153 skin_default_skin.xml.h:688
 msgid "Tunertype"
 msgstr ""
 
@@ -10456,7 +10460,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2134
+#: security.h:2126
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10530,7 +10534,7 @@ msgid "Unitymedia NRW"
 msgstr ""
 
 #: tpk_description.h:172
-msgid "Unitymedia NRW | 24.09.2016 (caliban)"
+msgid "Unitymedia NRW | 1.8.2016 (caliban)"
 msgstr ""
 
 #: titan.c:1299
@@ -10613,8 +10617,8 @@ msgstr ""
 msgid "Use numeric keys"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:712
-#: skins_networkbrowser_skin.xml.h:32
+#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:712
+#: skins_networkbrowser_skin.xml.h:33
 msgid "User"
 msgstr "User"
 
@@ -10638,7 +10642,7 @@ msgstr "Settings"
 msgid "VLC Player"
 msgstr ""
 
-#: security.h:2087
+#: security.h:2079
 msgid "Version"
 msgstr ""
 
@@ -11636,7 +11640,7 @@ msgstr "disabled"
 msgid "diseqcscreen"
 msgstr "DiSEqC"
 
-#: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
+#: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
 msgid "dnsaddresse"
 msgstr "DNS Address"
 
@@ -11744,7 +11748,7 @@ msgstr ""
 msgid "expert (11)"
 msgstr "Expert mode (11)"
 
-#: security.h:2140
+#: security.h:2132
 msgid "expired"
 msgstr ""
 
@@ -11836,7 +11840,7 @@ msgstr "Enable FTDI module"
 msgid "ftpfs"
 msgstr "FTPFS"
 
-#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "ftpport"
 msgstr "Ftp Port"
 
@@ -11895,7 +11899,7 @@ msgstr ""
 msgid "hbbtv Browser"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "hddreplacement"
 msgstr "Use network share for recordings"
 
@@ -12005,8 +12009,8 @@ msgstr "Internet"
 msgid "ip"
 msgstr "IP"
 
-#: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:326
-#: skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:326
+#: skins_networkbrowser_skin.xml.h:14
 msgid "ipaddress"
 msgstr "IP Address"
 
@@ -12499,7 +12503,7 @@ msgstr ""
 msgid "optimize Plugin"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "options"
 msgstr "Options"
 
@@ -12519,7 +12523,7 @@ msgstr ""
 msgid "panscan"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
 msgid "password"
 msgstr "Password"
 
@@ -12649,31 +12653,31 @@ msgstr "Progress"
 msgid "protect service"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "protocol"
 msgstr "Protocol"
 
-#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxy"
 msgstr "Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyauth"
 msgstr "Proxyserver authentication"
 
-#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxyip"
 msgstr "Proxyserver IP"
 
-#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxypass"
 msgstr "Proxyserver Password"
 
-#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyport"
 msgstr "Proxyserver Port"
 
-#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "proxyuser"
 msgstr "Proxyserver Username"
 
@@ -12779,7 +12783,7 @@ msgstr ""
 msgid "ro"
 msgstr "read only"
 
-#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
+#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
 msgid "rsize"
 msgstr "read buffersize"
 
@@ -12927,11 +12931,11 @@ msgstr "Settings"
 msgid "settingsmenu"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharedir"
 msgstr "Share Directory"
 
-#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
+#: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
 msgid "sharename"
 msgstr "Share Name"
 
@@ -13059,8 +13063,8 @@ msgstr "Speed"
 msgid "spinner"
 msgstr ""
 
-#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:28
-#: skins_networkbrowser_skin.xml.h:28
+#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:29
+#: skins_networkbrowser_skin.xml.h:29
 msgid "ssl"
 msgstr "SSL"
 
@@ -13375,8 +13379,8 @@ msgstr ""
 msgid "tunerreceptiondvbt"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:693
-#: skins_networkbrowser_skin.xml.h:29
+#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:693
+#: skins_networkbrowser_skin.xml.h:30
 msgid "type"
 msgstr "Type"
 
@@ -13415,7 +13419,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2159 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
+#: security.h:2151 skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13476,11 +13480,11 @@ msgstr "Use as swap-device"
 msgid "useUnknown910"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
+#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "usedns"
 msgstr "Use DNS Address"
 
-#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
+#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
 msgid "useproxy"
 msgstr "Use Proxy"
 
@@ -13492,15 +13496,15 @@ msgstr "User defined"
 msgid "user unicable"
 msgstr "User unicable"
 
-#: plugins_networkbrowser_skin.xml.h:33 skins_networkbrowser_skin.xml.h:33
+#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
 msgid "userauth"
 msgstr "User Authentication"
 
-#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
+#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "username"
 msgstr "Username"
 
-#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
+#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "usessl"
 msgstr "use SSL"
 
@@ -13508,7 +13512,7 @@ msgstr "use SSL"
 msgid "v"
 msgstr ""
 
-#: security.h:2121
+#: security.h:2113
 msgid "valid"
 msgstr ""
 
@@ -13648,7 +13652,7 @@ msgstr ""
 msgid "workdays"
 msgstr "Workdays"
 
-#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
+#: plugins_networkbrowser_skin.xml.h:37 skins_networkbrowser_skin.xml.h:37
 msgid "wsize"
 msgstr "Write buffersize"
 
