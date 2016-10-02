@@ -726,7 +726,7 @@ msgstr "Musik"
 msgid "AUDIO SETTINGS"
 msgstr "Audio"
 
-#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "AUTH SETTINGS"
 msgstr "Authentifizierung"
 
@@ -1145,6 +1145,10 @@ msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 msgid "Auswahl"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
+msgid "Authentication"
 msgstr ""
 
 #: httpdsettings.h:80
@@ -1720,7 +1724,7 @@ msgstr "CI-Menü"
 msgid "CLEAR INPUT"
 msgstr "Eingabefeld löschen"
 
-#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+#: plugins_networkbrowser_skin.xml.h:5 skins_networkbrowser_skin.xml.h:5
 msgid "COPY"
 msgstr "Kopieren"
 
@@ -2568,9 +2572,9 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "Voreinstellung"
 
-#: play.h:1575 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:3
+#: play.h:1575 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
-#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:5
+#: skin_default_skin.xml.h:142 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Löschen"
@@ -3040,9 +3044,9 @@ msgid ""
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:7
+#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:8
 #: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:170
-#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:7
+#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:8
 #: skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
 msgstr "Bearbeiten"
@@ -4432,7 +4436,7 @@ msgstr "Hier können Sie die CAID Sperren aktivieren bzw. deaktivieren."
 msgid "Here you can activate/deactivate you OSCam readers."
 msgstr "Hier können Sie Ihre OSCam Reader aktivieren bzw. deaktivieren."
 
-#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid "Here you can add and configure your network shares."
 msgstr "Hier können Sie Freigaben hinzufügen und konfigurieren."
 
@@ -4507,7 +4511,7 @@ msgstr ""
 "automatischen Suchlauf durch.\n"
 "Bei der Kabelsuche sollte die Option \"Netzwerk durchsuchen\" aktiviert sein."
 
-#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
+#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
 "Here you can configure your login credentials for accessing password "
 "protected shares."
@@ -4974,7 +4978,7 @@ msgstr ""
 msgid "Icon 4"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
+#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 msgid ""
 "If you don't find Windows shares, you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
@@ -7000,8 +7004,8 @@ msgstr "Partition konnte nicht erstellt werden!"
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:16 skin_default_skin.xml.h:419
-#: skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:419
+#: skins_networkbrowser_skin.xml.h:17
 msgid "Password"
 msgstr "Passwort"
 
@@ -8296,9 +8300,9 @@ msgid "SCART 4:3 / 16:9"
 msgstr "SCART 4:3/16:9"
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
-#: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
 #: skin_default_skin.xml.h:549 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
+#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr "Suchen"
@@ -10819,8 +10823,8 @@ msgstr "Benutze feste physikalische Adresse"
 msgid "Use numeric keys"
 msgstr "Nummerntasten zur Eingabe nutzen"
 
-#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:712
-#: skins_networkbrowser_skin.xml.h:32
+#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:712
+#: skins_networkbrowser_skin.xml.h:33
 msgid "User"
 msgstr "Benutzer"
 
@@ -11849,7 +11853,7 @@ msgstr "aus"
 msgid "diseqcscreen"
 msgstr "DiSEqC"
 
-#: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
+#: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
 msgid "dnsaddresse"
 msgstr "DNS Adresse"
 
@@ -12049,7 +12053,7 @@ msgstr "Aktiviere FTDI Kartenleser Treiber"
 msgid "ftpfs"
 msgstr "FTPFS"
 
-#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "ftpport"
 msgstr "FTP Port"
 
@@ -12108,7 +12112,7 @@ msgstr "Festplatten Menü"
 msgid "hbbtv Browser"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "hddreplacement"
 msgstr "Netzwerk Freigabe als Aufnahmeort"
 
@@ -12218,8 +12222,8 @@ msgstr "Internet"
 msgid "ip"
 msgstr "IP"
 
-#: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:326
-#: skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:326
+#: skins_networkbrowser_skin.xml.h:14
 msgid "ipaddress"
 msgstr "IP Adresse"
 
@@ -12712,7 +12716,7 @@ msgstr "in neuem Fenster öffnen"
 msgid "optimize Plugin"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "options"
 msgstr "Optionen"
 
@@ -12732,7 +12736,7 @@ msgstr "Lüftersteuerung"
 msgid "panscan"
 msgstr "Zoom mit Randbeschnitt"
 
-#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
 msgid "password"
 msgstr "Passwort"
 
@@ -12862,31 +12866,31 @@ msgstr "Fortschritt"
 msgid "protect service"
 msgstr "Sender sperren"
 
-#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "protocol"
 msgstr "Protokoll"
 
-#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxy"
 msgstr "Proxy"
 
-#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyauth"
 msgstr "Proxy Authentifizierung"
 
-#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxyip"
 msgstr "IP für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxypass"
 msgstr "Passwort für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyport"
 msgstr "Port für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "proxyuser"
 msgstr "Benutzername für Proxyserver"
 
@@ -12992,7 +12996,7 @@ msgstr "rechts"
 msgid "ro"
 msgstr "Schreibgeschützt"
 
-#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
+#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
 msgid "rsize"
 msgstr "Lese Puffergröße"
 
@@ -13148,11 +13152,11 @@ msgstr "Senderlisten"
 msgid "settingsmenu"
 msgstr "Einstellungsmenü"
 
-#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharedir"
 msgstr "Speicherort auf entferntem Rechner"
 
-#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
+#: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
 msgid "sharename"
 msgstr "Freigabename"
 
@@ -13280,8 +13284,8 @@ msgstr "Geschwindigkeit"
 msgid "spinner"
 msgstr "Spinner"
 
-#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:28
-#: skins_networkbrowser_skin.xml.h:28
+#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:29
+#: skins_networkbrowser_skin.xml.h:29
 msgid "ssl"
 msgstr "SSL"
 
@@ -13596,8 +13600,8 @@ msgstr "DVB-S Tuner einstellen"
 msgid "tunerreceptiondvbt"
 msgstr "DVB-T Tuner einstellen"
 
-#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:693
-#: skins_networkbrowser_skin.xml.h:29
+#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:693
+#: skins_networkbrowser_skin.xml.h:30
 msgid "type"
 msgstr "Typ"
 
@@ -13705,11 +13709,11 @@ msgstr ""
 msgid "useUnknown910"
 msgstr "Lade stmdvb.ko mit der useUnknown910 Option"
 
-#: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
+#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "usedns"
 msgstr "Benutze DNS Adresse"
 
-#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
+#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
 msgid "useproxy"
 msgstr "Benutze Proxy"
 
@@ -13721,15 +13725,15 @@ msgstr "Benutzerdefiniert"
 msgid "user unicable"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:33 skins_networkbrowser_skin.xml.h:33
+#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
 msgid "userauth"
 msgstr "Benutzer Authentifizierung"
 
-#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
+#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "username"
 msgstr "Benutzername"
 
-#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
+#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "usessl"
 msgstr "SSL verwenden"
 
@@ -13877,7 +13881,7 @@ msgstr "WLAN"
 msgid "workdays"
 msgstr "Werktags"
 
-#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
+#: plugins_networkbrowser_skin.xml.h:37 skins_networkbrowser_skin.xml.h:37
 msgid "wsize"
 msgstr "Schreib Puffergröße"
 
