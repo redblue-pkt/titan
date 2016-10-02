@@ -44,15 +44,15 @@ void screensystem_logs(int mode)
 	if(mode == 0)
 		changetitle(systeminfo, _("Infos"));
 	else if(mode == 1)
-		changetitle(systeminfo, _("Infos"));
+		changetitle(systeminfo, _("Titan Changelog"));
 	else if(mode == 2)
-		changetitle(systeminfo, _("Infos"));
+		changetitle(systeminfo, _("Git Changelog"));
 
 	tmpstr = system_logs(mode);
 	changetext(info, tmpstr);
 	free(tmpstr), tmpstr = NULL;
 
-	clearscreen(load);	
+	clearscreen(load);
 	drawscreen(systeminfo, 0, 0);
 
 	while(1)
