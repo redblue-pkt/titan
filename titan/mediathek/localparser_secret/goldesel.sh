@@ -5,9 +5,7 @@
 
 SRC=$1
 INPUT=$2
-FROM=$3
-PAGE=$4
-NEXT=$5
+PAGE=$3
 
 FILENAME=`echo $PAGE | tr '/' '.'`
 FILENAME=`echo $FILENAME | tr '&' '.'`
@@ -46,7 +44,7 @@ mainmenu()
 
 category()
 {
-    echo "Kinofilme#$SRC $SRC page category '/'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+    echo "Kinofilme#$SRC $SRC page 'filme'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 #	echo "Movies (Year)#$SRC $SRC movieyear#http://atemio.dyndns.tv/mediathek/menu/movie.year.jpg#movie.year.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 #	echo "Movies (Genre)#$SRC $SRC moviegenre#http://atemio.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 #	echo "Series#$SRC $SRC page category 'free/tv-series/page/' 1#http://atemio.dyndns.tv/mediathek/menu/series.jpg#series.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
@@ -56,57 +54,54 @@ category()
 
 page()
 {
-	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list" ]; then
-		piccount=0
-		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1
-
-		cat $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1 | sed 's/<div class/\n<div class/g' | sed 's/<a href="/\n<a href="/g' | grep ^'<a href="film' | grep title= | sed 's/ /~/g' >$TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.2
-
-		while read -u 3 ROUND; do
-			TITLE=`echo $ROUND | sed 's/title=/\ntitle=/' | grep ^"title=" | cut -d '"' -f2 | tr '~' ' ' | sed 's/#/%/'`
-			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-			PIC=$URL/`echo $ROUND | sed s'!<img~src=!\nsrc=!' | grep ^"src=" | cut -d '"' -f2 | tr '~' ' '`
-			NEWPAGE=`echo $ROUND | sed 's/<a~href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
-		
-			if [ -z "$PIC" ] || [ "$PIC" = "$URL/" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-			fi
-
-			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-				if [ `cat $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
-					if [ ! -e $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list ];then
-						touch $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list
-					fi
-					piccount=`expr $piccount + 1`
-					LINE="$TITLE#$SRC $SRC hosterlist page $NEWPAGE#$PIC#$PARSER.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
-	
-					echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list
-				fi
-			fi
-		done 3<$TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.2
-		rm $TMP/cache.* > /dev/null 2>&1
+	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.list
 	fi
-	echo "$TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list"
+	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+
+	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<p><ul class="rls_table/\n<p><ul class=rls_table/g' | sed 's/<\/ul><\/u>/<\/ul><\/u>\n/g' | grep ^'<p><ul class=rls_table' | sed 's/<a href="/\n<a href="/g' | sed 's/<li step=/\n<li step=/g' | grep ^'<a href=' | grep 'tba">VID' | sed 's/ /~/g' >$TMP/cache.$PARSER.$INPUT.2
+
+	while read -u 3 ROUND; do
+		TITLE=`echo $ROUND |  sed -e 's/<div~class="tle">/\n<div~class="tle""/' -e 's/<b/"b/g' | grep ^'<div~class="tle""' | cut -d '"' -f4 | tr '~' ' ' | sed 's/#/%/'`
+		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+		PIC=$URL/`echo $ROUND | sed s'/data-original=/\ndata-original=/' | grep ^'data-original=' | cut -d '"' -f2 | sed 's/\/mini\//\/poster\//g'`
+		NEWPAGE=`echo $ROUND | cut -d '"' -f2`
+	
+		if [ "$PIC" == "$URL/" ] ; then
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			TMPPIC="default.jpg"
+		else
+			TMPPIC=goldesel_`echo $PIC | cut -d '/' -f6`
+		fi
+
+		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ] ; then
+			LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC.jpg#$NAME#0"
+			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+		fi
+	done 3<$TMP/cache.$PARSER.$INPUT.2
+	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 hosterlist()
 {
-	rm -f "$TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list"
-	piccount=0
-	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1
-	cat $TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.1 | sed 's!<h2>Stream-Links</h2>!\nfound=!g' | sed 's!<h2>Sample-Links</h2>!\nerror=!g' | grep ^found= | sed 's/<li data=/\ndata=/g' | grep ^data= >$TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.2
+	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.list
+	fi
+	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<h2>Stream-Links</h2>!\nfound=!g' | sed 's!<h2>Sample-Links</h2>!\nerror=!g' | grep ^found= | sed 's/<li data=/\ndata=/g' | grep ^data= >$TMP/cache.$PARSER.$INPUT.2
 
 	while read -u 3 ROUND; do
 		NEWPAGE="data=`echo $ROUND | cut -d '"' -f2 | sed 's/;/%3B/g'`"
 		TITLE=`echo $ROUND | cut -d ';' -f5 | cut -d '.' -f1`
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 			PIC=`echo $TITLE | tr [A-Z] [a-z]`
-			LINE="$TITLE#$SRC $SRC hoster hosterlist $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
-			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list
+			LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
-	done 3<$TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.2
-	rm $TMP/cache.* > /dev/null 2>&1
-	echo "$TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list"
+	done 3<$TMP/cache.$PARSER.$INPUT.2
+	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 hoster()
