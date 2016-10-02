@@ -4118,7 +4118,7 @@ msgstr ""
 msgid "Giantgirl"
 msgstr ""
 
-#: httpdfunc.h:5363 skin_default_skin.xml.h:231 webif_info_logs.h:3
+#: httpdfunc.h:5363 info.h:49 skin_default_skin.xml.h:231 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr "Журнал изменений GIT"
 
@@ -4900,8 +4900,7 @@ msgstr ""
 "Внимание: Для проверки этого диска может\n"
 "потребоваться от 30 мин до 1,5 часа"
 
-#: info.h:45 info.h:47 info.h:49 plugins_panel_skin.xml.h:12
-#: skins_panel_skin.xml.h:12
+#: info.h:45 plugins_panel_skin.xml.h:12 skins_panel_skin.xml.h:12
 msgid "Infos"
 msgstr "Информаторы"
 
@@ -10056,7 +10055,7 @@ msgstr "Часовой пояс"
 msgid "Tint"
 msgstr "Оттенок"
 
-#: skin_default_skin.xml.h:657 webif_info_logs.h:2
+#: info.h:47 skin_default_skin.xml.h:657 webif_info_logs.h:2
 msgid "Titan Changelog"
 msgstr "Журнал изменений"
 
