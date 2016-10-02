@@ -289,7 +289,7 @@ void newsletterthreadfunc(struct stimerthread* self)
 				tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 				tmpstr = ostrcat(tmpstr, node->date, 1, 0);
 
-				ret = textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 800, 15, 2);
+				ret = textbox(tmpstr, node->text, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 700, 15, 2);
 				free(tmpstr); tmpstr = NULL;
 
 				//mark only if no timeout
