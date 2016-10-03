@@ -8201,7 +8201,7 @@ msgid "Sat: matze70 new design Astra 19.2 | 03.06.2016"
 msgstr ""
 
 #: tpk_description.h:136
-msgid "Sat: uljanow Sat 19.2 plus 13.0 | 14.06.2016"
+msgid "Sat: uljanow Sat 19.2 plus 13.0 | 03.10.2016"
 msgstr ""
 
 #: optimize.h:264
@@ -10197,7 +10197,7 @@ msgid "Transparent XPicons - small - Astra 19.2E"
 msgstr ""
 
 #: tpk_description.h:164
-msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
+msgid "Transparent small black-Skins 19,2 Picons | 03.10.2016"
 msgstr ""
 
 #: scan.h:2462
