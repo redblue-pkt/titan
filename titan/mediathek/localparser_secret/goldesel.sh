@@ -44,11 +44,46 @@ mainmenu()
 
 category()
 {
-    echo "Kinofilme#$SRC $SRC page 'filme'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-#	echo "Movies (Year)#$SRC $SRC movieyear#http://atemio.dyndns.tv/mediathek/menu/movie.year.jpg#movie.year.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-#	echo "Movies (Genre)#$SRC $SRC moviegenre#http://atemio.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-#	echo "Series#$SRC $SRC page category 'free/tv-series/page/' 1#http://atemio.dyndns.tv/mediathek/menu/series.jpg#series.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-#   echo "Search#$SRC $SRC page category '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
+    echo "Kinofilme#$SRC $SRC new '/'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+    echo "Filme#$SRC $SRC page 'filme'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+new()
+{
+	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.list
+	fi
+	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+
+	piccount=0
+
+	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<div class/\n<div class/g' | sed 's/<a href="/\n<a href="/g' | grep ^'<a href="film' | grep title= | sed 's/ /~/g' >$TMP/cache.$PARSER.$INPUT.2
+
+	while read -u 3 ROUND; do
+		TITLE=`echo $ROUND | sed 's/title=/\ntitle=/' | grep ^"title=" | cut -d '"' -f2 | tr '~' ' ' | sed 's/#/%/'`
+		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+		PIC=$URL/`echo $ROUND | sed s'!<img~src=!\nsrc=!' | grep ^"src=" | cut -d '"' -f2 | tr '~' ' '`
+		NEWPAGE=`echo $ROUND | sed 's/<a~href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
+	
+		if [ -z "$PIC" ] || [ "$PIC" = "$URL/" ]; then  
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		fi
+
+		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+			if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
+				if [ ! -e $TMP/$PARSER.$INPUT.list ];then
+					touch $TMP/$PARSER.$INPUT.list
+				fi
+				piccount=`expr $piccount + 1`
+				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
+
+				echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+			fi
+		fi
+	done 3<$TMP/cache.$PARSER.$INPUT.2
+	rm $TMP/cache.* > /dev/null 2>&1
+
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -114,6 +149,7 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	category) $INPUT;;
+	new) $INPUT;;
 	page) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
