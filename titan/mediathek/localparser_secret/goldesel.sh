@@ -141,7 +141,10 @@ hosterlist()
 
 hoster()
 {
-	STREAMURL=`$curlbin $URL/res/links -X POST --data "$PAGE" | sed 's!url="http://dref.me/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g'`
+	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1
+	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!url="http://dref.me/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g'`
+#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	echo $STREAMURL
 }
 
