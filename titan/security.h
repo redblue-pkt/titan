@@ -876,25 +876,25 @@ void startnet()
 			cmd = ostrcat(cmd, "/etc/init.d/networking -i eth0 -s no start > /dev/null 2>&1", 1, 0);
 			system(cmd);
 			free(cmd); cmd = NULL;
-	
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "usr", 1, 0);
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "sbin", 1, 0);
-			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, "inetd", 1, 0);
-			cmd = ostrcat(cmd, " ", 1, 0);
-			cmd = ostrcat(cmd, "&", 1, 0);
-	
-			if(!checkprozess("inetd"))
-				system(cmd);
-	
-			free(cmd); cmd = NULL;
-	
-			if(!file_exist(SERIALDEV))
-				mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
 		}
 		free(tmpstr); tmpstr = NULL;
+	
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, "usr", 1, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, "sbin", 1, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, "inetd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "&", 1, 0);
+
+		if(!checkprozess("inetd"))
+			system(cmd);
+
+		free(cmd); cmd = NULL;
+
+		if(!file_exist(SERIALDEV))
+			mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
 	}
 }
 
