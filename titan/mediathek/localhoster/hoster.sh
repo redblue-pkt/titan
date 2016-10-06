@@ -116,6 +116,11 @@ youwatch()
 	$BIN $CMD/youwatch.py $INPUT
 }
 
+thevideo()
+{
+	$BIN $CMD/thevideo.py $INPUT
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -132,5 +137,6 @@ if [ "$TYPE" == "get" ];then
 		vodzi) vodzi $INPUT;;
 		youwatch) youwatch $INPUT;;
 		chouhaa) youwatch $INPUT;;
+		thevideo) thevideo $INPUT;;
 	esac
 fi
