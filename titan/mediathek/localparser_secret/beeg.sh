@@ -6,7 +6,7 @@
 SRC=$1
 INPUT=$2
 PARAM=$3
-URL="https://beeg.com/api/v6/1976/"
+URL="https://beeg.com/api/v6/1986/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 
@@ -66,7 +66,7 @@ BEGIN { table = ""
            print title "#" SRC " " SRC " play video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
            title = ""
            id = ""
-        }   
+        }
         next
       }
 /^\]/ { table = ""
@@ -107,7 +107,7 @@ BEGIN { table = ""
         for (i = 0; i <= 255; i++) {
            ord[sprintf("%c", i)] = i
         }
-        crc = "W4ifauwYuc0Iw6KZAqCtjFwvXc28YLdBq523nSou4hxlhc4"
+        crc = "76521a4dc228feaef757c453b248e0e4" #md5?
       }
 /\"/  { m = 1
         while (m == 1) {
