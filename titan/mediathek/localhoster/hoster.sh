@@ -121,6 +121,16 @@ thevideo()
 	$BIN $CMD/thevideo.py $INPUT
 }
 
+movshare()
+{
+	$BIN $CMD/movshare.py $INPUT
+}
+
+streamcloud()
+{
+	$BIN $CMD/streamcloud.py $INPUT
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -138,5 +148,9 @@ if [ "$TYPE" == "get" ];then
 		youwatch) youwatch $INPUT;;
 		chouhaa) youwatch $INPUT;;
 		thevideo) thevideo $INPUT;;
+		movshare) movshare $INPUT;;
+		wholecloud) movshare $INPUT;;
+		vidgg) movshare $INPUT;;
+		streamcloud) streamcloud $INPUT;;	
 	esac
 fi
