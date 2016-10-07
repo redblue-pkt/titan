@@ -3,7 +3,7 @@ import re
 import sys
 from lib.net import Net
 
-class StreamcloudResolver(UrlResolver):
+class StreamcloudResolver(object):
     name = "streamcloud"
     domains = ["streamcloud.eu"]
     pattern = '(?://|\.)(streamcloud\.eu)/([0-9a-zA-Z]+)'
