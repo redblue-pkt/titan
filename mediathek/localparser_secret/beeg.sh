@@ -107,7 +107,7 @@ BEGIN { table = ""
         for (i = 0; i <= 255; i++) {
            ord[sprintf("%c", i)] = i
         }
-        crc = "76521a4dc228feaef757c453b248e0e4" #md5?
+        crc = "9eIiWTEAVM2uXmmEClOaGbIRhRd0yrAO12IpzkwRt"
       }
 /\"/  { m = 1
         while (m == 1) {
