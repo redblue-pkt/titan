@@ -8,23 +8,23 @@ int checklowflash()
 {
 	char* tmpstr = NULL;
 	char* cmd = NULL;
-	cmd = ostrcat(cmd, "cat", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "/", 1, 0); 
-	cmd = ostrcat(cmd, "proc", 1, 0); 
-	cmd = ostrcat(cmd, "/", 1, 0); 
-	cmd = ostrcat(cmd, "mtd", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "|", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "grep", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "mtd2", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "|", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "awk '{print ", 1, 0); 
-	cmd = ostrcat(cmd, "$2}'", 1, 0); 
+	cmd = ostrcat(cmd, "cat", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "proc", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "mtd", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "|", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "grep", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "mtd2", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "|", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "awk '{print ", 1, 0);
+	cmd = ostrcat(cmd, "$2}'", 1, 0);
 
 	tmpstr = string_newline(command(cmd));
 	free(cmd), cmd = NULL;
@@ -39,7 +39,7 @@ int checklowflash()
 		free(tmpstr), tmpstr = NULL;
 		return 0;
 	}
-	return 1;	
+	return 1;
 }
 
 int checkhighflash()
@@ -47,67 +47,67 @@ int checkhighflash()
 	char* tmpstr = NULL;
 	char* cmd = NULL;
 	char* size = NULL;
-	cmd = ostrcat(cmd, "cat", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "/", 1, 0); 
-	cmd = ostrcat(cmd, "proc", 1, 0); 
-	cmd = ostrcat(cmd, "/", 1, 0); 
-	cmd = ostrcat(cmd, "mtd", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "|", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "grep", 1, 0); 
+	cmd = ostrcat(cmd, "cat", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "proc", 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, "mtd", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "|", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "grep", 1, 0);
 	cmd = ostrcat(cmd, " ", 1, 0);
 	if(checkchipset("BCM7358") == 1) // inihde
 	{
-		cmd = ostrcat(cmd, "mtd1", 1, 0); 
+		cmd = ostrcat(cmd, "mtd1", 1, 0);
 		size = ostrcat("13900000", NULL, 0, 0);
 	}
 	else if(checkchipset("BCM7362") == 1) // inihde2am
 	{
-		cmd = ostrcat(cmd, "mtd1", 1, 0); 
+		cmd = ostrcat(cmd, "mtd1", 1, 0);
 		size = ostrcat("13800000", NULL, 0, 0);
 	}
 	else if(checkchipset("BCM7424") == 1) // inihdp
 	{
-		cmd = ostrcat(cmd, "mtd1", 1, 0); 
-		size = ostrcat("5f500000", NULL, 0, 0); 
+		cmd = ostrcat(cmd, "mtd1", 1, 0);
+		size = ostrcat("5f500000", NULL, 0, 0);
 	}
 	else if(checkrealbox("DM7020HD") == 1)
 	{
-		cmd = ostrcat(cmd, "mtd3", 1, 0); 
-		size = ostrcat("3f780000", NULL, 0, 0); 
+		cmd = ostrcat(cmd, "mtd3", 1, 0);
+		size = ostrcat("3f780000", NULL, 0, 0);
 	}
 	else if(checkbox("UFS913") == 1)
 	{
-		cmd = ostrcat(cmd, "mtd10", 1, 0); 
-		size = ostrcat("06600000", NULL, 0, 0); 
+		cmd = ostrcat(cmd, "mtd10", 1, 0);
+		size = ostrcat("06600000", NULL, 0, 0);
 	}
 	else if(checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1)
 	{
-		cmd = ostrcat(cmd, "mtd5", 1, 0); 
-		size = ostrcat("00c40000", NULL, 0, 0); 
+		cmd = ostrcat(cmd, "mtd5", 1, 0);
+		size = ostrcat("00c40000", NULL, 0, 0);
 	}
 	else if(checkbox("SPARK") == 1)
 	{
-		cmd = ostrcat(cmd, "mtd7", 1, 0); 
-		size = ostrcat("05800000", NULL, 0, 0); 
+		cmd = ostrcat(cmd, "mtd7", 1, 0);
+		size = ostrcat("05800000", NULL, 0, 0);
 	}
 	else if(checkbox("SPARK7162") == 1)
 	{
-		cmd = ostrcat(cmd, "mtd7", 1, 0); 
-		size = ostrcat("05700000", NULL, 0, 0); 
+		cmd = ostrcat(cmd, "mtd7", 1, 0);
+		size = ostrcat("05700000", NULL, 0, 0);
 	}
 	else
 	{
-		cmd = ostrcat(cmd, "mtd5", 1, 0); 
-		size = ostrcat("1ce40000", NULL, 0, 0); 
+		cmd = ostrcat(cmd, "mtd5", 1, 0);
+		size = ostrcat("1ce40000", NULL, 0, 0);
 	}
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "|", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "awk '{print ", 1, 0); 
-	cmd = ostrcat(cmd, "$2}'", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "|", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, "awk '{print ", 1, 0);
+	cmd = ostrcat(cmd, "$2}'", 1, 0);
 
 	tmpstr = string_newline(command(cmd));
 	free(cmd), cmd = NULL;
@@ -123,11 +123,11 @@ int checkhighflash()
 		free(size), size = NULL;
 		return 0;
 	}
-	
+
 	free(tmpstr), tmpstr = NULL;
 	free(size), size = NULL;
 
-	return 1;	
+	return 1;
 }
 
 struct blacklist* readblacklist(char* filename)
@@ -196,14 +196,14 @@ int checkreseller()
 {
 	// disabled not needed anymore
 	return 0;
-	
+
 	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFC960") == 1 || checkbox("UFS913") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || file_exist("/etc/.mipsel"))
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
 		return 0;
 	}
-			
+
 	FILE* fd = NULL;
 	char mtd[10];
 	char* buf = NULL;
@@ -219,7 +219,7 @@ int checkreseller()
 	mtd[7] = 0x64;
 	mtd[8] = 0x30;
 	mtd[9] = '\0';
-	
+
 	if((fd = fopen(mtd, "r")) == NULL)
 		return 1;
 
@@ -362,11 +362,11 @@ int checkflash()
 	char* cmd = NULL;
 	char* dev = NULL;
 	char* dir = NULL;
-	
+
 	if((checkbox("ATEMIO7600") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("UFS910") == 1) || (checkbox("UFS922") == 1) || (checkbox("UFC960") == 1) || (checkbox("ATEMIO520") == 1) || (checkbox("ATEMIO530") == 1))
 	{
 		dev = ostrcat(dev, "3", 1, 0);
-		dir = ostrcat(dir, "var", 1, 0);		
+		dir = ostrcat(dir, "var", 1, 0);
 	}
 	else if((checkbox("IPBOX91") == 1) || (checkbox("IPBOX900") == 1) || (checkbox("IPBOX910") == 1) || (checkbox("IPBOX9000") == 1) || (checkbox("WHITEBOX") == 1))
 	{
@@ -382,7 +382,7 @@ int checkflash()
 	{
 		dev = ostrcat(dev, "8", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
-	} 
+	}
 	else if(checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 	{
 		dev = ostrcat(dev, "7", 1, 0);
@@ -398,7 +398,7 @@ int checkflash()
 		dev = ostrcat(dev, "9", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
 	}
-	
+
 	if(file_exist("/etc/.mipsel"))
 	{
 		cmd = ostrcat(cmd, "mount", 1, 0);
@@ -418,7 +418,7 @@ int checkflash()
 		cmd = ostrcat(cmd, "grep", 1, 0);
 		cmd = ostrcat(cmd, " /dev/", 1, 0);
 		cmd = ostrcat(cmd, "mtdblock", 1, 0);
-		cmd = ostrcat(cmd, dev, 1, 1);	
+		cmd = ostrcat(cmd, dev, 1, 1);
 		cmd = ostrcat(cmd, " | ", 1, 0);
 		cmd = ostrcat(cmd, "grep", 1, 0);
 		cmd = ostrcat(cmd, " /", 1, 0);
@@ -448,7 +448,7 @@ int checkflash()
 	}
 
 	free(dir), dir = NULL;
-	free(tmpstr), tmpstr = NULL;	
+	free(tmpstr), tmpstr = NULL;
 	return 1;
 }
 
@@ -457,7 +457,7 @@ char* getmacfromcmdline()
 	char* cmdline = NULL;
 	char* tmpstr = NULL;
 	char* mac = NULL;
-	
+
 	cmdline = readsys("/proc/cmdline", 1);
 	if(cmdline != NULL)
 	{
@@ -466,13 +466,13 @@ char* getmacfromcmdline()
 		{
 			tmpstr[25] = '\0';
 			tmpstr += 8;
-			mac = ostrcat(tmpstr, NULL, 0, 0);		
+			mac = ostrcat(tmpstr, NULL, 0, 0);
 		}
 	}
-	
+
 	return mac;
 }
-	
+
 char* getcpuid()
 {
 	char* serial = NULL;
@@ -484,9 +484,9 @@ char* getcpuid()
 		int mac_int = 0;
 		int mac1_int = 0;
 		int mac2_int = 0;
-	
+
 		char* mac = NULL;
-		
+
 		if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1)
 			mac = getmacfromcmdline();
 		else
@@ -545,14 +545,14 @@ char* getcpuid()
 		}
 
 		free(ret); ret = NULL;
-		
+
 		if(mac1 != NULL)
 		{
 			sscanf(mac1, "%X", &mac1_int);
 			mac1_int = strtol(mac1 , NULL, 16);
 			free(mac1), mac1 = NULL;
 		}
-	
+
 		if(mac2 != NULL)
 		{
 			sscanf(mac2, "%X", &mac2_int);
@@ -562,16 +562,16 @@ char* getcpuid()
 
 		free(tmpstr); tmpstr = NULL;
 		free(mac); mac = NULL;
-	
+
 		mac_int = mac1_int + mac2_int;
 		int cpuid = 7594;
-		mac_int += cpuid;	
-	
+		mac_int += cpuid;
+
 		buffer = malloc(50);
 		if(buffer == NULL)
 			return NULL;
 		sprintf(buffer, "%d", mac_int);
-		serial = ostrcat("AA040127", buffer, 0, 0);				
+		serial = ostrcat("AA040127", buffer, 0, 0);
 		free(buffer);
 	}
 
@@ -584,9 +584,9 @@ char* gettimeinfo()
 	cmd = ostrcat(cmd, "cat", 1, 0);
 	cmd = ostrcat(cmd, " /", 1, 0);
 	cmd = ostrcat(cmd, "etc", 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);	
+	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, "image-version", 1, 0);
-	cmd = ostrcat(cmd, " | ", 1, 0);	
+	cmd = ostrcat(cmd, " | ", 1, 0);
 	cmd = ostrcat(cmd, "cut", 1, 0);
 	cmd = ostrcat(cmd, " -d= ", 1, 0);
 	cmd = ostrcat(cmd, "-f2", 1, 0);
@@ -601,9 +601,9 @@ char* gettimeinfovar()
 	cmd = ostrcat(cmd, "var", 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, "etc", 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);	
+	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, ".image-version", 1, 0);
-	cmd = ostrcat(cmd, " | ", 1, 0);	
+	cmd = ostrcat(cmd, " | ", 1, 0);
 	cmd = ostrcat(cmd, "cut", 1, 0);
 	cmd = ostrcat(cmd, " -d= ", 1, 0);
 	cmd = ostrcat(cmd, "-f2", 1, 0);
@@ -750,11 +750,11 @@ void checkserial(char* input)
 	{
 		char* blackfile = NULL;
 		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
-	
+
 		count = 0;
 		if(blackfile != NULL)
 			ret = strsplit(blackfile, "\n", &count);
-	
+
 		if(ret != NULL)
 		{
 			for(i = 0; i < count; i++)
@@ -775,7 +775,7 @@ void checkserial(char* input)
 					if(tmp != NULL && PLUGINVERSION == atoi(tmp))
 					{
 						status.security = 0;
-						printf("error: 9\n");		
+						printf("error: 9\n");
 						destroy();
 						blacklist = 1;
 						break;
@@ -851,7 +851,7 @@ int checkprozess(char* input)
 	if(ostrcmp(tmpstr, "0") == 0)
 		ret = 0;
 	else
-		ret = 1;	
+		ret = 1;
 
 //	printf("checkprozess: ret=%d\n", ret);
 	free(tmpstr), tmpstr = NULL;
@@ -878,7 +878,7 @@ void startnet()
 			free(cmd); cmd = NULL;
 		}
 		free(tmpstr); tmpstr = NULL;
-	
+
 		cmd = ostrcat(cmd, "/", 1, 0);
 		cmd = ostrcat(cmd, "usr", 1, 0);
 		cmd = ostrcat(cmd, "/", 1, 0);
@@ -906,7 +906,7 @@ void killnet()
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "emu.sh stop", 1, 0);
 		system(cmd);
-		free(cmd); cmd = NULL;	
+		free(cmd); cmd = NULL;
 
 		cmd = ostrcat(cmd, "killall", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
@@ -918,7 +918,7 @@ void killnet()
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "vsftpd", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "oscam", 1, 0);		
+		cmd = ostrcat(cmd, "oscam", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "mgcamd", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
@@ -952,7 +952,7 @@ void killnet()
 
 		cmd = ostrcat(cmd, "emu.sh stop > /dev/null 2>&1", 1, 0);
 		system(cmd);
-		free(cmd); cmd = NULL;	
+		free(cmd); cmd = NULL;
 	}
 }
 
@@ -1000,9 +1000,9 @@ void destroy()
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, "mnt", 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, "swapextensions", 1, 0);	
+	cmd = ostrcat(cmd, "swapextensions", 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, "etc", 1, 0);	
+	cmd = ostrcat(cmd, "etc", 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, ".vnumber", 1, 0);
 	if(file_exist(cmd) == 0)
@@ -1012,7 +1012,7 @@ void destroy()
 			fclose(fd);
 	}
 	free(cmd),cmd = NULL;
-	
+
 	// /dev/mtd2
 	mtd[0] = 0x2f;
 	mtd[1] = 0x64;
@@ -1024,10 +1024,10 @@ void destroy()
 	mtd[7] = 0x64;
 	mtd[8] = 0x32;
 	mtd[9] = '\0';
-		
+
 	if((fd = fopen(mtd, "w")) == NULL)
 		return;
-		
+
 	buf = calloc(1, MINMALLOC);
 	if(buf == NULL)
 	{
@@ -1081,8 +1081,8 @@ int checkpluginskip(char* name)
 	else if(ostrcmp(name, "DVD Player") == 0) return 1;
 	else if(ostrcmp(name, "File Manager") == 0) return 1;
 	else if(ostrcmp(name, "GmediaRender") == 0) return 1;
-	else if(ostrcmp(name, "Facebook") == 0) return 1;		
-	else if(ostrcmp(name, "hbbtv Browser") == 0) return 1;		
+	else if(ostrcmp(name, "Facebook") == 0) return 1;
+	else if(ostrcmp(name, "hbbtv Browser") == 0) return 1;
 	else if(ostrcmp(name, "IMDb") == 0) return 1;
 	else if(ostrcmp(name, "IMDb-API") == 0) return 1;
 	else if(ostrcmp(name, "IP-Kammera") == 0) return 1;
@@ -1102,13 +1102,13 @@ int checkpluginskip(char* name)
 	else if(ostrcmp(name, "Softcam Panel") == 0) return 1;
 	else if(ostrcmp(name, "Stock") == 0) return 1;
 	else if(ostrcmp(name, "Stop if not used") == 0) return 1;
-	else if(ostrcmp(name, "Streaminfo") == 0) return 1;	
+	else if(ostrcmp(name, "Streaminfo") == 0) return 1;
 	else if(ostrcmp(name, "TiTan Mediathek") == 0) return 1;
 	else if(ostrcmp(name, "Titan Media Center") == 0) return 1;
 	else if(ostrcmp(name, "TMDb") == 0) return 1;
 	else if(ostrcmp(name, "TopfieldVFD") == 0) return 1;
 	else if(ostrcmp(name, "Weather") == 0) return 1;
-	else if(ostrcmp(name, "zapback (Werbezapper)") == 0) return 1;	
+	else if(ostrcmp(name, "zapback (Werbezapper)") == 0) return 1;
 	else if(ostrcmp(name, "Reader Config") == 0) return 1;
 
 	return 0;
@@ -1133,7 +1133,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("callmon_main", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("cinterface", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("dlna", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("dvdplayer", child->name) == 0) child->locked = flag;			
+			else if(ostrcmp("dvdplayer", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("extensionsmenu", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("eraseswap", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("facebook", child->name) == 0) child->locked = flag;
@@ -1144,7 +1144,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("instar", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("keylock", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("lcdpearl1", child->name) == 0) child->locked = flag;
-			else if(ostrcmp("lcdsamsung", child->name) == 0) child->locked = flag;	
+			else if(ostrcmp("lcdsamsung", child->name) == 0) child->locked = flag;
 //			else if(ostrcmp("mediacenter", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("mboxinfo", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("networkbrowser", child->name) == 0) child->locked = flag;
@@ -1221,7 +1221,7 @@ void setskinnodeslocked(int flag)
 			{
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
-		
+
 			if(checkbox("UFS910") == 1)
 			{
 				if(ostrcmp("unlock", child->name) == 0) child->locked = 1;
@@ -1245,15 +1245,15 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("fancontrol", child->name) == 0) child->locked = 1;
 			}
 
-			// Hide cec when sh4 
-#ifndef MIPSEL 
-			if(ostrcmp("ceccontrol", child->name) == 0) child->locked = 1; 
+			// Hide cec when sh4
+#ifndef MIPSEL
+			if(ostrcmp("ceccontrol", child->name) == 0) child->locked = 1;
 #endif
 
-			// Hid Pip 
+			// Hid Pip
 			if(checkchipset("BCM7424") != 1) //inihdp
 			{
-				if(ostrcmp("settings_pip", child->name) == 0) child->locked = 1; 
+				if(ostrcmp("settings_pip", child->name) == 0) child->locked = 1;
 			}
 
 #ifdef MIPSEL
@@ -1300,7 +1300,7 @@ void setskinnodeslocked(int flag)
 				if(checkbox("UFS922") == 1) child->locked = 0;
 				if(checkbox("UFC960") == 1) child->locked = 0;
 			}
-			
+
 			child = child->next;
 		}
 		node = node->next;
@@ -1374,7 +1374,7 @@ int checkrealbox(char* box)
 
 	if(ostrcmp(boxversion, box) == 0)
 		ret = 1;
-	
+
 	free(boxversion); boxversion = NULL;
 
 	return ret;
@@ -1436,7 +1436,7 @@ void checkgthread()
 		status.sleepcount = 0;
 		status.stats = 0;
 	}
-	
+
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 }
@@ -1488,7 +1488,7 @@ void guestthread()
 		}
 		else
 		{
-			// user login	
+			// user login
 			debug(99, "Community connecting: UserAuth OK");
 			debug(199, "Community connecting: UserAuth OK");
 			debug(299, "Community connecting: UserAuth OK");
@@ -1497,7 +1497,7 @@ void guestthread()
 			if(!file_exist("/mnt/swapextensions/etc/.codecpack"))
 			{
 				debug(199, "Community connecting: set codecpack");
-				system("touch /mnt/swapextensions/etc/.codecpack");	
+				system("touch /mnt/swapextensions/etc/.codecpack");
 			}
 
 			debug(199, "Community connecting: set nopluginversion");
@@ -1508,7 +1508,7 @@ void guestthread()
 			if(!file_exist("/var/etc/.tpkupgrade"))
 			{
 				debug(199, "Community connecting: tpk upgrade");
-				screenextensions(3, NULL, NULL, 1);	
+				screenextensions(3, NULL, NULL, 1);
 			}
 */
 		}
@@ -1519,7 +1519,7 @@ void guestthread()
 int vbulletin_userauth(char* link, char* user, char* pass)
 {
 	debug(199, "vbulletin user: %s", user);
-	debug(199, "vbulletin pass: %s", pass);	
+	debug(199, "vbulletin pass: %s", pass);
 	debug(199, "vbulletin url: %s", link);
 
 	int ret = 0;
@@ -1604,10 +1604,10 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		boxpath = ostrcat("/forum/forumdisplay.php?390", NULL, 0, 0);
 
 	if(user != NULL && pass != NULL)
-	{	
+	{
 		send = ostrcat(send, "GET ", 1, 0);
 		send = ostrcat(send, tmppath, 1, 0);
-		send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+		send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
 		send = ostrcat(send, tmphost, 1, 0);
 		send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
 		send = ostrcat(send, "\r\nConnection: close", 1, 0);
@@ -1616,7 +1616,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		debug(199, "#############################################################################################################");
 		debug(199, "send1: %s", send);
 		debug(199, "#############################################################################################################");
-	
+
 		tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 		debug(199, "tmpstr: %s", tmpstr);
 
@@ -1628,18 +1628,18 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		debug(199, "cookie3: %s", cookie3);
 		cookie4 = string_resub("bb_forum_view=", ";", tmpstr, 0);
 		debug(199, "cookie4: %s", cookie4);
-	
+
 		free(send), send = NULL;
 		free(tmpstr), tmpstr = NULL;
-	
+
 		hash = ostrcat("vb_login_username=", user, 0, 0);
 		hash = ostrcat(hash, "&vb_login_password=&vb_login_password_hint=Kennwort&s=&securitytoken=guest&do=login&vb_login_md5password=", 1, 0);
 		hash = ostrcat(hash, MDString(pass), 1, 1);
 		hash = ostrcat(hash, "&vb_login_md5password_utf=", 1, 0);
 		hash = ostrcat(hash, MDString(pass), 1, 1);
-	
+
 		hashlen = oitoa(strlen(hash));
-	
+
 		send = ostrcat(send, "POST ", 1, 0);
 		send = ostrcat(send, tmppath, 1, 0);
 		send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
@@ -1654,55 +1654,55 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		send = ostrcat(send, boxpath, 1, 0);
 		send = ostrcat(send, "\r\nCookie: bb_sessionhash=", 1, 0);
 		send = ostrcat(send, cookie1, 1, 0);
-		send = ostrcat(send, "; bb_lastvisit=", 1, 0);	
+		send = ostrcat(send, "; bb_lastvisit=", 1, 0);
 		send = ostrcat(send, cookie2, 1, 0);
-		send = ostrcat(send, "; bb_lastactivity=", 1, 0);	
+		send = ostrcat(send, "; bb_lastactivity=", 1, 0);
 		send = ostrcat(send, cookie3, 1, 0);
-		send = ostrcat(send, "; bb_forum_view=", 1, 0);	
+		send = ostrcat(send, "; bb_forum_view=", 1, 0);
 		send = ostrcat(send, cookie4, 1, 0);
-	
-		send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);	
+
+		send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 		send = ostrcat(send, hash, 1, 0);
 		free(hash); hash = NULL;
 		free(hashlen); hashlen = NULL;
-	
+
 		debug(199, "#############################################################################################################");
 		debug(199, "send2: %s", send);
 		debug(199, "#############################################################################################################");
-	
+
 		tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 		debug(199, "tmpstr: %s", tmpstr);
-	
+
 		free(cookie1), cookie1 = NULL;
 		cookie1 = string_resub("bb_sessionhash=", ";", tmpstr, 0);
 		debug(199, "cookie1: %s", cookie1);
-	
+
 		free(send); send = NULL;
 		free(tmpstr); tmpstr = NULL;
-	
+
 		send = ostrcat(send, "GET ", 1, 0);
 		send = ostrcat(send, boxpath, 1, 0);
-		send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+		send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
 		send = ostrcat(send, tmphost, 1, 0);
 		send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
 		send = ostrcat(send, "\r\nConnection: close", 1, 0);
 		send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);
-		send = ostrcat(send, "\r\nReferer: ", 1, 0);	
+		send = ostrcat(send, "\r\nReferer: ", 1, 0);
 		send = ostrcat(send, link, 1, 0);
 		send = ostrcat(send, "\r\nCookie: bb_lastvisit=", 1, 0);
 		send = ostrcat(send, cookie2, 1, 0);
-		send = ostrcat(send, "; bb_forum_view=", 1, 0);	
+		send = ostrcat(send, "; bb_forum_view=", 1, 0);
 		send = ostrcat(send, cookie4, 1, 0);
-		send = ostrcat(send, "; bb_lastactivity=", 1, 0);	
+		send = ostrcat(send, "; bb_lastactivity=", 1, 0);
 		send = ostrcat(send, cookie3, 1, 0);
-		send = ostrcat(send, "; bb_sessionhash=", 1, 0);	
+		send = ostrcat(send, "; bb_sessionhash=", 1, 0);
 		send = ostrcat(send, cookie1, 1, 0);
 		send = ostrcat(send, "\r\n\r\n", 1, 0);
-	
+
 		debug(199, "#############################################################################################################");
 		debug(199, "send3: %s", send);
 		debug(199, "#############################################################################################################");
-	
+
 		tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 		debug(199, "tmpstr: %s", tmpstr);
 
@@ -1712,13 +1712,13 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, boxpath, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
 	send = ostrcat(send, "\r\nConnection: close", 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);
 	send = ostrcat(send, "\r\nCookie: bb_sessionhash=", 1, 0);
-	send = ostrcat(send, cookie1, 1, 0);	
+	send = ostrcat(send, cookie1, 1, 0);
 	send = ostrcat(send, "\r\n\r\n", 1, 0);
 
 	debug(199, "#############################################################################################################");
@@ -1739,19 +1739,19 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	if(status.stats == 1)
 	{
 		id = getcpuid();
-			
+
 		int blacklist = 0;
 		int count = 0, i = 0;
 		struct splitstr* ret1 = NULL;
-	
+
 		//Blacklist check
 		char* blackfile = NULL;
 		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
-	
+
 		count = 0;
 		if(blackfile != NULL)
 			ret1 = strsplit(blackfile, "\n", &count);
-	
+
 		if(ret1 != NULL)
 		{
 			for(i = 0; i < count; i++)
@@ -1773,7 +1773,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 					{
 						status.security = 0;
 						blacklist = 1;
-						printf("error: 10\n");		
+						printf("error: 10\n");
 						destroy();
 						break;
 					}
@@ -1782,24 +1782,24 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		}
 		free(ret1); ret1 = NULL;
 		free(blackfile);
-	
+
 /////////////
-	
+
 		char* authfile = NULL, *idextra = NULL;
 		authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
-	
+
 		count = 0;
 		i = 0;
-	
+
 		ret1 = strsplit(authfile, "\n", &count);
 		int max = count;
-	
+
 		for( i = 0; i < max; i++)
 		{
 			int count1 = 0;
 			struct splitstr* ret2 = NULL;
-			ret2 = strsplit((&ret1[i])->part, ",", &count1); 
-	
+			ret2 = strsplit((&ret1[i])->part, ",", &count1);
+
 			if(ostrcmp(id, (&ret2[0])->part) == 0)
 			{
 				idextra = ostrcat((&ret2[1])->part, NULL, 0, 0);
@@ -1828,7 +1828,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 //#endif
 
 /////////////
-	
+
 		ip = getispip();
 		if(ip == NULL)
 			ip = getispip();
@@ -1836,9 +1836,9 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 			ip = getispip();
 		if(ip == NULL)
 			ip = getispip();
-	
+
 		struct inetwork* net = getinetworkbydevice("eth0");
-	
+
 		if(net != NULL)
 		{
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1)
@@ -1848,7 +1848,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		}
 		else
 			mac = ostrcat(mac, "error", 1, 0);
-	
+
 		hash = ostrcat(hash, "id => ", 1, 0);
 		hash = ostrcat(hash, id, 1, 0);
 		free(id), id = NULL;
@@ -1899,7 +1899,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 			hash = ostrcat(hash, "guest", 1, 0);
 		else
 			hash = ostrcat(hash, user, 1, 0);
-	
+
 		unsigned char* buf = NULL;
 		char* pw = getserialpw();
 		buf = oencrypt(pw, hash, strlen(hash));
@@ -1911,12 +1911,12 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		free(buf), buf = NULL;
 		hash = ostrcat(hash, "&len=", 1, 0);
 		hash = ostrcat(hash, oitoa(buflen), 1, 1);
-		
+
 #ifdef OBI
 		debug(299, "hash: %s", hash);
 #endif
 		hashlen = oitoa(strlen(hash));
-	
+
 		send = ostrcat(send, "POST ", 1, 0);
 		send = ostrcat(send, "/control/", 1, 0);
 		send = ostrcat(send, " HTTP/1.0\r\n", 1, 0);
@@ -1924,7 +1924,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		send = ostrcat(send, hashlen, 1, 0);
 		send = ostrcat(send, "\r\nAuthorization: Basic ", 1, 0);
 		send = ostrcat(send, HTTPAUTH, 1, 0);
-		send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
+		send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);
 		send = ostrcat(send, "\r\nHost: ", 1, 0);
 		send = ostrcat(send, "atemio.dyndns.tv", 1, 0);
 		send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", 1, 0);
@@ -1986,17 +1986,17 @@ struct update* createupdatelist(int mode)
 	newnode->auth = ostrcat(newnode->auth, " JNHZbghnjuz", 1, 0);
 	newnode->imgtype = 0;
 
-	if(file_exist("/etc/.beta")) newnode->imgtype = 1;	
+	if(file_exist("/etc/.beta")) newnode->imgtype = 1;
 
 	if(mode == 0)
-	{	
+	{
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, newnode->auth, 1, 0);
 		if(newnode->imgtype == 1)
 			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 		else
-			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);		
+			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 		system(cmd);
 		free(cmd),cmd = NULL;
 
@@ -2012,7 +2012,7 @@ struct update* createupdatelist(int mode)
 		if(file_exist("/var/backup"))
 			newnode->filepath = ostrcat(newnode->filepath, "/var/backup", 1, 0);
 		else
-			newnode->filepath = ostrcat(newnode->filepath, "/tmp", 1, 0);		
+			newnode->filepath = ostrcat(newnode->filepath, "/tmp", 1, 0);
 		newnode->type = ostrcat(newnode->type, "tmp", 1, 0);
 	}
 	else if (mode == 2)
@@ -2023,7 +2023,7 @@ struct update* createupdatelist(int mode)
 		if(newnode->imgtype == 1)
 			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 		else
-			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
+			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 		system(cmd);
 		free(cmd),cmd = NULL;
 		newnode->skinname = "systemupdate_usb_online_menu";
@@ -2038,7 +2038,7 @@ struct update* createupdatelist(int mode)
 		if(file_exist("/var/backup"))
 			newnode->filepath = ostrcat(newnode->filepath, "/var/backup", 1, 0);
 		else
-			newnode->filepath = ostrcat(newnode->filepath, "/tmp", 1, 0);	
+			newnode->filepath = ostrcat(newnode->filepath, "/tmp", 1, 0);
 		newnode->type = ostrcat(newnode->type, "tmp", 1, 0);
 	}
 
@@ -2131,9 +2131,9 @@ char* getabout()
 		tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
 	}
 	else if(status.security == 3)
-		tmpstr = ostrcat(tmpstr, _("UFS910 free license"), 1, 0);	
+		tmpstr = ostrcat(tmpstr, _("UFS910 free license"), 1, 0);
 	else if(status.security == 4)
-		tmpstr = ostrcat(tmpstr, _("Atemio free license"), 1, 0);	
+		tmpstr = ostrcat(tmpstr, _("Atemio free license"), 1, 0);
 	else if(status.security == 5)
 		tmpstr = ostrcat(tmpstr, _("Dev free license"), 1, 0);
 	else
@@ -2146,12 +2146,13 @@ char* getabout()
 	text = ostrcat(text, ": ", 1, 0);
 	text = ostrcat(text, COPYRIGHT, 1, 0);
 	text = ostrcat(text, "\n\n", 1, 0);
-		
+
 	while(dvbnode != NULL)
 	{
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
 		{
-			text = ostrcat(text, _("Tuner"), 1, 0);
+			text = ostrcat(text, "Tuner ", 1, 0);
+			text = ostrcat(text, oitoa(dvbnode->devnr) 1, 1);
 			text = ostrcat(text, ": ", 1, 0);
 			if(dvbnode->feinfo->name != NULL)
 				text = ostrcat(text, dvbnode->feinfo->name, 1, 0);
@@ -2161,13 +2162,13 @@ char* getabout()
 			text = ostrcat(text, _("Tunertype"), 1, 0);
 			text = ostrcat(text, ": ", 1, 0);
 
-			tmpstr = fegettypestr(dvbnode);	
+			tmpstr = fegettypestr(dvbnode);
 			text = ostrcat(text, tmpstr, 1, 1);
 			text = ostrcat(text, "\n\n", 1, 0);
 		}
 		dvbnode = dvbnode->next;
 	}
-	
+
 	tmpstr = readfiletomem("/tmp/.firmware.log", 0);
 	text = ostrcat(text, tmpstr, 1, 1);
 
