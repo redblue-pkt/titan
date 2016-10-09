@@ -42,7 +42,7 @@ init()
 
 mainmenu()
 {
-	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/categoty.jpg#categoty.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -55,7 +55,7 @@ category()
 		do
 		TITLE="Page $i"
 		echo "$TITLE#$SRC $SRC page category '?p=$i&q=&sort=1'#http://atemio.dyndns.tv/mediathek/menu/page.jpg#page.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
-		i=`expr $i + 1` 
+		i=`expr $i + 1`
 		done
 	fi
 	echo "/tmp/tithek/$PARSER.$INPUT.list"
@@ -75,14 +75,14 @@ page()
 			URL=`echo $ROUND | cut -d'"' -f1`
 			PIC=`echo $ROUND | sed 's!src="!\npic="!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
 			TITLE=`echo $ROUND | sed 's!title="!\ntitle="!g' | grep ^title= | cut -d'"' -f2 | tail -n1`
-			if [ -z "$TITLE" ];then 
+			if [ -z "$TITLE" ];then
 				TITLE=`echo $ROUND | cut -d"<" -f2 | cut -d">" -f2`
 			fi
-		
-			if [ -z "$PIC" ] || [ "$PIC" = "http:" ]; then  
+
+			if [ -z "$PIC" ] || [ "$PIC" = "http:" ]; then
 				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 			fi
-		
+
 			TITLE=`echo $URL | tr '/' '\n' | tail -n1 | sed 's/_/ /g'`
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
@@ -94,7 +94,7 @@ page()
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#91"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
-	
+
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
