@@ -2152,7 +2152,7 @@ char* getabout()
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
 		{
 			text = ostrcat(text, "Tuner ", 1, 0);
-			text = ostrcat(text, oitoa(dvbnode->devnr) 1, 1);
+			text = ostrcat(text, oitoa(dvbnode->devnr), 1, 1);
 			text = ostrcat(text, ": ", 1, 0);
 			if(dvbnode->feinfo->name != NULL)
 				text = ostrcat(text, dvbnode->feinfo->name, 1, 0);
