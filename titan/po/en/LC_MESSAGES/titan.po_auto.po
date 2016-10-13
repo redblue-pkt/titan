@@ -12113,36 +12113,3 @@ msgstr ""
 #: skin_default_keyskin.xml.h:78
 msgid "z"
 msgstr ""
-
-#~ msgid "browser"
-#~ msgstr "Browser"
-
-#~ msgid "emus"
-#~ msgstr "Softcams"
-
-#~ msgid "fonts"
-#~ msgstr "Fonts"
-
-#~ msgid "infos"
-#~ msgstr "Infos"
-
-#~ msgid "lcdpearlskins"
-#~ msgstr "Pearl LCD Skins"
-
-#~ msgid "lcdsamsungskins"
-#~ msgstr "Samsung LCD Skins"
-
-#~ msgid "picons"
-#~ msgstr "Picons"
-
-#~ msgid "player"
-#~ msgstr "Player"
-
-#~ msgid "settings"
-#~ msgstr "Settings"
-
-#~ msgid "skins"
-#~ msgstr "Skins"
-
-#~ msgid "tools"
-#~ msgstr "Tools"
