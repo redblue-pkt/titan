@@ -304,14 +304,30 @@ void playerstopts(int flag, int flag1)
 
 void playerresetts()
 {
-	audiostop(status.aktservice->audiodev);
-	videostop(status.aktservice->videodev, 0);
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	{
+		videofreeze(status.aktservice->videodev);
+		audiopause(status.aktservice->audiodev);
+	}
+	else
+	{
+		audiostop(status.aktservice->audiodev);
+		videostop(status.aktservice->videodev, 0);
+	}
 #ifdef MIPSEL
 	videoclearbuffer(status.aktservice->videodev);
 	audioclearbuffer(status.aktservice->audiodev);
 #endif
-	videoplay(status.aktservice->videodev);
-	audioplay(status.aktservice->audiodev);
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	{
+		videocontinue(status.aktservice->videodev);
+		audiocontinue(status.aktservice->audiodev);
+	}
+	else
+	{
+		videoplay(status.aktservice->videodev);
+		audioplay(status.aktservice->audiodev);
+	}
 }
 
 void playercontinuets()
