@@ -22,8 +22,13 @@ void hdmiEvent()
 		{
 			if(FD_ISSET(status.hdmiFd, &rfds))
 			{
+#ifdef DREAMBOX
+				len = ioctl(status.hdmiFd, 2, &rxmessage);
+				unsigned int val = 0;
+				ioctl(status.hdmiFd, 4, &val);	
+#else
 				len = read(status.hdmiFd, &rxmessage, sizeof(struct cec_message));
-
+#endif
 				if(len > 0)
 				{
 					printf("reveived adress: %02x datalen: %02x cmd: %02x\n", rxmessage.address, rxmessage.length, rxmessage.data[0]);
@@ -59,7 +64,13 @@ void sendMessageReal(struct cec_message message)
 			printf(" %02X", message.data[i]);
 		}
 		printf("\n");
-		int ret = write(status.hdmiFd, &message, 2 + message.length);
+		int ret = 0;
+#ifdef DREAMBOX
+		message.flag = 1;
+		ret = ioctl(status.hdmiFd, 3, &message);
+#else
+		ret = write(status.hdmiFd, &message, 2 + message.length);
+#endif
 		printf("%i Bytes wurden gesendet\n", ret);
 	}
 }
@@ -295,10 +306,15 @@ void cecinit()
 	cec_physicalAddress[1] = 0x00;
 	cec_logicalAddress = 1;
 	cec_deviceType = 1; /* default: recorder */
-	
+
+#ifdef DREAMBOX	
+	status.hdmiFd = open("/dev/misc/hdmi_cec0", O_RDWR | O_NONBLOCK);
+	unsigned int val = 0;
+	ioctl(status.hdmiFd, 4, &val);
+#else
 	status.hdmiFd = open("/dev/hdmi_cec", O_RDWR | O_NONBLOCK);
-		
 	ioctl(status.hdmiFd, 0); /* flush old messages */
+#endif
 
 	setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
 	

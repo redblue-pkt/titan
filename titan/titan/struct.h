@@ -2047,12 +2047,32 @@ typedef enum {
 
 #ifdef MIPSEL
 //fuer cec Mipsel
+
+#ifdef DREAMBOX
+struct cec_message
+{
+	unsigned char address;
+	unsigned char data[16];
+	unsigned char length;
+	unsigned char flag;
+}__attribute__((packed));
+struct cec_rx_message
+{
+	unsigned char address;
+	unsigned char destination;
+	unsigned char data[16];
+	unsigned char length;
+}__attribute__((packed));
+
+
+#else
 struct cec_message
 {
 unsigned char address;
 unsigned char length;
 unsigned char data[256];
 }__attribute__((packed));
+#endif
 
 unsigned char cec_physicalAddress[2];
 unsigned char cec_logicalAddress;
