@@ -306,6 +306,8 @@ void playerresetts()
 {
 #ifdef DREAMBOX
 	videofreeze(status.aktservice->videodev);
+	dmxstart(status.aktservice->dmxaudiodev);
+	audioplay(status.aktservice->audiodev);
 	audiopause(status.aktservice->audiodev);
 #else
 	audiostop(status.aktservice->audiodev);
@@ -452,7 +454,12 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 void playerffts(int speed)
 {
 #ifdef MIPSEL
-	//audiostop(status.aktservice->audiodev);
+	audiostop(status.aktservice->audiodev);
+
+#ifdef DREAMBOX 
+	dmxstop(status.aktservice->dmxaudiodev);
+#endif
+
 	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
 	videocontinue(status.aktservice->videodev);
@@ -465,6 +472,11 @@ void playerslowts(int speed)
 {
 #ifdef MIPSEL
 	audiostop(status.aktservice->audiodev);
+	
+#ifdef DREAMBOX 
+	dmxstop(status.aktservice->dmxaudiodev);
+#endif	
+
 	videoslowmotion(status.aktservice->videodev, speed);
 	videofastforward(status.aktservice->videodev, 0);
 	videocontinue(status.aktservice->videodev);
@@ -487,6 +499,9 @@ void playerfrts(int speed, int flag)
 	speed *= -1;
 #ifdef MIPSEL
 	audiostop(status.aktservice->audiodev);
+#ifdef DREAMBOX 
+	dmxstop(status.aktservice->dmxaudiodev);
+#endif
 	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
 	videocontinue(status.aktservice->videodev);
