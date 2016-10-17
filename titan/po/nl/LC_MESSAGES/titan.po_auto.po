@@ -1395,7 +1395,7 @@ msgstr "Favorieten browser"
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1421
+#: player.h:1433
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -10706,8 +10706,8 @@ msgstr "NFS server"
 #: autotimer.c:486 avsettings.h:162 avsettings.h:213 avsettings.h:218
 #: avsettings.h:230 avsettings.h:242 avsettings.h:255 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
-#: blindscanadjust.h:191 cec.h:143 cec.h:147 cec.h:151 cec.h:155 cec.h:159
-#: cec.h:163 cec.h:167 cec.h:171 cec.h:175 dlna.h:276 epgsettings.h:135
+#: blindscanadjust.h:191 cec.h:154 cec.h:158 cec.h:162 cec.h:166 cec.h:170
+#: cec.h:174 cec.h:178 cec.h:182 cec.h:186 dlna.h:276 epgsettings.h:135
 #: epgsettings.h:188 epgsettings.h:197 epgsettings.h:201 epgsettings.h:206
 #: epgsettings.h:211 harddisk.h:236 harddisk.h:241 harddisk.h:255
 #: harddisk.h:260 harddisk.h:274 harddisk.h:279 harddisk.h:293 harddisk.h:298
@@ -12029,8 +12029,8 @@ msgstr "Geel"
 #: adjust.h:227 adjust.h:234 adjust.h:238 adjust.h:244 adjust.h:248
 #: autotimer.c:454 autotimer.c:487 avsettings.h:163 avsettings.h:214
 #: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
-#: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144 cec.h:148 cec.h:152
-#: cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172 cec.h:176 dlna.h:277
+#: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:155 cec.h:159 cec.h:163
+#: cec.h:167 cec.h:171 cec.h:175 cec.h:179 cec.h:183 cec.h:187 dlna.h:277
 #: epgsettings.h:136 epgsettings.h:189 epgsettings.h:198 harddisk.h:235
 #: harddisk.h:242 harddisk.h:254 harddisk.h:261 harddisk.h:273 harddisk.h:280
 #: harddisk.h:292 harddisk.h:299 httpdfunc.h:3936 httpdfunc.h:3988
