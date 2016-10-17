@@ -23,7 +23,9 @@ void hdmiEvent()
 			if(FD_ISSET(status.hdmiFd, &rfds))
 			{
 #ifdef DREAMBOX
-				len = ioctl(status.hdmiFd, 2, &rxmessage);
+				ret = ioctl(status.hdmiFd, 2, &rxmessage);
+				if(ret == 0)
+					len = rxmessage.length;
 				unsigned int val = 0;
 				ioctl(status.hdmiFd, 4, &val);	
 #else
@@ -68,6 +70,8 @@ void sendMessageReal(struct cec_message message)
 #ifdef DREAMBOX
 		message.flag = 1;
 		ret = ioctl(status.hdmiFd, 3, &message);
+		if(ret == 0)
+			ret = 1 + message.length;
 #else
 		ret = write(status.hdmiFd, &message, 2 + message.length);
 #endif

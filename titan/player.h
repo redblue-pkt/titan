@@ -318,6 +318,8 @@ void playerresetts()
 #endif
 
 #ifdef DREAMBOX
+	videoslowmotion(status.aktservice->videodev, 0);
+	videofastforward(status.aktservice->videodev, 0);
 	videocontinue(status.aktservice->videodev);
 	audiocontinue(status.aktservice->audiodev);
 #else
@@ -450,7 +452,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 void playerffts(int speed)
 {
 #ifdef MIPSEL
-	audiostop(status.aktservice->audiodev);
+	//audiostop(status.aktservice->audiodev);
 	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
 	videocontinue(status.aktservice->videodev);
