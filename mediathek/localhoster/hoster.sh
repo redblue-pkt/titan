@@ -151,6 +151,6 @@ if [ "$TYPE" == "get" ];then
 		movshare) movshare $INPUT;;
 		wholecloud) movshare $INPUT;;
 		vidgg) movshare $INPUT;;
-		streamcloud) streamcloud $INPUT;;	
+		streamcloud1) streamcloud $INPUT;;	
 	esac
 fi
