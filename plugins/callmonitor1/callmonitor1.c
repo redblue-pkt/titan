@@ -10,7 +10,8 @@ char pluginpic[] = "%pluginpath%/callmonitor1/callmon1.png";
 char pluginscript[] = "%pluginpath%/callmonitor1/fritzbox_msg_new.sh";
 
 int pluginaktiv = 0;
-int pluginversion = PLUGINVERSION;
+//int pluginversion = PLUGINVERSION;
+int pluginversion = 999999;
 
 //wird beim laden ausgefuehrt
 void init(void)
