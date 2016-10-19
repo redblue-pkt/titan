@@ -33,6 +33,21 @@ void screenaudiotrack()
 	{
 		m_lock(&status.audiotrackmutex, 7);
 		node = status.aktservice->channel->audiotrack;
+		if(getconfigint("downmixinaudio", NULL) == 1)
+		{
+			tmp = addlistbox(audiotrack, listbox, tmp, 1);
+			if(tmp != NULL)
+			{
+				if(status.downmix == 1)
+					changetext(tmp, _("DOWNMIX OFF"));
+				else
+					changetext(tmp, _("DOWNMIX ON"));
+				tmp->type = CHOICEBOX;
+				tmp->del = 1;
+				tmp->handle = (char*)node;
+				changeinput(tmp, "");
+			}
+		}
 		while(node != NULL)
 		{
 			tmp = addlistbox(audiotrack, listbox, tmp, 1);
@@ -50,8 +65,8 @@ void screenaudiotrack()
 				}
 				else
 					changeinput(tmp, "");
-
-				if(treffer == 0) listbox->aktline++;
+				if(getconfigint("downmixinaudio", NULL) == 0)
+					if(treffer == 0) listbox->aktline++;
 			}
 			node = node->next;
 		}	
