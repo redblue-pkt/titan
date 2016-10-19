@@ -1634,6 +1634,8 @@ struct status
 	int getepgnextend;
 	int getepgnexttitle;
 	int getepgnexttimeremaining;
+	// downmix switch in audio menu (audiotrack.h)
+	int downmix;
 } status;
 
 struct fb
