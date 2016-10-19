@@ -106,33 +106,73 @@ void reportPhysicalAddress()
 
 void getAddressInfo()
 {
+	int hasdata = 0;
+	
 	if (status.hdmiFd >= 0)
 	{
+#if DREAMBOX
+		struct
+		{
+			unsigned char physical[2];
+			unsigned char logical;
+			unsigned char type;
+		} addressinfo;
+
+		if (ioctl(status.hdmiFd, 1, &addressinfo) >= 0)
+		{
+			hasdata = 1;
+			/* we do not get the device type, check the logical address to determine the type */
+			switch (addressinfo.logical)
+			{
+			case 0x1:
+			case 0x2:
+			case 0x9:
+				addressinfo.type = 1; /* recorder */
+				break;
+			case 0x3:
+			case 0x6:
+			case 0x7:
+			case 0xa:
+				addressinfo.type = 3; /* tuner */
+				break;
+			case 0x4:
+			case 0x8:
+			case 0xb:
+				addressinfo.type = 4; /* playback */
+				break;
+			}
+		}
+#else
 		struct
 		{
 			unsigned char logical;
 			unsigned char physical[2];
 			unsigned char type;
 		} addressinfo;
-	
 		if (ioctl(status.hdmiFd, 1, &addressinfo) < 0)
 		{
 			printf("ERROR: cec read AddressInfo");
 			return;
 		}
-		cec_deviceType = addressinfo.type;
-		cec_logicalAddress = addressinfo.logical;
-		printf("eHdmiCEC: detected deviceType: %02X\n", addressinfo.type);
-		printf("eHdmiCEC: detected logical address: %02X\n", addressinfo.logical);
-		printf("eHdmiCEC: detected physical address: %02X%02X\n", addressinfo.physical[0], addressinfo.physical[1]);
-		if (status.cec_fixedAddress == 0)
+		else
+			hasdata = 1;
+#endif
+		if(hasdata == 1)
 		{
-			if (memcmp(cec_physicalAddress, addressinfo.physical, sizeof(cec_physicalAddress)))
+			cec_deviceType = addressinfo.type;
+			cec_logicalAddress = addressinfo.logical;
+			printf("eHdmiCEC: detected deviceType: %02X\n", addressinfo.type);
+			printf("eHdmiCEC: detected logical address: %02X\n", addressinfo.logical);
+			printf("eHdmiCEC: detected physical address: %02X%02X\n", addressinfo.physical[0], addressinfo.physical[1]);
+			if (status.cec_fixedAddress == 0)
 			{
-				printf("eHdmiCEC: detected physical address change: %02X%02X --> %02X%02X\n", cec_physicalAddress[0], cec_physicalAddress[1], addressinfo.physical[0], addressinfo.physical[1]);
-				memcpy(cec_physicalAddress, addressinfo.physical, sizeof(cec_physicalAddress));
-				reportPhysicalAddress();
-				/* emit */ //addressChanged((cec_physicalAddress[0] << 8) | cec_physicalAddress[1]);
+				if (memcmp(cec_physicalAddress, addressinfo.physical, sizeof(cec_physicalAddress)))
+				{
+					printf("eHdmiCEC: detected physical address change: %02X%02X --> %02X%02X\n", cec_physicalAddress[0], cec_physicalAddress[1], addressinfo.physical[0], addressinfo.physical[1]);
+					memcpy(cec_physicalAddress, addressinfo.physical, sizeof(cec_physicalAddress));
+					reportPhysicalAddress();
+					/* emit */ //addressChanged((cec_physicalAddress[0] << 8) | cec_physicalAddress[1]);
+				}
 			}
 		}
 	}
@@ -366,6 +406,16 @@ void cecwakeup()
 	
 	if(getconfigint("cec_on", NULL) == 1)
 	{
+		if(getconfigint("cec_tv_switch", NULL) == 1)
+		{			
+			address = 0x0f;
+			cmd     = 0x82;
+			data[0] = cec_physicalAddress[0];
+			data[1] = cec_physicalAddress[1];
+			data[2] = '\0';
+			sendMessage(address, cmd, data, 2);
+			sleep(1);
+		}
 		if(getconfigint("cec_all_on", NULL) == 1)
 		{
 			address = 0x0f;
@@ -382,16 +432,6 @@ void cecwakeup()
 		{	
 			address = 0x00;
 			sendMessage(address, cmd, data, 0);
-			sleep(1);
-		}
-		if(getconfigint("cec_tv_switch", NULL) == 1)
-		{			
-			address = 0x0f;
-			cmd     = 0x82;
-			data[0] = cec_physicalAddress[0];
-			data[1] = cec_physicalAddress[1];
-			data[2] = '\0';
-			sendMessage(address, cmd, data, 2);
 			sleep(1);
 		}
 	}
