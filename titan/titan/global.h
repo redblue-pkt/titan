@@ -278,7 +278,16 @@ int setcecstandby(int flag)
 		}
 #else
 		if(flag == 0)
+		{
+			if(getconfigint("workpink", NULL) == 1);
+				setvideomode(getconfig("576p", NULL), 0);
 			cecwakeup();
+			if(getconfigint("workpink", NULL) == 1);
+			{
+				sleep(3);
+				setvideomode(getconfig("av_videomode", NULL), 0);
+			}
+		}
 		else
 		{
 			cecstandby();

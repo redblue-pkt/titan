@@ -183,6 +183,7 @@ void screencec()
 	struct skin* tmp = NULL;
 	struct skin* cec = getscreen("cec");
 	struct skin* listbox = getscreennode(cec, "listbox");
+	struct skin* workpink = getscreennode(cec, "workpink");
 	struct skin* cecon = getscreennode(cec, "cecon");
 	struct skin* alloff = getscreennode(cec, "alloff");
 	struct skin* allon = getscreennode(cec, "allon");
@@ -194,6 +195,10 @@ void screencec()
 	struct skin* cecfix = getscreennode(cec, "cecfix");
 	int rcret = 0;
 	int help = 0;	
+	
+	addchoicebox(workpink, "0", _("off"));
+	addchoicebox(workpink, "1", _("on"));
+	setchoiceboxselection(workpink, getconfig("workpink", NULL));
 	
 	addchoicebox(cecon, "0", _("no"));
 	addchoicebox(cecon, "1", _("yes"));
@@ -237,6 +242,7 @@ void screencec()
 	
 	if(getconfigint("cec_on", NULL) == 0)
 	{
+		workpink->hidden = YES;
 		alloff->hidden = YES;	
 		allon->hidden = YES;		
 		tvoff->hidden = YES;	
@@ -248,6 +254,7 @@ void screencec()
 	}
 	else
 	{
+		workpink->hidden = NO;
 		alloff->hidden = NO;	
 		allon->hidden = NO;		
 		tvoff->hidden = NO;	
@@ -271,6 +278,7 @@ void screencec()
 		{
 			if(ostrcmp(cecon->ret, "0") == 0)
 			{
+				workpink->hidden = YES;
 				alloff->hidden = YES;	
 				allon->hidden = YES;		
 				tvoff->hidden = YES;	
@@ -282,6 +290,7 @@ void screencec()
 			}
 			else
 			{
+				workpink->hidden = NO;
 				alloff->hidden = NO;	
 				allon->hidden = NO;		
 				tvoff->hidden = NO;	
@@ -296,6 +305,7 @@ void screencec()
 			break;
 		if(rcret == getrcconfigint("rcok", NULL))	
 		{
+			addconfig("workpink", workpink->ret);
 			addconfig("cec_on", cecon->ret);
 			addconfig("cec_all_off", alloff->ret);	
 			addconfig("cec_all_on", allon->ret);
@@ -406,16 +416,6 @@ void cecwakeup()
 	
 	if(getconfigint("cec_on", NULL) == 1)
 	{
-		if(getconfigint("cec_tv_switch", NULL) == 1)
-		{			
-			address = 0x0f;
-			cmd     = 0x82;
-			data[0] = cec_physicalAddress[0];
-			data[1] = cec_physicalAddress[1];
-			data[2] = '\0';
-			sendMessage(address, cmd, data, 2);
-			sleep(1);
-		}
 		if(getconfigint("cec_all_on", NULL) == 1)
 		{
 			address = 0x0f;
@@ -432,6 +432,16 @@ void cecwakeup()
 		{	
 			address = 0x00;
 			sendMessage(address, cmd, data, 0);
+			sleep(1);
+		}
+		if(getconfigint("cec_tv_switch", NULL) == 1)
+		{			
+			address = 0x0f;
+			cmd     = 0x82;
+			data[0] = cec_physicalAddress[0];
+			data[1] = cec_physicalAddress[1];
+			data[2] = '\0';
+			sendMessage(address, cmd, data, 2);
 			sleep(1);
 		}
 	}
