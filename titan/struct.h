@@ -205,7 +205,10 @@
 #define CUSTOMER_CERT "/mnt/swapextensions/etc/pem/customer.pem"
 #define DEVICE_CERT   "/mnt/swapextensions/etc/pem/device.pem"
 #define MAX_ELEMENTS    33
-#ifdef MIPSEL | SH4NEW
+#ifdef MIPSEL
+#define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
+#endif
+#ifdef SH4NEW
 #define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
 #endif
 
@@ -2097,7 +2100,28 @@ struct cert_ctx {
 	X509 *ci_device_cert;
 };
 
-#ifdef MIPSEL | SH4NEW
+#ifdef MIPSEL
+enum ca_descr_data_type {
+	CA_DATA_IV,
+	CA_DATA_KEY,
+};
+
+enum ca_descr_parity {
+	CA_PARITY_EVEN,
+	CA_PARITY_ODD,
+};
+
+struct ca_descr_data {
+	unsigned int index;
+	enum ca_descr_parity parity;
+	enum ca_descr_data_type data_type;
+	unsigned int length;
+	unsigned char *data;
+};
+
+#endif
+
+#ifdef SH4NEW
 enum ca_descr_data_type {
 	CA_DATA_IV,
 	CA_DATA_KEY,
