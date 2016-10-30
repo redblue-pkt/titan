@@ -47,11 +47,11 @@ category()
 {
 	if [ -e /etc/.beta ];then
 		echo "Live#$SRC $SRC livelist live de#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-		echo "Latest#$SRC $SRC videos latest en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+		echo "Latest#$SRC $SRC videos latest eng/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	else
-		echo "Latest#$SRC $SRC videos latest en/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+		echo "Latest#$SRC $SRC videos latest eng/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	fi
-	echo "Teams#$SRC $SRC submenu teams en/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Teams#$SRC $SRC submenu teams eng/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -64,7 +64,7 @@ videos()
 		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | sed 's!height=27!\nfound=!g' | grep '^found=' >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do
-			URL=`echo $ROUND | sed 's!<a href="/en/eventinfo/!\nurl="/en/eventinfo/!g' | grep ^url= | cut -d'"' -f2 | head -n1`
+			URL=`echo $ROUND | sed 's!<a href="/eng/eventinfo/!\nurl="/eng/eventinfo/!g' | grep ^url= | cut -d'"' -f2 | head -n1`
 			TITLE=`echo $ROUND | sed 's!width="30%"> <b>!\ntitle=<!g' | grep ^title= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`
 			SCORE=`echo $ROUND | sed 's!<font color="#949494"><b>!\nextra=<!g' | grep ^extra= | cut -d'<' -f2 | sed 's!&ndash;!-!g'`
 
@@ -144,8 +144,8 @@ submenu()
 		piccount=0
 
 		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$FROM.$FILENAME.1
-#		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | sed 's!<a href="/en/team/!\n<a href="/en/team/!g' | grep '^<a href="/en/team/' | tr ' ' '~' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
-		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | sed 's!<a href="/en/team/!\n<a href="/en/team/!g' | grep '^<a href="/en/team/' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+#		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | sed 's!<a href="/en/team/!\n<a href="/en/team/!g' | grep '^<a href="/eng/team/' | tr ' ' '~' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | sed 's!<a href="/en/team/!\n<a href="/en/team/!g' | grep '^<a href="/eng/team/' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do
 			URL="$SRC $SRC videos $INPUT `echo $ROUND | cut -d'"' -f2 | sed 's!/calendar/!/video/!g'`"
