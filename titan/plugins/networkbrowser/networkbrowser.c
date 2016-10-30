@@ -5,7 +5,6 @@
 #include "netlib/showmount.h"
 #include "netlib/smbinfo.h"
 #include "networkbrowser.h"
-#define INLINE
 
 char pluginname[] = "Networkbrowser";
 char plugindesc[] = "Networkbrowser";

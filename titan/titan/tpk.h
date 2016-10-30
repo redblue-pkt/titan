@@ -1443,7 +1443,7 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 	{
 		if(oldtype == DT_REG)
 		{
-			from = ostrcat(from, mkstmp(NULL), 1, 0);
+			from = ostrcat(from, tmpfile(NULL), 1, 0);
 			ret = tpkcreatefile("", to, from, 0, -1, 0);
 			if(ret != 0)
 			{
