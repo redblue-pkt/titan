@@ -5,6 +5,7 @@
 #include "netlib/showmount.h"
 #include "netlib/smbinfo.h"
 #include "networkbrowser.h"
+#define INLINE
 
 char pluginname[] = "Networkbrowser";
 char plugindesc[] = "Networkbrowser";
@@ -36,7 +37,7 @@ void init(void)
 	readscreen(tmpstr, 100, 1);
 	free(tmpstr); tmpstr = NULL;
 
-	debug(70, "Networkbrowser Plugin loadet !!!");
+	debug(70, "Networkbrowser Plugin loaded !!!");
 }
 
 //wird beim entladen ausgefuehrt

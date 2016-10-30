@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+#ifndef INLINE
+# define INLINE extern inline
+#endif
+
 // ca.h
 void sendSPDU(struct dvbdev* dvbnode, unsigned char tag, void *data, int len, int sessionnr, void *apdu, int alen);
 
