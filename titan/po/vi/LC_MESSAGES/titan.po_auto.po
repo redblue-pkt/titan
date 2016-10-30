@@ -2956,11 +2956,11 @@ msgstr ""
 msgid "Dvbapi"
 msgstr ""
 
-#: readerconfig.h:399 readerconfig.h:485
+#: readerconfig.h:399 readerconfig.h:484
 msgid "Dvbapi (disabled)"
 msgstr ""
 
-#: readerconfig.h:397 readerconfig.h:492
+#: readerconfig.h:397 readerconfig.h:491
 msgid "Dvbapi (enabled)"
 msgstr ""
 
@@ -3199,7 +3199,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
-#: readerconfig.h:498 readerconfig.h:499 record.h:90 record.h:387
+#: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:387
 #: record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -5866,7 +5866,7 @@ msgstr ""
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
-#: readerconfig.h:498 readerconfig.h:499 record.h:387 record.h:1160
+#: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
 #: record.h:1437 record.h:1689 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
@@ -6467,7 +6467,7 @@ msgstr "E"
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
-#: readerconfig.h:498 readerconfig.h:499 record.h:387 record.h:1160
+#: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
 #: record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
 #: rectimer.h:1417 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
@@ -6677,11 +6677,11 @@ msgstr ""
 msgid "Oscam config written to medium !"
 msgstr ""
 
-#: readerconfig.h:484
+#: readerconfig.h:483
 msgid "Oscam dvbapi config disabled !"
 msgstr ""
 
-#: readerconfig.h:491
+#: readerconfig.h:490
 msgid "Oscam dvbapi config enabled !"
 msgstr ""
 
@@ -7901,7 +7901,7 @@ msgstr " Khởi động lại mạng"
 msgid "Restart Network ?"
 msgstr "Khởi động lại mạng?"
 
-#: readerconfig.h:452 readerconfig.h:499
+#: readerconfig.h:452 readerconfig.h:498
 msgid "Restart Oscam ?"
 msgstr "Khởi động lại"
 
