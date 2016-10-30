@@ -280,7 +280,7 @@ void screenoscamconfig(struct oscam* node, char* file)
 
 	drawscreen(oscamconfig, 0, 0);
 	addscreenrc(oscamconfig, listbox);
-		
+
 	tmp = listbox->select;
 	while(1)
 	{
@@ -312,7 +312,7 @@ char* getoscamconfig()
 	int count = 0;
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmlist = NULL;
-	
+
 	if(file_exist("/mnt/swapextensions/keys/oscam.server"))
 	{
 		tmpmlist = addmenulist(&mlist, _("Use config from Flash (permanent)"), NULL, NULL, 0, 0);
@@ -321,7 +321,7 @@ char* getoscamconfig()
 		tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
 		count++;
 	}
-	
+
 	if(file_exist("/var/keys/oscam.server"))
 	{
 		tmpmlist = addmenulist(&mlist, _("Use config from Flash (temporary)"), NULL, NULL, 0, 0);
@@ -330,7 +330,7 @@ char* getoscamconfig()
 		tmpstr = ostrcat("/var", NULL, 0, 0);
 		count++;
 	}
-	
+
 	if(file_exist("/var/swap/keys/oscam.server"))
 	{
 		tmpmlist = addmenulist(&mlist, _("Use config from Stick or HDD"), NULL, NULL, 0, 0);
@@ -339,7 +339,7 @@ char* getoscamconfig()
 		tmpstr = ostrcat("/var/swap", NULL, 0, 0);
 		count++;
 	}
-	
+
 	if(count > 1)
 	{
 		free(tmpstr); tmpstr = NULL;
@@ -349,7 +349,7 @@ char* getoscamconfig()
 	}
 	else
 		textbox(_("Message"), _("No config file found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
-	
+
 	freemenulist(mlist, 0); mlist = NULL;
 	return tmpstr;
 }
@@ -368,11 +368,11 @@ void screenoscam(char* cfgfile)
 
 	if(cfgfile == NULL)
 	{
-		tmpstr = getoscamconfig();	
+		tmpstr = getoscamconfig();
 		if(tmpstr == NULL) return;
 		dvbapi = ostrcat(tmpstr, "/keys/oscam.dvbapi", 0, 0);
 		file = ostrcat(tmpstr, "/keys/oscam.server", 0, 0);
-		free(tmpstr), tmpstr = NULL; 
+		free(tmpstr), tmpstr = NULL;
 	}
 	else
 	{
@@ -383,7 +383,7 @@ void screenoscam(char* cfgfile)
 		free(cmd), cmd = NULL;
 		free(tmpstr), tmpstr = NULL;
 	}
-	
+
 	readoscam(file);
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
@@ -451,6 +451,7 @@ start:
 				textbox(_("Message"), _("Oscam config written to medium !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				if(textbox(_("Message"), _("Restart Oscam ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 				{
+					int startinternreader()
 					startinternreader(0);
 					char* cmd = NULL;
 					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
@@ -472,7 +473,7 @@ start:
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			int ret = 1;
-			
+
 			tmpstr = ostrcat(dvbapi, ".disable", 0, 0);
 			if(tmpstr != NULL)
 			{
@@ -491,7 +492,7 @@ start:
 					changetext(b2, _("Dvbapi (enabled)"));
 				}
 			}
-			
+
 			if(ret == 0)
 			{
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
@@ -502,10 +503,10 @@ start:
 					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
 					system(cmd);
 					free(cmd);
-				}			
+				}
 			}
 			free(tmpstr); tmpstr = NULL;
-			drawscreen(skinoscam, 0, 0);	
+			drawscreen(skinoscam, 0, 0);
 		}
 	}
 
