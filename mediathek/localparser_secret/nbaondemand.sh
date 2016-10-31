@@ -57,6 +57,7 @@ category()
 
 videos()
 {
+rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
 		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
@@ -99,7 +100,7 @@ videos()
 				fi
 				piccount=`expr $piccount + 1`
 
-				URL="$SRC $SRC play $INPUT $URL"
+				URL="$SRC $SRC playsrc $INPUT $URL"
 
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#0"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
@@ -111,16 +112,18 @@ videos()
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
 
-play()
+playsrc()
 {
+rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
-		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
-
+#		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
+		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
 		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<td width="33%">!\nfound=!g' | sed 's!<br> </td>!\n<br> </td>!g' | grep '^found=' >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do
-			URL=http://xlivetv.sx`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1`
+#			URL=http://xlivetv.sx`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1`
+			URL=`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1`
 			TITLE=`echo $ROUND | sed 's!<a alt="!\ntitle="!g' | grep ^title= | cut -d'"' -f2 | sed 's!&ndash;!-!g'`
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ "$URL" != "http://xlivetv.sx" ] && [ `cat $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list | grep "#$URL#" | wc -l` -eq 0 ];then
@@ -128,7 +131,10 @@ play()
 					touch $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#98"
+#				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#98"
+				URL="$SRC $SRC play $INPUT $URL"
+				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#111"
+
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
 
@@ -136,6 +142,36 @@ play()
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
+}
+
+play()
+{
+rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
+	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
+		piccount=0
+
+#		$wgetbin $URL/$PAGE -O $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
+		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
+
+		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | sed 's!<br> </td>!\n<br> </td>!g' | grep '^found=' | grep 'video/embed' | cut -d"'" -f2 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
+		URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2`
+#echo URLTMP $URLTMP
+		$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+#		"flashVars": {"autoplay":0,"movieSrc":"mail/arsen.bulyaev/_myvideo/738","metadataUrl":"//my.mail.ru/+/video/meta/4219658639352267490","showPauseRoll":"0","enable_search":"2","swfVersion":"29","static_version":"75","flash_enabled":"1"},
+		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"movieSrc":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
+		TYPE=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | cut -d "/" -f2`
+		ID=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | tr '/' '\n' | tail -n1`
+		$curlbin http://videoapi.my.mail.ru/videos/mail/$TYPE/_myvideo/$ID.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+#		$curlbin http://videoapi.my.mail.ru/videos/mail/arsen.bulyaev/_myvideo/738.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+
+		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"url":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | tail -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
+		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6`
+#eplayer3 "http://cdn41.my.mail.ru/v/60128796.mp4?sign=43ff6ef971dd635bbff0a57a061a3548cfaceef8&slave[]=s%3Ahttp%3A%2F%2F127.0.0.1%3A5010%2F60128796-v.mp4&p=f&expire_at=1477882800&touch=1477731621&reg=202&region=202"
+
+		echo $URL
+		rm $TMP/cache.* > /dev/null 2>&1
+	fi
+#	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
 
 submenu()
@@ -309,5 +345,6 @@ case $INPUT in
 	hoster) $INPUT;;
 	videos) $INPUT;;
 	play) $INPUT;;
+	playsrc) $INPUT;;
 	submenu) $INPUT;;
 esac
