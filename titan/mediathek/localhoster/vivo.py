@@ -6,11 +6,12 @@ import sys
 from lib.net import Net
 import base64
 import json
+from lib import helpers
 
 class VivoResolver(object):
-    name = "vivosx"
-    domains = ["vivo.sx"]
-    pattern = '(?://|\.)(vivo\.sx)/([0-9a-zA-Z]+)'
+    name = "vidto"
+    domains = ["vidto.me"]
+    pattern = '(?://|\.)(vidto\.me)/(?:embed-)?([0-9a-zA-Z]+)'
 
     def __init__(self):
         self.net = Net()
