@@ -375,7 +375,16 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						sleep(1);
 						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					}
-
+					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+					{
+						sleep(1);
+						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					}
+					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+					{
+						sleep(1);
+						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					}
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, NULL, NULL, tmpstr1);
@@ -445,10 +454,13 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					{
 						debug(99, "(%d/%d) %s url: %s extra: %s",i ,max , hname, url, extra);
 					}
-					
+
 					incount += 1;
 					line = ostrcat(line, hname, 1, 0);
-					if((url != NULL || url2 != NULL) && ostrcmp(url, url2) != 0)
+					if(url == NULL)
+						line = ostrcat(line, " (Error)", 1, 0);
+					
+					if(url2 != NULL && ostrcmp(url, url2) != 0)
 						line = ostrcat(line, " (Part1)", 1, 0);
 					if(extra != NULL)
 					{
