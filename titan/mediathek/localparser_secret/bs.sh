@@ -247,6 +247,12 @@ BEGIN { in_hosterlist = 0
 #            </div>
 #    <br style="clear:both;"/>
 
+
+#function followlocation()
+#{
+#	system("curlbin -s -D - $1 | grep Location: | tail -n1")
+#}
+
 hoster()
 {
 	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
@@ -289,7 +295,16 @@ BEGIN { in_hosterlist = 0
 
 #                  print "Originalvideo#" url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#140"
 #                  print title "#" url "#http://atemio.dyndns.tv/mediathek/menu/" title ".jpg#" title ".jpg#" NAME "#14"
-                  print url
+
+tmp = "curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A \"Mozilla\/5.0 \(Windows NT 6.3\; WOW64\) AppleWebKit\/537.36 \(KHTML, like Gecko\) Maxthon\/4.4.7.3000 Chrome\/30.0.1599.101 Safari\/537.36\" -s -D - " url " | grep Location: | tail -n1 | cut -d \" \" -f2"
+#tmp = "curl -s -D - " url " | grep Location: | tail -n1"
+
+					while ((tmp | getline) > 0)
+					   print
+					   #print tmp
+					   #print $0
+					
+					close(tmp)
                }
                next
              }
