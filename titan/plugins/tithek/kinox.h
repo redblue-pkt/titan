@@ -367,12 +367,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 					{
-						sleep(1)
+						sleep(1);
 						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					}
 					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 					{
-						sleep(1)
+						sleep(1);
 						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					}
 
