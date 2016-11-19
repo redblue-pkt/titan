@@ -131,6 +131,11 @@ streamcloud()
 	$BIN $CMD/streamcloud.py $INPUT
 }
 
+vidzi()
+{
+	$BIN $CMD/vidzi.py $INPUT
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -151,6 +156,7 @@ if [ "$TYPE" == "get" ];then
 		movshare) movshare $INPUT;;
 		wholecloud) movshare $INPUT;;
 		vidgg) movshare $INPUT;;
+		vidzi) vidzi $INPUT;;
 		streamcloud1) streamcloud $INPUT;;	
 	esac
 fi

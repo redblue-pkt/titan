@@ -42,7 +42,7 @@ class VidziResolver(object):
                 if r:
                     print r.group(1)
 
-        print 'Unable to locate link'
+#        print 'Unable to locate link'
 
     def get_url(self, host, media_id):
         return 'http://%s/embed-%s.html' % (host, media_id)

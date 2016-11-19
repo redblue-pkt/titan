@@ -5,6 +5,7 @@ import urllib
 import sys
 from lib.net import Net
 from lib import helpers
+import lib.common as common
 
 class MovshareResolver(object):
     name = "movshare"
@@ -50,12 +51,16 @@ class MovshareResolver(object):
         if stream_url:
             headers.update({'Referer': web_url, })
             print stream_url + helpers.append_headers(headers)
+#        else:
+#            raise ResolverError('File Not Found or removed')
 
     def get_url(self, host, media_id):
         if 'vidgg' in host:
-            template = 'http://{host}/embed/?id={media_id}'
+            return 'http://%s/embed/?id=%s' % (host, media_id)
+#            template = 'http://{host}/embed/?id={media_id}'
         else:
-            template = 'http://{host}/embed/?v={media_id}'
+            return 'http://%s/embed/?v=%s' % (host, media_id)
+#           template = 'http://{host}/embed/?v={media_id}'
         print self._default_get_url(host, media_id, template)
 
 sys.stdout = MovshareResolver()
