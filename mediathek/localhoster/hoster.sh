@@ -4,6 +4,8 @@
 TYPE=$1
 INPUT=$2
 
+INPUT=`echo $INPUT | sed 's!/Out/?s=!!g'`
+
 ARCH=`cat /etc/.arch`
 BOX=`cat /etc/model`
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
