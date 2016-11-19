@@ -23,6 +23,7 @@ from urlparse import urlparse
 #from urlresolver import common
 #from urlresolver.resolver import ResolverError
 import common
+from net import Net
 
 def get_hidden(html, form_id=None, index=None, include_submit=True):
     hidden = {}
@@ -148,10 +149,12 @@ def scrape_sources(html, result_blacklist=None):
     if len(source_list) > 1:
         try: source_list.sort(key=lambda x: int(x[0]), reverse=True)
         except:
-            common.log_utils.log_debug('Scrape sources sort failed |int(x[0])|')
+            test = 1
+#            common.log_utils.log_debug('Scrape sources sort failed |int(x[0])|')
             try: source_list.sort(key=lambda x: int(x[0][:-1]), reverse=True)
             except:
-                common.log_utils.log_debug('Scrape sources sort failed |int(x[0][:-1])|')
+                 test = 2
+#                common.log_utils.log_debug('Scrape sources sort failed |int(x[0][:-1])|')
 
     return source_list
 
@@ -163,19 +166,21 @@ def get_media_url(url, result_blacklist=None):
         result_blacklist = [result_blacklist]
 
     result_blacklist = list(set(result_blacklist + ['.smil']))  # smil(not playable) contains potential sources, only blacklist when called from here
-    net = common.Net()
+    net = Net()
     parsed_url = urlparse(url)
     headers = {'User-Agent': common.FF_USER_AGENT,
                'Referer': '%s://%s' % (parsed_url.scheme, parsed_url.hostname)}
 
     response = net.http_GET(url, headers=headers)
-    response_headers = response.get_headers(as_dict=True)
+#    response_headers = response.get_headers(as_dict=True)
+    response_headers = response.get_headers()
+
     headers.update({'Referer': url})
-    cookie = response_headers.get('Set-Cookie', None)
-    if cookie:
-        headers.update({'Cookie': cookie})
+#    cookie = response_headers.get('Set-Cookie', None)
+#    if cookie:
+#        headers.update({'Cookie': cookie})
     html = response.content
 
     source_list = scrape_sources(html, result_blacklist)
     source = pick_source(source_list)
-    return source + append_headers(headers)
+    return source# + append_headers(headers)
