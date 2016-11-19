@@ -365,13 +365,25 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, NULL, NULL, pathnew);
 					
 					tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+					{
+						sleep(1)
+						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					}
+					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+					{
+						sleep(1)
+						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					}
+
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, NULL, NULL, tmpstr1);
 
 					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 					tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
-	
+
+
 					url = ostrcat(tmpstr1, NULL, 0, 0);
 ////////////////
 					free(pathnew), pathnew = NULL;
@@ -436,7 +448,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					
 					incount += 1;
 					line = ostrcat(line, hname, 1, 0);
-					if(ostrcmp(url, url2) != 0)
+					if((url != NULL || url2 != NULL) && ostrcmp(url, url2) != 0)
 						line = ostrcat(line, " (Part1)", 1, 0);
 					if(extra != NULL)
 					{
@@ -457,7 +469,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					line = ostrcat(line, oitoa(type), 1, 0);
 					line = ostrcat(line, "\n", 1, 0);
 
-					if(ostrcmp(url, url2) != 0)
+					if((url != NULL || url2 != NULL) && ostrcmp(url, url2) != 0)
 					{
 						free(tmpstr2), tmpstr2 = NULL;
 						free(hname), hname = NULL;
@@ -495,7 +507,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						free(tmpstr2), tmpstr2 = NULL;
 					}
 
-					if(ostrcmp(url, url3) != 0 && ostrcmp(url2, url3) != 0)
+					if((url != NULL || url3 != NULL) && ostrcmp(url, url3) != 0 && ostrcmp(url2, url3) != 0)
 					{
 						free(tmpstr2), tmpstr2 = NULL;
 						free(hname), hname = NULL;
@@ -533,7 +545,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						free(tmpstr2), tmpstr2 = NULL;
 					}
 
-					if(ostrcmp(url, url4) != 0 && ostrcmp(url2, url4) != 0 && ostrcmp(url3, url4) != 0)
+					if((url != NULL || url4 != NULL) && ostrcmp(url, url4) != 0 && ostrcmp(url2, url4) != 0 && ostrcmp(url3, url4) != 0)
 					{
 						free(tmpstr2), tmpstr2 = NULL;
 						free(hname), hname = NULL;
