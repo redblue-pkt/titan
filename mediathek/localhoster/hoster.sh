@@ -141,6 +141,12 @@ vivo()
 	$BIN $CMD/vivo.py $INPUT
 }
 
+vidto()
+{
+	$BIN $CMD/vidto.py $INPUT
+}
+
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -163,6 +169,7 @@ if [ "$TYPE" == "get" ];then
 		vidgg) movshare $INPUT;;
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
+		vidto) vidto $INPUT;;
 		streamcloud1) streamcloud $INPUT;;	
 	esac
 fi

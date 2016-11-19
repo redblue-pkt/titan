@@ -63,14 +63,16 @@ def pick_source(sources, auto_pick=None):
     elif len(sources) > 1:
         if auto_pick:
             return sources[0][1]
-#       else:
+        else:
+            return sources[0][1]
+
 #            result = xbmcgui.Dialog().select('Choose the link', [source[0] if source[0] else 'Uknown' for source in sources])
 #            if result == -1:
 #                raise ResolverError('No link selected')
 #            else:
 #                return sources[result][1]
-    else:
-        raise ResolverError('No Video Link Found')
+#    else:
+#        raise ResolverError('No Video Link Found')
 
 def append_headers(headers):
     return '|%s' % '&'.join(['%s=%s' % (key, urllib.quote_plus(headers[key])) for key in headers])
@@ -172,15 +174,16 @@ def get_media_url(url, result_blacklist=None):
                'Referer': '%s://%s' % (parsed_url.scheme, parsed_url.hostname)}
 
     response = net.http_GET(url, headers=headers)
-#    response_headers = response.get_headers(as_dict=True)
+    response_headers = response.get_headers(as_dict=True)
     response_headers = response.get_headers()
 
     headers.update({'Referer': url})
-#    cookie = response_headers.get('Set-Cookie', None)
-#    if cookie:
-#        headers.update({'Cookie': cookie})
+    cookie = response_headers.get('Set-Cookie', None)
+    if cookie:
+        headers.update({'Cookie': cookie})
     html = response.content
 
     source_list = scrape_sources(html, result_blacklist)
     source = pick_source(source_list)
-    return source# + append_headers(headers)
+    return source + append_headers(headers)
+#    return source
