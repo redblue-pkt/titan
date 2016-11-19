@@ -4,6 +4,11 @@ from lib import jsunpack
 import sys
 from lib.net import Net
 import lib.common as common
+import lib.fx_gmu as fx_gmu
+import lib.fx_gmu as fx_gmu
+
+FX_SOURCE = 'https://offshoregit.com/tvaresolvers/fx_gmu.py'
+FX_PATH = ''
 
 class FlashxResolver(object):
     name = "flashx"
@@ -25,63 +30,46 @@ class FlashxResolver(object):
         else:
             return False
 
-    def get_media_url(self, host, media_id):
-        web_url = self.get_url(host, media_id)
-        resp = self.net.http_GET(web_url)
-        html = resp.content
-        cfdcookie = resp._response.info()['set-cookie']
-        cfduid = re.search('cfduid=(.*?);', cfdcookie).group(1)
-        file_id = re.search("'file_id', '(.*?)'", html).group(1)
-        aff = re.search("'aff', '(.*?)'", html).group(1)
-        headers = {'User-Agent': common.IE_USER_AGENT,
-                   'Referer': web_url,
-                   'Cookie': '__cfduid=' + cfduid + '; lang=1'}
-        surl = re.search('src="(.*?' + file_id + ')', html, re.IGNORECASE).group(1)
-        dummy = self.net.http_GET(url=surl, headers=headers).content
-        headers = {'User-Agent': common.IE_USER_AGENT,
-                   'Referer': web_url,
-                   'Cookie': '__cfduid=' + cfduid + '; lang=1; file_id=' + file_id + '; aff=' + aff}
-        html = self.net.http_GET(url=web_url, headers=headers).content
-        fname = re.search('name="fname" value="(.*?)"', html).group(1)
-        hash = re.search('name="hash" value="(.*?)"', html).group(1)
-        fdata = {'op': 'download1',
-                 'usr_login': '',
-                 'id': media_id,
-                 'fname': fname,
-                 'referer': '',
-                 'hash': hash,
-                 'imhuman': 'Proceed to video'}
-        furl = 'http://www.flashx.tv/dl'# + media_id
-        time.sleep(5)
-        html = self.net.http_POST(url=furl, form_data=fdata, headers=headers).content
-
-        js_data = re.findall('(eval\(function.*?)</script>', html.replace('\n', ''))
-
-        for i in js_data:
-            try: html += jsunpack.unpack(i)
-            except: pass
-
-        print self.get_best_source(html)
-
-    def get_url(self, host, media_id):
-        return 'http://www.flashx.tv/%s.html' % media_id
-
-
-    def get_best_source(self, html):
-        stream = re.search('file:"([^"]*/high.*)",label', html)
-        if stream:
-            return re.search('file:"([^"]*/high.*)",label', html).group(1)
-        else:
-            stream = re.search('file:"([^"]*/normal.*)",label', html)
-            if stream:
-                return re.search('file:"([^"]*/normal.*)",label', html).group(1)
+    def get_fx_code(self):
+        try:
+            headers = self.net.http_HEAD(FX_SOURCE).get_headers(as_dict=True)
+            old_etag = self.get_setting('etag')
+            new_etag = headers.get('Etag', '')
+            old_len = self.__old_length()
+            new_len = int(headers.get('Content-Length', 0))
+            if old_etag != new_etag or old_len != new_len:
+                self.set_setting('etag', new_etag)
+                new_py = self.net.http_GET(FX_SOURCE).content
+                if new_py:
+                    with open(FX_PATH, 'w') as f:
+                        f.write(new_py)
             else:
-                stream = re.search('file:"([^"]*/low.*)",label', html)
-                if stream:
-                    return re.search('file:"([^"]*/low.*)",label', html).group(1)
-                else:
-                    stream = re.search('file:"([^"]*)",label', html)
-                    if stream:
-                        return re.search('file:"([^"]*)",label', html).group(1)
-                        
+                print 'Reusing existing fx_gmu.py: |%s|%s|%s|%s|' % (old_etag, new_etag, old_len, new_len)
+        except Exception as e:
+            print 'Exception during flashx code retrieve: %s' % e
+            
+    def __old_length(self):
+        try:
+            with open(FX_PATH, 'r') as f:
+                old_py = f.read()
+            old_len = len(old_py)
+        except:
+            old_len = 0
+        return old_len
+
+    def get_media_url(self, host, media_id):
+#        try:
+#            if self.get_setting('auto_update') == 'true':
+#                self.get_fx_code()
+#            with open(FX_PATH, 'r') as f:
+#                py_data = f.read()
+#            import fx_gmu
+            web_url = self.get_url(host, media_id)
+            print fx_gmu.get_media_url(web_url)
+#        except Exception as e:
+#            print 'error'
+        
+    def get_url(self, host, media_id):
+        return 'http://%s/embed.php?c=%s' % (host, media_id)
+
 sys.stdout = FlashxResolver()
