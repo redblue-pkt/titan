@@ -18,7 +18,7 @@
 import os
 #from lib import log_utils  # @UnusedImport
 #from lib.net import Net  # @UnusedImport
-from lib import cache  # @UnusedImport
+#from lib import cache  # @UnusedImport
 #from lib import kodi
 
 #addon_path = kodi.get_path()
