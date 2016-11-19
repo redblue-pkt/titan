@@ -4,11 +4,13 @@ import urllib
 from lib import jsunpack
 import sys
 from lib.net import Net
+import base64
+import json
 
 class VivoResolver(object):
-    name = "vidzi"
-    domains = ["vidzi.tv"]
-    pattern = '(?://|\.)(vidzi\.tv)/(?:embed-)?([0-9a-zA-Z]+)'
+    name = "vivosx"
+    domains = ["vivo.sx"]
+    pattern = '(?://|\.)(vivo\.sx)/([0-9a-zA-Z]+)'
 
     def __init__(self):
         self.net = Net()
