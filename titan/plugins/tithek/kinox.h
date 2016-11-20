@@ -391,11 +391,11 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 					if(ostrstr(tmpstr1, "iframe src") != NULL)
-						tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
+						url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
 					else
-						tmpstr1 = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
+						url = string_resub("<a href=\"", "\"", tmpstr1, 0);
 
-					url = ostrcat(tmpstr1, NULL, 0, 0);
+					//url = ostrcat(tmpstr1, NULL, 0, 0);
 ////////////////
 					free(pathnew), pathnew = NULL;
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
