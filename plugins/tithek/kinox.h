@@ -390,8 +390,10 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, NULL, NULL, tmpstr1);
 
 					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-					tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
-
+					if(ostrstr(tmpstr1, "iframe src") != NULL)
+						tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
+					else
+						tmpstr1 = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
 
 					url = ostrcat(tmpstr1, NULL, 0, 0);
 ////////////////

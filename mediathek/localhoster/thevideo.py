@@ -41,7 +41,7 @@ class TheVideoResolver(object):
         headers = {'User-Agent': common.IE_USER_AGENT, 'Referer': web_url}
 
         html = self.net.http_GET(web_url, headers=headers).content
-
+#        print "111111111111", html.encode('utf-8').strip()
         vhash = re.search('\'_vhash\', value: \'(.*?)\'', html).group(1)
         gfk = re.search('\'gfk\', value: \'(.*?)\'', html).group(1)
 
@@ -63,7 +63,9 @@ class TheVideoResolver(object):
                  'inhu': inhu}
 
         html = self.net.http_POST(url=web_url, form_data=fdata, headers=headers).content
+#        print "2222222222", html.encode('utf-8').strip()
 
+#http://thevideo.me/jwv/LDonSU04MylZO1ZNSThGPUEK
         r = re.search('sources:\s*(\[.*?\])', html, re.DOTALL)
 
         if r:
@@ -85,6 +87,8 @@ class TheVideoResolver(object):
         mpri_Key = re.search('var mpri_Key=\'(.*?)\'', html).group(1)
         web_url = self.get_aturl(host, path, mpri_Key)
         html = self.net.http_GET(web_url, headers=headers).content
+#        print "3333333333", html.encode('utf-8').strip()
+
         js_data = jsunpack.unpack(html)
         for match in re.finditer('(eval\(function.*?)\{\}\)\)', html, re.DOTALL):
             js_data = jsunpack.unpack(match.group(1))
