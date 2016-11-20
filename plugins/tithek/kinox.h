@@ -404,14 +404,21 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					titheklog(debuglevel, "/tmp/kinox6_pathnew2", hname, NULL, NULL, pathnew);
 					
 					tmpstr3 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					if(ostrstr(tmpstr3, "503 Service Temporarily Unavailable") != NULL)
+					{
+						sleep(1);
+						tmpstr3 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					}
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox7_tmpstr3", hname, NULL, NULL, tmpstr3);
 
 					tmpstr3 = string_replace_all("\\", "", tmpstr3, 1);
-					tmpstr3 = string_resub("<a href=\"", "\"", tmpstr3, 0);
-					
-					url2 = ostrcat(tmpstr3, NULL, 0, 0);
+					if(ostrstr(tmpstr3, "iframe src") != NULL)
+						url2 = string_resub("<iframe src=\"", "\"", tmpstr3, 0);
+					else
+						url2 = string_resub("<a href=\"", "\"", tmpstr3, 0);
+//					url2 = ostrcat(tmpstr3, NULL, 0, 0);
 ////////////////
 					free(pathnew), pathnew = NULL;
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
@@ -420,14 +427,21 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					titheklog(debuglevel, "/tmp/kinox6_pathnew3", hname, NULL, NULL, pathnew);
 					
 					tmpstr4 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					if(ostrstr(tmpstr4, "503 Service Temporarily Unavailable") != NULL)
+					{
+						sleep(1);
+						tmpstr4 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					}
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox7_tmpstr4", hname, NULL, NULL, tmpstr4);
 
 					tmpstr4 = string_replace_all("\\", "", tmpstr4, 1);
-					tmpstr4 = string_resub("<a href=\"", "\"", tmpstr4, 0);
-					
-					url3 = ostrcat(tmpstr4, NULL, 0, 0);
+					if(ostrstr(tmpstr4, "iframe src") != NULL)
+						url3 = string_resub("<iframe src=\"", "\"", tmpstr4, 0);
+					else
+						url3 = string_resub("<a href=\"", "\"", tmpstr4, 0);
+//					url3 = ostrcat(tmpstr4, NULL, 0, 0);
 ////////////////
 					free(pathnew), pathnew = NULL;
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
@@ -436,14 +450,21 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					titheklog(debuglevel, "/tmp/kinox6_pathnew4", hname, NULL, NULL, pathnew);
 					
 					tmpstr5 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					if(ostrstr(tmpstr5, "503 Service Temporarily Unavailable") != NULL)
+					{
+						sleep(1);
+						tmpstr5 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					}
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, NULL, NULL, tmpstr5);
 
 					tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
-					tmpstr5 = string_resub("<a href=\"", "\"", tmpstr5, 0);
-					
-					url4 = ostrcat(tmpstr5, NULL, 0, 0);
+					if(ostrstr(tmpstr5, "iframe src") != NULL)
+						url4 = string_resub("<iframe src=\"", "\"", tmpstr5, 0);
+					else
+						url4 = string_resub("<a href=\"", "\"", tmpstr5, 0);					
+//					url4 = ostrcat(tmpstr5, NULL, 0, 0);
 ////////////////
 					type = 14;
 
@@ -483,7 +504,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					line = ostrcat(line, oitoa(type), 1, 0);
 					line = ostrcat(line, "\n", 1, 0);
 
-					if((url != NULL || url2 != NULL) && ostrcmp(url, url2) != 0)
+					if((url != NULL && url2 != NULL) && ostrcmp(url, url2) != 0)
 					{
 						free(tmpstr2), tmpstr2 = NULL;
 						free(hname), hname = NULL;
@@ -521,7 +542,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						free(tmpstr2), tmpstr2 = NULL;
 					}
 
-					if((url != NULL || url3 != NULL) && ostrcmp(url, url3) != 0 && ostrcmp(url2, url3) != 0)
+					if((url != NULL && url3 != NULL) && ostrcmp(url, url3) != 0 && ostrcmp(url2, url3) != 0)
 					{
 						free(tmpstr2), tmpstr2 = NULL;
 						free(hname), hname = NULL;
@@ -559,7 +580,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						free(tmpstr2), tmpstr2 = NULL;
 					}
 
-					if((url != NULL || url4 != NULL) && ostrcmp(url, url4) != 0 && ostrcmp(url2, url4) != 0 && ostrcmp(url3, url4) != 0)
+					if((url != NULL && url4 != NULL) && ostrcmp(url, url4) != 0 && ostrcmp(url2, url4) != 0 && ostrcmp(url3, url4) != 0)
 					{
 						free(tmpstr2), tmpstr2 = NULL;
 						free(hname), hname = NULL;
