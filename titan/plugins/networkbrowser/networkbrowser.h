@@ -5,7 +5,7 @@
 /*                                                                        */
 /* Licence: This file is subject to the terms and conditions of the       */
 /*          GNU General Public License version 2.                         */
-/**************************************************************************/	
+/**************************************************************************/
 
 #ifndef NETWORKBROWSER_H
 #define NETWORKBROWSER_H
@@ -14,7 +14,7 @@ extern struct inetwork* inetwork;
 
 struct networkbrowser
 {
-	//mode 0 = cifs	
+	//mode 0 = cifs
 	//mode 1 = nfs
 	//mode 2 = ftp
 	char* mode;
@@ -52,7 +52,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode);
 void debugnetworkbrowser(struct networkbrowser* node)
 {
 	if(node == NULL) return;
-	
+
 	debug(70, "mode: %s", node->mode);
 	debug(70, "sharename: %s", node->sharename);
 	debug(70, "ip: %s", node->ip);
@@ -81,7 +81,7 @@ void debugnetworkbrowser(struct networkbrowser* node)
 void delnetworkbrowsercontent(struct networkbrowser* node)
 {
 	if(node == NULL) return;
-	
+
 	free(node->mode); node->mode = NULL;
 	free(node->sharename); node->sharename = NULL;
 	free(node->ip); node->ip = NULL;
@@ -151,7 +151,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 	int ret = 0, treffer = 0;
 	char* tmpstr = NULL;
 
-	newnode = (struct networkbrowser*)malloc(sizeof(struct networkbrowser));	
+	newnode = (struct networkbrowser*)malloc(sizeof(struct networkbrowser));
 	if(newnode == NULL)
 	{
 		err("no memory");
@@ -190,7 +190,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 			return NULL;
 		}
 		memset(newnode->dns, 0, 256);
-	
+
 		newnode->sharedir = malloc(256);
 		if(newnode->sharedir == NULL)
 		{
@@ -380,7 +380,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 					treffer = 6;
 				#ifdef MIPSEL
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
-				#else					
+				#else
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 				#endif
 				}
@@ -403,7 +403,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				if(ostrstr(line, "user=,") != NULL)
 				{
 					treffer = 6;
-				#ifdef MIPSEL	
+				#ifdef MIPSEL
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
 				#else
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
@@ -416,7 +416,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
 				#ifdef MIPSEL
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
-				#else	
+				#else
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
 				#endif
 				}
@@ -515,7 +515,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 			}
 			else
 				treffer = 0;
-       
+
 			if(newnode->ftpport != NULL)
 			{
 				tmpstr = ostrstr(newnode->ftpport, "/");
@@ -523,7 +523,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				{
 					tmpstr[0] = '\0';
 					free(newnode->sharedir);
-					newnode->sharedir = ostrcat(tmpstr + 1, NULL, 0, 0);               
+					newnode->sharedir = ostrcat(tmpstr + 1, NULL, 0, 0);
 				}
 			}
 
@@ -551,7 +551,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 			return NULL;
 		}
 	}
-	
+
 	if(last == NULL)
 	{
 		while(node != NULL)
@@ -572,14 +572,14 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 		prev->next = newnode;
 
 	newnode->next = node;
-	
+
 	return newnode;
 }
 
 void setdefaultnetworkbrowser(struct networkbrowser* node)
 {
 	if(node == NULL) return;
-	
+
 	if(node->mode == NULL || node->mode[0] == '\0') node->mode = ostrcat(node->mode, "0", 1, 0);
 	if(node->sharename == NULL || node->sharename[0] == '\0') node->sharename = ostrcat(node->sharename, "SHARENAME", 1, 0);
 	if(node->ip == NULL || node->ip[0] == '\0') node->ip = ostrcat(node->ip, "192.168.178.1", 1, 0);
@@ -620,27 +620,27 @@ void savenetworkbrowser(char* filename)
 
 		if(ostrcmp(node->mode, "0") == 0)
 		{
-			
-			#ifdef MIPSEL				
-				savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,iocharset=utf8,rsize=", 1, 0);
-			#else	
+
+			#ifdef MIPSEL
+				savesettings = ostrcat(savesettings, "\t-fstype=cifs,vers=2.0,rw,iocharset=utf8,rsize=", 1, 0);
+			#else
 				savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,rsize=", 1, 0);
-			#endif	
-			
+			#endif
+
 	 		savesettings = ostrcat(savesettings, node->rsize, 1, 0);
 			savesettings = ostrcat(savesettings, ",wsize=", 1, 0);
  			savesettings = ostrcat(savesettings, node->wsize, 1, 0);
- 			
+
  			if(ostrcmp(node->userauth, "1") == 0)
 			{
-				savesettings = ostrcat(savesettings, ",user=", 1, 0); 
+				savesettings = ostrcat(savesettings, ",user=", 1, 0);
 				savesettings = ostrcat(savesettings, node->username, 1, 0);
 				savesettings = ostrcat(savesettings, ",pass=", 1, 0);
  				savesettings = ostrcat(savesettings, node->password, 1, 0);
 			}
 			else
-				savesettings = ostrcat(savesettings, ",user=,pass=", 1, 0); 
- 			
+				savesettings = ostrcat(savesettings, ",user=,pass=", 1, 0);
+
 			savesettings = ostrcat(savesettings, "\t://", 1, 0);
  			if(ostrcmp(node->usedns, "1") == 0)
 	 			savesettings = ostrcat(savesettings, node->dns, 1, 0);
@@ -663,7 +663,7 @@ void savenetworkbrowser(char* filename)
 	 		savesettings = ostrcat(savesettings, node->rsize, 1, 0);
 			savesettings = ostrcat(savesettings, ",wsize=", 1, 0);
  			savesettings = ostrcat(savesettings, node->wsize, 1, 0);
-			savesettings = ostrcat(savesettings, ",", 1, 0); 
+			savesettings = ostrcat(savesettings, ",", 1, 0);
 			savesettings = ostrcat(savesettings, node->protocol, 1, 0);
 			savesettings = ostrcat(savesettings, "\t", 1, 0);
   			if(ostrcmp(node->usedns, "1") == 0)
@@ -732,7 +732,7 @@ void savenetworkbrowser(char* filename)
 	 			savesettings = ostrcat(savesettings, tmpstr, 1, 0);
 	 			free(tmpstr); tmpstr = NULL;
 			}
-			
+
 			savesettings = ostrcat(savesettings, "\\:", 1, 0);
 
 			tmpstr = fixport(node->ftpport, 1);
@@ -743,7 +743,7 @@ void savenetworkbrowser(char* filename)
 			{
 				node->sharedir = string_replace_all("//", "", node->sharedir, 1);
 				if(!ostrncmp("/", node->sharedir, 1))
-					savesettings = ostrcat(savesettings, "/", 1, 0);				
+					savesettings = ostrcat(savesettings, "/", 1, 0);
 				else
 					savesettings = ostrcat(savesettings, "//", 1, 0);
 
@@ -752,7 +752,7 @@ void savenetworkbrowser(char* filename)
 
 			savesettings = ostrcat(savesettings, "\n", 1, 0);
 		}
-		
+
 		node = node->next;
 	}
 
@@ -761,7 +761,7 @@ void savenetworkbrowser(char* filename)
 		struct skin* loadmediadb = getscreen("loading");
 		struct skin* blackscreen = getscreen("blackscreen");
 		drawscreen(blackscreen, 0, 0);
-		drawscreen(loadmediadb, 0, 0);	
+		drawscreen(loadmediadb, 0, 0);
 
 		writesys(getconfig("automiscfile", NULL), savesettings, 0);
 		system("hotplug.sh first &");
@@ -836,9 +836,9 @@ char* readnetworkbrowser(char* filename, int flag)
 				fileline[strlen(fileline) - 1] = '\0';
 			if(fileline[strlen(fileline) - 1] == '\r')
 				fileline[strlen(fileline) - 1] = '\0';
-	
+
 			linecount++;
-		
+
 			if(fileline != NULL)
 				addnetworkbrowser(fileline, linecount, NULL);
 		}
@@ -873,16 +873,16 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 		free(tmpstr); tmpstr = NULL;
 		return;
 	}
-	
+
 	s = ostrcat(s, tmpstr, 1, 0);
 	free(tmpstr); tmpstr = NULL;
 
 	s = ostrcat(s, "/24", 1, 0);
 	debug(70, "start scanning: %s", s);
-	
+
 	nInfo = newNetInfo();
 	netzInfo(s, nInfo);
-	
+
 	for(i = 0; i < 256; i++)
 	{
 		usleep(100000);
@@ -918,10 +918,10 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 	shareinfo* sInfo;
 
 	if(s == NULL || r == NULL || u == NULL || p == NULL || mlist == NULL) return;
-	
+
 	sInfo = newShareInfo();
 	smbInfo(s, r, u, p, sInfo);
-	
+
 	for (i = 0; i < 128; i++)
 	{
 		usleep(100000);
@@ -939,7 +939,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			debug(70, "comment: %s", sInfo[i].comment);
 			debug(70, "rech: %s", r);
 			debug(70, "rechip: %s", s);
-			debug(70, "----------------------------------------------------------", sInfo[i].sharename);			
+			debug(70, "----------------------------------------------------------", sInfo[i].sharename);
 			tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
 			tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
 			tmpstr = ostrcat(tmpstr , ": /", 1, 0);
@@ -995,7 +995,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 		debug(70, "------ result 2 ------");
 		debug(70, "%s", tmpstr2);
 		debug(70, "----------------------");
-				
+
 		free(tmpstr1), tmpstr1 = NULL;
 
 		if(tmpstr2 == NULL)
@@ -1004,7 +1004,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			cmd = ostrcat(bin, "  -N -L //" , 0, 0);
 			cmd = ostrcat(cmd , r, 1, 0);
 			debug(70, "cmd: %s", cmd);
-	
+
 			tmpstr1 = command(cmd);
 			debug(70, "------ result 3 ------");
 			debug(70, "%s", tmpstr1);
@@ -1032,7 +1032,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 				else if(ostrstr(tmpstr1, "Access denied") != NULL)
 					textbox(_("Message"), _("Anonymous login Access Denied !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
 			}
-			
+
 			free(tmpstr1), tmpstr1 = NULL;
 		}
 
@@ -1045,7 +1045,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			}
 			else if(ostrstr(tmpstr2, "Anonymous login successful") != NULL)
 				textbox(_("Message"), _("Anonymous login successful"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
-					
+
 			char* tmpstr3 = ostrcat("\t", tmpstr2, 0, 0);
 
 			int count = 0;
@@ -1071,7 +1071,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 					}
 
 					char* tmpstr4 = ostrcat(ret1[j].part, NULL, 0, 0);
-					
+
 					strstrip(tmpstr4);
 					char* tmpstr5 = ostrcat(tmpstr4 + 15, NULL, 0, 0);
 					char* tmpstr7 = ostrcat(tmpstr4 + 25, NULL, 0, 0);
@@ -1079,7 +1079,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 
 					char* tmpstr6 = string_resub("\t", tmpstr5, ret1[j].part, 0);
 
-					stringreplacechar(tmpstr5, ' ', '\0');									
+					stringreplacechar(tmpstr5, ' ', '\0');
 
 					debug(70, "----------------------------------------------------------", sInfo[i].sharename);
 					debug(70, "sharename: %s", tmpstr6);
@@ -1088,12 +1088,12 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 					debug(70, "rech: %s", r);
 					debug(70, "rechip: %s", s);
 					debug(70, "----------------------------------------------------------", sInfo[i].sharename);
-						
+
 					tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
 					tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
 					tmpstr = ostrcat(tmpstr , ": /", 1, 0);
 					tmpstr = ostrcat(tmpstr , strstrip(tmpstr6), 1, 0);
-					free(tmpstr5), tmpstr5 = NULL;	
+					free(tmpstr5), tmpstr5 = NULL;
 					free(tmpstr7), tmpstr7 = NULL;
 /*
 					strstrip(ret1[j].part);
@@ -1131,10 +1131,10 @@ void  getnetworkbrowser_nfs(struct menulist** mlist, char* s, char* r)
 	int i = 0, err = 0;
 
 	if(s == NULL || r == NULL || mlist == NULL) return;
-	
+
 	nfsInfo = newNfsInfo();
 	err = showNfsShare(s, nfsInfo);
-	
+
 	if (err == 0)
 	{
 		for (i = 0; i < 256; i++)
@@ -1177,7 +1177,7 @@ void screennetworkbrowser_scan()
 	struct skin* b2 = getscreennode(net_scan, "b2");
 	struct skin* load = getscreen("loading");
 	struct inetwork *net = inetwork;
-	
+
 	status.hangtime = 99999;
 	changetitle(net_scan, _("Scanning Network Shares, please wait !!"));
 	if(titletext != status.skinerr) changetext(titletext, _("Scanning Network Shares, please wait !!"));
@@ -1222,7 +1222,7 @@ start:
 		debug(70, "user: %s",user);
 		debug(70, "pass: %s",pass);
 
-		getnetworkbrowser_cifs(&mlist1, mbox->param, mbox->param1, user, pass);		
+		getnetworkbrowser_cifs(&mlist1, mbox->param, mbox->param1, user, pass);
 		getnetworkbrowser_nfs(&mlist1, mbox->param, mbox->param1);
 		clearscreen(load);
 start1:
@@ -1312,7 +1312,7 @@ void delhddreplacement(int flag)
 	struct skin* loadmediadb = getscreen("loading");
 	struct skin* blackscreen = getscreen("blackscreen");
 	drawscreen(blackscreen, 0, 0);
-	drawscreen(loadmediadb, 0, 0);	
+	drawscreen(loadmediadb, 0, 0);
 
 	unlink("/media/hdd");
 	unlink(getconfig("recordsharefile", NULL));
@@ -1378,7 +1378,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		skin_proxyuser->hidden = YES;
 		skin_proxypass->hidden = YES;
 		skin_ftpport->hidden = YES;
-		skin_userauth->hidden = NO;		
+		skin_userauth->hidden = NO;
 		skin_proxyauth->hidden = YES;
 		skin_useproxy->hidden = YES;
 		skin_usessl->hidden = YES;
@@ -1393,7 +1393,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		else
 		{
 			skin_dns->hidden = NO;
-			skin_ip->hidden = YES;		
+			skin_ip->hidden = YES;
 		}
 
 		if(ostrcmp(node->userauth, "0") == 0)
@@ -1444,7 +1444,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		else
 		{
 			skin_dns->hidden = NO;
-			skin_ip->hidden = YES;		
+			skin_ip->hidden = YES;
 		}
 	}
 	else if(ostrcmp(node->mode, "2") == 0)
@@ -1456,7 +1456,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		changetitle(net_addshare, tmpstr);
 		if(titletext != status.skinerr) changetext(titletext, tmpstr);
 		free(tmpstr); tmpstr = NULL;
-		
+
 		skin_protocol->hidden = YES;
 		skin_rsize->hidden = YES;
 		skin_wsize->hidden = YES;
@@ -1467,7 +1467,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		skin_ftpport->hidden = NO;
 		skin_sharedir->hidden = NO;
 		skin_usedns->hidden = NO;
-		
+
 		if(ostrcmp(node->userauth, "0") == 0)
 		{
 			skin_username->hidden = YES;
@@ -1478,7 +1478,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 			skin_username->hidden = NO;
 			skin_password->hidden = NO;
 		}
-		
+
 		if(ostrcmp(node->usessl, "0") == 0)
 			skin_ssl->hidden = YES;
 		else
@@ -1518,7 +1518,7 @@ void changemodenetworkbrowser(struct networkbrowser* node, struct skin* titletex
 		else
 		{
 			skin_dns->hidden = NO;
-			skin_ip->hidden = YES;		
+			skin_ip->hidden = YES;
 		}
 	}
 }
@@ -1567,7 +1567,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 		newnode = 1;
 	}
 	if(node == NULL) return;
-	
+
 	if(newnode == 0)
 		b3->hidden = NO;
 	else
@@ -1577,7 +1577,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	debug(70, "after set defaut");
 	debugnetworkbrowser(node);
 	debug(70, "--------------------");
-	
+
 	addchoicebox(skin_mode, "0", _("cifs"));
 	addchoicebox(skin_mode, "1", _("nfs"));
 	addchoicebox(skin_mode, "2", _("ftpfs"));
@@ -1647,13 +1647,13 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	if(ostrcmp(node->username, "user") != 0 || ostrcmp(node->password, "pass") != 0)
 	{
 		tmpstr = ostrcat(tmpstr, "1", 1, 0);
-		node->userauth = ostrcat(tmpstr, NULL, 0, 0); 
+		node->userauth = ostrcat(tmpstr, NULL, 0, 0);
 	}
 	addchoicebox(skin_userauth, "0", _("no"));
 	addchoicebox(skin_userauth, "1", _("yes"));
 	setchoiceboxselection(skin_userauth, tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	
+
 	addchoicebox(skin_proxyauth, "0", _("no"));
 	addchoicebox(skin_proxyauth, "1", _("yes"));
 	setchoiceboxselection(skin_proxyauth, node->proxyauth);
@@ -1675,7 +1675,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 
 	changemask(skin_proxypass, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(skin_proxypass, node->proxypass);
-		
+
 	changemask(skin_username, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(skin_username, node->username);
 
@@ -1685,7 +1685,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	if(newnode == 0 && checkhddreplacement(node->sharename) == 1)
 		tmpstr = ostrcat(tmpstr, "1", 1, 0);
 
-//	if(ostrcmp(node->sharedir, "Aufnahme") == 0 || ostrcmp(node->sharedir, "record") == 0)	
+//	if(ostrcmp(node->sharedir, "Aufnahme") == 0 || ostrcmp(node->sharedir, "record") == 0)
 //	{
 //		addchoicebox(skin_hddreplacement, "1", _("yes"));
 //		addchoicebox(skin_hddreplacement, "0", _("no"));
@@ -1752,7 +1752,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		
+
 		if(newnode == 0 && rcret == getrcconfigint("rcred", NULL) && checknetworkbrowserexist(node) == 0)
 		{
 			struct networkbrowser* newshare = addnetworkbrowser(NULL, 1, NULL);
@@ -1831,11 +1831,11 @@ void screennetworkbrowser_settings()
 	char* pass = ostrcat(getconfig("netbrowser_pass", NULL), NULL, 0, 0);
 	if(pass == NULL)
 		pass = ostrcat("pass", NULL, 0, 0);
-					
+
 	changemask(username, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(username, user);
 	free(user), user = NULL;
-	
+
 	changemask(password, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(password, pass);
 	free(pass), pass = NULL;
@@ -1869,13 +1869,13 @@ void screennetworkbrowser()
 	struct networkbrowser* node = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* tmpstr = NULL, *tmppic = NULL;
-	
+
 	status.hangtime = 99999;
 
 start:
 	freenetworkbrowser(); networkbrowser = NULL;
 	readnetworkbrowser(getconfig("automiscfile", NULL), 0);
-	
+
 	node = networkbrowser;
 	while(node != NULL)
 	{
@@ -1906,14 +1906,14 @@ start:
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpstr = ostrcat(tmpstr, node->sharedir, 1, 0);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
-	
+
 		struct menulist* tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
 		if(tmpmlist != NULL) tmpmlist->param = (char*)node;
 		free(tmpstr); tmpstr = NULL;
 	    free(tmppic); tmppic = NULL;
 		node = node->next;
 	}
-	
+
 	mbox = menulistboxext(mlist, "networkbrowser", _("Networkbrowser - show Shares"), _("Choose your Shares from the following list"), "%pluginpath%/networkbrowser/skin/", NULL, 1, &rcret, 0);
 
 	if(rcret == getrcconfigint("rcred", NULL))
@@ -1939,7 +1939,7 @@ start:
 		freenetworkbrowser(); networkbrowser = NULL;
 		goto start;
 	}
-	
+
 	if(mbox != NULL)
 	{
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcgreen", NULL))
