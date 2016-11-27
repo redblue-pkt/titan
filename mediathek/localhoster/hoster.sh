@@ -148,6 +148,10 @@ vidto()
 	$BIN $CMD/vidto.py $INPUT
 }
 
+goldesel()
+{
+	$BIN $CMD/goldesel.py $INPUT
+}
 
 if [ "$TYPE" == "get" ];then
 	case $hoster in
@@ -172,6 +176,7 @@ if [ "$TYPE" == "get" ];then
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
 		vidto) vidto $INPUT;;
+		goldesel) goldesel $INPUT;;
 		streamcloud1) streamcloud $INPUT;;	
 	esac
 fi

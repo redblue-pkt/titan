@@ -49,12 +49,46 @@ category()
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
+#
+#  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
+#    <input type="hidden" name="jschl_vc" value="528818834f8ad23629ea5d31c3a5390c"/>
+#    <input type="hidden" name="pass" value="1479475035.975-uJ99NUZ87d"/>
+#    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
+#  </form>
+#  
+#http://goldesel.to/cdn-cgi/l/chk_jschl?jschl_vc=f29b5aecef651bc1df9cad068c58848c&pass=1479474954.758-6i1RP0vPFz&jschl_answer=2914582
+#
+
 new()
 {
 	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
 		rm $TMP/$PARSER.$INPUT.list
 	fi
-	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+
+#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.0
+
+#	DATA=`cat $TMP/cache.$PARSER.$INPUT.0 | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found=`
+
+#	actionpath=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/action=/\naction=/g' | grep ^action= | cut -d'"' -f2`
+#	jschlvc=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"jschl_vc"/\njschl_vc=/g' | grep ^jschl_vc= | cut -d'"' -f2`
+#	pass=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"pass"/\npass=/g' | grep ^pass= | cut -d'"' -f2`
+#	jschlanswer=2914582
+	#`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"jschl-answer"/\njschl-answer=/g' | grep ^jschl-answer= | cut -d'"' -f2`
+
+#echo actionpath $actionpath
+#echo jschlvc $jschlvc
+#echo pass $pass
+#echo jschlanswer $jschlanswer
+
+#echo 222 "$URL"/"$actionpath"?jschl_vc="$jschlvc"&pass="$pass"&jschl_answer="$jschlanswer"
+
+#	$curlbin "$URL/$actionpath?jschl_vc=$jschlvc&pass=$pass&jschl_answer=$jschlanswer" -o $TMP/cache.$PARSER.$INPUT.00
+#echo $TMP/cache.$PARSER.$INPUT.00
+#exit
+
+#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+
+	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
 	piccount=0
 
@@ -82,7 +116,7 @@ new()
 			fi
 		fi
 	done 3<$TMP/cache.$PARSER.$INPUT.2
-	rm $TMP/cache.* > /dev/null 2>&1
+#	rm $TMP/cache.* > /dev/null 2>&1
 
 	echo "$TMP/$PARSER.$INPUT.list"
 }
@@ -92,7 +126,8 @@ page()
 	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
 		rm $TMP/$PARSER.$INPUT.list
 	fi
-	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
 	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<p><ul class="rls_table/\n<p><ul class=rls_table/g' | sed 's/<\/ul><\/u>/<\/ul><\/u>\n/g' | grep ^'<p><ul class=rls_table' | sed 's/<a href="/\n<a href="/g' | sed 's/<li step=/\n<li step=/g' | grep ^'<a href=' | grep 'tba">VID' | sed 's/ /~/g' >$TMP/cache.$PARSER.$INPUT.2
 
@@ -123,7 +158,9 @@ hosterlist()
 	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
 		rm $TMP/$PARSER.$INPUT.list
 	fi
-	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+
 	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<h2>Stream-Links</h2>!\nfound=!g' | sed 's!<h2>Sample-Links</h2>!\nerror=!g' | grep ^found= | sed 's/<li data=/\ndata=/g' | grep ^data= >$TMP/cache.$PARSER.$INPUT.2
 
 	while read -u 3 ROUND; do
