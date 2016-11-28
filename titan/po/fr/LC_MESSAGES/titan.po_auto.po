@@ -9806,7 +9806,7 @@ msgstr ""
 msgid "TiThek - Favorite Edit"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
+#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
 msgid "TiThek Menu"
 msgstr ""
 
@@ -9814,7 +9814,7 @@ msgstr ""
 msgid "TiThek Select Color"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
+#: plugins_tithek_skin.xml.h:26 skins_tithek_skin.xml.h:26
 msgid "TiThek Settings"
 msgstr "Réglages TiThek"
 
@@ -10508,6 +10508,14 @@ msgstr "Vidéo"
 #: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
 msgid "VIDEO SETTINGS"
 msgstr "Réglages Vidéo"
+
+#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
+msgid "VK Pass"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
+msgid "VK User"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "VLC Player"
@@ -12198,8 +12206,8 @@ msgstr "NFS Serveur"
 #: settings_autostart.h:586 settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:252 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:39
-#: tithek_settings.h:43 tithek_settings.h:47 tmc.h:531 tmc.h:535
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:41
+#: tithek_settings.h:45 tithek_settings.h:49 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 #: xupnpd.h:30
 msgid "no"
@@ -12816,31 +12824,31 @@ msgstr ""
 msgid "show"
 msgstr ""
 
-#: tithek_settings.h:24 tithek_settings.h:33
+#: tithek_settings.h:26 tithek_settings.h:35
 msgid "show 12 entrys"
 msgstr ""
 
-#: tithek_settings.h:22 tithek_settings.h:31
+#: tithek_settings.h:24 tithek_settings.h:33
 msgid "show 2 entrys"
 msgstr ""
 
-#: tithek_settings.h:25 tithek_settings.h:34
+#: tithek_settings.h:27 tithek_settings.h:36
 msgid "show 20 entrys"
 msgstr ""
 
-#: tithek_settings.h:26 tithek_settings.h:35
+#: tithek_settings.h:28 tithek_settings.h:37
 msgid "show 30 entrys"
 msgstr ""
 
-#: tithek_settings.h:23 tithek_settings.h:32
+#: tithek_settings.h:25 tithek_settings.h:34
 msgid "show 6 entrys"
 msgstr ""
 
-#: tithek_settings.h:21 tithek_settings.h:30
+#: tithek_settings.h:23 tithek_settings.h:32
 msgid "show auto entrys"
 msgstr ""
 
-#: tithek_settings.h:27 tithek_settings.h:36
+#: tithek_settings.h:29 tithek_settings.h:38
 msgid "show in list"
 msgstr ""
 
@@ -13612,7 +13620,7 @@ msgstr "jaune"
 #: settings_autostart.h:604 settings_overclocking.h:214
 #: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:253
 #: stopifnotused.c:93 timeshiftsettings.h:58 timeshiftsettings.h:62
-#: tithek_settings.h:40 tithek_settings.h:44 tithek_settings.h:48 tmc.h:532
+#: tithek_settings.h:42 tithek_settings.h:46 tithek_settings.h:50 tmc.h:532
 #: tmc.h:536 xupnpd.h:30
 msgid "yes"
 msgstr "oui"
