@@ -224,7 +224,7 @@ play()
 		echo $URL
 		rm $TMP/cache.* > /dev/null 2>&1
 	fi
-	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
+#	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
 
 submenu()
