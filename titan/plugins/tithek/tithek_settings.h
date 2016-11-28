@@ -15,6 +15,8 @@ void screentithek_settings()
 	struct skin* hidxxx = getscreennode(tithek_settings, "hidxxx");
 	struct skin* amazon_user = getscreennode(tithek_settings, "amazon_user");
 	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
+	struct skin* vk_user = getscreennode(tithek_settings, "vk_user");
+	struct skin* vk_pass = getscreennode(tithek_settings, "vk_pass");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
 	struct skin* b4 = getscreennode(tithek_settings, "b4");
 
@@ -60,6 +62,18 @@ void screentithek_settings()
 	else
 		changeinput(amazon_pass, "****");
 
+	changemask(vk_user, "abcdefghijklmnopqrstuvwxyz");
+	if(getconfig("vk_pass", NULL) == NULL)
+		changeinput(vk_user, getconfig("vk_user", NULL));
+	else
+		changeinput(vk_user, "****");
+
+	changemask(amazon_pass, "abcdefghijklmnopqrstuvwxyz");
+	if(getconfig("vk_pass", NULL) == NULL)
+		changeinput(vk_pass, getconfig("vk_pass", NULL));
+	else
+		changeinput(vk_pass, "****");
+
 	b3->hidden = YES;
 	b4->hidden = YES;
 
@@ -101,10 +115,34 @@ void screentithek_settings()
 			{
 				debug(99, "amazon_pass: skipped");
 			}
+			if(vk_user->ret != NULL && ostrcmp(vk_user->ret, "****") != 0)
+			{
+				debug(99, "vk_user: write");
+				debug(99, "vk_user: %s", vk_user->ret);
+				addconfigscreen("vk_user", vk_user);
+			}
+			else
+			{
+				debug(99, "vk_user: skipped");
+			}
+			if(vk_pass->ret != NULL && ostrcmp(vk_pass->ret, "****") != 0)
+			{
+				debug(99, "vk_pass: write");
+				debug(99, "vk_pass: %s", vk_pass->ret);
+				addconfigscreen("vk_pass", vk_pass);
+			}
+			else
+			{
+				debug(99, "vk_pass: skipped");
+			}
+
 			writeallconfig(1);
 
 			debug(99, "amazon_user read: %s", getconfig("amazon_user", NULL));
 			debug(99, "amazon_pass read: %s", getconfig("amazon_pass", NULL));
+
+			debug(99, "vk_user read: %s", getconfig("vk_user", NULL));
+			debug(99, "vk_pass read: %s", getconfig("vk_pass", NULL));
 			
 			break;
 		}
@@ -118,12 +156,12 @@ void screentithek_settings()
 			unlink("/mnt/network/cookies");
 		}
 
-		if(file_exist("/mnt/network/cookies") && (ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0))
+		if(file_exist("/mnt/network/cookies") && (ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0 || ostrcmp(listbox->select->name, "vk_user") == 0 || ostrcmp(listbox->select->name, "vk_pass") == 0))
 			b4->hidden = NO;			
 		else
 			b4->hidden = YES;
 	
-		if(ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0)
+		if(ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0 || ostrcmp(listbox->select->name, "vk_user") == 0 || ostrcmp(listbox->select->name, "vk_pass") == 0)
 			b3->hidden = NO;
 		else
 			b3->hidden = YES;
