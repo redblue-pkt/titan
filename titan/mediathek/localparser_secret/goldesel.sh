@@ -102,6 +102,9 @@ new()
 	
 		if [ -z "$PIC" ] || [ "$PIC" = "$URL/" ]; then  
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			TMPPIC="default.jpg"
+		else
+			TMPPIC=goldesel_`echo $PIC | cut -d '/' -f6`
 		fi
 
 		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
@@ -109,10 +112,9 @@ new()
 				if [ ! -e $TMP/$PARSER.$INPUT.list ];then
 					touch $TMP/$PARSER.$INPUT.list
 				fi
-				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
-
+				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+        $curlbin $PIC -o /tmp/tithek/$TMPPIC -A 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
 			fi
 		fi
 	done 3<$TMP/cache.$PARSER.$INPUT.2
@@ -145,8 +147,9 @@ page()
 		fi
 
 		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ] ; then
-			LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC.jpg#$NAME#0"
+			LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+      $curlbin $PIC -o /tmp/tithek/$TMPPIC -A 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
 		fi
 	done 3<$TMP/cache.$PARSER.$INPUT.2
 	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
