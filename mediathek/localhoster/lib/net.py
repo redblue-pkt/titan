@@ -50,7 +50,7 @@ class Net:
     IOS_USER_AGENT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25'
     ANDROID_USER_AGENT = 'Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36'
 
-    _cj = cookielib.LWPCookieJar()
+    _cj = cookielib.MozillaCookieJar()
 
     _proxy = None
     _user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.72 Safari/537.36'
@@ -86,7 +86,7 @@ class Net:
         socket.setdefaulttimeout(socket_timeout)
 
         # empty jar for each instance rather than scope of the import
-        self._cloudflare_jar = cookielib.LWPCookieJar()
+        self._cloudflare_jar = cookielib.MozillaCookieJar()
 
         self.cloudflare = cloudflare
         if cookie_file:
@@ -169,7 +169,7 @@ class Net:
             http = urllib2.HTTPHandler()
 
         if cloudflare_jar:
-            self._cloudflare_jar = cookielib.LWPCookieJar()
+            self._cloudflare_jar = cookielib.MozillaCookieJar()
             jar = self._cloudflare_jar
         else:
             jar = self._cj
