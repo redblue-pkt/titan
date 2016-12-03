@@ -23,6 +23,7 @@ void screenaudiotrack()
 	int rcret = 0, treffer = 0;
 	struct skin* audiotrack = getscreen("audiotrack");
 	struct skin* listbox = getscreennode(audiotrack, "listbox");
+	struct skin* b4 = getscreennode(audiotrack, "b4");
 	struct skin* tmp = NULL;
 	struct audiotrack* node = NULL;
 
@@ -33,21 +34,7 @@ void screenaudiotrack()
 	{
 		m_lock(&status.audiotrackmutex, 7);
 		node = status.aktservice->channel->audiotrack;
-		if(getconfigint("downmixinaudio", NULL) == 1)
-		{
-			tmp = addlistbox(audiotrack, listbox, tmp, 1);
-			if(tmp != NULL)
-			{
-				if(status.downmix == 1)
-					changetext(tmp, _("DOWNMIX OFF"));
-				else
-					changetext(tmp, _("DOWNMIX ON"));
-				tmp->type = CHOICEBOX;
-				tmp->del = 1;
-				tmp->handle = (char*)node;
-				changeinput(tmp, "");
-			}
-		}
+
 		while(node != NULL)
 		{
 			tmp = addlistbox(audiotrack, listbox, tmp, 1);
@@ -65,8 +52,6 @@ void screenaudiotrack()
 				}
 				else
 					changeinput(tmp, "");
-				if(getconfigint("downmixinaudio", NULL) == 0)
-					if(treffer == 0) listbox->aktline++;
 			}
 			node = node->next;
 		}	
@@ -74,6 +59,11 @@ void screenaudiotrack()
 	}
 
 	if(treffer == 0) listbox->aktline = 1;
+		
+	if(status.downmix == 1)
+		changetext(b4, "passthrough");
+	else
+		changetext(b4, getconfig("av_ac3mode", NULL));
 
 	drawscreen(audiotrack, 0, 0);
 	addscreenrc(audiotrack, listbox);
@@ -98,6 +88,32 @@ void screenaudiotrack()
 		{
 			clearscreen(audiotrack);
 			screensubtitle();
+			break;
+		}
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			char* ac3dev = NULL;
+			ac3dev = getconfig("ac3dev", NULL);
+			int ret = 0;
+			if(ac3dev != NULL)
+			{
+				if(status.downmix == 1)
+				{
+					ret = writesys(ac3dev, "passthrough", 0);
+					if(ret == 0)
+						status.downmix = 0; 
+					else
+						printf("ERROR: set AC3_mode to passthrough\n");
+				}
+				else
+				{
+					ret = writesys(ac3dev, getconfig("av_ac3mode", NULL), 0);
+					if(ret == 0)
+						status.downmix = 1;
+					else
+						printf("ERROR: set AC3_mode to %s\n", getconfig("av_ac3mode", NULL)); 
+				}
+			}
 			break;
 		}
 	}
