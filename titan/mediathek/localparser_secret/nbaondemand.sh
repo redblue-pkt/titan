@@ -150,6 +150,8 @@ play()
 
 		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
 
+<iframe allowFullScreen src="http://livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-30408&id=456242896&hash=1bafa57efd8d7c50" width="600" height="338" frameborder="0" allowfullscreen></iframe>
+
 		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | sed 's!<br> </td>!\n<br> </td>!g' | grep '^found=' | grep 'video/embed' | cut -d"'" -f2 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 		if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | wc -l` -gt 0 ];then
 			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2`
@@ -167,15 +169,17 @@ play()
 		else
 #	        <iframe allowFullScreen allowFullScreen frameborder=0 marginheight=0 marginwidth=0 scrolling='no'src="http://emb.aliez.me/player/video.php?id=47383&s=t67axfnq&w=590&h=384" width="590" height="384">Your browser does not support inline frames or is currently configured not to display inline frames.</iframe>
 #		    <iframe allowFullScreen src="//livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-55574239&id=456242297&hash=f78096b994400693&hd=1" width="600" height="338" frameborder="0" allowfullscreen></iframe>
-
+#			<iframe allowFullScreen src="http://livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-30408&id=456242896&hash=1bafa57efd8d7c50" width="600" height="338" frameborder="0" allowfullscreen></iframe>
 			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe!\nfound=!g' | grep ^found | cut -d'"' -f2 | grep -v facebook >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 
 
 			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2`
 			if [ `echo $URLTMP | grep ^"//" | wc -l` -eq 1 ];then
-				rm /mnt/network/cookies
-
 				URLTMP=http:$URLTMP
+			fi
+			rm /mnt/network/cookies
+
+			if [ `echo $URLTMP | grep "export/vk.reframe.php" | wc -l` -eq 1 ];then
 				referer=$URLTMP
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				# <iframe src="http://vk.com/video_ext.php?oid=-55574239&id=456242333&hash=8f52dbd56d595751&hd=1" frameborder="0" height="100%" width="100%"></iframe></body>
