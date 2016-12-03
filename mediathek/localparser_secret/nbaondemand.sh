@@ -150,8 +150,6 @@ play()
 
 		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
 
-<iframe allowFullScreen src="http://livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-30408&id=456242896&hash=1bafa57efd8d7c50" width="600" height="338" frameborder="0" allowfullscreen></iframe>
-
 		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | sed 's!<br> </td>!\n<br> </td>!g' | grep '^found=' | grep 'video/embed' | cut -d"'" -f2 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 		if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | wc -l` -gt 0 ];then
 			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2`
