@@ -3904,6 +3904,10 @@ int setac3(char* value)
 		debug(100, "set %s to %s", ac3dev, value);
 		ret = writesys(ac3dev, value, 0);
 		if(ret == 0) addconfig("av_ac3mode", value);
+		if(ostrcmp(value, "passthrough") == 0)
+			status.downmix = 0;
+		else
+			status.downmix = 1;
 		return ret;
 	}
 
