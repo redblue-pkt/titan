@@ -218,8 +218,12 @@ play()
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.11`
 
 				$curlbin $URLTMP --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
-				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .720. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13
-				URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13`
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .720. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.720
+				URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.720`
+				if [ -z "$URL" ];then
+					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .360. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.360
+					URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.360`
+				fi
 			elif [ `echo $URLTMP | grep "/embed/" | wc -l` -eq 1 ];then
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 		#		"flashVars": {"autoplay":0,"movieSrc":"mail/arsen.bulyaev/_myvideo/738","metadataUrl":"//my.mail.ru/+/video/meta/4219658639352267490","showPauseRoll":"0","enable_search":"2","swfVersion":"29","static_version":"75","flash_enabled":"1"},
