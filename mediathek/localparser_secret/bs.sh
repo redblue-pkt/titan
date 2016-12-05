@@ -70,8 +70,9 @@ series()
 
 /<li><a href=\"/ { if (genre == PARAM) {
                       i = index($0, "<li><a href=\"") + 13
-                      j = index(substr($0, i), "\">") - 1
+                      j = index(substr($0, i), "\"") - 1
                       url = substr($0, i, j)
+                      j = index(substr($0, i), "\">") - 1
                       k = i + j + 2
                       l = index(substr($0, k), "</a></li>") - 1
                       title = substr($0, k, l)
