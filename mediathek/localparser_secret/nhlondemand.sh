@@ -14,7 +14,7 @@ fi
 
 URL=http://livetv.sx
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=DFB-On-Demand
+NAME=NBA-On-Demand
 
 #rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
@@ -45,8 +45,23 @@ mainmenu()
 
 category()
 {
-	echo "Fussball Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.latest.jpg#nbaondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Fussball Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.teams.jpg#nbaondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Ice Hockey - NHL (Latest)#$SRC $SRC videos latest enx/videotourney/2#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.latest.jpg#nhlondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Ice Hockey - NHL (Teams)#$SRC $SRC submenu teams enx/leagueresults/2/#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.teams.jpg#nhlondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+  	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+category2()
+{
+	if [ -e /etc/.beta ];then
+		echo "Live#$SRC $SRC livelist live de#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+		echo "Latest#$SRC $SRC videos latest enx/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	else
+		echo "Latest#$SRC $SRC videos latest enx/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+		echo "Latest Bundesliga#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	fi
+	echo "Teams#$SRC $SRC submenu teams enx/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Teams Bundesliga#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
