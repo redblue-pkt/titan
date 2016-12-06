@@ -14,7 +14,7 @@ fi
 
 URL=http://livetv.sx
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=NBA-On-Demand
+NAME=NHL-On-Demand
 
 #rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
