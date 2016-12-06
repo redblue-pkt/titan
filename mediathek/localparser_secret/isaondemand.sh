@@ -14,7 +14,7 @@ fi
 
 URL=http://livetv.sx
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=DFB-On-Demand
+NAME=ISA-On-Demand
 
 #rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
@@ -45,8 +45,8 @@ mainmenu()
 
 category()
 {
-	echo "Fussball - Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.latest.jpg#nbaondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Fussball - Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.teams.jpg#nbaondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - Italian Serie A (Latest)#$SRC $SRC videos latest enx/videotourney/11#http://atemio.dyndns.tv/mediathek/menu/isaondemand.latest.jpg#isaondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Fussball - Italian Serie A (Teams)#$SRC $SRC submenu teams enx/leagueresults/11/#http://atemio.dyndns.tv/mediathek/menu/isaondemand.teams.jpg#isaondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -365,31 +365,6 @@ hosterlist()
 	fi
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
-################
-#			<script type="text/javascript" language="JavaScript" src="http://hqstream.tv/pl?streampage=dsgdfhdffd26&width=700&height=480"></script>
-#
-#			get http://hqstream.tv/pl?streampage=dsgdfhdffd26&width=700&height=480
-#			document.write("<iframe FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO src=\"http://hqstream.tv/player.php?streampage=dsgdfhdffd26&height=480&width=700\" height=\"480\" width=\"700\"\></iframe>");
-#
-################
-#			<iframe width="700" height="480" src="http://www.youtube.com/embed/PjF7_8_R9q8?autoplay=1" frameborder="0" allowfullscreen></iframe>
-
-#			<script type="text/javascript" language="JavaScript" src="http://hqstream.tv/pl?streampage=dsgdfhdffd26&width=700&height=480"></script>
-#				document.write("<iframe style='margin-top: 5px;' width=700 height=16 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no src='http://cdn.livetvcdn.net/cache/links/de.381782.html?" + Math.floor(new Date().getTime() / 100000) + "'></iframe>");
-
-#		<iframe scrolling="no" frameborder=0 width=700 height=480 src="https://fsport.in/broadcasts/la_ua_2.php"></iframe>
-
-#		<iframe scrolling="no" frameborder=0 width=700 height=480 src="http://www.laola1.tv/titanplayer.php?videoid=462888&type=S"></iframe>
-
-#		<iframe scrolling="no" frameborder=0 width=700 height=480 src="http://tuttosportweb.com/update/ch3.html"></iframe>
-
-#			<IFRAME FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO align="center" WIDTH=700 HEIGHT=480 SRC="http://leton.tv/player.php?streampage=sdfewfwe26&width=700&height=480"></IFRAME>
-
-#		<iframe scrolling="no" frameborder=0 width=700 height=480 src="http://www.ehftv.com//player.php?play=467026&type=S&status=4&geo=int"></iframe>
-
-#		<iframe scrolling="no" frameborder=0 width=700 height=480 src="http://fsport.in/broadcasts/stream_19.php"></iframe>
-#		<iframe scrolling="no" frameborder=0 width=700 height=480 src="http://shstream.co/stream5/live5.php"></iframe>
-
 
 hoster()
 {

@@ -14,7 +14,7 @@ fi
 
 URL=http://livetv.sx
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=DFB-On-Demand
+NAME=EPL-On-Demand
 
 #rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
@@ -45,8 +45,8 @@ mainmenu()
 
 category()
 {
-	echo "Fussball - Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.latest.jpg#nbaondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Fussball - Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.teams.jpg#nbaondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - English Premier League (Latest)#$SRC $SRC videos latest enx/videotourney/1#http://atemio.dyndns.tv/mediathek/menu/eplondemand.latest.jpg#eplondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Fussball - English Premier League (Teams)#$SRC $SRC submenu teams enx/leagueresults/1/#http://atemio.dyndns.tv/mediathek/menu/eplondemand.teams.jpg#eplondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 

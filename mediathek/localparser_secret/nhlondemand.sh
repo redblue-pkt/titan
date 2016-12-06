@@ -50,21 +50,6 @@ category()
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
-category2()
-{
-	if [ -e /etc/.beta ];then
-		echo "Live#$SRC $SRC livelist live de#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-		echo "Latest#$SRC $SRC videos latest enx/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	else
-		echo "Latest#$SRC $SRC videos latest enx/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-		echo "Latest Bundesliga#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	fi
-	echo "Teams#$SRC $SRC submenu teams enx/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Teams Bundesliga#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-
-  	echo "$TMP/$PARSER.$INPUT.list"
-}
-
 videos()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
