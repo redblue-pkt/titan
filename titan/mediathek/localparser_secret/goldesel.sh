@@ -114,7 +114,6 @@ new()
 				fi
 				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.list
-        $curlbin $PIC -o /tmp/tithek/$TMPPIC -A 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
 			fi
 		fi
 	done 3<$TMP/cache.$PARSER.$INPUT.2
@@ -149,7 +148,6 @@ page()
 		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ] ; then
 			LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
-      $curlbin $PIC -o /tmp/tithek/$TMPPIC -A 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
 		fi
 	done 3<$TMP/cache.$PARSER.$INPUT.2
 	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
@@ -161,7 +159,7 @@ hosterlist()
 	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
 		rm $TMP/$PARSER.$INPUT.list
 	fi
-	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
+	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
 #	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
 	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<h2>Stream-Links</h2>!\nfound=!g' | sed 's!<h2>Sample-Links</h2>!\nerror=!g' | grep ^found= | sed 's/<li data=/\ndata=/g' | grep ^data= >$TMP/cache.$PARSER.$INPUT.2
@@ -182,7 +180,7 @@ hosterlist()
 hoster()
 {
 	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
-	$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
+	$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
 	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!url="http://dref.me/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g'`
 #	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	echo $STREAMURL

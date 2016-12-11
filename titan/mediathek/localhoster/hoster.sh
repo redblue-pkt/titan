@@ -9,7 +9,7 @@ INPUT=`echo $INPUT | sed 's!/Out/?s=!!g'`
 ARCH=`cat /etc/.arch`
 BOX=`cat /etc/model`
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
-curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'"
+curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'"
 curlbin2='curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 wgetbin="wget -q -T2"
