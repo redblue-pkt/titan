@@ -5,51 +5,76 @@ void write2oled(unsigned char *buf, int xres, int yres)
 {
 	unsigned char* lfb1 = NULL;
 	unsigned char* lfb2 = NULL;
+	unsigned char byte;
 	int i = 0;
 	int bi = 0;
 	int ret = 0;
 	
-	lfb1 = malloc(xres * yres);
-	if(lfb1 == NULL)
-		return;
-		
-	for(i = 0; i <= xres*yres; i++)
-	{
-		//             R                           B                          G
-		lfb1[i] = ((76 * buf[bi+2]) / 255) + ((150 * buf[bi+1]) / 255) + ((28 * buf[bi]) / 255);
-		bi = bi + 4;
-	}
-	
 	int lcdfd1 = open(getconfig("vfddev", NULL), O_RDWR);
 	
-	if(checkchipset("BCM7424") == 1)
+	if(checkbox("DM900") == 1)
+		lfb1 = malloc(xres * yres * 2);
+	else
+		lfb1 = malloc(xres * yres);
+	if(lfb1 == NULL)
+		return;
+
+	if(checkbox("DM900") != 1)
 	{
-		ret = write(lcdfd1, lfb1, xres * yres);
-		if(ret != xres * yres)
-			err("write to oled - %s - was not ok", getconfig("vfddev", NULL));
-	}
-	//Die Displays der dm7020hd, dm7025+(?), dm7080 und dm8000 haben 128*64*4bpp, DM800se hat 96*64*16bpp (RGB565), dm800 und dm7025(?) haben 132*64*1bpp (ältere ggf. 120*64 oder 128*64)
-	else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
-	{
-		unsigned char byte;
-		bi = 0;
-		lfb2 = malloc(xres * yres / 2);
-		if(lfb2 == NULL)
-			return;
-		for(i = 0; i <= xres*yres; i = i + 2)
+		
+		for(i = 0; i <= xres*yres; i++)
 		{
-			byte = lfb1[i] * 15 / 255;
-			lfb2[bi] = (byte << 4) & 0xf0;
-			byte = lfb1[i+1] * 15 / 255;
-			lfb2[bi] |= byte & 0x0f;
-			bi = bi + 1;
+			//             R                           B                          G
+			lfb1[i] = ((76 * buf[bi+2]) / 255) + ((150 * buf[bi+1]) / 255) + ((28 * buf[bi]) / 255);
+			bi = bi + 4;
 		}
-		ret = write(lcdfd1, lfb2, xres * yres / 2);
-		if(ret != xres * yres / 2)
-			err("write to oled - %s - was not ok", getconfig("vfddev", NULL));
+	
+		
+		if(checkchipset("BCM7424") == 1)
+		{
+			ret = write(lcdfd1, lfb1, xres * yres);
+			if(ret != xres * yres)
+				err("write to oled - %s - was not ok", getconfig("vfddev", NULL));
+		}
+		//Die Displays der dm7020hd, dm7025+(?), dm7080 und dm8000 haben 128*64*4bpp, DM800se hat 96*64*16bpp (RGB565), dm800 und dm7025(?) haben 132*64*1bpp (ältere ggf. 120*64 oder 128*64)
+		else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+		{
+			bi = 0;
+			lfb2 = malloc(xres * yres / 2);
+			if(lfb2 == NULL)
+				return;
+			for(i = 0; i <= xres*yres; i = i + 2)
+			{
+				byte = lfb1[i] * 15 / 255;
+				lfb2[bi] = (byte << 4) & 0xf0;
+				byte = lfb1[i+1] * 15 / 255;
+				lfb2[bi] |= byte & 0x0f;
+				bi = bi + 1;
+			}
+			ret = write(lcdfd1, lfb2, xres * yres / 2);
+			if(ret != xres * yres / 2)
+				err("write to oled - %s - was not ok", getconfig("vfddev", NULL));
+			free(lfb2);
+		}
+	}
+	else
+	{
+		//RGB565
+		for(i = 0; i <= xres*yres*2; i = i + 2)
+		{
+			lfb1[i] = buf[bi+2] & 0xF8;
+			byte = (buf[bi] >> 5) & 0x07;
+			lfb1[i] = lfb1[i] ^ byte;
+			lfb1[i+1] = (buf[bi] << 3) & 0xE0;
+			byte = (buf[bi+1] >> 3) & 0x1F;
+			lfb1[i+1] = lfb1[i+1] ^ byte;
+			bi = bi + 4;
+		}
+		ret = write(lcdfd1, lfb1, xres * yres * 2);
+		if(ret != xres * yres * 2)
+			err("write to oled dm900 - %s - was not ok", getconfig("vfddev", NULL));
 		free(lfb2);
 	}
-		
 	close(lcdfd1);
 	
 	free(lfb1);
@@ -92,7 +117,21 @@ int oledtext(char *value)
 			else
 				OLED_all = getscreen(getskinconfig("OLED_dream1", NULL));
 		}
-	}	
+	}
+	else if(checkbox("DM900") == 1)
+	{
+		if(status.updatevfd == PAUSE)
+			OLED_all = getscreen("OLED_dream2_menu");
+		else if(status.standby > 0)
+			OLED_all = getscreen("OLED_dream2_standby");
+		else
+		{
+			if(getskinconfig("OLED_dream2", NULL) == NULL)
+				OLED_all = getscreen("OLED_dream2");
+			else
+				OLED_all = getscreen(getskinconfig("OLED_dream2", NULL));
+		}
+	}		
 		
 	
 	struct skin* textbox = getscreennode(OLED_all, "textbox");

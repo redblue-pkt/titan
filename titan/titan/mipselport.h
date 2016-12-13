@@ -1556,6 +1556,7 @@ char* getfbosddev(char* dev)
 
 void setfbosd()
 {
+#ifndef ARM
 	debug(101, "################## set osd offset ####################");
 	debug(101, "status.leftoffset: %d", status.leftoffset);
 	debug(101, "status.rightoffset: %d", status.rightoffset);
@@ -1585,6 +1586,7 @@ void setfbosd()
 	setfbosddev(fbtopdev, fbtop);
 	setfbosddev(fbheightdev, fbheight);
 	debug(101, "######################################################");
+#endif
 }
 
 int setrtctimemips()
