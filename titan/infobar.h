@@ -485,7 +485,7 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
 		{
-			if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 || checkbox("DM900") == 1)
+			if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0)
 				rcret = getrcconfigint("rctvradio", NULL);
 			else
 				rcret = getrcconfigint("rcepg", NULL);
