@@ -54,7 +54,7 @@ msgid ""
 "Website www.atemio.de"
 msgstr ""
 
-#: skinadjust.h:248
+#: skinadjust.h:256
 msgid "%"
 msgstr ""
 
@@ -2448,7 +2448,7 @@ msgstr "Tạo hình ảnh"
 msgid "Create new"
 msgstr "Tạo thư mục"
 
-#: skinadjust.h:618
+#: skinadjust.h:626
 msgid "Create new Skinstyle ?"
 msgstr ""
 
@@ -3197,7 +3197,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
 #: security.h:685 security.h:1952 service.h:743 service.h:989 shared.h:29
-#: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
+#: shared.h:66 shared.h:83 skinadjust.h:602 skinadjust.h:626 skinadjust.h:667
 #: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
 #: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
@@ -4020,7 +4020,7 @@ msgstr ""
 msgid "G"
 msgstr ""
 
-#: skinadjust.h:249
+#: skinadjust.h:257
 msgid "GB"
 msgstr ""
 
@@ -5866,8 +5866,8 @@ msgstr ""
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1952
 #: service.h:743 service.h:989 shared.h:29 shared.h:66 shared.h:83
-#: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
-#: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
+#: skinadjust.h:602 skinadjust.h:618 skinadjust.h:626 skinadjust.h:667
+#: skinadjust.h:684 skinadjust.h:1109 skinadjust.h:1171 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
 #: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:75 streamcloud.h:81 streamcloud.h:91
@@ -6250,7 +6250,7 @@ msgstr ""
 msgid "Nfs Server Settings"
 msgstr "Thiết lập Server NFS"
 
-#: skinadjust.h:247
+#: skinadjust.h:255
 msgid "No"
 msgstr ""
 
@@ -6467,9 +6467,9 @@ msgstr "E"
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:668 security.h:685 security.h:1952 service.h:743 service.h:989
-#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
-#: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
-#: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
+#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:602 skinadjust.h:618
+#: skinadjust.h:626 skinadjust.h:667 skinadjust.h:684 skinadjust.h:1109
+#: skinadjust.h:1171 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
@@ -7780,7 +7780,7 @@ msgstr ""
 msgid "Remove Log:"
 msgstr ""
 
-#: skinadjust.h:653
+#: skinadjust.h:661
 msgid "Remove Skinstyle"
 msgstr ""
 
@@ -7850,7 +7850,7 @@ msgstr "Lập lại"
 msgid "Reset"
 msgstr ""
 
-#: skinadjust.h:594
+#: skinadjust.h:602
 msgid "Reset your Skin Settings ?"
 msgstr ""
 
@@ -9073,7 +9073,7 @@ msgstr ""
 msgid "Skin tobayer01 (grey/blue/black) default picons"
 msgstr ""
 
-#: skinadjust.h:621
+#: skinadjust.h:629
 msgid "Skinstyle Name"
 msgstr ""
 
@@ -10026,8 +10026,8 @@ msgstr "Media Center"
 
 #: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
 #: global.h:7252 global.h:7272 global.h:7292 global.h:7312 global.h:7332
-#: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
-#: skinadjust.h:1163
+#: kravencfg.c:212 skinadjust.h:618 skinadjust.h:684 skinadjust.h:1109
+#: skinadjust.h:1171
 msgid "Titan will be restarted!"
 msgstr ""
 
@@ -11315,11 +11315,11 @@ msgstr "màu đen"
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:110
+#: vfdisplay.h:131
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:114
+#: vfdisplay.h:135
 msgid "blink star"
 msgstr ""
 
@@ -11391,7 +11391,7 @@ msgstr ""
 msgid "change"
 msgstr "Thay đổi"
 
-#: vfdisplay.h:82
+#: vfdisplay.h:103
 msgid "channel"
 msgstr "chương trình"
 
@@ -11399,11 +11399,11 @@ msgstr "chương trình"
 msgid "channel (EPG=Current channel)"
 msgstr ""
 
-#: vfdisplay.h:83
+#: vfdisplay.h:104
 msgid "channel + time"
 msgstr " chương trình + thời gian"
 
-#: vfdisplay.h:90
+#: vfdisplay.h:111
 msgid "channel number"
 msgstr " chương trình + thời gian"
 
@@ -11496,7 +11496,7 @@ msgstr "hàng ngày"
 msgid "date"
 msgstr "ngày"
 
-#: vfdisplay.h:97
+#: vfdisplay.h:118
 msgid "date + time"
 msgstr "ngày + giờ"
 
@@ -11709,7 +11709,7 @@ msgstr ""
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:111
+#: vfdisplay.h:132
 msgid "fade out/in"
 msgstr ""
 
@@ -12265,7 +12265,7 @@ msgstr "NFS-Server"
 #: settings_autostart.h:511 settings_autostart.h:568 settings_autostart.h:577
 #: settings_autostart.h:586 settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:252 stopifnotused.c:94
+#: settings_overclocking.h:244 skinadjust.h:260 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:41
 #: tithek_settings.h:45 tithek_settings.h:49 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -12348,8 +12348,8 @@ msgstr "E"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:94
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:94
-#: vfdisplay.h:109
+#: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92
+#: vfdisplay.h:115 vfdisplay.h:130
 msgid "off"
 msgstr "tắt"
 
@@ -12401,7 +12401,7 @@ msgstr ""
 #: lnbconfig.h:143 mc_pictureplayer_settings.h:35
 #: mc_pictureplayer_settings.h:39 readerconfig.h:424 skinadjust.h:93
 #: transponder.h:257 transponder.h:266 transponder.h:416 transponder.h:425
-#: vfdisplay.h:49 vfdisplay.h:70
+#: vfdisplay.h:49 vfdisplay.h:70 vfdisplay.h:91
 msgid "on"
 msgstr "BẬT"
 
@@ -12916,7 +12916,7 @@ msgstr "hiển thị các mục tự động"
 msgid "show in list"
 msgstr ""
 
-#: vfdisplay.h:112
+#: vfdisplay.h:133
 msgid "show record"
 msgstr "ghi"
 
@@ -13030,7 +13030,7 @@ msgstr "Standby"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:113
+#: vfdisplay.h:134
 msgid "star"
 msgstr "Khởi động lại"
 
@@ -13244,15 +13244,15 @@ msgstr ""
 msgid "tiWakeup"
 msgstr ""
 
-#: vfdisplay.h:85 vfdisplay.h:88 vfdisplay.h:93
+#: vfdisplay.h:106 vfdisplay.h:109 vfdisplay.h:114
 msgid "time"
 msgstr "thời gian"
 
-#: vfdisplay.h:84
+#: vfdisplay.h:105
 msgid "time + channel"
 msgstr "thời gian + chương trình"
 
-#: vfdisplay.h:89
+#: vfdisplay.h:110
 msgid "time small"
 msgstr "thời gian ngắn"
 
@@ -13469,7 +13469,7 @@ msgstr "rất nhanh"
 msgid "very slow"
 msgstr "rất chậm"
 
-#: vfdisplay.h:98
+#: vfdisplay.h:119
 msgid "vfddate"
 msgstr ""
 
@@ -13682,7 +13682,7 @@ msgstr ""
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_autostart.h:604 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:253
+#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:261
 #: stopifnotused.c:93 timeshiftsettings.h:58 timeshiftsettings.h:62
 #: tithek_settings.h:42 tithek_settings.h:46 tithek_settings.h:50 tmc.h:532
 #: tmc.h:536 xupnpd.h:30
