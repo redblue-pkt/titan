@@ -4776,7 +4776,7 @@ int setprogress(int value)
 	if(progressdev != NULL)
 	{
 		debug(100, "set %s to %d",progressdev, value);
-		if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+		if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1)
 			return writesysint(progressdev, value, 1);
 		else
 			return writesysint(progressdev, value, 0);

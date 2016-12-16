@@ -141,7 +141,7 @@ int cawrite(struct dvbdev* dvbnode, int fd, unsigned char* buf, int count, int f
 	}
 
 	ret = dvbwrite(fd, buf, count, tout);
-	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1)
 		usleep(150000);
 	if(ret >= 0 && ret == count && dvbnode != NULL && dvbnode->caslot != NULL) dvbnode->caslot->poll = 0;
 
@@ -1506,7 +1506,7 @@ int cacreatetc(struct dvbdev* dvbnode)
 	ret = cawrite(dvbnode, dvbnode->fd, buf, 5, 0, -1);
 	free(buf); buf = NULL;
 	dvbnode->caslot->poll = 0;
-	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1)
 		sleep(1);
 	return ret;
 }

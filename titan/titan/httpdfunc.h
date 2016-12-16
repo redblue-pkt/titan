@@ -5677,7 +5677,7 @@ char* webgetupdatelist(char* param, int fmt)
 		buf = ostrcat(buf, "<br><br>", 1, 0);
 	}
 
-	if(checkrealbox("DM7020HD") == 1)
+	if(checkrealbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1)
 	{
 		if(mode == 0)
 			tmpstr = command("ls -1 /tmp/online | grep .nfi | sort -r");

@@ -1824,7 +1824,7 @@ playerstart:
 				if(rcret == getrcconfigint("rcfr", NULL))
 					playrcfr(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
-				if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
+				if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 				{	
 					playrcpause(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 					continue;

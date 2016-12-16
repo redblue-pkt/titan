@@ -71,6 +71,27 @@ void screenvfdisplay()
 		addchoicebox(blinkoff, "1", _("off"));
 		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
 	}	
+	else if(checkbox("DM900") == 1)
+	{
+		char *tmp1 = NULL, *tmp2 = NULL;		
+		int i = 0;		
+		if(checkscreen("OLED_dream2") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_dream2", "v1");		
+		for (i=2;i<30;i++)
+		{
+			tmp1 = ostrcat("OLED_dream2_v",oitoa(i), 0, 1);
+			tmp2 = ostrcat("v",oitoa(i), 0, 1);
+			if(checkscreen(tmp1) != status.skinerr)
+   				addchoicebox(oled_sel, tmp1,tmp2);
+			free(tmp1);tmp1=NULL;
+			free(tmp2);tmp2=NULL;
+		}
+		
+		setchoiceboxselection(oled_sel, getskinconfig("OLED_dream2", NULL));
+		addchoicebox(blinkoff, "0", _("on"));
+		addchoicebox(blinkoff, "1", _("off"));
+		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
+	}	
 	else
 	{
 		oled_sel->hidden = YES;
@@ -101,7 +122,7 @@ void screenvfdisplay()
 
 //record
 
-	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1) //inihdp
+	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1) //inihdp
 		vfdrecord->hidden = YES;
 	else
 	{
@@ -148,7 +169,7 @@ void screenvfdisplay()
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		
-		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) &&  (checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkchipset("BCM7424") == 1) && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0) // inihdp
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) &&  (checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkchipset("BCM7424") == 1) && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0) // inihdp
 		{
 			tmpstr = ostrcat(tmpstr, oled_sel->ret, 0, 0);
 			struct skin* OLED_all = getscreen(tmpstr);
@@ -158,6 +179,8 @@ void screenvfdisplay()
 					OLED_all = getscreen("OLED_nemesis");
 				else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 					OLED_all = getscreen("OLED_dream1");
+				else if(checkbox("DM900") == 1)
+					OLED_all = getscreen("OLED_dream2");
 			}	
 			struct skin* textbox = getscreennode(OLED_all, "textbox");
 			changetext(textbox, tmpstr);
@@ -227,12 +250,12 @@ void screenvfdisplay()
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
 				addconfig("skinblinkoff", blinkoff->ret);
 			}
-			else if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1) //inihdp
+			else if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && checkbox("DM900") != 1) //inihdp
 			{
 				addskinconfigscreencheck("OLED_dream1", oled_sel, "0");
+				addskinconfigscreencheck("OLED_dream2", oled_sel, "0");
 				addconfig("skinblinkoff", blinkoff->ret);
 			}
-
 			break;
 		}
 	}
