@@ -93,7 +93,7 @@ start:
 	addchoicebox(blinkoff, "0", _("on"));
 	addchoicebox(blinkoff, "1", _("off"));
 	setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
-
+ 	
 #ifdef MIPSEL
 	changeinput(leftoffset, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20");
 	setchoiceboxselection(leftoffset, getconfig("fbleftoffset", NULL));
@@ -124,6 +124,14 @@ start:
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
 
+	if(checkbox("DM900") == 1) //offset fuer FB nicht vorgesehen
+	{
+		leftoffset->hidden = YES;
+		rightoffset->hidden = YES;
+		topoffset->hidden = YES;
+		bottomoffset->hidden = YES;
+	}
+	
 	if(checkscreen("infobar") != status.skinerr)
 		addchoicebox(infobar_sel, "infobar", "default");
 	if(checkscreen("infobar_v2") != status.skinerr)
