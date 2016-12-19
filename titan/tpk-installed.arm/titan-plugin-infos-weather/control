@@ -1,0 +1,14 @@
+Package: titan-plugin-infos-weather
+Architecture: mipsel
+Showname: Weather
+Version: 32273
+Section: infos
+Description: weather Plugin
+Group: 0
+Minversion: 32072
+Preinstalled: 0
+Size: 194
+Titanname: Weather
+Usepath: *
+Boxtype: *
+Installpath: /var

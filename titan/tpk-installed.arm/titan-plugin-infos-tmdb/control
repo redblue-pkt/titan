@@ -1,0 +1,14 @@
+Package: titan-plugin-infos-tmdb
+Architecture: mipsel
+Showname: TMDb
+Version: 32273
+Section: infos
+Description: TMDb Movie Database Plugin
+Group: 0
+Minversion: 32072
+Preinstalled: 0
+Size: 43
+Titanname: TMDb
+Usepath: *
+Boxtype: *
+Installpath: /var
