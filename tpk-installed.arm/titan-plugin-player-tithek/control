@@ -1,0 +1,14 @@
+Package: titan-plugin-player-tithek
+Architecture: mipsel
+Showname: TiTan Mediathek
+Version: 32273
+Section: player
+Description: TiThek the Multimedia-thek.
+Group: 0
+Minversion: 32072
+Preinstalled: 0
+Size: 299
+Titanname: TiTan Mediathek
+Usepath: *
+Boxtype: *
+Installpath: /var

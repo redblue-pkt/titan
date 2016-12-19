@@ -45,8 +45,8 @@ mainmenu()
 
 category()
 {
-	echo "Fussball - Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.latest.jpg#nbaondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Fussball - Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.teams.jpg#nbaondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.latest.jpg#dfbondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Fussball - Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.teams.jpg#dfbondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
