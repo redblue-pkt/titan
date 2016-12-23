@@ -35,16 +35,8 @@ if [ -e "$HOME"/flashimg/.ipk-build-error ]; then
 	exit
 fi
 
-# work
-#
-#   mv -f "$HOME"/flashimg/$SRCDIR/titan/struct.mipsel.h "$HOME"/flashimg/$SRCDIR/titan/struct.h
-
-#if [ "$GROUP" = "dev" ];then
-#   mv -f "$HOME"/flashimg/$SRCDIR/titan/skin.mipsel.h "$HOME"/flashimg/$SRCDIR/titan/skin.h
-#fi
-
 if [ -z "$TYPE" ]; then
-    echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
+    echo "error: use ./makearm.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
     touch "$HOME"/flashimg/.ipk-build-error
     exit 1
 fi
@@ -224,58 +216,16 @@ else
     devflag=""
 fi
 
-#if [ "$DISTRO" = "atemio" ];then
-    GCCPATH=mipsel-oe-linux
-#else
-#   GCCPATH=mips32el-oe-linux
-#fi
+    GCCPATH=arm-oe-linux-gnueabi
 
 cd "$HOME"/flashimg/$SRCDIR/titan
 pwd
 
-#if [ "$DISTRO" != "titannit" ];then
-#   echo "$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-gcc -DMIPSEL -D$DREAM -DCAMSUPP -D$eplayer -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration \
-#       -I $SRC/tmp/sysroots/$BOX/usr/include/freetype2 \
-#       -I $SRC/tmp/sysroots/$BOX/usr/include \
-#       -I $eplayerinclude \
-#       -I $SRC/tmp/sysroots/$BOX/usr/include/dreamdvd \
-#       -I "$HOME"/flashimg/$SRCDIR/libdreamdvd \
-#       -I "$HOME" \
-#       -c titan.c
-#       "
-#
-#   $SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-gcc -DMIPSEL -D$DREAM -DCAMSUPP -D$eplayer -Os $devflag -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration \
-#       -I $SRC/tmp/sysroots/$BOX/usr/include/freetype2 \
-#       -I $SRC/tmp/sysroots/$BOX/usr/include \
-#       -I $eplayerinclude \
-#       -I $SRC/tmp/sysroots/$BOX/usr/include/dreamdvd \
-#       -I "$HOME"/flashimg/$SRCDIR/libdreamdvd \
-#       -I "$HOME" \
-#       -c titan.c
-#
-#   echo "$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-gcc -Os -mhard-float -export-dynamic -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -Wall \
-#       titan.o \
-#       -o titan
-#       "
-#
-#   $SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-gcc -Os -mhard-float $devflag -export-dynamic -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -Wall \
-#       titan.o \
-#       -o titan
-
-
-#/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihde/tmp/sysroots/x86_64-linux/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I.    -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/$eplayerlib     -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/glib-2.0   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/libxml2    -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/lib/glib-2.0/include   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/freetype2  -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/dreamdvd   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/libdreamdvd    -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/work/inihdp-oe-linux/titan-bin/2.0+svnr32459-r1/titan/libdreamdvd  -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/work/inihdp-oe-linux/titan-bin/2.0+svnr32459-r1/titan/titan -MT titan-titan.o -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
-#/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/bin/crossscripts/mipsel-oe-linux-libtool  --tag=CC   --mode=link /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihde/tmp/sysroots/x86_64-linux/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include  -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/$eplayerlib     -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/glib-2.0   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/libxml2    -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/lib/glib-2.0/include   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/freetype2  -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/dreamdvd   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/libdreamdvd    -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/work/inihdp-oe-linux/titan-bin/2.0+svnr32459-r1/titan/libdreamdvd  -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/work/inihdp-oe-linux/titan-bin/2.0+svnr32459-r1/titan/titan -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Wl,-O1  -Wl,--as-needed -o titan titan-titan.o -DMIPSEL -D$DREAM -DCAMSUPP -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg
 
     mkdir .deps
-    $SRC/tmp/sysroots/$ARCH/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc -mel -mabi=32 -mhard-float -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I.    -DDVDPLAYER -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Os -mhard-float $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I$SRC/tmp/sysroots/$BOX/usr/include     -I$SRC/tmp/sysroots/$BOX/usr/include/$eplayerlib     -I$SRC/tmp/sysroots/$BOX/usr/lib/$eplayerlib/include     -I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0   -I$SRC/tmp/sysroots/$BOX/usr/include/libxml2    -I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include   -I$SRC/tmp/sysroots/$BOX/usr/include/freetype2  -I$SRC/tmp/sysroots/$BOX/usr/include/dreamdvd   -I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd    -I$SRC/tmp/sysroots/$BOX/usr/include -I"$HOME"/flashimg/source.titan/libdreamdvd     -I"$HOME"/flashimg/source.titan/titan -MT titan-titan.o -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
-    $SRC/tmp/sysroots/$BOX/usr/bin/crossscripts/mipsel-oe-linux-libtool  --tag=CC   --mode=link $SRC/tmp/sysroots/$ARCH/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Os -mhard-float $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I$SRC/tmp/sysroots/$BOX/usr/include   -I$SRC/tmp/sysroots/$BOX/usr/include/$eplayerlib     -I$SRC/tmp/sysroots/$BOX/usr/lib/$eplayerlib/include     -I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0   -I$SRC/tmp/sysroots/$BOX/usr/include/libxml2    -I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include   -I$SRC/tmp/sysroots/$BOX/usr/include/freetype2  -I$SRC/tmp/sysroots/$BOX/usr/include/openssl  -I$SRC/tmp/sysroots/$BOX/usr/include/dreamdvd   -I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd    -I"$HOME"/flashimg/source.titan/libdreamdvd     -I"$HOME"/flashimg/source.titan/titan -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Wl,-O1  -Wl,--as-needed -o titan titan-titan.o -DDVDPLAYER -DMIPSEL -D$DREAM -DCAMSUPP -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lssl -lcrypto
-    $SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-strip titan
-
-#branch 3.3
-#$SRC/tmp/sysroots/$ARCH/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I.    -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Os -mhard-float $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I$SRC/tmp/sysroots/$BOX/usr/include 	-I$SRC/tmp/sysroots/$BOX/usr/lib/gstreamer-1.0/include 	-I$SRC/tmp/sysroots/$BOX/usr/include/gstreamer-1.0 	-I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0 	-I$SRC/tmp/sysroots/$BOX/usr/include/libxml2 	-I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include 	-I$SRC/tmp/sysroots/$BOX/usr/include/freetype2 	-I$SRC/tmp/sysroots/$BOX/usr/include/dreamdvd 	-I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd 	-I"$HOME"/flashimg/source.titan/libdreamdvd     -I"$HOME"/flashimg/source.titan/titan      -MT titan-titan.o -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
-#mv -f .deps/titan-titan.Tpo .deps/titan-titan.Po
-#$SRC/tmp/sysroots/$BOX/usr/bin/crossscripts/mipsel-oe-linux-libtool  --tag=CC   --mode=link $SRC/tmp/sysroots/$ARCH/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Os -mhard-float $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I$SRC/tmp/sysroots/$BOX/usr/include 	-I$SRC/tmp/sysroots/$BOX/usr/lib/gstreamer-1.0/include 	-I$SRC/tmp/sysroots/$BOX/usr/include/gstreamer-1.0 	-I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0 	-I$SRC/tmp/sysroots/$BOX/usr/include/libxml2 	-I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include 	-I$SRC/tmp/sysroots/$BOX/usr/include/freetype2 	-I$SRC/tmp/sysroots/$BOX/usr/include/dreamdvd 	-I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd 	-I"$HOME"/flashimg/source.titan/libdreamdvd     -I"$HOME"/flashimg/source.titan/titan       -Wl,-O1  -Wl,--as-needed -o titan titan-titan.o -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -lgstreamer-1.0 -ldreamdvd -ljpeg
-#$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-strip titan
+    $SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/$GCCPATH-gcc -mel -mabi=32 -mhard-float -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I.    -DDVDPLAYER -DARM -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Os -mhard-float $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I$SRC/tmp/sysroots/$BOX/usr/include     -I$SRC/tmp/sysroots/$BOX/usr/include/$eplayerlib     -I$SRC/tmp/sysroots/$BOX/usr/lib/$eplayerlib/include     -I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0   -I$SRC/tmp/sysroots/$BOX/usr/include/libxml2    -I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include   -I$SRC/tmp/sysroots/$BOX/usr/include/freetype2  -I$SRC/tmp/sysroots/$BOX/usr/include/dreamdvd   -I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd    -I$SRC/tmp/sysroots/$BOX/usr/include -I"$HOME"/flashimg/source.titan/libdreamdvd     -I"$HOME"/flashimg/source.titan/titan -MT titan-titan.o -DARM -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
+    $SRC/tmp/sysroots/$BOX/usr/bin/crossscripts/$GCCPATH-libtool  --tag=CC   --mode=link $SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/$GCCPATH-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DARM -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Os -mhard-float $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I$SRC/tmp/sysroots/$BOX/usr/include   -I$SRC/tmp/sysroots/$BOX/usr/include/$eplayerlib     -I$SRC/tmp/sysroots/$BOX/usr/lib/$eplayerlib/include     -I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0   -I$SRC/tmp/sysroots/$BOX/usr/include/libxml2    -I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include   -I$SRC/tmp/sysroots/$BOX/usr/include/freetype2  -I$SRC/tmp/sysroots/$BOX/usr/include/openssl  -I$SRC/tmp/sysroots/$BOX/usr/include/dreamdvd   -I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd    -I"$HOME"/flashimg/source.titan/libdreamdvd     -I"$HOME"/flashimg/source.titan/titan -DARM -DMIPSEL -D$DREAM -DCAMSUPP -DEPLAYER4 -Wl,-O1  -Wl,--as-needed -o titan titan-titan.o -DDVDPLAYER -DARM -DMIPSEL -D$DREAM -DCAMSUPP -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lssl -lcrypto
+    $SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/$GCCPATH-strip titan
 
     echo "[titan]--------------------------------------------------------"
     echo "[titan] titan done"
@@ -329,7 +279,7 @@ echo "[titan]--------------------------------------------------------"
     echo "[titan]--------------------------------------------------------"
     echo "[titan] Make Plugins"
     echo "[titan]--------------------------------------------------------"
-    "$HOME"/flashimg/$SRCDIR/plugins/makemipsel.sh "$STM" "$MEDIAFW" "$GROUP" "$BOX" "$DISTRO" "$ARCH" "$SRCDIR"
+    "$HOME"/flashimg/$SRCDIR/plugins/makearm.sh "$STM" "$MEDIAFW" "$GROUP" "$BOX" "$DISTRO" "$ARCH" "$SRCDIR"
     echo "[titan]--------------------------------------------------------"
     echo "[titan] Plugins done"
     echo "[titan]--------------------------------------------------------"
@@ -390,7 +340,7 @@ mkdir -p "$HOME"/flashimg/BUILD/titan/modules
 
 cp -a "$HOME"/flashimg/$SRCDIR/help "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
 cp -a "$HOME"/flashimg/$SRCDIR/var.settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan
-cat "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.mipsel.cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.all.cfg | sort -u > "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.cfg
+cat "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.arm.cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.all.cfg | sort -u > "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.cfg
 sed 's/&/\\&/g' -i "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.cfg
 rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.*.cfg
 
