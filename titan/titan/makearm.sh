@@ -24,7 +24,7 @@ BOXNAME=${18}
 TYPE1=${19}
 
 DREAM="NOTDREAM"
-if [ "$BOX" == "dm7020hd" ];then
+if [ "$BOX" == "dm900" ];then
 	DREAM="DREAMBOX"
 fi
 
