@@ -5323,6 +5323,14 @@ msgstr "LED - Brillo mientras se ejecuta"
 msgid "LED - brightness standby"
 msgstr "LED - Brillo en modo de espera"
 
+#: vfdisplay.h:173
+msgid "LED when running"
+msgstr ""
+
+#: vfdisplay.h:174
+msgid "LED when sleeping"
+msgstr ""
+
 #: hwtest.h:185 hwtest.h:569
 msgid "LNB"
 msgstr ""
@@ -11460,7 +11468,7 @@ msgstr "Parpadear"
 msgid "blink star"
 msgstr "Iniciar Parpadeo"
 
-#: screensaveradjust.h:30
+#: screensaveradjust.h:30 vfdisplay.h:167 vfdisplay.h:171
 msgid "blue"
 msgstr "Azul"
 
@@ -12488,7 +12496,7 @@ msgstr "Ö"
 #: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:94
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92
-#: vfdisplay.h:115 vfdisplay.h:130
+#: vfdisplay.h:115 vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
 msgstr "Off"
 
@@ -12809,7 +12817,7 @@ msgstr ""
 msgid "rectimerext"
 msgstr ""
 
-#: screensaveradjust.h:32
+#: screensaveradjust.h:32 vfdisplay.h:166 vfdisplay.h:170
 msgid "red"
 msgstr "Rojo"
 
