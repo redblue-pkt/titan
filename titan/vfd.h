@@ -430,8 +430,10 @@ void initvfd()
 	addvfdiconstate(VFD_REC);
 	addvfdiconstate(VFD_CLOCK);
 
-	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1)
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 		initOLEDdream1();
+	else if(checkbox("DM900") == 1)
+		setled(1);
 	else
 		setallvfdsymbols(0);
 	
@@ -701,6 +703,34 @@ void vfdrecordthread()
 	}
 	VFD_Recordthread = NULL;
 	free(merkvfd);merkvfd=NULL;
-} 						
+} 		
+
+void setled(int typ)
+{
+	int wert = 0;
+	if(typ == 1)
+	{
+		if(status.standby == 0)
+			wert = getconfigint("dm900frontrun", NULL);	
+		else
+			wert = getconfigint("dm900frontsleep", NULL);
+		if(wert == 0)
+		{
+			writesys("/proc/stb/fp/led0_pattern", "00000000", 1);
+			writesys("/proc/stb/fp/led1_pattern", "00000000", 1);
+		}
+		if(wert == 1)
+		{
+			writesys("/proc/stb/fp/led0_pattern", "00000000", 1);
+			writesys("/proc/stb/fp/led1_pattern", "ffffffff", 1);
+		}
+		if(wert == 2)
+		{
+			writesys("/proc/stb/fp/led0_pattern", "ffffffff", 1);
+			writesys("/proc/stb/fp/led1_pattern", "00000000", 1);
+		}
+	}
+}
+			 	
 
 #endif
