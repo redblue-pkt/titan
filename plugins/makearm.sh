@@ -62,7 +62,7 @@ ln -s "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins/titan
 #fi
 
 #if [ "$DISTRO" = "atemio" ];then
-	GCCPATH=mipsel-oe-linux
+	GCCPATH=arm-oe-linux-gnueabi
 #else
 #	GCCPATH=mips32el-oe-linux
 #fi
@@ -80,7 +80,7 @@ compile()
 	echo "[titan] Make Plugin $1"
 	echo "[titan]--------------------------------------------------------"
 
-#	$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-gcc -DMIPSEL -D$eplayer -Os -mhard-float $devflag -fPIC -Wall -Wno-unused-but-set-variable $4 \
+#	$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/arm-oe-linux-gnueabi-gcc -DMIPSEL -D$eplayer -Os -mhard-float $devflag -fPIC -Wall -Wno-unused-but-set-variable $4 \
 #	-I $SRC/tmp/sysroots/$BOX/usr/include/freetype2 \
 #	-I $eplayerinclude \
 #	-I $SRC/tmp/sysroots/$BOX/usr/include/dreamdvd \
@@ -90,13 +90,13 @@ compile()
 #	-c $2.c -o $2.o
 #
 #	if [ ! -z $3 ]; then
-#		$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-gcc -shared -Wl,-soname,$2.so -o $2.so $2.o $3.a
+#		$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/arm-oe-linux-gnueabi-gcc -shared -Wl,-soname,$2.so -o $2.so $2.o $3.a
 #	else
-#		$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-gcc -shared -Wl,-soname,$2.so -o $2.so $2.o
+#		$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/arm-oe-linux-gnueabi-gcc -shared -Wl,-soname,$2.so -o $2.so $2.o
 #	fi
 
-#/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/bin/crossscripts/mipsel-oe-linux-libtool  --tag=CC   --mode=compile /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihde/tmp/sysroots/x86_64-linux/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp -DPACKAGE_NAME=\"tuxbox-apps-titan-plugins\" -DPACKAGE_TARNAME=\"tuxbox-titan-plugins\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan-plugins\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan-plugins\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I.  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/$eplayerlib 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/glib-2.0 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/libxml2 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/lib/glib-2.0/include 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/freetype2 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/dreamdvd 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/libdreamdvd 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/work/inihdp-oe-linux/titan-plugins/2.0+svnr32455-r1/titan/libdreamdvd 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/work/inihdp-oe-linux/titan-plugins/2.0+svnr32455-r1/titan/titan  -DMIPSEL -DCAMSUPP -DEPLAYER4 -MT autotimer.lo -MD -MP -MF .deps/libmc.Tpo -c -o libmc.lo mc.c
-#/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihde/tmp/sysroots/x86_64-linux/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp -shared  -fPIC -DPIC  .libs/libmc.o    -mel -mabi=32 -mhard-float -march=mips32 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp -DMIPSEL -DCAMSUPP -DEPLAYER4 -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,libmc.so.0 -o .libs/libmc.so.0.0.0
+#/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/bin/crossscripts/arm-oe-linux-gnueabi-libtool  --tag=CC   --mode=compile /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihde/tmp/sysroots/x86_64-linux/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp -DPACKAGE_NAME=\"tuxbox-apps-titan-plugins\" -DPACKAGE_TARNAME=\"tuxbox-titan-plugins\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan-plugins\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan-plugins\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I.  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE   -I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/$eplayerlib 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/glib-2.0 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/libxml2 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/lib/glib-2.0/include 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/freetype2 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/dreamdvd 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp/usr/include/libdreamdvd 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/work/inihdp-oe-linux/titan-plugins/2.0+svnr32455-r1/titan/libdreamdvd 	-I/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/work/inihdp-oe-linux/titan-plugins/2.0+svnr32455-r1/titan/titan  -DMIPSEL -DCAMSUPP -DEPLAYER4 -MT autotimer.lo -MD -MP -MF .deps/libmc.Tpo -c -o libmc.lo mc.c
+#/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihde/tmp/sysroots/x86_64-linux/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp -shared  -fPIC -DPIC  .libs/libmc.o    -mel -mabi=32 -mhard-float -march=mips32 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/inihdp -DMIPSEL -DCAMSUPP -DEPLAYER4 -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,libmc.so.0 -o .libs/libmc.so.0.0.0
 	
 	LIB=""
 	mkdir .deps
@@ -106,12 +106,12 @@ compile()
 	
 	eplayerlib=gstreamer-1.0
 	
-	$SRC/tmp/sysroots/$BOX/usr/bin/crossscripts/mipsel-oe-linux-libtool  --tag=CC   --mode=compile $SRC/tmp/sysroots/$ARCH/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float $devflag -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DPACKAGE_NAME=\"tuxbox-apps-titan-plugins\" -DPACKAGE_TARNAME=\"tuxbox-titan-plugins\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan-plugins\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan-plugins\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I.  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE   -I$SRC/tmp/sysroots/$BOX/usr/include 	-I$SRC/tmp/sysroots/$BOX/usr/include/$eplayerlib 	-I$SRC/tmp/sysroots/$BOX/usr/lib/$eplayerlib/include     -I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0 	-I$SRC/tmp/sysroots/$BOX/usr/include/libxml2 	-I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include 	-I$SRC/tmp/sysroots/$BOX/usr/include/freetype2 	-I$SRC/sysroots/$BOX/usr/include/dreamdvd 	-I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd 	-I"$HOME"/flashimg/$SRCDIR/libdreamdvd 	-I"$HOME"/flashimg/$SRCDIR/titan  -DMIPSEL -DCAMSUPP -DEPLAYER4 -MT lib$2.lo -MD -MP -MF .deps/lib$2.Tpo -c -o lib$2.lo $2.c
-	$SRC/tmp/sysroots/$ARCH/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -shared  -fPIC -DPIC  .libs/lib$2.o    -mel -mabi=32 -mhard-float $devflag -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DMIPSEL -DCAMSUPP -DEPLAYER4 -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,lib$2.so.0 $LIB -o .libs/lib$2.so $4
+	$SRC/tmp/sysroots/$BOX/usr/bin/crossscripts/arm-oe-linux-gnueabi-libtool  --tag=CC   --mode=compile $SRC/tmp/sysroots/$ARCH/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc  -mel -mabi=32 -mhard-float $devflag -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DPACKAGE_NAME=\"tuxbox-apps-titan-plugins\" -DPACKAGE_TARNAME=\"tuxbox-titan-plugins\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan-plugins\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan-plugins\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I.  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE   -I$SRC/tmp/sysroots/$BOX/usr/include 	-I$SRC/tmp/sysroots/$BOX/usr/include/$eplayerlib 	-I$SRC/tmp/sysroots/$BOX/usr/lib/$eplayerlib/include     -I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0 	-I$SRC/tmp/sysroots/$BOX/usr/include/libxml2 	-I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include 	-I$SRC/tmp/sysroots/$BOX/usr/include/freetype2 	-I$SRC/sysroots/$BOX/usr/include/dreamdvd 	-I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd 	-I"$HOME"/flashimg/$SRCDIR/libdreamdvd 	-I"$HOME"/flashimg/$SRCDIR/titan  -DMIPSEL -DCAMSUPP -DEPLAYER4 -MT lib$2.lo -MD -MP -MF .deps/lib$2.Tpo -c -o lib$2.lo $2.c
+	$SRC/tmp/sysroots/$ARCH/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc  -mel -mabi=32 -mhard-float -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -shared  -fPIC -DPIC  .libs/lib$2.o    -mel -mabi=32 -mhard-float $devflag -march=mips32 --sysroot=$SRC/tmp/sysroots/$BOX -DMIPSEL -DCAMSUPP -DEPLAYER4 -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,lib$2.so.0 $LIB -o .libs/lib$2.so $4
 
 	cp -a .libs/lib$2.so $2.so
 
-	$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/mipsel-oe-linux-strip $2.so
+	$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/arm-oe-linux-gnueabi-strip $2.so
 	cd ..
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Plugin $1 done"
@@ -130,8 +130,8 @@ echo "[titan]--------------------------------------------------------"
 
 cd networkbrowser/netlib
 cp Makefile."$STM"."$ARCH".mipsel Makefile
-sed "s!CC =.*!CC = $SRC/tmp/sysroots/$ARCH/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc!" -i Makefile
-sed "s!AR =.*!AR = $SRC/tmp/sysroots/$ARCH/usr/bin/mipsel-oe-linux/mipsel-oe-linux-ar!" -i Makefile
+sed "s!CC =.*!CC = $SRC/tmp/sysroots/$ARCH/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc!" -i Makefile
+sed "s!AR =.*!AR = $SRC/tmp/sysroots/$ARCH/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-ar!" -i Makefile
 sed "s!-I .*!-I $SRC/tmp/sysroots/$BOX/usr/include!" -i Makefile
 
 make clean
