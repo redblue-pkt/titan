@@ -138,11 +138,14 @@ void screenvfdisplay()
 
 //powerled
 
-	changeinput(at7000frontrun, "15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0");
-	setchoiceboxselection(at7000frontrun, getconfig("at7000frontrun", NULL));
+	if(checkbox("ATEVIO7000") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("SPARK") == 1)
+	{
+		changeinput(at7000frontrun, "15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0");
+		setchoiceboxselection(at7000frontrun, getconfig("at7000frontrun", NULL));
 
-	changeinput(at7000frontsleep, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
-	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
+		changeinput(at7000frontsleep, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
+		setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
+	}
 
 	if(checkbox("ATEVIO7000") == 1 || checkbox("SPARK") == 1)
 	{
@@ -155,6 +158,22 @@ void screenvfdisplay()
 	{
 		at7000frontrun->hidden = YES;
 		at7000frontsleep->hidden = YES;
+	}
+
+	if(checkbox("DM900") == 1)
+	{
+		addchoicebox(at7000frontrun, "0", _("off"));
+		addchoicebox(at7000frontrun, "1", _("red"));
+		addchoicebox(at7000frontrun, "2", _("blue"));
+		setchoiceboxselection(at7000frontrun, getconfig("dm900frontrun", NULL));
+		addchoicebox(at7000frontsleep, "0", _("off"));
+		addchoicebox(at7000frontsleep, "1", _("red"));
+		addchoicebox(at7000frontsleep, "2", _("blue"));
+		setchoiceboxselection(at7000frontsleep, getconfig("dm900frontsleep", NULL));
+		changetext(at7000frontrun, _("LED when running"));
+		changetext(at7000frontsleep, _("LED when sleeping"));
+		at7000frontrun->hidden = NO;
+		at7000frontsleep->hidden = NO;
 	}
 
 	drawscreen(vfdisplay, 0, 0);
@@ -243,6 +262,12 @@ void screenvfdisplay()
 				tmpstr = ostrcat("fp_control -P ",getconfig("at7000frontrun", NULL), 0, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr=NULL;
+			}
+			if(checkbox("DM900") == 1)
+			{
+				addconfigscreencheck("dm900frontrun", at7000frontrun, "0");
+				addconfigscreencheck("dm900frontsleep", at7000frontsleep, "0");
+				setled(1);
 			}
 			
 			if(checkchipset("BCM7424") == 1) //inihdp

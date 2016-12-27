@@ -68,6 +68,8 @@ void screenstandby()
 		if(getconfigint("fanmode", NULL) == 3)
 			writesys("/proc/stb/fp/fan", "1", 1);
 	}
+	else if(checkbox("DM900") == 1)
+		setled(1);
 			
 
 	status.protecttime = 0;
@@ -158,6 +160,9 @@ void screenstandby()
 	status.startmode = 1;
 	status.rcstandby = NULL;
 
+	if(checkbox("DM900") == 1)
+		setled(1);
+	
 	if(status.aktservice->channel != NULL)
 	{
 		tmpstr = ostrcat(status.aktservice->channellist, NULL, 0, 0);

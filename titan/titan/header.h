@@ -1028,6 +1028,7 @@ struct channel* getchannel(int serviceid, uint64_t transponderid);
 int setvfdicon(vfdicons id, int onoff);
 int writevfd(char *value);
 int writevfdmenu(char *value);
+void setled(int typ);
 
 //skinfunc.h
 char* getaktchannelname();
