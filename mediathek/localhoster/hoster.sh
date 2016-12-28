@@ -154,6 +154,11 @@ goldesel()
 	$BIN $CMD/goldesel.py $INPUT
 }
 
+cloudflare()
+{
+	$BIN $CMD/cloudflare.py $INPUT
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -178,6 +183,7 @@ if [ "$TYPE" == "get" ];then
 		vivo) vivo $INPUT;;
 		vidto) vidto $INPUT;;
 		goldesel) goldesel $INPUT;;
+		movie4k) cloudflare $INPUT;;
 		streamcloud1) streamcloud $INPUT;;	
 	esac
 fi
