@@ -1324,11 +1324,11 @@ msgstr "Настройки бекапа"
 msgid "Backup / Restore Settings"
 msgstr "Бэкап/ресторе настроек"
 
-#: global.h:7376 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
+#: global.h:7379 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Бекап создан успешно"
 
-#: global.h:7378
+#: global.h:7381
 msgid "Backup ended with error"
 msgstr ""
 
@@ -3152,8 +3152,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
 #: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6033
 #: global.h:6824 global.h:6843 global.h:7244 global.h:7264 global.h:7284
-#: global.h:7304 global.h:7324 global.h:7653 global.h:7658 global.h:7670
-#: global.h:7675 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: global.h:7304 global.h:7324 global.h:7656 global.h:7661 global.h:7673
+#: global.h:7678 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
@@ -3922,14 +3922,14 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr "Обнаружен новый накопитель. Настройте его в меню настроек"
 
-#: global.h:7675
+#: global.h:7678
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7653 global.h:7670
+#: global.h:7656 global.h:7673
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3937,7 +3937,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7658
+#: global.h:7661
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -5865,8 +5865,8 @@ msgstr ""
 #: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6033 global.h:6754
 #: global.h:6824 global.h:6843 global.h:7244 global.h:7252 global.h:7264
 #: global.h:7272 global.h:7284 global.h:7292 global.h:7304 global.h:7312
-#: global.h:7324 global.h:7332 global.h:7653 global.h:7658 global.h:7670
-#: global.h:7675 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: global.h:7324 global.h:7332 global.h:7656 global.h:7661 global.h:7673
+#: global.h:7678 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
 #: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
@@ -6452,8 +6452,8 @@ msgstr ""
 #: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6033
 #: global.h:6754 global.h:6824 global.h:6843 global.h:7244 global.h:7252
 #: global.h:7264 global.h:7272 global.h:7284 global.h:7292 global.h:7304
-#: global.h:7312 global.h:7324 global.h:7332 global.h:7653 global.h:7658
-#: global.h:7670 global.h:7675 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: global.h:7312 global.h:7324 global.h:7332 global.h:7656 global.h:7661
+#: global.h:7673 global.h:7678 harddisk.h:355 harddisk.h:487 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -7321,7 +7321,7 @@ msgstr "Таймер выключения"
 msgid "Present"
 msgstr ""
 
-#: global.h:7388 system_backup_restore.h:15
+#: global.h:7391 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
