@@ -537,6 +537,18 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		oshutdown(2, 1);
 	}
+	else if(ostrcmp("rescue", menuentry->name) == 0)
+	{
+		if(check == 1)
+		{
+			if(checkbox("DM900") == 1)
+				return 0;
+			else
+				return 1;
+		}
+		writesys("/proc/stb/fp/boot_mode", "rescue", 1);	
+		oshutdown(2, 1);
+	}
 	else if(ostrcmp("guirestart", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
