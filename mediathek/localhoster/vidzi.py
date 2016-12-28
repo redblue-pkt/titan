@@ -4,6 +4,8 @@ import urllib
 from lib import jsunpack
 import sys
 from lib.net import Net
+from lib import helpers
+
 
 class VidziResolver(object):
     name = "vidzi"

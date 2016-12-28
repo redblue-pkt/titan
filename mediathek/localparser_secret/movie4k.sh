@@ -51,7 +51,8 @@ search()
 	fi
 
 	piccount=0
-	$curlbin "$URL/$PAGE" -o "$TMP/cache.$PARSER.$INPUT.1" -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+#	$curlbin "$URL/$PAGE" -o "$TMP/cache.$PARSER.$INPUT.1" -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
 	cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!tablemoviesindex!\ntablemoviesindex!g' | grep ^"tablemoviesindex" | sed 's!coverPreview!\ncoverPreview!g' | grep ^"coverPreview" | grep 'id="tdmovies"' >$TMP/cache.$PARSER.$INPUT.2
 
 	while read -u 3 ROUND; do
@@ -115,10 +116,7 @@ hosterlist()
 		rm $TMP/$PARSER.$INPUT.list
 	fi
 #	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
-/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
-#
-#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
-#	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
 	cat $TMP/cache.$PARSER.$INPUT.1 | grep ^"links\[" >$TMP/cache.$PARSER.$INPUT.2
 
@@ -126,15 +124,12 @@ hosterlist()
 		NEWPAGE="`echo $ROUND | cut -d '"' -f9 | sed 's/;/%3B/g'`"
 		TITLE=`echo $ROUND | sed 's!&nbsp;!\nfound=<!g' | grep ^"found=<" | cut -d"<" -f2` 		
 	
-
-#echo NEWPAGE $NEWPAGE
-#echo TITLE $TITLE
-
-#		exit
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 			PIC=`echo $TITLE | tr [A-Z] [a-z]`
 #			LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
-			LINE="$TITLE#$URL/$NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#41"
+			LINE="$TITLE#$SRC $SRC hoster $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+
+#			LINE="$TITLE#$URL/$NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#41"
 
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
@@ -143,9 +138,21 @@ hosterlist()
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
+hoster()
+{
+	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+	
+	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<a target="_blank" href="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2`
+#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	echo $STREAMURL
+}
+
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	hosterlist) $INPUT;;
+	hoster) $INPUT;;
 	search) $INPUT;;
 esac
