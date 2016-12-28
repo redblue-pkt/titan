@@ -10658,6 +10658,10 @@ msgstr "Versie"
 msgid "Version 11049 of OScam"
 msgstr ""
 
+#: tpk_description.h:176
+msgid "Version 11283 of OScam"
+msgstr ""
+
 #: transponder.h:450 transponder.h:458
 msgid "Vertikal"
 msgstr "Vertikaal"
@@ -10841,7 +10845,7 @@ msgstr ""
 msgid "WM2014"
 msgstr ""
 
-#: tpk_description.h:193
+#: tpk_description.h:194
 msgid "WM2014 Plugin"
 msgstr ""
 
@@ -10933,7 +10937,7 @@ msgstr ""
 msgid "Webbrowser Netsurf"
 msgstr ""
 
-#: tpk_description.h:177
+#: tpk_description.h:178
 msgid "Webbrowser Plugin"
 msgstr ""
 
@@ -10945,7 +10949,7 @@ msgstr ""
 msgid "Wednesday"
 msgstr "Woensdag"
 
-#: tpk_description.h:178
+#: tpk_description.h:179
 msgid "Werbezapper"
 msgstr ""
 
@@ -10958,35 +10962,35 @@ msgstr ""
 msgid "Wettervorhersage"
 msgstr "Weers verwachting"
 
-#: tpk_description.h:180
+#: tpk_description.h:181
 msgid "White 3D Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:181
+#: tpk_description.h:182
 msgid "White 3D Picons - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:182
+#: tpk_description.h:183
 msgid "White 3D Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:179
+#: tpk_description.h:180
 msgid "White 3D Picons Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:184
+#: tpk_description.h:185
 msgid "White70 Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:185
+#: tpk_description.h:186
 msgid "White70 Picons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:186
+#: tpk_description.h:187
 msgid "White70 Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:183
+#: tpk_description.h:184
 msgid "White70 Picons Astra 19.2"
 msgstr ""
 
@@ -11030,7 +11034,7 @@ msgstr ""
 msgid "Won"
 msgstr ""
 
-#: tpk_description.h:194
+#: tpk_description.h:195
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 
@@ -13604,7 +13608,7 @@ msgstr "Wachten, de download wordt gestopt"
 msgid "waiting"
 msgstr "Wacht"
 
-#: tpk_description.h:176
+#: tpk_description.h:177
 msgid "weather Plugin"
 msgstr ""
 
@@ -13636,27 +13640,27 @@ msgstr ""
 msgid "wireless"
 msgstr ""
 
-#: tpk_description.h:187
+#: tpk_description.h:188
 msgid "wireless 8192cu.ko model"
 msgstr ""
 
-#: tpk_description.h:188
+#: tpk_description.h:189
 msgid "wireless 8192du.ko model"
 msgstr ""
 
-#: tpk_description.h:189
+#: tpk_description.h:190
 msgid "wireless modul 8712u.ko"
 msgstr ""
 
-#: tpk_description.h:190
+#: tpk_description.h:191
 msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
-#: tpk_description.h:191
+#: tpk_description.h:192
 msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
-#: tpk_description.h:192
+#: tpk_description.h:193
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
@@ -13680,7 +13684,7 @@ msgstr ""
 msgid "xupnpd"
 msgstr ""
 
-#: tpk_description.h:195
+#: tpk_description.h:196
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
