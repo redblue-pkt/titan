@@ -426,7 +426,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
 			setencoding(chnode, videonode);
 			
-			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
+			if(checkbox("VUSOLO2") == 1 && flag == 0) //fixt only audio no video.. blackscreen after zap
 				videofreeze(videonode);
 		
 			if(videoplay(videonode)!= 0) {
