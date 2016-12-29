@@ -267,6 +267,8 @@ void screenvfdisplay()
 			{
 				addconfigscreencheck("dm900frontrun", at7000frontrun, "0");
 				addconfigscreencheck("dm900frontsleep", at7000frontsleep, "0");
+				addskinconfigscreencheck("OLED_dream2", oled_sel, "0");
+				addconfig("skinblinkoff", blinkoff->ret);
 				setled(1);
 			}
 			
@@ -275,10 +277,9 @@ void screenvfdisplay()
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
 				addconfig("skinblinkoff", blinkoff->ret);
 			}
-			else if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && checkbox("DM900") != 1) //inihdp
+			else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1) //inihdp
 			{
 				addskinconfigscreencheck("OLED_dream1", oled_sel, "0");
-				addskinconfigscreencheck("OLED_dream2", oled_sel, "0");
 				addconfig("skinblinkoff", blinkoff->ret);
 			}
 			break;
