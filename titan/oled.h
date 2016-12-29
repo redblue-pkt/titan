@@ -62,12 +62,12 @@ void write2oled(unsigned char *buf, int xres, int yres)
 		//RGB565
 		for(i = 0; i <= xres*yres*2; i = i + 2)
 		{
-			#lfb1[i] = buf[bi+2] & 0xF8;
+			//lfb1[i] = buf[bi+2] & 0xF8;
 			lfb1[i] = buf[bi+1] & 0xF8;
 			byte = (buf[bi] >> 5) & 0x07;
 			lfb1[i] = lfb1[i] ^ byte;
 			lfb1[i+1] = (buf[bi] << 3) & 0xE0;
-			#byte = (buf[bi+1] >> 3) & 0x1F;
+			//byte = (buf[bi+1] >> 3) & 0x1F;
 			byte = (buf[bi+2] >> 3) & 0x1F;
 			lfb1[i+1] = lfb1[i+1] ^ byte;
 			bi = bi + 4;
