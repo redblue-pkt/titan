@@ -1775,19 +1775,19 @@ msgstr ""
 msgid "Can't create service"
 msgstr "Supprime Service"
 
-#: service.h:979
+#: service.h:974
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: record.h:1164
+#: record.h:1160
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:1693
+#: record.h:1689
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid "Can't open file"
 msgstr "Fichier alternative"
 
-#: service.h:985
+#: service.h:980
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
@@ -2025,7 +2025,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "Chaine"
 
-#: service.h:990
+#: service.h:985
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -3158,11 +3158,11 @@ msgstr ""
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
 #: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:387
-#: record.h:1164 record.h:1693 rectimer.h:577 rectimer.h:1405
+#: record.h:1160 record.h:1689 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1952 service.h:750 service.h:996 shared.h:29
+#: security.h:685 security.h:1952 service.h:745 service.h:991 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:602 skinadjust.h:626 skinadjust.h:667
 #: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -5824,14 +5824,14 @@ msgstr "Liste de Menu"
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
-#: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1164
-#: record.h:1441 record.h:1693 record.h:1718 rectimer.h:577 rectimer.h:1258
+#: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
+#: record.h:1437 record.h:1689 record.h:1714 rectimer.h:577 rectimer.h:1258
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1952
-#: service.h:750 service.h:996 shared.h:29 shared.h:66 shared.h:83
+#: service.h:745 service.h:991 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:602 skinadjust.h:618 skinadjust.h:626 skinadjust.h:667
 #: skinadjust.h:684 skinadjust.h:1109 skinadjust.h:1171 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
@@ -6418,14 +6418,14 @@ msgstr "Ö"
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
-#: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1164
-#: record.h:1441 record.h:1718 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
+#: readerconfig.h:497 readerconfig.h:498 record.h:387 record.h:1160
+#: record.h:1437 record.h:1714 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
 #: rectimer.h:1417 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1952 service.h:750 service.h:996
+#: security.h:668 security.h:685 security.h:1952 service.h:745 service.h:991
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:602 skinadjust.h:618
 #: skinadjust.h:626 skinadjust.h:667 skinadjust.h:684 skinadjust.h:1109
 #: skinadjust.h:1171 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -7567,7 +7567,7 @@ msgstr ""
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1590 record.h:1660 webif_index.atemio5200.h:59
+#: record.h:1586 record.h:1656 webif_index.atemio5200.h:59
 #: webif_index.atemio5200.h:115 webif_index.atemio6200.h:59
 #: webif_index.atemio6200.h:115 webif_index.atemio7600.h:47
 #: webif_index.atemio7600.h:109 webif_index.atemio-nemesis.h:59
@@ -7635,7 +7635,7 @@ msgstr "Enregistrement chronométré"
 msgid "Record path"
 msgstr "Chemin pour Enregistrement"
 
-#: record.h:1718
+#: record.h:1714
 msgid "Record started"
 msgstr "Chemin pour Enregistrement"
 
@@ -9876,7 +9876,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr "Chemin enregistrement Programmation"
 
-#: record.h:1440
+#: record.h:1436
 msgid "Timer Record start !"
 msgstr "Chemin enregistrement chronométré"
 
@@ -9932,7 +9932,7 @@ msgid ""
 "please wait a little and try again"
 msgstr ""
 
-#: service.h:750
+#: service.h:745
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -10298,7 +10298,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr "type de tuner"
 
-#: service.h:982
+#: service.h:977
 msgid "Tuning to Channel failed!"
 msgstr ""
 
@@ -11084,15 +11084,15 @@ msgstr "Activer"
 msgid "active"
 msgstr "Actif"
 
-#: record.h:1658 record.h:1704
+#: record.h:1654 record.h:1700
 msgid "add recording (enter duration)"
 msgstr ""
 
-#: record.h:1657 record.h:1699
+#: record.h:1653 record.h:1695
 msgid "add recording (indefinitely)"
 msgstr "ajout d'enregistrement (indéfiniment)"
 
-#: record.h:1656 record.h:1686
+#: record.h:1652 record.h:1682
 msgid "add recording (stop after current event)"
 msgstr "ajout d'enregistrement (stopper après l'émission)"
 
@@ -11335,7 +11335,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1636 record.h:1645 record.h:1670
+#: record.h:1632 record.h:1641 record.h:1666
 msgid "change"
 msgstr "Chaine"
 
@@ -13026,8 +13026,8 @@ msgstr "Un pas vers l'Ouest"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1572 record.h:1581 record.h:1592
-#: record.h:1621 record.h:1630 record.h:1664 skin_default_skin.xml.h:615
+#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1568 record.h:1577 record.h:1588
+#: record.h:1617 record.h:1626 record.h:1660 skin_default_skin.xml.h:615
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
