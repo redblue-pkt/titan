@@ -38,14 +38,16 @@ init()
 
 mainmenu()
 {
-	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "$TMP/$PARSER.$INPUT.list"
-}
+	echo "Kinofilme#$SRC $SRC new '/'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Filme#$SRC $SRC page 'filme'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
-category()
-{
-    echo "Kinofilme#$SRC $SRC new '/'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-    echo "Filme#$SRC $SRC page 'filme'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	if [ -e "$TMP/$PARSER.new.list" ] ; then
+		rm $TMP/$PARSER.new.list
+	fi
+	if [ -e "$TMP/$PARSER.page.list" ] ; then
+		rm $TMP/$PARSER.page.list
+	fi
+
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -61,135 +63,143 @@ category()
 
 new()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.list
+	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
+#		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.0
+
+#		DATA=`cat $TMP/cache.$PARSER.$INPUT.0 | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found=`
+
+#		actionpath=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/action=/\naction=/g' | grep ^action= | cut -d'"' -f2`
+#		jschlvc=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"jschl_vc"/\njschl_vc=/g' | grep ^jschl_vc= | cut -d'"' -f2`
+#		pass=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"pass"/\npass=/g' | grep ^pass= | cut -d'"' -f2`
+#		jschlanswer=2914582
+#		`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"jschl-answer"/\njschl-answer=/g' | grep ^jschl-answer= | cut -d'"' -f2`
+
+#		echo actionpath $actionpath
+#		echo jschlvc $jschlvc
+#		echo pass $pass
+#		echo jschlanswer $jschlanswer
+
+#		echo 222 "$URL"/"$actionpath"?jschl_vc="$jschlvc"&pass="$pass"&jschl_answer="$jschlanswer"
+
+#		$curlbin "$URL/$actionpath?jschl_vc=$jschlvc&pass=$pass&jschl_answer=$jschlanswer" -o $TMP/cache.$PARSER.$INPUT.00
+#		echo $TMP/cache.$PARSER.$INPUT.00
+#		exit
+
+#		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+
+		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+
+		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<div class/\n<div class/g' | sed 's/<a href="/\n<a href="/g' | grep ^'<a href="film' | grep title= | sed 's/ /~/g' >$TMP/cache.$PARSER.$INPUT.2
+
+		while read -u 3 ROUND; do
+			TITLE=`echo $ROUND | sed 's/title=/\ntitle=/' | grep ^"title=" | cut -d '"' -f2 | tr '~' ' ' | sed 's/#/%/'`
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+			PIC=$URL/`echo $ROUND | sed s'!<img~src=!\nsrc=!' | grep ^"src=" | cut -d '"' -f2 | tr '~' ' '`
+			NEWPAGE=`echo $ROUND | sed 's/<a~href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
+
+			if [ "$PIC" == "$URL/" ] ; then  
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				TMPPIC="default.jpg"
+			else
+				TMPPIC=goldesel_`echo $PIC | cut -d '/' -f6`
+			fi
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
+					if [ ! -e $TMP/$PARSER.$INPUT.list ];then
+						touch $TMP/$PARSER.$INPUT.list
+					fi
+					LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
+					echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+				fi
+			fi
+		done 3<$TMP/cache.$PARSER.$INPUT.2
+#		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	fi
 
-#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.0
-
-#	DATA=`cat $TMP/cache.$PARSER.$INPUT.0 | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found=`
-
-#	actionpath=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/action=/\naction=/g' | grep ^action= | cut -d'"' -f2`
-#	jschlvc=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"jschl_vc"/\njschl_vc=/g' | grep ^jschl_vc= | cut -d'"' -f2`
-#	pass=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"pass"/\npass=/g' | grep ^pass= | cut -d'"' -f2`
-#	jschlanswer=2914582
-	#`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"jschl-answer"/\njschl-answer=/g' | grep ^jschl-answer= | cut -d'"' -f2`
-
-#echo actionpath $actionpath
-#echo jschlvc $jschlvc
-#echo pass $pass
-#echo jschlanswer $jschlanswer
-
-#echo 222 "$URL"/"$actionpath"?jschl_vc="$jschlvc"&pass="$pass"&jschl_answer="$jschlanswer"
-
-#	$curlbin "$URL/$actionpath?jschl_vc=$jschlvc&pass=$pass&jschl_answer=$jschlanswer" -o $TMP/cache.$PARSER.$INPUT.00
-#echo $TMP/cache.$PARSER.$INPUT.00
-#exit
-
-#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
-
-	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
-
-	piccount=0
-
-	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<div class/\n<div class/g' | sed 's/<a href="/\n<a href="/g' | grep ^'<a href="film' | grep title= | sed 's/ /~/g' >$TMP/cache.$PARSER.$INPUT.2
-
-	while read -u 3 ROUND; do
-		TITLE=`echo $ROUND | sed 's/title=/\ntitle=/' | grep ^"title=" | cut -d '"' -f2 | tr '~' ' ' | sed 's/#/%/'`
-		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-		PIC=$URL/`echo $ROUND | sed s'!<img~src=!\nsrc=!' | grep ^"src=" | cut -d '"' -f2 | tr '~' ' '`
-		NEWPAGE=`echo $ROUND | sed 's/<a~href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
-	
-		if [ -z "$PIC" ] || [ "$PIC" = "$URL/" ]; then  
-			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-			TMPPIC="default.jpg"
-		else
-			TMPPIC=goldesel_`echo $PIC | cut -d '/' -f6`
-		fi
-
-		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-			if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
-				if [ ! -e $TMP/$PARSER.$INPUT.list ];then
-					touch $TMP/$PARSER.$INPUT.list
-				fi
-				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
-				echo "$LINE" >> $TMP/$PARSER.$INPUT.list
-			fi
-		fi
-	done 3<$TMP/cache.$PARSER.$INPUT.2
-#	rm $TMP/cache.* > /dev/null 2>&1
+	if [ -e "$TMP/$PARSER.hosterlist.list" ] ; then
+		rm $TMP/$PARSER.hosterlist.list
+	fi
 
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 page()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.list
-	fi
-#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
-	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
+#		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
-	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<p><ul class="rls_table/\n<p><ul class=rls_table/g' | sed 's/<\/ul><\/u>/<\/ul><\/u>\n/g' | grep ^'<p><ul class=rls_table' | sed 's/<a href="/\n<a href="/g' | sed 's/<li step=/\n<li step=/g' | grep ^'<a href=' | grep 'tba">VID' | sed 's/ /~/g' >$TMP/cache.$PARSER.$INPUT.2
+		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<p><ul class="rls_table/\n<p><ul class=rls_table/g' | sed 's/<\/ul><\/u>/<\/ul><\/u>\n/g' | grep ^'<p><ul class=rls_table' | sed 's/<a href="/\n<a href="/g' | sed 's/<li step=/\n<li step=/g' | grep ^'<a href=' | grep 'tba">VID' | sed 's/ /~/g' >$TMP/cache.$PARSER.$INPUT.2
 
-	while read -u 3 ROUND; do
-		TITLE=`echo $ROUND |  sed -e 's/<div~class="tle">/\n<div~class="tle""/' -e 's/<b/"b/g' | grep ^'<div~class="tle""' | cut -d '"' -f4 | tr '~' ' ' | sed 's/#/%/'`
-		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-		PIC=$URL/`echo $ROUND | sed s'/data-original=/\ndata-original=/' | grep ^'data-original=' | cut -d '"' -f2 | sed 's/\/mini\//\/poster\//g'`
-		NEWPAGE=`echo $ROUND | cut -d '"' -f2`
+		while read -u 3 ROUND; do
+			TITLE=`echo $ROUND |  sed -e 's/"tle~bold"/"tle"/g' -e 's/<div~class="tle">/\n<div~class="tle""/' -e 's/<b/"b/g' | grep ^'<div~class="tle""' | cut -d '"' -f4 | tr '~' ' ' | sed 's/#/%/'`
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+			PIC=$URL/`echo $ROUND | sed s'/data-original=/\ndata-original=/' | grep ^'data-original=' | cut -d '"' -f2 | sed 's/\/mini\//\/poster\//g'`
+			NEWPAGE=`echo $ROUND | cut -d '"' -f2`
 	
-		if [ "$PIC" == "$URL/" ] ; then
-			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-			TMPPIC="default.jpg"
-		else
-			TMPPIC=goldesel_`echo $PIC | cut -d '/' -f6`
-		fi
+			if [ "$PIC" == "$URL/" ] ; then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				TMPPIC="default.jpg"
+			else
+				TMPPIC=goldesel_`echo $PIC | cut -d '/' -f6`
+			fi
 
-		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ] ; then
-			LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
-			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
-		fi
-	done 3<$TMP/cache.$PARSER.$INPUT.2
-	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ] ; then
+				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
+				echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+			fi
+		done 3<$TMP/cache.$PARSER.$INPUT.2
+		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	fi
+
+	if [ -e "$TMP/$PARSER.hosterlist.list" ] ; then
+		rm $TMP/$PARSER.hosterlist.list
+	fi
+		
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 hosterlist()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.list
+	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+#		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+
+		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<h2>Stream-Links</h2>!\nfound=!g' | sed 's!<h2>Sample-Links</h2>!\nerror=!g' | grep ^found= | sed 's/<li data=/\ndata=/g' | grep ^data= >$TMP/cache.$PARSER.$INPUT.2
+
+		while read -u 3 ROUND; do
+			NEWPAGE="data=`echo $ROUND | cut -d '"' -f2 | sed 's/;/%3B/g'`"
+			TITLE=`echo $ROUND | cut -d ';' -f5 | cut -d '.' -f1`
+			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
+				PIC=`echo $TITLE | tr [A-Z] [a-z]`
+				LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+				echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+			fi
+		done 3<$TMP/cache.$PARSER.$INPUT.2
+		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	fi
-	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
-#	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
-	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<h2>Stream-Links</h2>!\nfound=!g' | sed 's!<h2>Sample-Links</h2>!\nerror=!g' | grep ^found= | sed 's/<li data=/\ndata=/g' | grep ^data= >$TMP/cache.$PARSER.$INPUT.2
+	if [ -e "$TMP/$PARSER.hoster.list" ] ; then
+		rm $TMP/$PARSER.hoster.list
+	fi
 
-	while read -u 3 ROUND; do
-		NEWPAGE="data=`echo $ROUND | cut -d '"' -f2 | sed 's/;/%3B/g'`"
-		TITLE=`echo $ROUND | cut -d ';' -f5 | cut -d '.' -f1`
-		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
-			PIC=`echo $TITLE | tr [A-Z] [a-z]`
-			LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
-			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
-		fi
-	done 3<$TMP/cache.$PARSER.$INPUT.2
-	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 hoster()
 {
-	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
-	$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
-	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!url="http://dref.me/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g'`
-#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
-	echo $STREAMURL
+	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!url="http://dref.me/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g' > $TMP/$PARSER.$INPUT.list
+#		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	fi
+	cat $TMP/$PARSER.$INPUT.list
 }
 
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
-	category) $INPUT;;
 	new) $INPUT;;
 	page) $INPUT;;
 	hosterlist) $INPUT;;
