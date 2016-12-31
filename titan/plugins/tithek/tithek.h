@@ -2503,10 +2503,6 @@ why ?
 			}
 		}
 
-printf("listbox->aktpage=%d\n", listbox->aktpage);
-printf("listbox->aktline=%d\n", listbox->aktline);
-printf("listbox->gridcol=%d\n", listbox->gridcol);
-
 //		if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
 		if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 		{
