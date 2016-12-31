@@ -62,12 +62,12 @@ void write2oled(unsigned char *buf, int xres, int yres)
 		//gggbbbbbrrrrrggg
 		for(i = 0; i < xres*yres*2; i = i + 2)
 		{
-			
-			lfb1[i] = ((buf[bi] << 3) & 0xE0) | ((buf[bi+1] >> 3) & 0x1F);
-			lfb1[i+1] = (buf[bi+2] & 0xF8) | ((buf[bi] >> 3) & 0x07);
+			lfb2[i] = ((buf[bi] << 3) & 0xE0) | ((buf[bi+1] >> 3) & 0x1F);
+			lfb2[i+1] = (buf[bi+2] & 0xF8) | ((buf[bi] >> 3) & 0x07);
 			bi = bi + 4;
+			
 		}
-		ret = write(lcdfd1, lfb1, xres * yres * 2);
+		ret = write(lcdfd1, lfb2, xres * yres * 2);
 		if(ret != xres * yres * 2)
 			err("write to oled dm900 - %s - was not ok", getconfig("vfddev", NULL));
 		free(lfb2);
