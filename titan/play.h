@@ -714,6 +714,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Red-Menu entry from the following list"), NULL, NULL, 1, 0);
 	if(mbox != NULL)
 	{
+printf("mbox->name=%s\n", mbox->name);
+
 		if(ostrcmp(mbox->name, "Video Settings") == 0)
 			screenvideosettings();
 		else if(ostrcmp(mbox->name, "AV Settings") == 0)
@@ -826,6 +828,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		screenplayinfobar(file, showname, 0, playertype, flag);
 
 	status.hangtime = hangtime;
+printf("ret=%d\n", ret);
 	return ret;
 }
 
