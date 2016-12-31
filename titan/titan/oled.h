@@ -63,7 +63,7 @@ void write2oled(unsigned char *buf, int xres, int yres)
 		for(i = 0; i < xres*yres*2; i = i + 2)
 		{
 			lfb2[i] = ((buf[bi+1] << 3) & 0xE0) | ((buf[bi] >> 3) & 0x1F);
-			lfb2[i+1] = (buf[bi+2] & 0xF8) | ((buf[bi+1] >> 3) & 0x07);
+			lfb2[i+1] = (buf[bi+2] & 0xF8) | ((buf[bi+1] >> 5) & 0x07);
 			bi = bi + 4;
 			
 		}
