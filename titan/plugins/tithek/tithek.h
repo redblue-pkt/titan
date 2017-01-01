@@ -1155,40 +1155,6 @@ void editfav(char* title, char* link, char* pic, char* localname, char* menutitl
 	clearscreen(tithekedit);
 }
 
-int showinfo(struct skin* listbox, char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
-{
-	int ret = 1;
-	char* tmpstr = NULL;
-	tmpstr = ostrcat(tmpstr, title, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, link, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, pic, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, localname, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, menutitle, 1, 0);
-	tmpstr = ostrcat(tmpstr, "#", 1, 0);
-	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
-	// tithek security
-//	tmpstr = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", tmpstr, 1);
-	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-	
-	char* savefile = ostrcat("/tmp/tithek/infomenu.list", NULL, 0, 0);
-
-	writesys(savefile, tmpstr, 0);
-	free(tmpstr), tmpstr = NULL;
-
-	if(file_exist(savefile))
-	{
-		struct tithek* tnode = (struct tithek*)listbox->select->handle;
-		createtithek(tnode, tnode->title, savefile, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
-		ret = 0;
-	}
-
-	return ret;
-}
-
 void cacheplay(char* link, char* filename, int flag)
 {
 	struct skin* load = getscreen("loadingproz");
@@ -2449,15 +2415,6 @@ why ?
 // new osd musst disable this
 				drawscreen(grid, 0, 0);
 			}
-		}
-		else if(rcret == getrcconfigint("rcinfo", NULL))
-		{
-			if(listbox->select != NULL && listbox->select->handle != NULL)
-			{
-				if(showinfo(listbox, ((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag) == 0)
-					if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
-			}
-
 		}
 //		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
 		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
