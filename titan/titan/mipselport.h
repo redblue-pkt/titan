@@ -229,6 +229,14 @@ void blitfb2(struct fb* fbnode, int flag)
 		if(status.bcm == 1 && status.usedirectfb == 0)
 			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
 		blit();
+		
+		//woraround pixel fehler
+		if(checkbox("DM900") == 1)
+		{
+			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+			blit();
+		}
+		
 		return;
 	}
 	
