@@ -51,40 +51,9 @@ mainmenu()
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
-#
-#  <form id="challenge-form" action="/cdn-cgi/l/chk_jschl" method="get">
-#    <input type="hidden" name="jschl_vc" value="528818834f8ad23629ea5d31c3a5390c"/>
-#    <input type="hidden" name="pass" value="1479475035.975-uJ99NUZ87d"/>
-#    <input type="hidden" id="jschl-answer" name="jschl_answer"/>
-#  </form>
-#  
-#http://goldesel.to/cdn-cgi/l/chk_jschl?jschl_vc=f29b5aecef651bc1df9cad068c58848c&pass=1479474954.758-6i1RP0vPFz&jschl_answer=2914582
-#
-
 new()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
-#		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.0
-
-#		DATA=`cat $TMP/cache.$PARSER.$INPUT.0 | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found=`
-
-#		actionpath=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/action=/\naction=/g' | grep ^action= | cut -d'"' -f2`
-#		jschlvc=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"jschl_vc"/\njschl_vc=/g' | grep ^jschl_vc= | cut -d'"' -f2`
-#		pass=`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"pass"/\npass=/g' | grep ^pass= | cut -d'"' -f2`
-#		jschlanswer=2914582
-#		`cat $TMP/cache.$PARSER.$INPUT.0 | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<form id=/\nfound=/g' | grep ^found= | sed 's/"jschl-answer"/\njschl-answer=/g' | grep ^jschl-answer= | cut -d'"' -f2`
-
-#		echo actionpath $actionpath
-#		echo jschlvc $jschlvc
-#		echo pass $pass
-#		echo jschlanswer $jschlanswer
-
-#		echo 222 "$URL"/"$actionpath"?jschl_vc="$jschlvc"&pass="$pass"&jschl_answer="$jschlanswer"
-
-#		$curlbin "$URL/$actionpath?jschl_vc=$jschlvc&pass=$pass&jschl_answer=$jschlanswer" -o $TMP/cache.$PARSER.$INPUT.00
-#		echo $TMP/cache.$PARSER.$INPUT.00
-#		exit
-
 #		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
 
 		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
@@ -163,7 +132,9 @@ page()
 hosterlist()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+#		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+
 #		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
 		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<h2>Stream-Links</h2>!\nfound=!g' | sed 's!<h2>Sample-Links</h2>!\nerror=!g' | grep ^found= | sed 's/<li data=/\ndata=/g' | grep ^data= >$TMP/cache.$PARSER.$INPUT.2
@@ -190,7 +161,8 @@ hosterlist()
 hoster()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+#		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1
 		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!url="http://dref.me/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g' > $TMP/$PARSER.$INPUT.list
 #		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	fi
