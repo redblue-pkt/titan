@@ -850,14 +850,13 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 	#else
 				GstStructure *extras = gst_structure_new_empty("extras");
 	#endif
-				char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+				char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr4 = NULL;
 				tmpstr1 = ostrcat(file, NULL, 0, 0);
 				int count1 = 0, i = 0;
 				struct splitstr* ret1 = NULL;
 				ret1 = strsplit(tmpstr1, "|", &count1);
 	
-				int max = count1;
-				for(i = 0; i < max; i++)
+				for(i = 0; i < count1; i++)
 				{
 					if(i == 0)
 					{
@@ -866,43 +865,61 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 					}
 					tmpstr2 = ostrcat(ret1[i].part, NULL, 0, 0);
 	
-					int count2 = 0;
+					int count2 = 0, i2 = 0;
 					struct splitstr* ret2 = NULL;
-					ret2 = strsplit(tmpstr2, "=", &count2);
-	
-					if(ret2 != NULL && count2 >= 2)
-					{
-						if(ostrstr(ret2[0].part, "User-Agent") != NULL)
-						{
-//							printf("[player.h] skip set user-agent: %s\n", ret2[1].part);
-							printf("[player.h] set user-agent: %s\n", ret2[1].part);
-							g_object_set(G_OBJECT(source), "user-agent", ret2[1].part, NULL);
-						}
-						else
-						{
-							if (g_object_class_find_property(G_OBJECT_GET_CLASS(source), "extra-headers") != 0)
-							{					
-								GValue header;
-								// eDebug("setting extra-header '%s:%s'", name.c_str(), value.c_str());
-								printf("[player.h] set extra-header %s: %s\n", ret2[0].part, ret2[1].part);
-								
-								tmpstr3 = ostrcat(ret2[1].part, NULL, 0, 0);
-								htmldecode(tmpstr3, tmpstr3);
-								printf("[player.h] set extra-header decode %s: %s\n", ret2[0].part, tmpstr3);
+					ret2 = strsplit(tmpstr2, "&", &count2);
 
-								memset(&header, 0, sizeof(GValue));
-								g_value_init(&header, G_TYPE_STRING);
-								//value
-								g_value_set_string(&header, tmpstr3);
-								//name
-								gst_structure_set_value(extras, ret2[0].part, &header);
-								free(tmpstr3), tmpstr3 = NULL;
+					if(ret2 != NULL)
+					{
+						for(i2 = 0; i2 < count2; i2++)
+						{
+							int count3 = 0, i3 = 0;	
+							struct splitstr* ret3 = NULL;
+							tmpstr3 = ostrcat(ret2[i2].part, NULL, 0, 0);
+							ret3 = strsplit(tmpstr3, "=", &count3);
+					
+							if(ret3 != NULL)
+							{
+								int max = count3 - 1;
+								for(i3 = 0; i3 < max; i3++)
+								{
+									if(ostrstr(ret3[i3].part, "User-Agent") != NULL)
+									{
+			//							printf("[player.h] skip set user-agent: %s\n", ret2[1].part);
+										printf("[player.h] set user-agent: %s\n", ret3[i3 + 1].part);
+										g_object_set(G_OBJECT(source), "user-agent", ret3[i3 + 1].part, NULL);
+									}
+									else
+									{
+										if (g_object_class_find_property(G_OBJECT_GET_CLASS(source), "extra-headers") != 0)
+										{					
+											GValue header;
+											// eDebug("setting extra-header '%s:%s'", name.c_str(), value.c_str());
+											printf("[player.h] set extra-header %s: %s\n", ret3[i3].part, ret3[i3 + 1].part);
+											
+											tmpstr4 = ostrcat(ret3[i3 + 1].part, NULL, 0, 0);
+											htmldecode(tmpstr4, tmpstr4);
+											printf("[player.h] set extra-header decode %s: %s\n", ret3[i3].part, tmpstr4);
+			
+											memset(&header, 0, sizeof(GValue));
+											g_value_init(&header, G_TYPE_STRING);
+											//value
+											g_value_set_string(&header, tmpstr4);
+											//name
+											gst_structure_set_value(extras, ret3[i3].part, &header);
+											free(tmpstr4), tmpstr4 = NULL;
+										}
+									}
+								}
 							}
+							free(ret3), ret3 = NULL;
+							free(tmpstr3), tmpstr3 = NULL;
 						}
 					}
 					free(ret2), ret2 = NULL;
 					free(tmpstr2), tmpstr2 = NULL;
 				}
+
 				free(ret1), ret1 = NULL;
 				free(tmpstr1), tmpstr1 = NULL;
 
