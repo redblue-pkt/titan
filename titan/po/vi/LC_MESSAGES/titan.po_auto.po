@@ -639,7 +639,7 @@ msgstr ""
 "\n"
 " đang hủy sao chép…"
 
-#: skin_default_skin.xml.h:56 tithek.h:1518 webif_channellist.h:4
+#: skin_default_skin.xml.h:56 tithek.h:1552 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -682,8 +682,8 @@ msgstr "thêm tất cả"
 msgid "ADD BOUQUET"
 msgstr "thêm 1"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1764
-#: tithek.h:2471
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1798
+#: tithek.h:2514
 msgid "ADD FAV"
 msgstr "Thêm ưu thích"
 
@@ -774,11 +774,11 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: tithek.h:2440
+#: tithek.h:2483
 msgid "Add this link as Favorite ?"
 msgstr " Muốn thêm vào mục ưa thích này?"
 
-#: tithek.h:1944 tithek.h:2104
+#: tithek.h:1978 tithek.h:2138
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -825,7 +825,7 @@ msgstr ""
 msgid "All Channels"
 msgstr "Tất cả các chương trình"
 
-#: tithek.h:1514
+#: tithek.h:1548
 msgid "All Sorted"
 msgstr ""
 
@@ -1809,7 +1809,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Không có EPG!"
 
-#: tithek.h:1695
+#: tithek.h:1729
 msgid "Can't get Streamurl !"
 msgstr "không có tín hiệu"
 
@@ -1867,7 +1867,7 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr "Không thể hiển thị file này"
 
-#: tithek.h:1334
+#: tithek.h:1368
 msgid ""
 "Can't start download.\n"
 "Please try later."
@@ -1905,7 +1905,7 @@ msgstr "hủy"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek.h:1494
+#: tithek.h:1528
 msgid "Category"
 msgstr ""
 
@@ -2087,7 +2087,7 @@ msgstr ""
 msgid "Choice Menu"
 msgstr "Đóng menu"
 
-#: tithek.h:1541
+#: tithek.h:1575
 msgid "Choice Playback"
 msgstr "bắt đầu phát lại"
 
@@ -2148,7 +2148,7 @@ msgstr ""
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
-#: tithek.h:1595
+#: tithek.h:1629
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
@@ -2452,7 +2452,7 @@ msgstr "Tạo thư mục"
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:1929 tithek.h:2089
+#: tithek.h:1963 tithek.h:2123
 msgid "Create sub folder"
 msgstr ""
 
@@ -2906,11 +2906,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr "Tải toàn bộ file"
 
-#: tithek.h:1590
+#: tithek.h:1624
 msgid "Download Full File"
 msgstr "Tải toàn bộ file"
 
-#: tithek.h:1591
+#: tithek.h:1625
 msgid "Download Full File (background)"
 msgstr " Tải toàn bộ file (hình nền)"
 
@@ -2977,7 +2977,7 @@ msgstr "chỉnh sửa"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1759 tithek.h:2466
+#: tithek.h:1793 tithek.h:2509
 msgid "EDIT FAV"
 msgstr ""
 
@@ -3217,9 +3217,9 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1059 titan.c:1068 titan.c:1196
 #: titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240 tithek.c:103
-#: tithek_global.h:103 tithek.h:711 tithek.h:1273 tithek.h:1334 tithek.h:1673
-#: tithek.h:1695 tithek.h:1712 tithek.h:1944 tithek.h:2104 tithek.h:2389
-#: tithek.h:2424 tithek.h:2440 tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68
+#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1707
+#: tithek.h:1729 tithek.h:1746 tithek.h:1978 tithek.h:2138 tithek.h:2423
+#: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -3264,7 +3264,7 @@ msgstr "Chỉnh sửa danh sách"
 msgid "Edit mode"
 msgstr "chỉnh sửa"
 
-#: tithek.h:2452
+#: tithek.h:2495
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -3702,7 +3702,7 @@ msgstr ""
 msgid "Filelist-Mode"
 msgstr "Chế độ danh sách tập tin"
 
-#: tithek.h:1666 tithek.h:1685
+#: tithek.h:1700 tithek.h:1719
 msgid "Filename"
 msgstr ""
 
@@ -5886,9 +5886,9 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1196 titan.c:1217 titan.c:1223 titan.c:1234 titan.c:1240
-#: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1273 tithek.h:1334
-#: tithek.h:1673 tithek.h:1695 tithek.h:1944 tithek.h:2104 tithek.h:2389
-#: tithek.h:2424 tithek.h:2440 tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368
+#: tithek.h:1707 tithek.h:1729 tithek.h:1978 tithek.h:2138 tithek.h:2423
+#: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
@@ -6494,9 +6494,9 @@ msgstr "E"
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1059 titan.c:1068 titan.c:1196 titan.c:1217 titan.c:1223
 #: titan.c:1234 titan.c:1240 tithek.c:103 tithek_global.h:103 tithek.h:711
-#: tithek.h:1273 tithek.h:1334 tithek.h:1673 tithek.h:1695 tithek.h:1712
-#: tithek.h:1944 tithek.h:2104 tithek.h:2389 tithek.h:2424 tithek.h:2440
-#: tithek.h:2452 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
+#: tithek.h:1307 tithek.h:1368 tithek.h:1707 tithek.h:1729 tithek.h:1746
+#: tithek.h:1978 tithek.h:2138 tithek.h:2423 tithek.h:2467 tithek.h:2483
+#: tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
@@ -6756,7 +6756,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1796
+#: tithek.h:1830
 msgid "Page"
 msgstr "trang"
 
@@ -7776,7 +7776,7 @@ msgstr ""
 msgid "Remotecontrol Power Aktion"
 msgstr ""
 
-#: tithek.h:1269
+#: tithek.h:1303
 msgid "Remove Cachefile ?"
 msgstr "Xóa tập tin lưu trữ ?"
 
@@ -7812,7 +7812,7 @@ msgstr "xóa chia sẻ"
 msgid "Remove success"
 msgstr "Đã hủy thành công!"
 
-#: tithek.h:2424
+#: tithek.h:2467
 msgid "Remove this Favorite ?"
 msgstr "Hủy bỏ ưu thích này ?"
 
@@ -8561,22 +8561,22 @@ msgstr "Không có đầu ra."
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:550 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:471 tithek_global.h:473 tithek_global.h:897
-#: tithek_global.h:899 tithek.h:1510 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:471 tithek_global.h:473 tithek_global.h:906
+#: tithek_global.h:908 tithek.h:1544 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359
 #: youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "dò"
 
-#: tithek.h:1502
+#: tithek.h:1536
 msgid "Search (20)"
 msgstr ""
 
-#: tithek.h:1498
+#: tithek.h:1532
 msgid "Search (local)"
 msgstr ""
 
-#: tithek.h:1506
+#: tithek.h:1540
 msgid "Search Cast"
 msgstr ""
 
@@ -9304,7 +9304,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "Bắt đầu khởi động"
 
-#: tithek.h:1673
+#: tithek.h:1707
 msgid "Start playback"
 msgstr "bắt đầu phát lại?"
 
@@ -9406,15 +9406,15 @@ msgstr "Streaming"
 msgid "Streaming"
 msgstr ""
 
-#: tithek.h:1546 tithek.h:1550 tithek.h:1554 tithek.h:1567
+#: tithek.h:1580 tithek.h:1584 tithek.h:1588 tithek.h:1601
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1578
+#: tithek.h:1612
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1575
+#: tithek.h:1609
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9764,7 +9764,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:103 tithek.h:2389
+#: tithek_global.h:103 tithek.h:2423
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
@@ -10067,7 +10067,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1712
+#: tithek.h:1746
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
@@ -10083,12 +10083,12 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr "Không thể mở file"
 
-#: tithek.c:126 tithek.h:1468
+#: tithek.c:126 tithek.h:1502
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek.h:1464 tithek.h:1757 tithek.h:1891 tithek.h:2420 tithek.h:2436
-#: tithek.h:2448 tithek.h:2464
+#: tithek.h:1498 tithek.h:1791 tithek.h:1925 tithek.h:2463 tithek.h:2479
+#: tithek.h:2491 tithek.h:2507
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
@@ -12565,7 +12565,7 @@ msgid "please wait"
 msgstr ""
 
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1256
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1290
 msgid "please wait..."
 msgstr "Vui lòng đợi …"
 
