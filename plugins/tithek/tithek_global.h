@@ -785,8 +785,6 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 		path = ostrcat("/tmp/localparser", NULL, 0, 0);
 		drawscreen(load, 0, 0);
 
-		char* titheklocalfile = ostrcat("/tmp/tithek/mainmenu.local.list", NULL, 0, 0);
-
 		if(flag == 1)
 		{
 			if(!file_exist("/tmp/localhoster"))
@@ -829,50 +827,43 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			cmd = ostrcat("chmod -R 755 /tmp/localhoster", NULL, 0, 0);
 			system(cmd);
 			free(cmd), cmd = NULL;
-//			}
-	
-			cmd = ostrcat("ls -1 ", path, 0, 0);
-			cmd = ostrcat(cmd, "/*.sh", 1, 0);
-	
-			free(path), path = NULL;
-			tmpstr1 = command("ls -1 /mnt/parser/*.sh");
-			tmpstr2 = command(cmd);
-			free(cmd), cmd = NULL;
-			tmpstr = ostrcat(tmpstr1, "\n", 0, 0);
-			tmpstr = ostrcat(tmpstr, tmpstr2, 1, 0);
-	
-			int count = 0, i = 0;
-			struct splitstr* ret1 = NULL;
-			ret1 = strsplit(tmpstr, "\n", &count);
-		
-			int max = count;
-			for(i = 0; i < max; i++)
-			{
-				if(file_exist(ret1[i].part) && cmpfilenameext(ret1[i].part, ".sh") == 0)
-				{
-					cmd = ostrcat(ret1[i].part, " ", 0, 0);
-					cmd = ostrcat(cmd, ret1[i].part, 1, 0);
-					cmd = ostrcat(cmd, " init", 1, 0);
-					line = command(cmd);
-					debug(99, "add main menuentry: %s", line);
-					writesys(titheklocalfile, line, 3);
-					free(cmd), cmd = NULL;
-					free(line), line = NULL;
-				}
-			}
-			free(ret1), ret1 = NULL;
-			free(tmpstr), tmpstr = NULL;
-			free(tmpstr1), tmpstr1 = NULL;
-			free(tmpstr2), tmpstr2 = NULL;
 		}
 
-		line = readfiletomem(titheklocalfile, 1);
-		free(titheklocalfile), titheklocalfile = NULL;
-		writesys(tithekfile, line, 3);
+		cmd = ostrcat("ls -1 ", path, 0, 0);
+		cmd = ostrcat(cmd, "/*.sh", 1, 0);
 
+		free(path), path = NULL;
+		tmpstr1 = command("ls -1 /mnt/parser/*.sh");
+		tmpstr2 = command(cmd);
+		free(cmd), cmd = NULL;
+		tmpstr = ostrcat(tmpstr1, "\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, tmpstr2, 1, 0);
+
+		int count = 0, i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr, "\n", &count);
+	
+		int max = count;
+		for(i = 0; i < max; i++)
+		{
+			if(file_exist(ret1[i].part) && cmpfilenameext(ret1[i].part, ".sh") == 0)
+			{
+				cmd = ostrcat(ret1[i].part, " ", 0, 0);
+				cmd = ostrcat(cmd, ret1[i].part, 1, 0);
+				cmd = ostrcat(cmd, " init", 1, 0);
+				line = command(cmd);
+				debug(99, "add main menuentry: %s", line);
+				writesys(tithekfile, line, 3);
+				free(cmd), cmd = NULL;
+				free(line), line = NULL;
+			}
+		}
+		free(ret1), ret1 = NULL;
+		free(tmpstr), tmpstr = NULL;
+		free(tmpstr1), tmpstr1 = NULL;
+		free(tmpstr2), tmpstr2 = NULL;
 		clearscreen(load);
 	}
-
 }
 
 char* localparser_hoster(char* link)
