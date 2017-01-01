@@ -159,6 +159,11 @@ cloudflare()
 	$BIN $CMD/cloudflare.py $INPUT
 }
 
+nowvideo()
+{
+	$BIN $CMD/nowvideo.py $INPUT
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -185,5 +190,6 @@ if [ "$TYPE" == "get" ];then
 		goldesel) goldesel $INPUT;;
 		movie4k) cloudflare $INPUT;;
 		streamcloud1) streamcloud $INPUT;;	
+		nowvideo) nowvideo $INPUT;;
 	esac
 fi
