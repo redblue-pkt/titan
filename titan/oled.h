@@ -71,7 +71,6 @@ void write2oled(unsigned char *buf, int xres, int yres)
 			err("write to oled dm900 - %s - was not ok", getconfig("vfddev", NULL));
 		free(lfb2);
 	}
-	}
 	close(lcdfd1);
 	
 	free(lfb1);
