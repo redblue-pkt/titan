@@ -27,8 +27,9 @@ class NowvideoResolver(object):
 
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
+        headers = {'User-Agent': common.FF_USER_AGENT}
         stream_url = ''
-        html = self.net.http_GET(web_url).content
+        html = self.net.http_GET(web_url, headers=headers).content
         try:
             r = re.search('flashvars.filekey=(.+?);', html)
             if r:
@@ -57,8 +58,11 @@ class NowvideoResolver(object):
             print "no embedded urls found using second method"
 
         if stream_url:
-            print stream_url + helpers.append_headers({'Referer': web_url})
+            headers.update({'Referer': web_url, })
+            print stream_url + helpers.append_headers(headers)
+#           print stream_url + helpers.append_headers({'Referer': web_url})
 
+ 
     def get_url(self, host, media_id):
         return 'http://embed.nowvideo.sx/embed/?v=%s' % media_id
 
