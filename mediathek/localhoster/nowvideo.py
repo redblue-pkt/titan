@@ -2,7 +2,7 @@
 import sys
 import re
 from lib.net import Net
-from urlresolver import common
+import lib.common as common
 from lib import helpers
 
 class NowvideoResolver(object):
