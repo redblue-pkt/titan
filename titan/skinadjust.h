@@ -124,14 +124,6 @@ start:
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
 
-	if(checkbox("DM900") == 1) //offset fuer FB nicht vorgesehen
-	{
-		leftoffset->hidden = YES;
-		rightoffset->hidden = YES;
-		topoffset->hidden = YES;
-		bottomoffset->hidden = YES;
-	}
-	
 	if(checkscreen("infobar") != status.skinerr)
 		addchoicebox(infobar_sel, "infobar", "default");
 	if(checkscreen("infobar_v2") != status.skinerr)
@@ -579,7 +571,7 @@ start:
 		drawscreen(skinadjust, 0, 0);
 
 #ifdef MIPSEL
-		if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
+		if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0) 
 			setfbosd();
 #endif
 
