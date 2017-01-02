@@ -749,9 +749,9 @@ printf("mbox->name=%s\n", mbox->name);
 		}
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 			screenbgdownload(1);
-		else if(ostrcmp(mbox->name, "Create Sub Menu Favorite") == 0)
+		else if(ostrcmp(mbox->name, "Create Favorites sub folder") == 0)
 			ret = 0;
-		else if(ostrcmp(mbox->name, "Create Sub Menu Favorite (Password)") == 0)
+		else if(ostrcmp(mbox->name, "Create Favorites sub folder(PIN secured)") == 0)
 			ret = 1000;
 		else if(ostrcmp(mbox->name, "Search on KinoX") == 0)
 			ret = 2;
