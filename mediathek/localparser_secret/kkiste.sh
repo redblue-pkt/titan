@@ -69,7 +69,7 @@ search()
 				touch $TMP/$PARSER.$INPUT.$FILENAME.list
 			fi
 			piccount=$[$piccount+1]
-			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER_$piccount.jpg#$NAME#0"
+			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER_$NEWPAGE_piccount.jpg#$NAME#0"
 
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
