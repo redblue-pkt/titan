@@ -32,6 +32,10 @@ init()
 
 mainmenu()
 {
+	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.list > /dev/null 2>&1
+	fi
+
 	echo "Neue Filme#$SRC $SRC videos neue-filme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >$TMP/$PARSER.$INPUT.list
 	echo "Kinofilme#$SRC $SRC videos aktuelle-kinofilme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
 	echo "Search#$SRC $SRC search 'search/?q=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$PARSER.$INPUT.list
@@ -40,10 +44,6 @@ mainmenu()
 
 search()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.list
-	fi
-
 	piccount=0
 	$curlbin "$URL/$PARAM" -o "$TMP/cache.$PARSER.$INPUT.1"
 	cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="mbox list"!\nfound=!g' | sed 's!<div class="clear">!\n<div class="clear">!g' | grep ^"found=" >$TMP/cache.$PARSER.$INPUT.2
@@ -141,7 +141,7 @@ BEGIN { kz_parts=0
                  title = a[2]
 				 if(title!="") {
 	                 count = title
-    	             print title "#" SRC " " SRC " episodelist " PARAM " " "season=" count "#http://atemio.dyndns.tv/mediathek/menu/" part ".jpg#" part ".jpg#" NAME "#0"
+    	             print "Staffel: " title "#" SRC " " SRC " episodelist " PARAM " " "season=" count "#http://atemio.dyndns.tv/mediathek/menu/s" title ".jpg#s" title ".jpg#" NAME "#0"
         		 }
                  next
               }
@@ -179,9 +179,6 @@ hoster()
 	i=`expr $PAGE \* 2`
 	data=`$curlbin "$URL$PARAM" | grep "data-det=" | cut -d'"' -f4`
 
-#$curlbin "$URL$PARAM" | grep "data-det="
-
-#echo data $data
 	if [ ! -z "$data" ];then
 		id=`$curlbin --header "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" -X POST --data "$data" --referer $URL$PARAM http://kkiste.to/xhr/link/ | cut -d'"' -f$i`
 	fi
@@ -198,8 +195,6 @@ episodelist()
 		rm $TMP/$PARSER.$INPUT.list
 	fi
 
-
-	piccount=0
 	SEASON=`echo $PAGE | cut -d"=" -f2`
 	PARAM1=`echo $PARAM | sed 's!.html!/!g'`
 
@@ -208,23 +203,18 @@ episodelist()
 ### curl -k -s -v -H "X-Requested-With: XMLHttpRequest" -X POST --data "season=1" --referer http://kkiste.to/24-twenty-four-stream.html http://kkiste.to/xhr/movies/episodes/24-twenty-four-stream/
 
 	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!},{!\n{!g' | cut -d"[" -f2 >$TMP/cache.$PARSER.$INPUT.2
-#	cat $TMP/cache.$PARSER.$INPUT.2
+
+	count=0
 
 	while read -u 3 ROUND; do
+		count=`expr $count + 1`
+	
 		TITLE=`echo $ROUND | cut -d'"' -f10 | tail -n1`
 		ID=`echo $ROUND | cut -d'"' -f6 | tail -n1`
 		NEWPAGE="http://www.ecostream.tv/stream/$ID.html"
 		EPISODE=`echo $TITLE | tr ' ' '\n' | tail -n1`
-
-#echo ID $ID
-#echo TITLE $TITLE
-#echo NEWPAGE $NEWPAGE
-#echo SEASON $SEASON
-#echo EPISODE $EPISODE
-
-		if [ -z "$PIC" ]; then
-			PIC="http://atemio.dyndns.tv/mediathek/menu/s"$SEASON"e"$EPISODE".jpg"
-		fi
+		PICNAME=s"$SEASON"e"$EPISODE".jpg
+		PIC="http://atemio.dyndns.tv/mediathek/menu/$PICNAME"
 
 		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
@@ -232,8 +222,9 @@ episodelist()
 			if [ ! -e $TMP/$PARSER.$INPUT.$FILENAME.list ];then
 				touch $TMP/$PARSER.$INPUT.$FILENAME.list
 			fi
-			piccount=$[$piccount+1]
-			LINE="$TITLE#$NEWPAGE#$PIC#$PARSER_$NEWPAGE_piccount.jpg#$NAME#14"
+#gehen beide varianten weiss nur nicht ob die folgen dann stimmen
+#			LINE="$TITLE#$SRC $SRC hoster $PARAM $count#$PIC#$PICNAME#$NAME#111"
+			LINE="$TITLE#$NEWPAGE#$PIC#$PICNAME#$NAME#14"
 
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
