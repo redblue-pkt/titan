@@ -45,7 +45,6 @@ mainmenu()
 
 search()
 {
-	rm $TMP/$PARSER.$INPUT.list > /dev/null 2>&1
 	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
 		rm $TMP/$PARSER.$INPUT.list
 	fi
