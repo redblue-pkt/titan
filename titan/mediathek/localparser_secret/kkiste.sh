@@ -1,15 +1,16 @@
 #!/bin/bash
 # box parser for titannit
 
+. /tmp/localhoster/hoster.sh
+
 SRC=$1
 INPUT=$2
 PARAM=$3
 PAGE=$4
+
 URL="http://kkiste.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:2} | tr '[a-z]' '[A-Z]'`${PARSER:2}
-curlbin="curl -k -s"
-TMP=/tmp/parser
 
 rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
@@ -31,14 +32,52 @@ init()
 
 mainmenu()
 {
-	echo "Neue Filme#$SRC $SRC videos neue-filme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
-	echo "Kinofilme#$SRC $SRC videos aktuelle-kinofilme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-#	echo "Serien#$SRC $SRC videos serien/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-#	echo "Popular Tags#$SRC $SRC tags popular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-#	echo "All Tags#$SRC $SRC tags nonpopular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-#	echo "Long Videos#$SRC $SRC videos tag/0/pc?tag=long+videos#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-#	echo "Search#$SRC $SRC videos index/search/0/pc?query=#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>/tmp/tithek/$PARSER.list
-	echo "/tmp/tithek/$PARSER.list"
+	echo "Neue Filme#$SRC $SRC videos neue-filme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >$TMP/$PARSER.$INPUT.list
+	echo "Kinofilme#$SRC $SRC videos aktuelle-kinofilme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
+	echo "Search#$SRC $SRC search 'search/?q=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$PARSER.$INPUT.list
+	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+search()
+{
+	rm $TMP/$PARSER.$INPUT.list > /dev/null 2>&1
+	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.list
+	fi
+
+	piccount=0
+	$curlbin "$URL/$PARAM" -o "$TMP/cache.$PARSER.$INPUT.1"
+	cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="mbox list"!\nfound=!g' | sed 's!<div class="clear">!\n<div class="clear">!g' | grep ^"found=" >$TMP/cache.$PARSER.$INPUT.2
+
+	while read -u 3 ROUND; do
+		ID=`echo $ROUND | cut -d'"' -f1 | tail -n1`
+		PIC=`echo $ROUND | sed 's!"url": !\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
+		TITLE=`echo $ROUND | sed 's!class="title">!\ntitle=<!g' | grep ^title= | cut -d'<' -f2`
+		NEWPAGE=`echo $ROUND | sed 's!<a href=!\nfound=!g' | grep ^found= | cut -d'"' -f2 | tail -n1`
+
+		PIC=`$curlbin "$URL/$NEWPAGE" | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<img src=!\nfound=!g' | grep ^found= | cut -d'"' -f2 | tail -n1`
+		
+
+		if [ -z "$PIC" ]; then
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		fi
+
+		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+
+		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+			if [ ! -e $TMP/$PARSER.$INPUT.$FILENAME.list ];then
+				touch $TMP/$PARSER.$INPUT.$FILENAME.list
+			fi
+			piccount=$[$piccount+1]
+			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER_$piccount.jpg#$NAME#111"
+
+			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+		fi
+
+	done 3<$TMP/cache.$PARSER.$INPUT.2
+	rm $TMP/cache.* > /dev/null 2>&1
+
+	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 videos()
@@ -122,54 +161,14 @@ BEGIN { kz_parts=0
 hoster()
 {
 	i=`expr $PAGE \* 2`
-	data=`$curlbin -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies "$URL$PARAM" | grep "data-det=" | cut -d'"' -f4`
+	data=`$curlbin "$URL$PARAM" | grep "data-det=" | cut -d'"' -f4`
 	if [ ! -z "$data" ];then
-		id=`$curlbin -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies --header "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" -X POST --data "$data" --referer $URL$PARAM http://kkiste.to/xhr/link/ | cut -d'"' -f$i`
+		id=`$curlbin --header "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" -X POST --data "$data" --referer $URL$PARAM http://kkiste.to/xhr/link/ | cut -d'"' -f$i`
 	fi
 	if [ -z "$id" ];then
-		id=`$curlbin -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies "$URL$PARAM" | grep "http://www.ecostream.tv/stream" | sed 's#http://www.ecostream.tv/stream/#\nlink=.#g' | cut -d"." -f2`
+		id=`$curlbin "$URL$PARAM" | grep "http://www.ecostream.tv/stream" | sed 's#http://www.ecostream.tv/stream/#\nlink=.#g' | cut -d"." -f2`
 	fi
 	echo "http://www.ecostream.tv/stream/$id.html"
-}
-
-
-tags()
-{
-	$curlbin -o - ${URL}index/main/0/pc | sed -e 's/{DATA_MARKERS}/data=pc.XX/g' -e 's/{/{\n/g' -e 's/,/,\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
-BEGIN { table = ""
-      }
-/\"/  { m = 1
-        while (m == 1) {
-           s = $0
-           i = gsub("[\"]", "x", s)
-           m = i % 2
-           if (m == 1) {
-              getline l
-              $0 = $0 l
-           }
-        }
-      }
-/^\{/ { next
-      }
-/\[$/ { split($0, a, "\"")
-        table = a[2]
-        next
-      }
-/^\}/ { next
-      }
-/^\]/ { table = ""
-        next
-      }
-      { if (table == PARAM) {
-           split($0, a, "\"")
-           title = a[2]
-           tag = title
-           gsub(/ /, "%20", tag)
-           print title "#" SRC " " SRC " videos index/tag/0/pc?tag=" tag "#http://atemio.dyndns.tv/mediathek/menu/" tag ".jpg#" tag ".jpg#" NAME "#0"
-        }
-      }
-' >/tmp/tithek/$PARSER.list
-	echo "/tmp/tithek/$PARSER.list"
 }
 
 case $INPUT in
@@ -179,7 +178,7 @@ case $INPUT in
 	parts) $INPUT;;
 	serien) $INPUT;;
 	hoster) $INPUT;;
-	tags) $INPUT;;
+	search) $INPUT;;
 	page) $INPUT;;
 esac
 
