@@ -8,7 +8,7 @@ INPUT=$2
 PARAM=$3
 PAGE=$4
 
-URL="http://kkiste.to/"
+URL="http://kkiste.to"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:2} | tr '[a-z]' '[A-Z]'`${PARSER:2}
 
@@ -114,21 +114,38 @@ BEGIN { title=""
 
 END   { print "Page " PAGE + 1 "#" SRC " " SRC " " INPUT " " PARAM " " PAGE + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
       }
-' >/tmp/tithek/$PARSER.list
-	echo "/tmp/tithek/$PARSER.list"
+' >$TMP/$PARSER.$INPUT.list
+	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 parts()
 {
-	$curlbin -o - $URL$PARAM >/tmp/tithek/kkiste.1
-	cat /tmp/tithek/kkiste.1 | awk -v SRC=$SRC -v INPUT=$INPUT -v PARAM=$PARAM -v PAGE=$PAGE -v PARSER=$PARSER -v NAME=$NAME '
+	$curlbin -o - $URL$PARAM >$TMP/cache.$PARSER.$INPUT.1
+
+	cat $TMP/cache.$PARSER.$INPUT.1 | awk -v SRC=$SRC -v INPUT=$INPUT -v PARAM=$PARAM -v PAGE=$PAGE -v PARSER=$PARSER -v NAME=$NAME '
 BEGIN { kz_parts=0
         count=1
+        extra=test
       }
 
 /<div class="mediabar">/ { kz_parts=1
                            next
                  }
+/<select class="seasonselect"/ { extra=1
+                           next
+                 }
+/<option value="/ { if(extra=1) {
+                 i = match($0, /<option value="/)
+                 split(substr($0, i), a, "\"")
+                 #print url
+                 title = a[2]
+				 if(title!="") {
+	                 count = title
+    	             print title "#" SRC " " SRC " episodelist " PARAM " " "season=" count "#http://atemio.dyndns.tv/mediathek/menu/" part ".jpg#" part ".jpg#" NAME "#0"
+        		 }
+                 next
+              }
+            }
 
 /<a href="/ { if(kz_parts!=0) {
                  i = match($0, /<a href="/)
@@ -153,22 +170,80 @@ BEGIN { kz_parts=0
 /<div class="ad leaderboard">/ { kz_parts=0
                                  next
          }
-' >/tmp/tithek/$PARSER.list
-	echo "/tmp/tithek/$PARSER.list"
+' >$TMP/$PARSER.$INPUT.list
+	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 hoster()
 {
 	i=`expr $PAGE \* 2`
 	data=`$curlbin "$URL$PARAM" | grep "data-det=" | cut -d'"' -f4`
+
+#$curlbin "$URL$PARAM" | grep "data-det="
+
+echo data $data
 	if [ ! -z "$data" ];then
 		id=`$curlbin --header "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" -X POST --data "$data" --referer $URL$PARAM http://kkiste.to/xhr/link/ | cut -d'"' -f$i`
 	fi
+
 	if [ -z "$id" ];then
 		id=`$curlbin "$URL$PARAM" | grep "http://www.ecostream.tv/stream" | sed 's#http://www.ecostream.tv/stream/#\nlink=.#g' | cut -d"." -f2`
 	fi
 	echo "http://www.ecostream.tv/stream/$id.html"
 }
+
+episodelist()
+{
+	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.list
+	fi
+
+
+	piccount=0
+	SEASON=`echo $PAGE | cut -d"=" -f2`
+	PARAM1=`echo $PARAM | sed 's!.html!/!g'`
+
+	data=`$curlbin "$URL$PARAM" | grep "data-movie=" | cut -d'"' -f4`
+	$curlbin2 -H "X-Requested-With: XMLHttpRequest" -X POST --data "$PAGE" --referer $URL$PARAM http://kkiste.to/xhr/movies/episodes/$data/ -o "$TMP/cache.$PARSER.$INPUT.1"
+### curl -k -s -v -H "X-Requested-With: XMLHttpRequest" -X POST --data "season=1" --referer http://kkiste.to/24-twenty-four-stream.html http://kkiste.to/xhr/movies/episodes/24-twenty-four-stream/
+
+	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!},{!\n{!g' | cut -d"[" -f2 >$TMP/cache.$PARSER.$INPUT.2
+#	cat $TMP/cache.$PARSER.$INPUT.2
+
+	while read -u 3 ROUND; do
+		TITLE=`echo $ROUND | cut -d'"' -f10 | tail -n1`
+		ID=`echo $ROUND | cut -d'"' -f6 | tail -n1`
+		NEWPAGE="http://www.ecostream.tv/stream/$ID.html"
+		EPISODE=`echo $TITLE | tr ' ' '\n' | tail -n1`
+
+echo ID $ID
+echo TITLE $TITLE
+echo NEWPAGE $NEWPAGE
+echo SEASON $SEASON
+echo EPISODE $EPISODE
+
+		if [ -z "$PIC" ]; then
+			PIC="http://atemio.dyndns.tv/mediathek/menu/s"$SEASON"e"$EPISODE".jpg"
+		fi
+
+		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+
+		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+			if [ ! -e $TMP/$PARSER.$INPUT.$FILENAME.list ];then
+				touch $TMP/$PARSER.$INPUT.$FILENAME.list
+			fi
+			piccount=$[$piccount+1]
+			LINE="$TITLE#$NEWPAGE#$PIC#$PARSER_$NEWPAGE_piccount.jpg#$NAME#14"
+
+			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+		fi
+
+	done 3<$TMP/cache.$PARSER.$INPUT.2
+	rm $TMP/cache.* > /dev/null 2>&1
+
+	echo "$TMP/$PARSER.$INPUT.list"
+}
+
 
 case $INPUT in
 	init) $INPUT;;
@@ -179,5 +254,6 @@ case $INPUT in
 	hoster) $INPUT;;
 	search) $INPUT;;
 	page) $INPUT;;
+	episodelist) $INPUT;;
 esac
 
