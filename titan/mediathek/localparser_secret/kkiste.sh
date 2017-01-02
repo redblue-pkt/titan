@@ -8,7 +8,7 @@ INPUT=$2
 PARAM=$3
 PAGE=$4
 
-URL="http://kkiste.to"
+URL="http://kkiste.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:2} | tr '[a-z]' '[A-Z]'`${PARSER:2}
 
