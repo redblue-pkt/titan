@@ -5,9 +5,16 @@ import sys
 from lib.net import Net
 import re
 import lib.ol_gmu as ol_gmu
+import lib.common as common
 
-OL_SOURCE = 'https://offshoregit.com/tvaresolvers/ol_gmu.py'
+#OL_SOURCE = 'https://offshoregit.com/tvaresolvers/ol_gmu.py'
 OL_PATH = ''
+
+API_BASE_URL = 'https://api.openload.co/1'
+INFO_URL = API_BASE_URL + '/streaming/info'
+GET_URL = API_BASE_URL + '/streaming/get?file={media_id}'
+#OL_PATH = os.path.join(common.plugins_path, 'ol_gmu.py')
+
 
 class OpenLoadResolver(object):
     name = "openload"
@@ -29,6 +36,13 @@ class OpenLoadResolver(object):
         else:
             return False
 
+    def i18n(string_id):
+        try:
+            return addon.getLocalizedString(strings.STRINGS[string_id]).encode('utf-8', 'ignore')
+        except Exception as e:
+#            log_utils.log('Failed String Lookup: %s (%s)' % (string_id, e))
+            return string_id
+
     def get_ol_code(self):
         try:
             new_py = self.net.http_GET(OL_SOURCE).content
@@ -38,33 +52,64 @@ class OpenLoadResolver(object):
                 with open(OL_PATH, 'w') as f:
                     f.write(new_py)
         except Exception as e:
-            common.log_utils.log_warning('Exception during openload code retrieve: %s' % e)
+             print 'Exception during openload code retrieve:'
+#            common.log_utils.log_warning('Exception during openload code retrieve: %s' % e)
             
     def get_media_url(self, host, media_id):
-#        common.log_utils.log('host: %s' % (host))
-#        common.log_utils.log('media_id: %s' % (media_id))
-#        common.log_utils.log('OL_PATH: %s' % (OL_PATH))
+        video_url = ""
         try:
-#            if self.get_setting('auto_update') == 'true':
-#                self.get_ol_code()
-#            with open(OL_PATH, 'r') as f:
-#                py_data = f.read()
-#            common.log_utils.log('py_data: %s' % (py_data))
-#            common.log_utils.log('ol_gmu hash: %s' % (hashlib.md5(py_data).hexdigest()))
-#            import ol_gmu
-            web_url = self.get_url(host, media_id)
-#            common.log_utils.log('web_url: %s' % (web_url))
-            print ol_gmu.get_media_url(web_url)
+            self._auto_update(self.get_setting('url'), OL_PATH, self.get_setting('key'))
+            reload(ol_gmu)
+            return ol_gmu.get_media_url(self.get_url(host, media_id))  # @UndefinedVariable
         except Exception as e:
-#            common.log_utils.log_debug('Exception during openload resolve parse: %s' % e)
-            raise
+#            common.log_utils.log_debug('Exception during openload resolve parse: %s' % (e))
+            try:
+                video_url = self.__check_auth(media_id)
+                if not video_url:
+                    video_url = self.__auth_ip(media_id)
+            #except ResolverError:
+            except Exception as e:
+                print "raise"
+               # raise
+            
+            if video_url:
+                print video_url
 
     def get_url(self, host, media_id):
-        return 'http://openload.io/embed/%s' % media_id
+        return 'http://openload.co/embed/%s' % (media_id)
 
-    def get_settings_xml(cls):
-        xml = super(cls, cls).get_settings_xml()
-        xml.append('<setting id="%s_auto_update" type="bool" label="Automatically update resolver" default="true"/>' % (cls.__name__))
-        return xml
+    def __auth_ip(self, media_id):
+        js_data = self.__get_json(INFO_URL)
+        pair_url = js_data.get('result', {}).get('auth_url', '')
+        if pair_url:
+            pair_url = pair_url.replace('\/', '/')
+            header = i18n('ol_auth_header')
+            line1 = i18n('auth_required')
+            line2 = i18n('visit_link')
+            line3 = i18n('click_pair') % (pair_url)
+            with common.kodi.CountdownDialog(header, line1, line2, line3) as cd:
+                return cd.start(self.__check_auth, [media_id])
+        
+    def __check_auth(self, media_id):
+        try:
+            js_data = self.__get_json(GET_URL.format(media_id=media_id))
+#        except ResolverError as e:
+        except Exception as e:
+            status, msg = e
+            if status == 403:
+                return
+#            else:
+#                raise ResolverError(msg)
+        
+        return js_data.get('result', {}).get('url')
+    
+    def __get_json(self, url):
+        result = self.net.http_GET(url).content
+        js_result = json.loads(result)
+#        common.log_utils.log_debug(js_result)
+#        if js_result['status'] != 200:
+#            raise ResolverError(js_result['status'], js_result['msg'])
+        return js_result
+
 
 sys.stdout = OpenLoadResolver()
