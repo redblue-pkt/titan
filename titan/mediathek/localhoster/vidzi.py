@@ -28,7 +28,7 @@ class VidziResolver(object):
             return False
 
     def get_media_url(self, host, media_id):
-        return helpers.get_media_url(self.get_url(host, media_id))
+        print helpers.get_media_url(self.get_url(host, media_id))
 
     def get_url(self, host, media_id):
         return 'http://%s/embed-%s.html' % (host, media_id)
