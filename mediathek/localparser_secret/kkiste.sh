@@ -181,7 +181,7 @@ hoster()
 
 #$curlbin "$URL$PARAM" | grep "data-det="
 
-echo data $data
+#echo data $data
 	if [ ! -z "$data" ];then
 		id=`$curlbin --header "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" -X POST --data "$data" --referer $URL$PARAM http://kkiste.to/xhr/link/ | cut -d'"' -f$i`
 	fi
@@ -216,11 +216,11 @@ episodelist()
 		NEWPAGE="http://www.ecostream.tv/stream/$ID.html"
 		EPISODE=`echo $TITLE | tr ' ' '\n' | tail -n1`
 
-echo ID $ID
-echo TITLE $TITLE
-echo NEWPAGE $NEWPAGE
-echo SEASON $SEASON
-echo EPISODE $EPISODE
+#echo ID $ID
+#echo TITLE $TITLE
+#echo NEWPAGE $NEWPAGE
+#echo SEASON $SEASON
+#echo EPISODE $EPISODE
 
 		if [ -z "$PIC" ]; then
 			PIC="http://atemio.dyndns.tv/mediathek/menu/s"$SEASON"e"$EPISODE".jpg"
