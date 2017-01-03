@@ -8090,7 +8090,7 @@ msgstr "Wiederholen-An"
 
 #: skin_default_skin.xml.h:496
 msgid "Rescue mode"
-msgstr ""
+msgstr "Recovery mode"
 
 #: httpdfunc.h:7028 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
