@@ -80,7 +80,11 @@ void screenfeed(int flag)
 #ifdef SH4
 		tmpstr = ostrcat(tmpstr, "/svn/tpk/nightly-sh4-secret", 1, 0);	
 #else
-		tmpstr = ostrcat(tmpstr, "/svn/tpk/nightly-mipsel-secret", 1, 0);
+#ifdef ARM
+		tmpstr = ostrcat(tmpstr, "/svn/tpk/nightly-arm-secret", 1, 0);	
+#else
+		tmpstr = ostrcat(tmpstr, "/svn/tpk/nightly-mipsel-secret", 1, 0);	
+#endif
 #endif
 		writesys(getconfig("feed", NULL), tmpstr, 0);
 	}
