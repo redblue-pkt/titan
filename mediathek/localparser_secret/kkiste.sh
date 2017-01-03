@@ -8,7 +8,7 @@ INPUT=$2
 PARAM=$3
 PAGE=$4
 
-FILENAME=`echo $PARAM | tr '/' '.'`
+FILENAME=`echo $PARAM | tr '/' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.'`
 
 URL="http://kkiste.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
