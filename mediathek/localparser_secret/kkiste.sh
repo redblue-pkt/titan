@@ -8,6 +8,8 @@ INPUT=$2
 PARAM=$3
 PAGE=$4
 
+FILENAME=`echo $PARAM | tr '/' '.'`
+
 URL="http://kkiste.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:2} | tr '[a-z]' '[A-Z]'`${PARSER:2}
@@ -170,7 +172,7 @@ BEGIN { kz_parts=0
 /<div class="ad leaderboard">/ { kz_parts=0
                                  next
          }
-' >$TMP/$PARSER.$INPUT.list
+' >$TMP/$PARSER.$INPUT.$FILENAME.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -191,8 +193,8 @@ hoster()
 
 episodelist()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.list
+	if [ -e "$TMP/$PARSER.$INPUT.$FILENAME.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.$FILENAME.list
 	fi
 
 	SEASON=`echo $PAGE | cut -d"=" -f2`
@@ -226,13 +228,13 @@ episodelist()
 #			LINE="$TITLE#$SRC $SRC hoster $PARAM $count#$PIC#$PICNAME#$NAME#111"
 			LINE="$TITLE#$NEWPAGE#$PIC#$PICNAME#$NAME#14"
 
-			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FILENAME.list
 		fi
 
 	done 3<$TMP/cache.$PARSER.$INPUT.2
 	rm $TMP/cache.* > /dev/null 2>&1
 
-	echo "$TMP/$PARSER.$INPUT.list"
+	echo "$TMP/$PARSER.$INPUT.$FILENAME.list"
 }
 
 
