@@ -36,6 +36,7 @@ mainmenu()
 {
 	echo "Neue Filme#$SRC $SRC videos neue-filme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >$TMP/$PARSER.$INPUT.list
 	echo "Kinofilme#$SRC $SRC videos aktuelle-kinofilme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
+	echo "Serien#$SRC $SRC videos serien/?page= 1#http://atemio.dyndns.tv/mediathek/menu/series.jpg#series.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
 	echo "Search#$SRC $SRC search 'search/?q=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
