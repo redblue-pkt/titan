@@ -34,10 +34,6 @@ init()
 
 mainmenu()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.list > /dev/null 2>&1
-	fi
-
 	echo "Neue Filme#$SRC $SRC videos neue-filme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >$TMP/$PARSER.$INPUT.list
 	echo "Kinofilme#$SRC $SRC videos aktuelle-kinofilme/?page= 1#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
 	echo "Search#$SRC $SRC search 'search/?q=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$PARSER.$INPUT.list
@@ -46,6 +42,10 @@ mainmenu()
 
 search()
 {
+	if [ -e "$TMP/$PARSER.$INPUT.$FILENAME.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.$FILENAME.list > /dev/null 2>&1
+	fi
+
 	piccount=0
 	$curlbin "$URL/$PARAM" -o "$TMP/cache.$PARSER.$INPUT.1"
 	cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<li class="mbox list"!\nfound=!g' | sed 's!<div class="clear">!\n<div class="clear">!g' | grep ^"found=" >$TMP/cache.$PARSER.$INPUT.2
@@ -57,7 +57,6 @@ search()
 		NEWPAGE=`echo $ROUND | sed 's!<a href=!\nfound=!g' | grep ^found= | cut -d'"' -f2 | tail -n1`
 
 		PIC=`$curlbin "$URL/$NEWPAGE" | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<img src=!\nfound=!g' | grep ^found= | cut -d'"' -f2 | tail -n1`
-		
 
 		if [ -z "$PIC" ]; then
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
@@ -70,15 +69,15 @@ search()
 				touch $TMP/$PARSER.$INPUT.$FILENAME.list
 			fi
 			piccount=`expr $piccount + 1`
-			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER_$NEWPAGE_$FILENAME_$piccount.jpg#$NAME#0"
+			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER.$NEWPAGE.$FILENAME.$piccount.jpg#$NAME#0"
 
-			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FILENAME.list
 		fi
 
 	done 3<$TMP/cache.$PARSER.$INPUT.2
 	rm $TMP/cache.* > /dev/null 2>&1
 
-	echo "$TMP/$PARSER.$INPUT.list"
+	echo "$TMP/$PARSER.$INPUT.$FILENAME.list"
 }
 
 videos()
@@ -124,7 +123,7 @@ parts()
 {
 	$curlbin -o - $URL$PARAM >$TMP/cache.$PARSER.$INPUT.1
 
-	cat $TMP/cache.$PARSER.$INPUT.1 | awk -v SRC=$SRC -v INPUT=$INPUT -v PARAM=$PARAM -v PAGE=$PAGE -v PARSER=$PARSER -v NAME=$NAME '
+	cat $TMP/cache.$PARSER.$INPUT.1 | awk -v SRC=$SRC -v INPUT=$INPUT -v PARAM=$PARAM -v PAGE=$PAGE -v PARSER=$PARSER -v NAME=$NAME -v FILENAME=$FILENAME'
 BEGIN { kz_parts=0
         count=1
         extra=test
