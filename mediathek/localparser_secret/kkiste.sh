@@ -173,7 +173,7 @@ BEGIN { kz_parts=0
                                  next
          }
 ' >$TMP/$PARSER.$INPUT.$FILENAME.list
-	echo "$TMP/$PARSER.$INPUT.list"
+	echo "$TMP/$PARSER.$INPUT.$FILENAME.list"
 }
 
 hoster()
