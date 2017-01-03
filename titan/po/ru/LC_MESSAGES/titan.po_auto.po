@@ -1820,7 +1820,7 @@ msgstr "Не удаётся получить время EPG или время о
 msgid "Can't get Streamurl !"
 msgstr "Не удаётся получить поток!"
 
-#: extensions.h:453 httpdfunc.h:6504
+#: extensions.h:457 httpdfunc.h:6504
 msgid "Can't get all TPK index !"
 msgstr "Не удалось загрузить список плагинов!"
 
@@ -1828,7 +1828,7 @@ msgstr "Не удалось загрузить список плагинов!"
 msgid "Can't get data from facebook"
 msgstr "Не удаётся получить данные от Facebook"
 
-#: extensions.h:190 httpdfunc.h:6090
+#: extensions.h:194 httpdfunc.h:6090
 msgid "Can't install Package. Package to big."
 msgstr "Установка не выполнена. Плагин слишком большой"
 
@@ -1903,7 +1903,7 @@ msgstr ""
 msgid "Can't start timeshift play !"
 msgstr "Таймшифт не запущен!"
 
-#: extensions.h:457 httpdfunc.h:6516
+#: extensions.h:461 httpdfunc.h:6516
 msgid "Can't update all packages !"
 msgstr "Обновления для плагинов не найдены!"
 
@@ -2090,7 +2090,7 @@ msgstr "Защита от детей"
 msgid "Child safety"
 msgstr "Защита от детей"
 
-#: extensions.h:184 httpdfunc.h:6022
+#: extensions.h:188 httpdfunc.h:6022
 msgid "Choice Install Medium"
 msgstr "Выбор носителя для установки"
 
@@ -3140,11 +3140,11 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
-#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
-#: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
-#: extensions.h:305 extensions.h:313 extensions.h:320 extensions.h:362
-#: extensions.h:388 extensions.h:419 extensions.h:453 extensions.h:457
-#: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
+#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:194
+#: extensions.h:245 extensions.h:254 extensions.h:258 extensions.h:263
+#: extensions.h:309 extensions.h:317 extensions.h:324 extensions.h:366
+#: extensions.h:392 extensions.h:423 extensions.h:457 extensions.h:461
+#: extensions.h:518 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
 #: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
@@ -4996,7 +4996,7 @@ msgstr "Сначала установите плагин Tithek"
 msgid "Install Weather Tpk first !"
 msgstr ""
 
-#: extensions.h:121
+#: extensions.h:125
 msgid "Install error"
 msgstr "Ошибка установки"
 
@@ -5008,23 +5008,23 @@ msgstr ""
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr "Сначала установите плагин Интернет браузер!"
 
-#: extensions.h:119
+#: extensions.h:123
 msgid "Install success"
 msgstr "Установка завершена"
 
-#: extensions.h:157 httpdfunc.h:6056
+#: extensions.h:161 httpdfunc.h:6056
 msgid "Install to FLASH"
 msgstr "Установка во Флэш"
 
-#: extensions.h:145 httpdfunc.h:6038
+#: extensions.h:149 httpdfunc.h:6038
 msgid "Install to MNT"
 msgstr "Установка в MNT (Флэш)"
 
-#: extensions.h:171 httpdfunc.h:6076
+#: extensions.h:175 httpdfunc.h:6076
 msgid "Install to SWAP"
 msgstr "Установка в SWAP (USB или HDD)"
 
-#: extensions.h:102
+#: extensions.h:106
 msgid "Installation start"
 msgstr "Запуск установки"
 
@@ -5032,7 +5032,7 @@ msgstr "Запуск установки"
 msgid "Installed:"
 msgstr "Установлено"
 
-#: extensions.h:232 extensions.h:380
+#: extensions.h:236 extensions.h:384
 msgid "Installing"
 msgstr "Установка"
 
@@ -5854,9 +5854,9 @@ msgstr ""
 #: channellist.h:958 channellist.h:963 channellist.h:965 channellist.h:1049
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:268
-#: extensions.h:328 extensions.h:362 extensions.h:422 extensions.h:427
-#: extensions.h:466 facebook.h:66 facebook.h:157 facebook.h:167
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:272
+#: extensions.h:332 extensions.h:366 extensions.h:426 extensions.h:431
+#: extensions.h:470 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
 #: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
@@ -6246,7 +6246,7 @@ msgstr ""
 msgid "New Gothic BT"
 msgstr ""
 
-#: extensions.h:113
+#: extensions.h:117
 msgid "New free space (KB): "
 msgstr "Свободного места (Кб)"
 
@@ -6371,7 +6371,7 @@ msgstr ""
 msgid "No memory"
 msgstr "ОШИБКА: Недостаточно памяти"
 
-#: extensions.h:362 extensions.h:514
+#: extensions.h:366 extensions.h:518
 msgid "No plugin found."
 msgstr "Плагины не найдены"
 
@@ -6438,12 +6438,12 @@ msgstr ""
 #: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
-#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
-#: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
-#: extensions.h:268 extensions.h:305 extensions.h:313 extensions.h:320
-#: extensions.h:328 extensions.h:362 extensions.h:388 extensions.h:419
-#: extensions.h:427 extensions.h:453 extensions.h:457 extensions.h:466
-#: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
+#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:194
+#: extensions.h:245 extensions.h:254 extensions.h:258 extensions.h:263
+#: extensions.h:272 extensions.h:309 extensions.h:317 extensions.h:324
+#: extensions.h:332 extensions.h:366 extensions.h:392 extensions.h:423
+#: extensions.h:431 extensions.h:457 extensions.h:461 extensions.h:470
+#: extensions.h:518 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
 #: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
@@ -7842,7 +7842,7 @@ msgstr ""
 msgid "Remove empty Bouquet"
 msgstr ""
 
-#: extensions.h:125
+#: extensions.h:129
 msgid "Remove error"
 msgstr "Ошибка удаления"
 
@@ -7850,11 +7850,11 @@ msgstr "Ошибка удаления"
 msgid "Remove mode"
 msgstr "Удаление"
 
-#: extensions.h:104
+#: extensions.h:108
 msgid "Remove start"
 msgstr "Запуск удаления"
 
-#: extensions.h:123
+#: extensions.h:127
 msgid "Remove success"
 msgstr "Удаление завершено"
 
@@ -7874,7 +7874,7 @@ msgstr ""
 msgid "Remove unused Transponder on used Satellites/Providers"
 msgstr ""
 
-#: extensions.h:300
+#: extensions.h:304
 msgid "Removeing"
 msgstr "Удаление"
 
@@ -9210,7 +9210,7 @@ msgstr "Выбор менеджера"
 msgid "Softcam selection:"
 msgstr "Выбор эмулятора"
 
-#: extensions.h:422
+#: extensions.h:426
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -9851,7 +9851,7 @@ msgstr "Страница не найдена, файл удалён"
 msgid "The video no longer exists"
 msgstr "Это видео больше не существует"
 
-#: extensions.h:227 extensions.h:254 extensions.h:416 httpdfunc.h:6176
+#: extensions.h:231 extensions.h:258 extensions.h:420 httpdfunc.h:6176
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -10091,7 +10091,7 @@ msgstr "Лог Titan"
 msgid "Titan MediaCenter"
 msgstr "Медиацент Titan"
 
-#: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
+#: extensions.h:272 extensions.h:332 extensions.h:431 extensions.h:470
 #: global.h:7252 global.h:7272 global.h:7292 global.h:7312 global.h:7332
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
@@ -10226,7 +10226,7 @@ msgstr ""
 "\n"
 "Ждите реализации"
 
-#: extensions.h:222 httpdfunc.h:5917 skin_default_skin.xml.h:672
+#: extensions.h:226 httpdfunc.h:5917 skin_default_skin.xml.h:672
 msgid "Tpk Install - select file"
 msgstr "Выбор файла"
 
@@ -10234,39 +10234,39 @@ msgstr "Выбор файла"
 msgid "Tpk Install - select install medium"
 msgstr "Выберите пакет"
 
-#: extensions.h:217 httpdfunc.h:5853
+#: extensions.h:221 httpdfunc.h:5853
 msgid "Tpk Install - select section"
 msgstr "Выбор категории"
 
-#: extensions.h:190 extensions.h:241 extensions.h:514
+#: extensions.h:194 extensions.h:245 extensions.h:518
 msgid "Tpk Install Info"
 msgstr "Информация об установке"
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:6141 httpdfunc.h:6143
+#: extensions.h:258 extensions.h:263 httpdfunc.h:6141 httpdfunc.h:6143
 msgid "Tpk Install Info - Install ERROR"
 msgstr "Ошибка установки плагина"
 
-#: extensions.h:250 httpdfunc.h:6139
+#: extensions.h:254 httpdfunc.h:6139
 msgid "Tpk Install Info - Install OK"
 msgstr "Плагин успешно установлен"
 
-#: extensions.h:294 httpdfunc.h:6332
+#: extensions.h:298 httpdfunc.h:6332
 msgid "Tpk Remove - select file"
 msgstr "Выбор файла"
 
-#: extensions.h:305
+#: extensions.h:309
 msgid "Tpk Remove Info"
 msgstr "Информация об удалении"
 
-#: extensions.h:320 httpdfunc.h:6416
+#: extensions.h:324 httpdfunc.h:6416
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "Ошибка удаления плагина"
 
-#: extensions.h:313 httpdfunc.h:6412
+#: extensions.h:317 httpdfunc.h:6412
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Плагин успешно удалён"
 
-#: extensions.h:453 extensions.h:457 httpdfunc.h:6501 httpdfunc.h:6513
+#: extensions.h:457 extensions.h:461 httpdfunc.h:6501 httpdfunc.h:6513
 msgid "Tpk Update Info - Update ERROR"
 msgstr "Ошибка обновления плагина"
 
@@ -13118,7 +13118,7 @@ msgstr "Звёздочка + название канала"
 msgid "started"
 msgstr "Активен"
 
-#: extensions.h:238 extensions.h:384
+#: extensions.h:242 extensions.h:388
 msgid "starting"
 msgstr "Выполнить"
 

@@ -1828,7 +1828,7 @@ msgstr ""
 msgid "Can't get Streamurl !"
 msgstr "STREAMURL no es accesible!"
 
-#: extensions.h:453 httpdfunc.h:6504
+#: extensions.h:457 httpdfunc.h:6504
 msgid "Can't get all TPK index !"
 msgstr "ATENCION: No se puede recuperar el indice complemento completo!"
 
@@ -1836,7 +1836,7 @@ msgstr "ATENCION: No se puede recuperar el indice complemento completo!"
 msgid "Can't get data from facebook"
 msgstr "No se puede conectar con Facebook"
 
-#: extensions.h:190 httpdfunc.h:6090
+#: extensions.h:194 httpdfunc.h:6090
 msgid "Can't install Package. Package to big."
 msgstr ""
 "ERROR: El paquete designado es demasiado grande\n"
@@ -1913,7 +1913,7 @@ msgstr "ERROR: No se puede iniciar Sistema Actualizacion! Archivo Corrupto!"
 msgid "Can't start timeshift play !"
 msgstr "No se puede iniciar la reproduccion diferida!"
 
-#: extensions.h:457 httpdfunc.h:6516
+#: extensions.h:461 httpdfunc.h:6516
 msgid "Can't update all packages !"
 msgstr "ERROR: No se han actualizado todos los plugins!"
 
@@ -2108,7 +2108,7 @@ msgstr "Parental control"
 msgid "Child safety"
 msgstr "Parental control"
 
-#: extensions.h:184 httpdfunc.h:6022
+#: extensions.h:188 httpdfunc.h:6022
 msgid "Choice Install Medium"
 msgstr "Elegir el medio de instalacion"
 
@@ -3169,11 +3169,11 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
-#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
-#: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
-#: extensions.h:305 extensions.h:313 extensions.h:320 extensions.h:362
-#: extensions.h:388 extensions.h:419 extensions.h:453 extensions.h:457
-#: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
+#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:194
+#: extensions.h:245 extensions.h:254 extensions.h:258 extensions.h:263
+#: extensions.h:309 extensions.h:317 extensions.h:324 extensions.h:366
+#: extensions.h:392 extensions.h:423 extensions.h:457 extensions.h:461
+#: extensions.h:518 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
 #: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
@@ -5046,7 +5046,7 @@ msgstr "Instale Titan Mediateca (tiThek) Extension primero!"
 msgid "Install Weather Tpk first !"
 msgstr ""
 
-#: extensions.h:121
+#: extensions.h:125
 msgid "Install error"
 msgstr "ERROR: Instalacion fallida!"
 
@@ -5058,23 +5058,23 @@ msgstr ""
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr "Instale netsurf navegador de internet Extension primero!"
 
-#: extensions.h:119
+#: extensions.h:123
 msgid "Install success"
 msgstr "Instalacion realizada con eExito"
 
-#: extensions.h:157 httpdfunc.h:6056
+#: extensions.h:161 httpdfunc.h:6056
 msgid "Install to FLASH"
 msgstr "Instalar para FLASH"
 
-#: extensions.h:145 httpdfunc.h:6038
+#: extensions.h:149 httpdfunc.h:6038
 msgid "Install to MNT"
 msgstr "Instalar para MNT (Flash)"
 
-#: extensions.h:171 httpdfunc.h:6076
+#: extensions.h:175 httpdfunc.h:6076
 msgid "Install to SWAP"
 msgstr "Instalar para SWAP (USB o HDD)"
 
-#: extensions.h:102
+#: extensions.h:106
 msgid "Installation start"
 msgstr "La instalacion comenzo"
 
@@ -5082,7 +5082,7 @@ msgstr "La instalacion comenzo"
 msgid "Installed:"
 msgstr "Instalado:"
 
-#: extensions.h:232 extensions.h:380
+#: extensions.h:236 extensions.h:384
 msgid "Installing"
 msgstr "Instalacion"
 
@@ -5904,9 +5904,9 @@ msgstr "Lista de Menus"
 #: channellist.h:958 channellist.h:963 channellist.h:965 channellist.h:1049
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:268
-#: extensions.h:328 extensions.h:362 extensions.h:422 extensions.h:427
-#: extensions.h:466 facebook.h:66 facebook.h:157 facebook.h:167
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:272
+#: extensions.h:332 extensions.h:366 extensions.h:426 extensions.h:431
+#: extensions.h:470 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
 #: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
@@ -6296,7 +6296,7 @@ msgstr ""
 msgid "New Gothic BT"
 msgstr ""
 
-#: extensions.h:113
+#: extensions.h:117
 msgid "New free space (KB): "
 msgstr "Nuevo espacio libre (KB): "
 
@@ -6423,7 +6423,7 @@ msgstr ""
 msgid "No memory"
 msgstr "ERROR: No Memoria"
 
-#: extensions.h:362 extensions.h:514
+#: extensions.h:366 extensions.h:518
 msgid "No plugin found."
 msgstr "No se encontro Plugin"
 
@@ -6490,12 +6490,12 @@ msgstr "Ö"
 #: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
-#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:190
-#: extensions.h:241 extensions.h:250 extensions.h:254 extensions.h:259
-#: extensions.h:268 extensions.h:305 extensions.h:313 extensions.h:320
-#: extensions.h:328 extensions.h:362 extensions.h:388 extensions.h:419
-#: extensions.h:427 extensions.h:453 extensions.h:457 extensions.h:466
-#: extensions.h:514 facebook.h:66 facebook.h:157 facebook.h:167
+#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:194
+#: extensions.h:245 extensions.h:254 extensions.h:258 extensions.h:263
+#: extensions.h:272 extensions.h:309 extensions.h:317 extensions.h:324
+#: extensions.h:332 extensions.h:366 extensions.h:392 extensions.h:423
+#: extensions.h:431 extensions.h:457 extensions.h:461 extensions.h:470
+#: extensions.h:518 facebook.h:66 facebook.h:157 facebook.h:167
 #: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
 #: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
@@ -7898,7 +7898,7 @@ msgstr ""
 msgid "Remove empty Bouquet"
 msgstr ""
 
-#: extensions.h:125
+#: extensions.h:129
 msgid "Remove error"
 msgstr "ERROR: Eliminacion Fallida!"
 
@@ -7906,11 +7906,11 @@ msgstr "ERROR: Eliminacion Fallida!"
 msgid "Remove mode"
 msgstr "Eliminar"
 
-#: extensions.h:104
+#: extensions.h:108
 msgid "Remove start"
 msgstr "Extraccion comenzo"
 
-#: extensions.h:123
+#: extensions.h:127
 msgid "Remove success"
 msgstr "Eliminado con eExito"
 
@@ -7930,7 +7930,7 @@ msgstr ""
 msgid "Remove unused Transponder on used Satellites/Providers"
 msgstr ""
 
-#: extensions.h:300
+#: extensions.h:304
 msgid "Removeing"
 msgstr "Borrar"
 
@@ -9266,7 +9266,7 @@ msgstr "Softcam seleccion: "
 msgid "Softcam selection:"
 msgstr "Softcam seleccion: "
 
-#: extensions.h:422
+#: extensions.h:426
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -9920,7 +9920,7 @@ msgstr "La página no encontrada, archivo eliminado"
 msgid "The video no longer exists"
 msgstr ""
 
-#: extensions.h:227 extensions.h:254 extensions.h:416 httpdfunc.h:6176
+#: extensions.h:231 extensions.h:258 extensions.h:420 httpdfunc.h:6176
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -10162,7 +10162,7 @@ msgstr ""
 msgid "Titan MediaCenter"
 msgstr ""
 
-#: extensions.h:268 extensions.h:328 extensions.h:427 extensions.h:466
+#: extensions.h:272 extensions.h:332 extensions.h:431 extensions.h:470
 #: global.h:7252 global.h:7272 global.h:7292 global.h:7312 global.h:7332
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
@@ -10297,7 +10297,7 @@ msgstr ""
 " \n"
 "muy pronto..."
 
-#: extensions.h:222 httpdfunc.h:5917 skin_default_skin.xml.h:672
+#: extensions.h:226 httpdfunc.h:5917 skin_default_skin.xml.h:672
 msgid "Tpk Install - select file"
 msgstr "Instalacion - Seleccionar"
 
@@ -10305,39 +10305,39 @@ msgstr "Instalacion - Seleccionar"
 msgid "Tpk Install - select install medium"
 msgstr "Instalar - Seleccionar Medio"
 
-#: extensions.h:217 httpdfunc.h:5853
+#: extensions.h:221 httpdfunc.h:5853
 msgid "Tpk Install - select section"
 msgstr "Instalacion - Elegir Categoria"
 
-#: extensions.h:190 extensions.h:241 extensions.h:514
+#: extensions.h:194 extensions.h:245 extensions.h:518
 msgid "Tpk Install Info"
 msgstr "Informacion de instalacion"
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:6141 httpdfunc.h:6143
+#: extensions.h:258 extensions.h:263 httpdfunc.h:6141 httpdfunc.h:6143
 msgid "Tpk Install Info - Install ERROR"
 msgstr "ERROR: Instalacion fallida!"
 
-#: extensions.h:250 httpdfunc.h:6139
+#: extensions.h:254 httpdfunc.h:6139
 msgid "Tpk Install Info - Install OK"
 msgstr "Paquete instalado correctamente"
 
-#: extensions.h:294 httpdfunc.h:6332
+#: extensions.h:298 httpdfunc.h:6332
 msgid "Tpk Remove - select file"
 msgstr "Elimina - Seleccion"
 
-#: extensions.h:305
+#: extensions.h:309
 msgid "Tpk Remove Info"
 msgstr "Eliminar Informacion"
 
-#: extensions.h:320 httpdfunc.h:6416
+#: extensions.h:324 httpdfunc.h:6416
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "ERROR: Eliminacion Fallida!"
 
-#: extensions.h:313 httpdfunc.h:6412
+#: extensions.h:317 httpdfunc.h:6412
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Eliminado con Exito"
 
-#: extensions.h:453 extensions.h:457 httpdfunc.h:6501 httpdfunc.h:6513
+#: extensions.h:457 extensions.h:461 httpdfunc.h:6501 httpdfunc.h:6513
 msgid "Tpk Update Info - Update ERROR"
 msgstr "ERROR: Actualizacion Fallida!"
 
@@ -13200,7 +13200,7 @@ msgstr "Iniciar"
 msgid "started"
 msgstr "Iniciando"
 
-#: extensions.h:238 extensions.h:384
+#: extensions.h:242 extensions.h:388
 msgid "starting"
 msgstr "Comenzando"
 
