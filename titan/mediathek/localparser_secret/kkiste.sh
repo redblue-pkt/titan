@@ -69,8 +69,8 @@ search()
 			if [ ! -e $TMP/$PARSER.$INPUT.$FILENAME.list ];then
 				touch $TMP/$PARSER.$INPUT.$FILENAME.list
 			fi
-			piccount=$[$piccount+1]
-			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER_$NEWPAGE_piccount.jpg#$NAME#0"
+			piccount=`expr $piccount + 1`
+			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER_$NEWPAGE_$FILENAME_$piccount.jpg#$NAME#0"
 
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
