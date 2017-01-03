@@ -8,13 +8,12 @@ INPUT=$2
 PARAM=$3
 PAGE=$4
 
-FILENAME=`echo $PARAM | tr '/' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.'`
+FILENAME=`echo $PARAM | tr '/' '.' | tr '?' '.'  | tr '=' '.'`
 
 URL="http://kkiste.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:2} | tr '[a-z]' '[A-Z]'`${PARSER:2}
 
-rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
 
 if [ `echo $SRC | grep ^"/mnt/parser" |wc -l` -gt 0 ];then
@@ -29,6 +28,7 @@ fi
 
 init()
 {
+	rm -rf $TMP > /dev/null 2>&1
 	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
@@ -42,8 +42,8 @@ mainmenu()
 
 search()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.$FILENAME.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.$FILENAME.list > /dev/null 2>&1
+	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.list > /dev/null 2>&1
 	fi
 
 	piccount=0
@@ -69,15 +69,15 @@ search()
 				touch $TMP/$PARSER.$INPUT.$FILENAME.list
 			fi
 			piccount=`expr $piccount + 1`
-			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER.$NEWPAGE.$FILENAME.$piccount.jpg#$NAME#0"
+			LINE="$TITLE $LANG#$SRC $SRC parts $NEWPAGE#$PIC#$PARSER.$INPUT.$FILENAME.$piccount.jpg#$NAME#0"
 
-			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FILENAME.list
+			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
 
 	done 3<$TMP/cache.$PARSER.$INPUT.2
 	rm $TMP/cache.* > /dev/null 2>&1
 
-	echo "$TMP/$PARSER.$INPUT.$FILENAME.list"
+	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 videos()
@@ -123,7 +123,7 @@ parts()
 {
 	$curlbin -o - $URL$PARAM >$TMP/cache.$PARSER.$INPUT.1
 
-	cat $TMP/cache.$PARSER.$INPUT.1 | awk -v SRC=$SRC -v INPUT=$INPUT -v PARAM=$PARAM -v PAGE=$PAGE -v PARSER=$PARSER -v NAME=$NAME -v FILENAME=$FILENAME'
+	cat $TMP/cache.$PARSER.$INPUT.1 | awk -v SRC=$SRC -v INPUT=$INPUT -v PARAM=$PARAM -v PAGE=$PAGE -v PARSER=$PARSER -v NAME=$NAME '
 BEGIN { kz_parts=0
         count=1
         extra=test
@@ -192,8 +192,8 @@ hoster()
 
 episodelist()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.$FILENAME.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.$FILENAME.list
+	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		rm $TMP/$PARSER.$INPUT.list
 	fi
 
 	SEASON=`echo $PAGE | cut -d"=" -f2`
@@ -227,13 +227,13 @@ episodelist()
 #			LINE="$TITLE#$SRC $SRC hoster $PARAM $count#$PIC#$PICNAME#$NAME#111"
 			LINE="$TITLE#$NEWPAGE#$PIC#$PICNAME#$NAME#14"
 
-			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FILENAME.list
+			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
 
 	done 3<$TMP/cache.$PARSER.$INPUT.2
 	rm $TMP/cache.* > /dev/null 2>&1
 
-	echo "$TMP/$PARSER.$INPUT.$FILENAME.list"
+	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 
