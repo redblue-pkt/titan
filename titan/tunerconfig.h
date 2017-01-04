@@ -825,17 +825,24 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 		{
 			if(node->adapter != dvbnode->adapter || node->devnr != dvbnode->devnr)
 			{
-				tmpnr = oitoa(dvbnode->adapter);
-				*loopstr = ostrcat(*loopstr, _("loop to Tuner"), 1, 0);
-				*loopstr = ostrcat(*loopstr, " ", 1, 0);
-				*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
-				*loopstr = ostrcat(*loopstr, "/", 1, 0);
-				tmpnr = oitoa(dvbnode->devnr);
-				*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
-				*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+				//printf("++++ node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
+				if(checkbox("DM900") != 1 || dvbnode->devnr == 0)
+				{
+					tmpnr = oitoa(dvbnode->adapter);
+					if(checkbox("DM900") != 1)
+						*loopstr = ostrcat(*loopstr, _("loop to Tuner"), 1, 0);
+					else
+						*loopstr = ostrcat(*loopstr, _("internal loop to Tuner"), 1, 0);
+					*loopstr = ostrcat(*loopstr, " ", 1, 0);
+					*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
+					*loopstr = ostrcat(*loopstr, "/", 1, 0);
+					tmpnr = oitoa(dvbnode->devnr);
+					*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
+					*loopstr = ostrcat(*loopstr, "\n", 1, 0);
 
-				*loopstr1 = ostrcat(*loopstr1, dvbnode->feshortname, 1, 0);
-				*loopstr1 = ostrcat(*loopstr1, "\n", 1, 0);
+					*loopstr1 = ostrcat(*loopstr1, dvbnode->feshortname, 1, 0);
+					*loopstr1 = ostrcat(*loopstr1, "\n", 1, 0);
+				}
 			}
 		}
 		dvbnode = dvbnode->next;

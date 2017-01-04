@@ -173,6 +173,16 @@ void settunerstatus()
 		//FRONTENDDEV first in the list
 		if(dvbnode->type != FRONTENDDEV) break;
 
+		if(checkbox("DM900") == 1)
+		{
+			if(ostrcmp("fe_01", dvbnode->feshortname) == 0)
+			{
+				if(ostrcmp("fe_00", getconfig(dvbnode->feshortname, NULL)) == 0)
+					system("echo internal > /proc/stb/frontend/1/rf_switch");
+				else
+					system("echo external > /proc/stb/frontend/1/rf_switch");
+			}
+		}
 		//check if tuner is deactivate
 		if(ostrcmp("x", getconfig(dvbnode->feshortname, NULL)) == 0)
 			dvbnode->deactive = 1;

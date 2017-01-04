@@ -769,7 +769,9 @@ int servicestop(struct service *node, int clear, int flag)
 		if(checkbox("VUSOLO2") == 1) videoclearbuffer(node->videodev);
 		videostop(node->videodev, clear);
 
-		int fastzap = getconfigint("fastzap", NULL);
+		int fastzap = 0;
+		if(checkbox("DM900") != 1) //dm900 no fastzap
+			fastzap = getconfigint("fastzap", NULL);
 
 		if(flag == 3) flag = 0;
 		if(flag == 4 || flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
