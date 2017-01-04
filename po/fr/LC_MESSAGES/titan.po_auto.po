@@ -1775,7 +1775,7 @@ msgstr ""
 msgid "Can't create service"
 msgstr "Supprime Service"
 
-#: service.h:974
+#: service.h:976
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -1819,7 +1819,7 @@ msgstr ""
 msgid "Can't open file"
 msgstr "Fichier alternative"
 
-#: service.h:980
+#: service.h:982
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
@@ -2025,7 +2025,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "Chaine"
 
-#: service.h:985
+#: service.h:987
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -3162,7 +3162,7 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1952 service.h:745 service.h:991 shared.h:29
+#: security.h:685 security.h:1952 service.h:745 service.h:993 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
 #: skin_default_skin.xml.h:196 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -3189,7 +3189,7 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949
+#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
 #: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
@@ -5831,7 +5831,7 @@ msgstr "Liste de Menu"
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1952
-#: service.h:745 service.h:991 shared.h:29 shared.h:66 shared.h:83
+#: service.h:745 service.h:993 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
 #: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
@@ -5849,7 +5849,7 @@ msgstr "Liste de Menu"
 #: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:949 unlock.h:20
+#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
 #: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
@@ -6425,7 +6425,7 @@ msgstr "Ö"
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1952 service.h:745 service.h:991
+#: security.h:668 security.h:685 security.h:1952 service.h:745 service.h:993
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -6451,7 +6451,7 @@ msgstr "Ö"
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:949 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:674 tunerconfig.h:956 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -10288,7 +10288,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr "Config Tuner"
 
-#: tunerconfig.h:949
+#: tunerconfig.h:956
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -10298,7 +10298,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr "type de tuner"
 
-#: service.h:977
+#: service.h:979
 msgid "Tuning to Channel failed!"
 msgstr ""
 
@@ -11885,6 +11885,10 @@ msgstr ""
 msgid "intern"
 msgstr "interne"
 
+#: tunerconfig.h:835
+msgid "internal loop to Tuner"
+msgstr ""
+
 #: skin_default_skin.xml.h:323
 msgid "internet"
 msgstr ""
@@ -12013,7 +12017,7 @@ msgstr ""
 msgid "logo"
 msgstr ""
 
-#: tunerconfig.h:829
+#: tunerconfig.h:833
 msgid "loop to Tuner"
 msgstr ""
 
@@ -12296,7 +12300,7 @@ msgstr "Ö"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:94
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:844 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92
+#: tunerconfig.h:851 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92
 #: vfdisplay.h:115 vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
 msgstr " arrêt"
