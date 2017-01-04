@@ -27,8 +27,9 @@ class Resolver(object):
 
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
-
-        html = self.net.http_GET(web_url).content
+        headers = {'User-Agent': common.FF_USER_AGENT}
+        stream_url = ''
+        html = self.net.http_GET(web_url, headers=headers).content
 
         try:
             r = re.search('flashvars.filekey=(.+?);', html)
@@ -50,7 +51,8 @@ class Resolver(object):
             
         if r:
             stream_url = r.group(1)
-            print stream_url
+            headers.update({'Referer': web_url, })
+            print stream_url + helpers.append_headers(headers)
         
         else:
             print 'File Not Found or removed'
