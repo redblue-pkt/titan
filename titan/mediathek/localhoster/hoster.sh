@@ -186,7 +186,7 @@ if [ "$TYPE" == "get" ];then
 		briskfile) briskfile $INPUT;;
 		videoweed|bitvid) videoweed $INPUT;;
 		vodlocker) vodlocker $INPUT;;
-		youwatch|chouhaa) youwatch $INPUT;;
+		youwatch|chouhaa|ay8ou8ohth) youwatch $INPUT;;
 		thevideo) thevideo $INPUT;;
 		movshare|wholecloud|vidgg) movshare $INPUT;;
 		vidto) vidto $INPUT;;
