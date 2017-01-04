@@ -9,8 +9,8 @@ MAX_TRIES = 5
 
 class YouWatchResolver(object):
     name = "youwatch"
-    domains = ["youwatch.org", "chouhaa.info"]
-    pattern = '(?://|\.)(youwatch\.org|chouhaa\.info)/(?:embed-)?([A-Za-z0-9]+)'
+    domains = ["youwatch.org", "chouhaa.info", "ay8ou8ohth.com"]
+    pattern = '(?://|\.)(youwatch\.org|chouhaa\.info|ay8ou8ohth\.com)/(?:embed-)?([A-Za-z0-9]+)'
 
     def __init__(self):
         self.net = Net()
