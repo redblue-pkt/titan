@@ -567,8 +567,9 @@ void updatevfd()
 				tmpstr = ostrcat(tmpstr, " ", 1, 0);
 				if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") || checkbox("DM900") == 1) //inihdp
 				{
-					free(tmpstr);
-					return;
+					tmpstr = ostrcat(tmpstr, " ", 1, 0);
+					//free(tmpstr);
+					//return;
 				}
 				break;
 			case 2: // date + time
