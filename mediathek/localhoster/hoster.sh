@@ -170,35 +170,33 @@ divxstage()
 	$BIN $CMD/divxstage.py $INPUT
 }
 
+novamov()
+{
+	$BIN $CMD/novamov.py $INPUT
+}
 
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
-		vidup) vidup $INPUT;;
 		nosvideo) nosvideo $INPUT;;
 		allmyvideos) allmyvideos $INPUT;;
 		flashx) flashx $INPUT;;
 		openload) openload $INPUT;;
 		briskfile) briskfile $INPUT;;
-		bitvid) videoweed $INPUT;;
-		videoweed) videoweed $INPUT;;
+		videoweed|bitvid) videoweed $INPUT;;
 		vodlocker) vodlocker $INPUT;;
-		vodzi) vodzi $INPUT;;
-		youwatch) youwatch $INPUT;;
-		chouhaa) youwatch $INPUT;;
+		youwatch|chouhaa) youwatch $INPUT;;
 		thevideo) thevideo $INPUT;;
-		movshare) movshare $INPUT;;
-		wholecloud) movshare $INPUT;;
-		vidgg) movshare $INPUT;;
+		movshare|wholecloud|vidgg) movshare $INPUT;;
+		vidto) vidto $INPUT;;
+		vidup) vidup $INPUT;;
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
-		vidto) vidto $INPUT;;
-		goldesel) cloudflare $INPUT;;
-		movie4k) cloudflare $INPUT;;
+		goldesel|movie4k) cloudflare $INPUT;;
 		streamcloud1) streamcloud $INPUT;;	
 		nowvideo) nowvideo $INPUT;;
-		divxstage) divxstage $INPUT;;
-		cloudtime) divxstage $INPUT;;
+		divxstage|cloudtime) divxstage $INPUT;;
+		novamov|auroravid) novamov $INPUT;;
 	esac
 fi
