@@ -1,6 +1,8 @@
 #ifndef SKINFUNC_H
 #define SKINFUNC_H
 
+char* Mtitletext = NULL;
+
 char* getplaytext(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
@@ -1799,6 +1801,13 @@ char* gettunerlocktext(struct skin* node, char* onlyhidden, char* tuner)
   else
 		node->hidden = YES;	
 	return tmpstr;
-}    
+}  
+
+char* getlasttitle(struct skin* node, char* parm1, char* parm2)
+{  
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(Mtitletext,NULL, 0, 0);
+	return tmpstr;
+}
 			
 #endif
