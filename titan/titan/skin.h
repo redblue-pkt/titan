@@ -33,7 +33,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getpicon;
 	}
-
+	
 #ifdef MIPSEL
 	if(ostrcmp("getoledmute", value) == 0)
 	{
@@ -238,6 +238,8 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getsignal;
 	}
+	if(ostrcmp("getlasttitle", value) == 0)
+		return &getlasttitle;
 	if(ostrcmp("gettunerlocktext", value) == 0)
 		return &gettunerlocktext;
 	if(ostrcmp("getrecfreesizetext", value) == 0)
@@ -3280,6 +3282,12 @@ void drawnode(struct skin* node, int flag)
 	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
 
 	node->flag = setbit(node->flag, 0);
+
+	if(node->name != NULL && ostrstr(node->name, "titletext") != NULL)
+	{
+		free(Mtitletext); Mtitletext = NULL;
+		Mtitletext = ostrcat(node->text, NULL, 0, 0);
+	}
 
 	if(node->bordersize > 0)
 	{
