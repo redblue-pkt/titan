@@ -174,16 +174,16 @@ def get_media_url(url, result_blacklist=None):
                'Referer': '%s://%s' % (parsed_url.scheme, parsed_url.hostname)}
 
     response = net.http_GET(url, headers=headers)
-    response_headers = response.get_headers(as_dict=True)
+#    response_headers = response.get_headers(as_dict=True)
     response_headers = response.get_headers()
 
     headers.update({'Referer': url})
-    cookie = response_headers.get('Set-Cookie', None)
-    if cookie:
-        headers.update({'Cookie': cookie})
+#    cookie = response_headers.get('Set-Cookie', None)
+#    if cookie:
+#        headers.update({'Cookie': cookie})
     html = response.content
 
     source_list = scrape_sources(html, result_blacklist)
     source = pick_source(source_list)
-    return source + append_headers(headers)
-#    return source
+#    return source + append_headers(headers)
+    return source
