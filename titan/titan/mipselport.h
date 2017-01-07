@@ -340,7 +340,8 @@ void blitfb2(struct fb* fbnode, int flag)
 					tmpheight = height;
 				dst_height = tmpheight;
 			}
-			
+			dst_width = dst_width+posx;
+			dst_height = dst_height+posy;
 			if((dst_width + dst_left) > width)
 				dst_width = dst_width - dst_left;
 							
