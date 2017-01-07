@@ -844,7 +844,7 @@ msgstr "Neue Netzwerk Einstellungen aktivieren?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:815 channellist.h:1255
+#: channellist.h:815 channellist.h:1259
 msgid "All Channels"
 msgstr "Alle Sender"
 
@@ -1611,7 +1611,7 @@ msgstr "Favoriten: "
 msgid "BouquetEntrys: "
 msgstr "Favoriteneinträge: "
 
-#: channellist.h:750 channellist.h:1270 channellist.h:1479
+#: channellist.h:750 channellist.h:1274 channellist.h:1483
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Favoriten"
@@ -1885,7 +1885,7 @@ msgstr "FEHLER: Kann Datei nicht öffnen!"
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
 
-#: channellist.h:1049
+#: channellist.h:1053
 msgid "Can't remove akive Service"
 msgstr "Aktiver Sender kann nicht gelöscht werden!"
 
@@ -1991,7 +1991,7 @@ msgstr "Auf SCART-Ausgang wechseln"
 msgid "Change: "
 msgstr "Änderung: "
 
-#: channellist.h:766 channellist.h:1617 skin_default_skin.xml.h:90
+#: channellist.h:766 channellist.h:1621 skin_default_skin.xml.h:90
 msgid "Channel"
 msgstr "Sender"
 
@@ -2111,7 +2111,7 @@ msgstr "Senderliste fehlerhaft (Kanal nicht gefunden)!"
 msgid "Channellist view"
 msgstr "Nichtempfangbare Sender"
 
-#: channellist.h:1336
+#: channellist.h:1340
 msgid "Channels A-Z"
 msgstr "Sender A-Z"
 
@@ -2436,19 +2436,19 @@ msgstr "Kopier Modus - Schriftfarbe"
 msgid "Copy mode"
 msgstr "Kopieren"
 
-#: channellist.h:958
+#: channellist.h:962
 msgid "Copy providerlist not ok"
 msgstr "Kopieren des Anbieters abgebrochen"
 
-#: channellist.h:956
+#: channellist.h:960
 msgid "Copy providerlist successfull"
 msgstr "Anbieter erfolgreich kopiert"
 
-#: channellist.h:965
+#: channellist.h:969
 msgid "Copy satlist not ok"
 msgstr "Kopieren des Satelliten abgebrochen"
 
-#: channellist.h:963
+#: channellist.h:967
 msgid "Copy satlist successfull"
 msgstr "Satelliten erfolgreich kopiert"
 
@@ -3200,8 +3200,8 @@ msgid "ERROR... can't set marker in this file"
 msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 
 #: about.h:9 amazon.h:760 avsettings.h:331 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 channellist.h:956 channellist.h:958 channellist.h:963
-#: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
+#: blindscanadjust.h:25 channellist.h:960 channellist.h:962 channellist.h:967
+#: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:194
@@ -6027,8 +6027,8 @@ msgid "Menulist"
 msgstr "Menüliste"
 
 #: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:331 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:956
-#: channellist.h:958 channellist.h:963 channellist.h:965 channellist.h:1049
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:960
+#: channellist.h:962 channellist.h:967 channellist.h:969 channellist.h:1053
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:272
@@ -6617,8 +6617,8 @@ msgstr "Ö"
 #: about.h:9 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
-#: callmon_main.h:39 channellist.h:956 channellist.h:958 channellist.h:963
-#: channellist.h:965 channellist.h:1049 cloudzilla.h:39 cloudzilla.h:45
+#: callmon_main.h:39 channellist.h:960 channellist.h:962 channellist.h:967
+#: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
 #: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:194
@@ -7592,7 +7592,7 @@ msgstr "Schützen"
 msgid "Prov"
 msgstr "Anbieter"
 
-#: channellist.h:797 channellist.h:1369 channellist.h:1693
+#: channellist.h:797 channellist.h:1373 channellist.h:1697
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr "Anbieter"
@@ -7706,7 +7706,7 @@ msgstr "Rguid Port"
 msgid "RS232"
 msgstr ""
 
-#: channellist.h:737 channellist.h:1802 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:737 channellist.h:1806 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:546 skin_default_skin.xml.h:466 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
@@ -8536,7 +8536,7 @@ msgstr ""
 "Bitte prüfen Sie nach dem Neustart die Tuner Konfiguration\n"
 "und führen Sie eine Sendersuche durch."
 
-#: channellist.h:781 channellist.h:1303 channellist.h:1552
+#: channellist.h:781 channellist.h:1307 channellist.h:1556
 msgid "Satellites"
 msgstr "Satelliten"
 
@@ -9905,7 +9905,7 @@ msgstr "Transponder auswählen"
 msgid "TSID:"
 msgstr "Tsid:"
 
-#: channellist.h:742 channellist.h:1797 httpdfunc.h:286 httpdfunc.h:696
+#: channellist.h:742 channellist.h:1801 httpdfunc.h:286 httpdfunc.h:696
 #: scan.h:544 webif_index.atemio5200.h:68 webif_index.atemio5200.h:74
 #: webif_index.atemio5200.h:124 webif_index.atemio6200.h:68
 #: webif_index.atemio6200.h:74 webif_index.atemio6200.h:124
