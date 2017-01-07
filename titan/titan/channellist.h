@@ -850,7 +850,7 @@ start:
 	
 	while(1)
 	{
-		if(checkchipset("BCM7424") == 1 || checkbox("DM900") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+		if(status.markedchannel != NULL && (checkchipset("BCM7424") == 1 || checkbox("DM900") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1))
 			writevfdmenu(status.markedchannel->name);
 		if(flag == 2)
 		{
