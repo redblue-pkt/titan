@@ -1019,7 +1019,7 @@ int playerstart(char* file)
 		player->output->Command(player, OUTPUT_ADD, "audio");
 		player->output->Command(player, OUTPUT_ADD, "video");
 		player->output->Command(player, OUTPUT_ADD, "subtitle");
-		
+#ifndef BETA
 		//for subtitle
 		SubtitleOutputDef_t subout;
 
@@ -1032,7 +1032,7 @@ int playerstart(char* file)
 		subout.framebufferBlit = blitfb1;
 
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
-		
+#endif		
 		if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
 		{
 			free(player); player = NULL;
@@ -2609,6 +2609,7 @@ void playerstopsubtitletrack()
 #ifdef EPLAYER3
 	if(player && player->output && player->output->subtitle)
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_STOP, NULL);
+#ifndef BETA
 	if(player && player->container && player->container->assContainer)
 	{
 		player->container->assContainer->Command(player, CONTAINER_STOP, NULL);
@@ -2619,6 +2620,7 @@ void playerstopsubtitletrack()
 		int onlycurrent = 1;
 		player->manager->subtitle->Command(player, MANAGER_DEL, (void*)&onlycurrent);
 	}
+#endif
 #endif
 
 #ifdef EPLAYER4
