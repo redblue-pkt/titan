@@ -845,9 +845,13 @@ start:
 		changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, flag);
 		drawchannellist(channellist, list, listbox);
 	}
-
+	
+	status.updatevfd = PAUSE;
+	
 	while(1)
 	{
+		if(checkchipset("BCM7424") == 1 || checkbox("DM900") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+			writevfdmenu(status.markedchannel->name);
 		if(flag == 2)
 		{
 			rcret = getrcconfigint("rcblue", NULL);
@@ -1807,6 +1811,7 @@ start:
 	}
 
 end:
+	status.updatevfd = START;
 	listbox->fontcol = oldfontcol;
 	listbox->bgcol = oldbgcol;
 	status.moveblockcount = 0;
