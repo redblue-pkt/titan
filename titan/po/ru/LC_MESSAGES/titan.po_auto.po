@@ -1613,7 +1613,7 @@ msgstr "Закладки браузера"
 msgid "Browser Resolution"
 msgstr "Разрешение браузера"
 
-#: player.h:1692
+#: player.h:1703
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Буферизация - Выход по кнопке Exit"
 
