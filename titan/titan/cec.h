@@ -1,6 +1,7 @@
 #ifndef CEC_H
 #define CEC_H
 
+int cecon = 0;
 
 void hdmiEvent()
 {
@@ -369,8 +370,13 @@ void cecinit()
 	status.hdmiFd = open("/dev/hdmi_cec", O_RDWR | O_NONBLOCK);
 	ioctl(status.hdmiFd, 0); /* flush old messages */
 #endif
-
+	
 	setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
+	if(checkbox("DM900") == 1 && getwaswakuptimer() != 1)
+	{	
+		sleep(2);
+		cecwakeup();
+	}
 	
 	return;
 }
@@ -414,7 +420,7 @@ void cecwakeup()
 	
 	data[0] = '\0';
 	
-	if(getconfigint("cec_on", NULL) == 1)
+	if(getconfigint("cec_on", NULL) == 1 && cecon == 0)
 	{
 		if(getconfigint("cec_all_on", NULL) == 1)
 		{
@@ -444,6 +450,7 @@ void cecwakeup()
 			sendMessage(address, cmd, data, 2);
 			sleep(1);
 		}
+		cecon = 1;
 	}
 }
 
