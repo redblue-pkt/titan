@@ -20,11 +20,209 @@
 // 15 slowmotion
 
 #ifdef EPLAYER3
-Context_t * player = NULL;
-extern OutputHandler_t OutputHandler;
-extern PlaybackHandler_t PlaybackHandler;
-extern ContainerHandler_t ContainerHandler;
-extern ManagerHandler_t ManagerHandler;
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sched.h>
+#include <signal.h>
+
+#include <sys/ioctl.h>
+#include <sys/prctl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/resource.h>
+#include <sys/mman.h>
+
+#include "common.h"
+
+extern int ffmpeg_av_dict_set(const char *key, const char *value, int flags);
+extern void  aac_software_decoder_set(const int32_t val);
+extern void  dts_software_decoder_set(const int32_t val);
+extern void  wma_software_decoder_set(const int32_t val);
+extern void  ac3_software_decoder_set(const int32_t val);
+extern void eac3_software_decoder_set(const int32_t val);
+extern void  mp3_software_decoder_set(const int32_t val);
+extern void rtmp_proto_impl_set(const int32_t val);
+
+extern void pcm_resampling_set(int32_t val);
+extern void stereo_software_decoder_set(int32_t val);
+extern void insert_pcm_as_lpcm_set(int32_t val);
+extern void progressive_download_set(int32_t val);
+
+extern OutputHandler_t         OutputHandler;
+extern PlaybackHandler_t       PlaybackHandler;
+extern ContainerHandler_t      ContainerHandler;
+extern ManagerHandler_t        ManagerHandler;
+
+static Context_t *player = NULL;
+
+static void SetBuffering()
+{
+    static char buff[2048];
+    memset( buff, '\0', sizeof(buff));
+    if( setvbuf(stderr, buff, _IOLBF, sizeof(buff)) )
+    {
+        printf("SetBuffering: failed to change the buffer of stderr\n");
+    }
+    
+    // make fgets not blocking 
+    int flags = fcntl(stdin->_fileno, F_GETFL, 0); 
+    fcntl(stdin->_fileno, F_SETFL, flags | O_NONBLOCK); 
+}
+
+static void SetNice(int prio)
+{
+#if 0
+    setpriority(PRIO_PROCESS, 0, -8);
+    
+    int prio = sched_get_priority_max(SCHED_RR) / 2;
+    struct sched_param param = {
+        .sched_priority = prio
+    };
+    sched_setscheduler(0, SCHED_RR, &param);
+#else
+    int prevPrio = getpriority(PRIO_PROCESS, 0);
+    if (-1 == setpriority(PRIO_PROCESS, 0, prio))
+    {
+        printf("setpriority - failed\n");
+    }
+#endif
+}
+
+static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbackSwitchCmd, const char *argvBuff)
+{
+    int commandRetVal = 0;
+    
+    if (NULL == ptrManager || NULL == argvBuff || 2 != strnlen(argvBuff, 2))
+    {
+        return -1;
+    }
+    
+    switch (argvBuff[1]) 
+    {
+        case 'l': 
+        {
+            TrackDescription_t *TrackList = NULL;
+            ptrManager->Command(player, MANAGER_LIST, &TrackList);
+            if( NULL != TrackList) 
+            {
+                int i = 0;
+                fprintf(stderr, "{\"%c_%c\": [", argvBuff[0], argvBuff[1]);
+                for (i = 0; TrackList[i].Id >= 0; ++i) 
+                {
+                    if(0 < i)
+                    {
+                        fprintf(stderr, ", ");
+                    }
+                    fprintf(stderr, "{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}", TrackList[i].Id , TrackList[i].Encoding, TrackList[i].Name);
+                    free(TrackList[i].Encoding);
+                    free(TrackList[i].Name);
+                }
+                fprintf(stderr, "]}\n");
+                free(TrackList);
+            }
+            else
+            {
+                // not tracks 
+                fprintf(stderr, "{\"%c_%c\": []}\n", argvBuff[0], argvBuff[1]);
+            }
+            break;
+        }
+        case 'c': 
+        {
+            
+            TrackDescription_t *track = NULL;
+            ptrManager->Command(player, MANAGER_GET_TRACK_DESC, &track);
+            if (NULL != track) 
+            {
+                if ('a' == argvBuff[0] || 's' == argvBuff[0])
+                {
+                    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name);
+                }
+                else // video
+                {
+                    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d,\"an\":%d,\"ad\":%d}}\n", \
+                    argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name, track->width, track->height, track->frame_rate, track->progressive, track->aspect_ratio_num, track->aspect_ratio_den);
+                }
+                free(track->Encoding);
+                free(track->Name);
+                free(track);
+            }
+            else
+            {
+                // no tracks
+                if ('a' == argvBuff[0] || 's' == argvBuff[0])
+                {
+                    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], -1, "", "");
+                }
+                else // video
+                {
+                    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d}}\n", argvBuff[0], argvBuff[1], -1, "", "", -1, -1, 0, -1);
+                }
+            }
+            break;
+        }
+        default: 
+        {
+            /* switch command available only for audio and subtitle tracks */
+            if ('a' == argvBuff[0] || 's' == argvBuff[0])
+            {
+                int ok = 0;
+                int id = -1;
+                if ('i' == argvBuff[1])
+                {
+                    int idx = -1;
+                    ok = sscanf(argvBuff+2, "%d", &idx);
+                    if (idx >= 0)
+                    {
+                        TrackDescription_t *TrackList = NULL;
+                        ptrManager->Command(player, MANAGER_LIST, &TrackList);
+                        if( NULL != TrackList) 
+                        {
+                            int i = 0;
+                            for (i = 0; TrackList[i].Id >= 0; ++i) 
+                            {
+                                if (idx == i)
+                                {
+                                    id = TrackList[i].Id;
+                                }
+                                free(TrackList[i].Encoding);
+                                free(TrackList[i].Name);
+                            }
+                            free(TrackList);
+                        }
+                    }
+                    else
+                    {
+                        id = idx;
+                    }
+                }
+                else
+                {
+                    ok = sscanf(argvBuff+1, "%d", &id);
+                }
+                
+                if(id >= 0 || (1 == ok && id == -1))
+                {
+                    commandRetVal = player->playback->Command(player, playbackSwitchCmd, (void*)&id);
+                    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"sts\":%d}}\n", argvBuff[0], 's', id, commandRetVal);
+                }
+            }
+            break;
+        }
+    }
+    
+    return commandRetVal;
+}
+
+static void UpdateVideoTrack()
+{
+    HandleTracks(player->manager->video, (PlaybackCmd_t)-1, "vc");
+}
+
 #endif
 
 #ifdef EPLAYER4
@@ -1015,6 +1213,11 @@ int playerstart(char* file)
 		
 		debug(150, "eplayername = %s", player->output->Name);
 
+	    // make sure to kill myself when parent dies
+	    prctl(PR_SET_PDEATHSIG, SIGKILL);
+	
+	    SetBuffering();
+
 		//Registrating output devices
 		player->output->Command(player, OUTPUT_ADD, "audio");
 		player->output->Command(player, OUTPUT_ADD, "video");
@@ -1032,13 +1235,35 @@ int playerstart(char* file)
 		subout.framebufferBlit = blitfb1;
 
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
-#endif		
+
 		if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
 		{
 			free(player); player = NULL;
 			free(tmpfile);
 			return 1;
 		}
+#else
+    player->manager->video->Command(player, MANAGER_REGISTER_UPDATED_TRACK_INFO, UpdateVideoTrack);
+    if (strncmp(file, "rtmp", 4) && strncmp(file, "ffrtmp", 4))
+    {
+        player->playback->noprobe = 1;
+    }
+
+	char* audioFile = NULL;
+    PlayFiles_t playbackFiles = {tmpfile, NULL};
+    if('\0' != audioFile[0])
+    {
+        playbackFiles.szSecondFile = audioFile;
+    }
+
+	if(player->playback->Command(player, PLAYBACK_OPEN, &playbackFiles) < 0)
+	{
+		free(player); player = NULL;
+		free(tmpfile);
+		return 1;
+	}
+#endif		
+
 
 		player->output->Command(player, OUTPUT_OPEN, NULL);
 		player->playback->Command(player, PLAYBACK_PLAY, NULL);
