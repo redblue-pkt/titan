@@ -58,11 +58,6 @@ extern void stereo_software_decoder_set(int32_t val);
 extern void insert_pcm_as_lpcm_set(int32_t val);
 extern void progressive_download_set(int32_t val);
 
-extern OutputHandler_t         OutputHandler;
-extern PlaybackHandler_t       PlaybackHandler;
-extern ContainerHandler_t      ContainerHandler;
-extern ManagerHandler_t        ManagerHandler;
-
 static Context_t *player = NULL;
 
 static void SetBuffering()
