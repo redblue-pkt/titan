@@ -20,6 +20,12 @@
 // 15 slowmotion
 
 #ifdef EPLAYER3
+Context_t * player = NULL; 
+extern OutputHandler_t OutputHandler; 
+extern PlaybackHandler_t PlaybackHandler; 
+extern ContainerHandler_t ContainerHandler; 
+extern ManagerHandler_t ManagerHandler;
+#ifdef BETA
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -222,7 +228,7 @@ static void UpdateVideoTrack()
 {
     HandleTracks(player->manager->video, (PlaybackCmd_t)-1, "vc");
 }
-
+#endif
 #endif
 
 #ifdef EPLAYER4
