@@ -379,7 +379,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				{
 					treffer = 6;
 				#ifdef MIPSEL
-					ret = sscanf(line, "%s\t-fstype=cifs,vers=2.0,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 				#else
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 				#endif
@@ -390,7 +390,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 					free(newnode->userauth); newnode->userauth = NULL;
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
 				#ifdef MIPSEL
-					ret = sscanf(line, "%s\t-fstype=cifs,vers=2.0,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
 				#else
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
 				#endif
@@ -404,7 +404,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				{
 					treffer = 6;
 				#ifdef MIPSEL
-					ret = sscanf(line, "%s\t-fstype=cifs,vers=2.0,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
 				#else
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
 				#endif
@@ -415,7 +415,7 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 					free(newnode->userauth); newnode->userauth = NULL;
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
 				#ifdef MIPSEL
-					ret = sscanf(line, "%s\t-fstype=cifs,vers=2.0,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
 				#else
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
 				#endif
@@ -622,7 +622,7 @@ void savenetworkbrowser(char* filename)
 		{
 
 			#ifdef MIPSEL
-				savesettings = ostrcat(savesettings, "\t-fstype=cifs,vers=2.0,rw,iocharset=utf8,rsize=", 1, 0);
+				savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,iocharset=utf8,rsize=", 1, 0);
 			#else
 				savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,rsize=", 1, 0);
 			#endif
