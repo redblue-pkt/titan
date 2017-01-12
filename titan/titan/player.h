@@ -1189,7 +1189,8 @@ int playerstart(char* file)
 		player->output = &OutputHandler;
 		player->container = &ContainerHandler;
 		player->manager = &ManagerHandler;
-		
+
+#ifndef BETA		
 		//add container befor open, so we can set buffer size
 		char* extffm = getfilenameext(tmpfile);
 		if(extffm != NULL)
@@ -1201,7 +1202,7 @@ int playerstart(char* file)
 		//select container_ffmpeg, if we does not found a container with extensions
 		if(player->container->selectedContainer == NULL)
 			player->container->Command(player, CONTAINER_ADD, "mp3");
-
+#endif
 		if(player && player->container && player->container->selectedContainer)
 		{
 			int size = getconfigint("playerbuffersize", NULL);
