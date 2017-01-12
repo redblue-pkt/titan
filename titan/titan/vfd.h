@@ -711,6 +711,7 @@ void setled(int typ)
 	int wert = 0;
 	if(typ == 1)
 	{
+		writesys("/proc/stb/fp/led_pattern_speed", "0", 1);
 		if(status.standby == 0)
 			wert = getconfigint("dm900frontrun", NULL);	
 		else

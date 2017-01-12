@@ -223,6 +223,32 @@ int flushrc(unsigned int timeout)
 	return 0;
 }
 
+void rcsignal(int flag)
+{
+	if(checkbox("DM900") == 1)
+	{
+		int art = getconfigint("dm900frontrun", NULL);
+		if(flag == 1)
+		{
+			if(art == 0)
+			 	writesys("/proc/stb/fp/led1_pattern", "ffffffff", 1);
+			else if(art == 1)
+				writesys("/proc/stb/fp/led0_pattern", "ffffffff", 1);
+			else if(art == 2)	
+				writesys("/proc/stb/fp/led1_pattern", "ffffffff", 1);
+		}
+		if(flag == 0)
+		{
+			if(art == 0)
+			 	writesys("/proc/stb/fp/led1_pattern", "00000000", 1);
+			else if(art == 1)
+				writesys("/proc/stb/fp/led0_pattern", "00000000", 1);
+			else if(art == 2)	
+				writesys("/proc/stb/fp/led1_pattern", "00000000", 1);
+		}
+	}
+} 	
+
 int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int filelistview)
 {
 	fd_set rfds;
@@ -278,9 +304,12 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 			}
 			if(rcdata.value == 0) //release
 			{
+				rcsignal(0);
 				usleep(10000);
 				continue;
 			}
+			else
+				rcsignal(1);
 
 			if(islongkey(rcdata.code))
 			{
