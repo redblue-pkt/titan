@@ -2201,8 +2201,14 @@ void playerfr(int speed)
 void playerseek(float sec)
 {
 #ifdef EPLAYER3
+#ifdef BETA
+	int64_t sectmp = (int64_t)sec;
+	if(player && player->playback)	
+		player->playback->Command(player, PLAYBACK_SEEK, (void*)&sectmp);
+#else
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_SEEK, (void*)&sec);
+#endif
 #endif
 
 #ifdef EPLAYER4
@@ -2673,17 +2679,52 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 #endif
 }
 
-unsigned long long playergetpts()
+unsigned long long playergetpts2()
 {
-	unsigned long long pts = 0;
-	unsigned long long sec = 0;
+	int64_t pts = 0;
+	int64_t sec = 0;
 
 #ifdef EPLAYER3
 	if(player && player->playback)
 	{
 		player->playback->Command(player, PLAYBACK_PTS, &pts);
 		sec = pts / 90000;
+		fprintf(stderr, "{\"J\":{\"ms\":%lld}}\n", pts / 90);
+
+		debug(150, "Pts = %02d:%02d:%02d (%lld sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
+
+	}
+#endif
+
+	if(pts < 0) pts = 0;
+	return pts;
+}
+
+unsigned long long playergetpts()
+{
+#ifdef BETA
+#ifdef EPLAYER3
+	int64_t pts = 0;
+	int64_t sec = 0;
+#else
+	unsigned long long pts = 0;
+	unsigned long long sec = 0;
+#endif
+#else
+	unsigned long long pts = 0;
+	unsigned long long sec = 0;
+#endif
+
+#ifdef EPLAYER3
+	if(player && player->playback)
+	{
+		player->playback->Command(player, PLAYBACK_PTS, &pts);
+		sec = pts / 90000;
+#ifdef BETA
+		debug(150, "Pts = %02d:%02d:%02d (%lld sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
+#else
 		debug(150, "Pts = %02d:%02d:%02d (%llu.0000 sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
+#endif
 	}
 #endif
 
@@ -2742,16 +2783,48 @@ unsigned long long playergetpts()
 	return pts;
 }
 
+double playergetlength2()
+{
+	int64_t length = 0;
+
+#ifdef EPLAYER3
+	if(player && player->playback)
+	{
+		player->playback->Command(player, PLAYBACK_LENGTH, (void*)&length);
+		if(length < 0) length = 0;
+		debug(150, "Length = %02d:%02d:%02d (%.4f sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
+		debug(150, "Length2 = %02d:%02d:%02d (%lld sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
+
+                fprintf(stderr, "{\"PLAYBACK_LENGTH\":{\"length\":%lld}}\n", length);
+
+	}
+#endif
+
+	return length;
+}
+
 double playergetlength()
 {
+#ifdef BETA
+#ifdef EPLAYER3
+	int64_t length = 0;
+#else
 	double length = 0;
+#endif
+#else
+	double length = 0;
+#endif
 
 #ifdef EPLAYER3
 	if(player && player->playback)
 	{
 		player->playback->Command(player, PLAYBACK_LENGTH, &length);
 		if(length < 0) length = 0;
+#ifdef BETA
+		debug(150, "Length = %02d:%02d:%02d (%lld sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
+#else
 		debug(150, "Length = %02d:%02d:%02d (%.4f sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
+#endif
 	}
 #endif
 
