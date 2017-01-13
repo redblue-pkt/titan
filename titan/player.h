@@ -2367,7 +2367,17 @@ void playerfreetracklist(char** TrackList)
 
 char** playergettracklist(int type)
 {
+#ifdef BETA
+#ifdef EPLAYER3
+	TrackDescription_t *TrackList = NULL;
+	char ** TrackList2 = NULL;
+#else
 	char ** TrackList = NULL;
+#endif
+#else
+	char ** TrackList = NULL;
+#endif
+
 #ifdef EPLAYER3
 	if(player && player->manager)
 	{
@@ -2394,7 +2404,30 @@ char** playergettracklist(int type)
 					debug(150, "Video Track List");
 				}
 		}
-		
+
+#ifdef BETA
+		TrackList2 = calloc(1, sizeof(char *) * ((100 * 2) + 1));
+
+		char* tmpstr = NULL;
+        if( NULL != TrackList) 
+        {
+			debug(150, "Track List");
+
+            int i = 0;
+            for (i = 0; TrackList[i].Id >= 0; ++i) 
+            {
+				tmpstr = ostrcat(oitoa(TrackList[i].Id), ": ", 1, 0);
+				tmpstr = ostrcat(tmpstr, TrackList[i].Name, 1, 0);
+				TrackList2[i * 2] = ostrcat(tmpstr, NULL, 0, 0);
+				TrackList2[(i * 2) + 1] = strdup(TrackList[i].Encoding);
+                free(TrackList[i].Encoding);
+                free(TrackList[i].Name);
+				debug(150, "%s - %s", TrackList2[i * 2], TrackList2[i * 2 + 1]);
+            }
+            free(TrackList);
+        }
+        free(tmpstr), tmpstr = NULL;
+#else
 		int i = 0;
 		if(TrackList != NULL)
 		{
@@ -2412,6 +2445,7 @@ char** playergettracklist(int type)
 				i += 2;
 			}
 		}
+#endif
 	}
 #endif
 
@@ -2612,7 +2646,15 @@ char** playergettracklist(int type)
 #endif
 //////////////////////////////NEUER CODE //////////////////////////////
 
+#ifdef BETA
+#ifdef EPLAYER3
+	return TrackList2;
+#else
 	return TrackList;
+#endif
+#else
+	return TrackList;
+#endif
 }
 
 //*CurTrackEncoding and *CurTrackName be freed
@@ -2876,6 +2918,8 @@ char* playergetinfo(char* tag)
 
 void playerchangeaudiotrack(int num)
 {
+	debug(150, "change audiotrac to %d\n", num);
+
 #ifdef EPLAYER3
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_SWITCH_AUDIO, (void*)&num);
