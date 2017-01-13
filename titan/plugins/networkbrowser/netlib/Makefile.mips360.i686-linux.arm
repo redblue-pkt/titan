@@ -1,0 +1,25 @@
+LIB = netlib.a
+
+OBJS = list.o nbtscan.o range.o showmount.o smbinfo.o statusq.o
+
+DEPS = $(patsubst %.o,%.d,$(OBJS))
+
+CC = $(HOME)/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/i686-linux/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc
+AR = $(HOME)/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/i686-linux/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-ar
+
+CFLAGS = -Os -Wall -fPIC -D__ARM_PCS_VFP -I. -I $SRC/tmp/sysroots/$BOX/usr/include
+
+all: $(LIB)
+
+$(LIB): $(OBJS) Makefile
+	$(AR) ru  $@ $(OBJS)
+	ranlib $@
+
+%.o: %.c
+	$(CC) -MD $(CFLAGS) -c $<
+
+clean:
+	rm $(OBJS) $(DEPS) $(LIB)
+
+
+-include $(DEPS)

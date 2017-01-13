@@ -129,7 +129,7 @@ echo "[titan] Make networkbrowser"
 echo "[titan]--------------------------------------------------------"
 
 cd networkbrowser/netlib
-cp Makefile."$STM"."$ARCH".mipsel Makefile
+cp Makefile."$STM"."$ARCH".arm Makefile
 sed "s!CC =.*!CC = $SRC/tmp/sysroots/$ARCH/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc!" -i Makefile
 sed "s!AR =.*!AR = $SRC/tmp/sysroots/$ARCH/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-ar!" -i Makefile
 sed "s!-I .*!-I $SRC/tmp/sysroots/$BOX/usr/include!" -i Makefile
