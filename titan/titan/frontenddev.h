@@ -1234,7 +1234,6 @@ uint16_t fereadsnr(struct dvbdev* node)
 		
 		ioctl(node->fd, FE_READ_SNR, &snr);
 				
-		printf("++++ short:%s\n", node->feinfo->name);
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
 			ret = (snr * 240) >> 8;
 		
@@ -1243,7 +1242,6 @@ uint16_t fereadsnr(struct dvbdev* node)
 		{
 			signalquality = snr;
 		}
-		printf("++++ %i %i\n",node->feinfo->type, FE_QPSK);  
 		if(node->feinfo->type == FE_QPSK)
 			signalquality = (ret >= sat_max ? 65536 : ret * 65536 / sat_max);
 		else if(node->feinfo->type == FE_QAM)
