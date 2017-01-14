@@ -1,1 +1,1 @@
-Here you can assign channels for their ci modules.
+Hier können Sie Kanäle für ihre ci-Module zuordnen.
