@@ -706,11 +706,9 @@ char* getsnr(struct skin* node, char* format)
 {
 	uint16_t snr = 0;
 	char* buf = NULL, *buf1 = NULL;
-
-	
 	snr = fereadsnr(status.aktservice->fedev);
 	snr = (snr * 100) / 0xffff;
-	
+
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{

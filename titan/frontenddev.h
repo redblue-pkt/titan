@@ -1197,16 +1197,68 @@ void fediscard(struct dvbdev* node)
 uint16_t fereadsnr(struct dvbdev* node)
 {
 	uint16_t snr = 0;
-
 	if(node == NULL)
 	{
 		err("NULL detect");
 		return 0;
 	}
-
+	
+#ifdef ARM
+	int signalquality = 0;
+	int signalqualitydb = 0;
+	
+	struct dtv_property prop[1];
+	prop[0].cmd = DTV_STAT_CNR;
+	struct dtv_properties props;
+	props.props = prop;
+	props.num = 1;
+	
+	if(ioctl(node->fd, FE_GET_PROPERTY,  &props) < 0)
+	{
+		perr("FE_GET_PROPERTY");
+	}
+	for(unsigned int i=0; i<prop[0].u.st.len; i++)
+	{
+		if (prop[0].u.st.stat[i].scale == FE_SCALE_DECIBEL)
+			signalqualitydb = prop[0].u.st.stat[i].svalue / 10;
+		else if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
+			signalquality = prop[0].u.st.stat[i].svalue;
+	}
+	if(!signalquality && !signalqualitydb)
+	{
+		int ret = 0x12345678;
+		int sat_max = 1600; // we assume a max of 16db here
+		int ter_max = 2900; // we assume a max of 29db here
+		int cab_max = 4200; // we assume a max of 42db here
+		//int atsc_max = 4200; // we assume a max of 42db here
+		
+		ioctl(node->fd, FE_READ_SNR, &snr);
+				
+		printf("++++ short:%s\n", node->feinfo->name);
+		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
+			ret = (snr * 240) >> 8;
+		
+		signalqualitydb = ret;
+		if (ret == 0x12345678) // no snr db calculation avail.. return untouched snr value..
+		{
+			signalquality = snr;
+		}
+		printf("++++ %i %i\n",node->feinfo->type, FE_QPSK);  
+		if(node->feinfo->type == FE_QPSK)
+			signalquality = (ret >= sat_max ? 65536 : ret * 65536 / sat_max);
+		else if(node->feinfo->type == FE_QAM)
+			signalquality = (ret >= cab_max ? 65536 : ret * 65536 / cab_max);
+		else if(node->feinfo->type == FE_OFDM)
+			signalquality = (ret >= ter_max ? 65536 : ret * 65536 / ter_max);
+	}
+	debug(200, "frontend snr = %02x", (signalquality * 100) / 0xffff);
+	return signalquality;
+#else	
 	ioctl(node->fd, FE_READ_SNR, &snr);
 	debug(200, "frontend snr = %02x", (snr * 100) / 0xffff);
 	return snr;
+#endif
+	
 }
 
 uint16_t fereadsignalstrength(struct dvbdev* node)
@@ -1218,10 +1270,32 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		err("NULL detect");
 		return 0;
 	}
-
+	
+#ifdef ARM		
+	struct dtv_property prop[1];
+	prop[0].cmd = DTV_STAT_SIGNAL_STRENGTH;
+	struct dtv_properties props;
+	props.props = prop;
+	props.num = 1;
+	ioctl(node->fd, FE_GET_PROPERTY, &props);
+	for(unsigned int i=0; i<prop[0].u.st.len; i++)
+	{
+		if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
+			signal = prop[0].u.st.stat[i].uvalue;
+	}
+	if (!signal)
+	{
+		ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
+		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
+			signal = signal * 1000;
+		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
+	}
+	return signal;
+#else	
 	ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
 	debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	return signal;
+#endif
 }
 
 uint32_t fereadber(struct dvbdev* node)
