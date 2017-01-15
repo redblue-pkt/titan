@@ -516,7 +516,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 		isac3 = 0; isdts = 0; isaac = 0, audiocodec = 0, videocodec = 0;
 		char langdesc[4] = "---";
 		int y = 0, descriptorcount = 0;
-
+		
 		addesinfo(chnode, streamtype, pid, NULL);
 
 		for(pos = 5; pos < esinfolength + 5; pos += descriptorlength + 2)
@@ -608,9 +608,12 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 			case 0x02: // Mpeg2 Video (0)
 			case 0x10: // Mpeg4 Part2 Video (4)
 			case 0x1b: // H264 (1)
+			case 0x24: //	H265_HEVC
 			case 0xea: // vc1 (10)
 				if(streamtype == 0x1b)
 					videocodec = H264;
+				else if(streamtype == 0x24)
+					videocodec = H265;
 				else if(streamtype == 0x10)
 					videocodec = MPEG4V;
 				else if(streamtype == 0xea)
