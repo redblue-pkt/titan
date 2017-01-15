@@ -49,6 +49,9 @@ int setencoding(struct channel* chnode, struct dvbdev* videonode)
 		case H264:
 			ret = videosetstreamtype(videonode, 1);
 			break;
+		case H265:
+			ret = videosetstreamtype(videonode, H265);
+			break;
 		case VC1:
 			ret = videosetstreamtype(videonode, 3);
 			break;
