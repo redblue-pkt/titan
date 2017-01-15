@@ -1,1 +1,13 @@
-Hilfe Text für channellist
+Mit dem Programm „SatChannelListEditor V5.5“ könnt ihr direkt auf eueren Receiver\n
+(Atemio, DreamBox etc.  –  mit TitanNit Betriebssystem)\n
+zugreifen um die aktuelle Senderliste auf den PC zu laden.\n
+Dort kann die Kanalliste dann bequem bearbeitet werden!\n
+Im Anschluss kann diese dann mit einem Mausklick wieder auf den Receiver kopiert werden.\n
+Dabei könnt ihr eure eigenen Bouquets (Favoriten), also Unterordner für eure Senderlisten\n
+z.b Sky, Musik Sport erstellen.\n
+Auf der Box geht dies natürlich auch im Menü mit der Fernbedienung,\n
+ist aber nicht so komfortabel wie mit einem externen Editor.\n
+- ok Taste drücken\n
+- blaue Taste drücken Bouquets = Favoriten\n
+- Menü drücken\n
+Danach könnt ihr eure Listen bearbeiten (selbsterklärend).
