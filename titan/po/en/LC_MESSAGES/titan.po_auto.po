@@ -147,7 +147,7 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1241
+#: titan.c:1242
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -155,7 +155,7 @@ msgstr ""
 "/mnt is not writeable!\n"
 "Do you want to try and repair it?"
 
-#: titan.c:1224
+#: titan.c:1225
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1171,7 +1171,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1302
+#: titan.c:1303
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatic Stop in 10 Seconds."
 
@@ -1607,7 +1607,7 @@ msgstr "Favourites"
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1741
+#: player.h:1692
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -3203,7 +3203,7 @@ msgstr "ERROR: can't set marker in this file"
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:354 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
+#: player.h:308 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
 #: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
@@ -3242,8 +3242,8 @@ msgstr "ERROR: can't set marker in this file"
 #: system_backup_restore.h:95 system_update.h:244 system_update.h:250
 #: system_update.h:260 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:1060 titan.c:1069 titan.c:1197
-#: titan.c:1218 titan.c:1224 titan.c:1235 titan.c:1241 tithek.c:103
+#: timeshiftsettings.h:45 titan.c:282 titan.c:1060 titan.c:1069 titan.c:1198
+#: titan.c:1219 titan.c:1225 titan.c:1236 titan.c:1242 tithek.c:103
 #: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1707
 #: tithek.h:1729 tithek.h:1746 tithek.h:1978 tithek.h:2138 tithek.h:2423
 #: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
@@ -3978,7 +3978,7 @@ msgstr "Maximum Rate"
 msgid "Free Space"
 msgstr ""
 
-#: titan.c:1235
+#: titan.c:1236
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3986,7 +3986,7 @@ msgstr ""
 "Insufficient space in /mnt!\n"
 "This will cause severe problems!"
 
-#: titan.c:1218
+#: titan.c:1219
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -5912,7 +5912,7 @@ msgstr ""
 #: network.h:823 network.h:877 novamov.h:35 novamov.h:97 novamov.h:103
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
-#: played.h:91 played.h:103 played.h:115 played.h:172 player.h:354 play.h:614
+#: played.h:91 played.h:103 played.h:115 played.h:172 player.h:308 play.h:614
 #: play.h:1317 play.h:1354 play.h:1654 play.h:1882 play.h:1893 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
@@ -5937,7 +5937,7 @@ msgstr ""
 #: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:1197 titan.c:1218 titan.c:1224 titan.c:1235 titan.c:1241
+#: titan.c:1198 titan.c:1219 titan.c:1225 titan.c:1236 titan.c:1242
 #: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368
 #: tithek.h:1707 tithek.h:1729 tithek.h:1978 tithek.h:2138 tithek.h:2423
 #: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
@@ -6508,7 +6508,7 @@ msgstr ""
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:354 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
+#: player.h:308 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
 #: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453 play.h:1654
 #: play.h:1882 play.h:1893 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
@@ -6544,8 +6544,8 @@ msgstr ""
 #: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:1060 titan.c:1069 titan.c:1197 titan.c:1218 titan.c:1224
-#: titan.c:1235 titan.c:1241 tithek.c:103 tithek_global.h:103 tithek.h:711
+#: titan.c:1060 titan.c:1069 titan.c:1198 titan.c:1219 titan.c:1225
+#: titan.c:1236 titan.c:1242 tithek.c:103 tithek_global.h:103 tithek.h:711
 #: tithek.h:1307 tithek.h:1368 tithek.h:1707 tithek.h:1729 tithek.h:1746
 #: tithek.h:1978 tithek.h:2138 tithek.h:2423 tithek.h:2467 tithek.h:2483
 #: tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
@@ -7675,7 +7675,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Receiver will reboot now !!!"
 
-#: titan.c:1197
+#: titan.c:1198
 msgid "Receiver successful unlocked"
 msgstr "Your Receiver was unlocked successfully."
 
@@ -9349,7 +9349,7 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr "Start WLAN?"
 
-#: mc_videoplayer.h:916 player.h:354
+#: mc_videoplayer.h:916 player.h:308
 msgid "Start at last position ?"
 msgstr "Resume from last position?"
 
@@ -10556,7 +10556,7 @@ msgstr ""
 msgid "Unitymedia NRW | 3.12.2016 (caliban)"
 msgstr ""
 
-#: titan.c:1300
+#: titan.c:1301
 msgid "Unknown Error."
 msgstr ""
 
