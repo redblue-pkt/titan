@@ -1100,6 +1100,7 @@ firstwizzardstep1:
 	ret = setbrightness(getconfigint("vs_brightness", NULL));
 	ret = setcontrast(getconfigint("vs_contrast", NULL));
 	ret = settint(getconfigint("vs_tint", NULL));
+	videoApplySettings();
 	
 #ifndef SIMULATE
 	//set skinentrys locked

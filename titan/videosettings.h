@@ -1,6 +1,12 @@
 #ifndef VIDEOSETTINGS_H
 #define VIDEOSETTINGS_H
 
+void videoApplySettings()
+{
+	if(file_exist("/proc/stb/vmpeg/0/pep_apply"))
+		writesys("/proc/stb/vmpeg/0/pep_apply", "0", 1);
+}
+
 void screenvideosettings()
 {
 	int rcret = 0, ibrightness = 0, icontrast = 0, itint = 0;
@@ -120,12 +126,14 @@ void screenvideosettings()
 		setcontrast(icontrast);
 		settint(itint);
 		setsaturation(isaturation);
+		videoApplySettings();
 	}
 
 	setbrightness(getconfigint("vs_brightness", NULL));
 	setcontrast(getconfigint("vs_contrast", NULL));
 	settint(getconfigint("vs_tint", NULL));
 	setsaturation(getconfigint("vs_saturation", NULL));
+	videoApplySettings();
 	delownerrc(videosettings);
 	clearscreen(videosettings);
 }
