@@ -1184,13 +1184,13 @@ int playerstart(char* file)
 			status.playercan = 0x4650;
 		else
 			status.playercan = 0xFFFF;
-		
+
 		player->playback = &PlaybackHandler;
 		player->output = &OutputHandler;
 		player->container = &ContainerHandler;
 		player->manager = &ManagerHandler;
 
-#ifndef BETA		
+//#ifndef BETA		
 		//add container befor open, so we can set buffer size
 		char* extffm = getfilenameext(tmpfile);
 		if(extffm != NULL)
@@ -1202,11 +1202,17 @@ int playerstart(char* file)
 		//select container_ffmpeg, if we does not found a container with extensions
 		if(player->container->selectedContainer == NULL)
 			player->container->Command(player, CONTAINER_ADD, "mp3");
-#endif
+//#endif
 		if(player && player->container && player->container->selectedContainer)
 		{
+#ifndef BETA
+			int32_t size = getconfigint("playerbuffersize", NULL);
+			int32_t seektime = getconfigint("playerbufferseektime", NULL);
+#else
 			int size = getconfigint("playerbuffersize", NULL);
 			int seektime = getconfigint("playerbufferseektime", NULL);
+#endif
+
 			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
 			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);
 		}
