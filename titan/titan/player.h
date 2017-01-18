@@ -1249,25 +1249,38 @@ int playerstart(char* file)
 			return 1;
 		}
 #else
-    player->manager->video->Command(player, MANAGER_REGISTER_UPDATED_TRACK_INFO, UpdateVideoTrack);
-    if (strncmp(file, "rtmp", 4) && strncmp(file, "ffrtmp", 4))
-    {
-        player->playback->noprobe = 1;
-    }
+	    player->manager->video->Command(player, MANAGER_REGISTER_UPDATED_TRACK_INFO, UpdateVideoTrack);
+	    if (strncmp(file, "rtmp", 4) && strncmp(file, "ffrtmp", 4))
+	    {
+	        player->playback->noprobe = 1;
+	    }
+	
+		char* audioFile = NULL;
+	    PlayFiles_t playbackFiles = {tmpfile, NULL};
+	    if('\0' != audioFile[0])
+	    {
+	        playbackFiles.szSecondFile = audioFile;
+	    }
 
-	char* audioFile = NULL;
-    PlayFiles_t playbackFiles = {tmpfile, NULL};
-    if('\0' != audioFile[0])
-    {
-        playbackFiles.szSecondFile = audioFile;
-    }
+		//for subtitle
+		SubtitleOutputDef_t subout;
 
-	if(player->playback->Command(player, PLAYBACK_OPEN, &playbackFiles) < 0)
-	{
-		free(player); player = NULL;
-		free(tmpfile);
-		return 1;
-	}
+		subout.screen_width = skinfb->width;
+		subout.screen_height = skinfb->height;
+		subout.framebufferFD = skinfb->fd;
+		subout.destination = (uint32_t *)skinfb->fb;
+		subout.destStride = skinfb->pitch;
+		subout.shareFramebuffer = 1;
+		subout.framebufferBlit = blitfb1;
+
+		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
+
+		if(player->playback->Command(player, PLAYBACK_OPEN, &playbackFiles) < 0)
+		{
+			free(player); player = NULL;
+			free(tmpfile);
+			return 1;
+		}
 #endif		
 
 
