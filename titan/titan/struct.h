@@ -104,9 +104,9 @@
 //for eplayer
 #ifdef EPLAYER3
 #include <common.h>
-#ifndef BETA
+//#ifndef BETA
 #include <subtitle.h>
-#endif
+//#endif
 #endif
 
 #ifdef EPLAYER4
