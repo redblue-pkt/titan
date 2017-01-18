@@ -634,11 +634,14 @@ int main(int argc, char *argv[])
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
 	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
 	ret = addinetworkall(NULL);
-  ret = 1;
-  if(file_exist("/var/etc/.usbimage"))
-  	ret = system("mount | grep titan");
+	
+	ret = 1;
+	if(file_exist("/var/etc/.usbimage"))
+		ret = system("mount | grep titan");
   
 #ifndef SIMULATE
+	if(checkrealbox("DM900") == 1)
+		ret = 1;
 
 	// set pvr 1 = allowed , 0 = disabled
 	status.pvr = 1;	
@@ -651,19 +654,19 @@ int main(int argc, char *argv[])
 		{
 			printf("error: 1\n");
 			destroy();
-//			exit(100);
+			exit(100);
 		}
 		if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
 		{
 			printf("error: 2\n");		
 			destroy();
-//			exit(100);
+			exit(100);
 		}
 		if(checkreseller() != 0)
 		{
 			printf("error: 3\n");		
 			destroy();
-//			exit(100);
+			exit(100);
 		}
 		if(ret > 0)
 		{
@@ -671,14 +674,14 @@ int main(int argc, char *argv[])
 			{
 				printf("error: 4\n");		
 				destroy();
-//				exit(100);
+				exit(100);
 			}
 		}
 		if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 		{
 			printf("error: 5\n");		
 			destroy();
-//			exit(100);
+			exit(100);
 		}
 		if(ret > 0)
 		{
@@ -686,7 +689,7 @@ int main(int argc, char *argv[])
 			{
 				printf("error: 6\n");		
 				destroy();
-//				exit(100);
+				exit(100);
 			}
 		}
 		if(ret > 0)
@@ -695,14 +698,14 @@ int main(int argc, char *argv[])
 			{
 				printf("error: 7\n");		
 				destroy();
-//				exit(100);
+				exit(100);
 			}
 		}
 		if(checkbox("UFS910") == 1 && checklowflash() != 0)
 		{
 			printf("error: 8\n");		
 			destroy();
-//			exit(100);
+			exit(100);
 		}
 	
 		char* cpuid = getcpuid();
