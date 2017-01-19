@@ -183,27 +183,30 @@ void blitfb2(struct fb* fbnode, int flag)
 	debug(444, "FB: var_screeninfo.yoffset %d", var_screeninfo.yoffset);
 	debug(444, "FB: var_screeninfo.bits_per_pixel %d", var_screeninfo.bits_per_pixel);
 	debug(444, "FB: var_screeninfo.grayscale %d", var_screeninfo.grayscale);
-
-	if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
+	
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0)
 	{
-		var_screeninfo.yres_virtual = fb->height;
 		if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
 		{
-			perr("FBIOPUT_VSCREENINFO");
+			var_screeninfo.yres_virtual = fb->height;
+			if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
+			{
+				perr("FBIOPUT_VSCREENINFO");
+			}
+			debug(444, "FB: double buffering not available");
 		}
-		debug(444, "FB: double buffering not available");
-	}
-	else
-	{
-		debug(444, "FB: double buffering available!");
-	}
+		else
+		{
+			debug(444, "FB: double buffering available!");
+		}
 
-	ioctl(fb->fd, FBIOGET_VSCREENINFO, &var_screeninfo);
-	if ((var_screeninfo.xres!=fb->width) && (var_screeninfo.yres!=fb->height) && (var_screeninfo.bits_per_pixel!=fb->colbytes))
-	{
-		debug(444, "SetMode failed: wanted: %dx%dx%d, got %dx%dx%d",
-			fb->width, fb->height, fb->colbytes,
-			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
+		ioctl(fb->fd, FBIOGET_VSCREENINFO, &var_screeninfo);
+		if ((var_screeninfo.xres!=fb->width) && (var_screeninfo.yres!=fb->height) && (var_screeninfo.bits_per_pixel!=fb->colbytes))
+		{
+			debug(444, "SetMode failed: wanted: %dx%dx%d, got %dx%dx%d",
+				fb->width, fb->height, fb->colbytes,
+				var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
+		}
 	}
 	
 	int posx = 0;
