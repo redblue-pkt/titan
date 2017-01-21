@@ -641,7 +641,7 @@ int main(int argc, char *argv[])
   
 #ifndef SIMULATE
 	if(checkrealbox("DM900") == 1)
-		ret = 1;
+		ret = 0;
 
 	// set pvr 1 = allowed , 0 = disabled
 	status.pvr = 1;	
