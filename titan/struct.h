@@ -1645,6 +1645,8 @@ struct status
 	int getepgnexttimeremaining;
 	// downmix switch in audio menu (audiotrack.h)
 	int downmix;
+	// channels for recording
+	struct channel* recchnode[9];
 } status;
 
 struct fb
