@@ -1110,11 +1110,17 @@ void screeninfobar()
 			}
 		}
 		// pip atemio7600 ??
-		if(rcret == getrcconfigint("rcpip", NULL) && (checkchipset("BCM7424") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("UFS922") == 1 || checkbox("UFS913") == 1 || checkbox("DM900") == 1))
+		if((rcret == getrcconfigint("rcpip", NULL) || rcret == getrcconfigint("rcpiprec", NULL)) && (checkchipset("BCM7424") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("UFS922") == 1 || checkbox("UFS913") == 1 || checkbox("DM900") == 1))
 		{
 			if(status.pipservice->videodev == NULL)
 			{
-				pipchannel = status.aktservice->channel;
+				printf("---------> %i\n",rcret); 
+				if(status.recording > 0 && rcret == getrcconfigint("rcpiprec", NULL))
+					pipchannel = status.recchnode[1];
+				else if(rcret == getrcconfigint("rcpiprec", NULL))
+					textbox(_("Message"), _("no record channel found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+				else	
+					pipchannel = status.aktservice->channel;
 				printf("++++ RC: %i\n",pipstart(pipchannel, NULL, 0));
 				pipchannel = NULL;
 			}
