@@ -261,7 +261,7 @@ play()
 			else
 #echo 7777777 $URLTMP
 				URLTMP=`echo $URLTMP | sed 's/true http/http/'`
-				echo $curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!file:!\nfound=!g' | grep '^found=' | cut -d"'" -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 				URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4`
 			fi
