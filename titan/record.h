@@ -332,7 +332,14 @@ void recordstop(struct service* node, int ret)
 			status.playing = 0;
 		else
 		{
-			status.recchnode[status.recording] = NULL;
+			for(int i = 0; i < 9; i++)
+			{
+				if(status.recchnode[i] == node->channel)
+				{
+					status.recchnode[i] = NULL;
+					break;
+				}
+			}			
 			status.recording--;
 		}
 	
@@ -1413,7 +1420,14 @@ not needed we use wakeup_record_device on recordstartreal
 	else if(type == RECDIRECT || type == RECTIMER)
 	{
 		status.recording++;
-		status.recchnode[status.recording] = chnode;
+		for(int i = 0; i < 9; i++)
+		{
+			if(status.recchnode[i] == NULL)
+			{
+		 		status.recchnode[i] = chnode;
+		 		break;
+		 	}
+		}
 		servicenode->recname = ostrcat(filename, NULL, 0, 0);
 		if(VFD_Recordthread == NULL && getconfigint("vfdisplayrecord", NULL) != 0)
 			VFD_Recordthread = addtimer(&vfdrecordthread, START, 10000, 1, NULL, NULL, NULL);

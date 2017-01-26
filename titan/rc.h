@@ -305,6 +305,15 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 			if(rcdata.value == 0) //release
 			{
 				rcsignal(0);
+#ifdef DREAMBOX
+				if(longpresscount > 0)
+				{
+					rcdata.code = longpress;
+					if(longpresscount > 3) rcdata.code = longpress + 3000;
+					ret = rcdata.code;	
+					break;
+				}
+#endif
 				usleep(10000);
 				continue;
 			}
@@ -316,7 +325,14 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 				longpress = rcdata.code;
 				longpresscount++;
 				timeout = 0;
+#ifdef DREAMBOX
+				if(longpresscount == 1)
+					rest = 700;
+				else
+					rest = 500;
+#else
 				rest = 500;
+#endif								
 				usleep(10000);
 				continue;
 			}
