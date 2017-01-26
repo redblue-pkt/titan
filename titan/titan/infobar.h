@@ -1116,7 +1116,16 @@ void screeninfobar()
 			{
 				printf("---------> %i\n",rcret); 
 				if(status.recording > 0 && rcret == getrcconfigint("rcpiprec", NULL))
-					pipchannel = status.recchnode[1];
+				{
+					for(int i = 0; i < 9; i++)
+					{
+						if(status.recchnode[i] != NULL)
+						{
+							pipchannel = status.recchnode[i];
+							break;
+						}
+					}
+				}
 				else if(rcret == getrcconfigint("rcpiprec", NULL))
 					textbox(_("Message"), _("no record channel found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 				else	
