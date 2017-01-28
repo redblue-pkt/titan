@@ -271,7 +271,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 				else
 					tmp->handle = (char*)(i / 2);
 				
-#ifdef MIPSEL	
+#ifdef EPLAYER4	
 				if(curtrackid == (i / 2))
 				{
 					tmp->handle1 = "running";
@@ -317,7 +317,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 			{
 				if(mode == 1) {
 					playerchangeaudiotrack((int)listbox->select->handle);
-#ifdef MIPSEL
+#ifdef EPLAYER4
 					if(playertype == 0)
 						playerseek(-1);
 #endif
@@ -1693,7 +1693,7 @@ playerstart:
 			while((playertype == 0 && playerisplaying()) || (playertype == 1 && playerisplayingts()))
 			{
 				rcret = waitrc(playinfobar, rcwait, 0);
-#ifdef MIPSEL
+#ifdef EPLAYER4
 				debug(150, "waitofbuffer=%d status.cleaninfobar=%d status.prefillbuffer=%d status.prefillbuffercount=%d playinfobarstatus=%d playinfobarcount=%d",waitofbuffer , status.cleaninfobar, status.prefillbuffer, status.prefillbuffercount, playinfobarstatus, playinfobarcount);
 
 				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && (status.cleaninfobar == 1 || status.prefillbuffercount == 200))
@@ -1739,7 +1739,7 @@ playerstart:
 					if(count > screensaver_delay && screensaver != NULL)
 					{
 						showscreensaver();
-#ifdef MIPSEL
+#ifdef EPLAYER4
 						if(screensaver->speed < 50)
 							rcwait = screensaver->speed * 10;
 						else
