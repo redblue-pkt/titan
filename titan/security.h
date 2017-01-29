@@ -2008,7 +2008,7 @@ struct update* createupdatelist(int mode)
 	else if (mode == 1)
 	{
 		newnode->skinname = "systemupdate_flash_tmp_menu";
-		newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi", 1, 0);
+		newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi *.zip", 1, 0);
 		if(file_exist("/var/backup"))
 			newnode->filepath = ostrcat(newnode->filepath, "/var/backup", 1, 0);
 		else
