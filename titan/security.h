@@ -2001,7 +2001,7 @@ struct update* createupdatelist(int mode)
 		free(cmd),cmd = NULL;
 
 		newnode->skinname = "systemupdate_flash_online_menu";
-		newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi", 1, 0);
+		newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi *.zip", 1, 0);
 		newnode->filepath = ostrcat(newnode->filepath, "/tmp/online", 1, 0);
 		newnode->type = ostrcat(newnode->type, "online", 1, 0);
 	}
