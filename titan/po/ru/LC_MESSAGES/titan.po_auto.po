@@ -1891,7 +1891,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "Ошибка воспроизведения!"
 
-#: system_update.h:260
+#: system_update.h:263
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -3226,8 +3226,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
-#: system_backup_restore.h:95 system_update.h:244 system_update.h:250
-#: system_update.h:260 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
+#: system_backup_restore.h:95 system_update.h:247 system_update.h:253
+#: system_update.h:263 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1063 titan.c:1072 titan.c:1201
 #: titan.c:1222 titan.c:1228 titan.c:1239 titan.c:1245 tithek.c:103
@@ -3383,7 +3383,7 @@ msgstr ""
 msgid "Error create filename"
 msgstr "Ошибка создания файла"
 
-#: system_update.h:244
+#: system_update.h:247
 msgid "Error file not supported"
 msgstr "Ошибка, файл не поддерживается"
 
@@ -5921,8 +5921,8 @@ msgstr ""
 #: streamcloud.h:31 streamcloud.h:75 streamcloud.h:81 streamcloud.h:91
 #: streamcloud.h:104 streamcloud.h:135 streamcloud.h:194 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:244
-#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:247
+#: system_update.h:253 system_update.h:263 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1201 titan.c:1222 titan.c:1228 titan.c:1239 titan.c:1245
@@ -6526,8 +6526,8 @@ msgstr ""
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:244
-#: system_update.h:250 system_update.h:260 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:247
+#: system_update.h:253 system_update.h:263 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1063 titan.c:1072 titan.c:1201 titan.c:1222 titan.c:1228
@@ -13131,19 +13131,19 @@ msgstr "Активен"
 msgid "starting"
 msgstr "Выполнить"
 
-#: system_update.h:233
+#: system_update.h:236
 msgid "starting Full Update (from backup) ?"
 msgstr "Начало полного обновления (Из архива)"
 
-#: httpdfunc.h:5815 system_update.h:231
+#: httpdfunc.h:5815 system_update.h:234
 msgid "starting Full Update ?"
 msgstr "Запустить полное обновление FLASH?"
 
-#: system_update.h:235
+#: system_update.h:238
 msgid "starting Nfi Update ?"
 msgstr ""
 
-#: system_update.h:237
+#: system_update.h:240
 msgid "starting Usb Update ?"
 msgstr ""
 
