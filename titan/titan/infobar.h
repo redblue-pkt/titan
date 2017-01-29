@@ -1117,7 +1117,8 @@ void screeninfobar()
 				printf("---------> %i\n",rcret); 
 				if(status.recording > 0 && rcret == getrcconfigint("rcpiprec", NULL))
 				{
-					for(int i = 0; i < 9; i++)
+					int i;
+					for(i = 0; i < 9; i++)
 					{
 						if(status.recchnode[i] != NULL)
 						{

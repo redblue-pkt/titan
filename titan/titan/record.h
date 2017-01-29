@@ -332,7 +332,8 @@ void recordstop(struct service* node, int ret)
 			status.playing = 0;
 		else
 		{
-			for(int i = 0; i < 9; i++)
+			int i;
+			for(i = 0; i < 9; i++)
 			{
 				if(status.recchnode[i] == node->channel)
 				{
@@ -1420,7 +1421,8 @@ not needed we use wakeup_record_device on recordstartreal
 	else if(type == RECDIRECT || type == RECTIMER)
 	{
 		status.recording++;
-		for(int i = 0; i < 9; i++)
+		int i;
+		for(i = 0; i < 9; i++)
 		{
 			if(status.recchnode[i] == NULL)
 			{
