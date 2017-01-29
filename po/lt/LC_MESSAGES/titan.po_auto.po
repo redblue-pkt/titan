@@ -1891,7 +1891,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "Nepavyko paleisti atkrim !"
 
-#: system_update.h:263
+#: system_update.h:268
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -3236,8 +3236,8 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
-#: system_backup_restore.h:95 system_update.h:247 system_update.h:253
-#: system_update.h:263 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
+#: system_backup_restore.h:95 system_update.h:252 system_update.h:258
+#: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1063 titan.c:1072 titan.c:1201
 #: titan.c:1222 titan.c:1228 titan.c:1239 titan.c:1245 tithek.c:103
@@ -3393,7 +3393,7 @@ msgstr ""
 msgid "Error create filename"
 msgstr "ERROR: Can't create Filename"
 
-#: system_update.h:247
+#: system_update.h:252
 msgid "Error file not supported"
 msgstr "KLAIDA: Failo tipas nepalaikomas"
 
@@ -5934,8 +5934,8 @@ msgstr ""
 #: streamcloud.h:31 streamcloud.h:75 streamcloud.h:81 streamcloud.h:91
 #: streamcloud.h:104 streamcloud.h:135 streamcloud.h:194 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:247
-#: system_update.h:253 system_update.h:263 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:252
+#: system_update.h:258 system_update.h:268 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1201 titan.c:1222 titan.c:1228 titan.c:1239 titan.c:1245
@@ -6541,8 +6541,8 @@ msgstr ""
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:247
-#: system_update.h:253 system_update.h:263 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:252
+#: system_update.h:258 system_update.h:268 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1063 titan.c:1072 titan.c:1201 titan.c:1222 titan.c:1228
@@ -13151,19 +13151,19 @@ msgstr "pradta"
 msgid "starting"
 msgstr "Startuoja"
 
-#: system_update.h:236
+#: system_update.h:239
 msgid "starting Full Update (from backup) ?"
 msgstr "Pradti Full Update i atsargins kopijos ?"
 
-#: httpdfunc.h:5815 system_update.h:234
+#: httpdfunc.h:5815 system_update.h:237 system_update.h:245
 msgid "starting Full Update ?"
 msgstr "Pradti Full Update ?"
 
-#: system_update.h:238
+#: system_update.h:241
 msgid "starting Nfi Update ?"
 msgstr ""
 
-#: system_update.h:240
+#: system_update.h:243
 msgid "starting Usb Update ?"
 msgstr ""
 
