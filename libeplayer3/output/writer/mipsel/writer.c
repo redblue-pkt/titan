@@ -174,9 +174,11 @@ Writer_t* getWriter(char* encoding)
 Writer_t* getDefaultVideoWriter()
 {
     int i;
+printf("getDefaultVideoWriter in\n");
 
     for (i = 0; AvailableWriter[i] != NULL; i++)
     {
+printf("getDefaultVideoWriter=%s\n", AvailableWriter[i]->caps->textEncoding);
         if (strcmp(AvailableWriter[i]->caps->textEncoding, "V_MPEG2") == 0)
         {
             writer_printf(50, "%s: found writer \"%s\"\n", __func__, AvailableWriter[i]->caps->name);
@@ -192,9 +194,12 @@ Writer_t* getDefaultVideoWriter()
 Writer_t* getDefaultAudioWriter()
 {
     int i;
+printf("getDefaultAudioWriter in\n");
 
     for (i = 0; AvailableWriter[i] != NULL; i++)
     {
+printf("getDefaultAudioWriter=%s\n", AvailableWriter[i]->caps->textEncoding);
+
         if (strcmp(AvailableWriter[i]->caps->textEncoding, "A_MP3") == 0)
         {
             writer_printf(50, "%s: found writer \"%s\"\n", __func__, AvailableWriter[i]->caps->name);
