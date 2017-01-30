@@ -96,7 +96,11 @@ ssize_t write_with_retry(int fd, const void *buf, size_t size)
 {
     ssize_t ret;
     int retval = 0;
+#ifdef MIPSEL
     while(size > 0 && 0 == PlaybackDieNow(0))
+#else
+    while(size > 0)
+#endif
     {
         ret = write(fd, buf, size);
         //printf("[%d] write [%lld]\n", fd, ret);
@@ -145,10 +149,12 @@ ssize_t writev_with_retry(int fd, const struct iovec *iov, size_t ic)
     {
         write_with_retry(fd, iov[i].iov_base, iov[i].iov_len); 
         len += iov[i].iov_len;
+#ifdef MIPSEL
         if(PlaybackDieNow(0))
         {
             return -1;
         }
+#endif
     }
     return len;
 }
