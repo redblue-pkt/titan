@@ -1230,17 +1230,17 @@ int playerstart(char* file)
 		player->output->Command(player, OUTPUT_ADD, "subtitle");
 #ifndef BETA
 		//for subtitle
-		SubtitleOutputDef_t subout;
+//		SubtitleOutputDef_t subout;
 
-		subout.screen_width = skinfb->width;
-		subout.screen_height = skinfb->height;
-		subout.framebufferFD = skinfb->fd;
-		subout.destination = (uint32_t *)skinfb->fb;
-		subout.destStride = skinfb->pitch;
-		subout.shareFramebuffer = 1;
-		subout.framebufferBlit = blitfb1;
+//		subout.screen_width = skinfb->width;
+//		subout.screen_height = skinfb->height;
+//		subout.framebufferFD = skinfb->fd;
+//		subout.destination = (uint32_t *)skinfb->fb;
+//		subout.destStride = skinfb->pitch;
+//		subout.shareFramebuffer = 1;
+//		subout.framebufferBlit = blitfb1;
 
-		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
+//		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
 
 		if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
 		{
