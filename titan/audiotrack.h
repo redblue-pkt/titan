@@ -113,6 +113,8 @@ void screenaudiotrack()
 					else
 						printf("ERROR: set AC3_mode to %s\n", getconfig("av_ac3mode", NULL)); 
 				}
+				if(status.play == 1)
+					playerresetts();
 			}
 			break;
 		}
