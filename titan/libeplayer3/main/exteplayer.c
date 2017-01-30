@@ -435,9 +435,9 @@ int main(int argc, char* argv[])
     g_player->manager     = &ManagerHandler;
 
     // make sure to kill myself when parent dies
-    prctl(PR_SET_PDEATHSIG, SIGKILL);
+//    prctl(PR_SET_PDEATHSIG, SIGKILL);
 
-    SetBuffering();
+//    SetBuffering();
     
     //Registrating output devices
     g_player->output->Command(g_player, OUTPUT_ADD, "audio");
