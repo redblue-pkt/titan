@@ -77,7 +77,6 @@ int8_t PlaybackDieNow(int8_t val)
     {
         dieNow = 1;
     }
-printf("PlaybackDieNow=%d\n", dieNow);
     return dieNow;
 }
 
