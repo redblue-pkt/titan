@@ -134,9 +134,10 @@ int LinuxDvbOpen(Context_t  *context __attribute__((unused)), char * type) {
     if (video && videofd < 0) 
     {
 		fcntl(videofd, F_SETFL, fcntl(videofd, F_GETFL) | O_NONBLOCK);
-		closeonexec(videofd);
 
         videofd = open(VIDEODEV, O_RDWR | O_NONBLOCK);
+
+		fcntl(videofd, F_SETFL, fcntl(videofd, F_GETFL) | O_NONBLOCK);
 
         if (videofd < 0)
         {
@@ -167,9 +168,10 @@ int LinuxDvbOpen(Context_t  *context __attribute__((unused)), char * type) {
     if (audio && audiofd < 0) 
     {
 		fcntl(audiofd, F_SETFL, fcntl(audiofd, F_GETFL) | O_NONBLOCK);
-		closeonexec(audiofd);
 
         audiofd = open(AUDIODEV, O_RDWR | O_NONBLOCK);
+
+		fcntl(audiofd, F_SETFL, fcntl(audiofd, F_GETFL) | O_NONBLOCK);
 
         if (audiofd < 0)
         {
@@ -229,10 +231,8 @@ int LinuxDvbClose(Context_t  *context, char * type)
     }
 
 	fcntl(videofd, F_SETFL, fcntl(videofd, F_GETFL) | O_NONBLOCK);
-	closeonexec(videofd);
 
 	fcntl(audiofd, F_SETFL, fcntl(audiofd, F_GETFL) | O_NONBLOCK);
-	closeonexec(audiofd);
 
     releaseLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
     return cERR_LINUXDVB_NO_ERROR;
