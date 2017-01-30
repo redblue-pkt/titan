@@ -52,7 +52,7 @@
 #define LINUXDVB_DEBUG
 #define LINUXDVB_SILENT
 
-static unsigned short debug_level = 200;
+static unsigned short debug_level = 400;
 
 static const char FILENAME[] = __FILE__;
 
@@ -211,16 +211,24 @@ int LinuxDvbClose(Context_t  *context, char * type)
 
     getLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
 
+
+linuxdvb_printf(250, "LinuxDvbClose 111111111111\n");
+
     if (video && videofd != -1)
     {
+linuxdvb_printf(250, "LinuxDvbClose 222222222222\n");
+
         close(videofd);
         videofd = -1;
     }
     if (audio && audiofd != -1) 
     {
+linuxdvb_printf(250, "LinuxDvbClose 333333333333\n");
+
         close(audiofd);
         audiofd = -1;
     }
+linuxdvb_printf(250, "LinuxDvbClose 444444444444\n");
 
     releaseLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
     return cERR_LINUXDVB_NO_ERROR;
@@ -244,14 +252,14 @@ int LinuxDvbPlay(Context_t  *context, char * type) {
         writer = getWriter(Encoding);
         
         // SULGE VU 4K dont like this
-        /*
+
         if (0 != ioctl(videofd, VIDEO_STOP))
         {
             linuxdvb_err("ioctl failed with errno %d\n", errno);
             linuxdvb_err("VIDEO_STOP: %s\n", strerror(errno));
             ret = cERR_LINUXDVB_ERROR;
         }
-        */
+
 
         if (writer == NULL)
         {
@@ -298,14 +306,13 @@ int LinuxDvbPlay(Context_t  *context, char * type) {
         writer = getWriter(Encoding);
         
         // SULGE VU 4K dont like this
-        /*
+
         if (0 != ioctl(audiofd, AUDIO_STOP))
         {
             linuxdvb_err("ioctl failed with errno %d\n", errno);
             linuxdvb_err("AUDIO_STOP: %s\n", strerror(errno));
             ret = cERR_LINUXDVB_ERROR;
         }
-        */
 
         if (writer == NULL)
         {
