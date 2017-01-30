@@ -130,9 +130,12 @@ int LinuxDvbOpen(Context_t  *context __attribute__((unused)), char * type) {
     unsigned char audio = !strcmp("audio", type);
 
     linuxdvb_printf(10, "v%d a%d\n", video, audio);
-
+				
     if (video && videofd < 0) 
     {
+		fcntl(VIDEODEV, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK);
+		closeonexec(VIDEODEV);
+
         videofd = open(VIDEODEV, O_RDWR | O_NONBLOCK);
 
         if (videofd < 0)
@@ -163,6 +166,9 @@ int LinuxDvbOpen(Context_t  *context __attribute__((unused)), char * type) {
     }
     if (audio && audiofd < 0) 
     {
+		fcntl(AUDIODEV, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK);
+		closeonexec(AUDIODEV);
+
         audiofd = open(AUDIODEV, O_RDWR | O_NONBLOCK);
 
         if (audiofd < 0)
