@@ -49,10 +49,10 @@
 /* Makros/Constants              */
 /* ***************************** */
 
-#define LINUXDVB_DEBUG
+//#define LINUXDVB_DEBUG
 #define LINUXDVB_SILENT
 
-static unsigned short debug_level = 400;
+static unsigned short debug_level = 0;
 
 static const char FILENAME[] = __FILE__;
 
@@ -211,24 +211,16 @@ int LinuxDvbClose(Context_t  *context, char * type)
 
     getLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
 
-
-linuxdvb_printf(250, "LinuxDvbClose 111111111111\n");
-
     if (video && videofd != -1)
     {
-linuxdvb_printf(250, "LinuxDvbClose 222222222222\n");
-
         close(videofd);
         videofd = -1;
     }
     if (audio && audiofd != -1) 
     {
-linuxdvb_printf(250, "LinuxDvbClose 333333333333\n");
-
         close(audiofd);
         audiofd = -1;
     }
-linuxdvb_printf(250, "LinuxDvbClose 444444444444\n");
 
     releaseLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
     return cERR_LINUXDVB_NO_ERROR;
@@ -252,14 +244,14 @@ int LinuxDvbPlay(Context_t  *context, char * type) {
         writer = getWriter(Encoding);
         
         // SULGE VU 4K dont like this
-
+        /*
         if (0 != ioctl(videofd, VIDEO_STOP))
         {
             linuxdvb_err("ioctl failed with errno %d\n", errno);
             linuxdvb_err("VIDEO_STOP: %s\n", strerror(errno));
             ret = cERR_LINUXDVB_ERROR;
         }
-
+        */
 
         if (writer == NULL)
         {
@@ -306,13 +298,14 @@ int LinuxDvbPlay(Context_t  *context, char * type) {
         writer = getWriter(Encoding);
         
         // SULGE VU 4K dont like this
-
+        /*
         if (0 != ioctl(audiofd, AUDIO_STOP))
         {
             linuxdvb_err("ioctl failed with errno %d\n", errno);
             linuxdvb_err("AUDIO_STOP: %s\n", strerror(errno));
             ret = cERR_LINUXDVB_ERROR;
         }
+        */
 
         if (writer == NULL)
         {
@@ -360,18 +353,13 @@ int LinuxDvbStop(Context_t  *context __attribute__((unused)), char * type)
 
     getLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
 
-linuxdvb_printf(250, "LinuxDvbStop aaaaaaaaaaaaa\n");
-
     if (video && videofd != -1) 
     {
-linuxdvb_printf(250, "LinuxDvbStop bbbbbbbbbbbbbbb\n");
-
         if (ioctl(videofd, VIDEO_CLEAR_BUFFER) == -1)
         {
             linuxdvb_err("ioctl failed with errno %d\n", errno);
             linuxdvb_err("VIDEO_CLEAR_BUFFER: %s\n", strerror(errno));
         }
-linuxdvb_printf(250, "LinuxDvbStop bbbbbbbb11111111\n");
         
         if (ioctl(videofd, VIDEO_STOP) == -1)
         {
@@ -380,39 +368,30 @@ linuxdvb_printf(250, "LinuxDvbStop bbbbbbbb11111111\n");
             ret = cERR_LINUXDVB_ERROR;
         }
 
-linuxdvb_printf(250, "LinuxDvbStop bbbbbbbb22222222\n");
-
         ioctl(videofd, VIDEO_SLOWMOTION, 0);
         ioctl(videofd, VIDEO_FAST_FORWARD, 0);
 
         ioctl(videofd, VIDEO_SELECT_SOURCE, VIDEO_SOURCE_DEMUX);
     }
     if (audio && audiofd != -1) {
-linuxdvb_printf(250, "LinuxDvbStop ccccccc11111111\n");
-
         if (ioctl(audiofd, AUDIO_CLEAR_BUFFER) == -1)
         {
             linuxdvb_err("ioctl failed with errno %d\n", errno);
             linuxdvb_err("AUDIO_CLEAR_BUFFER: %s\n", strerror(errno));
         }
-linuxdvb_printf(250, "LinuxDvbStop ccccccc2222222\n");
 
         /* set back to normal speed (end trickmodes) */
-         if (ioctl(audiofd, AUDIO_SET_SPEED, DVB_SPEED_NORMAL_PLAY) == -1)
-         {
-             linuxdvb_err("ioctl failed with errno %d\n", errno);
-            linuxdvb_err("AUDIO_SET_SPEED: %s\n", strerror(errno));
-         }
-linuxdvb_printf(250, "LinuxDvbStop ccccccc3333333\n");
-
+        // if (ioctl(audiofd, AUDIO_SET_SPEED, DVB_SPEED_NORMAL_PLAY) == -1)
+        // {
+            // linuxdvb_err("ioctl failed with errno %d\n", errno);
+            // linuxdvb_err("AUDIO_SET_SPEED: %s\n", strerror(errno));
+        // }
         if (ioctl(audiofd, AUDIO_STOP) == -1)
         {
             linuxdvb_err("ioctl failed with errno %d\n", errno);
             linuxdvb_err("AUDIO_STOP: %s\n", strerror(errno));
             ret = cERR_LINUXDVB_ERROR;
         }
-linuxdvb_printf(250, "LinuxDvbStop ccccccc444444444\n");
-
         ioctl(audiofd, AUDIO_SELECT_SOURCE, AUDIO_SOURCE_DEMUX);
     }
 

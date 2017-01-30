@@ -366,12 +366,11 @@ static void ffmpeg_filler(Context_t *context, int32_t id, int32_t* inpause, int3
     while( (flag == 0 && avContextTab[0] != NULL && avContextTab[0]->pb != NULL && rwdiff > FILLBUFDIFF) || 
            (flag == 1 && hasfillerThreadStarted[id] == 1 && avContextTab[0] != NULL && avContextTab[0]->pb != NULL && rwdiff > FILLBUFDIFF) )
     {
-#ifdef MIPSEL
-         if( 0 == PlaybackDieNow(0))
-         {
-            break;
-         }
-#endif
+  //       if( 0 == PlaybackDieNow(0))
+  //       {
+  //          break;
+  //       }
+         
          if(flag == 0 && ffmpeg_buf_stop == 1)
          {
              ffmpeg_buf_stop = 0;
@@ -623,11 +622,8 @@ static int32_t ffmpeg_read(void *opaque, uint8_t *buf, int32_t buf_size)
     int32_t len = 0;
     int32_t count = 2000;
 
-#ifdef MIPSEL
-    while(sumlen < buf_size && (--count) > 0 && 0 == PlaybackDieNow(0))
-#else
+//    while(sumlen < buf_size && (--count) > 0 && 0 == PlaybackDieNow(0))
     while(sumlen < buf_size && (--count) > 0)
-#endif
     {
         len = ffmpeg_read_real(opaque, buf, buf_size - sumlen);
         sumlen += len;
@@ -2323,12 +2319,9 @@ static int32_t terminating = 0;
 static int32_t interrupt_cb(void *ctx)
 {
     PlaybackHandler_t *p = (PlaybackHandler_t *)ctx;
-#ifdef MIPSEL
-    return p->abortRequested || PlaybackDieNow(0);
-#else
+//    return p->abortRequested || PlaybackDieNow(0);
 //	secound http stream not working with PlaybackDieNow(0)
     return p->abortRequested;
-#endif
 }
 
 #ifdef SAM_CUSTOM_IO

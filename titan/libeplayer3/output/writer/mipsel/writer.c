@@ -96,11 +96,7 @@ ssize_t write_with_retry(int fd, const void *buf, size_t size)
 {
     ssize_t ret;
     int retval = 0;
-#ifdef MIPSEL
     while(size > 0 && 0 == PlaybackDieNow(0))
-#else
-    while(size > 0)
-#endif
     {
         ret = write(fd, buf, size);
         //printf("[%d] write [%lld]\n", fd, ret);
@@ -149,12 +145,10 @@ ssize_t writev_with_retry(int fd, const struct iovec *iov, size_t ic)
     {
         write_with_retry(fd, iov[i].iov_base, iov[i].iov_len); 
         len += iov[i].iov_len;
-#ifdef MIPSEL
         if(PlaybackDieNow(0))
         {
             return -1;
         }
-#endif
     }
     return len;
 }
@@ -180,11 +174,9 @@ Writer_t* getWriter(char* encoding)
 Writer_t* getDefaultVideoWriter()
 {
     int i;
-printf("getDefaultVideoWriter in\n");
 
     for (i = 0; AvailableWriter[i] != NULL; i++)
     {
-printf("getDefaultVideoWriter=%s\n", AvailableWriter[i]->caps->textEncoding);
         if (strcmp(AvailableWriter[i]->caps->textEncoding, "V_MPEG2") == 0)
         {
             writer_printf(50, "%s: found writer \"%s\"\n", __func__, AvailableWriter[i]->caps->name);
@@ -200,12 +192,9 @@ printf("getDefaultVideoWriter=%s\n", AvailableWriter[i]->caps->textEncoding);
 Writer_t* getDefaultAudioWriter()
 {
     int i;
-printf("getDefaultAudioWriter in\n");
 
     for (i = 0; AvailableWriter[i] != NULL; i++)
     {
-printf("getDefaultAudioWriter=%s\n", AvailableWriter[i]->caps->textEncoding);
-
         if (strcmp(AvailableWriter[i]->caps->textEncoding, "A_MP3") == 0)
         {
             writer_printf(50, "%s: found writer \"%s\"\n", __func__, AvailableWriter[i]->caps->name);
