@@ -1222,7 +1222,7 @@ int playerstart(char* file)
 	    // make sure to kill myself when parent dies
 	    prctl(PR_SET_PDEATHSIG, SIGKILL);
 
-	    SetBuffering();
+//	    SetBuffering();
 #endif
 		//Registrating output devices
 		player->output->Command(player, OUTPUT_ADD, "audio");
