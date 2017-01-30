@@ -13430,7 +13430,7 @@ msgstr ""
 msgid "uncommitted, committed, toneburst"
 msgstr ""
 
-#: audiotrack.h:147 play.h:253 subtitle.h:1745 tunerconfig.h:157
+#: audiotrack.h:149 play.h:253 subtitle.h:1745 tunerconfig.h:157
 #: tunerconfig.h:341 tunerconfig.h:419
 msgid "undefined"
 msgstr "Не определено"
