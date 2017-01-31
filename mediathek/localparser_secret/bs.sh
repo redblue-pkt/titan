@@ -10,7 +10,6 @@ PARAM2=$4
 URL="https://bs.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME="burningseries"
-curlbin="curl -k -s"
 
 #rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
@@ -40,7 +39,7 @@ mainmenu()
 
 genres()
 {
-	$curlbin -o - $URL"andere-serien" | awk -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL"serie-genre" | awk -v SRC=$SRC -v NAME=$NAME '
 BEGIN { in_genres = 0
       }
 
@@ -62,7 +61,7 @@ BEGIN { in_genres = 0
 
 series()
 {
-	$curlbin -o - $URL"andere-serien" | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
+	$curlbin -o - $URL"serie-genre" | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
 /<span><strong>/ { i = index($0, "<span><strong>") + 14
                    j = index($0, "</strong></span>") - i
                    genre = substr($0, i, j)
@@ -110,17 +109,25 @@ allseries()
 staffel()
 {
 	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
-/<li class=\" current\">/ { sub(/<li class=\" current\">/, "<li class=\" \">", $0)
+BEGIN { in_class_clearfix = 0
+      }
+
+/<ul class=\"clearfix\">/ { in_class_clearfix = 1
                           }
 
-/<li class=\" \"><a href="/ { i = index($0, "<li class=\" \"><a href=\"") + 23
-                              j = index(substr($0, i), "\">") - 1
-                              url = substr($0, i, j)
-                              k = i + j + 2
-                              l = index(substr($0, k), "</a></li>") - 1
-                              staffel = substr($0, k, l)
-                              print "Staffel " staffel "#" SRC " " SRC " episode " url " " staffel "#http://atemio.dyndns.tv/mediathek/menu/s" staffel ".jpg#s" staffel ".jpg#" NAME "#0"
-                            }
+/<li><a href=\"/ { if (in_class_clearfix == 1) {
+                      i = index($0, "<li><a href=\"") + 13
+                      j = index(substr($0, i), "\">") - 1
+                      url = substr($0, i, j)
+                      k = i + j + 2
+                      l = index(substr($0, k), "</a></li>") - 1
+                      staffel = substr($0, k, l)
+                      print "Staffel " staffel "#" SRC " " SRC " episode " url " " staffel "#http://atemio.dyndns.tv/mediathek/menu/s" staffel ".jpg#s" staffel ".jpg#" NAME "#0"
+                   }
+                 }
+
+/<\/ul>/ { in_class_clearfix = 0
+         }
 ' >/tmp/tithek/$PARSER.staffel.list
 	echo "/tmp/tithek/$PARSER.staffel.list"
 }
@@ -129,58 +136,30 @@ episode()
 {
 	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
 BEGIN { in_table_row = 0
-        episode = ""
-        url = ""
-        title = ""
       }
+
 /<tr>/ { in_table_row = 1
          next
        }
+
 /<td><a href=\"/ { if (in_table_row == 1) {
                       i = index($0, "<td><a href=\"") + 13
-                      j = index(substr($0, i), "\">") - 1
+                      j = index(substr($0, i), "\"") - 1
                       url = substr($0, i, j)
+                      i = index($0, "title=\"") + 7
+                      j = index(substr($0, i), "\"") - 1
+                      title = substr($0, i, j)
+                      k = i + j + 2
+                      l = index(substr($0, k), "</a></td>") - 1
+                      episode = substr($0, k, l)
+                      print title "#" SRC " " SRC " hosterlist " url "#http://atemio.dyndns.tv/mediathek/menu/s" PARAM2 "e" episode ".jpg#s" PARAM2 "e" episode ".jpg#" NAME "#0"
                    }
                    next
                  }
 
-/<td>/ { if (in_table_row == 1) {
-            i = index($0, "<td>") + 4
-            j = index(substr($0, i), "</td>") - 1
-            episode = substr($0, i, j)
+/<\/tr>/ { in_table_row = 0
+           next
          }
-         next
-       }
-
-/<strong>/ { if (in_table_row == 1) {
-                i = index($0, "<strong>") + 8
-                j = index(substr($0, i), "</strong>") - 1
-                title = substr($0, i, j)
-                do {
-                   i = match(title, /&#[0-2][0-9][0-9];/)
-                   if (i != 0) {
-                      j = substr(title, i + 2, 3) * 1
-                      title = substr(title, 1, i - 1) sprintf("%c", j) substr(title, i + 6)
-                   }
-                } while(i != 0)
-             }
-             next
-           }
-
-/<\/tr>/ { if (in_table_row == 1) {
-             if (episode != "") {
-                print title "#" SRC " " SRC " hosterlist " url "#http://atemio.dyndns.tv/mediathek/menu/s" PARAM2 "e" episode ".jpg#s" PARAM2 "e" episode ".jpg#" NAME "#0"
-                title = ""
-                url = ""
-                episode = ""
-             }
-             in_table_row = 0
-          }
-          next
-        }
-
-/<li class=\" current\">/ { sub(/<li class=\" current\">/, "<li class=\" \">", $0)
-                          }
 ' >/tmp/tithek/$PARSER.episode.list
 	echo "/tmp/tithek/$PARSER.episode.list"
 }
@@ -189,13 +168,11 @@ hosterlist()
 {
 	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
 BEGIN { in_hosterlist = 0
-        url = ""
-        title = ""
       }
 
-/<h3>Hoster dieser Episode<\/h3>/ { in_hosterlist = 1
-                                    next
-                                  }
+/<ul class=\"hoster-tabs top\">/ { in_hosterlist = 1
+                                   next
+                                 }
 
 /href=\"/ { if (in_hosterlist == 1) {
                i = index($0, "href=\"") + 6
@@ -205,14 +182,10 @@ BEGIN { in_hosterlist = 0
             next
           }
 
-/<\/span> / { if (in_hosterlist == 1) {
-                 i = index($0, "</span> ") + 8
-                 j = index(substr($0, i), "</a>") - 1
-                 title = substr($0, i, j)
-                 i = index($0, "</span> ") + 8
-                 j = index(substr($0, i), " -") - 1
-                 pic = substr($0, i, j)
-                 pic = tolower(pic)
+/<\/span>&nbsp;/ { if (in_hosterlist == 1) {
+                 i = index($0, "</span>&nbsp;") + 13
+                 title = substr($0, i)
+                 pic = tolower(title)
                  print title "#" SRC " " SRC " hoster " url "#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
               }
               next
@@ -256,68 +229,30 @@ BEGIN { in_hosterlist = 0
 
 hoster()
 {
-	$curlbin -o - $URL$PARAM | awk -v PARAM=$PARAM -v PARAM2=$PARAM2 -v SRC=$SRC -v NAME=$NAME '
-BEGIN { in_hosterlist = 0
-        url = ""
-        title = ""
-      }
-
-/<iframe scrolling=/ { in_hoster_iframe = 1
-                               prew
-                             }
-
-/src=/ { if (in_hoster_iframe == 1) {
-                  i = index($0, "src=") + 5
-                  j = index(substr($0, i), ">") - 2
-                  url = substr($0, i, j)
-                  i = index($0, "<a href=\"") + 16
-                  j = index(substr($0, i), "/") - 1
-                  title = substr($0, i, j)
-
-#                  print "Originalvideo#" url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#140"
-#                  print title "#" url "#http://atemio.dyndns.tv/mediathek/menu/" title ".jpg#" title ".jpg#" NAME "#14"
-                  print url
-               }
-               next
-             }
-
-/<div id=\"video_actions\">/ { in_hoster = 1
-                               next
-                             }
-
-/<a href=\"/ { if (in_hoster == 1 && in_hoster_iframe == 0) {
-                  i = index($0, "<a href=\"") + 9
-                  j = index(substr($0, i), "\"") - 1
-                  url = substr($0, i, j)
-
-                  i = index($0, "<a href=\"") + 16
-                  j = index(substr($0, i), "/") - 1
-                  title = substr($0, i, j)
-
-#                  print "Originalvideo#" url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#140"
-#                  print title "#" url "#http://atemio.dyndns.tv/mediathek/menu/" title ".jpg#" title ".jpg#" NAME "#14"
-
-tmp = "curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A \"Mozilla\/5.0 \(Windows NT 6.3\; WOW64\) AppleWebKit\/537.36 \(KHTML, like Gecko\) Maxthon\/4.4.7.3000 Chrome\/30.0.1599.101 Safari\/537.36\" -s -D - " url " | grep Location: | tail -n1 | cut -d \" \" -f2"
-#tmp = "curl -s -D - " url " | grep Location: | tail -n1"
-
-					while ((tmp | getline) > 0)
-					   print
-					   #print tmp
-					   #print $0
-					
-					close(tmp)
-               }
-               next
-             }
-
-/<\/div>/ { in_hoster = 0
-			in_hoster_iframe = 0
-            next
-          }
-
-' >/tmp/tithek/$PARSER.hoster.list
-#	echo "/tmp/tithek/$PARSER.hoster.list"
-	cat	"/tmp/tithek/$PARSER.hoster.list"
+	STREAM=`$curlbin -o - $URL$PARAM | awk '
+/class=\"hoster-player\"/ { i = index($0, "<a href=\"") + 9
+                            j = index(substr($0, i), "\"") - 1
+                            url = substr($0, i, j)
+                            print url
+                            next
+                          }
+'`
+	$curlbin -o - $STREAM >/tmp/tithek/$PARSER.hoster.1
+	cat /tmp/tithek/$PARSER.hoster.1 | $curlbin -o - $STREAM | awk '
+/\"og:url\" content=/ { i = index($0, "\"og:url\" content=") + 18
+                        j = index(substr($0, i), "\"") - 1
+                        url = substr($0, i, j)
+                        print url
+                        next
+                      }
+/name=\"id\" value=\"/ { i = index($0, "value=\"") + 7
+                         j = index(substr($0, i), "\"") - 1
+                         url = "http://vidto.me/" substr($0, i, j) ".html"
+                         print url
+                         next
+                       }
+' >/tmp/tithek/$PARSER.hoster.list 
+	cat /tmp/tithek/$PARSER.hoster.list
 }
 
 case $INPUT in
