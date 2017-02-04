@@ -20,8 +20,10 @@ Nach der Aufnahme: bestimmt, was der Receiver nach der Beendigung der Aufnahme a
 Sprungzeit der Tasten 1+3 (Sek): Sprungweite der Tasten 1 und 3 während einer Wiedergabe
 Sprungzeit der Tasten 4+6 (Sek): Sprungweite der Tasten 4 und 6 während einer Wiedergabe
 Sprungzeit der Tasten 7+9 (Sek): Sprungweite der Tasten 7 und 9 während einer Wiedergabe
-Sendername automatisch aktualisieren: Die Senderliste wird bei geänderten Sendernamen oder ersetzten neuen Sendern automatisch korrigiert|
-Zeige Fortschrittsbalken in Senderliste: Der Sendungs Fortschrittsbalken wird in der Senderliste angezeigt
+Sendername automatisch aktualisieren: 
+Die Senderliste wird bei geänderten Sendernamen oder ersetzten neuen Sendern automatisch korrigiert|
+Zeige Fortschrittsbalken in Senderliste: 
+Der Sendungs Fortschrittsbalken wird in der Senderliste angezeigt
 Animierte Menüs: verwende animierte Menüs
 Animationsgeschwindigkeit: bestimmt die Geschwindigkeit der animierten Menüs
 Nichtempfangbare Kanäle: Ausblendung von nicht empfangbaren Sendern in der Senderliste
@@ -31,10 +33,13 @@ Aufnahme Titel:	verändert die Standard Dateinamen der Aufnahmen
 Newsletter:	aktiviert / deaktiviert den Newsletter beim Systemstart
 Versteckte Dateien anzeigen?: Anzeige von versteckten Dateien und Ordnern im Dateiexplorer
 Expert Modus: aktiviert den Expert Modus um erweiterte Funktionen freizuschalten
-Benutze das Steuerkreuz für schnelles Umschalten und laut/leise: Die Tasten des Steuerkreuzes können zusätzlich zum Zappen und zur Lautstärken Regulierung verwendet werden
-Deaktiviere Crypt Support während der Wiedergabe von Daten/Streams:	Deaktiviert die Entschlüsselung durch CAM und Smartcard während ein Internet Stream oder eine Mediendatei abgespielt wird
+Benutze das Steuerkreuz für schnelles Umschalten und laut/leise: 
+Die Tasten des Steuerkreuzes können zusätzlich zum Zappen und zur Lautstärken Regulierung verwendet werden
+Deaktiviere Crypt Support während der Wiedergabe von Daten/Streams:	
+Deaktiviert die Entschlüsselung durch CAM und Smartcard während ein Internet Stream oder eine Mediendatei abgespielt wird
 Deaktiviere Mini TV: Deaktiviert das Mini Vorschaubild innerhalb der Menüs
-Wiedergabepuffer - Zeit bis zum automatischen Laden nach einer Suche: Zeitspanne nach einem Sprung, um den Wiedergabepuffer erneut zu füllen
+Wiedergabepuffer - Zeit bis zum automatischen Laden nach einer Suche: 
+Zeitspanne nach einem Sprung, um den Wiedergabepuffer erneut zu füllen
 Community User:	Benutzername für das AAF Forum
 Community Pass:	Passwort für das AAF Forum
 
