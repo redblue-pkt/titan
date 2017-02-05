@@ -463,7 +463,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 {
 	int i, sectionlength, programinfolength, esinfolength, ret = 0;
 	unsigned short pos, descriptortag, descriptorlength;
-	int isac3 = 0, isdts = 0, isaac = 0;
+	int isac3 = 0, isdts = 0, isaac = 0 isddp = 0;
 	int audiocodec = 0, videocodec = 0;
 	int firstaudiopid = -1, firstaudiocodec = -1, audiochange = 1;
 	int streamtype, pid, tsid, onid, pcrpid;
@@ -513,7 +513,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 		streamtype = (tmpbuf[0] & 0xff);
 		pid = ((tmpbuf[1] & 0x1F) << 8) | (tmpbuf[2] & 0xff);
 		esinfolength = ((tmpbuf[3] & 0x0F) << 8) | (tmpbuf[4] & 0xff);
-		isac3 = 0; isdts = 0; isaac = 0, audiocodec = 0, videocodec = 0;
+		isac3 = 0; isdts = 0; isaac = 0; isddp = 0, audiocodec = 0, videocodec = 0;
 		char langdesc[4] = "---";
 		int y = 0, descriptorcount = 0;
 		
@@ -562,6 +562,9 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 				case 0x7B:
 					isdts = 1;
 					break;
+//			case 0x??;  ToDo
+//				isddp = 1;
+//				break;
 				case 0x56: //teletext
 					for (y = 0; y < descriptorlength / 5; y++)
 					{
@@ -642,8 +645,9 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 			case 0xA1: // AC3 (0)
 			case 0x82: // DTS (2)
 			case 0xA2: // DTS (2)
-			//case 0x86: // DTS-HD
-			//case 0xA6: // DTS-HD
+			case 0x85: // DTS-HD HRA
+			case 0x86: // DTS-HD MA
+			case 0xA6: // DTS-HD
 			case 0x06:
 				if(descriptorcount == 0 && streamtype == 0x06 && prevaudio != NULL)
 				{
@@ -652,7 +656,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 				}
 				prevaudio = NULL;
 				//if(streamtype == 0x81) esInfo->stream_type = 0x6;
-				if(streamtype == 0x06 && !isac3 && !isdts && !isaac)
+				if(streamtype == 0x06 && !isac3 && !isdts && !isaac && !isddp)
 					continue;
 
 				if(streamtype == 0x06)
@@ -663,6 +667,8 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 						audiocodec = DTS;
 					else if(isaac)
 						audiocodec = AAC;
+					else if(isddp)
+						audiocodec = DDP;
 				}
 				else if(streamtype == 0x0F)
 					audiocodec = AAC;
@@ -674,6 +680,8 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 					audiocodec = AC3;
 				else if(streamtype == 0x82 || streamtype == 0xA2)
 					audiocodec = DTS;
+				else if(streamtype == 0x85 || (streamtype == 0x86 || streamtype == 0xA6)
+					audiocodec = DTSHD;
 				else
 					audiocodec = MPEGA;
 

@@ -154,6 +154,7 @@ struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid
 		case AC3: tmpstr = ostrcat(tmpstr, " (DOLBY DIGITAL)", 1, 0); break;
 		case MPEGA: tmpstr = ostrcat(tmpstr, " (STEREO)", 1, 0); break;
 		case DTS: tmpstr = ostrcat(tmpstr, " (DTS)", 1, 0); break;
+		case DTSHD: tmpstr = ostrcat(tmpstr, " (DTSHD)", 1, 0); break;
 		case LPCM: tmpstr = ostrcat(tmpstr, " (LPCM)", 1, 0); break;
 		case AAC: tmpstr = ostrcat(tmpstr, " (AAC)", 1, 0); break;
 		case AACHE: tmpstr = ostrcat(tmpstr, " (AACHE)", 1, 0); break;
