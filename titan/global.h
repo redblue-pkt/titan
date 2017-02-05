@@ -3694,6 +3694,81 @@ char* getaudiosourcechoices()
 	return value;
 }
 
+char* getac3pluschoices()
+{
+	char *ac3pluschoicesdev = NULL;
+	char *value = NULL;
+
+	ac3pluschoicesdev = getconfig("ac3pluschoicesdev", NULL);
+
+	if(ac3pluschoicesdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(ac3pluschoicesdev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = convertspacetolf(value);
+
+	return value;
+}
+
+char* getdtshdchoices()
+{
+	char *dtshdchoicesdev = NULL;
+	char *value = NULL;
+
+	dtshdchoicesdev = getconfig("dtshdchoicesdev", NULL);
+
+	if(dtshdchoicesdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(dtshdchoicesdev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = convertspacetolf(value);
+
+	return value;
+}
+
+char* getwmaprochoices()
+{
+	char *wmaprochoicesdev = NULL;
+	char *value = NULL;
+
+	wmaprochoicesdev = getconfig("wmaprochoicesdev", NULL);
+
+	if(wmaprochoicesdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(wmaprochoicesdev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = convertspacetolf(value);
+
+	return value;
+}
+
 char* getac3choices()
 {
 	char *ac3choicesdev = NULL;
@@ -3892,6 +3967,60 @@ char* getinput()
 	return value;
 }
 
+int setac3plus(char* value)
+{
+	char* ac3plusdev = NULL;
+	int ret = 0;
+
+	ac3plusdev = getconfig("ac3plusdev", NULL);
+
+	if(ac3plusdev != NULL && value != NULL)
+	{
+		debug(100, "set %s to %s", ac3plusdev, value);
+		ret = writesys(ac3plusdev, value, 0);
+		if(ret == 0) addconfig("av_ac3plusmode", value);
+		return ret;
+	}
+
+	return 0;
+}
+
+int setdtshd(char* value)
+{
+	char* dtshddev = NULL;
+	int ret = 0;
+
+	dtshddev = getconfig("dtshddev", NULL);
+
+	if(dtshddev != NULL && value != NULL)
+	{
+		debug(100, "set %s to %s", dtshddev, value);
+		ret = writesys(dtshddev, value, 0);
+		if(ret == 0) addconfig("av_dtshdmode", value);
+		return ret;
+	}
+
+	return 0;
+}
+
+int setwmapro(char* value)
+{
+	char* wmaprodev = NULL;
+	int ret = 0;
+
+	wmaprodev = getconfig("wmaprodev", NULL);
+
+	if(wmaprodev != NULL && value != NULL)
+	{
+		debug(100, "set %s to %s", wmaprodev, value);
+		ret = writesys(wmaprodev, value, 0);
+		if(ret == 0) addconfig("av_wmapromode", value);
+		return ret;
+	}
+
+	return 0;
+}
+
 int setac3(char* value)
 {
 	char* ac3dev = NULL;
@@ -3954,6 +4083,75 @@ int setwss(char* value)
 	}
 
 	return 0;
+}
+
+char* getac3plus()
+{
+	char *ac3plusdev = NULL;
+	char *value = NULL;
+
+	ac3plusdev = getconfig("ac3plusdev", NULL);
+
+	if(ac3plusdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(ac3plusdev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	return value;
+}
+
+char* getdtshd()
+{
+	char *dtshddev = NULL;
+	char *value = NULL;
+
+	dtshddev = getconfig("dtshddev", NULL);
+
+	if(dtshddev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(dtshddev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	return value;
+}
+
+char* getwmapro()
+{
+	char *wmaprodev = NULL;
+	char *value = NULL;
+
+	wmaprodev = getconfig("wmaprodev", NULL);
+
+	if(wmaprodev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(wmaprodev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	return value;
 }
 
 char* getac3()
