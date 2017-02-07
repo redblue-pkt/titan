@@ -275,17 +275,17 @@ msgstr ""
 msgid "16 Bit Scale 200 Percent"
 msgstr ""
 
-#: global.h:1983 global.h:1994 global.h:4134 global.h:4175 global.h:4234
+#: global.h:1983 global.h:1994 global.h:4332 global.h:4373 global.h:4432
 #: videomode.h:20
 msgid "16:9_set_bestfit_to_policy_show_justscale"
 msgstr ""
 
-#: global.h:1984 global.h:1985 global.h:4136 global.h:4180 global.h:4240
+#: global.h:1984 global.h:1985 global.h:4334 global.h:4378 global.h:4438
 #: videomode.h:21
 msgid "16:9_set_letterbox_to_policy_show_panscan"
 msgstr ""
 
-#: global.h:1986 global.h:1987 global.h:4138 global.h:4185 global.h:4246
+#: global.h:1986 global.h:1987 global.h:4336 global.h:4383 global.h:4444
 #: videomode.h:22
 msgid "16:9_set_panscan_to_policy_show_pillarbox"
 msgstr ""
@@ -434,17 +434,17 @@ msgstr ""
 msgid "4 sec"
 msgstr ""
 
-#: global.h:1988 global.h:1989 global.h:4140 global.h:4196 global.h:4252
+#: global.h:1988 global.h:1989 global.h:4338 global.h:4394 global.h:4450
 #: videomode.h:23
 msgid "4:3_set_bestfit_to_policy2_show_justscale"
 msgstr ""
 
-#: global.h:1990 global.h:1991 global.h:4142 global.h:4201 global.h:4259
+#: global.h:1990 global.h:1991 global.h:4340 global.h:4399 global.h:4457
 #: videomode.h:24
 msgid "4:3_set_letterbox_to_policy2_show_letterbox"
 msgstr ""
 
-#: global.h:1992 global.h:1993 global.h:4144 global.h:4206 global.h:4266
+#: global.h:1992 global.h:1993 global.h:4342 global.h:4404 global.h:4464
 #: videomode.h:25
 msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr ""
@@ -945,7 +945,7 @@ msgstr "App verhaal"
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
-#: global.h:6283
+#: global.h:6481
 msgid "April"
 msgstr ""
 
@@ -1109,7 +1109,7 @@ msgstr ""
 msgid "Audio/Subt."
 msgstr ""
 
-#: global.h:6287
+#: global.h:6485
 msgid "August"
 msgstr ""
 
@@ -1322,11 +1322,11 @@ msgstr "Backup - Instellingen"
 msgid "Backup / Restore Settings"
 msgstr "Backup instellingen"
 
-#: global.h:7379 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
+#: global.h:7577 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Backup gelukt"
 
-#: global.h:7381
+#: global.h:7579
 msgid "Backup ended with error"
 msgstr ""
 
@@ -2435,19 +2435,19 @@ msgstr ""
 msgid "Create Satellites/Provider"
 msgstr ""
 
-#: global.h:6692
+#: global.h:6890
 msgid "Create Satellites/Provider (All)"
 msgstr ""
 
-#: global.h:6690
+#: global.h:6888
 msgid "Create Satellites/Provider (Cable)"
 msgstr ""
 
-#: global.h:6689
+#: global.h:6887
 msgid "Create Satellites/Provider (Sat)"
 msgstr ""
 
-#: global.h:6691
+#: global.h:6889
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
@@ -2678,7 +2678,7 @@ msgstr ""
 msgid "Debuglevel"
 msgstr ""
 
-#: global.h:6291
+#: global.h:6489
 msgid "December"
 msgstr ""
 
@@ -3114,7 +3114,7 @@ msgstr ""
 "ERROR\n"
 "partitie kan niet gemaakt worden"
 
-#: global.h:6033 keyactions.h:205
+#: global.h:6231 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr "Fout, resolutie kan niet worden vastgesteld."
 
@@ -3153,10 +3153,10 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
-#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6033
-#: global.h:6824 global.h:6843 global.h:7244 global.h:7264 global.h:7284
-#: global.h:7304 global.h:7324 global.h:7656 global.h:7661 global.h:7673
-#: global.h:7678 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6231
+#: global.h:7022 global.h:7041 global.h:7442 global.h:7462 global.h:7482
+#: global.h:7502 global.h:7522 global.h:7854 global.h:7859 global.h:7871
+#: global.h:7876 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
@@ -3408,11 +3408,11 @@ msgstr ""
 "Fout, gevonden zoek resultaat heeft geen IMDBid en kan daardoor niet\n"
 "in de MediaDB opgeslagen worden"
 
-#: global.h:6841
+#: global.h:7039
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6819
+#: global.h:7017
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
@@ -3680,7 +3680,7 @@ msgstr "Favorieten"
 msgid "Favorites"
 msgstr ""
 
-#: global.h:6281
+#: global.h:6479
 msgid "February"
 msgstr ""
 
@@ -3929,14 +3929,14 @@ msgstr ""
 "Nieuwe USB stick/hardeschijf gevonden.\n"
 "U kunt deze in het hardeschijf menu instellen."
 
-#: global.h:7678
+#: global.h:7876
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7656 global.h:7673
+#: global.h:7854 global.h:7871
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3944,7 +3944,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7661
+#: global.h:7859
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3996,11 +3996,11 @@ msgstr ""
 msgid "Frequency:"
 msgstr ""
 
-#: global.h:6299
+#: global.h:6497
 msgid "Fri"
 msgstr ""
 
-#: global.h:6264 global.h:6274 rectimer.h:1104 skin_default_skin.xml.h:226
+#: global.h:6462 global.h:6472 rectimer.h:1104 skin_default_skin.xml.h:226
 msgid "Friday"
 msgstr "Vrijdag"
 
@@ -4845,7 +4845,7 @@ msgstr ""
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: global.h:6694
+#: global.h:6892
 msgid "Import mode"
 msgstr ""
 
@@ -5085,11 +5085,11 @@ msgstr ""
 msgid "J"
 msgstr ""
 
-#: global.h:6280
+#: global.h:6478
 msgid "January"
 msgstr ""
 
-#: global.h:6286
+#: global.h:6484
 msgid "July"
 msgstr ""
 
@@ -5102,7 +5102,7 @@ msgstr "Spring"
 msgid "Jump To (min)"
 msgstr "Spring naar (min)"
 
-#: global.h:6285
+#: global.h:6483
 msgid "June"
 msgstr ""
 
@@ -5633,7 +5633,7 @@ msgstr ""
 msgid "Manual Search Terrestrial"
 msgstr ""
 
-#: global.h:6282
+#: global.h:6480
 msgid "March"
 msgstr ""
 
@@ -5673,7 +5673,7 @@ msgstr ""
 msgid "Maximal signalrate"
 msgstr ""
 
-#: global.h:6284
+#: global.h:6482
 msgid "May"
 msgstr ""
 
@@ -5866,11 +5866,11 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
-#: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6033 global.h:6754
-#: global.h:6824 global.h:6843 global.h:7244 global.h:7252 global.h:7264
-#: global.h:7272 global.h:7284 global.h:7292 global.h:7304 global.h:7312
-#: global.h:7324 global.h:7332 global.h:7656 global.h:7661 global.h:7673
-#: global.h:7678 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6231 global.h:6952
+#: global.h:7022 global.h:7041 global.h:7442 global.h:7450 global.h:7462
+#: global.h:7470 global.h:7482 global.h:7490 global.h:7502 global.h:7510
+#: global.h:7522 global.h:7530 global.h:7854 global.h:7859 global.h:7871
+#: global.h:7876 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
 #: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
@@ -6013,11 +6013,11 @@ msgstr ""
 msgid "Module Type"
 msgstr "Module soort"
 
-#: global.h:6295
+#: global.h:6493
 msgid "Mon"
 msgstr ""
 
-#: global.h:6260 global.h:6270 rectimer.h:1100 skin_default_skin.xml.h:379
+#: global.h:6458 global.h:6468 rectimer.h:1100 skin_default_skin.xml.h:379
 msgid "Monday"
 msgstr "Maandag"
 
@@ -6113,7 +6113,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "Multi service"
 
-#: global.h:6639
+#: global.h:6837
 msgid "Multituner adjustable"
 msgstr ""
 
@@ -6418,7 +6418,7 @@ msgstr "Niet gebruikte instellingen"
 msgid "Note created"
 msgstr "Notitie gemaakt"
 
-#: global.h:6290
+#: global.h:6488
 msgid "November"
 msgstr ""
 
@@ -6456,11 +6456,11 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
-#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6033
-#: global.h:6754 global.h:6824 global.h:6843 global.h:7244 global.h:7252
-#: global.h:7264 global.h:7272 global.h:7284 global.h:7292 global.h:7304
-#: global.h:7312 global.h:7324 global.h:7332 global.h:7656 global.h:7661
-#: global.h:7673 global.h:7678 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6231
+#: global.h:6952 global.h:7022 global.h:7041 global.h:7442 global.h:7450
+#: global.h:7462 global.h:7470 global.h:7482 global.h:7490 global.h:7502
+#: global.h:7510 global.h:7522 global.h:7530 global.h:7854 global.h:7859
+#: global.h:7871 global.h:7876 harddisk.h:355 harddisk.h:487 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -6610,7 +6610,7 @@ msgstr ""
 msgid "OTHER"
 msgstr "Anders"
 
-#: global.h:6289
+#: global.h:6487
 msgid "October"
 msgstr ""
 
@@ -7323,7 +7323,7 @@ msgstr ""
 msgid "Present"
 msgstr "Aanwezig"
 
-#: global.h:7391 system_backup_restore.h:15
+#: global.h:7589 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -8263,7 +8263,7 @@ msgstr ""
 msgid "Samsung SPF.. Settings"
 msgstr ""
 
-#: global.h:6300
+#: global.h:6498
 msgid "Sat"
 msgstr "Satellieten"
 
@@ -8335,7 +8335,7 @@ msgstr "Satelliet keuze"
 msgid "Satellite"
 msgstr ""
 
-#: global.h:6754
+#: global.h:6952
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and\n"
@@ -8354,7 +8354,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: global.h:6265 global.h:6275 rectimer.h:1105 skin_default_skin.xml.h:531
+#: global.h:6463 global.h:6473 rectimer.h:1105 skin_default_skin.xml.h:531
 msgid "Saturday"
 msgstr "Zaterdag"
 
@@ -8803,7 +8803,7 @@ msgstr ""
 msgid "Send remote box into standby ?"
 msgstr "Zet remote box in standby?"
 
-#: global.h:6288
+#: global.h:6486
 msgid "September"
 msgstr ""
 
@@ -9313,23 +9313,23 @@ msgstr ""
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7244
+#: global.h:7442
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7264
+#: global.h:7462
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7304
+#: global.h:7502
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7284
+#: global.h:7482
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7324
+#: global.h:7522
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9512,11 +9512,11 @@ msgstr ""
 msgid "Sudoku Help"
 msgstr ""
 
-#: global.h:6301
+#: global.h:6499
 msgid "Sun"
 msgstr ""
 
-#: global.h:6266 global.h:6276 rectimer.h:1106 skin_default_skin.xml.h:625
+#: global.h:6464 global.h:6474 rectimer.h:1106 skin_default_skin.xml.h:625
 msgid "Sunday"
 msgstr "Zondag"
 
@@ -9796,7 +9796,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7344
+#: global.h:7542
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9907,7 +9907,7 @@ msgstr ""
 msgid "Thriller"
 msgstr ""
 
-#: global.h:6298
+#: global.h:6496
 msgid "Thu"
 msgstr ""
 
@@ -9915,7 +9915,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6263 global.h:6273 rectimer.h:1103 skin_default_skin.xml.h:647
+#: global.h:6461 global.h:6471 rectimer.h:1103 skin_default_skin.xml.h:647
 msgid "Thursday"
 msgstr "Donderdag"
 
@@ -10096,7 +10096,7 @@ msgid "Titan MediaCenter"
 msgstr ""
 
 #: extensions.h:272 extensions.h:332 extensions.h:431 extensions.h:470
-#: global.h:7252 global.h:7272 global.h:7292 global.h:7312 global.h:7332
+#: global.h:7450 global.h:7470 global.h:7490 global.h:7510 global.h:7530
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
 msgid "Titan will be restarted!"
@@ -10370,11 +10370,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr ""
 
-#: global.h:6296
+#: global.h:6494
 msgid "Tue"
 msgstr ""
 
-#: global.h:6261 global.h:6271 rectimer.h:1101 skin_default_skin.xml.h:683
+#: global.h:6459 global.h:6469 rectimer.h:1101 skin_default_skin.xml.h:683
 msgid "Tuesday"
 msgstr "Dinsdag"
 
@@ -10386,7 +10386,7 @@ msgstr "Afstemmen op kanaal is niet gelukt"
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6630
+#: global.h:6828
 msgid "Tuner "
 msgstr ""
 
@@ -10942,11 +10942,11 @@ msgstr ""
 msgid "Webbrowser Plugin"
 msgstr ""
 
-#: global.h:6297
+#: global.h:6495
 msgid "Wed"
 msgstr ""
 
-#: global.h:6262 global.h:6272 rectimer.h:1102 skin_default_skin.xml.h:732
+#: global.h:6460 global.h:6470 rectimer.h:1102 skin_default_skin.xml.h:732
 msgid "Wednesday"
 msgstr "Woensdag"
 
