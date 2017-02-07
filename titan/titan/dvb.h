@@ -463,7 +463,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 {
 	int i, sectionlength, programinfolength, esinfolength, ret = 0;
 	unsigned short pos, descriptortag, descriptorlength;
-	int isac3 = 0, isdts = 0, isaac = 0 isddp = 0;
+	int isac3 = 0, isdts = 0, isaac = 0, isddp = 0;
 	int audiocodec = 0, videocodec = 0;
 	int firstaudiopid = -1, firstaudiocodec = -1, audiochange = 1;
 	int streamtype, pid, tsid, onid, pcrpid;
@@ -680,7 +680,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 					audiocodec = AC3;
 				else if(streamtype == 0x82 || streamtype == 0xA2)
 					audiocodec = DTS;
-				else if(streamtype == 0x85 || (streamtype == 0x86 || streamtype == 0xA6)
+				else if(streamtype == 0x85 || streamtype == 0x86 || streamtype == 0xA6)
 					audiocodec = DTSHD;
 				else
 					audiocodec = MPEGA;
