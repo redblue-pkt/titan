@@ -1,1 +1,4 @@
-Here you can set for your satellite tuner. First, make your satellite selection. When using DiSEqC They also point to the port used. For advanced Lnb / Unicam navigate to the field and press the Red button.
+Hier können Sie Ihren Satelliten-Tuner einstellen. 
+Bitte stellen Sie zuerst Ihre Satellitenauswahl ein. 
+Bei der Verwendung von DiSEqC, stellen Sie den verwendeten Port ein. 
+Für Fortgeschrittene Lnb / Unicam, bitte navigieren Sie zu dem Feld und drücken Sie die rote Taste zur Einstellung.
