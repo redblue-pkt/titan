@@ -1,1 +1,3 @@
-Here you can set your Channel search options. Very important, before you start looking for a channel must be set to its tuner tuner settings.
+Hier können Sie Ihre Kanalsuchoptionen einstellen. 
+Sehr wichtig, bevor Sie nach einem Kanal suchen,
+müssen die Tuner-Einstellungen vorgenommen werden.
