@@ -1,1 +1,2 @@
-Auswahl der Audiospur
+Auswahl der Audiospur (Qualität,Sprache)
+Eine einzelne Tonspur einer Tonaufnahme.
