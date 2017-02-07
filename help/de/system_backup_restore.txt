@@ -1,1 +1,1 @@
-Here you can backup and restore your settings.
+Hier können Sie Ihre Einstellungen sichern und wiederherstellen.
