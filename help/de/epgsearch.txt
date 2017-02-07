@@ -1,1 +1,2 @@
-Here you can in your EPG entries for specific search. Use to start a color button to search.
+Hier können Sie EPG-Einträge für eine bestimmte Suche festlegen.
+Verwenden Sie zum Starten eine Farbtaste, um zu suchen.
