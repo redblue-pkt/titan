@@ -625,6 +625,20 @@ int main(int argc, char *argv[])
 	ret = setcolorformat(getconfig("av_colorformatscart", NULL), 1);
 	ret = setaudiosource(getconfig("av_audiosource", NULL));
 	ret = setac3(getconfig("av_ac3mode", NULL));
+
+	if(checkbox("DM900") == 1)
+	{
+		if(getconfig("av_ac3plusmode", NULL) == NULL)
+			addconfig("av_ac3plusmode", "use_hdmi_caps");
+		if(getconfig("av_dtshdmode", NULL) == NULL)
+			addconfig("av_dtshdmode", "use_hdmi_caps");
+		if(getconfig("av_wmapromode", NULL) == NULL)
+			addconfig("av_wmapromode", "downmix");
+		ret = setac3plus(getconfig("av_ac3plusmode", NULL));
+		ret = setdtshd(getconfig("av_dtshdmode", NULL));
+		ret = setwmapro(getconfig("av_wmapromode", NULL));
+	}
+		
 #ifdef MIPSEL
 	ret = setaac(getconfig("av_aacmode", NULL));
 	ret = setwss(getconfig("av_wssmode", NULL));

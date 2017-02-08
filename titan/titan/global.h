@@ -3703,8 +3703,8 @@ char* getac3pluschoices()
 
 	if(ac3pluschoicesdev == NULL)
 	{
-		err("NULL detect");
-		return NULL;
+		addconfig("ac3pluschoicesdev", "/proc/stb/audio/ac3plus_choices");
+		ac3pluschoicesdev = getconfig("ac3pluschoicesdev", NULL);
 	}
 
 	value = readsys(ac3pluschoicesdev, 1);
@@ -3728,8 +3728,8 @@ char* getdtshdchoices()
 
 	if(dtshdchoicesdev == NULL)
 	{
-		err("NULL detect");
-		return NULL;
+		addconfig("dtshdchoicesdev", "/proc/stb/audio/dtshd_choices");
+		dtshdchoicesdev = getconfig("dtshdchoicesdev", NULL);
 	}
 
 	value = readsys(dtshdchoicesdev, 1);
@@ -3753,8 +3753,8 @@ char* getwmaprochoices()
 
 	if(wmaprochoicesdev == NULL)
 	{
-		err("NULL detect");
-		return NULL;
+		addconfig("wmaprochoicesdev", "/proc/stb/audio/wmapro_choices");
+		wmaprochoicesdev = getconfig("wmaprochoicesdev", NULL);
 	}
 
 	value = readsys(wmaprochoicesdev, 1);
@@ -3973,6 +3973,11 @@ int setac3plus(char* value)
 	int ret = 0;
 
 	ac3plusdev = getconfig("ac3plusdev", NULL);
+	if(ac3plusdev == NULL)
+	{	
+		addconfig("ac3plusdev", "/proc/stb/audio/ac3plus");
+		ac3plusdev = getconfig("ac3plusdev", NULL);
+	}
 
 	if(ac3plusdev != NULL && value != NULL)
 	{
@@ -3991,6 +3996,11 @@ int setdtshd(char* value)
 	int ret = 0;
 
 	dtshddev = getconfig("dtshddev", NULL);
+	if(dtshddev == NULL)
+	{	
+		addconfig("dtshddev", "/proc/stb/audio/dtshd");
+		dtshddev = getconfig("dtshddev", NULL);
+	}
 
 	if(dtshddev != NULL && value != NULL)
 	{
@@ -4009,6 +4019,11 @@ int setwmapro(char* value)
 	int ret = 0;
 
 	wmaprodev = getconfig("wmaprodev", NULL);
+	if(wmaprodev == NULL)
+	{	
+		addconfig("wmaprodev", "/proc/stb/audio/wmapro");
+		wmaprodev = getconfig("wmaprodev", NULL);
+	}
 
 	if(wmaprodev != NULL && value != NULL)
 	{
