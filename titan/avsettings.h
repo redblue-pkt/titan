@@ -23,6 +23,9 @@ void screenavsettings(int flag)
 	struct skin* ac3default = getscreennode(avsettings, "ac3default");
 	struct skin* ac3mode = getscreennode(avsettings, "ac3mode");
 	struct skin* aacmode = getscreennode(avsettings, "aacmode");
+	struct skin* ac3plusmode = getscreennode(avsettings, "ac3plusmode");
+	struct skin* dtshdmode = getscreennode(avsettings, "dtshdmode");
+	struct skin* wmapromode = getscreennode(avsettings, "wmapromode");
 	struct skin* wssmode = getscreennode(avsettings, "wssmode");
 	struct skin* volautochangevalue = getscreennode(avsettings, "volautochangevalue");
 	struct skin* mode3d = getscreennode(avsettings, "mode3d");
@@ -176,11 +179,45 @@ void screenavsettings(int flag)
 	ret = getaac();
 	setchoiceboxselection(aacmode, ret);
 	free(ret); ret = NULL;
-
+	
+	if(checkbox("DM900") == 1 && ac3plusmode != NULL)
+	{
+		ac3plusmode->hidden = NO;
+		dtshdmode->hidden = NO;
+		wmapromode->hidden = NO;
+		
+		ret = getac3pluschoices();
+		changeinput(ac3plusmode, ret);
+		free(ret); ret = NULL;
+		ret = getac3plus();
+		setchoiceboxselection(ac3plusmode, ret);
+		free(ret); ret = NULL;
+		
+		ret = getdtshdchoices();
+		changeinput(dtshdmode, ret);
+		free(ret); ret = NULL;
+		ret = getdtshd();
+		setchoiceboxselection(dtshdmode, ret);
+		free(ret); ret = NULL;
+		
+		ret = getwmaprochoices();
+		changeinput(wmapromode, ret);
+		free(ret); ret = NULL;
+		ret = getwmapro();
+		setchoiceboxselection(wmapromode, ret);
+		free(ret); ret = NULL;
+	}
+	else
+	{
+		ac3plusmode->hidden = YES;
+		dtshdmode->hidden = YES;
+		wmapromode->hidden = YES;
+	}
 #ifdef SH4
 		aacmode->hidden = YES;
 #endif
 
+	
 	ret = getwsschoices();
 	changeinput(wssmode, ret);
 	free(ret); ret = NULL;
@@ -415,6 +452,27 @@ void screenavsettings(int flag)
 				ret = getaac();
 				if(ostrcmp(ret, aacmode->ret) != 0)
 					setaac(aacmode->ret); 
+				free(ret); ret = NULL;
+			}
+			if(ac3plusmode->ret != NULL)
+			{
+				ret = getac3plus();
+				if(ostrcmp(ret, ac3plusmode->ret) != 0)
+					setaac(ac3plusmode->ret); 
+				free(ret); ret = NULL;
+			}
+			if(dtshdmode->ret != NULL)
+			{
+				ret = getdtshd();
+				if(ostrcmp(ret, dtshdmode->ret) != 0)
+					setaac(dtshdmode->ret); 
+				free(ret); ret = NULL;
+			}
+			if(wmapromode->ret != NULL)
+			{
+				ret = getwmapro();
+				if(ostrcmp(ret, wmapromode->ret) != 0)
+					setaac(wmapromode->ret); 
 				free(ret); ret = NULL;
 			}
 			if(wssmode->ret != NULL)
