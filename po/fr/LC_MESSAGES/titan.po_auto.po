@@ -147,13 +147,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1245
+#: titan.c:1259
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1228
+#: titan.c:1242
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -234,7 +234,7 @@ msgstr ""
 msgid "10 min"
 msgstr ""
 
-#: avsettings.h:84
+#: avsettings.h:87
 msgid "10 sec"
 msgstr ""
 
@@ -271,17 +271,17 @@ msgstr ""
 msgid "16 Bit Scale 200 Percent"
 msgstr ""
 
-#: global.h:1983 global.h:1994 global.h:4332 global.h:4373 global.h:4432
+#: global.h:1983 global.h:1994 global.h:4347 global.h:4388 global.h:4447
 #: videomode.h:20
 msgid "16:9_set_bestfit_to_policy_show_justscale"
 msgstr ""
 
-#: global.h:1984 global.h:1985 global.h:4334 global.h:4378 global.h:4438
+#: global.h:1984 global.h:1985 global.h:4349 global.h:4393 global.h:4453
 #: videomode.h:21
 msgid "16:9_set_letterbox_to_policy_show_panscan"
 msgstr ""
 
-#: global.h:1986 global.h:1987 global.h:4336 global.h:4383 global.h:4444
+#: global.h:1986 global.h:1987 global.h:4351 global.h:4398 global.h:4459
 #: videomode.h:22
 msgid "16:9_set_panscan_to_policy_show_pillarbox"
 msgstr ""
@@ -326,7 +326,7 @@ msgstr ""
 msgid "2 Khz"
 msgstr ""
 
-#: adjust.h:122 avsettings.h:80 httpdfunc.h:4132
+#: adjust.h:122 avsettings.h:83 httpdfunc.h:4132
 msgid "2 sec"
 msgstr ""
 
@@ -426,21 +426,21 @@ msgstr ""
 msgid "4 GB"
 msgstr ""
 
-#: avsettings.h:81
+#: avsettings.h:84
 msgid "4 sec"
 msgstr ""
 
-#: global.h:1988 global.h:1989 global.h:4338 global.h:4394 global.h:4450
+#: global.h:1988 global.h:1989 global.h:4353 global.h:4409 global.h:4465
 #: videomode.h:23
 msgid "4:3_set_bestfit_to_policy2_show_justscale"
 msgstr ""
 
-#: global.h:1990 global.h:1991 global.h:4340 global.h:4399 global.h:4457
+#: global.h:1990 global.h:1991 global.h:4355 global.h:4414 global.h:4472
 #: videomode.h:24
 msgid "4:3_set_letterbox_to_policy2_show_letterbox"
 msgstr ""
 
-#: global.h:1992 global.h:1993 global.h:4342 global.h:4404 global.h:4464
+#: global.h:1992 global.h:1993 global.h:4357 global.h:4419 global.h:4479
 #: videomode.h:25
 msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr ""
@@ -506,7 +506,7 @@ msgstr ""
 msgid "6 Mhz"
 msgstr ""
 
-#: avsettings.h:82
+#: avsettings.h:85
 msgid "6 sec"
 msgstr ""
 
@@ -569,7 +569,7 @@ msgstr ""
 msgid "8 Mhz"
 msgstr ""
 
-#: avsettings.h:83
+#: avsettings.h:86
 msgid "8 sec"
 msgstr ""
 
@@ -938,7 +938,7 @@ msgstr ""
 msgid "Apple Trailer"
 msgstr ""
 
-#: global.h:6481
+#: global.h:6496
 msgid "April"
 msgstr ""
 
@@ -1091,7 +1091,7 @@ msgstr ""
 msgid "Audio/Subt."
 msgstr "AUDIO/soustitre."
 
-#: global.h:6485
+#: global.h:6500
 msgid "August"
 msgstr ""
 
@@ -1151,7 +1151,7 @@ msgstr "RechercheAutomatique"
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1306
+#: titan.c:1320
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -1304,11 +1304,11 @@ msgstr "Sauvegarde/Restauration "
 msgid "Backup / Restore Settings"
 msgstr "Sauvegarde/Restauration "
 
-#: global.h:7577 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
+#: global.h:7592 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr ""
 
-#: global.h:7579
+#: global.h:7594
 msgid "Backup ended with error"
 msgstr ""
 
@@ -2107,7 +2107,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:1003
+#: titan.c:1017
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -2400,19 +2400,19 @@ msgstr ""
 msgid "Create Satellites/Provider"
 msgstr ""
 
-#: global.h:6890
+#: global.h:6905
 msgid "Create Satellites/Provider (All)"
 msgstr ""
 
-#: global.h:6888
+#: global.h:6903
 msgid "Create Satellites/Provider (Cable)"
 msgstr ""
 
-#: global.h:6887
+#: global.h:6902
 msgid "Create Satellites/Provider (Sat)"
 msgstr ""
 
-#: global.h:6889
+#: global.h:6904
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
@@ -2639,7 +2639,7 @@ msgstr ""
 msgid "Debuglevel"
 msgstr ""
 
-#: global.h:6489
+#: global.h:6504
 msgid "December"
 msgstr ""
 
@@ -3063,7 +3063,7 @@ msgid ""
 "partition could not be created"
 msgstr ""
 
-#: global.h:6231 keyactions.h:205
+#: global.h:6246 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -3087,7 +3087,7 @@ msgstr "ERREUR.. Autotimer terminé sans succès "
 msgid "ERROR... can't set marker in this file"
 msgstr ""
 
-#: about.h:9 amazon.h:760 avsettings.h:331 betarobot.h:57 bgdownload.h:176
+#: about.h:9 amazon.h:760 avsettings.h:368 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:960 channellist.h:962 channellist.h:967
 #: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
@@ -3102,10 +3102,10 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
-#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6231
-#: global.h:7022 global.h:7041 global.h:7442 global.h:7462 global.h:7482
-#: global.h:7502 global.h:7522 global.h:7854 global.h:7859 global.h:7871
-#: global.h:7876 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6246
+#: global.h:7037 global.h:7056 global.h:7457 global.h:7477 global.h:7497
+#: global.h:7517 global.h:7537 global.h:7869 global.h:7874 global.h:7886
+#: global.h:7891 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
@@ -3181,8 +3181,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:252 system_update.h:258
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:1063 titan.c:1072 titan.c:1201
-#: titan.c:1222 titan.c:1228 titan.c:1239 titan.c:1245 tithek.c:103
+#: timeshiftsettings.h:45 titan.c:282 titan.c:1077 titan.c:1086 titan.c:1215
+#: titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259 tithek.c:103
 #: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1707
 #: tithek.h:1729 tithek.h:1746 tithek.h:1978 tithek.h:2138 tithek.h:2423
 #: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
@@ -3353,35 +3353,35 @@ msgstr ""
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
 
-#: global.h:7039
+#: global.h:7054
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:7017
+#: global.h:7032
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: titan.c:869
+#: titan.c:883
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:857
+#: titan.c:871
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:851
+#: titan.c:865
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:863
+#: titan.c:877
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:845
+#: titan.c:859
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:892
+#: titan.c:906
 msgid "Error: skin not found !!"
 msgstr ""
 
@@ -3623,7 +3623,7 @@ msgstr ""
 msgid "Favorites"
 msgstr ""
 
-#: global.h:6479
+#: global.h:6494
 msgid "February"
 msgstr ""
 
@@ -3702,7 +3702,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1063
+#: titan.c:1077
 msgid "First Wizzard"
 msgstr "Réglages assisté"
 
@@ -3861,14 +3861,14 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr ""
 
-#: global.h:7876
+#: global.h:7891
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7854 global.h:7871
+#: global.h:7869 global.h:7886
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3876,7 +3876,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7859
+#: global.h:7874
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3900,13 +3900,13 @@ msgstr "Taux Maximale"
 msgid "Free Space"
 msgstr "Esapce Libre"
 
-#: titan.c:1239
+#: titan.c:1253
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1222
+#: titan.c:1236
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -3924,11 +3924,11 @@ msgstr "Fréquence"
 msgid "Frequency:"
 msgstr "Fréquence:"
 
-#: global.h:6497
+#: global.h:6512
 msgid "Fri"
 msgstr ""
 
-#: global.h:6462 global.h:6472 rectimer.h:1104 skin_default_skin.xml.h:226
+#: global.h:6477 global.h:6487 rectimer.h:1104 skin_default_skin.xml.h:226
 msgid "Friday"
 msgstr "Vendredi"
 
@@ -4766,7 +4766,7 @@ msgstr ""
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: global.h:6892
+#: global.h:6907
 msgid "Import mode"
 msgstr ""
 
@@ -4775,7 +4775,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1072 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1086 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -4992,7 +4992,7 @@ msgstr ""
 msgid "Ipad Stream"
 msgstr ""
 
-#: avsettings.h:331 videomode.h:67
+#: avsettings.h:368 videomode.h:67
 msgid "Is this Videomode ok ?"
 msgstr "mode vidéo est correcte?"
 
@@ -5004,11 +5004,11 @@ msgstr "Italiano"
 msgid "J"
 msgstr ""
 
-#: global.h:6478
+#: global.h:6493
 msgid "January"
 msgstr ""
 
-#: global.h:6484
+#: global.h:6499
 msgid "July"
 msgstr ""
 
@@ -5021,7 +5021,7 @@ msgstr ""
 msgid "Jump To (min)"
 msgstr ""
 
-#: global.h:6483
+#: global.h:6498
 msgid "June"
 msgstr ""
 
@@ -5552,7 +5552,7 @@ msgstr "Recharche Manuelle Câble "
 msgid "Manual Search Terrestrial"
 msgstr "Recharche Manuelle Terr."
 
-#: global.h:6480
+#: global.h:6495
 msgid "March"
 msgstr ""
 
@@ -5592,7 +5592,7 @@ msgstr "Teste fréquence"
 msgid "Maximal signalrate"
 msgstr ""
 
-#: global.h:6482
+#: global.h:6497
 msgid "May"
 msgstr ""
 
@@ -5768,7 +5768,7 @@ msgstr ""
 msgid "Menulist"
 msgstr "Liste de Menu"
 
-#: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:331 betarobot.h:57
+#: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:368 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:960
 #: channellist.h:962 channellist.h:967 channellist.h:969 channellist.h:1053
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
@@ -5781,11 +5781,11 @@ msgstr "Liste de Menu"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
-#: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6231 global.h:6952
-#: global.h:7022 global.h:7041 global.h:7442 global.h:7450 global.h:7462
-#: global.h:7470 global.h:7482 global.h:7490 global.h:7502 global.h:7510
-#: global.h:7522 global.h:7530 global.h:7854 global.h:7859 global.h:7871
-#: global.h:7876 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6246 global.h:6967
+#: global.h:7037 global.h:7056 global.h:7457 global.h:7465 global.h:7477
+#: global.h:7485 global.h:7497 global.h:7505 global.h:7517 global.h:7525
+#: global.h:7537 global.h:7545 global.h:7869 global.h:7874 global.h:7886
+#: global.h:7891 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
 #: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
@@ -5844,7 +5844,7 @@ msgstr "Liste de Menu"
 #: system_update.h:258 system_update.h:268 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:1201 titan.c:1222 titan.c:1228 titan.c:1239 titan.c:1245
+#: titan.c:1215 titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259
 #: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368
 #: tithek.h:1707 tithek.h:1729 tithek.h:1978 tithek.h:2138 tithek.h:2423
 #: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
@@ -5928,11 +5928,11 @@ msgstr "Configuration Module"
 msgid "Module Type"
 msgstr "Module"
 
-#: global.h:6493
+#: global.h:6508
 msgid "Mon"
 msgstr ""
 
-#: global.h:6458 global.h:6468 rectimer.h:1100 skin_default_skin.xml.h:379
+#: global.h:6473 global.h:6483 rectimer.h:1100 skin_default_skin.xml.h:379
 msgid "Monday"
 msgstr "Lundi"
 
@@ -6028,7 +6028,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "Service"
 
-#: global.h:6837
+#: global.h:6852
 msgid "Multituner adjustable"
 msgstr ""
 
@@ -6326,7 +6326,7 @@ msgstr ""
 msgid "Note created"
 msgstr ""
 
-#: global.h:6488
+#: global.h:6503
 msgid "November"
 msgstr ""
 
@@ -6348,7 +6348,7 @@ msgstr "Ö"
 
 #: about.h:9 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
-#: avsettings.h:331 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
+#: avsettings.h:368 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:960 channellist.h:962 channellist.h:967
 #: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
@@ -6364,11 +6364,11 @@ msgstr "Ö"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
-#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6231
-#: global.h:6952 global.h:7022 global.h:7041 global.h:7442 global.h:7450
-#: global.h:7462 global.h:7470 global.h:7482 global.h:7490 global.h:7502
-#: global.h:7510 global.h:7522 global.h:7530 global.h:7854 global.h:7859
-#: global.h:7871 global.h:7876 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6246
+#: global.h:6967 global.h:7037 global.h:7056 global.h:7457 global.h:7465
+#: global.h:7477 global.h:7485 global.h:7497 global.h:7505 global.h:7517
+#: global.h:7525 global.h:7537 global.h:7545 global.h:7869 global.h:7874
+#: global.h:7886 global.h:7891 harddisk.h:355 harddisk.h:487 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -6444,8 +6444,8 @@ msgstr "Ö"
 #: system_update.h:258 system_update.h:268 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:1063 titan.c:1072 titan.c:1201 titan.c:1222 titan.c:1228
-#: titan.c:1239 titan.c:1245 tithek.c:103 tithek_global.h:103 tithek.h:711
+#: titan.c:1077 titan.c:1086 titan.c:1215 titan.c:1236 titan.c:1242
+#: titan.c:1253 titan.c:1259 tithek.c:103 tithek_global.h:103 tithek.h:711
 #: tithek.h:1307 tithek.h:1368 tithek.h:1707 tithek.h:1729 tithek.h:1746
 #: tithek.h:1978 tithek.h:2138 tithek.h:2423 tithek.h:2467 tithek.h:2483
 #: tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
@@ -6518,7 +6518,7 @@ msgstr ""
 msgid "OTHER"
 msgstr ""
 
-#: global.h:6487
+#: global.h:6502
 msgid "October"
 msgstr ""
 
@@ -7229,7 +7229,7 @@ msgstr "Arrét chronomètre"
 msgid "Present"
 msgstr ""
 
-#: global.h:7589 system_backup_restore.h:15
+#: global.h:7604 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -7560,7 +7560,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr ""
 
-#: titan.c:1201
+#: titan.c:1215
 msgid "Receiver successful unlocked"
 msgstr ""
 
@@ -7708,11 +7708,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:996
+#: titan.c:1010
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:995
+#: titan.c:1009
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -8161,7 +8161,7 @@ msgstr ""
 msgid "Samsung SPF.. Settings"
 msgstr "Réglages Serveur Samba"
 
-#: global.h:6498
+#: global.h:6513
 msgid "Sat"
 msgstr ""
 
@@ -8233,7 +8233,7 @@ msgstr "Satellite"
 msgid "Satellite"
 msgstr ""
 
-#: global.h:6952
+#: global.h:6967
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and\n"
@@ -8252,7 +8252,7 @@ msgstr "Sat Finder"
 msgid "Saturation"
 msgstr ""
 
-#: global.h:6463 global.h:6473 rectimer.h:1105 skin_default_skin.xml.h:531
+#: global.h:6478 global.h:6488 rectimer.h:1105 skin_default_skin.xml.h:531
 msgid "Saturday"
 msgstr "Samedi"
 
@@ -8649,7 +8649,7 @@ msgstr "Séléction de chemin"
 msgid "Select Unicable Manufacturer"
 msgstr ""
 
-#: titan.c:1003
+#: titan.c:1017
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8701,7 +8701,7 @@ msgstr ""
 msgid "Send remote box into standby ?"
 msgstr ""
 
-#: global.h:6486
+#: global.h:6501
 msgid "September"
 msgstr ""
 
@@ -8798,7 +8798,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 03.10.2016"
 msgstr ""
 
-#: titan.c:1063
+#: titan.c:1077
 msgid "Settings OK ?"
 msgstr "Réglages"
 
@@ -9206,23 +9206,23 @@ msgstr "Démarre HTTPD"
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7442
+#: global.h:7457
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7462
+#: global.h:7477
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7502
+#: global.h:7517
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7482
+#: global.h:7497
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7522
+#: global.h:7537
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9403,11 +9403,11 @@ msgstr ""
 msgid "Sudoku Help"
 msgstr ""
 
-#: global.h:6499
+#: global.h:6514
 msgid "Sun"
 msgstr ""
 
-#: global.h:6464 global.h:6474 rectimer.h:1106 skin_default_skin.xml.h:625
+#: global.h:6479 global.h:6489 rectimer.h:1106 skin_default_skin.xml.h:625
 msgid "Sunday"
 msgstr "Dimanche"
 
@@ -9685,7 +9685,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7542
+#: global.h:7557
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9791,7 +9791,7 @@ msgstr "Seuil"
 msgid "Thriller"
 msgstr ""
 
-#: global.h:6496
+#: global.h:6511
 msgid "Thu"
 msgstr ""
 
@@ -9799,7 +9799,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6461 global.h:6471 rectimer.h:1103 skin_default_skin.xml.h:647
+#: global.h:6476 global.h:6486 rectimer.h:1103 skin_default_skin.xml.h:647
 msgid "Thursday"
 msgstr "Jeudi"
 
@@ -9974,7 +9974,7 @@ msgid "Titan MediaCenter"
 msgstr ""
 
 #: extensions.h:272 extensions.h:332 extensions.h:431 extensions.h:470
-#: global.h:7450 global.h:7470 global.h:7490 global.h:7510 global.h:7530
+#: global.h:7465 global.h:7485 global.h:7505 global.h:7525 global.h:7545
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
 msgid "Titan will be restarted!"
@@ -10245,11 +10245,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr ""
 
-#: global.h:6494
+#: global.h:6509
 msgid "Tue"
 msgstr ""
 
-#: global.h:6459 global.h:6469 rectimer.h:1101 skin_default_skin.xml.h:683
+#: global.h:6474 global.h:6484 rectimer.h:1101 skin_default_skin.xml.h:683
 msgid "Tuesday"
 msgstr "Mardi"
 
@@ -10261,7 +10261,7 @@ msgstr ""
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6828
+#: global.h:6843
 msgid "Tuner "
 msgstr ""
 
@@ -10413,7 +10413,7 @@ msgstr ""
 msgid "Unitymedia NRW | 3.12.2016 (caliban)"
 msgstr ""
 
-#: titan.c:1304
+#: titan.c:1318
 msgid "Unknown Error."
 msgstr ""
 
@@ -10813,11 +10813,11 @@ msgstr ""
 msgid "Webbrowser Plugin"
 msgstr ""
 
-#: global.h:6495
+#: global.h:6510
 msgid "Wed"
 msgstr ""
 
-#: global.h:6460 global.h:6470 rectimer.h:1102 skin_default_skin.xml.h:732
+#: global.h:6475 global.h:6485 rectimer.h:1102 skin_default_skin.xml.h:732
 msgid "Wednesday"
 msgstr "Mercredi"
 
@@ -11195,7 +11195,7 @@ msgstr ""
 msgid "ausgehende Anrufe"
 msgstr ""
 
-#: adjust.h:160 autotimer.c:479 autotimer.c:512 avsettings.h:71
+#: adjust.h:160 autotimer.c:479 autotimer.c:512 avsettings.h:74
 #: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1206
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
@@ -12170,8 +12170,8 @@ msgstr "NFS Serveur"
 #: adjust.h:166 adjust.h:170 adjust.h:196 adjust.h:200 adjust.h:208
 #: adjust.h:212 adjust.h:216 adjust.h:222 adjust.h:226 adjust.h:233
 #: adjust.h:237 adjust.h:243 adjust.h:249 adjust.h:459 autotimer.c:453
-#: autotimer.c:486 avsettings.h:162 avsettings.h:213 avsettings.h:218
-#: avsettings.h:230 avsettings.h:242 avsettings.h:255 blindscanadjust.h:150
+#: autotimer.c:486 avsettings.h:165 avsettings.h:250 avsettings.h:255
+#: avsettings.h:267 avsettings.h:279 avsettings.h:292 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
 #: blindscanadjust.h:191 cec.h:204 cec.h:208 cec.h:212 cec.h:216 cec.h:220
 #: cec.h:224 cec.h:228 cec.h:232 cec.h:236 dlna.h:276 epgsettings.h:135
@@ -12298,7 +12298,7 @@ msgstr ""
 msgid "oe"
 msgstr "Ö"
 
-#: avsettings.h:70 avsettings.h:86 cec.h:200 fancontrol.h:110 harddisk.h:929
+#: avsettings.h:73 avsettings.h:89 cec.h:200 fancontrol.h:110 harddisk.h:929
 #: httpdsettings.h:76 lnbconfig.h:144 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
@@ -12354,7 +12354,7 @@ msgstr ""
 msgid "older 50 day"
 msgstr ""
 
-#: avsettings.h:87 cec.h:201 fancontrol.h:109 httpdsettings.h:77
+#: avsettings.h:90 cec.h:201 fancontrol.h:109 httpdsettings.h:77
 #: lnbconfig.h:143 mc_pictureplayer_settings.h:35
 #: mc_pictureplayer_settings.h:39 readerconfig.h:424 skinadjust.h:93
 #: transponder.h:257 transponder.h:266 transponder.h:416 transponder.h:425
@@ -12631,7 +12631,7 @@ msgstr ""
 msgid "red"
 msgstr "rouge"
 
-#: avsettings.h:72
+#: avsettings.h:75
 msgid "redKey"
 msgstr "touche rouge"
 
@@ -13595,7 +13595,7 @@ msgstr "jaune"
 #: adjust.h:84 adjust.h:98 adjust.h:127 adjust.h:157 adjust.h:167 adjust.h:197
 #: adjust.h:201 adjust.h:209 adjust.h:213 adjust.h:217 adjust.h:223
 #: adjust.h:227 adjust.h:234 adjust.h:238 adjust.h:244 adjust.h:248
-#: autotimer.c:454 autotimer.c:487 avsettings.h:163 avsettings.h:214
+#: autotimer.c:454 autotimer.c:487 avsettings.h:166 avsettings.h:251
 #: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
 #: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:205 cec.h:209 cec.h:213
 #: cec.h:217 cec.h:221 cec.h:225 cec.h:229 cec.h:233 cec.h:237 dlna.h:277
