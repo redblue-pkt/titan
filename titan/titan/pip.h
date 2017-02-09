@@ -550,8 +550,9 @@ void pipmenu()
 			addconfigint("pip_dst_top", dst_top);
 			break;
 		}
-		
-		/*if(rcret == getrcconfigint("rcred", NULL))
+		if(checkbox("DM900") != 1)
+		{
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.aktservice->type == HDMIIN)
 				continue;
@@ -567,7 +568,8 @@ void pipmenu()
 				changetext(hdmi, "live TV");
 			}
 			continue;
-		}*/
+		}
+		}
 		
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
