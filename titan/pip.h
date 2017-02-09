@@ -551,7 +551,7 @@ void pipmenu()
 			break;
 		}
 		
-		if(rcret == getrcconfigint("rcred", NULL))
+		/*if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.aktservice->type == HDMIIN)
 				continue;
@@ -567,7 +567,7 @@ void pipmenu()
 				changetext(hdmi, "live TV");
 			}
 			continue;
-		}
+		}*/
 		
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
