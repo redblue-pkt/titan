@@ -562,9 +562,9 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 				case 0x7B:
 					isdts = 1;
 					break;
-//			case 0x??;  ToDo
-//				isddp = 1;
-//				break;
+				case 0x7A:  
+					isddp = 1;
+				break;
 				case 0x56: //teletext
 					for (y = 0; y < descriptorlength / 5; y++)
 					{
