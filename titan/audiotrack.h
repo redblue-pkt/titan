@@ -158,7 +158,7 @@ struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid
 		case LPCM: tmpstr = ostrcat(tmpstr, " (LPCM)", 1, 0); break;
 		case AAC: tmpstr = ostrcat(tmpstr, " (AAC)", 1, 0); break;
 		case AACHE: tmpstr = ostrcat(tmpstr, " (AACHE)", 1, 0); break;
-		case DDP: tmpstr = ostrcat(tmpstr, " (DDP)", 1, 0); break;
+		case DDP: tmpstr = ostrcat(tmpstr, " (DDP/AC3Plus)", 1, 0); break;
 	}
 
 	newnode->name = tmpstr;
