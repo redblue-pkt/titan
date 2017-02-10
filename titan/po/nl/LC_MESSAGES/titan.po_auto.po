@@ -3242,8 +3242,8 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1077 titan.c:1086 titan.c:1215
 #: titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259 tithek.c:103
-#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1499
-#: tithek.h:1509 tithek.h:1727 tithek.h:1749 tithek.h:1766 tithek.h:1998
+#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1500
+#: tithek.h:1510 tithek.h:1727 tithek.h:1749 tithek.h:1766 tithek.h:1998
 #: tithek.h:2158 tithek.h:2443 tithek.h:2487 tithek.h:2503 tithek.h:2515
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
@@ -3390,7 +3390,7 @@ msgstr "Aflevering"
 msgid "Error"
 msgstr ""
 
-#: tithek.h:1496
+#: tithek.h:1507
 msgid "Error cant find http*|rtmp*|mms*|rtsp* Stream Link"
 msgstr ""
 
@@ -3933,7 +3933,7 @@ msgstr ""
 "WLAN apparaat gevonden maar geen driver gevonden\n"
 "Installeer AUB driver:"
 
-#: tithek.h:1506
+#: tithek.h:1497
 msgid "Found error Msg:"
 msgstr ""
 
@@ -5947,7 +5947,7 @@ msgstr ""
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1215 titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259
 #: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368
-#: tithek.h:1499 tithek.h:1509 tithek.h:1727 tithek.h:1749 tithek.h:1998
+#: tithek.h:1500 tithek.h:1510 tithek.h:1727 tithek.h:1749 tithek.h:1998
 #: tithek.h:2158 tithek.h:2443 tithek.h:2487 tithek.h:2503 tithek.h:2515
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
@@ -6554,7 +6554,7 @@ msgstr ""
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1077 titan.c:1086 titan.c:1215 titan.c:1236 titan.c:1242
 #: titan.c:1253 titan.c:1259 tithek.c:103 tithek_global.h:103 tithek.h:711
-#: tithek.h:1307 tithek.h:1368 tithek.h:1499 tithek.h:1509 tithek.h:1727
+#: tithek.h:1307 tithek.h:1368 tithek.h:1500 tithek.h:1510 tithek.h:1727
 #: tithek.h:1749 tithek.h:1766 tithek.h:1998 tithek.h:2158 tithek.h:2443
 #: tithek.h:2487 tithek.h:2503 tithek.h:2515 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
