@@ -286,7 +286,7 @@ play()
 				$curlbin $URLTMP --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 
 				if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "Authorization required" | wc -l` -eq 1 ];then
-					URL="errormsg='add VK User/Pass on settings'"
+					URL="errormsg=They need a https://vk.com access to use this Full stream, add VK User/Pass on Tithek Settings"
 				else
 					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .720. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.720
 					URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.720`
