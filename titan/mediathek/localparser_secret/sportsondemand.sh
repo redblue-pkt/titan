@@ -68,7 +68,7 @@ nhlmenu()
 {
 	echo "Ice Hockey - NHL (Latest)#$SRC $SRC videos latest enx/videotourney/2#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.latest.jpg#nhlondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "Ice Hockey - NHL (Teams)#$SRC $SRC submenu teams enx/leagueresults/2/#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.teams.jpg#nhlondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Ice Hockey - NHL (Sorted Date)#$SRC $SRC submenu teams enx/leagueresults/2/#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.date.jpg#nhlondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Ice Hockey - NHL (Sorted Date)#$SRC $SRC year teams enx/leagueresults/2/#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.date.jpg#nhlondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -76,7 +76,7 @@ isamenu()
 {
 	echo "Fussball - Italian Serie A (Latest)#$SRC $SRC videos latest enx/videotourney/11#http://atemio.dyndns.tv/mediathek/menu/isaondemand.latest.jpg#isaondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "Fussball - Italian Serie A (Teams)#$SRC $SRC submenu teams enx/leagueresults/11/#http://atemio.dyndns.tv/mediathek/menu/isaondemand.teams.jpg#isaondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - Italian Serie A (Sorted Date)#$SRC $SRC submenu teams enx/leagueresults/11/#http://atemio.dyndns.tv/mediathek/menu/isaondemand.date.jpg#isaondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - Italian Serie A (Sorted Date)#$SRC $SRC year teams enx/leagueresults/11/#http://atemio.dyndns.tv/mediathek/menu/isaondemand.date.jpg#isaondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -84,15 +84,15 @@ dfbmenu()
 {
 	echo "Fussball - 1. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.latest.jpg#dfbondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "Fussball - 1. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.teams.jpg#dfbondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 1. Bundesliga (Sorted Date)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.date.jpg#dfbondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - 1. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.date.jpg#dfbondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
 	echo "Fussball - 2. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/31#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.latest.jpg#dfbondemand2.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Fussball - 2. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/31/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.teams.jpg#dfbondemand2.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 2. Bundesliga (Sorted Date)#$SRC $SRC submenu teams enx/leagueresults/31/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.date.jpg#dfbondemand2.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - 2. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/31/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.date.jpg#dfbondemand2.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
 	echo "Fussball - 3. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/135#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.latest.jpg#dfbondemand3.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Fussball - 3. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/135/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.teams.jpg#dfbondemand3.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 3. Bundesliga (Sorted Date)#$SRC $SRC submenu teams enx/leagueresults/135/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.date.jpg#dfbondemand3.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - 3. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/135/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.date.jpg#dfbondemand3.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
   	echo "$TMP/$PARSER.$INPUT.list"
 }
@@ -101,7 +101,7 @@ eplmenu()
 {
 	echo "Fussball - English Premier League (Latest)#$SRC $SRC videos latest enx/videotourney/1#http://atemio.dyndns.tv/mediathek/menu/eplondemand.latest.jpg#eplondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "Fussball - English Premier League (Teams)#$SRC $SRC submenu teams enx/leagueresults/1/#http://atemio.dyndns.tv/mediathek/menu/eplondemand.teams.jpg#eplondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - English Premier League (Sorted Date)#$SRC $SRC submenu teams enx/leagueresults/1/#http://atemio.dyndns.tv/mediathek/menu/eplondemand.date.jpg#eplondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - English Premier League (Sorted Date)#$SRC $SRC year teams enx/leagueresults/1/#http://atemio.dyndns.tv/mediathek/menu/eplondemand.date.jpg#eplondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
