@@ -643,7 +643,7 @@ msgstr ""
 "\n"
 "Aborting Backup"
 
-#: skin_default_skin.xml.h:57 tithek.h:1572 webif_channellist.h:4
+#: skin_default_skin.xml.h:57 tithek.h:1575 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -690,8 +690,8 @@ msgstr ""
 msgid "ADD BOUQUET"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1818
-#: tithek.h:2534
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1821
+#: tithek.h:2537
 msgid "ADD FAV"
 msgstr "Pridti"
 
@@ -782,11 +782,11 @@ msgstr "Pridti Laikmatis"
 msgid "Add iMDB manuel"
 msgstr "Rankiniu bdu pridti IMDB"
 
-#: tithek.h:2503
+#: tithek.h:2506
 msgid "Add this link as Favorite ?"
 msgstr "Ar norite pridti i nuorod  savo mgstamiausi ?"
 
-#: tithek.h:1998 tithek.h:2158
+#: tithek.h:2001 tithek.h:2161
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -833,7 +833,7 @@ msgstr "Albumas:"
 msgid "All Channels"
 msgstr "Visi kanalai"
 
-#: tithek.h:1568
+#: tithek.h:1571
 msgid "All Sorted"
 msgstr ""
 
@@ -1816,7 +1816,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Can't get EPG time or the EPG Endtime is faulty."
 
-#: tithek.h:1749
+#: tithek.h:1752
 msgid "Can't get Streamurl !"
 msgstr "Streamurl nra pasiekiami !"
 
@@ -1918,7 +1918,7 @@ msgstr "Ataukti"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek.h:1548
+#: tithek.h:1551
 msgid "Category"
 msgstr ""
 
@@ -2109,7 +2109,7 @@ msgstr "Pasirinkite diegimo laikmen"
 msgid "Choice Menu"
 msgstr "Pasirinkimo meniu"
 
-#: tithek.h:1595
+#: tithek.h:1598
 msgid "Choice Playback"
 msgstr "Pasirinkite Playback"
 
@@ -2170,7 +2170,7 @@ msgstr "Pasirinkite Bendrinamus i srao"
 msgid "Choose your Streaming Format from the following list"
 msgstr "Pasirinkite savo Srauto Format i emiau pateikto srao"
 
-#: tithek.h:1649
+#: tithek.h:1652
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr "Pasirinkite savo Streaming atkrimo Modus i io srao"
 
@@ -2478,7 +2478,7 @@ msgstr "Sukurti nauj"
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:1983 tithek.h:2143
+#: tithek.h:1986 tithek.h:2146
 msgid "Create sub folder"
 msgstr ""
 
@@ -2936,11 +2936,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr "Parsisisti ( KB) :"
 
-#: tithek.h:1644
+#: tithek.h:1647
 msgid "Download Full File"
 msgstr "Parsisisti piln fail"
 
-#: tithek.h:1645
+#: tithek.h:1648
 msgid "Download Full File (background)"
 msgstr "Parsisisti piln fail ( fono )"
 
@@ -3007,7 +3007,7 @@ msgstr "Redaguoti"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1813 tithek.h:2529
+#: tithek.h:1816 tithek.h:2532
 msgid "EDIT FAV"
 msgstr "Redaguoti mgstamiausi"
 
@@ -3249,9 +3249,9 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1077 titan.c:1086 titan.c:1215
 #: titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259 tithek.c:103
-#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1500
-#: tithek.h:1510 tithek.h:1727 tithek.h:1749 tithek.h:1766 tithek.h:1998
-#: tithek.h:2158 tithek.h:2443 tithek.h:2487 tithek.h:2503 tithek.h:2515
+#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1503
+#: tithek.h:1513 tithek.h:1730 tithek.h:1752 tithek.h:1769 tithek.h:2001
+#: tithek.h:2161 tithek.h:2446 tithek.h:2490 tithek.h:2506 tithek.h:2518
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -3296,7 +3296,7 @@ msgstr "Redaguoti Grojarat"
 msgid "Edit mode"
 msgstr "Redaguoti"
 
-#: tithek.h:2515
+#: tithek.h:2518
 msgid "Edit this Favorite ?"
 msgstr "Redaguoti  Pamgt viet?"
 
@@ -3397,7 +3397,7 @@ msgstr "Epizodas"
 msgid "Error"
 msgstr ""
 
-#: tithek.h:1507
+#: tithek.h:1510
 msgid "Error cant find http*|rtmp*|mms*|rtsp* Stream Link"
 msgstr ""
 
@@ -3742,7 +3742,7 @@ msgstr ""
 msgid "Filelist-Mode"
 msgstr "Fail srao reimas"
 
-#: tithek.h:1720 tithek.h:1739
+#: tithek.h:1723 tithek.h:1742
 msgid "Filename"
 msgstr "Failo pavadinimas"
 
@@ -3938,7 +3938,7 @@ msgstr ""
 "Found WLAN Stick but no driver\n"
 "Please install driver: "
 
-#: tithek.h:1497
+#: tithek.h:1500
 msgid "Found error Msg:"
 msgstr ""
 
@@ -5956,8 +5956,8 @@ msgstr ""
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1215 titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259
 #: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368
-#: tithek.h:1500 tithek.h:1510 tithek.h:1727 tithek.h:1749 tithek.h:1998
-#: tithek.h:2158 tithek.h:2443 tithek.h:2487 tithek.h:2503 tithek.h:2515
+#: tithek.h:1503 tithek.h:1513 tithek.h:1730 tithek.h:1752 tithek.h:2001
+#: tithek.h:2161 tithek.h:2446 tithek.h:2490 tithek.h:2506 tithek.h:2518
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956
@@ -6563,9 +6563,9 @@ msgstr ""
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1077 titan.c:1086 titan.c:1215 titan.c:1236 titan.c:1242
 #: titan.c:1253 titan.c:1259 tithek.c:103 tithek_global.h:103 tithek.h:711
-#: tithek.h:1307 tithek.h:1368 tithek.h:1500 tithek.h:1510 tithek.h:1727
-#: tithek.h:1749 tithek.h:1766 tithek.h:1998 tithek.h:2158 tithek.h:2443
-#: tithek.h:2487 tithek.h:2503 tithek.h:2515 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1307 tithek.h:1368 tithek.h:1503 tithek.h:1513 tithek.h:1730
+#: tithek.h:1752 tithek.h:1769 tithek.h:2001 tithek.h:2161 tithek.h:2446
+#: tithek.h:2490 tithek.h:2506 tithek.h:2518 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -6825,7 +6825,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1850
+#: tithek.h:1853
 msgid "Page"
 msgstr ""
 
@@ -7888,7 +7888,7 @@ msgstr "alinimas pradtas"
 msgid "Remove success"
 msgstr "skmingai paalintas"
 
-#: tithek.h:2487
+#: tithek.h:2490
 msgid "Remove this Favorite ?"
 msgstr "Norite paalinti pasirinkt ra i savo mgstamiausi ?"
 
@@ -8638,21 +8638,21 @@ msgstr ""
 #: skin_default_skin.xml.h:552 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:471 tithek_global.h:473 tithek_global.h:906
-#: tithek_global.h:908 tithek.h:1564 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:908 tithek.h:1567 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359
 #: youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Paieka"
 
-#: tithek.h:1556
+#: tithek.h:1559
 msgid "Search (20)"
 msgstr ""
 
-#: tithek.h:1552
+#: tithek.h:1555
 msgid "Search (local)"
 msgstr ""
 
-#: tithek.h:1560
+#: tithek.h:1563
 msgid "Search Cast"
 msgstr ""
 
@@ -9385,7 +9385,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr ""
 
-#: tithek.h:1727
+#: tithek.h:1730
 msgid "Start playback"
 msgstr "Pradti atkrim"
 
@@ -9487,15 +9487,15 @@ msgstr "Stream Informacija"
 msgid "Streaming"
 msgstr "Srautinimas"
 
-#: tithek.h:1600 tithek.h:1604 tithek.h:1608 tithek.h:1621
+#: tithek.h:1603 tithek.h:1607 tithek.h:1611 tithek.h:1624
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1632
+#: tithek.h:1635
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1629
+#: tithek.h:1632
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9851,7 +9851,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:103 tithek.h:2443
+#: tithek_global.h:103 tithek.h:2446
 msgid "The hoster is not yet supported !"
 msgstr "The hoster is not supported at present!"
 
@@ -10158,7 +10158,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1766
+#: tithek.h:1769
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek disclaimer"
 
@@ -10174,12 +10174,12 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:126 tithek.h:1522
+#: tithek.c:126 tithek.h:1525
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Mainmenu"
 
-#: tithek.h:1518 tithek.h:1811 tithek.h:1945 tithek.h:2483 tithek.h:2499
-#: tithek.h:2511 tithek.h:2527
+#: tithek.h:1521 tithek.h:1814 tithek.h:1948 tithek.h:2486 tithek.h:2502
+#: tithek.h:2514 tithek.h:2530
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
