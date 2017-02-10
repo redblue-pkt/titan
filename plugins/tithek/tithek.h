@@ -1486,33 +1486,28 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 	if(ostrstr(tmpstr1, "&amp;") != NULL)
 	{
-		printf("change streamurl from: %s\n", tmpstr1);
+		debug(99, "change streamurl from: %s", tmpstr1);
 		tmpstr1 = string_replace_all("&amp;", "&", tmpstr1, 1);
-		printf("change streamurl to: %s\n", tmpstr1);
+		debug(99, "change streamurl to: %s", tmpstr1);
 	}
-
-//	printf("tmpstr1: %s\n", tmpstr1);
 
 	if(!ostrncmp("errormsg=", tmpstr1, 9))
 	{
-//		tmpstr2 = string_resub("errormsg='", "'", tmpstr1, 0);	
-//		tmpstr = ostrcat(_("Found error Msg:"), "\n\n", 0, 0);
-//		tmpstr = ostrcat(tmpstr, tmpstr2, 1, 0);
+		tmpstr = ostrcat(_("Found error Msg:"), "\n\n", 0, 0);
+		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
+		tmpstr = string_replace("errormsg=", "", tmpstr, 1);
 
-		tmpstr1 = string_replace_all("errormsg=", "", tmpstr1, 1);
-
-		printf("Found error Msg: %s\n", tmpstr1);
-		textbox(_("Message"), tmpstr1, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-//		free(tmpstr); tmpstr = NULL;
+		debug(99, "Found error Msg: %s", tmpstr1);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
-//		free(tmpstr2); tmpstr2 = NULL;
 	}
 	else if(ostrncmp("http", tmpstr1, 4) && ostrncmp("rtmp", tmpstr1, 4) && ostrncmp("mms", tmpstr1, 3) && ostrncmp("rtsp", tmpstr1, 4))
 	{
 		tmpstr = ostrcat(_("Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link"), "\n\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
-		printf("Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link: %s\n", tmpstr1);
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+		debug(99, "Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link: %s", tmpstr1);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 600, 0, 0);
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
 	}
