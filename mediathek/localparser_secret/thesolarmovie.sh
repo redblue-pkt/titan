@@ -16,7 +16,7 @@ if [ -z "$PAGE" ]; then
 	FILENAME=none
 fi
 
-URL=http://www.thesolarmovie.co
+URL=http://thesolarmoviehd.com
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=TheSolarMovie
 
