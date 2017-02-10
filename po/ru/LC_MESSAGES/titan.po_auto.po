@@ -644,7 +644,7 @@ msgstr ""
 "\n"
 "Бекап отменён!"
 
-#: skin_default_skin.xml.h:57 tithek.h:1574 webif_channellist.h:4
+#: skin_default_skin.xml.h:57 tithek.h:1577 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -691,8 +691,8 @@ msgstr "Добавить все"
 msgid "ADD BOUQUET"
 msgstr "Добавить букет"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1820
-#: tithek.h:2536
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1823
+#: tithek.h:2539
 msgid "ADD FAV"
 msgstr "Добавить в фаворит"
 
@@ -783,11 +783,11 @@ msgstr "Добавить таймер"
 msgid "Add iMDB manuel"
 msgstr "Добавлять iMDB "
 
-#: tithek.h:2505
+#: tithek.h:2508
 msgid "Add this link as Favorite ?"
 msgstr "Добавить ссылку в фаворит?"
 
-#: tithek.h:2000 tithek.h:2160
+#: tithek.h:2003 tithek.h:2163
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -834,7 +834,7 @@ msgstr "Альбом"
 msgid "All Channels"
 msgstr "Все каналы"
 
-#: tithek.h:1570
+#: tithek.h:1573
 msgid "All Sorted"
 msgstr ""
 
@@ -1820,7 +1820,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Не удаётся получить время EPG или время окончания неизвестно"
 
-#: tithek.h:1751
+#: tithek.h:1754
 msgid "Can't get Streamurl !"
 msgstr "Не удаётся получить поток!"
 
@@ -1920,7 +1920,7 @@ msgstr "Отмена"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek.h:1550
+#: tithek.h:1553
 msgid "Category"
 msgstr ""
 
@@ -2102,7 +2102,7 @@ msgstr "Выбор носителя для установки"
 msgid "Choice Menu"
 msgstr "Выбор меню"
 
-#: tithek.h:1597
+#: tithek.h:1600
 msgid "Choice Playback"
 msgstr "Выберите как воспроизвести файл"
 
@@ -2166,7 +2166,7 @@ msgstr "Выберите для изменения, добавления нов�
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
-#: tithek.h:1651
+#: tithek.h:1654
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr "Выберите режим воспроизведения потока из списка ниже"
 
@@ -2470,7 +2470,7 @@ msgstr "Создать новый"
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:1985 tithek.h:2145
+#: tithek.h:1988 tithek.h:2148
 msgid "Create sub folder"
 msgstr ""
 
@@ -2928,11 +2928,11 @@ msgstr "Закачка"
 msgid "Download (KB): "
 msgstr "Загружено (Кб) "
 
-#: tithek.h:1646
+#: tithek.h:1649
 msgid "Download Full File"
 msgstr "Загрузить весь файл"
 
-#: tithek.h:1647
+#: tithek.h:1650
 msgid "Download Full File (background)"
 msgstr "Загрузить весь файл (В фоновом режиме)"
 
@@ -2999,7 +2999,7 @@ msgstr "Изменить"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1815 tithek.h:2531
+#: tithek.h:1818 tithek.h:2534
 msgid "EDIT FAV"
 msgstr "Изменить фавориты"
 
@@ -3239,9 +3239,9 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1077 titan.c:1086 titan.c:1215
 #: titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259 tithek.c:103
-#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1502
-#: tithek.h:1512 tithek.h:1729 tithek.h:1751 tithek.h:1768 tithek.h:2000
-#: tithek.h:2160 tithek.h:2445 tithek.h:2489 tithek.h:2505 tithek.h:2517
+#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1505
+#: tithek.h:1515 tithek.h:1732 tithek.h:1754 tithek.h:1771 tithek.h:2003
+#: tithek.h:2163 tithek.h:2448 tithek.h:2492 tithek.h:2508 tithek.h:2520
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -3286,7 +3286,7 @@ msgstr "Изменить плейлист"
 msgid "Edit mode"
 msgstr "Переименование"
 
-#: tithek.h:2517
+#: tithek.h:2520
 msgid "Edit this Favorite ?"
 msgstr "Изменить этот фаворит?"
 
@@ -3385,10 +3385,6 @@ msgstr "Эпизод"
 
 #: rectimer.h:1405 rectimer.h:1417
 msgid "Error"
-msgstr ""
-
-#: tithek.h:1509
-msgid "Error cant find http*|rtmp*|mms*|rtsp* Stream Link"
 msgstr ""
 
 #: record.h:43
@@ -3730,7 +3726,7 @@ msgstr "Выберите цвет выделения файлов в списк�
 msgid "Filelist-Mode"
 msgstr "Плейлист"
 
-#: tithek.h:1722 tithek.h:1741
+#: tithek.h:1725 tithek.h:1744
 msgid "Filename"
 msgstr "Имя файла"
 
@@ -3927,10 +3923,6 @@ msgid ""
 msgstr ""
 "Найден Wlan адаптер, но нет драйвера\n"
 "Установите драйвер "
-
-#: tithek.h:1499
-msgid "Found error Msg:"
-msgstr ""
 
 #: harddisk.h:1091
 msgid ""
@@ -5943,8 +5935,8 @@ msgstr ""
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1215 titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259
 #: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368
-#: tithek.h:1502 tithek.h:1512 tithek.h:1729 tithek.h:1751 tithek.h:2000
-#: tithek.h:2160 tithek.h:2445 tithek.h:2489 tithek.h:2505 tithek.h:2517
+#: tithek.h:1505 tithek.h:1515 tithek.h:1732 tithek.h:1754 tithek.h:2003
+#: tithek.h:2163 tithek.h:2448 tithek.h:2492 tithek.h:2508 tithek.h:2520
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956
@@ -6548,9 +6540,9 @@ msgstr ""
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1077 titan.c:1086 titan.c:1215 titan.c:1236 titan.c:1242
 #: titan.c:1253 titan.c:1259 tithek.c:103 tithek_global.h:103 tithek.h:711
-#: tithek.h:1307 tithek.h:1368 tithek.h:1502 tithek.h:1512 tithek.h:1729
-#: tithek.h:1751 tithek.h:1768 tithek.h:2000 tithek.h:2160 tithek.h:2445
-#: tithek.h:2489 tithek.h:2505 tithek.h:2517 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1307 tithek.h:1368 tithek.h:1505 tithek.h:1515 tithek.h:1732
+#: tithek.h:1754 tithek.h:1771 tithek.h:2003 tithek.h:2163 tithek.h:2448
+#: tithek.h:2492 tithek.h:2508 tithek.h:2520 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -6810,7 +6802,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1852
+#: tithek.h:1855
 msgid "Page"
 msgstr "Страница"
 
@@ -6832,6 +6824,10 @@ msgstr "Панель"
 #: panel_settings_autostart.h:350 settings_autostart.h:501
 msgid "Parental"
 msgstr "Родительский контроль"
+
+#: tithek.h:1512
+msgid "Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link"
+msgstr ""
 
 #: tpk_showname.h:97
 msgid "Parted"
@@ -7875,7 +7871,7 @@ msgstr "Запуск удаления"
 msgid "Remove success"
 msgstr "Удаление завершено"
 
-#: tithek.h:2489
+#: tithek.h:2492
 msgid "Remove this Favorite ?"
 msgstr "Удалить этот фаворит?"
 
@@ -8627,21 +8623,21 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: skin_default_skin.xml.h:552 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:471 tithek_global.h:473 tithek_global.h:906
-#: tithek_global.h:908 tithek.h:1566 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:908 tithek.h:1569 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359
 #: youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Поиск"
 
-#: tithek.h:1558
+#: tithek.h:1561
 msgid "Search (20)"
 msgstr ""
 
-#: tithek.h:1554
+#: tithek.h:1557
 msgid "Search (local)"
 msgstr ""
 
-#: tithek.h:1562
+#: tithek.h:1565
 msgid "Search Cast"
 msgstr ""
 
@@ -9368,7 +9364,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "Запускать при загрузке"
 
-#: tithek.h:1729
+#: tithek.h:1732
 msgid "Start playback"
 msgstr "Старт воспроизведения"
 
@@ -9470,15 +9466,15 @@ msgstr "Инфо о потоке"
 msgid "Streaming"
 msgstr "Стриминг"
 
-#: tithek.h:1602 tithek.h:1606 tithek.h:1610 tithek.h:1623
+#: tithek.h:1605 tithek.h:1609 tithek.h:1613 tithek.h:1626
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1634
+#: tithek.h:1637
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1631
+#: tithek.h:1634
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9832,7 +9828,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:103 tithek.h:2445
+#: tithek_global.h:103 tithek.h:2448
 msgid "The hoster is not yet supported !"
 msgstr "Хостер не поддерживается!"
 
@@ -10139,7 +10135,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1768
+#: tithek.h:1771
 msgid "TitanNit Tithek disclaimer"
 msgstr "Отказ от ответственности"
 
@@ -10155,12 +10151,12 @@ msgstr "Веб-контроль TitanNit"
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:126 tithek.h:1524
+#: tithek.c:126 tithek.h:1527
 msgid "Tithek - Mainmenu"
 msgstr "Главное меню"
 
-#: tithek.h:1520 tithek.h:1813 tithek.h:1947 tithek.h:2485 tithek.h:2501
-#: tithek.h:2513 tithek.h:2529
+#: tithek.h:1523 tithek.h:1816 tithek.h:1950 tithek.h:2488 tithek.h:2504
+#: tithek.h:2516 tithek.h:2532
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "Фавориты"
 
