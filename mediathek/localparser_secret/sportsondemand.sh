@@ -83,6 +83,8 @@ dfbmenu()
 	echo "Fussball - 1. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.teams.jpg#dfbondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Fussball - 2. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/31#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.latest.jpg#dfbondemand2.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Fussball - 2. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/31/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.teams.jpg#dfbondemand2.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - 3. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/135#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.latest.jpg#dfbondemand3.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball - 3. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/135/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.teams.jpg#dfbondemand3.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
