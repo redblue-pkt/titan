@@ -1491,24 +1491,27 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		printf("change streamurl to: %s\n", tmpstr1);
 	}
 
-	printf("tmpstr1: %s\n", tmpstr1);
+//	printf("tmpstr1: %s\n", tmpstr1);
 
 	if(!ostrncmp("errormsg=", tmpstr1, 9))
 	{
-		tmpstr2 = string_resub("errormsg='", "'", tmpstr1, 0);	
-		tmpstr = ostrcat(_("Found error Msg:"), "\n\n", 0, 0);
-		tmpstr = ostrcat(tmpstr, tmpstr2, 1, 0);
-		printf("Found error Msg: %s\n", tmpstr2);
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
-		free(tmpstr); tmpstr = NULL;
+//		tmpstr2 = string_resub("errormsg='", "'", tmpstr1, 0);	
+//		tmpstr = ostrcat(_("Found error Msg:"), "\n\n", 0, 0);
+//		tmpstr = ostrcat(tmpstr, tmpstr2, 1, 0);
+
+		tmpstr1 = string_replace_all("errormsg=", "", tmpstr1, 1);
+
+		printf("Found error Msg: %s\n", tmpstr1);
+		textbox(_("Message"), tmpstr1, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+//		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
-		free(tmpstr2); tmpstr2 = NULL;
+//		free(tmpstr2); tmpstr2 = NULL;
 	}
 	else if(ostrncmp("http", tmpstr1, 4) && ostrncmp("rtmp", tmpstr1, 4) && ostrncmp("mms", tmpstr1, 3) && ostrncmp("rtsp", tmpstr1, 4))
 	{
-		tmpstr = ostrcat(_("Error cant find http*|rtmp*|mms*|rtsp* Stream Link"), "\n\n", 0, 0);
+		tmpstr = ostrcat(_("Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link"), "\n\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
-		printf("Error cant find http*|rtmp*|mms*|rtsp* Stream Link: %s\n", tmpstr1);
+		printf("Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link: %s\n", tmpstr1);
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
