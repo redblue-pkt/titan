@@ -639,7 +639,7 @@ msgstr ""
 "\n"
 " đang hủy sao chép…"
 
-#: skin_default_skin.xml.h:57 tithek.h:1552 webif_channellist.h:4
+#: skin_default_skin.xml.h:57 tithek.h:1572 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -686,8 +686,8 @@ msgstr "thêm tất cả"
 msgid "ADD BOUQUET"
 msgstr "thêm 1"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1798
-#: tithek.h:2514
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1818
+#: tithek.h:2534
 msgid "ADD FAV"
 msgstr "Thêm ưu thích"
 
@@ -778,11 +778,11 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: tithek.h:2483
+#: tithek.h:2503
 msgid "Add this link as Favorite ?"
 msgstr " Muốn thêm vào mục ưa thích này?"
 
-#: tithek.h:1978 tithek.h:2138
+#: tithek.h:1998 tithek.h:2158
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -829,7 +829,7 @@ msgstr ""
 msgid "All Channels"
 msgstr "Tất cả các chương trình"
 
-#: tithek.h:1548
+#: tithek.h:1568
 msgid "All Sorted"
 msgstr ""
 
@@ -1813,7 +1813,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Không có EPG!"
 
-#: tithek.h:1729
+#: tithek.h:1749
 msgid "Can't get Streamurl !"
 msgstr "không có tín hiệu"
 
@@ -1909,7 +1909,7 @@ msgstr "hủy"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek.h:1528
+#: tithek.h:1548
 msgid "Category"
 msgstr ""
 
@@ -2091,7 +2091,7 @@ msgstr ""
 msgid "Choice Menu"
 msgstr "Đóng menu"
 
-#: tithek.h:1575
+#: tithek.h:1595
 msgid "Choice Playback"
 msgstr "bắt đầu phát lại"
 
@@ -2152,7 +2152,7 @@ msgstr ""
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
-#: tithek.h:1629
+#: tithek.h:1649
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
@@ -2456,7 +2456,7 @@ msgstr "Tạo thư mục"
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:1963 tithek.h:2123
+#: tithek.h:1983 tithek.h:2143
 msgid "Create sub folder"
 msgstr ""
 
@@ -2914,11 +2914,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr "Tải toàn bộ file"
 
-#: tithek.h:1624
+#: tithek.h:1644
 msgid "Download Full File"
 msgstr "Tải toàn bộ file"
 
-#: tithek.h:1625
+#: tithek.h:1645
 msgid "Download Full File (background)"
 msgstr " Tải toàn bộ file (hình nền)"
 
@@ -2985,7 +2985,7 @@ msgstr "chỉnh sửa"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1793 tithek.h:2509
+#: tithek.h:1813 tithek.h:2529
 msgid "EDIT FAV"
 msgstr ""
 
@@ -3225,22 +3225,22 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1077 titan.c:1086 titan.c:1215
 #: titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259 tithek.c:103
-#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1707
-#: tithek.h:1729 tithek.h:1746 tithek.h:1978 tithek.h:2138 tithek.h:2423
-#: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
-#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
-#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
-#: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
-#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
-#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
-#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
-#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 xvidstage.h:29 xvidstage.h:59
-#: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:220 zapback.c:79
-#: zdf.h:29
+#: tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1499
+#: tithek.h:1509 tithek.h:1727 tithek.h:1749 tithek.h:1766 tithek.h:1998
+#: tithek.h:2158 tithek.h:2443 tithek.h:2487 tithek.h:2503 tithek.h:2515
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
+#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
+#: tunerconfig.h:674 tunerconfig.h:956 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
+#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
+#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
+#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
+#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
+#: vodlocker.h:87 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
+#: xvidstage.h:77 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr ""
 
@@ -3272,7 +3272,7 @@ msgstr "Chỉnh sửa danh sách"
 msgid "Edit mode"
 msgstr "chỉnh sửa"
 
-#: tithek.h:2495
+#: tithek.h:2515
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -3369,6 +3369,10 @@ msgstr ""
 
 #: rectimer.h:1405 rectimer.h:1417
 msgid "Error"
+msgstr ""
+
+#: tithek.h:1496
+msgid "Error cant find http*|rtmp*|mms*|rtsp* Stream Link"
 msgstr ""
 
 #: record.h:43
@@ -3710,7 +3714,7 @@ msgstr ""
 msgid "Filelist-Mode"
 msgstr "Chế độ danh sách tập tin"
 
-#: tithek.h:1700 tithek.h:1719
+#: tithek.h:1720 tithek.h:1739
 msgid "Filename"
 msgstr ""
 
@@ -3897,6 +3901,10 @@ msgstr ""
 msgid ""
 "Found Wlan Stick but no driver\n"
 "Please install driver: "
+msgstr ""
+
+#: tithek.h:1506
+msgid "Found error Msg:"
 msgstr ""
 
 #: harddisk.h:1091
@@ -5896,13 +5904,13 @@ msgstr ""
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1215 titan.c:1236 titan.c:1242 titan.c:1253 titan.c:1259
 #: tithek.c:103 tithek_global.h:103 tithek.h:711 tithek.h:1307 tithek.h:1368
-#: tithek.h:1707 tithek.h:1729 tithek.h:1978 tithek.h:2138 tithek.h:2423
-#: tithek.h:2467 tithek.h:2483 tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68
-#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
-#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: tithek.h:1499 tithek.h:1509 tithek.h:1727 tithek.h:1749 tithek.h:1998
+#: tithek.h:2158 tithek.h:2443 tithek.h:2487 tithek.h:2503 tithek.h:2515
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
+#: tpk.new.h:3167 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
+#: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
 #: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
 #: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
@@ -6503,31 +6511,31 @@ msgstr "E"
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1077 titan.c:1086 titan.c:1215 titan.c:1236 titan.c:1242
 #: titan.c:1253 titan.c:1259 tithek.c:103 tithek_global.h:103 tithek.h:711
-#: tithek.h:1307 tithek.h:1368 tithek.h:1707 tithek.h:1729 tithek.h:1746
-#: tithek.h:1978 tithek.h:2138 tithek.h:2423 tithek.h:2467 tithek.h:2483
-#: tithek.h:2495 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
-#: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
-#: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:956 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
-#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
-#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
-#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
-#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
-#: vodlocker.h:87 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
-#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
-#: webif_index.dm7020hd.h:38 webif_index.dm7020hdv2.h:38
-#: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
-#: webif_rc_virtual.atemio5200.h:20 webif_rc_virtual.atemio520.h:20
-#: webif_rc_virtual.atemio530.h:20 webif_rc_virtual.atemio6000.h:20
-#: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
-#: webif_rc_virtual.atemio-nemesis.h:20 webif_rc_virtual.dm7020hd.h:20
-#: webif_rc_virtual.dm7020hdv2.h:20 webif_rc_virtual.h:20 xupnpd.h:57
-#: xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
-#: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:220
-#: zapback.c:79 zdf.h:29
+#: tithek.h:1307 tithek.h:1368 tithek.h:1499 tithek.h:1509 tithek.h:1727
+#: tithek.h:1749 tithek.h:1766 tithek.h:1998 tithek.h:2158 tithek.h:2443
+#: tithek.h:2487 tithek.h:2503 tithek.h:2515 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
+#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
+#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
+#: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
+#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
+#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
+#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 webif_index.atemio5200.h:38
+#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
+#: webif_index.atemio-nemesis.h:38 webif_index.dm7020hd.h:38
+#: webif_index.dm7020hdv2.h:38 webif_rc.atemio510.h:33
+#: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
+#: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
+#: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
+#: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
+#: webif_rc_virtual.dm7020hd.h:20 webif_rc_virtual.dm7020hdv2.h:20
+#: webif_rc_virtual.h:20 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
+#: xupnpd.h:83 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
+#: xvidstage.h:77 youtube.h:220 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "k"
 
@@ -6765,7 +6773,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1830
+#: tithek.h:1850
 msgid "Page"
 msgstr "trang"
 
@@ -7821,7 +7829,7 @@ msgstr "xóa chia sẻ"
 msgid "Remove success"
 msgstr "Đã hủy thành công!"
 
-#: tithek.h:2467
+#: tithek.h:2487
 msgid "Remove this Favorite ?"
 msgstr "Hủy bỏ ưu thích này ?"
 
@@ -8571,21 +8579,21 @@ msgstr "Không có đầu ra."
 #: skin_default_skin.xml.h:552 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:471 tithek_global.h:473 tithek_global.h:906
-#: tithek_global.h:908 tithek.h:1544 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:908 tithek.h:1564 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359
 #: youtube.h:361 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "dò"
 
-#: tithek.h:1536
+#: tithek.h:1556
 msgid "Search (20)"
 msgstr ""
 
-#: tithek.h:1532
+#: tithek.h:1552
 msgid "Search (local)"
 msgstr ""
 
-#: tithek.h:1540
+#: tithek.h:1560
 msgid "Search Cast"
 msgstr ""
 
@@ -9313,7 +9321,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "Bắt đầu khởi động"
 
-#: tithek.h:1707
+#: tithek.h:1727
 msgid "Start playback"
 msgstr "bắt đầu phát lại?"
 
@@ -9415,15 +9423,15 @@ msgstr "Streaming"
 msgid "Streaming"
 msgstr ""
 
-#: tithek.h:1580 tithek.h:1584 tithek.h:1588 tithek.h:1601
+#: tithek.h:1600 tithek.h:1604 tithek.h:1608 tithek.h:1621
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1612
+#: tithek.h:1632
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1609
+#: tithek.h:1629
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -9773,7 +9781,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:103 tithek.h:2423
+#: tithek_global.h:103 tithek.h:2443
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
@@ -10076,7 +10084,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1746
+#: tithek.h:1766
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
@@ -10092,12 +10100,12 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr "Không thể mở file"
 
-#: tithek.c:126 tithek.h:1502
+#: tithek.c:126 tithek.h:1522
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek.h:1498 tithek.h:1791 tithek.h:1925 tithek.h:2463 tithek.h:2479
-#: tithek.h:2491 tithek.h:2507
+#: tithek.h:1518 tithek.h:1811 tithek.h:1945 tithek.h:2483 tithek.h:2499
+#: tithek.h:2511 tithek.h:2527
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
