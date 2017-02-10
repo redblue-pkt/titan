@@ -1493,8 +1493,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 	printf("tmpstr1: %s\n", tmpstr1);
 
-
-	if(ostrncmp("errormsg=", tmpstr1, 9))
+	if(!ostrncmp("errormsg=", tmpstr1, 9))
 	{
 		tmpstr2 = string_resub("errormsg='", "'", tmpstr1, 0);	
 		tmpstr = ostrcat(_("Found error Msg:"), "\n\n", 0, 0);
@@ -1509,7 +1508,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		tmpstr = ostrcat(_("Error cant find http*|rtmp*|mms*|rtsp* Stream Link"), "\n\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
-		printf("Streamurl3: not http*|rtmp*|mms*|rtsp* Streamurl: %s\n", tmpstr1);
+		printf("Error cant find http*|rtmp*|mms*|rtsp* Stream Link: %s\n", tmpstr1);
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
