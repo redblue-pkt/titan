@@ -1484,12 +1484,15 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	if(ostrstr(title, "Internet Radio") != NULL)
 		flag = 4;
 
-	if(ostrstr(tmpstr1, "&") != NULL)
+	if(ostrstr(tmpstr1, "&amp;") != NULL)
 	{
 		printf("change streamurl from: %s\n", tmpstr1);
 		tmpstr1 = string_replace_all("&amp;", "&", tmpstr1, 1);
 		printf("change streamurl to: %s\n", tmpstr1);
 	}
+
+	printf("tmpstr1: %s\n", tmpstr1);
+
 
 	if(ostrncmp("errormsg=", tmpstr1, 9))
 	{
