@@ -39,7 +39,7 @@ init()
 mainmenu()
 {
 	if [ -e /etc/.beta ];then
-		echo "Live Sports#$SRC $SRC livelist live de#http://atemio.dyndns.tv/mediathek/menu/live.jpg#live.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+		echo "Live Sports#$SRC $SRC livelist live de#http://atemio.dyndns.tv/mediathek/menu/livesports.jpg#livesports.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 		echo "Basketball - NBA#$SRC $SRC nbamenu#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.jpg#nbaondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 		echo "Ice Hockey - NHL#$SRC $SRC nhlmenu#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.jpg#nhlondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 		echo "Fussball - Bundesliga#$SRC $SRC dfbmenu#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.jpg#dfbondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
@@ -221,12 +221,7 @@ play()
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe!\nfound=!g' | grep ^found | cut -d"'" -f2 | grep -v facebook | grep -v Search >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 			fi
 
-			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed 's/true http/http/'`
-#echo 555555a $URLTMP
-			URLTMP=`echo $URLTMP | sed 's/true http/http/'`
-#echo 555555b $URLTMP
-
-			URLTMP=`echo $URLTMP | sed 's#true //#//#'`
+			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2  | sed 's#//#\nhttp://#' | grep ^"http://"`
 #echo 555555c $URLTMP
 
 			if [ `echo $URLTMP | grep ^"//" | wc -l` -eq 1 ];then
@@ -279,7 +274,7 @@ play()
 				$curlbin2 -v $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.10
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.11
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.11`
-				URLTMP=`echo $URLTMP  | sed 's#//#\nhttps://#' | grep ^"https://"`
+				URLTMP=`echo $URLTMP | sed 's#//#\nhttps://#' | grep ^"https://"`
 #echo 555555gg $URLTMP
 
 				$curlbin $URLTMP --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
@@ -322,7 +317,7 @@ play()
 		fi
 
 		echo $URL
-#		rm $TMP/cache.* > /dev/null 2>&1
+		rm $TMP/cache.* > /dev/null 2>&1
 	fi
 #	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
