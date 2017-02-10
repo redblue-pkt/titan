@@ -1498,7 +1498,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		tmpstr = string_replace("errormsg=", "", tmpstr, 1);
 
 		debug(99, "Found error Msg: %s", tmpstr1);
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
 	}
@@ -1507,7 +1507,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		tmpstr = ostrcat(_("Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link"), "\n\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 		debug(99, "Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link: %s", tmpstr1);
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 600, 0, 0);
+		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 600, 0, 2);
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
 	}
