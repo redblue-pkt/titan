@@ -503,6 +503,7 @@ void pipmenu()
 {
 	struct skin* pipscreen = getscreen("pipscreen");
 	struct skin* hdmi = getscreennode(pipscreen, "hdmi");
+	struct skin* b3 = getscreennode(pipscreen, "b3");
 	int rcret = 0;
 	
 	int dst_width = getconfigint("pip_dst_width", NULL);
@@ -510,6 +511,12 @@ void pipmenu()
 	int dst_left = getconfigint("pip_dst_left", NULL);
 	int dst_top = getconfigint("pip_dst_top", NULL);
 
+	if(checkbox("DM900") == 1)
+	{
+		b3->hidden = YES;
+		hdmi->hidden = YES;
+	}
+	
 	if(dst_width == 0)
 	{
 		dst_width = 180;
@@ -552,23 +559,23 @@ void pipmenu()
 		}
 		if(checkbox("DM900") != 1)
 		{
-		if(rcret == getrcconfigint("rcred", NULL))
-		{
-			if(status.aktservice->type == HDMIIN)
+			if(rcret == getrcconfigint("rcred", NULL))
+			{
+				if(status.aktservice->type == HDMIIN)
+					continue;
+				if(status.pipservice->type == HDMIIN)
+				{
+					pipstop(status.pipservice, 1);
+					pipstart(status.aktservice->channel, NULL, 0);
+					changetext(hdmi, "HDMI-in");
+				}
+				else
+				{
+					piphdmi(status.pipservice, 0);
+					changetext(hdmi, "live TV");
+				}
 				continue;
-			if(status.pipservice->type == HDMIIN)
-			{
-				pipstop(status.pipservice, 1);
-				pipstart(status.aktservice->channel, NULL, 0);
-				changetext(hdmi, "HDMI-in");
 			}
-			else
-			{
-				piphdmi(status.pipservice, 0);
-				changetext(hdmi, "live TV");
-			}
-			continue;
-		}
 		}
 		
 		if(rcret == getrcconfigint("rcblue", NULL))
