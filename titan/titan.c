@@ -629,9 +629,9 @@ int main(int argc, char *argv[])
 	if(checkbox("DM900") == 1)
 	{
 		if(getconfig("av_ac3plusmode", NULL) == NULL)
-			addconfig("av_ac3plusmode", "use_hdmi_caps");
+			addconfig("av_ac3plusmode", "force_ac3");
 		if(getconfig("av_dtshdmode", NULL) == NULL)
-			addconfig("av_dtshdmode", "use_hdmi_caps");
+			addconfig("av_dtshdmode", "force_dts");
 		if(getconfig("av_wmapromode", NULL) == NULL)
 			addconfig("av_wmapromode", "downmix");
 		ret = setac3plus(getconfig("av_ac3plusmode", NULL));
