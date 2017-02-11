@@ -118,7 +118,7 @@ year()
 		until [ "$i" -gt "$tagcount" ]
 		do
 		echo "$i#$SRC $SRC month year enx/videotourney/3/$i#http://atemio.dyndns.tv/mediathek/menu/$i.jpg#$i.jpg#$NAME#0" | sort -r >> $TMP/$PARSER.$INPUT.list
-		i=`expr $i + 1` 
+		i=`expr $i + 1`
 		done
 	fi
 
@@ -142,7 +142,7 @@ month()
 		until [ "$i" -gt "$tagcount" ]
 		do
 		echo "$i / $usedyear#$SRC $SRC videos latest $PAGE$i#http://atemio.dyndns.tv/mediathek/menu/$i.jpg#$i.jpg#$NAME#0" | sort -r >> $TMP/$PARSER.$INPUT.list
-		i=`expr $i + 1` 
+		i=`expr $i + 1`
 		done
 	fi
 
@@ -262,7 +262,7 @@ play()
 			ID=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | tr '/' '\n' | tail -n1`
 			$curlbin http://videoapi.my.mail.ru/videos/mail/$TYPE/_myvideo/$ID.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 	#		$curlbin http://videoapi.my.mail.ru/videos/mail/arsen.bulyaev/_myvideo/738.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
-	
+
 			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"url":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | tail -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 			URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6`
 	#eplayer3 "http://cdn41.my.mail.ru/v/60128796.mp4?sign=43ff6ef971dd635bbff0a57a061a3548cfaceef8&slave[]=s%3Ahttp%3A%2F%2F127.0.0.1%3A5010%2F60128796-v.mp4&p=f&expire_at=1477882800&touch=1477731621&reg=202&region=202"
@@ -338,7 +338,7 @@ play()
 				$curlbin $URLTMP --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 
 				if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "Authorization required" | wc -l` -eq 1 ];then
-					URL="errormsg=They need a https://vk.com access to use this Full stream, add VK User/Pass on Tithek Settings"
+					URL="errormsg=You need access to https://vk.com to use this full stream, add VK User/Pass on Tithek Settings"
 				else
 					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .720. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.720
 					URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.720`
@@ -359,7 +359,7 @@ play()
 				ID=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | tr '/' '\n' | tail -n1`
 				$curlbin http://videoapi.my.mail.ru/videos/mail/$TYPE/_myvideo/$ID.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 		#		$curlbin http://videoapi.my.mail.ru/videos/mail/arsen.bulyaev/_myvideo/738.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
-		
+
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"url":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | tail -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 				URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6`
 			else
