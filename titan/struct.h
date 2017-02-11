@@ -1648,6 +1648,8 @@ struct status
 	int downmix;
 	// channels for recording
 	struct channel* recchnode[9];
+	// frontdev filedescriptor
+	int fdrc1;
 } status;
 
 struct fb

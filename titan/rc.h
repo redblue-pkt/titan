@@ -106,6 +106,7 @@ int openrc()
 	int i = 0;
 
 	status.fdrc = -1;
+	status.fdrc1 = -1;
 
 	rcdev = getconfig("rcdev", NULL);
 	if(rcdev != NULL)
@@ -129,6 +130,20 @@ int openrc()
 		err("input device not found in config");
 		return 1;
 	}
+	
+	rcdev = getconfig("rcfrontdev", NULL);
+	if(rcdev != NULL)
+	{
+		i = 0;
+		while(status.fdrc1 < 0 && i < 3)
+		{
+			status.fdrc1 = open(rcdev, O_RDWR);
+			if(status.fdrc1 < 0) sleep(1);
+			i++;
+		}
+		if(status.fdrc1 > -1)
+			closeonexec(status.fdrc1);
+	}
 
 	return 0;
 }
@@ -137,6 +152,8 @@ void closerc()
 {
 	if(status.fdrc != -1)
 		close(status.fdrc);
+	if(status.fdrc1 != -1)
+		close(status.fdrc1);
 }
 
 int islongkey(int keycode)
@@ -252,13 +269,14 @@ void rcsignal(int flag)
 int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int filelistview)
 {
 	fd_set rfds;
+	fd_set rfds1;
 	struct timeval tv;
 	struct input_event rcdata;
-	int treffer = 0, rest = 0;
+	int treffer = 0, rest = 0, j = 0, front = 0;
 	int ret = 0, len = 0, fromthread = 0, longpress = 0, longpresscount = 0;
 	struct rc *node;
 	struct timeval aktrctime;
-
+	
 	if(pthread_self() != status.mainthread)
 		fromthread = 1;
 
@@ -273,12 +291,53 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 		tv.tv_usec = rest * 1000;
 		FD_ZERO(&rfds);
 		FD_SET(status.fdrc, &rfds);
+		front = 0;
 
 		if(fromthread == 0) status.sec = 0;
 		if((fromthread == 0 && status.rckey == 0) || fromthread == 1)
 		{
 			if(fromthread == 0) m_unlock(&status.waitrcmutex, 24);
-			ret = TEMP_FAILURE_RETRY(select(status.fdrc + 1, &rfds, NULL, NULL, &tv));
+			
+			if(status.fdrc1 > -1 && timeout > 1)
+			{
+				for(j = 0; j < timeout / 2; j++)
+				{
+					tv.tv_sec = 2;
+					tv.tv_usec = 0;
+					FD_ZERO(&rfds);
+					FD_SET(status.fdrc, &rfds);
+					ret = TEMP_FAILURE_RETRY(select(status.fdrc + 1, &rfds, NULL, NULL, &tv));
+					if(ret == 0)
+					{
+						tv.tv_sec = 0;
+						tv.tv_usec = 1000;
+						FD_ZERO(&rfds1);
+						FD_SET(status.fdrc1, &rfds1);
+						ret = TEMP_FAILURE_RETRY(select(status.fdrc1 + 1, &rfds1, NULL, NULL, &tv));
+						front = 1;
+					}
+					if(ret != 0)
+						break;
+				}
+			}
+			else
+			{
+				tv.tv_sec = timeout;
+				tv.tv_usec = rest * 1000;
+				FD_ZERO(&rfds);
+				FD_SET(status.fdrc, &rfds);
+				ret = TEMP_FAILURE_RETRY(select(status.fdrc + 1, &rfds, NULL, NULL, &tv));
+				if(ret == 0 && status.fdrc1 > -1)
+				{
+					tv.tv_sec = 0;
+					tv.tv_usec = 1000;
+					FD_ZERO(&rfds1);
+					FD_SET(status.fdrc1, &rfds1);
+					ret = TEMP_FAILURE_RETRY(select(status.fdrc1 + 1, &rfds1, NULL, NULL, &tv));
+					front = 1;
+				}
+			}
+				
 			if(fromthread == 0) m_lock(&status.waitrcmutex, 24);
 
 			if((status.rcowner != NULL && status.rcowner != owner) || (status.rcstandby != NULL && status.rcstandby != owner)) 
@@ -294,8 +353,10 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 
 		if((fromthread == 0 && ret > 0 && status.rckey == 0) || (fromthread == 1 && ret > 0))
 		{
-			if(FD_ISSET(status.fdrc, &rfds))
+			if(front == 0 && FD_ISSET(status.fdrc, &rfds))
 				len = TEMP_FAILURE_RETRY(read(status.fdrc, &rcdata, sizeof(struct input_event)));
+			else if(front == 1 && FD_ISSET(status.fdrc1, &rfds1))
+				len = TEMP_FAILURE_RETRY(read(status.fdrc1, &rcdata, sizeof(struct input_event)));
 
 			if(rcdata.type != EV_KEY)
 			{
