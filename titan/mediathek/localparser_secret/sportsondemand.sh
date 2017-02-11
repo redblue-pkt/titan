@@ -40,72 +40,105 @@ mainmenu()
 {
 	if [ -e /etc/.beta ];then
 		echo "Live Sports#$SRC $SRC livelist live de#http://atemio.dyndns.tv/mediathek/menu/livesports.jpg#livesports.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-		echo "Basketball - NBA#$SRC $SRC nbamenu#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.jpg#nbaondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-		echo "Ice Hockey - NHL#$SRC $SRC nhlmenu#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.jpg#nhlondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-		echo "Fussball - Bundesliga#$SRC $SRC dfbmenu#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.jpg#dfbondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-		echo "Fussball - English Premier League#$SRC $SRC eplmenu#http://atemio.dyndns.tv/mediathek/menu/eplondemand.jpg#eplondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-		echo "Fussball - Italian Serie A#$SRC $SRC isamenu#http://atemio.dyndns.tv/mediathek/menu/isaondemand.jpg#isaondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+		echo "Basketball#$SRC $SRC basketball#http://atemio.dyndns.tv/mediathek/menu/basketball.jpg#basketball.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	else
-		echo "Basketball - NBA#$SRC $SRC nbamenu#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.jpg#nbaondemand.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-		echo "Ice Hockey - NHL#$SRC $SRC nhlmenu#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.jpg#nhlondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-		echo "Fussball - Bundesliga#$SRC $SRC dfbmenu#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.jpg#dfbondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-		echo "Fussball - English Premier League#$SRC $SRC eplmenu#http://atemio.dyndns.tv/mediathek/menu/eplondemand.jpg#eplondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-		echo "Fussball - Italian Serie A#$SRC $SRC isamenu#http://atemio.dyndns.tv/mediathek/menu/isaondemand.jpg#isaondemand.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+		echo "Basketball#$SRC $SRC basketball#http://atemio.dyndns.tv/mediathek/menu/basketball.jpg#basketball.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	fi
-#	echo "Suche#$SRC $SRC suche#http://atemio.dyndns.tv/mediathek/menu/search.jpg#giga.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Ice Hockey#$SRC $SRC icehockey#http://atemio.dyndns.tv/mediathek/menu/icehockey.jpg#icehockey.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Fussball#$SRC $SRC fussball#http://atemio.dyndns.tv/mediathek/menu/fussball.jpg#fussball.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Handball#$SRC $SRC handball#http://atemio.dyndns.tv/mediathek/menu/handball.jpg#handball.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Football#$SRC $SRC football#http://atemio.dyndns.tv/mediathek/menu/football.jpg#football.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
 	echo "$TMP/$PARSER.$INPUT.list"
-}
+} 
 
-nbamenu()
+basketball()
 {
-	echo "Basketball - NBA (Latest)#$SRC $SRC videos latest enx/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.latest.jpg#nbaondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Basketball - NBA (Teams)#$SRC $SRC submenu teams enx/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.teams.jpg#nbaondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Basketball - NBA (Sorted Date)#$SRC $SRC year teams enx/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/nbaondemand.date.jpg#nbaondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-  	echo "$TMP/$PARSER.$INPUT.list"
-}
+	echo "NBA (Latest)#$SRC $SRC videos latest enx/videotourney/3#http://atemio.dyndns.tv/mediathek/menu/nba.latest.jpg#nba.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "NBA (Teams)#$SRC $SRC submenu teams enx/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/nba.teams.jpg#nba.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "NBA (Sorted Date)#$SRC $SRC year teams enx/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/nba.date.jpg#nba.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
-nhlmenu()
-{
-	echo "Ice Hockey - NHL (Latest)#$SRC $SRC videos latest enx/videotourney/2#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.latest.jpg#nhlondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Ice Hockey - NHL (Teams)#$SRC $SRC submenu teams enx/leagueresults/2/#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.teams.jpg#nhlondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Ice Hockey - NHL (Sorted Date)#$SRC $SRC year teams enx/leagueresults/2/#http://atemio.dyndns.tv/mediathek/menu/nhlondemand.date.jpg#nhlondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-  	echo "$TMP/$PARSER.$INPUT.list"
-}
+	echo "German Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/421#http://atemio.dyndns.tv/mediathek/menu/german.bundesliga.latest.jpg#german.bundesliga.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "German Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/421/#http://atemio.dyndns.tv/mediathek/menu/german.bundesliga.teams.jpg#german.bundesliga.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "German Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/421/#http://atemio.dyndns.tv/mediathek/menu/german.bundesliga.date.jpg#german.bundesliga.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
-isamenu()
-{
-	echo "Fussball - Italian Serie A (Latest)#$SRC $SRC videos latest enx/videotourney/11#http://atemio.dyndns.tv/mediathek/menu/isaondemand.latest.jpg#isaondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Fussball - Italian Serie A (Teams)#$SRC $SRC submenu teams enx/leagueresults/11/#http://atemio.dyndns.tv/mediathek/menu/isaondemand.teams.jpg#isaondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - Italian Serie A (Sorted Date)#$SRC $SRC year teams enx/leagueresults/11/#http://atemio.dyndns.tv/mediathek/menu/isaondemand.date.jpg#isaondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-  	echo "$TMP/$PARSER.$INPUT.list"
-}
+	echo "Italian Lega Basket (Latest)#$SRC $SRC videos latest enx/videotourney/668#http://atemio.dyndns.tv/mediathek/menu/italian.lega.basket.latest.jpg#italian.lega.basket.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Italian Lega Basket (Teams)#$SRC $SRC submenu teams enx/leagueresults/668/#http://atemio.dyndns.tv/mediathek/menu/italian.lega.basket.teams.jpg#italian.lega.basket.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Italian Lega Basket (Sorted Date)#$SRC $SRC year teams enx/leagueresults/668/#http://atemio.dyndns.tv/mediathek/menu/italian.lega.basket.date.jpg#italian.lega.basket.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
-dfbmenu()
-{
-	echo "Fussball - 1. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.latest.jpg#dfbondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 1. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.teams.jpg#dfbondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 1. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand.date.jpg#dfbondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "European Championship (Latest)#$SRC $SRC videos latest enx/videotourney/282#http://atemio.dyndns.tv/mediathek/menu/european.championship.latest.jpg#european.championship.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "European Championship (Teams)#$SRC $SRC submenu teams enx/leagueresults/282/#http://atemio.dyndns.tv/mediathek/menu/european.championship.teams.jpg#european.championship.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "European Championship (Sorted Date)#$SRC $SRC year teams enx/leagueresults/282/#http://atemio.dyndns.tv/mediathek/menu/european.championship.date.jpg#european.championship.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
-	echo "Fussball - 2. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/31#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.latest.jpg#dfbondemand2.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 2. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/31/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.teams.jpg#dfbondemand2.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 2. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/31/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand2.date.jpg#dfbondemand2.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-
-	echo "Fussball - 3. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/135#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.latest.jpg#dfbondemand3.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 3. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/135/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.teams.jpg#dfbondemand3.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - 3. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/135/#http://atemio.dyndns.tv/mediathek/menu/dfbondemand3.date.jpg#dfbondemand3.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Euroleague (Latest)#$SRC $SRC videos latest enx/videotourney/41#http://atemio.dyndns.tv/mediathek/menu/euroleague.latest.jpg#euroleague.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Euroleague (Teams)#$SRC $SRC submenu teams enx/leagueresults/41/#http://atemio.dyndns.tv/mediathek/menu/euroleague.teams.jpg#euroleague.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Euroleague (Sorted Date)#$SRC $SRC year teams enx/leagueresults/41/#http://atemio.dyndns.tv/mediathek/menu/euroleague.date.jpg#euroleague.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
-eplmenu()
+football()
 {
-	echo "Fussball - English Premier League (Latest)#$SRC $SRC videos latest enx/videotourney/1#http://atemio.dyndns.tv/mediathek/menu/eplondemand.latest.jpg#eplondemand.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Fussball - English Premier League (Teams)#$SRC $SRC submenu teams enx/leagueresults/1/#http://atemio.dyndns.tv/mediathek/menu/eplondemand.teams.jpg#eplondemand.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Fussball - English Premier League (Sorted Date)#$SRC $SRC year teams enx/leagueresults/1/#http://atemio.dyndns.tv/mediathek/menu/eplondemand.date.jpg#eplondemand.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "NFL (Latest)#$SRC $SRC videos latest enx/videotourney/142#http://atemio.dyndns.tv/mediathek/menu/nfl.latest.jpg#nfl.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "NFL (Teams)#$SRC $SRC submenu teams enx/leagueresults/142/#http://atemio.dyndns.tv/mediathek/menu/nfl.teams.jpg#nfl.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "NFL (Sorted Date)#$SRC $SRC year teams enx/leagueresults/142/#http://atemio.dyndns.tv/mediathek/menu/nfl.date.jpg#nfl.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
   	echo "$TMP/$PARSER.$INPUT.list"
 }
 
-#http://livetv.sx/enx/videotourney/3/201412/
+
+handball()
+{
+	echo "Women. Champions League (Latest)#$SRC $SRC videos latest enx/videotourney/1249#http://atemio.dyndns.tv/mediathek/menu/women.champions.league.latest.jpg#women.champions.league.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Women. Champions League (Teams)#$SRC $SRC submenu teams enx/leagueresults/1249/#http://atemio.dyndns.tv/mediathek/menu/women.champions.league.teams.jpg#women.champions.league.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Women. Champions League (Sorted Date)#$SRC $SRC year teams enx/leagueresults/1249/#http://atemio.dyndns.tv/mediathek/menu/women.champions.league.date.jpg#women.champions.league.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+  	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+icehockey()
+{
+	echo "NHL (Latest)#$SRC $SRC videos latest enx/videotourney/2#http://atemio.dyndns.tv/mediathek/menu/nhl.latest.jpg#nhl.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "NHL (Teams)#$SRC $SRC submenu teams enx/leagueresults/2/#http://atemio.dyndns.tv/mediathek/menu/nhl.teams.jpg#nhl.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "NHL (Sorted Date)#$SRC $SRC year teams enx/leagueresults/2/#http://atemio.dyndns.tv/mediathek/menu/nhl.date.jpg#nhl.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+	echo "Champions League (Latest)#$SRC $SRC videos latest enx/videotourney/191#http://atemio.dyndns.tv/mediathek/menu/champions.league.latest.jpg#champions.league.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Champions League (Teams)#$SRC $SRC submenu teams enx/leagueresults/191/#http://atemio.dyndns.tv/mediathek/menu/champions.league.teams.jpg#champions.league.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Champions League (Sorted Date)#$SRC $SRC year teams enx/leagueresults/191/#http://atemio.dyndns.tv/mediathek/menu/champions.league.date.jpg#champions.league.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+  	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+fussball()
+{
+	echo "1. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/36#http://atemio.dyndns.tv/mediathek/menu/dfb1.latest.jpg#dfb1.latest.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "1. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfb1.teams.jpg#dfb1.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "1. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/36/#http://atemio.dyndns.tv/mediathek/menu/dfb1.date.jpg#dfb1.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+	echo "2. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/31#http://atemio.dyndns.tv/mediathek/menu/dfb2.latest.jpg#dfb2.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "2. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/31/#http://atemio.dyndns.tv/mediathek/menu/dfb2.teams.jpg#dfb2.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "2. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/31/#http://atemio.dyndns.tv/mediathek/menu/dfb2.date.jpg#dfb2.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+	echo "3. Bundesliga (Latest)#$SRC $SRC videos latest enx/videotourney/135#http://atemio.dyndns.tv/mediathek/menu/dfb3.latest.jpg#dfb3.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "3. Bundesliga (Teams)#$SRC $SRC submenu teams enx/leagueresults/135/#http://atemio.dyndns.tv/mediathek/menu/dfb3.teams.jpg#dfb3.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "3. Bundesliga (Sorted Date)#$SRC $SRC year teams enx/leagueresults/135/#http://atemio.dyndns.tv/mediathek/menu/dfb3.date.jpg#dfb3.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+	echo "Italian Serie A (Latest)#$SRC $SRC videos latest enx/videotourney/11#http://atemio.dyndns.tv/mediathek/menu/isa.latest.jpg#isa.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Italian Serie A (Teams)#$SRC $SRC submenu teams enx/leagueresults/11/#http://atemio.dyndns.tv/mediathek/menu/isa.teams.jpg#isa.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Italian Serie A (Sorted Date)#$SRC $SRC year teams enx/leagueresults/11/#http://atemio.dyndns.tv/mediathek/menu/isa.date.jpg#isa.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+	echo "English Premier League (Latest)#$SRC $SRC videos latest enx/videotourney/1#http://atemio.dyndns.tv/mediathek/menu/epl.latest.jpg#epl.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "English Premier League (Teams)#$SRC $SRC submenu teams enx/leagueresults/1/#http://atemio.dyndns.tv/mediathek/menu/epl.teams.jpg#epl.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "English Premier League (Sorted Date)#$SRC $SRC year teams enx/leagueresults/1/#http://atemio.dyndns.tv/mediathek/menu/epl.date.jpg#epl.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+	echo "Europa League (Latest)#$SRC $SRC videos latest enx/videotourney/265#http://atemio.dyndns.tv/mediathek/menu/el.latest.jpg#el.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Europa League (Teams)#$SRC $SRC submenu teams enx/leagueresults/265/#http://atemio.dyndns.tv/mediathek/menu/el.teams.jpg#el.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Europa League (Sorted Date)#$SRC $SRC year teams enx/leagueresults/265/#http://atemio.dyndns.tv/mediathek/menu/el.date.jpg#el.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+	echo "Champions League (Latest)#$SRC $SRC videos latest enx/videotourney/7#http://atemio.dyndns.tv/mediathek/menu/champions.league.latest.jpg#champions.league.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Champions League (Teams)#$SRC $SRC submenu teams enx/leagueresults/7/#http://atemio.dyndns.tv/mediathek/menu/champions.league.teams.jpg#champions.league.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Champions League (Sorted Date)#$SRC $SRC year teams enx/leagueresults/7/#http://atemio.dyndns.tv/mediathek/menu/champions.league.date.jpg#champions.league.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
+  	echo "$TMP/$PARSER.$INPUT.list"
+}
 
 year()
 {
@@ -279,8 +312,21 @@ play()
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe!\nfound=!g' | grep ^found | cut -d"'" -f2 | grep -v facebook | grep -v Search >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 			fi
 
-			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2  | sed 's#//#\nhttp://#' | grep ^"http://"`
+#			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\r' ' ' | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe!\nfound=!g' | grep ^found
+
+#				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe!\nfound=!g' | grep ^found
+#echo 11111
+			if [ -z "$URLTMP" ];then
+#echo 22222
+
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | grep www.youtube.com | sed 's!src=!\nfound=!g' | grep ^found  | cut -d'"' -f2  >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
+			fi
+
+
+			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed 's#//#\nhttp://#' | grep ^"http://"`
 #echo 555555c $URLTMP
+#<iframe allowFullScreen width="600" height="338" src="https://www.youtube.com/embed/17NnIkv2C3k" frameborder="0" allowfullscreen></iframe>
+
 
 			if [ `echo $URLTMP | grep ^"//" | wc -l` -eq 1 ];then
 				URLTMP=http:$URLTMP
@@ -347,6 +393,22 @@ play()
 						URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.360`
 					fi
 				fi
+			elif [ `echo $URLTMP | grep "youtube" | wc -l` -eq 1 ];then
+
+				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
+				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
+				
+#				$curlbin "https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=17NnIkv2C3k&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
+				
+			#	https://www.youtube.com/embed/17NnIkv2C3k
+
+#				URL="$SRC $SRC hoster $INPUT $URL"
+				URL="gethoster2 $URL"
+
+#				URL="gethoster2 $URLTMP"
+
+#				URL="$TITLE#$URL#$PIC#$PIC.jpg#$NAME#14"
+
 			elif [ `echo $URLTMP | grep "/embed/" | wc -l` -eq 1 ];then
 #echo 666666
 
@@ -375,7 +437,7 @@ play()
 		fi
 
 		echo $URL
-		rm $TMP/cache.* > /dev/null 2>&1
+#		rm $TMP/cache.* > /dev/null 2>&1
 	fi
 #	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
@@ -545,11 +607,11 @@ hoster()
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
-	nbamenu) $INPUT;;
-	nhlmenu) $INPUT;;
-	dfbmenu) $INPUT;;
-	eplmenu) $INPUT;;
-	isamenu) $INPUT;;
+	basketball) $INPUT;;
+	icehockey) $INPUT;;
+	fussball) $INPUT;;
+	handball) $INPUT;;
+	football) $INPUT;;
 	livelist) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;

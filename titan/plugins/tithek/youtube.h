@@ -37,7 +37,11 @@ char* youtube(char* link)
 
 	tmplink = ostrcat(link, NULL, 0, 0);
 	tmplink = string_replace_all("watch?v=", "get_video_info?&video_id=", tmplink, 1);
-	tmplink = string_replace_all("/youtu.be", "/www.youtube.com", tmplink, 1);
+	tmplink = string_replace_all("/embed/", "/get_video_info?&video_id=", tmplink, 1);
+	tmplink = string_replace_all("http://", "https://", tmplink, 1);
+
+//https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=17NnIkv2C3k&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1
+//https://www.youtube.com/embed/17NnIkv2C3k
 
 /* spox.com
 
@@ -85,15 +89,19 @@ and get to youtube
 						ret1[i].part = ostrcat(ret1[i].part,"&",0,0);
 						
 						murl = string_resub("url=","&",ret1[i].part,0);
-						sig = string_resub("sig=","&",ret1[i].part,0);
+//						sig = string_resub("sig=","&",ret1[i].part,0);
+
+//						if (sig == NULL)
+//							sig = string_resub("signature=","&",ret1[i].part,0);
+
 						
 						free(streamurl), streamurl = NULL;
 //						if(murl != NULL && sig != NULL)
 						if(murl != NULL)
 						{					
 							streamurl = ostrcat(murl, NULL, 0, 0);
-							streamurl = ostrcat(streamurl, "&signature=", 1, 0);
-							streamurl = ostrcat(streamurl, sig, 1, 0);
+//							streamurl = ostrcat(streamurl, "&signature=", 1, 0);
+//							streamurl = ostrcat(streamurl, sig, 1, 0);
 							streamurl = string_decode(streamurl,0);
 															
 							if(ostrstr(ret1[i].part, "itag=85") != NULL)

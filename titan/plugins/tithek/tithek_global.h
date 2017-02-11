@@ -883,8 +883,14 @@ char* localparser_hoster(char* link)
 
 	tmpstr = command(link);
 	tmpstr = string_newline(tmpstr);
+	printf("0000000\n");
 
-	if(ostrstr(link, ".sh play ") != NULL)
+	if(ostrstr(tmpstr, "gethoster2") != NULL)
+	{
+		tmpstr = string_replace_all("gethoster2 ", "", tmpstr, 1);
+		streamurl = hoster(tmpstr);
+	}
+	else if(ostrstr(link, ".sh play ") != NULL)
 		streamurl = ostrcat(tmpstr, NULL, 0, 0);
 	else if(ostrstr(link, ".sh hoster ") != NULL)
 		streamurl = hoster(tmpstr);
