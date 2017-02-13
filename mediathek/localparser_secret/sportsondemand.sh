@@ -272,7 +272,7 @@ playsrc()
 
 play()
 {
-	debug=1
+	debug=0
 
 	if [ "$debug" = "1" ]; then rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list; fi
 	if [ "$debug" = "1" ]; then echo $INPUT 1111111; fi
