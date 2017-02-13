@@ -883,7 +883,7 @@ char* localparser_hoster(char* link)
 
 	tmpstr = command(link);
 	tmpstr = string_newline(tmpstr);
-	printf("0000000\n");
+	debug(99, "tmpstr: %s", tmpstr);
 
 	if(ostrstr(tmpstr, "gethoster2") != NULL)
 	{
@@ -896,6 +896,8 @@ char* localparser_hoster(char* link)
 		streamurl = hoster(tmpstr);
 
 	free(tmpstr), tmpstr = NULL;
+
+	debug(99, "streamurl: %s", streamurl);
 
 	return streamurl;
 }
