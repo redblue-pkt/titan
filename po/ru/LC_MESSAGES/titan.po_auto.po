@@ -143,7 +143,7 @@ msgstr "Авторы"
 msgid "->"
 msgstr ""
 
-#: pip.h:642 skin_default_skin.xml.h:629
+#: pip.h:649 skin_default_skin.xml.h:629
 msgid "->swap<-"
 msgstr ""
 
@@ -2162,7 +2162,7 @@ msgid "Choose your Shares from the following list"
 msgstr "Выберите для изменения, добавления новой сетевой папки"
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108 tvtoast.h:298
-#: tvtoast.h:499 youtube.h:196 zdf.h:112
+#: tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
@@ -3254,7 +3254,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
 #: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
 #: vodlocker.h:87 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
-#: xvidstage.h:77 youtube.h:220 zapback.c:79 zdf.h:29
+#: xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Выход"
 
@@ -5952,7 +5952,7 @@ msgstr ""
 #: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
 #: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 webif_boxcontrol.h:2
 #: xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
-#: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:220
+#: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228
 #: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Сообщение"
@@ -6568,7 +6568,7 @@ msgstr ""
 #: webif_rc_virtual.dm7020hd.h:20 webif_rc_virtual.dm7020hdv2.h:20
 #: webif_rc_virtual.h:20 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
 #: xupnpd.h:83 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
-#: xvidstage.h:77 youtube.h:220 zapback.c:79 zdf.h:29
+#: xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "ОК"
 
@@ -8626,10 +8626,10 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:552 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:471 tithek_global.h:473 tithek_global.h:906
-#: tithek_global.h:908 tithek.h:1564 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
-#: xvideos.h:56 xvideos.h:58 youtube.h:245 youtube.h:247 youtube.h:359
-#: youtube.h:361 zdf.h:147 zdf.h:149
+#: tithek_global.h:471 tithek_global.h:473 tithek_global.h:912
+#: tithek_global.h:914 tithek.h:1564 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: xvideos.h:56 xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:367
+#: youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Поиск"
 
@@ -9445,7 +9445,7 @@ msgid "Stream Link"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108 tvtoast.h:298
-#: tvtoast.h:499 youtube.h:196 zdf.h:112
+#: tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr "Меню потока"
 
@@ -11619,7 +11619,7 @@ msgstr "Отключить сетевой интерфейс?"
 msgid "debug"
 msgstr "Отладка"
 
-#: harddisk.h:165 pip.h:641 pip.h:649 plugins_mc_skin.xml.h:15
+#: harddisk.h:165 pip.h:648 pip.h:656 plugins_mc_skin.xml.h:15
 #: skins_mc_skin.xml.h:15
 msgid "default"
 msgstr "По умолчанию"
@@ -12618,15 +12618,15 @@ msgstr "Пин-код"
 msgid "pincheck"
 msgstr ""
 
-#: pip.h:646
+#: pip.h:653
 msgid "pip end"
 msgstr ""
 
-#: pip.h:645
+#: pip.h:652
 msgid "pip menu"
 msgstr ""
 
-#: pip.h:650
+#: pip.h:657
 msgid "pip zap"
 msgstr ""
 
@@ -13473,7 +13473,7 @@ msgstr "Universal"
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
-#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:172
+#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:180
 #: zdf.h:86
 msgid "unknown"
 msgstr "Неизвестно"
