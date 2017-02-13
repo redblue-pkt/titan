@@ -306,27 +306,38 @@ play()
 #		    <iframe allowFullScreen src="//livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-55574239&id=456242297&hash=f78096b994400693&hd=1" width="600" height="338" frameborder="0" allowfullscreen></iframe>
 #			<iframe allowFullScreen src="http://livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-30408&id=456242896&hash=1bafa57efd8d7c50" width="600" height="338" frameborder="0" allowfullscreen></iframe>
 #			<iframe allowFullScreen src='https://my.mail.ru/video/embed/4219658639352267889' width='626' height='367' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe!\nfound=!g' | grep ^found | sed 's!src=!\nfound=!g' | grep ^found | cut -d'"' -f2 | grep -v facebook | grep -v getbanner.php | grep -v userapi | grep http >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
+#			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe!\nfound=!g' | grep ^found | sed 's!src=!\nfound2=!g' | grep ^found2 | cut -d'"' -f2 | grep -v facebook | grep -v getbanner.php | grep -v userapi | grep http >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
+			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | sed 's!<iframe!\nfound=!g' | grep ^found | sed 's!src=!\nfound2=!g' | grep ^found2 | cut -d'"' -f2 | grep -v facebook | grep -v getbanner.php | grep -v userapi | grep http >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 
-			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed 's#//#\nhttp://#' | grep ^"http://"`
+			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed 's#//#\nhttp://#' | grep ^"http://" | cut -d"'" -f1 | cut -d'"' -f1`
 			if [ "$debug" = "1" ]; then echo $INPUT 555555 $URLTMP; fi
+
+
+#<a target="_blank" href="http://tinyurl.com/jg7d7px"><img src="//cdn.livetvcdn.net/img/extplay.gif"></a>
+#<link rel="manifest" href="/manifest.json"><link rel="shortlink" href="https://youtu.be/016LXFHpFCk"><link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=de_DE" title="YouTube-Videosuche"><link rel="shortcut icon" href="https:/
+
+			if [ -z "$URLTMP" ];then
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | grep '<a target="_blank" href=' >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
+				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed 's#//#\nhttp://#' | grep ^"http://" | cut -d"'" -f1 | cut -d'"' -f1`
+				if [ "$debug" = "1" ]; then echo $INPUT 666666 $URLTMP; fi
+			fi
 
 			rm /mnt/network/cookies
 
 			if [ `echo $URLTMP | grep "export/vk.reframe.php" | wc -l` -eq 1 ];then
-				if [ "$debug" = "1" ]; then echo $INPUT 666666 $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT 777777 $URLTMP; fi
 
 				referer=$URLTMP
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				# <iframe src="http://vk.com/video_ext.php?oid=-55574239&id=456242333&hash=8f52dbd56d595751&hd=1" frameborder="0" height="100%" width="100%"></iframe></body>
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | sed 's#//#\nhttps://#' | grep ^"https://"`
-				if [ "$debug" = "1" ]; then echo $INPUT 777777 $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT 888888 $URLTMP; fi
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | grep vk.com | sed 's!href=!\nfound=!' | grep ^found | cut -d '"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6 | sed 's#//#\nhttps://#' | grep ^"https://"`
-				if [ "$debug" = "1" ]; then echo $INPUT 888888 $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT 999999 $URLTMP; fi
 
 				email=`cat /mnt/config/titan.cfg | grep vk_user | cut -d"=" -f2`
 				pass=`cat /mnt/config/titan.cfg | grep vk_pass | cut -d"=" -f2`
@@ -350,7 +361,7 @@ play()
 				$curlbin2 -v $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.10
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.11
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.11 | sed 's#//#\nhttps://#' | grep ^"https://"`
-				if [ "$debug" = "1" ]; then echo $INPUT 999999 $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT aaaaaa $URLTMP; fi
 
 				$curlbin $URLTMP --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 
@@ -365,7 +376,7 @@ play()
 					fi
 				fi
 			elif [ `echo $URLTMP | grep "youtube" | wc -l` -eq 1 ];then
-				if [ "$debug" = "1" ]; then echo $INPUT aaaaaa $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT bbbbbb $URLTMP; fi
 
 				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
 				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
@@ -382,7 +393,7 @@ play()
 #				URL="$TITLE#$URL#$PIC#$PIC.jpg#$NAME#14"
 
 			elif [ `echo $URLTMP | grep "/embed/" | wc -l` -eq 1 ];then
-				if [ "$debug" = "1" ]; then echo $INPUT bbbbbb $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT cccccc $URLTMP; fi
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 		#		"flashVars": {"autoplay":0,"movieSrc":"mail/arsen.bulyaev/_myvideo/738","metadataUrl":"//my.mail.ru/+/video/meta/4219658639352267490","showPauseRoll":"0","enable_search":"2","swfVersion":"29","static_version":"75","flash_enabled":"1"},
@@ -396,10 +407,22 @@ play()
 
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"url":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | tail -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 				URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6`
-			else
+			elif [ `echo $URLTMP | grep "tinyurl" | wc -l` -eq 1 ];then
 				if [ "$debug" = "1" ]; then echo $INPUT eeeeee $URLTMP; fi
+#<link rel="manifest" href="/manifest.json"><link rel="shortlink" href="https://youtu.be/016LXFHpFCk"><link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=de_DE" title="YouTube-Videosuche"><link rel="shortcut icon" href="https:/
+
+				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | sed 's!<link rel!\n<link rel!g' | grep shortlink | sed 's#//#\nhttp://#' | grep ^"http://" | cut -d"'" -f1 | cut -d'"' -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
+				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4`
+				if [ "$debug" = "1" ]; then echo $INPUT ffffff $URLTMP; fi
+
+				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
+				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
+				URL="gethoster2 $URL"
+			else
+				if [ "$debug" = "1" ]; then echo $INPUT gggggg $URLTMP; fi
 				URLTMP=`echo $URLTMP  | sed 's#//#\nhttp://#' | grep ^"http://"`
-				if [ "$debug" = "1" ]; then echo $INPUT cccccc $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT hhhhhh $URLTMP; fi
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!file:!\nfound=!g' | grep '^found=' | cut -d"'" -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
