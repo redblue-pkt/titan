@@ -1530,9 +1530,20 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	struct dtv_property p[8];
 	struct dtv_properties cmdseq;
 	cmdseq.props = p;
+	
+	int system = tpnode->system;
+	
+#if DREAMBOX
+	switch(system)
+	{
+		case 0: system = SYS_DVBC_ANNEX_A; break;
+		case 1: system = SYS_DVBC_ANNEX_C; break;
+		default: system = SYS_DVBC_ANNEX_A; break;
+	}
+#endif
 
 	p[0].cmd = DTV_CLEAR;
-	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = tpnode->system;
+	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
 	p[3].cmd = DTV_MODULATION,	p[3].u.data = modulation;
 	p[4].cmd = DTV_SYMBOL_RATE,	p[4].u.data = tpnode->symbolrate;
