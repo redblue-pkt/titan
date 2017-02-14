@@ -356,7 +356,11 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 			if(front == 0 && FD_ISSET(status.fdrc, &rfds))
 				len = TEMP_FAILURE_RETRY(read(status.fdrc, &rcdata, sizeof(struct input_event)));
 			else if(front == 1 && FD_ISSET(status.fdrc1, &rfds1))
+			{
 				len = TEMP_FAILURE_RETRY(read(status.fdrc1, &rcdata, sizeof(struct input_event)));
+				if(rcdata.code  == getrcconfigint("rcpower", NULL))
+					rcdata.code =  getrcconfigint("rcfrontpower", NULL);
+			}
 
 			if(rcdata.type != EV_KEY)
 			{
