@@ -6714,6 +6714,63 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 	return value;
 }
 
+#ifdef MIPSEL
+int sethypridtunernew(struct dvbdev* tuner, char* value)
+{
+	int ret = 0;
+
+	char* buf = NULL, *hypridtuner = NULL, *tmpstr = NULL;
+	char* buf1 = NULL;
+
+	hypridtuner = getconfig("hypridtuner", NULL);
+
+	if(hypridtuner != NULL)
+	{
+		buf = malloc(MINMALLOC);
+		if(buf == NULL)
+		{
+			err("no memory");
+			return 0;
+		}
+	}
+
+	sprintf(buf, hypridtuner, tuner->devnr);
+	if(buf != NULL)
+	{
+		printf("set %s to %s\n", buf, value);
+		if(file_exist(buf))
+		{
+			buf1 = readsys("/sys/module/dvb_core/parameters/dvb_shutdown_timeout",1);
+			ret = writesys("/sys/module/dvb_core/parameters/dvb_shutdown_timeout", "0", 1);
+			if(ret != 0)
+				printf("no /sys/module/dvb_core/parameters/dvb_shutdown_timeout available\n");
+			if(tuner->fd > -1)
+			{
+				feclose(tuner, -1);
+				printf("set %s to %s\n", buf, value);
+				ret = writesys(buf, value, 0);
+				tuner->fd = feopen(tuner, NULL);
+			}
+			else
+			{
+				printf("set %s to %s\n", buf, value);
+				ret = writesys(buf, value, 0);
+			}
+			writesys("/sys/module/dvb_core/parameters/dvb_shutdown_timeout", buf1, 1);	
+			free(tmpstr); tmpstr = NULL;
+			free(buf1); buf1 = NULL;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	free(buf); buf = NULL;
+
+	return 0;
+}
+#endif
+
 int sethypridtuner(int dev, char* value)
 {
 	int ret = 0;
