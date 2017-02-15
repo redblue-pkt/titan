@@ -1308,11 +1308,11 @@ msgstr "Αποθ./ Επαναφορά Ρυθμίσεων"
 msgid "Backup / Restore Settings"
 msgstr "Αποθ./ Επαναφορά Ρυθμίσεων"
 
-#: global.h:7649 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
+#: global.h:7650 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr ""
 
-#: global.h:7651
+#: global.h:7652
 msgid "Backup ended with error"
 msgstr ""
 
@@ -2401,19 +2401,19 @@ msgstr ""
 msgid "Create Satellites/Provider"
 msgstr ""
 
-#: global.h:6962
+#: global.h:6963
 msgid "Create Satellites/Provider (All)"
 msgstr ""
 
-#: global.h:6960
+#: global.h:6961
 msgid "Create Satellites/Provider (Cable)"
 msgstr ""
 
-#: global.h:6959
+#: global.h:6960
 msgid "Create Satellites/Provider (Sat)"
 msgstr ""
 
-#: global.h:6961
+#: global.h:6962
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
@@ -3108,9 +3108,9 @@ msgstr ""
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
 #: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6246
-#: global.h:7094 global.h:7113 global.h:7514 global.h:7534 global.h:7554
-#: global.h:7574 global.h:7594 global.h:7926 global.h:7931 global.h:7943
-#: global.h:7948 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: global.h:7095 global.h:7114 global.h:7515 global.h:7535 global.h:7555
+#: global.h:7575 global.h:7595 global.h:7927 global.h:7932 global.h:7944
+#: global.h:7949 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
@@ -3358,11 +3358,11 @@ msgstr ""
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
 
-#: global.h:7111
+#: global.h:7112
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:7089
+#: global.h:7090
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
@@ -3870,14 +3870,14 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr ""
 
-#: global.h:7948
+#: global.h:7949
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7926 global.h:7943
+#: global.h:7927 global.h:7944
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3885,7 +3885,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:7931
+#: global.h:7932
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4775,7 +4775,7 @@ msgstr ""
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: global.h:6964
+#: global.h:6965
 msgid "Import mode"
 msgstr ""
 
@@ -5790,11 +5790,11 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
 #: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
-#: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6246 global.h:7024
-#: global.h:7094 global.h:7113 global.h:7514 global.h:7522 global.h:7534
-#: global.h:7542 global.h:7554 global.h:7562 global.h:7574 global.h:7582
-#: global.h:7594 global.h:7602 global.h:7926 global.h:7931 global.h:7943
-#: global.h:7948 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6246 global.h:7025
+#: global.h:7095 global.h:7114 global.h:7515 global.h:7523 global.h:7535
+#: global.h:7543 global.h:7555 global.h:7563 global.h:7575 global.h:7583
+#: global.h:7595 global.h:7603 global.h:7927 global.h:7932 global.h:7944
+#: global.h:7949 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
 #: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
@@ -6037,7 +6037,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "Κανάλι"
 
-#: global.h:6909
+#: global.h:6910
 msgid "Multituner adjustable"
 msgstr ""
 
@@ -6374,10 +6374,10 @@ msgstr ""
 #: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
 #: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
 #: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6246
-#: global.h:7024 global.h:7094 global.h:7113 global.h:7514 global.h:7522
-#: global.h:7534 global.h:7542 global.h:7554 global.h:7562 global.h:7574
-#: global.h:7582 global.h:7594 global.h:7602 global.h:7926 global.h:7931
-#: global.h:7943 global.h:7948 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: global.h:7025 global.h:7095 global.h:7114 global.h:7515 global.h:7523
+#: global.h:7535 global.h:7543 global.h:7555 global.h:7563 global.h:7575
+#: global.h:7583 global.h:7595 global.h:7603 global.h:7927 global.h:7932
+#: global.h:7944 global.h:7949 harddisk.h:355 harddisk.h:487 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -7242,7 +7242,7 @@ msgstr ""
 msgid "Present"
 msgstr ""
 
-#: global.h:7661 system_backup_restore.h:15
+#: global.h:7662 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -8246,7 +8246,7 @@ msgstr "Δορυφόρος"
 msgid "Satellite"
 msgstr ""
 
-#: global.h:7024
+#: global.h:7025
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and\n"
@@ -9219,23 +9219,23 @@ msgstr ""
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7514
+#: global.h:7515
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7534
+#: global.h:7535
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7574
+#: global.h:7575
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7554
+#: global.h:7555
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7594
+#: global.h:7595
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9698,7 +9698,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7614
+#: global.h:7615
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -9987,7 +9987,7 @@ msgid "Titan MediaCenter"
 msgstr ""
 
 #: extensions.h:272 extensions.h:332 extensions.h:431 extensions.h:470
-#: global.h:7522 global.h:7542 global.h:7562 global.h:7582 global.h:7602
+#: global.h:7523 global.h:7543 global.h:7563 global.h:7583 global.h:7603
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
 msgid "Titan will be restarted!"
@@ -10274,7 +10274,7 @@ msgstr ""
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6900
+#: global.h:6901
 msgid "Tuner "
 msgstr "Tuner"
 
