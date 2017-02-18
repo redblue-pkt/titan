@@ -5,7 +5,6 @@ import sys
 from lib.net import Net
 import lib.common as common
 import lib.fx_gmu as fx_gmu
-import lib.fx_gmu as fx_gmu
 
 FX_SOURCE = 'https://offshoregit.com/tvaresolvers/fx_gmu.py'
 FX_PATH = ''
@@ -16,10 +15,18 @@ class FlashxResolver(object):
     pattern = '(?://|\.)(flashx\.tv)/(?:embed-|dl\?|embed.php\?c=)?([0-9a-zA-Z/-]+)'
 
     def __init__(self):
+#        print "1111111111111"
         self.net = Net()
+#        print "2222222222222"
+
         url = str(sys.argv[1])
+#        print "3333333333333"
+
         host = self.get_host_and_id(url)[0]
+#        print "4444444444444"
+
         media_id = self.get_host_and_id(url)[1]
+#        print "5555555555555"
 
         return self.get_media_url(host, media_id)
 
@@ -64,8 +71,14 @@ class FlashxResolver(object):
 #            with open(FX_PATH, 'r') as f:
 #                py_data = f.read()
 #            import fx_gmu
+#            print "aaaaaaaaaaaa"
+
             web_url = self.get_url(host, media_id)
+#           print "bbbbbbbbbbbb", web_url
+
             print fx_gmu.get_media_url(web_url)
+#            print "cccccccccccc"
+
 #        except Exception as e:
 #            print 'error'
         
