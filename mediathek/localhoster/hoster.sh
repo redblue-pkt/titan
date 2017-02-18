@@ -175,6 +175,11 @@ novamov()
 	$BIN $CMD/novamov.py $INPUT
 }
 
+xvidstage()
+{
+	$BIN $CMD/xvidstage.py $INPUT
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -198,5 +203,6 @@ if [ "$TYPE" == "get" ];then
 		nowvideo) nowvideo $INPUT;;
 		divxstage|cloudtime) divxstage $INPUT;;
 		novamov|auroravid) novamov $INPUT;;
+		xvidstage) novamov $INPUT;;
 	esac
 fi
