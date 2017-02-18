@@ -203,6 +203,6 @@ if [ "$TYPE" == "get" ];then
 		nowvideo) nowvideo $INPUT;;
 		divxstage|cloudtime) divxstage $INPUT;;
 		novamov|auroravid) novamov $INPUT;;
-		xvidstage) novamov $INPUT;;
+		xvidstage) xvidstage $INPUT;;
 	esac
 fi
