@@ -42,28 +42,30 @@ class TheVideoResolver(object):
 
         html = self.net.http_GET(web_url, headers=headers).content
 #        print "111111111111", html.encode('utf-8').strip()
-        vhash = re.search('\'_vhash\', value: \'(.*?)\'', html).group(1)
-        gfk = re.search('\'gfk\', value: \'(.*?)\'', html).group(1)
+        old = 0
+        if old:
+            vhash = re.search('\'_vhash\', value: \'(.*?)\'', html).group(1)
+            gfk = re.search('\'gfk\', value: \'(.*?)\'', html).group(1)
 
-        fname = re.search('name="fname" value="(.*?)"', html).group(1)
-        op = re.search('name="op" value="(.*?)"', html).group(1)
-        inhu = re.search('name="inhu" value="(.*?)"', html).group(1)
-        usr_login = re.search('name="usr_login" value="(.*?)"', html).group(1)
+            fname = re.search('name="fname" value="(.*?)"', html).group(1)
+            op = re.search('name="op" value="(.*?)"', html).group(1)
+            inhu = re.search('name="inhu" value="(.*?)"', html).group(1)
+            usr_login = re.search('name="usr_login" value="(.*?)"', html).group(1)
 
-        hash = re.search('name="hash" value="(.*?)"', html).group(1)
-        fdata = {'_vhash': vhash,
-                 'gfk': gfk,
-                 'op': op,
-                 'usr_login': usr_login,
-                 'id': media_id,                 
-                 'fname': fname,
-                 'referer': '',
-                 'hash': hash,
-                 'imhuman': 'Proceed to video',
-                 'inhu': inhu}
+            hash = re.search('name="hash" value="(.*?)"', html).group(1)
+            fdata = {'_vhash': vhash,
+                     'gfk': gfk,
+                     'op': op,
+                     'usr_login': usr_login,
+                     'id': media_id,                 
+                     'fname': fname,
+                     'referer': '',
+                     'hash': hash,
+                     'imhuman': 'Proceed to video',
+                     'inhu': inhu}
 
-        html = self.net.http_POST(url=web_url, form_data=fdata, headers=headers).content
-#        print "2222222222", html.encode('utf-8').strip()
+            html = self.net.http_POST(url=web_url, form_data=fdata, headers=headers).content
+#            print "2222222222", html.encode('utf-8').strip()
 
 #http://thevideo.me/jwv/LDonSU04MylZO1ZNSThGPUEK
         r = re.search('sources:\s*(\[.*?\])', html, re.DOTALL)
