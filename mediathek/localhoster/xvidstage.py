@@ -1,8 +1,9 @@
-from lib import helpers
+
 import sys
 import re
 from lib.net import Net
 import lib.common as common
+from lib import helpers
 
 class XvidstageResolver(object):
     name = "xvidstage"
