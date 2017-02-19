@@ -113,7 +113,7 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 		streamlink = string_resub("label: '360p', file: '", "'", tmpstr, 0);
 
 	if(streamlink == NULL)		
-		streamlink = oregex(".*sources:.*"file":"(http://.*v.mp4).*", tmpstr);
+		streamlink = oregex(".*sources:.*\"file\":\"(http://.*v.mp4).*", tmpstr);
 //		streamlink = oregex(".*sources: [{"file":"(http://.*v.mp4).*", tmpstr);
 
 	if(streamlink == NULL)
