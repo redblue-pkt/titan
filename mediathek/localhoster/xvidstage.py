@@ -31,7 +31,7 @@ class XvidstageResolver(object):
         response = self.net.http_GET(web_url, headers=headers)
         html = response.content
         data = helpers.get_hidden(html)
-        headers['Cookie'] = response.get_headers(as_dict=True).get('Set-Cookie', '')
+        #headers['Cookie'] = response.get_headers(as_dict=True).get('Set-Cookie', '')
         html = self.net.http_POST(web_url, headers=headers, form_data=data).content
         sources = helpers.scrape_sources(html, result_blacklist='tmp')
         print helpers.pick_source(sources) + helpers.append_headers(headers)
