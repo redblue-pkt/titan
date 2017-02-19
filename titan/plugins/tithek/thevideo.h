@@ -105,19 +105,29 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	titheklog(debuglevel, "/tmp/thevideo2_post", NULL, NULL, NULL, tmpstr);	
 
 	streamlink = string_resub("'label' : '360p', 'file' : '", "'", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/thevideo2_post_streamlink1", NULL, NULL, NULL, streamlink);	
+
 	if(streamlink == NULL)
 		streamlink = string_resub("'label' : '240p', 'file' : '", "'", tmpstr, 0);		
+	titheklog(debuglevel, "/tmp/thevideo2_post_streamlink2", NULL, NULL, NULL, streamlink);	
+
 	if(streamlink == NULL)
 		streamlink = string_resub("label: '240p', file: '", "'", tmpstr, 0);		
+	titheklog(debuglevel, "/tmp/thevideo2_post_streamlink3", NULL, NULL, NULL, streamlink);	
+
 	if(streamlink == NULL)
 		streamlink = string_resub("label: '360p', file: '", "'", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/thevideo2_post_streamlink4", NULL, NULL, NULL, streamlink);	
+
 
 	if(streamlink == NULL)		
 		streamlink = oregex(".*sources:.*\"file\":\"(http://.*v.mp4).*", tmpstr);
 //		streamlink = oregex(".*sources: [{"file":"(http://.*v.mp4).*", tmpstr);
+	titheklog(debuglevel, "/tmp/thevideo2_post_streamlink5", NULL, NULL, NULL, streamlink);	
 
 	if(streamlink == NULL)
 		streamlink = oregex(".*(http://.*v.mp4).*", tmpstr);
+	titheklog(debuglevel, "/tmp/thevideo2_post_streamlink6", NULL, NULL, NULL, streamlink);	
 
 //	var mpri_Key='LCw2QFU8N0hRPFdBWi4zLVgK';
 //	eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('3.2(\'<0 4\'.1(\'8="\'+\'/5\'.1(\'/\'+7+\'">\\6/0>\')))',9,9,'script|concat|write|document|s|jwv|x3C|mpri_Key|rc'.split('|'),0,{}))
