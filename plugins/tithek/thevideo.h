@@ -120,8 +120,10 @@ http://d2171.thevideo.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxsky
 	titheklog(debuglevel, "/tmp/thevideo2_post_streamlink4", NULL, NULL, NULL, streamlink);	
 
 
+//  sources: [{"file":"https://d3861.thevideo.me:8777/kgjtaznnpgoammfvg54fmh4ihf6iyptt3axejg7zooshqaa3rl72oia2ejcvbrt3zezduyuhrnsu4yyrb72hjkhujsdhg4rasehxwt7whmlzyd6wf64y5r47h2ejyzqv454juyd5yfxocddcstfngy67yio7zymsqvnlljjjyybcjt4xzduxi6dpzsa24ioimmsajr27mzxgbdqvtz76rbms3txhjitcquabsj5mbnfryf5a362fxqlo5awjzdieb5uypjhvcg53rjuvc7ei2pm4oipa/v.mp4","label":"240p"}],
+
 	if(streamlink == NULL)		
-		streamlink = oregex(".*sources:.*\"file\":\"(http://.*v.mp4).*", tmpstr);
+		streamlink = oregex(".*sources:.*\"file\":\"(http.*v.mp4).*", tmpstr);
 //		streamlink = oregex(".*sources: [{"file":"(http://.*v.mp4).*", tmpstr);
 	titheklog(debuglevel, "/tmp/thevideo2_post_streamlink5", NULL, NULL, NULL, streamlink);	
 
