@@ -7,6 +7,7 @@ SRC=$1
 INPUT=$2
 PAGE=$3
 NEXT=$4
+PAGE2=$5
 
 FILENAME=`echo $PAGE | tr '/' '.'`
 FILENAME=`echo $FILENAME | tr '&' '.'`
@@ -39,46 +40,62 @@ init()
 
 mainmenu()
 {
-	echo "Kino#$SRC $SRC kino '/filme?order=veroeffentlichung'#http://atemio.dyndns.tv/mediathek/menu/kino.ger.jpg#kino.ger.jpg#$NAME#0" >$TMP/$PARSER.$INPUT.list
-	echo "Letze Uploads#$SRC $SRC kino '/filme?order=neu'#http://atemio.dyndns.tv/mediathek/menu/last.updates.ger.jpg#last.updates.ger.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
-#	echo "Search#$SRC $SRC search 'movies.php?list=search&search=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$PARSER.$INPUT.list
+	echo "Kino#$SRC $SRC search 'filme/' 1 '/?order=veroeffentlichung'#http://atemio.dyndns.tv/mediathek/menu/kino.ger.jpg#kino.ger.jpg#$NAME#0" >$TMP/$PARSER.$INPUT.list
+	echo "Letze Uploads#$SRC $SRC search 'filme/' 1 '/?order=neu'#http://atemio.dyndns.tv/mediathek/menu/last.updates.ger.jpg#last.updates.ger.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
+	echo "Alle Filme#$SRC $SRC search 'filme/' 1 '/'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
+	echo "Alle Serien#$SRC $SRC search 'tv/' 1 '/'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
+	echo "Suchen#$SRC $SRC search 'alle/' 1 '/?suche=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
-kino()
+search()
 {
+	if [ -z "$NEXT" ]; then NEXT="search"; fi
+
 	if [ -e "$TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list" ] ; then
 		rm $TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list
 	fi
 
-	piccount=0
-	$curlbin "$URL/$PAGE" -o "$TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.1"
-	cat $TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.1 | tr '\n' ' ' | sed 's/<div class="ml-description-top">/\nfound=/g' | grep ^found= >$TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.2
+	if [ ! -e "$TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list" ]; then
+		piccount=0
 
-	while read -u 3 ROUND; do
-		PIC=`echo $ROUND | sed 's!<img src=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
-		TITLE=`echo $ROUND | sed 's!class="ml-name">!\ntitle=<!g' | grep ^title= | cut -d'<' -f2`
-		NEWPAGE=`echo $ROUND | sed 's!<a href=!\nnewpage=!g' | grep ^newpage= | cut -d'"' -f2 | head -n1 | sed "s#$URL##"`
-
-		if [ -z "$PIC" ]; then
-			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-		fi
-
-		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-
-		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-			if [ ! -e $TMP/$PARSER.$INPUT.$FILENAME.list ];then
-				touch $TMP/$PARSER.$INPUT.$FILENAME.list
+		$curlbin $URL/$PAGESTART/$PAGE$NEXT$PAGE2 -o $TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.1
+		cat $TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.1 | tr '\n' ' ' | sed 's/<div class="ml-description-top">/\nfound=/g' | grep ^found= >$TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.2
+	
+#		<li class="active">1</li><li><a href="http://meinkino.to/filme/2?order=veroeffentlichung&type=filme" data-ci-pagination-page="2">2</a></li><li><a href="http://meinkino.to/filme/3?order=veroeffentlichung&type=filme" data-ci-pagination-page="3">3</a></li><li><a href="http://meinkino.to/filme/2?order=veroeffentlichung&type=filme" data-ci-pagination-page="2" rel="next">&gt;</a></li><li><a href="http://meinkino.to/filme/87?order=veroeffentlichung&type=filme" data-ci-pagination-page="87">Letzte &rsaquo;</a></li> </ul>
+		pages=`cat $TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.1 | grep data-ci-pagination-page | sed 's/data-ci-pagination-page=/\nfound=/g' |grep ^found= | cut -d'"' -f2 | tail -n1`
+	
+		while read -u 3 ROUND; do
+			PIC=`echo $ROUND | sed 's!<img src=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
+			TITLE=`echo $ROUND | sed 's!class="ml-name">!\ntitle=<!g' | grep ^title= | cut -d'<' -f2`
+			NEWPAGE=`echo $ROUND | sed 's!<a href=!\nnewpage=!g' | grep ^newpage= | cut -d'"' -f2 | head -n1 | sed "s#$URL##"`
+	
+			if [ -z "$PIC" ]; then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 			fi
-			piccount=`expr $piccount + 1`
-			LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER_$piccount.jpg#$NAME#0"
-
+	
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+	
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				if [ ! -e $TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list ];then
+					touch $TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list
+				fi
+				piccount=`expr $piccount + 1`
+				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER.$INPUT.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
+	
+				echo "$LINE" >> $TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list
+			fi
+	
+		done 3<$TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.2
+	
+		if [ "$NEXT" -lt "$pages" ]; then
+			NEXTPAGE=`expr $NEXT + 1`
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list
 		fi
-
-	done 3<$TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.2
-	rm $TMP/cache.* > /dev/null 2>&1
-
+	
+#		rm $TMP/cache.* > /dev/null 2>&1
+	fi
 	echo "$TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list"
 }
 
@@ -130,16 +147,10 @@ play()
 	echo "$URL"
 }
 
-search()
-{
-	echo "$URL"
-}
-
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	hosterlist) $INPUT;;
 	play) $INPUT;;
 	search) $INPUT;;
-	kino) $INPUT;;
 esac
