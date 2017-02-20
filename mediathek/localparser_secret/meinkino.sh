@@ -43,8 +43,9 @@ mainmenu()
 	echo "Kino#$SRC $SRC search 'filme/' 1 '/?order=veroeffentlichung'#http://atemio.dyndns.tv/mediathek/menu/kino.ger.jpg#kino.ger.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Letze Uploads#$SRC $SRC search 'filme/' 1 '/?order=neu'#http://atemio.dyndns.tv/mediathek/menu/last.updates.ger.jpg#last.updates.ger.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Alle Filme#$SRC $SRC search 'filme/' 1 '/'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Top IMDb Filme#$SRC $SRC search '/filter/' 1 '/?type=filme&order=imdb'#http://atemio.dyndns.tv/mediathek/menu/top.100.filme.jpg#top.100.filme.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Alle Serien#$SRC $SRC search 'tv/' 1 '/'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Genre#$SRC $SRC genre#http://atemio.dyndns.tv/mediathek/menu/genre.jpg#genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Genre#$SRC $SRC genre#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
 #	echo "A-Z#$SRC $SRC sorted#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Suchen#$SRC $SRC search 'alle/' 1 '/?suche=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
@@ -95,11 +96,11 @@ search()
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 
-		$curlbin $URL/$PAGESTART/$PAGE$NEXT$PAGE2 -o $TMP/cache.1
-		cat $TMP/cache.1 | tr '\n' ' ' | sed 's/<div class="ml-description-top">/\nfound=/g' | grep ^found= >$TMP/cache.2
+		$curlbin $URL/$PAGESTART/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed 's/<div class="ml-description-top">/\nfound=/g' | grep ^found= >$TMP/cache.$FILENAME.2
 	
 #		<li class="active">1</li><li><a href="http://meinkino.to/filme/2?order=veroeffentlichung&type=filme" data-ci-pagination-page="2">2</a></li><li><a href="http://meinkino.to/filme/3?order=veroeffentlichung&type=filme" data-ci-pagination-page="3">3</a></li><li><a href="http://meinkino.to/filme/2?order=veroeffentlichung&type=filme" data-ci-pagination-page="2" rel="next">&gt;</a></li><li><a href="http://meinkino.to/filme/87?order=veroeffentlichung&type=filme" data-ci-pagination-page="87">Letzte &rsaquo;</a></li> </ul>
-		pages=`cat $TMP/cache.1 | grep data-ci-pagination-page | sed 's/data-ci-pagination-page=/\nfound=/g' |grep ^found= | cut -d'"' -f2 | tail -n1`
+		pages=`cat $TMP/cache.$FILENAME.1 | grep data-ci-pagination-page | sed 's/data-ci-pagination-page=/\nfound=/g' |grep ^found= | cut -d'"' -f2 | tail -n1`
 	
 		while read -u 3 ROUND; do
 			PIC=`echo $ROUND | sed 's!<img src=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
@@ -117,23 +118,50 @@ search()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
-	
+
+				if [ `echo $NEWPAGE | grep staffel | grep folge | wc -l` -eq 1 ];then
+					LINE="$TITLE#$SRC $SRC serielist $NEWPAGE#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
+				else
+					LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
+				fi
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 	
-		done 3<$TMP/cache.2
+		done 3<$TMP/cache.$FILENAME.2
 	
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
 			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
-	
-#		rm $TMP/cache.* > /dev/null 2>&1
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
 }
+
+serielist()
+{
+	if [ -e "$TMP/$FILENAME.list" ] ; then
+		rm $TMP/$FILENAME.list
+	fi
+	$curlbin $URL/$PAGE -o $TMP/cache.$FILENAME.1
+	TMPURL=`cat $TMP/cache.$FILENAME.1 | sed 's/data-url-id=/\nfound=/g' | grep ^found= | cut -d'"' -f2`
+
+	cat $TMP/cache.$FILENAME.1 | sed 's/<li class="active">/<li>/g' | grep ^"<li><a href=" | grep staffel >$TMP/cache.$FILENAME.3
+	while read -u 3 ROUND; do
+		NEWPAGE=`echo $ROUND | cut -d'"' -f2 | sed "s#$URL##"`
+		TITLE=`echo $ROUND | sed 's/staffel-/\nStaffel /g' | sed 's/-stream-/\nstream/g' | sed 's/-/ /g' | grep ^Staffel | sed 's/folge/Folge/g'` 
+
+		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
+			PIC=`echo $TITLE | sed 's/Staffel /s/g' | sed 's/ Folge /e/g'`
+			LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#0"
+			echo "$LINE" >> $TMP/$FILENAME.list
+		fi
+	done 3<$TMP/cache.$FILENAME.3
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	echo "$TMP/$FILENAME.list"
+}
+
 
 hosterlist()
 {
@@ -173,7 +201,7 @@ hosterlist()
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 	done 3<$TMP/cache.$FILENAME.3
-#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -187,6 +215,7 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	hosterlist) $INPUT;;
+	serielist) $INPUT;;
 	play) $INPUT;;
 	search) $INPUT;;
 	genre) $INPUT;;
