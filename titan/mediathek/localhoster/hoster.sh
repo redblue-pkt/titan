@@ -180,7 +180,7 @@ xvidstage()
 	$BIN $CMD/xvidstage.py $INPUT
 }
 
-googlevideo()
+directstream()
 {
 	echo "$INPUT"
 }
@@ -209,6 +209,6 @@ if [ "$TYPE" == "get" ];then
 		divxstage|cloudtime) divxstage $INPUT;;
 		novamov|auroravid) novamov $INPUT;;
 		xvidstage) xvidstage $INPUT;;
-		redirector|googlevideo) googlevideo "$INPUT";;
+		redirector|googlevideo|vodcloud) directstream "$INPUT";;
 	esac
 fi
