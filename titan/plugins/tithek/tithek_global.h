@@ -12,7 +12,8 @@ char* hoster(char* url)
 	string_tolower(tmplink);
 
 	char* cmd = NULL;
-	cmd = ostrcat("/tmp/localhoster/hoster.sh get ", url, 0, 0);
+	cmd = ostrcat("/tmp/localhoster/hoster.sh get \"", url, 0, 0);
+	cmd = ostrcat(cmd, "\"", 1, 0);
 	streamurl = command(cmd);
 	streamurl = string_newline(streamurl);
 	free(cmd), cmd = NULL;
@@ -96,6 +97,7 @@ char* hoster(char* url)
 		else
 		{
 			cmd = ostrcat("/tmp/localhoster/hoster.sh get ", url, 0, 0);
+			cmd = ostrcat(cmd, "\"", 1, 0);
 			streamurl = command(cmd);
 			streamurl = string_newline(streamurl);
 			free(cmd), cmd = NULL;
