@@ -180,6 +180,11 @@ xvidstage()
 	$BIN $CMD/xvidstage.py $INPUT
 }
 
+googlevideo()
+{
+	echo "$INPUT"
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -204,5 +209,6 @@ if [ "$TYPE" == "get" ];then
 		divxstage|cloudtime) divxstage $INPUT;;
 		novamov|auroravid) novamov $INPUT;;
 		xvidstage) xvidstage $INPUT;;
+		redirector|googlevideo) googlevideo "$INPUT";;
 	esac
 fi
