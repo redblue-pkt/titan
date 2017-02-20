@@ -115,7 +115,7 @@ hosterlist()
 		fi
 
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
-			PIC=`echo $TITLE | tr [A-Z] [a-z] | cut -d "_" -f2 | cut " " -f1`
+			PIC=`echo $TITLE | tr [A-Z] [a-z] | cut -d "_" -f2 | cut -d" " -f1`
 			LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
