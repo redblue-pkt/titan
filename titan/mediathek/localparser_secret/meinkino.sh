@@ -9,8 +9,8 @@ PAGE=$3
 NEXT=$4
 PAGE2=$5
 
-FILENAME=`echo $PAGE | tr '/' '.'`
-FILENAME=`echo $FILENAME | tr '&' '.'`
+FILENAME="$INPUT $PAGE $NEXT $PAGE2"
+FILENAME=`echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
 
 if [ -z "$PAGE" ]; then
 	FILENAME=none
@@ -44,17 +44,53 @@ mainmenu()
 	echo "Letze Uploads#$SRC $SRC search 'filme/' 1 '/?order=neu'#http://atemio.dyndns.tv/mediathek/menu/last.updates.ger.jpg#last.updates.ger.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
 	echo "Alle Filme#$SRC $SRC search 'filme/' 1 '/'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
 	echo "Alle Serien#$SRC $SRC search 'tv/' 1 '/'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
+	echo "Genre#$SRC $SRC genre#http://atemio.dyndns.tv/mediathek/menu/genre.jpg#genre.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
+#	echo "A-Z#$SRC $SRC sorted#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#0" >>$TMP/$PARSER.$INPUT.list
 	echo "Suchen#$SRC $SRC search 'alle/' 1 '/?suche=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+genre()
+{
+	watchlist="
+		abenteuer-filme
+		action-filme
+		animation-filme
+		dokumentarfilm-filme
+		drama-filme
+		familie-filme
+		fantasy-filme
+		foreign-filme
+		historie-filme
+		horror-filme
+		komoedie-filme
+		kriegsfilm-filme
+		krimi-filme
+		lovestory-filme
+		musik-filme
+		mystery-filme
+		science-fiction-filme
+		tv-film-filme
+		thriller-filme
+		western-filme
+		"
+	rm $TMP/$PARSER.$INPUT.list > /dev/null 2>&1
+
+	for ROUND0 in $watchlist; do
+		TITLE=`echo $ROUND0 | tr '/' '-' | sed 's/-filme//g'`
+		filename=`echo $TITLE`	
+		echo "$TITLE#$SRC $SRC search 'genre/$ROUND0/' 1#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	done
+  	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 search()
 {
 	if [ -z "$NEXT" ]; then NEXT="search"; fi
 
-	if [ -e "$TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list
-	fi
+#	if [ -e "$TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list" ] ; then
+#		rm $TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list
+#	fi
 
 	if [ ! -e "$TMP/$PARSER.$INPUT.$NEXT.$FILENAME.list" ]; then
 		piccount=0
@@ -153,4 +189,5 @@ case $INPUT in
 	hosterlist) $INPUT;;
 	play) $INPUT;;
 	search) $INPUT;;
+	genre) $INPUT;;
 esac
