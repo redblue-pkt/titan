@@ -67,7 +67,7 @@ search()
 	
 		while read -u 3 ROUND; do
 			PIC=`echo $ROUND | sed 's!<img src=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
-			TITLE=`echo $ROUND | sed 's!class="ml-name">!\ntitle=<!g' | grep ^title= | cut -d'<' -f2`
+			TITLE=`echo $ROUND | sed 's!class="ml-name">!\ntitle=<!g' | grep ^title= | sed 's/<span class="mark-wc">//g' | sed 's!</span>!!g' | cut -d'<' -f2`
 			NEWPAGE=`echo $ROUND | sed 's!<a href=!\nnewpage=!g' | grep ^newpage= | cut -d'"' -f2 | head -n1 | sed "s#$URL##"`
 	
 			if [ -z "$PIC" ]; then
