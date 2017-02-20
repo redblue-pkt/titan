@@ -13,7 +13,7 @@ PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 FILENAME="$PARSER $INPUT $PAGE $NEXT $PAGE2"
 FILENAME=`echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
 
-if [ -z "$PAGE" ]; then
+if [ -z "$FILENAME" ]; then
 	FILENAME=none
 fi
 
