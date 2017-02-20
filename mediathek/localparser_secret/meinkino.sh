@@ -201,7 +201,7 @@ hosterlist()
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 	done 3<$TMP/cache.$FILENAME.3
-	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	echo "$TMP/$FILENAME.list"
 }
 
