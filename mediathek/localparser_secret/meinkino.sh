@@ -141,6 +141,7 @@ search()
 
 serielist()
 {
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	if [ -e "$TMP/$FILENAME.list" ] ; then
 		rm $TMP/$FILENAME.list
 	fi
@@ -158,13 +159,15 @@ serielist()
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 	done 3<$TMP/cache.$FILENAME.3
-	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	echo "$TMP/$FILENAME.list"
 }
 
 
 hosterlist()
 {
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+
 	if [ -e "$TMP/$FILENAME.list" ] ; then
 		rm $TMP/$FILENAME.list
 	fi
@@ -176,7 +179,7 @@ hosterlist()
 #	$curlbin2 -H "X-Requested-With: XMLHttpRequest" -X POST  --referer http://meinkino.to/film/the-zero-theorem-stream-id8795 http://meinkino.to/geturl/8795
 	$curlbin2 -H "X-Requested-With: XMLHttpRequest" -X POST  --referer $URL/$PAGE $TMPURL -o $TMP/cache.$FILENAME.2
 
-	cat $TMP/cache.$FILENAME.2 | sed 's/link_/\nlink_/g' | grep ^link_ | sed 's/"alternative":{"/\nlink_/g' >$TMP/cache.$FILENAME.3
+	cat $TMP/cache.$FILENAME.2 | sed 's/{"url":"/\nlink_url":"/g' | sed 's/link_/\nlink_/g' | grep ^link_ | sed 's/"alternative":{"/\nlink_/g' >$TMP/cache.$FILENAME.3
 
 	if [ ! -z "$TRAILER" ];then
 		ID=`echo $TRAILER | tr '=' '\n' | tail -n1`
