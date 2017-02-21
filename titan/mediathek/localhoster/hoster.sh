@@ -31,7 +31,10 @@ if [ "$ARCH" == "sh4" ] && [ "$BOX" != "ufs912" ]; then
 	if [ -e "$CMD/lib/libpython2.7.so.1.0.mipsel" ]; then rm -rf $CMD/lib/libpython2.7.so.1.0.mipsel; fi
 fi
 
-hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!http://!!' | sed 's!https://!!' | cut -d'/' -f1 | sed 's/www.//' | tr '.' '\n' | head -n1`
+hostercheck=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | tr '.' '\n' | wc -l`
+hosterline=`expr $hostercheck - 1`
+hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | cut -d"." -f$hosterline`
+#echo $hoster
 
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
 curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
