@@ -119,10 +119,12 @@ search()
 				fi
 				piccount=`expr $piccount + 1`
 
-				if [ `echo $NEWPAGE | grep staffel | grep folge | wc -l` -eq 1 ];then
-					LINE="$TITLE#$SRC $SRC serielist $NEWPAGE#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
-				else
-					LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
+				if [ `cat $TMP/$FILENAME.list | grep "#$NEWPAGE#" | wc -l` -eq 0 ];then
+					if [ `echo $NEWPAGE | grep staffel | grep folge | wc -l` -eq 1 ];then
+						LINE="$TITLE#$SRC $SRC serielist $NEWPAGE#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
+					else
+						LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
+					fi
 				fi
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
