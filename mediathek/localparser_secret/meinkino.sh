@@ -193,15 +193,24 @@ hosterlist()
 
 	while read -u 3 ROUND; do
 		NEWPAGE=`echo $ROUND | cut -d'"' -f3`
-		TITLE=`echo $ROUND | cut -d'"' -f1` 		
+		TITLE=`echo $ROUND | cut -d'"' -f1 | cut -d'_' -f2` 		
 		EXTRA=`echo $ROUND | sed 's/"quality"/\nextra=/g' | grep ^extra= | cut -d'"' -f2` 		
 		#"quality":"480"
-		if [ ! -z "$EXTRA" ];then
-			TITLE="$TITLE ($EXTRA)"
-		fi
 
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 			PIC=`echo $TITLE | tr [A-Z] [a-z] | cut -d "_" -f2 | cut -d" " -f1`
+			hostercheck=`echo $NEWPAGE | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | tr '.' '\n' | wc -l`
+			hosterline=`expr $hostercheck - 1`
+			hoster=`echo $NEWPAGE | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | cut -d"." -f$hosterline`
+			#echo $hoster
+			PIC=$hoster
+			if [ ! -z "$hoster" ];then
+				if [ ! -z "$EXTRA" ];then
+					TITLE="$hoster ($TITLE $EXTRA)"
+				else
+					TITLE="$hoster ($TITLE)"
+				fi
+			fi
 			LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
