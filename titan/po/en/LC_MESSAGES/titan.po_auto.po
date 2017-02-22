@@ -1815,7 +1815,7 @@ msgstr "Can't create directory!"
 msgid "Can't create service"
 msgstr "ERROR: Can't create Service"
 
-#: service.h:976
+#: service.h:1003
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -1865,7 +1865,7 @@ msgstr "ERROR: Can't open Frontend Device"
 msgid "Can't open file"
 msgstr "ERROR: Can't open File"
 
-#: service.h:982
+#: service.h:1009
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "ERROR: Can't open Frontend Device or\n"
@@ -2088,7 +2088,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "No. of Channels: "
 
-#: service.h:987
+#: service.h:1014
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "ERROR: Channellist empty or corrupt\n"
@@ -3255,7 +3255,7 @@ msgstr "ERROR: can't set marker in this file"
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1952 service.h:745 service.h:993 shared.h:29
+#: security.h:685 security.h:1952 service.h:774 service.h:1020 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
 #: skin_default_skin.xml.h:198 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -5981,7 +5981,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1952
-#: service.h:745 service.h:993 shared.h:29 shared.h:66 shared.h:83
+#: service.h:774 service.h:1020 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
 #: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
@@ -6585,7 +6585,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1952 service.h:745 service.h:993
+#: security.h:668 security.h:685 security.h:1952 service.h:774 service.h:1020
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -10158,7 +10158,7 @@ msgstr ""
 "Timeshift file to short\n"
 "Please wait a little and try again"
 
-#: service.h:745
+#: service.h:774
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -10532,7 +10532,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr ""
 
-#: service.h:979
+#: service.h:1006
 msgid "Tuning to Channel failed!"
 msgstr "ERROR: Channel not available"
 

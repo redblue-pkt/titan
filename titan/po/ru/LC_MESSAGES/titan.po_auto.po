@@ -1818,7 +1818,7 @@ msgstr "Ошибка создания директории!"
 msgid "Can't create service"
 msgstr "ОШИБКА: Канал не может быть создан!"
 
-#: service.h:976
+#: service.h:1003
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -1864,7 +1864,7 @@ msgstr "Не удаётся открыть веб-интерфейс устро�
 msgid "Can't open file"
 msgstr "Не удаётся открыть файл"
 
-#: service.h:982
+#: service.h:1009
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Не удаётся открыть внешний интерфейс или тип тюнера неизвестный!"
 
@@ -2080,7 +2080,7 @@ msgstr "Поиск каналов закончен. Ничего не найде
 msgid "ChannelCount: "
 msgstr "Каналов "
 
-#: service.h:987
+#: service.h:1014
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Список каналов пуст или повреждён (Каналы не найдены)!"
 
@@ -3242,7 +3242,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1952 service.h:745 service.h:993 shared.h:29
+#: security.h:685 security.h:1952 service.h:774 service.h:1020 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
 #: skin_default_skin.xml.h:198 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -5968,7 +5968,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716
 #: scan.h:1978 scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 security.h:1952
-#: service.h:745 service.h:993 shared.h:29 shared.h:66 shared.h:83
+#: service.h:774 service.h:1020 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:594 skinadjust.h:610 skinadjust.h:618 skinadjust.h:659
 #: skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231
 #: sock.h:954 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
@@ -6570,7 +6570,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1952 service.h:745 service.h:993
+#: security.h:668 security.h:685 security.h:1952 service.h:774 service.h:1020
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -10139,7 +10139,7 @@ msgstr ""
 "Файл таймшифта короткий!\n"
 "Подождите немного и повторите снова"
 
-#: service.h:745
+#: service.h:774
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -10512,7 +10512,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr "Тип тюнера"
 
-#: service.h:979
+#: service.h:1006
 msgid "Tuning to Channel failed!"
 msgstr "Канал не доступен!"
 
