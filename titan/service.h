@@ -162,7 +162,36 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			m_unlock(&status.servicemutex, 2);
 			return 1;
 		}
-
+		
+#ifdef DREAMBOX
+		if(status.aktservice->fedev != fenode)
+		{
+			int fastzap = getconfigint("fastzap", NULL);
+			if(fastzap == 1)
+			{
+				audioclose(status.aktservice->audiodev, -1);
+				status.aktservice->audiodev = NULL;
+				dmxstop(status.aktservice->dmxaudiodev);
+				dmxclose(status.aktservice->dmxaudiodev, -1);
+				status.aktservice->dmxaudiodev = NULL;
+			}
+			if(fastzap == 1 || fastzap == 2)
+			{
+				videoclose(status.aktservice->videodev, -1);
+				status.aktservice->videodev = NULL;
+				dmxstop(status.aktservice->dmxvideodev);
+				dmxclose(status.aktservice->dmxvideodev, -1);
+				status.aktservice->dmxvideodev = NULL;
+				dmxstop(status.aktservice->dmxpcrdev);
+				dmxclose(status.aktservice->dmxpcrdev, -1);
+				status.aktservice->dmxpcrdev = NULL;
+				dmxstop(status.aktservice->dmxsubtitledev);
+				dmxclose(status.aktservice->dmxsubtitledev, -1);
+				status.aktservice->dmxsubtitledev = NULL;
+			}
+		}
+#endif
+		
 		status.aktservice->fedev = fenode;
 
 		//frontend tune
@@ -769,9 +798,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(checkbox("VUSOLO2") == 1) videoclearbuffer(node->videodev);
 		videostop(node->videodev, clear);
 
-		int fastzap = 0;
-		if(checkbox("DM900") != 1) //dm900 no fastzap
-			fastzap = getconfigint("fastzap", NULL);
+		int	fastzap = getconfigint("fastzap", NULL);
 
 		if(flag == 3) flag = 0;
 		if(flag == 4 || flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
