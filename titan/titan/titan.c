@@ -637,6 +637,8 @@ int main(int argc, char *argv[])
 		ret = setac3plus(getconfig("av_ac3plusmode", NULL));
 		ret = setdtshd(getconfig("av_dtshdmode", NULL));
 		ret = setwmapro(getconfig("av_wmapromode", NULL));
+	
+		addconfig("mode3ddev", "/proc/stb/fb/primary/3d");     //24.02.17
 	}
 		
 #ifdef MIPSEL
