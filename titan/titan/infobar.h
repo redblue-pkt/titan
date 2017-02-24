@@ -1136,6 +1136,27 @@ void screeninfobar()
 			}
 		}
 	
+		if(rcret == getrcconfigint("rchdmi", NULL))
+		{
+			char *value = NULL;
+			value = readsys("/proc/stb/hdmi-rx/0/hdmi_rx_monitor", 1);
+			if(value != NULL)
+			{
+				if(ostrstr(value, "off") == 0)
+				{
+					writesys("/proc/stb/video/videomode", "720p", 1);
+					writesys("/proc/stb/audio/hdmi_rx_monitor", "on", 1);
+					writesys("/proc/stb/hdmi-rx/0/hdmi_rx_monitor", "on", 1);
+				}
+				else
+				{
+					writesys("/proc/stb/audio/hdmi_rx_monitor", "off", 1);
+					writesys("/proc/stb/hdmi-rx/0/hdmi_rx_monitor", "off", 1);
+					setvideomode(getconfig("av_videomode", NULL), 0);
+				}
+			}
+		}
+		
 		if(rcret == RCTIMEOUT && mark == 0)
 		{
 			if(getconfigint("infobartimeout", NULL) > infobartimeout)
