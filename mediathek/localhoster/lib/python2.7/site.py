@@ -19,6 +19,12 @@ prefixes directly, as well as with lib/site-packages appended.  The
 resulting directories, if they exist, are appended to sys.path, and
 also inspected for path configuration files.
 
+For Debian and derivatives, this sys.path is augmented with directories
+for packages distributed within the distribution. Local addons go
+into /usr/local/lib/python<version>/dist-packages, Debian addons
+install into /usr/{lib,share}/python<version>/dist-packages.
+/usr/lib/python<version>/site-packages is not used.
+
 A path configuration file is a file whose name has the form
 <package>.pth; its contents are additional directories (one per line)
 to be added to sys.path.  Non-existing directories (or
@@ -267,6 +273,13 @@ def addusersitepackages(known_paths):
 
     if ENABLE_USER_SITE and os.path.isdir(user_site):
         addsitedir(user_site, known_paths)
+    if ENABLE_USER_SITE:
+        for dist_libdir in ("local/lib", "lib"):
+            user_site = os.path.join(USER_BASE, dist_libdir,
+                                     "python" + sys.version[:3],
+                                     "dist-packages")
+            if os.path.isdir(user_site):
+                addsitedir(user_site, known_paths)
     return known_paths
 
 def getsitepackages():
@@ -288,18 +301,15 @@ def getsitepackages():
         if sys.platform in ('os2emx', 'riscos'):
             sitepackages.append(os.path.join(prefix, "Lib", "site-packages"))
         elif os.sep == '/':
-            sitepackages.append(os.path.join(prefix, sys.lib,
+            sitepackages.append(os.path.join(prefix, "local/lib",
                                         "python" + sys.version[:3],
-                                        "site-packages"))
-            sitepackages.append(os.path.join(prefix, sys.lib, "site-python"))
-            if sys.lib != "lib":
-                sitepackages.append(os.path.join(prefix, "lib",
-                                            "python" + sys.version[:3],
-                                            "site-packages"))
-                sitepackages.append(os.path.join(prefix, "lib", "site-python"))
+                                        "dist-packages"))
+            sitepackages.append(os.path.join(prefix, "lib",
+                                        "python" + sys.version[:3],
+                                        "dist-packages"))
         else:
             sitepackages.append(prefix)
-            sitepackages.append(os.path.join(prefix, sys.lib, "site-packages"))
+            sitepackages.append(os.path.join(prefix, "lib", "site-packages"))
         if sys.platform == "darwin":
             # for framework builds *only* we add the standard Apple
             # locations.
@@ -441,7 +451,7 @@ def setcopyright():
     for supporting Python development.  See www.python.org for more information.""")
     here = os.path.dirname(os.__file__)
     __builtin__.license = _Printer(
-        "license", "See https://www.python.org/psf/license/",
+        "license", "See http://www.python.org/psf/license/",
         ["LICENSE.txt", "LICENSE"],
         [os.path.join(here, os.pardir), here, os.curdir])
 
