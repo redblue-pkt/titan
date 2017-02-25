@@ -21,28 +21,33 @@
 
 # === Variables set by makesetup ===
 
-MODOBJS=          Modules/threadmodule.o  Modules/signalmodule.o  Modules/posixmodule.o  Modules/errnomodule.o  Modules/pwdmodule.o  Modules/_sre.o  Modules/_codecsmodule.o  Modules/_weakref.o  Modules/zipimport.o  Modules/symtablemodule.o  Modules/xxsubtype.o
+MODOBJS=          Modules/threadmodule.o  Modules/signalmodule.o  Modules/posixmodule.o  Modules/errnomodule.o  Modules/pwdmodule.o  Modules/_sre.o  Modules/_codecsmodule.o  Modules/_weakref.o  Modules/zipimport.o  Modules/symtablemodule.o  Modules/md5module.o Modules/md5.o  Modules/xxsubtype.o
 MODLIBS=        $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	2.7
-srcdir=		.
+srcdir=		../Python-2.7.11
+VPATH=		../Python-2.7.11
+abs_srcdir=	/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/work/cortexa15hf-neon-vfpv4-oe-linux-gnueabi/python/2.7.11-r1.2/build/../Python-2.7.11
+abs_builddir=	/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/work/cortexa15hf-neon-vfpv4-oe-linux-gnueabi/python/2.7.11-r1.2/build
+build=		i686-pc-linux-gnu
+host=		arm-oe-linux-gnueabi
 
-abs_srcdir=	/home/bonkel/HDMU-BUILD/SH4_NEW/cdk/python-2.7.9
-abs_builddir=	/home/bonkel/HDMU-BUILD/SH4_NEW/cdk/python-2.7.9
-build=		x86_64-unknown-linux-gnu
-host=		sh4-unknown-linux-gnu
-
-CC=		sh4-linux-gcc -pthread
-CXX=		sh4-linux-c++
+CC=		arm-oe-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a15 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900 -pthread
+CXX=		arm-oe-linux-gnueabi-g++  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a15 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900
 MAINCC=		$(CC)
 LINKCC=		$(PURIFY) $(MAINCC)
-AR=		sh4-linux-ar
-RANLIB=		sh4-linux-ranlib
+AR=		arm-oe-linux-gnueabi-ar
+RANLIB=		arm-oe-linux-gnueabi-ranlib
 SVNVERSION=	svnversion $(srcdir)
 HGVERSION=	
 HGTAG=		
 HGBRANCH=	
+PGO_PROF_GEN_FLAG=-fprofile-generate
+PGO_PROF_USE_FLAG=-fprofile-use -fprofile-correction
+LLVM_PROF_MERGER=true
+LLVM_PROF_FILE=
+LLVM_PROF_ERR=no
 
 GNULD=          yes
 
@@ -67,14 +72,14 @@ MKDIR_P=	/bin/mkdir -p
 MAKESETUP=      $(srcdir)/Modules/makesetup
 
 # Compiler options
-OPT=		-DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes
+OPT=		-DNDEBUG -g  -O3 -Wall -Wstrict-prototypes
 BASECFLAGS=	 -fno-strict-aliasing
-CFLAGS=		$(BASECFLAGS) -g -O2 $(OPT) $(EXTRA_CFLAGS)
+CFLAGS=		$(BASECFLAGS)  -Os -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/work/cortexa15hf-neon-vfpv4-oe-linux-gnueabi/python/2.7.11-r1.2/build=/usr/src/python -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/work/cortexa15hf-neon-vfpv4-oe-linux-gnueabi/python/2.7.11-r1.2/Python-2.7.11=/usr/src/python -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/i686-linux= -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900=  $(OPT) $(EXTRA_CFLAGS)
 # Both CPPFLAGS and LDFLAGS need to contain the shell's value for setup.py to
 # be able to build extension modules using the directories specified in the
 # environment variables
 CPPFLAGS=	-I. -IInclude -I$(srcdir)/Include 
-LDFLAGS=	
+LDFLAGS=-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -L. -L/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/lib
 LDLAST=		
 SGI_ABI=	
 CCSHARED=	-fPIC
@@ -88,6 +93,7 @@ PY_CFLAGS=	$(CFLAGS) $(CPPFLAGS) $(CFLAGSFORSHARED) -DPy_BUILD_CORE
 
 # Machine-dependent subdirectories
 MACHDEP=	linux2
+LIB=		lib
 
 # Multiarch directory (may be empty)
 MULTIARCH=	
@@ -96,17 +102,17 @@ MULTIARCH=
 prefix=		/usr
 
 # Install prefix for architecture-dependent files
-exec_prefix=	${prefix}
+exec_prefix=	/usr
 
 # Install prefix for data files
 datarootdir=    ${prefix}/share
 
 # Expanded directories
-BINDIR=		${exec_prefix}/bin
-LIBDIR=		${exec_prefix}/lib
-MANDIR=		${datarootdir}/man
-INCLUDEDIR=	${prefix}/include
-CONFINCLUDEDIR=	$(exec_prefix)/include
+BINDIR=		/usr/bin
+LIBDIR=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/lib
+MANDIR=		/usr/share/man
+INCLUDE=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/include
+CONFINCLUDE=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/include
 SCRIPTDIR=	$(prefix)/lib
 
 # Detailed destination directories
@@ -143,7 +149,7 @@ MACOSX_DEPLOYMENT_TARGET=
 OTHER_LIBTOOL_OPT=
 
 # Environment to run shared python without installed libraries
-RUNSHARED=       
+RUNSHARED=
 
 # ensurepip options
 ENSUREPIP=      no
@@ -155,7 +161,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--build=x86_64-unknown-linux-gnu' '--host=sh4-linux' '--target=sh4-linux' '--prefix=/usr' '--sysconfdir=/etc' '--enable-shared' '--enable-ipv6' '--with-threads' '--with-pymalloc' '--with-signal-module' '--with-wctype-functions' 'ac_sys_system=Linux' 'ac_sys_release=2' 'ac_cv_file__dev_ptmx=no' 'ac_cv_file__dev_ptc=no' 'ac_cv_no_strict_aliasing_ok=yes' 'ac_cv_pthread=yes' 'ac_cv_cxx_thread=yes' 'ac_cv_sizeof_off_t=8' 'ac_cv_have_chflags=no' 'ac_cv_have_lchflags=no' 'ac_cv_py_format_size_t=yes' 'ac_cv_broken_sem_getvalue=no' 'HOSTPYTHON=/home/bonkel/HDMU-BUILD/SH4_NEW/tufsbox/host/bin/python' 'build_alias=x86_64-unknown-linux-gnu' 'host_alias=sh4-linux' 'target_alias=sh4-linux'
+CONFIG_ARGS=	 '--build=i686-linux' '--host=arm-oe-linux-gnueabi' '--target=arm-oe-linux-gnueabi' '--prefix=/usr' '--exec_prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--libexecdir=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/libexec' '--datadir=/usr/share' '--sysconfdir=/etc' '--sharedstatedir=/com' '--localstatedir=/var' '--libdir=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/lib' '--includedir=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/include' '--oldincludedir=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/include' '--infodir=/usr/share/info' '--mandir=/usr/share/man' '--disable-silent-rules' '--disable-dependency-tracking' '--with-libtool-sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900' '--with-system-ffi' '--with-threads' '--with-pymalloc' '--without-cxx-main' '--with-signal-module' '--enable-shared' '--enable-ipv6=yes' 'ac_cv_header_bluetooth_bluetooth_h=no' 'ac_cv_header_bluetooth_h=no' 'ac_cv_file__dev_ptmx=yes' 'ac_cv_file__dev_ptc=no' 'ac_cv_no_strict_aliasing_ok=yes' 'ac_cv_pthread=yes' 'ac_cv_cxx_thread=yes' 'ac_cv_sizeof_off_t=8' 'build_alias=i686-linux' 'host_alias=arm-oe-linux-gnueabi' 'target_alias=arm-oe-linux-gnueabi' 'CC=arm-oe-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a15 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900' 'CFLAGS= -Os -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/work/cortexa15hf-neon-vfpv4-oe-linux-gnueabi/python/2.7.11-r1.2/build=/usr/src/python -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/work/cortexa15hf-neon-vfpv4-oe-linux-gnueabi/python/2.7.11-r1.2/Python-2.7.11=/usr/src/python -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/i686-linux= -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900= ' 'LDFLAGS=-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed' 'CPPFLAGS=' 'CPP=arm-oe-linux-gnueabi-gcc -E --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a15' 'PKG_CONFIG_PATH=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/lib/pkgconfig:/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/share/pkgconfig' 'PKG_CONFIG_LIBDIR=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/lib/pkgconfig'
 
 
 # Subdirectories with code
@@ -195,23 +201,21 @@ UNICODE_OBJS=   Objects/unicodeobject.o Objects/unicodectype.o
 
 PYTHON=		python$(EXE)
 BUILDPYTHON=	python$(BUILDEXE)
-HOSTPYTHON=	./$(BUILDPYTHON)
 
-PYTHON_FOR_BUILD=_PYTHON_PROJECT_BASE=$(abs_builddir) _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=$(shell test -f pybuilddir.txt && echo $(abs_builddir)/`cat pybuilddir.txt`:)$(srcdir)/Lib:$(srcdir)/Lib/plat-$(MACHDEP) python2.7
-_PYTHON_HOST_PLATFORM=linux2-sh4
-HOST_GNU_TYPE=  sh4-unknown-linux-gnu
+PYTHON_FOR_BUILD=_PYTHON_PROJECT_BASE=$(abs_builddir) _PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) PYTHONPATH=$(CROSSPYTHONPATH):$(shell test -f pybuilddir.txt && echo $(abs_builddir)/`cat pybuilddir.txt`:)$(srcdir)/Lib:$(srcdir)/Lib/plat-$(MACHDEP) python2.7
+_PYTHON_HOST_PLATFORM=linux2-arm
+HOST_GNU_TYPE=  arm-oe-linux-gnueabi
 
 # Tcl and Tk config info from --with-tcltk-includes and -libs options
 TCLTK_INCLUDES=	
 TCLTK_LIBS=	
 
 # The task to run while instrument when building the profile-opt target
-PROFILE_TASK=	$(srcdir)/Tools/pybench/pybench.py -n 2 --with-gc --with-syscheck
-#PROFILE_TASK=	$(srcdir)/Lib/test/regrtest.py
+PROFILE_TASK=-m test.regrtest --pgo
 
 # === Definitions added by makesetup ===
 
-LOCALMODLIBS=           
+LOCALMODLIBS=            
 BASEMODLIBS=
 GLHACK=-Dclear=__GLclear
 PYTHONPATH=$(COREPYTHONPATH)
@@ -219,7 +223,7 @@ COREPYTHONPATH=$(DESTPATH)$(SITEPATH)$(TESTPATH)$(MACHDEPPATH)$(EXTRAMACHDEPPATH
 OLDPATH=:lib-old
 TKPATH=:lib-tk
 EXTRAMACHDEPPATH=
-MACHDEPPATH=:plat-$(MACHDEP)
+MACHDEPPATH=:$(PLATDIR)
 TESTPATH=
 SITEPATH=
 DESTPATH=
@@ -247,7 +251,7 @@ GRAMMAR_C=	Python/graminit.c
 GRAMMAR_INPUT=	$(srcdir)/Grammar/Grammar
 
 
-LIBFFI_INCLUDEDIR=	
+LIBFFI_INCLUDEDIR=	/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm900/tmp/sysroots/dm900/usr/lib/libffi-3.2.1/include
 
 ##########################################################################
 # Parser
@@ -319,6 +323,16 @@ ASDLGEN=	$(srcdir)/Parser/asdl_c.py
 
 ##########################################################################
 # Python
+
+OPCODETARGETS_H= \
+		$(srcdir)/Python/opcode_targets.h
+		
+OPCODETARGETGEN= \
+		$(srcdir)/Python/makeopcodetargets.py
+
+OPCODETARGETGEN_FILES= \
+		$(OPCODETARGETGEN) $(srcdir)/Lib/opcode.py
+
 PYTHON_OBJS=	\
 		Python/_warnings.o \
 		Python/Python-ast.o \
@@ -429,27 +443,38 @@ LIBRARY_OBJS=	\
 all:		build_all
 build_all:	$(BUILDPYTHON) oldsharedmods sharedmods gdbhooks
 
-# Compile a binary with gcc profile guided optimization.
+# Compile a binary with profile guided optimization.
 profile-opt:
+	@if [ $(LLVM_PROF_ERR) == yes ]; then \
+		echo "Error: Cannot perform PGO build because llvm-profdata was not found in PATH" ;\
+		echo "Please add it to PATH and run ./configure again" ;\
+		exit 1;\
+	fi
 	@echo "Building with support for profile generation:"
 	$(MAKE) clean
-	$(MAKE) build_all_generate_profile
-	@echo "Running benchmark to generate profile data:"
 	$(MAKE) profile-removal
+	$(MAKE) build_all_generate_profile
+	$(MAKE) profile-removal
+	@echo "Running code to generate profile data (this can take a while):"
 	$(MAKE) run_profile_task
+	$(MAKE) build_all_merge_profile
 	@echo "Rebuilding with profile guided optimizations:"
 	$(MAKE) clean
 	$(MAKE) build_all_use_profile
+	$(MAKE) profile-removal
 
 build_all_generate_profile:
-	$(MAKE) all CFLAGS="$(CFLAGS) -fprofile-generate" LIBS="$(LIBS) -lgcov"
+	$(MAKE) all CFLAGS="$(CFLAGS) $(PGO_PROF_GEN_FLAG)" LDFLAGS="$(LDFLAGS) $(PGO_PROF_GEN_FLAG)" LIBS="$(LIBS)"
 
 run_profile_task:
 	: # FIXME: can't run for a cross build
-	./$(BUILDPYTHON) $(PROFILE_TASK)
+	$(LLVM_PROF_FILE) ./$(BUILDPYTHON) $(PROFILE_TASK) || true
+
+build_all_merge_profile:
+	$(LLVM_PROF_MERGER)
 
 build_all_use_profile:
-	$(MAKE) all CFLAGS="$(CFLAGS) -fprofile-use"
+	$(MAKE) all CFLAGS="$(CFLAGS) $(PGO_PROF_USE_FLAG)"
 
 coverage:
 	@echo "Building with support for coverage checking:"
@@ -493,8 +518,7 @@ sharedmods: $(BUILDPYTHON) pybuilddir.txt
 	esac; \
 	$(RUNSHARED) CC='$(CC)' LDSHARED='$(BLDSHARED)' OPT='$(OPT)' \
 		_TCLTK_INCLUDES='$(TCLTK_INCLUDES)' _TCLTK_LIBS='$(TCLTK_LIBS)' \
-		PYTHONXCPREFIX='$(DESTDIR)$(prefix)' $(PYTHON_FOR_BUILD) \
-		$(srcdir)/setup.py $$quiet build
+		$(PYTHON_FOR_BUILD) $(srcdir)/setup.py $$quiet build
 
 # Build static library
 # avoid long command lines, same as LIBRARY_OBJS
@@ -617,6 +641,7 @@ Modules/getpath.o: $(srcdir)/Modules/getpath.c Makefile
 		-DEXEC_PREFIX='"$(exec_prefix)"' \
 		-DVERSION='"$(VERSION)"' \
 		-DVPATH='"$(VPATH)"' \
+		-DLIB='"$(LIB)"' \
 		-o $@ $(srcdir)/Modules/getpath.c
 
 Modules/python.o: $(srcdir)/Modules/python.c
@@ -628,12 +653,10 @@ Modules/grpmodule.o: $(srcdir)/Modules/grpmodule.c $(srcdir)/Modules/posixmodule
 
 Modules/pwdmodule.o: $(srcdir)/Modules/pwdmodule.c $(srcdir)/Modules/posixmodule.h
 
-$(GRAMMAR_H): $(GRAMMAR_INPUT) $(PGENSRCS)
+$(GRAMMAR_H): $(GRAMMAR_INPUT) $(PGENSRCS) $(PGEN)
 		@$(MKDIR_P) Include
-		$(MAKE) $(PGEN)
 		$(HOSTPGEN) $(GRAMMAR_INPUT) $(GRAMMAR_H) $(GRAMMAR_C)
 $(GRAMMAR_C): $(GRAMMAR_H) $(GRAMMAR_INPUT) $(PGENSRCS)
-		$(MAKE) $(GRAMMAR_H)
 		touch $(GRAMMAR_C)
 
 $(PGEN):	$(PGENOBJS)
@@ -659,7 +682,7 @@ $(AST_C): $(AST_ASDL) $(ASDLGEN_FILES)
 Python/compile.o Python/symtable.o Python/ast.o: $(GRAMMAR_H) $(AST_H)
 
 Python/getplatform.o: $(srcdir)/Python/getplatform.c
-		$(CC) -c $(PY_CFLAGS) -DPLATFORM='"$(MACHDEP)"' -o $@ $(srcdir)/Python/getplatform.c
+		$(CC) -c $(PY_CFLAGS) -DPLATFORM='"$(MACHDEP)"' -DLIB='"$(LIB)"' -o $@ $(srcdir)/Python/getplatform.c
 
 Python/importdl.o: $(srcdir)/Python/importdl.c
 		$(CC) -c $(PY_CFLAGS) -I$(DLINCLDIR) -o $@ $(srcdir)/Python/importdl.c
@@ -690,6 +713,11 @@ Objects/bytearrayobject.o: $(srcdir)/Objects/bytearrayobject.c \
 
 Objects/stringobject.o: $(srcdir)/Objects/stringobject.c \
 				$(STRINGLIB_HEADERS)
+
+$(OPCODETARGETS_H): $(OPCODETARGETGEN_FILES)
+	$(OPCODETARGETGEN) $(OPCODETARGETS_H)
+
+Python/ceval.o: $(OPCODETARGETS_H)
 
 Python/formatter_unicode.o: $(srcdir)/Python/formatter_unicode.c \
 				$(STRINGLIB_HEADERS)
@@ -799,13 +827,18 @@ $(LIBRARY_OBJS) $(MODOBJS) Modules/python.o: $(PYTHON_HEADERS)
 # generated bytecode.  This is sometimes a very shy bug needing a lot of
 # sample data.
 
-TESTOPTS=	-l $(EXTRATESTOPTS)
+TESTOPTS=	-l -v $(EXTRATESTOPTS)
 TESTPROG=	$(srcdir)/Lib/test/regrtest.py
-TESTPYTHON=	$(RUNSHARED) ./$(BUILDPYTHON) -Wd -3 -E -tt $(TESTPYTHONOPTS)
-test:		all platform
-		-find $(srcdir)/Lib -name '*.py[co]' -print | xargs rm -f
+TESTPYTHON=	$(RUNSHARED) $(BUILDPYTHON) -Wd -3 -E -tt $(TESTPYTHONOPTS)
+test:		build-test
+		$(MAKE) runtest-TESTS
+
+runtest-TESTS:
+		-find $(srcdir) -name '*.py[co]' -print | xargs rm -f
 		-$(TESTPYTHON) $(TESTPROG) $(TESTOPTS)
 		$(TESTPYTHON) $(TESTPROG) $(TESTOPTS)
+
+build-test:	all platform
 
 testall:	all platform
 		-find $(srcdir)/Lib -name '*.py[co]' -print | xargs rm -f
@@ -966,7 +999,7 @@ maninstall:	altmaninstall
 	(cd $(DESTDIR)$(MANDIR)/man1; $(LN) -s python2.1 python.1)
 
 # Install the library
-PLATDIR=	plat-$(MACHDEP)
+PLATDIR=	plat-linux2
 EXTRAPLATDIR= 
 EXTRAMACHDEPPATH=
 MACHDEPS=	$(PLATDIR) $(EXTRAPLATDIR)
@@ -1062,27 +1095,27 @@ libinstall:	build_all $(srcdir)/Lib/$(PLATDIR) $(srcdir)/Modules/xxmodule.c
 		$(INSTALL_DATA) $(srcdir)/Modules/xxmodule.c \
 			$(DESTDIR)$(LIBDEST)/distutils/tests ; \
 	fi
-	-PYTHONPATH=$(DESTDIR)$(LIBDEST)  $(RUNSHARED) \
+	PYTHONPATH=$(DESTDIR)$(LIBDEST):${CROSSPYTHONPATH} $(RUNSHARED) \
 		$(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \
 		-d $(LIBDEST) -f \
 		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
 		$(DESTDIR)$(LIBDEST)
-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
-		$(HOSTPYTHON) -Wi -tt -O $(DESTDIR)$(LIBDEST)/compileall.py \
+	PYTHONPATH=$(DESTDIR)$(LIBDEST):${CROSSPYTHONPATH}$(RUNSHARED) \
+		$(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \
 		-d $(LIBDEST) -f \
 		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
 		$(DESTDIR)$(LIBDEST)
-	-PYTHONPATH=$(DESTDIR)$(LIBDEST)  $(RUNSHARED) \
-		$(HOSTPYTHON) -Wi -t $(DESTDIR)$(LIBDEST)/compileall.py \
+	-PYTHONPATH=$(DESTDIR)$(LIBDEST):${CROSSPYTHONPATH} $(RUNSHARED) \
+		$(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \
 		-d $(LIBDEST)/site-packages -f \
 		-x badsyntax $(DESTDIR)$(LIBDEST)/site-packages
-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
-		$(HOSTPYTHON) -Wi -t -O $(DESTDIR)$(LIBDEST)/compileall.py \
+	-PYTHONPATH=$(DESTDIR)$(LIBDEST):${CROSSPYTHONPATH} $(RUNSHARED) \
+		$(HOSTPYTHON) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \
 		-d $(LIBDEST)/site-packages -f \
 		-x badsyntax $(DESTDIR)$(LIBDEST)/site-packages
-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+	-PYTHONPATH=$(DESTDIR)$(LIBDEST):${CROSSPYTHONPATH} $(RUNSHARED) \
 		$(HOSTPYTHON) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/Grammar.txt
-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+	-PYTHONPATH=$(DESTDIR)$(LIBDEST):${CROSSPYTHONPATH} $(RUNSHARED) \
 		$(HOSTPYTHON) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt
 
 # Create the PLATDIR source directory, if one wasn't distributed..
@@ -1133,7 +1166,7 @@ LIBPL=		$(LIBP)/config
 LIBPC=		$(LIBDIR)/pkgconfig
 
 libainstall:	all python-config
-	@for i in $(LIBDIR) $(LIBP) $(LIBPL) $(LIBPC); \
+	@for i in $(LIBDIR) $(LIBP) $(LIBPL) $(LIBPC) $(BINDIR); \
 	do \
 		if test ! -d $(DESTDIR)$$i; then \
 			echo "Creating directory $$i"; \
@@ -1195,9 +1228,7 @@ libainstall:	all python-config
 # Install the dynamically loadable modules
 # This goes into $(exec_prefix)
 sharedinstall: sharedmods
-	CC='$(CC)' LDSHARED='$(BLDSHARED)' OPT='$(OPT)' \
 	$(RUNSHARED) $(PYTHON_FOR_BUILD) $(srcdir)/setup.py install \
-		--skip-build \
 	   	--prefix=$(prefix) \
 		--install-scripts=$(BINDIR) \
 		--install-platlib=$(DESTSHARED) \
@@ -1337,9 +1368,11 @@ clean: pycremoval
 	find build -name 'fficonfig.h' -exec rm -f {} ';' || true
 	find build -name 'fficonfig.py' -exec rm -f {} ';' || true
 	-rm -f Lib/lib2to3/*Grammar*.pickle
+	-rm -rf build
 
 profile-removal:
 	find . -name '*.gc??' -exec rm -f {} ';'
+	find . -name '*.profclang?' -exec rm -f {} ';'
 
 clobber: clean profile-removal
 	-rm -f $(BUILDPYTHON) $(PGEN) $(LIBRARY) $(LDLIBRARY) $(DLLLIBRARY) \
@@ -1442,5 +1475,8 @@ Modules/zipimport.o: $(srcdir)/Modules/zipimport.c; $(CC) $(PY_CFLAGS)  -c $(src
 Modules/zipimport$(SO):  Modules/zipimport.o; $(BLDSHARED)  Modules/zipimport.o   -o Modules/zipimport$(SO)
 Modules/symtablemodule.o: $(srcdir)/Modules/symtablemodule.c; $(CC) $(PY_CFLAGS)  -c $(srcdir)/Modules/symtablemodule.c -o Modules/symtablemodule.o
 Modules/_symtablemodule$(SO):  Modules/symtablemodule.o; $(BLDSHARED)  Modules/symtablemodule.o   -o Modules/_symtablemodule$(SO)
+Modules/md5module.o: $(srcdir)/Modules/md5module.c; $(CC) $(PY_CFLAGS)  -c $(srcdir)/Modules/md5module.c -o Modules/md5module.o
+Modules/md5.o: $(srcdir)/Modules/md5.c; $(CC) $(PY_CFLAGS)  -c $(srcdir)/Modules/md5.c -o Modules/md5.o
+Modules/_md5module$(SO):  Modules/md5module.o Modules/md5.o; $(BLDSHARED)  Modules/md5module.o Modules/md5.o   -o Modules/_md5module$(SO)
 Modules/xxsubtype.o: $(srcdir)/Modules/xxsubtype.c; $(CC) $(PY_CFLAGS)  -c $(srcdir)/Modules/xxsubtype.c -o Modules/xxsubtype.o
 Modules/xxsubtype$(SO):  Modules/xxsubtype.o; $(BLDSHARED)  Modules/xxsubtype.o   -o Modules/xxsubtype$(SO)
