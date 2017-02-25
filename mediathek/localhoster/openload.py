@@ -58,8 +58,8 @@ class OpenLoadResolver(object):
             
     def get_media_url(self, host, media_id):
         video_url = ""
-#        js_data = self.__get_json(GET_URL.format(media_id=media_id))
-#        print "js_data: %s" % (js_data)
+ #       js_data = self.__get_json(GET_URL.format(media_id=media_id))
+ #       print "js_data: %s" % (js_data)
         try:
  #           self._auto_update(self.get_setting('url'), OL_PATH, self.get_setting('key'))
             reload(ol_gmu)
@@ -73,7 +73,7 @@ class OpenLoadResolver(object):
                     video_url = self.__auth_ip(media_id)
             #except ResolverError:
             except Exception as e:
-                print "errormsg=streamlink not found"
+                print "errormsg=IP address not authorized. Visit https://openload.co/pair"
                # raise
             
             if video_url:
@@ -97,8 +97,8 @@ class OpenLoadResolver(object):
     def __check_auth(self, media_id):
         try:
             js_data = self.__get_json(GET_URL.format(media_id=media_id))
-#        except ResolverError as e:
-        except Exception as e:
+        except ResolverError as e:
+#        except Exception as e:
             status, msg = e
             if status == 403:
                 print "errormsg=%s" % (e)
