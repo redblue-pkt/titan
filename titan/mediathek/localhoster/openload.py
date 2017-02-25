@@ -6,6 +6,7 @@ from lib.net import Net
 import re
 import lib.ol_gmu as ol_gmu
 import lib.common as common
+import json
 
 #OL_SOURCE = 'https://offshoregit.com/tvaresolvers/ol_gmu.py'
 OL_PATH = ''
@@ -52,16 +53,19 @@ class OpenLoadResolver(object):
                 with open(OL_PATH, 'w') as f:
                     f.write(new_py)
         except Exception as e:
-             print 'Exception during openload code retrieve:'
+             print 'errormsg=Exception during openload code retrieve:'
 #            common.log_utils.log_warning('Exception during openload code retrieve: %s' % e)
             
     def get_media_url(self, host, media_id):
         video_url = ""
+#        js_data = self.__get_json(GET_URL.format(media_id=media_id))
+#        print "js_data: %s" % (js_data)
         try:
-            self._auto_update(self.get_setting('url'), OL_PATH, self.get_setting('key'))
+ #           self._auto_update(self.get_setting('url'), OL_PATH, self.get_setting('key'))
             reload(ol_gmu)
             return ol_gmu.get_media_url(self.get_url(host, media_id))  # @UndefinedVariable
         except Exception as e:
+#            print "Exception during openload resolve parse: %s" % (e)
 #            common.log_utils.log_debug('Exception during openload resolve parse: %s' % (e))
             try:
                 video_url = self.__check_auth(media_id)
@@ -69,7 +73,7 @@ class OpenLoadResolver(object):
                     video_url = self.__auth_ip(media_id)
             #except ResolverError:
             except Exception as e:
-                print "raise"
+                print "errormsg=streamlink not found"
                # raise
             
             if video_url:
@@ -97,8 +101,10 @@ class OpenLoadResolver(object):
         except Exception as e:
             status, msg = e
             if status == 403:
+                print "errormsg=%s" % (e)
                 return
-#            else:
+            else:
+                print "errormsg=%s" % (msg)
 #                raise ResolverError(msg)
         
         return js_data.get('result', {}).get('url')
