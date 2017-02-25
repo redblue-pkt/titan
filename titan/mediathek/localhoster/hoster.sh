@@ -127,6 +127,8 @@ youwatch()
 thevideo()
 {
 	$BIN $CMD/thevideo.py $INPUT
+	rm $TMP/_last_hoster_* > /dev/null 2>&1
+	echo  "$BIN $CMD/thevideo.py $INPUT" > hoster_$0
 }
 
 movshare()
@@ -187,11 +189,15 @@ xvidstage()
 directstream()
 {
 	echo "$INPUT"
+	rm $TMP/_last_hoster_* > /dev/null 2>&1
+	echo  "$INPUT" > hoster_$0
 }
 
 youtube_dl()
 {
 	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate -g "$INPUT"
+	rm $TMP/_last_hoster_* > /dev/null 2>&1
+	echo "$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate -g $INPUT" > $TMP/_last_hoster_$0
 }
 
 if [ "$TYPE" == "get" ];then
