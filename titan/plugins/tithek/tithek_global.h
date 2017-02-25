@@ -112,12 +112,13 @@ char* hoster(char* url)
 	debug(99, "Streamurl2: %s", streamurl);
 
 	free(tmplink), tmplink = NULL;
+/*
 	if(ostrncmp("http", streamurl, 4) && ostrncmp("rtmp", streamurl, 4) && ostrncmp("mms", streamurl, 3) && ostrncmp("rtsp", streamurl, 4))
 	{
 		printf("Streamurl3: not http*|rtmp*|mms*|rtsp* Streamurl: %s\n", streamurl); 
 		free(streamurl),streamurl = NULL;
 	}
-
+*/
 	return streamurl;
 }
 
