@@ -19,8 +19,13 @@ TMP=/tmp/localcache
 CMD=/tmp/localhoster
 
 BIN="$CMD"/bin/python."$ARCH"
-ln -fs /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" /tmp/localhoster/lib/python2.7/lib-dynload
-ln -fs /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" /tmp/localhoster/lib/libpython2.7.so.1.0
+
+if [ ! -e "/tmp/localhoster/lib/python2.7/lib-dynload" ];then
+	ln -fs /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" /tmp/localhoster/lib/python2.7/lib-dynload
+fi
+if [ ! -e "/tmp/localhoster/lib/libpython2.7.so.1.0" ];then
+	ln -fs /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" /tmp/localhoster/lib/libpython2.7.so.1.0
+fi
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
