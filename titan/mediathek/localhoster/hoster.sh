@@ -189,6 +189,11 @@ directstream()
 	echo "$INPUT"
 }
 
+youtube_dl()
+{
+	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate -g "$INPUT"
+}
+
 if [ "$TYPE" == "get" ];then
 	case $hoster in
 		ecostream) ecostream $INPUT;;
@@ -214,5 +219,11 @@ if [ "$TYPE" == "get" ];then
 		novamov|auroravid) novamov $INPUT;;
 		xvidstage) xvidstage $INPUT;;
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
+	esac
+fi
+
+if [ "$TYPE" == "youtube_dl" ];then
+	case $hoster in
+		*) youtube_dl $INPUT;;
 	esac
 fi
