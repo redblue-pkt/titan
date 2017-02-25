@@ -7,10 +7,30 @@ from os.path import pardir, realpath
 
 _INSTALL_SCHEMES = {
     'posix_prefix': {
-        'stdlib': '{base}/'+sys.lib+'/python{py_version_short}',
-        'platstdlib': '{platbase}/'+sys.lib+'/python{py_version_short}',
-        'purelib': '{base}/'+sys.lib+'/python{py_version_short}/site-packages',
-        'platlib': '{platbase}/'+sys.lib+'/python{py_version_short}/site-packages',
+        'stdlib': '{base}/lib/python{py_version_short}',
+        'platstdlib': '{platbase}/lib/python{py_version_short}',
+        'purelib': '{base}/lib/python{py_version_short}/site-packages',
+        'platlib': '{platbase}/lib/python{py_version_short}/site-packages',
+        'include': '{base}/include/python{py_version_short}',
+        'platinclude': '{platbase}/include/python{py_version_short}',
+        'scripts': '{base}/bin',
+        'data': '{base}',
+        },
+    'posix_local': {
+        'stdlib': '{base}/lib/python{py_version_short}',
+        'platstdlib': '{platbase}/lib/python{py_version_short}',
+        'purelib': '{base}/local/lib/python{py_version_short}/dist-packages',
+        'platlib': '{platbase}/local/lib/python{py_version_short}/dist-packages',
+        'include': '{base}/local/include/python{py_version_short}',
+        'platinclude': '{platbase}/local/include/python{py_version_short}',
+        'scripts': '{base}/local/bin',
+        'data': '{base}/local',
+        },
+    'deb_system': {
+        'stdlib': '{base}/lib/python{py_version_short}',
+        'platstdlib': '{platbase}/lib/python{py_version_short}',
+        'purelib': '{base}/lib/python{py_version_short}/dist-packages',
+        'platlib': '{platbase}/lib/python{py_version_short}/dist-packages',
         'include': '{base}/include/python{py_version_short}',
         'platinclude': '{platbase}/include/python{py_version_short}',
         'scripts': '{base}/bin',
@@ -65,10 +85,10 @@ _INSTALL_SCHEMES = {
         'data'   : '{userbase}',
         },
     'posix_user': {
-        'stdlib': '{userbase}/'+sys.lib+'/python{py_version_short}',
-        'platstdlib': '{userbase}/'+sys.lib+'/python{py_version_short}',
-        'purelib': '{userbase}/'+sys.lib+'/python{py_version_short}/site-packages',
-        'platlib': '{userbase}/'+sys.lib+'/python{py_version_short}/site-packages',
+        'stdlib': '{userbase}/lib/python{py_version_short}',
+        'platstdlib': '{userbase}/lib/python{py_version_short}',
+        'purelib': '{userbase}/lib/python{py_version_short}/site-packages',
+        'platlib': '{userbase}/lib/python{py_version_short}/site-packages',
         'include': '{userbase}/include/python{py_version_short}',
         'scripts': '{userbase}/bin',
         'data'   : '{userbase}',
@@ -129,7 +149,7 @@ def is_python_build():
 _PYTHON_BUILD = is_python_build()
 
 if _PYTHON_BUILD:
-    for scheme in ('posix_prefix', 'posix_home'):
+    for scheme in ('posix_prefix', 'posix_local', 'deb_system', 'posix_home'):
         _INSTALL_SCHEMES[scheme]['include'] = '{projectbase}/Include'
         _INSTALL_SCHEMES[scheme]['platinclude'] = '{srcdir}'
 
@@ -163,8 +183,11 @@ def _expand_vars(scheme, vars):
 
 def _get_default_scheme():
     if os.name == 'posix':
-        # the default scheme for posix is posix_prefix
-        return 'posix_prefix'
+        # the default scheme for posix on Debian/Ubuntu is posix_local
+        # FIXME: return dist-packages/posix_prefix only for
+        #   is_default_prefix and 'PYTHONUSERBASE' not in os.environ and 'real_prefix' not in sys.__dict__
+        # is_default_prefix = not prefix or os.path.normpath(prefix) in ('/usr', '/usr/local')
+        return 'posix_local'
     return os.name
 
 def _getuserbase():
@@ -231,11 +254,19 @@ def _parse_makefile(filename, vars=None):
                     done[n] = v
 
     # do variable interpolation here
-    while notdone:
-        for name in notdone.keys():
+    variables = list(notdone.keys())
+
+    # Variables with a 'PY_' prefix in the makefile. These need to
+    # be made available without that prefix through sysconfig.
+    # Special care is needed to ensure that variable expansion works, even
+    # if the expansion uses the name without a prefix.
+    renamed_variables = ('CFLAGS', 'LDFLAGS', 'CPPFLAGS')
+
+    while len(variables) > 0:
+        for name in tuple(variables):
             value = notdone[name]
             m = _findvar1_rx.search(value) or _findvar2_rx.search(value)
-            if m:
+            if m is not None:
                 n = m.group(1)
                 found = True
                 if n in done:
@@ -246,23 +277,48 @@ def _parse_makefile(filename, vars=None):
                 elif n in os.environ:
                     # do it like make: fall back to environment
                     item = os.environ[n]
+
+                elif n in renamed_variables:
+                    if name.startswith('PY_') and name[3:] in renamed_variables:
+                        item = ""
+
+                    elif 'PY_' + n in notdone:
+                        found = False
+
+                    else:
+                        item = str(done['PY_' + n])
+
                 else:
                     done[n] = item = ""
+
                 if found:
                     after = value[m.end():]
                     value = value[:m.start()] + item + after
                     if "$" in after:
                         notdone[name] = value
                     else:
-                        try: value = int(value)
+                        try:
+                            value = int(value)
                         except ValueError:
                             done[name] = value.strip()
                         else:
                             done[name] = value
-                        del notdone[name]
+                        variables.remove(name)
+
+                        if name.startswith('PY_') \
+                        and name[3:] in renamed_variables:
+
+                            name = name[3:]
+                            if name not in done:
+                                done[name] = value
+
+
             else:
-                # bogus variable reference; just drop it since we can't deal
-                del notdone[name]
+                # bogus variable reference (e.g. "prefix=$/opt/python");
+                # just drop it since we can't deal
+                done[name] = value
+                variables.remove(name)
+
     # strip spurious spaces
     for k, v in done.items():
         if isinstance(v, str):
@@ -277,7 +333,7 @@ def get_makefile_filename():
     """Return the path of the Makefile."""
     if _PYTHON_BUILD:
         return os.path.join(_PROJECT_BASE, "Makefile")
-    return os.path.join(get_path('platstdlib'), "config", "Makefile")
+    return os.path.join(get_config_var('LIBPL'), "Makefile")
 
 # Issue #22199: retain undocumented private name for compatibility
 _get_makefile_filename = get_makefile_filename
@@ -409,7 +465,7 @@ def get_config_h_filename():
         else:
             inc_dir = _PROJECT_BASE
     else:
-        inc_dir = get_path('platinclude')
+        inc_dir = get_path('platinclude').replace("/usr/local","/usr",1)+(sys.pydebug and "_d" or "")
     return os.path.join(inc_dir, 'pyconfig.h')
 
 def get_scheme_names():
@@ -475,6 +531,12 @@ def get_config_vars(*args):
         # init function to enable using 'get_config_var' in
         # the init-function.
         _CONFIG_VARS['userbase'] = _getuserbase()
+
+        multiarch = get_config_var('MULTIARCH')
+        if multiarch:
+            _CONFIG_VARS['multiarchsubdir'] = '/' + multiarch
+        else:
+            _CONFIG_VARS['multiarchsubdir'] = ''
 
         if 'srcdir' not in _CONFIG_VARS:
             _CONFIG_VARS['srcdir'] = _PROJECT_BASE
