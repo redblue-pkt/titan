@@ -199,7 +199,7 @@ directstream()
 youtube_dl()
 {
 #	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo "$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate -g $INPUT" > /tmp/.last_hoster_$hoster
+	echo "$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate -g $INPUT" > /tmp/.last_hoster_youtube_dl
 	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate -g "$INPUT"
 }
 
