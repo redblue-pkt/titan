@@ -179,7 +179,7 @@ hosterlist()
 	TRAILER=`cat $TMP/cache.$FILENAME.1 | grep youtube | cut -d'"' -f2`
 
 #	$curlbin2 -H "X-Requested-With: XMLHttpRequest" -X POST  --referer http://meinkino.to/film/the-zero-theorem-stream-id8795 http://meinkino.to/geturl/8795
-	$curlbin2 -H "X-Requested-With: XMLHttpRequest" -X POST  --referer $URL/$PAGE $TMPURL -o $TMP/cache.$FILENAME.2
+	$curlbin -H "X-Requested-With: XMLHttpRequest" -X POST  --referer $URL/$PAGE $TMPURL -o $TMP/cache.$FILENAME.2
 
 	cat $TMP/cache.$FILENAME.2 | sed 's/{"url":"/\nlink_url":"/g' | sed 's/link_/\nlink_/g' | grep ^link_ | sed 's/"alternative":{"/\nlink_/g' >$TMP/cache.$FILENAME.3
 
@@ -211,7 +211,7 @@ hosterlist()
 					TITLE="$hoster ($TITLE)"
 				fi
 			fi
-			LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+			LINE="$TITLE#$SRC $SRC play '$NEWPAGE|User-Agent=$USERAGENT&Referer=$URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 	done 3<$TMP/cache.$FILENAME.3
