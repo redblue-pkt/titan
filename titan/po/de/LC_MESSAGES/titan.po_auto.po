@@ -8884,8 +8884,8 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:552 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:473 tithek_global.h:475 tithek_global.h:916
-#: tithek_global.h:918 tithek.h:1564 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:474 tithek_global.h:476 tithek_global.h:917
+#: tithek_global.h:919 tithek.h:1564 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:367
 #: youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
