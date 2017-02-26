@@ -1142,7 +1142,7 @@ void screeninfobar()
 			value = readsys("/proc/stb/hdmi-rx/0/hdmi_rx_monitor", 1);
 			if(value != NULL)
 			{
-				if(ostrstr(value, "off") == 0)
+				if(ostrstr(value, "off") != NULL)
 				{
 					writesys("/proc/stb/video/videomode", "720p", 1);
 					writesys("/proc/stb/audio/hdmi_rx_monitor", "on", 1);
@@ -1155,6 +1155,7 @@ void screeninfobar()
 					setvideomode(getconfig("av_videomode", NULL), 0);
 				}
 			}
+			free(value); value=NULL;
 		}
 		
 		if(rcret == RCTIMEOUT && mark == 0)
