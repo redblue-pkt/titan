@@ -539,17 +539,23 @@ void freetithek()
 void tithekdownloadthread(struct stimerthread* timernode, struct download* node, int flag)
 {
 	int defpic = 0;
-
+printf("tithekdownloadthread...1 /tmp/python.tar\n");
 	tithekdownloadcount++;
 
 	if(node != NULL)
 	{
+printf("tithekdownloadthread...2 /tmp/python.tar\n");
+
 		m_lock(&status.tithekmutex, 20);
 		if(file_exist(node->filename))
 		{
+printf("tithekdownloadthread...3 /tmp/python.tar\n");
+
 			m_unlock(&status.tithekmutex, 20);
 			goto end;
 		}
+
+printf("tithekdownloadthread...4 /tmp/python.tar\n");
 
 		FILE *fd; fd = fopen(node->filename, "w");
 		if(fd != NULL) fclose(fd);
