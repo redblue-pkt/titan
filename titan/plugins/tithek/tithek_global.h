@@ -106,9 +106,10 @@ debug(99, "Streamurlccccc: %s", streamurl);
 		{
 debug(99, "Streamurlddddd: %s", streamurl);
 
-			cmd = ostrcat("/tmp/localhoster/hoster.sh youtube_dl ", url, 0, 0);
+			cmd = ostrcat("/tmp/localhoster/hoster.sh youtube_dl \"", url, 0, 0);
 			cmd = ostrcat(cmd, "\"", 1, 0);
 debug(99, "Streamurleeeee: %s", streamurl);
+	debug(99, "cmd: %s", cmd);
 
 			streamurl = command(cmd);
 debug(99, "Streamurlfffff: %s", streamurl);
@@ -124,8 +125,10 @@ debug(99, "Streamurlgggg: %s", streamurl);
 
 	if(streamurl == NULL)
 	{
-		cmd = ostrcat("/tmp/localhoster/hoster.sh get \"", url, 0, 0);
+		cmd = ostrcat("/tmp/localhoster/hoster.sh youtube_dl \"", url, 0, 0);
 		cmd = ostrcat(cmd, "\"", 1, 0);
+	debug(99, "cmd: %s", cmd);
+
 		streamurl = command(cmd);
 	
 	debug(99, "Streamurlhhhhh: %s", streamurl);
