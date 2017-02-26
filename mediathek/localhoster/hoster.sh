@@ -24,10 +24,10 @@ wgetbin="wget -q -T2"
 
 BIN="$CMD"/bin/python."$ARCH"
 
-if [ ! -e "/tmp/localhoster/lib/python2.7/lib-dynload" ];then
+if [ ! -e "/tmp/localhoster/lib/python2.7/lib-dynload" ] && [ -e /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" ];then
 	ln -fs /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" /tmp/localhoster/lib/python2.7/lib-dynload
 fi
-if [ ! -e "/tmp/localhoster/lib/libpython2.7.so.1.0" ];then
+if [ ! -e "/tmp/localhoster/lib/libpython2.7.so.1.0" ] && [ -e /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" ];then
 	ln -fs /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" /tmp/localhoster/lib/libpython2.7.so.1.0
 fi
 export PYTHONHOME=/tmp/localhoster
