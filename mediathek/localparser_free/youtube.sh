@@ -40,18 +40,17 @@ init()
 mainmenu()
 {
 #	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$FILENAME.list
-	echo "Search#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAd-YEOqZz9nXVzGtn3KWzYLbLaajhqIDA&type=video&maxResults=50'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >$TMP/$FILENAME.list
+	echo "Search 10#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAd-YEOqZz9nXVzGtn3KWzYLbLaajhqIDA&type=video&maxResults=10'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >$TMP/$FILENAME.list
+	echo "Search 50#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAd-YEOqZz9nXVzGtn3KWzYLbLaajhqIDA&type=video&maxResults=50'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Search 100#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAd-YEOqZz9nXVzGtn3KWzYLbLaajhqIDA&type=video&maxResults=100'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
 search()
 {
-	rm $TMP/$FILENAME.list > /dev/null 2>&1
-	rm $TMP/cache.* > /dev/null 2>&1
-
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
-		$curlbin "$URL/$FROM" -o "$TMP/cache.$FILENAME.1"
+		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
 		cat $TMP/cache.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"kind":!\nkind":!g' | grep ^"kind" | grep videoId >$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
@@ -84,7 +83,7 @@ search()
 			fi
 
 		done 3<$TMP/cache.$FILENAME.2
-#		rm $TMP/cache.* > /dev/null 2>&1
+		rm $TMP/cache.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
 }
