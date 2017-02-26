@@ -564,7 +564,7 @@ printf("tithekdownloadthread...4 /tmp/python.tar\n");
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 
 		printf("check... /tmp/python.tar\n");
-		if(ostrcmp("node->filename", "/tmp/python.tar") == 0)
+		if(ostrcmp(node->filename, "/tmp/python.tar") == 0)
 		{
 			printf("found... /tmp/python.tar\n");
 			char* cmd = ostrcat("tar -xvf /tmp/python.tar -C ", "/tmp/localhoster/", 0, 0);
