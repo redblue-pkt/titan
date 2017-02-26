@@ -297,7 +297,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 		if((fromthread == 0 && status.rckey == 0) || fromthread == 1)
 		{
 			if(fromthread == 0) m_unlock(&status.waitrcmutex, 24);
-			
+#ifdef DREAMBOX			
 			if(status.fdrc1 > -1 && timeout > 1)
 			{
 				for(j = 0; j < timeout / 2; j++)
@@ -322,6 +322,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 			}
 			else
 			{
+#endif
 				tv.tv_sec = timeout;
 				tv.tv_usec = rest * 1000;
 				FD_ZERO(&rfds);
@@ -337,8 +338,8 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 					ret = TEMP_FAILURE_RETRY(select(status.fdrc1 + 1, &rfds1, NULL, NULL, &tv));
 					front = 1;
 				}
-#endif
 			}
+#endif
 				
 			if(fromthread == 0) m_lock(&status.waitrcmutex, 24);
 
