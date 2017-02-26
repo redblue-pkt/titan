@@ -199,19 +199,19 @@ directstream()
 {
 	echo "$INPUT"
 #	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo  "$INPUT" > /tmp/.last_hoster_$hoster
+	echo  "$INPUT" > /tmp/.last_hoster_$hoster.log
 }
 
 youtube_dl()
 {
 #	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl
+	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
 #	$BIN $youtubebin "$INPUT"
 	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" -g "$INPUT"
 }
 
 if [ "$TYPE" == "get" ];then
-	echo  "$INPUT" > /tmp/.last_hoster_$hoster
+	echo  "$INPUT" > /tmp/.last_hoster_$hoster.log
 	case $hoster in
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
