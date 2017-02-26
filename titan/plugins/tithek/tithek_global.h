@@ -839,7 +839,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 		printf("check...222 /tmp/python.tar\n");
 
 				dnode->host = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
-				dnode->page = ostrcat("/tmp/python.tar", NULL, 0, 0);
+				dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);
 				dnode->port = 80;
 				dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
 				dnode->auth = ostrcat(HTTPAUTH, NULL, 0, 0);
