@@ -8,15 +8,19 @@ INPUT=`echo $INPUT | sed 's!/Out/?s=!!g'`
 
 ARCH=`cat /etc/.arch`
 BOX=`cat /etc/model`
+TMP=/tmp/localcache
+CMD=/tmp/localhoster
 USERAGENT='Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
 curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT"
 curlbin2='curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
+youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT -g"
+
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
+if [ "$debuglevel" == "99" ]; then youtubebin="$youtubebin --verbose"; fi
+
 wgetbin="wget -q -T2"
-TMP=/tmp/localcache
-CMD=/tmp/localhoster
 
 BIN="$CMD"/bin/python."$ARCH"
 
@@ -199,8 +203,8 @@ directstream()
 youtube_dl()
 {
 #	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo "$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate -g $INPUT" > /tmp/.last_hoster_youtube_dl
-	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate -g "$INPUT"
+	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl
+	$BIN $youtubebin "$INPUT"
 }
 
 if [ "$TYPE" == "get" ];then
