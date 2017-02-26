@@ -39,6 +39,8 @@ if [ -e "$TMP/parser.tar" ]; then rm -f $TMP/parser.tar; fi
 if [ "$ARCH" == "sh4" ] && [ "$BOX" != "ufs912" ]; then
 	if [ -e "$CMD/lib/python2.7/lib-dynload.mipsel" ]; then rm -rf $CMD/lib/python2.7/lib-dynload.mipsel; fi
 	if [ -e "$CMD/lib/libpython2.7.so.1.0.mipsel" ]; then rm -rf $CMD/lib/libpython2.7.so.1.0.mipsel; fi
+	if [ -e "$CMD/lib/python2.7/lib-dynload.arm" ]; then rm -rf $CMD/lib/python2.7/lib-dynload.arm; fi
+	if [ -e "$CMD/lib/libpython2.7.so.1.0.arm" ]; then rm -rf $CMD/lib/libpython2.7.so.1.0.arm; fi
 fi
 
 hostercheck=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | tr '.' '\n' | wc -l`
