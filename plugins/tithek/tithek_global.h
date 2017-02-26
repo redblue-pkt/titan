@@ -845,7 +845,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				dnode->auth = ostrcat(HTTPAUTH, NULL, 0, 0);
 				dnode->connfd = -1;
 				dnode->ret = -1;
-				dnode->timeout = timeout;
+				dnode->timeout = 10000;
 				addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
 			}
 
