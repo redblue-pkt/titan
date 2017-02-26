@@ -830,14 +830,10 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			free(cmd), cmd = NULL;
 			unlink("/tmp/hoster.tar");
 
-		printf("check...111 /tmp/python.tar\n");
-
 			//dnode is freed in thread
 			struct download* dnode = calloc(1, sizeof(struct download));
 			if(dnode != NULL)
 			{
-		printf("check...222 /tmp/python.tar\n");
-
 				dnode->host = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
 				dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);
 				dnode->port = 80;
