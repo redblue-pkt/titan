@@ -830,6 +830,25 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			free(cmd), cmd = NULL;
 			unlink("/tmp/hoster.tar");
 
+		printf("check...111 /tmp/python.tar\n");
+
+			//dnode is freed in thread
+			struct download* dnode = calloc(1, sizeof(struct download));
+			if(dnode != NULL)
+			{
+		printf("check...222 /tmp/python.tar\n");
+
+				dnode->host = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
+				dnode->page = ostrcat("/tmp/python.tar", NULL, 0, 0);
+				dnode->port = 80;
+				dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
+				dnode->auth = ostrcat(HTTPAUTH, NULL, 0, 0);
+				dnode->connfd = -1;
+				dnode->ret = -1;
+				dnode->timeout = timeout;
+				addtimer(&tithekdownloadthread, START, 100, 1, (void*)dnode, NULL, NULL);
+			}
+
 			cmd = ostrcat("chmod -R 755 ", path, 0, 0);
 			system(cmd);
 			free(cmd), cmd = NULL;
