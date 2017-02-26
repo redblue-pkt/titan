@@ -3212,7 +3212,7 @@ msgstr ""
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:1079 titan.c:1088 titan.c:1217
 #: titan.c:1238 titan.c:1244 titan.c:1255 titan.c:1261 tithek.c:103
-#: tithek_global.h:121 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1501
+#: tithek_global.h:122 tithek.h:711 tithek.h:1307 tithek.h:1368 tithek.h:1501
 #: tithek.h:1510 tithek.h:1727 tithek.h:1749 tithek.h:1766 tithek.h:1998
 #: tithek.h:2158 tithek.h:2443 tithek.h:2487 tithek.h:2503 tithek.h:2515
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -5897,7 +5897,7 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1217 titan.c:1238 titan.c:1244 titan.c:1255 titan.c:1261
-#: tithek.c:103 tithek_global.h:121 tithek.h:711 tithek.h:1307 tithek.h:1368
+#: tithek.c:103 tithek_global.h:122 tithek.h:711 tithek.h:1307 tithek.h:1368
 #: tithek.h:1501 tithek.h:1510 tithek.h:1727 tithek.h:1749 tithek.h:1998
 #: tithek.h:2158 tithek.h:2443 tithek.h:2487 tithek.h:2503 tithek.h:2515
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -6500,7 +6500,7 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:1079 titan.c:1088 titan.c:1217 titan.c:1238 titan.c:1244
-#: titan.c:1255 titan.c:1261 tithek.c:103 tithek_global.h:121 tithek.h:711
+#: titan.c:1255 titan.c:1261 tithek.c:103 tithek_global.h:122 tithek.h:711
 #: tithek.h:1307 tithek.h:1368 tithek.h:1501 tithek.h:1510 tithek.h:1727
 #: tithek.h:1749 tithek.h:1766 tithek.h:1998 tithek.h:2158 tithek.h:2443
 #: tithek.h:2487 tithek.h:2503 tithek.h:2515 tiwakeup.h:66 tiwakeup.h:68
@@ -8580,8 +8580,8 @@ msgstr ""
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:552 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:504 tithek_global.h:506 tithek_global.h:947
-#: tithek_global.h:949 tithek.h:1564 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:507 tithek_global.h:509 tithek_global.h:950
+#: tithek_global.h:952 tithek.h:1564 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:367
 #: youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9789,7 +9789,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:121 tithek.h:2443
+#: tithek_global.h:122 tithek.h:2443
 msgid "The hoster is not yet supported !"
 msgstr ""
 
