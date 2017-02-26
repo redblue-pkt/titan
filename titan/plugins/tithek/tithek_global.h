@@ -11,23 +11,17 @@ char* hoster(char* url)
 	tmplink = ostrcat(url, NULL, 0, 0);
 	string_tolower(tmplink);
 
-
 	char* cmd = NULL;
 	cmd = ostrcat("/tmp/localhoster/hoster.sh get \"", url, 0, 0);
 	cmd = ostrcat(cmd, "\"", 1, 0);
 	streamurl = command(cmd);
-
-debug(99, "Streamurlaaaaa: %s", streamurl);
-
 	streamurl = string_newline(streamurl);
-debug(99, "Streamurlbbbbb: %s", streamurl);
+	debug(99, "Streamurl1: %s", streamurl);
 
 	free(cmd), cmd = NULL;
 
 	if(streamurl == NULL)
 	{
-debug(99, "Streamurlccccc: %s", streamurl);
-
 		if(ostrstr(tmplink, "sockshare") != NULL)
 			streamurl = putlocker(url);
 		else if(ostrstr(tmplink, "putlocker") != NULL)
@@ -38,7 +32,7 @@ debug(99, "Streamurlccccc: %s", streamurl);
 			streamurl = streamcloud(url);
 		else if(ostrstr(tmplink, "vidstream") != NULL)
 			streamurl = vidstream(url);
-		else if(ostrstr(tmplink, "flashx") != NULL)
+		else if(ostrstr(tmplink, "flashx_disable") != NULL)
 			streamurl = flashx(url);
 		else if(ostrstr(tmplink, "xvidstage") != NULL)
 			streamurl = xvidstage(url);
@@ -102,47 +96,29 @@ debug(99, "Streamurlccccc: %s", streamurl);
 			streamurl = vidzi(url);
 		else if(ostrstr(tmplink, "vid.ag") != NULL)
 			streamurl = vidag(url);
-		else
-		{
-debug(99, "Streamurlddddd: %s", streamurl);
-
-			cmd = ostrcat("/tmp/localhoster/hoster.sh youtube_dl \"", url, 0, 0);
-			cmd = ostrcat(cmd, "\"", 1, 0);
-debug(99, "Streamurleeeee: %s", streamurl);
-	debug(99, "cmd: %s", cmd);
-
-			streamurl = command(cmd);
-debug(99, "Streamurlfffff: %s", streamurl);
-
-			streamurl = string_newline(streamurl);
-debug(99, "Streamurlgggg: %s", streamurl);
-
-			free(cmd), cmd = NULL;
-			if(streamurl == NULL)
-				textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
-		}
+		debug(99, "Streamurl2: %s", streamurl);
 	}
+
 
 	if(streamurl == NULL)
 	{
 		cmd = ostrcat("/tmp/localhoster/hoster.sh youtube_dl \"", url, 0, 0);
 		cmd = ostrcat(cmd, "\"", 1, 0);
-	debug(99, "cmd: %s", cmd);
-
 		streamurl = command(cmd);
-	
-	debug(99, "Streamurlhhhhh: %s", streamurl);
-	
 		streamurl = string_newline(streamurl);
-	debug(99, "Streamurliiiii: %s", streamurl);
+		debug(99, "Streamurl3: %s", streamurl);
 	
 		free(cmd), cmd = NULL;
+
+		if(streamurl == NULL)
+			textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+
 	}
 
 	debug(99, "Streamurl1: %s", streamurl);
 
 	streamurl = string_replace_all("amp;", "", streamurl, 1);
-	debug(99, "Streamurl2: %s", streamurl);
+	debug(99, "Streamurl4: %s", streamurl);
 
 	free(tmplink), tmplink = NULL;
 /*

@@ -10,10 +10,10 @@ char* kinox(char* link)
 	char* streamurl = NULL;
 
 	streamurl = hoster(link);
-	debug(99, "streamurl1: %s", streamurl);
+//	debug(99, "streamurl1: %s", streamurl);
 
-	streamurl = string_replace_all("amp;", "", streamurl, 1);
-	debug(99, "streamurl2: %s", streamurl);
+//	streamurl = string_replace_all("amp;", "", streamurl, 1);
+//	debug(99, "streamurl2: %s", streamurl);
 
 	return streamurl;
 }
