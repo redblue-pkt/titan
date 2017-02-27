@@ -574,7 +574,7 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			symlink("/mnt/.tithek/lib", "/tmp/localhoster/lib");
 		}
 		else if(ostrcmp(node->filename, "/tmp/python.tar") == 0)
-			cmd = ostrcat("tar -xvf /tmp/python.tar -C ", "/tmp/localhoster/", NULL, 0, 0);
+			cmd = ostrcat("tar -xvf /tmp/python.tar -C /tmp/localhoster/", NULL, 0, 0);
 
 		if(cmd != NULL)
 		{
