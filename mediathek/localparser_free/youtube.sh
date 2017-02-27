@@ -73,7 +73,7 @@ search()
 				if [ ! -e $TMP/$FILENAME.list ];then
 					touch $TMP/$FILENAME.list
 				fi
-				piccount=$[$piccount+1]
+				piccount=`expr $piccount + 1`
 #				LINE="$TITLE#$URL#$PIC#$FILENAME_$piccount.jpg#$NAME#14"
 #				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
 				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#0"
@@ -104,7 +104,7 @@ hosterlist()
 				if [ ! -e $TMP/$FILENAME.list ];then
 					touch $TMP/$FILENAME.list
 				fi
-				piccount=$[$piccount+1]
+				piccount=`expr $piccount + 1`
 				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
