@@ -838,7 +838,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);
 				dnode->port = 80;
 				if(getfreespace("/mnt") / 1024 < 102400) //100mb
-				}
+				{
 					mkdir("/mnt/.tithek", 0777);
 					if(file_exist("/mnt/.tithek"))
 						dnode->filename = ostrcat("/mnt/.tithek/python.tar", NULL, 0, 0);
