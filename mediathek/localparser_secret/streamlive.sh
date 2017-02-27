@@ -90,7 +90,7 @@ page()
 				if [ ! -e $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list ];then
 					touch $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 				fi
-				piccount=$[$piccount+1]
+				piccount=`expr $piccount + 1`
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#91"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
