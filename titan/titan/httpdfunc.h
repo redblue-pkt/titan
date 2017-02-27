@@ -5730,7 +5730,10 @@ char* webgetupdatelist(char* param, int fmt)
 
 			if(ostrstr(ret1[i].part, "_FULL_") != NULL || ostrstr(ret1[i].part, "_FULLBACKUP.") != NULL || ostrstr(ret1[i].part, "_UPDATENFI_") != NULL)
 			{
-				cmd = ostrcat(cmd, "/sbin/update.sh ", 1, 0);
+				if(checkrealbox("DM900") == 1)
+					cmd = ostrcat(cmd, "/sbin/update2.sh ", 1, 0);
+				else
+					cmd = ostrcat(cmd, "/sbin/update.sh ", 1, 0);
 				cmd = ostrcat(cmd, node->type, 1, 0);
 				cmd = ostrcat(cmd, " ", 1, 0);
 
