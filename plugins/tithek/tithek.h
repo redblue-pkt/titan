@@ -556,7 +556,31 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 
-		if(ostrcmp(node->filename, "/tmp/python.tar") == 0)
+		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0)
+		{
+			char* cmd = ostrcat("tar -xvf /media/hdd/.tithek/python.tar -C ", "/media/hdd/.tithek/", 0, 0);
+			system(cmd);
+			free(cmd), cmd = NULL;
+			unlink("/media/hdd/.tithek/python.tar");
+			symlink("/media/hdd/.tithek/lib", "/tmp/localhoster/lib");
+		}
+		else if(ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0)
+		{
+			char* cmd = ostrcat("tar -xvf /var/swap/.tithek/python.tar -C ", "/var/swap/.tithek/", 0, 0);
+			system(cmd);
+			free(cmd), cmd = NULL;
+			unlink("/var/swap/.tithek/python.tar");
+			symlink("/var/swap/.tithek/lib", "/tmp/localhoster/lib");
+		}
+		else if(ostrcmp(node->filename, "/mnt/python.tar") == 0)
+		{
+			char* cmd = ostrcat("tar -xvf /mnt/python.tar -C ", "/mnt/.tithek/", 0, 0);
+			system(cmd);
+			free(cmd), cmd = NULL;
+			unlink("/mnt/python.tar");
+			symlink("/mnt/.tithek/lib", "/tmp/localhoster/lib");
+		}
+		else if(ostrcmp(node->filename, "/tmp/python.tar") == 0)
 		{
 			char* cmd = ostrcat("tar -xvf /tmp/python.tar -C ", "/tmp/localhoster/", 0, 0);
 			system(cmd);
