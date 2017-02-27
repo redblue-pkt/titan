@@ -835,33 +835,39 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			if(dnode != NULL)
 			{
 				dnode->host = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
-				dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);
 				dnode->port = 80;
-				printf("getfreespace /mnt %d\n", getfreespace("/mnt") / 1024 < 102400);
-				printf("getfreespace /media/hdd %d\n", getfreespace("/media/hdd") / 1024 < 102400);
-				printf("getfreespace /var/swap %d\n", getfreespace("/var/swap") / 1024 < 102400);
-				printf("getfreespace /tmp %d\n", getfreespace("/tmp") / 1024 < 102400);
-
-				if(getfreespace("/mnt") / 1024 < 102400) //100mb
+				if(getfreespace("/mnt") / 1024 > 102400) //100mb
 				{
 					mkdir("/mnt/.tithek", 0777);
 					if(file_exist("/mnt/.tithek"))
 						dnode->filename = ostrcat("/mnt/.tithek/python.tar", NULL, 0, 0);
-				}				
-				else if(file_exist("/media/hdd") && getfreespace("/media/hdd") / 1024 < 102400)
+					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);				
+				}
+				else if(file_exist("/media/hdd") && getfreespace("/media/hdd") / 1024 > 102400)
 				{
 					mkdir("/media/hdd/.tithek", 0777);
 					if(file_exist("/media/hdd/.tithek"))
 						dnode->filename = ostrcat("/media/hdd/.tithek/python.tar", NULL, 0, 0);
+					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);				
 				}
-				else if(file_exist("/var/swap") && getfreespace("/var/swap") / 1024 < 102400)
+				else if(file_exist("/var/swap") && getfreespace("/var/swap") / 1024 > 102400)
 				{
 					mkdir("/var/swap/.tithek", 0777);
 					if(file_exist("/var/swap/.tithek"))
 						dnode->filename = ostrcat("/var/swap/.tithek/python.tar", NULL, 0, 0);
+					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);				
+				}
+				else if(getfreespace("/tmp") / 1024 > 102400)
+				{
+					dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
+					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);				
 				}
 				else
+				{
 					dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
+					dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);				
+				}
+
 				dnode->auth = ostrcat(HTTPAUTH, NULL, 0, 0);
 				dnode->connfd = -1;
 				dnode->ret = -1;
