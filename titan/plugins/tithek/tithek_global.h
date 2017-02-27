@@ -60,7 +60,7 @@ char* hoster(char* url)
 			streamurl = shared(url);
 		else if(ostrstr(tmplink, "thefile") != NULL)
 			streamurl = thefile(url);
-		else if(ostrstr(tmplink, "youtu") != NULL)
+		else if(ostrstr(tmplink, "youtu_disable") != NULL)
 			streamurl = youtube(url);
 		else if(ostrstr(tmplink, "myvideo") != NULL)
 			streamurl = myvideo(url);

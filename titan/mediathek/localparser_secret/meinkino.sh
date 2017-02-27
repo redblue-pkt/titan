@@ -185,7 +185,8 @@ hosterlist()
 
 	if [ ! -z "$TRAILER" ];then
 		ID=`echo $TRAILER | tr '=' '\n' | tail -n1`
-		TRAILERURL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
+#		TRAILERURL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
+		TRAILERURL="https://www.youtube.com/watch?v=$ID"
 
 		LINE="Youtube TRAILER#$SRC $SRC play '$TRAILERURL'#http://atemio.dyndns.tv/mediathek/menu/youtube.jpg#$youtube.jpg#$NAME#111"
 		echo "$LINE" >> $TMP/$FILENAME.list
