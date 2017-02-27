@@ -840,19 +840,19 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				if(getfreespace("/mnt") / 1024 < 102400) //100mb
 				}
 					mkdir("/mnt/.tithek", 0777);
-					if(file_exist("/mnt/.tithek")
+					if(file_exist("/mnt/.tithek"))
 						dnode->filename = ostrcat("/mnt/.tithek/python.tar", NULL, 0, 0);
 				}				
-				if(file_exist("/media/hdd") && getfreespace("/media/hdd") / 1024 < 102400)
+				else if(file_exist("/media/hdd") && getfreespace("/media/hdd") / 1024 < 102400)
 				{
 					mkdir("/media/hdd/.tithek", 0777);
-					if(file_exist("/media/hdd/.tithek")
+					if(file_exist("/media/hdd/.tithek"))
 						dnode->filename = ostrcat("/media/hdd/.tithek/python.tar", NULL, 0, 0);
 				}
-				if(file_exist("/var/swap") && getfreespace("/var/swap") / 1024 < 102400)
+				else if(file_exist("/var/swap") && getfreespace("/var/swap") / 1024 < 102400)
 				{
 					mkdir("/var/swap/.tithek", 0777);
-					if(file_exist("/var/swap/.tithek")
+					if(file_exist("/var/swap/.tithek"))
 						dnode->filename = ostrcat("/var/swap/.tithek/python.tar", NULL, 0, 0);
 				}
 				else
