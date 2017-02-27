@@ -572,9 +572,9 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			unlink("/var/swap/.tithek/python.tar");
 			symlink("/var/swap/.tithek/lib", "/tmp/localhoster/lib");
 		}
-		else if(ostrcmp(node->filename, "/mnt/python.tar") == 0)
+		else if(ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
 		{
-			char* cmd = ostrcat("tar -xvf /mnt/python.tar -C ", "/mnt/.tithek/", 0, 0);
+			char* cmd = ostrcat("tar -xvf /mnt/.tithek/python.tar -C ", "/mnt/.tithek/", 0, 0);
 			system(cmd);
 			free(cmd), cmd = NULL;
 			unlink("/mnt/python.tar");

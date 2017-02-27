@@ -836,6 +836,9 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			{
 				dnode->host = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
 				dnode->port = 80;
+				dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
+				dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);	
+					
 				if(getfreespace("/mnt") / 1024 > 102400) //100mb
 				{
 					mkdir("/mnt/.tithek", 0777);
@@ -860,12 +863,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				else if(getfreespace("/tmp") / 1024 > 102400)
 				{
 					dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
-					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);				
-				}
-				else
-				{
-					dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
-					dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);				
+					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);							
 				}
 
 				dnode->auth = ostrcat(HTTPAUTH, NULL, 0, 0);
