@@ -39,10 +39,8 @@ init()
 
 mainmenu()
 {
-#	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$FILENAME.list
 	echo "Search 10#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAd-YEOqZz9nXVzGtn3KWzYLbLaajhqIDA&type=video&maxResults=10'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >$TMP/$FILENAME.list
 	echo "Search 50#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAd-YEOqZz9nXVzGtn3KWzYLbLaajhqIDA&type=video&maxResults=50'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
-	echo "Search 100#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAd-YEOqZz9nXVzGtn3KWzYLbLaajhqIDA&type=video&maxResults=100'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -58,7 +56,7 @@ search()
 			PIC=`echo $ROUND | sed 's!"url": !\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
 			TITLE=`echo $ROUND | sed 's!"title": !\ntitle=!g' | grep ^title= | cut -d'"' -f2 | tail -n1`
 #			URL="/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
-			URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
+#			URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
 			NEWPAGE="https://www.youtube.com/watch?v=$ID"
 
 			if [ -z "$TITLE" ];then
@@ -76,9 +74,9 @@ search()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=$[$piccount+1]
-#				LINE="$TITLE#$SRC $SRC list '$URL'#$PIC#$FILENAME_$piccount.jpg#$NAME#0"
 #				LINE="$TITLE#$URL#$PIC#$FILENAME_$piccount.jpg#$NAME#14"
-				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
+#				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
+				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#0"
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 
@@ -88,11 +86,49 @@ search()
 	echo "$TMP/$FILENAME.list"
 }
 
+hosterlist()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		/tmp/localhoster/hoster.sh youtube_dl $PAGE > $TMP/cache.$FILENAME.1
+
+		while read -u 3 ROUND; do
+			TITLE=`echo $ROUND | sed 's/mime=/\nfound=\&/g' | grep ^"found=&" | cut -d'&' -f2 | sed 's#%2F#/#g'`
+			PIC="`echo $TITLE | tr '/' '.'`.jpg"
+			NEWPAGE="$ROUND"
+
+			if [ -z "$PIC" ] || [ "$PIC" = ".jpg" ]; then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			fi
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				if [ ! -e $TMP/$FILENAME.list ];then
+					touch $TMP/$FILENAME.list
+				fi
+				piccount=$[$piccount+1]
+				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+
+		done 3<$TMP/cache.$FILENAME.1
+		rm $TMP/cache.* > /dev/null 2>&1
+	fi
+	echo "$TMP/$FILENAME.list"
+}
+
+play()
+{
+	rm $TMP/cache.$INPUT.* > /dev/null 2>&1
+	/tmp/localhoster/hoster.sh get $PAGE > $TMP/cache.$INPUT.1
+	STREAMURL=`cat $TMP/cache.$INPUT.1`
+	echo $STREAMURL
+}
+
 hoster()
 {
-	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	/tmp/localhoster/hoster.sh youtube_dl $PAGE > $TMP/cache.$FILENAME.1
-	STREAMURL=`cat $TMP/cache.$FILENAME.1 | head -n1`
+# not used anymore
+#	rm $TMP/cache.$INPUT.* > /dev/null 2>&1
+	/tmp/localhoster/hoster.sh youtube_dl $PAGE > $TMP/cache.$INPUT.1
+	STREAMURL=`cat $TMP/cache.$INPUT.1`
 	echo $STREAMURL
 }
 
@@ -100,5 +136,7 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	hoster) $INPUT;;
+	hosterlist) $INPUT;;
+	play) $INPUT;;
 	search) $INPUT;;
 esac
