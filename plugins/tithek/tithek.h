@@ -554,6 +554,13 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 		if(fd != NULL) fclose(fd);
 		m_unlock(&status.tithekmutex, 20);
 
+		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
+		{
+			printf("[tithek] sleep: 10\n");
+			sleep(10);
+			printf("[tithek] start Download: %s\n", node->filename);
+		}
+
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 
 		char* cmd = NULL;
