@@ -5677,7 +5677,7 @@ char* webgetupdatelist(char* param, int fmt)
 		buf = ostrcat(buf, "<br><br>", 1, 0);
 	}
 
-	if(checkrealbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1)
+	if(checkrealbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
 		if(mode == 0)
 			tmpstr = command("ls -1 /tmp/online | grep .nfi | sort -r");
@@ -5687,6 +5687,18 @@ char* webgetupdatelist(char* param, int fmt)
 				tmpstr = command("ls -1 /var/backup/ | grep .nfi | sort -r");
 			else
 				tmpstr = command("ls -1 /tmp | grep .nfi | sort -r");
+		}
+	}
+	else if(checkbox("DM900") == 1)
+	{
+		if(mode == 0)
+			tmpstr = command("ls -1 /tmp/online | grep *.zip | sort -r");
+		else
+		{
+			if(file_exist("/var/backup"))
+				tmpstr = command("ls -1 /var/backup/ | grep *.zip | sort -r");
+			else
+				tmpstr = command("ls -1 /tmp | grep *.zip | sort -r");
 		}
 	}
 	else
