@@ -93,7 +93,7 @@ hosterlist()
 
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | sed 's/mime=/\nfound=\&/g' | grep ^"found=&" | cut -d'&' -f2 | sed 's#%2F#/#g'`
-			PIC="`echo $TITLE | tr '/' '.'`.jpg"
+			PIC="http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr '/' '.'`.jpg"
 			NEWPAGE="$ROUND"
 
 			if [ -z "$PIC" ] || [ "$PIC" = ".jpg" ]; then
@@ -117,18 +117,18 @@ hosterlist()
 
 play()
 {
-	rm $TMP/cache.$INPUT.* > /dev/null 2>&1
-	/tmp/localhoster/hoster.sh get $PAGE > $TMP/cache.$INPUT.1
-	STREAMURL=`cat $TMP/cache.$INPUT.1`
+	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	/tmp/localhoster/hoster.sh get $PAGE > $TMP/cache.$PARSER.$INPUT.1
+	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
 	echo $STREAMURL
 }
 
 hoster()
 {
 # not used anymore
-#	rm $TMP/cache.$INPUT.* > /dev/null 2>&1
-	/tmp/localhoster/hoster.sh youtube_dl $PAGE > $TMP/cache.$INPUT.1
-	STREAMURL=`cat $TMP/cache.$INPUT.1`
+#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	/tmp/localhoster/hoster.sh youtube_dl $PAGE > $TMP/cache.$PARSER.$INPUT.1
+	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
 	echo $STREAMURL
 }
 
