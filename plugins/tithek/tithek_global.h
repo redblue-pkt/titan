@@ -837,6 +837,11 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				dnode->host = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
 				dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);
 				dnode->port = 80;
+				printf("getfreespace /mnt %d\n", getfreespace("/mnt") / 1024 < 102400);
+				printf("getfreespace /media/hdd %d\n", getfreespace("/media/hdd") / 1024 < 102400);
+				printf("getfreespace /var/swap %d\n", getfreespace("/var/swap") / 1024 < 102400);
+				printf("getfreespace /tmp %d\n", getfreespace("/tmp") / 1024 < 102400);
+
 				if(getfreespace("/mnt") / 1024 < 102400) //100mb
 				{
 					mkdir("/mnt/.tithek", 0777);
