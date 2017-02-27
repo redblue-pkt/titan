@@ -556,7 +556,6 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 
-		printf("node->filename: %s\n", node->filename);
 		char* cmd = NULL;
 		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0)
 		{
@@ -578,11 +577,11 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		if(cmd != NULL)
 		{
+			printf("[tithek] cmd: %s\n", cmd);
 			system(cmd);
-			unlink(node->filename);
-
-			printf("cmd: %s\n", cmd);
 			free(cmd), cmd = NULL;
+			printf("[tithek] remove: %s\n", node->filename);
+			unlink(node->filename);
 		}
 		if(tithekrun == 0)
 			unlink(node->filename);
