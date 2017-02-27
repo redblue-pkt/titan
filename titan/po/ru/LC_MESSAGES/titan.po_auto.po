@@ -1329,7 +1329,7 @@ msgstr ""
 msgid "Background3 Color"
 msgstr ""
 
-#: httpdfunc.h:6685 skin_default_skin.xml.h:62
+#: httpdfunc.h:6697 skin_default_skin.xml.h:62
 msgid "Backup"
 msgstr "Сохранить"
 
@@ -1342,7 +1342,7 @@ msgstr "Настройки бекапа"
 msgid "Backup / Restore Settings"
 msgstr "Бэкап/ресторе настроек"
 
-#: global.h:7666 httpdfunc.h:6645 httpdfunc.h:6724 system_backup_restore.h:82
+#: global.h:7666 httpdfunc.h:6657 httpdfunc.h:6736 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Бекап создан успешно"
 
@@ -1840,7 +1840,7 @@ msgstr "Не удаётся получить время EPG или время о
 msgid "Can't get Streamurl !"
 msgstr "Не удаётся получить поток!"
 
-#: extensions.h:457 httpdfunc.h:6504
+#: extensions.h:457 httpdfunc.h:6516
 msgid "Can't get all TPK index !"
 msgstr "Не удалось загрузить список плагинов!"
 
@@ -1848,7 +1848,7 @@ msgstr "Не удалось загрузить список плагинов!"
 msgid "Can't get data from facebook"
 msgstr "Не удаётся получить данные от Facebook"
 
-#: extensions.h:194 httpdfunc.h:6090
+#: extensions.h:194 httpdfunc.h:6102
 msgid "Can't install Package. Package to big."
 msgstr "Установка не выполнена. Плагин слишком большой"
 
@@ -1923,7 +1923,7 @@ msgstr ""
 msgid "Can't start timeshift play !"
 msgstr "Таймшифт не запущен!"
 
-#: extensions.h:461 httpdfunc.h:6516
+#: extensions.h:461 httpdfunc.h:6528
 msgid "Can't update all packages !"
 msgstr "Обновления для плагинов не найдены!"
 
@@ -2114,7 +2114,7 @@ msgstr "Защита от детей"
 msgid "Child safety"
 msgstr "Защита от детей"
 
-#: extensions.h:188 httpdfunc.h:6022
+#: extensions.h:188 httpdfunc.h:6034
 msgid "Choice Install Medium"
 msgstr "Выбор носителя для установки"
 
@@ -3188,8 +3188,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: global.h:7965 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
 #: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
-#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6197 httpdfunc.h:6462
-#: httpdfunc.h:6533 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6209 httpdfunc.h:6474
+#: httpdfunc.h:6545 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
@@ -3920,11 +3920,11 @@ msgstr ""
 msgid "Format HDD"
 msgstr "Форматирование HDD"
 
-#: httpdfunc.h:6798 httpdfunc.h:6849 restoredefault.h:92
+#: httpdfunc.h:6810 httpdfunc.h:6861 restoredefault.h:92
 msgid "Format MNT (all)"
 msgstr "Форматировать MNT (Все)"
 
-#: httpdfunc.h:6793 httpdfunc.h:6840 restoredefault.h:91
+#: httpdfunc.h:6805 httpdfunc.h:6852 restoredefault.h:91
 msgid "Format MNT with Backup/Restore"
 msgstr "Форматировать MNT с восстановлением"
 
@@ -5033,7 +5033,7 @@ msgstr ""
 msgid "Install File Manager Tpk first !"
 msgstr "Сначала установите плагин File Manager!"
 
-#: httpdfunc.h:6165 httpdfunc.h:6173 httpdfunc.h:6183
+#: httpdfunc.h:6177 httpdfunc.h:6185 httpdfunc.h:6195
 msgid "Install Log:"
 msgstr "Лог установки"
 
@@ -5061,15 +5061,15 @@ msgstr "Сначала установите плагин Интернет бра
 msgid "Install success"
 msgstr "Установка завершена"
 
-#: extensions.h:161 httpdfunc.h:6056
+#: extensions.h:161 httpdfunc.h:6068
 msgid "Install to FLASH"
 msgstr "Установка во Флэш"
 
-#: extensions.h:149 httpdfunc.h:6038
+#: extensions.h:149 httpdfunc.h:6050
 msgid "Install to MNT"
 msgstr "Установка в MNT (Флэш)"
 
-#: extensions.h:175 httpdfunc.h:6076
+#: extensions.h:175 httpdfunc.h:6088
 msgid "Install to SWAP"
 msgstr "Установка в SWAP (USB или HDD)"
 
@@ -5923,8 +5923,8 @@ msgstr ""
 #: global.h:7611 global.h:7619 global.h:7943 global.h:7948 global.h:7960
 #: global.h:7965 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
-#: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5811
-#: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
+#: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5823
+#: httpdfunc.h:6209 httpdfunc.h:6474 httpdfunc.h:6545 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -6384,19 +6384,19 @@ msgid ""
 "Create device?"
 msgstr ""
 
-#: httpdfunc.h:6277
+#: httpdfunc.h:6289
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr "Файлы плагинов в /tmp не найдены"
 
-#: httpdfunc.h:6281
+#: httpdfunc.h:6293
 msgid "No Tpk Files Found on Media Devices."
 msgstr "Файлы плагинов в /media не найдены"
 
-#: httpdfunc.h:5930 httpdfunc.h:6084 httpdfunc.h:6345
+#: httpdfunc.h:5942 httpdfunc.h:6096 httpdfunc.h:6357
 msgid "No Tpk Files Found."
 msgstr "Файлы плагинов не найдены"
 
-#: httpdfunc.h:5866
+#: httpdfunc.h:5878
 msgid "No Tpk Sections Found."
 msgstr "В этой секции плагины не найдены"
 
@@ -6404,7 +6404,7 @@ msgstr "В этой секции плагины не найдены"
 msgid "No Tuner configured"
 msgstr "ОШИБКА: Нет настроенного тюнера!"
 
-#: httpdfunc.h:6722 system_backup_restore.h:51
+#: httpdfunc.h:6734 system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -6516,7 +6516,7 @@ msgstr ""
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
 #: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
-#: httpdfunc.h:6197 httpdfunc.h:6462 httpdfunc.h:6533 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:6209 httpdfunc.h:6474 httpdfunc.h:6545 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -7728,8 +7728,8 @@ msgstr ""
 msgid "Recall"
 msgstr "Возврат"
 
-#: httpdfunc.h:6832 httpdfunc.h:6842 httpdfunc.h:6851 httpdfunc.h:6941
-#: httpdfunc.h:6953 httpdfunc.h:6963 httpdfunc.h:6973 httpdfunc.h:6983
+#: httpdfunc.h:6844 httpdfunc.h:6854 httpdfunc.h:6863 httpdfunc.h:6953
+#: httpdfunc.h:6965 httpdfunc.h:6975 httpdfunc.h:6985 httpdfunc.h:6995
 #: restoredefault.h:19 restoredefault.h:45
 msgid "Receiver reboots now !!!"
 msgstr "Ресивер перезагружается!"
@@ -7905,7 +7905,7 @@ msgstr "Удалить файл кэша?"
 msgid "Remove Cookies"
 msgstr ""
 
-#: httpdfunc.h:6438 httpdfunc.h:6448
+#: httpdfunc.h:6450 httpdfunc.h:6460
 msgid "Remove Log:"
 msgstr "Лог удаления"
 
@@ -7978,7 +7978,7 @@ msgstr "Повтор-Вкл"
 msgid "Rescue mode"
 msgstr "режим восстановления"
 
-#: httpdfunc.h:7028 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
+#: httpdfunc.h:7040 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
 msgstr "Сброс"
@@ -8031,27 +8031,27 @@ msgstr "Перезапустить сеть?"
 msgid "Restart Oscam ?"
 msgstr "Перезапустить Oscam?"
 
-#: httpdfunc.h:6680 skin_default_skin.xml.h:505
+#: httpdfunc.h:6692 skin_default_skin.xml.h:505
 msgid "Restore"
 msgstr "Восстановить"
 
-#: httpdfunc.h:6892 httpdfunc.h:6951 skin_default_skin.xml.h:506
+#: httpdfunc.h:6904 httpdfunc.h:6963 skin_default_skin.xml.h:506
 msgid "Restore Default Bouquets"
 msgstr ""
 
-#: httpdfunc.h:6887 httpdfunc.h:6939 skin_default_skin.xml.h:508
+#: httpdfunc.h:6899 httpdfunc.h:6951 skin_default_skin.xml.h:508
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-#: httpdfunc.h:6897 httpdfunc.h:6961 skin_default_skin.xml.h:507
+#: httpdfunc.h:6909 httpdfunc.h:6973 skin_default_skin.xml.h:507
 msgid "Restore Default Channels"
 msgstr ""
 
-#: httpdfunc.h:6902 httpdfunc.h:6971 skin_default_skin.xml.h:509
+#: httpdfunc.h:6914 httpdfunc.h:6983 skin_default_skin.xml.h:509
 msgid "Restore Default Providers"
 msgstr ""
 
-#: httpdfunc.h:6907 httpdfunc.h:6981 skin_default_skin.xml.h:510
+#: httpdfunc.h:6919 httpdfunc.h:6993 skin_default_skin.xml.h:510
 msgid "Restore Default Sats"
 msgstr ""
 
@@ -8059,7 +8059,7 @@ msgstr ""
 msgid "Restore Settings"
 msgstr "Восстановление настроек"
 
-#: httpdfunc.h:6881 webif_settings.h:4
+#: httpdfunc.h:6893 webif_settings.h:4
 msgid "Restore channel settings"
 msgstr ""
 
@@ -8067,7 +8067,7 @@ msgstr ""
 msgid "Restore default"
 msgstr ""
 
-#: httpdfunc.h:6781 httpdfunc.h:6788 httpdfunc.h:6830 restoredefault.h:94
+#: httpdfunc.h:6793 httpdfunc.h:6800 httpdfunc.h:6842 restoredefault.h:94
 #: skin_default_skin.xml.h:511 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Сброс настроек"
@@ -8868,11 +8868,11 @@ msgstr ""
 msgid "Selected:"
 msgstr "Тип бекапа"
 
-#: httpdfunc.h:7023 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
+#: httpdfunc.h:7035 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr "Отправка"
 
-#: httpdfunc.h:7014
+#: httpdfunc.h:7026
 msgid "Send Telnet Command"
 msgstr ""
 
@@ -8925,7 +8925,7 @@ msgstr "Сервер 5"
 msgid "Server Name"
 msgstr "Имя сервера"
 
-#: httpdfunc.h:6562 skin_default_skin.xml.h:561 webif_info.h:1
+#: httpdfunc.h:6574 skin_default_skin.xml.h:561 webif_info.h:1
 msgid "Service"
 msgstr "Канал"
 
@@ -8985,7 +8985,7 @@ msgstr ""
 msgid "Settings OK ?"
 msgstr "Настройки в порядке?"
 
-#: httpdfunc.h:6669 skin_default_skin.xml.h:569 webif_system.h:4
+#: httpdfunc.h:6681 skin_default_skin.xml.h:569 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Бэкап/ресторе настроек"
 
@@ -9667,11 +9667,11 @@ msgstr "Обновление системы (Онлайн)"
 msgid "System - Usbupdate (tmp)"
 msgstr "Обновление системы (Локально)"
 
-#: httpdfunc.h:6597 skin_default_skin.xml.h:636 webif_system.h:3
+#: httpdfunc.h:6609 skin_default_skin.xml.h:636 webif_system.h:3
 msgid "System Backup"
 msgstr "Бекап системы"
 
-#: httpdfunc.h:6640
+#: httpdfunc.h:6652
 msgid "System Backup on your Box not Supported"
 msgstr ""
 
@@ -9689,12 +9689,12 @@ msgstr "Информация о системе"
 msgid "System Status"
 msgstr "Статус системы"
 
-#: httpdfunc.h:5666 httpdfunc.h:5801 skin_default_skin.xml.h:642
+#: httpdfunc.h:5666 httpdfunc.h:5813 skin_default_skin.xml.h:642
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Обновление системы"
 
-#: httpdfunc.h:5820
+#: httpdfunc.h:5832
 msgid ""
 "System Update started. This can take up to 5 minutes. More details on TV."
 msgstr "Начато обновление системы. Это может занять до 5 минут"
@@ -9739,15 +9739,15 @@ msgstr ""
 msgid "TPK"
 msgstr ""
 
-#: httpdfunc.h:6197 httpdfunc.h:6199 httpdfunc.h:6464
+#: httpdfunc.h:6209 httpdfunc.h:6211 httpdfunc.h:6476
 msgid "TPK Install done, your system will reboot !"
 msgstr "Установка плагина завершена. Ресивер будет перезагружен"
 
-#: httpdfunc.h:6462
+#: httpdfunc.h:6474
 msgid "TPK Remove done, your system will reboot !"
 msgstr "Удаление плагина завершено. Ресивер будет перезагружен"
 
-#: httpdfunc.h:6533
+#: httpdfunc.h:6545
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr "Плагины обновлены. Ресивер будет перезагружен"
 
@@ -9755,7 +9755,7 @@ msgstr "Плагины обновлены. Ресивер будет перез�
 msgid "TPK install (online)"
 msgstr "Установка плагинов (Фид)"
 
-#: httpdfunc.h:6234 skin_default_skin.xml.h:676 webif_system_extensions.h:5
+#: httpdfunc.h:6246 skin_default_skin.xml.h:676 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Установка плагинов из /media"
 
@@ -9763,7 +9763,7 @@ msgstr "Установка плагинов из /media"
 msgid "TPK remove"
 msgstr "Удаление плагинов"
 
-#: httpdfunc.h:6232 skin_default_skin.xml.h:678 webif_system_extensions.h:4
+#: httpdfunc.h:6244 skin_default_skin.xml.h:678 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Установка плагинов из /tmp"
 
@@ -9939,7 +9939,7 @@ msgstr "Страница не найдена, файл удалён"
 msgid "The video no longer exists"
 msgstr "Это видео больше не существует"
 
-#: extensions.h:231 extensions.h:258 extensions.h:420 httpdfunc.h:6176
+#: extensions.h:231 extensions.h:258 extensions.h:420 httpdfunc.h:6188
 #: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -10316,7 +10316,7 @@ msgstr ""
 "\n"
 "Ждите реализации"
 
-#: extensions.h:226 httpdfunc.h:5917 skin_default_skin.xml.h:674
+#: extensions.h:226 httpdfunc.h:5929 skin_default_skin.xml.h:674
 msgid "Tpk Install - select file"
 msgstr "Выбор файла"
 
@@ -10324,7 +10324,7 @@ msgstr "Выбор файла"
 msgid "Tpk Install - select install medium"
 msgstr "Выберите пакет"
 
-#: extensions.h:221 httpdfunc.h:5853
+#: extensions.h:221 httpdfunc.h:5865
 msgid "Tpk Install - select section"
 msgstr "Выбор категории"
 
@@ -10332,15 +10332,15 @@ msgstr "Выбор категории"
 msgid "Tpk Install Info"
 msgstr "Информация об установке"
 
-#: extensions.h:258 extensions.h:263 httpdfunc.h:6141 httpdfunc.h:6143
+#: extensions.h:258 extensions.h:263 httpdfunc.h:6153 httpdfunc.h:6155
 msgid "Tpk Install Info - Install ERROR"
 msgstr "Ошибка установки плагина"
 
-#: extensions.h:254 httpdfunc.h:6139
+#: extensions.h:254 httpdfunc.h:6151
 msgid "Tpk Install Info - Install OK"
 msgstr "Плагин успешно установлен"
 
-#: extensions.h:298 httpdfunc.h:6332
+#: extensions.h:298 httpdfunc.h:6344
 msgid "Tpk Remove - select file"
 msgstr "Выбор файла"
 
@@ -10348,19 +10348,19 @@ msgstr "Выбор файла"
 msgid "Tpk Remove Info"
 msgstr "Информация об удалении"
 
-#: extensions.h:324 httpdfunc.h:6416
+#: extensions.h:324 httpdfunc.h:6428
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "Ошибка удаления плагина"
 
-#: extensions.h:317 httpdfunc.h:6412
+#: extensions.h:317 httpdfunc.h:6424
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Плагин успешно удалён"
 
-#: extensions.h:457 extensions.h:461 httpdfunc.h:6501 httpdfunc.h:6513
+#: extensions.h:457 extensions.h:461 httpdfunc.h:6513 httpdfunc.h:6525
 msgid "Tpk Update Info - Update ERROR"
 msgstr "Ошибка обновления плагина"
 
-#: httpdfunc.h:6523
+#: httpdfunc.h:6535
 msgid "Tpk Update Info - Update OK"
 msgstr "Обновление плагинов завершено"
 
@@ -11654,7 +11654,7 @@ msgstr "Копирование каналов"
 msgid "cover"
 msgstr "В виде иконок"
 
-#: httpdfunc.h:6609 httpdfunc.h:6634 skin_default_skin.xml.h:131
+#: httpdfunc.h:6621 httpdfunc.h:6646 skin_default_skin.xml.h:131
 msgid "create System Backup"
 msgstr "Создать резервную копию"
 
@@ -13238,7 +13238,7 @@ msgstr "Выполнить"
 msgid "starting Full Update (from backup) ?"
 msgstr "Начало полного обновления (Из архива)"
 
-#: httpdfunc.h:5815 system_update.h:237 system_update.h:245
+#: httpdfunc.h:5827 system_update.h:237 system_update.h:245
 msgid "starting Full Update ?"
 msgstr "Запустить полное обновление FLASH?"
 
