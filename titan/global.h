@@ -2749,7 +2749,6 @@ unsigned long long getfullspace(char* dir)
 	return fullsize;
 }
 
-#ifdef SH4
 unsigned long long getfreespace(char* dir)
 {
 	struct statfs64 s;
@@ -2763,21 +2762,6 @@ unsigned long long getfreespace(char* dir)
 
 	return freesize;
 }
-#else
-unsigned long long getfreespace(char* dir)
-{
-	struct statfs s;
-			long long freesize;
-	if (statfs(dir, &s)<0)
-        	freesize=0;
-	else
-	{
-		freesize = s.f_bfree;
-		freesize *= s.f_bsize;
-	}
-	return freesize;
-}
-#endif
 
 int checkbit(int value, int bitpos)
 {
