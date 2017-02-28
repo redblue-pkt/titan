@@ -582,7 +582,7 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			printf("[tithek] untar ende cmd: %s\n", cmd);
 			free(cmd), cmd = NULL;
 
-			if(ostrcmp(node->filename, "/tmp/python.tar") == 0 || getconfigint("tithek_python_update", NULL) == 1)
+			if(ostrcmp(node->filename, "/tmp/python.tar") == 0 || getconfigint("tithek_autoupdate", NULL) == 1)
 			{
 				printf("[tithek] remove: %s\n", node->filename);
 				unlink(node->filename);
