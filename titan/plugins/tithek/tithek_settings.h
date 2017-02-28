@@ -17,7 +17,7 @@ void screentithek_settings()
 	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
 	struct skin* vk_user = getscreennode(tithek_settings, "vk_user");
 	struct skin* vk_pass = getscreennode(tithek_settings, "vk_pass");
-	struct skin* update = getscreennode(tithek_settings, "update");
+	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
 	struct skin* b4 = getscreennode(tithek_settings, "b4");
 
