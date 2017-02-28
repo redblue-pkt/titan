@@ -589,8 +589,9 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		if(cmd != NULL)
 		{
-			printf("[tithek] cmd: %s\n", cmd);
+			printf("[tithek] start cmd: %s\n", cmd);
 			system(cmd);
+			printf("[tithek] ende cmd: %s\n", cmd);
 			free(cmd), cmd = NULL;
 		}
 		if(tithekrun == 0)
