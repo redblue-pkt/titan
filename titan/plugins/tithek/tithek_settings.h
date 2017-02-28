@@ -17,6 +17,7 @@ void screentithek_settings()
 	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
 	struct skin* vk_user = getscreennode(tithek_settings, "vk_user");
 	struct skin* vk_pass = getscreennode(tithek_settings, "vk_pass");
+	struct skin* update = getscreennode(tithek_settings, "update");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
 	struct skin* b4 = getscreennode(tithek_settings, "b4");
 
@@ -49,6 +50,10 @@ void screentithek_settings()
 	addchoicebox(hidxxx, "0", _("no"));
 	addchoicebox(hidxxx, "1", _("yes"));	
 	setchoiceboxselection(hidxxx, getconfig("tithek_hid_xxx", NULL));
+
+	addchoicebox(autoupdate, "0", _("no"));
+	addchoicebox(autoupdate, "1", _("yes"));	
+	setchoiceboxselection(autoupdate, getconfig("tithek_autoupdate", NULL));
 
 	changemask(amazon_user, "abcdefghijklmnopqrstuvwxyz");
 	if(getconfig("amazon_pass", NULL) == NULL)
@@ -95,6 +100,7 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_pay", pay, NULL);
 			addconfigscreencheck("tithek_pic_ratio", picratio, NULL);
 			addconfigscreencheck("tithek_hid_xxx", hidxxx, NULL);
+			addconfigscreencheck("tithek_autoupdate", autoupdate, NULL);
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
 				debug(99, "amazon_user: write");
