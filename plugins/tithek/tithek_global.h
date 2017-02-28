@@ -810,7 +810,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 	
 			gethttp("atemio.dyndns.tv", "/mediathek/parser_free.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
 	
-			cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
+			cmd = ostrcat("tar -xf /tmp/parser.tar -C ", path, 0, 0);
 			system(cmd);
 			free(cmd), cmd = NULL;
 			unlink("/tmp/parser.tar");
@@ -818,14 +818,14 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 			{
 				gethttp("atemio.dyndns.tv", "/mediathek/parser_secret.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
-				cmd = ostrcat("tar -xvf /tmp/parser.tar -C ", path, 0, 0);
+				cmd = ostrcat("tar -xf /tmp/parser.tar -C ", path, 0, 0);
 				system(cmd);
 				free(cmd), cmd = NULL;
 				unlink("/tmp/parser.tar");
 			}
 	
 			gethttp("atemio.dyndns.tv", "/mediathek/hoster.tar", 80, "/tmp/hoster.tar", HTTPAUTH, 5000, NULL, 0);
-			cmd = ostrcat("tar -xvf /tmp/hoster.tar -C ", "/tmp/localhoster", 0, 0);
+			cmd = ostrcat("tar -xf /tmp/hoster.tar -C ", "/tmp/localhoster", 0, 0);
 			system(cmd);
 			free(cmd), cmd = NULL;
 			unlink("/tmp/hoster.tar");
@@ -838,7 +838,9 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);	
 				dnode->port = 80;
 				dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
-					
+
+				printf("[tithek] getfreespace start\n");
+	
 				if(getfreespace("/mnt") / 1024 > 102400) //100mb
 				{
 					mkdir("/mnt/.tithek", 0777);
@@ -865,6 +867,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 					dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
 					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);							
 				}
+				printf("[tithek] getfreespace end\n");
 
 				dnode->auth = ostrcat(HTTPAUTH, NULL, 0, 0);
 				dnode->connfd = -1;
@@ -909,6 +912,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 					cmd = ostrcat(cmd, ret1[i].part, 1, 0);
 					cmd = ostrcat(cmd, " init", 1, 0);
 					line = command(cmd);
+					line = string_newline(line);
 					debug(99, "add main menuentry: %s", line);
 					writesys(titheklocalfile, line, 3);
 					free(cmd), cmd = NULL;
