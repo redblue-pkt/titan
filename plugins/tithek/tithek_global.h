@@ -811,23 +811,32 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			gethttp("atemio.dyndns.tv", "/mediathek/parser_free.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
 	
 			cmd = ostrcat("tar -xf /tmp/parser.tar -C ", path, 0, 0);
+			printf("[tithek] start cmd: %s\n", cmd);
 			system(cmd);
+			printf("[tithek] ende cmd: %s\n", cmd);
 			free(cmd), cmd = NULL;
 			unlink("/tmp/parser.tar");
+			printf("[tithek] remove: /tmp/parser.tar\n");
 	
 			if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 			{
 				gethttp("atemio.dyndns.tv", "/mediathek/parser_secret.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
 				cmd = ostrcat("tar -xf /tmp/parser.tar -C ", path, 0, 0);
+				printf("[tithek] start cmd: %s\n", cmd);
 				system(cmd);
+				printf("[tithek] ende cmd: %s\n", cmd);
 				free(cmd), cmd = NULL;
+				printf("[tithek] remove: /tmp/parser.tar\n");
 				unlink("/tmp/parser.tar");
 			}
 	
 			gethttp("atemio.dyndns.tv", "/mediathek/hoster.tar", 80, "/tmp/hoster.tar", HTTPAUTH, 5000, NULL, 0);
 			cmd = ostrcat("tar -xf /tmp/hoster.tar -C ", "/tmp/localhoster", 0, 0);
+			printf("[tithek] start cmd: %s\n", cmd);
 			system(cmd);
+			printf("[tithek] ende cmd: %s\n", cmd);
 			free(cmd), cmd = NULL;
+			printf("[tithek] remove: /tmp/hoster.tar\n");
 			unlink("/tmp/hoster.tar");
 
 			//dnode is freed in thread
@@ -846,21 +855,24 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 					mkdir("/mnt/.tithek", 0777);
 					if(file_exist("/mnt/.tithek"))
 						dnode->filename = ostrcat("/mnt/.tithek/python.tar", NULL, 0, 0);
-					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);				
+					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);
+					symlink("/mnt/.tithek/lib", "/tmp/localhoster/lib");
 				}
 				else if(file_exist("/media/hdd") && getfreespace("/media/hdd") / 1024 > 102400)
 				{
 					mkdir("/media/hdd/.tithek", 0777);
 					if(file_exist("/media/hdd/.tithek"))
 						dnode->filename = ostrcat("/media/hdd/.tithek/python.tar", NULL, 0, 0);
-					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);				
+					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);
+					symlink("/media/hdd/.tithek/lib", "/tmp/localhoster/lib");
 				}
 				else if(file_exist("/var/swap") && getfreespace("/var/swap") / 1024 > 102400)
 				{
 					mkdir("/var/swap/.tithek", 0777);
 					if(file_exist("/var/swap/.tithek"))
 						dnode->filename = ostrcat("/var/swap/.tithek/python.tar", NULL, 0, 0);
-					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);				
+					dnode->page = ostrcat("/mediathek/python_full.tar", NULL, 0, 0);
+					symlink("/var/swap/.tithek/lib", "/tmp/localhoster/lib");
 				}
 				else if(getfreespace("/tmp") / 1024 > 102400)
 				{
@@ -869,6 +881,15 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				}
 				printf("[tithek] getfreespace end\n");
 
+				if(ostrcmp(dnode->page, "/tmp/python.tar") == 0 || getconfigint("tithek_python_update", NULL) == 1)
+				{
+					if(file_exist(dnode->page))
+					{
+						printf("[tithek] remove before download: %s\n", dnode->page);
+						unlink(dnode->page);
+					}
+				}
+			
 				dnode->auth = ostrcat(HTTPAUTH, NULL, 0, 0);
 				dnode->connfd = -1;
 				dnode->ret = -1;
@@ -913,6 +934,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 					cmd = ostrcat(cmd, " init", 1, 0);
 					line = command(cmd);
 					line = string_newline(line);
+					printf("[tithek] cmd: %s\n", cmd);
 					debug(99, "add main menuentry: %s", line);
 					writesys(titheklocalfile, line, 3);
 					free(cmd), cmd = NULL;

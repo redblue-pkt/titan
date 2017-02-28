@@ -25,6 +25,7 @@
 		<node parent="listbox" name="picratio" text="Pic Ratio" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="pay" text="Show Pay Streams" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="hidxxx" text="Hid XXX Streams" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="autoupdate" text="Autoupdate" type="choicebox" valign="middle" width="100%" height="35">
 		<!--node parent="listbox" name="amazon_user" text="Amazon Prime User" type="inputbox" valign="middle" width="100%" height="35"-->
 		<!--node parent="listbox" name="amazon_pass" text="Amazon Prime Pass" type="inputbox" valign="middle" width="100%" height="35"-->
 		<node parent="listbox" name="vk_user" text="VK User" type="inputbox" valign="middle" width="100%" height="35">

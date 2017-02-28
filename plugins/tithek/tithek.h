@@ -556,43 +556,37 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
 		{
-			printf("[tithek] sleep: 20\n");
-			sleep(20);
-			printf("[tithek] Download start: %s\n", node->filename);
+			printf("[tithek] download start in: 10s\n");
+			sleep(10);
+			printf("[tithek] download start: %s\n", node->filename);
 		}
 
 		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
-		printf("[tithek] Download done: %s\n", node->filename);
+		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
+			printf("[tithek] download done: %s\n", node->filename);
 
 		char* cmd = NULL;
 		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0)
-		{
 			cmd = ostrcat("tar -xf /media/hdd/.tithek/python.tar -C /media/hdd/.tithek/", NULL, 0, 0);
-			symlink("/media/hdd/.tithek/lib", "/tmp/localhoster/lib");
-		}
 		else if(ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0)
-		{
 			cmd = ostrcat("tar -xf /var/swap/.tithek/python.tar -C /var/swap/.tithek/", NULL, 0, 0);
-			symlink("/var/swap/.tithek/lib", "/tmp/localhoster/lib");
-		}
 		else if(ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
-		{
 			cmd = ostrcat("tar -xf /mnt/.tithek/python.tar -C /mnt/.tithek/", NULL, 0, 0);
-			symlink("/mnt/.tithek/lib", "/tmp/localhoster/lib");
-		}
 		else if(ostrcmp(node->filename, "/tmp/python.tar") == 0)
-		{
 			cmd = ostrcat("tar -xf /tmp/python.tar -C /tmp/localhoster/", NULL, 0, 0);
-			printf("[tithek] remove: %s\n", node->filename);
-			unlink(node->filename);
-		}
 
 		if(cmd != NULL)
 		{
-			printf("[tithek] start cmd: %s\n", cmd);
+			printf("[tithek] untar start cmd: %s\n", cmd);
 			system(cmd);
-			printf("[tithek] ende cmd: %s\n", cmd);
+			printf("[tithek] untar ende cmd: %s\n", cmd);
 			free(cmd), cmd = NULL;
+
+			if(ostrcmp(node->filename, "/tmp/python.tar") == 0 || getconfigint("tithek_python_update", NULL) == 1)
+			{
+				printf("[tithek] remove: %s\n", node->filename);
+				unlink(node->filename);
+			}
 		}
 		if(tithekrun == 0)
 			unlink(node->filename);
