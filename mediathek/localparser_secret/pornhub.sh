@@ -44,7 +44,147 @@ mainmenu()
 	echo "$TMP/$FILENAME.list"
 }
 
+# comment block1 start
+<<"COMMENT"
+
+<ul class="headerSubMenu">
+ .
+ <li class=" ">
+ <a href="/video?c=28" onclick="ga('send', 'event', 'Header', 'click', 'Category 28');" alt="Reife Frauen">
+ <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">
+ <span>Reife Frauen</span>
+ </a>
+ </li>
+ .
+ <li>
+ <a class="categoryDefault" href="/categories" onclick="ga('send', 'event', 'Header', 'click', 'Categories');">
+ <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/www-static/images/categories_seeall.gif" alt="See All" width="118" height="88">
+ <span>Alle anzeigen</span>
+ </a>
+ </li>
+</ul>
+
+TitanNit-ufs912:~# time /tmp/localparser/pornhub.sh /tmp/localparser/pornhub.sh genre 'categories'
+/tmp/tithek/pornhub.genres.list
+real    0m 1.07s
+user    0m 0.39s
+sys     0m 0.39s
+TitanNit-ufs912:
+
+TitanNit-ufs912:~# time /tmp/localparser/pornhub.sh /tmp/localparser/pornhub.sh genreold 'categories'
+/tmp/localcache/pornhub.genreold.categories.list
+real    0m 19.03s
+user    0m 4.71s
+sys     0m 12.14s
+TitanNit-ufs912:~#
+
+COMMENT
+# comment block1 end
+
 genre()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME \
+		'
+			# 1. BEGIN variable setzen
+			BEGIN
+			{
+				# 2. setzt suchvariable auf 0 vor dem start
+				suche = 0
+				newpage = ""
+			}
+			# 3. eindeutige zeile vor ersten treffer
+			/<ul class=\"headerSubMenu\">/ \
+			{
+				# 4. suche erlauben ab dieser zeile
+				suche = 1
+				# 5. in naechste zeile springen
+				next
+			}
+			# 6. eindeutige zeile nach letzen treffer
+			/<\/ul>/ \
+			{
+				# 7. suche verbieten ab dieser zeile
+				suche = 0
+				# 8. in naechste zeile springen
+	        	next
+			}
+			# 9. eindeutige zeile nach letzen treffer backup fals erste nicht klappt
+			/categoryDefault/ \
+			{
+				# 10. suche verbieten ab dieser zeile
+				suche = 0
+				# 11. in naechste zeile springen
+	            next
+			}
+			# 12. nextpage zeile
+			# /<a href=\"\/video?c=/ \
+			/<a href=\"\/video?/ \
+			{
+				if (suche == 1)
+				{
+					# <a href="/video?c=28" onclick="ga.....>
+					# 13. extrahiere den newpage pfad
+					i = index($0, "href=\"") + 6
+		            j = index(substr($0, i), "\"") - 1
+					# 14. newpage = /video?c=28
+		            newpage = substr($0, i, j)
+					# 15. in naechste zeile springen
+					next
+				}
+			}
+			# 16. erste zeile mit treffer
+			/<img class=\"/ \
+			{
+				if (suche == 1 && newpage != "")
+				{
+					# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">
+					# 17. extrahiere den titel alt="Reife Frauen"
+					i = index($0, "alt=\"") + 5
+		            j = index(substr($0, i), "\"") - 1
+					# 18. titel = Reife Frauen
+		            title = substr($0, i, j)
+	
+					# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">	
+					# 19. extrahiere den piclink data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184"
+					i = index($0, "data-image=\"") + 12
+		            j = index(substr($0, i), "\"") - 1
+					# 20. pic = http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184
+		            pic = substr($0, i, j)
+					
+					# 21. erstelle lokalen picname aus kleingeschriebenen titel
+					# 22. titel = reife frauen
+					picname = tolower(title)
+	
+					# 23. tausche leehrzeichen in punkte
+					# 24. titel = reife.frauen
+		            gsub(" ", ".", picname, picname)
+	
+					if (title != "")
+					{
+						# 25. in naechste zeile springen
+						# 26. \x27 = single quotes
+						print title "#" SRC " " SRC " search \x27" newpage "&page=\x27 1#" pic "#" picname ".jpg#" NAME "#0"
+					}
+					
+					# 27. reset variables
+					newpage = ""
+					title = ""
+					picname = ""
+					pic = ""
+					# 28. in naechste zeile springen
+					next
+	         	}
+			}
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+}
+
+
+genreold()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
@@ -151,4 +291,6 @@ case $INPUT in
 	hoster) $INPUT;;
 	search) $INPUT;;
 	genre) $INPUT;;
+	genreold) $INPUT;;
+
 esac
