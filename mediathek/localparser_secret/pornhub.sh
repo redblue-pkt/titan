@@ -118,7 +118,7 @@ genre()
 	            next
 			}
 			# 12. nextpage zeile
-			# /<a href=\"\/video?c=/ \
+			# <a href=\"\/video?c=28
 			/<a href=\"\/video?/ \
 			{
 				if (suche == 1)
@@ -221,14 +221,190 @@ genreold()
 	echo "$TMP/$FILENAME.list"
 }
 
+# comment block1 start
+<<"COMMENT"
+
+						<ul class="nf-videos videos search-video-thumbs">
+														<li class="videoblock videoBox" id="33423702" _vkey="127170590" >
+<div class="wrap">
+.
+.
+ <div class="phimage">
+ <div class="preloadLine"></div>
+ <a href="/view_video.php?viewkey=127170590" title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14" class="img" data-related-url="/video/ajax_related_video?vkey=127170590" >
+ <div class="img videoPreviewBg">
+ <div class="marker-overlays">
+ <var class="duration">6:06</var>
+ <span class="hd-thumbnail">HD</span>
+ </div>
+
+ <img
+ src="http://cdn1b.static.pornhub.phncdn.com/www-static/images/blank.gif"
+ alt="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
+ data-mediumthumb="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201410/14/33423702/original/(m=ecuK8daaaa)5.jpg"
+ data-mediabook="http://cdn2b.video.pornhub.phncdn.com/videos/201410/14/33423702/180P_375K_33423702.webm?rs=150&ri=1000&s=1488442497&e=1488449697&h=46dd89a4b2712a5e40a7f065ebf157ad"
+ class="js-preload js-videoThumb js-videoThumbFlip thumb js-videoPreview"
+ width="150"
+.
+.
+							</ul>
+
+root@TitanNit-dm900:~# time /tmp/localparser/pornhub.sh /tmp/localparser/pornhub.sh searchold '/video?c=95&page=' 1
+/tmp/localcache/pornhub.searchold.video.c.95.page.1.list
+
+real    0m2.128s
+user    0m0.625s
+sys     0m1.452s
+
+root@TitanNit-dm900:~# time /tmp/localparser/pornhub.sh /tmp/localparser/pornhub.sh search '/video?c=95&page=' 1
+/tmp/localcache/pornhub.search.video.c.95.page.1.list
+
+real    0m0.495s
+user    0m0.090s
+sys     0m0.114s
+
+COMMENT
+# comment block1 end
+
 search()
 {
-#	if [ -z "$NEXT" ]; then NEXT="search"; fi
+#	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PARSER=$PARSER -v FILENAME=$FILENAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN
+				{
+					# setzt suchvariable auf 0 vor dem start
+					suche = 0
+					newpage = ""
+					pages = "0"
+					piccount = 0
+				}
+				# <li class="page_next_set"><a class="greyButton" href="/video?c=95&amp;page=10">10</a></li>
+				/<li class=\"page_next_set\">/ \
+				{
+					# da 2 pages sources geht keine variable ob schon gesetzt.
+					#if (pages == "0")
+					#{
+						# extrahiere die max pages unter 10 pages
+						i = index($0, "&amp;page=") + 10
+			            j = index(substr($0, i), "\"") - 1
+			            pages = substr($0, i, j)
+			            # in naechste zeile springen
+						next
+					#}
+				}
+				# <li class="page_number"><a class="greyButton" href="/video/search?search=michaela&amp;page=5">5</a></li>
+				/<li class=\"page_number\">/ \
+				{
+					# da 2 pages sources geht keine variable ob schon gesetzt.
+					#if (pages == "0")
+					#{
+						# extrahiere die max pages groesser 10 pages
+						i = index($0, "&amp;page=") + 10
+			            j = index(substr($0, i), "\"") - 1
+			            pages = substr($0, i, j)
+						# in naechste zeile springen
+						next
+					#}
+				}
+				# eindeutige zeile vor ersten treffer
+				/<ul class=\"nf-videos videos search-video-thumbs\">/ \
+				{
+					# suche erlauben ab dieser zeile
+					suche = 1
+					# in naechste zeile springen
+					next
+				}
+				# eindeutige zeile nach letzen treffer
+				/<\/ul>/ \
+				{
+					# suche verbieten ab dieser zeile
+					suche = 0
+					# in naechste zeile springen
+		        	next
+				}
+				# eindeutige zeile nach letzen treffer backup fals erste nicht klappt
+				/<ul class=\"searchRelatedList sectionContent clearfix\">/ \
+				{
+					# suche verbieten ab dieser zeile
+					suche = 0
+					# in naechste zeile springen
+		            next
+				}
+				# nextpage zeile
+				# <a href="/view_video.php?viewkey=127170590" title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14" class="img" data-related-url="/video/ajax_related_video?vkey=127170590" >
+				/<a href=\"\/view_video.php?/ \
+				{
+					if (suche == 1)
+					{
+						# extrahiere den newpage pfad
+						i = index($0, "href=\"") + 6
+			            j = index(substr($0, i), "\"") - 1
+						# newpage = /view_video.php?viewkey=127170590
+			            newpage = substr($0, i, j)
+	
+						# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">
+						# extrahiere den titel title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
+						i = index($0, "title=\"") + 7
+			            j = index(substr($0, i), "\"") - 1
+						# title = "Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
+			            title = substr($0, i, j)
+						# in naechste zeile springen
+						next
+					}
+				}
+				# bildlink treffer
+				# data-mediumthumb="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/....
+				/data-mediumthumb=/ \
+				{
+					if (suche == 1 && newpage != "")
+					{
+						# extrahiere den piclink data-image="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/............
+						i = index($0, "data-mediumthumb=\"") + 18
+			            j = index(substr($0, i), "\"") - 1
+						# pic = http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/........
+			            pic = substr($0, i, j)
+		
+						if (title != "")
+						{
+							picname = tolower(title)
+				            gsub(" ", ".", picname, picname)
 
-#	if [ -e "$TMP/$FILENAME.list" ] ; then
-#		rm $TMP/$FILENAME.list
+							piccount += 1
+							# in naechste zeile springen
+							# \x27 = single quotes
+# variable FILENAME bringt ein - statt den inhalt
+# pornhub.search.video.c.95.page.1
+#							print title "(" pages "/" pages ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" FILENAME "." piccount ".jpg#" NAME "#111"
+#							print title "(" pages "/" pages ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PARSER "." INPUT "." PAGE "." NEXT "." piccount ".jpg#" NAME "#111"
+							print title "(" pages "/" pages ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PARSER "." picname "." piccount ".jpg#" NAME "#111"
+						}
+		
+						# 27. reset variables
+						newpage = ""
+						title = ""
+						picname = ""
+						pic = ""
+						# 28. in naechste zeile springen
+						next
+		         	}
+				}
+				# next page init
+			END
+				{
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+				}
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
 #	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+}
 
+
+searchold()
+{
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 
@@ -290,6 +466,7 @@ case $INPUT in
 	mainmenu) $INPUT;;
 	hoster) $INPUT;;
 	search) $INPUT;;
+	searchold) $INPUT;;
 	genre) $INPUT;;
 	genreold) $INPUT;;
 
