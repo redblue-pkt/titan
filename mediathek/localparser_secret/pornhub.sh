@@ -383,7 +383,7 @@ search()
 							piccount += 1
 							# in naechste zeile springen
 							# \x27 = single quotes
-							print title "(" pages "/" pages ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 						}
 		
 						# 27. reset variables
