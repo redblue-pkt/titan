@@ -9,8 +9,9 @@ PAGE=$3
 NEXT=$4
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-FILENAME="$PARSER $INPUT $PAGE $NEXT"
-FILENAME=`echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr ';' '.' | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
+FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PAGE $NEXT"
+FILENAME="`echo $FILENAME | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
+PICNAME=`echo $FILENAME`
 
 if [ -z "$FILENAME" ]; then
 	FILENAME=none
@@ -84,7 +85,7 @@ COMMENT
 genre()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME \
+		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			# 1. BEGIN variable setzen
 			BEGIN
@@ -92,6 +93,7 @@ genre()
 				# 2. setzt suchvariable auf 0 vor dem start
 				suche = 0
 				newpage = ""
+				piccount = 0
 			}
 			# 3. eindeutige zeile vor ersten treffer
 			/<ul class=\"headerSubMenu\">/ \
@@ -152,19 +154,24 @@ genre()
 					# 20. pic = http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184
 		            pic = substr($0, i, j)
 					
-					# 21. erstelle lokalen picname aus kleingeschriebenen titel
-					# 22. titel = reife frauen
-					picname = tolower(title)
+					if ( pic == "" )
+					{
+						# 21. erstelle lokalen picname aus kleingeschriebenen titel
+						# 22. titel = reife frauen
+						picname = tolower(title)
 	
-					# 23. tausche leehrzeichen in punkte
-					# 24. titel = reife.frauen
-		            gsub(" ", ".", picname, picname)
+						# 23. tausche leehrzeichen in punkte
+						# 24. titel = reife.frauen
+		            	gsub(" ", ".", picname, picname)
+						pic = "http://atemio.dyndns.tv/mediathek/menu/" picname ".jpg"
+					}
 	
 					if (title != "")
 					{
+						piccount += 1
 						# 25. in naechste zeile springen
 						# 26. \x27 = single quotes
-						print title "#" SRC " " SRC " search \x27" newpage "&page=\x27 1#" pic "#" picname ".jpg#" NAME "#0"
+						print title "#" SRC " " SRC " search \x27" newpage "&page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 					}
 					
 					# 27. reset variables
@@ -269,7 +276,7 @@ COMMENT
 search()
 {
 #	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PARSER=$PARSER -v FILENAME=$FILENAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN
@@ -365,20 +372,18 @@ search()
 			            j = index(substr($0, i), "\"") - 1
 						# pic = http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/........
 			            pic = substr($0, i, j)
-		
+
+						if ( pic == "" )
+						{
+			            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+						}
+
 						if (title != "")
 						{
-							picname = tolower(title)
-				            gsub(" ", ".", picname, picname)
-
 							piccount += 1
 							# in naechste zeile springen
 							# \x27 = single quotes
-# variable FILENAME bringt ein - statt den inhalt
-# pornhub.search.video.c.95.page.1
-#							print title "(" pages "/" pages ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" FILENAME "." piccount ".jpg#" NAME "#111"
-#							print title "(" pages "/" pages ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PARSER "." INPUT "." PAGE "." NEXT "." piccount ".jpg#" NAME "#111"
-							print title "(" pages "/" pages ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PARSER "." picname "." piccount ".jpg#" NAME "#111"
+							print title "(" pages "/" pages ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 						}
 		
 						# 27. reset variables
