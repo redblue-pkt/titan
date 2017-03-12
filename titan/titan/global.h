@@ -7494,6 +7494,14 @@ void wakeup_record_device()
 {
 	char* cmd = NULL, *dev = NULL;
 
+	if(file_exist(getconfig("skriptbeforerec", NULL)))
+	{
+		cmd = ostrcat(getconfig("skriptbeforerec", NULL), NULL, 0, 0);
+		printf("cmd: %s\n", cmd);
+		system(cmd);
+		free(cmd), cmd = NULL;
+	}
+
 	dev = getmoviedev();
 	if(dev == NULL)
 	{
