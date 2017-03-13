@@ -90,6 +90,7 @@ hosterlist()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		/tmp/localhoster/hoster.sh youtube_dl $PAGE > $TMP/cache.$FILENAME.1
+		piccount=0
 
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | sed 's/mime=/\nfound=\&/g' | grep ^"found=&" | cut -d'&' -f2 | sed 's#%2F#/#g'`
