@@ -139,7 +139,7 @@ hoster()
 		' >$TMP/$FILENAME.list
 	fi
 	# gebe titan den list namen mit pfad zurueck
-	echo "$TMP/$FILENAME.list"
+	cat "$TMP/$FILENAME.list"
 }
 
 case $INPUT in
