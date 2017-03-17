@@ -1909,7 +1909,7 @@ msgstr ""
 "Probeer het later nogmaals."
 
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:775
-#: mc_global.h:1022 mc_pictureplayer.h:100 mc_pictureplayer.h:242
+#: mc_global.h:1047 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
 #: mc_videoplayer.h:900 play.h:1654
 msgid "Can't start playback !"
@@ -3206,7 +3206,7 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:775 mc_global.h:1022
+#: mc_dateibrowser.h:36 mc_global.h:775 mc_global.h:1047
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:284 mc_main.h:293 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -5943,7 +5943,7 @@ msgstr ""
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
-#: mc_global.h:775 mc_global.h:1022 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_global.h:775 mc_global.h:1047 mc_internetbrowser.h:36 mc_main.h:50
 #: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:284
 #: mc_main.h:293 mc_mediathek.h:35 mc_pictureplayer.h:100
 #: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
@@ -6537,7 +6537,7 @@ msgstr ""
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:775 mc_global.h:1022
+#: mc_dateibrowser.h:36 mc_global.h:775 mc_global.h:1047
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:284 mc_main.h:293 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -7203,7 +7203,7 @@ msgid "Player for .ts"
 msgstr "Speler voor .ts"
 
 #: mc_global.h:272 mc_global.h:340 mc_global.h:415 mc_global.h:702
-#: mc_global.h:936 mc_global.h:951 plugins_mc_skin.xml.h:42
+#: mc_global.h:961 mc_global.h:976 plugins_mc_skin.xml.h:42
 #: skins_mc_skin.xml.h:42
 msgid "Playlist"
 msgstr "Afspeellijst"
@@ -7630,13 +7630,13 @@ msgstr ""
 msgid "Ram"
 msgstr "Ram geheugen"
 
-#: mc_audioplayer.h:565 mc_global.h:560 mc_global.h:588 mc_global.h:1078
+#: mc_audioplayer.h:565 mc_global.h:560 mc_global.h:588 mc_global.h:1103
 #: mc_pictureplayer.h:321 mc_videoplayer.h:680 plugins_mc_skin.xml.h:44
 #: skins_mc_skin.xml.h:44
 msgid "Random"
 msgstr "Willekeurig"
 
-#: mc_global.h:549 mc_global.h:577 mc_global.h:1076
+#: mc_global.h:549 mc_global.h:577 mc_global.h:1101
 msgid "Random-On"
 msgstr "Willekeurig aan"
 
@@ -7961,7 +7961,7 @@ msgstr "Verwijderen"
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1083
+#: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1108
 #: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:436
 #: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skin_default_skin.xml.h:496
 #: skins_mc_skin.xml.h:45
@@ -7972,7 +7972,7 @@ msgstr "Herhalen"
 msgid "Repeat type"
 msgstr ""
 
-#: mc_audioplayer.h:408 mc_global.h:1081 mc_pictureplayer.h:150
+#: mc_audioplayer.h:408 mc_global.h:1106 mc_pictureplayer.h:150
 #: mc_videoplayer.h:429
 msgid "Repeat-On"
 msgstr "Herhalen Aan"
