@@ -756,7 +756,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							}
 			
 //							playerret = playerstart(*filename);
-							if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(*filename, ".ts") == 0)
+							if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(*filename, ".ts") == 0 && ostrstr(*filename, "://") == NULL)
 								*playertype = 1;
 							else
 								*playertype = 0;
@@ -820,11 +820,17 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 		char* firstfile = NULL;
 		char* firsttitle = NULL;
+		char* extra = NULL;
 		while(fgets(fileline, MINMALLOC, fd) != NULL)
 		{
 			int addcurrdir = 0;
 			if(fileline[0] == '#' || fileline[0] == '\n')
+			{
+				extra = ostrcat(fileline, NULL, 0, 0);
+				extra = stringreplacechar(extra, '\n', ' ');
+				printf("set extra: %s\n", extra);
 				continue;
+			}
 			if(fileline[0] == '/')
 				addcurrdir = 1;
 			if(strlen(fileline) >= 6 && fileline[4] == ':' && fileline[5] == '/' && fileline[6] == '/')
@@ -852,7 +858,6 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				if(count1 >= 1)
 					i = count1 - 1;
 				count ++;
-				debug(50, "addlistbox (%d) %s", count, fileline);
 
 				title = ostrcat("(", oitoa(count), 0, 1);
 				if(count < 10)
@@ -862,8 +867,28 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				else
 					title = ostrcat(title, ")  ", 1, 0);
 
-				title = ostrcat(title, (&ret1[i])->part, 1, 0);
+				if(extra != NULL)
+					title = ostrcat(title, extra, 1, 0);
+				else
+					title = ostrcat(title, (&ret1[i])->part, 1, 0);
+
+
+				if(title != NULL)
+				{
+					title = string_replace("#EXTINF:-1,", "", title, 1);
+					title = string_replace("#EXTINF:,", "", title, 1);
+					title = string_replace("#EXTINF,", "", title, 1);
+					title = string_replace("#", "", title, 1);
+				}
+				debug(50, "234addlistbox (%d) %s: %s", count, title, fileline);
+
 				changetext(tmp, _(title));
+
+				if(extra != NULL)
+				{
+					free(extra), extra = NULL;
+					free(title), title = NULL;
+				}
 
 				if(firstfile == NULL)
 				{

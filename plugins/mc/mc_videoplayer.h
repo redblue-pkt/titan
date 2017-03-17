@@ -408,12 +408,12 @@ void screenmc_videoplayer()
 			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0))
 				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
-		else if(rcret == getrcconfigint("rcnext", NULL))
+		else if(rcret == getrcconfigint("rcnext", NULL) || rcret == getrcconfigint("rcchdown", NULL))
 		{
 			if(status.play == 1)
 				eof = 1;
 		}
-		else if(rcret == getrcconfigint("rcprev", NULL))
+		else if(rcret == getrcconfigint("rcprev", NULL) || rcret == getrcconfigint("rcchup", NULL))
 		{
 			if(status.play == 1)
 				eof = 2;
