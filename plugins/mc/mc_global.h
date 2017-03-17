@@ -880,7 +880,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					title = string_replace("#EXTINF,", "", title, 1);
 					title = string_replace("#", "", title, 1);
 				}
-				debug(50, "234addlistbox (%d) %s: %s", count, title, fileline);
+				debug(50, "addlistbox (%d) %s: %s", count, title, fileline);
 
 				changetext(tmp, _(title));
 
