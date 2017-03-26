@@ -5,6 +5,7 @@
 <node valign=middle textposx=40 name=mc_videoplayer text="Video Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 <node valign=middle textposx=40 name=mc_pictureplayer text="Picture Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 <node valign=middle textposx=40 name=mc_mediathek text="Mediathek" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
+<node valign=middle textposx=40 name=mc_iptvplayer text="Iptv Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_appletrailer text="Apple Trailer" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_myvideo text="My Video" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
 #<node valign=middle textposx=40 name=mc_vlcplayer text="VLC Player" parent=listbox bordercol=bordercol bordersize=0 width=100% height=30>
@@ -232,4 +233,47 @@
 </screen>
 
 <screen name=blackscreen width=100% height=100% bgcol=000000>
+</screen>
+
+# iptvplayer
+<screen name="mc_iptvplayer" picmem=%pluginpath%/mc/skin/background_overlay_HD.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=2 transparent=1>
+<node textposx=100 text="IPTV" name=mc_iptvplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
+<node fontsize=25 bordercol=bordercol scrollbar=auto type=listbox name=listbox posx=center posy=140 width=92% height=480>
+<node name=filelistpath valign=middle bordersize=1 posx=center posy=100 width=95% height=30>
+<node hspace=10 picmem=skin/ext_directory.png textposx=30 fontsize=25 bordersize=0 bordercol=bordercol scrollbar=auto type=filelist name=filelist posx=center posy=140 width=92% height=480>
+<node name=cover posx=3% posy=70% width=200 height=171  picwidth=1 picheight=1>
+<node name=title posx=center posy=10 halign=center valign=middle width=100% height=60 fontcol=fontcol/>
+<node name=thumb posx=3% posy=70% width=200 height=171  picwidth=1 picheight=1>
+<node name=plot posx=245 posy=500 type=textbox width=1000 height=160 fontcol=fontcol fontsize=20 wrap=yes />
+
+<node bgcol=-2 name=stars posy=60 halign=center valign=middle width=100% height=40 fontsize=30 fontcol=fontcol>
+
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b5" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b6" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b1" text="Sorting" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
+#<node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
+<node name="b2" text="Playlist" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="380" posy="670" width="230" height="30">
+<node name="b3" text="Random"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="615" posy="670" width="200" height="30">
+<node name="b4" text="Repeat"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="780" posy="670" width="200" height="30">
+<node name="b7" picmem="skin/key_menu_70x40.png" posx="1000" posy="665" width="70" height="40">
+<node name="b8" picmem="skin/key_stop_70x40.png" posx="1075" posy="665" width="70" height="40">
+<node name="b9" picmem="skin/key_info_70x40.png" posx="1150" posy="665" width="70" height="40">
+<node func=gettime param1="%d-%m-%Y %H:%M" name=time halign=right valign=middle posx=75% posy=2% width=280 height=30/>
+</screen>
+
+<screen name="mc_iptvplayer_settings" picmem=%pluginpath%/mc/skin/background5.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=0 bgcol=bgcol>
+<node textposx=100 text="IPTV SETTINGS" name=mc_audioplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
+<node bordercol=bordercol scrollbar=auto type=listbox posy=150 posx=350 name=listbox width=45% height=60%>
+<node name=sort type=choicebox parent=listbox valign=middle posx=0 text="Sort" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=autoscan type=choicebox parent=listbox valign=middle posx=0 text="MediaDB autoscan" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=defaultdir type=choicebox parent=listbox valign=middle posx=0 text="default Directory" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=uselastdir type=choicebox parent=listbox valign=middle posx=0 text="use last Directory" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=backdrop type=choicebox parent=listbox valign=middle posx=0 text="Backdrop Interval" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
+<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
+<node name="b3" text="Network" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
+<node name="b4" text="EDIT" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="250" height="30">
 </screen>
