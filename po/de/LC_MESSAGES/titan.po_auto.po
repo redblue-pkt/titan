@@ -14178,6 +14178,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "comming soon"
-#~ msgstr "In Arbeit ..."
