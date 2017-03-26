@@ -297,7 +297,7 @@ msgstr ""
 msgid "18V"
 msgstr ""
 
-#: mc_videoplayer_settings.h:54
+#: mc_iptvplayer_settings.h:54 mc_videoplayer_settings.h:54
 msgid "1s"
 msgstr "s"
 
@@ -346,7 +346,7 @@ msgstr ""
 msgid "240"
 msgstr ""
 
-#: mc_videoplayer_settings.h:55
+#: mc_iptvplayer_settings.h:55 mc_videoplayer_settings.h:55
 msgid "2s"
 msgstr "s"
 
@@ -403,7 +403,7 @@ msgstr ""
 msgid "3dsettings"
 msgstr ""
 
-#: mc_videoplayer_settings.h:56
+#: mc_iptvplayer_settings.h:56 mc_videoplayer_settings.h:56
 msgid "3s"
 msgstr "s"
 
@@ -451,7 +451,7 @@ msgstr ""
 msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr ""
 
-#: mc_videoplayer_settings.h:57
+#: mc_iptvplayer_settings.h:57 mc_videoplayer_settings.h:57
 msgid "4s"
 msgstr "s"
 
@@ -485,7 +485,7 @@ msgstr ""
 msgid "500rpm"
 msgstr "500 σ/λ"
 
-#: mc_videoplayer_settings.h:58
+#: mc_iptvplayer_settings.h:58 mc_videoplayer_settings.h:58
 msgid "5s (default)"
 msgstr "προρυθμίσεις"
 
@@ -1876,10 +1876,11 @@ msgid ""
 "Please try later."
 msgstr ""
 
-#: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:775
-#: mc_global.h:1047 mc_pictureplayer.h:100 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:761
-#: mc_videoplayer.h:900 play.h:1654
+#: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:781
+#: mc_global.h:1079 mc_iptvplayer.h:372 mc_iptvplayer.h:483
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:761 mc_videoplayer.h:900
+#: play.h:1654
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2124,7 +2125,7 @@ msgstr ""
 msgid "Choose your Language from the following list"
 msgstr ""
 
-#: mc_global.h:611
+#: mc_global.h:617
 msgid "Choose your Playlist Mode from the following list"
 msgstr ""
 
@@ -3152,9 +3153,9 @@ msgstr ""
 #: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:775 mc_global.h:1047
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:284 mc_main.h:293 mc_mediathek.h:35
+#: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
+#: mc_internetbrowser.h:36 mc_iptvplayer.h:104 mc_iptvplayer.h:372
+#: mc_iptvplayer.h:483 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
@@ -3255,7 +3256,7 @@ msgstr ""
 msgid "Edit Modus Font Color"
 msgstr ""
 
-#: mc_global.h:609
+#: mc_global.h:615
 msgid "Edit Playlist"
 msgstr "playlist"
 
@@ -3699,6 +3700,7 @@ msgid "Filelist Select Color"
 msgstr ""
 
 #: mc_audioplayer.h:520 mc_audioplayer.h:564 mc_audioplayer.h:684
+#: mc_iptvplayer.h:265 mc_iptvplayer.h:309 mc_iptvplayer.h:451
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
 #: mc_videoplayer.h:605 mc_videoplayer.h:679 mc_videoplayer.h:866
 #: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
@@ -4762,6 +4764,14 @@ msgstr ""
 msgid "IP-Kamera zB. Firma INSTAR"
 msgstr ""
 
+#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30
+msgid "IPTV"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32
+msgid "IPTV SETTINGS"
+msgstr ""
+
 #: tpk_showname.h:43
 msgid "Ice Age Scrap likes UFS910"
 msgstr ""
@@ -5041,6 +5051,10 @@ msgstr ""
 #: webif_index.dm7020hd.h:2 webif_index.dm7020hdv2.h:2 webif_index.dm900.h:2
 #: webif_index.h:2
 msgid "Ipad Stream"
+msgstr ""
+
+#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
+msgid "Iptv Player"
 msgstr ""
 
 #: avsettings.h:368 videomode.h:67
@@ -5477,7 +5491,7 @@ msgstr ""
 msgid "Load Partition"
 msgstr "Φόρτωση partition"
 
-#: mc_global.h:608 mc_global.h:617
+#: mc_global.h:614 mc_global.h:623
 msgid "Load Playlist"
 msgstr "playlist"
 
@@ -5521,15 +5535,15 @@ msgstr ""
 msgid "M"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
+#: plugins_mc_skin.xml.h:70 skins_mc_skin.xml.h:70
 msgid "MC VideoPlayer Imdb Settings"
 msgstr "Ρυθμίσεις Imdb του MC VideoPlayer"
 
-#: plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
+#: plugins_mc_skin.xml.h:71 skins_mc_skin.xml.h:71
 msgid "MC VideoPlayer Sort Settings"
 msgstr "MC VideoPlayer Sort settings"
 
-#: plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
+#: plugins_mc_skin.xml.h:72 skins_mc_skin.xml.h:72
 msgid "MC VideoPlayer View Settings"
 msgstr "MC VideoPlayer View settings"
 
@@ -5739,7 +5753,7 @@ msgstr ""
 msgid "MediaDB Settings"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30
+#: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
 msgid "MediaDB autoscan"
 msgstr ""
 
@@ -5769,7 +5783,7 @@ msgstr ""
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
+#: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 msgid "Mediathek"
 msgstr "Media Center"
 
@@ -5816,7 +5830,7 @@ msgstr ""
 msgid "Menu Title"
 msgstr ""
 
-#: mc_main.h:293 menu.h:160 panel_main.h:29 panel_main.h:135
+#: mc_main.h:285 menu.h:160 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -5855,9 +5869,9 @@ msgstr ""
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
-#: mc_global.h:775 mc_global.h:1047 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:284
-#: mc_main.h:293 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_global.h:781 mc_global.h:1079 mc_internetbrowser.h:36
+#: mc_iptvplayer.h:104 mc_iptvplayer.h:372 mc_iptvplayer.h:483 mc_main.h:276
+#: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
 #: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:333 mc_videoplayer.h:761
 #: mc_videoplayer.h:796 mc_videoplayer.h:900 mc_videoplayer.h:916
@@ -6125,7 +6139,7 @@ msgstr ""
 msgid "Mutex"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
+#: plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
 msgid "My Video"
 msgstr ""
 
@@ -6154,8 +6168,8 @@ msgid "Name:"
 msgstr ""
 
 #: httpdfunc.h:5269 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
-#: plugins_mc_skin.xml.h:34 plugins_panel_skin.xml.h:13
-#: skin_default_skin.xml.h:393 skins_mc_skin.xml.h:34
+#: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:13
+#: skin_default_skin.xml.h:393 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:13 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "Δύκτιο"
@@ -6442,9 +6456,9 @@ msgstr ""
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:775 mc_global.h:1047
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:284 mc_main.h:293 mc_mediathek.h:35
+#: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
+#: mc_internetbrowser.h:36 mc_iptvplayer.h:104 mc_iptvplayer.h:372
+#: mc_iptvplayer.h:483 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
 #: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
@@ -6471,7 +6485,7 @@ msgstr ""
 #: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453 play.h:1654
 #: play.h:1882 play.h:1893 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
-#: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
+#: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
 #: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:3 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
@@ -6490,7 +6504,7 @@ msgstr ""
 #: skinadjust.h:618 skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163 skins_dlna_skin.xml.h:7 skinselector.h:231
 #: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
-#: skins_mc_skin.xml.h:35 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
+#: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:414 softcam.h:477
 #: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
@@ -6718,13 +6732,13 @@ msgstr ""
 msgid "PCR PID:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:39 plugins_tithek_skin.xml.h:12
-#: skin_default_skin.xml.h:425 skins_mc_skin.xml.h:39
+#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:12
+#: skin_default_skin.xml.h:425 skins_mc_skin.xml.h:42
 #: skins_tithek_skin.xml.h:12
 msgid "PICTURE"
 msgstr "Φωτογραφία"
 
-#: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
+#: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "PICTURE SETTINGS"
 msgstr "Ρυθμίσεις Φωτογραφιών"
 
@@ -6892,7 +6906,7 @@ msgstr ""
 msgid "PiP Switch"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:37 skins_mc_skin.xml.h:37
+#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
 msgid "Pic HW-decode"
 msgstr ""
 
@@ -6912,11 +6926,11 @@ msgstr "Αναλογία πλευρών:"
 msgid "Pic Timeout"
 msgstr "pingtimeout"
 
-#: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38
+#: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
 msgid "Pic quality"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
+#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39
 msgid "Picdenom Mode"
 msgstr ""
 
@@ -7024,7 +7038,7 @@ msgstr ""
 msgid "Picture"
 msgstr "Picture Player"
 
-#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
+#: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
 msgid "Picture Player"
 msgstr ""
 
@@ -7107,13 +7121,13 @@ msgstr ""
 msgid "Player for .ts"
 msgstr ""
 
-#: mc_global.h:272 mc_global.h:340 mc_global.h:415 mc_global.h:702
-#: mc_global.h:961 mc_global.h:976 plugins_mc_skin.xml.h:42
-#: skins_mc_skin.xml.h:42
+#: mc_global.h:272 mc_global.h:340 mc_global.h:415 mc_global.h:708
+#: mc_global.h:993 mc_global.h:1008 plugins_mc_skin.xml.h:45
+#: skins_mc_skin.xml.h:45
 msgid "Playlist"
 msgstr "PlayList"
 
-#: mc_global.h:611
+#: mc_global.h:617
 msgid "Playlist Menu"
 msgstr ""
 
@@ -7121,7 +7135,8 @@ msgstr ""
 msgid "Playlist download"
 msgstr ""
 
-#: mc_audioplayer.h:586 mc_pictureplayer.h:341 mc_videoplayer.h:721
+#: mc_audioplayer.h:586 mc_iptvplayer.h:340 mc_pictureplayer.h:341
+#: mc_videoplayer.h:721
 msgid "Playlist-Mode"
 msgstr "Filelist Mode"
 
@@ -7509,7 +7524,7 @@ msgstr ""
 msgid "Radio Funclub 80s"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
+#: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46
 msgid "Radio Player"
 msgstr ""
 
@@ -7525,13 +7540,13 @@ msgstr ""
 msgid "Ram"
 msgstr ""
 
-#: mc_audioplayer.h:565 mc_global.h:560 mc_global.h:588 mc_global.h:1103
-#: mc_pictureplayer.h:321 mc_videoplayer.h:680 plugins_mc_skin.xml.h:44
-#: skins_mc_skin.xml.h:44
+#: mc_audioplayer.h:565 mc_global.h:566 mc_global.h:594 mc_global.h:1135
+#: mc_iptvplayer.h:310 mc_pictureplayer.h:321 mc_videoplayer.h:680
+#: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Random"
 msgstr "Τυχαία"
 
-#: mc_global.h:549 mc_global.h:577 mc_global.h:1101
+#: mc_global.h:555 mc_global.h:583 mc_global.h:1133
 msgid "Random-On"
 msgstr "Τυχαία"
 
@@ -7856,10 +7871,10 @@ msgstr ""
 msgid "Rename"
 msgstr "Όνομα χρήστη"
 
-#: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1108
-#: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:436
-#: mc_videoplayer.h:681 plugins_mc_skin.xml.h:45 skin_default_skin.xml.h:496
-#: skins_mc_skin.xml.h:45
+#: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1140
+#: mc_iptvplayer.h:146 mc_iptvplayer.h:311 mc_pictureplayer.h:157
+#: mc_pictureplayer.h:322 mc_videoplayer.h:436 mc_videoplayer.h:681
+#: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:496 skins_mc_skin.xml.h:48
 msgid "Repeat"
 msgstr "Επανέλαβε"
 
@@ -7867,8 +7882,8 @@ msgstr "Επανέλαβε"
 msgid "Repeat type"
 msgstr ""
 
-#: mc_audioplayer.h:408 mc_global.h:1106 mc_pictureplayer.h:150
-#: mc_videoplayer.h:429
+#: mc_audioplayer.h:408 mc_global.h:1138 mc_iptvplayer.h:139
+#: mc_pictureplayer.h:150 mc_videoplayer.h:429
 msgid "Repeat-On"
 msgstr "Επανέλαβε"
 
@@ -8399,8 +8414,8 @@ msgstr ""
 msgid "Score:"
 msgstr ""
 
-#: adjust.h:306 plugins_mc_skin.xml.h:49 plugins_tithek_skin.xml.h:16
-#: skins_mc_skin.xml.h:49 skins_tithek_skin.xml.h:16
+#: adjust.h:306 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
+#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
 msgid "Screensaver"
 msgstr "Προστασία οθόνης"
 
@@ -8845,9 +8860,9 @@ msgstr ""
 msgid "Set standby all connected devices"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:50 plugins_panel_skin.xml.h:17
+#: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:17
 #: plugins_panel_skin.xml.h:27 skin_default_skin.xml.h:568
-#: skins_mc_skin.xml.h:50 skins_panel_skin.xml.h:17 skins_panel_skin.xml.h:27
+#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:17 skins_panel_skin.xml.h:27
 #: webif_index.atemio510.h:14 webif_index.atemio5200.h:14
 #: webif_index.atemio6000.h:14 webif_index.atemio6100.h:14
 #: webif_index.atemio6200.h:14 webif_index.atemio7600.h:12
@@ -8905,8 +8920,8 @@ msgstr ""
 msgid "Sharename can't be empty!"
 msgstr ""
 
-#: infobar.h:694 mc_audioplayer.h:333 mc_main.h:284 mc_pictureplayer.h:124
-#: mc_videoplayer.h:333 menu.h:215
+#: infobar.h:694 mc_audioplayer.h:333 mc_iptvplayer.h:104 mc_main.h:276
+#: mc_pictureplayer.h:124 mc_videoplayer.h:333 menu.h:215
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -8932,7 +8947,7 @@ msgstr ""
 msgid "Show Pay Streams"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:51 skins_mc_skin.xml.h:51
+#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
 msgstr ""
 
@@ -9196,15 +9211,15 @@ msgstr ""
 msgid "Song TitleText"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
+#: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
 msgid "Sort"
 msgstr "Διαλογή"
 
-#: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:597 skins_mc_skin.xml.h:55
+#: plugins_mc_skin.xml.h:58 skin_default_skin.xml.h:597 skins_mc_skin.xml.h:58
 msgid "Sorting"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
+#: plugins_mc_skin.xml.h:59 skins_mc_skin.xml.h:59
 msgid "Sound"
 msgstr "Ήχος"
 
@@ -9450,7 +9465,7 @@ msgstr ""
 msgid "Stringconvert"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
+#: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
 msgid "Style"
 msgstr ""
 
@@ -10598,11 +10613,11 @@ msgstr ""
 msgid "VFDisplay"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:59 skins_mc_skin.xml.h:59
+#: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
 msgid "VIDEO"
 msgstr "Video"
 
-#: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
+#: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
 msgid "VIDEO SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ VIDEO"
 
@@ -10614,7 +10629,7 @@ msgstr ""
 msgid "VK User"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
+#: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
 msgid "VLC Player"
 msgstr ""
 
@@ -10642,7 +10657,7 @@ msgstr ""
 msgid "Video PID:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
+#: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "Video Player"
 msgstr ""
 
@@ -10690,8 +10705,8 @@ msgstr "Ρύθμιση χρωμάτων"
 msgid "Vietnamese"
 msgstr ""
 
-#: plugins_filemanager_skin.xml.h:5 plugins_mc_skin.xml.h:62
-#: skins_filemanager_skin.xml.h:5 skins_mc_skin.xml.h:62
+#: plugins_filemanager_skin.xml.h:5 plugins_mc_skin.xml.h:65
+#: skins_filemanager_skin.xml.h:5 skins_mc_skin.xml.h:65
 msgid "View"
 msgstr "Δείξε"
 
@@ -10890,7 +10905,7 @@ msgstr ""
 msgid "Weather"
 msgstr "Πληροφορίες Καιρού"
 
-#: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
+#: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
 msgid "Weather Infos"
 msgstr "Πληροφορίες Καιρού"
 
@@ -10898,7 +10913,7 @@ msgstr "Πληροφορίες Καιρού"
 msgid "Web Adjust"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:65 skins_mc_skin.xml.h:65
+#: plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
 msgid "Web Radio Player"
 msgstr ""
 
@@ -11092,7 +11107,7 @@ msgstr "Ανάλυση"
 msgid "Year"
 msgstr ""
 
-#: play.h:432 play.h:466 plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
+#: play.h:432 play.h:466 plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
 msgid "Year:"
 msgstr ""
 
@@ -11244,8 +11259,9 @@ msgid "allways del file"
 msgstr ""
 
 #: adjust.h:101 httpdfunc.h:4003 mc_audioplayer_settings.h:27
-#: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:23
-#: plugins_mc_skin.xml.h:4 skin_default_skin.xml.h:30 skins_mc_skin.xml.h:4
+#: mc_iptvplayer_settings.h:23 mc_pictureplayer_settings.h:42
+#: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:4
+#: skin_default_skin.xml.h:30 skins_mc_skin.xml.h:4
 msgid "alpha"
 msgstr ""
 
@@ -11353,9 +11369,9 @@ msgstr ""
 msgid "bgdownload"
 msgstr ""
 
-#: mc_audioplayer_settings.h:36 mc_pictureplayer_settings.h:51
-#: mc_videoplayer_settings.h:32 plugins_mc_skin.xml.h:11
-#: skins_mc_skin.xml.h:11
+#: mc_audioplayer_settings.h:36 mc_iptvplayer_settings.h:32
+#: mc_pictureplayer_settings.h:51 mc_videoplayer_settings.h:32
+#: plugins_mc_skin.xml.h:11 skins_mc_skin.xml.h:11
 msgid "big"
 msgstr "Mεγάλο"
 
@@ -11501,10 +11517,6 @@ msgstr ""
 msgid "close window"
 msgstr ""
 
-#: mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100
-msgid "comming soon"
-msgstr ""
-
 #: network.h:284
 msgid "comming soon..."
 msgstr ""
@@ -11521,8 +11533,8 @@ msgstr ""
 msgid "copy service"
 msgstr ""
 
-#: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
-#: mc_videoplayer_settings.h:33
+#: mc_audioplayer_settings.h:37 mc_iptvplayer_settings.h:33
+#: mc_pictureplayer_settings.h:52 mc_videoplayer_settings.h:33
 msgid "cover"
 msgstr "fullcover"
 
@@ -11543,8 +11555,9 @@ msgid "daily"
 msgstr ""
 
 #: adjust.h:105 httpdfunc.h:4031 mc_audioplayer_settings.h:31
-#: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
-#: plugins_mc_skin.xml.h:13 skin_default_skin.xml.h:133 skins_mc_skin.xml.h:13
+#: mc_iptvplayer_settings.h:27 mc_pictureplayer_settings.h:46
+#: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:13
+#: skin_default_skin.xml.h:133 skins_mc_skin.xml.h:13
 msgid "date"
 msgstr "Ημερομηνία"
 
@@ -11552,8 +11565,8 @@ msgstr "Ημερομηνία"
 msgid "date + time"
 msgstr ""
 
-#: mc_audioplayer_settings.h:40 mc_pictureplayer_settings.h:55
-#: mc_videoplayer_settings.h:36
+#: mc_audioplayer_settings.h:40 mc_iptvplayer_settings.h:36
+#: mc_pictureplayer_settings.h:55 mc_videoplayer_settings.h:36
 msgid "datetime"
 msgstr "Ημερομηνία"
 
@@ -11766,9 +11779,9 @@ msgid "fade out/in"
 msgstr ""
 
 #: adjust.h:94 adjust.h:186 httpdfunc.h:3966 httpdfunc.h:4529
-#: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
-#: mc_videoplayer_settings.h:31 moduleconfig.h:270 plugins_mc_skin.xml.h:20
-#: skins_mc_skin.xml.h:20
+#: mc_audioplayer_settings.h:35 mc_iptvplayer_settings.h:31
+#: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
+#: moduleconfig.h:270 plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20
 msgid "fast"
 msgstr "Γρήγορο"
 
@@ -11832,8 +11845,9 @@ msgstr ""
 msgid "ftpport"
 msgstr ""
 
-#: mc_audioplayer_settings.h:38 mc_videoplayer_settings.h:34
-#: plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26
+#: mc_audioplayer_settings.h:38 mc_iptvplayer_settings.h:34
+#: mc_videoplayer_settings.h:34 plugins_mc_skin.xml.h:26
+#: skins_mc_skin.xml.h:26
 msgid "fullcover"
 msgstr ""
 
@@ -12210,7 +12224,7 @@ msgstr ""
 msgid "mute"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32
+#: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
 msgid "mvid"
 msgstr ""
 
@@ -12288,38 +12302,40 @@ msgstr "NFS server"
 #: httpdfunc.h:4817 httpdfunc.h:4841 httpdfunc.h:4955 httpdsettings.h:27
 #: httpdsettings.h:57 httpdsettings.h:65 inadyn.h:138
 #: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
-#: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
-#: mc_videoplayer_settings.h:39 mc_videoplayer_settings.h:43
-#: mc_videoplayer_settings.h:49 mediadb.h:1085 mediadb.h:1092 mediadb.h:1107
-#: mediadbsettings.h:28 mediadbsettings.h:32 mediadbsettings.h:51
-#: mediadbsettings.h:66 mediadbsettings.h:70 moduleconfig.h:265
-#: moduleconfig.h:273 moduleconfig.h:277 moduleconfig.h:281 moduleconfig.h:285
-#: networkbrowser.h:1639 networkbrowser.h:1643 networkbrowser.h:1652
-#: networkbrowser.h:1657 networkbrowser.h:1661 networkbrowser.h:1695
-#: network.h:691 panel_settings_autostart.h:35 panel_settings_autostart.h:96
-#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
-#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
-#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
-#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
-#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
-#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
-#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
-#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
-#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
-#: panel_settings_autostart.h:360 panel_settings_overclocking.h:214
-#: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
-#: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
-#: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:1848
-#: scan.h:2331 scan.h:2335 scan.h:2339 scan.h:2343 scan.h:2348 scan.h:2356
-#: scan.h:2360 scan.h:2364 scan.h:2368 screensaveradjust.h:19
-#: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
-#: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
-#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
-#: settings_autostart.h:305 settings_autostart.h:316 settings_autostart.h:430
-#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:502
-#: settings_autostart.h:511 settings_autostart.h:568 settings_autostart.h:577
-#: settings_autostart.h:586 settings_autostart.h:595 settings_autostart.h:604
+#: mc_audioplayer_settings.h:55 mc_iptvplayer_settings.h:39
+#: mc_iptvplayer_settings.h:43 mc_iptvplayer_settings.h:49
+#: mc_pictureplayer_settings.h:75 mc_videoplayer_settings.h:39
+#: mc_videoplayer_settings.h:43 mc_videoplayer_settings.h:49 mediadb.h:1085
+#: mediadb.h:1092 mediadb.h:1107 mediadbsettings.h:28 mediadbsettings.h:32
+#: mediadbsettings.h:51 mediadbsettings.h:66 mediadbsettings.h:70
+#: moduleconfig.h:265 moduleconfig.h:273 moduleconfig.h:277 moduleconfig.h:281
+#: moduleconfig.h:285 networkbrowser.h:1639 networkbrowser.h:1643
+#: networkbrowser.h:1652 networkbrowser.h:1657 networkbrowser.h:1661
+#: networkbrowser.h:1695 network.h:691 panel_settings_autostart.h:35
+#: panel_settings_autostart.h:96 panel_settings_autostart.h:113
+#: panel_settings_autostart.h:123 panel_settings_autostart.h:141
+#: panel_settings_autostart.h:150 panel_settings_autostart.h:159
+#: panel_settings_autostart.h:168 panel_settings_autostart.h:177
+#: panel_settings_autostart.h:193 panel_settings_autostart.h:202
+#: panel_settings_autostart.h:211 panel_settings_autostart.h:237
+#: panel_settings_autostart.h:286 panel_settings_autostart.h:295
+#: panel_settings_autostart.h:304 panel_settings_autostart.h:319
+#: panel_settings_autostart.h:328 panel_settings_autostart.h:337
+#: panel_settings_autostart.h:351 panel_settings_autostart.h:360
+#: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
+#: panel_settings_overclocking.h:244 pin.h:109 pin.h:181 pin.h:185 pin.h:199
+#: play.h:583 play.h:590 play.h:605 readerconfig.h:254 rectimer.h:1110
+#: rectimer.h:1115 rectimer.h:1120 rectimer.h:1125 rectimer.h:1130
+#: rectimer.h:1135 rectimer.h:1140 scan.h:1848 scan.h:2331 scan.h:2335
+#: scan.h:2339 scan.h:2343 scan.h:2348 scan.h:2356 scan.h:2360 scan.h:2364
+#: scan.h:2368 screensaveradjust.h:19 settings_autostart.h:26
+#: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
+#: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
+#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
+#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:252 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:42
@@ -12402,14 +12418,15 @@ msgid "oe"
 msgstr ""
 
 #: avsettings.h:73 avsettings.h:89 cec.h:200 fancontrol.h:110 harddisk.h:929
-#: httpdsettings.h:76 lnbconfig.h:144 mc_pictureplayer_settings.h:34
-#: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
-#: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
-#: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:94
-#: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:851 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92
-#: vfdisplay.h:115 vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
+#: httpdsettings.h:76 lnbconfig.h:144 mc_iptvplayer_settings.h:53
+#: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
+#: mc_pictureplayer_settings.h:67 mc_videoplayer_settings.h:53 network.h:392
+#: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
+#: readerconfig.h:421 settings_autostart.h:53 settings_overclocking.h:276
+#: skinadjust.h:94 transponder.h:256 transponder.h:264 transponder.h:415
+#: transponder.h:423 tunerconfig.h:851 vfdisplay.h:50 vfdisplay.h:71
+#: vfdisplay.h:92 vfdisplay.h:115 vfdisplay.h:130 vfdisplay.h:165
+#: vfdisplay.h:169
 msgid "off"
 msgstr ""
 
@@ -12760,20 +12777,23 @@ msgid "resolutionsettings"
 msgstr ""
 
 #: adjust.h:102 httpdfunc.h:4010 mc_audioplayer_settings.h:28
-#: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
-#: plugins_mc_skin.xml.h:46 skin_default_skin.xml.h:513 skins_mc_skin.xml.h:46
+#: mc_iptvplayer_settings.h:24 mc_pictureplayer_settings.h:43
+#: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:49
+#: skin_default_skin.xml.h:513 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
 msgstr "Αναστροφή alpha"
 
 #: adjust.h:106 httpdfunc.h:4038 mc_audioplayer_settings.h:32
-#: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
-#: plugins_mc_skin.xml.h:47 skin_default_skin.xml.h:514 skins_mc_skin.xml.h:47
+#: mc_iptvplayer_settings.h:28 mc_pictureplayer_settings.h:47
+#: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:50
+#: skin_default_skin.xml.h:514 skins_mc_skin.xml.h:50
 msgid "reverse date"
 msgstr "Επαναφορά ημερ/νιας"
 
 #: adjust.h:104 httpdfunc.h:4024 mc_audioplayer_settings.h:30
-#: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
-#: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:515 skins_mc_skin.xml.h:48
+#: mc_iptvplayer_settings.h:26 mc_pictureplayer_settings.h:45
+#: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
+#: skin_default_skin.xml.h:515 skins_mc_skin.xml.h:51
 msgid "reverse size"
 msgstr "Επαναφορά μεγέθους"
 
@@ -12990,13 +13010,14 @@ msgid "singleepg"
 msgstr ""
 
 #: adjust.h:103 httpdfunc.h:4017 mc_audioplayer_settings.h:29
-#: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
-#: plugins_mc_skin.xml.h:52 skin_default_skin.xml.h:584 skins_mc_skin.xml.h:52
+#: mc_iptvplayer_settings.h:25 mc_pictureplayer_settings.h:44
+#: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
+#: skin_default_skin.xml.h:584 skins_mc_skin.xml.h:55
 msgid "size"
 msgstr "Μέγεθος"
 
-#: mc_audioplayer_settings.h:39 mc_pictureplayer_settings.h:54
-#: mc_videoplayer_settings.h:35
+#: mc_audioplayer_settings.h:39 mc_iptvplayer_settings.h:35
+#: mc_pictureplayer_settings.h:54 mc_videoplayer_settings.h:35
 msgid "size (default)"
 msgstr "Ανάλυση (προεπιλεγμένη)"
 
@@ -13028,7 +13049,7 @@ msgstr ""
 msgid "slow"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:53 skins_mc_skin.xml.h:53
+#: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
 msgid "small"
 msgstr "Μικρό"
 
@@ -13459,7 +13480,7 @@ msgstr "Ενημέρωση λίστας"
 msgid "usbreset Plugin"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
+#: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
 msgid "use last Directory"
 msgstr "Κατάλογος Imdb"
 
@@ -13713,41 +13734,43 @@ msgstr ""
 #: httpdfunc.h:4848 httpdfunc.h:4963 httpdsettings.h:28 httpdsettings.h:58
 #: httpdsettings.h:66 inadyn.h:139 mc_audioplayer_settings.h:46
 #: mc_audioplayer_settings.h:52 mc_audioplayer_settings.h:56
-#: mc_pictureplayer_settings.h:76 mc_videoplayer_settings.h:40
-#: mc_videoplayer_settings.h:44 mc_videoplayer_settings.h:50 mediadb.h:1083
-#: mediadb.h:1090 mediadb.h:1105 mediadbsettings.h:29 mediadbsettings.h:33
-#: mediadbsettings.h:52 mediadbsettings.h:67 mediadbsettings.h:71
-#: moduleconfig.h:264 moduleconfig.h:274 moduleconfig.h:278 moduleconfig.h:282
-#: moduleconfig.h:286 networkbrowser.h:1640 networkbrowser.h:1644
-#: networkbrowser.h:1653 networkbrowser.h:1658 networkbrowser.h:1662
-#: networkbrowser.h:1696 network.h:692 panel_settings_autostart.h:35
-#: panel_settings_autostart.h:96 panel_settings_autostart.h:113
-#: panel_settings_autostart.h:123 panel_settings_autostart.h:141
-#: panel_settings_autostart.h:150 panel_settings_autostart.h:159
-#: panel_settings_autostart.h:168 panel_settings_autostart.h:177
-#: panel_settings_autostart.h:193 panel_settings_autostart.h:202
-#: panel_settings_autostart.h:211 panel_settings_autostart.h:237
-#: panel_settings_autostart.h:286 panel_settings_autostart.h:295
-#: panel_settings_autostart.h:304 panel_settings_autostart.h:319
-#: panel_settings_autostart.h:328 panel_settings_autostart.h:337
-#: panel_settings_autostart.h:351 panel_settings_overclocking.h:214
-#: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
-#: pin.h:110 pin.h:182 pin.h:200 play.h:581 play.h:588 play.h:603
-#: readerconfig.h:255 rectimer.h:1111 rectimer.h:1116 rectimer.h:1121
-#: rectimer.h:1126 rectimer.h:1131 rectimer.h:1136 rectimer.h:1141 scan.h:1849
-#: scan.h:2332 scan.h:2336 scan.h:2340 scan.h:2344 scan.h:2347 scan.h:2357
-#: scan.h:2361 scan.h:2365 scan.h:2369 screensaveradjust.h:20
-#: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
-#: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
-#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
-#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
-#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
-#: settings_autostart.h:604 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:253
-#: stopifnotused.c:93 timeshiftsettings.h:58 timeshiftsettings.h:62
-#: tithek_settings.h:43 tithek_settings.h:47 tithek_settings.h:51
-#: tithek_settings.h:55 tmc.h:532 tmc.h:536 xupnpd.h:30
+#: mc_iptvplayer_settings.h:40 mc_iptvplayer_settings.h:44
+#: mc_iptvplayer_settings.h:50 mc_pictureplayer_settings.h:76
+#: mc_videoplayer_settings.h:40 mc_videoplayer_settings.h:44
+#: mc_videoplayer_settings.h:50 mediadb.h:1083 mediadb.h:1090 mediadb.h:1105
+#: mediadbsettings.h:29 mediadbsettings.h:33 mediadbsettings.h:52
+#: mediadbsettings.h:67 mediadbsettings.h:71 moduleconfig.h:264
+#: moduleconfig.h:274 moduleconfig.h:278 moduleconfig.h:282 moduleconfig.h:286
+#: networkbrowser.h:1640 networkbrowser.h:1644 networkbrowser.h:1653
+#: networkbrowser.h:1658 networkbrowser.h:1662 networkbrowser.h:1696
+#: network.h:692 panel_settings_autostart.h:35 panel_settings_autostart.h:96
+#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
+#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
+#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
+#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
+#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
+#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
+#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
+#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
+#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
+#: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
+#: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
+#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
+#: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
+#: rectimer.h:1141 scan.h:1849 scan.h:2332 scan.h:2336 scan.h:2340 scan.h:2344
+#: scan.h:2347 scan.h:2357 scan.h:2361 scan.h:2365 scan.h:2369
+#: screensaveradjust.h:20 settings_autostart.h:26 settings_autostart.h:132
+#: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
+#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
+#: settings_autostart.h:285 settings_autostart.h:316 settings_autostart.h:430
+#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:502
+#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:595 settings_autostart.h:604
+#: settings_overclocking.h:214 settings_overclocking.h:234
+#: settings_overclocking.h:244 skinadjust.h:253 stopifnotused.c:93
+#: timeshiftsettings.h:58 timeshiftsettings.h:62 tithek_settings.h:43
+#: tithek_settings.h:47 tithek_settings.h:51 tithek_settings.h:55 tmc.h:532
+#: tmc.h:536 xupnpd.h:30
 msgid "yes"
 msgstr ""
 
