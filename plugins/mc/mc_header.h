@@ -23,4 +23,8 @@ void screenmc_videoplayer_settings();
 // mc_pictureplayer_settings.h
 void screenmc_pictureplayer_settings();
 
+// mc_iptvplayer_settings.h
+void screenmc_iptvplayer_settings();
+void mc_iptvplayer_infobar(struct skin* apskin, struct skin* infobar, struct skin* spos, struct skin* slen, struct skin* sreverse, struct skin* sprogress, struct skin* b12, struct skin* b13, char* filename);
+
 #endif

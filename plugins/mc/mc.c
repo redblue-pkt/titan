@@ -13,14 +13,10 @@ extern struct fb* skinfb;
 #include "mc_videoplayer.h"
 #include "mc_audioplayer.h"
 #include "mc_pictureplayer.h"
-#include "mc_appletrailer.h"
-#include "mc_myvideo.h"
-#include "mc_vlcplayer.h"
+#include "mc_iptvplayer.h"
 #include "mc_dateibrowser.h"
 #include "mc_internetbrowser.h"
 #include "mc_mediathek.h"
-#include "mc_radio.h"
-#include "mc_webradio.h"
 #include "mc_wetterinfo.h"
 #include "mc_settings.h"
 #include "mc_view.h"
@@ -28,6 +24,7 @@ extern struct fb* skinfb;
 #include "mc_audioplayer_settings.h"
 #include "mc_videoplayer_settings.h"
 #include "mc_pictureplayer_settings.h"
+#include "mc_iptvplayer_settings.h"
 
 char pluginname[] = "Media Center";
 char plugindesc[] = "Multi Mediacenter";

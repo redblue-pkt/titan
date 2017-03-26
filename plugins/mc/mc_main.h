@@ -12,6 +12,8 @@ int mc_menucall(struct skin* menuentry)
 		return 1;
 	}
 
+printf("menuentry->name: %s\n", menuentry->name);
+
 	if(ostrcmp("mc_videoplayer", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
@@ -31,6 +33,15 @@ int mc_menucall(struct skin* menuentry)
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
 	} 
+	else if(ostrcmp("mc_iptvplayer", menuentry->name) == 0)
+	{
+		drawscreen(skin, 0, 0);
+		screenmc_iptvplayer(NULL);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgIptv.mvi", 0);
+		tmpstr = createpluginpath("/mc/skin/bgIptv.mvi", 0);
+		singlepicstart(tmpstr, 0);
+		free(tmpstr); tmpstr = NULL;
+	}
 	else if(ostrcmp("mc_pictureplayer", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
@@ -44,21 +55,6 @@ int mc_menucall(struct skin* menuentry)
 		tmpstr = createpluginpath("/mc/skin/bgPicture.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
-	} 
-	else if(ostrcmp("mc_appletrailer", menuentry->name) == 0)
-	{
-		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		screenmc_appletrailer();
-	} 
-	else if(ostrcmp("mc_myvideo", menuentry->name) == 0)
-	{
-		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		screenmc_myvideo();
-	}
-	else if(ostrcmp("mc_vlcplayer", menuentry->name) == 0)
-	{
-		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		screenmc_vlcplayer();
 	}
 	else if(ostrcmp("mc_dateibrowser", menuentry->name) == 0)
 	{
@@ -90,16 +86,6 @@ int mc_menucall(struct skin* menuentry)
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
 	}
-	else if(ostrcmp("mc_radio", menuentry->name) == 0)
-	{
-		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
-		screenmc_radio();
-	}
-	else if(ostrcmp("mc_webradio", menuentry->name) == 0)
-	{
-		textbox(_("Message"), _("comming soon"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);	
-		screenmc_webradio();
-	}
 	else if(ostrcmp("mc_wetterinfo", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
@@ -129,6 +115,9 @@ int mc_menucall(struct skin* menuentry)
 
 void mc_main()
 {
+
+printf("111111111111111111111111111\n");
+
 	status.mcaktiv = 1;
 	status.hangtime = 99999;
 	int rcret = 0, ret = 0;
@@ -180,6 +169,7 @@ void mc_main()
 	struct skin* mc_videoplayer = getscreennode(mc_main, "mc_videoplayer");
 	struct skin* mc_pictureplayer = getscreennode(mc_main, "mc_pictureplayer");
 	struct skin* mc_mediathek = getscreennode(mc_main, "mc_mediathek");
+	struct skin* mc_iptvplayer = getscreennode(mc_main, "mc_iptvplayer");
 	struct skin* mc_dateibrowser = getscreennode(mc_main, "mc_dateibrowser");
 	struct skin* mc_internetbrowser = getscreennode(mc_main, "mc_internetbrowser");
 	struct skin* mc_wetterinfo = getscreennode(mc_main, "mc_wetterinfo");
@@ -193,6 +183,7 @@ void mc_main()
 	mc_videoplayer->usesavebg = 2;
 	mc_pictureplayer->usesavebg = 2;
 	mc_mediathek->usesavebg = 2;
+	mc_iptvplayer->usesavebg = 2;
 	mc_dateibrowser->usesavebg = 2;
 	mc_internetbrowser->usesavebg = 2;
 	mc_wetterinfo->usesavebg = 2;
@@ -201,6 +192,7 @@ void mc_main()
 	mc_videoplayer->height += status.fontsizeadjust;
 	mc_pictureplayer->height += status.fontsizeadjust;
 	mc_mediathek->height += status.fontsizeadjust;
+	mc_iptvplayer->height += status.fontsizeadjust;
 	mc_dateibrowser->height += status.fontsizeadjust;
 	mc_internetbrowser->height += status.fontsizeadjust;
 	mc_wetterinfo->height += status.fontsizeadjust;
@@ -237,10 +229,10 @@ void mc_main()
 				singlepicstart(tmpstr, 0);
 				free(tmpstr); tmpstr = NULL;
 			}
-			else if(ostrcmp(listbox->select->name, "mc_myvideo") == 0)
+			else if(ostrcmp(listbox->select->name, "mc_iptvplayer") == 0)
 			{
-//				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
-				tmpstr = createpluginpath("/mc/skin/bgBrowser.mvi", 0);
+//				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgIptv.mvi", 0);
+				tmpstr = createpluginpath("/mc/skin/bgIptv.mvi", 0);
 				singlepicstart(tmpstr, 0);
 				free(tmpstr); tmpstr = NULL;
 			}
@@ -330,10 +322,10 @@ void mc_main()
 				singlepicstart(tmpstr, 0);
 				free(tmpstr); tmpstr = NULL;
 			}
-			else if(ostrcmp(listbox->select->name, "mc_myvideo") == 0)
+			else if(ostrcmp(listbox->select->name, "mc_iptvplayer") == 0)
 			{
-//				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
-				tmpstr = createpluginpath("/mc/skin/bgBrowser.mvi", 0);
+//				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgIptv.mvi", 0);
+				tmpstr = createpluginpath("/mc/skin/bgIptv.mvi", 0);
 				singlepicstart(tmpstr, 0);
 				free(tmpstr); tmpstr = NULL;
 			}
