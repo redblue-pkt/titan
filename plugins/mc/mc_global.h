@@ -266,7 +266,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 		int skiprcok = 0;
 		
 		//playlist
-		if(*playlist == 1)
+		if(*playlist == 1 && flag != 4)
 		{
 //			changetext(b2, _("Playlist-Mode"));
 			changetext(b2, _("Playlist"));
@@ -409,7 +409,7 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 			else
 				addscreenrc(apskin, filelist);			
 		}
-		else
+		else if (flag != 4)
 		{
 //			changetext(b2, _("Filelist-Mode"));
 			changetext(b2, _("Playlist"));
@@ -521,7 +521,13 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 		debug(50, "flag: %d", flag);
 		debug(50, "skiprcok: %d", skiprcok);					
 
-		if(flag == 3 && skiprcok == 0)
+		if(flag == 4)
+		{
+			skiprcok = 1;
+			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+			drawscreen(apskin, 0, 0);
+		}
+		else if(flag == 3 && skiprcok == 0)
 			drawscreen(apskin, 2, 0);
 		else
 			drawscreen(apskin, 0, 0);
@@ -826,8 +832,15 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			int addcurrdir = 0;
 			if(fileline[0] == '#' || fileline[0] == '\n')
 			{
-				extra = ostrcat(fileline, NULL, 0, 0);
-				extra = stringreplacechar(extra, '\n', ' ');
+
+			if(fileline[strlen(fileline) - 1] == '\n')
+				fileline[strlen(fileline) - 1] = '\0';
+			if(fileline[strlen(fileline) - 1] == '\r')
+				fileline[strlen(fileline) - 1] = '\0';
+
+//				extra = ostrcat(fileline, NULL, 0, 0);
+//				extra = stringreplacechar(extra, '\n', '\0');
+				extra = oregex(".*,(.*).*", fileline);
 				printf("set extra: %s\n", extra);
 				continue;
 			}
@@ -859,7 +872,11 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					i = count1 - 1;
 				count ++;
 
+				debug(50, "title1: %s", title);
+
 				title = ostrcat("(", oitoa(count), 0, 1);
+				debug(50, "title2: %s", title);
+
 				if(count < 10)
 					title = ostrcat(title, ")    ", 1, 0);
 				else if(count < 100)
@@ -867,11 +884,19 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				else
 					title = ostrcat(title, ")  ", 1, 0);
 
+				debug(50, "title3: %s", title);
+
+//				struct splitstr* ret2 = NULL;
+//				title = ostrcat(title, extra, 1, 0);
+//				ret2 = strsplit(tmpstr2, ",", &count2);
+
 				if(extra != NULL)
 					title = ostrcat(title, extra, 1, 0);
 				else
 					title = ostrcat(title, (&ret1[i])->part, 1, 0);
+				debug(50, "title4: %s", title);
 
+				printf("extra2: %s\n", extra);
 
 				if(title != NULL)
 				{
@@ -880,6 +905,13 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					title = string_replace("#EXTINF,", "", title, 1);
 					title = string_replace("#", "", title, 1);
 				}
+
+				debug(50, "#########################");
+
+				debug(50, "title5: %s", title);
+				debug(50, "fileline: %s", fileline);
+				debug(50, "#########################");
+
 				debug(50, "addlistbox (%d) %s: %s", count, title, fileline);
 
 				changetext(tmp, _(title));

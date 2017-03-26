@@ -14,8 +14,8 @@ void screenmc_iptvplayer()
 
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
-	char* filename = NULL, *currentdirectory = NULL, *selectedfile = NULL, *lastid = NULL, *tmpstr = NULL;
-	int rcret = 0, rcwait = 1000, playerret = 0, flag = 2, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
+	char* filename = NULL, *title = NULL, *currentdirectory = NULL, *selectedfile = NULL, *lastid = NULL, *tmpstr = NULL;
+	int rcret = 0, rcwait = 1000, playerret = 0, flag = 4, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
 	int videooff = 0;
 
 	tmpstr = ostrcat(getconfig("mc_ip_dirsort", NULL), NULL, 0, 0);
@@ -31,31 +31,6 @@ void screenmc_iptvplayer()
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
 
-//	apskin->bgcol = getskinconfigint("black", NULL);
-
-	struct skin* title = getscreennode(apskin, "title");
-	struct skin* thumb = getscreennode(apskin, "thumb");
-	struct skin* actorstext = getscreennode(apskin, "actorstext");
-	struct skin* actors = getscreennode(apskin, "actors");
-	struct skin* genretext = getscreennode(apskin, "genretext");
-	struct skin* genre = getscreennode(apskin, "genre");
-	struct skin* yeartext = getscreennode(apskin, "yeartext");
-	struct skin* year = getscreennode(apskin, "year");
-	struct skin* realnametext = getscreennode(apskin, "realnametext");
-	struct skin* realname = getscreennode(apskin, "realname");
-	struct skin* albumtext = getscreennode(apskin, "albumtext");
-	struct skin* album = getscreennode(apskin, "album");
-	
-	// infobar screen
-/*
-	struct skin* infobar = getscreen("mc_iptvplayer_infobar");
-	struct skin* spos = getscreennode(infobar, "pos");
-	struct skin* slen = getscreennode(infobar, "len");
-	struct skin* sreverse = getscreennode(infobar, "reverse");
-	struct skin* sprogress = getscreennode(infobar, "progress");
-	struct skin* b12 = getscreennode(infobar, "b12");
-	struct skin* b13 = getscreennode(infobar, "b13");
-*/
 	if(getconfigint("mc_ip_uselastdir", NULL) == 1)
 	{
 		currentdirectory = ostrcat(currentdirectory, getconfig("mc_ip_path", NULL), 1, 0);
@@ -78,9 +53,9 @@ void screenmc_iptvplayer()
 	// set allowed filemask
 	char* filemask = NULL;
 	if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
-		filemask = ostrcat("*.m3u *.pls *.mp3 *.flac *.ogg *.wma *.ra *.wav", NULL, 0, 0);
+		filemask = ostrcat("*.m3u *.pls", NULL, 0, 0);
 	else
-		filemask = ostrcat("*.m3u *.pls *.mp3 *.flac *.ogg", NULL, 0, 0);
+		filemask = ostrcat("*.m3u *.pls", NULL, 0, 0);
 	
 	// disable global transparent/hangtime
 	setfbtransparent(255);
@@ -98,18 +73,6 @@ void screenmc_iptvplayer()
 
 	tmpview = view;
 	mc_changeview(view, filelist, apskin, flag);
-	thumb->hidden = YES;
-	album->hidden = YES;
-	title->hidden = YES;
-	actors->hidden = YES;
-	year->hidden = YES;
-	realname->hidden = YES;
-	genre->hidden = YES;
-	albumtext->hidden = YES;
-	actorstext->hidden = YES;
-	yeartext->hidden = YES;
-	realnametext->hidden = YES;
-	genretext->hidden = YES;
 
 //	clearscreen(loadmediadb);
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
@@ -121,7 +84,7 @@ void screenmc_iptvplayer()
 //			mc_iptvplayer_infobar(apskin, infobar, spos, slen, sreverse, sprogress, b12, b13, NULL);
 
 		rcret = waitrcext(apskin, rcwait, 0, tmpview);
-		debug(50, "while status play=%d", status.play);
+//		debug(50, "while status play=%d", status.play);
 		if(status.play == 1 || status.playspeed != 0)
 		{
 			playinfobarcount ++;
@@ -135,260 +98,11 @@ void screenmc_iptvplayer()
 				if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, 0);
 			}
 		}
-/*
-		if(rcret != RCTIMEOUT && rcret != getrcconfigint("rcvolup", NULL) && rcret != getrcconfigint("rcvoldown", NULL) && rcret != getrcconfigint("rcmute", NULL) && rcret != getrcconfigint("rcmute1", NULL))
-		{
-			if(count > screensaver_delay && screensaver != NULL)
-			{
-				if((rcret == getrcconfigint("rcpause", NULL)) || (rcret == getrcconfigint("rc1", NULL)) || (rcret == getrcconfigint("rc3", NULL)) || (rcret == getrcconfigint("rc4", NULL)) || (rcret == getrcconfigint("rc6", NULL)) || (rcret == getrcconfigint("rc7", NULL)) || (rcret == getrcconfigint("rc9", NULL)))
-					drawscreen(infobar, 0, 0);
-				else
-				{
-					if(screensaver != NULL && screensaver->type == 3)
-						singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-					drawscreen(apskin, 0, 0);
-				}
-			}
-			count = 0;
-			rcwait = 1000;
-		}
-		else if(status.play == 1 && screensaver != NULL)
-			count++;
-
-		if(status.play == 1 && count > screensaver_delay && screensaver != NULL)
-		{
-			showscreensaver();
-			rcwait = screensaver->speed;
-		}
-
-		if(tmpview == 3 && filelist->select != NULL && count < screensaver_delay)
-		{
-			char* pic = NULL;
-			int len1 = 0;
-
-			if(ostrcmp(lastid, filelist->select->name) != 0) 
-			{                                
-				free(lastid), lastid = NULL; 
-				lastid = ostrcat(lastid, filelist->select->name, 1, 0);  
-				if(filelist->select != NULL && filelist->select->input == NULL)
-				{
-					struct mediadb* mnode = getmediadb(filelistpath->text, filelist->select->name, 0);
-					if(mnode != NULL)
-					{
-						if(mnode->id != NULL)
-						{
-							tmpstr = ostrcat(tmpstr, getconfig("mediadbpath", NULL), 1, 0);
-							tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
-							tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
-		
-							pic = ostrcat(tmpstr, "_cover.jpg", 0, 0);
-							free(tmpstr), tmpstr = NULL;
-						}
-	
-						len1 = strlen(mnode->plot);
-						if(mnode->plot != NULL && len1 != 0)
-						{
-							changetext(album, mnode->plot);
-							album->hidden = NO;
-							albumtext->hidden = NO;
-						}
-						else
-						{
-							album->hidden = YES;
-							albumtext->hidden = YES;
-						}
-	
-						len1 = strlen(mnode->plot);
-						if(mnode->title != NULL && len1 != 0)
-						{
-							len1 = strlen(mnode->actors);
-							if(mnode->actors != NULL && len1 != 0)					
-							{
-								tmpstr = ostrcat(tmpstr, mnode->actors, 1, 0);
-								tmpstr = ostrcat(tmpstr, " - ", 1, 0);
-								actors->hidden = NO;
-								actorstext->hidden = NO;
-							}
-							else
-							{
-								actors->hidden = YES;
-								actorstext->hidden = YES;
-							}
-							tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
-	
-							if(mnode->year != 0)
-							{
-								tmpstr = ostrcat(tmpstr, " (", 1, 0);
-								tmpstr = ostrcat(tmpstr, oitoa(mnode->year), 1, 0);
-								tmpstr = ostrcat(tmpstr, ")", 1, 0);
-								year->hidden = NO;
-								yeartext->hidden = NO;
-							}
-							else
-							{
-								year->hidden = YES;
-								yeartext->hidden = YES;
-							}
-							if(tmpstr != NULL)
-							{
-								changetext(title, tmpstr);
-								title->hidden = NO;
-							}
-							else
-							{
-								changetext(title, filelist->select->name);
-								title->hidden = NO;
-							}
-							free(tmpstr), tmpstr = NULL;
-	
-							changetext(realname, filelist->select->name);
-							realname->hidden = NO;
-							realnametext->hidden = NO;
-						}
-						else
-						{
-							realname->hidden = YES;
-							realnametext->hidden = YES;
-							changetext(title, filelist->select->name);
-							title->hidden = NO;
-						}					
-	
-						len1 = strlen(mnode->actors);
-						if(mnode->actors != NULL && len1 != 0)
-						{
-							changetext(actors, mnode->actors);
-							actors->hidden = NO;
-							actorstext->hidden = NO;
-						}
-						else
-						{
-							actors->hidden = YES;
-							actorstext->hidden = YES;
-						}
-	
-						len1 = strlen(mnode->genre);
-						if(mnode->genre != NULL && len1 != 0)
-						{
-							changetext(genre, mnode->genre);
-							genre->hidden = NO;
-							genretext->hidden = NO;
-						}
-						else
-						{
-							genre->hidden = YES;
-							genretext->hidden = YES;
-						}
-	
-						if(mnode->year != 0)
-						{
-							changetext(year, oitoa(mnode->year));
-							year->hidden = NO;
-							yeartext->hidden = NO;
-						}
-						else
-						{
-							year->hidden = YES;
-							yeartext->hidden = YES;
-						}
-					}
-					else	
-					{
-						thumb->hidden = YES;
-						album->hidden = YES;
-						title->hidden = YES;
-						actors->hidden = YES;
-						year->hidden = YES;
-						realname->hidden = YES;
-						genre->hidden = YES;
-						albumtext->hidden = YES;
-						actorstext->hidden = YES;
-						yeartext->hidden = YES;
-						realnametext->hidden = YES;
-						genretext->hidden = YES;
-						free(pic), pic = NULL;
-					}
-	
-					if(file_exist(pic))
-					{
-						changepic(thumb, pic);
-						thumb->hidden = NO;
-					}
-					else
-						thumb->hidden = YES;
-	
-					free(pic), pic = NULL;				
-					drawscreen(apskin, 0, 0);
-				}
-				else
-				{
-					thumb->hidden = YES;
-					album->hidden = YES;
-					title->hidden = YES;
-					actors->hidden = YES;
-					year->hidden = YES;
-					realname->hidden = YES;
-					genre->hidden = YES;
-					albumtext->hidden = YES;
-					actorstext->hidden = YES;
-					yeartext->hidden = YES;
-					realnametext->hidden = YES;
-					genretext->hidden = YES;
-					free(pic), pic = NULL;
-					drawscreen(apskin, 0, 0);
-	
-				}
-				if(status.play == 1)
-					drawscreen(infobar, 0, 0);
-			}
-		}
-*/
 		if (rcret == getrcconfigint("rcrecord", NULL))
 		{
 			system("grab -j 100");
 			textbox(_("Message"), _("Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 		}
-/*
-		else if(rcret == getrcconfigint("rc1", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, NULL, 10, &playinfobarstatus, &playinfobarcount, playertype, flag);
-		}
-		else if(rcret == getrcconfigint("rc4", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, NULL, 30, &playinfobarstatus, &playinfobarcount, playertype, flag);
-		}
-		else if(rcret == getrcconfigint("rc7", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpr(filename, NULL, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
-		}
-		else if(rcret == getrcconfigint("rc3", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, NULL, 10, &playinfobarstatus, &playinfobarcount, playertype, flag);
-		}
-		else if(rcret == getrcconfigint("rc6", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, NULL, 30, &playinfobarstatus, &playinfobarcount, playertype, flag);
-		}
-		else if(rcret == getrcconfigint("rc9", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcjumpf(filename, NULL, 60, &playinfobarstatus, &playinfobarcount, playertype, flag);
-		}
-		else if(rcret == getrcconfigint("rcff", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcff(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, 2);
-		}	
-		else if(rcret == getrcconfigint("rcfr", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcfr(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, 2);
-		}
-*/
 		else if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 		{
 			if(status.pause == 1)
@@ -510,15 +224,29 @@ void screenmc_iptvplayer()
 		}
 		else if(rcret == getrcconfigint("rcinfo", NULL))
 		{
-			printf("Title: %s\n", playergetinfo("Title"));
-			printf("Artist: %s\n", playergetinfo("Artist"));
-			printf("Album: %s\n", playergetinfo("Album"));
-			printf("Year: %s\n", playergetinfo("Year"));
-			printf("Genre: %s\n", playergetinfo("Genre"));
-			printf("Comment: %s\n", playergetinfo("Comment"));
-			printf("Track: %s\n", playergetinfo("Track"));
-			printf("Copyright: %s\n", playergetinfo("Copyright"));
-			printf("TestLibEplayer: %s\n", playergetinfo("TestLibEplayer"));
+			if(status.play == 0 && status.pause == 0)
+			{
+				drawscreen(blackscreen, 0, 0);
+//				if(filelist->select != NULL && filelist->select->input == NULL)
+//				{
+					filename = createpath(filelistpath->text, filelist->select->name);
+					debug(133, "filename: %s", filename);				
+					playrcred(filename, NULL, playinfobarstatus, playertype, flag);
+//				}
+			}
+			else
+				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
+
+			if(status.play == 0 && status.pause == 0)
+			{
+				drawscreen(skin, 0, 0);
+				drawscreen(blackscreen, 0, 0);
+				drawscreen(loadmediadb, 0, 0);
+				delownerrc(apskin);
+				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
+				addscreenrc(apskin, filelist);
+				drawscreen(apskin, 0, 0);
+			}	
 		}
 		else if(rcret == getrcconfigint("rcstop", NULL) || (rcret == getrcconfigint("rcexit", NULL) && status.play == 1))
 		{
@@ -595,6 +323,15 @@ void screenmc_iptvplayer()
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
+////////////
+			playinfobarcount = 0;
+			playinfobarstatus = 1;
+			status.playspeed = 0;
+			status.pause = 0;
+//			status.play = 0;
+//			playlist = 0;
+			playinfobarcount = 0;
+////////////
 			if(playlist == 1 && listbox->select != NULL)
 			{
 				debug(50, "listbox->select->name: %s", listbox->select->name);
@@ -622,10 +359,10 @@ void screenmc_iptvplayer()
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
-
 //////
 				clearscreen(loadmediadb);
-				if(videooff == 0) screenplayinfobar(filename, NULL, 0, playertype, 0);
+				if(videooff == 0) screenplayinfobar(listbox->select->name, listbox->select->text, 0, playertype, 0);
+
 				status.play = 1;
 //////
 
@@ -649,7 +386,7 @@ void screenmc_iptvplayer()
 */
 // test
 						status.play = 1;
-						eof = 1;
+						eof = 2;
 // test
 						continue;
 					}
