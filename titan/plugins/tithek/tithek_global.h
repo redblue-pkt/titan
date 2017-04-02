@@ -881,7 +881,8 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				}
 				printf("[tithek] getfreespace end\n");
 
-				if(ostrcmp(dnode->page, "/tmp/python.tar") == 0 || getconfigint("tithek_autoupdate", NULL) == 1)
+//				if(ostrcmp(dnode->page, "/tmp/python.tar") == 0 || getconfigint("tithek_autoupdate", NULL) == 1)
+				if(getconfigint("tithek_autoupdate", NULL) == 1)
 				{
 					if(file_exist(dnode->page))
 					{
