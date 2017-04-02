@@ -53,9 +53,9 @@ void screenmc_iptvplayer()
 	// set allowed filemask
 	char* filemask = NULL;
 	if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
-		filemask = ostrcat("*.m3u *.pls", NULL, 0, 0);
+		filemask = ostrcat("*.m3u *.pls *.mpg", NULL, 0, 0);
 	else
-		filemask = ostrcat("*.m3u *.pls", NULL, 0, 0);
+		filemask = ostrcat("*.m3u *.pls *.mpg", NULL, 0, 0);
 	
 	// disable global transparent/hangtime
 	setfbtransparent(255);
