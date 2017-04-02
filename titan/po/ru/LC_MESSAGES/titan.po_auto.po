@@ -8707,8 +8707,8 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:552 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:483 tithek_global.h:485 tithek_global.h:995
-#: tithek_global.h:997 tithek.h:1595 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:483 tithek_global.h:485 tithek_global.h:996
+#: tithek_global.h:998 tithek.h:1595 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:367
 #: youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
