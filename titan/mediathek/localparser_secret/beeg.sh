@@ -10,6 +10,11 @@ URL="https://beeg.com/api/v6/2080/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 
+FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PARAM"
+FILENAME="`echo $FILENAME | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
+PICNAME=`echo $FILENAME`
+
+
 rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
 
@@ -63,7 +68,9 @@ BEGIN { table = ""
         next
       }
 /^\}/ { if (table == "videos") {
-           print title "#" SRC " " SRC " play video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
+#           print title "#" SRC " " SRC " play video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
+           print title "#" SRC " " SRC " hosterlist " id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#0"
+
            title = ""
            id = ""
         }
@@ -92,6 +99,37 @@ BEGIN { table = ""
       }
 ' >/tmp/tithek/$PARSER.list
 	echo "/tmp/tithek/$PARSER.list"
+}
+
+hosterlist()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		/tmp/localhoster/hoster.sh youtube_dl http://beeg.com/$PARAM > $TMP/cache.$FILENAME.1
+		piccount=0
+
+		while read -u 3 ROUND; do
+			TITLE=`echo $ROUND | cut -d"/" -f6`
+			PIC="http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr '/' '.'`.jpg"
+			NEWPAGE="$ROUND"
+
+			if [ -z "$PIC" ] || [ "$PIC" = ".jpg" ]; then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			fi
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				if [ ! -e $TMP/$FILENAME.list ];then
+					touch $TMP/$FILENAME.list
+				fi
+				piccount=`expr $piccount + 1`
+#				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
+				LINE="$TITLE#$NEWPAGE#$PIC#$TITLE.$piccount.jpg#$NAME#2"
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+
+		done 3<$TMP/cache.$FILENAME.1
+		rm $TMP/cache.* > /dev/null 2>&1
+	fi
+	echo "$TMP/$FILENAME.list"
 }
 
 play()
@@ -272,6 +310,8 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	videos) $INPUT;;
+	hoster) $INPUT;;
+	hosterlist) $INPUT;;
 	play) $INPUT;;
 	tags) $INPUT;;
 	page) $INPUT;;
