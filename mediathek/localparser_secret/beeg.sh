@@ -121,7 +121,6 @@ hosterlist()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-#				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
 				LINE="$TITLE#$NEWPAGE#$PIC#$TITLE.$piccount.jpg#$NAME#2"
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
@@ -132,6 +131,7 @@ hosterlist()
 	echo "$TMP/$FILENAME.list"
 }
 
+#unused
 play()
 {
 	$curlbin -o - $URL$PARAM | sed -e 's/{/{\n/g' -e 's/,/,\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v PARSER=$PARSER -v NAME=$NAME '
@@ -310,7 +310,6 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	videos) $INPUT;;
-	hoster) $INPUT;;
 	hosterlist) $INPUT;;
 	play) $INPUT;;
 	tags) $INPUT;;
