@@ -460,10 +460,11 @@ searchold()
 
 hoster()
 {
-	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
-	/tmp/localhoster/hoster.sh youtube_dl $URL$PAGE > $TMP/cache.$PARSER.$INPUT.1
-	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
-	echo $STREAMURL
+#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+#	/tmp/localhoster/hoster.sh youtube_dl $URL$PAGE > $TMP/cache.$PARSER.$INPUT.1
+#	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
+#	echo $STREAMURL
+	echo $URL$PAGE
 }
 
 case $INPUT in
