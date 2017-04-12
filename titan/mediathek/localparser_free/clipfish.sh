@@ -76,9 +76,22 @@ search()
 				extra = substr($0, i, j)
 #			print "extra: " extra
 
-				i = index($0, "\"media_videourl_hls\":\"") + 22
+				i = index($0, "\"video_url_edge_quality\":\"") + 26
 	            j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
+
+				if (newpage == "")
+				{
+					i = index($0, "\"video_url_wifi_quality\":\"") + 26
+		            j = index(substr($0, i), "\"") - 1
+					newpage = substr($0, i, j)
+				}
+				if (newpage == "")
+				{
+					i = index($0, "\"media_videourl_hls\":\"") + 22
+		            j = index(substr($0, i), "\"") - 1
+					newpage = substr($0, i, j)
+				}
 				gsub(/\\/, "", newpage, newpage)
 
 #			print "newpage: " newpage
