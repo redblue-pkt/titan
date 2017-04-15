@@ -85,7 +85,7 @@ category()
 	           	pic = "http://atemio.dyndns.tv/mediathek/menu/"
 
 				piccount += 1
-				print title "#" SRC " " SRC " submenu \x27/devmobileapp/metachannels\x27" newpage "#" pic tolower(title) ".jpg#" PICNAME "." piccount ".jpg#" NAME "#2"
+				print title "#" SRC " " SRC " submenu \x27/devmobileapp/metachannels\x27 " newpage "#" pic tolower(title) ".jpg#" PICNAME "." piccount ".jpg#" NAME "#2"
 
 				next
 			}
