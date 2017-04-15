@@ -85,7 +85,7 @@ category()
 	           	pic = "http://atemio.dyndns.tv/mediathek/menu/"
 
 				piccount += 1
-				print title "#" SRC " " SRC " submenu \x27/devmobileapp/metachannels\x27 " newpage "#" pic tolower(title) ".jpg#" PICNAME "." piccount ".jpg#" NAME "#2"
+				print title "#" SRC " " SRC " submenu \x27/devmobileapp/metachannels\x27 " newpage "#" pic tolower(title) ".jpg#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 				next
 			}
@@ -112,7 +112,6 @@ submenu()
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
 				pages = "1"
-#			print "000000" $0
 			}
 			/"id"/ \
 			{
@@ -126,12 +125,10 @@ submenu()
 		            j = index(substr($0, i), ",\"") - 1
 					id = substr($0, i, j)
 				}
-#			print "id: " id
 
 				i = index($0, "\"title\":\"") + 9
 	            j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
-#			print "title: " title
 
 				i = index($0, "\"id\":\"") + 6
 	            j = index(substr($0, i), "\"") - 1
@@ -146,8 +143,6 @@ submenu()
 
 				gsub(/\\/, "", newpage, newpage)
 
-#			print "newpage: " newpage
-
 				i = index($0, "\"img_thumbnail\":\"") + 17
 	            j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
@@ -159,7 +154,7 @@ submenu()
 #	            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 		           	pic = "http://atemio.dyndns.tv/mediathek/menu/" tolower(title) ".jpg#"
 				}
-				print title "#" SRC " " SRC " search \x27/devmobileapp/specialvideos/" newpage "/mostrecent/\x27 1 \x27/16\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#2"
+				print title "#" SRC " " SRC " search \x27/devmobileapp/specialvideos/" newpage "/mostrecent/\x27 1 \x27/16\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 				next
 			}
