@@ -758,7 +758,7 @@ pornstars()
 				# next page init
 			END
 				{
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27/" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
