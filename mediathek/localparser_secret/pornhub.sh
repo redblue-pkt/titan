@@ -274,8 +274,13 @@ sys     0m0.114s
 COMMENT
 # comment block1 end
 
+#https://de.pornhub.com/pornstar/lisa-ann&page=1
+#https://de.pornhub.com/pornstar/lisa-ann?page=2
+
 search()
 {
+#echo $URL$PAGE$NEXT
+#$curlbin -vo - $URL$PAGE$NEXT > /mnt/parser/6666
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
@@ -318,6 +323,13 @@ search()
 				}
 				# eindeutige zeile vor ersten treffer
 				/<ul class=\"nf-videos videos search-video-thumbs\">/ \
+				{
+					# suche erlauben ab dieser zeile
+					suche = 1
+					# in naechste zeile springen
+					next
+				}
+				/<ul class=\"videos row-5-thumbs search-video-thumbs\">/ \
 				{
 					# suche erlauben ab dieser zeile
 					suche = 1
@@ -407,7 +419,6 @@ search()
 	# 30. gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
-
 
 searchold()
 {
@@ -660,7 +671,7 @@ pornstars()
 							# in naechste zeile springen
 							# \x27 = single quotes
 #							print title " (" extra ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
-							print title " (" extra ")#" SRC " " SRC " search \x27" newpage "&page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+							print title " (" extra ")#" SRC " " SRC " search \x27" newpage "?page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 						}
 		
