@@ -19,7 +19,7 @@ if [ -z "$FILENAME" ]; then
 fi
 
 URL=http://www.clipfish.de
-NAME="Clipfish"
+NAME="ClipFish"
 
 mkdir $TMP > /dev/null 2>&1
 
@@ -149,12 +149,8 @@ submenu()
 				gsub(/\\/, "", pic, pic)
 
 				piccount += 1
-				if ( pic == "" )
-				{
-#	            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-		           	pic = "http://atemio.dyndns.tv/mediathek/menu/" tolower(title) ".jpg#"
-				}
-				print title "#" SRC " " SRC " search \x27/devmobileapp/specialvideos/" newpage "/mostrecent/\x27 1 \x27/16\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+				if ( pic != "1" )
+					print title "#" SRC " " SRC " search \x27/devmobileapp/specialvideos/" newpage "/mostrecent/\x27 1 \x27/16\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 				next
 			}
@@ -181,6 +177,12 @@ search()
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
 				pages = "1"
+			}
+			/"list_page_limit"/ \
+			{
+					i = index($0, "\"list_page_limit\":\"") + 19
+		            j = index(substr($0, i), "\",\"") - 1
+					pages = substr($0, i, j)
 			}
 			/"video_id"/ \
 			{
