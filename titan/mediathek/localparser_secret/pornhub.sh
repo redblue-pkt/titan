@@ -41,7 +41,7 @@ init()
 mainmenu()
 {
 	echo "Genre#$SRC $SRC genre 'categories'#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://atemio.dyndns.tv/mediathek/menu/pornstars.jpg#pornstars.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Suchen#$SRC $SRC search 'video/search?search=%search%&page=' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
