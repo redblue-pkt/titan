@@ -41,6 +41,7 @@ init()
 mainmenu()
 {
 	echo "Genre#$SRC $SRC genre 'categories'#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Suchen#$SRC $SRC search 'video/search?search=%search%&page=' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
@@ -275,7 +276,7 @@ COMMENT
 
 search()
 {
-#	if [ ! -e "$TMP/$FILENAME.list" ]; then
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
@@ -402,7 +403,7 @@ search()
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
-#	fi
+	fi
 	# 30. gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
@@ -458,6 +459,232 @@ searchold()
 	echo "$TMP/$FILENAME.list"
 }
 
+# comment block1 start
+<<"COMMENT"
+	<div class="wrap">
+		<div class="subscribe-to-pornstar-icon display-none">
+			<button type="button" data-title="bei Pornostar anmelden" class="tooltipTrig" onclick="return false;" ><span></span></button>
+		</div>
+		<a class="js-mxp" data-mxptype="Pornstar" data-mxptext="Angela White" href="/pornstar/angela-white">
+									<span class="pornstar_label">
+				<span class="title-album">Rangordnung:
+					<span class="rank_number">
+						44					</span>
+
+					<span class='icon rank-up'></span>				</span>
+			</span>
+			<img src="https://ci.phncdn.com/pics/pornstars/000/005/553/(m=lciyeNbOb_c)(mh=uncWnVAyet2L8iyD)thumb_21641.jpg" alt="Angela White"/>
+		</a>
+		<div class="thumbnail-info-wrapper">
+			<a href="/pornstar/angela-white" class="title js-mxp" data-mxptype="Pornstar" data-mxptext="Angela White" >Angela White</a>
+			<span class="videosNumber">156 Videos			8M Aufrufe </span>
+		</div>
+	</div>
+COMMENT
+# comment block1 end
+
+pornstars()
+{
+#echo $URL$PAGE$NEXT
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN
+				{
+					# setzt suchvariable auf 0 vor dem start
+					suche = 0
+					newpage = ""
+					pages = "0"
+					piccount = 0
+				}
+				# <li class="page_next_set"><a class="greyButton" href="/video?c=95&amp;page=10">10</a></li>
+				/class=\"page_next_set\">/ \
+				{
+#				print "888888888" $0
+
+					# da 2 pages sources geht keine variable ob schon gesetzt.
+					#if (pages == "0")
+					#{
+						# extrahiere die max pages unter 10 pages
+#						i = index($0, "&amp;page=") + 10
+						i = index($0, "page=") + 5
+			            j = index(substr($0, i), "\"") - 1
+			            pages = substr($0, i, j)
+#			            print "pages" pages
+			            # in naechste zeile springen
+						next
+					#}
+				}
+				# <li class="page_number"><a class="greyButton" href="/video/search?search=michaela&amp;page=5">5</a></li>
+				/class=\"greyButton\">/ \
+				{
+#				print "77777777777" $0
+
+					# da 2 pages sources geht keine variable ob schon gesetzt.
+					#if (pages == "0")
+					#{
+						# extrahiere die max pages groesser 10 pages
+						i = index($0, "page=") + 5
+			            j = index(substr($0, i), "\"") - 1
+			            pages = substr($0, i, j)
+#				print "pages" pages
+
+						# in naechste zeile springen
+						next
+					#}
+				}
+				# eindeutige zeile vor ersten treffer
+				/<ul class=\"videos row-5-thumbs popular-pornstar\">/ \
+				{
+#				print "000000000000"
+
+					# suche erlauben ab dieser zeile
+					suche = 1
+					# in naechste zeile springen
+					next
+				}
+				# eindeutige zeile nach letzen treffer
+				/<\/ul>/ \
+				{
+					# suche verbieten ab dieser zeile
+					suche = 0
+					# in naechste zeile springen
+		        	next
+				}
+				# eindeutige zeile nach letzen treffer backup fals erste nicht klappt
+				/<div class="pagination3\">/ \
+				{
+					# suche verbieten ab dieser zeile
+					suche = 0
+					# in naechste zeile springen
+		            next
+				}
+				# nextpage zeile
+				# <a href="/view_video.php?viewkey=127170590" title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14" class="img" data-related-url="/video/ajax_related_video?vkey=127170590" >
+				/<a href=\"\/pornstar\// \
+				{
+#				print "33333333333"
+					if (suche == 1)
+					{
+#				print "44444444444"
+
+						# extrahiere den newpage pfad
+						i = index($0, "href=\"") + 6
+			            j = index(substr($0, i), "\"") - 1
+						# newpage = /view_video.php?viewkey=127170590
+			            newpage = substr($0, i, j)
+#				print "newpage: " newpage
+
+						next
+					}
+				}
+				# bildlink treffer
+				# data-mediumthumb="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/....
+				/<img src=/ \
+				{
+#				print "11111111111"
+
+#					if (suche == 1 && newpage != "")
+					if (suche == 1)
+					{
+#				print "222222222222"
+
+						# extrahiere den piclink data-image="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/............
+						i = index($0, "<img src=\"") + 10
+			            j = index(substr($0, i), "\"") - 1
+						# pic = http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/........
+			            pic = substr($0, i, j)
+
+						if ( pic == "" )
+						{
+			            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+						}
+#				print "pic: " pic
+
+
+						# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">
+						# extrahiere den titel title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
+						i = index($0, "alt=\"") + 5
+			            j = index(substr($0, i), "\"") - 1
+						# title = "Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
+			            title = substr($0, i, j)
+						# in naechste zeile springen
+#				print "title: " title
+
+#						if (title != "")
+#						{
+#							piccount += 1
+#							# in naechste zeile springen
+#							# \x27 = single quotes
+#							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+#						}
+#		
+#						# 27. reset variables
+#						newpage = ""
+#						title = ""
+#						picname = ""
+#						pic = ""
+#						# 28. in naechste zeile springen
+#						next
+		         	}
+				}
+				/<span class=\"videosNumber\">/ \
+				{
+#				print "55555555555"
+
+
+					if (suche == 1 && newpage != "")
+					{
+#				print "66666666666"
+
+
+						i = index($0, "<span class=\"videosNumber\">") + 28
+			            j = index(substr($0, i), "</span>") - 1
+						# <span class="videosNumber">1074 Videos			40M Aufrufe </span>
+			            extra = substr($0, i, j)
+						# in naechste zeile springen
+
+						# trim left "  Hallo   tester   "
+						gsub(/^[ \t]+/,"",extra)
+						# trim right "  Hallo   tester   "
+						gsub(/[ \t]+$/,"",extra)
+						# trim middle "  Hallo   tester   "
+						gsub(/\t+/," / ",extra)
+
+#				print "extra: " extra
+
+						if (title != "")
+						{
+							piccount += 1
+							# in naechste zeile springen
+							# \x27 = single quotes
+#							print title " (" extra ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+							print title " (" extra ")#" SRC " " SRC " search \x27" newpage "&page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+
+						}
+		
+						# 27. reset variables
+						newpage = ""
+						title = ""
+						picname = ""
+						pic = ""
+						# 28. in naechste zeile springen
+						next
+		         	}
+				}				
+				# next page init
+			END
+				{
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+				}
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+}
+
 hoster()
 {
 #	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
@@ -475,5 +702,6 @@ case $INPUT in
 	searchold) $INPUT;;
 	genre) $INPUT;;
 	genreold) $INPUT;;
+	pornstars) $INPUT;;
 
 esac
