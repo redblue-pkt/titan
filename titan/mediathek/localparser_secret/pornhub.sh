@@ -294,29 +294,37 @@ search()
 					piccount = 0
 				}
 				# <li class="page_next_set"><a class="greyButton" href="/video?c=95&amp;page=10">10</a></li>
-				/<li class=\"page_next_set\">/ \
+				/class=\"page_next_set\">/ \
 				{
+#				print "888888888" $0
+
 					# da 2 pages sources geht keine variable ob schon gesetzt.
 					#if (pages == "0")
 					#{
 						# extrahiere die max pages unter 10 pages
-						i = index($0, "&amp;page=") + 10
+#						i = index($0, "&amp;page=") + 10
+						i = index($0, "page=") + 5
 			            j = index(substr($0, i), "\"") - 1
 			            pages = substr($0, i, j)
+#			            print "pages" pages
 			            # in naechste zeile springen
 						next
 					#}
 				}
 				# <li class="page_number"><a class="greyButton" href="/video/search?search=michaela&amp;page=5">5</a></li>
-				/<li class=\"page_number\">/ \
+				/class=\"greyButton\">/ \
 				{
+#				print "77777777777" $0
+
 					# da 2 pages sources geht keine variable ob schon gesetzt.
 					#if (pages == "0")
 					#{
 						# extrahiere die max pages groesser 10 pages
-						i = index($0, "&amp;page=") + 10
+						i = index($0, "page=") + 5
 			            j = index(substr($0, i), "\"") - 1
 			            pages = substr($0, i, j)
+#				print "pages" pages
+
 						# in naechste zeile springen
 						next
 					#}
