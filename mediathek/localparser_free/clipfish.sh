@@ -48,7 +48,7 @@ mainmenu()
 
 category()
 {
-#	if [ ! -e "$TMP/$FILENAME.list" ]; then
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE | sed -e 's!</html>\[{"id"!</html>\[{"id"\nfound={"id"!g' -e 's/}],/\nfound=/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
@@ -96,20 +96,14 @@ category()
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
-#	fi
+	fi
 	# gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
 
 submenu()
 {
-#	if [ ! -e "$TMP/$FILENAME.list" ]; then
-#	$curlbin -o - $URL$PAGE | sed -e 's!</html>\[{"id"!</html>\[{"id"\nfound1={"id"!g' -e 's/}],/\nfound1=/g' | grep \"id\":\"$NEXT\" | sed -e 's/:\[{/\nfound=}/g' -e 's/},{/\nfound=},{/g' | grep found= > /tmp/localparser/777
-	echo URL $URL
-	echo PAGE $PAGE
-
-	echo NEXT $NEXT
-	echo PAGE2 $PAGE2
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE | sed -e 's!</html>\[{"id"!</html>\[{"id"\nfound1={"id"!g' -e 's/}],/\nfound1=/g' | grep \"id\":\"$NEXT\" | sed -e 's/:\[{/\nfound=}/g' -e 's/},{/\nfound=},{/g' | grep found= | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
@@ -176,17 +170,14 @@ submenu()
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
-#	fi
+	fi
 	# gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
 
 search()
 {
-#	if [ ! -e "$TMP/$FILENAME.list" ]; then
-#$curlbin -o - $URL/$PAGE > /tmp/localparser/888
-#$curlbin -o - $URL$PAGE > /tmp/localparser/888
-
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE$NEXT$PAGE2 | sed 's/{"video_id":/\n{"video_id":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
@@ -198,23 +189,17 @@ search()
 			}
 			/"video_id"/ \
 			{
-#			print "1111111" $0
 				i = index($0, "\"title\":\"") + 9
 	            j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
-#			print "title: " title
-
 
 				i = index($0, "\"media_length\":\"") + 16
 	            j = index(substr($0, i), "\",\"") - 1
 				duration = substr($0, i, j)
-#			print "duration: " duration
-
 
 				i = index($0, "\"pubDate\":\"") + 11
 	            j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
-#			print "extra: " extra
 
 				i = index($0, "\"video_url_edge_quality\":\"") + 26
 	            j = index(substr($0, i), "\"") - 1
@@ -234,20 +219,16 @@ search()
 				}
 				gsub(/\\/, "", newpage, newpage)
 
-#			print "newpage: " newpage
-
 				i = index($0, "\"media_content_thumbnail_large\":\"") + 33
 	            j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic, pic)
-#			print "pic: " pic
 
 				piccount += 1
 				if ( pic == "" )
 				{
 	            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 				}
-#				print title " (" extra ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 				print title " (" duration "s) (" extra ")#" newpage "#" pic "#" PICNAME "." piccount ".jpg#" NAME "#2"
 
 				next
@@ -255,14 +236,13 @@ search()
 			END
 			{
 #				if (curpage != pages)
-#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 " \x27/16\x27#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 
 
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
-#	fi
+	fi
 	# gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
