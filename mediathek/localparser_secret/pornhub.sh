@@ -42,7 +42,7 @@ mainmenu()
 {
 	echo "Genre#$SRC $SRC genre 'categories'#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://atemio.dyndns.tv/mediathek/menu/pornstars.jpg#pornstars.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Suchen#$SRC $SRC search 'video/search?search=%search%&page=' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Suchen#$SRC $SRC search '/video/search?search=%search%&page=' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -172,7 +172,7 @@ genre()
 						piccount += 1
 						# 25. in naechste zeile springen
 						# 26. \x27 = single quotes
-						print title "#" SRC " " SRC " search \x27" newpage "&page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+						print title "#" SRC " " SRC " search \x27/" newpage "&page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 					}
 					
 					# 27. reset variables
@@ -277,10 +277,14 @@ COMMENT
 #https://de.pornhub.com/pornstar/lisa-ann&page=1
 #https://de.pornhub.com/pornstar/lisa-ann?page=2
 
+
+#https://de.pornhub.com/video/search?search=billion&page=1
+
 search()
 {
 #echo $URL$PAGE$NEXT
-#$curlbin -vo - $URL$PAGE$NEXT > /mnt/parser/6666
+#$curlbin -vo - $URL$PAGE$NEXT > /mnt/parser/7777
+#$curlbin -vo - $URL$PAGE$NEXT > /tmp/localparser/6666
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
@@ -293,45 +297,82 @@ search()
 					pages = "0"
 					piccount = 0
 				}
+				#<li class="page_next"><a href="/video/search?search=billions&amp;page=2" class="orangeButton">Next</a></li>
+				/class=\"page_next222222\">/ \
+				{
+#				print "88888888822" $0
+
+					# da 2 pages sources geht keine variable ob schon gesetzt.
+#					if (pages == "0" && $0 ~ /page=/)
+					if ($0 ~ /page=/)
+					{
+#						pagesold = pages
+
+						# extrahiere die max pages unter 10 pages
+						i = index($0, "page=") + 5
+			            j = index(substr($0, i), "\"") - 1
+			            pages = substr($0, i, j)
+#			            print "pages" pages
+
+#						if (pagesold != 0 && pagesold > pages)
+#							pages = pagesold
+
+			            # in naechste zeile springen
+						next
+					}
+				}
 				# <li class="page_next_set"><a class="greyButton" href="/video?c=95&amp;page=10">10</a></li>
 				/class=\"page_next_set\">/ \
 				{
-#				print "888888888" $0
+#				print "aaaaaaaaaaaa" $0
 
 					# da 2 pages sources geht keine variable ob schon gesetzt.
-					#if (pages == "0")
-					#{
+#					if (pages == "0" && $0 ~ /page=/)
+					if ($0 ~ /page=/)
+					{
+#						pagesold = pages
 						# extrahiere die max pages unter 10 pages
 #						i = index($0, "&amp;page=") + 10
 						i = index($0, "page=") + 5
 			            j = index(substr($0, i), "\"") - 1
 			            pages = substr($0, i, j)
-#			            print "pages" pages
+#						if (pagesold != 0 && pagesold > pages)
+#							pages = pagesold
+
+#			            print "pages1: " pages
 			            # in naechste zeile springen
 						next
-					#}
+					}
 				}
 				# <li class="page_number"><a class="greyButton" href="/video/search?search=michaela&amp;page=5">5</a></li>
-				/class=\"greyButton\">/ \
+				/class=\"page_number\">/ \
 				{
-#				print "77777777777" $0
+#				print "bbbbbbbbbbb" $0
 
 					# da 2 pages sources geht keine variable ob schon gesetzt.
-					#if (pages == "0")
-					#{
+#					if (pages == "0" && $0 ~ /page=/)
+					if ($0 ~ /page=/)
+					{
+#						pagesold = pages
 						# extrahiere die max pages groesser 10 pages
 						i = index($0, "page=") + 5
 			            j = index(substr($0, i), "\"") - 1
 			            pages = substr($0, i, j)
-#				print "pages" pages
+
+#						if (pagesold != 0 && pagesold > pages)
+#							pages = pagesold
+							
+#				print "pages2: " pages
 
 						# in naechste zeile springen
 						next
-					#}
+					}
 				}
 				# eindeutige zeile vor ersten treffer
 				/<ul class=\"nf-videos videos search-video-thumbs\">/ \
 				{
+#				print "aaaaaa" $0
+
 					# suche erlauben ab dieser zeile
 					suche = 1
 					# in naechste zeile springen
@@ -339,6 +380,17 @@ search()
 				}
 				/<ul class=\"videos row-5-thumbs search-video-thumbs\">/ \
 				{
+#				print "bbbbbb" $0
+
+					# suche erlauben ab dieser zeile
+					suche = 1
+					# in naechste zeile springen
+					next
+				}
+				/<ul class=\"dropdownHottestVideos videos\">/ \
+				{
+#				print "cccccc" $0
+
 					# suche erlauben ab dieser zeile
 					suche = 1
 					# in naechste zeile springen
@@ -348,7 +400,7 @@ search()
 				/<\/ul>/ \
 				{
 					# suche verbieten ab dieser zeile
-					suche = 0
+			#		suche = 0
 					# in naechste zeile springen
 		        	next
 				}
@@ -364,6 +416,9 @@ search()
 				# <a href="/view_video.php?viewkey=127170590" title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14" class="img" data-related-url="/video/ajax_related_video?vkey=127170590" >
 				/<a href=\"\/view_video.php?/ \
 				{
+#print "ddddd" $0
+#print "suche" suche
+
 					if (suche == 1)
 					{
 						# extrahiere den newpage pfad
@@ -371,6 +426,7 @@ search()
 			            j = index(substr($0, i), "\"") - 1
 						# newpage = /view_video.php?viewkey=127170590
 			            newpage = substr($0, i, j)
+#print "newpage" newpage
 	
 						# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">
 						# extrahiere den titel title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
@@ -378,11 +434,14 @@ search()
 			            j = index(substr($0, i), "\"") - 1
 						# title = "Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
 			            title = substr($0, i, j)
+#print "title" title
+
 						# in naechste zeile springen
 						next
 					}
 				}
 				# bildlink treffer
+#data-image
 				# data-mediumthumb="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/....
 				/data-mediumthumb=/ \
 				{
@@ -419,7 +478,11 @@ search()
 				# next page init
 			END
 				{
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+#				print "pages3: " pages
+#				print "NEXT + 1: " NEXT + 1
+
+					if (pages != "0")# && pages >= NEXT + 1)
+						print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
