@@ -11,7 +11,7 @@ PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
 FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PAGE $NEXT $PAGE2"
-FILENAME="`echo $FILENAME | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
+FILENAME="`echo $FILENAME | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
 PICNAME=`echo $FILENAME`
 
 if [ -z "$FILENAME" ]; then
@@ -150,6 +150,7 @@ submenu()
 
 				piccount += 1
 				if ( pic != "1" )
+				if ( pic ~ /http/ )
 					print title "#" SRC " " SRC " search \x27/devmobileapp/specialvideos/" newpage "/mostrecent/\x27 1 \x27/16\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 				next
