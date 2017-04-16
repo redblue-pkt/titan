@@ -884,10 +884,10 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 //				if(ostrcmp(dnode->page, "/tmp/python.tar") == 0 || getconfigint("tithek_autoupdate", NULL) == 1)
 				if(getconfigint("tithek_autoupdate", NULL) == 1)
 				{
-					if(file_exist(dnode->page))
+					if(file_exist(dnode->filename))
 					{
 						printf("[tithek] remove before download: %s\n", dnode->page);
-						unlink(dnode->page);
+						unlink(dnode->filename);
 					}
 				}
 			
