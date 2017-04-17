@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Container handling for all stream's handled by ffmpeg
  * konfetti 2010; based on code from crow
  *
@@ -26,7 +26,7 @@
 #define TIMEOUT_MAX_ITERS 10
 
 static int ffmpeg_buf_size = FILLBUFSIZE + FILLBUFDIFF;
-static ffmpeg_buf_seek_time = FILLBUFSEEKTIME;
+static int ffmpeg_buf_seek_time = FILLBUFSEEKTIME;
 static int(*ffmpeg_read_org)(void *opaque, uint8_t *buf, int buf_size) = NULL;
 static int(*ffmpeg_real_read_org)(void *opaque, uint8_t *buf, int buf_size) = NULL;
 
@@ -106,7 +106,7 @@ static void update_finish_timeout()
         /* On some STBs PTS readed from decoder is invalid after seek or at start 
          * this is the reason for additional validation when we what to close immediately
          */
-        if( !progressive_download && 0 == ret && currPts >= maxInjectedPts && 
+        if( !progressive_playback && 0 == ret && currPts >= maxInjectedPts && 
             ((currPts - maxInjectedPts) / 90000) < 2 )
         {
             /* close immediately 
@@ -159,7 +159,7 @@ static int32_t ffmpeg_read_wrapper_base(void *opaque, uint8_t *buf, int32_t buf_
 
 static int32_t ffmpeg_read_wrapper(void *opaque, uint8_t *buf, int32_t buf_size)
 {
-    if(progressive_download)
+    if(progressive_playback)
     {
         return ffmpeg_read_wrapper_base(opaque, buf, buf_size, 0);
     }
@@ -171,12 +171,10 @@ static int32_t ffmpeg_read_wrapper(void *opaque, uint8_t *buf, int32_t buf_size)
     }
 }
 
-/*
 static int32_t ffmpeg_read_wrapper2(void *opaque, uint8_t *buf, int32_t buf_size)
 {
     return ffmpeg_read_wrapper_base(opaque, buf, buf_size, 1);
 }
-*/
 
 //for buffered io
 void getfillerMutex(const char *filename, const char *function, int line) 
@@ -271,7 +269,7 @@ static void ffmpeg_filler(Context_t *context, int32_t id, int32_t* inpause, int3
     {
          if( 0 == PlaybackDieNow(0))
          {
-            break;
+//            break;
          }
          
          if(flag == 0 && ffmpeg_buf_stop == 1)
@@ -525,7 +523,7 @@ static int32_t ffmpeg_read(void *opaque, uint8_t *buf, int32_t buf_size)
     int32_t len = 0;
     int32_t count = 2000;
 
-    while(sumlen < buf_size && (--count) > 0 && 0 == PlaybackDieNow(0))
+    while(sumlen < buf_size && (--count) > 0)// && 0 == PlaybackDieNow(0))
     {
         len = ffmpeg_read_real(opaque, buf, buf_size - sumlen);
         sumlen += len;

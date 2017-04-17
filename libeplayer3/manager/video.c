@@ -31,7 +31,7 @@
 /* Makros/Constants              */
 /* ***************************** */
 #define TRACKWRAP 4
-#define SAM_WITH_DEBUG
+
 #ifdef SAM_WITH_DEBUG
 #define VIDEO_MGR_DEBUG
 #else

@@ -129,15 +129,6 @@ static int PlaybackOpen(Context_t  *context, PlayFiles_t *pFiles)
             playback_err("Wrong extension (%s)\n", context->playback->uri+7);
             return cERR_PLAYBACK_ERROR;
         }
-        //CHECK FOR SUBTITLES
-        if (context->container && context->container->textSrtContainer)
-            context->container->textSrtContainer->Command(context, CONTAINER_INIT, context->playback->uri+7);
-
-        if (context->container && context->container->textSsaContainer)
-            context->container->textSsaContainer->Command(context, CONTAINER_INIT, context->playback->uri+7);
-
-        if (context->container && context->container->assContainer)
-            context->container->assContainer->Command(context, CONTAINER_INIT, NULL);
     } 
     else if (strstr(uri, "://")) 
     {
@@ -184,17 +175,8 @@ static int PlaybackClose(Context_t  *context)
         playback_err("container delete failed\n");
     }
 
-    if (context->container && context->container->textSrtContainer)
-        context->container->textSrtContainer->Command(context, CONTAINER_DEL, NULL);
-
-    if (context->container && context->container->textSsaContainer)
-        context->container->textSsaContainer->Command(context, CONTAINER_DEL, NULL);
-
     context->manager->audio->Command(context, MANAGER_DEL, NULL);
     context->manager->video->Command(context, MANAGER_DEL, NULL);
-	context->manager->subtitle->Command(context, MANAGER_DEL, NULL);
-    context->manager->dvbsubtitle->Command(context, MANAGER_DEL, NULL);
-    context->manager->teletext->Command(context, MANAGER_DEL, NULL);
 
     context->playback->isPaused     = 0;
     context->playback->isPlaying    = 0;
@@ -281,9 +263,7 @@ static int PlaybackPause(Context_t  *context)
     if (context->playback->isPlaying && !context->playback->isPaused) 
     {
         set_pause_timeout(1);
-		if(context->playback->SlowMotion)
-			context->output->Command(context, OUTPUT_CLEAR, NULL);
-
+        
         context->output->Command(context, OUTPUT_PAUSE, NULL);
 
         context->playback->isPaused     = 1;
@@ -315,8 +295,7 @@ static int32_t PlaybackContinue(Context_t  *context)
     {
 
         set_pause_timeout(0);
-        if(context->playback->SlowMotion)
-            context->output->Command(context, OUTPUT_CLEAR, NULL);
+
         context->output->Command(context, OUTPUT_CONTINUE, NULL);
 
         context->playback->isPaused     = 0;
@@ -406,122 +385,6 @@ static int32_t PlaybackTerminate(Context_t  *context)
     }
 
     playback_printf(20, "exiting with value %d\n", ret);
-    return ret;
-}
-
-static int PlaybackFastForward(Context_t  *context, int* speed) {
-    int32_t ret = cERR_PLAYBACK_NO_ERROR;
-
-    playback_printf(10, "speed %d\n", *speed);
-
-    /* Audio only forwarding not supported */
-    if (context->playback->isVideo && !context->playback->isHttp && !context->playback->BackWard && (!context->playback->isPaused || context->playback->isPlaying)) {
-
-        if ((*speed <= 0) || (*speed > cMaxSpeed_ff))
-        {
-            playback_err("speed %d out of range (1 - %d) \n", *speed, cMaxSpeed_ff);
-            return cERR_PLAYBACK_ERROR;
-        }
-
-        context->playback->isForwarding = 1;
-        context->playback->Speed = *speed;
-
-        playback_printf(20, "Speed: %d x {%d}\n", *speed, context->playback->Speed);
-
-        context->output->Command(context, OUTPUT_FASTFORWARD, NULL);
-    } else
-    {
-        playback_err("fast forward not possible\n");
-        ret = cERR_PLAYBACK_ERROR;
-    }
-
-    playback_printf(10, "exiting with value %d\n", ret);
-
-    return ret;
-}
-
-static int PlaybackFastBackward(Context_t  *context,int* speed) {
-    int32_t ret = cERR_PLAYBACK_NO_ERROR;
-
-    playback_printf(10, "speed = %d\n", *speed);
-
-    /* Audio only reverse play not supported */
-    if (context->playback->isVideo && !context->playback->isForwarding && (!context->playback->isPaused || context->playback->isPlaying)) {
-
-        if ((*speed > 0) || (*speed < cMaxSpeed_fr))
-        {
-            playback_err("speed %d out of range (0 - %d) \n", *speed, cMaxSpeed_fr);
-            return cERR_PLAYBACK_ERROR;
-        }
-
-        if (*speed == 0)
-        {
-            context->playback->BackWard = 0;
-            context->playback->Speed = 0;    /* reverse end */
-        } else
-        {
-            context->playback->isSeeking = 1;
-            context->playback->Speed = *speed;
-            context->playback->BackWard = 2^(*speed);
-         
-            playback_printf(1, "S %d B %f\n", context->playback->Speed, context->playback->BackWard);
-        }
-
-        context->output->Command(context, OUTPUT_AUDIOMUTE, "1");
-        context->output->Command(context, OUTPUT_CLEAR, NULL);
-        if (context->output->Command(context, OUTPUT_REVERSE, NULL) < 0)
-        {
-            playback_err("OUTPUT_REVERSE failed\n");
-            context->playback->BackWard = 0;
-            context->playback->Speed = 1;
-            context->playback->isSeeking = 0;
-            ret = cERR_PLAYBACK_ERROR;
-        }
-    } else
-    {
-        playback_err("fast backward not possible\n");
-        ret = cERR_PLAYBACK_ERROR;
-    }
-
-    context->playback->isSeeking = 0;
-    playback_printf(10, "exiting with value %d\n", ret);
-
-    return ret;
-}
-
-static int32_t PlaybackSlowMotion(Context_t  *context,int* speed) {
-    int32_t ret = cERR_PLAYBACK_NO_ERROR;
-
-    playback_printf(10, "\n");
-
-    //Audio only forwarding not supported
-    if (context->playback->isVideo && !context->playback->isHttp && context->playback->isPlaying) {
-        if(context->playback->isPaused)
-            PlaybackContinue(context);
-
-        switch(*speed) {
-        case 2:
-            context->playback->SlowMotion = 2;
-            break;
-        case 4:
-            context->playback->SlowMotion = 4;
-            break;
-        case 8:
-            context->playback->SlowMotion = 8;
-            break;
-        }
-
-        playback_printf(20, "SlowMotion: %d x {%d}\n", *speed, context->playback->SlowMotion);
-
-        context->output->Command(context, OUTPUT_SLOWMOTION, NULL);
-    } else
-    {
-        playback_err("slowmotion not possible\n");
-        ret = cERR_PLAYBACK_ERROR;
-    }
-
-    playback_printf(10, "exiting with value %d\n", ret);
-
     return ret;
 }
 
@@ -682,19 +545,8 @@ static int32_t PlaybackSwitchSubtitle(Context_t  *context, int32_t *track)
 
     playback_printf(10, "Track: %d\n", *track);
 
-   	if (context && context->playback && context->playback->isPlaying ) {
-        if (context->manager && context->manager->subtitle) {
-            int trackid;
-            
-            if (context->manager->subtitle->Command(context, MANAGER_SET, track) < 0)
-            {
-                playback_err("manager set track failed\n");
-			}
-/*
     if (context && context->playback && context->playback->isPlaying )
     {
-    	int trackid;
-
         if (context->manager && context->manager->subtitle) 
         {
             context->manager->subtitle->Command(context, MANAGER_GET, &curtrackid);
@@ -713,40 +565,6 @@ static int32_t PlaybackSwitchSubtitle(Context_t  *context, int32_t *track)
                     context->container->selectedContainer->Command(context, CONTAINER_SWITCH_SUBTITLE, &nextrackid);
                 }
             }
-
-*/
-#if 0
-		    if (*track == 0xffff) {
-			//CHECK FOR SUBTITLES
-			if (context->container && context->container->textSrtContainer)
-			    context->container->textSrtContainer->Command(context, CONTAINER_INIT, context->playback->uri+7);
-	
-			if (context->container && context->container->textSsaContainer)
-			    context->container->textSsaContainer->Command(context, CONTAINER_INIT, context->playback->uri+7);
-	
-			if (context->container && context->container->assContainer)
-			    context->container->assContainer->Command(context, CONTAINER_INIT, NULL);
-		    }
-#endif
-            context->manager->subtitle->Command(context, MANAGER_GET, &trackid);
-
-/* konfetti: I make this hack a little bit nicer,
- * but its still a hack in my opinion ;)
- */
-            if (context->container && context->container->assContainer)
-                context->container->assContainer->Command(context, CONTAINER_SWITCH_SUBTITLE, &trackid);
-
-            if (trackid >= TEXTSRTOFFSET)
-            {
-                if (context->container && context->container->textSrtContainer)
-                     context->container->textSrtContainer->Command(context, CONTAINER_SWITCH_SUBTITLE, &trackid);
-            }
-            if (trackid >= TEXTSSAOFFSET)
-            {
-                 if (context->container && context->container->textSsaContainer)
-                     context->container->textSsaContainer->Command(context, CONTAINER_SWITCH_SUBTITLE, &trackid);
-            }
-
         } 
         else
         {
@@ -759,48 +577,6 @@ static int32_t PlaybackSwitchSubtitle(Context_t  *context, int32_t *track)
         playback_err("not possible\n");
         ret = cERR_PLAYBACK_ERROR;
     }
-
-    playback_printf(10, "exiting with value %d\n", ret);
-
-    return ret;
-}
-
-static int32_t PlaybackSwitchDVBSubtitle(Context_t  *context, int* pid) {
-    int ret = cERR_PLAYBACK_NO_ERROR;
-
-    playback_printf(10, "Track: %d\n", *pid);
-
-    if (context && context->manager && context->manager->dvbsubtitle ) {
-        if (context->manager->dvbsubtitle->Command(context, *pid == 0xffff ? MANAGER_DEL : MANAGER_SET, pid) < 0) {
-                playback_err("dvbsub manager set track failed\n");
-         	ret = cERR_PLAYBACK_ERROR;
-        }
-    } else
-        playback_err("no dvbsubtitle\n");
-
-    if (*pid == 0xffff)
-	container_ffmpeg_update_tracks(context, context->playback->uri, 0);
-
-    playback_printf(10, "exiting with value %d\n", ret);
-
-    return ret;
-}
-
-static int32_t PlaybackSwitchTeletext(Context_t  *context, int* pid) {
-    int ret = cERR_PLAYBACK_NO_ERROR;
-
-    playback_printf(10, "Track: %d\n", *pid);
-
-    if (context && context->manager && context->manager->teletext ) {
-        if (context->manager->teletext->Command(context, *pid == 0xffff ? MANAGER_DEL : MANAGER_SET, pid)) {
-                playback_err("ttxsub manager set track failed\n");
-         	ret = cERR_PLAYBACK_ERROR;
-	}
-    } else
-        playback_err("no ttxsubtitle\n");
-
-    if (*pid == 0xffff)
-	container_ffmpeg_update_tracks(context, context->playback->uri, 0);
 
     playback_printf(10, "exiting with value %d\n", ret);
 
@@ -903,59 +679,20 @@ static int32_t Command(void* _context, PlaybackCmd_t command, void *argument)
             ret = PlaybackSwitchSubtitle(context, (int*)argument);
             break;
         }
-        case PLAYBACK_SWITCH_DVBSUBTITLE: 
-        {
-            ret = PlaybackSwitchDVBSubtitle(context, (int*)argument);
-            break;
-        }
-        case PLAYBACK_SWITCH_TELETEXT: 
-        {
-            ret = PlaybackSwitchTeletext(context, (int*)argument);
-            break;
-        }
         case PLAYBACK_INFO: 
         {
             ret = PlaybackInfo(context, (char**)argument);
             break;
         }
-	    case PLAYBACK_SLOWMOTION:
-	    {
-	        ret = PlaybackSlowMotion(context,(int*)argument);
-	        break;
-	    }
-	    case PLAYBACK_FASTBACKWARD:
-	    {
-	        ret = PlaybackFastBackward(context,(int*)argument);
-	        break;
-	    }
-	    case PLAYBACK_FASTFORWARD:
-	    {
-	        ret = PlaybackFastForward(context,(int*)argument);
-	        break;
-	    }
         case PLAYBACK_GET_FRAME_COUNT: 
         { 
             ret = PlaybackGetFrameCount(context, (uint64_t*)argument);
             break;
         }
-	    case PLAYBACK_FRAMEBUFFER_LOCK:
-	    {
-	        context->playback->mayWriteToFramebuffer = 0;
-	    	ret = cERR_PLAYBACK_NO_ERROR;
-			break;
-	    }
-	    case PLAYBACK_FRAMEBUFFER_UNLOCK:
-	    {
-	        context->playback->mayWriteToFramebuffer = 1;
-	    	ret = cERR_PLAYBACK_NO_ERROR;
-			break;
-		}
         default:
-        {
             playback_err("PlaybackCmd %d not supported!\n", command);
             ret = cERR_PLAYBACK_ERROR;
             break;
-		}
     }
 
     playback_printf(20, "exiting with value %d\n", ret);
@@ -983,9 +720,6 @@ PlaybackHandler_t PlaybackHandler = {
     0,          //isVideo
     0,          //isAudio
     0,          //isSubtitle
-    0,          //isDvbSubtitle
-    0,          //isTeletext
-    1,			//mayWriteToFramebuffer
     0,          //abortRequested
     &Command,   //Command
     "",         //uri

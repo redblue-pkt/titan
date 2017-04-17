@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-typedef enum { eNone, eAudio, eVideo, eGfx} eWriterType_t;
+typedef enum { eNone, eAudio, eVideo} eWriterType_t;
 
 typedef struct {
     int                    fd;
@@ -20,25 +20,10 @@ typedef struct {
     unsigned int           Width;
     unsigned int           Height;
     unsigned char          Version;
+    unsigned int           InfoFlags;
 } WriterAVCallData_t;
 
-typedef struct {
-    unsigned char*         data;
-    unsigned int           Width;
-    unsigned int           Height;
-    unsigned int           Stride;
-    unsigned int           color;
 
-    unsigned int           x;       /* dst x ->given by ass */
-    unsigned int           y;       /* dst y ->given by ass */
-
-    /* destination values if we use a shared framebuffer */
-    int                    fd;
-    unsigned int           Screen_Width;
-    unsigned int           Screen_Height;
-    uint32_t		   *destination;
-    unsigned int           destStride;
-} WriterFBCallData_t;
 
 typedef struct WriterCaps_s {
     char*          name;
@@ -65,7 +50,7 @@ extern Writer_t WriterAudioMPEGL3;
 extern Writer_t WriterAudioAC3;
 extern Writer_t WriterAudioEAC3;
 extern Writer_t WriterAudioAAC;
-extern Writer_t WriterAudioAACHE;
+extern Writer_t WriterAudioAACLATM;
 extern Writer_t WriterAudioAACPLUS;
 extern Writer_t WriterAudioDTS;
 extern Writer_t WriterAudioWMA;
@@ -85,17 +70,20 @@ extern Writer_t WriterVideoDIVX;
 extern Writer_t WriterVideoFOURCC;
 extern Writer_t WriterVideoMSCOMP;
 extern Writer_t WriterVideoH263;
+extern Writer_t WriterVideoH265;
 extern Writer_t WriterVideoFLV;
 extern Writer_t WriterVideoVC1;
+extern Writer_t WriterVideoVP6;
+extern Writer_t WriterVideoVP8;
+extern Writer_t WriterVideoVP9;
+extern Writer_t WriterVideoSPARK;
 extern Writer_t WriterFramebuffer;
 extern Writer_t WriterPipe;
-extern Writer_t WriterDVBSubtitle;
 
 Writer_t* getWriter(char* encoding);
 
 Writer_t* getDefaultVideoWriter();
 Writer_t* getDefaultAudioWriter();
-Writer_t* getDefaultFramebufferWriter();
 ssize_t write_with_retry(int fd, const void *buf, size_t size);
 ssize_t writev_with_retry(int fd, const struct iovec *iov, size_t ic);
 #endif

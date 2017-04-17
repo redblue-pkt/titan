@@ -26,10 +26,6 @@ typedef enum {
     OUTPUT_DISCONTINUITY_REVERSE,
     OUTPUT_GET_FRAME_COUNT,
     OUTPUT_GET_PROGRESSIVE,
-    OUTPUT_SUBTITLE_REGISTER_FUNCTION = 222,
-    OUTPUT_SUBTITLE_REGISTER_BUFFER = 223,
-    OUTPUT_GET_SUBTITLE_OUTPUT,
-    OUTPUT_SET_SUBTITLE_OUTPUT
 } OutputCmd_t;
 
 typedef struct
@@ -49,9 +45,11 @@ typedef struct
     uint32_t         width;
     uint32_t         height;
     
+    uint32_t         infoFlags;
+    
     char            *type;
 } AudioVideoOut_t;
-/*
+
 typedef struct
 {
     uint32_t         trackId;
@@ -63,7 +61,7 @@ typedef struct
     
     char            *type;
 } SubtitleOut_t;
-*/
+
 
 typedef struct Output_s 
 {
@@ -76,7 +74,6 @@ typedef struct Output_s
 
 extern Output_t LinuxDvbOutput;
 extern Output_t SubtitleOutput;
-extern Output_t PipeOutput;
 
 typedef struct OutputHandler_s 
 {
@@ -84,8 +81,6 @@ typedef struct OutputHandler_s
     Output_t *audio;
     Output_t *video;
     Output_t *subtitle;
-    Output_t *dvbsubtitle;
-    Output_t *teletext;
     int32_t (* Command) (/*Context_t*/void  *, OutputCmd_t, void *);
 } OutputHandler_t;
 

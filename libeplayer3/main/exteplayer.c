@@ -38,18 +38,20 @@
 #define IPTV_MAX_FILE_PATH 1024
 
 extern int ffmpeg_av_dict_set(const char *key, const char *value, int flags);
-extern void  aac_software_decoder_set(const int32_t val);
-extern void  dts_software_decoder_set(const int32_t val);
-extern void  wma_software_decoder_set(const int32_t val);
-extern void  ac3_software_decoder_set(const int32_t val);
-extern void eac3_software_decoder_set(const int32_t val);
-extern void  mp3_software_decoder_set(const int32_t val);
-extern void rtmp_proto_impl_set(const int32_t val);
+extern void       aac_software_decoder_set(const int32_t val);
+extern void  aac_latm_software_decoder_set(const int32_t val);
+extern void       dts_software_decoder_set(const int32_t val);
+extern void       wma_software_decoder_set(const int32_t val);
+extern void       ac3_software_decoder_set(const int32_t val);
+extern void      eac3_software_decoder_set(const int32_t val);
+extern void       mp3_software_decoder_set(const int32_t val);
+extern void            rtmp_proto_impl_set(const int32_t val);
+extern void        flv2mpeg4_converter_set(const int32_t val);
 
 extern void pcm_resampling_set(int32_t val);
 extern void stereo_software_decoder_set(int32_t val);
 extern void insert_pcm_as_lpcm_set(int32_t val);
-extern void progressive_download_set(int32_t val);
+extern void progressive_playback_set(int32_t val);
 
 extern OutputHandler_t         OutputHandler;
 extern PlaybackHandler_t       PlaybackHandler;
@@ -274,14 +276,18 @@ static int ParseParams(int argc,char* argv[], char *file, char *audioFile, int *
     int digit_optind = 0;
     int aopt = 0, bopt = 0;
     char *copt = 0, *dopt = 0;
-    while ( (c = getopt(argc, argv, "wae3dlsrimvn:x:u:c:h:o:p:t:9:")) != -1) 
+    while ( (c = getopt(argc, argv, "we3dlsrimva:n:x:u:c:h:o:p:t:9:0:1:4:f:")) != -1) 
     {
         switch (c) 
         {
         case 'a':
+        {
+            int flag = atoi(optarg);
             printf("Software decoder will be used for AAC codec\n");
-            aac_software_decoder_set(1);
+            aac_software_decoder_set(flag & 0x01);
+            aac_latm_software_decoder_set(flag & 0x02);
             break;
+        }
         case 'e':
             printf("Software decoder will be used for EAC3 codec\n");
             eac3_software_decoder_set(1);
@@ -316,7 +322,7 @@ static int ParseParams(int argc,char* argv[], char *file, char *audioFile, int *
             break;
         case 'o':
             printf("Set progressive download to %d\n", atoi(optarg));
-            progressive_download_set(atoi(optarg));
+            progressive_playback_set(atoi(optarg));
             break;
         case 'p':
             SetNice(atoi(optarg));
@@ -353,6 +359,30 @@ static int ParseParams(int argc,char* argv[], char *file, char *audioFile, int *
             printf("Force rtmp protocol implementation\n");
             rtmp_proto_impl_set(atoi(optarg));
             break;
+        case '0':
+            ffmpeg_av_dict_set("video_rep_index", optarg, 0);
+            break;
+        case '1':
+            ffmpeg_av_dict_set("audio_rep_index", optarg, 0);
+            break;
+        case '4':
+#ifdef HAVE_FLV2MPEG4_CONVERTER
+            flv2mpeg4_converter_set(atoi(optarg));
+#endif
+            break;
+        case 'f':
+        {
+            char *ffopt = strdup(optarg);
+            char *ffval = strchr(ffopt, '=');
+            if (ffval)
+            {
+                *ffval = '\0';
+                ffval += 1;
+                ffmpeg_av_dict_set(ffopt, ffval, 0);
+            }
+            free(ffopt);
+            break;
+        }
         default:
             printf ("?? getopt returned character code 0%o ??\n", c);
             ret = -1;
@@ -394,12 +424,12 @@ int main(int argc, char* argv[])
     memset(argvBuff, '\0', sizeof(argvBuff));
     int commandRetVal = -1;
     /* inform client that we can handle additional commands */
-    fprintf(stderr, "{\"EPLAYER3_EXTENDED\":{\"version\":%d}}\n", 30);
+    fprintf(stderr, "{\"EPLAYER3_EXTENDED\":{\"version\":%d}}\n", 34);
 
     if (0 != ParseParams(argc, argv, file, audioFile, &audioTrackIdx, &subtitleTrackIdx))
     {
         printf("Usage: exteplayer3 filePath [-u user-agent] [-c cookies] [-h headers] [-p prio] [-a] [-d] [-w] [-l] [-s] [-i] [-t audioTrackId] [-9 subtitleTrackId] [-x separateAudioUri] plabackUri\n");
-        printf("[-a] AAC software decoding\n");
+        printf("[-a 0|1|2|3] AAC software decoding - 1 bit - AAC ADTS, 2 - bit AAC LATM\n");
         printf("[-e] EAC3 software decoding\n");
         printf("[-3] AC3 software decoding\n");
         printf("[-d] DTS software decoding\n");
@@ -407,6 +437,9 @@ int main(int argc, char* argv[])
         printf("[-w] WMA1, WMA2, WMA/PRO software decoding\n");
         printf("[-l] software decoder use LPCM for injection (otherwise wav PCM will be used)\n");
         printf("[-s] software decoding as stereo [downmix]\n");
+#ifdef HAVE_FLV2MPEG4_CONVERTER
+        printf("[-4 0|1] - disable/enable flv2mpeg4 converter\n");
+#endif
         printf("[-i] play in infinity loop\n");
         printf("[-v] switch to live TS stream mode\n");
         printf("[-n 0|1|2] rtmp force protocol implementation auto(0) native/ffmpeg(1) or librtmp(2)\n");        
@@ -418,6 +451,9 @@ int main(int argc, char* argv[])
         printf("[-u user-agent] set custom http User-Agent header\n");
         printf("[-c cookies] set cookies - not working at now, please use -h instead\n");
         printf("[-x separateAudioUri]\n");
+        printf("[-0 idx] video MPEG-DASH representation index\n");
+        printf("[-1 idx] audio MPEG-DASH representation index\n");
+        printf("[-f ffopt=ffval] any other ffmpeg option\n");
         
         exit(1);
     }
@@ -435,9 +471,9 @@ int main(int argc, char* argv[])
     g_player->manager     = &ManagerHandler;
 
     // make sure to kill myself when parent dies
-//    prctl(PR_SET_PDEATHSIG, SIGKILL);
+    prctl(PR_SET_PDEATHSIG, SIGKILL);
 
-//    SetBuffering();
+    SetBuffering();
     
     //Registrating output devices
     g_player->output->Command(g_player, OUTPUT_ADD, "audio");
@@ -559,7 +595,7 @@ int main(int argc, char* argv[])
                 int flags = 0;
                 if( 1 == sscanf(argvBuff+1, "%d", &flags) )
                 {
-                    progressive_download_set(flags);
+                    progressive_playback_set(flags);
                     fprintf(stderr, "{\"PROGRESSIVE_DOWNLOAD\":{\"flags\":%d, \"sts\":0}}\n", flags);
                 }
                 break;

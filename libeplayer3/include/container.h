@@ -15,9 +15,7 @@ CONTAINER_LENGTH,
 CONTAINER_DEL, 
 CONTAINER_SWITCH_AUDIO, 
 CONTAINER_SWITCH_SUBTITLE, 
-CONTAINER_SWITCH_DVBSUBTITLE,
-CONTAINER_SWITCH_TELETEXT,
-CONTAINER_INFO,
+CONTAINER_INFO, 
 CONTAINER_STATUS, 
 CONTAINER_LAST_PTS, 
 CONTAINER_DATA,
@@ -40,9 +38,7 @@ extern Container_t FFMPEGContainer;
 typedef struct ContainerHandler_s {
     char * Name;
     Container_t * selectedContainer;
-    Container_t * textSrtContainer;
-    Container_t * textSsaContainer;
-    Container_t * assContainer;
+
     int (* Command) (/*Context_t*/void  *, ContainerCmd_t, void *);
 } ContainerHandler_t;
 

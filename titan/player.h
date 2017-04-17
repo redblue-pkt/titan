@@ -25,6 +25,7 @@ extern OutputHandler_t OutputHandler;
 extern PlaybackHandler_t PlaybackHandler; 
 extern ContainerHandler_t ContainerHandler; 
 extern ManagerHandler_t ManagerHandler;
+
 #ifdef BETA
 #include <stdlib.h>
 #include <stdio.h>
@@ -57,6 +58,7 @@ extern void pcm_resampling_set(int32_t val);
 extern void stereo_software_decoder_set(int32_t val);
 extern void insert_pcm_as_lpcm_set(int32_t val);
 extern void progressive_download_set(int32_t val);
+extern void progressive_playback_set(int32_t val);
 
 static void SetBuffering()
 {
@@ -1203,14 +1205,18 @@ int playerstart(char* file)
 		if(player->container->selectedContainer == NULL)
 			player->container->Command(player, CONTAINER_ADD, "mp3");
 //#endif
+
 		if(player && player->container && player->container->selectedContainer)
 		{
 #ifndef BETA
 			int32_t size = getconfigint("playerbuffersize", NULL);
 			int32_t seektime = getconfigint("playerbufferseektime", NULL);
 #else
-			int size = getconfigint("playerbuffersize", NULL);
-			int seektime = getconfigint("playerbufferseektime", NULL);
+			int32_t* size = (int32_t*)getconfigint("playerbuffersize", NULL);
+			int32_t* seektime = (int32_t*)getconfigint("playerbufferseektime", NULL);
+
+			progressive_playback_set(1);
+//			container_set_ffmpeg_buf_size(size);
 #endif
 
 			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
@@ -1222,7 +1228,7 @@ int playerstart(char* file)
 	    // make sure to kill myself when parent dies
 	    prctl(PR_SET_PDEATHSIG, SIGKILL);
 
-//	    SetBuffering();
+	    SetBuffering();
 #endif
 		//Registrating output devices
 		player->output->Command(player, OUTPUT_ADD, "audio");
