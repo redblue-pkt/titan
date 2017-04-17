@@ -4732,7 +4732,18 @@ int setmode3d(char* value)
 	{
 		debug(100, "set %s to %s", mode3ddev, value);
 		ret = writesys(mode3ddev, value, 0);
-		if(ret == 0) addconfig("av_mode3d", value);
+		if(ret == 0)
+		{
+			addconfig("av_mode3d", value);
+			char* res = getvideomode();
+			if(res != NULL)
+			{
+				setvideomode("576p", 0);
+				sleep(1);
+				setvideomode(res, 0);
+			}
+			free(res); res = NULL;
+		}
 		return ret;
 	}
 
