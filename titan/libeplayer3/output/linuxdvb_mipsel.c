@@ -130,14 +130,10 @@ int LinuxDvbOpen(Context_t  *context __attribute__((unused)), char * type) {
     unsigned char audio = !strcmp("audio", type);
 
     linuxdvb_printf(10, "v%d a%d\n", video, audio);
-				
+
     if (video && videofd < 0) 
     {
-		fcntl(videofd, F_SETFL, fcntl(videofd, F_GETFL) | O_NONBLOCK);
-
         videofd = open(VIDEODEV, O_RDWR | O_NONBLOCK);
-
-		fcntl(videofd, F_SETFL, fcntl(videofd, F_GETFL) | O_NONBLOCK);
 
         if (videofd < 0)
         {
@@ -167,11 +163,7 @@ int LinuxDvbOpen(Context_t  *context __attribute__((unused)), char * type) {
     }
     if (audio && audiofd < 0) 
     {
-		fcntl(audiofd, F_SETFL, fcntl(audiofd, F_GETFL) | O_NONBLOCK);
-
         audiofd = open(AUDIODEV, O_RDWR | O_NONBLOCK);
-
-		fcntl(audiofd, F_SETFL, fcntl(audiofd, F_GETFL) | O_NONBLOCK);
 
         if (audiofd < 0)
         {
@@ -229,10 +221,6 @@ int LinuxDvbClose(Context_t  *context, char * type)
         close(audiofd);
         audiofd = -1;
     }
-
-	fcntl(videofd, F_SETFL, fcntl(videofd, F_GETFL) | O_NONBLOCK);
-
-	fcntl(audiofd, F_SETFL, fcntl(audiofd, F_GETFL) | O_NONBLOCK);
 
     releaseLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
     return cERR_LINUXDVB_NO_ERROR;
@@ -1021,6 +1009,7 @@ static int Write(void  *_context, void* _out)
             call.FrameScale   = out->timeScale;
             call.Width        = out->width;
             call.Height       = out->height;
+            call.InfoFlags    = out->infoFlags;
             call.Version      = 0; // is unsingned char
 
             if (writer->writeData)
@@ -1069,6 +1058,7 @@ static int Write(void  *_context, void* _out)
             call.private_size   = out->extralen;
             call.FrameRate      = out->frameRate;
             call.FrameScale     = out->timeScale;
+            call.InfoFlags      = out->infoFlags;
             call.Version        = 0; /* -1; unsigned char cannot be negative */
 
             if (writer->writeData)

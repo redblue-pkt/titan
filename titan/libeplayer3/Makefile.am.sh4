@@ -4,29 +4,23 @@ AM_CFLAGS = -Wall -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOUR
 CXXFLAGS = -Wall
 
 AM_CPPFLAGS = \
-	-Iinclude
+	-Iinclude \
+	-Iexternal
 
 lib_LTLIBRARIES = libeplayer3.la
 libeplayer3_la_SOURCES = \
 container/container.c \
 container/container_ffmpeg.c \
-container/container_ass.c \
-container/text_srt.c \
-container/text_ssa.c \
 manager/manager.c \
 manager/audio.c \
 manager/video.c \
 manager/subtitle.c \
-manager/dvbsubtitle.c \
-manager/teletext.c \
 output/linuxdvb_sh4.c \
 output/output_subtitle.c \
 output/output.c \
-output/output_pipe.c \
 output/writer/common/pes.c \
 output/writer/common/misc.c \
 output/writer/sh4/writer.c \
-output/writer/sh4/framebuffer.c \
 output/writer/sh4/aac.c \
 output/writer/sh4/ac3.c \
 output/writer/sh4/divx2.c \
@@ -39,7 +33,11 @@ output/writer/sh4/pcm.c \
 output/writer/sh4/vc1.c \
 output/writer/sh4/wma.c \
 output/writer/sh4/wmv.c \
-playback/playback.c
+playback/playback.c \
+external/ffmpeg/src/bitstream.c \
+external/ffmpeg/src/latmenc.c \
+external/ffmpeg/src/mpeg4audio.c
+
 
 #SOURCE_FILES+=" output/writer/sh4/divx.c
 #SOURCE_FILES+=" output/writer/sh4/vorbis.c

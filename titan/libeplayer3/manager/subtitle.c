@@ -32,7 +32,7 @@
 /* ***************************** */
 #define TRACKWRAP 20
 
-#define SAM_WITH_DEBUG
+//#define SAM_WITH_DEBUG
 #ifdef SAM_WITH_DEBUG
 #define SUBTITLE_MGR_DEBUG
 #else
@@ -42,7 +42,7 @@
 
 #ifdef SUBTITLE_MGR_DEBUG
 
-static short debug_level = 20;
+static short debug_level = 10;
 
 #define subtitle_mgr_printf(level, x...) do { \
 if (debug_level >= level) printf(x); } while (0)

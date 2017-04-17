@@ -30,7 +30,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-//#define SAM_WITH_DEBUG
 
 #ifdef SAM_WITH_DEBUG
 #define OUTPUT_DEBUG
@@ -40,7 +39,7 @@
 
 #ifdef OUTPUT_DEBUG
 
-static short debug_level = 300;
+static short debug_level = 0;
 
 #define output_printf(level, x...) do { \
 if (debug_level >= level) fprintf(stderr, x); } while (0)
@@ -71,7 +70,6 @@ static const char* FILENAME = "output.c";
 static Output_t * AvailableOutput[] = {
     &LinuxDvbOutput,
     &SubtitleOutput,
-    &PipeOutput,
     NULL
 };
 
@@ -131,16 +129,6 @@ static void OutputAdd(Context_t  *context, char *port)
                     context->output->subtitle = AvailableOutput[i];
                     return;
                 }
-                else if (!strcmp("dvbsubtitle", port)) 
-                {
-                    context->output->dvbsubtitle = AvailableOutput[i];
-                    return;
-                }
-                else if (!strcmp("teletext", port)) 
-                {
-                    context->output->teletext = AvailableOutput[i];
-                    return;
-                }
             }
         }
     }
@@ -161,14 +149,6 @@ static void OutputDel(Context_t  *context, char * port)
     else if (!strcmp("subtitle", port))
     {
         context->output->subtitle = NULL;
-    }
-    else if (!strcmp("dvbsubtitle", port))
-    {
-        context->output->dvbsubtitle = NULL;
-    }
-    else if (!strcmp("teletext", port))
-    {
-        context->output->teletext = NULL;
     }
 }
 
@@ -197,14 +177,6 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
             {
                 ret |= context->output->subtitle->Command(context, OUTPUT_OPEN, "subtitle");
             }
-            if (context->playback->isDvbSubtitle)
-			{
-                ret |= context->output->dvbsubtitle->Command(context, command, "dvbsubtitle");
-			}
-            if (context->playback->isTeletext)
-			{
-                ret |= context->output->teletext->Command(context, command, "teletext");
-			}
         } 
         else
         {
@@ -228,14 +200,6 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
             {
                 ret |= context->output->subtitle->Command(context, OUTPUT_CLOSE, "subtitle");
             }
-            if (context->playback->isDvbSubtitle)
-			{
-                ret |= context->output->dvbsubtitle->Command(context, command, "dvbsubtitle");
-			}
-            if (context->playback->isTeletext)
-			{
-                ret |= context->output->teletext->Command(context, command, "teletext");
-			}
         } 
         else
         {
@@ -281,14 +245,6 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
                     ret = context->output->subtitle->Command(context, OUTPUT_PLAY, "subtitle");
                 }
             }
-			if (context->playback->isDvbSubtitle)
-			{
-	           ret |= context->output->dvbsubtitle->Command(context, command, "dvbsubtitle");
-			}
-			if (context->playback->isTeletext)
-			{
-				   ret |= context->output->teletext->Command(context, command, "teletext");
-			}
         } 
         else
         {
@@ -312,14 +268,6 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
             {
                 ret |= context->output->subtitle->Command(context, OUTPUT_STOP, "subtitle");
             }
-			if (context->playback->isDvbSubtitle)
-			{
-	           ret |= context->output->dvbsubtitle->Command(context, command, "dvbsubtitle");
-			}
-			if (context->playback->isTeletext)
-			{
-				   ret |= context->output->teletext->Command(context, command, "teletext");
-			}
         } 
         else
         {
@@ -343,14 +291,6 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
             {
                 ret |= context->output->subtitle->Command(context, OUTPUT_FLUSH, "subtitle");
             }
-			if (context->playback->isDvbSubtitle)
-			{
-	           ret |= context->output->dvbsubtitle->Command(context, command, "dvbsubtitle");
-			}
-			if (context->playback->isTeletext)
-			{
-				   ret |= context->output->teletext->Command(context, command, "teletext");
-			}
         } 
         else
         {
@@ -435,14 +375,6 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
             {
                 ret |= context->output->subtitle->Command(context, OUTPUT_CONTINUE, "subtitle");
             }
-			if (context->playback->isDvbSubtitle)
-			{
-	           ret |= context->output->dvbsubtitle->Command(context, command, "dvbsubtitle");
-			}
-			if (context->playback->isTeletext)
-			{
-				   ret |= context->output->teletext->Command(context, command, "teletext");
-			}
         } 
         else
         {
@@ -481,14 +413,6 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
             {
                 ret |= context->output->subtitle->Command(context, OUTPUT_CLEAR, "subtitle");
             }
-			if (context->playback->isDvbSubtitle)
-			{
-	           ret |= context->output->dvbsubtitle->Command(context, command, "dvbsubtitle");
-			}
-			if (context->playback->isTeletext)
-			{
-				   ret |= context->output->teletext->Command(context, command, "teletext");
-			}
         } 
         else
         {
@@ -531,14 +455,6 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
             {
                 return context->output->subtitle->Command(context, OUTPUT_SWITCH, "subtitle");
             }
-			if (context->playback->isDvbSubtitle)
-			{
-	           return context->output->dvbsubtitle->Command(context, command, "dvbsubtitle");
-			}
-			if (context->playback->isTeletext)
-			{
-				return context->output->teletext->Command(context, command, "teletext");
-			}
         } 
         else
         {
@@ -645,7 +561,5 @@ OutputHandler_t OutputHandler = {
     NULL, //audio
     NULL, //video
     NULL, //subtitle
-    NULL, // dvbsubtitle
-    NULL, // teletext
     &Command
 };
