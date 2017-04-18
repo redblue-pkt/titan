@@ -52,6 +52,8 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
+#define H264_DEBUG
+
 #ifdef SAM_WITH_DEBUG
 #define H264_DEBUG
 #else
@@ -60,7 +62,7 @@
 
 #ifdef H264_DEBUG
 
-static short debug_level = 0;
+static short debug_level = 10;
 
 #define h264_printf(level, fmt, x...) do { \
 if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
