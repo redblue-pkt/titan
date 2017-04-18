@@ -46,18 +46,19 @@ extern ManagerHandler_t ManagerHandler;
 #include "common.h"
 
 extern int ffmpeg_av_dict_set(const char *key, const char *value, int flags);
-extern void  aac_software_decoder_set(const int32_t val);
-extern void  dts_software_decoder_set(const int32_t val);
-extern void  wma_software_decoder_set(const int32_t val);
-extern void  ac3_software_decoder_set(const int32_t val);
-extern void eac3_software_decoder_set(const int32_t val);
-extern void  mp3_software_decoder_set(const int32_t val);
-extern void rtmp_proto_impl_set(const int32_t val);
+extern void       aac_software_decoder_set(const int32_t val);
+extern void  aac_latm_software_decoder_set(const int32_t val);
+extern void       dts_software_decoder_set(const int32_t val);
+extern void       wma_software_decoder_set(const int32_t val);
+extern void       ac3_software_decoder_set(const int32_t val);
+extern void      eac3_software_decoder_set(const int32_t val);
+extern void       mp3_software_decoder_set(const int32_t val);
+extern void            rtmp_proto_impl_set(const int32_t val);
+extern void        flv2mpeg4_converter_set(const int32_t val);
 
 extern void pcm_resampling_set(int32_t val);
 extern void stereo_software_decoder_set(int32_t val);
 extern void insert_pcm_as_lpcm_set(int32_t val);
-extern void progressive_download_set(int32_t val);
 extern void progressive_playback_set(int32_t val);
 
 static void SetBuffering()
