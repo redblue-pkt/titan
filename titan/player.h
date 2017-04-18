@@ -1216,7 +1216,8 @@ int playerstart(char* file)
 			int32_t* size = (int32_t*)getconfigint("playerbuffersize", NULL);
 			int32_t* seektime = (int32_t*)getconfigint("playerbufferseektime", NULL);
 
-			progressive_playback_set(1);
+			if(strstr(tmpfile, "http://") == filename || strstr(filename, "https://") == filename)
+				progressive_playback_set(1);
 //			container_set_ffmpeg_buf_size(size);
 #endif
 
