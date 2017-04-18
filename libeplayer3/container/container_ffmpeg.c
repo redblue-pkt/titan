@@ -162,7 +162,9 @@ void progressive_playback_set(int32_t val)
 
 #include "buff_ffmpeg.c"
 #include "wrapped_ffmpeg.c"
+//for buffered io
 #include "tools_ffmpeg.c"
+//for buffered io (end)
 #if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(56, 34, 100)
 #include "mpeg4p2_ffmpeg.c"
 #endif
@@ -1742,6 +1744,11 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
             {
                 av_dict_free(&avio_opts);
             }
+
+	        //for buffered io
+	        ffmpeg_buf_free();
+	        //for buffered io (end)
+
             releaseMutex(__FILE__, __FUNCTION__,__LINE__);
             return cERR_CONTAINER_FFMPEG_OPEN;
         }
@@ -2493,7 +2500,23 @@ static int32_t container_ffmpeg_stop(Context_t *context)
         ffmpeg_err("Container not running\n");
         return cERR_CONTAINER_FFMPEG_ERR;
     }
-    
+
+    //for buffered io
+    wait_time = 100;
+    if(hasfillerThreadStarted[hasfillerThreadStartedID] == 1)
+        hasfillerThreadStarted[hasfillerThreadStartedID] = 2; // should end
+    while ( (hasfillerThreadStarted[hasfillerThreadStartedID] != 0) && (--wait_time) > 0 ) {
+        ffmpeg_printf(10, "Waiting for ffmpeg filler thread to terminate itself, will try another %d times, ID=%d\n", wait_time, hasfillerThreadStartedID);
+        usleep(100000);
+    }
+
+    if (wait_time == 0) {
+        ffmpeg_err( "Timeout waiting for filler thread!\n");
+
+        ret = cERR_CONTAINER_FFMPEG_ERR;
+    }
+    //for buffered io (end)
+
     if (context->playback)
     {
         context->playback->isPlaying = 0;
@@ -2540,6 +2563,9 @@ static int32_t container_ffmpeg_stop(Context_t *context)
                 use_custom_io[i] = 0;
             }
             avformat_close_input(&avContextTab[i]);
+	        //for buffered io
+	        ffmpeg_buf_free();
+	        //for buffered io (end)
             avContextTab[i] = NULL;
         }
         else
