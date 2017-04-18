@@ -55,10 +55,10 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-//#define H264_DEBUG
+#define H264_DEBUG
 #ifdef H264_DEBUG
 
-static short debug_level = 0;
+static short debug_level = 10;
 
 #define h264_printf(level, fmt, x...) do { \
 if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
@@ -366,10 +366,8 @@ static int writeData(void* _call)
         /*Hellmaster1024: some packets will only be accepted by the player if we send one byte more than
                           data is available. The content of this byte does not matter. It will be ignored
                           by the player */
-        /*
         iov[ic].iov_base = "\0";
         iov[ic++].iov_len = 1;
-        */
         
         iov[0].iov_len = InsertPesHeader(PesHeader, -1, MPEG_VIDEO_PES_START_CODE, VideoPts, FakeStartCode);
         
