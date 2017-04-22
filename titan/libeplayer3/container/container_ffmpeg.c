@@ -1817,6 +1817,10 @@ int32_t container_ffmpeg_init(Context_t *context, PlayFiles_t *playFilesNames)
 
     ffmpeg_printf(10, ">\n");
 
+    //for buffered io
+    ffmpeg_buf_free();
+    //for buffered io end
+
     if (playFilesNames == NULL) 
     {
         ffmpeg_err("playFilesNames NULL\n");
