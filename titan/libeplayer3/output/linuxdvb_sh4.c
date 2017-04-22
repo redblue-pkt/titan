@@ -50,10 +50,10 @@
 /* Makros/Constants              */
 /* ***************************** */
 
-#define LINUXDVB_DEBUG
+//#define LINUXDVB_DEBUG
 #define LINUXDVB_SILENT
 
-static unsigned short debug_level = 20;
+static unsigned short debug_level = 0;
 
 static const char FILENAME[] = __FILE__;
 
