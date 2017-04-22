@@ -1218,6 +1218,13 @@ int playerstart(char* file)
 
 			if(strstr(tmpfile, "http://") == tmpfile || strstr(tmpfile, "https://") == tmpfile)
 				progressive_playback_set(1);
+
+//			if(ostrcmp(getconfig("av_ac3mode", NULL), "downmix") == 0)
+			if(status.downmix == 1)
+			{
+				dts_software_decoder_set(1);
+				stereo_software_decoder_set(1);
+			}
 //			container_set_ffmpeg_buf_size(size);
 #endif
 
