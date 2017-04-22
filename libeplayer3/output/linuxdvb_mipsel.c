@@ -52,7 +52,7 @@
 #define LINUXDVB_DEBUG
 #define LINUXDVB_SILENT
 
-static unsigned short debug_level = 20;
+static unsigned short debug_level = 200;
 
 static const char FILENAME[] = __FILE__;
 
@@ -355,11 +355,11 @@ int LinuxDvbStop(Context_t  *context __attribute__((unused)), char * type)
 
     if (video && videofd != -1) 
     {
-        if (ioctl(videofd, VIDEO_CLEAR_BUFFER) == -1)
-        {
-            linuxdvb_err("ioctl failed with errno %d\n", errno);
-            linuxdvb_err("VIDEO_CLEAR_BUFFER: %s\n", strerror(errno));
-        }
+//        if (ioctl(videofd, VIDEO_CLEAR_BUFFER) == -1)
+//        {
+//            linuxdvb_err("ioctl failed with errno %d\n", errno);
+//            linuxdvb_err("VIDEO_CLEAR_BUFFER: %s\n", strerror(errno));
+//        }
         
         if (ioctl(videofd, VIDEO_STOP) == -1)
         {
@@ -374,11 +374,11 @@ int LinuxDvbStop(Context_t  *context __attribute__((unused)), char * type)
         ioctl(videofd, VIDEO_SELECT_SOURCE, VIDEO_SOURCE_DEMUX);
     }
     if (audio && audiofd != -1) {
-        if (ioctl(audiofd, AUDIO_CLEAR_BUFFER) == -1)
-        {
-            linuxdvb_err("ioctl failed with errno %d\n", errno);
-            linuxdvb_err("AUDIO_CLEAR_BUFFER: %s\n", strerror(errno));
-        }
+//        if (ioctl(audiofd, AUDIO_CLEAR_BUFFER) == -1)
+//        {
+//            linuxdvb_err("ioctl failed with errno %d\n", errno);
+//            linuxdvb_err("AUDIO_CLEAR_BUFFER: %s\n", strerror(errno));
+//        }
 
         /* set back to normal speed (end trickmodes) */
         // if (ioctl(audiofd, AUDIO_SET_SPEED, DVB_SPEED_NORMAL_PLAY) == -1)
@@ -393,6 +393,15 @@ int LinuxDvbStop(Context_t  *context __attribute__((unused)), char * type)
             ret = cERR_LINUXDVB_ERROR;
         }
         ioctl(audiofd, AUDIO_SELECT_SOURCE, AUDIO_SOURCE_DEMUX);
+
+			int video_fd = open("/dev/dvb/adapter0/video0", O_RDWR);
+			if (video_fd >= 0)
+			{
+				ioctl(video_fd, VIDEO_SLOWMOTION, 0);
+				ioctl(video_fd, VIDEO_FAST_FORWARD, 0);
+				close(video_fd);
+			}
+
     }
 
     releaseLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
