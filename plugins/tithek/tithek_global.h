@@ -7,6 +7,7 @@ char* hoster(char* url)
 {
 	debug(99, "url: %s", url);
 	char* streamurl = NULL, *tmplink = NULL;
+	struct skin* load = getscreen("loading");
 
 	tmplink = ostrcat(url, NULL, 0, 0);
 	string_tolower(tmplink);
@@ -102,6 +103,11 @@ char* hoster(char* url)
 
 	if(streamurl == NULL)
 	{
+		if(!file_exist("/tmp/localhoster"))
+			localparser_init("http://atemio.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+
+		drawscreen(load, 0, 0);
+
 		cmd = ostrcat("/tmp/localhoster/hoster.sh youtube_dl \"", url, 0, 0);
 		cmd = ostrcat(cmd, "\"", 1, 0);
 		streamurl = command(cmd);
@@ -109,6 +115,8 @@ char* hoster(char* url)
 		debug(99, "Streamurl3: %s", streamurl);
 	
 		free(cmd), cmd = NULL;
+
+		clearscreen(load);
 
 		if(streamurl == NULL)
 			textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
