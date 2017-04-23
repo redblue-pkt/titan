@@ -1856,7 +1856,13 @@ int32_t container_ffmpeg_init(Context_t *context, PlayFiles_t *playFilesNames)
     avcodec_register_all();
     av_register_all();
     avformat_network_init();
-    
+
+	char* tmpstr = NULL;
+    tmpstr = readfiletomem("/mnt/config/titan.cfg", 1);
+    if(ostrstr(tmpstr, "debuglevel=99") != NULL)
+ 	   av_log_set_level( AV_LOG_DEBUG );
+ 	free(tmpstr), tmpstr = NULL;
+ 
     // SULGE DEBUG ENABLED
     // make ffmpeg silen
     //av_log_set_level( AV_LOG_DEBUG );
