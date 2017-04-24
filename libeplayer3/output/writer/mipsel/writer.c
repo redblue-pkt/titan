@@ -101,7 +101,10 @@ ssize_t write_with_retry(int fd, const void *buf, size_t size)
 {
     ssize_t ret;
     int retval = 0;
-    while(size > 0)// && 0 == PlaybackDieNow(0))
+//obi
+//    while(size > 0 && 0 == PlaybackDieNow(0))
+    while(size > 0)
+//obi (end)
     {
         ret = write(fd, buf, size);
         //printf("[%d] write [%lld]\n", fd, ret);
@@ -152,7 +155,9 @@ ssize_t writev_with_retry(int fd, const struct iovec *iov, size_t ic)
         len += iov[i].iov_len;
         if(PlaybackDieNow(0))
         {
+//obi
 //            return -1;
+//obi (end)
         }
     }
     return len;
