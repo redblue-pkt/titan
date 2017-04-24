@@ -366,9 +366,10 @@ static int writeData(void* _call)
         /*Hellmaster1024: some packets will only be accepted by the player if we send one byte more than
                           data is available. The content of this byte does not matter. It will be ignored
                           by the player */
+//obi
         iov[ic].iov_base = "\0";
         iov[ic++].iov_len = 1;
-        
+//obi (end)
         iov[0].iov_len = InsertPesHeader(PesHeader, -1, MPEG_VIDEO_PES_START_CODE, VideoPts, FakeStartCode);
         
         return writev_with_retry(call->fd, iov, ic);
