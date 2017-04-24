@@ -43,12 +43,13 @@ external/ffmpeg/src/mpeg4audio.c
 #SOURCE_FILES+=" output/writer/sh4/vorbis.c
 
 
-libeplayer3_la_LIBADD = -lpthread -lavformat -lavcodec -lavutil -lswresample -lz -lass -lm -lpng
-
+#libeplayer3_la_LIBADD = -lpthread -lavformat -lavcodec -lavutil -lswresample -lz -lass -lm -lpng
+libeplayer3_la_LIBADD = -lpthread -lavformat -lavcodec -lavutil -lswresample
 
 bin_PROGRAMS = eplayer3
 eplayer3_SOURCES = main/exteplayer.c
-eplayer3_LDADD = -leplayer3 -lpthread -lass -lm -lpng
+#eplayer3_LDADD = -leplayer3 -lpthread -lass -lm -lpng
+eplayer3_LDADD = -leplayer3 -lpthread
 eplayer3_DEPENDENCIES = libeplayer3.la
 
 
