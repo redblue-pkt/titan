@@ -1265,7 +1265,9 @@ static int32_t terminating = 0;
 static int32_t interrupt_cb(void *ctx)
 {
     PlaybackHandler_t *p = (PlaybackHandler_t *)ctx;
+//for buffered io
     return p->abortRequested;// || PlaybackDieNow(0);
+//for buffered io (end)
 }
 
 #ifdef SAM_CUSTOM_IO
@@ -1561,7 +1563,7 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
             0 == strncmp(filename, "https://", 8))
     {
         av_dict_set(&avio_opts, "timeout", "20000000", 0); //20sec
-///////
+//for buffered io
 		char* cookie = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *headers = NULL, *useragent = NULL;
 		int count = 0, count1 = 0, count2 = 0, count3 = 0, i = 0, i1 = 0, i2 = 0, i3 = 0;
 		struct splitstr* ret1 = NULL;
@@ -1708,7 +1710,7 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
 		   	ffmpeg_printf(10, "set tslivemode\n");
 			context->playback->isTSLiveMode = 1;
 		}
-////////
+//for buffered io (end)
 
         av_dict_set(&avio_opts, "reconnect", "1", 0);
         if (context->playback->isTSLiveMode) // special mode for live TS stream with skip packet 
@@ -1745,9 +1747,9 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
                 av_dict_free(&avio_opts);
             }
 
-	        //for buffered io
-	        ffmpeg_buf_free();
-	        //for buffered io (end)
+            //for buffered io
+            ffmpeg_buf_free();
+            //for buffered io (end)
 
             releaseMutex(__FILE__, __FUNCTION__,__LINE__);
             return cERR_CONTAINER_FFMPEG_OPEN;
@@ -1819,7 +1821,7 @@ int32_t container_ffmpeg_init(Context_t *context, PlayFiles_t *playFilesNames)
 
     //for buffered io
     ffmpeg_buf_free();
-    //for buffered io end
+    //for buffered io (end)
 
     if (playFilesNames == NULL) 
     {
@@ -1857,12 +1859,13 @@ int32_t container_ffmpeg_init(Context_t *context, PlayFiles_t *playFilesNames)
     av_register_all();
     avformat_network_init();
 
-	char* tmpstr = NULL;
+//for buffered io
+    char* tmpstr = NULL;
     tmpstr = readfiletomem("/mnt/config/titan.cfg", 1);
     if(ostrstr(tmpstr, "debuglevel=99") != NULL)
- 	   av_log_set_level( AV_LOG_DEBUG );
- 	free(tmpstr), tmpstr = NULL;
- 
+        av_log_set_level( AV_LOG_DEBUG );
+        free(tmpstr), tmpstr = NULL;
+//for buffered io (end) 
     // SULGE DEBUG ENABLED
     // make ffmpeg silen
     //av_log_set_level( AV_LOG_DEBUG );
@@ -2573,9 +2576,9 @@ static int32_t container_ffmpeg_stop(Context_t *context)
                 use_custom_io[i] = 0;
             }
             avformat_close_input(&avContextTab[i]);
-	        //for buffered io
-	        ffmpeg_buf_free();
-	        //for buffered io (end)
+            //for buffered io
+            ffmpeg_buf_free();
+            //for buffered io (end)
             avContextTab[i] = NULL;
         }
         else
@@ -3047,11 +3050,13 @@ static int32_t Command(void  *_context, ContainerCmd_t command, void *argument)
         *((int64_t*)argument) = latestPts;
         break;
     }
+    //for buffered io
     case CONTAINER_SET_BUFFER_SEEK_TIME:
     {
     	ret = container_set_ffmpeg_buf_seek_time((int*) argument);
 	    break;
     }
+    //for buffered io (end)
     case CONTAINER_SET_BUFFER_SIZE:
     {
         ret = container_set_ffmpeg_buf_size((int32_t *) argument);
@@ -3064,6 +3069,7 @@ static int32_t Command(void  *_context, ContainerCmd_t command, void *argument)
         *((int32_t*)argument) = size;
         break;
     }
+    //for buffered io
     case CONTAINER_GET_BUFFER_STATUS:
     {
 	    int32_t size = 0;
@@ -3076,6 +3082,7 @@ static int32_t Command(void  *_context, ContainerCmd_t command, void *argument)
 	    ret = container_stop_buffer();
 	    break;
     }
+    //for buffered io (end)
     default:
         ffmpeg_err("ContainerCmd %d not supported!\n", command);
         ret = cERR_CONTAINER_FFMPEG_ERR;
