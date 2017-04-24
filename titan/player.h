@@ -2148,7 +2148,17 @@ void playerslow(int speed)
 {
 #ifdef EPLAYER3
 	int speedmap = 0;
+#ifdef BETA
+	if (speed < 2) speed = 2;
+	if (speed > 8) speed = 8;
 
+	switch(speed)
+	{
+		case 2: speedmap = 2; break;
+		case 4: speedmap = 4; break;
+		case 8: speedmap = 8; break;
+	}
+#else
 	if (speed < 1) speed = 1;
 	if (speed > 7) speed = 7;
 
@@ -2162,7 +2172,7 @@ void playerslow(int speed)
 		case 6: speedmap = 63; break;
 		case 7: speedmap = 127; break;
 	}
-
+#endif
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_SLOWMOTION, &speedmap);
 #endif
