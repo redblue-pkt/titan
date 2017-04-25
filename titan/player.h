@@ -2122,6 +2122,10 @@ void playerff(int speed)
 
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_FASTFORWARD, &speedmap);
+#ifdef MIPSEL
+	if(player && player->playback)
+		player->playback->Command(player, PLAYBACK_CONTINUE, NULL);
+#endif
 #endif
 
 #ifdef EPLAYER4
@@ -2175,6 +2179,11 @@ void playerslow(int speed)
 #endif
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_SLOWMOTION, &speedmap);
+
+#ifdef MIPSEL
+	if(player && player->playback)
+		player->playback->Command(player, PLAYBACK_CONTINUE, NULL);
+#endif
 #endif
 
 #ifdef EPLAYER4
@@ -2220,6 +2229,11 @@ void playerfr(int speed)
 
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_FASTBACKWARD, &speedmap);
+
+#ifdef MIPSEL
+	if(player && player->playback)
+		player->playback->Command(player, PLAYBACK_CONTINUE, NULL);
+#endif
 #endif
 
 #ifdef EPLAYER4
