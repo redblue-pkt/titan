@@ -705,9 +705,10 @@ void LCD_Samsung1_thread()
 							free(tmpstr);tmpstr=NULL;
 						}	
 							
-								
-						if(drawscreen(LCD_Samsung1, 0, 0) == -2)
+						m_lock(&status.drawingmutex, 0);		
+						if(drawscreen(LCD_Samsung1, 0, 2) == -2)
 							printf("nicht genug Speicher fuer drawscreen\n");
+						m_unlock(&status.drawingmutex, 0);
 					}
 					else if(standby == 2)
 					{
@@ -760,8 +761,9 @@ void LCD_Samsung1_thread()
 							n_minute2_standby->pic = string_replace("wert_w", tmpstr, picmin2_standby, 0);
 							free(tmpstr);tmpstr=NULL;
 						}	
-						
-						drawscreen(LCD_Standby, 0, 0); 
+						m_lock(&status.drawingmutex, 0);
+						drawscreen(LCD_Standby, 0, 2); 
+						m_unlock(&status.drawingmutex, 0);
 						put = 0;
 					} 
 				}
@@ -805,8 +807,10 @@ void LCD_Samsung1_thread()
 					
 					changetext(akttimeplay, tmpstr);
 					changetext(stitle, basename(status.playfile));
-					if(drawscreen(LCD_Play, 0, 0) == -2)
+					m_lock(&status.drawingmutex, 0);
+					if(drawscreen(LCD_Play, 0, 2) == -2)
 						printf("nicht genug Speicher fuer drawscreen\n");
+					m_unlock(&status.drawingmutex, 0);
 				}
 			}
 		}
@@ -816,8 +820,10 @@ void LCD_Samsung1_thread()
 			{        
 				if(put == 1) 
 				{        
-					changetext(akttime_Standby, tmpstr); 
-					drawscreen(LCD_Standby, 0, 0); 
+					changetext(akttime_Standby, tmpstr);
+					m_lock(&status.drawingmutex, 0);
+					drawscreen(LCD_Standby, 0, 2); 
+					m_unlock(&status.drawingmutex, 0);
 					put = 0; 
 				} 
 			} 
@@ -854,8 +860,10 @@ void LCD_Samsung1_thread()
  	free(picmin2_standby);picmin2_standby=NULL;
  	addconfig("lcd_samsung_plugin_running", "no");
  	LCD_Samsung1thread = NULL;
- 	if(drawscreen(LCD_Samsung1, 0, 0) == -2)
+ 	m_lock(&status.drawingmutex, 0);
+ 	if(drawscreen(LCD_Samsung1, 0, 2) == -2)
 		printf("nicht genug Speicher fuer drawscreen\n");
+	m_unlock(&status.drawingmutex, 0);
  	//status.write_png = 0;
  	return;
 }
