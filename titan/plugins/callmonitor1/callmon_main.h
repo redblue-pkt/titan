@@ -148,7 +148,7 @@ void callmon_main()
 	while(1)
 	{
 		addscreenrc(callmon_main, tmp);
-		rcret = waitrc(callmon_main, 0, 0);
+		rcret = waitrc(callmon_main, 1000, 0);
 		tmp = listbox->select;
 		
 		hgreen=0;
