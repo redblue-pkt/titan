@@ -380,6 +380,14 @@ printf("111111111111111111111111111\n");
 
 	if(getconfigint("emucontrol", NULL) == 1)
 		system("emu.sh unhalt");
+		
+	if(checkbox("DM900") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	{
+		servicestop(status.aktservice, 1, 1);
+		tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
+		servicestart(status.lastservice->channel, tmpstr, NULL, 0);
+		free(tmpstr); tmpstr = NULL;
+	}
 
 	currvideomode = getvideomode();
 	if(videomode != NULL && currvideomode != NULL && ostrcmp(videomode, currvideomode) != 0)
