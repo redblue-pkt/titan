@@ -22,7 +22,7 @@ betarobotthread()
 	
 	while(1)
 	{
-		r = getrandom(max);
+		r = getrandomnum(max);
 		akt = 0, rccode = -1;
 		
 		m_lock(&status.clistmutex, 12);

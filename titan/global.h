@@ -517,7 +517,7 @@ int getsupermagic(char* filename)
 	return 0;
 }
 
-int getrandom(int max)
+int getrandomnum(int max)
 {
 	srand(time(NULL));
 	return (rand() % max);
