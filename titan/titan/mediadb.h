@@ -71,7 +71,7 @@ struct mediadbfilter* getmediadbfilterrandom(int maxentry)
 	m_lock(&status.mediadbmutex, 17);
 	struct mediadbfilter *node = mediadbfilter;
 
-	int r = getrandom(maxentry);
+	int r = getrandomnum(maxentry);
 	r++;
 
 	while(node != NULL)

@@ -112,14 +112,14 @@ void screencatcatch()
 			}
 		}
 		
-		int r = getrandom(9);
+		int r = getrandomnum(9);
 		if(cat[r] <= 0)
 		{
 			cat[r] = 1;
-			if(getrandom(4) == 1)
-				value[r] = (getrandom(4) + 1) * -1;
+			if(getrandomnum(4) == 1)
+				value[r] = (getrandomnum(4) + 1) * -1;
 			else
-				value[r] = getrandom(4) + 1;
+				value[r] = getrandomnum(4) + 1;
 		}
 		
 		//show treffer

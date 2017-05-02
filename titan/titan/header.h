@@ -805,7 +805,7 @@ char* string_replace_all(char *search, char *replace, char *string, int free1);
 struct tm* olocaltime(time_t *value);
 void setskinnodeslocked(int flag);
 char* stringreplacecharonce(char *str, char c1, char c2);
-int getrandom(int max);
+int getrandomnum(int max);
 int clearbit(int value, int bitpos);
 int checkbit(int value, int bitpos);
 char* addmountpart(char* filename, int free1);
