@@ -12,6 +12,8 @@ void screenmc_iptvplayer()
 	drawscreen(blackscreen, 0, 0);
 	drawscreen(loadmediadb, 0, 0);
 
+	addconfigtmp("playerbuffersize", "0");
+
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
 	char* filename = NULL, *title = NULL, *currentdirectory = NULL, *selectedfile = NULL, *lastid = NULL, *tmpstr = NULL;
@@ -537,6 +539,8 @@ void screenmc_iptvplayer()
 
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
+
+	delconfigtmp("playerbuffersize");
 
 	writevfdmenu("Mediacenter");
 	debug(50, "closed");
