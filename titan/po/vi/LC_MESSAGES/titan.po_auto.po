@@ -13614,24 +13614,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "AE"
-#~ msgstr "A"
-
-#~ msgid "OE"
-#~ msgstr "E"
-
-#~ msgid "Space"
-#~ msgstr "Không gian"
-
-#~ msgid "UE"
-#~ msgstr "E"
-
-#~ msgid "ae"
-#~ msgstr "A"
-
-#~ msgid "oe"
-#~ msgstr "E"
-
-#~ msgid "ue"
-#~ msgstr "E"
