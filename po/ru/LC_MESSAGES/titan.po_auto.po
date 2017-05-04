@@ -13680,15 +13680,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Clear"
-#~ msgstr "Очистить"
-
-#~ msgid "H"
-#~ msgstr "Ч"
-
-#~ msgid "Space"
-#~ msgstr "Пробел"
-
-#~ msgid "h"
-#~ msgstr "Ч"
