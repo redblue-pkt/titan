@@ -302,6 +302,7 @@ play()
 
 parts()
 {
+	rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		FOUND=`echo $PAGE | sed 's/Teil/\n/g' | grep ^http | sed 's!http://www.myspass.de/myspass!!g' | sed 's!http://www.myspass.de!!g'`
 		IDLIST=`$curlbin "$PAGE" | grep "$FOUND" | sed 's/<a href=/\nfound=/g' | grep ^found= | grep title= | grep -v myspassTeaserTextDesc | cut -d '"' -f2 | sort -u | tr '/' ' ' | awk '{ print $NF }'`
