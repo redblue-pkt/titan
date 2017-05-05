@@ -1,0 +1,77 @@
+#!/bin/sh
+model=`cat /etc/model`
+
+echo "[tar.info] ---- start ----"
+echo "[tar.info] $*"
+
+set100() {
+	while [ $count -lt 100 ]; do
+		count=$(($count + 1))
+		killall -4 infobox > /dev/null 2>&1
+		if [ ! "$model" = "ipbox910" ] && [ ! "$model" = "ipbox900" ] && [ ! "$model" = "ipbox91" ] && [ ! "$model" = "ipbox9000" ]; then
+			echo "TAR: $count %" > /dev/vfd
+		fi	
+	done
+}
+
+tmpfile=/tmp/tar.tmp
+errfile=/tmp/tar.err
+count=0
+num=0
+
+killall infobox > /dev/null 2>&1
+infobox -pos -1 75% 9999 "TAR" "     Analyse TAR File    " &
+echo "TAR: analyse" > /dev/vfd
+
+param=`echo $* | sed "s/x/t/"`
+max=`tar $param | wc -l`
+if [ $max -le 0 ]; then max=1; fi
+
+rm -f "$errfile"
+touch "$tmpfile"
+(
+	sleep 2
+	tar $* || echo $? > "$errfile"
+	rm -f "$tmpfile"
+) 2>&1 > "$tmpfile" &
+
+killall infobox > /dev/null 2>&1
+infobox -pos -1 75% 15001 "TAR" "     Extracting TAR File    " &
+echo "extracting" > /dev/vfd
+sleep 2
+
+while [ -e "$tmpfile" ]; do
+	num=`cat "$tmpfile" | wc -l`
+	
+	if [ ! -z "$max" ]; then
+		prozent=$((($num * 100) / $max))
+		while [ $count -lt $prozent ]; do
+			count=$(($count + 1))
+			killall -4 infobox > /dev/null 2>&1
+			if [ ! "$model" = "ipbox910" ] && [ ! "$model" = "ipbox900" ] && [ ! "$model" = "ipbox91" ] && [ ! "$model" = "ipbox9000" ]; then
+				echo "TAR: $count %" > /dev/vfd
+			fi	
+		done
+	fi
+done
+
+set100
+
+killall infobox > /dev/null 2>&1
+
+errcode=0
+if [ -e "$errfile" ]; then errcode=`cat "$errfile"`; fi
+
+if [ $errcode -eq 0 ]; then
+	infobox -pos -1 75% 5 "TAR" "TAR: done !!" &
+	echo "TAR: done !!" > /dev/vfd
+	ret=0
+else
+	infobox -pos -1 75% 5 "TAR" "TAR: error (errorcode=$errcode) !!" &
+	echo "TAR: error !!" > /dev/vfd
+	ret=1
+fi
+
+echo "[tar.info] ---- ende ----"
+
+exit $ret

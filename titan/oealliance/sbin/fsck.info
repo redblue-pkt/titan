@@ -1,0 +1,171 @@
+#!/bin/sh
+model=`cat /etc/model`
+
+echo "[fsck.info] ---- start ----"
+echo "[fsck.info] $*"
+
+BEGINTIME=`date +%s`
+STARTTIME=`date +"%Y.%m.%d %H.%M.%S"`
+echo "[fsck.info] STARTTIME: $STARTTIME"
+		
+set20() {
+	while [ $count -lt 20 ]; do
+		count=$(($count + 1))
+		maxcount=$(($maxcount + 1))
+		killall -4 infobox > /dev/null 2>&1
+		if [ ! "$model" = "ipbox910" ] && [ ! "$model" = "ipbox900" ] && [ ! "$model" = "ipbox91" ] && [ ! "$model" = "ipbox9000" ]; then
+			if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+				echo "C"$maxcount > /dev/vfd
+			else
+				echo "FSCK $type: $maxcount %" > /dev/vfd
+			fi
+		fi	
+	done
+}
+
+echo "$0" | grep "fsck.ext2.gui" > /dev/null
+if [ $? -eq 0 ]; then type=ext2; fi
+echo "$0" | grep "fsck.ext3.gui" > /dev/null
+if [ $? -eq 0 ]; then type=ext3; fi
+echo "$0" | grep "fsck.ext4.gui" > /dev/null
+if [ $? -eq 0 ]; then type=ext4; fi
+echo "$0" | grep "fsck.jfs.gui" > /dev/null
+if [ $? -eq 0 ]; then type=jfs; fi
+echo "$0" | grep "fsck.fat.gui" > /dev/null
+if [ $? -eq 0 ]; then type=vfat; fi
+
+if [ -z "$type" ]; then
+	echo "[fsck.info] only ext2 ; ext3 ; ext4 ; vfat ; jfs supported"
+	exit 1
+fi
+
+dev=`echo $* | tr " " "\n" | tail -n1`
+
+tmpfile=/tmp/fsck.tmp
+logfile=/tmp/fsck.log
+errfile=/tmp/fsck.err
+count=0
+inode=0
+run=0
+oldrun=0
+maxcount=0
+
+(echo 3 > /proc/sys/vm/drop_caches) >/dev/null 2>&1
+sync
+stfbcontrol a 255
+
+killall infobox > /dev/null 2>&1
+rm -f "$tmpfile"
+rm -f "$logfile"
+rm -f "$errfile"
+
+if [ "$type" = "jfs" ] ; then
+	infobox 1000 "FILESYSTEM CHECK - Bitte warten" "     Filesystem Check ($type) auf $dev   " > /dev/null 2>&1 &
+	ln -s /sbin/jfs_fsck /tmp/fsck.$type
+	/tmp/fsck.$type -p -f $* || echo $? > "$errfile"
+elif [ "$type" = "vfat" ] ; then
+	infobox 1000 "FILESYSTEM CHECK - Bitte warten" "     Filesystem Check ($type) auf $dev   " > /dev/null 2>&1 &
+	ln -s /sbin/fsck.vfat /tmp/fsck.$type
+	/tmp/fsck.$type -a -v $* || echo $? > "$errfile"
+else   
+	touch "$tmpfile"
+	(
+		sleep 2
+		ln -s /sbin/e2fsck /tmp/fsck.$type
+		/tmp/fsck.$type -C 1 $* || echo $? > "$errfile"
+		cp "$tmpfile" "$logfile"
+		rm -f "$tmpfile"
+	) > "$tmpfile" &
+	echo "[fsck.info] Look at your TV screen for progress information..."
+	killall infobox > /dev/null 2>&1
+	infobox 15001 "FILESYSTEM CHECK" "     Filesystem Check ($type) auf $dev   " > /dev/null 2>&1 &
+	if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+		echo "oooo" > /dev/vfd
+	else
+		echo "Check" > /dev/vfd
+	fi
+	sleep 2
+	while [ -e "$tmpfile" ]; do
+		stat=`cat "$tmpfile" | tail -n1`
+		run=`echo $stat | cut -d " " -f1`
+		inode=`echo $stat | cut -d " " -f2`
+		if [ "$run" != 1 ] && [ "$run" != 2 ] && [ "$run" != 3 ] && [ "$run" != 4 ] && [ "$run" != 5 ]; then
+			continue
+		fi
+	
+		if [ $run -ne $oldrun ]; then
+			while [ $oldrun -lt $run ] && [ $oldrun -ne 0 ]; do
+				set20
+				oldrun=$(($oldrun +1))
+				count=0
+			done
+			max=`echo $stat | cut -d " " -f3`
+			if [ $max -le 0 ]; then max=1; fi
+				oldrun=$run
+				count=0
+			fi
+
+		if [ ! -z "$max" ]; then
+			prozent=$((($inode * 20) / $max))
+			while [ $count -lt $prozent ]; do
+				count=$(($count + 1))
+				maxcount=$(($maxcount + 1))
+				killall -4 infobox > /dev/null 2>&1
+			if [ ! "$model" = "ipbox910" ] && [ ! "$model" = "ipbox900" ] && [ ! "$model" = "ipbox91" ] && [ ! "$model" = "ipbox9000" ]; then
+				if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+					echo "C"$maxcount > /dev/vfd
+				else
+					echo "FSCK $type: $maxcount %" > /dev/vfd
+				fi
+			fi
+			done
+		fi
+
+    #	sleep 1
+	done
+	if [ $oldrun -eq 0 ]; then oldrun=1; fi
+	while [ $oldrun -le 5 ]; do
+		set20
+		count=0
+		oldrun=$(($oldrun + 1))
+	done
+fi
+
+cat "$logfile"
+echo
+rm -f "$logfile"
+
+killall infobox > /dev/null 2>&1
+
+errcode=0
+if [ -e "$errfile" ]; then errcode=`cat "$errfile"`; fi
+
+if [ $errcode -eq 0 ]; then
+	infobox 5 "FILESYSTEM CHECK" "Filesystem Check: abgeschlossen !!" >/dev/null 2>&1 &
+	if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+		echo "Ende" > /dev/vfd
+	else
+		echo "FSCK: Fertig !" > /dev/vfd
+	fi
+	ret=0
+else
+	infobox 5 "FILESYSTEM CHECK" "Filesystem Check: Fehler (errorcode=$errcode) !!" >/dev/null 2>&1 &
+	if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+		echo "Err" > /dev/vfd
+	else
+		echo "FSCK: Fehler !" > /dev/vfd
+	fi
+	ret=1
+fi
+
+(echo 0 > /proc/sys/vm/drop_caches) >/dev/null 2>&1
+rm -f /tmp/fsck.$type
+
+DONETIME=`date +%s`
+TIME=`expr $DONETIME - $BEGINTIME`
+ENDTIME=`date +"%Y.%m.%d %H.%M.%S"`
+echo "[fsck.info] ENDTIME: $ENDTIME"
+echo "[fsck.info] build time all: ($TIME s) done"
+		
+echo "[fsck.info] ---- ende ----"
+exit $ret

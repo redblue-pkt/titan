@@ -1,0 +1,96 @@
+#!/bin/sh
+model=`cat /etc/model`
+
+if [ `echo $* | grep @ | wc -l` -eq 1 ]; then 
+	echo "[wget.info] start (http://`echo $* | cut -d"@" -f2`)"
+else
+	echo "[wget.info] start ($*)"
+fi
+
+set100() {
+	while [ $count -lt 100 ]; do
+		count=$(($count + 1))
+		killall -4 infobox > /dev/null 2>&1
+		if [ ! "$model" = "ipbox910" ] && [ ! "$model" = "ipbox900" ] && [ ! "$model" = "ipbox91" ] && [ ! "$model" = "ipbox9000" ]; then
+			if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+				echo "L"$count > /dev/vfd
+			else
+				echo "Lade: $count %" > /dev/vfd
+			fi
+		fi
+	done
+}
+
+bn=`basename "$*"`
+
+tmpfile=/tmp/wget.tmp
+logfile=/tmp/wget.log
+errfile=/tmp/wget.err
+count=0
+
+killall infobox > /dev/null 2>&1
+rm -f "$errfile"
+rm -f "$tmpfile"
+rm -f "$logfile"
+touch "$tmpfile"
+(
+	sleep 2
+	wget $* || echo $? > "$errfile"
+	cp "$tmpfile" "$logfile"
+	rm -f "$tmpfile"
+) > "$tmpfile" 2>&1 | tr "\r" "\n" &
+
+infobox -pos -1 75% 15001 "LADEN" "$bn" &
+if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+	echo "oooo" > /dev/vfd
+else
+	echo "Laden" > /dev/vfd
+fi
+sleep 2
+
+while [ -e "$tmpfile" ]; do
+	prozent=`cat "$tmpfile" | tr "\r" "\n" | grep "%" | tail -n1 | cut -d "%" -f1 | tr " " "\n" | tail -n1`
+	#echo count $count
+	#echo prozent $prozent
+	if [ -z "$prozent" ]; then prozent=0; fi
+	while [ $count -lt $prozent ]; do
+		count=$(($count + 1))
+		killall -4 infobox > /dev/null 2>&1
+		if [ ! "$model" = "ipbox910" ] && [ ! "$model" = "ipbox900" ] && [ ! "$model" = "ipbox91" ] && [ ! "$model" = "ipbox9000" ]; then
+			if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+				echo "L"$count > /dev/vfd
+			else
+				echo "Lade: $count %" > /dev/vfd
+			fi
+		fi
+	done
+done
+
+cat "$logfile"
+rm -f "$logfile"
+set100
+
+killall infobox > /dev/null 2>&1
+
+errcode=0
+if [ -e "$errfile" ]; then errcode=`cat "$errfile"`; fi
+
+if [ $errcode -eq 0 ]; then
+	infobox -pos -1 75% 5 "LADEN" "Laden: abgeschlossen !!" &
+	if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+		echo "Ende" > /dev/vfd
+	else
+		echo "Laden: Fertig !" > /dev/vfd
+	fi
+	ret=0
+else
+	infobox -pos -1 75% 5 "LADEN" "Laden: Fehler (errorcode=$errcode) !!" &
+	if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+		echo "Err" > /dev/vfd
+	else
+		echo "Laden: Fehler !" > /dev/vfd
+	fi
+	ret=1
+fi
+
+exit $ret

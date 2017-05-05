@@ -1,0 +1,60 @@
+# from inihdp/inihde2am
+mode "1280x720-0"
+        # D: 90909.091 MHz, H: 5.427 kHz, V: 0.000 Hz
+        geometry 1280 720 1280 1440 32
+        timings 11 5548392 5648584 5692232 4328796 5554208 5694512
+        accel true
+        rgba 8/16,8/8,8/0,8/24
+endmode
+
+# from inihde
+mode "1280x720-25"
+        # D: 27.000 MHz, H: 18.961 kHz, V: 24.656 Hz
+        geometry 1280 720 1280 1440 32
+        timings 37037 68 12 39 5 64 5
+        accel false
+        rgba 8/16,8/8,8/0,8/24
+endmode
+
+#dr7200hd
+mode "1280x720-43"
+        # D: 50.000 MHz, H: 33.967 kHz, V: 43.216 Hz
+        geometry 1280 720 1280 1440 32
+        timings 20000 64 64 32 32 64 2
+        accel false
+        rgba 8/16,8/8,8/0,8/24
+endmode
+
+# from vusolo2
+mode "1280x720-1111111"
+        # D: 1.000 MHz, H: 0.776 kHz, V: 1.078 Hz
+        geometry 1280 720 1280 1440 32
+        timings 1000000 0 0 0 0 8 0
+        accel false
+        rgba 8/16,8/8,8/0,8/24
+endmode
+
+# from e2 vusolo
+mode "1280x720-1"
+        # D: 1.000 MHz, H: 0.776 kHz, V: 1.078 Hz
+        geometry 1280 720 1280 720 32
+        timings 1000000 0 0 0 0 8 0
+        accel false
+        rgba 8/16,8/8,8/0,8/24
+endmode
+
+mode "1920x1080-32"
+        # D: 0.000 MHz, H: 0.000 kHz, V: 0.000 Hz
+        geometry 1920 1080 1920 1080 32
+        timings 0 16777215 0 0 0 9846688 4885764
+        accel false
+        rgba 8/16,8/8,8/0,8/24
+endmode
+
+mode "1920x1080-0"
+        # D: 3921.569 MHz, H: 0.002 kHz, V: 0.000 Hz
+        geometry 1920 1080 1920 2160 32
+        timings 255 0 255 5715272 4354448 1996402192 4885440
+        accel false
+        rgba 8/16,8/8,8/0,8/24
+endmode

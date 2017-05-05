@@ -1,0 +1,213 @@
+#!/bin/sh
+# IP of your NFS server
+art=$1
+serverip=$3
+# exported directory on your NFS server
+exportdir=$4
+# mount point on dbox
+#dboxmountpoint=/media/net"$exportdir"
+dboxmountpoint=/tmp/mnt
+# filesize to transfer in MBytes.
+# At least 8 MByte. Good values are 32 or 64 MByte.
+# Try 128 to be more accurate (takes much longer!)
+filesize=$2
+# block sizes to test in KBytes, possible values are 1 2 4 8 16 32.
+# values have to be separated with spaces. See examples below.
+# blocksizelist="4 8 32"
+# blocksizelist="16"
+blocksizelist="4 8 16 32 48 64"
+# wether to enable synchronous reading, writing. Possible values are "yes"
+# or no. Normally synchronous reading or writing should be slower than
+# asynchronous, so to save some time most people would say "no" here.
+enablesynctests=$5
+
+if [ $# -lt 5 ]; then
+	echo "|----------------------------------------------------------------------------|"
+	echo "|                                                                            |"
+	echo "| Network Speed Test !                                                       |"
+	echo "|                                                                            |"
+	echo "| <--- CIFS: ---->                                                           |"
+	echo '| use netspeed <cifs> <filesize> <serverip> <share> no <username> <password> |'
+	echo "|                                                                            |"
+	echo "| EXAMPLE:  netspeed cifs 32 192.168.1.100 Share no AAFTeam rulez            |"
+	echo "|                                                                            |"
+	echo '| filesize   :  32  (8|16|32|128|256|.......)                                |'
+	echo '| share      :  openshare                                                    |'
+	echo '| username   :  username (optional)                                          |'
+	echo '| passwort   :  passwort (optional)                                          |'
+	echo "|                                                                            |"
+	echo "| <--- NFS: --->                                                             |"
+	echo '| use netspeed <nfs> <filesize> <serverip> <share> <sync>                    |'
+	echo "|                                                                            |"
+	echo "| EXAMPLE:  netspeed nfs 32 192.168.1.100 /Share yes                         |"
+	echo "|                                                                            |"
+	echo '| filesize   :  32  (8|16|32|128|256|.......)                                |'
+	echo '| share      :  /openshare                                                   |'
+	echo '| sync       :  yes <yes|no>                                                 |'
+	echo "|----------------------------------------------------------------------------|"
+	echo "|                                            v0.3@obi changed@GOst and Civer |"
+	echo "|                                          v0.4@karlo changed@GOst and Civer |"
+	echo "|----------------------------------------------------------------------------|"
+
+
+	exit 1
+fi
+
+if [ $# -gt 5 ]; then
+  username=$6
+else
+  username="username"
+fi
+   
+if [ $# -gt 6 ]; then
+  password=$7
+else
+  password="password"
+fi
+
+
+bs=8192
+count=`expr $filesize \* 1048576 / $bs`
+wlist=""
+rlist=""
+
+echo create dir: $dboxmountpoint
+mkdir -p $dboxmountpoint
+
+umount -fl $dboxmountpoint 2>/dev/null
+
+if [ "$art" == "cifs" ];then
+	echo
+	echo "Measuring Cifs throughput..."
+	for factor in $blocksizelist
+	do
+       size=`expr $factor \* 1024`
+       bitcount=`expr $bs \* $count \* 8`
+       umount $dboxmountpoint 2>/dev/null
+       echo        mount -t cifs -o rw,rsize=$size,wsize=$size,username=$username,password=$password //$serverip/$exportdir $dboxmountpoint
+
+       mount -t cifs -o rw,rsize=$size,wsize=$size,user=$username,pass=$password //$serverip/$exportdir $dboxmountpoint
+       
+       mm=`mount | grep $serverip | awk -F , '{print $14}'`
+       mm1=`mount | grep $serverip | awk -F , '{print $15}'`
+       echo "Really mounted: "$mm", "$mm1
+       
+       echo "Mount options: wsize="$size
+       echo "writing "$filesize" MBytes..."
+       a=`date +%s`
+       dd if=/dev/zero of=$dboxmountpoint/test bs=$bs count=$count 2>/dev/null;
+       if [ $? = "0" ]
+       then
+         	z=`date +%s`
+        	duration=`expr $z - $a`
+         	throughput=`expr $bitcount / $duration`
+         	mb=`expr $bitcount / $duration / 8`
+    		echo "Success after "$duration" seconds"
+       else
+         	throughput="Failure"
+    		echo "Failure"
+       fi
+       wlist=$wlist$throughput" = $mb with wsize="$size" ("$mm1"\n"
+       
+       echo "Mount options: rsize="$size
+       echo "reading "$filesize" MBytes..."
+       a=`date +%s`
+       dd of=/dev/null if=$dboxmountpoint/test bs=$bs count=$count 2>/dev/null;
+       if [ $? = "0" ]
+       then
+         	z=`date +%s`
+         	echo z $z
+         	echo a $a
+         	echo bitcount $bitcount
+         	echo duration $duration
+         	duration=`expr $z - $a`
+         	throughput=`expr $bitcount / $duration`
+         	mb=`expr $bitcount / $duration / 8`
+    		echo "Success after "$duration" seconds"
+       else
+         	throughput="Failure"
+    		echo "Failure"
+       fi
+       rlist=$rlist$throughput" = $mb with rsize="$size" ("$mm")\n"
+       echo
+	done
+
+	echo "Results for write throughput: (filesize: $filesize)"
+	echo -e $wlist | sort -nr | sed 's/^\([0-9]*\)\([0-9]\{3\}\)\([0-9]\{3\}\(.*\)\)/\1.\2 Mbit\/s\4/g' | sed 's/= \([0-9]*\)\([0-9]\{3\}\)\([0-9]\{3\}\(.*\)\)/or \1.\2 Mb\/s\4/g'
+
+	echo "Results for read throughput: (filesize: $filesize)"	
+	echo -e $rlist | sort -nr | sed 's/^\([0-9]*\)\([0-9]\{3\}\)\([0-9]\{3\}\(.*\)\)/\1.\2 Mbit\/s\4/g' | sed 's/= \([0-9]*\)\([0-9]\{3\}\)\([0-9]\{3\}\(.*\)\)/or \1.\2 Mb\/s\4/g'
+fi
+
+if [ "$art" == "nfs" ];then
+	synctests="async"
+	if [ "$enablesynctests" = "yes" ]; then
+ 		synctests="sync "$synctests
+	fi
+	echo
+	echo "Measuring NFS throughput..."
+	for factor in $blocksizelist
+	do
+  		for protocol in udp tcp
+  		do
+    		for synchronized in $synctests
+    		do
+       			size=`expr $factor \* 1024`
+       			bitcount=`expr $bs \* $count \* 8`
+       			umount $dboxmountpoint 
+       			echo mount -t nfs -o rw,soft,$protocol,nolock,$synchronized,rsize=$size,wsize=$size $serverip:$exportdir $dboxmountpoint
+       			mount -t nfs -o rw,soft,$protocol,nolock,$synchronized,rsize=$size,wsize=$size $serverip:$exportdir $dboxmountpoint
+       			 
+			mm=`mount | grep $serverip | awk -F , '{print $4}'`
+			mm1=`mount | grep $serverip | awk -F , '{print $5}'`
+       			echo "Really mounted: "$mm", "$mm1
+       			
+       			echo "Mount options: "$protocol", "$synchronized", wsize="$size
+       			echo "writing "$filesize" MBytes..."
+       			a=`date +%s`
+       			dd if=/dev/zero of=$dboxmountpoint/test bs=$bs count=$count 2>/dev/null;
+       			if [ $? = "0" ]
+       			then
+         			z=`date +%s`
+         			duration=`expr $z - $a`
+         			throughput=`expr $bitcount / $duration`
+                 	mb=`expr $bitcount / $duration / 8`
+    				echo "Success after "$duration" seconds"
+       			else
+         			throughput="Failure"
+    				echo "Failure"
+       			fi
+       			wlist=$wlist$throughput" = $mb with "$protocol","$synchronized",wsize="$size" ("$mm1")\n"
+       
+       			echo "Mount options: "$protocol", "$synchronized", rsize="$size
+       			echo "reading "$filesize" MBytes..."
+       			a=`date +%s`
+       			dd of=/dev/null if=$dboxmountpoint/test bs=$bs count=$count 2>/dev/null;
+       			if [ $? = "0" ]
+       			then
+         			z=`date +%s`
+         			duration=`expr $z - $a`
+         			throughput=`expr $bitcount / $duration`
+                 	mb=`expr $bitcount / $duration / 8`
+    				echo "Success after "$duration" seconds"
+       			else
+         			throughput="Failure"
+    				echo "Failure"
+       			fi
+       			rlist=$rlist$throughput" = $mb with "$protocol","$synchronized",rsize="$size" ("$mm")\n"
+       			echo
+    		done
+  		done
+	done
+
+	echo "Results for write throughput: (filesize: $filesize)"
+	echo -e $wlist | sort -nr | sed 's/^\([0-9]*\)\([0-9]\{3\}\)\([0-9]\{3\}\(.*\)\)/\1.\2 Mbit\/s\4/g' | sed 's/= \([0-9]*\)\([0-9]\{3\}\)\([0-9]\{3\}\(.*\)\)/or \1.\2 Mb\/s\4/g'
+
+	echo "Results for read throughput: (filesize: $filesize)"	
+	echo -e $rlist | sort -nr | sed 's/^\([0-9]*\)\([0-9]\{3\}\)\([0-9]\{3\}\(.*\)\)/\1.\2 Mbit\/s\4/g' | sed 's/= \([0-9]*\)\([0-9]\{3\}\)\([0-9]\{3\}\(.*\)\)/or \1.\2 Mb\/s\4/g'
+
+fi
+
+umount -fl $dboxmountpoint 2>/dev/null
+umount -fl $dboxmountpoint 2>/dev/null
+umount -fl $dboxmountpoint 2>/dev/null

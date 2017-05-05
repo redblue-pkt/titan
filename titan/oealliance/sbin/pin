@@ -1,0 +1,124 @@
+#!/bin/sh
+##############
+# PIN-Script #
+##############
+
+event=`cat /mnt/config/titan.cfg | grep rcdev= | tr '/' '\n' | tail -n1`
+
+#
+# Tasten
+code_mute="0071"
+code_pwr="0074"
+code_0="000b"
+code_1="0002"
+code_2="0003"
+code_3="0004"
+code_4="0005"
+code_5="0006"
+code_6="0007"
+code_7="0008"
+code_8="0009"
+code_9="000a"
+code_menu="008b"
+code_text="0184"
+code_red="018e"
+code_green="018f"
+code_yellow="0190"
+code_blue="0191"
+code_vol_up="0073"
+code_vol_dn="0072"
+code_info="008a"
+code_prg_up="0068"
+code_prg_dn="006d"
+code_ok="0160"
+code_left="0069"
+code_right="006a"
+code_up="0067"
+code_dn="006c"
+code_exit="0066"
+code_epg="016d"
+code_rew="00a8"
+code_play="00cf"
+code_fwd="00d0"
+code_pause="0077"
+code_rec="00a7"
+code_stop="0080"
+#
+#####################
+# PIN hier eingeben #
+#####################
+
+code_help="$code_0*$code_1*$code_2*$code_3*$code_4*$code_5*$code_6*$code_7*$code_8*$code_9"
+w1=`expr $1 + 1`
+w2=`expr $2 + 1`
+w3=`expr $3 + 1`
+w4=`expr $4 + 1`
+pin_code=`echo $code_help | cut -d* -f$w1`
+pin_code=$pin_code`echo $code_help | cut -d* -f$w2`
+pin_code=$pin_code`echo $code_help | cut -d* -f$w3`
+pin_code=$pin_code`echo $code_help | cut -d* -f$w4`
+
+#pin_code="$code_$1"$code_$2$code_$3$code_$4
+versuche=3
+
+#
+#########################
+##### Hauptprogramm #####
+#########################
+l=0
+code=""
+while true; do
+	if [ $l == 0 ]; then
+		infobox 15025 PIN-Eingabe "+ + + +" &
+		echo "PIN: _ _ _ _" > /dev/vfd
+		code=""
+	fi
+	s=`hexdump -n 32 /dev/input/$event | awk '{print $7}' | head -n1`
+	code=$code$s
+	l=$(($l+1))
+	if [ $l == 1 ]; then
+		killall -4 infobox
+		echo "PIN: * _ _ _" > /dev/vfd
+		
+	fi
+	if [ $l == 2 ]; then
+		killall -4 infobox
+		echo "PIN: * * _ _" > /dev/vfd
+		
+	fi
+	if [ $l == 3 ]; then
+		killall -4 infobox
+		echo "PIN: * * * _" > /dev/vfd
+		
+	fi
+	if [ $l == 4 ]; then
+		killall -4 infobox
+		echo "PIN: * * * *" > /dev/vfd
+		
+		sleep 1
+		if [ "$code" != "$pin_code" ]; then
+			versuche=$(($versuche-1))
+			if [ $versuche = 0 ]; then
+				killall infobox; infobox 999 PIN-Eingabe "ERROR ---> Reboot" &
+				echo "code falsch"
+				sync
+				sleep 5
+				reboot
+				sleep 5
+				reboot -f
+				exit 1
+			else
+				echo "<* PIN FALSCH *>" > /dev/vfd
+				killall infobox; infobox 2 PIN-Eingabe "Code falsch"
+				sleep 2
+				l=0
+				$code=""
+			fi
+		else
+			echo "*** PIN OK ***" > /dev/vfd
+			killall infobox; infobox 3 PIN-Eingabe "PIN OK" &
+						
+			exit 0
+		fi
+	fi
+done

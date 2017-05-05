@@ -1,0 +1,58 @@
+#!/bin/sh
+
+startconfig=/mnt/config/start-config
+if [ ! -e "$startconfig" ]; then startconfig="/etc/titan.restore/mnt/config/start-config"; fi
+
+. $startconfig
+
+model=`cat /etc/model`
+pingserver1="$pingserver" # from start-config
+pingserver2=`cat /var/etc/ipkg/official-feed.conf | cut -d "/" -f4`
+pingserver3="74.125.230.82" # google.de
+pingserver4="$1"
+
+pingservers="$pingserver1 $pingserver2 $pingserver3 $pingserver4"
+
+if [ ! "$debug" == 'off' ]; then                      
+	echo "[checknet] start /sbin/checknet"
+fi
+
+if [ "$debug" == 'full' ]; then                      
+	set -x
+fi
+
+if [ -z "$pingtimeout" ]; then
+	pingtimeout=3
+fi
+
+rm -f /tmp/checknet
+
+#start all pings in background, to speed up
+for server in $pingservers; do
+	if [ "$model" = "ufs910" ]; then
+		GW_IF=`route -n | grep ^0.0.0.0 | awk {'print $8'}`
+		[ -z $GW_IF ] && GW_IF="eth0"
+		if ! grep -q down /sys/class/net/$GW_IF/operstate; then
+			ping -c1 -w$pingtimeout "$server" 2>&1 | wc -l >> /tmp/checknet &
+			pids="$pids $!"
+		fi
+	else
+		ping -c1 -w$pingtimeout "$server" 2>&1 | wc -l >> /tmp/checknet &
+		pids="$pids $!"
+	fi
+done
+
+#check if all pings ended or one ping results 6
+for pid in $pids; do
+	while [ -d /proc/$pid ]; do 
+		grep -q "6" /tmp/checknet && exit 0
+		sleepms 100
+	done
+done
+
+#chek if one ping results 6
+grep -q "6" /tmp/checknet && exit 0
+
+echo "[checknet] internet connection not ok"
+
+exit 1
