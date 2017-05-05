@@ -1,0 +1,169 @@
+#!/bin/sh
+model=`cat /etc/model`
+
+echo "[mkfs.info] ---- start ----"
+echo "[mkfs.info] $*"
+
+set100() {
+	while [ $count -lt 100 ]; do
+		count=$(($count + 1))
+		killall -4 infobox > /dev/null 2>&1
+		if [ ! "$model" = "ipbox910" ] && [ ! "$model" = "ipbox900" ] && [ ! "$model" = "ipbox91" ] && [ ! "$model" = "ipbox9000" ]; then
+			if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+				echo "F"$count > /dev/vfd
+			else
+				echo "MKFS $type: $count %" > /dev/vfd
+			fi
+		fi
+	done
+}
+
+echo "$0" | grep "mkfs.ext2.gui" > /dev/null
+if [ $? -eq 0 ]; then type=ext2; fi
+echo "$0" | grep "mkfs.ext3.gui" > /dev/null
+if [ $? -eq 0 ]; then type=ext3; fi
+echo "$0" | grep "mkfs.ext4.gui" > /dev/null
+if [ $? -eq 0 ]; then type=ext4; fi
+echo "$0" | grep "mkfs.jfs.gui" > /dev/null
+if [ $? -eq 0 ]; then type=jfs; fi
+echo "$0" | grep "mkfs.fat.gui" > /dev/null
+if [ $? -eq 0 ]; then type=vfat; fi
+
+if [ -z "$type" ]; then
+	echo "[mkfs.info] only ext2 ; ext3; ext4 ; vfat ; jfs supported"
+	exit 1
+fi
+
+dev=`echo $* | tr " " "\n" | tail -n1`
+
+tmpfile=/tmp/mkfs.tmp
+logfile=/tmp/mkfs.log
+errfile=/tmp/mkfs.err
+count=0
+inode=0
+
+echo 3 > /proc/sys/vm/drop_caches >/dev/null 2>&1
+sync
+
+echo "[mkfsinfo1.sh] #####################"
+ls -al /dev/sd*
+
+mount
+
+rm -f "$tmpfile"
+rm -f "$logfile"
+rm -f "$errfile"
+
+touch "$tmpfile"
+(
+	sleep 2
+	if [ "$arch" == "sh4" ];then
+		stfbcontrol a 255
+	fi
+	if [ "$type" = "jfs" ] ; then
+		ln -s /sbin/jfs_mkfs /tmp/mkfs.$type
+	elif [ "$type" = "vfat" ] ; then
+		ln -s /sbin/mkfs.vfat /tmp/mkfs.$type
+	else
+		ln -s /sbin/mke2fs /tmp/mkfs.$type
+	fi  
+	echo /tmp/mkfs.$type $* >> /var/cmd.log
+	mount
+	/etc/init.d/autofs stop
+	sleep 1
+	mount
+	/tmp/mkfs.$type $* || echo $? > "$errfile"
+	cp "$tmpfile" "$logfile"
+	rm -f "$tmpfile"
+) > "$tmpfile" &
+
+killall infobox > /dev/null 2>&1
+infobox 15001 "FORMATIEREN" "     Schreibe Inode ($type) auf $dev    " &
+if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+	echo "oooo" > /dev/vfd
+else
+	echo "Formatieren" > /dev/vfd
+fi
+sleep 2
+
+while [ -e "$tmpfile" ] && [ "$stat" != "done" ]; do
+	stat=`cat "$tmpfile" | grep "Writing inode tables:" | tr "\b" " " | tr " " "\n" | sed "/^$/d" | tail -n1`
+	if [ "$stat" == "done" ]; then continue; fi
+	inode=`echo $stat | tr "/" "\n" | head -n1`
+	
+	if [ -z "$firstinfo" ] && [ ! -z "$stat" ]; then
+		max=`echo $stat | tr "/" "\n" | tail -n1`
+		if [ $max -le 0 ]; then max=1; fi
+		firstinfo=1
+	fi
+	
+	if [ ! -z "$max" ]; then
+		prozent=$((($inode * 100) / $max))
+		while [ $count -lt $prozent ]; do
+			count=$(($count + 1))
+			killall -4 infobox > /dev/null 2>&1
+			if [ ! "$model" = "ipbox910" ] && [ ! "$model" = "ipbox900" ] && [ ! "$model" = "ipbox91" ] && [ ! "$model" = "ipbox9000" ]; then
+				if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+					echo "F"$count > /dev/vfd
+				else
+					echo "MKFS $type: $count %" > /dev/vfd
+				fi
+			fi
+		done
+	fi
+	sleep 1
+done
+
+set100
+
+killall infobox > /dev/null 2>&1
+infobox 9999 "FORMATIEREN" "Schreibe Superblock" &
+if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+	echo "oooo" > /dev/vfd
+else
+	echo "Schr. Superbl." > /dev/vfd
+fi
+sleep 1
+
+while [ -e "$tmpfile" ]; do
+	sleep 1
+done
+
+cat "$logfile"
+echo
+rm -f "$logfile"
+
+killall infobox > /dev/null 2>&1
+
+errcode=0
+if [ -e "$errfile" ]; then errcode=`cat "$errfile"`; fi
+
+if [ $errcode -eq 0 ]; then
+	infobox 5 "FORMATIEREN" "Formatieren: abgeschlossen !!" &
+	if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+		echo "Ende" > /dev/vfd
+	else
+		echo "MKFS: Fertig !" > /dev/vfd
+	fi
+	ret=0
+else
+	infobox 5 "FORMATIEREN" "Formatieren: Fehler (errorcode=$errcode) !!" &
+	if [ "$model" = "atemio520" ] || [ "$model" = "atemio530" ]; then
+		echo "Err" > /dev/vfd
+	else
+		echo "MKFS: Fehler !" > /dev/vfd
+	fi
+	ret=1
+fi
+
+/etc/init.d/autofs start
+
+echo "[mkfsinfo4.sh] #####################"
+ls -al /dev/sda*
+
+
+echo 0 > /proc/sys/vm/drop_caches >/dev/null 2>&1
+rm -f /tmp/mkfs.$type
+echo "[mkfs.info] ---- ende ----"
+
+exit $ret

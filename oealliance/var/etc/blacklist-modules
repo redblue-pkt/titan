@@ -1,0 +1,13 @@
+# Enter all modules in /var/lib/modules or /var/swap/modules or /mnt/swapextensions/modules 
+# which must not load by autoload function of hotplug.sh
+# e.g. "rt73.ko" without leading hash ("#")
+ftdi.ko
+pl2303.ko
+usbserial.ko
+zd1211.ko
+zd1211b.ko
+rt2870sta.ko
+rt3070sta.ko
+rt3572sta.ko
+rt5370sta.ko
+8712u.ko

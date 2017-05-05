@@ -1,0 +1,27 @@
+num_steps=`cat /var/etc/autostart/start.sh | sed 's/\t\+/ /g' | sed 's/ \+/ /g' | sed 's/^ //g' | tr ' ' '~' | tr '\n' ' ' | sed 's/.*first)/\nprozstrat=/g' | grep ^proz | sed 's/;; last)/\nerror/g' | grep ^proz | tr ' ' '\n' | grep -v startup_progress | grep ^start | sort -u | wc -l`
+progress_size=100
+step_change=1
+first_step=0
+step_change=1
+step=0
+count=0
+if [ -e /usr/bin/enigma2 ]; then mipsel=1 || mipsel=0; fi
+
+startup_progress()
+{
+	if [ "$1" = "first" ] && [ ! -e "/tmp/.update" ];then
+		count=$(($count + 1))
+	
+	    step=$(($step + $step_change))
+	
+	    if [ "$num_steps" != "0" ]; then
+	        progress=$(($step * $progress_size / $num_steps))
+	    else
+	        progress=$progress_size
+	    fi
+		if [ $progress -gt 0 -a -e /proc/vfd ]; then
+			echo Loading $progress % > /proc/vfd
+			echo "[$0] $1 Loading: ($count/$num_steps) ($progress %)"
+		fi
+	fi
+}
