@@ -1374,6 +1374,8 @@ struct status
 	pthread_mutex_t vfdmutex;
 	// mutex for OLED handling
 	pthread_mutex_t oledmutex;
+		// mutex for cec handling
+	pthread_mutex_t cecmutex;
 	off64_t recsplitsize;
 	char* gateway;
 	char* dnsserver1;
