@@ -1205,6 +1205,7 @@ void initmutex(int flag)
 		pthread_mutex_init(&status.setaktresmutex, NULL);
 		pthread_mutex_init(&status.waitrcmutex, NULL);
 		pthread_mutex_init(&status.oledmutex, NULL);
+		pthread_mutex_init(&status.cecmutex, NULL);
 	}
 	else
 	{
@@ -1234,6 +1235,7 @@ void initmutex(int flag)
 		pthread_mutex_destroy(&status.setaktresmutex);
 		pthread_mutex_destroy(&status.waitrcmutex);
 		pthread_mutex_destroy(&status.oledmutex);
+		pthread_mutex_destroy(&status.cecmutex);
 	}
 }
 
@@ -1593,6 +1595,7 @@ void m_lock(pthread_mutex_t *mutex, int flag)
 		case 23: debug(900, "setaktresmutex lock"); break;
 		case 24: debug(900, "waitrcmutex lock"); break;
 		case 25: debug(900, "oledmutex lock"); break;
+		case 26: debug(900, "cecmutex lock"); break;
 		default: debug(900, "unknown mutex lock"); break;
 	}
 	pthread_mutex_lock(mutex);
@@ -1628,6 +1631,7 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 		case 23: debug(900, "setaktresmutex unlock"); break;
 		case 24: debug(900, "waitrcmutex unlock"); break;
 		case 25: debug(900, "oledmutex unlock"); break;
+		case 26: debug(900, "cecmutex unlock"); break;
 		default: debug(900, "unknown mutex unlock"); break;
 	}
 	pthread_mutex_unlock(mutex);
