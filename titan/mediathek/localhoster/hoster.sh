@@ -209,10 +209,10 @@ directstream()
 youtube_dl()
 {
 #	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
+	echo "$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames -g $INPUT" > /tmp/.last_hoster_youtube_dl.log
 #	$BIN $youtubebin "$INPUT"
 #	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --all-formats -g "$INPUT"
-	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 -g "$INPUT"
+	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames -g "$INPUT"
 }
 
 if [ "$TYPE" == "get" ];then
