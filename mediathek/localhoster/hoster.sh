@@ -212,7 +212,7 @@ youtube_dl()
 	echo "$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames -g $INPUT" > /tmp/.last_hoster_youtube_dl.log
 #	$BIN $youtubebin "$INPUT"
 #	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --all-formats -g "$INPUT"
-	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames -g "$INPUT"
+	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT"
 }
 
 if [ "$TYPE" == "get" ];then
