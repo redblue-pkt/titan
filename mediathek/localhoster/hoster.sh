@@ -14,7 +14,7 @@ USERAGENT='Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like G
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
 curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT"
 curlbin2='curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
-youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' -g"
+youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors -g"
 
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
@@ -209,10 +209,12 @@ directstream()
 youtube_dl()
 {
 #	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo "$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames -g $INPUT" > /tmp/.last_hoster_youtube_dl.log
+	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
 #	$BIN $youtubebin "$INPUT"
 #	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --all-formats -g "$INPUT"
-	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT"
+	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT"`
+	echo "$URL" >> /tmp/.last_hoster_youtube_dl.log
+	echo $URL
 }
 
 if [ "$TYPE" == "get" ];then
