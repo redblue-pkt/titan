@@ -268,9 +268,9 @@ fi
 if [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
     devflag="-finstrument-functions -rdynamic -DBETA"
 elif [ "$GROUP" = "dev" ]; then
-    devflag="-DBETA"
+    devflag="-DBETA -DEXTEPLAYER3"
 else
-    devflag=""
+    devflag="-DEXTEPLAYER3"
 fi
 
 #if [ "$GROUP" = "dev" ];then

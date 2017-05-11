@@ -26,7 +26,7 @@ extern PlaybackHandler_t PlaybackHandler;
 extern ContainerHandler_t ContainerHandler; 
 extern ManagerHandler_t ManagerHandler;
 
-#ifdef BETA
+#ifdef EXTEPLAYER3
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -1193,7 +1193,7 @@ int playerstart(char* file)
 		player->container = &ContainerHandler;
 		player->manager = &ManagerHandler;
 
-//#ifndef BETA		
+//#ifndef EXTEPLAYER3		
 		//add container befor open, so we can set buffer size
 		char* extffm = getfilenameext(tmpfile);
 		if(extffm != NULL)
@@ -1209,7 +1209,7 @@ int playerstart(char* file)
 
 		if(player && player->container && player->container->selectedContainer)
 		{
-#ifndef BETA
+#ifndef EXTEPLAYER3
 			int32_t size = getconfigint("playerbuffersize", NULL);
 			int32_t seektime = getconfigint("playerbufferseektime", NULL);
 #else
@@ -1233,7 +1233,7 @@ int playerstart(char* file)
 		}
 		
 		debug(150, "eplayername = %s", player->output->Name);
-#ifdef BETA
+#ifdef EXTEPLAYER3
 	    // make sure to kill myself when parent dies
 	    prctl(PR_SET_PDEATHSIG, SIGKILL);
 
@@ -1243,7 +1243,7 @@ int playerstart(char* file)
 		player->output->Command(player, OUTPUT_ADD, "audio");
 		player->output->Command(player, OUTPUT_ADD, "video");
 		player->output->Command(player, OUTPUT_ADD, "subtitle");
-#ifndef BETA
+#ifndef EXTEPLAYER3
 		//for subtitle
 //		SubtitleOutputDef_t subout;
 
@@ -2152,7 +2152,7 @@ void playerslow(int speed)
 {
 #ifdef EPLAYER3
 	int speedmap = 0;
-#ifdef BETA
+#ifdef EXTEPLAYER3
 	if (speed < 2) speed = 2;
 	if (speed > 8) speed = 8;
 
@@ -2259,7 +2259,7 @@ void playerfr(int speed)
 void playerseek(float sec)
 {
 #ifdef EPLAYER3
-#ifdef BETA
+#ifdef EXTEPLAYER3
 	int64_t sectmp = (int64_t)sec;
 	if(player && player->playback)	
 		player->playback->Command(player, PLAYBACK_SEEK, (void*)&sectmp);
@@ -2425,7 +2425,7 @@ void playerfreetracklist(char** TrackList)
 
 char** playergettracklist(int type)
 {
-#ifdef BETA
+#ifdef EXTEPLAYER3
 #ifdef EPLAYER3
 	TrackDescription_t *TrackList = NULL;
 	char ** TrackList2 = NULL;
@@ -2463,7 +2463,7 @@ char** playergettracklist(int type)
 				}
 		}
 
-#ifdef BETA
+#ifdef EXTEPLAYER3
 		TrackList2 = calloc(1, sizeof(char *) * ((100 * 2) + 1));
 
 		char* tmpstr = NULL;
@@ -2704,7 +2704,7 @@ char** playergettracklist(int type)
 #endif
 //////////////////////////////NEUER CODE //////////////////////////////
 
-#ifdef BETA
+#ifdef EXTEPLAYER3
 #ifdef EPLAYER3
 	return TrackList2;
 #else
@@ -2802,7 +2802,7 @@ unsigned long long playergetpts2()
 
 unsigned long long playergetpts()
 {
-#ifdef BETA
+#ifdef EXTEPLAYER3
 #ifdef EPLAYER3
 	int64_t pts = 0;
 	int64_t sec = 0;
@@ -2820,7 +2820,7 @@ unsigned long long playergetpts()
 	{
 		player->playback->Command(player, PLAYBACK_PTS, &pts);
 		sec = pts / 90000;
-#ifdef BETA
+#ifdef EXTEPLAYER3
 		debug(150, "Pts = %02d:%02d:%02d (%lld sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
 #else
 		debug(150, "Pts = %02d:%02d:%02d (%llu.0000 sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
@@ -2905,7 +2905,7 @@ double playergetlength2()
 
 double playergetlength()
 {
-#ifdef BETA
+#ifdef EXTEPLAYER3
 #ifdef EPLAYER3
 	int64_t length = 0;
 #else
@@ -2920,7 +2920,7 @@ double playergetlength()
 	{
 		player->playback->Command(player, PLAYBACK_LENGTH, &length);
 		if(length < 0) length = 0;
-#ifdef BETA
+#ifdef EXTEPLAYER3
 		debug(150, "Length = %02d:%02d:%02d (%lld sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
 #else
 		debug(150, "Length = %02d:%02d:%02d (%.4f sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
@@ -3009,7 +3009,7 @@ void playerstopsubtitletrack()
 #ifdef EPLAYER3
 	if(player && player->output && player->output->subtitle)
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_STOP, NULL);
-#ifndef BETA
+#ifndef EXTEPLAYER3
 	if(player && player->container && player->container->assContainer)
 	{
 		player->container->assContainer->Command(player, CONTAINER_STOP, NULL);
