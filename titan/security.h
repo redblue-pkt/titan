@@ -1407,7 +1407,10 @@ int checkbox(char* box)
 	}
 
 	if(status.boxtype == NULL)
-		free(boxversion); boxversion = NULL;
+	{
+		free(boxversion);
+		boxversion = NULL;
+	}
 	free(box); box = NULL;
 
 	return ret;
