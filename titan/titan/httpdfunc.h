@@ -6728,18 +6728,18 @@ char* webgetcreaterestore(char* param, int fmt)
 
 //	if(fmt == 0)
 //	{
-		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
-		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"createrestore\"><center>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
-		buf = ostrcat(buf, "<h1>", 1, 0);
+	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+	buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+	buf = ostrcat(buf, "</head><body class=body id=\"createrestore\"><center>", 1, 0);
+	buf = ostrcat(buf, "<br>", 1, 0);
+	buf = ostrcat(buf, "<h1>", 1, 0);
 	if(tmpstr == NULL)
 		buf = ostrcat(buf, _("No backup folders found!!!\n\nAborting restoring..."), 1, 0);
 	else
 		buf = ostrcat(buf, _("Backup created successfully"), 1, 0);
 
-		buf = ostrcat(buf, "</h1>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
+	buf = ostrcat(buf, "</h1>", 1, 0);
+	buf = ostrcat(buf, "<br>", 1, 0);
 //	}
 
 	buf = ostrcat(buf, tmpstr, 1, 1);
