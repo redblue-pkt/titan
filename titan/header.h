@@ -1066,6 +1066,7 @@ void reportPhysicalAddress();
 void sendMessage(unsigned char address, unsigned char cmd, char *data, int length);
 void sendMessageReal(struct cec_message message);
 void setFixedPhysicalAddress(int address);
+void forwardKey(int key);
 //encoder.h
 struct dvbdev* encoderopen(int flag);
 #endif
