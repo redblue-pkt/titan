@@ -2090,6 +2090,13 @@ unsigned char address;
 unsigned char length;
 unsigned char data[256];
 }__attribute__((packed));
+struct cec_rx_message
+{
+	unsigned char address;
+	unsigned char destination;
+	unsigned char data[16];
+	unsigned char length;
+}__attribute__((packed));
 #endif
 
 unsigned char cec_physicalAddress[2];
