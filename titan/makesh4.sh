@@ -266,7 +266,7 @@ if [ $MEDIAFW = 4 ]; then
 fi
 
 if [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
-    devflag="-finstrument-functions -rdynamic -DBETA"
+    devflag="-finstrument-functions -rdynamic -DBETA -DEXTEPLAYER3"
 elif [ "$GROUP" = "dev" ]; then
     devflag="-DBETA -DEXTEPLAYER3"
 else
