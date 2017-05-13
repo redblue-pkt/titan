@@ -432,9 +432,9 @@ int videoMakePES(char* buf, int len, int pid, int tssize, int flag)
   int tspid = 0;
   
   if(flag == 1)
-  	pesfound = 1;
+		pesfound = 1;
 
-	for(i = 0; i <= len-tssize; i = i + tssize)
+	for(i = 0; i <= len-tssize; i + tssize)
 	{
 		payload = 0;
 		
