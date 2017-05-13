@@ -16,7 +16,7 @@ void changevolume(int direction, struct skin* volumebar)
 
 	if(volumebar != NULL)
 	{
-		if(setvol(vol) == 0);
+		if(setvol(vol) == 0)
 			volumebar->progresssize = vol;
 	}
 }

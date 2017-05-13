@@ -99,7 +99,7 @@ int setvfdlight(int on)
 			data.start = 0x01;
 		else
 			data.start = 0x00;
-			data.length = 0;
+		data.length = 0;
 
 		m_lock(&status.vfdmutex, 3);
 		fd = open(vfddev, O_WRONLY);

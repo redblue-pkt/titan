@@ -2178,7 +2178,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 	char* shortpath = NULL, *tmpstr = NULL, *tmpid = NULL;
 	struct mediadb *node = NULL, *cmediadb = NULL;
 
-	if(id != NULL);
+	if(id != NULL)
 		tmpid = ostrcat(tmpid, id, 1, 0);
 		
 	shortpath = delmountpart(path, 0);
