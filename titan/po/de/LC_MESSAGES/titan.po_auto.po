@@ -24,7 +24,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr " : Fehlerhaft!"
 
-#: security.h:683 security.h:2131
+#: security.h:683 security.h:2134
 msgid " Days "
 msgstr " Tage "
 
@@ -1090,7 +1090,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr "Atemio Hotline"
 
-#: security.h:2136
+#: security.h:2139
 msgid "Atemio free license"
 msgstr "Kostenlose Atemio Lizenz"
 
@@ -2451,7 +2451,7 @@ msgstr "Kopieren des Satelliten abgebrochen"
 msgid "Copy satlist successfull"
 msgstr "Satelliten erfolgreich kopiert"
 
-#: security.h:2145
+#: security.h:2148
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2830,7 +2830,7 @@ msgstr ""
 "Rot = Prozess beenden\n"
 "Grün = System neu starten"
 
-#: security.h:2138
+#: security.h:2141
 msgid "Dev free license"
 msgstr "Kostenlose Entwickler Lizenz"
 
@@ -3011,7 +3011,7 @@ msgstr "Unentschieden"
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2113
+#: security.h:2116
 msgid "Driver"
 msgstr "Treiber"
 
@@ -3271,7 +3271,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:34
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1952 service.h:774 service.h:1020
+#: security.h:668 security.h:685 security.h:1955 service.h:774 service.h:1020
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618
 #: skinadjust.h:659 skin_default_skin.xml.h:198 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -3563,7 +3563,7 @@ msgstr "Erweiterungen"
 msgid "Extensions List"
 msgstr "Erweiterungsliste"
 
-#: security.h:2102 security.h:2107
+#: security.h:2105 security.h:2110
 msgid "External Player"
 msgstr ""
 
@@ -4110,7 +4110,7 @@ msgstr ""
 msgid "Front Key"
 msgstr "Front Taste"
 
-#: security.h:2096
+#: security.h:2099
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4986,7 +4986,7 @@ msgstr ""
 "Sollten keine Windows Freigaben sichtbar sein, muss 'Passwortgeschützte "
 "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
-#: security.h:2084
+#: security.h:2087
 msgid "Image"
 msgstr ""
 
@@ -5205,7 +5205,7 @@ msgstr "SWAP Installation (USB oder HDD)"
 msgid "Installation start"
 msgstr "Installation gestartet"
 
-#: httpdfunc.h:5674 security.h:2091 skin_default_skin.xml.h:324
+#: httpdfunc.h:5674 security.h:2094 skin_default_skin.xml.h:324
 msgid "Installed:"
 msgstr "Installiert:"
 
@@ -5634,7 +5634,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2118
+#: security.h:2121
 msgid "License"
 msgstr "Lizenz"
 
@@ -6086,7 +6086,7 @@ msgstr "Menüliste"
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1674
 #: scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1716 scan.h:1978 scan.h:2069
-#: scan.h:2462 scart.h:12 scart.h:25 security.h:1952 service.h:774
+#: scan.h:2462 scart.h:12 scart.h:25 security.h:1955 service.h:774
 #: service.h:1020 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594
 #: skinadjust.h:610 skinadjust.h:618 skinadjust.h:659 skinadjust.h:676
 #: skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231 sock.h:954
@@ -6681,7 +6681,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1674 scan.h:1676 scan.h:1704 scan.h:1706 scan.h:1978
 #: scan.h:2069 scan.h:2462 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1952 service.h:774 service.h:1020 shared.h:29
+#: security.h:685 security.h:1955 service.h:774 service.h:1020 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610 skinadjust.h:618
 #: skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163
 #: skins_dlna_skin.xml.h:7 skinselector.h:231 skins_facebook_skin.xml.h:3
@@ -10572,7 +10572,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:681 security.h:2128
+#: security.h:681 security.h:2131
 msgid "Trial period ends in"
 msgstr "14 Tägige Testphase endet in"
 
@@ -10629,7 +10629,7 @@ msgstr ""
 "Aufnahme oder einer Streamwiedergabe nicht\n"
 "möglich ."
 
-#: security.h:2162 skin_default_skin.xml.h:693
+#: security.h:2165 skin_default_skin.xml.h:693
 msgid "Tunertype"
 msgstr "Tuner Typ"
 
@@ -10662,7 +10662,7 @@ msgstr "Typ:"
 msgid "Typenbezeichnung"
 msgstr ""
 
-#: security.h:2134
+#: security.h:2137
 msgid "UFS910 free license"
 msgstr "Kostenlose UFS910 Lizenz"
 
@@ -10849,7 +10849,7 @@ msgstr ""
 msgid "VLC Player"
 msgstr "Video abspielen"
 
-#: security.h:2087
+#: security.h:2090
 msgid "Version"
 msgstr ""
 
@@ -11940,7 +11940,7 @@ msgstr "Ereignis"
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2140
+#: security.h:2143
 msgid "expired"
 msgstr "abgelaufen"
 
@@ -13593,7 +13593,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2160 skin_default_skin.xml.h:705 skinselector.h:138 stream.h:22
+#: security.h:2163 skin_default_skin.xml.h:705 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13689,7 +13689,7 @@ msgstr "Benutzername"
 msgid "usessl"
 msgstr "SSL verwenden"
 
-#: security.h:2121
+#: security.h:2124
 msgid "valid"
 msgstr "gültig"
 
