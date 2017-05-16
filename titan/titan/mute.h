@@ -10,11 +10,13 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* mute = getscreen("mute");
 
+#ifndef SH4
 	if(getconfigint("ForwardVolume", NULL) == 1)
 	{
 		forwardKey(getrcconfigint("rcmute", NULL));
 		return;
 	}
+#endif
 	
 	if(getconfig("stepmute", NULL) == NULL)
 		addconfig("stepmute", "0");
