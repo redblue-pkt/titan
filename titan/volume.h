@@ -90,11 +90,13 @@ void screenvolume(int direction, int flag)
 //flag 2 = no framebuffer lock
 void screenvolumeup(struct skin* screen, struct skin* node, int screencalc, int filelistview, int flag)
 {
+#ifndef SH4
 	if(getconfigint("ForwardVolume", NULL) == 1)
 	{
 		forwardKey(getrcconfigint("rcvolup", NULL));
 		return;
 	}
+#endif
 	screenvolume(0, flag);
 }
 
@@ -102,11 +104,13 @@ void screenvolumeup(struct skin* screen, struct skin* node, int screencalc, int 
 //flag 2 = no framebuffer lock
 void screenvolumedown(struct skin* screen, struct skin* node, int screencalc, int filelistview, int flag)
 {
+#ifndef SH4	
 	if(getconfigint("ForwardVolume", NULL) == 1)
 	{
 		forwardKey(getrcconfigint("rcvoldown", NULL));
 		return;
 	}
+#endif
 	screenvolume(1, flag);
 }
 
