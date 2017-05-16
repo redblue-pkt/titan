@@ -10,7 +10,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* mute = getscreen("mute");
 
-#ifndef SH4
+#ifdef MIPSEL
 	if(getconfigint("ForwardVolume", NULL) == 1)
 	{
 		forwardKey(getrcconfigint("rcmute", NULL));
