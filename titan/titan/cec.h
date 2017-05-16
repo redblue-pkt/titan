@@ -326,6 +326,18 @@ void hdmiEvent()
 								sendMenuInfo(rxmessage.address);
 							break;
 						}
+						case 0x80:
+						{
+							if(rxmessage.data[3]== cec_physicalAddress[0] && rxmessage.data[4]== cec_physicalAddress[1])
+							{
+								sendswitch();
+								setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
+								reportPhysicalAddress(0);
+								sendMenuInfo(0x00);
+								setVolumeForward();
+							}
+							break;
+						}
 						case 0x82:
 						{
 						//cecon = 0;
