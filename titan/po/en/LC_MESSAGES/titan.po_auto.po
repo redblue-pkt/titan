@@ -7654,7 +7654,7 @@ msgstr ""
 msgid "Recall"
 msgstr ""
 
-#: cec.h:638
+#: cec.h:650
 msgid "Receiver"
 msgstr ""
 
@@ -9698,7 +9698,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: cec.h:639 channellist.h:742 channellist.h:1801 httpdfunc.h:286
+#: cec.h:651 channellist.h:742 channellist.h:1801 httpdfunc.h:286
 #: httpdfunc.h:696 scan.h:544 webif_index.atemio5200.h:68
 #: webif_index.atemio5200.h:74 webif_index.atemio5200.h:124
 #: webif_index.atemio6200.h:68 webif_index.atemio6200.h:74
@@ -12235,8 +12235,8 @@ msgstr "NFS Server"
 #: autotimer.c:486 avsettings.h:165 avsettings.h:250 avsettings.h:255
 #: avsettings.h:267 avsettings.h:279 avsettings.h:292 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
-#: blindscanadjust.h:191 cec.h:598 cec.h:602 cec.h:606 cec.h:610 cec.h:614
-#: cec.h:618 cec.h:622 cec.h:626 cec.h:630 dlna.h:276 epgsettings.h:135
+#: blindscanadjust.h:191 cec.h:610 cec.h:614 cec.h:618 cec.h:622 cec.h:626
+#: cec.h:630 cec.h:634 cec.h:638 cec.h:642 dlna.h:276 epgsettings.h:135
 #: epgsettings.h:188 epgsettings.h:197 epgsettings.h:201 epgsettings.h:206
 #: epgsettings.h:211 harddisk.h:236 harddisk.h:241 harddisk.h:255
 #: harddisk.h:260 harddisk.h:274 harddisk.h:279 harddisk.h:293 harddisk.h:298
@@ -12310,7 +12310,7 @@ msgstr ""
 msgid "non-version"
 msgstr ""
 
-#: cec.h:637 diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159
+#: cec.h:649 diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159
 #: transponder.h:222 transponder.h:232 transponder.h:329 transponder.h:347
 #: transponder.h:374 transponder.h:380
 msgid "none"
@@ -12358,7 +12358,7 @@ msgstr ""
 msgid "o"
 msgstr ""
 
-#: avsettings.h:73 avsettings.h:89 cec.h:594 cec.h:642 fancontrol.h:110
+#: avsettings.h:73 avsettings.h:89 cec.h:606 cec.h:654 fancontrol.h:110
 #: harddisk.h:929 httpdsettings.h:76 lnbconfig.h:144
 #: mc_iptvplayer_settings.h:53 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
@@ -12415,7 +12415,7 @@ msgstr "Older than 5 days"
 msgid "older 50 day"
 msgstr "Older than 50 days"
 
-#: avsettings.h:90 cec.h:595 cec.h:643 fancontrol.h:109 httpdsettings.h:77
+#: avsettings.h:90 cec.h:607 cec.h:655 fancontrol.h:109 httpdsettings.h:77
 #: lnbconfig.h:143 mc_pictureplayer_settings.h:35
 #: mc_pictureplayer_settings.h:39 readerconfig.h:424 skinadjust.h:93
 #: transponder.h:257 transponder.h:266 transponder.h:416 transponder.h:425
@@ -13639,8 +13639,8 @@ msgstr ""
 #: adjust.h:227 adjust.h:234 adjust.h:238 adjust.h:244 adjust.h:248
 #: autotimer.c:454 autotimer.c:487 avsettings.h:166 avsettings.h:251
 #: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
-#: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:599 cec.h:603 cec.h:607
-#: cec.h:611 cec.h:615 cec.h:619 cec.h:623 cec.h:627 cec.h:631 dlna.h:277
+#: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:611 cec.h:615 cec.h:619
+#: cec.h:623 cec.h:627 cec.h:631 cec.h:635 cec.h:639 cec.h:643 dlna.h:277
 #: epgsettings.h:136 epgsettings.h:189 epgsettings.h:198 harddisk.h:235
 #: harddisk.h:242 harddisk.h:254 harddisk.h:261 harddisk.h:273 harddisk.h:280
 #: harddisk.h:292 harddisk.h:299 httpdfunc.h:3936 httpdfunc.h:3988
