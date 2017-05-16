@@ -77,6 +77,7 @@ void sendswitch()
 	data[0] = cec_physicalAddress[0];
 	data[1] = cec_physicalAddress[1];
 	data[2] = '\0';
+	//if(getconfigint("cec_tv_switch", NULL) == 1)
 	sendMessage(address, cmd, data, 2);
 }
 
@@ -85,6 +86,15 @@ int translateKey(unsigned char code)
 	int key = 0;
 	switch (code)
 	{
+		case 0x09:
+			key = 0x8b;
+			break;
+		case 0x0A:
+			key = 0x18e;
+			break;
+		case 0x0B:
+			key = 0x166;
+			break;
 		case 0x32:
 			key = 0x8b;
 			break;
@@ -320,11 +330,15 @@ void hdmiEvent()
 						{
 						//cecon = 0;
 						//sendTVon();
-						sendswitch();
-						setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
-						reportPhysicalAddress(0);
-						sendMenuInfo(0x00);
-						setVolumeForward();
+							if(rxmessage.data[1]== cec_physicalAddress[0] && rxmessage.data[2]== cec_physicalAddress[1])
+							{
+								sendswitch();
+								setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
+								reportPhysicalAddress(0);
+								sendMenuInfo(0x00);
+								setVolumeForward();
+							}
+							break;
 						}
 						case 0x00: /* feature abort */
 						{
