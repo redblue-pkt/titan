@@ -826,10 +826,10 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 			if(node->adapter != dvbnode->adapter || node->devnr != dvbnode->devnr)
 			{
 				//printf("++++ node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
-				if(checkbox("DM900") != 1 || dvbnode->devnr == 0)
+				if((checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1) || dvbnode->devnr == 0)
 				{
 					tmpnr = oitoa(dvbnode->adapter);
-					if(checkbox("DM900") != 1)
+					if(checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1)
 						*loopstr = ostrcat(*loopstr, _("loop to Tuner"), 1, 0);
 					else
 						*loopstr = ostrcat(*loopstr, _("internal loop to Tuner"), 1, 0);

@@ -989,7 +989,7 @@ unsigned long getsysinfo()
 
 void destroy()
 {
-	if(checkrealbox("DM7020HD") == 1 || checkrealbox("DM900") == 1)
+	if(checkrealbox("DM7020HD") == 1 || checkrealbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		return;
 
 	FILE* fd = NULL;

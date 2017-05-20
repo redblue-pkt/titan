@@ -626,7 +626,7 @@ int main(int argc, char *argv[])
 	ret = setaudiosource(getconfig("av_audiosource", NULL));
 	ret = setac3(getconfig("av_ac3mode", NULL));
 
-	if(checkbox("DM900") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 	{
 		if(getconfig("av_ac3plusmode", NULL) == NULL)
 			addconfig("av_ac3plusmode", "force_ac3");
@@ -656,7 +656,7 @@ int main(int argc, char *argv[])
 		ret = system("mount | grep titan");
   
 #ifndef SIMULATE
-	if(checkrealbox("DM900") == 1)
+	if(checkrealbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		ret = 0;
 
 	// set pvr 1 = allowed , 0 = disabled
@@ -795,7 +795,7 @@ int main(int argc, char *argv[])
 
 #ifdef MIPSEL
 	waitvsync();
-	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0)
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 		setfbosd();
 	status.usedirectfb = 1;
 #endif
@@ -1025,7 +1025,7 @@ int main(int argc, char *argv[])
 				writeallconfig(1);				
 			}
 		}
-		if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900"))
+		if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		{
 			addconfig("remotecontrol", "0");
 			writeallconfig(1);	
