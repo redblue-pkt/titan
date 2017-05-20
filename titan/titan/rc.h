@@ -242,7 +242,7 @@ int flushrc(unsigned int timeout)
 
 void rcsignal(int flag)
 {
-	if(checkbox("DM900") == 1 && status.standby == 0)
+	if((checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && status.standby == 0)
 	{
 		int art = getconfigint("dm900frontrun", NULL);
 		if(flag == 1)

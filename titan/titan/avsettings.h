@@ -180,7 +180,7 @@ void screenavsettings(int flag)
 	setchoiceboxselection(aacmode, ret);
 	free(ret); ret = NULL;
 	
-	if(checkbox("DM900") == 1 && ac3plusmode != NULL)
+	if((checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && ac3plusmode != NULL)
 	{
 		ac3plusmode->hidden = NO;
 		dtshdmode->hidden = NO;

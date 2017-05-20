@@ -173,7 +173,7 @@ void settunerstatus()
 		//FRONTENDDEV first in the list
 		if(dvbnode->type != FRONTENDDEV) break;
 
-		if(checkbox("DM900") == 1)
+		if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		{
 			if(ostrcmp("fe_01", dvbnode->feshortname) == 0)
 			{

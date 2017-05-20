@@ -24,7 +24,7 @@ BOXNAME=${18}
 TYPE1=${19}
 
 DREAM="NOTDREAM"
-if [ "$BOX" == "dm900" ];then
+if [ "$BOX" == "dm900" ] || [ "$BOX" == "dm520" ] || [ "$BOX" == "dm525" ];then
 	DREAM="DREAMBOX"
 fi
 
@@ -219,7 +219,7 @@ if [ "$GROUP" = "dev" ]; then
 	eplayerinclude="$HOME"/flashimg/source.titan/libeplayer3/include
 else
 	if [ "$EXTEPLAYER3" = "1" ];then
-	    devflag="-DBETA -DEXTEPLAYER3"
+	    devflag="-DEXTEPLAYER3"
 		eplayer=EPLAYER3
 		eplayerlib=eplayer3
 		eplayerinclude="$HOME"/flashimg/source.titan/libeplayer3/include

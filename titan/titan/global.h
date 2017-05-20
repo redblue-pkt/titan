@@ -5004,7 +5004,7 @@ int setprogress(int value)
 	if(progressdev != NULL)
 	{
 		debug(100, "set %s to %d",progressdev, value);
-		if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1)
+		if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 			return writesysint(progressdev, value, 1);
 		else
 			return writesysint(progressdev, value, 0);
@@ -7642,7 +7642,7 @@ char* create_backup(char* input, int flag)
 	int merksec = status.sec;
 
 	status.sec = 0; //deaktivate spinner
-	if(checkbox("DM900") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		cmd = ostrcat(cmd, "backupdream.sh ", 1, 0);
 	else
 		cmd = ostrcat(cmd, "backup.sh ", 1, 0);

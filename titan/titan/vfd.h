@@ -236,7 +236,7 @@ int writevfd(char *value)
 
 	if(status.updatevfd == STOP) return 0;
 	
-	if(checkbox("TF7700"))
+	if(checkbox("TF7700") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		return writevfdioctl(value);
 		
 	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1) //inihdp

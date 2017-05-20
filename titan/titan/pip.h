@@ -511,7 +511,7 @@ void pipmenu()
 	int dst_left = getconfigint("pip_dst_left", NULL);
 	int dst_top = getconfigint("pip_dst_top", NULL);
 
-	if(checkbox("DM900") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 	{
 		b3->hidden = YES;
 		hdmi->hidden = YES;
@@ -557,7 +557,7 @@ void pipmenu()
 			addconfigint("pip_dst_top", dst_top);
 			break;
 		}
-		if(checkbox("DM900") != 1)
+		if(checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1)
 		{
 			if(rcret == getrcconfigint("rcred", NULL))
 			{
