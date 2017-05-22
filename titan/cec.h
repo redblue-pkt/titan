@@ -2,6 +2,7 @@
 #define CEC_H
 
 int cecon = 0;
+
 struct stimerthread* hdmiEventthread = NULL;
 
 
@@ -241,7 +242,6 @@ void setVolumeForward()
 		cmd = 0x7d;
 		data[0] = '\0';
 		sendMessage(address, cmd, data, strlen(data));
-
 	}
 }
 
@@ -330,11 +330,11 @@ void hdmiEvent()
 						{
 							if(rxmessage.data[3]== cec_physicalAddress[0] && rxmessage.data[4]== cec_physicalAddress[1])
 							{
-								sendswitch();
-								setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
-								reportPhysicalAddress(0);
-								sendMenuInfo(0x00);
-								setVolumeForward();
+								//sendswitch();
+								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
+								//reportPhysicalAddress(0);
+								//sendMenuInfo(0x00);
+								//setVolumeForward();
 							}
 							break;
 						}
@@ -343,6 +343,14 @@ void hdmiEvent()
 						//cecon = 0;
 						//sendTVon();
 							if(rxmessage.data[1]== cec_physicalAddress[0] && rxmessage.data[2]== cec_physicalAddress[1])
+							{
+								sendswitch();
+								setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
+								reportPhysicalAddress(0);
+								sendMenuInfo(0x00);
+								setVolumeForward();
+							}
+							else if(rxmessage.data[1]== 0x00 && rxmessage.data[2]== 0x00)
 							{
 								sendswitch();
 								setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
