@@ -2627,7 +2627,7 @@ char** playergettracklist(int type)
 					if (tags && GST_IS_TAG_LIST(tags))
 #endif
 					{
-						if(gst_tag_list_get_string(tags, GST_TAG_SUBTITLE_CODEC, &g_codec));
+						if(gst_tag_list_get_string(tags, GST_TAG_SUBTITLE_CODEC, &g_codec))
 						{
 							printf("SubTitle Codec: %s\n", g_codec);
 							tmpstr = ostrcat(oitoa(i), ": ", 1, 0);
@@ -2684,7 +2684,7 @@ char** playergettracklist(int type)
 					if (tags && GST_IS_TAG_LIST(tags))
 #endif
 					{
-						if(gst_tag_list_get_string(tags, GST_TAG_VIDEO_CODEC, &g_codec));
+						if(gst_tag_list_get_string(tags, GST_TAG_VIDEO_CODEC, &g_codec))
 						{
 							printf("Video Codec: %s\n", g_codec);
 							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
@@ -2783,6 +2783,7 @@ unsigned long long playergetpts2()
 {
 	int64_t pts = 0;
 	int64_t sec = 0;
+	sec = 0;
 
 #ifdef EPLAYER3
 	if(player && player->playback)
