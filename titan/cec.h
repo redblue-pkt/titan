@@ -2,6 +2,7 @@
 #define CEC_H
 
 int cecon = 0;
+int sreq = 0;
 
 struct stimerthread* hdmiEventthread = NULL;
 
@@ -350,13 +351,14 @@ void hdmiEvent()
 								sendMenuInfo(0x00);
 								setVolumeForward();
 							}
-							else if(rxmessage.data[1]== 0x00 && rxmessage.data[2]== 0x00)
+							else if(rxmessage.data[1]== 0x00 && rxmessage.data[2]== 0x00 && sreq == 1)
 							{
 								sendswitch();
 								setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
 								reportPhysicalAddress(0);
 								sendMenuInfo(0x00);
 								setVolumeForward();
+								sreq = 0;
 							}
 							break;
 						}
@@ -393,6 +395,7 @@ void hdmiEvent()
 						}
 						case 0x85: /* request active source */
 						{
+							sreq = 1;
 							sendSource(rxmessage.address);
 							break;
 						}
@@ -796,6 +799,8 @@ void cecinit()
 	cec_physicalAddress[1] = 0x00;
 	cec_logicalAddress = 1;
 	cec_deviceType = 1; /* default: recorder */
+	
+	sreq = 0;
 	
 	if(getconfigint("cec_on", NULL) == 0)
 	{
