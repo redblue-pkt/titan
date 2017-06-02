@@ -331,11 +331,12 @@ void hdmiEvent()
 						{
 							if(rxmessage.data[3]== cec_physicalAddress[0] && rxmessage.data[4]== cec_physicalAddress[1])
 							{
+								sendSource(rxmessage.address);
 								//sendswitch();
 								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
 								//reportPhysicalAddress(0);
-								//sendMenuInfo(0x00);
-								//setVolumeForward();
+								sendMenuInfo(0x00);
+								setVolumeForward();
 							}
 							break;
 						}
@@ -345,17 +346,18 @@ void hdmiEvent()
 						//sendTVon();
 							if(rxmessage.data[1]== cec_physicalAddress[0] && rxmessage.data[2]== cec_physicalAddress[1])
 							{
-								sendswitch();
-								setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
-								reportPhysicalAddress(0);
-								sendMenuInfo(0x00);
-								setVolumeForward();
+								//sendswitch();
+								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
+								//reportPhysicalAddress(0);
+								//sendMenuInfo(0x00);
+								//setVolumeForward();
 							}
 							else if(rxmessage.data[1]== 0x00 && rxmessage.data[2]== 0x00 && sreq == 1)
 							{
-								sendswitch();
-								setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
-								reportPhysicalAddress(0);
+								sendSource(rxmessage.address);
+								//sendswitch();
+								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
+								//reportPhysicalAddress(0);
 								sendMenuInfo(0x00);
 								setVolumeForward();
 								sreq = 0;
