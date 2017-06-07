@@ -68,8 +68,8 @@ BEGIN { table = ""
         next
       }
 /^\}/ { if (table == "videos") {
-#           print title "#" SRC " " SRC " play video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
-           print title "#" SRC " " SRC " hosterlist " id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#0"
+           print title "#" SRC " " SRC " play video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
+#           print title "#" SRC " " SRC " hosterlist " id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#0"
 
            title = ""
            id = ""
