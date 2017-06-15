@@ -3,6 +3,7 @@
 
 int cecon = 0;
 int sreq = 0;
+int actsource = 0;
 
 struct stimerthread* hdmiEventthread = NULL;
 
@@ -44,6 +45,17 @@ void sendVendorid(unsigned char address)
 void sendSource(unsigned char address)
 {
 	unsigned char cmd = 0x82;
+	char data[4];
+	
+	data[0] = cec_physicalAddress[0];
+	data[1] = cec_physicalAddress[1];
+	data[2] = '\0';
+	sendMessage(address, cmd, data, 2);
+}
+
+void stopSource(unsigned char address)
+{
+	unsigned char cmd = 0x9d;
 	char data[4];
 	
 	data[0] = cec_physicalAddress[0];
@@ -331,36 +343,35 @@ void hdmiEvent()
 						{
 							if(rxmessage.data[3]== cec_physicalAddress[0] && rxmessage.data[4]== cec_physicalAddress[1])
 							{
-								sendSource(rxmessage.address);
+								actsource = 1;
+								//sendSource(rxmessage.address);
+								sendSource(0x0f);
 								//sendswitch();
 								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
 								//reportPhysicalAddress(0);
 								sendMenuInfo(0x00);
 								setVolumeForward();
 							}
+							else
+								actsource = 0;
 							break;
 						}
 						case 0x82:
+						case 0x86: /* Set Stream Path */
 						{
 						//cecon = 0;
 						//sendTVon();
 							if(rxmessage.data[1]== cec_physicalAddress[0] && rxmessage.data[2]== cec_physicalAddress[1])
 							{
-								//sendswitch();
-								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
-								//reportPhysicalAddress(0);
-								//sendMenuInfo(0x00);
-								//setVolumeForward();
-							}
-							else if(rxmessage.data[1]== 0x00 && rxmessage.data[2]== 0x00 && sreq == 1)
-							{
-								sendSource(rxmessage.address);
-								//sendswitch();
+								actsource = 1;
 								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
 								//reportPhysicalAddress(0);
 								sendMenuInfo(0x00);
 								setVolumeForward();
-								sreq = 0;
+							}
+							else 
+							{
+								actsource = 0;
 							}
 							break;
 						}
@@ -397,8 +408,12 @@ void hdmiEvent()
 						}
 						case 0x85: /* request active source */
 						{
-							sreq = 1;
-							sendSource(rxmessage.address);
+							if(actsource == 1)
+							{
+								sreq = 1;
+								//sendSource(rxmessage.address);
+								sendSource(0x0f);
+							}
 							break;
 						}
 						case 0x9f: /* request cec version */
@@ -460,6 +475,7 @@ void sendMessageReal_thread(struct stimerthread* timernode, struct cec_message* 
 	int i = 0;
 	if (status.hdmiFd >= 0)
 	{
+		usleep(200000);
 		printf("HdmiCEC: send message\n");
 		printf("%02x ", message->address);
 		for(i = 0; i < message->length; i++)
@@ -471,6 +487,16 @@ void sendMessageReal_thread(struct stimerthread* timernode, struct cec_message* 
 #ifdef DREAMBOX
 		message->flag = 1;
 		ret = ioctl(status.hdmiFd, 3, message);
+		if(ret == -1)
+		{
+			usleep(500000);
+			ret = ioctl(status.hdmiFd, 3, message);
+		}	
+		if(ret == -1)
+		{
+			usleep(500000);
+			ret = ioctl(status.hdmiFd, 3, message);
+		}	
 		if(ret == 0)
 			ret = 1 + message->length;
 #else
@@ -479,7 +505,6 @@ void sendMessageReal_thread(struct stimerthread* timernode, struct cec_message* 
 		printf("%i Bytes wurden gesendet\n", ret);
 	}
 	free(message); message=NULL;
-	usleep(100000);
 	m_unlock(&status.cecmutex, 26);
 }
 
@@ -803,6 +828,7 @@ void cecinit()
 	cec_deviceType = 1; /* default: recorder */
 	
 	sreq = 0;
+	actsource = 0;
 	
 	if(getconfigint("cec_on", NULL) == 0)
 	{
@@ -877,23 +903,22 @@ void cecwakeup()
 	
 	if(getconfigint("cec_on", NULL) == 1 && cecon == 0)
 	{
+		setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
+		
 		if(getconfigint("cec_all_on", NULL) == 1)
 		{
 			address = 0x0f;
 			sendMessage(address, cmd, data, 0);
-			//sleep(1);
 		}
 		if(getconfigint("cec_rec_on", NULL) == 1)
 		{
 			address = 0x05;
 			sendMessage(address, cmd, data, 0);
-			//sleep(1);
 		}
 		if(getconfigint("cec_tv_on", NULL) == 1)
 		{	
 			address = 0x00;
 			sendMessage(address, cmd, data, 0);
-			//sleep(1);
 		}
 		if(getconfigint("cec_tv_switch", NULL) == 1)
 		{			
@@ -903,18 +928,15 @@ void cecwakeup()
 			data[1] = cec_physicalAddress[1];
 			data[2] = '\0';
 			sendMessage(address, cmd, data, 2);
-			//sleep(1);
+			actsource = 1;
 		}
+		sendMenuInfo(0x00);
+		setVolumeForward();
 		cecon = 1;
 		printf("**********wakeup\n");	
 	}
 	if(cecon < 2)
-	{
-		//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
-		//setVolumeForward();
-		//sendMenuInfo(0x00);
 		cecon = 2;
-	}
 }
 
 void forwardKey(int key)
