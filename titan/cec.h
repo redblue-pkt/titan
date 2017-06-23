@@ -223,12 +223,10 @@ int translateKey(unsigned char code)
 	
 void setVolumeForward()
 {
-	unsigned char address = 0x00;
+	unsigned char address = 0x05;
 	unsigned char cmd = 0x7d;
 	char data[2];
-	data[0] = '\0';
-	
-	addconfiginttmp("ForwardVolume", 1);
+
 	data[0] = '\0';	
 	if(getconfigint("cec_volume", NULL) > 0)
 	{
@@ -236,22 +234,7 @@ void setVolumeForward()
 			address = 0x05;
 		if(getconfigint("cec_volume", NULL) == 2)
 			address = 0x00;
-		
-		//cmd = 0x72;
-		//data[0] = 0x01;
-		//data[1] = '\0';
-		//m_lock(&status.cecmutex, 26);
-		//sendMessage(address, cmd, data, strlen(data));
-		//m_unlock(&status.cecmutex, 26);
-		
-		//cmd = 0x70;
-		//data[0] = 0x02;
-		//data[1] = 0x00;
-		//data[2] = '\0';
-		//m_lock(&status.cecmutex, 26);
-		//sendMessage(address, cmd, data, 2);
-		//m_unlock(&status.cecmutex, 26);
-		
+		addconfiginttmp("ForwardVolume", 1);
 		cmd = 0x7d;
 		data[0] = '\0';
 		sendMessage(address, cmd, data, strlen(data));
