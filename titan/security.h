@@ -1996,11 +1996,11 @@ struct update* createupdatelist(int mode)
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, newnode->auth, 1, 0);
-		if(newnode->imgtype == 1)
-			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
-		else
+//		if(newnode->imgtype == 1)
+//			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
+//		else
 			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-		system(cmd);
+//		system(cmd);
 		free(cmd),cmd = NULL;
 
 		newnode->skinname = "systemupdate_flash_online_menu";
