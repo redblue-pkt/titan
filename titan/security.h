@@ -2004,14 +2004,20 @@ struct update* createupdatelist(int mode)
 		free(cmd),cmd = NULL;
 
 		newnode->skinname = "systemupdate_flash_online_menu";
-		newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi *.zip", 1, 0);
+		if(checkrealbox("DM520") == 1)
+			newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi", 1, 0);
+		else
+			newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi *.zip", 1, 0);
 		newnode->filepath = ostrcat(newnode->filepath, "/tmp/online", 1, 0);
 		newnode->type = ostrcat(newnode->type, "online", 1, 0);
 	}
 	else if (mode == 1)
 	{
 		newnode->skinname = "systemupdate_flash_tmp_menu";
-		newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi *.zip", 1, 0);
+		if(checkrealbox("DM520") == 1)
+			newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi", 1, 0);
+		else
+			newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi *.zip", 1, 0);
 		if(file_exist("/var/backup"))
 			newnode->filepath = ostrcat(newnode->filepath, "/var/backup", 1, 0);
 		else
