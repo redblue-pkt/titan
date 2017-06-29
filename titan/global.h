@@ -7642,7 +7642,7 @@ char* create_backup(char* input, int flag)
 	int merksec = status.sec;
 
 	status.sec = 0; //deaktivate spinner
-	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+	if(checkbox("DM900") == 1)
 		cmd = ostrcat(cmd, "backupdream.sh ", 1, 0);
 	else
 		cmd = ostrcat(cmd, "backup.sh ", 1, 0);

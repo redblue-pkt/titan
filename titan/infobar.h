@@ -1109,7 +1109,7 @@ void screeninfobar()
 				}
 			}
 		}
-		// pip atemio7600 ??
+		// pip atemio7600 / dm520 ??
 		if((rcret == getrcconfigint("rcpip", NULL) || rcret == getrcconfigint("rcpiprec", NULL)) && (checkchipset("BCM7424") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("UFS922") == 1 || checkbox("UFS913") == 1 || checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1))
 		{
 			if(status.pipservice->videodev == NULL)
