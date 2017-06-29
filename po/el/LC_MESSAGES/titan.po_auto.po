@@ -139,13 +139,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1261
+#: titan.c:1262
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1244
+#: titan.c:1245
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1184,7 +1184,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1322
+#: titan.c:1323
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -2152,7 +2152,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:1019
+#: titan.c:1020
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -3226,8 +3226,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:252 system_update.h:258
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:1079 titan.c:1088 titan.c:1217
-#: titan.c:1238 titan.c:1244 titan.c:1255 titan.c:1261 tithek.c:103
+#: timeshiftsettings.h:45 titan.c:282 titan.c:1080 titan.c:1089 titan.c:1218
+#: titan.c:1239 titan.c:1245 titan.c:1256 titan.c:1262 tithek.c:103
 #: tithek_global.h:207 tithek.h:742 tithek.h:1338 tithek.h:1399 tithek.h:1532
 #: tithek.h:1541 tithek.h:1758 tithek.h:1780 tithek.h:1797 tithek.h:2029
 #: tithek.h:2189 tithek.h:2474 tithek.h:2518 tithek.h:2534 tithek.h:2546
@@ -3235,7 +3235,7 @@ msgstr ""
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:956 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:674 tunerconfig.h:958 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -3406,27 +3406,27 @@ msgstr ""
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: titan.c:885
+#: titan.c:886
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:873
+#: titan.c:874
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:867
+#: titan.c:868
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:879
+#: titan.c:880
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:861
+#: titan.c:862
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:908
+#: titan.c:909
 msgid "Error: skin not found !!"
 msgstr ""
 
@@ -3759,7 +3759,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1079
+#: titan.c:1080
 msgid "First Wizzard"
 msgstr "Βοηθός εγκατάστασης"
 
@@ -3961,13 +3961,13 @@ msgstr "maxrate"
 msgid "Free Space"
 msgstr "Ελεύθερη μνήμη"
 
-#: titan.c:1255
+#: titan.c:1256
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1238
+#: titan.c:1239
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4840,7 +4840,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1088 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1089 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5918,14 +5918,14 @@ msgstr ""
 #: system_backup_restore.h:82 system_update.h:252 system_update.h:258
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:1217 titan.c:1238 titan.c:1244
-#: titan.c:1255 titan.c:1261 tithek.c:103 tithek_global.h:207 tithek.h:742
+#: timeshiftsettings.h:45 titan.c:282 titan.c:1218 titan.c:1239 titan.c:1245
+#: titan.c:1256 titan.c:1262 tithek.c:103 tithek_global.h:207 tithek.h:742
 #: tithek.h:1338 tithek.h:1399 tithek.h:1532 tithek.h:1541 tithek.h:1758
 #: tithek.h:1780 tithek.h:2029 tithek.h:2189 tithek.h:2474 tithek.h:2518
 #: tithek.h:2534 tithek.h:2546 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
 #: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:655
-#: tunerconfig.h:674 tunerconfig.h:956 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:674 tunerconfig.h:958 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -6515,15 +6515,15 @@ msgstr ""
 #: system_update.h:258 system_update.h:268 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:1079 titan.c:1088 titan.c:1217 titan.c:1238 titan.c:1244
-#: titan.c:1255 titan.c:1261 tithek.c:103 tithek_global.h:207 tithek.h:742
+#: titan.c:1080 titan.c:1089 titan.c:1218 titan.c:1239 titan.c:1245
+#: titan.c:1256 titan.c:1262 tithek.c:103 tithek_global.h:207 tithek.h:742
 #: tithek.h:1338 tithek.h:1399 tithek.h:1532 tithek.h:1541 tithek.h:1758
 #: tithek.h:1780 tithek.h:1797 tithek.h:2029 tithek.h:2189 tithek.h:2474
 #: tithek.h:2518 tithek.h:2534 tithek.h:2546 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:956
+#: tsSchnitt.c:347 tunerconfig.h:655 tunerconfig.h:674 tunerconfig.h:958
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
 #: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
@@ -7653,7 +7653,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr ""
 
-#: titan.c:1217
+#: titan.c:1218
 msgid "Receiver successful unlocked"
 msgstr ""
 
@@ -7809,11 +7809,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:1012
+#: titan.c:1013
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:1011
+#: titan.c:1012
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -8748,7 +8748,7 @@ msgstr ""
 msgid "Select Unicable Manufacturer"
 msgstr ""
 
-#: titan.c:1019
+#: titan.c:1020
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8898,7 +8898,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 03.10.2016"
 msgstr ""
 
-#: titan.c:1079
+#: titan.c:1080
 msgid "Settings OK ?"
 msgstr "Ρυθμίσεις"
 
@@ -10409,7 +10409,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr ""
 
-#: tunerconfig.h:956
+#: tunerconfig.h:958
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -10525,7 +10525,7 @@ msgstr ""
 msgid "Unitymedia NRW | 3.12.2016 (caliban)"
 msgstr ""
 
-#: titan.c:1320
+#: titan.c:1321
 msgid "Unknown Error."
 msgstr ""
 
@@ -11968,7 +11968,7 @@ msgstr ""
 msgid "intern"
 msgstr ""
 
-#: tunerconfig.h:835
+#: tunerconfig.h:837
 msgid "internal loop to Tuner"
 msgstr ""
 
@@ -12088,7 +12088,7 @@ msgstr ""
 msgid "logo"
 msgstr ""
 
-#: tunerconfig.h:833
+#: tunerconfig.h:835
 msgid "loop to Tuner"
 msgstr ""
 
@@ -12365,7 +12365,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421 settings_autostart.h:53
 #: settings_overclocking.h:276 skinadjust.h:94 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:851
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:853
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115 vfdisplay.h:130
 #: vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
