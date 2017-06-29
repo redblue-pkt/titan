@@ -656,8 +656,7 @@ int main(int argc, char *argv[])
 		ret = system("mount | grep titan");
   
 #ifndef SIMULATE
-//	if(checkrealbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
-	if(checkrealbox("DM900") == 1)
+	if(checkrealbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		ret = 0;
 
 	// set pvr 1 = allowed , 0 = disabled
