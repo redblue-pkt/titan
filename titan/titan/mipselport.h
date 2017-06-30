@@ -1,7 +1,15 @@
 #ifndef MIPSELPORT_H
 #define MIPSELPORT_H
 
-#ifndef FBIO_BLIT
+#ifdef CONFIG_ION
+
+#include <lib/gdi/accel.h>
+#include <interfaces/ion.h>
+#define ION_HEAP_TYPE_BMEM      (ION_HEAP_TYPE_CUSTOM + 1)
+#define ION_HEAP_ID_MASK        (1 << ION_HEAP_TYPE_BMEM)
+#define ACCEL_MEM_SIZE          (32*1024*1024)
+
+#elif !defined(FBIO_BLIT)
 //#define FBIO_SET_MANUAL_BLIT _IOW('F', 0x20, __u32)
 #define FBIO_SET_MANUAL_BLIT _IOW('F', 0x21, __u8)
 #define FBIO_BLIT 0x22
