@@ -36,7 +36,7 @@ msgstr ""
 msgid " New: "
 msgstr ""
 
-#: titan.c:282
+#: titan.c:285
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
@@ -139,13 +139,13 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1261
+#: titan.c:1264
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1244
+#: titan.c:1247
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1198,7 +1198,7 @@ msgstr "Tự động dò"
 msgid "Automatic start last subtitle"
 msgstr "Tự động bắt đầu phụ đề"
 
-#: titan.c:1322
+#: titan.c:1325
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
@@ -2175,7 +2175,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:1019
+#: titan.c:1022
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -3263,8 +3263,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: system_backup_restore.h:95 system_update.h:252 system_update.h:258
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:1079 titan.c:1088 titan.c:1217
-#: titan.c:1238 titan.c:1244 titan.c:1255 titan.c:1261 tithek.c:103
+#: timeshiftsettings.h:45 titan.c:285 titan.c:1082 titan.c:1091 titan.c:1220
+#: titan.c:1241 titan.c:1247 titan.c:1258 titan.c:1264 tithek.c:103
 #: tithek_global.h:207 tithek.h:742 tithek.h:1338 tithek.h:1399 tithek.h:1532
 #: tithek.h:1541 tithek.h:1758 tithek.h:1780 tithek.h:1797 tithek.h:2029
 #: tithek.h:2189 tithek.h:2474 tithek.h:2518 tithek.h:2534 tithek.h:2546
@@ -3445,27 +3445,27 @@ msgstr ""
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: titan.c:885
+#: titan.c:888
 msgid "Error: no audio device found !!"
 msgstr " Lỗi: không tìm thấy thiết bị audio!!"
 
-#: titan.c:873
+#: titan.c:876
 msgid "Error: no demux device found !!"
 msgstr "Lỗi: không tìm thấy các thiết bị tách kênh!"
 
-#: titan.c:867
+#: titan.c:870
 msgid "Error: no frontend device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị vào!"
 
-#: titan.c:879
+#: titan.c:882
 msgid "Error: no video device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị video !!"
 
-#: titan.c:861
+#: titan.c:864
 msgid "Error: open rc device !!"
 msgstr " Lỗi: mở thiết bị rc !"
 
-#: titan.c:908
+#: titan.c:911
 msgid "Error: skin not found !!"
 msgstr "Lỗi: không tìm thấy nền!"
 
@@ -3798,7 +3798,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1079
+#: titan.c:1082
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
@@ -4000,7 +4000,7 @@ msgstr "Tỷ lệ lớn nhất"
 msgid "Free Space"
 msgstr "Dung lượng còn trống"
 
-#: titan.c:1255
+#: titan.c:1258
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -4008,7 +4008,7 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1238
+#: titan.c:1241
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4885,7 +4885,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Audio AC3 %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1088 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1091 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5963,8 +5963,8 @@ msgstr ""
 #: system_backup_restore.h:82 system_update.h:252 system_update.h:258
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:1217 titan.c:1238 titan.c:1244
-#: titan.c:1255 titan.c:1261 tithek.c:103 tithek_global.h:207 tithek.h:742
+#: timeshiftsettings.h:45 titan.c:285 titan.c:1220 titan.c:1241 titan.c:1247
+#: titan.c:1258 titan.c:1264 tithek.c:103 tithek_global.h:207 tithek.h:742
 #: tithek.h:1338 tithek.h:1399 tithek.h:1532 tithek.h:1541 tithek.h:1758
 #: tithek.h:1780 tithek.h:2029 tithek.h:2189 tithek.h:2474 tithek.h:2518
 #: tithek.h:2534 tithek.h:2546 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
@@ -6566,9 +6566,9 @@ msgstr ""
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:252
 #: system_update.h:258 system_update.h:268 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:1079 titan.c:1088 titan.c:1217 titan.c:1238 titan.c:1244
-#: titan.c:1255 titan.c:1261 tithek.c:103 tithek_global.h:207 tithek.h:742
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
+#: titan.c:1082 titan.c:1091 titan.c:1220 titan.c:1241 titan.c:1247
+#: titan.c:1258 titan.c:1264 tithek.c:103 tithek_global.h:207 tithek.h:742
 #: tithek.h:1338 tithek.h:1399 tithek.h:1532 tithek.h:1541 tithek.h:1758
 #: tithek.h:1780 tithek.h:1797 tithek.h:2029 tithek.h:2189 tithek.h:2474
 #: tithek.h:2518 tithek.h:2534 tithek.h:2546 tiwakeup.h:66 tiwakeup.h:68
@@ -7713,7 +7713,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Đầu thu đang khởi động lại !!!"
 
-#: titan.c:1217
+#: titan.c:1220
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
@@ -7869,11 +7869,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:1012
+#: titan.c:1015
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:1011
+#: titan.c:1014
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -8808,7 +8808,7 @@ msgstr "Lựa chọn đường dẫn"
 msgid "Select Unicable Manufacturer"
 msgstr "Nhà sản xuất cáp đơn"
 
-#: titan.c:1019
+#: titan.c:1022
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8958,7 +8958,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 03.10.2016"
 msgstr ""
 
-#: titan.c:1079
+#: titan.c:1082
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
@@ -10592,7 +10592,7 @@ msgstr ""
 msgid "Unitymedia NRW | 3.12.2016 (caliban)"
 msgstr ""
 
-#: titan.c:1320
+#: titan.c:1323
 msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
