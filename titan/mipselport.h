@@ -10,9 +10,11 @@
 #define ACCEL_MEM_SIZE          (32*1024*1024)
 
 #elif !defined(FBIO_BLIT)
+
 //#define FBIO_SET_MANUAL_BLIT _IOW('F', 0x20, __u32)
 #define FBIO_SET_MANUAL_BLIT _IOW('F', 0x21, __u8)
 #define FBIO_BLIT 0x22
+
 #endif
 
 #ifndef FBIO_WAITFORVSYNC

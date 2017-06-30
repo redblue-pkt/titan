@@ -194,6 +194,10 @@ struct fb* openfb(char *fbdev, int devnr)
 		return NULL;
 	}
 
+#ifdef CONFIG_ION
+	int ion;
+#endif
+
 #ifndef NOFB
 	fd = open(fbdev, O_RDWR);
 
