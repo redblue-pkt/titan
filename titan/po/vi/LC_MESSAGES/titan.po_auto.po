@@ -24,7 +24,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: security.h:683 security.h:2140
+#: security.h:683 security.h:2134
 msgid " Days "
 msgstr ""
 
@@ -1087,7 +1087,7 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr ""
 
-#: security.h:2145
+#: security.h:2139
 msgid "Atemio free license"
 msgstr ""
 
@@ -2420,7 +2420,7 @@ msgstr ""
 msgid "Copy satlist successfull"
 msgstr ""
 
-#: security.h:2154
+#: security.h:2148
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2800,7 +2800,7 @@ msgstr ""
 "KẾT THÚC QUÁ TRÌNH = Nút màu đỏ\n"
 "KHỞI ĐỘNG LẠI = Nút power"
 
-#: security.h:2147
+#: security.h:2141
 msgid "Dev free license"
 msgstr ""
 
@@ -2982,7 +2982,7 @@ msgstr ""
 msgid "Draw Screen"
 msgstr ""
 
-#: security.h:2122
+#: security.h:2116
 msgid "Driver"
 msgstr ""
 
@@ -3537,7 +3537,7 @@ msgstr "Mở rộng"
 msgid "Extensions List"
 msgstr "Danh sách mở rộng"
 
-#: security.h:2111 security.h:2116
+#: security.h:2105 security.h:2110
 msgid "External Player"
 msgstr ""
 
@@ -4056,7 +4056,7 @@ msgstr "Hiển thị VF"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2105
+#: security.h:2099
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4850,7 +4850,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2093
+#: security.h:2087
 msgid "Image"
 msgstr ""
 
@@ -5069,7 +5069,7 @@ msgstr "Cài đặt lỗi !"
 msgid "Installation start"
 msgstr "Đang cài đặt"
 
-#: httpdfunc.h:5674 security.h:2100 skin_default_skin.xml.h:324
+#: httpdfunc.h:5674 security.h:2094 skin_default_skin.xml.h:324
 msgid "Installed:"
 msgstr "Cài đặt"
 
@@ -5502,7 +5502,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2127
+#: security.h:2121
 msgid "License"
 msgstr ""
 
@@ -10428,7 +10428,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:681 security.h:2137
+#: security.h:681 security.h:2131
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10482,7 +10482,7 @@ msgid ""
 "or stream is running !"
 msgstr "Cấu hình tuner này không cho phép ghi"
 
-#: security.h:2171 skin_default_skin.xml.h:693
+#: security.h:2165 skin_default_skin.xml.h:693
 msgid "Tunertype"
 msgstr ""
 
@@ -10515,7 +10515,7 @@ msgstr "Kiểu:"
 msgid "Typenbezeichnung"
 msgstr ""
 
-#: security.h:2143
+#: security.h:2137
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10705,7 +10705,7 @@ msgstr ""
 msgid "VLC Player"
 msgstr "Phát VLC"
 
-#: security.h:2096
+#: security.h:2090
 msgid "Version"
 msgstr ""
 
@@ -11798,7 +11798,7 @@ msgstr ""
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2149
+#: security.h:2143
 msgid "expired"
 msgstr ""
 
@@ -13446,7 +13446,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
-#: security.h:2169 skin_default_skin.xml.h:705 skinselector.h:138 stream.h:22
+#: security.h:2163 skin_default_skin.xml.h:705 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13534,7 +13534,7 @@ msgstr "tên người dùng"
 msgid "usessl"
 msgstr ""
 
-#: security.h:2130
+#: security.h:2124
 msgid "valid"
 msgstr ""
 
