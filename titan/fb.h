@@ -1,6 +1,10 @@
 #ifndef FB_H
 #define FB_H
 
++#ifdef CONFIG_ION
++	int m_accel_fd;
++#endif
+
 struct fb* getfb(char *name)
 {
 	struct fb *node = fb;
@@ -205,7 +209,7 @@ struct fb* openfb(char *fbdev, int devnr)
 #ifdef MIPSEL
 	if (fd < 0)
 	{
-			perror(fbdev);
+			err(fbdev);
 			goto nolfb;
 		}
 #endif
@@ -243,10 +247,93 @@ struct fb* openfb(char *fbdev, int devnr)
 	
 	unsigned long data_phys = 0;
 #ifdef MIPSEL
+#ifdef CONFIG_ION
+	/* allocate accel memory here... its independent from the framebuffer */
+	ion = open("/dev/ion", O_RDWR | O_CLOEXEC);
+	if (ion >= 0)
+	{
+		struct ion_allocation_data alloc_data;
+		struct ion_fd_data share_data;
+		struct ion_handle_data free_data;
+		struct ion_phys_data phys_data;
+		int ret;
+		unsigned char *lfb;
+
+		debug(444,"Using ION allocator");
+
+		memset(&alloc_data, 0, sizeof(alloc_data));
+		alloc_data.len = ACCEL_MEM_SIZE;
+		alloc_data.align = 4096; // 4k aligned
+		alloc_data.heap_id_mask = ION_HEAP_ID_MASK;
+		ret = ioctl(ion, ION_IOC_ALLOC, &alloc_data);
+		if (ret < 0)
+		{
+			err("ION_IOC_ALLOC failed");
+			err("failed to allocate accel memory!!!");
+			return;
+		}
+
+		memset(&phys_data, 0, sizeof(phys_data));
+		phys_data.handle = alloc_data.handle;
+		ret = ioctl(ion, ION_IOC_PHYS, &phys_data);
+		if (ret < 0)
+		{
+			err("ION_IOC_PHYS failed");
+			goto err_ioc_free;
+		}
+
+		memset(&share_data, 0, sizeof(share_data));
+		share_data.handle = alloc_data.handle;
+		ret = ioctl(ion, ION_IOC_SHARE, &share_data);
+		if (ret < 0)
+		{
+			err("ION_IOC_SHARE failed");
+			goto err_ioc_free;
+		}
+
+		memset(&free_data, 0, sizeof(free_data));
+		free_data.handle = alloc_data.handle;
+		if (ioctl(ion, ION_IOC_FREE, &free_data) < 0)
+			err("ION_IOC_FREE failed");
+
+		m_accel_fd = share_data.fd;
+		lfb=(unsigned char*)mmap(0, ACCEL_MEM_SIZE, PROT_WRITE|PROT_READ, MAP_SHARED, share_data.fd, 0);
+
+		if (lfb)
+		{
+			debug(444,"%dkB available for acceleration surfaces (via ION).", ACCEL_MEM_SIZE);
+			//gAccel::getInstance()->setAccelMemorySpace(lfb, phys_data.addr, ACCEL_MEM_SIZE);
+			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, share_data.fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);	
+		}
+		else
+		{
+			close(m_accel_fd);
+			eDebug("mmap lfb failed");
+err_ioc_free:
+			err("failed to allocate accel memory via ION!!!");
+			m_accel_fd = -1;
+			memset(&free_data, 0, sizeof(free_data));
+			free_data.handle = alloc_data.handle;
+			if (ioctl(ion, ION_IOC_FREE, &free_data) < 0)
+				err("ION_IOC_FREE");
+		}
+		close(ion);
+	}
+	else
+	{
+		err("failed to open ION device node! no allocate accel memory available !!");
+		m_accel_fd = -1;
+	}
+	if (!lfb)
+	{
+		err("mmap");
+		goto nolfb;
+	}
+#else
 	lfb = (unsigned char*)mmap(0, fix_screeninfo.smem_len, PROT_WRITE|PROT_READ, MAP_SHARED, fd, 0);
 	if (!lfb)
 	{
-		perror("mmap");
+		err("mmap");
 		goto nolfb;
 	}
 
@@ -257,14 +344,14 @@ struct fb* openfb(char *fbdev, int devnr)
 		return 0;
 	}
 	data_phys = fix_screeninfo.smem_start;
-#endif
-
-
+#endif	
+#ifndef CONFIG_ION
 	if(devnr == 0)
 		node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
 	if(devnr == 1)
 		node = addfb(FB1, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
-			
+#endif
+#endif		
 
 #else
 	mmapfb = malloc(16 * 1024 * 1024);
