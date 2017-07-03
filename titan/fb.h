@@ -1,9 +1,9 @@
 #ifndef FB_H
 #define FB_H
 
-+#ifdef CONFIG_ION
-+	int m_accel_fd;
-+#endif
+#ifdef CONFIG_ION
+	int m_accel_fd;
+#endif
 
 struct fb* getfb(char *name)
 {
