@@ -2,8 +2,14 @@
 #define FB_H
 
 #ifdef CONFIG_ION
-	int m_accel_fd;
+#define ION_HEAP_TYPE_BMEM      (ION_HEAP_TYPE_CUSTOM + 1)
+#define ION_HEAP_ID_MASK        (1 << ION_HEAP_TYPE_BMEM)
+#define ACCEL_MEM_SIZE          (32*1024*1024)
+int m_accel_fd;
 #endif
+
+
+
 
 struct fb* getfb(char *name)
 {
@@ -33,11 +39,17 @@ long getfbsize(int dev)
 	}
 
 #ifndef NOFB
+
+#ifndef CONFIG_ION	
 	if(ioctl(fb->fd, FBIOGET_FSCREENINFO, &fix_screeninfo) == -1)
 	{
 		perr("ioctl FBIOGET_FSCREENINFO failed");
 		return 0;
 	}
+#else
+	fix_screeninfo.smem_len = ACCEL_MEM_SIZE;
+#endif
+
 #else
 	fix_screeninfo.smem_len = 16*1024*1024;
 #endif
@@ -257,8 +269,7 @@ struct fb* openfb(char *fbdev, int devnr)
 		struct ion_handle_data free_data;
 		struct ion_phys_data phys_data;
 		int ret;
-		unsigned char *lfb;
-
+		
 		debug(444,"Using ION allocator");
 
 		memset(&alloc_data, 0, sizeof(alloc_data));

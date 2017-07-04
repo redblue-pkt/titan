@@ -95,27 +95,33 @@ void setfbvarsize(struct fb* newnode)
 void enablemanualblit()
 {
 	unsigned char tmp = 1;
+#ifndef CONFIG_ION
 	if (ioctl(fb->fd, FBIO_SET_MANUAL_BLIT, &tmp)<0)
 		perror("FBIO_SET_MANUAL_BLIT");
 	else
 		g_manual_blit = 1;
+#endif
 }
 
 void disablemanualblit()
 {
 	unsigned char tmp = 0;
+#ifndef CONFIG_ION
 	if (ioctl(fb->fd, FBIO_SET_MANUAL_BLIT, &tmp)<0)
 		perror("FBIO_SET_MANUAL_BLIT");
 	else
 		g_manual_blit = 0;
+#endif
 }
 
 void blit()
 {
+#if !defined(CONFIG_ION)
 	if (g_manual_blit == 1) {
 		if (ioctl(fb->fd, FBIO_BLIT) < 0)
 			perror("FBIO_BLIT");
 	}
+#endif
 }
 
 int waitvsync()
@@ -1652,5 +1658,96 @@ int setrtctimemips()
 	}
 	return ret;
 }
+
+#ifdef CONFIG_ION
+void SetMode()
+{
+	struct fb_var_screeninfo var_screeninfo;
+	
+	lfb = fb->fb;
+	/* unmap old framebuffer with old size */
+	if (lfb)
+		munmap(lfb, stride * screeninfo.yres_virtual);
+	
+	var_screeninfo.xres_virtual = fb->width;
+	var_screeninfo.xres = fb->width;
+	var_screeninfo.yres_virtual = fb->height * 2;
+	var_screeninfo.yres = fb->height;
+	var_screeninfo.height = 0;
+	var_screeninfo.width = 0;
+	var_screeninfo.xoffset = 0;
+	var_screeninfo.yoffset = 0;
+	var_screeninfo.bits_per_pixel = fb->colbytes * 8;
+	
+	switch(fb->colbytes)
+	{
+		case 2:
+			var_screeninfo.transp.offset = 15;
+			var_screeninfo.transp.length = 1;
+			var_screeninfo.red.offset = 10;
+			var_screeninfo.red.length = 5;
+			var_screeninfo.green.offset = 5;
+			var_screeninfo.green.length = 5;
+			var_screeninfo.blue.offset = 0;
+			var_screeninfo.blue.length = 5;
+			break;
+		case 4:
+			var_screeninfo.transp.offset = 24;
+			var_screeninfo.transp.length = 8;
+			var_screeninfo.red.offset = 16;
+			var_screeninfo.red.length = 8;
+			var_screeninfo.green.offset = 8;
+			var_screeninfo.green.length = 8;
+			var_screeninfo.blue.offset = 0;
+			var_screeninfo.blue.length = 8;
+			break;
+	}
+	
+	debug(444, "FB: line_length %d", fix_screeninfo.line_length);
+	debug(444, "FB: var_screeninfo.xres %d", var_screeninfo.xres);
+	debug(444, "FB: var_screeninfo.yres %d", var_screeninfo.yres);
+	debug(444, "FB: var_screeninfo.xres_virt %d", var_screeninfo.xres_virtual);
+	debug(444, "FB: var_screeninfo.yres_virt %d", var_screeninfo.yres_virtual);
+	debug(444, "FB: var_screeninfo.xoffset %d", var_screeninfo.xoffset);
+	debug(444, "FB: var_screeninfo.yoffset %d", var_screeninfo.yoffset);
+	debug(444, "FB: var_screeninfo.bits_per_pixel %d", var_screeninfo.bits_per_pixel);
+	debug(444, "FB: var_screeninfo.grayscale %d", var_screeninfo.grayscale);
+	
+	if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
+	{
+		var_screeninfo.yres_virtual = fb->height;
+		if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
+		{
+			perr("FBIOPUT_VSCREENINFO");
+		}
+		debug(444, "FB: double buffering not available");
+	}
+	else
+	{
+		debug(444, "FB: double buffering available!");
+	}
+
+	ioctl(fb->fd, FBIOGET_VSCREENINFO, &var_screeninfo);
+	if ((var_screeninfo.xres!=fb->width) && (var_screeninfo.yres!=fb->height) && (var_screeninfo.bits_per_pixel!=fb->colbytes))
+	{
+		debug(444, "SetMode failed: wanted: %dx%dx%d, got %dx%dx%d",
+			fb->width, fb->height, fb->colbytes,
+			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
+	}
+	fb_fix_screeninfo fix;
+	if (ioctl(fb->fd, FBIOGET_FSCREENINFO, &fix)<0)
+	{
+		perror("FBIOGET_FSCREENINFO");
+		printf("fb failed\n");
+	}
+	/* map new framebuffer */
+	lfb=(unsigned char*)mmap(0, fix.line_length * screeninfo.yres_virtual, PROT_WRITE|PROT_READ, MAP_SHARED, fb->fd, 0);
+	fb->fb = lfb;
+	fb->fblong = (unsigned long*)fb->fb;
+	memset(lfb, 0, fix.line_length * screeninfo.yres_virtual);
+	blit();
+}
+#endif
+
 
 #endif
