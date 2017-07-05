@@ -76,37 +76,44 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		d.length = 16;
 		d.data = data;
 
-		printf("[titan] Index CA_DATA_KEY: %d Parity: (%d) -> ", d.index, d.parity);
-		hexdump(d.data, 16);
+		printf("[titan] DESCR_DATA: -> ");
+		hexdump(data, 32);
 
-		//if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
-		rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
-		if (rc)
-			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_KEY\n###############\n");
+		if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+			rc = ioctl(desc_fd, CA_SET_DESCR_DATA_DREAM, &d);
 		else
-			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_KEY RCode: %i\n###############\n", rc);
-
+			rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
+		
+		if (rc)
+			printf("[titan] #### ERROR: CA_DATA_KEY - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x (errno=%d %s)\n", index, parity, errno, strerror(errno));
+		else
+			printf("[titan] #### CA_DATA_KEY - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x\n", index, parity);
+		
 		d.index = index;
 		d.parity = parity;
 		d.data_type = CA_DATA_IV;
 		d.length = 16;
 		d.data = data + 16;
 
-		printf("[titan] Index CA_DATA_IV: %d Parity: (%d) -> ", d.index, d.parity);
-		hexdump(d.data, 16);
-
-		//if (ioctl(desc_fd, CA_SET_DESCR_DATA, &d))
-		rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
-		if (rc)
-			printf("###############\nERROR - CA_SET_DESCR_DATA -> CA_DATA_IV\n###############\n");
+		if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+			rc = ioctl(desc_fd, CA_SET_DESCR_DATA_DREAM, &d);
 		else
-			printf("###############\nCA_SET_DESCR_DATA -> CA_DATA_IV RCode: %i\n###############\n", rc);
-
+			rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
+		
+		if (rc)
+			printf("[titan] #### ERROR: CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x (errno=%d %s)\n", index, parity, errno, strerror(errno));
+		else
+			printf("[titan] #### CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x\n", index, parity);	
 	}
-	descrambler_close();
+	//descrambler_close();
+
 #else
+	
 	index |= 0x100;
-	if (descrambler_open())
+	
+	if(desc_fd == -1)
+		descrambler_open();
+	if (desc_fd > 0)
 	{
 		d.index = index;
 		d.parity = parity;

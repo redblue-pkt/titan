@@ -208,7 +208,8 @@
 #define DEVICE_CERT   "/mnt/swapextensions/etc/pem/device.pem"
 #define MAX_ELEMENTS    33
 #ifdef MIPSEL
-#define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
+#define CA_SET_DESCR_DATA_DREAM _IOW('o', 137, struct ca_descr_data)
+#define CA_SET_DESCR_DATA _IOW('o', 10, struct ca_descr_data)
 #endif
 #ifdef SH4NEW
 #define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
