@@ -1741,11 +1741,11 @@ void SetMode()
 		printf("fb failed\n");
 	}
 	/* map new framebuffer */
-	lfb=(unsigned char*)mmap(0, fix.line_length * screeninfo.yres_virtual, PROT_WRITE|PROT_READ, MAP_SHARED, fb->fd, 0);
+	lfb=(unsigned char*)mmap(0, fix.line_length * var_screeninfo.yres_virtual, PROT_WRITE|PROT_READ, MAP_SHARED, fb->fd, 0);
 	fb->fb = lfb;
 	fb->fblong = (unsigned long*)fb->fb;
-	memset(lfb, 0, fix.line_length * screeninfo.yres_virtual);
-	fb->varfbsize = fix.line_length * screeninfo.yres_virtual;
+	memset(lfb, 0, fix.line_length * var_screeninfo.yres_virtual);
+	fb->varfbsize = fix.line_length * var_screeninfo.yres_virtual;
 	blit();
 }
 #endif
