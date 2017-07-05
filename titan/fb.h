@@ -318,7 +318,7 @@ struct fb* openfb(char *fbdev, int devnr)
 		else
 		{
 			close(m_accel_fd);
-			eDebug("mmap lfb failed");
+			err("mmap lfb failed");
 err_ioc_free:
 			err("failed to allocate accel memory via ION!!!");
 			m_accel_fd = -1;
