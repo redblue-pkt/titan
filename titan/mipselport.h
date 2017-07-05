@@ -3,8 +3,7 @@
 
 #ifdef CONFIG_ION
 
-#include <lib/gdi/accel.h>
-#include <interfaces/ion.h>
+//#include <interfaces/ion.h>
 #define ION_HEAP_TYPE_BMEM      (ION_HEAP_TYPE_CUSTOM + 1)
 #define ION_HEAP_ID_MASK        (1 << ION_HEAP_TYPE_BMEM)
 #define ACCEL_MEM_SIZE          (32*1024*1024)
