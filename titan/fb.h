@@ -257,7 +257,6 @@ struct fb* openfb(char *fbdev, int devnr)
 
 	debug(444, "%dk video mem", fix_screeninfo.smem_len/1024);
 	
-	unsigned long data_phys = 0;
 #ifdef MIPSEL
 #ifdef CONFIG_ION
 	/* allocate accel memory here... its independent from the framebuffer */
@@ -281,7 +280,7 @@ struct fb* openfb(char *fbdev, int devnr)
 		{
 			err("ION_IOC_ALLOC failed");
 			err("failed to allocate accel memory!!!");
-			return;
+			return NULL;
 		}
 
 		memset(&phys_data, 0, sizeof(phys_data));
@@ -341,6 +340,7 @@ err_ioc_free:
 		goto nolfb;
 	}
 #else
+	unsigned long data_phys = 0;
 	lfb = (unsigned char*)mmap(0, fix_screeninfo.smem_len, PROT_WRITE|PROT_READ, MAP_SHARED, fd, 0);
 	if (!lfb)
 	{

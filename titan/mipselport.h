@@ -93,8 +93,8 @@ void setfbvarsize(struct fb* newnode)
 
 void enablemanualblit()
 {
-	unsigned char tmp = 1;
 #ifndef CONFIG_ION
+	unsigned char tmp = 1;
 	if (ioctl(fb->fd, FBIO_SET_MANUAL_BLIT, &tmp)<0)
 		perror("FBIO_SET_MANUAL_BLIT");
 	else
@@ -104,8 +104,8 @@ void enablemanualblit()
 
 void disablemanualblit()
 {
-	unsigned char tmp = 0;
 #ifndef CONFIG_ION
+	unsigned char tmp = 0;
 	if (ioctl(fb->fd, FBIO_SET_MANUAL_BLIT, &tmp)<0)
 		perror("FBIO_SET_MANUAL_BLIT");
 	else
@@ -1666,8 +1666,9 @@ void SetMode()
 	lfb = fb->fb;
 	/* unmap old framebuffer with old size */
 	if (lfb)
-		munmap(lfb, stride * screeninfo.yres_virtual);
-	
+		//munmap(lfb, stride * screeninfo.yres_virtual);
+		munmap(lfb, fb->varfbsize);
+
 	var_screeninfo.xres_virtual = fb->width;
 	var_screeninfo.xres = fb->width;
 	var_screeninfo.yres_virtual = fb->height * 2;
@@ -1733,7 +1734,7 @@ void SetMode()
 			fb->width, fb->height, fb->colbytes,
 			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
 	}
-	fb_fix_screeninfo fix;
+	struct fb_fix_screeninfo fix;
 	if (ioctl(fb->fd, FBIOGET_FSCREENINFO, &fix)<0)
 	{
 		perror("FBIOGET_FSCREENINFO");
@@ -1744,6 +1745,7 @@ void SetMode()
 	fb->fb = lfb;
 	fb->fblong = (unsigned long*)fb->fb;
 	memset(lfb, 0, fix.line_length * screeninfo.yres_virtual);
+	fb->varfbsize = fix.line_length * screeninfo.yres_virtual;
 	blit();
 }
 #endif
