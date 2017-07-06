@@ -1,6 +1,8 @@
 #ifndef CA_H
 #define CA_H
 
+char oldpids[256];
+
 //wait for a module inserted
 void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 {
@@ -49,7 +51,7 @@ void careseting(struct stimerthread* self, struct dvbdev* dvbnode, int flag)
 			delqueue(qe, 0);
 			qe = getqueue(dvbnode->devnr);
 		}
-
+		oldpids[0] = 0;
 		careset(dvbnode, dvbnode->devnr);
 		cawait(self, dvbnode, 10);
 	}
@@ -1881,6 +1883,7 @@ void cathread(struct stimerthread* self, struct dvbdev* dvbnode)
 {
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return;
 	debug(620, "CA thread start (slot %d)", dvbnode->devnr);
+	oldpids[0] = 0;
 //#ifdef MIPSEL
 	dvbnode->caslot->status = 100;
 //#endif
@@ -2134,20 +2137,45 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			if(dvbnode->caslot->ccmgr_ready == 1 && caservice[caservicenr].camanager == 5)
 			{
 #ifdef MIPSEL
+				char pid_out[256] = { 0 };
+				char newpid[8];
+				struct esinfo* esinfonode = status.aktservice->channel->esinfo;
+				
+				while(esinfonode != NULL)
+				{
+					sprintf(newpid, " %04x", esinfonode->pid);
+					if (!strstr(oldpids, newpid))  /* check if pid is not in oldpids... */
+					{
+ 							descrambler_set_pid(0, 1, esinfonode->pid);
+ 							debug(620, "PID + %04x\n", esinfonode->pid);
+ 					}
+ 					sprintf(pid_out, "%s %04x ", pid_out, esinfonode->pid);
+ 					esinfonode = esinfonode->next;
+				}
+				
+				debug(620, "OLD   PIDs: %s\n", oldpids);
+				debug(620, "NEW   PIDs: %s\n", pid_out);
+				
+			 	char *token = strtok(oldpids, " ");
+ 				while (token != NULL)
+ 				{
+					if (!strstr(pid_out, token))
+					{
+ 						unsigned int pid = (int)strtol(token, NULL, 16);
+ 						descrambler_set_pid(0, 0, pid);
+  					debug(620, "PID - %04x\n", pid);
+					}
+			 		token = strtok(NULL, " ");
+ 				}
+ 				
+ 				strcpy(oldpids,pid_out);
+				
+				
 				/*for (i = 0; i < 8192; i++)
 					descrambler_set_pid(0, 1, i); //workaround... activate all pids
 					
 				descrambler_set_pid(0, 1, status.aktservice->channel->pmtpid);*/	
 				
-				struct esinfo* esinfonode = status.aktservice->channel->esinfo;
-				for (i = 0; i < 8192; i++)
-					descrambler_set_pid(0, 0, i); 
-					
-				while(esinfonode != NULL)
-				{
-					descrambler_set_pid(0, 1,esinfonode->pid);
-					esinfonode = esinfonode->next;
-				}
 				
 #endif
 
