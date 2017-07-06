@@ -105,7 +105,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		else
 			printf("[titan] #### CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x\n", index, parity);	
 	}
-	//descrambler_close();
+	descrambler_close();
 
 #else
 	
@@ -244,9 +244,15 @@ int descrambler_set_pid(int index, int enable, int pid)
 
 		p.pid = pid;
 		p.index = flags;
-	
-		if (ioctl(desc_fd, CA_SET_PID, &p))
-			printf("CA_SET_PID\n");
+		
+		if (ioctl(desc_fd, CA_SET_PID, &p) == -1)
+		{
+			printf("[titan] **** ERROR: CA_SET_PID pid=0x%04x index=0x%04x (errno=%d %s)\n", p.pid, p.index, errno, strerror(errno));
+		}
+		else
+		{
+			printf("[titan] **** CA_SET_PID pid=0x%04x index=0x%04x\n", p.pid, p.index);
+		}
 	}
 	return 0;
 }
@@ -282,6 +288,8 @@ int descrambler_open(void)
 		printf("cannot open %s\n", descrambler_filename);
 		return 0;
 	}
+	//if (ioctl(desc_fd, CA_RESET, NULL))
+	//	printf("**** ERROR: CA_RESET (errno=%d %s)\n", errno, strerror(errno));
 
 	return 1;
 }
@@ -1722,6 +1730,10 @@ int ci_ccmgr_cc_data_initialize(struct dvbdev* dvbnode)
 
 	dvbnode->caslot->private_data = data;
 
+//#ifdef MIPSEL
+//	descrambler_open();
+//#endif
+	
 	return 1;
 }
 
