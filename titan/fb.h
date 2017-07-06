@@ -313,7 +313,8 @@ struct fb* openfb(char *fbdev, int devnr)
 		{
 			debug(444,"%dkB available for acceleration surfaces (via ION).", ACCEL_MEM_SIZE);
 			//gAccel::getInstance()->setAccelMemorySpace(lfb, phys_data.addr, ACCEL_MEM_SIZE);
-			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, share_data.fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);	
+			//node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, share_data.fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);	
+			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);	
 		}
 		else
 		{
