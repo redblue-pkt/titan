@@ -1515,7 +1515,7 @@ static int data_get_handle_new(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_d
 		break;
 
 	/* SAC data messages */
-
+	case 6: 	/* CICAM_id */
 	case 12:                //keyprecursor
 		check_new_key(dvbnode, cc_data);
 		break;
