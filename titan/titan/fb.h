@@ -132,7 +132,7 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 		return NULL;
 	}
 
-	debug(444, "fbname=%s, fbwidth=%d, fbheight=%d, fbcol=%d, fbsize=%ld, phys_addr=%lu", newnode->name, newnode->width, newnode->height, newnode->colbytes, newnode->varfbsize);
+	debug(444, "fbname=%s, fbwidth=%d, fbheight=%d, fbcol=%d, fbsize=%ld, phys_addr=%lu", newnode->name, newnode->width, newnode->height, newnode->colbytes, newnode->varfbsize, newnode->data_phys);
 	return newnode;
 }
 
