@@ -115,8 +115,12 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	/*eigener Buffer zB fuer LCD*/
 	if(dev == 999)
 		return newnode; 
-
+#ifdef CONFIG_ION
+	if(ostrcmp(name, FB) == 0)
+		ret = getfbsize(dev);
+#else
 	ret = getfbsize(dev);
+#endif
 	if(ret < 0)
 	{
 		err("framebuffermem (%s) to small, needed = %ld", name, ret * -1);
