@@ -802,7 +802,7 @@ int main(int argc, char *argv[])
 		setfbosd();
 	status.usedirectfb = 1;
 #endif
-
+#ifndef CONFIG_ION
 	if(status.usedirectfb != 1)
 	{
 		skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, fb->fd, fb->fb + fb->varfbsize, fb->fixfbsize, 0);
@@ -838,8 +838,9 @@ int main(int argc, char *argv[])
 					accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize, skinfb->data_phys + skinfb->varfbsize);
 			}
 		}
-#ifdef CONFIG_ION
-		SetMode();
+#else
+		status.usedirectfb = 0;
+		//SetMode();
 #endif		
 #endif
 	}
