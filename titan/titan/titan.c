@@ -838,10 +838,10 @@ int main(int argc, char *argv[])
 					accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize, skinfb->data_phys + skinfb->varfbsize);
 			}
 		}
+#endif	
 #else
 		status.usedirectfb = 0;
 		//SetMode();
-#endif		
 #endif
 	}
 
