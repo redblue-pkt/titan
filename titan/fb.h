@@ -39,17 +39,11 @@ long getfbsize(int dev)
 	}
 
 #ifndef NOFB
-
-#ifndef CONFIG_ION	
 	if(ioctl(fb->fd, FBIOGET_FSCREENINFO, &fix_screeninfo) == -1)
 	{
 		perr("ioctl FBIOGET_FSCREENINFO failed");
 		return 0;
 	}
-#else
-	fix_screeninfo.smem_len = ACCEL_MEM_SIZE;
-#endif
-
 #else
 	fix_screeninfo.smem_len = 16*1024*1024;
 #endif
@@ -312,9 +306,10 @@ struct fb* openfb(char *fbdev, int devnr)
 		if (lfb)
 		{
 			debug(444,"%dkB available for acceleration surfaces (via ION).", ACCEL_MEM_SIZE);
-			//gAccel::getInstance()->setAccelMemorySpace(lfb, phys_data.addr, ACCEL_MEM_SIZE);
-			//node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, share_data.fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);	
-			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);	
+
+			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
+			skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, share_data.fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);
+			accelfb = addfb(ACCELFB, 0, (ACCEL_MEM_SIZE-(skinfb->width*skinfb->heidht*4)) / 4, 1, 4, share_data.fd, skinfb->fb + skinfb->varfbsize, ACCEL_MEM_SIZE, skinfb->data_phys + skinfb->varfbsize);
 		}
 		else
 		{

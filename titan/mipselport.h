@@ -86,8 +86,12 @@ void fbrestore()
 void setfbvarsize(struct fb* newnode)
 {
 	if(newnode != NULL)
+#ifndef CONFIG_ION		
 		newnode->varfbsize = 1920 * 1080 * newnode->colbytes;
 //		newnode->varfbsize = 1920 * 1080 * (newnode->colbytes * 8);
+#else
+	newnode->varfbsize = width * height * newnode->colbytes;
+#endif
 
 }
 
