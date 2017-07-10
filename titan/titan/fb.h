@@ -309,7 +309,7 @@ data_phys = fix_screeninfo.smem_start;
 		{
 			debug(444,"%dkB available for acceleration surfaces (via ION).", ACCEL_MEM_SIZE);
 			
-			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, fix_screeninfo.smem_start);
+			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
 			skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, share_data.fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);
 			accelfb = addfb(ACCELFB, 0, (ACCEL_MEM_SIZE-(skinfb->width*skinfb->height*4)) / 4, 1, 4, share_data.fd, skinfb->fb + skinfb->varfbsize, ACCEL_MEM_SIZE, skinfb->data_phys + skinfb->varfbsize);
 		}
