@@ -90,7 +90,7 @@ void setfbvarsize(struct fb* newnode)
 		newnode->varfbsize = 1920 * 1080 * newnode->colbytes;
 //		newnode->varfbsize = 1920 * 1080 * (newnode->colbytes * 8);
 #else
-	newnode->varfbsize = width * height * newnode->colbytes;
+	newnode->varfbsize = newnode->width * newnode->height * newnode->colbytes;
 #endif
 
 }
