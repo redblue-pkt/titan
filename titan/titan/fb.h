@@ -252,6 +252,8 @@ struct fb* openfb(char *fbdev, int devnr)
 	debug(444, "%dk video mem", fix_screeninfo.smem_len/1024);
 	
 #ifdef MIPSEL
+unsigned long data_phys = 0;
+data_phys = fix_screeninfo.smem_start;
 #ifdef CONFIG_ION
 	/* allocate accel memory here... its independent from the framebuffer */
 	ion = open("/dev/ion", O_RDWR | O_CLOEXEC);
@@ -306,10 +308,10 @@ struct fb* openfb(char *fbdev, int devnr)
 		if (lfb)
 		{
 			debug(444,"%dkB available for acceleration surfaces (via ION).", ACCEL_MEM_SIZE);
-
-			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
+			
+			node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, fix_screeninfo.smem_start);
 			skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, share_data.fd, lfb, ACCEL_MEM_SIZE, phys_data.addr);
-			accelfb = addfb(ACCELFB, 0, (ACCEL_MEM_SIZE-(skinfb->width*skinfb->heidht*4)) / 4, 1, 4, share_data.fd, skinfb->fb + skinfb->varfbsize, ACCEL_MEM_SIZE, skinfb->data_phys + skinfb->varfbsize);
+			accelfb = addfb(ACCELFB, 0, (ACCEL_MEM_SIZE-(skinfb->width*skinfb->height*4)) / 4, 1, 4, share_data.fd, skinfb->fb + skinfb->varfbsize, ACCEL_MEM_SIZE, skinfb->data_phys + skinfb->varfbsize);
 		}
 		else
 		{
@@ -336,7 +338,6 @@ err_ioc_free:
 		goto nolfb;
 	}
 #else
-	unsigned long data_phys = 0;
 	lfb = (unsigned char*)mmap(0, fix_screeninfo.smem_len, PROT_WRITE|PROT_READ, MAP_SHARED, fd, 0);
 	if (!lfb)
 	{
@@ -350,7 +351,6 @@ err_ioc_free:
 		closefb();
 		return 0;
 	}
-	data_phys = fix_screeninfo.smem_start;
 #endif	
 #ifndef CONFIG_ION
 	if(devnr == 0)
