@@ -825,6 +825,7 @@ int main(int argc, char *argv[])
 		ret = getfbsize(0);
 		if(ret > 0) 
 			accelfb = addfb(ACCELFB, 0, ret / 4, 1, 4, fb->fd, skinfb->fb + skinfb->varfbsize, fb->fixfbsize, fb->data_phys + fb->varfbsize);
+	}
 #else
 		ret = getfbsize(0);
 		if(ret > 0 && status.bcm == 1) 
