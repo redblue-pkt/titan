@@ -139,7 +139,7 @@ msgstr "Авторы"
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1269
+#: titan.c:1270
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -147,7 +147,7 @@ msgstr ""
 "/mnt не для записи!\n"
 "Исправить это?"
 
-#: titan.c:1252
+#: titan.c:1253
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1197,7 +1197,7 @@ msgstr "Поиск каналов (Авто)"
 msgid "Automatic start last subtitle"
 msgstr "Автоматический запуск старых субтитров"
 
-#: titan.c:1330
+#: titan.c:1331
 msgid "Automatic stop in 10 seconds."
 msgstr "Автостоп через 10 сек"
 
@@ -2182,7 +2182,7 @@ msgstr "Выберите режим воспроизведения из спис
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Выберите нужное из списка ниже"
 
-#: titan.c:1027
+#: titan.c:1028
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Выберите пульт управления из списка"
 
@@ -3270,8 +3270,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: system_backup_restore.h:95 system_update.h:252 system_update.h:258
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:285 titan.c:1087 titan.c:1096 titan.c:1225
-#: titan.c:1246 titan.c:1252 titan.c:1263 titan.c:1269 tithek.c:103
+#: timeshiftsettings.h:45 titan.c:285 titan.c:1088 titan.c:1097 titan.c:1226
+#: titan.c:1247 titan.c:1253 titan.c:1264 titan.c:1270 tithek.c:103
 #: tithek_global.h:207 tithek.h:742 tithek.h:1338 tithek.h:1399 tithek.h:1532
 #: tithek.h:1541 tithek.h:1758 tithek.h:1780 tithek.h:1797 tithek.h:2029
 #: tithek.h:2189 tithek.h:2474 tithek.h:2518 tithek.h:2534 tithek.h:2546
@@ -3452,27 +3452,27 @@ msgstr "Ошибка: Исходный файл транспондера пус�
 msgid "Error: Transponder Source file not found"
 msgstr "Ошибка: Исходный файл транспондера не найден"
 
-#: titan.c:893
+#: titan.c:894
 msgid "Error: no audio device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:881
+#: titan.c:882
 msgid "Error: no demux device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:875
+#: titan.c:876
 msgid "Error: no frontend device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:887
+#: titan.c:888
 msgid "Error: no video device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:869
+#: titan.c:870
 msgid "Error: open rc device !!"
 msgstr "Ошибка открытия устройства!"
 
-#: titan.c:916
+#: titan.c:917
 msgid "Error: skin not found !!"
 msgstr "Скин не найден!"
 
@@ -3807,7 +3807,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1087
+#: titan.c:1088
 msgid "First Wizzard"
 msgstr "Мастер настроек"
 
@@ -4018,7 +4018,7 @@ msgstr "Частота кадров"
 msgid "Free Space"
 msgstr "Свободное место"
 
-#: titan.c:1263
+#: titan.c:1264
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -4026,7 +4026,7 @@ msgstr ""
 "Мало места в /mnt!\n"
 "Могут быть проблемы!"
 
-#: titan.c:1246
+#: titan.c:1247
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4909,7 +4909,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Аудио Inc. AC3 в %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1096 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1097 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5995,8 +5995,8 @@ msgstr ""
 #: system_backup_restore.h:82 system_update.h:252 system_update.h:258
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:285 titan.c:1225 titan.c:1246 titan.c:1252
-#: titan.c:1263 titan.c:1269 tithek.c:103 tithek_global.h:207 tithek.h:742
+#: timeshiftsettings.h:45 titan.c:285 titan.c:1226 titan.c:1247 titan.c:1253
+#: titan.c:1264 titan.c:1270 tithek.c:103 tithek_global.h:207 tithek.h:742
 #: tithek.h:1338 tithek.h:1399 tithek.h:1532 tithek.h:1541 tithek.h:1758
 #: tithek.h:1780 tithek.h:2029 tithek.h:2189 tithek.h:2474 tithek.h:2518
 #: tithek.h:2534 tithek.h:2546 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
@@ -6597,8 +6597,8 @@ msgstr ""
 #: system_update.h:258 system_update.h:268 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
-#: titan.c:1087 titan.c:1096 titan.c:1225 titan.c:1246 titan.c:1252
-#: titan.c:1263 titan.c:1269 tithek.c:103 tithek_global.h:207 tithek.h:742
+#: titan.c:1088 titan.c:1097 titan.c:1226 titan.c:1247 titan.c:1253
+#: titan.c:1264 titan.c:1270 tithek.c:103 tithek_global.h:207 tithek.h:742
 #: tithek.h:1338 tithek.h:1399 tithek.h:1532 tithek.h:1541 tithek.h:1758
 #: tithek.h:1780 tithek.h:1797 tithek.h:2029 tithek.h:2189 tithek.h:2474
 #: tithek.h:2518 tithek.h:2534 tithek.h:2546 tiwakeup.h:66 tiwakeup.h:68
@@ -7752,7 +7752,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Ресивер перезагружается!"
 
-#: titan.c:1225
+#: titan.c:1226
 msgid "Receiver successful unlocked"
 msgstr "Ресивер расблокирован!"
 
@@ -7908,11 +7908,11 @@ msgstr "Запоминать позицию при проигрывании фи
 msgid "Remote"
 msgstr "Пульт управления"
 
-#: titan.c:1020
+#: titan.c:1021
 msgid "RemoteControl Long Version"
 msgstr "Пульт управления последней версии"
 
-#: titan.c:1019
+#: titan.c:1020
 msgid "RemoteControl Old Version"
 msgstr "Пульты управления всех версий"
 
@@ -8849,7 +8849,7 @@ msgstr "Выбрать путь"
 msgid "Select Unicable Manufacturer"
 msgstr "Выберите провайдера"
 
-#: titan.c:1027
+#: titan.c:1028
 msgid "Select Your Remote Control"
 msgstr "Выберите Ваш пульт управления"
 
@@ -8999,7 +8999,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 03.10.2016"
 msgstr ""
 
-#: titan.c:1087
+#: titan.c:1088
 msgid "Settings OK ?"
 msgstr "Настройки в порядке?"
 
@@ -10645,7 +10645,7 @@ msgstr ""
 msgid "Unitymedia NRW | 3.12.2016 (caliban)"
 msgstr ""
 
-#: titan.c:1328
+#: titan.c:1329
 msgid "Unknown Error."
 msgstr "Неизвестная ошибка!"
 
