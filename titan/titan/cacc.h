@@ -4,6 +4,11 @@
 #define xx_debug    0
 #define yy_debug    0
 
+#ifdef CERTIN
+#include "certs.h"
+#include <shadow.h>
+#endif
+
 static uint8_t NullPMT[50]={0x9F,0x80,0x32,0x2E,0x03,0x6E,0xA7,0x37,0x00,0x00,0x1B,0x15,0x7D,0x00,0x00,0x03,0x15,0x7E,0x00,0x00,0x03,0x15,0x7F,0x00,0x00,0x06,0x15,0x80,0x00,0x00,0x06,0x15,0x82,0x00,0x00,0x0B,0x08,0x7B,0x00,0x00,0x05,0x09,0x42,0x00,0x00,0x06,0x15,0x81,0x00,0x00};
 #ifdef MIPSEL
 static const char *descrambler_filename = "/dev/dvb/adapter0/ca0";
@@ -821,7 +826,9 @@ static RSA *rsa_privatekey_open(const char *filename)
 
 	fp = fopen(filename, "r");
 	if (!fp) {
+#ifndef CERTIN
 		fprintf(stderr, "cannot open %s\n", filename);
+#endif
 		return NULL;
 	}
 
@@ -842,7 +849,9 @@ static X509 *certificate_open(const char *filename)
 
 	fp = fopen(filename, "r");
 	if (!fp) {
+#ifndef CERTIN
 		fprintf(stderr, "cannot open %s\n", filename);
+#endif
 		return NULL;
 	}
 
@@ -892,11 +901,15 @@ static X509 *certificate_load_and_check(struct cert_ctx *ctx, const char *filena
 		}
 
 		if (X509_STORE_load_locations(ctx->store, filename, NULL) != 1) {
+#ifndef CERTIN
 			fprintf(stderr, "load of first certificate (root_ca) failed\n");
 			exit(-1);
+#else
+			return NULL;
+#endif
 		}
-
-		return NULL;
+		return (X509 *) 1;
+		//return NULL;
 	}
 
 	cert = certificate_open(filename);
@@ -913,7 +926,9 @@ static X509 *certificate_load_and_check(struct cert_ctx *ctx, const char *filena
 
 	/* push into store - create a chain */
 	if (X509_STORE_load_locations(ctx->store, filename, NULL) != 1) {
+#ifndef CERTIN
 		fprintf(stderr, "load of certificate failed\n");
+#endif
 		X509_free(cert);
 		return NULL;
 	}
@@ -1364,9 +1379,70 @@ static int restart_dh_challenge(struct cc_ctrl_data *cc_data)
 	}
 
 	/* load certificates and device key */
-	certificate_load_and_check(ctx, ROOT_CERT);
+	if (!certificate_load_and_check(ctx, ROOT_CERT))
+	{	
+#ifdef CERTIN
+	/* internal root certificate handling */
+	root_cert_len=strlen(root_cert);
+	root_bio = BIO_new(BIO_s_mem());
+	BIO_write(root_bio, root_cert, root_cert_len);
+	X509* root_certX509 = PEM_read_bio_X509(root_bio, NULL, NULL, NULL);
+	if (!root_certX509) 
+	{
+  	fprintf(stderr, "FAILED parsing embedded root cert\n");
+	}
+	if (!ctx->store) 
+	{
+		ctx->store = X509_STORE_new();
+		if (!ctx->store) 
+		{
+			fprintf(stderr, "can not create cert_store\n");
+		}
+	}
+  fprintf(stderr, "EMBEDDED root cert ...\n");
+	X509_STORE_add_cert(ctx->store, root_certX509);
+#endif
+	}
+
 	ctx->cust_cert = certificate_load_and_check(ctx, CUSTOMER_CERT);
+	
+#ifdef CERTIN
+	if (!ctx->cust_cert)
+	{
+		/* internal customer certificate handling */
+		customer_cert_len=strlen(customer_cert);
+		customer_bio = BIO_new(BIO_s_mem());
+		BIO_write(customer_bio, customer_cert, customer_cert_len);
+		X509* customer_certX509 = PEM_read_bio_X509(customer_bio, NULL, NULL, NULL);
+		if (!customer_certX509) 
+		{
+			fprintf(stderr, "FAILED parsing embedded customer cert\n");
+		}
+		fprintf(stderr, "EMBEDDED customer cert ...\n");
+		X509_STORE_add_cert(ctx->store, customer_certX509);
+		ctx->cust_cert=customer_certX509;
+	}
+#endif
+
 	ctx->device_cert = certificate_load_and_check(ctx, DEVICE_CERT);
+
+#ifdef CERTIN	
+	if (!ctx->device_cert)
+	{
+		/* internal device certificate handling */
+		device_cert_len=strlen(device_cert);
+		device_bio = BIO_new(BIO_s_mem());
+		BIO_write(device_bio, device_cert, device_cert_len);
+		X509* device_certX509 = PEM_read_bio_X509(device_bio, NULL, NULL, NULL);
+		if (!device_certX509) 
+		{
+			fprintf(stderr, "FAILED parsing embedded device cert\n");
+		}
+		fprintf(stderr, "EMBEDDED device cert ...\n");
+		X509_STORE_add_cert(ctx->store, device_certX509);
+		ctx->device_cert=device_certX509;
+	}
+#endif
 
 	if (!ctx->cust_cert || !ctx->device_cert) {
 		fprintf(stderr, "cannot loader certificates\n");
@@ -1384,9 +1460,16 @@ static int restart_dh_challenge(struct cc_ctrl_data *cc_data)
 		fprintf(stderr, "cannot set hostid in elements\n");
 
 	cc_data->rsa_device_key = rsa_privatekey_open(DEVICE_CERT);
-	if (!cc_data->rsa_device_key) {
+	if (!cc_data->rsa_device_key)
+	{
+#ifdef CERTIN
+		/* internal private key */
+		cc_data->rsa_device_key = PEM_read_bio_RSAPrivateKey(device_bio,NULL, NULL, NULL);
+		fprintf(stderr, "EMBEDDED private key ...\n");
+#else
 		fprintf(stderr, "cannot read private key\n");
 		return -1;
+#endif
 	}
 
 	/* invalidate elements */
@@ -1662,7 +1745,11 @@ int checkcerts(void)
 	debug(620, "start");
 	if(status.certchecked == 0)
 	{
+#ifndef CERTIN		
 		if (access(ROOT_CERT, F_OK) == 0 && access(ROOT_CERT, F_OK) == 0 && access(ROOT_CERT, F_OK) == 0)
+#else
+		if (access("/mnt/swapextensions/etc/pem/dummy", F_OK) == 0 )
+#endif
 			status.certok = 1;
 		status.certchecked = 1;
 	}
