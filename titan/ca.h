@@ -11,7 +11,7 @@ void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 
 	if(dvbnode == NULL || self == NULL) return;
 	info.num = dvbnode->devnr;
-
+ 
 	while(self->aktion == START)
 	{
 		if(cagetslotinfo(dvbnode, &info) == 0)
@@ -22,7 +22,7 @@ void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 		sleep(1);
 		i++;
 		if(i >= tout) break;
-
+ 
 		if(dvbnode->caslot != NULL && dvbnode->caslot->status == 100) break;
 	}
 }
