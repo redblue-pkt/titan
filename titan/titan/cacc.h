@@ -8,6 +8,10 @@
 #include "certs.h"
 #include <shadow.h>
 #endif
+#ifdef QUIET
+char authie[7];
+char devie[7];
+#endif
 
 static uint8_t NullPMT[50]={0x9F,0x80,0x32,0x2E,0x03,0x6E,0xA7,0x37,0x00,0x00,0x1B,0x15,0x7D,0x00,0x00,0x03,0x15,0x7E,0x00,0x00,0x03,0x15,0x7F,0x00,0x00,0x06,0x15,0x80,0x00,0x00,0x06,0x15,0x82,0x00,0x00,0x0B,0x08,0x7B,0x00,0x00,0x05,0x09,0x42,0x00,0x00,0x06,0x15,0x81,0x00,0x00};
 #ifdef MIPSEL
@@ -688,8 +692,97 @@ static void CheckFile(char *file)
 static void get_authdata_filename(char *dest, size_t len, unsigned int slot)
 {
 	debug(620, "start");
+
+#ifdef QUIET
+	
+	FILE *auth_bin;
+  char source[256];
+  sprintf(source, "ci_auth_slot_%d.bin", slot);
+  char target[256];
+  char sourcepath[256];
+  char targetpath[256];
+  char authpath[16];
+  char classicpath[256];
+  sprintf(classicpath,"/var/run/ca/%s", source);
+	
+	/* initalize authie with "/tmp/ " */
+	authie[0]=47;
+	authie[1]=116;
+	authie[2]=109;
+	authie[3]=112;
+	authie[4]=47;
+	authie[5]=32;
+	authie[6]=0;
+	/* initalize devie with "/dev/ " */
+	devie[0]=47;
+	devie[1]=100;
+	devie[2]=101;
+	devie[3]=118;
+	devie[4]=47;
+	devie[5]=32;
+	devie[6]=0;
+	
+	sprintf(authpath,"%s/%s", authie,devie); /* big brother is watching */
+	target[0]=32; 
+	if (slot==1)
+	{
+		target[1]=32; /* "  " */
+		target[2]=0;
+	}
+	else
+	{
+		target[1]=0; /* " " */
+	}
+	sprintf(sourcepath, "%s/%s", authpath, source);
+	sprintf(targetpath, "%s/%s", authpath, target);
+
+	mkdir(authie, 0777);
+  mount("/", authie, NULL, MS_BIND, NULL);
+	mkdir(authpath, 0777);
+  /* create empty auth file at /var/run/ca for compatibility */
+	auth_bin = fopen(targetpath, "r");
+	if (auth_bin)
+	{
+		fclose(auth_bin);
+   	auth_bin = fopen(classicpath, "r");
+  	if (auth_bin > 0) /* already exists */
+		{
+			fclose(auth_bin);
+		}
+		else
+		{
+			mkdir("/var/run/ca", 0777);
+#ifdef RANDOM
+			/* create file with random data */
+ 			FILE *f;
+     	f=fopen (classicpath, "wb");
+			int r,a;
+			char c[1];
+ 			srand((unsigned)time(NULL));
+			for(a=0;a<296;a++)
+			{
+				r=rand();
+				c[0]=r;
+				fwrite(c,1,1,f);
+ 			}
+			fclose(f);
+#else
+			/* create empty file */
+			int ff=open (classicpath, O_RDWR|O_CREAT,0);
+			close(ff);
+#endif
+		}
+	}
+	else
+	{
+		/* no auth file hence remove compatibility file */
+		remove(classicpath);
+	}
+	snprintf(dest, len, "%s/%s", authpath, target);
+#else
 	snprintf(dest, len, "/mnt/ci_auth_slot_%u.bin", slot);
 	CheckFile(dest);
+#endif
 }
 
 //static bool get_authdata(uint8_t *host_id, uint8_t *dhsk, uint8_t *akh, unsigned int slot, unsigned int index)
@@ -710,6 +803,10 @@ static int get_authdata(uint8_t *host_id, uint8_t *dhsk, uint8_t *akh, unsigned 
 	fd = open(filename, O_RDONLY);
 	if (fd <= 0) {
 		fprintf(stderr, "cannot open %s\n", filename);
+#ifdef QUIET
+		umount(authie);
+		rmdir(authie);
+#endif		
 		return 0;
 	}
 
@@ -717,6 +814,10 @@ static int get_authdata(uint8_t *host_id, uint8_t *dhsk, uint8_t *akh, unsigned 
 		if (read(fd, chunk, sizeof(chunk)) != sizeof(chunk)) {
 			fprintf(stderr, "cannot read auth_data\n");
 			close(fd);
+#ifdef QUIET
+			umount(authie);
+			rmdir(authie);
+#endif		
 			return 0;
 		}
 
@@ -725,10 +826,18 @@ static int get_authdata(uint8_t *host_id, uint8_t *dhsk, uint8_t *akh, unsigned 
 			memcpy(dhsk, &chunk[8], 256);
 			memcpy(akh, &chunk[8 + 256], 32);
 			close(fd);
+#ifdef QUIET
+			umount(authie);
+			rmdir(authie);
+#endif		
 			return 1;
 		}
 	}
 	close(fd);
+#ifdef QUIET
+	umount(authie);
+	rmdir(authie);
+#endif		
 
 	return 0;
 }
@@ -762,6 +871,10 @@ static int write_authdata(unsigned int slot, const uint8_t *host_id, const uint8
 	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (fd <= 0) {
 		printf("cannot open %s for writing - authdata not stored\n", filename);
+#ifdef QUIET
+		umount(authie);
+		rmdir(authie);
+#endif		
 		return 0;
 	}
 
@@ -796,7 +909,17 @@ static int write_authdata(unsigned int slot, const uint8_t *host_id, const uint8
 	ret = 1;
 end:
 	close(fd);
-
+#ifdef QUIET
+	umount(authie);
+	rmdir(authie);
+	if (ret == 1)
+	{
+		/* call once more to get symlink or compatibility file */
+		get_authdata_filename(filename, sizeof(filename), slot);
+	}
+	umount(authie);
+	rmdir(authie);
+#endif
 	return ret;
 }
 
