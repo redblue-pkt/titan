@@ -4,8 +4,6 @@ For now, tests just new or changed functionality.
 
 """
 
-import copy
-import pickle
 import sys
 import unittest
 from test import test_support
@@ -36,18 +34,6 @@ class BufferTests(unittest.TestCase):
         data = bytearray('hola mundo')
         buf = buffer(data, sys.maxsize, sys.maxsize)
         self.assertEqual(buf[:4096], "")
-
-    def test_copy(self):
-        buf = buffer(b'abc')
-        with self.assertRaises(TypeError):
-            copy.copy(buf)
-
-    # See issue #22995
-    ## def test_pickle(self):
-    ##     buf = buffer(b'abc')
-    ##     for proto in range(pickle.HIGHEST_PROTOCOL + 1):
-    ##         with self.assertRaises(TypeError):
-    ##             pickle.dumps(buf, proto)
 
 
 def test_main():

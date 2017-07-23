@@ -4,9 +4,6 @@ import sys
 from test import test_support, string_tests
 
 
-class StrSubclass(str):
-    pass
-
 class StrTest(
     string_tests.CommonTest,
     string_tests.MixinStrUnicodeUserStringTest,
@@ -110,9 +107,6 @@ class StrTest(
         self.assertEqual(str(Foo6("bar")), "foos")
         self.assertEqual(str(Foo7("bar")), "foos")
         self.assertEqual(str(Foo8("foo")), "foofoo")
-        self.assertIs(type(str(Foo8("foo"))), Foo8)
-        self.assertEqual(StrSubclass(Foo8("foo")), "foofoo")
-        self.assertIs(type(StrSubclass(Foo8("foo"))), StrSubclass)
         self.assertEqual(str(Foo9("foo")), "string")
         self.assertEqual(unicode(Foo9("foo")), u"not unicode")
 

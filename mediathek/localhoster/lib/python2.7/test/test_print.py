@@ -107,7 +107,7 @@ class TestPrint(unittest.TestCase):
         self.assertRaises(AttributeError, print, '', file='')
 
     def test_mixed_args(self):
-        # If a unicode arg is passed, sep and end should be unicode, too.
+        # If an unicode arg is passed, sep and end should be unicode, too.
         class Recorder(object):
 
             def __init__(self, must_be_unicode):

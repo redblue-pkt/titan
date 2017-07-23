@@ -17,8 +17,6 @@ import tkFileDialog
 import tkMessageBox
 from SimpleDialog import SimpleDialog
 
-from idlelib.configHandler import idleConf
-
 # Try setting the locale, so that we can find out
 # what encoding to use
 try:
@@ -65,7 +63,7 @@ else:
 
 encoding = encoding.lower()
 
-coding_re = re.compile(r'^[ \t\f]*#.*?coding[:=][ \t]*([-\w.]+)')
+coding_re = re.compile(r'^[ \t\f]*#.*coding[:=][ \t]*([-\w.]+)')
 blank_re = re.compile(r'^[ \t\f]*(?:[#\r\n]|$)')
 
 class EncodingMessage(SimpleDialog):
@@ -138,6 +136,7 @@ def coding_spec(str):
         # The standard encoding error does not indicate the encoding
         raise LookupError, "Unknown encoding "+name
     return name
+
 
 class IOBinding:
 
@@ -568,6 +567,7 @@ class IOBinding:
 
 def _io_binding(parent):  # htest #
     from Tkinter import Toplevel, Text
+    from idlelib.configHandler import idleConf
 
     root = Toplevel(parent)
     root.title("Test IOBinding")
@@ -578,24 +578,15 @@ def _io_binding(parent):  # htest #
             self.text = text
             self.flist = None
             self.text.bind("<Control-o>", self.open)
-            self.text.bind('<Control-p>', self.printer)
             self.text.bind("<Control-s>", self.save)
-            self.text.bind("<Alt-s>", self.saveas)
-            self.text.bind('<Control-c>', self.savecopy)
         def get_saved(self): return 0
         def set_saved(self, flag): pass
         def reset_undo(self): pass
-        def update_recent_files_list(self, filename): pass
         def open(self, event):
             self.text.event_generate("<<open-window-from-file>>")
-        def printer(self, event):
-            self.text.event_generate("<<print-window>>")
         def save(self, event):
             self.text.event_generate("<<save-window>>")
-        def saveas(self, event):
-            self.text.event_generate("<<save-window-as-file>>")
-        def savecopy(self, event):
-            self.text.event_generate("<<save-copy-of-window-as-file>>")
+        def update_recent_files_list(s, f): pass
 
     text = Text(root)
     text.pack()

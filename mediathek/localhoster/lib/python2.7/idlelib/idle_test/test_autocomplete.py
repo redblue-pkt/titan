@@ -33,8 +33,9 @@ class AutoCompleteTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        del cls.editor, cls.text
         cls.root.destroy()
+        del cls.text
+        del cls.editor
         del cls.root
 
     def setUp(self):

@@ -198,12 +198,6 @@ class PosixPathTest(unittest.TestCase):
 
     def test_expanduser(self):
         self.assertEqual(posixpath.expanduser("foo"), "foo")
-        with test_support.EnvironmentVarGuard() as env:
-            for home in '/', '', '//', '///':
-                env['HOME'] = home
-                self.assertEqual(posixpath.expanduser("~"), "/")
-                self.assertEqual(posixpath.expanduser("~/"), "/")
-                self.assertEqual(posixpath.expanduser("~/foo"), "/foo")
         try:
             import pwd
         except ImportError:
@@ -220,12 +214,9 @@ class PosixPathTest(unittest.TestCase):
             self.assertIsInstance(posixpath.expanduser("~foo/"), basestring)
 
             with test_support.EnvironmentVarGuard() as env:
-                # expanduser should fall back to using the password database
-                del env['HOME']
-                home = pwd.getpwuid(os.getuid()).pw_dir
-                # $HOME can end with a trailing /, so strip it (see #17809)
-                home = home.rstrip("/") or '/'
-                self.assertEqual(posixpath.expanduser("~"), home)
+                env['HOME'] = '/'
+                self.assertEqual(posixpath.expanduser("~"), "/")
+                self.assertEqual(posixpath.expanduser("~/foo"), "/foo")
 
     def test_normpath(self):
         self.assertEqual(posixpath.normpath(""), ".")

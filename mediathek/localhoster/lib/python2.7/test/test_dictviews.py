@@ -98,7 +98,6 @@ class DictSetTest(unittest.TestCase):
         self.assertEqual(d1.viewkeys() & set(d1.viewkeys()), {'a', 'b'})
         self.assertEqual(d1.viewkeys() & set(d2.viewkeys()), {'b'})
         self.assertEqual(d1.viewkeys() & set(d3.viewkeys()), set())
-        self.assertEqual(d1.viewkeys() & tuple(d1.viewkeys()), {'a', 'b'})
 
         self.assertEqual(d1.viewkeys() | d1.viewkeys(), {'a', 'b'})
         self.assertEqual(d1.viewkeys() | d2.viewkeys(), {'a', 'b', 'c'})
@@ -107,7 +106,6 @@ class DictSetTest(unittest.TestCase):
         self.assertEqual(d1.viewkeys() | set(d2.viewkeys()), {'a', 'b', 'c'})
         self.assertEqual(d1.viewkeys() | set(d3.viewkeys()),
                          {'a', 'b', 'd', 'e'})
-        self.assertEqual(d1.viewkeys() | (1, 2), {'a', 'b', 1, 2})
 
         self.assertEqual(d1.viewkeys() ^ d1.viewkeys(), set())
         self.assertEqual(d1.viewkeys() ^ d2.viewkeys(), {'a', 'c'})
@@ -116,7 +114,6 @@ class DictSetTest(unittest.TestCase):
         self.assertEqual(d1.viewkeys() ^ set(d2.viewkeys()), {'a', 'c'})
         self.assertEqual(d1.viewkeys() ^ set(d3.viewkeys()),
                          {'a', 'b', 'd', 'e'})
-        self.assertEqual(d1.viewkeys() ^ tuple(d2.keys()), {'a', 'c'})
 
         self.assertEqual(d1.viewkeys() - d1.viewkeys(), set())
         self.assertEqual(d1.viewkeys() - d2.viewkeys(), {'a'})
@@ -124,7 +121,6 @@ class DictSetTest(unittest.TestCase):
         self.assertEqual(d1.viewkeys() - set(d1.viewkeys()), set())
         self.assertEqual(d1.viewkeys() - set(d2.viewkeys()), {'a'})
         self.assertEqual(d1.viewkeys() - set(d3.viewkeys()), {'a', 'b'})
-        self.assertEqual(d1.viewkeys() - (0, 1), {'a', 'b'})
 
     def test_items_set_operations(self):
         d1 = {'a': 1, 'b': 2}

@@ -249,9 +249,11 @@ class Request:
         # methods getting called in a non-standard order.  this may be
         # too complicated and/or unnecessary.
         # XXX should the __r_XXX attributes be public?
-        if attr in ('_Request__r_type', '_Request__r_host'):
-            getattr(self, 'get_' + attr[12:])()
-            return self.__dict__[attr]
+        if attr[:12] == '_Request__r_':
+            name = attr[12:]
+            if hasattr(Request, 'get_' + name):
+                getattr(self, 'get_' + name)()
+                return getattr(self, attr)
         raise AttributeError, attr
 
     def get_method(self):
@@ -610,7 +612,7 @@ class HTTPRedirectHandler(BaseHandler):
 
         # fix a possible malformed URL
         urlparts = urlparse.urlparse(newurl)
-        if not urlparts.path and urlparts.netloc:
+        if not urlparts.path:
             urlparts = list(urlparts)
             urlparts[2] = "/"
         newurl = urlparse.urlunparse(urlparts)
@@ -1072,9 +1074,6 @@ class AbstractDigestAuthHandler:
         elif algorithm == 'SHA':
             H = lambda x: hashlib.sha1(x).hexdigest()
         # XXX MD5-sess
-        else:
-            raise ValueError("Unsupported digest authentication "
-                             "algorithm %r" % algorithm.lower())
         KD = lambda s, d: H("%s:%s" % (s, d))
         return H, KD
 

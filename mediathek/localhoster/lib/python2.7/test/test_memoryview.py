@@ -10,8 +10,6 @@ import weakref
 import array
 from test import test_support
 import io
-import copy
-import pickle
 
 
 class AbstractMemoryTests:
@@ -354,20 +352,6 @@ class BytesMemorySliceSliceTest(unittest.TestCase,
 #class ArrayMemorySliceSliceTest(unittest.TestCase,
     #BaseMemorySliceSliceTests, BaseArrayMemoryTests):
     #pass
-
-
-class OtherTest(unittest.TestCase):
-    def test_copy(self):
-        m = memoryview(b'abc')
-        with self.assertRaises(TypeError):
-            copy.copy(m)
-
-    # See issue #22995
-    ## def test_pickle(self):
-    ##     m = memoryview(b'abc')
-    ##     for proto in range(pickle.HIGHEST_PROTOCOL + 1):
-    ##         with self.assertRaises(TypeError):
-    ##             pickle.dumps(m, proto)
 
 
 def test_main():

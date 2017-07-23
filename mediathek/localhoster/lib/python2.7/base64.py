@@ -64,10 +64,9 @@ def b64decode(s, altchars=None):
     length 2 (additional characters are ignored) which specifies the
     alternative alphabet used instead of the '+' and '/' characters.
 
-    The decoded string is returned.  A TypeError is raised if s is
-    incorrectly padded.  Characters that are neither in the normal base-64
-    alphabet nor the alternative alphabet are discarded prior to the padding
-    check.
+    The decoded string is returned.  A TypeError is raised if s were
+    incorrectly padded or if there are non-alphabet characters present in the
+    string.
     """
     if altchars is not None:
         s = s.translate(string.maketrans(altchars[:2], '+/'))
@@ -88,10 +87,9 @@ def standard_b64encode(s):
 def standard_b64decode(s):
     """Decode a string encoded with the standard Base64 alphabet.
 
-    Argument s is the string to decode.  The decoded string is returned.  A
-    TypeError is raised if the string is incorrectly padded.  Characters that
-    are not in the standard alphabet are discarded prior to the padding
-    check.
+    s is the string to decode.  The decoded string is returned.  A TypeError
+    is raised if the string is incorrectly padded or if there are non-alphabet
+    characters present in the string.
     """
     return b64decode(s)
 
@@ -99,20 +97,19 @@ _urlsafe_encode_translation = string.maketrans(b'+/', b'-_')
 _urlsafe_decode_translation = string.maketrans(b'-_', b'+/')
 
 def urlsafe_b64encode(s):
-    """Encode a string using the URL- and filesystem-safe Base64 alphabet.
+    """Encode a string using a url-safe Base64 alphabet.
 
-    Argument s is the string to encode.  The encoded string is returned.  The
-    alphabet uses '-' instead of '+' and '_' instead of '/'.
+    s is the string to encode.  The encoded string is returned.  The alphabet
+    uses '-' instead of '+' and '_' instead of '/'.
     """
     return b64encode(s).translate(_urlsafe_encode_translation)
 
 def urlsafe_b64decode(s):
-    """Decode a string using the URL- and filesystem-safe Base64 alphabet.
+    """Decode a string encoded with the standard Base64 alphabet.
 
-    Argument s is the string to decode.  The decoded string is returned.  A
-    TypeError is raised if the string is incorrectly padded.  Characters that
-    are not in the URL-safe base-64 alphabet, and are not a plus '+' or slash
-    '/', are discarded prior to the padding check.
+    s is the string to decode.  The decoded string is returned.  A TypeError
+    is raised if the string is incorrectly padded or if there are non-alphabet
+    characters present in the string.
 
     The alphabet uses '-' instead of '+' and '_' instead of '/'.
     """
@@ -270,7 +267,7 @@ def b16decode(s, casefold=False):
     a lowercase alphabet is acceptable as input.  For security purposes, the
     default is False.
 
-    The decoded string is returned.  A TypeError is raised if s is
+    The decoded string is returned.  A TypeError is raised if s were
     incorrectly padded or if there are non-alphabet characters present in the
     string.
     """

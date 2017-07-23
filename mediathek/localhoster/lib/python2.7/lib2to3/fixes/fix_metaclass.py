@@ -25,7 +25,7 @@ from ..fixer_util import Name, syms, Node, Leaf
 
 def has_metaclass(parent):
     """ we have to check the cls_node without changing it.
-        There are two possibilities:
+        There are two possiblities:
           1)  clsdef => suite => simple_stmt => expr_stmt => Leaf('__meta')
           2)  clsdef => simple_stmt => expr_stmt => Leaf('__meta')
     """

@@ -27,12 +27,6 @@ requires_IEEE_754 = unittest.skipUnless(have_getformat and
 test_dir = os.path.dirname(__file__) or os.curdir
 format_testfile = os.path.join(test_dir, 'formatfloat_testcases.txt')
 
-class FloatSubclass(float):
-    pass
-
-class OtherFloatSubclass(float):
-    pass
-
 class GeneralFloatCases(unittest.TestCase):
 
     def test_float(self):
@@ -71,8 +65,7 @@ class GeneralFloatCases(unittest.TestCase):
             factories += [unicode, CustomUnicode]
 
         for f in factories:
-            with test_support.check_py3k_warnings(quiet=True):
-                x = f(" 3.14  ")
+            x = f(" 3.14  ")
             msg = 'x has value %s and type %s' % (x, type(x).__name__)
             try:
                 self.assertEqual(float(x), 3.14, msg=msg)
@@ -80,17 +73,15 @@ class GeneralFloatCases(unittest.TestCase):
                 raise AssertionError('For %s got TypeError: %s' %
                                      (type(x).__name__, err))
             errmsg = "could not convert"
-            with self.assertRaisesRegexp(ValueError, errmsg, msg=msg), \
-                 test_support.check_py3k_warnings(quiet=True):
+            with self.assertRaisesRegexp(ValueError, errmsg, msg=msg):
                 float(f('A' * 0x10))
 
     def test_float_buffer(self):
-        with test_support.check_py3k_warnings():
-            self.assertEqual(float(buffer('12.3', 1, 3)), 2.3)
-            self.assertEqual(float(buffer('12.3\x00', 1, 3)), 2.3)
-            self.assertEqual(float(buffer('12.3 ', 1, 3)), 2.3)
-            self.assertEqual(float(buffer('12.3A', 1, 3)), 2.3)
-            self.assertEqual(float(buffer('12.34', 1, 3)), 2.3)
+        self.assertEqual(float(buffer('12.3', 1, 3)), 2.3)
+        self.assertEqual(float(buffer('12.3\x00', 1, 3)), 2.3)
+        self.assertEqual(float(buffer('12.3 ', 1, 3)), 2.3)
+        self.assertEqual(float(buffer('12.3A', 1, 3)), 2.3)
+        self.assertEqual(float(buffer('12.34', 1, 3)), 2.3)
 
     def check_conversion_to_int(self, x):
         """Check that int(x) has the correct value and type, for a float x."""
@@ -208,15 +199,6 @@ class GeneralFloatCases(unittest.TestCase):
             def __float__(self):
                 return ""
         self.assertRaises(TypeError, time.sleep, Foo5())
-
-        # Issue #24731
-        class F:
-            def __float__(self):
-                return OtherFloatSubclass(42.)
-        self.assertAlmostEqual(float(F()), 42.)
-        self.assertIs(type(float(F())), OtherFloatSubclass)
-        self.assertAlmostEqual(FloatSubclass(F()), 42.)
-        self.assertIs(type(FloatSubclass(F())), FloatSubclass)
 
     def test_is_integer(self):
         self.assertFalse((1.1).is_integer())

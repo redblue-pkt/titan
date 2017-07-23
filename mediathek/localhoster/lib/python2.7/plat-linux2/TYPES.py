@@ -69,7 +69,7 @@ __STDC_ISO_10646__ = 201505L
 __STDC_NO_THREADS__ = 1
 __GNU_LIBRARY__ = 6
 __GLIBC__ = 2
-__GLIBC_MINOR__ = 24
+__GLIBC_MINOR__ = 23
 
 # Included from sys/cdefs.h
 _SYS_CDEFS_H = 1

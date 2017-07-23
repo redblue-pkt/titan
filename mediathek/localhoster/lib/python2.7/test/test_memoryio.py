@@ -396,7 +396,6 @@ class MemoryTestMixin:
 
 
 class PyBytesIOTest(MemoryTestMixin, MemorySeekTestMixin, unittest.TestCase):
-    # Test _pyio.BytesIO; class also inherited for testing C implementation
 
     UnsupportedOperation = pyio.UnsupportedOperation
 
