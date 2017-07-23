@@ -29,11 +29,17 @@ if [ ! -e "/tmp/localhoster/lib/python2.7/lib-dynload" ] && [ -e /tmp/localhoste
 	mv -f /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" /tmp/localhoster/lib/python2.7/lib-dynload
 	rm -rf /tmp/localhoster/lib/python2.7/lib-dynload.*
 fi
-if [ ! -e "/tmp/localhoster/lib/libpython2.7.so.1.0" ] && [ -e /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" ];then
-#	ln -fs /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" /tmp/localhoster/lib/libpython2.7.so.1.0
-	mv -f /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" /tmp/localhoster/lib/libpython2.7.so.1.0
-	rm -f /tmp/localhoster/lib/libpython2.7.so.1.0.*
+if [ ! -e "/tmp/localhoster/lib/libcrypto.so.1.0.0" ] && [ -e /tmp/localhoster/lib/libcrypto.so.1.0.0."$ARCH" ];then
+#	ln -fs /tmp/localhoster/lib/libcrypto.so.1.0.0."$ARCH" /tmp/localhoster/lib/libcrypto.so.1.0.0
+	mv -f /tmp/localhoster/lib/libcrypto.so.1.0.0."$ARCH" /tmp/localhoster/lib/libcrypto.so.1.0.0
+	rm -f /tmp/localhoster/lib/libcrypto.so.1.0.0.*
 fi
+if [ ! -e "/tmp/localhoster/lib/libssl.so.1.0.0" ] && [ -e /tmp/localhoster/lib/libssl.so.1.0.0."$ARCH" ];then
+#	ln -fs /tmp/localhoster/lib/libssl.so.1.0.0."$ARCH" /tmp/localhoster/lib/llibssl.so.1.0.0
+	mv -f /tmp/localhoster/lib/libssl.so.1.0.0."$ARCH" /tmp/localhoster/lib/libssl.so.1.0.0
+	rm -f /tmp/localhoster/lib/libssl.so.1.0.0.*
+fi
+
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
@@ -42,9 +48,16 @@ if [ -e "$TMP/parser.tar" ]; then rm -f $TMP/parser.tar; fi
 
 if [ "$ARCH" == "sh4" ] && [ "$BOX" != "ufs912" ]; then
 	if [ -e "$CMD/lib/python2.7/lib-dynload.mipsel" ]; then rm -rf $CMD/lib/python2.7/lib-dynload.mipsel; fi
-	if [ -e "$CMD/lib/libpython2.7.so.1.0.mipsel" ]; then rm -rf $CMD/lib/libpython2.7.so.1.0.mipsel; fi
 	if [ -e "$CMD/lib/python2.7/lib-dynload.arm" ]; then rm -rf $CMD/lib/python2.7/lib-dynload.arm; fi
+
+	if [ -e "$CMD/lib/libpython2.7.so.1.0.mipsel" ]; then rm -rf $CMD/lib/libpython2.7.so.1.0.mipsel; fi
 	if [ -e "$CMD/lib/libpython2.7.so.1.0.arm" ]; then rm -rf $CMD/lib/libpython2.7.so.1.0.arm; fi
+
+	if [ -e "$CMD/lib/libssl.so.1.0.0.mipsel" ]; then rm -rf $CMD/lib/libssl.so.1.0.0.mipsel; fi
+	if [ -e "$CMD/lib/libssl.so.1.0.0.arm" ]; then rm -rf $CMD/lib/libssl.so.1.0.0.arm; fi
+
+	if [ -e "$CMD/lib/libcrypto.so.1.0.0.mipsel" ]; then rm -rf $CMD/lib/libcrypto.so.1.0.0.mipsel; fi
+	if [ -e "$CMD/lib/libcrypto.so.1.0.0.arm" ]; then rm -rf $CMD/lib/libcrypto.so.1.0.0.arm; fi
 fi
 
 hostercheck=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | tr '.' '\n' | wc -l`
