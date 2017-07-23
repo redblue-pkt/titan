@@ -455,8 +455,8 @@ def NamedTemporaryFile(mode='w+b', bufsize=-1, suffix="",
     The file is created as mkstemp() would do it.
 
     Returns an object with a file-like interface; the name of the file
-    is accessible as its 'name' attribute.  The file will be automatically
-    deleted when it is closed unless the 'delete' argument is set to False.
+    is accessible as file.name.  The file will be automatically deleted
+    when it is closed unless the 'delete' argument is set to False.
     """
 
     if dir is None:
@@ -476,8 +476,7 @@ def NamedTemporaryFile(mode='w+b', bufsize=-1, suffix="",
     try:
         file = _os.fdopen(fd, mode, bufsize)
         return _TemporaryFileWrapper(file, name, delete)
-    except BaseException:
-        _os.unlink(name)
+    except:
         _os.close(fd)
         raise
 

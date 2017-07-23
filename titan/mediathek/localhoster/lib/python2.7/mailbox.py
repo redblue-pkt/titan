@@ -1774,7 +1774,7 @@ class BabylMessage(Message):
     """Message with Babyl-specific properties."""
 
     def __init__(self, message=None):
-        """Initialize a BabylMessage instance."""
+        """Initialize an BabylMessage instance."""
         self._labels = []
         self._visible = Message()
         Message.__init__(self, message)

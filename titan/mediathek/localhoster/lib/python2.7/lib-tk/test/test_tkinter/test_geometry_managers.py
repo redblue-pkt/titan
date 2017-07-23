@@ -12,8 +12,6 @@ requires('gui')
 
 class PackTest(AbstractWidgetTest, unittest.TestCase):
 
-    test_keys = None
-
     def create2(self):
         pack = tkinter.Toplevel(self.root, name='pack')
         pack.wm_geometry('300x200+0+0')
@@ -278,8 +276,6 @@ class PackTest(AbstractWidgetTest, unittest.TestCase):
 
 class PlaceTest(AbstractWidgetTest, unittest.TestCase):
 
-    test_keys = None
-
     def create2(self):
         t = tkinter.Toplevel(self.root, width=300, height=200, bd=0)
         t.wm_geometry('300x200+0+0')
@@ -481,8 +477,6 @@ class PlaceTest(AbstractWidgetTest, unittest.TestCase):
 
 
 class GridTest(AbstractWidgetTest, unittest.TestCase):
-
-    test_keys = None
 
     def tearDown(self):
         cols, rows = self.root.grid_size()

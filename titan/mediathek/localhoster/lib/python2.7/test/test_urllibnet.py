@@ -111,7 +111,7 @@ class urlopenNetworkTests(unittest.TestCase):
 
     def test_getcode(self):
         # test getcode() with the fancy opener to get 404 error codes
-        URL = "http://www.pythontest.net/XXXinvalidXXX"
+        URL = "http://www.example.com/XXXinvalidXXX"
         open_url = urllib.FancyURLopener().open(URL)
         try:
             code = open_url.getcode()

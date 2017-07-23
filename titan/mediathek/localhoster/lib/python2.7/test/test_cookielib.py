@@ -1760,7 +1760,7 @@ class LWPCookieTests(TestCase):
             key = "%s_after" % cookie.value
             counter[key] = counter[key] + 1
 
-            # a permanent cookie got lost accidentally
+            # a permanent cookie got lost accidently
         self.assertEqual(counter["perm_after"], counter["perm_before"])
             # a session cookie hasn't been cleared
         self.assertEqual(counter["session_after"], 0)

@@ -315,7 +315,7 @@ def _reconstruct(x, info, deep, memo=None):
     if n > 2:
         state = info[2]
     else:
-        state = None
+        state = {}
     if n > 3:
         listiter = info[3]
     else:
@@ -329,7 +329,7 @@ def _reconstruct(x, info, deep, memo=None):
     y = callable(*args)
     memo[id(x)] = y
 
-    if state is not None:
+    if state:
         if deep:
             state = deepcopy(state, memo)
         if hasattr(y, '__setstate__'):

@@ -136,7 +136,7 @@ class RobotFileParser:
 
         # Until the robots.txt file has been read or found not
         # to exist, we must assume that no url is allowable.
-        # This prevents false positives when a user erroneously
+        # This prevents false positives when a user erronenously
         # calls can_fetch() before calling read().
         if not self.last_checked:
             return False

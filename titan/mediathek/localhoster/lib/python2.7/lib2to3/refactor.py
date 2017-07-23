@@ -184,7 +184,7 @@ class RefactoringTool(object):
 
         Args:
             fixer_names: a list of fixers to import
-            options: a dict with configuration.
+            options: an dict with configuration.
             explicit: a list of fixers to run even if they are explicit.
         """
         self.fixers = fixer_names

@@ -69,7 +69,7 @@ __STDC_ISO_10646__ = 201505L
 __STDC_NO_THREADS__ = 1
 __GNU_LIBRARY__ = 6
 __GLIBC__ = 2
-__GLIBC_MINOR__ = 24
+__GLIBC_MINOR__ = 23
 
 # Included from sys/cdefs.h
 _SYS_CDEFS_H = 1
@@ -506,8 +506,7 @@ PF_CAIF = 37
 PF_ALG = 38
 PF_NFC = 39
 PF_VSOCK = 40
-PF_KCM = 41
-PF_MAX = 42
+PF_MAX = 41
 AF_UNSPEC = PF_UNSPEC
 AF_LOCAL = PF_LOCAL
 AF_UNIX = PF_UNIX
@@ -552,7 +551,6 @@ AF_CAIF = PF_CAIF
 AF_ALG = PF_ALG
 AF_NFC = PF_NFC
 AF_VSOCK = PF_VSOCK
-AF_KCM = PF_KCM
 AF_MAX = PF_MAX
 SOL_RAW = 255
 SOL_DECNET = 261
@@ -561,21 +559,6 @@ SOL_PACKET = 263
 SOL_ATM = 264
 SOL_AAL = 265
 SOL_IRDA = 266
-SOL_NETBEUI = 267
-SOL_LLC = 268
-SOL_DCCP = 269
-SOL_NETLINK = 270
-SOL_TIPC = 271
-SOL_RXRPC = 272
-SOL_PPPOL2TP = 273
-SOL_BLUETOOTH = 274
-SOL_PNPIPE = 275
-SOL_RDS = 276
-SOL_IUCV = 277
-SOL_CAIF = 278
-SOL_ALG = 279
-SOL_NFC = 280
-SOL_KCM = 281
 SOMAXCONN = 128
 
 # Included from bits/sockaddr.h
@@ -658,8 +641,6 @@ SO_BPF_EXTENSIONS = 48
 # Included from bits/socket2.h
 
 # Included from bits/in.h
-__USE_KERNEL_IPV6_DEFS = 1
-__USE_KERNEL_IPV6_DEFS = 0
 IP_OPTIONS = 4
 IP_HDRINCL = 3
 IP_TOS = 1
@@ -755,7 +736,6 @@ IPV6_JOIN_ANYCAST = 27
 IPV6_LEAVE_ANYCAST = 28
 IPV6_IPSEC_POLICY = 34
 IPV6_XFRM_POLICY = 35
-IPV6_HDRINCL = 36
 IPV6_RECVPKTINFO = 49
 IPV6_PKTINFO = 50
 IPV6_RECVHOPLIMIT = 51
@@ -787,30 +767,30 @@ SOL_ICMPV6 = 58
 IPV6_RTHDR_LOOSE = 0
 IPV6_RTHDR_STRICT = 1
 IPV6_RTHDR_TYPE_0 = 0
-def IN_CLASSA(a): return ((((in_addr_t)(a)) & 0x80000000) == 0)
+def IN_CLASSA(a): return ((((in_addr_t)(a)) & (-2147483648)) == 0)
 
-IN_CLASSA_NET = 0xff000000
+IN_CLASSA_NET = (-16777216)
 IN_CLASSA_NSHIFT = 24
-IN_CLASSA_HOST = (0xffffffff & ~IN_CLASSA_NET)
+IN_CLASSA_HOST = ((-1) & ~IN_CLASSA_NET)
 IN_CLASSA_MAX = 128
-def IN_CLASSB(a): return ((((in_addr_t)(a)) & 0xc0000000) == 0x80000000)
+def IN_CLASSB(a): return ((((in_addr_t)(a)) & (-1073741824)) == (-2147483648))
 
-IN_CLASSB_NET = 0xffff0000
+IN_CLASSB_NET = (-65536)
 IN_CLASSB_NSHIFT = 16
-IN_CLASSB_HOST = (0xffffffff & ~IN_CLASSB_NET)
+IN_CLASSB_HOST = ((-1) & ~IN_CLASSB_NET)
 IN_CLASSB_MAX = 65536
-def IN_CLASSC(a): return ((((in_addr_t)(a)) & 0xe0000000) == 0xc0000000)
+def IN_CLASSC(a): return ((((in_addr_t)(a)) & (-536870912)) == (-1073741824))
 
-IN_CLASSC_NET = 0xffffff00
+IN_CLASSC_NET = (-256)
 IN_CLASSC_NSHIFT = 8
-IN_CLASSC_HOST = (0xffffffff & ~IN_CLASSC_NET)
-def IN_CLASSD(a): return ((((in_addr_t)(a)) & 0xf0000000) == 0xe0000000)
+IN_CLASSC_HOST = ((-1) & ~IN_CLASSC_NET)
+def IN_CLASSD(a): return ((((in_addr_t)(a)) & (-268435456)) == (-536870912))
 
 def IN_MULTICAST(a): return IN_CLASSD(a)
 
-def IN_EXPERIMENTAL(a): return ((((in_addr_t)(a)) & 0xe0000000) == 0xe0000000)
+def IN_EXPERIMENTAL(a): return ((((in_addr_t)(a)) & (-536870912)) == (-536870912))
 
-def IN_BADCLASS(a): return ((((in_addr_t)(a)) & 0xf0000000) == 0xf0000000)
+def IN_BADCLASS(a): return ((((in_addr_t)(a)) & (-268435456)) == (-268435456))
 
 IN_LOOPBACKNET = 127
 INET_ADDRSTRLEN = 16

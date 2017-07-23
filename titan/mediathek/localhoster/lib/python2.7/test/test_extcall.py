@@ -93,7 +93,7 @@ Verify clearing of SF bug #733667
     >>> g(*Nothing())
     Traceback (most recent call last):
       ...
-    TypeError: g() argument after * must be an iterable, not instance
+    TypeError: g() argument after * must be a sequence, not instance
 
     >>> class Nothing:
     ...     def __len__(self): return 5
@@ -102,7 +102,7 @@ Verify clearing of SF bug #733667
     >>> g(*Nothing())
     Traceback (most recent call last):
       ...
-    TypeError: g() argument after * must be an iterable, not instance
+    TypeError: g() argument after * must be a sequence, not instance
 
     >>> class Nothing():
     ...     def __len__(self): return 5
@@ -127,17 +127,6 @@ Verify clearing of SF bug #733667
 
     >>> g(*Nothing())
     0 (1, 2, 3) {}
-
-Check for issue #4806: Does a TypeError in a generator get propagated with the
-right error message?
-
-    >>> def broken(): raise TypeError("myerror")
-    ...
-
-    >>> g(*(broken() for i in range(1)))
-    Traceback (most recent call last):
-      ...
-    TypeError: myerror
 
 Make sure that the function doesn't stomp the dictionary
 
@@ -178,17 +167,17 @@ What about willful misconduct?
     >>> h(*h)
     Traceback (most recent call last):
       ...
-    TypeError: h() argument after * must be an iterable, not function
+    TypeError: h() argument after * must be a sequence, not function
 
     >>> dir(*h)
     Traceback (most recent call last):
       ...
-    TypeError: dir() argument after * must be an iterable, not function
+    TypeError: dir() argument after * must be a sequence, not function
 
     >>> None(*h)
     Traceback (most recent call last):
       ...
-    TypeError: NoneType object argument after * must be an iterable, \
+    TypeError: NoneType object argument after * must be a sequence, \
 not function
 
     >>> h(**h)
@@ -282,7 +271,7 @@ the function call setup. See <http://bugs.python.org/issue2016>.
     >>> f(**x)
     1 2
 
-An obscure message:
+A obscure message:
 
     >>> def f(a, b):
     ...    pass
