@@ -219,9 +219,9 @@ struct fb* openfb(char *fbdev, int devnr)
 #ifdef MIPSEL
 	if (fd < 0)
 	{
-			err(fbdev);
-			goto nolfb;
-		}
+		err(fbdev);
+		goto nolfb;
+	}
 #endif
 // blinking work end
 		
@@ -356,12 +356,13 @@ err_ioc_free:
 		return 0;
 	}
 #endif	
+#endif
 #ifndef CONFIG_ION
 	if(devnr == 0)
 		node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
 	if(devnr == 1)
 		node = addfb(FB1, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len, data_phys);
-#endif
+
 #endif		
 
 #else
