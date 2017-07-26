@@ -254,10 +254,9 @@ struct fb* openfb(char *fbdev, int devnr)
 	}
 
 	debug(444, "%dk video mem", fix_screeninfo.smem_len/1024);
-	
+ 	unsigned long data_phys = 0;	
 #ifdef MIPSEL
-unsigned long data_phys = 0;
-data_phys = fix_screeninfo.smem_start;
+	data_phys = fix_screeninfo.smem_start;
 #ifdef CONFIG_ION
 	/* allocate accel memory here... its independent from the framebuffer */
 	ion = open("/dev/ion", O_RDWR | O_CLOEXEC);
