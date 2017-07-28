@@ -29,6 +29,11 @@ if [ ! -e "/tmp/localhoster/lib/python2.7/lib-dynload" ] && [ -e /tmp/localhoste
 	mv -f /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" /tmp/localhoster/lib/python2.7/lib-dynload
 	rm -rf /tmp/localhoster/lib/python2.7/lib-dynload.*
 fi
+if [ ! -e "/tmp/localhoster/lib/libpython2.7.so.1.0" ] && [ -e /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" ];then
+#	ln -fs /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" /tmp/localhoster/lib/libpython2.7.so.1.0
+	mv -f /tmp/localhoster/lib/libpython2.7.so.1.0."$ARCH" /tmp/localhoster/lib/libpython2.7.so.1.0
+	rm -f /tmp/localhoster/lib/libpython2.7.so.1.0.*
+fi
 if [ ! -e "/tmp/localhoster/lib/libcrypto.so.1.0.0" ] && [ -e /tmp/localhoster/lib/libcrypto.so.1.0.0."$ARCH" ];then
 #	ln -fs /tmp/localhoster/lib/libcrypto.so.1.0.0."$ARCH" /tmp/localhoster/lib/libcrypto.so.1.0.0
 	mv -f /tmp/localhoster/lib/libcrypto.so.1.0.0."$ARCH" /tmp/localhoster/lib/libcrypto.so.1.0.0
