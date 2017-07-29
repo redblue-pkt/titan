@@ -756,6 +756,71 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 	return 0;
 }
 
+//host funktions
+#ifdef MIPSEL
+int cahostaction(struct dvbdev* dvbnode, int sessionnr)
+{
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "cahostaction nr %d, stat %d", sessionnr, casession[sessionnr].state);
+
+	switch (casession[sessionnr].state)
+	{
+		/* may god bless you */
+		case CASESSIONSTART:
+		{
+			debug(620, "state casessionstart");
+			unsigned char tag[] = {0x9f, 0x80, 0x20}; /* appl info enq */
+			sendAPDU(dvbnode, sessionnr, tag, 0, 0);
+			casession[sessionnr].state = CASESSIONFINAL;
+			break;
+		}
+		default:
+			err("unknown state");
+	}
+	return 0;
+}
+
+int cahostAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
+{
+	debug(620, "host manager cahostAPDU start");
+
+	int i = 0;
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "host manager %02x %02x %02x", tag[0], tag[1], tag[2]);
+	
+	if ((tag[0] == 0x9f) && (tag[1] == 0x84))
+	{
+		switch (tag[2])
+		{
+			case 0x00: /* tune          */
+				debug(620, "should TUNE!");         
+				break;                         
+		case 0x01: /* replace       */
+			debug(620, "should REPLACE!");         
+			break;                         
+		case 0x02: /* clear replace */
+			debug(620, "should CLEAR!");         
+			break;                         
+		case 0x03: /* ask release   */
+			debug(620, "should RELEASE !");         
+			break;                         
+		default:
+			debug(620, "unknown host ctrl apdu tag %02x\n", tag[2]);
+		}
+	}
+
+	return 0;
+}
+#endif
+
 //cc functions
 int caccaction(struct dvbdev* dvbnode, int sessionnr) 
 { 
@@ -934,7 +999,8 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 					{0x00, 0x02, 0x00, 0x42},	// application V2
 					{0x00, 0x02, 0x00, 0x43},	// application V3
 					{0x00, 0x03, 0x00, 0x41},	// conditional access
-//					{0x00, 0x20, 0x00, 0x41},	// host control
+					{0x00, 0x20, 0x00, 0x41},	// host control
+					{0x00, 0x20, 0x00, 0x42},	// host control2					
 					{0x00, 0x40, 0x00, 0x41},	// mmi
 					{0x00, 0x24, 0x00, 0x41},	// date-time
 					{0x00, 0x8c, 0x10, 0x01},	// content control
@@ -1251,6 +1317,10 @@ int casessionpoll(struct dvbdev* dvbnode)
 					casession[sessionnr].action = cadatetimeaction(dvbnode, sessionnr);
 				else if(casession[sessionnr].mmimanager == 1)
 					casession[sessionnr].action = cammiaction(dvbnode, sessionnr);
+#ifdef MIPSEL					
+				else if(casession[sessionnr].hostmanager == 1)
+					casession[sessionnr].action = cahostaction(dvbnode, sessionnr);	
+#endif
 				return 1;
 			}
 		}
@@ -1333,6 +1403,14 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 		case 0x00100041:
 			debug(620, "create session auth manager");
 		case 0x00200041:
+#ifdef MIPSEL
+		case 0x00200041:
+		case 0x00200042:
+			casession[sessionnr].inuse = 1;
+			casession[sessionnr].hostmanager = 1;
+			debug(620, "create session host manager");
+			break;	
+#endif
 		default:
 			status = 0xF0;
 			if(resid != NULL)
