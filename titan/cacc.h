@@ -1679,7 +1679,9 @@ static void check_new_key(struct dvbdev* dvbnode, struct cc_ctrl_data *cc_data)
 //#ifdef MIPSEL
 //	descrambler_set_key(dvbnode, 0, slot, dec);
 //#else
+#ifndef DREAMBOX
 	if(dvbnode->caslot->scrambled == 1)
+#endif
 		resendKey(dvbnode);
 //#endif
 	

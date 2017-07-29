@@ -533,6 +533,11 @@ struct casession
 	int appmanager;
 	int resmanager;
 	int ccmanager;
+#ifdef MIPSEL
+	int hostmanager;
+	int hostlacmanager;
+	int	upgrademanager;
+#endif
 	char* mmititle;
 	char* mmisubtitle;
 	char* mmitext;
