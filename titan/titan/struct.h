@@ -536,7 +536,7 @@ struct casession
 #ifdef MIPSEL
 	int hostmanager;
 	int hostlacmanager;
-	int	upgrademanager;
+	int upgrademanager;
 #endif
 	char* mmititle;
 	char* mmisubtitle;
