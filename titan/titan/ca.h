@@ -925,6 +925,28 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 
 			if(checkcerts() == 1)
 			{
+#ifdef MIPSEL
+				unsigned char data[][4]=
+				{
+					{0x00, 0x01, 0x00, 0x41},	// resource
+					{0x00, 0x01, 0x00, 0x42},	// resource2
+					{0x00, 0x02, 0x00, 0x41},	// application V1
+					{0x00, 0x02, 0x00, 0x42},	// application V2
+					{0x00, 0x02, 0x00, 0x43},	// application V3
+					{0x00, 0x03, 0x00, 0x41},	// conditional access
+//					{0x00, 0x20, 0x00, 0x41},	// host control
+					{0x00, 0x40, 0x00, 0x41},	// mmi
+					{0x00, 0x24, 0x00, 0x41},	// date-time
+					{0x00, 0x8c, 0x10, 0x01},	// content control
+#ifdef BAD
+					{0x00, 0x8c, 0x10, 0x01},	// content control
+					{0x00, 0x8c, 0x10, 0x02}	// content control 
+#else
+					{0x00, 0x8c, 0x10, 0x01}	// content control
+#endif
+//					{0x00, 0x10, 0x00, 0x41}	// auth.
+				};
+#else
 				unsigned char data[][4]=
 				{
 					{0x00, 0x01, 0x00, 0x41},	// resource
@@ -937,6 +959,7 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 					{0x00, 0x8c, 0x10, 0x01}	// content control
 //					{0x00, 0x10, 0x00, 0x41}	// auth.
 				};
+#endif
 				sendAPDU(dvbnode, sessionnr, tag, data, sizeof(data));
 			}
 			else
@@ -1269,11 +1292,13 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 	switch(tag)
 	{
 		case 0x00010041:
+		case 0x00010042:
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].resmanager = 1;
 			debug(620, "create session res manager");
 			break;
 		case 0x00020041:
+		case 0x00020042:
 		case 0x00020043:
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].appmanager = 1;
@@ -1296,6 +1321,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			debug(620, "create session mmi manager");
 			break;
 		case 0x008c1001:
+		case 0x008c1002:
 			if(checkcerts())
 			{
 				casession[sessionnr].inuse = 1;
