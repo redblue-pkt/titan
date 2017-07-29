@@ -774,7 +774,7 @@ int cahostaction(struct dvbdev* dvbnode, int sessionnr)
 		{
 			debug(620, "state casessionstart");
 			unsigned char tag[] = {0x9f, 0x80, 0x20}; /* appl info enq */
-			sendAPDU(dvbnode, sessionnr, tag, 0, 0);
+			sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
 			casession[sessionnr].state = CASESSIONFINAL;
 			break;
 		}
@@ -788,7 +788,6 @@ int cahostAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *
 {
 	debug(620, "host manager cahostAPDU start");
 
-	int i = 0;
 	struct casession* casession = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
@@ -1404,13 +1403,12 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			debug(620, "create session auth manager");
 		case 0x00200041:
 #ifdef MIPSEL
-		case 0x00200041:
 		case 0x00200042:
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].hostmanager = 1;
+#endif
 			debug(620, "create session host manager");
 			break;	
-#endif
 		default:
 			status = 0xF0;
 			if(resid != NULL)
