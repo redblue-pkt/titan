@@ -818,6 +818,59 @@ int cahostAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *
 
 	return 0;
 }
+
+//mmi app functions
+int cammiappaction(struct dvbdev* dvbnode, int sessionnr)
+{
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "cammiappaction nr %d, stat %d", sessionnr, casession[sessionnr].state);
+
+	switch (casession[sessionnr].state)
+	{
+		case CASESSIONSTART:
+		{
+			debug(620, "state casessionstart");
+			unsigned char tag[] = {0x9f, 0x80, 0x20}; 
+			sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
+			casession[sessionnr].state = CASESSIONFINAL;
+			break;
+		}
+		default:
+			err("unknown state");
+	}
+	return 0;
+}
+
+int cammiappAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
+{
+	debug(620, "host manager cammiappAPDU start");
+
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "host manager %02x %02x %02x", tag[0], tag[1], tag[2]);
+	
+	if ((tag[0] == 0x9f) && (tag[1] == 0x80)) 
+	{
+		switch (tag[2])
+		{
+		case 0x21:
+			debug(620, "received tag %02x", tag[2]);
+			break;
+		default:
+			debug(620, "unknown apdu tag %02x", tag[2]);
+		}
+	}
+
+	return 0;
+}
+	
 #endif
 
 //cc functions
@@ -1001,6 +1054,8 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 					{0x00, 0x20, 0x00, 0x41},	// host control
 					{0x00, 0x20, 0x00, 0x42},	// host control2					
 					{0x00, 0x40, 0x00, 0x41},	// mmi
+					{0x00, 0x41, 0x00, 0x41},	// mmi app1
+					{0x00, 0x41, 0x00, 0x42},	// mmi app2
 					{0x00, 0x24, 0x00, 0x41},	// date-time
 					{0x00, 0x8c, 0x10, 0x01},	// content control
 #ifdef BAD
@@ -1319,6 +1374,8 @@ int casessionpoll(struct dvbdev* dvbnode)
 #ifdef MIPSEL					
 				else if(casession[sessionnr].hostmanager == 1)
 					casession[sessionnr].action = cahostaction(dvbnode, sessionnr);	
+				else if(casession[sessionnr].mmiappmanager == 1)
+					casession[sessionnr].action = cammiappaction(dvbnode, sessionnr);	
 #endif
 				return 1;
 			}
@@ -1408,7 +1465,15 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			casession[sessionnr].hostmanager = 1;
 #endif
 			debug(620, "create session host manager");
-			break;	
+			break;
+#ifdef MIPSEL
+		case 0x00410041:
+		case 0x00410042:
+			casession[sessionnr].inuse = 1;
+			casession[sessionnr].mmiappmanager = 1;
+			debug(620, "create session mmi app manager");
+			break;
+#endif
 		default:
 			status = 0xF0;
 			if(resid != NULL)
@@ -1573,6 +1638,18 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 				if(cammiAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
+#ifdef MIPSEL
+			else if(casession->hostmanager == 1)
+			{
+				if(cahostAPDU(dvbnode, sessionnr, tag, pkt, alen))
+					casession->action = 1;
+			}
+			else if(casession->mmiappmanager == 1)
+			{
+				if(cammiappAPDU(dvbnode, sessionnr, tag, pkt, alen))
+					casession->action = 1;
+			}
+#endif
 
 			pkt += alen;
 			len -= alen;

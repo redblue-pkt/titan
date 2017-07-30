@@ -535,6 +535,7 @@ struct casession
 	int ccmanager;
 #ifdef MIPSEL
 	int hostmanager;
+	int mmiappmanager;
 	int hostlacmanager;
 	int upgrademanager;
 #endif
