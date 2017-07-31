@@ -114,7 +114,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		else
 			printf("[titan] #### CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x\n", index, parity);	
 	}
-	descrambler_close();
+	//descrambler_close();
 
 #else
 	
@@ -290,9 +290,11 @@ int descrambler_set_pid(int index, int enable, int pid)
 int descrambler_open(void)
 {
 	debug(620, "start");
-	desc_fd = open(descrambler_filename, O_RDWR | O_NONBLOCK );
-	debug(620, "descrambler_filename: %s desc_fd: %d", descrambler_filename, desc_fd);
-
+	if(desc_fd == -1)
+	{
+		desc_fd = open(descrambler_filename, O_RDWR | O_NONBLOCK );
+		debug(620, "descrambler_filename: %s desc_fd: %d", descrambler_filename, desc_fd);
+	}
 	if (desc_fd <= 0) {
 		printf("cannot open %s\n", descrambler_filename);
 		return 0;
