@@ -1521,12 +1521,11 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 		case 0x008c1002:
 			if(checkcerts())
 			{
+#ifdef MIPSEL
+				descrambler_open();
+#endif				
 				casession[sessionnr].inuse = 1;
 				casession[sessionnr].ccmanager = 1;
-#ifdef MIPSEL
-				if(checkcerts() == 1)
-					descrambler_open();
-#endif
 				//neutrino [session_nb - 1] = new eDVBCIContentControlManagerSession(slot);
 				debug(620, "create session cc manager");
 			}
