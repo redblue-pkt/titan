@@ -870,6 +870,76 @@ int cammiappAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void
 
 	return 0;
 }
+
+//upgrade function
+int caupgradeaction(struct dvbdev* dvbnode, int sessionnr)
+{
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "caupgradeaction nr %d, stat %d", sessionnr, casession[sessionnr].state);
+
+	switch (casession[sessionnr].state)
+	{
+		case CASESSIONSTART:
+		{
+			debug(620, "state casessionstart");
+			unsigned char tag[] = {0x9f, 0x80, 0x20}; 
+			sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
+			casession[sessionnr].state = CASESSIONFINAL;
+			break;
+		}
+		default:
+			err("unknown state");
+	}
+	return 0;
+}
+
+int caupgradeAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
+{
+	debug(620, "host manager caupgradeAPDU start");
+
+	struct casession* casession = NULL;
+
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "host manager %02x %02x %02x", tag[0], tag[1], tag[2]);
+	
+	if ((tag[0] == 0x9f) && (tag[1] == 0x9d))
+	{
+		switch (tag[2])
+		{
+		case 0x01:
+			{
+			debug(620, "UPGRADE REQUEST starts");
+			unsigned char tag[] = {0x9f, 0x9d, 0x02}; /* cam upgrade reply */
+			sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
+			break;
+			}
+		case 0x03:
+			{
+			debug(620, "UPGRADE REQUEST continues");
+      unsigned char tag[] = {0x9f, 0x9d, 0x02}; /* cam upgrade reply */
+      sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
+			break;
+			}
+		case 0x04:
+			{
+			debug(620, "UPGRADE REQUEST completed");
+      unsigned char tag[] = {0x9f, 0x9d, 0x02}; /* cam upgrade reply */
+      sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
+			break;
+			}
+		default:
+			debug(620, "unknown cam upgrade apdu tag %02x", tag[2]);
+		}
+	}
+
+	return 0;
+}
 	
 #endif
 
@@ -1063,6 +1133,7 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 					{0x00, 0x8c, 0x10, 0x02}	// content control 
 #else
 					{0x00, 0x8c, 0x10, 0x01}	// content control
+					{0x00, 0x8e, 0x10, 0x01}	// upgrade
 #endif
 //					{0x00, 0x10, 0x00, 0x41}	// auth.
 				};
@@ -1376,6 +1447,8 @@ int casessionpoll(struct dvbdev* dvbnode)
 					casession[sessionnr].action = cahostaction(dvbnode, sessionnr);	
 				else if(casession[sessionnr].mmiappmanager == 1)
 					casession[sessionnr].action = cammiappaction(dvbnode, sessionnr);	
+				else if(casession[sessionnr].upgrademanager == 1)
+					casession[sessionnr].action = caupgradeaction(dvbnode, sessionnr);	
 #endif
 				return 1;
 			}
@@ -1472,6 +1545,11 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].mmiappmanager = 1;
 			debug(620, "create session mmi app manager");
+			break;
+		case 0x008e1001:
+			casession[sessionnr].inuse = 1;
+			casession[sessionnr].upgrademanager = 1;
+			debug(620, "create session upgrade manager");
 			break;
 #endif
 		default:
@@ -1647,6 +1725,11 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 			else if(casession->mmiappmanager == 1)
 			{
 				if(cammiappAPDU(dvbnode, sessionnr, tag, pkt, alen))
+					casession->action = 1;
+			}
+			else if(casession->upgrademanager == 1)
+			{
+				if(caupgradeAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
 #endif
