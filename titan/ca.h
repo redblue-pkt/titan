@@ -940,7 +940,90 @@ int caupgradeAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, voi
 
 	return 0;
 }
+
+//host_lac funktion
+int cahostlacAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
+{
+	debug(620, "host lac manager cahostlacAPDU start");
+
+	struct casession* casession = NULL;
 	
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
+	casession = dvbnode->caslot->casession;
+
+	debug(620, "host lac manager %02x %02x %02x", tag[0], tag[1], tag[2]);
+	
+	uint8_t data_reply[4]; 
+
+	/* check for German or French in titan settings, 
+           if not found use English */	
+	if(ostrcmp(getconfig("lang", NULL), "po/de") == 0)
+	{
+		data_reply[0] = 0x64; /* d */
+		data_reply[1] = 0x65; /* e */
+		data_reply[2] = 0x75; /* u */
+	}
+	else if(ostrcmp(getconfig("lang", NULL), "po/fr") == 0)
+	{
+		data_reply[0] = 0x66; /* f */
+		data_reply[1] = 0x72; /* r */
+		data_reply[2] = 0x61; /* a */
+	}	
+	else
+	{
+		data_reply[0] = 0x65; /* e */
+		data_reply[1] = 0x6e; /* n */
+		data_reply[2] = 0x67; /* g */
+	}	
+
+	if ((tag[0] == 0x9f) && (tag[1] == 0x81))
+	{
+		switch (tag[2])
+		{
+			case 0x00: /* country enquiry */
+			{
+				debug(620, "country answered with '%s'", data_reply);
+				uint8_t tag[3] = { 0x9f, 0x81, 0x01 }; /* host country reply */
+				sendAPDU(dvbnode, sessionnr, tag, data_reply, 3);
+				break;
+			}
+		case 0x10: /* language enquiry */
+		{
+			debug(620, "language answered with '%s'", data_reply);
+			uint8_t tag[3] = { 0x9f, 0x81, 0x11 }; /* host language reply */
+			sendAPDU(dvbnode, sessionnr, tag, data_reply, 3);
+			break;
+		}
+		default:
+			debug(620, "unknown host lac apdu tag %02x", tag[2]);
+		}
+	}
+	return 0;
+}
+int cahostlacaction(struct dvbdev* dvbnode, int sessionnr) 
+{ 
+	struct casession* casession = NULL; 
+	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0; 
+		casession = dvbnode->caslot->casession; 
+
+	debug(620, "cahostlacaction nr %d, stat %d", sessionnr, casession[sessionnr].state); 	
+	
+	switch (casession[sessionnr].state) 
+	{ 
+		case CASESSIONSTART: 
+		{
+			debug(620, "state casessionstart");
+			unsigned char tag[] = {0x9f, 0x80, 0x20}; 
+			sendAPDU(dvbnode, sessionnr, tag, NULL, 0);
+			casession[sessionnr].state = CASESSIONFINAL;
+			break;
+		}
+		default:
+			err("unknown state");
+	}
+	return 0;
+}	
+
 #endif
 
 //cc functions
@@ -1122,17 +1205,16 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 					{0x00, 0x02, 0x00, 0x43},	// application V3
 					{0x00, 0x03, 0x00, 0x41},	// conditional access
 					{0x00, 0x20, 0x00, 0x41},	// host control
-					{0x00, 0x20, 0x00, 0x42},	// host control2					
+					{0x00, 0x20, 0x00, 0x42},	// host control2	
+					{0x00, 0x24, 0x00, 0x41},	// date-time		
 					{0x00, 0x40, 0x00, 0x41},	// mmi
 					{0x00, 0x41, 0x00, 0x41},	// mmi app1
 					{0x00, 0x41, 0x00, 0x42},	// mmi app2
-					{0x00, 0x24, 0x00, 0x41},	// date-time
-					{0x00, 0x8c, 0x10, 0x01},	// content control
-
 					{0x00, 0x8c, 0x10, 0x01},	// content control
 #ifdef BAD
 					{0x00, 0x8c, 0x10, 0x02},	// content control 
 #endif
+					{0x00, 0x8d, 0x10, 0x01}	// host lac
 					{0x00, 0x8e, 0x10, 0x01}	// upgrade
 				};
 #else
@@ -1447,6 +1529,8 @@ int casessionpoll(struct dvbdev* dvbnode)
 					casession[sessionnr].action = cammiappaction(dvbnode, sessionnr);	
 				else if(casession[sessionnr].upgrademanager == 1)
 					casession[sessionnr].action = caupgradeaction(dvbnode, sessionnr);	
+				else if(casession[sessionnr].hostlacmanager == 1)
+					casession[sessionnr].action = cahostlacaction(dvbnode, sessionnr);	
 #endif
 				return 1;
 			}
@@ -1551,6 +1635,11 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			casession[sessionnr].inuse = 1;
 			casession[sessionnr].upgrademanager = 1;
 			debug(620, "create session upgrade manager");
+			break;
+		case 0x008d1001:
+			casession[sessionnr].inuse = 1;
+			casession[sessionnr].hostlacmanager = 1;
+			debug(620, "create session host lac manager");
 			break;
 #endif
 		default:
@@ -1731,6 +1820,11 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 			else if(casession->upgrademanager == 1)
 			{
 				if(caupgradeAPDU(dvbnode, sessionnr, tag, pkt, alen))
+					casession->action = 1;
+			}
+			else if(casession->hostlacmanager == 1)
+			{
+				if(cahostlacAPDU(dvbnode, sessionnr, tag, pkt, alen))
 					casession->action = 1;
 			}
 #endif
