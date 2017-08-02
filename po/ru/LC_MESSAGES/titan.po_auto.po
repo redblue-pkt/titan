@@ -864,7 +864,7 @@ msgstr "Все каналы"
 msgid "All Sorted"
 msgstr ""
 
-#: MultiImage.c:262
+#: MultiImage.c:292
 msgid ""
 "All data on this device will be deleted!\n"
 "OK?"
@@ -3150,7 +3150,7 @@ msgstr "Данные EPG удалены!"
 msgid "EPGfreespace (KB)"
 msgstr "Размер свободного пространства (Кб)"
 
-#: MultiImage.c:244 MultiImage.c:274 MultiImage.c:354 network.h:265
+#: MultiImage.c:274 MultiImage.c:304 MultiImage.c:384 network.h:265
 #: network.h:273 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 msgid "ERROR"
 msgstr "ОШИБКА!"
@@ -3227,8 +3227,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: menu.h:996 menu.h:998 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
-#: movshare.h:191 movshare.h:197 MultiImage.c:262 MultiImage.c:274
-#: MultiImage.c:534 MultiImage.c:592 MultiImage.c:672 myvideo.h:86
+#: movshare.h:191 movshare.h:197 MultiImage.c:292 MultiImage.c:304
+#: MultiImage.c:564 MultiImage.c:622 MultiImage.c:702 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
@@ -3555,7 +3555,7 @@ msgstr "Список плагинов"
 msgid "External Player"
 msgstr ""
 
-#: MultiImage.c:402
+#: MultiImage.c:432
 msgid ""
 "Extracting will take a few minutes ...\n"
 "\n"
@@ -4815,7 +4815,7 @@ msgid ""
 "Image extracted"
 msgstr ""
 
-#: MultiImage.c:318
+#: MultiImage.c:348
 msgid "INSTALL"
 msgstr ""
 
@@ -4885,11 +4885,11 @@ msgstr ""
 msgid "Image"
 msgstr "Имидж"
 
-#: MultiImage.c:354
+#: MultiImage.c:384
 msgid "Image already present!"
 msgstr ""
 
-#: MultiImage.c:672
+#: MultiImage.c:702
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5969,7 +5969,7 @@ msgstr ""
 #: mightyupload.h:69 mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38
 #: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138
 #: movshare.h:40 movshare.h:101 movshare.h:191 movshare.h:197 MultiImage.c:46
-#: MultiImage.c:402 MultiImage.c:608 myvideo.h:86 nbaondemand.h:61
+#: MultiImage.c:432 MultiImage.c:638 myvideo.h:86 nbaondemand.h:61
 #: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
@@ -6389,7 +6389,7 @@ msgstr ""
 msgid "No Audiosync"
 msgstr "Загрузка с опцией No Audiosync"
 
-#: MultiImage.c:244
+#: MultiImage.c:274
 msgid "No Linux partition found on this device."
 msgstr ""
 
@@ -6403,7 +6403,7 @@ msgid ""
 "Press OK to create it"
 msgstr "Не найдена папка MediaDB! Нажмите ОК, чтобы создать её"
 
-#: MultiImage.c:592
+#: MultiImage.c:622
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6443,7 +6443,7 @@ msgstr ""
 msgid "No config file found."
 msgstr "Не найден файл конфигурации"
 
-#: MultiImage.c:175
+#: MultiImage.c:205
 msgid "No device available"
 msgstr ""
 
@@ -6554,10 +6554,10 @@ msgstr ""
 #: menu.h:996 menu.h:998 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
-#: movshare.h:191 movshare.h:197 MultiImage.c:46 MultiImage.c:175
-#: MultiImage.c:244 MultiImage.c:262 MultiImage.c:274 MultiImage.c:354
-#: MultiImage.c:402 MultiImage.c:534 MultiImage.c:592 MultiImage.c:608
-#: MultiImage.c:672 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
+#: movshare.h:191 movshare.h:197 MultiImage.c:46 MultiImage.c:205
+#: MultiImage.c:274 MultiImage.c:292 MultiImage.c:304 MultiImage.c:384
+#: MultiImage.c:432 MultiImage.c:564 MultiImage.c:622 MultiImage.c:638
+#: MultiImage.c:702 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
 #: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
@@ -6899,7 +6899,7 @@ msgstr ""
 msgid "Parted"
 msgstr ""
 
-#: MultiImage.c:274
+#: MultiImage.c:304
 msgid "Partition could not be created"
 msgstr ""
 
@@ -7580,7 +7580,7 @@ msgstr "Отменить выбор"
 msgid "REMOVE STYLE"
 msgstr ""
 
-#: MultiImage.c:323
+#: MultiImage.c:353
 msgid "RENAME"
 msgstr ""
 
@@ -9634,7 +9634,7 @@ msgstr "Воскресенье"
 msgid "Sure to cancel the cut process?"
 msgstr "Действительно отменить?"
 
-#: MultiImage.c:533
+#: MultiImage.c:563
 msgid "Sure to delete Image?\n"
 msgstr ""
 
@@ -9937,7 +9937,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr "Хостер не поддерживается!"
 
-#: MultiImage.c:608
+#: MultiImage.c:638
 msgid ""
 "The install process will look in /tmp for an image zip file.\n"
 "Please copy the image to /tmp.\n"
