@@ -13931,27 +13931,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "AE"
-#~ msgstr "Ä"
-
-#~ msgid "Clear"
-#~ msgstr "Limpiar"
-
-#~ msgid "OE"
-#~ msgstr "Ö"
-
-#~ msgid "Space"
-#~ msgstr "Espacio"
-
-#~ msgid "UE"
-#~ msgstr "Ü"
-
-#~ msgid "ae"
-#~ msgstr "Ä"
-
-#~ msgid "oe"
-#~ msgstr "Ö"
-
-#~ msgid "ue"
-#~ msgstr "Ü"

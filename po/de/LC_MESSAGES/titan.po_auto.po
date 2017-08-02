@@ -14097,33 +14097,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "AE"
-#~ msgstr "Ä"
-
-#~ msgid "Clear"
-#~ msgstr "entfernen"
-
-#~ msgid "OE"
-#~ msgstr "Ö"
-
-#~ msgid "SZ"
-#~ msgstr "ß"
-
-#~ msgid "Space"
-#~ msgstr "Leerzeichen"
-
-#~ msgid "UE"
-#~ msgstr "Ü"
-
-#~ msgid "ae"
-#~ msgstr "ä"
-
-#~ msgid "oe"
-#~ msgstr "ö"
-
-#~ msgid "sz"
-#~ msgstr "ß"
-
-#~ msgid "ue"
-#~ msgstr "ü"
