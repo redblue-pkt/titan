@@ -113,6 +113,25 @@ char* find_multiimage_dev()
 				free(path); path = NULL;
 			}
 		}
+		else
+		{
+			pos = ostrstr(fileline, "mmcblk1p1");
+			if(pos != NULL)
+			{
+				pos = string_newline(pos);
+				path = getconfig("mountpath", NULL);
+				path = ostrcat(path, "/", 0, 0);
+				path = ostrcat(path, pos, 1, 0);
+				path = ostrcat(path, "/", 1, 0);
+				path = ostrcat(path, "titan_multi", 1, 0);
+				if(file_exist(path) == 1)
+				{
+					mdev = ostrcat(mdev, pos, 1, 0);
+				}
+				free(path); path = NULL;
+			}
+		}
+		
 		if(mdev != NULL)
 	 		break;
 	}
@@ -162,6 +181,17 @@ int no_mdev()
 			pos = string_newline(pos);
 			if(strlen(pos) == 4)
 			{
+				if(mdev == NULL)
+					mdev = ostrcat(mdev, pos, 1, 0);
+				addchoicebox(device, pos, pos);
+			}
+		}
+		else
+		{
+			pos = ostrstr(fileline, "mmcblk1p1");
+			if(pos != NULL)
+			{
+				pos = string_newline(pos);
 				if(mdev == NULL)
 					mdev = ostrcat(mdev, pos, 1, 0);
 				addchoicebox(device, pos, pos);
