@@ -295,9 +295,13 @@ int no_mdev()
 			return 1;
 		}
 		//cmd = ostrcat("mkfs.ext2.gui /dev/" , mdev, 0, 0);
-		cmd = ostrcat("mkfs.ext3.gui -E lazy_itable_init=1 /dev/" , mdev, 0, 0);
+		//cmd = ostrcat("mkfs.ext3.gui -E lazy_itable_init=1 /dev/" , mdev, 0, 0);
+		cmd = ostrcat("mkfs.ext3.gui -T largefile /dev/" , mdev, 0, 0);
 		debug(81, "format cmd: %s", cmd);
+		int merksec = status.sec;
+		status.sec = 0; //deaktiviere Spinner
 		ret = system(cmd);
+		status.sec = merksec;
 		free(cmd); cmd = NULL;
 		if(ret != 0)
 		{
