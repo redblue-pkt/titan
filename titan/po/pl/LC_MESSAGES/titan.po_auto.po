@@ -3098,7 +3098,7 @@ msgstr ""
 msgid "EPGfreespace (KB)"
 msgstr ""
 
-#: MultiImage.c:274 MultiImage.c:304 MultiImage.c:384 network.h:265
+#: MultiImage.c:274 MultiImage.c:308 MultiImage.c:388 network.h:265
 #: network.h:273 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 msgid "ERROR"
 msgstr ""
@@ -3175,8 +3175,8 @@ msgstr ""
 #: menu.h:996 menu.h:998 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
-#: movshare.h:191 movshare.h:197 MultiImage.c:292 MultiImage.c:304
-#: MultiImage.c:564 MultiImage.c:622 MultiImage.c:702 myvideo.h:86
+#: movshare.h:191 movshare.h:197 MultiImage.c:292 MultiImage.c:308
+#: MultiImage.c:568 MultiImage.c:626 MultiImage.c:706 myvideo.h:86
 #: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
@@ -3501,7 +3501,7 @@ msgstr "Dodatki"
 msgid "External Player"
 msgstr ""
 
-#: MultiImage.c:432
+#: MultiImage.c:436
 msgid ""
 "Extracting will take a few minutes ...\n"
 "\n"
@@ -4738,7 +4738,7 @@ msgid ""
 "Image extracted"
 msgstr ""
 
-#: MultiImage.c:348
+#: MultiImage.c:352
 msgid "INSTALL"
 msgstr ""
 
@@ -4808,11 +4808,11 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: MultiImage.c:384
+#: MultiImage.c:388
 msgid "Image already present!"
 msgstr ""
 
-#: MultiImage.c:702
+#: MultiImage.c:706
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5884,7 +5884,7 @@ msgstr ""
 #: mightyupload.h:69 mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38
 #: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138
 #: movshare.h:40 movshare.h:101 movshare.h:191 movshare.h:197 MultiImage.c:46
-#: MultiImage.c:432 MultiImage.c:638 myvideo.h:86 nbaondemand.h:61
+#: MultiImage.c:436 MultiImage.c:642 myvideo.h:86 nbaondemand.h:61
 #: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
@@ -6318,7 +6318,7 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 
-#: MultiImage.c:622
+#: MultiImage.c:626
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6465,9 +6465,9 @@ msgstr ""
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
 #: movshare.h:191 movshare.h:197 MultiImage.c:46 MultiImage.c:205
-#: MultiImage.c:274 MultiImage.c:292 MultiImage.c:304 MultiImage.c:384
-#: MultiImage.c:432 MultiImage.c:564 MultiImage.c:622 MultiImage.c:638
-#: MultiImage.c:702 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
+#: MultiImage.c:274 MultiImage.c:292 MultiImage.c:308 MultiImage.c:388
+#: MultiImage.c:436 MultiImage.c:568 MultiImage.c:626 MultiImage.c:642
+#: MultiImage.c:706 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
 #: networkbrowser.h:1211 networkbrowser.h:1785 networkbrowser.h:1792
@@ -6809,7 +6809,7 @@ msgstr ""
 msgid "Parted"
 msgstr ""
 
-#: MultiImage.c:304
+#: MultiImage.c:308
 msgid "Partition could not be created"
 msgstr ""
 
@@ -7473,7 +7473,7 @@ msgstr ""
 msgid "REMOVE STYLE"
 msgstr ""
 
-#: MultiImage.c:353
+#: MultiImage.c:357
 msgid "RENAME"
 msgstr ""
 
@@ -9523,7 +9523,7 @@ msgstr "Niedziela"
 msgid "Sure to cancel the cut process?"
 msgstr ""
 
-#: MultiImage.c:563
+#: MultiImage.c:567
 msgid "Sure to delete Image?\n"
 msgstr ""
 
@@ -9822,7 +9822,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr ""
 
-#: MultiImage.c:638
+#: MultiImage.c:642
 msgid ""
 "The install process will look in /tmp for an image zip file.\n"
 "Please copy the image to /tmp.\n"
