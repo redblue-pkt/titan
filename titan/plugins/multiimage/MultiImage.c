@@ -296,7 +296,7 @@ int no_mdev()
 		}
 		//cmd = ostrcat("mkfs.ext2.gui /dev/" , mdev, 0, 0);
 		//cmd = ostrcat("mkfs.ext3.gui -E lazy_itable_init=1 /dev/" , mdev, 0, 0);
-		cmd = ostrcat("mkfs.ext3.gui -T largefile /dev/" , mdev, 0, 0);
+		cmd = ostrcat("mkfs.ext3.gui -F /dev/" , mdev, 0, 0);
 		debug(81, "format cmd: %s", cmd);
 		int merksec = status.sec;
 		status.sec = 0; //deaktiviere Spinner
