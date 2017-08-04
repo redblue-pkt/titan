@@ -2540,9 +2540,10 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 				descrambler_set_pid(0, 1, status.aktservice->channel->pmtpid);*/	
 				
 				
-#endif
+#else
 
 				resendKey(dvbnode);
+#endif
 			}
  
 			return 0;
