@@ -1041,9 +1041,9 @@ int caccaction(struct dvbdev* dvbnode, int sessionnr)
 		{ 
 			
 #ifdef MIPSEL
-			const uint8_t tag[3] = { 0x9f, 0x90, 0x02 };
-			const uint8_t data = 0x01;
-			sendAPDU(dvbnode, sessionnr, tag, &data, 1);
+			//const uint8_t tag[3] = { 0x9f, 0x90, 0x02 };
+			//const uint8_t data = 0x01;
+			//sendAPDU(dvbnode, sessionnr, tag, &data, 1);
 #endif			
 			casession[sessionnr].state = CASESSIONFINAL; 
 			return 0; 
