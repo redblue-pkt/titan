@@ -1873,6 +1873,8 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	int type = 0;
 	char* realname = gethypridtunerchoicesvaluename(tuner->devnr, value);
 	
+	printf("**** > realname: %s\n", realname);
+	
 	if(realname != NULL && ostrstr(realname, "DVB-S") != NULL)
 		type = feSatellite;
 	else if(realname != NULL && ostrstr(realname, "DVB-C") != NULL)
@@ -1920,7 +1922,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	}
 	debug(200, "data %d",p[1].u.data );
 	if (ioctl(tuner->fd, FE_SET_PROPERTY, &cmdseq) == -1)
-		err("FE_SET_PROPERTY failed -> system tuner %d mode %s",tuner->devnr ,value);
+		err("FE_SET_PROPERTY failed -> system tuner %d mode %s type %d ",tuner->devnr ,value, type);
 	return 1; //true
 
 #else //if DVB_API_VERSION < 5
