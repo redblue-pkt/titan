@@ -1438,8 +1438,8 @@ int getfreecasession(struct dvbdev* dvbnode, int type, int value)
 
 	if(dvbnode != NULL && dvbnode->caslot != NULL)
 	{
-        	for(i = 0; i < MAXCASESSION; i++)
-        	{
+    for(i = 0; i < MAXCASESSION; i++)
+    {
 			if(type == 0 && dvbnode->caslot->casession[i].resmanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //resmanager
 			{
 				dvbnode->caslot->casession[i].inuse = value;
@@ -1470,7 +1470,29 @@ int getfreecasession(struct dvbdev* dvbnode, int type, int value)
 				dvbnode->caslot->casession[i].inuse = value;
 				return i;
 			}
-        	}
+#ifdef MIPSEL
+			if(type == 6 && dvbnode->caslot->casession[i].hostmanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //hostmanager
+			{
+				dvbnode->caslot->casession[i].inuse = value;
+				return i;
+			}
+			if(type == 7 && dvbnode->caslot->casession[i].mmiappmanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //mmiappmanager
+			{
+				dvbnode->caslot->casession[i].inuse = value;
+				return i;
+			}
+			if(type == 8 && dvbnode->caslot->casession[i].hostlacmanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //hostlacmanager
+			{
+				dvbnode->caslot->casession[i].inuse = value;
+				return i;
+			}
+			if(type == 9 && dvbnode->caslot->casession[i].upgrademanager == 1 && dvbnode->caslot->casession[i].inuse == 1) //upgrademanager
+			{
+				dvbnode->caslot->casession[i].inuse = value;
+				return i;
+			}
+#endif
+		}
 	}
 	return -1;
 }
@@ -2497,7 +2519,7 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 			debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
 			debug(620, "scrambled=%d ccmgr_ready=%d camanager=%d caservicenr=%d", dvbnode->caslot->scrambled, dvbnode->caslot->ccmgr_ready, caservice[caservicenr].camanager, caservicenr);
 //atemio5200 camanager=6
-			if(dvbnode->caslot->ccmgr_ready == 1 && caservice[caservicenr].camanager == 5)
+			if(dvbnode->caslot->ccmgr_ready == 1 && (caservice[caservicenr].camanager == 5 || caservice[caservicenr].camanager == 7))
 			{
 #ifdef MIPSEL
 				char pid_out[256] = { 0 };
@@ -2538,12 +2560,9 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 					descrambler_set_pid(0, 1, i); //workaround... activate all pids
 					
 				descrambler_set_pid(0, 1, status.aktservice->channel->pmtpid);*/	
-				
-				
-#else
 
-				resendKey(dvbnode);
 #endif
+				resendKey(dvbnode);
 			}
  
 			return 0;
