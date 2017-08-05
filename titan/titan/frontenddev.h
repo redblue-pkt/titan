@@ -1891,8 +1891,9 @@ int fechangetype(struct dvbdev* tuner, char* value)
 		}
 		case feTerrestrial:
 		{
-			fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
+			//fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
 			//to do set voltage --> wenn der Tuner es kann
+			fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
 			p[1].u.data = SYS_DVBT;
 			break;
 		}
