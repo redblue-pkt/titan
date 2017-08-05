@@ -1880,7 +1880,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	else if(realname != NULL && ostrstr(realname, "DVB-T") != NULL)
 		type = feTerrestrial;
 	else
-		type = -1:
+		type = -1;
 	
 	switch (type)
 	{
@@ -1919,7 +1919,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 			return 0; //false
 	}
 	debug(200, "data %d",p[1].u.data );
-	if (ioctl(m_fd, FE_SET_PROPERTY, &cmdseq) == -1)
+	if (ioctl(tuner->fd, FE_SET_PROPERTY, &cmdseq) == -1)
 		err("FE_SET_PROPERTY failed -> system tuner %d mode %s",tuner->devnr ,value);
 	return 1; //true
 
