@@ -1776,9 +1776,11 @@ int fegetdev()
 
 					tmpstr = ostrcat(tmpstr, oitoa(y), 1, 1);
 					tmpstr = ostrcat(tmpstr, "_hyprid", 1, 0);
+#ifndef MIPSEL
 					if(getconfig(tmpstr, NULL) != NULL)
 						sethypridtuner(y, getconfig(tmpstr, NULL));
 					free(tmpstr), tmpstr = NULL;
+#endif
 				}
 				
 				feinfo = fegetinfo(NULL, fd);
@@ -1786,6 +1788,11 @@ int fegetdev()
 				{
 					count++;
 					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL, fehyprid, 0);
+#ifdef MIPSEL
+					if(fehyprid != NULL && getconfig(tmpstr, NULL) != NULL)
+						sethypridtunernew(dvbnode, getconfig(tmpstr, NULL));
+					free(tmpstr), tmpstr = NULL;
+#endif					
 					if(dvbnode->feinfo->type == FE_QPSK)
 						fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
 				}
@@ -1848,5 +1855,79 @@ int fegetlock(int tunernr)
 	}
 	return -1;
 }
+
+ifdef MIPSEL
+int fechangetype(struct dvbdev* tuner, char* value)
+{
+#if DVB_API_VERSION >= 5	
+
+	struct dtv_property p[2];
+	memset(p, 0, sizeof(p));
+	struct dtv_properties cmdseq;
+	cmdseq.props = p;
+	cmdseq.num = 2;
+	p[0].cmd = DTV_CLEAR;
+	p[1].cmd = DTV_DELIVERY_SYSTEM;
+	p[1].u.data = SYS_UNDEFINED;
+	
+	int type = 0;
+	char* realname = gethypridtunerchoicesvaluename(tuner->devnr, value);
+	
+	if(realname != NULL && ostrstr(realname, "DVB-S") != NULL)
+		type = feSatellite;
+	else if(realname != NULL && ostrstr(realname, "DVB-C") != NULL)
+		type = feCable;
+	else if(realname != NULL && ostrstr(realname, "DVB-T") != NULL)
+		type = feTerrestrial;
+	else
+		type = -1:
+	
+	switch (type)
+	{
+		case feSatellite:
+		{
+			p[1].u.data = SYS_DVBS;
+			break;
+		}
+		case feTerrestrial:
+		{
+			char configStr[255];
+			fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10)
+			//to do set voltage --> wenn der Tuner es kann
+			p[1].u.data = SYS_DVBT;
+			break;
+		}
+		case feCable:
+		{
+			 fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10)
+#ifdef SYS_DVBC_ANNEX_A
+			p[1].u.data = SYS_DVBC_ANNEX_A;
+#else
+			p[1].u.data = SYS_DVBC_ANNEX_AC;
+#endif
+			break;
+		}
+#ifdef feATSC
+		case feATSC:
+		{
+			p[1].u.data = SYS_ATSC;
+			break;
+		}
+#endif
+		default:
+			debug(200, "not supported delivery system type %i", type);
+			return 0; //false
+	}
+	debug(200, "data %d",p[1].u.data );
+	if (ioctl(m_fd, FE_SET_PROPERTY, &cmdseq) == -1)
+		err("FE_SET_PROPERTY failed -> system tuner %d mode %s",tuner->devnr ,value);
+	return 1; //true
+
+#else //if DVB_API_VERSION < 5
+	return 0; //false
+#endif
+}		
+#endif
+	
 
 #endif

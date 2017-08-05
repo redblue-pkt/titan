@@ -6777,7 +6777,7 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 		}
 		else
 		{
-			//fechangetype(tuner, value); ToDo for future use
+			fechangetype(tuner, value); 
 			return 0;
 		}
 	}
