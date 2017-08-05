@@ -114,7 +114,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		else
 			printf("[titan] #### CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x\n", index, parity);	
 	}
-	//descrambler_close();
+	descrambler_close();
 
 #else
 	
@@ -262,6 +262,7 @@ int descrambler_set_pid(int index, int enable, int pid)
 		{
 			printf("[titan] **** CA_SET_PID pid=0x%04x index=0x%04x\n", p.pid, p.index);
 		}
+		descrambler_close();
 	}
 	return 0;
 }

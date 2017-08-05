@@ -1634,7 +1634,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 			if(checkcerts())
 			{
 #ifdef MIPSEL
-				descrambler_open();
+				//descrambler_open();
 #endif				
 				casession[sessionnr].inuse = 1;
 				casession[sessionnr].ccmanager = 1;
