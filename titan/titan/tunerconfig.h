@@ -645,7 +645,11 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 				ret = screentunerreceptiondvbt(tuner);
 				if(ret == 1)
 				{
+#ifdef MIPSEL
+					sethypridtunernew(tuner, listbox->select->ret);
+#else
 					sethypridtuner(tuner->devnr, listbox->select->ret);
+#endif
 //					free(realname) , realname = NULL;
 //					realname = gethypridtunername(tuner->devnr, listbox->select->ret);
 //					strcpy(tuner->feinfo->name, realname);
@@ -664,7 +668,11 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 				ret = screentunerreceptiondvbc(tuner);
 				if(ret == 1)
 				{
+#ifdef MIPSEL
+					sethypridtunernew(tuner, listbox->select->ret);
+#else
 					sethypridtuner(tuner->devnr, listbox->select->ret);
+#endif
 //					free(realname) , realname = NULL;
 //					realname = gethypridtunername(tuner->devnr, listbox->select->ret);
 //					strcpy(tuner->feinfo->name, realname);
