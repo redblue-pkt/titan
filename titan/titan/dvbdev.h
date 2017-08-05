@@ -141,7 +141,7 @@ struct dvbdev* changedvbdev(struct dvbdev *node)
 			tmpstr = ostrcat(tmpstr, "_hyprid", 1, 0);
 			if(getconfig(tmpstr, NULL) != NULL)
 #ifdef MIPSEL
-				sethypridtunernew(tuner, getconfig(tmpstr, NULL));
+				sethypridtunernew(node, getconfig(tmpstr, NULL));
 #else
 				sethypridtuner(node->devnr, getconfig(tmpstr, NULL));
 #endif

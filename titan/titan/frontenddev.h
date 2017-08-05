@@ -1856,7 +1856,7 @@ int fegetlock(int tunernr)
 	return -1;
 }
 
-ifdef MIPSEL
+#ifdef MIPSEL
 int fechangetype(struct dvbdev* tuner, char* value)
 {
 #if DVB_API_VERSION >= 5	
