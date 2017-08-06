@@ -1689,8 +1689,8 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.ofdm.guard_interval = guardinterval;
 	tuneto.u.ofdm.hierarchy_information = hierarchy;
 	
-	printf("frequ=%d, inversion=%d, modulation=%d system%d (%s)\n", tpnode->frequency, tpnode->inversion, modulation, tpnode->system, node->feshortname);
-	//debug(200, "frequ=%d, inversion=%d, modulation=%d system%d (%s)", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
+	printf("frequ=%d, inversion=%d, modulation=%d system:%d (%s)\n", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
+	//debug(200, "frequ=%d, inversion=%d, modulation=%d system:%d (%s)", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
 
 #if DVB_API_VERSION >= 5
 	int system = tpnode->system; 
