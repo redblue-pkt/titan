@@ -1602,16 +1602,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		err("NULL detect");
 		return 1;
 	}
-
-	//convert transponderlist for dvbapi5
-	int system = tpnode->system;
-	switch(system)
-	{
-		case 0: system = SYS_DVBT; break;
-		case 1: system = SYS_DVBT2; break;
-		default: system = SYS_DVBT2; break;
-	}
-
+	
 	int hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
 	{
@@ -1642,8 +1633,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 0: modulation = QPSK; break;
 		case 1: modulation = QAM_16; break;
 		case 2: modulation = QAM_64; break;
-		case 3: modulation = QAM_256; break;
-		case 4: modulation = QAM_AUTO; break;
+		case 3: modulation = QAM_AUTO; break;
 		default: modulation = QAM_AUTO; break;
 	}
 	
@@ -1663,11 +1653,6 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 0: transmission = TRANSMISSION_MODE_2K; break;
 		case 1: transmission = TRANSMISSION_MODE_8K; break;
 		case 2: transmission = TRANSMISSION_MODE_AUTO; break;
-#if defined TRANSMISSION_MODE_1K
-		case 3: transmission = TRANSMISSION_MODE_1K; break;
-		case 4: transmission = TRANSMISSION_MODE_16K; break;
-		case 5: transmission = TRANSMISSION_MODE_32K; break;
-#endif
 		default: transmission = TRANSMISSION_MODE_AUTO; break;
 	}
 	
@@ -1679,16 +1664,11 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 2: guardinterval = GUARD_INTERVAL_1_8; break;
 		case 3: guardinterval = GUARD_INTERVAL_1_4; break;
 		case 4: guardinterval = GUARD_INTERVAL_AUTO; break;
-#if defined GUARD_INTERVAL_1_128
-		case 5: guardinterval = GUARD_INTERVAL_1_128; break;
-		case 6: guardinterval = GUARD_INTERVAL_19_128; break;
-		case 7: guardinterval = GUARD_INTERVAL_19_256; break;
-#endif
 		default: guardinterval = GUARD_INTERVAL_AUTO; break;
 	}
 	
 	int hierarchy = tpnode->system; //system = hierarchy on DVBT
-	switch(hierarchy)
+	switch(guardinterval)
 	{
 		case 0: hierarchy = HIERARCHY_NONE;
 		case 1: hierarchy = HIERARCHY_1;
@@ -1707,10 +1687,14 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.ofdm.transmission_mode = transmission;
 	tuneto.u.ofdm.guard_interval = guardinterval;
 	tuneto.u.ofdm.hierarchy_information = hierarchy;
+	
+	printf("frequ=%d, inversion=%d, modulation=%d system%d (%s)\n", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
+	//debug(200, "frequ=%d, inversion=%d, modulation=%d system%d (%s)", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
 
 #if DVB_API_VERSION >= 5
 	p[0].cmd = DTV_CLEAR;
-	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
+	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
+	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = SYS_DVBT2;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
 	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) tpnode->inversion;
 	p[4].cmd = DTV_CODE_RATE_LP, p[4].u.data = lp;
