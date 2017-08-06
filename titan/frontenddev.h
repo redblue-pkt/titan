@@ -1689,12 +1689,12 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.ofdm.guard_interval = guardinterval;
 	tuneto.u.ofdm.hierarchy_information = hierarchy;
 	
-	printf("frequ=%d, inversion=%d, modulation=%d system%d (%s)\n", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
+	printf("frequ=%d, inversion=%d, modulation=%d system%d (%s)\n", tpnode->frequency, tpnode->inversion, modulation, tpnode->system, node->feshortname);
 	//debug(200, "frequ=%d, inversion=%d, modulation=%d system%d (%s)", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
 
 #if DVB_API_VERSION >= 5
 	p[0].cmd = DTV_CLEAR;
-	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
+	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = tpnode->system;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = SYS_DVBT2;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
 	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) tpnode->inversion;
