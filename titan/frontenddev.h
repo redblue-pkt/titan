@@ -1693,9 +1693,17 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	//debug(200, "frequ=%d, inversion=%d, modulation=%d system%d (%s)", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
 
 #if DVB_API_VERSION >= 5
+	int system = tpnode->system; 
+	switch(system) 
+	{ 
+		case 0: system = SYS_DVBT; break; 
+		case 1: system = SYS_DVBT2; break; 
+		default: system = SYS_DVBT2; break; 
+	}
 	p[0].cmd = DTV_CLEAR;
 	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = tpnode->system;
-	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = SYS_DVBT2;
+	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = SYS_DVBT2;
+	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
 	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) tpnode->inversion;
 	p[4].cmd = DTV_CODE_RATE_LP, p[4].u.data = lp;
