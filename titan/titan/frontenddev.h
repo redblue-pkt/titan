@@ -1446,7 +1446,7 @@ int fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		cmdseq.num = 8;
 	}
 
-	debug(200, "frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d, modulation=%d, system=%d (%s)", node->feloffrequency, tpnode->inversion, pilot, rolloff, fec, tpnode->symbolrate, modulation, system, node->feshortname);
+	debug(200, "new dvbapi: frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d, modulation=%d, system=%d (%s)", node->feloffrequency, tpnode->inversion, pilot, rolloff, fec, tpnode->symbolrate, modulation, system, node->feshortname);
 #else
 	struct dvb_frontend_parameters tuneto;
 	fe_spectral_inversion_t inversion = tpnode->inversion;
@@ -1467,7 +1467,7 @@ int fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.qpsk.symbol_rate = tpnode->symbolrate;
 	tuneto.u.qpsk.fec_inner = fec;
 
-	debug(200, "frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d modulation=%d, system=%d (%s)", node->feloffrequency, inversion, tpnode->pilot, tpnode->rolloff, fec, tpnode->symbolrate, tpnode->modulation, tpnode->system, node->feshortname);
+	debug(200, "old dvbapi: frequ=%d, inversion=%d, pilot=%d, rolloff=%d, fec=%d, sr=%d modulation=%d, system=%d (%s)", node->feloffrequency, inversion, tpnode->pilot, tpnode->rolloff, fec, tpnode->symbolrate, tpnode->modulation, tpnode->system, node->feshortname);
 #endif
 
 	fediscard(node);
@@ -1555,7 +1555,7 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	p[7].cmd = DTV_TUNE;
 	cmdseq.num = 8;
 
-	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d, system=%d (%s)", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, tpnode->system, node->feshortname);
+	debug(200, "new dvbapi: frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d, system=%d (%s)", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, tpnode->system, node->feshortname);
 #else
 	struct dvb_frontend_parameters tuneto;
 
@@ -1565,7 +1565,7 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.qam.fec_inner = tpnode->fec;
 	tuneto.u.qam.modulation = tpnode->modulation;
 
-	debug(200, "frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d (%s)", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, node->feshortname);
+	debug(200, "old dvbapi: frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d (%s)", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, node->feshortname);
 #endif
 
 	fediscard(node);
@@ -1589,20 +1589,12 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 
 int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 {
-	struct dvb_frontend_parameters tuneto;
-
-#if DVB_API_VERSION >= 5
-	struct dtv_property p[12];
-	struct dtv_properties cmdseq;
-	cmdseq.props = p;
-#endif
-
 	if(node == NULL || tpnode == NULL)
 	{
 		err("NULL detect");
 		return 1;
 	}
-	
+
 	int hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
 	{
@@ -1679,32 +1671,24 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		default: hierarchy = HIERARCHY_AUTO; break;
 	}
 
-	tuneto.frequency = tpnode->frequency;
-	tuneto.inversion = tpnode->inversion;
-	tuneto.u.ofdm.bandwidth = bandwidth;
-	tuneto.u.ofdm.code_rate_HP = hp;
-	tuneto.u.ofdm.code_rate_LP = lp;
-	tuneto.u.ofdm.constellation = modulation;
-	tuneto.u.ofdm.transmission_mode = transmission;
-	tuneto.u.ofdm.guard_interval = guardinterval;
-	tuneto.u.ofdm.hierarchy_information = hierarchy;
-	
-	printf("frequ=%d, inversion=%d, modulation=%d system:%d (%s)\n", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
-	//debug(200, "frequ=%d, inversion=%d, modulation=%d system:%d (%s)", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
-
 #if DVB_API_VERSION >= 5
+	struct dtv_property p[12];
+	struct dtv_properties cmdseq;
+	cmdseq.props = p;
+
 	int system = tpnode->system; 
-	//switch(system) 
-	//{ 
-	//	case 0: system = SYS_DVBT; break; 
-	//	case 1: system = SYS_DVBT2; break; 
-	//	default: system = SYS_DVBT2; break; 
-	//}
-	printf("frequ=%d, inversion=%d, modulation=%d system:%d (%s)\n", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
-	//debug(200, "frequ=%d, inversion=%d, modulation=%d system:%d (%s)", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
+
+// suchlauf geht an nemesis mit system=0
+#if DREAMBOX
+	switch(system)
+	{
+		case 0: system = SYS_DVBT; break; //3
+		case 1: system = SYS_DVBT2; break; //16
+		default: system = SYS_DVBT; break;
+	}
+#endif
+
 	p[0].cmd = DTV_CLEAR;
-	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = tpnode->system;
-	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = SYS_DVBT2;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
 	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) tpnode->inversion;
@@ -1717,6 +1701,25 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	p[10].cmd = DTV_HIERARCHY, p[10].u.data = hierarchy;
 	p[11].cmd = DTV_TUNE;
 	cmdseq.num = 12;
+
+	debug(200, "new dvbapi: frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, bandwidth, hp, lp, modulation, transmission, guardinterval, hierarchy, system, node->feshortname);
+
+
+#else
+	struct dvb_frontend_parameters tuneto;
+
+	tuneto.frequency = tpnode->frequency;
+	tuneto.inversion = tpnode->inversion;
+	tuneto.u.ofdm.bandwidth = bandwidth;
+	tuneto.u.ofdm.code_rate_HP = hp;
+	tuneto.u.ofdm.code_rate_LP = lp;
+	tuneto.u.ofdm.constellation = modulation;
+	tuneto.u.ofdm.transmission_mode = transmission;
+	tuneto.u.ofdm.guard_interval = guardinterval;
+	tuneto.u.ofdm.hierarchy_information = hierarchy;
+
+	debug(200, "old dvbapi: frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, bandwidth, hp, lp, modulation, transmission, guardinterval, hierarchy, system, node->feshortname);
+
 #endif
 
 
