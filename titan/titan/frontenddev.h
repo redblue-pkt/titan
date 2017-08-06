@@ -1591,6 +1591,12 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 {
 	struct dvb_frontend_parameters tuneto;
 
+#if DVB_API_VERSION >= 5
+	struct dtv_property p[10];
+	struct dtv_properties cmdseq;
+	cmdseq.props = p;
+#endif
+
 	if(node == NULL || tpnode == NULL)
 	{
 		err("NULL detect");
@@ -1682,14 +1688,36 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.ofdm.guard_interval = guardinterval;
 	tuneto.u.ofdm.hierarchy_information = hierarchy;
 
+#if DVB_API_VERSION >= 5
+	p[0].cmd = DTV_CLEAR;
+	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
+	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
+	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) tpnode->inversion;
+	p[4].cmd = DTV_CODE_RATE_LP, p[4].u.data = lp;
+	p[5].cmd = DTV_CODE_RATE_HP, p[5].u.data = hp;
+	p[6].cmd = DTV_MODULATION, p[6].u.data = modulation;
+	p[7].cmd = DTV_TRANSMISSION_MODE,	p[7].u.data = transmission;
+	p[8].cmd = DTV_GUARD_INTERVAL, p[8].u.data = guardinterval;
+	p[9].cmd = DTV_HIERARCHY, p[9].u.data = hierarchy;
+	cmdseq.num = 10;
+#endif
+
+
 	fediscard(node);
 
+#if DVB_API_VERSION >= 5
+	if((ioctl(node->fd, FE_SET_PROPERTY, &cmdseq)) == -1)
+	{
+		perr("FE_SET_PROPERTY");
+		return 1;
+	}
+#else
 	if(ioctl(node->fd, FE_SET_FRONTEND, &tuneto) == -1)
 	{
 		perr("FE_SET_FRONTEND");
 		return 1;
 	}
-	
+#endif
 	return 0;
 }
 
