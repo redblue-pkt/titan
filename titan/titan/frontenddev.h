@@ -1602,7 +1602,16 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		err("NULL detect");
 		return 1;
 	}
-	
+
+	//convert transponderlist for dvbapi5
+	int system = tpnode->system;
+	switch(system)
+	{
+		case 0: system = SYS_DVBT; break;
+		case 1: system = SYS_DVBT2; break;
+		default: system = SYS_DVBT2; break;
+	}
+
 	int hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
 	{
