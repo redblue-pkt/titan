@@ -1592,7 +1592,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	struct dvb_frontend_parameters tuneto;
 
 #if DVB_API_VERSION >= 5
-	struct dtv_property p[11];
+	struct dtv_property p[12];
 	struct dtv_properties cmdseq;
 	cmdseq.props = p;
 #endif
@@ -1694,26 +1694,29 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 
 #if DVB_API_VERSION >= 5
 	int system = tpnode->system; 
-	switch(system) 
-	{ 
-		case 0: system = SYS_DVBT; break; 
-		case 1: system = SYS_DVBT2; break; 
-		default: system = SYS_DVBT2; break; 
-	}
+	//switch(system) 
+	//{ 
+	//	case 0: system = SYS_DVBT; break; 
+	//	case 1: system = SYS_DVBT2; break; 
+	//	default: system = SYS_DVBT2; break; 
+	//}
+	printf("frequ=%d, inversion=%d, modulation=%d system:%d (%s)\n", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
+	//debug(200, "frequ=%d, inversion=%d, modulation=%d system:%d (%s)", tpnode->frequency, tpnode->inversion, modulation, system, node->feshortname);
 	p[0].cmd = DTV_CLEAR;
 	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = tpnode->system;
 	//p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = SYS_DVBT2;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
 	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) tpnode->inversion;
-	p[4].cmd = DTV_CODE_RATE_LP, p[4].u.data = lp;
-	p[5].cmd = DTV_CODE_RATE_HP, p[5].u.data = hp;
-	p[6].cmd = DTV_MODULATION, p[6].u.data = modulation;
-	p[7].cmd = DTV_TRANSMISSION_MODE,	p[7].u.data = transmission;
-	p[8].cmd = DTV_GUARD_INTERVAL, p[8].u.data = guardinterval;
-	p[9].cmd = DTV_HIERARCHY, p[9].u.data = hierarchy;
-	p[10].cmd = DTV_TUNE;
-	cmdseq.num = 11;
+	p[4].cmd = DTV_BANDWIDTH_HZ, p[4].u.data = bandwidth;
+	p[5].cmd = DTV_CODE_RATE_LP, p[5].u.data = lp;
+	p[6].cmd = DTV_CODE_RATE_HP, p[6].u.data = hp;
+	p[7].cmd = DTV_MODULATION, p[7].u.data = modulation;
+	p[8].cmd = DTV_TRANSMISSION_MODE,	p[8].u.data = transmission;
+	p[9].cmd = DTV_GUARD_INTERVAL, p[9].u.data = guardinterval;
+	p[10].cmd = DTV_HIERARCHY, p[10].u.data = hierarchy;
+	p[11].cmd = DTV_TUNE;
+	cmdseq.num = 12;
 #endif
 
 
