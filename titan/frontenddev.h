@@ -1642,7 +1642,8 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 0: modulation = QPSK; break;
 		case 1: modulation = QAM_16; break;
 		case 2: modulation = QAM_64; break;
-		case 3: modulation = QAM_AUTO; break;
+		case 3: modulation = QAM_256; break;
+		case 4: modulation = QAM_AUTO; break;
 		default: modulation = QAM_AUTO; break;
 	}
 	
@@ -1662,6 +1663,11 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 0: transmission = TRANSMISSION_MODE_2K; break;
 		case 1: transmission = TRANSMISSION_MODE_8K; break;
 		case 2: transmission = TRANSMISSION_MODE_AUTO; break;
+#if defined TRANSMISSION_MODE_1K
+		case 3: transmission = TRANSMISSION_MODE_1K; break;
+		case 4: transmission = TRANSMISSION_MODE_16K; break;
+		case 5: transmission = TRANSMISSION_MODE_32K; break;
+#endif
 		default: transmission = TRANSMISSION_MODE_AUTO; break;
 	}
 	
@@ -1673,6 +1679,11 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 2: guardinterval = GUARD_INTERVAL_1_8; break;
 		case 3: guardinterval = GUARD_INTERVAL_1_4; break;
 		case 4: guardinterval = GUARD_INTERVAL_AUTO; break;
+#if defined GUARD_INTERVAL_1_128
+		case 5: guardinterval = GUARD_INTERVAL_1_128; break;
+		case 6: guardinterval = GUARD_INTERVAL_19_128; break;
+		case 7: guardinterval = GUARD_INTERVAL_19_256; break;
+#endif
 		default: guardinterval = GUARD_INTERVAL_AUTO; break;
 	}
 	
