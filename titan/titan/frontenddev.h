@@ -1668,7 +1668,8 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	}
 	
 	int hierarchy = tpnode->system; //system = hierarchy on DVBT
-	switch(guardinterval)
+	//switch(guardinterval)
+	switch(hierarchy)
 	{
 		case 0: hierarchy = HIERARCHY_NONE;
 		case 1: hierarchy = HIERARCHY_1;
