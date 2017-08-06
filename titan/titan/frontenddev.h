@@ -1592,7 +1592,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	struct dvb_frontend_parameters tuneto;
 
 #if DVB_API_VERSION >= 5
-	struct dtv_property p[10];
+	struct dtv_property p[11];
 	struct dtv_properties cmdseq;
 	cmdseq.props = p;
 #endif
@@ -1712,7 +1712,8 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	p[7].cmd = DTV_TRANSMISSION_MODE,	p[7].u.data = transmission;
 	p[8].cmd = DTV_GUARD_INTERVAL, p[8].u.data = guardinterval;
 	p[9].cmd = DTV_HIERARCHY, p[9].u.data = hierarchy;
-	cmdseq.num = 10;
+	p[10].cmd = DTV_TUNE;
+	cmdseq.num = 11;
 #endif
 
 
