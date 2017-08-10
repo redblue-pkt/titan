@@ -1660,6 +1660,8 @@ struct status
 	struct channel* recchnode[9];
 	// frontdev filedescriptor
 	int fdrc1;
+	// Anzah VideoDevs
+	int videodevs;
 } status;
 
 struct fb
