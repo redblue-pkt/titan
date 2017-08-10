@@ -1251,7 +1251,8 @@ void setskinnodeslocked(int flag)
 #endif
 
 			// Hid Pip
-			if(checkchipset("BCM7424") != 1 && checkbox("DM900") != 1) 
+			//if(checkchipset("BCM7424") != 1 && checkbox("DM900") != 1) 
+			if(status.videodevs < 2)
 			{
 				if(ostrcmp("settings_pip", child->name) == 0) child->locked = 1;
 			}

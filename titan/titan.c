@@ -883,7 +883,8 @@ int main(int argc, char *argv[])
 		err("no demux device found");
 		goto starterror;
 	}
-	if(videogetdev() < 1)
+	status.videodevs = videogetdev();
+	if(status.videodevs < 1)
 	{
 		tmpstr = ostrcat(tmpstr, _("Error: no video device found !!"), 1, 0);
 		err("no video device found");
