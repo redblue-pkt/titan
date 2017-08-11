@@ -294,6 +294,15 @@ int setvmpeg2(struct dvbdev* node, int value, int flag)
 	char* vmpegdev = NULL, *tmpstr = NULL, *buf = NULL;
 	int ret = 0;
 
+	if(getconfig("vmpegleftdev", NULL) == NULL)
+	{
+		addconfig("vmpegleftdev", "/proc/stb/vmpeg/%d/dst_left");
+		addconfig("vmpegtopdev", "/proc/stb/vmpeg/%d/dst_top");
+		addconfig("vmpegwidthdev", "/proc/stb/vmpeg/%d/dst_width");
+		addconfig("vmpegheightdev", "/proc/stb/vmpeg/%d/dst_height");
+		addconfig("vmpegapplydev", "/proc/stb/vmpeg/%d/dst_apply");
+	}
+	
 	if(node == NULL) return 1;
 	if(flag == 0)  vmpegdev = getconfig("vmpegleftdev", NULL);
 	if(flag == 1)  vmpegdev = getconfig("vmpegtopdev", NULL);
