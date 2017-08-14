@@ -361,7 +361,7 @@ void screenavsettings(int flag)
 				ret = getvideomode();
 				if(ostrcmp(ret, resolution->ret) != 0)
 				{
-					setvideomode(resolution->ret, 0);
+					setvideomode(resolution->ret, 1);
 					changefbresolution(resolution->ret, 0);
 					if(flag == 0)
 					{
@@ -373,6 +373,7 @@ void screenavsettings(int flag)
 						}
 						else
 						{
+							addconfig("av_videomode", resolution->ret);
 							writeallconfig(1);
 							debug(10, "resolution->ret: %s", resolution->ret);
 							if(ostrncmp("576", resolution->ret, 3) == 0 || ostrncmp("pal", resolution->ret, 3) == 0)
