@@ -535,13 +535,12 @@ int fewait(struct dvbdev* node)
 			}
 			else
 			{
-				dvb_frontend_event event;
-				if(ioctl(node->fd, FE_GET_EVENT, &event) && (errno == EAGAIN))
+				if(ioctl(node->fd, FE_GET_EVENT, &status) && (errno == EAGAIN))
 				{
 					usleep(1000);
 					continue;
 				}
-				if (event.status & FE_HAS_LOCK)
+				if (status & FE_HAS_LOCK)
 					return 0;
 			}
 			usleep(1000);
