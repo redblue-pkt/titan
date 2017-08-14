@@ -505,29 +505,46 @@ int fewait(struct dvbdev* node)
 #ifdef MIPSEL
 	timer = 2000;
 #endif
+#ifdef DREAMBOX
+	timer = 4000;
+#endif
 
 	//wait for tuner ready
 	debug(200, "wait for tuner");
 	while(count <= timer)
 	{
 		count++;
-		//ioctl(node->fd, FE_GET_EVENT, &ev);
-		//if(ev.status & FE_HAS_LOCK)
-		//	return 0;
-		ioctl(node->fd, FE_READ_STATUS, &status);
-		if(status != 0)
-			debug(200, "status=%d, fe_lock=%d", status, FE_HAS_LOCK);
-
-		if(errno == ERANGE)
+		if(checkbox("DM520") == 0 && checkbox("DM525") == 0)
 		{
-			usleep(1000);
-			continue;
-		}
+			//ioctl(node->fd, FE_GET_EVENT, &ev);
+			//if(ev.status & FE_HAS_LOCK)
+			//	return 0;
+			ioctl(node->fd, FE_READ_STATUS, &status);
+			if(status != 0)
+				debug(200, "status=%d, fe_lock=%d", status, FE_HAS_LOCK);
 
-		if(status & FE_HAS_LOCK)
-//		if(FE_HAS_SYNC | FE_HAS_LOCK)
-			return 0;
-		usleep(1000);
+			if(errno == ERANGE)
+			{
+				usleep(1000);
+				continue;
+			}
+
+			if(status & FE_HAS_LOCK)
+	//		if(FE_HAS_SYNC | FE_HAS_LOCK)
+				return 0;
+			}
+			else
+			{
+				dvb_frontend_event event;
+				if(ioctl(node->fd, FE_GET_EVENT, &event) && (errno == EAGAIN))
+				{
+					usleep(1000);
+					continue;
+				}
+				if (event.status & FE_HAS_LOCK)
+					return 0;
+			}
+			usleep(1000);
 	}
 
 	//if(ev.status & FE_HAS_LOCK)
