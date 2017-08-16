@@ -6780,6 +6780,23 @@ char* webstartplugin(char* param, int fmt)
 	return buf;
 }
 
+char* webinfobarplugin(char* param, int fmt)
+{
+	char* buf = NULL;
+
+	struct skin* pluginnode = getplugin(param);
+
+	if(pluginnode != NULL)
+	{
+			status.extplugin = ostrcat(param, NULL, 0, 0);
+			buf = ostrcat(buf, "ok", 1, 0);
+	}
+	else
+		buf = status.extplugin
+
+	return buf;
+}
+
 char* webgetrestoredefaultlist(int fmt)
 {
 	if(status.security == 0) return NULL;

@@ -313,6 +313,7 @@ int instar_settings()
 void instar_main()
 {
 	int rcode = 0;
+	int ext = 0;
 	
 	instarconf = createpluginpath("/instar/instar.conf", 0);
 	readconfig(instarconf, myconfig);
@@ -324,8 +325,23 @@ void instar_main()
 		free(CURL); CURL = NULL;
 		CURL = ostrcat("curl", NULL, 0, 0);
 	}
-	
-  if(ostrcmp(getlist(myconfig, "InstarCamAutostart", NULL), "ja") == 0)
+
+	if(file_exist("/tmp/callcam1"))
+	{
+		ext = 1;
+		system("rm /callcam*");
+	}
+  else if(file_exist("/tmp/callcam2"))
+	{
+		ext = 2;
+		system("rm /callcam*");
+	}
+  else
+  	ext = 0;
+  
+  if(ext > 0)
+  	rcode = 1;
+  else if(ostrcmp(getlist(myconfig, "InstarCamAutostart", NULL), "ja") == 0)
 		rcode = 1;
 	else
 		rcode = instar_settings();
@@ -336,7 +352,7 @@ void instar_main()
 			addconfig("pic_scale", "1");
 		while(1)
 		{
-			if(ostrcmp(getlist(myconfig, "InstarCam1", NULL), "ein") == 0)
+			if(ostrcmp(getlist(myconfig, "InstarCam1", NULL), "ein") == 0 || ext == 1)
 			{
 				if(getconfigint("instar_alterwebif", NULL) == 0)
 					cam1 = ostrcat("wget --output-document=/tmp/instar1.jpg http://", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
@@ -367,7 +383,7 @@ void instar_main()
 			
 		
 			
-			if(ostrcmp(getlist(myconfig, "InstarCam2", NULL), "ein") == 0)
+			if(ostrcmp(getlist(myconfig, "InstarCam2", NULL), "ein") == 0 || ext == 2)
 			{
 				if(getconfigint("instar_alterwebif", NULL) == 0)
 					cam2 = ostrcat("wget --output-document=/tmp/instar2.jpg http://", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
@@ -388,7 +404,7 @@ void instar_main()
 			instar_pic1 = getscreennode(instar_screen, "pic1");
 			instar_actcam1 = getscreennode(instar_screen, "actcam1");
 	
-			if(ostrcmp(getlist(myconfig, "InstarActCam", NULL), "2") == 0)
+			if(ostrcmp(getlist(myconfig, "InstarActCam", NULL), "2") == 0 && ext != 1)
 			{
 				actcam = 2;
 				changepic(instar_pic1, "/tmp/instar2.jpg");

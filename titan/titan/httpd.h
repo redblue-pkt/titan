@@ -534,6 +534,9 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	else if(ostrcmp(query, "startplugin") == 0)
 		buf = webstartplugin(param, fmt);
 		
+	else if(ostrcmp(query, "infobarplugin") == 0)
+		buf = webinfobarplugin(param, fmt);
+		
 	if(buf != NULL || onlyheader == 1)
 	{
 		if(buflen == 0 && onlyheader == 0) buflen = strlen(buf);
