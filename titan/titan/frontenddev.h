@@ -514,7 +514,8 @@ int fewait(struct dvbdev* node)
 	while(count <= timer)
 	{
 		count++;
-		if(checkbox("DM520") == 0 && checkbox("DM525") == 0)
+		//if(checkbox("DM520") == 0 && checkbox("DM525") == 0)
+		if(checkbox("xxxxxxxx") == 0)
 		{
 			//ioctl(node->fd, FE_GET_EVENT, &ev);
 			//if(ev.status & FE_HAS_LOCK)
