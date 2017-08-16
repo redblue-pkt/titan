@@ -6792,7 +6792,7 @@ char* webinfobarplugin(char* param, int fmt)
 			buf = ostrcat(buf, "ok", 1, 0);
 	}
 	else
-		buf = status.extplugin
+		buf = ostrcat(buf, "wrong plugin name", 1, 0);
 
 	return buf;
 }
