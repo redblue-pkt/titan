@@ -3947,11 +3947,11 @@ msgstr ""
 msgid "Format HDD"
 msgstr ""
 
-#: httpdfunc.h:6830 httpdfunc.h:6881 restoredefault.h:92
+#: httpdfunc.h:6831 httpdfunc.h:6882 restoredefault.h:92
 msgid "Format MNT (all)"
 msgstr "Formatteer MNT (alles)"
 
-#: httpdfunc.h:6825 httpdfunc.h:6872 restoredefault.h:91
+#: httpdfunc.h:6826 httpdfunc.h:6873 restoredefault.h:91
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatteer MNT tijdens Backup/Restore"
 
@@ -7752,8 +7752,8 @@ msgstr ""
 msgid "Receiver"
 msgstr ""
 
-#: httpdfunc.h:6864 httpdfunc.h:6874 httpdfunc.h:6883 httpdfunc.h:6973
-#: httpdfunc.h:6985 httpdfunc.h:6995 httpdfunc.h:7005 httpdfunc.h:7015
+#: httpdfunc.h:6865 httpdfunc.h:6875 httpdfunc.h:6884 httpdfunc.h:6974
+#: httpdfunc.h:6986 httpdfunc.h:6996 httpdfunc.h:7006 httpdfunc.h:7016
 #: restoredefault.h:19 restoredefault.h:45
 msgid "Receiver reboots now !!!"
 msgstr "Ontvanger herstart nu!!"
@@ -8007,7 +8007,7 @@ msgstr "Herhalen Aan"
 msgid "Rescue mode"
 msgstr ""
 
-#: httpdfunc.h:7060 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
+#: httpdfunc.h:7061 webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
 msgstr ""
@@ -8064,23 +8064,23 @@ msgstr "Oscam opnieuw starten?"
 msgid "Restore"
 msgstr ""
 
-#: httpdfunc.h:6924 httpdfunc.h:6983 skin_default_skin.xml.h:507
+#: httpdfunc.h:6925 httpdfunc.h:6984 skin_default_skin.xml.h:507
 msgid "Restore Default Bouquets"
 msgstr ""
 
-#: httpdfunc.h:6919 httpdfunc.h:6971 skin_default_skin.xml.h:509
+#: httpdfunc.h:6920 httpdfunc.h:6972 skin_default_skin.xml.h:509
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-#: httpdfunc.h:6929 httpdfunc.h:6993 skin_default_skin.xml.h:508
+#: httpdfunc.h:6930 httpdfunc.h:6994 skin_default_skin.xml.h:508
 msgid "Restore Default Channels"
 msgstr ""
 
-#: httpdfunc.h:6934 httpdfunc.h:7003 skin_default_skin.xml.h:510
+#: httpdfunc.h:6935 httpdfunc.h:7004 skin_default_skin.xml.h:510
 msgid "Restore Default Providers"
 msgstr ""
 
-#: httpdfunc.h:6939 httpdfunc.h:7013 skin_default_skin.xml.h:511
+#: httpdfunc.h:6940 httpdfunc.h:7014 skin_default_skin.xml.h:511
 msgid "Restore Default Sats"
 msgstr ""
 
@@ -8088,7 +8088,7 @@ msgstr ""
 msgid "Restore Settings"
 msgstr "Instellingen terugzetten"
 
-#: httpdfunc.h:6913 webif_settings.h:4
+#: httpdfunc.h:6914 webif_settings.h:4
 msgid "Restore channel settings"
 msgstr ""
 
@@ -8096,7 +8096,7 @@ msgstr ""
 msgid "Restore default"
 msgstr ""
 
-#: httpdfunc.h:6813 httpdfunc.h:6820 httpdfunc.h:6862 restoredefault.h:94
+#: httpdfunc.h:6814 httpdfunc.h:6821 httpdfunc.h:6863 restoredefault.h:94
 #: skin_default_skin.xml.h:512 webif_settings.h:3
 msgid "Restore default settings"
 msgstr "Fabrieksinstelling terugzetten"
@@ -8889,11 +8889,11 @@ msgstr ""
 msgid "Selected:"
 msgstr "Geselecteerd:"
 
-#: httpdfunc.h:7055 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
+#: httpdfunc.h:7056 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr ""
 
-#: httpdfunc.h:7046
+#: httpdfunc.h:7047
 msgid "Send Telnet Command"
 msgstr ""
 
