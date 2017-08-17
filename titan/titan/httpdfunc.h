@@ -6790,6 +6790,7 @@ char* webinfobarplugin(char* param, int fmt)
 	{
 			status.extplugin = ostrcat(param, NULL, 0, 0);
 			buf = ostrcat(buf, "ok", 1, 0);
+			writerc(getrcconfigint("rcexit", NULL));
 	}
 	else
 		buf = ostrcat(buf, "wrong plugin name", 1, 0);

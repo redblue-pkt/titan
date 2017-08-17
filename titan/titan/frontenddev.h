@@ -1611,7 +1611,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		err("NULL detect");
 		return 1;
 	}
-
+	debug(200, "transponder:frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, tpnode->symbolrate, tpnode->fec, tpnode->polarization, tpnode->modulation, tpnode->pilot, tpnode->rolloff, tpnode->system, tpnode->system, node->feshortname);
 	int hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
 	{
