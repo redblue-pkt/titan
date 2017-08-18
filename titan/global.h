@@ -1531,7 +1531,7 @@ void delspezchar(char* text, int flag)
 			if(tmpstr[0] == '/') tmpstr[0] = '-';
 			if(flag == 2)
 			{
-				if(tmpstr[0] == '§') tmpstr[0] = '-';
+				if(tmpstr[0] == '\A7') tmpstr[0] = '-';
 				if(tmpstr[0] == '<') tmpstr[0] = '-';
  				if(tmpstr[0] == '>') tmpstr[0] = '-';
 				if(tmpstr[0] == ':') tmpstr[0] = '-';
@@ -7183,77 +7183,127 @@ int converte2settings(int flag)
 			for(i = 0; i < max; i++)
 			{
 				if(i == 0) continue;
-				line = ostrcat(line, "0", 1, 0); //id
+				//id
+				line = ostrcat(line, "0", 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
-				line = ostrcat(line, fetype, 1, 0); //fetype
+				//fetype
+				line = ostrcat(line, fetype, 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
+				//frequency
 				if(ostrstr((ret1[i]).part, "frequency=") != NULL)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "frequency="), 1, 0); //frequency
+					line = ostrcat(line, getxmlentry(ret1[i].part, "frequency="), 1, 0);
 				else
 					line = ostrcat(line, "-1", 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
+				//polarization
 				if(ostrstr((ret1[i]).part, "polarization=") != NULL)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "polarization="), 1, 0); //polarization
-				else
-					line = ostrcat(line, "-1", 1, 0); //polarization
-
-				line = ostrcat(line, "#", 1, 0);
-				if(orbitalpos != NULL)
-					line = ostrcat(line, orbitalpos, 1, 0); //orbitalpos
-				else
-					line = ostrcat(line, "-1", 1, 0); //orbitalpos
-				line = ostrcat(line, "#", 1, 0);
-
-				if(ostrstr((ret1[i]).part, "symbol_rate=") != NULL)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "symbol_rate="), 1, 0); //symbolrate
+					line = ostrcat(line, getxmlentry(ret1[i].part, "polarization="), 1, 0);
 				else
 					line = ostrcat(line, "-1", 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
+				//orbitalpos
+				if(orbitalpos != NULL)
+					line = ostrcat(line, orbitalpos, 1, 0);
+				else
+					line = ostrcat(line, "-1", 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+
+				//symbolrate
+				if(ostrstr((ret1[i]).part, "symbol_rate=") != NULL)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "symbol_rate="), 1, 0);
+				else
+				{
+					if(flag == 2)
+					{
+						if(ostrstr((ret1[i]).part, "bandwidth=") != NULL)
+							line = ostrcat(line, getxmlentry(ret1[i].part, "bandwidth="), 1, 0);
+						else
+							line = ostrcat(line, "-1", 1, 0);
+					}
+					else
+						line = ostrcat(line, "-1", 1, 0);
+				}
+				line = ostrcat(line, "#", 1, 0);
+
+				//modulation
 				if(ostrstr((ret1[i]).part, "modulation=") != NULL)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "modulation="), 1, 0); //modulation
+					line = ostrcat(line, getxmlentry(ret1[i].part, "modulation="), 1, 0);
 				else
 				{
 					if(flag == 2)
-						line = ostrcat(line, "3", 1, 0);
+					{
+						if(ostrstr((ret1[i]).part, "constellation=") != NULL)
+							line = ostrcat(line, getxmlentry(ret1[i].part, "constellation="), 1, 0);
+						else
+							line = ostrcat(line, "3", 1, 0);
+					}
 					else
 						line = ostrcat(line, "0", 1, 0);
 				}
 				line = ostrcat(line, "#", 1, 0);
 
+				//fec
 				if(ostrstr((ret1[i]).part, "fec_inner=") != NULL)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "fec_inner="), 1, 0); //fec
+					line = ostrcat(line, getxmlentry(ret1[i].part, "fec_inner="), 1, 0);
 				else
 				{
 					if(flag == 2)
+#if DVB_API_VERSION >= 5
+						line = ostrcat(line, "-1", 1, 0);
+#else
 						line = ostrcat(line, "5", 1, 0);
+#endif
 					else
 						line = ostrcat(line, "0", 1, 0);
 				}
 				line = ostrcat(line, "#", 1, 0);
 
+				//pilot
 				if(checkbox("UFS910") == 1)
-					line = ostrcat(line, "1", 1, 0); //pilot
+					line = ostrcat(line, "1", 1, 0);
+				else if(flag == 2)
+#if DVB_API_VERSION >= 5
+					line = ostrcat(line, "-1", 1, 0);
+#else
+					line = ostrcat(line, "2", 1, 0);
+#endif
 				else
-					line = ostrcat(line, "2", 1, 0); //pilot
+					line = ostrcat(line, "2", 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
+				//rolloff
 				if(checkbox("UFS910") == 1)
-					line = ostrcat(line, "0", 1, 0); //rolloff
+					line = ostrcat(line, "0", 1, 0);
+				else if(flag == 2)
+#if DVB_API_VERSION >= 5
+					line = ostrcat(line, "-1", 1, 0);
+#else
+					line = ostrcat(line, "3", 1, 0);
+#endif
 				else
-					line = ostrcat(line, "3", 1, 0); //rolloff
+					line = ostrcat(line, "3", 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
-				line = ostrcat(line, "2", 1, 0); //inversion
+				//inversion
+				if(flag == 2)
+#if DVB_API_VERSION >= 5
+					line = ostrcat(line, "-1", 1, 0);
+#else
+					line = ostrcat(line, "2", 1, 0);
+#endif
+				else
+					line = ostrcat(line, "2", 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
+				//system
 				if(ostrstr((ret1[i]).part, "system=") != NULL)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "system="), 1, 0); //system
+					line = ostrcat(line, getxmlentry(ret1[i].part, "system="), 1, 0);
 				else
-					line = ostrcat(line, "0", 1, 0); //system
+					line = ostrcat(line, "0", 1, 0);
 				line = ostrcat(line, "\n", 1, 0);
 			}
 		}
