@@ -1649,6 +1649,16 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	
 	int bandwidth = tpnode->symbolrate; //symbolrate = bandwidth on DVBT
 	switch(bandwidth)
+
+#if DVB_API_VERSION >= 5	
+	{
+		case 0: bandwidth = 8000000; break;
+		case 1: bandwidth = 7000000; break;
+		case 2: bandwidth = 6000000; break;
+		case 3: bandwidth = 5000000; break;
+		default: bandwidth = 0; break;
+	}
+#else	
 	{
 		case 0: bandwidth = BANDWIDTH_8_MHZ; break;
 		case 1: bandwidth = BANDWIDTH_7_MHZ; break;
@@ -1656,6 +1666,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 3: bandwidth = BANDWIDTH_AUTO; break;
 		default: bandwidth = BANDWIDTH_AUTO; break;
 	}
+#endif
 	
 	int transmission = tpnode->pilot; //pilot = transmission on DVBT
 	switch(transmission)
