@@ -75,6 +75,7 @@ static void SetBuffering()
     fcntl(stdin->_fileno, F_SETFL, flags | O_NONBLOCK); 
 }
 
+/*
 static void SetNice(int prio)
 {
 #if 0
@@ -93,6 +94,7 @@ static void SetNice(int prio)
     }
 #endif
 }
+*/
 
 static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbackSwitchCmd, const char *argvBuff)
 {
