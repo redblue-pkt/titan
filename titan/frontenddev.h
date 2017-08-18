@@ -1638,6 +1638,18 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	
 	int modulation = tpnode->modulation;
 	switch(modulation)
+#if DVB_API_VERSION >= 5	
+	{
+		case 0: modulation = QPSK; break;
+		case 1: modulation = QAM_16; break;
+		case 2: modulation = QAM_32; break;
+		case 3: modulation = QAM_64; break;
+		case 5: modulation = QAM_128; break;
+		case 6: modulation = QAM_256; break;
+		case 7: modulation = QAM_AUTO; break;
+		default: modulation = QAM_AUTO; break;
+	}
+#else	
 	{
 		case 0: modulation = QPSK; break;
 		case 1: modulation = QAM_16; break;
@@ -1646,6 +1658,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case 4: modulation = QAM_AUTO; break;
 		default: modulation = QAM_AUTO; break;
 	}
+#endif
 	
 	int bandwidth = tpnode->symbolrate; //symbolrate = bandwidth on DVBT
 	switch(bandwidth)
