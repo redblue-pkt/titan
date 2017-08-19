@@ -514,37 +514,24 @@ int fewait(struct dvbdev* node)
 	while(count <= timer)
 	{
 		count++;
-		//if(checkbox("DM520") == 0 && checkbox("DM525") == 0)
-		if(checkbox("xxxxxxxx") == 0)
+
+		//ioctl(node->fd, FE_GET_EVENT, &ev);
+		//if(ev.status & FE_HAS_LOCK)
+		//	return 0;
+		ioctl(node->fd, FE_READ_STATUS, &status);
+		if(status != 0)
+			debug(200, "status=%d, fe_lock=%d", status, FE_HAS_LOCK);
+
+		if(errno == ERANGE)
 		{
-			//ioctl(node->fd, FE_GET_EVENT, &ev);
-			//if(ev.status & FE_HAS_LOCK)
-			//	return 0;
-			ioctl(node->fd, FE_READ_STATUS, &status);
-			if(status != 0)
-				debug(200, "status=%d, fe_lock=%d", status, FE_HAS_LOCK);
-
-			if(errno == ERANGE)
-			{
-				usleep(1000);
-				continue;
-			}
-
-			if(status & FE_HAS_LOCK)
-	//		if(FE_HAS_SYNC | FE_HAS_LOCK)
-				return 0;
-			}
-			else
-			{
-				if(ioctl(node->fd, FE_GET_EVENT, &status) && (errno == EAGAIN))
-				{
-					usleep(1000);
-					continue;
-				}
-				if (status & FE_HAS_LOCK)
-					return 0;
-			}
 			usleep(1000);
+			continue;
+		}
+
+		if(status & FE_HAS_LOCK)
+	//		if(FE_HAS_SYNC | FE_HAS_LOCK)
+			return 0;
+		usleep(1000);
 	}
 
 	//if(ev.status & FE_HAS_LOCK)
