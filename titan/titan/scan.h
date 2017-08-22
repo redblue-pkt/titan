@@ -423,7 +423,7 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 		{	
 			fllen = loop1[i1+2];
 			step1 = 3;
-			step1 = step1 + fllen 
+			step1 = step1 + fllen; 
 			for(i2 = 0; i2 < fllen; i2=i2+4)
 			{
 				cfre = ((loop2[i2] << 24) & 0xff000000);
