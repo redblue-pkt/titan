@@ -1531,7 +1531,8 @@ void delspezchar(char* text, int flag)
 			if(tmpstr[0] == '/') tmpstr[0] = '-';
 			if(flag == 2)
 			{
-				if(tmpstr[0] == '\A7') tmpstr[0] = '-';
+				//if(tmpstr[0] == '\A7') tmpstr[0] = '-';
+				if(tmpstr[0] == 0xA7) tmpstr[0] = '-';
 				if(tmpstr[0] == '<') tmpstr[0] = '-';
  				if(tmpstr[0] == '>') tmpstr[0] = '-';
 				if(tmpstr[0] == ':') tmpstr[0] = '-';
