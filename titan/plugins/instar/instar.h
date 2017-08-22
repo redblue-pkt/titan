@@ -245,6 +245,7 @@ int instar_settings()
 	addchoicebox(typCam1, "2", "2");
 	addchoicebox(typCam1, "3", "3");
 	addchoicebox(typCam1, "4", "4");
+	addchoicebox(typCam1, "5", "5");
 	setchoiceboxselection(typCam1, getconfig("instar_1", NULL));
 	changemask(ipCam1, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam1, getlist(myconfig, "InstarCam1IP", NULL));
@@ -263,6 +264,7 @@ int instar_settings()
 	addchoicebox(typCam2, "2", "2");
 	addchoicebox(typCam2, "3", "3");
 	addchoicebox(typCam2, "4", "4");
+	addchoicebox(typCam2, "5", "5");
 	setchoiceboxselection(typCam2, getconfig("instar_2", NULL));
 	changemask(ipCam2, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam2, getlist(myconfig, "InstarCam2IP", NULL));
