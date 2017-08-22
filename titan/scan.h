@@ -378,8 +378,7 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 	//inversion = INVERSION_UNKNOWN;
 	inversion = INVERSION_AUTO;
 	//system = SYSTEM_DVB_T2;
-	system = 1;
-
+	
 	char* loop1 = buf + 8;     //call_id
 	char* loop2 = buf + 11;    //centre_frequency if Flag == 1
 	char* loop3 = buf + 10;    //centre_frequency if Flag == 0
