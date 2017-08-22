@@ -320,8 +320,8 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 	int modulation = 0, hp = 0, lp = 0;
 	int bandwidth = 0, hierarchy = 0, guardinterval = 0;
 	int transmission = 0;
+	int inversion = 0;
 	int plp_id = 0;
-	int i = 0;
 	unsigned int frequency = 0;
 	uint64_t id = 0;
 	struct transponder *tpnode = NULL;
@@ -387,7 +387,6 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 	int i1 = 0;
 	int i2 = 0;
 	int step1 = 0;
-	int step2 = 0;
 	int sillen = 0;
 	int fllen = 0;
 	
