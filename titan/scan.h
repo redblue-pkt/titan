@@ -314,6 +314,137 @@ struct transponder* terrsystemdesc(unsigned char* buf, uint64_t transportid, uns
 	return tpnode;
 }
 
+//struct transponder* terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short onid, int orbitalpos)
+int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short onid, int orbitalpos)
+{
+	int modulation = 0, hp = 0, lp = 0;
+	int bandwidth = 0, hierarchy = 0, guardinterval = 0;
+	int transmission = 0;
+	int plp_id = 0;
+	int i = 0;
+	unsigned int frequency = 0;
+	uint64_t id = 0;
+	struct transponder *tpnode = NULL;
+	int addtrans = 0;
+	
+	if(buf == NULL) return -1;
+		
+	int dlen = buf[1];
+	if (dlen < 5)
+	{
+		debug(500, "exit DVB-T2 desc... length < 5");
+		return -1;	
+	}
+	
+
+	bandwidth = ((buf[6] >> 2) & 0x0f);
+	switch (bandwidth)
+	{
+		case 0: bandwidth = 8000000; break;
+		case 1: bandwidth = 7000000; break;
+		case 2: bandwidth = 6000000; break;
+		case 3: bandwidth = 5000000; break;
+		case 4: bandwidth = 1712000; break;
+		case 5: bandwidth = 10000000; break;
+		default: bandwidth = 0; break;
+	}
+	guardinterval = ((buf[7] >> 5) & 0x3);
+	switch (guardinterval)
+	{
+		case 0: guardinterval = GUARD_INTERVAL_1_32; break;
+		case 1: guardinterval = GUARD_INTERVAL_1_16; break;
+		case 2: guardinterval = GUARD_INTERVAL_1_8; break;
+		case 3: guardinterval = GUARD_INTERVAL_1_4; break;
+		case 4: guardinterval = GUARD_INTERVAL_1_128; break;
+		case 5: guardinterval = GUARD_INTERVAL_19_128; break;
+		case 6: guardinterval = GUARD_INTERVAL_19_256; break;
+		case 7: guardinterval = GUARD_INTERVAL_AUTO; break;
+	}
+	transmission = (buf[7] >> 2 & 0x3);
+	switch (transmission)
+	{
+		case 0: transmission_mode = TRANSMISSION_MODE_2K; break;
+		case 1: transmission_mode = TRANSMISSION_MODE_8K; break;
+		case 2: transmission_mode = TRANSMISSION_MODE_4K; break;
+		case 3: transmission_mode = TRANSMISSION_MODE_1K; break;
+		case 4: transmission_mode = TRANSMISSION_MODE_16K; break;
+		case 5: transmission_mode = TRANSMISSION_MODE_32K; break;
+		default: transmission_mode = TRANSMISSION_MODE_AUTO; break;
+	}
+	plp_id = buf[3];
+	hp = lp = FEC_AUTO;
+	hierarchy = HIERARCHY_AUTO;
+	modulation = QAM_AUTO;
+	inversion = INVERSION_UNKNOWN;
+	//inversion = INVERSION_AUTO;
+	system = SYSTEM_DVB_T2;
+
+	char* loop1 = buf + 8;     //call_id
+	char* loop2 = buf + 11;    //centre_frequency if Flag == 1
+	char* loop3 = buf + 10;    //centre_frequency if Flag == 0
+	unsigned int cfre = 0;
+	int i = 0;
+	int i2 = 0;
+	int step1 = 0;
+	int step2 = 0;
+	int sillen = 0;
+	int fllen = 0;
+	
+	int flag = (buf[7] & 0x1);
+
+	id = ((onid << 16) | transportid) & 0xffffffff;
+	id = id | ((uint64_t)2 << 32);
+
+	if (flag == 0)
+	{
+		for(i = 0; i < dlen-6; i=i+step1)
+		{
+			step1 = 6;
+		
+			cfre = ((loop3[i] << 24) & 0xff000000);
+			cfre = cfre | ((loop3[i+1] << 16) & 0xff0000);
+			cfre = cfre | ((loop3[i+2] << 8) & 0xff00);
+			cfre = cfre | (loop3[i+3] & 0xff);
+			frequency = cfre * 10;
+			debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
+			tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
+			if(tpnode != NULL)
+				addtrans++;
+			else
+				err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
+			sillen = loop3[i+4];
+			step1 = step1 + sillen;
+		}
+	}
+	else
+	{
+		for(i = 0; i < dlen-6; i=i+step1)
+		{	
+			fllen = loop1[i+2];
+			step1 = 3;
+			step1 = step1 + fllen 
+			for(i2 = 0; i2 < fllen; i2=i2+4)
+			{
+				cfre = ((loop2[i2] << 24) & 0xff000000);
+				cfre = cfre | ((loop2[i2+1] << 16) & 0xff0000);
+				cfre = cfre | ((loop2[i2+2] << 8) & 0xff00);
+				cfre = cfre | (loop2[i2+3] & 0xff);
+				frequency = cfre * 10;
+				debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
+				tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
+				if(tpnode != NULL)
+					addtrans++;
+				else
+					err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
+			}
+			sillen = loop2[i2];
+			step1 = step1 + sillen;
+		}
+	}
+	//return tpnode;
+	return addtrans;
+}
+
 int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 {
 	int ret = 0;
@@ -382,10 +513,10 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 		{
 			switch(buf[pos2])
 			{
-				case 0x41:
+				case 0x41: //service_list_descriptor
 					//servicelistdesc(buf + pos2, transponderid, onid);
 					break;
-				case 0x43:
+				case 0x43: //satellite_delivery_system_descriptor
 					if(satsystemdesc(buf + pos2, transponderid, onid, orbitalpos) != NULL)
 					{
 						scaninfo.tpnew++;
@@ -393,7 +524,7 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 							scaninfo.tpmax++;
 					}
 					break;
-				case 0x44:
+				case 0x44: //cable_delivery_system_descriptor
 					if(cablesystemdesc(buf + pos2, transponderid, onid, orbitalpos) != NULL)
 					{
 						scaninfo.tpnew++;
@@ -401,7 +532,7 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 							scaninfo.tpmax++;
 					}
 					break;
-				case 0x5A:
+				case 0x5A: //terrestrial_delivery_system_descriptor
 					if(terrsystemdesc(buf + pos2, transponderid, onid, orbitalpos) != NULL)
 					{
 						scaninfo.tpnew++;
@@ -409,8 +540,24 @@ int parsenit(unsigned char* buf, uint8_t* lastsecnr, int orbitalpos)
 							scaninfo.tpmax++;
 					}
 					break;
-				case 0x62:
+				case 0x62: //frequency_list_descriptor
 					//frequencylistdesc(buf + pos2);
+					break;
+				case 0x7F: //extension_descriptor
+					{
+						switch(buf[pos2+2])
+						case 0x04: //T2_delivery_system_descriptor
+							ret = terrsystemdesc2(buf + pos2, transponderid, onid, orbitalpos);
+							//if(terrsystemdesc2(buf + pos2, transponderid, onid, orbitalpos) > 0)
+							if(ret > 0)
+							{
+								scaninfo.tpnew = scaninfo.tpnew + ret;
+								if(scaninfo.scantype != 0)
+									scaninfo.tpmax = scaninfo.tpmax + ret;
+							}
+							ret = 0;
+							break;
+					}
 					break;
 			}
 		}
