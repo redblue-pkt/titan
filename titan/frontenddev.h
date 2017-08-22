@@ -102,26 +102,6 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 	return node->feaktband;
 }
 
-#if DVB_API_VERSION >= 5
-int fegetProperty(unsigned int cmd)
-{
-	struct dtv_property p[1];
-	memset(p, 0, sizeof(p));	
-	struct dtv_properties cmdseq;
-	cmdseq.props = p;
-
-	p[0].cmd = cmd;
-	cmdseq.num = 1;
-	
-	if(ioctl(node->fd, FE_GET_PROPERTY, &cmdseq) < 0)
-	{
-		perr("FE_GET_PROPERTY -> %d", cmd);
-		return -1;
-	}
-	return p[0].u.data;
-}
-#endif
-
 char* fegettypestr(struct dvbdev* dvbnode)
 {
 	char* text = NULL;

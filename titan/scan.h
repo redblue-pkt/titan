@@ -363,27 +363,28 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 	transmission = (buf[7] >> 2 & 0x3);
 	switch (transmission)
 	{
-		case 0: transmission_mode = TRANSMISSION_MODE_2K; break;
-		case 1: transmission_mode = TRANSMISSION_MODE_8K; break;
-		case 2: transmission_mode = TRANSMISSION_MODE_4K; break;
-		case 3: transmission_mode = TRANSMISSION_MODE_1K; break;
-		case 4: transmission_mode = TRANSMISSION_MODE_16K; break;
-		case 5: transmission_mode = TRANSMISSION_MODE_32K; break;
-		default: transmission_mode = TRANSMISSION_MODE_AUTO; break;
+		case 0: transmission = TRANSMISSION_MODE_2K; break;
+		case 1: transmission = TRANSMISSION_MODE_8K; break;
+		case 2: transmission = TRANSMISSION_MODE_4K; break;
+		case 3: transmission = TRANSMISSION_MODE_1K; break;
+		case 4: transmission = TRANSMISSION_MODE_16K; break;
+		case 5: transmission = TRANSMISSION_MODE_32K; break;
+		default: transmission = TRANSMISSION_MODE_AUTO; break;
 	}
 	plp_id = buf[3];
 	hp = lp = FEC_AUTO;
 	hierarchy = HIERARCHY_AUTO;
 	modulation = QAM_AUTO;
-	inversion = INVERSION_UNKNOWN;
-	//inversion = INVERSION_AUTO;
-	system = SYSTEM_DVB_T2;
+	//inversion = INVERSION_UNKNOWN;
+	inversion = INVERSION_AUTO;
+	//system = SYSTEM_DVB_T2;
+	system = 1;
 
 	char* loop1 = buf + 8;     //call_id
 	char* loop2 = buf + 11;    //centre_frequency if Flag == 1
 	char* loop3 = buf + 10;    //centre_frequency if Flag == 0
 	unsigned int cfre = 0;
-	int i = 0;
+	int i1 = 0;
 	int i2 = 0;
 	int step1 = 0;
 	int step2 = 0;
@@ -397,14 +398,14 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 
 	if (flag == 0)
 	{
-		for(i = 0; i < dlen-6; i=i+step1)
+		for(i1 = 0; i1 < dlen-6; i1=i1+step1)
 		{
 			step1 = 6;
 		
-			cfre = ((loop3[i] << 24) & 0xff000000);
-			cfre = cfre | ((loop3[i+1] << 16) & 0xff0000);
-			cfre = cfre | ((loop3[i+2] << 8) & 0xff00);
-			cfre = cfre | (loop3[i+3] & 0xff);
+			cfre = ((loop3[i1] << 24) & 0xff000000);
+			cfre = cfre | ((loop3[i1+1] << 16) & 0xff0000);
+			cfre = cfre | ((loop3[i1+2] << 8) & 0xff00);
+			cfre = cfre | (loop3[i1+3] & 0xff);
 			frequency = cfre * 10;
 			debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 			tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, hierarchy);
@@ -412,15 +413,15 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 				addtrans++;
 			else
 				err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
-			sillen = loop3[i+4];
+			sillen = loop3[i1+4];
 			step1 = step1 + sillen;
 		}
 	}
 	else
 	{
-		for(i = 0; i < dlen-6; i=i+step1)
+		for(i1 = 0; i1 < dlen-6; i1=i1+step1)
 		{	
-			fllen = loop1[i+2];
+			fllen = loop1[i1+2];
 			step1 = 3;
 			step1 = step1 + fllen 
 			for(i2 = 0; i2 < fllen; i2=i2+4)
