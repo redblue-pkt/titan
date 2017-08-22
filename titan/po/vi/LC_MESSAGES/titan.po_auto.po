@@ -11366,7 +11366,7 @@ msgstr "Hình ảnh"
 msgid "audiotrack"
 msgstr ""
 
-#: instar.h:240 instar.h:258
+#: instar.h:240 instar.h:259
 msgid "aus"
 msgstr "hỏi"
 
@@ -11738,7 +11738,7 @@ msgstr ""
 msgid "east"
 msgstr "trái"
 
-#: instar.h:241 instar.h:259
+#: instar.h:241 instar.h:260
 msgid "ein"
 msgstr "Mật khẩu"
 

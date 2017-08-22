@@ -11427,7 +11427,7 @@ msgstr "Аудио/Картинка"
 msgid "audiotrack"
 msgstr "Аудио-трек"
 
-#: instar.h:240 instar.h:258
+#: instar.h:240 instar.h:259
 msgid "aus"
 msgstr "От"
 
@@ -11799,7 +11799,7 @@ msgstr ""
 msgid "east"
 msgstr "Восток"
 
-#: instar.h:241 instar.h:259
+#: instar.h:241 instar.h:260
 msgid "ein"
 msgstr "Один"
 

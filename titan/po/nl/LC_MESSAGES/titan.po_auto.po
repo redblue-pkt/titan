@@ -11429,7 +11429,7 @@ msgstr "muziek/foto"
 msgid "audiotrack"
 msgstr ""
 
-#: instar.h:240 instar.h:258
+#: instar.h:240 instar.h:259
 msgid "aus"
 msgstr "Uit"
 
@@ -11801,7 +11801,7 @@ msgstr ""
 msgid "east"
 msgstr "Oost"
 
-#: instar.h:241 instar.h:259
+#: instar.h:241 instar.h:260
 msgid "ein"
 msgstr "Aan"
 
