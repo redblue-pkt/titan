@@ -487,6 +487,7 @@ int fewait(struct dvbdev* node)
 {
 	//struct dvb_frontend_event ev;
 	fe_status_t status;
+	fe_status_t status_m = 0;
 
 	int count = 0;
 
@@ -505,9 +506,6 @@ int fewait(struct dvbdev* node)
 #ifdef MIPSEL
 	timer = 2000;
 #endif
-#ifdef DREAMBOX
-	timer = 4000;
-#endif
 
 	//wait for tuner ready
 	debug(200, "wait for tuner");
@@ -520,7 +518,13 @@ int fewait(struct dvbdev* node)
 		//	return 0;
 		ioctl(node->fd, FE_READ_STATUS, &status);
 		if(status != 0)
-			debug(200, "status=%d, fe_lock=%d", status, FE_HAS_LOCK);
+		{
+			if(status_m != status)
+			{
+				debug(200, "status=%d, fe_lock=%d", status, FE_HAS_LOCK);
+				status_m = status;
+			}
+		}
 
 		if(errno == ERANGE)
 		{
@@ -1699,6 +1703,10 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	}
 	
 	int hierarchy = tpnode->system; //system = hierarchy on DVBT
+	
+	if(tpnode->system == 1) //system = DVB-T2 then hierarchy = HIERARCHY_AUTO
+		hierarchy = 4;
+	
 	//switch(guardinterval)
 	switch(hierarchy)
 	{
@@ -1983,7 +1991,10 @@ int fechangetype(struct dvbdev* tuner, char* value)
 			//fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
 			//to do set voltage --> wenn der Tuner es kann
 			//fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
-			p[1].u.data = SYS_DVBT2;
+			if(realname != NULL && ostrstr(realname, "DVB-T2") != NULL)
+				p[1].u.data = SYS_DVBT2;
+			else
+				p[1].u.data = SYS_DVBT;
 			break;
 		}
 		case feCable:
