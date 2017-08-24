@@ -310,6 +310,7 @@ struct transponder* terrsystemdesc(unsigned char* buf, uint64_t transportid, uns
 	}
 
 	debug(500, "nitscan: id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
+	debug(200, "nitscan: id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 
 	return tpnode;
 }
@@ -336,49 +337,17 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 		debug(500, "exit DVB-T2 desc... length < 5");
 		return -1;	
 	}
-	
 
 	bandwidth = ((buf[6] >> 2) & 0x0f);
-	switch (bandwidth)
-	{
-		case 0: bandwidth = 8000000; break;
-		case 1: bandwidth = 7000000; break;
-		case 2: bandwidth = 6000000; break;
-		case 3: bandwidth = 5000000; break;
-		case 4: bandwidth = 1712000; break;
-		case 5: bandwidth = 10000000; break;
-		default: bandwidth = 0; break;
-	}
 	guardinterval = ((buf[7] >> 5) & 0x3);
-	switch (guardinterval)
-	{
-		case 0: guardinterval = GUARD_INTERVAL_1_32; break;
-		case 1: guardinterval = GUARD_INTERVAL_1_16; break;
-		case 2: guardinterval = GUARD_INTERVAL_1_8; break;
-		case 3: guardinterval = GUARD_INTERVAL_1_4; break;
-		case 4: guardinterval = GUARD_INTERVAL_1_128; break;
-		case 5: guardinterval = GUARD_INTERVAL_19_128; break;
-		case 6: guardinterval = GUARD_INTERVAL_19_256; break;
-		case 7: guardinterval = GUARD_INTERVAL_AUTO; break;
-	}
 	transmission = (buf[7] >> 2 & 0x3);
-	switch (transmission)
-	{
-		case 0: transmission = TRANSMISSION_MODE_2K; break;
-		case 1: transmission = TRANSMISSION_MODE_8K; break;
-		case 2: transmission = TRANSMISSION_MODE_4K; break;
-		case 3: transmission = TRANSMISSION_MODE_1K; break;
-		case 4: transmission = TRANSMISSION_MODE_16K; break;
-		case 5: transmission = TRANSMISSION_MODE_32K; break;
-		default: transmission = TRANSMISSION_MODE_AUTO; break;
-	}
 	plp_id = buf[3];
 	hp = lp = FEC_AUTO;
 	hierarchy = HIERARCHY_AUTO;
 	modulation = QAM_AUTO;
 	inversion = 2; //INVERSION_UNKNOWN
 	//inversion = INVERSION_AUTO;
-	system = SYS_DVBT2;
+	system = 1; //DVB-T2
 	
 	unsigned char* loop1 = buf + 8;     //call_id
 	unsigned char* loop2 = buf + 11;    //centre_frequency if Flag == 1
@@ -407,13 +376,14 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 			cfre = cfre | (loop3[i1+3] & 0xff);
 			frequency = cfre * 10;
 			debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
+			debug(200, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 			tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
 			if(tpnode != NULL)
 				addtrans++;
 			else
 				err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
 			sillen = loop3[i1+4];
-			step1 = step1 + sillen;
+			step1 = step1 + sillen+1;
 		}
 	}
 	else
@@ -431,6 +401,7 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 				cfre = cfre | (loop2[i2+3] & 0xff);
 				frequency = cfre * 10;
 				debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
+				debug(200, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 				tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
 				if(tpnode != NULL)
 					addtrans++;
@@ -438,7 +409,7 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 					err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
 			}
 			sillen = loop2[i2];
-			step1 = step1 + sillen;
+			step1 = step1 + sillen+1;
 		}
 	}
 	//return tpnode;
@@ -1241,11 +1212,11 @@ void doscan(struct stimerthread* timernode)
 	uint8_t lastsecnr = 0xff;
 	unsigned char* buf = NULL;
 	struct transponder* tpnode = NULL;
+	struct transponder* tpnode_tmp = NULL;
 	struct dvbdev* fenode = NULL;
 	//struct channel* chnode = NULL;
 	struct sat* satnode = sat;
 	int nitscan = 1;
-	int tout = 0;
 
 	if(scaninfo.fenode == NULL || scaninfo.tpnode == NULL || timernode == NULL)
 	{
@@ -1335,19 +1306,20 @@ void doscan(struct stimerthread* timernode)
 			}
 			else if(fenode->feinfo->type == FE_OFDM)
 			{
-				tout = 0;
-				if(fetunedvbt(fenode, tpnode) != 0)
+				if(tpnode->system == 0) 
 				{
-					tout = 1;
-					if(tpnode->system == 0)
+					//scan DVB-T2 as DVB-T
+					tpnode_tmp = createtransponder(id, FE_OFDM, tpnode->id, tpnode->frequency, tpnode->inversion, tpnode->symbolrate, tpnode->polarization, tpnode->fec, tpnode->modulation, tpnode->rolloff, tpnode->pilot, 1);
+					if(tpnode_tmp == NULL)
+						err("can't add DVB-T2 Transponder");
+					else
 					{
-						tpnode->system = 1;
-						if(fetunedvbt(fenode, tpnode) == 0)
-							tout = 0;
+						debug(500, "add transponder like DVB-T");
+						debug(200, "add transponder like DVB-T");
 					}
 				}
-				if(tout == 1)			
-				{	
+				if(fetunedvbt(fenode, tpnode) != 0)
+				{
 					scaninfo.tpcount++;
 					if(scaninfo.cleartransponder == 1)
 					{
