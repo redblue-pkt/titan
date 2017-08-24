@@ -1704,7 +1704,6 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 			default: transmission = TRANSMISSION_MODE_AUTO; break;
 		}
 	}
-}
 
 	int guardinterval = tpnode->rolloff; //rolloff = guardinterval on DVBT
 	if(system == 0) //DVB-T
