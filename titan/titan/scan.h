@@ -1212,7 +1212,6 @@ void doscan(struct stimerthread* timernode)
 	uint8_t lastsecnr = 0xff;
 	unsigned char* buf = NULL;
 	struct transponder* tpnode = NULL;
-	struct transponder* tpnode_tmp = NULL;
 	struct dvbdev* fenode = NULL;
 	//struct channel* chnode = NULL;
 	struct sat* satnode = sat;
@@ -1306,20 +1305,6 @@ void doscan(struct stimerthread* timernode)
 			}
 			else if(fenode->feinfo->type == FE_OFDM)
 			{
-				if(tpnode->system == 0) 
-				{
-					//scan DVB-T2 as DVB-T
-					tpnode_tmp = createtransponder(tpnode->id, FE_OFDM, tpnode->orbitalpos, tpnode->frequency, tpnode->inversion, tpnode->symbolrate, tpnode->polarization, tpnode->fec, tpnode->modulation, tpnode->rolloff, tpnode->pilot, 1);
-					if(tpnode_tmp == NULL)
-					{
-						err("can't add DVB-T2 Transponder");
-					}
-					else
-					{
-						debug(500, "add transponder like DVB-T");
-						debug(200, "add transponder like DVB-T");
-					}
-				}
 				if(fetunedvbt(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
@@ -1342,8 +1327,17 @@ void doscan(struct stimerthread* timernode)
 				if(scaninfo.scantype == 0) break;
 				continue;
 			}
-
 			festatus = fewait(fenode);
+			if(debug_level == 200) fereadstatus(fenode);
+			if(fenode->feinfo->type == FE_OFDM && festatus != 0 &&  tpnode->system == 0) //DVB-T2 scan
+			{
+				tpnode->system = 1;
+				debug(200, "scan after DVB-T, DVB-T2");
+				if(fetunedvbt(fenode, tpnode) != 0)
+					festatus = -1;
+				else
+					festatus = fewait(fenode);
+			}
 			if(debug_level == 200) fereadstatus(fenode);
 			if(festatus != 0)
 			{
