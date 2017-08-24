@@ -521,7 +521,7 @@ int fewait(struct dvbdev* node)
 		{
 			if(status_m != status)
 			{
-				debug(200, "status=%d, fe_lock=%d", status, FE_HAS_LOCK);
+				debug(200, "status=%02x, fe_lock=%02x", status, FE_HAS_LOCK);
 				status_m = status;
 			}
 		}
@@ -1603,6 +1603,9 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		return 1;
 	}
 	debug(200, "transponder:frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, tpnode->symbolrate, tpnode->fec, tpnode->polarization, tpnode->modulation, tpnode->pilot, tpnode->rolloff, tpnode->system, tpnode->system, node->feshortname);
+	
+	int system = tpnode->system; 
+	
 	int hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
 	{
@@ -1673,33 +1676,66 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 #endif
 	
 	int transmission = tpnode->pilot; //pilot = transmission on DVBT
-	switch(transmission)
+	if(system == 0) //DVB-T
 	{
-		case 0: transmission = TRANSMISSION_MODE_2K; break;
-		case 1: transmission = TRANSMISSION_MODE_8K; break;
-		case 2: transmission = TRANSMISSION_MODE_AUTO; break;
+		switch(transmission)
+		{
+			case 0: transmission = TRANSMISSION_MODE_2K; break;
+			case 1: transmission = TRANSMISSION_MODE_8K; break;
+			case 2: transmission = TRANSMISSION_MODE_AUTO; break;
 #if defined TRANSMISSION_MODE_1K
-		case 3: transmission = TRANSMISSION_MODE_1K; break;
-		case 4: transmission = TRANSMISSION_MODE_16K; break;
-		case 5: transmission = TRANSMISSION_MODE_32K; break;
+			case 3: transmission = TRANSMISSION_MODE_1K; break;
+			case 4: transmission = TRANSMISSION_MODE_16K; break;
+			case 5: transmission = TRANSMISSION_MODE_32K; break;
 #endif
-		default: transmission = TRANSMISSION_MODE_AUTO; break;
+			default: transmission = TRANSMISSION_MODE_AUTO; break;
+		}
 	}
-	
-	int guardinterval = tpnode->rolloff; //rolloff = guardinterval on DVBT
-	switch(guardinterval)
+	else
 	{
-		case 0: guardinterval = GUARD_INTERVAL_1_32; break;
-		case 1: guardinterval = GUARD_INTERVAL_1_16; break;
-		case 2: guardinterval = GUARD_INTERVAL_1_8; break;
-		case 3: guardinterval = GUARD_INTERVAL_1_4; break;
-		case 4: guardinterval = GUARD_INTERVAL_AUTO; break;
+		switch (transmission)
+		{
+			case 0: transmission = TRANSMISSION_MODE_2K; break;
+			case 1: transmission = TRANSMISSION_MODE_8K; break;
+			case 2: transmission = TRANSMISSION_MODE_4K; break;
+			case 3: transmission = TRANSMISSION_MODE_1K; break;
+			case 4: transmission = TRANSMISSION_MODE_16K; break;
+			case 5: transmission = TRANSMISSION_MODE_32K; break;
+			default: transmission = TRANSMISSION_MODE_AUTO; break;
+		}
+	}
+}
+
+	int guardinterval = tpnode->rolloff; //rolloff = guardinterval on DVBT
+	if(system == 0) //DVB-T
+	{
+		switch(guardinterval)
+		{
+			case 0: guardinterval = GUARD_INTERVAL_1_32; break;
+			case 1: guardinterval = GUARD_INTERVAL_1_16; break;
+			case 2: guardinterval = GUARD_INTERVAL_1_8; break;
+			case 3: guardinterval = GUARD_INTERVAL_1_4; break;
+			case 4: guardinterval = GUARD_INTERVAL_AUTO; break;
 #if defined GUARD_INTERVAL_1_128
-		case 5: guardinterval = GUARD_INTERVAL_1_128; break;
-		case 6: guardinterval = GUARD_INTERVAL_19_128; break;
-		case 7: guardinterval = GUARD_INTERVAL_19_256; break;
+			case 5: guardinterval = GUARD_INTERVAL_1_128; break;
+			case 6: guardinterval = GUARD_INTERVAL_19_128; break;
+			case 7: guardinterval = GUARD_INTERVAL_19_256; break;
 #endif
-		default: guardinterval = GUARD_INTERVAL_AUTO; break;
+			default: guardinterval = GUARD_INTERVAL_AUTO; break;
+		}
+	else //dvb-T2
+	{
+		switch (guardinterval)
+		{
+			case 0: guardinterval = GUARD_INTERVAL_1_32; break;
+			case 1: guardinterval = GUARD_INTERVAL_1_16; break;
+			case 2: guardinterval = GUARD_INTERVAL_1_8; break;
+			case 3: guardinterval = GUARD_INTERVAL_1_4; break;
+			case 4: guardinterval = GUARD_INTERVAL_1_128; break;
+			case 5: guardinterval = GUARD_INTERVAL_19_128; break;
+			case 6: guardinterval = GUARD_INTERVAL_19_256; break;
+			case 7: guardinterval = GUARD_INTERVAL_AUTO; break;
+		}
 	}
 	
 	int hierarchy = tpnode->system; //system = hierarchy on DVBT
@@ -1718,12 +1754,13 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		default: hierarchy = HIERARCHY_AUTO; break;
 	}
 
+	int ret = 0;
+	fediscard(node);
+
 #if DVB_API_VERSION >= 5
 	struct dtv_property p[12];
 	struct dtv_properties cmdseq;
 	cmdseq.props = p;
-
-	int system = tpnode->system; 
 
 // suchlauf geht an nemesis mit system=0
 #if DREAMBOX
@@ -1748,9 +1785,14 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	p[10].cmd = DTV_HIERARCHY, p[10].u.data = hierarchy;
 	p[11].cmd = DTV_TUNE;
 	cmdseq.num = 12;
+	
+	if((ioctl(node->fd, FE_SET_PROPERTY, &cmdseq)) == -1)
+	{
+		perr("FE_SET_PROPERTY");
+		ret = 1;
+	}
 
-	debug(200, "new dvbapi: frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, bandwidth, hp, lp, modulation, transmission, guardinterval, hierarchy, system, node->feshortname);
-
+	debug(200, "new dvbapi 1: frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, bandwidth, hp, lp, modulation, transmission, guardinterval, hierarchy, system, node->feshortname);
 
 #else
 	struct dvb_frontend_parameters tuneto;
@@ -1764,28 +1806,17 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	tuneto.u.ofdm.transmission_mode = transmission;
 	tuneto.u.ofdm.guard_interval = guardinterval;
 	tuneto.u.ofdm.hierarchy_information = hierarchy;
-
-	debug(200, "old dvbapi: frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, bandwidth, hp, lp, modulation, transmission, guardinterval, hierarchy, system, node->feshortname);
-
-#endif
-
-
-	fediscard(node);
-
-#if DVB_API_VERSION >= 5
-	if((ioctl(node->fd, FE_SET_PROPERTY, &cmdseq)) == -1)
-	{
-		perr("FE_SET_PROPERTY");
-		return 1;
-	}
-#else
+	
 	if(ioctl(node->fd, FE_SET_FRONTEND, &tuneto) == -1)
 	{
 		perr("FE_SET_FRONTEND");
-		return 1;
+		ret = 1;
 	}
+
+	debug(200, "old dvbapi 1: frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, bandwidth, hp, lp, modulation, transmission, guardinterval, hierarchy, system, node->feshortname);
+
 #endif
-	return 0;
+	return ret;
 }
 
 #ifdef SIMULATE
