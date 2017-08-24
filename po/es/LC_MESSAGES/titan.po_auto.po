@@ -28,11 +28,11 @@ msgstr " : No se pudo!"
 msgid " Days "
 msgstr ""
 
-#: scan.h:1757
+#: scan.h:1751
 msgid " Del: "
 msgstr ""
 
-#: scan.h:1755
+#: scan.h:1749
 msgid " New: "
 msgstr ""
 
@@ -1166,7 +1166,7 @@ msgstr "automatico"
 msgid "Auto Resolution"
 msgstr "Resolucion Automatica"
 
-#: scan.h:2234
+#: scan.h:2228
 msgid "Auto Scan"
 msgstr "Exploracion automatica"
 
@@ -1451,7 +1451,7 @@ msgstr "Busqueda Ciega"
 msgid "Blindscan Settings"
 msgstr "Busqueda Ciega"
 
-#: scan.h:1787
+#: scan.h:1781
 msgid "Blindscan: "
 msgstr ""
 
@@ -2103,14 +2103,14 @@ msgstr ""
 msgid "Channel or Transponder is empty"
 msgstr "ERROR: El canal o transpondedor esta vacia"
 
-#: scan.h:1809
+#: scan.h:1803
 msgid "Channel scan ended."
 msgstr ""
 "busqueda de canales completada.\n"
 "Ahorra Canales utilizando teclas de colores que se muestaran en su control "
 "remoto."
 
-#: scan.h:1807 scan.h:1837
+#: scan.h:1801 scan.h:1831
 msgid ""
 "Channel scan ended.\n"
 "Nothing found."
@@ -2529,7 +2529,7 @@ msgstr "Menu de creacion de Transpondedor"
 msgid "Create Thumb Picture"
 msgstr "Crear miniaturas"
 
-#: scan.h:2485
+#: scan.h:2479
 msgid "Create new"
 msgstr "Crear Nuevo"
 
@@ -2700,7 +2700,7 @@ msgstr "DYNDNS iniciado"
 msgid "Data"
 msgstr ""
 
-#: scan.h:1779
+#: scan.h:1773
 msgid "Data: "
 msgstr ""
 
@@ -2782,7 +2782,7 @@ msgstr "Eliminar EPG antes del escaneo"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: scan.h:2486
+#: scan.h:2480
 msgid "Delete All"
 msgstr "Eliminar todo"
 
@@ -3286,7 +3286,7 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: readerconfig.h:498 record.h:90 record.h:398 record.h:1171 record.h:1709
 #: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:34
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 scan.h:2595 scart.h:12 scart.h:25 scriptexec.h:41
+#: rtl2now.h:34 scan.h:2589 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:668 security.h:685 security.h:1956 service.h:774 service.h:1020
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618
 #: skinadjust.h:659 skin_default_skin.xml.h:198 skins_autotimer_skin.xml.h:6
@@ -6038,9 +6038,9 @@ msgstr "Lista de Menus"
 #: record.h:1734 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
-#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1807
-#: scan.h:1809 scan.h:1837 scan.h:1839 scan.h:1849 scan.h:2111 scan.h:2202
-#: scan.h:2595 scart.h:12 scart.h:25 security.h:1956 service.h:774
+#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1801
+#: scan.h:1803 scan.h:1831 scan.h:1833 scan.h:1843 scan.h:2105 scan.h:2196
+#: scan.h:2589 scart.h:12 scart.h:25 security.h:1956 service.h:774
 #: service.h:1020 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594
 #: skinadjust.h:610 skinadjust.h:618 skinadjust.h:659 skinadjust.h:676
 #: skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231 sock.h:954
@@ -6217,7 +6217,7 @@ msgstr ""
 msgid "Multi EPG"
 msgstr "Multi-EPG"
 
-#: scan.h:2223
+#: scan.h:2217
 msgid "Multi Sat"
 msgstr "Multi Satelite"
 
@@ -6477,7 +6477,7 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: scan.h:2202
+#: scan.h:2196
 msgid "No Tuner configured"
 msgstr "ERROR: Tuner no Configurado!"
 
@@ -6636,8 +6636,8 @@ msgstr "Fritzbox nombre de usuario (opcional)"
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 scan.h:1807 scan.h:1809 scan.h:1837 scan.h:1839 scan.h:2111
-#: scan.h:2202 scan.h:2595 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
+#: rtl2now.h:34 scan.h:1801 scan.h:1803 scan.h:1831 scan.h:1833 scan.h:2105
+#: scan.h:2196 scan.h:2589 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
 #: security.h:685 security.h:1956 service.h:774 service.h:1020 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610 skinadjust.h:618
 #: skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163
@@ -7692,7 +7692,7 @@ msgstr ""
 msgid "Radio Player"
 msgstr "Radio"
 
-#: scan.h:1771
+#: scan.h:1765
 msgid "Radio: "
 msgstr ""
 
@@ -8439,7 +8439,7 @@ msgstr "Satelite(s)"
 msgid "Sat Finder"
 msgstr "Recepcion Satfinder"
 
-#: scan.h:1745
+#: scan.h:1739
 msgid "Sat/Provider: "
 msgstr "Satelite/Provider"
 
@@ -8550,11 +8550,11 @@ msgstr ""
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: scan.h:1839
+#: scan.h:1833
 msgid "Scan completed, changes have been saved."
 msgstr ""
 
-#: scan.h:2111
+#: scan.h:2105
 msgid "Scan is not allowed if record or stream is running !"
 msgstr ""
 "ERROR: Exploracion no esta permitido durante una grabacion / corriente "
@@ -9181,11 +9181,11 @@ msgstr "Unico-EPG"
 msgid "Single LNB"
 msgstr "Unico LNB"
 
-#: scan.h:2229
+#: scan.h:2223
 msgid "Single Provider"
 msgstr "Unico Provider"
 
-#: scan.h:2222
+#: scan.h:2216
 msgid "Single Sat"
 msgstr "Unico Satelite"
 
@@ -9193,7 +9193,7 @@ msgstr "Unico Satelite"
 msgid "Single Service"
 msgstr "Unico Servicio"
 
-#: scan.h:2221 scan.h:2228
+#: scan.h:2215 scan.h:2222
 msgid "Single Transponder"
 msgstr "Unico Transpondedor"
 
@@ -9909,7 +9909,7 @@ msgstr "TV Resolucion (w): "
 msgid "TV/Radio"
 msgstr ""
 
-#: scan.h:1763
+#: scan.h:1757
 msgid "TV: "
 msgstr ""
 
@@ -10533,11 +10533,11 @@ msgstr ""
 msgid "Transparent small black-Skins 19,2 Picons | 03.10.2016"
 msgstr ""
 
-#: scan.h:2595
+#: scan.h:2589
 msgid "Transponder changed"
 msgstr "Transpondedor Cambiado"
 
-#: optimize.h:272 scan.h:1751
+#: optimize.h:272 scan.h:1745
 msgid "Transponder: "
 msgstr "Transpondedor: "
 
@@ -10692,7 +10692,7 @@ msgstr ""
 msgid "UltraPlus F-9000HD RC config"
 msgstr ""
 
-#: scan.h:2484
+#: scan.h:2478
 msgid "Unchanged"
 msgstr "No cambie"
 
@@ -11086,7 +11086,7 @@ msgstr "Espere"
 msgid "Wait for cam ready"
 msgstr "Espere a que la CAM esta listo"
 
-#: scan.h:1849
+#: scan.h:1843
 msgid "Wait for channel scan end"
 msgstr "Por favor espere a que la exploracion del canal para finalizar"
 
@@ -12481,9 +12481,9 @@ msgstr "NFS Servidor"
 #: panel_settings_overclocking.h:244 pin.h:109 pin.h:181 pin.h:185 pin.h:199
 #: play.h:583 play.h:590 play.h:605 readerconfig.h:254 rectimer.h:1110
 #: rectimer.h:1115 rectimer.h:1120 rectimer.h:1125 rectimer.h:1130
-#: rectimer.h:1135 rectimer.h:1140 scan.h:1981 scan.h:2464 scan.h:2468
-#: scan.h:2472 scan.h:2476 scan.h:2481 scan.h:2489 scan.h:2493 scan.h:2497
-#: scan.h:2501 screensaveradjust.h:19 settings_autostart.h:26
+#: rectimer.h:1135 rectimer.h:1140 scan.h:1975 scan.h:2458 scan.h:2462
+#: scan.h:2466 scan.h:2470 scan.h:2475 scan.h:2483 scan.h:2487 scan.h:2491
+#: scan.h:2495 screensaveradjust.h:19 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
 #: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
@@ -13895,8 +13895,8 @@ msgstr "amarillo"
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:1982 scan.h:2465 scan.h:2469 scan.h:2473 scan.h:2477
-#: scan.h:2480 scan.h:2490 scan.h:2494 scan.h:2498 scan.h:2502
+#: rectimer.h:1141 scan.h:1976 scan.h:2459 scan.h:2463 scan.h:2467 scan.h:2471
+#: scan.h:2474 scan.h:2484 scan.h:2488 scan.h:2492 scan.h:2496
 #: screensaveradjust.h:20 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
 #: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
