@@ -1723,6 +1723,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 #endif
 			default: guardinterval = GUARD_INTERVAL_AUTO; break;
 		}
+	}
 	else //dvb-T2
 	{
 		switch (guardinterval)
