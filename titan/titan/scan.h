@@ -378,7 +378,7 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 	modulation = QAM_AUTO;
 	inversion = 2; //INVERSION_UNKNOWN
 	//inversion = INVERSION_AUTO;
-	system = 1; //DVB-T2
+	system = SYS_DVBT2;
 	
 	unsigned char* loop1 = buf + 8;     //call_id
 	unsigned char* loop2 = buf + 11;    //centre_frequency if Flag == 1
@@ -1339,11 +1339,9 @@ void doscan(struct stimerthread* timernode)
 				if(fetunedvbt(fenode, tpnode) != 0)
 				{
 					tout = 1;
-					debug(500, "scan done system:%d", tpnode->system);
-					if(tpnode->system == 0 || tpnode->system == 3 )
+					if(tpnode->system == 0)
 					{
 						tpnode->system = 1;
-						debug(500, "tune DVB-T2 after DVB-T id=%llu freq=%d orbitalpos=%d tpnode=%p", tpnode->id, tpnode->frequency, tpnode->orbitalpos, tpnode);
 						if(fetunedvbt(fenode, tpnode) == 0)
 							tout = 0;
 					}
