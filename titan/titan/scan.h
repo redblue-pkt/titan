@@ -1311,7 +1311,9 @@ void doscan(struct stimerthread* timernode)
 					//scan DVB-T2 as DVB-T
 					tpnode_tmp = createtransponder(tpnode->id, FE_OFDM, tpnode->orbitalpos, tpnode->frequency, tpnode->inversion, tpnode->symbolrate, tpnode->polarization, tpnode->fec, tpnode->modulation, tpnode->rolloff, tpnode->pilot, 1);
 					if(tpnode_tmp == NULL)
+					{
 						err("can't add DVB-T2 Transponder");
+					}
 					else
 					{
 						debug(500, "add transponder like DVB-T");
