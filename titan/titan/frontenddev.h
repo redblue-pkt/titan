@@ -1675,7 +1675,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case T_FEC_6_7: lp = FEC_6_7; break;	
 		case T_FEC_7_8: lp = FEC_7_8; break;
 		case T_FEC_8_9: lp = FEC_8_9; break;
-		default: hp = FEC_AUTO; break;
+		default: lp = FEC_AUTO; break;
 	}
 
 	int modulation = tpnode->modulation;
