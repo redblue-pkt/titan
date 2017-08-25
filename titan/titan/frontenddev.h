@@ -1,6 +1,38 @@
 #ifndef FRONTENDDEV_H
 #define FRONTENDDEV_H
 
+enum {
+		T_Bandwidth_8MHz, T_Bandwidth_7MHz, T_Bandwidth_6MHz, T_Bandwidth_Auto, T_Bandwidth_5MHz, T_Bandwidth_1_712MHz, T_Bandwidth_10MHz
+};
+
+enum {
+		T_FEC_1_2=0, T_FEC_2_3=1, T_FEC_3_4=2, T_FEC_5_6=3, T_FEC_7_8=4, T_FEC_Auto=5, T_FEC_6_7=6, T_FEC_8_9=7
+};
+
+enum {
+		System_DVB_T_T2 = -1, System_DVB_T, System_DVB_T2
+};
+
+enum {
+		T_TransmissionMode_2k, T_TransmissionMode_8k, T_TransmissionMode_Auto, T_TransmissionMode_4k, T_TransmissionMode_1k, T_TransmissionMode_16k, T_TransmissionMode_32k
+};
+
+enum {
+		T_GuardInterval_1_32, T_GuardInterval_1_16, T_GuardInterval_1_8, T_GuardInterval_1_4, T_GuardInterval_Auto, T_GuardInterval_1_128, T_GuardInterval_19_128, T_GuardInterval_19_256
+};
+
+enum {
+		T_Hierarchy_None, T_Hierarchy_1, T_Hierarchy_2, T_Hierarchy_4, T_Hierarchy_Auto
+};
+
+enum {
+		T_Modulation_QPSK, T_Modulation_QAM16, T_Modulation_QAM64, T_Modulation_Auto, T_Modulation_QAM256
+};
+
+enum {
+		T_Inversion_Off, T_Inversion_On, T_Inversion_Unknown
+};
+
 int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int flag)
 {
 	int loftype = 0;
@@ -1211,7 +1243,8 @@ uint16_t fereadsnr(struct dvbdev* node)
 		return 0;
 	}
 	
-#ifdef ARM
+//#ifdef ARM
+#ifdef MIPSEL
 	int signalquality = 0;
 	int signalqualitydb = 0;
 	
@@ -1243,8 +1276,21 @@ uint16_t fereadsnr(struct dvbdev* node)
 		ioctl(node->fd, FE_READ_SNR, &snr);
 				
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
+		{
 			ret = (snr * 240) >> 8;
-		
+		}
+		else if (ostrstr(node->feinfo->name, "ATBM781x") != NULL)
+		{
+			ret = snr*10;
+		}
+		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)") != NULL)
+		{
+			ret = (snr * 100) >> 8;
+		}
+		else if (ostrstr(node->feinfo->name, "Si216") != NULL) // all new Models with SI Tuners
+		{
+			ret = snr;
+		}
 		signalqualitydb = ret;
 		if (ret == 0x12345678) // no snr db calculation avail.. return untouched snr value..
 		{
@@ -1609,148 +1655,94 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	int hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
 	{
-		case 0: hp = FEC_1_2; break;
-		case 1: hp = FEC_2_3; break;
-		case 2: hp = FEC_3_4; break;
-		case 3: hp = FEC_5_6; break;
-		case 4: hp = FEC_7_8; break;
-		case 5: hp = FEC_AUTO; break;
+		case T_FEC_1_2: hp = FEC_1_2; break;
+		case T_FEC_2_3: hp = FEC_2_3; break;
+		case T_FEC_3_4: hp = FEC_3_4; break;
+		case T_FEC_5_6: hp = FEC_5_6; break;
+		case T_FEC_6_7: hp = FEC_6_7; break;	
+		case T_FEC_7_8: hp = FEC_7_8; break;
+		case T_FEC_8_9: hp = FEC_8_9; break;
 		default: hp = FEC_AUTO; break;
 	}
 
 	int lp = tpnode->polarization; //polarization = lp on DVBT
 	switch(lp)
 	{
-		case 0: lp = FEC_1_2; break;
-		case 1: lp = FEC_2_3; break;
-		case 2: lp = FEC_3_4; break;
-		case 3: lp = FEC_5_6; break;
-		case 4: lp = FEC_7_8; break;
-		case 5: lp = FEC_AUTO; break;
-		default: lp = FEC_AUTO; break;
+		case T_FEC_1_2: lp = FEC_1_2; break;
+		case T_FEC_2_3: lp = FEC_2_3; break;
+		case T_FEC_3_4: lp = FEC_3_4; break;
+		case T_FEC_5_6: lp = FEC_5_6; break;
+		case T_FEC_6_7: lp = FEC_6_7; break;	
+		case T_FEC_7_8: lp = FEC_7_8; break;
+		case T_FEC_8_9: lp = FEC_8_9; break;
+		default: hp = FEC_AUTO; break;
 	}
-	
+
 	int modulation = tpnode->modulation;
 	switch(modulation)
-#if DVB_API_VERSION >= 5	
 	{
-		case 0: modulation = QPSK; break;
-		case 1: modulation = QAM_16; break;
-		case 2: modulation = QAM_32; break;
-		case 3: modulation = QAM_64; break;
-		case 5: modulation = QAM_128; break;
-		case 6: modulation = QAM_256; break;
-		case 7: modulation = QAM_AUTO; break;
+		case T_Modulation_QPSK: modulation = QPSK; break;
+		case T_Modulation_QAM16: modulation = QAM_16; break;
+		case T_Modulation_QAM64: modulation = QAM_64; break;
+		case T_Modulation_QAM256: modulation = QAM_256; break;
 		default: modulation = QAM_AUTO; break;
 	}
-#else	
-	{
-		case 0: modulation = QPSK; break;
-		case 1: modulation = QAM_16; break;
-		case 2: modulation = QAM_64; break;
-		case 3: modulation = QAM_256; break;
-		case 4: modulation = QAM_AUTO; break;
-		default: modulation = QAM_AUTO; break;
-	}
-#endif
-	
+
 	int bandwidth = tpnode->symbolrate; //symbolrate = bandwidth on DVBT
 	switch(bandwidth)
-
-#if DVB_API_VERSION >= 5	
 	{
-		case 0: bandwidth = 8000000; break;
-		case 1: bandwidth = 7000000; break;
-		case 2: bandwidth = 6000000; break;
-		case 3: bandwidth = 5000000; break;
+		case T_Bandwidth_8MHz: bandwidth = 8000000; break;
+		case T_Bandwidth_7MHz: bandwidth = 7000000; break;
+		case T_Bandwidth_6MHz: bandwidth = 6000000; break;
+		case T_Bandwidth_5MHz: bandwidth = 5000000; break;
+		case T_Bandwidth_1_712MHz: bandwidth = 1712000; break;
+		case T_Bandwidth_10MHz: bandwidth = 10000000; break;	
+		case T_Bandwidth_Auto: bandwidth = 0; break;
 		default: bandwidth = 0; break;
 	}
-#else	
-	{
-		case 0: bandwidth = BANDWIDTH_8_MHZ; break;
-		case 1: bandwidth = BANDWIDTH_7_MHZ; break;
-		case 2: bandwidth = BANDWIDTH_6_MHZ; break;
-		case 3: bandwidth = BANDWIDTH_AUTO; break;
-		default: bandwidth = BANDWIDTH_AUTO; break;
-	}
-#endif
 	
 	int transmission = tpnode->pilot; //pilot = transmission on DVBT
-	if(system == 0) //DVB-T
+	switch(transmission)
 	{
-		switch(transmission)
-		{
-			case 0: transmission = TRANSMISSION_MODE_2K; break;
-			case 1: transmission = TRANSMISSION_MODE_8K; break;
-			case 2: transmission = TRANSMISSION_MODE_AUTO; break;
+		case T_TransmissionMode_2k: transmission = TRANSMISSION_MODE_2K; break;
+		case T_TransmissionMode_4k: transmission = TRANSMISSION_MODE_4K; break;	
+		case T_TransmissionMode_8k: transmission = TRANSMISSION_MODE_8K; break;
+		case T_TransmissionMode_Auto: transmission = TRANSMISSION_MODE_AUTO; break;
 #if defined TRANSMISSION_MODE_1K
-			case 3: transmission = TRANSMISSION_MODE_1K; break;
-			case 4: transmission = TRANSMISSION_MODE_16K; break;
-			case 5: transmission = TRANSMISSION_MODE_32K; break;
+		case T_TransmissionMode_1k: transmission = TRANSMISSION_MODE_1K; break;
+		case T_TransmissionMode_16k: transmission = TRANSMISSION_MODE_16K; break;
+		case T_TransmissionMode_32k: transmission = TRANSMISSION_MODE_32K; break;
 #endif
-			default: transmission = TRANSMISSION_MODE_AUTO; break;
-		}
-	}
-	else
-	{
-		switch (transmission)
-		{
-			case 0: transmission = TRANSMISSION_MODE_2K; break;
-			case 1: transmission = TRANSMISSION_MODE_8K; break;
-			case 2: transmission = TRANSMISSION_MODE_4K; break;
-			case 3: transmission = TRANSMISSION_MODE_1K; break;
-			case 4: transmission = TRANSMISSION_MODE_16K; break;
-			case 5: transmission = TRANSMISSION_MODE_32K; break;
-			default: transmission = TRANSMISSION_MODE_AUTO; break;
-		}
+		default: transmission = TRANSMISSION_MODE_AUTO; break;
 	}
 
 	int guardinterval = tpnode->rolloff; //rolloff = guardinterval on DVBT
-	if(system == 0) //DVB-T
+	switch(guardinterval)
 	{
-		switch(guardinterval)
-		{
-			case 0: guardinterval = GUARD_INTERVAL_1_32; break;
-			case 1: guardinterval = GUARD_INTERVAL_1_16; break;
-			case 2: guardinterval = GUARD_INTERVAL_1_8; break;
-			case 3: guardinterval = GUARD_INTERVAL_1_4; break;
-			case 4: guardinterval = GUARD_INTERVAL_AUTO; break;
+		case T_GuardInterval_1_32: guardinterval = GUARD_INTERVAL_1_32; break;
+		case T_GuardInterval_1_16: guardinterval = GUARD_INTERVAL_1_16; break;
+		case T_GuardInterval_1_8: guardinterval = GUARD_INTERVAL_1_8; break;
+		case T_GuardInterval_1_4: guardinterval = GUARD_INTERVAL_1_4; break;
+		case T_GuardInterval_Auto: guardinterval = GUARD_INTERVAL_AUTO; break;
 #if defined GUARD_INTERVAL_1_128
-			case 5: guardinterval = GUARD_INTERVAL_1_128; break;
-			case 6: guardinterval = GUARD_INTERVAL_19_128; break;
-			case 7: guardinterval = GUARD_INTERVAL_19_256; break;
+		case T_GuardInterval_1_128: guardinterval = GUARD_INTERVAL_1_128; break;
+		case T_GuardInterval_19_128: guardinterval = GUARD_INTERVAL_19_128; break;
+		case T_GuardInterval_19_256: guardinterval = GUARD_INTERVAL_19_256; break;
 #endif
-			default: guardinterval = GUARD_INTERVAL_AUTO; break;
-		}
-	}
-	else //dvb-T2
-	{
-		switch (guardinterval)
-		{
-			case 0: guardinterval = GUARD_INTERVAL_1_32; break;
-			case 1: guardinterval = GUARD_INTERVAL_1_16; break;
-			case 2: guardinterval = GUARD_INTERVAL_1_8; break;
-			case 3: guardinterval = GUARD_INTERVAL_1_4; break;
-			case 4: guardinterval = GUARD_INTERVAL_1_128; break;
-			case 5: guardinterval = GUARD_INTERVAL_19_128; break;
-			case 6: guardinterval = GUARD_INTERVAL_19_256; break;
-			case 7: guardinterval = GUARD_INTERVAL_AUTO; break;
-		}
+		default: guardinterval = GUARD_INTERVAL_AUTO; break;
 	}
 	
 	int hierarchy = tpnode->system; //system = hierarchy on DVBT
+	if(tpnode->system == System_DVB_T2) //system = DVB-T2 then hierarchy = HIERARCHY_AUTO
+		hierarchy = T_Hierarchy_Auto;
 	
-	if(tpnode->system == 1) //system = DVB-T2 then hierarchy = HIERARCHY_AUTO
-		hierarchy = 4;
-	
-	//switch(guardinterval)
 	switch(hierarchy)
 	{
-		case 0: hierarchy = HIERARCHY_NONE;
-		case 1: hierarchy = HIERARCHY_1;
-		case 2: hierarchy = HIERARCHY_2;
-		case 3: hierarchy = HIERARCHY_4;
-		case 4: hierarchy = HIERARCHY_AUTO;
+		case T_Hierarchy_None: hierarchy = HIERARCHY_NONE;
+		case T_Hierarchy_1: hierarchy = HIERARCHY_1;
+		case T_Hierarchy_2: hierarchy = HIERARCHY_2;
+		case T_Hierarchy_4: hierarchy = HIERARCHY_4;
+		case T_Hierarchy_Auto: hierarchy = HIERARCHY_AUTO;
 		default: hierarchy = HIERARCHY_AUTO; break;
 	}
 
@@ -1766,8 +1758,8 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 #if DREAMBOX
 	switch(system)
 	{
-		case 0: system = SYS_DVBT; break; //3
-		case 1: system = SYS_DVBT2; break; //16
+		case System_DVB_T: system = SYS_DVBT; break; //3
+		case System_DVB_T2: system = SYS_DVBT2; break; //16
 		default: system = SYS_DVBT; break;
 	}
 #endif
