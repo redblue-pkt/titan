@@ -1243,8 +1243,8 @@ uint16_t fereadsnr(struct dvbdev* node)
 		return 0;
 	}
 	
-//#ifdef ARM
-#ifdef MIPSEL
+#ifdef ARM
+//#ifdef MIPSEL
 	int signalquality = 0;
 	int signalqualitydb = 0;
 	
