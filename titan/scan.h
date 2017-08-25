@@ -339,15 +339,48 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 	}
 
 	bandwidth = ((buf[6] >> 2) & 0x0f);
-	guardinterval = ((buf[7] >> 5) & 0x3);
+	switch (bandwidth)
+	{
+		case 0: bandwidth = T_Bandwidth_8MHz; break;
+		case 1: bandwidth = T_Bandwidth_7MHz; break;
+		case 2: bandwidth = T_Bandwidth_6MHz; break;
+		case 3: bandwidth = T_Bandwidth_5MHz; break;
+		case 4: bandwidth = T_Bandwidth_1_712MHz; break;
+		case 5: bandwidth = T_Bandwidth_10MHz; break;
+		default: bandwidth = T_Bandwidth_Auto; break;
+	}
+	
 	transmission = (buf[7] >> 2 & 0x3);
+	switch (transmission)
+	{
+		case 0: transmission = T_TransmissionMode_2k; break;
+		case 1: transmission = T_TransmissionMode_8k; break;
+		case 2: transmission = T_TransmissionMode_4k; break;
+		case 3: transmission = T_TransmissionMode_1k; break;
+		case 4: transmission = T_TransmissionMode_16k; break;
+		case 5: transmission = T_TransmissionMode_32k; break;
+		default: transmission = T_TransmissionMode_Auto; break;
+	}
+
+	guardinterval = ((buf[7] >> 5) & 0x3);
+	switch (guardinterval)
+	{
+		case 0: guardinterval = T_GuardInterval_1_32; break;
+		case 1: guardinterval = T_GuardInterval_1_16; break;
+		case 2: guardinterval = T_GuardInterval_1_8; break;
+		case 3: guardinterval = T_GuardInterval_1_4; break;
+		case 4: guardinterval = T_GuardInterval_1_128; break;
+		case 5: guardinterval = T_GuardInterval_19_128; break;
+		case 6: guardinterval = T_GuardInterval_19_256; break;
+		case 7: guardinterval = T_GuardInterval_Auto; break;
+	}
+	
 	plp_id = buf[3];
-	hp = lp = FEC_AUTO;
-	hierarchy = HIERARCHY_AUTO;
-	modulation = QAM_AUTO;
-	inversion = 2; //INVERSION_UNKNOWN
-	//inversion = INVERSION_AUTO;
-	system = 1; //DVB-T2
+	hp = lp = T_FEC_Auto;
+	hierarchy = T_Hierarchy_Auto;
+	modulation = T_Modulation_Auto;
+	inversion = T_Inversion_Unknown;
+	system = System_DVB_T2; 
 	
 	unsigned char* loop1 = buf + 8;     //call_id
 	unsigned char* loop2 = buf + 11;    //centre_frequency if Flag == 1
