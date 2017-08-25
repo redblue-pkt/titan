@@ -5,6 +5,8 @@ uint8_t changeservicetype(uint8_t type)
 {
 	int ret = type;
 
+  debug(500, "changeservicetype -> oldtype %02x", type);
+
 	switch(type)
 	{
 		case 0x01:
