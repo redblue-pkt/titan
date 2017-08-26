@@ -1242,12 +1242,12 @@ uint16_t fereadsnr(struct dvbdev* node)
 		err("NULL detect");
 		return 0;
 	}
-	
-#ifdef ARM
-//#ifdef MIPSEL
 	int signalquality = 0;
 	int signalqualitydb = 0;
-	
+//#ifdef ARM
+//#ifdef MIPSEL
+#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
+
 	struct dtv_property prop[1];
 	prop[0].cmd = DTV_STAT_CNR;
 	struct dtv_properties props;
@@ -1265,6 +1265,7 @@ uint16_t fereadsnr(struct dvbdev* node)
 		else if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
 			signalquality = prop[0].u.st.stat[i].svalue;
 	}
+#endif	
 	if(!signalquality && !signalqualitydb)
 	{
 		int ret = 0x12345678;
@@ -1305,12 +1306,6 @@ uint16_t fereadsnr(struct dvbdev* node)
 	}
 	debug(200, "frontend snr = %02x", (signalquality * 100) / 0xffff);
 	return signalquality;
-#else	
-	ioctl(node->fd, FE_READ_SNR, &snr);
-	debug(200, "frontend snr = %02x", (snr * 100) / 0xffff);
-	return snr;
-#endif
-	
 }
 
 uint16_t fereadsignalstrength(struct dvbdev* node)
