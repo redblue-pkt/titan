@@ -1367,7 +1367,7 @@ void doscan(struct stimerthread* timernode)
 			}
 			festatus = fewait(fenode);
 			if(debug_level == 200) fereadstatus(fenode);
-			if(fenode->feinfo->type == FE_OFDM && festatus != 0 &&  tpnode->system == 0) //DVB-T2 scan
+			/*if(fenode->feinfo->type == FE_OFDM && festatus != 0 &&  tpnode->system == 0) //DVB-T2 scan
 			{
 				tpnode->system = 1;
 				debug(200, "scan after DVB-T, DVB-T2");
@@ -1376,7 +1376,7 @@ void doscan(struct stimerthread* timernode)
 				else
 					festatus = fewait(fenode);
 			}
-			if(debug_level == 200) fereadstatus(fenode);
+			if(debug_level == 200) fereadstatus(fenode);*/
 			if(festatus != 0)
 			{
 				scaninfo.tpcount++;
