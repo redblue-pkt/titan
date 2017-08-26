@@ -1344,7 +1344,8 @@ void cacheplay(char* link, char* filename, int flag)
 	free(host), host = NULL;
 }
 
-void backgrounddl(char* link, char* filename)
+
+void backgrounddl(char* link, char* filename, int flag)
 {
 	int port = 80, ret = 0;
 	char* host = NULL, *pos = NULL, *path = NULL, *file = NULL, *tmpstr = NULL;
@@ -1376,7 +1377,25 @@ void backgrounddl(char* link, char* filename)
 	debug(99, "local: %s", file);
 	debug(99, "---------------------------------------");
 
-	if(ostrstr(path, "|User-Agent=") != NULL)
+	if(flag == 1)
+	{
+		stringreplacechar(path, '|', '\0');
+		printf("page changed: %s\n", path);
+
+		char* cmd = NULL;
+		cmd = ostrcat("/tmp/localhoster/bin/python.sh4 /tmp/localhoster/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36' --format mp4 --restrict-filenames --ignore-errors --output /", , 0, 0); 
+		cmd = ostrcat(cmd, file, 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+
+		cmd = ostrcat(cmd, link, 1, 0);
+		cmd = ostrcat(cmd, " &", 1, 0);
+
+		printf("cmd: %s\n", cmd);
+		ret = system(cmd);
+		free(cmd), cmd = NULL;
+	}
+/*
+	else if(ostrstr(path, "|User-Agent=") != NULL)
 	{
 		stringreplacechar(path, '|', '\0');
 		printf("page changed: %s\n", path);
@@ -1392,6 +1411,7 @@ void backgrounddl(char* link, char* filename)
 		ret = system(cmd);
 		free(cmd), cmd = NULL;
 	}
+*/
 	else
 		ret = startbgdownload(host, path, port, file, NULL, 30000, 1);
 
@@ -1675,6 +1695,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					addmenulist(&mlist, "Download Full File", _("Download Full File"), NULL, 0, 0);
 					addmenulist(&mlist, "Download Full File (background)", _("Download Full File (background)"), NULL, 0, 0);
 				}
+
+				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
+				{
+					addmenulist(&mlist, "Download via Youtube_DL (background)", _("", _("Download Full File (youtube_dl)"), NULL, 0, 0);			}
 			}
 		}
 		mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Streaming Playback Modus from the following list"), NULL, NULL, 1, 0);
@@ -1769,7 +1793,14 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		{
 			char* search = textinput(_("Filename"), filename);
 			if(search != NULL)
-				backgrounddl(tmpstr1, search);
+				backgrounddl(tmpstr1, search, 0);
+			free(search), search = NULL;
+		}
+		else if(ostrcmp(keyconf, "Download via Youtube_DL (background)") == 0)
+		{
+			char* search = textinput(_("Filename"), filename);
+			if(search != NULL)
+				backgrounddl(tmpstr1, search, 1);
 			free(search), search = NULL;
 		}
 
