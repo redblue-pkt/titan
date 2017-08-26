@@ -480,6 +480,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 					incount += 1;
 					line = ostrcat(line, hname, 1, 0);
+
 					if(url == NULL)
 						line = ostrcat(line, " (Error)", 1, 0);
 					
@@ -762,22 +763,59 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 					hlink = string_replace("http://kinox.me//Stream/", "", hlink, 1);					
 					hlink = string_replace("http://kinox.me/Stream/", "", hlink, 1);
 										
-					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+//					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+//					debug(99, "pathnew: %s", pathnew);
+//					tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					pathnew = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
 					debug(99, "pathnew: %s", pathnew);
-	
-					tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-					tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
-	
-					url = ostrcat(tmpstr1, NULL, 0, 0);
+					tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+					debug(99, "tmpstr1 1: %s", tmpstr1);
 
+
+					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
+					debug(99, "tmpstr1 2: %s", tmpstr1);
+
+					if(ostrstr(tmpstr1, "<iframe src=") != NULL)
+					{
+						url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
+						debug(99, "iframe1.1 url: %s", url);
+					}
+					else if(ostrstr(tmpstr1, "/iframe>") != NULL)
+					{
+						free(pathnew), pathnew = NULL;
+						pathnew = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
+						debug(99, "iframe2.1 pathnew: %s", pathnew);
+						free(tmpstr1), tmpstr1 = NULL;
+						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+						debug(99, "iframe2.2 tmpstr1: %s", tmpstr1);
+						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
+						debug(99, "iframe2.3 tmpstr1: %s", tmpstr1);
+
+						if(ostrstr(tmpstr1, "<iframe src=") != NULL)
+						{
+							url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
+							debug(99, "iframe2.4 url: %s", url);
+						}
+					}
+					else
+					{
+						tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
+						debug(99, "tmpstr1 3: %s", tmpstr1);
+						url = ostrcat(tmpstr1, NULL, 0, 0);
+					}
+	
 					type = 14;
 
 					debug(99, "-------------------------------");
 					debug(99, "(%d/%d) %s url: %s extra: %s",i ,max , hname, url, extra);
 							
 					incount += 1;
+
 					line = ostrcat(line, hname, 1, 0);
+
+					if(url == NULL)
+						line = ostrcat(line, " (Error)", 1, 0);
+
 					if(extra != NULL)
 					{
 						line = ostrcat(line, " (", 1, 0);					
