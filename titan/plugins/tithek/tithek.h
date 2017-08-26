@@ -1383,8 +1383,7 @@ void backgrounddl(char* link, char* filename, int flag)
 		printf("page changed: %s\n", path);
 
 		char* cmd = NULL;
-		cmd = ostrcat("/tmp/localhoster/bin/python.sh4 /tmp/localhoster/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36' --format mp4 --restrict-filenames --ignore-errors --output /", , 0, 0); 
-		cmd = ostrcat(cmd, file, 1, 0);
+		cmd = ostrcat("/tmp/localhoster/bin/python.sh4 /tmp/localhoster/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36' --format mp4 --restrict-filenames --ignore-errors --output /", file, 0, 0); 
 		cmd = ostrcat(cmd, " ", 1, 0);
 
 		cmd = ostrcat(cmd, link, 1, 0);
