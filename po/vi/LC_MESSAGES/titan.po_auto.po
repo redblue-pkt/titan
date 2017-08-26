@@ -3270,7 +3270,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1089 titan.c:1098 titan.c:1227
 #: titan.c:1248 titan.c:1254 titan.c:1265 titan.c:1271 tithek.c:103
-#: tithek_global.h:206 tithek.h:742 tithek.h:1338 tithek.h:1419 tithek.h:1552
+#: tithek_global.h:210 tithek.h:742 tithek.h:1338 tithek.h:1419 tithek.h:1552
 #: tithek.h:1561 tithek.h:1782 tithek.h:1811 tithek.h:1828 tithek.h:2060
 #: tithek.h:2220 tithek.h:2505 tithek.h:2549 tithek.h:2565 tithek.h:2577
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -5969,7 +5969,7 @@ msgstr ""
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:206 tithek.h:742
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:210 tithek.h:742
 #: tithek.h:1338 tithek.h:1419 tithek.h:1552 tithek.h:1561 tithek.h:1782
 #: tithek.h:1811 tithek.h:2060 tithek.h:2220 tithek.h:2505 tithek.h:2549
 #: tithek.h:2565 tithek.h:2577 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
@@ -6573,7 +6573,7 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
 #: titan.c:1089 titan.c:1098 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:206 tithek.h:742
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:210 tithek.h:742
 #: tithek.h:1338 tithek.h:1419 tithek.h:1552 tithek.h:1561 tithek.h:1782
 #: tithek.h:1811 tithek.h:1828 tithek.h:2060 tithek.h:2220 tithek.h:2505
 #: tithek.h:2549 tithek.h:2565 tithek.h:2577 tiwakeup.h:66 tiwakeup.h:68
@@ -8669,8 +8669,8 @@ msgstr "Không có đầu ra."
 #: rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:553 solarmovie.h:138
 #: solarmovie.h:140 solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:575 tithek_global.h:577 tithek_global.h:1088
-#: tithek_global.h:1090 tithek.h:1615 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
+#: tithek_global.h:579 tithek_global.h:581 tithek_global.h:1092
+#: tithek_global.h:1094 tithek.h:1615 tmdb.h:898 tvtoast.h:530 tvtoast.h:532
 #: xvideos.h:56 xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:367
 #: youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9887,7 +9887,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:206 tithek.h:2505
+#: tithek_global.h:210 tithek.h:2505
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
