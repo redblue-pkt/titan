@@ -567,11 +567,11 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		char* cmd = NULL;
 		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0)
-			cmd = ostrcat("tar -xf /media/hdd/.tithek/python.tar -C /media/hdd/.tithek/", NULL, 0, 0);
+			cmd = ostrcat("rm -rf /media/hdd/.tithek/lib; tar -xf /media/hdd/.tithek/python.tar -C /media/hdd/.tithek/", NULL, 0, 0);
 		else if(ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0)
-			cmd = ostrcat("tar -xf /var/swap/.tithek/python.tar -C /var/swap/.tithek/", NULL, 0, 0);
+			cmd = ostrcat("rm -rf /var/swap/.tithek/lib; tar -xf /var/swap/.tithek/python.tar -C /var/swap/.tithek/", NULL, 0, 0);
 		else if(ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
-			cmd = ostrcat("tar -xf /mnt/.tithek/python.tar -C /mnt/.tithek/", NULL, 0, 0);
+			cmd = ostrcat("rm -rf /mnt/.tithek/lib; tar -xf /mnt/.tithek/python.tar -C /mnt/.tithek/", NULL, 0, 0);
 		else if(ostrcmp(node->filename, "/tmp/python.tar") == 0)
 			cmd = ostrcat("tar -xf /tmp/python.tar -C /tmp/localhoster/", NULL, 0, 0);
 
