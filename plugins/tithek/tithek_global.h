@@ -20,11 +20,15 @@ char* hoster(char* url)
 	debug(99, "Streamurl1: %s", streamurl);
 
 	free(cmd), cmd = NULL;
+	int skip = 0;
 
 	if(streamurl == NULL)
 	{
 		if(ostrstr(tmplink, "streamcloud") != NULL)
+		{
 			streamurl = streamcloud(url);
+			skip = 1;
+		}
 /*
 		if(ostrstr(tmplink, "sockshare") != NULL)
 			streamurl = putlocker(url);
@@ -103,8 +107,8 @@ char* hoster(char* url)
 */
 		debug(99, "Streamurl2: %s", streamurl);
 	}
-	else
-//	if(streamurl == NULL)
+
+	if(streamurl == NULL && skip == 0)
 	{
 		if(!file_exist("/tmp/localhoster"))
 			localparser_init("http://atemio.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
