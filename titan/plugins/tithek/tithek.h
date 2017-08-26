@@ -1697,7 +1697,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
 				{
-					addmenulist(&mlist, "Download via Youtube_DL (background)", _("", _("Download Full File (youtube_dl)"), NULL, 0, 0);			}
+					addmenulist(&mlist, "Download via Youtube_DL (background)", _("", _("Download Full File (youtube_dl)"), NULL, 0, 0);			
+				}
 			}
 		}
 		mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Streaming Playback Modus from the following list"), NULL, NULL, 1, 0);
