@@ -16,6 +16,7 @@ uint8_t changeservicetype(uint8_t type)
 		case 0x16:
 		case 0x19:
 		case 0x1C:
+		case 0x1F:
 		case 0x9A:
 		case 0x86:
 		case 0xC3:
