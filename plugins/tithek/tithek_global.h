@@ -103,9 +103,8 @@ char* hoster(char* url)
 */
 		debug(99, "Streamurl2: %s", streamurl);
 	}
-
-
-	if(streamurl == NULL)
+	else
+//	if(streamurl == NULL)
 	{
 		if(!file_exist("/tmp/localhoster"))
 			localparser_init("http://atemio.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
