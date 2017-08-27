@@ -17,6 +17,8 @@ curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/c
 curlbin2='curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
 youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors -g"
 youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors --output"
+export PYTHONHOME=/tmp/localhoster
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
@@ -46,9 +48,6 @@ if [ ! -e "/tmp/localhoster/lib/libssl.so.1.0.0" ] && [ -e /tmp/localhoster/lib/
 	mv -f /tmp/localhoster/lib/libssl.so.1.0.0."$ARCH" /tmp/localhoster/lib/libssl.so.1.0.0
 	rm -f /tmp/localhoster/lib/libssl.so.1.0.0.*
 fi
-
-export PYTHONHOME=/tmp/localhoster
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
 if [ -e "$TMP/hoster.tar" ]; then rm -f $TMP/hoster.tar; fi
 if [ -e "$TMP/parser.tar" ]; then rm -f $TMP/parser.tar; fi
@@ -232,8 +231,11 @@ youtube_dl()
 	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
 #	$BIN $youtubebin "$INPUT"
 #	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --all-formats -g "$INPUT"
-	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT"`
-	echo "$URL" >> /tmp/.last_hoster_youtube_dl.log
+#	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT"`
+#	echo "$URL" >> /tmp/.last_hoster_youtube_dl.log
+	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT" 	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT" > /tmp/youtube_dl.streamlink.log 2>&1
+	cat /tmp/youtube_dl.streamlink.log
+
 	echo $URL
 }
 
