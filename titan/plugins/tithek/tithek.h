@@ -1,3 +1,4 @@
+
 #ifndef TITHEK_H
 #define TITHEK_H
 
@@ -566,12 +567,15 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			printf("[tithek] download done: %s\n", node->filename);
 
 		char* cmd = NULL;
+
+
+
 		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0)
-			cmd = ostrcat("rm -rf /media/hdd/.tithek/lib; tar -xf /media/hdd/.tithek/python.tar -C /media/hdd/.tithek/", NULL, 0, 0);
+			cmd = ostrcat("rm -rf `find /media/hdd/.tithek/lib -type f -name '*.py' -size +1k`; tar -xf /media/hdd/.tithek/python.tar -C /media/hdd/.tithek/", NULL, 0, 0);
 		else if(ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0)
-			cmd = ostrcat("rm -rf /var/swap/.tithek/lib; tar -xf /var/swap/.tithek/python.tar -C /var/swap/.tithek/", NULL, 0, 0);
+			cmd = ostrcat("rm -rf `find /var/swap/.tithek/lib -type f -name '*.py' -size +1k`; tar -xf /var/swap/.tithek/python.tar -C /var/swap/.tithek/", NULL, 0, 0);
 		else if(ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
-			cmd = ostrcat("rm -rf /mnt/.tithek/lib; tar -xf /mnt/.tithek/python.tar -C /mnt/.tithek/", NULL, 0, 0);
+			cmd = ostrcat("rm -rf `find /mnt/.tithek/lib -type f -name '*.py' -size +1k`; tar -xf /mnt/.tithek/python.tar -C /mnt/.tithek/", NULL, 0, 0);
 		else if(ostrcmp(node->filename, "/tmp/python.tar") == 0)
 			cmd = ostrcat("tar -xf /tmp/python.tar -C /tmp/localhoster/", NULL, 0, 0);
 
@@ -580,6 +584,7 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			printf("[tithek] untar start cmd: %s\n", cmd);
 			system(cmd);
 			printf("[tithek] untar ende cmd: %s\n", cmd);
+			status.python = 1;
 			free(cmd), cmd = NULL;
 
 			if(ostrcmp(node->filename, "/tmp/python.tar") == 0 || getconfigint("tithek_autoupdate", NULL) == 1)
@@ -1345,7 +1350,28 @@ void cacheplay(char* link, char* filename, int flag)
 }
 
 
-void backgrounddl(char* link, char* filename, int flag)
+void backgroundytdl(char* link, char* filename)
+{
+	int ret = 0;
+	char *file = NULL, *cmd = NULL;
+
+	file = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
+	file = ostrcat(file, filename, 1, 0);
+
+	cmd = ostrcat("/tmp/localhoster/hoster.sh youtube_dlbg \"", link, 0, 0);
+	cmd = ostrcat(cmd, "\" \"", 1, 0);
+	cmd = ostrcat(cmd, file, 1, 0);
+	cmd = ostrcat(cmd, "\" &", 1, 0);
+
+	printf("cmd: %s\n", cmd);
+	ret = system(cmd);
+	free(cmd), cmd = NULL;
+	if(ret == 1)
+		textbox(_("Message"), _("Can't start download.\nPlease try later."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+
+}
+
+void backgrounddl(char* link, char* filename)
 {
 	int port = 80, ret = 0;
 	char* host = NULL, *pos = NULL, *path = NULL, *file = NULL, *tmpstr = NULL;
@@ -1377,24 +1403,7 @@ void backgrounddl(char* link, char* filename, int flag)
 	debug(99, "local: %s", file);
 	debug(99, "---------------------------------------");
 
-	if(flag == 1)
-	{
-		stringreplacechar(path, '|', '\0');
-		printf("page changed: %s\n", path);
-
-		char* cmd = NULL;
-		cmd = ostrcat("/tmp/localhoster/bin/python.sh4 /tmp/localhoster/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36' --format mp4 --restrict-filenames --ignore-errors --output /", file, 0, 0); 
-		cmd = ostrcat(cmd, " ", 1, 0);
-
-		cmd = ostrcat(cmd, link, 1, 0);
-		cmd = ostrcat(cmd, " &", 1, 0);
-
-		printf("cmd: %s\n", cmd);
-		ret = system(cmd);
-		free(cmd), cmd = NULL;
-	}
-/*
-	else if(ostrstr(path, "|User-Agent=") != NULL)
+	if(ostrstr(path, "|User-Agent=") != NULL)
 	{
 		stringreplacechar(path, '|', '\0');
 		printf("page changed: %s\n", path);
@@ -1410,7 +1419,6 @@ void backgrounddl(char* link, char* filename, int flag)
 		ret = system(cmd);
 		free(cmd), cmd = NULL;
 	}
-*/
 	else
 		ret = startbgdownload(host, path, port, file, NULL, 30000, 1);
 
@@ -1791,14 +1799,14 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		{
 			char* search = textinput(_("Filename"), filename);
 			if(search != NULL)
-				backgrounddl(tmpstr1, search, 0);
+				backgrounddl(tmpstr1, search);
 			free(search), search = NULL;
 		}
 		else if(ostrcmp(keyconf, "Download via Youtube_DL (background)") == 0)
 		{
 			char* search = textinput(_("Filename"), filename);
 			if(search != NULL)
-				backgrounddl(tmpstr1, search, 1);
+				backgroundytdl(tmpstr1, search);
 			free(search), search = NULL;
 		}
 

@@ -3,6 +3,7 @@
 
 TYPE=$1
 INPUT=$2
+DEST=$3
 
 INPUT=`echo $INPUT | sed 's!/Out/?s=!!g'`
 
@@ -235,6 +236,16 @@ youtube_dl()
 	echo $URL
 }
 
+youtube_dlbg()
+{
+#	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
+	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dlbg.log
+#	$BIN $youtubebin "$INPUT"
+#	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --all-formats -g "$INPUT"
+	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors --output "$DEST" "$INPUT"`
+	echo "$URL" >> /tmp/.last_hoster_youtube_dlbg.log
+	echo $URL
+}
 if [ "$TYPE" == "get" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$hoster.log
 	case $hoster in
@@ -267,5 +278,11 @@ fi
 if [ "$TYPE" == "youtube_dl" ];then
 	case $hoster in
 		*) youtube_dl $INPUT;;
+	esac
+fi
+
+if [ "$TYPE" == "youtube_dlbg" ];then
+	case $hoster in
+		*) youtube_dlbg $INPUT;;
 	esac
 fi
