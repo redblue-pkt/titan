@@ -203,13 +203,19 @@ hoster()
 	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 #	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
 	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
-#	<iframe src="//www.rapidvideo.com/e/FIW59O2DED" width="730" height="460" frameborder="0" scrolling="no"></iframe><BR> <div id="underplayer">
-	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<iframe src="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | tr ' ' '\n' | head -n1`
+
+	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<a target="_blank" href="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2`
+
+	if [ `echo $STREAMURL | grep ^http | wc -l` -eq 0 ]; then
+#		<iframe src="//www.rapidvideo.com/e/FIW59O2DED" width="730" height="460" frameborder="0" scrolling="no"></iframe><BR> <div id="underplayer">
+		STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<iframe src="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | tr ' ' '\n' | head -n1`
+	fi
 
 #	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<a target="_blank" href="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2`
 #	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	echo $STREAMURL
 }
+
 
 case $INPUT in
 	init) $INPUT;;
