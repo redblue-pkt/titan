@@ -942,9 +942,9 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			tmp->vspace = 10;
 			tmp->hspace = 10;
 			tmp->posx = posx;
-			if(python == 0 && flag == 14)
+			if(python == 0 && (flag == 22 || flag == 23))
 				tmp->fontcol = 0xff0000;
-			else if(python == 1 && flag == 14)
+			else if(python == 1 && (flag == 22 || flag == 23))
 				tmp->fontcol = 0x00ff00;
 			else
 				tmp->fontcol = 0xffffff;
