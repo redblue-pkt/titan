@@ -114,6 +114,7 @@ void start(void)
 	titheksolarmovie = 1;
 	tithekmlehd = 1;
 	amazonlogin = 0;
+	python = 0;
 	
 //change markcolor
 	long tmplistboxselectcol = status.listboxselectcol;
