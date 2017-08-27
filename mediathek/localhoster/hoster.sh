@@ -16,6 +16,7 @@ debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
 curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT"
 curlbin2='curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
 youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors -g"
+youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors --output"
 
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
@@ -239,10 +240,10 @@ youtube_dl()
 youtube_dlbg()
 {
 #	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dlbg.log
+	echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_youtube_dlbg.log
 #	$BIN $youtubebin "$INPUT"
 #	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --all-formats -g "$INPUT"
-	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors --output "$DEST" "$INPUT"`
+	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors --output "$1" "$2"`
 	echo "$URL" >> /tmp/.last_hoster_youtube_dlbg.log
 	echo $URL
 }
@@ -283,6 +284,6 @@ fi
 
 if [ "$TYPE" == "youtube_dlbg" ];then
 	case $hoster in
-		*) youtube_dlbg $INPUT;;
+		*) youtube_dlbg $DEST $INPUT;;
 	esac
 fi
