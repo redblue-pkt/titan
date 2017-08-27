@@ -236,7 +236,7 @@ youtube_dl()
 	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT" 	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT" > /tmp/youtube_dl.streamlink.log 2>&1
 	cat /tmp/youtube_dl.streamlink.log
 
-	echo $URL
+#	echo $URL
 }
 
 youtube_dlbg()
@@ -289,3 +289,4 @@ if [ "$TYPE" == "youtube_dlbg" ];then
 		*) youtube_dlbg $DEST $INPUT;;
 	esac
 fi
+
