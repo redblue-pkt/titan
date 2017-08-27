@@ -12,6 +12,7 @@ int tithekkinox = 0;
 int titheksolarmovie = 0;
 int tithekmlehd = 0;
 int amazonlogin = 0;
+int python = 0;
 
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
@@ -584,7 +585,7 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			printf("[tithek] untar start cmd: %s\n", cmd);
 			system(cmd);
 			printf("[tithek] untar ende cmd: %s\n", cmd);
-			status.python = 1;
+			python = 1;
 			free(cmd), cmd = NULL;
 
 			if(ostrcmp(node->filename, "/tmp/python.tar") == 0 || getconfigint("tithek_autoupdate", NULL) == 1)
@@ -941,7 +942,15 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			tmp->vspace = 10;
 			tmp->hspace = 10;
 			tmp->posx = posx;
+			if(python = 0 && flag == 14)
+				tmp->fontcol = ff0000;
+			else if(python = 1 && flag == 14)
+				tmp->fontcol = 00ff00;
+			else
+				tmp->fontcol = ffffff;
+
 			//tmp->fontcol = 0x0000ff;
+
 			tmp->halign = CENTER;
 			tmp->valign = TEXTBOTTOM;
 			changetext(tmp, titheknode->title);
@@ -2624,6 +2633,8 @@ why ?
 		system("rm -rf /tmp/localparser");
 		system("rm -rf /tmp/localcache");
 		system("rm -rf /tmp/parser");
+
+		python = 0;
 
 		if(status.mcaktiv == 0)
 			servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
