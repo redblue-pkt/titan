@@ -757,13 +757,13 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	return localfile;
 }
 
-int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel, int flag)
+int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel, char* title, int flag)
 {
 	int gridbr = 0, posx = 0, count = 0, sumcount = 0, count1 = 0, pagecount = 0, skip = 0;
 	int localfile = 0;
 	struct skin* tmp = NULL;
 	char* tithekfile = NULL;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 
 	if(!ostrncmp("http://", titheklink, 7))
 		tithekfile = tithekdownload(titheklink, NULL, HTTPAUTH, 0, 0);
@@ -942,13 +942,39 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			tmp->vspace = 10;
 			tmp->hspace = 10;
 			tmp->posx = posx;
-			if(python == 0 && (flag == 22 || flag == 23))
+
+			printf("flag=%d\n", titheknode->flag);
+			printf("title=%s\n", titheknode->title);
+			printf("menutitle=%s\n", titheknode->menutitle);
+			printf("skin title=%s\n", title);
+			printf("titheklink=%s\n", titheklink);
+
+			if(title != NULL)
+				tmpstr1 = ostrcat(title, " - ", 0, 0);
+			else
+				tmpstr1 = ostrcat(titheknode->menutitle, " - ", 0, 0);
+
+			tmpstr2 = ostrcat(tmpstr1, titheknode->title, 0, 0);
+
+			printf("tmpstr2=%s\n", tmpstr2);
+			free(tmpstr1), tmpstr1 = NULL;
+			free(tmpstr2), tmpstr2 = NULL;
+
+			char* title2 = ostrcat(titheknode->title, NULL, 0, 0);
+			char* filename = createfilename(tmpstr2, title2);
+//			char* filename = createfilename(tmpstr2, titheknode->title);
+			free(title2), title2 = NULL;
+			debug(99, "filename: %s", filename);
+			free(filename), filename = NULL;
+
+
+			if(python == 0 && titheknode->flag == 14)
 				tmp->fontcol = 0xff0000;
-			else if(python == 1 && (flag == 22 || flag == 23))
-				tmp->fontcol = 0x00ff00;
+			else if(python == 1 && titheknode->flag == 14)
+				tmp->fontcol = 0xffffff;
+				//tmp->fontcol = 0x00ff00;
 			else
 				tmp->fontcol = 0xffffff;
-
 			//tmp->fontcol = 0x0000ff;
 
 			tmp->halign = CENTER;
@@ -978,7 +1004,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 	tmpstr = oitoa(sumcount);
 
-	char* tmpstr1 = ostrcat(_("found"), NULL, 0, 0);
+	tmpstr1 = ostrcat(_("found"), NULL, 0, 0);
 	tmpstr1 = ostrcat(tmpstr1, " ", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
 	free(tmpstr); tmpstr = NULL;
@@ -1227,7 +1253,8 @@ int showinfo(struct skin* listbox, char* title, char* link, char* pic, char* loc
 	if(file_exist(savefile))
 	{
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
-		createtithek(tnode, tnode->title, savefile, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+		createtithek(tnode, tnode->title, savefile, tnode->pic, tnode->localname, 
+tnode->menutitle, tnode->flag);
 		ret = 0;
 	}
 
@@ -1580,82 +1607,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	}
 	else if(tmpstr1 != NULL)
 	{
-		char* filename = ostrcat(title, "_", 0, 0);
-
-		tmpstr2 = ostrcat(_("Tithek - Mainmenu - Favoriten"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		tmpstr2 = ostrcat(_("Tithek - Mainmenu"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		filename = string_replace_all("Tips und Tricks - ", "", filename, 1);
-		filename = string_replace_all("Internet TV - ", "", filename, 1);
-		filename = string_replace_all("Internet Radio - ", "", filename, 1);
-		filename = string_replace_all("ARD - ", "", filename, 1);
-		filename = string_replace_all("ZDF - ", "", filename, 1);
-		filename = string_replace_all("FilmOn - ", "", filename, 1);
-		filename = string_replace_all("MyVideo - ", "", filename, 1);
-		filename = string_replace_all("Netzkino - ", "", filename, 1);
-		filename = string_replace_all("KinoX - ", "", filename, 1);
-		filename = string_replace_all("Movie4k - ", "", filename, 1);
-		filename = string_replace_all("Movie2k - ", "", filename, 1);
-
-		filename = string_replace_all("Beeg ", "", filename, 1);
-		filename = string_replace_all("Burning Series ", "", filename, 1);
-		filename = string_replace_all("CricFree ", "", filename, 1);
-		filename = string_replace_all("Giga ", "", filename, 1);
-		filename = string_replace_all("KKiste ", "", filename, 1);
-		filename = string_replace_all("NBA-On-Demand ", "", filename, 1);
-		filename = string_replace_all("StreamLive ", "", filename, 1);
-		filename = string_replace_all("TheSolarMovie ", "", filename, 1);
-		filename = string_replace_all("Youtube ", "", filename, 1);
-
-		tmpstr2 = ostrcat(_("Category"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		tmpstr2 = ostrcat(_("Search (local)"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		tmpstr2 = ostrcat(_("Search (20)"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		tmpstr2 = ostrcat(_("Search Cast"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		tmpstr2 = ostrcat(_("Search"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		tmpstr2 = ostrcat(_("All Sorted"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		tmpstr2 = ostrcat(_("A-Z"), " - ", 0, 0);
-		filename = string_replace_all(tmpstr2, "", filename, 1);
-		free(tmpstr2); tmpstr2 = NULL;
-
-		filename = string_replace_all("(Flash - Shell script) - ", "", filename, 1);
-		filename = string_replace_all("Genres - ", "", filename, 1);
-		filename = string_replace_all("All Series - ", "", filename, 1);
-		filename = string_replace_all("Channels - ", "", filename, 1);
-		filename = string_replace_all("Kinofilme - ", "", filename, 1);
-		filename = string_replace_all("Neue Filme - ", "", filename, 1);
-		filename = string_replace_all("Movies (Year) - ", "", filename, 1);
-		filename = string_replace_all("Movies (Genre) - ", "", filename, 1);
-		filename = string_replace_all("Series - ", "", filename, 1);
-
-		filename = ostrcat(filename, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-		filename = ostrcat(filename, ".mp4", 1, 0);
-		filename = string_replace_all(" ", ".", filename, 1);
-		filename = string_replace_all("-", "_", filename, 1);
-		filename = string_replace_all("._.", "_", filename, 1);
-		filename = string_replace_all(".._", "_", filename, 1);
+		char* title2 = ostrcat(((struct tithek*)listbox->select->handle)->title, NULL, 0, 0);
+		char* filename = createfilename(title, title2);
+//		char* filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title);
+		free(title2), title2 = NULL;
 		debug(99, "filename: %s", filename);
 
 		char* keyconf = NULL;
@@ -1712,7 +1667,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					addmenulist(&mlist, "Download Full File (background)", _("Download Full File (background)"), NULL, 0, 0);
 				}
 
-				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
+				if(python == 1 && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 					addmenulist(&mlist, "Download via Youtube_DL (background)", _("Download Full File (youtube_dl)"), NULL, 0, 0);
 			}
 		}
@@ -1827,7 +1782,6 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 	free(tmpstr1); tmpstr1 = NULL;
 }
-
 void screentithekplay(char* titheklink, char* title, int first)
 {
 	int savevol = 0;
@@ -1905,7 +1859,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	listbox->gridcol = 0;
 	listbox->select = NULL;
 
-	pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
+	pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, first);
 	if(pagecount == 0) return;
 
 	changetitle(grid, _(title));
@@ -2008,7 +1962,9 @@ waitrcstart:
 		{
 			screentithek_settings();
 
-			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
+//			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
+			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, first);
+
 			if(pagecount == 0 || tithekexit == 1) break;
 
 			listbox->aktpage = -1;
@@ -2079,7 +2035,7 @@ waitrcstart:
 					}
 					free(search), search = NULL;
 
-					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, 0);
 					if(pagecount == 0) return;
 				}
 				else if(check == 2)
@@ -2239,7 +2195,7 @@ why ?
 					}
 					free(search), search = NULL;
 
-					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title , 0);
 					if(pagecount == 0) return;
 				}
 			}
@@ -2533,7 +2489,8 @@ why ?
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
 					if(pincheck == 0)
-						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 3, 0) == 0) break;
+//						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, ((struct tithek*)listbox->select->handle)->flag) == 0) break;
 				}
 				else
 				{
@@ -2541,7 +2498,8 @@ why ?
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
 					if(pincheck == 0)
-						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
+//						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, ((struct tithek*)listbox->select->handle)->flag) == 0) break;
 				}
 // new osd musst disable this
 				drawscreen(grid, 0, 0);
@@ -2564,7 +2522,7 @@ why ?
 				if(textbox(_("Message"), _("Remove this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
 					removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);
-					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, 0);
 					if(pagecount == 0) return;
 
 //					drawscreen(grid, 0, 0);
@@ -2592,7 +2550,7 @@ why ?
 				if(textbox(_("Message"), _("Edit this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
 					editfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);
-					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, 0);
 					if(pagecount == 0) return;
 
 //					drawscreen(grid, 0, 0);

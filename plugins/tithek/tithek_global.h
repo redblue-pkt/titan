@@ -555,7 +555,7 @@ int screenlistbox(struct skin* grid, struct skin* listbox,struct skin* countlabe
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr2); tmpstr2 = NULL;
 
-	*pagecount = createtithekplay(titheklink, grid, listbox, countlabel, cflag);
+	*pagecount = createtithekplay(titheklink, grid, listbox, countlabel, tmpstr1, cflag);
 //	if(pagecount == 0 || tithekexit == 1) break;
 	if(*pagecount == 0 || *tithekexit == 1) return 0;
 	
@@ -565,6 +565,94 @@ int screenlistbox(struct skin* grid, struct skin* listbox,struct skin* countlabe
 	addscreenrc(grid, listbox);
 
 	return 1;
+}
+
+//char* createfilename(char* title, struct skin* listbox)
+char* createfilename(char* title, char* title2)
+{
+	char* filename = NULL;
+	char* tmpstr2 = NULL;
+
+	filename = ostrcat(title, "_", 0, 0);
+
+	tmpstr2 = ostrcat(_("Tithek - Mainmenu - Favoriten"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	tmpstr2 = ostrcat(_("Tithek - Mainmenu"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	filename = string_replace_all("Tips und Tricks - ", "", filename, 1);
+	filename = string_replace_all("Internet TV - ", "", filename, 1);
+	filename = string_replace_all("Internet Radio - ", "", filename, 1);
+	filename = string_replace_all("ARD - ", "", filename, 1);
+	filename = string_replace_all("ZDF - ", "", filename, 1);
+	filename = string_replace_all("FilmOn - ", "", filename, 1);
+	filename = string_replace_all("MyVideo - ", "", filename, 1);
+	filename = string_replace_all("Netzkino - ", "", filename, 1);
+	filename = string_replace_all("KinoX - ", "", filename, 1);
+	filename = string_replace_all("Movie4k - ", "", filename, 1);
+	filename = string_replace_all("Movie2k - ", "", filename, 1);
+
+	filename = string_replace_all("Beeg ", "", filename, 1);
+	filename = string_replace_all("Burning Series ", "", filename, 1);
+	filename = string_replace_all("CricFree ", "", filename, 1);
+	filename = string_replace_all("Giga ", "", filename, 1);
+	filename = string_replace_all("KKiste ", "", filename, 1);
+	filename = string_replace_all("NBA-On-Demand ", "", filename, 1);
+	filename = string_replace_all("StreamLive ", "", filename, 1);
+	filename = string_replace_all("TheSolarMovie ", "", filename, 1);
+	filename = string_replace_all("Youtube ", "", filename, 1);
+
+	tmpstr2 = ostrcat(_("Category"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	tmpstr2 = ostrcat(_("Search (local)"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	tmpstr2 = ostrcat(_("Search (20)"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	tmpstr2 = ostrcat(_("Search Cast"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	tmpstr2 = ostrcat(_("Search"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	tmpstr2 = ostrcat(_("All Sorted"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	tmpstr2 = ostrcat(_("A-Z"), " - ", 0, 0);
+	filename = string_replace_all(tmpstr2, "", filename, 1);
+	free(tmpstr2); tmpstr2 = NULL;
+
+	filename = string_replace_all("(Flash - Shell script) - ", "", filename, 1);
+	filename = string_replace_all("Genres - ", "", filename, 1);
+	filename = string_replace_all("All Series - ", "", filename, 1);
+	filename = string_replace_all("Channels - ", "", filename, 1);
+	filename = string_replace_all("Kinofilme - ", "", filename, 1);
+	filename = string_replace_all("Neue Filme - ", "", filename, 1);
+	filename = string_replace_all("Movies (Year) - ", "", filename, 1);
+	filename = string_replace_all("Movies (Genre) - ", "", filename, 1);
+	filename = string_replace_all("Series - ", "", filename, 1);
+
+//	filename = ostrcat(filename, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+	filename = ostrcat(filename, title2, 1, 0);
+
+	filename = ostrcat(filename, ".mp4", 1, 0);
+	filename = string_replace_all(" ", ".", filename, 1);
+	filename = string_replace_all("-", "_", filename, 1);
+	filename = string_replace_all("._.", "_", filename, 1);
+	filename = string_replace_all(".._", "_", filename, 1);
+
+	return filename;
 }
 
 int all_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
