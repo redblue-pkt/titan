@@ -348,50 +348,32 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 				int max = count;
 				for(i = 0; i < max; i++)
 				{
-
-//					printf("ret1[i].part: %s\n",ret1[i].part);
-
 					char *mirrormaxtmp = NULL;
 					char *pathnewtmp = NULL;
+					int mirrormax = 1;
+					int j = 0;
+
 					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br/>.*", ret1[i].part);
-					printf("mirrormaxtmp: %s\n",mirrormaxtmp);
 
-					int mirrormax = atoi(mirrormaxtmp);
-					printf("mirrormax: %d\n",mirrormax);
+					if(mirrormaxtmp != NULL)
+						mirrormax = atoi(mirrormaxtmp);
 
-int j = 0;
-for(j = 1; j < mirrormax + 1; j++)
-{
+					for(j = 1; j < mirrormax + 1; j++)
+					{
+						debug(99, "(%d/%d) (%d/%d) ret1[i].part: %s",i ,max ,j ,mirrormax, ret1[i].part);
 
-					hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
+						hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
 
-					hlink = string_resub("rel=\"", "amp;Mirror", ret1[i].part, 0);
-					hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
-					hlink = ostrcat(hlink, "Mirror=", 0, 0);
+						hlink = string_resub("rel=\"", "amp;Mirror", ret1[i].part, 0);
+						hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
+						hlink = ostrcat(hlink, "Mirror=", 0, 0);
 
-
-
-					hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-					pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
-
-//					printf("hnr: %s\n",hnr);
-//					printf("hlink: %s\n",hlink);
-//					printf("hname: %s\n",hname);
-
-/*
-					hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
-					hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
-					hlink = string_replace_all("amp;", "", hlink, 1);
-	
-					hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
-*/
-
+						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+						pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 
 						pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
+						debug(99, "(%d/%d) (%d/%d)hnr: %s hlink: %s hname: %s pathnewtmp: %s",i ,max ,j ,mirrormax ,hnr ,hlink ,hname ,pathnewtmp);
 						free(pathnewtmp), pathnewtmp= NULL;
-
-//						printf("pathnew: %s\n",pathnew);
 
 						pichname = ostrcat(hname, NULL, 0, 0);
 						string_tolower(pichname);
@@ -400,7 +382,7 @@ for(j = 1; j < mirrormax + 1; j++)
 						extra = string_resub("<b>Vom</b>: ", "</div>", ret1[i].part, 0);
 
 						titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, NULL, NULL, pathnew);
-					
+
 						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
@@ -510,11 +492,11 @@ for(j = 1; j < mirrormax + 1; j++)
 						debug(99, "-------------------------------");
 						if(ostrcmp(url, url2) != 0)
 						{
-							debug(99, "(%d/%d) %s (Part1) url: %s extra: %s",i ,max , hname, url, extra);
+							debug(99, "(%d/%d) (%d/%d) %s (Part1) url: %s extra: %s",i ,max ,j ,mirrormax ,hname ,url ,extra);
 						}
 						else
 						{
-							debug(99, "(%d/%d) %s url: %s extra: %s",i ,max , hname, url, extra);
+							debug(99, "(%d/%d) (%d/%d) %s url: %s extra: %s",i ,max ,j ,mirrormax ,hname ,url ,extra);
 						}
 
 						incount += 1;
@@ -533,9 +515,9 @@ for(j = 1; j < mirrormax + 1; j++)
 						}
 
 						line = ostrcat(line, " (Mirror ", 1, 0);					
-						line = ostrcat(line, oitoa(j), 1, 0);
+						line = ostrcat(line, oitoa(j), 1, 1);
 						line = ostrcat(line, "/", 1, 0);					
-						line = ostrcat(line, oitoa(mirrormax), 1, 0);
+						line = ostrcat(line, oitoa(mirrormax), 1, 1);
 						line = ostrcat(line, ")", 1, 0);					
 
 				
@@ -797,26 +779,21 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 				int max = count;
 				for(i = 0; i < max; i++)
 				{
-//
-//					printf("ret1[i].part: %s\n",ret1[i].part);
-
 					char *mirrormaxtmp = NULL;
 					char *pathnewtmp = NULL;
 					char *season = NULL;
-					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br/>.*", ret1[i].part);
-					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br.*", ret1[i].part);
-//
-//					printf("mirrormaxtmp: %s\n",mirrormaxtmp);
-
-					int mirrormax = atoi(mirrormaxtmp);
-//					printf("mirrormax: %d\n",mirrormax);
-
-//rel="Game_of_Thrones-Das_Lied_von_Eis_und_Feuer&amp;Hoster=68&amp;Mirror=1&amp;Season=7&amp;Episode=6"> 
-
-
+					int mirrormax = 1;
 					int j = 0;
+
+					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br.*", ret1[i].part);
+					
+					if(mirrormaxtmp != NULL)
+						mirrormax = atoi(mirrormaxtmp);
+					free(mirrormaxtmp), mirrormaxtmp= NULL;
+
 					for(j = 1; j < mirrormax + 1; j++)
 					{
+						debug(99, "(%d/%d) (%d/%d) ret1[i].part: %s",i ,max ,j ,mirrormax, ret1[i].part);
 
 						hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
 
@@ -824,33 +801,21 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 						hlink = ostrcat(hlink, "Mirror=", 0, 0);
 
-
 						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
 						pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 
 						season = string_resub("&amp;Season=", "\">", ret1[i].part, 0);
 						season = string_replace_all("amp;", "", season, 1);
 
+						pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
+						pathnew = ostrcat(pathnew, "&Season=", 1, 0);
+						pathnew = ostrcat(pathnew, season, 1, 0);
 
-//						printf("hnr: %s\n",hnr);
-//						printf("hlink: %s\n",hlink);
-//						printf("hname: %s\n",hname);
-//						printf("pathnewtmp: %s\n",pathnewtmp);
-//						printf("season: %s\n",season);
+						debug(99, "(%d/%d) (%d/%d) hnr: %s hlink: %s season: %s hname: %s pathnewtmp: %s",i ,max ,j ,mirrormax ,hnr ,hlink ,season ,hname ,pathnewtmp);
+ 
+						free(season), season= NULL;
+						free(pathnewtmp), pathnewtmp= NULL;
 
-
-							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
-							pathnew = ostrcat(pathnew, "&Season=", 1, 0);
-							pathnew = ostrcat(pathnew, season, 1, 0);
-							free(pathnewtmp), pathnewtmp= NULL;
-//printf("11111111pathnew: %s\n",pathnew);
-
-	/*
-						hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
-						hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
-						hlink = string_replace_all("amp;", "", hlink, 1);
-						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-	*/
 						pichname = ostrcat(hname, NULL, 0, 0);
 						string_tolower(pichname);
 						pichname = stringreplacecharonce(pichname, '.', '\0');
@@ -860,19 +825,9 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						hlink = string_replace("http://kinox.me//Stream/", "", hlink, 1);					
 						hlink = string_replace("http://kinox.me/Stream/", "", hlink, 1);
 										
-	//					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
-	//					debug(99, "pathnew: %s", pathnew);
-						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-	//					pathnew = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
-
-
-//						printf("ret1[i].part: %s\n",ret1[i].part);
-
-
 						debug(99, "pathnew: %s", pathnew);
-//						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
-//						debug(99, "tmpstr1 1: %s", tmpstr1);
-
+						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						debug(99, "tmpstr1 1: %s", tmpstr1);
 
 						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 						debug(99, "tmpstr1 2: %s", tmpstr1);
@@ -909,7 +864,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						type = 14;
 
 						debug(99, "-------------------------------");
-						debug(99, "(%d/%d) %s url: %s extra: %s",i ,max , hname, url, extra);
+						debug(99, "(%d/%d) (%d/%d) %s url: %s extra: %s", i, max, j, mirrormax, hname, url, extra);
 							
 						incount += 1;
 
@@ -926,9 +881,9 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						}
 
 						line = ostrcat(line, " (Mirror ", 1, 0);					
-						line = ostrcat(line, oitoa(j), 1, 0);
+						line = ostrcat(line, oitoa(j), 1, 1);
 						line = ostrcat(line, "/", 1, 0);					
-						line = ostrcat(line, oitoa(mirrormax), 1, 0);
+						line = ostrcat(line, oitoa(mirrormax), 1, 1);
 						line = ostrcat(line, ")", 1, 0);
 
 
