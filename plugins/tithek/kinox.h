@@ -348,188 +348,199 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 				int max = count;
 				for(i = 0; i < max; i++)
 				{
+
 //					printf("ret1[i].part: %s\n",ret1[i].part);
+
+					char *mirrormaxtmp = NULL;
+					char *pathnewtmp = NULL;
+					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br/>.*", ret1[i].part);
+					printf("mirrormaxtmp: %s\n",mirrormaxtmp);
+
+					int mirrormax = atoi(mirrormaxtmp);
+					printf("mirrormax: %d\n",mirrormax);
+
+int j = 0;
+for(j = 1; j < mirrormax + 1; j++)
+{
+
+					hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
+
+					hlink = string_resub("rel=\"", "amp;Mirror", ret1[i].part, 0);
+					hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
+					hlink = ostrcat(hlink, "Mirror=", 0, 0);
+
+
+
+					hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+					pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+
+//					printf("hnr: %s\n",hnr);
+//					printf("hlink: %s\n",hlink);
+//					printf("hname: %s\n",hname);
+
+/*
 					hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
 					hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
 					hlink = string_replace_all("amp;", "", hlink, 1);
 	
 					hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+*/
 
-					pichname = ostrcat(hname, NULL, 0, 0);
-					string_tolower(pichname);
-					pichname = stringreplacecharonce(pichname, '.', '\0');
 
-					extra = string_resub("<b>Vom</b>: ", "</div>", ret1[i].part, 0);
+						pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
+						free(pathnewtmp), pathnewtmp= NULL;
 
-					titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, NULL, NULL, pathnew);
+//						printf("pathnew: %s\n",pathnew);
+
+						pichname = ostrcat(hname, NULL, 0, 0);
+						string_tolower(pichname);
+						pichname = stringreplacecharonce(pichname, '.', '\0');
+
+						extra = string_resub("<b>Vom</b>: ", "</div>", ret1[i].part, 0);
+
+						titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, NULL, NULL, pathnew);
 					
-					tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
-					{
-						sleep(1);
-						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					}
-					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
-					{
-						sleep(1);
-						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					}
-					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
-					{
-						sleep(1);
-						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					}
-					if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
-					{
-						sleep(1);
-						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					}
-					free(pathnew), pathnew = NULL;
+						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+						{
+							sleep(1);
+							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						}
+						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+						{
+							sleep(1);
+							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						}
+						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+						{
+							sleep(1);
+							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						}
+						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+						{
+							sleep(1);
+							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						}
+						free(pathnew), pathnew = NULL;
 
-					titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, NULL, NULL, tmpstr1);
+						titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, NULL, NULL, tmpstr1);
 
-					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-					if(ostrstr(tmpstr1, "iframe src") != NULL)
-						url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
-					else
-						url = string_resub("<a href=\"", "\"", tmpstr1, 0);
+						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
+						if(ostrstr(tmpstr1, "iframe src") != NULL)
+							url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
+						else
+							url = string_resub("<a href=\"", "\"", tmpstr1, 0);
 
-					//url = ostrcat(tmpstr1, NULL, 0, 0);
-////////////////
-					free(pathnew), pathnew = NULL;
-					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
-					pathnew = ostrcat(pathnew, "&Part=2", 1, 0);
+						//url = ostrcat(tmpstr1, NULL, 0, 0);
+	////////////////
+/*
+						free(pathnew), pathnew = NULL;
+						pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+						pathnew = ostrcat(pathnew, "&Part=2", 1, 0);
 
-					titheklog(debuglevel, "/tmp/kinox6_pathnew2", hname, NULL, NULL, pathnew);
+						titheklog(debuglevel, "/tmp/kinox6_pathnew2", hname, NULL, NULL, pathnew);
 					
-					tmpstr3 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					if(ostrstr(tmpstr3, "503 Service Temporarily Unavailable") != NULL)
-					{
-						sleep(1);
-						tmpstr3 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					}
-					free(pathnew), pathnew = NULL;
+						tmpstr3 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						if(ostrstr(tmpstr3, "503 Service Temporarily Unavailable") != NULL)
+						{
+							sleep(1);
+							tmpstr3 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						}
+						free(pathnew), pathnew = NULL;
 
-					titheklog(debuglevel, "/tmp/kinox7_tmpstr3", hname, NULL, NULL, tmpstr3);
+						titheklog(debuglevel, "/tmp/kinox7_tmpstr3", hname, NULL, NULL, tmpstr3);
 
-					tmpstr3 = string_replace_all("\\", "", tmpstr3, 1);
-					if(ostrstr(tmpstr3, "iframe src") != NULL)
-						url2 = string_resub("<iframe src=\"", "\"", tmpstr3, 0);
-					else
-						url2 = string_resub("<a href=\"", "\"", tmpstr3, 0);
-//					url2 = ostrcat(tmpstr3, NULL, 0, 0);
-////////////////
-					free(pathnew), pathnew = NULL;
-					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
-					pathnew = ostrcat(pathnew, "&Part=3", 1, 0);
+						tmpstr3 = string_replace_all("\\", "", tmpstr3, 1);
+						if(ostrstr(tmpstr3, "iframe src") != NULL)
+							url2 = string_resub("<iframe src=\"", "\"", tmpstr3, 0);
+						else
+							url2 = string_resub("<a href=\"", "\"", tmpstr3, 0);
+	//					url2 = ostrcat(tmpstr3, NULL, 0, 0);
+	////////////////
+						free(pathnew), pathnew = NULL;
+						pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+						pathnew = ostrcat(pathnew, "&Part=3", 1, 0);
 
-					titheklog(debuglevel, "/tmp/kinox6_pathnew3", hname, NULL, NULL, pathnew);
+						titheklog(debuglevel, "/tmp/kinox6_pathnew3", hname, NULL, NULL, pathnew);
 					
-					tmpstr4 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					if(ostrstr(tmpstr4, "503 Service Temporarily Unavailable") != NULL)
-					{
-						sleep(1);
-						tmpstr4 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					}
-					free(pathnew), pathnew = NULL;
+						tmpstr4 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						if(ostrstr(tmpstr4, "503 Service Temporarily Unavailable") != NULL)
+						{
+							sleep(1);
+							tmpstr4 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						}
+						free(pathnew), pathnew = NULL;
 
-					titheklog(debuglevel, "/tmp/kinox7_tmpstr4", hname, NULL, NULL, tmpstr4);
+						titheklog(debuglevel, "/tmp/kinox7_tmpstr4", hname, NULL, NULL, tmpstr4);
 
-					tmpstr4 = string_replace_all("\\", "", tmpstr4, 1);
-					if(ostrstr(tmpstr4, "iframe src") != NULL)
-						url3 = string_resub("<iframe src=\"", "\"", tmpstr4, 0);
-					else
-						url3 = string_resub("<a href=\"", "\"", tmpstr4, 0);
-//					url3 = ostrcat(tmpstr4, NULL, 0, 0);
-////////////////
-					free(pathnew), pathnew = NULL;
-					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
-					pathnew = ostrcat(pathnew, "&Part=4", 1, 0);
+						tmpstr4 = string_replace_all("\\", "", tmpstr4, 1);
+						if(ostrstr(tmpstr4, "iframe src") != NULL)
+							url3 = string_resub("<iframe src=\"", "\"", tmpstr4, 0);
+						else
+							url3 = string_resub("<a href=\"", "\"", tmpstr4, 0);
+	//					url3 = ostrcat(tmpstr4, NULL, 0, 0);
+	////////////////
+						free(pathnew), pathnew = NULL;
+						pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+						pathnew = ostrcat(pathnew, "&Part=4", 1, 0);
 
-					titheklog(debuglevel, "/tmp/kinox6_pathnew4", hname, NULL, NULL, pathnew);
+						titheklog(debuglevel, "/tmp/kinox6_pathnew4", hname, NULL, NULL, pathnew);
 					
-					tmpstr5 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					if(ostrstr(tmpstr5, "503 Service Temporarily Unavailable") != NULL)
-					{
-						sleep(1);
-						tmpstr5 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					}
-					free(pathnew), pathnew = NULL;
+						tmpstr5 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						if(ostrstr(tmpstr5, "503 Service Temporarily Unavailable") != NULL)
+						{
+							sleep(1);
+							tmpstr5 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						}
+						free(pathnew), pathnew = NULL;
 
-					titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, NULL, NULL, tmpstr5);
+						titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, NULL, NULL, tmpstr5);
 
-					tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
-					if(ostrstr(tmpstr5, "iframe src") != NULL)
-						url4 = string_resub("<iframe src=\"", "\"", tmpstr5, 0);
-					else
-						url4 = string_resub("<a href=\"", "\"", tmpstr5, 0);					
-//					url4 = ostrcat(tmpstr5, NULL, 0, 0);
-////////////////
-					type = 14;
+						tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
+						if(ostrstr(tmpstr5, "iframe src") != NULL)
+							url4 = string_resub("<iframe src=\"", "\"", tmpstr5, 0);
+						else
+							url4 = string_resub("<a href=\"", "\"", tmpstr5, 0);					
+	//					url4 = ostrcat(tmpstr5, NULL, 0, 0);
+	////////////////
+*/
+						type = 14;
 
-					debug(99, "-------------------------------");
-					if(ostrcmp(url, url2) != 0)
-					{
-						debug(99, "(%d/%d) %s (Part1) url: %s extra: %s",i ,max , hname, url, extra);
-					}
-					else
-					{
-						debug(99, "(%d/%d) %s url: %s extra: %s",i ,max , hname, url, extra);
-					}
+						debug(99, "-------------------------------");
+						if(ostrcmp(url, url2) != 0)
+						{
+							debug(99, "(%d/%d) %s (Part1) url: %s extra: %s",i ,max , hname, url, extra);
+						}
+						else
+						{
+							debug(99, "(%d/%d) %s url: %s extra: %s",i ,max , hname, url, extra);
+						}
 
-					incount += 1;
-					line = ostrcat(line, hname, 1, 0);
+						incount += 1;
+						line = ostrcat(line, hname, 1, 0);
 
-					if(url == NULL)
-						line = ostrcat(line, " (Error)", 1, 0);
+						if(url == NULL)
+							line = ostrcat(line, " (Error)", 1, 0);
 					
-					if(url2 != NULL && ostrcmp(url, url2) != 0)
-						line = ostrcat(line, " (Part1)", 1, 0);
-					if(extra != NULL)
-					{
-						line = ostrcat(line, " (", 1, 0);					
-						line = ostrcat(line, extra, 1, 0);					
+						if(url2 != NULL && ostrcmp(url, url2) != 0)
+							line = ostrcat(line, " (Part1)", 1, 0);
+						if(extra != NULL)
+						{
+							line = ostrcat(line, " (", 1, 0);					
+							line = ostrcat(line, extra, 1, 0);					
+							line = ostrcat(line, ")", 1, 0);					
+						}
+
+						line = ostrcat(line, " (Mirror ", 1, 0);					
+						line = ostrcat(line, oitoa(j), 1, 0);
+						line = ostrcat(line, "/", 1, 0);					
+						line = ostrcat(line, oitoa(mirrormax), 1, 0);
 						line = ostrcat(line, ")", 1, 0);					
-					}				
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, url, 1, 0);
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
-					line = ostrcat(line, pichname, 1, 0);
-					line = ostrcat(line, ".jpg#kinox_", 1, 0);
-					line = ostrcat(line, pichname, 1, 0);
-					line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
-					line = ostrcat(line, title, 1, 0);
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, oitoa(type), 1, 0);
-					line = ostrcat(line, "\n", 1, 0);
 
-					if((url != NULL && url2 != NULL) && ostrcmp(url, url2) != 0)
-					{
-						free(tmpstr2), tmpstr2 = NULL;
-						free(hname), hname = NULL;
-						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-						pichname = ostrcat(hname, NULL, 0, 0);
-						string_tolower(pichname);
-						pichname = stringreplacecharonce(pichname, '\n', '\0');
-
-						type = 14;
-
-						debug(99, "-------------------------------");
-						debug(99, "(%d/%d) %s (Part2) url: %s extra: %s",i ,max, hname, url2, extra);
-
-						incount += 1;
-						line = ostrcat(line, hname, 1, 0);
-						line = ostrcat(line, " (Part2)", 1, 0);
-						if(extra != NULL)
-						{
-							line = ostrcat(line, " (", 1, 0);					
-							line = ostrcat(line, extra, 1, 0);					
-							line = ostrcat(line, ")", 1, 0);					
-						}
+				
 						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, url2, 1, 0);
+						line = ostrcat(line, url, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
 						line = ostrcat(line, pichname, 1, 0);
@@ -540,99 +551,136 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, oitoa(type), 1, 0);
 						line = ostrcat(line, "\n", 1, 0);
-						free(tmpstr2), tmpstr2 = NULL;
-					}
+/*
+						if((url != NULL && url2 != NULL) && ostrcmp(url, url2) != 0)
+						{
+							free(tmpstr2), tmpstr2 = NULL;
+							free(hname), hname = NULL;
+							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+							pichname = ostrcat(hname, NULL, 0, 0);
+							string_tolower(pichname);
+							pichname = stringreplacecharonce(pichname, '\n', '\0');
 
-					if((url != NULL && url3 != NULL) && ostrcmp(url, url3) != 0 && ostrcmp(url2, url3) != 0)
-					{
-						free(tmpstr2), tmpstr2 = NULL;
-						free(hname), hname = NULL;
-						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-						pichname = ostrcat(hname, NULL, 0, 0);
-						string_tolower(pichname);
-						pichname = stringreplacecharonce(pichname, '\n', '\0');
-						type = 14;
+							type = 14;
 
-						debug(99, "-------------------------------");
-						debug(99, "(%d/%d) %s (Part3) url: %s extra: %s",i ,max , hname, url3, extra);
+							debug(99, "-------------------------------");
+							debug(99, "(%d/%d) %s (Part2) url: %s extra: %s",i ,max, hname, url2, extra);
+
+							incount += 1;
+							line = ostrcat(line, hname, 1, 0);
+							line = ostrcat(line, " (Part2)", 1, 0);
+							if(extra != NULL)
+							{
+								line = ostrcat(line, " (", 1, 0);					
+								line = ostrcat(line, extra, 1, 0);					
+								line = ostrcat(line, ")", 1, 0);					
+							}
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, url2, 1, 0);
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+							line = ostrcat(line, pichname, 1, 0);
+							line = ostrcat(line, ".jpg#kinox_", 1, 0);
+							line = ostrcat(line, pichname, 1, 0);
+							line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
+							line = ostrcat(line, title, 1, 0);
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, oitoa(type), 1, 0);
+							line = ostrcat(line, "\n", 1, 0);
+							free(tmpstr2), tmpstr2 = NULL;
+						}
+
+						if((url != NULL && url3 != NULL) && ostrcmp(url, url3) != 0 && ostrcmp(url2, url3) != 0)
+						{
+							free(tmpstr2), tmpstr2 = NULL;
+							free(hname), hname = NULL;
+							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+							pichname = ostrcat(hname, NULL, 0, 0);
+							string_tolower(pichname);
+							pichname = stringreplacecharonce(pichname, '\n', '\0');
+							type = 14;
+
+							debug(99, "-------------------------------");
+							debug(99, "(%d/%d) %s (Part3) url: %s extra: %s",i ,max , hname, url3, extra);
 											
-						incount += 1;
-						line = ostrcat(line, hname, 1, 0);
-						if(extra != NULL)
-						line = ostrcat(line, " (Part3)", 1, 0);					
-						if(extra != NULL)
-						{
-							line = ostrcat(line, " (", 1, 0);					
-							line = ostrcat(line, extra, 1, 0);					
-							line = ostrcat(line, ")", 1, 0);					
+							incount += 1;
+							line = ostrcat(line, hname, 1, 0);
+							if(extra != NULL)
+							line = ostrcat(line, " (Part3)", 1, 0);					
+							if(extra != NULL)
+							{
+								line = ostrcat(line, " (", 1, 0);					
+								line = ostrcat(line, extra, 1, 0);					
+								line = ostrcat(line, ")", 1, 0);					
+							}
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, url3, 1, 0);
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+							line = ostrcat(line, pichname, 1, 0);
+							line = ostrcat(line, ".jpg#kinox_", 1, 0);
+							line = ostrcat(line, pichname, 1, 0);
+							line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
+							line = ostrcat(line, title, 1, 0);
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, oitoa(type), 1, 0);
+							line = ostrcat(line, "\n", 1, 0);
+							free(tmpstr2), tmpstr2 = NULL;
 						}
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, url3, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
-						line = ostrcat(line, pichname, 1, 0);
-						line = ostrcat(line, ".jpg#kinox_", 1, 0);
-						line = ostrcat(line, pichname, 1, 0);
-						line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
-						line = ostrcat(line, title, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, oitoa(type), 1, 0);
-						line = ostrcat(line, "\n", 1, 0);
-						free(tmpstr2), tmpstr2 = NULL;
-					}
 
-					if((url != NULL && url4 != NULL) && ostrcmp(url, url4) != 0 && ostrcmp(url2, url4) != 0 && ostrcmp(url3, url4) != 0)
-					{
-						free(tmpstr2), tmpstr2 = NULL;
-						free(hname), hname = NULL;
-						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-						pichname = ostrcat(hname, NULL, 0, 0);
-						string_tolower(pichname);
-						pichname = stringreplacecharonce(pichname, '\n', '\0');
-						type = 14;
-
-						debug(99, "-------------------------------");
-						debug(99, "(%d/%d) %s (Part4) url: %s extra: %s",i ,max , hname, url4, extra);
-
-						incount += 1;
-						line = ostrcat(line, hname, 1, 0);
-						line = ostrcat(line, " (Part4)", 1, 0);
-						if(extra != NULL)
+						if((url != NULL && url4 != NULL) && ostrcmp(url, url4) != 0 && ostrcmp(url2, url4) != 0 && ostrcmp(url3, url4) != 0)
 						{
-							line = ostrcat(line, " (", 1, 0);					
-							line = ostrcat(line, extra, 1, 0);					
-							line = ostrcat(line, ")", 1, 0);					
-						}		
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, url4, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
-						line = ostrcat(line, pichname, 1, 0);
-						line = ostrcat(line, ".jpg#kinox_", 1, 0);
-						line = ostrcat(line, pichname, 1, 0);
-						line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
-						line = ostrcat(line, title, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, oitoa(type), 1, 0);
-						line = ostrcat(line, "\n", 1, 0);
+							free(tmpstr2), tmpstr2 = NULL;
+							free(hname), hname = NULL;
+							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+							pichname = ostrcat(hname, NULL, 0, 0);
+							string_tolower(pichname);
+							pichname = stringreplacecharonce(pichname, '\n', '\0');
+							type = 14;
+
+							debug(99, "-------------------------------");
+							debug(99, "(%d/%d) %s (Part4) url: %s extra: %s",i ,max , hname, url4, extra);
+
+							incount += 1;
+							line = ostrcat(line, hname, 1, 0);
+							line = ostrcat(line, " (Part4)", 1, 0);
+							if(extra != NULL)
+							{
+								line = ostrcat(line, " (", 1, 0);					
+								line = ostrcat(line, extra, 1, 0);					
+								line = ostrcat(line, ")", 1, 0);					
+							}		
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, url4, 1, 0);
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+							line = ostrcat(line, pichname, 1, 0);
+							line = ostrcat(line, ".jpg#kinox_", 1, 0);
+							line = ostrcat(line, pichname, 1, 0);
+							line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
+							line = ostrcat(line, title, 1, 0);
+							line = ostrcat(line, "#", 1, 0);
+							line = ostrcat(line, oitoa(type), 1, 0);
+							line = ostrcat(line, "\n", 1, 0);
+							free(tmpstr2), tmpstr2 = NULL;
+						}
+*/					
+						free(tmpstr1), tmpstr1 = NULL;
 						free(tmpstr2), tmpstr2 = NULL;
+						free(tmpstr3), tmpstr3 = NULL;
+						free(tmpstr4), tmpstr4 = NULL;
+						free(tmpstr5), tmpstr5 = NULL;
+						free(hname), hname = NULL;
+						free(hnr), hnr = NULL;
+						free(hlink), hlink = NULL;										
+						free(url), url = NULL;
+						free(url2), url2 = NULL;
+						free(url3), url3 = NULL;
+						free(url4), url4 = NULL;
+						free(pathnew), pathnew = NULL;
+						free(pichname), pichname = NULL;
+						free(extra), extra = NULL;
 					}
-					
-					free(tmpstr1), tmpstr1 = NULL;
-					free(tmpstr2), tmpstr2 = NULL;
-					free(tmpstr3), tmpstr3 = NULL;
-					free(tmpstr4), tmpstr4 = NULL;
-					free(tmpstr5), tmpstr5 = NULL;
-					free(hname), hname = NULL;
-					free(hnr), hnr = NULL;
-					free(hlink), hlink = NULL;										
-					free(url), url = NULL;
-					free(url2), url2 = NULL;
-					free(url3), url3 = NULL;
-					free(url4), url4 = NULL;
-					free(pathnew), pathnew = NULL;
-					free(pichname), pichname = NULL;
-					free(extra), extra = NULL;
 				}
 			}
 			free(ret1), ret1 = NULL;
@@ -749,101 +797,164 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 				int max = count;
 				for(i = 0; i < max; i++)
 				{
-					hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
-					hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
-					hlink = string_replace_all("amp;", "", hlink, 1);
-					hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+//
+//					printf("ret1[i].part: %s\n",ret1[i].part);
 
-					pichname = ostrcat(hname, NULL, 0, 0);
-					string_tolower(pichname);
-					pichname = stringreplacecharonce(pichname, '.', '\0');
+					char *mirrormaxtmp = NULL;
+					char *pathnewtmp = NULL;
+					char *season = NULL;
+					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br/>.*", ret1[i].part);
+					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br.*", ret1[i].part);
+//
+//					printf("mirrormaxtmp: %s\n",mirrormaxtmp);
 
-					extra = string_resub("<b>Vom</b>: ", "</div>", ret1[i].part, 0);
+					int mirrormax = atoi(mirrormaxtmp);
+//					printf("mirrormax: %d\n",mirrormax);
+
+//rel="Game_of_Thrones-Das_Lied_von_Eis_und_Feuer&amp;Hoster=68&amp;Mirror=1&amp;Season=7&amp;Episode=6"> 
+
+
+					int j = 0;
+					for(j = 1; j < mirrormax + 1; j++)
+					{
+
+						hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
+
+						hlink = string_resub("rel=\"", "amp;Mirror", ret1[i].part, 0);
+						hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
+						hlink = ostrcat(hlink, "Mirror=", 0, 0);
+
+
+						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+						pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+
+						season = string_resub("&amp;Season=", "\">", ret1[i].part, 0);
+						season = string_replace_all("amp;", "", season, 1);
+
+
+//						printf("hnr: %s\n",hnr);
+//						printf("hlink: %s\n",hlink);
+//						printf("hname: %s\n",hname);
+//						printf("pathnewtmp: %s\n",pathnewtmp);
+//						printf("season: %s\n",season);
+
+
+							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
+							pathnew = ostrcat(pathnew, "&Season=", 1, 0);
+							pathnew = ostrcat(pathnew, season, 1, 0);
+							free(pathnewtmp), pathnewtmp= NULL;
+//printf("11111111pathnew: %s\n",pathnew);
+
+	/*
+						hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
+						hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
+						hlink = string_replace_all("amp;", "", hlink, 1);
+						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+	*/
+						pichname = ostrcat(hname, NULL, 0, 0);
+						string_tolower(pichname);
+						pichname = stringreplacecharonce(pichname, '.', '\0');
+
+						extra = string_resub("<b>Vom</b>: ", "</div>", ret1[i].part, 0);
 			
-					hlink = string_replace("http://kinox.me//Stream/", "", hlink, 1);					
-					hlink = string_replace("http://kinox.me/Stream/", "", hlink, 1);
+						hlink = string_replace("http://kinox.me//Stream/", "", hlink, 1);					
+						hlink = string_replace("http://kinox.me/Stream/", "", hlink, 1);
 										
-//					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
-//					debug(99, "pathnew: %s", pathnew);
-//					tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-					pathnew = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
-					debug(99, "pathnew: %s", pathnew);
-					tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
-					debug(99, "tmpstr1 1: %s", tmpstr1);
+	//					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+	//					debug(99, "pathnew: %s", pathnew);
+						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+	//					pathnew = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
 
 
-					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-					debug(99, "tmpstr1 2: %s", tmpstr1);
+//						printf("ret1[i].part: %s\n",ret1[i].part);
 
-					if(ostrstr(tmpstr1, "<iframe src=") != NULL)
-					{
-						url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
-						debug(99, "iframe1.1 url: %s", url);
-					}
-					else if(ostrstr(tmpstr1, "/iframe>") != NULL)
-					{
-						free(pathnew), pathnew = NULL;
-						pathnew = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
-						debug(99, "iframe2.1 pathnew: %s", pathnew);
-						free(tmpstr1), tmpstr1 = NULL;
-						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
-						debug(99, "iframe2.2 tmpstr1: %s", tmpstr1);
+
+						debug(99, "pathnew: %s", pathnew);
+//						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+//						debug(99, "tmpstr1 1: %s", tmpstr1);
+
+
 						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-						debug(99, "iframe2.3 tmpstr1: %s", tmpstr1);
+						debug(99, "tmpstr1 2: %s", tmpstr1);
 
 						if(ostrstr(tmpstr1, "<iframe src=") != NULL)
 						{
 							url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
-							debug(99, "iframe2.4 url: %s", url);
+							debug(99, "iframe1.1 url: %s", url);
 						}
-					}
-					else
-					{
-						tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
-						debug(99, "tmpstr1 3: %s", tmpstr1);
-						url = ostrcat(tmpstr1, NULL, 0, 0);
-					}
+						else if(ostrstr(tmpstr1, "/iframe>") != NULL)
+						{
+							free(pathnew), pathnew = NULL;
+							pathnew = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
+							debug(99, "iframe2.1 pathnew: %s", pathnew);
+							free(tmpstr1), tmpstr1 = NULL;
+							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							debug(99, "iframe2.2 tmpstr1: %s", tmpstr1);
+							tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
+							debug(99, "iframe2.3 tmpstr1: %s", tmpstr1);
+
+							if(ostrstr(tmpstr1, "<iframe src=") != NULL)
+							{
+								url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
+								debug(99, "iframe2.4 url: %s", url);
+							}
+						}
+						else
+						{
+							tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
+							debug(99, "tmpstr1 3: %s", tmpstr1);
+							url = ostrcat(tmpstr1, NULL, 0, 0);
+						}
 	
-					type = 14;
+						type = 14;
 
-					debug(99, "-------------------------------");
-					debug(99, "(%d/%d) %s url: %s extra: %s",i ,max , hname, url, extra);
+						debug(99, "-------------------------------");
+						debug(99, "(%d/%d) %s url: %s extra: %s",i ,max , hname, url, extra);
 							
-					incount += 1;
+						incount += 1;
 
-					line = ostrcat(line, hname, 1, 0);
+						line = ostrcat(line, hname, 1, 0);
 
-					if(url == NULL)
-						line = ostrcat(line, " (Error)", 1, 0);
+						if(url == NULL)
+							line = ostrcat(line, " (Error)", 1, 0);
 
-					if(extra != NULL)
-					{
-						line = ostrcat(line, " (", 1, 0);					
-						line = ostrcat(line, extra, 1, 0);					
-						line = ostrcat(line, ")", 1, 0);					
+						if(extra != NULL)
+						{
+							line = ostrcat(line, " (", 1, 0);					
+							line = ostrcat(line, extra, 1, 0);					
+							line = ostrcat(line, ")", 1, 0);					
+						}
+
+						line = ostrcat(line, " (Mirror ", 1, 0);					
+						line = ostrcat(line, oitoa(j), 1, 0);
+						line = ostrcat(line, "/", 1, 0);					
+						line = ostrcat(line, oitoa(mirrormax), 1, 0);
+						line = ostrcat(line, ")", 1, 0);
+
+
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, url, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+						line = ostrcat(line, pichname, 1, 0);
+						line = ostrcat(line, ".jpg#kinox_", 1, 0);
+						line = ostrcat(line, pichname, 1, 0);
+						line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
+						line = ostrcat(line, title, 1, 0);
+						line = ostrcat(line, "#", 1, 0);
+						line = ostrcat(line, oitoa(type), 1, 0);
+						line = ostrcat(line, "\n", 1, 0);
+
+						free(tmpstr1), tmpstr1 = NULL;							
+						free(tmpstr2), tmpstr2 = NULL;					
+						free(hname), hname = NULL;
+						free(hnr), hnr = NULL;
+						free(hlink), hlink = NULL;										
+						free(url), url = NULL;	
+						free(pathnew), pathnew = NULL;
+						free(pichname), pichname = NULL;
+						free(extra), extra = NULL;
 					}
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, url, 1, 0);
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
-					line = ostrcat(line, pichname, 1, 0);
-					line = ostrcat(line, ".jpg#kinox_", 1, 0);
-					line = ostrcat(line, pichname, 1, 0);
-					line = ostrcat(line, ".jpg#KinoX - ", 1, 0);
-					line = ostrcat(line, title, 1, 0);
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, oitoa(type), 1, 0);
-					line = ostrcat(line, "\n", 1, 0);
-
-					free(tmpstr1), tmpstr1 = NULL;							
-					free(tmpstr2), tmpstr2 = NULL;					
-					free(hname), hname = NULL;
-					free(hnr), hnr = NULL;
-					free(hlink), hlink = NULL;										
-					free(url), url = NULL;	
-					free(pathnew), pathnew = NULL;
-					free(pichname), pichname = NULL;
-					free(extra), extra = NULL;
 				}
 			}
 			free(ret1), ret1 = NULL;
