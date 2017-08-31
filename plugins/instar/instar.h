@@ -384,14 +384,15 @@ void instar_main()
 					else
 					{
 						cam1 = ostrcat(CURL, " http://", 0, 0);
-						cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1IP", NULL), 1, 0);
-						cam1 = ostrcat(cam1, ":",1, 0);
-						cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1Port", NULL), 1, 0);
-						cam11 = ostrcat("&usr=", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
-						cam11 = ostrcat(cam11, "&pwd=", 1, 0);
-						cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
-						cam11 = ostrcat(cam11, "&", 1, 0);
 					}
+					cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1IP", NULL), 1, 0);
+					cam1 = ostrcat(cam1, ":",1, 0);
+					cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1Port", NULL), 1, 0);
+					cam11 = ostrcat("&usr=", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
+					cam11 = ostrcat(cam11, "&pwd=", 1, 0);
+					cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
+					cam11 = ostrcat(cam11, "&", 1, 0);
+					
 				}
 			}
 			
@@ -422,14 +423,14 @@ void instar_main()
 					else
 					{
 						cam2 = ostrcat(CURL, " http://", 0, 0);
-						cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2IP", NULL), 1, 0);
-						cam2 = ostrcat(cam2, ":",1, 0);
-						cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Port", NULL), 1, 0);
-						cam21 = ostrcat("&usr=", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
-						cam21 = ostrcat(cam21, "&pwd=", 1, 0);
-						cam21 = ostrcat(cam21, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
-						cam21 = ostrcat(cam21, "&", 1, 0);
 					}
+					cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2IP", NULL), 1, 0);
+					cam2 = ostrcat(cam2, ":",1, 0);
+					cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Port", NULL), 1, 0);
+					cam21 = ostrcat("&usr=", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
+					cam21 = ostrcat(cam21, "&pwd=", 1, 0);
+					cam21 = ostrcat(cam21, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
+					cam21 = ostrcat(cam21, "&", 1, 0);
 				}				
 			}
 					
