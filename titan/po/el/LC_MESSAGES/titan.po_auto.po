@@ -666,7 +666,7 @@ msgid ""
 "Aborting backup..."
 msgstr ""
 
-#: skin_default_skin.xml.h:57 tithek_global.h:632 webif_channellist.h:4
+#: skin_default_skin.xml.h:57 tithek_global.h:635 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -852,7 +852,7 @@ msgstr ""
 msgid "All Channels"
 msgstr ""
 
-#: tithek_global.h:628
+#: tithek_global.h:631
 msgid "All Sorted"
 msgstr ""
 
@@ -1921,7 +1921,7 @@ msgstr "Ακύρωση"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_global.h:608
+#: tithek_global.h:611
 msgid "Category"
 msgstr ""
 
@@ -3232,7 +3232,7 @@ msgstr ""
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1089 titan.c:1098 titan.c:1227
 #: titan.c:1248 titan.c:1254 titan.c:1265 titan.c:1271 tithek.c:103
-#: tithek_global.h:210 tithek.h:748 tithek.h:1379 tithek.h:1406 tithek.h:1462
+#: tithek_global.h:213 tithek.h:748 tithek.h:1379 tithek.h:1406 tithek.h:1462
 #: tithek.h:1595 tithek.h:1604 tithek.h:1752 tithek.h:1781 tithek.h:1797
 #: tithek.h:2031 tithek.h:2191 tithek.h:2476 tithek.h:2522 tithek.h:2538
 #: tithek.h:2550 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
@@ -5923,7 +5923,7 @@ msgstr ""
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:210 tithek.h:748
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:213 tithek.h:748
 #: tithek.h:1379 tithek.h:1406 tithek.h:1462 tithek.h:1595 tithek.h:1604
 #: tithek.h:1752 tithek.h:1781 tithek.h:2031 tithek.h:2191 tithek.h:2476
 #: tithek.h:2522 tithek.h:2538 tithek.h:2550 tiwakeup.h:66 tiwakeup.h:68
@@ -6521,7 +6521,7 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
 #: titan.c:1089 titan.c:1098 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:210 tithek.h:748
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:213 tithek.h:748
 #: tithek.h:1379 tithek.h:1406 tithek.h:1462 tithek.h:1595 tithek.h:1604
 #: tithek.h:1752 tithek.h:1781 tithek.h:1797 tithek.h:2031 tithek.h:2191
 #: tithek.h:2476 tithek.h:2522 tithek.h:2538 tithek.h:2550 tiwakeup.h:66
@@ -8609,22 +8609,22 @@ msgstr ""
 #: rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:553 solarmovie.h:138
 #: solarmovie.h:140 solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:624 tithek_global.h:667 tithek_global.h:669
-#: tithek_global.h:1180 tithek_global.h:1182 tmdb.h:898 tvtoast.h:530
+#: tithek_global.h:627 tithek_global.h:670 tithek_global.h:672
+#: tithek_global.h:1183 tithek_global.h:1185 tmdb.h:898 tvtoast.h:530
 #: tvtoast.h:532 xvideos.h:56 xvideos.h:58 youtube.h:253 youtube.h:255
 #: youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Χειροκίνητη αναζήτηση"
 
-#: tithek_global.h:616
+#: tithek_global.h:619
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_global.h:612
+#: tithek_global.h:615
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_global.h:620
+#: tithek_global.h:623
 msgid "Search Cast"
 msgstr ""
 
@@ -9824,7 +9824,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:210 tithek.h:2476
+#: tithek_global.h:213 tithek.h:2476
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -10145,11 +10145,11 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:127 tithek_global.h:582
+#: tithek.c:127 tithek_global.h:585
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:578 tithek.h:1842 tithek.h:1978 tithek.h:2518 tithek.h:2534
+#: tithek_global.h:581 tithek.h:1842 tithek.h:1978 tithek.h:2518 tithek.h:2534
 #: tithek.h:2546 tithek.h:2562
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
