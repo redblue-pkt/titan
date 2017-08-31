@@ -18,7 +18,7 @@ class TheVideoResolver(object):
 
     def __init__(self):
         self.net = Net()
-        self.headers = {'User-Agent': common.IE_USER_AGENT}
+        self.headers = {'User-Agent': common.ANDROID_USER_AGENT}
         url = str(sys.argv[1])
         host = self.get_host_and_id(url)[0]
         media_id = self.get_host_and_id(url)[1]
@@ -38,36 +38,8 @@ class TheVideoResolver(object):
             'Referer': web_url
         }
         headers.update(self.headers)
-        headers = {'User-Agent': common.IE_USER_AGENT, 'Referer': web_url}
-
         html = self.net.http_GET(web_url, headers=headers).content
-#        print "111111111111", html.encode('utf-8').strip()
-        old = 0
-        if old:
-            vhash = re.search('\'_vhash\', value: \'(.*?)\'', html).group(1)
-            gfk = re.search('\'gfk\', value: \'(.*?)\'', html).group(1)
 
-            fname = re.search('name="fname" value="(.*?)"', html).group(1)
-            op = re.search('name="op" value="(.*?)"', html).group(1)
-            inhu = re.search('name="inhu" value="(.*?)"', html).group(1)
-            usr_login = re.search('name="usr_login" value="(.*?)"', html).group(1)
-
-            hash = re.search('name="hash" value="(.*?)"', html).group(1)
-            fdata = {'_vhash': vhash,
-                     'gfk': gfk,
-                     'op': op,
-                     'usr_login': usr_login,
-                     'id': media_id,                 
-                     'fname': fname,
-                     'referer': '',
-                     'hash': hash,
-                     'imhuman': 'Proceed to video',
-                     'inhu': inhu}
-
-            html = self.net.http_POST(url=web_url, form_data=fdata, headers=headers).content
-#            print "2222222222", html.encode('utf-8').strip()
-
-#http://thevideo.me/jwv/LDonSU04MylZO1ZNSThGPUEK
         r = re.search('sources:\s*(\[.*?\])', html, re.DOTALL)
 
         if r:
@@ -79,28 +51,31 @@ class TheVideoResolver(object):
                     stream_url = source['file']
                     max_label = int(re.sub('[^0-9]', '', source['label']))
 
-        for match in re.finditer('(eval\(function.*?)</script>', html, re.DOTALL):
-            js_data = jsunpack.unpack(match.group(1))
-            path = re.search('\'rc=".*(/.*?)\\\'.concat', js_data).group(1)
-            path = path.replace('\\', '')
-            if path:
-                break
+        varname = re.search('''concat\(\s*['"]/["']\s*\+([^\+]+?)\+''', html).group(1)
 
-        mpri_Key = re.search('var mpri_Key=\'(.*?)\'', html).group(1)
-        web_url = self.get_aturl(host, path, mpri_Key)
+#        authkey = re.search('''var lets_play_a_game=\'(.*)\'''', html).group(1)
+#        print "authkey2", authkey
+
+        authkey = re.search(r"=\'(.*)\'", html).group(1)
+
+#        my_regex = r"var " + re.escape(varname) + r"""\s*=\s*['"]([^'^"]+?)['"]"""
+#        my_regex = re.escape(varname) + r"""\s*=\s*['"]([^'^"]+?)['"]"""
+#
+#        test = re.search(my_regex, html, re.IGNORECASE)
+#        print "test", test
+
+        web_url = "https://thevideo.me/vsign/player/" + authkey
         html = self.net.http_GET(web_url, headers=headers).content
-#        print "3333333333", html.encode('utf-8').strip()
 
         js_data = jsunpack.unpack(html)
         for match in re.finditer('(eval\(function.*?)\{\}\)\)', html, re.DOTALL):
             js_data = jsunpack.unpack(match.group(1))
+            ua = re.search('"ua=(.*?)"', js_data).group(1)
             vt = re.search('"vt=(.*?)"', js_data).group(1)
-            print '%s?direct=false&ua=1&vt=%s' % (stream_url, vt)
+            print '%s?direct=false&ua=%s&vt=%s' % (stream_url, ua, vt)
+
         
     def get_url(self, host, media_id):
-        return 'http://%s/%s' % (host, media_id)
-
-    def get_aturl(self, host, path, key):
-        return 'http://%s%s/%s' % (host, path, key)
+        return 'http://%s/embed-%s-640x360.html' % (host, media_id)
 
 sys.stdout = TheVideoResolver()
