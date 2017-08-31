@@ -1297,12 +1297,14 @@ uint16_t fereadsnr(struct dvbdev* node)
 		{
 			signalquality = snr;
 		}
+#ifdef MIPSEL
 		if(node->feinfo->type == FE_QPSK)
 			signalquality = (ret >= sat_max ? 65536 : ret * 65536 / sat_max);
 		else if(node->feinfo->type == FE_QAM)
 			signalquality = (ret >= cab_max ? 65536 : ret * 65536 / cab_max);
 		else if(node->feinfo->type == FE_OFDM)
 			signalquality = (ret >= ter_max ? 65536 : ret * 65536 / ter_max);
+#endif
 	}
 	debug(200, "frontend snr = %02x", (signalquality * 100) / 0xffff);
 	return signalquality;
