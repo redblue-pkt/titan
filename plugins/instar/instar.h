@@ -55,6 +55,7 @@ int show_control()
 				if(getconfigint("instar_alterwebif", NULL) == 1)
 					tmpstr = ostrcat(tmpstr, " > /tmp/instar1.jpg", 1, 0);
 				system(tmpstr);
+				printf("-> %s\n", tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
 			if(cam2 != NULL)
@@ -77,6 +78,7 @@ int show_control()
 				if(getconfigint("instar_alterwebif", NULL) == 1)
 					tmpstr = ostrcat(tmpstr, " > /tmp/instar2.jpg", 1, 0);
 				system(tmpstr);
+				printf("-> %s\n", tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}
 				
