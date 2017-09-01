@@ -1254,16 +1254,19 @@ uint16_t fereadsnr(struct dvbdev* node)
 	props.props = prop;
 	props.num = 1;
 	
-	if(ioctl(node->fd, FE_GET_PROPERTY,  &props) < 0)
+	if(ioctl(node->fd, FE_GET_PROPERTY,  &props) < 0 && errno != ERANGE)
 	{
 		perr("FE_GET_PROPERTY");
 	}
-	for(unsigned int i=0; i<prop[0].u.st.len; i++)
+	else
 	{
-		if (prop[0].u.st.stat[i].scale == FE_SCALE_DECIBEL)
-			signalqualitydb = prop[0].u.st.stat[i].svalue / 10;
-		else if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
-			signalquality = prop[0].u.st.stat[i].svalue;
+		for(unsigned int i=0; i<prop[0].u.st.len; i++)
+		{
+			if (prop[0].u.st.stat[i].scale == FE_SCALE_DECIBEL)
+				signalqualitydb = prop[0].u.st.stat[i].svalue / 10;
+			else if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
+				signalquality = prop[0].u.st.stat[i].svalue;
+		}
 	}
 #endif	
 	if(!signalquality && !signalqualitydb)
@@ -1297,14 +1300,15 @@ uint16_t fereadsnr(struct dvbdev* node)
 		{
 			signalquality = snr;
 		}
-#ifdef MIPSEL
-		if(node->feinfo->type == FE_QPSK)
-			signalquality = (ret >= sat_max ? 65536 : ret * 65536 / sat_max);
-		else if(node->feinfo->type == FE_QAM)
-			signalquality = (ret >= cab_max ? 65536 : ret * 65536 / cab_max);
-		else if(node->feinfo->type == FE_OFDM)
-			signalquality = (ret >= ter_max ? 65536 : ret * 65536 / ter_max);
-#endif
+		else
+		{
+			if(node->feinfo->type == FE_QPSK)
+				signalquality = (ret >= sat_max ? 65536 : ret * 65536 / sat_max);
+			else if(node->feinfo->type == FE_QAM)
+				signalquality = (ret >= cab_max ? 65536 : ret * 65536 / cab_max);
+			else if(node->feinfo->type == FE_OFDM)
+				signalquality = (ret >= ter_max ? 65536 : ret * 65536 / ter_max);
+		}
 	}
 	debug(200, "frontend snr = %02x", (signalquality * 100) / 0xffff);
 	return signalquality;
