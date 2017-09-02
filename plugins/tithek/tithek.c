@@ -115,6 +115,7 @@ void start(void)
 	tithekmlehd = 1;
 	amazonlogin = 0;
 	python = 0;
+	ytbgdownload = 0;
 	
 //change markcolor
 	long tmplistboxselectcol = status.listboxselectcol;

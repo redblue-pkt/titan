@@ -13,6 +13,7 @@ int titheksolarmovie = 0;
 int tithekmlehd = 0;
 int amazonlogin = 0;
 int python = 0;
+int ytbgdownload = 0;
 
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
@@ -1457,7 +1458,8 @@ void backgroundytdl(char* link, char* filename)
 	free(cmd), cmd = NULL;
 	if(ret == 1)
 		textbox(_("Message"), _("Can't start download.\nPlease try later."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-
+	else
+		ytbgdownload = 1;
 }
 
 void backgrounddl(char* link, char* filename)
@@ -1660,17 +1662,33 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	}
 	else if(tmpstr1 != NULL)
 	{
-		char* title2 = ostrcat(((struct tithek*)listbox->select->handle)->title, NULL, 0, 0);
-		char* filename = createfilename(title, title2, 0);
+//		char* title2 = ostrcat(((struct tithek*)listbox->select->handle)->title, NULL, 0, 0);
+//		char* filename = createfilename(title, title2, 0);
 //		char* filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title);
-		free(title2), title2 = NULL;
-		debug(99, "filename: %s", filename);
+
+		debug(99, "::: START :::::::::::::::::::::::::::::::::::::::::::::::::::");
+		debug(99, "flag: %d", ((struct tithek*)listbox->select->handle)->flag);
+		debug(99, "title: %s", ((struct tithek*)listbox->select->handle)->title);
+		debug(99, "menutitle: %s", ((struct tithek*)listbox->select->handle)->menutitle);
+
+		char* filename = NULL;
+		filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title, 0);
 
 		if(!file_exist(filename))
 		{
 			writesys(filename, "1", 0);
 			debug(99, "create newfile %s", filename);
 		}
+		free(filename), filename = NULL;
+
+//		filename = createfilename(((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->flag);
+//		free(filename), filename = NULL;
+
+//		filename = createfilename(title, NULL, ((struct tithek*)listbox->select->handle)->flag);
+//		free(filename), filename = NULL;
+
+		filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->flag);
+		debug(99, "::: END ::::::::::::::::::::::::::::::::::::::::::::::::::::");
 
 		char* keyconf = NULL;
 		char* skintitle = _("Choice Playback");
@@ -2650,7 +2668,8 @@ why ?
 
 		freetithek();
 		delallfiles("/tmp/tithek", NULL);
-		system("rm -rf /tmp/localhoster");
+		if(ytbgdownload == 0)
+			system("rm -rf /tmp/localhoster");
 		system("rm -rf /tmp/localparser");
 		system("rm -rf /tmp/localcache");
 		system("rm -rf /tmp/parser");

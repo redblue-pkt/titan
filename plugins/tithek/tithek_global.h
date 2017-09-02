@@ -688,6 +688,7 @@ char* createfilename(char* title, char* title2, int flag)
 	debug(99, "title: %s title2: %s", title, title2);
 	char* filename = NULL;
 	char* tmpstr = NULL;
+	char* tmpstr2 = NULL;
 
 	if(title2 != NULL)
 	{
@@ -697,17 +698,108 @@ char* createfilename(char* title, char* title2, int flag)
 	else
 		tmpstr = ostrcat(title, NULL, 0, 0);
 
-	tmpstr = string_replace_all(" - ", "_", tmpstr, 1);
-//	filename = string_replace_all(") (", ")_(", filename, 1);
-	tmpstr = string_replace_all(" ", "-", tmpstr, 1);
-	tmpstr = string_replace_all("(", "", tmpstr, 1);
-	tmpstr = string_replace_all(")", "", tmpstr, 1);
-	tmpstr = string_replace_all("/", "-", tmpstr, 1);
+	if(flag >= 1)
+	{
+		tmpstr2 = ostrcat(_("Tithek - Mainmenu - Favoriten"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr2 = ostrcat(_("Tithek - Mainmenu"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr = string_replace_all("Tips und Tricks - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Internet TV - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Internet Radio - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("ARD - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("ZDF - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("FilmOn - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("MyVideo - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Netzkino - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("KinoX - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Movie4k - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Movie2k - ", "", tmpstr, 1);
+
+		tmpstr = string_replace_all("Beeg ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Burning Series ", "", tmpstr, 1);
+		tmpstr = string_replace_all("CricFree ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Giga ", "", tmpstr, 1);
+		tmpstr = string_replace_all("KKiste ", "", tmpstr, 1);
+		tmpstr = string_replace_all("NBA-On-Demand ", "", tmpstr, 1);
+		tmpstr = string_replace_all("StreamLive ", "", tmpstr, 1);
+		tmpstr = string_replace_all("TheSolarMovie ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Youtube ", "", tmpstr, 1);
+
+		tmpstr2 = ostrcat(_("Category"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr2 = ostrcat(_("Cine Films"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr2 = ostrcat(_("Search (local)"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr2 = ostrcat(_("Search (20)"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr2 = ostrcat(_("Search Cast"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr2 = ostrcat(_("Search"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr2 = ostrcat(_("All Sorted"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr2 = ostrcat(_("A-Z"), " - ", 0, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+		free(tmpstr2); tmpstr2 = NULL;
+
+		tmpstr = string_replace_all("(Flash - Shell script) - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Genres - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("All Series - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Channels - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Kinofilme - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Neue Filme - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Movies (Year) - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Movies (Genre) - ", "", tmpstr, 1);
+		tmpstr = string_replace_all("Series - ", "", tmpstr, 1);
+
+	//	tmpstr = ostrcat(tmpstr, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+	//	tmpstr = ostrcat(tmpstr, title2, 1, 0);
+
+		tmpstr = ostrcat(tmpstr, ".mp4", 1, 0);
+		tmpstr = string_replace_all("/", ".", tmpstr, 1);
+		tmpstr = string_replace_all(" ", ".", tmpstr, 1);
+		tmpstr = string_replace_all("-", "_", tmpstr, 1);
+		tmpstr = string_replace_all("._.", "_", tmpstr, 1);
+		tmpstr = string_replace_all(".._", "_", tmpstr, 1);
+		tmpstr = string_replace_all("..", ".", tmpstr, 1);
+	}
+	else
+	{
+		tmpstr = string_replace_all(" - ", "_", tmpstr, 1);
+	//	filename = string_replace_all(") (", ")_(", filename, 1);
+		tmpstr = string_replace_all(" ", ".", tmpstr, 1);
+		tmpstr = string_replace_all("(", "", tmpstr, 1);
+		tmpstr = string_replace_all(")", "", tmpstr, 1);
+		tmpstr = string_replace_all("/", ".", tmpstr, 1);
+
+	}
 
 	if(flag == 0)
 		filename = ostrcat("/mnt/swapextensions/player/", tmpstr, 0, 0);
-	if(flag == 1)
+	else if(flag == 1)
 		filename = ostrcat("/mnt/swapextensions/player/FAV_", tmpstr, 0, 0);
+	else
+		filename = ostrcat(tmpstr, NULL, 0, 0);
 
 	free(tmpstr), tmpstr = NULL;
 	debug(99, "filename: %s", filename);
