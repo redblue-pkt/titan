@@ -570,8 +570,8 @@ int screenlistbox(struct skin* grid, struct skin* listbox,struct skin* countlabe
 	return 1;
 }
 
-//char* createfilename(char* title, struct skin* listbox)
-char* createfilename(char* title, char* title2)
+//char* crea(char* title, struct skin* listbox)
+char* createfilename1(char* title, char* title2)
 {
 	char* filename = NULL;
 	char* tmpstr2 = NULL;
@@ -657,6 +657,65 @@ char* createfilename(char* title, char* title2)
 
 	return filename;
 }
+/*
+			printf("flag=%d\n", titheknode->flag);
+			printf("title=%s\n", titheknode->title);
+			printf("menutitle=%s\n", titheknode->menutitle);
+			printf("skin title=%s\n", title);
+			printf("titheklink=%s\n", titheklink);
+
+			if(title != NULL)
+				tmpstr1 = ostrcat(title, " - ", 0, 0);
+			else
+				tmpstr1 = ostrcat(titheknode->menutitle, " - ", 0, 0);
+
+			tmpstr1 = ostrcat(tmpstr1, titheknode->title, 1, 0);
+//			tmpstr1 = ostrcat(tmpstr1, ".mp4", 1, 0);
+
+			tmpstr1 = string_replace_all(" - ", "_", tmpstr1, 1);
+
+			tmpstr1 = string_replace_all(") (", ")_(", tmpstr1, 1);
+			tmpstr1 = string_replace_all(" ", "-", tmpstr1, 1);
+			printf("tmpstr1=%s\n", tmpstr1);
+
+			tmpstr2 = ostrcat("/mnt/swapextensions/player/", tmpstr1, 0, 0);
+			free(tmpstr1), tmpstr1 = NULL;
+*/
+
+//char* createfilename(char* title, struct skin* listbox)
+char* createfilename(char* title, char* title2, int flag)
+{
+	debug(99, "title: %s title2: %s", title, title2);
+	char* filename = NULL;
+	char* tmpstr = NULL;
+
+	if(title2 != NULL)
+	{
+		tmpstr = ostrcat(title, " - ", 0, 0);
+		tmpstr = ostrcat(tmpstr, title2, 1, 0);
+	}
+	else
+		tmpstr = ostrcat(title, NULL, 0, 0);
+
+	tmpstr = string_replace_all(" - ", "_", tmpstr, 1);
+//	filename = string_replace_all(") (", ")_(", filename, 1);
+	tmpstr = string_replace_all(" ", "-", tmpstr, 1);
+	tmpstr = string_replace_all("(", "", tmpstr, 1);
+	tmpstr = string_replace_all(")", "", tmpstr, 1);
+	tmpstr = string_replace_all("/", "-", tmpstr, 1);
+
+	if(flag == 0)
+		filename = ostrcat("/mnt/swapextensions/player/", tmpstr, 0, 0);
+	if(flag == 1)
+		filename = ostrcat("/mnt/swapextensions/player/FAV_", tmpstr, 0, 0);
+
+	free(tmpstr), tmpstr = NULL;
+	debug(99, "filename: %s", filename);
+
+	return filename;
+}
+
+
 
 int all_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
