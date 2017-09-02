@@ -358,6 +358,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					if(mirrormaxtmp != NULL)
 						mirrormax = atoi(mirrormaxtmp);
 
+					debug(99, "### START ####################################################");
+
 					for(j = 1; j < mirrormax + 1; j++)
 					{
 						debug(99, "(%d/%d) (%d/%d) ret1[i].part: %s",i ,max ,j ,mirrormax, ret1[i].part);
@@ -365,13 +367,23 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
 
 						hlink = string_resub("rel=\"", "amp;Mirror", ret1[i].part, 0);
-						hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
-						hlink = ostrcat(hlink, "Mirror=", 0, 0);
 
-						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-						pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
-
-						pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
+						if (hlink == NULL)
+						{
+							hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
+							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
+							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+							pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+							pathnew = ostrcat(pathnewtmp, NULL, 0, 0);
+						}
+						else
+						{
+							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
+							hlink = ostrcat(hlink, "Mirror=", 0, 0);
+							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+							pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
+						}
 						debug(99, "(%d/%d) (%d/%d)hnr: %s hlink: %s hname: %s pathnewtmp: %s",i ,max ,j ,mirrormax ,hnr ,hlink ,hname ,pathnewtmp);
 						free(pathnewtmp), pathnewtmp= NULL;
 
@@ -490,14 +502,15 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						type = 14;
 
 						debug(99, "-------------------------------");
-						if(ostrcmp(url, url2) != 0)
-						{
-							debug(99, "(%d/%d) (%d/%d) %s (Part1) url: %s extra: %s",i ,max ,j ,mirrormax ,hname ,url ,extra);
-						}
-						else
-						{
+//						if(ostrcmp(url, url2) != 0)
+//						{
+//							debug(99, "(%d/%d) (%d/%d) %s (Part1) url: %s extra: %s",i ,max ,j ,mirrormax ,hname ,url ,extra);
+//						}
+//						else
+//						{
 							debug(99, "(%d/%d) (%d/%d) %s url: %s extra: %s",i ,max ,j ,mirrormax ,hname ,url ,extra);
-						}
+//						}
+						debug(99, "-------------------------------");
 
 						incount += 1;
 						line = ostrcat(line, hname, 1, 0);
@@ -663,6 +676,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						free(pichname), pichname = NULL;
 						free(extra), extra = NULL;
 					}
+					debug(99, "### END #####################################################");
 				}
 			}
 			free(ret1), ret1 = NULL;
@@ -791,16 +805,40 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						mirrormax = atoi(mirrormaxtmp);
 					free(mirrormaxtmp), mirrormaxtmp= NULL;
 
+					debug(99, "### START ####################################################");
+
 					for(j = 1; j < mirrormax + 1; j++)
 					{
 						debug(99, "(%d/%d) (%d/%d) ret1[i].part: %s",i ,max ,j ,mirrormax, ret1[i].part);
 
 						hnr = string_resub("<li id=\"Hoster_", "\"", ret1[i].part, 0);
 
-						hlink = string_resub("rel=\"", "amp;Mirror", ret1[i].part, 0);
-						hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
-						hlink = ostrcat(hlink, "Mirror=", 0, 0);
+//						hlink = string_resub("rel=\"", "amp;Mirror", ret1[i].part, 0);
+//						hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
+//						hlink = ostrcat(hlink, "Mirror=", 0, 0);
 
+//////////
+						hlink = string_resub("rel=\"", "amp;Mirror", ret1[i].part, 0);
+
+						if (hlink == NULL)
+						{
+							hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
+							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
+							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+							pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+							pathnew = ostrcat(pathnewtmp, NULL, 0, 0);
+						}
+						else
+						{
+							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
+							hlink = ostrcat(hlink, "Mirror=", 0, 0);
+							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+							pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
+						}
+						debug(99, "(%d/%d) (%d/%d)hnr: %s hlink: %s hname: %s pathnewtmp: %s",i ,max ,j ,mirrormax ,hnr ,hlink ,hname ,pathnewtmp);
+						free(pathnewtmp), pathnewtmp= NULL;
+//////////
 						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
 						pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 
@@ -825,39 +863,39 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						hlink = string_replace("http://kinox.me//Stream/", "", hlink, 1);					
 						hlink = string_replace("http://kinox.me/Stream/", "", hlink, 1);
 										
-						debug(99, "pathnew: %s", pathnew);
+//						debug(99, "pathnew: %s", pathnew);
 						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-						debug(99, "tmpstr1 1: %s", tmpstr1);
+//						debug(99, "tmpstr1 1: %s", tmpstr1);
 
 						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-						debug(99, "tmpstr1 2: %s", tmpstr1);
+//						debug(99, "tmpstr1 2: %s", tmpstr1);
 
 						if(ostrstr(tmpstr1, "<iframe src=") != NULL)
 						{
 							url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
-							debug(99, "iframe1.1 url: %s", url);
+//							debug(99, "iframe1.1 url: %s", url);
 						}
 						else if(ostrstr(tmpstr1, "/iframe>") != NULL)
 						{
 							free(pathnew), pathnew = NULL;
 							pathnew = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
-							debug(99, "iframe2.1 pathnew: %s", pathnew);
+//							debug(99, "iframe2.1 pathnew: %s", pathnew);
 							free(tmpstr1), tmpstr1 = NULL;
 							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
-							debug(99, "iframe2.2 tmpstr1: %s", tmpstr1);
+//							debug(99, "iframe2.2 tmpstr1: %s", tmpstr1);
 							tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-							debug(99, "iframe2.3 tmpstr1: %s", tmpstr1);
+//							debug(99, "iframe2.3 tmpstr1: %s", tmpstr1);
 
 							if(ostrstr(tmpstr1, "<iframe src=") != NULL)
 							{
 								url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
-								debug(99, "iframe2.4 url: %s", url);
+//								debug(99, "iframe2.4 url: %s", url);
 							}
 						}
 						else
 						{
 							tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
-							debug(99, "tmpstr1 3: %s", tmpstr1);
+//							debug(99, "tmpstr1 3: %s", tmpstr1);
 							url = ostrcat(tmpstr1, NULL, 0, 0);
 						}
 	
@@ -865,6 +903,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 
 						debug(99, "-------------------------------");
 						debug(99, "(%d/%d) (%d/%d) %s url: %s extra: %s", i, max, j, mirrormax, hname, url, extra);
+						debug(99, "-------------------------------");
 							
 						incount += 1;
 
@@ -910,6 +949,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						free(pichname), pichname = NULL;
 						free(extra), extra = NULL;
 					}
+					debug(99, "### END #####################################################");
 				}
 			}
 			free(ret1), ret1 = NULL;

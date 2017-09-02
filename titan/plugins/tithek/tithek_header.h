@@ -2,7 +2,7 @@
 #define TITHEK_HEADER_H
 
 //char* createfilename(char* title, struct skin* listbox);
-char* createfilename(char* title, char* title2);
+char* createfilename(char* title, char* title2, int flag);
 char* jsunpack(char* input);
 char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, char* referer, int flag);
 int amazon_login();
