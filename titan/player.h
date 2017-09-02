@@ -1222,7 +1222,7 @@ int playerstart(char* file)
 				progressive_playback_set(1);
 
 //			if(ostrcmp(getconfig("av_ac3mode", NULL), "downmix") == 0)
-#ifndef MIPSEL
+#ifndef ARM
 			if(status.downmix == 1)
 			{
 				dts_software_decoder_set(1);
