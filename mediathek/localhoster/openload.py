@@ -379,7 +379,7 @@ class OpenLoadResolver(object):
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
 #        web_url = "https://openload.co/embed/SVMiyZR_yM4/Game_of_Thrones_S07E07_Der_Drache_und_der_Wolf_German_AC3_Dubbed_AmazonHD.mkv"
-        web_url = "https://openload.co/embed/8ATYb_yCakU/pso-atomic_ts.sd.mkv"
+#        web_url = "https://openload.co/embed/8ATYb_yCakU/pso-atomic_ts.sd.mkv"
         headers = {
             'Referer': web_url
         }
