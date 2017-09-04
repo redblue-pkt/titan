@@ -303,11 +303,15 @@ void screenadjust()
 	addchoicebox(debuglevel, "81", tmpstr);
 	free(tmpstr), tmpstr = NULL;
 
+	tmpstr = ostrcat("88 - ", _("Tithek"), 0, 0);
+	addchoicebox(debuglevel, "88", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+
 	tmpstr = ostrcat("90 - ", _("Screensaver"), 0, 0);
 	addchoicebox(debuglevel, "90", tmpstr);
 	free(tmpstr), tmpstr = NULL;
 
-	tmpstr = ostrcat("99 - ", _("Tithek/HTTP Header/Community"), 0, 0);
+	tmpstr = ostrcat("99 - ", _("HTTP Header/Community"), 0, 0);
 	addchoicebox(debuglevel, "99", tmpstr);
 	free(tmpstr), tmpstr = NULL;
 

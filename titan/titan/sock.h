@@ -610,7 +610,7 @@ unsigned long getchunkedlen(int sock, int timeout)
 	}
 
 	len = strtol(chunked, NULL, 16);
-	debug(99, "chunkedlen=%u", len); 
+	debug(88, "chunkedlen=%u", len); 
 	return len;
 }
 
@@ -730,9 +730,9 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		pbuf++;
 	}
 	
-	debug(99, "-----------------------------------------------------------------");	
-	debug(99, "header: %s", tmpbuf);
-	debug(99, "-----------------------------------------------------------------");
+	debug(88, "-----------------------------------------------------------------");	
+	debug(88, "header: %s", tmpbuf);
+	debug(88, "-----------------------------------------------------------------");
 
 	if(flag == 2)
 	{
@@ -848,7 +848,7 @@ end:
 
 	if(gzip != 0)
 	{
-		debug(99, "http unzip start");
+		debug(88, "http unzip start");
 		int unzipret = 0, outlen = 0;
 		char* outbuf = NULL;
 		
@@ -883,7 +883,7 @@ end:
 		{
 			err("no mem");
 		}
-		debug(99, "http unzip end");
+		debug(88, "http unzip end");
 	}
 
 	if(filename == NULL)
