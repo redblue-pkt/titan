@@ -85,6 +85,9 @@ search()
 	            j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub("http://openloadmovie.co/", "", newpage, newpage)
+				gsub("https://openloadmovie.co/", "", newpage, newpage)
+				gsub("http://openloadmovie.me/", "", newpage, newpage)
+				gsub("https://openloadmovie.me/", "", newpage, newpage)
 
 				i = index($0, "<img src=\"") + 10
 	            j = index(substr($0, i), "\"") - 1
@@ -116,6 +119,7 @@ search()
 
 hoster()
 {
+	#<iframe class="metaframe rptss" src="https://openload.co/embed/5EhZ1cmxtvE/Rangoon_%282017%29_DVDRip.mp4" frameborder="0" allowfullscreen></iframe></div> </div><div class="control"><nav class="player"><ul class="options"><li><a><i class="icon-menu"></i> <b>Options</b></a><ul class="idTabs"><li><a class="options" href="#option-1">Openload </a></li> </ul></li></ul></nav><span class="qualityx">DVD</span><nav class="controles"><ul class="list"><li><a class="lightSwitcher" href="javascript:void(0);"><i class="icon-wb_sunny"></i></a></li></ul></nav></div></div><script type="text/javascript">$(document).ready(function(){$("#oscuridad").css("height", $(document).height()).hide();$(".lightSwitcher").click(function(){$("#oscuridad").toggle();if ($("#oscuridad").is(":hidden"))
 	#<iframe class="metaframe rptss" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://openload.co/embed/-eH6UStG_Ok/Kong%3A_Skull_Island_%282017%29.mp4" frameborder="0" allowfullscreen></iframe>
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE/ | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
@@ -130,9 +134,16 @@ hoster()
 			/<iframe class=/ \
 			{
 				i = index($0, "data-lazy-src=\"") + 15
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
-				print newpage 
+
+				if(newpage ~ /\(data\) \{alert\(/)
+				{
+					i = index($0, "src=\"") + 5
+		            		j = index(substr($0, i), "\"") - 1
+					newpage = substr($0, i, j)
+				}
+				print newpage
 				next
 			}
 		# schreibe alles in die list datei
