@@ -373,7 +373,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
 							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-							pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+							pathnewtmp = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
 							pathnew = ostrcat(pathnewtmp, NULL, 0, 0);
 						}
 						else
@@ -381,7 +381,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 							hlink = ostrcat(hlink, "Mirror=", 0, 0);
 							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-							pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+							pathnewtmp = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
 							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
 						}
 						debug(99, "(%d/%d) (%d/%d)hnr: %s hlink: %s hname: %s pathnewtmp: %s",i ,max ,j ,mirrormax ,hnr ,hlink ,hname ,pathnewtmp);
@@ -395,26 +395,33 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 						titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, NULL, NULL, pathnew);
 
-						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+
+//						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
-							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+//							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 						}
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
-							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+//							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 						}
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
-							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+//							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 						}
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
-							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+//							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 						}
 						free(pathnew), pathnew = NULL;
 
@@ -825,7 +832,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 							hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
 							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-							pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+							pathnewtmp = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
 							pathnew = ostrcat(pathnewtmp, NULL, 0, 0);
 						}
 						else
@@ -833,7 +840,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 							hlink = ostrcat(hlink, "Mirror=", 0, 0);
 							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-							pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+							pathnewtmp = ostrcat("kinox.me/aGET/Mirror/", hlink, 0, 0);
 							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
 						}
 						debug(99, "(%d/%d) (%d/%d)hnr: %s hlink: %s hname: %s pathnewtmp: %s",i ,max ,j ,mirrormax ,hnr ,hlink ,hname ,pathnewtmp);
@@ -864,7 +871,8 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						hlink = string_replace("http://kinox.me/Stream/", "", hlink, 1);
 										
 //						debug(99, "pathnew: %s", pathnew);
-						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+//						tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 //						debug(99, "tmpstr1 1: %s", tmpstr1);
 
 						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
