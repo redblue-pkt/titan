@@ -246,7 +246,7 @@ search()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	search) $INPUT;;
 	category) $INPUT;;

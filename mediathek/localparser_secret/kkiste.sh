@@ -313,7 +313,7 @@ episodelist()
 
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	videos) $INPUT;;
 	parts) $INPUT;;

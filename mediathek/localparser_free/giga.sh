@@ -95,7 +95,7 @@ page()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	category) $INPUT;;
 	page) $INPUT;;
