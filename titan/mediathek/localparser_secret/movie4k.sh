@@ -55,8 +55,51 @@ mainmenu()
 {
 	echo "Kino#$SRC $SRC kino 'index.php?lang=de'#http://atemio.dyndns.tv/mediathek/menu/kino.jpg#kino.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Movies (A-Z)#$SRC $SRC sorted#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Movies (Genre)#$SRC $SRC genre#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Search#$SRC $SRC search 'movies.php?list=search&search=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
+}
+
+genre()
+{
+	watchlist="
+		movies-genre-1-Action.html
+		movies-genre-58-Adult.html
+		movies-genre-4-Adventure.html
+		movies-genre-5-Animation.html
+		movies-genre-6-Biography.html
+		movies-genre-27-Bollywood.html
+		movies-genre-3-Comedy.html
+		movies-genre-7-Crime.html
+		movies-genre-8-Documentary.html
+		movies-genre-2-Drama.html
+		movies-genre-9-Family.html
+		movies-genre-10-Fantasy.html
+		movies-genre-13-History.html
+		movies-genre-14-Horror.html
+		movies-genre-15-Music.html
+		movies-genre-56-Musical.html
+		movies-genre-17-Mystery.html
+		movies-genre-26-Other.html
+		movies-genre-59-Reality-TV.html
+		movies-genre-20-Romance.html
+		movies-genre-21-Sci-Fi.html
+		movies-genre-55-Short.html
+		movies-genre-22-Sport.html
+		movies-genre-23-Thriller.html
+		movies-genre-24-War.html
+		movies-genre-25-Western.html
+		"
+	rm $TMP/$FILENAME.list > /dev/null 2>&1
+
+	for ROUND0 in $watchlist; do
+		TITLE=`echo $ROUND0 | cut -d"-" -f4 | sed 's/.html//'`
+		NUMMER=`echo $ROUND0 | cut -d"-" -f3`
+
+		filename=`echo $TITLE |tr [A-Z] [a-z]`	
+		echo "$TITLE#$SRC $SRC search 'movies-genre-$NUMMER-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	done
+  	echo "$TMP/$FILENAME.list"
 }
 
 sorted()
@@ -245,4 +288,5 @@ case $INPUT in
 	search) $INPUT;;
 	kino) $INPUT;;
 	sorted) $INPUT;;
+	genre) $INPUT;;
 esac
