@@ -59,7 +59,7 @@ class OpenLoadResolver(object):
     pattern = '(?://|\.)(openload\.(?:io|co))/(?:embed|f)/([0-9a-zA-Z-_]+)'
 
     def __init__(self):
-        self.net = Net()
+        self.net = Net(cookie_file='/mnt/network/cookies', cloudflare=True)
         self.headers = {'User-Agent': common.ANDROID_USER_AGENT}
         url = str(sys.argv[1])
         host = self.get_host_and_id(url)[0]
@@ -269,7 +269,9 @@ class OpenLoadResolver(object):
 
     def GetDukPath(self):
 #        return "/tmp/localhoster/bin/duk.arm"
-        return "/tmp/localhoster/bin/duk.mipsel"
+	arch = self.command("cat /etc/.arch")
+#        print "arch", arch
+        return "/tmp/localhoster/bin/duk.%s" % (arch)
  #       return "/tmp/localhoster/bin/duk.sh4"
 
 #        return config.plugins.iptvplayer.dukpath.value
@@ -385,6 +387,8 @@ class OpenLoadResolver(object):
         }
         headers.update(self.headers)
         data = self.net.http_GET(web_url, headers=headers).content
+        ret = self.net.save_cookies('/mnt/network/cookies')
+
 #        print "data", data
         baseUrl = web_url
  #       baseUrl = "https://openload.co/embed/SVMiyZR_yM4/Game_of_Thrones_S07E07_Der_Drache_und_der_Wolf_German_AC3_Dubbed_AmazonHD.mkv"
