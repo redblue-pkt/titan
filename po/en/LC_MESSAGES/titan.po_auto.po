@@ -673,7 +673,7 @@ msgstr ""
 "\n"
 "Aborting Backup"
 
-#: skin_default_skin.xml.h:57 tithek_global.h:635 tithek_global.h:761
+#: skin_default_skin.xml.h:57 tithek_global.h:637 tithek_global.h:763
 #: webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
@@ -860,7 +860,7 @@ msgstr ""
 msgid "All Channels"
 msgstr ""
 
-#: tithek_global.h:631 tithek_global.h:757
+#: tithek_global.h:633 tithek_global.h:759
 msgid "All Sorted"
 msgstr ""
 
@@ -1957,7 +1957,7 @@ msgstr "cancel"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_global.h:611 tithek_global.h:733
+#: tithek_global.h:613 tithek_global.h:735
 msgid "Category"
 msgstr ""
 
@@ -2250,7 +2250,7 @@ msgstr ""
 msgid "Ci-Modul internal Menu"
 msgstr ""
 
-#: tithek_global.h:737
+#: tithek_global.h:739
 msgid "Cine Films"
 msgstr ""
 
@@ -3301,7 +3301,7 @@ msgstr "ERROR: can't set marker in this file"
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1089 titan.c:1098 titan.c:1227
 #: titan.c:1248 titan.c:1254 titan.c:1265 titan.c:1271 tithek.c:103
-#: tithek_global.h:213 tithek.h:749 tithek.h:1433 tithek.h:1460 tithek.h:1517
+#: tithek_global.h:215 tithek.h:749 tithek.h:1433 tithek.h:1460 tithek.h:1517
 #: tithek.h:1650 tithek.h:1659 tithek.h:1829 tithek.h:1858 tithek.h:1874
 #: tithek.h:2108 tithek.h:2268 tithek.h:2553 tithek.h:2599 tithek.h:2617
 #: tithek.h:2630 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
@@ -6025,7 +6025,7 @@ msgstr ""
 #: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:213 tithek.h:749
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:215 tithek.h:749
 #: tithek.h:1433 tithek.h:1460 tithek.h:1517 tithek.h:1650 tithek.h:1659
 #: tithek.h:1829 tithek.h:1858 tithek.h:2108 tithek.h:2268 tithek.h:2553
 #: tithek.h:2599 tithek.h:2617 tithek.h:2630 tiwakeup.h:66 tiwakeup.h:68
@@ -6630,7 +6630,7 @@ msgstr "Fritzbox Username (optional)"
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
 #: titan.c:1089 titan.c:1098 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:213 tithek.h:749
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:215 tithek.h:749
 #: tithek.h:1433 tithek.h:1460 tithek.h:1517 tithek.h:1650 tithek.h:1659
 #: tithek.h:1829 tithek.h:1858 tithek.h:1874 tithek.h:2108 tithek.h:2268
 #: tithek.h:2553 tithek.h:2599 tithek.h:2617 tithek.h:2630 tiwakeup.h:66
@@ -8724,8 +8724,8 @@ msgstr ""
 #: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
-#: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:988
-#: kinox.h:990 mlehd.h:90 mlehd.h:92 movie2k.h:74 movie2k.h:76 movie2k.h:231
+#: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:996
+#: kinox.h:998 mlehd.h:90 mlehd.h:92 movie2k.h:74 movie2k.h:76 movie2k.h:231
 #: movie2k.h:233 movie4k.h:146 movie4k.h:148 movie4k.h:303 movie4k.h:305
 #: myvideo.h:231 myvideo.h:233 myvideo.h:375 myvideo.h:377 nbastream.h:221
 #: nbastream.h:223 netzkino.h:13 netzkino.h:15 nowtv.h:133 nowtv.h:135
@@ -8733,22 +8733,22 @@ msgstr ""
 #: rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:553 solarmovie.h:138
 #: solarmovie.h:140 solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:627 tithek_global.h:753 tithek_global.h:821
-#: tithek_global.h:823 tithek_global.h:1334 tithek_global.h:1336 tmdb.h:898
+#: tithek_global.h:629 tithek_global.h:755 tithek_global.h:823
+#: tithek_global.h:825 tithek_global.h:1336 tithek_global.h:1338 tmdb.h:898
 #: tvtoast.h:530 tvtoast.h:532 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr ""
 
-#: tithek_global.h:619 tithek_global.h:745
+#: tithek_global.h:621 tithek_global.h:747
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_global.h:615 tithek_global.h:741
+#: tithek_global.h:617 tithek_global.h:743
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_global.h:623 tithek_global.h:749
+#: tithek_global.h:625 tithek_global.h:751
 msgid "Search Cast"
 msgstr ""
 
@@ -9964,7 +9964,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:213 tithek.h:2553
+#: tithek_global.h:215 tithek.h:2553
 msgid "The hoster is not yet supported !"
 msgstr "The hoster is not supported at present!"
 
@@ -10292,11 +10292,11 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:128 tithek_global.h:585 tithek_global.h:707
+#: tithek.c:128 tithek_global.h:587 tithek_global.h:709
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Mainmenu"
 
-#: tithek_global.h:581 tithek_global.h:703 tithek.h:1919 tithek.h:2055
+#: tithek_global.h:583 tithek_global.h:705 tithek.h:1919 tithek.h:2055
 #: tithek.h:2595 tithek.h:2613 tithek.h:2626 tithek.h:2643
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
