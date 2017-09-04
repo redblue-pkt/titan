@@ -1689,11 +1689,11 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: adjust.h:395
+#: adjust.h:399
 msgid "CA"
 msgstr ""
 
-#: adjust.h:338
+#: adjust.h:342
 msgid "CA Device"
 msgstr ""
 
@@ -2048,7 +2048,7 @@ msgstr "Список каналов"
 msgid "Channel List selection"
 msgstr ""
 
-#: adjust.h:387
+#: adjust.h:391
 msgid "Channel Scan"
 msgstr ""
 
@@ -2634,7 +2634,7 @@ msgstr ""
 msgid "DTS-HD Mode"
 msgstr ""
 
-#: adjust.h:334
+#: adjust.h:338
 msgid "DVB Devices"
 msgstr ""
 
@@ -2646,7 +2646,7 @@ msgstr ""
 msgid "DVBS2"
 msgstr ""
 
-#: adjust.h:362 tpk_showname.h:27
+#: adjust.h:366 tpk_showname.h:27
 msgid "DVD Player"
 msgstr "DVD плеер"
 
@@ -3001,7 +3001,7 @@ msgstr "Загрузки"
 msgid "Draw"
 msgstr ""
 
-#: adjust.h:391
+#: adjust.h:395
 msgid "Draw Screen"
 msgstr ""
 
@@ -3143,7 +3143,7 @@ msgstr "Поиск EPG"
 msgid "EPG Settings"
 msgstr "Параметры EPG"
 
-#: adjust.h:370
+#: adjust.h:374
 msgid "EPG Task"
 msgstr ""
 
@@ -3759,7 +3759,7 @@ msgstr ""
 msgid "File Manager"
 msgstr "Файловый менеджер"
 
-#: adjust.h:411
+#: adjust.h:415
 msgid "File Operation"
 msgstr ""
 
@@ -4022,7 +4022,7 @@ msgstr ""
 msgid "Frage"
 msgstr "Вопрос"
 
-#: adjust.h:383
+#: adjust.h:387
 msgid "Framebuffer"
 msgstr ""
 
@@ -4199,7 +4199,7 @@ msgstr ""
 msgid "Git Changelog Full"
 msgstr "Журнал изменений GIT (Полный)"
 
-#: adjust.h:314
+#: adjust.h:318
 msgid "Global"
 msgstr ""
 
@@ -4334,7 +4334,11 @@ msgstr "Вход HDMI"
 msgid "HOSTNAME"
 msgstr "Имя хоста"
 
-#: adjust.h:342
+#: adjust.h:314
+msgid "HTTP Header/Community"
+msgstr ""
+
+#: adjust.h:346
 msgid "HTTP Server/Stream/Record"
 msgstr ""
 
@@ -4776,7 +4780,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: adjust.h:350
+#: adjust.h:354
 msgid "ID3"
 msgstr ""
 
@@ -5809,7 +5813,7 @@ msgstr "Медиацентр"
 msgid "MediaCenter FolderIcons"
 msgstr ""
 
-#: adjust.h:399
+#: adjust.h:403
 msgid "MediaDB"
 msgstr "Плагин MediaDB"
 
@@ -5871,7 +5875,7 @@ msgstr "Плагин MediaDB"
 msgid "MediaDB scan finished"
 msgstr "Сканиравание MediaDB завершено"
 
-#: adjust.h:326
+#: adjust.h:330
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
@@ -6239,7 +6243,7 @@ msgstr "Музыка"
 msgid "Mute"
 msgstr "Без звука"
 
-#: adjust.h:407
+#: adjust.h:411
 msgid "Mutex"
 msgstr ""
 
@@ -6358,7 +6362,7 @@ msgstr ""
 msgid "News"
 msgstr "Последние новости"
 
-#: adjust.h:379 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:402
+#: adjust.h:383 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:402
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Новости от разработчиков"
@@ -6719,7 +6723,7 @@ msgstr ""
 msgid "Old Audiofw"
 msgstr "Cтарые аудио FW"
 
-#: adjust.h:375
+#: adjust.h:379
 msgid "Old Entry"
 msgstr ""
 
@@ -6977,7 +6981,7 @@ msgstr ""
 msgid "Photos postet"
 msgstr "Фото отправил"
 
-#: adjust.h:419 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
+#: adjust.h:423 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
 #: webif_index.atemio6200.h:64 webif_index.atemio6200.h:120
 #: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
 #: webif_index.atemio-nemesis.h:64 webif_index.atemio-nemesis.h:120
@@ -7650,7 +7654,7 @@ msgstr "Радио плеер"
 msgid "Radio: "
 msgstr "Радио"
 
-#: adjust.h:346
+#: adjust.h:350
 msgid "Radiotext"
 msgstr "Радиотекст"
 
@@ -8261,7 +8265,7 @@ msgstr "SID"
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr "SMB клиент"
 
-#: adjust.h:415
+#: adjust.h:419
 msgid "SMTP"
 msgstr ""
 
@@ -8538,7 +8542,7 @@ msgstr "Фантастика"
 msgid "Score:"
 msgstr "Оценка"
 
-#: adjust.h:306 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
+#: adjust.h:310 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
 #: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
 msgid "Screensaver"
 msgstr "Заставка"
@@ -9590,7 +9594,7 @@ msgstr ""
 msgid "Streaming succesfull stopped."
 msgstr "Поток остановлен"
 
-#: adjust.h:318
+#: adjust.h:322
 msgid "Stringconvert"
 msgstr ""
 
@@ -9607,7 +9611,7 @@ msgstr "Субканал"
 msgid "Subservices"
 msgstr "Субканал"
 
-#: adjust.h:354 skin_default_skin.xml.h:627 webif_index.atemio5200.h:65
+#: adjust.h:358 skin_default_skin.xml.h:627 webif_index.atemio5200.h:65
 #: webif_index.atemio5200.h:121 webif_index.atemio6200.h:65
 #: webif_index.atemio6200.h:121 webif_index.atemio7600.h:27
 #: webif_index.atemio7600.h:79 webif_index.atemio-nemesis.h:65
@@ -9770,7 +9774,7 @@ msgstr "Плагины"
 msgid "TMDb Movie Database Plugin"
 msgstr ""
 
-#: adjust.h:322
+#: adjust.h:326
 msgid "TPK"
 msgstr ""
 
@@ -10037,7 +10041,7 @@ msgstr "Триллер"
 msgid "Thu"
 msgstr ""
 
-#: adjust.h:358
+#: adjust.h:362
 msgid "Thumbnails"
 msgstr ""
 
@@ -10272,6 +10276,10 @@ msgstr "Веб-контроль TitanNit"
 msgid "TitanNit on fire"
 msgstr ""
 
+#: adjust.h:306
+msgid "Tithek"
+msgstr ""
+
 #: tithek.c:128 tithek_global.h:587 tithek_global.h:709
 msgid "Tithek - Mainmenu"
 msgstr "Главное меню"
@@ -10283,10 +10291,6 @@ msgstr "Фавориты"
 
 #: webif_playurl.h:4
 msgid "Tithek Hoster URL with http://"
-msgstr ""
-
-#: adjust.h:310
-msgid "Tithek/HTTP Header/Community"
 msgstr ""
 
 #: mediadb.h:2518 plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:664
@@ -11801,7 +11805,7 @@ msgstr "Пусто"
 msgid "e"
 msgstr ""
 
-#: adjust.h:330
+#: adjust.h:334
 msgid "ePlayer"
 msgstr ""
 
@@ -11885,7 +11889,7 @@ msgstr ""
 msgid "extensionsmenu"
 msgstr "Меню расширений"
 
-#: adjust.h:152 adjust.h:450 httpdfunc.h:4381 httpdfunc.h:4866
+#: adjust.h:152 adjust.h:454 httpdfunc.h:4381 httpdfunc.h:4866
 #: httpdsettings.h:50
 msgid "extern"
 msgstr "Внешний"
@@ -12105,7 +12109,7 @@ msgstr "Установлен"
 msgid "interfacelist"
 msgstr ""
 
-#: adjust.h:153 adjust.h:451 httpdfunc.h:4388 httpdfunc.h:4873
+#: adjust.h:153 adjust.h:455 httpdfunc.h:4388 httpdfunc.h:4873
 #: httpdsettings.h:49
 msgid "intern"
 msgstr "Внутренний"
@@ -12373,7 +12377,7 @@ msgstr "Автостарт NFS сервера"
 #: adjust.h:68 adjust.h:83 adjust.h:92 adjust.h:97 adjust.h:126 adjust.h:156
 #: adjust.h:166 adjust.h:170 adjust.h:196 adjust.h:200 adjust.h:208
 #: adjust.h:212 adjust.h:216 adjust.h:222 adjust.h:226 adjust.h:233
-#: adjust.h:237 adjust.h:243 adjust.h:249 adjust.h:459 autotimer.c:453
+#: adjust.h:237 adjust.h:243 adjust.h:249 adjust.h:463 autotimer.c:453
 #: autotimer.c:486 avsettings.h:165 avsettings.h:250 avsettings.h:255
 #: avsettings.h:267 avsettings.h:279 avsettings.h:292 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
