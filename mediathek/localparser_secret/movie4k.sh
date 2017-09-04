@@ -96,7 +96,7 @@ genre()
 		TITLE=`echo $ROUND0 | cut -d"-" -f4 | sed 's/.html//'`
 		NUMMER=`echo $ROUND0 | cut -d"-" -f3`
 
-		filename=`echo $TITLE |tr [A-Z] [a-z]`	
+		filename=`echo $TITLE | tr [A-Z] [a-z]`	
 		echo "$TITLE#$SRC $SRC search 'movies-genre-$NUMMER-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 	done
   	echo "$TMP/$FILENAME.list"
@@ -110,7 +110,7 @@ sorted()
 
 	for ROUND0 in $watchlist; do
 		TITLE=`echo $ROUND0`
-		filename=`echo $TITLE`
+		filename=`echo $TITLE | tr [A-Z] [a-z]`
 		echo "$TITLE#$SRC $SRC search 'movies-all-$ROUND0-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 	done
   	echo "$TMP/$FILENAME.list"
