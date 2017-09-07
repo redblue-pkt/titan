@@ -794,9 +794,23 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag != 2) node->type = NOTHING;
 		if(flag == 4) node->type = STILLPIC;
 		
-		audiostop(node->audiodev);
-		if(checkbox("VUSOLO2") == 1) videoclearbuffer(node->videodev);
-		videostop(node->videodev, clear);
+		if(checkbox("DM900") == 1 
+		{
+			videofreeze(status.aktservice->videodev);
+			dmxstart(status.aktservice->dmxaudiodev);
+			audioplay(status.aktservice->audiodev);
+			audiopause(status.aktservice->audiodev);
+			videoclearbuffer(status.aktservice->videodev);
+			audioclearbuffer(status.aktservice->audiodev);
+			videoslowmotion(status.aktservice->videodev, 0);
+			videofastforward(status.aktservice->videodev, 0);
+		}
+		else
+		{
+			audiostop(node->audiodev);
+			if(checkbox("VUSOLO2") == 1) videoclearbuffer(node->videodev);
+			videostop(node->videodev, clear);
+		}
 
 		int	fastzap = getconfigint("fastzap", NULL);
 
