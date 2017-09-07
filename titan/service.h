@@ -796,12 +796,9 @@ int servicestop(struct service *node, int clear, int flag)
 		
 		if(checkbox("DM900") == 1)
 		{
+			audiostop(status.aktservice->audiodev);
+			dmxstop(status.aktservice->dmxaudiodev);
 			videofreeze(status.aktservice->videodev);
-			dmxstart(status.aktservice->dmxaudiodev);
-			audioplay(status.aktservice->audiodev);
-			audiopause(status.aktservice->audiodev);
-			videoclearbuffer(status.aktservice->videodev);
-			audioclearbuffer(status.aktservice->audiodev);
 			videoslowmotion(status.aktservice->videodev, 0);
 			videofastforward(status.aktservice->videodev, 0);
 		}
