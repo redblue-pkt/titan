@@ -794,7 +794,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag != 2) node->type = NOTHING;
 		if(flag == 4) node->type = STILLPIC;
 		
-		if(checkbox("DM900") == 1 
+		if(checkbox("DM900") == 1)
 		{
 			videofreeze(status.aktservice->videodev);
 			dmxstart(status.aktservice->dmxaudiodev);
