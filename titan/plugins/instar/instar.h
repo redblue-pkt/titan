@@ -47,7 +47,7 @@ int show_control()
 					tmpstr = ostrcat(cam1, "/image", 0, 0);
 				else if(getconfigint("instar_1", NULL) == 5)
 				{
-					tmpstr = ostrcat(cam1, "/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2", 0, 0);
+					tmpstr = ostrcat(cam1, "/cgi-bin/CGIProxy.fcgi?cmd%3DsnapPicture2", 0, 0);
 					tmpstr = ostrcat(tmpstr, cam11, 1, 0);
 				}
 				else
@@ -70,7 +70,7 @@ int show_control()
 					tmpstr = ostrcat(cam2, "/image", 0, 0);
 				else if(getconfigint("instar_2", NULL) == 5)
 				{
-					tmpstr = ostrcat(cam2, "/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2", 0, 0);
+					tmpstr = ostrcat(cam2, "/cgi-bin/CGIProxy.fcgi?cmd%3DsnapPicture2", 0, 0);
 					tmpstr = ostrcat(tmpstr, cam21, 1, 0);
 				}
 				else
@@ -390,10 +390,10 @@ void instar_main()
 					cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1IP", NULL), 1, 0);
 					cam1 = ostrcat(cam1, ":",1, 0);
 					cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1Port", NULL), 1, 0);
-					cam11 = ostrcat("&usr=", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
-					cam11 = ostrcat(cam11, "&pwd=", 1, 0);
+					cam11 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
+					cam11 = ostrcat(cam11, "%26pwd%3D", 1, 0);
 					cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
-					cam11 = ostrcat(cam11, "&", 1, 0);
+					//cam11 = ostrcat(cam11, "&", 1, 0);
 					
 				}
 			}
@@ -429,10 +429,10 @@ void instar_main()
 					cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2IP", NULL), 1, 0);
 					cam2 = ostrcat(cam2, ":",1, 0);
 					cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Port", NULL), 1, 0);
-					cam21 = ostrcat("&usr=", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
-					cam21 = ostrcat(cam21, "&pwd=", 1, 0);
+					cam21 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
+					cam21 = ostrcat(cam21, "%26pwd%3D", 1, 0);
 					cam21 = ostrcat(cam21, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
-					cam21 = ostrcat(cam21, "&", 1, 0);
+					//cam21 = ostrcat(cam21, "&", 1, 0);
 				}				
 			}
 					
