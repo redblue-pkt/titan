@@ -300,6 +300,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 #endif		
 	audiostop(status.aktservice->audiodev);
+	if(checkbox("DM900") == 1)
+		dmxstop(status.aktservice->dmxaudiodev);
 	//demux pcr start
 	if(flag == 0 && chnode->pcrpid > 0)
 	{
@@ -434,7 +436,11 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
 				audiopause(audionode);
 			if(status.mute != 1)
+			{
+				if(checkbox("DM900") == 1)
+					dmxstart(status.aktservice->dmxaudiodev);
 				audioplay(audionode);
+			}
 		}
 		else
 			err("can't get free audio dev");
@@ -484,7 +490,11 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		//setmute(0);
 	}
 	if(status.mute != 1)
+	{
+		if(checkbox("DM900") == 1)
+					dmxstart(status.aktservice->dmxaudiodev);
 		audioplay(status.aktservice->audiodev);
+	}
 #endif
 	
 	//check pmt if not done
@@ -794,21 +804,12 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag != 2) node->type = NOTHING;
 		if(flag == 4) node->type = STILLPIC;
 		
+		audiostop(node->audiodev);
 		if(checkbox("DM900") == 1)
-		{
-			audiostop(status.aktservice->audiodev);
-			dmxstop(status.aktservice->dmxaudiodev);
-			videofreeze(status.aktservice->videodev);
-			videoslowmotion(status.aktservice->videodev, 0);
-			videofastforward(status.aktservice->videodev, 0);
-		}
-		else
-		{
-			audiostop(node->audiodev);
-			if(checkbox("VUSOLO2") == 1) videoclearbuffer(node->videodev);
-			videostop(node->videodev, clear);
-		}
-
+				dmxstop(node->dmxaudiodev);
+		if(checkbox("VUSOLO2") == 1) videoclearbuffer(node->videodev);
+		videostop(node->videodev, clear);
+		
 		int	fastzap = getconfigint("fastzap", NULL);
 
 		if(flag == 3) flag = 0;
