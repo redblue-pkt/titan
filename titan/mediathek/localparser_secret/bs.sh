@@ -229,7 +229,9 @@ BEGIN { in_hosterlist = 0
 
 hoster()
 {
-	STREAM=`$curlbin -o - $URL$PARAM | awk '
+	URL=`echo $URL | sed 's!//bs.to/out/!//bs.to/api/watch/!'
+	HEADER=`$BIN /tmp/localhoster/bs.py $URL`
+	STREAM=`$curlbin $HEADER -o - $URL$PARAM | awk '
 /class=\"hoster-player\"/ { i = index($0, "<a href=\"") + 9
                             j = index(substr($0, i), "\"") - 1
                             url = substr($0, i, j)
@@ -256,7 +258,7 @@ hoster()
 }
 
 case $INPUT in
-#	init) $INPUT;;
+	init) $INPUT;;
 	mainmenu) $INPUT;;
 	genres) $INPUT;;
 	series) $INPUT;;
