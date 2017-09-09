@@ -229,9 +229,25 @@ BEGIN { in_hosterlist = 0
 
 hoster()
 {
-	URL=`echo $URL | sed 's!//bs.to/out/!//bs.to/api/watch/!'`
-	HEADER=`$BIN /tmp/localhoster/bs.py $URL`
-	STREAM=`$curlbin $HEADER -o - $URL$PARAM | awk '
+	STREAM=`$curlbin -o - $URL$PARAM | awk '
+/class=\"hoster-player\"/ { i = index($0, "<a href=\"") + 9
+                            j = index(substr($0, i), "\"") - 1
+                            url = substr($0, i, j)
+                            print url
+                            next
+                          }
+'`
+
+	STREAM=`echo $STREAM | sed 's!https://bs.to/out/!watch/!'`
+	HEADER=`$BIN /tmp/localhoster/bs.py $STREAM`
+
+	$curlbin -H "$HEADER" -o - $URL/api/$STREAM >/tmp/tithek/$PARSER.hoster.1
+	cat /tmp/tithek/$PARSER.hoster.1 | grep fullurl | sed 's!fullurl!\nfullurl!' | grep ^fullurl | cut -d'"' -f3 | tr -d '\\'
+}
+
+hosterold()
+{
+	STREAM=`$curlbin -o - $URL$PARAM | awk '
 /class=\"hoster-player\"/ { i = index($0, "<a href=\"") + 9
                             j = index(substr($0, i), "\"") - 1
                             url = substr($0, i, j)
