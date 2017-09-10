@@ -57,6 +57,10 @@ msgstr ""
 msgid "%"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:3
+msgid "'"
+msgstr ""
+
 #: tmdb.h:883
 msgid "( --votes-- )"
 msgstr ""
@@ -155,7 +159,7 @@ msgid ""
 msgstr ""
 
 #: plugins_catcatch_skin.xml.h:1 plugins_sudoku_skin.xml.h:2
-#: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:4
+#: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:5
 #: skins_catcatch_skin.xml.h:1 skins_sudoku_skin.xml.h:2
 #: skins_zapback_skin.xml.h:1 webif_index.atemio5200.h:31
 #: webif_index.atemio5200.h:87 webif_index.atemio6200.h:31
@@ -187,7 +191,7 @@ msgid "0 C"
 msgstr ""
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:2
-#: skin_default_keyskin.xml.h:5 skins_catcatch_skin.xml.h:2
+#: skin_default_keyskin.xml.h:6 skins_catcatch_skin.xml.h:2
 #: webif_index.atemio5200.h:18 webif_index.atemio5200.h:21
 #: webif_index.atemio5200.h:77 webif_index.atemio6200.h:18
 #: webif_index.atemio6200.h:21 webif_index.atemio6200.h:77
@@ -302,7 +306,7 @@ msgstr ""
 msgid "1s"
 msgstr "s"
 
-#: mediadbsettings.h:57 skin_default_keyskin.xml.h:6
+#: mediadbsettings.h:57 skin_default_keyskin.xml.h:7
 #: webif_index.atemio5200.h:22 webif_index.atemio5200.h:78
 #: webif_index.atemio6200.h:22 webif_index.atemio6200.h:78
 #: webif_index.atemio7600.h:31 webif_index.atemio7600.h:71
@@ -354,7 +358,7 @@ msgstr ""
 msgid "2s"
 msgstr "s"
 
-#: callmon_main.h:135 mediadbsettings.h:58 skin_default_keyskin.xml.h:7
+#: callmon_main.h:135 mediadbsettings.h:58 skin_default_keyskin.xml.h:8
 #: webif_index.atemio5200.h:23 webif_index.atemio5200.h:79
 #: webif_index.atemio6200.h:23 webif_index.atemio6200.h:79
 #: webif_index.atemio7600.h:32 webif_index.atemio7600.h:72
@@ -414,7 +418,7 @@ msgstr ""
 msgid "3s"
 msgstr "s"
 
-#: callmon_main.h:136 mediadbsettings.h:59 skin_default_keyskin.xml.h:8
+#: callmon_main.h:136 mediadbsettings.h:59 skin_default_keyskin.xml.h:9
 #: webif_index.atemio5200.h:24 webif_index.atemio5200.h:80
 #: webif_index.atemio6200.h:24 webif_index.atemio6200.h:80
 #: webif_index.atemio7600.h:33 webif_index.atemio7600.h:73
@@ -465,7 +469,7 @@ msgstr ""
 msgid "4s"
 msgstr "s"
 
-#: callmon_main.h:137 mediadbsettings.h:60 skin_default_keyskin.xml.h:9
+#: callmon_main.h:137 mediadbsettings.h:60 skin_default_keyskin.xml.h:10
 #: webif_index.atemio5200.h:25 webif_index.atemio5200.h:81
 #: webif_index.atemio6200.h:25 webif_index.atemio6200.h:81
 #: webif_index.atemio7600.h:34 webif_index.atemio7600.h:74
@@ -502,7 +506,7 @@ msgstr ""
 msgid "5s (default)"
 msgstr "standard"
 
-#: callmon_main.h:138 skin_default_keyskin.xml.h:10 webif_index.atemio5200.h:26
+#: callmon_main.h:138 skin_default_keyskin.xml.h:11 webif_index.atemio5200.h:26
 #: webif_index.atemio5200.h:82 webif_index.atemio6200.h:26
 #: webif_index.atemio6200.h:82 webif_index.atemio7600.h:35
 #: webif_index.atemio7600.h:75 webif_index.atemio-nemesis.h:26
@@ -542,7 +546,7 @@ msgstr ""
 msgid "60 min"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:11 webif_index.atemio5200.h:27
+#: skin_default_keyskin.xml.h:12 webif_index.atemio5200.h:27
 #: webif_index.atemio5200.h:83 webif_index.atemio6200.h:27
 #: webif_index.atemio6200.h:83 webif_index.atemio7600.h:37
 #: webif_index.atemio7600.h:76 webif_index.atemio-nemesis.h:27
@@ -570,7 +574,7 @@ msgstr ""
 msgid "7 Mhz"
 msgstr ""
 
-#: callmon_main.h:139 skin_default_keyskin.xml.h:12 webif_index.atemio5200.h:28
+#: callmon_main.h:139 skin_default_keyskin.xml.h:13 webif_index.atemio5200.h:28
 #: webif_index.atemio5200.h:84 webif_index.atemio6200.h:28
 #: webif_index.atemio6200.h:84 webif_index.atemio7600.h:36
 #: webif_index.atemio7600.h:77 webif_index.atemio-nemesis.h:28
@@ -606,7 +610,7 @@ msgstr ""
 msgid "8 sec"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:13 webif_index.atemio5200.h:29
+#: skin_default_keyskin.xml.h:14 webif_index.atemio5200.h:29
 #: webif_index.atemio5200.h:85 webif_index.atemio6200.h:29
 #: webif_index.atemio6200.h:85 webif_index.atemio7600.h:38
 #: webif_index.atemio7600.h:78 webif_index.atemio-nemesis.h:29
@@ -646,7 +650,7 @@ msgstr ""
 msgid "???"
 msgstr ""
 
-#: diseqcconfig.h:136
+#: diseqcconfig.h:136 skin_default_keyskin.xml.h:16
 msgid "A"
 msgstr "a"
 
@@ -728,6 +732,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:20
 msgid "ADD ONE"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:19
+msgid "AE"
 msgstr ""
 
 #: skin_default_skin.xml.h:28 webif_channellist.h:1
@@ -1273,7 +1281,7 @@ msgstr ""
 msgid "Avg volume: "
 msgstr ""
 
-#: diseqcconfig.h:137
+#: diseqcconfig.h:137 skin_default_keyskin.xml.h:21
 msgid "B"
 msgstr "b"
 
@@ -1672,6 +1680,10 @@ msgstr ""
 
 #: webif_streamconfig.h:3
 msgid "BuzzPlayer"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:23
+msgid "C"
 msgstr ""
 
 #: lnbconfig.h:148
@@ -2229,7 +2241,7 @@ msgstr ""
 msgid "Cityflash"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:19
+#: skin_default_keyskin.xml.h:24
 msgid "Clear"
 msgstr ""
 
@@ -2533,12 +2545,16 @@ msgstr ""
 msgid "Cutstatus:"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:26
+msgid "D"
+msgstr ""
+
 #: skin_default_skin.xml.h:141
 msgid "DEFAULT"
 msgstr ""
 
 #: play.h:1578 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
-#: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:21
+#: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:143 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
@@ -2995,6 +3011,10 @@ msgstr ""
 
 #: readerconfig.h:397 readerconfig.h:491
 msgid "Dvbapi (enabled)"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:29
+msgid "E"
 msgstr ""
 
 #: tpk_description.h:59
@@ -3538,6 +3558,10 @@ msgid ""
 "A message will be shown when finished."
 msgstr ""
 
+#: skin_default_keyskin.xml.h:31
+msgid "F"
+msgstr ""
+
 #: hwtest.h:685
 msgid "FAIL Flash/Nand (/mnt)"
 msgstr ""
@@ -4065,6 +4089,10 @@ msgstr "Swap"
 msgid "Full Pic"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:33
+msgid "G"
+msgstr ""
+
 #: skinadjust.h:249
 msgid "GB"
 msgstr ""
@@ -4249,6 +4277,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:243
 msgid "Guardinterval:"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:35
+msgid "H"
 msgstr ""
 
 #: hbbtv.h:759
@@ -4718,6 +4750,10 @@ msgstr ""
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:37
+msgid "I"
+msgstr ""
+
 #: tpk_showname.h:44
 msgid "I Hate Comic Sans"
 msgstr ""
@@ -5116,6 +5152,10 @@ msgstr ""
 msgid "Italian"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:39
+msgid "J"
+msgstr ""
+
 #: global.h:6509
 msgid "January"
 msgstr ""
@@ -5135,6 +5175,10 @@ msgstr ""
 
 #: global.h:6514
 msgid "June"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:41
+msgid "K"
 msgstr ""
 
 #: spinner.h:18
@@ -5244,6 +5288,10 @@ msgstr ""
 
 #: kravencfg.c:248
 msgid "KravenHD skin isn't active!"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:43
+msgid "L"
 msgstr ""
 
 #: tpk_showname.h:64
@@ -5579,6 +5627,10 @@ msgstr ""
 
 #: tpk_showname.h:80
 msgid "Lydian Bolt Italic BT"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:45
+msgid "M"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:70 skins_mc_skin.xml.h:70
@@ -6202,6 +6254,10 @@ msgstr ""
 msgid "My Video"
 msgstr "Moje wideo"
 
+#: skin_default_keyskin.xml.h:47
+msgid "N"
+msgstr ""
+
 #: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
 msgid "NEW"
 msgstr ""
@@ -6467,6 +6523,14 @@ msgstr ""
 msgid "Nutzername-Fritzbox (optional)"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:49
+msgid "O"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:51
+msgid "OE"
+msgstr ""
+
 #: about.h:9 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:368 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
@@ -6649,7 +6713,7 @@ msgstr ""
 msgid "Offline Help"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:34 webif_index.atemio5200.h:94
+#: skin_default_keyskin.xml.h:52 webif_index.atemio5200.h:94
 #: webif_index.atemio6200.h:94 webif_index.atemio7600.h:92
 #: webif_index.atemio-nemesis.h:94 webif_index.dm520.h:94
 #: webif_index.dm525.h:94 webif_index.dm7020hd.h:94 webif_index.dm7020hdv2.h:94
@@ -6773,6 +6837,10 @@ msgstr "Taktowanie CPU"
 
 #: skin_default_skin.xml.h:421
 msgid "Overclocking Settings"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:54
+msgid "P"
 msgstr ""
 
 #: skin_default_skin.xml.h:424
@@ -7487,6 +7555,10 @@ msgstr "Nadawca:"
 msgid "Prozesslist"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:56
+msgid "Q"
+msgstr ""
+
 #: transponder.h:491 transponder.h:530
 msgid "QAM 128"
 msgstr ""
@@ -7514,6 +7586,10 @@ msgstr ""
 
 #: transponder.h:477 transponder.h:500 transponder.h:514 transponder.h:536
 msgid "QPSK"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:58
+msgid "R"
 msgstr ""
 
 #: tpk_description.h:124
@@ -8138,6 +8214,10 @@ msgstr "Hangtime"
 msgid "Russian"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:60
+msgid "S"
+msgstr ""
+
 #: blindscanadjust.h:120 skin_default_skin.xml.h:525 webif_channellist.h:2
 msgid "SAT"
 msgstr ""
@@ -8309,6 +8389,10 @@ msgstr ""
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:63
+msgid "SZ"
 msgstr ""
 
 #: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:128
@@ -9306,7 +9390,7 @@ msgstr ""
 msgid "Sound amplifier (external Player)"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:39
+#: skin_default_keyskin.xml.h:61
 msgid "Space"
 msgstr ""
 
@@ -9694,6 +9778,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:636
 msgid "System:"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:65
+msgid "T"
 msgstr ""
 
 #: tpchoice.h:72
@@ -10518,6 +10606,14 @@ msgstr ""
 msgid "Typenbezeichnung"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:67
+msgid "U"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:69
+msgid "UE"
+msgstr ""
+
 #: security.h:2138
 msgid "UFS910 free license"
 msgstr ""
@@ -10682,6 +10778,10 @@ msgstr ""
 #: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:717
 #: skins_networkbrowser_skin.xml.h:33
 msgid "User"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:71
+msgid "V"
 msgstr ""
 
 #: skin_default_skin.xml.h:718
@@ -10869,6 +10969,10 @@ msgstr ""
 
 #: plugins_tmc_skin.xml.h:16 skins_tmc_skin.xml.h:16
 msgid "Votes:"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:73
+msgid "W"
 msgstr ""
 
 #: network.h:699
@@ -11124,6 +11228,10 @@ msgstr ""
 msgid "Writers:"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:75
+msgid "X"
+msgstr ""
+
 #: plugins_sudoku_skin.xml.h:17 skins_sudoku_skin.xml.h:17
 msgid "X-Position"
 msgstr ""
@@ -11172,6 +11280,10 @@ msgstr ""
 msgid "Xupnpd Server"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:77
+msgid "Y"
+msgstr ""
+
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
 msgid "Y-Resolution"
 msgstr "Rozdzielczość:"
@@ -11218,6 +11330,10 @@ msgid ""
 "Stop the box??? "
 msgstr ""
 
+#: skin_default_keyskin.xml.h:79
+msgid "Z"
+msgstr ""
+
 #: plugins_zapback_skin.xml.h:6 skins_zapback_skin.xml.h:6
 msgid "ZapBack"
 msgstr "Kopia"
@@ -11254,15 +11370,15 @@ msgstr ""
 msgid "[T]Lock & Search"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:3
+#: skin_default_keyskin.xml.h:4
 msgid "\\"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:14
+#: skin_default_keyskin.xml.h:15
 msgid "a"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:15
+#: skin_default_keyskin.xml.h:17
 msgid "abc/ABC"
 msgstr ""
 
@@ -11294,7 +11410,7 @@ msgstr ""
 msgid "adjust"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:16
+#: skin_default_keyskin.xml.h:18
 msgid "ae"
 msgstr ""
 
@@ -11408,7 +11524,7 @@ msgstr ""
 msgid "avsettings"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:17
+#: skin_default_keyskin.xml.h:20
 msgid "b"
 msgstr ""
 
@@ -11494,7 +11610,7 @@ msgstr ""
 msgid "burlywood1"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:18
+#: skin_default_keyskin.xml.h:22
 msgid "c"
 msgstr ""
 
@@ -11618,7 +11734,7 @@ msgstr ""
 msgid "cut record files"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:20
+#: skin_default_keyskin.xml.h:25
 msgid "d"
 msgstr ""
 
@@ -11749,7 +11865,7 @@ msgstr ""
 msgid "dummy"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:22
+#: skin_default_keyskin.xml.h:28
 msgid "e"
 msgstr ""
 
@@ -11842,7 +11958,7 @@ msgstr ""
 msgid "extern"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:23
+#: skin_default_keyskin.xml.h:30
 msgid "f"
 msgstr ""
 
@@ -11922,7 +12038,7 @@ msgstr "Port ftp"
 msgid "fullcover"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:24
+#: skin_default_keyskin.xml.h:32
 msgid "g"
 msgstr ""
 
@@ -11956,7 +12072,7 @@ msgstr ""
 msgid "grey"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:25
+#: skin_default_keyskin.xml.h:34
 msgid "h"
 msgstr ""
 
@@ -12001,7 +12117,7 @@ msgstr ""
 msgid "httpdsettings"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:26
+#: skin_default_keyskin.xml.h:36
 msgid "i"
 msgstr ""
 
@@ -12091,7 +12207,7 @@ msgstr "i"
 msgid "ipaddress"
 msgstr "adres IP"
 
-#: skin_default_keyskin.xml.h:27
+#: skin_default_keyskin.xml.h:38
 msgid "j"
 msgstr ""
 
@@ -12102,7 +12218,7 @@ msgstr ""
 msgid "ja"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:28
+#: skin_default_keyskin.xml.h:40
 msgid "k"
 msgstr ""
 
@@ -12122,7 +12238,7 @@ msgstr ""
 msgid "keymaps"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:29
+#: skin_default_keyskin.xml.h:42
 msgid "l"
 msgstr ""
 
@@ -12215,7 +12331,7 @@ msgstr ""
 msgid "low"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:30
+#: skin_default_keyskin.xml.h:44
 msgid "m"
 msgstr ""
 
@@ -12299,7 +12415,7 @@ msgstr ""
 msgid "mvid"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:31
+#: skin_default_keyskin.xml.h:46
 msgid "n"
 msgstr ""
 
@@ -12480,11 +12596,11 @@ msgstr ""
 msgid "numinput"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:32
+#: skin_default_keyskin.xml.h:48
 msgid "o"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:33
+#: skin_default_keyskin.xml.h:50
 msgid "oe"
 msgstr ""
 
@@ -12598,7 +12714,7 @@ msgstr "opcje:"
 msgid "ownpos"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:35
+#: skin_default_keyskin.xml.h:53
 msgid "p"
 msgstr ""
 
@@ -12776,7 +12892,7 @@ msgstr ""
 msgid "puffern"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:36
+#: skin_default_keyskin.xml.h:55
 msgid "q"
 msgstr ""
 
@@ -12784,7 +12900,7 @@ msgstr ""
 msgid "quickmenu"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:37
+#: skin_default_keyskin.xml.h:57
 msgid "r"
 msgstr ""
 
@@ -12889,7 +13005,7 @@ msgstr ""
 msgid "rw"
 msgstr "r"
 
-#: skin_default_keyskin.xml.h:38
+#: skin_default_keyskin.xml.h:59
 msgid "s"
 msgstr ""
 
@@ -13338,11 +13454,11 @@ msgstr ""
 msgid "systemupdatemenu"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:40
+#: skin_default_keyskin.xml.h:62
 msgid "sz"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:41
+#: skin_default_keyskin.xml.h:64
 msgid "t"
 msgstr ""
 
@@ -13482,7 +13598,7 @@ msgstr ""
 msgid "type"
 msgstr "Typ"
 
-#: skin_default_keyskin.xml.h:42
+#: skin_default_keyskin.xml.h:66
 msgid "u"
 msgstr ""
 
@@ -13490,7 +13606,7 @@ msgstr ""
 msgid "udp"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:43
+#: skin_default_keyskin.xml.h:68
 msgid "ue"
 msgstr ""
 
@@ -13605,7 +13721,7 @@ msgstr ""
 msgid "usessl"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:44
+#: skin_default_keyskin.xml.h:70
 msgid "v"
 msgstr ""
 
@@ -13669,7 +13785,7 @@ msgstr ""
 msgid "vs"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:45
+#: skin_default_keyskin.xml.h:72
 msgid "w"
 msgstr ""
 
@@ -13753,7 +13869,7 @@ msgstr ""
 msgid "wsize"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:46
+#: skin_default_keyskin.xml.h:74
 msgid "x"
 msgstr ""
 
@@ -13783,7 +13899,7 @@ msgstr ""
 msgid "xupnpd started."
 msgstr ""
 
-#: skin_default_keyskin.xml.h:47
+#: skin_default_keyskin.xml.h:76
 msgid "y"
 msgstr ""
 
@@ -13859,7 +13975,7 @@ msgstr ""
 msgid "yes / vzap endless"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:48
+#: skin_default_keyskin.xml.h:78
 msgid "z"
 msgstr ""
 
