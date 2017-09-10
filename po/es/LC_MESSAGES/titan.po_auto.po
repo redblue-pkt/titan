@@ -14086,12 +14086,3 @@ msgstr ""
 #: tpk_showname.h:223
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "AE"
-#~ msgstr "Ä"
-
-#~ msgid "OE"
-#~ msgstr "Ö"
-
-#~ msgid "UE"
-#~ msgstr "Ü"
