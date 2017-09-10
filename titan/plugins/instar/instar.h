@@ -5,6 +5,12 @@ char* cam1 = NULL;
 char* cam2 = NULL;
 char* cam11 = NULL;
 char* cam21 = NULL;
+
+char* cam3 = NULL;
+char* cam4 = NULL;
+char* cam31 = NULL;
+char* cam41 = NULL;
+
 struct skin* instar_screen = NULL; 
 struct skin* instar_pic1 = NULL;
 struct skin* instar_actcam1 = NULL;
@@ -77,6 +83,52 @@ int show_control()
 					tmpstr = ostrcat(cam2, "/snapshot.cgi", 0, 0);
 				if(getconfigint("instar_alterwebif", NULL) == 1)
 					tmpstr = ostrcat(tmpstr, " > /tmp/instar2.jpg", 1, 0);
+				system(tmpstr);
+				printf("-> %s\n", tmpstr);
+				free(tmpstr); tmpstr = NULL;
+			}
+			if(cam3 != NULL)
+			{
+				if(getconfigint("instar_3", NULL) == 1)
+					tmpstr = ostrcat(cam3, "/image/jpeg.cgi", 0, 0);
+				else if(getconfigint("instar_3", NULL) == 2)
+					tmpstr = ostrcat(cam3, "/tmpfs/auto.jpg", 0, 0);
+				else if(getconfigint("instar_3", NULL) == 3)
+					tmpstr = ostrcat(cam3, "/onvif/GetSnapshotUri", 0, 0);
+				else if(getconfigint("instar_3", NULL) == 4)
+					tmpstr = ostrcat(cam3, "/image", 0, 0);
+				else if(getconfigint("instar_3", NULL) == 5)
+				{
+					tmpstr = ostrcat(cam3, "/cgi-bin/CGIProxy.fcgi?cmd%3DsnapPicture2", 0, 0);
+					tmpstr = ostrcat(tmpstr, cam31, 1, 0);
+				}
+				else
+					tmpstr = ostrcat(cam3, "/snapshot.cgi", 0, 0);
+				if(getconfigint("instar_alterwebif", NULL) == 1)
+					tmpstr = ostrcat(tmpstr, " > /tmp/instar3.jpg", 1, 0);
+				system(tmpstr);
+				printf("-> %s\n", tmpstr);
+				free(tmpstr); tmpstr = NULL;
+			}
+			if(cam4 != NULL)
+			{
+				if(getconfigint("instar_4", NULL) == 1)
+					tmpstr = ostrcat(cam4, "/image/jpeg.cgi", 0, 0);
+				else if(getconfigint("instar_4", NULL) == 2)
+					tmpstr = ostrcat(cam4, "/tmpfs/auto.jpg", 0, 0);
+				else if(getconfigint("instar_4", NULL) == 3)
+					tmpstr = ostrcat(cam4, "/onvif/GetSnapshotUri", 0, 0);
+				else if(getconfigint("instar_4", NULL) == 4)
+					tmpstr = ostrcat(cam4, "/image", 0, 0);
+				else if(getconfigint("instar_4", NULL) == 5)
+				{
+					tmpstr = ostrcat(cam4, "/cgi-bin/CGIProxy.fcgi?cmd%3DsnapPicture2", 0, 0);
+					tmpstr = ostrcat(tmpstr, cam41, 1, 0);
+				}
+				else
+					tmpstr = ostrcat(cam4, "/snapshot.cgi", 0, 0);
+				if(getconfigint("instar_alterwebif", NULL) == 1)
+					tmpstr = ostrcat(tmpstr, " > /tmp/instar4.jpg", 1, 0);
 				system(tmpstr);
 				printf("-> %s\n", tmpstr);
 				free(tmpstr); tmpstr = NULL;
@@ -183,19 +235,37 @@ int show_control()
 				free(positionstop); positionstop = NULL;
 			}
 			if(rcret == getrcconfigint("rcred", NULL)) {
-				if(actcam == 1 && cam2 != NULL) {
-					actcam = 2;
-					changepic(instar_pic1, "/tmp/instar2.jpg");
-					changetext(instar_actcam1, "CAM2");
-					tempcam = cam2;
-					addlist(myconfig, "InstarActCam", "2");
-				}
-				else if(actcam == 2 && cam1 != NULL) {
+				if(actcam == 4 && cam1 != NULL)
+				{
 					actcam = 1;
 					changepic(instar_pic1, "/tmp/instar1.jpg");
 					changetext(instar_actcam1, "CAM1");
 					tempcam = cam1;
 					addlist(myconfig, "InstarActCam", "1");
+				}
+				else if(actcam == 1 && cam2 != NULL)
+				{
+					actcam = 2;
+					changepic(instar_pic1, "/tmp/instar2.jpg");
+					changetext(instar_actcam1, "CAM2");
+					tempcam = cam2;
+					addlist(myconfig, "InstarActCam", "2");
+				}				
+				else if(actcam == 2 && cam3 != NULL)
+				{
+					actcam = 3;
+					changepic(instar_pic1, "/tmp/instar3.jpg");
+					changetext(instar_actcam1, "CAM3");
+					tempcam = cam3;
+					addlist(myconfig, "InstarActCam", "3");
+				}
+				else if(actcam == 3 && cam4 != NULL)
+				{
+					actcam = 4;
+					changepic(instar_pic1, "/tmp/instar4.jpg");
+					changetext(instar_actcam1, "CAM4");
+					tempcam = cam4;
+					addlist(myconfig, "InstarActCam", "4");
 				}
 			}
 		}
@@ -228,6 +298,18 @@ int instar_settings()
 	struct skin* portCam2 = getscreennode(instar_einstellungen, "portCam2");
 	struct skin* userCam2 = getscreennode(instar_einstellungen, "userCam2");
 	struct skin* passCam2 = getscreennode(instar_einstellungen, "passCam2");
+	struct skin* onCam3 = getscreennode(instar_einstellungen, "onCam3");
+	struct skin* typCam3 = getscreennode(instar_einstellungen, "typCam3");
+	struct skin* ipCam3 = getscreennode(instar_einstellungen, "ipCam3");
+	struct skin* portCam3 = getscreennode(instar_einstellungen, "portCam3");
+	struct skin* userCam3 = getscreennode(instar_einstellungen, "userCam3");
+	struct skin* passCam3 = getscreennode(instar_einstellungen, "passCam3");
+	struct skin* onCam4 = getscreennode(instar_einstellungen, "onCam4");
+	struct skin* typCam4 = getscreennode(instar_einstellungen, "typCam4");
+	struct skin* ipCam4 = getscreennode(instar_einstellungen, "ipCam4");
+	struct skin* portCam4 = getscreennode(instar_einstellungen, "portCam4");
+	struct skin* userCam4 = getscreennode(instar_einstellungen, "userCam4");
+	struct skin* passCam4 = getscreennode(instar_einstellungen, "passCam4");
 	
 	struct skin* tmp = NULL;
 
@@ -277,6 +359,44 @@ int instar_settings()
   changemask(passCam2, "abcdefghijklmnopqrstuvwxyz");
   changeinput(passCam2, getlist(myconfig, "InstarCam2Pass", NULL));
   
+  addchoicebox(onCam3, "aus", _("aus"));
+	addchoicebox(onCam3, "ein", _("ein"));
+	setchoiceboxselection(onCam3, getlist(myconfig, "InstarCam3", NULL));	
+	addchoicebox(typCam3, "0", "0");
+	addchoicebox(typCam3, "1", "1");
+	addchoicebox(typCam3, "2", "2");
+	addchoicebox(typCam3, "3", "3");
+	addchoicebox(typCam3, "4", "4");
+	addchoicebox(typCam3, "5", "5");
+	setchoiceboxselection(typCam3, getconfig("instar_3", NULL));
+	changemask(ipCam3, "abcdefghijklmnopqrstuvwxyz");
+  changeinput(ipCam3, getlist(myconfig, "InstarCam3IP", NULL));
+  changemask(portCam3, "0000");
+  changeinput(portCam3, getlist(myconfig, "InstarCam3Port", NULL));
+  changemask(userCam3, "abcdefghijklmnopqrstuvwxyz");
+  changeinput(userCam3, getlist(myconfig, "InstarCam3User", NULL));
+  changemask(passCam3, "abcdefghijklmnopqrstuvwxyz");
+  changeinput(passCam3, getlist(myconfig, "InstarCam3Pass", NULL));
+  
+  addchoicebox(onCam4, "aus", _("aus"));
+	addchoicebox(onCam4, "ein", _("ein"));
+	setchoiceboxselection(onCam4, getlist(myconfig, "InstarCam4", NULL));	
+	addchoicebox(typCam4, "0", "0");
+	addchoicebox(typCam4, "1", "1");
+	addchoicebox(typCam4, "2", "2");
+	addchoicebox(typCam4, "3", "3");
+	addchoicebox(typCam4, "4", "4");
+	addchoicebox(typCam4, "5", "5");
+	setchoiceboxselection(typCam4, getconfig("instar_4", NULL));
+	changemask(ipCam4, "abcdefghijklmnopqrstuvwxyz");
+  changeinput(ipCam4, getlist(myconfig, "InstarCam4IP", NULL));
+  changemask(portCam4, "0000");
+  changeinput(portCam4, getlist(myconfig, "InstarCam4Port", NULL));
+  changemask(userCam4, "abcdefghijklmnopqrstuvwxyz");
+  changeinput(userCam4, getlist(myconfig, "InstarCam4User", NULL));
+  changemask(passCam4, "abcdefghijklmnopqrstuvwxyz");
+  changeinput(passCam4, getlist(myconfig, "InstarCam4Pass", NULL));
+  
 	drawscreen(instar_einstellungen, 0, 0);
 	addscreenrc(instar_einstellungen, listbox);
 	tmp = listbox->select;
@@ -301,9 +421,16 @@ int instar_settings()
 			addlist(myconfig, "InstarCam2Port", portCam2->ret);
 			addlist(myconfig, "InstarCam2User", userCam2->ret);
 			addlist(myconfig, "InstarCam2Pass", passCam2->ret);
+			addlist(myconfig, "InstarCam3", onCam3->ret);
+			addlist(myconfig, "InstarCam3IP", ipCam3->ret);
+			addlist(myconfig, "InstarCam3Port", portCam3->ret);
+			addlist(myconfig, "InstarCam3User", userCam3->ret);
+			addlist(myconfig, "InstarCam3Pass", passCam3->ret);
 			writelist(myconfig, instarconf);
 			addconfig("instar_1", typCam1->ret);
 			addconfig("instar_2", typCam2->ret);
+			addconfig("instar_3", typCam3->ret);
+			addconfig("instar_4", typCam4->ret);
 			addconfig("instar_alterwebif", alterwebif->ret);
 			if(rcret == getrcconfigint("rcblue", NULL))
 			{
@@ -435,16 +562,107 @@ void instar_main()
 					//cam21 = ostrcat(cam21, "&", 1, 0);
 				}				
 			}
+			
+			if(ostrcmp(getlist(myconfig, "Instarcam3", NULL), "ein") == 0)
+			{
+				if(getconfigint("instar_3", NULL) != 5)
+				{				
+					if(getconfigint("instar_alterwebif", NULL) == 0)
+						cam3 = ostrcat("wget --output-document=/tmp/instar3.jpg http://", getlist(myconfig, "Instarcam3User", NULL), 0, 0);
+					else
+					{
+						cam3 = ostrcat(CURL, " http://", 0, 0);
+						cam3 = ostrcat(cam3, getlist(myconfig, "Instarcam3User", NULL), 1, 0);
+					}
+					cam3 = ostrcat(cam3, ":",1, 0);
+					cam3 = ostrcat(cam3, getlist(myconfig, "Instarcam3Pass", NULL), 1, 0);
+					cam3 = ostrcat(cam3, "@",1, 0);
+					cam3 = ostrcat(cam3, getlist(myconfig, "Instarcam3IP", NULL), 1, 0);
+					cam3 = ostrcat(cam3, ":",1, 0);
+					cam3 = ostrcat(cam3, getlist(myconfig, "Instarcam3Port", NULL), 1, 0);
+				}
+				else
+				{
+					if(getconfigint("instar_alterwebif", NULL) == 0)
+						cam3 = ostrcat("wget --output-document=/tmp/instar3.jpg http://", NULL, 0, 0);
+					else
+					{
+						cam3 = ostrcat(CURL, " http://", 0, 0);
+					}
+					cam3 = ostrcat(cam3, getlist(myconfig, "Instarcam3IP", NULL), 1, 0);
+					cam3 = ostrcat(cam3, ":",1, 0);
+					cam3 = ostrcat(cam3, getlist(myconfig, "Instarcam3Port", NULL), 1, 0);
+					cam31 = ostrcat("%26usr%3D", getlist(myconfig, "Instarcam3User", NULL), 0, 0);
+					cam31 = ostrcat(cam31, "%26pwd%3D", 1, 0);
+					cam31 = ostrcat(cam31, getlist(myconfig, "Instarcam3Pass", NULL), 1, 0);
+					//cam31 = ostrcat(cam31, "&", 1, 0);
+				}				
+			}
+			
+			if(ostrcmp(getlist(myconfig, "Instarcam4", NULL), "ein") == 0)
+			{
+				if(getconfigint("instar_4", NULL) != 5)
+				{				
+					if(getconfigint("instar_alterwebif", NULL) == 0)
+						cam4 = ostrcat("wget --output-document=/tmp/instar4.jpg http://", getlist(myconfig, "Instarcam4User", NULL), 0, 0);
+					else
+					{
+						cam4 = ostrcat(CURL, " http://", 0, 0);
+						cam4 = ostrcat(cam4, getlist(myconfig, "Instarcam4User", NULL), 1, 0);
+					}
+					cam4 = ostrcat(cam4, ":",1, 0);
+					cam4 = ostrcat(cam4, getlist(myconfig, "Instarcam4Pass", NULL), 1, 0);
+					cam4 = ostrcat(cam4, "@",1, 0);
+					cam4 = ostrcat(cam4, getlist(myconfig, "Instarcam4IP", NULL), 1, 0);
+					cam4 = ostrcat(cam4, ":",1, 0);
+					cam4 = ostrcat(cam4, getlist(myconfig, "Instarcam4Port", NULL), 1, 0);
+				}
+				else
+				{
+					if(getconfigint("instar_alterwebif", NULL) == 0)
+						cam4 = ostrcat("wget --output-document=/tmp/instar4.jpg http://", NULL, 0, 0);
+					else
+					{
+						cam4 = ostrcat(CURL, " http://", 0, 0);
+					}
+					cam4 = ostrcat(cam4, getlist(myconfig, "Instarcam4IP", NULL), 1, 0);
+					cam4 = ostrcat(cam4, ":",1, 0);
+					cam4 = ostrcat(cam4, getlist(myconfig, "Instarcam4Port", NULL), 1, 0);
+					cam41 = ostrcat("%26usr%3D", getlist(myconfig, "Instarcam4User", NULL), 0, 0);
+					cam41 = ostrcat(cam41, "%26pwd%3D", 1, 0);
+					cam41 = ostrcat(cam41, getlist(myconfig, "Instarcam4Pass", NULL), 1, 0);
+					//cam41 = ostrcat(cam41, "&", 1, 0);
+				}				
+			}						
 					
 			instar_screen = getscreen("instar_full");
 			instar_pic1 = getscreennode(instar_screen, "pic1");
 			instar_actcam1 = getscreennode(instar_screen, "actcam1");
 	
-			if(ostrcmp(getlist(myconfig, "InstarActCam", NULL), "2") == 0 && ext != 1)
+			
+			if(ext == 1 || ostrcmp(getlist(myconfig, "InstarActCam", NULL), "1") == 0)
+			{
+				actcam = 1;
+				changepic(instar_pic1, "/tmp/instar1.jpg");
+				changetext(instar_actcam1, "CAM1");
+			}		
+			else if(ext == 2 || ostrcmp(getlist(myconfig, "InstarActCam", NULL), "2") == 0)
 			{
 				actcam = 2;
 				changepic(instar_pic1, "/tmp/instar2.jpg");
 				changetext(instar_actcam1, "CAM2");
+			}
+			else if(ostrcmp(getlist(myconfig, "InstarActCam", NULL), "3") == 0)
+			{
+				actcam = 3;
+				changepic(instar_pic1, "/tmp/instar3.jpg");
+				changetext(instar_actcam1, "CAM3");
+			}
+			else if(ostrcmp(getlist(myconfig, "InstarActCam", NULL), "4") == 0)
+			{
+				actcam = 4;
+				changepic(instar_pic1, "/tmp/instar4.jpg");
+				changetext(instar_actcam1, "CAM4");
 			}
 			else
 			{
@@ -459,6 +677,10 @@ void instar_main()
 			free(cam2), cam2 = NULL;
 			free(cam11), cam11 = NULL;
 			free(cam21), cam21 = NULL;
+			free(cam3), cam3 = NULL;
+			free(cam4), cam4 = NULL;
+			free(cam31), cam31 = NULL;
+			free(cam41), cam41 = NULL;
 			
 			if(rcode == 0)
 				break;

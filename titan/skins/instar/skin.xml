@@ -20,6 +20,20 @@
 <node name="portCam2" type="inputboxnum" parent="listbox" valign="middle" posx="0" text="Port-Kamera 2" bordercol="bordercol" bordersize="2" width="100%" height="25">
 <node name="userCam2" type="inputbox" parent="listbox" valign="middle" posx="0" text="Benutzer-Kamera 2" bordercol="bordercol" bordersize="2" width="100%" height="25">
 <node name="passCam2" type="inputbox" parent="listbox" valign="middle" posx="0" text="Passwort-Kamera 2" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="s2" type="inputbox" parent="listbox" valign="middle" posx="0" text=" " bordercol="bordercol" bordersize="2" width="100%" height="15">
+<node name="onCam3" type="choicebox" parent="listbox" valign="middle" posx="0" text="Kamera 3 (Umschalten mit Rot)" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="typCam3" type="choicebox" parent="listbox" valign="middle" posx="0" text="Typ" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="ipCam3" type="inputbox" parent="listbox" valign="middle" posx="0" text="IP-Kamera 3" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="portCam3" type="inputboxnum" parent="listbox" valign="middle" posx="0" text="Port-Kamera 3" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="userCam3" type="inputbox" parent="listbox" valign="middle" posx="0" text="Benutzer-Kamera 3" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="passCam3" type="inputbox" parent="listbox" valign="middle" posx="0" text="Passwort-Kamera 3" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="s3" type="inputbox" parent="listbox" valign="middle" posx="0" text=" " bordercol="bordercol" bordersize="2" width="100%" height="15">
+<node name="onCam4" type="choicebox" parent="listbox" valign="middle" posx="0" text="Kamera 4 (Umschalten mit Rot)" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="typCam4" type="choicebox" parent="listbox" valign="middle" posx="0" text="Typ" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="ipCam4" type="inputbox" parent="listbox" valign="middle" posx="0" text="IP-Kamera 4" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="portCam4" type="inputboxnum" parent="listbox" valign="middle" posx="0" text="Port-Kamera 4" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="userCam4" type="inputbox" parent="listbox" valign="middle" posx="0" text="Benutzer-Kamera 4" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="passCam4" type="inputbox" parent="listbox" valign="middle" posx="0" text="Passwort-Kamera 4" bordercol="bordercol" bordersize="2" width="100%" height="25">
 <node name="b1" text="SAVE" halign="center" valign="middle" bordercol="green" bordersize="2" bordertype="2" posx="0" posy="0" width="150" height="30"/>
 <node name="b2" text="EXIT" halign="center" valign="middle" bordercol="exitcol" bordersize="2" bordertype="2" posx="160" posy="0" width="150" height="30"/>
 <node name="b3" text="START" halign="center" valign="middle" bordercol="blue" bordersize="2" bordertype="2" posx="400" posy="0" width="200" height="30"/>
