@@ -11481,7 +11481,7 @@ msgstr "Аудио/Картинка"
 msgid "audiotrack"
 msgstr "Аудио-трек"
 
-#: instar.h:324 instar.h:343 instar.h:362 instar.h:381
+#: instar.h:332 instar.h:351 instar.h:370 instar.h:389
 msgid "aus"
 msgstr "От"
 
@@ -11853,7 +11853,7 @@ msgstr ""
 msgid "east"
 msgstr "Восток"
 
-#: instar.h:325 instar.h:344 instar.h:363 instar.h:382
+#: instar.h:333 instar.h:352 instar.h:371 instar.h:390
 msgid "ein"
 msgstr "Один"
 
@@ -12172,7 +12172,7 @@ msgid "ipaddress"
 msgstr "IP адрес"
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
-#: callmon_main.h:123 callmon_main.h:127 instar.h:317 lcdpearl1.c:507
+#: callmon_main.h:123 callmon_main.h:127 instar.h:325 lcdpearl1.c:507
 #: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:990 lcdsamsung.c:994
 #: lcdsamsung.c:998
 msgid "ja"
@@ -12364,7 +12364,7 @@ msgid "mvid"
 msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
-#: callmon_main.h:124 callmon_main.h:128 instar.h:316 lcdpearl1.c:506
+#: callmon_main.h:124 callmon_main.h:128 instar.h:324 lcdpearl1.c:506
 #: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:989 lcdsamsung.c:993
 #: lcdsamsung.c:997
 msgid "nein"
