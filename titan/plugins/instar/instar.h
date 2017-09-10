@@ -267,6 +267,14 @@ int show_control()
 					tempcam = cam4;
 					addlist(myconfig, "InstarActCam", "4");
 				}
+				else
+				{
+					actcam = 1;
+					changepic(instar_pic1, "/tmp/instar1.jpg");
+					changetext(instar_actcam1, "CAM1");
+					tempcam = cam1;
+					addlist(myconfig, "InstarActCam", "1");
+				}
 			}
 		}
 	}
