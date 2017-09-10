@@ -135,6 +135,10 @@ msgstr ""
 msgid "--writers--"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:2
+msgid "->"
+msgstr ""
+
 #: pip.h:658 skin_default_skin.xml.h:629
 msgid "->swap<-"
 msgstr ""
@@ -152,7 +156,7 @@ msgid ""
 msgstr ""
 
 #: plugins_catcatch_skin.xml.h:1 plugins_sudoku_skin.xml.h:2
-#: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:2
+#: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:4
 #: skins_catcatch_skin.xml.h:1 skins_sudoku_skin.xml.h:2
 #: skins_zapback_skin.xml.h:1 webif_index.atemio5200.h:31
 #: webif_index.atemio5200.h:87 webif_index.atemio6200.h:31
@@ -184,7 +188,7 @@ msgid "0 C"
 msgstr ""
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:2
-#: skin_default_keyskin.xml.h:3 skins_catcatch_skin.xml.h:2
+#: skin_default_keyskin.xml.h:5 skins_catcatch_skin.xml.h:2
 #: webif_index.atemio5200.h:18 webif_index.atemio5200.h:21
 #: webif_index.atemio5200.h:77 webif_index.atemio6200.h:18
 #: webif_index.atemio6200.h:21 webif_index.atemio6200.h:77
@@ -299,7 +303,7 @@ msgstr ""
 msgid "1s"
 msgstr "s"
 
-#: mediadbsettings.h:57 skin_default_keyskin.xml.h:4
+#: mediadbsettings.h:57 skin_default_keyskin.xml.h:6
 #: webif_index.atemio5200.h:22 webif_index.atemio5200.h:78
 #: webif_index.atemio6200.h:22 webif_index.atemio6200.h:78
 #: webif_index.atemio7600.h:31 webif_index.atemio7600.h:71
@@ -351,7 +355,7 @@ msgstr ""
 msgid "2s"
 msgstr "s"
 
-#: callmon_main.h:135 mediadbsettings.h:58 skin_default_keyskin.xml.h:5
+#: callmon_main.h:135 mediadbsettings.h:58 skin_default_keyskin.xml.h:7
 #: webif_index.atemio5200.h:23 webif_index.atemio5200.h:79
 #: webif_index.atemio6200.h:23 webif_index.atemio6200.h:79
 #: webif_index.atemio7600.h:32 webif_index.atemio7600.h:72
@@ -411,7 +415,7 @@ msgstr ""
 msgid "3s"
 msgstr "s"
 
-#: callmon_main.h:136 mediadbsettings.h:59 skin_default_keyskin.xml.h:6
+#: callmon_main.h:136 mediadbsettings.h:59 skin_default_keyskin.xml.h:8
 #: webif_index.atemio5200.h:24 webif_index.atemio5200.h:80
 #: webif_index.atemio6200.h:24 webif_index.atemio6200.h:80
 #: webif_index.atemio7600.h:33 webif_index.atemio7600.h:73
@@ -462,7 +466,7 @@ msgstr ""
 msgid "4s"
 msgstr "s"
 
-#: callmon_main.h:137 mediadbsettings.h:60 skin_default_keyskin.xml.h:7
+#: callmon_main.h:137 mediadbsettings.h:60 skin_default_keyskin.xml.h:9
 #: webif_index.atemio5200.h:25 webif_index.atemio5200.h:81
 #: webif_index.atemio6200.h:25 webif_index.atemio6200.h:81
 #: webif_index.atemio7600.h:34 webif_index.atemio7600.h:74
@@ -499,7 +503,7 @@ msgstr "500 vòng/phút"
 msgid "5s (default)"
 msgstr "kích thước (mặc định)"
 
-#: callmon_main.h:138 skin_default_keyskin.xml.h:8 webif_index.atemio5200.h:26
+#: callmon_main.h:138 skin_default_keyskin.xml.h:10 webif_index.atemio5200.h:26
 #: webif_index.atemio5200.h:82 webif_index.atemio6200.h:26
 #: webif_index.atemio6200.h:82 webif_index.atemio7600.h:35
 #: webif_index.atemio7600.h:75 webif_index.atemio-nemesis.h:26
@@ -539,7 +543,7 @@ msgstr ""
 msgid "60 min"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:9 webif_index.atemio5200.h:27
+#: skin_default_keyskin.xml.h:11 webif_index.atemio5200.h:27
 #: webif_index.atemio5200.h:83 webif_index.atemio6200.h:27
 #: webif_index.atemio6200.h:83 webif_index.atemio7600.h:37
 #: webif_index.atemio7600.h:76 webif_index.atemio-nemesis.h:27
@@ -567,7 +571,7 @@ msgstr ""
 msgid "7 Mhz"
 msgstr ""
 
-#: callmon_main.h:139 skin_default_keyskin.xml.h:10 webif_index.atemio5200.h:28
+#: callmon_main.h:139 skin_default_keyskin.xml.h:12 webif_index.atemio5200.h:28
 #: webif_index.atemio5200.h:84 webif_index.atemio6200.h:28
 #: webif_index.atemio6200.h:84 webif_index.atemio7600.h:36
 #: webif_index.atemio7600.h:77 webif_index.atemio-nemesis.h:28
@@ -603,7 +607,7 @@ msgstr ""
 msgid "8 sec"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:11 webif_index.atemio5200.h:29
+#: skin_default_keyskin.xml.h:13 webif_index.atemio5200.h:29
 #: webif_index.atemio5200.h:85 webif_index.atemio6200.h:29
 #: webif_index.atemio6200.h:85 webif_index.atemio7600.h:38
 #: webif_index.atemio7600.h:78 webif_index.atemio-nemesis.h:29
@@ -629,6 +633,10 @@ msgstr ""
 
 #: stopifnotused.c:102
 msgid "90"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:1
+msgid "<-"
 msgstr ""
 
 #: plugins_sudoku_skin.xml.h:1 skins_sudoku_skin.xml.h:1
@@ -2245,6 +2253,10 @@ msgstr ""
 msgid "Cityflash"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:19
+msgid "Clear"
+msgstr ""
+
 #: skin_default_skin.xml.h:103
 msgid "Clear before scan"
 msgstr "Xóa trước khi dò"
@@ -2550,9 +2562,9 @@ msgid "DEFAULT"
 msgstr "MẶC ĐỊNH"
 
 #: play.h:1578 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
-#: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:143
-#: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:3
-#: skins_weather_skin.xml.h:2
+#: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:21
+#: skin_default_skin.xml.h:143 skins_networkbrowser_skin.xml.h:6
+#: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Xóa"
 
@@ -6690,12 +6702,13 @@ msgstr ""
 msgid "Offline Help"
 msgstr ""
 
-#: webif_index.atemio5200.h:94 webif_index.atemio6200.h:94
-#: webif_index.atemio7600.h:92 webif_index.atemio-nemesis.h:94
-#: webif_index.dm520.h:94 webif_index.dm525.h:94 webif_index.dm7020hd.h:94
-#: webif_index.dm7020hdv2.h:94 webif_index.dm900.h:94 webif_rc.atemio5200.h:21
-#: webif_rc.atemio520.h:25 webif_rc.atemio530.h:25 webif_rc.atemio6000.h:21
-#: webif_rc.atemio6100.h:21 webif_rc.atemio6200.h:21 webif_rc.atemio7600.h:25
+#: skin_default_keyskin.xml.h:34 webif_index.atemio5200.h:94
+#: webif_index.atemio6200.h:94 webif_index.atemio7600.h:92
+#: webif_index.atemio-nemesis.h:94 webif_index.dm520.h:94
+#: webif_index.dm525.h:94 webif_index.dm7020hd.h:94 webif_index.dm7020hdv2.h:94
+#: webif_index.dm900.h:94 webif_rc.atemio5200.h:21 webif_rc.atemio520.h:25
+#: webif_rc.atemio530.h:25 webif_rc.atemio6000.h:21 webif_rc.atemio6100.h:21
+#: webif_rc.atemio6200.h:21 webif_rc.atemio7600.h:25
 #: webif_rc.atemio-nemesis.h:21 webif_rc.dm520.h:21 webif_rc.dm525.h:21
 #: webif_rc.dm7020hd.h:21 webif_rc.dm7020hdv2.h:21 webif_rc.dm900.h:21
 #: webif_rc.h:21
@@ -9357,6 +9370,10 @@ msgstr ""
 msgid "Sound amplifier (external Player)"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:39
+msgid "Space"
+msgstr ""
+
 #: skin_default_skin.xml.h:602
 msgid "Spanish"
 msgstr "Español"
@@ -11309,8 +11326,16 @@ msgstr ""
 msgid "[T]Lock & Search"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:1
+#: skin_default_keyskin.xml.h:3
 msgid "\\"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:14
+msgid "a"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:15
+msgid "abc/ABC"
 msgstr ""
 
 #: moduleconfig.h:190
@@ -11339,6 +11364,10 @@ msgstr "thêm dịch vụ"
 
 #: webif_help.h:4
 msgid "adjust"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:16
+msgid "ae"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
@@ -11451,6 +11480,10 @@ msgstr "Tự động khởi động"
 msgid "avsettings"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:17
+msgid "b"
+msgstr ""
+
 #: harddisk.h:573
 msgid "backup"
 msgstr "Sao lưu"
@@ -11531,6 +11564,10 @@ msgstr "trình duyệt"
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:18
+msgid "c"
 msgstr ""
 
 #: webif_help.h:12
@@ -11651,6 +11688,10 @@ msgstr ""
 
 #: tpk_description.h:52
 msgid "cut record files"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:20
+msgid "d"
 msgstr ""
 
 #: rectimer.h:1093
@@ -11780,7 +11821,7 @@ msgstr ""
 msgid "dummy"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:12
+#: skin_default_keyskin.xml.h:22
 msgid "e"
 msgstr ""
 
@@ -11873,6 +11914,10 @@ msgstr ""
 msgid "extern"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:23
+msgid "f"
+msgstr ""
+
 #: vfdisplay.h:132
 msgid "fade out/in"
 msgstr ""
@@ -11949,6 +11994,10 @@ msgstr "Cổng ftp"
 msgid "fullcover"
 msgstr "full cover"
 
+#: skin_default_keyskin.xml.h:24
+msgid "g"
+msgstr ""
+
 #: tpk_section.h:5
 msgid "games"
 msgstr "trò chơ"
@@ -11978,6 +12027,10 @@ msgstr ""
 #: screensaveradjust.h:35
 msgid "grey"
 msgstr "màu xám"
+
+#: skin_default_keyskin.xml.h:25
+msgid "h"
+msgstr ""
 
 #: webif_help.h:29
 msgid "harddisk_main"
@@ -12020,7 +12073,7 @@ msgstr ""
 msgid "httpdsettings"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:13
+#: skin_default_keyskin.xml.h:26
 msgid "i"
 msgstr ""
 
@@ -12110,11 +12163,19 @@ msgstr "i"
 msgid "ipaddress"
 msgstr "Địa chỉ IP"
 
+#: skin_default_keyskin.xml.h:27
+msgid "j"
+msgstr ""
+
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:325 lcdpearl1.c:507
 #: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:990 lcdsamsung.c:994
 #: lcdsamsung.c:998
 msgid "ja"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:28
+msgid "k"
 msgstr ""
 
 #: skin_default_skin.xml.h:335
@@ -12131,6 +12192,10 @@ msgstr ""
 
 #: tpk_section.h:7
 msgid "keymaps"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:29
+msgid "l"
 msgstr ""
 
 #: skin_default_skin.xml.h:339
@@ -12222,6 +12287,10 @@ msgstr ""
 msgid "low"
 msgstr "thấp"
 
+#: skin_default_keyskin.xml.h:30
+msgid "m"
+msgstr ""
+
 #: webif_help.h:44
 msgid "mainmenu"
 msgstr ""
@@ -12300,6 +12369,10 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
 msgid "mvid"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:31
+msgid "n"
 msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
@@ -12479,8 +12552,12 @@ msgstr ""
 msgid "numinput"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:14
+#: skin_default_keyskin.xml.h:32
 msgid "o"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:33
+msgid "oe"
 msgstr ""
 
 #: avsettings.h:73 avsettings.h:89 cec.h:627 cec.h:675 fancontrol.h:110
@@ -12593,7 +12670,7 @@ msgstr "tùy chọn"
 msgid "ownpos"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:15
+#: skin_default_keyskin.xml.h:35
 msgid "p"
 msgstr ""
 
@@ -12771,7 +12848,7 @@ msgstr "proxy người sử dụng"
 msgid "puffern"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:16
+#: skin_default_keyskin.xml.h:36
 msgid "q"
 msgstr ""
 
@@ -12779,7 +12856,7 @@ msgstr ""
 msgid "quickmenu"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:17
+#: skin_default_keyskin.xml.h:37
 msgid "r"
 msgstr ""
 
@@ -12882,6 +12959,10 @@ msgstr "Đang chạy"
 
 #: networkbrowser.h:1705
 msgid "rw"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:38
+msgid "s"
 msgstr ""
 
 #: webif_help.h:78
@@ -13329,7 +13410,11 @@ msgstr ""
 msgid "systemupdatemenu"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:18
+#: skin_default_keyskin.xml.h:40
+msgid "sz"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:41
 msgid "t"
 msgstr ""
 
@@ -13469,12 +13554,16 @@ msgstr ""
 msgid "type"
 msgstr "Kiểu"
 
-#: skin_default_keyskin.xml.h:19
+#: skin_default_keyskin.xml.h:42
 msgid "u"
 msgstr ""
 
 #: networkbrowser.h:1701
 msgid "udp"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:43
+msgid "ue"
 msgstr ""
 
 #: diseqcconfig.h:20
@@ -13588,6 +13677,10 @@ msgstr "tên người dùng"
 msgid "usessl"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:44
+msgid "v"
+msgstr ""
+
 #: security.h:2125
 msgid "valid"
 msgstr ""
@@ -13648,7 +13741,7 @@ msgstr ""
 msgid "vs"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:20
+#: skin_default_keyskin.xml.h:45
 msgid "w"
 msgstr ""
 
@@ -13732,6 +13825,10 @@ msgstr "các ngày làm việc"
 msgid "wsize"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:46
+msgid "x"
+msgstr ""
+
 #: tpk_showname.h:222
 msgid "xupnpd"
 msgstr ""
@@ -13756,6 +13853,10 @@ msgstr ""
 
 #: xupnpd.h:81
 msgid "xupnpd started."
+msgstr ""
+
+#: skin_default_keyskin.xml.h:47
+msgid "y"
 msgstr ""
 
 #: screensaveradjust.h:33
@@ -13830,7 +13931,7 @@ msgstr ""
 msgid "yes / vzap endless"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:21
+#: skin_default_keyskin.xml.h:48
 msgid "z"
 msgstr ""
 
