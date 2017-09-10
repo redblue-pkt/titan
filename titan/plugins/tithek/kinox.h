@@ -844,22 +844,22 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
 						}
 						debug(99, "(%d/%d) (%d/%d)hnr: %s hlink: %s hname: %s pathnewtmp: %s",i ,max ,j ,mirrormax ,hnr ,hlink ,hname ,pathnewtmp);
-						free(pathnewtmp), pathnewtmp= NULL;
+						free(pathnewtmp), pathnewtmp = NULL;
 //////////
-						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-						pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
+//						hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
+//						pathnewtmp = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 
 						season = string_resub("&amp;Season=", "\">", ret1[i].part, 0);
 						season = string_replace_all("amp;", "", season, 1);
 
-						pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
+//						pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
 						pathnew = ostrcat(pathnew, "&Season=", 1, 0);
 						pathnew = ostrcat(pathnew, season, 1, 0);
 
 						debug(99, "(%d/%d) (%d/%d) hnr: %s hlink: %s season: %s hname: %s pathnewtmp: %s",i ,max ,j ,mirrormax ,hnr ,hlink ,season ,hname ,pathnewtmp);
  
 						free(season), season= NULL;
-						free(pathnewtmp), pathnewtmp= NULL;
+						free(pathnewtmp), pathnewtmp = NULL;
 
 						pichname = ostrcat(hname, NULL, 0, 0);
 						string_tolower(pichname);
