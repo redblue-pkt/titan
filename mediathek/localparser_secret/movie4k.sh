@@ -62,57 +62,61 @@ mainmenu()
 
 genre()
 {
-	watchlist="
-		movies-genre-1-Action.html
-		movies-genre-58-Adult.html
-		movies-genre-4-Adventure.html
-		movies-genre-5-Animation.html
-		movies-genre-6-Biography.html
-		movies-genre-27-Bollywood.html
-		movies-genre-3-Comedy.html
-		movies-genre-7-Crime.html
-		movies-genre-8-Documentary.html
-		movies-genre-2-Drama.html
-		movies-genre-9-Family.html
-		movies-genre-10-Fantasy.html
-		movies-genre-13-History.html
-		movies-genre-14-Horror.html
-		movies-genre-15-Music.html
-		movies-genre-56-Musical.html
-		movies-genre-17-Mystery.html
-		movies-genre-26-Other.html
-		movies-genre-59-Reality-TV.html
-		movies-genre-20-Romance.html
-		movies-genre-21-Sci-Fi.html
-		movies-genre-55-Short.html
-		movies-genre-22-Sport.html
-		movies-genre-23-Thriller.html
-		movies-genre-24-War.html
-		movies-genre-25-Western.html
-		"
-	rm $TMP/$FILENAME.list > /dev/null 2>&1
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		watchlist="
+			movies-genre-1-Action.html
+			movies-genre-58-Adult.html
+			movies-genre-4-Adventure.html
+			movies-genre-5-Animation.html
+			movies-genre-6-Biography.html
+			movies-genre-27-Bollywood.html
+			movies-genre-3-Comedy.html
+			movies-genre-7-Crime.html
+			movies-genre-8-Documentary.html
+			movies-genre-2-Drama.html
+			movies-genre-9-Family.html
+			movies-genre-10-Fantasy.html
+			movies-genre-13-History.html
+			movies-genre-14-Horror.html
+			movies-genre-15-Music.html
+			movies-genre-56-Musical.html
+			movies-genre-17-Mystery.html
+			movies-genre-26-Other.html
+			movies-genre-59-Reality-TV.html
+			movies-genre-20-Romance.html
+			movies-genre-21-Sci-Fi.html
+			movies-genre-55-Short.html
+			movies-genre-22-Sport.html
+			movies-genre-23-Thriller.html
+			movies-genre-24-War.html
+			movies-genre-25-Western.html
+			"
+		rm $TMP/$FILENAME.list > /dev/null 2>&1
 
-	for ROUND0 in $watchlist; do
-		TITLE=`echo $ROUND0 | cut -d"-" -f4 | sed 's/.html//'`
-		NUMMER=`echo $ROUND0 | cut -d"-" -f3`
+		for ROUND0 in $watchlist; do
+			TITLE=`echo $ROUND0 | cut -d"-" -f4 | sed 's/.html//'`
+			NUMMER=`echo $ROUND0 | cut -d"-" -f3`
 
-		filename=`echo $TITLE | tr [A-Z] [a-z]`	
-		echo "$TITLE#$SRC $SRC search 'movies-genre-$NUMMER-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	done
+			filename=`echo $TITLE | tr [A-Z] [a-z]`	
+			echo "$TITLE#$SRC $SRC search 'movies-genre-$NUMMER-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+		done
+	fi
   	echo "$TMP/$FILENAME.list"
 }
 
 sorted()
 {
-	watchlist="0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		watchlist="0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
 
-	rm $TMP/$FILENAME.list > /dev/null 2>&1
+		rm $TMP/$FILENAME.list > /dev/null 2>&1
 
-	for ROUND0 in $watchlist; do
-		TITLE=`echo $ROUND0`
-		filename=`echo $TITLE | tr [A-Z] [a-z]`
-		echo "$TITLE#$SRC $SRC search 'movies-all-$ROUND0-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	done
+		for ROUND0 in $watchlist; do
+			TITLE=`echo $ROUND0`
+			filename=`echo $TITLE | tr [A-Z] [a-z]`
+			echo "$TITLE#$SRC $SRC search 'movies-all-$ROUND0-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+		done
+	fi
   	echo "$TMP/$FILENAME.list"
 }
 
@@ -191,79 +195,83 @@ search()
 
 kino()
 {
-	if [ -e "$TMP/$FILENAME.list" ] ; then
-		rm $TMP/$FILENAME.list
-	fi
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
 
-	piccount=0
-#	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
-	$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
-	cat $TMP/cache.$FILENAME.1 | grep ^"<a href=" | grep "<img src=" >$TMP/cache.$FILENAME.2
+#	if [ -e "$TMP/$FILENAME.list" ] ; then
+#		rm $TMP/$FILENAME.list
+#	fi
 
-	while read -u 3 ROUND; do
-		ID=`echo $ROUND | cut -d'"' -f1 | tail -n1`
-		PIC=`echo $ROUND | sed 's!<img src=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
-		TITLE=`echo $ROUND | sed 's!title=!\nfound=>!g' | grep ^found= | cut -d'"' -f2 | tail -n1 | sed 's/ kostenlos//'`
-		NEWPAGE=`echo $ROUND | sed 's!<a href=!\nfound=!g' | grep ^found= | cut -d'"' -f2 | tail -n1`
+		piccount=0
+	#	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
+		cat $TMP/cache.$FILENAME.1 | grep ^"<a href=" | grep "<img src=" >$TMP/cache.$FILENAME.2
 
-#echo ID $ID
-#echo PIC $PIC
-#echo TITLE $TITLE
-#echo NEWPAGE $NEWPAGE
+		while read -u 3 ROUND; do
+			ID=`echo $ROUND | cut -d'"' -f1 | tail -n1`
+			PIC=`echo $ROUND | sed 's!<img src=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
+			TITLE=`echo $ROUND | sed 's!title=!\nfound=>!g' | grep ^found= | cut -d'"' -f2 | tail -n1 | sed 's/ kostenlos//'`
+			NEWPAGE=`echo $ROUND | sed 's!<a href=!\nfound=!g' | grep ^found= | cut -d'"' -f2 | tail -n1`
 
-		if [ -z "$PIC" ]; then
-			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-		fi
+	#echo ID $ID
+	#echo PIC $PIC
+	#echo TITLE $TITLE
+	#echo NEWPAGE $NEWPAGE
 
-		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-
-		if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-			if [ ! -e $TMP/$FILENAME.list ];then
-				touch $TMP/$FILENAME.list
+			if [ -z "$PIC" ]; then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 			fi
-			piccount=`expr $piccount + 1`
-			LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
 
-			echo "$LINE" >> $TMP/$FILENAME.list
-		fi
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-	done 3<$TMP/cache.$FILENAME.2
-	rm $TMP/cache.* > /dev/null 2>&1
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				if [ ! -e $TMP/$FILENAME.list ];then
+					touch $TMP/$FILENAME.list
+				fi
+				piccount=`expr $piccount + 1`
+				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
 
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+
+		done 3<$TMP/cache.$FILENAME.2
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
 	echo "$TMP/$FILENAME.list"
 }
 
 hosterlist()
 {
-	if [ -e "$TMP/$FILENAME.list" ] ; then
-		rm $TMP/$FILENAME.list
-	fi
-#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
-	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+	#	if [ -e "$TMP/$FILENAME.list" ] ; then
+	#		rm $TMP/$FILENAME.list
+	#	fi
+	#	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
 
-	cat $TMP/cache.$FILENAME.1 | grep ^"links\[" >$TMP/cache.$FILENAME.2
+		cat $TMP/cache.$FILENAME.1 | grep ^"links\[" >$TMP/cache.$FILENAME.2
 
-	while read -u 3 ROUND; do
-		NEWPAGE="`echo $ROUND | cut -d '"' -f9 | sed 's/;/%3B/g'`"
-		TITLE=`echo $ROUND | sed 's!&nbsp;!\nfound=<!g' | grep ^"found=<" | cut -d"<" -f2` 		
+		while read -u 3 ROUND; do
+			NEWPAGE="`echo $ROUND | cut -d '"' -f9 | sed 's/;/%3B/g'`"
+			TITLE=`echo $ROUND | sed 's!&nbsp;!\nfound=<!g' | grep ^"found=<" | cut -d"<" -f2` 		
 	
-		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
-			PIC=`echo $TITLE | tr [A-Z] [a-z] | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
-#			LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
-			LINE="$TITLE#$SRC $SRC hoster $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
+				PIC=`echo $TITLE | tr [A-Z] [a-z] | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+	#			LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+				LINE="$TITLE#$SRC $SRC hoster $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
 
-#			LINE="$TITLE#$URL/$NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#41"
+	#			LINE="$TITLE#$URL/$NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#41"
 
-			echo "$LINE" >> $TMP/$FILENAME.list
-		fi
-	done 3<$TMP/cache.$FILENAME.2
-#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+		done 3<$TMP/cache.$FILENAME.2
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
 	echo "$TMP/$FILENAME.list"
 }
 
 hoster()
 {
-	rm $TMP/$TMP/cache.$FILENAME.* > /dev/null 2>&1
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 #	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
 	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
 
