@@ -135,6 +135,10 @@ msgstr "Название"
 msgid "--writers--"
 msgstr "Авторы"
 
+#: skin_default_keyskin.xml.h:2
+msgid "->"
+msgstr ""
+
 #: pip.h:658 skin_default_skin.xml.h:629
 msgid "->swap<-"
 msgstr ""
@@ -156,7 +160,7 @@ msgstr ""
 "Исправить это?"
 
 #: plugins_catcatch_skin.xml.h:1 plugins_sudoku_skin.xml.h:2
-#: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:2
+#: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:4
 #: skins_catcatch_skin.xml.h:1 skins_sudoku_skin.xml.h:2
 #: skins_zapback_skin.xml.h:1 webif_index.atemio5200.h:31
 #: webif_index.atemio5200.h:87 webif_index.atemio6200.h:31
@@ -188,7 +192,7 @@ msgid "0 C"
 msgstr ""
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:2
-#: skin_default_keyskin.xml.h:3 skins_catcatch_skin.xml.h:2
+#: skin_default_keyskin.xml.h:5 skins_catcatch_skin.xml.h:2
 #: webif_index.atemio5200.h:18 webif_index.atemio5200.h:21
 #: webif_index.atemio5200.h:77 webif_index.atemio6200.h:18
 #: webif_index.atemio6200.h:21 webif_index.atemio6200.h:77
@@ -303,7 +307,7 @@ msgstr "18В"
 msgid "1s"
 msgstr "1 сек"
 
-#: mediadbsettings.h:57 skin_default_keyskin.xml.h:4
+#: mediadbsettings.h:57 skin_default_keyskin.xml.h:6
 #: webif_index.atemio5200.h:22 webif_index.atemio5200.h:78
 #: webif_index.atemio6200.h:22 webif_index.atemio6200.h:78
 #: webif_index.atemio7600.h:31 webif_index.atemio7600.h:71
@@ -355,7 +359,7 @@ msgstr ""
 msgid "2s"
 msgstr "2 сек"
 
-#: callmon_main.h:135 mediadbsettings.h:58 skin_default_keyskin.xml.h:5
+#: callmon_main.h:135 mediadbsettings.h:58 skin_default_keyskin.xml.h:7
 #: webif_index.atemio5200.h:23 webif_index.atemio5200.h:79
 #: webif_index.atemio6200.h:23 webif_index.atemio6200.h:79
 #: webif_index.atemio7600.h:32 webif_index.atemio7600.h:72
@@ -415,7 +419,7 @@ msgstr "Параметры 3D"
 msgid "3s"
 msgstr "3 сек"
 
-#: callmon_main.h:136 mediadbsettings.h:59 skin_default_keyskin.xml.h:6
+#: callmon_main.h:136 mediadbsettings.h:59 skin_default_keyskin.xml.h:8
 #: webif_index.atemio5200.h:24 webif_index.atemio5200.h:80
 #: webif_index.atemio6200.h:24 webif_index.atemio6200.h:80
 #: webif_index.atemio7600.h:33 webif_index.atemio7600.h:73
@@ -466,7 +470,7 @@ msgstr ""
 msgid "4s"
 msgstr "4 сек"
 
-#: callmon_main.h:137 mediadbsettings.h:60 skin_default_keyskin.xml.h:7
+#: callmon_main.h:137 mediadbsettings.h:60 skin_default_keyskin.xml.h:9
 #: webif_index.atemio5200.h:25 webif_index.atemio5200.h:81
 #: webif_index.atemio6200.h:25 webif_index.atemio6200.h:81
 #: webif_index.atemio7600.h:34 webif_index.atemio7600.h:74
@@ -503,7 +507,7 @@ msgstr "500 об/мин"
 msgid "5s (default)"
 msgstr "5 сек (Умолч)"
 
-#: callmon_main.h:138 skin_default_keyskin.xml.h:8 webif_index.atemio5200.h:26
+#: callmon_main.h:138 skin_default_keyskin.xml.h:10 webif_index.atemio5200.h:26
 #: webif_index.atemio5200.h:82 webif_index.atemio6200.h:26
 #: webif_index.atemio6200.h:82 webif_index.atemio7600.h:35
 #: webif_index.atemio7600.h:75 webif_index.atemio-nemesis.h:26
@@ -543,7 +547,7 @@ msgstr ""
 msgid "60 min"
 msgstr "60 мин"
 
-#: skin_default_keyskin.xml.h:9 webif_index.atemio5200.h:27
+#: skin_default_keyskin.xml.h:11 webif_index.atemio5200.h:27
 #: webif_index.atemio5200.h:83 webif_index.atemio6200.h:27
 #: webif_index.atemio6200.h:83 webif_index.atemio7600.h:37
 #: webif_index.atemio7600.h:76 webif_index.atemio-nemesis.h:27
@@ -571,7 +575,7 @@ msgstr ""
 msgid "7 Mhz"
 msgstr "7 МГц"
 
-#: callmon_main.h:139 skin_default_keyskin.xml.h:10 webif_index.atemio5200.h:28
+#: callmon_main.h:139 skin_default_keyskin.xml.h:12 webif_index.atemio5200.h:28
 #: webif_index.atemio5200.h:84 webif_index.atemio6200.h:28
 #: webif_index.atemio6200.h:84 webif_index.atemio7600.h:36
 #: webif_index.atemio7600.h:77 webif_index.atemio-nemesis.h:28
@@ -607,7 +611,7 @@ msgstr "8 МГц"
 msgid "8 sec"
 msgstr "8 сек"
 
-#: skin_default_keyskin.xml.h:11 webif_index.atemio5200.h:29
+#: skin_default_keyskin.xml.h:13 webif_index.atemio5200.h:29
 #: webif_index.atemio5200.h:85 webif_index.atemio6200.h:29
 #: webif_index.atemio6200.h:85 webif_index.atemio7600.h:38
 #: webif_index.atemio7600.h:78 webif_index.atemio-nemesis.h:29
@@ -633,6 +637,10 @@ msgstr ""
 
 #: stopifnotused.c:102
 msgid "90"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:1
+msgid "<-"
 msgstr ""
 
 #: plugins_sudoku_skin.xml.h:1 skins_sudoku_skin.xml.h:1
@@ -2259,6 +2267,10 @@ msgstr ""
 msgid "Cityflash"
 msgstr ""
 
+#: skin_default_keyskin.xml.h:19
+msgid "Clear"
+msgstr ""
+
 #: skin_default_skin.xml.h:103
 msgid "Clear before scan"
 msgstr "Очистить после сканирования"
@@ -2564,9 +2576,9 @@ msgid "DEFAULT"
 msgstr "По умолчанию"
 
 #: play.h:1578 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
-#: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:143
-#: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:3
-#: skins_weather_skin.xml.h:2
+#: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:21
+#: skin_default_skin.xml.h:143 skins_networkbrowser_skin.xml.h:6
+#: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Удалить"
 
@@ -6727,12 +6739,13 @@ msgstr ""
 msgid "Offline Help"
 msgstr "Помощь (Офлайн)"
 
-#: webif_index.atemio5200.h:94 webif_index.atemio6200.h:94
-#: webif_index.atemio7600.h:92 webif_index.atemio-nemesis.h:94
-#: webif_index.dm520.h:94 webif_index.dm525.h:94 webif_index.dm7020hd.h:94
-#: webif_index.dm7020hdv2.h:94 webif_index.dm900.h:94 webif_rc.atemio5200.h:21
-#: webif_rc.atemio520.h:25 webif_rc.atemio530.h:25 webif_rc.atemio6000.h:21
-#: webif_rc.atemio6100.h:21 webif_rc.atemio6200.h:21 webif_rc.atemio7600.h:25
+#: skin_default_keyskin.xml.h:34 webif_index.atemio5200.h:94
+#: webif_index.atemio6200.h:94 webif_index.atemio7600.h:92
+#: webif_index.atemio-nemesis.h:94 webif_index.dm520.h:94
+#: webif_index.dm525.h:94 webif_index.dm7020hd.h:94 webif_index.dm7020hdv2.h:94
+#: webif_index.dm900.h:94 webif_rc.atemio5200.h:21 webif_rc.atemio520.h:25
+#: webif_rc.atemio530.h:25 webif_rc.atemio6000.h:21 webif_rc.atemio6100.h:21
+#: webif_rc.atemio6200.h:21 webif_rc.atemio7600.h:25
 #: webif_rc.atemio-nemesis.h:21 webif_rc.dm520.h:21 webif_rc.dm525.h:21
 #: webif_rc.dm7020hd.h:21 webif_rc.dm7020hdv2.h:21 webif_rc.dm900.h:21
 #: webif_rc.h:21
@@ -9404,6 +9417,10 @@ msgstr "Усилитель звука (ТВ-Modus/Внутренний плее�
 msgid "Sound amplifier (external Player)"
 msgstr "Усилитель звука (Внешний плеер)"
 
+#: skin_default_keyskin.xml.h:39
+msgid "Space"
+msgstr ""
+
 #: skin_default_skin.xml.h:602
 msgid "Spanish"
 msgstr "Испанский"
@@ -11370,8 +11387,16 @@ msgstr "Блокировка/Поиск"
 msgid "[T]Lock & Search"
 msgstr "Блокировка/Поиск"
 
-#: skin_default_keyskin.xml.h:1
+#: skin_default_keyskin.xml.h:3
 msgid "\\"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:14
+msgid "a"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:15
+msgid "abc/ABC"
 msgstr ""
 
 #: moduleconfig.h:190
@@ -11401,6 +11426,10 @@ msgstr "Добавить канал"
 #: webif_help.h:4
 msgid "adjust"
 msgstr "Общие настройки"
+
+#: skin_default_keyskin.xml.h:16
+msgid "ae"
+msgstr ""
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "afterevent"
@@ -11512,6 +11541,10 @@ msgstr "Автостарт"
 msgid "avsettings"
 msgstr "Параметры AV"
 
+#: skin_default_keyskin.xml.h:17
+msgid "b"
+msgstr ""
+
 #: harddisk.h:573
 msgid "backup"
 msgstr "Сохранить"
@@ -11593,6 +11626,10 @@ msgstr "Браузеры"
 #: screensaveradjust.h:36
 msgid "burlywood1"
 msgstr "Древесный"
+
+#: skin_default_keyskin.xml.h:18
+msgid "c"
+msgstr ""
 
 #: webif_help.h:12
 msgid "caidlock"
@@ -11713,6 +11750,10 @@ msgstr "Создать резервную копию"
 #: tpk_description.h:52
 msgid "cut record files"
 msgstr "Резка записанных файлов"
+
+#: skin_default_keyskin.xml.h:20
+msgid "d"
+msgstr ""
 
 #: rectimer.h:1093
 msgid "daily"
@@ -11841,7 +11882,7 @@ msgstr ""
 msgid "dummy"
 msgstr "Пусто"
 
-#: skin_default_keyskin.xml.h:12
+#: skin_default_keyskin.xml.h:22
 msgid "e"
 msgstr ""
 
@@ -11934,6 +11975,10 @@ msgstr "Меню расширений"
 msgid "extern"
 msgstr "Внешний"
 
+#: skin_default_keyskin.xml.h:23
+msgid "f"
+msgstr ""
+
 #: vfdisplay.h:132
 msgid "fade out/in"
 msgstr "Плавно мигающий"
@@ -12010,6 +12055,10 @@ msgstr "FTP порт"
 msgid "fullcover"
 msgstr "Отдельным списком"
 
+#: skin_default_keyskin.xml.h:24
+msgid "g"
+msgstr ""
+
 #: tpk_section.h:5
 msgid "games"
 msgstr "Игры"
@@ -12039,6 +12088,10 @@ msgstr "Зелёная"
 #: screensaveradjust.h:35
 msgid "grey"
 msgstr "Серый"
+
+#: skin_default_keyskin.xml.h:25
+msgid "h"
+msgstr ""
 
 #: webif_help.h:29
 msgid "harddisk_main"
@@ -12081,7 +12134,7 @@ msgstr ""
 msgid "httpdsettings"
 msgstr "Настройки HTTP"
 
-#: skin_default_keyskin.xml.h:13
+#: skin_default_keyskin.xml.h:26
 msgid "i"
 msgstr ""
 
@@ -12171,12 +12224,20 @@ msgstr "IP"
 msgid "ipaddress"
 msgstr "IP адрес"
 
+#: skin_default_keyskin.xml.h:27
+msgid "j"
+msgstr ""
+
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:325 lcdpearl1.c:507
 #: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:990 lcdsamsung.c:994
 #: lcdsamsung.c:998
 msgid "ja"
 msgstr "Да"
+
+#: skin_default_keyskin.xml.h:28
+msgid "k"
+msgstr ""
 
 #: skin_default_skin.xml.h:335
 msgid "key 0"
@@ -12193,6 +12254,10 @@ msgstr "Кнопка PiP"
 #: tpk_section.h:7
 msgid "keymaps"
 msgstr "Клавиатура"
+
+#: skin_default_keyskin.xml.h:29
+msgid "l"
+msgstr ""
 
 #: skin_default_skin.xml.h:339
 msgid "lan"
@@ -12283,6 +12348,10 @@ msgstr "Петля для тюнера"
 msgid "low"
 msgstr "Низкое"
 
+#: skin_default_keyskin.xml.h:30
+msgid "m"
+msgstr ""
+
 #: webif_help.h:44
 msgid "mainmenu"
 msgstr ""
@@ -12361,6 +12430,10 @@ msgstr "Без звука"
 
 #: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
 msgid "mvid"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:31
+msgid "n"
 msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
@@ -12540,8 +12613,12 @@ msgstr "Загружать время из Интернета"
 msgid "numinput"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:14
+#: skin_default_keyskin.xml.h:32
 msgid "o"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:33
+msgid "oe"
 msgstr ""
 
 #: avsettings.h:73 avsettings.h:89 cec.h:627 cec.h:675 fancontrol.h:110
@@ -12654,7 +12731,7 @@ msgstr "Опции"
 msgid "ownpos"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:15
+#: skin_default_keyskin.xml.h:35
 msgid "p"
 msgstr ""
 
@@ -12832,7 +12909,7 @@ msgstr "Логин для прокси"
 msgid "puffern"
 msgstr "Кэширование"
 
-#: skin_default_keyskin.xml.h:16
+#: skin_default_keyskin.xml.h:36
 msgid "q"
 msgstr ""
 
@@ -12840,7 +12917,7 @@ msgstr ""
 msgid "quickmenu"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:17
+#: skin_default_keyskin.xml.h:37
 msgid "r"
 msgstr ""
 
@@ -12944,6 +13021,10 @@ msgstr "Активен"
 #: networkbrowser.h:1705
 msgid "rw"
 msgstr "Чтение/Запись"
+
+#: skin_default_keyskin.xml.h:38
+msgid "s"
+msgstr ""
 
 #: webif_help.h:78
 msgid "satfinder"
@@ -13393,7 +13474,11 @@ msgstr ""
 msgid "systemupdatemenu"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:18
+#: skin_default_keyskin.xml.h:40
+msgid "sz"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:41
 msgid "t"
 msgstr ""
 
@@ -13533,12 +13618,16 @@ msgstr ""
 msgid "type"
 msgstr "Тип"
 
-#: skin_default_keyskin.xml.h:19
+#: skin_default_keyskin.xml.h:42
 msgid "u"
 msgstr ""
 
 #: networkbrowser.h:1701
 msgid "udp"
+msgstr ""
+
+#: skin_default_keyskin.xml.h:43
+msgid "ue"
 msgstr ""
 
 #: diseqcconfig.h:20
@@ -13652,6 +13741,10 @@ msgstr "Имя пользователя"
 msgid "usessl"
 msgstr "Использовать SSL"
 
+#: skin_default_keyskin.xml.h:44
+msgid "v"
+msgstr ""
+
 #: security.h:2125
 msgid "valid"
 msgstr ""
@@ -13712,7 +13805,7 @@ msgstr "Громкость"
 msgid "vs"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:20
+#: skin_default_keyskin.xml.h:45
 msgid "w"
 msgstr ""
 
@@ -13796,6 +13889,10 @@ msgstr "В рабочие дни"
 msgid "wsize"
 msgstr "Размер буфера записи"
 
+#: skin_default_keyskin.xml.h:46
+msgid "x"
+msgstr ""
+
 #: tpk_showname.h:222
 msgid "xupnpd"
 msgstr ""
@@ -13823,6 +13920,10 @@ msgstr ""
 #: xupnpd.h:81
 msgid "xupnpd started."
 msgstr "Xupnpd запущен"
+
+#: skin_default_keyskin.xml.h:47
+msgid "y"
+msgstr ""
 
 #: screensaveradjust.h:33
 msgid "yellow"
@@ -13896,7 +13997,7 @@ msgstr ""
 msgid "yes / vzap endless"
 msgstr ""
 
-#: skin_default_keyskin.xml.h:21
+#: skin_default_keyskin.xml.h:48
 msgid "z"
 msgstr ""
 
