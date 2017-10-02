@@ -143,7 +143,7 @@ msgstr "--Author--"
 msgid "->"
 msgstr ""
 
-#: pip.h:658 skin_default_skin.xml.h:629
+#: pip.h:662 skin_default_skin.xml.h:629
 msgid "->swap<-"
 msgstr ""
 
@@ -11929,7 +11929,7 @@ msgstr "Deactivate Ethernet?"
 msgid "debug"
 msgstr "Debug"
 
-#: harddisk.h:165 pip.h:657 pip.h:665 plugins_mc_skin.xml.h:15
+#: harddisk.h:165 pip.h:661 pip.h:669 plugins_mc_skin.xml.h:15
 #: skins_mc_skin.xml.h:15
 msgid "default"
 msgstr ""
@@ -12933,15 +12933,15 @@ msgstr ""
 msgid "pincheck"
 msgstr ""
 
-#: pip.h:662
+#: pip.h:666
 msgid "pip end"
 msgstr "Pip end"
 
-#: pip.h:661
+#: pip.h:665
 msgid "pip menu"
 msgstr "Pip menu"
 
-#: pip.h:666
+#: pip.h:670
 msgid "pip zap"
 msgstr "Pip zap"
 
