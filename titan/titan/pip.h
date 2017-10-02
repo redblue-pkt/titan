@@ -380,9 +380,6 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 	if(status.pipservice->type == CHANNEL)
 		pipstop(status.pipservice, 1);
 	
-	if(checkbox("DM900") == 1)
-		pippos(status.pipservice->videodev, dst_width, dst_height, dst_left, dst_top, 1);
-	
 	ret = pipstartreal(chnode, pin, flag);
 	
 	if(status.secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
@@ -395,8 +392,7 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 	{
 		status.pipservice->fedev->felock++;
 		deltranspondertunablestatus();
-		if(checkbox("DM900") != 1)
-			ret = pippos(status.pipservice->videodev, dst_width, dst_height, dst_left, dst_top, 1);
+		ret = pippos(status.pipservice->videodev, dst_width, dst_height, dst_left, dst_top, 1);
 		status.pipzap = getconfigint("pip_zap", NULL);
 	}
 
