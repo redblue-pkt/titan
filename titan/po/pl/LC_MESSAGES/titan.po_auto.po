@@ -142,7 +142,7 @@ msgstr ""
 msgid "->"
 msgstr ""
 
-#: pip.h:662 skin_default_skin.xml.h:629
+#: pip.h:658 skin_default_skin.xml.h:629
 msgid "->swap<-"
 msgstr ""
 
@@ -11774,7 +11774,7 @@ msgstr ""
 msgid "debug"
 msgstr ""
 
-#: harddisk.h:165 pip.h:661 pip.h:669 plugins_mc_skin.xml.h:15
+#: harddisk.h:165 pip.h:657 pip.h:665 plugins_mc_skin.xml.h:15
 #: skins_mc_skin.xml.h:15
 msgid "default"
 msgstr "STANDARD"
@@ -12778,15 +12778,15 @@ msgstr ""
 msgid "pincheck"
 msgstr ""
 
-#: pip.h:666
+#: pip.h:662
 msgid "pip end"
 msgstr ""
 
-#: pip.h:665
+#: pip.h:661
 msgid "pip menu"
 msgstr ""
 
-#: pip.h:670
+#: pip.h:666
 msgid "pip zap"
 msgstr ""
 
