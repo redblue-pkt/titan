@@ -201,6 +201,7 @@ videos()
 				suche = 0
 				newpage = ""
 				piccount = 0
+				eventinfo = 1
 			}
 			# 3. eindeutige zeile vor ersten treffer
 			/<table width=\"100%\" height=27 cellpadding=4 cellspacing=0>/ \
@@ -217,23 +218,44 @@ videos()
 				if (suche == 1 && newpage == "")
 				{
 					i = index($0, "<span class=\"date\">") + 19
-	                j = index($0, "</span>") - i
-	                date = substr($0, i, j)
-	                next
+					j = index($0, "</span>") - i
+					date = substr($0, i, j)
+					next
 				}
 			}
 			# <a href="/enx/eventinfo/502387_houston_la_clippers/"><font color="#949494"><b>122:103</b></font></a>
-			/<a href=\"\/enx\/eventinfo\// \
+			/123<a href=\"\/enx\/eventinfo\// \
 			{
 				if (suche == 1)
 				{
 					i = index($0, "href=\"") + 6
-		            j = index(substr($0, i), "\"") - 1
-		            newpage = substr($0, i, j)
+					j = index(substr($0, i), "\"") - 1
+					newpage = substr($0, i, j)
 
 					i = index($0, "<b>") + 3
-		            j = index($0, "</b>") - i
-		            score = substr($0, i, j)
+					j = index($0, "</b>") - i
+					score = substr($0, i, j)
+
+					# 15. in naechste zeile springen
+					next
+				}
+			}
+			# <a href="/enx/eventinfo/502387_houston_la_clippers/"><font color="#949494"><b>122:103</b></font></a>
+			/<font color="#949494">/ \
+			{
+				if (suche == 1)
+				{
+					i = index($0, "href=\"") + 6
+		            		j = index(substr($0, i), "\"") - 1
+		            		newpage = substr($0, i, j)
+					if (newpage ~ /<font color=/)
+					{
+						eventinfo = 0
+					}
+
+					i = index($0, "<b>") + 3
+		           		j = index($0, "</b>") - i
+		           		score = substr($0, i, j)
 
 					# 15. in naechste zeile springen
 					next
@@ -245,11 +267,11 @@ videos()
 				if (suche == 1 && newpage != "")
 				{
 					i = index($0, "<b>") + 3
-	                j = index($0, "</b>") - i
-	                title = substr($0, i, j)
-	                gsub("&ndash;", "-", title, title)
-     
-	                next
+					j = index($0, "</b>") - i
+					title = substr($0, i, j)
+					gsub("&ndash;", "-", title, title)
+
+					next
 				}
 			}
 			# <a class="small poplink" data-pop="ddr_2017-03-01_407_445" href="#">Full Match Record <img src="//cdn.livetvcdn.net/img/dd.gif"></a>
@@ -263,9 +285,31 @@ videos()
 					next
 				}
 			}
+			# <a class="small poplink" data-pop="ddr_2017-03-01_407_445" href="#">Full Match Record <img src="//cdn.livetvcdn.net/img/dd.gif"></a>
+			# <tr><td><nobr><a href="/enx/showvideo/437361/"><img src="//cdn.livetvcdn.net/img/v.gif"></a> <a class="small" href="/enx/showvideo/437361/">Full match record</a></nobr></td></tr>
+			/>Full match record<\/a>/ \
+			{
+				if(eventinfo == 0)
+				{
+					i = index($0, "href=\"") + 6
+		            		j = index(substr($0, i), "\"") - 1
+		            		newpage = substr($0, i, j)
+				}
+			}
+			/>Highlights<\/a>/ \
+			{
+				if(eventinfo == 0)
+				{
+					i = index($0, "href=\"") + 6
+		            		j = index(substr($0, i), "\"") - 1
+		            		newpage = substr($0, i, j)
+				}
+			}
+
 			#<div style="display: none;" class="tif"
 			#<tr><td></td></tr>
-			/<div style=\"display: none;\" class=\"tif\"/ \
+#			/<div style=\"display: none;\" class=\"tif\"/ \
+			/<td background=\"\/\/cdn.livetvcdn.net\/img\/v3.gif\"/ \
 			{
 				if (title != "")
 				{
@@ -284,18 +328,23 @@ videos()
 
 					if ( pic == "" )
 					{
-		            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 					}
 
 					piccount += 1
 					# 25. in naechste zeile springen
 					# 26. \x27 = single quotes
-					print title "#" SRC " " SRC " playsrc \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+					if(eventinfo == 1)
+						print title "#" SRC " " SRC " playsrc \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+					else
+						print title "#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+
 					score = ""
 					date = ""
 					full = 0
 					newpage = ""
 					suche = 0
+					eventinfo = 1
 				}
 				next
 			}
