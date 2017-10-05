@@ -80,7 +80,7 @@ void screenstandby()
 		system("vdstandby -a");
 
 // mipsel work set unknown videomod = display > off	(set)
-#if MIPSEL
+#ifdef MIPSEL
 	char* savevideomode = NULL;
 	savevideomode = getvideomode();
 	//setvideomode("720p24", 1);
@@ -115,7 +115,7 @@ void screenstandby()
 	status.updatevfd = STOP;
 	m_lock(&status.vfdmutex, 3);
 // mipsel work set unknown videomode = display > off (reset)
-#if MIPSEL
+#ifdef MIPSEL
 	writesys("/proc/stb/avs/0/input", "encoder", 1);
 	setvideomode(savevideomode, 1);
 	free(savevideomode); savevideomode = NULL;
@@ -185,6 +185,9 @@ void screenstandby()
 	m_unlock(&status.vfdmutex, 3);
 	status.updatevfd = START;
 	putmsgbuffer();
+#ifdef MIPSEL
+	cecwakeup();
+#endif
 }
 
 #endif
