@@ -552,19 +552,10 @@ play()
 				if [ "$debug" = "1" ]; then echo $INPUT bbbbbb $URLTMP; fi
 
 				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
-				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
-				
-#				$curlbin "https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=17NnIkv2C3k&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
-				
-			#	https://www.youtube.com/embed/17NnIkv2C3k
-
-#				URL="$SRC $SRC hoster $URL"
-				URL="gethoster2 $URL"
-
-#				URL="gethoster2 $URLTMP"
-
-#				URL="$TITLE#$URL#$PIC#$PIC.jpg#$NAME#14"
-
+#				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
+				URLTMP="https://www.youtube.com/watch/$ID"		
+#				URL="`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`"
+				URL="gethoster2 $URLTMP"
 			elif [ `echo $URLTMP | grep "/embed/" | wc -l` -eq 1 ];then
 				if [ "$debug" = "1" ]; then echo $INPUT cccccc $URLTMP; fi
 
@@ -590,8 +581,11 @@ play()
 				if [ "$debug" = "1" ]; then echo $INPUT ffffff $URLTMP; fi
 
 				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
-				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
-				URL="gethoster2 $URL"
+
+#				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
+				URLTMP="https://www.youtube.com/watch/$ID"		
+#				URL="`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`"
+				URL="gethoster2 $URLTMP"
 			else
 				if [ "$debug" = "1" ]; then echo $INPUT gggggg $URLTMP; fi
 				URLTMP=`echo $URLTMP  | sed 's#//#\nhttp://#' | grep ^"http://"`
