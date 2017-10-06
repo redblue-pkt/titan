@@ -224,7 +224,7 @@ videos()
 				}
 			}
 			# <a href="/enx/eventinfo/502387_houston_la_clippers/"><font color="#949494"><b>122:103</b></font></a>
-			/123<a href=\"\/enx\/eventinfo\// \
+			/123old <a href=\"\/enx\/eventinfo\// \
 			{
 				if (suche == 1)
 				{
@@ -285,7 +285,6 @@ videos()
 					next
 				}
 			}
-			# <a class="small poplink" data-pop="ddr_2017-03-01_407_445" href="#">Full Match Record <img src="//cdn.livetvcdn.net/img/dd.gif"></a>
 			# <tr><td><nobr><a href="/enx/showvideo/437361/"><img src="//cdn.livetvcdn.net/img/v.gif"></a> <a class="small" href="/enx/showvideo/437361/">Full match record</a></nobr></td></tr>
 			/>Full match record<\/a>/ \
 			{
@@ -293,7 +292,8 @@ videos()
 				{
 					i = index($0, "href=\"") + 6
 		            		j = index(substr($0, i), "\"") - 1
-		            		newpage = substr($0, i, j)
+		            		fullmatch_newpage = substr($0, i, j)
+					fullmatch_title = "Full"
 				}
 			}
 			/>Highlights<\/a>/ \
@@ -302,7 +302,9 @@ videos()
 				{
 					i = index($0, "href=\"") + 6
 		            		j = index(substr($0, i), "\"") - 1
-		            		newpage = substr($0, i, j)
+		            		highlights_newpage = substr($0, i, j)
+					highlights_title = "Highlights"
+
 				}
 			}
 
@@ -321,9 +323,9 @@ videos()
 					{
 						title = title " (" date ")"
 					}
-					if (full == 1)
+					if (full == 1 && eventinfo == 1)
 					{
-						title = title " (Full)"
+						title = title " (Full More)"
 					}
 
 					if ( pic == "" )
@@ -337,8 +339,10 @@ videos()
 					if(eventinfo == 1)
 						print title "#" SRC " " SRC " playsrc \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 					else
-						print title "#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
-
+					{
+						print title " (" fullmatch_title ")#" SRC " " SRC " play \x27" fullmatch_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+						print title " (" highlights_title ")#" SRC " " SRC " play \x27" highlights_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+					}
 					score = ""
 					date = ""
 					full = 0
