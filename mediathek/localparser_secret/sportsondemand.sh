@@ -202,6 +202,11 @@ videos()
 				newpage = ""
 				piccount = 0
 				eventinfo = 1
+				fullmatch_title = ""
+				highlights_title = ""
+				fullmatch_newpage = ""
+				highlights_newpage = ""
+
 			}
 			# 3. eindeutige zeile vor ersten treffer
 			/<table width=\"100%\" height=27 cellpadding=4 cellspacing=0>/ \
@@ -325,7 +330,11 @@ videos()
 					}
 					if (full == 1 && eventinfo == 1)
 					{
-						title = title " (Full More)"
+						title = title " (Event Full)"
+					}
+					else if (eventinfo == 1)
+					{
+						title = title " (Event)"
 					}
 
 					if ( pic == "" )
@@ -340,7 +349,9 @@ videos()
 						print title "#" SRC " " SRC " playsrc \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 					else
 					{
-						print title " (" fullmatch_title ")#" SRC " " SRC " play \x27" fullmatch_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+						if (fullmatch_title != "")
+							print title " (" fullmatch_title ")#" SRC " " SRC " play \x27" fullmatch_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+						if (highlights_title != "")
 						print title " (" highlights_title ")#" SRC " " SRC " play \x27" highlights_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 					}
 					score = ""
@@ -349,6 +360,10 @@ videos()
 					newpage = ""
 					suche = 0
 					eventinfo = 1
+					fullmatch_title = ""
+					highlights_title = ""
+					fullmatch_newpage = ""
+					highlights_newpage = ""
 				}
 				next
 			}
