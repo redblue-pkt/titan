@@ -352,7 +352,7 @@ videos()
 						if (fullmatch_title != "")
 							print title " (" fullmatch_title ")#" SRC " " SRC " play \x27" fullmatch_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 						if (highlights_title != "")
-						print title " (" highlights_title ")#" SRC " " SRC " play \x27" highlights_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+							print title " (" highlights_title ")#" SRC " " SRC " play \x27" highlights_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 					}
 					score = ""
 					date = ""
