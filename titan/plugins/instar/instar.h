@@ -148,58 +148,162 @@ int show_control()
 		}	
 			
 		if(rcret == getrcconfigint("rc1", NULL)) {
-			position = ostrcat("/decoder_control.cgi?command=", "31", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "0", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "31", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(rcret == getrcconfigint("rc2", NULL)) {
-			position = ostrcat("/decoder_control.cgi?command=", "33", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "1", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "33", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(rcret == getrcconfigint("rc3", NULL)) {
-			position = ostrcat("/decoder_control.cgi?command=", "35", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "2", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "35", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(rcret == getrcconfigint("rc4", NULL)) {
-			position = ostrcat("/decoder_control.cgi?command=", "37", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "3", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "37", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(rcret == getrcconfigint("rc5", NULL)) { 
-			position = ostrcat("/decoder_control.cgi?command=", "39", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "4", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "39", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(rcret == getrcconfigint("rc6", NULL)) {
-			position = ostrcat("/decoder_control.cgi?command=", "41", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "5", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "41", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(rcret == getrcconfigint("rc7", NULL)) {
-			position = ostrcat("/decoder_control.cgi?command=", "43", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "6", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "43", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(rcret == getrcconfigint("rc8", NULL)) {
-			position = ostrcat("/decoder_control.cgi?command=", "45", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "7", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "45", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(rcret == getrcconfigint("rc9", NULL)) {
-			position = ostrcat("/decoder_control.cgi?command=", "47", 0 , 0);
-			ohnestop = 1;
+			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+			{
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "8", 0 , 0);
+				ohnestop = 1;			
+			}
+			else
+			{
+				position = ostrcat("/decoder_control.cgi?command=", "47", 0 , 0);
+				ohnestop = 1;
+			}
 		}
 		if(positionstop == NULL) 
 		{
 			if(rcret == getrcconfigint("rcup", NULL)) {
-				position = ostrcat("/decoder_control.cgi?command=", "0", 0 , 0);
-				positionstop = ostrcat("/decoder_control.cgi?command=", "1", 0 , 0);
+				if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+				{
+					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "up", 0 , 0);
+					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "stop", 0 , 0);
+				}
+				else
+				{
+					position = ostrcat("/decoder_control.cgi?command=", "0", 0 , 0);
+					positionstop = ostrcat("/decoder_control.cgi?command=", "1", 0 , 0);
+				}
 			}
 			if(rcret == getrcconfigint("rcdown", NULL)) {
-				position = ostrcat("/decoder_control.cgi?command=", "2", 0 , 0);
-				positionstop = ostrcat("/decoder_control.cgi?command=", "3", 0 , 0);
+				if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+				{
+					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "down", 0 , 0);
+					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "stop", 0 , 0);
+				}
+				else
+				{
+					position = ostrcat("/decoder_control.cgi?command=", "2", 0 , 0);
+					positionstop = ostrcat("/decoder_control.cgi?command=", "3", 0 , 0);
+				}
 			}
 			if(rcret == getrcconfigint("rcleft", NULL)) {
-				position = ostrcat("/decoder_control.cgi?command=", "4", 0 , 0);
-				positionstop = ostrcat("/decoder_control.cgi?command=", "5", 0 , 0);
+				if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+				{
+					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "left", 0 , 0);
+					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "stop", 0 , 0);
+				}
+				else
+				{
+					position = ostrcat("/decoder_control.cgi?command=", "4", 0 , 0);
+					positionstop = ostrcat("/decoder_control.cgi?command=", "5", 0 , 0);
+				}
 			}
 			if(rcret == getrcconfigint("rcright", NULL)) {
-				position = ostrcat("/decoder_control.cgi?command=", "6", 0 , 0);
-				positionstop = ostrcat("/decoder_control.cgi?command=", "7", 0 , 0);
+				if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
+				{
+					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "right", 0 , 0);
+					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "stop", 0 , 0);
+				}
+				else
+				{
+					position = ostrcat("/decoder_control.cgi?command=", "6", 0 , 0);
+					positionstop = ostrcat("/decoder_control.cgi?command=", "7", 0 , 0);
+				}
 			}
 			if(rcret == getrcconfigint("rcchup", NULL)) {
 				position = ostrcat("/decoder_control.cgi?command=", "16", 0 , 0);
