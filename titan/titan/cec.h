@@ -77,7 +77,7 @@ void sendVersion(unsigned char address)
 void sendTVon()
 {
 	char data[3];
-	unsigned char address = 0x00;
+	unsigned char address = 0x30;
 	unsigned char cmd = 0x04;
 	data[0] = '\0';
 	sendMessage(address, cmd, data, 0);
@@ -86,7 +86,8 @@ void sendTVon()
 void sendswitch()
 {	
 	char data[3];
-	unsigned char address = 0x0f;
+	//unsigned char address = 0x0f;
+	unsigned char address = 0x3f;
 	unsigned char cmd = 0x82;
 	data[0] = cec_physicalAddress[0];
 	data[1] = cec_physicalAddress[1];
@@ -223,7 +224,7 @@ int translateKey(unsigned char code)
 	
 void setVolumeForward()
 {
-	unsigned char address = 0x05;
+	unsigned char address = 0x35;
 	unsigned char cmd = 0x7d;
 	char data[2];
 
@@ -231,9 +232,9 @@ void setVolumeForward()
 	if(getconfigint("cec_volume", NULL) > 0)
 	{
 		if(getconfigint("cec_volume", NULL) == 1)
-			address = 0x05;
+			address = 0x35;
 		if(getconfigint("cec_volume", NULL) == 2)
-			address = 0x00;
+			address = 0x30;
 		addconfiginttmp("ForwardVolume", 1);
 		cmd = 0x7d;
 		data[0] = '\0';
@@ -328,11 +329,11 @@ void hdmiEvent()
 							{
 								actsource = 1;
 								//sendSource(rxmessage.address);
-								sendSource(0x0f);
+								sendSource(0x3f);
 								//sendswitch();
 								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
 								//reportPhysicalAddress(0);
-								sendMenuInfo(0x00);
+								sendMenuInfo(0x30);
 								setVolumeForward();
 							}
 							else
@@ -349,7 +350,7 @@ void hdmiEvent()
 								actsource = 1;
 								//setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
 								//reportPhysicalAddress(0);
-								sendMenuInfo(0x00);
+								sendMenuInfo(0x30);
 								setVolumeForward();
 							}
 							else 
@@ -395,7 +396,7 @@ void hdmiEvent()
 							{
 								sreq = 1;
 								//sendSource(rxmessage.address);
-								sendSource(0x0f);
+								sendSource(0x3f);
 							}
 							break;
 						}
@@ -519,7 +520,7 @@ void sendMessage(unsigned char address, unsigned char cmd, char *data, int lengt
 void reportPhysicalAddress(int flag)
 {
 	struct cec_message txmessage;
-	txmessage.address = 0x0f; /* broadcast */
+	txmessage.address = 0x3f; /* broadcast */
 	txmessage.data[0] = 0x84; /* report address */
 	txmessage.data[1] = cec_physicalAddress[0];
 	txmessage.data[2] = cec_physicalAddress[1];
@@ -849,7 +850,7 @@ void cecinit()
 void cecstandby()
 {
 	char data[1];
-	unsigned char address = 0x00;
+	unsigned char address = 0x30;
 	unsigned char cmd = 0x36;
 	
 	data[0] = '\0';
@@ -858,18 +859,18 @@ void cecstandby()
 	{
 		if(getconfigint("cec_all_off", NULL) == 1)
 		{
-			address = 0x0f;
+			address = 0x3f;
 			sendMessage(address, cmd, data, strlen(data));
 		}
 		if(getconfigint("cec_tv_off", NULL) == 1)
 		{
-			address = 0x00;
+			address = 0x30;
 			sendMessage(address, cmd, data, strlen(data));
 			//sleep(1);
 		}
 		if(getconfigint("cec_rec_off", NULL) == 1)
 		{
-			address = 0x05;
+			address = 0x35;
 			sendMessage(address, cmd, data, strlen(data));
 			//sleep(1);
 		}
@@ -879,7 +880,7 @@ void cecstandby()
 void cecwakeup()
 {
 	char data[3];
-	unsigned char address = 0x00;
+	unsigned char address = 0x30;
 	unsigned char cmd = 0x04;
 	
 	data[0] = '\0';
@@ -890,22 +891,22 @@ void cecwakeup()
 		
 		if(getconfigint("cec_all_on", NULL) == 1)
 		{
-			address = 0x0f;
+			address = 0x3f;
 			sendMessage(address, cmd, data, 0);
 		}
 		if(getconfigint("cec_rec_on", NULL) == 1)
 		{
-			address = 0x05;
+			address = 0x35;
 			sendMessage(address, cmd, data, 0);
 		}
 		if(getconfigint("cec_tv_on", NULL) == 1)
 		{	
-			address = 0x00;
+			address = 0x30;
 			sendMessage(address, cmd, data, 0);
 		}
 		if(getconfigint("cec_tv_switch", NULL) == 1)
 		{			
-			address = 0x0f;
+			address = 0x3f;
 			cmd     = 0x82;
 			data[0] = cec_physicalAddress[0];
 			data[1] = cec_physicalAddress[1];
@@ -913,7 +914,7 @@ void cecwakeup()
 			sendMessage(address, cmd, data, 2);
 			actsource = 1;
 		}
-		sendMenuInfo(0x00);
+		sendMenuInfo(0x30);
 		setVolumeForward();
 		cecon = 1;
 		printf("**********wakeup\n");	
@@ -925,15 +926,15 @@ void cecwakeup()
 void forwardKey(int key)
 {
 	char data[3];
-	unsigned char address = 0x00;
+	unsigned char address = 0x30;
 	unsigned char cmd = 0x44;
 	
 	data[0] = '\0';
 	
 	if(getconfigint("cec_volume", NULL) == 1)
-			address = 0x05;
+			address = 0x35;
 	else if(getconfigint("cec_volume", NULL) == 2)
-			address = 0x00;
+			address = 0x30;
 	
 	if(key == getrcconfigint("rcvolup", NULL))
 		data[0] = 0x41;
