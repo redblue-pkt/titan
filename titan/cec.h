@@ -874,6 +874,7 @@ void cecstandby()
 			sendMessage(address, cmd, data, strlen(data));
 			//sleep(1);
 		}
+		cecon = 0;
 	}
 }
 
