@@ -23,6 +23,7 @@ int show_control()
 {
 	char* tmpstr = NULL;
 	char* tempcam = NULL;
+	char* tempcam1 = NULL;
 	char* position = NULL;
 	char* positionstop = NULL;
 	int rcret = 0;
@@ -30,9 +31,25 @@ int show_control()
 	int ohnestop = 0;
 	
 	if(actcam == 1)
+	{
 		tempcam = cam1;
+		tempcam1 = cam11;
+	}
 	if(actcam == 2)
+	{
 		tempcam = cam2;
+		tempcam1 = cam21;
+	}
+	if(actcam == 3)
+	{
+		tempcam = cam3;
+		tempcam1 = cam31;
+	}
+	if(actcam == 4)
+	{
+		tempcam = cam4;
+		tempcam1 = cam41;
+	}
 	
 	setfbtransparent(255);
 	
@@ -150,7 +167,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc1", NULL)) {
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "0", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "0", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -162,7 +179,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc2", NULL)) {
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "1", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "1", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -174,7 +191,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc3", NULL)) {
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "2", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "2", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -186,7 +203,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc4", NULL)) {
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "3", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "3", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -198,7 +215,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc5", NULL)) { 
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "4", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "4", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -210,7 +227,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc6", NULL)) {
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "5", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "5", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -222,7 +239,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc7", NULL)) {
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "6", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "6", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -234,7 +251,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc8", NULL)) {
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "7", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "7", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -246,7 +263,7 @@ int show_control()
 		if(rcret == getrcconfigint("rc9", NULL)) {
 			if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 			{
-				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act=goto&-status=1&-number=", "8", 0 , 0);
+				position = ostrcat("/cgi-bin/hi3510/preset.cgi?-act%3Dgoto%26-status%3D1%26-number%3D", "8", 0 , 0);
 				ohnestop = 1;			
 			}
 			else
@@ -260,8 +277,8 @@ int show_control()
 			if(rcret == getrcconfigint("rcup", NULL)) {
 				if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 				{
-					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "up", 0 , 0);
-					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "stop", 0 , 0);
+					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step%3D0%26-act%3D", "up", 0 , 0);
+					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step%3D0%26-act%3D", "stop", 0 , 0);
 				}
 				else
 				{
@@ -272,8 +289,8 @@ int show_control()
 			if(rcret == getrcconfigint("rcdown", NULL)) {
 				if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 				{
-					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "down", 0 , 0);
-					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "stop", 0 , 0);
+					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step%3D0%26-act%3D", "down", 0 , 0);
+					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step%3D0%26-act%3D", "stop", 0 , 0);
 				}
 				else
 				{
@@ -284,8 +301,8 @@ int show_control()
 			if(rcret == getrcconfigint("rcleft", NULL)) {
 				if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 				{
-					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "left", 0 , 0);
-					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "stop", 0 , 0);
+					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step%3D0%26-act%3D", "left", 0 , 0);
+					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step%3D0%26-act%3D", "stop", 0 , 0);
 				}
 				else
 				{
@@ -296,8 +313,8 @@ int show_control()
 			if(rcret == getrcconfigint("rcright", NULL)) {
 				if((actcam == 1 && getconfigint("instar_1", NULL) == 2) || (actcam == 2 && getconfigint("instar_2", NULL) == 2) || (actcam == 3 && getconfigint("instar_3", NULL) == 2)  || (actcam == 4 && getconfigint("instar_4", NULL) == 2))
 				{
-					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "right", 0 , 0);
-					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step=0&-act=", "stop", 0 , 0);
+					position = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step%3D0%26-act%3D", "right", 0 , 0);
+					positionstop = ostrcat("/cgi-bin/hi3510/ptzctrl.cgi?-step%3D0%26-act%3D", "stop", 0 , 0);
 				}
 				else
 				{
@@ -320,6 +337,8 @@ int show_control()
 			if(positionstop != NULL && ohnestop == 1)
 			{
 				tmpstr = ostrcat(tempcam, positionstop, 0, 0);
+				if(tempcam1 != NULL)
+					tmpstr = ostrcat(tmpstr, tempcam1, 1, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;	
 				free(positionstop); positionstop = NULL;
@@ -327,6 +346,8 @@ int show_control()
 			if(position != NULL)
 			{
 				tmpstr = ostrcat(tempcam, position, 0, 0);
+				if(tempcam1 != NULL)
+					tmpstr = ostrcat(tmpstr, tempcam1, 1, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;	
 				free(position); position = NULL;
@@ -334,6 +355,8 @@ int show_control()
 			else if(positionstop != NULL)
 			{
 				tmpstr = ostrcat(tempcam, positionstop, 0, 0);
+				if(tempcam1 != NULL)
+					tmpstr = ostrcat(tmpstr, tempcam1, 1, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;	
 				free(positionstop); positionstop = NULL;
