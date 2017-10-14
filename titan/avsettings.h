@@ -106,50 +106,63 @@ void screenavsettings(int flag)
 	ret = getpolicy();
 	setchoiceboxselection(policy, ret);
 	free(ret); ret = NULL;
-
-	ret = getaspectchoices();
-	changeinput(aspect, ret);
-	free(ret); ret = NULL;
-	ret = getaspect();
-	setchoiceboxselection(aspect, ret);
-	free(ret); ret = NULL;
+	if(checkbox("HD51") == 0)
+	{
+		ret = getaspectchoices();
+		changeinput(aspect, ret);
+		free(ret); ret = NULL;
+		ret = getaspect();
+		setchoiceboxselection(aspect, ret);
+		free(ret); ret = NULL;
+	}
+	else
+		aspect->hidden = YES;
 
 #ifdef MIPSEL
 	aspect->hidden = YES;
 #endif
 
-	ret = getcolorformat(2);
-	if(ret == NULL || strlen(ret) == 0)
+	if(checkbox("HD51") == 0)
 	{
-		free(ret); ret = NULL;
-		colformatscart->hidden = YES;
+		ret = getcolorformat(2);
+		if(ret == NULL || strlen(ret) == 0)
+		{
+			free(ret); ret = NULL;
+			colformatscart->hidden = YES;
 		
-		ret = getcolorformatchoices(0);
-		changeinput(colformat, ret);
-		free(ret); ret = NULL;
-		ret = getcolorformat(1);
-		setchoiceboxselection(colformat, ret);
-		free(ret); ret = NULL;
+			ret = getcolorformatchoices(0);
+			changeinput(colformat, ret);
+			free(ret); ret = NULL;
+			ret = getcolorformat(1);
+			setchoiceboxselection(colformat, ret);
+			free(ret); ret = NULL;
+		}
+		else
+		{
+			free(ret); ret = NULL;
+			colformatscart->hidden = NO;
+		
+			ret = getcolorformatchoices(1);
+			changeinput(colformat, ret);
+			free(ret); ret = NULL;
+			ret = getcolorformat(1);
+			setchoiceboxselection(colformat, ret);
+			free(ret); ret = NULL;
+		
+			ret = getcolorformatchoices(2);
+			changeinput(colformatscart, ret);
+			free(ret); ret = NULL;
+			ret = getcolorformat(2);
+			setchoiceboxselection(colformatscart, ret);
+			free(ret); ret = NULL;
+		}
 	}
 	else
 	{
-		free(ret); ret = NULL;
-		colformatscart->hidden = NO;
-		
-		ret = getcolorformatchoices(1);
-		changeinput(colformat, ret);
-		free(ret); ret = NULL;
-		ret = getcolorformat(1);
-		setchoiceboxselection(colformat, ret);
-		free(ret); ret = NULL;
-		
-		ret = getcolorformatchoices(2);
-		changeinput(colformatscart, ret);
-		free(ret); ret = NULL;
-		ret = getcolorformat(2);
-		setchoiceboxselection(colformatscart, ret);
-		free(ret); ret = NULL;
+		colformatscart->hidden = YES;
+		colformat->hidden = YES;
 	}
+		
 
 	ret = getaudiosourcechoices();
 	changeinput(audiosource, ret);
@@ -173,12 +186,17 @@ void screenavsettings(int flag)
 	setchoiceboxselection(ac3mode, ret);
 	free(ret); ret = NULL;
 
-	ret = getaacchoices();
-	changeinput(aacmode, ret);
-	free(ret); ret = NULL;
-	ret = getaac();
-	setchoiceboxselection(aacmode, ret);
-	free(ret); ret = NULL;
+	if(checkbox("HD51") == 0)
+	{
+		ret = getaacchoices();
+		changeinput(aacmode, ret);
+		free(ret); ret = NULL;
+		ret = getaac();
+		setchoiceboxselection(aacmode, ret);
+		free(ret); ret = NULL;
+	}
+	else
+		aacmode->hidden = YES;
 	
 	if((checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && ac3plusmode != NULL)
 	{
@@ -217,14 +235,18 @@ void screenavsettings(int flag)
 		aacmode->hidden = YES;
 #endif
 
-	
-	ret = getwsschoices();
-	changeinput(wssmode, ret);
-	free(ret); ret = NULL;
-	ret = getwss();
-	setchoiceboxselection(wssmode, ret);
-	free(ret); ret = NULL;
-
+	if(checkbox("HD51") == 0)
+	{	
+		ret = getwsschoices();
+		changeinput(wssmode, ret);
+		free(ret); ret = NULL;
+		ret = getwss();
+		setchoiceboxselection(wssmode, ret);
+		free(ret); ret = NULL;
+	}
+	else
+		wssmode->hidden = YES;
+		
 #ifdef SH4
 		wssmode->hidden = YES;
 #endif
