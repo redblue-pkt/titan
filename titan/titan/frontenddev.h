@@ -199,7 +199,6 @@ struct dvbdev* fegetdummy()
 void settunerstatus()
 {
 	struct dvbdev* dvbnode = dvbdev;
-
 	while(dvbnode != NULL)
 	{
 		//FRONTENDDEV first in the list
