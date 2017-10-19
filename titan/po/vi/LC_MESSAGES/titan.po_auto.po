@@ -3220,7 +3220,7 @@ msgstr ""
 msgid "ERROR... can't set marker in this file"
 msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 
-#: about.h:9 amazon.h:760 avsettings.h:368 betarobot.h:57 bgdownload.h:176
+#: about.h:9 amazon.h:760 avsettings.h:390 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:960 channellist.h:962 channellist.h:967
 #: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
@@ -3321,7 +3321,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:659
-#: tunerconfig.h:682 tunerconfig.h:964 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:682 tunerconfig.h:989 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -5190,7 +5190,7 @@ msgstr ""
 msgid "Iptv Player"
 msgstr ""
 
-#: avsettings.h:368 videomode.h:67
+#: avsettings.h:390 videomode.h:67
 msgid "Is this Videomode ok ?"
 msgstr "Chế độ này ok?"
 
@@ -5990,7 +5990,7 @@ msgstr "Không thực hiện được!"
 msgid "Menulist"
 msgstr ""
 
-#: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:368 betarobot.h:57
+#: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:390 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:960
 #: channellist.h:962 channellist.h:967 channellist.h:969 channellist.h:1053
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
@@ -6071,7 +6071,7 @@ msgstr ""
 #: tithek.h:2599 tithek.h:2617 tithek.h:2630 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:659 tunerconfig.h:682 tunerconfig.h:964 unlock.h:20
+#: tunerconfig.h:659 tunerconfig.h:682 tunerconfig.h:989 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
 #: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
@@ -6586,7 +6586,7 @@ msgstr "E"
 
 #: about.h:9 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
-#: avsettings.h:368 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
+#: avsettings.h:390 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
 #: callmon_main.h:39 channellist.h:960 channellist.h:962 channellist.h:967
 #: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
@@ -6690,7 +6690,7 @@ msgstr "E"
 #: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
 #: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:659 tunerconfig.h:682
-#: tunerconfig.h:964 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29
+#: tunerconfig.h:989 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29
 #: vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74
 #: videomode.h:67 videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87
 #: vidstream.h:99 vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80
@@ -10635,7 +10635,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr ""
 
-#: tunerconfig.h:964
+#: tunerconfig.h:989
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -11875,7 +11875,7 @@ msgstr ""
 msgid "dir"
 msgstr ""
 
-#: tunerconfig.h:826
+#: tunerconfig.h:832
 msgid "direct connect"
 msgstr "kết nối trực tiếp"
 
@@ -12245,6 +12245,14 @@ msgstr "thông tin"
 msgid "initializing"
 msgstr "khởi tạo"
 
+#: tunerconfig.h:838
+msgid "input port A"
+msgstr ""
+
+#: tunerconfig.h:872
+msgid "input port B"
+msgstr ""
+
 #: skin_default_skin.xml.h:323
 msgid "install"
 msgstr "cài đặt"
@@ -12262,7 +12270,7 @@ msgstr ""
 msgid "intern"
 msgstr ""
 
-#: tunerconfig.h:843
+#: tunerconfig.h:858
 msgid "internal loop to Tuner"
 msgstr ""
 
@@ -12394,7 +12402,7 @@ msgstr ""
 msgid "logo"
 msgstr ""
 
-#: tunerconfig.h:841
+#: tunerconfig.h:856
 msgid "loop to Tuner"
 msgstr ""
 
@@ -12546,8 +12554,8 @@ msgstr "NFS-Server"
 #: adjust.h:166 adjust.h:170 adjust.h:196 adjust.h:200 adjust.h:208
 #: adjust.h:212 adjust.h:216 adjust.h:222 adjust.h:226 adjust.h:233
 #: adjust.h:237 adjust.h:243 adjust.h:249 adjust.h:463 autotimer.c:453
-#: autotimer.c:486 avsettings.h:165 avsettings.h:250 avsettings.h:255
-#: avsettings.h:267 avsettings.h:279 avsettings.h:292 blindscanadjust.h:150
+#: autotimer.c:486 avsettings.h:178 avsettings.h:272 avsettings.h:277
+#: avsettings.h:289 avsettings.h:301 avsettings.h:314 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
 #: blindscanadjust.h:191 cec.h:632 cec.h:636 cec.h:640 cec.h:644 cec.h:648
 #: cec.h:652 cec.h:656 cec.h:660 cec.h:664 dlna.h:276 epgsettings.h:135
@@ -12683,7 +12691,7 @@ msgstr "E"
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421 settings_autostart.h:53
 #: settings_overclocking.h:276 skinadjust.h:94 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:859
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:882
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115 vfdisplay.h:130
 #: vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
@@ -13982,7 +13990,7 @@ msgstr ""
 #: adjust.h:84 adjust.h:98 adjust.h:127 adjust.h:157 adjust.h:167 adjust.h:197
 #: adjust.h:201 adjust.h:209 adjust.h:213 adjust.h:217 adjust.h:223
 #: adjust.h:227 adjust.h:234 adjust.h:238 adjust.h:244 adjust.h:248
-#: autotimer.c:454 autotimer.c:487 avsettings.h:166 avsettings.h:251
+#: autotimer.c:454 autotimer.c:487 avsettings.h:179 avsettings.h:273
 #: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
 #: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:633 cec.h:637 cec.h:641
 #: cec.h:645 cec.h:649 cec.h:653 cec.h:657 cec.h:661 cec.h:665 dlna.h:277
