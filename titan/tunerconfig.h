@@ -822,10 +822,23 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 {
 	struct dvbdev* dvbnode = dvbdev;
 	char* tmpnr = NULL;
+	int fbc = 0;
+	
+	if(dvbnode != NULL && ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL)
+		fbc = 1;
 
-	*loopstr = ostrcat(*loopstr, _("direct connect"), 1, 0);
-	*loopstr = ostrcat(*loopstr, "\n", 1, 0);
-	*loopstr1 = ostrcat(*loopstr1, "0\n", 1, 0);
+	if(fbc == 0)
+	{
+		*loopstr = ostrcat(*loopstr, _("direct connect"), 1, 0);
+		*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+		*loopstr1 = ostrcat(*loopstr1, "0\n", 1, 0);
+	}
+	else
+	{
+		*loopstr = ostrcat(*loopstr, _("input port A"), 1, 0);
+		*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+		*loopstr1 = ostrcat(*loopstr1, "A\n", 1, 0);
+	}
 
 	while(dvbnode != NULL)
 	{
@@ -833,32 +846,43 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 		{
 			if(node->adapter != dvbnode->adapter || node->devnr != dvbnode->devnr)
 			{
-				//printf("++++ node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
-				if((checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1) || dvbnode->devnr == 0)
+				if(fbc == 0)
 				{
-					tmpnr = oitoa(dvbnode->adapter);
-					if(checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1)
-						*loopstr = ostrcat(*loopstr, _("loop to Tuner"), 1, 0);
-					else
-						*loopstr = ostrcat(*loopstr, _("internal loop to Tuner"), 1, 0);
-					*loopstr = ostrcat(*loopstr, " ", 1, 0);
-					*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
-					*loopstr = ostrcat(*loopstr, "/", 1, 0);
-					tmpnr = oitoa(dvbnode->devnr);
-					*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
-					*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+					//printf("++++ node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
+					if((checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1) || dvbnode->devnr == 0)
+					{
+						tmpnr = oitoa(dvbnode->adapter);
+						if(checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1)
+							*loopstr = ostrcat(*loopstr, _("loop to Tuner"), 1, 0);
+						else
+							*loopstr = ostrcat(*loopstr, _("internal loop to Tuner"), 1, 0);
+						*loopstr = ostrcat(*loopstr, " ", 1, 0);
+						*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
+						*loopstr = ostrcat(*loopstr, "/", 1, 0);
+						tmpnr = oitoa(dvbnode->devnr);
+						*loopstr = ostrcat(*loopstr, tmpnr, 1, 1);
+						*loopstr = ostrcat(*loopstr, "\n", 1, 0);
 
-					*loopstr1 = ostrcat(*loopstr1, dvbnode->feshortname, 1, 0);
-					*loopstr1 = ostrcat(*loopstr1, "\n", 1, 0);
+						*loopstr1 = ostrcat(*loopstr1, dvbnode->feshortname, 1, 0);
+						*loopstr1 = ostrcat(*loopstr1, "\n", 1, 0);
+					}
+				}
+				else
+				{
+					*loopstr = ostrcat(*loopstr, _("input port B"), 1, 0);
+					*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+					*loopstr1 = ostrcat(*loopstr1, "B\n", 1, 0);
 				}
 			}
 		}
 		dvbnode = dvbnode->next;
 	}
-
-	*loopstr = ostrcat(*loopstr, _("off"), 1, 0);
-	*loopstr = ostrcat(*loopstr, "\n", 1, 0);
-	*loopstr1 = ostrcat(*loopstr1, "x\n", 1, 0);
+	if(fbc == 0)
+	{
+		*loopstr = ostrcat(*loopstr, _("off"), 1, 0);
+		*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+		*loopstr1 = ostrcat(*loopstr1, "x\n", 1, 0);
+	}
 }
 
 //flag 0: del tunerconfig that are loop
@@ -948,6 +972,7 @@ void screentunerconfig()
 	struct skin* tunerconfig = getscreen("tunerconfig");
 	struct skin* listbox = getscreennode(tunerconfig, "listbox");
 	struct skin* b4 = getscreennode(tunerconfig, "b4");
+	int fbc = 0;
 	
 	struct dvbdev* dvbnode = dvbdev;
 	struct skin* tunernode = NULL;
@@ -1019,7 +1044,11 @@ void screentunerconfig()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			if(listbox->select != NULL && listbox->select->handle != NULL && ostrcmp(listbox->select->ret, "0") == 0)
+				
+	
+			if(ostrstr(((struct dvbdev*)listbox->select->handle)->feinfo->name, "BCM45208") != NULL)
+				fbc = 1;
+			if(listbox->select != NULL && listbox->select->handle != NULL && (ostrcmp(listbox->select->ret, "0") == 0 || fbc == 1))
 			{
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QPSK)
 				{
