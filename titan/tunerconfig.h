@@ -835,9 +835,18 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 	}
 	else
 	{
-		*loopstr = ostrcat(*loopstr, _("input port A"), 1, 0);
-		*loopstr = ostrcat(*loopstr, "\n", 1, 0);
-		*loopstr1 = ostrcat(*loopstr1, "A\n", 1, 0);
+		if(node->devnr == 0)
+		{
+			*loopstr = ostrcat(*loopstr, _("define port A"), 1, 0);
+			*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+			*loopstr1 = ostrcat(*loopstr1, "0\n", 1, 0);
+		}
+		else if(node->devnr == 1)
+		{
+			*loopstr = ostrcat(*loopstr, _("define port B"), 1, 0);
+			*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+			*loopstr1 = ostrcat(*loopstr1, "0\n", 1, 0);
+		}
 	}
 
 	while(dvbnode != NULL)
@@ -846,8 +855,8 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 		{
 			if(node->adapter != dvbnode->adapter || node->devnr != dvbnode->devnr)
 			{
-				if(fbc == 0)
-				{
+				if(fbc != 1)
+				{	
 					//printf("++++ node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
 					if((checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1) || dvbnode->devnr == 0)
 					{
@@ -868,11 +877,22 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 					}
 				}
 				else
-				{
-					*loopstr = ostrcat(*loopstr, _("input port B"), 1, 0);
-					*loopstr = ostrcat(*loopstr, "\n", 1, 0);
-					*loopstr1 = ostrcat(*loopstr1, "B\n", 1, 0);
+				{	
+					//printf("++++ node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
+					if(dvbnode->devnr == 0 || dvbnode->devnr == 1)
+					{
+						tmpnr = oitoa(dvbnode->adapter);
+						if(ostrcmp("fe_00", dvbnode->feshortname) == 0)
+							*loopstr = ostrcat(*loopstr, _("connect with port A"), 1, 0);
+						if(ostrcmp("fe_01", dvbnode->feshortname) == 0)
+							*loopstr = ostrcat(*loopstr, _("connect with port B"), 1, 0);
+						*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+
+						*loopstr1 = ostrcat(*loopstr1, dvbnode->feshortname, 1, 0);
+						*loopstr1 = ostrcat(*loopstr1, "\n", 1, 0);
+					}
 				}
+
 			}
 		}
 		dvbnode = dvbnode->next;
@@ -1048,7 +1068,7 @@ void screentunerconfig()
 	
 			if(ostrstr(((struct dvbdev*)listbox->select->handle)->feinfo->name, "BCM45208") != NULL)
 				fbc = 1;
-			if(listbox->select != NULL && listbox->select->handle != NULL && (ostrcmp(listbox->select->ret, "0") == 0 || fbc == 1))
+			if(listbox->select != NULL && listbox->select->handle != NULL && (ostrcmp(listbox->select->ret, "0") == 0))
 			{
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QPSK)
 				{

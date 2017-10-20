@@ -199,12 +199,19 @@ struct dvbdev* fegetdummy()
 void settunerstatus()
 {
 	struct dvbdev* dvbnode = dvbdev;
+	char *buf = NULL;
+	int fbc = 0;
 	while(dvbnode != NULL)
 	{
 		//FRONTENDDEV first in the list
 		if(dvbnode->type != FRONTENDDEV) break;
+		
+		if(dvbnode != NULL && ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL)
+			fbc = 1;
+		else
+			fbc = 0;
 
-		if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+		if((checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && fbc != 1)
 		{
 			if(ostrcmp("fe_01", dvbnode->feshortname) == 0)
 			{
@@ -213,6 +220,26 @@ void settunerstatus()
 				else
 					system("echo external > /proc/stb/frontend/1/rf_switch");
 			}
+		}
+		if(fbc == 1)
+		{
+			buf = malloc(MINMALLOC);
+			if(buf == NULL)
+			{
+				err("no memory");
+				return;
+			}
+			sprintf(buf, "/proc/stb/frontend/%d/input",dvbnode->devnr);
+			
+			if(ostrcmp("fe_00", getconfig(dvbnode->feshortname, NULL)) == 0)
+			  writesys(buf, "A", 1);
+			else if(ostrcmp("fe_01", getconfig(dvbnode->feshortname, NULL)) == 0)
+				writesys(buf, "B", 1);
+			else if(ostrcmp("fe_00", dvbnode->feshortname) == 0)
+				writesys(buf, "A", 1);
+			else if(ostrcmp("fe_01", dvbnode->feshortname) == 0)
+				writesys(buf, "B", 1);
+			free(buf); buf = NULL;
 		}
 		//check if tuner is deactivate
 		if(ostrcmp("x", getconfig(dvbnode->feshortname, NULL)) == 0)
