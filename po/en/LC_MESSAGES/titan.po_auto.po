@@ -3348,7 +3348,7 @@ msgstr "ERROR: can't set marker in this file"
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:659
-#: tunerconfig.h:682 tunerconfig.h:989 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:682 tunerconfig.h:1009 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -6123,7 +6123,7 @@ msgstr ""
 #: tithek.h:2599 tithek.h:2617 tithek.h:2630 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:659 tunerconfig.h:682 tunerconfig.h:989 unlock.h:20
+#: tunerconfig.h:659 tunerconfig.h:682 tunerconfig.h:1009 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
 #: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
@@ -6742,17 +6742,17 @@ msgstr ""
 #: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
 #: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:659 tunerconfig.h:682
-#: tunerconfig.h:989 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29
-#: vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74
-#: videomode.h:67 videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87
-#: vidstream.h:99 vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80
-#: vidto.h:95 vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51
-#: vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 webif_index.atemio5200.h:38
-#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
-#: webif_index.atemio-nemesis.h:38 webif_index.dm520.h:38
-#: webif_index.dm525.h:38 webif_index.dm7020hd.h:38 webif_index.dm7020hdv2.h:38
-#: webif_index.dm900.h:38 webif_rc.atemio510.h:33
+#: tunerconfig.h:1009 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
+#: vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68
+#: vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86 vidstream.h:45
+#: vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31 vidto.h:68
+#: vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175 vidto.h:181
+#: vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61
+#: vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81 vodlocker.h:87
+#: webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
+#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
+#: webif_index.dm520.h:38 webif_index.dm525.h:38 webif_index.dm7020hd.h:38
+#: webif_index.dm7020hdv2.h:38 webif_index.dm900.h:38 webif_rc.atemio510.h:33
 #: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
 #: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
 #: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
@@ -10713,7 +10713,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr ""
 
-#: tunerconfig.h:989
+#: tunerconfig.h:1009
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -11872,6 +11872,14 @@ msgstr ""
 msgid "committed, uncommitted, toneburst"
 msgstr ""
 
+#: tunerconfig.h:886
+msgid "connect with port A"
+msgstr ""
+
+#: tunerconfig.h:888
+msgid "connect with port B"
+msgstr ""
+
 #: skin_default_skin.xml.h:123
 msgid "copy service"
 msgstr ""
@@ -11936,6 +11944,14 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:16 skins_mc_skin.xml.h:16
 msgid "default Directory"
+msgstr ""
+
+#: tunerconfig.h:840
+msgid "define port A"
+msgstr ""
+
+#: tunerconfig.h:846
+msgid "define port B"
 msgstr ""
 
 #: skin_default_skin.xml.h:149
@@ -12328,14 +12344,6 @@ msgstr "Infos"
 msgid "initializing"
 msgstr "initializing"
 
-#: tunerconfig.h:838
-msgid "input port A"
-msgstr ""
-
-#: tunerconfig.h:872
-msgid "input port B"
-msgstr ""
-
 #: skin_default_skin.xml.h:323
 msgid "install"
 msgstr ""
@@ -12353,7 +12361,7 @@ msgstr ""
 msgid "intern"
 msgstr "internal"
 
-#: tunerconfig.h:858
+#: tunerconfig.h:867
 msgid "internal loop to Tuner"
 msgstr ""
 
@@ -12485,7 +12493,7 @@ msgstr ""
 msgid "logo"
 msgstr ""
 
-#: tunerconfig.h:856
+#: tunerconfig.h:865
 msgid "loop to Tuner"
 msgstr "Tuner looped"
 
@@ -12774,7 +12782,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421 settings_autostart.h:53
 #: settings_overclocking.h:276 skinadjust.h:94 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:882
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:902
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115 vfdisplay.h:130
 #: vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
