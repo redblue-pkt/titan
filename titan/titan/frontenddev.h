@@ -199,6 +199,7 @@ struct dvbdev* fegetdummy()
 void settunerstatus()
 {
 	struct dvbdev* dvbnode = dvbdev;
+	char *tmpstr = NULL;
 	char *buf = NULL;
 	int fbc = 0;
 	while(dvbnode != NULL)
@@ -230,16 +231,10 @@ void settunerstatus()
 				return;
 			}
 			sprintf(buf, "/proc/stb/frontend/%d/input",dvbnode->devnr);
-			
-			if(ostrcmp("fe_00", getconfig(dvbnode->feshortname, NULL)) == 0)
-			  writesys(buf, "A", 1);
-			else if(ostrcmp("fe_01", getconfig(dvbnode->feshortname, NULL)) == 0)
-				writesys(buf, "B", 1);
-			else if(ostrcmp("fe_00", dvbnode->feshortname) == 0)
-				writesys(buf, "A", 1);
-			else if(ostrcmp("fe_01", dvbnode->feshortname) == 0)
-				writesys(buf, "B", 1);
+			tmpstr = ostrcat(dvbnode->feshortname, "_fbc", 0, 0);
+			writesys(buf, getconfig(tmpstr, NULL), 1); 
 			free(buf); buf = NULL;
+			free(tmpstr); tmpstr = NULL;
 		}
 		//check if tuner is deactivate
 		if(ostrcmp("x", getconfig(dvbnode->feshortname, NULL)) == 0)
@@ -288,8 +283,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype)
 		{
-			if(dvbnode->feakttransponder != NULL)
-				debug(200, "dvbnode->feakttransponder->orbitalpos:%i tpnode->orbitalpos:%i", dvbnode->feakttransponder->orbitalpos, tpnode->orbitalpos);
 			if(dvbnode->feakttransponder != NULL && dvbnode->feakttransponder->orbitalpos == tpnode->orbitalpos && dvbnode->feakttransponder->frequency == tpnode->frequency && dvbnode->feaktpolarization == tpnode->polarization)
 			{
 				band = calclof(dvbnode, tpnode, dvbnode->feaktnr, 1);
@@ -337,7 +330,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			if(tmpstr != NULL) //found loop tuner
 			{
 				tmpdvbnode = fegetbyshortname(tmpstr);
-				if(tmpdvbnode != NULL && tmpdvbnode->feakttransponder != NULL && tmpdvbnode->feaktpolarization != tpnode->polarization && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+				if(tmpdvbnode != NULL && tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
 				{
 					dvbnode = dvbnode->next;
 					continue;
@@ -1950,6 +1943,21 @@ int fegetdev()
 #endif					
 					if(dvbnode->feinfo->type == FE_QPSK)
 						fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
+						
+					if(y < 10)
+						tmpstr = ostrcat(tmpstr, "fe_0", 1, 0);
+					else
+						tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
+					tmpstr = ostrcat(tmpstr, oitoa(y), 1, 1);
+					tmpstr = ostrcat(tmpstr, "_fbc", 1, 0);
+					if(ostrstr(feinfo->name, "BCM45208") != NULL) //fbc Tuner
+					{
+						if(getconfig(tmpstr, NULL) == NULL)
+							addconfig(tmpstr, "A");
+					}
+					else
+						addconfig(tmpstr, "");
+					free(tmpstr), tmpstr = NULL;
 				}
 			}
 		}
