@@ -288,6 +288,8 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype)
 		{
+			if(dvbnode->feakttransponder != NULL)
+				debug(200, "dvbnode->feakttransponder->orbitalpos:%i tpnode->orbitalpos:%i", dvbnode->feakttransponder->orbitalpos, tpnode->orbitalpos);
 			if(dvbnode->feakttransponder != NULL && dvbnode->feakttransponder->orbitalpos == tpnode->orbitalpos && dvbnode->feakttransponder->frequency == tpnode->frequency && dvbnode->feaktpolarization == tpnode->polarization)
 			{
 				band = calclof(dvbnode, tpnode, dvbnode->feaktnr, 1);
@@ -424,7 +426,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			if(tmpstr != NULL) //found loop tuner
 			{
 				tmpdvbnode = fegetbyshortname(tmpstr);
-				if(tmpdvbnode != NULL && tmpdvbnode->feakttransponder != NULL && tmpdvbnode->feaktpolarization != tpnode->polarization && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+				if(tmpdvbnode != NULL && tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
 				{
 					dvbnode = dvbnode->next;
 					continue;
@@ -565,8 +567,12 @@ int fewait(struct dvbdev* node)
 	timer = 2000;
 #endif
 
+#ifdef ARM
+	timer = 300;
+#endif
+
 	//wait for tuner ready
-	debug(200, "wait for tuner");
+	debug(200, "wait for tuner start");
 	while(count <= timer)
 	{
 		count++;
@@ -579,7 +585,7 @@ int fewait(struct dvbdev* node)
 		{
 			if(status_m != status)
 			{
-				debug(200, "status=%02x, fe_lock=%02x", status, FE_HAS_LOCK);
+				debug(200, "status=%02x, fe_lock=%02x, count=%d", status, FE_HAS_LOCK, count);
 				status_m = status;
 			}
 		}
@@ -591,10 +597,14 @@ int fewait(struct dvbdev* node)
 		}
 
 		if(status & FE_HAS_LOCK)
+		{
 	//		if(FE_HAS_SYNC | FE_HAS_LOCK)
+			debug(200, "wait for tuner end with 0");
 			return 0;
+		}
 		usleep(1000);
 	}
+	debug(200, "wait for tuner end");
 
 	//if(ev.status & FE_HAS_LOCK)
 	//	return 0;
@@ -2018,7 +2028,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	int type = 0;
 	char* realname = gethypridtunerchoicesvaluename(tuner->devnr, value);
 	
-	printf("**** > realname: %s\n", realname);
+	//printf("**** > realname: %s\n", realname);
 	
 	if(realname != NULL && ostrstr(realname, "DVB-S") != NULL)
 		type = feSatellite;
