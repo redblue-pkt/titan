@@ -232,7 +232,10 @@ void settunerstatus()
 			}
 			sprintf(buf, "/proc/stb/frontend/%d/input",dvbnode->devnr);
 			tmpstr = ostrcat(dvbnode->feshortname, "_fbc", 0, 0);
-			writesys(buf, getconfig(tmpstr, NULL), 1); 
+			if(ostrcmp("AM", getconfig(tmpstr, NULL)) == 0 || ostrcmp("AU", getconfig(tmpstr, NULL)) == 0 || ostrcmp("A", getconfig(tmpstr, NULL)) == 0)
+				writesys(buf, "A", 1); 
+			else
+				writesys(buf, "B", 1);	
 			free(buf); buf = NULL;
 			free(tmpstr); tmpstr = NULL;
 		}
