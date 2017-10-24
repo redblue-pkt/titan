@@ -6779,8 +6779,11 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 		else
 		{
 			fechangetype(tuner, value); 
-			return 0;
+			//return 0;
 		}
+		tmpstr = ostrcat(tuner->feshortname, "_hyprid", 0, 0);
+		addconfigtmp(tmpstr, value);
+		free(tmpstr); tmpstr = NULL;
 	}
 	free(buf); buf = NULL;
 
