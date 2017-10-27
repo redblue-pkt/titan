@@ -839,13 +839,13 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 		{
 			*loopstr = ostrcat(*loopstr, _("define port A"), 1, 0);
 			*loopstr = ostrcat(*loopstr, "\n", 1, 0);
-			*loopstr1 = ostrcat(*loopstr1, "0\n", 1, 0);
+			*loopstr1 = ostrcat(*loopstr1, "AM\n", 1, 0);
 		}
 		else if(node->devnr == 1)
 		{
 			*loopstr = ostrcat(*loopstr, _("define port B"), 1, 0);
 			*loopstr = ostrcat(*loopstr, "\n", 1, 0);
-			*loopstr1 = ostrcat(*loopstr1, "0\n", 1, 0);
+			*loopstr1 = ostrcat(*loopstr1, "BM\n", 1, 0);
 		}
 	}
 
@@ -883,26 +883,37 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 					{
 						tmpnr = oitoa(dvbnode->adapter);
 						if(ostrcmp("fe_00", dvbnode->feshortname) == 0)
+						{
 							*loopstr = ostrcat(*loopstr, _("connect with port A"), 1, 0);
+							*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+							*loopstr1 = ostrcat(*loopstr1, "A", 1, 0);
+						}
+						
 						if(ostrcmp("fe_01", dvbnode->feshortname) == 0)
+						{
 							*loopstr = ostrcat(*loopstr, _("connect with port B"), 1, 0);
-						*loopstr = ostrcat(*loopstr, "\n", 1, 0);
-
-						*loopstr1 = ostrcat(*loopstr1, dvbnode->feshortname, 1, 0);
+							*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+							*loopstr1 = ostrcat(*loopstr1, "B", 1, 0);
+						}
 						*loopstr1 = ostrcat(*loopstr1, "\n", 1, 0);
 					}
 				}
-
 			}
 		}
 		dvbnode = dvbnode->next;
 	}
-	if(fbc == 0)
+	if(fbc == 1)
 	{
-		*loopstr = ostrcat(*loopstr, _("off"), 1, 0);
+		*loopstr = ostrcat(*loopstr, _("unicable at port A"), 1, 0);
 		*loopstr = ostrcat(*loopstr, "\n", 1, 0);
-		*loopstr1 = ostrcat(*loopstr1, "x\n", 1, 0);
-	}
+		*loopstr1 = ostrcat(*loopstr1, "AU\n", 1, 0);
+		*loopstr = ostrcat(*loopstr, _("unicable at port B"), 1, 0);
+		*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+		*loopstr1 = ostrcat(*loopstr1, "BU\n", 1, 0);
+	}	
+	*loopstr = ostrcat(*loopstr, _("off"), 1, 0);
+	*loopstr = ostrcat(*loopstr, "\n", 1, 0);
+	*loopstr1 = ostrcat(*loopstr1, "x\n", 1, 0);
 }
 
 //flag 0: del tunerconfig that are loop
@@ -993,10 +1004,19 @@ void screentunerconfig()
 	struct skin* listbox = getscreennode(tunerconfig, "listbox");
 	struct skin* b4 = getscreennode(tunerconfig, "b4");
 	int fbc = 0;
+	int i = 0;
+	int aok = -1;
+	int bok = -1;
+	int auc = 0;
+	int buc = 0;
 	
 	struct dvbdev* dvbnode = dvbdev;
 	struct skin* tunernode = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
+	char* tmpstr2 = NULL;
+	char* tmpstr3 = NULL;
+	char* tmpstr4 = NULL;
+	char* tmpnr = NULL;
 	struct skin* tmp = NULL;
 
 	listbox->aktline = 1;
@@ -1019,6 +1039,10 @@ void screentunerconfig()
 			tunernode = addlistbox(tunerconfig, listbox, tunernode, 1);
 			if(tunernode != NULL)
 			{
+				if(ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL)
+					fbc = 1;
+				else
+					fbc = 0;
 				count++;
 				tunernode->handle = (char*)dvbnode;	
 				changetunername(tunernode, dvbnode->adapter, dvbnode->devnr, dvbnode->feinfo->name, dvbnode->fehyprid);
@@ -1031,8 +1055,14 @@ void screentunerconfig()
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
 				changename(tunernode, dvbnode->feshortname);
-
-				setchoiceboxselection(tunernode, getconfig(dvbnode->feshortname, NULL));
+				if(fbc == 0)
+					setchoiceboxselection(tunernode, getconfig(dvbnode->feshortname, NULL));
+				else
+				{
+					tmpstr2 = ostrcat(dvbnode->feshortname, "_fbc", 0, 0);
+					setchoiceboxselection(tunernode, getconfig(tmpstr2, NULL));
+					free(tmpstr2);tmpstr2 = NULL;
+				}
 				if(count == 1 && dvbnode->feinfo->type == FE_QPSK)
 					b4->hidden = NO;
 			}
@@ -1050,8 +1080,23 @@ void screentunerconfig()
 		rcret = waitrc(tunerconfig, 0, 0);
 		tmp =  listbox->select;
 
-		if(listbox->select != NULL)
+		if(listbox->select != NULL && listbox->select->handle != NULL && ostrstr(((struct dvbdev*)listbox->select->handle)->feinfo->name, "BCM45208") != NULL)
+			fbc = 1;
+		else
+			fbc = 0;
+		if(listbox->select != NULL && fbc == 0)
 			addconfigscreentmpcheck(listbox->select->name, listbox->select, "0");
+		else
+		{
+			tmpstr2 = ostrcat(listbox->select->name, "_fbc", 0, 0);
+			addconfigtmp(tmpstr2, listbox->select->ret);
+			if(ostrstr(listbox->select->ret, "M") != NULL || ostrstr(listbox->select->ret, "U") != NULL)
+				addconfigtmp(listbox->select->name, "");
+			else if(ostrcmp("x", getconfig(tmpstr, NULL)) == 0)
+				addconfigtmp(listbox->select->name, "x");
+			free(tmpstr2);tmpstr2 = NULL;
+		}
+		
 
 //		if(ostrstr(listbox->select->text, "DVB-S") != NULL || ostrstr(listbox->select->text, "STV090x") != NULL)		
 		if(listbox->select != NULL && listbox->select->handle != NULL && ((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QPSK)		
@@ -1064,11 +1109,7 @@ void screentunerconfig()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-				
-	
-			if(ostrstr(((struct dvbdev*)listbox->select->handle)->feinfo->name, "BCM45208") != NULL)
-				fbc = 1;
-			if(listbox->select != NULL && listbox->select->handle != NULL && (ostrcmp(listbox->select->ret, "0") == 0))
+			if(listbox->select != NULL && listbox->select->handle != NULL && (ostrcmp(listbox->select->ret, "0") == 0 || ostrstr(listbox->select->ret, "M") != NULL || ostrstr(listbox->select->ret, "U") != NULL))
 			{
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QPSK)
 				{
@@ -1108,6 +1149,185 @@ void screentunerconfig()
 		}
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
+			if(fbc == 1)
+			{
+				aok = -1;
+				bok = -1;
+				auc = 0;
+				buc = 0;
+				for(i = 0; i <= MAXFRONTENDDEV; i++)
+				{	
+					tmpnr = oitoa(i);
+					if(i < 10)
+						tmpstr1 = ostrcat("fe_0", tmpnr, 0, 1);
+					else
+						tmpstr1 = ostrcat("fe_", tmpnr, 0, 1);
+					tmpstr2 = ostrcat(tmpstr1, "_fbc", 0 ,0); 
+					tmpstr = getconfig(tmpstr2, NULL);
+					if(tmpstr == NULL) continue;
+					//printf("****** %s -> %s \n", tmpstr1, getconfig(tmpstr2, NULL));
+					if(ostrcmp("AM", getconfig(tmpstr2, NULL)) == 0) 
+					{
+						if(aok == -1)
+						{
+							aok = i;
+							addconfigtmp(tmpstr1, "");
+							//printf("***** AM = %i\n", aok);	
+						}
+						else
+						{
+							addconfigtmp(tmpstr1, "x");
+							addconfigtmp(tmpstr2, "x");
+						}
+					}
+					else if(ostrcmp("BM", getconfig(tmpstr2, NULL)) == 0)	
+					{
+						if(bok == -1)
+						{
+							bok = i;
+							addconfigtmp(tmpstr1, "");
+							//printf("***** BM = %i\n", aok);	
+						}
+						else
+						{
+							addconfigtmp(tmpstr1, "x");
+							addconfigtmp(tmpstr2, "x");
+						}
+					}
+					else if(ostrcmp("AU", getconfig(tmpstr2, NULL)) == 0) 
+					{
+						aok = i;
+						addconfigtmp(tmpstr1, "");
+						auc = 1;
+					}
+					else if(ostrcmp("BU", getconfig(tmpstr2, NULL)) == 0)	
+					{
+						bok = i;
+						addconfigtmp(tmpstr1, "");
+						buc = 1;
+					}
+					else if(ostrcmp("A", getconfig(tmpstr2, NULL)) == 0)
+					{
+						if(aok > -1)
+						{
+							tmpnr = oitoa(aok);
+							tmpstr3 = ostrcat("fe_0", tmpnr, 0, 1);
+							addconfigtmp(tmpstr1, tmpstr3);
+							//printf("***** A = %i\n", aok);	
+							aok = i;
+							tmpstr3 = ostrcat(tmpstr3, "_lnb_loftype", 1, 0);
+							tmpstr4 = ostrcat(tmpstr3, "1", 0, 0);
+							addconfigtmp(tmpstr4, "");
+							free(tmpstr4);tmpstr4=NULL;
+							tmpstr4 = ostrcat(tmpstr3, "2", 0, 0);
+							addconfigtmp(tmpstr4, "");
+							free(tmpstr4);tmpstr4=NULL;
+							tmpstr4 = ostrcat(tmpstr3, "3", 0, 0);
+							addconfigtmp(tmpstr4, "");
+							free(tmpstr4);tmpstr4=NULL;
+							tmpstr4 = ostrcat(tmpstr3, "4", 0, 0);
+							addconfigtmp(tmpstr4, "");
+							free(tmpstr4);tmpstr4=NULL;
+							free(tmpstr3);tmpstr3=NULL;
+						}
+						else
+						{
+							addconfigtmp(tmpstr1, "x");
+							addconfigtmp(tmpstr2, "x");
+						}
+					}	
+					else if(ostrcmp("B", getconfig(tmpstr2, NULL)) == 0)
+					{
+						if(bok > -1)
+						{
+							tmpnr = oitoa(bok);
+							tmpstr3 = ostrcat("fe_0", tmpnr, 0, 1);
+							addconfigtmp(tmpstr1, tmpstr3);
+							//printf("***** B = %i\n", aok);
+							aok = i;
+							tmpstr3 = ostrcat(tmpstr3, "_lnb_loftype", 1, 0);
+							tmpstr4 = ostrcat(tmpstr3, "1", 0, 0);
+							addconfigtmp(tmpstr4, "");
+							free(tmpstr4);tmpstr4=NULL;
+							tmpstr4 = ostrcat(tmpstr3, "2", 0, 0);
+							addconfigtmp(tmpstr4, "");
+							free(tmpstr4);tmpstr4=NULL;
+							tmpstr4 = ostrcat(tmpstr3, "3", 0, 0);
+							addconfigtmp(tmpstr4, "");
+							free(tmpstr4);tmpstr4=NULL;
+							tmpstr4 = ostrcat(tmpstr3, "4", 0, 0);
+							addconfigtmp(tmpstr4, "");
+							free(tmpstr4);tmpstr4=NULL;
+							free(tmpstr3);tmpstr3=NULL;
+						}
+						else
+						{
+							addconfigtmp(tmpstr1, "x");
+							addconfigtmp(tmpstr2, "x");
+						}
+					
+					}	
+					else if(ostrcmp("x", getconfig(tmpstr2, NULL)) == 0)
+						addconfigtmp(tmpstr1, "x");
+				}
+				free(tmpstr1);tmpstr1=NULL;
+				free(tmpstr2);tmpstr2=NULL;
+				if(auc == 1)
+				{
+					for(i = 0; i <= MAXFRONTENDDEV; i++)
+					{	
+						tmpnr = oitoa(i);
+						if(i < 10)
+							tmpstr1 = ostrcat("fe_0", tmpnr, 0, 1);
+						else
+							tmpstr1 = ostrcat("fe_", tmpnr, 0, 1);
+						tmpstr2 = ostrcat(tmpstr1, "_fbc", 0 ,0); 
+						tmpstr = getconfig(tmpstr2, NULL);
+						if(tmpstr == NULL) continue;
+						//printf("***auc*** %s -> %s \n", tmpstr1, getconfig(tmpstr2, NULL));
+						if(ostrcmp("AU", getconfig(tmpstr2, NULL)) != 0)
+						{
+							if(ostrstr(getconfig(tmpstr2, NULL), "B") == NULL)
+							{
+								addconfigtmp(tmpstr1, "x");
+								addconfigtmp(tmpstr2, "x");	
+							}
+						}
+						else
+							break;
+					}
+					free(tmpstr1);tmpstr1=NULL;
+					free(tmpstr2);tmpstr2=NULL;
+				}
+				if(buc == 1)
+				{
+					for(i = 0; i <= MAXFRONTENDDEV; i++)
+					{	
+						tmpnr = oitoa(i);
+						if(i < 10)
+							tmpstr1 = ostrcat("fe_0", tmpnr, 0, 1);
+						else
+							tmpstr1 = ostrcat("fe_", tmpnr, 0, 1);
+						tmpstr2 = ostrcat(tmpstr1, "_fbc", 0 ,0); 
+						tmpstr = getconfig(tmpstr2, NULL);
+						if(tmpstr == NULL) continue;
+						//printf("***buc*** %s -> %s \n", tmpstr1, getconfig(tmpstr2, NULL));
+						if(ostrcmp("BU", getconfig(tmpstr2, NULL)) != 0)
+						{
+							if(ostrstr(getconfig(tmpstr2, NULL), "A") == NULL)
+							{
+								addconfigtmp(tmpstr1, "x");
+								addconfigtmp(tmpstr2, "x");
+							}	
+						}
+						else
+							break;
+					}
+					free(tmpstr1);tmpstr1=NULL;
+					free(tmpstr2);tmpstr2=NULL;
+				}	
+				//printf("****** ende fbc\n");	
+			}
 			ret = 1;
 			deltranspondertunablestatus();
 			writeconfigtmp();
@@ -1115,13 +1335,14 @@ void screentunerconfig()
 			break;
 		}
 	}
-
+	//printf("****** wihle ende \n");	
 	deltunerconfig(1);
 	delconfigtmpall();
 	delmarkedscreennodes(tunerconfig, 1);
 	delownerrc(tunerconfig);
 	clearscreen(tunerconfig);
 	settunerstatus();
+	//printf("****** tunerstatus ende fbc\n");	
 
 	//tune new if tunerconfig saved
 	if(ret == 1)
@@ -1137,6 +1358,7 @@ void screentunerconfig()
 		clearscreen(tunerconfig);
 		drawscreen(skin, 0, 0);
 	}
+	//printf("****** proc ende fbc\n");	
 }
 
 #endif
