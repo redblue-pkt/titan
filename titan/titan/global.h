@@ -6735,27 +6735,21 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 {
 	int ret = 0;
 
-	char* buf = NULL, *hypridtuner = NULL, *tmpstr = NULL;
+	char* tmpstr = NULL;
 	char* buf1 = NULL;
-
-	hypridtuner = getconfig("hypridtuner", NULL);
-
-	if(hypridtuner != NULL)
+	
+	tmpstr = ostrcat(tuner->feshortname, "_hyprid_last", 0, 0);
+	if(ostrcmp(getconfig(tmpstr, NULL), value) == 0)
 	{
-		buf = malloc(MINMALLOC);
-		if(buf == NULL)
-		{
-			err("no memory");
-			return 0;
-		}
+		printf("set hyprid.. new value %s eq old value %s\n",getconfig(tmpstr, NULL), value);
+		free(tmpstr), tmpstr = NULL;
+		return 0;
 	}
-
-	sprintf(buf, hypridtuner, tuner->devnr);
-	if(buf != NULL)
+	
+	if(fechangetype(tuner, value) == 0)
 	{
-		printf("set %s to %s\n", buf, value);
-		if(file_exist(buf))
-		{
+		if(getconfigint("need_delivery_system_workaround" , NULL) == 1)
+		{	
 			buf1 = readsys("/sys/module/dvb_core/parameters/dvb_shutdown_timeout",1);
 			ret = writesys("/sys/module/dvb_core/parameters/dvb_shutdown_timeout", "0", 1);
 			if(ret != 0)
@@ -6763,29 +6757,18 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 			if(tuner->fd > -1)
 			{
 				feclose(tuner, -1);
-				printf("set %s to %s\n", buf, value);
-				ret = writesys(buf, value, 0);
 				tuner->fd = feopen(tuner, NULL);
-			}
-			else
-			{
-				printf("set %s to %s\n", buf, value);
-				ret = writesys(buf, value, 0);
 			}
 			writesys("/sys/module/dvb_core/parameters/dvb_shutdown_timeout", buf1, 1);	
 			free(tmpstr); tmpstr = NULL;
 			free(buf1); buf1 = NULL;
 		}
 		else
-		{
-			fechangetype(tuner, value); 
-			//return 0;
-		}
-		tmpstr = ostrcat(tuner->feshortname, "_hyprid", 0, 0);
-		addconfigtmp(tmpstr, value);
-		free(tmpstr); tmpstr = NULL;
+			printf("Hinweis -> hypridtuner workaround NOT active\n");
 	}
-	free(buf); buf = NULL;
+	
+	addconfig(tmpstr, value);
+	free(tmpstr), tmpstr = NULL;
 
 	return 0;
 }
@@ -6813,7 +6796,7 @@ int sethypridtuner(int dev, char* value)
 	sprintf(buf, hypridtuner, dev);
 	if(buf != NULL)
 	{
-		printf("set %s to %s\n", buf, value);
+		printf("old -> set %s to %s\n", buf, value);
 		ret = writesys(buf, value, 0);
 		free(tmpstr); tmpstr = NULL;
 		return ret;
