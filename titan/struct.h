@@ -118,12 +118,12 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER " -   - "
+#define DRIVER "Sa 28. Okt 19:10:36 CEST 2017"
 #define OVERSION "1.87"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
-#define PLUGINVERSION 1
+#define PLUGINVERSION 41059
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -148,14 +148,19 @@
 #define MAXDEMUXDEVOPEN 10
 #define MAXAUDIODEV 4
 #define MAXVIDEODEV 4
+#ifndef MIPSEL
 #define MAXCIDEV 4
 #define MAXCADEV 4
+#else
+#define MAXCIDEV 8
+#define MAXCADEV 8
+#endif
 #ifndef MIPSEL
 #define MAXDVRDEV 4
 #define MAXDEMUXDEV 4
 #else
-#define MAXDVRDEV 5
-#define MAXDEMUXDEV 5
+#define MAXDVRDEV 8
+#define MAXDEMUXDEV 8
 #define MAXENCODERDEV 2
 #define DVB_API_VERSION 5
 #endif	 
