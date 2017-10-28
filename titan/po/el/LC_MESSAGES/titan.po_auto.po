@@ -1359,11 +1359,11 @@ msgstr "Αποθ./ Επαναφορά Ρυθμίσεων"
 msgid "Backup / Restore Settings"
 msgstr "Αποθ./ Επαναφορά Ρυθμίσεων"
 
-#: global.h:7743 httpdfunc.h:6660 httpdfunc.h:6739 system_backup_restore.h:82
+#: global.h:7726 httpdfunc.h:6660 httpdfunc.h:6739 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr ""
 
-#: global.h:7745
+#: global.h:7728
 msgid "Backup ended with error"
 msgstr ""
 
@@ -2478,19 +2478,19 @@ msgstr ""
 msgid "Create Satellites/Provider"
 msgstr ""
 
-#: global.h:6982
+#: global.h:6965
 msgid "Create Satellites/Provider (All)"
 msgstr ""
 
-#: global.h:6980
+#: global.h:6963
 msgid "Create Satellites/Provider (Cable)"
 msgstr ""
 
-#: global.h:6979
+#: global.h:6962
 msgid "Create Satellites/Provider (Sat)"
 msgstr ""
 
-#: global.h:6981
+#: global.h:6964
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
@@ -3198,9 +3198,9 @@ msgstr ""
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7114 global.h:7133 global.h:7608
-#: global.h:7628 global.h:7648 global.h:7668 global.h:7688 global.h:8020
-#: global.h:8025 global.h:8037 global.h:8042 harddisk.h:355 harddisk.h:678
+#: flashx.h:57 global.h:6262 global.h:7097 global.h:7116 global.h:7591
+#: global.h:7611 global.h:7631 global.h:7651 global.h:7671 global.h:8003
+#: global.h:8008 global.h:8020 global.h:8025 harddisk.h:355 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -3284,7 +3284,7 @@ msgstr ""
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:659
-#: tunerconfig.h:682 tunerconfig.h:1009 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:682 tunerconfig.h:1029 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -3447,11 +3447,11 @@ msgstr ""
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
 
-#: global.h:7131
+#: global.h:7114
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:7109
+#: global.h:7092
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
@@ -3975,14 +3975,14 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr ""
 
-#: global.h:8042
+#: global.h:8025
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:8020 global.h:8037
+#: global.h:8003 global.h:8020
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -3990,7 +3990,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:8025
+#: global.h:8008
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4908,7 +4908,7 @@ msgstr ""
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: global.h:6984
+#: global.h:6967
 msgid "Import mode"
 msgstr ""
 
@@ -5958,10 +5958,10 @@ msgstr ""
 #: filemanager.h:279 filemanager.h:289 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7044 global.h:7114 global.h:7133
-#: global.h:7608 global.h:7616 global.h:7628 global.h:7636 global.h:7648
-#: global.h:7656 global.h:7668 global.h:7676 global.h:7688 global.h:7696
-#: global.h:8020 global.h:8025 global.h:8037 global.h:8042 harddisk.h:678
+#: flashx.h:57 global.h:6262 global.h:7027 global.h:7097 global.h:7116
+#: global.h:7591 global.h:7599 global.h:7611 global.h:7619 global.h:7631
+#: global.h:7639 global.h:7651 global.h:7659 global.h:7671 global.h:7679
+#: global.h:8003 global.h:8008 global.h:8020 global.h:8025 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5826 httpdfunc.h:6212
@@ -6026,7 +6026,7 @@ msgstr ""
 #: tithek.h:2599 tithek.h:2617 tithek.h:2630 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:659 tunerconfig.h:682 tunerconfig.h:1009 unlock.h:20
+#: tunerconfig.h:659 tunerconfig.h:682 tunerconfig.h:1029 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
 #: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
@@ -6205,7 +6205,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "Κανάλι"
 
-#: global.h:6929
+#: global.h:6912
 msgid "Multituner adjustable"
 msgstr ""
 
@@ -6550,10 +6550,10 @@ msgstr ""
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7044 global.h:7114 global.h:7133
-#: global.h:7608 global.h:7616 global.h:7628 global.h:7636 global.h:7648
-#: global.h:7656 global.h:7668 global.h:7676 global.h:7688 global.h:7696
-#: global.h:8020 global.h:8025 global.h:8037 global.h:8042 harddisk.h:355
+#: flashx.h:57 global.h:6262 global.h:7027 global.h:7097 global.h:7116
+#: global.h:7591 global.h:7599 global.h:7611 global.h:7619 global.h:7631
+#: global.h:7639 global.h:7651 global.h:7659 global.h:7671 global.h:7679
+#: global.h:8003 global.h:8008 global.h:8020 global.h:8025 harddisk.h:355
 #: harddisk.h:487 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
@@ -6638,7 +6638,7 @@ msgstr ""
 #: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
 #: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:659 tunerconfig.h:682
-#: tunerconfig.h:1009 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
+#: tunerconfig.h:1029 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
 #: vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68
 #: vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86 vidstream.h:45
 #: vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31 vidto.h:68
@@ -7457,7 +7457,7 @@ msgstr ""
 msgid "Present"
 msgstr ""
 
-#: global.h:7755 system_backup_restore.h:15
+#: global.h:7738 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -8484,7 +8484,7 @@ msgstr "Δορυφόρος"
 msgid "Satellite"
 msgstr ""
 
-#: global.h:7044
+#: global.h:7027
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and\n"
@@ -9464,23 +9464,23 @@ msgstr ""
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7608
+#: global.h:7591
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7628
+#: global.h:7611
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7668
+#: global.h:7651
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7648
+#: global.h:7631
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7688
+#: global.h:7671
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9958,7 +9958,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7708
+#: global.h:7691
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -10252,7 +10252,7 @@ msgid "Titan MediaCenter"
 msgstr ""
 
 #: extensions.h:272 extensions.h:332 extensions.h:431 extensions.h:470
-#: global.h:7616 global.h:7636 global.h:7656 global.h:7676 global.h:7696
+#: global.h:7599 global.h:7619 global.h:7639 global.h:7659 global.h:7679
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
 msgid "Titan will be restarted!"
@@ -10540,7 +10540,7 @@ msgstr ""
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6920
+#: global.h:6903
 msgid "Tuner "
 msgstr "Tuner"
 
@@ -10568,7 +10568,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr ""
 
-#: tunerconfig.h:1009
+#: tunerconfig.h:1029
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -11718,11 +11718,11 @@ msgstr ""
 msgid "committed, uncommitted, toneburst"
 msgstr ""
 
-#: tunerconfig.h:886
+#: tunerconfig.h:887
 msgid "connect with port A"
 msgstr ""
 
-#: tunerconfig.h:888
+#: tunerconfig.h:894
 msgid "connect with port B"
 msgstr ""
 
@@ -12628,7 +12628,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421 settings_autostart.h:53
 #: settings_overclocking.h:276 skinadjust.h:94 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:902
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:914
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115 vfdisplay.h:130
 #: vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
@@ -13643,6 +13643,14 @@ msgstr ""
 #: lnbconfig.h:150
 msgid "unicable"
 msgstr "Ενεργοποίηση"
+
+#: tunerconfig.h:907
+msgid "unicable at port A"
+msgstr ""
+
+#: tunerconfig.h:910
+msgid "unicable at port B"
+msgstr ""
 
 #: lnbconfig.h:147
 msgid "universal"
