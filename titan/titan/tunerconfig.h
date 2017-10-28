@@ -1,6 +1,51 @@
 #ifndef TUNERCONFIG_H
 #define TUNERCONFIG_H
 
+void clearfbctunerdef(char* tuner)
+{
+	int i;
+	int end;
+	char* tmpstr = NULL, *tmpnr = NULL;
+	
+	end = getmaxsat(tuner);
+	
+	for(i = 1; i <= 4; i++)
+	{
+		tmpnr = oitoa(i);
+				
+		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+		tmpstr = ostrcat(tmpstr, "_sat", 1, 0);
+		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+		delconfig(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+
+		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+		tmpstr = ostrcat(tmpstr, "_satnr", 1, 0);
+		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+		delconfig(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+				
+		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+		tmpstr = ostrcat(tmpstr, "_lnb_loftype", 1, 0);
+		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+		delconfig(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+				
+		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+		tmpstr = ostrcat(tmpstr, "_lnb_satcr", 1, 0);
+		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+		delconfig(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+				
+		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+		tmpstr = ostrcat(tmpstr, "_lnb_satcrfrequ", 1, 0);
+		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+		delconfig(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+				
+		free(tmpnr); tmpnr = NULL;
+	}
+}
 void writetunerconfigsat(struct dvbdev* tuner, struct skin* tunerreceptiondvbs)
 {
 	if(tuner == NULL) return;
@@ -1215,18 +1260,7 @@ void screentunerconfig()
 							addconfigtmp(tmpstr1, tmpstr3);
 							//printf("***** A = %i\n", aok);	
 							aok = i;
-							tmpstr3 = ostrcat(tmpstr3, "_lnb_loftype", 1, 0);
-							tmpstr4 = ostrcat(tmpstr3, "1", 0, 0);
-							addconfigtmp(tmpstr4, "");
-							free(tmpstr4);tmpstr4=NULL;
-							tmpstr4 = ostrcat(tmpstr3, "2", 0, 0);
-							addconfigtmp(tmpstr4, "");
-							free(tmpstr4);tmpstr4=NULL;
-							tmpstr4 = ostrcat(tmpstr3, "3", 0, 0);
-							addconfigtmp(tmpstr4, "");
-							free(tmpstr4);tmpstr4=NULL;
-							tmpstr4 = ostrcat(tmpstr3, "4", 0, 0);
-							addconfigtmp(tmpstr4, "");
+							clearfbctunerdef(tmpstr1);
 							free(tmpstr4);tmpstr4=NULL;
 							free(tmpstr3);tmpstr3=NULL;
 						}
@@ -1244,19 +1278,8 @@ void screentunerconfig()
 							tmpstr3 = ostrcat("fe_0", tmpnr, 0, 1);
 							addconfigtmp(tmpstr1, tmpstr3);
 							//printf("***** B = %i\n", aok);
-							aok = i;
-							tmpstr3 = ostrcat(tmpstr3, "_lnb_loftype", 1, 0);
-							tmpstr4 = ostrcat(tmpstr3, "1", 0, 0);
-							addconfigtmp(tmpstr4, "");
-							free(tmpstr4);tmpstr4=NULL;
-							tmpstr4 = ostrcat(tmpstr3, "2", 0, 0);
-							addconfigtmp(tmpstr4, "");
-							free(tmpstr4);tmpstr4=NULL;
-							tmpstr4 = ostrcat(tmpstr3, "3", 0, 0);
-							addconfigtmp(tmpstr4, "");
-							free(tmpstr4);tmpstr4=NULL;
-							tmpstr4 = ostrcat(tmpstr3, "4", 0, 0);
-							addconfigtmp(tmpstr4, "");
+							bok = i;
+							clearfbctunerdef(tmpstr1);
 							free(tmpstr4);tmpstr4=NULL;
 							free(tmpstr3);tmpstr3=NULL;
 						}
