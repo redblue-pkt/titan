@@ -2880,8 +2880,8 @@ msgstr ""
 msgid "Devices"
 msgstr "renginiai"
 
-#: tunerconfig.h:183 tunerconfig.h:212 tunerconfig.h:243 tunerconfig.h:276
-#: tunerconfig.h:494 tunerconfig.h:565
+#: tunerconfig.h:228 tunerconfig.h:257 tunerconfig.h:288 tunerconfig.h:321
+#: tunerconfig.h:539 tunerconfig.h:610
 msgid "DiSEqC"
 msgstr ""
 
@@ -2901,15 +2901,15 @@ msgstr ""
 msgid "DiSEqC 1.3 (USALS)"
 msgstr ""
 
-#: tunerconfig.h:110
+#: tunerconfig.h:155
 msgid "DiSEqC A/B"
 msgstr ""
 
-#: tunerconfig.h:112
+#: tunerconfig.h:157
 msgid "DiSEqC A/B/C/D"
 msgstr ""
 
-#: tunerconfig.h:114
+#: tunerconfig.h:159
 msgid "DiSEqC A/B/C/D/E/F/G/H"
 msgstr ""
 
@@ -3090,7 +3090,7 @@ msgstr ""
 msgid "EDIT"
 msgstr "Redaguoti"
 
-#: tunerconfig.h:497
+#: tunerconfig.h:542
 msgid "EDIT DiSEqC"
 msgstr ""
 
@@ -3098,7 +3098,7 @@ msgstr ""
 msgid "EDIT FAV"
 msgstr "Redaguoti mgstamiausi"
 
-#: skin_default_skin.xml.h:173 tunerconfig.h:492
+#: skin_default_skin.xml.h:173 tunerconfig.h:537
 msgid "EDIT LNB / UNICABLE"
 msgstr ""
 
@@ -3344,8 +3344,8 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: tithek.h:2630 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:659
-#: tunerconfig.h:682 tunerconfig.h:1029 unlock.h:20 unlock.h:66 unlock.h:71
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:704
+#: tunerconfig.h:727 tunerconfig.h:1074 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -3585,7 +3585,7 @@ msgstr ""
 msgid "Exit Tithek"
 msgstr "Udaryti"
 
-#: tunerconfig.h:116
+#: tunerconfig.h:161
 msgid "Expert"
 msgstr "Iplstinis"
 
@@ -4837,7 +4837,7 @@ msgstr "Kartoji linija"
 msgid "How many days"
 msgstr ""
 
-#: tunerconfig.h:659 tunerconfig.h:682
+#: tunerconfig.h:704 tunerconfig.h:727
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
@@ -5677,7 +5677,7 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
-#: tunerconfig.h:301 tunerconfig.h:489 tunerconfig.h:559
+#: tunerconfig.h:346 tunerconfig.h:534 tunerconfig.h:604
 msgid "Lnb / Unicable"
 msgstr ""
 
@@ -6123,7 +6123,7 @@ msgstr ""
 #: tithek.h:2599 tithek.h:2617 tithek.h:2630 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:659 tunerconfig.h:682 tunerconfig.h:1029 unlock.h:20
+#: tunerconfig.h:704 tunerconfig.h:727 tunerconfig.h:1074 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
 #: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
@@ -6741,8 +6741,8 @@ msgstr ""
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
 #: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
-#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:659 tunerconfig.h:682
-#: tunerconfig.h:1029 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
+#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:704 tunerconfig.h:727
+#: tunerconfig.h:1074 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
 #: vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68
 #: vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86 vidstream.h:45
 #: vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31 vidto.h:68
@@ -7655,11 +7655,11 @@ msgstr ""
 msgid "Provider"
 msgstr "Transliuotojas"
 
-#: tunerconfig.h:339
+#: tunerconfig.h:384
 msgid "Provider (DVB-C)"
 msgstr ""
 
-#: tunerconfig.h:417
+#: tunerconfig.h:462
 msgid "Provider (DVB-T)"
 msgstr ""
 
@@ -8595,7 +8595,7 @@ msgstr ""
 msgid "SatCount: "
 msgstr "No. i palydov :"
 
-#: tunerconfig.h:107
+#: tunerconfig.h:152
 msgid "Satelite Type"
 msgstr "Satellite Type"
 
@@ -9283,7 +9283,7 @@ msgstr "Kanalo ( EPG)"
 msgid "Single EPG"
 msgstr "Kanalo EPG"
 
-#: tunerconfig.h:109
+#: tunerconfig.h:154
 msgid "Single LNB"
 msgstr ""
 
@@ -10700,7 +10700,7 @@ msgstr ""
 msgid "Tuner Reception"
 msgstr ""
 
-#: tunerconfig.h:382
+#: tunerconfig.h:427
 msgid "Tuner Type"
 msgstr "Imtuvo tipas"
 
@@ -10712,7 +10712,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr ""
 
-#: tunerconfig.h:1029
+#: tunerconfig.h:1074
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -11871,11 +11871,11 @@ msgstr ""
 msgid "committed, uncommitted, toneburst"
 msgstr ""
 
-#: tunerconfig.h:887
+#: tunerconfig.h:932
 msgid "connect with port A"
 msgstr ""
 
-#: tunerconfig.h:894
+#: tunerconfig.h:939
 msgid "connect with port B"
 msgstr ""
 
@@ -11945,11 +11945,11 @@ msgstr "Numatyta"
 msgid "default Directory"
 msgstr "numatytasis katalogas"
 
-#: tunerconfig.h:840
+#: tunerconfig.h:885
 msgid "define port A"
 msgstr ""
 
-#: tunerconfig.h:846
+#: tunerconfig.h:891
 msgid "define port B"
 msgstr ""
 
@@ -11973,7 +11973,7 @@ msgstr "DHCP"
 msgid "dir"
 msgstr ""
 
-#: tunerconfig.h:832
+#: tunerconfig.h:877
 msgid "direct connect"
 msgstr "Direct connection"
 
@@ -12360,7 +12360,7 @@ msgstr ""
 msgid "intern"
 msgstr "vidinis"
 
-#: tunerconfig.h:867
+#: tunerconfig.h:912
 msgid "internal loop to Tuner"
 msgstr ""
 
@@ -12492,7 +12492,7 @@ msgstr ""
 msgid "logo"
 msgstr ""
 
-#: tunerconfig.h:865
+#: tunerconfig.h:910
 msgid "loop to Tuner"
 msgstr "Tuner looped"
 
@@ -12697,8 +12697,8 @@ msgstr "NFS serveris"
 #: settings_overclocking.h:244 skinadjust.h:252 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:42
 #: tithek_settings.h:46 tithek_settings.h:50 tithek_settings.h:54 tmc.h:531
-#: tmc.h:535 tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244
-#: tunerconfig.h:277 xupnpd.h:30
+#: tmc.h:535 tunerconfig.h:229 tunerconfig.h:258 tunerconfig.h:289
+#: tunerconfig.h:322 xupnpd.h:30
 msgid "no"
 msgstr "Ne"
 
@@ -12781,7 +12781,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421 settings_autostart.h:53
 #: settings_overclocking.h:276 skinadjust.h:94 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:914
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:959
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115 vfdisplay.h:130
 #: vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
@@ -13014,7 +13014,7 @@ msgstr "Ijungimas"
 msgid "powerofftimerscreen"
 msgstr ""
 
-#: tunerconfig.h:302 tunerconfig.h:303
+#: tunerconfig.h:347 tunerconfig.h:348
 msgid "press red"
 msgstr "Press Red Button"
 
@@ -13786,8 +13786,8 @@ msgstr ""
 msgid "uncommitted, committed, toneburst"
 msgstr ""
 
-#: audiotrack.h:149 play.h:253 subtitle.h:1745 tunerconfig.h:157
-#: tunerconfig.h:341 tunerconfig.h:419
+#: audiotrack.h:149 play.h:253 subtitle.h:1745 tunerconfig.h:202
+#: tunerconfig.h:386 tunerconfig.h:464
 msgid "undefined"
 msgstr "neapibrtas"
 
@@ -13799,11 +13799,11 @@ msgstr "!!! UNDEFINED ERROR !!!"
 msgid "unicable"
 msgstr "Unicable"
 
-#: tunerconfig.h:907
+#: tunerconfig.h:952
 msgid "unicable at port A"
 msgstr ""
 
-#: tunerconfig.h:910
+#: tunerconfig.h:955
 msgid "unicable at port B"
 msgstr ""
 
