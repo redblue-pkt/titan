@@ -1,7 +1,7 @@
 #ifndef TUNERCONFIG_H
 #define TUNERCONFIG_H
 
-void clearfbctunerdef(char* tuner)
+void clearfbctunerdef(char* tuner, int flag)
 {
 	int i;
 	int end;
@@ -13,35 +13,40 @@ void clearfbctunerdef(char* tuner)
 	{
 		tmpnr = oitoa(i);
 				
-		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
-		tmpstr = ostrcat(tmpstr, "_sat", 1, 0);
-		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-		delconfig(tmpstr);
-		free(tmpstr); tmpstr = NULL;
+		if(flag == 0)
+		{
+			tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_sat", 1, 0);
+			tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+			delconfig(tmpstr);
+			free(tmpstr); tmpstr = NULL;
 
-		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
-		tmpstr = ostrcat(tmpstr, "_satnr", 1, 0);
-		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-		delconfig(tmpstr);
-		free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_satnr", 1, 0);
+			tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+			delconfig(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
+		if(flag == 0 || flag == 1)
+		{		
+			tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_lnb_loftype", 1, 0);
+			tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+			delconfig(tmpstr);
+			free(tmpstr); tmpstr = NULL;
 				
-		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
-		tmpstr = ostrcat(tmpstr, "_lnb_loftype", 1, 0);
-		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-		delconfig(tmpstr);
-		free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_lnb_satcr", 1, 0);
+			tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+			delconfig(tmpstr);
+			free(tmpstr); tmpstr = NULL;
 				
-		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
-		tmpstr = ostrcat(tmpstr, "_lnb_satcr", 1, 0);
-		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-		delconfig(tmpstr);
-		free(tmpstr); tmpstr = NULL;
-				
-		tmpstr = ostrcat(tmpstr, tuner, 1, 0);
-		tmpstr = ostrcat(tmpstr, "_lnb_satcrfrequ", 1, 0);
-		tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-		delconfig(tmpstr);
-		free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, tuner, 1, 0);
+			tmpstr = ostrcat(tmpstr, "_lnb_satcrfrequ", 1, 0);
+			tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+			delconfig(tmpstr);
+			free(tmpstr); tmpstr = NULL;
+		}
 				
 		free(tmpnr); tmpnr = NULL;
 	}
@@ -1217,6 +1222,7 @@ void screentunerconfig()
 						{
 							aok = i;
 							addconfigtmp(tmpstr1, "");
+							clearfbctunerdef(tmpstr1, 1);
 							//printf("***** AM = %i\n", aok);	
 						}
 						else
@@ -1231,6 +1237,7 @@ void screentunerconfig()
 						{
 							bok = i;
 							addconfigtmp(tmpstr1, "");
+							clearfbctunerdef(tmpstr1, 1);
 							//printf("***** BM = %i\n", aok);	
 						}
 						else
@@ -1260,7 +1267,7 @@ void screentunerconfig()
 							addconfigtmp(tmpstr1, tmpstr3);
 							//printf("***** A = %i\n", aok);	
 							aok = i;
-							clearfbctunerdef(tmpstr1);
+							clearfbctunerdef(tmpstr1, 0);
 							free(tmpstr4);tmpstr4=NULL;
 							free(tmpstr3);tmpstr3=NULL;
 						}
@@ -1279,7 +1286,7 @@ void screentunerconfig()
 							addconfigtmp(tmpstr1, tmpstr3);
 							//printf("***** B = %i\n", aok);
 							bok = i;
-							clearfbctunerdef(tmpstr1);
+							clearfbctunerdef(tmpstr1, 0);
 							free(tmpstr4);tmpstr4=NULL;
 							free(tmpstr3);tmpstr3=NULL;
 						}
@@ -1292,6 +1299,7 @@ void screentunerconfig()
 					}	
 					else if(ostrcmp("x", getconfig(tmpstr2, NULL)) == 0)
 						addconfigtmp(tmpstr1, "x");
+	
 				}
 				free(tmpstr1);tmpstr1=NULL;
 				free(tmpstr2);tmpstr2=NULL;
