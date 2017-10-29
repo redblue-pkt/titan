@@ -58,6 +58,10 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 				case 1: newnode->fedmxsource = DMX_SOURCE_FRONT1; break;
 				case 2: newnode->fedmxsource = DMX_SOURCE_FRONT2; break;
 				case 3: newnode->fedmxsource = DMX_SOURCE_FRONT3; break;
+				case 4: newnode->fedmxsource = DMX_SOURCE_FRONT0 + devnr; break;
+				case 5: newnode->fedmxsource = DMX_SOURCE_FRONT0 + devnr; break;
+				case 6: newnode->fedmxsource = DMX_SOURCE_FRONT0 + devnr; break;
+				case 7: newnode->fedmxsource = DMX_SOURCE_FRONT0 + devnr; break;
 			}
 		}
 		if(type == FRONTENDDEVDUMMY)
@@ -69,6 +73,9 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 				case 2: newnode->fedmxsource = DMX_SOURCE_DVR2; break;
 				case 3: newnode->fedmxsource = DMX_SOURCE_DVR3; break;
 				case 4: newnode->fedmxsource = DMX_SOURCE_DVR3 + 1; break;
+				case 5: newnode->fedmxsource = DMX_SOURCE_DVR0 + devnr; break;
+				case 6: newnode->fedmxsource = DMX_SOURCE_DVR0 + devnr; break;
+				case 7: newnode->fedmxsource = DMX_SOURCE_DVR0 + devnr; break;
 			}
 		}
 	}
