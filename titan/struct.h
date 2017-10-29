@@ -149,13 +149,13 @@
 #define MAXAUDIODEV 4
 #define MAXVIDEODEV 4
 #define MAXCIDEV 4
-#define MAXCADEV 4
+#define MAXCADEV 8
 #ifndef MIPSEL
 #define MAXDVRDEV 4
 #define MAXDEMUXDEV 4
 #else
-#define MAXDVRDEV 5
-#define MAXDEMUXDEV 5
+#define MAXDVRDEV 9
+#define MAXDEMUXDEV 9
 #define MAXENCODERDEV 2
 #define DVB_API_VERSION 5
 #endif	 
