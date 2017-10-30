@@ -1383,6 +1383,8 @@ uint16_t fereadsnr(struct dvbdev* node)
 //#ifdef MIPSEL
 #if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
 
+	int test1 = 0;
+	int test2 = 0;
 	struct dtv_property prop[1];
 	prop[0].cmd = DTV_STAT_CNR;
 	struct dtv_properties props;
@@ -1397,10 +1399,18 @@ uint16_t fereadsnr(struct dvbdev* node)
 	{
 		for(unsigned int i=0; i<prop[0].u.st.len; i++)
 		{
-			if (prop[0].u.st.stat[i].scale == FE_SCALE_DECIBEL)
+			if (prop[0].u.st.stat[i].scale == FE_SCALE_DECIBEL && test1 == 0)
+			{
+				test1 = 1;
 				signalqualitydb = prop[0].u.st.stat[i].svalue / 10;
-			else if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
+				printf("***** new snr signalqualitydb:%d\n", signalqualitydb);
+			}
+			else if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE && test2 == 0)
+			{
+				test2 = 1;
 				signalquality = prop[0].u.st.stat[i].svalue;
+				printf("***** new snr signalquality:%d\n", signalquality);
+			}
 		}
 	}
 #endif	
