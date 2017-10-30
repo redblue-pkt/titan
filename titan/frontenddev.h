@@ -694,10 +694,17 @@ int fewait(struct dvbdev* node)
 			debug(200, "wait for tuner end with 0");
 			return 0;
 		}
+		if(dvbnode != NULL && ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL)
+		{
+			if(status & FE_TIMEDOUT)
+			{
+				debug(200, "wait for tuner end with FE_TIMEDOUT");
+				return 1;
+			}
+		}
 		usleep(1000);
 	}
 	debug(200, "wait for tuner end");
-
 	//if(ev.status & FE_HAS_LOCK)
 	//	return 0;
 	if(status & FE_HAS_LOCK)
