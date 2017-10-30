@@ -694,7 +694,7 @@ int fewait(struct dvbdev* node)
 			debug(200, "wait for tuner end with 0");
 			return 0;
 		}
-		if(dvbnode != NULL && ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL)
+		if(node != NULL && ostrstr(node->feinfo->name, "BCM45208") != NULL)
 		{
 			if(status & FE_TIMEDOUT)
 			{
