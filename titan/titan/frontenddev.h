@@ -1423,7 +1423,9 @@ uint16_t fereadsnr(struct dvbdev* node)
 		//int atsc_max = 4200; // we assume a max of 42db here
 		
 		ioctl(node->fd, FE_READ_SNR, &snr);
-				
+		
+		printf("***** old snr signalquality\n");		
+		
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
 		{
 			ret = (snr * 240) >> 8;
