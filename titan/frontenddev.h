@@ -1435,7 +1435,7 @@ uint16_t fereadsnr(struct dvbdev* node)
 		{
 			ret = snr*10;
 		}
-		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)" || ostrstr(node->feinfo->name, "BCM45208") != NULL)
+		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL)
 		{
 			ret = (snr * 100) >> 8;
 		}
