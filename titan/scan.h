@@ -1311,6 +1311,13 @@ void doscan(struct stimerthread* timernode)
 			if(fenode->feinfo->type == FE_QPSK)
 			{
 				feset(fenode, tpnode);
+				//workaround fur fec Tuner um ein gutes Ergenis zu erziehlen
+				if(ostrstr(fenode->feinfo->name, "BCM45208") != NULL)
+				{
+					debug(200, "workaround for fbc... set fec and pilot to auto");
+					tpnode->fec = 0;   //FEC_AUTO
+					tpnode->pilot = 2; //PILOT_AUTO
+				}
 				if(fetunedvbs(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
