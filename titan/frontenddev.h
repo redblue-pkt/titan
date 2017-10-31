@@ -1472,13 +1472,14 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		return 0;
 	}
 	
-#ifdef ARM		
+#if DVB_API_VERSION >= 5
 	struct dtv_property prop[1];
 	prop[0].cmd = DTV_STAT_SIGNAL_STRENGTH;
 	struct dtv_properties props;
 	props.props = prop;
 	props.num = 1;
 	ioctl(node->fd, FE_GET_PROPERTY, &props);
+	
 	for(unsigned int i=0; i<prop[0].u.st.len; i++)
 	{
 		if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
@@ -1491,12 +1492,13 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 			signal = signal * 1000;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
-	return signal;
-#else	
+	if (!signal)
+		return signal;
+	// fallback to old DVB API
+#endif	
 	ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
 	debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	return signal;
-#endif
 }
 
 uint32_t fereadber(struct dvbdev* node)
