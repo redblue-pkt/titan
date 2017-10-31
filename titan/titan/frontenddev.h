@@ -1500,7 +1500,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	}
 	else
 	{
-		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
+		if(ostrstr(node->feinfo->name, "Si2166B") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL)
 			signal = signal * 1000;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
