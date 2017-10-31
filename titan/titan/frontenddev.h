@@ -1478,26 +1478,32 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	struct dtv_properties props;
 	props.props = prop;
 	props.num = 1;
-	ioctl(node->fd, FE_GET_PROPERTY, &props);
-	
-	for(unsigned int i=0; i<prop[0].u.st.len; i++)
+	if (ioctl(node->fd, FE_GET_PROPERTY, &props) < 0 && errno != ERANGE)
 	{
-		if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
-			signal = prop[0].u.st.stat[i].uvalue;
+		debug(200, "DTV_STAT_SIGNAL_STRENGTH failed");
 	}
-	if (!signal)
+	else
 	{
-		ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
+		for(unsigned int i=0; i<prop[0].u.st.len; i++)
+		{
+			if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
+				signal = prop[0].u.st.stat[i].uvalue;
+		}
+	}
+	if (signal)
+		return signal;
+	// fallback to old DVB API
+#endif	
+	if(ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal) < 0 && errno != ERANGE)
+	{
+		debug(200, "FE_READ_SIGNAL_STRENGTH failed");
+	}
+	else
+	{
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
 			signal = signal * 1000;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
-	if (!signal)
-		return signal;
-	// fallback to old DVB API
-#endif	
-	ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
-	debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	return signal;
 }
 
@@ -1602,7 +1608,6 @@ int fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		case 15: fec = FEC_NONE; break;
 		default: fec = FEC_AUTO; break;
 	}
-	
 	int pilot = tpnode->pilot;
 	switch(pilot)
 	{
@@ -1611,7 +1616,6 @@ int fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		case 2: pilot = PILOT_AUTO; break;
 		default: pilot = PILOT_AUTO; break;
 	}
-
 	int rolloff = tpnode->rolloff;
 	switch(rolloff)
 	{
