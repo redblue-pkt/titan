@@ -76,6 +76,7 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 				case 5: newnode->fedmxsource = DMX_SOURCE_DVR0 + devnr; break;
 				case 6: newnode->fedmxsource = DMX_SOURCE_DVR0 + devnr; break;
 				case 7: newnode->fedmxsource = DMX_SOURCE_DVR0 + devnr; break;
+				case 8: newnode->fedmxsource = DMX_SOURCE_DVR0 + devnr; break;
 			}
 		}
 	}
