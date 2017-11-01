@@ -2371,7 +2371,8 @@ int fechangetype(struct dvbdev* tuner, char* value)
 				ret = writesys(buf, value, 0);
 			printf("set %s to %s RC:%i\n", buf, value, ret);
 		}
-		err("set system tuner to %d ... file not found -> %s", value, buf);
+		else
+			err("set system tuner to %d ... file not found -> %s", value, buf);
 		free(buf); buf = NULL;
 		return 1; //true
 	
