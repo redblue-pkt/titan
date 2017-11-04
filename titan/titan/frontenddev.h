@@ -311,6 +311,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 	else
 		dvbnode = dvbdev;
 
+
 	//suche tuner der die gewuenschte orbitalpos kann und nicht belegt ist
 	while(dvbnode != NULL)
 	{
@@ -405,11 +406,19 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 						free(tmpnr); tmpnr = NULL;
 						return dvbnode;
 					}
-					if(tmpdvbnode != NULL)
+					
+					found = 0;
+					while(CharPtrTmp[found] != NULL)
 					{
-						tmpdvbnode->feaktband = band;
-						tmpdvbnode->feaktpolarization = tpnode->polarization;
+						CharPtrTmp[found]->feaktband = band;
+						CharPtrTmp[found]->feaktpolarization = tpnode->polarization;
+						found = found + 1;
 					}
+					//if(tmpdvbnode != NULL)
+					//{
+					//	tmpdvbnode->feaktband = band;
+					//	tmpdvbnode->feaktpolarization = tpnode->polarization;
+					//}
 					dvbnode->felasttransponder = dvbnode->feakttransponder;
 					dvbnode->feakttransponder = tpnode;
 					dvbnode->feaktpolarization = tpnode->polarization;
@@ -552,11 +561,18 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 						free(tmpnr); tmpnr = NULL;
 						return dvbnode;
 					}
-					if(tmpdvbnode != NULL)
+					found = 0;
+					while(CharPtrTmp[found] != NULL)
 					{
-						tmpdvbnode->feaktband = band;
-						tmpdvbnode->feaktpolarization = tpnode->polarization;
+						CharPtrTmp[found]->feaktband = band;
+						CharPtrTmp[found]->feaktpolarization = tpnode->polarization;
+						found = found + 1;
 					}
+					//if(tmpdvbnode != NULL)
+					//{
+					//	tmpdvbnode->feaktband = band;
+					//	tmpdvbnode->feaktpolarization = tpnode->polarization;
+					//}
 					dvbnode->felasttransponder = dvbnode->feakttransponder;
 					dvbnode->feakttransponder = tpnode;
 					dvbnode->feaktpolarization = tpnode->polarization;
@@ -694,10 +710,17 @@ int fewait(struct dvbdev* node)
 			debug(200, "wait for tuner end with 0");
 			return 0;
 		}
+		if(node != NULL && ostrstr(node->feinfo->name, "BCM45208") != NULL)
+		{
+			if(status & FE_TIMEDOUT)
+			{
+				debug(200, "wait for tuner end with FE_TIMEDOUT");
+				return 1;
+			}
+		}
 		usleep(1000);
 	}
 	debug(200, "wait for tuner end");
-
 	//if(ev.status & FE_HAS_LOCK)
 	//	return 0;
 	if(status & FE_HAS_LOCK)
@@ -1373,9 +1396,12 @@ uint16_t fereadsnr(struct dvbdev* node)
 	int signalquality = 0;
 	int signalqualitydb = 0;
 //#ifdef ARM
-//#ifdef MIPSEL
-#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
+#ifdef MIPSEL
+#if DVB_API_VERSION >= 5
+//#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
 
+	int test1 = 0;
+	int test2 = 0;
 	struct dtv_property prop[1];
 	prop[0].cmd = DTV_STAT_CNR;
 	struct dtv_properties props;
@@ -1390,13 +1416,21 @@ uint16_t fereadsnr(struct dvbdev* node)
 	{
 		for(unsigned int i=0; i<prop[0].u.st.len; i++)
 		{
-			if (prop[0].u.st.stat[i].scale == FE_SCALE_DECIBEL)
+			if (prop[0].u.st.stat[i].scale == FE_SCALE_DECIBEL && test1 == 0)
+			{
+				test1 = 1;
 				signalqualitydb = prop[0].u.st.stat[i].svalue / 10;
-			else if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
+				printf("***** new snr signalqualitydb:%d\n", signalqualitydb);
+			}
+			else if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE && test2 == 0)
+			{
+				test2 = 1;
 				signalquality = prop[0].u.st.stat[i].svalue;
+				printf("***** new snr signalquality:%d\n", signalquality);
+			}
 		}
 	}
-#endif	
+#endif
 	if(!signalquality && !signalqualitydb)
 	{
 		int ret = 0x12345678;
@@ -1406,7 +1440,9 @@ uint16_t fereadsnr(struct dvbdev* node)
 		//int atsc_max = 4200; // we assume a max of 42db here
 		
 		ioctl(node->fd, FE_READ_SNR, &snr);
-				
+		
+		printf("***** old snr signalquality\n");		
+		
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
 		{
 			ret = (snr * 240) >> 8;
@@ -1415,7 +1451,7 @@ uint16_t fereadsnr(struct dvbdev* node)
 		{
 			ret = snr*10;
 		}
-		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)") != NULL)
+		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL)
 		{
 			ret = (snr * 100) >> 8;
 		}
@@ -1438,8 +1474,13 @@ uint16_t fereadsnr(struct dvbdev* node)
 				signalquality = (ret >= ter_max ? 65536 : ret * 65536 / ter_max);
 		}
 	}
-	debug(200, "frontend snr = %02x", (signalquality * 100) / 0xffff);
+	debug(200, "frontend snr = %02x", signalquality );
 	return signalquality;
+#else
+	ioctl(node->fd, FE_READ_SNR, &snr);
+	debug(200, "frontend snr = %02x", (snr * 100) / 0xffff);
+	return snr;
+#endif
 }
 
 uint16_t fereadsignalstrength(struct dvbdev* node)
@@ -1451,32 +1492,41 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		err("NULL detect");
 		return 0;
 	}
-	
-#ifdef ARM		
+#ifdef MIPSEL	
+#if DVB_API_VERSION >= 5
 	struct dtv_property prop[1];
 	prop[0].cmd = DTV_STAT_SIGNAL_STRENGTH;
 	struct dtv_properties props;
 	props.props = prop;
 	props.num = 1;
-	ioctl(node->fd, FE_GET_PROPERTY, &props);
-	for(unsigned int i=0; i<prop[0].u.st.len; i++)
+	if (ioctl(node->fd, FE_GET_PROPERTY, &props) < 0 && errno != ERANGE)
 	{
-		if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
-			signal = prop[0].u.st.stat[i].uvalue;
+		debug(200, "DTV_STAT_SIGNAL_STRENGTH failed");
 	}
-	if (!signal)
+	else
 	{
-		ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
-		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
+		for(unsigned int i=0; i<prop[0].u.st.len; i++)
+		{
+			if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
+				signal = prop[0].u.st.stat[i].uvalue;
+		}
+	}
+	if (signal)
+		return signal;
+	// fallback to old DVB API
+#endif
+#endif	
+	if(ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal) < 0 && errno != ERANGE)
+	{
+		debug(200, "FE_READ_SIGNAL_STRENGTH failed");
+	}
+	else
+	{
+		if(ostrstr(node->feinfo->name, "Si2166B") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL)
 			signal = signal * 1000;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
 	return signal;
-#else	
-	ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
-	debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
-	return signal;
-#endif
 }
 
 uint32_t fereadber(struct dvbdev* node)
@@ -1580,7 +1630,6 @@ int fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		case 15: fec = FEC_NONE; break;
 		default: fec = FEC_AUTO; break;
 	}
-	
 	int pilot = tpnode->pilot;
 	switch(pilot)
 	{
@@ -1589,7 +1638,6 @@ int fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		case 2: pilot = PILOT_AUTO; break;
 		default: pilot = PILOT_AUTO; break;
 	}
-
 	int rolloff = tpnode->rolloff;
 	switch(rolloff)
 	{
@@ -2194,6 +2242,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	if (ioctl(tuner->fd, FE_SET_PROPERTY, &cmdseq) == -1)
 	{
 		err("FE_SET_PROPERTY failed -> use procfs to switch delivery system tuner %d mode %s type %d",tuner->devnr ,value, type);
+	}
 		hypridtuner = getconfig("hypridtuner", NULL);
 		if(hypridtuner != NULL)
 		{
@@ -2217,10 +2266,11 @@ int fechangetype(struct dvbdev* tuner, char* value)
 				ret = writesys(buf, value, 0);
 			printf("set %s to %s RC:%i\n", buf, value, ret);
 		}
-		err("set system tuner to %d ... file not found -> %s", value, buf);
+		else
+			err("set system tuner to %d ... file not found -> %s", value, buf);
 		free(buf); buf = NULL;
 		return 1; //true
-	}
+	
 	return 0; //true
 
 #else //if DVB_API_VERSION < 5
