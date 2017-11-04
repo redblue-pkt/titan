@@ -1492,7 +1492,8 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		err("NULL detect");
 		return 0;
 	}
-#ifdef MIPSEL	
+//#ifdef MIPSEL	
+#ifdef ARM	
 #if DVB_API_VERSION >= 5
 	struct dtv_property prop[1];
 	prop[0].cmd = DTV_STAT_SIGNAL_STRENGTH;
