@@ -1395,8 +1395,8 @@ uint16_t fereadsnr(struct dvbdev* node)
 	}
 	int signalquality = 0;
 	int signalqualitydb = 0;
-//#ifdef ARM
-#ifdef MIPSEL
+#ifdef ARM
+//#ifdef MIPSEL
 #if DVB_API_VERSION >= 5
 //#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
 
