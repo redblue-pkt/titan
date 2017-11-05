@@ -1792,6 +1792,14 @@ char* gettunerlocktext(struct skin* node, char* onlyhidden, char* tuner)
 				tmpstr = ostrcat("C",NULL, 0, 0);		
 			if(tunernr == 3)
 				tmpstr = ostrcat("D",NULL, 0, 0);	
+			if(tunernr == 4)
+				tmpstr = ostrcat("E",NULL, 0, 0);	
+			if(tunernr == 5)
+				tmpstr = ostrcat("F",NULL, 0, 0);	
+			if(tunernr == 6)
+				tmpstr = ostrcat("G",NULL, 0, 0);	
+			if(tunernr == 7)
+				tmpstr = ostrcat("H",NULL, 0, 0);	
 		}
 		else
 			tmpstr = ostrcat(node->text,NULL, 0, 0);
