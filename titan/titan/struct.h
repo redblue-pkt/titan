@@ -157,7 +157,7 @@
 #define MAXDVRDEV 9
 #define MAXDEMUXDEV 9
 #define MAXENCODERDEV 2
-#define DVB_API_VERSION 5
+//#define DVB_API_VERSION 5
 #endif	 
 #define MAXSCDEV 2
 #define RCTIMEOUT 999999
