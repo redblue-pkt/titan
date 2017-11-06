@@ -1904,11 +1904,6 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 		default: system = 1; break;
 	}
 #endif
-	if(checkbox("ATEMIO7600") == 1) 
-	{
-		if(tpnode->frequency < 1000000)
-			tpnode->frequency = tpnode->frequency * 1000;	
-	}
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
@@ -1922,8 +1917,6 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	debug(200, "new dvbapi: frequ=%d, inversion=%d, fec=%d, sr=%d, modulation=%d, system=%d (%s)", tpnode->frequency, tpnode->inversion, fec, tpnode->symbolrate, modulation, tpnode->system, node->feshortname);
 #else
 	struct dvb_frontend_parameters tuneto;
-	if(tpnode->frequency < 1000000)
-		tpnode->frequency = tpnode->frequency * 1000;
 	tuneto.frequency = tpnode->frequency;
 	tuneto.inversion = tpnode->inversion;
 	tuneto.u.qam.symbol_rate = tpnode->symbolrate;
