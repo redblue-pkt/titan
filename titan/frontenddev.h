@@ -1919,7 +1919,7 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 #else
 	struct dvb_frontend_parameters tuneto;
 	if(tpnode->frequency < 1000000)
-		tpnode->frequency = tpnode->frequency * 1000);
+		tpnode->frequency = tpnode->frequency * 1000;
 	tuneto.frequency = tpnode->frequency;
 	tuneto.inversion = tpnode->inversion;
 	tuneto.u.qam.symbol_rate = tpnode->symbolrate;
