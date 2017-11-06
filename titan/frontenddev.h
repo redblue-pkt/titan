@@ -1523,10 +1523,10 @@ uint16_t fereadsnr(struct dvbdev* node)
 	}
 	int signalquality = 0;
 	int signalqualitydb = 0;
-#ifdef ARM
-//#ifdef MIPSEL
-#if DVB_API_VERSION >= 5
-//#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
+//#ifdef ARM
+#ifdef MIPSEL
+//#if DVB_API_VERSION >= 5
+#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
 
 	int test1 = 0;
 	int test2 = 0;
@@ -1620,9 +1620,9 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		err("NULL detect");
 		return 0;
 	}
-#ifdef ARM
+//#ifdef ARM
 //#ifdef MIPSEL	
-#if DVB_API_VERSION >= 5
+#if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
 	struct dtv_property prop[1];
 	prop[0].cmd = DTV_STAT_SIGNAL_STRENGTH;
 	struct dtv_properties props;
@@ -1643,7 +1643,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	if (signal)
 		return signal;
 	// fallback to old DVB API
-#endif
+//#endif
 #endif	
 	if(ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal) < 0 && errno != ERANGE)
 	{
