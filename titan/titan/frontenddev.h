@@ -326,7 +326,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			dvbnode = dvbnode->next;
 			continue;
 		}
-		printf("+++++xx %s orbitalpos:%d frequency:%d feaktpolarization:%d lock:%d\n", dvbnode->feshortname, dvbnode->feakttransponder->orbitalpos, dvbnode->feakttransponder->frequency, dvbnode->feaktpolarization, dvbnode->felock);
+		if(flag != 1 && dvbnode->type == FRONTENDDEV) printf("+++++xx %s frequency:%d feaktpolarization:%d lock:%d\n", dvbnode->feshortname, dvbnode->feakttransponder->frequency, dvbnode->feaktpolarization, dvbnode->felock);
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock != 0)
 		{
 			if(flag == 2 && status.aktservice->fedev == dvbnode)
