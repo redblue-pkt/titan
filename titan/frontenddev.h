@@ -327,13 +327,8 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		if(flag != 1 && dvbnode->type == FRONTENDDEV) printf("+++++xx %s feaktpolarization:%d lock:%d\n", dvbnode->feshortname, dvbnode->feaktpolarization, dvbnode->felock);
-		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock != 0)
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && (dvbnode->felock != 0 !! status.aktservice->fedev == dvbnode)
 		{
-			if(flag == 2 && status.aktservice->fedev == dvbnode)
-			{
-				dvbnode = dvbnode->next;
-				continue;
-			}
 			//check if tuner is main tuner
 			if(getconfig(dvbnode->feshortname, NULL) != NULL)
 			{
