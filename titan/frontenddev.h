@@ -275,7 +275,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 	}
 
 	//suche tuner der auf der gleichen orbitalpos/frequency/pol/band ist
-	if(flag != 1) printf("****** gesucht wird.. orbitalpos:%d frequency:%d feaktpolarization:%d\n", tpnode->orbitalpos, tpnode->frequency, tpnode->polarization);
 	while(dvbnode != NULL)
 	{
 		//FRONTENDDEV first in the list
@@ -289,21 +288,22 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		}
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype)
 		{
-			if(flag != 1 && dvbnode->feakttransponder != NULL) printf("-----11 %s orbitalpos:%d frequency:%d feaktpolarization:%d lock:%d\n", dvbnode->feshortname, dvbnode->feakttransponder->orbitalpos, dvbnode->feakttransponder->frequency, dvbnode->feaktpolarization, dvbnode->felock);
-			else  if(flag != 1) printf("-----11 %s feakttransponder = NULL\n", dvbnode->feshortname);
+			if(dvbnode->feakttransponder != NULL && dvbnode->felock == 0 && status.aktservice->fedev != dvbnode)
+			{
+				if(flag != 1) debug(200, "clear tuner %s", dvbnode->feshortname);
+				dvbnode->feakttransponder = NULL;
+			}	
 			if(dvbnode->feakttransponder != NULL && dvbnode->feakttransponder->orbitalpos == tpnode->orbitalpos && dvbnode->feakttransponder->frequency == tpnode->frequency && dvbnode->feaktpolarization == tpnode->polarization)
 			{
 				band = calclof(dvbnode, tpnode, dvbnode->feaktnr, 1);
 				if(dvbnode->feaktband != band)
 				{
-					if(flag != 1) printf("-----1 Band passt nicht\n");
 					dvbnode = dvbnode->next;
 					continue;
 				}
 				dvbnode->felasttransponder = dvbnode->feakttransponder;
 				dvbnode->feakttransponder = tpnode;
 				if(flag != 1) debug(200, "found tuner with same orbitalpos/frequency/pol/band %s", dvbnode->feshortname);
-				if(flag != 1) printf("------ found tuner with same orbitalpos/frequency/pol/band %s\n", dvbnode->feshortname);
 				return(dvbnode);
 			}
 		}
@@ -331,7 +331,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			//check if tuner is main tuner
 			if(getconfig(dvbnode->feshortname, NULL) != NULL)
 			{
-				if(flag != 1) printf("-----xx %s no main tuner... exit\n", dvbnode->feshortname);
 				dvbnode = dvbnode->next;
 				continue;				
 			}
@@ -341,25 +340,24 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				continue;				
 			}
 			found = 0;
-			if(flag != 1 && dvbnode->type == FRONTENDDEV) printf("+++++xx %s feaktpolarization:%d lock:%d\n", dvbnode->feshortname, dvbnode->feaktpolarization, dvbnode->felock);
 			//check looptuner is free
 			tmpstr = getconfigbyval(dvbnode->feshortname, NULL);
 			CharPtrTmp[0] = NULL;
 			while(tmpstr != NULL) //found loop tuner
 			{
 				tmpdvbnode = fegetbyshortname(tmpstr);
-				if(flag != 1 && tmpdvbnode->feakttransponder != NULL) printf("-----xx %s orbitalpos:%d frequency:%d feaktpolarization:%d lock:%d\n", tmpdvbnode->feshortname, tmpdvbnode->feakttransponder->orbitalpos, tmpdvbnode->feakttransponder->frequency, tmpdvbnode->feaktpolarization, tmpdvbnode->felock);
-				else  if(flag != 1) printf("-----xx %s feakttransponder = NULL\n", tmpdvbnode->feshortname);
-				//if(flag != 1) printf("****** test tuner1 %s -> %s\n", dvbnode->feshortname, tmpdvbnode->feshortname);
-				if(tmpdvbnode != NULL && tmpdvbnode->felock == 0 && status.aktservice->fedev != tmpdvbnode)
+				if(tmpdvbnode != NULL)
 				{
-					found = 99;
-					break;
-				}
-				else
-				{
-					CharPtrTmp[found] = tmpdvbnode;
-					found = found + 1;
+					if(tmpdvbnode->feakttransponder == NULL || (tmpdvbnode->felock == 0 && status.aktservice->fedev != tmpdvbnode))
+					{
+						found = 99;
+						break;
+					}
+					else
+					{
+						CharPtrTmp[found] = tmpdvbnode;
+						found = found + 1;
+					}
 				}
 				tmpstr = getconfigbyval(tmpstr, NULL); //loop tuner also loop  ?
 			}
@@ -384,24 +382,15 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					found = 0;
 					if(dvbnode->feaktband != band)
 					{
-						if(tmpdvbnode != NULL)
-						{
-							if(flag != 1) printf("-----xx %s band not ok... exit\n", tmpdvbnode->feshortname);
-						else
-							if(flag != 1) printf("-----NULL band not ok... exit\n");
-						}
 						found = -1;
 						break;
 					}
-			
 					if(flag == 1)
 					{
 						free(tmpstr); tmpstr = NULL;
 						free(tmpnr); tmpnr = NULL;
 						return tmpdvbnode;
 					}
-					//dvbnode->feaktband = band;
-					//dvbnode->feaktpolarization = tpnode->polarization;
 					if(tmpdvbnode->feakttransponder != NULL)
 						tmpdvbnode->felasttransponder = tmpdvbnode->feakttransponder;
 					tmpdvbnode->feakttransponder = tpnode;
@@ -416,7 +405,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					free(tmpstr); tmpstr = NULL;
 					free(tmpnr); tmpnr = NULL;
 					if(flag != 1) debug(200, "found free tuner witch same orbitalpos %s", dvbnode->feshortname);
-					if(flag != 1) printf("------ found free loop tuner: %s witch same orbitalpos main tuner: %s\n", tmpdvbnode->feshortname, dvbnode->feshortname);
 					return tmpdvbnode;
 				}
 				free(tmpnr); tmpnr = NULL;
@@ -444,39 +432,36 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		}
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock == 0)
 		{
-			if(flag == 2 && status.aktservice->fedev == dvbnode)
-			{
-				dvbnode = dvbnode->next;
-				continue;
-			}
 			//check if tuner is main tuner
 			if(getconfig(dvbnode->feshortname, NULL) != NULL)
 			{
 				dvbnode = dvbnode->next;
 				continue;				
 			}
+			if(flag == 2 && status.aktservice->fedev == dvbnode)
+			{
+				dvbnode = dvbnode->next;
+				continue;
+			}
 			found = 0;
-			if(flag != 1 && dvbnode->feakttransponder != NULL) printf("*****yy %s orbitalpos:%d frequency:%d feaktpolarization:%d lock:%d\n", dvbnode->feshortname, dvbnode->feakttransponder->orbitalpos, dvbnode->feakttransponder->frequency, dvbnode->feaktpolarization, dvbnode->felock);
-			else  if(flag != 1) printf("*****yy %s feakttransponder = NULL\n", dvbnode->feshortname);
 			//check if tuner is loop and looptuner is locked
 			tmpstr = getconfigbyval(dvbnode->feshortname, NULL);
 			CharPtrTmp[0] = NULL;
 			while(tmpstr != NULL) //found loop tuner
 			{
 				tmpdvbnode = fegetbyshortname(tmpstr);
-				if(flag != 1 && tmpdvbnode->feakttransponder != NULL) printf("-----yy %s orbitalpos:%d frequency:%d feaktpolarization:%d lock:%d\n",  tmpdvbnode->feshortname, tmpdvbnode->feakttransponder->orbitalpos, tmpdvbnode->feakttransponder->frequency, tmpdvbnode->feaktpolarization, tmpdvbnode->felock);
-				else  if(flag != 1) printf("-----yy %s feakttransponder = NULL\n", tmpdvbnode->feshortname);
-				//if(flag != 1) printf("****** test tuner1 %s -> %s\n", dvbnode->feshortname, tmpdvbnode->feshortname);
-				if(tmpdvbnode != NULL && tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+				if(tmpdvbnode != NULL)
 				{
-					if(flag != 1) printf("-----yy %s not equal... exit\n", tmpdvbnode->feshortname);
-					found = -1;
-					break;
-				}
-				else
-				{
-					CharPtrTmp[found] = tmpdvbnode;
-					found = found + 1;
+					if(tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+					{
+						found = -1;
+						break;
+					}
+					else
+					{
+						CharPtrTmp[found] = tmpdvbnode;
+						found = found + 1;
+					}
 				}
 				tmpstr = getconfigbyval(tmpstr, NULL); //loop tuner also loop  ?
 			}
@@ -502,23 +487,16 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					found = 0;
 					while(CharPtrTmp[found] != NULL)
 					{
-						//if(flag != 1) printf("++++++ test band1 %s\n", CharPtrTmp[found]->feshortname);
 						if(CharPtrTmp[found]->feakttransponder != NULL)
 						{
-							if(CharPtrTmp[found] != NULL && CharPtrTmp[found]->feaktband != band && (CharPtrTmp[found]->felock != 0 || (flag == 2 && CharPtrTmp[found]->felock == 0)))
+							if(CharPtrTmp[found]->feaktband != band && (CharPtrTmp[found]->felock != 0 || (flag == 2 && CharPtrTmp[found]->felock == 0)))
 							{
-								if(flag != 1) printf("-----yy %s band not ok... exit\n", tmpdvbnode->feshortname);
 								found = 99;
 								break;
 							}
 						}
 						found = found + 1;
 					}
-						//if(tmpdvbnode != NULL && tmpdvbnode->feaktband != band && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
-						//{
-						//	free(tmpnr); tmpnr = NULL;
-						//	continue;
-						//}
 					if(found == 99)
 					{
 						found = 0;
@@ -531,7 +509,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 						free(tmpnr); tmpnr = NULL;
 						return dvbnode;
 					}
-					
 					found = 0;
 					while(CharPtrTmp[found] != NULL)
 					{
@@ -539,11 +516,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 						CharPtrTmp[found]->feaktpolarization = tpnode->polarization;
 						found = found + 1;
 					}
-					//if(tmpdvbnode != NULL)
-					//{
-					//	tmpdvbnode->feaktband = band;
-					//	tmpdvbnode->feaktpolarization = tpnode->polarization;
-					//}
 					dvbnode->felasttransponder = dvbnode->feakttransponder;
 					dvbnode->feakttransponder = tpnode;
 					dvbnode->feaktpolarization = tpnode->polarization;
@@ -552,11 +524,9 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 						dvbnode->feaktnr = ostrcat(aktnr, NULL, 0, 0);
 					else
 						dvbnode->feaktnr = NULL;
-
 					free(tmpstr); tmpstr = NULL;
 					free(tmpnr); tmpnr = NULL;
 					if(flag != 1) debug(200, "found free tuner witch same orbitalpos %s", dvbnode->feshortname);
-					if(flag != 1) printf("------ found free tuner witch same orbitalpos %s\n", dvbnode->feshortname);
 					return dvbnode;
 				}
 				free(tmpnr); tmpnr = NULL;
@@ -599,23 +569,21 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			//check if tuner is loop and an other loopt is locked
 			found = 0;
 			tmpstr = getconfigbyval(dvbnode->feshortname, NULL);
-			if(flag != 1 && dvbnode->feakttransponder != NULL) printf("*****33 %s orbitalpos:%d frequency:%d feaktpolarization:%d lock:%d\n", tmpstr, dvbnode->feakttransponder->orbitalpos, dvbnode->feakttransponder->frequency, dvbnode->feaktpolarization, dvbnode->felock);
-			else  if(flag != 1) printf("*****33 %s feakttransponder = NULL\n", tmpstr);
 			while(tmpstr != NULL) //found loop tuner
 			{
 				tmpdvbnode = fegetbyshortname(tmpstr);
-				if(flag != 1 && tmpdvbnode->feakttransponder != NULL) printf("-----33 %s orbitalpos:%d frequency:%d feaktpolarization:%d lock:%d\n", tmpstr, tmpdvbnode->feakttransponder->orbitalpos, tmpdvbnode->feakttransponder->frequency, tmpdvbnode->feaktpolarization, tmpdvbnode->felock);
-				else  if(flag != 1) printf("-----33 %s feakttransponder = NULL\n", dvbnode->feshortname);
-				//if(flag != 1) printf("****** test tuner2 %s -> %s\n", dvbnode->feshortname, tmpdvbnode->feshortname);
-				if(tmpdvbnode != NULL && tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+				if(tmpdvbnode != NULL)
 				{
-					found = -1;
-					break;
-				}
-				else
-				{
-					CharPtrTmp[found] = tmpdvbnode;
-					found = found + 1;
+					if(tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+					{
+						found = -1;
+						break;
+					}
+					else
+					{
+						CharPtrTmp[found] = tmpdvbnode;
+						found = found + 1;
+					}
 				}
 				tmpstr = getconfigbyval(tmpstr, NULL); //loop tuner also loop  ?
 			}
@@ -629,18 +597,18 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			while(tmpstr != NULL) //found loop tuner
 			{
 				tmpdvbnode = fegetbyshortname(tmpstr);
-				if(flag != 1 && tmpdvbnode->feakttransponder != NULL) printf("-----44 %s orbitalpos:%d frequency:%d feaktpolarization:%d lock:%d\n", tmpstr, tmpdvbnode->feakttransponder->orbitalpos, tmpdvbnode->feakttransponder->frequency, tmpdvbnode->feaktpolarization, tmpdvbnode->felock);
-				else  if(flag != 1) printf("-----44 %s feakttransponder = NULL\n", tmpstr);
-				//if(flag != 1) printf("****** test tuner1 %s -> %s\n", dvbnode->feshortname, tmpdvbnode->feshortname);
-				if(tmpdvbnode != NULL && tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+				if(tmpdvbnode != NULL)
 				{
-					found = -1;
-					break;
-				}
-				else
-				{
-					CharPtrTmp[found] = tmpdvbnode;
-					found = found + 1;
+					if(tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+					{
+						found = -1;
+						break;
+					}
+					else
+					{
+						CharPtrTmp[found] = tmpdvbnode;
+						found = found + 1;
+					}
 				}
 				tmpstr = getconfig(tmpstr, NULL);
 			}
@@ -666,18 +634,11 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					found = 0;
 					while(CharPtrTmp[found] != NULL)
 					{
-						//if(flag != 1) printf("++++++ test band2 %s\n", CharPtrTmp[found]->feshortname);
-						if(CharPtrTmp[found] != NULL && CharPtrTmp[found]->feaktband != band && (CharPtrTmp[found]->felock != 0 || (flag >= 2 && CharPtrTmp[found]->felock == 0)))	
+						if(CharPtrTmp[found]->feaktband != band && (CharPtrTmp[found]->felock != 0 || (flag >= 2 && CharPtrTmp[found]->felock == 0)))	
 						{
 							found = 99;
 							break;
 						}
-						found = found + 1;
-						//if(tmpdvbnode != NULL && tmpdvbnode->feaktband != band && (tmpdvbnode->felock != 0 || (flag >= 2 && tmpdvbnode->felock == 0)))
-						//{
-						//	free(tmpnr); tmpnr = NULL;
-						//	continue;
-						//}
 					}
 					if(found == 99)
 					{
@@ -699,11 +660,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 						CharPtrTmp[found]->feaktpolarization = tpnode->polarization;
 						found = found + 1;
 					}
-					//if(tmpdvbnode != NULL)
-					//{
-					//	tmpdvbnode->feaktband = band;
-					//	tmpdvbnode->feaktpolarization = tpnode->polarization;
-					//}
 					dvbnode->felasttransponder = dvbnode->feakttransponder;
 					dvbnode->feakttransponder = tpnode;
 					dvbnode->feaktpolarization = tpnode->polarization;
@@ -715,7 +671,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					free(tmpstr); tmpstr = NULL;
 					free(tmpnr); tmpnr = NULL;
 					if(flag != 1) debug(200, "found free looptuner witch same orbitalpos/polarization/band %s main: %s", dvbnode->feshortname, tmpdvbnode->feshortname);
-					if(flag != 1) printf("------ found free looptuner witch same orbitalpos/polarization/band %s main: %s\n", dvbnode->feshortname, tmpdvbnode->feshortname);
 					return dvbnode;
 				}
 				free(tmpnr); tmpnr = NULL;
