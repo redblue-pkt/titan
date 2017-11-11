@@ -322,6 +322,7 @@ void settunerstatus();
 struct dvb_frontend_info* fegetinfo(struct dvbdev* node, int fd);
 int feopen(struct dvbdev* node, char *fedev);
 void feclose(struct dvbdev* node, int fd);
+fe_status_t fereadstatus(struct dvbdev* node);
 
 //dvrdev.h
 void dvrclose(struct dvbdev* node, int fd);
