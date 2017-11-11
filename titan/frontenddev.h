@@ -634,7 +634,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					found = 0;
 					while(CharPtrTmp[found] != NULL)
 					{
-						if(CharPtrTmp[found]->feaktband != band && (CharPtrTmp[found]->felock != 0 || (flag >= 2 && CharPtrTmp[found]->felock == 0)))	
+						if(CharPtrTmp[found]->feakttransponder != NULL && CharPtrTmp[found]->feaktband != band && (CharPtrTmp[found]->felock != 0 || (flag >= 2 && CharPtrTmp[found]->felock == 0)))	
 						{
 							found = 99;
 							break;
