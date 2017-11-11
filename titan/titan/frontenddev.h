@@ -639,6 +639,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 							found = 99;
 							break;
 						}
+						found = found + 1;
 					}
 					if(found == 99)
 					{
