@@ -291,6 +291,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			if(dvbnode->feakttransponder != NULL && dvbnode->felock == 0 && status.aktservice->fedev != dvbnode)
 			{
 				if(flag != 1) debug(200, "clear tuner %s", dvbnode->feshortname);
+				dvbnode->felasttransponder = dvbnode->feakttransponder;
 				dvbnode->feakttransponder = NULL;
 			}	
 			if(dvbnode->feakttransponder != NULL && dvbnode->feakttransponder->orbitalpos == tpnode->orbitalpos && dvbnode->feakttransponder->frequency == tpnode->frequency && dvbnode->feaktpolarization == tpnode->polarization)
