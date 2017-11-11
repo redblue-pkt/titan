@@ -667,18 +667,22 @@ char* getsignal(struct skin* node, char* format)
 	char* buf = NULL, *buf1 = NULL;
 
 	signal = fereadsignalstrength(status.aktservice->fedev);
-	signal = (signal * 100) / 0xffff;
-
-	buf = malloc(MINMALLOC);
-	if(buf == NULL)
+	if(signal != 65535)
 	{
-		err("no mem");
-		return NULL;
-	}
-	
-	snprintf(buf, MINMALLOC, format, signal);
-	buf1 = ostrcat(buf, NULL, 1, 0);
+		signal = (signal * 100) / 0xffff;
 
+		buf = malloc(MINMALLOC);
+		if(buf == NULL)
+		{
+			err("no mem");
+			return NULL;
+		}
+	
+		snprintf(buf, MINMALLOC, format, signal);
+		buf1 = ostrcat(buf, NULL, 1, 0);
+	}
+	else
+		buf1 = ostrcat("lock", NULL, 0, 0);
 	return buf1;
 }
 
