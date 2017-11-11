@@ -291,6 +291,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			if(dvbnode->feakttransponder != NULL && dvbnode->felock == 0 && status.aktservice->fedev != dvbnode)
 			{
 				if(flag != 1) debug(200, "clear tuner %s", dvbnode->feshortname);
+				dvbnode->felasttransponder = dvbnode->feakttransponder;
 				dvbnode->feakttransponder = NULL;
 			}	
 			if(dvbnode->feakttransponder != NULL && dvbnode->feakttransponder->orbitalpos == tpnode->orbitalpos && dvbnode->feakttransponder->frequency == tpnode->frequency && dvbnode->feaktpolarization == tpnode->polarization)
@@ -634,11 +635,12 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 					found = 0;
 					while(CharPtrTmp[found] != NULL)
 					{
-						if(CharPtrTmp[found]->feaktband != band && (CharPtrTmp[found]->felock != 0 || (flag >= 2 && CharPtrTmp[found]->felock == 0)))	
+						if(CharPtrTmp[found]->feakttransponder != NULL && CharPtrTmp[found]->feaktband != band && (CharPtrTmp[found]->felock != 0 || (flag >= 2 && CharPtrTmp[found]->felock == 0)))	
 						{
 							found = 99;
 							break;
 						}
+						found = found + 1;
 					}
 					if(found == 99)
 					{
@@ -1595,10 +1597,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		for(unsigned int i=0; i<prop[0].u.st.len; i++)
 		{
 			if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
-			{
 				signal = prop[0].u.st.stat[i].uvalue;
-				printf("*************** signal %d\n", signal);
-			}
 		}
 	}
 	if (signal)
@@ -1616,12 +1615,11 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 			signal = signal * 1000;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
-	if(signal == 0)
-	{
-		fe_status_t status = fereadstatus(node);
-		if(status & FE_HAS_LOCK) signal = 65535;
-	}	
-	printf("+++++++++++++++ signal %d\n", signal);
+	if(signal == 0) 
+	{ 
+		fe_status_t status = fereadstatus(node); 
+		if(status & FE_HAS_LOCK) signal = 65535; 
+	}        
 	return signal;
 }
 
