@@ -191,7 +191,7 @@ month()
 
 videos()
 {
-#	if [ ! -e "$TMP/$FILENAME.list" ]; then
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			# 1. BEGIN variable setzen
@@ -253,6 +253,9 @@ videos()
 					i = index($0, "href=\"") + 6
 		            		j = index(substr($0, i), "\"") - 1
 		            		newpage = substr($0, i, j)
+# disable eventifo link sometimes http://livetv.sx/enx/eventinfo/_oklahoma_chicago/ 
+# "An error has occurred. The link you clicked, or the URL you typed into your browser, did not work. It is possible that we have a bad link floating out there but you may also have typed the page address incorrectly."
+# workaround disable and list all links simultan
 #					if (newpage ~ /<font color=/)
 #					{
 						eventinfo = 0
@@ -374,7 +377,7 @@ videos()
 			}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
-#	fi
+	fi
 	# 30. gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
