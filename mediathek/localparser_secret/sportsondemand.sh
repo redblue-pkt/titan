@@ -583,6 +583,13 @@ play()
 				URLTMP="https://www.youtube.com/watch/$ID"		
 #				URL="`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`"
 				URL="gethoster2 $URLTMP"
+
+				#errormsg
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | tr '\n' ' ' | sed 's!<h1 id="unavailable-message" class="message">!\nERROR: !' | grep ^ERROR: | cut -d"." -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+				ERROR=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3`
+				if [ "$URLTMP" == "https://www.youtube.com/watch/" ];then
+					URL="$ERROR"
+				fi
 			elif [ `echo $URLTMP | grep "openload.co" | wc -l` -eq 1 ];then
 				if [ "$debug" = "1" ]; then echo $INPUT bbbbbb $URLTMP; fi
 #				URL=`/tmp/localhoster/hoster.sh get http://openload.co/embed/EER0VdYdYOQ/`
@@ -617,6 +624,13 @@ play()
 				URLTMP="https://www.youtube.com/watch/$ID"		
 #				URL="`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`"
 				URL="gethoster2 $URLTMP"
+
+				#errormsg
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | sed 's!<h1 id="unavailable-message" class="message">!\nERROR: !' | grep ^ERROR: | cut -d"." -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+				ERROR=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5`
+				if [ "$URLTMP" == "https://www.youtube.com/watch/" ];then
+					URL="$ERROR"
+				fi
 			else
 				if [ "$debug" = "1" ]; then echo $INPUT gggggg $URLTMP; fi
 				URLTMP=`echo $URLTMP  | sed 's#//#\nhttp://#' | grep ^"http://"`
@@ -629,7 +643,7 @@ play()
 		fi
 
 		echo $URL
-		if [ "$debug" = "0" ]; then rm $TMP/cache.* > /dev/null 2>&1; fi
+#		if [ "$debug" = "0" ]; then rm $TMP/cache.* > /dev/null 2>&1; fi
 	fi
 #	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
