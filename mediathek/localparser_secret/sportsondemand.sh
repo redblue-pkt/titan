@@ -191,7 +191,7 @@ month()
 
 videos()
 {
-	if [ ! -e "$TMP/$FILENAME.list" ]; then
+#	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			# 1. BEGIN variable setzen
@@ -253,10 +253,10 @@ videos()
 					i = index($0, "href=\"") + 6
 		            		j = index(substr($0, i), "\"") - 1
 		            		newpage = substr($0, i, j)
-					if (newpage ~ /<font color=/)
-					{
+#					if (newpage ~ /<font color=/)
+#					{
 						eventinfo = 0
-					}
+#					}
 
 					i = index($0, "<b>") + 3
 		           		j = index($0, "</b>") - i
@@ -291,6 +291,8 @@ videos()
 				}
 			}
 			# <tr><td><nobr><a href="/enx/showvideo/437361/"><img src="//cdn.livetvcdn.net/img/v.gif"></a> <a class="small" href="/enx/showvideo/437361/">Full match record</a></nobr></td></tr>
+                        #
+                        #<tr><td><nobr><img src="//cdn.livetvcdn.net/img/v.gif"> <a class="small" href="/enx/showvideo/524797/">Full match record</a></nobr></td></tr>							
 			/>Full match record<\/a>/ \
 			{
 				if(eventinfo == 0)
@@ -301,6 +303,7 @@ videos()
 					fullmatch_title = "Full"
 				}
 			}
+#
 			/>Highlights<\/a>/ \
 			{
 				if(eventinfo == 0)
@@ -336,6 +339,8 @@ videos()
 					{
 						title = title " (Event)"
 					}
+					else
+						title = title " (List)"
 
 					if ( pic == "" )
 					{
@@ -345,15 +350,15 @@ videos()
 					piccount += 1
 					# 25. in naechste zeile springen
 					# 26. \x27 = single quotes
-					if(eventinfo == 1)
+#					if(eventinfo == 1)
 						print title "#" SRC " " SRC " playsrc \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
-					else
-					{
+#					else
+#					{
 						if (fullmatch_title != "")
 							print title " (" fullmatch_title ")#" SRC " " SRC " play \x27" fullmatch_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 						if (highlights_title != "")
 							print title " (" highlights_title ")#" SRC " " SRC " play \x27" highlights_newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
-					}
+#					}
 					score = ""
 					date = ""
 					full = 0
@@ -369,7 +374,7 @@ videos()
 			}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
-	fi
+#	fi
 	# 30. gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
