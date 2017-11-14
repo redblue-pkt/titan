@@ -575,6 +575,10 @@ play()
 				URLTMP="https://www.youtube.com/watch/$ID"		
 #				URL="`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`"
 				URL="gethoster2 $URLTMP"
+			elif [ `echo $URLTMP | grep "openload.co" | wc -l` -eq 1 ];then
+				if [ "$debug" = "1" ]; then echo $INPUT bbbbbb $URLTMP; fi
+#				URL=`/tmp/localhoster/hoster.sh get http://openload.co/embed/EER0VdYdYOQ/`
+				URL=`/tmp/localhoster/hoster.sh get $URLTMP`
 			elif [ `echo $URLTMP | grep "/embed/" | wc -l` -eq 1 ];then
 				if [ "$debug" = "1" ]; then echo $INPUT cccccc $URLTMP; fi
 
