@@ -626,7 +626,7 @@ play()
 				URL="gethoster2 $URLTMP"
 
 				#errormsg
-				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | sed 's!<h1 id="unavailable-message" class="message">!\nERROR: !' | grep ^ERROR: | cut -d"." -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | sed 's!<h1 id="unavailable-message" class="message">!\nerrormsg= !' | grep ^errormsg= | cut -d"." -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 				ERROR=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5`
 				if [ "$URLTMP" == "https://www.youtube.com/watch/" ];then
 					URL="$ERROR"
