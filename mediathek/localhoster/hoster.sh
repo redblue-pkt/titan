@@ -218,6 +218,12 @@ xvidstage()
 	$BIN $CMD/xvidstage.py $INPUT
 }
 
+waaw()
+{
+	$BIN $CMD/waaw.py $INPUT
+}
+
+
 directstream()
 {
 	echo "$INPUT"
@@ -274,6 +280,7 @@ if [ "$TYPE" == "get" ];then
 		divxstage|cloudtime) divxstage $INPUT;;
 		novamov|auroravid) novamov $INPUT;;
 		xvidstage) xvidstage $INPUT;;
+		waaw) waaw $INPUT;;
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
 	esac
 fi
