@@ -228,6 +228,11 @@ streamango()
 	$BIN $CMD/streamango.py $INPUT
 }
 
+vidlox()
+{
+	$BIN $CMD/vidlox.py $INPUT
+}
+
 directstream()
 {
 	echo "$INPUT"
@@ -286,6 +291,7 @@ if [ "$TYPE" == "get" ];then
 		xvidstage) xvidstage $INPUT;;
 		waaw|netu|hqq) waaw $INPUT;;
 		streamango|streamcherry) streamango $INPUT;;
+                vidlox) vidlox $INPUT;;
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
 	esac
 fi
