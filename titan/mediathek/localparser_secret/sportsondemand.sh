@@ -642,6 +642,10 @@ play()
 			fi
 		fi
 
+		if [ "`echo $URL | grep ^// | wc -l`" -eq 1 ];then
+			URL="http:$URL"
+		fi
+
 		echo $URL
 #		if [ "$debug" = "0" ]; then rm $TMP/cache.* > /dev/null 2>&1; fi
 	fi
@@ -680,7 +684,7 @@ submenu()
 livelist()
 {
 	rm $TMP/cache.* > /dev/null 2>&1
-	rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list > /dev/null 2>&1
+#	rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list > /dev/null 2>&1
 
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
@@ -741,6 +745,9 @@ hosterlist()
 
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1 | sed 's!/webplayer.php!/export/webplayer.iframe.php!'`
+			if [ "`echo $URL | grep ^// | wc -l`" -eq 1 ];then
+				URL="http:$URL"
+			fi
 			TITLE=`echo $ROUND | cut -d"'" -f2`
 			EXTRA=`echo $ROUND | cut -d"'" -f4`
 
