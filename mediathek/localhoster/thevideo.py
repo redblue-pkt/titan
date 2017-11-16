@@ -51,6 +51,9 @@ class TheVideoResolver(object):
                     stream_url = source['file']
                     max_label = int(re.sub('[^0-9]', '', source['label']))
 
+        if re.search('File was deleted.', html):
+            print 'errormsg=File was deleted.'
+
         varname = re.search('''concat\(\s*['"]/["']\s*\+([^\+]+?)\+''', html).group(1)
 
 #        authkey = re.search('''var lets_play_a_game=\'(.*)\'''', html).group(1)
