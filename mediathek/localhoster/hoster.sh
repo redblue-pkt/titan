@@ -280,7 +280,7 @@ if [ "$TYPE" == "get" ];then
 		divxstage|cloudtime) divxstage $INPUT;;
 		novamov|auroravid) novamov $INPUT;;
 		xvidstage) xvidstage $INPUT;;
-		waaw) waaw $INPUT;;
+		waaw|netu|hqq) waaw $INPUT;;
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
 	esac
 fi
