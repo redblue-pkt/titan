@@ -223,6 +223,10 @@ waaw()
 	$BIN $CMD/waaw.py $INPUT
 }
 
+streamango()
+{
+	$BIN $CMD/streamango.py $INPUT
+}
 
 directstream()
 {
@@ -281,6 +285,7 @@ if [ "$TYPE" == "get" ];then
 		novamov|auroravid) novamov $INPUT;;
 		xvidstage) xvidstage $INPUT;;
 		waaw|netu|hqq) waaw $INPUT;;
+		streamango|streamcherry) streamango $INPUT;;
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
 	esac
 fi
