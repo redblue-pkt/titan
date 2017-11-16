@@ -98,9 +98,9 @@ class WaawResolver(object):
                 url_data = json.loads(data)
                 media_url = self.tb(url_data["html5_file"].replace("#", ""))
                 del headers["Referer"]
-                del headers["X-Requested-With"]
-
+#                del headers["X-Requested-With"]
 #                if media_url: return media_url + helpers.append_headers(headers)
+
                 if media_url: print media_url + helpers.append_headers(headers)
 #                headers = {'User-Agent': common.FF_USER_AGENT}
 #                if media_url: print media_url + helpers.append_headers(headers)
