@@ -44,6 +44,10 @@ init()
 
 mainmenu()
 {
+	if [ -e "$TMP/$PARSER.livelist..sportsondemand.livelist.de.list" ] ; then
+		rm "$TMP/$PARSER.livelist..sportsondemand.livelist.de.list"
+	fi
+
 	if [ -e /etc/.beta ];then
 		echo "Live Sports#$SRC $SRC livelist de#http://atemio.dyndns.tv/mediathek/menu/livesports.jpg#livesports.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 		echo "Basketball#$SRC $SRC basketball#http://atemio.dyndns.tv/mediathek/menu/basketball.jpg#basketball.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
@@ -772,6 +776,38 @@ hosterlist()
 
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
 #		rm $TMP/cache.* > /dev/null 2>&1
+		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed 's!cdn.livetvcdn.net/webplayer.php!\nfound="http://cdn.livetvcdn.net/webplayer.php!g' | grep  ^found= | cut -d '"' -f2 >$TMP/cache.$PARSER.$FROM.$FILENAME.3
+		count=0
+		while read -u 3 ROUND; do
+			count=`expr $count + 1`
+			URL=`echo $ROUND`
+			if [ "`echo $URL | grep ^// | wc -l`" -eq 1 ];then
+				URL="http:$URL"
+			fi
+			TITLE="WEB STREAM $count"
+			EXTRA="`echo $ROUND | sed 's!http://cdn.livetvcdn.net/webplayer.php?t=!!'`"
+
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
+				TITLE="$TITLE ($EXTRA)"
+			fi
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
+				if [ ! -e $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list ];then
+					touch $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
+				fi
+				piccount=`expr $piccount + 1`
+
+				URL="$SRC $SRC hoster '$URL'"
+#				URL="$SRC $SRC findhoster $FROM '$URL'"
+
+				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#111"
+				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
+			fi
+
+		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.3
+
 	fi
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
