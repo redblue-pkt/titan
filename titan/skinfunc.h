@@ -766,6 +766,13 @@ char* getepgchanneltimeline(struct skin* node)
 	return getepgtimeline(node, 2);
 }
 
+char* getvolumebar(struct skin* node)
+{
+	char* tmpstr = NULL;
+	tmpstr = oitoa(getvol());
+	return tmpstr;
+}
+
 char* getaktchannelname(struct skin* node)
 {
 	char* tmpstr = NULL;
