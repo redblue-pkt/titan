@@ -228,6 +228,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getepgakttimeline;
 	}
+	if(ostrcmp("getvolumebar", value) == 0)
+	{
+		*rettype = FUNCPROGRESS;
+		return &getvolumebar;
+	}
 	if(ostrcmp("getsnrline", value) == 0)
 	{
 		*rettype = FUNCPROGRESS;
