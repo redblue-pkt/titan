@@ -1997,7 +1997,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "Wiedergabe kann nicht gestartet werden!"
 
-#: system_update.h:268
+#: system_update.h:270
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -3387,8 +3387,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
-#: system_backup_restore.h:95 system_update.h:252 system_update.h:258
-#: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
+#: system_backup_restore.h:95 system_update.h:254 system_update.h:260
+#: system_update.h:270 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1089 titan.c:1098 titan.c:1227
 #: titan.c:1248 titan.c:1254 titan.c:1265 titan.c:1271 tithek.c:103
@@ -3544,7 +3544,7 @@ msgstr "Fehler"
 msgid "Error create filename"
 msgstr "FEHLER: Dateiname kann nicht erzeugt werden!"
 
-#: system_update.h:252
+#: system_update.h:254
 msgid "Error file not supported"
 msgstr "FEHLER: Dateiformat wird nicht unterstützt!"
 
@@ -6277,8 +6277,8 @@ msgstr "Menüliste"
 #: streamcloud.h:75 streamcloud.h:81 streamcloud.h:91 streamcloud.h:104
 #: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:252 system_update.h:258
-#: system_update.h:268 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
+#: system_backup_restore.h:82 system_update.h:254 system_update.h:260
+#: system_update.h:270 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1227 titan.c:1248 titan.c:1254
 #: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:215 tithek.h:749
@@ -6897,8 +6897,8 @@ msgstr "Ö"
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:252
-#: system_update.h:258 system_update.h:268 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:254
+#: system_update.h:260 system_update.h:270 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
 #: titan.c:1089 titan.c:1098 titan.c:1227 titan.c:1248 titan.c:1254
@@ -13704,19 +13704,19 @@ msgstr "gestartet"
 msgid "starting"
 msgstr "durchführen"
 
-#: system_update.h:239
+#: system_update.h:241
 msgid "starting Full Update (from backup) ?"
 msgstr "Beginne Flashvorgang eines gesicherten Systemabbilds"
 
-#: httpdfunc.h:5830 system_update.h:237 system_update.h:245
+#: httpdfunc.h:5830 system_update.h:239 system_update.h:247
 msgid "starting Full Update ?"
 msgstr "Flashvorgang starten?"
 
-#: system_update.h:241
+#: system_update.h:243
 msgid "starting Nfi Update ?"
 msgstr ""
 
-#: system_update.h:243
+#: system_update.h:245
 msgid "starting Usb Update ?"
 msgstr ""
 
