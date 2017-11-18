@@ -201,6 +201,8 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "fullbackup ", 1, 0);
 					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 						cmd = ostrcat(cmd, "updatenfi ", 1, 0);
+					else if(ostrstr(filelist->select->text, "_UPDATEUSB_") != NULL)
+						cmd = ostrcat(cmd, "updateusb ", 1, 0);
 					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
 					{
 						cmd = ostrcat(cmd, device->ret, 1, 0);
