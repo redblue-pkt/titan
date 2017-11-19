@@ -55,8 +55,10 @@ import unicodedata
 
 class OpenLoadResolver(object):
     name = "openload"
-    domains = ["openload.io", "openload.co"]
-    pattern = '(?://|\.)(openload\.(?:io|co))/(?:embed|f)/([0-9a-zA-Z-_]+)'
+#    domains = ["openload.io", "openload.co"]
+#    pattern = '(?://|\.)(openload\.(?:io|co))/(?:embed|f)/([0-9a-zA-Z-_]+)'
+    domains = ["openload.io", "openload.co", "oload.tv", "oload.stream"]
+    pattern = '(?://|\.)(o(?:pen)??load\.(?:io|co|tv|stream))/(?:embed|f)/([0-9a-zA-Z-_]+)'
 
     def __init__(self):
         self.net = Net(cookie_file='/mnt/network/cookies', cloudflare=True)
