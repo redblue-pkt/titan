@@ -15,7 +15,7 @@ CMD=/tmp/localhoster
 USERAGENT='Mozilla%2F5.0+%28Windows+NT+6.3%3B+rv%3A36.0%29+Gecko%2F20100101+Firefox%2F36.0'
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
 curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A '$USERAGENT'"
-curlbin2='curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A '$USERAGENT''
+curlbin2="curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A '$USERAGENT'"
 youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors -g"
 youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors --output"
 export PYTHONHOME=/tmp/localhoster
@@ -235,14 +235,11 @@ vidlox()
 
 aliez()
 {
+	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
 	URL=`$curlbin "$INPUT" | sed 's/source:/\nsource:/' | grep ^source: | cut -d"'" -f2`
 	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'`
 	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT"
-#	echo "$URL|Referer=$REFERER&User-Agent='Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'"
 }
-
-#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
-
 
 directstream()
 {
