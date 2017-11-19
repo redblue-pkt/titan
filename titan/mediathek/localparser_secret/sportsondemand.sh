@@ -48,12 +48,12 @@ mainmenu()
 		rm "$TMP/$PARSER.livelist..sportsondemand.livelist.de.list"
 	fi
 
-	if [ -e /etc/.beta ];then
+#	if [ -e /etc/.beta ];then
 		echo "Live Sports#$SRC $SRC livelist de#http://atemio.dyndns.tv/mediathek/menu/livesports.jpg#livesports.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 		echo "Basketball#$SRC $SRC basketball#http://atemio.dyndns.tv/mediathek/menu/basketball.jpg#basketball.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	else
-		echo "Basketball#$SRC $SRC basketball#http://atemio.dyndns.tv/mediathek/menu/basketball.jpg#basketball.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	fi
+#	else
+#		echo "Basketball#$SRC $SRC basketball#http://atemio.dyndns.tv/mediathek/menu/basketball.jpg#basketball.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+#	fi
 	echo "Ice Hockey#$SRC $SRC icehockey#http://atemio.dyndns.tv/mediathek/menu/icehockey.jpg#icehockey.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Fussball#$SRC $SRC fussball#http://atemio.dyndns.tv/mediathek/menu/fussball.jpg#fussball.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "Handball#$SRC $SRC handball#http://atemio.dyndns.tv/mediathek/menu/handball.jpg#handball.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
@@ -484,7 +484,7 @@ play()
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
 
-		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
+		$curlbin -A "$USERAGENT" $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
 		if [ "$debug" = "1" ]; then echo $INPUT 222222; fi
 
 		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | sed 's!<br> </td>!\n<br> </td>!g' | grep '^found=' | grep 'video/embed' | cut -d"'" -f2 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
@@ -492,12 +492,12 @@ play()
 			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed 's#//#\nhttp://#' | grep ^"http://"`
 			if [ "$debug" = "1" ]; then echo $INPUT 333333 $URLTMP; fi
 
-			$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+			$curlbin -A "$USERAGENT" $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 	#		"flashVars": {"autoplay":0,"movieSrc":"mail/arsen.bulyaev/_myvideo/738","metadataUrl":"//my.mail.ru/+/video/meta/4219658639352267490","showPauseRoll":"0","enable_search":"2","swfVersion":"29","static_version":"75","flash_enabled":"1"},
 			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"movieSrc":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 			TYPE=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | cut -d "/" -f2`
 			ID=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | tr '/' '\n' | tail -n1`
-			$curlbin http://videoapi.my.mail.ru/videos/mail/$TYPE/_myvideo/$ID.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+			$curlbin -A "$USERAGENT" http://videoapi.my.mail.ru/videos/mail/$TYPE/_myvideo/$ID.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 	#		$curlbin http://videoapi.my.mail.ru/videos/mail/arsen.bulyaev/_myvideo/738.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 
 			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"url":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | tail -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
@@ -532,13 +532,13 @@ play()
 				if [ "$debug" = "1" ]; then echo $INPUT 777777 $URLTMP; fi
 
 				referer=$URLTMP
-				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+				$curlbin -A "$USERAGENT" $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				# <iframe src="http://vk.com/video_ext.php?oid=-55574239&id=456242333&hash=8f52dbd56d595751&hd=1" frameborder="0" height="100%" width="100%"></iframe></body>
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | sed 's#//#\nhttps://#' | grep ^"https://"`
 				if [ "$debug" = "1" ]; then echo $INPUT 888888 $URLTMP; fi
 
-				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+				$curlbin -A "$USERAGENT" $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | grep vk.com | sed 's!href=!\nfound=!' | grep ^found | cut -d '"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6 | sed 's#//#\nhttps://#' | grep ^"https://"`
 				if [ "$debug" = "1" ]; then echo $INPUT 999999 $URLTMP; fi
