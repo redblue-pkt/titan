@@ -273,7 +273,7 @@ if [ "$TYPE" == "get" ];then
 		nosvideo) nosvideo $INPUT;;
 		allmyvideos) allmyvideos $INPUT;;
 		flashx) flashx $INPUT;;
-		openload) openload $INPUT;;
+		openload|oload) openload $INPUT;;
 		briskfile) briskfile $INPUT;;
 		videoweed|bitvid) videoweed $INPUT;;
 		vodlocker) vodlocker $INPUT;;
