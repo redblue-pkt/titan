@@ -11,10 +11,11 @@ ARCH=`cat /etc/.arch`
 BOX=`cat /etc/model`
 TMP=/tmp/localcache
 CMD=/tmp/localhoster
-USERAGENT='Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+#USERAGENT='Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
+USERAGENT='Mozilla%2F5.0+%28Windows+NT+6.3%3B+rv%3A36.0%29+Gecko%2F20100101+Firefox%2F36.0'
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
-curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT"
-curlbin2='curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
+curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A '$USERAGENT'"
+curlbin2='curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A '$USERAGENT''
 youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors -g"
 youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors --output"
 export PYTHONHOME=/tmp/localhoster
@@ -72,7 +73,6 @@ hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n
 #echo $hoster
 
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
-curlbin='curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies'
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 
 ecostream()
@@ -233,6 +233,17 @@ vidlox()
 	$BIN $CMD/vidlox.py $INPUT
 }
 
+aliez()
+{
+	URL=`$curlbin "$INPUT" | sed 's/source:/\nsource:/' | grep ^source: | cut -d"'" -f2`
+	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'`
+	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT"
+#	echo "$URL|Referer=$REFERER&User-Agent='Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'"
+}
+
+#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
+
+
 directstream()
 {
 	echo "$INPUT"
@@ -242,30 +253,23 @@ directstream()
 
 youtube_dl()
 {
-#	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
-#	$BIN $youtubebin "$INPUT"
-#	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --all-formats -g "$INPUT"
-#	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT"`
-#	echo "$URL" >> /tmp/.last_hoster_youtube_dl.log
-#	echo $URL
-
-	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT" > /tmp/youtube_dl.streamlink.log 2>&1
-	cat /tmp/youtube_dl.streamlink.log | tail -n1
+#	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
+#	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT" > /tmp/youtube_dl.streamlink.log 2>&1
+#	cat /tmp/youtube_dl.streamlink.log | tail -n1
+	$BIN $youtubebin "$INPUT"
 }
 
 youtube_dlbg()
 {
-#	rm -f /tmp/_last_hoster_* > /dev/null 2>&1
-	echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_youtube_dlbg.log
-#	$BIN $youtubebin "$INPUT"
-#	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --all-formats -g "$INPUT"
-	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors --output "$1" "$2"`
-	echo "$URL" >> /tmp/.last_hoster_youtube_dlbg.log
-	echo $URL
+#	echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_youtube_dlbg.log
+#	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors --output "$1" "$2"`
+#	echo "$URL" >> /tmp/.last_hoster_youtube_dlbg.log
+#	echo $URL
+	$BIN $youtubebinbg $DEST $INPUT
 }
+
 if [ "$TYPE" == "get" ];then
-	echo  "$INPUT" > /tmp/.last_hoster_$hoster.log
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
@@ -293,16 +297,19 @@ if [ "$TYPE" == "get" ];then
 		streamango|streamcherry) streamango $INPUT;;
                 vidlox) vidlox $INPUT;;
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
+		aliez) aliez $INPUT;;
 	esac
 fi
 
 if [ "$TYPE" == "youtube_dl" ];then
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
 		*) youtube_dl $INPUT;;
 	esac
 fi
 
 if [ "$TYPE" == "youtube_dlbg" ];then
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
 		*) youtube_dlbg $DEST $INPUT;;
 	esac
