@@ -595,11 +595,13 @@ play()
 					URL="$ERROR"
 				fi
 			elif [ `echo $URLTMP | grep "openload.co" | wc -l` -eq 1 ];then
-				if [ "$debug" = "1" ]; then echo $INPUT bbbbbb $URLTMP; fi
-#				URL=`/tmp/localhoster/hoster.sh get http://openload.co/embed/EER0VdYdYOQ/`
+				if [ "$debug" = "1" ]; then echo $INPUT cccccc $URLTMP; fi
+				URL=`/tmp/localhoster/hoster.sh get $URLTMP`
+			elif [ `echo $URLTMP | grep "oload." | wc -l` -eq 1 ];then
+				if [ "$debug" = "1" ]; then echo $INPUT dddddd $URLTMP; fi
 				URL=`/tmp/localhoster/hoster.sh get $URLTMP`
 			elif [ `echo $URLTMP | grep "/embed/" | wc -l` -eq 1 ];then
-				if [ "$debug" = "1" ]; then echo $INPUT cccccc $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT eeeeee $URLTMP; fi
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 		#		"flashVars": {"autoplay":0,"movieSrc":"mail/arsen.bulyaev/_myvideo/738","metadataUrl":"//my.mail.ru/+/video/meta/4219658639352267490","showPauseRoll":"0","enable_search":"2","swfVersion":"29","static_version":"75","flash_enabled":"1"},
@@ -614,13 +616,13 @@ play()
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"url":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | tail -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 				URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6`
 			elif [ `echo $URLTMP | grep "tinyurl" | wc -l` -eq 1 ];then
-				if [ "$debug" = "1" ]; then echo $INPUT eeeeee $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT ffffff $URLTMP; fi
 #<link rel="manifest" href="/manifest.json"><link rel="shortlink" href="https://youtu.be/016LXFHpFCk"><link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=de_DE" title="YouTube-Videosuche"><link rel="shortcut icon" href="https:/
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | sed 's!<link rel!\n<link rel!g' | grep shortlink | sed 's#//#\nhttp://#' | grep ^"http://" | cut -d"'" -f1 | cut -d'"' -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4`
-				if [ "$debug" = "1" ]; then echo $INPUT ffffff $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT ggggg $URLTMP; fi
 
 				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
 
@@ -636,9 +638,9 @@ play()
 					URL="$ERROR"
 				fi
 			else
-				if [ "$debug" = "1" ]; then echo $INPUT gggggg $URLTMP; fi
-				URLTMP=`echo $URLTMP  | sed 's#//#\nhttp://#' | grep ^"http://"`
 				if [ "$debug" = "1" ]; then echo $INPUT hhhhhh $URLTMP; fi
+				URLTMP=`echo $URLTMP  | sed 's#//#\nhttp://#' | grep ^"http://"`
+				if [ "$debug" = "1" ]; then echo $INPUT iiiiii $URLTMP; fi
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!file:!\nfound=!g' | grep '^found=' | cut -d"'" -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
