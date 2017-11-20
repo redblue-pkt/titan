@@ -482,21 +482,21 @@ void screenavsettings(int flag)
 			{
 				ret = getac3plus();
 				if(ostrcmp(ret, ac3plusmode->ret) != 0)
-					setaac(ac3plusmode->ret); 
+					setac3plus(ac3plusmode->ret); 
 				free(ret); ret = NULL;
 			}
 			if(dtshdmode->ret != NULL)
 			{
 				ret = getdtshd();
 				if(ostrcmp(ret, dtshdmode->ret) != 0)
-					setaac(dtshdmode->ret); 
+					setdtshd(dtshdmode->ret); 
 				free(ret); ret = NULL;
 			}
 			if(wmapromode->ret != NULL)
 			{
 				ret = getwmapro();
 				if(ostrcmp(ret, wmapromode->ret) != 0)
-					setaac(wmapromode->ret); 
+					setwmapro(wmapromode->ret); 
 				free(ret); ret = NULL;
 			}
 			if(wssmode->ret != NULL)
