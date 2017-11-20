@@ -21,9 +21,10 @@ youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
+
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
-#if [ "$debuglevel" == "99" ]; then youtubebin="$youtubebin --verbose"; fi
+if [ "$debuglevel" == "99" ]; then youtubebin="$youtubebin --verbose"; fi
 
 wgetbin="wget -q -T2"
 
@@ -71,9 +72,6 @@ hostercheck=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | ta
 hosterline=`expr $hostercheck - 1`
 hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | cut -d"." -f$hosterline`
 #echo $hoster
-
-debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
-if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 
 ecostream()
 {
@@ -236,10 +234,22 @@ vidlox()
 aliez()
 {
 	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
-	URL=`$curlbin "$INPUT" | sed 's/source:/\nsource:/' | grep ^source: | cut -d"'" -f2`
+	URL=`$curlbin "$INPUT" | sed 's/source:/\nfound=/' | grep ^found= | cut -d"'" -f2`
 	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'`
 	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT"
 }
+
+sport7()
+{
+	#http://sport7.tech/487b826914d11080dce4b502052b012d-live.html
+	#var videoLink = 'http://g4.securestream.sport7.tech/stream/NzYyZDUwZWNkODc5YWM5YjViY2ZkOTVhZGNjOGM1ZTc=/BTSport3.m3u8';
+            
+	URL=`$curlbin "$INPUT" | sed 's/var videoLink/\nfound=/' | grep ^found= | cut -d"'" -f2`
+	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'`
+	sed 's/#HttpOnly_//g' -i /mnt/network/cookies
+	echo "$URL|Referer=$REFERER&X-f=95.91.79.87&User-Agent=$USERAGENT"
+}
+
 
 directstream()
 {
@@ -295,6 +305,7 @@ if [ "$TYPE" == "get" ];then
                 vidlox) vidlox $INPUT;;
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
 		aliez) aliez $INPUT;;
+		sport7) sport7 $INPUT;;
 	esac
 fi
 

@@ -787,7 +787,10 @@ hosterlist()
 				URL="http:$URL"
 			fi
 			TITLE="WEB STREAM $count"
-			EXTRA="`echo $ROUND | sed 's!http://cdn.livetvcdn.net/webplayer.php?t=!!'`"
+#			EXTRA="`echo $ROUND | sed 's!http://cdn.livetvcdn.net/webplayer.php?t=!!'`"
+			TMPURL=`hoster1 "$URL"`
+			EXTRA="$TMPURL"
+			URL="$TMPURL"
 
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 
@@ -801,10 +804,11 @@ hosterlist()
 				fi
 				piccount=`expr $piccount + 1`
 
-				URL="$SRC $SRC hoster '$URL'"
-#				URL="$SRC $SRC findhoster $FROM '$URL'"
+#				URL="$SRC $SRC hoster '$URL'"
+##				URL="$SRC $SRC findhoster $FROM '$URL'"
 
-				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#111"
+#				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#111"
+				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#14"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
 
@@ -838,6 +842,22 @@ hosterlist()
 #		<iframe scrolling="no" frameborder=0 width=700 height=480 src="http://fsport.in/broadcasts/stream_19.php"></iframe>
 #		<iframe scrolling="no" frameborder=0 width=700 height=480 src="http://shstream.co/stream5/live5.php"></iframe>
 
+hoster1()
+{
+#	rm $TMP/cache.* > /dev/null 2>&1
+	rm $TMP/cache.$PARSER.$INPUT.$FROM.1 > /dev/null 2>&1
+
+	$curlbin -o $TMP/cache.$PARSER.$INPUT.$FROM.1 ${1}
+	URL=`zcat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+	if [ -z "$URL" ];then
+		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+	fi
+	if [ -z "$URL" ];then
+		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep "text/javascript" | grep -v jQuery | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+	fi
+
+	echo $URL
+}
 
 hoster()
 {
