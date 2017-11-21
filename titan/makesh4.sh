@@ -279,10 +279,10 @@ fi
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/freetype2 \
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include/openssl \
     -I $eplayerinclude \
-    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/titan/libdreamdvd \
+    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/cdk/source/titan/titan/libdreamdvd \
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libmme_image  \
-	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/build_tmp/linux-sh4-2.6.32.71_stm24_0217/include  \
+	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/cdk/build_tmp/linux-sh4-2.6.32.71_stm24_0217/include  \
     -I "$HOME"/flashimg/$SRCDIR \
     -c titan.c
 #else
@@ -299,7 +299,7 @@ fi
 #    -c titan.c
 #fi
 
-/bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/apps/titan/titan/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/lib -o titan titan.o $linking
+/bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/cdk/source/titan/titan/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/lib -L"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/lib -o titan titan.o $linking
 cp "$HOME"/flashimg/$SRCDIR/titan/.libs/titan "$HOME"/flashimg/$SRCDIR/titan
 "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-strip titan
 
