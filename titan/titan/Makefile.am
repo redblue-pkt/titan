@@ -5,10 +5,10 @@ INCLUDES = \
 	-I../../../tufsbox/cdkroot/usr/include/freetype2 \
 	-I../../../tufsbox/cdkroot/usr/include/openssl \
 	-I../../driver/bpamem \
-	-I../../../apps/titan/libdreamdvd \
 	-I../../../apps/tools/libeplayer3/include \
 	-I../../../apps/tools/libmme_image \
-	-I../../../apps/titan/titan
+	-Ilibdreamdvd \
+	-Ititan
 
 bin_PROGRAMS = titan
 
