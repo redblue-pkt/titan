@@ -590,21 +590,29 @@ play()
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.11 | sed 's#//#\nhttps://#' | grep ^"https://"`
 				if [ "$debug" = "1" ]; then echo $INPUT aaaaaa $URLTMP; fi
 
-				$curlbin "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
+#				$curlbin "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
+				curl "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 
 				if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "Authorization required" | wc -l` -eq 1 ];then
 					URL="errormsg=You need access to https://vk.com to use this full stream, add VK User/Pass on Tithek Settings"
 				else
-					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .720. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.720
-					URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.720`
-					if [ -z "$URL" ];then
-						cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .360. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.360
-						URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.360`
+					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .720. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.720
+					URL720=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.720`
+
+					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .360. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.360
+					URL360=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.360`
+
+					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's/<source src=/\nfound=/' | grep ^found= | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.hls
+					URLHLS=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.hls`
+
+					if [ -z "$URL" ] && [ ! -z "$URL720" ];then
+						URL="$URL720"
 					fi
-					if [ -z "$URL" ];then
-						curl "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.14
-						cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.14 | sed 's/<source src=/\nfound=/' | grep ^found= | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.14.hls
-						URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.14.hls`
+					if [ -z "$URL" ] && [ ! -z "$URLHLS2" ];then
+						URL="$URLHLS2"
+					fi
+					if [ -z "$URL" ] && [ ! -z "$URL360" ];then
+						URL="$URL360"
 					fi
 					if [ -z "$URL" ] && [ ! -z "$URLHLS" ];then
 						URL="$URLHLS"
