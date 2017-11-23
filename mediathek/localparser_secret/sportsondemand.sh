@@ -474,6 +474,17 @@ playsrc()
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
 }
 
+
+#https://vk.com/video_ext.php?oid=-22876939&id=456239051&hash=39b6ecd22f4d956b&hd=2
+#https://vk.com/video_ext.php?oid=-22876939&id=456239051&hash=39b6ecd22f4d956b&hd=2
+
+#    <source src="https://vk.com/video_hls.php?path=4%2Fu255038490%2Fvideos%2F&extra=_rWnaPZBIHrwj2ApJ-CMsvkm5045KOeQso6vWxDOjyPeR19v2WUPyBIgRtTk4xXIXDf153WEdkzjOcqeKu0z0uHsrRtwb_Ha6TLNBi30x4GCwgYJ22roWigXm7k&c_extra=8S5YxEPgF2H_RKs8GOuw7ZG9Sc4Gt9-AjxuR00CthEZnGbOTtnJpLi24GzZtsKzxgjao3mmXX-7KahECqHnBVbkjhIO1EMcVC8dqy3FIbWk8o54UESypeWl3-ck&video=-22876939_456239051&tag=3410989211&c_tag=cb6ca81ad836" type="application/vnd.apple.mpegurl"></source><source src="https://cs9-2v4.vkuservideo.net/p5/cb6ca81ad836.720.mp4?extra=z5_tAar-kWkiZCKm9g7wAfPT7VqnA-kbweCozD0IEaXaqzM2KLmWHe-v5VN4VquCwOSBpPTbjWd-z1H2dm750Q7Ts4nO8aQjpY7ugfkmlvUNw2rJ8s8Jx3iEiac" type="video/mp4"></source>
+#    <div class="video_box_background" style="background-image:url(https://pp.userapi.com/c824200/v824200996/32c82/_0V__xfDTUU.jpg);"></div>
+#    <div class="video_box_cant_play">The video cannot be played on this device</div>
+# </video>
+
+#curl "https://vk.com/video_ext.php?oid=-22876939&id=456239051&hash=39b6ecd22f4d956b&hd=2" | sed 's/<source src="/\nfound=/' | grep ^found= | cut -d'"' -f1
+
 play()
 {
 	debug=0
@@ -484,7 +495,9 @@ play()
 	if [ ! -e "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list" ]; then
 		piccount=0
 
-		$curlbin -A "$USERAGENT" $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
+#		$curlbin -A "$USERAGENT" $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
+		$curlbin "$URL/$PAGE" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1
+
 		if [ "$debug" = "1" ]; then echo $INPUT 222222; fi
 
 		cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | sed 's!<br> </td>!\n<br> </td>!g' | grep '^found=' | grep 'video/embed' | cut -d"'" -f2 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
@@ -492,12 +505,16 @@ play()
 			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed 's#//#\nhttp://#' | grep ^"http://"`
 			if [ "$debug" = "1" ]; then echo $INPUT 333333 $URLTMP; fi
 
-			$curlbin -A "$USERAGENT" $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+#			$curlbin -A "$USERAGENT" $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+			$curlbin "$URLTMP" --referer "$URL$PAGE" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+
 	#		"flashVars": {"autoplay":0,"movieSrc":"mail/arsen.bulyaev/_myvideo/738","metadataUrl":"//my.mail.ru/+/video/meta/4219658639352267490","showPauseRoll":"0","enable_search":"2","swfVersion":"29","static_version":"75","flash_enabled":"1"},
 			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"movieSrc":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 			TYPE=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | cut -d "/" -f2`
 			ID=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | tr '/' '\n' | tail -n1`
-			$curlbin -A "$USERAGENT" http://videoapi.my.mail.ru/videos/mail/$TYPE/_myvideo/$ID.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+#			$curlbin -A "$USERAGENT" http://videoapi.my.mail.ru/videos/mail/$TYPE/_myvideo/$ID.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+			$curlbin "http://videoapi.my.mail.ru/videos/mail/$TYPE/_myvideo/$ID.json?ver=0.2.60" --referer "$URLTMP" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+
 	#		$curlbin http://videoapi.my.mail.ru/videos/mail/arsen.bulyaev/_myvideo/738.json?ver=0.2.60 --referer $URLTMP -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 
 			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"url":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | tail -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
@@ -531,14 +548,14 @@ play()
 			if [ `echo $URLTMP | grep "export/vk.reframe.php" | wc -l` -eq 1 ];then
 				if [ "$debug" = "1" ]; then echo $INPUT 777777 $URLTMP; fi
 
-				referer=$URLTMP
-				$curlbin -A "$USERAGENT" $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
+				referer="$URLTMP"
+				$curlbin "$URLTMP" --referer "$URL$PAGE" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				# <iframe src="http://vk.com/video_ext.php?oid=-55574239&id=456242333&hash=8f52dbd56d595751&hd=1" frameborder="0" height="100%" width="100%"></iframe></body>
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4 | sed 's#//#\nhttps://#' | grep ^"https://"`
 				if [ "$debug" = "1" ]; then echo $INPUT 888888 $URLTMP; fi
 
-				$curlbin -A "$USERAGENT" $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
+				$curlbin "$URLTMP" --referer "$URL$PAGE" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | grep vk.com | sed 's!href=!\nfound=!' | grep ^found | cut -d '"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6 | sed 's#//#\nhttps://#' | grep ^"https://"`
 				if [ "$debug" = "1" ]; then echo $INPUT 999999 $URLTMP; fi
@@ -546,7 +563,13 @@ play()
 				email=`cat /mnt/config/titan.cfg | grep vk_user | cut -d"=" -f2`
 				pass=`cat /mnt/config/titan.cfg | grep vk_pass | cut -d"=" -f2`
 
-				$curlbin2 -v $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7
+				$curlbin2 "$URLTMP" --referer "$URL$PAGE" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7
+
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7 | sed 's!\"postlive_mp4\":!\nfound=!g' | grep ^found | cut -d'"' -f2 | sed 's/\\//g' > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7.postlive_mp4
+				URLMP4=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7.postlive_mp4`
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7 | sed 's!\"hls\":!\nfound=!g' | grep ^found | cut -d'"' -f2 | sed 's/\\//g' > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7.hls
+				URLHLS=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7.hls`
+
 				loginurl="https://login.vk.com/?act=login"
 				act=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7 | sed 's!name="act"!\nfound=!' | grep ^found | cut -d'"' -f2| head -n1`
 				role=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7 | sed 's!name="role"!\nfound=!' | grep ^found | cut -d'"' -f2| head -n1`
@@ -558,16 +581,16 @@ play()
 				lg_h=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7 | sed 's!name="lg_h"!\nfound=!' | grep ^found | cut -d'"' -f2| head -n1`
 				post="act=$act&role=$role&expire=$expire&captcha_sid=$captcha_sid&captcha_key=$captcha_key&_origin=$origin&ip_h=$ip_h&lg_h=$lg_h&email=$email&pass=$pass"
 
-				$curlbin2 -v -X POST --data "$post" --referer "$URL$PAGE" "$loginurl" -D $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.8
+				$curlbin2 -X POST --data "$post" --referer "$URL$PAGE" "$loginurl" -D $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.8
 				tmpurl="`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.8 | grep Location: | sed 's/Location: //' | tr '\0' ' ' | tr '\r' ' ' | tr '\n' ' ' | sed 's/\s//g'`"
 				$curlbin2 "$tmpurl" > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.9
 
-				$curlbin2 -v $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.10
+				$curlbin2 "$URL$PAGE" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.10
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe src=!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.11
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.11 | sed 's#//#\nhttps://#' | grep ^"https://"`
 				if [ "$debug" = "1" ]; then echo $INPUT aaaaaa $URLTMP; fi
 
-				$curlbin $URLTMP --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
+				$curlbin "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 
 				if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "Authorization required" | wc -l` -eq 1 ];then
 					URL="errormsg=You need access to https://vk.com to use this full stream, add VK User/Pass on Tithek Settings"
@@ -577,6 +600,17 @@ play()
 					if [ -z "$URL" ];then
 						cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .360. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.360
 						URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.13.360`
+					fi
+					if [ -z "$URL" ];then
+						curl "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.14
+						cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.14 | sed 's/<source src=/\nfound=/' | grep ^found= | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.14.hls
+						URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.14.hls`
+					fi
+					if [ -z "$URL" ] && [ ! -z "$URLHLS" ];then
+						URL="$URLHLS"
+					fi
+					if [ -z "$URL" ] && [ ! -z "$URLMP4" ];then
+						URL="$URLMP4"
 					fi
 				fi
 			elif [ `echo $URLTMP | grep "youtube" | wc -l` -eq 1 ];then
