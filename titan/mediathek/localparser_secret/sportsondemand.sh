@@ -605,19 +605,16 @@ play()
 					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's/<source src=/\nfound=/' | grep ^found= | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.hls
 					URLHLS=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.hls`
 
-					if [ -z "$URL" ] && [ ! -z "$URL720" ];then
-						URL="$URL720"
-					fi
-					if [ -z "$URL" ] && [ ! -z "$URLHLS2" ];then
-						URL="$URLHLS2"
-					fi
-					if [ -z "$URL" ] && [ ! -z "$URL360" ];then
-						URL="$URL360"
-					fi
+					URL=""
 					if [ -z "$URL" ] && [ ! -z "$URLHLS" ];then
 						URL="$URLHLS"
-					fi
-					if [ -z "$URL" ] && [ ! -z "$URLMP4" ];then
+					elif [ -z "$URL" ] && [ ! -z "$URLHLS2" ];then
+						URL="$URLHLS2"
+					elif [ -z "$URL" ] && [ ! -z "$URL720" ];then
+						URL="$URL720"
+					elif [ -z "$URL" ] && [ ! -z "$URL360" ];then
+						URL="$URL360"
+					elif [ -z "$URL" ] && [ ! -z "$URLMP4" ];then
 						URL="$URLMP4"
 					fi
 				fi
