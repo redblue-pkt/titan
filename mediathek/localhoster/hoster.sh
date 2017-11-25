@@ -238,48 +238,8 @@ aliezold()
 	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
 } 
 
-aliez1()
+aliez()
 {
-	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
-	$curlbin "$INPUT" -o $TMP/cache.$hoster.1
-	cat $TMP/cache.$hoster.1 | sed 's/source:/\nfound=/' | grep ^found= | cut -d"'" -f2 >$TMP/cache.$hoster.url1
-	URL=`cat $TMP/cache.$hoster.url1 | head -n1`
-
-#URL=""
-	#"file":		"rtmp%3A%2F%2Fa3.aliez.me%2Flive%2Fstreama57449%3Ftoken%3Dd11304fabb8e64327df8427e1c2fd5d9"
-	if [ -z "$URL" ];then
-		cat $TMP/cache.$hoster.1 | sed 's/"file":/\nfound=/' | grep ^found= | cut -d'"' -f2 >$TMP/cache.$hoster.url3
-		URL=`cat $TMP/cache.$hoster.url3 | head -n1`
-	fi
-	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
-	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
-
-	if [ "`echo $URL | grep rtmp | wc -l`" -eq 1 ];then
-
-		#new swfobject.embedSWF("http://i.aliez.me/swf/playernew.swf?0", "mediaspace", "700", "480", "9.0.115.0", false, flashvars, params);
-		cat $TMP/cache.$hoster.1 | sed 's/swfobject.embedSWF/\nfound=/' | grep ^found= | cut -d'"' -f2 >$TMP/cache.$hoster.rtmp.swfurl
-		SWFURL=`cat $TMP/cache.$hoster.rtmp.swfurl | head -n1`
-		URL=`echo "$URL" | sed -e 's/%3A/:/g' -e 's!%2F!/!g' -e 's!%3D!=!g' -e 's!%3F!?!g'`
-		EXTRA=" pageUrl=$REFERER"
-		if [ ! -z "$SWFURL" ];then
-			EXTRA="$EXTRA swfUrl=$SWFURL swfVfy=1 timeout=15 live=1"
-		fi
-	fi
-
-#	URL=""
-	#file:	'http://a3.aliez.me:8080/hls/streama57449/index.m3u8?st=dgw2dOq8tyFkLLBLn2ycXA',
-	if [ -z "$URL" ];then
-		cat $TMP/cache.$hoster.1 | sed 's/file:/\nfound=/' | grep ^found= | cut -d"'" -f2 >$TMP/cache.$hoster.url2
-		URL=`cat $TMP/cache.$hoster.url2 | head -n1`
-		EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
-	fi
-
-	echo "$URL$EXTRA"
-#	echo "$URL|If-None-Match=5a1842ad-c4&Accept=*/*&Referer=$REFERER&User-Agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
-
-
-}
-
 	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
 	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
 	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
@@ -324,6 +284,10 @@ aliez1()
 
 
 	echo "$URL"
+#	echo "$URL|If-None-Match=5a1842ad-c4&Accept=*/*&Referer=$REFERER&User-Agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+
+
+}
 
 sport7()
 {
