@@ -805,6 +805,12 @@ hosterlist()
 			EXTRA=`echo $ROUND | cut -d"'" -f4`
 
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			if [ "$TITLE" == "alieztv" ];then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/alieztv.jpg"
+			fi
+			if [ "$TITLE" == "youtube" ];then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/youtube.jpg"
+			fi
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
 				TITLE="$TITLE ($EXTRA)"
