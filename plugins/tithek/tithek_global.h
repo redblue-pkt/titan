@@ -1353,12 +1353,10 @@ char* list_hoster_streams(char* filename)
 			else if(ostrstr(ret1[i].part, "auto") != NULL)
 				nummer = ostrcat("auto", NULL, 0, 0);
 
-			if(ostrstr(ret1[i].part, "http://") != NULL)
-				title = ostrcat("Http Stream", NULL, 0, 0);
-			else if(ostrstr(ret1[i].part, "https://") != NULL)
-				title = ostrcat("Https Stream", NULL, 0, 0);
-			else if(ostrstr(ret1[i].part, "rtmp://") != NULL)
-				title = ostrcat("RTMP Stream", NULL, 0, 0);
+			title = ostrcat(ret1[i].part, NULL, 0, 0);
+			title = stringreplacecharonce(title, ':', '\0');
+			string_toupper(title);
+			title = ostrcat(title, " Stream", 1, 0);
 
 			streamurl = ostrcat(ret1[i].part, NULL, 0, 0);
 			if(nummer != NULL)
