@@ -1414,7 +1414,8 @@ debug(99, "streamurl4 %s", streamurl);
 char* localparser_hoster(char* link)
 {
 	debug(99, "link: %s", link);
-	int ret = 1;
+	int debuglevel = getconfigint("debuglevel", NULL);
+	int ret = 1, skip = 0;
 	char* tmpstr = NULL, *streamurl = NULL;
 
 	tmpstr = command(link);
@@ -1425,14 +1426,27 @@ char* localparser_hoster(char* link)
 	{
 		tmpstr = string_replace_all("gethoster2 ", "", tmpstr, 1);
 		streamurl = hoster(tmpstr);
+		skip = 1;
 	}
 	else if(ostrstr(link, ".sh play ") != NULL)
 		streamurl = ostrcat(tmpstr, NULL, 0, 0);
 	else if(ostrstr(link, ".sh hoster ") != NULL)
+	{
 		streamurl = hoster(tmpstr);
-
+		skip = 1;
+	}
 	free(tmpstr), tmpstr = NULL;
 
+	if(skip == 0)
+	{
+		if(debuglevel != 99)
+			printf("Streamurl1: %s\n", streamurl);
+		tmpstr = ostrcat(streamurl, NULL, 0, 0);
+		streamurl = list_hoster_streams(tmpstr);
+		if(debuglevel != 99)
+			printf("Streamurl2: %s\n", streamurl);
+		free(tmpstr), tmpstr = NULL;
+	}
 	debug(99, "streamurl2: %s", streamurl);
 
 	return streamurl;
