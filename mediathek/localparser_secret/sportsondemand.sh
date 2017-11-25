@@ -488,7 +488,7 @@ playsrc()
 play()
 {
 	debug=0
-
+rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 	if [ "$debug" = "1" ]; then rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list; fi
 	if [ "$debug" = "1" ]; then echo $INPUT 1111111; fi
 
@@ -617,6 +617,14 @@ play()
 					elif [ -z "$URL" ] && [ ! -z "$URLMP4" ];then
 						URL="$URLMP4"
 					fi
+					STREAMLIST="$TMP/$PARSER.$INPUT.$FROM.$FILENAME.streamlist"
+					if [ -e "$STREAMLIST" ];then
+						rm -f $STREAMLIST
+					fi
+					for ROUND in $URLHLS2 $URLHLS $URL720 $URL360 $URLMP4; do
+						echo "$ROUND" >> $STREAMLIST
+					done
+					URL=$STREAMLIST
 				fi
 			elif [ `echo $URLTMP | grep "youtube" | wc -l` -eq 1 ];then
 				if [ "$debug" = "1" ]; then echo $INPUT bbbbbb $URLTMP; fi
