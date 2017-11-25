@@ -264,7 +264,10 @@ int createcapmt(struct dvbdev* dvbnode, struct service* node, unsigned char* buf
 		pos++;
 */
 		buf[pos++] |= (1 << node->fedev->devnr); //cadev_nr
-		buf[pos++] = node->fedev->devnr; //demux_dev_nr
+		if(checkbox("HD51") == 1)
+			buf[pos++] |= (1 << node->fedev->devnr); //demux_dev_nr / Workaround wenn 0 dann geht Oscam nicht, warum?????
+		else
+			buf[pos++] = node->fedev->devnr; //demux_dev_nr
 
 		buf[pos++] = 0x84; //id (fix)
 		buf[pos++] = 0x02; //len
