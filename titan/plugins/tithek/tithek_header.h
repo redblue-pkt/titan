@@ -12,7 +12,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag);
 int b64dec(char* dest, char* src);
 char* localparser_hoster(char* link);
 int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
-char* list_hoster_streams(char* link);
+char* list_hoster_streams(char* input);
 
 void titheklog(int debuglevel, char* name1, char* name2, char* name3, char* name4, char* content)
 {

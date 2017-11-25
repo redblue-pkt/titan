@@ -6,7 +6,6 @@
 char* hoster(char* url)
 {
 	debug(99, "url: %s", url);
-	int debuglevel = getconfigint("debuglevel", NULL);
 	char* streamurl = NULL, *tmplink = NULL, *tmpstr = NULL;
 	struct skin* load = getscreen("loading");
 
@@ -217,25 +216,12 @@ char* hoster(char* url)
 
 	}
 
-	debug(99, "Streamurl5: %s", streamurl);
+	debug(99, "Streamurl1: %s", streamurl);
 
 	streamurl = string_replace_all("amp;", "", streamurl, 1);
-	debug(99, "Streamurl6: %s", streamurl);
+	debug(99, "Streamurl4: %s", streamurl);
 
 	free(tmplink), tmplink = NULL;
-	free(tmpstr), tmpstr = NULL;
-
-//	printf("streamurl1: %s\n", streamurl);
-	if(debuglevel != 99)
-		printf("Streamurl1: %s\n", streamurl);
-	tmpstr = ostrcat(streamurl, NULL, 0, 0);
-	streamurl = list_hoster_streams(tmpstr);
-	if(debuglevel != 99)
-		printf("Streamurl2: %s\n", streamurl);
-	debug(99, "Streamurl7: %s", streamurl);
-
-	free(tmpstr), tmpstr = NULL;
-
 /*
 	if(ostrncmp("http", streamurl, 4) && ostrncmp("rtmp", streamurl, 4) && ostrncmp("mms", streamurl, 3) && ostrncmp("rtsp", streamurl, 4))
 	{
@@ -1311,16 +1297,21 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 
 }
 
-char* list_hoster_streams(char* filename)
+char* list_hoster_streams(char* input)
 {
+	char* streamurl = NULL, *tmpstr = NULL, *nummer = NULL, *title = NULL, *pic = NULL, *filename = NULL;
+
+	int count = 0, i = 0;	
+
+	filename = ostrcat(input, NULL, 0, 0); 
 
 	if(ostrncmp("/tmp/", filename, 5) && ostrncmp("/mnt/", filename, 5))
 		return filename;
-
-//	int debuglevel = getconfigint("debuglevel", NULL);
-	char* streamurl = NULL, *tmpstr = NULL, *nummer = NULL, *title = NULL, *pic = NULL;
-
-	int count = 0, i = 0;	
+	else
+	{
+		debug(10, "Streamfile found: %s", input);
+		debug(99, "Streamfile found: %s", input);
+	}
 
 //	tmpstr = ostrcat(link, NULL, 0, 0);
 	tmpstr = readfiletomem(filename, 1);
@@ -1403,10 +1394,14 @@ char* list_hoster_streams(char* filename)
 		}
 	}
 	free(tmpstr); tmpstr = NULL;
-debug(99, "streamurl3 %s", streamurl);
+
 	if(streamurl == NULL)
+	{
+		debug(10, "Streamfile choice canceld by USER set Streamurl to skip");
+		debug(99, "Streamfile choice canceld by USER set Streamurl to skip");
+
 		streamurl = ostrcat("skip", NULL, 0, 0);
-debug(99, "streamurl4 %s", streamurl);
+	}
 
 	return streamurl;
 }
@@ -1414,8 +1409,7 @@ debug(99, "streamurl4 %s", streamurl);
 char* localparser_hoster(char* link)
 {
 	debug(99, "link: %s", link);
-	int debuglevel = getconfigint("debuglevel", NULL);
-	int ret = 1, skip = 0;
+	int ret = 1;
 	char* tmpstr = NULL, *streamurl = NULL;
 
 	tmpstr = command(link);
@@ -1426,29 +1420,13 @@ char* localparser_hoster(char* link)
 	{
 		tmpstr = string_replace_all("gethoster2 ", "", tmpstr, 1);
 		streamurl = hoster(tmpstr);
-		skip = 1;
 	}
 	else if(ostrstr(link, ".sh play ") != NULL)
 		streamurl = ostrcat(tmpstr, NULL, 0, 0);
 	else if(ostrstr(link, ".sh hoster ") != NULL)
-	{
 		streamurl = hoster(tmpstr);
-		skip = 1;
-	}
+
 	free(tmpstr), tmpstr = NULL;
-
-	if(skip == 0)
-	{
-		if(debuglevel != 99)
-			printf("Streamurl1: %s\n", streamurl);
-		tmpstr = ostrcat(streamurl, NULL, 0, 0);
-		streamurl = list_hoster_streams(tmpstr);
-		if(debuglevel != 99)
-			printf("Streamurl2: %s\n", streamurl);
-		free(tmpstr), tmpstr = NULL;
-	}
-	debug(99, "streamurl2: %s", streamurl);
-
 	return streamurl;
 }
 

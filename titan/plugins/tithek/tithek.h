@@ -14,6 +14,7 @@ int tithekmlehd = 0;
 int amazonlogin = 0;
 int python = 0;
 int ytbgdownload = 0;
+int hlsbgdownload = 0;
 
 //flag 0	- menu
 //flag 1	- menu pay hidden tithek_pay=0/1 0=hidden
@@ -1462,6 +1463,28 @@ void backgroundytdl(char* link, char* filename)
 		ytbgdownload = 1;
 }
 
+void backgroundhlsdl(char* link, char* filename)
+{
+	int ret = 0;
+	char *file = NULL, *cmd = NULL;
+
+	file = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
+	file = ostrcat(file, filename, 1, 0);
+
+	cmd = ostrcat("/tmp/localhoster/hoster.sh hlsdl \"", link, 0, 0);
+	cmd = ostrcat(cmd, "\" \"", 1, 0);
+	cmd = ostrcat(cmd, file, 1, 0);
+	cmd = ostrcat(cmd, "\" &", 1, 0);
+
+	printf("cmd: %s\n", cmd);
+	ret = system(cmd);
+	free(cmd), cmd = NULL;
+	if(ret == 1)
+		textbox(_("Message"), _("Can't start download.\nPlease try later."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	else
+		hlsbgdownload = 1;
+}
+
 void backgrounddl(char* link, char* filename)
 {
 	int port = 80, ret = 0;
@@ -1524,6 +1547,7 @@ void backgrounddl(char* link, char* filename)
 void submenu(struct skin* listbox, struct skin* load, char* title)
 {
 	int flag = 0;
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	drawscreen(load, 0, 0);
 	tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
@@ -1629,6 +1653,23 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr2); tmpstr2 = NULL;
+
+	debug(10, "Streamurl check: %s", tmpstr1);
+	debug(99, "Streamurl check: %s", tmpstr1);
+	tmpstr = ostrcat(tmpstr1, NULL, 0, 0);
+	tmpstr1 = list_hoster_streams(tmpstr);
+	if(ostrcmp(tmpstr, tmpstr1) != 0)
+	{
+		debug(10, "Streamurl changed to: %s", tmpstr1);
+		debug(99, "Streamurl changed to: %s", tmpstr1);
+	}
+	else
+	{
+		debug(10, "Streamurl check ok: %s", tmpstr1);
+		debug(99, "Streamurl check ok: %s", tmpstr1);
+	}
+
+	free(tmpstr), tmpstr = NULL;
 
 	if(ostrstr(title, "Internet Radio") != NULL)
 		flag = 4;
@@ -1750,8 +1791,12 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					addmenulist(&mlist, "Download Full File (background)", _("Download Full File (background)"), NULL, 0, 0);
 				}
 
+				if(python == 1 && ostrstr(tmpstr1, "hls") != NULL && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
+					addmenulist(&mlist, "Download Full File (hlsdl)", _("Download Full File (hlsdl)"), NULL, 0, 0);
+
 				if(python == 1 && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
-					addmenulist(&mlist, "Download via Youtube_DL (background)", _("Download Full File (youtube_dl)"), NULL, 0, 0);
+					addmenulist(&mlist, "Download Full File (youtube_dl)", _("Download Full File (youtube_dl)"), NULL, 0, 0);
+
 			}
 		}
 		mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Streaming Playback Modus from the following list"), NULL, NULL, 1, 0);
@@ -1849,11 +1894,18 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				backgrounddl(tmpstr1, search);
 			free(search), search = NULL;
 		}
-		else if(ostrcmp(keyconf, "Download via Youtube_DL (background)") == 0)
+		else if(ostrcmp(keyconf, "Download Full File (youtube_dl)") == 0)
 		{
 			char* search = textinput(_("Filename"), filename);
 			if(search != NULL)
 				backgroundytdl(tmpstr1, search);
+			free(search), search = NULL;
+		}
+		else if(ostrcmp(keyconf, "Download Full File (hlsdl)") == 0)
+		{
+			char* search = textinput(_("Filename"), filename);
+			if(search != NULL)
+				backgroundhlsdl(tmpstr1, search);
 			free(search), search = NULL;
 		}
 
@@ -2674,7 +2726,7 @@ why ?
 
 		freetithek();
 		delallfiles("/tmp/tithek", NULL);
-		if(ytbgdownload == 0)
+		if(ytbgdownload == 0 && hlsbgdownload == 0)
 			system("rm -rf /tmp/localhoster");
 		system("rm -rf /tmp/localparser");
 		system("rm -rf /tmp/localcache");

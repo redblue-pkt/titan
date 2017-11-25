@@ -8,17 +8,20 @@ DEST=$3
 INPUT=`echo $INPUT | sed 's!/Out/?s=!!g'`
 
 #FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PAGE $NEXT"
-FILENAME="`echo $INPUT | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
+FILENAME="`echo $INPUT | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/:\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
 PICNAME=`echo $FILENAME`
 
 if [ -z "$FILENAME" ]; then
 	FILENAME=none
 fi
 
+
 ARCH=`cat /etc/.arch`
 BOX=`cat /etc/model`
 TMP=/tmp/localcache
 CMD=/tmp/localhoster
+BIN="$CMD"/bin/python."$ARCH"
+HLSBIN="$CMD"/bin/hlsdl."$ARCH"
 #USERAGENT='Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
 USERAGENT='Mozilla%2F5.0+%28Windows+NT+6.3%3B+rv%3A36.0%29+Gecko%2F20100101+Firefox%2F36.0'
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
@@ -26,6 +29,8 @@ curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/c
 curlbin2="curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT"
 youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+hlsdlbg="$HLSBIN -u $USERAGENT -o"
+
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
@@ -35,8 +40,6 @@ if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
 if [ "$debuglevel" == "99" ]; then youtubebin="$youtubebin --verbose"; fi
 
 wgetbin="wget -q -T2"
-
-BIN="$CMD"/bin/python."$ARCH"
 
 if [ ! -e "/tmp/localhoster/lib/python2.7/lib-dynload" ] && [ -e /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" ];then
 #	ln -fs /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" /tmp/localhoster/lib/python2.7/lib-dynload
@@ -320,7 +323,12 @@ youtube_dl()
 #	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
 #	$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors -g "$INPUT" > /tmp/youtube_dl.streamlink.log 2>&1
 #	cat /tmp/youtube_dl.streamlink.log | tail -n1
-	$BIN $youtubebin "$INPUT"
+	mkdir $TMP > /dev/null 2>&1
+
+	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
+
+	$BIN $youtubebin "$INPUT" > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
 }
 
 youtube_dlbg()
@@ -329,8 +337,44 @@ youtube_dlbg()
 #	URL=`$BIN $CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent "$USERAGENT" --format mp4 --restrict-filenames --ignore-errors --output "$1" "$2"`
 #	echo "$URL" >> /tmp/.last_hoster_youtube_dlbg.log
 #	echo $URL
-	$BIN $youtubebinbg $DEST $INPUT
+	mkdir $TMP > /dev/null 2>&1
+
+	echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
+	$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
+#	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
 }
+
+hlsdl()
+{
+	mkdir $TMP > /dev/null 2>&1
+
+	echo "$HLSBIN $hlsdlbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
+
+	REFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+)&.*/\1/p')
+	if [ -z "$REFERER" ];then
+		REFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+).*/\1/p')
+	fi
+
+	if [ ! -z "$REFERER" ];then
+		REFERER="Referer: $REFERER"
+	fi
+
+	TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+)&.*/\1/p')
+	if [ -z "$TMPUSERAGENT" ];then
+		TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+).*/\1/p')
+	fi
+	if [ ! -z "$TMPUSERAGENT" ];then
+		USERAGENT=$TMPUSERAGENT
+	fi
+
+	URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
+
+	echo $HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_$TYPE.log
+	$HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_$TYPE.log
+#	$HLSBIN "$URL" -v -u "$USERA" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_$TYPE.log
+
+}
+
 
 if [ "$TYPE" == "get" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
@@ -380,3 +424,9 @@ if [ "$TYPE" == "youtube_dlbg" ];then
 	esac
 fi
 
+if [ "$TYPE" == "hlsdl" ];then
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
+	case $hoster in
+		*) hlsdl $INPUT;;
+	esac
+fi
