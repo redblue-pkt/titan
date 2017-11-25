@@ -1791,7 +1791,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					addmenulist(&mlist, "Download Full File (background)", _("Download Full File (background)"), NULL, 0, 0);
 				}
 
-				if(python == 1 && ostrstr(tmpstr1, "hls") != NULL && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
+				if(ostrstr(tmpstr1, "hls") != NULL && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 					addmenulist(&mlist, "Download Full File (hlsdl)", _("Download Full File (hlsdl)"), NULL, 0, 0);
 
 				if(python == 1 && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
