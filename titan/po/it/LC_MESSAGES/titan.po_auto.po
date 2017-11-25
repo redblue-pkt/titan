@@ -677,7 +677,7 @@ msgid ""
 "Aborting backup..."
 msgstr "Nessuna directory di backup trovato"
 
-#: skin_default_skin.xml.h:57 tithek_global.h:637 tithek_global.h:763
+#: skin_default_skin.xml.h:57 tithek_global.h:651 tithek_global.h:777
 #: webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
@@ -868,7 +868,7 @@ msgstr ""
 msgid "All Channels"
 msgstr "tutti i canali"
 
-#: tithek_global.h:633 tithek_global.h:759
+#: tithek_global.h:647 tithek_global.h:773
 msgid "All Sorted"
 msgstr ""
 
@@ -1964,7 +1964,7 @@ msgstr "Annula"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_global.h:613 tithek_global.h:735
+#: tithek_global.h:627 tithek_global.h:749
 msgid "Category"
 msgstr ""
 
@@ -2212,7 +2212,7 @@ msgid "Choose your Shares from the following list"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1381 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1395 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -2248,7 +2248,7 @@ msgstr ""
 msgid "Ci-Modul internal Menu"
 msgstr ""
 
-#: tithek_global.h:739
+#: tithek_global.h:753
 msgid "Cine Films"
 msgstr ""
 
@@ -3303,7 +3303,7 @@ msgstr ""
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1089 titan.c:1098 titan.c:1227
 #: titan.c:1248 titan.c:1254 titan.c:1265 titan.c:1271 tithek.c:103
-#: tithek_global.h:215 tithek.h:749 tithek.h:1433 tithek.h:1460 tithek.h:1517
+#: tithek_global.h:216 tithek.h:749 tithek.h:1433 tithek.h:1460 tithek.h:1517
 #: tithek.h:1650 tithek.h:1665 tithek.h:1835 tithek.h:1864 tithek.h:1880
 #: tithek.h:2114 tithek.h:2274 tithek.h:2559 tithek.h:2605 tithek.h:2623
 #: tithek.h:2636 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
@@ -6056,7 +6056,7 @@ msgstr ""
 #: system_update.h:270 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:285 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:215 tithek.h:749
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:216 tithek.h:749
 #: tithek.h:1433 tithek.h:1460 tithek.h:1517 tithek.h:1650 tithek.h:1665
 #: tithek.h:1835 tithek.h:1864 tithek.h:2114 tithek.h:2274 tithek.h:2559
 #: tithek.h:2605 tithek.h:2623 tithek.h:2636 tiwakeup.h:66 tiwakeup.h:68
@@ -6668,7 +6668,7 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
 #: titan.c:1089 titan.c:1098 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:215 tithek.h:749
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:216 tithek.h:749
 #: tithek.h:1433 tithek.h:1460 tithek.h:1517 tithek.h:1650 tithek.h:1665
 #: tithek.h:1835 tithek.h:1864 tithek.h:1880 tithek.h:2114 tithek.h:2274
 #: tithek.h:2559 tithek.h:2605 tithek.h:2623 tithek.h:2636 tiwakeup.h:66
@@ -8797,22 +8797,22 @@ msgstr ""
 #: rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:553 solarmovie.h:138
 #: solarmovie.h:140 solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:629 tithek_global.h:755 tithek_global.h:823
-#: tithek_global.h:825 tithek_global.h:1443 tithek_global.h:1445 tmdb.h:898
+#: tithek_global.h:643 tithek_global.h:769 tithek_global.h:837
+#: tithek_global.h:839 tithek_global.h:1450 tithek_global.h:1452 tmdb.h:898
 #: tvtoast.h:530 tvtoast.h:532 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Cerca"
 
-#: tithek_global.h:621 tithek_global.h:747
+#: tithek_global.h:635 tithek_global.h:761
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_global.h:617 tithek_global.h:743
+#: tithek_global.h:631 tithek_global.h:757
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_global.h:625 tithek_global.h:751
+#: tithek_global.h:639 tithek_global.h:765
 msgid "Search Cast"
 msgstr ""
 
@@ -9634,7 +9634,7 @@ msgid "Stream Link"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1381 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1395 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
@@ -10028,7 +10028,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:215 tithek.h:2559
+#: tithek_global.h:216 tithek.h:2559
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -10357,11 +10357,11 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
-#: tithek.c:128 tithek_global.h:587 tithek_global.h:709
+#: tithek.c:128 tithek_global.h:601 tithek_global.h:723
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:583 tithek_global.h:705 tithek.h:1925 tithek.h:2061
+#: tithek_global.h:597 tithek_global.h:719 tithek.h:1925 tithek.h:2061
 #: tithek.h:2601 tithek.h:2619 tithek.h:2632 tithek.h:2649
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
