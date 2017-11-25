@@ -8798,7 +8798,7 @@ msgstr ""
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:553 solarmovie.h:138
 #: solarmovie.h:140 solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:643 tithek_global.h:769 tithek_global.h:837
-#: tithek_global.h:839 tithek_global.h:1450 tithek_global.h:1452 tmdb.h:898
+#: tithek_global.h:839 tithek_global.h:1464 tithek_global.h:1466 tmdb.h:898
 #: tvtoast.h:530 tvtoast.h:532 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
