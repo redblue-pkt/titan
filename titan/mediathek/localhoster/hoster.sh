@@ -14,10 +14,10 @@ CMD=/tmp/localhoster
 #USERAGENT='Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
 USERAGENT='Mozilla%2F5.0+%28Windows+NT+6.3%3B+rv%3A36.0%29+Gecko%2F20100101+Firefox%2F36.0'
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
-curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A \$USERAGENT"
-curlbin2="curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A '$USERAGENT'"
-youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors -g"
-youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent '$USERAGENT' --format mp4 --restrict-filenames --ignore-errors --output"
+curlbin="curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT"
+curlbin2="curl -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT"
+youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
@@ -238,7 +238,7 @@ aliezold()
 	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
 } 
 
-aliez()
+aliez1()
 {
 	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
 	$curlbin "$INPUT" -o $TMP/cache.$hoster.1
@@ -279,6 +279,51 @@ aliez()
 
 
 }
+
+	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	$curlbin "$INPUT" -o $TMP/cache.$hoster.1
+	cat $TMP/cache.$hoster.1 | sed 's/source:/\nfound=/' | grep ^found= | cut -d"'" -f2 >$TMP/cache.$hoster.url1
+	URL=`cat $TMP/cache.$hoster.url1 | head -n1`
+	URLMP41="$URL$EXTRA"
+
+#	URL=""
+	#file:	'http://a3.aliez.me:8080/hls/streama57449/index.m3u8?st=dgw2dOq8tyFkLLBLn2ycXA',
+
+	cat $TMP/cache.$hoster.1 | sed 's/file:/\nfound=/' | grep ^found= | cut -d"'" -f2 >$TMP/cache.$hoster.url2
+	URL=`cat $TMP/cache.$hoster.url2 | head -n1`
+	URLMP42="$URL$EXTRA"
+
+#URL=""
+	#"file":		"rtmp%3A%2F%2Fa3.aliez.me%2Flive%2Fstreama57449%3Ftoken%3Dd11304fabb8e64327df8427e1c2fd5d9"
+	cat $TMP/cache.$hoster.1 | sed 's/"file":/\nfound=/' | grep ^found= | cut -d'"' -f2 >$TMP/cache.$hoster.url3
+	URL=`cat $TMP/cache.$hoster.url3 | head -n1`
+
+	if [ "`echo $URL | grep rtmp | wc -l`" -eq 1 ];then
+		#new swfobject.embedSWF("http://i.aliez.me/swf/playernew.swf?0", "mediaspace", "700", "480", "9.0.115.0", false, flashvars, params);
+		cat $TMP/cache.$hoster.1 | sed 's/swfobject.embedSWF/\nfound=/' | grep ^found= | cut -d'"' -f2 >$TMP/cache.$hoster.rtmp.swfurl
+		SWFURL=`cat $TMP/cache.$hoster.rtmp.swfurl | head -n1`
+		URL=`echo "$URL" | sed -e 's/%3A/:/g' -e 's!%2F!/!g' -e 's!%3D!=!g' -e 's!%3F!?!g'`
+		EXTRA=" pageUrl=$REFERER"
+		if [ ! -z "$SWFURL" ];then
+			EXTRA="$EXTRA swfUrl=$SWFURL swfVfy=1 timeout=15 live=1"
+		fi
+		URLRTMP="$URL$EXTRA"
+	fi
+
+	STREAMLIST="$TMP/$PARSER.$INPUT.$FROM.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST
+	fi
+	for ROUND in $URLMP42 $URLMP41 $URLRTMP; do
+		echo "$ROUND" >> $STREAMLIST
+	done
+	URL=$STREAMLIST
+
+
+	echo "$URL"
 
 sport7()
 {
