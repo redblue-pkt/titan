@@ -1651,6 +1651,12 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
 	}
+	else if(!ostrncmp("skip", tmpstr1, 4))
+	{
+		debug(99, "skip playback screen, cancel by user");
+		free(tmpstr); tmpstr = NULL;
+		free(tmpstr1); tmpstr1 = NULL;
+	}
 	else if(ostrncmp("http", tmpstr1, 4) && ostrncmp("rtmp", tmpstr1, 4) && ostrncmp("mms", tmpstr1, 3) && ostrncmp("rtsp", tmpstr1, 4))
 	{
 		tmpstr = ostrcat(_("Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link"), "\n\n", 0, 0);

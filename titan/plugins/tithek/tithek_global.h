@@ -1297,6 +1297,108 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 
 }
 
+char* list_hoster_streams(char* filename)
+{
+
+	if(ostrncmp("/tmp/", filename, 5) && ostrncmp("/mnt/", filename, 5))
+		return filename;
+
+//	int debuglevel = getconfigint("debuglevel", NULL);
+	char* streamurl = NULL, *tmpstr = NULL, *nummer = NULL, *title = NULL, *pic = NULL;
+
+	int count = 0, i = 0;	
+
+//	tmpstr = ostrcat(link, NULL, 0, 0);
+	tmpstr = readfiletomem(filename, 1);
+
+	struct splitstr* ret1 = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL;
+//	ret1 = strsplit(string_decode(tmpstr2, 0), "\n", &count);
+	ret1 = strsplit(tmpstr, "\n", &count);
+	for(i = 0; i < count; i++)
+	{
+//		if(ret1[i].part != NULL && ostrstr(ret1[i].part, "_quality") != NULL)
+		if(ret1[i].part != NULL)
+		{
+		
+			if(ostrstr(ret1[i].part, "f4m") != NULL)
+				pic = ostrcat("f4m.png", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "mp4") != NULL)
+				pic = ostrcat("mp4.png", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "3gp") != NULL)
+				pic = ostrcat("3gp.png", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "flv") != NULL)
+				pic = ostrcat("flv.png", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "hls") != NULL)
+				pic = ostrcat("hls.png", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "mkv") != NULL)
+				pic = ostrcat("mkv.png", NULL, 0, 0);
+
+			if(ostrstr(ret1[i].part, "1080p") != NULL)
+				nummer = ostrcat("1080p", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "1080i") != NULL)
+				nummer = ostrcat("1080i", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "1080") != NULL)
+				nummer = ostrcat("1080", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "720p") != NULL)
+				nummer = ostrcat("720p", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "720") != NULL)
+				nummer = ostrcat("720", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "360p") != NULL)
+				nummer = ostrcat("360p", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "360") != NULL)
+				nummer = ostrcat("360", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "hls") != NULL)
+				nummer = ostrcat("hls", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "auto") != NULL)
+				nummer = ostrcat("auto", NULL, 0, 0);
+
+			if(ostrstr(ret1[i].part, "http://") != NULL)
+				title = ostrcat("Http Stream", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "https://") != NULL)
+				title = ostrcat("Https Stream", NULL, 0, 0);
+			else if(ostrstr(ret1[i].part, "rtmp://") != NULL)
+				title = ostrcat("RTMP Stream", NULL, 0, 0);
+
+			streamurl = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(nummer != NULL)
+			{
+				title = ostrcat(title, " (", 1, 0);
+				title = ostrcat(title, nummer, 1, 0);
+				title = ostrcat(title, ")", 1, 0);
+			}
+			debug(99, "(%d) title: %s streamurl: %s\n", i, title, streamurl);																									
+			addmenulist(&mlist, title, streamurl, pic, 0, 0);
+
+			free(title), title = NULL;
+			free(pic), pic = NULL;
+			free(nummer), nummer = NULL;
+			free(streamurl), streamurl = NULL;
+		}
+	}
+	free(ret1), ret1 = NULL;
+
+	if(mlist != NULL)
+	{
+		mbox = menulistbox(mlist, NULL, _("Stream Menu"), _("Choose your Streaming Format from the following list"), NULL, NULL, 1, 0);
+		if(mbox != NULL)
+		{
+			free(streamurl), streamurl = NULL;
+
+			debug(99, "mbox->name %s", mbox->name);
+			debug(99, "mbox->text %s", mbox->text);
+			streamurl = ostrcat(mbox->text, NULL, 0, 0);
+		}
+	}
+	free(tmpstr); tmpstr = NULL;
+debug(99, "streamurl3 %s", streamurl);
+	if(streamurl == NULL)
+		streamurl = ostrcat("skip", NULL, 0, 0);
+debug(99, "streamurl4 %s", streamurl);
+
+	return streamurl;
+}
+
 char* localparser_hoster(char* link)
 {
 	debug(99, "link: %s", link);
@@ -1319,7 +1421,14 @@ char* localparser_hoster(char* link)
 
 	free(tmpstr), tmpstr = NULL;
 
-	debug(99, "streamurl: %s", streamurl);
+	printf("streamurl1: %s\n", streamurl);
+
+
+	tmpstr = ostrcat(streamurl, NULL, 0, 0);
+	streamurl = list_hoster_streams(tmpstr);
+	printf("streamurl: %s\n", streamurl);
+
+	debug(99, "streamurl2: %s", streamurl);
 
 	return streamurl;
 }
