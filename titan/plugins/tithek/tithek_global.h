@@ -6,6 +6,7 @@
 char* hoster(char* url)
 {
 	debug(99, "url: %s", url);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* streamurl = NULL, *tmplink = NULL, *tmpstr = NULL;
 	struct skin* load = getscreen("loading");
 
@@ -216,12 +217,25 @@ char* hoster(char* url)
 
 	}
 
-	debug(99, "Streamurl1: %s", streamurl);
+	debug(99, "Streamurl5: %s", streamurl);
 
 	streamurl = string_replace_all("amp;", "", streamurl, 1);
-	debug(99, "Streamurl4: %s", streamurl);
+	debug(99, "Streamurl6: %s", streamurl);
 
 	free(tmplink), tmplink = NULL;
+	free(tmpstr), tmpstr = NULL;
+
+//	printf("streamurl1: %s\n", streamurl);
+	if(debuglevel != 99)
+		printf("Streamurl1: %s\n", streamurl);
+	tmpstr = ostrcat(streamurl, NULL, 0, 0);
+	streamurl = list_hoster_streams(tmpstr);
+	if(debuglevel != 99)
+		printf("Streamurl2: %s\n", streamurl);
+	debug(99, "Streamurl7: %s", streamurl);
+
+	free(tmpstr), tmpstr = NULL;
+
 /*
 	if(ostrncmp("http", streamurl, 4) && ostrncmp("rtmp", streamurl, 4) && ostrncmp("mms", streamurl, 3) && ostrncmp("rtsp", streamurl, 4))
 	{
@@ -1418,13 +1432,6 @@ char* localparser_hoster(char* link)
 		streamurl = hoster(tmpstr);
 
 	free(tmpstr), tmpstr = NULL;
-
-	printf("streamurl1: %s\n", streamurl);
-
-
-	tmpstr = ostrcat(streamurl, NULL, 0, 0);
-	streamurl = list_hoster_streams(tmpstr);
-	printf("streamurl: %s\n", streamurl);
 
 	debug(99, "streamurl2: %s", streamurl);
 
