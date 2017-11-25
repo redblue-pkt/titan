@@ -2212,7 +2212,7 @@ msgid "Choose your Shares from the following list"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1383 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1381 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -8798,7 +8798,7 @@ msgstr ""
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:553 solarmovie.h:138
 #: solarmovie.h:140 solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:629 tithek_global.h:755 tithek_global.h:823
-#: tithek_global.h:825 tithek_global.h:1445 tithek_global.h:1447 tmdb.h:898
+#: tithek_global.h:825 tithek_global.h:1443 tithek_global.h:1445 tmdb.h:898
 #: tvtoast.h:530 tvtoast.h:532 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
@@ -9634,7 +9634,7 @@ msgid "Stream Link"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1383 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1381 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
