@@ -809,12 +809,13 @@ hosterlist()
 			EXTRA=`echo $ROUND | cut -d"'" -f4`
 
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-			if [ "$TITLE" == "alieztv" ];then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/alieztv.jpg"
+
+			if [ $(echo "$TITLE" | grep ^"WEB STREAM" | wc-l) -eq 1 ];then
+				HOST=$(echo "$TITLE" | cut -d"(" -f1)
+			else
+				HOST=`echo "$TITLE" | sed -nr 's/.*[http|https]:\/\/([^\/]+)\/.*/\1/p'`
 			fi
-			if [ "$TITLE" == "youtube" ];then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/youtube.jpg"
-			fi
+			PIC="http://atemio.dyndns.tv/mediathek/menu/"$HOST".jpg"
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
 				TITLE="$TITLE ($EXTRA)"
