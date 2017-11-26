@@ -333,6 +333,75 @@ sport7()
 #	cat $STREAMLIST
 }
 
+sportstream365()
+{
+	#http://sport7.tech/487b826914d11080dce4b502052b012d-live.html
+	#var videoLink = 'http://g4.securestream.sport7.tech/stream/NzYyZDUwZWNkODc5YWM5YjViY2ZkOTVhZGNjOGM1ZTc=/BTSport3.m3u8';
+
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+#	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+
+	#<input type="hidden" name="game" value="146875046">
+	id=$(cat $TMP/cache.hoster.$hoster.1 | sed -nr 's/.*name="game" value="([^"]+)".*/\1/p')
+	ts=$(date +%s)
+	URL="http://sportstream365.com/LiveFeed/GetGame?id=$id&partner=24"
+
+	$curlbin "$URL" --referer "$REFERER" -H "X-Requested-With: ShockwaveFlash/27.0.0.187" -o $TMP/cache.hoster.$hoster.2
+
+
+	#"VI":"1032572"
+	id=$(cat $TMP/cache.hoster.$hoster.2 | sed -nr 's/.*"VI" :"([^"]+)".*/\1/p')
+	if [ -z "$id" ];then
+		id=$(cat $TMP/cache.hoster.$hoster.2 | sed -nr 's/.*"VI":"([^"]+)".*/\1/p')
+	fi
+	#https://github.com/XvBMC/repository.xvbmc/blob/master/Dependencies/script.module.liveresolver/lib/liveresolver/resolvers/sportstream365.py
+	URL=http://93.189.57.254/edge0/xrecord/$id/prog_index.m3u8
+	# enable httponly cookie
+	sed 's/#HttpOnly_//g' -i /mnt/network/cookies
+
+	if [ ! -z "$URL" ];then
+		echo "$URL$EXTRA" > $STREAMLIST
+		#echo "$URL$EXTRA"
+		echo "$STREAMLIST"
+	fi
+}
+
+
+all()
+{
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	rm $TMP/cache.$PARSER.$INPUT.$FROM.1 > /dev/null 2>&1
+
+	$curlbin -o $TMP/cache.$PARSER.$INPUT.$FROM.1 ${1}
+	URL=`zcat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+	if [ -z "$URL" ];then
+		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+	fi
+	if [ -z "$URL" ];then
+		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep "text/javascript" | grep -v jQuery | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+	fi
+
+#	echo $URL
+	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.2
+}
+
 
 directstream()
 {
@@ -430,6 +499,9 @@ if [ "$TYPE" == "get" ];then
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
 		aliez) aliez $INPUT;;
 		sport7) sport7 $INPUT;;
+		sportstream365) sportstream365 $INPUT;;
+		*) all $INPUT;;
+
 	esac
 fi
 
