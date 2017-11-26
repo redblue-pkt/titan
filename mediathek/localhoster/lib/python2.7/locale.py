@@ -977,6 +977,7 @@ locale_alias = {
     'de_ch.iso885915':                      'de_CH.ISO8859-15',
     'de_ch@euro':                           'de_CH.ISO8859-15',
     'de_de':                                'de_DE.ISO8859-1',
+    'po/de':                                'de_DE.ISO8859-1',
     'de_de.88591':                          'de_DE.ISO8859-1',
     'de_de.885915':                         'de_DE.ISO8859-15',
     'de_de.885915@euro':                    'de_DE.ISO8859-15',
