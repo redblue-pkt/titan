@@ -303,11 +303,34 @@ sport7()
 {
 	#http://sport7.tech/487b826914d11080dce4b502052b012d-live.html
 	#var videoLink = 'http://g4.securestream.sport7.tech/stream/NzYyZDUwZWNkODc5YWM5YjViY2ZkOTVhZGNjOGM1ZTc=/BTSport3.m3u8';
-            
-	URL=`$curlbin "$INPUT" | sed 's/var videoLink/\nfound=/' | grep ^found= | cut -d"'" -f2`
-	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'`
+
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+	cat $TMP/cache.hoster.$hoster.1 | sed 's/var videoLink/\nfound=/' | grep ^found= | cut -d"'" -f2 >$TMP/cache.hoster.$hoster.url1
+	URL=`cat $TMP/cache.hoster.$hoster.url1 | head -n1`
+	# enable httponly cookie
 	sed 's/#HttpOnly_//g' -i /mnt/network/cookies
-	echo "$URL|Referer=$REFERER&X-f=95.91.79.87&User-Agent=$USERAGENT"
+
+	if [ ! -z "$URL" ];then
+		echo "$URL$EXTRA" > $STREAMLIST
+		#echo "$URL$EXTRA"
+		echo "$STREAMLIST"
+	fi
+	
+	
+#	URL=`$curlbin "$INPUT" | sed 's/var videoLink/\nfound=/' | grep ^found= | cut -d"'" -f2`
+#	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'`
+#	sed 's/#HttpOnly_//g' -i /mnt/network/cookies
+#	echo "$URL|Referer=$REFERER&X-f=96.91.79.87&User-Agent=$USERAGENT"
+#	cat $STREAMLIST
 }
 
 
