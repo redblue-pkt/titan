@@ -593,7 +593,11 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 #				$curlbin "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 				curl "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 
-				if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "Authorization required" | wc -l` -eq 1 ];then
+				if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "This video has been removed from public access." | wc -l` -eq 1 ];then
+					URL="errormsg=This video has been removed from public access."
+				elif [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "This video is protected by privacy settings and is not available for viewing." | wc -l` -eq 1 ];then
+					URL="errormsg=This video is protected by privacy settings and is not available for viewing."
+				elif [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "Authorization required" | wc -l` -eq 1 ];then
 					URL="errormsg=You need access to https://vk.com to use this full stream, add VK User/Pass on Tithek Settings"
 				else
 					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .720. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.720
