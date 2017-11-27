@@ -808,13 +808,8 @@ hosterlist()
 			TITLE=`echo $ROUND | cut -d"'" -f2`
 			EXTRA=`echo $ROUND | cut -d"'" -f4`
 
-			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-
-			if [ $(echo "$TITLE" | grep ^"WEB STREAM" | wc -l) -eq 1 ];then
-				HOST=`echo "$TITLE" | sed -nr 's/.*[http|https]:\/\/([^\/]+)\/.*/\1/p'`
-			else
-				HOST=$(echo "$TITLE" | cut -d"(" -f1 | sed -e 's/.\{1\}$//')
-			fi
+#			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			HOST=$(echo "$TITLE" | sed 's/ (/(/' | cut -d"(" -f1 | tr [A-Z] [a-z])
 			PIC="http://atemio.dyndns.tv/mediathek/menu/"$HOST".jpg"
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
@@ -830,7 +825,7 @@ hosterlist()
 				URL="$SRC $SRC hoster '$URL'"
 #				URL="$SRC $SRC findhoster $FROM '$URL'"
 
-				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#111"
+				LINE="$TITLE#$URL#$PIC#$PARSER.$HOST.jpg#$NAME#111"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
 
@@ -850,7 +845,9 @@ hosterlist()
 			EXTRA="$TMPURL"
 			URL="$TMPURL"
 
-			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+#			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			HOST=$(echo "$EXTRA" | sed -nr 's/.*[http|https]:\/\/([^\/]+)\/.*/\1/p' | tr [A-Z] [a-z])
+			PIC="http://atemio.dyndns.tv/mediathek/menu/"$HOST".jpg"
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
 				TITLE="$TITLE ($EXTRA)"
@@ -866,7 +863,7 @@ hosterlist()
 ##				URL="$SRC $SRC findhoster $FROM '$URL'"
 
 #				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#111"
-				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#14"
+				LINE="$TITLE#$URL#$PIC#$PARSER.$HOST.jpg#$NAME#14"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
 
