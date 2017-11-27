@@ -810,10 +810,10 @@ hosterlist()
 
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 
-			if [ $(echo "$TITLE" | grep ^"WEB STREAM" | wc-l) -eq 1 ];then
-				HOST=$(echo "$TITLE" | cut -d"(" -f1)
-			else
+			if [ $(echo "$TITLE" | grep ^"WEB STREAM" | wc -l) -eq 1 ];then
 				HOST=`echo "$TITLE" | sed -nr 's/.*[http|https]:\/\/([^\/]+)\/.*/\1/p'`
+			else
+				HOST=$(echo "$TITLE" | cut -d"(" -f1 | sed -e 's/.\{1\}$//')
 			fi
 			PIC="http://atemio.dyndns.tv/mediathek/menu/"$HOST".jpg"
 
