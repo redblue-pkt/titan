@@ -1745,8 +1745,8 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
             av_dict_set(&avio_opts, "reconnect_at_eof", "1", 0);
             av_dict_set(&avio_opts, "reconnect_streamed", "1", 0);
         }
-    }
 	free(tmpstr4), tmpstr4 = NULL;
+    }
 
     pavio_opts = &avio_opts;
     
