@@ -1590,7 +1590,8 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
         av_dict_set(&avio_opts, "timeout", "20000000", 0); //20sec
 //obi
 		char* cookie = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr4 = NULL, *headers = NULL, *useragent = NULL;
-		int count = 0, count1 = 0, count2 = 0, count3 = 0, i = 0, i1 = 0, i2 = 0, i3 = 0;
+		int count = 0, count1 = 0, count2 = 0, count3 = 0, i = 0, i1 = 0, i2 = 0, i3 = 0, usetslivemode = 0;
+
 		struct splitstr* ret1 = NULL;
 		struct splitstr* ret2 = NULL;
 
@@ -1651,7 +1652,9 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
 			ffmpeg_printf(10, "skip set cookies : %s\n", cookie);
 
 		ffmpeg_printf(10, "check user-agent and header\n");
-		tmpstr4 = ostrcat(filename, NULL, 0, 0);
+
+	        if (ostrstr(filename, "&tslivemode=1") != NULL)
+			usetslivemode = 1;
 
 		if(ostrstr(filename, "|") != NULL)
 		{
@@ -1731,8 +1734,8 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
 	   	ffmpeg_printf(10, "check tslivemode\n");
 
 //        if (ostrstr(filename, ".m3u8") != NULL)
-        if (ostrstr(tmpstr4, "&tslivemode=1") != NULL)
-        {
+	        if (usetslivemode == 1)
+	        {
 		   	ffmpeg_printf(10, "set tslivemode\n");
 			context->playback->isTSLiveMode = 1;
 		}
@@ -1745,7 +1748,6 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
             av_dict_set(&avio_opts, "reconnect_at_eof", "1", 0);
             av_dict_set(&avio_opts, "reconnect_streamed", "1", 0);
         }
-	free(tmpstr4), tmpstr4 = NULL;
     }
 
     pavio_opts = &avio_opts;
