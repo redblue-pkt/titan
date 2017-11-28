@@ -2169,7 +2169,7 @@ int fegetdev()
 #ifndef MIPSEL
 					if(getconfig(tmpstr, NULL) != NULL)
 						sethypridtuner(y, getconfig(tmpstr, NULL));
-					free(tmpstr), tmpstr = NULL;
+					//free(tmpstr), tmpstr = NULL;
 #endif
 				}
 				
@@ -2201,6 +2201,8 @@ int fegetdev()
 						addconfig(tmpstr, "");
 					free(tmpstr), tmpstr = NULL;
 				}
+				if(tmpstr != NULL)
+					free(tmpstr), tmpstr = NULL;
 			}
 		}
 	}
