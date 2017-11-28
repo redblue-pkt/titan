@@ -559,9 +559,11 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | grep vk.com | sed 's!href=!\nfound=!' | grep ^found | cut -d '"' -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6 | sed 's#//#\nhttps://#' | grep ^"https://"`
 				if [ "$debug" = "1" ]; then echo $INPUT 999999 $URLTMP; fi
-
+#echo $INPUT 999999 $URLTMP
 				email=`cat /mnt/config/titan.cfg | grep vk_user | cut -d"=" -f2`
 				pass=`cat /mnt/config/titan.cfg | grep vk_pass | cut -d"=" -f2`
+
+				URLYDL=$(cat $(/tmp/localhoster/hoster.sh youtube_dl "$URLTMP" $email $pass))
 
 				$curlbin2 "$URLTMP" --referer "$URL$PAGE" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.7
 
@@ -593,11 +595,11 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 #				$curlbin "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 				curl "$URLTMP" --referer "$referer" -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12
 
-				if [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "This video has been removed from public access." | wc -l` -eq 1 ];then
+				if [ -z "$URLYDL" ] && [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "This video has been removed from public access." | wc -l` -eq 1 ];then
 					URL="errormsg=This video has been removed from public access."
-				elif [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "This video is protected by privacy settings and is not available for viewing." | wc -l` -eq 1 ];then
+				elif [ -z "$URLYDL" ] && [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "This video is protected by privacy settings and is not available for viewing." | wc -l` -eq 1 ];then
 					URL="errormsg=This video is protected by privacy settings and is not available for viewing."
-				elif [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "Authorization required" | wc -l` -eq 1 ];then
+				elif [ -z "$URLYDL" ] && [ `cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | grep "Authorization required" | wc -l` -eq 1 ];then
 					URL="errormsg=You need access to https://vk.com to use this full stream, add VK User/Pass on Tithek Settings"
 				else
 					cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12 | sed 's!<source src=!\nfound=!g' | grep ^found | grep .720. | cut -d'"' -f2 > $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.12.720
@@ -625,7 +627,7 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 					if [ -e "$STREAMLIST" ];then
 						rm -f $STREAMLIST
 					fi
-					for ROUND in $URLHLS2 $URLHLS $URL720 $URL360 $URLMP4; do
+					for ROUND in $URLYDL $URLHLS2 $URLHLS $URL720 $URL360 $URLMP4; do
 						echo "$ROUND" >> $STREAMLIST
 					done
 					URL=$STREAMLIST
@@ -782,7 +784,6 @@ livelist()
 				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#0"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			fi
-
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.2
 #		rm $TMP/cache.* > /dev/null 2>&1
 	fi
