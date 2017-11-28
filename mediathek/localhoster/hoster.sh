@@ -4,6 +4,8 @@
 TYPE=$1
 INPUT=$2
 DEST=$3
+USER=$DEST
+PASS=$4
 
 INPUT=`echo $INPUT | sed 's!/Out/?s=!!g'`
 
@@ -417,9 +419,9 @@ youtube_dl()
 #	cat /tmp/youtube_dl.streamlink.log | tail -n1
 	mkdir $TMP > /dev/null 2>&1
 
-	echo "$BIN $youtubebin $INPUT" > /tmp/.last_hoster_youtube_dl.log
+	echo "$BIN $youtubebin $INPUT --username $USER --password $PASS" > /tmp/.last_hoster_youtube_dl.log
 
-	$BIN $youtubebin "$INPUT" > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+	$BIN $youtubebin "$INPUT" --username "$USER" --password "$PASS" > $TMP/$TYPE.$hoster.$FILENAME.streamlist
 	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
 }
 
@@ -508,7 +510,7 @@ fi
 if [ "$TYPE" == "youtube_dl" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
-		*) youtube_dl $INPUT;;
+		*) youtube_dl $INPUT $USER $PASS;;
 	esac
 fi
 
