@@ -473,6 +473,11 @@ int dmxsetsource(struct dvbdev* node, int source)
 		err("NULL detect");
 		return 1;
 	}
+	if(checkbox("HD51") == 1)
+	{
+		if(node->fedmxsource == source)
+			return 0;
+	}
 
 #ifdef MIPSEL
 	//Workaround da ansonsten DVR4 nicht funktioniert (Treiberproblem)
@@ -490,6 +495,19 @@ int dmxsetsource(struct dvbdev* node, int source)
 	if(ioctl(node->fd, DMX_SET_SOURCE, &source) < 0)
 	{
 		perr("DMX_SET_SOURCE");
+	}
+	else
+	{
+		if(checkbox("HD51") == 1)
+		{
+		  struct dvbdev* nodeh = dvbdev;
+			while(nodeh != NULL)
+			{
+				if(nodeh->type == DEMUXDEV && nodeh->adapter == node->adapter && nodeh->devnr == node->devnr)
+					nodeh->fedmxsource = source;
+				nodeh = nodeh->next;
+			}
+		}
 	}
 //#endif
 	return 0;
