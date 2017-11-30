@@ -422,7 +422,7 @@ youtube_dl()
 	echo "$BIN $youtubebin $INPUT --username $USER --password $PASS" > /tmp/.last_hoster_youtube_dl.log
 
 	$BIN $youtubebin "$INPUT" --username "$USER" --password "$PASS" > $TMP/$TYPE.$hoster.$FILENAME.streamlist
-	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
+	cat $TMP/$TYPE.$hoster.$FILENAME.streamlist
 }
 
 youtube_dlbg()
