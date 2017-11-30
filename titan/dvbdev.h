@@ -80,6 +80,7 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 			}
 		}
 	}
+	
 	if(type == ENCODERDEV)
 	{
 		int number = 99;
@@ -102,6 +103,10 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 		newnode->decoder = number;
 		free(buf);
 	}
+	
+	if(checkbox("HD51") == 1 && type == DEMUXDEV)
+		newnode->fedmxsource = -1;
+	
 	if(node != NULL)
 	{
 		if(last == NULL)
