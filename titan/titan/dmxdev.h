@@ -473,7 +473,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 		err("NULL detect");
 		return 1;
 	}
-	if(checkbox("HD51") == 1)
+	if(checkbox("HD51") == 1) //source darf bei dieser Box nur einmal gesetzt werden, löscht ansonsten die Filter.
 	{
 		if(node->fedmxsource == source)
 			return 0;
