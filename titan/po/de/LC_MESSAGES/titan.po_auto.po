@@ -85,25 +85,8 @@ msgstr "(Stopp)"
 msgid "+/- 5 Min"
 msgstr ""
 
-#: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:1
-#: plugins_lcdsamsung_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:1
-#: skins_lcdsamsung_skin.xml.h:1
+#: dir.h:83 dir.h:92 dir.h:101 dir.h:110
 msgid "---"
-msgstr ""
-
-#: plugins_lcdpearl1_skin.xml.h:7 plugins_lcdsamsung_skin.xml.h:8
-#: skins_lcdpearl1_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:8
-msgid "--- Land"
-msgstr ""
-
-#: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:11
-#: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:11
-msgid "--- Ort"
-msgstr ""
-
-#: plugins_lcdpearl1_skin.xml.h:9 plugins_lcdsamsung_skin.xml.h:12
-#: skins_lcdpearl1_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:12
-msgid "--- PLZ"
 msgstr ""
 
 #: skin_default_skin.xml.h:552
@@ -174,10 +157,7 @@ msgstr ""
 "/var ist nicht beschreibbar!\n"
 "Reparatur starten?"
 
-#: plugins_catcatch_skin.xml.h:1 plugins_sudoku_skin.xml.h:2
-#: plugins_zapback_skin.xml.h:1 skin_default_keyskin.xml.h:5
-#: skins_catcatch_skin.xml.h:1 skins_sudoku_skin.xml.h:2
-#: skins_zapback_skin.xml.h:1 webif_index.atemio5200.h:31
+#: skin_default_keyskin.xml.h:5 webif_index.atemio5200.h:31
 #: webif_index.atemio5200.h:87 webif_index.atemio6200.h:31
 #: webif_index.atemio6200.h:87 webif_index.atemio7600.h:39
 #: webif_index.atemio7600.h:80 webif_index.atemio-nemesis.h:31
@@ -201,13 +181,7 @@ msgstr ""
 msgid "0"
 msgstr ""
 
-#: plugins_lcdpearl1_skin.xml.h:2 plugins_lcdsamsung_skin.xml.h:2
-#: skins_lcdpearl1_skin.xml.h:2 skins_lcdsamsung_skin.xml.h:2
-msgid "0 C"
-msgstr ""
-
-#: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:2
-#: skin_default_keyskin.xml.h:6 skins_catcatch_skin.xml.h:2
+#: mediadbsettings.h:56 skin_default_keyskin.xml.h:6
 #: webif_index.atemio5200.h:18 webif_index.atemio5200.h:21
 #: webif_index.atemio5200.h:77 webif_index.atemio6200.h:18
 #: webif_index.atemio6200.h:21 webif_index.atemio6200.h:77
@@ -242,14 +216,6 @@ msgstr ""
 msgid "1 sec"
 msgstr "1 Sekunde"
 
-#: plugins_sudoku_skin.xml.h:3 skins_sudoku_skin.xml.h:3
-msgid "1..9"
-msgstr ""
-
-#: plugins_callmonitor1_skin.xml.h:1 skins_callmonitor1_skin.xml.h:1
-msgid "1.Rufnummer"
-msgstr ""
-
 #: callmon_main.h:140 mediadbsettings.h:61
 msgid "10"
 msgstr ""
@@ -282,8 +248,7 @@ msgstr ""
 msgid "15 min"
 msgstr "15 Minuten"
 
-#: plugins_panel_skin.xml.h:1 skin_default_skin.xml.h:2
-#: skins_panel_skin.xml.h:1
+#: skin_default_skin.xml.h:2
 msgid "1500rpm"
 msgstr "1500 U/Min"
 
@@ -357,10 +322,6 @@ msgstr ""
 #: adjust.h:122 avsettings.h:83 httpdfunc.h:4132
 msgid "2 sec"
 msgstr "2 Sekunden"
-
-#: plugins_callmonitor1_skin.xml.h:2 skins_callmonitor1_skin.xml.h:2
-msgid "2.Rufnummer"
-msgstr ""
 
 #: mediadbsettings.h:63
 msgid "20"
@@ -513,8 +474,7 @@ msgstr ""
 msgid "5 min"
 msgstr "5 Minuten"
 
-#: plugins_panel_skin.xml.h:2 skin_default_skin.xml.h:5
-#: skins_panel_skin.xml.h:2
+#: skin_default_skin.xml.h:5
 msgid "500rpm"
 msgstr "500 U/Min"
 
@@ -658,10 +618,6 @@ msgstr ""
 msgid "<-"
 msgstr ""
 
-#: plugins_sudoku_skin.xml.h:1 skins_sudoku_skin.xml.h:1
-msgid "?"
-msgstr ""
-
 #: skin_default_skin.xml.h:1
 msgid "???"
 msgstr ""
@@ -677,14 +633,6 @@ msgid ""
 msgstr ""
 "Eine hübsche Sammlung von Ordner-Symbolen für den Videoplayer im Media "
 "Center (Cover-Ansicht)!"
-
-#: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
-msgid ""
-"A list of currently used network shares. You can add, edit, delete shares or "
-"search for new shares."
-msgstr ""
-"Liste der aktuell genutzten Netzwerkfreigaben. Sie können Freigaben "
-"hinzufügen, editieren, löschen oder neue Freigaben suchen."
 
 #: networkbrowser.h:1792
 msgid "A mount entry with this name already exists!"
@@ -733,10 +681,7 @@ msgstr "Dolby Digital (AC3) standardmäßig"
 msgid "AC3-Plus Mode"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:1 plugins_stock_skin.xml.h:1
-#: plugins_weather_skin.xml.h:1 skin_default_skin.xml.h:17
-#: skins_networkbrowser_skin.xml.h:1 skins_stock_skin.xml.h:1
-#: skins_weather_skin.xml.h:1
+#: skin_default_skin.xml.h:17
 msgid "ADD"
 msgstr "Hinzufügen"
 
@@ -748,8 +693,7 @@ msgstr "Alle Sender hinzufügen"
 msgid "ADD BOUQUET"
 msgstr "Favoriten hinzufügen"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1984
-#: tithek.h:2708
+#: tithek.h:1984 tithek.h:2708
 msgid "ADD FAV"
 msgstr "Fav Hinzufügen"
 
@@ -765,18 +709,6 @@ msgstr "Ä"
 msgid "ALL"
 msgstr "Alle"
 
-#: plugins_mc_skin.xml.h:6 skins_mc_skin.xml.h:6
-msgid "AUDIO"
-msgstr "Musik"
-
-#: plugins_mc_skin.xml.h:8 skins_mc_skin.xml.h:8
-msgid "AUDIO SETTINGS"
-msgstr "Audio"
-
-#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
-msgid "AUTH SETTINGS"
-msgstr "Authentifizierung"
-
 #: play.h:640
 msgid "AV Settings"
 msgstr "A/V Einstellungen"
@@ -785,8 +717,7 @@ msgstr "A/V Einstellungen"
 msgid "About"
 msgstr "Über Titan"
 
-#: epgsearch.h:228 plugins_stopifnotused_skin.xml.h:1
-#: skins_stopifnotused_skin.xml.h:1
+#: epgsearch.h:228
 msgid "Action"
 msgstr ""
 
@@ -809,12 +740,6 @@ msgstr "CEC einschalten"
 #: skin_default_skin.xml.h:15
 msgid "Actors"
 msgstr "Darsteller"
-
-#: plugins_imdbapi_skin.xml.h:1 plugins_imdb_skin.xml.h:1
-#: plugins_mc_skin.xml.h:1 skins_imdbapi_skin.xml.h:1 skins_imdb_skin.xml.h:1
-#: skins_mc_skin.xml.h:1
-msgid "Actors:"
-msgstr "Darsteller:"
 
 #: skin_default_skin.xml.h:16
 msgid "Adapter Settings"
@@ -879,15 +804,11 @@ msgstr "Altersschutz ab"
 msgid "Aktion after"
 msgstr "Nach der Aufnahme"
 
-#: plugins_callmonitor1_skin.xml.h:3 skins_callmonitor1_skin.xml.h:3
-msgid "Aktion wenn standby"
-msgstr "Verhalten im Standby"
-
 #: network.h:297
 msgid "Aktivate new network config ?"
 msgstr "Neue Netzwerk Einstellungen aktivieren?"
 
-#: play.h:427 play.h:461 plugins_mc_skin.xml.h:2 skins_mc_skin.xml.h:2
+#: play.h:427 play.h:461
 msgid "Album:"
 msgstr ""
 
@@ -961,14 +882,6 @@ msgid ""
 "Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
 msgstr "Alternativer Skin für Samsung-LCD - Senderlogos separat installieren!"
 
-#: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
-msgid "Amazon Prime Pass"
-msgstr "Amazon Prime Passwort"
-
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
-msgid "Amazon Prime User"
-msgstr "Amazon Prime Benutzername"
-
 #: amazon.h:24
 msgid "Amazon Prime login successful!"
 msgstr "Amazon Prime Login erfolgreich!"
@@ -1009,17 +922,9 @@ msgstr "Anonymer Login erfolgreich"
 msgid "Antenne Kaernten"
 msgstr "Antenne Kärnten"
 
-#: plugins_callmonitor1_skin.xml.h:5 skins_callmonitor1_skin.xml.h:5
-msgid "Anzeige in Sekunden"
-msgstr ""
-
 #: facebook.h:479 facebook.h:481
 msgid "App story"
 msgstr "App Hintergrund"
-
-#: plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
-msgid "Apple Trailer"
-msgstr "Apple Movie Trailer"
 
 #: global.h:6512
 msgid "April"
@@ -1089,8 +994,7 @@ msgstr "Interpret:"
 msgid "Ask on channel switch"
 msgstr "Nachfragen bei Senderwechsel"
 
-#: plugins_streaminfo_skin.xml.h:1 skin_default_skin.xml.h:34
-#: skins_streaminfo_skin.xml.h:1
+#: skin_default_skin.xml.h:34
 msgid "Aspect"
 msgstr "Seitenverhältnis"
 
@@ -1156,18 +1060,13 @@ msgstr "Kostenlose Atemio Lizenz"
 msgid "Audio"
 msgstr "Musik"
 
-#: plugins_panel_skin.xml.h:3 skin_default_skin.xml.h:44
-#: skins_panel_skin.xml.h:3
+#: skin_default_skin.xml.h:44
 msgid "Audio / Video / Sat"
 msgstr "Audio/Video/Satellit"
 
 #: skin_default_skin.xml.h:40
 msgid "Audio PID:"
 msgstr "Audio-PID"
-
-#: plugins_mc_skin.xml.h:7 skins_mc_skin.xml.h:7
-msgid "Audio Player"
-msgstr "Musik abspielen"
 
 #: skin_default_skin.xml.h:41
 msgid "Audio Source"
@@ -1193,14 +1092,6 @@ msgstr "Ton/Untertitel"
 msgid "August"
 msgstr ""
 
-#: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
-msgid "Auswahl"
-msgstr ""
-
-#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
-msgid "Authentication"
-msgstr "Authentifizierung"
-
 #: httpdsettings.h:80
 msgid "Auto"
 msgstr ""
@@ -1220,14 +1111,6 @@ msgstr ""
 #: skin_default_skin.xml.h:48
 msgid "Auto resolution"
 msgstr "Automatische Auflösung"
-
-#: plugins_stopifnotused_skin.xml.h:2 skins_stopifnotused_skin.xml.h:2
-msgid "Auto start"
-msgstr "Autostart"
-
-#: plugins_autotimer_skin.xml.h:12 skins_autotimer_skin.xml.h:12
-msgid "AutoTimer Settings"
-msgstr "Einstellungen"
 
 #: autotimer.c:568
 msgid "AutoTimer succesfully started"
@@ -1261,18 +1144,9 @@ msgstr "Automatisches Update"
 msgid "Automatisch Timer setzen"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4
-msgid "Automount"
-msgstr "Automatische Einbindung"
-
 #: panel_settings.h:21
 msgid "Automount Config"
 msgstr "Einstellungen"
-
-#: plugins_panel_skin.xml.h:5 plugins_panel_skin.xml.h:23
-#: skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:23
-msgid "Autostart"
-msgstr ""
 
 #: skin_default_skin.xml.h:49
 msgid "Autostart - Audio / Video / Sat"
@@ -1310,10 +1184,6 @@ msgstr "Grundeinstellungen"
 msgid "Autostart EMU"
 msgstr "Softcam"
 
-#: plugins_mc_skin.xml.h:9 skins_mc_skin.xml.h:9
-msgid "Autostart Playlist"
-msgstr "Wiedergabeliste automatisch starten"
-
 #: skin_default_skin.xml.h:54
 msgid "Autostart Settings"
 msgstr "Autostart"
@@ -1321,10 +1191,6 @@ msgstr "Autostart"
 #: panel_settings_autostart.h:186
 msgid "Autostart USB"
 msgstr "USB"
-
-#: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
-msgid "Autoupdate"
-msgstr ""
 
 #: stock.h:229
 msgid "Avg volume: "
@@ -1358,11 +1224,6 @@ msgstr "blau"
 msgid "BOOT"
 msgstr "Grün"
 
-#: plugins_news_skin.xml.h:1 plugins_stock_skin.xml.h:2 skins_news_skin.xml.h:1
-#: skins_stock_skin.xml.h:2
-msgid "BROWSER"
-msgstr "Internet Browser"
-
 #: webif_index.atemio5200.h:45 webif_index.atemio6200.h:45
 #: webif_index.atemio-nemesis.h:45 webif_index.dm520.h:45
 #: webif_index.dm525.h:45 webif_index.dm7020hd.h:45 webif_index.dm7020hdv2.h:45
@@ -1370,17 +1231,9 @@ msgstr "Internet Browser"
 msgid "Back"
 msgstr "Zurück"
 
-#: plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
-msgid "Back Pic"
-msgstr "Hintergrundbild"
-
 #: mediadb.h:1109 play.h:607 skin_default_skin.xml.h:58
 msgid "Backdrop Download Count"
 msgstr "Wie viele Hintergrundbilder sollen geladen werden"
-
-#: plugins_mc_skin.xml.h:10 skins_mc_skin.xml.h:10
-msgid "Backdrop Interval"
-msgstr "Hintergrund Bilderwechsel Intervall"
 
 #: skin_default_skin.xml.h:61
 msgid "Background Color"
@@ -1450,22 +1303,6 @@ msgstr "Anfang"
 #: skin_default_skin.xml.h:67
 msgid "Behavior at recording"
 msgstr "Anzeige während einer Aufnahme"
-
-#: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
-msgid "Benutzer-Kamera 1"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:3 skins_instar_skin.xml.h:3
-msgid "Benutzer-Kamera 2"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:4 skins_instar_skin.xml.h:4
-msgid "Benutzer-Kamera 3"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:5 skins_instar_skin.xml.h:5
-msgid "Benutzer-Kamera 4"
-msgstr ""
 
 #: tpk_showname.h:11
 msgid "Bikergirl"
@@ -1712,10 +1549,6 @@ msgstr "Browser Auflösung"
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Stream wird zwischengespeichert - abbrechen mit Exit"
 
-#: plugins_wm2014_skin.xml.h:3 skins_wm2014_skin.xml.h:3
-msgid "Button 1..8 => Group A..H"
-msgstr ""
-
 #: skin_default_skin.xml.h:80
 msgid "Buttonbar Background Color"
 msgstr "Tastenleiste - Hintergrundfarbe"
@@ -1772,10 +1605,6 @@ msgstr ""
 msgid "CAM Ports found: "
 msgstr "CI-Modul gefunden: "
 
-#: plugins_instar_skin.xml.h:6 skins_instar_skin.xml.h:6
-msgid "CAMx"
-msgstr ""
-
 #: tpk_description.h:49 tpk_showname.h:17
 msgid "CCcam 2.3.0"
 msgstr ""
@@ -1791,10 +1620,6 @@ msgstr "CI-Menü"
 #: skin_default_skin.xml.h:104
 msgid "CLEAR INPUT"
 msgstr "Eingabefeld löschen"
-
-#: plugins_networkbrowser_skin.xml.h:5 skins_networkbrowser_skin.xml.h:5
-msgid "COPY"
-msgstr "Kopieren"
 
 #: httpdfunc.h:5307 skin_default_skin.xml.h:124 system_infos_sysinfo.h:15
 #: webif_info_sysinfos.h:2
@@ -1841,10 +1666,6 @@ msgstr "Kabel: Senderliste Kabel BW (sofatester)"
 msgid "CallMonitor"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:18 skins_callmonitor1_skin.xml.h:18
-msgid "CallMonitor Settings"
-msgstr "CallMonitor Einstellungen"
-
 #: callmon_main.h:39
 msgid ""
 "Callmon Timeout !!!\n"
@@ -1859,8 +1680,7 @@ msgstr ""
 msgid "Callmonitor Plugin"
 msgstr "Anrufmonitor zum Anzeigen ein- und ausgehender Anrufe"
 
-#: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:86
-#: skins_panel_skin.xml.h:6
+#: skin_default_skin.xml.h:86
 msgid "Cam / Emu"
 msgstr "Softcam und USB Treiber"
 
@@ -2015,12 +1835,11 @@ msgstr ""
 "Es konnten nicht alle Erweiterungen\n"
 "aktualisiert werden!"
 
-#: plugins_panel_skin.xml.h:7 skin_default_skin.xml.h:87
-#: skins_panel_skin.xml.h:7
+#: skin_default_skin.xml.h:87
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: plugins_catcatch_skin.xml.h:6 skins_catcatch_skin.xml.h:6 tpk_showname.h:16
+#: tpk_showname.h:16
 msgid "Cat-Catch"
 msgstr ""
 
@@ -2192,10 +2011,6 @@ msgstr "Nichtempfangbare Sender"
 msgid "Channels A-Z"
 msgstr "Sender A-Z"
 
-#: plugins_sudoku_skin.xml.h:4 skins_sudoku_skin.xml.h:4
-msgid "Check inputs"
-msgstr "Eingaben überprüfen"
-
 #: facebook.h:482
 msgid "Checkin to a place"
 msgstr "Am Ort angemeldet"
@@ -2209,18 +2024,13 @@ msgstr "Kinder"
 msgid "Child Protection"
 msgstr "Jugendschutz"
 
-#: plugins_panel_skin.xml.h:8 skin_default_skin.xml.h:100
-#: skins_panel_skin.xml.h:8
+#: skin_default_skin.xml.h:100
 msgid "Child safety"
 msgstr "Jugendschutz"
 
 #: extensions.h:188 httpdfunc.h:6037
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
-
-#: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12
-msgid "Choice Menu"
-msgstr "Auswahlmenü"
 
 #: tithek.h:1741
 msgid "Choice Playback"
@@ -2473,17 +2283,9 @@ msgstr "Verbindungs Fehler, versuchen Sie es später nocheinmal"
 msgid "Connection to server lost !"
 msgstr "Verbindung zum Server verloren!"
 
-#: plugins_multiimage_skin.xml.h:1 skins_multiimage_skin.xml.h:1
-msgid "Content of selected device"
-msgstr "Inhalt des ausgewählten Datenträgers"
-
 #: skin_default_skin.xml.h:119
 msgid "Contrast"
 msgstr "Kontrast"
-
-#: plugins_filemanager_skin.xml.h:1 skins_filemanager_skin.xml.h:1
-msgid "Copy"
-msgstr "Kopieren"
 
 #: copyfile.h:830 copyfile.h:863
 msgid "Copy (B): "
@@ -2541,10 +2343,6 @@ msgstr "© Copyright"
 msgid "Copyright:"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:2 skins_multiimage_skin.xml.h:2
-msgid "Create"
-msgstr "Erstellen"
-
 #: skin_default_skin.xml.h:125
 msgid "Create Default Favorites"
 msgstr "Favoritenliste (Werkseinstellung)"
@@ -2560,10 +2358,6 @@ msgstr "Favoriten Ordner anlegen (PIN Schutz)"
 #: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1457
 msgid "Create Folder"
 msgstr "Verzeichnis anlegen"
-
-#: plugins_multiimage_skin.xml.h:17 skins_multiimage_skin.xml.h:17
-msgid "Create MultiImage device"
-msgstr "MultiImage Datenträger erstellen"
 
 #: skin_default_skin.xml.h:126
 msgid "Create Path"
@@ -2641,10 +2435,6 @@ msgstr "Schnitt läuft"
 msgid "Cut successfully completed"
 msgstr "Schnitt erfolgreich beendet"
 
-#: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
-msgid "Cutstatus:"
-msgstr "Fortschritt:"
-
 #: skin_default_keyskin.xml.h:26
 msgid "D"
 msgstr ""
@@ -2653,28 +2443,13 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "Voreinstellung"
 
-#: play.h:1578 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
-#: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
-#: skin_default_skin.xml.h:143 skins_networkbrowser_skin.xml.h:6
-#: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
+#: play.h:1578 skin_default_keyskin.xml.h:27 skin_default_skin.xml.h:143
 msgid "DEL"
 msgstr "Löschen"
-
-#: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
-msgid "DEL FAV"
-msgstr "Fav Entfernen"
 
 #: skin_default_skin.xml.h:150
 msgid "DESC"
 msgstr "Beschreibung"
-
-#: plugins_lcdsamsung_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
-msgid "DI"
-msgstr ""
-
-#: plugins_multiimage_skin.xml.h:4 skins_multiimage_skin.xml.h:4
-msgid "DIR"
-msgstr ""
 
 #: tpk_showname.h:24
 msgid "DLNA (MiniDLNA Server)"
@@ -2687,10 +2462,6 @@ msgstr ""
 #: gmediarender.h:128
 msgid "DLNA Renderer Name"
 msgstr ""
-
-#: plugins_dlna_skin.xml.h:14 skins_dlna_skin.xml.h:14
-msgid "DLNA Settings"
-msgstr "DLNA Einstellungen"
 
 #: dlna.h:336
 msgid ""
@@ -2715,10 +2486,6 @@ msgstr "Dns Name"
 #: skin_default_skin.xml.h:163
 msgid "DNS System"
 msgstr "Dns System"
-
-#: plugins_lcdsamsung_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:6
-msgid "DO"
-msgstr ""
 
 #: tpk_showname.h:26
 msgid "DTS Downmix"
@@ -2780,20 +2547,8 @@ msgstr ""
 msgid "Data: "
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:4 skins_wm2014_skin.xml.h:4
-msgid "Date"
-msgstr "Datum"
-
-#: plugins_mc_skin.xml.h:14 skins_mc_skin.xml.h:14
-msgid "Datei Browser"
-msgstr ""
-
 #: skin_default_skin.xml.h:134
 msgid "Day"
-msgstr "Tag"
-
-#: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
-msgid "Day "
 msgstr "Tag"
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
@@ -2832,10 +2587,6 @@ msgstr "Dezember"
 msgid "DeepStandby"
 msgstr "Ausschalten"
 
-#: plugins_panel_skin.xml.h:9 skins_panel_skin.xml.h:9
-msgid "Default"
-msgstr "Voreinstellung"
-
 #: skin_default_skin.xml.h:142
 msgid "Default Autostart"
 msgstr "Allgemein"
@@ -2851,12 +2602,6 @@ msgstr "Standard Skin"
 #: skin_default_skin.xml.h:144
 msgid "Del EPG before scan"
 msgstr "Lösche EPG vor der Suche (Standard Ja)"
-
-#: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:3
-#: plugins_tmc_skin.xml.h:2 skins_filemanager_skin.xml.h:2
-#: skins_multiimage_skin.xml.h:3 skins_tmc_skin.xml.h:2
-msgid "Delete"
-msgstr "Löschen"
 
 #: scan.h:2525
 msgid "Delete All"
@@ -2881,10 +2626,6 @@ msgstr "Ausgewählten Eintrag löschen?"
 #: mediadb.h:1087 play.h:585 skin_default_skin.xml.h:148
 msgid "Delete unused entrys before scan"
 msgstr "Datenbank vor dem Scannen überprüfen (unbenutzte Einträge löschen)"
-
-#: plugins_sudoku_skin.xml.h:5 skins_sudoku_skin.xml.h:5
-msgid "Delete wrong inputs"
-msgstr "Falsche Eingaben löschen"
 
 #: tpk.h:3478
 msgid "Description:"
@@ -2920,10 +2661,6 @@ msgstr ""
 #: security.h:2142
 msgid "Dev free license"
 msgstr "Kostenlose Entwickler Lizenz"
-
-#: plugins_readerconfig_skin.xml.h:1 skins_readerconfig_skin.xml.h:1
-msgid "Device"
-msgstr "Gerät"
 
 #: skin_default_skin.xml.h:151
 msgid "Device:"
@@ -2971,10 +2708,6 @@ msgstr ""
 msgid "DiSEqC Mode"
 msgstr "DiSEqC Modus"
 
-#: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
-msgid "Diff"
-msgstr ""
-
 #: tpk_showname.h:23
 msgid "Digiface Regular"
 msgstr ""
@@ -2986,12 +2719,6 @@ msgstr "Alternativer Skin für Samsung-LCD (blaue Digital Uhr) - Betriebsmodus"
 #: skin_default_skin.xml.h:153
 msgid "Director"
 msgstr "Regisseur"
-
-#: plugins_imdbapi_skin.xml.h:2 plugins_imdb_skin.xml.h:2
-#: plugins_tmc_skin.xml.h:3 skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2
-#: skins_tmc_skin.xml.h:3
-msgid "Director:"
-msgstr "Regisseur:"
 
 #: httpdfunc.h:3996 skin_default_skin.xml.h:154
 msgid "Dirsort"
@@ -3101,10 +2828,6 @@ msgstr "Download abgeschlossen!"
 msgid "Downloads"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
-msgid "Draw"
-msgstr "Unentschieden"
-
 #: adjust.h:395
 msgid "Draw Screen"
 msgstr ""
@@ -3120,10 +2843,6 @@ msgstr "Dualboot Menü TitanNit / E2"
 #: skin_default_skin.xml.h:170
 msgid "Dutch"
 msgstr "Nederlands"
-
-#: plugins_readerconfig_skin.xml.h:2 skins_readerconfig_skin.xml.h:2
-msgid "Dvbapi"
-msgstr "DVBapi"
 
 #: readerconfig.h:399 readerconfig.h:484
 msgid "Dvbapi (disabled)"
@@ -3143,10 +2862,7 @@ msgid ""
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:8
-#: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:172
-#: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:8
-#: skins_readerconfig_skin.xml.h:3
+#: skin_default_skin.xml.h:172
 msgid "EDIT"
 msgstr "Bearbeiten"
 
@@ -3198,7 +2914,7 @@ msgstr "Auswerfen"
 msgid "EPG"
 msgstr "EPG"
 
-#: play.h:1296 play.h:1302 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1296 play.h:1302
 msgid "EPG Info"
 msgstr "EPG-Info"
 
@@ -3357,16 +3073,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
 #: player.h:313 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
-#: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453
-#: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
-#: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
-#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:8
-#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
-#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
-#: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
-#: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
-#: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
-#: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
+#: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
@@ -3377,56 +3084,39 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: rtl2now.h:34 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:668 security.h:685 security.h:1956 service.h:784 service.h:1032
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618
-#: skinadjust.h:659 skin_default_skin.xml.h:198 skins_autotimer_skin.xml.h:6
-#: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
-#: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
-#: skins_instar_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:6
-#: skins_lcdsamsung_skin.xml.h:7 skins_mboxinfo_skin.xml.h:1
-#: skins_mc_skin.xml.h:19 skins_multiimage_skin.xml.h:5
-#: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
-#: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
-#: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
-#: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:414 softcam.h:477
-#: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
-#: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
-#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
-#: system_backup_restore.h:95 system_update.h:254 system_update.h:260
-#: system_update.h:270 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
-#: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:285 titan.c:1089 titan.c:1098 titan.c:1227
-#: titan.c:1248 titan.c:1254 titan.c:1265 titan.c:1271 tithek.c:103
-#: tithek_global.h:215 tithek.h:750 tithek.h:1434 tithek.h:1461 tithek.h:1483
-#: tithek.h:1540 tithek.h:1691 tithek.h:1706 tithek.h:1880 tithek.h:1916
-#: tithek.h:1932 tithek.h:2166 tithek.h:2326 tithek.h:2611 tithek.h:2657
-#: tithek.h:2675 tithek.h:2688 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
-#: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
-#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
-#: tunerconfig.h:709 tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
-#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
-#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
-#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
-#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
-#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 xvidstage.h:29 xvidstage.h:59
-#: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79
-#: zdf.h:29
+#: skinadjust.h:659 skin_default_skin.xml.h:198 skinselector.h:231 sock.h:954
+#: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
+#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: streamcloud.h:75 streamcloud.h:81 streamcloud.h:91 streamcloud.h:104
+#: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:31
+#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:254
+#: system_update.h:260 system_update.h:270 thefile.h:34 thefile.h:69
+#: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
+#: titan.c:1089 titan.c:1098 titan.c:1227 titan.c:1248 titan.c:1254
+#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:215 tithek.h:750
+#: tithek.h:1434 tithek.h:1461 tithek.h:1483 tithek.h:1540 tithek.h:1691
+#: tithek.h:1706 tithek.h:1880 tithek.h:1916 tithek.h:1932 tithek.h:2166
+#: tithek.h:2326 tithek.h:2611 tithek.h:2657 tithek.h:2675 tithek.h:2688
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
+#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:709
+#: tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
+#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
+#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
+#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
+#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
+#: vodlocker.h:87 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
+#: xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr ""
 
 #: epgsearch.h:332
 msgid "Eastern"
 msgstr ""
-
-#: plugins_sudoku_skin.xml.h:6 skins_sudoku_skin.xml.h:6
-msgid "Easy"
-msgstr "einfach"
-
-#: plugins_tmc_skin.xml.h:4 skins_tmc_skin.xml.h:4
-msgid "Edit"
-msgstr "Bearbeiten"
 
 #: skin_default_skin.xml.h:174
 msgid "Edit Modus Background Color"
@@ -3488,10 +3178,6 @@ msgstr ""
 msgid "Emu vizcam 1.04 for your box"
 msgstr ""
 
-#: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
-msgid "Enable"
-msgstr "aktiviert"
-
 #: skin_default_skin.xml.h:180
 msgid "End"
 msgstr "Ende"
@@ -3511,14 +3197,6 @@ msgstr ""
 #: tpk_showname.h:29
 msgid "Enigmalinux"
 msgstr ""
-
-#: plugins_facebook_skin.xml.h:1 skins_facebook_skin.xml.h:1
-msgid ""
-"Enter the shown url in your browser and enter the Code to register the "
-"receiver to facebook"
-msgstr ""
-"Besuchen Sie die angezeigte Web Adresse und geben Sie den Code ein, um Ihren "
-"Receiver bei Facebook zu registrieren."
 
 #: skin_default_skin.xml.h:185
 msgid "Epg Color 1"
@@ -3642,10 +3320,6 @@ msgstr ""
 msgid "Exit Color"
 msgstr "EXIT Farbe"
 
-#: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
-msgid "Exit Tithek"
-msgstr "Tithek beenden"
-
 #: tunerconfig.h:166
 msgid "Expert"
 msgstr ""
@@ -3724,21 +3398,13 @@ msgstr ""
 msgid "FEC:"
 msgstr ""
 
-#: plugins_filemanager_skin.xml.h:3 skins_filemanager_skin.xml.h:3
-msgid "FILELIST MANAGER"
-msgstr "Datei Manager"
-
 #: tpchoice.h:56
 msgid "FREQU"
 msgstr "Frequenz"
 
-#: plugins_facebook_skin.xml.h:4 skins_facebook_skin.xml.h:4 tpk_showname.h:30
+#: tpk_showname.h:30
 msgid "Facebook"
 msgstr ""
-
-#: plugins_facebook_skin.xml.h:5 skins_facebook_skin.xml.h:5
-msgid "Facebook Register"
-msgstr "Auf Facebook registrieren"
 
 #: facebook.h:157
 msgid ""
@@ -3755,8 +3421,7 @@ msgstr "FEHLER: Teildatei kann nicht geöffnet werden"
 msgid "Fan mode"
 msgstr "Lüfter Modus"
 
-#: plugins_panel_skin.xml.h:24 skin_default_skin.xml.h:203
-#: skins_panel_skin.xml.h:24
+#: skin_default_skin.xml.h:203
 msgid "FanControl"
 msgstr "Lüftersteuerung"
 
@@ -3767,10 +3432,6 @@ msgstr "Lüfter Normalbetrieb"
 #: fancontrol.h:64
 msgid "FanControl-standby"
 msgstr "Lüfter Standby"
-
-#: plugins_panel_skin.xml.h:11 skins_panel_skin.xml.h:11
-msgid "Fancontrol"
-msgstr "Lüftersteuerung"
 
 #: epgsearch.h:276
 msgid "Fantasy"
@@ -3903,17 +3564,12 @@ msgstr "Cursor Farbe für Datei Liste"
 #: mc_iptvplayer.h:267 mc_iptvplayer.h:311 mc_iptvplayer.h:453
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
 #: mc_videoplayer.h:605 mc_videoplayer.h:679 mc_videoplayer.h:866
-#: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
 msgid "Filelist-Mode"
 msgstr "Datei-Modus"
 
 #: tithek.h:1873 tithek.h:1892 tithek.h:1899 tithek.h:1906
 msgid "Filename"
 msgstr "Dateiname"
-
-#: plugins_mc_skin.xml.h:25 skins_mc_skin.xml.h:25
-msgid "Filename:"
-msgstr "Dateiname:"
 
 #: copyfile.h:810
 msgid "Filesize (B): "
@@ -4069,10 +3725,6 @@ msgstr ""
 "\n"
 "Board-ID Seriennummer:"
 
-#: plugins_multiimage_skin.xml.h:6 skins_multiimage_skin.xml.h:6
-msgid "Format"
-msgstr "Formatieren"
-
 #: skin_default_skin.xml.h:224
 msgid "Format HDD"
 msgstr "Datenträger formatieren"
@@ -4166,10 +3818,6 @@ msgstr ""
 msgid "Framebuffer"
 msgstr ""
 
-#: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
-msgid "Framerate"
-msgstr "Bildfrequenz"
-
 #: httpdfunc.h:5263
 msgid "Free Space"
 msgstr "Freier Speicher"
@@ -4210,14 +3858,6 @@ msgstr "Fre"
 msgid "Friday"
 msgstr "Freitag"
 
-#: plugins_callmonitor1_skin.xml.h:11 skins_callmonitor1_skin.xml.h:11
-msgid "FritzBook"
-msgstr "Fritzbook"
-
-#: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
-msgid "Fritzbox Firmware... >= 06.30"
-msgstr ""
-
 #: filemanager.h:194
 msgid "From"
 msgstr "von"
@@ -4249,10 +3889,6 @@ msgstr "Partitionsprüfung 'record'"
 #: panel_settings_autostart.h:236
 msgid "Fsck Swap"
 msgstr "Partitionsprüfung 'swap'"
-
-#: plugins_tmc_skin.xml.h:5 skins_tmc_skin.xml.h:5
-msgid "Full Pic"
-msgstr "Vollbildmodus"
 
 #: skin_default_keyskin.xml.h:33
 msgid "G"
@@ -4316,10 +3952,7 @@ msgstr ""
 msgid "Genre"
 msgstr ""
 
-#: play.h:437 play.h:471 plugins_imdbapi_skin.xml.h:3 plugins_imdb_skin.xml.h:3
-#: plugins_mc_skin.xml.h:27 plugins_tmc_skin.xml.h:6 plugins_tmdb_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:3 skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:27
-#: skins_tmc_skin.xml.h:6 skins_tmdb_skin.xml.h:1
+#: play.h:437 play.h:471
 msgid "Genre:"
 msgstr ""
 
@@ -4354,10 +3987,6 @@ msgstr ""
 #: skin_default_skin.xml.h:234
 msgid "Go to startpos"
 msgstr "Gehe zu Startposition"
-
-#: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
-msgid "Goals"
-msgstr "Tore"
 
 #: tpk_description.h:84
 msgid "Gold Picons - Astra 23.5E."
@@ -4509,10 +4138,6 @@ msgstr "Webserver Port"
 msgid "Hangtime"
 msgstr "Zeit bis Warnmeldung erscheint (sek)"
 
-#: plugins_sudoku_skin.xml.h:8 skins_sudoku_skin.xml.h:8
-msgid "Hard"
-msgstr "schwer"
-
 #: adjust.h:298 harddisk.h:487 skin_default_skin.xml.h:246
 msgid "Harddisk"
 msgstr "Datenträger"
@@ -4569,14 +4194,6 @@ msgstr "Hilfe"
 #: skin_default_skin.xml.h:249
 msgid "Here you can activate or deactivate the CAID Lock."
 msgstr "Hier können Sie die CAID Sperren aktivieren bzw. deaktivieren."
-
-#: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
-msgid "Here you can activate/deactivate you OSCam readers."
-msgstr "Hier können Sie Ihre OSCam Reader aktivieren bzw. deaktivieren."
-
-#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
-msgid "Here you can add and configure your network shares."
-msgstr "Hier können Sie Freigaben hinzufügen und konfigurieren."
 
 #: skin_default_skin.xml.h:250
 msgid "Here you can adjust the LNB/Unicable values for the selected tuner."
@@ -4635,10 +4252,6 @@ msgstr ""
 msgid "Here you can configure your CI-Modules."
 msgstr "Hier können Sie Ihre CI-Module konfigurieren."
 
-#: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
-msgid "Here you can configure your OSCam reader."
-msgstr "Hier können Sie die OSCam Reader konfigurieren."
-
 #: skin_default_skin.xml.h:260
 msgid ""
 "Here you can configure your cable tuner. Choose your cable provider and "
@@ -4648,13 +4261,6 @@ msgstr ""
 "Wählen Sie Ihren Kabel Anbieter und führen Sie anschließend einen "
 "automatischen Suchlauf durch.\n"
 "Bei der Kabelsuche sollte die Option \"Netzwerk durchsuchen\" aktiviert sein."
-
-#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
-msgid ""
-"Here you can configure your login credentials for accessing password "
-"protected shares."
-msgstr ""
-"Hier können Sie die Zugangsdaten zu passwortgeschützten Freigaben eingeben."
 
 #: skin_default_skin.xml.h:262
 msgid ""
@@ -4826,10 +4432,6 @@ msgstr ""
 msgid "Here you can make your timeshift settings."
 msgstr "Hier können Sie die Timeshift Einstellungen anpassen"
 
-#: plugins_xupnpd_skin.xml.h:1 skins_xupnpd_skin.xml.h:1
-msgid "Here you can make your xupnpd autostart settings."
-msgstr "Hier können Sie xupnpd starten, stoppen und den Autostart aktivieren."
-
 #: skin_default_skin.xml.h:291
 msgid "Here you can reset the smartcard reader(s)."
 msgstr "Hier können Sie Ihre Smartcards zurücksetzen."
@@ -4933,10 +4535,6 @@ msgstr ""
 msgid "Here you can view the current channel information."
 msgstr "Hier können Sie technische Informationen zum aktuellen Sender abrufen"
 
-#: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
-msgid "Hid XXX Streams"
-msgstr "XXX Streams ausblenden"
-
 #: skin_default_skin.xml.h:309
 msgid "Hierarchy"
 msgstr "Hierarchie"
@@ -4956,10 +4554,6 @@ msgstr "Lade stmdvb.ko mit der HighSR Option"
 #: weather.h:446 weather.h:464 weather.h:482 weather.h:500
 msgid "Highest temp: "
 msgstr "Höchsttemperatur: "
-
-#: plugins_multiimage_skin.xml.h:7 skins_multiimage_skin.xml.h:7
-msgid "Hint: Use TEXT button for editing the image name"
-msgstr "Hinweis: Benutzen Sie die TEXT Taste, um den Image Namen zu bearbeiten"
 
 #: epgsearch.h:244
 msgid "History"
@@ -5032,25 +4626,13 @@ msgstr ""
 "Die angeforderten Details konnten nicht abgerufen werden.\n"
 "Bitte installieren Sie die IMDb Erweiterung."
 
-#: plugins_tmc_skin.xml.h:7 skins_tmc_skin.xml.h:7
-msgid "IMDB Search"
-msgstr "IMDb Suche"
-
 #: tpk_showname.h:46
 msgid "IMDb"
 msgstr ""
 
-#: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4
-msgid "IMDb - Plugin"
-msgstr "IMDB Erweiterung"
-
 #: tpk_showname.h:47
 msgid "IMDb-API"
 msgstr ""
-
-#: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
-msgid "IMDb-API - Plugin"
-msgstr "IMDb-API"
 
 #: tsSchnitt.c:123
 msgid "INFO"
@@ -5072,44 +4654,12 @@ msgstr "Installieren"
 msgid "IP for Stream"
 msgstr "Stream Adresse (IP)"
 
-#: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
-msgid "IP-FritzBox"
-msgstr ""
-
 #: tpk_showname.h:48
 msgid "IP-Kamera"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
-msgid "IP-Kamera 1"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
-msgid "IP-Kamera 2"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
-msgid "IP-Kamera 3"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
-msgid "IP-Kamera 4"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:28 skins_instar_skin.xml.h:28
-msgid "IP-Kamera Einstellungen"
-msgstr ""
-
 #: tpk_description.h:89
 msgid "IP-Kamera zB. Firma INSTAR"
-msgstr ""
-
-#: plugins_mc_skin.xml.h:30 skins_mc_skin.xml.h:30
-msgid "IPTV"
-msgstr ""
-
-#: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32
-msgid "IPTV SETTINGS"
 msgstr ""
 
 #: tpk_showname.h:44
@@ -5132,14 +4682,6 @@ msgstr ""
 msgid "Icon 4"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
-msgid ""
-"If you don't find Windows shares, you need to disable 'Password protected "
-"sharing' in the 'Network and Sharing Center'."
-msgstr ""
-"Sollten keine Windows Freigaben sichtbar sein, muss 'Passwortgeschützte "
-"Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
-
 #: security.h:2088
 msgid "Image"
 msgstr ""
@@ -5155,10 +4697,6 @@ msgid ""
 msgstr ""
 "Image Erstellung läuft!\n"
 "Vorgang abbrechen?"
-
-#: plugins_multiimage_skin.xml.h:8 skins_multiimage_skin.xml.h:8
-msgid "Image name: "
-msgstr "Image Name: "
 
 #: tpk_description.h:88
 msgid "ImdB Info Plugin"
@@ -5176,27 +4714,26 @@ msgstr ""
 msgid "Inc. AC3 Audio in %"
 msgstr "AC3-Angleichung durch Stereotonabsenkung in %"
 
-#: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1098 webif_index.atemio510.h:15
-#: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
-#: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
-#: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
-#: webif_index.atemio6200.h:43 webif_index.atemio6200.h:99
-#: webif_index.atemio7600.h:13 webif_index.atemio7600.h:63
-#: webif_index.atemio7600.h:83 webif_index.atemio-nemesis.h:15
-#: webif_index.atemio-nemesis.h:43 webif_index.atemio-nemesis.h:99
-#: webif_index.dm520.h:15 webif_index.dm520.h:43 webif_index.dm520.h:99
-#: webif_index.dm525.h:15 webif_index.dm525.h:43 webif_index.dm525.h:99
-#: webif_index.dm7020hd.h:15 webif_index.dm7020hd.h:43
-#: webif_index.dm7020hd.h:99 webif_index.dm7020hdv2.h:15
-#: webif_index.dm7020hdv2.h:43 webif_index.dm7020hdv2.h:99
-#: webif_index.dm900.h:15 webif_index.dm900.h:43 webif_index.dm900.h:99
-#: webif_index.h:16 webif_rc.atemio510.h:5 webif_rc.atemio5200.h:26
-#: webif_rc.atemio520.h:23 webif_rc.atemio530.h:23 webif_rc.atemio6000.h:26
-#: webif_rc.atemio6100.h:26 webif_rc.atemio6200.h:26 webif_rc.atemio7600.h:16
-#: webif_rc.atemio-nemesis.h:26 webif_rc.dm520.h:26 webif_rc.dm525.h:26
-#: webif_rc.dm7020hd.h:26 webif_rc.dm7020hdv2.h:26 webif_rc.dm900.h:26
-#: webif_rc.h:26 webif_rc_virtual.atemio510.h:5
+#: info.h:27 security.h:668 security.h:685 titan.c:1098
+#: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
+#: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
+#: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
+#: webif_index.atemio6200.h:15 webif_index.atemio6200.h:43
+#: webif_index.atemio6200.h:99 webif_index.atemio7600.h:13
+#: webif_index.atemio7600.h:63 webif_index.atemio7600.h:83
+#: webif_index.atemio-nemesis.h:15 webif_index.atemio-nemesis.h:43
+#: webif_index.atemio-nemesis.h:99 webif_index.dm520.h:15
+#: webif_index.dm520.h:43 webif_index.dm520.h:99 webif_index.dm525.h:15
+#: webif_index.dm525.h:43 webif_index.dm525.h:99 webif_index.dm7020hd.h:15
+#: webif_index.dm7020hd.h:43 webif_index.dm7020hd.h:99
+#: webif_index.dm7020hdv2.h:15 webif_index.dm7020hdv2.h:43
+#: webif_index.dm7020hdv2.h:99 webif_index.dm900.h:15 webif_index.dm900.h:43
+#: webif_index.dm900.h:99 webif_index.h:16 webif_rc.atemio510.h:5
+#: webif_rc.atemio5200.h:26 webif_rc.atemio520.h:23 webif_rc.atemio530.h:23
+#: webif_rc.atemio6000.h:26 webif_rc.atemio6100.h:26 webif_rc.atemio6200.h:26
+#: webif_rc.atemio7600.h:16 webif_rc.atemio-nemesis.h:26 webif_rc.dm520.h:26
+#: webif_rc.dm525.h:26 webif_rc.dm7020hd.h:26 webif_rc.dm7020hdv2.h:26
+#: webif_rc.dm900.h:26 webif_rc.h:26 webif_rc_virtual.atemio510.h:5
 #: webif_rc_virtual.atemio5200.h:35 webif_rc_virtual.atemio520.h:35
 #: webif_rc_virtual.atemio530.h:35 webif_rc_virtual.atemio6000.h:35
 #: webif_rc_virtual.atemio6100.h:35 webif_rc_virtual.atemio6200.h:35
@@ -5235,7 +4772,7 @@ msgstr ""
 "Information: Bei dieser Festplattengröße kann ein\n"
 "Filesystemcheck zwischen 30 Minuten und 1,5 Stunden dauern."
 
-#: info.h:45 plugins_panel_skin.xml.h:12 skins_panel_skin.xml.h:12
+#: info.h:45
 msgid "Infos"
 msgstr ""
 
@@ -5307,14 +4844,6 @@ msgstr "Anschluss 9"
 msgid "Input field"
 msgstr "Eingabe Feld"
 
-#: plugins_sudoku_skin.xml.h:9 skins_sudoku_skin.xml.h:9
-msgid "Input the numbers 1 to 9"
-msgstr "Eingabe der Zahlen 1 bis 9"
-
-#: plugins_multiimage_skin.xml.h:9 skins_multiimage_skin.xml.h:9
-msgid "Install"
-msgstr "Installieren"
-
 #: mc_dateibrowser.h:36
 msgid "Install File Manager Tpk first !"
 msgstr "Installieren Sie bitte das Datei Browser Plugin unter Erweiterungen"
@@ -5371,21 +4900,9 @@ msgstr "Installiert:"
 msgid "Installing"
 msgstr "Installation von"
 
-#: plugins_dlna_skin.xml.h:2 skins_dlna_skin.xml.h:2
-msgid "Interface"
-msgstr "Schnittstelle"
-
-#: plugins_mc_skin.xml.h:28 skins_mc_skin.xml.h:28
-msgid "Internet Browser"
-msgstr ""
-
 #: infobar.h:818
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin nicht installiert!"
-
-#: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
-msgid "Interval"
-msgstr "Intervall"
 
 #: skin_default_skin.xml.h:326
 msgid "Inversion"
@@ -5401,10 +4918,6 @@ msgstr "Umkehrung:"
 #: webif_index.dm520.h:2 webif_index.dm525.h:2 webif_index.dm7020hd.h:2
 #: webif_index.dm7020hdv2.h:2 webif_index.dm900.h:2 webif_index.h:2
 msgid "Ipad Stream"
-msgstr ""
-
-#: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
-msgid "Iptv Player"
 msgstr ""
 
 #: avsettings.h:390 videomode.h:67
@@ -5488,22 +5001,6 @@ msgstr ""
 msgid "Kabelplus ORF | 16.12.2014 (Olbord)"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
-msgid "Kamera 1"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:14 skins_instar_skin.xml.h:14
-msgid "Kamera 2 (Umschalten mit Rot)"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:15 skins_instar_skin.xml.h:15
-msgid "Kamera 3 (Umschalten mit Rot)"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:16 skins_instar_skin.xml.h:16
-msgid "Kamera 4 (Umschalten mit Rot)"
-msgstr ""
-
 #: httpdfunc.h:5265 skin_default_skin.xml.h:332 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
@@ -5539,10 +5036,6 @@ msgstr "aktualisiert!"
 
 #: tpk_showname.h:56
 msgid "KravenConfig"
-msgstr ""
-
-#: plugins_kravencfg_skin.xml.h:1 skins_kravencfg_skin.xml.h:1
-msgid "KravenHD Config"
 msgstr ""
 
 #: tpk_description.h:94
@@ -5668,10 +5161,6 @@ msgstr "LNB Aus/22K Aus: Fehler"
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
 msgstr "LNB Aus/22K Aus: OK"
-
-#: plugins_callmonitor1_skin.xml.h:14 skins_callmonitor1_skin.xml.h:14
-msgid "LOAD-FritzBook"
-msgstr "Fritzbook laden"
 
 #: skin_default_skin.xml.h:351
 msgid "LOF / UNICABLE"
@@ -5804,10 +5293,6 @@ msgstr "Breitengrad"
 msgid "Left"
 msgstr "Links"
 
-#: plugins_catcatch_skin.xml.h:4 skins_catcatch_skin.xml.h:4
-msgid "Level:"
-msgstr "Ebene:"
-
 #: tpk_showname.h:79
 msgid "Lib Pack (ufs910/ufs922)"
 msgstr ""
@@ -5876,10 +5361,6 @@ msgstr ""
 msgid "Longitude"
 msgstr "Längengrad"
 
-#: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
-msgid "Lost"
-msgstr "Verloren"
-
 #: stock.h:221
 msgid "Low: "
 msgstr "Tief: "
@@ -5896,18 +5377,6 @@ msgstr ""
 msgid "M"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:70 skins_mc_skin.xml.h:70
-msgid "MC VideoPlayer Imdb Settings"
-msgstr "IMDb Einstellungen"
-
-#: plugins_mc_skin.xml.h:71 skins_mc_skin.xml.h:71
-msgid "MC VideoPlayer Sort Settings"
-msgstr "Sortierreihenfolge"
-
-#: plugins_mc_skin.xml.h:72 skins_mc_skin.xml.h:72
-msgid "MC VideoPlayer View Settings"
-msgstr "Einstellungen anzeigen"
-
 #: skin_default_skin.xml.h:372
 msgid "MENUPROTECT"
 msgstr "Menüschutz"
@@ -5918,14 +5387,6 @@ msgstr ""
 
 #: skin_default_skin.xml.h:373
 msgid "MHW2 EPG"
-msgstr ""
-
-#: plugins_lcdsamsung_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:9
-msgid "MI"
-msgstr ""
-
-#: plugins_lcdsamsung_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:10
-msgid "MO"
 msgstr ""
 
 #: httpdfunc.h:5311 skin_default_skin.xml.h:389 system_infos_sysinfo.h:19
@@ -5965,10 +5426,6 @@ msgstr "Multi-EPG - Satelliten"
 msgid "Main Menu"
 msgstr "Hauptmenü"
 
-#: plugins_multiimage_skin.xml.h:18 skins_multiimage_skin.xml.h:18
-msgid "Manage MultiImage"
-msgstr "MultiImage Verwaltung"
-
 #: skin_default_skin.xml.h:355
 msgid "Manual Search"
 msgstr "Manuelle Suche"
@@ -5993,21 +5450,17 @@ msgstr "Marker Farbe"
 msgid "Marker"
 msgstr ""
 
-#: play.h:1882
+#: play.h:1886
 msgid "Marker autoseek is started"
 msgstr ""
 "Automatische Suche nach Markierungen\n"
 "gestartet"
 
-#: play.h:1893
+#: play.h:1897
 msgid "Marker autoseek is stopped"
 msgstr ""
 "Automatische Suche nach Markierungen\n"
 " gestoppt"
-
-#: plugins_tsSchnitt_skin.xml.h:3 skins_tsSchnitt_skin.xml.h:3
-msgid "Marker found:"
-msgstr "Markierung gefunden:"
 
 #: marker.h:229
 msgid "Marker has been set."
@@ -6052,22 +5505,6 @@ msgstr "Media Taste"
 #: skin_default_skin.xml.h:363
 msgid "Media Center"
 msgstr ""
-
-#: plugins_dlna_skin.xml.h:3 skins_dlna_skin.xml.h:3
-msgid "Media Dir 1"
-msgstr "Medien Ordner 1"
-
-#: plugins_dlna_skin.xml.h:4 skins_dlna_skin.xml.h:4
-msgid "Media Dir 2"
-msgstr "Medien Ordner 2"
-
-#: plugins_dlna_skin.xml.h:5 skins_dlna_skin.xml.h:5
-msgid "Media Dir 3"
-msgstr "Medien Ordner 3"
-
-#: plugins_dlna_skin.xml.h:6 skins_dlna_skin.xml.h:6
-msgid "Media Dir 4"
-msgstr "Medien Ordner 4"
 
 #: settings_mediabutton.h:6
 msgid "Media Key Action - Setup"
@@ -6121,10 +5558,6 @@ msgstr "MediaDB Scan Informationen"
 msgid "MediaDB Settings"
 msgstr "MediaDB"
 
-#: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
-msgid "MediaDB autoscan"
-msgstr "Automatischer Suchlauf MediaDB"
-
 #: mediadb.h:1078 play.h:576
 msgid "MediaDB directory scan started in Background !"
 msgstr "MediaDB Verzeichnis Suche im Hintergrund gestartet!"
@@ -6153,10 +5586,6 @@ msgstr "MediaDB Suche beendet"
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
-msgid "Mediathek"
-msgstr "Online Mediathek"
-
 #: tpk_description.h:104
 msgid "MegaStyle blue with MiniTv (Skinadjust)"
 msgstr ""
@@ -6170,8 +5599,7 @@ msgstr ""
 msgid "Memory"
 msgstr "Speicher"
 
-#: filemanager.h:84 play.h:633 plugins_sudoku_skin.xml.h:10
-#: skins_sudoku_skin.xml.h:10 webif_index.atemio5200.h:36
+#: filemanager.h:84 play.h:633 webif_index.atemio5200.h:36
 #: webif_index.atemio5200.h:92 webif_index.atemio6200.h:36
 #: webif_index.atemio6200.h:92 webif_index.atemio7600.h:40
 #: webif_index.atemio7600.h:87 webif_index.atemio-nemesis.h:36
@@ -6198,10 +5626,6 @@ msgstr "Menü"
 #: skin_default_skin.xml.h:371
 msgid "Menu Protect"
 msgstr "Menü schützen"
-
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
-msgid "Menu Title"
-msgstr "Menü Titel"
 
 #: skin_default_skin.xml.h:369
 msgid "Menu functions"
@@ -6266,7 +5690,7 @@ msgstr "Menüliste"
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:313 play.h:614
-#: play.h:1317 play.h:1354 play.h:1654 play.h:1882 play.h:1893 possetup.h:98
+#: play.h:1317 play.h:1354 play.h:1654 play.h:1886 play.h:1897 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
@@ -6337,10 +5761,6 @@ msgstr "Minimale Frequenz"
 #: skin_default_skin.xml.h:376
 msgid "Minimal signalrate"
 msgstr "Minimale Signalrate"
-
-#: plugins_zapback_skin.xml.h:3 skins_zapback_skin.xml.h:3
-msgid "Minuten"
-msgstr ""
 
 #: skin_default_skin.xml.h:377
 msgid "Minutes"
@@ -6427,10 +5847,6 @@ msgstr "Verschieben Modus - Schriftfarbe"
 msgid "Move mode"
 msgstr "Verschieben"
 
-#: plugins_filemanager_skin.xml.h:4 skins_filemanager_skin.xml.h:4
-msgid "Moven"
-msgstr "Verschieben"
-
 #: skin_default_skin.xml.h:388
 msgid "Moviepath"
 msgstr "Ordner für Filme"
@@ -6466,10 +5882,6 @@ msgstr ""
 #: adjust.h:302 tpk_showname.h:87
 msgid "MultiImage"
 msgstr ""
-
-#: plugins_multiimage_skin.xml.h:19 skins_multiimage_skin.xml.h:19
-msgid "MultiImage Install/Rename"
-msgstr "MultiImage Installation/Umbenennen"
 
 #: moduleconfig.h:397
 msgid "Multiple Service"
@@ -6521,21 +5933,9 @@ msgstr "Stumm"
 msgid "Mutex"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
-msgid "My Video"
-msgstr ""
-
 #: skin_default_keyskin.xml.h:47
 msgid "N"
 msgstr ""
-
-#: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
-msgid "NEW"
-msgstr "Neu"
-
-#: plugins_news_skin.xml.h:2 skins_news_skin.xml.h:2
-msgid "NEXT"
-msgstr "Weiter"
 
 #: network.h:698
 msgid "NONE"
@@ -6550,9 +5950,7 @@ msgid "Name:"
 msgstr ""
 
 #: httpdfunc.h:5269 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
-#: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:13
-#: skin_default_skin.xml.h:394 skins_mc_skin.xml.h:37 skins_panel_skin.xml.h:13
-#: system_infos.h:22 webif_info_systeminfos.h:6
+#: skin_default_skin.xml.h:394 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "Netzwerk"
 
@@ -6624,19 +6022,11 @@ msgstr ""
 msgid "New free space (KB): "
 msgstr "Neuer freier Speicher (KB): "
 
-#: plugins_sudoku_skin.xml.h:11 skins_sudoku_skin.xml.h:11
-msgid "New game (easy)"
-msgstr "Neues Spiel (leicht)"
-
-#: plugins_sudoku_skin.xml.h:12 skins_sudoku_skin.xml.h:12
-msgid "New game (hard)"
-msgstr "Neues Spiel (schwierig)"
-
 #: tpk_showname.h:90
 msgid "Newcs"
 msgstr ""
 
-#: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4 tpk_showname.h:92
+#: tpk_showname.h:92
 msgid "News"
 msgstr "Aktuelle Meldungen"
 
@@ -6745,10 +6135,6 @@ msgstr "Es wurde keine Konfigurationsdatei gefunden"
 msgid "No device available"
 msgstr "Kein Datenträger gefunden"
 
-#: plugins_multiimage_skin.xml.h:10 skins_multiimage_skin.xml.h:10
-msgid "No image installed"
-msgstr "Kein Image installiert"
-
 #: record.h:64
 msgid "No memory"
 msgstr "FEHLER: Kein Speicher verfügbar"
@@ -6785,10 +6171,6 @@ msgstr "nicht vorhanden"
 msgid "Not enought space"
 msgstr "FEHLER: Speicherplatz nicht ausreichend!"
 
-#: plugins_stopifnotused_skin.xml.h:7 skins_stopifnotused_skin.xml.h:7
-msgid "NotUsed Settings"
-msgstr "StopIfNotUsed Einstellungen"
-
 #: facebook.h:475
 msgid "Note created"
 msgstr "nicht angelegt"
@@ -6800,10 +6182,6 @@ msgstr ""
 #: panel_settings.h:27 settings_autostart.h:303
 msgid "Ntfs Write"
 msgstr "NTFS-Schreibunterstützung benutzen"
-
-#: plugins_callmonitor1_skin.xml.h:15 skins_callmonitor1_skin.xml.h:15
-msgid "Nutzername-Fritzbox (optional)"
-msgstr ""
 
 #: skin_default_keyskin.xml.h:49
 msgid "O"
@@ -6876,60 +6254,52 @@ msgstr "Ö"
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
 #: player.h:313 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
 #: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453 play.h:1654
-#: play.h:1882 play.h:1893 plugins_dlna_skin.xml.h:7
-#: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
-#: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:2
-#: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
-#: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:3 possetup.h:98
-#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
-#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:398 record.h:1171 record.h:1457 record.h:1734
-#: rectimer.h:577 rectimer.h:1258 rectimer.h:1405 rectimer.h:1417
-#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
-#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:2150
-#: scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1956 service.h:784 service.h:1032 shared.h:29
-#: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610 skinadjust.h:618
-#: skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163
-#: skins_dlna_skin.xml.h:7 skinselector.h:231 skins_facebook_skin.xml.h:3
-#: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
-#: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
-#: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
-#: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:414 softcam.h:477
-#: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
-#: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
-#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:51
-#: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:254
-#: system_update.h:260 system_update.h:270 thefile.h:34 thefile.h:69
-#: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:285
-#: titan.c:1089 titan.c:1098 titan.c:1227 titan.c:1248 titan.c:1254
-#: titan.c:1265 titan.c:1271 tithek.c:103 tithek_global.h:215 tithek.h:750
-#: tithek.h:1434 tithek.h:1461 tithek.h:1483 tithek.h:1540 tithek.h:1691
-#: tithek.h:1706 tithek.h:1880 tithek.h:1916 tithek.h:1932 tithek.h:2166
-#: tithek.h:2326 tithek.h:2611 tithek.h:2657 tithek.h:2675 tithek.h:2688
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
-#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:709
-#: tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
-#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
-#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
-#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
-#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
-#: vodlocker.h:87 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
-#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
-#: webif_index.dm520.h:38 webif_index.dm525.h:38 webif_index.dm7020hd.h:38
-#: webif_index.dm7020hdv2.h:38 webif_index.dm900.h:38 webif_rc.atemio510.h:33
+#: play.h:1886 play.h:1897 possetup.h:98 primeshare.h:29 primeshare.h:74
+#: primeshare.h:80 primeshare.h:125 promptfile.h:26 promptfile.h:35
+#: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
+#: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:398
+#: record.h:1171 record.h:1457 record.h:1734 rectimer.h:577 rectimer.h:1258
+#: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
+#: restoredefault.h:23 restoredefault.h:34 restoredefault.h:45
+#: restoredefault.h:49 restoredefault.h:58 restoredefault.h:73 rgui.h:30
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876
+#: scan.h:1878 scan.h:2150 scan.h:2241 scan.h:2634 scart.h:12 scart.h:25
+#: scriptexec.h:41 security.h:668 security.h:685 security.h:1956 service.h:784
+#: service.h:1032 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594
+#: skinadjust.h:610 skinadjust.h:618 skinadjust.h:659 skinadjust.h:676
+#: skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231 sock.h:954
+#: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
+#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: streamcloud.h:75 streamcloud.h:81 streamcloud.h:91 streamcloud.h:104
+#: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:31
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:51 system_backup_restore.h:80
+#: system_backup_restore.h:82 system_backup_restore.h:88
+#: system_backup_restore.h:95 system_update.h:254 system_update.h:260
+#: system_update.h:270 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
+#: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: timeshiftsettings.h:45 titan.c:285 titan.c:1089 titan.c:1098 titan.c:1227
+#: titan.c:1248 titan.c:1254 titan.c:1265 titan.c:1271 tithek.c:103
+#: tithek_global.h:215 tithek.h:750 tithek.h:1434 tithek.h:1461 tithek.h:1483
+#: tithek.h:1540 tithek.h:1691 tithek.h:1706 tithek.h:1880 tithek.h:1916
+#: tithek.h:1932 tithek.h:2166 tithek.h:2326 tithek.h:2611 tithek.h:2657
+#: tithek.h:2675 tithek.h:2688 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
+#: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
+#: tunerconfig.h:709 tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
+#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
+#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
+#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
+#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 webif_index.atemio5200.h:38
+#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
+#: webif_index.atemio-nemesis.h:38 webif_index.dm520.h:38
+#: webif_index.dm525.h:38 webif_index.dm7020hd.h:38 webif_index.dm7020hdv2.h:38
+#: webif_index.dm900.h:38 webif_rc.atemio510.h:33
 #: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
 #: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
 #: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
@@ -6942,10 +6312,6 @@ msgstr "Ö"
 #: zdf.h:29
 msgid "OK"
 msgstr "Ok"
-
-#: plugins_multiimage_skin.xml.h:11 skins_multiimage_skin.xml.h:11
-msgid "OK = select image for boot"
-msgstr "OK = wähle Image zum Booten"
 
 #: skin_default_skin.xml.h:407
 msgid "OLED selection"
@@ -6982,10 +6348,6 @@ msgstr "OSD Transparenz"
 #: webif_shootmain.h:4
 msgid "OSD+TV"
 msgstr ""
-
-#: plugins_tmdb_skin.xml.h:3 skins_tmdb_skin.xml.h:3
-msgid "OTHER"
-msgstr "mehr"
 
 #: global.h:6518
 msgid "October"
@@ -7052,10 +6414,6 @@ msgstr "Nur unverschlüsselte Sender"
 msgid "Open VPN (Server)"
 msgstr ""
 
-#: plugins_sudoku_skin.xml.h:14 skins_sudoku_skin.xml.h:14
-msgid "Open settings menu"
-msgstr "Einstellungsmenü öffnen"
-
 #: stock.h:237
 msgid "Open: "
 msgstr "Eröffnung: "
@@ -7080,17 +6438,13 @@ msgstr ""
 msgid "Oplayer HD lite"
 msgstr ""
 
-#: plugins_optimize_skin.xml.h:3 skins_optimize_skin.xml.h:3 tpk_showname.h:94
+#: tpk_showname.h:94
 msgid "Optimize"
 msgstr "optimieren"
 
 #: skin_default_skin.xml.h:414
 msgid "Orbital Position:"
 msgstr "Orbitale Position:"
-
-#: plugins_tmdb_skin.xml.h:2 skins_tmdb_skin.xml.h:2
-msgid "Orgname:"
-msgstr "Name der Organisation:"
 
 #: tpk_showname.h:95
 msgid "Oscam"
@@ -7108,12 +6462,7 @@ msgstr "OScam DVBapi Einstellung deaktiviert!"
 msgid "Oscam dvbapi config enabled !"
 msgstr "OScam DVBapi Einstellung aktiviert!"
 
-#: plugins_panel_skin.xml.h:25 skins_panel_skin.xml.h:25
-msgid "OverClock Settings"
-msgstr "Übertakten"
-
-#: plugins_panel_skin.xml.h:14 skin_default_skin.xml.h:420
-#: skins_panel_skin.xml.h:14
+#: skin_default_skin.xml.h:420
 msgid "Overclocking"
 msgstr "Übertakten"
 
@@ -7129,15 +6478,9 @@ msgstr ""
 msgid "PCR PID:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:12
-#: skin_default_skin.xml.h:426 skins_mc_skin.xml.h:42
-#: skins_tithek_skin.xml.h:12
+#: skin_default_skin.xml.h:426
 msgid "PICTURE"
 msgstr "Bild"
-
-#: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
-msgid "PICTURE SETTINGS"
-msgstr "Bildeinstellungen"
 
 #: skin_default_skin.xml.h:427
 msgid "PIDs"
@@ -7167,10 +6510,6 @@ msgstr ""
 msgid "POS"
 msgstr "Position"
 
-#: plugins_news_skin.xml.h:3 skins_news_skin.xml.h:3
-msgid "PREV"
-msgstr "Zurück"
-
 #: transponder.h:478 transponder.h:516
 msgid "PSK 8"
 msgstr ""
@@ -7194,7 +6533,7 @@ msgstr "Seite runter"
 msgid "Page Up"
 msgstr "Seite rauf"
 
-#: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26 tpk_showname.h:97
+#: tpk_showname.h:97
 msgid "Panel"
 msgstr ""
 
@@ -7218,30 +6557,9 @@ msgstr "Partition konnte nicht erstellt werden!"
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:423
-#: skins_networkbrowser_skin.xml.h:17
+#: skin_default_skin.xml.h:423
 msgid "Password"
 msgstr "Passwort"
-
-#: plugins_callmonitor1_skin.xml.h:16 skins_callmonitor1_skin.xml.h:16
-msgid "Passwort-FritzBox"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:17 skins_instar_skin.xml.h:17
-msgid "Passwort-Kamera 1"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:18 skins_instar_skin.xml.h:18
-msgid "Passwort-Kamera 2"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:19 skins_instar_skin.xml.h:19
-msgid "Passwort-Kamera 3"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:20 skins_instar_skin.xml.h:20
-msgid "Passwort-Kamera 4"
-msgstr ""
 
 #: tmc.h:1005
 msgid "Path: "
@@ -7269,10 +6587,6 @@ msgstr "Pfad: "
 #: webif_rc_virtual.h:17
 msgid "Pause"
 msgstr ""
-
-#: plugins_lcdpearl1_skin.xml.h:13 skins_lcdpearl1_skin.xml.h:13
-msgid "Pearl LCD Settings"
-msgstr "Einstellungen"
 
 #: tpk_showname.h:99
 msgid "Permanent Time"
@@ -7313,34 +6627,6 @@ msgstr "PiP tauschen"
 #: webif_index.atemio7600.h:113 webif_rc.atemio7600.h:46
 msgid "PiP Switch"
 msgstr "PiP Tausch"
-
-#: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
-msgid "Pic HW-decode"
-msgstr "Hardwarebilddecoder"
-
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
-msgid "Pic Link"
-msgstr "Bild Link"
-
-#: plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9
-msgid "Pic Name"
-msgstr "Bildername"
-
-#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
-msgid "Pic Ratio"
-msgstr "Bilder im Originalformat darstellen"
-
-#: plugins_tmc_skin.xml.h:10 skins_tmc_skin.xml.h:10
-msgid "Pic Timeout"
-msgstr "Zeit bis zum Ausblenden"
-
-#: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
-msgid "Pic quality"
-msgstr "Darstellungsqualität von Fotos"
-
-#: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39
-msgid "Picdenom Mode"
-msgstr "Softwarebilddecoder"
 
 #: tpk_showname.h:103
 msgid "Picons Black (Eutelsat)"
@@ -7446,10 +6732,6 @@ msgstr ""
 msgid "Picture"
 msgstr "Bild"
 
-#: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
-msgid "Picture Player"
-msgstr "Fotos anzeigen"
-
 #: record.h:55
 msgid "Pid's not ok"
 msgstr "FEHLER: PIDs sind fehlerhaft!"
@@ -7518,10 +6800,6 @@ msgstr "Wiedergabeliste"
 msgid "Playbackbuffer Size"
 msgstr "Wiedergabepuffer - Größe (http) Streams"
 
-#: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
-msgid "Played"
-msgstr "Gespielt"
-
 #: webif_streamconfig.h:1
 msgid "Player"
 msgstr ""
@@ -7531,8 +6809,7 @@ msgid "Player for .ts"
 msgstr "Wiedergabegerät für .ts Dateien"
 
 #: mc_global.h:272 mc_global.h:340 mc_global.h:415 mc_global.h:708
-#: mc_global.h:993 mc_global.h:1008 plugins_mc_skin.xml.h:45
-#: skins_mc_skin.xml.h:45
+#: mc_global.h:993 mc_global.h:1008
 msgid "Playlist"
 msgstr "Wiedergabeliste"
 
@@ -7575,12 +6852,6 @@ msgstr ""
 msgid "Plot"
 msgstr "Handlung"
 
-#: plugins_imdbapi_skin.xml.h:5 plugins_imdb_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:4 skins_imdbapi_skin.xml.h:5 skins_imdb_skin.xml.h:5
-#: skins_tmdb_skin.xml.h:4
-msgid "Plot:"
-msgstr "Handlung:"
-
 #: tpk_showname.h:126
 msgid "Plover Bold"
 msgstr ""
@@ -7611,10 +6882,6 @@ msgstr "Plugin Taste - Belegungsmenü"
 msgid "Plugins"
 msgstr "Zusatzprogramme"
 
-#: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
-msgid "Points"
-msgstr "Punkte"
-
 #: lnbconfig.h:137 skin_default_skin.xml.h:446
 msgid "Polarization"
 msgstr "Polarisationsebene"
@@ -7638,26 +6905,6 @@ msgstr "Meistgesehen: Kinder & Familie"
 #: amazon.h:54 amazon.h:61
 msgid "Popularity Rank"
 msgstr "Meistgesehen:"
-
-#: plugins_dlna_skin.xml.h:8 skins_dlna_skin.xml.h:8
-msgid "Port"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:21 skins_instar_skin.xml.h:21
-msgid "Port-Kamera 1"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:22 skins_instar_skin.xml.h:22
-msgid "Port-Kamera 2"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:23 skins_instar_skin.xml.h:23
-msgid "Port-Kamera 3"
-msgstr ""
-
-#: plugins_instar_skin.xml.h:24 skins_instar_skin.xml.h:24
-msgid "Port-Kamera 4"
-msgstr ""
 
 #: possetup.h:98
 msgid ""
@@ -7705,10 +6952,6 @@ msgstr "An die Pinnwand schreiben"
 #: webif_rc_virtual.h:30
 msgid "Power"
 msgstr ""
-
-#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
-msgid "Power = reboot receiver"
-msgstr "Power = Receiver Neustart"
 
 #: adjust.h:109 httpdfunc.h:4053
 msgid "Power Menu"
@@ -7780,10 +7023,6 @@ msgstr "Drücken Sie Ok, wenn der Suchlauf abgeschlossen ist"
 #: hwtest.h:206
 msgid "Press OK or EXIT"
 msgstr "Drücken Sie OK oder Exit"
-
-#: plugins_tmc_skin.xml.h:11 skins_tmc_skin.xml.h:11
-msgid "Preview"
-msgstr "Vorschau"
 
 #: skin_default_skin.xml.h:457
 msgid "Prime Time"
@@ -7935,10 +7174,6 @@ msgstr "WIEDERHERSTELLUNGSFEHLER!"
 msgid "RGUI"
 msgstr ""
 
-#: plugins_rgui_skin.xml.h:8 skins_rgui_skin.xml.h:8
-msgid "RGUI Client"
-msgstr "RGUI Klient"
-
 #: skin_default_skin.xml.h:517
 msgid "RGUID Port"
 msgstr "Rguid Port"
@@ -7971,10 +7206,6 @@ msgstr ""
 msgid "Radio Funclub 80s"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46
-msgid "Radio Player"
-msgstr "Radio"
-
 #: scan.h:1810
 msgid "Radio: "
 msgstr ""
@@ -7989,7 +7220,6 @@ msgstr "Arbeitsspeicher"
 
 #: mc_audioplayer.h:565 mc_global.h:566 mc_global.h:594 mc_global.h:1135
 #: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:680
-#: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Random"
 msgstr "Zufällig"
 
@@ -8001,17 +7231,9 @@ msgstr "Zufällige Wiedergabe-An"
 msgid "Rating"
 msgstr "Bewertung"
 
-#: plugins_tmdb_skin.xml.h:5 skins_tmdb_skin.xml.h:5
-msgid "Rating:"
-msgstr "Bewertung:"
-
 #: mc_pictureplayer_settings.h:66
 msgid "Raute Musik FM"
 msgstr ""
-
-#: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
-msgid "Reader Config"
-msgstr "Reader"
 
 #: softcam.h:414
 msgid "Reader Config Plugin not installed !"
@@ -8019,13 +7241,11 @@ msgstr ""
 "FEHLER: Reader Konfigurationsdatei ist nicht\n"
 "installiert!"
 
-#: plugins_readerconfig_skin.xml.h:8 readerconfig.h:276 readerconfig.h:346
-#: skins_readerconfig_skin.xml.h:8
+#: readerconfig.h:276 readerconfig.h:346
 msgid "Reader Configuration"
 msgstr "Konfiguration"
 
-#: plugins_readerconfig_skin.xml.h:9 readerconfig.h:391
-#: skins_readerconfig_skin.xml.h:9
+#: readerconfig.h:391
 msgid "Reader Selection"
 msgstr "Auswahl"
 
@@ -8223,8 +7443,7 @@ msgstr "Rote Taste"
 msgid "Red Key Action - Setup"
 msgstr "Rote Taste - Belegungsmenü "
 
-#: plugins_tithek_skin.xml.h:14 skin_default_skin.xml.h:483
-#: skins_tithek_skin.xml.h:14
+#: skin_default_skin.xml.h:483
 msgid "Red-Menu"
 msgstr "Rot-Menü"
 
@@ -8232,17 +7451,9 @@ msgstr "Rot-Menü"
 msgid "Reduce Standby frequency"
 msgstr "CPU-Frequenz im Standby reduzieren"
 
-#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:484
-#: skins_wm2014_skin.xml.h:12 softcam.h:296
+#: skin_default_skin.xml.h:484 softcam.h:296
 msgid "Refresh"
 msgstr "Aktualisieren"
-
-#: plugins_imdbapi_skin.xml.h:6 plugins_imdb_skin.xml.h:6
-#: plugins_tmc_skin.xml.h:12 plugins_tmdb_skin.xml.h:6
-#: skins_imdbapi_skin.xml.h:6 skins_imdb_skin.xml.h:6 skins_tmc_skin.xml.h:12
-#: skins_tmdb_skin.xml.h:6
-msgid "Release:"
-msgstr "Veröffentlicht:"
 
 #: skin_default_skin.xml.h:485
 msgid "Released"
@@ -8271,10 +7482,6 @@ msgstr "Aktion bei Power Taste der Fernbedienung"
 #: tithek.h:1430
 msgid "Remove Cachefile ?"
 msgstr "Zwischenspeicher leeren?"
-
-#: plugins_tithek_skin.xml.h:15 skins_tithek_skin.xml.h:15
-msgid "Remove Cookies"
-msgstr "Lösche Cookies"
 
 #: httpdfunc.h:6453 httpdfunc.h:6463
 msgid "Remove Log:"
@@ -8325,14 +7532,13 @@ msgid "Removeing"
 msgstr "Entfernen von"
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1359
-#: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
 msgid "Rename"
 msgstr "Umbenennen"
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1140
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:313 mc_pictureplayer.h:157
 #: mc_pictureplayer.h:322 mc_videoplayer.h:436 mc_videoplayer.h:681
-#: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:497 skins_mc_skin.xml.h:48
+#: skin_default_skin.xml.h:497
 msgid "Repeat"
 msgstr "Wiederholen"
 
@@ -8513,10 +7719,6 @@ msgstr "Rotor"
 msgid "Runtime"
 msgstr "Laufzeit"
 
-#: plugins_tmc_skin.xml.h:13 skins_tmc_skin.xml.h:13
-msgid "Runtime:"
-msgstr "Laufzeit:"
-
 #: skin_default_skin.xml.h:523
 msgid "Russian"
 msgstr "Русский"
@@ -8545,18 +7747,7 @@ msgstr "SatCR Frequenz"
 msgid "SATCR Number"
 msgstr "SatCR Nummer"
 
-#: plugins_autotimer_skin.xml.h:7 plugins_callmonitor1_skin.xml.h:17
-#: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
-#: plugins_instar_skin.xml.h:25 plugins_lcdpearl1_skin.xml.h:10
-#: plugins_lcdsamsung_skin.xml.h:13 plugins_panel_skin.xml.h:16
-#: plugins_stock_skin.xml.h:4 plugins_stopifnotused_skin.xml.h:4
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:535
-#: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:17
-#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
-#: skins_instar_skin.xml.h:25 skins_lcdpearl1_skin.xml.h:10
-#: skins_lcdsamsung_skin.xml.h:13 skins_panel_skin.xml.h:16
-#: skins_stock_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
-#: skins_tmdb_skin.xml.h:7
+#: skin_default_skin.xml.h:535
 msgid "SAVE"
 msgstr "Speichern"
 
@@ -8572,15 +7763,11 @@ msgstr "Suchlauf beginnen"
 msgid "SCART 4:3 / 16:9"
 msgstr "SCART 4:3/16:9"
 
-#: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
-#: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
-#: skin_default_skin.xml.h:554 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
-#: skins_tmdb_skin.xml.h:8
+#: skin_default_skin.xml.h:554
 msgid "SEARCH"
 msgstr "Suchen"
 
-#: dvdplay.h:29 play.h:1578 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1578
 msgid "SELECT"
 msgstr "Auswählen"
 
@@ -8652,16 +7839,7 @@ msgstr "Sr"
 msgid "SSID"
 msgstr "SSID"
 
-#: plugins_autotimer_skin.xml.h:9 plugins_dlna_skin.xml.h:11
-#: plugins_instar_skin.xml.h:26 plugins_lcdpearl1_skin.xml.h:11
-#: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:16
-#: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
-#: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:612
-#: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
-#: skins_instar_skin.xml.h:26 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:16
-#: skins_stopifnotused_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:7
-#: skins_xupnpd_skin.xml.h:2
+#: skin_default_skin.xml.h:612
 msgid "START"
 msgstr "Starten"
 
@@ -8679,10 +7857,7 @@ msgstr ""
 msgid "STICK "
 msgstr ""
 
-#: plugins_dlna_skin.xml.h:13 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:620
-#: skins_dlna_skin.xml.h:13 skins_tsSchnitt_skin.xml.h:9
-#: skins_xupnpd_skin.xml.h:3
+#: skin_default_skin.xml.h:620
 msgid "STOP"
 msgstr "Stoppen"
 
@@ -8713,10 +7888,6 @@ msgstr "Samba Server Einstellungen"
 #: tpk_description.h:127
 msgid "Samba file server"
 msgstr ""
-
-#: plugins_lcdsamsung_skin.xml.h:17 skins_lcdsamsung_skin.xml.h:17
-msgid "Samsung SPF.. Settings"
-msgstr "Einstellungen"
 
 #: global.h:6529
 msgid "Sat"
@@ -8816,17 +7987,9 @@ msgstr "Sättigung"
 msgid "Saturday"
 msgstr "Samstag"
 
-#: plugins_panel_skin.xml.h:15 skins_panel_skin.xml.h:15
-msgid "Save"
-msgstr "Speichern"
-
 #: autotimer.c:603 menu.h:996 menu.h:998 skin_default_skin.xml.h:536
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
-
-#: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
-msgid "Scan"
-msgstr "Suchlauf"
 
 #: skin_default_skin.xml.h:538
 msgid "Scan Auto"
@@ -8880,12 +8043,7 @@ msgstr "Scartausgabe im Standby"
 msgid "Scifi"
 msgstr "Science Fiction"
 
-#: plugins_catcatch_skin.xml.h:5 skins_catcatch_skin.xml.h:5
-msgid "Score:"
-msgstr "Punkte:"
-
-#: adjust.h:310 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
-#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
+#: adjust.h:310
 msgid "Screensaver"
 msgstr "Bildschirmschoner"
 
@@ -9236,18 +8394,6 @@ msgstr "Wählen Sie eine Funktion für die rote Taste"
 msgid "Select backup:"
 msgstr "Sicherung auswählen:"
 
-#: plugins_multiimage_skin.xml.h:14 skins_multiimage_skin.xml.h:14
-msgid "Select device"
-msgstr "Ausgewählter Datenträger"
-
-#: plugins_multiimage_skin.xml.h:15 skins_multiimage_skin.xml.h:15
-msgid "Selected image"
-msgstr "Ausgewähltes Image"
-
-#: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
-msgid "Selected:"
-msgstr "ausgewählt:"
-
 #: httpdfunc.h:7056 webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
 msgstr "Senden"
@@ -9275,35 +8421,6 @@ msgstr "Serieller Anschluss"
 #: amazon.h:48 amazon.h:62 amazon.h:76 amazon.h:90 amazon.h:104
 msgid "Series"
 msgstr "Serien"
-
-#: plugins_rgui_skin.xml.h:3 plugins_tiwakeup_skin.xml.h:3
-#: skins_rgui_skin.xml.h:3 skins_tiwakeup_skin.xml.h:3
-msgid "Server 1"
-msgstr ""
-
-#: plugins_rgui_skin.xml.h:4 plugins_tiwakeup_skin.xml.h:4
-#: skins_rgui_skin.xml.h:4 skins_tiwakeup_skin.xml.h:4
-msgid "Server 2"
-msgstr ""
-
-#: plugins_rgui_skin.xml.h:5 plugins_tiwakeup_skin.xml.h:5
-#: skins_rgui_skin.xml.h:5 skins_tiwakeup_skin.xml.h:5
-msgid "Server 3"
-msgstr ""
-
-#: plugins_rgui_skin.xml.h:6 plugins_tiwakeup_skin.xml.h:6
-#: skins_rgui_skin.xml.h:6 skins_tiwakeup_skin.xml.h:6
-msgid "Server 4"
-msgstr ""
-
-#: plugins_rgui_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:7
-#: skins_rgui_skin.xml.h:7 skins_tiwakeup_skin.xml.h:7
-msgid "Server 5"
-msgstr ""
-
-#: plugins_dlna_skin.xml.h:10 skins_dlna_skin.xml.h:10
-msgid "Server Name"
-msgstr ""
 
 #: httpdfunc.h:6577 skin_default_skin.xml.h:562 webif_info.h:1
 msgid "Service"
@@ -9337,15 +8454,12 @@ msgstr ""
 msgid "Settime"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:17
-#: plugins_panel_skin.xml.h:27 skin_default_skin.xml.h:569
-#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:17 skins_panel_skin.xml.h:27
-#: webif_index.atemio510.h:14 webif_index.atemio5200.h:14
-#: webif_index.atemio6000.h:14 webif_index.atemio6100.h:14
-#: webif_index.atemio6200.h:14 webif_index.atemio7600.h:12
-#: webif_index.atemio-nemesis.h:14 webif_index.dm520.h:14
-#: webif_index.dm525.h:14 webif_index.dm7020hd.h:14 webif_index.dm7020hdv2.h:14
-#: webif_index.dm900.h:14 webif_index.h:15
+#: skin_default_skin.xml.h:569 webif_index.atemio510.h:14
+#: webif_index.atemio5200.h:14 webif_index.atemio6000.h:14
+#: webif_index.atemio6100.h:14 webif_index.atemio6200.h:14
+#: webif_index.atemio7600.h:12 webif_index.atemio-nemesis.h:14
+#: webif_index.dm520.h:14 webif_index.dm525.h:14 webif_index.dm7020hd.h:14
+#: webif_index.dm7020hdv2.h:14 webif_index.dm900.h:14 webif_index.h:15
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -9422,14 +8536,6 @@ msgstr "Anzeige des freien Festplattenspeichers"
 #: skin_default_skin.xml.h:579
 msgid "Show Modules"
 msgstr "Zeige Modul Informationen"
-
-#: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
-msgid "Show Pay Streams"
-msgstr "Zeige kostenpflichtige und englische Streams"
-
-#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
-msgid "Show Pictitle"
-msgstr "Zeige Bild Titel"
 
 #: webif_index.atemio510.h:9 webif_index.atemio5200.h:9
 #: webif_index.atemio6000.h:9 webif_index.atemio6100.h:9
@@ -9696,17 +8802,9 @@ msgstr ""
 msgid "Song TitleText"
 msgstr "Musiktitel Text anzeigen"
 
-#: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
-msgid "Sort"
-msgstr "Sortieren"
-
-#: plugins_mc_skin.xml.h:58 skin_default_skin.xml.h:598 skins_mc_skin.xml.h:58
+#: skin_default_skin.xml.h:598
 msgid "Sorting"
 msgstr "Sortierung"
-
-#: plugins_mc_skin.xml.h:59 skins_mc_skin.xml.h:59
-msgid "Sound"
-msgstr "Klang"
 
 #: skin_default_skin.xml.h:601
 msgid "Sound amplifier (TV-Modus / internal Player)"
@@ -9817,28 +8915,13 @@ msgstr "Möchten Sie WLAN jetzt starten?"
 msgid "Start at last position ?"
 msgstr "An letzter Stelle fortsetzen?"
 
-#: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
-msgid ""
-"Start movie in the internal player, set with 0 key marker during a movie. 5 "
-"key is for the marker overview. Then here select movie and start."
-msgstr ""
-"Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie "
-"die Taste 0, um eine Markierung zu setzen.\n"
-"Drücken Sie die Taste 5, um eine Übersicht der Markierungen anzuzeigen und "
-"starten Sie anschließend die Wiedergabe."
-
-#: plugins_dlna_skin.xml.h:12 skin_default_skin.xml.h:614
-#: skins_dlna_skin.xml.h:12
+#: skin_default_skin.xml.h:614
 msgid "Start on boot"
 msgstr "automatischer Start"
 
 #: tithek.h:1880
 msgid "Start playback"
 msgstr "Beginne Wiedergabe"
-
-#: plugins_zapback_skin.xml.h:5 skins_zapback_skin.xml.h:5
-msgid "Start-> OK"
-msgstr ""
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62 tmc.h:387
 msgid "Status"
@@ -9860,8 +8943,7 @@ msgstr "Frequenzratenschritt"
 msgid "Step signalrate"
 msgstr "Signalratenschritt"
 
-#: plugins_stock_skin.xml.h:5 skins_stock_skin.xml.h:5 stock.h:187
-#: tpk_showname.h:186
+#: stock.h:187 tpk_showname.h:186
 msgid "Stock"
 msgstr "Aktie"
 
@@ -9908,10 +8990,6 @@ msgstr ""
 msgid "Stream Config (iOS)"
 msgstr "Stream Konfiguration (iOS)"
 
-#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
-msgid "Stream Link"
-msgstr ""
-
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
 #: tithek_global.h:1386 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
@@ -9929,7 +9007,6 @@ msgstr ""
 msgid "Stream Transcode"
 msgstr ""
 
-#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:188
 msgid "Streaminfo"
 msgstr ""
@@ -9957,10 +9034,6 @@ msgstr "Streaming erfolgreich beendet"
 #: adjust.h:322
 msgid "Stringconvert"
 msgstr ""
-
-#: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
-msgid "Style"
-msgstr "Stil"
 
 #: keyactions.h:83 settings_bluebutton.h:20 settings_pluginbutton.h:21
 #: settings_redbutton.h:21 videomode.h:31
@@ -9991,10 +9064,6 @@ msgstr "Untertitel"
 #: tpk_description.h:155 tpk_showname.h:189
 msgid "Sudoku"
 msgstr ""
-
-#: plugins_sudoku_skin.xml.h:16 skins_sudoku_skin.xml.h:16
-msgid "Sudoku Help"
-msgstr "Sudoku Hilfe"
 
 #: global.h:6530
 msgid "Sun"
@@ -10132,10 +9201,6 @@ msgstr "Titel"
 msgid "TMDb"
 msgstr ""
 
-#: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
-msgid "TMDb - Plugin"
-msgstr "TMDb"
-
 #: tpk_description.h:160
 msgid "TMDb Movie Database Plugin"
 msgstr "TMDb Filmdatenbank"
@@ -10239,18 +9304,6 @@ msgstr "Txt Pid:"
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:13 skins_wm2014_skin.xml.h:13
-msgid "Team"
-msgstr "Gruppe"
-
-#: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
-msgid "Team 1"
-msgstr "Gruppe 1"
-
-#: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
-msgid "Team 2"
-msgstr "Gruppe 2"
-
 #: webif_system.h:5
 msgid "Telnet"
 msgstr ""
@@ -10263,8 +9316,7 @@ msgstr "Terrestrisch"
 msgid "Terrestrial: "
 msgstr "Terrestrisch: "
 
-#: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:646
-#: skins_panel_skin.xml.h:19
+#: skin_default_skin.xml.h:646
 msgid "Test"
 msgstr ""
 
@@ -10436,21 +9488,9 @@ msgstr "Donnerstag"
 msgid "TiTan Mediathek"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
-msgid "TiThek - Favorite Edit"
-msgstr "Favoriten bearbeiten"
-
-#: plugins_tithek_skin.xml.h:26 skins_tithek_skin.xml.h:26
-msgid "TiThek Menu"
-msgstr "TiThek Menü"
-
 #: skin_default_skin.xml.h:663
 msgid "TiThek Select Color"
 msgstr "Cursor Farbe für TiThek"
-
-#: plugins_tithek_skin.xml.h:27 skins_tithek_skin.xml.h:27
-msgid "TiThek Settings"
-msgstr "TiThek Einstellungen"
 
 #: tpk_description.h:158
 msgid "TiThek the Multimedia-thek"
@@ -10462,17 +9502,9 @@ msgid ""
 "Libpack tpk."
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
-msgid "Time"
-msgstr "Uhrzeit"
-
 #: harddisk.h:928 skin_default_skin.xml.h:657
 msgid "Time to sleep"
 msgstr "HDD-Standby"
-
-#: plugins_stopifnotused_skin.xml.h:6 skins_stopifnotused_skin.xml.h:6
-msgid "Time to stop "
-msgstr "Zeit bis Abschaltung (min)"
 
 #: httpdfunc.h:4884 skin_default_skin.xml.h:659
 msgid "Time to wait after seek for fill buffer"
@@ -10546,14 +9578,6 @@ msgstr "FEHLER: Start- oder Endzeit ist fehlerhaft!"
 #: rectimer.h:160
 msgid "Timer transponder ID not ok"
 msgstr "FEHLER: Transponder ID stimmt nicht!"
-
-#: plugins_autotimer_skin.xml.h:10 skins_autotimer_skin.xml.h:10
-msgid "Timer1 activ"
-msgstr "Timer 1 aktiv"
-
-#: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
-msgid "Timer2 activ"
-msgstr "Timer 2 aktiv"
 
 #: skin_default_skin.xml.h:654
 msgid "Timeshift Path"
@@ -10680,8 +9704,7 @@ msgstr "TiThek - Hauptmenü - Favoriten"
 msgid "Tithek Hoster URL with http://"
 msgstr "Tithek Hoster URL (http://...)"
 
-#: mediadb.h:2518 plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:664
-#: skins_tithek_skin.xml.h:20
+#: mediadb.h:2518 skin_default_skin.xml.h:664
 msgid "Title"
 msgstr "Titel"
 
@@ -10689,10 +9712,7 @@ msgstr "Titel"
 msgid "Title Color"
 msgstr "Titelfarbe"
 
-#: play.h:417 play.h:451 plugins_imdbapi_skin.xml.h:9 plugins_imdb_skin.xml.h:9
-#: plugins_tmc_skin.xml.h:15 plugins_tmdb_skin.xml.h:9
-#: skins_imdbapi_skin.xml.h:9 skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:15
-#: skins_tmdb_skin.xml.h:9
+#: play.h:417 play.h:451
 msgid "Title:"
 msgstr "Titel: "
 
@@ -10956,12 +9976,7 @@ msgstr "Sender nicht verfügbar!"
 msgid "Two step mute"
 msgstr "Zwei Stufen Stummschaltung"
 
-#: plugins_instar_skin.xml.h:27 skins_instar_skin.xml.h:27
-msgid "Typ"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:699
-#: skins_tithek_skin.xml.h:21
+#: skin_default_skin.xml.h:699
 msgid "Type"
 msgstr "Typ"
 
@@ -10972,10 +9987,6 @@ msgstr "Art des Suchlaufs"
 #: skin_default_skin.xml.h:700
 msgid "Type:"
 msgstr "Typ:"
-
-#: plugins_lcdsamsung_skin.xml.h:15 skins_lcdsamsung_skin.xml.h:15
-msgid "Typenbezeichnung"
-msgstr ""
 
 #: skin_default_keyskin.xml.h:67
 msgid "U"
@@ -11097,8 +10108,7 @@ msgstr "Installierte Plugins aktualisieren?"
 msgid "Update entrys on scan"
 msgstr "Aktualisiere vorhandene Einträge"
 
-#: plugins_panel_skin.xml.h:20 skin_default_skin.xml.h:710
-#: skins_panel_skin.xml.h:20
+#: skin_default_skin.xml.h:710
 msgid "Usb Device"
 msgstr "USB Geräte"
 
@@ -11146,8 +10156,7 @@ msgstr "Benutze feste physikalische Adresse"
 msgid "Use numeric keys"
 msgstr "Nummerntasten zur Eingabe nutzen"
 
-#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:717
-#: skins_networkbrowser_skin.xml.h:33
+#: skin_default_skin.xml.h:717
 msgid "User"
 msgstr "Benutzer"
 
@@ -11158,26 +10167,6 @@ msgstr ""
 #: skin_default_skin.xml.h:718
 msgid "VFDisplay"
 msgstr "Display"
-
-#: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
-msgid "VIDEO"
-msgstr "Filme"
-
-#: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
-msgid "VIDEO SETTINGS"
-msgstr "Einstellungen"
-
-#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
-msgid "VK Pass"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
-msgid "VK User"
-msgstr ""
-
-#: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
-msgid "VLC Player"
-msgstr "Video abspielen"
 
 #: security.h:2091
 msgid "Version"
@@ -11206,10 +10195,6 @@ msgstr "Bild"
 #: skin_default_skin.xml.h:723
 msgid "Video PID:"
 msgstr "Video-PID:"
-
-#: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
-msgid "Video Player"
-msgstr "Filme abspielen"
 
 #: play.h:639 skin_default_skin.xml.h:724
 msgid "Video Settings"
@@ -11249,26 +10234,9 @@ msgstr ""
 "Für die Nutzung des SCART-Anschlusses muss die Auflösung auf 576i "
 "eingestellt sein!"
 
-#: plugins_panel_skin.xml.h:21 skins_panel_skin.xml.h:21
-msgid "Videotune"
-msgstr "Bildeinstellungen"
-
 #: skin_default_skin.xml.h:725
 msgid "Vietnamese"
 msgstr "Viet"
-
-#: plugins_filemanager_skin.xml.h:5 plugins_mc_skin.xml.h:65
-#: skins_filemanager_skin.xml.h:5 skins_mc_skin.xml.h:65
-msgid "View"
-msgstr "Ansicht"
-
-#: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
-msgid "View Cover"
-msgstr "Ansicht Cover (streams)"
-
-#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
-msgid "View Sections"
-msgstr "Menü Ansicht"
 
 #: httpdfunc.h:4111 skin_default_skin.xml.h:726
 msgid "Virtualzap Timeout"
@@ -11343,10 +10311,6 @@ msgstr "Zeit bis Lautstärkeanzeige ausgeblendet wird (sek)"
 #: skin_default_skin.xml.h:731
 msgid "Votes"
 msgstr "Punkte"
-
-#: plugins_tmc_skin.xml.h:16 skins_tmc_skin.xml.h:16
-msgid "Votes:"
-msgstr "Stimmen:"
 
 #: skin_default_keyskin.xml.h:73
 msgid "W"
@@ -11468,22 +10432,13 @@ msgstr "Krieg"
 msgid "Watchlist"
 msgstr ""
 
-#: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:205
-#: weather.h:426
+#: tpk_showname.h:205 weather.h:426
 msgid "Weather"
 msgstr "Wetter"
-
-#: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
-msgid "Weather Infos"
-msgstr "Wetter Infos"
 
 #: adjust.h:294
 msgid "Web Adjust"
 msgstr ""
-
-#: plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
-msgid "Web Radio Player"
-msgstr "Web Radio"
 
 #: httpdfunc.h:333
 msgid "WebStream"
@@ -11511,11 +10466,6 @@ msgstr ""
 
 #: epgsearch.h:324
 msgid "Western"
-msgstr ""
-
-#: plugins_lcdpearl1_skin.xml.h:12 plugins_lcdsamsung_skin.xml.h:16
-#: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:16
-msgid "Wettervorhersage"
 msgstr ""
 
 #: tpk_description.h:184
@@ -11554,10 +10504,6 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: plugins_panel_skin.xml.h:22 skins_panel_skin.xml.h:22
-msgid "Wizard"
-msgstr "Setup-Assistent"
-
 #: tpk_showname.h:208
 msgid "Wlan 8192cu"
 msgstr ""
@@ -11586,10 +10532,6 @@ msgstr ""
 msgid "Wlan rt5370sta"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
-msgid "Won"
-msgstr "Gewonnen"
-
 #: tpk_description.h:198
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
@@ -11607,22 +10549,9 @@ msgstr "!!! SCHREIBFEHLER !!!"
 msgid "Writer"
 msgstr "Autor"
 
-#: plugins_imdbapi_skin.xml.h:10 plugins_imdb_skin.xml.h:10
-#: skins_imdbapi_skin.xml.h:10 skins_imdb_skin.xml.h:10
-msgid "Writers:"
-msgstr "Autor:"
-
 #: skin_default_keyskin.xml.h:75
 msgid "X"
 msgstr ""
-
-#: plugins_sudoku_skin.xml.h:17 skins_sudoku_skin.xml.h:17
-msgid "X-Position"
-msgstr ""
-
-#: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
-msgid "X-Resolution"
-msgstr "X-Auflösung"
 
 #: tpk_showname.h:215
 msgid "XPicons LightTransparent (Astra 19.2E)"
@@ -11660,23 +10589,15 @@ msgstr ""
 msgid "XPicons Pimpert rounded (Hotbird 13,0E)"
 msgstr ""
 
-#: plugins_xupnpd_skin.xml.h:4 skins_xupnpd_skin.xml.h:4
-msgid "Xupnpd Server"
-msgstr "xupnpd - DLNA Media Server"
-
 #: skin_default_keyskin.xml.h:77
 msgid "Y"
 msgstr ""
-
-#: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
-msgid "Y-Resolution"
-msgstr "Y-Auflösung"
 
 #: skin_default_skin.xml.h:743
 msgid "Year"
 msgstr "Jahr"
 
-#: play.h:432 play.h:466 plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
+#: play.h:432 play.h:466
 msgid "Year:"
 msgstr "Jahr:"
 
@@ -11723,10 +10644,6 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: plugins_zapback_skin.xml.h:6 skins_zapback_skin.xml.h:6
-msgid "ZapBack"
-msgstr "Zurückschalten"
-
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
@@ -11737,14 +10654,6 @@ msgstr ""
 
 #: webif_index.atemio7600.h:22
 msgid "Zoom"
-msgstr ""
-
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1
-msgid "[0] => Finals"
-msgstr ""
-
-#: plugins_wm2014_skin.xml.h:2 skins_wm2014_skin.xml.h:2
-msgid "[9] => Last 16"
 msgstr ""
 
 #: hwtest.h:167 hwtest.h:215
@@ -11803,31 +10712,12 @@ msgstr "Erweiterte Einstellungen"
 msgid "ae"
 msgstr "ä"
 
-#: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
-msgid "afterevent"
-msgstr "Nach der Aufnahme"
-
-#: plugins_lcdpearl1_skin.xml.h:3 plugins_lcdsamsung_skin.xml.h:3
-#: skins_lcdpearl1_skin.xml.h:3 skins_lcdsamsung_skin.xml.h:3
-msgid "aktiv im Standby"
-msgstr "Im Standby aktiv"
-
-#: mediadb.h:1112 mediadbsettings.h:55 play.h:610 plugins_mc_skin.xml.h:3
-#: skins_mc_skin.xml.h:3 tmc.h:539
+#: mediadb.h:1112 mediadbsettings.h:55 play.h:610 tmc.h:539
 msgid "all"
 msgstr "Alle"
 
 #: tpk_description.h:4
 msgid "all: Settings Astra 19.2 all transponder | 05.11.2017"
-msgstr ""
-
-#: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
-#: skins_lcdpearl1_skin.xml.h:4 skins_lcdsamsung_skin.xml.h:4
-msgid "alle Menus anzeigen"
-msgstr "Alle Menüs anzeigen"
-
-#: plugins_callmonitor1_skin.xml.h:4 skins_callmonitor1_skin.xml.h:4
-msgid "alle Nummern"
 msgstr ""
 
 #: timeshiftsettings.h:54
@@ -11836,14 +10726,9 @@ msgstr "Timeshiftdatei immer löschen"
 
 #: adjust.h:101 httpdfunc.h:4003 mc_audioplayer_settings.h:27
 #: mc_iptvplayer_settings.h:23 mc_pictureplayer_settings.h:42
-#: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:4
-#: skin_default_skin.xml.h:30 skins_mc_skin.xml.h:4
+#: mc_videoplayer_settings.h:23 skin_default_skin.xml.h:30
 msgid "alpha"
 msgstr "Alphabetisch (A-Z)"
-
-#: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
-msgid "alternate WebIf"
-msgstr ""
 
 #: epgsettings.h:192 epgsettings.h:203 epgsettings.h:208 epgsettings.h:213
 #: mediadbsettings.h:36
@@ -11886,10 +10771,6 @@ msgstr "Tonspur"
 msgid "aus"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:6 skins_callmonitor1_skin.xml.h:6
-msgid "ausgehende Anrufe"
-msgstr ""
-
 #: adjust.h:160 autotimer.c:479 autotimer.c:512 avsettings.h:74
 #: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1206
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
@@ -11925,14 +10806,6 @@ msgstr "Sichern"
 msgid "bar"
 msgstr "Balken Farbe"
 
-#: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
-msgid "begin search"
-msgstr "Suche starten"
-
-#: plugins_callmonitor1_skin.xml.h:7 skins_callmonitor1_skin.xml.h:7
-msgid "bei Anruf stumm"
-msgstr ""
-
 #: mc_pictureplayer_settings.h:31
 msgid "best"
 msgstr "beste"
@@ -11947,7 +10820,6 @@ msgstr "Hintergrund Download"
 
 #: mc_audioplayer_settings.h:36 mc_iptvplayer_settings.h:32
 #: mc_pictureplayer_settings.h:51 mc_videoplayer_settings.h:32
-#: plugins_mc_skin.xml.h:11 skins_mc_skin.xml.h:11
 msgid "big"
 msgstr "groß"
 
@@ -11986,10 +10858,6 @@ msgstr "Rahmen"
 #: webif_help.h:11
 msgid "bouquetlist"
 msgstr "Favoritenliste"
-
-#: plugins_callmonitor1_skin.xml.h:8 skins_callmonitor1_skin.xml.h:8
-msgid "broadcast"
-msgstr "Broadcast Adresse"
 
 #: tpk_section.h:2
 msgid "browser"
@@ -12038,10 +10906,6 @@ msgstr "ändern"
 #: vfdisplay.h:103
 msgid "channel"
 msgstr "Sender"
-
-#: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
-msgid "channel (EPG=Current channel)"
-msgstr "Sender (EPG=aktiver Sender)"
 
 #: vfdisplay.h:104
 msgid "channel + time"
@@ -12141,8 +11005,7 @@ msgstr "Täglich"
 
 #: adjust.h:105 httpdfunc.h:4031 mc_audioplayer_settings.h:31
 #: mc_iptvplayer_settings.h:27 mc_pictureplayer_settings.h:46
-#: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:13
-#: skin_default_skin.xml.h:133 skins_mc_skin.xml.h:13
+#: mc_videoplayer_settings.h:27 skin_default_skin.xml.h:133
 msgid "date"
 msgstr "Datum (Neu-Alt)"
 
@@ -12171,14 +11034,9 @@ msgstr "LAN Verbindung ausschalten?"
 msgid "debug"
 msgstr "System Debug Modus beim Start"
 
-#: harddisk.h:165 pip.h:657 pip.h:665 plugins_mc_skin.xml.h:15
-#: skins_mc_skin.xml.h:15
+#: harddisk.h:165 pip.h:657 pip.h:665
 msgid "default"
 msgstr "Voreinstellung"
-
-#: plugins_mc_skin.xml.h:16 skins_mc_skin.xml.h:16
-msgid "default Directory"
-msgstr "Standard Verzeichnis"
 
 #: tunerconfig.h:890
 msgid "define port A"
@@ -12196,10 +11054,6 @@ msgstr "Startsender entfernen"
 msgid "delete"
 msgstr "Löschen"
 
-#: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
-msgid "details"
-msgstr "Details"
-
 #: network.h:390
 msgid "dhcp"
 msgstr "Automatisch (dhcp)"
@@ -12211,10 +11065,6 @@ msgstr "Dateiliste"
 #: tunerconfig.h:882
 msgid "direct connect"
 msgstr "Direkte Verbindung"
-
-#: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
-msgid "direkter Start"
-msgstr ""
 
 #: webif_help.h:18
 msgid "dirlabel"
@@ -12233,10 +11083,6 @@ msgstr "aus"
 #: skin_default_skin.xml.h:158 webif_help.h:21
 msgid "diseqcscreen"
 msgstr "DiSEqC"
-
-#: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
-msgid "dnsaddresse"
-msgstr "DNS Adresse"
 
 #: skin_default_skin.xml.h:161
 msgid "dnsserver 1"
@@ -12286,10 +11132,6 @@ msgstr "Ost"
 msgid "ein"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:9 skins_callmonitor1_skin.xml.h:9
-msgid "eingehende Anrufe"
-msgstr ""
-
 #: moduleconfig.h:376
 msgid "empty"
 msgstr "leer"
@@ -12305,10 +11147,6 @@ msgstr "de-DE"
 #: network.h:395
 msgid "enable"
 msgstr "aktivieren"
-
-#: plugins_autotimer_skin.xml.h:4 skins_autotimer_skin.xml.h:4
-msgid "end search"
-msgstr "Suche beenden"
 
 #: adjust.h:123 httpdfunc.h:4139 pin.h:193
 msgid "endless"
@@ -12333,10 +11171,6 @@ msgstr "EPG-Einstellungen"
 #: rectimer.h:1539
 msgid "error"
 msgstr "!!! FEHLER !!!"
-
-#: plugins_autotimer_skin.xml.h:5 skins_autotimer_skin.xml.h:5
-msgid "event"
-msgstr "Ereignis"
 
 #: adjust.h:219 httpdfunc.h:4712
 msgid "expert (11)"
@@ -12374,11 +11208,11 @@ msgstr "Ein/Ausblenden"
 #: adjust.h:94 adjust.h:186 httpdfunc.h:3966 httpdfunc.h:4529
 #: mc_audioplayer_settings.h:35 mc_iptvplayer_settings.h:31
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
-#: moduleconfig.h:270 plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20
+#: moduleconfig.h:270
 msgid "fast"
 msgstr "schnell"
 
-#: mediadb.h:2510 plugins_mc_skin.xml.h:21 skins_mc_skin.xml.h:21
+#: mediadb.h:2510
 msgid "file"
 msgstr "Datei"
 
@@ -12389,14 +11223,6 @@ msgstr "Fehler beim Kopieren"
 #: copyfile.h:881 copyfile.h:882
 msgid "file move error"
 msgstr "Fehler beim Verschieben"
-
-#: plugins_mc_skin.xml.h:22 skins_mc_skin.xml.h:22
-msgid "filealt"
-msgstr "Alternativdatei"
-
-#: plugins_mc_skin.xml.h:23 skins_mc_skin.xml.h:23
-msgid "filealtresult"
-msgstr "alternatives Dateiresultat"
 
 #: readerconfig.h:260 readerconfig.h:265
 msgid "first slot"
@@ -12434,12 +11260,8 @@ msgstr "Aktiviere FTDI Kartenleser Treiber"
 msgid "ftpfs"
 msgstr "FTPFS"
 
-#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
-msgid "ftpport"
-msgstr "FTP Port"
-
 #: mc_audioplayer_settings.h:38 mc_iptvplayer_settings.h:34
-#: mc_videoplayer_settings.h:34 plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26
+#: mc_videoplayer_settings.h:34
 msgid "fullcover"
 msgstr "Kompletter Hintergrund mit Cover"
 
@@ -12499,10 +11321,6 @@ msgstr "Festplatten Menü"
 msgid "hbbtv Browser"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
-msgid "hddreplacement"
-msgstr "Netzwerk Freigabe als Aufnahmeort"
-
 #: webif_help.h:31
 msgid "helpbox"
 msgstr "Hilfebox"
@@ -12551,14 +11369,6 @@ msgstr "IMDb Hintergrund Bilder (Netzwerk/Festplatte)"
 #: mediadb.h:2522
 msgid "imdbid"
 msgstr "IMDb-ID"
-
-#: plugins_zapback_skin.xml.h:2 skins_zapback_skin.xml.h:2
-msgid "in"
-msgstr ""
-
-#: plugins_tsSchnitt_skin.xml.h:2 skins_tsSchnitt_skin.xml.h:2
-msgid "in background"
-msgstr "im Hintergrund"
 
 #: webif_help.h:33
 msgid "inadynsettings"
@@ -12613,8 +11423,7 @@ msgstr "Internet"
 msgid "ip"
 msgstr "IP"
 
-#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:328
-#: skins_networkbrowser_skin.xml.h:14
+#: skin_default_skin.xml.h:328
 msgid "ipaddress"
 msgstr "IP Adresse"
 
@@ -12712,10 +11521,6 @@ msgstr "Senderliste Editor"
 #: webif_help.h:41
 msgid "lnbscreen"
 msgstr "LNB Einstellungen"
-
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
-msgid "localname"
-msgstr "Lokaler Name"
 
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
@@ -12821,10 +11626,6 @@ msgstr "Multi-EPG"
 #: webif_help.h:55
 msgid "mute"
 msgstr "Stumm"
-
-#: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
-msgid "mvid"
-msgstr ""
 
 #: skin_default_keyskin.xml.h:46
 msgid "n"
@@ -13117,10 +11918,6 @@ msgstr "in neuem Fenster öffnen"
 msgid "optimize Plugin"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
-msgid "options"
-msgstr "Optionen"
-
 #: webif_help.h:61
 msgid "ownpos"
 msgstr "Eigene Position"
@@ -13140,10 +11937,6 @@ msgstr "Zoom mit Randbeschnitt"
 #: skin_default_skin.xml.h:422
 msgid "passthrough"
 msgstr ""
-
-#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
-msgid "password"
-msgstr "Passwort"
 
 #: mediadb.h:2514
 msgid "path"
@@ -13225,8 +12018,7 @@ msgstr "Wiedergabeliste Menü"
 msgid "please wait"
 msgstr "bitte warten"
 
-#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:13
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1417
+#: tithek.h:1417
 msgid "please wait..."
 msgstr "bitte warten"
 
@@ -13263,41 +12055,9 @@ msgstr "Rote Taste drücken"
 msgid "prime time"
 msgstr "Primetime"
 
-#: plugins_tsSchnitt_skin.xml.h:4 skins_tsSchnitt_skin.xml.h:4
-msgid "progress"
-msgstr "Fortschritt"
-
 #: skin_default_skin.xml.h:466
 msgid "protect service"
 msgstr "Sender sperren"
-
-#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
-msgid "protocol"
-msgstr "Protokoll"
-
-#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
-msgid "proxy"
-msgstr "Proxy"
-
-#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
-msgid "proxyauth"
-msgstr "Proxy Authentifizierung"
-
-#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
-msgid "proxyip"
-msgstr "IP für Proxyserver"
-
-#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
-msgid "proxypass"
-msgstr "Passwort für Proxyserver"
-
-#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
-msgid "proxyport"
-msgstr "Port für Proxyserver"
-
-#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
-msgid "proxyuser"
-msgstr "Benutzername für Proxyserver"
 
 #: callmon_main.h:131
 msgid "puffern"
@@ -13377,22 +12137,19 @@ msgstr "Auflösung Einstellungen"
 
 #: adjust.h:102 httpdfunc.h:4010 mc_audioplayer_settings.h:28
 #: mc_iptvplayer_settings.h:24 mc_pictureplayer_settings.h:43
-#: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:49
-#: skin_default_skin.xml.h:514 skins_mc_skin.xml.h:49
+#: mc_videoplayer_settings.h:24 skin_default_skin.xml.h:514
 msgid "reverse alpha"
 msgstr "Alphabetisch (Z-A)"
 
 #: adjust.h:106 httpdfunc.h:4038 mc_audioplayer_settings.h:32
 #: mc_iptvplayer_settings.h:28 mc_pictureplayer_settings.h:47
-#: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:50
-#: skin_default_skin.xml.h:515 skins_mc_skin.xml.h:50
+#: mc_videoplayer_settings.h:28 skin_default_skin.xml.h:515
 msgid "reverse date"
 msgstr "Datum (Alt-Neu)"
 
 #: adjust.h:104 httpdfunc.h:4024 mc_audioplayer_settings.h:30
 #: mc_iptvplayer_settings.h:26 mc_pictureplayer_settings.h:45
-#: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
-#: skin_default_skin.xml.h:516 skins_mc_skin.xml.h:51
+#: mc_videoplayer_settings.h:26 skin_default_skin.xml.h:516
 msgid "reverse size"
 msgstr "Größe aufsteigend"
 
@@ -13403,10 +12160,6 @@ msgstr "rechts"
 #: networkbrowser.h:1706
 msgid "ro"
 msgstr "Schreibgeschützt"
-
-#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
-msgid "rsize"
-msgstr "Lese Puffergröße"
 
 #: audiotrack.h:50 play.h:278 play.h:286 rectimer.h:1535 subtitle.h:1624
 msgid "running"
@@ -13448,10 +12201,6 @@ msgstr "Suchlauf und Weiße Liste"
 msgid "scan wlan"
 msgstr "WLAN autostart"
 
-#: plugins_zapback_skin.xml.h:4 skins_zapback_skin.xml.h:4
-msgid "schaltet zurueck auf Sender"
-msgstr "Schaltet zurück auf Sender"
-
 #: skin_default_skin.xml.h:545 tpk_section.h:14 webif_help.h:81
 msgid "screensaver"
 msgstr "Bildschirmschoner"
@@ -13488,10 +12237,6 @@ msgstr ""
 msgid "search east"
 msgstr "suche Ost"
 
-#: plugins_autotimer_skin.xml.h:8 skins_autotimer_skin.xml.h:8
-msgid "search string"
-msgstr "Suchmuster"
-
 #: possetup.h:36
 msgid "search west"
 msgstr "suche West"
@@ -13503,10 +12248,6 @@ msgstr "Suche ..."
 #: readerconfig.h:261 readerconfig.h:266
 msgid "second slot"
 msgstr "zweiter Kartenschacht (oben)"
-
-#: plugins_tsSchnitt_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:6
-msgid "select movie"
-msgstr "Film auswählen"
 
 #: harddisk.h:127
 msgid "select the format filesystem type for your media drive"
@@ -13560,14 +12301,6 @@ msgstr "Senderlisten"
 msgid "settingsmenu"
 msgstr "Einstellungsmenü"
 
-#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
-msgid "sharedir"
-msgstr "Speicherort auf entferntem Rechner"
-
-#: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
-msgid "sharename"
-msgstr "Freigabename"
-
 #: webif_help.h:84
 msgid "shortepg"
 msgstr "EPG-Kurzübersicht"
@@ -13618,8 +12351,7 @@ msgstr "Einfach EPG"
 
 #: adjust.h:103 httpdfunc.h:4017 mc_audioplayer_settings.h:29
 #: mc_iptvplayer_settings.h:25 mc_pictureplayer_settings.h:44
-#: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
-#: skin_default_skin.xml.h:585 skins_mc_skin.xml.h:55
+#: mc_videoplayer_settings.h:25 skin_default_skin.xml.h:585
 msgid "size"
 msgstr "Größe absteigend"
 
@@ -13656,10 +12388,6 @@ msgstr ""
 msgid "slow"
 msgstr "langsam"
 
-#: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
-msgid "small"
-msgstr "klein"
-
 #: networkbrowser.h:1635
 msgid "socks4"
 msgstr ""
@@ -13684,8 +12412,7 @@ msgstr "Liste sortieren"
 msgid "south"
 msgstr "Süd"
 
-#: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:603
-#: skins_panel_skin.xml.h:18
+#: skin_default_skin.xml.h:603
 msgid "speed"
 msgstr "Geschwindigkeit"
 
@@ -13693,8 +12420,7 @@ msgstr "Geschwindigkeit"
 msgid "spinner"
 msgstr "Spinner"
 
-#: networkbrowser.h:1631 plugins_networkbrowser_skin.xml.h:29
-#: skins_networkbrowser_skin.xml.h:29
+#: networkbrowser.h:1631
 msgid "ssl"
 msgstr "SSL"
 
@@ -13932,10 +12658,6 @@ msgstr ""
 msgid "tiTan Remote Control"
 msgstr ""
 
-#: plugins_tiwakeup_skin.xml.h:8 skins_tiwakeup_skin.xml.h:8
-msgid "tiWakeup"
-msgstr "Wecker"
-
 #: vfdisplay.h:106 vfdisplay.h:109 vfdisplay.h:114
 msgid "time"
 msgstr "Uhrzeit"
@@ -13992,10 +12714,6 @@ msgstr "TPK Installation"
 msgid "transparent (mvi)"
 msgstr ""
 
-#: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
-msgid "ts - cut"
-msgstr "ts - Schnitt"
-
 #: webif_help.h:111
 msgid "tunerconfig"
 msgstr "Tunerauswahl"
@@ -14012,8 +12730,7 @@ msgstr "DVB-S Tuner einstellen"
 msgid "tunerreceptiondvbt"
 msgstr "DVB-T Tuner einstellen"
 
-#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:698
-#: skins_networkbrowser_skin.xml.h:30
+#: skin_default_skin.xml.h:698
 msgid "type"
 msgstr "Typ"
 
@@ -14096,10 +12813,6 @@ msgstr "Update Liste"
 msgid "usbreset Plugin"
 msgstr "USB-Reset"
 
-#: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
-msgid "use last Directory"
-msgstr "Benutze immer letztes Verzeichnis"
-
 #: harddisk.h:287 harddisk.h:778
 msgid "use medium for backup"
 msgstr ""
@@ -14128,14 +12841,6 @@ msgstr ""
 msgid "useUnknown910"
 msgstr "Lade stmdvb.ko mit der useUnknown910 Option"
 
-#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
-msgid "usedns"
-msgstr "Benutze DNS Adresse"
-
-#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
-msgid "useproxy"
-msgstr "Benutze Proxy"
-
 #: lnbconfig.h:149 rectimer.h:1096
 msgid "user defined"
 msgstr "Benutzerdefiniert"
@@ -14143,18 +12848,6 @@ msgstr "Benutzerdefiniert"
 #: lnbconfig.h:151
 msgid "user unicable"
 msgstr ""
-
-#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
-msgid "userauth"
-msgstr "Benutzer Authentifizierung"
-
-#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
-msgid "username"
-msgstr "Benutzername"
-
-#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
-msgid "usessl"
-msgstr "SSL verwenden"
 
 #: skin_default_keyskin.xml.h:70
 msgid "v"
@@ -14216,10 +12909,6 @@ msgstr ""
 msgid "volume"
 msgstr "Lautstärke"
 
-#: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
-msgid "vs"
-msgstr "gegen"
-
 #: skin_default_keyskin.xml.h:72
 msgid "w"
 msgstr ""
@@ -14260,10 +12949,6 @@ msgstr "weiß"
 msgid "whitelist"
 msgstr "Weiße Liste"
 
-#: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
-msgid "will be set by plugin"
-msgstr "wird vom Plugin eingestellt"
-
 #: tpk_section.h:19
 msgid "wireless"
 msgstr "Wireless LAN"
@@ -14299,10 +12984,6 @@ msgstr "WLAN"
 #: rectimer.h:1095
 msgid "workdays"
 msgstr "Werktags"
-
-#: plugins_networkbrowser_skin.xml.h:37 skins_networkbrowser_skin.xml.h:37
-msgid "wsize"
-msgstr "Schreib Puffergröße"
 
 #: skin_default_keyskin.xml.h:74
 msgid "x"
@@ -14419,3 +13100,651 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid ""
+#~ "A list of currently used network shares. You can add, edit, delete shares "
+#~ "or search for new shares."
+#~ msgstr ""
+#~ "Liste der aktuell genutzten Netzwerkfreigaben. Sie können Freigaben "
+#~ "hinzufügen, editieren, löschen oder neue Freigaben suchen."
+
+#~ msgid "AUDIO"
+#~ msgstr "Musik"
+
+#~ msgid "AUDIO SETTINGS"
+#~ msgstr "Audio"
+
+#~ msgid "AUTH SETTINGS"
+#~ msgstr "Authentifizierung"
+
+#~ msgid "Actors:"
+#~ msgstr "Darsteller:"
+
+#~ msgid "Aktion wenn standby"
+#~ msgstr "Verhalten im Standby"
+
+#~ msgid "Amazon Prime Pass"
+#~ msgstr "Amazon Prime Passwort"
+
+#~ msgid "Amazon Prime User"
+#~ msgstr "Amazon Prime Benutzername"
+
+#~ msgid "Apple Trailer"
+#~ msgstr "Apple Movie Trailer"
+
+#~ msgid "Audio Player"
+#~ msgstr "Musik abspielen"
+
+#~ msgid "Authentication"
+#~ msgstr "Authentifizierung"
+
+#~ msgid "Auto start"
+#~ msgstr "Autostart"
+
+#~ msgid "AutoTimer Settings"
+#~ msgstr "Einstellungen"
+
+#~ msgid "Automount"
+#~ msgstr "Automatische Einbindung"
+
+#~ msgid "Autostart Playlist"
+#~ msgstr "Wiedergabeliste automatisch starten"
+
+#~ msgid "BROWSER"
+#~ msgstr "Internet Browser"
+
+#~ msgid "Back Pic"
+#~ msgstr "Hintergrundbild"
+
+#~ msgid "Backdrop Interval"
+#~ msgstr "Hintergrund Bilderwechsel Intervall"
+
+#~ msgid "COPY"
+#~ msgstr "Kopieren"
+
+#~ msgid "CallMonitor Settings"
+#~ msgstr "CallMonitor Einstellungen"
+
+#~ msgid "Check inputs"
+#~ msgstr "Eingaben überprüfen"
+
+#~ msgid "Choice Menu"
+#~ msgstr "Auswahlmenü"
+
+#~ msgid "Content of selected device"
+#~ msgstr "Inhalt des ausgewählten Datenträgers"
+
+#~ msgid "Copy"
+#~ msgstr "Kopieren"
+
+#~ msgid "Create"
+#~ msgstr "Erstellen"
+
+#~ msgid "Create MultiImage device"
+#~ msgstr "MultiImage Datenträger erstellen"
+
+#~ msgid "Cutstatus:"
+#~ msgstr "Fortschritt:"
+
+#~ msgid "DEL FAV"
+#~ msgstr "Fav Entfernen"
+
+#~ msgid "DLNA Settings"
+#~ msgstr "DLNA Einstellungen"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Day "
+#~ msgstr "Tag"
+
+#~ msgid "Default"
+#~ msgstr "Voreinstellung"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid "Delete wrong inputs"
+#~ msgstr "Falsche Eingaben löschen"
+
+#~ msgid "Device"
+#~ msgstr "Gerät"
+
+#~ msgid "Director:"
+#~ msgstr "Regisseur:"
+
+#~ msgid "Draw"
+#~ msgstr "Unentschieden"
+
+#~ msgid "Dvbapi"
+#~ msgstr "DVBapi"
+
+#~ msgid "Easy"
+#~ msgstr "einfach"
+
+#~ msgid "Edit"
+#~ msgstr "Bearbeiten"
+
+#~ msgid "Enable"
+#~ msgstr "aktiviert"
+
+#~ msgid ""
+#~ "Enter the shown url in your browser and enter the Code to register the "
+#~ "receiver to facebook"
+#~ msgstr ""
+#~ "Besuchen Sie die angezeigte Web Adresse und geben Sie den Code ein, um "
+#~ "Ihren Receiver bei Facebook zu registrieren."
+
+#~ msgid "Exit Tithek"
+#~ msgstr "Tithek beenden"
+
+#~ msgid "FILELIST MANAGER"
+#~ msgstr "Datei Manager"
+
+#~ msgid "Facebook Register"
+#~ msgstr "Auf Facebook registrieren"
+
+#~ msgid "Fancontrol"
+#~ msgstr "Lüftersteuerung"
+
+#~ msgid "Filename:"
+#~ msgstr "Dateiname:"
+
+#~ msgid "Format"
+#~ msgstr "Formatieren"
+
+#~ msgid "Framerate"
+#~ msgstr "Bildfrequenz"
+
+#~ msgid "FritzBook"
+#~ msgstr "Fritzbook"
+
+#~ msgid "Full Pic"
+#~ msgstr "Vollbildmodus"
+
+#~ msgid "Goals"
+#~ msgstr "Tore"
+
+#~ msgid "Hard"
+#~ msgstr "schwer"
+
+#~ msgid "Here you can activate/deactivate you OSCam readers."
+#~ msgstr "Hier können Sie Ihre OSCam Reader aktivieren bzw. deaktivieren."
+
+#~ msgid "Here you can add and configure your network shares."
+#~ msgstr "Hier können Sie Freigaben hinzufügen und konfigurieren."
+
+#~ msgid "Here you can configure your OSCam reader."
+#~ msgstr "Hier können Sie die OSCam Reader konfigurieren."
+
+#~ msgid ""
+#~ "Here you can configure your login credentials for accessing password "
+#~ "protected shares."
+#~ msgstr ""
+#~ "Hier können Sie die Zugangsdaten zu passwortgeschützten Freigaben "
+#~ "eingeben."
+
+#~ msgid "Here you can make your xupnpd autostart settings."
+#~ msgstr ""
+#~ "Hier können Sie xupnpd starten, stoppen und den Autostart aktivieren."
+
+#~ msgid "Hid XXX Streams"
+#~ msgstr "XXX Streams ausblenden"
+
+#~ msgid "Hint: Use TEXT button for editing the image name"
+#~ msgstr ""
+#~ "Hinweis: Benutzen Sie die TEXT Taste, um den Image Namen zu bearbeiten"
+
+#~ msgid "IMDB Search"
+#~ msgstr "IMDb Suche"
+
+#~ msgid "IMDb - Plugin"
+#~ msgstr "IMDB Erweiterung"
+
+#~ msgid "IMDb-API - Plugin"
+#~ msgstr "IMDb-API"
+
+#~ msgid ""
+#~ "If you don't find Windows shares, you need to disable 'Password protected "
+#~ "sharing' in the 'Network and Sharing Center'."
+#~ msgstr ""
+#~ "Sollten keine Windows Freigaben sichtbar sein, muss 'Passwortgeschützte "
+#~ "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
+
+#~ msgid "Image name: "
+#~ msgstr "Image Name: "
+
+#~ msgid "Input the numbers 1 to 9"
+#~ msgstr "Eingabe der Zahlen 1 bis 9"
+
+#~ msgid "Install"
+#~ msgstr "Installieren"
+
+#~ msgid "Interface"
+#~ msgstr "Schnittstelle"
+
+#~ msgid "Interval"
+#~ msgstr "Intervall"
+
+#~ msgid "LOAD-FritzBook"
+#~ msgstr "Fritzbook laden"
+
+#~ msgid "Level:"
+#~ msgstr "Ebene:"
+
+#~ msgid "Lost"
+#~ msgstr "Verloren"
+
+#~ msgid "MC VideoPlayer Imdb Settings"
+#~ msgstr "IMDb Einstellungen"
+
+#~ msgid "MC VideoPlayer Sort Settings"
+#~ msgstr "Sortierreihenfolge"
+
+#~ msgid "MC VideoPlayer View Settings"
+#~ msgstr "Einstellungen anzeigen"
+
+#~ msgid "Manage MultiImage"
+#~ msgstr "MultiImage Verwaltung"
+
+#~ msgid "Marker found:"
+#~ msgstr "Markierung gefunden:"
+
+#~ msgid "Media Dir 1"
+#~ msgstr "Medien Ordner 1"
+
+#~ msgid "Media Dir 2"
+#~ msgstr "Medien Ordner 2"
+
+#~ msgid "Media Dir 3"
+#~ msgstr "Medien Ordner 3"
+
+#~ msgid "Media Dir 4"
+#~ msgstr "Medien Ordner 4"
+
+#~ msgid "MediaDB autoscan"
+#~ msgstr "Automatischer Suchlauf MediaDB"
+
+#~ msgid "Mediathek"
+#~ msgstr "Online Mediathek"
+
+#~ msgid "Menu Title"
+#~ msgstr "Menü Titel"
+
+#~ msgid "Moven"
+#~ msgstr "Verschieben"
+
+#~ msgid "MultiImage Install/Rename"
+#~ msgstr "MultiImage Installation/Umbenennen"
+
+#~ msgid "NEW"
+#~ msgstr "Neu"
+
+#~ msgid "NEXT"
+#~ msgstr "Weiter"
+
+#~ msgid "New game (easy)"
+#~ msgstr "Neues Spiel (leicht)"
+
+#~ msgid "New game (hard)"
+#~ msgstr "Neues Spiel (schwierig)"
+
+#~ msgid "No image installed"
+#~ msgstr "Kein Image installiert"
+
+#~ msgid "NotUsed Settings"
+#~ msgstr "StopIfNotUsed Einstellungen"
+
+#~ msgid "OK = select image for boot"
+#~ msgstr "OK = wähle Image zum Booten"
+
+#~ msgid "OTHER"
+#~ msgstr "mehr"
+
+#~ msgid "Open settings menu"
+#~ msgstr "Einstellungsmenü öffnen"
+
+#~ msgid "Orgname:"
+#~ msgstr "Name der Organisation:"
+
+#~ msgid "OverClock Settings"
+#~ msgstr "Übertakten"
+
+#~ msgid "PICTURE SETTINGS"
+#~ msgstr "Bildeinstellungen"
+
+#~ msgid "PREV"
+#~ msgstr "Zurück"
+
+#~ msgid "Pearl LCD Settings"
+#~ msgstr "Einstellungen"
+
+#~ msgid "Pic HW-decode"
+#~ msgstr "Hardwarebilddecoder"
+
+#~ msgid "Pic Link"
+#~ msgstr "Bild Link"
+
+#~ msgid "Pic Name"
+#~ msgstr "Bildername"
+
+#~ msgid "Pic Ratio"
+#~ msgstr "Bilder im Originalformat darstellen"
+
+#~ msgid "Pic Timeout"
+#~ msgstr "Zeit bis zum Ausblenden"
+
+#~ msgid "Pic quality"
+#~ msgstr "Darstellungsqualität von Fotos"
+
+#~ msgid "Picdenom Mode"
+#~ msgstr "Softwarebilddecoder"
+
+#~ msgid "Picture Player"
+#~ msgstr "Fotos anzeigen"
+
+#~ msgid "Played"
+#~ msgstr "Gespielt"
+
+#~ msgid "Plot:"
+#~ msgstr "Handlung:"
+
+#~ msgid "Points"
+#~ msgstr "Punkte"
+
+#~ msgid "Power = reboot receiver"
+#~ msgstr "Power = Receiver Neustart"
+
+#~ msgid "Preview"
+#~ msgstr "Vorschau"
+
+#~ msgid "RGUI Client"
+#~ msgstr "RGUI Klient"
+
+#~ msgid "Radio Player"
+#~ msgstr "Radio"
+
+#~ msgid "Rating:"
+#~ msgstr "Bewertung:"
+
+#~ msgid "Reader Config"
+#~ msgstr "Reader"
+
+#~ msgid "Release:"
+#~ msgstr "Veröffentlicht:"
+
+#~ msgid "Remove Cookies"
+#~ msgstr "Lösche Cookies"
+
+#~ msgid "Runtime:"
+#~ msgstr "Laufzeit:"
+
+#~ msgid "Samsung SPF.. Settings"
+#~ msgstr "Einstellungen"
+
+#~ msgid "Save"
+#~ msgstr "Speichern"
+
+#~ msgid "Scan"
+#~ msgstr "Suchlauf"
+
+#~ msgid "Score:"
+#~ msgstr "Punkte:"
+
+#~ msgid "Select device"
+#~ msgstr "Ausgewählter Datenträger"
+
+#~ msgid "Selected image"
+#~ msgstr "Ausgewähltes Image"
+
+#~ msgid "Selected:"
+#~ msgstr "ausgewählt:"
+
+#~ msgid "Show Pay Streams"
+#~ msgstr "Zeige kostenpflichtige und englische Streams"
+
+#~ msgid "Show Pictitle"
+#~ msgstr "Zeige Bild Titel"
+
+#~ msgid "Sort"
+#~ msgstr "Sortieren"
+
+#~ msgid "Sound"
+#~ msgstr "Klang"
+
+#~ msgid ""
+#~ "Start movie in the internal player, set with 0 key marker during a movie. "
+#~ "5 key is for the marker overview. Then here select movie and start."
+#~ msgstr ""
+#~ "Starten Sie die Wiedergabe der ts Datei im internen Player und drücken "
+#~ "Sie die Taste 0, um eine Markierung zu setzen.\n"
+#~ "Drücken Sie die Taste 5, um eine Übersicht der Markierungen anzuzeigen "
+#~ "und starten Sie anschließend die Wiedergabe."
+
+#~ msgid "Style"
+#~ msgstr "Stil"
+
+#~ msgid "Sudoku Help"
+#~ msgstr "Sudoku Hilfe"
+
+#~ msgid "TMDb - Plugin"
+#~ msgstr "TMDb"
+
+#~ msgid "Team"
+#~ msgstr "Gruppe"
+
+#~ msgid "Team 1"
+#~ msgstr "Gruppe 1"
+
+#~ msgid "Team 2"
+#~ msgstr "Gruppe 2"
+
+#~ msgid "TiThek - Favorite Edit"
+#~ msgstr "Favoriten bearbeiten"
+
+#~ msgid "TiThek Menu"
+#~ msgstr "TiThek Menü"
+
+#~ msgid "TiThek Settings"
+#~ msgstr "TiThek Einstellungen"
+
+#~ msgid "Time"
+#~ msgstr "Uhrzeit"
+
+#~ msgid "Time to stop "
+#~ msgstr "Zeit bis Abschaltung (min)"
+
+#~ msgid "Timer1 activ"
+#~ msgstr "Timer 1 aktiv"
+
+#~ msgid "Timer2 activ"
+#~ msgstr "Timer 2 aktiv"
+
+#~ msgid "VIDEO"
+#~ msgstr "Filme"
+
+#~ msgid "VIDEO SETTINGS"
+#~ msgstr "Einstellungen"
+
+#~ msgid "VLC Player"
+#~ msgstr "Video abspielen"
+
+#~ msgid "Video Player"
+#~ msgstr "Filme abspielen"
+
+#~ msgid "Videotune"
+#~ msgstr "Bildeinstellungen"
+
+#~ msgid "View"
+#~ msgstr "Ansicht"
+
+#~ msgid "View Cover"
+#~ msgstr "Ansicht Cover (streams)"
+
+#~ msgid "View Sections"
+#~ msgstr "Menü Ansicht"
+
+#~ msgid "Votes:"
+#~ msgstr "Stimmen:"
+
+#~ msgid "Weather Infos"
+#~ msgstr "Wetter Infos"
+
+#~ msgid "Web Radio Player"
+#~ msgstr "Web Radio"
+
+#~ msgid "Wizard"
+#~ msgstr "Setup-Assistent"
+
+#~ msgid "Won"
+#~ msgstr "Gewonnen"
+
+#~ msgid "Writers:"
+#~ msgstr "Autor:"
+
+#~ msgid "X-Resolution"
+#~ msgstr "X-Auflösung"
+
+#~ msgid "Xupnpd Server"
+#~ msgstr "xupnpd - DLNA Media Server"
+
+#~ msgid "Y-Resolution"
+#~ msgstr "Y-Auflösung"
+
+#~ msgid "ZapBack"
+#~ msgstr "Zurückschalten"
+
+#~ msgid "afterevent"
+#~ msgstr "Nach der Aufnahme"
+
+#~ msgid "aktiv im Standby"
+#~ msgstr "Im Standby aktiv"
+
+#~ msgid "alle Menus anzeigen"
+#~ msgstr "Alle Menüs anzeigen"
+
+#~ msgid "begin search"
+#~ msgstr "Suche starten"
+
+#~ msgid "broadcast"
+#~ msgstr "Broadcast Adresse"
+
+#~ msgid "channel (EPG=Current channel)"
+#~ msgstr "Sender (EPG=aktiver Sender)"
+
+#~ msgid "default Directory"
+#~ msgstr "Standard Verzeichnis"
+
+#~ msgid "details"
+#~ msgstr "Details"
+
+#~ msgid "dnsaddresse"
+#~ msgstr "DNS Adresse"
+
+#~ msgid "end search"
+#~ msgstr "Suche beenden"
+
+#~ msgid "event"
+#~ msgstr "Ereignis"
+
+#~ msgid "filealt"
+#~ msgstr "Alternativdatei"
+
+#~ msgid "filealtresult"
+#~ msgstr "alternatives Dateiresultat"
+
+#~ msgid "ftpport"
+#~ msgstr "FTP Port"
+
+#~ msgid "hddreplacement"
+#~ msgstr "Netzwerk Freigabe als Aufnahmeort"
+
+#~ msgid "in background"
+#~ msgstr "im Hintergrund"
+
+#~ msgid "localname"
+#~ msgstr "Lokaler Name"
+
+#~ msgid "options"
+#~ msgstr "Optionen"
+
+#~ msgid "password"
+#~ msgstr "Passwort"
+
+#~ msgid "progress"
+#~ msgstr "Fortschritt"
+
+#~ msgid "protocol"
+#~ msgstr "Protokoll"
+
+#~ msgid "proxy"
+#~ msgstr "Proxy"
+
+#~ msgid "proxyauth"
+#~ msgstr "Proxy Authentifizierung"
+
+#~ msgid "proxyip"
+#~ msgstr "IP für Proxyserver"
+
+#~ msgid "proxypass"
+#~ msgstr "Passwort für Proxyserver"
+
+#~ msgid "proxyport"
+#~ msgstr "Port für Proxyserver"
+
+#~ msgid "proxyuser"
+#~ msgstr "Benutzername für Proxyserver"
+
+#~ msgid "rsize"
+#~ msgstr "Lese Puffergröße"
+
+#~ msgid "schaltet zurueck auf Sender"
+#~ msgstr "Schaltet zurück auf Sender"
+
+#~ msgid "search string"
+#~ msgstr "Suchmuster"
+
+#~ msgid "select movie"
+#~ msgstr "Film auswählen"
+
+#~ msgid "sharedir"
+#~ msgstr "Speicherort auf entferntem Rechner"
+
+#~ msgid "sharename"
+#~ msgstr "Freigabename"
+
+#~ msgid "small"
+#~ msgstr "klein"
+
+#~ msgid "tiWakeup"
+#~ msgstr "Wecker"
+
+#~ msgid "ts - cut"
+#~ msgstr "ts - Schnitt"
+
+#~ msgid "use last Directory"
+#~ msgstr "Benutze immer letztes Verzeichnis"
+
+#~ msgid "usedns"
+#~ msgstr "Benutze DNS Adresse"
+
+#~ msgid "useproxy"
+#~ msgstr "Benutze Proxy"
+
+#~ msgid "userauth"
+#~ msgstr "Benutzer Authentifizierung"
+
+#~ msgid "username"
+#~ msgstr "Benutzername"
+
+#~ msgid "usessl"
+#~ msgstr "SSL verwenden"
+
+#~ msgid "vs"
+#~ msgstr "gegen"
+
+#~ msgid "will be set by plugin"
+#~ msgstr "wird vom Plugin eingestellt"
+
+#~ msgid "wsize"
+#~ msgstr "Schreib Puffergröße"
