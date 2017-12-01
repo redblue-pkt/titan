@@ -1491,11 +1491,19 @@ uint16_t fereadsnr(struct dvbdev* node)
 	int test1 = 0;
 	int test2 = 0;
 	struct dtv_property prop[1];
+	memset(prop, 0, sizeof(prop));
 	prop[0].cmd = DTV_STAT_CNR;
 	struct dtv_properties props;
 	props.props = prop;
 	props.num = 1;
 	
+	int wasopen = 0;
+	
+	if(node->fd == -1)
+		node->fd = feopen(node, NULL);
+	else
+		wasopen = 1;
+		
 	if(ioctl(node->fd, FE_GET_PROPERTY,  &props) < 0 && errno != ERANGE)
 	{
 		perr("FE_GET_PROPERTY");
@@ -1518,6 +1526,8 @@ uint16_t fereadsnr(struct dvbdev* node)
 			}
 		}
 	}
+	if(wasopen != 1)
+		feclose(node, -1);
 #endif
 	if(!signalquality && !signalqualitydb)
 	{
@@ -1584,10 +1594,19 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 //#ifdef MIPSEL	
 #if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
 	struct dtv_property prop[1];
+	memset(prop, 0, sizeof(prop));
 	prop[0].cmd = DTV_STAT_SIGNAL_STRENGTH;
 	struct dtv_properties props;
 	props.props = prop;
 	props.num = 1;
+	
+	int wasopen = 0;
+	
+	if(node->fd == -1)
+		node->fd = feopen(node, NULL);
+	else
+		wasopen = 1;
+	
 	if (ioctl(node->fd, FE_GET_PROPERTY, &props) < 0 && errno != ERANGE)
 	{
 		debug(200, "DTV_STAT_SIGNAL_STRENGTH failed");
@@ -1601,7 +1620,11 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		}
 	}
 	if (signal)
+	{
+		if(wasopen != 1)
+			feclose(node, -1);
 		return signal;
+	}
 	// fallback to old DVB API
 //#endif
 #endif	
@@ -1618,7 +1641,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	if(signal == 0) 
 	{ 
 		fe_status_t status = fereadstatus(node); 
-		if(status & FE_HAS_LOCK) signal = 65535; 
+		if(status & FE_HAS_LOCK) signal = 1; 
 	}        
 	return signal;
 }
@@ -2169,7 +2192,7 @@ int fegetdev()
 #ifndef MIPSEL
 					if(getconfig(tmpstr, NULL) != NULL)
 						sethypridtuner(y, getconfig(tmpstr, NULL));
-					//free(tmpstr), tmpstr = NULL;
+					free(tmpstr), tmpstr = NULL;
 #endif
 				}
 				
@@ -2180,7 +2203,11 @@ int fegetdev()
 					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL, fehyprid, 0);
 #ifdef MIPSEL
 					if(fehyprid != NULL && getconfig(tmpstr, NULL) != NULL)
+					{
 						sethypridtunernew(dvbnode, getconfig(tmpstr, NULL));
+						feinfo = fegetinfo(NULL, fd);
+						dvbnode->feinfo = feinfo;
+					}
 					free(tmpstr), tmpstr = NULL;
 #endif					
 					if(dvbnode->feinfo->type == FE_QPSK)
@@ -2279,8 +2306,13 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	char* buf = NULL, *hypridtuner = NULL;
 	int type = 0;
 	int ret = 0;
+	int wasopen = 0;
 	char* realname = gethypridtunerchoicesvaluename(tuner->devnr, value);
 	
+	if(tuner->fd == -1)
+		tuner->fd = feopen(tuner, NULL);
+	else
+		wasopen = 1;
 	
 	printf("**** > realname: %s\n", realname);
 	
@@ -2335,8 +2367,11 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	debug(200, "data %d",p[1].u.data );
 	if (ioctl(tuner->fd, FE_SET_PROPERTY, &cmdseq) == -1)
 	{
+		perr("FE_SET_PROPERTY");
 		err("FE_SET_PROPERTY failed -> use procfs to switch delivery system tuner %d mode %s type %d",tuner->devnr ,value, type);
 	}
+		if(wasopen != 1)
+			feclose(tuner, -1);
 		hypridtuner = getconfig("hypridtuner", NULL);
 		if(hypridtuner != NULL)
 		{
