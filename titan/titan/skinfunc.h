@@ -667,7 +667,7 @@ char* getsignal(struct skin* node, char* format)
 	char* buf = NULL, *buf1 = NULL;
 
 	signal = fereadsignalstrength(status.aktservice->fedev);
-	if(signal != 65535)
+	if(signal != 1)
 	{
 		signal = (signal * 100) / 0xffff;
 
