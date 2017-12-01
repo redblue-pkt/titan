@@ -572,10 +572,17 @@ int dmxgetdev()
 		err("no memory");
 		return count;
 	}
+	
+	//workaround HD51 kann nur max 4 dvr ... warum??
+	int help = MAXDEMUXDEV;
+	if(checkbox("HD51") == 1)
+		help = 4;
+	//
 
 	for(i = 0; i < MAXDVBADAPTER; i++)
 	{
-		for(y = 0; y < MAXDEMUXDEV; y++)
+		//for(y = 0; y < MAXDEMUXDEV; y++)
+		for(y = 0; y < help; y++)
 		{
 			sprintf(buf, dmxdev, i, y);
 			fd = dmxopendirect(buf);
