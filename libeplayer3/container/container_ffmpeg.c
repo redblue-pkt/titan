@@ -210,6 +210,220 @@ static int32_t flv2mpeg4_converter = 0;
 /* MISC Functions                */
 /* ***************************** */
 
+//extern void dvbsub_ass_write(AVCodecContext *c, AVSubtitle *sub, int pid);
+
+//SubtitleOut_t subOut;
+//SubtitleOut_t *subOut  = NULL;
+
+    uint32_t         tmptrackId;
+//    uint8_t         *tmpdata;
+    char         *tmpdata;
+
+    uint32_t         tmplen;
+    int64_t          tmppts;
+    int64_t          tmpduration; // duration in miliseconds
+    char            *tmptype;
+	int 			enablesub = 0;
+
+void dvbsub_ass_write(Context_t *context, AVCodecContext *c, AVSubtitle *sub, int pid, AVPacket *packet)
+{
+   unsigned int i;
+
+   ffmpeg_printf(0, "format %d\n", sub->format);
+   ffmpeg_printf(0, "start_display_time %d\n", sub->start_display_time);
+   ffmpeg_printf(0, "end_display_time %d\n", sub->end_display_time);
+   ffmpeg_printf(0, "num_rects %d\n", sub->num_rects);
+   //ffmpeg_printf(0, "pts %lld\n", sub->pts);
+
+   for (i = 0; i < sub->num_rects; i++)
+   {
+
+		ffmpeg_printf(0, "x %d\n", sub->rects[i]->x);
+		ffmpeg_printf(0, "y %d\n", sub->rects[i]->y);
+		ffmpeg_printf(0, "w %d\n", sub->rects[i]->w);
+		ffmpeg_printf(0, "h %d\n", sub->rects[i]->h);
+		ffmpeg_printf(0, "nb_colors %d\n", sub->rects[i]->nb_colors);
+		ffmpeg_printf(0, "type %d\n", sub->rects[i]->type);
+		ffmpeg_printf(0, "text %s\n", sub->rects[i]->text);
+		ffmpeg_printf(0, "ass %s\n", sub->rects[i]->ass);
+		
+		
+		ffmpeg_printf(0, "packet->data %s\n", packet->data);
+		ffmpeg_printf(0, "packet->data[0] %x\n", packet->data[0]);
+		ffmpeg_printf(0, "packet->data[1] %x\n", packet->data[1]);
+
+		subtext = ostrcat(subtext, (char *)sub->rects[i]->ass, 1, 0);	
+
+		int ret, horIni, minIni, secIni, milIni, horFim, minFim, secFim, milFim;
+		double Duration = 0;
+		unsigned long long int Pts = 0;
+
+		ret = sscanf((char *)sub->rects[i]->ass, "Dialogue: 0,%d:%d:%d.%d,%d:%d:%d.%d,", &horIni, &minIni, &secIni, &milIni, &horFim, &minFim, &secFim, &milFim);
+
+		if (ret!=8) continue; /* Data is not in correct format */
+		ffmpeg_printf(0, "ret %d\n", ret);
+
+		ffmpeg_printf(0, "horIni %d\n", horIni);
+		ffmpeg_printf(0, "minIni %d\n", minIni);
+		ffmpeg_printf(0, "secIni %d\n", secIni);
+		ffmpeg_printf(0, "milIni %d\n", milIni);
+
+		ffmpeg_printf(0, "horFim %d\n", horFim);
+		ffmpeg_printf(0, "minFim %d\n", minFim);
+		ffmpeg_printf(0, "secFim %d\n", secFim);
+		ffmpeg_printf(0, "milFim %d\n", milFim);
+/*
+		Pts = (horIni*3600 + minIni*60 + secIni)*1000 + milIni;
+		Duration = ((horFim*3600 + minFim*60 + secFim) * 1000  + milFim - Pts) / 1000.0;
+		ffmpeg_printf(0, "new Pts %llu\n", Pts);
+		ffmpeg_printf(0, "new Duration %f\n", Duration);
+
+*/
+		tmppts = (horIni*3600 + minIni*60 + secIni)*1000 + milIni;
+		tmpduration = ((horFim*3600 + minFim*60 + secFim) * 1000  + milFim - Pts) / 1000.0;
+		tmpdata = packet->data;
+
+		ffmpeg_printf(0, "new Pts %llu\n", tmppts);
+		ffmpeg_printf(0, "new Duration %d\n", tmpduration);
+		ffmpeg_printf(0, "new Data %s\n", tmpdata);
+
+		// pict ->AVPicture
+   }
+}
+
+//int ReadSubtitle(Context_t *context, const char *filename, const char *format, int pid)
+int ReadSubtitle(Context_t *context, const char *filename, char *format, int pid)
+{
+	int ret = 0;
+	const char *lastDot = strrchr(filename, '.');
+	if (!lastDot)
+		return ret;
+	char subfile[strlen(filename) + strlen(format)];
+	strcpy(subfile, filename);
+	strcpy(subfile + (lastDot + 1 - filename), format);
+
+	if (access(subfile, R_OK))
+		return ret;
+
+	AVFormatContext *subavfc = avformat_alloc_context();
+	int err = avformat_open_input(&subavfc, subfile, av_find_input_format(format), 0);
+//	if (averror(err, avformat_open_input)) {
+	if (err != 0)
+    {
+		avformat_free_context(subavfc);
+		return ret;
+	}
+
+	avformat_find_stream_info(subavfc, NULL);
+	if (subavfc->nb_streams != 1) {
+		avformat_free_context(subavfc);
+		return ret;
+	}
+
+	AVCodecContext *c = subavfc->streams[0]->codec;
+	AVCodec *codec = avcodec_find_decoder(c->codec_id);
+	if (!codec) {
+		avformat_free_context(subavfc);
+		return ret;
+	}
+
+	err = avcodec_open2(c, codec, NULL);
+//	if (averror(err, avcodec_open2)) {
+	if (err != 0)
+    {
+		avformat_free_context(subavfc);
+		return ret;
+	}
+
+	AVPacket packet;
+	av_init_packet(&packet);
+
+	free(subtext), subtext = NULL;
+
+	while (av_read_frame(subavfc, &packet) > -1) {
+		AVSubtitle sub;
+		memset(&sub, 0, sizeof(sub));
+		int got_sub = 0;
+		avcodec_decode_subtitle2(c, &sub, &got_sub, &packet);
+		if (got_sub)
+		{
+			dvbsub_ass_write(context, c, &sub, pid, &packet);
+
+			char* tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, "duration=", 1, 0);
+			tmpstr = ostrcat(tmpstr, ollutoa(tmpduration), 1, 1);
+			tmpstr = ostrcat(tmpstr, ";pts=", 1, 0);;
+			tmpstr = ostrcat(tmpstr, ollutoa(tmppts), 1, 0);;
+			tmpstr = ostrcat(tmpstr, ";trackid=", 1, 0);;
+			tmpstr = ostrcat(tmpstr, oitoa(tmptrackId), 1, 0);
+			tmpstr = ostrcat(tmpstr, ";subtext=", 1, 0);;
+			tmpstr = ostrcat(tmpstr, tmpdata, 1, 0);;
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);;
+
+			subtext = ostrcat(subtext, tmpstr, 1, 0);
+			free(tmpstr), tmpstr = NULL;
+
+			tmpduration = 0;
+			tmppts = 0;
+			tmptrackId = 0;
+
+
+		}
+		av_free_packet(&packet);
+	}
+
+//	free(subtext), subtext = NULL;
+
+	avcodec_close(c);
+	avformat_close_input(&subavfc);
+	avformat_free_context(subavfc);
+
+    ffmpeg_printf(1, "format=%s\n", format);
+    ffmpeg_printf(1, "pid=%d\n", pid);
+
+	if(pid != -1)
+	{
+		Track_t Subtitle;
+		memset(&Subtitle, 0, sizeof(Subtitle));
+		Subtitle.Name = ostrcat("External Sub: ", format, 0, 0);
+		if(ostrstr(format, "srt") != NULL)
+			Subtitle.Encoding = "S_TEXT/SRT";
+		else if(ostrstr(format, "ass") != NULL)
+			Subtitle.Encoding = "S_TEXT/ASS";
+		else if(ostrstr(format, "ssa") != NULL)
+			Subtitle.Encoding = "S_TEXT/SSA";
+		else if(ostrstr(format, "sub") != NULL)
+			Subtitle.Encoding = "S_TEXT/SUBRIP";
+		else if(ostrstr(format, "idx") != NULL)
+			Subtitle.Encoding = "S_TEXT/SUBRIP";
+		Subtitle.File       = strdup(subfile);  
+		Subtitle.Id = pid,
+		context->manager->subtitle->Command(context, MANAGER_ADD, &Subtitle);
+	}
+
+//	Track track;
+//	track.title = format;
+//	track.is_static = 1;
+//	track.pid = pid;
+//	player->manager.addSubtitleTrack(track);
+	return 1;
+}
+
+int ReadSubtitles(Context_t *context, const char *filename)
+{
+	int ret = 0;
+	if (strncmp(filename, "file://", 7))
+		return ret;
+	filename += 7;
+	ret |= ReadSubtitle(context, filename, "srt", 0xFFFF);
+	ret |= ReadSubtitle(context, filename, "ass", 0xFFFE);
+	ret |= ReadSubtitle(context, filename, "ssa", 0xFFFD);
+	ret |= ReadSubtitle(context, filename, "sub", 0xFFFC);
+	ret |= ReadSubtitle(context, filename, "idx", 0xFFFB);
+	return ret;
+}
+
+
 static void ffmpeg_silen_callback(void * avcl, int level, const char * fmt, va_list vl)
 {
     return;
@@ -1163,16 +1377,55 @@ static void FFMPEGThread(Context_t *context)
 
                 if (duration > 0)
                 {
+printf("[LIBEPLAYER3/FFMPEGThread] start\n");
+
                     SubtitleOut_t subOut;
                     memset(&subOut, 0, sizeof(subOut));
                     subOut.trackId = pid;
                     subOut.data = (uint8_t *)packet.data;
                     subOut.pts = pts;
                     subOut.durationMS = duration;
+
+					tmptrackId = pid;
+					tmpdata = (uint8_t *)packet.data;
+//					tmpdata = (uint8_t *)&packet.data;
+					//tmplen;
+					tmppts = pts;
+					tmpduration = duration;
+					tmpdata = ostrcat(subOut.data, NULL, 0, 0);
+
+					//*tmptype;
+printf("[LIBEPLAYER3/FFMPEGThread] set tmpdata=%s\n", tmpdata);
+printf("[LIBEPLAYER3/FFMPEGThread] set tmppts=%lld\n", tmppts);
+printf("[LIBEPLAYER3/FFMPEGThread] set tmpduration=%lld\n", tmpduration);
+
+
                     if (context->output->subtitle->Write(context, &subOut) < 0)
                     {
                         ffmpeg_err("writing data to teletext fifo failed\n");
                     }
+
+			char* tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, "duration=", 1, 0);
+			tmpstr = ostrcat(tmpstr, ollutoa(tmpduration), 1, 1);
+			tmpstr = ostrcat(tmpstr, ";pts=", 1, 0);;
+			tmpstr = ostrcat(tmpstr, ollutoa(tmppts), 1, 0);;
+			tmpstr = ostrcat(tmpstr, ";trackid=", 1, 0);;
+			tmpstr = ostrcat(tmpstr, oitoa(tmptrackId), 1, 0);
+			tmpstr = ostrcat(tmpstr, ";subtext=", 1, 0);;
+			tmpstr = ostrcat(tmpstr, tmpdata, 1, 0);;
+
+			free(subtext), subtext = NULL;
+			subtext = ostrcat(subtext, tmpstr, 1, 0);
+			free(tmpstr), tmpstr = NULL;
+
+//			tmpduration = 0;
+			tmppts = 0;
+			tmptrackId = 0;
+
+
+printf("[LIBEPLAYER3/FFMPEGThread] set subtext: %s\n", subtext);
+
                 }
             }
         }
@@ -1923,6 +2176,10 @@ int32_t container_ffmpeg_init(Context_t *context, PlayFiles_t *playFilesNames)
     latestPts = 0;
     isContainerRunning = 1;
     res = container_ffmpeg_update_tracks(context, playFilesNames->szFirstFile, 1);
+
+	ffmpeg_printf(1, "aaaaaaaaaaaaa\n");
+	ReadSubtitles(context, playFilesNames->szFirstFile);
+    ffmpeg_printf(1, "bbbbbbbbbbbbbbb\n");
     return res;
 }
 
@@ -2996,6 +3253,184 @@ static int32_t container_ffmpeg_switch_subtitle(Context_t *context, int32_t *arg
      */
     int64_t sec = -5;
     context->playback->Command(context, PLAYBACK_SEEK, (void*)&sec);
+	enablesub = 1;
+    return cERR_CONTAINER_FFMPEG_NO_ERROR;
+}
+
+static int32_t container_ffmpeg_get_subtext(Context_t* context, char ** data)
+//static int32_t container_ffmpeg_get_subtext(Context_t* context, SubtitleOut_t input)
+//static int32_t container_ffmpeg_get_subtext(Context_t* context, void **data)
+//static int32_t container_ffmpeg_get_subtext(Context_t* context, SubtitleOut_t **data)
+//static int32_t container_ffmpeg_get_subtext(Context_t* context, SubtitleOut_t *data)
+//static int32_t container_ffmpeg_get_subtext(Context_t* context, SubtitleOut_t ** data)
+{
+
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] start\n");
+
+//if(tmpduration != 0 && subtext != NULL)
+if(enablesub == 1 && subtext != NULL)
+{
+	printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] set data\n");
+/*
+	char* tmpstr = NULL;
+	tmpstr = ostrcat("duration=", NULL, 0, 0);
+	tmpstr = ostrcat(tmpstr, ollutoa(tmpduration), 1, 1);
+	tmpstr = ostrcat(tmpstr, ";pts=", 1, 0);;
+	tmpstr = ostrcat(tmpstr, ollutoa(tmppts), 1, 0);;
+	tmpstr = ostrcat(tmpstr, ";trackid=", 1, 0);;
+	tmpstr = ostrcat(tmpstr, oitoa(tmptrackId), 1, 0);
+	tmpstr = ostrcat(tmpstr, ";subtext=", 1, 0);;
+	tmpstr = ostrcat(tmpstr, subtext, 1, 0);;
+	*data = ostrcat(tmpstr, NULL, 0, 0);
+	free(tmpstr), tmpstr = NULL;
+	free(subtext), subtext = NULL;
+	tmpduration = 0;
+	tmppts = 0;
+	tmptrackId = 0;
+*/
+	*data = ostrcat(subtext, NULL, 0, 0);
+	free(subtext), subtext = NULL;
+
+}
+
+
+
+//*data = ostrcat("duration=", olutoa(tmpduration), 0, 1);
+//*data = ostrcat(data, ";subtext=", 1, 0);
+//*data = ostrcat(data, "subtext", 1, 0);
+
+//*data = ostrcat(subtext, NULL, 0, 0);
+
+
+
+
+/*
+					SubtitleOut_t subOut;
+                    memset(&subOut, 0, sizeof(subOut));
+                    subOut.trackId = tmptrackId;
+                    subOut.data = (uint8_t *)subtext;
+                    subOut.pts = tmppts;
+                    subOut.durationMS = tmpduration;
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] start1\n");
+memset(&data, 0, sizeof(data));
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] start1a\n");
+
+*data = subOut;
+
+//
+
+//                    SubtitleOut_t subOut;
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] start2\n");
+
+                    memset(&data, 0, sizeof(data));
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] start3\n");
+
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] tmptrackId=%d\n", tmptrackId);
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] data.trackId=%d\n", data->trackId);
+					  data->trackId = tmptrackId;
+//                    subOut.data = (uint8_t *)packet.data;
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] start3\n");
+
+                    data->data = (uint8_t *)subtext;
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] start4\n");
+
+                    data->pts = tmppts;
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] start5\n");
+
+                    data->durationMS = tmpduration;
+
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] check subtext=%s\n", subtext);
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] check tmpdata=%s\n", tmpdata);
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] check data->data=%s\n", data->data);
+
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] check tmppts=%lld\n", tmppts);
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] check data->pts=%lld\n", data->pts);
+
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] check tmpduration=%lld\n", tmpduration);
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] check data->durationMS=%lld\n", data->durationMS);
+*/
+printf("[LIBEPLAYER3/container_ffmpeg_get_subtext] end\n");
+
+/*
+SubtitleOut_t *out  = NULL;
+out = (SubtitleOut_t*) data;
+
+printf("##########################\n");
+printf("void *data.data: %s\n", out->data);
+//printf("void *data.pts: %lld\n", &data->pts);
+//printf("void *data.duration: %lld\n", &data->durationMS);
+printf("##########################\n");
+*/
+//	*data = (char *)packet->data;
+//	char* subtext = NULL;
+//	*data = ostrcat(subtext, NULL, 0, 0);
+//	SubtitleOut_t subOut = input;
+//	subOut1 = subOut;
+//	SubtitleOut_t *out  = NULL;
+//	SubtitleOut_t subOut = (SubtitleOut_t*) data;
+
+//	SubtitleOut_t *subOut  = NULL;
+//	 *subOut;
+//	SubtitleOut_t *subOut = (SubtitleOut_t*) data;
+//	SubtitleOut_t *subOut = (SubtitleOut_t*) data;
+//SubtitleOut_t*
+
+
+//data = &subOut;
+
+//printf("555 data: %s\n", (char*)data->data);
+
+
+//	SubtitleOut_t *subOut;
+//	subOut = (SubtitleOut_t*) data;
+
+//	SubtitleOutputDef_t* out = (SubtitleOutputDef_t*)argument;
+
+//	printf("333subOut.data: %s\n", subOut.data);
+/*
+
+printf("##########################\n");
+
+printf("data: %s\n", tmpdata);
+printf("pts: %lld\n", tmppts);
+printf("duration: %lld\n", tmpduration);
+
+printf("subtext1: %s\n", subtext);
+printf("subtext2: %d\n", subtext);
+printf("##########################\n");
+printf("subOut.data: %s\n", *data->data);
+printf("subOut.pts: %lld\n", data.pts);
+printf("subOut.durationMS: %lld\n", data.durationMS);
+printf("##########################\n");
+
+
+                    SubtitleOut_t subOut;
+                    memset(&subOut, 0, sizeof(subOut));
+                    subOut.trackId = tmptrackId;
+//                    subOut.data = (uint8_t *)packet.data;
+                    subOut.data = (uint8_t *)subtext;
+
+                    subOut.pts = tmppts;
+                    subOut.durationMS = tmpduration;
+
+printf("subOut.data: %s\n", subOut.data);
+printf("subOut.pts: %lld\n", subOut.pts);
+printf("subOut.durationMS: %lld\n", subOut.durationMS);
+
+
+*data = (SubtitleOut_t*)&subOut;
+data = &subOut;
+
+printf("data.durationMS: %lld\n", (void*)data->durationMS);
+
+
+//printf("data.data: %s\n", data->data);
+
+printf("##########################\n");
+
+//printf("22subOut2.data: %s\n", subOut2.data);
+//printf("22ubOut2.data: %d\n", subOut2.data);
+*/
     return cERR_CONTAINER_FFMPEG_NO_ERROR;
 }
 
@@ -3073,7 +3508,8 @@ static int32_t Command(void  *_context, ContainerCmd_t command, void *argument)
        command != CONTAINER_SET_BUFFER_SIZE && 
        command != CONTAINER_GET_BUFFER_SIZE && 
        command != CONTAINER_GET_BUFFER_STATUS &&
-       command != CONTAINER_STOP_BUFFER && 
+       command != CONTAINER_STOP_BUFFER &&
+	   command != CONTAINER_GET_SUBTEXT &&
        command != CONTAINER_INIT && !avContextTab[0])
     {
         return cERR_CONTAINER_FFMPEG_ERR;
@@ -3171,6 +3607,72 @@ static int32_t Command(void  *_context, ContainerCmd_t command, void *argument)
     {
 	    ret = container_stop_buffer();
 	    break;
+    }
+    case CONTAINER_GET_SUBTEXT:
+    {
+printf("[LIBEPLAYER3/Command] start\n");
+
+        ret = container_ffmpeg_get_subtext(context, (char **)argument);
+
+//        ret = container_ffmpeg_get_subtext(context, (SubtitleOut_t **)argument);
+
+//		(SubtitleOut_t *)argument;
+//		memset(&argument, 0, sizeof(argument));
+
+//        ret = container_ffmpeg_get_subtext(context, SubtitleOut_t ** argument);
+
+printf("[LIBEPLAYER3/Command] end\n");
+//		data = ostrcat(subtext, NULL, 0, 0);
+//		(char **)argument = subtext;
+//argument = (void**)&subOut;
+
+/*
+//	SubtitleOutputDef_t* out = (SubtitleOutputDef_t*)argument;
+
+//printf("333subOut.data: %s\n", subOut.dat
+
+
+ //       ret = container_ffmpeg_get_subtext(context, (SubtitleOut_t)argument);
+
+                    SubtitleOut_t subOut;
+                    memset(&subOut, 0, sizeof(subOut));
+                    subOut.trackId = tmptrackId;
+//                    subOut.data = (uint8_t *)packet.data;
+                    subOut.data = (uint8_t *)subtext;
+
+                    subOut.pts = tmppts;
+                    subOut.durationMS = tmpduration;
+printf("##########################\n");
+printf("subOut.data: %s\n", subOut.data);
+printf("subOut.pts: %lld\n", subOut.pts);
+printf("subOut.duration: %lld\n", subOut.durationMS);
+printf("##########################\n");
+ 
+       ret = container_ffmpeg_get_subtext(context, (void*)&subOut);
+//		*((SubtitleOut_t*)argument) = subOut;
+argument = (void*)&subOut;
+
+
+                    SubtitleOut_t argument;
+                    memset(&argument, 0, sizeof(argument));
+                    argument.trackId = tmptrackId;
+//                    subOut.data = (uint8_t *)packet.data;
+                    argument.data = (uint8_t *)subtext;
+
+                    argument.pts = tmppts;
+                    argument.durationMS = tmpduration;
+printf("##########################\n");
+printf("argument.data: %s\n", argument.data);
+printf("argument.pts: %lld\n", argument.pts);
+printf("argument.duration: %lld\n", argument.durationMS);
+printf("##########################\n");
+ 
+       ret = container_ffmpeg_get_subtext(context, (void**)&argument);
+//		*((SubtitleOut_t*)argument) = subOut;
+//argument = (void**)&subOut;
+*/
+
+        break;
     }
     //obi (end)
     default:
