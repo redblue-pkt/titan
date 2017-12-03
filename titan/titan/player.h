@@ -3673,6 +3673,7 @@ void playersend_ff_fr_event(gdouble rate) {
 }
 #endif
 
+#ifdef EXTEPLAYER3
 char* getsubtext()
 {
 	char* tmpstr = NULL;
@@ -3702,10 +3703,14 @@ char* getsubtext()
 	debug(150, "trackid %s\n", trackid);
 
 	if(trackid != NULL)
-		printf("[TITAN/getsubtext] trackid %d\n", atoi(trackid));
+	{
+//		printf("[TITAN/getsubtext] trackid %d\n", atoi(trackid));
+		debug(150, "subtext %d\n", atoi(trackid);
+	}
 
 	subtext = oregex(".*;subtext=(.*).*", tmpstr);
-	printf("[TITAN/getsubtext] subtext %s\n", subtext);
+//	printf("[TITAN/getsubtext] subtext %s\n", subtext);
+	debug(150, "subtext %s\n", subtext);
 
 	if(subtitlethread == NULL)
 		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
@@ -3713,4 +3718,6 @@ char* getsubtext()
 
 	return subtext;
 }
+#endif
 
+#endif
