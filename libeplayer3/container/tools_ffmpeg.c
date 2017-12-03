@@ -22,6 +22,95 @@
 #define MINMALLOC 4096
 #include <ctype.h>
 
+char* ostrshrink(char* value)
+{
+	int len = 0;
+	char* buf = NULL;
+
+	if(value == NULL) return NULL;
+
+	len = strlen(value);
+	if(len == 0) return value;
+
+	buf = malloc(len + 1);
+	if(buf == NULL)
+		return value;
+
+	memcpy(buf, value, len);
+	free(value);
+	buf[len] = '\0';
+
+	return buf;
+}
+
+char* oitoa(int value)
+{
+	char *buf = NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	sprintf(buf, "%d", value);
+	buf = ostrshrink(buf);
+
+	return buf;
+}
+
+char* olutoa(unsigned long value)
+{
+	char *buf = NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	sprintf(buf, "%lu", value);
+	buf = ostrshrink(buf);
+
+	return buf;
+}
+
+char* ollutoa(uint64_t value)
+{
+	char *buf = NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	sprintf(buf, "%llu", value);
+	buf = ostrshrink(buf);
+
+	return buf;
+}
+
+char* oitoa64(off64_t value)
+{
+	char *buf = NULL;
+
+	buf = malloc(MINMALLOC);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	sprintf(buf, "%lld", value);
+	buf = ostrshrink(buf);
+
+	return buf;
+}
+
 int file_exist(char* filename)
 {
 	if(access(filename, F_OK) == 0)

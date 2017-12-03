@@ -1267,21 +1267,30 @@ int playerstart(char* file)
 
 //			if(ostrcmp(getconfig("av_ac3mode", NULL), "downmix") == 0)
 #ifndef MIPSEL
-			printf("status.downmix; %d\n", status.downmix);
-
-
+			int tmpdownmix = 0;
 			char* downmix = readfiletomem(getconfig("ac3dev", NULL), 1);
-printf("ac3dev: %s\n",getconfig("ac3dev", NULL));
-printf("downmix: %s\n",downmix);
-			if(ostrcmp(downmix, "passthrough") == 0)
-				status.downmix = 0;
-			else
-				status.downmix = 1;
+//			printf("ac3dev: %s\n",getconfig("ac3dev", NULL));
+			debug(150, "ac3dev %s\n", getconfig("ac3dev", NULL));
 
-printf("status.downmix: %d\n",status.downmix);
-sleep(5);
-			if(status.downmix == 1)
+//			printf("downmix: %s\n",downmix);
+			debug(150, "downmix %s\n", downmix);
+
+			if(ostrcmp(downmix, "passthrough") == 0)
+				tmpdownmix = 0;
+			else
+				tmpdownmix = 1;
+
+			free(downmix), downmix == NULL;
+			if(tmpdownmix != status.downmix)
+				debug(150, "change downmix %d to %d\n", status.downmix, tmpdownmix);
+
+
+//			printf("status.downmix: %d\n",status.downmix);
+			debug(150, "status.downmix %d\n", status.downmix);
+
+			if(tmpdownmix == 1)
 			{
+				debug(150, "enable dts downmix\n");
 				dts_software_decoder_set(1);
 				stereo_software_decoder_set(1);
 			}
@@ -3670,130 +3679,38 @@ char* getsubtext()
 	if(player && player->container && player->container->selectedContainer)
 		player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)&tmpstr);
 
+	char* duration = oregex(".*duration=(.*);pts=.*", tmpstr);
+//	printf("[TITAN/getsubtext] duration %s\n", duration);
+	debug(150, "duration %s\n", duration);
 
-//duration = oregex(".*([0-9]{8,8}.*[0-9]{4,4}).*", subtext);
-//duration = oregex(".*duration=(.*);.*", subtext);
+	if(duration != NULL)
+	{
+//		printf("[TITAN/getsubtext] duration %d\n", atoi(duration));
+		debug(150, "duration %d\n", atoi(duration));
+		duration_ms = atoi(duration);
+	}
 
-char* duration = oregex(".*duration=(.*);pts=.*", tmpstr);
-printf("[TITAN/getsubtext] duration %s\n", duration);
-if(duration != NULL)
-{
-	printf("[TITAN/getsubtext] duration %d\n", atoi(duration));
-	duration_ms = atoi(duration);
-}
+	char* pts = oregex(".*;pts=(.*);trackid=.*", tmpstr);
+//	printf("[TITAN/getsubtext] pts %s\n", pts);
+	debug(150, "pts %s\n", pts);
 
-char* pts = oregex(".*;pts=(.*);trackid=.*", tmpstr);
-printf("[TITAN/getsubtext] pts %s\n", pts);
-if(pts != NULL)
-	printf("[TITAN/getsubtext] pts %d\n", atoi(pts));
+	if(pts != NULL)
+		printf("[TITAN/getsubtext] pts %d\n", atoi(pts));
 
-char* trackid = oregex(".*;trackid=(.*);trackid=.*", tmpstr);
-printf("[TITAN/getsubtext] trackid %s\n", trackid);
-if(trackid != NULL)
-	printf("[TITAN/getsubtext] trackid %d\n", atoi(trackid));
+	char* trackid = oregex(".*;trackid=(.*);trackid=.*", tmpstr);
+//	printf("[TITAN/getsubtext] trackid %s\n", trackid);
+	debug(150, "trackid %s\n", trackid);
 
-subtext = oregex(".*;subtext=(.*).*", tmpstr);
-printf("[TITAN/getsubtext] subtext %s\n", subtext);
+	if(trackid != NULL)
+		printf("[TITAN/getsubtext] trackid %d\n", atoi(trackid));
+
+	subtext = oregex(".*;subtext=(.*).*", tmpstr);
+	printf("[TITAN/getsubtext] subtext %s\n", subtext);
 
 	if(subtitlethread == NULL)
 		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
 
 
-/*
-duration=
-duration=", ollutoa(tmpduration), 0, 1);
-tmpstr = ostrcat(tmpstr, ";pts=", 1, 0);;
-tmpstr = ostrcat(tmpstr, ollutoa(tmppts), 1, 0);;
-tmpstr = ostrcat(tmpstr, ";trackid=", 1, 0);;
-tmpstr = ostrcat(tmpstr, ollutoa(tmptrackId), 1, 0);
-tmpstr = ostrcat(tmpstr, ";subtext=", 1, 0);;
-tmpstr = ostrcat(tmpstr, subtext, 1, 0);
-
-	running_pts = pos / 11111LL;
-	decoder_ms = running_pts / 90;
-		
-	if(subtitlethread == NULL)
-		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
-
-*/
-/*
-	SubtitleOut_t *data;
-printf("[TITAN/getsubtext start]\n");
-	if(player && player->container && player->container->selectedContainer)
-//		player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)&data);
-		player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)data);
-
-   if (data == NULL)
-        return NULL;
-printf("[TITAN/getsubtext] 2\n");
-
-printf("data.data: %s\n", &data->data);
-
-printf("data.data: %s\n", data->data);
-printf("data.pts: %lld\n", data->pts);
-printf("data.duration: %lld\n", data->durationMS);
-
-SubtitleOut_t *data;
-printf("111111111111111\n");
-
-
-	if(player && player->container && player->container->selectedContainer)
-		player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)data);
-//		player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)data);
-
-printf("222222222222222\n");
-
-   if (data == NULL)
-        return NULL;
-printf("-------------------------------------\n");
-
-printf("titan &data.data %s\n", (char*)&data->data);
-
-SubtitleOut_t *out  = NULL;
-printf("333333333333333\n");
-
-out = (SubtitleOut_t*) data;
-printf("444444444444444\n");
-
-printf("out.duration: %lld\n", out->durationMS);
-printf("555555555555555\n");
-*/
-/*
-printf(out->pts);
-printf("444444444444444\n");
-
-printf(out->data);
-printf("444444444444444\n");
-
-
-printf("out.pts: %u\n", out->pts);
-printf("out1.data: %u\n", out->data);
-printf("out2.data: %d\n", out->data);
-
-
-char *Encoding      = NULL;
-printf("Encoding:%s Text:%s Len:%d\n", Encoding, (char*) out->data, out->len);
-printf("555555555555555\n");
-printf("-------------------------------------\n");
-
-printf("data.pts: %lld\n", data->pts);
-printf("data.durationMS: %lld\n", data->durationMS);
-printf("data1: %lld\n", data->data);
-printf("data2: %d\n", data->data);
-printf("data3: %s\n", data->data);
-printf("data4: %s\n", (char*)data->data);
-printf("data5: %s\n", (char*)data->data);
-printf("-------------------------------------\n");
-
-*/
-/*
-	struct skin* framebuffer = getscreen("framebuffer");
-	struct skin* subtitle = getscreen("gstsubtitle");
-
-//	changetext(subtitle, (char*) data->data);
-	changetext(subtitle, subtext);
-	drawscreen(subtitle, 0, 0);
-*/
 	return subtext;
 }
 
