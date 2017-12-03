@@ -1280,10 +1280,11 @@ int playerstart(char* file)
 			else
 				tmpdownmix = 1;
 
-			free(downmix), downmix == NULL;
+			free(downmix), downmix = NULL;
 			if(tmpdownmix != status.downmix)
+			{
 				debug(150, "change downmix %d to %d\n", status.downmix, tmpdownmix);
-
+			}
 
 //			printf("status.downmix: %d\n",status.downmix);
 			debug(150, "status.downmix %d\n", status.downmix);
@@ -3682,35 +3683,45 @@ char* getsubtext()
 
 	char* duration = oregex(".*duration=(.*);pts=.*", tmpstr);
 //	printf("[TITAN/getsubtext] duration %s\n", duration);
-	debug(150, "duration %s\n", duration);
+	debug(150, "duration %s", duration);
+
+	int debugdummy = 1;
 
 	if(duration != NULL)
 	{
+		debugdummy = 1;
 //		printf("[TITAN/getsubtext] duration %d\n", atoi(duration));
-		debug(150, "duration %d\n", atoi(duration));
+//		debug(150, "duration %d", atoi(duration));
 		duration_ms = atoi(duration);
 	}
 
 	char* pts = oregex(".*;pts=(.*);trackid=.*", tmpstr);
 //	printf("[TITAN/getsubtext] pts %s\n", pts);
-	debug(150, "pts %s\n", pts);
+	debug(150, "pts %s", pts);
 
 	if(pts != NULL)
-		printf("[TITAN/getsubtext] pts %d\n", atoi(pts));
+	{
+		debugdummy = 1;
+//		printf("[TITAN/getsubtext] pts int %d\n", atoi(pts));
+//		debug(150, "pts int %d", atoi(pts);
+		debugdummy = 0;
+	}
 
 	char* trackid = oregex(".*;trackid=(.*);trackid=.*", tmpstr);
 //	printf("[TITAN/getsubtext] trackid %s\n", trackid);
-	debug(150, "trackid %s\n", trackid);
+	debug(150, "trackid %s", trackid);
 
 	if(trackid != NULL)
 	{
-//		printf("[TITAN/getsubtext] trackid %d\n", atoi(trackid));
-		debug(150, "subtext %d\n", atoi(trackid);
+		debugdummy = 1;
+//		printf("[TITAN/getsubtext] trackid int %d\n", atoi(trackid));
+//		debug(150, "trackid int %d", atoi(trackid);
+		debugdummy = 0;
 	}
 
 	subtext = oregex(".*;subtext=(.*).*", tmpstr);
 //	printf("[TITAN/getsubtext] subtext %s\n", subtext);
-	debug(150, "subtext %s\n", subtext);
+	debug(150, "subtext %s", subtext);
 
 	if(subtitlethread == NULL)
 		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
