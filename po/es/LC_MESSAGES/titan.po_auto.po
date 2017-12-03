@@ -1967,7 +1967,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:781
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:761 mc_videoplayer.h:900 play.h:1654
+#: mc_pictureplayer.h:461 mc_videoplayer.h:764 mc_videoplayer.h:903 play.h:1654
 msgid "Can't start playback !"
 msgstr "La Reproduccion no se pudo iniciar"
 
@@ -3302,9 +3302,9 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
-#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:336
+#: mc_videoplayer.h:764 mc_videoplayer.h:799 mc_videoplayer.h:903
+#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:996 menu.h:998 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
@@ -3861,7 +3861,7 @@ msgstr ""
 #: mc_audioplayer.h:520 mc_audioplayer.h:564 mc_audioplayer.h:684
 #: mc_iptvplayer.h:267 mc_iptvplayer.h:311 mc_iptvplayer.h:453
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
-#: mc_videoplayer.h:605 mc_videoplayer.h:679 mc_videoplayer.h:866
+#: mc_videoplayer.h:608 mc_videoplayer.h:682 mc_videoplayer.h:869
 #: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
 msgid "Filelist-Mode"
 msgstr "Archivos-Modulos"
@@ -4057,7 +4057,7 @@ msgstr ""
 "Encontrado corriente de pago, por favor visite el sitio web oficial, pedir "
 "este Stream y vuelve a intentarlo!"
 
-#: mc_videoplayer.h:796
+#: mc_videoplayer.h:799
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr ""
 
@@ -6120,9 +6120,9 @@ msgstr "Lista de Menus"
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
-#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:336
+#: mc_videoplayer.h:764 mc_videoplayer.h:799 mc_videoplayer.h:903
+#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
 #: mightyupload.h:69 mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38
 #: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138
@@ -6720,9 +6720,9 @@ msgstr "Ö"
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:333
-#: mc_videoplayer.h:761 mc_videoplayer.h:796 mc_videoplayer.h:900
-#: mc_videoplayer.h:916 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:336
+#: mc_videoplayer.h:764 mc_videoplayer.h:799 mc_videoplayer.h:903
+#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:996 menu.h:998 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
@@ -7412,7 +7412,7 @@ msgid "Playlist download"
 msgstr ""
 
 #: mc_audioplayer.h:586 mc_iptvplayer.h:342 mc_pictureplayer.h:341
-#: mc_videoplayer.h:721
+#: mc_videoplayer.h:724
 msgid "Playlist-Mode"
 msgstr "Playlist-Modulos"
 
@@ -7855,7 +7855,7 @@ msgid "Ram"
 msgstr "RAM"
 
 #: mc_audioplayer.h:565 mc_global.h:566 mc_global.h:594 mc_global.h:1135
-#: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:680
+#: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:683
 #: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Random"
 msgstr ""
@@ -8196,7 +8196,7 @@ msgstr "Renombrar"
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1140
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:313 mc_pictureplayer.h:157
-#: mc_pictureplayer.h:322 mc_videoplayer.h:436 mc_videoplayer.h:681
+#: mc_pictureplayer.h:322 mc_videoplayer.h:439 mc_videoplayer.h:684
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:497 skins_mc_skin.xml.h:48
 msgid "Repeat"
 msgstr "Repetir"
@@ -8206,7 +8206,7 @@ msgid "Repeat type"
 msgstr "modo de repeticion"
 
 #: mc_audioplayer.h:408 mc_global.h:1138 mc_iptvplayer.h:141
-#: mc_pictureplayer.h:150 mc_videoplayer.h:429
+#: mc_pictureplayer.h:150 mc_videoplayer.h:432
 msgid "Repeat-On"
 msgstr "Modo repeticion On"
 
@@ -9257,7 +9257,7 @@ msgid "Sharename can't be empty!"
 msgstr "ERROR: nombre de recurso compartido debe ingresar!"
 
 #: infobar.h:694 mc_audioplayer.h:333 mc_iptvplayer.h:106 mc_main.h:276
-#: mc_pictureplayer.h:124 mc_videoplayer.h:333 menu.h:215
+#: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -9671,7 +9671,7 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr "Iniciar WLAN?"
 
-#: mc_videoplayer.h:916 player.h:319
+#: mc_videoplayer.h:919 player.h:319
 msgid "Start at last position ?"
 msgstr "Volver a empezar desde la ultima posicion?"
 
