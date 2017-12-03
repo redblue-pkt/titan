@@ -27,6 +27,7 @@ typedef enum {
 typedef struct Track_s {
     char *                Name;
     char *                Encoding;
+    char *                File;
     int32_t               Id;
     int32_t               AVIdx;
 
