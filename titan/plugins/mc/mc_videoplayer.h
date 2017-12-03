@@ -109,7 +109,10 @@ void screenmc_videoplayer()
 			refresh = 1;
 		else
 			refresh = 0;
-			
+
+#ifdef EXTEPLAYER3
+		getsubtext();
+#endif
 		if(status.play == 1 || status.playspeed != 0)
 		{
 			playinfobarcount ++;
