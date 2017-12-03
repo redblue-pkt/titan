@@ -1706,7 +1706,7 @@ msgstr ""
 msgid "Browser Resolution"
 msgstr "Browser Auflösung"
 
-#: player.h:1730
+#: player.h:1797
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Stream wird zwischengespeichert - abbrechen mit Exit"
 
@@ -3354,7 +3354,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:313 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
+#: player.h:319 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
 #: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
@@ -5986,13 +5986,13 @@ msgstr "Marker Farbe"
 msgid "Marker"
 msgstr ""
 
-#: play.h:1882
+#: play.h:1890
 msgid "Marker autoseek is started"
 msgstr ""
 "Automatische Suche nach Markierungen\n"
 "gestartet"
 
-#: play.h:1893
+#: play.h:1901
 msgid "Marker autoseek is stopped"
 msgstr ""
 "Automatische Suche nach Markierungen\n"
@@ -6258,8 +6258,8 @@ msgstr "Menüliste"
 #: network.h:823 network.h:877 novamov.h:35 novamov.h:97 novamov.h:103
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
-#: played.h:91 played.h:103 played.h:115 played.h:172 player.h:313 play.h:614
-#: play.h:1317 play.h:1354 play.h:1654 play.h:1882 play.h:1893 possetup.h:98
+#: played.h:91 played.h:103 played.h:115 played.h:172 player.h:319 play.h:614
+#: play.h:1317 play.h:1354 play.h:1654 play.h:1890 play.h:1901 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
@@ -6867,9 +6867,9 @@ msgstr "Ö"
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:313 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
+#: player.h:319 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
 #: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453 play.h:1654
-#: play.h:1882 play.h:1893 plugins_dlna_skin.xml.h:7
+#: play.h:1890 play.h:1901 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -9806,7 +9806,7 @@ msgstr "Satellitenliste (Werkseinstellung) wiederherstellen?"
 msgid "Start Wlan ?"
 msgstr "Möchten Sie WLAN jetzt starten?"
 
-#: mc_videoplayer.h:916 player.h:313
+#: mc_videoplayer.h:916 player.h:319
 msgid "Start at last position ?"
 msgstr "An letzter Stelle fortsetzen?"
 
