@@ -1716,6 +1716,7 @@ playerstart:
 					}
 				}
 #else
+				getsubtext();
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
 					if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
@@ -1749,7 +1750,11 @@ playerstart:
 #endif
 					}
 				}
-		
+
+				if(rcret == getrcconfigint("rchelp", NULL))
+					printf("getsubtext: %s\n", getsubtext());
+
+
 				if(rcret == getrcconfigint("rcpip", NULL))
 				{
 					if(status.pipservice->videodev == NULL)
