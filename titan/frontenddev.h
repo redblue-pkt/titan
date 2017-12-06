@@ -2147,6 +2147,26 @@ struct dvb_frontend_info* fegetinfo(struct dvbdev* node, int fd)
 	return feinfo;
 }
 
+#if defined DTV_ENUM_DELSYS
+int fesetDeliverySystem(fe_delivery_system_t delsys, int fd)
+{
+	struct dtv_property p[2];
+	memset(p, 0, sizeof(p));
+	struct dtv_properties cmdseq;
+	cmdseq.props = p;
+	cmdseq.num = 2;
+	p[0].cmd = DTV_CLEAR;
+	p[1].cmd = DTV_DELIVERY_SYSTEM;
+	p[1].u.data = delsys;
+	if (ioctl(fd, FE_SET_PROPERTY, &cmdseq) == -1)
+	{
+		perr("[DTV_ENUM_DELSYS] FE_SET_PROPERTY failed");
+		return 0;
+	}
+	return 1;
+}
+#endif
+
 int fegetdev()
 {
 	int i, y, fd = -1, count = 0;
@@ -2168,6 +2188,13 @@ int fegetdev()
 		return count;
 	}
 
+#if defined DTV_ENUM_DELSYS	
+	if(getconfig("tempnim", NULL) == NULL)
+		addconfig("tempnim", "/tmp/tempnim");
+	if(file_exist(getconfig("tempnim", NULL)) == 1)
+		unlink(getconfig("tempnim", NULL)); 
+#endif
+	
 	for(i = 0; i < MAXDVBADAPTER; i++)
 	{
 		for(y = 0; y < MAXFRONTENDDEV; y++)
@@ -2176,7 +2203,99 @@ int fegetdev()
 			fd = feopen(NULL, buf);
 			if(fd >= 0)
 			{
+				
+#if defined DTV_ENUM_DELSYS
+				struct dtv_property p[1];
+				memset(p, 0, sizeof(p));
+				p[0].cmd = DTV_ENUM_DELSYS;
+				struct dtv_properties cmdseq;
+				cmdseq.num = 1;
+				cmdseq.props = p;
+				int type = -1;
+				int mz = -1;
+				struct dvb_frontend_info* t_feinfo = NULL;
+					
+				//tricky... temporäre nim_sockets bauen da ansonsten viel im code geändert werden müßte
+				free(tmpstr); tmpstr= NULL;
+				free(tmpstr1); tmpstr1= NULL;
+				tmpstr = ostrcat("NIM Socket " , oitoa(y), 0, 1);
+				tmpstr = ostrcat(tmpstr , ":\n", 1, 0);
+				
+				t_feinfo = (struct dvb_frontend_info*)malloc(sizeof(struct dvb_frontend_info));
+				if (ioctl(fd, FE_GET_PROPERTY, &cmdseq) >= 0)
+				{
+					for (; p[0].u.buffer.len > 0; p[0].u.buffer.len--)
+					{
+						memset(t_feinfo, 0, sizeof(struct dvb_frontend_info));
+						fe_delivery_system_t delsys = (fe_delivery_system_t)p[0].u.buffer.data[p[0].u.buffer.len - 1];
+						printf("--------> delsys %d devive: %d\n", delsys, y);
+						fesetDeliverySystem(delsys, fd);
+						if (ioctl(fd, FE_GET_INFO, t_feinfo) < 0)
+						{
+				  		perr("[DTV_ENUM_DELSYS] ioctl FE_GET_INFO failed");
+				  	}
+				  	else
+				  	{
+				  		printf("------> name %s %d\n", t_feinfo->name, t_feinfo->type);
+				  		if(type != t_feinfo->type)
+				  		{
+				  			type = t_feinfo->type;
+				  			mz = mz + 1;
+				  			switch (type)
+								{
+									case FE_QPSK:
+									{
+										tmpstr = ostrcat(tmpstr , "        Mode ", 1, 0);
+										tmpstr = ostrcat(tmpstr , oitoa(feSatellite), 1, 1);
+										tmpstr = ostrcat(tmpstr , ": DVB-S/S2\n", 1, 0);
+										//tmpstr1 = ostrcat(tmpstr1 , oitoa(feSatellite), 1, 1);
+										//tmpstr1 = ostrcat(tmpstr1 , "\n", 1, 0);
+												
+										break;
+									}
+									case FE_QAM:
+									{
+										tmpstr = ostrcat(tmpstr , "        Mode ", 1, 0);
+										tmpstr = ostrcat(tmpstr , oitoa(feCable), 1, 1);
+										tmpstr = ostrcat(tmpstr , ": DVB-C\n", 1, 0);
+										//tmpstr1 = ostrcat(tmpstr1 , oitoa(feCable), 1, 1);
+										//tmpstr1 = ostrcat(tmpstr1 , "\n", 1, 0);
+										break;
+									}
+									case FE_OFDM:
+									{
+										tmpstr = ostrcat(tmpstr , "        Mode ", 1, 0);
+										tmpstr = ostrcat(tmpstr , oitoa(feTerrestrial), 1, 1);
+										tmpstr = ostrcat(tmpstr , ": DVB-T/T2\n", 1, 0);
+										//tmpstr1 = ostrcat(tmpstr1 , oitoa(feTerrestrial), 1, 1);
+										//tmpstr1 = ostrcat(tmpstr1 , "\n", 1, 0);
+										break;
+									}
+				  			}
+				  		}
+						}
+					}
+					if(mz > 0)
+					{
+						tmpstr = ostrcat(tmpstr , "        Frontend_Device: ", 1, 0);	
+						tmpstr = ostrcat(tmpstr , oitoa(y), 1, 1);
+						tmpstr = ostrcat(tmpstr , "\n", 1, 0);		
+						tmpstr = ostrcat(tmpstr , "        I2C_Device: x\n", 1, 0);	
+						writesys(getconfig("tempnim", NULL), tmpstr, 2);
+						//fehyprid = ostrcat(tmpstr1 , NULL, 0, 0);	
+					}
+					free(tmpstr); tmpstr = NULL;
+					free(tmpstr1); tmpstr1 = NULL;
+				}
+				else
+				{
+					perr("[DTV_ENUM_DELSYS] ioctl FE_GET_PROPERTY failed");
+				}
+				free(t_feinfo); t_feinfo = NULL;
+#endif				
+				
 				fehyprid = gethypridtunerchoicesvalue(y);
+				
 				if(fehyprid != NULL)
 				{
 					if(y < 10)
@@ -2197,6 +2316,7 @@ int fegetdev()
 				}
 				
 				feinfo = fegetinfo(NULL, fd);
+
 				if(feinfo != NULL)
 				{
 					count++;
@@ -2310,7 +2430,10 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	char* realname = gethypridtunerchoicesvaluename(tuner->devnr, value);
 	
 	if(tuner->fd == -1)
-		tuner->fd = feopen(tuner, NULL);
+	{
+		if(feopen(tuner, NULL) < 0)
+			err("open tuner dev");
+	}
 	else
 		wasopen = 1;
 	
@@ -2337,9 +2460,10 @@ int fechangetype(struct dvbdev* tuner, char* value)
 			//fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
 			//to do set voltage --> wenn der Tuner es kann
 			//fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
-			if(realname != NULL && ostrstr(realname, "DVB-T2") != NULL)
+			//if(realname != NULL && ostrstr(realname, "DVB-T2") != NULL)
+			/*if(realname != NULL && ostrstr(realname, "T2") != NULL)
 				p[1].u.data = SYS_DVBT2;
-			else
+			else*/
 				p[1].u.data = SYS_DVBT;
 			break;
 		}
@@ -2365,11 +2489,18 @@ int fechangetype(struct dvbdev* tuner, char* value)
 			return 0; //false
 	}
 	debug(200, "data %d",p[1].u.data );
+	ret = 0;
 	if (ioctl(tuner->fd, FE_SET_PROPERTY, &cmdseq) == -1)
 	{
 		perr("FE_SET_PROPERTY");
 		err("FE_SET_PROPERTY failed -> use procfs to switch delivery system tuner %d mode %s type %d",tuner->devnr ,value, type);
+		ret = -1;
 	}
+	else
+	{
+		printf("fe set property value %s data %d ... RC:%i\n", value, p[1].u.data, ret);
+	}
+	
 		if(wasopen != 1)
 			feclose(tuner, -1);
 		hypridtuner = getconfig("hypridtuner", NULL);
@@ -2396,11 +2527,13 @@ int fechangetype(struct dvbdev* tuner, char* value)
 			printf("set %s to %s RC:%i\n", buf, value, ret);
 		}
 		else
-			err("set system tuner to %d ... file not found -> %s", value, buf);
+			printf("set system tuner to %s ... file not found -> %s\n", value, buf);
 		free(buf); buf = NULL;
-		return 1; //true
 	
-	return 0; //true
+	if(ret > -1)
+		return 1; //true
+	else
+		return 0; //false
 
 #else //if DVB_API_VERSION < 5
 	printf("Hinweis -> DVB API kleiner Version 5\n");

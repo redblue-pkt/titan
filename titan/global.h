@@ -6546,6 +6546,11 @@ char* gethypridtunerchoices(int dev)
 	char *tmpstr3 = NULL;
 #endif
 
+#if defined DTV_ENUM_DELSYS
+	if(file_exist(getconfig("tempnim", NULL)) == 1)
+		hypridtunerchoices = getconfig("tempnim", NULL);	
+	else
+#endif
 
 	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
@@ -6609,7 +6614,13 @@ char* gethypridtunerchoicesvalue(int dev)
 	char* tmpstr2 = NULL, *hypridlist = NULL;
 #endif
 
-	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+#if defined DTV_ENUM_DELSYS
+	if(file_exist(getconfig("tempnim", NULL)) == 1)
+		hypridtunerchoices = getconfig("tempnim", NULL);	
+	else
+#endif
+	
+		hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
 	if(hypridtunerchoices == NULL)
 	{
@@ -6685,6 +6696,12 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 	char* value = NULL;
 #ifdef MIPSEL
 	char* hypridtunerchoices = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *start = NULL;
+	
+#if defined DTV_ENUM_DELSYS
+	if(file_exist(getconfig("tempnim", NULL)) == 1)
+		hypridtunerchoices = getconfig("tempnim", NULL);	
+	else
+#endif
 
 	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
@@ -6746,7 +6763,7 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 		return 0;
 	}
 	
-	if(fechangetype(tuner, value) == 0)
+	if(fechangetype(tuner, value) == 1)
 	{
 		if(getconfigint("need_delivery_system_workaround" , NULL) == 1)
 		{	
@@ -6765,9 +6782,9 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 		}
 		else
 			printf("Hinweis -> hypridtuner workaround NOT active\n");
+			
+		addconfig(tmpstr, value);
 	}
-	
-	addconfig(tmpstr, value);
 	free(tmpstr), tmpstr = NULL;
 
 	return 0;
@@ -6919,6 +6936,12 @@ void changetunername(struct skin* tunernode, int adapter, int devnr, char* name,
 char* gethypridtunername(int dev, char* hyprid)
 {
 	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *start = NULL;
+
+#if defined DTV_ENUM_DELSYS
+	if(file_exist(getconfig("tempnim", NULL)) == 1)
+		hypridtunerchoices = getconfig("tempnim", NULL);	
+	else
+#endif
 
 	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
