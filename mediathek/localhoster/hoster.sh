@@ -149,7 +149,7 @@ briskfile()
 	$BIN $CMD/briskfile.py $INPUT
 }
 
-vodlocker()
+vodlockerold()
 {
 	$BIN $CMD/vodlocker.py $INPUT
 }
@@ -242,6 +242,41 @@ streamango()
 vidlox()
 {
 	$BIN $CMD/vidlox.py $INPUT
+}
+
+vodlocker()
+{
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+#vodlocker
+#$curlbin "http://www.vodlocker.to/embed?t=Money+Monster&y=2016&lang=de&referrer=link"
+
+	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+
+	cat $TMP/cache.hoster.$hoster.1 | grep play_container | sed -nr "s/.*href='([^']+)'.*/\1/p" >$TMP/cache.hoster.$hoster.2
+	TMPURL=`cat $TMP/cache.hoster.$hoster.2`
+	echo TMPURL $TMPURL
+
+	$curlbin "$TMPURL" -o $TMP/cache.hoster.$hoster.3
+	cat $TMP/cache.hoster.$hoster.3 | sed 's/<source src=/\nfound=/g' | grep ^found= | cut -d"'" -f2 >$TMP/cache.hoster.$hoster.url1
+	URL=`cat $TMP/cache.hoster.$hoster.url1`
+	if [ ! -z "$URL" ];then
+		echo "$URL$EXTRA" >> $STREAMLIST
+#		echo "$URL" >> $STREAMLIST
+	fi
+
+	URL=$STREAMLIST
+
+
+	echo "$URL"
 }
 
 aliezold() 
@@ -497,7 +532,7 @@ if [ "$TYPE" == "get" ];then
 		xvidstage) xvidstage $INPUT;;
 		waaw|netu|hqq) waaw $INPUT;;
 		streamango|streamcherry) streamango $INPUT;;
-                vidlox) vidlox $INPUT;;
+		vidlox) vidlox $INPUT;;
 		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
 		aliez) aliez $INPUT;;
 		sport7) sport7 $INPUT;;
