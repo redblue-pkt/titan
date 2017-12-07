@@ -409,6 +409,8 @@ class OpenLoadResolver(object):
  #       print "data", data
 
 #        print "222222222222222222222222"
+        if re.search('Sorry!</h3>', data):
+            print 'errormsg=%s %s' % (str(re.compile('<h3>(.*)</h3>').findall(data)[0]), str(re.compile('<h6>(.*)</h6>').findall(data)[0]))
 
         subTracksData = self.getAllItemsBeetwenMarkers(data, '<track ', '>', False, False)
         subTracks = []
