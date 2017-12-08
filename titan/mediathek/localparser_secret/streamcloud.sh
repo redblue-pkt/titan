@@ -187,9 +187,13 @@ search()
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 10`
 			NEXT=`expr $NEXT + 1`
+			if [ "$NEXT" -gt 1 ];then
+				NEXTTEXT=$(expr $NEXT / 10)
+			fi
+			NEXTTEXT=`expr $NEXTTEXT + 1`
 
 #			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
-			LINE="Page ($NEXT/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTTEXT/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
