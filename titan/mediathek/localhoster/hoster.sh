@@ -247,9 +247,6 @@ vidlox()
 vodlocker()
 {
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
-	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
-	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
-	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
 
 	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
 	if [ -e "$STREAMLIST" ];then
@@ -271,8 +268,8 @@ vodlocker()
 
 aliezold() 
 { 
-        URL=`$curlbin "$INPUT" | sed 's/source:/\nsource:/' | grep ^source: | cut -d"'" -f2` 
-        REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'` 
+	URL=`$curlbin "$INPUT" | sed 's/source:/\nsource:/' | grep ^source: | cut -d"'" -f2` 
+	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'` 
 	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
 } 
 
