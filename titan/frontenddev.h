@@ -1942,9 +1942,9 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	}
 	debug(200, "transponder:frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, tpnode->symbolrate, tpnode->fec, tpnode->polarization, tpnode->modulation, tpnode->pilot, tpnode->rolloff, tpnode->system, tpnode->system, node->feshortname);
 	
-	int system = tpnode->system; 
+	fe_delivery_system_t system = SYS_DVBT;
 	
-	int hp = tpnode->fec; //fec = hp on DVBT
+	int code_rate hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
 	{
 		case T_FEC_1_2: hp = FEC_1_2; break;
@@ -2037,9 +2037,19 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case T_Hierarchy_Auto: hierarchy = HIERARCHY_AUTO;
 		default: hierarchy = HIERARCHY_AUTO; break;
 	}
+	
+	int inversion = tpnode->inversion;
+	switch(inversion)
+	{
+		case T_Inversion_Off: inversion = INVERSION_OFF;
+		case T_Inversion_ON: inversion = INVERSION_ON;
+		default: inversion = INVERSION_AUTO; break;
+	}
 
 	int ret = 0;
+#ifndef ARM
 	fediscard(node);
+#endif
 
 #if DVB_API_VERSION >= 5
 	struct dtv_property p[12];
@@ -2054,19 +2064,26 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		case System_DVB_T2: system = SYS_DVBT2; break; //16
 		default: system = SYS_DVBT; break;
 	}
+#else
+	switch(tpnode->system)
+	{
+		default:
+		case System_DVB_T: system = SYS_DVBT; break; //3
+		case System_DVB_T2: system = SYS_DVBT2; break; //16
+	}
 #endif
 
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
-	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) tpnode->inversion;
+	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) inversion;
 	p[4].cmd = DTV_BANDWIDTH_HZ, p[4].u.data = bandwidth;
-	p[5].cmd = DTV_CODE_RATE_LP, p[5].u.data = lp;
-	p[6].cmd = DTV_CODE_RATE_HP, p[6].u.data = hp;
-	p[7].cmd = DTV_MODULATION, p[7].u.data = modulation;
-	p[8].cmd = DTV_TRANSMISSION_MODE,	p[8].u.data = transmission;
-	p[9].cmd = DTV_GUARD_INTERVAL, p[9].u.data = guardinterval;
-	p[10].cmd = DTV_HIERARCHY, p[10].u.data = hierarchy;
+	p[5].cmd = DTV_CODE_RATE_LP, p[5].u.data = (fe_code_rate_t) lp;
+	p[6].cmd = DTV_CODE_RATE_HP, p[6].u.data = (fe_code_rate_t) hp;
+	p[7].cmd = DTV_MODULATION, p[7].u.data = (fe_modulation_t) modulation;
+	p[8].cmd = DTV_TRANSMISSION_MODE,	p[8].u.data = (fe_transmit_mode_t) transmission;
+	p[9].cmd = DTV_GUARD_INTERVAL, p[9].u.data = (fe_guard_interval_t) guardinterval;
+	p[10].cmd = DTV_HIERARCHY, p[10].u.data = (fe_hierarchy_t) hierarchy;
 	p[11].cmd = DTV_TUNE;
 	cmdseq.num = 12;
 	
