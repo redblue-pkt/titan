@@ -23,7 +23,7 @@ PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
 FILENAME="$PARSER $INPUT $PAGE $NEXT $PAGE2"
-FILENAME=`echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
+FILENAME=`echo $FILENAME  | sed -e 's/\-\+/./g' | sed -e 's/\+\+/./g' | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
 
 if [ -z "$FILENAME" ]; then
 	FILENAME=none
@@ -489,7 +489,8 @@ kino()
 
 hosterlist()
 {
-	if [ ! -e "$TMP/$FILENAME.list" ]; then
+rm $TMP/$FILENAME.list
+#	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin "$PAGE" -o $TMP/cache.$FILENAME.1
 		cat $TMP/cache.$FILENAME.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.2
 
@@ -497,10 +498,65 @@ hosterlist()
 #echo ROUND $ROUND
 			NEWPAGE="$ROUND"
 			TITLE=`echo $ROUND | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
+#echo TITLE $TITLE
+			$curlbin "$NEWPAGE" -o $TMP/cache.$FILENAME.4
+
+#			<a class='play_container' href='http://www.vodlocker.to/embed?t=Die+Eisk%C3%B6nigin%3A+Olaf+taut+auf&y=2017&lang=de&referrer=link'>
+			cat $TMP/cache.$FILENAME.4 | grep play_container | sed -nr "s/.*href='([^']+)'.*/\1/p" >$TMP/cache.$FILENAME.4.url1
+			URL=`cat $TMP/cache.$FILENAME.4.url1`
+			if [ ! -z "$URL" ];then
+				TITLE=`echo $URL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
+				NEWPAGE=$URL
+			fi
+#echo URL2 $URL
+#echo TITLE2 $TITLE
+
+if [ ! -z "$URL" ];then
+			$curlbin "$URL" -o $TMP/cache.$FILENAME.5
+
+#			$("#hostname").html("<a href='http://openload.co/embed/vq1HFMJ5vAo/detroit.SD-spectre.mkv' target='_blank' style='color:gold; text-decoration:underline;'>openload.co</a>");
+			cat $TMP/cache.$FILENAME.5 | grep "#hostname" | sed -nr "s/.*a href='([^']+)'.*/\1/p" | grep -v "+link+" >$TMP/cache.$FILENAME.5.url1
+			URL=`cat $TMP/cache.$FILENAME.5.url1`
+			if [ ! -z "$URL" ];then
+				TITLE=`echo $URL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
+			fi 		
+
+#echo URL3 $URL
+#echo TITLE3 $TITLE
+
+#if [ ! -z "$URL" ];then
+#			if [ -z "$URL" ];then
+#
+#				cat $TMP/cache.$FILENAME.5 | sed 's/<source src=/\nfound=/g' | grep ^found= | cut -d"'" -f2 >$TMP/cache.$FILENAME.5.url2
+#				URL=`cat $TMP/cache.$FILENAME.5.url2`
+#				TITLE=`echo $URL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
+#			fi
+#echo URL4 $URL
+#echo TITLE4 $TITLE
+			if [ ! -z "$URL" ];then
+				TITLE=`echo $URL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
+				NEWPAGE=$URL
+			fi
+#fi
+
+		#echo 111111111
+#			if [ -z "$URL" ];then
+		#echo 22222222222
+#				cat $TMP/cache.$FILENAME.4 | grep "#hostname" | sed -nr "s/.*a href='([^']+)'.*/\1/p" >$TMP/cache.$FILENAME.5.url3
+#				URL=`cat $TMP/cache.$FILENAME.5.url3`
+
+#				TITLE=`echo $URL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
+
+#				if [ ! -z "$URL" ];then
+#					/tmp/localhoster/hoster.sh get "$URL" > $TMP/cache.hoster.$hoster.url3
+#					URL=`cat $TMP/cache.hoster.$hoster.url3`
+#				fi
+#			fi
+fi
 
 			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 				PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
-				LINE="$TITLE#$SRC $SRC hoster $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
 
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
@@ -508,8 +564,8 @@ hosterlist()
 #echo $TITLE
 #echo $NEWPAGE
 		done 3<$TMP/cache.$FILENAME.2
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	fi
+#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#	fi
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -518,17 +574,13 @@ hoster()
 {
 	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 #	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
-	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
+#	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
 
-	STREAMURL=`cat $TMP/cache.$FILENAME.1 | sed 's!<a target="_blank" href="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2`
 
-	if [ `echo $STREAMURL | grep ^http | wc -l` -eq 0 ]; then
-#		<iframe src="//www.rapidvideo.com/e/FIW59O2DED" width="730" height="460" frameborder="0" scrolling="no"></iframe><BR> <div id="underplayer">
-		STREAMURL=`cat $TMP/cache.$FILENAME.1 | sed 's!<iframe src="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | tr ' ' '\n' | head -n1`
-	fi
+#	/tmp/localhoster/hoster.sh get "$PAGE" > $TMP/cache.$FILENAME.1
 
-#	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!<a target="_blank" href="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2`
-#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+#	STREAMURL=`cat $TMP/cache.$FILENAME.1`
+	STREAMURL="$PAGE"
 	echo $STREAMURL
 }
 
@@ -539,9 +591,9 @@ case $INPUT in
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 	search) $INPUT;;
-        searchtv) $INPUT;;
-        season) $INPUT;;
-        episode) $INPUT;;
+	searchtv) $INPUT;;
+	season) $INPUT;;
+	episode) $INPUT;;
 	kino) $INPUT;;
 	sorted) $INPUT;;
 	genre) $INPUT;;
