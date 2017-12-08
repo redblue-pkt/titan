@@ -1944,7 +1944,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	
 	fe_delivery_system_t system = SYS_DVBT;
 	
-	int code_rate hp = tpnode->fec; //fec = hp on DVBT
+	int hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
 	{
 		case T_FEC_1_2: hp = FEC_1_2; break;
