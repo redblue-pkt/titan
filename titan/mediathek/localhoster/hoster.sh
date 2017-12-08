@@ -10,7 +10,7 @@ PASS=$4
 INPUT=`echo $INPUT | sed 's!/Out/?s=!!g'`
 
 #FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PAGE $NEXT"
-FILENAME="`echo $INPUT | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/:\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
+FILENAME="`echo $INPUT | sed -e 's/\-\+/./g' | sed -e 's/\+\+/./g' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/:\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
 PICNAME=`echo $FILENAME`
 
 if [ -z "$FILENAME" ]; then
@@ -256,25 +256,15 @@ vodlocker()
 		rm -f $STREAMLIST > /dev/null 2>&1
 	fi
 
-#vodlocker
-#$curlbin "http://www.vodlocker.to/embed?t=Money+Monster&y=2016&lang=de&referrer=link"
-
 	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+	cat $TMP/cache.hoster.$hoster.1 | sed 's/<source src=/\nfound=/g' | grep ^found= | cut -d"'" -f2 >$TMP/cache.hoster.$hoster.1.url1
+	URL=`cat $TMP/cache.hoster.$hoster.1.url1`
 
-	cat $TMP/cache.hoster.$hoster.1 | grep play_container | sed -nr "s/.*href='([^']+)'.*/\1/p" >$TMP/cache.hoster.$hoster.2
-	TMPURL=`cat $TMP/cache.hoster.$hoster.2`
-	echo TMPURL $TMPURL
-
-	$curlbin "$TMPURL" -o $TMP/cache.hoster.$hoster.3
-	cat $TMP/cache.hoster.$hoster.3 | sed 's/<source src=/\nfound=/g' | grep ^found= | cut -d"'" -f2 >$TMP/cache.hoster.$hoster.url1
-	URL=`cat $TMP/cache.hoster.$hoster.url1`
 	if [ ! -z "$URL" ];then
-		echo "$URL$EXTRA" >> $STREAMLIST
-#		echo "$URL" >> $STREAMLIST
+		echo "$URL" >> $STREAMLIST
 	fi
 
 	URL=$STREAMLIST
-
 
 	echo "$URL"
 }
