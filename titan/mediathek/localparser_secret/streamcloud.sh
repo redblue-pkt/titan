@@ -247,40 +247,75 @@ hosterlist()
 
 #			<a class='play_container' href='http://www.vodlocker.to/embed?t=Die+Eisk%C3%B6nigin%3A+Olaf+taut+auf&y=2017&lang=de&referrer=link'>
 			cat $TMP/cache.$FILENAME.4 | grep play_container | sed -nr "s/.*href='([^']+)'.*/\1/p" >$TMP/cache.$FILENAME.4.url1
-			URL=`cat $TMP/cache.$FILENAME.4.url1`
-			if [ ! -z "$URL" ];then
-				TITLE=`echo $URL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
-				NEWPAGE=$URL
-			fi
+			TMPURL=`cat $TMP/cache.$FILENAME.4.url1`
+			if [ ! -z "$TMPURL" ];then
+				TITLE=`echo $TMPURL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
+				NEWPAGE=$TMPURL
+				if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
+					PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
 
-			if [ ! -z "$URL" ];then
-				$curlbin "$URL" -o $TMP/cache.$FILENAME.5
-
-#				$("#hostname").html("<a href='http://openload.co/embed/vq1HFMJ5vAo/detroit.SD-spectre.mkv' target='_blank' style='color:gold; text-decoration:underline;'>openload.co</a>");
-				cat $TMP/cache.$FILENAME.5 | grep "#hostname" | sed -nr "s/.*a href='([^']+)'.*/\1/p" | grep -v "+link+" >$TMP/cache.$FILENAME.5.url1
-				URL=`cat $TMP/cache.$FILENAME.5.url1`
-				if [ ! -z "$URL" ];then
-					TITLE=`echo $URL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
-				fi 		
-
-				if [ ! -z "$URL" ];then
-					TITLE=`echo $URL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
-					NEWPAGE=$URL
+					echo "$LINE" >> $TMP/$FILENAME.list
 				fi
 			fi
 
-			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
-				PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
-				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+			$curlbin "$TMPURL" -o $TMP/cache.$FILENAME.5
+#			$("#hostname").html("<a href='http://openload.co/embed/vq1HFMJ5vAo/detroit.SD-spectre.mkv' target='_blank' style='color:gold; text-decoration:underline;'>openload.co</a>");
+			cat $TMP/cache.$FILENAME.5 | grep "#hostname" | sed -nr "s/.*a href='([^']+)'.*/\1/p" | grep -v "+link+" >$TMP/cache.$FILENAME.5.url1
+			TMPURL=`cat $TMP/cache.$FILENAME.5.url1`
+			if [ ! -z "$TMPURL" ];then
+				TITLE=`echo $TMPURL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'`
+				NEWPAGE=$TMPURL
 
-				echo "$LINE" >> $TMP/$FILENAME.list
-			fi
+				if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
+					PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+
+					echo "$LINE" >> $TMP/$FILENAME.list
+				fi
+
+			fi 		
+
+#			var id = "131803";
+#			var e = ""; 				var lang = "2";
+#			var cat = "movie";
+#			var links = "3";
+#
+#			$.post( "/embed/movieStreams/?id="+id+"&e="+e+"&lang="+lang+"&cat="+cat+"&links="+links, function( data ) {
+#				$("#loadStreams").html( data );
+#			});
+
+			cat $TMP/cache.$FILENAME.5 | sed -nr 's/.*var id = "([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.5.id
+			id=$(cat $TMP/cache.$FILENAME.5.id)
+			cat $TMP/cache.$FILENAME.5 | sed -nr 's/.*var e = "([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.5.e
+			e=$(cat $TMP/cache.$FILENAME.5.e)
+			cat $TMP/cache.$FILENAME.5 | sed -nr 's/.*var lang = "([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.5.lang
+			lang=$(cat $TMP/cache.$FILENAME.5.lang)
+			cat $TMP/cache.$FILENAME.5 | sed -nr 's/.*var cat = "([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.5.cat
+			lang=$(cat $TMP/cache.$FILENAME.5.cat)
+			cat $TMP/cache.$FILENAME.5 | sed -nr 's/.*var links = "([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.5.links
+			links=$(cat $TMP/cache.$FILENAME.5.links)
+
+#			http://www.vodlocker.to/embed/movieStreams/?id=131803&e=&lang=2&cat=movie&links=3
+			HOSTERURL="www.vodlocker.to/embed/movieStreams/?id=$id&e=$e&lang=$lang&cat=$cat&links=$links"
+			$curlbin "$HOSTERURL" -o $TMP/cache.$FILENAME.6
+
+			HOSTERLIST=$(cat $TMP/cache.$FILENAME.6 | grep "</li></a><a" | sed 's!http!\nfound="http!g' | grep ^found= | cut -d '"' -f2 | cut -d"'" -f1)
+			for ROUND0 in $HOSTERLIST; do
+				TITLE=`echo $ROUND0 | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'`
+				if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$ROUND0" ];then
+					TITLE=`echo $ROUND0 | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'`
+					PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+					LINE="$TITLE#$SRC $SRC hoster '$ROUND0'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+
+					echo "$LINE" >> $TMP/$FILENAME.list
+				fi
+			done
 		done 3<$TMP/cache.$FILENAME.2
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
 }
-
 
 hoster()
 {
