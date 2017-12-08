@@ -2042,7 +2042,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	switch(inversion)
 	{
 		case T_Inversion_Off: inversion = INVERSION_OFF;
-		case T_Inversion_ON: inversion = INVERSION_ON;
+		case T_Inversion_On: inversion = INVERSION_ON;
 		default: inversion = INVERSION_AUTO; break;
 	}
 
