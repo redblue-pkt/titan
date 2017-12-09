@@ -1405,11 +1405,11 @@ msgstr "Einstellungen werden gesichert"
 msgid "Backup / Restore Settings"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: global.h:7726 httpdfunc.h:6660 httpdfunc.h:6739 system_backup_restore.h:82
+#: global.h:7749 httpdfunc.h:6660 httpdfunc.h:6739 system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr "Die Sicherung wurde erfolgreich erstellt"
 
-#: global.h:7728
+#: global.h:7751
 msgid "Backup ended with error"
 msgstr ""
 
@@ -2575,19 +2575,19 @@ msgstr "Erstelle Aufnahme Vorschaubild"
 msgid "Create Satellites/Provider"
 msgstr "Erzeuge Satelliten/Anbieter"
 
-#: global.h:6965
+#: global.h:6988
 msgid "Create Satellites/Provider (All)"
 msgstr "Erzeuge Satelliten/Anbieter (Alle)"
 
-#: global.h:6963
+#: global.h:6986
 msgid "Create Satellites/Provider (Cable)"
 msgstr "Erzeuge Satelliten/Anbieter (Kabel)"
 
-#: global.h:6962
+#: global.h:6985
 msgid "Create Satellites/Provider (Sat)"
 msgstr "Erzeuge Satelliten/Anbieter (Sat)"
 
-#: global.h:6964
+#: global.h:6987
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr "Erzeuge Satelliten/Anbieter (Terrestrisch)"
 
@@ -3315,9 +3315,9 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7097 global.h:7116 global.h:7591
-#: global.h:7611 global.h:7631 global.h:7651 global.h:7671 global.h:8003
-#: global.h:8008 global.h:8020 global.h:8025 harddisk.h:355 harddisk.h:678
+#: flashx.h:57 global.h:6262 global.h:7120 global.h:7139 global.h:7614
+#: global.h:7634 global.h:7654 global.h:7674 global.h:7694 global.h:8026
+#: global.h:8031 global.h:8043 global.h:8048 harddisk.h:355 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -3567,11 +3567,11 @@ msgstr ""
 "FEHLER: Das Ergebnis hat keine IMDB-ID und kann daher nicht in der MediaDB\n"
 "gespeichert werden!"
 
-#: global.h:7114
+#: global.h:7137
 msgid "Error: Transponder Source file no data"
 msgstr "Fehler: Transponder ist leer"
 
-#: global.h:7092
+#: global.h:7115
 msgid "Error: Transponder Source file not found"
 msgstr "Fehler: Transponder Quell Datei nicht gefunden"
 
@@ -4122,7 +4122,7 @@ msgstr ""
 "Neuer Datenträger erkannt.\n"
 "Sie können diesen im Festplatten Menü konfigurieren."
 
-#: global.h:8025
+#: global.h:8048
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
@@ -4132,7 +4132,7 @@ msgstr ""
 "Receiver trotzdem herunterfahren?\n"
 "OK zum fortfahren, Exit um abzubrechen."
 
-#: global.h:8003 global.h:8020
+#: global.h:8026 global.h:8043
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4143,7 +4143,7 @@ msgstr ""
 "Update trotzdem durchführen?\n"
 "OK zum fortfahren, Exit um abzubrechen."
 
-#: global.h:8008
+#: global.h:8031
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -5161,7 +5161,7 @@ msgstr ""
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: global.h:6967
+#: global.h:6990
 msgid "Import mode"
 msgstr ""
 
@@ -6221,10 +6221,10 @@ msgstr "Menüliste"
 #: filemanager.h:279 filemanager.h:289 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7027 global.h:7097 global.h:7116
-#: global.h:7591 global.h:7599 global.h:7611 global.h:7619 global.h:7631
-#: global.h:7639 global.h:7651 global.h:7659 global.h:7671 global.h:7679
-#: global.h:8003 global.h:8008 global.h:8020 global.h:8025 harddisk.h:678
+#: flashx.h:57 global.h:6262 global.h:7050 global.h:7120 global.h:7139
+#: global.h:7614 global.h:7622 global.h:7634 global.h:7642 global.h:7654
+#: global.h:7662 global.h:7674 global.h:7682 global.h:7694 global.h:7702
+#: global.h:8026 global.h:8031 global.h:8043 global.h:8048 harddisk.h:678
 #: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
 #: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5826 httpdfunc.h:6212
@@ -6468,7 +6468,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "mehrere Sender gleichzeitig"
 
-#: global.h:6912
+#: global.h:6929
 msgid "Multituner adjustable"
 msgstr "Multituner einstellbar"
 
@@ -6824,10 +6824,10 @@ msgstr "Ö"
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7027 global.h:7097 global.h:7116
-#: global.h:7591 global.h:7599 global.h:7611 global.h:7619 global.h:7631
-#: global.h:7639 global.h:7651 global.h:7659 global.h:7671 global.h:7679
-#: global.h:8003 global.h:8008 global.h:8020 global.h:8025 harddisk.h:355
+#: flashx.h:57 global.h:6262 global.h:7050 global.h:7120 global.h:7139
+#: global.h:7614 global.h:7622 global.h:7634 global.h:7642 global.h:7654
+#: global.h:7662 global.h:7674 global.h:7682 global.h:7694 global.h:7702
+#: global.h:8026 global.h:8031 global.h:8043 global.h:8048 harddisk.h:355
 #: harddisk.h:487 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
 #: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
 #: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
@@ -7742,7 +7742,7 @@ msgstr "Ausschalttimer"
 msgid "Present"
 msgstr "vorhanden"
 
-#: global.h:7738 system_backup_restore.h:15
+#: global.h:7761 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -8783,7 +8783,7 @@ msgstr "Satelliten Auswahl"
 msgid "Satellite"
 msgstr "Satellit"
 
-#: global.h:7027
+#: global.h:7050
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and\n"
@@ -9782,23 +9782,23 @@ msgstr "Autostart RGUID"
 msgid "Start Record"
 msgstr "Aufnahme starten"
 
-#: global.h:7591
+#: global.h:7614
 msgid "Start Restore Default Bouquets ?"
 msgstr "Favoritenliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7611
+#: global.h:7634
 msgid "Start Restore Default Channel Settings ?"
 msgstr "Komplette Liste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7651
+#: global.h:7674
 msgid "Start Restore Default Channels ?"
 msgstr "Senderliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7631
+#: global.h:7654
 msgid "Start Restore Default Providers ?"
 msgstr "Anbieterliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7671
+#: global.h:7694
 msgid "Start Restore Default Sats ?"
 msgstr "Satellitenliste (Werkseinstellung) wiederherstellen?"
 
@@ -10284,7 +10284,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7691
+#: global.h:7714
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -10605,7 +10605,7 @@ msgid "Titan MediaCenter"
 msgstr "Titan Media Center"
 
 #: extensions.h:272 extensions.h:332 extensions.h:431 extensions.h:470
-#: global.h:7599 global.h:7619 global.h:7639 global.h:7659 global.h:7679
+#: global.h:7622 global.h:7642 global.h:7662 global.h:7682 global.h:7702
 #: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
 #: skinadjust.h:1163
 msgid "Titan will be restarted!"
@@ -10896,7 +10896,7 @@ msgstr "Sender kann nicht angesteuert werden"
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6903
+#: global.h:6920
 msgid "Tuner "
 msgstr ""
 
