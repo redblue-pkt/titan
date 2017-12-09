@@ -399,6 +399,34 @@ sportstream365()
 	fi
 }
 
+sportsonline()
+{
+	#http://sportsonline.pw/livetv/pt-sporttv1.html
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+
+	#<iframe src="http://widestream.io/embedClappr.php?live=13593" width="100%" height="100%" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+	TMPURL=$(cat $TMP/cache.hoster.$hoster.1 | sed -nr 's/.*iframe src="([^"]+)".*/\1/p')
+
+	$curlbin "$TMPURL" --referer "$REFERER" -H "X-Requested-With: ShockwaveFlash/27.0.0.187" -o $TMP/cache.hoster.$hoster.2
+
+	#source: "http://ultra.widestream.io:8081/wideedge/1022qvk/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9MTIvOS8yMDE3IDEyOjMyOjQzIEFNJmhhc2hfdmFsdWU9ZW9WeThRL0JmaVA2dnFUQm15Ukkvdz09JnZhbGlkbWludXRlcz0yMA==",
+	TMPURL=$(cat $TMP/cache.hoster.$hoster.2 | sed -nr 's/.*source: "([^"]+)".*/\1/p')
+
+	if [ ! -z "$TMPURL" ];then
+		echo "$TMPURL$EXTRA" > $STREAMLIST
+		#echo "$URL$EXTRA"
+		echo "$STREAMLIST"
+	fi
+}
 
 all()
 {
@@ -524,8 +552,8 @@ if [ "$TYPE" == "get" ];then
 		aliez) aliez $INPUT;;
 		sport7) sport7 $INPUT;;
 		sportstream365) sportstream365 $INPUT;;
-		*) all $INPUT;;
-
+		sportsonline) sportsonline $INPUT;;
+#		*) all $INPUT;;
 	esac
 fi
 
