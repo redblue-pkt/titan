@@ -69,7 +69,9 @@ search()
 				fi
 				piccount=$[$piccount+1]
 #				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#92"
+#				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
 				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
+
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 
@@ -80,6 +82,11 @@ search()
 }
 
 play()
+{
+	/tmp/localhoster/hoster.sh get $URL/$PAGE
+}
+
+playold()
 {
 	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	rm $TMP/$FILENAME.* > /dev/null 2>&1
@@ -148,7 +155,7 @@ play()
 
 
 case $INPUT in
-#	init) $INPUT;;
+	init) $INPUT;;
 	mainmenu) $INPUT;;
 	play) $INPUT;;
 	search) $INPUT;;

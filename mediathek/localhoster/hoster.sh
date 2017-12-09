@@ -454,6 +454,83 @@ assia()
 	fi
 }
 
+cricfree()
+{
+	#http://cricfree.sc/update/bt2.php
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+
+	#<iframe frameborder="0" marginheight="0" allowfullscreen="true" marginwidth="0" height="555" src="http://cricfree.sc/update/bt1.php" id="iframe" name="iframe_a" scrolling="no" width="620">Your Browser Do not Support Iframe</iframe>
+	TMPURL1=$(cat $TMP/cache.hoster.$hoster.1 | grep "<iframe" | grep cricfree | sed -nr 's/.*src="([^"]+)".*/\1/p')
+
+#	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+	$curlbin "$TMPURL1" -o $TMP/cache.hoster.$hoster.2
+
+	#<script type='text/javascript'>id='bt2i'; width='620'; height='490';</script><script type='text/javascript' src='http://hi.notkodi.science/streamgame.js'></script>
+	TMPURL2=$(cat $TMP/cache.hoster.$hoster.2 | grep "id=" | sed -nr "s/.*src='([^']+)'.*/\1/p")
+	id=$(cat $TMP/cache.hoster.$hoster.2 | grep "id=" | sed -nr "s/.*id='([^']+)'.*/\1/p")
+
+	$curlbin "$TMPURL2" --referer "$REFERER" -H "X-Requested-With: ShockwaveFlash/27.0.0.187" -o $TMP/cache.hoster.$hoster.3
+
+	#document.write('<iframe allowfullscreen width="'+width+'" height="'+height+'" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" src="http://veremos.date/all.php?id='+id+'&p='+p+'&c='+c+'&stretching='
+	TMPURL3=$(cat $TMP/cache.hoster.$hoster.3 | grep document.write | sed -nr 's/.*src="([^"]+)".*/\1/p')
+
+	#var stretching = 'uniform';
+	stretching=$(cat $TMP/cache.hoster.$hoster.3 | sed -nr "s/.*var stretching = '([^']+)'.*/\1/p")
+
+	#var c = '0';
+	c=$(cat $TMP/cache.hoster.$hoster.3 | sed -nr "s/.*var c = '([^']+)'.*/\1/p")
+
+	#var p = '0';
+	p=$(cat $TMP/cache.hoster.$hoster.3 | sed -nr "s/.*var p = '([^']+)'.*/\1/p")
+
+	#http://veremos.date/all.php?id=bt2i&p=0&c=0&stretching=uniform
+	TMPURL3=$(echo $TMPURL3 | sed -e "s/'+id+'/$id/" -e "s/'+p+'/$p/" -e "s/'+c+'/$c/" -e "s/'+stretching+'/$stretching/")
+
+	#$curlbin http://veremos.date/all.php?id=bt2i&p=0&c=0&stretching=uniform" --referer "http://cricfree.sc/update/bt2.php"
+	$curlbin "$TMPURL3" --referer "$REFERER" -H "X-Requested-With: ShockwaveFlash/27.0.0.187" -o $TMP/cache.hoster.$hoster.4
+
+	#<iframe allowfullscreen="" width="100%" height="100%" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" src="http://soretin.stream/embeds/1all.php?id=256512&st=vkWS1ifC7TSE10IQKmgUEQ&e=1512815257&amp;p=0&amp;c=0&amp;stretching="></iframe>
+	TMPURL4=$(cat $TMP/cache.hoster.$hoster.4 | grep "<iframe" | sed -nr 's/.*src="([^"]+)".*/\1/p')
+
+	#$curlbin "http://soretin.stream/embeds/1all.php?id=256512&st=jOQy59wu1omnfUnNywQLDA&e=1512812987&p=0&c=0&stretching=" --referer "http://veremos.date/all.php?id=bt2i&p=0&c=0&stretching=uniform"
+	$curlbin "$TMPURL4" --referer "$TMPURL3" -H "X-Requested-With: ShockwaveFlash/27.0.0.187" -o $TMP/cache.hoster.$hoster.5
+
+	#return(["h","t","t","p",":","\/","\/","8","0",".","8","2",".","6","5",".","1","6","2","\/","c","a","v","s","c","a","m","p","e","o","n","\/","2","5","6","5","1","2",".","m","3","u","8","?","w","m","s","A","u","t","h","S","i","g","n","2","=","N","W","E","x","N","T","Y","3","Y","W","Y","3","N","j","h","l","Z","g","=","=","&","t","o","k","e","n","="].join("") + yUAerrrlsnutgriaaSbea.join("") + document.getElementById("aieBskfcrugtntihSa").innerHTML);
+	TMPURL=$(cat $TMP/cache.hoster.$hoster.5 | grep 'return(\["' | sed -e 's/","//g' -e 's/\\//g'| cut -d'"' -f2)
+
+	#return(["h","t","t","p",":","\/","\/","8","0",".","8","2",".","6","5",".","1","6","2","\/","c","a","v","s","c","a","m","p","e","o","n","\/","2","5","6","5","1","2",".","m","3","u","8","?","w","m","s","A","u","t","h","S","i","g","n","2","=","N","W","E","x","N","T","Y","3","Y","W","Y","3","N","j","h","l","Z","g","=","=","&","t","o","k","e","n","="].join("") + uaagraneeblAStrsyrrUi.join("") + document.getElementById("rBkacSifaguntesith").innerHTML);
+	#uaagraneeblAStrsyrrUi
+	searchtoken1=$(cat $TMP/cache.hoster.$hoster.5 | grep 'return(\["'| sed -e 's/","//g' -e 's/\\//g' | awk '{ print $3 }' | cut -d"." -f1)
+	#var uaagraneeblAStrsyrrUi = ["3Rp","UJ5","ZoY","c2V","J","jgy","X3Z","9MT","XNo","ydm","ZEp","VyX","0OC","VlP","MDI","bWU","UxM","hbH"];
+	TOKEN1=$(cat $TMP/cache.hoster.$hoster.5 | grep "var $searchtoken1" | sed -e 's/","//g' -e 's/\\//g' | cut -d'"' -f2)
+
+	#return(["h","t","t","p",":","\/","\/","8","0",".","8","2",".","6","5",".","1","6","2","\/","c","a","v","s","c","a","m","p","e","o","n","\/","2","5","6","5","1","2",".","m","3","u","8","?","w","m","s","A","u","t","h","S","i","g","n","2","=","N","W","E","x","N","T","Y","3","Y","W","Y","3","N","j","h","l","Z","g","=","=","&","t","o","k","e","n","="].join("") + uaagraneeblAStrsyrrUi.join("") + document.getElementById("rBkacSifaguntesith").innerHTML);
+	#rBkacSifaguntesith
+	searchtoken2=$(cat $TMP/cache.hoster.$hoster.5 | sed -nr 's/.*document.getElementById\("([^"]+)".*/\1/p')
+	#<span style='display:none' id=uieBiSefkngtshatrc>VZbFOMVlSL3F2lZhaE01Ta9xAWMvwQGwPZnMRY9nZ2ppVXWG</span><span style='display:none' id=suteaentirhgBfkSci>bnMWZL3XFlvAhMVpwPZ0pZ9TFSWnVGwaVMGR9Q22aOYZlEx1</span><span style='display:none' id=tSiBkaefnshuticegr>LWVMAbFZ1VaPhO3MnpF2R29ZlvSEGalwTYp9VMZQX0xZnWwG</span><span style='display:none' id=iecaSftBresutghkin>vVxZVQpVMn0ZS1Pp22nO3hwa9ZFTYRaWGFlMl9wZGEbAXLWM</span><span style='display:none' id=SnstuicrBgfitehake>Th2F1QFSWAZ9MWlPv92Vpw0LOZGwRMXbaV3ZElnMnaYpZVxG</span><span style='display:none' id=stBeiuSheiakfcrngt>bYTxap13WP2ZLlhnMF2GVXlwvWVOASaMEnQw9RVZ90GMZpZF</span><span style='display:none' id=ihenkcraesSiugBftt>wL2xZv9nMXwnZGGaAVVWWQFlZS90EMp3TlaVFP2ORbZpY1Mh</span><span style='display:none' id=hftrceSekuiiastngB>1ZXap0LlnO3VlGGZabWRnFZMMEw2xMvhZwpPVFY9VAWT92SQ</span><span style='display:none' id=inBehfgtcSautirkse>x2a2Zp3OF09XLWQZVbMMwFZnGGRpYnvPha19VEMlATVZWlwS</span><span style='display:none' id=rBkacSifaguntesith>MGZVL2wvanFha3ROWlVFQlE9PSZ2YWxpZG1pbnV0ZXM9MTAw</span><span style='display:none' id=etBirkuaiStfehgcsn>ZA1ZQGZOa39nYpVnWpS2llLwFxvawFVZb0MMPREGhXM2TVW9</span><span style='display:none' id=rshfekaguceSitnBit>pRW2TQMZaVlZ29OWFnXaFMLnV1VxZ3Y0ZGpAb9hPMSwvGEwl</span><span style='display:none' id=irBcttfehsganeSiuk>MTpXZWZb3MvnFZ2wlLFGA9nQpa2SYR9E01VxZGhwWMVOVPla</span><span style='display:none' id=skieftSBngitcuarhe>xAG1QET0WG9lnhZFPpYOa2M9lRZXnaFwVSpWLMbwVZ3MVZv2</span><span style='display:none' id=iSnkrBusfceghttiea>32EbYXWFl1Z2VZMVSGv9pZPMZLaFnaTpAh9OxGlQWMwRVw0n</span><span style='display:none' id=utrtiSfieeasBhnkcg>wZGZWxF2bPpahW9EnMV1TvYw92XlVaMpSLGMQl3OVRnA0FZZ</span><span style='display:none' id=SiisktnfeaghceuBrt>29W1LbRnVlMTZwF2WMEpw9AvGVZ0VYSnZXP3OMhxGZlQpFaa</span><span style='display:none' id=scugBteriiSehafktn>lFTMVV9W3ZhZaA1FMn9YpEvVnaxQL2XSZMpGWbwO2R0lZwPG</span><span style='display:none' id=itefaihSreuBgkcnts>Y0Eb2hQannvFZV2ZGZAaLVZlSMGlFp3V9xXPwMMTR9wO1WWp</span><span style='display:none' id=aecnhiigtuekfSrsBt>naYZSMMPbQnvE9hTVW3Ga2pwZ0GMRZwXpWFZ2llLAxOVVF19</span><span style='display:none' id=citeehgiustarnBSkf>XG29ZphlbYMLSaZ9V3PwWlQpGM12a0ZZvEFwVxWAFOMVnnRT</span><span style='display:none' id=rtcenehgusaikBSfit>3hpv2ZnVXV9lWlYxV0M9wMWPSMAnGa2ZQFROpab1ZwZETGLF</span><span style='display:none' id=csSnhfBitteguakeir>ZnXhv2GpMZP0xaAMQ1YVV9lZROWwaFnWT3M9ZlwF2pEVGLbS</span><span style='display:none' id=stigfkinrehBSaceut>p2wl0RQG3OFZhFMnaTxXV9pvZA2LMbVESWlZaVP1YZwMnG9W</span><html>
+	#MGZVL2wvanFha3ROWlVFQlE9PSZ2YWxpZG1pbnV0ZXM9MTAw
+	TOKEN2=$(cat $TMP/cache.hoster.$hoster.5 | sed "s/id=$searchtoken2/\nfoundid=/" | grep ^"foundid=" | cut -d'>' -f2 | cut -d'<' -f1)
+
+	if [ ! -z "$TMPURL" ];then
+#		echo "$TMPURL$token1$token2$EXTRA" > $STREAMLIST
+		#http://89.248.172.95/cavscampeon/256512.m3u8?wmsAuthSign2=NWExNTY3YWY3NjhlZg==&token=c2VydmVyX3RpbWU9MTUxMjgxMjM4NyZoYXNoX3ZhbHVlPVNrcndRU0Z2Mlp2QlUvbjg4N0lLQWc9PSZ2YWxpZG1pbnV0ZXM9MTAw|Referer=http%3A%2F%2Fsoretin.stream%2Fembeds%2F1all.php%3Fid%3D256512%26st%3DjOQy59wu1omnfUnNywQLDA%26e%3D1512812987%26p%3D0%26c%3D0%26stretching%3D&User-Agent=Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36&X-Requested-With=ShockwaveFlash/23.0.0.162
+
+		echo "$TMPURL$TOKEN1$TOKEN2" > $STREAMLIST
+
+		#echo "$URL$EXTRA"
+		echo "$STREAMLIST"
+	fi
+}
+
 all()
 {
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
@@ -580,6 +657,7 @@ if [ "$TYPE" == "get" ];then
 		sportstream365) sportstream365 $INPUT;;
 		sportsonline) sportsonline $INPUT;;
 		assia) assia $INPUT;;
+		cricfree) cricfree $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
