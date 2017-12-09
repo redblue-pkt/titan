@@ -45,7 +45,7 @@ serien()
 		piccount=0
 
 		$curlbin $URL/$PAGE -o $TMP/cache.$FILENAME.1
-		cat $TMP/cache.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<a href=!\nfound=!g' | grep ^'found=' | grep "/$PAGE" | grep -v "class=" | grep -v title= | grep '">' >$TMP/cache.$FILENAME.2
+#		cat $TMP/cache.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<a href=!\nfound=!g' | grep ^'found=' | grep "/$PAGE" | grep -v "class=" | grep -v title= | grep '">' >$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
 			NEWPAGE=`echo $ROUND | cut -d'"' -f2`
@@ -68,7 +68,7 @@ serien()
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 #work start
-	LINE="Big Brother#/mnt/parser/sixx.sh /mnt/parser/sixx.sh episode '/tv/big-brother'#http://atemio.dyndns.tv/mediathek/menu/default.jpg#sixx.serien.tv..41.jpg#Sixx#0"
+	LINE="Big Brother#/tmp/localparser/sixx.sh /tmp/localparser/sixx.sh episode '/tv/big-brother'#http://atemio.dyndns.tv/mediathek/menu/default.jpg#sixx.serien.tv..41.jpg#Sixx#0"
 	echo "$LINE" > $TMP/$FILENAME.list
 #end
 	echo "$TMP/$FILENAME.list"
