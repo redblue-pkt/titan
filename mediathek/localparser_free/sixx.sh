@@ -67,6 +67,10 @@ serien()
 		done 3<$TMP/cache.$FILENAME.2
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
+#work start
+	LINE="Big Brother#/mnt/parser/sixx.sh /mnt/parser/sixx.sh episode '/tv/big-brother'#http://atemio.dyndns.tv/mediathek/menu/default.jpg#sixx.serien.tv..41.jpg#Sixx#0"
+	echo "$LINE" > $TMP/$FILENAME.list
+#end
 	echo "$TMP/$FILENAME.list"
 }
 
