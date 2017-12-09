@@ -428,6 +428,32 @@ sportsonline()
 	fi
 }
 
+assia()
+{
+	#http://assia.tv/live/gol-tv/?lang=ru
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+
+	#this.videoplayer2600 = new Uppod({m:"video",uid:"videoplayer2600",comment:"",file:"http://video.assia.tv/hls/50.m3u8?md5=UD9zcmEXXgjdB92hTu9_nw&expires=1512784272",st:"uppodvideo",onReady: function(uppod){setTimeout(uppod.Pause, 60000);}});
+	TMPURL=$(cat $TMP/cache.hoster.$hoster.1 | sed -nr 's/.*file:"([^"]+)".*/\1/p' | tail -n1)
+
+	if [ ! -z "$TMPURL" ];then
+		echo "$TMPURL$EXTRA" > $STREAMLIST
+		#echo "$URL$EXTRA"
+		#http://video.assia.tv/hls/50.m3u8?md5=olw9K2ANtWtCPiL6LreprA&expires=1512783904|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+
+		echo "$STREAMLIST"
+	fi
+}
+
 all()
 {
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
@@ -553,6 +579,7 @@ if [ "$TYPE" == "get" ];then
 		sport7) sport7 $INPUT;;
 		sportstream365) sportstream365 $INPUT;;
 		sportsonline) sportsonline $INPUT;;
+		assia) assia $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
