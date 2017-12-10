@@ -1942,7 +1942,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	}
 	debug(200, "transponder:frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, tpnode->symbolrate, tpnode->fec, tpnode->polarization, tpnode->modulation, tpnode->pilot, tpnode->rolloff, tpnode->system, tpnode->system, node->feshortname);
 	
-	fe_delivery_system_t system = SYS_DVBT;
+	fe_delivery_system_t system = tpnode->system;
 	
 	int hp = tpnode->fec; //fec = hp on DVBT
 	switch(hp)
@@ -2057,21 +2057,12 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	cmdseq.props = p;
 
 // suchlauf geht an nemesis mit system=0
-#if DREAMBOX
 	switch(system)
 	{
 		case System_DVB_T: system = SYS_DVBT; break; //3
 		case System_DVB_T2: system = SYS_DVBT2; break; //16
 		default: system = SYS_DVBT; break;
 	}
-#else
-	switch(tpnode->system)
-	{
-		default:
-		case System_DVB_T: system = SYS_DVBT; break; //3
-		case System_DVB_T2: system = SYS_DVBT2; break; //16
-	}
-#endif
 
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
