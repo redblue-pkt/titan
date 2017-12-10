@@ -531,6 +531,43 @@ cricfree()
 	fi
 }
 
+broadcast()
+{
+	#http://assia.tv/live/gol-tv/?lang=ru
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	#$curlbin --referer "http://bro.adca.st/stream.php?id=17733&p=1&c=0&stretching=uniform&old=0" "http://bro.adca.st/token2.php"
+	$curlbin "http://bro.adca.st/token2.php" --referer "$INPUT" -o $TMP/cache.hoster.$hoster.1
+
+	#{"rumba":"ruYg748QTLGfAn2iZo3bpw&expires=1512880893"}
+	TOKEN=$(cat $TMP/cache.hoster.$hoster.1 | sed -nr 's/.*"rumba":"([^"]+)".*/\1/p' | tail -n1)
+
+	#$curlbin --referer "http://bonstreams.net" "http://bro.adca.st/stream.php?id=17733&p=1&c=0&stretching=uniform&old=0"
+	$curlbin "$INPUT" --referer "http://bonstreams.net" -o $TMP/cache.hoster.$hoster.2
+
+    #trap = "aHR0cDovL3RpZXIyLnBva2VyY29hbGl0aW9uLnB3L28xMC8xNzczMy5tM3U4P3NmPU5UazVOR0UzWXpSaE16bGpOUT09JnRva2VuPQ=
+	TRAP=$(cat $TMP/cache.hoster.$hoster.2 | sed -nr 's/.*trap = "([^"]+)".*/\1/p' | tail -n1)
+
+	echo "$TRAP" > $TMP/cache.hoster.$hoster.base64
+	TMPURL=$(base64 -d $TMP/cache.hoster.$hoster.base64)
+
+	# enable httponly cookie
+	sed 's/#HttpOnly_//g' -i /mnt/network/cookies
+
+	if [ ! -z "$TMPURL" ];then
+		#hls://http://tier2.pokercoalition.pw/o10/17733.m3u8?sf=NTk5NGE3YzRhMzljNQ==&token=jvVfe9gic8uQ3QqCXmZemw&expires=1512879969|Referer=http%3A%2F%2Fbro.adca.st%2Fstream.php%3Fid%3D17733%26p%3D1%26c%3D0%26stretching%3Duniform%26old%3D0&User-Agent=Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML,%20like%20Gecko)%20Chrome%2F61.0.3163.100%20Safari%2F537.36
+		echo "$TMPURL$TOKEN$EXTRA" > $STREAMLIST
+		echo "$STREAMLIST"
+	fi
+}
+
 all()
 {
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
@@ -658,6 +695,7 @@ if [ "$TYPE" == "get" ];then
 		sportsonline) sportsonline $INPUT;;
 		assia) assia $INPUT;;
 		cricfree) cricfree $INPUT;;
+		adca) broadcast $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
