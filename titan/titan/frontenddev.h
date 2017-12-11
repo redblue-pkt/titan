@@ -1623,6 +1623,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	{
 		if(wasopen != 1)
 			feclose(node, -1);
+		printf("new STRENGTH %d\n", signal);
 		return signal;
 	}
 	// fallback to old DVB API
@@ -1635,14 +1636,15 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	else
 	{
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL)
-			signal = signal * 1000;
+			signal = signal * 3000;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
 	if(signal == 0) 
 	{ 
 		fe_status_t status = fereadstatus(node); 
 		if(status & FE_HAS_LOCK) signal = 1; 
-	}        
+	}
+	printf("old STRENGTH %d\n", signal);       
 	return signal;
 }
 
