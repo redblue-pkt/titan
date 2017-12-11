@@ -187,6 +187,7 @@ struct channelslot *channelslot = NULL;
 #include "skinselector.h"
 #include "play.h"
 #include "satfinder.h"
+#include "multiboot.h"
 #include "menu.h"
 #include "channelbynr.h"
 #include "infobar.h"
