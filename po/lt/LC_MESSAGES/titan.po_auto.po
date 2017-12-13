@@ -2975,6 +2975,10 @@ msgstr ""
 "Do you really want to erase all data and backups from Swap?\n"
 "The Receiver will reboot and deletion will be executed!"
 
+#: multiboot.h:126
+msgid "Do you really want to overwrite the chosen image?"
+msgstr ""
+
 #: panel_settings_wizard.h:6
 msgid ""
 "Do you really want to start the Wizard?\n"
@@ -2982,6 +2986,10 @@ msgid ""
 msgstr ""
 "Do you really want to start the Wizard?\n"
 "The Receiver will reboot and the Wizard will be performed!"
+
+#: multiboot.h:110
+msgid "Do you want to start now the selected image?"
+msgstr ""
 
 #: epgsearch.h:252
 msgid "Doku"
@@ -3252,6 +3260,10 @@ msgstr "KLAIDA: Automatinis Laikmatis nebuvo sustabdytas"
 msgid "ERROR... can't set marker in this file"
 msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 
+#: multiboot.h:132
+msgid "ERROR: The installation ends with error"
+msgstr ""
+
 #: about.h:9 amazon.h:760 avsettings.h:390 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:960 channellist.h:962 channellist.h:967
 #: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
@@ -3294,41 +3306,41 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: menu.h:1007 menu.h:1009 mightyupload.h:27 mightyupload.h:69
 #: mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60
 #: movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40
-#: movshare.h:101 movshare.h:191 movshare.h:197 MultiImage.c:292
-#: MultiImage.c:308 MultiImage.c:568 MultiImage.c:626 MultiImage.c:706
-#: myvideo.h:86 nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966
-#: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
-#: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
-#: networkbrowser.h:1785 networkbrowser.h:1792 networkbrowser.h:1797
-#: networkbrowser.h:1949 network.h:284 network.h:299 network.h:335
-#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
-#: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
-#: newsletter.h:292 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
-#: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
-#: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:319 play.h:497 play.h:614 play.h:1296
-#: play.h:1302 play.h:1317 play.h:1318 play.h:1354 play.h:1355 play.h:1369
-#: play.h:1453 plugins_autotimer_skin.xml.h:6
-#: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
-#: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
-#: plugins_instar_skin.xml.h:8 plugins_lcdpearl1_skin.xml.h:6
-#: plugins_lcdsamsung_skin.xml.h:7 plugins_mboxinfo_skin.xml.h:1
-#: plugins_mc_skin.xml.h:19 plugins_multiimage_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:1 plugins_panel_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:1 plugins_stopifnotused_skin.xml.h:3
-#: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:1
-#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:74
-#: primeshare.h:80 primeshare.h:125 promptfile.h:26 promptfile.h:35
-#: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
-#: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:398 record.h:1171 record.h:1709 rectimer.h:577 rectimer.h:1405
-#: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
-#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:2634
-#: scart.h:12 scart.h:25 scriptexec.h:41 security.h:668 security.h:685
-#: security.h:1956 service.h:784 service.h:1032 shared.h:29 shared.h:66
-#: shared.h:83 skinadjust.h:594 skinadjust.h:618 skinadjust.h:659
-#: skin_default_skin.xml.h:199 skins_autotimer_skin.xml.h:6
+#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:110 multiboot.h:121
+#: multiboot.h:126 MultiImage.c:292 MultiImage.c:308 MultiImage.c:568
+#: MultiImage.c:626 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
+#: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
+#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
+#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
+#: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
+#: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
+#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
+#: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
+#: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
+#: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
+#: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
+#: player.h:319 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
+#: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453
+#: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
+#: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
+#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:8
+#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
+#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
+#: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
+#: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
+#: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
+#: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
+#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
+#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
+#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
+#: readerconfig.h:498 record.h:90 record.h:398 record.h:1171 record.h:1709
+#: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:34
+#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:34 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41
+#: security.h:668 security.h:685 security.h:1956 service.h:784 service.h:1032
+#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618
+#: skinadjust.h:659 skin_default_skin.xml.h:199 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
 #: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
 #: skins_instar_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:6
@@ -6701,7 +6713,8 @@ msgstr ""
 #: menu.h:1007 menu.h:1009 mightyupload.h:27 mightyupload.h:69
 #: mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60
 #: movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40
-#: movshare.h:101 movshare.h:191 movshare.h:197 MultiImage.c:46
+#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:110 multiboot.h:121
+#: multiboot.h:126 multiboot.h:130 multiboot.h:132 MultiImage.c:46
 #: MultiImage.c:205 MultiImage.c:274 MultiImage.c:292 MultiImage.c:308
 #: MultiImage.c:388 MultiImage.c:436 MultiImage.c:568 MultiImage.c:626
 #: MultiImage.c:642 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
@@ -10145,6 +10158,10 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr "The hoster is not supported at present!"
 
+#: multiboot.h:130
+msgid "The image was successfully installed"
+msgstr ""
+
 #: MultiImage.c:642
 msgid ""
 "The install process will look in /tmp for an image zip file.\n"
@@ -11507,6 +11524,12 @@ msgstr "Geltona"
 #: hbbtv.h:362
 msgid "You can leave HBBTV with Record Key."
 msgstr "You can exit HBBTV with the Record button."
+
+#: multiboot.h:121
+msgid ""
+"You have chosen the active image\n"
+"Do you really want to overwrite this?"
+msgstr ""
 
 #: stopifnotused.c:31
 msgid ""
