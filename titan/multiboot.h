@@ -50,7 +50,6 @@ void screenmultiboot(void)
 		{
 			tmpstr2[7] = '\0';
 			ownpart = ostrcat(tmpstr2+6, NULL, 0, 0);
- 	  	//setchoiceboxselection(partitions, ownpart);
  	 }
  	 free(tmpstr); tmpstr = NULL;
  	 tmpstr2 = NULL;    		
@@ -81,6 +80,7 @@ void screenmultiboot(void)
    			}
 			}
 			closedir(dir);
+			setchoiceboxselection(partitions, ownpartname);
 		}
 
 	
