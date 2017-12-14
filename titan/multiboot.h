@@ -9,7 +9,7 @@ int install_image(char* part)
 		
 	imagedir = screendir("/tmp", "*.bz2", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 	if(imagedir == NULL)
-		return 0;
+		return 2;
 	point = strrchr(imagedir,'/');
 	if(point == NULL)
 		return 0;
@@ -33,6 +33,7 @@ void screenmultiboot(void)
 	char *tmpstr2 = NULL;
 	char *tmpstr3 = NULL;
 	char *ownpart = NULL;
+	char *instpart = NULL;
 	char *ownpartname = NULL;
 	int neustart = 0;
 	int ret = 0;
@@ -44,6 +45,8 @@ void screenmultiboot(void)
 
 	while(end == 0)
 	{
+		changechoiceboxvalue(partitions, NULL);
+		
 		tmpstr = readsys("/boot/STARTUP", 1);
 		tmpstr2 = ostrstr(tmpstr, "kernel");
 		if(tmpstr2 != NULL)
@@ -116,25 +119,62 @@ void screenmultiboot(void)
 			}
 			if(rcret == getrcconfigint("rcred", NULL)) 
 			{
+				tmpstr = ostrcat("/boot/", partitions->ret, 0, 0);
+				tmpstr2 = readsys(tmpstr, 1);
+				tmpstr3 = ostrstr(tmpstr2, "kernel");
+				if(tmpstr3 != NULL)
+				{
+					tmpstr3[7] = '\0';
+					instpart = ostrcat(tmpstr3+6, NULL, 0, 0);
+ 	 			}
+ 	 			free(tmpstr); tmpstr = NULL;
+ 	 			free(tmpstr2); tmpstr2 = NULL;
+ 	 			tmpstr3 = NULL;    		
+				
 				if(ostrcmp(ownpartname, partitions->ret) == 0)
 				{
 					if(textbox("MultiBoot", _("You have chosen the active image\nDo you really want to overwrite this?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 650, 200, 0, 0) == 1)
-						ret = install_image(partitions->ret);
+						ret = install_image(instpart);
+					else
+						ret = 2;
 				}
 				else
 				{
 					if(textbox("MultiBoot", _("Do you really want to overwrite the chosen image?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 650, 200, 0, 0) == 1)
-						ret = install_image(partitions->ret);
+						ret = install_image(instpart);
+					else
+						ret = 2;
 				}	
-				if(ret)
+				if(ret == 1)
 					textbox("MultiBoot", _("The image was successfully installed"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 650, 200, 0, 0);	
-				else
+				if(ret == 0)
 					textbox("MultiBoot", _("ERROR: The installation ends with error"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 650, 200, 0, 0);				
+				ret = 0;
+				free(instpart); instpart = NULL;
+				break;
+			}
+			if(rcret == getrcconfigint("rcgreen", NULL)) 
+			{
+				tmpstr = screeninputhelp(partitions->ret, 0, 0, 0);
+				if(tmpstr != NULL)
+				{
+					tmpstr = ostrcat("/boot/", tmpstr, 0, 1);
+					tmpstr2 = ostrcat("/boot/", partitions->ret, 0, 0);
+					tmpstr3 = ostrcat("mv ", tmpstr2, 0, 0);
+					tmpstr3 = ostrcat(tmpstr3, " ", 1, 0);
+					tmpstr3 = ostrcat(tmpstr3, tmpstr, 1, 0);
+					system(tmpstr3);
+					free(tmpstr); tmpstr = NULL;
+ 	 				free(tmpstr2); tmpstr2 = NULL;
+ 	 				free(tmpstr3); tmpstr3 = NULL;
+					break;
+				}
 			}
 		}
 		delownerrc(screen);
 		clearscreen(screen);
 		free(ownpart); ownpart = NULL;
+		free(ownpartname); ownpartname = NULL;
 	}
 	if(neustart == 1)
 		oshutdown(2, 1);
