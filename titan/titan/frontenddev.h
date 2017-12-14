@@ -2505,14 +2505,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 		perr("FE_SET_PROPERTY");
 		err("FE_SET_PROPERTY failed -> use procfs to switch delivery system tuner %d mode %s type %d",tuner->devnr ,value, type);
 		ret = -1;
-	}
-	else
-	{
-		printf("fe set property value %s data %d ... RC:%i\n", value, p[1].u.data, ret);
-	}
-	
-		if(wasopen != 1)
-			feclose(tuner, -1);
+
 		hypridtuner = getconfig("hypridtuner", NULL);
 		if(hypridtuner != NULL)
 		{
@@ -2539,7 +2532,14 @@ int fechangetype(struct dvbdev* tuner, char* value)
 		else
 			printf("set system tuner to %s ... file not found -> %s\n", value, buf);
 		free(buf); buf = NULL;
-	
+	}
+	else
+	{
+		printf("fe set property value %s data %d ... RC:%i\n", value, p[1].u.data, ret);
+	}
+
+	if(wasopen != 1)
+		feclose(tuner, -1);
 	if(ret > -1)
 		return 1; //true
 	else
