@@ -127,6 +127,7 @@ retry:
 int cawrite(struct dvbdev* dvbnode, int fd, unsigned char* buf, int count, int flag, int tout)
 {
 	int ret = 0;
+	int i = 0;
 
 	if(dvbnode != NULL)
 	{
@@ -143,6 +144,13 @@ int cawrite(struct dvbdev* dvbnode, int fd, unsigned char* buf, int count, int f
 	}
 	if(checkbox("HD51") == 1)
 		usleep(150000);
+	for(i = 0; i < 10; i++)
+	{
+		ret = dvbwrite(fd, buf, count, tout);
+		if(ret > 0)
+			break;
+		sleep(1);
+	}
 	ret = dvbwrite(fd, buf, count, tout);
 	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("HD51") == 1)
 		usleep(150000);
