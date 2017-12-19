@@ -171,10 +171,14 @@ char* hoster(char* url)
 				streamurl = shared(tmpstr);
 			else if(ostrstr(tmplink, "thefile") != NULL)
 				streamurl = thefile(tmpstr);
+/*
 			else if(ostrstr(tmplink, "youtu_disable") != NULL)
 				streamurl = youtube(tmpstr);
+*/
+/*
 			else if(ostrstr(tmplink, "myvideo") != NULL)
 				streamurl = myvideo(tmpstr);
+*/
 			else if(ostrstr(tmplink, "promptfile") != NULL)
 				streamurl = promptfile(tmpstr);
 			else if(ostrstr(tmplink, "letwatch") != NULL || ostrstr(tmplink, "realvid") != NULL)
@@ -185,10 +189,14 @@ char* hoster(char* url)
 				streamurl = vodlocker(tmpstr);
 			else if(ostrstr(tmplink, "vidto") != NULL)
 				streamurl = vidto(tmpstr);
+/*
 			else if(ostrstr(tmplink, "amazon") != NULL)
 				streamurl = amazon(tmpstr);
+*/
+/*
 			else if(ostrstr(tmplink, "thevideo") != NULL)
 				streamurl = thevideo(tmpstr);
+*/
 			else if(ostrstr(tmplink, "mightyupload") != NULL)
 				streamurl = mightyupload(tmpstr);
 			else if(ostrstr(tmplink, "cloudzilla") != NULL)

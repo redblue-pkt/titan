@@ -7,11 +7,11 @@ int tithekdownloadrun = 0;
 int tithekdownloadcount = 0;
 int tithekrun = 0;
 int tithekexit = 0;
-int tithekmovie4k = 0;
+//int tithekmovie4k = 0;
 int tithekkinox = 0;
-int titheksolarmovie = 0;
-int tithekmlehd = 0;
-int amazonlogin = 0;
+//int titheksolarmovie = 0;
+//int tithekmlehd = 0;
+//int amazonlogin = 0;
 int python = 0;
 int ytbgdownload = 0;
 int hlsbgdownload = 0;
@@ -251,6 +251,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if(node->flag == 96 && pay == 0)
 		skip = 1;
+/*
 	else if(titheksolarmovie == 1 && node->flag == 9996 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "www.thesolarmovie.me", 1, 0);
@@ -266,6 +267,8 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 		titheksolarmovie = 0;
 	}
+*/
+/*
 	else if(tithekmovie4k == 1 && node->flag == 9997 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "www.movie4k.to", 1, 0);
@@ -281,6 +284,8 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 		tithekmovie4k = 0;
 	}
+*/
+/*
 	else if(tithekmlehd == 1 && node->flag == 9998 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "www.mle-hd.se", 1, 0);
@@ -296,6 +301,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 		tithekmlehd = 0;
 	}
+*/
 	else if(tithekkinox == 1 && node->flag == 9999 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "kinox.me", 1, 0);
@@ -1562,10 +1568,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		flag = 4;
 		if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
 	}
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 4)
 	{
 		if(tmpstr != NULL) tmpstr1 = youtube_hoster(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 5)
 	{
 		if(tmpstr != NULL) tmpstr1 = nowtv(tmpstr);
@@ -1574,58 +1583,79 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = nowtv(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 12)
 	{
 		if(tmpstr != NULL) tmpstr1 = myvideo_hoster(tmpstr);
 	}
+*/
 	else if(((struct tithek*)listbox->select->handle)->flag == 14)
 	{
 		if(tmpstr != NULL) tmpstr1 = kinox(tmpstr);
 	}
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 15)
 	{
 		if(tmpstr != NULL) tmpstr1 = giga(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 20)
 	{
 		if(tmpstr != NULL) tmpstr1 = nbastream(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 38)
 	{
 		if(tmpstr != NULL) tmpstr1 = mlehd(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 41)
 	{
 		if(tmpstr != NULL) tmpstr1 = movie4k(tmpstr);
 	}
+*/
 	else if(((struct tithek*)listbox->select->handle)->flag == 42)
 	{
 		if(tmpstr != NULL) tmpstr1 = xvideos(tmpstr);
 	}
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 43)
 	{
 		if(tmpstr != NULL) tmpstr1 = solarmovie(tmpstr);
 	}
+*/
 	else if(((struct tithek*)listbox->select->handle)->flag == 45)
 	{
 		if(tmpstr != NULL) tmpstr1 = ard(tmpstr);
 	}
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 46)
 	{
 		if(tmpstr != NULL) tmpstr1 = zdf(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 50)
 	{
 		if(tmpstr != NULL) tmpstr1 = beeg(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 64)
 	{
 		if(tmpstr != NULL) tmpstr1 = tvtoast(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 75)
 	{
 		if(tmpstr != NULL) tmpstr1 = amazon(tmpstr);
 	}
+*/
 	else if(((struct tithek*)listbox->select->handle)->flag == 91)
 	{
 		if(tmpstr != NULL) tmpstr1 = streamlive(tmpstr, -1);
@@ -1638,14 +1668,18 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = liveonlinetv(tmpstr, -1);
 	}
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 94)
 	{
 		if(tmpstr != NULL) tmpstr1 = movie2k(tmpstr);
 	}
+*/
+/*
 	else if(((struct tithek*)listbox->select->handle)->flag == 98)
 	{
 		if(tmpstr != NULL) tmpstr1 = nbaondemand(tmpstr);
 	}
+*/
 	else if(((struct tithek*)listbox->select->handle)->flag == 111)
 	{
 		if(tmpstr != NULL) tmpstr1 = localparser_hoster(tmpstr);
@@ -2178,6 +2212,7 @@ waitrcstart:
 					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "KinoX - Search", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "KinoX - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(check == 3)
 				{
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "SolarMovies - Movie - Search", tmpstr, 0) == 0)
@@ -2188,46 +2223,61 @@ waitrcstart:
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "SolarMovies - Tv - Search", tmpstr, 1) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "SolarMovies - Tv - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 5)
 				{
 					if(youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Youtube - Search", tmpstr) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Youtube - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 6)
 				{
 					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "MyVideo - Search", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "MyVideo - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 7)
 				{
 					if(movie4k_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "KinoX - Search", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Movie4k - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(check == 8)
 				{
 					if(kinox_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "KinoX - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "KinoX - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(check == 9)
 				{
 					if(solarmovie_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Solarmovies - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Solarmovies - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 10)
 				{
 					if(youtube_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Youtube - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Youtube - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 11)
 				{
 					if(myvideo_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "MyVideo - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "MyVideo - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 12)
 				{
 					if(movie4k_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Movie4k - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Movie4k - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(check == 13)
 				{
 					if(internetradio_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Internetradio - Search (local)", tmpstr, 0) == 0)
@@ -2243,31 +2293,41 @@ waitrcstart:
 					if(ard_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "ARD - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "ARD - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(check == 16)
 				{
 					if(zdf_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "ZDF - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "ZDF - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 17)
 				{
 					if(tectime_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "TecTime - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "TecTime - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 18)
 				{
 					if(giga_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Giga - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Giga - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 19)
 				{
 					if(beeg_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Beeg - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Beeg - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(check == 20)
 				{
 					if(nowtv_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Rtl2Now - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "NowTv - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(check == 21)
 				{
 					if(all_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Rtl-Now - Search (local)", tmpstr, 0) == 0)
@@ -2278,11 +2338,13 @@ waitrcstart:
 					if(xvideos_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Xvideos - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Xvideos - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(check == 25)
 				{
 					if(mlehd_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Mle-HD - Search (local)", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "Mle-HD - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(check == 26)
 				{
 					if(netzkino_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Netzkino - Search (local)", tmpstr, 0) == 0)
@@ -2346,16 +2408,20 @@ why ?
 					submenu(listbox, load, title);
 //					drawscreen(grid, 0, 0);
 				}
+/*
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
 					if(youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 13)
 				{
 					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(((struct tithek*)listbox->select->handle)->flag == 24)
 				{
 					if(internetradio_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
@@ -2366,56 +2432,72 @@ why ?
 					if(kinox_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 26)
 				{
 					if(movie4k_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 27)
 				{
 					if(solarmovie_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(((struct tithek*)listbox->select->handle)->flag == 47)
 				{
 					if(internettv_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 48)
 				{
 					if(youtube_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 49)
 				{
 					if(myvideo_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(((struct tithek*)listbox->select->handle)->flag == 51)
 				{
 					if(ard_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 52)
 				{
 					if(zdf_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 53)
 				{
 					if(tectime_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 54)
 				{
 					if(giga_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 55)
 				{
 					if(beeg_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(((struct tithek*)listbox->select->handle)->flag == 100)
 				{
 					if(all_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
@@ -2426,11 +2508,13 @@ why ?
 					if(xvideos_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 61)
 				{
 					if(mlehd_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if(((struct tithek*)listbox->select->handle)->flag == 62)
 				{
 					if(netzkino_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
@@ -2441,26 +2525,33 @@ why ?
 					if(filmon_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 65)
 				{
 					if(tvtoast_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 44)
 				{
 					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if((((struct tithek*)listbox->select->handle)->flag == 21))
 				{
 					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if((((struct tithek*)listbox->select->handle)->flag == 33))
 				{
 					if(movie4k_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 29)
 				{
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
@@ -2471,6 +2562,7 @@ why ?
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if((((struct tithek*)listbox->select->handle)->flag == 31))
 				{
 					if(kinox_search_cast(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL) == 0)
@@ -2481,6 +2573,7 @@ why ?
 					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if((((struct tithek*)listbox->select->handle)->flag == 33))
 				{
 					if(movie4k_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
@@ -2491,21 +2584,25 @@ why ?
 					if(movie4k_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if((((struct tithek*)listbox->select->handle)->flag == 22))
 				{
 					if(kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
 				}
+/*
 				else if((((struct tithek*)listbox->select->handle)->flag == 28))
 				{
 					if(solarmovie_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
 				}
+*/
 				else if((((struct tithek*)listbox->select->handle)->flag == 23))
 				{
 					if(kinox_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+/*
 				else if((((struct tithek*)listbox->select->handle)->flag == 36) || (((struct tithek*)listbox->select->handle)->flag == 37))
 				{
 					if(movie4k_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
@@ -2521,6 +2618,8 @@ why ?
 					if(movie4k_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if(((struct tithek*)listbox->select->handle)->flag == 76)
 				{
 					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
@@ -2596,6 +2695,8 @@ why ?
 					if(amazon_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 14) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
+/*
 				else if((((struct tithek*)listbox->select->handle)->flag == 95) || (((struct tithek*)listbox->select->handle)->flag == 96))
 				{
 					if(movie2k_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
@@ -2606,6 +2707,7 @@ why ?
 					if(movie2k_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
+*/
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
 				{
 					textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);

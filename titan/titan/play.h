@@ -663,27 +663,51 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			{
 				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
+/*
 				addmenulist(&mlist, "Search on Movie4k", NULL, _("Search on Movie4k"), 0, 0);
 				addmenulist(&mlist, "Search on Movie4k (local)", _("Search on Movie4k (local)"), NULL, 0, 0);
+*/
+/*
 				addmenulist(&mlist, "Search on Solarmovies (movie)", _("Search on Solarmovies (movie)"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on Solarmovies (serie)", _("Search on Solarmovies (serie)"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on Solarmovies (local)", _("Search on Solarmovies (local)"), NULL, 0, 0);
+*/
+/*
 				addmenulist(&mlist, "Search on Mle-HD (local)", _("Search on Mle-HD (local)"), NULL, 0, 0);
+*/
+/*
 				addmenulist(&mlist, "Search on Beeg (local)", _("Search on Beeg (local)"), NULL, 0, 0);
+*/
+/*
 				addmenulist(&mlist, "Search on Xvideos (local)", _("Search on Xvideos (local)"), NULL, 0, 0);
+*/
 				addmenulist(&mlist, "Search on FilmOn (local)", _("Search on FilmOn (local)"), NULL, 0, 0);
 			}
 			addmenulist(&mlist, "Search on Netzkino (local)", _("Search on Netzkino (local)"), NULL, 0, 0);
+/*
 			addmenulist(&mlist, "Search on Youtube", _("Search on Youtube"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on Youtube (local)", _("Search on Youtube (local)"), NULL, 0, 0);
+*/
+/*
 			addmenulist(&mlist, "Search on MyVideo", _("Search on MyVideo"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on MyVideo (local)", _("Search on MyVideo (local)"), NULL, 0, 0);
+*/
 			addmenulist(&mlist, "Search on ARD (local)", _("Search on ARD (local)"), NULL, 0, 0);
+/*
 			addmenulist(&mlist, "Search on ZDF (local)", _("Search on ZDF (local)"), NULL, 0, 0);
+*/
+/*
 			addmenulist(&mlist, "Search on TecTime (local)", _("Search on TecTime (local)"), NULL, 0, 0);
+*/
+/*
 			addmenulist(&mlist, "Search on Giga (local)", _("Search on Giga (local)"), NULL, 0, 0);
+*/
+/*
 			addmenulist(&mlist, "Search on NowTv (local)", _("Search on NowTv (local)"), NULL, 0, 0);
+*/
+/*
 			addmenulist(&mlist, "Search on InternetTv (local)", _("Search on InternetTv (local)"), NULL, 0, 0);
+*/
 			addmenulist(&mlist, "Search on InternetRadio (local)", _("Search on InternetRadio (local)"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on All (local)", _("Search on All (local)"), NULL, 0, 0);
 		}
@@ -757,46 +781,70 @@ printf("mbox->name=%s\n", mbox->name);
 			ret = 2;
 		else if(ostrcmp(mbox->name, "Search on KinoX (local)") == 0)
 			ret = 8;
+/*
 		else if(ostrcmp(mbox->name, "Search on Solarmovies (movie)") == 0)
 			ret = 3;
 		else if(ostrcmp(mbox->name, "Search on Solarmovies (serie)") == 0)
 			ret = 4;
 		else if(ostrcmp(mbox->name, "Search on Solarmovies (local)") == 0)
 			ret = 9;
+*/
+/*
 		else if(ostrcmp(mbox->name, "Search on Youtube") == 0)
 			ret = 5;
 		else if(ostrcmp(mbox->name, "Search on Youtube (local)") == 0)
 			ret = 10;
+*/
+/*
 		else if(ostrcmp(mbox->name, "Search on MyVideo") == 0)
 			ret = 6;
 		else if(ostrcmp(mbox->name, "Search on MyVideo (local)") == 0)
 			ret = 11;
+*/
+/*
 		else if(ostrcmp(mbox->name, "Search on Movie4k") == 0)
 			ret = 7;
 		else if(ostrcmp(mbox->name, "Search on Movie4k (local)") == 0)
 			ret = 12;
+*/
 		else if(ostrcmp(mbox->name, "Search on InternetRadio (local)") == 0)
 			ret = 13;
+/*
 		else if(ostrcmp(mbox->name, "Search on InternetTv (local)") == 0)
 			ret = 14;
+*/
 		else if(ostrcmp(mbox->name, "Search on ARD (local)") == 0)
 			ret = 15;
+/*
 		else if(ostrcmp(mbox->name, "Search on ZDF (local)") == 0)
 			ret = 16;
+*/
+/*
 		else if(ostrcmp(mbox->name, "Search on TecTime (local)") == 0)
 			ret = 17;
+*/
+/*
 		else if(ostrcmp(mbox->name, "Search on Giga (local)") == 0)
 			ret = 18;
+*/
+/*
 		else if(ostrcmp(mbox->name, "Search on Beeg (local)") == 0)
 			ret = 19;
+*/
+/*
 		else if(ostrcmp(mbox->name, "Search on NowTv (local)") == 0)
 			ret = 20;
+*/
 		else if(ostrcmp(mbox->name, "Search on All (local)") == 0)
 			ret = 21;
+/*
 		else if(ostrcmp(mbox->name, "Search on Xvideos (local)") == 0)
 			ret = 24;
+*/
+/*
 		else if(ostrcmp(mbox->name, "Search on Mle-HD (local)") == 0)
 			ret = 25;
+*/
 		else if(ostrcmp(mbox->name, "Search on Netzkino (local)") == 0)
 			ret = 26;
 		else if(ostrcmp(mbox->name, "Search on FilmOn (local)") == 0)
