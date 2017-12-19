@@ -14050,33 +14050,3 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Search on Beeg (local)"
-#~ msgstr "Search on MyVideo"
-
-#~ msgid "Search on Giga (local)"
-#~ msgstr "Search on Kinox"
-
-#~ msgid "Search on Mle-HD (local)"
-#~ msgstr "Search on MyVideo"
-
-#~ msgid "Search on Movie4k"
-#~ msgstr "Search on MyVideo"
-
-#~ msgid "Search on Movie4k (local)"
-#~ msgstr "Search on Solarmovies (movie)"
-
-#~ msgid "Search on Solarmovies (local)"
-#~ msgstr "Search on Solarmovies (movie)"
-
-#~ msgid "Search on TecTime (local)"
-#~ msgstr "Search on MyVideo"
-
-#~ msgid "Search on Xvideos (local)"
-#~ msgstr "Search on MyVideo"
-
-#~ msgid "Search on Youtube (local)"
-#~ msgstr "Search on Youtube"
-
-#~ msgid "Search on ZDF (local)"
-#~ msgstr "Search on Kinox"

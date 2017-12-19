@@ -14141,9 +14141,3 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Search on Movie4k"
-#~ msgstr "Поиск в Movie4k"
-
-#~ msgid "Search on Movie4k (local)"
-#~ msgstr "Поиск в Movie4k (Локально)"
