@@ -13,8 +13,8 @@ void screentithek_settings()
 	struct skin* pay = getscreennode(tithek_settings, "pay");
 	struct skin* picratio = getscreennode(tithek_settings, "picratio");
 	struct skin* hidxxx = getscreennode(tithek_settings, "hidxxx");
-	struct skin* amazon_user = getscreennode(tithek_settings, "amazon_user");
-	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
+//	struct skin* amazon_user = getscreennode(tithek_settings, "amazon_user");
+//	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
 	struct skin* vk_user = getscreennode(tithek_settings, "vk_user");
 	struct skin* vk_pass = getscreennode(tithek_settings, "vk_pass");
 	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
@@ -54,7 +54,7 @@ void screentithek_settings()
 	addchoicebox(autoupdate, "0", _("no"));
 	addchoicebox(autoupdate, "1", _("yes"));	
 	setchoiceboxselection(autoupdate, getconfig("tithek_autoupdate", NULL));
-
+/*
 	changemask(amazon_user, "abcdefghijklmnopqrstuvwxyz");
 	if(getconfig("amazon_pass", NULL) == NULL)
 		changeinput(amazon_user, getconfig("amazon_user", NULL));
@@ -66,14 +66,14 @@ void screentithek_settings()
 		changeinput(amazon_pass, getconfig("amazon_pass", NULL));
 	else
 		changeinput(amazon_pass, "****");
-
+*/
 	changemask(vk_user, "abcdefghijklmnopqrstuvwxyz");
 	if(getconfig("vk_pass", NULL) == NULL)
 		changeinput(vk_user, getconfig("vk_user", NULL));
 	else
 		changeinput(vk_user, "****");
 
-	changemask(amazon_pass, "abcdefghijklmnopqrstuvwxyz");
+	changemask(vk_pass, "abcdefghijklmnopqrstuvwxyz");
 	if(getconfig("vk_pass", NULL) == NULL)
 		changeinput(vk_pass, getconfig("vk_pass", NULL));
 	else
@@ -101,6 +101,7 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_pic_ratio", picratio, NULL);
 			addconfigscreencheck("tithek_hid_xxx", hidxxx, NULL);
 			addconfigscreencheck("tithek_autoupdate", autoupdate, NULL);
+/*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
 				debug(99, "amazon_user: write");
@@ -121,6 +122,7 @@ void screentithek_settings()
 			{
 				debug(99, "amazon_pass: skipped");
 			}
+*/
 			if(vk_user->ret != NULL && ostrcmp(vk_user->ret, "****") != 0)
 			{
 				debug(99, "vk_user: write");
@@ -144,8 +146,8 @@ void screentithek_settings()
 
 			writeallconfig(1);
 
-			debug(99, "amazon_user read: %s", getconfig("amazon_user", NULL));
-			debug(99, "amazon_pass read: %s", getconfig("amazon_pass", NULL));
+//			debug(99, "amazon_user read: %s", getconfig("amazon_user", NULL));
+//			debug(99, "amazon_pass read: %s", getconfig("amazon_pass", NULL));
 
 			debug(99, "vk_user read: %s", getconfig("vk_user", NULL));
 			debug(99, "vk_pass read: %s", getconfig("vk_pass", NULL));
@@ -162,12 +164,12 @@ void screentithek_settings()
 			unlink("/mnt/network/cookies");
 		}
 
-		if(file_exist("/mnt/network/cookies") && (ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0 || ostrcmp(listbox->select->name, "vk_user") == 0 || ostrcmp(listbox->select->name, "vk_pass") == 0))
+		if(file_exist("/mnt/network/cookies") && (/*ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0 || */ostrcmp(listbox->select->name, "vk_user") == 0 || ostrcmp(listbox->select->name, "vk_pass") == 0))
 			b4->hidden = NO;			
 		else
 			b4->hidden = YES;
 	
-		if(ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0 || ostrcmp(listbox->select->name, "vk_user") == 0 || ostrcmp(listbox->select->name, "vk_pass") == 0)
+		if(/*ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0 || */ostrcmp(listbox->select->name, "vk_user") == 0 || ostrcmp(listbox->select->name, "vk_pass") == 0)
 			b3->hidden = NO;
 		else
 			b3->hidden = YES;

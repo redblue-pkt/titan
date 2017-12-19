@@ -9,18 +9,18 @@
 #include "tithek.h"
 #include "tithek_settings.h"
 #include "tithek_global.h"
-#include "solarmovie.h"
-#include "beeg.h"
+//#include "solarmovie.h"
+//#include "beeg.h"
 #include "kinox.h"
-#include "myvideo.h"
-#include "movie4k.h"
-#include "mlehd.h"
+//#include "myvideo.h"
+//#include "movie4k.h"
+//#include "mlehd.h"
 #include "xvideos.h"
 #include "ard.h"
-#include "zdf.h"
+//#include "zdf.h"
 #include "putlocker.h"
 #include "filenuke.h"
-#include "youtube.h"
+//#include "youtube.h"
 #include "streamcloud.h"
 #include "flashx.h"
 #include "vidstream.h"
@@ -36,11 +36,11 @@
 #include "videoweed.h"
 #include "internetradio.h"
 #include "internettv.h"
-#include "giga.h"
-#include "tectime.h"
+//#include "giga.h"
+//#include "tectime.h"
 #include "netzkino.h"
 #include "filmon.h"
-#include "tvtoast.h"
+//#include "tvtoast.h"
 #include "firedrive.h"
 #include "shared.h"
 #include "thefile.h"
@@ -49,17 +49,17 @@
 #include "vidbull.h"
 #include "vodlocker.h"
 #include "vidto.h"
-#include "nowtv.h"
-#include "amazon.h"
+//#include "nowtv.h"
+//#include "amazon.h"
 #include "thevideo.h"
 #include "mightyupload.h"
 #include "cloudzilla.h"
 #include "vivo.h"
 #include "cricfree.h"
 #include "streamlive.h"
-#include "movie2k.h"
-#include "nbastream.h"
-#include "nbaondemand.h"
+//#include "movie2k.h"
+//#include "nbastream.h"
+//#include "nbaondemand.h"
 #include "p2pcast.h"
 #include "vidzi.h"
 #include "vidag.h"
@@ -109,11 +109,11 @@ void start(void)
 	tithekdownloadcount = 0;
 	tithekrun = 1;
 	tithekexit = 0;
-	tithekmovie4k = 1;
+//	tithekmovie4k = 1;
 	tithekkinox = 1;
-	titheksolarmovie = 1;
-	tithekmlehd = 1;
-	amazonlogin = 0;
+//	titheksolarmovie = 1;
+	//tithekmlehd = 1;
+//	amazonlogin = 0;
 	python = 0;
 	ytbgdownload = 0;
 	hlsbgdownload = 0;
