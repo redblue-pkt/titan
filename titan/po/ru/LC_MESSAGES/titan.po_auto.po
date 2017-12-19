@@ -686,7 +686,7 @@ msgstr ""
 "\n"
 "Бекап отменён!"
 
-#: skin_default_skin.xml.h:57 tithek_global.h:637 tithek_global.h:763
+#: skin_default_skin.xml.h:57 tithek_global.h:645 tithek_global.h:771
 #: webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
@@ -734,8 +734,8 @@ msgstr "Добавить все"
 msgid "ADD BOUQUET"
 msgstr "Добавить букет"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1984
-#: tithek.h:2708
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2018
+#: tithek.h:2810
 msgid "ADD FAV"
 msgstr "Добавить в фаворит"
 
@@ -826,11 +826,11 @@ msgstr "Добавить таймер"
 msgid "Add iMDB manuel"
 msgstr "Добавлять iMDB "
 
-#: tithek.h:2675
+#: tithek.h:2777
 msgid "Add this link as Favorite ?"
 msgstr "Добавить ссылку в фаворит?"
 
-#: tithek.h:2166 tithek.h:2326
+#: tithek.h:2200 tithek.h:2388
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -877,7 +877,7 @@ msgstr "Альбом"
 msgid "All Channels"
 msgstr "Все каналы"
 
-#: tithek_global.h:633 tithek_global.h:759
+#: tithek_global.h:641 tithek_global.h:767
 msgid "All Sorted"
 msgstr ""
 
@@ -1888,7 +1888,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Не удаётся получить время EPG или время окончания неизвестно"
 
-#: tithek.h:1916
+#: tithek.h:1950
 msgid "Can't get Streamurl !"
 msgstr "Не удаётся получить поток!"
 
@@ -1948,7 +1948,7 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr "Невозможно отобразить этот файл!"
 
-#: tithek.h:1461 tithek.h:1483 tithek.h:1540
+#: tithek.h:1467 tithek.h:1489 tithek.h:1546
 msgid ""
 "Can't start download.\n"
 "Please try later."
@@ -1959,7 +1959,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:781
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:764 mc_videoplayer.h:903 play.h:1654
+#: mc_pictureplayer.h:461 mc_videoplayer.h:764 mc_videoplayer.h:903 play.h:1702
 msgid "Can't start playback !"
 msgstr "Ошибка воспроизведения!"
 
@@ -1988,7 +1988,7 @@ msgstr "Отмена"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_global.h:613 tithek_global.h:735
+#: tithek_global.h:621 tithek_global.h:743
 msgid "Category"
 msgstr ""
 
@@ -2179,7 +2179,7 @@ msgstr "Выбор носителя для установки"
 msgid "Choice Menu"
 msgstr "Выбор меню"
 
-#: tithek.h:1741
+#: tithek.h:1775
 msgid "Choice Playback"
 msgstr "Выберите как воспроизвести файл"
 
@@ -2218,7 +2218,7 @@ msgstr ""
 msgid "Choose your Playlist Mode from the following list"
 msgstr "Выберите режим воспроизведения из списка ниже"
 
-#: play.h:714
+#: play.h:738
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Выберите нужное из списка ниже"
 
@@ -2239,11 +2239,11 @@ msgid "Choose your Shares from the following list"
 msgstr "Выберите для изменения, добавления новой сетевой папки"
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1386 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1394 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
-#: tithek.h:1802
+#: tithek.h:1836
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr "Выберите режим воспроизведения потока из списка ниже"
 
@@ -2275,7 +2275,7 @@ msgstr "Выберите нужное из списка ниже"
 msgid "Ci-Modul internal Menu"
 msgstr "Меню Ci модуля"
 
-#: tithek_global.h:739
+#: tithek_global.h:747
 msgid "Cine Films"
 msgstr ""
 
@@ -2499,7 +2499,7 @@ msgstr ""
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1457
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1505
 msgid "Create Folder"
 msgstr "Создать папку"
 
@@ -2551,7 +2551,7 @@ msgstr "Создать новый"
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:2151 tithek.h:2311
+#: tithek.h:2185 tithek.h:2373
 msgid "Create sub folder"
 msgstr ""
 
@@ -2595,7 +2595,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "По умолчанию"
 
-#: play.h:1578 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1626 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:144 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
@@ -3023,19 +3023,19 @@ msgstr "Закачка"
 msgid "Download (KB): "
 msgstr "Загружено (Кб) "
 
-#: tithek.h:1790
+#: tithek.h:1824
 msgid "Download Full File"
 msgstr "Загрузить весь файл"
 
-#: tithek.h:1791
+#: tithek.h:1825
 msgid "Download Full File (background)"
 msgstr "Загрузить весь файл (В фоновом режиме)"
 
-#: tithek.h:1795
+#: tithek.h:1829
 msgid "Download Full File (hlsdl)"
 msgstr ""
 
-#: tithek.h:1798
+#: tithek.h:1832
 msgid "Download Full File (youtube_dl)"
 msgstr ""
 
@@ -3043,7 +3043,7 @@ msgstr ""
 msgid "Download finished!"
 msgstr "Загрузка завершена!"
 
-#: keyactions.h:84 play.h:692 settings_bluebutton.h:21
+#: keyactions.h:84 play.h:716 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:167
 msgid "Downloads"
@@ -3102,7 +3102,7 @@ msgstr "Изменить"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:1979 tithek.h:2703
+#: tithek.h:2013 tithek.h:2805
 msgid "EDIT FAV"
 msgstr "Изменить фавориты"
 
@@ -3122,7 +3122,7 @@ msgstr "Параметры тюнера"
 msgid "EJECT"
 msgstr "Извлечь"
 
-#: adjust.h:70 httpdfunc.h:3905 play.h:1578 skin_default_skin.xml.h:184
+#: adjust.h:70 httpdfunc.h:3905 play.h:1626 skin_default_skin.xml.h:184
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3146,7 +3146,7 @@ msgstr "Извлечь"
 msgid "EPG"
 msgstr ""
 
-#: play.h:1296 play.h:1302 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1344 play.h:1350 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "EPG Info"
 msgstr "EPG инфо"
 
@@ -3309,8 +3309,8 @@ msgstr ""
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:319 play.h:497 play.h:614 play.h:1296 play.h:1302 play.h:1317
-#: play.h:1318 play.h:1354 play.h:1355 play.h:1369 play.h:1453
+#: player.h:319 play.h:497 play.h:614 play.h:1344 play.h:1350 play.h:1365
+#: play.h:1366 play.h:1402 play.h:1403 play.h:1417 play.h:1501
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:8
@@ -3349,10 +3349,10 @@ msgstr ""
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:286 titan.c:1090 titan.c:1099 titan.c:1228
 #: titan.c:1249 titan.c:1255 titan.c:1266 titan.c:1272 tithek.c:103
-#: tithek_global.h:215 tithek.h:750 tithek.h:1434 tithek.h:1461 tithek.h:1483
-#: tithek.h:1540 tithek.h:1691 tithek.h:1706 tithek.h:1880 tithek.h:1916
-#: tithek.h:1932 tithek.h:2166 tithek.h:2326 tithek.h:2611 tithek.h:2657
-#: tithek.h:2675 tithek.h:2688 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
+#: tithek_global.h:223 tithek.h:756 tithek.h:1440 tithek.h:1467 tithek.h:1489
+#: tithek.h:1546 tithek.h:1725 tithek.h:1740 tithek.h:1914 tithek.h:1950
+#: tithek.h:1966 tithek.h:2200 tithek.h:2388 tithek.h:2713 tithek.h:2759
+#: tithek.h:2777 tithek.h:2790 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
 #: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -3397,7 +3397,7 @@ msgstr "Изменить плейлист"
 msgid "Edit mode"
 msgstr "Переименование"
 
-#: tithek.h:2688
+#: tithek.h:2790
 msgid "Edit this Favorite ?"
 msgstr "Изменить этот фаворит?"
 
@@ -3805,7 +3805,7 @@ msgstr "Быстрое переключение"
 msgid "Fav"
 msgstr "Фавориты"
 
-#: tithek.h:1136
+#: tithek.h:1142
 msgid "Favorites"
 msgstr ""
 
@@ -3817,7 +3817,7 @@ msgstr ""
 msgid "Feed"
 msgstr "Введите адрес фида"
 
-#: play.h:1369
+#: play.h:1417
 msgid "File Exist, Really Rename and Overwrite exist File ?"
 msgstr ""
 
@@ -3833,7 +3833,7 @@ msgstr ""
 msgid "File System Usage"
 msgstr ""
 
-#: tithek.h:750
+#: tithek.h:756
 msgid "File exist, overwrite?"
 msgstr "Файл существует, перезаписать?"
 
@@ -3853,7 +3853,7 @@ msgstr "Выберите цвет выделения файлов в списк�
 msgid "Filelist-Mode"
 msgstr "Плейлист"
 
-#: tithek.h:1873 tithek.h:1892 tithek.h:1899 tithek.h:1906
+#: tithek.h:1907 tithek.h:1926 tithek.h:1933 tithek.h:1940
 msgid "Filename"
 msgstr "Имя файла"
 
@@ -4051,7 +4051,7 @@ msgstr ""
 "Найден Wlan адаптер, но нет драйвера\n"
 "Установите драйвер "
 
-#: tithek.h:1686
+#: tithek.h:1720
 msgid "Found error Msg:"
 msgstr ""
 
@@ -5275,7 +5275,7 @@ msgstr ""
 msgid "Jump"
 msgstr ""
 
-#: play.h:1210
+#: play.h:1258
 msgid "Jump To (min)"
 msgstr "Перейти к (Мин)"
 
@@ -5836,11 +5836,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1890
+#: play.h:1938
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1901
+#: play.h:1949
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -6107,7 +6107,7 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:319 play.h:614
-#: play.h:1317 play.h:1354 play.h:1654 play.h:1890 play.h:1901 possetup.h:98
+#: play.h:1365 play.h:1402 play.h:1702 play.h:1938 play.h:1949 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
@@ -6131,10 +6131,10 @@ msgstr ""
 #: system_update.h:270 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:286 titan.c:1228 titan.c:1249 titan.c:1255
-#: titan.c:1266 titan.c:1272 tithek.c:103 tithek_global.h:215 tithek.h:750
-#: tithek.h:1434 tithek.h:1461 tithek.h:1483 tithek.h:1540 tithek.h:1691
-#: tithek.h:1706 tithek.h:1880 tithek.h:1916 tithek.h:2166 tithek.h:2326
-#: tithek.h:2611 tithek.h:2657 tithek.h:2675 tithek.h:2688 tiwakeup.h:66
+#: titan.c:1266 titan.c:1272 tithek.c:103 tithek_global.h:223 tithek.h:756
+#: tithek.h:1440 tithek.h:1467 tithek.h:1489 tithek.h:1546 tithek.h:1725
+#: tithek.h:1740 tithek.h:1914 tithek.h:1950 tithek.h:2200 tithek.h:2388
+#: tithek.h:2713 tithek.h:2759 tithek.h:2777 tithek.h:2790 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
 #: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
 #: tunerconfig.h:709 tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20
@@ -6714,9 +6714,9 @@ msgstr ""
 #: newsletter.h:292 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:319 play.h:497 play.h:614 play.h:1296
-#: play.h:1302 play.h:1317 play.h:1318 play.h:1354 play.h:1355 play.h:1369
-#: play.h:1453 play.h:1654 play.h:1890 play.h:1901 plugins_dlna_skin.xml.h:7
+#: played.h:115 played.h:172 player.h:319 play.h:497 play.h:614 play.h:1344
+#: play.h:1350 play.h:1365 play.h:1366 play.h:1402 play.h:1403 play.h:1417
+#: play.h:1501 play.h:1702 play.h:1938 play.h:1949 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -6751,10 +6751,10 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:286
 #: titan.c:1090 titan.c:1099 titan.c:1228 titan.c:1249 titan.c:1255
-#: titan.c:1266 titan.c:1272 tithek.c:103 tithek_global.h:215 tithek.h:750
-#: tithek.h:1434 tithek.h:1461 tithek.h:1483 tithek.h:1540 tithek.h:1691
-#: tithek.h:1706 tithek.h:1880 tithek.h:1916 tithek.h:1932 tithek.h:2166
-#: tithek.h:2326 tithek.h:2611 tithek.h:2657 tithek.h:2675 tithek.h:2688
+#: titan.c:1266 titan.c:1272 tithek.c:103 tithek_global.h:223 tithek.h:756
+#: tithek.h:1440 tithek.h:1467 tithek.h:1489 tithek.h:1546 tithek.h:1725
+#: tithek.h:1740 tithek.h:1914 tithek.h:1950 tithek.h:1966 tithek.h:2200
+#: tithek.h:2388 tithek.h:2713 tithek.h:2759 tithek.h:2777 tithek.h:2790
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -7019,7 +7019,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:2016
+#: tithek.h:2050
 msgid "Page"
 msgstr "Страница"
 
@@ -7042,7 +7042,7 @@ msgstr "Панель"
 msgid "Parental"
 msgstr "Родительский контроль"
 
-#: tithek.h:1703
+#: tithek.h:1737
 msgid "Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link"
 msgstr ""
 
@@ -7871,15 +7871,15 @@ msgstr "Ридер активен"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1453
+#: play.h:1501
 msgid "Really Create Folder in ?"
 msgstr ""
 
-#: play.h:1318
+#: play.h:1366
 msgid "Really Delete ?"
 msgstr "Удалить?"
 
-#: play.h:1355
+#: play.h:1403
 msgid "Really Rename ?"
 msgstr ""
 
@@ -8006,7 +8006,7 @@ msgstr "Параметры записи"
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1317 play.h:1354
+#: play.h:1365 play.h:1402
 msgid "Record in progress"
 msgstr "Идёт запись"
 
@@ -8102,7 +8102,7 @@ msgstr "Пульты управления всех версий"
 msgid "Remotecontrol Power Aktion"
 msgstr "Кнопка питания"
 
-#: tithek.h:1430
+#: tithek.h:1436
 msgid "Remove Cachefile ?"
 msgstr "Удалить файл кэша?"
 
@@ -8138,7 +8138,7 @@ msgstr "Запуск удаления"
 msgid "Remove success"
 msgstr "Удаление завершено"
 
-#: tithek.h:2657
+#: tithek.h:2759
 msgid "Remove this Favorite ?"
 msgstr "Удалить этот фаворит?"
 
@@ -8158,7 +8158,7 @@ msgstr ""
 msgid "Removeing"
 msgstr "Удаление"
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1359
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1407
 #: plugins_multiimage_skin.xml.h:13 skin_default_skin.xml.h:499
 #: skins_multiimage_skin.xml.h:13
 msgid "Rename"
@@ -8292,7 +8292,7 @@ msgstr ""
 msgid "Result List"
 msgstr "Список результатов"
 
-#: tithek.h:1023
+#: tithek.h:1029
 msgid "Results"
 msgstr "Результат"
 
@@ -8415,7 +8415,7 @@ msgstr "SCART 4:3/16:9"
 msgid "SEARCH"
 msgstr "Поиск"
 
-#: dvdplay.h:29 play.h:1578 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1626 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Выбрать"
 
@@ -8439,7 +8439,7 @@ msgstr ""
 msgid "SNR:"
 msgstr "SNR"
 
-#: play.h:1578
+#: play.h:1626
 msgid "SORT"
 msgstr "Сортировка"
 
@@ -8896,51 +8896,39 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:557 solarmovie.h:138
 #: solarmovie.h:140 solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:629 tithek_global.h:755 tithek_global.h:823
-#: tithek_global.h:825 tithek_global.h:1442 tithek_global.h:1444 tmdb.h:898
+#: tithek_global.h:637 tithek_global.h:763 tithek_global.h:831
+#: tithek_global.h:833 tithek_global.h:1450 tithek_global.h:1452 tmdb.h:898
 #: tvtoast.h:530 tvtoast.h:532 xvideos.h:56 xvideos.h:58 youtube.h:253
 #: youtube.h:255 youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Поиск"
 
-#: tithek_global.h:621 tithek_global.h:747
+#: tithek_global.h:629 tithek_global.h:755
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_global.h:617 tithek_global.h:743
+#: tithek_global.h:625 tithek_global.h:751
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_global.h:625 tithek_global.h:751
+#: tithek_global.h:633 tithek_global.h:759
 msgid "Search Cast"
 msgstr ""
 
-#: play.h:681
+#: play.h:695
 msgid "Search on ARD (local)"
 msgstr ""
 
-#: play.h:688
+#: play.h:712
 msgid "Search on All (local)"
 msgstr ""
 
-#: play.h:672
-msgid "Search on Beeg (local)"
-msgstr ""
-
-#: play.h:674
+#: play.h:684
 msgid "Search on FilmOn (local)"
 msgstr ""
 
-#: play.h:684
-msgid "Search on Giga (local)"
-msgstr ""
-
-#: play.h:687
+#: play.h:711
 msgid "Search on InternetRadio (local)"
-msgstr ""
-
-#: play.h:686
-msgid "Search on InternetTv (local)"
 msgstr ""
 
 #: play.h:664
@@ -8951,64 +8939,8 @@ msgstr "Поиск в KinoX"
 msgid "Search on KinoX (local)"
 msgstr "Поиск в KinoX (Локально)"
 
-#: play.h:671
-msgid "Search on Mle-HD (local)"
-msgstr ""
-
-#: play.h:666
-msgid "Search on Movie4k"
-msgstr "Поиск в Movie4k"
-
-#: play.h:667
-msgid "Search on Movie4k (local)"
-msgstr "Поиск в Movie4k (Локально)"
-
-#: play.h:679
-msgid "Search on MyVideo"
-msgstr ""
-
-#: play.h:680
-msgid "Search on MyVideo (local)"
-msgstr ""
-
-#: play.h:676
+#: play.h:686
 msgid "Search on Netzkino (local)"
-msgstr ""
-
-#: play.h:685
-msgid "Search on NowTv (local)"
-msgstr ""
-
-#: play.h:670
-msgid "Search on Solarmovies (local)"
-msgstr ""
-
-#: play.h:668
-msgid "Search on Solarmovies (movie)"
-msgstr ""
-
-#: play.h:669
-msgid "Search on Solarmovies (serie)"
-msgstr ""
-
-#: play.h:683
-msgid "Search on TecTime (local)"
-msgstr ""
-
-#: play.h:673
-msgid "Search on Xvideos (local)"
-msgstr ""
-
-#: play.h:677
-msgid "Search on Youtube"
-msgstr ""
-
-#: play.h:678
-msgid "Search on Youtube (local)"
-msgstr ""
-
-#: play.h:682
-msgid "Search on ZDF (local)"
 msgstr ""
 
 #: epgsearch.h:27
@@ -9658,7 +9590,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "Запускать при загрузке"
 
-#: tithek.h:1880
+#: tithek.h:1914
 msgid "Start playback"
 msgstr "Старт воспроизведения"
 
@@ -9739,7 +9671,7 @@ msgid "Stream Link"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1386 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1394 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr "Меню потока"
 
@@ -9764,15 +9696,15 @@ msgstr "Инфо о потоке"
 msgid "Streaming"
 msgstr "Стриминг"
 
-#: tithek.h:1746 tithek.h:1750 tithek.h:1754 tithek.h:1767
+#: tithek.h:1780 tithek.h:1784 tithek.h:1788 tithek.h:1801
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1778
+#: tithek.h:1812
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1775
+#: tithek.h:1809
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
@@ -10137,7 +10069,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:215 tithek.h:2611
+#: tithek_global.h:223 tithek.h:2713
 msgid "The hoster is not yet supported !"
 msgstr "Хостер не поддерживается!"
 
@@ -10453,7 +10385,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1932
+#: tithek.h:1966
 msgid "TitanNit Tithek disclaimer"
 msgstr "Отказ от ответственности"
 
@@ -10474,12 +10406,12 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
-#: tithek.c:129 tithek_global.h:587 tithek_global.h:709
+#: tithek.c:129 tithek_global.h:595 tithek_global.h:717
 msgid "Tithek - Mainmenu"
 msgstr "Главное меню"
 
-#: tithek_global.h:583 tithek_global.h:705 tithek.h:1977 tithek.h:2113
-#: tithek.h:2653 tithek.h:2671 tithek.h:2684 tithek.h:2701
+#: tithek_global.h:591 tithek_global.h:713 tithek.h:2011 tithek.h:2147
+#: tithek.h:2755 tithek.h:2773 tithek.h:2786 tithek.h:2803
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "Фавориты"
 
@@ -12213,7 +12145,7 @@ msgstr "Первая игра Titan"
 msgid "fonts"
 msgstr "Шрифты"
 
-#: tithek.h:1018
+#: tithek.h:1024
 msgid "found"
 msgstr "Найдено"
 
@@ -13029,7 +12961,7 @@ msgid "please wait"
 msgstr "Ждите!"
 
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:13
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1417
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1423
 msgid "please wait..."
 msgstr "Пожалуйста ждите!"
 
@@ -14209,3 +14141,9 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Search on Movie4k"
+#~ msgstr "Поиск в Movie4k"
+
+#~ msgid "Search on Movie4k (local)"
+#~ msgstr "Поиск в Movie4k (Локально)"
