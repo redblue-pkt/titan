@@ -14075,6 +14075,3 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Search on Youtube"
-#~ msgstr "Bắt đầu khởi động"

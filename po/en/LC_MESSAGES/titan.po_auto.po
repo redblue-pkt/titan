@@ -14158,9 +14158,3 @@ msgstr ""
 #: tpk_showname.h:225
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Search on Solarmovies (movie)"
-#~ msgstr "Search on Solarmovies (movies)"
-
-#~ msgid "Search on Solarmovies (serie)"
-#~ msgstr "Search on Solarmovies (series)"
