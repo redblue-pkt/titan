@@ -2921,7 +2921,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
-#: multiboot.h:143
+#: multiboot.h:146
 msgid "Do you really want to overwrite the chosen image?"
 msgstr ""
 
@@ -2931,7 +2931,7 @@ msgid ""
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 
-#: multiboot.h:113
+#: multiboot.h:116
 msgid "Do you want to start now the selected image?"
 msgstr ""
 
@@ -3202,7 +3202,7 @@ msgstr "ERREUR.. Autotimer terminé sans succès "
 msgid "ERROR... can't set marker in this file"
 msgstr ""
 
-#: multiboot.h:151
+#: multiboot.h:154
 msgid "ERROR: The installation ends with error"
 msgstr ""
 
@@ -3248,8 +3248,8 @@ msgstr ""
 #: menu.h:1007 menu.h:1009 mightyupload.h:27 mightyupload.h:69
 #: mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60
 #: movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40
-#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:113 multiboot.h:136
-#: multiboot.h:143 MultiImage.c:292 MultiImage.c:308 MultiImage.c:568
+#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:116 multiboot.h:139
+#: multiboot.h:146 MultiImage.c:292 MultiImage.c:308 MultiImage.c:568
 #: MultiImage.c:626 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
 #: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
@@ -6613,8 +6613,8 @@ msgstr "Ö"
 #: menu.h:1007 menu.h:1009 mightyupload.h:27 mightyupload.h:69
 #: mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60
 #: movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40
-#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:113 multiboot.h:136
-#: multiboot.h:143 multiboot.h:149 multiboot.h:151 MultiImage.c:46
+#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:116 multiboot.h:139
+#: multiboot.h:146 multiboot.h:152 multiboot.h:154 MultiImage.c:46
 #: MultiImage.c:205 MultiImage.c:274 MultiImage.c:292 MultiImage.c:308
 #: MultiImage.c:388 MultiImage.c:436 MultiImage.c:568 MultiImage.c:626
 #: MultiImage.c:642 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
@@ -9962,7 +9962,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr ""
 
-#: multiboot.h:149
+#: multiboot.h:152
 msgid "The image was successfully installed"
 msgstr ""
 
@@ -11312,7 +11312,7 @@ msgstr "jaune"
 msgid "You can leave HBBTV with Record Key."
 msgstr ""
 
-#: multiboot.h:136
+#: multiboot.h:139
 msgid ""
 "You have chosen the active image\n"
 "Do you really want to overwrite this?"
