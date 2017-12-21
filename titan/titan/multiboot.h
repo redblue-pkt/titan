@@ -17,7 +17,10 @@ int install_image(char* part)
 	command = ostrcat("ofgwrite -m", part, 0, 0);
 	command = ostrcat(command, " ", 1, 0);
 	command = ostrcat(command, imagedir, 1, 0);
+	int merksec = status.sec;
+	status.sec = 0; //deaktiviere Spinner
 	system(command);
+	status.sec = merksec;
 	free(imagedir); imagedir = NULL;
 	free(command); command = NULL;
 	return 1;
