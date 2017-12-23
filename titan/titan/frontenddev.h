@@ -1637,7 +1637,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	{
 		printf("brutto STRENGTH %d tuner:%s\n", signal, node->feinfo->name );  
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL)
-			signal = signal * 516;
+			signal = signal * 257;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
 	if(signal == 0) 
