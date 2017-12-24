@@ -1592,6 +1592,29 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	}
 //#ifdef ARM
 //#ifdef MIPSEL	
+
+#ifdef ARM             
+	struct dtv_property prop[1];
+	prop[0].cmd = DTV_STAT_SIGNAL_STRENGTH;
+	struct dtv_properties props;
+	props.props = prop;
+	props.num = 1;
+	ioctl(node->fd, FE_GET_PROPERTY, &props);
+	for(unsigned int i=0; i<prop[0].u.st.len; i++)
+	{
+		if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
+			signal = prop[0].u.st.stat[i].uvalue;
+	}
+	if (!signal)
+	{
+		ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
+		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
+		signal = signal * 1000;
+		printf("frontend signal = %02x\n", (signal * 100) / 0xffff);
+	}
+	return signal;
+#else   
+
 #if DVB_API_VERSION > 5 || DVB_API_VERSION == 5 && DVB_API_VERSION_MINOR >= 10
 	struct dtv_property prop[1];
 	memset(prop, 0, sizeof(prop));
@@ -1648,6 +1671,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	printf("old STRENGTH %d\n", signal);       
 	return signal;
 }
+#endif
 
 uint32_t fereadber(struct dvbdev* node)
 {
