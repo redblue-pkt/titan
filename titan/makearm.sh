@@ -33,12 +33,6 @@ if [ "$BOX" == "dm900" ];then
 	CONFION="CONFIG_ION"
 fi
 
-#workaround
-if [ "$BOX" == "hd51" ];then
-	DREAM="DREAMBOX"
-fi
-
-
 #echo $*
 if [ -e "$HOME"/flashimg/.ipk-build-error ]; then
 	rm "$HOME"/flashimg/.ipk-build-error
