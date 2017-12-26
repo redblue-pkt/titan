@@ -1607,9 +1607,15 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	}
 	if (!signal)
 	{
+		printf("brutto STRENGTH %02x\n", signal);
 		ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
-			signal = signal * 1000;
+		{
+			if(signal > 127)
+				signal = 65535;
+			else
+				signal = signal * 512;
+		}
 		printf("frontend signal = %02x\n", (signal * 100) / 0xffff);
 	}
 	return signal;
