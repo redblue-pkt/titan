@@ -1,6 +1,10 @@
 #ifndef RC_H
 #define RC_H
 
+#ifdef ARM
+#define SECINPUT
+#endif
+
 int sendtuxtxt(int code)
 {
 	int rc;
@@ -297,7 +301,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 		if((fromthread == 0 && status.rckey == 0) || fromthread == 1)
 		{
 			if(fromthread == 0) m_unlock(&status.waitrcmutex, 24);
-#ifdef DREAMBOX			
+#ifdef SECINPUT			
 			if(status.fdrc1 > -1 && timeout > 1)
 			{
 				for(j = 0; j < timeout / 2; j++)
@@ -328,7 +332,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 				FD_ZERO(&rfds);
 				FD_SET(status.fdrc, &rfds);
 				ret = TEMP_FAILURE_RETRY(select(status.fdrc + 1, &rfds, NULL, NULL, &tv));
-#ifdef DREAMBOX				
+#ifdef SECINPUT				
 				if(ret == 0 && status.fdrc1 > -1)
 				{
 					tv.tv_sec = 0;
