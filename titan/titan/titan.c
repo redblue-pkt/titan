@@ -801,6 +801,8 @@ int main(int argc, char *argv[])
 	waitvsync();
 	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 		setfbosd();
+	if(checkbox("HD51") ==1)
+		setfbosdnull();
 	status.usedirectfb = 1;
 #endif
 #ifndef CONFIG_ION
