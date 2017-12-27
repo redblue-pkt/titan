@@ -566,8 +566,17 @@ start:
 		if(status.bottomoffset != getconfigint("fbbottomoffset", NULL)) offsetchange = 1;
 		status.bottomoffset = getconfigint("fbbottomoffset", NULL);
 
-		if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
-
+		if(offsetchange == 1)
+		{
+			if(getconfig("av_mode3d", NULL) != NULL)
+			{
+				if(ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0) clearfball();
+			}
+			else
+			{
+				clearfball();
+			}
+		}
 		drawscreen(skinadjust, 0, 0);
 
 #ifdef MIPSEL

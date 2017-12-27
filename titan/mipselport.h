@@ -1587,6 +1587,19 @@ char* getfbosddev(char* dev)
 	return value;
 }
 
+void setfbosdnull()
+{
+	char* fbleftdev = "/proc/stb/fb/dst_left";
+	char* fbwidthdev = "/proc/stb/fb/dst_width";
+	char* fbtopdev = "/proc/stb/fb/dst_top";
+	char* fbheightdev = "/proc/stb/fb/dst_height";
+	char* fbapplydev = "/proc/stb/fb/dst_apply";
+	setfbosddev(fbleftdev, 0);
+	setfbosddev(fbwidthdev, 720);
+	setfbosddev(fbtopdev, 0);
+	setfbosddev(fbheightdev, 576);
+	setfbosddev(fbapplydev, 0);
+}
 
 void setfbosd()
 {
