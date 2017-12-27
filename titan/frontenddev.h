@@ -1607,10 +1607,11 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	}
 	if (!signal)
 	{
-		printf("brutto STRENGTH %02x\n", signal);
 		ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
+		printf("brutto STRENGTH %02x\n", signal);
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
 		{
+			signal = signal - (signal * 24 / 146);
 			if(signal > 127)
 				signal = 65535;
 			else
