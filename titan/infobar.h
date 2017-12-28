@@ -213,6 +213,11 @@ void screeninfobar()
 					continue;
 				}
 			}
+			if(rcret == getrcconfigint("rcpiprec", NULL))
+			{
+					pipstop(status.pipservice, 0);
+					continue;
+			}				
 		}
 		//Plugin von aussen aufrufen
 		//if(rcret == RCTIMEOUT && status.extplugin != NULL)
