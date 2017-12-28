@@ -3,6 +3,7 @@
 
 #ifdef ARM
 #define SECEVENT
+#define NEWLONG
 #endif
 
 int sendtuxtxt(int code)
@@ -377,7 +378,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 			if(rcdata.value == 0) //release
 			{
 				rcsignal(0);
-#ifdef DREAMBOX
+#ifdef NEWLONG
 				if(longpresscount > 0)
 				{
 					rcdata.code = longpress;
@@ -397,7 +398,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 				longpress = rcdata.code;
 				longpresscount++;
 				timeout = 0;
-#ifdef DREAMBOX
+#ifdef NEWLONG
 				if(longpresscount == 1)
 					rest = 700;
 				else
