@@ -731,6 +731,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	}
 	
 	debug(88, "-----------------------------------------------------------------");	
+	debug(88, "host: %s page: %s", host, page);
 	debug(88, "header: %s", tmpbuf);
 	debug(88, "-----------------------------------------------------------------");
 

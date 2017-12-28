@@ -1,0 +1,14 @@
+Package: titan-plugin-wireless-8188eu
+Architecture: sh4
+Showname: Wlan 8188eu
+Version: 24513
+Section: wireless
+Description: wireless 8188eu.ko model
+Group: 0
+Minversion: 0
+Preinstalled: 0
+Size: 242
+Titanname: *
+Usepath: *
+Boxtype: *
+Installpath: /var
