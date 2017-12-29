@@ -66,7 +66,7 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr "Голосов"
 
-#: skin_default_skin.xml.h:624
+#: skin_default_skin.xml.h:625
 msgid "(Stop)"
 msgstr "(Стоп)"
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "->swap<-"
 msgstr ""
 
-#: titan.c:1272
+#: titan.c:1274
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -155,7 +155,7 @@ msgstr ""
 "/mnt не для записи!\n"
 "Исправить это?"
 
-#: titan.c:1255
+#: titan.c:1257
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -213,13 +213,14 @@ msgstr ""
 #: webif_rc.atemio6100.h:4 webif_rc.atemio6200.h:4 webif_rc.atemio7600.h:3
 #: webif_rc.atemio-nemesis.h:4 webif_rc.dm520.h:4 webif_rc.dm525.h:4
 #: webif_rc.dm7020hd.h:4 webif_rc.dm7020hdv2.h:4 webif_rc.dm900.h:4
-#: webif_rc.h:4 webif_rc_virtual.atemio510.h:15 webif_rc_virtual.atemio5200.h:2
-#: webif_rc_virtual.atemio520.h:2 webif_rc_virtual.atemio530.h:2
-#: webif_rc_virtual.atemio6000.h:2 webif_rc_virtual.atemio6100.h:2
-#: webif_rc_virtual.atemio6200.h:2 webif_rc_virtual.atemio-nemesis.h:2
-#: webif_rc_virtual.dm520.h:2 webif_rc_virtual.dm525.h:2
-#: webif_rc_virtual.dm7020hd.h:2 webif_rc_virtual.dm7020hdv2.h:2
-#: webif_rc_virtual.dm900.h:2 webif_rc_virtual.h:2
+#: webif_rc.h:4 webif_rc_virtual.atemio510.h:15
+#: webif_rc_virtual.atemio5200.h:2 webif_rc_virtual.atemio520.h:2
+#: webif_rc_virtual.atemio530.h:2 webif_rc_virtual.atemio6000.h:2
+#: webif_rc_virtual.atemio6100.h:2 webif_rc_virtual.atemio6200.h:2
+#: webif_rc_virtual.atemio-nemesis.h:2 webif_rc_virtual.dm520.h:2
+#: webif_rc_virtual.dm525.h:2 webif_rc_virtual.dm7020hd.h:2
+#: webif_rc_virtual.dm7020hdv2.h:2 webif_rc_virtual.dm900.h:2
+#: webif_rc_virtual.h:2
 msgid "1"
 msgstr ""
 
@@ -511,13 +512,13 @@ msgstr "500 об/мин"
 msgid "5s (default)"
 msgstr "5 сек (Умолч)"
 
-#: callmon_main.h:138 skin_default_keyskin.xml.h:11 webif_index.atemio5200.h:26
-#: webif_index.atemio5200.h:82 webif_index.atemio6200.h:26
-#: webif_index.atemio6200.h:82 webif_index.atemio7600.h:35
-#: webif_index.atemio7600.h:75 webif_index.atemio-nemesis.h:26
-#: webif_index.atemio-nemesis.h:82 webif_index.dm520.h:26
-#: webif_index.dm520.h:82 webif_index.dm525.h:26 webif_index.dm525.h:82
-#: webif_index.dm7020hd.h:26 webif_index.dm7020hd.h:82
+#: callmon_main.h:138 skin_default_keyskin.xml.h:11
+#: webif_index.atemio5200.h:26 webif_index.atemio5200.h:82
+#: webif_index.atemio6200.h:26 webif_index.atemio6200.h:82
+#: webif_index.atemio7600.h:35 webif_index.atemio7600.h:75
+#: webif_index.atemio-nemesis.h:26 webif_index.atemio-nemesis.h:82
+#: webif_index.dm520.h:26 webif_index.dm520.h:82 webif_index.dm525.h:26
+#: webif_index.dm525.h:82 webif_index.dm7020hd.h:26 webif_index.dm7020hd.h:82
 #: webif_index.dm7020hdv2.h:26 webif_index.dm7020hdv2.h:82
 #: webif_index.dm900.h:26 webif_index.dm900.h:82 webif_rc.atemio510.h:20
 #: webif_rc.atemio5200.h:9 webif_rc.atemio520.h:12 webif_rc.atemio530.h:12
@@ -579,13 +580,13 @@ msgstr ""
 msgid "7 Mhz"
 msgstr "7 МГц"
 
-#: callmon_main.h:139 skin_default_keyskin.xml.h:13 webif_index.atemio5200.h:28
-#: webif_index.atemio5200.h:84 webif_index.atemio6200.h:28
-#: webif_index.atemio6200.h:84 webif_index.atemio7600.h:36
-#: webif_index.atemio7600.h:77 webif_index.atemio-nemesis.h:28
-#: webif_index.atemio-nemesis.h:84 webif_index.dm520.h:28
-#: webif_index.dm520.h:84 webif_index.dm525.h:28 webif_index.dm525.h:84
-#: webif_index.dm7020hd.h:28 webif_index.dm7020hd.h:84
+#: callmon_main.h:139 skin_default_keyskin.xml.h:13
+#: webif_index.atemio5200.h:28 webif_index.atemio5200.h:84
+#: webif_index.atemio6200.h:28 webif_index.atemio6200.h:84
+#: webif_index.atemio7600.h:36 webif_index.atemio7600.h:77
+#: webif_index.atemio-nemesis.h:28 webif_index.atemio-nemesis.h:84
+#: webif_index.dm520.h:28 webif_index.dm520.h:84 webif_index.dm525.h:28
+#: webif_index.dm525.h:84 webif_index.dm7020hd.h:28 webif_index.dm7020hd.h:84
 #: webif_index.dm7020hdv2.h:28 webif_index.dm7020hdv2.h:84
 #: webif_index.dm900.h:28 webif_index.dm900.h:84 webif_rc.atemio510.h:21
 #: webif_rc.atemio5200.h:11 webif_rc.atemio520.h:14 webif_rc.atemio530.h:14
@@ -734,8 +735,8 @@ msgstr "Добавить все"
 msgid "ADD BOUQUET"
 msgstr "Добавить букет"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2018
-#: tithek.h:2810
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2019
+#: tithek.h:2811
 msgid "ADD FAV"
 msgstr "Добавить в фаворит"
 
@@ -826,11 +827,11 @@ msgstr "Добавить таймер"
 msgid "Add iMDB manuel"
 msgstr "Добавлять iMDB "
 
-#: tithek.h:2777
+#: tithek.h:2778
 msgid "Add this link as Favorite ?"
 msgstr "Добавить ссылку в фаворит?"
 
-#: tithek.h:2200 tithek.h:2388
+#: tithek.h:2201 tithek.h:2389
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -1118,13 +1119,13 @@ msgstr ""
 #: webif_index.atemio6200.h:63 webif_index.atemio6200.h:119
 #: webif_index.atemio-nemesis.h:63 webif_index.atemio-nemesis.h:119
 #: webif_index.dm520.h:63 webif_index.dm520.h:119 webif_index.dm525.h:63
-#: webif_index.dm525.h:119 webif_index.dm7020hd.h:63 webif_index.dm7020hd.h:119
-#: webif_index.dm7020hdv2.h:63 webif_index.dm7020hdv2.h:119
-#: webif_index.dm900.h:63 webif_index.dm900.h:119 webif_rc.atemio5200.h:46
-#: webif_rc.atemio6000.h:46 webif_rc.atemio6100.h:46 webif_rc.atemio6200.h:46
-#: webif_rc.atemio-nemesis.h:46 webif_rc.dm520.h:46 webif_rc.dm525.h:46
-#: webif_rc.dm7020hd.h:46 webif_rc.dm7020hdv2.h:46 webif_rc.dm900.h:46
-#: webif_rc.h:46
+#: webif_index.dm525.h:119 webif_index.dm7020hd.h:63
+#: webif_index.dm7020hd.h:119 webif_index.dm7020hdv2.h:63
+#: webif_index.dm7020hdv2.h:119 webif_index.dm900.h:63 webif_index.dm900.h:119
+#: webif_rc.atemio5200.h:46 webif_rc.atemio6000.h:46 webif_rc.atemio6100.h:46
+#: webif_rc.atemio6200.h:46 webif_rc.atemio-nemesis.h:46 webif_rc.dm520.h:46
+#: webif_rc.dm525.h:46 webif_rc.dm7020hd.h:46 webif_rc.dm7020hdv2.h:46
+#: webif_rc.dm900.h:46 webif_rc.h:46
 msgid "Audio"
 msgstr "Аудио"
 
@@ -1221,7 +1222,7 @@ msgstr "Поиск каналов (Авто)"
 msgid "Automatic start last subtitle"
 msgstr "Автоматический запуск старых субтитров"
 
-#: titan.c:1333
+#: titan.c:1335
 msgid "Automatic stop in 10 seconds."
 msgstr "Автостоп через 10 сек"
 
@@ -1330,15 +1331,15 @@ msgstr "Синяя"
 msgid "BOOT"
 msgstr "Загрузка"
 
-#: plugins_news_skin.xml.h:1 plugins_stock_skin.xml.h:2 skins_news_skin.xml.h:1
-#: skins_stock_skin.xml.h:2
+#: plugins_news_skin.xml.h:1 plugins_stock_skin.xml.h:2
+#: skins_news_skin.xml.h:1 skins_stock_skin.xml.h:2
 msgid "BROWSER"
 msgstr "Браузеры"
 
 #: webif_index.atemio5200.h:45 webif_index.atemio6200.h:45
 #: webif_index.atemio-nemesis.h:45 webif_index.dm520.h:45
-#: webif_index.dm525.h:45 webif_index.dm7020hd.h:45 webif_index.dm7020hdv2.h:45
-#: webif_index.dm900.h:45
+#: webif_index.dm525.h:45 webif_index.dm7020hd.h:45
+#: webif_index.dm7020hdv2.h:45 webif_index.dm900.h:45
 msgid "Back"
 msgstr "Назад"
 
@@ -1489,14 +1490,15 @@ msgstr ""
 #: webif_index.atemio7600.h:56 webif_index.atemio7600.h:96
 #: webif_index.atemio-nemesis.h:54 webif_index.atemio-nemesis.h:110
 #: webif_index.dm520.h:54 webif_index.dm520.h:110 webif_index.dm525.h:54
-#: webif_index.dm525.h:110 webif_index.dm7020hd.h:54 webif_index.dm7020hd.h:110
-#: webif_index.dm7020hdv2.h:54 webif_index.dm7020hdv2.h:110
-#: webif_index.dm900.h:54 webif_index.dm900.h:110 webif_rc.atemio510.h:41
-#: webif_rc.atemio5200.h:37 webif_rc.atemio520.h:35 webif_rc.atemio530.h:35
-#: webif_rc.atemio6000.h:37 webif_rc.atemio6100.h:37 webif_rc.atemio6200.h:37
-#: webif_rc.atemio7600.h:29 webif_rc.atemio-nemesis.h:37 webif_rc.dm520.h:37
-#: webif_rc.dm525.h:37 webif_rc.dm7020hd.h:37 webif_rc.dm7020hdv2.h:37
-#: webif_rc.dm900.h:37 webif_rc.h:37 webif_rc_virtual.atemio510.h:41
+#: webif_index.dm525.h:110 webif_index.dm7020hd.h:54
+#: webif_index.dm7020hd.h:110 webif_index.dm7020hdv2.h:54
+#: webif_index.dm7020hdv2.h:110 webif_index.dm900.h:54 webif_index.dm900.h:110
+#: webif_rc.atemio510.h:41 webif_rc.atemio5200.h:37 webif_rc.atemio520.h:35
+#: webif_rc.atemio530.h:35 webif_rc.atemio6000.h:37 webif_rc.atemio6100.h:37
+#: webif_rc.atemio6200.h:37 webif_rc.atemio7600.h:29
+#: webif_rc.atemio-nemesis.h:37 webif_rc.dm520.h:37 webif_rc.dm525.h:37
+#: webif_rc.dm7020hd.h:37 webif_rc.dm7020hdv2.h:37 webif_rc.dm900.h:37
+#: webif_rc.h:37 webif_rc_virtual.atemio510.h:41
 #: webif_rc_virtual.atemio5200.h:28 webif_rc_virtual.atemio520.h:28
 #: webif_rc_virtual.atemio530.h:28 webif_rc_virtual.atemio6000.h:28
 #: webif_rc_virtual.atemio6100.h:28 webif_rc_virtual.atemio6200.h:28
@@ -1668,8 +1670,8 @@ msgstr "Запись закончена. Ресивер отключится ч�
 #: webif_index.atemio6000.h:11 webif_index.atemio6100.h:11
 #: webif_index.atemio6200.h:11 webif_index.atemio7600.h:9
 #: webif_index.atemio-nemesis.h:11 webif_index.dm520.h:11
-#: webif_index.dm525.h:11 webif_index.dm7020hd.h:11 webif_index.dm7020hdv2.h:11
-#: webif_index.dm900.h:11 webif_index.h:11
+#: webif_index.dm525.h:11 webif_index.dm7020hd.h:11
+#: webif_index.dm7020hdv2.h:11 webif_index.dm900.h:11 webif_index.h:11
 msgid "Boxcontrol"
 msgstr "Ресивер"
 
@@ -1888,7 +1890,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Не удаётся получить время EPG или время окончания неизвестно"
 
-#: tithek.h:1950
+#: tithek.h:1951
 msgid "Can't get Streamurl !"
 msgstr "Не удаётся получить поток!"
 
@@ -1959,7 +1961,8 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:781
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:764 mc_videoplayer.h:903 play.h:1702
+#: mc_pictureplayer.h:461 mc_videoplayer.h:764 mc_videoplayer.h:903
+#: play.h:1702
 msgid "Can't start playback !"
 msgstr "Ошибка воспроизведения!"
 
@@ -2033,14 +2036,15 @@ msgstr "Распределение каналов"
 #: webif_index.atemio7600.h:62 webif_index.atemio7600.h:102
 #: webif_index.atemio-nemesis.h:49 webif_index.atemio-nemesis.h:105
 #: webif_index.dm520.h:49 webif_index.dm520.h:105 webif_index.dm525.h:49
-#: webif_index.dm525.h:105 webif_index.dm7020hd.h:49 webif_index.dm7020hd.h:105
-#: webif_index.dm7020hdv2.h:49 webif_index.dm7020hdv2.h:105
-#: webif_index.dm900.h:49 webif_index.dm900.h:105 webif_rc.atemio510.h:47
-#: webif_rc.atemio5200.h:32 webif_rc.atemio520.h:20 webif_rc.atemio530.h:20
-#: webif_rc.atemio6000.h:32 webif_rc.atemio6100.h:32 webif_rc.atemio6200.h:32
-#: webif_rc.atemio7600.h:35 webif_rc.atemio-nemesis.h:32 webif_rc.dm520.h:32
-#: webif_rc.dm525.h:32 webif_rc.dm7020hd.h:32 webif_rc.dm7020hdv2.h:32
-#: webif_rc.dm900.h:32 webif_rc.h:32 webif_rc_virtual.atemio510.h:47
+#: webif_index.dm525.h:105 webif_index.dm7020hd.h:49
+#: webif_index.dm7020hd.h:105 webif_index.dm7020hdv2.h:49
+#: webif_index.dm7020hdv2.h:105 webif_index.dm900.h:49 webif_index.dm900.h:105
+#: webif_rc.atemio510.h:47 webif_rc.atemio5200.h:32 webif_rc.atemio520.h:20
+#: webif_rc.atemio530.h:20 webif_rc.atemio6000.h:32 webif_rc.atemio6100.h:32
+#: webif_rc.atemio6200.h:32 webif_rc.atemio7600.h:35
+#: webif_rc.atemio-nemesis.h:32 webif_rc.dm520.h:32 webif_rc.dm525.h:32
+#: webif_rc.dm7020hd.h:32 webif_rc.dm7020hdv2.h:32 webif_rc.dm900.h:32
+#: webif_rc.h:32 webif_rc_virtual.atemio510.h:47
 #: webif_rc_virtual.atemio5200.h:34 webif_rc_virtual.atemio520.h:34
 #: webif_rc_virtual.atemio530.h:34 webif_rc_virtual.atemio6000.h:34
 #: webif_rc_virtual.atemio6100.h:34 webif_rc_virtual.atemio6200.h:34
@@ -2071,8 +2075,8 @@ msgstr "История каналов"
 #: webif_index.atemio6000.h:10 webif_index.atemio6100.h:10
 #: webif_index.atemio6200.h:10 webif_index.atemio7600.h:8
 #: webif_index.atemio-nemesis.h:10 webif_index.dm520.h:10
-#: webif_index.dm525.h:10 webif_index.dm7020hd.h:10 webif_index.dm7020hdv2.h:10
-#: webif_index.dm900.h:10 webif_index.h:10
+#: webif_index.dm525.h:10 webif_index.dm7020hd.h:10
+#: webif_index.dm7020hdv2.h:10 webif_index.dm900.h:10 webif_index.h:10
 msgid "Channel List"
 msgstr "Список каналов"
 
@@ -2097,14 +2101,15 @@ msgstr "Параметры тюнера"
 #: webif_index.atemio7600.h:61 webif_index.atemio7600.h:101
 #: webif_index.atemio-nemesis.h:48 webif_index.atemio-nemesis.h:104
 #: webif_index.dm520.h:48 webif_index.dm520.h:104 webif_index.dm525.h:48
-#: webif_index.dm525.h:104 webif_index.dm7020hd.h:48 webif_index.dm7020hd.h:104
-#: webif_index.dm7020hdv2.h:48 webif_index.dm7020hdv2.h:104
-#: webif_index.dm900.h:48 webif_index.dm900.h:104 webif_rc.atemio510.h:46
-#: webif_rc.atemio5200.h:31 webif_rc.atemio520.h:19 webif_rc.atemio530.h:19
-#: webif_rc.atemio6000.h:31 webif_rc.atemio6100.h:31 webif_rc.atemio6200.h:31
-#: webif_rc.atemio7600.h:34 webif_rc.atemio-nemesis.h:31 webif_rc.dm520.h:31
-#: webif_rc.dm525.h:31 webif_rc.dm7020hd.h:31 webif_rc.dm7020hdv2.h:31
-#: webif_rc.dm900.h:31 webif_rc.h:31 webif_rc_virtual.atemio510.h:46
+#: webif_index.dm525.h:104 webif_index.dm7020hd.h:48
+#: webif_index.dm7020hd.h:104 webif_index.dm7020hdv2.h:48
+#: webif_index.dm7020hdv2.h:104 webif_index.dm900.h:48 webif_index.dm900.h:104
+#: webif_rc.atemio510.h:46 webif_rc.atemio5200.h:31 webif_rc.atemio520.h:19
+#: webif_rc.atemio530.h:19 webif_rc.atemio6000.h:31 webif_rc.atemio6100.h:31
+#: webif_rc.atemio6200.h:31 webif_rc.atemio7600.h:34
+#: webif_rc.atemio-nemesis.h:31 webif_rc.dm520.h:31 webif_rc.dm525.h:31
+#: webif_rc.dm7020hd.h:31 webif_rc.dm7020hdv2.h:31 webif_rc.dm900.h:31
+#: webif_rc.h:31 webif_rc_virtual.atemio510.h:46
 #: webif_rc_virtual.atemio5200.h:33 webif_rc_virtual.atemio520.h:33
 #: webif_rc_virtual.atemio530.h:33 webif_rc_virtual.atemio6000.h:33
 #: webif_rc_virtual.atemio6100.h:33 webif_rc_virtual.atemio6200.h:33
@@ -2222,7 +2227,7 @@ msgstr "Выберите режим воспроизведения из спис
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Выберите нужное из списка ниже"
 
-#: titan.c:1030
+#: titan.c:1032
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Выберите пульт управления из списка"
 
@@ -2243,7 +2248,7 @@ msgstr "Выберите для изменения, добавления нов�
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
-#: tithek.h:1836
+#: tithek.h:1837
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr "Выберите режим воспроизведения потока из списка ниже"
 
@@ -2547,11 +2552,11 @@ msgstr "Кэшировать изображение"
 msgid "Create new"
 msgstr "Создать новый"
 
-#: skinadjust.h:618
+#: skinadjust.h:627
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:2185 tithek.h:2373
+#: tithek.h:2186 tithek.h:2374
 msgid "Create sub folder"
 msgstr ""
 
@@ -2840,10 +2845,10 @@ msgstr "Описание "
 #: webif_index.atemio7600.h:66 webif_index.atemio7600.h:119
 #: webif_index.atemio-nemesis.h:71 webif_index.atemio-nemesis.h:127
 #: webif_index.dm520.h:71 webif_index.dm520.h:127 webif_index.dm525.h:71
-#: webif_index.dm525.h:127 webif_index.dm7020hd.h:71 webif_index.dm7020hd.h:127
-#: webif_index.dm7020hdv2.h:71 webif_index.dm7020hdv2.h:127
-#: webif_index.dm900.h:71 webif_index.dm900.h:127 webif_index.h:19
-#: webif_index.h:22
+#: webif_index.dm525.h:127 webif_index.dm7020hd.h:71
+#: webif_index.dm7020hd.h:127 webif_index.dm7020hdv2.h:71
+#: webif_index.dm7020hdv2.h:127 webif_index.dm900.h:71 webif_index.dm900.h:127
+#: webif_index.h:19 webif_index.h:22
 msgid "Details on/off"
 msgstr "Показать/Скрыть детали"
 
@@ -3023,23 +3028,23 @@ msgstr "Закачка"
 msgid "Download (KB): "
 msgstr "Загружено (Кб) "
 
-#: tithek.h:1824
+#: tithek.h:1825
 msgid "Download Full File"
 msgstr "Загрузить весь файл"
 
-#: tithek.h:1825
+#: tithek.h:1826
 msgid "Download Full File (background)"
 msgstr "Загрузить весь файл (В фоновом режиме)"
 
-#: tithek.h:1829
+#: tithek.h:1830
 msgid "Download Full File (hlsdl)"
 msgstr ""
 
-#: tithek.h:1832
+#: tithek.h:1833
 msgid "Download Full File (youtube_dl)"
 msgstr ""
 
-#: sock.h:952
+#: sock.h:953
 msgid "Download finished!"
 msgstr "Загрузка завершена!"
 
@@ -3102,7 +3107,7 @@ msgstr "Изменить"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:2013 tithek.h:2805
+#: tithek.h:2014 tithek.h:2806
 msgid "EDIT FAV"
 msgstr "Изменить фавориты"
 
@@ -3258,29 +3263,30 @@ msgstr ""
 #: blindscanadjust.h:25 channellist.h:960 channellist.h:962 channellist.h:967
 #: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
-#: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27
-#: epgsettings.h:317 epgsettings.h:331 extensions.h:194 extensions.h:245
-#: extensions.h:254 extensions.h:258 extensions.h:263 extensions.h:309
-#: extensions.h:317 extensions.h:324 extensions.h:366 extensions.h:392
-#: extensions.h:423 extensions.h:457 extensions.h:461 extensions.h:518
-#: facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:80
-#: faststream.h:92 faststream.h:104 faststream.h:110 faststream.h:167
-#: filemanager.h:95 filemanager.h:100 filemanager.h:206 filemanager.h:279
-#: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
-#: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
-#: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7120 global.h:7139 global.h:7614
-#: global.h:7634 global.h:7654 global.h:7674 global.h:7694 global.h:8026
-#: global.h:8031 global.h:8043 global.h:8048 harddisk.h:355 harddisk.h:678
-#: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
-#: harddisk.h:778 harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362
-#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
-#: httpdfunc.h:6212 httpdfunc.h:6477 httpdfunc.h:6548 hwtest.h:88 hwtest.h:93
-#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:694 infobar.h:818 infobar.h:1132
+#: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
+#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:194
+#: extensions.h:245 extensions.h:254 extensions.h:258 extensions.h:263
+#: extensions.h:309 extensions.h:317 extensions.h:324 extensions.h:366
+#: extensions.h:392 extensions.h:423 extensions.h:457 extensions.h:461
+#: extensions.h:518 facebook.h:66 facebook.h:157 facebook.h:167
+#: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
+#: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
+#: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
+#: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
+#: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
+#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6262
+#: global.h:7120 global.h:7139 global.h:7614 global.h:7634 global.h:7654
+#: global.h:7674 global.h:7694 global.h:8026 global.h:8031 global.h:8043
+#: global.h:8048 harddisk.h:355 harddisk.h:678 harddisk.h:686 harddisk.h:720
+#: harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:857
+#: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
+#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6212 httpdfunc.h:6477
+#: httpdfunc.h:6548 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:699 infobar.h:823 infobar.h:1137
 #: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:60
 #: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
@@ -3296,10 +3302,10 @@ msgstr ""
 #: menu.h:1007 menu.h:1009 mightyupload.h:27 mightyupload.h:69
 #: mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60
 #: movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40
-#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:116 multiboot.h:139
-#: multiboot.h:146 MultiImage.c:292 MultiImage.c:308 MultiImage.c:568
-#: MultiImage.c:626 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
-#: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
+#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:116
+#: multiboot.h:139 multiboot.h:146 MultiImage.c:292 MultiImage.c:308
+#: MultiImage.c:568 MultiImage.c:626 MultiImage.c:706 myvideo.h:86
+#: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
 #: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
@@ -3321,16 +3327,17 @@ msgstr ""
 #: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
 #: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
-#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:90 record.h:398 record.h:1171 record.h:1709
-#: rectimer.h:577 rectimer.h:1405 restoredefault.h:10 restoredefault.h:34
-#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1956 service.h:784 service.h:1032
-#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:618
-#: skinadjust.h:659 skin_default_skin.xml.h:199 skins_autotimer_skin.xml.h:6
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
+#: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:398
+#: record.h:1171 record.h:1709 rectimer.h:577 rectimer.h:1405
+#: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
+#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
+#: scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
+#: security.h:685 security.h:1956 service.h:784 service.h:1032 shared.h:29
+#: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
+#: skin_default_skin.xml.h:199 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
 #: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
 #: skins_instar_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:6
@@ -3339,7 +3346,7 @@ msgstr ""
 #: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
 #: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
-#: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:414 softcam.h:477
+#: skins_wins3_skin.xml.h:1 sock.h:955 softcam.h:414 softcam.h:477
 #: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
@@ -3347,13 +3354,13 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:255 system_update.h:261
 #: system_update.h:271 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
 #: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:286 titan.c:1090 titan.c:1099 titan.c:1228
-#: titan.c:1249 titan.c:1255 titan.c:1266 titan.c:1272 tithek.c:103
+#: timeshiftsettings.h:45 titan.c:286 titan.c:1092 titan.c:1101 titan.c:1230
+#: titan.c:1251 titan.c:1257 titan.c:1268 titan.c:1274 tithek.c:103
 #: tithek_global.h:223 tithek.h:756 tithek.h:1440 tithek.h:1467 tithek.h:1489
-#: tithek.h:1546 tithek.h:1725 tithek.h:1740 tithek.h:1914 tithek.h:1950
-#: tithek.h:1966 tithek.h:2200 tithek.h:2388 tithek.h:2713 tithek.h:2759
-#: tithek.h:2777 tithek.h:2790 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
-#: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: tithek.h:1546 tithek.h:1725 tithek.h:1740 tithek.h:1915 tithek.h:1951
+#: tithek.h:1967 tithek.h:2201 tithek.h:2389 tithek.h:2714 tithek.h:2760
+#: tithek.h:2778 tithek.h:2791 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
 #: tunerconfig.h:709 tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20
@@ -3397,7 +3404,7 @@ msgstr "Изменить плейлист"
 msgid "Edit mode"
 msgstr "Переименование"
 
-#: tithek.h:2790
+#: tithek.h:2791
 msgid "Edit this Favorite ?"
 msgstr "Изменить этот фаворит?"
 
@@ -3530,27 +3537,27 @@ msgstr "Ошибка: Исходный файл транспондера пус�
 msgid "Error: Transponder Source file not found"
 msgstr "Ошибка: Исходный файл транспондера не найден"
 
-#: titan.c:896
+#: titan.c:898
 msgid "Error: no audio device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:883
+#: titan.c:885
 msgid "Error: no demux device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:877
+#: titan.c:879
 msgid "Error: no frontend device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:890
+#: titan.c:892
 msgid "Error: no video device found !!"
 msgstr "Не найдено устройство!"
 
-#: titan.c:871
+#: titan.c:873
 msgid "Error: open rc device !!"
 msgstr "Ошибка открытия устройства!"
 
-#: titan.c:919
+#: titan.c:921
 msgid "Error: skin not found !!"
 msgstr "Скин не найден!"
 
@@ -3737,14 +3744,15 @@ msgstr ""
 #: webif_index.atemio7600.h:43 webif_index.atemio7600.h:106
 #: webif_index.atemio-nemesis.h:58 webif_index.atemio-nemesis.h:111
 #: webif_index.dm520.h:58 webif_index.dm520.h:111 webif_index.dm525.h:58
-#: webif_index.dm525.h:111 webif_index.dm7020hd.h:58 webif_index.dm7020hd.h:111
-#: webif_index.dm7020hdv2.h:58 webif_index.dm7020hdv2.h:111
-#: webif_index.dm900.h:58 webif_index.dm900.h:111 webif_rc.atemio510.h:28
-#: webif_rc.atemio5200.h:38 webif_rc.atemio520.h:43 webif_rc.atemio530.h:43
-#: webif_rc.atemio6000.h:38 webif_rc.atemio6100.h:38 webif_rc.atemio6200.h:38
-#: webif_rc.atemio7600.h:39 webif_rc.atemio-nemesis.h:38 webif_rc.dm520.h:38
-#: webif_rc.dm525.h:38 webif_rc.dm7020hd.h:38 webif_rc.dm7020hdv2.h:38
-#: webif_rc.dm900.h:38 webif_rc.h:38 webif_rc_virtual.atemio510.h:28
+#: webif_index.dm525.h:111 webif_index.dm7020hd.h:58
+#: webif_index.dm7020hd.h:111 webif_index.dm7020hdv2.h:58
+#: webif_index.dm7020hdv2.h:111 webif_index.dm900.h:58 webif_index.dm900.h:111
+#: webif_rc.atemio510.h:28 webif_rc.atemio5200.h:38 webif_rc.atemio520.h:43
+#: webif_rc.atemio530.h:43 webif_rc.atemio6000.h:38 webif_rc.atemio6100.h:38
+#: webif_rc.atemio6200.h:38 webif_rc.atemio7600.h:39
+#: webif_rc.atemio-nemesis.h:38 webif_rc.dm520.h:38 webif_rc.dm525.h:38
+#: webif_rc.dm7020hd.h:38 webif_rc.dm7020hdv2.h:38 webif_rc.dm900.h:38
+#: webif_rc.h:38 webif_rc_virtual.atemio510.h:28
 #: webif_rc_virtual.atemio5200.h:15 webif_rc_virtual.atemio520.h:15
 #: webif_rc_virtual.atemio530.h:15 webif_rc_virtual.atemio6000.h:15
 #: webif_rc_virtual.atemio6100.h:15 webif_rc_virtual.atemio6200.h:15
@@ -3853,7 +3861,7 @@ msgstr "Выберите цвет выделения файлов в списк�
 msgid "Filelist-Mode"
 msgstr "Плейлист"
 
-#: tithek.h:1907 tithek.h:1926 tithek.h:1933 tithek.h:1940
+#: tithek.h:1908 tithek.h:1927 tithek.h:1934 tithek.h:1941
 msgid "Filename"
 msgstr "Имя файла"
 
@@ -3889,7 +3897,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1090
+#: titan.c:1092
 msgid "First Wizzard"
 msgstr "Мастер настроек"
 
@@ -4100,7 +4108,7 @@ msgstr "Частота кадров"
 msgid "Free Space"
 msgstr "Свободное место"
 
-#: titan.c:1266
+#: titan.c:1268
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -4108,7 +4116,7 @@ msgstr ""
 "Мало места в /mnt!\n"
 "Могут быть проблемы!"
 
-#: titan.c:1249
+#: titan.c:1251
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4242,10 +4250,11 @@ msgstr ""
 msgid "Genre"
 msgstr "Жанры"
 
-#: play.h:437 play.h:471 plugins_imdbapi_skin.xml.h:3 plugins_imdb_skin.xml.h:3
-#: plugins_mc_skin.xml.h:27 plugins_tmc_skin.xml.h:6 plugins_tmdb_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:3 skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:27
-#: skins_tmc_skin.xml.h:6 skins_tmdb_skin.xml.h:1
+#: play.h:437 play.h:471 plugins_imdbapi_skin.xml.h:3
+#: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:27 plugins_tmc_skin.xml.h:6
+#: plugins_tmdb_skin.xml.h:1 skins_imdbapi_skin.xml.h:3
+#: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:27 skins_tmc_skin.xml.h:6
+#: skins_tmdb_skin.xml.h:1
 msgid "Genre:"
 msgstr "Жанр"
 
@@ -4344,14 +4353,15 @@ msgstr "Греческий"
 #: webif_index.atemio7600.h:54 webif_index.atemio7600.h:94
 #: webif_index.atemio-nemesis.h:52 webif_index.atemio-nemesis.h:108
 #: webif_index.dm520.h:52 webif_index.dm520.h:108 webif_index.dm525.h:52
-#: webif_index.dm525.h:108 webif_index.dm7020hd.h:52 webif_index.dm7020hd.h:108
-#: webif_index.dm7020hdv2.h:52 webif_index.dm7020hdv2.h:108
-#: webif_index.dm900.h:52 webif_index.dm900.h:108 webif_rc.atemio510.h:39
-#: webif_rc.atemio5200.h:35 webif_rc.atemio520.h:33 webif_rc.atemio530.h:33
-#: webif_rc.atemio6000.h:35 webif_rc.atemio6100.h:35 webif_rc.atemio6200.h:35
-#: webif_rc.atemio7600.h:27 webif_rc.atemio-nemesis.h:35 webif_rc.dm520.h:35
-#: webif_rc.dm525.h:35 webif_rc.dm7020hd.h:35 webif_rc.dm7020hdv2.h:35
-#: webif_rc.dm900.h:35 webif_rc.h:35 webif_rc_virtual.atemio510.h:39
+#: webif_index.dm525.h:108 webif_index.dm7020hd.h:52
+#: webif_index.dm7020hd.h:108 webif_index.dm7020hdv2.h:52
+#: webif_index.dm7020hdv2.h:108 webif_index.dm900.h:52 webif_index.dm900.h:108
+#: webif_rc.atemio510.h:39 webif_rc.atemio5200.h:35 webif_rc.atemio520.h:33
+#: webif_rc.atemio530.h:33 webif_rc.atemio6000.h:35 webif_rc.atemio6100.h:35
+#: webif_rc.atemio6200.h:35 webif_rc.atemio7600.h:27
+#: webif_rc.atemio-nemesis.h:35 webif_rc.dm520.h:35 webif_rc.dm525.h:35
+#: webif_rc.dm7020hd.h:35 webif_rc.dm7020hdv2.h:35 webif_rc.dm900.h:35
+#: webif_rc.h:35 webif_rc_virtual.atemio510.h:39
 #: webif_rc_virtual.atemio5200.h:26 webif_rc_virtual.atemio520.h:26
 #: webif_rc_virtual.atemio530.h:26 webif_rc_virtual.atemio6000.h:26
 #: webif_rc_virtual.atemio6100.h:26 webif_rc_virtual.atemio6200.h:26
@@ -5019,7 +5029,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Аудио Inc. AC3 в %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:668 security.h:685
-#: skins_tmc_skin.xml.h:8 titan.c:1099 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1101 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5222,7 +5232,7 @@ msgstr "Интерфейс"
 msgid "Internet Browser"
 msgstr "Интернет браузер"
 
-#: infobar.h:818
+#: infobar.h:823
 msgid "Internet Browser Plugin not installed !"
 msgstr "Плагин браузера не установлен!"
 
@@ -5751,7 +5761,7 @@ msgstr "Настройки сортировки"
 msgid "MC VideoPlayer View Settings"
 msgstr "Настройки просмотра"
 
-#: skin_default_skin.xml.h:374
+#: skin_default_skin.xml.h:373
 msgid "MENUPROTECT"
 msgstr "Защита меню"
 
@@ -5873,14 +5883,15 @@ msgstr ""
 #: webif_index.atemio7600.h:24 webif_index.atemio7600.h:111
 #: webif_index.atemio-nemesis.h:44 webif_index.atemio-nemesis.h:100
 #: webif_index.dm520.h:44 webif_index.dm520.h:100 webif_index.dm525.h:44
-#: webif_index.dm525.h:100 webif_index.dm7020hd.h:44 webif_index.dm7020hd.h:100
-#: webif_index.dm7020hdv2.h:44 webif_index.dm7020hdv2.h:100
-#: webif_index.dm900.h:44 webif_index.dm900.h:100 webif_rc.atemio510.h:2
-#: webif_rc.atemio5200.h:27 webif_rc.atemio520.h:3 webif_rc.atemio530.h:3
-#: webif_rc.atemio6000.h:27 webif_rc.atemio6100.h:27 webif_rc.atemio6200.h:27
-#: webif_rc.atemio7600.h:44 webif_rc.atemio-nemesis.h:27 webif_rc.dm520.h:27
-#: webif_rc.dm525.h:27 webif_rc.dm7020hd.h:27 webif_rc.dm7020hdv2.h:27
-#: webif_rc.dm900.h:27 webif_rc.h:27
+#: webif_index.dm525.h:100 webif_index.dm7020hd.h:44
+#: webif_index.dm7020hd.h:100 webif_index.dm7020hdv2.h:44
+#: webif_index.dm7020hdv2.h:100 webif_index.dm900.h:44 webif_index.dm900.h:100
+#: webif_rc.atemio510.h:2 webif_rc.atemio5200.h:27 webif_rc.atemio520.h:3
+#: webif_rc.atemio530.h:3 webif_rc.atemio6000.h:27 webif_rc.atemio6100.h:27
+#: webif_rc.atemio6200.h:27 webif_rc.atemio7600.h:44
+#: webif_rc.atemio-nemesis.h:27 webif_rc.dm520.h:27 webif_rc.dm525.h:27
+#: webif_rc.dm7020hd.h:27 webif_rc.dm7020hdv2.h:27 webif_rc.dm900.h:27
+#: webif_rc.h:27
 msgid "Media"
 msgstr "Медиа"
 
@@ -6036,7 +6047,7 @@ msgstr "Память"
 msgid "Menu"
 msgstr "Меню"
 
-#: skin_default_skin.xml.h:373
+#: skin_default_skin.xml.h:374
 msgid "Menu Protect"
 msgstr "Защита меню"
 
@@ -6063,37 +6074,38 @@ msgstr ""
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:272
 #: extensions.h:332 extensions.h:366 extensions.h:426 extensions.h:431
-#: extensions.h:470 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
-#: faststream.h:80 faststream.h:92 faststream.h:104 faststream.h:110
-#: faststream.h:167 filemanager.h:95 filemanager.h:100 filemanager.h:206
-#: filemanager.h:279 filemanager.h:289 filemanager.h:329 filenuke.h:37
-#: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
-#: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7050 global.h:7120 global.h:7139
-#: global.h:7614 global.h:7622 global.h:7634 global.h:7642 global.h:7654
-#: global.h:7662 global.h:7674 global.h:7682 global.h:7694 global.h:7702
-#: global.h:8026 global.h:8031 global.h:8043 global.h:8048 harddisk.h:678
-#: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
-#: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
-#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5826 httpdfunc.h:6212
-#: httpdfunc.h:6477 httpdfunc.h:6548 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:694 infobar.h:818 infobar.h:1132
-#: keyactions.h:205 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
-#: language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29
-#: letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215
-#: marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
-#: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
-#: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:336
-#: mc_videoplayer.h:764 mc_videoplayer.h:799 mc_videoplayer.h:903
-#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
+#: extensions.h:470 facebook.h:66 facebook.h:157 facebook.h:167
+#: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
+#: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
+#: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
+#: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
+#: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
+#: firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6262 global.h:7050
+#: global.h:7120 global.h:7139 global.h:7614 global.h:7622 global.h:7634
+#: global.h:7642 global.h:7654 global.h:7662 global.h:7674 global.h:7682
+#: global.h:7694 global.h:7702 global.h:8026 global.h:8031 global.h:8043
+#: global.h:8048 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
+#: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
+#: harddisk.h:860 hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:5826
+#: httpdfunc.h:6212 httpdfunc.h:6477 httpdfunc.h:6548 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
+#: infobar.h:823 infobar.h:1137 keyactions.h:205 kravencfg.c:66
+#: kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49
+#: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:781 mc_global.h:1079 mc_internetbrowser.h:36
+#: mc_iptvplayer.h:106 mc_iptvplayer.h:374 mc_iptvplayer.h:485 mc_main.h:276
+#: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:336 mc_videoplayer.h:764
+#: mc_videoplayer.h:799 mc_videoplayer.h:903 mc_videoplayer.h:919
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
 #: mightyupload.h:69 mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38
 #: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138
 #: movshare.h:40 movshare.h:101 movshare.h:191 movshare.h:197 MultiImage.c:46
@@ -6109,45 +6121,45 @@ msgstr ""
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:319 play.h:614
 #: play.h:1365 play.h:1402 play.h:1702 play.h:1938 play.h:1949 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
-#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:398 record.h:1171 record.h:1457 record.h:1709
-#: record.h:1734 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
-#: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
-#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1846
-#: scan.h:1848 scan.h:1876 scan.h:1878 scan.h:1888 scan.h:2150 scan.h:2241
-#: scan.h:2634 scart.h:12 scart.h:25 security.h:1956 service.h:784
-#: service.h:1032 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:594
-#: skinadjust.h:610 skinadjust.h:618 skinadjust.h:659 skinadjust.h:676
-#: skinadjust.h:1101 skinadjust.h:1163 skinselector.h:231 sock.h:954
-#: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
-#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:75 streamcloud.h:81 streamcloud.h:91 streamcloud.h:104
-#: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:255 system_update.h:261
-#: system_update.h:271 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
-#: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:286 titan.c:1228 titan.c:1249 titan.c:1255
-#: titan.c:1266 titan.c:1272 tithek.c:103 tithek_global.h:223 tithek.h:756
-#: tithek.h:1440 tithek.h:1467 tithek.h:1489 tithek.h:1546 tithek.h:1725
-#: tithek.h:1740 tithek.h:1914 tithek.h:1950 tithek.h:2200 tithek.h:2388
-#: tithek.h:2713 tithek.h:2759 tithek.h:2777 tithek.h:2790 tiwakeup.h:66
-#: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
-#: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:709 tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
-#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
-#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
-#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
-#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
-#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 webif_boxcontrol.h:2
-#: xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
-#: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228
-#: zapback.c:79 zdf.h:29
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
+#: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:398 record.h:1171
+#: record.h:1457 record.h:1709 record.h:1734 rectimer.h:577 rectimer.h:1258
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
+#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:1888
+#: scan.h:2150 scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 security.h:1956
+#: service.h:784 service.h:1032 shared.h:29 shared.h:66 shared.h:83
+#: skinadjust.h:603 skinadjust.h:619 skinadjust.h:627 skinadjust.h:668
+#: skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231
+#: sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
+#: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
+#: streamcloud.h:31 streamcloud.h:75 streamcloud.h:81 streamcloud.h:91
+#: streamcloud.h:104 streamcloud.h:135 streamcloud.h:194 stream.h:33
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:255
+#: system_update.h:261 system_update.h:271 thefile.h:34 thefile.h:69
+#: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:286
+#: titan.c:1230 titan.c:1251 titan.c:1257 titan.c:1268 titan.c:1274
+#: tithek.c:103 tithek_global.h:223 tithek.h:756 tithek.h:1440 tithek.h:1467
+#: tithek.h:1489 tithek.h:1546 tithek.h:1725 tithek.h:1740 tithek.h:1915
+#: tithek.h:1951 tithek.h:2201 tithek.h:2389 tithek.h:2714 tithek.h:2760
+#: tithek.h:2778 tithek.h:2791 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:709
+#: tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
+#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
+#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
+#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
+#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
+#: vodlocker.h:87 webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70
+#: xupnpd.h:81 xupnpd.h:83 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65
+#: xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Сообщение"
 
@@ -6281,8 +6293,8 @@ msgstr "Путь перемещения"
 #: webif_index.atemio6000.h:12 webif_index.atemio6100.h:12
 #: webif_index.atemio6200.h:12 webif_index.atemio7600.h:10
 #: webif_index.atemio-nemesis.h:12 webif_index.dm520.h:12
-#: webif_index.dm525.h:12 webif_index.dm7020hd.h:12 webif_index.dm7020hdv2.h:12
-#: webif_index.dm900.h:12 webif_index.h:12
+#: webif_index.dm525.h:12 webif_index.dm7020hd.h:12
+#: webif_index.dm7020hdv2.h:12 webif_index.dm900.h:12 webif_index.h:12
 msgid "Movies"
 msgstr "Фильмы"
 
@@ -6290,8 +6302,8 @@ msgstr "Фильмы"
 msgid "Multi (EPG)"
 msgstr "Мульти EPG"
 
-#: epgsettings.h:141 epgsettings.h:182 keyactions.h:79 settings_bluebutton.h:16
-#: settings_pluginbutton.h:17 settings_redbutton.h:17
+#: epgsettings.h:141 epgsettings.h:182 keyactions.h:79
+#: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:393
 msgid "Multi EPG"
 msgstr "Мульти EPG"
@@ -6396,8 +6408,8 @@ msgstr "Имя"
 
 #: httpdfunc.h:5269 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:13
-#: skin_default_skin.xml.h:397 skins_mc_skin.xml.h:37 skins_panel_skin.xml.h:13
-#: system_infos.h:22 webif_info_systeminfos.h:6
+#: skin_default_skin.xml.h:397 skins_mc_skin.xml.h:37
+#: skins_panel_skin.xml.h:13 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "Сеть"
 
@@ -6658,33 +6670,34 @@ msgstr ""
 #: callmon_main.h:39 channellist.h:960 channellist.h:962 channellist.h:967
 #: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
-#: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27
-#: epgsettings.h:317 epgsettings.h:331 extensions.h:194 extensions.h:245
-#: extensions.h:254 extensions.h:258 extensions.h:263 extensions.h:272
-#: extensions.h:309 extensions.h:317 extensions.h:324 extensions.h:332
-#: extensions.h:366 extensions.h:392 extensions.h:423 extensions.h:431
-#: extensions.h:457 extensions.h:461 extensions.h:470 extensions.h:518
-#: facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:80
-#: faststream.h:92 faststream.h:104 faststream.h:110 faststream.h:167
-#: filemanager.h:95 filemanager.h:100 filemanager.h:206 filemanager.h:279
-#: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
-#: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
-#: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6262 global.h:7050 global.h:7120 global.h:7139
-#: global.h:7614 global.h:7622 global.h:7634 global.h:7642 global.h:7654
-#: global.h:7662 global.h:7674 global.h:7682 global.h:7694 global.h:7702
-#: global.h:8026 global.h:8031 global.h:8043 global.h:8048 harddisk.h:355
-#: harddisk.h:487 harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769
-#: harddisk.h:774 harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857
-#: harddisk.h:860 harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
-#: httpdfunc.h:3288 httpdfunc.h:6212 httpdfunc.h:6477 httpdfunc.h:6548
-#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
-#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
-#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
-#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
-#: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:694 infobar.h:818 infobar.h:1132 info.h:27 keyactions.h:205
-#: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
+#: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
+#: epgsearch.h:27 epgsettings.h:317 epgsettings.h:331 extensions.h:194
+#: extensions.h:245 extensions.h:254 extensions.h:258 extensions.h:263
+#: extensions.h:272 extensions.h:309 extensions.h:317 extensions.h:324
+#: extensions.h:332 extensions.h:366 extensions.h:392 extensions.h:423
+#: extensions.h:431 extensions.h:457 extensions.h:461 extensions.h:470
+#: extensions.h:518 facebook.h:66 facebook.h:157 facebook.h:167
+#: faststream.h:30 faststream.h:80 faststream.h:92 faststream.h:104
+#: faststream.h:110 faststream.h:167 filemanager.h:95 filemanager.h:100
+#: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
+#: filemanager.h:329 filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79
+#: firedrive.h:33 firedrive.h:67 firedrive.h:73 firedrive.h:123
+#: firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57 global.h:6262
+#: global.h:7050 global.h:7120 global.h:7139 global.h:7614 global.h:7622
+#: global.h:7634 global.h:7642 global.h:7654 global.h:7662 global.h:7674
+#: global.h:7682 global.h:7694 global.h:7702 global.h:8026 global.h:8031
+#: global.h:8043 global.h:8048 harddisk.h:355 harddisk.h:487 harddisk.h:678
+#: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
+#: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091
+#: hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
+#: httpdfunc.h:6212 httpdfunc.h:6477 httpdfunc.h:6548 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
+#: infobar.h:823 infobar.h:1137 info.h:27 keyactions.h:205 kravencfg.c:66
+#: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
@@ -6699,12 +6712,12 @@ msgstr ""
 #: menu.h:1007 menu.h:1009 mightyupload.h:27 mightyupload.h:69
 #: mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60
 #: movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40
-#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:116 multiboot.h:139
-#: multiboot.h:146 multiboot.h:152 multiboot.h:154 MultiImage.c:46
-#: MultiImage.c:205 MultiImage.c:274 MultiImage.c:292 MultiImage.c:308
-#: MultiImage.c:388 MultiImage.c:436 MultiImage.c:568 MultiImage.c:626
-#: MultiImage.c:642 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
-#: nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
+#: movshare.h:101 movshare.h:191 movshare.h:197 multiboot.h:116
+#: multiboot.h:139 multiboot.h:146 multiboot.h:152 multiboot.h:154
+#: MultiImage.c:46 MultiImage.c:205 MultiImage.c:274 MultiImage.c:292
+#: MultiImage.c:308 MultiImage.c:388 MultiImage.c:436 MultiImage.c:568
+#: MultiImage.c:626 MultiImage.c:642 MultiImage.c:706 myvideo.h:86
+#: nbaondemand.h:61 nbastream.h:126 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1785
 #: networkbrowser.h:1792 networkbrowser.h:1797 networkbrowser.h:1949
@@ -6722,24 +6735,24 @@ msgstr ""
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
 #: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:3 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
-#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:398 record.h:1171 record.h:1457 record.h:1734
-#: rectimer.h:577 rectimer.h:1258 rectimer.h:1405 rectimer.h:1417
-#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
+#: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:398 record.h:1171
+#: record.h:1457 record.h:1734 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
+#: rectimer.h:1417 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:2150
-#: scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1956 service.h:784 service.h:1032 shared.h:29
-#: shared.h:66 shared.h:83 skinadjust.h:594 skinadjust.h:610 skinadjust.h:618
-#: skinadjust.h:659 skinadjust.h:676 skinadjust.h:1101 skinadjust.h:1163
-#: skins_dlna_skin.xml.h:7 skinselector.h:231 skins_facebook_skin.xml.h:3
-#: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
-#: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
+#: scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41
+#: security.h:668 security.h:685 security.h:1956 service.h:784 service.h:1032
+#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619
+#: skinadjust.h:627 skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110
+#: skinadjust.h:1172 skins_dlna_skin.xml.h:7 skinselector.h:231
+#: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
+#: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
-#: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:414 softcam.h:477
+#: skins_wins3_skin.xml.h:3 sock.h:955 softcam.h:414 softcam.h:477
 #: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
@@ -6750,11 +6763,11 @@ msgstr ""
 #: system_update.h:261 system_update.h:271 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:286
-#: titan.c:1090 titan.c:1099 titan.c:1228 titan.c:1249 titan.c:1255
-#: titan.c:1266 titan.c:1272 tithek.c:103 tithek_global.h:223 tithek.h:756
+#: titan.c:1092 titan.c:1101 titan.c:1230 titan.c:1251 titan.c:1257
+#: titan.c:1268 titan.c:1274 tithek.c:103 tithek_global.h:223 tithek.h:756
 #: tithek.h:1440 tithek.h:1467 tithek.h:1489 tithek.h:1546 tithek.h:1725
-#: tithek.h:1740 tithek.h:1914 tithek.h:1950 tithek.h:1966 tithek.h:2200
-#: tithek.h:2388 tithek.h:2713 tithek.h:2759 tithek.h:2777 tithek.h:2790
+#: tithek.h:1740 tithek.h:1915 tithek.h:1951 tithek.h:1967 tithek.h:2201
+#: tithek.h:2389 tithek.h:2714 tithek.h:2760 tithek.h:2778 tithek.h:2791
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -6838,10 +6851,10 @@ msgstr "Помощь (Офлайн)"
 #: skin_default_keyskin.xml.h:52 webif_index.atemio5200.h:94
 #: webif_index.atemio6200.h:94 webif_index.atemio7600.h:92
 #: webif_index.atemio-nemesis.h:94 webif_index.dm520.h:94
-#: webif_index.dm525.h:94 webif_index.dm7020hd.h:94 webif_index.dm7020hdv2.h:94
-#: webif_index.dm900.h:94 webif_rc.atemio5200.h:21 webif_rc.atemio520.h:25
-#: webif_rc.atemio530.h:25 webif_rc.atemio6000.h:21 webif_rc.atemio6100.h:21
-#: webif_rc.atemio6200.h:21 webif_rc.atemio7600.h:25
+#: webif_index.dm525.h:94 webif_index.dm7020hd.h:94
+#: webif_index.dm7020hdv2.h:94 webif_index.dm900.h:94 webif_rc.atemio5200.h:21
+#: webif_rc.atemio520.h:25 webif_rc.atemio530.h:25 webif_rc.atemio6000.h:21
+#: webif_rc.atemio6100.h:21 webif_rc.atemio6200.h:21 webif_rc.atemio7600.h:25
 #: webif_rc.atemio-nemesis.h:21 webif_rc.dm520.h:21 webif_rc.dm525.h:21
 #: webif_rc.dm7020hd.h:21 webif_rc.dm7020hdv2.h:21 webif_rc.dm900.h:21
 #: webif_rc.h:21
@@ -7019,12 +7032,12 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:2050
+#: tithek.h:2051
 msgid "Page"
 msgstr "Страница"
 
-#: webif_index.atemio7600.h:100 webif_rc.atemio510.h:4 webif_rc.atemio7600.h:33
-#: webif_rc_virtual.atemio510.h:4
+#: webif_index.atemio7600.h:100 webif_rc.atemio510.h:4
+#: webif_rc.atemio7600.h:33 webif_rc_virtual.atemio510.h:4
 msgid "Page Down"
 msgstr "Страница вниз"
 
@@ -7092,14 +7105,15 @@ msgstr "Путь "
 #: webif_index.atemio7600.h:45 webif_index.atemio7600.h:108
 #: webif_index.atemio-nemesis.h:56 webif_index.atemio-nemesis.h:112
 #: webif_index.dm520.h:56 webif_index.dm520.h:112 webif_index.dm525.h:56
-#: webif_index.dm525.h:112 webif_index.dm7020hd.h:56 webif_index.dm7020hd.h:112
-#: webif_index.dm7020hdv2.h:56 webif_index.dm7020hdv2.h:112
-#: webif_index.dm900.h:56 webif_index.dm900.h:112 webif_rc.atemio510.h:30
-#: webif_rc.atemio5200.h:39 webif_rc.atemio520.h:42 webif_rc.atemio530.h:42
-#: webif_rc.atemio6000.h:39 webif_rc.atemio6100.h:39 webif_rc.atemio6200.h:39
-#: webif_rc.atemio7600.h:41 webif_rc.atemio-nemesis.h:39 webif_rc.dm520.h:39
-#: webif_rc.dm525.h:39 webif_rc.dm7020hd.h:39 webif_rc.dm7020hdv2.h:39
-#: webif_rc.dm900.h:39 webif_rc.h:39 webif_rc_virtual.atemio510.h:30
+#: webif_index.dm525.h:112 webif_index.dm7020hd.h:56
+#: webif_index.dm7020hd.h:112 webif_index.dm7020hdv2.h:56
+#: webif_index.dm7020hdv2.h:112 webif_index.dm900.h:56 webif_index.dm900.h:112
+#: webif_rc.atemio510.h:30 webif_rc.atemio5200.h:39 webif_rc.atemio520.h:42
+#: webif_rc.atemio530.h:42 webif_rc.atemio6000.h:39 webif_rc.atemio6100.h:39
+#: webif_rc.atemio6200.h:39 webif_rc.atemio7600.h:41
+#: webif_rc.atemio-nemesis.h:39 webif_rc.dm520.h:39 webif_rc.dm525.h:39
+#: webif_rc.dm7020hd.h:39 webif_rc.dm7020hdv2.h:39 webif_rc.dm900.h:39
+#: webif_rc.h:39 webif_rc_virtual.atemio510.h:30
 #: webif_rc_virtual.atemio5200.h:17 webif_rc_virtual.atemio520.h:17
 #: webif_rc_virtual.atemio530.h:17 webif_rc_virtual.atemio6000.h:17
 #: webif_rc_virtual.atemio6100.h:17 webif_rc_virtual.atemio6200.h:17
@@ -7131,14 +7145,15 @@ msgstr "Фото отправил"
 #: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
 #: webif_index.atemio-nemesis.h:64 webif_index.atemio-nemesis.h:120
 #: webif_index.dm520.h:64 webif_index.dm520.h:120 webif_index.dm525.h:64
-#: webif_index.dm525.h:120 webif_index.dm7020hd.h:64 webif_index.dm7020hd.h:120
-#: webif_index.dm7020hdv2.h:64 webif_index.dm7020hdv2.h:120
-#: webif_index.dm900.h:64 webif_index.dm900.h:120 webif_rc.atemio510.h:8
-#: webif_rc.atemio5200.h:47 webif_rc.atemio520.h:6 webif_rc.atemio530.h:6
-#: webif_rc.atemio6000.h:47 webif_rc.atemio6100.h:47 webif_rc.atemio6200.h:47
-#: webif_rc.atemio7600.h:45 webif_rc.atemio-nemesis.h:47 webif_rc.dm520.h:47
-#: webif_rc.dm525.h:47 webif_rc.dm7020hd.h:47 webif_rc.dm7020hdv2.h:47
-#: webif_rc.dm900.h:47 webif_rc.h:47 webif_rc_virtual.atemio510.h:8
+#: webif_index.dm525.h:120 webif_index.dm7020hd.h:64
+#: webif_index.dm7020hd.h:120 webif_index.dm7020hdv2.h:64
+#: webif_index.dm7020hdv2.h:120 webif_index.dm900.h:64 webif_index.dm900.h:120
+#: webif_rc.atemio510.h:8 webif_rc.atemio5200.h:47 webif_rc.atemio520.h:6
+#: webif_rc.atemio530.h:6 webif_rc.atemio6000.h:47 webif_rc.atemio6100.h:47
+#: webif_rc.atemio6200.h:47 webif_rc.atemio7600.h:45
+#: webif_rc.atemio-nemesis.h:47 webif_rc.dm520.h:47 webif_rc.dm525.h:47
+#: webif_rc.dm7020hd.h:47 webif_rc.dm7020hdv2.h:47 webif_rc.dm900.h:47
+#: webif_rc.h:47 webif_rc_virtual.atemio510.h:8
 msgid "PiP"
 msgstr ""
 
@@ -7412,8 +7427,8 @@ msgid "Plot"
 msgstr "Участок"
 
 #: plugins_imdbapi_skin.xml.h:5 plugins_imdb_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:4 skins_imdbapi_skin.xml.h:5 skins_imdb_skin.xml.h:5
-#: skins_tmdb_skin.xml.h:4
+#: plugins_tmdb_skin.xml.h:4 skins_imdbapi_skin.xml.h:5
+#: skins_imdb_skin.xml.h:5 skins_tmdb_skin.xml.h:4
 msgid "Plot:"
 msgstr "Сюжет"
 
@@ -7425,13 +7440,13 @@ msgstr ""
 #: webif_index.atemio6200.h:62 webif_index.atemio6200.h:118
 #: webif_index.atemio-nemesis.h:62 webif_index.atemio-nemesis.h:118
 #: webif_index.dm520.h:62 webif_index.dm520.h:118 webif_index.dm525.h:62
-#: webif_index.dm525.h:118 webif_index.dm7020hd.h:62 webif_index.dm7020hd.h:118
-#: webif_index.dm7020hdv2.h:62 webif_index.dm7020hdv2.h:118
-#: webif_index.dm900.h:62 webif_index.dm900.h:118 webif_rc.atemio5200.h:45
-#: webif_rc.atemio6000.h:45 webif_rc.atemio6100.h:45 webif_rc.atemio6200.h:45
-#: webif_rc.atemio-nemesis.h:45 webif_rc.dm520.h:45 webif_rc.dm525.h:45
-#: webif_rc.dm7020hd.h:45 webif_rc.dm7020hdv2.h:45 webif_rc.dm900.h:45
-#: webif_rc.h:45
+#: webif_index.dm525.h:118 webif_index.dm7020hd.h:62
+#: webif_index.dm7020hd.h:118 webif_index.dm7020hdv2.h:62
+#: webif_index.dm7020hdv2.h:118 webif_index.dm900.h:62 webif_index.dm900.h:118
+#: webif_rc.atemio5200.h:45 webif_rc.atemio6000.h:45 webif_rc.atemio6100.h:45
+#: webif_rc.atemio6200.h:45 webif_rc.atemio-nemesis.h:45 webif_rc.dm520.h:45
+#: webif_rc.dm525.h:45 webif_rc.dm7020hd.h:45 webif_rc.dm7020hdv2.h:45
+#: webif_rc.dm900.h:45 webif_rc.h:45
 msgid "Plugin"
 msgstr "Плагин"
 
@@ -7915,12 +7930,13 @@ msgstr ""
 #: webif_index.atemio7600.h:28 webif_index.atemio7600.h:85
 #: webif_index.atemio-nemesis.h:101 webif_index.dm520.h:101
 #: webif_index.dm525.h:101 webif_index.dm7020hd.h:101
-#: webif_index.dm7020hdv2.h:101 webif_index.dm900.h:101 webif_rc.atemio510.h:13
-#: webif_rc.atemio5200.h:28 webif_rc.atemio520.h:31 webif_rc.atemio530.h:31
-#: webif_rc.atemio6000.h:28 webif_rc.atemio6100.h:28 webif_rc.atemio6200.h:28
-#: webif_rc.atemio7600.h:18 webif_rc.atemio-nemesis.h:28 webif_rc.dm520.h:28
-#: webif_rc.dm525.h:28 webif_rc.dm7020hd.h:28 webif_rc.dm7020hdv2.h:28
-#: webif_rc.dm900.h:28 webif_rc.h:28 webif_rc_virtual.atemio510.h:13
+#: webif_index.dm7020hdv2.h:101 webif_index.dm900.h:101
+#: webif_rc.atemio510.h:13 webif_rc.atemio5200.h:28 webif_rc.atemio520.h:31
+#: webif_rc.atemio530.h:31 webif_rc.atemio6000.h:28 webif_rc.atemio6100.h:28
+#: webif_rc.atemio6200.h:28 webif_rc.atemio7600.h:18
+#: webif_rc.atemio-nemesis.h:28 webif_rc.dm520.h:28 webif_rc.dm525.h:28
+#: webif_rc.dm7020hd.h:28 webif_rc.dm7020hdv2.h:28 webif_rc.dm900.h:28
+#: webif_rc.h:28 webif_rc_virtual.atemio510.h:13
 msgid "Recall"
 msgstr "Возврат"
 
@@ -7934,7 +7950,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Ресивер перезагружается!"
 
-#: titan.c:1228
+#: titan.c:1230
 msgid "Receiver successful unlocked"
 msgstr "Ресивер расблокирован!"
 
@@ -8031,14 +8047,15 @@ msgstr ""
 #: webif_index.atemio7600.h:53 webif_index.atemio7600.h:93
 #: webif_index.atemio-nemesis.h:51 webif_index.atemio-nemesis.h:107
 #: webif_index.dm520.h:51 webif_index.dm520.h:107 webif_index.dm525.h:51
-#: webif_index.dm525.h:107 webif_index.dm7020hd.h:51 webif_index.dm7020hd.h:107
-#: webif_index.dm7020hdv2.h:51 webif_index.dm7020hdv2.h:107
-#: webif_index.dm900.h:51 webif_index.dm900.h:107 webif_rc.atemio510.h:38
-#: webif_rc.atemio5200.h:34 webif_rc.atemio520.h:32 webif_rc.atemio530.h:32
-#: webif_rc.atemio6000.h:34 webif_rc.atemio6100.h:34 webif_rc.atemio6200.h:34
-#: webif_rc.atemio7600.h:26 webif_rc.atemio-nemesis.h:34 webif_rc.dm520.h:34
-#: webif_rc.dm525.h:34 webif_rc.dm7020hd.h:34 webif_rc.dm7020hdv2.h:34
-#: webif_rc.dm900.h:34 webif_rc.h:34 webif_rc_virtual.atemio510.h:38
+#: webif_index.dm525.h:107 webif_index.dm7020hd.h:51
+#: webif_index.dm7020hd.h:107 webif_index.dm7020hdv2.h:51
+#: webif_index.dm7020hdv2.h:107 webif_index.dm900.h:51 webif_index.dm900.h:107
+#: webif_rc.atemio510.h:38 webif_rc.atemio5200.h:34 webif_rc.atemio520.h:32
+#: webif_rc.atemio530.h:32 webif_rc.atemio6000.h:34 webif_rc.atemio6100.h:34
+#: webif_rc.atemio6200.h:34 webif_rc.atemio7600.h:26
+#: webif_rc.atemio-nemesis.h:34 webif_rc.dm520.h:34 webif_rc.dm525.h:34
+#: webif_rc.dm7020hd.h:34 webif_rc.dm7020hdv2.h:34 webif_rc.dm900.h:34
+#: webif_rc.h:34 webif_rc_virtual.atemio510.h:38
 #: webif_rc_virtual.atemio5200.h:25 webif_rc_virtual.atemio520.h:25
 #: webif_rc_virtual.atemio530.h:25 webif_rc_virtual.atemio6000.h:25
 #: webif_rc_virtual.atemio6100.h:25 webif_rc_virtual.atemio6200.h:25
@@ -8090,11 +8107,11 @@ msgstr "Запоминать позицию при проигрывании фи
 msgid "Remote"
 msgstr "Пульт управления"
 
-#: titan.c:1023
+#: titan.c:1025
 msgid "RemoteControl Long Version"
 msgstr "Пульт управления последней версии"
 
-#: titan.c:1022
+#: titan.c:1024
 msgid "RemoteControl Old Version"
 msgstr "Пульты управления всех версий"
 
@@ -8114,7 +8131,7 @@ msgstr ""
 msgid "Remove Log:"
 msgstr "Лог удаления"
 
-#: skinadjust.h:653
+#: skinadjust.h:662
 msgid "Remove Skinstyle"
 msgstr ""
 
@@ -8138,7 +8155,7 @@ msgstr "Запуск удаления"
 msgid "Remove success"
 msgstr "Удаление завершено"
 
-#: tithek.h:2759
+#: tithek.h:2760
 msgid "Remove this Favorite ?"
 msgstr "Удалить этот фаворит?"
 
@@ -8189,7 +8206,7 @@ msgstr "режим восстановления"
 msgid "Reset"
 msgstr "Сброс"
 
-#: skinadjust.h:594
+#: skinadjust.h:603
 msgid "Reset your Skin Settings ?"
 msgstr ""
 
@@ -8502,11 +8519,12 @@ msgstr "Старт"
 
 #: webif_index.atemio5200.h:76 webif_index.atemio6200.h:76
 #: webif_index.atemio-nemesis.h:76 webif_index.dm520.h:76
-#: webif_index.dm525.h:76 webif_index.dm7020hd.h:76 webif_index.dm7020hdv2.h:76
-#: webif_index.dm900.h:76 webif_rc.atemio5200.h:3 webif_rc.atemio6000.h:3
-#: webif_rc.atemio6100.h:3 webif_rc.atemio6200.h:3 webif_rc.atemio-nemesis.h:3
-#: webif_rc.dm520.h:3 webif_rc.dm525.h:3 webif_rc.dm7020hd.h:3
-#: webif_rc.dm7020hdv2.h:3 webif_rc.dm900.h:3 webif_rc.h:3
+#: webif_index.dm525.h:76 webif_index.dm7020hd.h:76
+#: webif_index.dm7020hdv2.h:76 webif_index.dm900.h:76 webif_rc.atemio5200.h:3
+#: webif_rc.atemio6000.h:3 webif_rc.atemio6100.h:3 webif_rc.atemio6200.h:3
+#: webif_rc.atemio-nemesis.h:3 webif_rc.dm520.h:3 webif_rc.dm525.h:3
+#: webif_rc.dm7020hd.h:3 webif_rc.dm7020hdv2.h:3 webif_rc.dm900.h:3
+#: webif_rc.h:3
 msgid "STB"
 msgstr ""
 
@@ -8515,7 +8533,7 @@ msgid "STICK "
 msgstr "Стик "
 
 #: plugins_dlna_skin.xml.h:13 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:625
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:624
 #: skins_dlna_skin.xml.h:13 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -8883,19 +8901,20 @@ msgstr "Выполнение скриптов"
 msgid "Script has no output or started in background."
 msgstr "Скрипт не имеет выхода или запущен в фоне"
 
-#: amazon.h:96 amazon.h:103 amazon.h:128 amazon.h:130 amazon.h:854 amazon.h:856
-#: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
-#: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82 imdbapi.h:287
-#: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
-#: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:996
-#: kinox.h:998 mlehd.h:90 mlehd.h:92 movie2k.h:74 movie2k.h:76 movie2k.h:231
-#: movie2k.h:233 movie4k.h:146 movie4k.h:148 movie4k.h:303 movie4k.h:305
-#: myvideo.h:231 myvideo.h:233 myvideo.h:375 myvideo.h:377 nbastream.h:221
-#: nbastream.h:223 netzkino.h:13 netzkino.h:15 nowtv.h:133 nowtv.h:135
-#: rtl2now.h:249 rtl2now.h:251 rtl2now.h:313 rtl2now.h:315 rtl2now.h:377
-#: rtl2now.h:379 rtl2now.h:441 rtl2now.h:443 rtl2now.h:505 rtl2now.h:507
-#: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:557 solarmovie.h:138
-#: solarmovie.h:140 solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
+#: amazon.h:96 amazon.h:103 amazon.h:128 amazon.h:130 amazon.h:854
+#: amazon.h:856 ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179
+#: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82
+#: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
+#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179
+#: kinox.h:181 kinox.h:996 kinox.h:998 mlehd.h:90 mlehd.h:92 movie2k.h:74
+#: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
+#: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
+#: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
+#: nowtv.h:133 nowtv.h:135 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
+#: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
+#: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
+#: skin_default_skin.xml.h:557 solarmovie.h:138 solarmovie.h:140
+#: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:637 tithek_global.h:763 tithek_global.h:831
 #: tithek_global.h:833 tithek_global.h:1450 tithek_global.h:1452 tmdb.h:898
 #: tvtoast.h:530 tvtoast.h:532 xvideos.h:56 xvideos.h:58 youtube.h:253
@@ -8972,7 +8991,7 @@ msgstr "Выбрать путь"
 msgid "Select Unicable Manufacturer"
 msgstr "Выберите провайдера"
 
-#: titan.c:1030
+#: titan.c:1032
 msgid "Select Your Remote Control"
 msgstr "Выберите Ваш пульт управления"
 
@@ -9108,8 +9127,8 @@ msgstr ""
 #: webif_index.atemio6000.h:14 webif_index.atemio6100.h:14
 #: webif_index.atemio6200.h:14 webif_index.atemio7600.h:12
 #: webif_index.atemio-nemesis.h:14 webif_index.dm520.h:14
-#: webif_index.dm525.h:14 webif_index.dm7020hd.h:14 webif_index.dm7020hdv2.h:14
-#: webif_index.dm900.h:14 webif_index.h:15
+#: webif_index.dm525.h:14 webif_index.dm7020hd.h:14
+#: webif_index.dm7020hdv2.h:14 webif_index.dm900.h:14 webif_index.h:15
 msgid "Settings"
 msgstr "Сеттинги"
 
@@ -9134,7 +9153,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E | 29.08.2017"
 msgstr ""
 
-#: titan.c:1090
+#: titan.c:1092
 msgid "Settings OK ?"
 msgstr "Настройки в порядке?"
 
@@ -9162,7 +9181,7 @@ msgstr "Параметры PiP"
 msgid "Sharename can't be empty!"
 msgstr "Имя папки не может быть пустым!"
 
-#: infobar.h:694 mc_audioplayer.h:333 mc_iptvplayer.h:106 mc_main.h:276
+#: infobar.h:699 mc_audioplayer.h:333 mc_iptvplayer.h:106 mc_main.h:276
 #: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -9369,7 +9388,7 @@ msgstr ""
 msgid "Skin tobayer01 (grey/blue/black) default picons"
 msgstr ""
 
-#: skinadjust.h:621
+#: skinadjust.h:630
 msgid "Skinstyle Name"
 msgstr ""
 
@@ -9394,14 +9413,14 @@ msgstr "Пропустить CA дескриптор"
 #: webif_index.atemio7600.h:20 webif_index.atemio7600.h:116
 #: webif_index.atemio-nemesis.h:66 webif_index.atemio-nemesis.h:122
 #: webif_index.dm520.h:66 webif_index.dm520.h:122 webif_index.dm525.h:66
-#: webif_index.dm525.h:122 webif_index.dm7020hd.h:66 webif_index.dm7020hd.h:122
-#: webif_index.dm7020hdv2.h:66 webif_index.dm7020hdv2.h:122
-#: webif_index.dm900.h:66 webif_index.dm900.h:122 webif_rc.atemio5200.h:49
-#: webif_rc.atemio520.h:46 webif_rc.atemio530.h:46 webif_rc.atemio6000.h:49
-#: webif_rc.atemio6100.h:49 webif_rc.atemio6200.h:49 webif_rc.atemio7600.h:49
-#: webif_rc.atemio-nemesis.h:49 webif_rc.dm520.h:49 webif_rc.dm525.h:49
-#: webif_rc.dm7020hd.h:49 webif_rc.dm7020hdv2.h:49 webif_rc.dm900.h:49
-#: webif_rc.h:49
+#: webif_index.dm525.h:122 webif_index.dm7020hd.h:66
+#: webif_index.dm7020hd.h:122 webif_index.dm7020hdv2.h:66
+#: webif_index.dm7020hdv2.h:122 webif_index.dm900.h:66 webif_index.dm900.h:122
+#: webif_rc.atemio5200.h:49 webif_rc.atemio520.h:46 webif_rc.atemio530.h:46
+#: webif_rc.atemio6000.h:49 webif_rc.atemio6100.h:49 webif_rc.atemio6200.h:49
+#: webif_rc.atemio7600.h:49 webif_rc.atemio-nemesis.h:49 webif_rc.dm520.h:49
+#: webif_rc.dm525.h:49 webif_rc.dm7020hd.h:49 webif_rc.dm7020hdv2.h:49
+#: webif_rc.dm900.h:49 webif_rc.h:49
 msgid "Sleep"
 msgstr "Сон"
 
@@ -9590,7 +9609,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "Запускать при загрузке"
 
-#: tithek.h:1914
+#: tithek.h:1915
 msgid "Start playback"
 msgstr "Старт воспроизведения"
 
@@ -9628,14 +9647,15 @@ msgstr ""
 #: webif_index.atemio7600.h:44 webif_index.atemio7600.h:105
 #: webif_index.atemio-nemesis.h:57 webif_index.atemio-nemesis.h:113
 #: webif_index.dm520.h:57 webif_index.dm520.h:113 webif_index.dm525.h:57
-#: webif_index.dm525.h:113 webif_index.dm7020hd.h:57 webif_index.dm7020hd.h:113
-#: webif_index.dm7020hdv2.h:57 webif_index.dm7020hdv2.h:113
-#: webif_index.dm900.h:57 webif_index.dm900.h:113 webif_rc.atemio510.h:29
-#: webif_rc.atemio5200.h:40 webif_rc.atemio520.h:41 webif_rc.atemio530.h:41
-#: webif_rc.atemio6000.h:40 webif_rc.atemio6100.h:40 webif_rc.atemio6200.h:40
-#: webif_rc.atemio7600.h:38 webif_rc.atemio-nemesis.h:40 webif_rc.dm520.h:40
-#: webif_rc.dm525.h:40 webif_rc.dm7020hd.h:40 webif_rc.dm7020hdv2.h:40
-#: webif_rc.dm900.h:40 webif_rc.h:40 webif_rc_virtual.atemio510.h:29
+#: webif_index.dm525.h:113 webif_index.dm7020hd.h:57
+#: webif_index.dm7020hd.h:113 webif_index.dm7020hdv2.h:57
+#: webif_index.dm7020hdv2.h:113 webif_index.dm900.h:57 webif_index.dm900.h:113
+#: webif_rc.atemio510.h:29 webif_rc.atemio5200.h:40 webif_rc.atemio520.h:41
+#: webif_rc.atemio530.h:41 webif_rc.atemio6000.h:40 webif_rc.atemio6100.h:40
+#: webif_rc.atemio6200.h:40 webif_rc.atemio7600.h:38
+#: webif_rc.atemio-nemesis.h:40 webif_rc.dm520.h:40 webif_rc.dm525.h:40
+#: webif_rc.dm7020hd.h:40 webif_rc.dm7020hdv2.h:40 webif_rc.dm900.h:40
+#: webif_rc.h:40 webif_rc_virtual.atemio510.h:29
 #: webif_rc_virtual.atemio5200.h:16 webif_rc_virtual.atemio520.h:16
 #: webif_rc_virtual.atemio530.h:16 webif_rc_virtual.atemio6000.h:16
 #: webif_rc_virtual.atemio6100.h:16 webif_rc_virtual.atemio6200.h:16
@@ -9796,11 +9816,11 @@ msgstr "Размер SWAP"
 msgid "Switch TV to the correct input"
 msgstr "Включите ТВ к правильному входу"
 
-#: skin_default_skin.xml.h:638
+#: skin_default_skin.xml.h:637
 msgid "Symbol rate:"
 msgstr "Символьная скорость"
 
-#: skin_default_skin.xml.h:637
+#: skin_default_skin.xml.h:638
 msgid "Symbolrate"
 msgstr "Символьная скорость"
 
@@ -9954,11 +9974,12 @@ msgstr "TSID"
 #: webif_index.dm900.h:68 webif_index.dm900.h:74 webif_index.dm900.h:124
 #: webif_rc.atemio5200.h:1 webif_rc.atemio5200.h:51 webif_rc.atemio6000.h:1
 #: webif_rc.atemio6000.h:51 webif_rc.atemio6100.h:1 webif_rc.atemio6100.h:51
-#: webif_rc.atemio6200.h:1 webif_rc.atemio6200.h:51 webif_rc.atemio-nemesis.h:1
-#: webif_rc.atemio-nemesis.h:51 webif_rc.dm520.h:1 webif_rc.dm520.h:51
-#: webif_rc.dm525.h:1 webif_rc.dm525.h:51 webif_rc.dm7020hd.h:1
-#: webif_rc.dm7020hd.h:51 webif_rc.dm7020hdv2.h:1 webif_rc.dm7020hdv2.h:51
-#: webif_rc.dm900.h:1 webif_rc.dm900.h:51 webif_rc.h:1 webif_rc.h:51
+#: webif_rc.atemio6200.h:1 webif_rc.atemio6200.h:51
+#: webif_rc.atemio-nemesis.h:1 webif_rc.atemio-nemesis.h:51 webif_rc.dm520.h:1
+#: webif_rc.dm520.h:51 webif_rc.dm525.h:1 webif_rc.dm525.h:51
+#: webif_rc.dm7020hd.h:1 webif_rc.dm7020hd.h:51 webif_rc.dm7020hdv2.h:1
+#: webif_rc.dm7020hdv2.h:51 webif_rc.dm900.h:1 webif_rc.dm900.h:51
+#: webif_rc.h:1 webif_rc.h:51
 msgid "TV"
 msgstr "ТВ"
 
@@ -10023,14 +10044,15 @@ msgstr "Тест"
 #: webif_index.atemio7600.h:41 webif_index.atemio7600.h:81
 #: webif_index.atemio-nemesis.h:67 webif_index.atemio-nemesis.h:123
 #: webif_index.dm520.h:67 webif_index.dm520.h:123 webif_index.dm525.h:67
-#: webif_index.dm525.h:123 webif_index.dm7020hd.h:67 webif_index.dm7020hd.h:123
-#: webif_index.dm7020hdv2.h:67 webif_index.dm7020hdv2.h:123
-#: webif_index.dm900.h:67 webif_index.dm900.h:123 webif_rc.atemio510.h:26
-#: webif_rc.atemio5200.h:50 webif_rc.atemio520.h:18 webif_rc.atemio530.h:18
-#: webif_rc.atemio6000.h:50 webif_rc.atemio6100.h:50 webif_rc.atemio6200.h:50
-#: webif_rc.atemio7600.h:14 webif_rc.atemio-nemesis.h:50 webif_rc.dm520.h:50
-#: webif_rc.dm525.h:50 webif_rc.dm7020hd.h:50 webif_rc.dm7020hdv2.h:50
-#: webif_rc.dm900.h:50 webif_rc.h:50 webif_rc_virtual.atemio510.h:26
+#: webif_index.dm525.h:123 webif_index.dm7020hd.h:67
+#: webif_index.dm7020hd.h:123 webif_index.dm7020hdv2.h:67
+#: webif_index.dm7020hdv2.h:123 webif_index.dm900.h:67 webif_index.dm900.h:123
+#: webif_rc.atemio510.h:26 webif_rc.atemio5200.h:50 webif_rc.atemio520.h:18
+#: webif_rc.atemio530.h:18 webif_rc.atemio6000.h:50 webif_rc.atemio6100.h:50
+#: webif_rc.atemio6200.h:50 webif_rc.atemio7600.h:14
+#: webif_rc.atemio-nemesis.h:50 webif_rc.dm520.h:50 webif_rc.dm525.h:50
+#: webif_rc.dm7020hd.h:50 webif_rc.dm7020hdv2.h:50 webif_rc.dm900.h:50
+#: webif_rc.h:50 webif_rc_virtual.atemio510.h:26
 #: webif_rc_virtual.atemio5200.h:13 webif_rc_virtual.atemio520.h:13
 #: webif_rc_virtual.atemio530.h:13 webif_rc_virtual.atemio6000.h:13
 #: webif_rc_virtual.atemio6100.h:13 webif_rc_virtual.atemio6200.h:13
@@ -10069,7 +10091,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:223 tithek.h:2713
+#: tithek_global.h:223 tithek.h:2714
 msgid "The hoster is not yet supported !"
 msgstr "Хостер не поддерживается!"
 
@@ -10356,8 +10378,8 @@ msgstr "Медиацент Titan"
 
 #: extensions.h:272 extensions.h:332 extensions.h:431 extensions.h:470
 #: global.h:7622 global.h:7642 global.h:7662 global.h:7682 global.h:7702
-#: kravencfg.c:212 skinadjust.h:610 skinadjust.h:676 skinadjust.h:1101
-#: skinadjust.h:1163
+#: kravencfg.c:212 skinadjust.h:619 skinadjust.h:685 skinadjust.h:1110
+#: skinadjust.h:1172
 msgid "Titan will be restarted!"
 msgstr "Titan будет перезагружен!"
 
@@ -10385,7 +10407,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1966
+#: tithek.h:1967
 msgid "TitanNit Tithek disclaimer"
 msgstr "Отказ от ответственности"
 
@@ -10410,8 +10432,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "Главное меню"
 
-#: tithek_global.h:591 tithek_global.h:713 tithek.h:2011 tithek.h:2147
-#: tithek.h:2755 tithek.h:2773 tithek.h:2786 tithek.h:2803
+#: tithek_global.h:591 tithek_global.h:713 tithek.h:2012 tithek.h:2148
+#: tithek.h:2756 tithek.h:2774 tithek.h:2787 tithek.h:2804
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "Фавориты"
 
@@ -10428,10 +10450,10 @@ msgstr "Название"
 msgid "Title Color"
 msgstr ""
 
-#: play.h:417 play.h:451 plugins_imdbapi_skin.xml.h:9 plugins_imdb_skin.xml.h:9
-#: plugins_tmc_skin.xml.h:15 plugins_tmdb_skin.xml.h:9
-#: skins_imdbapi_skin.xml.h:9 skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:15
-#: skins_tmdb_skin.xml.h:9
+#: play.h:417 play.h:451 plugins_imdbapi_skin.xml.h:9
+#: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:15
+#: plugins_tmdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
+#: skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:15 skins_tmdb_skin.xml.h:9
 msgid "Title:"
 msgstr "Название"
 
@@ -10800,7 +10822,7 @@ msgstr ""
 msgid "Unitymedia NRW | 13.12.2017 (caliban)"
 msgstr ""
 
-#: titan.c:1331
+#: titan.c:1333
 msgid "Unknown Error."
 msgstr "Неизвестная ошибка!"
 
@@ -11023,14 +11045,15 @@ msgstr "Режим напряжения"
 #: webif_index.atemio7600.h:60 webif_index.atemio7600.h:98
 #: webif_index.atemio-nemesis.h:47 webif_index.atemio-nemesis.h:103
 #: webif_index.dm520.h:47 webif_index.dm520.h:103 webif_index.dm525.h:47
-#: webif_index.dm525.h:103 webif_index.dm7020hd.h:47 webif_index.dm7020hd.h:103
-#: webif_index.dm7020hdv2.h:47 webif_index.dm7020hdv2.h:103
-#: webif_index.dm900.h:47 webif_index.dm900.h:103 webif_rc.atemio510.h:45
-#: webif_rc.atemio5200.h:30 webif_rc.atemio520.h:22 webif_rc.atemio530.h:22
-#: webif_rc.atemio6000.h:30 webif_rc.atemio6100.h:30 webif_rc.atemio6200.h:30
-#: webif_rc.atemio7600.h:31 webif_rc.atemio-nemesis.h:30 webif_rc.dm520.h:30
-#: webif_rc.dm525.h:30 webif_rc.dm7020hd.h:30 webif_rc.dm7020hdv2.h:30
-#: webif_rc.dm900.h:30 webif_rc.h:30 webif_rc_virtual.atemio510.h:45
+#: webif_index.dm525.h:103 webif_index.dm7020hd.h:47
+#: webif_index.dm7020hd.h:103 webif_index.dm7020hdv2.h:47
+#: webif_index.dm7020hdv2.h:103 webif_index.dm900.h:47 webif_index.dm900.h:103
+#: webif_rc.atemio510.h:45 webif_rc.atemio5200.h:30 webif_rc.atemio520.h:22
+#: webif_rc.atemio530.h:22 webif_rc.atemio6000.h:30 webif_rc.atemio6100.h:30
+#: webif_rc.atemio6200.h:30 webif_rc.atemio7600.h:31
+#: webif_rc.atemio-nemesis.h:30 webif_rc.dm520.h:30 webif_rc.dm525.h:30
+#: webif_rc.dm7020hd.h:30 webif_rc.dm7020hdv2.h:30 webif_rc.dm900.h:30
+#: webif_rc.h:30 webif_rc_virtual.atemio510.h:45
 #: webif_rc_virtual.atemio5200.h:32 webif_rc_virtual.atemio520.h:32
 #: webif_rc_virtual.atemio530.h:32 webif_rc_virtual.atemio6000.h:32
 #: webif_rc_virtual.atemio6100.h:32 webif_rc_virtual.atemio6200.h:32
@@ -11046,14 +11069,15 @@ msgstr "Громкость вниз"
 #: webif_index.atemio7600.h:59 webif_index.atemio7600.h:97
 #: webif_index.atemio-nemesis.h:46 webif_index.atemio-nemesis.h:102
 #: webif_index.dm520.h:46 webif_index.dm520.h:102 webif_index.dm525.h:46
-#: webif_index.dm525.h:102 webif_index.dm7020hd.h:46 webif_index.dm7020hd.h:102
-#: webif_index.dm7020hdv2.h:46 webif_index.dm7020hdv2.h:102
-#: webif_index.dm900.h:46 webif_index.dm900.h:102 webif_rc.atemio510.h:44
-#: webif_rc.atemio5200.h:29 webif_rc.atemio520.h:21 webif_rc.atemio530.h:21
-#: webif_rc.atemio6000.h:29 webif_rc.atemio6100.h:29 webif_rc.atemio6200.h:29
-#: webif_rc.atemio7600.h:30 webif_rc.atemio-nemesis.h:29 webif_rc.dm520.h:29
-#: webif_rc.dm525.h:29 webif_rc.dm7020hd.h:29 webif_rc.dm7020hdv2.h:29
-#: webif_rc.dm900.h:29 webif_rc.h:29 webif_rc_virtual.atemio510.h:44
+#: webif_index.dm525.h:102 webif_index.dm7020hd.h:46
+#: webif_index.dm7020hd.h:102 webif_index.dm7020hdv2.h:46
+#: webif_index.dm7020hdv2.h:102 webif_index.dm900.h:46 webif_index.dm900.h:102
+#: webif_rc.atemio510.h:44 webif_rc.atemio5200.h:29 webif_rc.atemio520.h:21
+#: webif_rc.atemio530.h:21 webif_rc.atemio6000.h:29 webif_rc.atemio6100.h:29
+#: webif_rc.atemio6200.h:29 webif_rc.atemio7600.h:30
+#: webif_rc.atemio-nemesis.h:29 webif_rc.dm520.h:29 webif_rc.dm525.h:29
+#: webif_rc.dm7020hd.h:29 webif_rc.dm7020hdv2.h:29 webif_rc.dm900.h:29
+#: webif_rc.h:29 webif_rc_virtual.atemio510.h:44
 #: webif_rc_virtual.atemio5200.h:31 webif_rc_virtual.atemio520.h:31
 #: webif_rc_virtual.atemio530.h:31 webif_rc_virtual.atemio6000.h:31
 #: webif_rc_virtual.atemio6100.h:31 webif_rc_virtual.atemio6200.h:31
@@ -11122,11 +11146,11 @@ msgid ""
 " You can now configure the new interface."
 msgstr "WiFi запущен. Настройте адаптер WiFi"
 
-#: tpk_showname.h:214
+#: tpk_showname.h:215
 msgid "WM2014"
 msgstr ""
 
-#: tpk_description.h:197
+#: tpk_description.h:198
 msgid "WM2014 Plugin"
 msgstr ""
 
@@ -11154,13 +11178,13 @@ msgstr "Режим WSS"
 #: webif_index.atemio6200.h:61 webif_index.atemio6200.h:117
 #: webif_index.atemio-nemesis.h:61 webif_index.atemio-nemesis.h:117
 #: webif_index.dm520.h:61 webif_index.dm520.h:117 webif_index.dm525.h:61
-#: webif_index.dm525.h:117 webif_index.dm7020hd.h:61 webif_index.dm7020hd.h:117
-#: webif_index.dm7020hdv2.h:61 webif_index.dm7020hdv2.h:117
-#: webif_index.dm900.h:61 webif_index.dm900.h:117 webif_rc.atemio5200.h:44
-#: webif_rc.atemio6000.h:44 webif_rc.atemio6100.h:44 webif_rc.atemio6200.h:44
-#: webif_rc.atemio-nemesis.h:44 webif_rc.dm520.h:44 webif_rc.dm525.h:44
-#: webif_rc.dm7020hd.h:44 webif_rc.dm7020hdv2.h:44 webif_rc.dm900.h:44
-#: webif_rc.h:44
+#: webif_index.dm525.h:117 webif_index.dm7020hd.h:61
+#: webif_index.dm7020hd.h:117 webif_index.dm7020hdv2.h:61
+#: webif_index.dm7020hdv2.h:117 webif_index.dm900.h:61 webif_index.dm900.h:117
+#: webif_rc.atemio5200.h:44 webif_rc.atemio6000.h:44 webif_rc.atemio6100.h:44
+#: webif_rc.atemio6200.h:44 webif_rc.atemio-nemesis.h:44 webif_rc.dm520.h:44
+#: webif_rc.dm525.h:44 webif_rc.dm7020hd.h:44 webif_rc.dm7020hdv2.h:44
+#: webif_rc.dm900.h:44 webif_rc.h:44
 msgid "WWW"
 msgstr ""
 
@@ -11291,14 +11315,18 @@ msgid "Wizard"
 msgstr "Мастер настройки"
 
 #: tpk_showname.h:208
-msgid "Wlan 8192cu"
+msgid "Wlan 8188eu"
 msgstr ""
 
 #: tpk_showname.h:209
-msgid "Wlan 8192du"
+msgid "Wlan 8192cu"
 msgstr ""
 
 #: tpk_showname.h:210
+msgid "Wlan 8192du"
+msgstr ""
+
+#: tpk_showname.h:211
 msgid "Wlan 8712u"
 msgstr ""
 
@@ -11306,15 +11334,15 @@ msgstr ""
 msgid "Wlan Stick not found"
 msgstr "WiFi адаптер не найден"
 
-#: tpk_showname.h:211
+#: tpk_showname.h:212
 msgid "Wlan rt2870sta"
 msgstr ""
 
-#: tpk_showname.h:212
+#: tpk_showname.h:213
 msgid "Wlan rt3070sta"
 msgstr ""
 
-#: tpk_showname.h:213
+#: tpk_showname.h:214
 msgid "Wlan rt5370sta"
 msgstr ""
 
@@ -11322,7 +11350,7 @@ msgstr ""
 msgid "Won"
 msgstr ""
 
-#: tpk_description.h:198
+#: tpk_description.h:199
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 
@@ -11355,39 +11383,39 @@ msgstr "X-позиция"
 msgid "X-Resolution"
 msgstr "Х-разрешение"
 
-#: tpk_showname.h:215
+#: tpk_showname.h:216
 msgid "XPicons LightTransparent (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:216
+#: tpk_showname.h:217
 msgid "XPicons LightTransparent (Astra 23.5E)"
 msgstr ""
 
-#: tpk_showname.h:217
+#: tpk_showname.h:218
 msgid "XPicons LightTransparent (Astra 28.2E)"
 msgstr ""
 
-#: tpk_showname.h:218
+#: tpk_showname.h:219
 msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
-#: tpk_showname.h:219
+#: tpk_showname.h:220
 msgid "XPicons LightTransparent (small - Astra 19.2E)31.10.2016"
 msgstr ""
 
-#: tpk_showname.h:220
+#: tpk_showname.h:221
 msgid "XPicons MirrorGlass3D (KabelD)"
 msgstr ""
 
-#: tpk_showname.h:221
+#: tpk_showname.h:222
 msgid "XPicons Pimpert (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:222
+#: tpk_showname.h:223
 msgid "XPicons Pimpert rounded (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:223
+#: tpk_showname.h:224
 msgid "XPicons Pimpert rounded (Hotbird 13,0E)"
 msgstr ""
 
@@ -11416,14 +11444,15 @@ msgstr "Год"
 #: webif_index.atemio7600.h:55 webif_index.atemio7600.h:95
 #: webif_index.atemio-nemesis.h:53 webif_index.atemio-nemesis.h:109
 #: webif_index.dm520.h:53 webif_index.dm520.h:109 webif_index.dm525.h:53
-#: webif_index.dm525.h:109 webif_index.dm7020hd.h:53 webif_index.dm7020hd.h:109
-#: webif_index.dm7020hdv2.h:53 webif_index.dm7020hdv2.h:109
-#: webif_index.dm900.h:53 webif_index.dm900.h:109 webif_rc.atemio510.h:40
-#: webif_rc.atemio5200.h:36 webif_rc.atemio520.h:34 webif_rc.atemio530.h:34
-#: webif_rc.atemio6000.h:36 webif_rc.atemio6100.h:36 webif_rc.atemio6200.h:36
-#: webif_rc.atemio7600.h:28 webif_rc.atemio-nemesis.h:36 webif_rc.dm520.h:36
-#: webif_rc.dm525.h:36 webif_rc.dm7020hd.h:36 webif_rc.dm7020hdv2.h:36
-#: webif_rc.dm900.h:36 webif_rc.h:36 webif_rc_virtual.atemio510.h:40
+#: webif_index.dm525.h:109 webif_index.dm7020hd.h:53
+#: webif_index.dm7020hd.h:109 webif_index.dm7020hdv2.h:53
+#: webif_index.dm7020hdv2.h:109 webif_index.dm900.h:53 webif_index.dm900.h:109
+#: webif_rc.atemio510.h:40 webif_rc.atemio5200.h:36 webif_rc.atemio520.h:34
+#: webif_rc.atemio530.h:34 webif_rc.atemio6000.h:36 webif_rc.atemio6100.h:36
+#: webif_rc.atemio6200.h:36 webif_rc.atemio7600.h:28
+#: webif_rc.atemio-nemesis.h:36 webif_rc.dm520.h:36 webif_rc.dm525.h:36
+#: webif_rc.dm7020hd.h:36 webif_rc.dm7020hdv2.h:36 webif_rc.dm900.h:36
+#: webif_rc.h:36 webif_rc_virtual.atemio510.h:40
 #: webif_rc_virtual.atemio5200.h:27 webif_rc_virtual.atemio520.h:27
 #: webif_rc_virtual.atemio530.h:27 webif_rc_virtual.atemio6000.h:27
 #: webif_rc_virtual.atemio6100.h:27 webif_rc_virtual.atemio6200.h:27
@@ -11466,7 +11495,7 @@ msgstr "Восстановить"
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Остановить?"
 
-#: tpk_showname.h:226
+#: tpk_showname.h:227
 msgid "Zombie"
 msgstr ""
 
@@ -12174,7 +12203,8 @@ msgid "ftpport"
 msgstr "FTP порт"
 
 #: mc_audioplayer_settings.h:38 mc_iptvplayer_settings.h:34
-#: mc_videoplayer_settings.h:34 plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26
+#: mc_videoplayer_settings.h:34 plugins_mc_skin.xml.h:26
+#: skins_mc_skin.xml.h:26
 msgid "fullcover"
 msgstr "Отдельным списком"
 
@@ -12686,7 +12716,7 @@ msgstr "Нет описания"
 msgid "no pic"
 msgstr "Без картинки"
 
-#: infobar.h:1132
+#: infobar.h:1137
 msgid "no record channel found"
 msgstr ""
 
@@ -12755,11 +12785,11 @@ msgstr ""
 #: mc_iptvplayer_settings.h:53 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
-#: panel_settings_overclocking.h:276 readerconfig.h:421 settings_autostart.h:53
-#: settings_overclocking.h:276 skinadjust.h:94 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:964
-#: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115 vfdisplay.h:130
-#: vfdisplay.h:165 vfdisplay.h:169
+#: panel_settings_overclocking.h:276 readerconfig.h:421
+#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:94
+#: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
+#: tunerconfig.h:964 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92
+#: vfdisplay.h:115 vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
 msgstr "Выкл"
 
@@ -13539,8 +13569,8 @@ msgstr "После переключения на канал"
 #: webif_index.atemio6000.h:19 webif_index.atemio6100.h:19
 #: webif_index.atemio6200.h:72 webif_index.atemio7600.h:67
 #: webif_index.atemio-nemesis.h:72 webif_index.dm520.h:72
-#: webif_index.dm525.h:72 webif_index.dm7020hd.h:72 webif_index.dm7020hdv2.h:72
-#: webif_index.dm900.h:72 webif_index.h:20
+#: webif_index.dm525.h:72 webif_index.dm7020hd.h:72
+#: webif_index.dm7020hdv2.h:72 webif_index.dm900.h:72 webif_index.h:20
 msgid "switch to original remote"
 msgstr "Перейти на оригинальный пульт"
 
@@ -13794,7 +13824,8 @@ msgstr "Universal"
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
-#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:180 zdf.h:86
+#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:180
+#: zdf.h:86
 msgid "unknown"
 msgstr "Неизвестно"
 
@@ -13991,26 +14022,30 @@ msgid "wireless"
 msgstr "Беспроводная сеть"
 
 #: tpk_description.h:191
-msgid "wireless 8192cu.ko model"
+msgid "wireless 8188eu.ko model"
 msgstr ""
 
 #: tpk_description.h:192
-msgid "wireless 8192du.ko model"
+msgid "wireless 8192cu.ko model"
 msgstr ""
 
 #: tpk_description.h:193
-msgid "wireless modul 8712u.ko"
+msgid "wireless 8192du.ko model"
 msgstr ""
 
 #: tpk_description.h:194
-msgid "wireless modul rt2870sta.ko"
+msgid "wireless modul 8712u.ko"
 msgstr ""
 
 #: tpk_description.h:195
-msgid "wireless modul rt3070sta.ko"
+msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
 #: tpk_description.h:196
+msgid "wireless modul rt3070sta.ko"
+msgstr ""
+
+#: tpk_description.h:197
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
@@ -14030,11 +14065,11 @@ msgstr "Размер буфера записи"
 msgid "x"
 msgstr ""
 
-#: tpk_showname.h:224
+#: tpk_showname.h:225
 msgid "xupnpd"
 msgstr ""
 
-#: tpk_description.h:199
+#: tpk_description.h:200
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
@@ -14138,6 +14173,6 @@ msgstr ""
 msgid "z"
 msgstr ""
 
-#: tpk_showname.h:225
+#: tpk_showname.h:226
 msgid "zapback (Werbezapper)"
 msgstr ""
