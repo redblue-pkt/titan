@@ -628,6 +628,7 @@ youtube_dlbg()
 
 	echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
 	$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
+	cat /tmp/.last_hoster_$TYPE.log | tail -n1
 #	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
 }
 
@@ -682,7 +683,7 @@ if [ "$TYPE" == "get" ];then
 		vidup) vidup $INPUT;;
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
-		goldesel|movie4k) cloudflare $INPUT;;
+		goldesel|movie4k|kinox) cloudflare $INPUT;;
 		streamcloud1) streamcloud $INPUT;;	
 		nowvideo) nowvideo $INPUT;;
 		divxstage|cloudtime) divxstage $INPUT;;
