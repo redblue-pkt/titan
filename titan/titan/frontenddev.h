@@ -1613,9 +1613,9 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		{
 			if(signal == 128)
 				signal == 0xffff
-			if(signal > 128)
+			else if(signal > 128)
 				signal =  0xffff - ((signal - 128) / 2 * 655)
-			if(signal < 128)
+			else if(signal < 128)
 				signal =  0xffff - ((128 - signal) / 2 * 655)
 		}
 		printf("frontend signal = %02x\n", (signal * 100) / 0xffff);
