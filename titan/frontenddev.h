@@ -1612,11 +1612,11 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 		if(ostrstr(node->feinfo->name, "Si2166B") != NULL)
 		{
 			if(signal == 128)
-				signal == 0xffff
+				signal = 0xffff;
 			else if(signal > 128)
-				signal =  0xffff - ((signal - 128) / 2 * 655)
+				signal =  0xffff - ((signal - 128) / 2 * 655);
 			else if(signal < 128)
-				signal =  0xffff - ((128 - signal) / 2 * 655)
+				signal =  0xffff - ((128 - signal) / 2 * 655);
 		}
 		printf("frontend signal = %02x\n", (signal * 100) / 0xffff);
 	}
