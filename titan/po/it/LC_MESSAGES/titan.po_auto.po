@@ -142,7 +142,7 @@ msgstr ""
 msgid "->"
 msgstr ""
 
-#: pip.h:658 skin_default_skin.xml.h:634
+#: pip.h:658 skin_default_skin.xml.h:635
 msgid "->swap<-"
 msgstr ""
 
@@ -9727,7 +9727,7 @@ msgid "Svn Changelog Full"
 msgstr ""
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:635 system_infos_sysinfo.h:25
+#: skin_default_skin.xml.h:634 system_infos_sysinfo.h:25
 #: webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr ""
@@ -9744,11 +9744,11 @@ msgstr "Swap"
 msgid "Switch TV to the correct input"
 msgstr ""
 
-#: skin_default_skin.xml.h:637
+#: skin_default_skin.xml.h:638
 msgid "Symbol rate:"
 msgstr ""
 
-#: skin_default_skin.xml.h:638
+#: skin_default_skin.xml.h:637
 msgid "Symbolrate"
 msgstr ""
 
