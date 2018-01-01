@@ -154,7 +154,7 @@ msgstr "--Autor--"
 msgid "->"
 msgstr ""
 
-#: pip.h:658 skin_default_skin.xml.h:634
+#: pip.h:658 skin_default_skin.xml.h:635
 msgid "->swap<-"
 msgstr "Tauschen"
 
@@ -10001,7 +10001,7 @@ msgid "Svn Changelog Full"
 msgstr "SVN Änderungsprotokoll (komplett)"
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:635 system_infos_sysinfo.h:25
+#: skin_default_skin.xml.h:634 system_infos_sysinfo.h:25
 #: webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Swap Datei (RAM Erweiterung)"
@@ -10018,11 +10018,11 @@ msgstr "Swap Datei Größe in kb"
 msgid "Switch TV to the correct input"
 msgstr "TV auf gewünschten HDMI-Eingang schalten"
 
-#: skin_default_skin.xml.h:637
+#: skin_default_skin.xml.h:638
 msgid "Symbol rate:"
 msgstr "Symbolrate:"
 
-#: skin_default_skin.xml.h:638
+#: skin_default_skin.xml.h:637
 msgid "Symbolrate"
 msgstr ""
 
