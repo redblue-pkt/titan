@@ -112,17 +112,21 @@ struct weather* getweather(char* location)
 			weather->date = getxmlentry(tmpstr2, "date=");
 			weather->day0_humidity = getxmlentry(tmpstr2, "humidity=");
 			weather->day0_wind = getxmlentry(tmpstr2, "windspeed=");
+			weather->day0_icon = getxmlentry(tmpstr2, "skycode=");
+			weather->day0_condition = getxmlentry(tmpstr2, "skytext=");
+			weather->day0 = getxmlentry(tmpstr2, " shortday=");
 		}
 		
 		tmpstr2 = ostrstr(tmpstr1, "<forecast ");
 		if(tmpstr2 != NULL)
 		{
 			tmpstr1 = tmpstr2 + 5;
-			weather->day0_low = getxmlentry(tmpstr2, "low=");
-			weather->day0_high = getxmlentry(tmpstr2, "high=");
-			weather->day0_icon = getxmlentry(tmpstr2, "skycodeday=");
-			weather->day0_condition = getxmlentry(tmpstr2, "skytextday=");
-			weather->day0 = getxmlentry(tmpstr2, " shortday=");
+			//day0 jetzt aktueller tag
+			//weather->day0_low = getxmlentry(tmpstr2, "low=");
+			//weather->day0_high = getxmlentry(tmpstr2, "high=");
+			//weather->day0_icon = getxmlentry(tmpstr2, "skycodeday=");
+			//weather->day0_condition = getxmlentry(tmpstr2, "skytextday=");
+			//weather->day0 = getxmlentry(tmpstr2, " shortday=");
 		}
 
 		tmpstr2 = ostrstr(tmpstr1, "<forecast ");
@@ -348,13 +352,16 @@ void lcd_writeweather()
 
 		fprintf(ausg,"%s\n",node->date);
 		fprintf(ausg,"%s\n",node->day0);
-		fprintf(ausg,"%s\n",node->day0_low);
-		fprintf(ausg,"%s C\n",node->day0_high);
+		fprintf(ausg,"%s\n",node->day0_temp);
+		fprintf(ausg,"%s C\n",node->day0_temp);
+		//day0 jetzt aktueller Tag
+		//fprintf(ausg,"%s\n",node->day0_low);
+		//fprintf(ausg,"%s C\n",node->day0_high);
 		fprintf(ausg,"%s\n",node->day0_condition);
 		tmpstr = changeweatherpic(node->day0_icon);
 		fprintf(ausg,"%s\n",tmpstr);
 		free(tmpstr); tmpstr = NULL;
-
+		
 		fprintf(ausg,"%s\n",node->day1);
 		fprintf(ausg,"%s\n",node->day1_low);
 		fprintf(ausg,"%s C\n",node->day1_high);
