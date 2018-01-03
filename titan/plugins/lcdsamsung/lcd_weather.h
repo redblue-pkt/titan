@@ -6,6 +6,7 @@ struct weather
 	char* city;
 	char* date;
 	char* day0;
+	char* day0_long;
 	char* day0_low;
 	char* day0_high;
 	char* day0_condition;
@@ -14,16 +15,19 @@ struct weather
 	char* day0_humidity;
 	char* day0_wind;
 	char* day1;
+	char* day1_long;
 	char* day1_low;
 	char* day1_high;
 	char* day1_condition;
 	char* day1_icon;
 	char* day2;
+	char* day2_long;
 	char* day2_low;
 	char* day2_high;
 	char* day2_condition;
 	char* day2_icon;
 	char* day3;
+	char* day3_long;
 	char* day3_low;
 	char* day3_high;
 	char* day3_condition;
@@ -38,6 +42,7 @@ void freeweather(struct weather* node)
 	free(node->date); node->date = NULL;
 
 	free(node->day0); node->day0 = NULL;
+	free(node->day0_long); node->day0_long = NULL;
 	free(node->day0_low); node->day0_low = NULL;
 	free(node->day0_high); node->day0_high = NULL;
 	free(node->day0_condition); node->day0_condition = NULL;
@@ -47,18 +52,21 @@ void freeweather(struct weather* node)
 	free(node->day0_wind); node->day0_wind = NULL;
 
 	free(node->day1); node->day1 = NULL;
+	free(node->day1_long); node->day1_long = NULL;
 	free(node->day1_low); node->day1_low = NULL;
 	free(node->day1_high); node->day1_high = NULL;
 	free(node->day1_condition); node->day1_condition = NULL;
 	free(node->day1_icon); node->day1_icon = NULL;
 
 	free(node->day2); node->day2 = NULL;
+	free(node->day2_long); node->day2_long = NULL;
 	free(node->day2_low); node->day2_low = NULL;
 	free(node->day2_high); node->day2_high = NULL;
 	free(node->day2_condition); node->day2_condition = NULL;
 	free(node->day2_icon); node->day2_icon = NULL;
 
 	free(node->day3); node->day3 = NULL;
+	free(node->day3_long); node->day3_long = NULL;
 	free(node->day3_low); node->day3_low = NULL;
 	free(node->day3_high); node->day3_high = NULL;
 	free(node->day3_condition); node->day3_condition = NULL;
@@ -115,6 +123,8 @@ struct weather* getweather(char* location)
 			weather->day0_icon = getxmlentry(tmpstr2, "skycode=");
 			weather->day0_condition = getxmlentry(tmpstr2, "skytext=");
 			weather->day0 = getxmlentry(tmpstr2, " shortday=");
+			weather->day0_long = getxmlentry(tmpstr2, " day=");
+			
 		}
 		
 		tmpstr2 = ostrstr(tmpstr1, "<forecast ");
@@ -138,6 +148,7 @@ struct weather* getweather(char* location)
 			weather->day1_icon = getxmlentry(tmpstr2, "skycodeday=");
 			weather->day1_condition = getxmlentry(tmpstr2, "skytextday=");
 			weather->day1 = getxmlentry(tmpstr2, " shortday=");
+			weather->day1_long = getxmlentry(tmpstr2, " day=");
 		}
 
 		tmpstr2 = ostrstr(tmpstr1, "<forecast ");
@@ -149,6 +160,7 @@ struct weather* getweather(char* location)
 			weather->day2_icon = getxmlentry(tmpstr2, "skycodeday=");
 			weather->day2_condition = getxmlentry(tmpstr2, "skytextday=");
 			weather->day2 = getxmlentry(tmpstr2, " shortday=");
+			weather->day2_long = getxmlentry(tmpstr2, " day=");
 		}
 
 		tmpstr2 = ostrstr(tmpstr1, "<forecast ");
@@ -160,6 +172,7 @@ struct weather* getweather(char* location)
 			weather->day3_icon = getxmlentry(tmpstr2, "skycodeday=");
 			weather->day3_condition = getxmlentry(tmpstr2, "skytextday=");
 			weather->day3 = getxmlentry(tmpstr2, " shortday=");
+			weather->day3_long = getxmlentry(tmpstr2, " day=");
 		}
 
 		free(tmpstr); tmpstr = NULL;
@@ -364,7 +377,8 @@ void lcd_writeweather()
 		
 		fprintf(ausg,"%s\n",node->day1);
 		fprintf(ausg,"%s\n",node->day1_low);
-		fprintf(ausg,"%s C\n",node->day1_high);
+		//fprintf(ausg,"%s C\n",node->day1_high);
+		fprintf(ausg,"%s\n",node->day1_high);
 		fprintf(ausg,"%s\n",node->day1_condition);
 		tmpstr = changeweatherpic(node->day1_icon);
 		fprintf(ausg,"%s\n",tmpstr);
@@ -372,7 +386,8 @@ void lcd_writeweather()
 		
 		fprintf(ausg,"%s\n",node->day2);
 		fprintf(ausg,"%s\n",node->day2_low);
-		fprintf(ausg,"%s C\n",node->day2_high);
+		//fprintf(ausg,"%s C\n",node->day2_high);
+		fprintf(ausg,"%s\n",node->day2_high);
 		fprintf(ausg,"%s\n",node->day2_condition);
 		tmpstr = changeweatherpic(node->day2_icon);
 		fprintf(ausg,"%s\n",tmpstr);
@@ -380,11 +395,25 @@ void lcd_writeweather()
 		
 		fprintf(ausg,"%s\n",node->day3);
 		fprintf(ausg,"%s\n",node->day3_low);
-		fprintf(ausg,"%s C\n",node->day3_high);
+		//fprintf(ausg,"%s C\n",node->day3_high);
+		fprintf(ausg,"%s\n",node->day3_high);
 		fprintf(ausg,"%s\n",node->day3_condition);
 		tmpstr = changeweatherpic(node->day3_icon);
 		fprintf(ausg,"%s\n",tmpstr);
 		free(tmpstr); tmpstr = NULL;
+		
+		//wegen compatibilitaet hinten dran
+		fprintf(ausg,"%s\n",node->city);
+		fprintf(ausg,"%s\n",node->day0_wind);
+		fprintf(ausg,"%s\%\n",node->day0_humidity);
+		fprintf(ausg,"%s\n",node->day0_long);
+		fprintf(ausg,"%s\n",node->day1_long);
+		fprintf(ausg,"%s\n",node->day2_long);
+		fprintf(ausg,"%s\n",node->day3_long);
+			
+		
+		
+		
 		
 		fclose(ausg);
 		freeweather(node);

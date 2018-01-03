@@ -112,18 +112,30 @@ void LCD_Samsung1_thread()
 	struct skin* LCD_Standby = NULL;
 	struct skin* LCD_Play = NULL;
 	
+	
+	struct skin* city = NULL;
+	struct skin* wind = NULL;
+	struct skin* luft = NULL;
 	struct skin* day0_t = NULL;
+	struct skin* day0_tm = NULL;
 	struct skin* day0_i = NULL;
 	struct skin* day0_d = NULL;
+	struct skin* day0_dl = NULL;
 	struct skin* day1_t = NULL;
+	struct skin* day1_tm = NULL;
 	struct skin* day1_i = NULL;
 	struct skin* day1_d = NULL;
+	struct skin* day1_dl = NULL;
 	struct skin* day2_t = NULL;
+	struct skin* day2_tm = NULL;
 	struct skin* day2_i = NULL;
 	struct skin* day2_d = NULL;
+	struct skin* day2_dl = NULL;
 	struct skin* day3_t = NULL;
+	struct skin* day3_tm = NULL;
 	struct skin* day3_i = NULL;
 	struct skin* day3_d = NULL;
+	struct skin* day3_dl = NULL;
 	struct skin* akttime = NULL;
 	struct skin* akttime_Standby = NULL;
 	
@@ -137,18 +149,29 @@ void LCD_Samsung1_thread()
 	struct skin* n_stunde2_standby = NULL;
 	struct skin* n_minute2_standby = NULL;
 	
+	struct skin* scity = NULL;
+	struct skin* swind = NULL;
+	struct skin* sluft = NULL;
 	struct skin* sday0_t = NULL;
+	struct skin* sday0_tm = NULL;
 	struct skin* sday0_i = NULL;
 	struct skin* sday0_d = NULL;
+	struct skin* sday0_dl = NULL;
 	struct skin* sday1_t = NULL;
+	struct skin* sday1_tm = NULL;
 	struct skin* sday1_i = NULL;
 	struct skin* sday1_d = NULL;
+	struct skin* sday1_dl = NULL;
 	struct skin* sday2_t = NULL;
+	struct skin* sday2_tm = NULL;
 	struct skin* sday2_i = NULL;
 	struct skin* sday2_d = NULL;
+	struct skin* sday2_dl = NULL;
 	struct skin* sday3_t = NULL;
+	struct skin* sday3_tm = NULL;
 	struct skin* sday3_i = NULL;
 	struct skin* sday3_d = NULL;
+	struct skin* sday3_dl = NULL;
 	
 	
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
@@ -185,18 +208,29 @@ void LCD_Samsung1_thread()
 			LCD_Samsung1 = getscreen("LCD_spf85_Wetter");
 		else
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
+		city = getscreennode(LCD_Samsung1, "city");
+		wind = getscreennode(LCD_Samsung1, "wind");
+		luft = getscreennode(LCD_Samsung1, "luft");
 		day0_t = getscreennode(LCD_Samsung1, "day0_t");
+		day0_tm = getscreennode(LCD_Samsung1, "day0_tm");
 		day0_i = getscreennode(LCD_Samsung1, "day0_i");
 		day0_d = getscreennode(LCD_Samsung1, "day0_d");
+		day0_dl = getscreennode(LCD_Samsung1, "day0_dl");
 		day1_t = getscreennode(LCD_Samsung1, "day1_t");
+		day1_tm = getscreennode(LCD_Samsung1, "day1_tm");
 		day1_i = getscreennode(LCD_Samsung1, "day1_i");
 		day1_d = getscreennode(LCD_Samsung1, "day1_d");
+		day1_dl = getscreennode(LCD_Samsung1, "day1_dl");
 		day2_t = getscreennode(LCD_Samsung1, "day2_t");
+		day2_tm = getscreennode(LCD_Samsung1, "day2_tm");
 		day2_i = getscreennode(LCD_Samsung1, "day2_i");
 		day2_d = getscreennode(LCD_Samsung1, "day2_d");
+		day2_dl = getscreennode(LCD_Samsung1, "day2_dl");
 		day3_t = getscreennode(LCD_Samsung1, "day3_t");
+		day3_tm = getscreennode(LCD_Samsung1, "day3_tm");
 		day3_i = getscreennode(LCD_Samsung1, "day3_i");
 		day3_d = getscreennode(LCD_Samsung1, "day3_d");
+		day3_dl = getscreennode(LCD_Samsung1, "day3_dl");
 		akttime = getscreennode(LCD_Samsung1, "akttime");
 		akttime = getscreennode(LCD_Samsung1, "akttime");
 		n_stunde =  getscreennode(LCD_Samsung1, "stunde");
@@ -368,18 +402,29 @@ void LCD_Samsung1_thread()
 		else
 			LCD_Standby = getscreen("LCD_spf87_Standby");
 		akttime_Standby = getscreennode(LCD_Standby, "akttime"); 
+		scity = getscreennode(LCD_Standby, "city");
+		swind = getscreennode(LCD_Standby, "wind");
+		sluft = getscreennode(LCD_Standby, "luft");
 		sday0_t = getscreennode(LCD_Standby, "day0_t");
+		sday0_tm = getscreennode(LCD_Standby, "day0_tm");
 		sday0_i = getscreennode(LCD_Standby, "day0_i");
 		sday0_d = getscreennode(LCD_Standby, "day0_d");
+		sday0_dl = getscreennode(LCD_Standby, "day0_dl");
 		sday1_t = getscreennode(LCD_Standby, "day1_t");
+		sday1_tm = getscreennode(LCD_Standby, "day1_tm");
 		sday1_i = getscreennode(LCD_Standby, "day1_i");
 		sday1_d = getscreennode(LCD_Standby, "day1_d");
+		sday1_dl = getscreennode(LCD_Standby, "day1_dl");
 		sday2_t = getscreennode(LCD_Standby, "day2_t");
+		sday2_tm = getscreennode(LCD_Standby, "day2_tm");
 		sday2_i = getscreennode(LCD_Standby, "day2_i");
 		sday2_d = getscreennode(LCD_Standby, "day2_d");
+		sday2_dl = getscreennode(LCD_Standby, "day2_dl");
 		sday3_t = getscreennode(LCD_Standby, "day3_t");
+		sday3_tm = getscreennode(LCD_Standby, "day3_tm");
 		sday3_i = getscreennode(LCD_Standby, "day3_i");
 		sday3_d = getscreennode(LCD_Standby, "day3_d");
+		sday3_dl = getscreennode(LCD_Standby, "day3_dl");
 		
 		n_stunde_standby =  getscreennode(LCD_Standby, "stunde");
 		if(n_stunde_standby != NULL)
@@ -569,7 +614,10 @@ void LCD_Samsung1_thread()
 												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												changetext(day0_d, fileline);
 												changetext(sday0_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day0_tm, fileline);
+												changetext(sday0_tm, fileline);
+												weather_getline(fd, fileline);
 												changetext(day0_t, fileline);
 												changetext(sday0_t, fileline);
 												weather_getline(fd, fileline);
@@ -580,7 +628,10 @@ void LCD_Samsung1_thread()
 												weather_getline(fd, fileline);
 												changetext(day1_d, fileline);
 												changetext(sday1_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day1_tm, fileline);
+												changetext(sday1_tm, fileline);
+												weather_getline(fd, fileline);
 												changetext(day1_t, fileline);
 												changetext(sday1_t, fileline);
 												weather_getline(fd, fileline);
@@ -591,7 +642,10 @@ void LCD_Samsung1_thread()
 												weather_getline(fd, fileline);
 												changetext(day2_d, fileline);
 												changetext(sday2_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day2_tm, fileline);
+												changetext(sday2_tm, fileline);
+												weather_getline(fd, fileline);
 												changetext(day2_t, fileline);
 												changetext(sday2_t, fileline);
 												weather_getline(fd, fileline);
@@ -602,19 +656,47 @@ void LCD_Samsung1_thread()
 												weather_getline(fd, fileline);
 												changetext(day3_d, fileline);
 												changetext(sday3_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day3_tm, fileline);
+												changetext(sday3_tm, fileline);
+												weather_getline(fd, fileline);
 												changetext(day3_t, fileline);
 												changetext(sday3_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
 												changepic(day3_i, fileline);
 												changepic(sday3_i, fileline);
+												
+												weather_getline(fd, fileline);
+												changepic(city, fileline);
+												changepic(scity, fileline);
+												weather_getline(fd, fileline);
+												changetext(wind, fileline);
+												changetext(swind, fileline);
+												weather_getline(fd, fileline);
+												changetext(luft, fileline);
+												changetext(sluft, fileline);
+												weather_getline(fd, fileline);
+												changetext(day0_dl, fileline);
+												changetext(sday0_dl, fileline);
+												weather_getline(fd, fileline);
+												changetext(day1_dl, fileline);
+												changetext(sday1_dl, fileline);
+												weather_getline(fd, fileline);
+												changetext(day2_dl, fileline);
+												changetext(sday2_dl, fileline);
+												weather_getline(fd, fileline);
+												changetext(day3_dl, fileline);
+												changetext(sday3_dl, fileline);
+												
 											}
 											else
 											{
 												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												changetext(day0_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day0_tm, fileline);
+												weather_getline(fd, fileline);
 												changetext(day0_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
@@ -622,7 +704,9 @@ void LCD_Samsung1_thread()
 											
 												weather_getline(fd, fileline);
 												changetext(day1_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day1_tm, fileline);
+												weather_getline(fd, fileline);
 												changetext(day1_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
@@ -630,7 +714,9 @@ void LCD_Samsung1_thread()
 											
 												weather_getline(fd, fileline);
 												changetext(day2_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day2_tm, fileline);
+												weather_getline(fd, fileline);
 												changetext(day2_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
@@ -638,11 +724,28 @@ void LCD_Samsung1_thread()
 											
 												weather_getline(fd, fileline);
 												changetext(day3_d, fileline);
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changetext(day3_tm, fileline);
+												weather_getline(fd, fileline);
 												changetext(day3_t, fileline);
 												weather_getline(fd, fileline);
 												weather_getline(fd, fileline);
 												changepic(day3_i, fileline);
+												
+												weather_getline(fd, fileline);
+												changepic(city, fileline);
+												weather_getline(fd, fileline);
+												changetext(wind, fileline);
+												weather_getline(fd, fileline);
+												changetext(luft, fileline);
+												weather_getline(fd, fileline);
+												changetext(day0_dl, fileline);
+												weather_getline(fd, fileline);
+												changetext(day1_dl, fileline);
+												weather_getline(fd, fileline);
+												changetext(day2_dl, fileline);
+												weather_getline(fd, fileline);
+												changetext(day3_dl, fileline);
 											}
 											fclose(fd);
 										}
@@ -769,11 +872,12 @@ void LCD_Samsung1_thread()
 				}
 				else if(type == 2)
 				{
-					if(status.mcaktiv == 1)
-						playertype = 0;
-					else	
-						//playertype = getconfigint("playertype", NULL);^
-						playertype = 1;
+					playertype = getconfigint("lastplayertype", NULL);
+					//if(status.mcaktiv == 1)
+						//playertype = 0;
+					//else	
+						////playertype = getconfigint("playertype", NULL);
+						//playertype = 1;
 		
 					if(playertype == 1)
 					{
