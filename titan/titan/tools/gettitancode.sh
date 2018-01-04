@@ -26,9 +26,12 @@ if [ "$CPU" = "sh4" ];then
 		gzip -d tmp.gz
 	#fi
 	str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
+elif [ "$TYPE" = "hd51" ];then
+	str=`strings $KERNELDIR | grep "Linux"`
 else
-	str=`strings $KERNELDIR | grep "Linux version 3." | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
+	str=`strings $KERNELDIR | grep "Linux" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
 fi
+echo str $str
 
 code=`./gettitancode "$str"`
 code="$code"UL
