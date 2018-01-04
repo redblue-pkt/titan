@@ -1944,7 +1944,7 @@ msgstr ""
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:764 mc_videoplayer.h:903
-#: play.h:1702
+#: play.h:1707
 msgid "Can't start playback !"
 msgstr "Non è possibile riprodurre!"
 
@@ -5800,11 +5800,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1938
+#: play.h:1943
 msgid "Marker autoseek is started"
 msgstr "Marker has been set."
 
-#: play.h:1949
+#: play.h:1954
 msgid "Marker autoseek is stopped"
 msgstr "Marker has been set."
 
@@ -6067,7 +6067,7 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:319 play.h:614
-#: play.h:1365 play.h:1402 play.h:1702 play.h:1938 play.h:1949 possetup.h:98
+#: play.h:1365 play.h:1402 play.h:1707 play.h:1943 play.h:1954 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
@@ -6674,7 +6674,7 @@ msgstr ""
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
 #: played.h:115 played.h:172 player.h:319 play.h:497 play.h:614 play.h:1344
 #: play.h:1350 play.h:1365 play.h:1366 play.h:1402 play.h:1403 play.h:1417
-#: play.h:1501 play.h:1702 play.h:1938 play.h:1949 plugins_dlna_skin.xml.h:7
+#: play.h:1501 play.h:1707 play.h:1943 play.h:1954 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -8388,39 +8388,39 @@ msgstr ""
 msgid "SORT"
 msgstr ""
 
-#: lcdsamsung.c:985
+#: lcdsamsung.c:1089
 msgid "SPF-105P"
 msgstr ""
 
-#: lcdsamsung.c:986
+#: lcdsamsung.c:1090
 msgid "SPF-107H"
 msgstr ""
 
-#: lcdsamsung.c:978
+#: lcdsamsung.c:1082
 msgid "SPF-72H"
 msgstr ""
 
-#: lcdsamsung.c:979
+#: lcdsamsung.c:1083
 msgid "SPF-75H"
 msgstr ""
 
-#: lcdsamsung.c:980
+#: lcdsamsung.c:1084
 msgid "SPF-83H"
 msgstr ""
 
-#: lcdsamsung.c:981
+#: lcdsamsung.c:1085
 msgid "SPF-85H"
 msgstr ""
 
-#: lcdsamsung.c:982
+#: lcdsamsung.c:1086
 msgid "SPF-85P"
 msgstr ""
 
-#: lcdsamsung.c:983
+#: lcdsamsung.c:1087
 msgid "SPF-87H"
 msgstr ""
 
-#: lcdsamsung.c:984
+#: lcdsamsung.c:1088
 msgid "SPF-87H-old"
 msgstr ""
 
@@ -12303,8 +12303,8 @@ msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:452 lcdpearl1.c:507
-#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:991 lcdsamsung.c:995
-#: lcdsamsung.c:999
+#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1095 lcdsamsung.c:1099
+#: lcdsamsung.c:1103
 msgid "ja"
 msgstr ""
 
@@ -12511,8 +12511,8 @@ msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:451 lcdpearl1.c:506
-#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:990 lcdsamsung.c:994
-#: lcdsamsung.c:998
+#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1094 lcdsamsung.c:1098
+#: lcdsamsung.c:1102
 msgid "nein"
 msgstr ""
 
@@ -13588,7 +13588,7 @@ msgstr ""
 msgid "thereafter on this Channel:"
 msgstr ""
 
-#: lcdsamsung.c:987
+#: lcdsamsung.c:1091
 msgid "tiMote"
 msgstr ""
 
