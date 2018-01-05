@@ -1275,7 +1275,8 @@ int playerstart(char* file)
 //			printf("downmix: %s\n",downmix);
 			debug(150, "downmix=%s", downmix);
 
-			if(ostrcmp(downmix, "downmix") == 0)
+//			if(ostrcmp(downmix, "downmix") == 0)
+			if(ostrstr(downmix, "downmix") != NULL)
 				tmpdownmix = 1;
 			else
 				tmpdownmix = 0;
