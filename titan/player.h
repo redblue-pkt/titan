@@ -1270,28 +1270,31 @@ int playerstart(char* file)
 			int tmpdownmix = 0;
 			char* downmix = readfiletomem(getconfig("ac3dev", NULL), 1);
 //			printf("ac3dev: %s\n",getconfig("ac3dev", NULL));
-			debug(150, "ac3dev %s\n", getconfig("ac3dev", NULL));
+			debug(150, "ac3dev=%s", getconfig("ac3dev", NULL));
 
 //			printf("downmix: %s\n",downmix);
-			debug(150, "downmix %s\n", downmix);
+			debug(150, "downmix=%s", downmix);
 
-			if(ostrcmp(downmix, "passthrough") == 0)
-				tmpdownmix = 0;
-			else
+			if(ostrcmp(downmix, "downmix") == 0)
 				tmpdownmix = 1;
+			else
+				tmpdownmix = 0;
+
+			debug(150, "tmpdownmix=%d", tmpdownmix);
 
 			free(downmix), downmix = NULL;
 			if(tmpdownmix != status.downmix)
 			{
-				debug(150, "change downmix %d to %d\n", status.downmix, tmpdownmix);
+				debug(150, "change downmix=%d to downmix=%d", status.downmix, tmpdownmix);
 			}
 
 //			printf("status.downmix: %d\n",status.downmix);
-			debug(150, "status.downmix %d\n", status.downmix);
+			debug(150, "tmpdownmix=%d", tmpdownmix);
+			debug(150, "status.downmix=%d", status.downmix);
 
 			if(tmpdownmix == 1)
 			{
-				debug(150, "enable dts downmix\n");
+				debug(150, "enable dts downmix");
 				dts_software_decoder_set(1);
 				stereo_software_decoder_set(1);
 			}
