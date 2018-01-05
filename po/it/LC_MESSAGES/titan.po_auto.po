@@ -1670,7 +1670,7 @@ msgstr ""
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:1797
+#: player.h:1800
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
