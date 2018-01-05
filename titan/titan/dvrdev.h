@@ -78,7 +78,7 @@ int dvrgetdev()
 	
 	//workaround HD51 kann nur max 4 dvr ... warum??
 	int help = MAXDVRDEV;
-	if(checkbox("HD51") == 1)
+	if(checkrealbox("HD51") == 1)
 		help = 4;
 	//
 	for(i = 0; i < MAXDVBADAPTER; i++)

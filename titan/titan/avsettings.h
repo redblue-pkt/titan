@@ -106,7 +106,7 @@ void screenavsettings(int flag)
 	ret = getpolicy();
 	setchoiceboxselection(policy, ret);
 	free(ret); ret = NULL;
-	if(checkbox("HD51") == 0)
+	if(checkrealbox("HD51") == 0)
 	{
 		ret = getaspectchoices();
 		changeinput(aspect, ret);
@@ -122,7 +122,7 @@ void screenavsettings(int flag)
 	aspect->hidden = YES;
 #endif
 
-	if(checkbox("HD51") == 0)
+	if(checkrealbox("HD51") == 0)
 	{
 		ret = getcolorformat(2);
 		if(ret == NULL || strlen(ret) == 0)
@@ -186,7 +186,7 @@ void screenavsettings(int flag)
 	setchoiceboxselection(ac3mode, ret);
 	free(ret); ret = NULL;
 
-	if(checkbox("HD51") == 0)
+	if(checkrealbox("HD51") == 0)
 	{
 		ret = getaacchoices();
 		changeinput(aacmode, ret);
@@ -235,7 +235,7 @@ void screenavsettings(int flag)
 		aacmode->hidden = YES;
 #endif
 
-	if(checkbox("HD51") == 0)
+	if(checkrealbox("HD51") == 0)
 	{	
 		ret = getwsschoices();
 		changeinput(wssmode, ret);
