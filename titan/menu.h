@@ -553,7 +553,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1)
 		{
-			if(checkbox("HD51") == 1)
+			if(checkrealbox("HD51") == 1)
 				return 0;
 			else
 				return 1;

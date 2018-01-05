@@ -473,7 +473,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 		err("NULL detect");
 		return 1;
 	}
-	if(checkbox("HD51") == 1) //source darf bei dieser Box nur einmal gesetzt werden, löscht ansonsten die Filter.
+	if(checkrealbox("HD51") == 1) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
 	{
 		if(node->fedmxsource == source)
 			return 0;
@@ -498,9 +498,9 @@ int dmxsetsource(struct dvbdev* node, int source)
 	}
 	else
 	{
-		if(checkbox("HD51") == 1)
+		if(checkrealbox("HD51") == 1)
 		{
-		  struct dvbdev* nodeh = dvbdev;
+		  	struct dvbdev* nodeh = dvbdev;
 			while(nodeh != NULL)
 			{
 				if(nodeh->type == DEMUXDEV && nodeh->adapter == node->adapter && nodeh->devnr == node->devnr)
@@ -575,7 +575,7 @@ int dmxgetdev()
 	
 	//workaround HD51 kann nur max 4 dvr ... warum??
 	int help = MAXDEMUXDEV;
-	if(checkbox("HD51") == 1)
+	if(checkrealbox("HD51") == 1)
 		help = 4;
 	//
 

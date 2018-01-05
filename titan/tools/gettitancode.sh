@@ -26,7 +26,7 @@ if [ "$CPU" = "sh4" ];then
 		gzip -d tmp.gz
 	#fi
 	str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
-elif [ "$TYPE" = "hd51" ];then
+elif [ "$TYPE" = "mutant51" ];then
 	str=`strings $KERNELDIR | grep "Linux"`
 else
 	str=`strings $KERNELDIR | grep "Linux" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
