@@ -216,5 +216,6 @@ compile "xupnpd" "xupnpd" "" ""
 compile "wm2014" "wm2014" "" ""
 compile "kravencfg" "kravencfg" "" ""
 compile "multiimage" "MultiImage" "" ""
+compile "sispmctl" "sispmctl" "" ""
 
 #rm -r networkbrowser/networkbrowser
