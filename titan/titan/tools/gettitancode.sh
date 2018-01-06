@@ -29,7 +29,7 @@ if [ "$CPU" = "sh4" ];then
 elif [ "$TYPE" = "mutant51" ];then
 	str=`strings $KERNELDIR | grep "Linux"`
 else
-	str=`strings $KERNELDIR | grep "Linux" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
+	str=`strings $KERNELDIR | grep "Linux version 3." | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'` 
 fi
 echo str $str
 
