@@ -793,6 +793,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+int getwaswakuptimer();
 char* getmacfromcmdline();
 char* createpluginpath(char* text, int flag);
 void delspezchar(char* text, int flag);
