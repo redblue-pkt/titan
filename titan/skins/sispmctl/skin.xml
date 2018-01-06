@@ -1,0 +1,44 @@
+<screen name="sis_einstellungen" title="GEMBIRD Powermanager Optionen" titlealign="center" fontcol="fontcol" valign="bottom" fontsize="30" posx="center" posy="center" width="50%" height="70%" bordercol="bordercol" bordersize="2" bgcol="bgcol">
+<node bordercol="bordercol" scrollbar="auto" type="listbox" posy="center" posx="center" name="listbox" width="85%" height="70%">
+<node name="g1_name" type="inputbox" parent="listbox" valign="top" posx="0" text="Anschluss 1" bordercol="bordercol" bordersize="2" width="100%" height="30">
+<node name="g1_auto_on" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Auto start" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g1_timer" type="choicebox" parent="listbox" valign="middle" posx="0" text="-ignore Timerevent" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g1_auto_off" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Auto stop" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g1_delay" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Delay in min" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="s1" type="inputbox" parent="listbox" valign="middle" posx="0" text=" " bordercol="bordercol" bordersize="2" width="100%" height="15">
+
+<node name="g2_name" type="inputbox" parent="listbox" valign="top" posx="0" text="Anschluss 2" bordercol="bordercol" bordersize="2" width="100%" height="30">
+<node name="g2_auto_on" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Auto start" bordercol="bordercol" bordersize="2" width="100%" height="25"">
+<node name="g2_timer" type="choicebox" parent="listbox" valign="middle" posx="0" text="-ignore Timerevent" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g2_auto_off" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Auto stop" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g2_delay" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Delay in min" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="s2" type="inputbox" parent="listbox" valign="middle" posx="0" text=" " bordercol="bordercol" bordersize="2" width="100%" height="15">
+
+<node name="g3_name" type="inputbox" parent="listbox" valign="top" posx="0" text="Anschluss 3" bordercol="bordercol" bordersize="2" width="100%" height="30">
+<node name="g3_auto_on" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Auto start" bordercol="bordercol" bordersize="2"width="100%" height="25"">
+<node name="g3_timer" type="choicebox" parent="listbox" valign="middle" posx="0" text="-ignore Timerevent" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g3_auto_off" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Auto stop" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g3_delay" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Delay in min" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="s3" type="inputbox" parent="listbox" valign="middle" posx="0" text=" " bordercol="bordercol" bordersize="2" width="100%" height="15">
+
+<node name="g4_name" type="inputbox" parent="listbox" valign="top" posx="0" text="Anschluss 4" bordercol="bordercol" bordersize="2" width="100%" height="30">
+<node name="g4_auto_on" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Auto start" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g4_timer" type="choicebox" parent="listbox" valign="middle" posx="0" text="-ignore Timerevent" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g4_auto_off" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Auto stop" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="g4_delay" type="choicebox" parent="listbox" valign="middle" posx="0" text="-Delay in min" bordercol="bordercol" bordersize="2" width="100%" height="25">
+<node name="s4" type="inputbox" parent="listbox" valign="middle" posx="0" text=" " bordercol="bordercol" bordersize="2" width="100%" height="15">
+<node name="b1" text="SAVE" halign="center" valign="middle" bordercol="green" bordersize="2" bordertype="2" posx="0" posy="0" width="150" height="30"/>
+<node name="b2" text="EXIT" halign="center" valign="middle" bordercol="exitcol" bordersize="2" bordertype="2" posx="160" posy="0" width="150" height="30"/>
+</screen>
+
+
+<screen name="sis_anzeige" title="GEMBIRD Powermanager Status" titlealign="center" fontcol="fontcol" valign="bottom" fontsize="35" posx="center" posy="center" width="40%" height="60%" bordercol="bordercol" bordersize="2" bgcol="bgcol">
+<node bordercol="bordercol" scrollbar="auto" type="listbox" posy="center" posx="center" name="buttonbar" width="85%" height="80%">
+#<node bordercol="bordercol" scrollbar="auto" type=textbox posy="center" posx="center" name="buttonbar" width="85%" height="70%">
+<node parent="buttonbar" name="b1" picmem="skin/key_green_22.png"          valign="middle" posx="center"        width="150" height="60" textposx="30" text="Device1" fontsize="30"/>
+<node parent="buttonbar" name="b2" picmem="skin/key_red_22.png"          valign="middle" posx="center"        width="150" height="60" textposx="30" text="Device2"   fontsize="30"/>
+<node parent="buttonbar" name="b3" picmem="skin/key_yellow_22.png"          valign="middle" posx="center"        width="150" height="60" textposx="30" text="Device3"   fontsize="30"/>
+<node parent="buttonbar" name="b4" picmem="skin/key_yellow_22.png"          valign="middle" posx="center"        width="150" height="60" textposx="30" text="Device4"   fontsize="30"/>
+<node parent="buttonbar" name="m1" picmem="skin/key_menu_70x40.png"          valign="middle" posx="center"        width="150" height="60" />
+</screen>
+
