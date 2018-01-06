@@ -423,6 +423,10 @@ void oshutdown(int exitcode, int flag)
 		dvbnode = dvbnode->next;
 	}
 
+	//Damit deinit ausgeführt wird
+	if(getplugin("GEMBIRD Powermanager") != NULL)
+		delplugin("GEMBIRD Powermanager");
+	
 	if(faststop == 0)
 	{
 		//wait for write thread
