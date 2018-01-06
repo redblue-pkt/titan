@@ -158,6 +158,22 @@ msgstr ""
 msgid "->swap<-"
 msgstr "Tauschen"
 
+#: plugins_sispmctl_skin.xml.h:5 skins_sispmctl_skin.xml.h:5
+msgid "-Auto start"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:6 skins_sispmctl_skin.xml.h:6
+msgid "-Auto stop"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:7 skins_sispmctl_skin.xml.h:7
+msgid "-Delay in min"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:13 skins_sispmctl_skin.xml.h:13
+msgid "-ignore Timerevent"
+msgstr ""
+
 #: titan.c:1278
 msgid ""
 "/mnt not writeable!\n"
@@ -1015,6 +1031,22 @@ msgstr "Anonymer Login Zugriff verweigert!"
 #: networkbrowser.h:1031 networkbrowser.h:1047
 msgid "Anonymous login successful"
 msgstr "Anonymer Login erfolgreich"
+
+#: plugins_sispmctl_skin.xml.h:1 skins_sispmctl_skin.xml.h:1
+msgid "Anschluss 1"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:2 skins_sispmctl_skin.xml.h:2
+msgid "Anschluss 2"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:3 skins_sispmctl_skin.xml.h:3
+msgid "Anschluss 3"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:4 skins_sispmctl_skin.xml.h:4
+msgid "Anschluss 4"
+msgstr ""
 
 #: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
@@ -2952,6 +2984,22 @@ msgstr "Kostenlose Entwickler Lizenz"
 msgid "Device"
 msgstr "Gerät"
 
+#: plugins_sispmctl_skin.xml.h:8 skins_sispmctl_skin.xml.h:8
+msgid "Device1"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:9 skins_sispmctl_skin.xml.h:9
+msgid "Device2"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:10 skins_sispmctl_skin.xml.h:10
+msgid "Device3"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:11 skins_sispmctl_skin.xml.h:11
+msgid "Device4"
+msgstr ""
+
 #: skin_default_skin.xml.h:152
 msgid "Device:"
 msgstr "Gerät:"
@@ -3409,14 +3457,14 @@ msgstr ""
 #: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
 #: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
 #: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
-#: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
-#: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
-#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
-#: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
-#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
-#: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:398
-#: record.h:1171 record.h:1709 rectimer.h:577 rectimer.h:1405
+#: plugins_sispmctl_skin.xml.h:12 plugins_stopifnotused_skin.xml.h:3
+#: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:1
+#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:74
+#: primeshare.h:80 primeshare.h:125 promptfile.h:26 promptfile.h:35
+#: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
+#: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
+#: record.h:398 record.h:1171 record.h:1709 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
@@ -3429,35 +3477,35 @@ msgstr ""
 #: skins_lcdsamsung_skin.xml.h:7 skins_mboxinfo_skin.xml.h:1
 #: skins_mc_skin.xml.h:19 skins_multiimage_skin.xml.h:5
 #: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
-#: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
-#: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
-#: skins_wins3_skin.xml.h:1 sock.h:955 softcam.h:414 softcam.h:477
-#: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
-#: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
-#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
-#: system_backup_restore.h:95 system_update.h:255 system_update.h:261
-#: system_update.h:271 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
-#: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:286 titan.c:1096 titan.c:1105 titan.c:1234
-#: titan.c:1255 titan.c:1261 titan.c:1272 titan.c:1278 tithek.c:103
-#: tithek_global.h:223 tithek.h:756 tithek.h:1440 tithek.h:1467 tithek.h:1489
-#: tithek.h:1546 tithek.h:1725 tithek.h:1740 tithek.h:1915 tithek.h:1951
-#: tithek.h:1967 tithek.h:2201 tithek.h:2389 tithek.h:2714 tithek.h:2760
-#: tithek.h:2778 tithek.h:2791 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
-#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
-#: tunerconfig.h:709 tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
-#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
-#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
-#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
-#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
-#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 xvidstage.h:29 xvidstage.h:59
-#: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79
-#: zdf.h:29
+#: skins_rgui_skin.xml.h:1 skins_sispmctl_skin.xml.h:12
+#: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
+#: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:955
+#: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
+#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: streamcloud.h:75 streamcloud.h:81 streamcloud.h:91 streamcloud.h:104
+#: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:31
+#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:255
+#: system_update.h:261 system_update.h:271 thefile.h:34 thefile.h:69
+#: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:286
+#: titan.c:1096 titan.c:1105 titan.c:1234 titan.c:1255 titan.c:1261
+#: titan.c:1272 titan.c:1278 tithek.c:103 tithek_global.h:223 tithek.h:756
+#: tithek.h:1440 tithek.h:1467 tithek.h:1489 tithek.h:1546 tithek.h:1725
+#: tithek.h:1740 tithek.h:1915 tithek.h:1951 tithek.h:1967 tithek.h:2201
+#: tithek.h:2389 tithek.h:2714 tithek.h:2760 tithek.h:2778 tithek.h:2791
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
+#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:709
+#: tunerconfig.h:732 tunerconfig.h:1079 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
+#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
+#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
+#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
+#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
+#: vodlocker.h:87 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
+#: xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr ""
 
@@ -4310,6 +4358,14 @@ msgstr ""
 
 #: skinadjust.h:249
 msgid "GB"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:15 skins_sispmctl_skin.xml.h:15
+msgid "GEMBIRD Powermanager Optionen"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:16 skins_sispmctl_skin.xml.h:16
+msgid "GEMBIRD Powermanager Status"
 msgstr ""
 
 #: tpk_showname.h:41
@@ -8636,12 +8692,13 @@ msgstr "SatCR Nummer"
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
 #: plugins_instar_skin.xml.h:25 plugins_lcdpearl1_skin.xml.h:10
 #: plugins_lcdsamsung_skin.xml.h:13 plugins_panel_skin.xml.h:16
-#: plugins_stock_skin.xml.h:4 plugins_stopifnotused_skin.xml.h:4
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:539
-#: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:17
-#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
-#: skins_instar_skin.xml.h:25 skins_lcdpearl1_skin.xml.h:10
-#: skins_lcdsamsung_skin.xml.h:13 skins_panel_skin.xml.h:16
+#: plugins_sispmctl_skin.xml.h:14 plugins_stock_skin.xml.h:4
+#: plugins_stopifnotused_skin.xml.h:4 plugins_tmdb_skin.xml.h:7
+#: skin_default_skin.xml.h:539 skins_autotimer_skin.xml.h:7
+#: skins_callmonitor1_skin.xml.h:17 skins_imdbapi_skin.xml.h:7
+#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:25
+#: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:13
+#: skins_panel_skin.xml.h:16 skins_sispmctl_skin.xml.h:14
 #: skins_stock_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
 #: skins_tmdb_skin.xml.h:7
 msgid "SAVE"
@@ -12995,11 +13052,12 @@ msgstr "NFSD Kernel Server autostart"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:252 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:42
-#: tithek_settings.h:46 tithek_settings.h:50 tithek_settings.h:54 tmc.h:531
-#: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
-#: tunerconfig.h:327 xupnpd.h:30
+#: settings_overclocking.h:244 sispmctl.h:264 sispmctl.h:287 sispmctl.h:310
+#: sispmctl.h:333 skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
+#: timeshiftsettings.h:63 tithek_settings.h:42 tithek_settings.h:46
+#: tithek_settings.h:50 tithek_settings.h:54 tmc.h:531 tmc.h:535
+#: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
+#: xupnpd.h:30
 msgid "no"
 msgstr "Nein"
 
@@ -13081,10 +13139,12 @@ msgstr "ö"
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 skinadjust.h:94
-#: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:964 vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92
-#: vfdisplay.h:115 vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
+#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:259
+#: sispmctl.h:267 sispmctl.h:282 sispmctl.h:290 sispmctl.h:305 sispmctl.h:313
+#: sispmctl.h:328 sispmctl.h:336 skinadjust.h:94 transponder.h:256
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:964
+#: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115
+#: vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
 msgid "off"
 msgstr "aus"
 
@@ -13134,9 +13194,11 @@ msgstr "Älter als 50 Tage"
 
 #: avsettings.h:90 cec.h:629 cec.h:677 fancontrol.h:109 httpdsettings.h:77
 #: lnbconfig.h:143 mc_pictureplayer_settings.h:35
-#: mc_pictureplayer_settings.h:39 readerconfig.h:424 skinadjust.h:93
-#: transponder.h:257 transponder.h:266 transponder.h:416 transponder.h:425
-#: vfdisplay.h:49 vfdisplay.h:70 vfdisplay.h:91
+#: mc_pictureplayer_settings.h:39 readerconfig.h:424 sispmctl.h:260
+#: sispmctl.h:268 sispmctl.h:283 sispmctl.h:291 sispmctl.h:306 sispmctl.h:314
+#: sispmctl.h:329 sispmctl.h:337 skinadjust.h:93 transponder.h:257
+#: transponder.h:266 transponder.h:416 transponder.h:425 vfdisplay.h:49
+#: vfdisplay.h:70 vfdisplay.h:91
 msgid "on"
 msgstr "ein"
 
@@ -14461,10 +14523,10 @@ msgstr "gelb"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:253 stopifnotused.c:93
-#: timeshiftsettings.h:58 timeshiftsettings.h:62 tithek_settings.h:43
-#: tithek_settings.h:47 tithek_settings.h:51 tithek_settings.h:55 tmc.h:532
-#: tmc.h:536 xupnpd.h:30
+#: settings_overclocking.h:244 sispmctl.h:263 sispmctl.h:286 sispmctl.h:309
+#: sispmctl.h:332 skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
+#: timeshiftsettings.h:62 tithek_settings.h:43 tithek_settings.h:47
+#: tithek_settings.h:51 tithek_settings.h:55 tmc.h:532 tmc.h:536 xupnpd.h:30
 msgid "yes"
 msgstr "Ja"
 
