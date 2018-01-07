@@ -6315,7 +6315,7 @@ msgstr "Модули"
 msgid "Module Config"
 msgstr "Параметры модуля"
 
-#: moduleconfig.h:395
+#: moduleconfig.h:477
 msgid "Module Type"
 msgstr "Тип модуля"
 
@@ -6421,7 +6421,7 @@ msgstr ""
 msgid "Multiboot"
 msgstr ""
 
-#: moduleconfig.h:397
+#: moduleconfig.h:479
 msgid "Multiple Service"
 msgstr "Мульти канал"
 
@@ -9390,7 +9390,7 @@ msgstr "Одиночный провайдер"
 msgid "Single Sat"
 msgstr "Одиночный спутник"
 
-#: moduleconfig.h:396
+#: moduleconfig.h:478
 msgid "Single Service"
 msgstr "Одиночный канал"
 
@@ -9540,7 +9540,7 @@ msgstr "Сон"
 msgid "Sleep Timer"
 msgstr "Таймер сна"
 
-#: hwtest.h:472 moduleconfig.h:360 scconfig.h:31
+#: hwtest.h:472 moduleconfig.h:442 scconfig.h:31
 msgid "Slot "
 msgstr "Слот"
 
@@ -9736,7 +9736,7 @@ msgstr "Статус"
 msgid "Status update"
 msgstr "Статус обновления"
 
-#: moduleconfig.h:372
+#: moduleconfig.h:454
 msgid "Status: "
 msgstr "Статус"
 
@@ -11656,7 +11656,7 @@ msgstr ""
 msgid "abc/ABC"
 msgstr ""
 
-#: moduleconfig.h:190
+#: moduleconfig.h:272
 msgid "activate"
 msgstr "Старт"
 
@@ -12040,7 +12040,7 @@ msgstr "Дата + время"
 msgid "datetime"
 msgstr "Дата и время создания"
 
-#: moduleconfig.h:191
+#: moduleconfig.h:273
 msgid "deactivate"
 msgstr "Остановить"
 
@@ -12131,7 +12131,7 @@ msgstr "DNS-сервер 1"
 msgid "dnsserver 2"
 msgstr "DNS-сервер 2"
 
-#: moduleconfig.h:172
+#: moduleconfig.h:254
 msgid "double"
 msgstr "Двойной"
 
@@ -12175,7 +12175,7 @@ msgstr "Один"
 msgid "eingehende Anrufe"
 msgstr "Входящие звонки"
 
-#: moduleconfig.h:376
+#: moduleconfig.h:458
 msgid "empty"
 msgstr "Нет модуля"
 
@@ -12259,7 +12259,7 @@ msgstr "Плавно мигающий"
 #: adjust.h:94 adjust.h:186 httpdfunc.h:3966 httpdfunc.h:4529
 #: mc_audioplayer_settings.h:35 mc_iptvplayer_settings.h:31
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
-#: moduleconfig.h:270 plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20
+#: moduleconfig.h:352 plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20
 msgid "fast"
 msgstr "Быстро"
 
@@ -12466,7 +12466,7 @@ msgstr ""
 msgid "infos"
 msgstr "Информаторы"
 
-#: moduleconfig.h:378
+#: moduleconfig.h:460
 msgid "initializing"
 msgstr "Инициализация"
 
@@ -12668,7 +12668,7 @@ msgstr "Защита меню"
 msgid "messagebox"
 msgstr ""
 
-#: mc_pictureplayer_settings.h:30 moduleconfig.h:269
+#: mc_pictureplayer_settings.h:30 moduleconfig.h:351
 msgid "middle"
 msgstr "Среднее"
 
@@ -12792,8 +12792,8 @@ msgstr "Автостарт NFS сервера"
 #: mc_videoplayer_settings.h:43 mc_videoplayer_settings.h:49 mediadb.h:1085
 #: mediadb.h:1092 mediadb.h:1107 mediadbsettings.h:28 mediadbsettings.h:32
 #: mediadbsettings.h:51 mediadbsettings.h:66 mediadbsettings.h:70
-#: moduleconfig.h:265 moduleconfig.h:273 moduleconfig.h:277 moduleconfig.h:281
-#: moduleconfig.h:285 networkbrowser.h:1639 networkbrowser.h:1643
+#: moduleconfig.h:347 moduleconfig.h:355 moduleconfig.h:359 moduleconfig.h:363
+#: moduleconfig.h:367 networkbrowser.h:1639 networkbrowser.h:1643
 #: networkbrowser.h:1652 networkbrowser.h:1657 networkbrowser.h:1661
 #: networkbrowser.h:1695 network.h:691 panel_settings_autostart.h:35
 #: panel_settings_autostart.h:96 panel_settings_autostart.h:113
@@ -13207,7 +13207,7 @@ msgstr ""
 msgid "r"
 msgstr ""
 
-#: moduleconfig.h:380
+#: moduleconfig.h:462
 msgid "ready"
 msgstr "Готово"
 
@@ -13543,7 +13543,7 @@ msgstr ""
 msgid "slide from left"
 msgstr ""
 
-#: adjust.h:188 httpdfunc.h:4543 moduleconfig.h:268 tmc.h:556
+#: adjust.h:188 httpdfunc.h:4543 moduleconfig.h:350 tmc.h:556
 msgid "slow"
 msgstr "Медленно"
 
@@ -13952,7 +13952,7 @@ msgid "universal"
 msgstr "Universal"
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
-#: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:367
+#: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:449
 #: security.h:2164 skin_default_skin.xml.h:710 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
@@ -14255,8 +14255,8 @@ msgstr "Жёлтая"
 #: mc_videoplayer_settings.h:40 mc_videoplayer_settings.h:44
 #: mc_videoplayer_settings.h:50 mediadb.h:1083 mediadb.h:1090 mediadb.h:1105
 #: mediadbsettings.h:29 mediadbsettings.h:33 mediadbsettings.h:52
-#: mediadbsettings.h:67 mediadbsettings.h:71 moduleconfig.h:264
-#: moduleconfig.h:274 moduleconfig.h:278 moduleconfig.h:282 moduleconfig.h:286
+#: mediadbsettings.h:67 mediadbsettings.h:71 moduleconfig.h:346
+#: moduleconfig.h:356 moduleconfig.h:360 moduleconfig.h:364 moduleconfig.h:368
 #: networkbrowser.h:1640 networkbrowser.h:1644 networkbrowser.h:1653
 #: networkbrowser.h:1658 networkbrowser.h:1662 networkbrowser.h:1696
 #: network.h:692 panel_settings_autostart.h:35 panel_settings_autostart.h:96
