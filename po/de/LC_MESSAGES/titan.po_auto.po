@@ -5752,11 +5752,11 @@ msgstr "LED - Helligkeit in Standby"
 
 #: vfdisplay.h:173
 msgid "LED when running"
-msgstr ""
+msgstr "LED im Betrieb"
 
 #: vfdisplay.h:174
 msgid "LED when sleeping"
-msgstr ""
+msgstr "LED im Standby"
 
 #: hwtest.h:185 hwtest.h:569
 msgid "LNB"
