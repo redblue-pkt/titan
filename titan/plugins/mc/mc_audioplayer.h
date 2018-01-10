@@ -595,7 +595,9 @@ void screenmc_audioplayer()
 				drawscreen(infobar, 0, 0);
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
-
+				
+				free(status.playfile); status.playfile = NULL;
+				status.playfile = ostrcat(filename, "", 0, 0);
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
@@ -703,7 +705,8 @@ void screenmc_audioplayer()
 				// mvi showiframe screensaver working and playback canceld
 				//servicestop(status.aktservice, 1, 1);	
 #endif
-				
+				free(status.playfile); status.playfile = NULL;
+				status.playfile = ostrcat(filename, "", 0, 0);
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
