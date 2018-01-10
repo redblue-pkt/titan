@@ -424,7 +424,7 @@ void oshutdown(int exitcode, int flag)
 	}
 
 	//Damit deinit ausgeführt wird
-	if(getplugin("GEMBIRD Powermanager") != NULL)
+	//if(getplugin("GEMBIRD Powermanager") != NULL)
 		delplugin("GEMBIRD Powermanager");
 	
 	if(faststop == 0)

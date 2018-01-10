@@ -270,6 +270,8 @@ int playerstartts(char* file, int flag)
 	status.bufferpercent = 0;
 #endif
 	//supermagic = getsupermagic(file);
+	
+	addconfig("lastplayertype", "1");
 
 	if(supermagic == NFS_SUPER_MAGIC || supermagic == SMB_SUPER_MAGIC)
 	{
@@ -1192,6 +1194,9 @@ int playerstart(char* file)
 {
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
+	
+	addconfig("lastplayertype", "0");
+	
 #ifdef EPLAYER4
 	status.prefillbuffercount = 0;
 	status.bufferpercent = 0;
