@@ -2045,6 +2045,17 @@ struct update
 	int imgtype;
 };
 
+struct musicdat
+{
+	char* thumb;
+	char* title;
+	char* album;
+	char* realname;
+	char* actors;
+	char* genre;
+	char* year;
+} musicdat;
+
 #ifdef EPLAYER4
 typedef enum { stUnknown, stPlainText, stSSA, stASS, stSRT, stVOB, stPGS } subtype_t;
 typedef enum {atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA} audiotype_t;

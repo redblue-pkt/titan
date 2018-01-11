@@ -108,6 +108,13 @@ void screenmc_audioplayer()
 	yeartext->hidden = YES;
 	realnametext->hidden = YES;
 	genretext->hidden = YES;
+	free(musicdat.thumb); musicdat.thumb = NULL;
+	free(musicdat.title); musicdat.title = NULL;
+	free(musicdat.album); musicdat.album = NULL;
+	free(musicdat.realname); musicdat.realname = NULL;
+	free(musicdat.actors); musicdat.actors = NULL;
+	free(musicdat.genre); musicdat.genre = NULL;
+	free(musicdat.year); musicdat.year = NULL;
 
 //	clearscreen(loadmediadb);
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
@@ -176,11 +183,14 @@ void screenmc_audioplayer()
 							changetext(album, mnode->plot);
 							album->hidden = NO;
 							albumtext->hidden = NO;
+							free(musicdat.album); musicdat.album = NULL;
+							musicdat.album = ostrcat(album, "", 0, 0);
 						}
 						else
 						{
 							album->hidden = YES;
 							albumtext->hidden = YES;
+							free(musicdat.album); musicdat.album = NULL;
 						}
 	
 						len1 = strlen(mnode->plot);
@@ -198,6 +208,7 @@ void screenmc_audioplayer()
 							{
 								actors->hidden = YES;
 								actorstext->hidden = YES;
+								free(musicdat.actors); musicdat.actors = NULL;
 							}
 							tmpstr = ostrcat(tmpstr, mnode->title, 1, 0);
 	
@@ -213,29 +224,39 @@ void screenmc_audioplayer()
 							{
 								year->hidden = YES;
 								yeartext->hidden = YES;
+								free(musicdat.year); musicdat.year = NULL;
 							}
 							if(tmpstr != NULL)
 							{
 								changetext(title, tmpstr);
 								title->hidden = NO;
+								free(musicdat.title); musicdat.title = NULL;
+								musicdat.title = ostrcat(tmpstr, "", 0, 0);
 							}
 							else
 							{
 								changetext(title, filelist->select->name);
 								title->hidden = NO;
+								free(musicdat.title); musicdat.title = NULL;
+								musicdat.title = ostrcat(filelist->select->name, "", 0, 0);
 							}
 							free(tmpstr), tmpstr = NULL;
 	
 							changetext(realname, filelist->select->name);
 							realname->hidden = NO;
 							realnametext->hidden = NO;
+							free(musicdat.realname); musicdat.realname = NULL;
+							musicdat.realname = ostrcat(filelist->select->name, "", 0, 0);
 						}
 						else
 						{
 							realname->hidden = YES;
 							realnametext->hidden = YES;
+							free(musicdat.realname); musicdat.realname = NULL;
 							changetext(title, filelist->select->name);
 							title->hidden = NO;
+							free(musicdat.title); musicdat.title = NULL;
+							musicdat.title = ostrcat(filelist->select->name, "", 0, 0);
 						}					
 	
 						len1 = strlen(mnode->actors);
@@ -244,11 +265,14 @@ void screenmc_audioplayer()
 							changetext(actors, mnode->actors);
 							actors->hidden = NO;
 							actorstext->hidden = NO;
+							free(musicdat.actors); musicdat.actors = NULL;
+							musicdat.actors = ostrcat(mnode->actors, "", 0, 0);
 						}
 						else
 						{
 							actors->hidden = YES;
 							actorstext->hidden = YES;
+							free(musicdat.actors); musicdat.actors = NULL;
 						}
 	
 						len1 = strlen(mnode->genre);
@@ -257,11 +281,14 @@ void screenmc_audioplayer()
 							changetext(genre, mnode->genre);
 							genre->hidden = NO;
 							genretext->hidden = NO;
+							free(musicdat.genre); musicdat.genre = NULL;
+							musicdat.genre = ostrcat(mnode->genre, "", 0, 0);
 						}
 						else
 						{
 							genre->hidden = YES;
 							genretext->hidden = YES;
+							free(musicdat.genre); musicdat.genre = NULL;
 						}
 	
 						if(mnode->year != 0)
@@ -269,11 +296,14 @@ void screenmc_audioplayer()
 							changetext(year, oitoa(mnode->year));
 							year->hidden = NO;
 							yeartext->hidden = NO;
+							free(musicdat.year); musicdat.year = NULL;
+							musicdat.year = ostrcat(mnode->year, "", 0, 0);
 						}
 						else
 						{
 							year->hidden = YES;
 							yeartext->hidden = YES;
+							free(musicdat.year); musicdat.year = NULL;
 						}
 					}
 					else	
@@ -291,21 +321,40 @@ void screenmc_audioplayer()
 						realnametext->hidden = YES;
 						genretext->hidden = YES;
 						free(pic), pic = NULL;
+						free(musicdat.thumb); musicdat.thumb = NULL;
+						free(musicdat.title); musicdat.title = NULL;
+						free(musicdat.album); musicdat.album = NULL;
+						free(musicdat.realname); musicdat.realname = NULL;
+						free(musicdat.actors); musicdat.actors = NULL;
+						free(musicdat.genre); musicdat.genre = NULL;
+						free(musicdat.year); musicdat.year = NULL;
 					}
 	
 					if(file_exist(pic))
 					{
 						changepic(thumb, pic);
 						thumb->hidden = NO;
+						free(musicdat.thumb); musicdat.thumb = NULL;
+						musicdat.thumb = ostrcat(pic, "", 0, 0);
 					}
 					else
+					{
 						thumb->hidden = YES;
+						free(musicdat.thumb); musicdat.thumb = NULL;
+					}
 	
 					free(pic), pic = NULL;				
 					drawscreen(apskin, 0, 0);
 				}
 				else
 				{
+					free(musicdat.thumb); musicdat.thumb = NULL;
+					free(musicdat.title); musicdat.title = NULL;
+					free(musicdat.album); musicdat.album = NULL;
+					free(musicdat.realname); musicdat.realname = NULL;
+					free(musicdat.actors); musicdat.actors = NULL;
+					free(musicdat.genre); musicdat.genre = NULL;
+					free(musicdat.year); musicdat.year = NULL;
 					thumb->hidden = YES;
 					album->hidden = YES;
 					title->hidden = YES;
