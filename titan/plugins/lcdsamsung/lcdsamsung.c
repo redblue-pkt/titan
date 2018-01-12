@@ -111,6 +111,7 @@ void LCD_Samsung1_thread()
 	struct skin* LCD_Samsung1 = NULL;
 	struct skin* LCD_Standby = NULL;
 	struct skin* LCD_Play = NULL;
+	struct skin* LCD_Music = NULL;
 	
 	
 	struct skin* city = NULL;
@@ -172,7 +173,6 @@ void LCD_Samsung1_thread()
 	struct skin* sday3_i = NULL;
 	struct skin* sday3_d = NULL;
 	struct skin* sday3_dl = NULL;
-	
 	
 	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *timemerk = NULL, *sendermerk = NULL, *recmerk = NULL;
 	char* pichr = NULL, *picmin = NULL, *pichr_standby = NULL, *picmin_standby = NULL;
@@ -321,6 +321,40 @@ void LCD_Samsung1_thread()
 	struct skin* spos = getscreennode(LCD_Play, "pos");
 	struct skin* slen = getscreennode(LCD_Play, "len");
 	struct skin* sreverse = getscreennode(LCD_Play, "reverse");
+	
+	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+		LCD_Music = getscreen("LCD_spf75_Music");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+		LCD_Music = getscreen("LCD_spf83_Music");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+		LCD_Music = getscreen("LCD_spf87_Music");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+		LCD_Music = getscreen("LCD_spf87_Music");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+		LCD_Music = getscreen("LCD_spf105_Music");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+		LCD_Music = getscreen("LCD_spf107_Music");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
+		LCD_Music = getscreen("LCD_spf72_Music");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
+		LCD_Music = getscreen("LCD_spf85_Music");
+	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
+		LCD_Music = getscreen("LCD_spf85_Music");
+	else
+		LCD_Music = getscreen("LCD_spf87_Music");
+		
+	struct skin* mthumb = getscreennode(LCD_Music, "thumb");
+	struct skin* mtitle = getscreennode(LCD_Music, "title");
+	struct skin* malbum = getscreennode(LCD_Music, "album");
+	struct skin* mrealname = getscreennode(LCD_Music, "realname");
+	struct skin* mgenre = getscreennode(LCD_Music, "genre");
+	struct skin* myear = getscreennode(LCD_Music, "year");
+	struct skin* makttimeplay = getscreennode(LCD_Music, "akttime");
+	struct skin* mprogress = getscreennode(LCD_Music, "progress");
+	struct skin* mtitle1 = getscreennode(LCD_Music, "title1");
+	struct skin* mpos = getscreennode(LCD_Music, "pos");
+	struct skin* mlen = getscreennode(LCD_Music, "len");
+	struct skin* mreverse = getscreennode(LCD_Music, "reverse");
 		
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
 	{
@@ -480,6 +514,15 @@ void LCD_Samsung1_thread()
 			tmpstr3 = getrec(NULL, NULL);
 			type = 1;
 		}
+		// Musik wird abgespielt
+		else if((status.playspeed != 0 || status.play != 0 || status.pause != 0) && musicdat.act == 1 && LCD_Music != NULL)
+		{
+			if(type == 999)
+				system("killall -3 fbread");
+			//status.write_png = 0;
+			loopcount++ ;
+			type = 3;
+		}
 		// Aufzeichnung wird abgespielt
 		else if(status.playspeed != 0 || status.play != 0 || status.pause != 0)
 		{
@@ -577,6 +620,14 @@ void LCD_Samsung1_thread()
 				}
 			}
 			else if(type == 2)
+			{
+				if(loopcount >= 15)
+				{
+					put = 1;
+					loopcount = 0;
+				}
+			}	
+			else if(type == 3)
 			{
 				if(loopcount >= 15)
 				{
@@ -914,6 +965,45 @@ void LCD_Samsung1_thread()
 					changetext(stitle, basename(status.playfile));
 					m_lock(&status.drawingmutex, 0);
 					if(drawscreen(LCD_Play, 0, 2) == -2)
+						printf("nicht genug Speicher fuer drawscreen\n");
+					m_unlock(&status.drawingmutex, 0);
+				}
+				else if(type == 3)
+				{
+					pos = playergetpts() / 90000;
+					len = playergetlength();
+					if(pos < 0) pos = 0;
+					reverse = len - pos;
+					if(len == 0)
+						mprogress->progresssize = 0;
+					else
+						mprogress->progresssize = pos * 100 / len;
+					
+					tmpstr2 = convert_timesec(pos);
+					changetext(mpos, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
+
+					tmpstr2 = convert_timesec(len);
+					changetext(mlen, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
+
+					tmpstr2 = convert_timesec(reverse);
+					changetext(mreverse, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
+					
+					changetext(makttimeplay, tmpstr);
+					changetext(mtitle1, basename(status.playfile));
+					
+					changetext(mtitle, musicdat.title);
+					changetext(malbum, musicdat.album);
+					changetext(mrealname, musicdat.realname);
+					changetext(mgenre, musicdat.genre);
+					changetext(myear, musicdat.year);
+					
+					changepic(mthumb, musicdat.thumb);
+					
+					m_lock(&status.drawingmutex, 0);
+					if(drawscreen(LCD_Music, 0, 2) == -2)
 						printf("nicht genug Speicher fuer drawscreen\n");
 					m_unlock(&status.drawingmutex, 0);
 				}
