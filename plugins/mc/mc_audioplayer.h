@@ -115,6 +115,8 @@ void screenmc_audioplayer()
 	free(musicdat.actors); musicdat.actors = NULL;
 	free(musicdat.genre); musicdat.genre = NULL;
 	free(musicdat.year); musicdat.year = NULL;
+	
+	musicdat.act = 1;
 
 //	clearscreen(loadmediadb);
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
@@ -798,7 +800,9 @@ void screenmc_audioplayer()
 				playereof(apskin, filelist, listbox, filelistpath, b2, NULL, NULL, NULL, &skip, &eof, &playlist, playertype, flag);
 		}
 	}
-
+	
+	musicdat.act = 0;
+	
 	deinitscreensaver();
 		
 	status.hangtime = getconfigint("hangtime", NULL);
