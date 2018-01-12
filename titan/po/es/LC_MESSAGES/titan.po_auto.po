@@ -2028,7 +2028,7 @@ msgstr ""
 "No se puede iniciar la descarga.\n"
 "Por favor, intentelo de nuevo ms tarde."
 
-#: dvdplay.h:62 mc_audioplayer.h:656 mc_audioplayer.h:768 mc_global.h:781
+#: dvdplay.h:62 mc_audioplayer.h:658 mc_audioplayer.h:770 mc_global.h:781
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:765 mc_videoplayer.h:904
@@ -3400,7 +3400,7 @@ msgstr ""
 #: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:60
 #: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:382 mc_audioplayer.h:656 mc_audioplayer.h:768
+#: mc_audioplayer.h:384 mc_audioplayer.h:658 mc_audioplayer.h:770
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
@@ -3970,7 +3970,7 @@ msgstr "Archivo no encontrado"
 msgid "Filelist Select Color"
 msgstr ""
 
-#: mc_audioplayer.h:569 mc_audioplayer.h:613 mc_audioplayer.h:735
+#: mc_audioplayer.h:571 mc_audioplayer.h:615 mc_audioplayer.h:737
 #: mc_iptvplayer.h:267 mc_iptvplayer.h:311 mc_iptvplayer.h:453
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
 #: mc_videoplayer.h:609 mc_videoplayer.h:683 mc_videoplayer.h:870
@@ -6250,8 +6250,8 @@ msgstr "Lista de Menus"
 #: infobar.h:823 infobar.h:1137 keyactions.h:205 kravencfg.c:66
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
-#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:382
-#: mc_audioplayer.h:656 mc_audioplayer.h:768 mc_dateibrowser.h:36
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:384
+#: mc_audioplayer.h:658 mc_audioplayer.h:770 mc_dateibrowser.h:36
 #: mc_global.h:781 mc_global.h:1079 mc_internetbrowser.h:36
 #: mc_iptvplayer.h:106 mc_iptvplayer.h:374 mc_iptvplayer.h:485 mc_main.h:276
 #: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
@@ -6860,7 +6860,7 @@ msgstr "Ö"
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:382 mc_audioplayer.h:656 mc_audioplayer.h:768
+#: mc_audioplayer.h:384 mc_audioplayer.h:658 mc_audioplayer.h:770
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
@@ -7563,7 +7563,7 @@ msgstr "Playlist Menü"
 msgid "Playlist download"
 msgstr ""
 
-#: mc_audioplayer.h:635 mc_iptvplayer.h:342 mc_pictureplayer.h:341
+#: mc_audioplayer.h:637 mc_iptvplayer.h:342 mc_pictureplayer.h:341
 #: mc_videoplayer.h:725
 msgid "Playlist-Mode"
 msgstr "Playlist-Modulos"
@@ -8009,7 +8009,7 @@ msgstr ""
 msgid "Ram"
 msgstr "RAM"
 
-#: mc_audioplayer.h:614 mc_global.h:566 mc_global.h:594 mc_global.h:1135
+#: mc_audioplayer.h:616 mc_global.h:566 mc_global.h:594 mc_global.h:1135
 #: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:684
 #: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Random"
@@ -8354,7 +8354,7 @@ msgstr "Borrar"
 msgid "Rename"
 msgstr "Renombrar"
 
-#: mc_audioplayer.h:464 mc_audioplayer.h:615 mc_global.h:1140
+#: mc_audioplayer.h:466 mc_audioplayer.h:617 mc_global.h:1140
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:313 mc_pictureplayer.h:157
 #: mc_pictureplayer.h:322 mc_videoplayer.h:440 mc_videoplayer.h:685
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:501 skins_mc_skin.xml.h:48
@@ -8365,7 +8365,7 @@ msgstr "Repetir"
 msgid "Repeat type"
 msgstr "modo de repeticion"
 
-#: mc_audioplayer.h:457 mc_global.h:1138 mc_iptvplayer.h:141
+#: mc_audioplayer.h:459 mc_global.h:1138 mc_iptvplayer.h:141
 #: mc_pictureplayer.h:150 mc_videoplayer.h:433
 msgid "Repeat-On"
 msgstr "Modo repeticion On"
@@ -9358,7 +9358,7 @@ msgstr ""
 msgid "Sharename can't be empty!"
 msgstr "ERROR: nombre de recurso compartido debe ingresar!"
 
-#: infobar.h:699 mc_audioplayer.h:382 mc_iptvplayer.h:106 mc_main.h:276
+#: infobar.h:699 mc_audioplayer.h:384 mc_iptvplayer.h:106 mc_main.h:276
 #: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
