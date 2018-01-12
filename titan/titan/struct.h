@@ -2054,6 +2054,7 @@ struct musicdat
 	char* actors;
 	char* genre;
 	char* year;
+	int   act;
 } musicdat;
 
 #ifdef EPLAYER4
