@@ -1772,7 +1772,7 @@ msgstr ""
 msgid "Browser Resolution"
 msgstr "Browser Auflösung"
 
-#: player.h:1801
+#: player.h:1806
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Stream wird zwischengespeichert - abbrechen mit Exit"
 
@@ -2054,10 +2054,10 @@ msgstr ""
 "Herunterladen der Datei ist nicht möglich!\n"
 "Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
-#: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:781
+#: dvdplay.h:62 mc_audioplayer.h:656 mc_audioplayer.h:768 mc_global.h:781
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:764 mc_videoplayer.h:903
+#: mc_pictureplayer.h:461 mc_videoplayer.h:765 mc_videoplayer.h:904
 #: play.h:1707
 msgid "Can't start playback !"
 msgstr "Wiedergabe kann nicht gestartet werden!"
@@ -3435,14 +3435,14 @@ msgstr ""
 #: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:60
 #: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_audioplayer.h:382 mc_audioplayer.h:656 mc_audioplayer.h:768
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:336
-#: mc_videoplayer.h:764 mc_videoplayer.h:799 mc_videoplayer.h:903
-#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_videoplayer.h:765 mc_videoplayer.h:800 mc_videoplayer.h:904
+#: mc_videoplayer.h:920 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:1007 menu.h:1009 mightyupload.h:27 mightyupload.h:69
 #: mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60
@@ -3460,7 +3460,7 @@ msgstr ""
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:319 play.h:497 play.h:614 play.h:1344 play.h:1350 play.h:1365
+#: player.h:321 play.h:497 play.h:614 play.h:1344 play.h:1350 play.h:1365
 #: play.h:1366 play.h:1402 play.h:1403 play.h:1417 play.h:1501
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
@@ -4009,10 +4009,10 @@ msgstr "Datei nicht gefunden"
 msgid "Filelist Select Color"
 msgstr "Cursor Farbe für Datei Liste"
 
-#: mc_audioplayer.h:520 mc_audioplayer.h:564 mc_audioplayer.h:684
+#: mc_audioplayer.h:569 mc_audioplayer.h:613 mc_audioplayer.h:735
 #: mc_iptvplayer.h:267 mc_iptvplayer.h:311 mc_iptvplayer.h:453
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
-#: mc_videoplayer.h:608 mc_videoplayer.h:682 mc_videoplayer.h:869
+#: mc_videoplayer.h:609 mc_videoplayer.h:683 mc_videoplayer.h:870
 #: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
 msgid "Filelist-Mode"
 msgstr "Datei-Modus"
@@ -4207,7 +4207,7 @@ msgstr ""
 "Kostenpflichtiger Stream gefunden.\n"
 "Bitte auf der offiziellen Website bestellen und erneut versuchen."
 
-#: mc_videoplayer.h:799
+#: mc_videoplayer.h:800
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr "DVD Struktur gefunden, mit DVD-Player abspielen?"
 
@@ -6377,14 +6377,14 @@ msgstr "Menüliste"
 #: infobar.h:823 infobar.h:1137 keyactions.h:205 kravencfg.c:66
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
-#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
-#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:382
+#: mc_audioplayer.h:656 mc_audioplayer.h:768 mc_dateibrowser.h:36
 #: mc_global.h:781 mc_global.h:1079 mc_internetbrowser.h:36
 #: mc_iptvplayer.h:106 mc_iptvplayer.h:374 mc_iptvplayer.h:485 mc_main.h:276
 #: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
 #: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:336 mc_videoplayer.h:764
-#: mc_videoplayer.h:799 mc_videoplayer.h:903 mc_videoplayer.h:919
+#: mc_pictureplayer.h:461 mc_videoplayer.h:336 mc_videoplayer.h:765
+#: mc_videoplayer.h:800 mc_videoplayer.h:904 mc_videoplayer.h:920
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
 #: mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
 #: mightyupload.h:69 mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38
@@ -6399,7 +6399,7 @@ msgstr "Menüliste"
 #: network.h:823 network.h:877 novamov.h:35 novamov.h:97 novamov.h:103
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
-#: played.h:91 played.h:103 played.h:115 played.h:172 player.h:319 play.h:614
+#: played.h:91 played.h:103 played.h:115 played.h:172 player.h:321 play.h:614
 #: play.h:1365 play.h:1402 play.h:1707 play.h:1943 play.h:1954 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
@@ -6991,14 +6991,14 @@ msgstr "Ö"
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_audioplayer.h:382 mc_audioplayer.h:656 mc_audioplayer.h:768
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:336
-#: mc_videoplayer.h:764 mc_videoplayer.h:799 mc_videoplayer.h:903
-#: mc_videoplayer.h:919 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_videoplayer.h:765 mc_videoplayer.h:800 mc_videoplayer.h:904
+#: mc_videoplayer.h:920 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:1007 menu.h:1009 mightyupload.h:27 mightyupload.h:69
 #: mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60
@@ -7018,7 +7018,7 @@ msgstr "Ö"
 #: newsletter.h:292 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:319 play.h:497 play.h:614 play.h:1344
+#: played.h:115 played.h:172 player.h:321 play.h:497 play.h:614 play.h:1344
 #: play.h:1350 play.h:1365 play.h:1366 play.h:1402 play.h:1403 play.h:1417
 #: play.h:1501 play.h:1707 play.h:1943 play.h:1954 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
@@ -7694,8 +7694,8 @@ msgstr "Playlist Menü"
 msgid "Playlist download"
 msgstr ""
 
-#: mc_audioplayer.h:586 mc_iptvplayer.h:342 mc_pictureplayer.h:341
-#: mc_videoplayer.h:724
+#: mc_audioplayer.h:635 mc_iptvplayer.h:342 mc_pictureplayer.h:341
+#: mc_videoplayer.h:725
 msgid "Playlist-Mode"
 msgstr "Playlist-Modus"
 
@@ -8140,8 +8140,8 @@ msgstr ""
 msgid "Ram"
 msgstr "Arbeitsspeicher"
 
-#: mc_audioplayer.h:565 mc_global.h:566 mc_global.h:594 mc_global.h:1135
-#: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:683
+#: mc_audioplayer.h:614 mc_global.h:566 mc_global.h:594 mc_global.h:1135
+#: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:684
 #: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Random"
 msgstr "Zufällig"
@@ -8487,9 +8487,9 @@ msgstr "Entfernen von"
 msgid "Rename"
 msgstr "Umbenennen"
 
-#: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1140
+#: mc_audioplayer.h:464 mc_audioplayer.h:615 mc_global.h:1140
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:313 mc_pictureplayer.h:157
-#: mc_pictureplayer.h:322 mc_videoplayer.h:439 mc_videoplayer.h:684
+#: mc_pictureplayer.h:322 mc_videoplayer.h:440 mc_videoplayer.h:685
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:501 skins_mc_skin.xml.h:48
 msgid "Repeat"
 msgstr "Wiederholen"
@@ -8498,8 +8498,8 @@ msgstr "Wiederholen"
 msgid "Repeat type"
 msgstr "Wiederholungsmodus"
 
-#: mc_audioplayer.h:408 mc_global.h:1138 mc_iptvplayer.h:141
-#: mc_pictureplayer.h:150 mc_videoplayer.h:432
+#: mc_audioplayer.h:457 mc_global.h:1138 mc_iptvplayer.h:141
+#: mc_pictureplayer.h:150 mc_videoplayer.h:433
 msgid "Repeat-On"
 msgstr "Wiederholen-An"
 
@@ -9498,7 +9498,7 @@ msgstr "PiP-Einstellungen"
 msgid "Sharename can't be empty!"
 msgstr "Freigabename darf nicht leer sein!"
 
-#: infobar.h:699 mc_audioplayer.h:333 mc_iptvplayer.h:106 mc_main.h:276
+#: infobar.h:699 mc_audioplayer.h:382 mc_iptvplayer.h:106 mc_main.h:276
 #: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -9915,7 +9915,7 @@ msgstr "Satellitenliste (Werkseinstellung) wiederherstellen?"
 msgid "Start Wlan ?"
 msgstr "Möchten Sie WLAN jetzt starten?"
 
-#: mc_videoplayer.h:919 player.h:319
+#: mc_videoplayer.h:920 player.h:321
 msgid "Start at last position ?"
 msgstr "An letzter Stelle fortsetzen?"
 
