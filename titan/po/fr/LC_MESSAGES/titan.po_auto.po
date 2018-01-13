@@ -156,10 +156,14 @@ msgid "-Auto stop"
 msgstr ""
 
 #: plugins_sispmctl_skin.xml.h:7 skins_sispmctl_skin.xml.h:7
-msgid "-Delay in min"
+msgid "-Delay in sec"
 msgstr ""
 
 #: plugins_sispmctl_skin.xml.h:13 skins_sispmctl_skin.xml.h:13
+msgid "-Hardware delay in min"
+msgstr ""
+
+#: plugins_sispmctl_skin.xml.h:14 skins_sispmctl_skin.xml.h:14
 msgid "-ignore Timerevent"
 msgstr ""
 
@@ -4216,11 +4220,11 @@ msgstr ""
 msgid "GB"
 msgstr ""
 
-#: plugins_sispmctl_skin.xml.h:15 skins_sispmctl_skin.xml.h:15
+#: plugins_sispmctl_skin.xml.h:16 skins_sispmctl_skin.xml.h:16
 msgid "GEMBIRD Powermanager Optionen"
 msgstr ""
 
-#: plugins_sispmctl_skin.xml.h:16 skins_sispmctl_skin.xml.h:16
+#: plugins_sispmctl_skin.xml.h:17 skins_sispmctl_skin.xml.h:17
 msgid "GEMBIRD Powermanager Status"
 msgstr ""
 
@@ -8414,13 +8418,13 @@ msgstr ""
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
 #: plugins_instar_skin.xml.h:25 plugins_lcdpearl1_skin.xml.h:10
 #: plugins_lcdsamsung_skin.xml.h:13 plugins_panel_skin.xml.h:16
-#: plugins_sispmctl_skin.xml.h:14 plugins_stock_skin.xml.h:4
+#: plugins_sispmctl_skin.xml.h:15 plugins_stock_skin.xml.h:4
 #: plugins_stopifnotused_skin.xml.h:4 plugins_tmdb_skin.xml.h:7
 #: skin_default_skin.xml.h:539 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:17 skins_imdbapi_skin.xml.h:7
 #: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:25
 #: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:13
-#: skins_panel_skin.xml.h:16 skins_sispmctl_skin.xml.h:14
+#: skins_panel_skin.xml.h:16 skins_sispmctl_skin.xml.h:15
 #: skins_stock_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
 #: skins_tmdb_skin.xml.h:7
 msgid "SAVE"
@@ -11751,6 +11755,10 @@ msgstr "Demarrage stopé"
 msgid "border"
 msgstr ""
 
+#: sispmctl.h:264 sispmctl.h:302 sispmctl.h:340 sispmctl.h:378
+msgid "both"
+msgstr ""
+
 #: webif_help.h:11
 msgid "bouquetlist"
 msgstr ""
@@ -11938,6 +11946,10 @@ msgstr ""
 #: panel_settings_autostart.h:59 settings_autostart.h:51
 msgid "debug"
 msgstr "Debug"
+
+#: sispmctl.h:266 sispmctl.h:304 sispmctl.h:342 sispmctl.h:380
+msgid "deep"
+msgstr ""
 
 #: harddisk.h:165 pip.h:657 pip.h:665 plugins_mc_skin.xml.h:15
 #: skins_mc_skin.xml.h:15
@@ -12704,8 +12716,8 @@ msgstr "NFS Serveur"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 sispmctl.h:264 sispmctl.h:287 sispmctl.h:310
-#: sispmctl.h:333 skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
+#: settings_overclocking.h:244 sispmctl.h:270 sispmctl.h:308 sispmctl.h:346
+#: sispmctl.h:384 skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
 #: timeshiftsettings.h:63 tithek_settings.h:42 tithek_settings.h:46
 #: tithek_settings.h:50 tithek_settings.h:54 tmc.h:531 tmc.h:535
 #: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
@@ -12791,9 +12803,9 @@ msgstr "Ö"
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:259
-#: sispmctl.h:267 sispmctl.h:282 sispmctl.h:290 sispmctl.h:305 sispmctl.h:313
-#: sispmctl.h:328 sispmctl.h:336 skinadjust.h:94 transponder.h:256
+#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:263
+#: sispmctl.h:273 sispmctl.h:301 sispmctl.h:311 sispmctl.h:339 sispmctl.h:349
+#: sispmctl.h:377 sispmctl.h:387 skinadjust.h:94 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:964
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115
 #: vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
@@ -12846,11 +12858,10 @@ msgstr ""
 
 #: avsettings.h:90 cec.h:629 cec.h:677 fancontrol.h:109 httpdsettings.h:77
 #: lnbconfig.h:143 mc_pictureplayer_settings.h:35
-#: mc_pictureplayer_settings.h:39 readerconfig.h:424 sispmctl.h:260
-#: sispmctl.h:268 sispmctl.h:283 sispmctl.h:291 sispmctl.h:306 sispmctl.h:314
-#: sispmctl.h:329 sispmctl.h:337 skinadjust.h:93 transponder.h:257
-#: transponder.h:266 transponder.h:416 transponder.h:425 vfdisplay.h:49
-#: vfdisplay.h:70 vfdisplay.h:91
+#: mc_pictureplayer_settings.h:39 readerconfig.h:424 sispmctl.h:274
+#: sispmctl.h:312 sispmctl.h:350 sispmctl.h:388 skinadjust.h:93
+#: transponder.h:257 transponder.h:266 transponder.h:416 transponder.h:425
+#: vfdisplay.h:49 vfdisplay.h:70 vfdisplay.h:91
 msgid "on"
 msgstr "marche"
 
@@ -13482,7 +13493,8 @@ msgid "stable"
 msgstr "Désactiver"
 
 #: adjust.h:162 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4441 rectimer.h:1208 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:265 sispmctl.h:303
+#: sispmctl.h:341 sispmctl.h:379 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Veille"
 
@@ -14161,8 +14173,8 @@ msgstr "jaune"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 sispmctl.h:263 sispmctl.h:286 sispmctl.h:309
-#: sispmctl.h:332 skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
+#: settings_overclocking.h:244 sispmctl.h:269 sispmctl.h:307 sispmctl.h:345
+#: sispmctl.h:383 skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:43 tithek_settings.h:47
 #: tithek_settings.h:51 tithek_settings.h:55 tmc.h:532 tmc.h:536 xupnpd.h:30
 msgid "yes"
