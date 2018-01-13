@@ -20,7 +20,7 @@ void init(void)
 	pluginaktiv = 1;
 
 	tmpstr = createpluginpath("/sispmctl/skin.xml", 0);
-	readscreen(tmpstr, 118, 1);
+	readscreen(tmpstr, 281, 1);
 	
 	
 	sispmctlconf = createpluginpath("/sispmctl/sispmctl.conf", 0);
@@ -28,16 +28,16 @@ void init(void)
 
 	debug(10, "sispmctl Plugin loaded !!!");
 	
-	sispmctl_start();
+	sispmctl_start(2);
 }
 
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
-	sispmctl_stop();
+	sispmctl_stop(2);
 	pluginaktiv = 0;
 	debug(10, "sispmctl removed !!!");
-	delmarkedscreen(118);
+	delmarkedscreen(281);
 }
 
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
