@@ -280,7 +280,9 @@ void sispmctl_settings()
 	setchoiceboxselection(g1_script, getlist(myconfig, "g1_script", NULL));
 	
 	addchoicebox(g1_auto_off, "off", _("off"));
-	addchoicebox(g1_auto_off, "on", _("on"));
+	addchoicebox(g1_auto_off, "both", _("both"));
+	addchoicebox(g1_auto_off, "standby", _("standby"));
+	addchoicebox(g1_auto_off, "deep", _("deep"));
 	setchoiceboxselection(g1_auto_off, getlist(myconfig, "g1_auto_off", NULL));
 	
 	addchoicebox(g1_delay, "0", "0");
@@ -322,7 +324,9 @@ void sispmctl_settings()
 	setchoiceboxselection(g2_script, getlist(myconfig, "g2_script", NULL));
 	
 	addchoicebox(g2_auto_off, "off", _("off"));
-	addchoicebox(g2_auto_off, "on", _("on"));
+	addchoicebox(g2_auto_off, "both", _("both"));
+	addchoicebox(g2_auto_off, "standby", _("standby"));
+	addchoicebox(g2_auto_off, "deep", _("deep"));
 	setchoiceboxselection(g2_auto_off, getlist(myconfig, "g2_auto_off", NULL));
 	
 	addchoicebox(g2_delay, "0", "0");
@@ -364,7 +368,9 @@ void sispmctl_settings()
 	setchoiceboxselection(g3_script, getlist(myconfig, "g3_script", NULL));
 	
 	addchoicebox(g3_auto_off, "off", _("off"));
-	addchoicebox(g3_auto_off, "on", _("on"));
+	addchoicebox(g3_auto_off, "both", _("both"));
+	addchoicebox(g3_auto_off, "standby", _("standby"));
+	addchoicebox(g3_auto_off, "deep", _("deep"));
 	setchoiceboxselection(g3_auto_off, getlist(myconfig, "g3_auto_off", NULL));
 	
 	addchoicebox(g3_delay, "0", "0");
@@ -406,7 +412,9 @@ void sispmctl_settings()
 	setchoiceboxselection(g4_script, getlist(myconfig, "g4_script", NULL));
 	
 	addchoicebox(g4_auto_off, "off", _("off"));
-	addchoicebox(g4_auto_off, "on", _("on"));
+	addchoicebox(g4_auto_off, "both", _("both"));
+	addchoicebox(g4_auto_off, "standby", _("standby"));
+	addchoicebox(g4_auto_off, "deep", _("deep"));
 	setchoiceboxselection(g4_auto_off, getlist(myconfig, "g4_auto_off", NULL));
 	
 	addchoicebox(g4_delay, "0", "0");
