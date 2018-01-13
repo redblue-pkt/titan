@@ -29,12 +29,19 @@ void init(void)
 	debug(10, "sispmctl Plugin loaded !!!");
 	
 	sispmctl_start(2);
+	
+	if(sispmctl_checkthread == NULL)
+		sispmctl_checkthread = addtimer(&sispmctl_check_thread, START, 10000, 1, NULL, NULL, NULL);
 }
 
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
+	if(sispmctl_checkthread != NULL)
+		sispmctl_checkthread->aktion = STOP;
 	sispmctl_stop(2);
+	if(sispmctl_checkthread != NULL)
+		sleep(2);
 	pluginaktiv = 0;
 	debug(10, "sispmctl removed !!!");
 	delmarkedscreen(281);
