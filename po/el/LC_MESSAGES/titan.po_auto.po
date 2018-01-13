@@ -11752,7 +11752,7 @@ msgstr "Διακοπή της εκκίνησης"
 msgid "border"
 msgstr ""
 
-#: sispmctl.h:264 sispmctl.h:302 sispmctl.h:340 sispmctl.h:378
+#: sispmctl.h:265 sispmctl.h:303 sispmctl.h:341 sispmctl.h:379
 msgid "both"
 msgstr ""
 
@@ -11944,7 +11944,7 @@ msgstr ""
 msgid "debug"
 msgstr "Debug"
 
-#: sispmctl.h:266 sispmctl.h:304 sispmctl.h:342 sispmctl.h:380
+#: sispmctl.h:267 sispmctl.h:305 sispmctl.h:343 sispmctl.h:381
 msgid "deep"
 msgstr ""
 
@@ -12713,8 +12713,8 @@ msgstr "NFS server"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 sispmctl.h:270 sispmctl.h:308 sispmctl.h:346
-#: sispmctl.h:384 skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
+#: settings_overclocking.h:244 sispmctl.h:271 sispmctl.h:309 sispmctl.h:347
+#: sispmctl.h:385 skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
 #: timeshiftsettings.h:63 tithek_settings.h:42 tithek_settings.h:46
 #: tithek_settings.h:50 tithek_settings.h:54 tmc.h:531 tmc.h:535
 #: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
@@ -12800,9 +12800,9 @@ msgstr ""
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:263
-#: sispmctl.h:273 sispmctl.h:301 sispmctl.h:311 sispmctl.h:339 sispmctl.h:349
-#: sispmctl.h:377 sispmctl.h:387 skinadjust.h:94 transponder.h:256
+#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:264
+#: sispmctl.h:274 sispmctl.h:302 sispmctl.h:312 sispmctl.h:340 sispmctl.h:350
+#: sispmctl.h:378 sispmctl.h:388 skinadjust.h:94 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:964
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115
 #: vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
@@ -12855,8 +12855,8 @@ msgstr ""
 
 #: avsettings.h:90 cec.h:629 cec.h:677 fancontrol.h:109 httpdsettings.h:77
 #: lnbconfig.h:143 mc_pictureplayer_settings.h:35
-#: mc_pictureplayer_settings.h:39 readerconfig.h:424 sispmctl.h:274
-#: sispmctl.h:312 sispmctl.h:350 sispmctl.h:388 skinadjust.h:93
+#: mc_pictureplayer_settings.h:39 readerconfig.h:424 sispmctl.h:275
+#: sispmctl.h:313 sispmctl.h:351 sispmctl.h:389 skinadjust.h:93
 #: transponder.h:257 transponder.h:266 transponder.h:416 transponder.h:425
 #: vfdisplay.h:49 vfdisplay.h:70 vfdisplay.h:91
 msgid "on"
@@ -13490,8 +13490,8 @@ msgid "stable"
 msgstr "Απενεργοποίηση"
 
 #: adjust.h:162 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:265 sispmctl.h:303
-#: sispmctl.h:341 sispmctl.h:379 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:266 sispmctl.h:304
+#: sispmctl.h:342 sispmctl.h:380 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Standby"
 
@@ -14170,8 +14170,8 @@ msgstr ""
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 sispmctl.h:269 sispmctl.h:307 sispmctl.h:345
-#: sispmctl.h:383 skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
+#: settings_overclocking.h:244 sispmctl.h:270 sispmctl.h:308 sispmctl.h:346
+#: sispmctl.h:384 skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:43 tithek_settings.h:47
 #: tithek_settings.h:51 tithek_settings.h:55 tmc.h:532 tmc.h:536 xupnpd.h:30
 msgid "yes"
