@@ -5,6 +5,7 @@
 
 struct clist *myconfig[LISTHASHSIZE] = {NULL};
 char* sispmctlconf = NULL;
+struct stimerthread* sispmctl_checkthread = NULL;
 
 int sispmctl_Anzeige()
 {
@@ -675,6 +676,26 @@ void sispmctl_stop(int flag)
 	}
 	if(maxsleep > 0)
 		sleep(maxsleep);
+}
+
+void sispmctl_check_thread()
+{
+	int standby = 0;
+	while (sispmctl_checkthread->aktion != STOP) 
+	{
+		if(status.standby > 0 && standby == 0)
+		{
+			sispmctl_stop(1);
+			standby = 1;
+		}
+		if(status.standby == 0 && standby == 1)
+		{
+			sispmctl_start(1);
+			standby = 0;
+		}
+		sleep(2);
+	}
+	sispmctl_checkthread = NULL;
 }
 
 void sispmctl_main()
