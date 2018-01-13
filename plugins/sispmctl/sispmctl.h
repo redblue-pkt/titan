@@ -458,6 +458,7 @@ void sispmctl_settings()
 			addlist(myconfig, "g1_auto_off", g1_auto_off->ret);
 			addlist(myconfig, "g1_delay", g1_delay->ret);
 			addlist(myconfig, "g1_delayhard", g1_delayhard->ret);
+			addlist(myconfig, "g1_script", g1_script->ret);
 
 			addlist(myconfig, "g2_name", g2_name->ret);
 			addlist(myconfig, "g2_auto_on", g2_auto_on->ret);
@@ -465,6 +466,7 @@ void sispmctl_settings()
 			addlist(myconfig, "g2_auto_off", g2_auto_off->ret);
 			addlist(myconfig, "g2_delay", g2_delay->ret);
 			addlist(myconfig, "g2_delayhard", g2_delayhard->ret);
+			addlist(myconfig, "g2_script", g2_script->ret);
 			
 			addlist(myconfig, "g3_name", g3_name->ret);
 			addlist(myconfig, "g3_auto_on", g3_auto_on->ret);
@@ -472,6 +474,7 @@ void sispmctl_settings()
 			addlist(myconfig, "g3_auto_off", g3_auto_off->ret);
 			addlist(myconfig, "g3_delay", g3_delay->ret);
 			addlist(myconfig, "g3_delayhard", g3_delayhard->ret);
+			addlist(myconfig, "g3_script", g3_script->ret);
 			
 			addlist(myconfig, "g4_name", g4_name->ret);
 			addlist(myconfig, "g4_auto_on", g4_auto_on->ret);
@@ -479,6 +482,7 @@ void sispmctl_settings()
 			addlist(myconfig, "g4_auto_off", g4_auto_off->ret);
 			addlist(myconfig, "g4_delay", g4_delay->ret);
 			addlist(myconfig, "g4_delayhard", g4_delayhard->ret);
+			addlist(myconfig, "g4_script", g4_script->ret);
 			writelist(myconfig, sispmctlconf);
 		}
 	}
