@@ -186,7 +186,7 @@ void screenmc_audioplayer()
 							album->hidden = NO;
 							albumtext->hidden = NO;
 							free(musicdat.album); musicdat.album = NULL;
-							musicdat.album = ostrcat(album, "", 0, 0);
+							musicdat.album = ostrcat(mnode->plot, "", 0, 0);
 						}
 						else
 						{
@@ -239,16 +239,22 @@ void screenmc_audioplayer()
 							{
 								changetext(title, filelist->select->name);
 								title->hidden = NO;
-								free(musicdat.title); musicdat.title = NULL;
-								musicdat.title = ostrcat(filelist->select->name, "", 0, 0);
+								if(filelist != NULL)
+								{
+									free(musicdat.title); musicdat.title = NULL;
+									musicdat.title = ostrcat(filelist->select->name, "", 0, 0);
+								}
 							}
 							free(tmpstr), tmpstr = NULL;
 	
 							changetext(realname, filelist->select->name);
 							realname->hidden = NO;
 							realnametext->hidden = NO;
-							free(musicdat.realname); musicdat.realname = NULL;
-							musicdat.realname = ostrcat(filelist->select->name, "", 0, 0);
+							if(filelist != NULL)
+							{
+								free(musicdat.realname); musicdat.realname = NULL;
+								musicdat.realname = ostrcat(filelist->select->name, "", 0, 0);
+							}
 						}
 						else
 						{
@@ -257,8 +263,11 @@ void screenmc_audioplayer()
 							free(musicdat.realname); musicdat.realname = NULL;
 							changetext(title, filelist->select->name);
 							title->hidden = NO;
-							free(musicdat.title); musicdat.title = NULL;
-							musicdat.title = ostrcat(filelist->select->name, "", 0, 0);
+							if(filelist != NULL)
+							{
+								free(musicdat.title); musicdat.title = NULL;
+								musicdat.title = ostrcat(filelist->select->name, "", 0, 0);
+							}
 						}					
 	
 						len1 = strlen(mnode->actors);
@@ -299,7 +308,7 @@ void screenmc_audioplayer()
 							year->hidden = NO;
 							yeartext->hidden = NO;
 							free(musicdat.year); musicdat.year = NULL;
-							musicdat.year = ostrcat(mnode->year, "", 0, 0);
+							musicdat.year = ostrcat(oitoa(mnode->year), "", 0, 0);
 						}
 						else
 						{
