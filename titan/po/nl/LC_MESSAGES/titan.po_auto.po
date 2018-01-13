@@ -163,6 +163,10 @@ msgstr ""
 msgid "-Hardware delay in min"
 msgstr ""
 
+#: plugins_sispmctl_skin.xml.h:16 skins_sispmctl_skin.xml.h:16
+msgid "-Start script"
+msgstr ""
+
 #: plugins_sispmctl_skin.xml.h:14 skins_sispmctl_skin.xml.h:14
 msgid "-ignore Timerevent"
 msgstr ""
@@ -2020,7 +2024,7 @@ msgstr ""
 "Kan download niet starten.\n"
 "Probeer het later nogmaals."
 
-#: dvdplay.h:62 mc_audioplayer.h:658 mc_audioplayer.h:770 mc_global.h:781
+#: dvdplay.h:62 mc_audioplayer.h:667 mc_audioplayer.h:779 mc_global.h:781
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:765 mc_videoplayer.h:904
@@ -3378,7 +3382,7 @@ msgstr ""
 #: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:60
 #: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:384 mc_audioplayer.h:658 mc_audioplayer.h:770
+#: mc_audioplayer.h:393 mc_audioplayer.h:667 mc_audioplayer.h:779
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
@@ -3947,7 +3951,7 @@ msgstr "Bestand niet gevonden!"
 msgid "Filelist Select Color"
 msgstr ""
 
-#: mc_audioplayer.h:571 mc_audioplayer.h:615 mc_audioplayer.h:737
+#: mc_audioplayer.h:580 mc_audioplayer.h:624 mc_audioplayer.h:746
 #: mc_iptvplayer.h:267 mc_iptvplayer.h:311 mc_iptvplayer.h:453
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
 #: mc_videoplayer.h:609 mc_videoplayer.h:683 mc_videoplayer.h:870
@@ -4292,11 +4296,11 @@ msgstr ""
 msgid "GB"
 msgstr ""
 
-#: plugins_sispmctl_skin.xml.h:16 skins_sispmctl_skin.xml.h:16
+#: plugins_sispmctl_skin.xml.h:17 skins_sispmctl_skin.xml.h:17
 msgid "GEMBIRD Powermanager Optionen"
 msgstr ""
 
-#: plugins_sispmctl_skin.xml.h:17 skins_sispmctl_skin.xml.h:17
+#: plugins_sispmctl_skin.xml.h:18 skins_sispmctl_skin.xml.h:18
 msgid "GEMBIRD Powermanager Status"
 msgstr ""
 
@@ -6208,8 +6212,8 @@ msgstr ""
 #: infobar.h:823 infobar.h:1137 keyactions.h:205 kravencfg.c:66
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
-#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:384
-#: mc_audioplayer.h:658 mc_audioplayer.h:770 mc_dateibrowser.h:36
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:393
+#: mc_audioplayer.h:667 mc_audioplayer.h:779 mc_dateibrowser.h:36
 #: mc_global.h:781 mc_global.h:1079 mc_internetbrowser.h:36
 #: mc_iptvplayer.h:106 mc_iptvplayer.h:374 mc_iptvplayer.h:485 mc_main.h:276
 #: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
@@ -6818,7 +6822,7 @@ msgstr ""
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:384 mc_audioplayer.h:658 mc_audioplayer.h:770
+#: mc_audioplayer.h:393 mc_audioplayer.h:667 mc_audioplayer.h:779
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
@@ -7521,7 +7525,7 @@ msgstr ""
 msgid "Playlist download"
 msgstr ""
 
-#: mc_audioplayer.h:637 mc_iptvplayer.h:342 mc_pictureplayer.h:341
+#: mc_audioplayer.h:646 mc_iptvplayer.h:342 mc_pictureplayer.h:341
 #: mc_videoplayer.h:725
 msgid "Playlist-Mode"
 msgstr "Afspeellijst modus"
@@ -7956,7 +7960,7 @@ msgstr ""
 msgid "Ram"
 msgstr "Ram geheugen"
 
-#: mc_audioplayer.h:616 mc_global.h:566 mc_global.h:594 mc_global.h:1135
+#: mc_audioplayer.h:625 mc_global.h:566 mc_global.h:594 mc_global.h:1135
 #: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:684
 #: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Random"
@@ -8301,7 +8305,7 @@ msgstr "Verwijderen"
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: mc_audioplayer.h:466 mc_audioplayer.h:617 mc_global.h:1140
+#: mc_audioplayer.h:475 mc_audioplayer.h:626 mc_global.h:1140
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:313 mc_pictureplayer.h:157
 #: mc_pictureplayer.h:322 mc_videoplayer.h:440 mc_videoplayer.h:685
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:501 skins_mc_skin.xml.h:48
@@ -8312,7 +8316,7 @@ msgstr "Herhalen"
 msgid "Repeat type"
 msgstr ""
 
-#: mc_audioplayer.h:459 mc_global.h:1138 mc_iptvplayer.h:141
+#: mc_audioplayer.h:468 mc_global.h:1138 mc_iptvplayer.h:141
 #: mc_pictureplayer.h:150 mc_videoplayer.h:433
 msgid "Repeat-On"
 msgstr "Herhalen Aan"
@@ -9303,7 +9307,7 @@ msgstr ""
 msgid "Sharename can't be empty!"
 msgstr "Sharenaam mag niet leeg zijn!"
 
-#: infobar.h:699 mc_audioplayer.h:384 mc_iptvplayer.h:106 mc_main.h:276
+#: infobar.h:699 mc_audioplayer.h:393 mc_iptvplayer.h:106 mc_main.h:276
 #: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -11886,7 +11890,8 @@ msgstr "Boot stop"
 msgid "border"
 msgstr "Rand kleur"
 
-#: sispmctl.h:265 sispmctl.h:303 sispmctl.h:341 sispmctl.h:379
+#: sispmctl.h:269 sispmctl.h:283 sispmctl.h:313 sispmctl.h:327 sispmctl.h:357
+#: sispmctl.h:371 sispmctl.h:401 sispmctl.h:415
 msgid "both"
 msgstr ""
 
@@ -12078,7 +12083,8 @@ msgstr "LAN verbinding uitschakelen?"
 msgid "debug"
 msgstr "Debug"
 
-#: sispmctl.h:267 sispmctl.h:305 sispmctl.h:343 sispmctl.h:381
+#: sispmctl.h:271 sispmctl.h:285 sispmctl.h:315 sispmctl.h:329 sispmctl.h:359
+#: sispmctl.h:373 sispmctl.h:403 sispmctl.h:417
 msgid "deep"
 msgstr ""
 
@@ -12847,8 +12853,9 @@ msgstr "NFS server"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 sispmctl.h:271 sispmctl.h:309 sispmctl.h:347
-#: sispmctl.h:385 skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
+#: settings_overclocking.h:244 sispmctl.h:275 sispmctl.h:279 sispmctl.h:319
+#: sispmctl.h:323 sispmctl.h:363 sispmctl.h:367 sispmctl.h:407 sispmctl.h:411
+#: skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
 #: timeshiftsettings.h:63 tithek_settings.h:42 tithek_settings.h:46
 #: tithek_settings.h:50 tithek_settings.h:54 tmc.h:531 tmc.h:535
 #: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
@@ -12934,9 +12941,9 @@ msgstr ""
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:264
-#: sispmctl.h:274 sispmctl.h:302 sispmctl.h:312 sispmctl.h:340 sispmctl.h:350
-#: sispmctl.h:378 sispmctl.h:388 skinadjust.h:94 transponder.h:256
+#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:268
+#: sispmctl.h:282 sispmctl.h:312 sispmctl.h:326 sispmctl.h:356 sispmctl.h:370
+#: sispmctl.h:400 sispmctl.h:414 skinadjust.h:94 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:964
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115
 #: vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
@@ -12989,8 +12996,7 @@ msgstr "ouder dan 50 dagen"
 
 #: avsettings.h:90 cec.h:629 cec.h:677 fancontrol.h:109 httpdsettings.h:77
 #: lnbconfig.h:143 mc_pictureplayer_settings.h:35
-#: mc_pictureplayer_settings.h:39 readerconfig.h:424 sispmctl.h:275
-#: sispmctl.h:313 sispmctl.h:351 sispmctl.h:389 skinadjust.h:93
+#: mc_pictureplayer_settings.h:39 readerconfig.h:424 skinadjust.h:93
 #: transponder.h:257 transponder.h:266 transponder.h:416 transponder.h:425
 #: vfdisplay.h:49 vfdisplay.h:70 vfdisplay.h:91
 msgid "on"
@@ -13624,8 +13630,9 @@ msgid "stable"
 msgstr "Stabiel"
 
 #: adjust.h:162 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:266 sispmctl.h:304
-#: sispmctl.h:342 sispmctl.h:380 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:270 sispmctl.h:284
+#: sispmctl.h:314 sispmctl.h:328 sispmctl.h:358 sispmctl.h:372 sispmctl.h:402
+#: sispmctl.h:416 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Standby"
 
@@ -14304,8 +14311,9 @@ msgstr "Geel"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 sispmctl.h:270 sispmctl.h:308 sispmctl.h:346
-#: sispmctl.h:384 skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
+#: settings_overclocking.h:244 sispmctl.h:274 sispmctl.h:278 sispmctl.h:318
+#: sispmctl.h:322 sispmctl.h:362 sispmctl.h:366 sispmctl.h:406 sispmctl.h:410
+#: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:43 tithek_settings.h:47
 #: tithek_settings.h:51 tithek_settings.h:55 tmc.h:532 tmc.h:536 xupnpd.h:30
 msgid "yes"
