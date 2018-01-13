@@ -232,24 +232,28 @@ void sispmctl_settings()
 	struct skin* g1_timer = getscreennode(sis_einstellungen, "g1_timer");
 	struct skin* g1_auto_off = getscreennode(sis_einstellungen, "g1_auto_off");
 	struct skin* g1_delay = getscreennode(sis_einstellungen, "g1_delay");
+	struct skin* g1_delayhard = getscreennode(sis_einstellungen, "g1_delayhard");
 	
 	struct skin* g2_name = getscreennode(sis_einstellungen, "g2_name");
 	struct skin* g2_auto_on = getscreennode(sis_einstellungen, "g2_auto_on");
 	struct skin* g2_timer = getscreennode(sis_einstellungen, "g2_timer");
 	struct skin* g2_auto_off = getscreennode(sis_einstellungen, "g2_auto_off");
 	struct skin* g2_delay = getscreennode(sis_einstellungen, "g2_delay");
+	struct skin* g2_delayhard = getscreennode(sis_einstellungen, "g2_delayhard");
 	
 	struct skin* g3_name = getscreennode(sis_einstellungen, "g3_name");
 	struct skin* g3_auto_on = getscreennode(sis_einstellungen, "g3_auto_on");
 	struct skin* g3_timer = getscreennode(sis_einstellungen, "g3_timer");
 	struct skin* g3_auto_off = getscreennode(sis_einstellungen, "g3_auto_off");
 	struct skin* g3_delay = getscreennode(sis_einstellungen, "g3_delay");
+	struct skin* g3_delayhard = getscreennode(sis_einstellungen, "g3_delayhard");
 	
 	struct skin* g4_name = getscreennode(sis_einstellungen, "g4_name");
 	struct skin* g4_auto_on = getscreennode(sis_einstellungen, "g4_auto_on");
 	struct skin* g4_timer = getscreennode(sis_einstellungen, "g4_timer");
 	struct skin* g4_auto_off = getscreennode(sis_einstellungen, "g4_auto_off");
 	struct skin* g4_delay = getscreennode(sis_einstellungen, "g4_delay");
+	struct skin* g4_delayhard = getscreennode(sis_einstellungen, "g4_delayhard");
 	
 	struct skin* tmp = NULL;
 	
@@ -257,7 +261,9 @@ void sispmctl_settings()
   changeinput(g1_name, getlist(myconfig, "g1_name", NULL));
   
   addchoicebox(g1_auto_on, "off", _("off"));
-	addchoicebox(g1_auto_on, "on", _("on"));
+	addchoicebox(g1_auto_on, "both", _("both"));
+	addchoicebox(g1_auto_on, "standby", _("standby"));
+	addchoicebox(g1_auto_on, "deep", _("deep"));
 	setchoiceboxselection(g1_auto_on, getlist(myconfig, "g1_auto_on", NULL));
 	
 	addchoicebox(g1_timer, "yes", _("yes"));
@@ -272,15 +278,30 @@ void sispmctl_settings()
 	addchoicebox(g1_delay, "1", "1");
 	addchoicebox(g1_delay, "2", "2");
 	addchoicebox(g1_delay, "3", "3");
-	addchoicebox(g1_delay, "4", "1");
-	addchoicebox(g1_delay, "5", "1");
+	addchoicebox(g1_delay, "4", "4");
+	addchoicebox(g1_delay, "5", "5");
+	addchoicebox(g1_delay, "6", "6");
+	addchoicebox(g1_delay, "7", "7");
+	addchoicebox(g1_delay, "8", "8");
+	addchoicebox(g1_delay, "9", "9");
+	addchoicebox(g1_delay, "10", "10");
 	setchoiceboxselection(g1_delay, getlist(myconfig, "g1_delay", NULL));
+	
+	addchoicebox(g1_delayhard, "0", "0");
+	addchoicebox(g1_delayhard, "1", "1");
+	addchoicebox(g1_delayhard, "2", "2");
+	addchoicebox(g1_delayhard, "3", "3");
+	addchoicebox(g1_delayhard, "4", "4");
+	addchoicebox(g1_delayhard, "5", "5");
+	setchoiceboxselection(g1_delayhard, getlist(myconfig, "g1_delayhard", NULL));
   
   changemask(g2_name, "abcdefghijklmnopqrstuvwxyz");
   changeinput(g2_name, getlist(myconfig, "g2_name", NULL));
   
   addchoicebox(g2_auto_on, "off", _("off"));
-	addchoicebox(g2_auto_on, "on", _("on"));
+	addchoicebox(g2_auto_on, "both", _("both"));
+	addchoicebox(g2_auto_on, "standby", _("standby"));
+	addchoicebox(g2_auto_on, "deep", _("deep"));
 	setchoiceboxselection(g2_auto_on, getlist(myconfig, "g2_auto_on", NULL));
 	
 	addchoicebox(g2_timer, "yes", _("yes"));
@@ -295,15 +316,30 @@ void sispmctl_settings()
 	addchoicebox(g2_delay, "1", "1");
 	addchoicebox(g2_delay, "2", "2");
 	addchoicebox(g2_delay, "3", "3");
-	addchoicebox(g2_delay, "4", "1");
-	addchoicebox(g2_delay, "5", "1");
+	addchoicebox(g2_delay, "4", "4");
+	addchoicebox(g2_delay, "5", "5");
+	addchoicebox(g2_delay, "6", "6");
+	addchoicebox(g2_delay, "7", "7");
+	addchoicebox(g2_delay, "8", "8");
+	addchoicebox(g2_delay, "9", "9");
+	addchoicebox(g2_delay, "10", "10");
 	setchoiceboxselection(g2_delay, getlist(myconfig, "g2_delay", NULL));
+	
+	addchoicebox(g2_delayhard, "0", "0");
+	addchoicebox(g2_delayhard, "1", "1");
+	addchoicebox(g2_delayhard, "2", "2");
+	addchoicebox(g2_delayhard, "3", "3");
+	addchoicebox(g2_delayhard, "4", "4");
+	addchoicebox(g2_delayhard, "5", "5");
+	setchoiceboxselection(g2_delayhard, getlist(myconfig, "g2_delayhard", NULL));
 	
 	changemask(g3_name, "abcdefghijklmnopqrstuvwxyz");
   changeinput(g3_name, getlist(myconfig, "g3_name", NULL));
   
   addchoicebox(g3_auto_on, "off", _("off"));
-	addchoicebox(g3_auto_on, "on", _("on"));
+	addchoicebox(g3_auto_on, "both", _("both"));
+	addchoicebox(g3_auto_on, "standby", _("standby"));
+	addchoicebox(g3_auto_on, "deep", _("deep"));
 	setchoiceboxselection(g3_auto_on, getlist(myconfig, "g3_auto_on", NULL));
 	
 	addchoicebox(g3_timer, "yes", _("yes"));
@@ -318,15 +354,30 @@ void sispmctl_settings()
 	addchoicebox(g3_delay, "1", "1");
 	addchoicebox(g3_delay, "2", "2");
 	addchoicebox(g3_delay, "3", "3");
-	addchoicebox(g3_delay, "4", "1");
-	addchoicebox(g3_delay, "5", "1");
+	addchoicebox(g3_delay, "4", "4");
+	addchoicebox(g3_delay, "5", "5");
+	addchoicebox(g3_delay, "6", "6");
+	addchoicebox(g3_delay, "7", "7");
+	addchoicebox(g3_delay, "8", "8");
+	addchoicebox(g3_delay, "9", "9");
+	addchoicebox(g3_delay, "10", "10");
 	setchoiceboxselection(g3_delay, getlist(myconfig, "g3_delay", NULL));
+	
+	addchoicebox(g3_delayhard, "0", "0");
+	addchoicebox(g3_delayhard, "1", "1");
+	addchoicebox(g3_delayhard, "2", "2");
+	addchoicebox(g3_delayhard, "3", "3");
+	addchoicebox(g3_delayhard, "4", "4");
+	addchoicebox(g3_delayhard, "5", "5");
+	setchoiceboxselection(g3_delayhard, getlist(myconfig, "g3_delayhard", NULL));
 	
 	changemask(g4_name, "abcdefghijklmnopqrstuvwxyz");
   changeinput(g4_name, getlist(myconfig, "g4_name", NULL));
   
   addchoicebox(g4_auto_on, "off", _("off"));
-	addchoicebox(g4_auto_on, "on", _("on"));
+	addchoicebox(g4_auto_on, "both", _("both"));
+	addchoicebox(g4_auto_on, "standby", _("standby"));
+	addchoicebox(g4_auto_on, "deep", _("deep"));
 	setchoiceboxselection(g4_auto_on, getlist(myconfig, "g4_auto_on", NULL));
 	
 	addchoicebox(g4_timer, "yes", _("yes"));
@@ -341,9 +392,22 @@ void sispmctl_settings()
 	addchoicebox(g4_delay, "1", "1");
 	addchoicebox(g4_delay, "2", "2");
 	addchoicebox(g4_delay, "3", "3");
-	addchoicebox(g4_delay, "4", "1");
-	addchoicebox(g4_delay, "5", "1");
+	addchoicebox(g4_delay, "4", "4");
+	addchoicebox(g4_delay, "5", "5");
+	addchoicebox(g4_delay, "6", "6");
+	addchoicebox(g4_delay, "7", "7");
+	addchoicebox(g4_delay, "8", "8");
+	addchoicebox(g4_delay, "9", "9");
+	addchoicebox(g4_delay, "10", "10");
 	setchoiceboxselection(g4_delay, getlist(myconfig, "g4_delay", NULL));
+	
+	addchoicebox(g4_delayhard, "0", "0");
+	addchoicebox(g4_delayhard, "1", "1");
+	addchoicebox(g4_delayhard, "2", "2");
+	addchoicebox(g4_delayhard, "3", "3");
+	addchoicebox(g4_delayhard, "4", "4");
+	addchoicebox(g4_delayhard, "5", "5");
+	setchoiceboxselection(g4_delayhard, getlist(myconfig, "g4_delayhard", NULL));
 	
   
 	drawscreen(sis_einstellungen, 0, 0);
@@ -364,24 +428,28 @@ void sispmctl_settings()
 			addlist(myconfig, "g1_timer", g1_timer->ret);
 			addlist(myconfig, "g1_auto_off", g1_auto_off->ret);
 			addlist(myconfig, "g1_delay", g1_delay->ret);
+			addlist(myconfig, "g1_delayhard", g1_delayhard->ret);
 
 			addlist(myconfig, "g2_name", g2_name->ret);
 			addlist(myconfig, "g2_auto_on", g2_auto_on->ret);
 			addlist(myconfig, "g2_timer", g2_timer->ret);
 			addlist(myconfig, "g2_auto_off", g2_auto_off->ret);
 			addlist(myconfig, "g2_delay", g2_delay->ret);
+			addlist(myconfig, "g2_delayhard", g2_delayhard->ret);
 			
 			addlist(myconfig, "g3_name", g3_name->ret);
 			addlist(myconfig, "g3_auto_on", g3_auto_on->ret);
 			addlist(myconfig, "g3_timer", g3_timer->ret);
 			addlist(myconfig, "g3_auto_off", g3_auto_off->ret);
 			addlist(myconfig, "g3_delay", g3_delay->ret);
+			addlist(myconfig, "g3_delayhard", g3_delayhard->ret);
 			
 			addlist(myconfig, "g4_name", g4_name->ret);
 			addlist(myconfig, "g4_auto_on", g4_auto_on->ret);
 			addlist(myconfig, "g4_timer", g4_timer->ret);
 			addlist(myconfig, "g4_auto_off", g4_auto_off->ret);
 			addlist(myconfig, "g4_delay", g4_delay->ret);
+			addlist(myconfig, "g4_delayhard", g4_delayhard->ret);
 			writelist(myconfig, sispmctlconf);
 		}
 	}
@@ -390,64 +458,105 @@ void sispmctl_settings()
 	return;	
 }
 
-void sispmctl_start()
+void sispmctl_start(int flag)
 {
 	char* cmd = NULL;
 	
 	if(getwaswakuptimer() != 1)
 	{
 	
-		if(ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "on") == 0 )
+		if(ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "deep") == 0 && flag == 2))
 		{
 			if(ostrcmp(getlist(myconfig, "g1_delay", NULL), "0") == 0)
-				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o1 > /tmp/helpsis", 0, 0);
+			{
+				if(ostrcmp(getlist(myconfig, "g1_delayhard", NULL), "0") == 0)
+					cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o1 > /tmp/helpsis", 0, 0);
+				else
+				{
+					cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A1 --Aafter ", 0, 0);
+					cmd = ostrcat(cmd, getlist(myconfig, "g1_delay", NULL), 1, 0);
+					cmd = ostrcat(cmd, " --Ado on", 1, 0);
+				}
+			}
 			else
 			{
-				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A1 --Aafter ", 0, 0);
-				cmd = ostrcat(cmd, getlist(myconfig, "g1_delay", NULL), 1, 0);
-				cmd = ostrcat(cmd, " --Ado on", 1, 0);
+				cmd = ostrcat("(sleep ", getlist(myconfig, "g1_delay", NULL), 0, 0);
+				cmd = ostrcat(cmd, "; ", 1, 0);
+				cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
+				cmd = ostrcat(cmd, " -o1) &", 1, 0);
 			}
 			system(cmd);
 			printf("%s\n", cmd);
 			free(cmd); cmd = NULL;
 		}
-		if(ostrcmp(getlist(myconfig, "g2_auto_on", NULL), "on") == 0)
+		if(ostrcmp(getlist(myconfig, "g2_auto_on", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g2_auto_on", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g2_auto_on", NULL), "deep") == 0 && flag == 2))
 		{
 			if(ostrcmp(getlist(myconfig, "g2_delay", NULL), "0") == 0)
-				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o2 > /tmp/helpsis", 0, 0);
+			{
+				if(ostrcmp(getlist(myconfig, "g2_delayhard", NULL), "0") == 0)
+					cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o2 > /tmp/helpsis", 0, 0);
+				else
+				{
+					cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A2 --Aafter ", 0, 0);
+					cmd = ostrcat(cmd, getlist(myconfig, "g2_delay", NULL), 1, 0);
+					cmd = ostrcat(cmd, " --Ado on", 1, 0);
+				}
+			}
 			else
 			{
-				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A2 --Aafter ", 0, 0);
-				cmd = ostrcat(cmd, getlist(myconfig, "g2_delay", NULL), 1, 0);
-				cmd = ostrcat(cmd, " --Ado on", 1, 0);
+				cmd = ostrcat("(sleep ", getlist(myconfig, "g2_delay", NULL), 0, 0);
+				cmd = ostrcat(cmd, "; ", 1, 0);
+				cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
+				cmd = ostrcat(cmd, " -o2) &", 1, 0);				
 			}
 			system(cmd);
 			printf("%s\n", cmd);
 			free(cmd); cmd = NULL;
 		}
-		if(ostrcmp(getlist(myconfig, "g3_auto_on", NULL), "on") == 0)
+		if(ostrcmp(getlist(myconfig, "g3_auto_on", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g3_auto_on", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g3_auto_on", NULL), "deep") == 0 && flag == 2))
 		{
 			if(ostrcmp(getlist(myconfig, "g3_delay", NULL), "0") == 0)
-				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o3 > /tmp/helpsis", 0, 0);
+			{
+				if(ostrcmp(getlist(myconfig, "g3_delayhard", NULL), "0") == 0)
+					cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o3 > /tmp/helpsis", 0, 0);
+				else
+				{
+					cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A3 --Aafter ", 0, 0);
+					cmd = ostrcat(cmd, getlist(myconfig, "g3_delay", NULL), 1, 0);
+					cmd = ostrcat(cmd, " --Ado on", 1, 0);
+				}
+			}
 			else
 			{
-				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A3 --Aafter ", 0, 0);
-				cmd = ostrcat(cmd, getlist(myconfig, "g3_delay", NULL), 1, 0);
-				cmd = ostrcat(cmd, " --Ado on", 1, 0);
+				cmd = ostrcat("(sleep ", getlist(myconfig, "g3_delay", NULL), 0, 0);
+				cmd = ostrcat(cmd, "; ", 1, 0);
+				cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
+				cmd = ostrcat(cmd, " -o3) &", 1, 0);
+
 			}
 			system(cmd);
 			printf("%s\n", cmd);
 			free(cmd); cmd = NULL;
 		}
-		if(ostrcmp(getlist(myconfig, "g4_auto_on", NULL), "on") == 0)
+		if(ostrcmp(getlist(myconfig, "g4_auto_on", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g4_auto_on", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g4_auto_on", NULL), "deep") == 0 && flag == 2))
 		{
 			if(ostrcmp(getlist(myconfig, "g4_delay", NULL), "0") == 0)
-				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o4 > /tmp/helpsis", 0, 0);
+			{
+				if(ostrcmp(getlist(myconfig, "g4_delayhard", NULL), "0") == 0)
+					cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o4 > /tmp/helpsis", 0, 0);
+				else
+				{
+					cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A4 --Aafter ", 0, 0);
+					cmd = ostrcat(cmd, getlist(myconfig, "g4_delay", NULL), 1, 0);
+					cmd = ostrcat(cmd, " --Ado on", 1, 0);
+				}
+			}
 			else
 			{
-				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A4 --Aafter ", 0, 0);
-				cmd = ostrcat(cmd, getlist(myconfig, "g4_delay", NULL), 1, 0);
-				cmd = ostrcat(cmd, " --Ado on", 1, 0);
+				cmd = ostrcat("(sleep ", getlist(myconfig, "g4_delay", NULL), 0, 0);
+				cmd = ostrcat(cmd, "; ", 1, 0);
+				cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
+				cmd = ostrcat(cmd, " -o4) &", 1, 0);				
 			}
 			system(cmd);
 			printf("%s\n", cmd);
@@ -456,65 +565,116 @@ void sispmctl_start()
 	}
 }
 
-void sispmctl_stop()
+void sispmctl_stop(int flag)
 {
 	char* cmd = NULL;
-	if(ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "on") == 0)
+	int maxsleep = 0;
+	if(ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "deep") == 0 && flag == 2))
 	{
 		if(ostrcmp(getlist(myconfig, "g1_delay", NULL), "0") == 0)
-			cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o1 > /tmp/helpsis", 0, 0);
+		{
+			if(ostrcmp(getlist(myconfig, "g1_delayhard", NULL), "0") == 0)
+				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -f1 > /tmp/helpsis", 0, 0);
+			else
+			{
+				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A1 --Aafter ", 0, 0);
+				cmd = ostrcat(cmd, getlist(myconfig, "g1_delay", NULL), 1, 0);
+				cmd = ostrcat(cmd, " --Ado off", 1, 0);
+			}
+		}
 		else
 		{
-			cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A1 --Aafter ", 0, 0);
-			cmd = ostrcat(cmd, getlist(myconfig, "g1_delay", NULL), 1, 0);
-			cmd = ostrcat(cmd, " --Ado off", 1, 0);
+			cmd = ostrcat("(sleep ", getlist(myconfig, "g1_delay", NULL), 0, 0);
+			cmd = ostrcat(cmd, "; ", 1, 0);
+			cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
+			cmd = ostrcat(cmd, " -f1) &", 1, 0);
+			if(maxsleep < atoi(getlist(myconfig, "g1_delay", NULL)))
+				maxsleep = atoi(getlist(myconfig, "g1_delay", NULL));			
 		}
 		system(cmd);
 		printf("%s\n", cmd);
 		free(cmd); cmd = NULL;
 	}
-	if(ostrcmp(getlist(myconfig, "g2_auto_off", NULL), "on") == 0)
+	if(ostrcmp(getlist(myconfig, "g2_auto_off", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g2_auto_off", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g2_auto_off", NULL), "deep") == 0 && flag == 2))
 	{
 		if(ostrcmp(getlist(myconfig, "g2_delay", NULL), "0") == 0)
-			cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o2 > /tmp/helpsis", 0, 0);
+		{
+			if(ostrcmp(getlist(myconfig, "g2_delayhard", NULL), "0") == 0)
+				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -f2 > /tmp/helpsis", 0, 0);
+			else
+			{
+				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A2 --Aafter ", 0, 0);
+				cmd = ostrcat(cmd, getlist(myconfig, "g2_delay", NULL), 1, 0);
+				cmd = ostrcat(cmd, " --Ado off", 1, 0);	
+			}
+		}
 		else
 		{
-			cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A2 --Aafter ", 0, 0);
-			cmd = ostrcat(cmd, getlist(myconfig, "g2_delay", NULL), 1, 0);
-			cmd = ostrcat(cmd, " --Ado off", 1, 0);
+			cmd = ostrcat("(sleep ", getlist(myconfig, "g2_delay", NULL), 0, 0);
+			cmd = ostrcat(cmd, "; ", 1, 0);
+			cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
+			cmd = ostrcat(cmd, " -f2) &", 1, 0);
+			if(maxsleep < atoi(getlist(myconfig, "g2_delay", NULL)))
+				maxsleep = atoi(getlist(myconfig, "g2_delay", NULL));			
 		}
 		system(cmd);
 		printf("%s\n", cmd);
 		free(cmd); cmd = NULL;
 	}
-	if(ostrcmp(getlist(myconfig, "g3_auto_off", NULL), "on") == 0)
+	if(ostrcmp(getlist(myconfig, "g3_auto_off", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g3_auto_off", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g3_auto_off", NULL), "deep") == 0 && flag == 2))
 	{
 		if(ostrcmp(getlist(myconfig, "g3_delay", NULL), "0") == 0)
-			cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o3 > /tmp/helpsis", 0, 0);
+		{
+			if(ostrcmp(getlist(myconfig, "g3_delayhard", NULL), "0") == 0)
+				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -f3 > /tmp/helpsis", 0, 0);
+			else
+			{
+				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A3 --Aafter ", 0, 0);
+				cmd = ostrcat(cmd, getlist(myconfig, "g3_delay", NULL), 1, 0);
+				cmd = ostrcat(cmd, " --Ado off", 1, 0);	
+			}
+		}
 		else
 		{
-			cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A3 --Aafter ", 0, 0);
-			cmd = ostrcat(cmd, getlist(myconfig, "g3_delay", NULL), 1, 0);
-			cmd = ostrcat(cmd, " --Ado off", 1, 0);
+			cmd = ostrcat("(sleep ", getlist(myconfig, "g3_delay", NULL), 0, 0);
+			cmd = ostrcat(cmd, "; ", 1, 0);
+			cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
+			cmd = ostrcat(cmd, " -f3) &", 1, 0);
+			if(maxsleep < atoi(getlist(myconfig, "g3_delay", NULL)))
+				maxsleep = atoi(getlist(myconfig, "g3_delay", NULL));			
 		}
 		system(cmd);
 		printf("%s\n", cmd);
 		free(cmd); cmd = NULL;
 	}
-	if(ostrcmp(getlist(myconfig, "g4_auto_off", NULL), "on") == 0)
+	if(ostrcmp(getlist(myconfig, "g4_auto_off", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g4_auto_off", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g4_auto_off", NULL), "deep") == 0 && flag == 2))
 	{
 		if(ostrcmp(getlist(myconfig, "g4_delay", NULL), "0") == 0)
-			cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -o4 > /tmp/helpsis", 0, 0);
+		{
+			if(ostrcmp(getlist(myconfig, "g4_delayhard", NULL), "0") == 0)
+				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -f4 > /tmp/helpsis", 0, 0);
+			else
+			{
+				cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A4 --Aafter ", 0, 0);
+				cmd = ostrcat(cmd, getlist(myconfig, "g4_delay", NULL), 1, 0);
+				cmd = ostrcat(cmd, " --Ado off", 1, 0);
+			}
+		}
 		else
 		{
-			cmd = ostrcat(createpluginpath("/sispmctl/bin/sispmctl", 0), " -A4 --Aafter ", 0, 0);
-			cmd = ostrcat(cmd, getlist(myconfig, "g4_delay", NULL), 1, 0);
-			cmd = ostrcat(cmd, " --Ado off", 1, 0);
+			cmd = ostrcat("(sleep ", getlist(myconfig, "g4_delay", NULL), 0, 0);
+			cmd = ostrcat(cmd, "; ", 1, 0);
+			cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
+			cmd = ostrcat(cmd, " -f4) &", 1, 0);
+			if(maxsleep < atoi(getlist(myconfig, "g4_delay", NULL)))
+				maxsleep = atoi(getlist(myconfig, "g4_delay", NULL));			
 		}
 		system(cmd);
 		printf("%s\n", cmd);
 		free(cmd); cmd = NULL;
 	}
+	if(maxsleep > 0)
+		sleep(maxsleep);
 }
 
 void sispmctl_main()
