@@ -764,7 +764,7 @@ int fewait(struct dvbdev* node)
 #endif
 
 #ifdef ARM
-	timer = 500;
+	timer = 600;
 #endif
 
 	//wait for tuner ready
@@ -2111,8 +2111,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	p[8].cmd = DTV_GUARD_INTERVAL, p[8].u.data = (fe_guard_interval_t) guardinterval;
 	p[9].cmd = DTV_HIERARCHY, p[9].u.data = (fe_hierarchy_t) hierarchy;
 	p[10].cmd = DTV_BANDWIDTH_HZ, p[10].u.data = bandwidth;
-	//p[10].cmd = DTV_BANDWIDTH_HZ, p[10].u.data = tpnode->symbolrate;
-	
+		
 	if(system == SYS_DVBT2)
 	{
 #if defined DTV_STREAM_ID
