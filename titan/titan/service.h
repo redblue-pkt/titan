@@ -300,7 +300,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 #endif		
 	audiostop(status.aktservice->audiodev);
-	if(checkbox("DM900") == 1 || checkrealbox("DM520") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		dmxstop(status.aktservice->dmxaudiodev);
 	//demux pcr start
 	if(flag == 0 && chnode->pcrpid > 0)
