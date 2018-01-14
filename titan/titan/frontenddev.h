@@ -764,7 +764,7 @@ int fewait(struct dvbdev* node)
 #endif
 
 #ifdef ARM
-	timer = 300;
+	timer = 500;
 #endif
 
 	//wait for tuner ready
@@ -2104,15 +2104,35 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
 	p[3].cmd = DTV_INVERSION,	p[3].u.data = (fe_spectral_inversion_t) inversion;
-	p[4].cmd = DTV_BANDWIDTH_HZ, p[4].u.data = bandwidth;
-	p[5].cmd = DTV_CODE_RATE_LP, p[5].u.data = (fe_code_rate_t) lp;
-	p[6].cmd = DTV_CODE_RATE_HP, p[6].u.data = (fe_code_rate_t) hp;
-	p[7].cmd = DTV_MODULATION, p[7].u.data = (fe_modulation_t) modulation;
-	p[8].cmd = DTV_TRANSMISSION_MODE,	p[8].u.data = (fe_transmit_mode_t) transmission;
-	p[9].cmd = DTV_GUARD_INTERVAL, p[9].u.data = (fe_guard_interval_t) guardinterval;
-	p[10].cmd = DTV_HIERARCHY, p[10].u.data = (fe_hierarchy_t) hierarchy;
-	p[11].cmd = DTV_TUNE;
-	cmdseq.num = 12;
+	p[4].cmd = DTV_CODE_RATE_LP, p[4].u.data = (fe_code_rate_t) lp;
+	p[5].cmd = DTV_CODE_RATE_HP, p[5].u.data = (fe_code_rate_t) hp;
+	p[6].cmd = DTV_MODULATION, p[6].u.data = (fe_modulation_t) modulation;
+	p[7].cmd = DTV_TRANSMISSION_MODE,	p[7].u.data = (fe_transmit_mode_t) transmission;
+	p[8].cmd = DTV_GUARD_INTERVAL, p[8].u.data = (fe_guard_interval_t) guardinterval;
+	p[9].cmd = DTV_HIERARCHY, p[9].u.data = (fe_hierarchy_t) hierarchy;
+	p[10].cmd = DTV_BANDWIDTH_HZ, p[10].u.data = bandwidth;
+	//p[10].cmd = DTV_BANDWIDTH_HZ, p[10].u.data = tpnode->symbolrate;
+	
+	if(system == SYS_DVBT2)
+	{
+#if defined DTV_STREAM_ID
+		p[11].cmd = DTV_STREAM_ID, p[11].u.data = 0;
+		p[12].cmd = DTV_TUNE;
+		cmdseq.num = 13;
+#elif defined DTV_DVBT2_PLP_ID
+		p[11].cmd = DTV_DVBT2_PLP_ID, p[11].u.data = 0;
+		p[12].cmd = DTV_TUNE;
+		cmdseq.num = 13;
+#else
+		p[11].cmd = DTV_TUNE;
+		cmdseq.num = 12;
+#endif
+	}
+	else
+	{
+		p[11].cmd = DTV_TUNE;
+		cmdseq.num = 12;
+	}
 	
 	if((ioctl(node->fd, FE_SET_PROPERTY, &cmdseq)) == -1)
 	{
