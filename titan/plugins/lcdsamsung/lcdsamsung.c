@@ -183,6 +183,7 @@ void LCD_Samsung1_thread()
 	int weatherwrite = 999;
 	int weatherref = 0;
 	char* startlcd = NULL;
+	char* bild = NULL;
 	
 	printf("lcd_samsung thread started\n");
 	
@@ -343,12 +344,13 @@ void LCD_Samsung1_thread()
 	else
 		LCD_Music = getscreen("LCD_spf87_Music");
 		
-	struct skin* mthumb = getscreennode(LCD_Music, "thumb");
-	struct skin* mtitle = getscreennode(LCD_Music, "title");
-	struct skin* malbum = getscreennode(LCD_Music, "album");
-	struct skin* mrealname = getscreennode(LCD_Music, "realname");
-	struct skin* mgenre = getscreennode(LCD_Music, "genre");
-	struct skin* myear = getscreennode(LCD_Music, "year");
+	struct skin* mthumb = getscreennode(LCD_Music, "lthumb");
+	struct skin* mtitle = getscreennode(LCD_Music, "ltitle");
+	struct skin* malbum = getscreennode(LCD_Music, "lalbum");
+	struct skin* mactors = getscreennode(LCD_Music, "lactors");
+	struct skin* mrealname = getscreennode(LCD_Music, "lrealname");
+	struct skin* mgenre = getscreennode(LCD_Music, "lgenre");
+	struct skin* myear = getscreennode(LCD_Music, "lyear");
 	struct skin* makttimeplay = getscreennode(LCD_Music, "akttime");
 	struct skin* mprogress = getscreennode(LCD_Music, "progress");
 	struct skin* mtitle1 = getscreennode(LCD_Music, "title1");
@@ -999,8 +1001,11 @@ void LCD_Samsung1_thread()
 					changetext(mrealname, musicdat.realname);
 					changetext(mgenre, musicdat.genre);
 					changetext(myear, musicdat.year);
+					changetext(mactors, musicdat.actors);
 					
-					changepic(mthumb, musicdat.thumb);
+					free(bild); bild = NULL;
+					bild = ostrcat(musicdat.thumb, NULL, 0, 0);
+					changepic(mthumb, bild);
 					
 					m_lock(&status.drawingmutex, 0);
 					if(drawscreen(LCD_Music, 0, 2) == -2)
