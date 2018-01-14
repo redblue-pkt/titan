@@ -2088,7 +2088,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 #endif
 
 #if DVB_API_VERSION >= 5
-	struct dtv_property p[12];
+	struct dtv_property p[13];
 	struct dtv_properties cmdseq;
 	cmdseq.props = p;
 
