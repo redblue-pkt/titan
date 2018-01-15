@@ -343,10 +343,10 @@ void screenmc_audioplayer()
 	
 					if(file_exist(pic))
 					{
+						free(musicdat.thumb); musicdat.thumb = NULL;
+						musicdat.thumb = ostrcat(pic, NULL, 0, 0);
 						changepic(thumb, pic);
 						thumb->hidden = NO;
-						free(musicdat.thumb); musicdat.thumb = NULL;
-						musicdat.thumb = ostrcat(pic, "", 0, 0);
 					}
 					else
 					{
