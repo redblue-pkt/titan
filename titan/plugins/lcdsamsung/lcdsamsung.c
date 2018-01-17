@@ -1003,9 +1003,8 @@ void LCD_Samsung1_thread()
 					changetext(myear, musicdat.year);
 					changetext(mactors, musicdat.actors);
 					
-					free(bild); bild = NULL;
-					bild = ostrcat(musicdat.thumb, NULL, 0, 0);
-					changepic(mthumb, bild);
+					if(file_exist(musicdat.thumb))
+						changepic(mthumb, musicdat.thumb);
 					
 					m_lock(&status.drawingmutex, 0);
 					if(drawscreen(LCD_Music, 0, 2) == -2)

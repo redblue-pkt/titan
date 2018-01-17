@@ -176,6 +176,10 @@ void screenmc_audioplayer()
 							tmpstr = ostrcat(tmpstr, mnode->id, 1, 0);
 		
 							pic = ostrcat(tmpstr, "_cover.jpg", 0, 0);
+							
+							free(musicdat.thumb); musicdat.thumb = NULL;
+							musicdat.thumb = ostrcat(tmpstr, NULL, 0, 0);
+							
 							free(tmpstr), tmpstr = NULL;
 						}
 	
@@ -343,8 +347,6 @@ void screenmc_audioplayer()
 	
 					if(file_exist(pic))
 					{
-						free(musicdat.thumb); musicdat.thumb = NULL;
-						musicdat.thumb = ostrcat(pic, NULL, 0, 0);
 						changepic(thumb, pic);
 						thumb->hidden = NO;
 					}

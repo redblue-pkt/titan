@@ -1024,9 +1024,14 @@ void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfob
 				dvdff(status.playspeed);
 			else	
 				playerff(status.playspeed);
-			*playinfobarstatus = 2;
-			*playinfobarcount = 0;
-			screenplayinfobar(file, showname, 0, playertype, flag);
+				
+			//Musik
+			if(playertype != 0 || flag != 2)
+			{		
+				*playinfobarstatus = 2;
+				*playinfobarcount = 0;
+				screenplayinfobar(file, showname, 0, playertype, flag);
+			}
 		}
 		if(status.playspeed < 0)
 		{
@@ -1037,9 +1042,13 @@ void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfob
 				dvdfr(status.playspeed);
 			else
 				playerfr(status.playspeed);
-			*playinfobarstatus = 2;
-			*playinfobarcount = 0;
-			screenplayinfobar(file, showname, 0, playertype, flag);
+			//Musik
+			if(playertype != 0 || flag != 2)
+			{		
+				*playinfobarstatus = 2;
+				*playinfobarcount = 0;
+				screenplayinfobar(file, showname, 0, playertype, flag);
+			}
 		}
 		if(status.playspeed == 0)
 		{
@@ -1054,9 +1063,13 @@ void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfob
 				dvdcontinue();
 			else
 				playercontinue();
-			*playinfobarstatus = 1;
-			*playinfobarcount = 0;
-			screenplayinfobar(file, showname, 0, playertype, flag);
+			//Musik
+			if(playertype != 0 || flag != 2)
+			{		
+				*playinfobarstatus = 1;
+				*playinfobarcount = 0;
+				screenplayinfobar(file, showname, 0, playertype, flag);
+			}
 		}
 	}
 }
@@ -1084,9 +1097,13 @@ void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 				dvdff(status.playspeed);
 			else
 				playerff(status.playspeed);
-			*playinfobarstatus = 2;
-			*playinfobarcount = 0;
-			screenplayinfobar(file, showname, 0, playertype, flag);
+			//Musik
+			if(playertype != 0 || flag != 2)
+			{		
+				*playinfobarstatus = 2;
+				*playinfobarcount = 0;
+				screenplayinfobar(file, showname, 0, playertype, flag);
+			}
 		}
 		if(status.playspeed < 0)
 		{
@@ -1097,9 +1114,13 @@ void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 				dvdfr(status.playspeed);
 			else
 				playerfr(status.playspeed);
-			*playinfobarstatus = 2;
-			*playinfobarcount = 0;
-			screenplayinfobar(file, showname, 0, playertype, flag);
+			//Musik
+			if(playertype != 0 || flag != 2)
+			{		
+				*playinfobarstatus = 2;
+				*playinfobarcount = 0;
+				screenplayinfobar(file, showname, 0, playertype, flag);
+			}
 		}
 		if(status.playspeed == 0)
 		{
@@ -1114,9 +1135,13 @@ void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfob
 				dvdcontinue();
 			else
 				playercontinue();
-			*playinfobarstatus = 1;
-			*playinfobarcount = 0;
-			screenplayinfobar(file, showname, 0, playertype, flag);
+			//Musik
+			if(playertype != 0 || flag != 2)
+			{		
+				*playinfobarstatus = 1;
+				*playinfobarcount = 0;
+				screenplayinfobar(file, showname, 0, playertype, flag);
+			}
 		}
 	}
 }
@@ -1205,6 +1230,20 @@ void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, in
 	
 	if(status.pause == 0 && status.playspeed == 0 && status.slowspeed == 0)
 	{
+		//Musik
+		if(playertype == 0 && flag == 2)
+		{
+			pos = playergetpts() / 90000;
+			if(pos + 10 > sec)
+					playerseek(sec * -1);
+			else
+			{
+				playerstop();
+				playerstart(file);
+			}
+			return;
+		}
+	
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
 		
@@ -1271,6 +1310,12 @@ void playrcjumpf(char* file, char* showname, int sec, int* playinfobarstatus, in
 
 	if(status.pause == 0 && status.playspeed == 0 && status.slowspeed == 0)
 	{
+		//Musik
+		if(playertype == 0 && flag == 2)
+		{
+			playerseek(sec);
+			return;
+		}
 		struct skin* load = getscreen("loading");
 		drawscreen(load, 0, 0);
 		
