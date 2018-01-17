@@ -2027,11 +2027,11 @@ msgstr ""
 "Unable to start download.\n"
 "Please try again later."
 
-#: dvdplay.h:62 mc_audioplayer.h:667 mc_audioplayer.h:779 mc_global.h:781
+#: dvdplay.h:62 mc_audioplayer.h:669 mc_audioplayer.h:781 mc_global.h:781
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:765 mc_videoplayer.h:904
-#: play.h:1707
+#: play.h:1752
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2584,7 +2584,7 @@ msgstr ""
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1505
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1550
 msgid "Create Folder"
 msgstr ""
 
@@ -2680,7 +2680,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr ""
 
-#: play.h:1626 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1671 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:144 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
@@ -3225,7 +3225,7 @@ msgstr ""
 msgid "EJECT"
 msgstr "Eject"
 
-#: adjust.h:70 httpdfunc.h:3905 play.h:1626 skin_default_skin.xml.h:184
+#: adjust.h:70 httpdfunc.h:3905 play.h:1671 skin_default_skin.xml.h:184
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -3250,7 +3250,7 @@ msgstr "Eject"
 msgid "EPG"
 msgstr ""
 
-#: play.h:1344 play.h:1350 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1389 play.h:1395 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "EPG Info"
 msgstr ""
 
@@ -3392,7 +3392,7 @@ msgstr ""
 #: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:60
 #: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:393 mc_audioplayer.h:667 mc_audioplayer.h:779
+#: mc_audioplayer.h:395 mc_audioplayer.h:669 mc_audioplayer.h:781
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
@@ -3417,8 +3417,8 @@ msgstr ""
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:321 play.h:497 play.h:614 play.h:1344 play.h:1350 play.h:1365
-#: play.h:1366 play.h:1402 play.h:1403 play.h:1417 play.h:1501
+#: player.h:321 play.h:497 play.h:614 play.h:1389 play.h:1395 play.h:1410
+#: play.h:1411 play.h:1447 play.h:1448 play.h:1462 play.h:1546
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:8
@@ -3931,7 +3931,7 @@ msgstr ""
 msgid "Feed"
 msgstr "Please enter feed address"
 
-#: play.h:1417
+#: play.h:1462
 msgid "File Exist, Really Rename and Overwrite exist File ?"
 msgstr ""
 
@@ -3961,7 +3961,7 @@ msgstr ""
 msgid "Filelist Select Color"
 msgstr ""
 
-#: mc_audioplayer.h:580 mc_audioplayer.h:624 mc_audioplayer.h:746
+#: mc_audioplayer.h:582 mc_audioplayer.h:626 mc_audioplayer.h:748
 #: mc_iptvplayer.h:267 mc_iptvplayer.h:311 mc_iptvplayer.h:453
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
 #: mc_videoplayer.h:609 mc_videoplayer.h:683 mc_videoplayer.h:870
@@ -5411,7 +5411,7 @@ msgstr ""
 msgid "Jump"
 msgstr ""
 
-#: play.h:1258
+#: play.h:1297
 msgid "Jump To (min)"
 msgstr "Jump to (min)"
 
@@ -5974,11 +5974,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1943
+#: play.h:1988
 msgid "Marker autoseek is started"
 msgstr "Marker autoseek started"
 
-#: play.h:1954
+#: play.h:1999
 msgid "Marker autoseek is stopped"
 msgstr "Marker autoseek stopped"
 
@@ -6221,8 +6221,8 @@ msgstr ""
 #: infobar.h:823 infobar.h:1137 keyactions.h:205 kravencfg.c:66
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
-#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:393
-#: mc_audioplayer.h:667 mc_audioplayer.h:779 mc_dateibrowser.h:36
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:395
+#: mc_audioplayer.h:669 mc_audioplayer.h:781 mc_dateibrowser.h:36
 #: mc_global.h:781 mc_global.h:1079 mc_internetbrowser.h:36
 #: mc_iptvplayer.h:106 mc_iptvplayer.h:374 mc_iptvplayer.h:485 mc_main.h:276
 #: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
@@ -6244,7 +6244,7 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:321 play.h:614
-#: play.h:1365 play.h:1402 play.h:1707 play.h:1943 play.h:1954 possetup.h:98
+#: play.h:1410 play.h:1447 play.h:1752 play.h:1988 play.h:1999 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
@@ -6831,7 +6831,7 @@ msgstr ""
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:393 mc_audioplayer.h:667 mc_audioplayer.h:779
+#: mc_audioplayer.h:395 mc_audioplayer.h:669 mc_audioplayer.h:781
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
@@ -6858,9 +6858,9 @@ msgstr ""
 #: newsletter.h:292 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:321 play.h:497 play.h:614 play.h:1344
-#: play.h:1350 play.h:1365 play.h:1366 play.h:1402 play.h:1403 play.h:1417
-#: play.h:1501 play.h:1707 play.h:1943 play.h:1954 plugins_dlna_skin.xml.h:7
+#: played.h:115 played.h:172 player.h:321 play.h:497 play.h:614 play.h:1389
+#: play.h:1395 play.h:1410 play.h:1411 play.h:1447 play.h:1448 play.h:1462
+#: play.h:1546 play.h:1752 play.h:1988 play.h:1999 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -7534,7 +7534,7 @@ msgstr ""
 msgid "Playlist download"
 msgstr ""
 
-#: mc_audioplayer.h:646 mc_iptvplayer.h:342 mc_pictureplayer.h:341
+#: mc_audioplayer.h:648 mc_iptvplayer.h:342 mc_pictureplayer.h:341
 #: mc_videoplayer.h:725
 msgid "Playlist-Mode"
 msgstr ""
@@ -7974,7 +7974,7 @@ msgstr ""
 msgid "Ram"
 msgstr "RAM"
 
-#: mc_audioplayer.h:625 mc_global.h:566 mc_global.h:594 mc_global.h:1135
+#: mc_audioplayer.h:627 mc_global.h:566 mc_global.h:594 mc_global.h:1135
 #: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:684
 #: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Random"
@@ -8022,15 +8022,15 @@ msgstr "activated"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1501
+#: play.h:1546
 msgid "Really Create Folder in ?"
 msgstr ""
 
-#: play.h:1366
+#: play.h:1411
 msgid "Really Delete ?"
 msgstr "Really Delete?"
 
-#: play.h:1403
+#: play.h:1448
 msgid "Really Rename ?"
 msgstr ""
 
@@ -8159,7 +8159,7 @@ msgstr ""
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1365 play.h:1402
+#: play.h:1410 play.h:1447
 msgid "Record in progress"
 msgstr "Recording active"
 
@@ -8313,13 +8313,13 @@ msgstr ""
 msgid "Removeing"
 msgstr "Removing"
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1407
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1452
 #: plugins_multiimage_skin.xml.h:13 skin_default_skin.xml.h:499
 #: skins_multiimage_skin.xml.h:13
 msgid "Rename"
 msgstr ""
 
-#: mc_audioplayer.h:475 mc_audioplayer.h:626 mc_global.h:1140
+#: mc_audioplayer.h:477 mc_audioplayer.h:628 mc_global.h:1140
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:313 mc_pictureplayer.h:157
 #: mc_pictureplayer.h:322 mc_videoplayer.h:440 mc_videoplayer.h:685
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:501 skins_mc_skin.xml.h:48
@@ -8330,7 +8330,7 @@ msgstr ""
 msgid "Repeat type"
 msgstr ""
 
-#: mc_audioplayer.h:468 mc_global.h:1138 mc_iptvplayer.h:141
+#: mc_audioplayer.h:470 mc_global.h:1138 mc_iptvplayer.h:141
 #: mc_pictureplayer.h:150 mc_videoplayer.h:433
 msgid "Repeat-On"
 msgstr "Repeat mode On"
@@ -8570,7 +8570,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr "Search"
 
-#: dvdplay.h:29 play.h:1626 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1671 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Select"
 
@@ -8594,43 +8594,43 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1626
+#: play.h:1671
 msgid "SORT"
 msgstr ""
 
-#: lcdsamsung.c:1184
+#: lcdsamsung.c:1183
 msgid "SPF-105P"
 msgstr ""
 
-#: lcdsamsung.c:1185
+#: lcdsamsung.c:1184
 msgid "SPF-107H"
 msgstr ""
 
-#: lcdsamsung.c:1177
+#: lcdsamsung.c:1176
 msgid "SPF-72H"
 msgstr ""
 
-#: lcdsamsung.c:1178
+#: lcdsamsung.c:1177
 msgid "SPF-75H"
 msgstr ""
 
-#: lcdsamsung.c:1179
+#: lcdsamsung.c:1178
 msgid "SPF-83H"
 msgstr ""
 
-#: lcdsamsung.c:1180
+#: lcdsamsung.c:1179
 msgid "SPF-85H"
 msgstr ""
 
-#: lcdsamsung.c:1181
+#: lcdsamsung.c:1180
 msgid "SPF-85P"
 msgstr ""
 
-#: lcdsamsung.c:1182
+#: lcdsamsung.c:1181
 msgid "SPF-87H"
 msgstr ""
 
-#: lcdsamsung.c:1183
+#: lcdsamsung.c:1182
 msgid "SPF-87H-old"
 msgstr ""
 
@@ -9321,7 +9321,7 @@ msgstr ""
 msgid "Sharename can't be empty!"
 msgstr "ERROR: Sharename must be entered!"
 
-#: infobar.h:699 mc_audioplayer.h:393 mc_iptvplayer.h:106 mc_main.h:276
+#: infobar.h:699 mc_audioplayer.h:395 mc_iptvplayer.h:106 mc_main.h:276
 #: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -12562,8 +12562,8 @@ msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:452 lcdpearl1.c:507
-#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1190 lcdsamsung.c:1194
-#: lcdsamsung.c:1198
+#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1189 lcdsamsung.c:1193
+#: lcdsamsung.c:1197
 msgid "ja"
 msgstr "Yes"
 
@@ -12770,8 +12770,8 @@ msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:451 lcdpearl1.c:506
-#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1189 lcdsamsung.c:1193
-#: lcdsamsung.c:1197
+#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1188 lcdsamsung.c:1192
+#: lcdsamsung.c:1196
 msgid "nein"
 msgstr "No"
 
@@ -13860,7 +13860,7 @@ msgstr ""
 msgid "thereafter on this Channel:"
 msgstr ""
 
-#: lcdsamsung.c:1186
+#: lcdsamsung.c:1185
 msgid "tiMote"
 msgstr ""
 
