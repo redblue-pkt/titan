@@ -1929,7 +1929,7 @@ msgstr "Không thể tạo hoặc xóa thư mục"
 msgid "Can't create service"
 msgstr "Không dò được kênh"
 
-#: service.h:1037
+#: service.h:1026
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -1977,7 +1977,7 @@ msgstr "Không thể mở thiết bị FRONTEND"
 msgid "Can't open file"
 msgstr "Không thể mở file"
 
-#: service.h:1043
+#: service.h:1032
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Không thể mở hoặc không biết loại đầu vào"
 
@@ -2200,7 +2200,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "số lượng kênh: "
 
-#: service.h:1048
+#: service.h:1037
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Danh sách chương trình rỗng(không tìm thấy chương trình) !"
 
@@ -3410,7 +3410,7 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1956 service.h:785 service.h:1054 shared.h:29
+#: security.h:685 security.h:1956 service.h:793 service.h:1043 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
 #: skin_default_skin.xml.h:199 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -6204,7 +6204,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:1888
 #: scan.h:2150 scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 security.h:1956
-#: service.h:785 service.h:1054 shared.h:29 shared.h:66 shared.h:83
+#: service.h:793 service.h:1043 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:603 skinadjust.h:619 skinadjust.h:627 skinadjust.h:668
 #: skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231
 #: sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
@@ -6824,7 +6824,7 @@ msgstr "E"
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:2150
 #: scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1956 service.h:785 service.h:1054
+#: security.h:668 security.h:685 security.h:1956 service.h:793 service.h:1043
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619
 #: skinadjust.h:627 skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110
 #: skinadjust.h:1172 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -10415,7 +10415,7 @@ msgstr ""
 "Timeshift: tập tin này ngắn\n"
 " vui lòng đợi một lúc rồi thử lại"
 
-#: service.h:785
+#: service.h:793
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -10784,7 +10784,7 @@ msgstr "Cấu hình tuner này không cho phép ghi"
 msgid "Tunertype"
 msgstr ""
 
-#: service.h:1040
+#: service.h:1029
 msgid "Tuning to Channel failed!"
 msgstr "Không chuyển được chương trình!"
 
