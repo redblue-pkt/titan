@@ -1912,7 +1912,7 @@ msgstr ""
 msgid "Can't create service"
 msgstr "Διαγραφή σταθμού"
 
-#: service.h:1018
+#: service.h:1017
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -1956,7 +1956,7 @@ msgstr ""
 msgid "Can't open file"
 msgstr "Εναλλακτικό αρχείο"
 
-#: service.h:1024
+#: service.h:1023
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
@@ -2177,7 +2177,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "Κανάλι"
 
-#: service.h:1029
+#: service.h:1028
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -3373,7 +3373,7 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1956 service.h:785 service.h:1035 shared.h:29
+#: security.h:685 security.h:1956 service.h:774 service.h:1034 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
 #: skin_default_skin.xml.h:199 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -6159,7 +6159,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:1888
 #: scan.h:2150 scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 security.h:1956
-#: service.h:785 service.h:1035 shared.h:29 shared.h:66 shared.h:83
+#: service.h:774 service.h:1034 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:603 skinadjust.h:619 skinadjust.h:627 skinadjust.h:668
 #: skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231
 #: sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
@@ -6772,7 +6772,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:2150
 #: scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1956 service.h:785 service.h:1035
+#: security.h:668 security.h:685 security.h:1956 service.h:774 service.h:1034
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619
 #: skinadjust.h:627 skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110
 #: skinadjust.h:1172 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -10350,7 +10350,7 @@ msgid ""
 "please wait a little and try again"
 msgstr ""
 
-#: service.h:785
+#: service.h:774
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -10717,7 +10717,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr ""
 
-#: service.h:1021
+#: service.h:1020
 msgid "Tuning to Channel failed!"
 msgstr ""
 
