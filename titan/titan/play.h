@@ -1686,7 +1686,7 @@ playerstart:
 	if(file != NULL)
 	{
 		//if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(file, ".ts") == 0)
-		if(cmpfilenameext(file, ".ts") == 0)
+		if(cmpfilenameext(file, ".ts") == 0 && checkbox("VUSOLO2") != 1)
 		{
 			playertype = 1;
 			addconfig("lastplayertype", "1");
