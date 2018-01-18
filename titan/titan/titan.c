@@ -423,7 +423,7 @@ void oshutdown(int exitcode, int flag)
 		dvbnode = dvbnode->next;
 	}
 
-	//Damit deinit ausgeführt wird
+	//Damit deinit ausgef\FChrt wird
 	if(getplugin("GEMBIRD Powermanager") != NULL)
 		delplugin("GEMBIRD Powermanager");
 	
@@ -664,7 +664,7 @@ int main(int argc, char *argv[])
 		ret = system("mount | grep titan");
   
 #ifndef SIMULATE
-	if(checkrealbox("HD51") == 1 || checkrealbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("VUSOLO2") == 1)
 		ret = 0;
 
 	// set pvr 1 = allowed , 0 = disabled
