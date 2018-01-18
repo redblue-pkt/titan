@@ -302,6 +302,11 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	audiostop(status.aktservice->audiodev);
 	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("VUSOLO2") == 1)
 		dmxstop(status.aktservice->dmxaudiodev);
+	if(checkbox("VUSOLO2") == 1)
+	{
+		videostop(status.aktservice->videodev, 1);
+		dmxstop(status.aktservice->dmxvideodev);
+	}
 
 	//demux pcr start
 	if(flag == 0 && chnode->pcrpid > 0)
@@ -463,7 +468,10 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			videocontinue(videonode);
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
 			setencoding(chnode, videonode);
-			
+			if(checkbox("VUSOLO2") == 1)
+			{
+				dmxstart(status.aktservice->dmxvideodev);
+			}
 			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
 				videofreeze(videonode);
 		
