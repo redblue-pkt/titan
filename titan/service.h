@@ -819,7 +819,10 @@ int servicestop(struct service *node, int clear, int flag)
 
 		dmxstop(node->dmxaudiodev);
 		if(checkbox("VUSOLO2") == 1) videoclearbuffer(node->videodev);
+		
 		videostop(node->videodev, clear);
+		if(checkbox("VUSOLO2") == 1)
+			dmxstop(status.aktservice->dmxvideodev);
 		
 		int	fastzap = getconfigint("fastzap", NULL);
 
