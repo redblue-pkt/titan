@@ -800,7 +800,7 @@ void sispmctl_settings()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
-			drawscreen(load, 0, 0);
+			//drawscreen(load, 0, 0);
 			addlist(myconfig, "g1_name", g1_name->ret);
 			addlist(myconfig, "g1_auto_on", g1_auto_on->ret);
 			addlist(myconfig, "g1_timer", g1_timer->ret);
@@ -835,10 +835,10 @@ void sispmctl_settings()
 			writelist(myconfig, sispmctlconf);
 			if(startextern == 1)
 				sispmctl_start(3);
-			if(startextern == 1)
+			if(stopextern == 1)
 				sispmctl_stop(3);
 			sleep(1);
-			clearscreen(load);
+			//clearscreen(load);
 		}
 	}
 	delownerrc(sis_einstellungen);
