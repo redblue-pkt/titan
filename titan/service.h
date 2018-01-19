@@ -217,7 +217,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	{
 		fenode = fegetdummy();
 		status.aktservice->fedev = fenode;
-printf("obi ound record / ts\n");
 	}
 
 	if(fenode == NULL)
@@ -304,6 +303,7 @@ printf("obi ound record / ts\n");
 	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		dmxstop(status.aktservice->dmxaudiodev);
 
+// gost
 //	if(checkbox("VUSOLO2") == 1)
 //	{
 //		videostop(status.aktservice->videodev, 1);
@@ -339,7 +339,7 @@ printf("obi ound record / ts\n");
 	else
 	{
 		err("dmx pcrpid not valid (%d)", chnode->pcrpid);
-//		dmxclose(status.aktservice->dmxpcrdev, -1);
+		dmxclose(status.aktservice->dmxpcrdev, -1);
 	}
 
 	status.aktservice->dmxpcrdev = dmxpcrnode;
@@ -470,14 +470,13 @@ printf("obi ound record / ts\n");
 			videocontinue(videonode);
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
 			setencoding(chnode, videonode);
+// gost
 //			if(checkbox("VUSOLO2") == 1)
 //			{
 //				dmxstart(status.aktservice->dmxvideodev);
 //			}
-printf("obi freez start\n");
 			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
 				videofreeze(videonode);
-printf("obi freez end\n");
 
 			if(videoplay(videonode)!= 0) {
 				usleep(500000);
