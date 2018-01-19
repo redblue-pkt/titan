@@ -6,6 +6,8 @@
 struct clist *myconfig[LISTHASHSIZE] = {NULL};
 char* sispmctlconf = NULL;
 struct stimerthread* sispmctl_checkthread = NULL;
+int startextern = 0;
+int stopextern = 0;
 
 int sispmctl_Anzeige()
 {
@@ -498,12 +500,18 @@ void sispmctl_start(int flag)
 	if(getwaswakuptimer() != 1)
 	{
 	
-		if(ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "deep") == 0 && flag == 2))
+		if(ostrcmp(flag == 3 || getlist(myconfig, "g1_auto_on", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g1_auto_on", NULL), "deep") == 0 && flag == 2))
 		{
+			if(flag == 3)
+				writesys("/var/etc/plugin/ps01sispm", "#!/bin/sh", 1);
+			
 			if(ostrcmp(getlist(myconfig, "g1_script", NULL), "yes") == 0)
 			{
 				cmd = ostrcat(createpluginpath("/sispmctl/bin/g1_script.sh", 0), " start", 0, 0);	
-				system(cmd);
+				if(flag = 3)
+					writesys("/var/etc/plugin/ps01sispm", cmd, 3);
+				else
+					system(cmd);
 				free(cmd); cmd = NULL;
 			}
 				
@@ -525,7 +533,10 @@ void sispmctl_start(int flag)
 				cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
 				cmd = ostrcat(cmd, " -o1) &", 1, 0);
 			}
-			system(cmd);
+			if(flag = 3)
+				writesys("/var/etc/plugin/ps01sispm", cmd, 3);
+			else
+				system(cmd);
 			printf("%s\n", cmd);
 			free(cmd); cmd = NULL;
 		}
@@ -534,7 +545,10 @@ void sispmctl_start(int flag)
 			if(ostrcmp(getlist(myconfig, "g2_script", NULL), "yes") == 0)
 			{
 				cmd = ostrcat(createpluginpath("/sispmctl/bin/g2_script.sh", 0), " start", 0, 0);	
-				system(cmd);
+				if(flag = 3)
+					writesys("/var/etc/plugin/ps01sispm", cmd, 3);
+				else
+					system(cmd);
 				free(cmd); cmd = NULL;
 			}
 			if(ostrcmp(getlist(myconfig, "g2_delay", NULL), "0") == 0)
@@ -555,7 +569,10 @@ void sispmctl_start(int flag)
 				cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
 				cmd = ostrcat(cmd, " -o2) &", 1, 0);				
 			}
-			system(cmd);
+			if(flag = 3)
+				writesys("/var/etc/plugin/ps01sispm", cmd, 3);
+			else
+				system(cmd);
 			printf("%s\n", cmd);
 			free(cmd); cmd = NULL;
 		}
@@ -564,7 +581,10 @@ void sispmctl_start(int flag)
 			if(ostrcmp(getlist(myconfig, "g3_script", NULL), "yes") == 0)
 			{
 				cmd = ostrcat(createpluginpath("/sispmctl/bin/g3_script.sh", 0), " start", 0, 0);	
-				system(cmd);
+				if(flag = 3)
+					writesys("/var/etc/plugin/ps01sispm", cmd, 3);
+				else
+					system(cmd);
 				free(cmd); cmd = NULL;
 			}
 			if(ostrcmp(getlist(myconfig, "g3_delay", NULL), "0") == 0)
@@ -586,7 +606,10 @@ void sispmctl_start(int flag)
 				cmd = ostrcat(cmd, " -o3) &", 1, 0);
 
 			}
-			system(cmd);
+			if(flag = 3)
+				writesys("/var/etc/plugin/ps01sispm", cmd, 3);
+			else
+				system(cmd);
 			printf("%s\n", cmd);
 			free(cmd); cmd = NULL;
 		}
@@ -595,7 +618,10 @@ void sispmctl_start(int flag)
 			if(ostrcmp(getlist(myconfig, "g4_script", NULL), "yes") == 0)
 			{
 				cmd = ostrcat(createpluginpath("/sispmctl/bin/g4_script.sh", 0), " start", 0, 0);	
-				system(cmd);
+				if(flag = 3)
+					writesys("/var/etc/plugin/ps01sispm", cmd, 3);
+				else
+					system(cmd);
 				free(cmd); cmd = NULL;
 			}
 			if(ostrcmp(getlist(myconfig, "g4_delay", NULL), "0") == 0)
@@ -616,7 +642,10 @@ void sispmctl_start(int flag)
 				cmd = ostrcat(cmd, createpluginpath("/sispmctl/bin/sispmctl", 0), 1, 0);
 				cmd = ostrcat(cmd, " -o4) &", 1, 0);				
 			}
-			system(cmd);
+			if(flag = 3)
+				writesys("/var/etc/plugin/ps01sispm", cmd, 3);
+			else
+				system(cmd);
 			printf("%s\n", cmd);
 			free(cmd); cmd = NULL;
 		}
@@ -627,8 +656,11 @@ void sispmctl_stop(int flag)
 {
 	char* cmd = NULL;
 	int maxsleep = 0;
-	if(ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "deep") == 0 && flag == 2))
+	if(ostrcmp(flag == 3 || getlist(myconfig, "g1_auto_off", NULL), "both") == 0 || (ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "standby") == 0 && flag == 1) || (ostrcmp(getlist(myconfig, "g1_auto_off", NULL), "deep") == 0 && flag == 2))
 	{
+		if(flag == 3)
+				writesys("/var/etc/plugin/pe01sispm", "#!/bin/sh", 1);
+		
 		if(ostrcmp(getlist(myconfig, "g1_script", NULL), "yes") == 0)
 		{
 			cmd = ostrcat(createpluginpath("/sispmctl/bin/g1_script.sh", 0), " stop", 0, 0);	
