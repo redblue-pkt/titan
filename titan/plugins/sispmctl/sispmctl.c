@@ -29,12 +29,12 @@ void init(void)
 	debug(10, "sispmctl Plugin loaded !!!");
 	
 	startextern = 0;
-	if( ! file_exist("/var/etc/plugin/ps01sispm"))
+	if( ! file_exist("/mnt/plugin/ps01sispm"))
 		sispmctl_start(2);
 	else
 		startextern = 1;
 	
-	if(file_exist("/var/etc/plugin/pe01sispm"))
+	if(file_exist("/mnt/plugin/pe01sispm"))
 		stopextern = 1;
 	else
 		stopextern = 0;
@@ -48,7 +48,7 @@ void deinit(void)
 {
 	if(sispmctl_checkthread != NULL)
 		sispmctl_checkthread->aktion = STOP;
-	if( ! file_exist("/var/etc/plugin/pe01sispm"))
+	if( ! file_exist("/mnt/plugin/pe01sispm"))
 		sispmctl_stop(2);
 	if(sispmctl_checkthread != NULL)
 		sleep(2);
