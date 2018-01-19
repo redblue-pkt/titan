@@ -1932,7 +1932,7 @@ msgstr "Negalima sukurti aplanko !"
 msgid "Can't create service"
 msgstr "ERROR: Can't create Service"
 
-#: service.h:1044
+#: service.h:1051
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -1982,7 +1982,7 @@ msgstr "ERROR: Can't open Frontend Device"
 msgid "Can't open file"
 msgstr "ERROR: Can't open File"
 
-#: service.h:1050
+#: service.h:1057
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
@@ -2216,7 +2216,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "No. Kanal :"
 
-#: service.h:1055
+#: service.h:1062
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "KLAIDA: Channellist tuias arba corrupt\n"
@@ -3434,7 +3434,7 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1956 service.h:797 service.h:1061 shared.h:29
+#: security.h:685 security.h:1956 service.h:797 service.h:1068 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
 #: skin_default_skin.xml.h:199 skins_autotimer_skin.xml.h:6
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
@@ -6256,7 +6256,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:1888
 #: scan.h:2150 scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 security.h:1956
-#: service.h:797 service.h:1061 shared.h:29 shared.h:66 shared.h:83
+#: service.h:797 service.h:1068 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:603 skinadjust.h:619 skinadjust.h:627 skinadjust.h:668
 #: skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231
 #: sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
@@ -6876,7 +6876,7 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1846 scan.h:1848 scan.h:1876 scan.h:1878 scan.h:2150
 #: scan.h:2241 scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 security.h:1956 service.h:797 service.h:1061
+#: security.h:668 security.h:685 security.h:1956 service.h:797 service.h:1068
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619
 #: skinadjust.h:627 skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110
 #: skinadjust.h:1172 skins_dlna_skin.xml.h:7 skinselector.h:231
@@ -10863,7 +10863,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr "Imtuvo Tipas"
 
-#: service.h:1047
+#: service.h:1054
 msgid "Tuning to Channel failed!"
 msgstr "KLAIDA: Kanalo nra"
 
@@ -11909,8 +11909,8 @@ msgstr "Boot stop"
 msgid "border"
 msgstr "Border"
 
-#: sispmctl.h:269 sispmctl.h:283 sispmctl.h:313 sispmctl.h:327 sispmctl.h:357
-#: sispmctl.h:371 sispmctl.h:401 sispmctl.h:415
+#: sispmctl.h:273 sispmctl.h:287 sispmctl.h:317 sispmctl.h:331 sispmctl.h:361
+#: sispmctl.h:375 sispmctl.h:405 sispmctl.h:419
 msgid "both"
 msgstr ""
 
@@ -12102,8 +12102,8 @@ msgstr "Ijungti Ethernet ?"
 msgid "debug"
 msgstr "Debug"
 
-#: sispmctl.h:271 sispmctl.h:285 sispmctl.h:315 sispmctl.h:329 sispmctl.h:359
-#: sispmctl.h:373 sispmctl.h:403 sispmctl.h:417
+#: sispmctl.h:275 sispmctl.h:289 sispmctl.h:319 sispmctl.h:333 sispmctl.h:363
+#: sispmctl.h:377 sispmctl.h:407 sispmctl.h:421
 msgid "deep"
 msgstr ""
 
@@ -12872,8 +12872,8 @@ msgstr "NFS serveris"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 sispmctl.h:275 sispmctl.h:279 sispmctl.h:319
-#: sispmctl.h:323 sispmctl.h:363 sispmctl.h:367 sispmctl.h:407 sispmctl.h:411
+#: settings_overclocking.h:244 sispmctl.h:279 sispmctl.h:283 sispmctl.h:323
+#: sispmctl.h:327 sispmctl.h:367 sispmctl.h:371 sispmctl.h:411 sispmctl.h:415
 #: skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
 #: timeshiftsettings.h:63 tithek_settings.h:42 tithek_settings.h:46
 #: tithek_settings.h:50 tithek_settings.h:54 tmc.h:531 tmc.h:535
@@ -12960,9 +12960,9 @@ msgstr ""
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
-#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:268
-#: sispmctl.h:282 sispmctl.h:312 sispmctl.h:326 sispmctl.h:356 sispmctl.h:370
-#: sispmctl.h:400 sispmctl.h:414 skinadjust.h:94 transponder.h:256
+#: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:272
+#: sispmctl.h:286 sispmctl.h:316 sispmctl.h:330 sispmctl.h:360 sispmctl.h:374
+#: sispmctl.h:404 sispmctl.h:418 skinadjust.h:94 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:964
 #: vfdisplay.h:50 vfdisplay.h:71 vfdisplay.h:92 vfdisplay.h:115
 #: vfdisplay.h:130 vfdisplay.h:165 vfdisplay.h:169
@@ -13651,9 +13651,9 @@ msgid "stable"
 msgstr "stabili"
 
 #: adjust.h:162 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:270 sispmctl.h:284
-#: sispmctl.h:314 sispmctl.h:328 sispmctl.h:358 sispmctl.h:372 sispmctl.h:402
-#: sispmctl.h:416 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:274 sispmctl.h:288
+#: sispmctl.h:318 sispmctl.h:332 sispmctl.h:362 sispmctl.h:376 sispmctl.h:406
+#: sispmctl.h:420 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Budti"
 
@@ -14332,8 +14332,8 @@ msgstr "Geltona"
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_autostart.h:595 settings_autostart.h:604
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 sispmctl.h:274 sispmctl.h:278 sispmctl.h:318
-#: sispmctl.h:322 sispmctl.h:362 sispmctl.h:366 sispmctl.h:406 sispmctl.h:410
+#: settings_overclocking.h:244 sispmctl.h:278 sispmctl.h:282 sispmctl.h:322
+#: sispmctl.h:326 sispmctl.h:366 sispmctl.h:370 sispmctl.h:410 sispmctl.h:414
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:43 tithek_settings.h:47
 #: tithek_settings.h:51 tithek_settings.h:55 tmc.h:532 tmc.h:536 xupnpd.h:30
