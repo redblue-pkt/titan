@@ -541,7 +541,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1)
 		{
-			if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+			if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 				return 0;
 			else
 				return 1;

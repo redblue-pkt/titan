@@ -416,7 +416,7 @@ int pipstop(struct service *node, int flag)
 		videostop(node->videodev, 1);
 		videoclose(node->videodev, -1);
 		
-		if(flag == 0 && checkbox("DM900") != 1)
+		if(flag == 0 && checkbox("DM900") != 1 && checkbox("DM920") != 1)
 			pippos(node->videodev, 0, 0, 0, 0, 1);
 		
 		node->videodev = NULL;
@@ -520,7 +520,7 @@ void pipmenu()
 	int dst_left = getconfigint("pip_dst_left", NULL);
 	int dst_top = getconfigint("pip_dst_top", NULL);
 
-	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 	{
 		b3->hidden = YES;
 		hdmi->hidden = YES;
@@ -566,7 +566,7 @@ void pipmenu()
 			addconfigint("pip_dst_top", dst_top);
 			break;
 		}
-		if(checkbox("DM900") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1)
+		if(checkbox("DM900") != 1 && checkbox("DM920") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1)
 		{
 			if(rcret == getrcconfigint("rcred", NULL))
 			{

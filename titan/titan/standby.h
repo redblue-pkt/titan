@@ -17,7 +17,7 @@ void screenstandby()
 	}
 
 	//check if all tuner unlocked, if yes set all volt off
-	if(getconfigint("standbytuneroff", NULL) == 1 && checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
+	if(getconfigint("standbytuneroff", NULL) == 1 && checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 	{
 		while(dvbnode != NULL)
 		{
@@ -68,7 +68,7 @@ void screenstandby()
 		if(getconfigint("fanmode", NULL) == 3)
 			writesys("/proc/stb/fp/fan", "1", 1);
 	}
-	else if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		setled(1);
 			
 
@@ -160,7 +160,7 @@ void screenstandby()
 	status.startmode = 1;
 	status.rcstandby = NULL;
 
-	if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		setled(1);
 	
 	if(status.aktservice->channel != NULL)

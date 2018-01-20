@@ -212,7 +212,7 @@ void settunerstatus()
 		else
 			fbc = 0;
 
-		if((checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && fbc != 1)
+		if((checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && fbc != 1)
 		{
 			if(ostrcmp("fe_01", dvbnode->feshortname) == 0)
 			{
@@ -2284,7 +2284,7 @@ int fegetdev()
 				int mz = -1;
 				struct dvb_frontend_info* t_feinfo = NULL;
 					
-				//tricky... temporäre nim_sockets bauen da ansonsten viel im code geändert werden müßte
+				//tricky... tempor\E4re nim_sockets bauen da ansonsten viel im code ge\E4ndert werden m\FC\DFte
 				free(tmpstr); tmpstr= NULL;
 				free(tmpstr1); tmpstr1= NULL;
 				tmpstr = ostrcat("NIM Socket " , oitoa(y), 0, 1);

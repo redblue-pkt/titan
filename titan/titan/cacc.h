@@ -88,7 +88,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		printf("[titan] DESCR_DATA: -> ");
 		hexdump(data, 32);
 
-		if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkchipset("BCM7424") == 1)
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkchipset("BCM7424") == 1)
 			rc = ioctl(desc_fd, CA_SET_DESCR_DATA_DREAM, &d);
 		else
 			rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
@@ -104,7 +104,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		d.length = 16;
 		d.data = data + 16;
 
-		if(checkbox("DM900") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 			rc = ioctl(desc_fd, CA_SET_DESCR_DATA_DREAM, &d);
 		else
 			rc = ioctl(desc_fd, CA_SET_DESCR_DATA, &d);
