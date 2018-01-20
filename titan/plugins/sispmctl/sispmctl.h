@@ -605,7 +605,13 @@ void sispmctl_stop(int flag)
 		printf("%s\n", cmd);
 		free(cmd); cmd = NULL;
 	}
-	if(maxsleep > 0)
+	if(maxsleep > 0 && flag == 3)
+	{
+		cmd =  ostrcat("sleep ", oitoa(maxsleep),0 ,1);
+		writesys("/mnt/plugin/pe01sispm", cmd, 3);
+		free(cmd); cmd = NULL;
+	}
+	else if(maxsleep > 0)
 		sleep(maxsleep);
 }
 
