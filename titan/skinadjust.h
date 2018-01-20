@@ -580,7 +580,7 @@ start:
 		drawscreen(skinadjust, 0, 0);
 
 #ifdef MIPSEL
-		if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0) 
+		if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0) 
 			setfbosd();
 #endif
 

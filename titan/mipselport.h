@@ -203,7 +203,7 @@ void blitfb2(struct fb* fbnode, int flag)
 	debug(444, "FB: var_screeninfo.bits_per_pixel %d", var_screeninfo.bits_per_pixel);
 	debug(444, "FB: var_screeninfo.grayscale %d", var_screeninfo.grayscale);
 	
-	if(checkrealbox("HD51") == 0 && checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 )
+	if(checkrealbox("HD51") == 0 && checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("WETEK") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 )
 	{
 		if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
 		{
@@ -256,7 +256,7 @@ void blitfb2(struct fb* fbnode, int flag)
 		blit();
 		
 		//woraround pixel fehler
-		if(checkbox("DM900") == 1)
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 		{
 			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
 			blit();

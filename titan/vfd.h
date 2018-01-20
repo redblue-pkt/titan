@@ -239,7 +239,7 @@ int writevfd(char *value)
 	if(checkbox("TF7700") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 		return writevfdioctl(value);
 		
-	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1) //inihdp
+	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1) //inihdp
 	//if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1) //inihdp
 	{
 		int oledret = 0;
@@ -432,7 +432,7 @@ void initvfd()
 
 	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 		initOLEDdream1();
-	else if(checkbox("DM900") == 1)
+	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 		setled(1);
 	else
 		setallvfdsymbols(0);
@@ -473,9 +473,9 @@ void updatevfd()
 	char* tmpstr = NULL;
 
 	// Set VFD icons:
-	if(checkchipset("BCM7424") != 1 && checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && checkbox("DM900") != 1) //inihdp
+	if(checkchipset("BCM7424") != 1 && checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && checkbox("DM900") != 1 && checkbox("DM920") != 1) //inihdp
 		setvfdicon(VFD_REC, status.recording > 0);
-	if(status.standby == 0 && checkbox("DM900") != 1 && checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO520") != 1 && checkbox("IPBOX91") != 1 && checkbox("ATEMIO6000") != 1 && checkbox("ATEMIO6100") != 1)
+	if(status.standby == 0 && checkbox("DM900") != 1 && checkbox("DM920") != 1 && checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO520") != 1 && checkbox("IPBOX91") != 1 && checkbox("ATEMIO6000") != 1 && checkbox("ATEMIO6100") != 1)
 	{
 		//setvfdicon(VFD_USB, 0);
 		if(getaktvideosize() == 0) //videosize is ok
@@ -565,7 +565,7 @@ void updatevfd()
 		{
 			case 1: // off
 				tmpstr = ostrcat(tmpstr, " ", 1, 0);
-				if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") || checkbox("DM900") == 1) //inihdp
+				if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") || checkbox("DM900") == 1 || checkbox("DM920") == 1) //inihdp
 				{
 					tmpstr = ostrcat(tmpstr, " ", 1, 0);
 					//free(tmpstr);
@@ -573,7 +573,7 @@ void updatevfd()
 				}
 				break;
 			case 2: // date + time
-				if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1) //inihdp
+				if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1) //inihdp
 					tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m - %H:%M"), 1, 1);
 				else
 					tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m %H:%M"), 1, 1);
@@ -590,7 +590,7 @@ void updatevfd()
 		}
 
 		// Switch off all VFD icons:
-		if(checkchipset("BCM7424") != 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1) //inihdp
+		if(checkchipset("BCM7424") != 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1) //inihdp
 			setallvfdsymbols(0);
 	}
 	if(VFD_Recordthread != NULL && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
@@ -667,7 +667,7 @@ void vfdrecordthread()
 		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
 		{
 			action = 2;
-			if(checkchipset("BCM7358") == 1 || checkbox("ATEMIO6200") == 1 || checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1) //inihde inihdp
+			if(checkchipset("BCM7358") == 1 || checkbox("ATEMIO6200") == 1 || checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1) //inihde inihdp
 				writevfd("RECORD");
 			else if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("SPARK") == 1)
 				writevfd("REC");

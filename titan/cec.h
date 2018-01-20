@@ -838,7 +838,7 @@ void cecinit()
 		
 	getAddressInfo();
 	
-	if(checkbox("DM900") == 1 && getwaswakuptimer() != 1)
+	if((checkbox("DM900") == 1 || checkbox("DM920") == 1) && getwaswakuptimer() != 1)
 	{	
 		sleep(2);
 		cecwakeup();
