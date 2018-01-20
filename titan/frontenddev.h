@@ -1928,6 +1928,10 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 		case 1: system = 18; break;
 		default: system = 1; break;
 	}
+#else
+		case 0: system = SYS_DVBC_ANNEX_A; break;
+		case 1: system = SYS_DVBC_ANNEX_C; break;
+		default: system = SYS_DVBC_ANNEX_A; break;
 #endif
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
