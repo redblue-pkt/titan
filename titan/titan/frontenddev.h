@@ -2526,14 +2526,11 @@ int fechangetype(struct dvbdev* tuner, char* value)
 		}
 		case feTerrestrial:
 		{
-			//fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
-			//to do set voltage --> wenn der Tuner es kann
-			//fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
-			//if(realname != NULL && ostrstr(realname, "DVB-T2") != NULL)
-			/*if(realname != NULL && ostrstr(realname, "T2") != NULL)
-				p[1].u.data = SYS_DVBT2;
-			else*/
-				p[1].u.data = SYS_DVBT;
+			if(getconfigint("fe_terr_volt", NULL) == 1)
+				fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
+			else
+				fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
+			p[1].u.data = SYS_DVBT;
 			break;
 		}
 		case feCable:

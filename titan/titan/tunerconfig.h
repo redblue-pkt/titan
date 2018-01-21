@@ -817,6 +817,7 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 	struct skin* tunerreceptiondvbt = getscreen("tunerreceptiondvbt");
 	struct skin* listbox = getscreennode(tunerreceptiondvbt, "listbox");
 	struct skin* tmp = NULL;
+	struct skin* tmp1 = NULL;
 	char* tmpstr = NULL;
 
 	listbox->aktline = 1;
@@ -829,6 +830,15 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 	}
 
 	createterrlist(tuner, tunerreceptiondvbt, listbox);
+	
+	tmp1 = addlistbox(tunerreceptiondvbt, listbox, tmp1, 1);
+	if(tmp1 != NULL)
+	{
+		tmp1->type = CHOICEBOX;
+		changetext(tmp1, _("Voltage")); changename(tmp1, "sel_volt");
+		addchoicebox(tmp1, "0", _("no")); addchoicebox(tmp1, "1", _("yes"));
+		setchoiceboxselection(tmp1, getconfig("fe_terr_volt", NULL));
+	}
 
 	drawscreen(tunerreceptiondvbt, 0, 0);
 	addscreenrc(tunerreceptiondvbt, listbox);
@@ -848,7 +858,8 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 			ret = 1;
 			deltranspondertunablestatus();
 			writetunerconfigterr(tuner, tunerreceptiondvbt);
-
+			addconfig("fe_terr_volt", tmp1->ret);
+			
 			tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
 			addconfigint(tmpstr, 1);
 			free(tmpstr); tmpstr = NULL;
