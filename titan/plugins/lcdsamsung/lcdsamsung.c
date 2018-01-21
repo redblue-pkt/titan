@@ -1004,7 +1004,12 @@ void LCD_Samsung1_thread()
 					changetext(mactors, musicdat.actors);
 					
 					if(file_exist(musicdat.thumb))
+					{
+						mthumb->hidden = NO;
 						changepic(mthumb, musicdat.thumb);
+					}
+					else
+						mthumb->hidden = YES;
 					
 					m_lock(&status.drawingmutex, 0);
 					if(drawscreen(LCD_Music, 0, 2) == -2)
