@@ -2047,6 +2047,7 @@ struct update
 
 struct musicdat
 {
+	char* dummy;
 	char* thumb;
 	char* title;
 	char* album;
