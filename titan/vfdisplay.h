@@ -50,6 +50,13 @@ void screenvfdisplay()
 		addchoicebox(blinkoff, "1", _("off"));
 		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
 	}
+	else if(checkrealbox("HD51") == 1)
+	{
+		changetext(blinkoff, _("continuous text"));
+		addchoicebox(blinkoff, "1", _("on"));
+		addchoicebox(blinkoff, "0", _("off"));
+		setchoiceboxselection(blinkoff, getconfig("vfd_scroll", NULL));
+	}
 	else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
 		char *tmp1 = NULL, *tmp2 = NULL;		
@@ -271,7 +278,10 @@ void screenvfdisplay()
 				addconfig("skinblinkoff", blinkoff->ret);
 				setled(1);
 			}
-			
+			if(checkrealbox("HD51") == 1)
+			{
+				addconfig("vfd_scroll", blinkoff->ret);
+			}
 			if(checkchipset("BCM7424") == 1) //inihdp
 			{
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
