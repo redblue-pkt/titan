@@ -245,13 +245,15 @@ if [ "$GROUP" = "dev" ]; then
     mkdir .deps
     echo make1
 
-	SYSROOT=$SRC/tmp/work/$BOX-oe-linux-gnueabi/titan-bin/2.0+svnr$VERSION-r3/recipe-sysroot
+	BUILDROOT=$SRC/tmp/work/$BOX-oe-linux-gnueabi/titan-bin/2.0+svnr$VERSION-r3
+	SYSROOT=$BUILDROOT/recipe-sysroot
+	GCCPATH=$BUILDROOT/recipe-sysroot/recipe-sysroot-native/usr/bin/$GCCPATH/$GCCPATH
+
     echo VERSION $VERSION
     echo SRC $SRC
     echo SYSROOT $SYSROOT
-
-	GCCPATH=$SYSROOT/usr/bin/crossscripts/arm-oe-linux-gnueabi
     echo GCCPATH $GCCPATH
+	echo FEST /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41796-r3/recipe-sysroot-native/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc
 
     $GCCPATH-gcc                                          -mhard-float --sysroot=$SYSROOT               -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I. -DDVDPLAYER -DARM -DMIPSEL -D$DREAM -D$CONFION -DCAMSUPP -D$eplayer -Os -mhard-float $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I$SYSROOT/usr/include               -I$eplayerinclude                                                                                     -I$SYSROOT/usr/include/glib-2.0               -I$SYSROOT/usr/include/libxml2               -I$SYSROOT/usr/lib/glib-2.0/include               -I$SYSROOT/usr/include/freetype2               -I$SYSROOT/usr/include/dreamdvd               -I$SYSROOT/usr/include/libdreamdvd               -I$SYSROOT/usr/include               -I"$HOME"/flashimg/source.titan/libdreamdvd -I$eplayerinclude -I"$HOME"/flashimg/source.titan/titan -MT titan-titan.o -DARM -DMIPSEL -D$DREAM -D$CONFION -DCAMSUPP -D$eplayer -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
 #   $SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/$GCCPATH-gcc -mhard-float --sysroot=$SRC/tmp/sysroots/$BOX -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I. -DDVDPLAYER -DARM -DMIPSEL -D$DREAM -D$CONFION -DCAMSUPP -DEPLAYER4 -Os -mhard-float $devflag -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -I$SRC/tmp/sysroots/$BOX/usr/include -I$SRC/tmp/sysroots/$BOX/usr/include/$eplayerlib -I$SRC/tmp/sysroots/$BOX/usr/lib/$eplayerlib/include -I$SRC/tmp/sysroots/$BOX/usr/include/glib-2.0 -I$SRC/tmp/sysroots/$BOX/usr/include/libxml2 -I$SRC/tmp/sysroots/$BOX/usr/lib/glib-2.0/include -I$SRC/tmp/sysroots/$BOX/usr/include/freetype2 -I$SRC/tmp/sysroots/$BOX/usr/include/dreamdvd -I$SRC/tmp/sysroots/$BOX/usr/include/libdreamdvd -I$SRC/tmp/sysroots/$BOX/usr/include -I"$HOME"/flashimg/source.titan/libdreamdvd                   -I"$HOME"/flashimg/source.titan/titan -MT titan-titan.o -DARM -DMIPSEL -D$DREAM -D$CONFION -DCAMSUPP -DEPLAYER4 -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
