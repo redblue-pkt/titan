@@ -24,12 +24,12 @@ BOXNAME=${18}
 TYPE1=${19}
 
 DREAM="NOTDREAM"
-if [ "$BOX" == "dm900" ] || [ "$BOX" == "dm520" ] || [ "$BOX" == "dm525" ];then
+if [ "$BOX" == "dm900" ] || [ "$BOX" == "dm920" ] || [ "$BOX" == "dm520" ] || [ "$BOX" == "dm525" ];then
 	DREAM="DREAMBOX"
 fi
 
 CONFION="NOTION"
-if [ "$BOX" == "dm900" ];then
+if [ "$BOX" == "dm900" ] || [ "$BOX" == "dm920" ];then
 	CONFION="CONFIG_ION"
 fi
 
