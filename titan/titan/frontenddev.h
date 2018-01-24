@@ -2593,6 +2593,14 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	{
 		printf("fe set property value %s data %d ... RC:%i\n", value, p[1].u.data, ret);
 	}
+	
+	if(type == feTerrestrial)
+	{
+		if(getconfigint("fe_terr_volt", NULL) == 1)
+			fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
+		else
+			fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
+	}
 
 	if(wasopen != 1)
 		feclose(tuner, -1);

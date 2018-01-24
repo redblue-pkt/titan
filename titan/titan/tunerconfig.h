@@ -866,6 +866,11 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 			writeallconfig(1);
 // test reload tuner
 			changedvbdev(tuner);
+			
+			if(getconfigint("fe_terr_volt", NULL) == 1)
+				fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
+			else
+				fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
 
 			break;
 		}
