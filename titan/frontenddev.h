@@ -2526,10 +2526,6 @@ int fechangetype(struct dvbdev* tuner, char* value)
 		}
 		case feTerrestrial:
 		{
-			if(getconfigint("fe_terr_volt", NULL) == 1)
-				fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
-			else
-				fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
 			p[1].u.data = SYS_DVBT;
 			break;
 		}
