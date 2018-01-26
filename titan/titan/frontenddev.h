@@ -1417,8 +1417,16 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 
 	calclof(node, tpnode, NULL, 0);
 
-	tmpstr = ostrcat(node->feshortname, "lnb_voltagemode", 0, 0);
-	voltagemode = getconfigint(tmpstr, node->feaktnr); 
+	if(node->feinfo->type == FE_OFDM) //DVB-T
+	{
+		tmpstr = ostrcat(node->feshortname, "_terr_volt", 0, 0);
+		voltagemode = getconfigint(tmpstr, NULL); 
+	}
+	else
+	{
+		tmpstr = ostrcat(node->feshortname, "lnb_voltagemode", 0, 0);
+		voltagemode = getconfigint(tmpstr, node->feaktnr);
+	} 
 	free(tmpstr); tmpstr = NULL;
 	switch(voltagemode)
 	{
@@ -2497,6 +2505,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	int ret = 0;
 	int wasopen = 0;
 	char* realname = gethypridtunerchoicesvaluename(tuner->devnr, value);
+	char* tmpstr = NULL:
 	
 	if(tuner->fd == -1)
 	{
@@ -2592,10 +2601,12 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	
 	if(type == feTerrestrial)
 	{
-		if(getconfigint("fe_terr_volt", NULL) == 1)
+		tmpstr = ostrcat(node->feshortname, "_terr_volt", 0, 0);
+		if(getconfigint("tmpstr", NULL) == 1)
 			fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
 		else
 			fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
+		free(tmpstr); tmpstr = NULL;
 	}
 
 	if(wasopen != 1)
