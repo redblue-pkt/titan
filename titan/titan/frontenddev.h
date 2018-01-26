@@ -2505,7 +2505,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	int ret = 0;
 	int wasopen = 0;
 	char* realname = gethypridtunerchoicesvaluename(tuner->devnr, value);
-	char* tmpstr = NULL:
+	char* tmpstr = NULL;
 	
 	if(tuner->fd == -1)
 	{
@@ -2601,7 +2601,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	
 	if(type == feTerrestrial)
 	{
-		tmpstr = ostrcat(node->feshortname, "_terr_volt", 0, 0);
+		tmpstr = ostrcat(tuner->feshortname, "_terr_volt", 0, 0);
 		if(getconfigint("tmpstr", NULL) == 1)
 			fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
 		else
