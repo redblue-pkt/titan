@@ -863,7 +863,7 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 			free(tmpstr); tmpstr = NULL;
 			
 			tmpstr = ostrcat(tuner->feshortname, "_terr_volt", 0, 0);
-			addconfigint(tmpstr, tmp1->ret);
+			addconfig(tmpstr, tmp1->ret);
 			if(getconfigint(tmpstr, NULL) == 1)
 				fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
 			else
