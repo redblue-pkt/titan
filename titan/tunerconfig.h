@@ -857,21 +857,22 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 		{
 			ret = 1;
 			deltranspondertunablestatus();
-			writetunerconfigterr(tuner, tunerreceptiondvbt);
-			addconfig("fe_terr_volt", tmp1->ret);
 			
 			tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
 			addconfigint(tmpstr, 1);
+			free(tmpstr); tmpstr = NULL;
+			
+			tmpstr = ostrcat(tuner->feshortname, "_terr_volt", 0, 0);
+			addconfigint(tmpstr, tmp1->ret);
+			if(getconfigint(tmpstr, NULL) == 1)
+				fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
+			else
+				fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
 			free(tmpstr); tmpstr = NULL;
 			writeallconfig(1);
 // test reload tuner
 			changedvbdev(tuner);
 			
-			if(getconfigint("fe_terr_volt", NULL) == 1)
-				fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
-			else
-				fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
-
 			break;
 		}
 	}
