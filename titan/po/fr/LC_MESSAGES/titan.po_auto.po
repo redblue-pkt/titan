@@ -3422,7 +3422,7 @@ msgstr ""
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:709
-#: tunerconfig.h:732 tunerconfig.h:1095 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:732 tunerconfig.h:1096 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -6210,7 +6210,7 @@ msgstr "Liste de Menu"
 #: tithek.h:2778 tithek.h:2791 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:709
-#: tunerconfig.h:732 tunerconfig.h:1095 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:732 tunerconfig.h:1096 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -6834,7 +6834,7 @@ msgstr "Ö"
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:709
-#: tunerconfig.h:732 tunerconfig.h:1095 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:732 tunerconfig.h:1096 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -10760,7 +10760,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr "Config Tuner"
 
-#: tunerconfig.h:1095
+#: tunerconfig.h:1096
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -11947,11 +11947,11 @@ msgstr ""
 msgid "committed, uncommitted, toneburst"
 msgstr ""
 
-#: tunerconfig.h:953
+#: tunerconfig.h:954
 msgid "connect with port A"
 msgstr ""
 
-#: tunerconfig.h:960
+#: tunerconfig.h:961
 msgid "connect with port B"
 msgstr ""
 
@@ -12030,11 +12030,11 @@ msgstr "défaut"
 msgid "default Directory"
 msgstr "Repertoire Imdb"
 
-#: tunerconfig.h:906
+#: tunerconfig.h:907
 msgid "define port A"
 msgstr ""
 
-#: tunerconfig.h:912
+#: tunerconfig.h:913
 msgid "define port B"
 msgstr ""
 
@@ -12058,7 +12058,7 @@ msgstr "DHCP"
 msgid "dir"
 msgstr ""
 
-#: tunerconfig.h:898
+#: tunerconfig.h:899
 msgid "direct connect"
 msgstr ""
 
@@ -12452,7 +12452,7 @@ msgstr ""
 msgid "intern"
 msgstr "interne"
 
-#: tunerconfig.h:933
+#: tunerconfig.h:934
 msgid "internal loop to Tuner"
 msgstr ""
 
@@ -12584,7 +12584,7 @@ msgstr ""
 msgid "logo"
 msgstr ""
 
-#: tunerconfig.h:931
+#: tunerconfig.h:932
 msgid "loop to Tuner"
 msgstr ""
 
@@ -12877,7 +12877,7 @@ msgstr "Ö"
 #: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:686
 #: sispmctl.h:700 sispmctl.h:730 sispmctl.h:744 sispmctl.h:774 sispmctl.h:788
 #: sispmctl.h:818 sispmctl.h:832 skinadjust.h:94 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:980
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:981
 #: vfdisplay.h:50 vfdisplay.h:57 vfdisplay.h:78 vfdisplay.h:99 vfdisplay.h:122
 #: vfdisplay.h:137 vfdisplay.h:172 vfdisplay.h:176
 msgid "off"
@@ -13903,11 +13903,11 @@ msgstr ""
 msgid "unicable"
 msgstr "Unicable"
 
-#: tunerconfig.h:973
+#: tunerconfig.h:974
 msgid "unicable at port A"
 msgstr ""
 
-#: tunerconfig.h:976
+#: tunerconfig.h:977
 msgid "unicable at port B"
 msgstr ""
 
