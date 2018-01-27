@@ -1417,16 +1417,9 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 
 	calclof(node, tpnode, NULL, 0);
 
-	if(node->feinfo->type == FE_OFDM) //DVB-T
-	{
-		tmpstr = ostrcat(node->feshortname, "_terr_volt", 0, 0);
-		voltagemode = getconfigint(tmpstr, NULL); 
-	}
-	else
-	{
-		tmpstr = ostrcat(node->feshortname, "lnb_voltagemode", 0, 0);
-		voltagemode = getconfigint(tmpstr, node->feaktnr);
-	} 
+	tmpstr = ostrcat(node->feshortname, "lnb_voltagemode", 0, 0);
+	voltagemode = getconfigint(tmpstr, node->feaktnr);
+
 	free(tmpstr); tmpstr = NULL;
 	switch(voltagemode)
 	{
@@ -1991,6 +1984,14 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		return 1;
 	}
 	debug(200, "transponder:frequ=%d, inversion=%d, bandwidth=%d, hp=%d, lp=%d, modulation=%d transmission=%d guardinterval=%d hierarchy=%d system=%d (%s)", tpnode->frequency, tpnode->inversion, tpnode->symbolrate, tpnode->fec, tpnode->polarization, tpnode->modulation, tpnode->pilot, tpnode->rolloff, tpnode->system, tpnode->system, node->feshortname);
+	
+	char* tmpstr = ostrcat(node->feshortname, "_terr_volt", 0, 0);
+	if(getconfigint(tmpstr, NULL) == 1)
+		fesetvoltage(node, SEC_VOLTAGE_13, 10);
+	else
+		fesetvoltage(node, SEC_VOLTAGE_OFF, 10);
+	free(tmpstr); tmpstr = NULL;
+	
 	
 	fe_delivery_system_t system = tpnode->system;
 	
@@ -2602,7 +2603,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	if(type == feTerrestrial)
 	{
 		tmpstr = ostrcat(tuner->feshortname, "_terr_volt", 0, 0);
-		if(getconfigint("tmpstr", NULL) == 1)
+		if(getconfigint(tmpstr, NULL) == 1)
 			fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
 		else
 			fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
