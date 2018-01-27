@@ -834,10 +834,12 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 	tmp1 = addlistbox(tunerreceptiondvbt, listbox, tmp1, 1);
 	if(tmp1 != NULL)
 	{
+		tmpstr = ostrcat(tuner->feshortname, "_terr_volt", 0, 0);
 		tmp1->type = CHOICEBOX;
 		changetext(tmp1, _("Voltage")); changename(tmp1, "sel_volt");
 		addchoicebox(tmp1, "0", _("no")); addchoicebox(tmp1, "1", _("yes"));
-		setchoiceboxselection(tmp1, getconfig("fe_terr_volt", NULL));
+		setchoiceboxselection(tmp1, getconfig(tmpstr, NULL));
+		free(tmpstr); tmpstr = NULL;
 	}
 
 	drawscreen(tunerreceptiondvbt, 0, 0);
