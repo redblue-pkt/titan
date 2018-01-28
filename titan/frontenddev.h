@@ -1921,7 +1921,7 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 
 	switch(system)
 	{	
-#if DREAMBOX
+#ifdef DREAMBOX
 		//case 0: system = SYS_DVBC_ANNEX_A; break;
 		//case 1: system = SYS_DVBC_ANNEX_C; break;
 		//default: system = SYS_DVBC_ANNEX_A; break;
