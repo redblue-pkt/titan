@@ -109,6 +109,9 @@ void screenmc_audioplayer()
 	realnametext->hidden = YES;
 	genretext->hidden = YES;
 	free(musicdat.thumb); musicdat.thumb = NULL;
+	//test for SH4
+	system("rm /tmp/mccover.jpg");
+	// ende test
 	free(musicdat.title); musicdat.title = NULL;
 	free(musicdat.album); musicdat.album = NULL;
 	free(musicdat.realname); musicdat.realname = NULL;
@@ -333,6 +336,9 @@ void screenmc_audioplayer()
 						genretext->hidden = YES;
 						free(pic), pic = NULL;
 						free(musicdat.thumb); musicdat.thumb = NULL;
+						//test for SH4
+						system("rm /tmp/mccover.jpg");
+						// ende test
 						free(musicdat.title); musicdat.title = NULL;
 						free(musicdat.album); musicdat.album = NULL;
 						free(musicdat.realname); musicdat.realname = NULL;
@@ -345,6 +351,12 @@ void screenmc_audioplayer()
 					{
 						free(musicdat.thumb); musicdat.thumb = NULL;
 						musicdat.thumb = ostrcat(pic, NULL, 0, 0);
+						//test for SH4
+						tmpstr = ostrcat("cp ", musicdat.thumb, 0, 0);
+						tmpstr = ostrcat(tmpstr, " /tmp/mccover.jpg", 1, 0);
+						system(tmpstr);
+						free(tmpstr); tmpstr=NULL;
+						// ende test
 						changepic(thumb, pic);
 						thumb->hidden = NO;
 					}
@@ -352,6 +364,9 @@ void screenmc_audioplayer()
 					{
 						thumb->hidden = YES;
 						free(musicdat.thumb); musicdat.thumb = NULL;
+						//test for SH4
+						system("rm /tmp/mccover.jpg");
+						// ende test
 					}
 	
 					free(pic), pic = NULL;				
@@ -360,6 +375,9 @@ void screenmc_audioplayer()
 				else
 				{
 					free(musicdat.thumb); musicdat.thumb = NULL;
+					//test for SH4
+					system("rm /tmp/mccover.jpg");
+					// ende test
 					free(musicdat.title); musicdat.title = NULL;
 					free(musicdat.album); musicdat.album = NULL;
 					free(musicdat.realname); musicdat.realname = NULL;

@@ -1003,7 +1003,8 @@ void LCD_Samsung1_thread()
 					changetext(myear, musicdat.year);
 					changetext(mactors, musicdat.actors);
 					
-					if(file_exist(musicdat.thumb))
+					//if(file_exist(musicdat.thumb))
+					if(file_exist("/tmp/mccover.jpg"))
 					{
 						mthumb->hidden = NO;
 						changepic(mthumb, musicdat.thumb);
