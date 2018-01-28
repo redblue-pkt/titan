@@ -29,7 +29,8 @@ if [ -z "$FILENAME" ]; then
 	FILENAME=none
 fi
 
-URL=http://movie4k.to
+#URL=http://movie4k.to
+URL=http://movie4kto.st
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=Movie4k
 
@@ -187,7 +188,8 @@ searchtv()
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 
-		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+#		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE$NEXT$PAGE2" > $TMP/cache.$FILENAME.1
 
 		pages=`cat $TMP/cache.$FILENAME.1 | grep $PAGE | sed "s/$PAGE/\n$PAGE/g" | cut -d ">" -f2 | cut -d "<" -f1 | tail -n1`
 		if [ -z "$pages" ];then
@@ -249,7 +251,8 @@ season()
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 
-		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+#		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE$NEXT$PAGE2" > $TMP/cache.$FILENAME.1
 
 		pages=`cat $TMP/cache.$FILENAME.1 | grep $PAGE | sed "s/$PAGE/\n$PAGE/g" | cut -d ">" -f2 | cut -d "<" -f1 | tail -n1`
 		if [ -z "$pages" ];then
@@ -316,7 +319,8 @@ episode()
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 
-		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+#		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE$NEXT$PAGE2" > $TMP/cache.$FILENAME.1
 
 		pages=`cat $TMP/cache.$FILENAME.1 | grep $PAGE | sed "s/$PAGE/\n$PAGE/g" | cut -d ">" -f2 | cut -d "<" -f1 | tail -n1`
 		if [ -z "$pages" ];then
@@ -383,7 +387,8 @@ search()
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 
-		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+#		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE$NEXT$PAGE2" > $TMP/cache.$FILENAME.1
 
 		pages=`cat $TMP/cache.$FILENAME.1 | grep $PAGE | sed "s/$PAGE/\n$PAGE/g" | cut -d ">" -f2 | cut -d "<" -f1 | tail -n1`
 		if [ -z "$pages" ];then
@@ -446,7 +451,9 @@ kino()
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 	#	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
-		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
+#		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$FILENAME.1
+
 		cat $TMP/cache.$FILENAME.1 | grep ^"<a href=" | grep "<img src=" >$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
@@ -480,7 +487,8 @@ kino()
 hosterlist()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
+#		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$FILENAME.1
 
 		cat $TMP/cache.$FILENAME.1 | grep ^"links\[" >$TMP/cache.$FILENAME.2
 
@@ -497,7 +505,7 @@ hosterlist()
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 		done 3<$TMP/cache.$FILENAME.2
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
 }
@@ -507,7 +515,8 @@ hoster()
 {
 	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 #	$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
-	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
+#	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
+	$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE$NEXT$PAGE2" > $TMP/cache.$FILENAME.1
 
 	STREAMURL=`cat $TMP/cache.$FILENAME.1 | sed 's!<a target="_blank" href="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2`
 
@@ -528,9 +537,9 @@ case $INPUT in
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 	search) $INPUT;;
-        searchtv) $INPUT;;
-        season) $INPUT;;
-        episode) $INPUT;;
+    searchtv) $INPUT;;
+    season) $INPUT;;
+    episode) $INPUT;;
 	kino) $INPUT;;
 	sorted) $INPUT;;
 	genre) $INPUT;;
