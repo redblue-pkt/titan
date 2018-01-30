@@ -3666,7 +3666,7 @@ msgstr "EPG Farbe 3"
 msgid "EpgChannels: "
 msgstr "EPG-Kanäle: "
 
-#: kinox.h:320 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
+#: kinox.h:317 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
 #: solarmovie.h:606
 msgid "Episode"
 msgstr "Folge"
@@ -9273,7 +9273,7 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82
 #: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
 #: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:194
-#: kinox.h:196 kinox.h:1046 kinox.h:1048 mlehd.h:90 mlehd.h:92 movie2k.h:74
+#: kinox.h:196 kinox.h:1038 kinox.h:1040 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
 #: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
 #: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
@@ -9333,7 +9333,7 @@ msgstr "Suche diesen Titel bei Netzkino (local)"
 msgid "Search only aktual epg ?"
 msgstr "Nur im EPG des aktuellen Senders suchen?"
 
-#: kinox.h:316 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
+#: kinox.h:313 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
 #: movie4k.h:999 movie4k.h:1115 solarmovie.h:602
 msgid "Season"
 msgstr "Staffel"
