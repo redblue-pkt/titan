@@ -2003,7 +2003,7 @@ msgid ""
 "Please try later."
 msgstr ""
 
-#: dvdplay.h:62 mc_audioplayer.h:667 mc_audioplayer.h:779 mc_global.h:781
+#: dvdplay.h:62 mc_audioplayer.h:685 mc_audioplayer.h:797 mc_global.h:781
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:765 mc_videoplayer.h:904
@@ -3344,7 +3344,7 @@ msgstr ""
 #: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:60
 #: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:393 mc_audioplayer.h:667 mc_audioplayer.h:779
+#: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
@@ -3418,7 +3418,7 @@ msgstr ""
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:709
-#: tunerconfig.h:732 tunerconfig.h:1096 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:732 tunerconfig.h:1098 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -3548,7 +3548,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "Kanał"
 
-#: kinox.h:300 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
+#: kinox.h:320 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
 #: solarmovie.h:606
 msgid "Episode"
 msgstr ""
@@ -3912,7 +3912,7 @@ msgstr ""
 msgid "Filelist Select Color"
 msgstr ""
 
-#: mc_audioplayer.h:580 mc_audioplayer.h:624 mc_audioplayer.h:746
+#: mc_audioplayer.h:598 mc_audioplayer.h:642 mc_audioplayer.h:764
 #: mc_iptvplayer.h:267 mc_iptvplayer.h:311 mc_iptvplayer.h:453
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
 #: mc_videoplayer.h:609 mc_videoplayer.h:683 mc_videoplayer.h:870
@@ -6152,8 +6152,8 @@ msgstr ""
 #: infobar.h:823 infobar.h:1137 keyactions.h:205 kravencfg.c:66
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
-#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:393
-#: mc_audioplayer.h:667 mc_audioplayer.h:779 mc_dateibrowser.h:36
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:411
+#: mc_audioplayer.h:685 mc_audioplayer.h:797 mc_dateibrowser.h:36
 #: mc_global.h:781 mc_global.h:1079 mc_internetbrowser.h:36
 #: mc_iptvplayer.h:106 mc_iptvplayer.h:374 mc_iptvplayer.h:485 mc_main.h:276
 #: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
@@ -6206,7 +6206,7 @@ msgstr ""
 #: tithek.h:2778 tithek.h:2791 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:709
-#: tunerconfig.h:732 tunerconfig.h:1096 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:732 tunerconfig.h:1098 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -6758,7 +6758,7 @@ msgstr ""
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:393 mc_audioplayer.h:667 mc_audioplayer.h:779
+#: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
@@ -6830,7 +6830,7 @@ msgstr ""
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:709
-#: tunerconfig.h:732 tunerconfig.h:1096 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:732 tunerconfig.h:1098 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
 #: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
 #: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
@@ -7465,7 +7465,7 @@ msgstr ""
 msgid "Playlist download"
 msgstr ""
 
-#: mc_audioplayer.h:646 mc_iptvplayer.h:342 mc_pictureplayer.h:341
+#: mc_audioplayer.h:664 mc_iptvplayer.h:342 mc_pictureplayer.h:341
 #: mc_videoplayer.h:725
 msgid "Playlist-Mode"
 msgstr "Tryb listy plików"
@@ -7893,7 +7893,7 @@ msgstr ""
 msgid "Ram"
 msgstr ""
 
-#: mc_audioplayer.h:625 mc_global.h:566 mc_global.h:594 mc_global.h:1135
+#: mc_audioplayer.h:643 mc_global.h:566 mc_global.h:594 mc_global.h:1135
 #: mc_iptvplayer.h:312 mc_pictureplayer.h:321 mc_videoplayer.h:684
 #: plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Random"
@@ -8241,7 +8241,7 @@ msgstr ""
 msgid "Rename"
 msgstr "username"
 
-#: mc_audioplayer.h:475 mc_audioplayer.h:626 mc_global.h:1140
+#: mc_audioplayer.h:493 mc_audioplayer.h:644 mc_global.h:1140
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:313 mc_pictureplayer.h:157
 #: mc_pictureplayer.h:322 mc_videoplayer.h:440 mc_videoplayer.h:685
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:501 skins_mc_skin.xml.h:48
@@ -8252,7 +8252,7 @@ msgstr "Powtóz"
 msgid "Repeat type"
 msgstr ""
 
-#: mc_audioplayer.h:468 mc_global.h:1138 mc_iptvplayer.h:141
+#: mc_audioplayer.h:486 mc_global.h:1138 mc_iptvplayer.h:141
 #: mc_pictureplayer.h:150 mc_videoplayer.h:433
 msgid "Repeat-On"
 msgstr "Powtóz"
@@ -8521,39 +8521,39 @@ msgstr ""
 msgid "SORT"
 msgstr "Sortuj"
 
-#: lcdsamsung.c:1188
+#: lcdsamsung.c:1189
 msgid "SPF-105P"
 msgstr ""
 
-#: lcdsamsung.c:1189
+#: lcdsamsung.c:1190
 msgid "SPF-107H"
 msgstr ""
 
-#: lcdsamsung.c:1181
+#: lcdsamsung.c:1182
 msgid "SPF-72H"
 msgstr ""
 
-#: lcdsamsung.c:1182
+#: lcdsamsung.c:1183
 msgid "SPF-75H"
 msgstr ""
 
-#: lcdsamsung.c:1183
+#: lcdsamsung.c:1184
 msgid "SPF-83H"
 msgstr ""
 
-#: lcdsamsung.c:1184
+#: lcdsamsung.c:1185
 msgid "SPF-85H"
 msgstr ""
 
-#: lcdsamsung.c:1185
+#: lcdsamsung.c:1186
 msgid "SPF-85P"
 msgstr ""
 
-#: lcdsamsung.c:1186
+#: lcdsamsung.c:1187
 msgid "SPF-87H"
 msgstr ""
 
-#: lcdsamsung.c:1187
+#: lcdsamsung.c:1188
 msgid "SPF-87H-old"
 msgstr ""
 
@@ -8967,8 +8967,8 @@ msgstr ""
 #: amazon.h:856 ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179
 #: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82
 #: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
-#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179
-#: kinox.h:181 kinox.h:996 kinox.h:998 mlehd.h:90 mlehd.h:92 movie2k.h:74
+#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:194
+#: kinox.h:196 kinox.h:1041 kinox.h:1043 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
 #: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
 #: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
@@ -9028,7 +9028,7 @@ msgstr ""
 msgid "Search only aktual epg ?"
 msgstr ""
 
-#: kinox.h:296 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
+#: kinox.h:316 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
 #: movie4k.h:999 movie4k.h:1115 solarmovie.h:602
 msgid "Season"
 msgstr ""
@@ -9244,7 +9244,7 @@ msgstr ""
 msgid "Sharename can't be empty!"
 msgstr ""
 
-#: infobar.h:699 mc_audioplayer.h:393 mc_iptvplayer.h:106 mc_main.h:276
+#: infobar.h:699 mc_audioplayer.h:411 mc_iptvplayer.h:106 mc_main.h:276
 #: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -10756,7 +10756,7 @@ msgstr ""
 msgid "Tunerconfig"
 msgstr ""
 
-#: tunerconfig.h:1096
+#: tunerconfig.h:1098
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -11096,7 +11096,7 @@ msgstr "Ukryj Virtualzap po"
 msgid "Vol off"
 msgstr ""
 
-#: tunerconfig.h:838
+#: tunerconfig.h:839
 msgid "Voltage"
 msgstr ""
 
@@ -11943,11 +11943,11 @@ msgstr ""
 msgid "committed, uncommitted, toneburst"
 msgstr ""
 
-#: tunerconfig.h:954
+#: tunerconfig.h:956
 msgid "connect with port A"
 msgstr ""
 
-#: tunerconfig.h:961
+#: tunerconfig.h:963
 msgid "connect with port B"
 msgstr ""
 
@@ -12026,11 +12026,11 @@ msgstr "STANDARD"
 msgid "default Directory"
 msgstr "Katalog Imdb"
 
-#: tunerconfig.h:907
+#: tunerconfig.h:909
 msgid "define port A"
 msgstr ""
 
-#: tunerconfig.h:913
+#: tunerconfig.h:915
 msgid "define port B"
 msgstr ""
 
@@ -12054,7 +12054,7 @@ msgstr ""
 msgid "dir"
 msgstr ""
 
-#: tunerconfig.h:899
+#: tunerconfig.h:901
 msgid "direct connect"
 msgstr ""
 
@@ -12448,7 +12448,7 @@ msgstr ""
 msgid "intern"
 msgstr ""
 
-#: tunerconfig.h:934
+#: tunerconfig.h:936
 msgid "internal loop to Tuner"
 msgstr ""
 
@@ -12471,8 +12471,8 @@ msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:452 lcdpearl1.c:507
-#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1194 lcdsamsung.c:1198
-#: lcdsamsung.c:1202
+#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1195 lcdsamsung.c:1199
+#: lcdsamsung.c:1203
 msgid "ja"
 msgstr ""
 
@@ -12580,7 +12580,7 @@ msgstr ""
 msgid "logo"
 msgstr ""
 
-#: tunerconfig.h:932
+#: tunerconfig.h:934
 msgid "loop to Tuner"
 msgstr ""
 
@@ -12679,8 +12679,8 @@ msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:451 lcdpearl1.c:506
-#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1193 lcdsamsung.c:1197
-#: lcdsamsung.c:1201
+#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1194 lcdsamsung.c:1198
+#: lcdsamsung.c:1202
 msgid "nein"
 msgstr ""
 
@@ -12788,7 +12788,7 @@ msgstr "Serwer NFS"
 #: timeshiftsettings.h:63 tithek_settings.h:42 tithek_settings.h:46
 #: tithek_settings.h:50 tithek_settings.h:54 tmc.h:531 tmc.h:535
 #: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
-#: tunerconfig.h:839 xupnpd.h:30
+#: tunerconfig.h:840 xupnpd.h:30
 msgid "no"
 msgstr ""
 
@@ -12873,7 +12873,7 @@ msgstr ""
 #: settings_autostart.h:53 settings_overclocking.h:276 sispmctl.h:686
 #: sispmctl.h:700 sispmctl.h:730 sispmctl.h:744 sispmctl.h:774 sispmctl.h:788
 #: sispmctl.h:818 sispmctl.h:832 skinadjust.h:94 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:981
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:983
 #: vfdisplay.h:50 vfdisplay.h:57 vfdisplay.h:78 vfdisplay.h:99 vfdisplay.h:122
 #: vfdisplay.h:137 vfdisplay.h:172 vfdisplay.h:176
 msgid "off"
@@ -13769,7 +13769,7 @@ msgstr ""
 msgid "thereafter on this Channel:"
 msgstr ""
 
-#: lcdsamsung.c:1190
+#: lcdsamsung.c:1191
 msgid "tiMote"
 msgstr ""
 
@@ -13899,11 +13899,11 @@ msgstr ""
 msgid "unicable"
 msgstr ""
 
-#: tunerconfig.h:974
+#: tunerconfig.h:976
 msgid "unicable at port A"
 msgstr ""
 
-#: tunerconfig.h:977
+#: tunerconfig.h:979
 msgid "unicable at port B"
 msgstr ""
 
@@ -14246,7 +14246,7 @@ msgstr ""
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:43 tithek_settings.h:47
 #: tithek_settings.h:51 tithek_settings.h:55 tmc.h:532 tmc.h:536
-#: tunerconfig.h:839 xupnpd.h:30
+#: tunerconfig.h:840 xupnpd.h:30
 msgid "yes"
 msgstr ""
 
