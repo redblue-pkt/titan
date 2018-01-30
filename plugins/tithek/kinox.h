@@ -70,7 +70,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 		newurl = ostrcat(newurl, path, 1, 0);
 		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
-		free(newurl, newurl = NULL);
+		free(newurl), newurl = NULL;
 
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
 
@@ -111,7 +111,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 					newurl = ostrcat(newurl, path, 1, 0);
 					tmpstr1 = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
-					free(newurl, newurl = NULL);
+					free(newurl), newurl = NULL;
 
 					from = ostrcat("<div class=\"Grahpics\"><a href=\"", path, 0, 0);
 					from = ostrcat(from, "\"><img src=\"", 1, 0);
@@ -274,7 +274,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 	newurl = ostrcat(newurl, path, 1, 0);
 	tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
-	free(newurl, newurl = NULL);
+	free(newurl), newurl = NULL;
 	titheklog(debuglevel, "/tmp/kinox2_tmpstr", NULL, NULL, NULL, tmpstr);
 	
 	if(tmpstr != NULL)
@@ -791,7 +791,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 	newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 	newurl = ostrcat(newurl, path, 1, 0);
 	tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
-	free(newurl, newurl = NULL);
+	free(newurl), newurl = NULL;
 
 	if(tmpstr != NULL)
 	{
@@ -814,7 +814,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 		newurl = ostrcat(newurl, pathnew, 1, 0);
 		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
-		free(newurl, newurl = NULL);
+		free(newurl), newurl = NULL;
 
 		free(pathnew), pathnew = NULL;
 	
