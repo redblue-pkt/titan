@@ -271,10 +271,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	}
 
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
-	newurl = ostrcat(newurl, path, 1, 0);
-	tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
-	free(newurl), newurl = NULL;
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 	titheklog(debuglevel, "/tmp/kinox2_tmpstr", NULL, NULL, NULL, tmpstr);
 	
 	if(tmpstr != NULL)
@@ -788,12 +785,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 	}
 
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
-	debug(99, "newurl1: %s", newurl);
-	newurl = ostrcat(newurl, path, 1, 0);
-	debug(99, "newurl2: %s", newurl);
-
-	tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 
 	free(newurl), newurl = NULL;
