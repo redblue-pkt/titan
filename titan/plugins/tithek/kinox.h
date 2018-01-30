@@ -52,7 +52,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		char* ip = NULL;
 		char* path = NULL;
 		char* menu = NULL;
-		char* neuurl = NULL;
+		char* newurl = NULL;
 		search = strstrip(search);
 		search = stringreplacechar(search, ' ', '+');
 		debug(99, "search: %s", search);
