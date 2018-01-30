@@ -767,8 +767,12 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		searchname = string_replace(getconfig("tithek_kinox_url", NULL), "", searchname, 0);
 		searchname = string_replace("http:////Stream/", "", searchname, 0);
 		searchname = string_replace("http:///Stream/", "", searchname, 0);
+		searchname = string_replace("http://Stream/", "", searchname, 0);
 		searchname = string_replace("https:////Stream/", "", searchname, 0);
 		searchname = string_replace("https:///Stream/", "", searchname, 0);
+		searchname = string_replace("https://Stream/", "", searchname, 0);
+		searchname = string_replace("//Stream/", "", searchname, 0);
+		searchname = string_replace("/Stream/", "", searchname, 0);
 		searchname = string_replace(".html", "", searchname, 0);
 		debug(99, "searchname: %s", searchname);
 	}
