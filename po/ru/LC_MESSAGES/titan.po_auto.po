@@ -5524,6 +5524,10 @@ msgstr "Клавиатура"
 msgid "Keys Updated !"
 msgstr "Updated !"
 
+#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
+msgid "KinoX Url"
+msgstr ""
+
 #: tpk_showname.h:58
 msgid "KravenConfig"
 msgstr ""
@@ -6192,7 +6196,7 @@ msgstr "Меню"
 msgid "Menu Protect"
 msgstr "Защита меню"
 
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Menu Title"
 msgstr "Название меню"
 
@@ -7134,9 +7138,9 @@ msgstr ""
 msgid "PCR PID:"
 msgstr "PCR PID"
 
-#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:12
+#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:13
 #: skin_default_skin.xml.h:429 skins_mc_skin.xml.h:42
-#: skins_tithek_skin.xml.h:12
+#: skins_tithek_skin.xml.h:13
 msgid "PICTURE"
 msgstr "Картинка"
 
@@ -7328,7 +7332,7 @@ msgstr "Переключение PiP"
 msgid "Pic HW-decode"
 msgstr "HW-декодирование"
 
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Pic Link"
 msgstr ""
 
@@ -7336,7 +7340,7 @@ msgstr ""
 msgid "Pic Name"
 msgstr "Имя фото"
 
-#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "Pic Ratio"
 msgstr "Оригинальный формат изображения"
 
@@ -8241,8 +8245,8 @@ msgstr "Красная кнопка"
 msgid "Red Key Action - Setup"
 msgstr "Выбор"
 
-#: plugins_tithek_skin.xml.h:14 skin_default_skin.xml.h:486
-#: skins_tithek_skin.xml.h:14
+#: plugins_tithek_skin.xml.h:15 skin_default_skin.xml.h:486
+#: skins_tithek_skin.xml.h:15
 msgid "Red-Menu"
 msgstr "Поиск"
 
@@ -8290,7 +8294,7 @@ msgstr "Кнопка питания"
 msgid "Remove Cachefile ?"
 msgstr "Удалить файл кэша?"
 
-#: plugins_tithek_skin.xml.h:15 skins_tithek_skin.xml.h:15
+#: plugins_tithek_skin.xml.h:16 skins_tithek_skin.xml.h:16
 msgid "Remove Cookies"
 msgstr ""
 
@@ -8901,8 +8905,8 @@ msgstr "Фантастика"
 msgid "Score:"
 msgstr "Оценка"
 
-#: adjust.h:310 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
-#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
+#: adjust.h:310 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:17
+#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:17
 msgid "Screensaver"
 msgstr "Заставка"
 
@@ -9378,7 +9382,7 @@ msgstr "Показать свободное пространство HDD"
 msgid "Show Modules"
 msgstr "Показать модули"
 
-#: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
+#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
 msgid "Show Pay Streams"
 msgstr "Показывать потоки платных каналов"
 
@@ -9863,7 +9867,7 @@ msgstr "Поток"
 msgid "Stream Config (iOS)"
 msgstr "Стрим-конфиг (iOS)"
 
-#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
+#: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
 msgid "Stream Link"
 msgstr ""
 
@@ -10385,11 +10389,11 @@ msgstr "Четверг"
 msgid "TiTan Mediathek"
 msgstr "Медиотека TiTan"
 
-#: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
+#: plugins_tithek_skin.xml.h:20 skins_tithek_skin.xml.h:20
 msgid "TiThek - Favorite Edit"
 msgstr "Редактор фаворитов"
 
-#: plugins_tithek_skin.xml.h:26 skins_tithek_skin.xml.h:26
+#: plugins_tithek_skin.xml.h:27 skins_tithek_skin.xml.h:27
 msgid "TiThek Menu"
 msgstr "Главное меню"
 
@@ -10397,7 +10401,7 @@ msgstr "Главное меню"
 msgid "TiThek Select Color"
 msgstr "Выберите цвет выделения файлов в медиатеке"
 
-#: plugins_tithek_skin.xml.h:27 skins_tithek_skin.xml.h:27
+#: plugins_tithek_skin.xml.h:28 skins_tithek_skin.xml.h:28
 msgid "TiThek Settings"
 msgstr "Настройки медиа центра"
 
@@ -10627,8 +10631,8 @@ msgstr "Фавориты"
 msgid "Tithek Hoster URL with http://"
 msgstr ""
 
-#: mediadb.h:2518 plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:669
-#: skins_tithek_skin.xml.h:20
+#: mediadb.h:2518 plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:669
+#: skins_tithek_skin.xml.h:21
 msgid "Title"
 msgstr "Название"
 
@@ -10906,8 +10910,8 @@ msgstr "Два шага приглушения звука"
 msgid "Typ"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:704
-#: skins_tithek_skin.xml.h:21
+#: plugins_tithek_skin.xml.h:22 skin_default_skin.xml.h:704
+#: skins_tithek_skin.xml.h:22
 msgid "Type"
 msgstr "Тип"
 
@@ -11115,11 +11119,11 @@ msgstr "Видео"
 msgid "VIDEO SETTINGS"
 msgstr "Настройки отображения файлов видео"
 
-#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
+#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
 msgid "VK Pass"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
+#: plugins_tithek_skin.xml.h:26 skins_tithek_skin.xml.h:26
 msgid "VK User"
 msgstr ""
 
@@ -11208,11 +11212,11 @@ msgstr "Вьетнамский"
 msgid "View"
 msgstr "Вид"
 
-#: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
+#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
 msgid "View Cover"
 msgstr "Как отображать миниатюры"
 
-#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
+#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
 msgid "View Sections"
 msgstr "Как отображать разделы меню"
 
@@ -12693,7 +12697,7 @@ msgstr ""
 msgid "lnbscreen"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
+#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 msgid "localname"
 msgstr "Имя"
 
@@ -13210,8 +13214,8 @@ msgstr ""
 msgid "please wait"
 msgstr "Ждите!"
 
-#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:13
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1423
+#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:14
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:14 tithek.h:1423
 msgid "please wait..."
 msgstr "Пожалуйста ждите!"
 
