@@ -5699,6 +5699,10 @@ msgstr "Tastatur"
 msgid "Keys Updated !"
 msgstr "aktualisiert!"
 
+#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
+msgid "KinoX Url"
+msgstr ""
+
 #: tpk_showname.h:58
 msgid "KravenConfig"
 msgstr ""
@@ -6369,7 +6373,7 @@ msgstr "Menü"
 msgid "Menu Protect"
 msgstr "Menü schützen"
 
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Menu Title"
 msgstr "Menü Titel"
 
@@ -7317,9 +7321,9 @@ msgstr ""
 msgid "PCR PID:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:12
+#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:13
 #: skin_default_skin.xml.h:429 skins_mc_skin.xml.h:42
-#: skins_tithek_skin.xml.h:12
+#: skins_tithek_skin.xml.h:13
 msgid "PICTURE"
 msgstr "Bild"
 
@@ -7511,7 +7515,7 @@ msgstr "PiP Tausch"
 msgid "Pic HW-decode"
 msgstr "Hardwarebilddecoder"
 
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Pic Link"
 msgstr "Bild Link"
 
@@ -7519,7 +7523,7 @@ msgstr "Bild Link"
 msgid "Pic Name"
 msgstr "Bildername"
 
-#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "Pic Ratio"
 msgstr "Bilder im Originalformat darstellen"
 
@@ -8430,8 +8434,8 @@ msgstr "Rote Taste"
 msgid "Red Key Action - Setup"
 msgstr "Rote Taste - Belegungsmenü "
 
-#: plugins_tithek_skin.xml.h:14 skin_default_skin.xml.h:486
-#: skins_tithek_skin.xml.h:14
+#: plugins_tithek_skin.xml.h:15 skin_default_skin.xml.h:486
+#: skins_tithek_skin.xml.h:15
 msgid "Red-Menu"
 msgstr "Rot-Menü"
 
@@ -8479,7 +8483,7 @@ msgstr "Aktion bei Power Taste der Fernbedienung"
 msgid "Remove Cachefile ?"
 msgstr "Zwischenspeicher leeren?"
 
-#: plugins_tithek_skin.xml.h:15 skins_tithek_skin.xml.h:15
+#: plugins_tithek_skin.xml.h:16 skins_tithek_skin.xml.h:16
 msgid "Remove Cookies"
 msgstr "Lösche Cookies"
 
@@ -9097,8 +9101,8 @@ msgstr "Science Fiction"
 msgid "Score:"
 msgstr "Punkte:"
 
-#: adjust.h:310 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
-#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
+#: adjust.h:310 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:17
+#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:17
 msgid "Screensaver"
 msgstr "Bildschirmschoner"
 
@@ -9574,7 +9578,7 @@ msgstr "Anzeige des freien Festplattenspeichers"
 msgid "Show Modules"
 msgstr "Zeige Modul Informationen"
 
-#: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
+#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
 msgid "Show Pay Streams"
 msgstr "Zeige kostenpflichtige und englische Streams"
 
@@ -10065,7 +10069,7 @@ msgstr ""
 msgid "Stream Config (iOS)"
 msgstr "Stream Konfiguration (iOS)"
 
-#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
+#: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
 msgid "Stream Link"
 msgstr ""
 
@@ -10606,11 +10610,11 @@ msgstr "Donnerstag"
 msgid "TiTan Mediathek"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
+#: plugins_tithek_skin.xml.h:20 skins_tithek_skin.xml.h:20
 msgid "TiThek - Favorite Edit"
 msgstr "Favoriten bearbeiten"
 
-#: plugins_tithek_skin.xml.h:26 skins_tithek_skin.xml.h:26
+#: plugins_tithek_skin.xml.h:27 skins_tithek_skin.xml.h:27
 msgid "TiThek Menu"
 msgstr "TiThek Menü"
 
@@ -10618,7 +10622,7 @@ msgstr "TiThek Menü"
 msgid "TiThek Select Color"
 msgstr "Cursor Farbe für TiThek"
 
-#: plugins_tithek_skin.xml.h:27 skins_tithek_skin.xml.h:27
+#: plugins_tithek_skin.xml.h:28 skins_tithek_skin.xml.h:28
 msgid "TiThek Settings"
 msgstr "TiThek Einstellungen"
 
@@ -10852,8 +10856,8 @@ msgstr "TiThek - Hauptmenü - Favoriten"
 msgid "Tithek Hoster URL with http://"
 msgstr "Tithek Hoster URL (http://...)"
 
-#: mediadb.h:2518 plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:669
-#: skins_tithek_skin.xml.h:20
+#: mediadb.h:2518 plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:669
+#: skins_tithek_skin.xml.h:21
 msgid "Title"
 msgstr "Titel"
 
@@ -11132,8 +11136,8 @@ msgstr "Zwei Stufen Stummschaltung"
 msgid "Typ"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:704
-#: skins_tithek_skin.xml.h:21
+#: plugins_tithek_skin.xml.h:22 skin_default_skin.xml.h:704
+#: skins_tithek_skin.xml.h:22
 msgid "Type"
 msgstr "Typ"
 
@@ -11341,11 +11345,11 @@ msgstr "Filme"
 msgid "VIDEO SETTINGS"
 msgstr "Einstellungen"
 
-#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
+#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
 msgid "VK Pass"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
+#: plugins_tithek_skin.xml.h:26 skins_tithek_skin.xml.h:26
 msgid "VK User"
 msgstr ""
 
@@ -11436,11 +11440,11 @@ msgstr "Viet"
 msgid "View"
 msgstr "Ansicht"
 
-#: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
+#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
 msgid "View Cover"
 msgstr "Ansicht Cover (streams)"
 
-#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
+#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
 msgid "View Sections"
 msgstr "Menü Ansicht"
 
@@ -12928,7 +12932,7 @@ msgstr "Senderliste Editor"
 msgid "lnbscreen"
 msgstr "LNB Einstellungen"
 
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
+#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 msgid "localname"
 msgstr "Lokaler Name"
 
@@ -13445,8 +13449,8 @@ msgstr "Wiedergabeliste Menü"
 msgid "please wait"
 msgstr "bitte warten"
 
-#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:13
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:13 tithek.h:1423
+#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:14
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:14 tithek.h:1423
 msgid "please wait..."
 msgstr "bitte warten"
 
