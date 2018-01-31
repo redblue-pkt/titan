@@ -40,6 +40,7 @@ mainmenu()
 {
 	echo "Kinofilme#$SRC $SRC new '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	#echo "Serien#$SRC $SRC new '?get=tv'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+        echo "Search#$SRC $SRC search '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
 
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
@@ -92,7 +93,55 @@ new()
 				fi
 			fi
 		done 3<$TMP/cache.$PARSER.$INPUT.2
-		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+#		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	fi
+
+	echo "$TMP/$PARSER.$INPUT.list"
+}
+
+search()
+{
+	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
+		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+
+#		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+
+		cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' ' ' | sed -e 's/<a href=/\n<a href=/g' -e 's/Film/\nFilm/g' | grep '^<a href=' | grep '<img src=' > $TMP/cache.$PARSER.$INPUT.1a
+		cat $TMP/cache.$PARSER.$INPUT.1a | sed '/Stream in HD/d' > $TMP/cache.$PARSER.$INPUT.2
+		while read -u 3 ROUND; do
+			TITLE=`echo $ROUND | sed 's/alt=/\nalt=/' | grep ^"alt=" | cut -d '"' -f2 | sed 's/#/%/'`
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/&%8211;/-/g' -e "s/&%8217;/'/g"`
+			PIC=`echo $ROUND | sed 's/img src/\nsrc=/' | grep ^"src=" | cut -d '"' -f2`
+			NEWPAGE=`echo $ROUND | sed 's/<a href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
+
+			if [ -z  "$PIC" ]; then  
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				TMPPIC="default.jpg"
+			else
+				TMPPIC=foxx_`echo $PIC | tr '/' '\n' | tail -n1`
+			fi
+
+#			echo "ROUND " $ROUND
+#			echo "Bildlink " $PIC
+#			echo "TMPPIC " $TMPPIC
+#			echo "TITLE " $TITLE
+#			echo "NEWPAGE " $NEWPAGE
+#
+#
+#exit
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
+					if [ ! -e $TMP/$PARSER.$INPUT.list ];then
+						touch $TMP/$PARSER.$INPUT.list
+					fi
+# obi
+					LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
+#					LINE="$TITLE#$SRC $SRC play $NEWPAGE#$PIC#$TMPPIC#$NAME#111"
+					echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+				fi
+			fi
+		done 3<$TMP/cache.$PARSER.$INPUT.2
+#		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	fi
 
 	echo "$TMP/$PARSER.$INPUT.list"
@@ -160,6 +209,7 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	new) $INPUT;;
+	search) $INPUT;;
 	page) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
