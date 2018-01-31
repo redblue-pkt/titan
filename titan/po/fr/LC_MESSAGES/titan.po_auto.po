@@ -10495,7 +10495,7 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
-#: tithek.c:129 tithek_global.h:595 tithek_global.h:717
+#: tithek.c:132 tithek_global.h:595 tithek_global.h:717
 msgid "Tithek - Mainmenu"
 msgstr ""
 
@@ -12789,8 +12789,8 @@ msgstr "NFS Serveur"
 #: settings_overclocking.h:244 sispmctl.h:693 sispmctl.h:697 sispmctl.h:737
 #: sispmctl.h:741 sispmctl.h:781 sispmctl.h:785 sispmctl.h:825 sispmctl.h:829
 #: skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
-#: timeshiftsettings.h:63 tithek_settings.h:42 tithek_settings.h:46
-#: tithek_settings.h:50 tithek_settings.h:54 tmc.h:531 tmc.h:535
+#: timeshiftsettings.h:63 tithek_settings.h:43 tithek_settings.h:47
+#: tithek_settings.h:51 tithek_settings.h:55 tmc.h:531 tmc.h:535
 #: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
 #: tunerconfig.h:840 xupnpd.h:30
 msgid "no"
@@ -13428,31 +13428,31 @@ msgstr ""
 msgid "show"
 msgstr ""
 
-#: tithek_settings.h:27 tithek_settings.h:36
+#: tithek_settings.h:28 tithek_settings.h:37
 msgid "show 12 entrys"
 msgstr ""
 
-#: tithek_settings.h:25 tithek_settings.h:34
+#: tithek_settings.h:26 tithek_settings.h:35
 msgid "show 2 entrys"
 msgstr ""
 
-#: tithek_settings.h:28 tithek_settings.h:37
+#: tithek_settings.h:29 tithek_settings.h:38
 msgid "show 20 entrys"
 msgstr ""
 
-#: tithek_settings.h:29 tithek_settings.h:38
+#: tithek_settings.h:30 tithek_settings.h:39
 msgid "show 30 entrys"
 msgstr ""
 
-#: tithek_settings.h:26 tithek_settings.h:35
+#: tithek_settings.h:27 tithek_settings.h:36
 msgid "show 6 entrys"
 msgstr ""
 
-#: tithek_settings.h:24 tithek_settings.h:33
+#: tithek_settings.h:25 tithek_settings.h:34
 msgid "show auto entrys"
 msgstr ""
 
-#: tithek_settings.h:30 tithek_settings.h:39
+#: tithek_settings.h:31 tithek_settings.h:40
 msgid "show in list"
 msgstr ""
 
@@ -14248,8 +14248,8 @@ msgstr "jaune"
 #: settings_overclocking.h:244 sispmctl.h:692 sispmctl.h:696 sispmctl.h:736
 #: sispmctl.h:740 sispmctl.h:780 sispmctl.h:784 sispmctl.h:824 sispmctl.h:828
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:43 tithek_settings.h:47
-#: tithek_settings.h:51 tithek_settings.h:55 tmc.h:532 tmc.h:536
+#: timeshiftsettings.h:62 tithek_settings.h:44 tithek_settings.h:48
+#: tithek_settings.h:52 tithek_settings.h:56 tmc.h:532 tmc.h:536
 #: tunerconfig.h:840 xupnpd.h:30
 msgid "yes"
 msgstr "oui"
