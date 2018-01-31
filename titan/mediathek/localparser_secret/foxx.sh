@@ -45,6 +45,9 @@ mainmenu()
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
 	fi
+	if [ -e "$TMP/$PARSER.search.list" ] ; then
+		rm $TMP/$PARSER.search.list
+	fi
 	if [ -e "$TMP/$PARSER.page.list" ] ; then
 		rm $TMP/$PARSER.page.list
 	fi
