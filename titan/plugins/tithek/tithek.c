@@ -122,6 +122,9 @@ void start(void)
 	long tmplistboxselectcol = status.listboxselectcol;
 	status.listboxselectcol = convertcol("tithek_selectcol");
 
+	if(getconfig("kino_url", NULL) == NULL)
+		addconfigtmp("kino_url", "kinos.to");
+
 //	if(checkbox("WHITEBOX") == 1)
 //		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
 //	else

@@ -17,6 +17,7 @@ void screentithek_settings()
 //	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
 	struct skin* vk_user = getscreennode(tithek_settings, "vk_user");
 	struct skin* vk_pass = getscreennode(tithek_settings, "vk_pass");
+	struct skin* kino_url = getscreennode(tithek_settings, "kino_url");
 	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
 	struct skin* b4 = getscreennode(tithek_settings, "b4");
@@ -79,6 +80,12 @@ void screentithek_settings()
 	else
 		changeinput(vk_pass, "****");
 
+	changemask(kino_url, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(kino_url, getconfig("kino_url", NULL));
+
+	if(!file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
+		kino_url->hidden = YES;
+
 	b3->hidden = YES;
 	b4->hidden = YES;
 
@@ -101,6 +108,7 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_pic_ratio", picratio, NULL);
 			addconfigscreencheck("tithek_hid_xxx", hidxxx, NULL);
 			addconfigscreencheck("tithek_autoupdate", autoupdate, NULL);
+			addconfigscreen("kino_url", kino_url);
 /*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
