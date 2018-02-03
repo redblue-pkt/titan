@@ -1718,7 +1718,11 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 	else
 		row_stride = width * colbytes;
 
+#ifdef MIPSEL
 	if(accelfb != NULL && accelfb->varfbsize > width8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
+#else
+	if(merkskinfb == NULL && accelfb != NULL && accelfb->varfbsize > width8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
+#endif
 	{
 		if(halign == CENTER)
 			posx += (mwidth >> 1) - (scalewidth >> 1);
