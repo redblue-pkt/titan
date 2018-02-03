@@ -1,6 +1,8 @@
 #ifndef SKIN_H
 #define SKIN_H
 
+struct fb* merkskinfb = NULL;
+
 void debugscreen(struct skin* node)
 {
 	struct skin* child = NULL;
@@ -4084,7 +4086,7 @@ int drawscreennodebyname(char* screenname, char* nodename, int screencalc)
 //screencalc 2: only calculate hidden nodes
 int drawscreen(struct skin* node, int screencalc, int flag)
 {
-	struct fb* merkskinfb = NULL;
+	//struct fb* merkskinfb = NULL;
 	int ret;
 	struct skin *child = NULL, *parent = NULL, *oldparent = NULL;
 
