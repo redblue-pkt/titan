@@ -561,7 +561,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 				
 						line = ostrcat(line, "#", 1, 0);
-						if(!ostrncmp("//", url, 2)
+						if(!ostrncmp("//", url, 2))
 							line = ostrcat(line, "http://", 1, 0);
 						line = ostrcat(line, url, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
