@@ -1,6 +1,12 @@
 #ifndef FRONTENDDEV_H
 #define FRONTENDDEV_H
 
+#ifndef SYS_DVBC_ANNEX_A
+enum {
+		SYS_UNDEFINED, SYS_DVBC_ANNEX_A, SYS_DVBC_ANNEX_B, SYS_DVBC_ANNEX_C
+};
+#endif
+
 enum {
 		T_Bandwidth_8MHz, T_Bandwidth_7MHz, T_Bandwidth_6MHz, T_Bandwidth_Auto, T_Bandwidth_5MHz, T_Bandwidth_1_712MHz, T_Bandwidth_10MHz
 };
