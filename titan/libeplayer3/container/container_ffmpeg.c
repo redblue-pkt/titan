@@ -1961,6 +1961,8 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, int
 
 			    if(headers != NULL)
 				{
+					headers = string_replace_all("%3D", "=", headers, 1);
+					headers = string_replace_all("%26", "&", headers, 1);
 			        av_dict_set(&avio_opts, "headers", headers, 0);
 				   	ffmpeg_printf(10, "set headers: %s\n", headers);
 				}

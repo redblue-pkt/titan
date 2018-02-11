@@ -260,7 +260,14 @@ vodlocker()
 	URL=`cat $TMP/cache.hoster.$hoster.1.url1`
 
 	if [ ! -z "$URL" ];then
-		echo "$URL" >> $STREAMLIST
+#		echo "$URL" >> $STREAMLIST
+
+		REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'` 
+		echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" >> $STREAMLIST
+#		echo "$URL|User-Agent=$USERAGENT" >> $STREAMLIST
+
+		sed 's/#HttpOnly_//g' -i /mnt/network/cookies
+
 	fi
 
 	URL=$STREAMLIST
@@ -692,7 +699,7 @@ if [ "$TYPE" == "get" ];then
 		waaw|netu|hqq) waaw $INPUT;;
 		streamango|streamcherry) streamango $INPUT;;
 		vidlox) vidlox $INPUT;;
-		redirector|googlevideo|vodcloud|google) directstream "$INPUT";;
+		redirector|googlevideo|vodcloud|google|skyfall|s4) directstream "$INPUT";;
 		aliez) aliez $INPUT;;
 		sport7) sport7 $INPUT;;
 		sportstream365) sportstream365 $INPUT;;
