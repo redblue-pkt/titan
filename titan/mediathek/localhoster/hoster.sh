@@ -35,6 +35,8 @@ youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mn
 youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
 hlsdlbg="$HLSBIN -u $USERAGENT -o"
 
+sed 's/#HttpOnly_//g' -i /mnt/network/cookies
+
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
