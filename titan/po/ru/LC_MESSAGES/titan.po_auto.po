@@ -143,7 +143,7 @@ msgstr "Авторы"
 msgid "->"
 msgstr ""
 
-#: pip.h:658 skin_default_skin.xml.h:635
+#: pip.h:660 skin_default_skin.xml.h:635
 msgid "->swap<-"
 msgstr ""
 
@@ -12154,7 +12154,7 @@ msgstr "Отладка"
 msgid "deep"
 msgstr ""
 
-#: harddisk.h:165 pip.h:657 pip.h:665 plugins_mc_skin.xml.h:15
+#: harddisk.h:165 pip.h:659 pip.h:667 plugins_mc_skin.xml.h:15
 #: skins_mc_skin.xml.h:15
 msgid "default"
 msgstr "По умолчанию"
@@ -13178,15 +13178,15 @@ msgstr "Пин-код"
 msgid "pincheck"
 msgstr ""
 
-#: pip.h:662
+#: pip.h:664
 msgid "pip end"
 msgstr ""
 
-#: pip.h:661
+#: pip.h:663
 msgid "pip menu"
 msgstr ""
 
-#: pip.h:666
+#: pip.h:668
 msgid "pip zap"
 msgstr ""
 
