@@ -39,6 +39,9 @@ init()
 mainmenu()
 {
 	echo "Channels#$SRC $SRC channels 'channels'#http://atemio.dyndns.tv/mediathek/menu/channels.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	if [ -e "$TMP/$PARSER.channels.list" ] ; then
+		rm $TMP/$PARSER.channels.list
+	fi
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -50,10 +53,13 @@ channels()
 
 #		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
-		cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' ' ' | tr '\r' ' ' | sed 's/<div class="ml-item chanel-tem">/\n<div class="ml-item chanel-tem">/g' | grep ^'<div class="ml-item chanel-tem">' | grep alt= | grep -v .gif > /$TMP/cache.$PARSER.$INPUT.2
+#		cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' ' ' | tr '\r' ' ' | sed 's/<div class="ml-item chanel-tem">/\n<div class="ml-item chanel-tem">/g' | grep ^'<div class="ml-item chanel-tem">' | grep alt= | grep -v .gif > /$TMP/cache.$PARSER.$INPUT.2
+		cat $TMP/cache.$PARSER.$INPUT.1 | sed '/<div class="ml-list-holder">/,/<nav class="page-nav">/!d;/<a href=/!d;N;s/\r\n/ /;s/^.* <a href="//;s/" class="ml-image">.*<img src="/#/;s/" alt=".*$//' > /$TMP/cache.$PARSER.$INPUT.2
 		while read -u 3 ROUND; do
-			PIC=`echo $ROUND | sed -nr 's/.*<img src="([^"]+)".*/\1/p'`
-			NEWPAGE=`echo $ROUND | sed -nr 's/.*<a href="([^"]+)".*/\1/p'`
+#			PIC=`echo $ROUND | sed -nr 's/.*<img src="([^"]+)".*/\1/p'`
+			PIC=`echo $ROUND | cut -d'#' -f2`
+#			NEWPAGE=`echo $ROUND | sed -nr 's/.*<a href="([^"]+)".*/\1/p'`
+			NEWPAGE=`echo $ROUND | cut -d'#' -f1`
 			TITLE=`echo $NEWPAGE | tr '/' '\n' | tail -n1`
 
 			if [ -z  "$PIC" ]; then  
