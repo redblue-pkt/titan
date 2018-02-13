@@ -482,7 +482,9 @@ int pipswap(struct service *node)
 		}
 		else
 		{
+			status.aktservice->fedev->felock++;
 			pipstart(chnodeT, NULL, 0);
+			status.aktservice->fedev->felock--;
 			free(node->channellist);
 			node->channellist = NULL;
 			node->channellist = ostrcat(status.lastservice->channellist, NULL, 0, 0);
