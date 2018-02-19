@@ -6,7 +6,7 @@
 SRC=$1
 INPUT=$2
 PARAM=$3
-URL="https://beeg.com/api/v6/2511/"
+URL="https://beeg.com/api/v6/2512/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 
