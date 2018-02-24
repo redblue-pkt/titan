@@ -67,7 +67,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 			path = string_replace_all("https:///", "", search, 0);
 		}
 //		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-		newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
+		newurl = ostrcat(getconfig("kino_url", NULL), "/", 0, 0);
 		newurl = ostrcat(newurl, path, 1, 0);
 //		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
