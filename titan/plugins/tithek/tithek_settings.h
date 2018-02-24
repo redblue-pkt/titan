@@ -17,7 +17,7 @@ void screentithek_settings()
 //	struct skin* amazon_pass = getscreennode(tithek_settings, "amazon_pass");
 	struct skin* vk_user = getscreennode(tithek_settings, "vk_user");
 	struct skin* vk_pass = getscreennode(tithek_settings, "vk_pass");
-	struct skin* kino_url = getscreennode(tithek_settings, "kino_url");
+	struct skin* kinox_url = getscreennode(tithek_settings, "kinox_url");
 	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
 	struct skin* b4 = getscreennode(tithek_settings, "b4");
@@ -57,34 +57,34 @@ void screentithek_settings()
 	setchoiceboxselection(autoupdate, getconfig("tithek_autoupdate", NULL));
 /*
 	changemask(amazon_user, "abcdefghijklmnopqrstuvwxyz");
-	if(getconfig("amazon_pass", NULL) == NULL)
-		changeinput(amazon_user, getconfig("amazon_user", NULL));
+	if(getconfig("tithek_amazon_pass", NULL) == NULL)
+		changeinput(amazon_user, getconfig("tithek_amazon_user", NULL));
 	else
 		changeinput(amazon_user, "****");
 
 	changemask(amazon_pass, "abcdefghijklmnopqrstuvwxyz");
-	if(getconfig("amazon_pass", NULL) == NULL)
-		changeinput(amazon_pass, getconfig("amazon_pass", NULL));
+	if(getconfig("tithek_amazon_pass", NULL) == NULL)
+		changeinput(amazon_pass, getconfig("tithek_amazon_pass", NULL));
 	else
 		changeinput(amazon_pass, "****");
 */
 	changemask(vk_user, "abcdefghijklmnopqrstuvwxyz");
-	if(getconfig("vk_pass", NULL) == NULL)
-		changeinput(vk_user, getconfig("vk_user", NULL));
+	if(getconfig("tithek_vk_pass", NULL) == NULL)
+		changeinput(vk_user, getconfig("tithek_vk_user", NULL));
 	else
 		changeinput(vk_user, "****");
 
 	changemask(vk_pass, "abcdefghijklmnopqrstuvwxyz");
-	if(getconfig("vk_pass", NULL) == NULL)
-		changeinput(vk_pass, getconfig("vk_pass", NULL));
+	if(getconfig("tithek_vk_pass", NULL) == NULL)
+		changeinput(vk_pass, getconfig("tithek_vk_pass", NULL));
 	else
 		changeinput(vk_pass, "****");
 
-	changemask(kino_url, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(kino_url, getconfig("kino_url", NULL));
+	changemask(kinox_url, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(kinox_url, getconfig("tithek_kinox_url", NULL));
 
 	if(!file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
-		kino_url->hidden = YES;
+		kinox_url->hidden = YES;
 
 	b3->hidden = YES;
 	b4->hidden = YES;
@@ -108,13 +108,13 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_pic_ratio", picratio, NULL);
 			addconfigscreencheck("tithek_hid_xxx", hidxxx, NULL);
 			addconfigscreencheck("tithek_autoupdate", autoupdate, NULL);
-			addconfigscreen("kino_url", kino_url);
+			addconfigscreen("tithek_kinox_url", kinox_url);
 /*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
 				debug(99, "amazon_user: write");
 				debug(99, "amazon_user: %s", amazon_user->ret);
-				addconfigscreen("amazon_user", amazon_user);
+				addconfigscreen("tithek_amazon_user", amazon_user);
 			}
 			else
 			{
@@ -124,7 +124,7 @@ void screentithek_settings()
 			{
 				debug(99, "amazon_pass: write");
 				debug(99, "amazon_pass: %s", amazon_pass->ret);
-				addconfigscreen("amazon_pass", amazon_pass);
+				addconfigscreen("tithek_amazon_pass", amazon_pass);
 			}
 			else
 			{
@@ -135,7 +135,7 @@ void screentithek_settings()
 			{
 				debug(99, "vk_user: write");
 				debug(99, "vk_user: %s", vk_user->ret);
-				addconfigscreen("vk_user", vk_user);
+				addconfigscreen("tithek_vk_user", vk_user);
 			}
 			else
 			{
@@ -145,7 +145,7 @@ void screentithek_settings()
 			{
 				debug(99, "vk_pass: write");
 				debug(99, "vk_pass: %s", vk_pass->ret);
-				addconfigscreen("vk_pass", vk_pass);
+				addconfigscreen("tithek_vk_pass", vk_pass);
 			}
 			else
 			{
@@ -157,8 +157,8 @@ void screentithek_settings()
 //			debug(99, "amazon_user read: %s", getconfig("amazon_user", NULL));
 //			debug(99, "amazon_pass read: %s", getconfig("amazon_pass", NULL));
 
-			debug(99, "vk_user read: %s", getconfig("vk_user", NULL));
-			debug(99, "vk_pass read: %s", getconfig("vk_pass", NULL));
+			debug(99, "vk_user read: %s", getconfig("tithek_vk_user", NULL));
+			debug(99, "vk_pass read: %s", getconfig("tithek_vk_pass", NULL));
 			
 			break;
 		}
