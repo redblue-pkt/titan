@@ -3548,7 +3548,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "Kanał"
 
-#: kinox.h:323 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
+#: kinox.h:327 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
 #: solarmovie.h:606
 msgid "Episode"
 msgstr ""
@@ -8975,8 +8975,8 @@ msgstr ""
 #: amazon.h:856 ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179
 #: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82
 #: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
-#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:200
-#: kinox.h:202 kinox.h:1050 kinox.h:1052 mlehd.h:90 mlehd.h:92 movie2k.h:74
+#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:204
+#: kinox.h:206 kinox.h:1054 kinox.h:1056 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
 #: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
 #: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
@@ -9036,7 +9036,7 @@ msgstr ""
 msgid "Search only aktual epg ?"
 msgstr ""
 
-#: kinox.h:319 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
+#: kinox.h:323 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
 #: movie4k.h:999 movie4k.h:1115 solarmovie.h:602
 msgid "Season"
 msgstr ""
