@@ -62,7 +62,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		else
 		{
 			path = string_replace_all("kinox.to", "", search, 0);
-			path = string_replace_all(getconfig("tithek_kinox_url", NULL), "", search, 0);
+			path = string_replace_all(getconfig("kinox_url", NULL), "", search, 0);
 			path = string_replace_all("http:///", "", search, 0);
 			path = string_replace_all("https:///", "", search, 0);
 		}
@@ -73,10 +73,9 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 // new start
 		char *cmd = NULL;
 		cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", newurl, 0, 0);
-printf("cmd: %s\n", cmd);
-
+		debug(99, "cmd: %s", cmd);
 		tmpstr = command(cmd);
-printf("tmpstr: %s\n", tmpstr);
+		free(cmd), cmd = NULL;
 
 		free(cmd), cmd = NULL;
 // new end
@@ -118,9 +117,16 @@ printf("tmpstr: %s\n", tmpstr);
 						lang = ostrcat(lang, " (\?\?)", 1, 0);
 																	
 //					tmpstr1 = gethttp("kinox.to", path, 80, NULL, NULL, 10000, NULL, 0);
-					newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
+					newurl = ostrcat(getconfig("kinox_url", NULL), "/", 0, 0);
 					newurl = ostrcat(newurl, path, 1, 0);
-					tmpstr1 = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+//					tmpstr1 = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+
+					char *cmd = NULL;
+					cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", newurl, 0, 0);
+					debug(99, "cmd: %s", cmd);
+					tmpstr1 = command(cmd);
+					free(cmd), cmd = NULL;
+
 					free(newurl), newurl = NULL;
 
 					from = ostrcat("<div class=\"Grahpics\"><a href=\"", path, 0, 0);
@@ -137,7 +143,7 @@ printf("tmpstr: %s\n", tmpstr);
 				 	title = stringreplacechar(title, '_', ' ');
 					title = ostrcat(title , lang, 1, 0);
 
-					url = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
+					url = ostrcat(getconfig("kinox_url", NULL), "/", 0, 0);
 					url = ostrcat(url, path, 1, 0);
 
 					debug(99, "---------------------------");
@@ -153,8 +159,8 @@ printf("tmpstr: %s\n", tmpstr);
 						line = ostrcat(line, title, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, url, 1, 0);
-						line = ostrcat(line, "#https://", 1, 0);
-						line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
+						line = ostrcat(line, "#http://", 1, 0);
+						line = ostrcat(line, getconfig("kinox_url", NULL), 1, 0);
 						line = ostrcat(line, "/", 1, 0);
 						line = ostrcat(line, pic, 1, 0);
 						line = ostrcat(line, "#kinox_search_", 1, 0);
@@ -266,6 +272,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *pichname = NULL;
 	char* tmpstr4 = NULL, *tmpstr5 = NULL, *line = NULL, *url = NULL, *url2 = NULL, *url3 = NULL, *url4 = NULL, *pathnew = NULL, *extra = NULL;
 	char* newurl = NULL;
+	char* cmd = NULL;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -281,7 +288,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	}
 
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+//	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", link, 0, 0);
+	debug(99, "cmd: %s", cmd);
+	tmpstr = command(cmd);
+	free(cmd), cmd = NULL;
+
 	titheklog(debuglevel, "/tmp/kinox2_tmpstr", NULL, NULL, NULL, tmpstr);
 	
 	if(tmpstr != NULL)
@@ -400,7 +412,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
 							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-							pathnewtmp = ostrcat(getconfig("tithek_kinox_url", NULL), "/aGET/Mirror/", 0, 0);
+							pathnewtmp = ostrcat(getconfig("kinox_url", NULL), "/aGET/Mirror/", 0, 0);
 							pathnewtmp = ostrcat(pathnewtmp, hlink, 1, 0);
 							pathnew = ostrcat(pathnewtmp, NULL, 0, 0);
 						}
@@ -409,7 +421,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 							hlink = ostrcat(hlink, "Mirror=", 0, 0);
 							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-							pathnewtmp = ostrcat(getconfig("tithek_kinox_url", NULL), "/aGET/Mirror/", 0, 0);
+							pathnewtmp = ostrcat(getconfig("kinox_url", NULL), "/aGET/Mirror/", 0, 0);
 							pathnewtmp = ostrcat(pathnewtmp, hlink, 1, 0);
 							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
 						}
@@ -426,31 +438,51 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 
 //						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+//						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+						cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", pathnew, 0, 0);
+						debug(99, "cmd: %s", cmd);
+						tmpstr1 = command(cmd);
+						free(cmd), cmd = NULL;
 
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", pathnew, 0, 0);
+							debug(99, "cmd: %s", cmd);
+							tmpstr1 = command(cmd);
+							free(cmd), cmd = NULL;
 						}
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", pathnew, 0, 0);
+							debug(99, "cmd: %s", cmd);
+							tmpstr1 = command(cmd);
+							free(cmd), cmd = NULL;
 						}
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", pathnew, 0, 0);
+							debug(99, "cmd: %s", cmd);
+							tmpstr1 = command(cmd);
+							free(cmd), cmd = NULL;
 						}
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", pathnew, 0, 0);
+							debug(99, "cmd: %s", cmd);
+							tmpstr1 = command(cmd);
+							free(cmd), cmd = NULL;
 						}
 						free(pathnew), pathnew = NULL;
 
@@ -755,6 +787,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 	char* ip = NULL, *pathnew = NULL, *seriesid = NULL, *searchname = NULL, *url = NULL, *session = NULL, *episode = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL;		
 	char* pichname = NULL, *extra= NULL;
 	char* newurl = NULL;
+	char *cmd = NULL;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -776,7 +809,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		searchname = ostrcat(searchname, ret0[0].part, 1, 0);
 
 		searchname = string_replace("kinox.to", "", searchname, 0);
-		searchname = string_replace(getconfig("tithek_kinox_url", NULL), "", searchname, 0);
+		searchname = string_replace(getconfig("kinox_url", NULL), "", searchname, 0);
 		searchname = string_replace("http:////Stream/", "", searchname, 0);
 		searchname = string_replace("http:///Stream/", "", searchname, 0);
 		searchname = string_replace("http://Stream/", "", searchname, 0);
@@ -801,7 +834,12 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 	}
 
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+//	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", link, 0, 0);
+	debug(99, "cmd: %s", cmd);
+	tmpstr = command(cmd);
+	free(cmd), cmd = NULL;
+
 	debug(99, "tmpstr: %s", tmpstr);
 
 	free(newurl), newurl = NULL;
@@ -823,10 +861,16 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		debug(99, "pathnew: %s", pathnew);
 	
 		free(tmpstr), tmpstr = NULL;
-//		tmpstr = gethttp(getconfig("tithek_kinox_url", NULL, pathnew, 80, NULL, NULL, 10000, NULL, 0);
-		newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
+//		tmpstr = gethttp(getconfig("kinox_url", NULL, pathnew, 80, NULL, NULL, 10000, NULL, 0);
+		newurl = ostrcat(getconfig("kinox_url", NULL), "/", 0, 0);
 		newurl = ostrcat(newurl, pathnew, 1, 0);
-		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+//		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+
+		cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", newurl, 0, 0);
+		debug(99, "cmd: %s", cmd);
+		tmpstr = command(cmd);
+		free(cmd), cmd = NULL;
+
 		free(newurl), newurl = NULL;
 
 		free(pathnew), pathnew = NULL;
@@ -883,7 +927,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 							hlink = string_resub("rel=\"", "\">", ret1[i].part, 0);
 							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-							pathnewtmp = ostrcat(getconfig("tithek_kinox_url", NULL), "/aGET/Mirror/", 0, 0);
+							pathnewtmp = ostrcat(getconfig("kinox_url", NULL), "/aGET/Mirror/", 0, 0);
 							pathnewtmp = ostrcat(pathnewtmp, hlink, 1, 0);
 							pathnew = ostrcat(pathnewtmp, NULL, 0, 0);
 						}
@@ -892,7 +936,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 							hlink = string_replace_all("amp;Hoster", "Hoster", hlink, 1);
 							hlink = ostrcat(hlink, "Mirror=", 0, 0);
 							hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
-							pathnewtmp = ostrcat(getconfig("tithek_kinox_url", NULL), "/aGET/Mirror/", 0, 0);
+							pathnewtmp = ostrcat(getconfig("kinox_url", NULL), "/aGET/Mirror/", 0, 0);
 							pathnewtmp = ostrcat(pathnewtmp, hlink, 1, 0);
 							pathnew = ostrcat(pathnewtmp, oitoa(j), 0, 1);
 						}
@@ -921,7 +965,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						extra = string_resub("<b>Vom</b>: ", "</div>", ret1[i].part, 0);
 
 						hlink = string_replace("kinox.to", "", hlink, 1);					
-						hlink = string_replace(getconfig("tithek_kinox_url", NULL), "", hlink, 1);					
+						hlink = string_replace(getconfig("kinox_url", NULL), "", hlink, 1);					
 						hlink = string_replace("http:////Stream/", "", hlink, 1);					
 						hlink = string_replace("http:///Stream/", "", hlink, 1);
 						hlink = string_replace("https:////Stream/", "", hlink, 1);					
@@ -929,7 +973,11 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 									
 //						debug(99, "pathnew: %s", pathnew);
 //						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+//						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+						cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", pathnew, 0, 0);
+						debug(99, "cmd: %s", cmd);
+						tmpstr1 = command(cmd);
+						free(cmd), cmd = NULL;
 //						debug(99, "tmpstr1 1: %s", tmpstr1);
 
 						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
@@ -943,11 +991,16 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						else if(ostrstr(tmpstr1, "/iframe>") != NULL)
 						{
 							free(pathnew), pathnew = NULL;
-							pathnew = ostrcat(getconfig("tithek_kinox_url", NULL), "/aGET/Mirror/", 0, 0);
+							pathnew = ostrcat(getconfig("kinox_url", NULL), "/aGET/Mirror/", 0, 0);
 							pathnew = ostrcat(pathnew, hlink, 1, 0);
 //							debug(99, "iframe2.1 pathnew: %s", pathnew);
 							free(tmpstr1), tmpstr1 = NULL;
-							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get http://", pathnew, 0, 0);
+							debug(99, "cmd: %s", cmd);
+							tmpstr1 = command(cmd);
+							free(cmd), cmd = NULL;
+
 //							debug(99, "iframe2.2 tmpstr1: %s", tmpstr1);
 							tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 //							debug(99, "iframe2.3 tmpstr1: %s", tmpstr1);
@@ -1114,8 +1167,8 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 				{
 					incount++;
 					line = ostrcat(line, name, 1, 0);
-					line = ostrcat(line, "#https://", 1, 0);
-					line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
+					line = ostrcat(line, "#http://", 1, 0);
+					line = ostrcat(line, getconfig("kinox_url", NULL), 1, 0);
 					line = ostrcat(line, "/People/", 1, 0);
 					line = ostrcat(line, url, 1, 0);
 					line = ostrcat(line, "#", 1, 0);
