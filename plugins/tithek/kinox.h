@@ -71,8 +71,10 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		newurl = ostrcat(newurl, path, 1, 0);
 //		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
+		char *cmd = NULL;
 		cmd = ostrcat("/tmp/localhoster/hoster.sh get https://", newurl, 0, 0);
 		tmpstr = command(cmd);
+		free(cmd), cmd = NULL;
 // new end
 		free(newurl), newurl = NULL;
 
