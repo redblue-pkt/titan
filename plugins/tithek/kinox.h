@@ -69,7 +69,11 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 //		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 		newurl = ostrcat(newurl, path, 1, 0);
-		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+//		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+// new start
+		cmd = ostrcat("/tmp/localhoster/hoster.sh get https://", newurl, 0, 0);
+		tmpstr = command(cmd);
+// new end
 		free(newurl), newurl = NULL;
 
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
