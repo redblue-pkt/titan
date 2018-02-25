@@ -123,7 +123,7 @@ void start(void)
 	status.listboxselectcol = convertcol("tithek_selectcol");
 
 	if(getconfig("tithek_kinox_url", NULL) == NULL)
-		addconfigtmp("tithek_kinox_url", "kinox.io");
+		addconfigtmp("tithek_kinox_url", "http://kinox.io");
 
 //	if(checkbox("WHITEBOX") == 1)
 //		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
