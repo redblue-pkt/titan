@@ -2133,7 +2133,7 @@ waitrcstart:
 			screentithek_settings();
 
 //			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
-			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, first);
+			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, first + 1);
 
 			if(pagecount == 0 || tithekexit == 1) break;
 
