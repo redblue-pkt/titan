@@ -74,7 +74,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		newurl = ostrcat(newurl, path, 1, 0);
 //		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-		cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", newurl, 0, 0);
+		cmd = ostrcat("/tmp/localhoster/hoster.sh get '", newurl, 0, 0);
 		cmd = ostrcat(cmd, "'", 1, 0);
 		debug(99, "cmd: %s", cmd);
 		tmpstr = command(cmd);
@@ -122,7 +122,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					newurl = ostrcat(newurl, path, 1, 0);
 //					tmpstr1 = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-					cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", newurl, 0, 0);
+					cmd = ostrcat("/tmp/localhoster/hoster.sh get '", newurl, 0, 0);
 					cmd = ostrcat(cmd, "'", 1, 0);
 					debug(99, "cmd: %s", cmd);
 					tmpstr1 = command(cmd);
@@ -160,7 +160,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						line = ostrcat(line, title, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, url, 1, 0);
-						line = ostrcat(line, "#http://", 1, 0);
+						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
 						line = ostrcat(line, "/", 1, 0);
 						line = ostrcat(line, pic, 1, 0);
@@ -291,7 +291,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 //	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-	cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", link, 0, 0);
+	cmd = ostrcat("/tmp/localhoster/hoster.sh get '", link, 0, 0);
 	cmd = ostrcat(cmd, "'", 1, 0);
 	debug(99, "cmd: %s", cmd);
 	tmpstr = command(cmd);
@@ -443,7 +443,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 //						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 //						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-						cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", pathnew, 0, 0);
+						cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
 						cmd = ostrcat(cmd, "'", 1, 0);
 						debug(99, "cmd: %s", cmd);
 						tmpstr1 = command(cmd);
@@ -455,7 +455,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 //							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", pathnew, 0, 0);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
 							cmd = ostrcat(cmd, "'", 1, 0);
 							debug(99, "cmd: %s", cmd);
 							tmpstr1 = command(cmd);
@@ -468,7 +468,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 //							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", pathnew, 0, 0);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
 							cmd = ostrcat(cmd, "'", 1, 0);
 							debug(99, "cmd: %s", cmd);
 							tmpstr1 = command(cmd);
@@ -481,7 +481,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 //							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", pathnew, 0, 0);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
 							cmd = ostrcat(cmd, "'", 1, 0);
 							debug(99, "cmd: %s", cmd);
 							tmpstr1 = command(cmd);
@@ -494,7 +494,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 //							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", pathnew, 0, 0);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
 							cmd = ostrcat(cmd, "'", 1, 0);
 							debug(99, "cmd: %s", cmd);
 							tmpstr1 = command(cmd);
@@ -853,7 +853,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 //	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-	cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", link, 0, 0);
+	cmd = ostrcat("/tmp/localhoster/hoster.sh get '", link, 0, 0);
 	cmd = ostrcat(cmd, "'", 1, 0);
 	debug(99, "cmd: %s", cmd);
 	tmpstr = command(cmd);
@@ -886,7 +886,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		newurl = ostrcat(newurl, pathnew, 1, 0);
 //		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-		cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", newurl, 0, 0);
+		cmd = ostrcat("/tmp/localhoster/hoster.sh get '", newurl, 0, 0);
 		cmd = ostrcat(cmd, "'", 1, 0);
 		debug(99, "cmd: %s", cmd);
 		tmpstr = command(cmd);
@@ -996,7 +996,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 //						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 //						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-						cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", pathnew, 0, 0);
+						cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
 						cmd = ostrcat(cmd, "'", 1, 0);
 						debug(99, "cmd: %s", cmd);
 						tmpstr1 = command(cmd);
@@ -1021,7 +1021,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 							free(tmpstr1), tmpstr1 = NULL;
 //							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
 // new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get 'http://", pathnew, 0, 0);
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
 							cmd = ostrcat(cmd, "'", 1, 0);
 							debug(99, "cmd: %s", cmd);
 							tmpstr1 = command(cmd);
@@ -1193,9 +1193,9 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 				{
 					incount++;
 					line = ostrcat(line, name, 1, 0);
-//					line = ostrcat(line, "#http://", 1, 0);
-//					line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
-					line = ostrcat(line, "#/People/", 1, 0);
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
+					line = ostrcat(line, "/People/", 1, 0);
 					line = ostrcat(line, url, 1, 0);
 					line = ostrcat(line, "#", 1, 0);
 					line = ostrcat(line, pic, 1, 0);
