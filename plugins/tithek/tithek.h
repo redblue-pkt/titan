@@ -987,9 +987,9 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 				tmp->fontcol = convertcol("favcol");
 			else if(new == 1)
 				tmp->fontcol = convertcol("green");
-			else if(python == 0 && titheknode->flag == 14)
+			else if(python == 0 && (titheknode->flag == 14 || titheknode->flag == 21 || titheknode->flag == 111 || titheknode->flag == 112))
 				tmp->fontcol = convertcol("red");
-			else if(python == 1 && titheknode->flag == 14)
+			else if(python == 1 && (titheknode->flag == 14 || titheknode->flag == 21 || titheknode->flag == 111 || titheknode->flag == 112))
 				tmp->fontcol = convertcol("white");
 			else
 				tmp->fontcol = convertcol("white");
