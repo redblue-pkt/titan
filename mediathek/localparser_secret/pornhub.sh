@@ -187,6 +187,10 @@ genre()
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
+    # 29a. für search() list-Datei löschen damit sie neu erstellt wird
+    if [ -e "$TMP/$PARSER.search.list" ]; then
+        rm "$TMP/$PARSER.search.list"
+    fi
 	# 30. gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
