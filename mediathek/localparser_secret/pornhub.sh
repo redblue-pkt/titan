@@ -172,7 +172,7 @@ genre()
 						piccount += 1
 						# 25. in naechste zeile springen
 						# 26. \x27 = single quotes
-						print title "#" SRC " " SRC " search \x27/" newpage "&page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+						print title "#" SRC " " SRC " search \x27" newpage "&page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 					}
 					
 					# 27. reset variables
@@ -187,10 +187,6 @@ genre()
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
-    # 29a. für search() list-Datei löschen damit sie neu erstellt wird
-    if [ -e "$TMP/$PARSER.search.list" ]; then
-        rm "$TMP/$PARSER.search.list"
-    fi
 	# 30. gebe titan den list namen mit pfad zurueck
 	echo "$TMP/$FILENAME.list"
 }
