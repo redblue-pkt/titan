@@ -5,7 +5,9 @@
 
 SRC=$1
 INPUT=$2
-PAGE=$3
+CURPAGE=$3
+MAXPAGE=$4
+PAGE=$5
 
 FILENAME=`echo $PAGE | tr '/' '.'`
 FILENAME=`echo $FILENAME | tr '&' '.'`
@@ -38,15 +40,15 @@ init()
 
 mainmenu()
 {
-	echo "Kinofilme#$SRC $SRC new '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	#echo "Serien#$SRC $SRC new '?get=tv'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-        echo "Search#$SRC $SRC search '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
+	echo "Kinofilme#$SRC $SRC new 0 0 '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	#echo "Serien#$SRC $SRC new 0 0 '?get=tv'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+        echo "Search#$SRC $SRC search 1 0 '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
 
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
 	fi
-	if [ -e "$TMP/$PARSER.search.list" ] ; then
-		rm $TMP/$PARSER.search.list
+	if [ "`echo $TMP/$PARSER.search.*.list`" != "$TMP/$PARSER.search.*.list" ] ; then
+		rm $TMP/$PARSER.search.*.list
 	fi
 	if [ -e "$TMP/$PARSER.page.list" ] ; then
 		rm $TMP/$PARSER.page.list
@@ -90,13 +92,13 @@ new()
 						touch $TMP/$PARSER.$INPUT.list
 					fi
 # obi
-					LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
+					LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
 #					LINE="$TITLE#$SRC $SRC play $NEWPAGE#$PIC#$TMPPIC#$NAME#111"
 					echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 				fi
 			fi
 		done 3<$TMP/cache.$PARSER.$INPUT.2
-#		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	fi
 
 	echo "$TMP/$PARSER.$INPUT.list"
@@ -104,8 +106,13 @@ new()
 
 search()
 {
-	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+	if [ ! -e "$TMP/$PARSER.$INPUT.$CURPAGE.list" ] ; then
+		if [ "$CURPAGE" -eq "1" ] ; then
+			NEWPAGE=$PAGE
+		else
+			NEWPAGE=`echo $PAGE | sed "s/@PAGE@/$CURPAGE/g"`
+		fi
+		$curlbin $URL/$NEWPAGE -o $TMP/cache.$PARSER.$INPUT.1
 
 #		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
 
@@ -134,20 +141,32 @@ search()
 #exit
 			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
 				if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
-					if [ ! -e $TMP/$PARSER.$INPUT.list ];then
-						touch $TMP/$PARSER.$INPUT.list
+					if [ ! -e $TMP/$PARSER.$INPUT.$CURPAGE.list ];then
+						touch $TMP/$PARSER.$INPUT.$CURPAGE.list
 					fi
 # obi
-					LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
-#					LINE="$TITLE#$SRC $SRC play $NEWPAGE#$PIC#$TMPPIC#$NAME#111"
-					echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+					LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
+#					LINE="$TITLE#$SRC $SRC play 0 0 $NEWPAGE#$PIC#$TMPPIC#$NAME#111"
+					echo "$LINE" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
 				fi
 			fi
 		done 3<$TMP/cache.$PARSER.$INPUT.2
-#		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+		if [ "$CURPAGE" -eq "1" ] ; then
+			PAGE="page/@PAGE@$PAGE"
+			MAXPAGE=`cat $TMP/cache.$PARSER.$INPUT.1 | sed '/<div class="pagination/!d;s/^.*Seite 1 von //;s/<\/span>.*$//'`
+		fi
+		if [ "$CURPAGE" -lt "$MAXPAGE" ] ; then
+			NEWPAGE=`expr $CURPAGE + 1`
+			echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
+                fi
+
+		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	fi
+	if [ -e "$TMP/$PARSER.hosterlist.list" ] ; then
+		rm $TMP/$PARSER.hosterlist.list
 	fi
 
-	echo "$TMP/$PARSER.$INPUT.list"
+	echo "$TMP/$PARSER.$INPUT.$CURPAGE.list"
 }
 
 hosterlist()
