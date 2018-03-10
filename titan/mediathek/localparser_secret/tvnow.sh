@@ -62,8 +62,14 @@ init()
 
 mainmenu()
 {
-	echo "Nitro#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station nitro#http://atemio.dyndns.tv/mediathek/menu/nitro.jpg#nitro.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Vox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station  vox#http://atemio.dyndns.tv/mediathek/menu/vox.jpg#vox.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Rtl#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl#http://atemio.dyndns.tv/mediathek/menu/rtl.jpg#rtl.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Vox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station vox#http://atemio.dyndns.tv/mediathek/menu/vox.jpg#vox.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Rtl2#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl2#http://atemio.dyndns.tv/mediathek/menu/rtl2.jpg#rtl2.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Nitro#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station nitro#http://atemio.dyndns.tv/mediathek/menu/nitro.jpg#nitro.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "N-Tv#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station ntv#http://atemio.dyndns.tv/mediathek/menu/ntv.jpg#ntv.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "RTLplus#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtlplus#http://atemio.dyndns.tv/mediathek/menu/rtlplus.jpg#rtlplus.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Super RTL#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station superrtl#http://atemio.dyndns.tv/mediathek/menu/superrtl.jpg#superrtl.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "WatchBox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station watchbox#http://atemio.dyndns.tv/mediathek/menu/watchbox.jpg#watchbox.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
@@ -134,8 +140,18 @@ videos()
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | sed 's/"title":/\ntitle=/g' | grep ^title= | head -n1 | cut -d'"' -f2`
 			PIC=`echo $ROUND | sed -nr 's/.*"defaultDvdImage":"([^"]+).*/\1/p'`
-#			NEWPAGE=`echo $ROUND | sed -nr 's/.*"hlsfairplay":"([^"]+).*/\1/p'`
-			NEWPAGE=`echo $ROUND | sed -nr 's/.*"dash":"([^"]+).*/\1/p'`
+#  			dash working on sh4 libeplayer mipsel/arm need dash patch
+#			NEWPAGE=`echo $ROUND | sed -nr 's/.*"dash":"([^"]+).*/\1/p'`
+			NEWPAGE=`echo $ROUND | sed -nr 's/.*"hlsclear":"([^"]+).*/\1/p'`
+
+			#NEWPAGE="https://vodnowusohls-a.akamaihd.net/proxy/clear/manifest/tvnow/417382-1-17915.ism/fairplay.m3u8?filter=(type%3d%3d%22audio%22)%7c%7c(type%3d%3d%22video%22%26%26systemBitrate%3c1550000)"
+			PART1=$(echo "$NEWPAGE" | sed 's!fairplay.m3u8!\n!' | grep ^http)
+			PART2=$(echo "$NEWPAGE" | sed -nr 's!.*/tvnow/([^.ism/]+).*!\1!p')
+			#echo PART1 $PART1
+			#echo PART2 $PART2
+
+			#https://vodnowusohls.secure.footprint.net/proxy/clear/manifest/tvnow/417382-1-17915.ism/417382-1-17915-audio=128000-video=1400000.m3u8
+			NEWPAGE=$PART1$PART2-audio=128000-video=1400000.m3u8
 
 			if [ -z  "$PIC" ]; then  
 				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
