@@ -10,8 +10,17 @@ NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
+## start filename work, filename to long
+LIST="5B 1896 500 page Id 7B 22 5D 7D filter containsNotIn Disabled maxPerPage v3 formats? fields= id, title, station, title, titleGroup, seoUrl, icon, hasFreeEpisodes, hasPayEpisodes, categoryId, searchAliasName, genres fields= formatTabs. formatTabPages. container. annualNavigation"
+TMPPAGE="$PAGE"
+for ROUND in $LIST; do
+	TMPPAGE=$(echo $TMPPAGE | sed "s/$ROUND/./g")
+done
+TMPPAGE=`echo $TMPPAGE | tr ':' '.' | tr '*' '.' | tr ',' '.' | tr '-' '.' | tr '%' '.' | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
+## done
+
 #FILENAME="$PARSER $INPUT $PAGE $NEXT $PAGE2"
-FILENAME="$PARSER $INPUT $NEXT $PAGE2"
+FILENAME="$PARSER $INPUT $TMPPAGE $NEXT $PAGE2"
 FILENAME=`echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
 
 if [ -z "$FILENAME" ]; then
@@ -62,33 +71,25 @@ init()
 
 mainmenu()
 {
-	echo "Rtl#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl#http://atemio.dyndns.tv/mediathek/menu/rtl.jpg#rtl.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Vox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station vox#http://atemio.dyndns.tv/mediathek/menu/vox.jpg#vox.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Rtl2#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl2#http://atemio.dyndns.tv/mediathek/menu/rtl2.jpg#rtl2.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Nitro#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station nitro#http://atemio.dyndns.tv/mediathek/menu/nitro.jpg#nitro.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "N-Tv#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station ntv#http://atemio.dyndns.tv/mediathek/menu/ntv.jpg#ntv.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "RTLplus#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtlplus#http://atemio.dyndns.tv/mediathek/menu/rtlplus.jpg#rtlplus.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Super RTL#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station superrtl#http://atemio.dyndns.tv/mediathek/menu/superrtl.jpg#superrtl.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "WatchBox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station watchbox#http://atemio.dyndns.tv/mediathek/menu/watchbox.jpg#watchbox.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-
-	if [ -e "$TMP/$PARSER.new.list" ] ; then
-		rm $TMP/$PARSER.new.list
-	fi
-	if [ -e "$TMP/$PARSER.page.list" ] ; then
-		rm $TMP/$PARSER.page.list
-	fi
-
-	echo "$TMP/$PARSER.$INPUT.list"
+	echo "Rtl#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl#http://atemio.dyndns.tv/mediathek/menu/rtl.jpg#rtl.jpg#$NAME#0" > $TMP/$FILENAME.list
+	echo "Vox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station vox#http://atemio.dyndns.tv/mediathek/menu/vox.jpg#vox.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Rtl2#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl2#http://atemio.dyndns.tv/mediathek/menu/rtl2.jpg#rtl2.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Nitro#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station nitro#http://atemio.dyndns.tv/mediathek/menu/nitro.jpg#nitro.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "N-Tv#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station ntv#http://atemio.dyndns.tv/mediathek/menu/ntv.jpg#ntv.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "RTLplus#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtlplus#http://atemio.dyndns.tv/mediathek/menu/rtlplus.jpg#rtlplus.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Super RTL#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station superrtl#http://atemio.dyndns.tv/mediathek/menu/superrtl.jpg#superrtl.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "WatchBox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station watchbox#http://atemio.dyndns.tv/mediathek/menu/watchbox.jpg#watchbox.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "$TMP/$FILENAME.list"
 }
 
 new()
 {
-	if [ ! -e "$TMP/$PARSER.$INPUT.sorted.list" ] ; then
-		$curlbin "$URL/$PAGE&page=1" > $TMP/cache.$PARSER.$INPUT.1
-		$curlbin "$URL/$PAGE&page=2" >> $TMP/cache.$PARSER.$INPUT.1
-		$curlbin "$URL/$PAGE&page=3" >> $TMP/cache.$PARSER.$INPUT.1
-		$curlbin "$URL/$PAGE&page=4" >> $TMP/cache.$PARSER.$INPUT.1
-		cat $TMP/cache.$PARSER.$INPUT.1  | sed 's/{"id":/\n{"id":/g' | grep ^'{"id":' | grep "\"$NEXT\":\"$PAGE2\"" > /$TMP/cache.$PARSER.$INPUT.2
+	if [ ! -e "$TMP/$FILENAME.sorted.list" ] ; then
+		$curlbin "$URL/$PAGE&page=1" > $TMP/cache.$FILENAME.1
+		$curlbin "$URL/$PAGE&page=2" >> $TMP/cache.$FILENAME.1
+		$curlbin "$URL/$PAGE&page=3" >> $TMP/cache.$FILENAME.1
+		$curlbin "$URL/$PAGE&page=4" >> $TMP/cache.$FILENAME.1
+		cat $TMP/cache.$FILENAME.1  | sed 's/{"id":/\n{"id":/g' | grep ^'{"id":' | grep "\"$NEXT\":\"$PAGE2\"" > /$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | sed -nr 's/.*"title":"([^"]+).*/\1/p'`
@@ -104,38 +105,37 @@ new()
 			fi
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-				if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
-					if [ ! -e $TMP/$PARSER.$INPUT.list ];then
-						touch $TMP/$PARSER.$INPUT.list
+				if [ `cat $TMP/$FILENAME.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
+					if [ ! -e $TMP/$FILENAME.list ];then
+						touch $TMP/$FILENAME.list
 					fi
 					LINE="$TITLE#$SRC $SRC videos '$NEWPAGE'#$PIC#$TMPPIC#$NAME#0"
-					echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+					echo "$LINE" >> $TMP/$FILENAME.list
 				fi
 			fi
-		done 3<$TMP/cache.$PARSER.$INPUT.2
-		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+		done 3<$TMP/cache.$FILENAME.2
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 
- 	cat $TMP/$PARSER.$INPUT.list | sort -u > $TMP/$PARSER.$INPUT.sorted.list
-
-	if [ -e "$TMP/$PARSER.hosterlist.list" ] ; then
-		rm $TMP/$PARSER.hosterlist.list
+ 	cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sorted.list
+	if [ -e $TMP/$FILENAME.list ];then
+		rm $TMP/$FILENAME.list
 	fi
 
-#	echo "$TMP/$PARSER.$INPUT.list"
-	echo "$TMP/$PARSER.$INPUT.sorted.list"
+#	echo "$TMP/$FILENAME.list"
+	echo "$TMP/$FILENAME.sorted.list"
 }
 
 videos()
 {
-	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		$curlbin "$URL/$PAGE" > $TMP/cache.$PARSER.$INPUT.1
-		cat $TMP/cache.$PARSER.$INPUT.1 | sed -nr 's/.*"id":([^,]+).*/\1/p' > /$TMP/cache.$PARSER.$INPUT.2
-		ID=`cat $TMP/cache.$PARSER.$INPUT.2`
+	if [ ! -e "$TMP/$FILENAME.list" ] ; then
+		$curlbin "$URL/$PAGE" > $TMP/cache.$FILENAME.1
+		cat $TMP/cache.$FILENAME.1 | sed -nr 's/.*"id":([^,]+).*/\1/p' > /$TMP/cache.$FILENAME.2
+		ID=`cat $TMP/cache.$FILENAME.2`
 		NEWPAGE="v3/containers/$ID/movies?fields=*,format.*,paymentPaytypes.*,livestreamEvent.*,pictures,trailers,packages,annualNavigation&maxPerPage=500&order=OrderWeight+asc,+BroadcastStartDate+desc&page=1"
 
-		$curlbin "$URL/$NEWPAGE" > $TMP/cache.$PARSER.$INPUT.3
-		cat $TMP/cache.$PARSER.$INPUT.3  | sed 's/orderWeight/\norderWeight/g' | grep ^orderWeight > /$TMP/cache.$PARSER.$INPUT.4
+		$curlbin "$URL/$NEWPAGE" > $TMP/cache.$FILENAME.3
+		cat $TMP/cache.$FILENAME.3  | sed 's/orderWeight/\norderWeight/g' | grep ^orderWeight > /$TMP/cache.$FILENAME.4
 
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | sed 's/"title":/\ntitle=/g' | grep ^title= | head -n1 | cut -d'"' -f2`
@@ -161,23 +161,19 @@ videos()
 			fi
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-				if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
-					if [ ! -e $TMP/$PARSER.$INPUT.list ];then
-						touch $TMP/$PARSER.$INPUT.list
+				if [ `cat $TMP/$FILENAME.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
+					if [ ! -e $TMP/$FILENAME.list ];then
+						touch $TMP/$FILENAME.list
 					fi
 					LINE="$TITLE#$NEWPAGE#$PIC#$TMPPIC#$NAME#2"
-					echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+					echo "$LINE" >> $TMP/$FILENAME.list
 				fi
 			fi
-		done 3<$TMP/cache.$PARSER.$INPUT.4
-		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+		done 3<$TMP/cache.$FILENAME.4
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 
-	if [ -e "$TMP/$PARSER.hosterlist.list" ] ; then
-		rm $TMP/$PARSER.hosterlist.list
-	fi
-
-	echo "$TMP/$PARSER.$INPUT.list"
+	echo "$TMP/$FILENAME.list"
 }
 
 case $INPUT in
