@@ -42,7 +42,7 @@ mainmenu()
 {
 	echo "Neue Filme#$SRC $SRC new 1 0 'filme/neu/'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 #	echo "Neue Serien#$SRC $SRC new 1 0 'serien/neu/'#http://atemio.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-#       echo "Search#$SRC $SRC search 1 0 '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
+	echo "Filme suchen#$SRC $SRC search 1 0 'https://api.watchbox.de/v1/search/?active=true&maxPerPage=30&page=1&types=%5B%22film%22%5D&term='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
 
 	if [ "`echo $TMP/$PARSER.new.*.list`" != "$TMP/$PARSER.new.*.list" ] ; then
 		rm $TMP/$PARSER.new.*.list
@@ -111,20 +111,21 @@ new()
 search()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.$CURPAGE.list" ] ; then
-		if [ "$CURPAGE" -eq "1" ] ; then
-			NEWPAGE=$PAGE
-		else
-			NEWPAGE=`echo $PAGE | sed "s/@PAGE@/$CURPAGE/g"`
-		fi
-		$curlbin $URL/$NEWPAGE -o $TMP/cache.$PARSER.$INPUT.1
+#		if [ "$CURPAGE" -eq "1" ] ; then
+#			NEWPAGE=$PAGE
+#		else
+#			NEWPAGE=`echo $PAGE | sed "s/@PAGE@/$CURPAGE/g"`
+#		fi
+		$curlbin $PAGE -o $TMP/cache.$PARSER.$INPUT.1
 
-		cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' ' ' | sed -e 's/<a href=/\n<a href=/g' -e 's/Film/\nFilm/g' | grep '^<a href=' | grep '<img src=' > $TMP/cache.$PARSER.$INPUT.1a
-		cat $TMP/cache.$PARSER.$INPUT.1a | sed '/Stream in HD/d' > $TMP/cache.$PARSER.$INPUT.2
+		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!"type"!\n"type"!g' > $TMP/cache.$PARSER.$INPUT.2
+		echo >> $TMP/cache.$PARSER.$INPUT.2
 		while read -u 3 ROUND; do
-			TITLE=`echo $ROUND | sed 's/alt=/\nalt=/' | grep ^"alt=" | cut -d '"' -f2 | sed 's/#/%/'`
-			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/&%8211;/-/g' -e "s/&%8217;/'/g"`
-			PIC=`echo $ROUND | sed 's/img src/\nsrc=/' | grep ^"src=" | cut -d '"' -f2`
-			NEWPAGE=`echo $ROUND | sed 's/<a href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
+			TITLE=`echo $ROUND | grep 'headline":"' | sed -e 's!headline":"!\n"!g' | cut -d '"' -f2 | sed '/type/d'`
+			ENTITYID=`echo $ROUND | grep 'entityId":' | sed -e 's!entityId":!\n!g' | cut -d ',' -f1 | sed '/type/d'`
+			SEOPATH=`echo $ROUND | grep 'seoPath":"' | sed -e 's!seoPath":"!\n"!g' | cut -d '"' -f2 | sed '/type/d'`
+			PIC="https://aiswatchbox-a.akamaihd.net/watchbox/format/"$ENTITYID"_dvdcover/484x677/"$SEOPATH".jpg"
+			NEWPAGE="/filme/"$SEOPATH"-"$ENTITYID".html"
 
 			if [ -z  "$PIC" ]; then  
 				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
@@ -151,16 +152,17 @@ search()
 				fi
 			fi
 		done 3<$TMP/cache.$PARSER.$INPUT.2
-		if [ "$CURPAGE" -eq "1" ] ; then
-			PAGE="page/@PAGE@$PAGE"
-			MAXPAGE=`cat $TMP/cache.$PARSER.$INPUT.1 | sed '/<div class="pagination/!d;s/^.*Seite 1 von //;s/<\/span>.*$//'`
-		fi
-		if [ "$CURPAGE" -lt "$MAXPAGE" ] ; then
+		
+		TOTALITEM=`cat $TMP/cache.$PARSER.$INPUT.2 | sed q | cut -d ',' -f1 | sed 's!:!\n!g' | sed '1,1d'`
+		MAXPAGE=`echo $(($TOTALITEM/30+1))`
+		
+		if [ "$MAXPAGE" -gt "$CURPAGE" ] ; then
 			NEWPAGE=`expr $CURPAGE + 1`
+			PAGE=$(echo $PAGE | sed -e "s!page=$CURPAGE!page=$NEWPAGE!g")
 			echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
                 fi
 
-#		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	fi
 
 	echo "$TMP/$PARSER.$INPUT.$CURPAGE.list"
