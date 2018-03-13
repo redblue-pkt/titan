@@ -80,7 +80,8 @@ series()
                    next
                  }
 ' >/tmp/tithek/$PARSER.series.list
-	echo "/tmp/tithek/$PARSER.series.list"
+	cat /tmp/tithek/$PARSER.series.list | sed -e "s!&#039;!'!g" > /tmp/tithek/$PARSER.series.list.1
+	echo "/tmp/tithek/$PARSER.series.list.1"
 }
 
 allseries()
