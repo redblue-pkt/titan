@@ -102,7 +102,7 @@ new()
 		fi
 		
 
-		rm $TMP/cache.$PARSER.$INPUT.CURPAGE.* > /dev/null 2>&1
+		rm $TMP/cache.$PARSER.$INPUT.$CURPAGE.* > /dev/null 2>&1
 	fi
 
 	echo "$TMP/$PARSER.$INPUT.$CURPAGE.list"
