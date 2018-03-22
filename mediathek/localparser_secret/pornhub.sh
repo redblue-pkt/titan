@@ -121,12 +121,12 @@ genre()
 	            next
 			}
 			# 12. nextpage zeile
-			# <a href=\"\/video?c=28
-			/<a href=\"\/video?/ \
+			# href=\"\/video?c=28
+			/href=\"\/video?/ \
 			{
 				if (suche == 1)
 				{
-					# <a href="/video?c=28" onclick="ga.....>
+					# href="/video?c=28" onclick="ga.....>
 					# 13. extrahiere den newpage pfad
 					i = index($0, "href=\"") + 6
 		            j = index(substr($0, i), "\"") - 1
@@ -463,7 +463,7 @@ search()
 							piccount += 1
 							# in naechste zeile springen
 							# \x27 = single quotes
-							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+							print title "#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 						}
 		
 						# 27. reset variables
@@ -524,7 +524,7 @@ searchold()
 				piccount=`expr $piccount + 1`
 
 				if [ `cat $TMP/$FILENAME.list | grep "#$NEWPAGE#" | wc -l` -eq 0 ];then
-					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#111"
+					LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#111"
 				fi
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
@@ -699,7 +699,7 @@ pornstars()
 #							piccount += 1
 #							# in naechste zeile springen
 #							# \x27 = single quotes
-#							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+#							print title "#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 #						}
 #		
 #						# 27. reset variables
@@ -741,7 +741,7 @@ pornstars()
 							piccount += 1
 							# in naechste zeile springen
 							# \x27 = single quotes
-#							print title " (" extra ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+#							print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 							print title " (" extra ")#" SRC " " SRC " search \x27" newpage "?page=\x27 1#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 						}
@@ -767,19 +767,19 @@ pornstars()
 	echo "$TMP/$FILENAME.list"
 }
 
-hoster()
+play()
 {
-#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
-#	/tmp/localhoster/hoster.sh youtube_dl $URL$PAGE > $TMP/cache.$PARSER.$INPUT.1
-#	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
-#	echo $STREAMURL
-	echo $URL$PAGE
+	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	/tmp/localhoster/hoster.sh youtube_dl $URL$PAGE > $TMP/cache.$PARSER.$INPUT.1
+	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
+	cat $STREAMURL
+#	echo $URL$PAGE
 }
 
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
-	hoster) $INPUT;;
+	play) $INPUT;;
 	search) $INPUT;;
 	searchold) $INPUT;;
 	genre) $INPUT;;
