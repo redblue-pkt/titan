@@ -3401,11 +3401,11 @@ msgstr ""
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:699 infobar.h:823 infobar.h:1137
-#: info.h:27 keyactions.h:205 language.h:54 letwatch.h:29 letwatch.h:60
-#: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
-#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
-#: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
+#: info.h:27 keyactions.h:205 kinox.h:92 kinox.h:334 language.h:54
+#: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
+#: marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
+#: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
+#: mc_audioplayer.h:797 mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -3610,7 +3610,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG каналов "
 
-#: kinox.h:342 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
+#: kinox.h:379 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
 #: solarmovie.h:606
 msgid "Episode"
 msgstr "Эпизод"
@@ -4182,7 +4182,7 @@ msgstr ""
 "Найден Wlan адаптер, но нет драйвера\n"
 "Установите драйвер "
 
-#: tithek.h:1720
+#: kinox.h:87 kinox.h:329 tithek.h:1720
 msgid "Found error Msg:"
 msgstr ""
 
@@ -6250,19 +6250,19 @@ msgstr ""
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
-#: infobar.h:823 infobar.h:1137 keyactions.h:205 kravencfg.c:66
-#: kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49
-#: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
-#: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:411
-#: mc_audioplayer.h:685 mc_audioplayer.h:797 mc_dateibrowser.h:36
-#: mc_global.h:781 mc_global.h:1079 mc_internetbrowser.h:36
-#: mc_iptvplayer.h:106 mc_iptvplayer.h:374 mc_iptvplayer.h:485 mc_main.h:276
-#: mc_main.h:285 mc_mediathek.h:35 mc_pictureplayer.h:100
-#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:336 mc_videoplayer.h:765
-#: mc_videoplayer.h:800 mc_videoplayer.h:904 mc_videoplayer.h:920
-#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
+#: infobar.h:823 infobar.h:1137 keyactions.h:205 kinox.h:92 kinox.h:334
+#: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62
+#: lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66
+#: letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
+#: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
+#: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
+#: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:336
+#: mc_videoplayer.h:765 mc_videoplayer.h:800 mc_videoplayer.h:904
+#: mc_videoplayer.h:920 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 mightyupload.h:27
 #: mightyupload.h:69 mightyupload.h:75 movie2k.h:23 movie2k.h:32 movie4k.h:38
 #: movie4k.h:60 movie4k.h:104 movie4k.h:411 movreel.h:30 movreel.h:138
 #: movshare.h:40 movshare.h:101 movshare.h:191 movshare.h:197 MultiImage.c:46
@@ -6860,12 +6860,12 @@ msgstr ""
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
-#: infobar.h:823 infobar.h:1137 info.h:27 keyactions.h:205 kravencfg.c:66
-#: kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
-#: lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
-#: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
-#: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
+#: infobar.h:823 infobar.h:1137 info.h:27 keyactions.h:205 kinox.h:92
+#: kinox.h:334 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
+#: lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66
+#: letwatch.h:72 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
+#: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
+#: mc_audioplayer.h:797 mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:374
 #: mc_iptvplayer.h:485 mc_main.h:276 mc_main.h:285 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -9092,8 +9092,8 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: amazon.h:856 ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179
 #: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82
 #: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
-#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:211
-#: kinox.h:213 kinox.h:1133 kinox.h:1135 mlehd.h:90 mlehd.h:92 movie2k.h:74
+#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:224
+#: kinox.h:226 kinox.h:1214 kinox.h:1216 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
 #: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
 #: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
@@ -9153,7 +9153,7 @@ msgstr ""
 msgid "Search only aktual epg ?"
 msgstr "Обновить данные EPG до актуальных?"
 
-#: kinox.h:338 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
+#: kinox.h:375 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
 #: movie4k.h:999 movie4k.h:1115 solarmovie.h:602
 msgid "Season"
 msgstr "Сезон"
