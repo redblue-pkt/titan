@@ -209,10 +209,11 @@ goldesel()
 cloudflare()
 {
 	mkdir $TMP > /dev/null 2>&1
+	rm -f $TMP/cache.hoster.$hoster.1 > /dev/null 2>&1
 	$BIN $CMD/cloudflare.py $INPUT > $TMP/cache.hoster.$hoster.1 2>&1
 	if [ `cat $TMP/cache.hoster.$hoster.1 | grep "urllib2.HTTPError" | wc -l` -eq 1 ];then
 		ERROR=`cat $TMP/cache.hoster.$hoster.1 | grep urllib2.HTTPError:`
-		echo "errormsg: $ERROR"
+		echo "errormsg=$ERROR"
 	else
 		cat $TMP/cache.hoster.$hoster.1
 	fi
@@ -221,12 +222,13 @@ cloudflare()
 kinox()
 {
 	mkdir $TMP > /dev/null 2>&1
+	rm -f $TMP/cache.hoster.$hoster.1 > /dev/null 2>&1
 
 	if [ "$TYPE" == "get" ];then
 		$BIN $CMD/cloudflare.py $INPUT > $TMP/cache.hoster.$hoster.1 2>&1
 		if [ `cat $TMP/cache.hoster.$hoster.1 | grep "urllib2.HTTPError" | wc -l` -eq 1 ];then
 			ERROR=`echo $INPUT | grep urllib2.HTTPError:`
-			echo "errormsg: $ERROR"
+			echo "errormsg=$ERROR"
 		else
 			cat $TMP/cache.hoster.$hoster.1
 		fi
@@ -239,7 +241,7 @@ kinox()
 			fi
 			if [ `echo $URL | grep "urllib2.HTTPError" | wc -l` -eq 1 ];then
 				ERROR=`echo $INPUT | grep urllib2.HTTPError:`
-				echo "errormsg: $ERROR"
+				echo "errormsg=$ERROR"
 			else
 				if [ `echo $URL | grep ^"//" | wc -l` -eq 1 ];then
 					echo "http:$URL"
