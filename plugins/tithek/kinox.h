@@ -137,7 +137,8 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					cmd = ostrcat("/tmp/localhoster/hoster.sh get '", newurl, 0, 0);
 					cmd = ostrcat(cmd, "'", 1, 0);
 					debug(99, "cmd: %s", cmd);
-					tmpstr1 = command(cmd);
+// disable to slow currently
+//					tmpstr1 = command(cmd);
 					free(cmd), cmd = NULL;
 // new end
 
@@ -175,9 +176,9 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						line = ostrcat(line, url, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
 //						line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
-						line = ostrcat(line, "http://kinox.to", 1, 0);
-						line = ostrcat(line, "/", 1, 0);
-						line = ostrcat(line, pic, 1, 0);
+//						line = ostrcat(line, "/", 1, 0);
+//						line = ostrcat(line, pic, 1, 0);
+						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 						line = ostrcat(line, "#kinox_search_", 1, 0);
 /*
 						line = ostrcat(line, "#/tmp/localhoster/hoster.sh get '", 1, 0);
