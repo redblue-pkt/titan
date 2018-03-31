@@ -651,8 +651,10 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	char* tmpstr = NULL, *localfile = NULL;
 
 	if(link == NULL) return NULL;
-	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8) && ostrncmp("/tmp/localhoster/hoster.sh get", link, 30)) return NULL;
+	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8)) return NULL;
 /*
+	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8) && ostrncmp("/tmp/localhoster/hoster.sh get", link, 30)) return NULL;
+
 	if(!ostrncmp("/tmp/localhoster/hoster.sh get", link, 30))
 		cloudflare = 1;
 	else if(!ostrncmp("https://", link, 8))

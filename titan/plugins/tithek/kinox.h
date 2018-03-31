@@ -663,8 +663,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 						titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, NULL, NULL, tmpstr5);
 
-						int cloudflare = 1;
-	int localhoster = 1;	tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
+						tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
 						if(ostrstr(tmpstr5, "iframe src") != NULL)
 							url4 = string_resub("<iframe src=\"", "\"", tmpstr5, 0);
 						else
@@ -770,8 +769,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							pichname = ostrcat(hname, NULL, 0, 0);
 							string_tolower(pichname);
 							pichname = stringreplacecharonce(pichname, '\n', '\0');
-						int cloudflare = 1;
-	int localhoster = 1;		type = 14;
+							type = 14;
 
 							debug(99, "-------------------------------");
 							debug(99, "(%d/%d) %s (Part3) url: %s extra: %s",i ,max , hname, url3, extra);
@@ -810,9 +808,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							string_tolower(pichname);
 							pichname = stringreplacecharonce(pichname, '\n', '\0');
 							type = 14;
-
-						int cloudflare = 1;
-	int localhoster = 1;		debug(99, "-------------------------------");
+							debug(99, "-------------------------------");
 							debug(99, "(%d/%d) %s (Part4) url: %s extra: %s",i ,max , hname, url4, extra);
 
 							incount += 1;
