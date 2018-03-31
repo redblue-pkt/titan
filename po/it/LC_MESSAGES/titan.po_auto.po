@@ -65,6 +65,10 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr ""
 
+#: skin_default_oledskin.xml.h:1
+msgid "()="
+msgstr ""
+
 #: skin_default_skin.xml.h:625
 msgid "(Stop)"
 msgstr ""
@@ -3372,7 +3376,7 @@ msgstr ""
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:699 infobar.h:823 infobar.h:1137
-#: info.h:27 keyactions.h:205 kinox.h:92 kinox.h:343 language.h:54
+#: info.h:27 keyactions.h:205 kinox.h:92 kinox.h:344 language.h:54
 #: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
@@ -3579,7 +3583,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG Canali: "
 
-#: kinox.h:388 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
+#: kinox.h:389 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
 #: solarmovie.h:606
 msgid "Episode"
 msgstr "Episodio"
@@ -4140,7 +4144,7 @@ msgid ""
 "Please install driver: "
 msgstr ""
 
-#: kinox.h:87 kinox.h:338 tithek.h:1735
+#: kinox.h:87 kinox.h:339 tithek.h:1735
 msgid "Found error Msg:"
 msgstr ""
 
@@ -6194,7 +6198,7 @@ msgstr ""
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
-#: infobar.h:823 infobar.h:1137 keyactions.h:205 kinox.h:92 kinox.h:343
+#: infobar.h:823 infobar.h:1137 keyactions.h:205 kinox.h:92 kinox.h:344
 #: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62
 #: lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66
 #: letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
@@ -6802,7 +6806,7 @@ msgstr ""
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
 #: infobar.h:823 infobar.h:1137 info.h:27 keyactions.h:205 kinox.h:92
-#: kinox.h:343 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
+#: kinox.h:344 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
 #: lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66
 #: letwatch.h:72 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
@@ -9018,8 +9022,8 @@ msgstr ""
 #: amazon.h:856 ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179
 #: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82
 #: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
-#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:233
-#: kinox.h:235 kinox.h:1268 kinox.h:1270 mlehd.h:90 mlehd.h:92 movie2k.h:74
+#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:234
+#: kinox.h:236 kinox.h:1269 kinox.h:1271 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
 #: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
 #: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
@@ -9079,7 +9083,7 @@ msgstr "Search on Kinox"
 msgid "Search only aktual epg ?"
 msgstr "Search on Youtube"
 
-#: kinox.h:384 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
+#: kinox.h:385 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
 #: movie4k.h:999 movie4k.h:1115 solarmovie.h:602
 msgid "Season"
 msgstr ""
