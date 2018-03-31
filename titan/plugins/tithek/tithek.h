@@ -646,13 +646,17 @@ end:
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
-	int ret = 1, port = 80, timeout = 10000, ssl = 0;
+	int ret = 1, port = 80, timeout = 10000, ssl = 0, cloudflare = 0;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
 
 	if(link == NULL) return NULL;
-	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8)) return NULL;
-
+	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8) && ostrncmp("/tmp/localhoster/hoster.sh get", link, 30)) return NULL;
+/*
+	if(!ostrncmp("/tmp/localhoster/hoster.sh get", link, 30))
+		cloudflare = 1;
+	else if(!ostrncmp("https://", link, 8))
+*/
 	if(!ostrncmp("https://", link, 8))
 		ssl = 1;
 	else
@@ -718,7 +722,16 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		{
 			if(pic == 1)
 			{
-				if(ssl == 1)
+				if(cloudflare == 1)
+				{
+					char* cmd = NULL;
+					cmd = ostrcat(link, " > ", 0, 0);
+					cmd = ostrcat(cmd, localfile, 1, 0);
+					debug(99, "cmd: %s", cmd);
+					tmpstr = command(cmd);
+					free(cmd), cmd = NULL;
+				}	
+				else if(ssl == 1)
 					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
 				else if(tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);

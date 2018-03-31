@@ -178,6 +178,14 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						line = ostrcat(line, "/", 1, 0);
 						line = ostrcat(line, pic, 1, 0);
 						line = ostrcat(line, "#kinox_search_", 1, 0);
+/*
+						line = ostrcat(line, "#/tmp/localhoster/hoster.sh get '", 1, 0);
+						line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
+						line = ostrcat(line, "/", 1, 0);
+						line = ostrcat(line, pic, 1, 0);
+						line = ostrcat(line, "'#kinox_search_", 1, 0);
+*/
+
 						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
 						line = ostrcat(line, ".jpg#KinoX - Search#22\n", 1, 0);
 					}
@@ -303,11 +311,11 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 	int cloudflare = 1;
 	int localhoster = 1;
+	newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
+	newurl = ostrcat(newurl, path, 1, 0);
+
 	if(cloudflare == 0)
 	{
-		newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
-		newurl = ostrcat(newurl, path, 1, 0);
-
 //		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 //		tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
@@ -315,7 +323,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	else
 	{
 // new start
-		cmd = ostrcat("/tmp/localhoster/hoster.sh get '", link, 0, 0);
+		cmd = ostrcat("/tmp/localhoster/hoster.sh get '", newurl, 0, 0);
 		cmd = ostrcat(cmd, "'", 1, 0);
 		debug(99, "cmd: %s", cmd);
 		tmpstr = command(cmd);
@@ -655,7 +663,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 						titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, NULL, NULL, tmpstr5);
 
-						tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
+						int cloudflare = 1;
+	int localhoster = 1;	tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
 						if(ostrstr(tmpstr5, "iframe src") != NULL)
 							url4 = string_resub("<iframe src=\"", "\"", tmpstr5, 0);
 						else
@@ -761,7 +770,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							pichname = ostrcat(hname, NULL, 0, 0);
 							string_tolower(pichname);
 							pichname = stringreplacecharonce(pichname, '\n', '\0');
-							type = 14;
+						int cloudflare = 1;
+	int localhoster = 1;		type = 14;
 
 							debug(99, "-------------------------------");
 							debug(99, "(%d/%d) %s (Part3) url: %s extra: %s",i ,max , hname, url3, extra);
@@ -801,7 +811,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							pichname = stringreplacecharonce(pichname, '\n', '\0');
 							type = 14;
 
-							debug(99, "-------------------------------");
+						int cloudflare = 1;
+	int localhoster = 1;		debug(99, "-------------------------------");
 							debug(99, "(%d/%d) %s (Part4) url: %s extra: %s",i ,max , hname, url4, extra);
 
 							incount += 1;
@@ -918,6 +929,10 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		searchname = string_replace("/Stream/", "", searchname, 0);
 		searchname = string_replace(".html", "", searchname, 0);
 		debug(99, "searchname: %s", searchname);
+		free(searchname), searchname = NULL;
+
+		searchname = oregex("://.*/Stream/(.*).html.*", ret0[0].part);
+		debug(99, "new searchname: %s", searchname);
 	}
 	free(ret0), ret0 = NULL;
 
@@ -931,18 +946,32 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		path = pos + 1;
 	}
 
-//	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-//	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	pathnew = oregex("://.*/(.*).*", link);
+	printf("new pathnew: %s\n",pathnew);
+
+	int cloudflare = 1;
+	int localhoster = 1;
+	newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
+	newurl = ostrcat(newurl, pathnew, 1, 0);
+
+	if(cloudflare == 0)
+	{
+//		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+//		tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+	}
+	else
+	{
 // new start
-	cmd = ostrcat("/tmp/localhoster/hoster.sh get '", link, 0, 0);
-	cmd = ostrcat(cmd, "'", 1, 0);
-	debug(99, "cmd: %s", cmd);
-	tmpstr = command(cmd);
-	free(cmd), cmd = NULL;
+		cmd = ostrcat("/tmp/localhoster/hoster.sh get '", newurl, 0, 0);
+		cmd = ostrcat(cmd, "'", 1, 0);
+		debug(99, "cmd: %s", cmd);
+		tmpstr = command(cmd);
+		free(cmd), cmd = NULL;
 // new end
+	}
 
 	debug(99, "tmpstr: %s", tmpstr);
-
 	free(newurl), newurl = NULL;
 
 	if(tmpstr != NULL)
@@ -1072,7 +1101,30 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						hlink = string_replace("http:///Stream/", "", hlink, 1);
 						hlink = string_replace("https:////Stream/", "", hlink, 1);					
 						hlink = string_replace("https:///Stream/", "", hlink, 1);
-									
+
+						if(cloudflare == 0)
+						{
+//							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+						}
+						else if(localhoster == 1)
+						{
+							cmd = ostrcat("/tmp/localhoster/hoster.sh hoster '", pathnew, 0, 0);
+							cmd = ostrcat(cmd, "'", 1, 0);
+							debug(99, "cmd: %s", cmd);
+							url = ostrcat(cmd, NULL, 0, 0);
+						}
+						else
+						{
+// new start
+							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
+							cmd = ostrcat(cmd, "'", 1, 0);
+							debug(99, "cmd: %s", cmd);
+							tmpstr1 = command(cmd);
+							free(cmd), cmd = NULL;
+// new end
+						}
+/*			
 //						debug(99, "pathnew: %s", pathnew);
 //						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 //						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
@@ -1084,48 +1136,53 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						free(cmd), cmd = NULL;
 // new end
 //						debug(99, "tmpstr1 1: %s", tmpstr1);
-
+*/
 						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 //						debug(99, "tmpstr1 2: %s", tmpstr1);
 
-						if(ostrstr(tmpstr1, "<iframe src=") != NULL)
+						if(localhoster == 0)
 						{
-							url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
-//							debug(99, "iframe1.1 url: %s", url);
-						}
-						else if(ostrstr(tmpstr1, "/iframe>") != NULL)
-						{
-							free(pathnew), pathnew = NULL;
-							pathnew = ostrcat(getconfig("tithek_kinox_url", NULL), "/aGET/Mirror/", 0, 0);
-							pathnew = ostrcat(pathnew, hlink, 1, 0);
-//							debug(99, "iframe2.1 pathnew: %s", pathnew);
-							free(tmpstr1), tmpstr1 = NULL;
-//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
-// new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
-							cmd = ostrcat(cmd, "'", 1, 0);
-							debug(99, "cmd: %s", cmd);
-							tmpstr1 = command(cmd);
-							free(cmd), cmd = NULL;
-// new end
-//							debug(99, "iframe2.2 tmpstr1: %s", tmpstr1);
-							tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-//							debug(99, "iframe2.3 tmpstr1: %s", tmpstr1);
-
 							if(ostrstr(tmpstr1, "<iframe src=") != NULL)
 							{
 								url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
-//								debug(99, "iframe2.4 url: %s", url);
+	//							debug(99, "iframe1.1 url: %s", url);
 							}
-						}
-						else
-						{
-							tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
-//							debug(99, "tmpstr1 3: %s", tmpstr1);
-							url = ostrcat(tmpstr1, NULL, 0, 0);
+							else if(ostrstr(tmpstr1, "/iframe>") != NULL)
+							{
+								free(pathnew), pathnew = NULL;
+								pathnew = ostrcat(getconfig("tithek_kinox_url", NULL), "/aGET/Mirror/", 0, 0);
+								pathnew = ostrcat(pathnew, hlink, 1, 0);
+	//							debug(99, "iframe2.1 pathnew: %s", pathnew);
+								free(tmpstr1), tmpstr1 = NULL;
+	//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+	// new start
+								cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
+								cmd = ostrcat(cmd, "'", 1, 0);
+								debug(99, "cmd: %s", cmd);
+								tmpstr1 = command(cmd);
+								free(cmd), cmd = NULL;
+	// new end
+	//							debug(99, "iframe2.2 tmpstr1: %s", tmpstr1);
+								tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
+	//							debug(99, "iframe2.3 tmpstr1: %s", tmpstr1);
+
+								if(ostrstr(tmpstr1, "<iframe src=") != NULL)
+								{
+									url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
+	//								debug(99, "iframe2.4 url: %s", url);
+								}
+							}
+							else
+							{
+								tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
+	//							debug(99, "tmpstr1 3: %s", tmpstr1);
+								url = ostrcat(tmpstr1, NULL, 0, 0);
+							}
 						}
 	
 						type = 14;
+						if(localhoster == 1)
+							type = 111;
 
 						debug(99, "-------------------------------");
 						debug(99, "(%d/%d) (%d/%d) %s url: %s extra: %s", i, max, j, mirrormax, hname, url, extra);
