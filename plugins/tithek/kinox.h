@@ -82,6 +82,18 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 // new end
 		free(newurl), newurl = NULL;
 
+		if(!ostrncmp("errormsg=", tmpstr, 9))
+		{
+			tmpstr1 = ostrcat(_("Found error Msg:"), "\n\n", 0, 0);
+			tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+			tmpstr1 = string_replace("errormsg=", "", tmpstr1, 1);
+
+			debug(99, "Found error Msg: %s", tmpstr);
+			textbox(_("Message"), tmpstr1, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
+			free(tmpstr); tmpstr = NULL;
+			free(tmpstr1); tmpstr1 = NULL;
+		}
+
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
 
 		titheklog(debuglevel, "/tmp/kinox1_tmpstr", NULL, NULL, NULL, tmpstr);
@@ -116,7 +128,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						lang = ostrcat(lang, " (en)", 1, 0);
 					else
 						lang = ostrcat(lang, " (\?\?)", 1, 0);
-																	
+														
 //					tmpstr1 = gethttp("kinox.to", path, 80, NULL, NULL, 10000, NULL, 0);
 					newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 					newurl = ostrcat(newurl, path, 1, 0);
@@ -128,6 +140,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					tmpstr1 = command(cmd);
 					free(cmd), cmd = NULL;
 // new end
+
 					free(newurl), newurl = NULL;
 
 					from = ostrcat("<div class=\"Grahpics\"><a href=\"", path, 0, 0);
@@ -288,17 +301,41 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		path = pos + 1;
 	}
 
-//	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-//	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+	int cloudflare = 1;
+	int localhoster = 1;
+	if(cloudflare == 0)
+	{
+		newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
+		newurl = ostrcat(newurl, path, 1, 0);
+
+//		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+//		tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+	}
+	else
+	{
 // new start
-	cmd = ostrcat("/tmp/localhoster/hoster.sh get '", link, 0, 0);
-	cmd = ostrcat(cmd, "'", 1, 0);
-	debug(99, "cmd: %s", cmd);
-	tmpstr = command(cmd);
-	free(cmd), cmd = NULL;
+		cmd = ostrcat("/tmp/localhoster/hoster.sh get '", link, 0, 0);
+		cmd = ostrcat(cmd, "'", 1, 0);
+		debug(99, "cmd: %s", cmd);
+		tmpstr = command(cmd);
+		free(cmd), cmd = NULL;
 // new end
+	}
 	titheklog(debuglevel, "/tmp/kinox2_tmpstr", NULL, NULL, NULL, tmpstr);
-	
+
+	if(!ostrncmp("errormsg=", tmpstr, 9))
+	{
+		tmpstr1 = ostrcat(_("Found error Msg:"), "\n\n", 0, 0);
+		tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+		tmpstr1 = string_replace("errormsg=", "", tmpstr1, 1);
+
+		debug(99, "Found error Msg: %s", tmpstr);
+		textbox(_("Message"), tmpstr1, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
+		free(tmpstr); tmpstr = NULL;
+		free(tmpstr1); tmpstr1 = NULL;
+	}
+
 	if(tmpstr != NULL)
 	{
 		drawscreen(load, 0, 0);
@@ -440,20 +477,20 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, NULL, NULL, pathnew);
 
 
-//						tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-//						tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
-// new start
-						cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
-						cmd = ostrcat(cmd, "'", 1, 0);
-						debug(99, "cmd: %s", cmd);
-						tmpstr1 = command(cmd);
-						free(cmd), cmd = NULL;
-// new end
-						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+						if(cloudflare == 0)
 						{
-							sleep(1);
 //							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+						}
+						else if(localhoster == 1)
+						{
+							cmd = ostrcat("/tmp/localhoster/hoster.sh hoster '", pathnew, 0, 0);
+							cmd = ostrcat(cmd, "'", 1, 0);
+							debug(99, "cmd: %s", cmd);
+							url = ostrcat(cmd, NULL, 0, 0);
+						}
+						else
+						{
 // new start
 							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
 							cmd = ostrcat(cmd, "'", 1, 0);
@@ -465,51 +502,93 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
-//							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							if(cloudflare == 0)
+							{
+//								tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+								tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							}
+							else
+							{
 // new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
-							cmd = ostrcat(cmd, "'", 1, 0);
-							debug(99, "cmd: %s", cmd);
-							tmpstr1 = command(cmd);
-							free(cmd), cmd = NULL;
+								cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
+								cmd = ostrcat(cmd, "'", 1, 0);
+								debug(99, "cmd: %s", cmd);
+								tmpstr1 = command(cmd);
+								free(cmd), cmd = NULL;
 // new end
+							}
 						}
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
-//							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							if(cloudflare == 0)
+							{
+//								tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+								tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							}
+							else
+							{
 // new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
-							cmd = ostrcat(cmd, "'", 1, 0);
-							debug(99, "cmd: %s", cmd);
-							tmpstr1 = command(cmd);
-							free(cmd), cmd = NULL;
+								cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
+								cmd = ostrcat(cmd, "'", 1, 0);
+								debug(99, "cmd: %s", cmd);
+								tmpstr1 = command(cmd);
+								free(cmd), cmd = NULL;
 // new end
+							}
 						}
 						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
 						{
 							sleep(1);
-//							tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
-//							tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							if(cloudflare == 0)
+							{
+//								tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+								tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							}
+							else
+							{
 // new start
-							cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
-							cmd = ostrcat(cmd, "'", 1, 0);
-							debug(99, "cmd: %s", cmd);
-							tmpstr1 = command(cmd);
-							free(cmd), cmd = NULL;
+								cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
+								cmd = ostrcat(cmd, "'", 1, 0);
+								debug(99, "cmd: %s", cmd);
+								tmpstr1 = command(cmd);
+								free(cmd), cmd = NULL;
 // new end
+							}
+						}
+						if(ostrstr(tmpstr1, "503 Service Temporarily Unavailable") != NULL)
+						{
+							sleep(1);
+							if(cloudflare == 0)
+							{
+//								tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+								tmpstr1 = gethttps(pathnew, NULL, NULL, NULL, NULL, NULL, 1);
+							}
+							else
+							{
+// new start
+								cmd = ostrcat("/tmp/localhoster/hoster.sh get '", pathnew, 0, 0);
+								cmd = ostrcat(cmd, "'", 1, 0);
+								debug(99, "cmd: %s", cmd);
+								tmpstr1 = command(cmd);
+								free(cmd), cmd = NULL;
+// new end
+							}
 						}
 						free(pathnew), pathnew = NULL;
 
 						titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, NULL, NULL, tmpstr1);
 
+
 						tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
-						if(ostrstr(tmpstr1, "iframe src") != NULL)
-							url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
-						else
-							url = string_resub("<a href=\"", "\"", tmpstr1, 0);
+
+						if(localhoster == 0)
+						{
+							if(ostrstr(tmpstr1, "iframe src") != NULL)
+								url = string_resub("<iframe src=\"", "\"", tmpstr1, 0);
+							else
+								url = string_resub("<a href=\"", "\"", tmpstr1, 0);
+						}
 
 						//url = ostrcat(tmpstr1, NULL, 0, 0);
 	////////////////
@@ -585,6 +664,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	////////////////
 */
 						type = 14;
+						if(localhoster == 1)
+							type = 111;
 
 						debug(99, "-------------------------------");
 //						if(ostrcmp(url, url2) != 0)
