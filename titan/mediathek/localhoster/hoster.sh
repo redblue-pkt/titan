@@ -208,7 +208,49 @@ goldesel()
 
 cloudflare()
 {
-	$BIN $CMD/cloudflare.py $INPUT
+	mkdir $TMP > /dev/null 2>&1
+	$BIN $CMD/cloudflare.py $INPUT > $TMP/cache.hoster.$hoster.1 2>&1
+	if [ `cat $TMP/cache.hoster.$hoster.1 | grep "urllib2.HTTPError" | wc -l` -eq 1 ];then
+		ERROR=`cat $TMP/cache.hoster.$hoster.1 | grep urllib2.HTTPError:`
+		echo "errormsg: $ERROR"
+	else
+		cat $TMP/cache.hoster.$hoster.1
+	fi
+}
+
+kinox()
+{
+	mkdir $TMP > /dev/null 2>&1
+
+	if [ "$TYPE" == "get" ];then
+		$BIN $CMD/cloudflare.py $INPUT > $TMP/cache.hoster.$hoster.1 2>&1
+		if [ `cat $TMP/cache.hoster.$hoster.1 | grep "urllib2.HTTPError" | wc -l` -eq 1 ];then
+			ERROR=`echo $INPUT | grep urllib2.HTTPError:`
+			echo "errormsg: $ERROR"
+		else
+			cat $TMP/cache.hoster.$hoster.1
+		fi
+	elif [ "$TYPE" == "hoster" ];then
+
+		if [ `echo $INPUT | grep "/aGET/" | wc -l` -eq 1 ];then
+			URL=`$BIN $CMD/cloudflare.py $INPUT | tr -d '\\' | sed -nr 's/.*<iframe src="([^"]+)".*/\1/p'`
+			if [ -z "$URL" ];then
+				URL=`$BIN $CMD/cloudflare.py $INPUT | tr -d '\\' | sed -nr 's/.*<a href="([^"]+)".*/\1/p'`
+			fi
+			if [ `echo $URL | grep "urllib2.HTTPError" | wc -l` -eq 1 ];then
+				ERROR=`echo $INPUT | grep urllib2.HTTPError:`
+				echo "errormsg: $ERROR"
+			else
+				if [ `echo $URL | grep ^"//" | wc -l` -eq 1 ];then
+					echo "http:$URL"
+				else
+					echo "$URL"
+				fi
+			fi
+		else
+			$BIN $CMD/cloudflare.py $INPUT		
+		fi	
+	fi
 }
 
 nowvideo()
@@ -708,6 +750,13 @@ if [ "$TYPE" == "get" ];then
 		cricfree) cricfree $INPUT;;
 		adca) broadcast $INPUT;;
 #		*) all $INPUT;;
+	esac
+fi
+
+if [ "$TYPE" == "hoster" ];then
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
+	case $hoster in
+		kinox|kinos) kinox $INPUT;;
 	esac
 fi
 
