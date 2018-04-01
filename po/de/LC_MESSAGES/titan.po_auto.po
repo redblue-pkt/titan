@@ -77,6 +77,10 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr "( --Stimmen-- )"
 
+#: skin_default_oledskin.xml.h:1
+msgid "()="
+msgstr ""
+
 #: skin_default_skin.xml.h:625
 msgid "(Stop)"
 msgstr "(Stopp)"
@@ -3461,7 +3465,7 @@ msgstr ""
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:699 infobar.h:823 infobar.h:1137
-#: info.h:27 keyactions.h:205 kinox.h:92 kinox.h:344 language.h:54
+#: info.h:27 keyactions.h:205 kinox.h:101 kinox.h:358 language.h:54
 #: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
@@ -3670,7 +3674,7 @@ msgstr "EPG Farbe 3"
 msgid "EpgChannels: "
 msgstr "EPG-Kanäle: "
 
-#: kinox.h:389 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
+#: kinox.h:403 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
 #: solarmovie.h:606
 msgid "Episode"
 msgstr "Folge"
@@ -4258,7 +4262,7 @@ msgstr ""
 "passender Treiber. Bitte installieren Sie\n"
 "den Treiber:"
 
-#: kinox.h:87 kinox.h:339 tithek.h:1735
+#: kinox.h:96 kinox.h:353 tithek.h:1735
 msgid "Found error Msg:"
 msgstr ""
 
@@ -5708,6 +5712,14 @@ msgid "Keys Updated !"
 msgstr "aktualisiert!"
 
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
+msgid "KinoX Load Preview Pic"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+msgid "KinoX Localhoster"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "KinoX Url"
 msgstr ""
 
@@ -6381,7 +6393,7 @@ msgstr "Menü"
 msgid "Menu Protect"
 msgstr "Menü schützen"
 
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "Menu Title"
 msgstr "Menü Titel"
 
@@ -6423,7 +6435,7 @@ msgstr "Menüliste"
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
-#: infobar.h:823 infobar.h:1137 keyactions.h:205 kinox.h:92 kinox.h:344
+#: infobar.h:823 infobar.h:1137 keyactions.h:205 kinox.h:101 kinox.h:358
 #: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62
 #: lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66
 #: letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
@@ -7039,8 +7051,8 @@ msgstr "Ö"
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
-#: infobar.h:823 infobar.h:1137 info.h:27 keyactions.h:205 kinox.h:92
-#: kinox.h:344 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
+#: infobar.h:823 infobar.h:1137 info.h:27 keyactions.h:205 kinox.h:101
+#: kinox.h:358 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
 #: lcdpearl1.c:49 lcdsamsung.c:101 letwatch.h:29 letwatch.h:60 letwatch.h:66
 #: letwatch.h:72 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
@@ -7329,9 +7341,9 @@ msgstr ""
 msgid "PCR PID:"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:13
+#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:15
 #: skin_default_skin.xml.h:429 skins_mc_skin.xml.h:42
-#: skins_tithek_skin.xml.h:13
+#: skins_tithek_skin.xml.h:15
 msgid "PICTURE"
 msgstr "Bild"
 
@@ -7523,7 +7535,7 @@ msgstr "PiP Tausch"
 msgid "Pic HW-decode"
 msgstr "Hardwarebilddecoder"
 
-#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+#: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "Pic Link"
 msgstr "Bild Link"
 
@@ -7531,7 +7543,7 @@ msgstr "Bild Link"
 msgid "Pic Name"
 msgstr "Bildername"
 
-#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
+#: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
 msgid "Pic Ratio"
 msgstr "Bilder im Originalformat darstellen"
 
@@ -8442,8 +8454,8 @@ msgstr "Rote Taste"
 msgid "Red Key Action - Setup"
 msgstr "Rote Taste - Belegungsmenü "
 
-#: plugins_tithek_skin.xml.h:15 skin_default_skin.xml.h:486
-#: skins_tithek_skin.xml.h:15
+#: plugins_tithek_skin.xml.h:17 skin_default_skin.xml.h:486
+#: skins_tithek_skin.xml.h:17
 msgid "Red-Menu"
 msgstr "Rot-Menü"
 
@@ -8491,7 +8503,7 @@ msgstr "Aktion bei Power Taste der Fernbedienung"
 msgid "Remove Cachefile ?"
 msgstr "Zwischenspeicher leeren?"
 
-#: plugins_tithek_skin.xml.h:16 skins_tithek_skin.xml.h:16
+#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
 msgid "Remove Cookies"
 msgstr "Lösche Cookies"
 
@@ -9109,8 +9121,8 @@ msgstr "Science Fiction"
 msgid "Score:"
 msgstr "Punkte:"
 
-#: adjust.h:310 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:17
-#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:17
+#: adjust.h:310 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:19
+#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:19
 msgid "Screensaver"
 msgstr "Bildschirmschoner"
 
@@ -9284,8 +9296,8 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: amazon.h:856 ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179
 #: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82
 #: imdbapi.h:287 imdb.h:712 internetradio.h:13 internetradio.h:15
-#: internettv.h:13 internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:234
-#: kinox.h:236 kinox.h:1269 kinox.h:1271 mlehd.h:90 mlehd.h:92 movie2k.h:74
+#: internettv.h:13 internettv.h:15 kinox.h:35 kinox.h:37 kinox.h:248
+#: kinox.h:250 kinox.h:988 kinox.h:990 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
 #: movie4k.h:303 movie4k.h:305 myvideo.h:231 myvideo.h:233 myvideo.h:375
 #: myvideo.h:377 nbastream.h:221 nbastream.h:223 netzkino.h:13 netzkino.h:15
@@ -9345,7 +9357,7 @@ msgstr "Suche diesen Titel bei Netzkino (local)"
 msgid "Search only aktual epg ?"
 msgstr "Nur im EPG des aktuellen Senders suchen?"
 
-#: kinox.h:385 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
+#: kinox.h:399 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
 #: movie4k.h:999 movie4k.h:1115 solarmovie.h:602
 msgid "Season"
 msgstr "Staffel"
@@ -9586,7 +9598,7 @@ msgstr "Anzeige des freien Festplattenspeichers"
 msgid "Show Modules"
 msgstr "Zeige Modul Informationen"
 
-#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
+#: plugins_tithek_skin.xml.h:20 skins_tithek_skin.xml.h:20
 msgid "Show Pay Streams"
 msgstr "Zeige kostenpflichtige und englische Streams"
 
@@ -10077,7 +10089,7 @@ msgstr ""
 msgid "Stream Config (iOS)"
 msgstr "Stream Konfiguration (iOS)"
 
-#: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
+#: plugins_tithek_skin.xml.h:21 skins_tithek_skin.xml.h:21
 msgid "Stream Link"
 msgstr ""
 
@@ -10618,11 +10630,11 @@ msgstr "Donnerstag"
 msgid "TiTan Mediathek"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:20 skins_tithek_skin.xml.h:20
+#: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
 msgid "TiThek - Favorite Edit"
 msgstr "Favoriten bearbeiten"
 
-#: plugins_tithek_skin.xml.h:27 skins_tithek_skin.xml.h:27
+#: plugins_tithek_skin.xml.h:29 skins_tithek_skin.xml.h:29
 msgid "TiThek Menu"
 msgstr "TiThek Menü"
 
@@ -10630,7 +10642,7 @@ msgstr "TiThek Menü"
 msgid "TiThek Select Color"
 msgstr "Cursor Farbe für TiThek"
 
-#: plugins_tithek_skin.xml.h:28 skins_tithek_skin.xml.h:28
+#: plugins_tithek_skin.xml.h:30 skins_tithek_skin.xml.h:30
 msgid "TiThek Settings"
 msgstr "TiThek Einstellungen"
 
@@ -10851,7 +10863,7 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
-#: tithek.c:132 tithek_global.h:595 tithek_global.h:717
+#: tithek.c:138 tithek_global.h:595 tithek_global.h:717
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
 
@@ -10864,8 +10876,8 @@ msgstr "TiThek - Hauptmenü - Favoriten"
 msgid "Tithek Hoster URL with http://"
 msgstr "Tithek Hoster URL (http://...)"
 
-#: mediadb.h:2518 plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:669
-#: skins_tithek_skin.xml.h:21
+#: mediadb.h:2518 plugins_tithek_skin.xml.h:23 skin_default_skin.xml.h:669
+#: skins_tithek_skin.xml.h:23
 msgid "Title"
 msgstr "Titel"
 
@@ -11144,8 +11156,8 @@ msgstr "Zwei Stufen Stummschaltung"
 msgid "Typ"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:22 skin_default_skin.xml.h:704
-#: skins_tithek_skin.xml.h:22
+#: plugins_tithek_skin.xml.h:24 skin_default_skin.xml.h:704
+#: skins_tithek_skin.xml.h:24
 msgid "Type"
 msgstr "Typ"
 
@@ -11353,11 +11365,11 @@ msgstr "Filme"
 msgid "VIDEO SETTINGS"
 msgstr "Einstellungen"
 
-#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
+#: plugins_tithek_skin.xml.h:27 skins_tithek_skin.xml.h:27
 msgid "VK Pass"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:26 skins_tithek_skin.xml.h:26
+#: plugins_tithek_skin.xml.h:28 skins_tithek_skin.xml.h:28
 msgid "VK User"
 msgstr ""
 
@@ -11452,11 +11464,11 @@ msgstr "Viet"
 msgid "View"
 msgstr "Ansicht"
 
-#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
+#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
 msgid "View Cover"
 msgstr "Ansicht Cover (streams)"
 
-#: plugins_tithek_skin.xml.h:24 skins_tithek_skin.xml.h:24
+#: plugins_tithek_skin.xml.h:26 skins_tithek_skin.xml.h:26
 msgid "View Sections"
 msgstr "Menü Ansicht"
 
@@ -12319,6 +12331,10 @@ msgstr "CIFS"
 msgid "close window"
 msgstr "Fenster schließen"
 
+#: tithek_settings.h:95
+msgid "cloudfare"
+msgstr ""
+
 #: network.h:284
 msgid "comming soon..."
 msgstr "folgt demnächst, das Team arbeitet dran"
@@ -12759,9 +12775,17 @@ msgstr "Behalten"
 msgid "html"
 msgstr "HTML"
 
+#: tithek_settings.h:93
+msgid "http"
+msgstr ""
+
 #: webif_help.h:32
 msgid "httpdsettings"
 msgstr "HTTP Einstellungen"
+
+#: tithek_settings.h:94
+msgid "https"
+msgstr ""
 
 #: skin_default_keyskin.xml.h:36
 msgid "i"
@@ -12948,7 +12972,7 @@ msgstr "Senderliste Editor"
 msgid "lnbscreen"
 msgstr "LNB Einstellungen"
 
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "localname"
 msgstr "Lokaler Name"
 
@@ -13173,10 +13197,10 @@ msgstr "NFSD Kernel Server autostart"
 #: settings_overclocking.h:244 sispmctl.h:693 sispmctl.h:697 sispmctl.h:737
 #: sispmctl.h:741 sispmctl.h:781 sispmctl.h:785 sispmctl.h:825 sispmctl.h:829
 #: skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
-#: timeshiftsettings.h:63 tithek_settings.h:43 tithek_settings.h:47
-#: tithek_settings.h:51 tithek_settings.h:55 tmc.h:531 tmc.h:535
-#: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
-#: tunerconfig.h:840 xupnpd.h:30
+#: timeshiftsettings.h:63 tithek_settings.h:46 tithek_settings.h:50
+#: tithek_settings.h:54 tithek_settings.h:58 tithek_settings.h:89 tmc.h:531
+#: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
+#: tunerconfig.h:327 tunerconfig.h:840 xupnpd.h:30
 msgid "no"
 msgstr "Nein"
 
@@ -13465,8 +13489,8 @@ msgstr "Wiedergabeliste Menü"
 msgid "please wait"
 msgstr "bitte warten"
 
-#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:14
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:14 tithek.h:1438
+#: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:16
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:16 tithek.h:1438
 msgid "please wait..."
 msgstr "bitte warten"
 
@@ -13820,31 +13844,31 @@ msgstr "EPG-Kurzübersicht"
 msgid "show"
 msgstr "anzeigen"
 
-#: tithek_settings.h:28 tithek_settings.h:37
+#: tithek_settings.h:31 tithek_settings.h:40
 msgid "show 12 entrys"
 msgstr "klein (12 Bilder)"
 
-#: tithek_settings.h:26 tithek_settings.h:35
+#: tithek_settings.h:29 tithek_settings.h:38
 msgid "show 2 entrys"
 msgstr "sehr groß (2 Bilder)"
 
-#: tithek_settings.h:29 tithek_settings.h:38
+#: tithek_settings.h:32 tithek_settings.h:41
 msgid "show 20 entrys"
 msgstr "kleiner (20 Bilder)"
 
-#: tithek_settings.h:30 tithek_settings.h:39
+#: tithek_settings.h:33 tithek_settings.h:42
 msgid "show 30 entrys"
 msgstr "sehr klein (30 Bilder)"
 
-#: tithek_settings.h:27 tithek_settings.h:36
+#: tithek_settings.h:30 tithek_settings.h:39
 msgid "show 6 entrys"
 msgstr "groß (6 Bilder)"
 
-#: tithek_settings.h:25 tithek_settings.h:34
+#: tithek_settings.h:28 tithek_settings.h:37
 msgid "show auto entrys"
 msgstr "automatisch anpassen"
 
-#: tithek_settings.h:31 tithek_settings.h:40
+#: tithek_settings.h:34 tithek_settings.h:43
 msgid "show in list"
 msgstr "in Liste zeigen"
 
@@ -14650,9 +14674,9 @@ msgstr "gelb"
 #: settings_overclocking.h:244 sispmctl.h:692 sispmctl.h:696 sispmctl.h:736
 #: sispmctl.h:740 sispmctl.h:780 sispmctl.h:784 sispmctl.h:824 sispmctl.h:828
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:44 tithek_settings.h:48
-#: tithek_settings.h:52 tithek_settings.h:56 tmc.h:532 tmc.h:536
-#: tunerconfig.h:840 xupnpd.h:30
+#: timeshiftsettings.h:62 tithek_settings.h:47 tithek_settings.h:51
+#: tithek_settings.h:55 tithek_settings.h:59 tithek_settings.h:90 tmc.h:532
+#: tmc.h:536 tunerconfig.h:840 xupnpd.h:30
 msgid "yes"
 msgstr "Ja"
 
