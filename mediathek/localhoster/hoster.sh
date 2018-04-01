@@ -734,7 +734,7 @@ if [ "$TYPE" == "get" ];then
 		vidup) vidup $INPUT;;
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
-		goldesel|movie4k|movie4kto|kinox|kinos) cloudflare $INPUT;;
+		goldesel|movie4k|movie4kto|kinox|kinos|kinoxto) cloudflare $INPUT;;
 		streamcloud1) streamcloud $INPUT;;	
 		nowvideo) nowvideo $INPUT;;
 		divxstage|cloudtime) divxstage $INPUT;;
@@ -758,7 +758,7 @@ fi
 if [ "$TYPE" == "hoster" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
-		kinox|kinos) kinox $INPUT;;
+		kinox|kinos|kinoxto) kinox $INPUT;;
 	esac
 fi
 
