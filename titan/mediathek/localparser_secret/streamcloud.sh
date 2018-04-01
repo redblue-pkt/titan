@@ -240,7 +240,9 @@ kino()
 
 hosterlist()
 {
-	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+
+#	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin "$PAGE" -o $TMP/cache.$FILENAME.1
 		cat $TMP/cache.$FILENAME.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.2
 
@@ -265,6 +267,7 @@ hosterlist()
 
 			$curlbin "$TMPURL" -o $TMP/cache.$FILENAME.5
 #			$("#hostname").html("<a href='http://openload.co/embed/vq1HFMJ5vAo/detroit.SD-spectre.mkv' target='_blank' style='color:gold; text-decoration:underline;'>openload.co</a>");
+
 			cat $TMP/cache.$FILENAME.5 | grep "#hostname" | sed -nr "s/.*a href='([^']+)'.*/\1/p" | grep -v "+link+" >$TMP/cache.$FILENAME.5.url1
 			TMPURL=`cat $TMP/cache.$FILENAME.5.url1`
 			if [ ! -z "$TMPURL" ];then
@@ -300,6 +303,13 @@ hosterlist()
 			cat $TMP/cache.$FILENAME.5 | sed -nr 's/.*var links = "([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.5.links
 			links=$(cat $TMP/cache.$FILENAME.5.links)
 
+			if [ -z "$id" ];then
+#				<source src='http://www.vodlocker.to/embed/getfile?id=1472367&res=360p' type='video/mp4' data-res='360'>		</video>
+				cat $TMP/cache.$FILENAME.5 | sed -nr "s/.*<source src='([^']+)'.*/\1/p" | sed -nr "s/.*getfile\?id=(.*)\&res=.*/\1/p" >$TMP/cache.$FILENAME.5.id2
+#				cat /tmp/localcache/cache.streamcloud.hosterlist.http\:.www.streamcloud.me.novitiate.stream.1472367.html.5 | sed -nr "s/.*<source src='([^']+)'.*/\1/p" | sed -nr "s/.*getfile\?id=(.*)\&res=.*/\1/p"
+				id=$(cat $TMP/cache.$FILENAME.5.id2)
+			fi 
+
 #			http://www.vodlocker.to/embed/movieStreams/?id=131803&e=&lang=2&cat=movie&links=3
 			HOSTERURL="www.vodlocker.to/embed/movieStreams/?id=$id&e=$e&lang=$lang&cat=$cat&links=$links"
 			$curlbin "$HOSTERURL" -o $TMP/cache.$FILENAME.6
@@ -316,8 +326,8 @@ hosterlist()
 				fi
 			done
 		done 3<$TMP/cache.$FILENAME.2
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	fi
+#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#	fi
 	echo "$TMP/$FILENAME.list"
 }
 
