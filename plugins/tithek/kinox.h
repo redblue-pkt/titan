@@ -679,8 +679,8 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		path = pos + 1;
 	}
 
-	pathnew = oregex("://.*/(.*).*", link);
-	printf("new pathnew: %s\n",pathnew);
+//	pathnew = oregex("://.*/(.*).*", link);
+	pathnew = oregex("://.*(/Stream.*).*", link);
 
 	newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 	newurl = ostrcat(newurl, pathnew, 1, 0);
