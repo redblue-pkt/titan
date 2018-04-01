@@ -115,11 +115,11 @@ new()
 			fi
 		done 3<$TMP/cache.$FILENAME.2
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	fi
 
- 	cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sorted.list
-	if [ -e $TMP/$FILENAME.list ];then
-		rm $TMP/$FILENAME.list
+		cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sorted.list
+		if [ -e $TMP/$FILENAME.list ];then
+			rm $TMP/$FILENAME.list
+		fi
 	fi
 
 #	echo "$TMP/$FILENAME.list"
