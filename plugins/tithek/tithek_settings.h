@@ -18,6 +18,9 @@ void screentithek_settings()
 	struct skin* vk_user = getscreennode(tithek_settings, "vk_user");
 	struct skin* vk_pass = getscreennode(tithek_settings, "vk_pass");
 	struct skin* kinox_url = getscreennode(tithek_settings, "kinox_url");
+	struct skin* kinox_pic = getscreennode(tithek_settings, "kinox_pic");
+	struct skin* kinox_localhoster = getscreennode(tithek_settings, "kinox_localhoster");
+
 	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
 	struct skin* b4 = getscreennode(tithek_settings, "b4");
@@ -83,6 +86,15 @@ void screentithek_settings()
 	changemask(kinox_url, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(kinox_url, getconfig("tithek_kinox_url", NULL));
 
+	addchoicebox(kinox_pic, "0", _("no"));
+	addchoicebox(kinox_pic, "1", _("yes"));	
+	setchoiceboxselection(kinox_pic, getconfig("tithek_kinox_pic", NULL));
+
+	addchoicebox(kinox_localhoster, "0", _("http"));
+	addchoicebox(kinox_localhoster, "1", _("https"));	
+	addchoicebox(kinox_localhoster, "2", _("cloudfare"));	
+	setchoiceboxselection(kinox_localhoster, getconfig("tithek_kinox_localhoster", NULL));
+
 	if(!file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
 		kinox_url->hidden = YES;
 
@@ -109,6 +121,9 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_hid_xxx", hidxxx, NULL);
 			addconfigscreencheck("tithek_autoupdate", autoupdate, NULL);
 			addconfigscreen("tithek_kinox_url", kinox_url);
+			addconfigscreencheck("tithek_kinox_pic", kinox_pic, NULL);
+			addconfigscreencheck("tithek_kinox_localhoster", kinox_localhoster, NULL);
+
 /*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
