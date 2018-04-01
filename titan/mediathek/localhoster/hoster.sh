@@ -24,6 +24,7 @@ CMD=/tmp/localhoster
 BIN="$CMD"/bin/python."$ARCH"
 HLSBIN="$CMD"/bin/hlsdl."$ARCH"
 CURLBIN="$CMD"/bin/curl."$ARCH"
+DUKBIN="$CMD"/bin/duk."$ARCH"
 if [ ! -e "$CURLBIN" ];then CURLBIN=curl; fi
 #USERAGENT='Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
 USERAGENT='Mozilla%2F5.0+%28Windows+NT+6.3%3B+rv%3A36.0%29+Gecko%2F20100101+Firefox%2F36.0'
