@@ -240,9 +240,8 @@ kino()
 
 hosterlist()
 {
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-
-#	if [ ! -e "$TMP/$FILENAME.list" ]; then
+#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin "$PAGE" -o $TMP/cache.$FILENAME.1
 		cat $TMP/cache.$FILENAME.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.2
 
@@ -326,8 +325,8 @@ hosterlist()
 				fi
 			done
 		done 3<$TMP/cache.$FILENAME.2
-#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-#	fi
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
 	echo "$TMP/$FILENAME.list"
 }
 
