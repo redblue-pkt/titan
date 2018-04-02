@@ -663,9 +663,12 @@ youtube_dl()
 #	cat /tmp/youtube_dl.streamlink.log | tail -n1
 	mkdir $TMP > /dev/null 2>&1
 
-	echo "$BIN $youtubebin $INPUT --username $USER --password $PASS" > /tmp/.last_hoster_youtube_dl.log
+	if [ ! -z "$USER" ];then USER="--username $USER";fi
+	if [ ! -z "$PASS" ];then PASS="--password $PASS";fi
 
-	$BIN $youtubebin "$INPUT" --username "$USER" --password "$PASS" > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+	echo "$BIN $youtubebin $INPUT $USER $PASS" > /tmp/.last_hoster_youtube_dl.log
+
+	$BIN $youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
 #	cat $TMP/$TYPE.$hoster.$FILENAME.streamlist
 	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
 }
