@@ -686,11 +686,11 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 					audiocodec = MPEGA;
 					
 				//workaround DTSHD
-				if(audiocodec == DTSHD)
-				{
-					audiocodec = 0;
-					continue;
-				}
+				//#if(audiocodec == DTSHD)
+				//{
+				//	audiocodec = 0;
+				//	continue;
+				//}
 
 				if(firstaudiopid == -1 || firstaudiocodec == -1)
 				{
