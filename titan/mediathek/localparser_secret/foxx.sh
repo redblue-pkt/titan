@@ -179,17 +179,20 @@ hosterlist()
 	cat $TMP/cache.$PARSER.$INPUT.1 | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$PARSER.$INPUT.2
 	TEMP=$(cat $TMP/cache.$PARSER.$INPUT.2)
 	$curlbin $TEMP -o $TMP/cache.$PARSER.$INPUT.3
-	cat $TMP/cache.$PARSER.$INPUT.3 | grep -E "sources:*" >$TMP/cache.$PARSER.$INPUT.4
-	cat $TMP/cache.$PARSER.$INPUT.4 | grep -o "http[^ ]*"| sed -e 's/,/ /g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' >$TMP/cache.$PARSER.$INPUT.5
+	cat $TMP/cache.$PARSER.$INPUT.3 | grep -A 10 "var decodeABC" >$TMP/cache.$PARSER.$INPUT.4
+	echo "print(decodeABC(jbdaskgs));" >> $TMP/cache.$PARSER.$INPUT.4
+	$DUKBIN $TMP/cache.$PARSER.$INPUT.4 > $TMP/cache.$PARSER.$INPUT.5
+	cat $TMP/cache.$PARSER.$INPUT.5 | grep -o "http[^ ]*"| sed -e 's!{! !g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' >$TMP/cache.$PARSER.$INPUT.6
+	echo >> $TMP/cache.$PARSER.$INPUT.6
 	while read -u 3 ROUND; do
-		NEWPAGE=$(echo $ROUND | cut -d" " -f1)
-		TITLE=$(echo $ROUND | cut -d" " -f2 | cut -d":" -f2)
+		NEWPAGE=$(echo $ROUND | grep -o "http[^ ]*" | cut -d "," -f1)
+		TITLE=$(echo $ROUND | grep -o "label[^ ]*" | cut -d "," -f1 | sed -e 's!label:!!g' -e 's!"!!g')
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 			PIC=`echo $TITLE | tr [A-Z] [a-z]`
 			LINE="Http Stream ($TITLE)#$NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/foxx.jpg#foxx.jpg#$NAME#2"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
-	done 3<$TMP/cache.$PARSER.$INPUT.5
+	done 3<$TMP/cache.$PARSER.$INPUT.6
 	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 
 	echo $TMP/$PARSER.$INPUT.list
@@ -220,7 +223,7 @@ play()
 	TEMP=$(cat $TMP/cache.$PARSER.$INPUT.2)
 	$curlbin $TEMP -o $TMP/cache.$PARSER.$INPUT.3
 	cat $TMP/cache.$PARSER.$INPUT.3 | grep -E "sources:*" >$TMP/cache.$PARSER.$INPUT.4
-	cat $TMP/cache.$PARSER.$INPUT.4 | grep -o "http[^ ]*"| sed -e 's/,/ /g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' | cut -d" " -f1 >$TMP/cache.$PARSER.$INPUT.5
+	cat $TMP/cache.$PARSER.$INPUT.4 | grep -o "http[^ ]*"| sed -e 's/,/ /g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' >$TMP/cache.$PARSER.$INPUT.5
 
 	cat $TMP/cache.$PARSER.$INPUT.5 > $TMP/$PARSER.playlist.list
 
