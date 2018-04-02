@@ -634,12 +634,12 @@ int main(int argc, char *argv[])
 	ret = setaudiosource(getconfig("av_audiosource", NULL));
 	ret = setac3(getconfig("av_ac3mode", NULL));
 
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+	if(checkrealbox("HD51") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 	{
 		if(getconfig("av_ac3plusmode", NULL) == NULL)
 			addconfig("av_ac3plusmode", "force_ac3");
 		if(getconfig("av_dtshdmode", NULL) == NULL)
-			addconfig("av_dtshdmode", "force_dts");
+			addconfig("av_dtshdmode", "downmix");
 		if(getconfig("av_wmapromode", NULL) == NULL)
 			addconfig("av_wmapromode", "downmix");
 		ret = setac3plus(getconfig("av_ac3plusmode", NULL));

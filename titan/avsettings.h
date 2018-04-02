@@ -198,7 +198,7 @@ void screenavsettings(int flag)
 	else
 		aacmode->hidden = YES;
 	
-	if((checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && ac3plusmode != NULL)
+	if((checkrealbox("HD51") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && ac3plusmode != NULL)
 	{
 		ac3plusmode->hidden = NO;
 		dtshdmode->hidden = NO;
