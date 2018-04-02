@@ -76,7 +76,9 @@ search()
 				piccount=`expr $piccount + 1`
 #				LINE="$TITLE#$URL#$PIC#$FILENAME_$piccount.jpg#$NAME#14"
 #				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
-				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#0"
+#				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#0"
+				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
+
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 
@@ -118,10 +120,11 @@ hosterlist()
 
 play()
 {
-	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
-	/tmp/localhoster/hoster.sh get $PAGE > $TMP/cache.$PARSER.$INPUT.1
-	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
-	echo $STREAMURL
+#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+#	/tmp/localhoster/hoster.sh get $PAGE > $TMP/cache.$PARSER.$INPUT.1
+#	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
+#	echo $STREAMURL
+	/tmp/localhoster/hoster.sh youtube_dl $PAGE
 }
 
 hoster()
