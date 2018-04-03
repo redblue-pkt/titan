@@ -636,16 +636,35 @@ int main(int argc, char *argv[])
 
 	if(checkrealbox("HD51") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 	{
-		if(getconfig("av_ac3plusmode", NULL) == NULL)
-			addconfig("av_ac3plusmode", "force_ac3");
-		if(getconfig("av_dtshdmode", NULL) == NULL)
-			addconfig("av_dtshdmode", "downmix");
-		if(getconfig("av_wmapromode", NULL) == NULL)
-			addconfig("av_wmapromode", "downmix");
-		ret = setac3plus(getconfig("av_ac3plusmode", NULL));
-		ret = setdtshd(getconfig("av_dtshdmode", NULL));
-		ret = setwmapro(getconfig("av_wmapromode", NULL));
-	
+		if(isfile("/proc/stb/audio/ac3plus_choices"))
+		{
+			if(getconfig("av_ac3plusmode", NULL) == NULL)
+				addconfig("av_ac3plusmode", "force_ac3");
+			addconfig("av_can_ac3plusmode", "1");
+			ret = setac3plus(getconfig("av_ac3plusmode", NULL));
+		}
+		else
+			addconfig("av_can_ac3plusmode", "0");
+
+		if(isfile("/proc/stb/audio/dtshd_choices"))
+		{
+			if(getconfig("av_dtshdmode", NULL) == NULL)
+				addconfig("av_dtshdmode", "downmix");
+			addconfig("av_can_dtshdmode", "1");
+			ret = setdtshd(getconfig("av_dtshdmode", NULL));
+		}
+		else
+			addconfig("av_can_dtshdmode", "0");
+			
+		if(isfile("/proc/stb/audio/wmapro_choices"))
+		{
+			if(getconfig("av_wmapromode", NULL) == NULL)
+				addconfig("av_wmapromode", "downmix");
+			addconfig("av_can_wmapromode", "1");
+			ret = setwmapro(getconfig("av_wmapromode", NULL));
+		}
+		else
+			addconfig("av_can_wmapromode", "0");	
 		addconfig("mode3ddev", "/proc/stb/fb/primary/3d");     //24.02.17
 	}
 		

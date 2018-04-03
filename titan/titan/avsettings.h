@@ -200,30 +200,44 @@ void screenavsettings(int flag)
 	
 	if((checkrealbox("HD51") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && ac3plusmode != NULL)
 	{
-		ac3plusmode->hidden = NO;
-		dtshdmode->hidden = NO;
-		wmapromode->hidden = NO;
-		
-		ret = getac3pluschoices();
-		changeinput(ac3plusmode, ret);
-		free(ret); ret = NULL;
-		ret = getac3plus();
-		setchoiceboxselection(ac3plusmode, ret);
-		free(ret); ret = NULL;
-		
-		ret = getdtshdchoices();
-		changeinput(dtshdmode, ret);
-		free(ret); ret = NULL;
-		ret = getdtshd();
-		setchoiceboxselection(dtshdmode, ret);
-		free(ret); ret = NULL;
-		
-		ret = getwmaprochoices();
-		changeinput(wmapromode, ret);
-		free(ret); ret = NULL;
-		ret = getwmapro();
-		setchoiceboxselection(wmapromode, ret);
-		free(ret); ret = NULL;
+		if(getconfigint("av_can_ac3plusmode", NULL) == YES)
+		{
+			ac3plusmode->hidden = NO;
+			ret = getac3pluschoices();
+			changeinput(ac3plusmode, ret);
+			free(ret); ret = NULL;
+			ret = getac3plus();
+			setchoiceboxselection(ac3plusmode, ret);
+			free(ret); ret = NULL;
+		}
+		else
+			ac3plusmode->hidden = YES;
+			
+		if(getconfigint("av_can_dtshdmode", NULL) == YES)
+		{
+			dtshdmode->hidden = NO;
+			ret = getdtshdchoices();
+			changeinput(dtshdmode, ret);
+			free(ret); ret = NULL;
+			ret = getdtshd();
+			setchoiceboxselection(dtshdmode, ret);
+			free(ret); ret = NULL;
+		}
+		else
+			dtshdmode->hidden = YES;
+			
+		if(getconfigint("av_can_wmapromode", NULL) == YES)
+		{
+			wmapromode->hidden = NO;
+			ret = getwmaprochoices();
+			changeinput(wmapromode, ret);
+			free(ret); ret = NULL;
+			ret = getwmapro();
+			setchoiceboxselection(wmapromode, ret);
+			free(ret); ret = NULL;
+		}
+		else
+			wmapromode->hidden = YES;
 	}
 	else
 	{
