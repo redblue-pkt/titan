@@ -273,6 +273,10 @@ else
     devflag="-DEXTEPLAYER3"
 fi
 
+
+sed 's!typedef int bool;!//typedef int bool;!' -i "$HOME"/flashimg/$SRCDIR/titan/bcm.h
+sed 's!enum { false, true };!//enum { false, true };!' -i "$HOME"/flashimg/$SRCDIR/titan/bcm.h
+
 #if [ "$GROUP" = "dev" ];then
 	"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cross/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable \
    -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tufsbox/cdkroot/usr/include \
