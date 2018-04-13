@@ -35,8 +35,10 @@ fi
 
 init()
 {
-	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	if [ -e "/etc/.beta" ];then
+		rm -rf $TMP > /dev/null 2>&1
+		echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	fi
 }
 
 mainmenu()
