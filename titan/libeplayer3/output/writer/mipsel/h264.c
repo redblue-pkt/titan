@@ -55,7 +55,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-#define H264_SILENT
 //#define H264_DEBUG
 #ifdef H264_DEBUG
 
@@ -88,7 +87,6 @@ static unsigned int            NalLengthBytes = 1;
 static unsigned char           *CodecData     = NULL; 
 static unsigned int            CodecDataLen   = 0;
 static int                     avc3 = 0;
-static int                     sps_pps_in_stream = 0;
 /* ***************************** */
 /* Prototypes                    */
 /* ***************************** */
@@ -300,7 +298,6 @@ static int reset()
 {
     initialHeader = 1;
     avc3 = 0;
-    sps_pps_in_stream = 0;
     return 0;
 }
 
@@ -346,37 +343,36 @@ static int writeData(void* _call)
         (call->len > 3) && ((call->data[0] == 0x00 && call->data[1] == 0x00 && call->data[2] == 0x00 && call->data[3] == 0x01) ||
         (call->data[0] == 0xff && call->data[1] == 0xff && call->data[2] == 0xff && call->data[3] == 0xff))))
     {
-        uint32_t i = 0;
-        uint8_t InsertPrivData = !sps_pps_in_stream;
         uint32_t PacketLength = 0;
         uint32_t FakeStartCode = (call->Version << 8) | PES_VERSION_FAKE_START_CODE;
+        
         iov[ic++].iov_base = PesHeader;
-        
-        while (InsertPrivData && i < 36 && (call->len - i) > 5)
-        {
-            if ( (call->data[i] == 0x00 && call->data[i+1] == 0x00 && call->data[i+2] == 0x00 && call->data[i+3] == 0x01 && (call->data[i+4] == 0x67 || call->data[i+4] == 0x68)) )
-            {
-                InsertPrivData = 0;
-                sps_pps_in_stream = 1;
-            }
-            i += 1;
-        }
-        
-        if (InsertPrivData && call->private_size > 0 /*&& initialHeader*/) // some rtsp streams can update codec data at runtime
+        initialHeader = 0;
+        if (initialHeader) 
         {
             initialHeader = 0;
             iov[ic].iov_base  = call->private_data;
             iov[ic++].iov_len = call->private_size;
             PacketLength     += call->private_size;
         }
+
+        iov[ic].iov_base = "";
+        iov[ic++].iov_len = 1;
         
         iov[ic].iov_base  = call->data;
         iov[ic++].iov_len = call->len;
         PacketLength     += call->len;
         
+        /*Hellmaster1024: some packets will only be accepted by the player if we send one byte more than
+                          data is available. The content of this byte does not matter. It will be ignored
+                          by the player */
+//obi
+        iov[ic].iov_base = "\0";
+        iov[ic++].iov_len = 1;
+//obi (end)
         iov[0].iov_len = InsertPesHeader(PesHeader, -1, MPEG_VIDEO_PES_START_CODE, VideoPts, FakeStartCode);
         
-        return call->WriteV(call->fd, iov, ic);
+        return writev_with_retry(call->fd, iov, ic);
     }
     else if (!call->private_data || call->private_size < 7 || 1 != call->private_data[0])
     {
@@ -389,7 +385,7 @@ static int writeData(void* _call)
     ic = 0;
     iov[ic++].iov_base = PesHeader;
     
-    if (!avc3)
+    if (initialHeader)
     {
         if (CodecData)
         {
@@ -461,7 +457,7 @@ static int writeData(void* _call)
         h264_printf (10, "<<<< PacketLength [%d]\n", PacketLength);
         iov[0].iov_len = InsertPesHeader(PesHeader, -1, MPEG_VIDEO_PES_START_CODE, VideoPts, 0);
         
-        len = call->WriteV(call->fd, iov, ic);
+        len = writev_with_retry(call->fd, iov, ic);
         PacketLength += iov[0].iov_len;
         if (PacketLength != len)
         {
