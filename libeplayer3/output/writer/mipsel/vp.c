@@ -96,7 +96,7 @@ static int reset()
     return 0;
 }
 
-static int writeData(void *_call, int is_vp6)
+static int writeData(void* _call, int is_vp6)
 {
     WriterAVCallData_t* call = (WriterAVCallData_t*) _call;
     vp_printf(10, "\n");
@@ -144,7 +144,7 @@ static int writeData(void *_call, int is_vp6)
     iov[1].iov_base = call->data;
     iov[1].iov_len = call->len;
     
-    return call->WriteV(call->fd, iov, 2);
+    return writev_with_retry(call->fd, iov, 2);
 }
 
 static int writeDataVP6(void *_call)

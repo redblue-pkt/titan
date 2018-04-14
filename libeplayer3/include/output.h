@@ -26,7 +26,6 @@ typedef enum {
     OUTPUT_DISCONTINUITY_REVERSE,
     OUTPUT_GET_FRAME_COUNT,
     OUTPUT_GET_PROGRESSIVE,
-    OUTPUT_SET_BUFFER_SIZE,
 } OutputCmd_t;
 
 typedef struct
@@ -68,7 +67,7 @@ typedef struct Output_s
 {
     char * Name;
     int32_t (* Command) (/*Context_t*/void  *, OutputCmd_t, void *);
-    int32_t (* Write) (/*Context_t*/void  *, void *);
+    int32_t (* Write) (/*Context_t*/void  *, void* privateData);
     char ** Capabilities;
 
 } Output_t;
