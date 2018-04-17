@@ -205,6 +205,67 @@ class OpenLoadResolver(object):
                 p = re.sub(reg, k[c], p)
         return p
 
+    def getAllItemsBeetwenNodes(self, data, node1, node2, withNodes=True, numNodes=-1, caseSensitive=True):
+        if len(node1) < 2 or len(node2) < 2:
+            return []
+        itemsTab = []
+        n1S = node1[0]
+        n1E = node1[1]
+        if len(node1) > 2: n1P = node1[2]
+        else: n1P = None
+        n2S = node2[0]
+        n2E = node2[1]
+        if len(node2) > 2: n2P = node2[2]
+        else: n2P = None
+        lastIdx = 0
+        search = 1
+        
+        if caseSensitive:
+            sData = data
+        else:
+            sData = data.lower()
+            n1S = n1S.lower()
+            n1E = n1E.lower()
+            if n1P != None: n1P = n1P.lower()
+            n2S = n2S.lower()
+            n2E = n2E.lower()
+            if n2P != None: n2P = n2P.lower()
+            
+        while True:
+            if search == 1:
+                # node 1 - start
+                idx1 = sData.find(n1S, lastIdx)
+                if -1 == idx1: return itemsTab
+                lastIdx = idx1 + len(n1S)
+                idx2 = sData.find(n1E, lastIdx)
+                if -1 == idx2: return itemsTab
+                lastIdx = idx2 + len(n1E)
+                if n1P != None and sData.find(n1P, idx1 + len(n1S), idx2) == -1:
+                    continue
+                search = 2
+            else:
+                # node 2 - end
+                tIdx1 = sData.find(n2S, lastIdx)
+                if -1 == tIdx1: return itemsTab
+                lastIdx = tIdx1 + len(n2S)
+                tIdx2 = sData.find(n2E, lastIdx)
+                if -1 == tIdx2: return itemsTab
+                lastIdx = tIdx2 + len(n2E)
+
+                if n2P != None and sData.find(n2P, tIdx1 + len(n2S), tIdx2) == -1:
+                    continue
+
+                if withNodes:
+                    idx2 = tIdx2 + len(n2E)
+                else:
+                    idx1 = idx2 + len(n1E)
+                    idx2 = tIdx1
+                search = 1
+                itemsTab.append(data[idx1:idx2])
+            if numNodes > 0 and len(itemsTab) == numNodes:
+                break
+        return itemsTab
+
     def getAllItemsBeetwenMarkers(self, data, marker1, marker2, withMarkers=True, caseSensitive=True):
         itemsTab = []
         if caseSensitive:
@@ -425,107 +486,10 @@ class OpenLoadResolver(object):
                 subLabel = self.getSearchGroups(track, 'label="([^"]+?)"')[0]
                 subTracks.append({'title':subLabel + '_' + subLang, 'url':subUrl, 'lang':subLang, 'format':'srt'})
        
-#        print "33333333333333333333333"
- 
-        preDataTab = self.getAllItemsBeetwenMarkers(data, 'a="0%', '{}', withMarkers=True, caseSensitive=False)
-#        print "preDataTab", preDataTab
- 
-        for item in preDataTab:
-#            print "item", item
-            try:
-                dat = self.getSearchGroups(item, 'a\s*?=\s*?"([^"]+?)"', ignoreCase=True)[0]
-#                print "dat1", dat
-                z = self.getSearchGroups(item, '\}\(([0-9]+?)\)', ignoreCase=True)[0]
-#                print "z1", z
-                z = int(z)
-#                print "z2", z
-                def checkA(c):
-                    code = ord(c.group(1))
-                    if code <= ord('Z'):
-                        tmp = 90
-                    else: 
-                        tmp = 122
-                    c = code + z
-                    if tmp < c:
-                        c -= 26
-                    return chr(c)
-                    
-                dat = urllib.unquote( re.sub('([a-zA-Z])', checkA, dat) )
-#                print "dat2", dat
-                dat = self.decryptPlayerParams(dat, 4, 4, ['j', '_', '__', '___'], 0, {})
-#		 pageData = unpackJS(data[idx1:-3], VIDUPME_decryptPlayerParams)
-#		dat = jsunpack.unpack(dat)
-
-#                print "dat3", dat
-                data += dat
-            except Exception:
-                 print "preDataTab error"
-#                printExc()
-
-
-
-
-
         videoUrl = ''
-        tmp = ''
-
-        encodedData = self.getAllItemsBeetwenMarkers(data, 'ﾟωﾟ', '</script>', withMarkers=False, caseSensitive=False)
-#        encodedData = re.sub('ﾟωﾟ', '</script>', data)
-   #     encodedData = re.search(r'ﾟωﾟ\.*?</script>', data, re.DOTALL) 
-  #      encodedData = re.search('''ﾟωﾟ\(\s*)</script>''', data).group(1)
-
-#        print "encodedData1", encodedData
-
-        for item in encodedData:
-#            print "item1", item
-            tmpEncodedData = item.split('┻━┻')
-#            print "tmpEncodedData1", tmpEncodedData
-            for tmpItem in tmpEncodedData:
-#                print "tmpItem", tmpItem 
-                try:
-                    tmp += self.decodeOpenLoad(tmpItem)
-#                    print "tmpItem1", tmpItem
-                except Exception:
-                    skip = 1
-#                    printExc()
-#                    print "encodedData1 error"
-
-        tmp2 = ''
-        encodedData = self.getAllItemsBeetwenMarkers(data, "j=~[];", "())();", withMarkers=True, caseSensitive=False)
-#        print "encodedData2", encodedData
-        for item in encodedData:
-#            print "item2", item
-            try:
-                if '' != item:
-                    tmp2 += JJDecoder(item).decode()
-#                    print "tmp2", tmp2
-            except Exception:
-                    skip = 1
-#                printExc()
-#                    print "encodedData2 error"
-
-        
-#        printDBG('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-#        printDBG(tmp)
-#        printDBG('BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB')
-#        printDBG(tmp2)
-#        printDBG('CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC')
-#        print 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
-#        print "tmp1:", tmp
-#        print 'BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB'
-#        print "tmp2:", tmp2
-#        print 'CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC'
-
-        ##########################################################
-        # new algo 2016-12-04 ;)
-        ##########################################################
-        varName = self.getSearchGroups(tmp, '''window.r=['"]([^'^"]+?)['"]''', ignoreCase=True)[0]
-        encTab = re.compile('''<span[^>]+?id="%s[^"]*?"[^>]*?>([^<]+?)<\/span>''' % varName).findall(data)
-#        printDBG(">>>>>>>>>>>> varName[%s] encTab[%s]" % (varName, encTab) )
-#        print ">>>>>>>>>>>> varName[%s] encTab[%s]" % (varName, encTab)
-
-
-        if varName == '':
+        tmp = self.getAllItemsBeetwenNodes(data, ('<div', '>', 'display:none'), ('</div', '>'))
+        for item in tmp:
+            encTab = re.compile('''<[^>]+?id="[^"]*?"[^>]*?>([^<]+?)<''').findall(data)
             for e in encTab:
                 if len(e) > 40:
                     encTab.insert(0, e)
