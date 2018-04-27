@@ -17,8 +17,9 @@ char* xvideos(char* link)
 		path = pos + 1;
 	}
 
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	
+//	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
+
 	writesys("/var/usr/local/share/titan/plugins/tithek/xvideos1_tmpstr", tmpstr, 0);
 	
 	htmldecode(tmpstr, tmpstr);
