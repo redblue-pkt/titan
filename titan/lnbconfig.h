@@ -159,16 +159,52 @@ void screenlnb(char* feshortname, char* lnbnr)
 	addchoicebox(satcr, "6", "6");
 	addchoicebox(satcr, "7", "7");
 	addchoicebox(satcr, "8", "8");
+	
+	addchoicebox(satcr, "9", "9");
+	addchoicebox(satcr, "10", "10");
+	addchoicebox(satcr, "11", "11");
+	addchoicebox(satcr, "12", "12");
+	addchoicebox(satcr, "13", "13");
+	addchoicebox(satcr, "14", "14");
+	addchoicebox(satcr, "15", "15");
+	addchoicebox(satcr, "16", "16");
+	addchoicebox(satcr, "17", "17");
+	addchoicebox(satcr, "18", "18");
+	
 
 	changeinput(satcrfrequ1, NULL);
-	addchoicebox(satcrfrequ1, "1284", "1284");
+	/*addchoicebox(satcrfrequ1, "1284", "1284");
 	addchoicebox(satcrfrequ1, "1400", "1400");
 	addchoicebox(satcrfrequ1, "1516", "1516");
 	addchoicebox(satcrfrequ1, "1632", "1632");
 	addchoicebox(satcrfrequ1, "1748", "1748");
 	addchoicebox(satcrfrequ1, "1864", "1864");
 	addchoicebox(satcrfrequ1, "1980", "1980");
-	addchoicebox(satcrfrequ1, "2096", "2096");
+	addchoicebox(satcrfrequ1, "2096", "2096");*/
+	
+	addchoicebox(satcrfrequ1, "984", "984");
+	addchoicebox(satcrfrequ1, "1020", "1020");
+	addchoicebox(satcrfrequ1, "1056", "1056");
+	addchoicebox(satcrfrequ1, "1092", "1092");
+	addchoicebox(satcrfrequ1, "1210", "1210");
+	addchoicebox(satcrfrequ1, "1420", "1420");
+	addchoicebox(satcrfrequ1, "1680", "1680");
+	addchoicebox(satcrfrequ1, "2040", "2040");
+	
+	addchoicebox(satcrfrequ1, "1128", "1128");
+	addchoicebox(satcrfrequ1, "1164", "1164");
+	addchoicebox(satcrfrequ1, "1256", "1256");
+	addchoicebox(satcrfrequ1, "1292", "1292");
+	addchoicebox(satcrfrequ1, "1328", "1328");
+	addchoicebox(satcrfrequ1, "1364", "1364");
+	addchoicebox(satcrfrequ1, "1458", "1458");
+	addchoicebox(satcrfrequ1, "1494", "1494");
+	addchoicebox(satcrfrequ1, "1530", "1530");
+	addchoicebox(satcrfrequ1, "1566", "1566");
+	
+
+	
+	
 
 	changelnb(voltagemode, tonemode, loftype, lofl, lofh, threshold, satcr, satcrfrequ1, satcrfrequ2, feshortname, lnbnr);
 

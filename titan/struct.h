@@ -1084,6 +1084,7 @@ struct dvbdev
 	struct transponder* feakttransponder;
 	int feunicable;
 	unsigned int feloffrequency;
+	unsigned int feloffrequency_uni;
 	int feaktband;
 	int feaktpolarization;
 	fe_sec_voltage_t feaktvolt;
