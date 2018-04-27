@@ -1242,7 +1242,8 @@ void fesetunicable(struct dvbdev* node)
 		uint64_t unicabletune = 0;
 
 		unicabletune |= ((satcr & 0x1F) << 19);
-		unicabletune |= (((node->feloffrequency / 1000) & 0x7ff) << 8);
+		//unicabletune |= (((node->feloffrequency / 1000) & 0x7ff) << 8);
+		unicabletune |= (((node->feloffrequency) & 0x7ff) << 8);
 		unicabletune |= (((aktdiseqc - 1) & 0x1) << 2);
 		unicabletune |= (((!node->feaktpolarization) & 0x1) << 1);
 		unicabletune |= (node->feaktband & 0x1);
