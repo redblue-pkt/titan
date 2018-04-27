@@ -110,6 +110,8 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 		node->feaktband = 0;
 	}
 
+	node->feloffrequency_uni = 0;
+	
 	if(satcrfrequ == 0)
 	{
 		if(node->feaktband)
@@ -124,13 +126,27 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 	}
 	else
 	{
-		int lof = (node->feaktband & 1) ? lofh : lofl;
-		unsigned int tmp = (frequency - lof) + satcrfrequ;
-		node->feloffrequency = (tmp / 4) - 350000;
-		node->feunicable = 1;
+		tmpstr = ostrcat(node->feshortname, "_lnb_satcr", 0, 0);
+		int satcr = getconfigint(tmpstr, node->feaktnr) - 1;
+		free(tmpstr); tmpstr = NULL;
+		if(satcr < 8)
+		{
+			int lof = (node->feaktband & 1) ? lofh : lofl;
+			unsigned int tmp = (frequency - lof) + satcrfrequ;
+			node->feloffrequency = (tmp / 4) - 350000;
+			node->feunicable = 1;
+		}
+		else
+		{
+			int lof = (node->feaktband & 1) ? lofh : lofl;
+			unsigned int tmp = (frequency - lof) - 100000;
+			node->feloffrequency = (1000 + 2 * tmp) / (2 *1000); //round to multiple of 1000
+			node->feloffrequency_uni = frequency - lof -(satcrfrequ - (satcrfrequ - (tmp - (1000 * node->feloffrequency))));
+			node->feunicable = 1;
+		}
 	}
 
-	debug(200, "tuning to freq %d (befor lof %d), band=%d, unicable=%d", node->feloffrequency, frequency, node->feaktband, node->feunicable);
+	debug(200, "tuning to freq %d (befor lof %d), band=%d, unicable=%d unicableoff=%d", node->feloffrequency, frequency, node->feaktband, node->feunicable, node->feloffrequency_uni);
 	return node->feaktband;
 }
 
@@ -1179,43 +1195,89 @@ void fesetunicable(struct dvbdev* node)
 	if(aktdiseqc < 1) aktdiseqc = 1;
 	free(tmpstr); tmpstr = NULL;
 
-	unicabletune |= ((satcr & 0x7) << 13);
-	unicabletune |= (((aktdiseqc - 1) & 0x1) << 12);
-	unicabletune |= (((!node->feaktpolarization) & 0x1) << 11);
-	unicabletune |= ((node->feaktband & 0x1) << 10);
-	unicabletune |= ((node->feloffrequency / 1000) & 0x3ff);
-
-	debug(200, "unicabletune %04X", unicabletune);
-	
-	if(status.firstunicablewait == 0)
+	if(satcr < 8)
 	{
-		status.firstunicablewait = getconfigint("firstunicablewait", NULL);
+		int unicabletune = 0;
+
+		unicabletune |= ((satcr & 0x7) << 13);
+		unicabletune |= (((aktdiseqc - 1) & 0x1) << 12);
+		unicabletune |= (((!node->feaktpolarization) & 0x1) << 11);
+		unicabletune |= ((node->feaktband & 0x1) << 10);
+		unicabletune |= ((node->feloffrequency / 1000) & 0x3ff);
+
+		debug(200, "unicabletune %04X", unicabletune);
+	
 		if(status.firstunicablewait == 0)
-			status.firstunicablewait = 1000;
-	}		
+		{
+			status.firstunicablewait = getconfigint("firstunicablewait", NULL);
+			if(status.firstunicablewait == 0)
+				status.firstunicablewait = 1000;
+		}		
 	
-	if(status.firstunicablewait > 0)
-	{
-		usleep(status.firstunicablewait * 1000);
-		status.firstunicablewait = -1;
-	}
+		if(status.firstunicablewait > 0)
+		{
+			usleep(status.firstunicablewait * 1000);
+			status.firstunicablewait = -1;
+		}
 	
-	fesetvoltage(node, SEC_VOLTAGE_13, 15);
-	fesetvoltage(node, SEC_VOLTAGE_18, 15);
-	fesettone(node, SEC_TONE_OFF, 15);
+		fesetvoltage(node, SEC_VOLTAGE_13, 15);
+		fesetvoltage(node, SEC_VOLTAGE_18, 15);
+		fesettone(node, SEC_TONE_OFF, 15);
 
-	//feunicable
-	//byte1 (bit 7/6/5) -> satcr number
-	//byte1 (bit 4/3/2) -> lnb number
-	//byte1 (bit 1/0) -> frequ
-	//byte0 -> frequ
+		//feunicable
+		//byte1 (bit 7/6/5) -> satcr number
+		//byte1 (bit 4/3/2) -> lnb number
+		//byte1 (bit 1/0) -> frequ
+		//byte0 -> frequ
 	
-	cmd.msg[0] = 0xE0;
-	cmd.msg[1] = 0x10;
-	cmd.msg[2] = 0x5A;
-	cmd.msg[3] = (unicabletune >> 8) & 0xff;
-	cmd.msg[4] = unicabletune & 0xff;
-	cmd.msg_len = 5;
+		cmd.msg[0] = 0xE0;
+		cmd.msg[1] = 0x10;
+		cmd.msg[2] = 0x5A;
+		cmd.msg[3] = (unicabletune >> 8) & 0xff;
+		cmd.msg[4] = unicabletune & 0xff;
+		cmd.msg_len = 5;
+	}
+	else
+	{
+		uint64_t unicabletune = 0;
+
+		unicabletune |= ((satcr & 0x1F) << 19);
+		unicabletune |= (((node->feloffrequency / 1000) & 0x7ff) << 8);
+		unicabletune |= (((aktdiseqc - 1) & 0x1) << 2);
+		unicabletune |= (((!node->feaktpolarization) & 0x1) << 1);
+		unicabletune |= (node->feaktband & 0x1);
+		
+		debug(200, "unicabletune %04X", unicabletune);
+	
+		if(status.firstunicablewait == 0)
+		{
+			status.firstunicablewait = getconfigint("firstunicablewait", NULL);
+			if(status.firstunicablewait == 0)
+				status.firstunicablewait = 1000;
+		}		
+	
+		if(status.firstunicablewait > 0)
+		{
+			usleep(status.firstunicablewait * 1000);
+			status.firstunicablewait = -1;
+		}
+	
+		fesetvoltage(node, SEC_VOLTAGE_13, 15);
+		fesetvoltage(node, SEC_VOLTAGE_18, 15);
+		fesettone(node, SEC_TONE_OFF, 15);
+
+		//feunicable 2
+		//byte2 (bit 7/6/5/4/3) -> satcr number
+		//byte2 (bit 2/1/0) -> frequ
+		//byte1 -> frequ
+		//byte0 (bit 3/1/0) -> lnb number
+		
+		cmd.msg[0] = 0x70;
+		cmd.msg[1] = (unicabletune >> 16) & 0xff;
+		cmd.msg[2] = (unicabletune >> 8) & 0xff;
+		cmd.msg[3] = unicabletune & 0xff;
+		cmd.msg_len = 4;
+	}	
 
 	debug(200, "send diseqc unicable cmd (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
@@ -1750,9 +1812,14 @@ int fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	if(node->feunicable == 1)
 	{
 		fesetunicable(node);
-		char* tmpstr = ostrcat(node->feshortname, "_lnb_satcrfrequ", 0, 0);
-		node->feloffrequency = getconfigint(tmpstr, node->feaktnr) * 1000;
-		free(tmpstr); tmpstr = NULL;
+		if(node->feloffrequency_uni == 0)
+		{
+			char* tmpstr = ostrcat(node->feshortname, "_lnb_satcrfrequ", 0, 0);
+			node->feloffrequency = getconfigint(tmpstr, node->feaktnr) * 1000;
+			free(tmpstr); tmpstr = NULL;
+	  }
+	  else
+	  	node->feloffrequency = node->feloffrequency_uni;
 	}
 
 #if DVB_API_VERSION >= 5
