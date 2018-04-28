@@ -450,7 +450,7 @@ void createhypridlist(struct dvbdev* tuner, struct skin* tunerreceptionhyprid, s
 	free(orbitalposstring);
 }
 
-void createterrlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbt, struct skin* listbox)
+struct skin* createterrlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbt, struct skin* listbox)
 {
 	char *satstring = NULL;
 	char* orbitalposstring = NULL;
@@ -488,6 +488,7 @@ void createterrlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbt, struc
 
 	free(satstring);
 	free(orbitalposstring);
+	return tmp;
 }
 
 int screentunerreceptiondvbs(struct dvbdev* tuner)
@@ -818,6 +819,7 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 	struct skin* listbox = getscreennode(tunerreceptiondvbt, "listbox");
 	struct skin* tmp = NULL;
 	struct skin* tmp1 = NULL;
+	strict skin* anbieter = NULL;
 	char* tmpstr = NULL;
 
 	listbox->aktline = 1;
@@ -828,8 +830,9 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 		err("out -> NULL detect");
 		return 0;
 	}
-
-	createterrlist(tuner, tunerreceptiondvbt, listbox);
+	
+	//anbieter = addlistbox(tunerreceptiondvbt, listbox, anbieter, 1);
+	anbieter = createterrlist(tuner, tunerreceptiondvbt, listbox);
 	
 	tmp1 = addlistbox(tunerreceptiondvbt, listbox, tmp1, 1);
 	if(tmp1 != NULL)
@@ -862,6 +865,11 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 			
 			tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
 			addconfigint(tmpstr, 1);
+			free(tmpstr); tmpstr = NULL;
+			
+			tmpstr = ostrcat(tuner->feshortname, "_sat", 0, 0);
+			tmpstr = ostrcat(tmpstr, "1", 1, 0);
+			addconfig(tmpstr, anbieter->ret);
 			free(tmpstr); tmpstr = NULL;
 			
 			tmpstr = ostrcat(tuner->feshortname, "_terr_volt", 0, 0);
