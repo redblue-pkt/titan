@@ -819,7 +819,7 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 	struct skin* listbox = getscreennode(tunerreceptiondvbt, "listbox");
 	struct skin* tmp = NULL;
 	struct skin* tmp1 = NULL;
-	strict skin* anbieter = NULL;
+	struct skin* anbieter = NULL;
 	char* tmpstr = NULL;
 
 	listbox->aktline = 1;
