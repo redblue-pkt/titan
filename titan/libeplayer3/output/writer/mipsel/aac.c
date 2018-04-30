@@ -181,6 +181,14 @@ static int _writeData(void *_call, int type)
             aac_err("parsing Data with missing syncword. ignoring...\n");
             return 0;
         }
+        
+        // STB can handle only AAC LC profile
+        if (0 == (call->data[2] & 0xC0))
+        {
+            // change profile AAC Main -> AAC LC (Low Complexity)
+            aac_printf(1, "change profile AAC Main -> AAC LC (Low Complexity) in the ADTS header");
+            call->data[2] = (call->data[2] & 0x1F) | 0x40;
+        }
     }
     else // check LOAS header
     {
@@ -203,7 +211,7 @@ static int _writeData(void *_call, int type)
     iov[0].iov_len = HeaderLength;
     iov[1].iov_base = call->data;
     iov[1].iov_len = call->len;
-    return writev_with_retry(call->fd, iov, 2);
+    return call->WriteV(call->fd, iov, 2);
 }
 
 static int writeDataADTS(void *_call)
@@ -233,6 +241,7 @@ static int writeDataADTS(void *_call)
     if( (call->private_data && 0 == strncmp("ADTS", call->private_data, call->private_size)) || 
         HasADTSHeader(call->data, call->len) )
     {
+        //printf("%hhx %hhx %hhx %hhx %hhx %hhx %hhx %hhx\n", call->data[0], call->data[1], call->data[2], call->data[3], call->data[4], call->data[5], call->data[6], call->data[7]);
         return _writeData(_call, 0);
     }
 
@@ -273,7 +282,7 @@ static int writeDataADTS(void *_call)
     iov[1].iov_base = call->data;
     iov[1].iov_len = call->len;
     
-    return writev_with_retry(call->fd, iov, 2);
+    return call->WriteV(call->fd, iov, 2);
 }
 
 static int writeDataLATM(void *_call)
@@ -343,7 +352,7 @@ static int writeDataLATM(void *_call)
     iov[2].iov_base = pLATMCtx->buffer;
     iov[2].iov_len  = pLATMCtx->len;
     
-    return writev_with_retry(call->fd, iov, 3);
+    return call->WriteV(call->fd, iov, 3);
 }
 
 /* ***************************** */

@@ -133,7 +133,7 @@ static int writeData(void* _call)
         PacketLength += call->private_size;
     }
 
-    struct iovec iov[2];
+    struct iovec iov[3];
     int ic = 0;
     iov[ic].iov_base = PesHeader;
     iov[ic++].iov_len = InsertPesHeader (PesHeader, PacketLength, MPEG_VIDEO_PES_START_CODE, call->Pts, 0);
@@ -147,7 +147,7 @@ static int writeData(void* _call)
     iov[ic].iov_base = call->data;
     iov[ic++].iov_len = call->len;
 
-    int len = writev_with_retry(call->fd, iov, ic);
+    int len = call->WriteV(call->fd, iov, ic);
 
     mpeg4_printf(10, "xvid_Write < len=%d\n", len);
 
