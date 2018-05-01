@@ -273,8 +273,8 @@ else
     devflag="-DEXTEPLAYER3"
 fi
 
-#ffmpeg=3.4.2
-ffmpeg=3.2
+ffmpeg=3.4.2
+#ffmpeg=3.2
 if [ "$GROUP" = "dev" ] && [ "$TYPE" = "ufs912" ] && [ "$ffmpeg" = "3.4.2" ];then
 	sed 's!typedef int bool;!//typedef int bool;!' -i "$HOME"/flashimg/$SRCDIR/titan/bcm.h
 	sed 's!enum { false, true };!//enum { false, true };!' -i "$HOME"/flashimg/$SRCDIR/titan/bcm.h
