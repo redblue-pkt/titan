@@ -354,7 +354,7 @@ play()
 {
 		$curlbin $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.1
 		
-		ID=`cat $TMP/cache.$PARSER.$INPUT.1 | grep 'videoId' | cut -d '"' -f2`
+        ID=`cat $TMP/cache.$PARSER.$INPUT.1 | grep 'videoId' | sed 's/,/\n/g' | grep videoId | cut -d ':' -f2`
 		$curlbin "http://api.watchbox.de/devapi/id/$ID?apikey=hbbtv&format=json" -o $TMP/cache.$PARSER.$INPUT.2
 		cat $TMP/cache.$PARSER.$INPUT.2 | sed 's/^.*"media_videourl":"//;s/".*$//;s/\\\//\//g' >$TMP/cache.$PARSER.$INPUT.3
 		cat $TMP/cache.$PARSER.$INPUT.3 > $TMP/$PARSER.play.list
