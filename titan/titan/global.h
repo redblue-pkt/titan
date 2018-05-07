@@ -2263,6 +2263,20 @@ int checkdate()
 	return 0;
 }
 
+int setdate()
+{
+	time_t dvbtime = 0;
+	if(dvbgetdate(&dvbtime, 10000000) == 0) //10 sek
+	{
+		setsystime(&dvbtime);
+#ifdef MIPSEL
+		setrtctimemips();
+#endif
+		return 0;
+	}
+	return 1;
+}
+
 void closeonexec(int fd)
 {
 	if(fd > -1)
