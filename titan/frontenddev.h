@@ -145,7 +145,11 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 			//node->feloffrequency_uni = lof + (satcrfrequ + lof + frequency);
 			//node->feloffrequency_uni = (satcrfrequ + lof + frequency);
 			//node->feloffrequency_uni = (satcrfrequ + frequency);
-			node->feloffrequency_uni = (satcrfrequ * 1000);
+			//node->feloffrequency_uni = (satcrfrequ * 1000);
+			tmp = frequency + lof + satcrfrequ;
+			node->feloffrequency_uni = (1000 + 2 * tmp) / (2 *1000); //round to multiple of 1000
+			
+			
 			node->feunicable = 1;
 		}
 	}
