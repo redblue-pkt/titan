@@ -185,6 +185,7 @@ void screenstandby()
 	m_unlock(&status.vfdmutex, 3);
 	status.updatevfd = START;
 	putmsgbuffer();
+	addtimer(&setdate, START, 10000, 1, NULL, NULL, NULL);
 #ifdef MIPSEL
 	cecwakeup();
 #endif
