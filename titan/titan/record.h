@@ -370,10 +370,11 @@ void recordstop(struct service* node, int ret)
 		//afterevent: 1 = nothing
 		//afterevent: 2 = standby 
 		//afterevent: 3 = poweroff
+		printf("recordstop -> afterevent: %i, standby: %i, startmode: %i\n", afterevent, status.standby, status.startmode);
 		if(afterevent == 0)
 		{
 			//not needed
-			//if(status.startmode == 1) afterevent = 2;
+			if(status.startmode == 1) afterevent = 2;
 			//else
 			if(getwaswakuptimer() == 1) afterevent = 3;
 		}
