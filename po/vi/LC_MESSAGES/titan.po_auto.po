@@ -1734,7 +1734,7 @@ msgstr "nhập số nhóm: "
 msgid "Bouquets"
 msgstr "Nhóm"
 
-#: record.h:398
+#: record.h:399
 msgid "Box recording finished poweroff in 30sec !"
 msgstr ""
 
@@ -1953,7 +1953,7 @@ msgstr ""
 "Không có tuner.\n"
 " Tất cả tuner đã sử dụng hoặc không có tuner"
 
-#: record.h:1171
+#: record.h:1172
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -1961,7 +1961,7 @@ msgstr ""
 "Không tìm thấy tuner để ghi.\n"
 "Chuyển để ghi/Timeshift chương trình"
 
-#: record.h:1709
+#: record.h:1710
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Không có EPG!"
 
@@ -3431,7 +3431,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
 #: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:398 record.h:1171 record.h:1709 rectimer.h:577 rectimer.h:1405
+#: record.h:399 record.h:1172 record.h:1710 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
@@ -6250,8 +6250,8 @@ msgstr ""
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
-#: readerconfig.h:497 readerconfig.h:498 record.h:398 record.h:1171
-#: record.h:1457 record.h:1709 record.h:1734 rectimer.h:577 rectimer.h:1258
+#: readerconfig.h:497 readerconfig.h:498 record.h:399 record.h:1172
+#: record.h:1458 record.h:1710 record.h:1735 rectimer.h:577 rectimer.h:1258
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
@@ -6873,8 +6873,8 @@ msgstr "E"
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
-#: readerconfig.h:497 readerconfig.h:498 record.h:398 record.h:1171
-#: record.h:1457 record.h:1734 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
+#: readerconfig.h:497 readerconfig.h:498 record.h:399 record.h:1172
+#: record.h:1458 record.h:1735 rectimer.h:577 rectimer.h:1258 rectimer.h:1405
 #: rectimer.h:1417 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
@@ -8099,7 +8099,7 @@ msgstr "Khóa đầu vào"
 msgid "Receiver unlock"
 msgstr "Khóa đầu vào"
 
-#: record.h:1606 record.h:1676 webif_index.atemio5200.h:59
+#: record.h:1607 record.h:1677 webif_index.atemio5200.h:59
 #: webif_index.atemio5200.h:115 webif_index.atemio6200.h:59
 #: webif_index.atemio6200.h:115 webif_index.atemio7600.h:47
 #: webif_index.atemio7600.h:109 webif_index.atemio-nemesis.h:59
@@ -8173,7 +8173,7 @@ msgstr "Đang ghi tên"
 msgid "Record path"
 msgstr "Thư mục chứa bản ghi"
 
-#: record.h:1734
+#: record.h:1735
 msgid "Record started"
 msgstr "Bắt đầu ghi"
 
@@ -10431,7 +10431,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr "Bước dịch cho bộ định thời ghi"
 
-#: record.h:1456
+#: record.h:1457
 msgid "Timer Record start !"
 msgstr "Bước dịch cho bộ định thời ghi"
 
@@ -11714,15 +11714,15 @@ msgstr "Kích hoạt"
 msgid "active"
 msgstr "cho phép"
 
-#: record.h:1674 record.h:1720
+#: record.h:1675 record.h:1721
 msgid "add recording (enter duration)"
 msgstr "thêm bản ghi (nhập thời gian)"
 
-#: record.h:1673 record.h:1715
+#: record.h:1674 record.h:1716
 msgid "add recording (indefinitely)"
 msgstr "thêm bản ghi (không giới hạn)"
 
-#: record.h:1672 record.h:1702
+#: record.h:1673 record.h:1703
 msgid "add recording (stop after current event)"
 msgstr "thêm bản ghi (sau sự kiện này)"
 
@@ -11971,7 +11971,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1652 record.h:1661 record.h:1686
+#: record.h:1653 record.h:1662 record.h:1687
 msgid "change"
 msgstr "Thay đổi"
 
@@ -13733,8 +13733,8 @@ msgstr "dịch phải"
 msgid "stock Plugin"
 msgstr "cdắm nguồn"
 
-#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1588 record.h:1597 record.h:1608
-#: record.h:1637 record.h:1646 record.h:1680 skin_default_skin.xml.h:623
+#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1589 record.h:1598 record.h:1609
+#: record.h:1638 record.h:1647 record.h:1681 skin_default_skin.xml.h:623
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
