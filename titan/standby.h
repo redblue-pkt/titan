@@ -89,7 +89,8 @@ void screenstandby()
 
 	//workaround..  sometimes reboot
 	writerc(getrcconfigint("rcexit", NULL));
-	
+	status.startmode = 0;
+	printf("standby -> start");
 	while(1)
 	{
 		rcret = waitrc(standbyscreen, 10000, 0);
@@ -109,6 +110,7 @@ void screenstandby()
 		free(loctime); loctime = 0;
 	}
 	//workaround after standby poweroff menu reboot
+	printf("standby -> stop");
 	writerc(getrcconfigint("rcexit", NULL));
 	rcret = waitrc(standbyscreen, 1000, 0);
 	//
@@ -186,6 +188,7 @@ void screenstandby()
 	status.updatevfd = START;
 	putmsgbuffer();
 	addtimer(&setdate, START, 10000, 1, NULL, NULL, NULL);
+	printf("standby -> ende");
 #ifdef MIPSEL
 	cecwakeup();
 #endif
