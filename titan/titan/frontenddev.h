@@ -1256,7 +1256,8 @@ void fesetunicable(struct dvbdev* node)
 		unicabletune |= (((!node->feaktpolarization) & 0x1) << 1);
 		unicabletune |= (node->feaktband & 0x1);
 		
-		debug(200, "unicabletune %04X", unicabletune);
+		debug(200, "unicabletune 0x%06x", unicabletune);
+		printf("uni2-> tunigword: 0x%06x\n", unicabletune);
 	
 		if(status.firstunicablewait == 0)
 		{
@@ -1287,7 +1288,7 @@ void fesetunicable(struct dvbdev* node)
 		cmd.msg[3] = unicabletune & 0xff;
 		cmd.msg_len = 4;
 	}	
-
+	
 	debug(200, "send diseqc unicable cmd (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
 	fesetvoltage(node, SEC_VOLTAGE_13, 15);
