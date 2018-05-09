@@ -16,6 +16,10 @@ void screenstandby()
 		return;
 	}
 
+	//wenn ON dann startet die GUI bei einer Aufnahme neu
+	if(checkrealbox("HD51") == 1 || checkchipset("BCM7424") == 1)
+		addconfig("standbytuneroff", "0");
+
 	//check if all tuner unlocked, if yes set all volt off
 	if(getconfigint("standbytuneroff", NULL) == 1 && checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 	{
@@ -89,7 +93,6 @@ void screenstandby()
 
 	//workaround..  sometimes reboot
 	writerc(getrcconfigint("rcexit", NULL));
-	status.startmode = 0;
 	printf("standby -> start");
 	while(1)
 	{

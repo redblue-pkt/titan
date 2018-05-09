@@ -374,7 +374,7 @@ void recordstop(struct service* node, int ret)
 		if(afterevent == 0)
 		{
 			//not needed
-			if(status.startmode == 1) afterevent = 2;
+			//if(status.startmode == 1) afterevent = 2;
 			//else
 			if(getwaswakuptimer() == 1) afterevent = 3;
 		}
