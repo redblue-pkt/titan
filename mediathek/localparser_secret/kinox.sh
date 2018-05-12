@@ -41,8 +41,11 @@ NAME=KinoX
 
 if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=1 | wc -l` -eq 1 ];then
 	ACTIVEBIN="$curlbin" 
-else
+elif [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=2 | wc -l` -eq 1 ];then
 	ACTIVEBIN="$BIN /tmp/localhoster/cloudflare.py"
+else
+	ACTIVEBIN="$curlbin" 
+	URL=`echo $URL | sed 's/https:/http:/'`
 fi
 
 mkdir $TMP > /dev/null 2>&1
