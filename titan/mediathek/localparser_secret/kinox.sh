@@ -134,26 +134,26 @@ search()
 
 			if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_pic=1 | wc -l` -eq 1 ];then
 		#		$wgetbin --no-check-certificate "$MAINURL/$ROUND1" -O cache."$filename".list
-				echo $BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
+#				echo $BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
 				$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN2 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
+#					echo $BIN2 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN3 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
+#					echo $BIN3 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN4 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
+#					echo $BIN4 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN5 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
+#					echo $BIN5 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN6 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
+#					echo $BIN6 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				PIC=$URL/`cat $TMP/cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
@@ -239,26 +239,26 @@ kino()
 
 			if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_pic=1 | wc -l` -eq 1 ];then
 		#		$wgetbin --no-check-certificate "$MAINURL/$ROUND1" -O cache."$filename".list
-				echo $BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND"
+#				echo $BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND"
 				$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 					echo $BIN2 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN3 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
+#					echo $BIN3 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN4 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
+#					echo $BIN4 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN5 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
+#					echo $BIN5 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN6 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
+#					echo $BIN6 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
 					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				PIC=$URL/`cat $TMP/cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
