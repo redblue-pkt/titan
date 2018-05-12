@@ -1,19 +1,22 @@
 #!/bin/bash
 # box parser for titannit
 
-. /tmp/localhoster/hoster.sh
+case $2 in
+	init) echo skip load hoster.sh;;
+	*) . /tmp/localhoster/hoster.sh;;
+esac
 
 SRC=$1
 INPUT=$2
 PARAM=$3
 URL="https://beeg.com/api/v6/1525723877/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
+NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[. /tmp/localhoster/hoster.sh
+A-Z]'`${PARSER:1}
 
 FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PARAM"
 FILENAME="`echo $FILENAME | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
 PICNAME=`echo $FILENAME`
-
 
 rm -rf $TMP > /dev/null 2>&1
 mkdir $TMP > /dev/null 2>&1
