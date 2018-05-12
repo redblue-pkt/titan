@@ -32,8 +32,10 @@ if [ -z "$FILENAME" ]; then
 	FILENAME=none
 fi
 
-#URL=http://movie4k.to
-URL=https://kinoxto.stream
+URL=`cat /mnt/config/titan.cfg | grep tithek_kinox_url | grep -v "#" | cut -d "=" -f2`
+if [ -z "$URL" ];then
+	URL=https://kinoxto.stream
+fi
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=KinoX
 
