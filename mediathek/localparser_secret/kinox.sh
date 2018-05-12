@@ -3,7 +3,8 @@
 
 case $2 in
 	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
+	*) 
+. /tmp/localhoster/hoster.sh;;
 esac
 
 #SRC=$1
@@ -32,12 +33,19 @@ if [ -z "$FILENAME" ]; then
 	FILENAME=none
 fi
 
+#URL=http://movie4k.to
 URL=`cat /mnt/config/titan.cfg | grep tithek_kinox_url | grep -v "#" | cut -d "=" -f2`
 if [ -z "$URL" ];then
 	URL=https://kinoxto.stream
 fi
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=KinoX
+
+if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=1 | wc -l` -eq 1 ];then
+	ACTIVEBIN="$curlbin" 
+else
+	ACTIVEBIN="$BIN /tmp/localhoster/cloudflare.py"
+fi
 
 mkdir $TMP > /dev/null 2>&1
 
@@ -87,8 +95,7 @@ search()
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 
-		$BIN /tmp/localhoster/cloudflare.py "$URL/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$PAGE%22%7D" > $TMP/cache.$FILENAME.1
-
+		$ACTIVEBIN "$URL/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$PAGE%22%7D" > $TMP/cache.$FILENAME.1
 		if [ `cat $TMP/cache.$FILENAME.1 | grep "KinoX 404 Not Found" | wc -l` -eq 1 ];then
 			ERRORMSG="KinoX 404 Not Found"
 #			echo "errormsg=$ERRORMSG"
@@ -140,26 +147,26 @@ search()
 			if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_pic=1 | wc -l` -eq 1 ];then
 		#		$wgetbin --no-check-certificate "$MAINURL/$ROUND1" -O cache."$filename".list
 #				echo $BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
-				$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
+				$ACTIVEBIN "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN2 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN3 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN4 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN5 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN6 /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/Stream/$ROUND" > $TMP/cache."$filename".list
 				fi
 				PIC=$URL/`cat $TMP/cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
 				LANG=`cat $TMP/cache."$filename".list | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
@@ -216,7 +223,7 @@ kino()
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 #		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
-		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$FILENAME.1
+		$ACTIVEBIN "$URL/$PAGE" > $TMP/cache.$FILENAME.1
 
 		if [ `cat $TMP/cache.$FILENAME.1 | grep "KinoX 404 Not Found" | wc -l` -eq 1 ];then
 			ERRORMSG="KinoX 404 Not Found"
@@ -245,26 +252,26 @@ kino()
 			if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_pic=1 | wc -l` -eq 1 ];then
 		#		$wgetbin --no-check-certificate "$MAINURL/$ROUND1" -O cache."$filename".list
 #				echo $BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND"
-				$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
+				$ACTIVEBIN "$URL/$ROUND" > $TMP/cache."$filename".list
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
-					echo $BIN2 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
+#					echo $BIN2 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
+					$ACTIVEBIN "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN3 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN4 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN5 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				if [ $(cat $TMP/cache."$filename".list | wc -l) -eq 0 ];then
 #					echo $BIN6 /tmp/localhoster/cloudflare.py "$URL/$ROUND"
-					$BIN /tmp/localhoster/cloudflare.py "$URL/$ROUND" > $TMP/cache."$filename".list
+					$ACTIVEBIN "$URL/$ROUND" > $TMP/cache."$filename".list
 				fi
 				PIC=$URL/`cat $TMP/cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
 				LANG=`cat $TMP/cache."$filename".list | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
