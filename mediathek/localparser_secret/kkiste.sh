@@ -1,7 +1,10 @@
 #!/bin/bash
 # box parser for titannit
 
-. /tmp/localhoster/hoster.sh
+case $2 in
+	init) echo skip load hoster.sh;;
+	*) . /tmp/localhoster/hoster.sh;;
+esac
 
 SRC=$1
 INPUT=$2
