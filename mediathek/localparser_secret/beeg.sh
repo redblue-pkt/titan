@@ -11,8 +11,7 @@ INPUT=$2
 PARAM=$3
 URL="https://beeg.com/api/v6/1525723877/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[. /tmp/localhoster/hoster.sh
-A-Z]'`${PARSER:1}
+NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 
 FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PARAM"
 FILENAME="`echo $FILENAME | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
