@@ -1,0 +1,327 @@
+<style name="dbg" bordersize="1" bordercol="#ffffff">
+#style="dbg" 
+
+
+<screen name="wm2018" fontcol="white" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30" transparent="50">
+
+	<node name="titletext" text="will be set by plugin" fontcol="white" fontsize="36" posx="0" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" gradient="topmiddle">
+
+	<node name="box1" posx="28" posy="58"  width="1164" height="34" bordersize="1" bordercol="white" borderradius="8">
+
+	#node name="day"    text="Day "   halign="center"   valign="center" posx="30"  posy="60" width="100"  height="30" fontsize="30">
+	<node name="date"   text="Beginn"   halign="center"   valign="center" posx="30"  posy="60" width="250" height="30" fontsize="30">
+	#node name="time"   text="Anstoß"   halign="center"   valign="center" posx="230" posy="60" width="100" height="30" fontsize="30">
+	<node name="team1"  text="Nation 1" halign="center" valign="center" posx="290" posy="60" width="300" height="30" fontsize="30">
+	<node name="result" text="Ergebnis"  halign="center" valign="center" posx="640" posy="60" width="200" height="30" fontsize="30">
+	<node name="team2"  text="Nation 2" halign="center" valign="center" posx="890" posy="60" width="300" height="30" fontsize="30">
+
+	#node name="day_0"    halign="center"  fontsize="10" valign="center" posx="30"  posy="100" width="80"  height="30" fontsize="30" wrap="yes">
+	#node name="day_1"    halign="left"   fontsize="8" valign="center" posx="30"  posy="140" width="80"  height="30" fontsize="30">
+	#node name="day_2"    halign="left"   valign="center" posx="30"  posy="180" width="80"  height="30" fontsize="30">
+	#node name="day_3"    halign="left"   valign="center" posx="30"  posy="220" width="80"  height="30" fontsize="30">
+	#node name="day_4"    halign="left"   valign="center" posx="30"  posy="260" width="80"  height="30" fontsize="30">
+	#node name="day_5"    halign="left"   valign="center" posx="30"  posy="300" width="80"  height="30" fontsize="30">
+
+	<node name="date_0"   halign="center"   valign="center" posx="30"  posy="105" width="250" height="30" fontsize="30">
+	<node name="date_1"   halign="center"   valign="center" posx="30"  posy="145" width="250" height="30" fontsize="30">
+	<node name="date_2"   halign="center"   valign="center" posx="30"  posy="185" width="250" height="30" fontsize="30">
+	<node name="date_3"   halign="center"   valign="center" posx="30"  posy="225" width="250" height="30" fontsize="30">
+	<node name="date_4"   halign="center"   valign="center" posx="30"  posy="265" width="250" height="30" fontsize="30">
+	<node name="date_5"   halign="center"   valign="center" posx="30"  posy="305" width="250" height="30" fontsize="30">
+
+	#node name="time_0"   halign="left"   fontsize="10" valign="center" posx="190" posy="100" width="100" height="30" fontsize="30" wrap="yes">
+	#node name="time_1"   halign="left"   fontsize="8" valign="center" posx="190" posy="140" width="100" height="30" fontsize="30">
+	#node name="time_2"   halign="left"   valign="center" posx="190" posy="180" width="100" height="30" fontsize="30">
+	#node name="time_3"   halign="left"   valign="center" posx="190" posy="220" width="100" height="30" fontsize="30">
+	#node name="time_4"   halign="left"   valign="center" posx="190" posy="260" width="100" height="30" fontsize="30">
+	#node name="time_5"   halign="left"   valign="center" posx="190" posy="300" width="100" height="30" fontsize="30">
+
+	<node name="team1_0"  halign="center" valign="center" posx="290" posy="100" width="300" height="30" fontsize="30">
+	<node name="team1_1"  halign="center" valign="center" posx="290" posy="140" width="300" height="30" fontsize="30">
+	<node name="team1_2"  halign="center" valign="center" posx="290" posy="180" width="300" height="30" fontsize="30">
+	<node name="team1_3"  halign="center" valign="center" posx="290" posy="220" width="300" height="30" fontsize="30">
+	<node name="team1_4"  halign="center" valign="center" posx="290" posy="260" width="300" height="30" fontsize="30">
+	<node name="team1_5"  halign="center" valign="center" posx="290" posy="300" width="300" height="30" fontsize="30">
+
+	<node name="flag1_0"  halign="center" valign="center" posx="590" posy="100" width="50" height="30">
+	<node name="flag1_1"  halign="center" valign="center" posx="590" posy="140" width="50" height="30">
+	<node name="flag1_2"  halign="center" valign="center" posx="590" posy="180" width="50" height="30">
+	<node name="flag1_3"  halign="center" valign="center" posx="590" posy="220" width="50" height="30">
+	<node name="flag1_4"  halign="center" valign="center" posx="590" posy="260" width="50" height="30">
+	<node name="flag1_5"  halign="center" valign="center" posx="590" posy="300" width="50" height="30">
+
+	<node name="result_0" halign="center" valign="center" posx="640" posy="100" width="200" height="30" fontsize="30">
+	<node name="result_1" halign="center" valign="center" posx="640" posy="140" width="200" height="30" fontsize="30">
+	<node name="result_2" halign="center" valign="center" posx="640" posy="180" width="200" height="30" fontsize="30">
+	<node name="result_3" halign="center" valign="center" posx="640" posy="220" width="200" height="30" fontsize="30">
+	<node name="result_4" halign="center" valign="center" posx="640" posy="260" width="200" height="30" fontsize="30">
+	<node name="result_5" halign="center" valign="center" posx="640" posy="300" width="200" height="30" fontsize="30">
+
+	<node name="flag2_0"  halign="center" valign="center" posx="840" posy="100" width="50" height="30">
+	<node name="flag2_1"  halign="center" valign="center" posx="840" posy="140" width="50" height="30">
+	<node name="flag2_2"  halign="center" valign="center" posx="840" posy="180" width="50" height="30">
+	<node name="flag2_3"  halign="center" valign="center" posx="840" posy="220" width="50" height="30">
+	<node name="flag2_4"  halign="center" valign="center" posx="840" posy="260" width="50" height="30">
+	<node name="flag2_5"  halign="center" valign="center" posx="840" posy="300" width="50" height="30">
+
+	<node name="team2_0"  halign="center" valign="center" posx="890" posy="100" width="300" height="30" fontsize="30">
+	<node name="team2_1"  halign="center" valign="center" posx="890" posy="140" width="300" height="30" fontsize="30">
+	<node name="team2_2"  halign="center" valign="center" posx="890" posy="180" width="300" height="30" fontsize="30">
+	<node name="team2_3"  halign="center" valign="center" posx="890" posy="220" width="300" height="30" fontsize="30">
+	<node name="team2_4"  halign="center" valign="center" posx="890" posy="260" width="300" height="30" fontsize="30">
+	<node name="team2_5"  halign="center" valign="center" posx="890" posy="300" width="300" height="30" fontsize="30">
+
+#######################################################################################################################################
+
+	<node name="box2" posx="28" posy="378" width="1164" height="34" bordersize="1" bordercol="white" borderradius="8">
+
+	<node name="TableNo" text="Platz"   halign="left"   valign="center" posx="30"   posy="380" width="100" height="30" fontsize="30">
+	<node name="Team"    text="Nation"   halign="left"   valign="center" posx="180"  posy="380" width="300" height="30" fontsize="30">
+	<node name="Played"  text="Played" halign="center" valign="center" posx="480"  posy="380" width="110" height="30" fontsize="30">
+	<node name="Won"     text="Won"    halign="center" valign="center" posx="590"  posy="380" width="100" height="30" fontsize="30">
+	<node name="Draw"    text="Draw"   halign="center" valign="center" posx="690"  posy="380" width="100" height="30" fontsize="30">
+	<node name="Lost"    text="Lost"   halign="center" valign="center" posx="790"  posy="380" width="100" height="30" fontsize="30">
+	<node name="Goals"   text="Goals"  halign="center" valign="center" posx="890"  posy="380" width="100" height="30" fontsize="30">
+	<node name="Diff"    text="Diff"   halign="center" valign="center" posx="990"  posy="380" width="100"  height="30" fontsize="30">
+	<node name="Points"  text="Points" halign="center" valign="center" posx="1090" posy="380" width="100" height="30" fontsize="30">
+
+	<node name="TableNo_0"  halign="center"   valign="center" posx="30"   posy="420" width="40"  height="30" fontsize="30">
+	<node name="TableNo_1"  halign="center"   valign="center" posx="30"   posy="460" width="40"  height="30" fontsize="30">
+	<node name="TableNo_2"  halign="center"   valign="center" posx="30"   posy="500" width="40"  height="30" fontsize="30">
+	<node name="TableNo_3"  halign="center"   valign="center" posx="30"   posy="540" width="40"  height="30" fontsize="30">
+
+	<node name="TableNoV_0" halign="left"   valign="center" posx="70"   posy="420" width="60"  height="30" fontsize="30">
+	<node name="TableNoV_1" halign="left"   valign="center" posx="70"   posy="460" width="60"  height="30" fontsize="30">
+	<node name="TableNoV_2" halign="left"   valign="center" posx="70"   posy="500" width="60"  height="30" fontsize="30">
+	<node name="TableNoV_3" halign="left"   valign="center" posx="70"   posy="540" width="60"  height="30" fontsize="30">
+
+	<node name="Flag_0"     halign="left" valign="center" posx="130"  posy="420" width="100" height="30">
+	<node name="Flag_1"     halign="left" valign="center" posx="130"  posy="460" width="100" height="30">
+	<node name="Flag_2"     halign="left" valign="center" posx="130"  posy="500" width="100" height="30">
+	<node name="Flag_3"     halign="left" valign="center" posx="130"  posy="540" width="100" height="30">
+
+	<node name="Team_0"     halign="left"   valign="center" posx="180"  posy="420" width="300" height="30" fontsize="30">
+	<node name="Team_1"     halign="left"   valign="center" posx="180"  posy="460" width="300" height="30" fontsize="30">
+	<node name="Team_2"     halign="left"   valign="center" posx="180"  posy="500" width="300" height="30" fontsize="30">
+	<node name="Team_3"     halign="left"   valign="center" posx="180"  posy="540" width="300" height="30" fontsize="30">
+
+	<node name="Played_0"   halign="center" valign="center" posx="480"  posy="420" width="110" height="30" fontsize="30">
+	<node name="Played_1"   halign="center" valign="center" posx="480"  posy="460" width="110" height="30" fontsize="30">
+	<node name="Played_2"   halign="center" valign="center" posx="480"  posy="500" width="110" height="30" fontsize="30">
+	<node name="Played_3"   halign="center" valign="center" posx="480"  posy="540" width="110" height="30" fontsize="30">
+
+	<node name="Won_0"      halign="center" valign="center" posx="590"  posy="420" width="100" height="30" fontsize="30">
+	<node name="Won_1"      halign="center" valign="center" posx="590"  posy="460" width="100" height="30" fontsize="30">
+	<node name="Won_2"      halign="center" valign="center" posx="590"  posy="500" width="100" height="30" fontsize="30">
+	<node name="Won_3"      halign="center" valign="center" posx="590"  posy="540" width="100" height="30" fontsize="30">
+
+	<node name="Draw_0"     halign="center" valign="center" posx="690"  posy="420" width="100" height="30" fontsize="30">
+	<node name="Draw_1"     halign="center" valign="center" posx="690"  posy="460" width="100" height="30" fontsize="30">
+	<node name="Draw_2"     halign="center" valign="center" posx="690"  posy="500" width="100" height="30" fontsize="30">
+	<node name="Draw_3"     halign="center" valign="center" posx="690"  posy="540" width="100" height="30" fontsize="30">
+
+	<node name="Lost_0"     halign="center" valign="center" posx="790"  posy="420" width="100" height="30" fontsize="30">
+	<node name="Lost_1"     halign="center" valign="center" posx="790"  posy="460" width="100" height="30" fontsize="30">
+	<node name="Lost_2"     halign="center" valign="center" posx="790"  posy="500" width="100" height="30" fontsize="30">
+	<node name="Lost_3"     halign="center" valign="center" posx="790"  posy="540" width="100" height="30" fontsize="30">
+
+	<node name="Goals_0"    halign="center" valign="center" posx="890"  posy="420" width="100" height="30" fontsize="30">
+	<node name="Goals_1"    halign="center" valign="center" posx="890"  posy="460" width="100" height="30" fontsize="30">
+	<node name="Goals_2"    halign="center" valign="center" posx="890"  posy="500" width="100" height="30" fontsize="30">
+	<node name="Goals_3"    halign="center" valign="center" posx="890"  posy="540" width="100" height="30" fontsize="30">
+
+	<node name="Diff_0"     halign="center" valign="center" posx="990"  posy="420" width="100" height="30" fontsize="30">
+	<node name="Diff_1"     halign="center" valign="center" posx="990"  posy="460" width="100" height="30" fontsize="30">
+	<node name="Diff_2"     halign="center" valign="center" posx="990"  posy="500" width="100" height="30" fontsize="30">
+	<node name="Diff_3"     halign="center" valign="center" posx="990"  posy="540" width="100" height="30" fontsize="30">
+
+	<node name="Points_0"   halign="center" valign="center" posx="1090" posy="420" width="100" height="30" fontsize="30">
+	<node name="Points_1"   halign="center" valign="center" posx="1090" posy="460" width="100" height="30" fontsize="30">
+	<node name="Points_2"   halign="center" valign="center" posx="1090" posy="500" width="100" height="30" fontsize="30">
+	<node name="Points_3"   halign="center" valign="center" posx="1090" posy="540" width="100" height="30" fontsize="30">
+
+	<node name="buttonbar" posx="0" posy="bottom" width="100%" height="50" hspace="5" fontcol="black" fontsize="25" bordercol="black" bordersize="1" borderradius="8" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" text="Taste 1..8 => Gruppe A..H" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="0" posy="center" width="300" height="36">
+		<node parent="buttonbar" name="b2" text="[9] => Achtelfinale" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="320" posy="center" width="200" height="36">
+		<node parent="buttonbar" name="b3" text="[0] => Finals" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="540" posy="center" width="200" height="36">
+		<node parent="buttonbar" name="b4" text="Refresh" picmem="skin/key_green_30x30.png" textposx="40" valign="middle" fontcol="white" fontsize="25" posx="900" posy="center" width="220" height="30">
+		<node parent="buttonbar" name="b5" picmem="skin/key_exit_70x40.png" valign="middle" posx="right" posy="center" width="70" height="40">
+</screen>
+
+
+<screen name="wm2018_last16" fontcol="white" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30" transparent="50">
+	<node name="titletext" text="will be set by plugin" fontcol="white" fontsize="36" posx="0" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" gradient="topmiddle">
+
+	<node name="box1" posx="28" posy="58" width="1164" height="34" bordersize="1" bordercol="white" borderradius="8">
+
+	#node name="day"    text="Day "   halign="left"   valign="center" posx="30"  posy="60" width="60"  height="30" fontsize="30">
+	<node name="date"   text="Beginn"   halign="center"   valign="center" posx="30"  posy="60" width="250" height="30" fontsize="30">
+	#node name="htime"   text=""   halign="center"   valign="center" posx="190" posy="60" width="100" height="30" fontsize="30">
+	<node name="team1"  text="Nation 1" halign="center" valign="center" posx="290" posy="60" width="300" height="30" fontsize="30">
+	<node name="result" text="Ergebnis" halign="center" valign="center" posx="640" posy="60" width="200" height="30" fontsize="30">
+	<node name="team2"  text="Nation 2" halign="center" valign="center" posx="890" posy="60" width="300" height="30" fontsize="30">
+
+	#node name="day_0"    halign="left"   valign="center" posx="30"  posy="100" width="60"  height="30" fontsize="30">
+	#node name="day_1"    halign="left"   valign="center" posx="30"  posy="140" width="60"  height="30" fontsize="30">
+	#node name="day_2"    halign="left"   valign="center" posx="30"  posy="180" width="60"  height="30" fontsize="30">
+	#node name="day_3"    halign="left"   valign="center" posx="30"  posy="220" width="60"  height="30" fontsize="30">
+	#node name="day_4"    halign="left"   valign="center" posx="30"  posy="260" width="60"  height="30" fontsize="30">
+	#node name="day_5"    halign="left"   valign="center" posx="30"  posy="300" width="60"  height="30" fontsize="30">
+	#node name="day_6"    halign="left"   valign="center" posx="30"  posy="340" width="60"  height="30" fontsize="30">
+	#node name="day_7"    halign="left"   valign="center" posx="30"  posy="380" width="60"  height="30" fontsize="30">
+
+	<node name="date_0"   halign="center"   valign="center" posx="30"  posy="100" width="250" height="30" fontsize="30">
+	<node name="date_1"   halign="center"   valign="center" posx="30"  posy="140" width="250" height="30" fontsize="30">
+	<node name="date_2"   halign="center"   valign="center" posx="30"  posy="180" width="250" height="30" fontsize="30">
+	<node name="date_3"   halign="center"   valign="center" posx="30"  posy="220" width="250" height="30" fontsize="30">
+	<node name="date_4"   halign="center"   valign="center" posx="30"  posy="260" width="250" height="30" fontsize="30">
+	<node name="date_5"   halign="center"   valign="center" posx="30"  posy="300" width="250" height="30" fontsize="30">
+	<node name="date_6"   halign="center"   valign="center" posx="30"  posy="340" width="250" height="30" fontsize="30">
+	<node name="date_7"   halign="center"   valign="center" posx="30"  posy="380" width="250" height="30" fontsize="30">
+
+	<node name="team1_0"  halign="center" valign="center" posx="290" posy="100" width="300" height="30" fontsize="30">
+	<node name="team1_1"  halign="center" valign="center" posx="290" posy="140" width="300" height="30" fontsize="30">
+	<node name="team1_2"  halign="center" valign="center" posx="290" posy="180" width="300" height="30" fontsize="30">
+	<node name="team1_3"  halign="center" valign="center" posx="290" posy="220" width="300" height="30" fontsize="30">
+	<node name="team1_4"  halign="center" valign="center" posx="290" posy="260" width="300" height="30" fontsize="30">
+	<node name="team1_5"  halign="center" valign="center" posx="290" posy="300" width="300" height="30" fontsize="30">
+	<node name="team1_6"  halign="center" valign="center" posx="290" posy="340" width="300" height="30" fontsize="30">
+	<node name="team1_7"  halign="center" valign="center" posx="290" posy="380" width="300" height="30" fontsize="30">
+
+	<node name="flag1_0"  halign="center" valign="center" posx="590" posy="100" width="30" height="30">
+	<node name="flag1_1"  halign="center" valign="center" posx="590" posy="140" width="30" height="30">
+	<node name="flag1_2"  halign="center" valign="center" posx="590" posy="180" width="30" height="30">
+	<node name="flag1_3"  halign="center" valign="center" posx="590" posy="220" width="30" height="30">
+	<node name="flag1_4"  halign="center" valign="center" posx="590" posy="260" width="30" height="30">
+	<node name="flag1_5"  halign="center" valign="center" posx="590" posy="300" width="30" height="30">
+	<node name="flag1_6"  halign="center" valign="center" posx="590" posy="340" width="30" height="30">
+	<node name="flag1_7"  halign="center" valign="center" posx="590" posy="380" width="30" height="30">
+	
+	<node name="htime_0"   halign="right"   valign="center" posx="640" posy="100" width="80" height="30" fontsize="20">
+	<node name="htime_1"   halign="right"   valign="center" posx="640" posy="140" width="80" height="30" fontsize="20">
+	<node name="htime_2"   halign="right"   valign="center" posx="640" posy="180" width="80" height="30" fontsize="20">
+	<node name="htime_3"   halign="right"   valign="center" posx="640" posy="220" width="80" height="30" fontsize="20">
+	<node name="htime_4"   halign="right"   valign="center" posx="640" posy="260" width="80" height="30" fontsize="20">
+	<node name="htime_5"   halign="right"   valign="center" posx="640" posy="300" width="80" height="30" fontsize="20">
+	<node name="htime_6"   halign="right"   valign="center" posx="640" posy="340" width="80" height="30" fontsize="20">
+	<node name="htime_7"   halign="right"   valign="center" posx="640" posy="380" width="80" height="30" fontsize="20">
+
+	<node name="result_0" halign="center" valign="center" posx="720" posy="100" width="130" height="30" fontsize="30">
+	<node name="result_1" halign="center" valign="center" posx="720" posy="140" width="130" height="30" fontsize="30">
+	<node name="result_2" halign="center" valign="center" posx="720" posy="180" width="130" height="30" fontsize="30">
+	<node name="result_3" halign="center" valign="center" posx="720" posy="220" width="130" height="30" fontsize="30">
+	<node name="result_4" halign="center" valign="center" posx="720" posy="260" width="130" height="30" fontsize="30">
+	<node name="result_5" halign="center" valign="center" posx="720" posy="300" width="130" height="30" fontsize="30">
+	<node name="result_6" halign="center" valign="center" posx="720" posy="340" width="130" height="30" fontsize="30">
+	<node name="result_7" halign="center" valign="center" posx="720" posy="380" width="130" height="30" fontsize="30">
+
+	<node name="flag2_0"  halign="center" valign="center" posx="840" posy="100" width="30" height="30">
+	<node name="flag2_1"  halign="center" valign="center" posx="840" posy="140" width="30" height="30">
+	<node name="flag2_2"  halign="center" valign="center" posx="840" posy="180" width="30" height="30">
+	<node name="flag2_3"  halign="center" valign="center" posx="840" posy="220" width="30" height="30">
+	<node name="flag2_4"  halign="center" valign="center" posx="840" posy="260" width="30" height="30">
+	<node name="flag2_5"  halign="center" valign="center" posx="840" posy="300" width="30" height="30">
+	<node name="flag2_6"  halign="center" valign="center" posx="840" posy="340" width="30" height="30">
+	<node name="flag2_7"  halign="center" valign="center" posx="840" posy="380" width="30" height="30">
+
+	<node name="team2_0"  halign="center" valign="center" posx="890" posy="100" width="300" height="30" fontsize="30">
+	<node name="team2_1"  halign="center" valign="center" posx="890" posy="140" width="300" height="30" fontsize="30">
+	<node name="team2_2"  halign="center" valign="center" posx="890" posy="180" width="300" height="30" fontsize="30">
+	<node name="team2_3"  halign="center" valign="center" posx="890" posy="220" width="300" height="30" fontsize="30">
+	<node name="team2_4"  halign="center" valign="center" posx="890" posy="260" width="300" height="30" fontsize="30">
+	<node name="team2_5"  halign="center" valign="center" posx="890" posy="300" width="300" height="30" fontsize="30">
+	<node name="team2_6"  halign="center" valign="center" posx="890" posy="340" width="300" height="30" fontsize="30">
+	<node name="team2_7"  halign="center" valign="center" posx="890" posy="380" width="300" height="30" fontsize="30">
+
+	<node name="buttonbar" posx="0" posy="bottom" width="100%" height="50" hspace="5" fontcol="black" fontsize="25" bordercol="black" bordersize="1" borderradius="8" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" text="Taste 1..8 => Gruppe A..H" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="0" posy="center" width="300" height="36">
+		<node parent="buttonbar" name="b2" text="[9] => Achtelfinale" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="320" posy="center" width="200" height="36">
+		<node parent="buttonbar" name="b3" text="[0] => Finals" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="540" posy="center" width="200" height="36">
+		<node parent="buttonbar" name="b4" text="Refresh" picmem="skin/key_green_30x30.png" textposx="40" valign="middle" fontcol="white" fontsize="25" posx="900" posy="center" width="220" height="30">
+		<node parent="buttonbar" name="b5" picmem="skin/key_exit_70x40.png" valign="middle" posx="right" posy="center" width="70" height="40">
+</screen>
+
+
+<screen name="wm2018_final" fontcol="white" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30" transparent="50">
+	<node name="titletext" text="will be set by plugin" fontcol="white" fontsize="36" posx="0" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" gradient="topmiddle">
+
+	<node name="box1" text="Halbfinale" halign="center" fontcol="white" bgcol="black" bgcol2="black" posx="28" posy="58" width="1164" height="75" bordersize="1" borderradius="8" bordercol="white" fontsize="35" gradient="topmiddle">
+
+	<node name="date"   text="Beginn"   halign="center" fontcol="white" bgcol="black" valign="center" posx="32"  posy="100" width="258" height="30" fontsize="30">
+	<node name="team1"  text="Nation 1" halign="center" fontcol="white" bgcol="black" valign="center" posx="290" posy="100" width="300" height="30" fontsize="30">
+	<node name="result" text="Ergebnis" halign="center" fontcol="white" bgcol="black" valign="center" posx="590" posy="100" width="300" height="30" fontsize="30">
+	<node name="team2"  text="Nation 2" halign="center" fontcol="white" bgcol="black" valign="center" posx="890" posy="100" width="298" height="30" fontsize="30">
+
+	
+	<node name="date_0"   halign="center"   valign="center" posx="30"  posy="140" width="250" height="30" fontsize="30">
+	<node name="date_1"   halign="center"   valign="center" posx="30"  posy="180" width="250" height="30" fontsize="30">
+
+	<node name="team1_0"  halign="center" valign="center" posx="290" posy="140" width="300" height="30" fontsize="30">
+	<node name="team1_1"  halign="center" valign="center" posx="290" posy="180" width="300" height="30" fontsize="30">
+
+	<node name="flagge1_0"  halign="center" valign="center" posx="590" posy="140" width="30" height="30">
+	<node name="flagge1_1"  halign="center" valign="center" posx="590" posy="180" width="30" height="30">
+	
+	<node name="htime_0"   halign="right"   valign="center" posx="640" posy="140" width="80" height="30" fontsize="20">
+	<node name="htime_1"   halign="right"   valign="center" posx="640" posy="180" width="80" height="30" fontsize="20">
+
+	<node name="result_0" halign="center" valign="center" posx="720" posy="140" width="130" height="30" fontsize="30">
+	<node name="result_1" halign="center" valign="center" posx="720" posy="180" width="130" height="30" fontsize="30">
+
+	<node name="flagge2_0"  halign="center" valign="center" posx="840" posy="140" width="30" height="30">
+	<node name="flagge2_1"  halign="center" valign="center" posx="840" posy="180" width="30" height="30">
+
+	<node name="team2_0"  halign="center" valign="center" posx="890" posy="140" width="300" height="30" fontsize="30">
+	<node name="team2_1"  halign="center" valign="center" posx="890" posy="180" width="300" height="30" fontsize="30">
+
+	
+	<node name="box2" text="Spiel um Platz 3" halign="center" fontcol="white" bgcol="white" posx="28" posy="238" width="1164" height="75" bordersize="1" borderradius="8" bordercol="white" fontsize="35" gradient="topmiddle">
+
+	<node name="date"   text="Beginn"   fontcol="white" bgcol="black" halign="center" valign="center" posx="32"  posy="280" width="258" height="30" fontsize="30">
+	<node name="team1"  text="Nation 1" fontcol="white" bgcol="black" halign="center" valign="center" posx="290" posy="280" width="300" height="30" fontsize="30">
+	<node name="result" text="Ergebnis" fontcol="white" bgcol="black" halign="center" valign="center" posx="590" posy="280" width="300" height="30" fontsize="30">
+	<node name="team2"  text="Nation 2" fontcol="white" bgcol="black" halign="center" valign="center" posx="890" posy="280" width="298" height="30" fontsize="30">
+	
+	<node name="date_2"   halign="center"   valign="center" posx="30"  posy="320" width="250" height="30" fontsize="30">
+
+	<node name="team1_2"  halign="center" valign="center" posx="290" posy="320" width="300" height="30" fontsize="30">
+
+	<node name="flagge1_2"  halign="center" valign="center" posx="590" posy="320" width="30" height="30">
+
+	<node name="htime_2"   halign="right"   valign="center" posx="640" posy="320" width="80" height="30" fontsize="20">
+
+	<node name="result_2" halign="center" valign="center" posx="720" posy="320" width="130" height="30" fontsize="30">
+
+	<node name="flagge2_2"  halign="center" valign="center" posx="840" posy="320" width="30" height="30">
+
+	<node name="team2_2"  halign="center" valign="center" posx="890" posy="320" width="300" height="30" fontsize="30">
+	
+
+	<node name="box3" text="Finale" halign="center" fontcol="white" bgcol="white" posx="28" posy="378" width="1164" height="75" bordersize="1" borderradius="8" bordercol="white" fontsize="35" gradient="topmiddle">
+
+	<node name="date"   text="Beginn"   fontcol="white" bgcol="black" halign="center" valign="center" posx="32"  posy="420" width="258" height="30" fontsize="30">
+	<node name="team1"  text="Nation 1" fontcol="white" bgcol="black" halign="center" valign="center" posx="290" posy="420" width="300" height="30" fontsize="30">
+	<node name="result" text="Ergebnis" fontcol="white" bgcol="black" halign="center" valign="center" posx="590" posy="420" width="300" height="30" fontsize="30">
+	<node name="team2"  text="Nation 2" fontcol="white" bgcol="black" halign="center" valign="center" posx="890" posy="420" width="298" height="30" fontsize="30">
+	
+	<node name="date_3"   halign="center"   valign="center" posx="30"  posy="460" width="250" height="30" fontsize="30">
+
+	<node name="team1_3"  halign="center" valign="center" posx="290" posy="460" width="300" height="30" fontsize="30">
+
+	<node name="flagge1_3"  halign="center" valign="center" posx="590" posy="460" width="30" height="30">
+
+	<node name="htime_3"   halign="right"   valign="center" posx="640" posy="460" width="80" height="30" fontsize="20">
+
+	<node name="result_3" halign="center" valign="center" posx="720" posy="460" width="130" height="30" fontsize="30">
+
+	<node name="flagge2_3"  halign="center" valign="center" posx="840" posy="460" width="30" height="30">
+
+	<node name="team2_3"  halign="center" valign="center" posx="890" posy="460" width="300" height="30" fontsize="30">
+
+	<node name="buttonbar" posx="0" posy="bottom" width="100%" height="50" hspace="5" fontcol="black" fontsize="25" bordercol="black" bordersize="1" borderradius="8" gradient="topmiddle">
+	<node parent="buttonbar" name="b1" text="Taste 1..8 => Gruppe A..H" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="0" posy="center" width="300" height="36">
+	<node parent="buttonbar" name="b2" text="[9] => Achtelfinale" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="320" posy="center" width="200" height="36">
+	<node parent="buttonbar" name="b3" text="[0] => Finals" halign="center" valign="middle" bordercol="white" fontcol="white" bordersize="6" bordertype="2" posx="540" posy="center" width="200" height="36">
+	<node parent="buttonbar" name="b4" text="Refresh" picmem="skin/key_green_30x30.png" textposx="40" valign="middle" fontcol="white" fontsize="25" posx="900" posy="center" width="220" height="30">
+	<node parent="buttonbar" name="b5" picmem="skin/key_exit_70x40.png" valign="middle" posx="right" posy="center" width="70" height="40">
+</screen>
