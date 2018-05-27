@@ -10,7 +10,7 @@
 
 	#node name="day"    text="Day "   halign="center"   valign="center" posx="30"  posy="60" width="100"  height="30" fontsize="30">
 	<node name="date"   text="Beginn"   halign="center"   valign="center" posx="30"  posy="60" width="250" height="30" fontsize="30">
-	#node name="time"   text="Anstoß"   halign="center"   valign="center" posx="230" posy="60" width="100" height="30" fontsize="30">
+	#node name="time"   text="Anstoss"   halign="center"   valign="center" posx="230" posy="60" width="100" height="30" fontsize="30">
 	<node name="team1"  text="Nation 1" halign="center" valign="center" posx="290" posy="60" width="300" height="30" fontsize="30">
 	<node name="result" text="Ergebnis"  halign="center" valign="center" posx="640" posy="60" width="200" height="30" fontsize="30">
 	<node name="team2"  text="Nation 2" halign="center" valign="center" posx="890" posy="60" width="300" height="30" fontsize="30">
