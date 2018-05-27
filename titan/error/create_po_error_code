@@ -1,9 +1,9 @@
-[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.clean.po
-xgettext: Non-ASCII string at tithek_mainmenu.h:41.
-          Please specify the source encoding through --from-code.
-[createpo.sh] xgettext --omit-header -s -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
-xgettext: Non-ASCII string at tithek_mainmenu.h:41.
-          Please specify the source encoding through --from-code.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.clean.po
+xgettext: Nicht in ASCII kodierte Zeichenkette bei oder vor plugins_wm2018_skin.xml.h:3.
+          Bitte die Kodierung des Quelltextes mit --from-code angeben.
+[createpo.sh] xgettext --omit-header -s -k_ *.* -o /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.new.po
+xgettext: Nicht in ASCII kodierte Zeichenkette bei oder vor plugins_wm2018_skin.xml.h:3.
+          Bitte die Kodierung des Quelltextes mit --from-code angeben.
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po: utf-8
 /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.po: utf-8
@@ -17,10 +17,10 @@ xgettext: Non-ASCII string at tithek_mainmenu.h:41.
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po: utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.po: utf-8
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po:       utf-8
+/home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po_auto.po:       utf-8
