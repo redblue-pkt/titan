@@ -14715,21 +14715,3 @@ msgstr ""
 #: tpk_showname.h:230
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Date"
-#~ msgstr "Datum"
-
-#~ msgid "Team"
-#~ msgstr "Gruppe"
-
-#~ msgid "Team 1"
-#~ msgstr "Gruppe 1"
-
-#~ msgid "Team 2"
-#~ msgstr "Gruppe 2"
-
-#~ msgid "Time"
-#~ msgstr "Uhrzeit"
-
-#~ msgid "vs"
-#~ msgstr "gegen"
