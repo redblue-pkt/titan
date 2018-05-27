@@ -1,5 +1,5 @@
-lib_LTLIBRARIES = libwm2014.la
-libwm2014_la_SOURCES = wm2014.c
+lib_LTLIBRARIES = libwm2018.la
+libwm2018_la_SOURCES = wm2018.c
 
 AM_CPPFLAGS = -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE
 ALL_CFLAGS= -DSH4 -DEPLAYER4 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable

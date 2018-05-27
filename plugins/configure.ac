@@ -71,7 +71,7 @@ sudoku/Makefile
 usbreset/Makefile
 weather/Makefile
 wins3/Makefile
-wm2014/Makefile
+wm2018/Makefile
 xupnpd/Makefile
 zapback/Makefile
 ])

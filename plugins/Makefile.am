@@ -41,6 +41,6 @@ SUBDIRS = \
 	usbreset \
 	weather \
 	wins3 \
-	wm2014 \
+	wm2018 \
 	xupnpd \
 	zapback
