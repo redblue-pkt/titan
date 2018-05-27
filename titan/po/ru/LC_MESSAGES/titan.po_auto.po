@@ -1052,6 +1052,10 @@ msgstr ""
 msgid "Anschluss 4"
 msgstr ""
 
+#: plugins_wm2018_skin.xml.h:3 skins_wm2018_skin.xml.h:3
+msgid "Anstoss"
+msgstr ""
+
 #: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
 msgstr ""
@@ -1496,6 +1500,10 @@ msgstr "Пропускная способность"
 msgid "Begin"
 msgstr "Начало записи"
 
+#: plugins_wm2018_skin.xml.h:4 skins_wm2018_skin.xml.h:4
+msgid "Beginn"
+msgstr ""
+
 #: skin_default_skin.xml.h:67
 msgid "Behavior at recording"
 msgstr "Поведение во время записи"
@@ -1772,10 +1780,6 @@ msgstr "Разрешение браузера"
 #: player.h:1806
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Буферизация - Выход по кнопке Exit"
-
-#: plugins_wm2014_skin.xml.h:3 skins_wm2014_skin.xml.h:3
-msgid "Button 1..8 => Group A..H"
-msgstr "Кнопки 1..8 => Группа A..H"
 
 #: skin_default_skin.xml.h:81
 msgid "Buttonbar Background Color"
@@ -2818,10 +2822,6 @@ msgstr "Дата"
 msgid "Data: "
 msgstr "Каналы данных"
 
-#: plugins_wm2014_skin.xml.h:4 skins_wm2014_skin.xml.h:4
-msgid "Date"
-msgstr "Дата"
-
 #: plugins_mc_skin.xml.h:14 skins_mc_skin.xml.h:14
 msgid "Datei Browser"
 msgstr "Файловый браузер"
@@ -2830,7 +2830,7 @@ msgstr "Файловый браузер"
 msgid "Day"
 msgstr "День"
 
-#: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
+#: plugins_wm2018_skin.xml.h:5 skins_wm2018_skin.xml.h:5
 msgid "Day "
 msgstr "День"
 
@@ -3026,7 +3026,7 @@ msgstr ""
 msgid "DiSEqC Mode"
 msgstr "Режим DiSEqC"
 
-#: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
+#: plugins_wm2018_skin.xml.h:6 skins_wm2018_skin.xml.h:6
 msgid "Diff"
 msgstr "Разница"
 
@@ -3164,7 +3164,7 @@ msgstr "Загрузка завершена!"
 msgid "Downloads"
 msgstr "Загрузки"
 
-#: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
+#: plugins_wm2018_skin.xml.h:7 skins_wm2018_skin.xml.h:7
 msgid "Draw"
 msgstr ""
 
@@ -3615,6 +3615,10 @@ msgstr "EPG каналов "
 msgid "Episode"
 msgstr "Эпизод"
 
+#: plugins_wm2018_skin.xml.h:8 skins_wm2018_skin.xml.h:8
+msgid "Ergebnis"
+msgstr ""
+
 #: rectimer.h:1405 rectimer.h:1417
 msgid "Error"
 msgstr ""
@@ -4007,6 +4011,10 @@ msgstr "Размер файла (Мб) "
 #: skin_default_skin.xml.h:213
 msgid "Filesystem Check"
 msgstr "Проверка ФС"
+
+#: plugins_wm2018_skin.xml.h:9 skins_wm2018_skin.xml.h:9
+msgid "Finale"
+msgstr ""
 
 #: skin_default_skin.xml.h:215
 msgid "Fine move"
@@ -4425,7 +4433,7 @@ msgstr ""
 msgid "Go to startpos"
 msgstr "Переход к начальной позиции"
 
-#: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
+#: plugins_wm2018_skin.xml.h:10 skins_wm2018_skin.xml.h:10
 msgid "Goals"
 msgstr ""
 
@@ -4574,6 +4582,10 @@ msgstr "Параметры HTTP"
 #: skin_default_skin.xml.h:314
 msgid "HTTPD Port"
 msgstr "HTTPD порт"
+
+#: plugins_wm2018_skin.xml.h:11 skins_wm2018_skin.xml.h:11
+msgid "Halbfinale"
+msgstr ""
 
 #: httpdfunc.h:3853 skin_default_skin.xml.h:246
 msgid "Hangtime"
@@ -5891,7 +5903,7 @@ msgstr "Логи"
 msgid "Longitude"
 msgstr "Долгота"
 
-#: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
+#: plugins_wm2018_skin.xml.h:12 skins_wm2018_skin.xml.h:12
 msgid "Lost"
 msgstr ""
 
@@ -6575,6 +6587,18 @@ msgstr "Имя"
 #: skin_default_skin.xml.h:395
 msgid "Name:"
 msgstr "Имя"
+
+#: plugins_wm2018_skin.xml.h:13 skins_wm2018_skin.xml.h:13
+msgid "Nation"
+msgstr ""
+
+#: plugins_wm2018_skin.xml.h:14 skins_wm2018_skin.xml.h:14
+msgid "Nation 1"
+msgstr ""
+
+#: plugins_wm2018_skin.xml.h:15 skins_wm2018_skin.xml.h:15
+msgid "Nation 2"
+msgstr ""
 
 #: httpdfunc.h:5269 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:13
@@ -7528,6 +7552,10 @@ msgstr "Пин-код меню"
 msgid "Planets"
 msgstr ""
 
+#: plugins_wm2018_skin.xml.h:16 skins_wm2018_skin.xml.h:16
+msgid "Platz"
+msgstr ""
+
 #: webif_index.atemio7600.h:46 webif_index.atemio7600.h:104
 #: webif_rc.atemio510.h:31 webif_rc.atemio7600.h:37
 #: webif_rc_virtual.atemio510.h:31 webif_rc_virtual.atemio5200.h:18
@@ -7553,7 +7581,7 @@ msgstr "Плейлист"
 msgid "Playbackbuffer Size"
 msgstr "Размер буфера"
 
-#: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
+#: plugins_wm2018_skin.xml.h:17 skins_wm2018_skin.xml.h:17
 msgid "Played"
 msgstr ""
 
@@ -7644,7 +7672,7 @@ msgstr "Установки"
 msgid "Plugins"
 msgstr "Плагины"
 
-#: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
+#: plugins_wm2018_skin.xml.h:18 skins_wm2018_skin.xml.h:18
 msgid "Points"
 msgstr ""
 
@@ -8274,8 +8302,8 @@ msgstr "Поиск"
 msgid "Reduce Standby frequency"
 msgstr "Снижать частоту процессора в режиме ожидания"
 
-#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:487
-#: skins_wm2014_skin.xml.h:12 softcam.h:296
+#: plugins_wm2018_skin.xml.h:19 skin_default_skin.xml.h:487
+#: skins_wm2018_skin.xml.h:19 softcam.h:296
 msgid "Refresh"
 msgstr "Обновить"
 
@@ -9708,6 +9736,10 @@ msgstr "Испанский"
 msgid "Spezialfunctions unlocked, no input required"
 msgstr "Приёмник разблокирован, ввода кода не требуется!"
 
+#: plugins_wm2018_skin.xml.h:20 skins_wm2018_skin.xml.h:20
+msgid "Spiel um Platz 3"
+msgstr ""
+
 #: httpdfunc.h:3789 skin_default_skin.xml.h:609
 msgid "Spinnerspeed"
 msgstr "Скорость спиннера"
@@ -10212,20 +10244,12 @@ msgstr "ТВ"
 msgid "TXT PID:"
 msgstr "TXT PID"
 
+#: plugins_wm2018_skin.xml.h:21 skins_wm2018_skin.xml.h:21
+msgid "Taste 1..8 => Gruppe A..H"
+msgstr ""
+
 #: tpk_description.h:160
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
-msgstr ""
-
-#: plugins_wm2014_skin.xml.h:13 skins_wm2014_skin.xml.h:13
-msgid "Team"
-msgstr ""
-
-#: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
-msgid "Team 1"
-msgstr ""
-
-#: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
-msgid "Team 2"
 msgstr ""
 
 #: webif_system.h:5
@@ -10434,10 +10458,6 @@ msgid ""
 "TiThek the Multimedia-thek. For UFS910/922, you must install the Network/"
 "Libpack tpk."
 msgstr ""
-
-#: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
-msgid "Time"
-msgstr "Время"
 
 #: harddisk.h:928 skin_default_skin.xml.h:662
 msgid "Time to sleep"
@@ -11572,7 +11592,7 @@ msgstr ""
 msgid "Wlan rt5370sta"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
+#: plugins_wm2018_skin.xml.h:23 skins_wm2018_skin.xml.h:23
 msgid "Won"
 msgstr ""
 
@@ -11735,12 +11755,12 @@ msgstr ""
 msgid "Zoom"
 msgstr "Увеличение"
 
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1
+#: plugins_wm2018_skin.xml.h:1 skins_wm2018_skin.xml.h:1
 msgid "[0] => Finals"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:2 skins_wm2014_skin.xml.h:2
-msgid "[9] => Last 16"
+#: plugins_wm2018_skin.xml.h:2 skins_wm2018_skin.xml.h:2
+msgid "[9] => Achtelfinale"
 msgstr ""
 
 #: hwtest.h:167 hwtest.h:215
@@ -14242,10 +14262,6 @@ msgstr ""
 msgid "volume"
 msgstr "Громкость"
 
-#: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
-msgid "vs"
-msgstr ""
-
 #: skin_default_keyskin.xml.h:72
 msgid "w"
 msgstr ""
@@ -14286,7 +14302,7 @@ msgstr "Белый"
 msgid "whitelist"
 msgstr "Белый список"
 
-#: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
+#: plugins_wm2018_skin.xml.h:22 skins_wm2018_skin.xml.h:22
 msgid "will be set by plugin"
 msgstr "Будет установлен плагин"
 
@@ -14451,3 +14467,12 @@ msgstr ""
 #: tpk_showname.h:230
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Button 1..8 => Group A..H"
+#~ msgstr "Кнопки 1..8 => Группа A..H"
+
+#~ msgid "Date"
+#~ msgstr "Дата"
+
+#~ msgid "Time"
+#~ msgstr "Время"

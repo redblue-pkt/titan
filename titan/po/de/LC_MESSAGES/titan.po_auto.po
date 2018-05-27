@@ -1074,6 +1074,10 @@ msgstr ""
 msgid "Anschluss 4"
 msgstr ""
 
+#: plugins_wm2018_skin.xml.h:3 skins_wm2018_skin.xml.h:3
+msgid "Anstoss"
+msgstr ""
+
 #: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
 msgstr "Antenne Kärnten"
@@ -1523,6 +1527,10 @@ msgstr "Bandbreite:"
 msgid "Begin"
 msgstr "Anfang"
 
+#: plugins_wm2018_skin.xml.h:4 skins_wm2018_skin.xml.h:4
+msgid "Beginn"
+msgstr ""
+
 #: skin_default_skin.xml.h:67
 msgid "Behavior at recording"
 msgstr "Anzeige während einer Aufnahme"
@@ -1799,10 +1807,6 @@ msgstr "Browser Auflösung"
 #: player.h:1806
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Stream wird zwischengespeichert - abbrechen mit Exit"
-
-#: plugins_wm2014_skin.xml.h:3 skins_wm2014_skin.xml.h:3
-msgid "Button 1..8 => Group A..H"
-msgstr ""
 
 #: skin_default_skin.xml.h:81
 msgid "Buttonbar Background Color"
@@ -2880,10 +2884,6 @@ msgstr ""
 msgid "Data: "
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:4 skins_wm2014_skin.xml.h:4
-msgid "Date"
-msgstr "Datum"
-
 #: plugins_mc_skin.xml.h:14 skins_mc_skin.xml.h:14
 msgid "Datei Browser"
 msgstr ""
@@ -2892,7 +2892,7 @@ msgstr ""
 msgid "Day"
 msgstr "Tag"
 
-#: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
+#: plugins_wm2018_skin.xml.h:5 skins_wm2018_skin.xml.h:5
 msgid "Day "
 msgstr "Tag"
 
@@ -3088,7 +3088,7 @@ msgstr ""
 msgid "DiSEqC Mode"
 msgstr "DiSEqC Modus"
 
-#: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
+#: plugins_wm2018_skin.xml.h:6 skins_wm2018_skin.xml.h:6
 msgid "Diff"
 msgstr ""
 
@@ -3228,7 +3228,7 @@ msgstr "Download abgeschlossen!"
 msgid "Downloads"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
+#: plugins_wm2018_skin.xml.h:7 skins_wm2018_skin.xml.h:7
 msgid "Draw"
 msgstr "Unentschieden"
 
@@ -3679,6 +3679,10 @@ msgstr "EPG-Kanäle: "
 msgid "Episode"
 msgstr "Folge"
 
+#: plugins_wm2018_skin.xml.h:8 skins_wm2018_skin.xml.h:8
+msgid "Ergebnis"
+msgstr ""
+
 #: rectimer.h:1405 rectimer.h:1417
 msgid "Error"
 msgstr "Fehler"
@@ -4078,6 +4082,10 @@ msgstr "Dateigröße (MB): "
 #: skin_default_skin.xml.h:213
 msgid "Filesystem Check"
 msgstr "Dateisystem prüfen"
+
+#: plugins_wm2018_skin.xml.h:9 skins_wm2018_skin.xml.h:9
+msgid "Finale"
+msgstr ""
 
 #: skin_default_skin.xml.h:215
 msgid "Fine move"
@@ -4516,7 +4524,7 @@ msgstr ""
 msgid "Go to startpos"
 msgstr "Gehe zu Startposition"
 
-#: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
+#: plugins_wm2018_skin.xml.h:10 skins_wm2018_skin.xml.h:10
 msgid "Goals"
 msgstr "Tore"
 
@@ -4668,6 +4676,10 @@ msgstr "Webinterface/RGUI"
 #: skin_default_skin.xml.h:314
 msgid "HTTPD Port"
 msgstr "Webserver Port"
+
+#: plugins_wm2018_skin.xml.h:11 skins_wm2018_skin.xml.h:11
+msgid "Halbfinale"
+msgstr ""
 
 #: httpdfunc.h:3853 skin_default_skin.xml.h:246
 msgid "Hangtime"
@@ -6066,7 +6078,7 @@ msgstr ""
 msgid "Longitude"
 msgstr "Längengrad"
 
-#: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
+#: plugins_wm2018_skin.xml.h:12 skins_wm2018_skin.xml.h:12
 msgid "Lost"
 msgstr "Verloren"
 
@@ -6751,6 +6763,18 @@ msgstr ""
 
 #: skin_default_skin.xml.h:395
 msgid "Name:"
+msgstr ""
+
+#: plugins_wm2018_skin.xml.h:13 skins_wm2018_skin.xml.h:13
+msgid "Nation"
+msgstr ""
+
+#: plugins_wm2018_skin.xml.h:14 skins_wm2018_skin.xml.h:14
+msgid "Nation 1"
+msgstr ""
+
+#: plugins_wm2018_skin.xml.h:15 skins_wm2018_skin.xml.h:15
+msgid "Nation 2"
 msgstr ""
 
 #: httpdfunc.h:5269 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
@@ -7711,6 +7735,10 @@ msgstr "Menü mit PIN sperren"
 msgid "Planets"
 msgstr ""
 
+#: plugins_wm2018_skin.xml.h:16 skins_wm2018_skin.xml.h:16
+msgid "Platz"
+msgstr ""
+
 #: webif_index.atemio7600.h:46 webif_index.atemio7600.h:104
 #: webif_rc.atemio510.h:31 webif_rc.atemio7600.h:37
 #: webif_rc_virtual.atemio510.h:31 webif_rc_virtual.atemio5200.h:18
@@ -7736,7 +7764,7 @@ msgstr "Wiedergabeliste"
 msgid "Playbackbuffer Size"
 msgstr "Wiedergabepuffer - Größe (http) Streams"
 
-#: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
+#: plugins_wm2018_skin.xml.h:17 skins_wm2018_skin.xml.h:17
 msgid "Played"
 msgstr "Gespielt"
 
@@ -7831,7 +7859,7 @@ msgstr "Plugin Taste - Belegungsmenü"
 msgid "Plugins"
 msgstr "Zusatzprogramme"
 
-#: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
+#: plugins_wm2018_skin.xml.h:18 skins_wm2018_skin.xml.h:18
 msgid "Points"
 msgstr "Punkte"
 
@@ -8463,8 +8491,8 @@ msgstr "Rot-Menü"
 msgid "Reduce Standby frequency"
 msgstr "CPU-Frequenz im Standby reduzieren"
 
-#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:487
-#: skins_wm2014_skin.xml.h:12 softcam.h:296
+#: plugins_wm2018_skin.xml.h:19 skin_default_skin.xml.h:487
+#: skins_wm2018_skin.xml.h:19 softcam.h:296
 msgid "Refresh"
 msgstr "Aktualisieren"
 
@@ -9906,6 +9934,10 @@ msgstr "Español"
 msgid "Spezialfunctions unlocked, no input required"
 msgstr "Receiver bereits freigeschaltet, keine Freischaltung notwendig"
 
+#: plugins_wm2018_skin.xml.h:20 skins_wm2018_skin.xml.h:20
+msgid "Spiel um Platz 3"
+msgstr ""
+
 #: httpdfunc.h:3789 skin_default_skin.xml.h:609
 msgid "Spinnerspeed"
 msgstr "Spinnergeschwindigkeit"
@@ -10422,21 +10454,13 @@ msgstr ""
 msgid "TXT PID:"
 msgstr "Txt Pid:"
 
+#: plugins_wm2018_skin.xml.h:21 skins_wm2018_skin.xml.h:21
+msgid "Taste 1..8 => Gruppe A..H"
+msgstr ""
+
 #: tpk_description.h:160
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
-
-#: plugins_wm2014_skin.xml.h:13 skins_wm2014_skin.xml.h:13
-msgid "Team"
-msgstr "Gruppe"
-
-#: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
-msgid "Team 1"
-msgstr "Gruppe 1"
-
-#: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
-msgid "Team 2"
-msgstr "Gruppe 2"
 
 #: webif_system.h:5
 msgid "Telnet"
@@ -10655,10 +10679,6 @@ msgid ""
 "TiThek the Multimedia-thek. For UFS910/922, you must install the Network/"
 "Libpack tpk."
 msgstr ""
-
-#: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
-msgid "Time"
-msgstr "Uhrzeit"
 
 #: harddisk.h:928 skin_default_skin.xml.h:662
 msgid "Time to sleep"
@@ -11804,7 +11824,7 @@ msgstr ""
 msgid "Wlan rt5370sta"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
+#: plugins_wm2018_skin.xml.h:23 skins_wm2018_skin.xml.h:23
 msgid "Won"
 msgstr "Gewonnen"
 
@@ -11970,12 +11990,12 @@ msgstr ""
 msgid "Zoom"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1
+#: plugins_wm2018_skin.xml.h:1 skins_wm2018_skin.xml.h:1
 msgid "[0] => Finals"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:2 skins_wm2014_skin.xml.h:2
-msgid "[9] => Last 16"
+#: plugins_wm2018_skin.xml.h:2 skins_wm2018_skin.xml.h:2
+msgid "[9] => Achtelfinale"
 msgstr ""
 
 #: hwtest.h:167 hwtest.h:215
@@ -14490,10 +14510,6 @@ msgstr ""
 msgid "volume"
 msgstr "Lautstärke"
 
-#: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
-msgid "vs"
-msgstr "gegen"
-
 #: skin_default_keyskin.xml.h:72
 msgid "w"
 msgstr ""
@@ -14534,7 +14550,7 @@ msgstr "weiß"
 msgid "whitelist"
 msgstr "Weiße Liste"
 
-#: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
+#: plugins_wm2018_skin.xml.h:22 skins_wm2018_skin.xml.h:22
 msgid "will be set by plugin"
 msgstr "wird vom Plugin eingestellt"
 
@@ -14699,3 +14715,21 @@ msgstr ""
 #: tpk_showname.h:230
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Team"
+#~ msgstr "Gruppe"
+
+#~ msgid "Team 1"
+#~ msgstr "Gruppe 1"
+
+#~ msgid "Team 2"
+#~ msgstr "Gruppe 2"
+
+#~ msgid "Time"
+#~ msgstr "Uhrzeit"
+
+#~ msgid "vs"
+#~ msgstr "gegen"
