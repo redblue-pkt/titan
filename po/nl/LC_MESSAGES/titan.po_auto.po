@@ -14464,9 +14464,3 @@ msgstr ""
 #: tpk_showname.h:230
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Date"
-#~ msgstr "Datum"
-
-#~ msgid "Time"
-#~ msgstr "Tijd"

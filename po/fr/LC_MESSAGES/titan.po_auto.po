@@ -14333,6 +14333,3 @@ msgstr ""
 #: tpk_showname.h:230
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Time"
-#~ msgstr "Heure"

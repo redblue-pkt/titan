@@ -14467,12 +14467,3 @@ msgstr ""
 #: tpk_showname.h:230
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Button 1..8 => Group A..H"
-#~ msgstr "Кнопки 1..8 => Группа A..H"
-
-#~ msgid "Date"
-#~ msgstr "Дата"
-
-#~ msgid "Time"
-#~ msgstr "Время"
