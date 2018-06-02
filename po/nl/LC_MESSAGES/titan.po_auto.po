@@ -11394,11 +11394,11 @@ msgstr ""
 "verdere configuratie kan nu plaatsvinden."
 
 #: tpk_showname.h:218
-msgid "WM2014"
+msgid "WM2018"
 msgstr ""
 
 #: tpk_description.h:203
-msgid "WM2014 Plugin"
+msgid "WM2018 Plugin"
 msgstr ""
 
 #: skin_default_skin.xml.h:743
