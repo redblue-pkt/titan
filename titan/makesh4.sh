@@ -265,7 +265,9 @@ if [ $MEDIAFW = 4 ]; then
 	linking="-lm -lglib-2.0 -lgobject-2.0 -lgio-2.0 -lpthread -ldl -lz -lpng -lfreetype -lgstreamer-1.0 -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz"
 fi
 
-if [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
+if [ "$GROUP" = "dev" ] && ([ "$TYPE" = "spark" ] || [ "$TYPE" = "spark7162" ]); then
+    devflag="-finstrument-functions -rdynamic -DBETA -DEPLAYER3"
+elif [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
     devflag="-finstrument-functions -rdynamic -DBETA -DEXTEPLAYER3"
 elif [ "$GROUP" = "dev" ]; then
     devflag="-DBETA -DEXTEPLAYER3"
@@ -273,7 +275,7 @@ else
     devflag="-DEXTEPLAYER3"
 fi
 
-#ffmpeg=3.4.2
+ #ffmpeg=3.4.2
 ffmpeg=3.2
 if [ "$GROUP" = "dev" ] && [ "$TYPE" = "ufs912" ] && [ "$ffmpeg" = "3.4.2" ];then
 	sed 's!typedef int bool;!//typedef int bool;!' -i "$HOME"/flashimg/$SRCDIR/titan/bcm.h
