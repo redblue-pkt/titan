@@ -349,15 +349,17 @@ void GetWmFinalData(int wmGroupID) {
 
 	debug(10, "GetWmFinalData IN-1 (%d)\n", wmGroupID);
 
-	wmsearch = ostrcat("wm-2018-achtelfinale", NULL, 0, 0);
-	wmregexA = ostrcat("<h2>Spielplan Achtelfinale</h2>(.*?)Hol dir das neue WM Trikot des DFB</h3>", NULL, 0, 0);
+	wmsearch = ostrcat("wm-2018", NULL, 0, 0);
+	wmregexA = ostrcat("<th class=\"match-round\" colspan=\"10\">Achtelfinale</th>(.*?)Viertelfinale</th>", NULL, 0, 0);
+	printf("[wm2018 Achtelfinale ] wmregexA: %s\n", wmregexA);
 
 	if (wmsearch != NULL) {
 
-		wmstr = gethttp("wmfreunde.de", wmsearch, 80, NULL, NULL, 5000, NULL, 0);
+		wmstr = gethttp("maislabyrinth-erfurt.de", wmsearch, 80, NULL, NULL, 5000, NULL, 0);
 		//writesys("/tmp/_wmstr.html", wmstr, 0);
 
 		wmstrA1= oregex(wmregexA, wmstr);
+	printf("[wm2018 Achtelfinale ] wmstrA1: %s\n", wmstrA1);
 		//writesys("/tmp/_wmstrFinalA1.html", wmstrA1, 0);
 
 		free(wmstr); wmstr = NULL;
@@ -375,22 +377,16 @@ void GetWmFinalData(int wmGroupID) {
 		for(i = 0; i < max; i++) {
 		//for(i = 0; i < 150; i++) {
 			wmstrA2 = (&retA[i])->part;
-
-			if(ostrstr(wmstrA2, "<span class='lbl-matchdate'>") != NULL) {
+			//printf("[wm2018 A2 ] wmstrA2: %s\n", wmstrA2);
+	
+			if(ostrstr(wmstrA2, "<th class=\"match-date\" colspan=\"10\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = string_striptags(wmstrA2);
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
 				wmFinalMatches[0].date[count] = wmstrA3;
 			}
 
-			if(ostrstr(wmstrA2, "<div class='table-schedule-op1-hometeam'>") != NULL) {
-				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
-				wmstrA3 = string_striptags(wmstrA2);
-				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
-				wmFinalMatches[0].team1[count] = wmstrA3;
-			}
-
-			if(ostrstr(wmstrA2, "<span class='lbl-half-time'>") != NULL) {
+			if(ostrstr(wmstrA2, "<td class=\"match-time\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
 				wmstrA3 = string_replace("-:-", "", wmstrA3, 1);
@@ -400,7 +396,16 @@ void GetWmFinalData(int wmGroupID) {
 				wmFinalMatches[0].htime[count] = wmstrA4;
 			}
 
-			if(ostrstr(wmstrA2, "<div class='table-schedule-op1-result'>") != NULL){
+			if(ostrstr(wmstrA2, "<td class=\"team-shortname team-shortname-home\">") != NULL) {
+				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
+				//wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
+				//wmstrA3 = string_replace("<td class=\"empty team-image team-image-home\">&nbsp;</td>", " ", wmstrA3, 1);
+				wmstrA3 = string_striptags(wmstrA2);
+				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
+				wmFinalMatches[0].team1[count] = wmstrA3;
+			}
+
+			if(ostrstr(wmstrA2, "<td class=\"match-result match-result-0\">") != NULL){
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
 				wmstrA3 = string_replace("(-:-)", "", wmstrA3, 1);
@@ -418,7 +423,7 @@ void GetWmFinalData(int wmGroupID) {
 				wmFinalMatches[0].result[count] = wmstrA5;
 			}
 
-			if(ostrstr(wmstrA2, "<div class='table-schedule-op1-awayteam'>") != NULL) {
+			if(ostrstr(wmstrA2, "<td class=\"team-shortname team-shortname-away\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = string_striptags(wmstrA2);
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
@@ -458,15 +463,15 @@ void GetWmFinaleData(int wmGroupID) {
 
 	debug(10, "GetWmFinaleData IN-1 (%d)\n", wmGroupID);
 
-	wmsearch = ostrcat("spielplan-der-fussball-weltmeisterschaft-2018-in-russland", NULL, 0, 0);
-	wmregexA = ostrcat("<h2>Halbfinale</h2>(.*?)Hol dir das neue WM Trikot des DFB</h3>", NULL, 0, 0);
+	wmsearch = ostrcat("wm-2018", NULL, 0, 0);
+	wmregexA = ostrcat("<th class=\"match-round\" colspan=\"10\">Halbfinale</th>(.*?)MAISLABYRINTH ERFURT</span>", NULL, 0, 0);
 
 	//wmsearch = ostrcat("wm-2018-finale", NULL, 0, 0);
 	//wmregexA = ostrcat("<!-- .post-header -->(.*?)Hol dir das neue WM Trikot des DFB</h3>", NULL, 0, 0);
 
 	if (wmsearch != NULL) {
 
-		wmstr = gethttp("wmfreunde.de", wmsearch, 80, NULL, NULL, 6000, NULL, 0);
+		wmstr = gethttp("maislabyrinth-erfurt.de", wmsearch, 80, NULL, NULL, 6000, NULL, 0);
 		//writesys("/tmp/_wmstr.html", wmstr, 0);
 
 		wmstrA1= oregex(wmregexA, wmstr);
@@ -488,21 +493,21 @@ void GetWmFinaleData(int wmGroupID) {
 		//for(i = 0; i < 150; i++) {
 			wmstrA2 = (&retA[i])->part;
 
-			if(ostrstr(wmstrA2, "<span class='lbl-matchdate'>") != NULL) {
+			if(ostrstr(wmstrA2, "<th class=\"match-date\" colspan=\"10\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = string_striptags(wmstrA2);
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
 				wmFinaleMatches[0].date[count] = wmstrA3;
 			}
 
-			if(ostrstr(wmstrA2, "<div class='table-schedule-op1-hometeam'>") != NULL) {
+			if(ostrstr(wmstrA2, "<td class=\"team-shortname team-shortname-home\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = string_striptags(wmstrA2);
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
 				wmFinaleMatches[0].team1[count] = wmstrA3;
 			}
 
-			if(ostrstr(wmstrA2, "<span class='lbl-half-time'>") != NULL) {
+			if(ostrstr(wmstrA2, "<td class=\"match-time\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
 				wmstrA3 = string_replace("-:-", "", wmstrA3, 1);
@@ -511,7 +516,7 @@ void GetWmFinaleData(int wmGroupID) {
 				wmFinaleMatches[0].htime[count] = wmstrA4;
 			}
 
-			if(ostrstr(wmstrA2, "<div class='table-schedule-op1-result'>") != NULL){
+			if(ostrstr(wmstrA2, "<td class=\"match-result match-result-0\">") != NULL){
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
 				wmstrA3 = string_replace("(-:-)", "", wmstrA3, 1);
@@ -529,7 +534,7 @@ void GetWmFinaleData(int wmGroupID) {
 				wmFinaleMatches[0].result[count] = wmstrA5;
 			}
 
-			if(ostrstr(wmstrA2, "<div class='table-schedule-op1-awayteam'>") != NULL) {
+			if(ostrstr(wmstrA2, "<td class=\"team-shortname team-shortname-away\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = string_striptags(wmstrA2);
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);

@@ -170,14 +170,23 @@
 	#node name="day_6"    halign="left"   valign="center" posx="30"  posy="340" width="60"  height="30" fontsize="30">
 	#node name="day_7"    halign="left"   valign="center" posx="30"  posy="380" width="60"  height="30" fontsize="30">
 
-	<node name="date_0"   halign="center"   valign="center" posx="30"  posy="100" width="250" height="30" fontsize="30">
-	<node name="date_1"   halign="center"   valign="center" posx="30"  posy="140" width="250" height="30" fontsize="30">
-	<node name="date_2"   halign="center"   valign="center" posx="30"  posy="180" width="250" height="30" fontsize="30">
-	<node name="date_3"   halign="center"   valign="center" posx="30"  posy="220" width="250" height="30" fontsize="30">
-	<node name="date_4"   halign="center"   valign="center" posx="30"  posy="260" width="250" height="30" fontsize="30">
-	<node name="date_5"   halign="center"   valign="center" posx="30"  posy="300" width="250" height="30" fontsize="30">
-	<node name="date_6"   halign="center"   valign="center" posx="30"  posy="340" width="250" height="30" fontsize="30">
-	<node name="date_7"   halign="center"   valign="center" posx="30"  posy="380" width="250" height="30" fontsize="30">
+	<node name="date_0"   halign="left"   valign="center" posx="30"  posy="100" width="170" height="30" fontsize="30">
+	<node name="date_1"   halign="left"   valign="center" posx="30"  posy="140" width="170" height="30" fontsize="30">
+	<node name="date_2"   halign="left"   valign="center" posx="30"  posy="180" width="170" height="30" fontsize="30">
+	<node name="date_3"   halign="left"   valign="center" posx="30"  posy="220" width="170" height="30" fontsize="30">
+	<node name="date_4"   halign="left"   valign="center" posx="30"  posy="260" width="170" height="30" fontsize="30">
+	<node name="date_5"   halign="left"   valign="center" posx="30"  posy="300" width="170" height="30" fontsize="30">
+	<node name="date_6"   halign="left"   valign="center" posx="30"  posy="340" width="170" height="30" fontsize="30">
+	<node name="date_7"   halign="left"   valign="center" posx="30"  posy="380" width="170" height="30" fontsize="30">
+	
+	<node name="htime_0"   halign="right"   valign="center" posx="170" posy="100" width="80" height="30" fontsize="30">
+	<node name="htime_1"   halign="right"   valign="center" posx="170" posy="140" width="80" height="30" fontsize="30">
+	<node name="htime_2"   halign="right"   valign="center" posx="170" posy="180" width="80" height="30" fontsize="30">
+	<node name="htime_3"   halign="right"   valign="center" posx="170" posy="220" width="80" height="30" fontsize="30">
+	<node name="htime_4"   halign="right"   valign="center" posx="170" posy="260" width="80" height="30" fontsize="30">
+	<node name="htime_5"   halign="right"   valign="center" posx="170" posy="300" width="80" height="30" fontsize="30">
+	<node name="htime_6"   halign="right"   valign="center" posx="170" posy="340" width="80" height="30" fontsize="30">
+	<node name="htime_7"   halign="right"   valign="center" posx="170" posy="380" width="80" height="30" fontsize="30">
 
 	<node name="team1_0"  halign="center" valign="center" posx="290" posy="100" width="300" height="30" fontsize="30">
 	<node name="team1_1"  halign="center" valign="center" posx="290" posy="140" width="300" height="30" fontsize="30">
@@ -196,24 +205,15 @@
 	<node name="flag1_5"  halign="center" valign="center" posx="590" posy="300" width="30" height="30">
 	<node name="flag1_6"  halign="center" valign="center" posx="590" posy="340" width="30" height="30">
 	<node name="flag1_7"  halign="center" valign="center" posx="590" posy="380" width="30" height="30">
-	
-	<node name="htime_0"   halign="right"   valign="center" posx="640" posy="100" width="80" height="30" fontsize="20">
-	<node name="htime_1"   halign="right"   valign="center" posx="640" posy="140" width="80" height="30" fontsize="20">
-	<node name="htime_2"   halign="right"   valign="center" posx="640" posy="180" width="80" height="30" fontsize="20">
-	<node name="htime_3"   halign="right"   valign="center" posx="640" posy="220" width="80" height="30" fontsize="20">
-	<node name="htime_4"   halign="right"   valign="center" posx="640" posy="260" width="80" height="30" fontsize="20">
-	<node name="htime_5"   halign="right"   valign="center" posx="640" posy="300" width="80" height="30" fontsize="20">
-	<node name="htime_6"   halign="right"   valign="center" posx="640" posy="340" width="80" height="30" fontsize="20">
-	<node name="htime_7"   halign="right"   valign="center" posx="640" posy="380" width="80" height="30" fontsize="20">
 
-	<node name="result_0" halign="center" valign="center" posx="720" posy="100" width="130" height="30" fontsize="30">
-	<node name="result_1" halign="center" valign="center" posx="720" posy="140" width="130" height="30" fontsize="30">
-	<node name="result_2" halign="center" valign="center" posx="720" posy="180" width="130" height="30" fontsize="30">
-	<node name="result_3" halign="center" valign="center" posx="720" posy="220" width="130" height="30" fontsize="30">
-	<node name="result_4" halign="center" valign="center" posx="720" posy="260" width="130" height="30" fontsize="30">
-	<node name="result_5" halign="center" valign="center" posx="720" posy="300" width="130" height="30" fontsize="30">
-	<node name="result_6" halign="center" valign="center" posx="720" posy="340" width="130" height="30" fontsize="30">
-	<node name="result_7" halign="center" valign="center" posx="720" posy="380" width="130" height="30" fontsize="30">
+	<node name="result_0" halign="center" valign="center" posx="640" posy="100" width="200" height="30" fontsize="30">
+	<node name="result_1" halign="center" valign="center" posx="640" posy="140" width="200" height="30" fontsize="30">
+	<node name="result_2" halign="center" valign="center" posx="640" posy="180" width="200" height="30" fontsize="30">
+	<node name="result_3" halign="center" valign="center" posx="640" posy="220" width="200" height="30" fontsize="30">
+	<node name="result_4" halign="center" valign="center" posx="640" posy="260" width="200" height="30" fontsize="30">
+	<node name="result_5" halign="center" valign="center" posx="640" posy="300" width="200" height="30" fontsize="30">
+	<node name="result_6" halign="center" valign="center" posx="640" posy="340" width="200" height="30" fontsize="30">
+	<node name="result_7" halign="center" valign="center" posx="640" posy="380" width="200" height="30" fontsize="30">
 
 	<node name="flag2_0"  halign="center" valign="center" posx="840" posy="100" width="30" height="30">
 	<node name="flag2_1"  halign="center" valign="center" posx="840" posy="140" width="30" height="30">
@@ -245,7 +245,7 @@
 <screen name="wm2018_final" fontcol="white" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30" transparent="50">
 	<node name="titletext" text="will be set by plugin" fontcol="white" fontsize="36" posx="0" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" gradient="topmiddle">
 
-	<node name="box1" text="Halbfinale" halign="center" fontcol="white" bgcol="black" bgcol2="black" posx="28" posy="58" width="1164" height="75" bordersize="1" borderradius="8" bordercol="white" fontsize="35" gradient="topmiddle">
+	<node name="box1" text="Halbfinale" halign="center" fontcol="white" bgcol="white" bgcol2="black" posx="28" posy="58" width="1164" height="75" bordersize="1" borderradius="8" bordercol="white" fontsize="35" gradient="topmiddle">
 
 	<node name="date"   text="Beginn"   halign="center" fontcol="white" bgcol="black" valign="center" posx="32"  posy="100" width="258" height="30" fontsize="30">
 	<node name="team1"  text="Nation 1" halign="center" fontcol="white" bgcol="black" valign="center" posx="290" posy="100" width="300" height="30" fontsize="30">
@@ -253,20 +253,20 @@
 	<node name="team2"  text="Nation 2" halign="center" fontcol="white" bgcol="black" valign="center" posx="890" posy="100" width="298" height="30" fontsize="30">
 
 	
-	<node name="date_0"   halign="center"   valign="center" posx="30"  posy="140" width="250" height="30" fontsize="30">
-	<node name="date_1"   halign="center"   valign="center" posx="30"  posy="180" width="250" height="30" fontsize="30">
+	<node name="date_0"   halign="left"   valign="center" posx="30"  posy="140" width="170" height="30" fontsize="30">
+	<node name="date_1"   halign="left"   valign="center" posx="30"  posy="180" width="170" height="30" fontsize="30">
+	
+	<node name="htime_0"   halign="right"   valign="center" posx="170" posy="140" width="80" height="30" fontsize="30">
+	<node name="htime_1"   halign="right"   valign="center" posx="170" posy="180" width="80" height="30" fontsize="30">
 
 	<node name="team1_0"  halign="center" valign="center" posx="290" posy="140" width="300" height="30" fontsize="30">
 	<node name="team1_1"  halign="center" valign="center" posx="290" posy="180" width="300" height="30" fontsize="30">
 
 	<node name="flagge1_0"  halign="center" valign="center" posx="590" posy="140" width="30" height="30">
 	<node name="flagge1_1"  halign="center" valign="center" posx="590" posy="180" width="30" height="30">
-	
-	<node name="htime_0"   halign="right"   valign="center" posx="640" posy="140" width="80" height="30" fontsize="20">
-	<node name="htime_1"   halign="right"   valign="center" posx="640" posy="180" width="80" height="30" fontsize="20">
 
-	<node name="result_0" halign="center" valign="center" posx="720" posy="140" width="130" height="30" fontsize="30">
-	<node name="result_1" halign="center" valign="center" posx="720" posy="180" width="130" height="30" fontsize="30">
+	<node name="result_0" halign="center" valign="center" posx="640" posy="140" width="200" height="30" fontsize="30">
+	<node name="result_1" halign="center" valign="center" posx="640" posy="180" width="200" height="30" fontsize="30">
 
 	<node name="flagge2_0"  halign="center" valign="center" posx="840" posy="140" width="30" height="30">
 	<node name="flagge2_1"  halign="center" valign="center" posx="840" posy="180" width="30" height="30">
@@ -282,15 +282,15 @@
 	<node name="result" text="Ergebnis" fontcol="white" bgcol="black" halign="center" valign="center" posx="590" posy="280" width="300" height="30" fontsize="30">
 	<node name="team2"  text="Nation 2" fontcol="white" bgcol="black" halign="center" valign="center" posx="890" posy="280" width="298" height="30" fontsize="30">
 	
-	<node name="date_2"   halign="center"   valign="center" posx="30"  posy="320" width="250" height="30" fontsize="30">
+	<node name="date_2"   halign="left"   valign="center" posx="30"  posy="320" width="170" height="30" fontsize="30">
+
+	<node name="htime_2"   halign="right"   valign="center" posx="170" posy="320" width="80" height="30" fontsize="30">
 
 	<node name="team1_2"  halign="center" valign="center" posx="290" posy="320" width="300" height="30" fontsize="30">
 
 	<node name="flagge1_2"  halign="center" valign="center" posx="590" posy="320" width="30" height="30">
 
-	<node name="htime_2"   halign="right"   valign="center" posx="640" posy="320" width="80" height="30" fontsize="20">
-
-	<node name="result_2" halign="center" valign="center" posx="720" posy="320" width="130" height="30" fontsize="30">
+	<node name="result_2" halign="center" valign="center" posx="640" posy="320" width="200" height="30" fontsize="30">
 
 	<node name="flagge2_2"  halign="center" valign="center" posx="840" posy="320" width="30" height="30">
 
@@ -304,15 +304,15 @@
 	<node name="result" text="Ergebnis" fontcol="white" bgcol="black" halign="center" valign="center" posx="590" posy="420" width="300" height="30" fontsize="30">
 	<node name="team2"  text="Nation 2" fontcol="white" bgcol="black" halign="center" valign="center" posx="890" posy="420" width="298" height="30" fontsize="30">
 	
-	<node name="date_3"   halign="center"   valign="center" posx="30"  posy="460" width="250" height="30" fontsize="30">
+	<node name="date_3"   halign="left"   valign="center" posx="30"  posy="460" width="170" height="30" fontsize="30">
+
+	<node name="htime_3"   halign="right"   valign="center" posx="170" posy="460" width="80" height="30" fontsize="30">
 
 	<node name="team1_3"  halign="center" valign="center" posx="290" posy="460" width="300" height="30" fontsize="30">
 
 	<node name="flagge1_3"  halign="center" valign="center" posx="590" posy="460" width="30" height="30">
 
-	<node name="htime_3"   halign="right"   valign="center" posx="640" posy="460" width="80" height="30" fontsize="20">
-
-	<node name="result_3" halign="center" valign="center" posx="720" posy="460" width="130" height="30" fontsize="30">
+	<node name="result_3" halign="center" valign="center" posx="640" posy="460" width="200" height="30" fontsize="30">
 
 	<node name="flagge2_3"  halign="center" valign="center" posx="840" posy="460" width="30" height="30">
 
