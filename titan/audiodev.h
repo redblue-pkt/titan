@@ -207,7 +207,7 @@ int audiosetmixer(struct dvbdev* node, int left, int right)
 	mixer.volume_left = left;
 	mixer.volume_right = right;
 #endif
-
+  printf("volume --> l:%i r:%i\n", left, right);
 	debug(200, "AUDIO_SET_MIXER");
 	if(ioctl(node->fd, AUDIO_SET_MIXER, &mixer) < 0)
 	{
