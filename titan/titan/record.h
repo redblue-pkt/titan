@@ -1582,10 +1582,13 @@ void screenrecordstop()
 	struct service* servicenode = service;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
 
+	printf("record --> stop\n"); 
 	while(servicenode != NULL)
 	{
+		printf("record --> type:%d\n", servicenode->type);
 		if((servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER) && servicenode->recname != NULL)
 		{
+			printf("record --> recname:%s\n", servicenode->recname);
 			tmpstr = ostrcat(tmpstr, _("stop"), 1, 0);
 			tmpstr = ostrcat(tmpstr, " (", 1, 0);
 			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
@@ -1602,6 +1605,7 @@ void screenrecordstop()
 			}
 		}
 		servicenode = servicenode->next;
+		printf("record --> nextnode\n");
 	}
 
 	mbox = menulistbox(mlist, "recordlist", _("Record"), NULL, NULL, NULL, 0, 0);
