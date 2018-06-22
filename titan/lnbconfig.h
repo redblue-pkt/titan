@@ -171,6 +171,21 @@ void screenlnb(char* feshortname, char* lnbnr)
 	addchoicebox(satcr, "17", "17");
 	addchoicebox(satcr, "18", "18");
 	
+	addchoicebox(satcr, "19", "19");
+	addchoicebox(satcr, "20", "20");
+	addchoicebox(satcr, "21", "21");
+	addchoicebox(satcr, "22", "22");
+	addchoicebox(satcr, "23", "23");
+	addchoicebox(satcr, "24", "24");
+	addchoicebox(satcr, "25", "25");
+	addchoicebox(satcr, "26", "26");
+	addchoicebox(satcr, "27", "27");
+	addchoicebox(satcr, "28", "28");
+	addchoicebox(satcr, "29", "25");
+	addchoicebox(satcr, "30", "30");
+	addchoicebox(satcr, "31", "31");
+	addchoicebox(satcr, "32", "32");
+	
 
 	changeinput(satcrfrequ1, NULL);
 	/*addchoicebox(satcrfrequ1, "1284", "1284");
@@ -201,6 +216,21 @@ void screenlnb(char* feshortname, char* lnbnr)
 	addchoicebox(satcrfrequ1, "1494", "1494");
 	addchoicebox(satcrfrequ1, "1530", "1530");
 	addchoicebox(satcrfrequ1, "1566", "1566");
+	
+	addchoicebox(satcrfrequ1, "1602", "1602");
+	addchoicebox(satcrfrequ1, "1638", "1638");
+	addchoicebox(satcrfrequ1, "1716", "1716");
+	addchoicebox(satcrfrequ1, "1752", "1752");
+	addchoicebox(satcrfrequ1, "1788", "1788");
+	addchoicebox(satcrfrequ1, "1824", "1824");
+	addchoicebox(satcrfrequ1, "1860", "1860");
+	addchoicebox(satcrfrequ1, "1896", "1896");
+	addchoicebox(satcrfrequ1, "1932", "1932");
+	addchoicebox(satcrfrequ1, "1968", "1968");
+	addchoicebox(satcrfrequ1, "2004", "2004");
+	addchoicebox(satcrfrequ1, "2076", "2076");
+	addchoicebox(satcrfrequ1, "2112", "2112");
+	addchoicebox(satcrfrequ1, "2148", "2148");
 	
 
 	
