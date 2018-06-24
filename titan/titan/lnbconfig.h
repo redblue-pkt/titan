@@ -181,7 +181,7 @@ void screenlnb(char* feshortname, char* lnbnr)
 	addchoicebox(satcr, "26", "26");
 	addchoicebox(satcr, "27", "27");
 	addchoicebox(satcr, "28", "28");
-	addchoicebox(satcr, "29", "25");
+	addchoicebox(satcr, "29", "29");
 	addchoicebox(satcr, "30", "30");
 	addchoicebox(satcr, "31", "31");
 	addchoicebox(satcr, "32", "32");
