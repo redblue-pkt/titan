@@ -372,7 +372,7 @@ void createsatlist(struct dvbdev* tuner, struct skin* tunerreceptiondvbs, struct
 	free(orbitalposstring);
 }
 
-void createcablelist(struct dvbdev* tuner, struct skin* tunerreceptiondvbc, struct skin* listbox)
+struct skin* createcablelist(struct dvbdev* tuner, struct skin* tunerreceptiondvbc, struct skin* listbox)
 {
 	char *satstring = NULL;
 	char* orbitalposstring = NULL;
@@ -410,6 +410,7 @@ void createcablelist(struct dvbdev* tuner, struct skin* tunerreceptiondvbc, stru
 
 	free(satstring);
 	free(orbitalposstring);
+	return tmp;
 }
 
 void createhypridlist(struct dvbdev* tuner, struct skin* tunerreceptionhyprid, struct skin* listbox)
@@ -762,6 +763,7 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 	struct skin* tunerreceptiondvbc = getscreen("tunerreceptiondvbc");
 	struct skin* listbox = getscreennode(tunerreceptiondvbc, "listbox");
 	struct skin* tmp = NULL;
+	struct skin* anbieter = NULL;
 	char* tmpstr = NULL;
 
 	listbox->aktline = 1;
@@ -773,7 +775,7 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 		return 0;
 	}
 
-	createcablelist(tuner, tunerreceptiondvbc, listbox);
+	anbieter = createcablelist(tuner, tunerreceptiondvbc, listbox);
 
 	drawscreen(tunerreceptiondvbc, 0, 0);
 	addscreenrc(tunerreceptiondvbc, listbox);
@@ -797,6 +799,12 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 			tmpstr = ostrcat(tuner->feshortname, "_maxsat", 0, 0);
 			addconfigint(tmpstr, 1);
 			free(tmpstr); tmpstr = NULL;
+			
+			tmpstr = ostrcat(tuner->feshortname, "_sat", 0, 0);
+			tmpstr = ostrcat(tmpstr, "1", 1, 0);
+			addconfig(tmpstr, anbieter->ret);
+			free(tmpstr); tmpstr = NULL;
+			
 			writeallconfig(1);
 // test reload tuner
 			changedvbdev(tuner);
