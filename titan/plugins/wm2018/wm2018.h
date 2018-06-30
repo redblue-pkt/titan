@@ -349,13 +349,13 @@ void GetWmFinalData(int wmGroupID) {
 
 	debug(10, "GetWmFinalData IN-1 (%d)\n", wmGroupID);
 
-	wmsearch = ostrcat("wm-2018", NULL, 0, 0);
-	wmregexA = ostrcat("<th class=\"match-round\" colspan=\"10\">Achtelfinale</th>(.*?)Viertelfinale</th>", NULL, 0, 0);
+	wmsearch = ostrcat("fussball/wm-2018/spielplan/spielplan-chronologisch-saison-2017-2018", NULL, 0, 0);
+	wmregexA = ostrcat("<li class=\"first\">WM 2018 Achtelfinale</li>(.*?)<div class=\"spacerFootExtra\">", NULL, 0, 0);
 	printf("[wm2018 Achtelfinale ] wmregexA: %s\n", wmregexA);
 
 	if (wmsearch != NULL) {
 
-		wmstr = gethttp("maislabyrinth-erfurt.de", wmsearch, 80, NULL, NULL, 5000, NULL, 0);
+		wmstr = gethttp("sportal.de", wmsearch, 80, NULL, NULL, 5000, NULL, 0);
 		//writesys("/tmp/_wmstr.html", wmstr, 0);
 
 		wmstrA1= oregex(wmregexA, wmstr);
@@ -379,14 +379,17 @@ void GetWmFinalData(int wmGroupID) {
 			wmstrA2 = (&retA[i])->part;
 			//printf("[wm2018 A2 ] wmstrA2: %s\n", wmstrA2);
 	
-			if(ostrstr(wmstrA2, "<th class=\"match-date\" colspan=\"10\">") != NULL) {
+			if(ostrstr(wmstrA2, "<span class=\"date\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
-				wmstrA3 = string_striptags(wmstrA2);
+				wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
+				wmstrA3 = string_replace_all("<li class=\"first\"><span class=\"date\">", "", wmstrA3, 1);
+				wmstrA3 = string_replace_all("</span><span class=\"time\">", "18 ", wmstrA3, 1);
+				wmstrA3 = string_replace_all("</span></li>", " Uhr", wmstrA3, 1);
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
 				wmFinalMatches[0].date[count] = wmstrA3;
 			}
 
-			if(ostrstr(wmstrA2, "<td class=\"match-time\">") != NULL) {
+			/*if(ostrstr(wmstrA2, "<td class=\"match-time\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
 				wmstrA3 = string_replace("-:-", "", wmstrA3, 1);
@@ -394,36 +397,31 @@ void GetWmFinalData(int wmGroupID) {
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA4);
 			        //printf("[wm2018 Top16 htime ] wmstrA4: %s\n", wmstrA4);
 				wmFinalMatches[0].htime[count] = wmstrA4;
-			}
+			}*/
 
-			if(ostrstr(wmstrA2, "<td class=\"team-shortname team-shortname-home\">") != NULL) {
+			if(ostrstr(wmstrA2, "<li class=\"heim\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
-				//wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
-				//wmstrA3 = string_replace("<td class=\"empty team-image team-image-home\">&nbsp;</td>", " ", wmstrA3, 1);
 				wmstrA3 = string_striptags(wmstrA2);
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
 				wmFinalMatches[0].team1[count] = wmstrA3;
 			}
 
-			if(ostrstr(wmstrA2, "<td class=\"match-result match-result-0\">") != NULL){
+			if(ostrstr(wmstrA2, "<li class=\"score\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
-				wmstrA3 = ostrcat(wmstrA2, NULL, 0, 0);
-				wmstrA3 = string_replace("(-:-)", "", wmstrA3, 1);
-				wmstrA4 = string_striptags(wmstrA3);
-				debug(20, "wmstrA3(%d): %s\n", count, wmstrA4);
-				if( (ostrstr(wmstrA4, "&#160;") != NULL) || (ostrstr(wmstrA4, "&#8213;") != NULL) ) {
-					wmstrA5 = ostrcat(wmstrA4, NULL, 0, 0);
-					wmstrA5 = string_replace("&#160;", " - ", wmstrA5, 1);
-					wmstrA5 = string_replace("&#8213;", " - ", wmstrA5, 1);
+				wmstrA3 = string_striptags(wmstrA2);
+				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
+				if( (ostrstr(wmstrA3, "&#160;") != NULL) || (ostrstr(wmstrA3, "&#8213;") != NULL) ) {
+					wmstrA4 = ostrcat(wmstrA3, NULL, 0, 0);
+					wmstrA4 = string_replace("&#160;", " - ", wmstrA4, 1);
+					wmstrA4 = string_replace("&#8213;", " - ", wmstrA4, 1);
 				} else {
-					wmstrA5 = ostrcat(wmstrA4, NULL, 0, 0);
+					wmstrA4 = ostrcat(wmstrA3, NULL, 0, 0);
 				}
-				debug(20, "wmstrA4(%d): %s\n", count, wmstrA5);
-			        //printf("[wm2018 Top16 result ] wmstrA4: %s\n", wmstrA5);
-				wmFinalMatches[0].result[count] = wmstrA5;
+				debug(20, "wmstrA4(%d): %s\n", count, wmstrA4);
+				wmFinalMatches[0].result[count] = wmstrA4;
 			}
 
-			if(ostrstr(wmstrA2, "<td class=\"team-shortname team-shortname-away\">") != NULL) {
+			if(ostrstr(wmstrA2, "<li class=\"auswaerts\">") != NULL) {
 				debug(30, "wmstrA2(%d): %s\n", i, wmstrA2);
 				wmstrA3 = string_striptags(wmstrA2);
 				debug(20, "wmstrA3(%d): %s\n", count, wmstrA3);
@@ -692,14 +690,14 @@ void screenwm2018() {
 	struct skin* flag1_6_last16 = getscreennode(wm2018_last16, "flag1_6");
 	struct skin* flag1_7_last16 = getscreennode(wm2018_last16, "flag1_7");
 
-	struct skin* htime_0_last16 = getscreennode(wm2018_last16, "htime_0");
+	/*struct skin* htime_0_last16 = getscreennode(wm2018_last16, "htime_0");
 	struct skin* htime_1_last16 = getscreennode(wm2018_last16, "htime_1");
 	struct skin* htime_2_last16 = getscreennode(wm2018_last16, "htime_2");
 	struct skin* htime_3_last16 = getscreennode(wm2018_last16, "htime_3");
 	struct skin* htime_4_last16 = getscreennode(wm2018_last16, "htime_4");
 	struct skin* htime_5_last16 = getscreennode(wm2018_last16, "htime_5");
 	struct skin* htime_6_last16 = getscreennode(wm2018_last16, "htime_6");
-	struct skin* htime_7_last16 = getscreennode(wm2018_last16, "htime_7");
+	struct skin* htime_7_last16 = getscreennode(wm2018_last16, "htime_7");*/
 
 	struct skin* result_0_last16 = getscreennode(wm2018_last16, "result_0");
 	struct skin* result_1_last16 = getscreennode(wm2018_last16, "result_1");
@@ -1062,14 +1060,14 @@ start:
 		changetext(team1_6_last16, wmFinalMatches[0].team1[6]);
 		changetext(team1_7_last16, wmFinalMatches[0].team1[7]);
 
-		changetext(htime_0_last16, wmFinalMatches[0].htime[0]);
+		/*changetext(htime_0_last16, wmFinalMatches[0].htime[0]);
 		changetext(htime_1_last16, wmFinalMatches[0].htime[1]);
 		changetext(htime_2_last16, wmFinalMatches[0].htime[2]);
 		changetext(htime_3_last16, wmFinalMatches[0].htime[3]);
 		changetext(htime_4_last16, wmFinalMatches[0].htime[4]);
 		changetext(htime_5_last16, wmFinalMatches[0].htime[5]);
 		changetext(htime_6_last16, wmFinalMatches[0].htime[6]);
-		changetext(htime_7_last16, wmFinalMatches[0].htime[7]);
+		changetext(htime_7_last16, wmFinalMatches[0].htime[7]);*/
 
 		changetext(result_0_last16, wmFinalMatches[0].result[0]);
 		changetext(result_1_last16, wmFinalMatches[0].result[1]);
