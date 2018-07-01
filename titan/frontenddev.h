@@ -797,6 +797,8 @@ int fewait(struct dvbdev* node)
 #endif
 	if(checkrealbox("HD51") == 1)
 		timer = 1000;
+	if(checkrealbox("DM920") == 1)
+		timer = 4000;
 	//wait for tuner ready
 	debug(200, "wait for tuner start");
 	while(count <= timer)
