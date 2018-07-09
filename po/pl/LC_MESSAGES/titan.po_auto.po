@@ -1147,7 +1147,7 @@ msgid "Astra 19.2 - new (matze70)"
 msgstr ""
 
 #: tpk_showname.h:5
-msgid "Astra 19.2 default 2.0 | 05.11.2017"
+msgid "Astra 19.2 default 2.0 | 09.07.2018"
 msgstr ""
 
 #: tpk_description.h:14
@@ -11701,7 +11701,7 @@ msgid "all"
 msgstr "WSZYSTKIE"
 
 #: tpk_description.h:5
-msgid "all: Settings Astra 19.2 all transponder | 05.11.2017"
+msgid "all: Settings Astra 19.2 all transponder | 09.07.2018"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
