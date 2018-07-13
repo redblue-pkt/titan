@@ -404,7 +404,7 @@ int createcapmt(struct dvbdev* dvbnode, struct service* node, unsigned char* buf
 //flag 3 = from recordthread
 void sendcapmt(struct service* node, int clear, int flag)
 {
-	int len = 0, i = 0, caservicenr = 0, lenbytes = 0;
+	int len = 0, i = 0, dummy = 0; caservicenr = 0, lenbytes = 0;
 	unsigned char* buf = NULL;
 	struct dvbdev* dvbnode = dvbdev;
 
@@ -425,9 +425,27 @@ void sendcapmt(struct service* node, int clear, int flag)
 		return;
 	}
 	
-	if(node->channel->crypt == 0)
+	if(flag == 0)
 	{
-		debug(620, "channel not crypt");
+		struct channelslot *channelslotnode = channelslot; 
+		while(channelslotnode != NULL)
+		{
+			if(channelslotnode->transponderid == node->channel->transponderid && channelslotnode->serviceid == node->channel->serviceid)
+			{
+				if(channelslotnode->slot == 5) //dummy slot
+				{
+					debug(620, "dummy slot -> reset routing tuner");
+					dummy = 1;
+					break;
+				}
+			}			
+				channelslotnode = channelslotnode->next;			
+		}
+	}
+	
+	if(node->channel->crypt == 0 || dummy == 1)
+	{
+		debug(620, "channel not crypt or softcam workaround");
 
 		//check if we can change input sources
 		int doswitch = 1;
