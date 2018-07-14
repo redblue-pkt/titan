@@ -477,6 +477,13 @@ void gmultiepgfilldesc(struct skin* listbox, struct skin* epgdesc, struct skin* 
 			tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
 			tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 		}
+					
+		if(epgnode->subtitle != NULL && ostrcmp(epgnode->title, epgnode->subtitle) != 0)
+		{
+			tmpstr = ostrcat(tmpstr, epgnode->subtitle, 1, 0);
+			tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+		}
+				
 		tmpstr = ostrcat(tmpstr, epgdescunzip(epgnode), 1, 1);
 		changetext(epgdesc, tmpstr);
 		free(tmpstr); tmpstr = NULL;
