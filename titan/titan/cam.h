@@ -404,7 +404,7 @@ int createcapmt(struct dvbdev* dvbnode, struct service* node, unsigned char* buf
 //flag 3 = from recordthread
 void sendcapmt(struct service* node, int clear, int flag)
 {
-	int len = 0, i = 0, dummy = 0; caservicenr = 0, lenbytes = 0;
+	int len = 0, i = 0, dummy = 0, caservicenr = 0, lenbytes = 0;
 	unsigned char* buf = NULL;
 	struct dvbdev* dvbnode = dvbdev;
 
