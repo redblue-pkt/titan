@@ -4309,23 +4309,23 @@ msgstr ""
 msgid "GMediaRender is a UPnP media renderer for POSIX-compliant systems"
 msgstr ""
 
-#: gmultiepg.h:638
+#: gmultiepg.h:645
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "MULTI EPG - Tutti i Canali"
 
-#: gmultiepg.h:586 gmultiepg.h:784 httpdfunc.h:710
+#: gmultiepg.h:593 gmultiepg.h:791 httpdfunc.h:710
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Grafico-Multi-EPG - Favoriti"
 
-#: gmultiepg.h:599
+#: gmultiepg.h:606
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Grafico-Multi-EPG - Favoriti"
 
-#: gmultiepg.h:625
+#: gmultiepg.h:632
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Grafico-Multi-EPG - Favoriti"
 
-#: gmultiepg.h:612
+#: gmultiepg.h:619
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Grafico-Multi-EPG - Favoriti"
 
