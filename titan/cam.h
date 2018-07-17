@@ -473,7 +473,7 @@ void sendcapmt(struct service* node, int clear, int flag)
 			}
 		}
 		
-		return;
+		if(dummy != 1) return;
 	}
 	
 	if(node->channel->pmt == NULL)
