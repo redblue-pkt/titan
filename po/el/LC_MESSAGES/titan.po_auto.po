@@ -84,18 +84,18 @@ msgstr ""
 msgid "---"
 msgstr ""
 
-#: plugins_lcdpearl1_skin.xml.h:7 plugins_lcdsamsung_skin.xml.h:9
-#: skins_lcdpearl1_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:9
+#: plugins_lcdpearl1_skin.xml.h:7 plugins_lcdsamsung_skin.xml.h:10
+#: skins_lcdpearl1_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:10
 msgid "--- Land"
 msgstr ""
 
-#: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:12
-#: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:12
+#: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:13
+#: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:13
 msgid "--- Ort"
 msgstr ""
 
-#: plugins_lcdpearl1_skin.xml.h:9 plugins_lcdsamsung_skin.xml.h:13
-#: skins_lcdpearl1_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:13
+#: plugins_lcdpearl1_skin.xml.h:9 plugins_lcdsamsung_skin.xml.h:14
+#: skins_lcdpearl1_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:14
 msgid "--- PLZ"
 msgstr ""
 
@@ -2720,7 +2720,7 @@ msgstr ""
 msgid "DNS System"
 msgstr ""
 
-#: plugins_lcdsamsung_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:7
+#: plugins_lcdsamsung_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:8
 msgid "DO"
 msgstr "D"
 
@@ -3020,6 +3020,10 @@ msgstr ""
 msgid "Diseqc repeats"
 msgstr ""
 
+#: plugins_lcdsamsung_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:7
+msgid "Display IP"
+msgstr ""
+
 #: restoredefault.h:73
 msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
@@ -3130,7 +3134,7 @@ msgstr ""
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: lcdsamsung.c:1212
+#: lcdsamsung.c:1219
 msgid "Dummy-320"
 msgstr ""
 
@@ -3388,7 +3392,7 @@ msgstr ""
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:8
-#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:8
+#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:9
 #: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
 #: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
 #: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
@@ -3409,7 +3413,7 @@ msgstr ""
 #: skins_callmonitor1_skin.xml.h:10 skins_catcatch_skin.xml.h:3
 #: skins_dlna_skin.xml.h:1 skinselector.h:231 skins_facebook_skin.xml.h:2
 #: skins_instar_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:6
-#: skins_lcdsamsung_skin.xml.h:8 skins_mboxinfo_skin.xml.h:1
+#: skins_lcdsamsung_skin.xml.h:9 skins_mboxinfo_skin.xml.h:1
 #: skins_mc_skin.xml.h:19 skins_multiimage_skin.xml.h:5
 #: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
 #: skins_rgui_skin.xml.h:1 skins_sispmctl_skin.xml.h:12
@@ -5874,11 +5878,11 @@ msgstr ""
 msgid "MHW2 EPG"
 msgstr ""
 
-#: plugins_lcdsamsung_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:10
+#: plugins_lcdsamsung_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:11
 msgid "MI"
 msgstr "I"
 
-#: plugins_lcdsamsung_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:11
+#: plugins_lcdsamsung_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:12
 msgid "MO"
 msgstr "M"
 
@@ -8518,13 +8522,13 @@ msgstr ""
 #: plugins_autotimer_skin.xml.h:7 plugins_callmonitor1_skin.xml.h:17
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
 #: plugins_instar_skin.xml.h:25 plugins_lcdpearl1_skin.xml.h:10
-#: plugins_lcdsamsung_skin.xml.h:14 plugins_panel_skin.xml.h:16
+#: plugins_lcdsamsung_skin.xml.h:15 plugins_panel_skin.xml.h:16
 #: plugins_sispmctl_skin.xml.h:15 plugins_stock_skin.xml.h:4
 #: plugins_stopifnotused_skin.xml.h:4 plugins_tmdb_skin.xml.h:7
 #: skin_default_skin.xml.h:539 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:17 skins_imdbapi_skin.xml.h:7
 #: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:25
-#: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:14
+#: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:15
 #: skins_panel_skin.xml.h:16 skins_sispmctl_skin.xml.h:15
 #: skins_stock_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
 #: skins_tmdb_skin.xml.h:7
@@ -8579,39 +8583,39 @@ msgstr ""
 msgid "SORT"
 msgstr "Διαλογή"
 
-#: lcdsamsung.c:1209
+#: lcdsamsung.c:1216
 msgid "SPF-105P"
 msgstr ""
 
-#: lcdsamsung.c:1210
+#: lcdsamsung.c:1217
 msgid "SPF-107H"
 msgstr ""
 
-#: lcdsamsung.c:1202
+#: lcdsamsung.c:1209
 msgid "SPF-72H"
 msgstr ""
 
-#: lcdsamsung.c:1203
+#: lcdsamsung.c:1210
 msgid "SPF-75H"
 msgstr ""
 
-#: lcdsamsung.c:1204
+#: lcdsamsung.c:1211
 msgid "SPF-83H"
 msgstr ""
 
-#: lcdsamsung.c:1205
+#: lcdsamsung.c:1212
 msgid "SPF-85H"
 msgstr ""
 
-#: lcdsamsung.c:1206
+#: lcdsamsung.c:1213
 msgid "SPF-85P"
 msgstr ""
 
-#: lcdsamsung.c:1207
+#: lcdsamsung.c:1214
 msgid "SPF-87H"
 msgstr ""
 
-#: lcdsamsung.c:1208
+#: lcdsamsung.c:1215
 msgid "SPF-87H-old"
 msgstr ""
 
@@ -8625,12 +8629,12 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:9 plugins_dlna_skin.xml.h:11
 #: plugins_instar_skin.xml.h:26 plugins_lcdpearl1_skin.xml.h:11
-#: plugins_lcdsamsung_skin.xml.h:15 plugins_multiimage_skin.xml.h:16
+#: plugins_lcdsamsung_skin.xml.h:16 plugins_multiimage_skin.xml.h:16
 #: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
 #: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:617
 #: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
 #: skins_instar_skin.xml.h:26 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:15 skins_multiimage_skin.xml.h:16
+#: skins_lcdsamsung_skin.xml.h:16 skins_multiimage_skin.xml.h:16
 #: skins_stopifnotused_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:7
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
@@ -8687,7 +8691,7 @@ msgstr ""
 msgid "Samba file server"
 msgstr ""
 
-#: plugins_lcdsamsung_skin.xml.h:18 skins_lcdsamsung_skin.xml.h:18
+#: plugins_lcdsamsung_skin.xml.h:19 skins_lcdsamsung_skin.xml.h:19
 msgid "Samsung SPF.. Settings"
 msgstr "Ρυθμίσεις Samba Server"
 
@@ -10841,7 +10845,7 @@ msgstr ""
 msgid "Type:"
 msgstr ""
 
-#: plugins_lcdsamsung_skin.xml.h:16 skins_lcdsamsung_skin.xml.h:16
+#: plugins_lcdsamsung_skin.xml.h:17 skins_lcdsamsung_skin.xml.h:17
 msgid "Typenbezeichnung"
 msgstr ""
 
@@ -11391,8 +11395,8 @@ msgstr ""
 msgid "Western"
 msgstr ""
 
-#: plugins_lcdpearl1_skin.xml.h:12 plugins_lcdsamsung_skin.xml.h:17
-#: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:17
+#: plugins_lcdpearl1_skin.xml.h:12 plugins_lcdsamsung_skin.xml.h:18
+#: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:18
 msgid "Wettervorhersage"
 msgstr ""
 
@@ -12541,8 +12545,8 @@ msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:452 lcdpearl1.c:507
-#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1216 lcdsamsung.c:1220
-#: lcdsamsung.c:1224
+#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1223 lcdsamsung.c:1227
+#: lcdsamsung.c:1231
 msgid "ja"
 msgstr ""
 
@@ -12749,8 +12753,8 @@ msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:451 lcdpearl1.c:506
-#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1215 lcdsamsung.c:1219
-#: lcdsamsung.c:1223
+#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1222 lcdsamsung.c:1226
+#: lcdsamsung.c:1230
 msgid "nein"
 msgstr ""
 
@@ -13839,7 +13843,7 @@ msgstr ""
 msgid "thereafter on this Channel:"
 msgstr ""
 
-#: lcdsamsung.c:1211
+#: lcdsamsung.c:1218
 msgid "tiMote"
 msgstr ""
 
