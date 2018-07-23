@@ -424,7 +424,8 @@ void LCD_Samsung1_thread()
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
 	{
 		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
-		startlcd = ostrcat(startlcd, " 99", 1, 0);
+		startlcd = ostrcat(startlcd, " 98 ", 1, 0);
+		startlcd = ostrcat(startlcd, getconfig("lcd_samsung_ip", NULL), 1, 0);
 	}
 	else
 	{
@@ -1179,6 +1180,7 @@ void start(void)
 	struct skin* samsung1_main = getscreen("samsung1_main");
 	struct skin* listbox = getscreennode(samsung1_main, "listbox");
 	struct skin* lcdtype = getscreennode(samsung1_main, "lcdtype");
+	struct skin* lcdip = getscreennode(samsung1_main, "lcdip");
 	struct skin* allmenu = getscreennode(samsung1_main, "allmenu");
 	struct skin* aktstandby = getscreennode(samsung1_main, "aktstandby");
 	struct skin* wettervor = getscreennode(samsung1_main, "wettervor");
@@ -1197,6 +1199,11 @@ void start(void)
   	//wettervorplz->hidden = YES;
   	//wettervorland->hidden = YES;
   	wettervorort->hidden = YES;
+  }
+  changeinput(lcdip, getconfig("lcd_samsung_ip", NULL));
+  if(getconfig("lcd_samsung_plugin_type", NULL) == NULL || ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320")  != 0)
+  {
+  	lcdip->hidden = YES;
   }
     
   addchoicebox(lcdtype, "spf72h", _("SPF-72H"));
@@ -1250,7 +1257,7 @@ void start(void)
 	drawscreen(samsung1_main, 0, 0);
 	addscreenrc(samsung1_main, listbox);
 	tmp = listbox->select;
-	
+		
 	while(1)
 	{
 		addscreenrc(samsung1_main, tmp);
@@ -1272,7 +1279,17 @@ void start(void)
 			
 			drawscreen(samsung1_main, 0, 0);
 		}
-					
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && listbox->select != NULL && ostrcmp(listbox->select->name, "lcdtype") == 0)
+		{
+			if(ostrcmp(lcdtype->ret, "d320") == 0)
+			{
+  			lcdip->hidden = NO;
+			} else {
+  			lcdip->hidden = YES;
+  		}
+			
+			drawscreen(samsung1_main, 0, 0);
+		}			
 		if(rcret == getrcconfigint("rcexit", NULL))
 			break;
 		if(rcret == getrcconfigint("rcgreen", NULL))
@@ -1281,7 +1298,8 @@ void start(void)
 			addconfig("write_fb_to_jpg", allmenu->ret);
 			addconfig("lcd_samsung_plugin_standby", aktstandby->ret);
 			addconfig("lcd_samsung_plugin_wetter", wettervor->ret);
-			addconfig("lcd_samsung_plugin_wetterort", wettervorort->ret); 
+			addconfig("lcd_samsung_plugin_wetterort", wettervorort->ret);
+			addconfig("lcd_samsung_ip", lcdip->ret);
 			//addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
 			//addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
 			restart = 1;
@@ -1294,7 +1312,8 @@ void start(void)
 			addconfig("write_fb_to_jpg", allmenu->ret);
 			addconfig("lcd_samsung_plugin_standby", aktstandby->ret);
 			addconfig("lcd_samsung_plugin_wetter", wettervor->ret);
-			addconfig("lcd_samsung_plugin_wetterort", wettervorort->ret); 
+			addconfig("lcd_samsung_plugin_wetterort", wettervorort->ret);
+			addconfig("lcd_samsung_ip", lcdip->ret);
 			//addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
 			//addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
 			startstop = 1;
