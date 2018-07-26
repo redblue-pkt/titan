@@ -113,7 +113,7 @@ hoster()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	channels) $INPUT;;
 	hoster) $INPUT;;
