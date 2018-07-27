@@ -15,17 +15,16 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 """
-import re, urllib, json
-from lib import helpers
 import lib.common as common
+import re
+import sys
+from lib.net import Net
+from lib import helpers
 
 class VidCloudResolver(object):
     name = 'vidcloud'
     domains = ['vidcloud.co', 'loadvid.online']
     pattern = '(?://|\.)((?:vidcloud.co|loadvid.online))/(?:embed|v)/([0-9a-zA-Z]+)'
-
-    def __init__(self):
-        self.net = common.Net()
 
     def __init__(self):
         self.net = Net()
@@ -51,11 +50,11 @@ class VidCloudResolver(object):
             sources = helpers.scrape_sources(html.replace("\\n", "").replace("\\", ""), patterns=[
                 '''src":\s*"(?P<url>[^"]+)(?:[^}>\]]+)label":\s*"(?P<label>[^"]+)'''], generic_patterns=False)
             if sources:
-                return helpers.pick_source(sources) + helpers.append_headers(headers)
+                print helpers.pick_source(sources) + helpers.append_headers(headers)
 
         raise ResolverError("Unable to locate video")
 
     def get_url(self, host, media_id):
         return 'https://vidcloud.co/player?fid=%s&page=embed' % media_id
 
-sys.stdout = VideoweedResolver()
+sys.stdout = VidCloudResolver()
