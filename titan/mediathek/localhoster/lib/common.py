@@ -16,6 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 import os
+from net import Net, get_ua  # @UnusedImport
 #from lib import log_utils  # @UnusedImport
 #from lib.net import Net  # @UnusedImport
 #from lib import cache  # @UnusedImport
@@ -33,7 +34,7 @@ addon_version = '1.0'
 #has_addon = kodi.has_addon
 
 
-
+RAND_UA = get_ua()
 IE_USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko'
 #FF_USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
 FF_USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
