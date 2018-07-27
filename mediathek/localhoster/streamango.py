@@ -44,36 +44,27 @@ class StreamangoResolver(object):
 
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
-
-#        headers = {'User-Agent': common.RAND_UA}
-        headers = {'User-Agent': common.FF_USER_AGENT}
-
+        headers = {'User-Agent': common.RAND_UA}
+#        headers = {'User-Agent': common.FF_USER_AGENT}
         html = self.net.http_GET(web_url, headers=headers).content
-#        print "html", html.encode('utf8')
 
         if html:
-            if re.search('>Sorry!<', html):
-                print "errormsg=Sorry!\n%s" % (str(re.compile('<p class="lead">*(.+?)</p>').findall(html)[0]))
-#                print 'errormsg=File was deleted.'
-            else:
-                encoded = re.search('''srces\.push\({type:"video/mp4",src:\w+\('([^']+)',(\d+)''', html)
-                if encoded:
-                    source = self.decode(encoded.group(1), int(encoded.group(2)))
-                    if source:
-                        source = "http:%s" % source if source.startswith("//") else source
-                        source = source.split("/")
-                        if not source[-1].isdigit():
-                          source[-1] = re.sub('[^\d]', '', source[-1])
-                        source = "/".join(source)
-                        headers.update({'Referer': web_url})
-#                        return source + helpers.append_headers(headers)
-                        print source + helpers.append_headers(headers)
-        
-#        raise ResolverError("Unable to locate video")
-                else:
-                    print 'errormsg=Unable to locate encoded video'
-        else:
-            print 'errormsg=Error 404 Website not found !'
+#           srces.push( {type:"video/mp4",src:d('keDN2p3bx6LdzqrO1JcSxaDTkZoRyuDbzaLN0KzR2qHQza7NyJ/U4N8Lld4IltoMlN3Cn98Sl90JkN=SlpHQ/K3YnqnW3uENltwA',93),height:360,bitrate:576});
+            encoded = re.search('''srces\.push\({type:"video/mp4",src:\w+\('([^']+)',(\d+)''', html)
+            if not encoded:
+                encoded = re.search('''srces\.push\( {type:"video/mp4",src:\w+\('([^']+)',(\d+)''', html)
+
+            if encoded:
+                source = self.decode(encoded.group(1), int(encoded.group(2)))
+                if source:
+                    source = "http:%s" % source if source.startswith("//") else source
+                    source = source.split("/")
+                    if not source[-1].isdigit():
+                      source[-1] = re.sub('[^\d]', '', source[-1])
+                    source = "/".join(source)
+
+                    headers.update({'Referer': web_url})
+                    print source + helpers.append_headers(headers)
 
 #<h1 style="text-align: center !important;">Sorry!</h1>
 #<p class="lead">We are unable to find the video you're looking for. There could be several reasons for this, for example it got removed by the owner.</p>
@@ -113,6 +104,8 @@ class StreamangoResolver(object):
         return _0x59b81a
 
     def get_url(self, host, media_id):
+        if host.lower() == 'streamango.com':
+            host = 'fruitstreams.com'
         return 'http://%s/embed/%s' % (host, media_id)
 
 sys.stdout = StreamangoResolver()
