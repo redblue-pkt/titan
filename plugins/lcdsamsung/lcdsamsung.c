@@ -213,7 +213,7 @@ void LCD_Samsung1_thread()
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf85_Wetter");
 	  else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
-			LCD_Samsung1 = getscreen("LCD_d320_Wetter");
+			LCD_Samsung1 = getscreen("LCD_spf_d320_Wetter");
 		else
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
 		city = getscreennode(LCD_Samsung1, "city");
@@ -282,7 +282,7 @@ void LCD_Samsung1_thread()
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf85");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
-			LCD_Samsung1 = getscreen("LCD_d320");
+			LCD_Samsung1 = getscreen("LCD_spf_d320");
 		else
 			LCD_Samsung1 = getscreen("LCD_spf87");	
 		akttime = getscreennode(LCD_Samsung1, "akttime");
@@ -324,7 +324,7 @@ void LCD_Samsung1_thread()
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
 		LCD_Play = getscreen("LCD_spf85_Play");
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
-		LCD_Play = getscreen("LCD_d320_Play");
+		LCD_Play = getscreen("LCD_spf_d320_Play");
 	else
 		LCD_Play = getscreen("LCD_spf87_Play");
 	struct skin* akttimeplay = getscreennode(LCD_Play, "akttime");
@@ -353,7 +353,7 @@ void LCD_Samsung1_thread()
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
 		LCD_Music = getscreen("LCD_spf85_Music");
   else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
-		LCD_Music = getscreen("LCD_d320_Music");
+		LCD_Music = getscreen("LCD_spf_d320_Music");
 	else
 		LCD_Music = getscreen("LCD_spf87_Music");
 		
@@ -455,7 +455,7 @@ void LCD_Samsung1_thread()
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
 			LCD_Standby = getscreen("LCD_spf85_Standby");
 		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
-			LCD_Standby = getscreen("LCD_d320_Standby");
+			LCD_Standby = getscreen("LCD_spf_d320_Standby");
 		else
 			LCD_Standby = getscreen("LCD_spf87_Standby");
 		akttime_Standby = getscreennode(LCD_Standby, "akttime"); 
