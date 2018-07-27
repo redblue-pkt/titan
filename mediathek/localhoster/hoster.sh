@@ -291,6 +291,11 @@ vidlox()
 	$BIN $CMD/vidlox.py $INPUT
 }
 
+vidcloud()
+{
+	$BIN $CMD/vidcloud.py $INPUT
+}
+
 vodlocker()
 {
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
@@ -745,6 +750,7 @@ if [ "$TYPE" == "get" ];then
 		novamov|auroravid) novamov $INPUT;;
 		xvidstage) xvidstage $INPUT;;
 		waaw|netu|hqq) waaw $INPUT;;
+		vidcloud|loadvid) vidcloud $INPUT;;
 		streamango|streamcherry) streamango $INPUT;;
 		vidlox) vidlox $INPUT;;
 		redirector|googlevideo|vodcloud|google|skyfall|s4) directstream "$INPUT";;
