@@ -265,7 +265,8 @@ if [ $MEDIAFW = 4 ]; then
 	linking="-lm -lglib-2.0 -lgobject-2.0 -lgio-2.0 -lpthread -ldl -lz -lpng -lfreetype -lgstreamer-1.0 -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz"
 fi
 
-if [ "$GROUP" = "dev" ] && ([ "$TYPE" = "spark" ] || [ "$TYPE" = "spark7162" ]); then
+#if [ "$GROUP" = "dev" ] && ([ "$TYPE" = "spark" ] || [ "$TYPE" = "spark7162" ]); then
+if [ "$TYPE" = "spark" ] || [ "$TYPE" = "spark7162" ]; then
     devflag="-finstrument-functions -rdynamic -DBETA -DEPLAYER3"
 elif [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
     devflag="-finstrument-functions -rdynamic -DBETA -DEXTEPLAYER3"
