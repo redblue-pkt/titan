@@ -310,7 +310,7 @@ char* epgdescunzip(struct epg* epgnode)
 		return NULL;
 	}
 
-	if(epgnode->desccomplen > 0)
+	if(epgnode->desccomplen < 1)
 		return ostrcat(epgnode->desc, NULL, 0, 0);
 
 	ret = ounzip(epgnode->desc, epgnode->desccomplen, &zbuf, &zlen, MINMALLOC, 0);
@@ -1228,10 +1228,9 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			ret = ozip(epgnode->desc, strlen(epgnode->desc) + 1, &zbuf, &zlen, 1);
 			if(ret == 0)
 			{
-				//free(epgnode->desc); epgnode->desc = NULL;
-				//epgnode->desc = zbuf;
-				//epgnode->desccomplen = zlen;
-				epgnode->desccomplen = strlen(epgnode->desc) + 1;
+				free(epgnode->desc); epgnode->desc = NULL;
+				epgnode->desc = zbuf;
+				epgnode->desccomplen = zlen;
 			}
 		}
 		m_unlock(&status.epgmutex, 4);
