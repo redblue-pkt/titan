@@ -340,7 +340,7 @@ class Net:
             passval = re.compile('name="pass" value="(.*?)"').findall(challenge)[0]
             query = '%s/cdn-cgi/l/chk_jschl?pass=%s&jschl_vc=%s&jschl_answer=%s' % \
                     (url, urllib.quote_plus(passval), jschl, answer)
- #           time.sleep(9)
+            time.sleep(9)
 
         self._update_opener(cloudflare_jar=True)
         req = urllib2.Request(query)
@@ -376,27 +376,16 @@ class Net:
             compression (bool): If ``True`` (default), try to use gzip
             compression.
         """
-        print "aaaaaaaaa"
         netloc = urlparse(url).netloc
         if not netloc:
             netloc = urlparse(url).path
         cloudflare_url = urlunparse((urlparse(url).scheme, netloc, '', '', '', ''))
         try:
-            print "bbbbbbbbbb"
-
             self._cloudflare_challenge(cloudflare_url, challenge, form_data, headers, compression)
-            print "bbbbbbbbbb1"
-
             for c in self._cloudflare_jar:
                 self._cj.set_cookie(c)
-            print "bbbbbbbbbb2"
-
             self._update_opener()
-            print "bbbbbbbbbb3"
-
         except:
-            print "ccccccccc"
-
             # make sure we update to main jar
             self._update_opener()
             raise Exception
@@ -647,15 +636,11 @@ class Net:
                 return HttpResponse(response)
             except urllib2.HTTPError as e:
                 if e.code == 503:
-                    print "111111111"
                     try:
-                        print "222222222"
                         self._set_cloudflare(url, e.read(), form_data, headers, compression)
                     except:
-                        print "333333333"
                         raise urllib2.HTTPError, e
                     req = urllib2.Request(url)
-                    print "4"
 
                     if form_data:
                         form_data = urllib.urlencode(form_data)
