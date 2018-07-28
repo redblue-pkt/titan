@@ -212,7 +212,7 @@ hosterlist()
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
 	done 3<$TMP/cache.$PARSER.$INPUT.6
-#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 
 	echo $TMP/$PARSER.$INPUT.list
 }
