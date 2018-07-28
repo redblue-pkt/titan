@@ -53,7 +53,7 @@ mainmenu()
 search()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE/$NEXT/ | sed 's/<div class="poster"/\n<div class="poster"/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL/$PAGE/$NEXT/ | tr '\n' ' ' | sed 's/<div class="poster"/\n<div class="poster"/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN
@@ -99,6 +99,8 @@ search()
 				i = index($0, "alt=\"") + 5
 	            j = index(substr($0, i), "\"") - 1
 				title = substr($0, i, j)
+				gsub(" Openload Movies", "", title, title)
+
 
 				piccount += 1
 				if ( pic == "" )
@@ -125,7 +127,19 @@ hoster()
 	#<iframe class="metaframe rptss" src="https://openload.co/embed/5EhZ1cmxtvE/Rangoon_%282017%29_DVDRip.mp4" frameborder="0" allowfullscreen></iframe></div> </div><div class="control"><nav class="player"><ul class="options"><li><a><i class="icon-menu"></i> <b>Options</b></a><ul class="idTabs"><li><a class="options" href="#option-1">Openload </a></li> </ul></li></ul></nav><span class="qualityx">DVD</span><nav class="controles"><ul class="list"><li><a class="lightSwitcher" href="javascript:void(0);"><i class="icon-wb_sunny"></i></a></li></ul></nav></div></div><script type="text/javascript">$(document).ready(function(){$("#oscuridad").css("height", $(document).height()).hide();$(".lightSwitcher").click(function(){$("#oscuridad").toggle();if ($("#oscuridad").is(":hidden"))
 	#<iframe class="metaframe rptss" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://openload.co/embed/-eH6UStG_Ok/Kong%3A_Skull_Island_%282017%29.mp4" frameborder="0" allowfullscreen></iframe>
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE/ | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+
+#<tbody>
+#<tr id="mov5lQZpS522393">
+#<td><a class="link_a" href="https://openloadmovie.org/links/mov5lqzps522393/" target="_blank">Download</a></td>
+#<td><img src="https://plus.google.com/_/favicon?domain=openload.co"> openload.co</td>
+#<td>WEB</td>
+#<td>English</td>
+#<td>3 days </td>
+#</tr>
+#<tbody>
+
+#		$curlbin -o - $URL/$PAGE/ | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $PAGE/ | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN
