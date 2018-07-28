@@ -1231,7 +1231,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 				//free(epgnode->desc); epgnode->desc = NULL;
 				//epgnode->desc = zbuf;
 				//epgnode->desccomplen = zlen;
-				epgnode->desccomplen = strlen(epgnode->desc) + 1
+				epgnode->desccomplen = strlen(epgnode->desc) + 1;
 			}
 		}
 		m_unlock(&status.epgmutex, 4);
