@@ -132,6 +132,10 @@ search()
 			PIC=`echo $ROUND | sed 's/img src/\nsrc=/' | grep ^"src=" | cut -d '"' -f2`
 			NEWPAGE=`echo $ROUND | sed 's/<a href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
 
+			if [ `echo $NEWPAGE | grep ^// | wc -l` -eq 1 ];then
+				NEWPAGE=https:$NEWPAGE
+			fi
+
 			if [ -z  "$PIC" ]; then  
 				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
