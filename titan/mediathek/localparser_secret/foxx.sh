@@ -75,6 +75,9 @@ new()
 			PIC=`echo $ROUND | sed 's!data-original=!\nsrc=!' | grep ^"src=" | cut -d '"' -f2`
 			NEWPAGE=`echo $ROUND | sed 's/<a href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
 
+			if [ `echo $NEWPAGE | grep ^// | wc -l` -eq 1 ];then
+				NEWPAGE=https:$NEWPAGE
+			fi
 			if [ -z  "$PIC" ]; then  
 				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
@@ -182,9 +185,15 @@ hosterlist()
 #	$curlbin $PAGE -o $TMP/cache.$PARSER.$INPUT.1
 	$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$PARSER.$INPUT.1
 
-	cat $TMP/cache.$PARSER.$INPUT.1 | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$PARSER.$INPUT.2
+	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<iframe src=/\n<iframe src=/g' | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$PARSER.$INPUT.2
 	TEMP=$(cat $TMP/cache.$PARSER.$INPUT.2)
-	$curlbin $TEMP -o $TMP/cache.$PARSER.$INPUT.3
+
+	if [ `echo $TEMP | grep ^// | wc -l` -eq 1 ];then
+		TEMP=https:$TEMP
+	fi
+
+#	$curlbin $TEMP -o $TMP/cache.$PARSER.$INPUT.3
+	$BIN /tmp/localhoster/cloudflare.py "$TEMP" > $TMP/cache.$PARSER.$INPUT.3
 	cat $TMP/cache.$PARSER.$INPUT.3 | grep -A 10 "var decodeABC" >$TMP/cache.$PARSER.$INPUT.4
 	echo "print(decodeABC(jbdaskgs));" >> $TMP/cache.$PARSER.$INPUT.4
 	$DUKBIN $TMP/cache.$PARSER.$INPUT.4 > $TMP/cache.$PARSER.$INPUT.5
@@ -199,7 +208,7 @@ hosterlist()
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 		fi
 	done 3<$TMP/cache.$PARSER.$INPUT.6
-	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+#	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 
 	echo $TMP/$PARSER.$INPUT.list
 }
