@@ -1228,7 +1228,7 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 			ret = ozip(epgnode->desc, strlen(epgnode->desc) + 1, &zbuf, &zlen, 1);
 			if(ret == 0)
 			{
-				free(epgnode->desc); epgnode->desc = NULL;
+				//free(epgnode->desc); epgnode->desc = NULL;
 				//epgnode->desc = zbuf;
 				//epgnode->desccomplen = zlen;
 			}
