@@ -57,12 +57,13 @@ init()
 mainmenu()
 {
 	echo "Kino#$SRC $SRC kino '/'#http://atemio.dyndns.tv/mediathek/menu/kino.jpg#kino.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "New#$SRC $SRC search '?c=movie&m=filter&keyword=&res=&genre=&cast=&year=&order_by=releases&series=&date=year&country=&per_page=' 0#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Neu#$SRC $SRC search '?c=movie&m=filter&keyword=&res=&genre=&cast=&year=&order_by=releases&series=&date=year&country=&per_page=' 0#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Updates#$SRC $SRC search '?c=movie&m=filter&keyword=&res=&genre=&cast=&year=&order_by=updates&series=&date=year&country=&per_page=' 0#http://atemio.dyndns.tv/mediathek/menu/Movies.updates.jpg#Movies.updates.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Beliebt#$SRC $SRC search '?c=movie&m=filter&keyword=&res=&genre=&cast=&year=&order_by=views&series=&date=year&country=&per_page=' 0#http://atemio.dyndns.tv/mediathek/menu/most.viewed.jpg#most.viewed.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Top Imdb#$SRC $SRC search '?c=movie&m=filter&keyword=&res=&genre=&cast=&year=&order_by=rating&series=&date=year&country=&per_page=' 0#http://atemio.dyndns.tv/mediathek/menu/top.100.filme.jpg#top.100.filme.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Genre#$SRC $SRC genre#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Year#$SRC $SRC year#http://atemio.dyndns.tv/mediathek/menu/movie.year.jpg#movie.year.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Search#$SRC $SRC searchtv '?c=movie&m=quickSearch&key=%datakey%&keyword=%search%' 0#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -200,16 +201,106 @@ search()
 
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
+
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
 }
 
+
+searchtv()
+{
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	rm $TMP/$FILENAME.list
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		piccount=0
+#		FILENAME=`echo $FILENAME | sed "s/%datakey%//"`
+		if [ -z "$NEXT" ]; then NEXT=0; fi
+
+		datakey=`$curlbin $URL | sed -nr 's/.*data-key="([^"]+)".*/\1/p'`
+		if [ -z "$datakey" ]; then datakey=4164OPTZ98adf546874s4; fi
+		PAGE=`echo $PAGE | sed "s/%datakey%/$datakey/"`
+
+		$curlbin -H "X-Requested-With: XMLHttpRequest" -X POST "$URL/$PAGE" -o $TMP/cache.$FILENAME.1
+		cat $TMP/cache.$FILENAME.1 | sed 's!},{!\n!g' >$TMP/cache.$FILENAME.2
+
+		while read -u 3 ROUND; do
+			TITLE=$(echo $ROUND | sed -nr 's/.*"title":"([^"]+)".*/\1/p')
+			ID=$(echo $ROUND | sed -nr 's/.*"id":"([^"]+)".*/\1/p')
+			NEWPAGE=http://www.vodlocker.to/embed/movieStreams/?id=$ID
+			PIC=$(echo $ROUND | sed -nr 's/.*"img_link":"([^"]+)".*/\1/p' | sed 's/\\//g')
+	
+			if [ -z "$PIC" ]; then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			fi
+	
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/\E4/g' -e 's/&uuml;/\FC/g' -e 's/&ouml;/\F6/g' -e 's/&eacute;/\E9/g' -e 's/&egrave;/\E8/g' -e 's/%F6/\F6/g' -e 's/%FC/\FC/g' -e 's/%E4/\E4/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				if [ ! -e $TMP/$FILENAME.list ];then
+					touch $TMP/$FILENAME.list
+				fi
+				piccount=`expr $piccount + 1`
+				LINE="$TITLE#$SRC $SRC hosterlisttv $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
+	
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+	
+		done 3<$TMP/cache.$FILENAME.2
+
+#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
+	echo "$TMP/$FILENAME.list"
+}
+
+hosterlisttv()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		piccount=0
+		$curlbin -v "$PAGE" -o "$TMP/cache.$FILENAME.1"	
+		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed "s!</li></a><a!\nfound=!g" | grep -v javascript | grep ^found= >$TMP/cache.$FILENAME.2
+
+		while read -u 3 ROUND; do
+
+			ID=$(echo $ROUND | sed -nr "s/.*-stream-([^-]+).html.*/\1/p")
+			PIC=$(echo $ROUND | grep $ID.jpg | sed -nr "s/.*<img src='([^']+)'.*/\1/p")
+			NEWPAGE=$(echo $ROUND | sed -nr "s/.*href='([^']+)'.*/\1/p")
+			TITLE=$(echo $NEWPAGE | sed -nr 's/.*[http|https]:\/\/([^\/]+)\/.*/\1/p' | sed 's/www.//' | tr [A-Z] [a-z])
+			PIC="http://atemio.dyndns.tv/mediathek/menu/"$TITLE".jpg"
+			EXTRA=$(echo $ROUND | sed -nr "s/.*title='([^']+)'.*/\1/p")
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
+				TITLE="$TITLE ($EXTRA)"
+			fi
+
+			if [ -z "$PIC" ]; then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			fi
+
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/\E4/g' -e 's/&uuml;/\FC/g' -e 's/&ouml;/\F6/g' -e 's/&eacute;/\E9/g' -e 's/&egrave;/\E8/g' -e 's/%F6/\F6/g' -e 's/%FC/\FC/g' -e 's/%E4/\E4/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				if [ ! -e $TMP/$FILENAME.list ];then
+					touch $TMP/$FILENAME.list
+				fi
+				piccount=`expr $piccount + 1`
+				LINE="$TITLE#$SRC $SRC hoster $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#111"
+
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+
+		done 3<$TMP/cache.$FILENAME.2
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
+	echo "$TMP/$FILENAME.list"
+}
+
+
 kino()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
-		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
+		$curlbin -v "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"	
 		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed "s!</li></a><a!\nfound=!g" | grep ^found= >$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
@@ -339,13 +430,14 @@ hoster()
 	echo $STREAMURL
 }
 
-
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
-	hosterlist) $INPUT;;
 	hoster) $INPUT;;
+	hosterlist) $INPUT;;
+	hosterlisttv) $INPUT;;
 	search) $INPUT;;
+	searchtv) $INPUT;;
 	kino) $INPUT;;
 	genre) $INPUT;;
 	year) $INPUT;;
