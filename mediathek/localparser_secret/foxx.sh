@@ -43,7 +43,7 @@ init()
 
 mainmenu()
 {
-	echo "Kinofilme#$SRC $SRC new 0 0 '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Random Movie#$SRC $SRC new 0 0 '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	#echo "Serien#$SRC $SRC new 0 0 '?get=tv'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
         echo "Search#$SRC $SRC search 1 0 '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
 
@@ -201,6 +201,11 @@ hosterlist()
 	cat $TMP/cache.$PARSER.$INPUT.3 | grep -A 10 "var decodeABC" >$TMP/cache.$PARSER.$INPUT.4
 	echo "print(decodeABC(jbdaskgs));" >> $TMP/cache.$PARSER.$INPUT.4
 	$DUKBIN $TMP/cache.$PARSER.$INPUT.4 > $TMP/cache.$PARSER.$INPUT.5
+
+#[{"file":"https://lh3.googleusercontent.com/_KqlWWPoaC4gfQ0z_z9bK1y99QsnvN2eTSBz32Kd78Y7xLO_KoXveMe7TkimM0wpJl56HNTY=m18","label":"360p","type":"mp4"},{"file":"https://lh3.googleusercontent.com/_KqlWWPoaC4gfQ0z_z9bK1y99QsnvN2eTSBz32Kd78Y7xLO_KoXveMe7TkimM0wpJl56HNTY=m22","label":"720p","type":"mp4"}]
+#{"error":"status=fail&hl=uk&allow_embed=0&ps=docs&partnerid=30&errorcode=100&reason=Ð¦Ðµ+Ð²ÑÐ´ÐµÐ¾+Ð½Ðµ+ÑÑÐ½ÑÑ.&timestamp=1532793394463"}
+	errorcode=`cat /tmp/localcache/cache.foxx.hosterlist.5 | sed -nr 's/.*errorcode=([^=]+)&.*/\1/p'`
+
 	cat $TMP/cache.$PARSER.$INPUT.5 | grep -o "http[^ ]*"| sed -e 's!{! !g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' >$TMP/cache.$PARSER.$INPUT.6
 	echo >> $TMP/cache.$PARSER.$INPUT.6
 	while read -u 3 ROUND; do
@@ -214,7 +219,13 @@ hosterlist()
 	done 3<$TMP/cache.$PARSER.$INPUT.6
 	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 
+	if [ ! -z "$errorcode" ];then
+		ERRORMSG="Foxx Website error, this video file cannot be played. (Error Code: $errorcode)"
+		LINE="$ERRORMSG#$NEWPAGE#$PIC#kinox_$piccount.jpg#Foxx#0"
+		echo "$LINE" > $TMP/$PARSER.$INPUT.list
+	fi
 	echo $TMP/$PARSER.$INPUT.list
+
 }
 
 hoster()
