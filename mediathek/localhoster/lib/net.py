@@ -16,6 +16,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 '''
 
+from __future__ import division
+import urllib, urllib2, re, sys
+from time import sleep
+
 import random
 import cookielib
 import gzip
@@ -230,6 +234,61 @@ class Net:
         except:
             raise Exception
 
+    def checkpart(self, s, sens):
+        number = 0
+        p = 0
+        if sens == 1:
+            pos = 0
+        else:
+            pos = len(s) - 1
+
+        try:
+            while 1:
+                c = s[pos]
+
+                if ((c == '(') and (sens == 1)) or ((c == ')') and (sens == -1)):
+                    p = p + 1
+                if ((c == ')') and (sens == 1)) or ((c == '(') and (sens == -1)):
+                    p = p - 1
+                if (c == '+') and (p == 0) and (number > 1):
+                    break
+
+                number += 1
+                pos = pos + sens
+        except:
+            pass
+        if sens == 1:
+            return s[:number], number
+        else:
+            return s[-number:], number
+
+    def parseInt(self, s):
+        offset = 1 if s[0] == '+' else 0
+        chain = s.replace('!+[]', '1').replace('!![]', '1').replace('[]', '0').replace('(', 'str(')[offset:]
+
+        if '/' in chain:
+            val = chain.split('/')
+            links, sizeg = self.checkpart(val[0], -1)
+            rechts, sized = self.checkpart(val[1], 1)
+
+            if rechts.startswith('+') or rechts.startswith('-'):
+                rechts = rechts[1:]
+            gg = eval(links)
+            dd = eval(rechts)
+            chain = val[0][:-sizeg] + str(gg) + '/' + str(dd) + val[1][sized:]
+        val = float(eval(chain))
+        return val
+
+    def _extract_js(self, htmlcontent, domain):
+        line1 = re.findall('var s,t,o,p,b,r,e,a,k,i,n,g,f, (.+?)={"(.+?)":\+*(.+?)};', htmlcontent)
+        varname = line1[0][0] + '.' + line1[0][1]
+        calc = self.parseInt(line1[0][2])
+        AllLines = re.findall(';' + varname + '([*\-+])=([^;]+)', htmlcontent)
+
+        for aEntry in AllLines:
+            calc = eval(format(calc, '.17g') + str(aEntry[0]) + format(self.parseInt(aEntry[1]), '.17g'))
+        rep = calc + len(domain)
+        return format(rep, '.10f')
 
     def _cloudflare_challenge(self, url, challenge, form_data={}, headers={}, compression=True):
         """
@@ -241,24 +300,38 @@ class Net:
         plugin.video.genesis\resources\lib\libraries\cloudflare.py
         https://offshoregit.com/lambda81/
         """
-        jschl = re.compile('name="jschl_vc" value="(.+?)"/>').findall(challenge)[0]
-        init = re.compile('setTimeout\(function\(\){\s*.*?.*:(.*?)};').findall(challenge)[0]
-        builder = re.compile(r"challenge-form\'\);\s*(.*)a.v").findall(challenge)[0]
-        decrypt_val = self._parseJSString(init)
-        lines = builder.split(';')
 
-        for line in lines:
-            if len(line)>0 and '=' in line:
-                sections=line.split('=')
-                line_val = self._parseJSString(sections[1])
-                decrypt_val = int(eval(str(decrypt_val)+sections[0][-1]+str(line_val)))
+        jschl = re.compile('name="jschl_vc" value="(.+?)"/>').findall(challenge)[0]
+        passw = re.compile('name="pass" value="(.+?)"/>').findall(challenge)[0]
+        js = self._extract_js(challenge, url)
+
+        body = challenge
+        parsed_url = urlparse(url)
+        submit_url = "%s://%s/cdn-cgi/l/chk_jschl" % (parsed_url.scheme, parsed_url.netloc)
+        params = {}
+        try:
+            params["jschl_vc"] = re.search(r'name="jschl_vc" value="(\w+)"', body).group(1)
+            params["pass"] = re.search(r'name="pass" value="(.+?)"', body).group(1)
+            js = self._extract_js(body, parsed_url.netloc)
+        except:
+            return None
+
+        params["jschl_answer"] = js
+        sParameters = urllib.urlencode(params, True)
+        request = urllib2.Request("%s?%s" % (submit_url, sParameters))
+
+        for key in headers:
+            request.add_header(key, headers[key])
+        sleep(5)
 
         path = urlparse(url).path
         netloc = urlparse(url).netloc
+
         if not netloc:
             netloc = path
 
-        answer = decrypt_val + len(netloc)
+#        answer = decrypt_val + len(netloc)
+        answer = js
 
         url = url.rstrip('/')
         query = '%s/cdn-cgi/l/chk_jschl?jschl_vc=%s&jschl_answer=%s' % (url, jschl, answer)
@@ -267,7 +340,7 @@ class Net:
             passval = re.compile('name="pass" value="(.*?)"').findall(challenge)[0]
             query = '%s/cdn-cgi/l/chk_jschl?pass=%s&jschl_vc=%s&jschl_answer=%s' % \
                     (url, urllib.quote_plus(passval), jschl, answer)
-            time.sleep(9)
+ #           time.sleep(9)
 
         self._update_opener(cloudflare_jar=True)
         req = urllib2.Request(query)
@@ -303,16 +376,27 @@ class Net:
             compression (bool): If ``True`` (default), try to use gzip
             compression.
         """
+        print "aaaaaaaaa"
         netloc = urlparse(url).netloc
         if not netloc:
             netloc = urlparse(url).path
         cloudflare_url = urlunparse((urlparse(url).scheme, netloc, '', '', '', ''))
         try:
+            print "bbbbbbbbbb"
+
             self._cloudflare_challenge(cloudflare_url, challenge, form_data, headers, compression)
+            print "bbbbbbbbbb1"
+
             for c in self._cloudflare_jar:
                 self._cj.set_cookie(c)
+            print "bbbbbbbbbb2"
+
             self._update_opener()
+            print "bbbbbbbbbb3"
+
         except:
+            print "ccccccccc"
+
             # make sure we update to main jar
             self._update_opener()
             raise Exception
@@ -563,11 +647,16 @@ class Net:
                 return HttpResponse(response)
             except urllib2.HTTPError as e:
                 if e.code == 503:
+                    print "111111111"
                     try:
+                        print "222222222"
                         self._set_cloudflare(url, e.read(), form_data, headers, compression)
                     except:
+                        print "333333333"
                         raise urllib2.HTTPError, e
                     req = urllib2.Request(url)
+                    print "4"
+
                     if form_data:
                         form_data = urllib.urlencode(form_data)
                         req = urllib2.Request(url, form_data)
