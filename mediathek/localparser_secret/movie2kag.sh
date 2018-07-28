@@ -257,7 +257,7 @@ hosterlisttv()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
-		$curlbin -v "$PAGE" -o "$TMP/cache.$FILENAME.1"	
+		$curlbin "$PAGE" -o "$TMP/cache.$FILENAME.1"	
 		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed "s!</li></a><a!\nfound=!g" | grep -v javascript | grep ^found= >$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
