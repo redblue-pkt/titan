@@ -63,9 +63,10 @@ mainmenu()
 new()
 {
 	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+#		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
 
 #		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$PARSER.$INPUT.1
 
 		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<div class/\n<div class/g' | sed 's/<a href="/\n<a href="/g' | grep ^'<a href="' | grep alt= | grep -v .gif > /$TMP/cache.$PARSER.$INPUT.2
 		while read -u 3 ROUND; do
@@ -115,9 +116,10 @@ search()
 		else
 			NEWPAGE=`echo $PAGE | sed "s/@PAGE@/$CURPAGE/g"`
 		fi
-		$curlbin $URL/$NEWPAGE -o $TMP/cache.$PARSER.$INPUT.1
+#		$curlbin $URL/$NEWPAGE -o $TMP/cache.$PARSER.$INPUT.1
 
 #		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$PARSER.$INPUT.1
 
 		cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' ' ' | sed -e 's/<a href=/\n<a href=/g' -e 's/Film/\nFilm/g' | grep '^<a href=' | grep '<img src=' > $TMP/cache.$PARSER.$INPUT.1a
 		cat $TMP/cache.$PARSER.$INPUT.1a | sed '/Stream in HD/d' > $TMP/cache.$PARSER.$INPUT.2
@@ -177,7 +179,8 @@ hosterlist()
 	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
 		rm $TMP/$PARSER.$INPUT.list
 	fi
-	$curlbin $PAGE -o $TMP/cache.$PARSER.$INPUT.1
+#	$curlbin $PAGE -o $TMP/cache.$PARSER.$INPUT.1
+	$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$PARSER.$INPUT.1
 
 	cat $TMP/cache.$PARSER.$INPUT.1 | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$PARSER.$INPUT.2
 	TEMP=$(cat $TMP/cache.$PARSER.$INPUT.2)
@@ -220,7 +223,8 @@ play()
 		rm $TMP/$PARSER.$INPUT.list
 	fi
 
-	$curlbin $PAGE -o $TMP/cache.$PARSER.$INPUT.1
+#	$curlbin $PAGE -o $TMP/cache.$PARSER.$INPUT.1
+	$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$PARSER.$INPUT.1
 
 	cat $TMP/cache.$PARSER.$INPUT.1 | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$PARSER.$INPUT.2
 	TEMP=$(cat $TMP/cache.$PARSER.$INPUT.2)
