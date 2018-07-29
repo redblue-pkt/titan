@@ -744,7 +744,7 @@ if [ "$TYPE" == "get" ];then
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
 		goldesel|movie4k|movie4kto|kinox|kinos|kinoxto|foxx) cloudflare $INPUT;;
-		streamcloud1) streamcloud $INPUT;;	
+		streamcloud) streamcloud $INPUT;;	
 		nowvideo) nowvideo $INPUT;;
 		divxstage|cloudtime) divxstage $INPUT;;
 		novamov|auroravid) novamov $INPUT;;

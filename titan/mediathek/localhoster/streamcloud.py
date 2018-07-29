@@ -1,7 +1,11 @@
 
 import re
 import sys
+import time
 from lib.net import Net
+import re, urllib, json
+from lib import helpers
+import lib.common as common
 
 class StreamcloudResolver(object):
     name = "streamcloud"
@@ -25,20 +29,28 @@ class StreamcloudResolver(object):
 
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
-        resp = self.net.http_GET(web_url)
-        html = resp.content
-        post_url = resp.get_url()
+        headers = {'User-Agent': common.FF_USER_AGENT}
+        response = self.net.http_GET(web_url, headers=headers)
+        html = response.content
         if re.search('>(File Not Found)<', html):
-            print 'File Not Found or removed'
+            raise ResolverError('File Not Found or removed')
 
-        form_values = {}
-        for i in re.finditer('<input.*?name="(.*?)".*?value="(.*?)">', html):
-            form_values[i.group(1)] = i.group(2).replace("download1", "download2")
-        html = self.net.http_POST(post_url, form_data=form_values).content
+        cnt = 10
+        match = re.search('count\s*=\s*(\d+);', html)
+        if match:
+            cnt = int(match.group(1))
+        cnt += 1
 
-        r = re.search('file: "(.+?)",', html)
-        if r:
-            print r.group(1)
+        data = helpers.get_hidden(html)
+        headers.update({'Referer': web_url})
+#        common.kodi.sleep(cnt * 1000)
+        time.sleep(10)
+        html = self.net.http_POST(response.get_url(), form_data=data, headers=headers).content
+        sources = helpers.scrape_sources(html, patterns=['''file\s*:\s*["'](?P<url>[^"']+)'''])
+#        return helpers.pick_source(sources) + helpers.append_headers(headers)
+        print helpers.pick_source(sources) + helpers.append_headers(headers)
+#        print "%s%s" % (helpers.pick_source(sources), helpers.append_headers(headers))
+
 
     def get_url(self, host, media_id):
         return 'http://streamcloud.eu/%s' % (media_id)
