@@ -305,7 +305,7 @@ vodlocker()
 		rm -f $STREAMLIST > /dev/null 2>&1
 	fi
 
-	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+	$curlbin2 -v "$INPUT" -o $TMP/cache.hoster.$hoster.1
 	cat $TMP/cache.hoster.$hoster.1 | sed 's/<source src=/\nfound=/g' | grep ^found= | cut -d"'" -f2 >$TMP/cache.hoster.$hoster.1.url1
 	URL=`cat $TMP/cache.hoster.$hoster.1.url1`
 
@@ -313,7 +313,7 @@ vodlocker()
 #		echo "$URL" >> $STREAMLIST
 
 		REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'` 
-		echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" >> $STREAMLIST
+		echo "$URL|User-Agent=$USERAGENT&Referer=$REFERER" >> $STREAMLIST
 #		echo "$URL|User-Agent=$USERAGENT" >> $STREAMLIST
 
 		sed 's/#HttpOnly_//g' -i /mnt/network/cookies
