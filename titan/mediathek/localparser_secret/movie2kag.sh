@@ -176,7 +176,7 @@ search()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
+				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
 	
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
@@ -197,7 +197,7 @@ search()
 			NEXTTEXT=`expr $NEXTTEXT + 1`
 
 #			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
-			LINE="Page ($NEXTTEXT/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTTEXT/$pages)#$SRC $SRC search '$PAGE' '$NEXTPAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
@@ -249,7 +249,7 @@ searchtv()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC $TYPE $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
+				LINE="$TITLE#$SRC $SRC $TYPE '$NEWPAGE'#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
 	
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
@@ -263,6 +263,7 @@ searchtv()
 
 hosterlisttv()
 {
+#	rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 		$curlbin "$PAGE" -o "$TMP/cache.$FILENAME.1"	
@@ -292,7 +293,7 @@ hosterlisttv()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC hoster $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#111"
+				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#111"
 
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
@@ -329,7 +330,7 @@ kino()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
+				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
 
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
@@ -436,20 +437,31 @@ episode()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin $PAGE -o $TMP/cache.$FILENAME.1
+
 		MAXEPISODE=`cat $TMP/cache.$FILENAME.1 | grep Episode | sed -nr "s/.*'>([^>]+)<.*/\1/p"` 
 		season=`echo $PAGE | sed -nr "s/.*season=([^=]+)&.*/\1/p"` 
 		episode=`echo $PAGE | sed -nr "s/.*episode=([^=]+)&.*/\1/p"` 
 		referrer=`echo $PAGE | sed -nr "s/.*referrer=([^=]+)&.*/\1/p"` 
 		server=`echo $PAGE | sed -nr "s/.*server=([^=]+).*/\1/p"` 
-
+#echo season $season
+#echo episode $episode
+#echo referrer $referrer
+#echo server $server
+#echo MAXEPISODE $MAXEPISODE
 		TMPURL=$PAGE
+
+		FOUNDEPISODE=`cat $TMP/cache.$FILENAME.1 | sed 's/episode/\nepisode/g' | grep ^episode= | sed -nr "s/.*episode=([^=]+)'.*/\1/p"` 
 
 		tags=""
 		i=1
 		until [ "$i" -gt "$MAXEPISODE" ]
 		do
 		TMPURL=`echo $TMPURL | sed -e "s/&season=.*//" -e "s/&episode=.*//" -e "s/&referrer=.*//"`
-		echo "Season $season Episode $i#$SRC $SRC hosterlist '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=$server' 1#http://atemio.dyndns.tv/mediathek/menu/$i.jpg#$i.jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+		for ROUND in $FOUNDEPISODE; do
+			if [ "$ROUND" == "$i" ];then
+				echo "Season $season Episode $i#$SRC $SRC hosterlist '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=$server' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+			fi
+		done
 		i=`expr $i + 1` 
 		done
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
