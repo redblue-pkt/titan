@@ -227,7 +227,15 @@ searchtv()
 		while read -u 3 ROUND; do
 			TITLE=$(echo $ROUND | sed -nr 's/.*"title":"([^"]+)".*/\1/p')
 			ID=$(echo $ROUND | sed -nr 's/.*"id":"([^"]+)".*/\1/p')
-			NEWPAGE=http://www.vodlocker.to/embed/movieStreams/?id=$ID
+			if [ `echo $TITLE | grep "Staffel " | wc -l` -eq 0 ];then
+				NEWPAGE=http://www.vodlocker.to/embed/movieStreams/?id=$ID
+				TYPE=hosterlisttv
+			else
+				season=`echo $TITLE | tr ' ' '\n' | tail -n1`
+				TMPTITLE=`echo $TITLE | tr ' ' '+'`
+				NEWPAGE="http://www.vodlocker.to/embed?id=$ID&t=$TMPTITLE&season=$season&episode=1&referrer=link&server=1"
+				TYPE=episode
+			fi
 			PIC=$(echo $ROUND | sed -nr 's/.*"img_link":"([^"]+)".*/\1/p' | sed 's/\\//g')
 	
 			if [ -z "$PIC" ]; then
@@ -424,6 +432,31 @@ hosterlist()
 	echo "$TMP/$FILENAME.list"
 }
 
+episode()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin $PAGE -o $TMP/cache.$FILENAME.1
+		MAXEPISODE=`cat $TMP/cache.$FILENAME.1 | grep Episode | sed -nr "s/.*'>([^>]+)<.*/\1/p"` 
+		season=`echo $PAGE | sed -nr "s/.*season=([^=]+)&.*/\1/p"` 
+		episode=`echo $PAGE | sed -nr "s/.*episode=([^=]+)&.*/\1/p"` 
+		referrer=`echo $PAGE | sed -nr "s/.*referrer=([^=]+)&.*/\1/p"` 
+		server=`echo $PAGE | sed -nr "s/.*server=([^=]+).*/\1/p"` 
+
+		TMPURL=$PAGE
+
+		tags=""
+		i=1
+		until [ "$i" -gt "$MAXEPISODE" ]
+		do
+		TMPURL=`echo $TMPURL | sed -e "s/&season=.*//" -e "s/&episode=.*//" -e "s/&referrer=.*//"`
+		echo "Season $season Episode $i#$SRC $SRC hosterlist '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=$server' 1#http://atemio.dyndns.tv/mediathek/menu/$i.jpg#$i.jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+		i=`expr $i + 1` 
+		done
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
+	echo "$TMP/$FILENAME.list"
+}
+
 hoster()
 {
 	STREAMURL="$PAGE"
@@ -441,4 +474,5 @@ case $INPUT in
 	kino) $INPUT;;
 	genre) $INPUT;;
 	year) $INPUT;;
+	episode) $INPUT;;
 esac
