@@ -249,7 +249,7 @@ searchtv()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC hosterlisttv $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
+				LINE="$TITLE#$SRC $SRC $TYPE $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
 	
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
