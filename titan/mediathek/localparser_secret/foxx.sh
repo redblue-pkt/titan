@@ -291,7 +291,7 @@ episode()
 			fi
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$NUM" ];then
-				NUM=`echo $NUM | cut -d "-" -f2`
+				NUM=`echo $NUM | cut -d "-" -f2 | sed -e 's/ //g'`
 				TITLE="$NUM - $TITLE"
 			fi
 
@@ -306,8 +306,9 @@ episode()
 	#exit
 
 			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
-				PIC=`echo $TITLE | tr [A-Z] [a-z]`
-				LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#$PIC#foxx.jpg#$NAME#0"
+#				LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#$PIC#foxx.jpg#$NAME#0"
+				LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/s"$CURPAGE"e"$NUM".jpg#s"$CURPAGE"e"$NUM".jpg#$NAME#0"
+
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 		done 3<$TMP/cache.$FILENAME.2
