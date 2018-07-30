@@ -11,11 +11,12 @@ INPUT=$2
 CURPAGE=$3
 MAXPAGE=$4
 PAGE=$5
+PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-FILENAME=`echo $PAGE | tr '/' '.'`
-FILENAME=`echo $FILENAME | tr '&' '.'`
+FILENAME="$PARSER $INPUT $CURPAGE $MAXPAGE $PAGE"
+FILENAME=`echo $FILENAME | tr '+' '.' | sed 's/https://' | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
 
-if [ -z "$PAGE" ]; then
+if [ -z "$CURPAGE" ]; then
 	FILENAME=none
 fi
 
@@ -43,9 +44,9 @@ init()
 
 mainmenu()
 {
-	echo "Random Movie#$SRC $SRC new 0 0 '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	#echo "Serien#$SRC $SRC new 0 0 '?get=tv'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-        echo "Search#$SRC $SRC search 1 0 '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
+	echo "Random Movie#$SRC $SRC new 0 0 '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$FILENAME.list
+	#echo "Serien#$SRC $SRC new 0 0 '?get=tv'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$FILENAME.list
+        echo "Search#$SRC $SRC search 1 0 '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$FILENAME.list
 
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
@@ -57,24 +58,27 @@ mainmenu()
 		rm $TMP/$PARSER.page.list
 	fi
 
-	echo "$TMP/$PARSER.$INPUT.list"
+	echo "$TMP/$FILENAME.list"
 }
 
 new()
 {
-	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
-#		$curlbin $URL/$PAGE -o $TMP/cache.$PARSER.$INPUT.1
+	if [ ! -e "$TMP/$FILENAME.list" ] ; then
+#		$curlbin $URL/$PAGE -o $TMP/cache.$FILENAME.1
 
-#		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
-		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$PARSER.$INPUT.1
+#		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$FILENAME.1
 
-		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<div class/\n<div class/g' | sed 's/<a href="/\n<a href="/g' | grep ^'<a href="' | grep alt= | grep -v .gif > /$TMP/cache.$PARSER.$INPUT.2
+		cat $TMP/cache.$FILENAME.1 | sed 's/<div class/\n<div class/g' | sed 's/<a href="/\n<a href="/g' | grep ^'<a href="' | grep alt= | grep -v .gif > /$TMP/cache.$FILENAME.2
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | sed 's/alt=/\nalt=/' | grep ^"alt=" | cut -d '"' -f2 | sed 's/#/%/'`
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/&%8211;/-/g' -e "s/&%8217;/'/g"`
 			PIC=`echo $ROUND | sed 's!data-original=!\nsrc=!' | grep ^"src=" | cut -d '"' -f2`
 			NEWPAGE=`echo $ROUND | sed 's/<a href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
 
+			if [ `echo $PIC | grep ^// | wc -l` -eq 1 ];then
+				PIC=https:$PIC
+			fi
 			if [ `echo $NEWPAGE | grep ^// | wc -l` -eq 1 ];then
 				NEWPAGE=https:$NEWPAGE
 			fi
@@ -94,46 +98,54 @@ new()
 #
 #exit
 			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-				if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
-					if [ ! -e $TMP/$PARSER.$INPUT.list ];then
-						touch $TMP/$PARSER.$INPUT.list
+				if [ `cat $TMP/$FILENAME.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
+					if [ ! -e $TMP/$FILENAME.list ];then
+						touch $TMP/$FILENAME.list
 					fi
 # obi
 					LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
 #					LINE="$TITLE#$SRC $SRC play $NEWPAGE#$PIC#$TMPPIC#$NAME#111"
-					echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+					echo "$LINE" >> $TMP/$FILENAME.list
 				fi
 			fi
-		done 3<$TMP/cache.$PARSER.$INPUT.2
-		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+		done 3<$TMP/cache.$FILENAME.2
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 
-	echo "$TMP/$PARSER.$INPUT.list"
+	echo "$TMP/$FILENAME.list"
 }
 
 search()
 {
-	if [ ! -e "$TMP/$PARSER.$INPUT.$CURPAGE.list" ] ; then
+	if [ ! -e "$TMP/$FILENAME.list" ] ; then
 		if [ "$CURPAGE" -eq "1" ] ; then
 			NEWPAGE=$PAGE
 		else
 			NEWPAGE=`echo $PAGE | sed "s/@PAGE@/$CURPAGE/g"`
 		fi
-#		$curlbin $URL/$NEWPAGE -o $TMP/cache.$PARSER.$INPUT.1
+#		$curlbin $URL/$NEWPAGE -o $TMP/cache.$FILENAME.1
 
-#		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
-		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$PARSER.$INPUT.1
+#		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$FILENAME.1
 
-		cat $TMP/cache.$PARSER.$INPUT.1 | tr '\n' ' ' | sed -e 's/<a href=/\n<a href=/g' -e 's/Film/\nFilm/g' | grep '^<a href=' | grep '<img src=' > $TMP/cache.$PARSER.$INPUT.1a
-		cat $TMP/cache.$PARSER.$INPUT.1a | sed '/Stream in HD/d' > $TMP/cache.$PARSER.$INPUT.2
+		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed -e 's/<a href=/\n<a href=/g' -e 's/Film/\nFilm/g' | grep '^<a href=' | grep '<img src=' > $TMP/cache.$FILENAME.1a
+		cat $TMP/cache.$FILENAME.1a | sed '/Stream in HD/d' > $TMP/cache.$FILENAME.2
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | sed 's/alt=/\nalt=/' | grep ^"alt=" | cut -d '"' -f2 | sed 's/#/%/'`
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/&%8211;/-/g' -e "s/&%8217;/'/g"`
 			PIC=`echo $ROUND | sed 's/img src/\nsrc=/' | grep ^"src=" | cut -d '"' -f2`
 			NEWPAGE=`echo $ROUND | sed 's/<a href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
-
+			if [ `echo $PIC | grep ^// | wc -l` -eq 1 ];then
+				PIC=https:$PIC
+			fi
 			if [ `echo $NEWPAGE | grep ^// | wc -l` -eq 1 ];then
 				NEWPAGE=https:$NEWPAGE
+			fi
+
+			if [ `echo $NEWPAGE | grep "/serie/" | wc -l` -eq 1 ];then
+				TYPE=season
+			else
+				TYPE=hosterlist
 			fi
 
 			if [ -z  "$PIC" ]; then  
@@ -152,111 +164,188 @@ search()
 #
 #exit
 			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-				if [ `cat $TMP/$PARSER.$INPUT.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
-					if [ ! -e $TMP/$PARSER.$INPUT.$CURPAGE.list ];then
-						touch $TMP/$PARSER.$INPUT.$CURPAGE.list
+				if [ `cat $TMP/$FILENAME.list | grep ^"$NEWPAGE" | wc -l` -eq 0 ];then
+					if [ ! -e $TMP/$FILENAME.list ];then
+						touch $TMP/$FILENAME.list
 					fi
 # obi
-					LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
+					LINE="$TITLE#$SRC $SRC $TYPE 0 0 $NEWPAGE#$PIC#$TMPPIC#$NAME#0"
 #					LINE="$TITLE#$SRC $SRC play 0 0 $NEWPAGE#$PIC#$TMPPIC#$NAME#111"
-					echo "$LINE" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
+					echo "$LINE" >> $TMP/$FILENAME.list
 				fi
 			fi
-		done 3<$TMP/cache.$PARSER.$INPUT.2
+		done 3<$TMP/cache.$FILENAME.2
 		if [ "$CURPAGE" -eq "1" ] ; then
 			PAGE="page/@PAGE@$PAGE"
-			MAXPAGE=`cat $TMP/cache.$PARSER.$INPUT.1 | sed '/<div class="pagination/!d;s/^.*Seite 1 von //;s/<\/span>.*$//'`
+			MAXPAGE=`cat $TMP/cache.$FILENAME.1 | sed '/<div class="pagination/!d;s/^.*Seite 1 von //;s/<\/span>.*$//'`
 		fi
 		if [ "$CURPAGE" -lt "$MAXPAGE" ] ; then
 			NEWPAGE=`expr $CURPAGE + 1`
-			echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
-                fi
+			echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$FILENAME.list
+        fi
 
-		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
-	if [ -e "$TMP/$PARSER.hosterlist.list" ] ; then
-		rm $TMP/$PARSER.hosterlist.list
-	fi
-
-	echo "$TMP/$PARSER.$INPUT.$CURPAGE.list"
+#	if [ -e "$TMP/$PARSER.hosterlist.list" ] ; then
+#		rm $TMP/$PARSER.hosterlist.list
+#	fi
+	echo "$TMP/$FILENAME.list"
 }
+
+#/tmp/localparser/foxx.sh /tmp/localparser/foxx.sh hosterlist 0 0 https://foxx.to/film/72-stunden-next-three-days-2010-23914-Stream
 
 hosterlist()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.list
+	if [ -e "$TMP/$FILENAME.list" ] ; then
+		rm $TMP/$FILENAME.list
 	fi
-#	$curlbin $PAGE -o $TMP/cache.$PARSER.$INPUT.1
-	$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$PARSER.$INPUT.1
+#	$curlbin $PAGE -o $TMP/cache.$FILENAME.1
+	$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$FILENAME.1
 
-	cat $TMP/cache.$PARSER.$INPUT.1 | sed 's/<iframe src=/\n<iframe src=/g' | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$PARSER.$INPUT.2
-	TEMP=$(cat $TMP/cache.$PARSER.$INPUT.2)
+	cat $TMP/cache.$FILENAME.1 | sed 's/<iframe src=/\n<iframe src=/g' | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$FILENAME.2
+	TEMP=$(cat $TMP/cache.$FILENAME.2)
 
 	if [ `echo $TEMP | grep ^// | wc -l` -eq 1 ];then
 		TEMP=https:$TEMP
 	fi
 
-#	$curlbin $TEMP -o $TMP/cache.$PARSER.$INPUT.3
-	$BIN /tmp/localhoster/cloudflare.py "$TEMP" > $TMP/cache.$PARSER.$INPUT.3
-	cat $TMP/cache.$PARSER.$INPUT.3 | grep -A 10 "var decodeABC" >$TMP/cache.$PARSER.$INPUT.4
-	echo "print(decodeABC(jbdaskgs));" >> $TMP/cache.$PARSER.$INPUT.4
-	$DUKBIN $TMP/cache.$PARSER.$INPUT.4 > $TMP/cache.$PARSER.$INPUT.5
+#	$curlbin $TEMP -o $TMP/cache.$FILENAME.3
+	$BIN /tmp/localhoster/cloudflare.py "$TEMP" > $TMP/cache.$FILENAME.3
+	cat $TMP/cache.$FILENAME.3 | grep -A 10 "var decodeABC" >$TMP/cache.$FILENAME.4
+	echo "print(decodeABC(jbdaskgs));" >> $TMP/cache.$FILENAME.4
+	$DUKBIN $TMP/cache.$FILENAME.4 > $TMP/cache.$FILENAME.5
+
+#exit
 
 #[{"file":"https://lh3.googleusercontent.com/_KqlWWPoaC4gfQ0z_z9bK1y99QsnvN2eTSBz32Kd78Y7xLO_KoXveMe7TkimM0wpJl56HNTY=m18","label":"360p","type":"mp4"},{"file":"https://lh3.googleusercontent.com/_KqlWWPoaC4gfQ0z_z9bK1y99QsnvN2eTSBz32Kd78Y7xLO_KoXveMe7TkimM0wpJl56HNTY=m22","label":"720p","type":"mp4"}]
 #{"error":"status=fail&hl=uk&allow_embed=0&ps=docs&partnerid=30&errorcode=100&reason=Ð¦Ðµ+Ð²ÑÐ´ÐµÐ¾+Ð½Ðµ+ÑÑÐ½ÑÑ.&timestamp=1532793394463"}
 	errorcode=`cat /tmp/localcache/cache.foxx.hosterlist.5 | sed -nr 's/.*errorcode=([^=]+)&.*/\1/p'`
 
-	cat $TMP/cache.$PARSER.$INPUT.5 | grep -o "http[^ ]*"| sed -e 's!{! !g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' >$TMP/cache.$PARSER.$INPUT.6
-	echo >> $TMP/cache.$PARSER.$INPUT.6
+	cat $TMP/cache.$FILENAME.5 | grep -o "http[^ ]*"| sed -e 's!{! !g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' >$TMP/cache.$FILENAME.6
+	echo >> $TMP/cache.$FILENAME.6
 	while read -u 3 ROUND; do
 		NEWPAGE=$(echo $ROUND | grep -o "http[^ ]*" | cut -d "," -f1)
 		TITLE=$(echo $ROUND | grep -o "label[^ ]*" | cut -d "," -f1 | sed -e 's!label:!!g' -e 's!"!!g')
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 			PIC=`echo $TITLE | tr [A-Z] [a-z]`
 			LINE="Http Stream ($TITLE)#$NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/foxx.jpg#foxx.jpg#$NAME#2"
-			echo "$LINE" >> $TMP/$PARSER.$INPUT.list
+			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
-	done 3<$TMP/cache.$PARSER.$INPUT.6
-	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	done 3<$TMP/cache.$FILENAME.6
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 
 	if [ ! -z "$errorcode" ];then
 		ERRORMSG="Foxx Website error, this video file cannot be played. (Error Code: $errorcode)"
 		LINE="$ERRORMSG#$NEWPAGE#$PIC#kinox_$piccount.jpg#Foxx#0"
-		echo "$LINE" > $TMP/$PARSER.$INPUT.list
+		echo "$LINE" > $TMP/$FILENAME.list
 	fi
-	echo $TMP/$PARSER.$INPUT.list
+	echo $TMP/$FILENAME.list
 
 }
 
+season()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+
+#		$curlbin $PAGE -o $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$FILENAME.1
+		seasons=`cat $TMP/cache.$FILENAME.1 | sed -nr 's/.*class="se-t ">([^>]+)<.*/\1/p'`
+
+		tags=""
+		i=1
+		if [ ! -z "$i" ] && [ ! -z "$seasons" ];then
+			until [ "$i" -gt "$seasons" ]
+			do
+			TMPURL=`echo $TMPURL | sed -e "s/&season=.*//" -e "s/&episode=.*//" -e "s/&referrer=.*//"`
+			echo "Season $i#$SRC $SRC episode $i 0 '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/s"$i".jpg#s"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+			i=`expr $i + 1` 
+			done
+		fi
+
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
+	echo $TMP/$FILENAME.list
+}
+
+episode()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin $PAGE -o $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$FILENAME.1
+		cat $TMP/cache.$FILENAME.1 | sed 's/<span class="se-t/\n<span class="se-t/g' | grep ^'<span class="se-t' | grep ">$CURPAGE</span><span class=" | sed 's/<li><div class/\nfound/g' | sed -e '/^ *$/d' > $TMP/cache.$FILENAME.2
+
+		while read -u 3 ROUND; do
+			#echo ROUND $ROUND
+			#found="imagen"><a href="//foxx.to/episode/game-of-thrones-7x1"><img src="//foxx.to/wp-content/uploads/2017/09/3SB4PUzZAnY6HnZbVbktIZoopGs-300x170.jpg"></a></div><div class="numerando">7 - 1</div><div class="episodiotitle"><a href="//foxx.to/episode/game-of-thrones-7x1">Drachenstein</a><span class="date">Jul. 16, 2017</span></div></li>
+			NEWPAGE=$(echo $ROUND | sed -nr 's/.*<a href="([^"]+)".*/\1/p')
+			PIC=$(echo $ROUND | sed -nr 's/.*<img src="([^"]+)".*/\1/p')
+			EXTRA=$(echo $ROUND | sed -nr 's/.*episodiotitle">.*">([^>.*].*)<\/span>.*/\1/p')
+			TITLE=$(echo $ROUND | sed -nr 's/.*episodiotitle"><a href.*">([^>].*)<\/a><span.*/\1/p')
+			NUM=$(echo $ROUND | sed -nr 's/.*numerando">([^>]+)<\/div>.*/\1/p')
+
+			if [ `echo $PIC | grep ^// | wc -l` -eq 1 ];then
+				PIC=https:$PIC
+			fi
+			if [ `echo $NEWPAGE | grep ^// | wc -l` -eq 1 ];then
+				NEWPAGE=https:$NEWPAGE
+			fi
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$NUM" ];then
+				NUM=`echo $NUM | cut -d "-" -f2`
+				TITLE="$NUM - $TITLE"
+			fi
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
+				TITLE="$TITLE ($EXTRA)"
+			fi
+	#echo NEWPAGE $NEWPAGE
+	#echo NUM $NUM
+	#echo TITLE $TITLE
+	#echo EXTRA $EXTRA
+	#echo PIC $PIC
+	#exit
+
+			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
+				PIC=`echo $TITLE | tr [A-Z] [a-z]`
+				LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#$PIC#foxx.jpg#$NAME#0"
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+		done 3<$TMP/cache.$FILENAME.2
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
+	echo $TMP/$FILENAME.list
+}
+
+
 hoster()
 {
-	if [ ! -e "$TMP/$PARSER.$INPUT.list" ] ; then
-#		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
-		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1
-		echo "curl hoster " $curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$PARSER.$INPUT.1
-		cat $TMP/cache.$PARSER.$INPUT.1 | sed 's!url="http://dref.pw/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g' > $TMP/$PARSER.$INPUT.list
-		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	if [ ! -e "$TMP/$FILENAME.list" ] ; then
+#		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$FILENAME.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
+		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$FILENAME.1
+		echo "curl hoster " $curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$FILENAME.1
+		cat $TMP/cache.$FILENAME.1 | sed 's!url="http://dref.pw/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g' > $TMP/$FILENAME.list
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
-	cat $TMP/$PARSER.$INPUT.list
+	cat $TMP/$FILENAME.list
 }
 
 #obi
 play()
 {
-	if [ -e "$TMP/$PARSER.$INPUT.list" ] ; then
-		rm $TMP/$PARSER.$INPUT.list
+	if [ -e "$TMP/$FILENAME.list" ] ; then
+		rm $TMP/$FILENAME.list
 	fi
 
-#	$curlbin $PAGE -o $TMP/cache.$PARSER.$INPUT.1
-	$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$PARSER.$INPUT.1
+#	$curlbin $PAGE -o $TMP/cache.$FILENAME.1
+	$BIN /tmp/localhoster/cloudflare.py "$PAGE" > $TMP/cache.$FILENAME.1
 
-	cat $TMP/cache.$PARSER.$INPUT.1 | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$PARSER.$INPUT.2
-	TEMP=$(cat $TMP/cache.$PARSER.$INPUT.2)
-	$curlbin $TEMP -o $TMP/cache.$PARSER.$INPUT.3
-	cat $TMP/cache.$PARSER.$INPUT.3 | grep -E "sources:*" >$TMP/cache.$PARSER.$INPUT.4
-	cat $TMP/cache.$PARSER.$INPUT.4 | grep -o "http[^ ]*"| sed -e 's/,/ /g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' >$TMP/cache.$PARSER.$INPUT.5
+	cat $TMP/cache.$FILENAME.1 | grep -E ^"<iframe src=" | sed -e 's/<iframe src\=//g' | cut -d '"' -f2 >$TMP/cache.$FILENAME.2
+	TEMP=$(cat $TMP/cache.$FILENAME.2)
+	$curlbin $TEMP -o $TMP/cache.$FILENAME.3
+	cat $TMP/cache.$FILENAME.3 | grep -E "sources:*" >$TMP/cache.$FILENAME.4
+	cat $TMP/cache.$FILENAME.4 | grep -o "http[^ ]*"| sed -e 's/,/ /g' -e 's/}//g' -e 's/{//g' -e 's/\"//g' -e 's/file/\nfile/g' -e 's/file://g' -e 's/type:mp4//g' -e 's/default:true//g' -e 's/\]//g' >$TMP/cache.$FILENAME.5
 
-	cat $TMP/cache.$PARSER.$INPUT.5 > $TMP/$PARSER.playlist.list
+	cat $TMP/cache.$FILENAME.5 > $TMP/$PARSER.playlist.list
 
 	echo "$TMP/$PARSER.playlist.list"
 }
@@ -267,6 +356,8 @@ case $INPUT in
 	new) $INPUT;;
 	search) $INPUT;;
 	page) $INPUT;;
+	season) $INPUT;;
+	episode) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 	play) $INPUT;;
