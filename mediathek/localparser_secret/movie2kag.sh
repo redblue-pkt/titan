@@ -435,8 +435,8 @@ hosterlist()
 
 hosterlist3()
 {
-	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-rm "$TMP/$FILENAME.list"
+#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#	rm "$TMP/$FILENAME.list"
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin "$PAGE" -o $TMP/cache.$FILENAME.1
 		cat $TMP/cache.$FILENAME.1 | sed 's/<source src/\n<source src/g' | sed -nr "s/.*src='([^']+)'.*/\1/p" | grep getfile >$TMP/cache.$FILENAME.2
@@ -473,7 +473,7 @@ rm "$TMP/$FILENAME.list"
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 		done 3<$TMP/cache.$FILENAME.2
-#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
 }
@@ -499,16 +499,18 @@ episode()
 
 		tags=""
 		i=1
-		until [ "$i" -gt "$MAXEPISODE" ]
-		do
-		TMPURL=`echo $TMPURL | sed -e "s/&season=.*//" -e "s/&episode=.*//" -e "s/&referrer=.*//"`
-		for ROUND in $FOUNDEPISODE; do
-			if [ "$ROUND" == "$i" ];then
-				echo "Season $season Episode $i#$SRC $SRC hosterlist3 '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=$server' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
-			fi
-		done
-		i=`expr $i + 1` 
-		done
+		if [ ! -z "$i" ] && [ ! -z "$MAXEPISODE" ];then
+			until [ "$i" -gt "$MAXEPISODE" ]
+			do
+			TMPURL=`echo $TMPURL | sed -e "s/&season=.*//" -e "s/&episode=.*//" -e "s/&referrer=.*//"`
+			for ROUND in $FOUNDEPISODE; do
+				if [ "$ROUND" == "$i" ];then
+					echo "Season $season Episode $i#$SRC $SRC hosterlist3 '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=$server' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+				fi
+			done
+			i=`expr $i + 1` 
+			done
+		fi
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
