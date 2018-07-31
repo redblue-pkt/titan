@@ -290,6 +290,22 @@ class Net:
         rep = calc + len(domain)
         return format(rep, '.10f')
 
+    def createUrl(sUrl, oRequest):
+        parsed_url = urlparse(sUrl)
+        netloc = parsed_url.netloc[4:] if parsed_url.netloc.startswith('www.') else parsed_url.netloc
+        cfId = oRequest.getCookie('__cfduid', '.' + netloc)
+        cfClear = oRequest.getCookie('cf_clearance', '.' + netloc)
+
+        if cfId and cfClear and 'Cookie=Cookie:' not in sUrl:
+            delimiter = '&' if '|' in sUrl else '|'
+            sUrl = sUrl + delimiter + "Cookie=Cookie: __cfduid=" + cfId.value + "; cf_clearance=" + cfClear.value
+
+        if 'User-Agent=' not in sUrl:
+            delimiter = '&' if '|' in sUrl else '|'
+            sUrl += delimiter + "User-Agent=" + oRequest.getHeaderEntry('User-Agent')
+        print "sUrl", sUrl
+        return sUrl
+
     def _cloudflare_challenge(self, url, challenge, form_data={}, headers={}, compression=True):
         """
         Use _set_cloudflare to call this, not intended to be called directly.
