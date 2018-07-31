@@ -46,7 +46,7 @@ mainmenu()
 {
 	echo "Random Movie#$SRC $SRC new 0 0 '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$FILENAME.list
 	#echo "Serien#$SRC $SRC new 0 0 '?get=tv'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$FILENAME.list
-        echo "Search#$SRC $SRC search 1 0 '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$FILENAME.list
+    echo "Search#$SRC $SRC search 1 0 '?s=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$FILENAME.list
 
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
