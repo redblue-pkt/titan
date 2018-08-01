@@ -85,7 +85,7 @@ void LCD_start_lcd4linux()
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
 	{
 		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
-		startlcd = ostrcat(startlcd, " 99", 1, 0);
+		startlcd = ostrcat(startlcd, " 98", 1, 0);
 	}
 	else
 	{
