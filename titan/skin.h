@@ -4234,7 +4234,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				lcdskinfb = oledaddfb(1024, 600);
 			else if(node->name != NULL && ostrstr(node->name, "LCD_spf105") != NULL)
 				lcdskinfb = oledaddfb(1024, 600);
-			else if(node->name != NULL && ostrstr(node->name, "LCD_d320") != NULL)
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf_d320") != NULL)
 				lcdskinfb = oledaddfb(320, 240);
 			else
 				lcdskinfb = oledaddfb(320, 240);
