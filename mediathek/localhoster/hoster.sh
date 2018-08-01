@@ -10,7 +10,7 @@ PASS=$4
 INPUT=`echo $INPUT | sed 's!/Out/?s=!!g'`
 
 #FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PAGE $NEXT"
-FILENAME="`echo $INPUT | sed -e 's/\-\+/./g' | sed -e 's/\+\+/./g' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/:\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
+FILENAME="`echo $INPUT | sed 's/User-Agent.*//' | sed -e 's/|//g' | sed -e 's/\-\+/./g' | sed -e 's/\+\+/./g' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/:\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
 PICNAME=`echo $FILENAME`
 
 if [ -z "$FILENAME" ]; then
@@ -305,24 +305,63 @@ vodlocker()
 		rm -f $STREAMLIST > /dev/null 2>&1
 	fi
 
-	$curlbin2 -v "$INPUT" -o $TMP/cache.hoster.$hoster.1
-	cat $TMP/cache.hoster.$hoster.1 | sed 's/<source src=/\nfound=/g' | grep ^found= | cut -d"'" -f2 >$TMP/cache.hoster.$hoster.1.url1
-	URL=`cat $TMP/cache.hoster.$hoster.1.url1`
+PAGE=`echo $INPUT | cut -d"|" -f1`
+REFERER=`echo $INPUT | cut -d"|" -f2`
+
+#	$curlbin2 -v "$INPUT"
+#	$curlbin2 -v "$INPUT" --dump-header $TMP/cache.hoster.$hoster.1
+	$curlbin2 -v "$PAGE" --dump-header $TMP/cache.hoster.$hoster.1
+
+#	cat $TMP/cache.hoster.$hoster.1 | sed 's/<source src=/\nfound=/g' | grep ^found= | cut -d"'" -f2 >$TMP/cache.hoster.$hoster.1.url1
+#HTTP/1.1 302 Found
+#Date: Wed, 01 Aug 2018 02:25:19 GMT
+#Content-Type: text/html; charset=UTF-8
+#Transfer-Encoding: chunked
+#Connection: keep-alive
+#Set-Cookie: __cfduid=da0e5ea5088141733d5977427e20fc9f41533090319; expires=Thu, 01-Aug-19 02:25:19 GMT; path=/; domain=.vodlocker.to; HttpOnly
+#Location: http://cdn.movie4k.ag/files/tvepisodes/360p/1473892-e1.mp4
+#Server: cloudflare
+#CF-RAY: 4434da7e67c42d53-TXL	
+	cat $TMP/cache.hoster.$hoster.1 | grep ^Location: | cut -d" " -f2 >$TMP/cache.hoster.$hoster.1.url1
+	URL=`cat $TMP/cache.hoster.$hoster.1.url1`"|$REFERER"
+#echo URL $URL
+#exit
+
+#ffplay -debug 1 "http://www.vodlocker.to/embed/getfile?id=1473783&res=720p&cat=episode&e=9" -user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/67.0.3396.99 Chrome/67.0.3396.99 Safari/537.36" -headers "Referer: http://www.vodlocker.to/embed?id=1473783&t=Homeland+-+Staffel+1&season=1&referrer=link&server=1&episode=12
+#Accept: image/webp,image/apng,image/*,*/*;q=0.8" -cookies "__cfduid=d4eb57b56d3ccfb0beb2fec264c6dba601532854297; path=/; domain=.vodlocker.to;
+#_ga=GA1.2.1681698761.1532854306; path=/; domain=.vodlocker.to;
+#adcashufpv3=12824464407038797681725356984; path=/; domain=.vodlocker.to;
+#_gid=GA1.2.1896952283.1533084668; path=/; domain=.vodlocker.to;
+#_gat=1; path=/; domain=.vodlocker.to;
+#__cfduid=ddd1364dc6f44ff84cdc490a29f48a3de1533084405; path=/; domain=.movie2k.ag;"
+
+
+#ffplay -debug 1 "http://cdn.movie4k.ag/files/tvepisodes/720p/1473783-e9.mp4" -user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/67.0.3396.99 Chrome/67.0.3396.99 Safari/537.36" -headers "Referer: http://www.vodlocker.to/embed?id=1473783&t=Homeland+-+Staffel+1&season=1&referrer=link&server=1&episode=12" -headers "Referer: http://www.vodlocker.to/embed/getfile?id=1473783&res=720p&cat=episode&e=9" -cookies "__cfduid=d6b754c619bd66eaabb925ce4e2e999411532854306; path=/; domain=.movie4k.ag;
+#_ga=GA1.2.1298647097.1532878963; path=/; domain=.movie4k.ag;
+#approve=1; path=/; domain=.movie4k.ag;"
+
+#ffplay -debug 1 "http://cdn.movie4k.ag/files/tvepisodes/720p/1473783-e9.mp4" -user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/67.0.3396.99 Chrome/67.0.3396.99 Safari/537.36" -headers "Referer: http://www.vodlocker.to/embed?id=1473783&t=Homeland+-+Staffel+1&season=1&referrer=link&server=1&episode=12" -headers "Referer: http://www.vodlocker.to/embed/getfile?id=1473783&res=720p&cat=episode&e=9" -cookies "approve=1; path=/; domain=.movie4k.ag;"
+
+	CURTIME=`date +%s`
+	if [ `cat /mnt/network/cookies | grep .movie4k.ag | grep approve | wc -l` -eq 0 ];then
+		echo ".movie4k.ag     TRUE    /       FALSE   $CURTIME      approve         1" >> /mnt/network/cookies
+	fi
 
 	if [ ! -z "$URL" ];then
-#		echo "$URL" >> $STREAMLIST
-
-		REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'` 
-		echo "$URL|User-Agent=$USERAGENT&Referer=$REFERER" >> $STREAMLIST
+#		echo "$URL"
+		echo "$URL" | tr -d '\n' | tr -d '\r' >> $STREAMLIST
 #		echo "$URL|User-Agent=$USERAGENT" >> $STREAMLIST
+#		echo "$URL|$REFERER" | tr -d '\n' >> $STREAMLIST
 
 		sed 's/#HttpOnly_//g' -i /mnt/network/cookies
+		sed 's/.movie2k.ag/.movie4k.ag/g' -i /mnt/network/cookies
 
 	fi
 
 	URL=$STREAMLIST
 
 	echo "$URL"
+#exit
 }
 
 aliezold() 
