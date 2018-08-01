@@ -233,7 +233,7 @@ searchtv()
 			else
 				season=`echo $TITLE | tr ' ' '\n' | tail -n1`
 				TMPTITLE=`echo $TITLE | tr ' ' '+'`
-				NEWPAGE="http://www.vodlocker.to/embed?id=$ID&t=$TMPTITLE&season=$season&episode=1&referrer=link&server=1"
+				NEWPAGE="http://www.vodlocker.to/embed?id=$ID&t=$TMPTITLE&season=$season&episode=1&referrer=link&server=2"
 				TYPE=episode
 			fi
 			PIC=$(echo $ROUND | sed -nr 's/.*"img_link":"([^"]+)".*/\1/p' | sed 's/\\//g')
@@ -343,11 +343,59 @@ kino()
 
 hosterlist()
 {
-#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+rm  $TMP/cache.$FILENAME.*
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin "$PAGE" -o $TMP/cache.$FILENAME.1
-		cat $TMP/cache.$FILENAME.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.2
+#		$curlbin "$PAGE&server=1" -o $TMP/cache.$FILENAME.1
 
+#		cat $TMP/cache.$FILENAME.1 | sed 's/<source src/\n<source src/g' | sed -nr "s/.*src='([^']+)'.*/\1/p" | grep getfile >$TMP/cache.$FILENAME.0
+#		while read -u 3 ROUND; do
+#			NEWPAGE="$ROUND"
+#			TITLE=`echo $ROUND | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'`
+#			EXTRA=`echo $ROUND | sed -nr "s/.*res=([^=]+)&.*/\1/p"`
+#			PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+##echo NEWPAGE $NEWPAGE
+#			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
+#				TITLE="$TITLE ($EXTRA)"
+#			fi
+#			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+#				REFERER=`echo "$PAGE" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+#				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE|User-Agent=$USERAGENT&Referer=$REFERER'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+#				echo "$LINE" >> $TMP/$FILENAME.list
+#			fi
+#		done 3<$TMP/cache.$FILENAME.0
+#	echo "$TMP/$FILENAME.list"
+#cat $TMP/$FILENAME.list
+#exit
+		$curlbin "$PAGE" -o $TMP/cache.$FILENAME.1
+#		cat $TMP/cache.$FILENAME.1 | grep "div style" | sed 's/<span class/\nfound/g' | grep ^found=  | sed -nr 's/.*href="([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.0
+		cat $TMP/cache.$FILENAME.1 | grep "div style" | sed 's/<span class/\nfound/g' | grep ^found= >$TMP/cache.$FILENAME.1a
+		while read -u 3 ROUND; do
+			NEWPAGE=`echo $ROUND | sed -nr 's/.*href="([^"]+)".*/\1/p'`
+			TITLE=`echo $ROUND | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'`
+			EXTRA=`echo $ROUND | sed 's!</a></span>!!' |tr '>' '\n' | tail -n1 | tr -d '\n' | tr -d '\r' | tr -d '\0'`
+			PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+			PICEXTRA=`echo $EXTRA | tr [A-Z] [a-z] | sed 's/ /./g'`
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
+				TITLE="$TITLE ($EXTRA)"
+			fi
+
+			if [ ! -z "$PIC" ] && [ ! -z "$PICEXTRA" ];then
+				PIC="$PIC"."$PICEXTRA"
+			fi
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				REFERER=`echo "$PAGE" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE|User-Agent=$USERAGENT&Referer=$REFERER'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+#				echo LINE "$LINE"
+
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+		done 3<$TMP/cache.$FILENAME.1a
+#echo $LINE
+#echo assi
+#exit
+		cat $TMP/cache.$FILENAME.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p' >$TMP/cache.$FILENAME.2
 		while read -u 3 ROUND; do
 			NEWPAGE="$ROUND"
 			TITLE=`echo $ROUND | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
@@ -355,27 +403,50 @@ hosterlist()
 
 #			<a class='play_container' href='http://www.vodlocker.to/embed?t=Die+Eisk%C3%B6nigin%3A+Olaf+taut+auf&y=2017&lang=de&referrer=link'>
 			cat $TMP/cache.$FILENAME.4 | grep play_container | sed -nr "s/.*href='([^']+)'.*/\1/p" >$TMP/cache.$FILENAME.4.url1
+
+#exit
 			TMPURL=`cat $TMP/cache.$FILENAME.4.url1`
-			if [ ! -z "$TMPURL" ];then
-				TITLE=`echo $TMPURL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
-				NEWPAGE=$TMPURL
-				if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
-					PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
-					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
-
-					echo "$LINE" >> $TMP/$FILENAME.list
-				fi
-			fi
-
+#old start
+#			if [ ! -z "$TMPURL" ];then
+#				TITLE=`echo $TMPURL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
+#				NEWPAGE=$TMPURL
+#				if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
+#					PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+##					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+#					server=1
+#					LINE="$TITLE#$SRC $SRC hosterlist3 '$NEWPAGE&server=$server'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#0"
+#
+#					echo "$LINE" >> $TMP/$FILENAME.list
+#				fi
+#			fi
+#old end
 			$curlbin "$TMPURL" -o $TMP/cache.$FILENAME.5
-#			$("#hostname").html("<a href='http://openload.co/embed/vq1HFMJ5vAo/detroit.SD-spectre.mkv' target='_blank' style='color:gold; text-decoration:underline;'>openload.co</a>");
-
-			cat $TMP/cache.$FILENAME.5 | grep "#hostname" | sed -nr "s/.*a href='([^']+)'.*/\1/p" | grep -v "+link+" >$TMP/cache.$FILENAME.5.url1
-			TMPURL=`cat $TMP/cache.$FILENAME.5.url1`
+#new start
+			TMPURL=`cat $TMP/cache.$FILENAME.5 | grep "div style" | sed 's/<span class/\nfound/g' | grep ^found=  | sed -nr 's/.*href="([^"]+)".*/\1/p' | grep server=1`
+			#cat /tmp/localcache/cache.movie2kag.hosterlist.http\:.www.movie2k.ag.avengers.grimm.time.wars.stream.1475848.html.5 | grep "div style" | sed 's/<span class/\nfound/g' | grep ^found=  | sed -nr 's/.*href="([^"]+)".*/\1/p' | grep server=1
 			if [ ! -z "$TMPURL" ];then
 				TITLE=`echo $TMPURL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'`
 				NEWPAGE=$TMPURL
+#echo NEWPAGE $NEWPAGE
+#exit
+				if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
+					PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+					REFERER=`echo "$PAGE" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE|User-Agent=$USERAGENT&Referer=$REFERER'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
 
+					echo "$LINE" >> $TMP/$FILENAME.list
+				fi
+
+			fi 		
+
+#new end
+#			$("#hostname").html("<a href='http://openload.co/embed/vq1HFMJ5vAo/detroit.SD-spectre.mkv' target='_blank' style='color:gold; text-decoration:underline;'>openload.co</a>");
+			cat $TMP/cache.$FILENAME.5 | grep "#hostname" | sed -nr "s/.*a href='([^']+)'.*/\1/p" | grep -v "+link+" >$TMP/cache.$FILENAME.5.url1
+			TMPURL=`cat $TMP/cache.$FILENAME.5.url1`
+
+			if [ ! -z "$TMPURL" ];then
+				TITLE=`echo $TMPURL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'`
+				NEWPAGE=$TMPURL
 				if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 					PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
 					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
@@ -460,7 +531,12 @@ episode()
 			TMPURL=`echo $TMPURL | sed -e "s/&season=.*//" -e "s/&episode=.*//" -e "s/&referrer=.*//"`
 			for ROUND in $FOUNDEPISODE; do
 				if [ "$ROUND" == "$i" ];then
-					echo "Season $season Episode $i#$SRC $SRC hosterlist3 '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=$server' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+					echo "Season $season Episode $i#$SRC $SRC hoster '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=$server' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#111" | sort -r >> $TMP/$FILENAME.list
+#					echo "Season $season Episode $i#$SRC $SRC hosterlist3 '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=$server' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+#					echo "Season $season Episode $i#$SRC $SRC hosterlist3 '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=10' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+#					echo "Season $season Episode $i#$SRC $SRC hosterlist '$TMPURL&season=$season&episode=$i&referrer=$referrer&server=alternate' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+#					echo "Season $season Episode $i#$SRC $SRC hosterlist '$TMPURL&season=$season&episode=$i&referrer=$referrer' 1#http://atemio.dyndns.tv/mediathek/menu/s"$season"e"$i".jpg#s"$season"e"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+
 				fi
 			done
 			i=`expr $i + 1` 
@@ -470,7 +546,6 @@ episode()
 	fi
 	echo "$TMP/$FILENAME.list"
 }
-
 
 hosterlist3()
 {
@@ -510,6 +585,50 @@ hosterlist3()
 			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
 				REFERER=`echo "$PAGE" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
 				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE|User-Agent=$USERAGENT&Referer=$REFERER'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+		done 3<$TMP/cache.$FILENAME.2
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
+	echo "$TMP/$FILENAME.list"
+}
+
+
+
+hosterlist4()
+{
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	rm "$TMP/$FILENAME.list"
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin "$PAGE" -o $TMP/cache.$FILENAME.1
+		cat $TMP/cache.$FILENAME.1 | sed 's/<source src/\n<source src/g' | sed -nr "s/.*src='([^']+)'.*/\1/p" | grep getfile >$TMP/cache.$FILENAME.2
+
+		while read -u 3 ROUND; do
+			NEWPAGE="$ROUND"
+			TITLE=`echo $ROUND | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'`
+			EXTRA=`echo $ROUND | sed -nr "s/.*res=([^=]+)&.*/\1/p"`
+			PIC=`echo $TITLE | tr [A-Z] [a-z] | sed 's/www.//' | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
+				TITLE="$TITLE ($EXTRA)"
+			fi
+
+#			$curlbin2 -v --referer "$PAGE" "$NEWPAGE" -o $TMP/cache.$FILENAME.3
+#			REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'` 
+
+#echo TITLE $TITLE
+#echo EXTRA $EXTRA
+#echo NEWPAGE $NEWPAGE
+
+#echo $TMP/cache.$FILENAME.3
+#exit
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+				REFERER=`echo "$PAGE" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+				if [ `echo $EXTRA | grep "Alternate Servers" | wc -l`-eq 1 ];then
+					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE|User-Agent=$USERAGENT&Referer=$REFERER'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+				else
+					LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+				fi
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 		done 3<$TMP/cache.$FILENAME.2
