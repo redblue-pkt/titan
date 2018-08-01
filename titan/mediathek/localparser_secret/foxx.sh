@@ -228,7 +228,9 @@ hosterlist()
 		TITLE=$(echo $ROUND | grep -o "label[^ ]*" | cut -d "," -f1 | sed -e 's!label:!!g' -e 's!"!!g')
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 			PIC=`echo $TITLE | tr [A-Z] [a-z]`
-			LINE="Http Stream ($TITLE)#$NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/foxx.jpg#foxx.jpg#$NAME#2"
+#ffplay -debug 1 "https://master.foxx.to/videoplayback?hash=df8cbe41-1fcd-468e-be40-90b2aeef6a9c&expireAt=1533097023189" -user-agent "Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0" -headers "cookie: cf_clearance=2ace7e2a04dc45592043701ae70fc07b06a4244d-1533078966-14400;"
+#			REFERER=`echo "$TEMP" | sed -e 's/=/%3D/g' -e 's/&/%26/g'` 
+			LINE="Http Stream ($TITLE)#$NEWPAGE|User-Agent=$USERAGENT#http://atemio.dyndns.tv/mediathek/menu/foxx.jpg#foxx.jpg#$NAME#2"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 	done 3<$TMP/cache.$FILENAME.6
@@ -324,7 +326,12 @@ hoster()
 #		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$FILENAME.1 -A 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.7.3000 Chrome/30.0.1599.101 Safari/537.36'
 		$curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$FILENAME.1
 		echo "curl hoster " $curlbin $URL/res/links -X POST --data "$PAGE" -o $TMP/cache.$FILENAME.1
-		cat $TMP/cache.$FILENAME.1 | sed 's!url="http://dref.pw/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g' > $TMP/$FILENAME.list
+#		cat $TMP/cache.$FILENAME.1 | sed 's!url="http://dref.pw/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g' > $TMP/$FILENAME.list
+
+#		REFERER=`echo "$PAGE" | sed -e 's/=/%3D/g' -e 's/&/%26/g'` 
+#		echo "$URL|User-Agent=$USERAGENT&Referer=$REFERER" >> $STREAMLIST
+		cat $TMP/cache.$FILENAME.1 | sed 's!url="http://dref.pw/?!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | sed 's!%3A!:!g' | sed 's!%2F!/!g'"|User-Agent=$USERAGENT&Referer=$REFERER" > $TMP/$FILENAME.list
+
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	cat $TMP/$FILENAME.list
