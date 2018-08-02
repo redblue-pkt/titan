@@ -98,7 +98,7 @@ void LCD_start_lcd4linux()
 	
 	if(LCD_Samsung1thread == NULL)
 		return;
-	while (LCD_Samsung1thread->aktion != STOP && (system("ps | grep -v grep | grep fbread") != 0 !! system("ps -a | grep -v grep | grep fbread") != 0)) {
+	while (LCD_Samsung1thread->aktion != STOP && (system("ps | grep -v grep | grep fbread") != 0 && system("ps -a | grep -v grep | grep fbread") != 0)) {
 		system(startlcd);
 		sleep(6);
 		count ++;
