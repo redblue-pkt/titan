@@ -85,13 +85,15 @@ void LCD_start_lcd4linux()
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
 	{
 		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
-		startlcd = ostrcat(startlcd, " 98", 1, 0);
+		startlcd = ostrcat(startlcd, " 98 ", 1, 0);
+		startlcd = ostrcat(startlcd, getconfig("lcd_samsung_ip", NULL), 1, 0);
 	}
 	else
 	{
 		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 2", 1, 0);
 	}
+	printf("cmd2: %s\n", startlcd);
 	
 	
 	if(LCD_Samsung1thread == NULL)
@@ -432,6 +434,7 @@ void LCD_Samsung1_thread()
 		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 2", 1, 0);
 	}
+	printf("cmd1: %s\n", startlcd);
 	
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0) 
