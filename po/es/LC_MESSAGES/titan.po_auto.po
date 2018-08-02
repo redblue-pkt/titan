@@ -3212,7 +3212,7 @@ msgstr ""
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: lcdsamsung.c:1219
+#: lcdsamsung.c:1222
 msgid "Dummy-320"
 msgstr ""
 
@@ -3387,7 +3387,7 @@ msgstr ""
 msgid "ERROR cant read res"
 msgstr "ERROR: No se puede leer la resolucion"
 
-#: lcdpearl1.c:49 lcdsamsung.c:106
+#: lcdpearl1.c:49 lcdsamsung.c:108
 msgid "ERROR cant start LCD driver"
 msgstr "ERROR: No se puede iniciar controlador LCD"
 
@@ -6331,7 +6331,7 @@ msgstr "Lista de Menus"
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
 #: infobar.h:823 infobar.h:1137 keyactions.h:205 kinox.h:101 kinox.h:358
 #: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62
-#: lcdpearl1.c:49 lcdsamsung.c:106 letwatch.h:29 letwatch.h:60 letwatch.h:66
+#: lcdpearl1.c:49 lcdsamsung.c:108 letwatch.h:29 letwatch.h:60 letwatch.h:66
 #: letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
@@ -6955,7 +6955,7 @@ msgstr "Ö"
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:699
 #: infobar.h:823 infobar.h:1137 info.h:27 keyactions.h:205 kinox.h:101
 #: kinox.h:358 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
-#: lcdpearl1.c:49 lcdsamsung.c:106 letwatch.h:29 letwatch.h:60 letwatch.h:66
+#: lcdpearl1.c:49 lcdsamsung.c:108 letwatch.h:29 letwatch.h:60 letwatch.h:66
 #: letwatch.h:72 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
 #: mc_audioplayer.h:797 mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1079
@@ -8745,39 +8745,39 @@ msgstr "SNR: "
 msgid "SORT"
 msgstr "especie"
 
-#: lcdsamsung.c:1216
+#: lcdsamsung.c:1219
 msgid "SPF-105P"
 msgstr ""
 
-#: lcdsamsung.c:1217
+#: lcdsamsung.c:1220
 msgid "SPF-107H"
 msgstr ""
 
-#: lcdsamsung.c:1209
+#: lcdsamsung.c:1212
 msgid "SPF-72H"
 msgstr ""
 
-#: lcdsamsung.c:1210
+#: lcdsamsung.c:1213
 msgid "SPF-75H"
 msgstr ""
 
-#: lcdsamsung.c:1211
+#: lcdsamsung.c:1214
 msgid "SPF-83H"
 msgstr ""
 
-#: lcdsamsung.c:1212
+#: lcdsamsung.c:1215
 msgid "SPF-85H"
 msgstr ""
 
-#: lcdsamsung.c:1213
+#: lcdsamsung.c:1216
 msgid "SPF-85P"
 msgstr ""
 
-#: lcdsamsung.c:1214
+#: lcdsamsung.c:1217
 msgid "SPF-87H"
 msgstr ""
 
-#: lcdsamsung.c:1215
+#: lcdsamsung.c:1218
 msgid "SPF-87H-old"
 msgstr ""
 
@@ -12755,8 +12755,8 @@ msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:452 lcdpearl1.c:507
-#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1223 lcdsamsung.c:1227
-#: lcdsamsung.c:1231
+#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1226 lcdsamsung.c:1230
+#: lcdsamsung.c:1234
 msgid "ja"
 msgstr "Si"
 
@@ -12963,8 +12963,8 @@ msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:451 lcdpearl1.c:506
-#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1222 lcdsamsung.c:1226
-#: lcdsamsung.c:1230
+#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1225 lcdsamsung.c:1229
+#: lcdsamsung.c:1233
 msgid "nein"
 msgstr "No"
 
@@ -14060,7 +14060,7 @@ msgstr ""
 msgid "thereafter on this Channel:"
 msgstr "Lo siguiente en este canal:"
 
-#: lcdsamsung.c:1218
+#: lcdsamsung.c:1221
 msgid "tiMote"
 msgstr ""
 
