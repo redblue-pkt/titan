@@ -487,7 +487,8 @@ kino()
 	echo "$TMP/$FILENAME.list"
 }
 
-hosterlist()
+
+hosterlistold()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 #		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
@@ -513,6 +514,74 @@ hosterlist()
 	echo "$TMP/$FILENAME.list"
 }
 
+hosterlist()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN
+				{
+					suche = 1
+				}
+				/^links\[/ \
+				{
+					if ( suche == 1 )
+					{
+						# extrahiere den newpage pfad
+						i = index($0, "href=\\\"") + 7
+				        j = index(substr($0, i), "\\") - 1
+				        newpage = substr($0, i, j)
+
+						# extrahiere den title pfad
+						i = index($0, "&nbsp;") + 6
+				        j = index(substr($0, i), "<") - 1
+				        title = substr($0, i, j)
+
+						i = index($0, "html\\\">") + 7
+				        j = index(substr($0, i), "<") - 1
+				        extra = substr($0, i, j)
+
+						if (title != "")
+						{
+							pic = tolower(title)
+							split(pic, a, ".")
+							title = title " (" extra ")"
+							if ( pic == "" )
+							{
+					  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+							}
+							else
+							{
+								pic = a[1]
+								if ( pic == "streamclou" )
+									pic = pic "d"
+							}
+							piccount += 1
+							# 25. in naechste zeile springen
+							# 26. \x27 = single quotes
+
+							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+						}
+						next
+					}
+				}
+				/<div class="cf"><\/div>/ \
+				{
+					if ( suche == 1 )
+					{
+						suche = 0
+					}
+					next
+				}
+
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+#	cat "$TMP/$FILENAME.list"
+}
 
 hoster()
 {
