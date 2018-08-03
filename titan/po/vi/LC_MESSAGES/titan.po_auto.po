@@ -66,10 +66,6 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr ""
 
-#: skin_default_oledskin.xml.h:1
-msgid "()="
-msgstr ""
-
 #: skin_default_skin.xml.h:625
 msgid "(Stop)"
 msgstr ""
@@ -2038,7 +2034,7 @@ msgstr ""
 #: mc_global.h:1079 mc_iptvplayer.h:374 mc_iptvplayer.h:485
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:765 mc_videoplayer.h:904
-#: play.h:1752
+#: play.h:1770
 msgid "Can't start playback !"
 msgstr "Không thể phát lại!"
 
@@ -2682,7 +2678,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "MẶC ĐỊNH"
 
-#: play.h:1671 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1689 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_keyskin.xml.h:27
 #: skin_default_skin.xml.h:144 skins_networkbrowser_skin.xml.h:6
 #: skins_stock_skin.xml.h:3 skins_weather_skin.xml.h:2
@@ -3232,7 +3228,7 @@ msgstr ""
 msgid "EJECT"
 msgstr ""
 
-#: adjust.h:70 httpdfunc.h:3905 play.h:1671 skin_default_skin.xml.h:184
+#: adjust.h:70 httpdfunc.h:3905 play.h:1689 skin_default_skin.xml.h:184
 #: webif_index.atemio5200.h:34 webif_index.atemio5200.h:90
 #: webif_index.atemio6200.h:34 webif_index.atemio6200.h:90
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
@@ -5996,11 +5992,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1988
+#: play.h:2006
 msgid "Marker autoseek is started"
 msgstr "Đã thiết lập nhà sản xuất"
 
-#: play.h:1999
+#: play.h:2017
 msgid "Marker autoseek is stopped"
 msgstr "Đã thiết lập nhà sản xuất"
 
@@ -6266,7 +6262,7 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:321 play.h:614
-#: play.h:1410 play.h:1447 play.h:1752 play.h:1988 play.h:1999 possetup.h:98
+#: play.h:1410 play.h:1447 play.h:1770 play.h:2006 play.h:2017 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
 #: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
@@ -6897,7 +6893,7 @@ msgstr "E"
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
 #: played.h:115 played.h:172 player.h:321 play.h:497 play.h:614 play.h:1389
 #: play.h:1395 play.h:1410 play.h:1411 play.h:1447 play.h:1448 play.h:1462
-#: play.h:1546 play.h:1752 play.h:1988 play.h:1999 plugins_dlna_skin.xml.h:7
+#: play.h:1546 play.h:1770 play.h:2006 play.h:2017 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -8615,7 +8611,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr "dò"
 
-#: dvdplay.h:29 play.h:1671 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1689 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "LỰA CHỌN"
 
@@ -8639,7 +8635,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1671
+#: play.h:1689
 msgid "SORT"
 msgstr "Sắp xếp"
 
