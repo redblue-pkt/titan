@@ -1627,7 +1627,8 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 
 	if(status.webplayfile != NULL)
 	{
-		startfile = status.webplayfile;
+//		startfile = status.webplayfile;
+		startfile = list_hoster_streams(status.webplayfile);
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
 	}
