@@ -17,6 +17,11 @@ char* hoster(char* url)
 	tmpstr = ostrcat(tmplink, NULL, 0, 0);
 	string_tolower(tmplink);
 
+	if(!file_exist("/tmp/localhoster"))
+		localparser_init("http://atemio.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+
+	drawscreen(load, 0, 0);
+
 	char* cmd = NULL;
 	cmd = ostrcat("/tmp/localhoster/hoster.sh get \"", tmpstr, 0, 0);
 	cmd = ostrcat(cmd, "\"", 1, 0);
