@@ -247,9 +247,9 @@ episode()
 							split(title, a, " ")
 							season = a[2]
 							episode = a[4]
-							print title "#" SRC " " SRC " episode \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
+							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
 
-#							print title "#" SRC " " SRC " episode \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+#							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 						}
 						next
 					}
@@ -342,6 +342,75 @@ list()
 #	cat "$TMP/$FILENAME.list"
 }
 
+hosterlist()
+{
+#rm $TMP/$FILENAME.list
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | tr -d '\n' | tr -d '\r' | sed 's/<li class="col-md-4 col-xs-12 col-sm-6/\n<li class="col-md-4 col-xs-12 col-sm-6/g' |  grep ^'<li class="col-md-4 col-xs-12 col-sm-6' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN
+				{
+					suche = 1
+				}
+				# next page init
+#				/<div><a href="\/redirect/ \
+				/<li class="col-md-4 col-xs-12 col-sm-6 episodeLink/ \
+				{
+					if ( suche == 1 )
+					{
+						# extrahiere den newpage pfad
+						i = index($0, "href=\"") + 6
+				        j = index(substr($0, i), "\"") - 1
+				        newpage = substr($0, i, j)
+
+						i = index($0, "data-link-target=\"") + 18
+				        j = index(substr($0, i), "\"") - 1
+				        newpage = substr($0, i, j)
+
+						# extrahiere den title pfad
+						i = index($0, "<h4>") + 4
+				        j = index(substr($0, i), "<") - 1
+				        title = substr($0, i, j)
+
+				        pic = tolower(title)
+
+						if (title != "")
+						{
+							if ( pic == "" )
+							{
+					  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+							}
+
+							piccount += 1
+							# 25. in naechste zeile springen
+							# 26. \x27 = single quotes
+							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+						}
+#						next
+					}
+				}
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+#	cat "$TMP/$FILENAME.list"
+}
+
+hoster()
+{
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+
+	$curlbin -H "X-Requested-With: XMLHttpRequest" -X POST --data "password=abc123456&email=Ither1981%40dayrep.com" "$URL/login"
+#	$curlbin2 -v https://s.to/redirect/1131416
+	$curlbin2 -v "$URL/$PAGE" --dump-header $TMP/cache.hoster.$hoster.1
+	cat $TMP/cache.hoster.$hoster.1 | grep ^Location: | cut -d" " -f2 >$TMP/cache.hoster.$hoster.1.url1
+	URL=`cat $TMP/cache.hoster.$hoster.1.url1`
+
+	echo $URL
+}
+
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
@@ -350,4 +419,6 @@ case $INPUT in
 	season) $INPUT;;
 	episode) $INPUT;;
 	list) $INPUT;;
+	hosterlist) $INPUT;;
+	hoster) $INPUT;;
 esac
