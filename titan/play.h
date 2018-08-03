@@ -1627,8 +1627,25 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 
 	if(status.webplayfile != NULL)
 	{
-//		startfile = status.webplayfile;
-		startfile = list_hoster_streams(status.webplayfile);
+		// stream over tithek enable start
+		printf("startfile: %s\n", status.webplayfile);
+		struct skin* tithekplugin = getplugin("TiTan Mediathek");
+		if(tithekplugin != NULL)
+		{
+			struct tithek* (*startplugin)(char*);
+
+			startplugin = dlsym(tithekplugin->pluginhandle, "list_hoster_streams");
+			if(startplugin != NULL)
+			{
+				startfile = (char*)startplugin(status.webplayfile);
+				printf("startfile changed: %s\n", startfile);
+			}
+		}
+		else
+			startfile = status.webplayfile;
+
+		// stream over tithek enable end
+
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
 	}
