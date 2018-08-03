@@ -549,7 +549,7 @@ hosterlist()
 							title = title " (" extra ")"
 							if ( pic == "" )
 							{
-					  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+					  			pic = "default"
 							}
 							else
 							{
