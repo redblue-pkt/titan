@@ -166,6 +166,7 @@ struct tithek
 	char* pic;
 	char* localname;
 	char* menutitle;
+	char* description;
 	int flag;
 	struct tithek* prev;
 	struct tithek* next;
@@ -182,6 +183,7 @@ void freetithekcontent(struct tithek* node)
 	node->pic = NULL;
 	node->localname = NULL;
 	node->menutitle = NULL;
+	node->description = NULL;
 	node->flag = 0;
 }
 
@@ -212,6 +214,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 					case 2: node->localname = tmpstr; break;
 					case 3: node->menutitle = tmpstr; break;
 					case 4: flag = tmpstr; break;
+					case 5: node->description = tmpstr; break;
 				}
 
 				ret++;
@@ -221,7 +224,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		}
 	}
 
-	if(ret != 5)
+	if(ret != 5 && ret != 6)
 	{
 		if(count > 0)
 		{
@@ -382,7 +385,7 @@ struct tithek* addtithek(char *line, int len, int count, struct tithek* last, in
 	return newnode;
 }
 
-struct tithek* createtithek(struct tithek* update, char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+struct tithek* createtithek(struct tithek* update, char* title, char* link, char* pic, char* localname, char* menutitle, char* description, int flag)
 {
 	int pay = 0;
 	struct tithek* tnode = NULL;
@@ -395,6 +398,7 @@ struct tithek* createtithek(struct tithek* update, char* title, char* link, char
 	pic = stringreplacechar(pic, '#', ' ');
 	localname = stringreplacechar(localname, '#', ' ');
 	menutitle = stringreplacechar(menutitle, '#', ' ');
+	description = stringreplacechar(description, '#', ' ');
 
 	tmpstr = ostrcat(tmpstr, title, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
@@ -407,6 +411,8 @@ struct tithek* createtithek(struct tithek* update, char* title, char* link, char
 	tmpstr = ostrcat(tmpstr, menutitle, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, description, 1, 0);
 
 	tmpstr = string_replace_all("\n", "", tmpstr, 1);
 	tmpstr = string_replace_all("\r", "", tmpstr, 1);
@@ -780,6 +786,113 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	return localfile;
 }
 
+
+int createtithekmenu(char* titheklink, struct skin* menu, struct skin* listbox)
+{
+	struct skin* tmp = NULL;
+	char* tithekfile = NULL;
+	char* tithekpic = NULL;
+	int localfile = 0;
+
+//	tithekfile = tithekdownload(titheklink);
+	if(!ostrncmp("http://", titheklink, 7))
+		tithekfile = tithekdownload(titheklink, NULL, HTTPAUTH, 0, 0);
+	else
+	{
+		tithekfile = ostrcat(titheklink, NULL, 0, 0);
+		localfile = 1;
+	}
+
+	delmarkedscreennodes(menu, 1);
+
+	freetithek();
+
+//	if(readtithek(tithekfile) != 0) return 1;
+	int linecount = readtithek(tithekfile);
+
+	struct tithek* titheknode = tithek;
+
+	while(titheknode != NULL)
+	{
+		tmp = addlistbox(menu, listbox, tmp, 1);
+		if(tmp != NULL)
+		{
+			tmp->type = MENU;
+			tmp->textposx = 80;
+			tmp->valign = MIDDLE;
+			changetext(tmp, titheknode->title);
+			tmp->height = 50;
+			tmp->hspace = 10;
+			tithekpic = tithekdownload(titheknode->pic, NULL, HTTPAUTH, 0, 0);
+			tmp->picwidth = 1;
+			tmp->picheight = 1;
+
+			changepic(tmp, tithekpic);
+			free(tithekpic); tithekpic = NULL;
+			tmp->handle = (char*)titheknode;
+		}
+		titheknode = titheknode->next;
+	}
+
+	if(localfile == 0)
+		unlink(tithekfile);
+
+	free(tithekfile); tithekfile = NULL;
+	return 0;
+}
+
+void screentithekmenu(char* titheklink, char* title, int first)
+{
+	int rcret = -1, oaktline = 1, oaktpage = -1;
+
+	struct skin* menu = getscreen("tithekmenu");
+	struct skin* listbox = getscreennode(menu, "listbox");
+	if(titheklink == NULL) return;
+
+	listbox->aktpage = -1;
+	listbox->aktline = 1;
+
+	if(createtithekmenu(titheklink, menu, listbox) != 0) return;
+	drawscreen(menu, 2, 0);
+	addscreenrc(menu, listbox);
+
+	while(1)
+	{
+		rcret = waitrc(menu, 0, 0);
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			if(listbox->select != NULL && listbox->select->handle != NULL)
+			{
+				oaktpage = listbox->aktpage;
+				oaktline = listbox->aktline;
+				clearscreen(menu);
+				char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+				if(((struct tithek*)listbox->select->handle)->flag == 1)
+					screentithekplay(tmpstr, title, first);
+				else
+					screentithekmenu(tmpstr, title, first);
+
+				free(tmpstr); tmpstr = NULL;
+				if(createtithekmenu(titheklink, menu, listbox) != 0) break;
+
+				listbox->aktpage = oaktpage;
+				listbox->aktline = oaktline;
+				drawscreen(menu, 0, 0);
+				addscreenrc(menu, listbox);
+			}
+		}
+	}
+
+	freetithek();
+	delmarkedscreennodes(menu, 1);
+	delownerrc(menu);
+	clearscreen(menu);
+}
+
+
 int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, struct skin* countlabel, char* title, int flag)
 {
 	int gridbr = 0, posx = 0, count = 0, sumcount = 0, count1 = 0, pagecount = 0, skip = 0;
@@ -1053,9 +1166,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 }
 
 //void removefav(char* title, char* link, char* pic, char* localname, char* menutitle, char* fullmenutitle, int flag)
-void removefav(char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+void removefav(char* title, char* link, char* pic, char* localname, char* menutitle, char* description, int flag)
 {
-
 debug(99, "removefav title: %s", title);
 debug(99, "removefav menutitle: %s", menutitle);
 
@@ -1074,6 +1186,8 @@ debug(99, "removefav menutitle: %s", menutitle);
 	input = ostrcat(input, menutitle, 1, 0);
 	input = ostrcat(input, "#", 1, 0);
 	input = ostrcat(input, oitoa(flag), 1, 1);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, description, 1, 0);
 
 	tmpstr = readfiletomem(getconfig("tithek_fav", NULL), 0);
 
@@ -1129,7 +1243,7 @@ debug(99, "removefav menutitle: %s", menutitle);
 }
 
 //void addfav(char* title, char* link, char* pic, char* localname, char* menutitle, char* fullmenutitle, int flag)
-void addfav(char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+void addfav(char* title, char* link, char* pic, char* localname, char* menutitle, char* description, int flag)
 {
 	int count = 0, i = 0;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *input = NULL;
@@ -1211,6 +1325,9 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	input = ostrcat(input, menutitle, 1, 0);
 	input = ostrcat(input, "#", 1, 0);
 	input = ostrcat(input, oitoa(flag), 1, 1);
+	input = ostrcat(input, "#", 1, 0);
+	input = ostrcat(input, description, 1, 0);
+
 	// tithek security
 	input = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", input, 1);
 
@@ -1253,7 +1370,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 }
 
 //void editfav(char* title, char* link, char* pic, char* localname, char* menutitle, char* fullmenutitle, int flag)
-void editfav(char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+void editfav(char* title, char* link, char* pic, char* localname, char* menutitle, char* description, int flag)
 {
 	int rcret = 0, type = 0;
 	struct skin* tithekedit = getscreen("tithekedit");
@@ -1264,6 +1381,7 @@ void editfav(char* title, char* link, char* pic, char* localname, char* menutitl
 	struct skin* skin_localname = getscreennode(tithekedit, "localname");
 	struct skin* skin_menutitle = getscreennode(tithekedit, "menutitle");
 	struct skin* skin_type = getscreennode(tithekedit, "type");
+	struct skin* skin_description = getscreennode(tithekedit, "description");
 
 	struct skin* tmp = NULL;
 	struct skin* load = getscreen("loading");
@@ -1274,6 +1392,7 @@ void editfav(char* title, char* link, char* pic, char* localname, char* menutitl
 	changeinput(skin_localname, localname);
 	changeinput(skin_menutitle, menutitle);
 	changeinput(skin_type, oitoa(type));
+	changeinput(skin_description, description);
 
 	addscreenrc(tithekedit, listbox);
 	drawscreen(tithekedit, 0, 0);
@@ -1292,7 +1411,7 @@ void editfav(char* title, char* link, char* pic, char* localname, char* menutitl
 		{
 			drawscreen(load, 0, 0);
 //			addfav(skin_title->ret, skin_link->ret, skin_pic->ret, skin_localname->ret, skin_menutitle->ret, fullmenutitle, atoi(skin_type->ret));
-			addfav(skin_title->ret, skin_link->ret, skin_pic->ret, skin_localname->ret, skin_menutitle->ret, atoi(skin_type->ret));
+			addfav(skin_title->ret, skin_link->ret, skin_pic->ret, skin_localname->ret, skin_menutitle->ret, skin_description->ret, atoi(skin_type->ret));
 			clearscreen(load);
 			break;
 		}
@@ -1302,7 +1421,7 @@ void editfav(char* title, char* link, char* pic, char* localname, char* menutitl
 	clearscreen(tithekedit);
 }
 
-int showinfo(struct skin* listbox, char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+int showinfo(struct skin* listbox, char* title, char* link, char* pic, char* localname, char* menutitle, char* description, int flag)
 {
 	int ret = 1;
 	char* tmpstr = NULL;
@@ -1317,6 +1436,9 @@ int showinfo(struct skin* listbox, char* title, char* link, char* pic, char* loc
 	tmpstr = ostrcat(tmpstr, menutitle, 1, 0);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(flag), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, description, 1, 0);
+
 	// tithek security
 //	tmpstr = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", tmpstr, 1);
 	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
@@ -1329,8 +1451,7 @@ int showinfo(struct skin* listbox, char* title, char* link, char* pic, char* loc
 	if(file_exist(savefile))
 	{
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
-		createtithek(tnode, tnode->title, savefile, tnode->pic, tnode->localname, 
-tnode->menutitle, tnode->flag);
+		createtithek(tnode, tnode->title, savefile, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 		ret = 0;
 	}
 
@@ -1568,7 +1689,7 @@ void backgrounddl(char* link, char* filename)
 void submenu(struct skin* listbox, struct skin* load, char* title)
 {
 	int flag = 0;
-	int debuglevel = getconfigint("debuglevel", NULL);
+//	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	drawscreen(load, 0, 0);
 	tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
@@ -1967,6 +2088,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 	free(tmpstr1); tmpstr1 = NULL;
 }
+
 void screentithekplay(char* titheklink, char* title, int first)
 {
 	int savevol = 0;
@@ -2214,7 +2336,7 @@ waitrcstart:
 						tmpstr1 = ostrcat(getconfig("tithek_fav", NULL), "_", 0, 0);
 						tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
 						if(textbox(_("Message"), _("Add this sub folder as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
-							addfav(search, tmpstr1, "http://imageshack.us/md/up/grd/mediathek/menu/default.jpg", tmpstr, title, check);
+							addfav(search, tmpstr1, "http://imageshack.us/md/up/grd/mediathek/menu/default.jpg", tmpstr, title, NULL, check);
 						free(tmpstr), tmpstr = NULL;
 						free(tmpstr1), tmpstr1 = NULL;
 					}
@@ -2402,7 +2524,7 @@ why ?
 						tmpstr1 = ostrcat(getconfig("tithek_fav", NULL), "_", 0, 0);
 						tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
 						if(textbox(_("Message"), _("Add this sub folder as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
-							addfav(search, tmpstr1, "http://imageshack.us/md/up/grd/mediathek/menu/default.jpg", tmpstr, title, check);
+							addfav(search, tmpstr1, "http://imageshack.us/md/up/grd/mediathek/menu/default.jpg", tmpstr, title, NULL, check);
 						free(tmpstr), tmpstr = NULL;
 						free(tmpstr1), tmpstr1 = NULL;
 					}
@@ -2762,7 +2884,7 @@ why ?
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-				if(showinfo(listbox, ((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag) == 0)
+				if(showinfo(listbox, ((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->description, ((struct tithek*)listbox->select->handle)->flag) == 0)
 					if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 			}
 
@@ -2774,7 +2896,7 @@ why ?
 			{
 				if(textbox(_("Message"), _("Remove this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
-					removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);
+					removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->description, ((struct tithek*)listbox->select->handle)->flag);
 //					removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, title, ((struct tithek*)listbox->select->handle)->flag);
 
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, 0);
@@ -2793,7 +2915,7 @@ why ?
 				if(textbox(_("Message"), _("Add this link as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
 //					addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, title, ((struct tithek*)listbox->select->handle)->flag);
-					addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, title, ((struct tithek*)listbox->select->handle)->flag);
+					addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, title, ((struct tithek*)listbox->select->handle)->description, ((struct tithek*)listbox->select->handle)->flag);
 				}
 			}
 		}
@@ -2806,7 +2928,7 @@ why ?
 				if(textbox(_("Message"), _("Edit this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
 //					editfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, title, ((struct tithek*)listbox->select->handle)->flag);
-					editfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);
+					editfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->description, ((struct tithek*)listbox->select->handle)->flag);
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, 0);
 					if(pagecount == 0) return;
 
