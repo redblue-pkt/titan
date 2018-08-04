@@ -55,7 +55,7 @@ int filmon_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 				menu = ostrcat("/tmp/tithek/filmon.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
-				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 				ret = 0;
 			}
 		}

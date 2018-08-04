@@ -878,7 +878,7 @@ int all_search_local(struct skin* grid, struct skin* listbox, struct skin* count
 				menu = ostrcat("/tmp/tithek/all.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
-				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 				ret = 0;
 			}
 		}
@@ -1422,7 +1422,7 @@ char* list_hoster_streams(char* input)
 char* localparser_hoster(char* link)
 {
 	debug(99, "link: %s", link);
-	int ret = 1;
+//	int ret = 1;
 	char* tmpstr = NULL, *streamurl = NULL;
 
 	tmpstr = command(link);
@@ -1483,7 +1483,7 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 			menu = ostrcat(filename, NULL, 0, 0);
 //			writesys(menu, tmpstr, 0);
 			struct tithek* tnode = (struct tithek*)listbox->select->handle;
-			createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+			createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 			ret = 0;
 		}
 

@@ -128,13 +128,14 @@ void start(void)
 	if(getconfig("tithek_kinox_localhoster", NULL) == NULL)
 		addconfigtmp("tithek_kinox_localhoster", "2");
 
-	if(getconfigint("tithek_kinox_pic", NULL) == NULL)
+	if(getconfig("tithek_kinox_pic", NULL) == NULL)
 		addconfigtmp("tithek_kinox_pic", "1");
 
 //	if(checkbox("WHITEBOX") == 1)
 //		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
 //	else
 //		screentithekplay("http://ks387398.kimsufi.com/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
+//		screentithekmenu("http://atemio.dyndns.tv/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
 		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
 
 	//reset markcolor  

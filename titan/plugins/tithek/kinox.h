@@ -224,7 +224,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
-				createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+				createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 				ret = 0;
 			}
 
@@ -292,7 +292,7 @@ int kinox_search_local(struct skin* grid, struct skin* listbox, struct skin* cou
 
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
-				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 				ret = 0;
 			}
 		}
@@ -611,7 +611,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		titheklog(debuglevel, "/tmp/kinox8_line", NULL, NULL, NULL, line);
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
-		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 		ret = 0;
 	}
 
@@ -968,7 +968,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		titheklog(debuglevel, "/tmp/kinox9_line", NULL, NULL, NULL, line);
 
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
-		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 		ret = 0;
 	}
 
@@ -1074,7 +1074,7 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 			
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
-				createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
+				createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->description, tnode->flag);
 				ret = 0;
 			}
 
