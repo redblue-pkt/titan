@@ -1725,7 +1725,8 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	}
 	else
 	{
-		for(unsigned int i=0; i<prop[0].u.st.len; i++)
+		unsigned int i = 0;
+		for(i=0; i<prop[0].u.st.len; i++)
 		{
 			if (prop[0].u.st.stat[i].scale == FE_SCALE_RELATIVE)
 				signal = prop[0].u.st.stat[i].uvalue;
