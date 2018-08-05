@@ -214,6 +214,9 @@
 #ifdef SH4NEW
 #define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
 #endif
+#ifdef SIMULATE
+#define CA_SET_DESCR_DATA _IOW('o', 137, struct ca_descr_data)
+#endif
 
 //Start Function Entry Point
 #define STARTFUNC
