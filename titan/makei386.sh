@@ -41,7 +41,16 @@ if [ "$HELP" = "1" ];then
 	sudo update-grub 
 fi
 
+SRCDIR=source.titan
 cd "$HOME"/flashimg/$SRCDIR/titan
+FRAMEBUFFER=y
 
-gcc -DSIMULATE -DI386 -DCAMSUPP -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-result -Wunused-variable -Wno-parentheses -Wno-maybe-uninitialized -I/usr/include/freetype2 -I "$HOME"/flashimg/$SRCDIR/libdreamdvd -I "$HOME" -c titan.c
-/bin/bash libtool --tag=CC --mode=link gcc -DSIMULATE -DI386 -DNOFB -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,/usr/lib -L/lib -L/usr/lib -L/usr/lib/i386-linux-gnu -o titan titan.o -lpthread -ldl -lpng -lfreetype -ljpeg -lz -lm
+if [ "$FRAMEBUFFER" == "y" ];then
+	# with framebuffer
+	gcc -DSIMULATE -DI386 -DCAMSUPP -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-result -Wunused-variable -Wno-parentheses -Wno-maybe-uninitialized -I/usr/include/freetype2 -I "$HOME"/flashimg/$SRCDIR/libdreamdvd -I "$HOME" -c titan.c
+	/bin/bash libtool --tag=CC --mode=link gcc -DSIMULATE -DI386 -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,/usr/lib -L/lib -L/usr/lib -L/usr/lib/i386-linux-gnu -o titan titan.o -lpthread -ldl -lpng -lfreetype -ljpeg -lz -lm
+else
+	# no framebuffer
+	gcc -DSIMULATE -DI386 -DNOFB -DCAMSUPP -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-result -Wunused-variable -Wno-parentheses -Wno-maybe-uninitialized -I/usr/include/freetype2 -I "$HOME"/flashimg/$SRCDIR/libdreamdvd -I "$HOME" -c titan.c
+	/bin/bash libtool --tag=CC --mode=link gcc -DSIMULATE -DI386 -DNOFB -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,/usr/lib -L/lib -L/usr/lib -L/usr/lib/i386-linux-gnu -o titan titan.o -lpthread -ldl -lpng -lfreetype -ljpeg -lz -lm
+fi

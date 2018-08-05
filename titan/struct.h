@@ -2186,6 +2186,27 @@ struct ca_descr_data {
 
 #endif
 
+#ifdef SIMULATE
+enum ca_descr_data_type {
+	CA_DATA_IV,
+	CA_DATA_KEY,
+};
+
+enum ca_descr_parity {
+	CA_PARITY_EVEN,
+	CA_PARITY_ODD,
+};
+
+struct ca_descr_data {
+	unsigned int index;
+	enum ca_descr_parity parity;
+	enum ca_descr_data_type data_type;
+	unsigned int length;
+	unsigned char *data;
+};
+
+#endif
+
 struct aes_xcbc_mac_ctx {
 	uint8_t K[3][16];
 	uint8_t IV[16];
