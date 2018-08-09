@@ -85,23 +85,27 @@ msgid "+/- 5 Min"
 msgstr "+/- 5 мин"
 
 #: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:1
-#: plugins_lcdsamsung_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:1
-#: skins_lcdsamsung_skin.xml.h:1
+#: plugins_lcdsamsung_skin.xml.h:1 plugins_wlandisplay_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:1 skins_lcdsamsung_skin.xml.h:1
+#: skins_wlandisplay_skin.xml.h:1
 msgid "---"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:7 plugins_lcdsamsung_skin.xml.h:10
-#: skins_lcdpearl1_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:10
+#: plugins_wlandisplay_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:7
+#: skins_lcdsamsung_skin.xml.h:10 skins_wlandisplay_skin.xml.h:8
 msgid "--- Land"
 msgstr "--- Язык"
 
 #: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:13
-#: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:13
+#: plugins_wlandisplay_skin.xml.h:9 skins_lcdpearl1_skin.xml.h:8
+#: skins_lcdsamsung_skin.xml.h:13 skins_wlandisplay_skin.xml.h:9
 msgid "--- Ort"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:9 plugins_lcdsamsung_skin.xml.h:14
-#: skins_lcdpearl1_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:14
+#: plugins_wlandisplay_skin.xml.h:10 skins_lcdpearl1_skin.xml.h:9
+#: skins_lcdsamsung_skin.xml.h:14 skins_wlandisplay_skin.xml.h:10
 msgid "--- PLZ"
 msgstr ""
 
@@ -227,7 +231,8 @@ msgid "0"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:2 plugins_lcdsamsung_skin.xml.h:2
-#: skins_lcdpearl1_skin.xml.h:2 skins_lcdsamsung_skin.xml.h:2
+#: plugins_wlandisplay_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
+#: skins_lcdsamsung_skin.xml.h:2 skins_wlandisplay_skin.xml.h:2
 msgid "0 C"
 msgstr ""
 
@@ -795,8 +800,8 @@ msgstr "Добавить все"
 msgid "ADD BOUQUET"
 msgstr "Добавить букет"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2034
-#: tithek.h:2826
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2227
+#: tithek.h:3041
 msgid "ADD FAV"
 msgstr "Добавить в фаворит"
 
@@ -887,11 +892,11 @@ msgstr "Добавить таймер"
 msgid "Add iMDB manuel"
 msgstr "Добавлять iMDB "
 
-#: tithek.h:2793
+#: tithek.h:3008
 msgid "Add this link as Favorite ?"
 msgstr "Добавить ссылку в фаворит?"
 
-#: tithek.h:2216 tithek.h:2404
+#: tithek.h:2431 tithek.h:2619
 msgid "Add this sub folder as Favorite ?"
 msgstr "Добавить эту вложенную папку в избранное?"
 
@@ -1259,7 +1264,8 @@ msgid "August"
 msgstr "Август"
 
 #: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
-#: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
+#: plugins_wlandisplay_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
+#: skins_lcdsamsung_skin.xml.h:5 skins_wlandisplay_skin.xml.h:5
 msgid "Auswahl"
 msgstr "Выбор"
 
@@ -1994,7 +2000,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Не удаётся получить время EPG или время окончания неизвестно"
 
-#: tithek.h:1966
+#: tithek.h:2158
 msgid "Can't get Streamurl !"
 msgstr "Не удаётся получить поток!"
 
@@ -2054,7 +2060,7 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr "Невозможно отобразить этот файл!"
 
-#: tithek.h:1482 tithek.h:1504 tithek.h:1561
+#: tithek.h:1674 tithek.h:1696 tithek.h:1753
 msgid ""
 "Can't start download.\n"
 "Please try later."
@@ -2297,7 +2303,7 @@ msgstr "Выбор носителя для установки"
 msgid "Choice Menu"
 msgstr "Выбор меню"
 
-#: tithek.h:1790
+#: tithek.h:1982
 msgid "Choice Playback"
 msgstr "Выберите как воспроизвести файл"
 
@@ -2361,7 +2367,7 @@ msgstr "Выберите для изменения, добавления нов�
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
-#: tithek.h:1852
+#: tithek.h:2044
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr "Выберите режим воспроизведения потока из списка ниже"
 
@@ -2669,7 +2675,7 @@ msgstr "Создать новый"
 msgid "Create new Skinstyle ?"
 msgstr "Создать новый стиль?"
 
-#: tithek.h:2201 tithek.h:2389
+#: tithek.h:2416 tithek.h:2604
 msgid "Create sub folder"
 msgstr "Создать вложенную папку"
 
@@ -3082,7 +3088,8 @@ msgstr "Параметры DiSEqC"
 msgid "Diseqc repeats"
 msgstr "Повторы DiSEqC"
 
-#: plugins_lcdsamsung_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:7
+#: plugins_lcdsamsung_skin.xml.h:7 plugins_wlandisplay_skin.xml.h:6
+#: skins_lcdsamsung_skin.xml.h:7 skins_wlandisplay_skin.xml.h:6
 msgid "Display IP"
 msgstr ""
 
@@ -3160,19 +3167,19 @@ msgstr "Закачка"
 msgid "Download (KB): "
 msgstr "Загружено (Кб) "
 
-#: tithek.h:1840
+#: tithek.h:2032
 msgid "Download Full File"
 msgstr "Загрузить весь файл"
 
-#: tithek.h:1841
+#: tithek.h:2033
 msgid "Download Full File (background)"
 msgstr "Загрузить весь файл (В фоновом режиме)"
 
-#: tithek.h:1845
+#: tithek.h:2037
 msgid "Download Full File (hlsdl)"
 msgstr "Скачать полный файл"
 
-#: tithek.h:1848
+#: tithek.h:2040
 msgid "Download Full File (youtube_dl)"
 msgstr "Скачать полный файл"
 
@@ -3202,7 +3209,7 @@ msgstr "Драйвер"
 msgid "Dualboot Menu TitanNit / E2"
 msgstr "Меню двойной загрузки TitanNit/E2"
 
-#: lcdsamsung.c:1222
+#: lcdsamsung.c:1222 wlandisplay.c:1222
 msgid "Dummy-320"
 msgstr ""
 
@@ -3245,7 +3252,7 @@ msgstr "Изменить"
 msgid "EDIT DiSEqC"
 msgstr "Параметры DiSEqC"
 
-#: tithek.h:2029 tithek.h:2821
+#: tithek.h:2222 tithek.h:3036
 msgid "EDIT FAV"
 msgstr "Параметры фавориты"
 
@@ -3377,7 +3384,7 @@ msgstr "Ошибка: Раздел не может быть создан!"
 msgid "ERROR cant read res"
 msgstr "Ошибка: Нет доступа"
 
-#: lcdpearl1.c:49 lcdsamsung.c:108
+#: lcdpearl1.c:49 lcdsamsung.c:108 wlandisplay.c:108
 msgid "ERROR cant start LCD driver"
 msgstr "Ошибка: Драйвер LCD не загружен"
 
@@ -3468,12 +3475,13 @@ msgstr "Ошибка: Установка завершилась с ошибко�
 #: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
 #: plugins_sispmctl_skin.xml.h:12 plugins_stopifnotused_skin.xml.h:3
 #: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:1
-#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:74
-#: primeshare.h:80 primeshare.h:125 promptfile.h:26 promptfile.h:35
-#: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
-#: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:399 record.h:1172 record.h:1714 rectimer.h:577 rectimer.h:1405
+#: plugins_wins3_skin.xml.h:1 plugins_wlandisplay_skin.xml.h:7 possetup.h:98
+#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80
+#: putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:399
+#: record.h:1172 record.h:1714 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:2634 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
@@ -3488,33 +3496,34 @@ msgstr "Ошибка: Установка завершилась с ошибко�
 #: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
 #: skins_rgui_skin.xml.h:1 skins_sispmctl_skin.xml.h:12
 #: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
-#: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:955
-#: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
-#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:75 streamcloud.h:81 streamcloud.h:91 streamcloud.h:104
-#: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:31
-#: system_backup_restore.h:43 system_backup_restore.h:95 system_update.h:255
-#: system_update.h:261 system_update.h:271 thefile.h:34 thefile.h:69
-#: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:286
-#: titan.c:1115 titan.c:1124 titan.c:1253 titan.c:1274 titan.c:1280
-#: titan.c:1291 titan.c:1297 tithek.c:103 tithek_global.h:228 tithek.h:771
-#: tithek.h:1455 tithek.h:1482 tithek.h:1504 tithek.h:1561 tithek.h:1740
-#: tithek.h:1755 tithek.h:1930 tithek.h:1966 tithek.h:1982 tithek.h:2216
-#: tithek.h:2404 tithek.h:2729 tithek.h:2775 tithek.h:2793 tithek.h:2806
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
-#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:711
-#: tunerconfig.h:734 tunerconfig.h:1114 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
-#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
-#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
-#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
-#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
-#: vodlocker.h:87 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
-#: xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
+#: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1
+#: skins_wlandisplay_skin.xml.h:7 sock.h:955 softcam.h:414 softcam.h:477
+#: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
+#: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
+#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:43
+#: system_backup_restore.h:95 system_update.h:255 system_update.h:261
+#: system_update.h:271 thefile.h:34 thefile.h:69 thefile.h:206 thevideo.h:29
+#: thevideo.h:66 thevideo.h:72 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: timeshiftsettings.h:45 titan.c:286 titan.c:1115 titan.c:1124 titan.c:1253
+#: titan.c:1274 titan.c:1280 titan.c:1291 titan.c:1297 tithek.c:103
+#: tithek_global.h:228 tithek.h:777 tithek.h:1647 tithek.h:1674 tithek.h:1696
+#: tithek.h:1753 tithek.h:1932 tithek.h:1947 tithek.h:2122 tithek.h:2158
+#: tithek.h:2175 tithek.h:2431 tithek.h:2619 tithek.h:2944 tithek.h:2990
+#: tithek.h:3008 tithek.h:3021 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
+#: tunerconfig.h:711 tunerconfig.h:734 tunerconfig.h:1114 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
+#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
+#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
+#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
+#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 xvidstage.h:29 xvidstage.h:59
+#: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79
+#: zdf.h:29
 msgid "EXIT"
 msgstr "Выход"
 
@@ -3546,7 +3555,7 @@ msgstr "Изменить плейлист"
 msgid "Edit mode"
 msgstr "Переименование"
 
-#: tithek.h:2806
+#: tithek.h:3021
 msgid "Edit this Favorite ?"
 msgstr "Изменить этот фаворит?"
 
@@ -3970,7 +3979,7 @@ msgstr "Скорость переключения"
 msgid "Fav"
 msgstr "Фавориты"
 
-#: tithek.h:1157
+#: tithek.h:1342
 msgid "Favorites"
 msgstr "Фавориты"
 
@@ -3998,7 +4007,7 @@ msgstr "Операции с файлом"
 msgid "File System Usage"
 msgstr "Использование файловой системы"
 
-#: tithek.h:771
+#: tithek.h:777
 msgid "File exist, overwrite?"
 msgstr "Файл существует, перезаписать?"
 
@@ -4018,7 +4027,7 @@ msgstr "Выберите цвет выделения файлов в списк�
 msgid "Filelist-Mode"
 msgstr "Плейлист"
 
-#: tithek.h:1923 tithek.h:1942 tithek.h:1949 tithek.h:1956
+#: tithek.h:2115 tithek.h:2134 tithek.h:2141 tithek.h:2148
 msgid "Filename"
 msgstr "Имя файла"
 
@@ -4224,7 +4233,7 @@ msgstr ""
 "Найден Wlan адаптер, но нет драйвера\n"
 "Установите драйвер "
 
-#: kinox.h:96 kinox.h:353 tithek.h:1735
+#: kinox.h:96 kinox.h:353 tithek.h:1927
 msgid "Found error Msg:"
 msgstr "Найдена ошибка "
 
@@ -6398,10 +6407,10 @@ msgstr "Лист меню"
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:286
 #: titan.c:1253 titan.c:1274 titan.c:1280 titan.c:1291 titan.c:1297
-#: tithek.c:103 tithek_global.h:228 tithek.h:771 tithek.h:1455 tithek.h:1482
-#: tithek.h:1504 tithek.h:1561 tithek.h:1740 tithek.h:1755 tithek.h:1930
-#: tithek.h:1966 tithek.h:2216 tithek.h:2404 tithek.h:2729 tithek.h:2775
-#: tithek.h:2793 tithek.h:2806 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.c:103 tithek_global.h:228 tithek.h:777 tithek.h:1647 tithek.h:1674
+#: tithek.h:1696 tithek.h:1753 tithek.h:1932 tithek.h:1947 tithek.h:2122
+#: tithek.h:2158 tithek.h:2431 tithek.h:2619 tithek.h:2944 tithek.h:2990
+#: tithek.h:3008 tithek.h:3021 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:711
 #: tunerconfig.h:734 tunerconfig.h:1114 unlock.h:20 unlock.h:66 unlock.h:71
@@ -6411,9 +6420,10 @@ msgstr "Лист меню"
 #: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
 #: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
 #: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
-#: vodlocker.h:87 webif_boxcontrol.h:2 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70
-#: xupnpd.h:81 xupnpd.h:83 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65
-#: xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
+#: vodlocker.h:87 webif_boxcontrol.h:2 wlandisplay.c:108 xupnpd.h:57
+#: xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
+#: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228
+#: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Сообщение"
 
@@ -7039,10 +7049,10 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:286
 #: titan.c:1115 titan.c:1124 titan.c:1253 titan.c:1274 titan.c:1280
-#: titan.c:1291 titan.c:1297 tithek.c:103 tithek_global.h:228 tithek.h:771
-#: tithek.h:1455 tithek.h:1482 tithek.h:1504 tithek.h:1561 tithek.h:1740
-#: tithek.h:1755 tithek.h:1930 tithek.h:1966 tithek.h:1982 tithek.h:2216
-#: tithek.h:2404 tithek.h:2729 tithek.h:2775 tithek.h:2793 tithek.h:2806
+#: titan.c:1291 titan.c:1297 tithek.c:103 tithek_global.h:228 tithek.h:777
+#: tithek.h:1647 tithek.h:1674 tithek.h:1696 tithek.h:1753 tithek.h:1932
+#: tithek.h:1947 tithek.h:2122 tithek.h:2158 tithek.h:2175 tithek.h:2431
+#: tithek.h:2619 tithek.h:2944 tithek.h:2990 tithek.h:3008 tithek.h:3021
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -7066,10 +7076,10 @@ msgstr ""
 #: webif_rc_virtual.dm520.h:20 webif_rc_virtual.dm525.h:20
 #: webif_rc_virtual.dm7020hd.h:20 webif_rc_virtual.dm7020hdv2.h:20
 #: webif_rc_virtual.dm900.h:20 webif_rc_virtual.dm920.h:20
-#: webif_rc_virtual.h:20 webif_rc_virtual.wetek.h:20 xupnpd.h:57 xupnpd.h:59
-#: xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29 xvidstage.h:59
-#: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79
-#: zdf.h:29
+#: webif_rc_virtual.h:20 webif_rc_virtual.wetek.h:20 wlandisplay.c:108
+#: xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
+#: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228
+#: zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "ОК"
 
@@ -7311,7 +7321,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:2066
+#: tithek.h:2272
 msgid "Page"
 msgstr "Страница"
 
@@ -7334,7 +7344,7 @@ msgstr "Панель"
 msgid "Parental"
 msgstr "Родительский контроль"
 
-#: tithek.h:1752
+#: tithek.h:1944
 msgid "Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link"
 msgstr ""
 
@@ -8417,7 +8427,7 @@ msgstr "Пульты управления всех версий"
 msgid "Remotecontrol Power Aktion"
 msgstr "Кнопка питания"
 
-#: tithek.h:1451
+#: tithek.h:1643
 msgid "Remove Cachefile ?"
 msgstr "Удалить файл кэша?"
 
@@ -8453,7 +8463,7 @@ msgstr "Запуск удаления"
 msgid "Remove success"
 msgstr "Удаление завершено"
 
-#: tithek.h:2775
+#: tithek.h:2990
 msgid "Remove this Favorite ?"
 msgstr "Удалить этот фаворит?"
 
@@ -8607,7 +8617,7 @@ msgstr ""
 msgid "Result List"
 msgstr "Список результатов"
 
-#: tithek.h:1044
+#: tithek.h:1228
 msgid "Results"
 msgstr "Результат"
 
@@ -8703,13 +8713,14 @@ msgstr "Номер SATCR"
 #: plugins_lcdsamsung_skin.xml.h:15 plugins_panel_skin.xml.h:16
 #: plugins_sispmctl_skin.xml.h:15 plugins_stock_skin.xml.h:4
 #: plugins_stopifnotused_skin.xml.h:4 plugins_tmdb_skin.xml.h:7
-#: skin_default_skin.xml.h:539 skins_autotimer_skin.xml.h:7
-#: skins_callmonitor1_skin.xml.h:17 skins_imdbapi_skin.xml.h:7
-#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:25
-#: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:15
-#: skins_panel_skin.xml.h:16 skins_sispmctl_skin.xml.h:15
-#: skins_stock_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
-#: skins_tmdb_skin.xml.h:7
+#: plugins_wlandisplay_skin.xml.h:11 skin_default_skin.xml.h:539
+#: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:17
+#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
+#: skins_instar_skin.xml.h:25 skins_lcdpearl1_skin.xml.h:10
+#: skins_lcdsamsung_skin.xml.h:15 skins_panel_skin.xml.h:16
+#: skins_sispmctl_skin.xml.h:15 skins_stock_skin.xml.h:4
+#: skins_stopifnotused_skin.xml.h:4 skins_tmdb_skin.xml.h:7
+#: skins_wlandisplay_skin.xml.h:11
 msgid "SAVE"
 msgstr "Сохранить"
 
@@ -8809,11 +8820,12 @@ msgstr ""
 #: plugins_instar_skin.xml.h:26 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:16 plugins_multiimage_skin.xml.h:16
 #: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
-#: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:617
-#: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
-#: skins_instar_skin.xml.h:26 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:16 skins_multiimage_skin.xml.h:16
-#: skins_stopifnotused_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:7
+#: plugins_wlandisplay_skin.xml.h:12 plugins_xupnpd_skin.xml.h:2
+#: skin_default_skin.xml.h:617 skins_autotimer_skin.xml.h:9
+#: skins_dlna_skin.xml.h:11 skins_instar_skin.xml.h:26
+#: skins_lcdpearl1_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:16
+#: skins_multiimage_skin.xml.h:16 skins_stopifnotused_skin.xml.h:5
+#: skins_tsSchnitt_skin.xml.h:7 skins_wlandisplay_skin.xml.h:12
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
 msgstr "Старт"
@@ -9924,7 +9936,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "Запускать при загрузке"
 
-#: tithek.h:1930
+#: tithek.h:2122
 msgid "Start playback"
 msgstr "Старт воспроизведения"
 
@@ -10033,15 +10045,15 @@ msgstr "Инфо о потоке"
 msgid "Streaming"
 msgstr "Стриминг"
 
-#: tithek.h:1795 tithek.h:1799 tithek.h:1803 tithek.h:1816
+#: tithek.h:1987 tithek.h:1991 tithek.h:1995 tithek.h:2008
 msgid "Streaming Playback (default)"
 msgstr "Потоковое воспроизведение (По умолчанию)"
 
-#: tithek.h:1827
+#: tithek.h:2019
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Кэширование потокового воспроизведения (10Мб)"
 
-#: tithek.h:1824
+#: tithek.h:2016
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Кэширование потокового воспроизведения (5Мб)"
 
@@ -10407,7 +10419,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr "Файл, который вы искали не найден, извините за неудобства"
 
-#: tithek_global.h:228 tithek.h:2729
+#: tithek_global.h:228 tithek.h:2944
 msgid "The hoster is not yet supported !"
 msgstr "Хостер не поддерживается!"
 
@@ -10727,7 +10739,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:1982
+#: tithek.h:2175
 msgid "TitanNit Tithek disclaimer"
 msgstr "Отказ от ответственности"
 
@@ -10748,12 +10760,12 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
-#: tithek.c:138 tithek_global.h:600 tithek_global.h:722
+#: tithek.c:139 tithek_global.h:600 tithek_global.h:722
 msgid "Tithek - Mainmenu"
 msgstr "Главное меню"
 
-#: tithek_global.h:596 tithek_global.h:718 tithek.h:2027 tithek.h:2163
-#: tithek.h:2771 tithek.h:2789 tithek.h:2802 tithek.h:2819
+#: tithek_global.h:596 tithek_global.h:718 tithek.h:2220 tithek.h:2378
+#: tithek.h:2986 tithek.h:3004 tithek.h:3017 tithek.h:3034
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "Фавориты"
 
@@ -11053,7 +11065,8 @@ msgstr "Тип сканирования"
 msgid "Type:"
 msgstr "Команда на запись"
 
-#: plugins_lcdsamsung_skin.xml.h:17 skins_lcdsamsung_skin.xml.h:17
+#: plugins_lcdsamsung_skin.xml.h:17 plugins_wlandisplay_skin.xml.h:13
+#: skins_lcdsamsung_skin.xml.h:17 skins_wlandisplay_skin.xml.h:13
 msgid "Typenbezeichnung"
 msgstr "Обозначение типа"
 
@@ -11450,6 +11463,10 @@ msgstr ""
 msgid "WEP"
 msgstr ""
 
+#: plugins_wlandisplay_skin.xml.h:15 skins_wlandisplay_skin.xml.h:15
+msgid "WLAN Display Settings"
+msgstr ""
+
 #: network.h:906
 msgid "WLAN Info"
 msgstr "Информация о WLAN"
@@ -11606,7 +11623,8 @@ msgid "Western"
 msgstr "Вестерн"
 
 #: plugins_lcdpearl1_skin.xml.h:12 plugins_lcdsamsung_skin.xml.h:18
-#: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:18
+#: plugins_wlandisplay_skin.xml.h:14 skins_lcdpearl1_skin.xml.h:12
+#: skins_lcdsamsung_skin.xml.h:18 skins_wlandisplay_skin.xml.h:14
 msgid "Wettervorhersage"
 msgstr "Прогноз погоды"
 
@@ -11916,7 +11934,8 @@ msgid "afterevent"
 msgstr "После события"
 
 #: plugins_lcdpearl1_skin.xml.h:3 plugins_lcdsamsung_skin.xml.h:3
-#: skins_lcdpearl1_skin.xml.h:3 skins_lcdsamsung_skin.xml.h:3
+#: plugins_wlandisplay_skin.xml.h:3 skins_lcdpearl1_skin.xml.h:3
+#: skins_lcdsamsung_skin.xml.h:3 skins_wlandisplay_skin.xml.h:3
 msgid "aktiv im Standby"
 msgstr "Активен в режиме ожидания"
 
@@ -11930,7 +11949,8 @@ msgid "all: Settings Astra 19.2 all transponder | 09.07.2018"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
-#: skins_lcdpearl1_skin.xml.h:4 skins_lcdsamsung_skin.xml.h:4
+#: plugins_wlandisplay_skin.xml.h:4 skins_lcdpearl1_skin.xml.h:4
+#: skins_lcdsamsung_skin.xml.h:4 skins_wlandisplay_skin.xml.h:4
 msgid "alle Menus anzeigen"
 msgstr "Показать все меню"
 
@@ -12537,7 +12557,7 @@ msgstr "Лучшая игра"
 msgid "fonts"
 msgstr "Шрифты"
 
-#: tithek.h:1039
+#: tithek.h:1223
 msgid "found"
 msgstr "Найдено"
 
@@ -12761,7 +12781,7 @@ msgstr ""
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:452 lcdpearl1.c:507
 #: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1226 lcdsamsung.c:1230
-#: lcdsamsung.c:1234
+#: lcdsamsung.c:1234 wlandisplay.c:1226 wlandisplay.c:1230 wlandisplay.c:1234
 msgid "ja"
 msgstr "Да"
 
@@ -12969,7 +12989,7 @@ msgstr ""
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:451 lcdpearl1.c:506
 #: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1225 lcdsamsung.c:1229
-#: lcdsamsung.c:1233
+#: lcdsamsung.c:1233 wlandisplay.c:1225 wlandisplay.c:1229 wlandisplay.c:1233
 msgid "nein"
 msgstr "Нет"
 
@@ -13367,7 +13387,7 @@ msgid "please wait"
 msgstr "Ждите!"
 
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:16
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:16 tithek.h:1438
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:16 tithek.h:1630
 msgid "please wait..."
 msgstr "Пожалуйста ждите!"
 
