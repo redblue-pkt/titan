@@ -35,6 +35,13 @@ youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mn
 youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
 hlsdlbg="$HLSBIN -u $USERAGENT -o"
 
+if [ "$ARCH" == "i386" ]; then
+BIN=/usr/bin/python
+HLSBIN=/usr/bin/hlsdl
+CURLBIN=/usr/bin/curl
+DUKBIN=/usr/bin/duk
+fi
+
 if [ -e /mnt/network/cookies ];then sed 's/#HttpOnly_//g' -i /mnt/network/cookies; fi
 
 export PYTHONHOME=/tmp/localhoster
