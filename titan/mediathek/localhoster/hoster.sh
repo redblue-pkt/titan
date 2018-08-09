@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # first sh box hoster for titannit mfg obi
 
 TYPE=$1
@@ -31,6 +31,7 @@ HLSBIN=/usr/bin/hlsdl
 CURLBIN=/usr/bin/curl
 DUKBIN=/usr/bin/duk
 fi
+
 if [ ! -e "$CURLBIN" ];then CURLBIN=curl; fi
 #USERAGENT='Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
 USERAGENT='Mozilla%2F5.0+%28Windows+NT+6.3%3B+rv%3A36.0%29+Gecko%2F20100101+Firefox%2F36.0'
@@ -46,11 +47,19 @@ if [ -e /mnt/network/cookies ];then sed 's/#HttpOnly_//g' -i /mnt/network/cookie
 export PYTHONHOME=/tmp/localhoster
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 
+
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
 if [ "$debuglevel" == "99" ]; then youtubebin="$youtubebin --verbose"; fi
 
 wgetbin="wget -q -T2"
+
+if [ "$ARCH" == "i386" ]; then
+	if [ -d "/tmp/localhoster/lib/python2.7" ];then
+		mv -f /tmp/localhoster/lib/python2.7 /tmp/localhoster/lib/python2.7_old
+	fi
+	ln -fs /usr/lib/python2.7 /tmp/localhoster/lib/python2.7
+fi
 
 if [ ! -e "/tmp/localhoster/lib/python2.7/lib-dynload" ] && [ -e /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" ];then
 #	ln -fs /tmp/localhoster/lib/python2.7/lib-dynload."$ARCH" /tmp/localhoster/lib/python2.7/lib-dynload
@@ -90,10 +99,10 @@ if [ "$ARCH" == "sh4" ];then #&& [ "$BOX" != "ufs912" ]; then
 	if [ -e "$CMD/lib/libcrypto.so.1.0.0.arm" ]; then time rm -rf $CMD/lib/libcrypto.so.1.0.0.arm; fi
 fi
 
-hostercheck=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | tr '.' '\n' | wc -l`
+hostercheck=`echo "$INPUT" | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d"/" -f1 | tail -n1 | tr '.' '\n' | wc -l`
 hosterline=`expr $hostercheck - 1`
-hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d'/' -f1 | tail -n1 | cut -d"." -f$hosterline`
-#echo $hoster
+if [ "$hosterline" == "0" ];then hosterline=1; fi
+hoster=`echo $INPUT | tr 'A-Z' 'a-z' | sed 's!://!\n!' | cut -d"/" -f1 | tail -n1 | cut -d"." -f$hosterline`
 
 ecostream()
 {
