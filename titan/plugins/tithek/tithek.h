@@ -1084,7 +1084,7 @@ height = 100;
 		if(tmp != NULL)
 		{
 
-			if(getconfigint("tithek_cover", NULL) >= 6 || getconfigint("tithek_view", NULL) >= 6)
+			if(getconfigint("tithek_cover", NULL) >= 6 && getconfigint("tithek_view", NULL) >= 6)
 			{
 				gridbr = 0;
 				posx = 0;
@@ -1187,7 +1187,7 @@ height = 100;
 			else
 				tmp->fontcol = convertcol("white");
 
-			if(getconfigint("tithek_cover", NULL) != 6 && getconfigint("tithek_view", NULL) != 6)
+			if(getconfigint("tithek_cover", NULL) < 6 && getconfigint("tithek_view", NULL) < 6)
 			{
 				tmp->halign = CENTER;
 				tmp->valign = TEXTBOTTOM;
