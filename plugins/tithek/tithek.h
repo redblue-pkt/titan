@@ -929,6 +929,12 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	int fontsize = 25;
 	int pcount = 2;
 
+int fontsize2 = 20;
+int posy = 50;
+int textposx2 = 270;
+int textposx = 230;
+
+
 	if(getconfigint("tithek_cover", NULL) == 0 || getconfigint("tithek_view", NULL) == 0)
 	{
 		if(linecount > 2)
@@ -1043,6 +1049,26 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		height += status.fontsizeadjust;
 	}
 
+	if((getconfigint("tithek_cover", NULL) == 7 && flag == 0) || (getconfigint("tithek_view", NULL) == 7 && flag != 0))
+	{
+		height = 50;
+		width = 1160;
+		picheight = 48;
+		picwidth = 1100;
+		zcount = 1;
+		fontsize = 25;
+		pcount = 1;
+		height += status.fontsizeadjust;
+
+fontsize2 = 20;
+posy = 50;
+textposx2 = 270;
+textposx = 230;
+height = 100;
+	}
+
+
+
 	fontsize += status.fontsizeadjust;
 	height += status.fontsizeadjust;
 
@@ -1057,27 +1083,66 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		tmp = addlistbox(grid, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
-			skip = 0;
-			sumcount++;
-			count++;
-			count1++;
-			if(gridbr == 0)
-				tmp->type = GRIDBR;
-			gridbr = 1;
-			tmp->wrap = YES;
 
-			tmp->picheight = picheight;
-			tmp->picwidth = picwidth;
+			if(getconfigint("tithek_cover", NULL) >= 6 || getconfigint("tithek_view", NULL) >= 6)
+			{
+				gridbr = 0;
+				posx = 0;
+				tmp->hspace = 5;
 
-			tmp->fontsize = fontsize;
-			tmp->height = height;
-			tmp->width = width;
-			tmp->prozwidth = 0;
-			//tmp->bgcol = 0xffffff;
-			tmp->bgspace = 1;
-			tmp->vspace = 10;
-			tmp->hspace = 10;
-			tmp->posx = posx;
+//				if(getconfigint("tithek_cover", NULL) > 6 || getconfigint("tithek_view", NULL) > 6)
+//				{
+					char* tithekpic = tithekdownload(titheknode->pic, titheknode->localname, NULL, 0, 0);
+					changepic(tmp, tithekpic);
+					free(tithekpic); tithekpic = NULL;
+//				}
+//				tmp->handle = (char*)titheknode;
+				
+				tmp->valign = convertxmlentry("middle", 0);
+				tmp->textposx = textposx;
+				tmp->wrap = YES;
+
+				tmp->posy = posy;
+				tmp->textposx2 = textposx2;
+				tmp->height = height;
+				tmp->fontcol2 = convertcol("yellow");
+				tmp->fontsize2 = fontsize2;
+				tmp->valign = MIDDLE;
+//				changetext2(tmp, titheknode->description);
+
+				tmp->type = TEXTBOX;
+				tmp->valign = TOPBOTTOM;
+				tmp->handle = (char*)titheknode;
+			}
+			else
+			{
+				skip = 0;
+				sumcount++;
+				count++;
+				count1++;
+				if(gridbr == 0)
+					tmp->type = GRIDBR;
+				gridbr = 1;
+				tmp->wrap = YES;
+#ifndef SIMULATE
+				tmp->picheight = picheight;
+				tmp->picwidth = picwidth;
+#endif
+				tmp->fontsize = fontsize;
+				tmp->height = height;
+				tmp->width = width;
+				tmp->prozwidth = 0;
+				//tmp->bgcol = 0xffffff;
+				tmp->bgspace = 1;
+				tmp->vspace = 10;
+				tmp->hspace = 10;
+				tmp->posx = posx;
+
+				tmp->prozwidth = 0;
+				tmp->halign = CENTER;
+				tmp->valign = TEXTBOTTOM;
+			}
+
 
 			debug(99, "--- START ----------------------------------------------------");
 			if(title != NULL)
@@ -1122,11 +1187,17 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			else
 				tmp->fontcol = convertcol("white");
 
-			tmp->halign = CENTER;
-			tmp->valign = TEXTBOTTOM;
+			if(getconfigint("tithek_cover", NULL) != 6 && getconfigint("tithek_view", NULL) != 6)
+			{
+				tmp->halign = CENTER;
+				tmp->valign = TEXTBOTTOM;
+			}
 			changetext(tmp, titheknode->title);
+			changetext2(tmp, titheknode->description);
+
 			tmp->handle = (char*)titheknode;
 			posx += tmp->width;
+
 			if(count >= zcount)
 			{
 				count = 0;
@@ -2166,6 +2237,19 @@ void screentithekplay(char* titheklink, char* title, int first)
 	listbox->gridcol = 0;
 	listbox->select = NULL;
 
+	int view = 1;
+struct skin *child = NULL;
+
+//	if(view == 1)
+if(getconfigint("tithek_cover", NULL) == 6)
+{
+	listbox = getscreennode(grid, "listbox");
+}
+	else
+{
+	listbox = getscreennode(grid, "grid");
+}
+
 	pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, first);
 	if(pagecount == 0) return;
 
@@ -2268,6 +2352,15 @@ waitrcstart:
 		if(rcret == getrcconfigint("rcmenu", NULL))
 		{
 			screentithek_settings();
+
+			if(getconfigint("tithek_cover", NULL) == 6 || getconfigint("tithek_view", NULL) == 6)
+			{
+				listbox = getscreennode(grid, "listbox");
+			}
+				else
+			{
+				listbox = getscreennode(grid, "grid");
+			}
 
 //			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, first);
 			pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, first + 1);
