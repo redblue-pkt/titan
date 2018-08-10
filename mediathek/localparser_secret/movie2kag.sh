@@ -307,6 +307,7 @@ hosterlisttv()
 
 kino()
 {
+#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 		$curlbin -v "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"	
@@ -314,10 +315,13 @@ kino()
 
 		while read -u 3 ROUND; do
 			ID=$(echo $ROUND | sed -nr "s/.*-stream-([^-]+).html.*/\1/p")
-			PIC=$(echo $ROUND | grep $ID.jpg | sed -nr "s/.*<img src='([^']+)'.*/\1/p")
+#			PIC=$(echo $ROUND | grep $ID.jpg | sed -nr "s/.*<img src='([^']+)'.*/\1/p")
+			PIC=$(echo $ROUND | sed -nr "s/.*<img src='([^']+)'.*/\1/p")
+
 			NEWPAGE=$(echo $ROUND | sed -nr "s/.*href='([^']+)'.*/\1/p")
 #			TITLE=$(echo $ROUND | sed -nr "s/.*> <span title='([^']+)style=.*/\1/p")
 			TITLE=$(echo $ROUND | sed "s!<span title='!\nfound=!g" | sed "s!' style=!\n!g" | grep ^found= | grep -v href | cut -d"=" -f2 | head -n1)
+			DESCRIPTION=$(echo $ROUND | sed -nr "s/.*<span class='storyline' title='([^']+)'.*/\1/p")
 
 			if [ -z "$PIC" ]; then
 				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
@@ -330,7 +334,7 @@ kino()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
+				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0#$DESCRIPTION"
 
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
