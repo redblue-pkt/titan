@@ -10898,6 +10898,10 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
+#: tpk_description.h:179
+msgid "Treiber fuer Wlan Displays"
+msgstr ""
+
 #: security.h:681 security.h:2132
 msgid "Trial period ends in"
 msgstr ""
@@ -11067,7 +11071,7 @@ msgstr "Unicable Product"
 msgid "Unitymedia NRW"
 msgstr ""
 
-#: tpk_description.h:179
+#: tpk_description.h:180
 msgid "Unitymedia NRW | 13.12.2017 (caliban)"
 msgstr ""
 
@@ -11194,19 +11198,19 @@ msgstr "VLC speler"
 msgid "Version"
 msgstr "Versie"
 
-#: tpk_description.h:182
+#: tpk_description.h:183
 msgid "Version 11049 OScam"
 msgstr ""
 
-#: tpk_description.h:181
+#: tpk_description.h:182
 msgid "Version 11049 of OScam"
 msgstr ""
 
-#: tpk_description.h:183
+#: tpk_description.h:184
 msgid "Version 11390 reader of OScam"
 msgstr ""
 
-#: tpk_description.h:184
+#: tpk_description.h:185
 msgid "Version 2.3.1 of Cccam"
 msgstr ""
 
@@ -11415,11 +11419,11 @@ msgstr ""
 "WLAN is gestart.\n"
 "verdere configuratie kan nu plaatsvinden."
 
-#: tpk_showname.h:218
+#: tpk_showname.h:219
 msgid "WM2018"
 msgstr ""
 
-#: tpk_description.h:203
+#: tpk_description.h:204
 msgid "WM2018 Plugin"
 msgstr ""
 
@@ -11520,7 +11524,7 @@ msgstr ""
 msgid "Webbrowser Netsurf"
 msgstr ""
 
-#: tpk_description.h:186
+#: tpk_description.h:187
 msgid "Webbrowser Plugin"
 msgstr ""
 
@@ -11532,7 +11536,7 @@ msgstr ""
 msgid "Wednesday"
 msgstr "Woensdag"
 
-#: tpk_description.h:187
+#: tpk_description.h:188
 msgid "Werbezapper"
 msgstr ""
 
@@ -11546,35 +11550,35 @@ msgstr ""
 msgid "Wettervorhersage"
 msgstr "Weers verwachting"
 
-#: tpk_description.h:189
+#: tpk_description.h:190
 msgid "White 3D Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:190
+#: tpk_description.h:191
 msgid "White 3D Picons - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:191
+#: tpk_description.h:192
 msgid "White 3D Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:188
+#: tpk_description.h:189
 msgid "White 3D Picons Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:193
+#: tpk_description.h:194
 msgid "White70 Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:194
+#: tpk_description.h:195
 msgid "White70 Picons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:195
+#: tpk_description.h:196
 msgid "White70 Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:192
+#: tpk_description.h:193
 msgid "White70 Picons Astra 19.2"
 msgstr ""
 
@@ -11602,19 +11606,23 @@ msgstr ""
 msgid "Wlan 8712u"
 msgstr ""
 
+#: tpk_showname.h:215
+msgid "Wlan Display"
+msgstr ""
+
 #: network.h:903
 msgid "Wlan Stick not found"
 msgstr "WLAN apparaat niet gevonden"
 
-#: tpk_showname.h:215
+#: tpk_showname.h:216
 msgid "Wlan rt2870sta"
 msgstr ""
 
-#: tpk_showname.h:216
+#: tpk_showname.h:217
 msgid "Wlan rt3070sta"
 msgstr ""
 
-#: tpk_showname.h:217
+#: tpk_showname.h:218
 msgid "Wlan rt5370sta"
 msgstr ""
 
@@ -11622,7 +11630,7 @@ msgstr ""
 msgid "Won"
 msgstr ""
 
-#: tpk_description.h:204
+#: tpk_description.h:205
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 
@@ -11655,43 +11663,43 @@ msgstr ""
 msgid "X-Resolution"
 msgstr "X-Resolutie"
 
-#: tpk_showname.h:219
+#: tpk_showname.h:220
 msgid "XPicons Harmony Petrol 3D (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:220
+#: tpk_showname.h:221
 msgid "XPicons LightTransparent (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:221
+#: tpk_showname.h:222
 msgid "XPicons LightTransparent (Astra 23.5E)"
 msgstr ""
 
-#: tpk_showname.h:222
+#: tpk_showname.h:223
 msgid "XPicons LightTransparent (Astra 28.2E)"
 msgstr ""
 
-#: tpk_showname.h:223
+#: tpk_showname.h:224
 msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
-#: tpk_showname.h:224
+#: tpk_showname.h:225
 msgid "XPicons LightTransparent (small - Astra 19.2E)31.10.2016"
 msgstr ""
 
-#: tpk_showname.h:225
+#: tpk_showname.h:226
 msgid "XPicons MirrorGlass3D (KabelD)"
 msgstr ""
 
-#: tpk_showname.h:226
+#: tpk_showname.h:227
 msgid "XPicons Pimpert (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:227
+#: tpk_showname.h:228
 msgid "XPicons Pimpert rounded (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:228
+#: tpk_showname.h:229
 msgid "XPicons Pimpert rounded (Hotbird 13,0E)"
 msgstr ""
 
@@ -11772,7 +11780,7 @@ msgstr ""
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
 
-#: tpk_showname.h:231
+#: tpk_showname.h:232
 msgid "Zombie"
 msgstr ""
 
@@ -12143,7 +12151,7 @@ msgstr "CIFS"
 msgid "close window"
 msgstr ""
 
-#: tithek_settings.h:95
+#: tithek_settings.h:98
 msgid "cloudfare"
 msgstr ""
 
@@ -12587,7 +12595,7 @@ msgstr "behouden"
 msgid "html"
 msgstr ""
 
-#: tithek_settings.h:93
+#: tithek_settings.h:96
 msgid "http"
 msgstr ""
 
@@ -12595,7 +12603,7 @@ msgstr ""
 msgid "httpdsettings"
 msgstr ""
 
-#: tithek_settings.h:94
+#: tithek_settings.h:97
 msgid "https"
 msgstr ""
 
@@ -13009,8 +13017,8 @@ msgstr "NFS server"
 #: settings_overclocking.h:244 sispmctl.h:693 sispmctl.h:697 sispmctl.h:737
 #: sispmctl.h:741 sispmctl.h:781 sispmctl.h:785 sispmctl.h:825 sispmctl.h:829
 #: skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
-#: timeshiftsettings.h:63 tithek_settings.h:46 tithek_settings.h:50
-#: tithek_settings.h:54 tithek_settings.h:58 tithek_settings.h:89 tmc.h:531
+#: timeshiftsettings.h:63 tithek_settings.h:49 tithek_settings.h:53
+#: tithek_settings.h:57 tithek_settings.h:61 tithek_settings.h:92 tmc.h:531
 #: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
 #: tunerconfig.h:327 tunerconfig.h:851 xupnpd.h:30
 msgid "no"
@@ -13648,31 +13656,35 @@ msgstr ""
 msgid "show"
 msgstr ""
 
-#: tithek_settings.h:31 tithek_settings.h:40
+#: tithek_settings.h:31 tithek_settings.h:42
 msgid "show 12 entrys"
 msgstr "Normaal (12 afbeeldingen)"
 
-#: tithek_settings.h:29 tithek_settings.h:38
+#: tithek_settings.h:29 tithek_settings.h:40
 msgid "show 2 entrys"
 msgstr "Zeer groot (2 afbeeldingen)"
 
-#: tithek_settings.h:32 tithek_settings.h:41
+#: tithek_settings.h:32 tithek_settings.h:43
 msgid "show 20 entrys"
 msgstr "Klein (20 afbeeldingen)"
 
-#: tithek_settings.h:33 tithek_settings.h:42
+#: tithek_settings.h:33 tithek_settings.h:44
 msgid "show 30 entrys"
 msgstr "Zeer klein (30 afbeeldingen)"
 
-#: tithek_settings.h:30 tithek_settings.h:39
+#: tithek_settings.h:30 tithek_settings.h:41
 msgid "show 6 entrys"
 msgstr "Groot (6 afbeeldingen)"
 
-#: tithek_settings.h:28 tithek_settings.h:37
+#: tithek_settings.h:28 tithek_settings.h:39
 msgid "show auto entrys"
 msgstr "Afhankelijk van aantal automatisch aanpassen"
 
-#: tithek_settings.h:34 tithek_settings.h:43
+#: tithek_settings.h:35 tithek_settings.h:46
+msgid "show description"
+msgstr ""
+
+#: tithek_settings.h:34 tithek_settings.h:45
 msgid "show in list"
 msgstr "Laat in lijst zien"
 
@@ -14170,7 +14182,7 @@ msgstr ""
 msgid "updatelist"
 msgstr "Update lijst"
 
-#: tpk_description.h:180
+#: tpk_description.h:181
 msgid "usbreset Plugin"
 msgstr ""
 
@@ -14302,7 +14314,7 @@ msgstr "Wachten, de download wordt gestopt"
 msgid "waiting"
 msgstr "Wacht"
 
-#: tpk_description.h:185
+#: tpk_description.h:186
 msgid "weather Plugin"
 msgstr ""
 
@@ -14334,31 +14346,31 @@ msgstr ""
 msgid "wireless"
 msgstr ""
 
-#: tpk_description.h:196
+#: tpk_description.h:197
 msgid "wireless 8188eu.ko model"
 msgstr ""
 
-#: tpk_description.h:197
+#: tpk_description.h:198
 msgid "wireless 8192cu.ko model"
 msgstr ""
 
-#: tpk_description.h:198
+#: tpk_description.h:199
 msgid "wireless 8192du.ko model"
 msgstr ""
 
-#: tpk_description.h:199
+#: tpk_description.h:200
 msgid "wireless modul 8712u.ko"
 msgstr ""
 
-#: tpk_description.h:200
+#: tpk_description.h:201
 msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
-#: tpk_description.h:201
+#: tpk_description.h:202
 msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
-#: tpk_description.h:202
+#: tpk_description.h:203
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
@@ -14378,11 +14390,11 @@ msgstr ""
 msgid "x"
 msgstr ""
 
-#: tpk_showname.h:229
+#: tpk_showname.h:230
 msgid "xupnpd"
 msgstr ""
 
-#: tpk_description.h:205
+#: tpk_description.h:206
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
@@ -14464,8 +14476,8 @@ msgstr "Geel"
 #: settings_overclocking.h:244 sispmctl.h:692 sispmctl.h:696 sispmctl.h:736
 #: sispmctl.h:740 sispmctl.h:780 sispmctl.h:784 sispmctl.h:824 sispmctl.h:828
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:47 tithek_settings.h:51
-#: tithek_settings.h:55 tithek_settings.h:59 tithek_settings.h:90 tmc.h:532
+#: timeshiftsettings.h:62 tithek_settings.h:50 tithek_settings.h:54
+#: tithek_settings.h:58 tithek_settings.h:62 tithek_settings.h:93 tmc.h:532
 #: tmc.h:536 tunerconfig.h:851 xupnpd.h:30
 msgid "yes"
 msgstr "Ja"
@@ -14486,6 +14498,6 @@ msgstr "Ja / VZAP oneindig"
 msgid "z"
 msgstr ""
 
-#: tpk_showname.h:230
+#: tpk_showname.h:231
 msgid "zapback (Werbezapper)"
 msgstr ""
