@@ -578,7 +578,7 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 		}
 
 		if(node->cmd != NULL)
-			tmpstr = command(node->cmd);
+			system(node->cmd);
 		else
 			gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
@@ -760,7 +760,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 				if(usecmd == 1)
 				{
 					debug(99, "cmd: %s", link);
-					tmpstr = command(link);
+					system(link);
 				}
 				else if(ssl == 1)
 					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
