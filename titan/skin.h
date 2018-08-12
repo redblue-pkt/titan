@@ -3386,6 +3386,21 @@ void drawnode(struct skin* node, int flag)
 			drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
 			drawstring(node->text2, node->linecount, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight - (lastposy - node->iposy), node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
 		}
+		else if(node->type & GRIDBR)
+		{
+			int lastposx = 0;
+			int lastposy = 0;
+			if(node->textposx2 > 0)
+			{
+				drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, &lastposx, &lastposy, NULL, node->charspace, 0);
+				drawstring(node->text2, node->linecount, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
+			}
+			else
+			{
+				drawstring(node->text, 1, 0, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx - len, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, 0, &lastposx, NULL, NULL, node->charspace, 0);
+				drawstring(node->text2, 1, 0, -1, lastposx, node->iposy, node->iwidth - (lastposx - node->iposx) - len, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
+			}
+		}
 		else
 		{
 			int lastposx = 0;
@@ -3960,8 +3975,27 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		{
 			if(node->wrap == YES)
 			{
-				wrapstr(node->text, node->font, node->fontsize, node->iwidth, node->charspace);
-				wrapstr(node->text2, node->font, node->fontsize2, node->iwidth, node->charspace);
+				wrapstr(node->text, node->font, node->fontsize, node->iwidth - node->textposx, node->charspace);
+				wrapstr(node->text2, node->font, node->fontsize2, node->iwidth - node->textposx2, node->charspace);
+			}
+			calctext(node->text, node->text2, &node->linecount, &node->pagecount, &node->poscount, node->iheight / node->fontsize, node->aktpage);
+		}
+		if(node->text2 != NULL) node->scrollbar = NO;
+		if(node->scrollbar != NO)
+			calcscrollbar(node);
+	}
+
+	if(node->type & GRIDBR)
+	{
+		if(node->aktpage < 1) node->aktpage = 1;
+		if(node->text == NULL && node->text2 == NULL)
+			node->pagecount = 0;
+		else
+		{
+			if(node->wrap == YES)
+			{
+				wrapstr(node->text, node->font, node->fontsize, node->iwidth - node->textposx2, node->charspace);
+				wrapstr(node->text2, node->font, node->fontsize2, node->iwidth - node->textposx2, node->charspace);
 			}
 			calctext(node->text, node->text2, &node->linecount, &node->pagecount, &node->poscount, node->iheight / node->fontsize, node->aktpage);
 		}
