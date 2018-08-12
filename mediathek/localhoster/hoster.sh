@@ -822,3 +822,26 @@ if [ "$TYPE" == "hlsdl" ];then
 		*) hlsdl $INPUT;;
 	esac
 fi
+
+if [ "$TYPE" == "cloudflare" ];then
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
+	case $hoster in
+		*) cloudflare $INPUT;;
+	esac
+fi
+
+curl()
+{
+#	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+#	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+	$curlbin "$INPUT"
+}
+
+if [ "$TYPE" == "curl" ];then
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
+	case $hoster in
+		*) curl $INPUT;;
+	esac
+fi
+
+
