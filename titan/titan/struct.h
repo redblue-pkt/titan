@@ -668,6 +668,7 @@ struct epgrecord
 
 struct download
 {
+	char* cmd;
 	char* host;
 	char* page;
 	int port;

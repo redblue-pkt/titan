@@ -577,7 +577,10 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			printf("[tithek] download start: %s\n", node->filename);
 		}
 
-		gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
+		if(node->cmd != NULL)
+			tmpstr = command(node->cmd);
+		else
+			gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
 			printf("[tithek] download done: %s\n", node->filename);
 
@@ -638,6 +641,8 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 		}
 
 end:
+
+		free(node->cmd); node->cmd = NULL;
 		free(node->host); node->host = NULL;
 		free(node->page); node->page = NULL;
 		free(node->filename); node->filename = NULL;
@@ -652,20 +657,16 @@ end:
 
 char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 {
-	int ret = 1, port = 80, timeout = 10000, ssl = 0, cloudflare = 0;
+	int ret = 1, port = 80, timeout = 10000, ssl = 0, usecmd = 0;
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
 
 	if(link == NULL) return NULL;
-	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8)) return NULL;
-/*
-	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8) && ostrncmp("/tmp/localhoster/hoster.sh get", link, 30)) return NULL;
+	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8) && ostrncmp("/tmp/localhoster/hoster.sh", link, 26)) return NULL;
 
-	if(!ostrncmp("/tmp/localhoster/hoster.sh get", link, 30))
-		cloudflare = 1;
+	if(!ostrncmp("/tmp/localhoster/hoster.sh", link, 26))
+		usecmd = 1;
 	else if(!ostrncmp("https://", link, 8))
-*/
-	if(!ostrncmp("https://", link, 8))
 		ssl = 1;
 	else
 	{
@@ -729,19 +730,10 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		if(localfile != NULL && !file_exist(localfile))
 		{
 			if(pic == 1)
-			{
-				if(cloudflare == 1)
-				{
-					char* cmd = NULL;
-					cmd = ostrcat(link, " > ", 0, 0);
-					cmd = ostrcat(cmd, localfile, 1, 0);
-					debug(99, "cmd: %s", cmd);
-					tmpstr = command(cmd);
-					free(cmd), cmd = NULL;
-				}	
-				else if(ssl == 1)
+			{				
+				if(ssl == 1)
 					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
-				else if(tithekdownloadcount >= 24) //start max 24 threads
+				else if(usecmd == 0 && tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 				else
 				{
@@ -749,6 +741,8 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 					struct download* dnode = calloc(1, sizeof(struct download));
 					if(dnode != NULL)
 					{
+						if(usecmd == 1)
+							dnode->cmd = ostrcat(link, NULL, 0, 0);
 						dnode->host = ostrcat(ip, NULL, 0, 0);
 						dnode->page = ostrcat(path, NULL, 0, 0);
 						dnode->port = port;
@@ -763,7 +757,12 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 			}
 			else
 			{
-				if(ssl == 1)
+				if(usecmd == 1)
+				{
+					debug(99, "cmd: %s", link);
+					tmpstr = command(link);
+				}
+				elif(ssl == 1)
 					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
 				else
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
