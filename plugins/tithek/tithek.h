@@ -762,7 +762,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 					debug(99, "cmd: %s", link);
 					tmpstr = command(link);
 				}
-				elif(ssl == 1)
+				else if(ssl == 1)
 					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
 				else
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
