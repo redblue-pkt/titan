@@ -830,17 +830,15 @@ if [ "$TYPE" == "cloudflare" ];then
 	esac
 fi
 
-curl()
+curlcmd()
 {
-#	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
-#	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
 	$curlbin "$INPUT"
 }
 
 if [ "$TYPE" == "curl" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
-		*) curl $INPUT;;
+		*) curlcmd "$INPUT";;
 	esac
 fi
 
