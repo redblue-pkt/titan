@@ -833,13 +833,13 @@ fi
 
 curlcmd()
 {
-	$curlbin "$INPUT"
+ 	$curlbin "$INPUT" "$2" "$3"
 }
 
 if [ "$TYPE" == "curl" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
-		*) curlcmd "$INPUT";;
+		*) curlcmd "$INPUT" "$3" "$4";;
 	esac
 fi
 
