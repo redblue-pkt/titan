@@ -1058,7 +1058,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		fontsize = 25;
 		pcount = 1;
 		height += status.fontsizeadjust;
-		fontsize2 = 22;
+		fontsize2 = 20;
 		posy = 20;
 		textposx = 370;
 		textposx2 = textposx + 30;
