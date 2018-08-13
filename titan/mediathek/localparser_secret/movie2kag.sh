@@ -410,6 +410,9 @@ rm  $TMP/cache.$FILENAME.*
 
 #exit
 			TMPURL=`cat $TMP/cache.$FILENAME.4.url1`
+			if [ -z "$TMPURL" ];then
+				TMPURL=$NEWPAGE
+			fi
 #old start
 #			if [ ! -z "$TMPURL" ];then
 #				TITLE=`echo $TMPURL | sed -nr 's/.*:\/\/([^\/]+)\/.*/\1/p'` 		
