@@ -1229,6 +1229,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 				tmp->valign = TEXTBOTTOM;
 			}
 			changetext(tmp, titheknode->title);
+			changename(tmp, titheknode->title);
 			changetext2(tmp, titheknode->description);
 
 			tmp->handle = (char*)titheknode;
@@ -1263,6 +1264,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	tmpstr1 = ostrcat(tmpstr1, " ", 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, _("Results"), 1, 0);
 	changetext(countlabel, tmpstr1);
+
 	free(tmpstr1); tmpstr1 = NULL;
 
 	if(localfile == 0)
@@ -2299,7 +2301,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 			tmp = listbox->select;
 			while(tmp != NULL)
 			{
-
 				if(tmp->pagecount != listbox->aktpage) break;
 
 				char* tmpstr = ostrcat(_("Page"), NULL, 0, 0);
@@ -2335,6 +2336,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 			while(tmp != NULL)
 			{
 				if(tmp->pagecount != listbox->aktpage) break;
+
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
@@ -2361,6 +2363,25 @@ void screentithekplay(char* titheklink, char* title, int first)
 			delallfiles(TITHEKPATH, ".jpg");
 
 waitrcstart:
+
+		// reload selected pic
+		if(listbox->select != NULL && listbox->select->handle != NULL)
+		{
+			if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
+			{
+				tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
+//				if(file_exist(tithekpic))
+					changepic(listbox->select, tithekpic);
+//				else
+//				{
+//					free(tithekpic); tithekpic = NULL;
+//					tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
+//					changepic(listbox->select, tithekpic);
+//				}
+				free(tithekpic); tithekpic = NULL;
+			}
+		}
+
 		drawscreen(grid, 0, 0);
 
 		rcret = waitrc(grid, 2000, 2);
@@ -3008,10 +3029,28 @@ why ?
 		}
 		else if(rcret == getrcconfigint("rcinfo", NULL))
 		{
+
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-				if(showinfo(listbox, ((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->description, ((struct tithek*)listbox->select->handle)->flag) == 0)
-					if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+//				if(showinfo(listbox, ((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->description, ((struct tithek*)listbox->select->handle)->flag) == 0)
+//					if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+
+				int lastview = getconfigint("tithek_view", NULL);
+				int lastcover = getconfigint("tithek_cover", NULL);
+				addconfiginttmp("tithek_view", 7);
+				addconfiginttmp("tithek_cover", 7);
+				char* selected = ostrcat(listbox->select->text, NULL, 0, 0);
+
+				pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, first + 1);
+
+				if(pagecount == 0 || tithekexit == 1) break;
+
+				addscreenrc(grid, listbox);
+				setlistboxselection(listbox, selected);
+				free(selected), selected = NULL;
+					
+				delconfigtmp("tithek_view");
+				delconfigtmp("tithek_cover");
 			}
 
 		}
@@ -3074,6 +3113,8 @@ why ?
 			changetext(b4, _("ADD FAV"));
 			b5->hidden = YES;
 		}
+
+
 
 // new osd musst disable this
 		drawscreen(grid, 0, 0);
