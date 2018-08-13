@@ -2312,7 +2312,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				changetext(countpage, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+				if(tmp->handle != NULL)// && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
@@ -2326,7 +2326,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 					}
 					*/
 
-					changepic(tmp, tithekpic);
+					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+						changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
 				tmp = tmp->prev;
@@ -2337,7 +2338,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 			{
 				if(tmp->pagecount != listbox->aktpage) break;
 
-				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+				if(tmp->handle != NULL)// && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
@@ -2350,8 +2351,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
 					*/
-
-					changepic(tmp, tithekpic);
+					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+						changepic(tmp, tithekpic);
 					free(tithekpic); tithekpic = NULL;
 				}
 				tmp = tmp->next;
@@ -2364,24 +2365,29 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 waitrcstart:
 
+/*
+printf("tithek_view: %d\n", getconfigint("tithek_view", NULL));
 		// reload selected pic
-		if(listbox->select != NULL && listbox->select->handle != NULL)
+		if(getconfigint("tithek_view", NULL) == 7 || getconfigint("tithek_cover", NULL) == 7)
 		{
-			if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
+			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-				tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
-//				if(file_exist(tithekpic))
-					changepic(listbox->select, tithekpic);
-//				else
-//				{
-//					free(tithekpic); tithekpic = NULL;
-//					tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
-//					changepic(listbox->select, tithekpic);
-//				}
-				free(tithekpic); tithekpic = NULL;
+				if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
+				{
+					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
+	//				if(file_exist(tithekpic))
+						changepic(listbox->select, tithekpic);
+	//				else
+	//				{
+	//					free(tithekpic); tithekpic = NULL;
+	//					tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
+	//					changepic(listbox->select, tithekpic);
+	//				}
+					free(tithekpic); tithekpic = NULL;
+				}
 			}
 		}
-
+*/
 		drawscreen(grid, 0, 0);
 
 		rcret = waitrc(grid, 2000, 2);
