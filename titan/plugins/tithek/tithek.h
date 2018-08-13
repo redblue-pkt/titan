@@ -1058,13 +1058,14 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		fontsize = 25;
 		pcount = 1;
 		height += status.fontsizeadjust;
-		fontsize2 = 20;
+		fontsize2 = 22;
 		posy = 20;
 		textposx = 370;
 		textposx2 = textposx + 30;
 	}
 
 	fontsize += status.fontsizeadjust;
+	fontsize2 += status.fontsizeadjust;
 	height += status.fontsizeadjust;
 
 	if(getconfigint("tithek_pic_ratio", NULL) == 1)
@@ -2365,10 +2366,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 waitrcstart:
 
-/*
-printf("tithek_view: %d\n", getconfigint("tithek_view", NULL));
 		// reload selected pic
-		if(getconfigint("tithek_view", NULL) == 7 || getconfigint("tithek_cover", NULL) == 7)
+		if(getconfigint("tithek_description", NULL) == 1)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
@@ -2387,7 +2386,7 @@ printf("tithek_view: %d\n", getconfigint("tithek_view", NULL));
 				}
 			}
 		}
-*/
+
 		drawscreen(grid, 0, 0);
 
 		rcret = waitrc(grid, 2000, 2);
@@ -2408,7 +2407,11 @@ printf("tithek_view: %d\n", getconfigint("tithek_view", NULL));
 			break;
 		}
 
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			delconfigtmp("tithek_description");
+			break;
+		}
 		if(rcret == getrcconfigint("rcmenu", NULL))
 		{
 			screentithek_settings();
@@ -3045,6 +3048,7 @@ why ?
 				int lastcover = getconfigint("tithek_cover", NULL);
 				addconfiginttmp("tithek_view", 7);
 				addconfiginttmp("tithek_cover", 7);
+				addconfiginttmp("tithek_description", 1);
 				char* selected = ostrcat(listbox->select->text, NULL, 0, 0);
 
 				pagecount = createtithekplay(titheklink, grid, listbox, countlabel, title, first + 1);
