@@ -1079,48 +1079,9 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		tmp = addlistbox(grid, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
+			char* destext = NULL;
 
-//listbox dummy
-			if(getconfigint("tithek_cover", NULL) >= 8 && getconfigint("tithek_view", NULL) >= 8)
-			{
-				gridbr = 0;
-				posx = 0;
-
-				if(getconfigint("tithek_cover", NULL) == 7 || getconfigint("tithek_view", NULL) == 7)
-				{
-					char* tithekpic = tithekdownload(titheknode->pic, titheknode->localname, NULL, 0, 0);
-					changepic(tmp, tithekpic);
-					free(tithekpic); tithekpic = NULL;
-				}
-				
-				tmp->valign = convertxmlentry("middle", 0);
-				tmp->textposx = textposx;
-				tmp->wrap = YES;
-#ifndef SIMULATE
-				tmp->picheight = 1;
-				tmp->picwidth = 1;
-#endif
-				tmp->bgspace = 1;
-				tmp->vspace = 10;
-				tmp->hspace = 10;
-
-// das lasst den text2 eine zeile weiter springen
-				tmp->type = TEXTBOX;
-// schiebt text nach oben und text2 eine zeile darunter
-//				tmp->valign = TOPBOTTOM;
-				tmp->posy = posy;
-				tmp->textposx2 = textposx2;
-				tmp->height = height;
-				tmp->fontcol2 = convertcol("yellow");
-				tmp->fontsize2 = fontsize2;
-			}
-
-			if(titheknode->description != NULL && (getconfigint("tithek_cover", NULL) == 0 || getconfigint("tithek_view", NULL) == 0))
-			{
-//				usedescriptionview = 1;
-			}
-
-			if(usedescriptionview == 1 || (getconfigint("tithek_cover", NULL) == 7 && getconfigint("tithek_view", NULL) == 7))
+			if(getconfigint("tithek_cover", NULL) == 7 && getconfigint("tithek_view", NULL) == 7)
 			{
 				skip = 0;
 				sumcount++;
@@ -1150,6 +1111,9 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 				tmp->fontcol2 = convertcol("yellow");
 				tmp->fontsize2 = fontsize2;
 				posx = 0;
+
+				if(titheknode->description == NULL)
+					destext = ostrcat(_("No Description found..."), NULL, 0, 0);
 			}
 			else
 			{
@@ -1231,7 +1195,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			}
 			changetext(tmp, titheknode->title);
 			changename(tmp, titheknode->title);
-			changetext2(tmp, titheknode->description);
+			changetext2(tmp, desttext);
 
 			tmp->handle = (char*)titheknode;
 			posx += tmp->width;
@@ -1249,6 +1213,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 				pagecount++;
 				skip = 1;
 			}
+			free(desttext), desttext = NULL;
 		}
 		titheknode = titheknode->next;
 	}
