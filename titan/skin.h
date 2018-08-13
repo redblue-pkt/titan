@@ -3393,7 +3393,7 @@ void drawnode(struct skin* node, int flag)
 			if(node->textposx2 > 0)
 			{
 				drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, &lastposx, &lastposy, NULL, node->charspace, 0);
-				drawstring(node->text2, node->linecount, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
+				drawstring(node->text2, node->linecount + 2, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
 			}
 			else
 			{
