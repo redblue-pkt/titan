@@ -1195,7 +1195,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			}
 			changetext(tmp, titheknode->title);
 			changename(tmp, titheknode->title);
-			changetext2(tmp, desttext);
+			changetext2(tmp, destext);
 
 			tmp->handle = (char*)titheknode;
 			posx += tmp->width;
@@ -1213,7 +1213,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 				pagecount++;
 				skip = 1;
 			}
-			free(desttext), desttext = NULL;
+			free(destext), destext = NULL;
 		}
 		titheknode = titheknode->next;
 	}
