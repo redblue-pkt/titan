@@ -803,7 +803,7 @@ msgid "ADD BOUQUET"
 msgstr "Favoriten hinzufügen"
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2265
-#: tithek.h:3113
+#: tithek.h:3119
 msgid "ADD FAV"
 msgstr "Fav Hinzufügen"
 
@@ -894,11 +894,11 @@ msgstr "Timer hinzufügen"
 msgid "Add iMDB manuel"
 msgstr "Manuell IMDb hinzufügen"
 
-#: tithek.h:3080
+#: tithek.h:3086
 msgid "Add this link as Favorite ?"
 msgstr "Möchten Sie diesen Link zu Ihren Favoriten hinzufügen?"
 
-#: tithek.h:2485 tithek.h:2673
+#: tithek.h:2491 tithek.h:2679
 msgid "Add this sub folder as Favorite ?"
 msgstr "Diesen Unterordner den Favoriten hinzufügen?"
 
@@ -2716,7 +2716,7 @@ msgstr "Neu erstellen"
 msgid "Create new Skinstyle ?"
 msgstr "Einen neuen Skin Style hinzufügen ?"
 
-#: tithek.h:2470 tithek.h:2658
+#: tithek.h:2476 tithek.h:2664
 msgid "Create sub folder"
 msgstr "Ordner anlegen"
 
@@ -3293,7 +3293,7 @@ msgstr "Bearbeiten"
 msgid "EDIT DiSEqC"
 msgstr "DiSEqC konfigurieren"
 
-#: tithek.h:2260 tithek.h:3108
+#: tithek.h:2260 tithek.h:3114
 msgid "EDIT FAV"
 msgstr "Fav Bearbeiten"
 
@@ -3550,8 +3550,8 @@ msgstr ""
 #: titan.c:1274 titan.c:1280 titan.c:1291 titan.c:1297 tithek.c:103
 #: tithek_global.h:228 tithek.h:776 tithek.h:1685 tithek.h:1712 tithek.h:1734
 #: tithek.h:1791 tithek.h:1970 tithek.h:1985 tithek.h:2160 tithek.h:2196
-#: tithek.h:2213 tithek.h:2485 tithek.h:2673 tithek.h:2998 tithek.h:3062
-#: tithek.h:3080 tithek.h:3093 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2213 tithek.h:2491 tithek.h:2679 tithek.h:3004 tithek.h:3068
+#: tithek.h:3086 tithek.h:3099 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -3596,7 +3596,7 @@ msgstr "Wiedergabeliste bearbeiten"
 msgid "Edit mode"
 msgstr "Umbenennen"
 
-#: tithek.h:3093
+#: tithek.h:3099
 msgid "Edit this Favorite ?"
 msgstr "Diesen Favoriten bearbeiten?"
 
@@ -6514,8 +6514,8 @@ msgstr "Menüliste"
 #: titan.c:1253 titan.c:1274 titan.c:1280 titan.c:1291 titan.c:1297
 #: tithek.c:103 tithek_global.h:228 tithek.h:776 tithek.h:1685 tithek.h:1712
 #: tithek.h:1734 tithek.h:1791 tithek.h:1970 tithek.h:1985 tithek.h:2160
-#: tithek.h:2196 tithek.h:2485 tithek.h:2673 tithek.h:2998 tithek.h:3062
-#: tithek.h:3080 tithek.h:3093 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2196 tithek.h:2491 tithek.h:2679 tithek.h:3004 tithek.h:3068
+#: tithek.h:3086 tithek.h:3099 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:711
 #: tunerconfig.h:734 tunerconfig.h:1114 unlock.h:20 unlock.h:66 unlock.h:71
@@ -7160,8 +7160,8 @@ msgstr "Ö"
 #: titan.c:1115 titan.c:1124 titan.c:1253 titan.c:1274 titan.c:1280
 #: titan.c:1291 titan.c:1297 tithek.c:103 tithek_global.h:228 tithek.h:776
 #: tithek.h:1685 tithek.h:1712 tithek.h:1734 tithek.h:1791 tithek.h:1970
-#: tithek.h:1985 tithek.h:2160 tithek.h:2196 tithek.h:2213 tithek.h:2485
-#: tithek.h:2673 tithek.h:2998 tithek.h:3062 tithek.h:3080 tithek.h:3093
+#: tithek.h:1985 tithek.h:2160 tithek.h:2196 tithek.h:2213 tithek.h:2491
+#: tithek.h:2679 tithek.h:3004 tithek.h:3068 tithek.h:3086 tithek.h:3099
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -8578,7 +8578,7 @@ msgstr "Entfernen gestartet"
 msgid "Remove success"
 msgstr "Löschen erfolgreich"
 
-#: tithek.h:3062
+#: tithek.h:3068
 msgid "Remove this Favorite ?"
 msgstr "Möchten Sie diesen Eintrag aus Ihren Favoriten löschen?"
 
@@ -10554,7 +10554,7 @@ msgstr ""
 "Die gesuchte Datei konnte nicht gefunden werden, wir bitten um "
 "Entschuldigung."
 
-#: tithek_global.h:228 tithek.h:2998
+#: tithek_global.h:228 tithek.h:3004
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -10904,8 +10904,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
 
-#: tithek_global.h:596 tithek_global.h:718 tithek.h:2258 tithek.h:2432
-#: tithek.h:3058 tithek.h:3076 tithek.h:3089 tithek.h:3106
+#: tithek_global.h:596 tithek_global.h:718 tithek.h:2258 tithek.h:2438
+#: tithek.h:3064 tithek.h:3082 tithek.h:3095 tithek.h:3112
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "TiThek - Hauptmenü - Favoriten"
 
