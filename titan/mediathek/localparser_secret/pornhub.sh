@@ -295,7 +295,7 @@ search()
 			BEGIN
 				{
 					# setzt suchvariable auf 0 vor dem start
-					suche = 0
+					suche = 1
 					newpage = ""
 					pages = "0"
 					piccount = 0
