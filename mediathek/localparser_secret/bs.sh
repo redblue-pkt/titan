@@ -278,7 +278,7 @@ hosterold()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	genres) $INPUT;;
 	series) $INPUT;;
