@@ -309,7 +309,7 @@ BEGIN { table = ""
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	videos) $INPUT;;
 	hosterlist) $INPUT;;
