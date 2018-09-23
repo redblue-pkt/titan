@@ -32,57 +32,57 @@ void LCD_start_lcd4linux()
 	int count = 0;
 	char* startlcd = NULL;
 	
-	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+	if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf75h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 1", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf83h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 6", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87hold") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 3", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 2", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf105p") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 5", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf107h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 4", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf72h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 7", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 8", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85p") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 9", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "none") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "none") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 99", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 98 ", 1, 0);
@@ -194,27 +194,27 @@ void LCD_Samsung1_thread()
 	
 	printf("lcd_samsung thread started\n");
 	
-	if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
+	if(ostrcmp(getconfig("lcd_wlan_plugin_wetter", NULL), "yes") == 0)
 	{
-		if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+		if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf75h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf75_Wetter");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf83h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf83_Wetter");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87hold") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf105p") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf105_Wetter");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf107h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf107_Wetter");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf72h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf72_Wetter");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf85_Wetter");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85p") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf85_Wetter");
-	  else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
+	  else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf_d320_Wetter");
 		else
 			LCD_Samsung1 = getscreen("LCD_spf87_Wetter");
@@ -265,25 +265,25 @@ void LCD_Samsung1_thread()
 		weatherwrite = 0;
 	}
 	else {
-		if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+		if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf75h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf75");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf83h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf83");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87hold") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf87");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf105p") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf105");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf107h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf107");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf72h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf72");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85h") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf85");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85p") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf85");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320") == 0)
 			LCD_Samsung1 = getscreen("LCD_spf_d320");
 		else
 			LCD_Samsung1 = getscreen("LCD_spf87");	
@@ -307,25 +307,25 @@ void LCD_Samsung1_thread()
 		}
 	}
 	
-	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+	if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf75h") == 0)
 		LCD_Play = getscreen("LCD_spf75_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf83h") == 0)
 		LCD_Play = getscreen("LCD_spf83_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87h") == 0)
 		LCD_Play = getscreen("LCD_spf87_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87hold") == 0)
 		LCD_Play = getscreen("LCD_spf87_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf105p") == 0)
 		LCD_Play = getscreen("LCD_spf105_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf107h") == 0)
 		LCD_Play = getscreen("LCD_spf107_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf72h") == 0)
 		LCD_Play = getscreen("LCD_spf72_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85h") == 0)
 		LCD_Play = getscreen("LCD_spf85_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85p") == 0)
 		LCD_Play = getscreen("LCD_spf85_Play");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320") == 0)
 		LCD_Play = getscreen("LCD_spf_d320_Play");
 	else
 		LCD_Play = getscreen("LCD_spf87_Play");
@@ -336,25 +336,25 @@ void LCD_Samsung1_thread()
 	struct skin* slen = getscreennode(LCD_Play, "len");
 	struct skin* sreverse = getscreennode(LCD_Play, "reverse");
 	
-	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+	if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf75h") == 0)
 		LCD_Music = getscreen("LCD_spf75_Music");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf83h") == 0)
 		LCD_Music = getscreen("LCD_spf83_Music");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87h") == 0)
 		LCD_Music = getscreen("LCD_spf87_Music");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87hold") == 0)
 		LCD_Music = getscreen("LCD_spf87_Music");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf105p") == 0)
 		LCD_Music = getscreen("LCD_spf105_Music");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf107h") == 0)
 		LCD_Music = getscreen("LCD_spf107_Music");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf72h") == 0)
 		LCD_Music = getscreen("LCD_spf72_Music");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85h") == 0)
 		LCD_Music = getscreen("LCD_spf85_Music");
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85p") == 0)
 		LCD_Music = getscreen("LCD_spf85_Music");
-  else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
+  else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320") == 0)
 		LCD_Music = getscreen("LCD_spf_d320_Music");
 	else
 		LCD_Music = getscreen("LCD_spf87_Music");
@@ -373,57 +373,57 @@ void LCD_Samsung1_thread()
 	struct skin* mlen = getscreennode(LCD_Music, "len");
 	struct skin* mreverse = getscreennode(LCD_Music, "reverse");
 		
-	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+	if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf75h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 1", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf83h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 6", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87hold") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 3", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 2", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf105p") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 5", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf107h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 4", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf72h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 7", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85h") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 8", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85p") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 9", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "none") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "none") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 99", 1, 0);
 	}
-	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
+	else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320") == 0)
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 98 ", 1, 0);
@@ -437,27 +437,27 @@ void LCD_Samsung1_thread()
 	printf("cmd1: %s\n", startlcd);
 	
 	
-	if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0) 
+	if(ostrcmp(getconfig("lcd_wlan_plugin_standby", NULL), "yes") == 0) 
 	{
-		if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
+		if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf75h") == 0)
 			LCD_Standby = getscreen("LCD_spf75_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf83h") == 0)
 			LCD_Standby = getscreen("LCD_spf83_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87h") == 0)
 			LCD_Standby = getscreen("LCD_spf87_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf87hold") == 0)
 			LCD_Standby = getscreen("LCD_spf87_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf105p") == 0)
 			LCD_Standby = getscreen("LCD_spf105_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf107h") == 0)
 			LCD_Standby = getscreen("LCD_spf107_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf72h") == 0)
 			LCD_Standby = getscreen("LCD_spf72_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85h") == 0)
 			LCD_Standby = getscreen("LCD_spf85_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "spf85p") == 0)
 			LCD_Standby = getscreen("LCD_spf85_Standby");
-		else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
+		else if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320") == 0)
 			LCD_Standby = getscreen("LCD_spf_d320_Standby");
 		else
 			LCD_Standby = getscreen("LCD_spf87_Standby");
@@ -583,7 +583,7 @@ void LCD_Samsung1_thread()
 
 		if(status.standby > 0 && standby == 0)
 		{
-			if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0)
+			if(ostrcmp(getconfig("lcd_wlan_plugin_standby", NULL), "yes") == 0)
 				standby = 2;
 			else
 			{
@@ -667,8 +667,8 @@ void LCD_Samsung1_thread()
 				if(type == 1)
 				{
 					// Wettervorhersage
-					printf("lcd_samsung wetter = %s\n", getconfig("lcd_samsung_plugin_wetter", NULL));
-					if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
+					printf("lcd_samsung wetter = %s\n", getconfig("lcd_wlan_plugin_wetter", NULL));
+					if(ostrcmp(getconfig("lcd_wlan_plugin_wetter", NULL), "yes") == 0)
 					{
 						if(weatherwrite == 0)
 						{
@@ -686,7 +686,7 @@ void LCD_Samsung1_thread()
 										fd = fopen("/tmp/lcdweather", "r");
 										if(fd != NULL)
 										{
-											if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0) 
+											if(ostrcmp(getconfig("lcd_wlan_plugin_standby", NULL), "yes") == 0) 
 											{
 												weather_getline(fd, fileline);weather_getline(fd, fileline);
 												changetext(day0_d, fileline);
@@ -1064,7 +1064,7 @@ void LCD_Samsung1_thread()
 		//sleep(1);
 		usleep(500000);
 		
-		if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
+		if(ostrcmp(getconfig("lcd_wlan_plugin_wetter", NULL), "yes") == 0)
 		{
 			weatherref = weatherref + 1;
 			if(weatherref == 7200)
@@ -1087,7 +1087,7 @@ void LCD_Samsung1_thread()
  	free(picmin2);picmin2=NULL;
  	free(pichr2_standby);pichr2_standby=NULL;
  	free(picmin2_standby);picmin2_standby=NULL;
- 	addconfig("lcd_samsung_plugin_running", "no");
+ 	addconfig("lcd_wlan_plugin_running", "no");
  	LCD_Samsung1thread = NULL;
  	m_lock(&status.drawingmutex, 0);
  	if(drawscreen(LCD_Samsung1, 0, 2) == -2)
@@ -1108,7 +1108,7 @@ void LCD_Samsung1_main()
 		tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
 		system(tmpstr);
 		free(tmpstr); tmpstr=NULL;
-		addconfig("lcd_samsung_plugin_running", "yes");
+		addconfig("lcd_wlan_plugin_running", "yes");
 		LCD_Samsung1thread = addtimer(&LCD_Samsung1_thread, START, 10000, 1, NULL, NULL, NULL);
 		addtimer(&LCD_start_lcd4linux, START, 10000, 1, NULL, NULL, NULL);
 		sleep(1);
@@ -1151,15 +1151,15 @@ void init(void)
 	readscreen(tmpstr, 119, 1);
 	free(tmpstr); tmpstr = NULL;
 	
-	tmpstr = createpluginpath("/wlandisplay/black.jpg", 0);
+	tmpstr = createpluginpath("/wlandisplay/black320p240.jpg", 0);
 	tmpstr = ostrcat("cp ", tmpstr, 0, 1);
 	tmpstr = ostrcat(tmpstr, " /tmp/fbreadstop.jpg", 1, 0);
 		
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	system("killall fbread");
-	debug(10, "LCD Samsung SPF.. loadet !!!");
-	tmpstr = getconfig("lcd_samsung_plugin_running", NULL);
+	debug(10, "LCD Wlan.. loadet !!!");
+	tmpstr = getconfig("lcd_wlan_plugin_running", NULL);
 	if(ostrcmp(tmpstr, "yes") == 0)
 		LCD_Samsung1_main();
 	tmpstr = NULL;
@@ -1170,10 +1170,18 @@ void deinit(void)
 {
 	delmarkedscreen(119);
 	pluginaktiv = 0;
+	ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320")  == 0)
+	{
+		tmpstr = createpluginpath("/wlandisplay/black320x240.jpg", 0);
+		tmpstr = ostrcat("cp ", tmpstr, 0, 1);
+		tmpstr = ostrcat(tmpstr, " /tmp/titan.jpg", 1, 0);
+		system(tmpstr);
+		free(tmpstr); tmpstr = NULL;
+	}
 	system("echo ende > /tmp/titanlcd.png");
 	sleep(1);
 	system("killall fbread");
-	debug(10, "LCD Samsung unloadet !!!");
+	debug(10, "LCD Wlan unloadet !!!");
 }
 
 
@@ -1197,14 +1205,14 @@ void start(void)
 	int startstop = 0;
 	int restart = 0;
 	
-  if(getconfig("lcd_samsung_plugin_wetter", NULL) == NULL || ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "no")  == 0)
+  if(getconfig("lcd_wlan_plugin_wetter", NULL) == NULL || ostrcmp(getconfig("lcd_wlan_plugin_wetter", NULL), "no")  == 0)
   {
   	//wettervorplz->hidden = YES;
   	//wettervorland->hidden = YES;
   	wettervorort->hidden = YES;
   }
   changeinput(lcdip, getconfig("lcd_samsung_ip", NULL));
-  if(getconfig("lcd_samsung_plugin_type", NULL) == NULL || ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320")  != 0)
+  if(getconfig("lcd_wlan_plugin_type", NULL) == NULL || ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320")  != 0)
   {
   	lcdip->hidden = YES;
   }
@@ -1220,7 +1228,7 @@ void start(void)
   addchoicebox(lcdtype, "spf107h", _("SPF-107H"));
   addchoicebox(lcdtype, "none", _("tiMote")); */
   addchoicebox(lcdtype, "d320", _("Dummy-320"));
-	setchoiceboxselection(lcdtype, getconfig("lcd_samsung_plugin_type", NULL));
+	setchoiceboxselection(lcdtype, getconfig("lcd_wlan_plugin_type", NULL));
 	
 	addchoicebox(allmenu, "no", _("nein"));
 	addchoicebox(allmenu, "yes", _("ja"));
@@ -1228,29 +1236,29 @@ void start(void)
 	
 	addchoicebox(aktstandby, "no", _("nein")); 
 	addchoicebox(aktstandby, "yes", _("ja")); 
-	setchoiceboxselection(aktstandby, getconfig("lcd_samsung_plugin_standby", NULL)); 
+	setchoiceboxselection(aktstandby, getconfig("lcd_wlan_plugin_standby", NULL)); 
 	
 	addchoicebox(wettervor, "no", _("nein"));
   addchoicebox(wettervor, "yes", _("ja"));
-	setchoiceboxselection(wettervor, getconfig("lcd_samsung_plugin_wetter", NULL));
+	setchoiceboxselection(wettervor, getconfig("lcd_wlan_plugin_wetter", NULL));
 	
 	//changemask(wettervorplz, "0000");
-	//if(getconfig("lcd_samsung_plugin_wetterplz", NULL) == NULL)
+	//if(getconfig("lcd_wlan_plugin_wetterplz", NULL) == NULL)
 	//	changeinput(wettervorplz, "10407");
 	//else
-	//	changeinput(wettervorplz, getconfig("lcd_samsung_plugin_wetterplz", NULL));
+	//	changeinput(wettervorplz, getconfig("lcd_wlan_plugin_wetterplz", NULL));
 		
 	//changemask(wettervorland, "abcdefghijklmnopqrstuvwxyz");
-	//if(getconfig("lcd_samsung_plugin_wetterland", NULL) == NULL)
+	//if(getconfig("lcd_wlan_plugin_wetterland", NULL) == NULL)
 	//	changeinput(wettervorland, "Germany");
 	//else
-	//	changeinput(wettervorland, getconfig("lcd_samsung_plugin_wetterland", NULL));
+	//	changeinput(wettervorland, getconfig("lcd_wlan_plugin_wetterland", NULL));
 	
 	changemask(wettervorort, "abcdefghijklmnopqrstuvwxyz"); 
-	if(getconfig("lcd_samsung_plugin_wetterort", NULL) == NULL) 
+	if(getconfig("lcd_wlan_plugin_wetterort", NULL) == NULL) 
 		changeinput(wettervorort, "Berlin        "); 
 	else
-		changeinput(wettervorort, getconfig("lcd_samsung_plugin_wetterort", NULL)); 	
+		changeinput(wettervorort, getconfig("lcd_wlan_plugin_wetterort", NULL)); 	
 	
 	if(LCD_Samsung1thread != NULL)
 		changetext(b3, "STOP");
@@ -1297,28 +1305,28 @@ void start(void)
 			break;
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
-			addconfig("lcd_samsung_plugin_type", lcdtype->ret);
+			addconfig("lcd_wlan_plugin_type", lcdtype->ret);
 			addconfig("write_fb_to_jpg", allmenu->ret);
-			addconfig("lcd_samsung_plugin_standby", aktstandby->ret);
-			addconfig("lcd_samsung_plugin_wetter", wettervor->ret);
-			addconfig("lcd_samsung_plugin_wetterort", wettervorort->ret);
+			addconfig("lcd_wlan_plugin_standby", aktstandby->ret);
+			addconfig("lcd_wlan_plugin_wetter", wettervor->ret);
+			addconfig("lcd_wlan_plugin_wetterort", wettervorort->ret);
 			addconfig("lcd_samsung_ip", lcdip->ret);
-			//addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
-			//addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
+			//addconfig("lcd_wlan_plugin_wetterplz", wettervorplz->ret);
+			//addconfig("lcd_wlan_plugin_wetterland", wettervorland->ret);
 			restart = 1;
 			break;
 		}
 			
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
-			addconfig("lcd_samsung_plugin_type", lcdtype->ret);
+			addconfig("lcd_wlan_plugin_type", lcdtype->ret);
 			addconfig("write_fb_to_jpg", allmenu->ret);
-			addconfig("lcd_samsung_plugin_standby", aktstandby->ret);
-			addconfig("lcd_samsung_plugin_wetter", wettervor->ret);
-			addconfig("lcd_samsung_plugin_wetterort", wettervorort->ret);
+			addconfig("lcd_wlan_plugin_standby", aktstandby->ret);
+			addconfig("lcd_wlan_plugin_wetter", wettervor->ret);
+			addconfig("lcd_wlan_plugin_wetterort", wettervorort->ret);
 			addconfig("lcd_samsung_ip", lcdip->ret);
-			//addconfig("lcd_samsung_plugin_wetterplz", wettervorplz->ret);
-			//addconfig("lcd_samsung_plugin_wetterland", wettervorland->ret);
+			//addconfig("lcd_wlan_plugin_wetterplz", wettervorplz->ret);
+			//addconfig("lcd_wlan_plugin_wetterland", wettervorland->ret);
 			startstop = 1;
 			break;
 		}
@@ -1340,7 +1348,7 @@ void start(void)
 	{
 		if(LCD_Samsung1thread != NULL)
 		{
-			addconfig("lcd_samsung_plugin_running", "no");
+			addconfig("lcd_wlan_plugin_running", "no");
 			LCD_Samsung1thread->aktion = STOP;
 			sleep(1);
 			system("killall fbread");
@@ -1348,7 +1356,7 @@ void start(void)
 			sleep(1);
 		}
 		else {
-			addconfig("lcd_samsung_plugin_running", "yes");
+			addconfig("lcd_wlan_plugin_running", "yes");
 			firststart = 1;
 			LCD_Samsung1_main();
 		}
