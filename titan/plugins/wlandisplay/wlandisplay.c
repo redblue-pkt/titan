@@ -1168,9 +1168,10 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
+	char* tmpstr = NULL;
 	delmarkedscreen(119);
 	pluginaktiv = 0;
-	ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320")  == 0)
+	if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320")  == 0)
 	{
 		tmpstr = createpluginpath("/wlandisplay/black320x240.jpg", 0);
 		tmpstr = ostrcat("cp ", tmpstr, 0, 1);
