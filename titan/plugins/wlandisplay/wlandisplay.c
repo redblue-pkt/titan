@@ -4,7 +4,7 @@
 
 #include "lcd_weather.h"
 
-char pluginname[] = "WLAN Display";
+char pluginname[] = "LCD WLAN SPF..";
 char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/wlandisplay/wlandisplay.png";
 
@@ -86,7 +86,7 @@ void LCD_start_lcd4linux()
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 98 ", 1, 0);
-		startlcd = ostrcat(startlcd, getconfig("lcd_samsung_ip", NULL), 1, 0);
+		startlcd = ostrcat(startlcd, getconfig("lcd_wlan_ip", NULL), 1, 0);
 	}
 	else
 	{
@@ -427,7 +427,7 @@ void LCD_Samsung1_thread()
 	{
 		startlcd = createpluginpath("/wlandisplay/start.sh", 0);
 		startlcd = ostrcat(startlcd, " 98 ", 1, 0);
-		startlcd = ostrcat(startlcd, getconfig("lcd_samsung_ip", NULL), 1, 0);
+		startlcd = ostrcat(startlcd, getconfig("lcd_wlan_ip", NULL), 1, 0);
 	}
 	else
 	{
@@ -1151,14 +1151,14 @@ void init(void)
 	readscreen(tmpstr, 119, 1);
 	free(tmpstr); tmpstr = NULL;
 	
-	tmpstr = createpluginpath("/wlandisplay/black320p240.jpg", 0);
+	tmpstr = createpluginpath("/wlandisplay/black.jpg", 0);
 	tmpstr = ostrcat("cp ", tmpstr, 0, 1);
 	tmpstr = ostrcat(tmpstr, " /tmp/fbreadstop.jpg", 1, 0);
 		
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	system("killall fbread");
-	debug(10, "LCD Wlan.. loadet !!!");
+	debug(10, "LCD WLAN SPF.. loadet !!!");
 	tmpstr = getconfig("lcd_wlan_plugin_running", NULL);
 	if(ostrcmp(tmpstr, "yes") == 0)
 		LCD_Samsung1_main();
@@ -1168,21 +1168,12 @@ void init(void)
 //wird beim entladen ausgefuehrt
 void deinit(void)
 {
-	char* tmpstr = NULL;
 	delmarkedscreen(119);
 	pluginaktiv = 0;
-	if(ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320")  == 0)
-	{
-		tmpstr = createpluginpath("/wlandisplay/black320x240.jpg", 0);
-		tmpstr = ostrcat("cp ", tmpstr, 0, 1);
-		tmpstr = ostrcat(tmpstr, " /tmp/titan.jpg", 1, 0);
-		system(tmpstr);
-		free(tmpstr); tmpstr = NULL;
-	}
 	system("echo ende > /tmp/titanlcd.png");
 	sleep(1);
 	system("killall fbread");
-	debug(10, "LCD Wlan unloadet !!!");
+	debug(10, "LCD WLAN unloadet !!!");
 }
 
 
@@ -1212,13 +1203,13 @@ void start(void)
   	//wettervorland->hidden = YES;
   	wettervorort->hidden = YES;
   }
-  changeinput(lcdip, getconfig("lcd_samsung_ip", NULL));
-  if(getconfig("lcd_wlan_plugin_type", NULL) == NULL || ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320")  != 0)
+  changeinput(lcdip, getconfig("lcd_wlan_ip", NULL));
+  /*if(getconfig("lcd_wlan_plugin_type", NULL) == NULL || ostrcmp(getconfig("lcd_wlan_plugin_type", NULL), "d320")  != 0)
   {
   	lcdip->hidden = YES;
-  }
+  }*/
     
- /* addchoicebox(lcdtype, "spf72h", _("SPF-72H"));
+  /*addchoicebox(lcdtype, "spf72h", _("SPF-72H"));
   addchoicebox(lcdtype, "spf75h", _("SPF-75H"));
   addchoicebox(lcdtype, "spf83h", _("SPF-83H"));
   addchoicebox(lcdtype, "spf85h", _("SPF-85H"));
@@ -1227,7 +1218,7 @@ void start(void)
   addchoicebox(lcdtype, "spf87hold", _("SPF-87H-old"));
   addchoicebox(lcdtype, "spf105p", _("SPF-105P"));
   addchoicebox(lcdtype, "spf107h", _("SPF-107H"));
-  addchoicebox(lcdtype, "none", _("tiMote")); */
+  addchoicebox(lcdtype, "none", _("tiMote"));*/
   addchoicebox(lcdtype, "d320", _("Dummy-320"));
 	setchoiceboxselection(lcdtype, getconfig("lcd_wlan_plugin_type", NULL));
 	
@@ -1311,7 +1302,7 @@ void start(void)
 			addconfig("lcd_wlan_plugin_standby", aktstandby->ret);
 			addconfig("lcd_wlan_plugin_wetter", wettervor->ret);
 			addconfig("lcd_wlan_plugin_wetterort", wettervorort->ret);
-			addconfig("lcd_samsung_ip", lcdip->ret);
+			addconfig("lcd_wlan_ip", lcdip->ret);
 			//addconfig("lcd_wlan_plugin_wetterplz", wettervorplz->ret);
 			//addconfig("lcd_wlan_plugin_wetterland", wettervorland->ret);
 			restart = 1;
@@ -1325,7 +1316,7 @@ void start(void)
 			addconfig("lcd_wlan_plugin_standby", aktstandby->ret);
 			addconfig("lcd_wlan_plugin_wetter", wettervor->ret);
 			addconfig("lcd_wlan_plugin_wetterort", wettervorort->ret);
-			addconfig("lcd_samsung_ip", lcdip->ret);
+			addconfig("lcd_wlan_ip", lcdip->ret);
 			//addconfig("lcd_wlan_plugin_wetterplz", wettervorplz->ret);
 			//addconfig("lcd_wlan_plugin_wetterland", wettervorland->ret);
 			startstop = 1;
@@ -1353,7 +1344,7 @@ void start(void)
 			LCD_Samsung1thread->aktion = STOP;
 			sleep(1);
 			system("killall fbread");
-			debug(10, "LCD Samsung unloadet !!!");	
+			debug(10, "LCD WLAN unloadet !!!");	
 			sleep(1);
 		}
 		else {
