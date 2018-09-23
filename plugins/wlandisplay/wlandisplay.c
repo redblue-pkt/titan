@@ -4,7 +4,7 @@
 
 #include "lcd_weather.h"
 
-char pluginname[] = "LCD WLAN SPF..";
+char pluginname[] = "WLAN Display";
 char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/wlandisplay/wlandisplay.png";
 
