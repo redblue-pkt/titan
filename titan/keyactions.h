@@ -76,6 +76,7 @@ void screenkeyactions(int key, int flag)
 			if(checkemu() == 1)
 				addmenulist(&mlist, "Softcam Panel", _("Softcam Panel"), NULL, 0, 0);
 			//addmenulist(&mlist, "TV / Radio Switch", _("TV / Radio Switch"), NULL, 0, 0);
+			addmenulist(&mlist, "Bouquet List", _("Bouquet List"), NULL, 0, 0);
 			addmenulist(&mlist, "Multi EPG", _("Multi EPG"), NULL, 0, 0);
 			addmenulist(&mlist, "Graphic Multi EPG", _("Graphic Multi EPG"), NULL, 0, 0);
 			addmenulist(&mlist, "Sleep Timer", _("Sleep Timer"), NULL, 0, 0);
@@ -134,6 +135,8 @@ void screenkeyactions(int key, int flag)
 			screenplay(NULL, NULL, 0, 0);
 		else if(ostrcmp(keyconf, "Media Plugins List") == 0)
 			screenkeyactions(3, 1);
+		else if(ostrcmp(keyconf, "Bouquet List") == 0)
+			screenchannellist(NULL, NULL, 2);
 		else
 		{
 			pluginnode = getplugin(keyconf);
