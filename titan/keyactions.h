@@ -136,7 +136,7 @@ void screenkeyactions(int key, int flag)
 		else if(ostrcmp(keyconf, "Media Plugins List") == 0)
 			screenkeyactions(3, 1);
 		else if(ostrcmp(keyconf, "Bouquet List") == 0)
-			screenchannellist();
+			screenchannellist(NULL, NULL, 2);
 		else
 		{
 			pluginnode = getplugin(keyconf);
