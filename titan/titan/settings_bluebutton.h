@@ -12,6 +12,7 @@ void screensettings_bluebutton()
 	addmenulist(&mlist, "TV/Radio", _("TV/Radio"), NULL, 0, 0);
 	if(checkemu() == 1)
 		addmenulist(&mlist, "Softcam Panel", _("Softcam Panel"), NULL, 0, 0);
+	addmenulist(&mlist, "Bouquet List", _("Bouquet List"), NULL, 0, 0);
 	addmenulist(&mlist, "Extensions List", _("Extensions List"), NULL, 0, 0);
 	addmenulist(&mlist, "Multi EPG", _("Multi EPG"), NULL, 0, 0);
 	addmenulist(&mlist, "Graphic Multi EPG", _("Graphic Multi EPG"), NULL, 0, 0);
