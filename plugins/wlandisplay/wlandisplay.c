@@ -98,7 +98,7 @@ void LCD_start_lcd4linux()
 	
 	if(LCD_Samsung1thread == NULL)
 		return;
-	while (LCD_Samsung1thread->aktion != STOP && (system("ps | grep -v grep | grep fbread") != 0 && system("ps -A | grep -v grep | grep fbread") != 0)) {
+	while (LCD_Samsung1thread->aktion != STOP && (system("ps | grep -v grep | grep check1") != 0 && system("ps -A | grep -v grep | grep check1") != 0)) {
 		system(startlcd);
 		sleep(6);
 		count ++;
@@ -534,7 +534,7 @@ void LCD_Samsung1_thread()
 			if(ostrcmp(getconfig("write_fb_to_jpg", NULL), "yes") == 0) {
 				//status.write_png = 1;
 				if(type == 999)
-					system("killall -3 fbread");
+					system("killall -3 check1");
 			}
 			tmpstr2 = getaktchannelname(NULL);
 			tmpstr3 = getrec(NULL, NULL);
@@ -544,7 +544,7 @@ void LCD_Samsung1_thread()
 		else if((status.playspeed != 0 || status.play != 0 || status.pause != 0) && musicdat.act == 1 && LCD_Music != NULL)
 		{
 			if(type == 999)
-				system("killall -3 fbread");
+				system("killall -3 check1");
 			//status.write_png = 0;
 			loopcount++ ;
 			type = 3;
@@ -553,7 +553,7 @@ void LCD_Samsung1_thread()
 		else if(status.playspeed != 0 || status.play != 0 || status.pause != 0)
 		{
 			if(type == 999)
-				system("killall -3 fbread");
+				system("killall -3 check1");
 			//status.write_png = 0;
 			loopcount++ ;
 			type = 2;
@@ -563,7 +563,7 @@ void LCD_Samsung1_thread()
 		{
 			if(ostrcmp(getconfig("write_fb_to_jpg", NULL), "yes") == 0) {
 				//status.write_png = 1;
-				system("killall -1 fbread");
+				system("killall -1 check1");
 			}
 			type = 999;
 		}
@@ -599,7 +599,7 @@ void LCD_Samsung1_thread()
 				tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
 				system(tmpstr);
 				sleep(2);
-				system("killall fbread");
+				system("killall check1");
 				standby = 1;
 			}
 		}
@@ -1118,7 +1118,7 @@ void LCD_Samsung1_main()
 			LCD_Samsung1thread->aktion = STOP;
 			system("echo ende > /tmp/titanlcd.jpg");
 			sleep(1);
-			system("killall fbread");
+			system("killall check1");
 	}
 }	
 			
@@ -1153,12 +1153,12 @@ void init(void)
 	
 	tmpstr = createpluginpath("/wlandisplay/black.jpg", 0);
 	tmpstr = ostrcat("cp ", tmpstr, 0, 1);
-	tmpstr = ostrcat(tmpstr, " /tmp/fbreadstop.jpg", 1, 0);
+	tmpstr = ostrcat(tmpstr, " /tmp/check1stop.jpg", 1, 0);
 		
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
-	system("killall fbread");
-	debug(10, "LCD WLAN SPF.. loadet !!!");
+	system("killall check1");
+	debug(10, "WLAN Display loadet !!!");
 	tmpstr = getconfig("lcd_wlan_plugin_running", NULL);
 	if(ostrcmp(tmpstr, "yes") == 0)
 		LCD_Samsung1_main();
@@ -1172,7 +1172,7 @@ void deinit(void)
 	pluginaktiv = 0;
 	system("echo ende > /tmp/titanlcd.png");
 	sleep(1);
-	system("killall fbread");
+	system("killall check1");
 	debug(10, "LCD WLAN unloadet !!!");
 }
 
@@ -1329,7 +1329,7 @@ void start(void)
 	if(LCD_Samsung1thread != NULL && restart == 1)
 	{
 		LCD_Samsung1thread->aktion = STOP;
-		system("killall fbread");	
+		system("killall check1");	
 		sleep(2);
 		addtimer(&LCD_start_lcd4linux, START, 10000, 1, NULL, NULL, NULL);
 		LCD_Samsung1thread = addtimer(&LCD_Samsung1_thread, START, 10000, 1, NULL, NULL, NULL);
@@ -1343,8 +1343,8 @@ void start(void)
 			addconfig("lcd_wlan_plugin_running", "no");
 			LCD_Samsung1thread->aktion = STOP;
 			sleep(1);
-			system("killall fbread");
-			debug(10, "LCD WLAN unloadet !!!");	
+			system("killall check1");
+			debug(10, "WLAN Display unloadet !!!");	
 			sleep(1);
 		}
 		else {
