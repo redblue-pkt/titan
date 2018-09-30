@@ -526,13 +526,14 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 		else
 			if [ "$debug" = "1" ]; then echo $INPUT 444444 $URLTMP; fi
 
-#	        <iframe allowFullScreen allowFullScreen frameborder=0 marginheight=0 marginwidth=0 scrolling='no'src="http://emb.aliez.me/player/video.php?id=47383&s=t67axfnq&w=590&h=384" width="590" height="384">Your browser does not support inline frames or is currently configured not to display inline frames.</iframe>
-#		    <iframe allowFullScreen src="//livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-55574239&id=456242297&hash=f78096b994400693&hd=1" width="600" height="338" frameborder="0" allowfullscreen></iframe>
+#			<iframe allowFullScreen src="//streamable.com/s/8dir2/vkhkiz" width="600" height="338" frameborder="0" allowfullscreen></iframe>										
+#		        <iframe allowFullScreen allowFullScreen frameborder=0 marginheight=0 marginwidth=0 scrolling='no'src="http://emb.aliez.me/player/video.php?id=47383&s=t67axfnq&w=590&h=384" width="590" height="384">Your browser does not support inline frames or is currently configured not to display inline frames.</iframe>
+#			<iframe allowFullScreen src="//livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-55574239&id=456242297&hash=f78096b994400693&hd=1" width="600" height="338" frameborder="0" allowfullscreen></iframe>
 #			<iframe allowFullScreen src="http://livetv141.net/export/vk.reframe.php?ur4=http://vk.com/video_ext.php?oid=-30408&id=456242896&hash=1bafa57efd8d7c50" width="600" height="338" frameborder="0" allowfullscreen></iframe>
 #			<iframe allowFullScreen src='https://my.mail.ru/video/embed/4219658639352267889' width='626' height='367' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 #			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<iframe!\nfound=!g' | grep ^found | sed 's!src=!\nfound2=!g' | grep ^found2 | cut -d'"' -f2 | grep -v facebook | grep -v getbanner.php | grep -v userapi | grep http >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
-			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | sed 's!<iframe!\nfound=!g' | grep ^found | sed 's!src=!\nfound2=!g' | grep ^found2 | cut -d'"' -f2 | grep -v facebook | grep -v getbanner.php | grep -v userapi | grep http >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
-
+#			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | sed 's!<iframe!\nfound=!g' | grep ^found | sed 's!src=!\nfound2=!g' | grep ^found2 | cut -d'"' -f2 | grep -v facebook | grep -v getbanner.php | grep -v userapi | grep http >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
+			cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.1 | sed 's!<iframe!\nfound=!g' | grep ^found | sed 's!src=!\nfound2=!g' | grep ^found2 | cut -d'"' -f2 | grep -v facebook | grep -v getbanner.php | grep -v userapi >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2
 			URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | sed 's#//#\nhttp://#' | grep ^"http://" | cut -d"'" -f1 | cut -d'"' -f1`
 			if [ "$debug" = "1" ]; then echo $INPUT 555555 $URLTMP; fi
 
@@ -656,8 +657,14 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 			elif [ `echo $URLTMP | grep "oload." | wc -l` -eq 1 ];then
 				if [ "$debug" = "1" ]; then echo $INPUT dddddd $URLTMP; fi
 				URL=`/tmp/localhoster/hoster.sh get $URLTMP`
-			elif [ `echo $URLTMP | grep "/embed/" | wc -l` -eq 1 ];then
+			elif [ `echo $URLTMP | grep "streamable.com" | wc -l` -eq 1 ];then
 				if [ "$debug" = "1" ]; then echo $INPUT eeeeee $URLTMP; fi
+				URL=`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`
+			elif [ `echo $URLTMP | grep "ok.ru" | wc -l` -eq 1 ];then
+				if [ "$debug" = "1" ]; then echo $INPUT ffffff $URLTMP; fi
+				URL=`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`
+			elif [ `echo $URLTMP | grep "/embed/" | wc -l` -eq 1 ];then
+				if [ "$debug" = "1" ]; then echo $INPUT gggggg $URLTMP; fi
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 		#		"flashVars": {"autoplay":0,"movieSrc":"mail/arsen.bulyaev/_myvideo/738","metadataUrl":"//my.mail.ru/+/video/meta/4219658639352267490","showPauseRoll":"0","enable_search":"2","swfVersion":"29","static_version":"75","flash_enabled":"1"},
@@ -672,13 +679,13 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"url":!\nfound=!g' | grep '^found=' | cut -d'"' -f2 | tail -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6
 				URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.6`
 			elif [ `echo $URLTMP | grep "tinyurl" | wc -l` -eq 1 ];then
-				if [ "$debug" = "1" ]; then echo $INPUT ffffff $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT hhhhh $URLTMP; fi
 #<link rel="manifest" href="/manifest.json"><link rel="shortlink" href="https://youtu.be/016LXFHpFCk"><link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=de_DE" title="YouTube-Videosuche"><link rel="shortcut icon" href="https:/
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | sed 's!<link rel!\n<link rel!g' | grep shortlink | sed 's#//#\nhttp://#' | grep ^"http://" | cut -d"'" -f1 | cut -d'"' -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 				URLTMP=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4`
-				if [ "$debug" = "1" ]; then echo $INPUT ggggg $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT iiiii $URLTMP; fi
 
 				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
 
@@ -694,9 +701,9 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 					URL="$ERROR"
 				fi
 			else
-				if [ "$debug" = "1" ]; then echo $INPUT hhhhhh $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT jjjjj $URLTMP; fi
 				URLTMP=`echo $URLTMP  | sed 's#//#\nhttp://#' | grep ^"http://"`
-				if [ "$debug" = "1" ]; then echo $INPUT iiiiii $URLTMP; fi
+				if [ "$debug" = "1" ]; then echo $INPUT kkkkk $URLTMP; fi
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!file:!\nfound=!g' | grep '^found=' | cut -d"'" -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
