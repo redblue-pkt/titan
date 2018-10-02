@@ -413,8 +413,10 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 			frequency = cfre * 10;
 			debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 			debug(200, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
-			//tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
-			tpnode = createtransponder(0, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
+			tpnode = NULL;
+			if(gettransponder(id) == NULL)
+				tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
+			//tpnode = createtransponder(0, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
 			if(tpnode != NULL)
 				addtrans++;
 			else
@@ -439,8 +441,10 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 				frequency = cfre * 10;
 				debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 				debug(200, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
-				//tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
-				tpnode = createtransponder(0, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
+				tpnode = NULL;
+				if(gettransponder(id) == NULL)
+					tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
+				//tpnode = createtransponder(0, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
 				if(tpnode != NULL)
 					addtrans++;
 				else
