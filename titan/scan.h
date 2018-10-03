@@ -411,16 +411,20 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 			cfre = cfre | ((loop3[i1+2] << 8) & 0xff00);
 			cfre = cfre | (loop3[i1+3] & 0xff);
 			frequency = cfre * 10;
-			tpnode == NULL;
-			if(checktransponderonscan(frequency, orbitalpos) == 0)
-				//tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
-				tpnode = createtransponder(0, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
 			debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 			debug(200, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
+			tpnode = NULL;
+			if(checktransponderonscan(frequency, orbitalpos) == 0)
+			{
+				tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
+				debug(500, "nitscan DVB-T2 --> add transponder");
+				//tpnode = createtransponder(0, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
+			}
 			if(tpnode != NULL)
 				addtrans++;
 			else
-				err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
+				printf("nitscan DVB-T2 --> transponder not added\n");
+				//err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
 			sillen = loop3[i1+4];
 			step1 = step1 + sillen+1;
 		}
@@ -439,16 +443,20 @@ int terrsystemdesc2(unsigned char* buf, uint64_t transportid, unsigned short oni
 				cfre = cfre | ((loop2[i2+2] << 8) & 0xff00);
 				cfre = cfre | (loop2[i2+3] & 0xff);
 				frequency = cfre * 10;
-				tpnode = NULL;
-				if(checktransponderonscan(frequency, orbitalpos) == 0)
-					//tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
-					tpnode = createtransponder(0, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
 				debug(500, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);
 				debug(200, "nitscan DVB-T2 - Flag=%d -> id=%llu freq=%d bandwidth=%d hp=%d lp=%d modulation=%d guard=%d trans=%d hierarchy=%d tpnode=%p", flag, id, frequency, bandwidth, hp, lp, modulation, guardinterval, transmission, hierarchy, tpnode);				
+				tpnode = NULL;
+				if(checktransponderonscan(frequency, orbitalpos) == 0)
+				{
+					tpnode = createtransponder(id, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
+					debug(500, "nitscan DVB-T2 --> add transponder");
+					//tpnode = createtransponder(0, FE_OFDM, orbitalpos, frequency, inversion, bandwidth, lp, hp, modulation, guardinterval, transmission, system);
+				}
 				if(tpnode != NULL)
 					addtrans++;
 				else
-					err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
+					printf("nitscan DVB-T2 --> transponder not added\n");
+					//err("not add nitscan DVB-T2 - Flag=%d -> id=%llu frequency:%s", flag, id, frequency);
 			}
 			sillen = loop2[i2];
 			step1 = step1 + sillen+1;
