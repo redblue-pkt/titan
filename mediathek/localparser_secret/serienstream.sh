@@ -274,7 +274,7 @@ episode()
 list()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | sed 's/<div/\n<div/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL/$PAGE | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN
@@ -303,34 +303,36 @@ list()
 				        j = index(substr($0, i), "\"") - 1
 				        newpage = substr($0, i, j)
 
-						# extrahiere den title pfad
-						i = index($0, "title=\"") + 7
-				        j = index(substr($0, i), "\"") - 1
+					# extrahiere den title pfad
+					i = index($0, "title=\"") + 7
+#				        j = index(substr($0, i), "\"") - 1
+				        j = index(substr($0, i), "stream online") - 2
 				        title = substr($0, i, j)
 
 
-						# extrahiere den title pfad
-						i = index($0, "<h3>") + 4
-				        j = index(substr($0, i), "<") - 1
-				        title = substr($0, i, j)
+#					# extrahiere den title pfad
+#					i = index($0, "<h3>") + 4
+#				        j = index(substr($0, i), "<") - 1
+#				        title = substr($0, i, j)
 
 
-						i = index($0, "img src=\"") + 9
+#					i = index($0, "img src=\"") + 9
+					i = index($0, "src=\"") + 5
 				        j = index(substr($0, i), "\"") - 1
 				        pic = substr($0, i, j)
 
-						if (title != "")
+					if (title != "")
+					{
+						if ( pic == "" )
 						{
-							if ( pic == "" )
-							{
-					  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-							}
-
-							piccount += 1
-							# 25. in naechste zeile springen
-							# 26. \x27 = single quotes
-							print title "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+				  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 						}
+
+						piccount += 1
+						# 25. in naechste zeile springen
+						# 26. \x27 = single quotes
+						print title "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+					}
 #						next
 					}
 				}
