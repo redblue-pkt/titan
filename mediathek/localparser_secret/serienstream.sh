@@ -300,39 +300,39 @@ list()
 					{
 						# extrahiere den newpage pfad
 						i = index($0, "href=\"") + 6
-				        j = index(substr($0, i), "\"") - 1
-				        newpage = substr($0, i, j)
+				        	j = index(substr($0, i), "\"") - 1
+				        	newpage = substr($0, i, j)
 
-					# extrahiere den title pfad
-#					i = index($0, "title=\"") + 7
-##				        j = index(substr($0, i), "\"") - 1
-#				        j = index(substr($0, i), "stream online") - 2
-#				        title = substr($0, i, j)
-
-
-					# extrahiere den title pfad
-					i = index($0, "<h3>") + 4
-				        j = index(substr($0, i), "<") - 1
-				        title = substr($0, i, j)
+						# extrahiere den title pfad
+#						i = index($0, "title=\"") + 7
+##				        	j = index(substr($0, i), "\"") - 1
+#				        	j = index(substr($0, i), "stream online") - 2
+#				       		title = substr($0, i, j)
 
 
-#					i = index($0, "img src=\"") + 9
-					i = index($0, "src=\"") + 5
-				        j = index(substr($0, i), "\"") - 1
-				        pic = substr($0, i, j)
+						# extrahiere den title pfad
+						i = index($0, "<h3>") + 4
+				        	j = index(substr($0, i), "<") - 1
+				        	title = substr($0, i, j)
 
-					if (title != "")
-					{
-						if ( pic == "" )
+
+#						i = index($0, "img src=\"") + 9
+						i = index($0, "src=\"") + 5
+				        	j = index(substr($0, i), "\"") - 1
+				        	pic = substr($0, i, j)
+
+						if (title != "")
 						{
-				  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-						}
+							if ( pic == "" )
+							{
+				  				pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+							}
 
-						piccount += 1
-						# 25. in naechste zeile springen
-						# 26. \x27 = single quotes
-						print title "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
-					}
+							piccount += 1
+							# 25. in naechste zeile springen
+							# 26. \x27 = single quotes
+							print title "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+						}
 #						next
 					}
 				}
