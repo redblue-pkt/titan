@@ -304,16 +304,16 @@ list()
 				        newpage = substr($0, i, j)
 
 					# extrahiere den title pfad
-					i = index($0, "title=\"") + 7
-#				        j = index(substr($0, i), "\"") - 1
-				        j = index(substr($0, i), "stream online") - 2
-				        title = substr($0, i, j)
-
-
-#					# extrahiere den title pfad
-#					i = index($0, "<h3>") + 4
-#				        j = index(substr($0, i), "<") - 1
+#					i = index($0, "title=\"") + 7
+##				        j = index(substr($0, i), "\"") - 1
+#				        j = index(substr($0, i), "stream online") - 2
 #				        title = substr($0, i, j)
+
+
+					# extrahiere den title pfad
+					i = index($0, "<h3>") + 4
+				        j = index(substr($0, i), "<") - 1
+				        title = substr($0, i, j)
 
 
 #					i = index($0, "img src=\"") + 9
