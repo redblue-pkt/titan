@@ -830,13 +830,18 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 		while(fgets(fileline, MINMALLOC, fd) != NULL)
 		{
 			int addcurrdir = 0;
-			if(fileline[0] == '#' || fileline[0] == '\n')
+
+			if(ostrstr(fileline, "﻿#EXTM3U") != NULL)
+				continue;
+			if(fileline[0] == '#' || fileline[0] == '\n' || fileline[0] == '\r')
 			{
 
-			if(fileline[strlen(fileline) - 1] == '\n')
-				fileline[strlen(fileline) - 1] = '\0';
-			if(fileline[strlen(fileline) - 1] == '\r')
-				fileline[strlen(fileline) - 1] = '\0';
+				if(fileline[strlen(fileline) - 1] == '\n')
+					fileline[strlen(fileline) - 1] = '\0';
+				if(fileline[strlen(fileline) - 1] == '\r')
+					fileline[strlen(fileline) - 1] = '\0';
+
+				printf("fileline: %s\n", fileline);
 
 //				extra = ostrcat(fileline, NULL, 0, 0);
 //				extra = stringreplacechar(extra, '\n', '\0');
@@ -846,7 +851,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			}
 			if(fileline[0] == '/')
 				addcurrdir = 1;
-			if(strlen(fileline) >= 6 && fileline[4] == ':' && fileline[5] == '/' && fileline[6] == '/')
+//			if(strlen(fileline) >= 6 && fileline[4] == ':' && fileline[5] == '/' && fileline[6] == '/')
+			if(ostrstr(fileline, "://") != NULL)
 			{
 				addcurrdir = 1;
 				httpstream = 1;
@@ -892,8 +898,9 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 				if(extra != NULL)
 					title = ostrcat(title, extra, 1, 0);
-				else
+				else if(ret1 != NULL)
 					title = ostrcat(title, (&ret1[i])->part, 1, 0);
+
 				debug(50, "title4: %s", title);
 
 				printf("extra2: %s\n", extra);

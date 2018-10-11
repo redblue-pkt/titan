@@ -16,7 +16,7 @@ void screenmc_iptvplayer()
 
 	readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
-	char* filename = NULL, *title = NULL, *currentdirectory = NULL, *selectedfile = NULL, *lastid = NULL, *tmpstr = NULL;
+	char* filename = NULL, *title = NULL, *currentdirectory = NULL, *selectedfile = NULL, *lastid = NULL, *tmpstr = NULL, *showname = NULL;
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 4, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, count = 0, tmpview = 0, playlist = 0, playertype = 0;
 	int videooff = 0;
 
@@ -92,7 +92,7 @@ void screenmc_iptvplayer()
 			playinfobarcount ++;
 			if(playinfobarstatus > 0)
 			{
-				if(videooff == 0) screenplayinfobar(filename, NULL, 0, playertype, 0);
+				if(videooff == 0) screenplayinfobar(filename, showname, 0, playertype, 0);
 			}
 			if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
 			{
@@ -114,12 +114,12 @@ void screenmc_iptvplayer()
 				drawscreen(apskin, 0, 0);
 			}
 			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0))
-				playrcpause(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcpause(filename, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if(rcret == getrcconfigint("rcplay", NULL))
 		{
 			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0))
-				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcplay(filename, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 			//showplaylist(1);
 		}
 		else if((rcret == getrcconfigint("rcchdown", NULL)) || (rcret == getrcconfigint("rcnext", NULL)))
@@ -237,7 +237,7 @@ void screenmc_iptvplayer()
 //				}
 			}
 			else
-				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
+				playrcplay(filename, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 			if(status.play == 0 && status.pause == 0)
 			{
@@ -337,7 +337,8 @@ void screenmc_iptvplayer()
 			if(playlist == 1 && listbox->select != NULL)
 			{
 				debug(50, "listbox->select->name: %s", listbox->select->name);
-				filename = ostrcat("", listbox->select->name, 0, 0);
+				filename = ostrcat(listbox->select->name, NULL, 0, 0);
+				showname = ostrcat(listbox->select->text, NULL, 0, 0);
 
 				changetext(b2, _("Playlist-Mode"));
 			
@@ -527,6 +528,7 @@ void screenmc_iptvplayer()
 
 	free(lastid), lastid = NULL;
 	free(filename), filename = NULL;
+	free(showname), showname = NULL;
 	free(currentdirectory), currentdirectory = NULL;
 	free(selectedfile), selectedfile = NULL;
 
