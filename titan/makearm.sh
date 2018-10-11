@@ -252,9 +252,10 @@ if [ "$TYPE" = "dm920" ]; then
 #	LIBTOOLPATH=$BUILDROOT/titan/titan/$GCCPATH
 #	GCCPATH=$SYSROOT-native/usr/bin/$GCCPATH/$GCCPATH
 
+	ARCHONLY=`echo $ARCH | sed 's/-linux//'`
 	STRIP=$SRC/tmp/sysroots-components/$ARCH/binutils-cross-arm/usr/bin/$GCCPATH/$GCCPATH-strip
 	LIBTOOLPATH=$SRC/tmp/sysroots-components/cortexa15hf-neon-vfpv4/libtool-cross/usr/bin/crossscripts/$GCCPATH
-	GCCPATH=$SRC/tmp/sysroots-components/$ARCH-linux/gcc-cross-arm/usr/bin/$GCCPATH/$GCCPATH
+	GCCPATH=$SRC/tmp/sysroots-components/$ARCHONLY/gcc-cross-arm/usr/bin/$GCCPATH/$GCCPATH
 
     echo VERSION $VERSION
     echo SRC $SRC
