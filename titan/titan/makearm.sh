@@ -239,7 +239,7 @@ fi
 
 
 #if [ "$GROUP" = "dev" ] && [ "$TYPE" = "dm920" ]; then
-if [ "$TYPE" = "dm920_aus" ]; then
+if [ "$TYPE" = "dm920" ]; then
 #./arm-oe-linux-gnueabi-libtool  --tag=CC   --mode=link arm-oe-linux-gnueabi-gcc  -march=armv7ve -mfpu=neon-vfpv4  -mfloat-abi=hard -mcpu=cortex-a15 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41791-r3/recipe-sysroot -DARM -DDREAMBOX -DMIPSEL -DCAMSUPP -DEXTEPLAYER -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Os -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41791-r3=/usr/src/debug/titan-bin/2.0+svnr41791-r3 -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41791-r3/recipe-sysroot-native= -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41791-r3/recipe-sysroot=   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -o titan titan-titan.o -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -ldreamdvd -ljpeg -lssl -lcrypto 
 #arm-oe-linux-gnueabi-libtool: link: arm-oe-linux-gnueabi-gcc -march=armv7ve -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a15 --sysroot=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41791-r3/recipe-sysroot -DARM -DDREAMBOX -DMIPSEL -DCAMSUPP -DEXTEPLAYER -Os -mhard-float -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Os -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41791-r3=/usr/src/debug/titan-bin/2.0+svnr41791-r3 -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41791-r3/recipe-sysroot-native= -fdebug-prefix-map=/home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41791-r3/recipe-sysroot= -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -o titan titan-titan.o -Wl,--export-dynamic  -lm -lglib-2.0 -lgobject-2.0 -lpthread -ldl -lz -lpng -lfreetype -ldreamdvd -ljpeg -lssl -lcrypto
 
@@ -249,8 +249,11 @@ if [ "$TYPE" = "dm920_aus" ]; then
 	LIBEPLAYERROOT=$SRC/tmp/work/$BOX-oe-linux-gnueabi/titan-libeplayer3/2.0+svnr$VERSION-r3/libeplayer3/.libs/
 	BUILDROOT=$SRC/tmp/work/$BOX-oe-linux-gnueabi/titan-bin/2.0+svnr$VERSION-r3
 	SYSROOT=$BUILDROOT/recipe-sysroot
-	LIBTOOLPATH=$BUILDROOT/titan/titan/$GCCPATH
-	GCCPATH=$SYSROOT-native/usr/bin/$GCCPATH/$GCCPATH
+#	LIBTOOLPATH=$BUILDROOT/titan/titan/$GCCPATH
+#	GCCPATH=$SYSROOT-native/usr/bin/$GCCPATH/$GCCPATH
+
+	LIBTOOLPATH=$SRC/tmp/sysroots-components/cortexa15hf-neon-vfpv4/libtool-cross/usr/bin/crossscripts/$GCCPATH
+	GCCPATH=$SRC/tmp/sysroots-components/$ARCH/gcc-cross-arm/usr/bin/$GCCPATH/$GCCPATH
 
     echo VERSION $VERSION
     echo SRC $SRC
@@ -260,8 +263,11 @@ if [ "$TYPE" = "dm920_aus" ]; then
     echo GCCPATH $GCCPATH
     echo TEST LIBTOOLPATH $LIBTOOLPATH
 	echo FEST LIBTOOLPATH /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41802-r3/titan/titan/arm-oe-linux-gnueabi-libtool
+	echo NEU1 LIBTOOLPATH /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/sysroots-components/cortexa15hf-neon-vfpv4/libtool-cross/usr/bin/crossscripts/arm-oe-linux-gnueabi-libtool
+
     echo TEST GCC $GCCPATH-gcc
 	echo FEST GCC /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/work/dm920-oe-linux-gnueabi/titan-bin/2.0+svnr41796-r3/recipe-sysroot-native/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc
+	echo NEU1 GCC /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/sysroots-components/x86_64/gcc-cross-arm/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc
 
 	echo TEST EPLAYER3 $SRC/tmp/sysroots-components/$BOX/titan-libeplayer3/usr/lib/libeplayer3.so.0.0.0
 	echo FEST EPLAYER3 /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/sysroots-components/dm920/titan-libeplayer3/usr/lib/libeplayer3.so.0.0.0
