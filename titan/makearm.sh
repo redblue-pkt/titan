@@ -249,13 +249,13 @@ if [ "$TYPE" = "dm920" ]; then
 	LIBEPLAYERROOT=$SRC/tmp/work/$BOX-oe-linux-gnueabi/titan-libeplayer3/2.0+svnr$VERSION-r3/libeplayer3/.libs/
 	BUILDROOT=$SRC/tmp/work/$BOX-oe-linux-gnueabi/titan-bin/2.0+svnr$VERSION-r3
 	SYSROOT=$BUILDROOT/recipe-sysroot
-#	LIBTOOLPATH=$BUILDROOT/titan/titan/$GCCPATH
-#	GCCPATH=$SYSROOT-native/usr/bin/$GCCPATH/$GCCPATH
+	LIBTOOLPATH=$BUILDROOT/titan/titan/$GCCPATH
+	GCCPATH=$SYSROOT-native/usr/bin/$GCCPATH/$GCCPATH
 
-	ARCHONLY=`echo $ARCH | sed 's/-linux//'`
-	STRIP=$SRC/tmp/sysroots-components/$ARCHONLY/binutils-cross-arm/usr/bin/$GCCPATH/$GCCPATH-strip
-	LIBTOOLPATH=$SRC/tmp/sysroots-components/cortexa15hf-neon-vfpv4/libtool-cross/usr/bin/crossscripts/$GCCPATH
-	GCCPATH=$SRC/tmp/sysroots-components/$ARCHONLY/gcc-cross-arm/usr/bin/$GCCPATH/$GCCPATH
+#	ARCHONLY=`echo $ARCH | sed 's/-linux//'`
+#	STRIP=$SRC/tmp/sysroots-components/$ARCHONLY/binutils-cross-arm/usr/bin/$GCCPATH/$GCCPATH-strip
+#	LIBTOOLPATH=$SRC/tmp/sysroots-components/cortexa15hf-neon-vfpv4/libtool-cross/usr/bin/crossscripts/$GCCPATH
+#	GCCPATH=$SRC/tmp/sysroots-components/$ARCHONLY/gcc-cross-arm/usr/bin/$GCCPATH/$GCCPATH
 
     echo VERSION $VERSION
     echo SRC $SRC
@@ -274,8 +274,8 @@ if [ "$TYPE" = "dm920" ]; then
 	echo TEST EPLAYER3 $SRC/tmp/sysroots-components/$BOX/titan-libeplayer3/usr/lib/libeplayer3.so.0.0.0
 	echo FEST EPLAYER3 /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/sysroots-components/dm920/titan-libeplayer3/usr/lib/libeplayer3.so.0.0.0
 
-	echo TEST STRIP $STRIP-gcc
-	echo FEST STRIP /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/sysroots-components/x86_64/binutils-cross-arm/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-strip
+#	echo TEST STRIP $STRIP-gcc
+#	echo FEST STRIP /home/atemio/flashimg/BUILDGIT/checkout_mips360/builds/titannit/release/dm920/tmp/sysroots-components/x86_64/binutils-cross-arm/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-strip
 
 	ls -al $SRC/tmp/sysroots-components/$BOX/titan-libeplayer3/usr/lib/libeplayer3*
 #	cp -a $SRC/tmp/sysroots-components/$BOX/titan-libeplayer3/usr/lib/libeplayer3* $SYSROOT/usr/lib/
@@ -290,8 +290,8 @@ if [ "$TYPE" = "dm920" ]; then
 
     echo make3
 #   $SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/$GCCPATH-strip titan
-#    $GCCPATH-strip titan
-    $STRIP-strip titan
+    $GCCPATH-strip titan
+#    $STRIP-strip titan
 else
 	if [ "$EXTEPLAYER3" = "1" ];then
 	    mkdir .deps
