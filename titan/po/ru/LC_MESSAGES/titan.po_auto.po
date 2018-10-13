@@ -4589,7 +4589,7 @@ msgstr "Интервал защиты"
 
 #: skin_default_keyskin.xml.h:35
 msgid "H"
-msgstr "Ч"
+msgstr "Р"
 
 #: hbbtv.h:759
 msgid "HBBTV Favoriten"
