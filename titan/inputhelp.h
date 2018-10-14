@@ -194,7 +194,9 @@ char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 				}
 
 				inputboxff(inputhelp, inputbox, screencalc, filelistview, flag);
-				inputboxchar(inputhelp, inputbox, grid->select->name[0], screencalc, filelistview, flag);
+//				inputboxchar(inputhelp, inputbox, grid->select->name[0], screencalc, filelistview, flag);
+				inputboxchar(inputhelp, inputbox, grid->select->text[0], screencalc, filelistview, flag);
+
 			}
 		}
 	}
