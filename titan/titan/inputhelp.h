@@ -95,7 +95,7 @@ char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 	drawscreen(inputhelp, 0, flag);
 	addscreenrc(inputhelp, grid);
 
-	//translateinputhelp(inputhelp, flag);
+	translateinputhelp(inputhelp, flag);
 
 	while(1)
 	{
@@ -182,7 +182,7 @@ char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 						addscreenrc(inputhelp, grid);
 					}
 					drawscreen(inputhelp, 0, flag);
-					//translateinputhelp(inputhelp, flag);
+					translateinputhelp(inputhelp, flag);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcyellow", NULL))
@@ -193,8 +193,10 @@ char* screeninputhelp(char* text, int screencalc, int filelistview, int flag)
 					continue;
 				}
 
-				inputboxff(inputhelp, inputbox, screencalc, filelistview, flag);
-				inputboxchar(inputhelp, inputbox, grid->select->name[0], screencalc, filelistview, flag);
+//      not working with spezial chars 
+//                              inputboxff(inputhelp, inputbox, screencalc, filelistview, flag); 
+//                              inputboxchar(inputhelp, inputbox, grid->select->name[0], screencalc, filelistview, flag); 
+				inputboxchar2(inputhelp, inputbox, grid->select->text, screencalc, filelistview, flag); 
 			}
 		}
 	}
