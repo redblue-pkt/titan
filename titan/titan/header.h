@@ -781,6 +781,7 @@ int writerc(int keycode);
 
 //rcfunc.h
 void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int filelistview, int flag);
+void inputboxchar2(struct skin* screen, struct skin* inputbox, char* zeichen, int screencalc, int filelistview, int flag);
 void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag);
 void inputboxfr(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag);
 void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag);

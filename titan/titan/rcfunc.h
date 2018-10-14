@@ -114,14 +114,14 @@ void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int 
 
 void inputboxchar2(struct skin* screen, struct skin* inputbox, char* zeichen, int screencalc, int filelistview, int flag)
 {
+	if(inputbox->input == NULL)
+		changeinput(inputbox, "");
+
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
-		if(strlen(inputbox->input) > 0)
-		{
-			inputbox->input = ostrcat(inputbox->input, zeichen, 1, 0);
-			if(flag != 1)
-				drawscreen(screen, screencalc, flag);
-		}
+		inputbox->input = ostrcat(inputbox->input, zeichen, 1, 0);
+		if(flag != 1)
+			drawscreen(screen, screencalc, flag);
 	}
 }
 
