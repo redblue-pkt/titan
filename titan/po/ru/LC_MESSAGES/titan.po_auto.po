@@ -721,7 +721,7 @@ msgstr "?"
 
 #: diseqcconfig.h:136 skin_default_keyskin.xml.h:16
 msgid "A"
-msgstr ""
+msgstr "Ф"
 
 #: tpk_description.h:4
 msgid ""
@@ -815,7 +815,7 @@ msgstr "Добавить один"
 
 #: skin_default_keyskin.xml.h:19
 msgid "AE"
-msgstr ""
+msgstr "Э"
 
 #: skin_default_skin.xml.h:28 webif_channellist.h:1
 msgid "ALL"
@@ -1408,7 +1408,7 @@ msgstr "Уровень AVG "
 
 #: diseqcconfig.h:137 skin_default_keyskin.xml.h:21
 msgid "B"
-msgstr ""
+msgstr "И"
 
 #: system_backup_restore.h:88
 msgid "BACKUP ERROR"
@@ -1828,7 +1828,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:23
 msgid "C"
-msgstr ""
+msgstr "С"
 
 #: lnbconfig.h:148
 msgid "C-Band"
@@ -2717,7 +2717,7 @@ msgstr "Статус"
 
 #: skin_default_keyskin.xml.h:26
 msgid "D"
-msgstr ""
+msgstr "В"
 
 #: skin_default_skin.xml.h:142
 msgid "DEFAULT"
@@ -3235,7 +3235,7 @@ msgstr "Dvbapi (Включен)"
 
 #: skin_default_keyskin.xml.h:29
 msgid "E"
-msgstr ""
+msgstr "У"
 
 #: tpk_description.h:61
 msgid ""
@@ -3806,7 +3806,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:31
 msgid "F"
-msgstr ""
+msgstr "А"
 
 #: hwtest.h:685
 msgid "FAIL Flash/Nand (/mnt)"
@@ -4379,7 +4379,7 @@ msgstr "На весь экран"
 
 #: skin_default_keyskin.xml.h:33
 msgid "G"
-msgstr ""
+msgstr "П"
 
 #: skinadjust.h:249
 msgid "GB"
@@ -5101,7 +5101,7 @@ msgstr "Гибридный тюнер изменился, ресивер буд�
 
 #: skin_default_keyskin.xml.h:37
 msgid "I"
-msgstr ""
+msgstr "Ш"
 
 #: tpk_showname.h:48
 msgid "I Hate Comic Sans"
@@ -5518,7 +5518,7 @@ msgstr "Итальянский"
 
 #: skin_default_keyskin.xml.h:39
 msgid "J"
-msgstr ""
+msgstr "О"
 
 #: global.h:6523
 msgid "January"
@@ -5543,7 +5543,7 @@ msgstr "Июнь"
 
 #: skin_default_keyskin.xml.h:41
 msgid "K"
-msgstr ""
+msgstr "Л"
 
 #: spinner.h:18
 msgid "KILL"
@@ -5668,7 +5668,7 @@ msgstr "Скин KravenHD активирован"
 
 #: skin_default_keyskin.xml.h:43
 msgid "L"
-msgstr ""
+msgstr "Д"
 
 #: tpk_showname.h:68
 msgid "LCD Pearl"
@@ -6011,7 +6011,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:45
 msgid "M"
-msgstr ""
+msgstr "Ь"
 
 #: plugins_mc_skin.xml.h:70 skins_mc_skin.xml.h:70
 msgid "MC VideoPlayer Imdb Settings"
@@ -6657,7 +6657,7 @@ msgstr "Моё видео"
 
 #: skin_default_keyskin.xml.h:47
 msgid "N"
-msgstr ""
+msgstr "Т"
 
 #: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
 msgid "NEW"
@@ -6951,11 +6951,11 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:49
 msgid "O"
-msgstr ""
+msgstr "Щ"
 
 #: skin_default_keyskin.xml.h:51
 msgid "OE"
-msgstr ""
+msgstr "Ж"
 
 #: about.h:9 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
@@ -7273,7 +7273,7 @@ msgstr "Разгон процессора"
 
 #: skin_default_keyskin.xml.h:54
 msgid "P"
-msgstr ""
+msgstr "З"
 
 #: skin_default_skin.xml.h:427
 msgid "PCR PID:"
@@ -8020,7 +8020,7 @@ msgstr "Список"
 
 #: skin_default_keyskin.xml.h:56
 msgid "Q"
-msgstr ""
+msgstr "Й"
 
 #: transponder.h:491 transponder.h:530
 msgid "QAM 128"
@@ -8053,7 +8053,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:58
 msgid "R"
-msgstr ""
+msgstr "К"
 
 #: tpk_description.h:128
 msgid "RC configuration only for UltraPlus F-9000HD"
@@ -8693,7 +8693,7 @@ msgstr "Русский"
 
 #: skin_default_keyskin.xml.h:60
 msgid "S"
-msgstr ""
+msgstr "Ы"
 
 #: blindscanadjust.h:120 skin_default_skin.xml.h:529 webif_channellist.h:2
 msgid "SAT"
@@ -8875,7 +8875,7 @@ msgstr "Хороший порт"
 
 #: skin_default_keyskin.xml.h:63
 msgid "SZ"
-msgstr ""
+msgstr "Ъ"
 
 #: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:132
 msgid "Samba Server"
@@ -10229,7 +10229,7 @@ msgstr "Система"
 
 #: skin_default_keyskin.xml.h:65
 msgid "T"
-msgstr ""
+msgstr "Е"
 
 #: tpchoice.h:72
 msgid "TERR"
@@ -11084,11 +11084,11 @@ msgstr "Обозначение типа"
 
 #: skin_default_keyskin.xml.h:67
 msgid "U"
-msgstr ""
+msgstr "Г"
 
 #: skin_default_keyskin.xml.h:69
 msgid "UE"
-msgstr ""
+msgstr "Х"
 
 #: security.h:2138
 msgid "UFS910 free license"
@@ -11260,7 +11260,7 @@ msgstr "Пользователь"
 
 #: skin_default_keyskin.xml.h:71
 msgid "V"
-msgstr ""
+msgstr "М"
 
 #: skin_default_skin.xml.h:723
 msgid "VFDisplay"
@@ -11469,7 +11469,7 @@ msgstr "Голосов"
 
 #: skin_default_keyskin.xml.h:73
 msgid "W"
-msgstr ""
+msgstr "Ц"
 
 #: network.h:699
 msgid "WEP"
@@ -11743,7 +11743,7 @@ msgstr "Авторы"
 
 #: skin_default_keyskin.xml.h:75
 msgid "X"
-msgstr ""
+msgstr "Ч"
 
 #: plugins_sudoku_skin.xml.h:17 skins_sudoku_skin.xml.h:17
 msgid "X-Position"
@@ -11799,7 +11799,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:77
 msgid "Y"
-msgstr ""
+msgstr "Я"
 
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
 msgid "Y-Resolution"
@@ -11863,7 +11863,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:79
 msgid "Z"
-msgstr ""
+msgstr "Н"
 
 #: plugins_zapback_skin.xml.h:6 skins_zapback_skin.xml.h:6
 msgid "ZapBack"
@@ -11907,7 +11907,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:15
 msgid "a"
-msgstr ""
+msgstr "ф"
 
 #: skin_default_keyskin.xml.h:17
 msgid "abc/ABC"
@@ -11943,7 +11943,7 @@ msgstr "Общие настройки"
 
 #: skin_default_keyskin.xml.h:18
 msgid "ae"
-msgstr ""
+msgstr "э"
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "afterevent"
@@ -12059,7 +12059,7 @@ msgstr "Параметры AV"
 
 #: skin_default_keyskin.xml.h:20
 msgid "b"
-msgstr ""
+msgstr "и"
 
 #: harddisk.h:573
 msgid "backup"
@@ -12150,7 +12150,7 @@ msgstr "Древесный"
 
 #: skin_default_keyskin.xml.h:22
 msgid "c"
-msgstr ""
+msgstr "с"
 
 #: webif_help.h:12
 msgid "caidlock"
@@ -12291,7 +12291,7 @@ msgstr "Резка записанных файлов"
 
 #: skin_default_keyskin.xml.h:25
 msgid "d"
-msgstr ""
+msgstr "в"
 
 #: rectimer.h:1093
 msgid "daily"
@@ -12435,7 +12435,7 @@ msgstr "Пусто"
 
 #: skin_default_keyskin.xml.h:28
 msgid "e"
-msgstr ""
+msgstr "у"
 
 #: adjust.h:334
 msgid "ePlayer"
@@ -12528,7 +12528,7 @@ msgstr "Внешний"
 
 #: skin_default_keyskin.xml.h:30
 msgid "f"
-msgstr ""
+msgstr "а"
 
 #: vfdisplay.h:139
 msgid "fade out/in"
@@ -12609,7 +12609,7 @@ msgstr "Отдельным списком"
 
 #: skin_default_keyskin.xml.h:32
 msgid "g"
-msgstr ""
+msgstr "п"
 
 #: tpk_section.h:5
 msgid "games"
@@ -12649,7 +12649,7 @@ msgstr "Серый"
 
 #: skin_default_keyskin.xml.h:34
 msgid "h"
-msgstr "Ч"
+msgstr "р"
 
 #: webif_help.h:29
 msgid "harddisk_main"
@@ -12702,7 +12702,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:36
 msgid "i"
-msgstr ""
+msgstr "ш"
 
 #: play.h:497
 msgid "iD3Tag"
@@ -12792,7 +12792,7 @@ msgstr "IP адрес"
 
 #: skin_default_keyskin.xml.h:38
 msgid "j"
-msgstr ""
+msgstr "о"
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:452 lcdpearl1.c:507
@@ -12803,7 +12803,7 @@ msgstr "Да"
 
 #: skin_default_keyskin.xml.h:40
 msgid "k"
-msgstr ""
+msgstr "л"
 
 #: skin_default_skin.xml.h:337
 msgid "key 0"
@@ -12823,7 +12823,7 @@ msgstr "Клавиатура"
 
 #: skin_default_keyskin.xml.h:42
 msgid "l"
-msgstr ""
+msgstr "д"
 
 #: skin_default_skin.xml.h:341
 msgid "lan"
@@ -12916,7 +12916,7 @@ msgstr "Низкое"
 
 #: skin_default_keyskin.xml.h:44
 msgid "m"
-msgstr ""
+msgstr "ь"
 
 #: webif_help.h:44
 msgid "mainmenu"
@@ -13000,7 +13000,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:46
 msgid "n"
-msgstr ""
+msgstr "т"
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:451 lcdpearl1.c:506
@@ -13183,11 +13183,11 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:48
 msgid "o"
-msgstr ""
+msgstr "щ"
 
 #: skin_default_keyskin.xml.h:50
 msgid "oe"
-msgstr ""
+msgstr "ж"
 
 #: avsettings.h:73 avsettings.h:89 cec.h:628 cec.h:676 fancontrol.h:110
 #: harddisk.h:929 httpdsettings.h:76 lnbconfig.h:144
@@ -13304,7 +13304,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:53
 msgid "p"
-msgstr ""
+msgstr "з"
 
 #: webif_help.h:62
 msgid "panel_settings_fancontrol"
@@ -13482,7 +13482,7 @@ msgstr "Кэширование"
 
 #: skin_default_keyskin.xml.h:55
 msgid "q"
-msgstr ""
+msgstr "й"
 
 #: webif_help.h:71
 msgid "quickmenu"
@@ -13490,7 +13490,7 @@ msgstr "Быстрое меню"
 
 #: skin_default_keyskin.xml.h:57
 msgid "r"
-msgstr ""
+msgstr "к"
 
 #: moduleconfig.h:462
 msgid "ready"
@@ -13595,7 +13595,7 @@ msgstr "Чтение/Запись"
 
 #: skin_default_keyskin.xml.h:59
 msgid "s"
-msgstr ""
+msgstr "ы"
 
 #: webif_help.h:78
 msgid "satfinder"
@@ -14055,11 +14055,11 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:62
 msgid "sz"
-msgstr ""
+msgstr "ъ"
 
 #: skin_default_keyskin.xml.h:64
 msgid "t"
-msgstr ""
+msgstr "е"
 
 #: networkbrowser.h:1702
 msgid "tcp"
@@ -14200,7 +14200,7 @@ msgstr "Тип"
 
 #: skin_default_keyskin.xml.h:66
 msgid "u"
-msgstr ""
+msgstr "г"
 
 #: networkbrowser.h:1701
 msgid "udp"
@@ -14208,7 +14208,7 @@ msgstr ""
 
 #: skin_default_keyskin.xml.h:68
 msgid "ue"
-msgstr ""
+msgstr "х"
 
 #: diseqcconfig.h:20
 msgid "uncommitted, committed, toneburst"
@@ -14332,7 +14332,7 @@ msgstr "Использовать SSL"
 
 #: skin_default_keyskin.xml.h:70
 msgid "v"
-msgstr ""
+msgstr "м"
 
 #: security.h:2125
 msgid "valid"
@@ -14392,7 +14392,7 @@ msgstr "Громкость"
 
 #: skin_default_keyskin.xml.h:72
 msgid "w"
-msgstr ""
+msgstr "ц"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
@@ -14480,7 +14480,7 @@ msgstr "Размер буфера записи"
 
 #: skin_default_keyskin.xml.h:74
 msgid "x"
-msgstr ""
+msgstr "ч"
 
 #: tpk_showname.h:230
 msgid "xupnpd"
@@ -14512,7 +14512,7 @@ msgstr "Xupnpd запущен"
 
 #: skin_default_keyskin.xml.h:76
 msgid "y"
-msgstr ""
+msgstr "я"
 
 #: screensaveradjust.h:33
 msgid "yellow"
@@ -14590,7 +14590,7 @@ msgstr "Да, медленно"
 
 #: skin_default_keyskin.xml.h:78
 msgid "z"
-msgstr ""
+msgstr "н"
 
 #: tpk_showname.h:231
 msgid "zapback (Werbezapper)"
