@@ -8,16 +8,18 @@ import sys
 from lib.net import Net
 import lib.common as common
 from lib import jsunpack
+import re, urllib, json
 
 INTERVALS = 5
 
 class TheVideoResolver(object):
     name = "thevideo"
     domains = ["thevideo.me"]
-    pattern = '(?://|\.)(thevideo\.me)/(?:embed-|download/)?([0-9a-zA-Z]+)'
+    pattern = '(?://|\.)(thevideo\.me|thevideo\.cc|vev\.io|tvad./me)/(?:embed-|download/)?([0-9a-zA-Z]+)'
 
     def __init__(self):
-        self.net = Net()
+#        self.net = Net()
+        self.net = Net(cookie_file='/mnt/network/cookies', http_debug = False)
         self.headers = {'User-Agent': common.ANDROID_USER_AGENT}
         url = str(sys.argv[1])
         host = self.get_host_and_id(url)[0]
@@ -34,50 +36,52 @@ class TheVideoResolver(object):
 
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
+
         headers = {
             'Referer': web_url
         }
         headers.update(self.headers)
-        html = self.net.http_GET(web_url, headers=headers).content
 
-        r = re.search('sources:\s*(\[.*?\])', html, re.DOTALL)
+        response = self.net.http_GET(web_url, headers=headers).content
+        ret = self.net.save_cookies('/mnt/network/cookies')
+        videoCode = self.getSearchGroups(response, r'''['"]video_code['"]\s*:\s*['"]([^'^"]+?)['"]''')[0]
+        print videoCode
 
-        if r:
-            sources = json.loads(r.group(1))
-            max_label = 0
-            stream_url = ''
-            for source in sources:
-                if 'label' in source and int(re.sub('[^0-9]', '', source['label'])) > max_label:
-                    stream_url = source['file']
-                    max_label = int(re.sub('[^0-9]', '', source['label']))
-
-        if re.search('File was deleted.', html):
-            print 'errormsg=File was deleted.'
-
-        varname = re.search('''concat\(\s*['"]/["']\s*\+([^\+]+?)\+''', html).group(1)
-
-#        authkey = re.search('''var lets_play_a_game=\'(.*)\'''', html).group(1)
-#        print "authkey2", authkey
-
-        authkey = re.search(r"=\'(.*)\'", html).group(1)
-
-#        my_regex = r"var " + re.escape(varname) + r"""\s*=\s*['"]([^'^"]+?)['"]"""
-#        my_regex = re.escape(varname) + r"""\s*=\s*['"]([^'^"]+?)['"]"""
-#
-#        test = re.search(my_regex, html, re.IGNORECASE)
-#        print "test", test
-
-        web_url = "https://thevideo.me/vsign/player/" + authkey
-        html = self.net.http_GET(web_url, headers=headers).content
-
-        js_data = jsunpack.unpack(html)
-        for match in re.finditer('(eval\(function.*?)\{\}\)\)', html, re.DOTALL):
-            js_data = jsunpack.unpack(match.group(1))
-            ua = re.search('"ua=(.*?)"', js_data).group(1)
-            vt = re.search('"vt=(.*?)"', js_data).group(1)
-            print '%s?direct=false&ua=%s&vt=%s' % (stream_url, ua, vt)
-
+    def getSearchGroups(self, data, pattern, grupsNum=1, ignoreCase=False):
+        tab = []
+        if ignoreCase:
+            match = re.search(pattern, data, re.IGNORECASE)
+        else:
+            match = re.search(pattern, data)
         
+        for idx in range(grupsNum):
+            try:    value = match.group(idx + 1)
+            except Exception: value = ''
+            tab.append(value)
+        return tab
+
+    def getPage(self, url, addParams = {}, post_data = None):
+        ''' wraps getURLRequestData '''
+        try:
+            addParams['url'] = url
+            if 'return_data' not in addParams:
+                addParams['return_data'] = True
+            response = self.getURLRequestData(addParams, post_data)
+            status = True
+        except urllib2.HTTPError, e:
+#            printExc()
+            response = e
+            status = False
+        except Exception:
+#            printExc()
+            response = None
+            status = False
+        
+        if addParams['return_data'] and status and not isinstance(response, basestring):
+            status = False
+            
+        return (status, response)
+ 
     def get_url(self, host, media_id):
         return 'http://%s/embed-%s-640x360.html' % (host, media_id)
 

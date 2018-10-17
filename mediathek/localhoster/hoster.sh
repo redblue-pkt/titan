@@ -190,7 +190,33 @@ youwatch()
 
 thevideo()
 {
-	$BIN $CMD/thevideo.py $INPUT
+	$BIN $CMD/thevideo.py $INPUT > $TMP/cache.$FILENAME.1
+
+	videocode=`cat $TMP/cache.$FILENAME.1`
+
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	$curlbin --data '{}' https://vev.io/api/serve/video/$videocode -o $TMP/cache.$FILENAME.2
+	cat $TMP/cache.$FILENAME.2 | sed 's/{/\n/g' | sed 's/,/\n/g' | grep "/stream/" >$TMP/cache.$FILENAME.3
+
+	while read -u 3 ROUND; do
+		TITEL=`echo $ROUND | cut -d'"' -f2`
+		URL=`echo $ROUND | cut -d'"' -f4`
+
+		if [ ! -z "$URL" ];then
+			echo "$URL" | tr -d '\n' | tr -d '\r' >> $STREAMLIST
+			echo "" >> $STREAMLIST
+		fi
+
+
+	done 3<$TMP/cache.$FILENAME.3
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	echo $STREAMLIST
 }
 
 movshare()
@@ -768,7 +794,7 @@ if [ "$TYPE" == "get" ];then
 		videoweed|bitvid) videoweed $INPUT;;
 		vodlocker) vodlocker $INPUT;;
 		youwatch|chouhaa|ay8ou8ohth) youwatch $INPUT;;
-		thevideo) thevideo $INPUT;;
+		thevideo|tvad|vev) thevideo $INPUT;;
 		movshare|wholecloud|vidgg) movshare $INPUT;;
 		vidto) vidto $INPUT;;
 		vidup) vidup $INPUT;;
@@ -803,7 +829,7 @@ if [ "$TYPE" == "hoster" ];then
 	esac
 fi
 
-if [ "$TYPE" == "youtube_dl" ];then
+if [ "$TYPE" == "youtube_dl" ];thenthevideo.cc
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
 		*) youtube_dl $INPUT $USER $PASS;;
