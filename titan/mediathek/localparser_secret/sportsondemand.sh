@@ -702,11 +702,11 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 				fi
 			else
 				if [ "$debug" = "1" ]; then echo $INPUT jjjjj $URLTMP; fi
-				URLTMP=`echo $URLTMP  | sed 's#//#\nhttp://#' | grep ^"http://"`
+				URLTMP=`echo $URLTMP  | sed 's#//#\nhttp://#g' | grep ^"http://"`
 				if [ "$debug" = "1" ]; then echo $INPUT kkkkk $URLTMP; fi
 
 				$curlbin $URLTMP --referer $URL$PAGE -o $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
-				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!file:!\nfound=!g' | grep '^found=' | cut -d"'" -f2 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
+				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!file:!\nfound=!g' | grep '^found=' | cut -d"'" -f2 | cut -d"," -f1 | head -n1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4
 				URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.4`
 			fi
 		fi
