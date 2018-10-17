@@ -834,7 +834,7 @@ if [ "$TYPE" == "hoster" ];then
 	esac
 fi
 
-if [ "$TYPE" == "youtube_dl" ];thenthevideo.cc
+if [ "$TYPE" == "youtube_dl" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
 		*) youtube_dl $INPUT $USER $PASS;;
