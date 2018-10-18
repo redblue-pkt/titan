@@ -51,7 +51,8 @@ search()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
-		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
+#		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
+		curl "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
 		cat $TMP/cache.$FILENAME.1 | tr '\n' '\r' |  tr '\r' ' ' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!"kind":!\nkind":!g' | grep ^"kind" | grep videoId >$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
