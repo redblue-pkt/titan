@@ -1208,7 +1208,8 @@ void start(void)
   {
   	lcdip->hidden = YES;
   }
-    
+	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "d320") == 0)
+		addconfig("lcd_samsung_plugin_type", "spf72h");        
   addchoicebox(lcdtype, "spf72h", _("SPF-72H"));
   addchoicebox(lcdtype, "spf75h", _("SPF-75H"));
   addchoicebox(lcdtype, "spf83h", _("SPF-83H"));
@@ -1219,7 +1220,7 @@ void start(void)
   addchoicebox(lcdtype, "spf105p", _("SPF-105P"));
   addchoicebox(lcdtype, "spf107h", _("SPF-107H"));
   addchoicebox(lcdtype, "none", _("tiMote"));
-  addchoicebox(lcdtype, "d320", _("Dummy-320"));
+  //addchoicebox(lcdtype, "d320", _("Dummy-320"));
 	setchoiceboxselection(lcdtype, getconfig("lcd_samsung_plugin_type", NULL));
 	
 	addchoicebox(allmenu, "no", _("nein"));
