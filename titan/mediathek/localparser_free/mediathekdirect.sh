@@ -135,7 +135,7 @@ shows()
 videosgrep()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | tr '[' '\n' | grep \""$NEXT"\" | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin --compressed -o - $URL/$PAGE | tr '[' '\n' | grep \""$NEXT"\" | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			# BEGIN variable setzen
 			BEGIN
