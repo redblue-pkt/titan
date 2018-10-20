@@ -136,7 +136,7 @@ void writecentervfd(char* value)
 
 	memcpy(out + ws, value, max - ws);
 	writevfd(out);
-	free (out);
+	free(out);
 }
 
 // Display a scroll text on VFD
@@ -178,7 +178,7 @@ void writescrollvfd(char* value)
 
 	memcpy(out, value, max); // display first 16 chars after scrolling
 	writevfd(out);
-	free (out);
+	free(out);
 	return;
 }
 
@@ -469,6 +469,7 @@ void cleanupvfd()
 		curstate=curstate->next;
 		free(tmpstate);
 	}
+	vfdiconstates = NULL;
 }
 
 int recstar = 0;
