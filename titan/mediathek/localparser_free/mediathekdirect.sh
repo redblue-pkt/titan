@@ -90,7 +90,7 @@ date()
 {
 #curl http://www.mediathekdirekt.de/good.json | tr '[' '\n'|  cut -d"," -f4 | grep -v [a-z] | grep -v [A-Z] | grep "[0.9].[0.9].[0.9]" | sort -u | sort -r -k 1.10 -k 1.6 | sed '1,1d'
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin $URL/$PAGE | tr '[' '\n'|  cut -d"," -f4 | grep -v [a-z] | grep -v [A-Z] | grep "[0.9].[0.9].[0.9]" | sort -u | sort -r -k 1.10 -k 1.6 | sed '1,1d' > $TMP/cache.$FILENAME.1
+		$curlbin --compressed $URL/$PAGE | tr '[' '\n'|  cut -d"," -f4 | grep -v [a-z] | grep -v [A-Z] | grep "[0.9].[0.9].[0.9]" | sort -u | sort -r -k 1.10 -k 1.6 | sed '1,1d' > $TMP/cache.$FILENAME.1
 
 		rm $TMP/$FILENAME.list > /dev/null 2>&1
 		while read -u 3 ROUND; do
@@ -105,7 +105,7 @@ date()
 channels()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | tr '[' '\n' | awk '{ gsub(/\\"/, "\x27"); print }'  | grep ^'"' | awk '{ gsub(/\", \"/, "\" ; \""); print }' | cut -d ";" -f1 | sort -u > $TMP/cache.$FILENAME.1
+		$curlbin --compressed -o - $URL/$PAGE | tr '[' '\n' | awk '{ gsub(/\\"/, "\x27"); print }'  | grep ^'"' | awk '{ gsub(/\", \"/, "\" ; \""); print }' | cut -d ";" -f1 | sort -u > $TMP/cache.$FILENAME.1
 		rm $TMP/$FILENAME.list > /dev/null 2>&1
 	
 		while read -u 3 ROUND; do
@@ -120,7 +120,7 @@ channels()
 shows()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | tr '[' '\n' | awk '{ gsub(/\\"/, "\x27"); print }'  | grep ^'"' | awk '{ gsub(/\", \"/, "\" ; \""); print }' | cut -d ";" -f3 | sort -u | grep ^' "' > $TMP/cache.$FILENAME.1
+		$curlbin --compressed -o - $URL/$PAGE | tr '[' '\n' | awk '{ gsub(/\\"/, "\x27"); print }'  | grep ^'"' | awk '{ gsub(/\", \"/, "\" ; \""); print }' | cut -d ";" -f3 | sort -u | grep ^' "' > $TMP/cache.$FILENAME.1
 		rm $TMP/$FILENAME.list > /dev/null 2>&1
 	
 		while read -u 3 ROUND; do
@@ -172,7 +172,7 @@ videosgrep()
 videos()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | tr '[' '\n' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin --compressed -o - $URL/$PAGE | tr '[' '\n' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			# BEGIN variable setzen
 			BEGIN
