@@ -809,22 +809,32 @@ hosterlist()
 		piccount=0
 		$curlbin "$URL/$PAGE" -o $TMP/cache.$PARSER.$FROM.$FILENAME.1
 
-		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!show_webplayer('!\nfound=('!g" | sed 's!src="!\nsrc="!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+#		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!show_webplayer('!\nfound=('!g" | sed 's!src="!\nsrc="!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!<td width=16><img title=!\nfound=!g" | grep '^found=' | grep  show_webplayer >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1 | sed 's!/webplayer.php!/export/webplayer.iframe.php!'`
 			if [ "`echo $URL | grep ^// | wc -l`" -eq 1 ];then
 				URL="http:$URL"
 			fi
-			TITLE=`echo $ROUND | cut -d"'" -f2`
-			EXTRA=`echo $ROUND | cut -d"'" -f4`
-
+			TITLE=`echo $ROUND | sed "s!show_webplayer('!\nfound2=('!g" | sed 's!src="!\nsrc="!g' | grep '^found2=' | cut -d"'" -f2`
+			EXTRA=`echo $ROUND | sed "s!show_webplayer('!\nfound2=('!g" | sed 's!src="!\nsrc="!g' | grep '^found2=' | cut -d"'" -f4`
+			LANG=`echo $ROUND | cut -d'"' -f2 | sed 's/#//g'`
 #			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 			HOST=$(echo "$TITLE" | sed 's/ (/(/' | cut -d"(" -f1 | tr [A-Z] [a-z])
-			PIC="http://atemio.dyndns.tv/mediathek/menu/"$HOST".jpg"
+
+			if [ ! -z "$LANG" ];then
+				PIC=http:`echo $ROUND | cut -d'"' -f4`
+			else
+				PIC="http://atemio.dyndns.tv/mediathek/menu/"$HOST".jpg"
+			fi
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
 				TITLE="$TITLE ($EXTRA)"
+			fi
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$LANG" ];then
+				TITLE="$TITLE ($LANG)"
 			fi
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
