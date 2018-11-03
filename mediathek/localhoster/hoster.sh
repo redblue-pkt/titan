@@ -816,7 +816,7 @@ if [ "$TYPE" == "get" ];then
 		streamango|streamcherry) streamango $INPUT;;
 		vidlox) vidlox $INPUT;;
 		redirector|googlevideo|vodcloud|google|skyfall|s4) directstream "$INPUT";;
-		aliez) aliez $INPUT;;
+		aliez|aplayer1) aliez $INPUT;;
 		sport7) sport7 $INPUT;;
 		sportstream365) sportstream365 $INPUT;;
 		sportsonline) sportsonline $INPUT;;
