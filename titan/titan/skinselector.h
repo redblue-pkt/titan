@@ -155,7 +155,7 @@ void screenskinselect(void)
 			{
 				listbox->aktline = j + 1;
 				char *pf = strdup(list[j].name);
-				strncpy(pf + strlen(pf)-8, "prev.png", 8);
+				memcpy(pf + strlen(pf)-8, "prev.png", 8);
 				changepic(png, pf);
 				free(pf);
 			}
@@ -256,7 +256,7 @@ void screenskinselect(void)
 		{
 			struct ListType *selection = list + listbox->aktline - 1;
 			char *pf=strdup(selection->name);
-			strncpy(pf + strlen(pf) - 8, "prev.png", 8);
+			memcpy(pf + strlen(pf) - 8, "prev.png", 8);
 			changepic(png, pf);
 			free(pf);
 			drawscreen(screen, 0, 0);
