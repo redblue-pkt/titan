@@ -256,7 +256,7 @@ int tpkcreateflagfile(char* path, char* file)
 
 //flag 0: normal filelist
 //flag 1: preview filelist
-int tpkcreatefilelist(char* mainpath, char* to, char* from, int type, off64_t endpos, off64_t len, int major, int minor, int flag, char* name)
+int tpkcreatefilelist(char* mainpath, char* to, char* from, int type, off64_t endpos, off64_t len, int maj, int minor, int flag, char* name)
 {
 	int ret = 0, writeret = 0;
 	FILE *fd = NULL;
@@ -297,11 +297,11 @@ int tpkcreatefilelist(char* mainpath, char* to, char* from, int type, off64_t en
 		tmpstr = ostrcat(tmpstr, "/", 1, 0);
 		tmpstr = ostrcat(tmpstr, name, 1, 0);
 		tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-		writeret = fprintf(fd, "%s#%s#%d#%lli#%lli#%d#%d\n", tmpstr, from, type, endpos, len, major, minor);
+		writeret = fprintf(fd, "%s#%s#%d#%lli#%lli#%d#%d\n", tmpstr, from, type, endpos, len, maj, minor);
 		free(tmpstr); tmpstr = NULL;
 	}
 	else
-		writeret = fprintf(fd, "%s#%s#%d#%lli#%lli#%d#%d\n", to, from, type, endpos, len, major, minor);
+		writeret = fprintf(fd, "%s#%s#%d#%lli#%lli#%d#%d\n", to, from, type, endpos, len, maj, minor);
 	if(writeret < 0)
 	{
 		perr("writting file %s", file);
@@ -623,7 +623,7 @@ end:
 
 //flag 0: extract archive
 //flag 1: create archive
-int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
+int tpkcreatechr(char* mainpath, char* file, int maj, int minor, int flag)
 {
 	int writeret = 0, ret = 0;
 
@@ -645,7 +645,7 @@ int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
 		else
 			ret = 0;
 
-		ret = mknod(file, S_IFCHR|0777, makedev(major, minor));
+		ret = mknod(file, S_IFCHR|0777, makedev(maj, minor));
 		if(ret != 0)
 		{
 			perr("create chr dev %s", file);
@@ -656,7 +656,7 @@ int tpkcreatechr(char* mainpath, char* file, int major, int minor, int flag)
 
 	if(flag == 1)
 	{
-		writeret = tpkcreatefilelist(mainpath, file, "*", DT_CHR, 0, 0, major, minor, 0, NULL);
+		writeret = tpkcreatefilelist(mainpath, file, "*", DT_CHR, 0, 0, maj, minor, 0, NULL);
 		if(writeret < 0)
 		{
 			err("create filelist %s", file);
@@ -671,7 +671,7 @@ end:
 
 //flag 0: extract archive
 //flag 1: create archive
-int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
+int tpkcreateblk(char* mainpath, char* file, int maj, int minor, int flag)
 {
 	int writeret = 0, ret = 0;
 
@@ -693,7 +693,7 @@ int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
 		else
 			ret = 0;
 
-		ret = mknod(file, S_IFBLK|0777, makedev(major, minor));
+		ret = mknod(file, S_IFBLK|0777, makedev(maj, minor));
 		if(ret != 0)
 		{
 			perr("create blk dev %s", file);
@@ -704,7 +704,7 @@ int tpkcreateblk(char* mainpath, char* file, int major, int minor, int flag)
 
 	if(flag == 1)
 	{
-		writeret = tpkcreatefilelist(mainpath, file, "*", DT_BLK, 0, 0, major, minor, 0, NULL);
+		writeret = tpkcreatefilelist(mainpath, file, "*", DT_BLK, 0, 0, maj, minor, 0, NULL);
 		if(writeret < 0)
 		{
 			err("create filelist %s", file);
@@ -1202,7 +1202,7 @@ end:
 //flag 1: don't del dir
 int tpkdel(char* path, int restore, int flag)
 {
-	int ret = 0, len = 0, newtype = 0, oldtype = 0, major = 0, minor = 0, exist = 0;
+	int ret = 0, len = 0, newtype = 0, oldtype = 0, maj = 0, minor = 0, exist = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *from = NULL, *to = NULL, *tmpstr = NULL;
 
@@ -1251,7 +1251,7 @@ int tpkdel(char* path, int restore, int flag)
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%d#%d#%d#%d", to, from, &newtype, &oldtype, &exist, &major, &minor);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%d#%d#%d#%d", to, from, &newtype, &oldtype, &exist, &maj, &minor);
 		if(ret != 7)
 		{
 			err("read restore file");
@@ -1315,12 +1315,12 @@ int tpkdel(char* path, int restore, int flag)
 		else if(oldtype == DT_BLK) //block device
 		{
 			if(restore == 1)
-				tpkcreateblk("", to, major, minor, 0);
+				tpkcreateblk("", to, maj, minor, 0);
 		}
 		else if(oldtype == DT_CHR) //charcter device
 		{
 			if(restore == 1)
-				tpkcreatechr("", to, major, minor, 0);
+				tpkcreatechr("", to, maj, minor, 0);
 		}
 		else if(oldtype == DT_FIFO) //fifo
 		{
@@ -1339,7 +1339,7 @@ end:
 
 int tpkdelbackup(char* path)
 {
-	int ret = 0, len = 0, newtype = 0, oldtype = 0, major = 0, minor = 0, exist = 0;
+	int ret = 0, len = 0, newtype = 0, oldtype = 0, maj = 0, minor = 0, exist = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *from = NULL, *to = NULL, *tmpstr = NULL;
 
@@ -1388,7 +1388,7 @@ int tpkdelbackup(char* path)
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%d#%d#%d#%d", to, from, &newtype, &oldtype, &exist, &major, &minor);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%d#%d#%d#%d", to, from, &newtype, &oldtype, &exist, &maj, &minor);
 		if(ret != 7)
 		{
 			err("read restore file");
@@ -1410,7 +1410,7 @@ end:
 
 int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 {
-	int ret = 0, major = 0, minor = 0;
+	int ret = 0, maj = 0, minor = 0;
 	FILE *fd = NULL;
 	char* tmpstr = NULL, *from = NULL;
 
@@ -1483,7 +1483,7 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 				perr("get file status %s", to);
 				return 1;
 			}
-			major = major(s.st_rdev);
+			maj = major(s.st_rdev);
 			minor = minor(s.st_rdev);
 		}
 		else if(oldtype == DT_CHR) //charcter device
@@ -1495,14 +1495,14 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 				perr("get file status %s", to);
 				return 1;
 			}
-			major = major(s.st_rdev);
+			maj = major(s.st_rdev);
 			minor = minor(s.st_rdev);
 		}
 	}
 
 	if(from == NULL) from = ostrcat("*", NULL, 0, 0);
 
-	ret = fprintf(fd, "%s#%s#%d#%d#%d#%d#%d\n", to, from, newtype, oldtype, exist, major, minor);
+	ret = fprintf(fd, "%s#%s#%d#%d#%d#%d#%d\n", to, from, newtype, oldtype, exist, maj, minor);
 	if(ret < 0)
 	{
 		perr("writting restorefile");
@@ -1522,7 +1522,7 @@ end:
 //flag 1: extract other
 int tpkextractfilelist(char* file, char* path, int flag)
 {
-	int ret = 0, ilen = 0, type = 0, major = 0, minor = 0, control = 0, exist = 0, count = 0;
+	int ret = 0, ilen = 0, type = 0, maj = 0, minor = 0, control = 0, exist = 0, count = 0;
 	off64_t startpos = 0, len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *from = NULL, *to = NULL, *tmpstr = NULL;
@@ -1582,7 +1582,7 @@ int tpkextractfilelist(char* file, char* path, int flag)
 		if(ilen >= 0 && fileline[ilen] == '\r')
 			fileline[ilen] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%lld#%lld#%d#%d", to, from, &type, &startpos, &len, &major, &minor);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%d#%lld#%lld#%d#%d", to, from, &type, &startpos, &len, &maj, &minor);
 		if(ret != 7)
 		{
 			err("read filelist");
@@ -1642,7 +1642,7 @@ int tpkextractfilelist(char* file, char* path, int flag)
 		}
 		else if(type == DT_BLK) //block device
 		{
-			ret = tpkcreateblk("", to, major, minor, 0);
+			ret = tpkcreateblk("", to, maj, minor, 0);
 			if(ret != 0)
 			{
 				err("create blk dev %s", to);
@@ -1652,7 +1652,7 @@ int tpkextractfilelist(char* file, char* path, int flag)
 		}
 		else if(type == DT_CHR) //charcter device
 		{
-			ret = tpkcreatechr("", to, major, minor, 0);
+			ret = tpkcreatechr("", to, maj, minor, 0);
 			if(ret != 0)
 			{
 				err("create chr dev %s", to);
