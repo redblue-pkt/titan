@@ -1264,7 +1264,7 @@ void fesetunicable(struct dvbdev* node)
 		unicabletune |= (node->feaktband & 0x1);
 		
 		debug(200, "unicabletune 0x%06x", unicabletune);
-		printf("uni2-> tunigword: 0x%06x\n", unicabletune);
+//		printf("uni2-> tunigword: 0x%06x\n", unicabletune);
 	
 		if(status.firstunicablewait == 0)
 		{
