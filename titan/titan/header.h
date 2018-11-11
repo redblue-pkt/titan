@@ -738,6 +738,10 @@ unsigned char* savejpg(char* filename, int width, int height, int channels, int 
 static inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color);
 static inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color);
 unsigned char * resize(unsigned char *origin, int ox, int oy, int dx, int dy, int type, unsigned char * dst, int flag);
+inline void drawpixelfast(int posx, int posy, unsigned long color);
+inline void drawpixel(int posx, int posy, unsigned long color);
+
+
 
 //volume.h
 void screenvolumeup();
