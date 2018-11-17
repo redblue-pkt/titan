@@ -1,0 +1,4 @@
+Hier können Sie Ihren Satelliten-Tuner einstellen. 
+Bitte stellen Sie zuerst Ihre Satellitenauswahl ein. 
+Bei der Verwendung von DiSEqC, stellen Sie den verwendeten Port ein. 
+Für Fortgeschrittene Lnb / Unicam, bitte navigieren Sie zu dem Feld und drücken Sie die rote Taste zur Einstellung.

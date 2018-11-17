@@ -1,0 +1,76 @@
+.body {background-color: #323232; font-family: verdana; color: #ffffff;}
+.error {font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
+.biglabel {font-family:verdana; font-size: 13pt; color: #ffffff; text-decoration: none}
+.label {font-family:verdana; font-size: 11pt; color: #ffffff; text-decoration: none}
+.label1 {font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
+.smalllabel1 {font-family:verdana; font-size: 10pt; color: #ffffff; text-decoration: none}
+
+.link {white-space: normal; vertical-align: middle; /*border-radius: 5px 0px 0px 5px;*/ font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
+.link:hover {background-color: #00a4c8}
+
+.smalllink {vertical-align: middle; font-family:verdana; font-size: 8pt; color: #ffffff; text-decoration: none}
+.smalllink:hover {background-color: #00a4c8}
+
+.line1 {background-color: #454545;}
+.line2 {background-color: #505050;}
+.line1 td:nth-child(2){text-align: center; width: 110px}
+.line2 td:nth-child(2){text-align: center; width: 110px}
+/*.line1 td:last-child:not([class="gepgcell"]){border-radius: 0px 5px 5px 0px;}
+.line2 td:last-child:not([class="gepgcell"]){border-radius: 0px 5px 5px 0px;}
+.line1 td:first-child:not([class="gepgcell"]){ border-radius: 5px 0px 0px 5px;}
+.line2 td:first-child:not([class="gepgcell"]){ border-radius: 5px 0px 0px 5px;}
+.line1 td div{ border-radius: 0px 0px 0px 0px;}
+.line2 td div{ border-radius: 0px 0px 0px 0px;}
+.line1 td:only-child { border-radius: 5px 5px 5px 5px !important; }
+.line2 td:only-child { border-radius: 5px 5px 5px 5px !important; }*/
+
+.hreflink {font-family: verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
+.hreflink:hover {background-color: #00a4c8}
+
+.pagelink {padding-left: 6pt; padding-right: 6pt; padding-top: 2pt; padding-bottom: 2pt; margin: 2pt; background-color: #454545; margin: 2pt; border: 0pt solid #c0c0c0; font-family: verdana; font-size: 12pt; color: #ffffff; text-decoration: none; border-radius: 5px 5px 5px 5px;}
+.pagelink:hover {background-color: #00a4c8}
+.pagesellink {padding-left: 6pt; padding-right: 6pt; padding-top: 2pt; padding-bottom: 2pt; margin: 2pt; background-color: #00a4c8; margin: 2pt; border: 0pt solid #c0c0c0; font-family: verdana; font-size: 12pt; color: #ffffff; text-decoration: none; border-radius: 5px 5px 5px 5px;}
+.pagesellink:hover {background-color: #00a4c8}
+
+.linelink {padding-left: 8pt; padding-right: 8pt; padding-top: 2pt; padding-bottom: 2pt; margin: 2pt; font-family: verdana; font-size: 12pt; color: #ffffff; text-decoration: none; border-radius: 5px 5px 5px 5px; background-color: #454545}
+.linelink:hover {background-color: #00a4c8}
+
+.linelink2 {padding-left: 6pt; padding-right: 6pt; padding-top: 2pt; padding-bottom: 2pt; margin: 2pt; font-family: verdana; font-size: 11pt; color: #ffffff; text-decoration: none; border-radius: 5px 5px 5px 5px; background-color: #454545}
+.linelink2:hover {background-color: #00a4c8} 
+
+.bigbutton {height: 80px; width: 200px; font-family: verdana; font-size: 12pt; color: #ffffff; background-color: #454545; cursor:pointer; border-radius: 5px 5px 5px 5px; border: 0px solid #ffffff}
+.button {height: 40px; width: 200px; font-family: verdana; font-size: 12pt; color: #ffffff; background-color: #454545; border: 0px solid #ffffff; border-radius: 5px 5px 5px 5px;}
+.timelineborder {vertical-align: middle; float: left; position: relative; font-size: 6px; height: 8px; width: 50px; margin-top: 8px; margin-right: 5px; margin-left: 5px; padding: 0px; border: 1px solid #ffffff; border-radius: 5px 5px 5px 5px}
+.timelinebar {float: left; position: relative; font-size: 6px; height: 8px; margin: 0px; padding: 0px; border: 0px; background-color: #EB6F11; border-radius: 5px 5px 5px 5px}
+.inputbox {border: 1px solid #ffffff; border-radius: 5px 5px 5px 5px}
+
+.gepgtimelinecell {text-align: left; white-space: nowrap; height: 20px; width: 75px; max-height: 20px; max-width: 75px; min-width: 75px; overflow: hidden; background-color: #454545}
+.gepgchannel1 {text-align: left; padding: 2px; color: #ffffff; white-space: nowrap; border: 1px solid #303030; height: 27px; width: 150px; max-height: 27px; max-width: 150px; min-width: 150px; overflow: hidden; background-color: #454545}
+.gepgchannel2 {text-align: left; padding: 2px; color: #ffffff; white-space: nowrap; border: 1px solid #303030; height: 27px; width: 150px; max-height: 27px; max-width: 150px; min-width: 150px; overflow: hidden; background-color: #505050}
+.gepgchannelcell {border: 1px solid #303030; height: 27px; width: 100px; max-height: 27px; max-width: 100px; min-width: 100px; overflow: hidden}
+.gepgcell {white-space: nowrap; font-size: 12px; color: #ffffff; height: 27px; max-height: 27px; overflow: hidden}
+.gepgcell:hover {overflow: visible; background-color: #EB6F11; width: auto !important; max-width: initial !important}
+.gepgcellborder {border-left: 2px solid #303030; height: 27px; max-height: 27px; color: #ffffff;/*text-align: center*/}
+.gepgcellblank {height: 27px; width: 100px; max-height: 27px; max-width: 100px; overflow: hidden; background-color: #303030}
+.tableBoxOuter {width: 100%; height: 100%}
+.openrctext {font-family:verdana; font-size: 8pt; color: #505050; text-decoration: none}
+.openrctext:hover {color: #00a4c8; text-decoration: none}
+
+#helpchoices
+#help {white-space: pre-wrap}
+#serviceinfo h1 {text-align: left}
+#newsletterchoices h1 {text-align: center}
+#about
+#streamingchoices
+#info
+#info_logs
+#info_sysinfos
+#info_systeminfos
+
+td select {width: 170px}
+td.coldate  {text-align: center;}
+td.coltime  {text-align: center;}
+td.linkimage  {text-align: center;}
+tr.channelname {text-align: center;}
+.channelname {font-size: 25px}
+.tabledesc {font-weight: bold}

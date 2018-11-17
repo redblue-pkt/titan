@@ -1,0 +1,1 @@
+Die eigene geographische Position in Längen- und Breitengrad.

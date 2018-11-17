@@ -1,0 +1,7 @@
+﻿1. Start the search root, the desired SSID Des access point or router accept with OK.
+2. Select the type of encryption. The encryption WPA2 * should be selected.
+3. Change The Text button in the input mode and enter the key, complete with OK.
+4. Enable Startup if desired
+*  For security and performance reasons WPA2 should be chosen. Your router or access point should
+   use AES as the encryption method or CCMP.
+   Note: For the WLAN mode the LAN interface is switched off.

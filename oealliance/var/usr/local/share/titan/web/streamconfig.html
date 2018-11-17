@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="titan.css">
+    <title></title>
+  </head>
+  <body class="body" onLoad="parent.initializeForm(streamconfig.player,streamconfig.streamport)">
+    <center>
+      <form id="streamconf" name="streamconfig">
+        <br>
+        <br>
+		<table>
+          <tr>
+            <td>
+              <font class="label">_("Player"):&nbsp;</font>
+            </td>
+            <td>
+              <select name="player" border="0">
+                <option value="goodplayer" selected>
+                  _("GoodPlayer")
+                </option>
+                <option value="buzzplayer">
+                  _("BuzzPlayer")
+                </option>
+                <option value="oplayer">
+                  _("Oplayer HD")
+                </option>
+                <option value="oplayerlite">
+                  _("Oplayer HD lite")
+                </option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font class="label">_("Stream Port"):&nbsp;</font>
+            </td>
+            <td>
+              <input class="inputbox" type="numbers" name="streamport" value="22222">
+            </td>
+          </tr>
+        </table><br>
+        <br>
+        <input class="button" type="button" name="send" value="Send" onclick="parent.validateStreamPort()">&nbsp;<input class="button"
+        type="reset" name="reset" value="_("Reset")">
+      </form>
+    </center>
+  </body>
+</html>

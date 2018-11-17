@@ -1,0 +1,2 @@
+﻿Help Text for fancontrol
+ settings 

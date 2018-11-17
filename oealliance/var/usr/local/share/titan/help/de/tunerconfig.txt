@@ -1,0 +1,3 @@
+Hier können Sie Ihren Tuner konfigurieren. 
+Für die Kanalsuche müssen Sie ihren Tuner bearbeiten und abhängig von der Verbindung einstellen. 
+Für Motorsysteme ist eine zusätzliche Einstellung der Motoren erforderlich.

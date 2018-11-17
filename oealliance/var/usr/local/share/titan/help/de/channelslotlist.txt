@@ -1,0 +1,1 @@
+Hier können Sie Kanäle für ihre ci-Module zuordnen.

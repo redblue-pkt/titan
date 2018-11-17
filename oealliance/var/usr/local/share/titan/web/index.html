@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>_("TitanNit Web Control")
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="titan.css">
+<script language='JavaScript' src='helper.js'></script>
+  </head>
+  <body class=body onLoad="vertAl()">
+    <iframe name=nothing scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=0 height=0>
+    </iframe>
+    <table id="webif" style="position: absolute;" border=0 width=980 height=99% cellpadding=5 cellspacing=0> 
+      <tr> 
+        <!-- LINKLINE -->  
+        <td valign=bottom colspan=2>
+          <img src="img/titanweb.png"></td>  	
+        <td width=50% align=right valign=top height=20>	 
+          <table border=0 width=340>	  
+             <tr>	 
+			 <td width=16 align=center id=ipadstream>	   	
+                <a href="javascript:ipadStream()">
+                  <img border=0 width=16 height=16 title="_("Ipad Stream")" src="img/icon_smartPhone.png"></a>  	   </td>		
+             <td width=16 align=center>	   	
+                <a href="javascript:rcshow()">
+                  <img border=0 width=16 height=16 title="_("Show/Hide Remote Control")" src="img/icon_rcopen.png"></a>  	   </td>	   
+              <td width=100 align=center>		
+                <form action=query method=get target=nothing style="height:18px; margin:auto;">		
+                  <input type=image name=poweroff title="_("Power Off")" src="img/icon_poweroff.png" width=16 height=16/>		
+                  <input type=image name=restart title="_("Restart")" src="img/icon_restart.png" width=16 height=16/>		
+                  <input type=image name=guirestart title="_("GUI Restart")" src="img/icon_guirestart.png" width=16 height=16/>		
+                  <input type=image name=standby title="_("Standby")" src="img/icon_standby.png" width=16 height=16/>		
+                </form>	   </td>	   
+              <td width=16 align=center>
+                <iframe name=setmute scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=16 src=query?setmute onload="setTimeout(function(){setmute.document.location.href='query?setmute';}, 15000);">
+                </iframe>	 	   </td>	   
+              <td width=135 align=center>		
+                <iframe name=setvol scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=27 src=query?setvol onload="setTimeout(function(){setvol.document.location.href='query?setvol';}, 15000);">
+                </iframe>	   </td>		   
+              <td align=right>		
+                <a href=query?addrectimer target=main>
+                  <img border=0 src=img/record.png title="_("Start Record")" alt=Record width=16 height=16></a>		
+                <a href=query?getsignal target=main>
+                  <img border=0 src=img/signal.png title="_("Show Signal Infos")" alt=Signal width=16 height=16></a>	   </td>	  
+            </tr>	
+          </table>   </td> 
+      </tr> 
+      <tr>  
+        <td colspan=4>	
+          <table border=0 width=100%>	
+            <tr>	
+              <td valign=bottom>	
+                <a class=linelink target=leftpanel href=channellist.html>_("Channel List")</a>	
+                <a class=linelink target=leftpanel href=boxcontrol.html>_("Boxcontrol")</a>	
+                <a class=linelink target=main href=query?getmoviefilelist>_("Movies")</a>	
+                <a class=linelink target=leftpanel href=timer.html>_("Timer")</a>
+                <a class=linelink target=leftpanel href=system.html>_("System")</a>
+                <a class=linelink target=leftpanel href=settings.html>_("Settings")</a>
+				<a class=linelink target=leftpanel href=info.html>_("Info")</a>
+				<a class=linelink target=leftpanel href=help.html>_("Help")</a></td>
+              <td align=right>
+                <form target=main action=query method=get>
+                  <input class=inputbox type=text name=getepgsearch value="_("EPG Search")" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                </form></td>  
+              <!-- LINKLINE END-->  
+            </tr>
+          </table></td>
+      </tr> 
+      <tr> 
+        <!-- BOXCONTROL -->  
+        <td colspan=4 valign=top height=40>	
+          <iframe name=leftpanel scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=channellist.html>
+          <!-- not used... iframe id="channellist" onLoad="saveLastIframe(this.contentWindow.location)" name=leftpanel marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getchannellist-->
+          </iframe>  </td> 
+        <!-- BOXCONTROL END --> 
+      </tr>   
+      <tr> 
+        <!-- AKT SERVICE -->  
+        <td colspan=4>   
+          <iframe id=aktserviceframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice onload="setTimeout(function(){aktservice.document.location.href='query?getaktservice';}, 15000);">
+          </iframe>  </td> 
+        <!-- AKT SERVICE END --> 
+      </tr>   
+      <tr> 
+        <!-- MAIN -->  
+        <td colspan=4 valign=top width=100% height=100%>   
+          <iframe  id="main" onLoad="saveLastIframe(this.contentWindow.location)" name=main marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getbouquet>
+          </iframe>  </td> 
+        <!-- MAIN END--> 
+      </tr>
+    </table>
+<div style="display: none; position: absolute; top:1; left:10; background-color:323232; padding:12px" id="eins" align="center" >
+<iFrame src="rc_virtual.html" style="width:176px; height:700px; border:none;" frameborder="0" name="rc_virtual" scrolling="no"></iFrame>
+<br><br>
+<a href="javascript:rcswitch()" title="_("Details on/off")" class=openrctext>_("switch to original remote")</a>
+<br>
+<a href="javascript:rcopen_virtual()" class=openrctext>_("open in new window")</a>
+</div>
+
+<div style="display: none; position: absolute; top:1; left:10; background-color:323232; padding:12px" id="zwei" align="center" >
+<iFrame src="rc.html" style="width:176px; height:700px; border:none;" frameborder="0" name="rc_org" scrolling="no"></iFrame>
+<br><br>
+<a href="javascript:rcswitch()" title="_("Details on/off")" class=openrctext>switch to virtual remote</a>
+<br>
+<a href="javascript:rcopen_org()" class=openrctext>open in new window</a>
+</div>
+
+</body>
+</html>
+

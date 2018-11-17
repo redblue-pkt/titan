@@ -1,0 +1,91 @@
+#networkbrowser fullscreen, max 1220x660, Xspace=30 ! y-offset!!!
+<screen name="networkbrowser" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="23">
+	<node name="titletext" text="" fontcol="black" fontsize="36" posx="0" posy="0" width="845" height="50" hspace="5" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+	<node name="details" bordercol="bordercol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="845" height="145" hspace="10" vspace="10" text="A list of currently used network shares. You can add, edit, delete shares or search for new shares.">
+	<node name="minitv" func="gettvpic" param1="494:24:205">
+	<node name="minitvbg" bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="216" bgcol="0" transparent="255">
+	<node name="minitvbg" bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="216" transparent="0">
+	<node name="listbox" type="listbox" scrollbar="auto" bordercol="bordercol" bordersize="1" fontsize="28" posx="center" posy="215" width="100%" height="375" hspace="5" vspace="5">
+	<node name="buttonbar" posx="0" posy="610" width="100%" height="50" hspace="5" fontsize="25" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png" valign="middle" posx="0" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" valign="middle" posx="70" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b3" picmem="skin/key_red_30x30.png"    textposx="40" valign="middle" posx="150" posy="center" width="200" height="40" fontcol="black" text="ADD">
+		<node parent="buttonbar" name="b4" picmem="skin/key_green_30x30.png"  textposx="40" valign="middle" posx="360" posy="center" width="200" height="40" fontcol="black" text="EDIT">
+		<node parent="buttonbar" name="b5" picmem="skin/key_yellow_30x30.png" textposx="40" valign="middle" posx="570" posy="center" width="180" height="40" fontcol="black" text="DEL">
+		<node parent="buttonbar" name="b6" picmem="skin/key_blue_30x30.png"   textposx="40" valign="middle" posx="760" posy="center" width="150" height="40" fontcol="black" text="SEARCH">
+		<node parent="buttonbar" name="b7" picmem="skin/key_menu_70x40.png"   textposx="80" valign="middle" posx="920" posy="center" width="290" height="40" fontcol="black" text="AUTH SETTINGS">
+</screen>
+
+
+#networkbrowser_add_share fullscreen, max 1220x660, Xspace=30 ! y-offset!!!
+<screen name="networkbrowser_add_share" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="23">
+	<node name="titletext" text="" fontcol="black" fontsize="36" posx="0" posy="0" width="845" height="50" hspace="5" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+	<node name="details" bordercol="bordercol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="845" height="145" hspace="10" vspace="10" text="Here you can add and configure your network shares.">
+	<node name="minitv" func="gettvpic" param1="494:24:205">
+	<node name="minitvbg" bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="216" bgcol="0" transparent="255">
+	<node name="minitvbg" bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="216" transparent="0">
+	<node name="listbox" type="listbox" scrollbar="auto" bordercol="bordercol" bordersize="1" fontsize="28" posx="center" posy="215" width="100%" height="375" hspace="5" vspace="5">
+		<node parent="listbox" name="skin_mode" text="type" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_sharename" text="sharename" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_usedns" text="usedns" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_dns" text="dnsaddresse" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_ipaddress" text="ipaddress" type="inputboxnum" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_ftpport" text="ftpport" type="inputboxnum" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_sharedir" text="sharedir" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_userauth" text="userauth" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_username" text="username" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_password" text="password" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_protocol" text="protocol" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_options" text="options" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_wsize" text="wsize" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_rsize" text="rsize" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_usessl" text="usessl" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_ssl" text="ssl" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_useproxy" text="useproxy" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_proxy" text="proxy" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_proxyip" text="proxyip" type="inputboxnum" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_proxyport" text="proxyport" type="inputboxnum" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_proxyauth" text="proxyauth" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_proxyuser" text="proxyuser" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_proxypass" text="proxypass" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_hddreplacement" text="hddreplacement" type="choicebox" valign="middle" width="100%" height="35">
+	<node name="buttonbar" posx="0" posy="610" width="100%" height="50" hspace="5" fontsize="25" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png" valign="middle" posx="0" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" valign="middle" posx="70" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b4" picmem="skin/key_text_70x40.png" valign="middle" posx="140" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b3" picmem="skin/key_red_30x30.png" textposx="40" valign="middle" posx="220" posy="center" width="200" height="40" fontcol="black" text="COPY">
+</screen>
+
+
+#networkbrowser_scan fullscreen, max 1220x660, Xspace=30 ! y-offset!!!
+<screen name="networkbrowser_scan" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="23">
+	<node name="titletext" text="" fontcol="black" fontsize="36" posx="0" posy="0" width="845" height="50" hspace="5" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+	<node name="details" bordercol="bordercol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="845" height="145" hspace="10" vspace="10" text="If you don't find Windows shares, you need to disable 'Password protected sharing' in the 'Network and Sharing Center'.">
+	<node name="minitv" func="gettvpic" param1="494:24:205">
+	<node name="minitvbg" bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="216" bgcol="0" transparent="255">
+	<node name="minitvbg" bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="216" transparent="0">
+	<node name="listbox" type="listbox" scrollbar="auto" bordercol="bordercol" bordersize="1" fontsize="28" posx="center" posy="215" width="100%" height="375" hspace="5" vspace="5">
+	<node name="buttonbar" posx="0" posy="610" width="100%" height="50" hspace="5" fontsize="25" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png" valign="middle" posx="0" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" valign="middle" posx="70" posy="center" width="70" height="40">
+</screen>
+
+
+#networkbrowser_settings fullscreen, max 1220x660, Xspace=30 !
+<screen name="networkbrowser_settings" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="23">
+	<node name="titletext" text="Authentication" fontcol="black" fontsize="36" posx="0" posy="0" width="845" height="50" hspace="5" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+	<node name="details" bordercol="bordercol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="845" height="145" hspace="10" vspace="10" text="Here you can configure your login credentials for accessing password protected shares.">
+	<node name="minitv" func="gettvpic" param1="494:24:205">
+	<node name="minitvbg" bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="216" bgcol="0" transparent="255">
+	<node name="minitvbg" bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="216" transparent="0">
+	<node name="listbox" type="listbox" scrollbar="auto" bordercol="bordercol" bordersize="1" fontsize="28" posx="center" posy="215" width="100%" height="375" hspace="5" vspace="5">
+		<node parent="listbox" name="user" text="User" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="pass" text="Password" type="inputbox" valign="middle" width="100%" height="35">
+	<node name="buttonbar" posx="0" posy="610" width="100%" height="50" hspace="5" fontsize="25" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png" valign="middle" posx="0" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" valign="middle" posx="70" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b4" picmem="skin/key_text_70x40.png" valign="middle" posx="140" posy="center" width="70" height="40">
+</screen>
+
+
+

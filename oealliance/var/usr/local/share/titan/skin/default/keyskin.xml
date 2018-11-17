@@ -1,0 +1,172 @@
+<screen fontcol=fontcol bgcol=bgcol name="inputhelp" titlebgcol=titlebgcol hspace=30 vspace=30 fontsize=30 posx=center posy=center width=685 height=422 bgcol=bgcol bordercol=white bordersize=1 borderradius="8">
+<node type=inputbox name=inputbox fontsize=25 posx=0 posy=0 width=100% height=30 bordercol=white bordersize=1 valign=middle>
+
+<node type=grid name=grid1 fontsize=35 posx=0 posy=35 width=100% height=-1 0 bordercol=green bordersize=0>
+<node type=gridbr parent=grid1 posy=0 posx=0 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='#' name='#'>
+<node parent=grid1 posy=0 posx=48 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='$' name='$'>
+<node parent=grid1 posy=0 posx=96 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='%' name='%'>
+<node parent=grid1 posy=0 posx=144 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='&' name='&'>
+<node parent=grid1 posy=0 posx=192 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='*' name='*'>
+<node parent=grid1 posy=0 posx=240 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='(' name='('>
+<node parent=grid1 posy=0 posx=288 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=')' name=')'>
+<node parent=grid1 posy=0 posx=336 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='+' name='+'>
+<node parent=grid1 posy=0 posx=384 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=',' name=','>
+<node parent=grid1 posy=0 posx=432 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='.' name='.'>
+<node parent=grid1 posy=0 posx=480 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=':' name=':'>
+<node parent=grid1 posy=0 posx=528 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=';' name=';'>
+<node parent=grid1 posy=0 posx=576 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='!' name='!'>
+
+<node type=gridbr parent=grid1 posy=2 posx=0 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='@' name='@'>
+<node parent=grid1 posy=2 posx=48 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='<' name='<'>
+<node parent=grid1 posy=2 posx=96 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='>' name='>'>
+<node parent=grid1 posy=2 posx=144 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='_' name='_'>
+<node parent=grid1 posy=2 posx=192 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='/' name='/'>
+<node parent=grid1 posy=2 posx=240 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='?' name='?'>
+<node parent=grid1 posy=2 posx=288 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text="\\" name="\\">
+<node parent=grid1 posy=2 posx=336 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='[' name='['>
+<node parent=grid1 posy=2 posx=384 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=']' name=']'>
+<node parent=grid1 posy=2 posx=432 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='-' name='-'>
+<node parent=grid1 posy=2 posx=480 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='{' name='{'>
+<node parent=grid1 posy=2 posx=528 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='}' name=}>
+<node parent=grid1 posy=2 posx=576 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='"' name='"'>
+
+<node type=gridbr parent=grid1 posy=4 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text='^' name='^'>
+<node parent=grid1 posy=4 posx=52 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="1" name='1'>
+<node parent=grid1 posy=4 posx=104 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="2" name='2'>
+<node parent=grid1 posy=4 posx=156 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="3" name='3'>
+<node parent=grid1 posy=4 posx=208 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="4" name='4'>
+<node parent=grid1 posy=4 posx=260 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="5" name='5'>
+<node parent=grid1 posy=4 posx=312 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="6" name='6'>
+<node parent=grid1 posy=4 posx=364 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="7" name='7'>
+<node parent=grid1 posy=4 posx=416 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="8" name='8'>
+<node parent=grid1 posy=4 posx=468 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="9" name='9'>
+<node parent=grid1 posy=4 posx=520 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="0" name='0'>
+<node parent=grid1 posy=4 posx=572 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text='~' name='~'>
+
+<node type=gridbr parent=grid1 posy=6 posx=0 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="q" name='q'>
+<node parent=grid1 posy=6 posx=52 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="w" name='w'>
+<node parent=grid1 posy=6 posx=104 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="e" name='e'>
+<node parent=grid1 posy=6 posx=156 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="r" name='r'>
+<node parent=grid1 posy=6 posx=208 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="t" name='t'>
+<node parent=grid1 posy=6 posx=260 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="z" name='z'>
+<node parent=grid1 posy=6 posx=312 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="u" name='u'>
+<node parent=grid1 posy=6 posx=364 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="i" name='i'>
+<node parent=grid1 posy=6 posx=416 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="o" name='o'>
+<node parent=grid1 posy=6 posx=468 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="p" name='p'>
+<node parent=grid1 posy=6 posx=520 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="ue" name='ue'>
+<node parent=grid1 posy=6 posx=572 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="sz" name='sz'>
+
+<node type=gridbr parent=grid1 posy=8 posx=0 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="a" name='a'>
+<node parent=grid1 posy=8 posx=52 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="s" name='s'>
+<node parent=grid1 posy=8 posx=104 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="d" name='d'>
+<node parent=grid1 posy=8 posx=156 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="f" name='f'>
+<node parent=grid1 posy=8 posx=208 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="g" name='g'>
+<node parent=grid1 posy=8 posx=260 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="h" name='h'>
+<node parent=grid1 posy=8 posx=312 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="j" name='j'>
+<node parent=grid1 posy=8 posx=364 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="k" name='k'>
+<node parent=grid1 posy=8 posx=416 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="l" name='l'>
+<node parent=grid1 posy=8 posx=468 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="oe" name='oe'>
+<node parent=grid1 posy=8 posx=520 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="ae" name='ae'>
+<node parent=grid1 posy=8 posx=572 width=50 height=40 fontcol=black bgcol=green halign=center valign=middle text="Ok" name='ok'>
+
+<node type=gridbr parent=grid1 posy=10 posx=0 width=127 height=40 fontsize=30 fontcol=white bgcol=blue halign=center valign=middle text="abc/ABC" name=switch>
+<node parent=grid1 posy=10 posx=129 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="y" name='y'>
+<node parent=grid1 posy=10 posx=181 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="x" name='x'>
+<node parent=grid1 posy=10 posx=233 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="c" name='c'>
+<node parent=grid1 posy=10 posx=285 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="v" name='v'>
+<node parent=grid1 posy=10 posx=337 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="b" name='b'>
+<node parent=grid1 posy=10 posx=389 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="n" name='n'>
+<node parent=grid1 posy=10 posx=440 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="m" name='m'>
+<node parent=grid1 posy=10 posx=493 width=127 height=40 fontcol=white fontsize=30 bgcol=blue halign=center valign=middle text="abc/ABC" name=switch>
+
+<node type=gridbr parent=grid1 posy=12 posx=0 width=60 height=40 fontsize=30 fontcol=white halign=center valign=middle text="<-" name=left>
+<node parent=grid1 posy=12 posx=62 width=150 height=40 bgcol=red halign=center valign=middle text="DEL" name=bs>
+<node parent=grid1 posy=12 posx=214 width=196 height=40 fontcol=black bgcol=yellow halign=center valign=middle text="Space" name=" ">
+<node parent=grid1 posy=12 posx=412 width=150 height=40 bgcol=orange halign=center valign=middle text="Clear" name=clear>
+<node parent=grid1 posy=12 posx=564 width=59 height=40 halign=center valign=middle text="->" name=right>
+
+
+<node hidden=YES type=grid name=grid2 fontsize=35 posx=0 posy=35 width=100% height=-1 0 bordercol=green bordersize=0>
+<node type=gridbr parent=grid2 posy=0 posx=0 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='°' name='°'>
+<node parent=grid2 posy=0 posx=48 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='²' name='²'>
+<node parent=grid2 posy=0 posx=96 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='³' name='³'>
+<node parent=grid2 posy=0 posx=144 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='§' name='§'>
+<node parent=grid2 posy=0 posx=192 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='|' name='|'>
+<node parent=grid2 posy=0 posx=240 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='`' name='`'>
+<node parent=grid2 posy=0 posx=288 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='´' name='´'>
+<node parent=grid2 posy=0 posx=336 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='+' name='+'>
+<node parent=grid2 posy=0 posx=384 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=',' name=','>
+<node parent=grid2 posy=0 posx=432 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='.' name='.'>
+<node parent=grid2 posy=0 posx=480 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=':' name=':'>
+<node parent=grid2 posy=0 posx=528 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=';' name=';'>
+<node parent=grid2 posy=0 posx=576 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='!' name='!'>
+
+<node type=gridbr parent=grid2 posy=2 posx=0 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='µ' name='µ'>
+<node parent=grid2 posy=2 posx=48 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='<' name='<'>
+<node parent=grid2 posy=2 posx=96 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='>' name='>'>
+<node parent=grid2 posy=2 posx=144 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='_' name='_'>
+<node parent=grid2 posy=2 posx=192 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='/' name='/'>
+<node parent=grid2 posy=2 posx=240 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='?' name='?'>
+<node parent=grid2 posy=2 posx=288 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text="\\" name="\\">
+<node parent=grid2 posy=2 posx=336 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='[' name='['>
+<node parent=grid2 posy=2 posx=384 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text=']' name=']'>
+<node parent=grid2 posy=2 posx=432 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='-' name='-'>
+<node parent=grid2 posy=2 posx=480 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='{' name='{'>
+<node parent=grid2 posy=2 posx=528 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text='}' name='}'>
+<node parent=grid2 posy=2 posx=576 width=46 height=40 fontcol=black bgcol=grey halign=center valign=middle text="'" name="'">
+
+<node type=gridbr parent=grid2 posy=4 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text='^' name='^'>
+<node parent=grid2 posy=4 posx=52 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="1" name='1'>
+<node parent=grid2 posy=4 posx=104 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="2" name='2'>
+<node parent=grid2 posy=4 posx=156 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="3" name='3'>
+<node parent=grid2 posy=4 posx=208 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="4" name='4'>
+<node parent=grid2 posy=4 posx=260 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="5" name='5'>
+<node parent=grid2 posy=4 posx=312 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="6" name='6'>
+<node parent=grid2 posy=4 posx=364 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="7" name='7'>
+<node parent=grid2 posy=4 posx=416 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="8" name='8'>
+<node parent=grid2 posy=4 posx=468 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="9" name='9'>
+<node parent=grid2 posy=4 posx=520 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="0" name='0'>
+<node parent=grid2 posy=4 posx=572 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text='~' name='~'>
+
+<node type=gridbr parent=grid2 posy=6 posx=0 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="Q" name='Q'>
+<node parent=grid2 posy=6 posx=52 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="W" name='W'>
+<node parent=grid2 posy=6 posx=104 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="E" name='E'>
+<node parent=grid2 posy=6 posx=156 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="R" name='R'>
+<node parent=grid2 posy=6 posx=208 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="T" name='T'>
+<node parent=grid2 posy=6 posx=260 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="Z" name='Z'>
+<node parent=grid2 posy=6 posx=312 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="U" name='U'>
+<node parent=grid2 posy=6 posx=364 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="I" name='I'>
+<node parent=grid2 posy=6 posx=416 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="O" name='O'>
+<node parent=grid2 posy=6 posx=468 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="P" name='P'>
+<node parent=grid2 posy=6 posx=520 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="UE" name='UE'>
+<node parent=grid2 posy=6 posx=572 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="SZ" name='SZ'>
+
+<node type=gridbr parent=grid2 posy=8 posx=0 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="A" name='A'>
+<node parent=grid2 posy=8 posx=52 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="S" name='S'>
+<node parent=grid2 posy=8 posx=104 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="D" name='D'>
+<node parent=grid2 posy=8 posx=156 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="F" name='F'>
+<node parent=grid2 posy=8 posx=208 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="G" name='G'>
+<node parent=grid2 posy=8 posx=260 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="H" name='H'>
+<node parent=grid2 posy=8 posx=312 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="J" name='J'>
+<node parent=grid2 posy=8 posx=364 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="K" name='K'>
+<node parent=grid2 posy=8 posx=416 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="L" name='L'>
+<node parent=grid2 posy=8 posx=468 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="OE" name='OE'>
+<node parent=grid2 posy=8 posx=520 width=50 height=40 fontcol=black bgcol=grey halign=center valign=middle text="AE" name='AE'>
+<node parent=grid2 posy=8 posx=572 width=50 height=40 fontcol=black bgcol=green halign=center valign=middle text="Ok" name='ok'>
+
+<node type=gridbr parent=grid2 posy=10 posx=0 width=127 height=40 fontsize=30 fontcol=white bgcol=blue halign=center valign=middle text="abc/ABC" name=switch>
+<node parent=grid2 posy=10 posx=129 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="Y" name='Y'>
+<node parent=grid2 posy=10 posx=181 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="X" name='X'>
+<node parent=grid2 posy=10 posx=233 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="C" name='C'>
+<node parent=grid2 posy=10 posx=285 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="V" name='V'>
+<node parent=grid2 posy=10 posx=337 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="B" name='B'>
+<node parent=grid2 posy=10 posx=389 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="N" name='N'>
+<node parent=grid2 posy=10 posx=440 width=50 height=40 fontcol=black fontsize=35 bgcol=grey halign=center valign=middle text="M" name='M'>
+<node parent=grid2 posy=10 posx=493 width=127 height=40 fontcol=white fontsize=30 bgcol=blue halign=center valign=middle text="abc/ABC" name=switch>
+
+<node type=gridbr parent=grid2 posy=12 posx=0 width=60 height=40 fontsize=30 fontcol=white halign=center valign=middle text="<-" name=left>
+<node parent=grid2 posy=12 posx=62 width=150 height=40 bgcol=red halign=center valign=middle text="DEL" name=bs>
+<node parent=grid2 posy=12 posx=214 width=196 height=40 fontcol=black bgcol=yellow halign=center valign=middle text="Space" name=" ">
+<node parent=grid2 posy=12 posx=412 width=150 height=40 bgcol=orange halign=center valign=middle text="Clear" name=clear>
+<node parent=grid2 posy=12 posx=564 width=59 height=40 halign=center valign=middle text="->" name=right>
+</screen>
