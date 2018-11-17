@@ -1,0 +1,1 @@
+Bildausgabe auf dem Fernseher in originaler Auflösung, wie vom Sender gesendet wird. Umgeht das skalieren in Ihrem Receiver.

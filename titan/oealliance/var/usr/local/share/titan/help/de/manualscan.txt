@@ -1,0 +1,3 @@
+Hier können Sie Ihre Kanalsuchoptionen einstellen. 
+Sehr wichtig, bevor Sie nach einem Kanal suchen,
+müssen die Tuner-Einstellungen vorgenommen werden.

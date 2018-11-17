@@ -1,0 +1,3 @@
+Nach der manuellen Suche müssen Sie alle Sender mit der grünen Taste speichern. 
+Um einen Sender manuell hinzuzufügen, müssen Sie den Sender im rechten Feld auswählen und dann mit der roten Taste speichern. 
+Wenn Sie dies nicht tun, wird die Suche nicht gespeichert.

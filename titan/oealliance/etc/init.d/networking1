@@ -1,0 +1,126 @@
+#!/bin/sh
+
+. /sbin/start-function
+ethfile="/mnt/network/interfaces"
+ID=
+board=`cat /etc/.board`
+
+set_info()
+{
+	dns=`awk '/nameserver/ { print $2 }' /mnt/network/resolv.conf`
+	if [ $board = "inihdp" ];then
+		case $showip in ip) writeoled "$ID$IP" ;; esac
+	else
+		case $showip in ip) echo "$ID$IP" > /dev/oled0;; esac
+	fi
+}
+
+set_hosts()
+{
+	case $IFACE in
+		eth0)
+			if ! grep -q "$hostname" /mnt/network/hosts; then
+				echo "$IP $hostname" >> /mnt/network/hosts
+			else
+				hostsip=`grep -m1 "$hostname" /mnt/network/hosts`; fastcut "$hostsip" " " 1; hostsip="$fcr"
+				if [ "$hostsip" != "$IP" ]; then
+					sed s/"$hostsip $hostname"/"$IP $hostname"/ -i /mnt/network/hosts
+				fi
+			fi;;
+		*)
+			ID="W"
+			ifmetric eth0 10;;
+	esac
+}
+
+set_interfaces() {
+	MEM=$IFS;IFS=
+	if grep -q "$IFACE inet static" "$ethfile"; then
+		echo "[$PROG] $IFACE using static ip"
+		ifconfig $IFACE up
+		IP=`grep -A3 "iface $IFACE inet" "$ethfile"`; fastgrep "$IP" "address"; IP=`echo "$fgr" | sed s"/^\s*//; s/ \+/ /g"`; fastcut "$IP" " " 2; IP="$fcr"
+		GW=`grep -A3 "iface $IFACE inet" "$ethfile"`; fastgrep "$GW" "gateway"; GW=`echo "$fgr" | sed s"/^\s*//; s/ \+/ /g"`; fastcut "$GW" " " 2; GW="$fcr"
+		MASK=`grep -A3 "iface $IFACE inet" "$ethfile"`; fastgrep "$MASK" "netmask"; MASK=`echo "$fgr" | sed s"/^\s*//; s/ \+/ /g"`; fastcut "$MASK" " " 2; MASK="$fcr"
+		case $MASK in "") MASK="255.255.255.0";; esac
+		case $IP in
+			"") ;; 
+			*) 
+				ifconfig $IFACE $IP netmask $MASK
+				hostname=`hostname`
+				set_hosts;;
+		esac
+		case $GW in
+			"") ;;
+			*)
+				route del default 2>/dev/null
+				route add default gw $GW
+				echo "$GW" > /mnt/network/default_gw;;
+		esac
+		set_info
+	elif grep -q "$IFACE inet dhcp" "$ethfile"; then
+		echo "[$PROG] $IFACE using dhcp"
+		ifconfig $IFACE up
+		route del default 2>/dev/null
+		hostname=`hostname`
+		udhcpc -t 10 -i $IFACE -n -q -x hostname:"$hostname"
+		ifconfig=`ifconfig $IFACE`; fastgrep "$ifconfig" "inet addr:"; ifconfig="$fgr"
+		IP="${ifconfig/*inet addr:/}"; IP="${IP/ */}"
+		MASK="${ifconfig/*Mask:/}"; MASK="${MASK/ */}"
+		GW=`route -n | grep -m1 "^0.0.0.0" | sed s/" \+"/" "/g`; fastcut "$GW" " " 2; GW="$fcr"
+		echo "$GW" > /mnt/network/default_gw
+		case $IP in
+			"") ;;
+			*)  set_hosts;;
+		esac
+		set_info
+	elif grep -q "$IFACE inet off" "$ethfile"; then
+		ifconfig $IFACE down
+	fi
+	if grep -q "iface lo inet loopback" "$ethfile"; then
+		ifconfig lo 127.0.0.1
+	fi
+	IFS=$MEM
+}
+
+stop_interfaces()
+{
+	ip addr flush $IFACE
+}
+
+usage() {
+    echo "Usage: $PROG [-i <INTERFACE>] [-s <showip>] <start|stop|restart>"
+    exit
+}
+
+PROG="networking"
+IFACE="eth0"
+while [ -n "$*" ]; do
+    case $1 in
+	  	-i) shift
+	      IFACE=$1
+	      shift;;
+	  	-s) shift
+	      showip=$1
+	      shift;;
+	  	start|stop|restart)
+	      MODE=$1
+	      shift;;
+	  	*)
+	    	usage;;
+    esac
+done
+
+case $MODE in
+	start)
+		echo "[$PROG] start $IFACE..."
+		set_interfaces;;
+	stop)
+		echo "[$PROG] stop $IFACE..."
+		stop_interfaces;;
+	restart)
+		echo "[$PROG] restart $IFACE..."
+		stop_interfaces
+		set_interfaces;;
+	*)
+		usage;;	
+esac

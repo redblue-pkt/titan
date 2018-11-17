@@ -1,0 +1,19 @@
+Standardauflösung: Feste Ausgabeauflösung
+Aktuelle Auflösung:	Zeigt die aktuelle Auflösung an
+Autom. Auflösung: Ausgabeauflösung folgt der Quellauflösung
+Bildeinstellungen: Anzeigeformat von nicht 16:9 Bildinhalten
+Seitenverhältnis (sh4): Seitenverhältnis des Bildes
+Farb Format: Farbformat der HDMI Ausgabe
+Farb Format Scart/ Composite (sh4): Farbformat des\nSCART Ausgangs
+Audio Quelle (sh4): Audio Ausgabe Format
+AC3 standardmäßig: Dolby AC3 Ton wird standardmäßig\nausgegeben
+AC3 Modus: Auswahl von downmix oder passthrough
+Audio Verzögerung: Synchronisation Audio/Video
+AC3-Angleichung ... (sh4): Angleichung der AC3/Stereo Lautstärke
+3D Modus: Anpassung der Menüausgabe für den 3D-Modus des TV
+Zwei Stufen Stummschaltung:	Verhalten der MUTE Taste
+Automatischer Untertitel Start	
+Sound Verstärkung (TV-Modus / interner Player): erhöht die Grundlautstärke im TV Modus und des Interen (.ts) Players
+Sound Verstärkung (externer Player): erhöht die Grundlautstärke des externen Players / Streams
+
+Um diese Einstellungen zu speichern drücken sie "OK", oder "EXIT" um die Änderungen zu Verwerfen und das Menü zu verlassen.

@@ -1,0 +1,1 @@
+Before you can see Signal/SNR/Ber you must zap to a channel of the satellite you are searching.

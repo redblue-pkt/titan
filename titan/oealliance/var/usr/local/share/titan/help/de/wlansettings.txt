@@ -1,0 +1,7 @@
+1. Suche mit rot starten, die gewünschte SSID Ihres Access Points oder Routers mit ok übernehmen.
+2. Verschlüsselungstyp auswählen. Als Verschlüsselung sollte WPA2* gewählt werden.
+3. Mit der Text Taste in den Eingabemodus wechseln und den Schlüssel eingeben, mit OK abschließen. 
+4. Autostart aktivieren falls gewünscht
+* Aus Sicherheits- und Performance Gründen sollte WPA2 gewählt werden. Ihr Router oder Accesspoint sollte
+als Verschlüsselungsmethode AES bzw. CCMP nutzen.
+Hinweis: Für den WLAN Betrieb wird die LAN Schnittstelle abgeschaltet. 

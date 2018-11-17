@@ -1,0 +1,15 @@
+<screen name="streaminfo" fontcol="fontcol" posx="center" posy="center" width="500" height="300">
+<node name="titletext" text="Streaminfo" fontcol="black" fontsize="36" posx="center" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="bg" bgcol="bgcol" posx="center" posy="center" width="484" height="200" hspace="10" vspace="10" fontsize="28" fontcol="fontcol">
+	<node parent="bg" text="Aspect" posx="30" posy="0" width="220" height="35" valign="middle">
+	<node parent="bg" text="Framerate" posx="30" posy="45" width="220" height="35" valign="middle">
+	<node parent="bg" text="X-Resolution" posx="30" posy="90" width="220" height="35" valign="middle">
+	<node parent="bg" text="Y-Resolution" posx="30" posy="135" width="220" height="35" valign="middle">
+	<node parent="bg" name="aspect" posx="260" posy="0" width="180" height="35" valign="middle">
+	<node parent="bg" name="framerate" posx="260" posy="45" width="180" height="35" valign="middle">
+	<node parent="bg" name="xres" posx="260" posy="90" width="180" height="35" valign="middle">
+	<node parent="bg" name="yres" posx="260" posy="135" width="180" height="35" valign="middle">
+<node name="buttonbar" posx="center" posy="250" width="100%" height="50" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"   posx="5"  posy="center" width="70" height="40">
+<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" posx="75" posy="center" width="70" height="40">
+</screen>

@@ -1,0 +1,3 @@
+16:9: Für alle aktuellen Breitbildfernseher
+4:3: Für ältere Röhrenfernseher
+any: 
