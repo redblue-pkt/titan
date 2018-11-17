@@ -1081,7 +1081,12 @@ int main(int argc, char *argv[])
 		drawscreen(skin, 0, 0);
 		addconfig("autoscan", "0");
 	}
-		
+
+	// oe-alliance needs this
+	setvideomode("720", 0);
+	changefbresolution("720", 0);
+	autoresolution();
+
 	//first wizzard
 	if(getconfigint("nofirstwizzard", NULL) < 2)
 	{
