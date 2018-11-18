@@ -221,6 +221,8 @@ search()
 
 kino()
 {
+#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#	rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 #		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
@@ -241,7 +243,9 @@ kino()
 			exit
 		fi
 
-		cat $TMP/cache.$FILENAME.1 | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 | sort -um >$TMP/cache.$FILENAME.2
+#		cat $TMP/cache.$FILENAME.1 | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 | sort -um >$TMP/cache.$FILENAME.2
+		cat $TMP/cache.$FILENAME.1 | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 >$TMP/cache.$FILENAME.2
+
 		while read -u 3 ROUND; do
 			piccount=`expr $piccount + 1`
 			filename=`echo $ROUND | sed 's!/Stream/!!'`
@@ -308,7 +312,9 @@ kino()
 				piccount=`expr $piccount + 1`
 				LINE="$TITLE$LANGTXT#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#22"
 
-				echo "$LINE" >> $TMP/$FILENAME.list
+				if [ `cat $TMP/$FILENAME.list | grep "$TITLE" | wc -l` -eq 0 ];then
+					echo "$LINE" >> $TMP/$FILENAME.list
+				fi
 			fi
 
 		done 3<$TMP/cache.$FILENAME.2
