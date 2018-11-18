@@ -252,8 +252,9 @@ struct channelslot *channelslot = NULL;
 #include "encoder.h"
 #endif
 
-#define TIMECODE "1472042241"
+#define TIMECODE "1542558853"
 
+#if !defined(HAVE_HISILICON_ACCEL)
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
 #define ACCEL_ALIGNMENT_SHIFT	6
@@ -263,6 +264,23 @@ struct channelslot *channelslot = NULL;
 
 //gAccel *gAccel::instance;
 #define BCM_ACCEL
+#endif
+
+#ifdef HAVE_HISILICON_ACCEL 
+extern int  dinobot_accel_init(void);
+extern void dinobot_accel_close(void);
+extern void dinobot_accel_blit(
+		int src_addr, int src_width, int src_height, int src_stride, int src_format,
+		int dst_addr, int dst_width, int dst_height, int dst_stride,
+		int src_x, int src_y, int width, int height,
+		int dst_x, int dst_y, int dwidth, int dheight,
+		int pal_addr,int pal_size, int flags);
+extern void dinobot_accel_fill(
+		int dst_addr, int dst_width, int dst_height, int dst_stride,
+		int x, int y, int width, int height,
+		unsigned long color);
+extern bool dinobot_accel_has_alphablending();
+#endif
 
 #ifdef BCM_ACCEL
 extern int bcm_accel_init(void);
@@ -802,9 +820,14 @@ int main(int argc, char *argv[])
 	setlang(getconfig("lang", NULL));
 	initlocale(getconfig("localepath", NULL));
 
-#ifdef MIPSEL
+//#ifdef MIPSEL
+#ifdef BCM_ACCEL
 	bcm_accel_init();
 #endif
+#ifdef HAVE_HISILICON_ACCEL
+	dinobot_accel_init();
+#endif
+//#endif
 
 	fb = openfb(getconfig("fbdev", NULL), 0);
 	if(fb == NULL)
@@ -1027,6 +1050,14 @@ int main(int argc, char *argv[])
 	if(checkbox("ATEMIO510") == 0)
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
+printf("00000000\n");
+
+			setvideomode("720", 0);
+			changefbresolution("720", 0);
+			autoresolution();
+printf("00001111\n");
+
+
 	if(getconfigint("firststart", NULL) == 1)
 	{
 		if(file_exist("/var/etc/.scart"))
@@ -1081,12 +1112,8 @@ int main(int argc, char *argv[])
 		drawscreen(skin, 0, 0);
 		addconfig("autoscan", "0");
 	}
-
-	// oe-alliance needs this
-	setvideomode("720", 0);
-	changefbresolution("720", 0);
-	autoresolution();
-
+printf("111111111\n");
+	
 	//first wizzard
 	if(getconfigint("nofirstwizzard", NULL) < 2)
 	{
@@ -1128,11 +1155,14 @@ firstwizzardstep1:
 		msg = readfiletomem("/etc/imageinfo", 0);
 		textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 680, 30, 0);
 		free(msg); msg = NULL;
+printf("2222222222\n");
 		
 		writevfd("");
 		status.updatevfd = START;
 		drawscreen(skin, 0, 0);
 		addconfig("nofirstwizzard", "2");
+printf("3333333333\n");
+
 	}
 	else
 	{
@@ -1143,6 +1173,7 @@ firstwizzardstep1:
 		if(serviceret != 21) // no message if startchannel empty
 			servicecheckret(serviceret, 0);
 	}
+printf("4444444444\n");
 
 // fixt manual start 
 	resettvpic();
@@ -1161,6 +1192,7 @@ firstwizzardstep1:
 	ret = setcontrast(getconfigint("vs_contrast", NULL));
 	ret = settint(getconfigint("vs_tint", NULL));
 	videoApplySettings();
+printf("555555555\n");
 	
 #ifndef SIMULATE
 	//set skinentrys locked
@@ -1199,6 +1231,7 @@ firstwizzardstep1:
 
 	//start newsletter
 	startnewsletter(1);
+printf("6666666666\n");
 
 	//thumb create thread
 	startthumb(1);
@@ -1219,7 +1252,7 @@ firstwizzardstep1:
 
 	// work
 	resettvpic();
-	
+
 	char* cmd = NULL;
 #ifdef SH4
 	cmd = ostrcat("/media/hdd/movie/titankey.sh4", NULL, 0, 0);
@@ -1228,6 +1261,7 @@ firstwizzardstep1:
 #ifdef MIPSEL
 	cmd = ostrcat("/media/hdd/movie/titankey.mipsel", NULL, 0, 0);
 #endif
+printf("777777777\n");
 
 	//for atemio to unlock box with stick
 	if(file_exist(cmd))
@@ -1261,6 +1295,7 @@ firstwizzardstep1:
 		free(cpuid); cpuid = NULL;
 	}
 	free(cmd); cmd = NULL;
+printf("88888888888\n");
 
 	//must called direct befor screeninfobar
 	if(getconfigint("saverun", NULL) == 1)
@@ -1317,11 +1352,16 @@ firstwizzardstep1:
 			rmdir("/mnt/writetest");
 		}
 	}
+printf("9999999999\n");
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
+printf("9999999999111\n");
+
 	startinternreader(1);
+printf("9999999999222\n");
  	
 	screeninfobar();
+printf("9999999999333\n");
 
 	//for testign screens
 	//screenmanualscan();

@@ -253,12 +253,19 @@ void blitfb2(struct fb* fbnode, int flag)
 	{
 		if(status.bcm == 1 && status.usedirectfb == 0)
 			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+#ifdef HAVE_HISILICON_ACCEL
+		else if(status.usedirectfb == 0)
+			dinobot_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0, 0);
+#endif
 		blit();
 		
 		//woraround pixel fehler
 		if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 		{
 			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+#ifdef HAVE_HISILICON_ACCEL
+			dinobot_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0, 0);
+#endif
 			blit();
 		}
 		
@@ -379,6 +386,10 @@ void blitfb2(struct fb* fbnode, int flag)
 			{
 				if(status.screenanim < 10)
 					bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, dst_left, dst_top, dst_width, dst_height, 0, 0);
+#ifdef HAVE_HISILICON_ACCEL
+				if(status.screenanim < 10)
+					dinobot_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, dst_left, dst_top, dst_width, dst_height, 0, 0, 0);
+#endif
 				else
 				{
 					int dswidth = (dst_width + posx*2) * skinfb->width / (width + posx*2);
@@ -390,6 +401,9 @@ void blitfb2(struct fb* fbnode, int flag)
 					if(status.screenanim == 12)
 						dsleft = 0;
 					bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, dsleft, dstop, dswidth, dsheight, dst_left, dst_top, dst_width, dst_height, 0, 0);
+#ifdef HAVE_HISILICON_ACCEL
+					dinobot_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, dsleft, dstop, dswidth, dsheight, dst_left, dst_top, dst_width, dst_height, 0, 0, 0);
+#endif
 				}	
 			}	
 			else
@@ -404,7 +418,13 @@ void blitfb2(struct fb* fbnode, int flag)
 			blit();
 		}
 		if(status.bcm == 1 && status.usedirectfb == 0)
+		{
 			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+		}
+#ifdef HAVE_HISILICON_ACCEL
+		else if(status.usedirectfb == 0)
+			dinobot_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0, 0);
+#endif
 		else
 		{
 			setfbosddev(fbleftdev, posx);
@@ -418,6 +438,10 @@ void blitfb2(struct fb* fbnode, int flag)
 	{
 		if(status.bcm == 1 && status.usedirectfb == 0)
 			bcm_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0);
+#ifdef HAVE_HISILICON_ACCEL
+		else if(status.usedirectfb == 0)
+			dinobot_accel_blit(skinfb->data_phys, skinfb->width, skinfb->height, skinfb->pitch, 0, fb->data_phys, fb->width, fb->height, fb->pitch, 0, 0, skinfb->width, skinfb->height, posx, posy, width, height, 0, 0, 0);
+#endif
 	}
 	if(doblit == 1)
 		blit();
@@ -745,11 +769,18 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 
 	if(mode == 0 || mode == 2)
 	{
-		
+//#ifdef BCM_ACCEL	
 		if(status.bcm == 1 && tmpfb->data_phys != 0)
 		{
 			bcm_accel_fill(tmpfb->data_phys, tmpfb->width, tmpfb->height, tmpfb->pitch, posx, posy, width, height, tmpcol);
 		}
+//#endif
+#ifdef HAVE_HISILICON_ACCEL
+		else if(tmpfb->data_phys != 0)
+		{
+			dinobot_accel_fill(tmpfb->data_phys, tmpfb->width, tmpfb->height, tmpfb->pitch, posx, posy, width, height, tmpcol);
+		}
+#endif
 		else
 		{
 			int yend = (posy + height) * tmpfb->width;
@@ -973,6 +1004,13 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 		bcm_accel_blit(source_phys, qwidth, qheight, qpitch, 0, target_phys, zwidth, zheight, zpitch, 0, 0, width, height, posx, posy, scalewidth, scaleheight, 0, 0);
 		flag = 1;
 	}
+#ifdef HAVE_HISILICON_ACCEL
+	else if(source_phys > 0 && target_phys >0)
+	{
+		dinobot_accel_blit(source_phys, qwidth, qheight, qpitch, 0, target_phys, zwidth, zheight, zpitch, 0, 0, width, height, posx, posy, scalewidth, scaleheight, 0, 0, 0);
+		flag = 1;
+	}
+#endif
 	else
 	{
 		unsigned char *helpbuf = NULL;
