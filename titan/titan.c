@@ -714,43 +714,43 @@ int main(int argc, char *argv[])
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 		{
 			printf("error: 1\n");
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if(ostrcmp(string_newline(gettimeinfovar()), TIMECODE) == 1)
 		{
 			printf("error: 2\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if(checkreseller() != 0)
 		{
 			printf("error: 3\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if(ret > 0)
 		{
 			if(getsysinfo() != SYSCODE)
 			{
 				printf("error: 4\n");		
-				destroy();
-				exit(100);
+//				destroy();
+//				exit(100);
 			}
 		}
 		if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 		{
 			printf("error: 5\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if(ret > 0)
 		{
 			if(checkflash() != 0)
 			{
 				printf("error: 6\n");		
-				destroy();
-				exit(100);
+//				destroy();
+//				exit(100);
 			}
 		}
 		if(ret > 0)
@@ -758,15 +758,15 @@ int main(int argc, char *argv[])
 			if((checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1) && checkhighflash() != 0)
 			{
 				printf("error: 7\n");		
-				destroy();
-				exit(100);
+//				destroy();
+//				exit(100);
 			}
 		}
 		if(checkbox("UFS910") == 1 && checklowflash() != 0)
 		{
 			printf("error: 8\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 	
 		char* cpuid = getcpuid();
