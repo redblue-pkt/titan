@@ -181,6 +181,7 @@ echo "[titan]--------------------------------------------------------"
 #echo "[titan]--------------------------------------------------------"
 
 "$HOME"/flashimg/$SRCDIR/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR $TYPE $SRCDIR $CPU $STM $BOXNAME
+echo "$HOME"/flashimg/$SRCDIR/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR $TYPE $SRCDIR $CPU $STM $BOXNAME
 
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Security done"
@@ -191,6 +192,8 @@ echo "[titan] Make Tpkdir"
 echo "[titan]--------------------------------------------------------"
 
 "$HOME"/flashimg/$SRCDIR/titan/tools/gettpk.sh $IPKDIR $VERSION $SRCDIR
+echo "$HOME"/flashimg/$SRCDIR/titan/tools/gettpk.sh $IPKDIR $VERSION $SRCDIR
+
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Tpkdir done"
