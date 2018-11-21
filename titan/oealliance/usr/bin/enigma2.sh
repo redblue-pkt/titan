@@ -3,4 +3,6 @@ if [ -L /mnt ];then
 	cp -a /etc/titan.restore/mnt /
 fi
 
+ntpdate -b ptbtime1.ptb.de &
+
 /usr/local/bin/titan /mnt/config/titan.cfg
