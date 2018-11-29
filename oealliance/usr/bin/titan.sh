@@ -38,13 +38,38 @@ if [ -x /usr/bin/showiframe ]; then
 	fi
 fi
 
+if [ -d /home/root ]; then
+	cd /home/root
+	export HOME=/home/root
+fi
+
+#check for sundtek tuner helper lib
+if [ -e /opt/lib/libmediaclient.so ]; then
+	LIBS="/opt/lib/libmediaclient.so /usr/lib/libopen.so.0.0.0"
+else
+	LIBS="/usr/lib/libopen.so.0.0.0"
+fi
+
+#check for specific pagecache helper lib
+if [ -e /usr/lib/libpagecache.so ]; then
+	LIBS="$LIBS /usr/lib/libpagecache.so"
+fi
+
+#check for receiver specific passthrough helper lib
+if [ -e /usr/lib/libpassthrough.so ]; then
+	LIBS="$LIBS /usr/lib/libpassthrough.so"
+fi
+
 # in case sysctl.conf is not properly loaded - load sysctl.conf here again...
 sysctl -p
 
-#sleep 5
-/usr/local/bin/titan /mnt/config/titan.cfg
+(sleep 2; echo "enigma2 is the main pvr application... adjust oom score!"; PID=$(pidof enigma2); \
+        [ -e /proc/$PID/oom_score_adj ] && echo "-999" > /proc/$PID/oom_score_adj || echo "-17" > /proc/$PID/oom_adj;) &
 
-ret=$?# enigma2 exit codes:
+sleep 5
+LD_PRELOAD=$LIBS /usr/local/bin/titan /mnt/config/titan.cfg
+
+# enigma2 exit codes:
 #
 # 1 - halt
 # 2 - reboot
