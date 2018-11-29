@@ -7,6 +7,7 @@ date
 echo npdate
 ntpdate -b ptbtime1.ptb.de &
 #sleep 5
+
 echo "####################################"
 date
 echo "####################################"
