@@ -448,7 +448,7 @@ void changefbresolution(char *value, int flag)
 {
 	debug(444, "fb->colbytes: %d", fb->colbytes);
 #ifdef MIPSEL
-//	return;
+	return;
 #endif
 
 	if(ostrcmp("pal", value) == 0)
