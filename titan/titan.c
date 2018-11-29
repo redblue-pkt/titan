@@ -1050,12 +1050,12 @@ int main(int argc, char *argv[])
 	if(checkbox("ATEMIO510") == 0)
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
-printf("00000000\n");
+printf("a00000000\n");
 
-			setvideomode("720", 0);
-			changefbresolution("720", 0);
-			autoresolution();
-printf("00001111\n");
+//			setvideomode("720", 0);
+//			changefbresolution("720", 0);
+//			autoresolution();
+printf("b00001111\n");
 
 
 	if(getconfigint("firststart", NULL) == 1)
