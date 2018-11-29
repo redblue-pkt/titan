@@ -252,7 +252,7 @@ struct channelslot *channelslot = NULL;
 #include "encoder.h"
 #endif
 
-#define TIMECODE "1542558853"
+#define TIMECODE "1543512105"
 
 #if !defined(HAVE_HISILICON_ACCEL)
 // mipsel start
@@ -847,7 +847,7 @@ int main(int argc, char *argv[])
 	waitvsync();
 	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 		setfbosd();
-	if(checkrealbox("HD51") ==1)
+	if(checkrealbox("HD51") == 1)
 		setfbosdnull();
 	status.usedirectfb = 1;
 #endif
