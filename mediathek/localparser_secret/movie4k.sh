@@ -33,7 +33,8 @@ if [ -z "$FILENAME" ]; then
 fi
 
 #URL=http://movie4k.to
-URL=http://movie4kto.st
+URL=https://movie4k.to/
+
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=Movie4k
 
@@ -62,7 +63,8 @@ mainmenu()
 	echo "Movies (Genre)#$SRC $SRC genre#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Tv-Shows (A-Z)#$SRC $SRC sortedtv#http://atemio.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Tv-Shows (Genre)#$SRC $SRC genretv#http://atemio.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Search#$SRC $SRC search 'movies.php?list=search&search=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Search Movie#$SRC $SRC search 'movies.php?list=search&search=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Search Tv#$SRC $SRC searchtv 'movies.php?list=search&search=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -384,7 +386,6 @@ episode()
 	echo "$TMP/$FILENAME.list"
 }
 
-
 search()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
@@ -486,7 +487,6 @@ kino()
 	fi
 	echo "$TMP/$FILENAME.list"
 }
-
 
 hosterlistold()
 {
@@ -601,7 +601,6 @@ hoster()
 #	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
 	echo $STREAMURL
 }
-
 
 case $INPUT in
 	init) $INPUT;;
