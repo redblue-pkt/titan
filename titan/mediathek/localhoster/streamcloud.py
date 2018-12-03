@@ -33,7 +33,7 @@ class StreamcloudResolver(object):
         response = self.net.http_GET(web_url, headers=headers)
         html = response.content
         if re.search('>(File Not Found)<', html):
-            raise ResolverError('File Not Found or removed')
+            print 'errormsg=File Not Found or removed'
 
         cnt = 10
         match = re.search('count\s*=\s*(\d+);', html)
