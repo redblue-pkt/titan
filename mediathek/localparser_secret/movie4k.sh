@@ -647,8 +647,8 @@ hosterlist()
 				        newpage = substr($0, i, j)
 
 						# extrahiere den title pfad
-						i = index($0, "&nbsp;") + 6
-				        j = index(substr($0, i), "<") - 1
+						i = index($0, "> &nbsp;") + 8
+				        j = index(substr($0, i), "</a>") - 1
 				        title = substr($0, i, j)
 
 						i = index($0, "html\\\">") + 7
