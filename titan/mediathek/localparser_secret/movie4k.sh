@@ -267,6 +267,55 @@ season()
 			NEXT=0
 		fi
 
+		cat $TMP/cache.$FILENAME.1 | tr '\r' ' ' | tr '\n' ' ' | sed 's!<div id="episodediv!\nfound=!g'| sed 's!</td>!\nstop=!g' | grep ^"found="  >$TMP/cache.$FILENAME.2
+
+		while read -u 3 ROUND; do
+			echo $ROUND | sed 's!<OPTION value=!\nfound2=!g' | grep ^found2 >$TMP/cache.$FILENAME.3
+			SEASON=`echo $ROUND | sed 's!<FORM name="episodeform!\nfound1="!g' | grep ^found1 | cut -d '"' -f2`
+			while read -u 3 ROUND2; do
+				echo ROUND2 $ROUND2
+				EPISODE=`echo $ROUND2 | cut -d'>' -f2 | cut -d'<' -f1 | sed 's/Episode //g'`
+				NEWPAGE=`echo $ROUND2 | cut -d'"' -f2 | tail -n1`
+				TITLE="Season $SEASON Episode $EPISODE"
+
+				if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+					if [ ! -e $TMP/$FILENAME.list ];then
+						touch $TMP/$FILENAME.list
+					fi
+					piccount=`expr $piccount + 1`
+					LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/s"$SEASON"e"$EPISODE".jpg#s"$SEASON"e"$EPISODE".jpg#$NAME#0"
+
+					echo "$LINE" >> $TMP/$FILENAME.list
+				fi
+			done 3<$TMP/cache.$FILENAME.3
+		done 3<$TMP/cache.$FILENAME.2
+
+		if [ "$NEXT" -lt "$pages" ]; then
+			NEXTPAGE=`expr $NEXT + 1`
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC season '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			echo "$LINE" >> $TMP/$FILENAME.list
+		fi
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
+	echo "$TMP/$FILENAME.list"
+}
+
+seasonold()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		piccount=0
+
+#		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE$NEXT$PAGE2" > $TMP/cache.$FILENAME.1
+
+		pages=`cat $TMP/cache.$FILENAME.1 | grep $PAGE | sed "s/$PAGE/\n$PAGE/g" | cut -d ">" -f2 | cut -d "<" -f1 | tail -n1`
+		if [ -z "$pages" ];then
+			pages=0
+		fi
+		if [ -z "$NEXT" ];then
+			NEXT=0
+		fi
+
 		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed 's!<TR>!\nfound=!g'| grep ^"found="  >$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
