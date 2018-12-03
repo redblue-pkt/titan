@@ -535,7 +535,7 @@ hoster()
 
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
