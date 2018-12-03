@@ -200,6 +200,70 @@ searchtv()
 		if [ -z "$pages" ];then
 			pages=0
 		fi
+		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed 's!tablemoviesindex!\ntablemoviesindex!g' | grep ^"tablemoviesindex" | sed 's!coverPreview!\ncoverPreview!g' | grep ^"coverPreview" | grep 'id="tdmovies"' >$TMP/cache.$FILENAME.2
+
+		while read -u 3 ROUND; do
+			ID=`echo $ROUND | cut -d'"' -f1 | tail -n1`
+			TITLE=`echo $ROUND | sed 's!<a href=!\nfound=>!g' | grep ^found= | cut -d">" -f3 | cut -d"<" -f1`
+			NEWPAGE=`echo $ROUND | sed 's!<a href=!\nfound=!g' | grep ^found= | cut -d'"' -f2 | tail -n1`
+	
+			if [ ! -z "$NEWPAGE" ]; then
+				if [ -z "$TITLE" ];then
+					TITLE=`echo $TMPURL`
+				fi
+				TMPURL="$URL"/$TMPURL
+			fi
+
+			PIC=`cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed "s/$ID/\n$ID/g" | grep ^"$ID"'").hover' | sed "s#img src=#\nfound=#g" | grep ^"found=" | cut -d"'" -f2 | head -n1`
+
+			if [ `echo $ROUND | grep us_ger_small.png | wc -l` -eq 1 ]; then
+				LANG=" (de)"
+			elif [ `echo $ROUND | grep us_flag_small.png | wc -l` -eq 1 ]; then
+				LANG=" (en)"
+			else
+				LANG=" (??)"
+			fi
+	
+			if [ -z "$PIC" ]; then
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			fi
+	
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+	
+			if [ ! -z "$TITLE" ] && [ ! -z "$TMPURL" ];then
+				if [ ! -e $TMP/$FILENAME.list ];then
+					touch $TMP/$FILENAME.list
+				fi
+				piccount=`expr $piccount + 1`
+				LINE="$TITLE $LANG#$SRC $SRC season $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
+	
+				echo "$LINE" >> $TMP/$FILENAME.list
+			fi
+	
+		done 3<$TMP/cache.$FILENAME.2
+
+		if [ "$NEXT" -lt "$pages" ]; then
+			NEXTPAGE=`expr $NEXT + 1`
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC searchtv '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			echo "$LINE" >> $TMP/$FILENAME.list
+		fi
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	fi
+	echo "$TMP/$FILENAME.list"
+}
+
+searchtold()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		piccount=0
+
+#		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE$NEXT$PAGE2" > $TMP/cache.$FILENAME.1
+
+		pages=`cat $TMP/cache.$FILENAME.1 | grep $PAGE | sed "s/$PAGE/\n$PAGE/g" | cut -d ">" -f2 | cut -d "<" -f1 | tail -n1`
+		if [ -z "$pages" ];then
+			pages=0
+		fi
 		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed 's!<TR>!\nfound=!g'| grep ^"found="  >$TMP/cache.$FILENAME.2
 
 		while read -u 3 ROUND; do
