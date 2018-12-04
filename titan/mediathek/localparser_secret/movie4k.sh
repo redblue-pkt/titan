@@ -631,7 +631,7 @@ hosterlist()
 {
 #$curlbin $URL/$PAGE -o /tmp/localparser/1234
 
-rm $TMP/$FILENAME.list
+#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
