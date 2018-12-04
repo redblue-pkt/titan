@@ -629,6 +629,7 @@ hosterlistold()
 
 hosterlist()
 {
+#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
@@ -637,14 +638,20 @@ hosterlist()
 				{
 					suche = 1
 				}
-				/^links\[/ \
+#				/^links\[/ \
+                /tablemoviesindex2/ \
 				{
 					if ( suche == 1 )
 					{
+#						# extrahiere den newpage pfad
+#						i = index($0, "href=\\\"") + 7
+#				        j = index(substr($0, i), "\\") - 1
+#				        newpage = substr($0, i, j)
+
 						# extrahiere den newpage pfad
-						i = index($0, "href=\\\"") + 7
-				        j = index(substr($0, i), "\\") - 1
-				        newpage = substr($0, i, j)
+						i = index($0, "window.location.href = \x27") + 24
+					    j = index(substr($0, i), "\x27") - 1
+					    newpage = substr($0, i, j)
 
 						# extrahiere den title pfad
 						i = index($0, "> &nbsp;") + 8
@@ -655,11 +662,16 @@ hosterlist()
 				        j = index(substr($0, i), "<") - 1
 				        extra = substr($0, i, j)
 
+#print 123 $0
+#print "newpage" newpage
+#print "extra" extra
+#print "title" title
+
 						if (title != "")
 						{
 							pic = tolower(title)
 							split(pic, a, ".")
-							title = title " (" extra ")"
+#							title = title " (" extra ")"
 							if ( pic == "" )
 							{
 					  			pic = "default"
@@ -673,8 +685,8 @@ hosterlist()
 							piccount += 1
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
-
-							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+							if ( newpage != "" )
+								print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
 						}
 						next
 					}
