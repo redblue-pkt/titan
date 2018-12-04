@@ -687,6 +687,8 @@ hosterlist()
 							# 26. \x27 = single quotes
 							if ( newpage != "" )
 								print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+							else
+								print title "(ERROR)#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
 						}
 						next
 					}
