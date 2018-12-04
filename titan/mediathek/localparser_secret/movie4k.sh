@@ -629,7 +629,9 @@ hosterlistold()
 
 hosterlist()
 {
-#rm $TMP/$FILENAME.list
+#$curlbin $URL/$PAGE -o /tmp/localparser/1234
+
+rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
@@ -652,6 +654,23 @@ hosterlist()
 						i = index($0, "window.location.href = \x27") + 24
 					    j = index(substr($0, i), "\x27") - 1
 					    newpage = substr($0, i, j)
+#print "0" newpage
+
+						if (newpage == "")
+						{
+							i = index($0, "href=\\\"") + 7
+					        j = index(substr($0, i), "\\") - 1
+					        newpage = substr($0, i, j)
+#print "1" newpage
+						}
+
+						if (newpage == "")
+						{
+							i = index($0, "href=\"") + 6
+					        j = index(substr($0, i), "\">") - 1
+					        newpage = substr($0, i, j)
+#print "3" newpage
+						}
 
 						# extrahiere den title pfad
 						i = index($0, "> &nbsp;") + 8
@@ -661,17 +680,79 @@ hosterlist()
 						i = index($0, "html\\\">") + 7
 				        j = index(substr($0, i), "<") - 1
 				        extra = substr($0, i, j)
+#print "4" extra
+
+						if (extra == "")
+						{
+							i = index($0, "html\">") + 5
+					        j = index(substr($0, i), "<") - 1
+					        extra = substr($0, i, j)
+#print "5" extra
+
+						}
+						if (extra ~ /tablemoviesindex2/)
+							extra = ""
+
+						if (extra ~ /PT>/)
+							extra = ""
+
+						if (newpage ~ /movie-/)
+						{
+							i = index(newpage, "movie-") + 6
+					        j = index(substr(newpage, i), ".html") - 1
+					        extra2 = substr(newpage, i, j)
+						}
+						if (newpage ~ /tvshows-/)
+						{
+							i = index(newpage, "tvshows-") + 8
+					        j = index(substr(newpage, i), "-") - 1
+					        extra2 = substr(newpage, i, j)
+						}
 
 #print 123 $0
 #print "newpage" newpage
 #print "extra" extra
+#print "extra2" extra2
 #print "title" title
 
 						if (title != "")
 						{
 							pic = tolower(title)
 							split(pic, a, ".")
-#							title = title " (" extra ")"
+
+
+							if (extra != "" )
+							{
+								# trim left "  Hallo   tester   "
+								gsub(/^[ \t]+/,"",extra)
+								# trim right "  Hallo   tester   "
+								gsub(/[ \t]+$/,"",extra)
+								# trim middle "  Hallo   tester   "
+								gsub(/\t+/," / ",extra)
+							}
+							if (extra2 != "" )
+							{
+								# trim left "  Hallo   tester   "
+								gsub(/^[ \t]+/,"",extra2)
+								# trim right "  Hallo   tester   "
+								gsub(/[ \t]+$/,"",extra2)
+								# trim middle "  Hallo   tester   "
+								gsub(/\t+/," / ",extra2)
+							}
+							if (extra != "" && extra2 != "")				
+								title = title " (" extra2 " - " extra ")"
+							else if(extra != "")
+								title = title " (" extra ")"
+							else if(extra2 != "")
+								title = title " (" extra2 ")"
+
+							# trim left "  Hallo   tester   "
+							gsub(/^[ \t]+/,"",title)
+							# trim right "  Hallo   tester   "
+							gsub(/[ \t]+$/,"",title)
+							# trim middle "  Hallo   tester   "
+							gsub(/\t+/," / ",title)
+
 							if ( pic == "" )
 							{
 					  			pic = "default"
