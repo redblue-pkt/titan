@@ -1451,7 +1451,10 @@ void doscan(struct stimerthread* timernode)
 			{
 				if(timernode->aktion != START) break;
 #ifndef SIMULATE
-				buf = dvbgetsdt(fenode, secnr, scaninfo.timeout);
+				if(checkrealbox("DM920") == 1)
+					buf = dvbgetsdt(fenode, secnr, scaninfo.timeout * 2);
+				else
+					buf = dvbgetsdt(fenode, secnr, scaninfo.timeout);
 #endif
 				if(buf != NULL)
 					findchannel(fenode, tpnode, buf, &lastsecnr, scaninfo.scanscreen, scaninfo.listbox, scaninfo.changename, 0);
