@@ -1385,7 +1385,7 @@ void doscan(struct stimerthread* timernode)
 				continue;
 			}
 			festatus = fewait(fenode);
-			DMX_GET_STC
+			printf("----> end fewait: %d", festatus);
 			if(debug_level == 200) fereadstatus(fenode);
 			/*if(fenode->feinfo->type == FE_OFDM && festatus != 0 &&  tpnode->system == 0) //DVB-T2 scan
 			{
@@ -1464,6 +1464,7 @@ void doscan(struct stimerthread* timernode)
 				free(buf); buf = NULL;
 				secnr++;
 			}
+			printf("----> end getsdt: %d", secnr);
 
 			scaninfo.tpcount++;
 			if(scaninfo.scantype == 0) break;
