@@ -2514,6 +2514,10 @@ int fegetdev()
 					}
 					else
 						addconfig(tmpstr, "");
+					if(ostrstr(feinfo->name, "Si2166B") != NULL) //test Tuner DM920
+					{
+						fechangetype2(dvbnode, "DVB-S", "DVB-S")
+					}
 					free(tmpstr), tmpstr = NULL;
 				}
 				if(tmpstr != NULL)
@@ -2713,6 +2717,105 @@ int fechangetype(struct dvbdev* tuner, char* value)
 		return 1;
 	return 0; //false
 #endif
+}		
+#endif
+
+#ifdef MIPSEL
+int fechangetype2(struct dvbdev* tuner, char* value, char* realname)
+{
+	struct dtv_property p[2];
+	memset(p, 0, sizeof(p));
+	struct dtv_properties cmdseq;
+	cmdseq.props = p;
+	cmdseq.num = 2;
+	p[0].cmd = DTV_CLEAR;
+	p[1].cmd = DTV_DELIVERY_SYSTEM;
+	p[1].u.data = SYS_UNDEFINED;
+	char* buf = NULL, *hypridtuner = NULL;
+	int type = 0;
+	int ret = 0;
+	int wasopen = 0;
+	char* tmpstr = NULL;
+	
+	if(tuner->fd == -1)
+	{
+		if(feopen(tuner, NULL) < 0)
+			err("open tuner dev");
+	}
+	else
+		wasopen = 1;
+	
+	printf("**** > realname: %s\n", realname);
+	
+	if(realname != NULL && ostrstr(realname, "DVB-S") != NULL)
+		type = feSatellite;
+	else if(realname != NULL && ostrstr(realname, "DVB-C") != NULL)
+		type = feCable;
+	else if(realname != NULL && ostrstr(realname, "DVB-T") != NULL)
+		type = feTerrestrial;
+	else
+		type = -1;
+	
+	switch (type)
+	{
+		case feSatellite:
+		{
+			p[1].u.data = SYS_DVBS;
+			break;
+		}
+		case feTerrestrial:
+		{
+			p[1].u.data = SYS_DVBT;
+			break;
+		}
+		case feCable:
+		{
+			 fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
+#ifdef SYS_DVBC_ANNEX_A
+			p[1].u.data = SYS_DVBC_ANNEX_A;
+#else
+			p[1].u.data = SYS_DVBC_ANNEX_AC;
+#endif
+			break;
+		}
+#ifdef feATSC
+		case feATSC:
+		{
+			p[1].u.data = SYS_ATSC;
+			break;
+		}
+#endif
+		default:
+			debug(200, "not supported delivery system type %i", type);
+			return 0; //false
+	}
+	debug(200, "data %d",p[1].u.data );
+	ret = 0;
+	if (ioctl(tuner->fd, FE_SET_PROPERTY, &cmdseq) == -1)
+	{
+		perr("FE_SET_PROPERTY");
+	}
+	else
+	{
+		printf("fe set property value %s data %d ... RC:%i\n", value, p[1].u.data, ret);
+	}
+	
+	if(type == feTerrestrial)
+	{
+		tmpstr = ostrcat(tuner->feshortname, "_terr_volt", 0, 0);
+		if(getconfigint(tmpstr, NULL) == 1)
+			fesetvoltage(tuner, SEC_VOLTAGE_13, 10);
+		else
+			fesetvoltage(tuner, SEC_VOLTAGE_OFF, 10);
+		free(tmpstr); tmpstr = NULL;
+	}
+
+	if(wasopen != 1)
+		feclose(tuner, -1);
+	if(ret > -1)
+		return 1; //true
+	else
+		return 0; //false
 }		
 #endif
 	
