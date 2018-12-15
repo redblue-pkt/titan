@@ -2516,7 +2516,9 @@ int fegetdev()
 						addconfig(tmpstr, "");
 					if(ostrstr(feinfo->name, "Si2166B") != NULL) //test Tuner DM920
 					{
+#ifdef MIPSEL						
 						fechangetype2(dvbnode, "DVB-S", "DVB-S");
+#endif							
 					}
 					free(tmpstr), tmpstr = NULL;
 				}
