@@ -69,23 +69,47 @@ init()
 mainmenu()
 {
 	echo "Kino#$SRC $SRC kino 'Kino-filme.html'#http://atemio.dyndns.tv/mediathek/menu/Cine-Films.jpg#Cine-Films.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "All (A-Z)#$SRC $SRC sorted#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Movie (A-Z)#$SRC $SRC sorted movie#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Tv (A-Z)#$SRC $SRC sorted series#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Doku (A-Z)#$SRC $SRC sorted documentation#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Actor (A-Z)#$SRC $SRC sorted actor#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Director (A-Z)#$SRC $SRC sorted director#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Search#http://atemio.dyndns.tv/mediathek/youtube/streams/kinox.all-sorted.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#KinoX#21" >>$TMP/$FILENAME.list
 	echo "Search Cast#http://atemio.dyndns.tv/mediathek/youtube/streams/kinox.all-sorted.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search10.jpg#KinoX#31" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
+
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=@NEXT@&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22Length%22%3A60%2C%22fLetter%22%3A1%7D
+                                                                                                                                                                                                                                                                          additional=%7B%22fType%22%3A%22$@PAGE2@%22%2C%22fLetter%22%3A%22$@PAGE@%22%7D
+
+#https://www.kinos.to/aGET/Actor/?sEcho=1&iColumns=2&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=1&sSortDir_0=asc&bSortable_0=true&bSortable_1=false&additional=%7B%22fLetter%22%3A%22B%22%2C%22fSex%22%3A%22%22%7D
+#https://www.kinos.to/aGET/Actor/?sEcho=1&iColumns=2&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=1&sSortDir_0=asc&bSortable_0=true&bSortable_1=false&additional=%7B%22fLetter%22%3A%22A%22%2C%22fSex%22%3A%22%22%7D
+#https://www.kinos.to/aGET/Director/?sEcho=1&iColumns=2&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=1&sSortDir_0=asc&bSortable_0=true&bSortable_1=false&additional=%7B%22fLetter%22%3A%22A%22%2C%22fSex%22%3A%22%22%7D
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22Length%22%3A60%2C%22fLetter%22%3A1%2C%22fGenre%22%3A%226%22%7D
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22Length%22%3A60%2C%22fLetter%22%3A1%7D
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22documentation%22%2C%22Length%22%3A60%2C%22fLetter%22%3A1%7D
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22series%22%2C%22Length%22%3A60%2C%22fLetter%22%3A1%7D
+#https://www.kinos.to/aGET/List/?sEcho=3&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22series%22%2C%22Length%22%3A60%2C%22fLetter%22%3A%22B%22%7D
+
 sorted()
 {
+
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		watchlist="A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+		watchlist="1 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
 
 		rm $TMP/$FILENAME.list > /dev/null 2>&1
 
 		for ROUND0 in $watchlist; do
 			TITLE=`echo $ROUND0`
+			if [ "$ROUND0" == "1" ];then
+				TITLE="0-9"
+			fi
+
 			filename=`echo $TITLE | tr [A-Z] [a-z]`
-			echo "$TITLE#$SRC $SRC search '$ROUND0' 1#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+#			echo "$TITLE#$SRC $SRC search '$ROUND0' 1 $PAGE#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC search '$PAGE' 1 '$ROUND0'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -93,10 +117,42 @@ sorted()
 
 search()
 {
+#rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
+#		$ACTIVEBIN "$URL/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22$PAGE2%22%2C%22fLetter%22%3A%22$PAGE%22%7D" > $TMP/cache.$FILENAME.1
+		if [ "$PAGE" == "movie" ] || [ "$PAGE" == "series" ] || [ "$PAGE" == "documentation" ];then
+#			$ACTIVEBIN "$URL/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22$PAGE%22%2C%22fLetter%22%3A%22$PAGE2%22%7D" > $TMP/cache.$FILENAME.1
+			TMPPFAD=List
+			FTYPE="%22fType%22%3A%22$PAGE%22"	
+			FLETTER="%22fLetter%22%3A%22$PAGE2%22"
+			additional="%7B$FTYPE%2C$FLETTER%7D"
+		elif [ "$PAGE" == "actor" ];then
+#			$ACTIVEBIN "$URL/aGET/Actor/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fLetter%22%3A%22$PAGE2%22%2C%22fSex%22%3A%22%22%7D" > $TMP/cache.$FILENAME.1
+			TMPPFAD=Actor
+			FLETTER="%22fLetter%22%3A%22$PAGE2%22"
+			FSEX="%22fSex%22%3A%22%22"
+			additional="%7B$FLETTER%2C$FSEX%7D"
+		elif [ "$PAGE" == "director" ];then
+#			$ACTIVEBIN "$URL/aGET/Director/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fLetter%22%3A%22$PAGE2%22%2C%22fSex%22%3A%22%22%7D" > $TMP/cache.$FILENAME.1
+			TMPPFAD=Director
+			FLETTER="%22fLetter%22%3A%22$PAGE2%22"
+			FSEX="%22fSex%22%3A%22%22"
+			additional="%7B$FLETTER%2C$FSEX%7D"
+		fi
 
-		$ACTIVEBIN "$URL/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$PAGE%22%7D" > $TMP/cache.$FILENAME.1
+		$ACTIVEBIN "$URL/aGET/$TMPPFAD/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=$additional" > $TMP/cache.$FILENAME.1
+
+#https://www.kinos.to/aGET/Actor/?sEcho=1&iColumns=2&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=1&sSortDir_0=asc&bSortable_0=true&bSortable_1=false&additional=%7B%22fLetter%22%3A%22B%22%2C%22fSex%22%3A%22%22%7D
+#https://www.kinos.to/aGET/Actor/?sEcho=1&iColumns=2&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=1&sSortDir_0=asc&bSortable_0=true&bSortable_1=false&additional=%7B%22fLetter%22%3A%22A%22%2C%22fSex%22%3A%22%22%7D
+#https://www.kinos.to/aGET/Director/?sEcho=1&iColumns=2&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=1&sSortDir_0=asc&bSortable_0=true&bSortable_1=false&additional=%7B%22fLetter%22%3A%22A%22%2C%22fSex%22%3A%22%22%7D
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22Length%22%3A60%2C%22fLetter%22%3A1%2C%22fGenre%22%3A%226%22%7D
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22Length%22%3A60%2C%22fLetter%22%3A1%7D
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22documentation%22%2C%22Length%22%3A60%2C%22fLetter%22%3A1%7D
+#https://www.kinos.to/aGET/List/?sEcho=2&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22series%22%2C%22Length%22%3A60%2C%22fLetter%22%3A1%7D
+#https://www.kinos.to/aGET/List/?sEcho=3&iColumns=7&sColumns=&iDisplayStart=0&iDisplayLength=25&iSortingCols=1&iSortCol_0=2&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22series%22%2C%22Length%22%3A60%2C%22fLetter%22%3A%22B%22%7D
+
 		if [ `cat $TMP/cache.$FILENAME.1 | grep "KinoX 404 Not Found" | wc -l` -eq 1 ];then
 			ERRORMSG="KinoX 404 Not Found"
 #			echo "errormsg=$ERRORMSG"
@@ -135,6 +191,10 @@ search()
 		
 		cat $TMP/cache.$FILENAME.1 | tr '],[' '\n' | grep 'Stream' | cut -d '/' -f3 | cut -d"\\" -f1 > $TMP/cache.$FILENAME.3
 
+		if [ "$PAGE" == "actor" ] || [ "$PAGE" == "director" ];then
+			cat $TMP/cache.$FILENAME.1 | sed "s!\[!\n\[!g" | grep '"nm' > $TMP/cache.$FILENAME.3
+		fi
+
 		count=0
 
 		while read -u 3 ROUND; do
@@ -143,7 +203,7 @@ search()
 			picname=`echo $filename | sed 's!.html!.jpg!'`
 			searchname=`echo $filename | sed 's!.html!!'`	
 		
-			TITLE=`echo $picname | sed 's!.jpg!!' | tr "_" " "`
+			TITLE=`echo $picname | sed 's!.jpg!!' | tr "_" " " | cut -d'"' -f2`
 
 			if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_pic=1 | wc -l` -eq 1 ];then
 		#		$wgetbin --no-check-certificate "$MAINURL/$ROUND1" -O cache."$filename".list
@@ -189,7 +249,10 @@ search()
 			fi
 
 			NEWPAGE="$URL/Stream/$ROUND"
-
+			if [ "$PAGE" == "actor" ] || [ "$PAGE" == "director" ];then
+				TMPPFAD=`echo $ROUND | sed -nr 's/.*","([^"]+)".*/\1/p'`
+				NEWPAGE="/People/$TMPPFAD"
+			fi
 			if [ -z "$PIC" ]; then
 				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 			fi
@@ -202,7 +265,11 @@ search()
 				fi
 				piccount=`expr $piccount + 1`
 				LINE="$TITLE$LANGTXT#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#22"
+				if [ "$PAGE" == "actor" ] || [ "$PAGE" == "director" ];then
+#					LINE="$TITLE#$SRC $SRC search 'movie' 1 '$NEWPAGE'#$PIC#kinox_$piccount.jpg#KinoX#0"
+					LINE="$TITLE#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#32"
 
+				fi
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
 
@@ -210,11 +277,11 @@ search()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 30`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE $PAGE2#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
 }
