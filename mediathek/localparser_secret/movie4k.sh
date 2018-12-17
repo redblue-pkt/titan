@@ -196,6 +196,9 @@ searchtv()
 #		$curlbin $URL/$PAGE$NEXT$PAGE2 -o $TMP/cache.$FILENAME.1
 		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE$NEXT$PAGE2" > $TMP/cache.$FILENAME.1
 
+		if [ -z "$NEXT" ];then
+			NEXT=1
+		fi
 		pages=`cat $TMP/cache.$FILENAME.1 | grep $PAGE | sed "s/$PAGE/\n$PAGE/g" | cut -d ">" -f2 | cut -d "<" -f1 | tail -n1`
 		if [ -z "$pages" ];then
 			pages=0
@@ -337,7 +340,7 @@ season()
 			echo $ROUND | sed 's!<OPTION value=!\nfound2=!g' | grep ^found2 >$TMP/cache.$FILENAME.3
 			SEASON=`echo $ROUND | sed 's!<FORM name="episodeform!\nfound1="!g' | grep ^found1 | cut -d '"' -f2`
 			while read -u 3 ROUND2; do
-				echo ROUND2 $ROUND2
+#				echo ROUND2 $ROUND2
 				EPISODE=`echo $ROUND2 | cut -d'>' -f2 | cut -d'<' -f1 | sed 's/Episode //g'`
 				NEWPAGE=`echo $ROUND2 | cut -d'"' -f2 | tail -n1`
 				TITLE="Season $SEASON Episode $EPISODE"
