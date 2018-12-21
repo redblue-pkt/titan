@@ -144,7 +144,7 @@
 #ifndef MIPSEL
 #define MAXFRONTENDDEV 4
 #else
-#define MAXFRONTENDDEV 8
+#define MAXFRONTENDDEV 10
 #endif
 #define MAXDEMUXDEVOPEN 10
 #define MAXAUDIODEV 4
