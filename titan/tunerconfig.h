@@ -1240,7 +1240,8 @@ void screentunerconfig()
 				bok = -1;
 				auc = 0;
 				buc = 0;
-				for(i = 0; i <= MAXFRONTENDDEV; i++)
+				for(i = 0; i <= 8; i++) Workaround more then one FBC Tuner
+				//for(i = 0; i <= MAXFRONTENDDEV; i++)
 				{	
 					tmpnr = oitoa(i);
 					if(i < 10)
