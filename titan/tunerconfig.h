@@ -1240,7 +1240,7 @@ void screentunerconfig()
 				bok = -1;
 				auc = 0;
 				buc = 0;
-				for(i = 0; i <= 8; i++) Workaround more then one FBC Tuner
+				for(i = 0; i <= 8; i++) //Workaround more then one FBC Tuner
 				//for(i = 0; i <= MAXFRONTENDDEV; i++)
 				{	
 					tmpnr = oitoa(i);
@@ -1341,7 +1341,7 @@ void screentunerconfig()
 				free(tmpstr2);tmpstr2=NULL;
 				if(auc == 1)
 				{
-					for(i = 0; i <= 8; i++) Workaround more then one FBC Tuner
+					for(i = 0; i <= 8; i++) //Workaround more then one FBC Tuner
 					//for(i = 0; i <= MAXFRONTENDDEV; i++)
 					{	
 						tmpnr = oitoa(i);
@@ -1369,7 +1369,7 @@ void screentunerconfig()
 				}
 				if(buc == 1)
 				{
-					for(i = 0; i <= 8; i++) Workaround more then one FBC Tuner
+					for(i = 0; i <= 8; i++) //Workaround more then one FBC Tuner
 					//for(i = 0; i <= MAXFRONTENDDEV; i++)
 					{	
 						tmpnr = oitoa(i);
