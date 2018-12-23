@@ -909,9 +909,12 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 	char* tmpnr = NULL;
 	int fbc = 0;
 	
-	if(dvbnode != NULL && ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL)
+	//if(dvbnode != NULL && ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL)
+	if(dvbnode != NULL && ostrstr(node->feinfo->name, "BCM45208") != NULL)
 		fbc = 1;
 
+	printf("------> 1. Name: %s FBC: %i \n", node->feinfo->name, fbc);
+	
 	if(fbc == 0)
 	{
 		*loopstr = ostrcat(*loopstr, _("direct connect"), 1, 0);
@@ -942,7 +945,7 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 			{
 				if(fbc != 1)
 				{	
-					//printf("++++ node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
+					printf("++++ fbc=0 node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
 					if((checkbox("DM900") != 1 && checkbox("DM920") != 1 && checkbox("DM520") != 1 && checkbox("DM525") != 1) || dvbnode->devnr == 0)
 					{
 						tmpnr = oitoa(dvbnode->adapter);
@@ -963,7 +966,7 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 				}
 				else
 				{	
-					//printf("++++ node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
+					printf("++++ fbc=1 node->adapter:%i dvbnode->adapter:%i node->devnr:%i dvbnode->devnr:%i\n", node->adapter, dvbnode->adapter, node->devnr, dvbnode->devnr);
 					if(dvbnode->devnr == 0 || dvbnode->devnr == 1)
 					{
 						tmpnr = oitoa(dvbnode->adapter);
