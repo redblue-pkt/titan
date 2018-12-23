@@ -6779,7 +6779,7 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 	
 	if(fechangetype(tuner, value) == 1)
 	{
-		if(getconfigint("need_delivery_system_workaround" , NULL) == 1 || checkbox("DM920") == 1) //test dvb-C Tuner DM920
+		if(getconfigint("need_delivery_system_workaround" , NULL) == 1) == 1) 
 		{	
 			buf1 = readsys("/sys/module/dvb_core/parameters/dvb_shutdown_timeout",1);
 			ret = writesys("/sys/module/dvb_core/parameters/dvb_shutdown_timeout", "0", 1);
