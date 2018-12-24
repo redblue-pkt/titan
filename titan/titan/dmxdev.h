@@ -473,7 +473,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 		err("NULL detect");
 		return 1;
 	}
-	if(checkrealbox("HD51") == 1 || checkbox("DM920") == 1 || checkbox("SF8008") == 1)) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
+	if(checkrealbox("HD51") == 1 || checkbox("DM920") == 1 || checkbox("SF8008") == 1) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
 	{
 		if(node->fedmxsource == source)
 			return 0;
