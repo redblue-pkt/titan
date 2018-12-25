@@ -1050,13 +1050,9 @@ int main(int argc, char *argv[])
 	if(checkbox("ATEMIO510") == 0)
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
 
-printf("a00000000\n");
-
 //			setvideomode("720", 0);
 //			changefbresolution("720", 0);
 //			autoresolution();
-printf("b00001111\n");
-
 
 	if(getconfigint("firststart", NULL) == 1)
 	{
@@ -1112,7 +1108,6 @@ printf("b00001111\n");
 		drawscreen(skin, 0, 0);
 		addconfig("autoscan", "0");
 	}
-printf("111111111\n");
 	
 	//first wizzard
 	if(getconfigint("nofirstwizzard", NULL) < 2)
@@ -1155,14 +1150,11 @@ firstwizzardstep1:
 		msg = readfiletomem("/etc/imageinfo", 0);
 		textbox(_("Info"), _(msg), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 680, 30, 0);
 		free(msg); msg = NULL;
-printf("2222222222\n");
 		
 		writevfd("");
 		status.updatevfd = START;
 		drawscreen(skin, 0, 0);
 		addconfig("nofirstwizzard", "2");
-printf("3333333333\n");
-
 	}
 	else
 	{
@@ -1173,7 +1165,6 @@ printf("3333333333\n");
 		if(serviceret != 21) // no message if startchannel empty
 			servicecheckret(serviceret, 0);
 	}
-printf("4444444444\n");
 
 // fixt manual start 
 	resettvpic();
@@ -1192,7 +1183,6 @@ printf("4444444444\n");
 	ret = setcontrast(getconfigint("vs_contrast", NULL));
 	ret = settint(getconfigint("vs_tint", NULL));
 	videoApplySettings();
-printf("555555555\n");
 	
 #ifndef SIMULATE
 	//set skinentrys locked
@@ -1231,7 +1221,6 @@ printf("555555555\n");
 
 	//start newsletter
 	startnewsletter(1);
-printf("6666666666\n");
 
 	//thumb create thread
 	startthumb(1);
@@ -1261,7 +1250,6 @@ printf("6666666666\n");
 #ifdef MIPSEL
 	cmd = ostrcat("/media/hdd/movie/titankey.mipsel", NULL, 0, 0);
 #endif
-printf("777777777\n");
 
 	//for atemio to unlock box with stick
 	if(file_exist(cmd))
@@ -1295,7 +1283,6 @@ printf("777777777\n");
 		free(cpuid); cpuid = NULL;
 	}
 	free(cmd); cmd = NULL;
-printf("88888888888\n");
 
 	//must called direct befor screeninfobar
 	if(getconfigint("saverun", NULL) == 1)
@@ -1352,16 +1339,11 @@ printf("88888888888\n");
 			rmdir("/mnt/writetest");
 		}
 	}
-printf("9999999999\n");
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
-printf("9999999999111\n");
 
 	startinternreader(1);
-printf("9999999999222\n");
- 	
 	screeninfobar();
-printf("9999999999333\n");
 
 	//for testign screens
 	//screenmanualscan();

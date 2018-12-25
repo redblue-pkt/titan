@@ -498,7 +498,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 	}
 	else
 	{
-		if(checkrealbox("HD51") == 1 || checkbox("DM920") == 1)
+		if(checkrealbox("HD51") == 1 || checkbox("DM920") == 1 || checkbox("SF8008") == 1)
 		{
 		  	struct dvbdev* nodeh = dvbdev;
 			while(nodeh != NULL)
