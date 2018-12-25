@@ -7324,7 +7324,18 @@ int converte2settings(int flag)
 				tmpline = ostrcat(tmpline, "#", 1, 0);
 
 				//system
-				if(ostrstr((ret1[i]).part, "system=") != NULL)
+				if(flag == 2)
+				{
+					// workaround we need 0 + 1 for hd channels
+					line = ostrcat(line, tmpline, 1, 0);
+					line = ostrcat(line, "0", 1, 0);
+					line = ostrcat(line, "\n", 1, 0);
+
+					line = ostrcat(line, tmpline, 1, 0);
+					line = ostrcat(line, "1", 1, 0);
+					line = ostrcat(line, "\n", 1, 0);
+				}
+				else if(ostrstr((ret1[i]).part, "system=") != NULL)
 				{
 					tmpline = ostrcat(tmpline, getxmlentry(ret1[i].part, "system="), 1, 0);
 					tmpline = ostrcat(tmpline, "\n", 1, 0);
@@ -7334,13 +7345,6 @@ int converte2settings(int flag)
 				{
 					line = ostrcat(line, tmpline, 1, 0);
 					line = ostrcat(line, "0", 1, 0);
-					line = ostrcat(line, "\n", 1, 0);
-
-				}
-				if(flag == 2)
-				{
-					line = ostrcat(line, tmpline, 1, 0);
-					line = ostrcat(line, "1", 1, 0);
 					line = ostrcat(line, "\n", 1, 0);
 				}
 
