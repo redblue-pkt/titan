@@ -712,6 +712,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 							oshutdown(2, 1);
 					}
 					changedvbdev(tuner);
+					tuner->feinfo->type = FE_QAM;
 				}
 			}
 //			else if(realname != NULL && ostrcmp(realname, "DVB-C") == 0)
@@ -735,6 +736,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 							oshutdown(2, 1);
 					}
 					changedvbdev(tuner);
+					tuner->feinfo->type = FE_OFDM;
 				}
 			}
 			free(realname), realname = NULL;
