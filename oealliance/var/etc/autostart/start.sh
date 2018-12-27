@@ -146,6 +146,10 @@ startMountSwap()
 {
 	startup_progress "$INPUT"
 
+	if [ -L /mnt ];then
+		rm -f /mnt
+	fi
+
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
 		#/usr/bin/showiframe /usr/share/bootlogo.mvi
 		startBootlogo
@@ -496,6 +500,18 @@ startGui()
 
 		if [ -z "$START" ]; then START="$STARTDEFAULT"; fi
 
+		#hissilicon work
+		if [ -e /proc/stb/info/boxtype ]; then
+			stbcheck=`cat /proc/stb/info/boxtype`
+			if [ $stbcheck == "sf8008" ] || [ $stbcheck == "ustym4kpro" ] || [ $stbcheck == "cc1" ]; then
+				count=`ps -ef |grep libreader |grep -v "grep" |wc -l`
+				if [ 0 == $count ];then
+					libreader 720P_50
+				fi
+			fi
+		fi
+		sysctl -p
+
 		case $debug in on|full) echo "[$0] [$INPUT] startGui: ret($ret) $START";; esac
 		$START
 
@@ -506,6 +522,21 @@ startGui()
 		# >128 signal
 
 		ret=$?
+
+		#hissilicon work
+		if [ "$ret" -ne "1" ]; then
+			if [ -e /proc/stb/info/boxtype ]; then
+				stbcheck=`cat /proc/stb/info/boxtype | cut -c1-2`
+				if [ $stbcheck == "u5" ]; then
+					killall -9 showiframe; sleep 5
+				fi
+				stbcheck=`cat /proc/stb/info/boxtype`
+				if [ $stbcheck == "sf8008" ] || [ $stbcheck == "ustym4kpro" ] || [ $stbcheck == "cc1" ] ; then
+					killall -9 libreader; sleep 5
+				fi
+			fi
+		fi
+
 		case $ret in
 			1)
 				echo " " > /dev/vfd &
