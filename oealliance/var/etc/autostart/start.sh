@@ -333,7 +333,8 @@ startSetTime()
           fi
 }
 
-startSamba() {
+startSamba()
+{
 	case $sambaserver in
 		y)
 			case $debug in on|full) echo "$CMD [$INPUT] start Samba";; esac
@@ -344,7 +345,8 @@ startSamba() {
 	esac
 }
 
-startNFS() {
+startNFS()
+{
 	case $nfsserver in
 		y)
 			case $debug in on|full) echo "$CMD [$INPUT] start startNFS";; esac
@@ -352,7 +354,8 @@ startNFS() {
 	esac
 }
 
-startOpenVPN() {
+startOpenVPN()
+{
 	case $openvpn in
 		y)
 			case $debug in on|full) echo "$CMD [$INPUT] start startOpenVPN";; esac
@@ -541,20 +544,23 @@ startGui()
 	fi
 }
 
-startUsercmd() {
+startUsercmd()
+{
 	case $debug in on|full) echo "[$0] [$INPUT] startUsercmd";; esac
 	if [ -e /mnt/config/usercmd.sh ]; then
 		/mnt/config/usercmd.sh
 	fi
 }
 
-startEvent() {
+startEvent()
+{
 	startup_progress "$INPUT"
 	case $debug in on|full) echo "[$0] [$INPUT] startEvent";; esac
 	/sbin/event &
 }
 
-startWlan() {
+startWlan()
+{
 	startup_progress "$INPUT"
 	case $wlan in
 		y)
@@ -568,7 +574,8 @@ startWlan() {
 	esac
 }
 
-startDepmod() {
+startDepmod()
+{
 	startup_progress "$INPUT"
 	case $debug in on|full) echo "[$0] [$INPUT] startDepmod";; esac
 
@@ -581,7 +588,8 @@ startDepmod() {
 	fi
 }
 
-startRcreboot() {
+startRcreboot()
+{
 	startup_progress "$INPUT"
 	case $rcreboot in
 		y)
@@ -591,14 +599,15 @@ startRcreboot() {
 	esac
 }
 
-startDevoled() {
+startDevoled()
+{
 	startup_progress "$INPUT"
 	case $debug in on|full) echo "[$0] [$INPUT] startDevoled";; esac
 
 	if [ -e /proc/vfd ];then
 		rm /dev/vfd
 		ln -s /proc/vfd /dev/
-	else if [ -e /dev/dbox/oled0 ];then
+	elif [ -e /dev/dbox/oled0 ];then
 		rm /dev/vfd
 		ln -s /dev/dbox/oled0 /dev/vfd
 	fi
@@ -611,14 +620,16 @@ startHotplug()
 	/etc/mdev/mdev-mount.sh first "$SWTYPE" "$model"
 }
 
-checkEmu() {
+checkEmu()
+{
 	emuret=`emu.sh check | grep "checkemu running emu="`
 	if [ -z "$emuret" ]; then
 		startEmu restart
 	fi
 }
 
-startXUPNPD() {
+startXUPNPD()
+{
 	case $debug in on|full) echo "$CMD [$INPUT] startXUPNPD";; esac
 	case $xupnpd in
 		y)
@@ -633,7 +644,8 @@ startXUPNPD() {
 	esac
 }
 
-startDLNA() {
+startDLNA()
+{
 	case $debug in on|full) echo "$CMD [$INPUT] startDLNA";; esac
 	case $dlna in
 		y)
@@ -648,7 +660,8 @@ startDLNA() {
 	esac
 }
 
-startInaDyn() {
+startInaDyn()
+{
 	case $debug in on|full) echo "$CMD [$INPUT] startInaDyn";; esac
 	case $inadyn in
 		y)
@@ -663,7 +676,8 @@ startDropcaches()
 	echo 3 > /proc/sys/vm/drop_caches
 }
 
-startSystemdown() {
+startSystemdown()
+{
 	start_sec.sh 2 /sbin/fuser -k /dev/dvb/adapter0/frontend0
 	start_sec.sh 2 pkill tuxtxt
 	start_sec.sh 2 pkill -9 tuxtxt
@@ -674,7 +688,8 @@ startSystemdown() {
 	start_sec.sh 2 emu.sh stop
 }
 
-startReboot() {
+startReboot()
+{
 	echo [start.sh] startReboot $REBOOT >/tmp/log
 	case $REBOOT in
 		1)
@@ -1009,6 +1024,5 @@ case $1 in
 		startDropcaches
 		startReboot;;
 esac
-
 
 echo "[$0] exit"
