@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh 
 
 INPUT="$1"
 REBOOT="$2"
@@ -42,11 +42,14 @@ startReloadconfig()
 
 startFlash()
 {
-	startup_progress "$INPUT"
-	case $debug in on|full) echo "[$0] [$INPUT] startFlash: ubiattach MNT-FLASH (MTD$mtd)";; esac
-	ubiattach -p /dev/mtd$mtd
-	case $debug in on|full) echo "[$0] [$INPUT] startFlash: mount MNT-FLASH (MTD$mtd)";; esac
-	mount -t ubifs ubi$ubi:mnt /mnt
+	if [ -e /etc/.oebuild ];then
+		case $debug in on|full) echo "[$0] [$INPUT] skip startFlash";; esac
+	else
+		case $debug in on|full) echo "[$0] [$INPUT] startFlash: ubiattach MNT-FLASH (MTD$mtd)";; esac
+		ubiattach -p /dev/mtd$mtd
+		case $debug in on|full) echo "[$0] [$INPUT] startFlash: mount MNT-FLASH (MTD$mtd)";; esac
+		mount -t ubifs ubi$ubi:mnt /mnt
+	fi
 }
 
 startBootlogo()
@@ -142,6 +145,11 @@ startMicomUpdate() {
 startMountSwap()
 {
 	startup_progress "$INPUT"
+
+	if [ -L /mnt ];then
+		rm -f /mnt
+	fi
+
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
 		#/usr/bin/showiframe /usr/share/bootlogo.mvi
 		startBootlogo
@@ -155,6 +163,8 @@ startMountSwap()
 		elif [ "$model" = "dm7020hdv2" ]; then
 #			size=569MiB
 			size=700MiB
+		elif [ "$board" = "dm520" ];then
+			size=4MiB
 		else
 			size=20MiB
 		fi
@@ -166,7 +176,7 @@ startMountSwap()
 			cp -a /mnt/config /tmp/backupmtd
 			cp -a /mnt/network /tmp/backupmtd
 			cp -a /mnt/script /tmp/backupmtd
-			if [ "$arch" = "mipsel" ] && [ -e "/usr/bin/enigma2" ];then
+			if [ -e "/usr/bin/enigma2" ];then
 				cp -a /mnt/enigma2 /tmp/backupmtd
 			fi
 			mkdir /tmp/backupmtd/swapextensions
@@ -175,35 +185,39 @@ startMountSwap()
 			backuptpk
 		fi
 
-		case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: umount SWAP-FLASH (MTD$mtd)";; esac
-		umount -fl /mnt
-		case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: erase SWAP-FLASH (MTD$mtd)";; esac
-		cp -aL /dev/vfd /tmp/vfd
-		infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
-		if [ "$board" = "dm7020hd_alt" ];then
-			ubirmvol /dev/ubi"$mtd" -n 1
+		if [ -e /etc/.oebuild ];then
+			rm -rf /mnt/*
 		else
-			ubidetach /dev/ubi_ctrl -m "$mtd"
-			ubiformat /dev/mtd"$mtd"
-			ubiattach -p /dev/mtd"$mtd"
+			case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: umount SWAP-FLASH (MTD$mtd)";; esac
+			umount -fl /mnt
+			case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: erase SWAP-FLASH (MTD$mtd)";; esac
+			cp -aL /dev/vfd /tmp/vfd
+			infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
+			if [ "$board" = "dm7020hd_alt" ];then
+				ubirmvol /dev/ubi"$mtd" -n 1
+			else
+				ubidetach /dev/ubi_ctrl -m "$mtd"
+				ubiformat /dev/mtd"$mtd"
+				ubiattach -p /dev/mtd"$mtd"
+			fi
+			ubimkvol /dev/ubi"$ubi" -N mnt -s "$size"
+			case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: mount SWAP-FLASH (MTD$mtd)";; esac
+			killall -9 infobox
+			infobox 9999 INFO "Initializing MNT" "" "Do not power off!" &
+			mount -t ubifs ubi"$ubi":mnt /mnt
 		fi
-		ubimkvol /dev/ubi"$ubi" -N mnt -s "$size"
-		case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: mount SWAP-FLASH (MTD$mtd)";; esac
-		killall -9 infobox
-		infobox 9999 INFO "Initializing MNT" "" "Do not power off!" &
-		mount -t ubifs ubi"$ubi":mnt /mnt
-		case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: create swapextensions folder SWAP-FLASH (MTD$mtd)";; esac
 
+		case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: create swapextensions folder SWAP-FLASH (MTD$mtd)";; esac		
 		mkdir /mnt/swapextensions
 		mkdir /mnt/bin
 
 		case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: hotplug.sh startStickextensions SWAP-FLASH (MTD$mtd)";; esac
 
-		if [ "$arch" = "mipsel" ];then
+#		if [ "$arch" = "arm" ];then
 			/etc/mdev/mdev-mount.sh startStickextensionsMNT
-		else
-			hotplug.sh startStickextensionsMNT
-		fi
+#		else
+#			hotplug.sh startStickextensionsMNT
+#		fi
 
 		if [ -e /var/etc/.backupmtd ]; then
 			case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: restoretpk (MTD$mtd)";; esac
@@ -215,7 +229,7 @@ startMountSwap()
 			rm -rf /mnt/network
 			rm -rf /mnt/script
 			rm -rf /mnt/swapextensions/player
-			if [ "$arch" = "mipsel" ] && [ -e "/usr/bin/enigma2" ];then
+			if [ -e "/usr/bin/enigma2" ];then
 				rm -rf /mnt/enigma2
 			fi
 			cp -a /tmp/backupmtd/* /mnt
@@ -304,7 +318,27 @@ startNtpdate()
 	esac
 }
 
-startSamba() {
+startTimefix()
+{
+	echo skip startTimefix
+#	case $model in
+#		*)	case $debug in on|full) echo "$CMD [$INPUT] startTimefix last";; esac
+#			#date=`date "+%H:%M:%S %m-%d-%Y"`
+#			date=`date "+%H:%M:%S %d-%m-%Y"`
+#			echo "$CMD [$INPUT] current Date : $date"
+#			/bin/fp_control -s $date;;
+#	esac
+}
+
+startSetTime()
+{
+          if [ -e "/mnt/script/settime.sh" ]; then
+                  /mnt/script/settime&
+          fi
+}
+
+startSamba()
+{
 	case $sambaserver in
 		y)
 			case $debug in on|full) echo "$CMD [$INPUT] start Samba";; esac
@@ -315,7 +349,8 @@ startSamba() {
 	esac
 }
 
-startNFS() {
+startNFS()
+{
 	case $nfsserver in
 		y)
 			case $debug in on|full) echo "$CMD [$INPUT] start startNFS";; esac
@@ -323,12 +358,43 @@ startNFS() {
 	esac
 }
 
-startOpenVPN() {
+startOpenVPN()
+{
 	case $openvpn in
 		y)
 			case $debug in on|full) echo "$CMD [$INPUT] start startOpenVPN";; esac
 			/etc/init.d/openvpn start &
 	esac
+}
+
+startCi()
+{
+	if [ "$model" == "hd51" ] || [ "$model" == "mutant51" ]; then
+		if [ -e /mnt/bin/ciplushelper ];then
+			/mnt/bin/ciplushelper &
+			sleep 1
+		fi
+	fi
+}
+
+startPluginScript()
+{
+	if [ -d /mnt/plugin ]; then
+		for i in /mnt/plugin/ps[0-9][0-9]*
+		do
+			$i 
+		done
+	fi
+}
+
+stopPluginScript()
+{
+	if [ -d /mnt/plugin ]; then
+		for i in /mnt/plugin/pe[0-9][0-9]*
+		do
+			$i 
+		done
+	fi
 }
 
 startGui()
@@ -376,9 +442,10 @@ startGui()
 			sync
 			sleep 10
 		else
-			rm -f /etc/rc2.d/*
-			rm -f /etc/rc3.d/*
-			rm -f /etc/rcS.d/*
+			echo skip remove /etc/rc2.d /etc/rc3.d /etc/rcS.d
+#			rm -f /etc/rc2.d/*
+#			rm -f /etc/rc3.d/*
+#			rm -f /etc/rcS.d/*
 		fi
 
 		fuser -k 80/tcp
@@ -433,6 +500,18 @@ startGui()
 
 		if [ -z "$START" ]; then START="$STARTDEFAULT"; fi
 
+		#hissilicon work
+		if [ -e /proc/stb/info/boxtype ]; then
+			stbcheck=`cat /proc/stb/info/boxtype`
+			if [ $stbcheck == "sf8008" ] || [ $stbcheck == "ustym4kpro" ] || [ $stbcheck == "cc1" ]; then
+				count=`ps -ef |grep libreader |grep -v "grep" |wc -l`
+				if [ 0 == $count ];then
+					libreader 720P_50
+				fi
+			fi
+		fi
+		sysctl -p
+
 		case $debug in on|full) echo "[$0] [$INPUT] startGui: ret($ret) $START";; esac
 		$START
 
@@ -443,9 +522,25 @@ startGui()
 		# >128 signal
 
 		ret=$?
+
+		#hissilicon work
+		if [ "$ret" -ne "1" ]; then
+			if [ -e /proc/stb/info/boxtype ]; then
+				stbcheck=`cat /proc/stb/info/boxtype | cut -c1-2`
+				if [ $stbcheck == "u5" ]; then
+					killall -9 showiframe; sleep 5
+				fi
+				stbcheck=`cat /proc/stb/info/boxtype`
+				if [ $stbcheck == "sf8008" ] || [ $stbcheck == "ustym4kpro" ] || [ $stbcheck == "cc1" ] ; then
+					killall -9 libreader; sleep 5
+				fi
+			fi
+		fi
+
 		case $ret in
 			1)
 				echo " " > /dev/vfd &
+				stopPluginScript
 				/sbin/halt &
 				;;
 			2)
@@ -480,20 +575,23 @@ startGui()
 	fi
 }
 
-startUsercmd() {
+startUsercmd()
+{
 	case $debug in on|full) echo "[$0] [$INPUT] startUsercmd";; esac
 	if [ -e /mnt/config/usercmd.sh ]; then
 		/mnt/config/usercmd.sh
 	fi
 }
 
-startEvent() {
+startEvent()
+{
 	startup_progress "$INPUT"
 	case $debug in on|full) echo "[$0] [$INPUT] startEvent";; esac
 	/sbin/event &
 }
 
-startWlan() {
+startWlan()
+{
 	startup_progress "$INPUT"
 	case $wlan in
 		y)
@@ -507,7 +605,8 @@ startWlan() {
 	esac
 }
 
-startDepmod() {
+startDepmod()
+{
 	startup_progress "$INPUT"
 	case $debug in on|full) echo "[$0] [$INPUT] startDepmod";; esac
 
@@ -520,7 +619,8 @@ startDepmod() {
 	fi
 }
 
-startRcreboot() {
+startRcreboot()
+{
 	startup_progress "$INPUT"
 	case $rcreboot in
 		y)
@@ -530,12 +630,18 @@ startRcreboot() {
 	esac
 }
 
-startDevoled() {
+startDevoled()
+{
 	startup_progress "$INPUT"
 	case $debug in on|full) echo "[$0] [$INPUT] startDevoled";; esac
 
-	rm /dev/vfd
-	ln -s /proc/vfd /dev/
+	if [ -e /proc/vfd ];then
+		rm /dev/vfd
+		ln -s /proc/vfd /dev/
+	elif [ -e /dev/dbox/oled0 ];then
+		rm /dev/vfd
+		ln -s /dev/dbox/oled0 /dev/vfd
+	fi
 }
 
 startHotplug()
@@ -545,14 +651,16 @@ startHotplug()
 	/etc/mdev/mdev-mount.sh first "$SWTYPE" "$model"
 }
 
-checkEmu() {
+checkEmu()
+{
 	emuret=`emu.sh check | grep "checkemu running emu="`
 	if [ -z "$emuret" ]; then
 		startEmu restart
 	fi
 }
 
-startXUPNPD() {
+startXUPNPD()
+{
 	case $debug in on|full) echo "$CMD [$INPUT] startXUPNPD";; esac
 	case $xupnpd in
 		y)
@@ -567,7 +675,8 @@ startXUPNPD() {
 	esac
 }
 
-startDLNA() {
+startDLNA()
+{
 	case $debug in on|full) echo "$CMD [$INPUT] startDLNA";; esac
 	case $dlna in
 		y)
@@ -582,7 +691,8 @@ startDLNA() {
 	esac
 }
 
-startInaDyn() {
+startInaDyn()
+{
 	case $debug in on|full) echo "$CMD [$INPUT] startInaDyn";; esac
 	case $inadyn in
 		y)
@@ -597,7 +707,8 @@ startDropcaches()
 	echo 3 > /proc/sys/vm/drop_caches
 }
 
-startSystemdown() {
+startSystemdown()
+{
 	start_sec.sh 2 /sbin/fuser -k /dev/dvb/adapter0/frontend0
 	start_sec.sh 2 pkill tuxtxt
 	start_sec.sh 2 pkill -9 tuxtxt
@@ -608,10 +719,9 @@ startSystemdown() {
 	start_sec.sh 2 emu.sh stop
 }
 
-startReboot() {
+startReboot()
+{
 	echo [start.sh] startReboot $REBOOT >/tmp/log
-echo sleep120
-	sleep 120
 	case $REBOOT in
 		1)
 			echo "$CMD [$INPUT] $SWTYPE SHUTDOWN"
@@ -670,31 +780,39 @@ startUsbImage()
 		return
 	fi
 
-	mkdir /var/test
 	titan_multi=xxx
 
 	if [ $titan_multi == "xxx" ];then
+		if [ `cat /proc/partitions | grep mmcblk1p1 | wc -l` -gt 0 ]; then
+			mount /dev/mmcblk1p1 /ba
+			if [ `ls /ba/titan_multi | wc -l` -gt 0 ]; then
+				titan_multi=mmcblk1p1
+			fi
+			umount /ba
+		fi
+	fi
+	if [ $titan_multi == "xxx" ];then
 		if [ `cat /proc/partitions | grep sda1 | wc -l` -gt 0 ]; then
-			mount /dev/sda1 /var/test
-			if [ `ls /var/test/titan_multi | wc -l` -gt 0 ]; then
+			mount /dev/sda1 /ba
+			if [ `ls /ba/titan_multi | wc -l` -gt 0 ]; then
 				titan_multi=sda1
 			fi
-			umount /var/test
+			umount /ba
 		fi
 	fi
 	if [ $titan_multi == "xxx" ];then
 		if [ `cat /proc/partitions | grep sdb1 | wc -l` -gt 0 ]; then
-			mount /dev/sdb1 /var/test
-			if [ `ls /var/test/titan_multi | wc -l` -gt 0 ]; then
+			mount /dev/sdb1 /ba
+			if [ `ls /ba/titan_multi | wc -l` -gt 0 ]; then
 				titan_multi=sdb1
 			fi
-			umount /var/test
+			umount /ba
 		fi
 	fi
 
 	if [ $titan_multi != "xxx" ];then
 		echo "multi found"
-		mkdir /ba
+		#mkdir /ba
 		multidev="/dev/"$titan_multi
 		mount $multidev /ba
 		BAHOME=/ba/titan_multi
@@ -808,10 +926,37 @@ startUsbImage()
 
 startSethyprid()
 {
-	if [ "$model" == "dm7020hd" ] || [ "$model" == "dm7020hdv2" ];then
+	if [ "$model" == "dm7020hd" ] || [ "$model" == "dm7020hdv2" ] || [ "$board" == "dm520" ] || [ "$board" == "dm525" ];then
 		echo `cat /mnt/config/titan.cfg | grep fe_00_hyprid= | sed 's/fe_00_hyprid=//'` > /proc/stb/frontend/0/mode
 		echo `cat /mnt/config/titan.cfg | grep fe_01_hyprid= | sed 's/fe_01_hyprid=//'` > /proc/stb/frontend/1/mode
 	fi
+}
+
+startRootWork()
+{
+#	startup_progress "$INPUT"
+	lastdir=$(pwd)
+	LIST=$(ls -1 / | grep -v proc | grep -v media | grep -v var)
+	cd /
+	for ROUND in $LIST; do
+		chown -R root:root $ROUND
+	done
+
+	LIST=$(ls -1 /var | grep -v cache | grep -v media | grep -v keys)
+	cd /
+	for ROUND in $LIST; do
+		chown -R root:root /var/$ROUND
+	done
+	cd $lastdir
+}
+
+setLibraryPath()
+{
+	if [ `cat /etc/ld.so.conf | grep "/mnt/swapextensions/lib" | wc -l` -lt 1 ]; then
+		echo "" >> /etc/ld.so.conf
+		echo "/mnt/swapextensions/lib" >> /etc/ld.so.conf
+	fi
+	ldconfig
 }
 
 case $1 in
@@ -824,52 +969,59 @@ case $1 in
 				startInit mdev
 				startDevoled
 				startDevoled starting
-				if [ "$board" != "vusolo2" ]; then startFlash; fi
+				startFlash
 				startWorkaround
 				startReloadconfig
 				startInit mountall.sh
-				startUsbImage
+				#startUsbImage
 			fi
 			startDepmod
 			startInit modutils.sh
 			startInit modload.sh
+			startUsbImage
 			startInit bootlogo
-			startBootlogo
 			startDevoled Atemio
-			if [ "$board" != "vusolo2" ]; then startMountSwap; fi
-			if [ "$board" != "vusolo2" ]; then startReloadconfig; fi
+			if [ "$board" == "dm900" ] || [ "$board" == "dm920" ; then mount /dev/mmcblk0p3 /mnt; fi
+			startBootlogo
 			startInit checkroot.sh
-			startInit hotplug.sh
 			startInit early-configure.sh
 			startInit read-only-rootfs-hook.sh
 			startInit urandom
 			startInit read-only-rootfs-hook.sh
 			startInit urandom
-			if [ "$board" != "vusolo2" ]; then startUserSettings $INPUT; fi
+			startRootWork
+	
+			startMountSwap
+			startReloadconfig
+			startInit hotplug.sh
+			
+			if ([ "$board" = "dm900" ] || [ "$board" == "dm920" ] || [ "$board" == "wetek" ] || [ "$board" == "hd51" ] || [ "$board" == "mutant51" ]) && [ ! -e /mnt/swapextensions ]; then mkdir /mnt/swapextensions; fi
+			if ([ "$board" = "dm900" ] || [ "$board" == "dm920" ]) && [ ! -e /ba ]; then mkdir /ba; fi
+			startUserSettings $INPUT
 			startInit populate-volatile.sh
 			startInit devpts.sh
 			startInit dmesg.sh
+			setLibraryPath
+			startPluginScript
 			startInit alsa-state
 			startInit hostname.sh
 			startInit bootmisc.sh
-			if [ "$board" = "vusolo2" ]; then startInit vuplus-platform-util; fi
-			if [ "$board" = "vusolo2" ]; then startFlash; fi
-			if [ "$board" = "vusolo2" ]; then startMountSwap; fi
-			if [ "$board" = "vusolo2" ]; then startReloadconfig; fi
-			if [ "$board" = "vusolo2" ]; then startUserSettings $INPUT; fi
 			startInit networking
 			startWlan
 			startNtpdate
+			startSetTime
 			startEmu $INPUT
 			startSetFB
 			startAutofs
 			startHotplug
-			startEvent
+			#startEvent
 			startRcreboot
 			#startInit vsftpd
+			chown root /etc/vsftpd.conf
 			startInit telnetd.busybox
 		fi
-		startSethyprid
+		startCi;
+		startSethyprid;
 		startGui;;
 	last)
 		if [ ! -e /tmp/.init3 ];then
@@ -889,17 +1041,19 @@ case $1 in
 			startInit avahi-daemon
 			startInit rmnologin.sh
 			touch /tmp/.init3
-			sleep 10
+			sleep 3
 			checkEmu
 			startDLNA
 			startXUPNPD
 			startInaDyn &
 			startUsercmd
-		fi;;
+			sleep 10
+			startHotplug
+		fi
+		;;
 	reboot)
 		startDropcaches
 		startReboot;;
 esac
-
 
 echo "[$0] exit"
