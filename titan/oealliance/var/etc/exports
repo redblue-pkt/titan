@@ -1,1 +1,1 @@
-/media *(rw,no_root_squash,no_subtree_check,sync)
+/media/hdd *(rw,no_root_squash,sync,insecure)
