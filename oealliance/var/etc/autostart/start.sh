@@ -285,20 +285,21 @@ startWorkaround()
 
 	sed '/^smbfs.*/d' -i /mnt/network/auto.misc
 	sed '/^upnpfs.*/d' -i /mnt/network/auto.misc
+	if [ -e /mnt/network/auto.misc ];then
+		pcount=0
+		while [ "$pcount" -lt "9" ]
+		do
+			LIST="a b c d e f g h"
+			pcount=`expr $pcount + 1`
 
-	pcount=0
-	while [ "$pcount" -lt "9" ]
-	do
-		LIST="a b c d e f g h"
-		pcount=`expr $pcount + 1`
-
-		for ROUND in $LIST; do
-			if ! grep -q "^sd$ROUND$pcount" /mnt/network/auto.misc; then
-				echo "add sd$ROUND$pcount > auto.misc"
-				echo "sd$ROUND$pcount	-fstype=auto,noatime,nodiratime	:/dev/sd$ROUND$pcount" >> /mnt/network/auto.misc
-			fi
+			for ROUND in $LIST; do
+				if ! grep -q "^sd$ROUND$pcount" /mnt/network/auto.misc; then
+					echo "add sd$ROUND$pcount > auto.misc"
+					echo "sd$ROUND$pcount	-fstype=auto,noatime,nodiratime	:/dev/sd$ROUND$pcount" >> /mnt/network/auto.misc
+				fi
+			done
 		done
-	done
+	fi
 }
 
 startNtpdate()
@@ -981,7 +982,7 @@ case $1 in
 			startUsbImage
 			startInit bootlogo
 			startDevoled Atemio
-			if [ "$board" == "dm900" ] || [ "$board" == "dm920" ; then mount /dev/mmcblk0p3 /mnt; fi
+			if [ "$board" == "dm900" ] || [ "$board" == "dm920" ]; then mount /dev/mmcblk0p3 /mnt; fi
 			startBootlogo
 			startInit checkroot.sh
 			startInit early-configure.sh
