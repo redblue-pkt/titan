@@ -186,7 +186,10 @@ startMountSwap()
 		fi
 
 		if [ -e /etc/.oebuild ];then
+			infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
+			case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: erase SWAP-DIR (/mnt)";; esac
 			rm -rf /mnt/*
+			sleep 10
 		else
 			case $debug in on|full) echo "[$0] [$INPUT] startMountSwap: umount SWAP-FLASH (MTD$mtd)";; esac
 			umount -fl /mnt
