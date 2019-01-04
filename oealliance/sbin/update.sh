@@ -154,7 +154,7 @@ if [ "$usage" == "1" ]; then
 fi
 
 ### got update to ###
-if [ "$target" == "kernel" ] || [ "$target" == "var" ] || [ "$target" == "root" ] || [ "$target" = "updatenfi" ] || [ "$target" == "full" ] || [ "$target" == "fullbackup" ]; then
+if [ "$target" == "kernel" ] || [ "$target" == "var" ] || [ "$target" == "root" ] || [ "$target" = "updatenfi" ] || [ "$target" = "updateusb" ] || [ "$target" == "full" ] || [ "$target" == "fullbackup" ]; then
 	update_to="flash"
 	target=`echo "$target" | tr "a-z" "A-Z"`
 else
@@ -187,13 +187,18 @@ if [ "$target" == "FULL" ] && [ "$board" == "inihde2" ]; then target="KERNEL ROO
 if [ "$target" == "FULL" ] && [ "$board" == "inihde2am" ]; then target="KERNEL ROOT"; fi
 if [ "$target" == "FULL" ] && [ "$board" == "vusolo2" ]; then target="KERNEL ROOT"; fi
 if [ "$target" == "UPDATENFI" ] && [ "$board" == "dm7020hd" ]; then target="UPDATENFI"; fi
+if [ "$target" == "UPDATEUSB" ] && [ "$board" == "dm520" ]; then target="UPDATEUSB"; fi
+if [ "$target" == "UPDATEUSB" ] && [ "$board" == "dm900" ]; then target="UPDATEUSB"; fi
+if [ "$target" == "UPDATEUSB" ] && [ "$board" == "dm920" ]; then target="UPDATEUSB"; fi
+if [ "$target" == "UPDATEUSB" ] && [ "$board" == "wetek" ]; then target="UPDATEUSB"; fi
+if [ "$target" == "UPDATEUSB" ] && [ "$board" == "hd51" ]; then target="UPDATEUSB"; fi
 if [ "$target" == "FULLBACKUP" ]; then target="FULL"; fi
 
 ### other update handling for some boxes if full image is to big for /tmp (usb) ###
 #if [ "USBFULL" == `basename "$file" | cut -d "_" -f9` ]; then bigimage=1; fi
 
 ### flash is nand ###
-if [ "$boxtype" == "ufs912" ] || [ "$boxtype" == "spark" ] || [ "$boxtype" == "spark7162" ] || [ "$arch" = "mipsel" ];then
+if [ "$boxtype" == "ufs912" ] || [ "$boxtype" == "spark" ] || [ "$boxtype" == "spark7162" ] || [ "$arch" = "mipsel" ] || [ "$arch" = "arm" ];then
 	nandbox="1"
 fi
 
@@ -205,7 +210,7 @@ flash_img()
 	fi
 
 	while true; do
-		if [ "$arch" = "mipsel" ];then
+		if [ "$arch" = "mipsel" ] || [ "$arch" = "arm" ];then
 			echo skip flash_erase
 #			echo /tmp/flash_erase /tmp/"$mtd" 0 0
 #			/tmp/flash_erase /tmp/"$mtd" 0 0
@@ -215,14 +220,60 @@ flash_img()
 		sleep 1
 
 		echo "[update.sh] boxtype=$boxtype part=$part mtd=$mtd file=$file"
-		if [ "$arch" = "mipsel" ];then
+		if [ "$arch" = "mipsel" ] || [ "$arch" = "arm" ];then
 			if [ "$boxtype" = "atemio6000" ] || [ "$boxtype" = "atemio6100" ];then
 				echo "EAas" > /tmp/$vfd
 			else
 				echo "Write: $part" > /tmp/$vfd
 			fi
 
-			if [ "$part" = "UPDATENFI" ];then
+			if [ "$part" = "UPDATEUSB" ];then
+				if [ "$board" = "dm520" ];then
+					infobox -pos -1 75% 10125 "UPDATEUSB" "            Schreibe Daten            " &
+					unzip "$file" -d /tmp
+					flash-kernel /tmp/kernel.bin
+					helproot=/tmp/helproot
+					if [ ! -d $helproot ]; then
+						mkdir $helproot
+					else
+						umount -l $helproot
+					fi
+					mount -t ubifs ubi0:dreambox-rootfs $helproot
+					erase_root $helproot
+					tar -xvjf /tmp/rootfs.tar.bz2 --exclude=./mnt --exclude=./var/media -C $helproot
+				fi
+				if [ "$board" = "dm900" ] || [ "$board" = "dm920" ] || [ "$board" = "wetek" ] || [ "$board" = "hd51" ];then
+					showtime=33
+					if [ "$board" = "hd51" ];then showtime=40 ;fi
+
+					infobox -pos -1 75% 100$showtime "UPDATEUSB" "            Schreibe Daten            " &
+
+					if [ -d /tmp/$board ]; then
+						rm -r /tmp/$board
+					fi
+					time unzip "$file" -x $board/*.img -d /tmp
+					rm -f "$file"
+					time flash-kernel /tmp/$board/kernel.bin
+
+					sync
+# log to /var/swap/logs not working...
+#					/etc/init.d/autofs stop
+					umount -l /mnt
+
+					helproot=/tmp/helproot
+					if [ ! -d $helproot ]; then
+						mkdir $helproot
+					else
+						umount -l $helproot
+					fi
+					mount /dev/root $helproot
+
+					time erase_root $helproot
+#					time tar -xvf /tmp/$board/rootfs.tar --exclude=./mnt --exclude=./var/media -C $helproot
+					time tar -xvjf /tmp/$board/rootfs.tar.bz2 --exclude=./mnt --exclude=./var/media -C $helproot
+
+				fi
+			elif [ "$part" = "UPDATENFI" ];then
 				infobox -pos -1 75% 10065 "UPDATENFI" "            Schreibe Daten            " &
 				mkdir /tmp/ramfs
 				mount -t ramfs ramfs /tmp/ramfs				
@@ -238,12 +289,15 @@ flash_img()
 					#/sbin/fuser -k /dev/dvb/adapter0/frontend0
 					echo /tmp/ofgwrite --kernel=mtd2 /tmp
 					/tmp/ofgwrite --kernel=mtd2 /tmp
+				elif [ "$boxtype" = "dm520" ] || [ "$boxtype" = "dm525" ];then
+					echo /tmp/ofgwrite -nk /tmp
+					/tmp/ofgwrite -nk /tmp
 				else
 					echo /tmp/ofgwrite -k /tmp
 					/tmp/ofgwrite -k /tmp
 				fi
 			elif [ "$part" = "ROOT" ];then
-				if [ "$arch" = "mipsel" ];then
+				if [ "$arch" = "mipsel" ] || [ "$arch" = "arm" ];then
 					touch /tmp/.init3
 					touch /tmp/.update
 				fi
@@ -254,6 +308,13 @@ flash_img()
 					#/sbin/fuser -k /dev/dvb/adapter0/frontend0
 					echo /tmp/ofgwrite --rootfs=mtd0 /tmp
 					/tmp/ofgwrite --rootfs=mtd0 /tmp
+				elif [ "$boxtype" = "dm520" ] || [ "$boxtype" = "dm525" ];then
+					echo /tmp/ofgwrite_bin -r /tmp
+#					mount -r -o remount /
+#					/tmp/ubiformat /dev/mtd0 -f /tmp/rootfs.bin -D
+
+					echo /tmp/ofgwrite -r /tmp
+					/tmp/ofgwrite -r /tmp
 				else
 					echo /tmp/ofgwrite -r /tmp
 					/tmp/ofgwrite -r /tmp
@@ -288,6 +349,11 @@ flash_img()
 		abfrage /tmp/$event; ret=$?
 		echo " " > /tmp/$vfd
 		killall infobox
+		if [ "$part" = "UPDATEUSB" ];then
+			echo "sync" > /tmp/$vfd
+			sync
+			echo " " > /tmp/$vfd
+		fi
 		if [ $ret -eq 0 ]; then break; fi
 	done
 }
@@ -374,7 +440,7 @@ error()
 
 got_mtd_part()
 {
-	if [ "$part" == "UPDATENFI" ];then
+	if [ "$part" == "UPDATENFI" ] || [ "$part" == "UPDATEUSB" ];then
 		mtd=mtddisabled
 	else
 		mtd=`cat /proc/mtd | grep -i "$part" | cut -d":" -f1 | tail -n1`
@@ -479,7 +545,7 @@ make_tmp()
 	cp /bin/busybox /tmp
 	cp /bin/infobox /tmp
 	cp /bin/flashcp /tmp
-	if [ "$arch" == "mipsel" ];then
+	if [ "$arch" == "mipsel" ] || [ "$arch" = "arm" ];then
 		cp /sbin/wget /tmp
 	fi
 	if [ -e /bin/cubefpctl ]; then cp /bin/cubefpctl /tmp; fi
@@ -517,10 +583,32 @@ make_tmp()
 	cp -a /lib/libpng* /tmp/lib
 	cp -a /lib/libbz2.so.* /tmp/lib
 
-
 	if [ "$arch" == "sh4" ];then
 		cp /lib/libcrypto.so.* /tmp/lib		#for wget
 		cp /lib/libssl.so.* /tmp/lib		#for wget
+	fi
+
+	if [ "$target" = "UPDATEUSB" ]; then
+		cp /lib/ld* /tmp/lib		#for busybox
+		cp /lib/libc.so.6 /tmp/lib				#for busybox
+		cp /lib/libcrypt.so.1 /tmp/lib		#for busybox
+		cp /usr/lib/libfreetype.so.6 /tmp/lib	#for infobox
+		cp /lib/libz.so.1 /tmp/lib				#for infobox
+		cp /lib/libm.so.6 /tmp/lib				#for infobox
+		cp /lib/libgcc_s.so.1 /tmp/lib		#for infobox
+		cp /usr/lib/libjpeg.so.62 /tmp/lib		#for infobox
+		cp /usr/lib/libjpeg.so.8 /tmp/lib		#for infobox
+		cp /usr/lib/libpng15.so.15 /tmp/lib		#for infobox
+		cp /lib/libbz2* /tmp/lib		#for infobox
+		cp /usr/lib/libcrypto* /tmp/lib		#for wget
+		cp /lib/libssl* /tmp/lib		#for wget
+		cp /usr/share/fonts/default.ttf /tmp	# for infobox
+
+		cp -a /lib/libtinfo.so.* /tmp/lib
+		cp /usr/sbin/flash-kernel /tmp
+		cp /usr/sbin/librecovery /tmp
+		cp /usr/bin/unzip /tmp
+		cp /bin/rm /tmp
 	fi
 
 	cp /usr/share/fonts/default.ttf /tmp	# for infobox
@@ -537,7 +625,7 @@ make_tmp()
 
 	if [ "$boxtype" = "ipbox91" ] || [ "$boxtype" = "ipbox910" ] || [ "$boxtype" = "ipbox900" ] || [ "$boxtype" = "ipbox9000" ]; then
 		ln -s /tmp/halt /tmp/reboot
-	elif [ "$arch" = "mipsel" ];then
+	elif [ "$arch" = "mipsel" ] || [ "$arch" = "arm" ];then
 		cp /sbin/reboot.sysvinit /tmp/reboot
 		cp /usr/bin/ofgwrite /tmp
 		cp /usr/sbin/ubiformat /tmp
@@ -576,6 +664,10 @@ make_tmp()
 		ln -s /proc/vfd /tmp/vfd
 		cp -aL /dev/mtd0 /tmp/mtd0
 		cp -aL /dev/dbox/oled0 /tmp
+	elif [ "$arch" = "arm" ];then
+		cp -aL /dev/mtd0 /tmp/mtd0
+		cp -aL /dev/dbox/oled0 /tmp
+		ln -s /tmp/oled0 /tmp/vfd
 	else
 		cp -aL /dev/vfd /tmp/vfd
 	fi
@@ -601,7 +693,7 @@ make_tmp()
 		cp /lib/libdl.so.2 /tmp/lib
 	fi
 
-	if [ "$arch" = "mipsel" ]; then
+	if [ "$arch" = "mipsel" ] || [ "$arch" = "arm" ]; then
 		echo copy nandwrite flash_erase
 		cp /usr/sbin/nandwrite /tmp
 		cp /usr/sbin/flash_erase  /tmp
@@ -623,6 +715,27 @@ make_tmp()
 	export PATH
 	LD_LIBRARY_PATH="/lib;/usr/lib;/tmp/lib"
 	export LD_LIBRARY_PATH
+}
+
+erase_root()
+{
+	echo "erase root"
+	rm -rf $1/var/bin
+	rm -rf $1/var/lib
+	rm -rf $1/var/usr
+	rm -rf $1/var/etc
+	rm -rf $1/usr/bin
+	rm -rf $1/usr/lib
+	rm -rf $1/usr/sbin
+	#rm -rf $1/lib
+	rm -rf $1/etc
+	rm -rf $1/sbin
+	rm -rf $1/boot
+	#rm -f $1/ba
+	rm -f $1/.swfinfo
+	#rm -f $1/.smb
+	#rm -f $1/.cache
+	rm -rf $1/bin
 }
 
 ### stop E2 (not TV) ###
@@ -701,7 +814,7 @@ for part in $target; do
 
 	### check ###
 	killall infobox
-	infobox -pos -1 75% 20 Aktualisierung "    ÃœberprÃ¼fe Image    " &
+	infobox -pos -1 75% 20 Aktualisierung "    Überprüfe Image    " &
 	if [ "$boxtype" = "atemio520" ] || [ "$boxtype" = "atemio530" ] || [ "$boxtype" = "spark" ] || [ "$boxtype" = "ipbox91" ] || [ "$boxtype" = "atemio6000" ] || [ "$boxtype" = "atemio6100" ]; then
 		echo "Uery" > /tmp/$vfd
 	else
@@ -716,7 +829,7 @@ for part in $target; do
 	md5_check
 
 	killall infobox
-	infobox -pos -1 75% 20 Aktualisierung "    ÃœberprÃ¼fung OK    " &
+	infobox -pos -1 75% 20 Aktualisierung "    Überprüfung OK    " &
 
 	if [ "$boxtype" = "atemio520" ] || [ "$boxtype" = "atemio530" ] || [ "$boxtype" = "spark" ] || [ "$boxtype" = "ipbox91" ] || [ "$boxtype" = "atemio6000" ] || [ "$boxtype" = "atemio6100" ]; then
 		echo "Done" > /tmp/$vfd
@@ -733,7 +846,7 @@ for part in $target; do
 
 	### kill unneedet prozess and showiframe ###
 	echo "[update.sh] check box: $boxtype part: $part"
-	if [ "$arch" = "mipsel" ] && ([ "$part" = "ROOT" ] || [ "$part" = "UPDATENFI" ]); then
+	if ([ "$arch" = "mipsel" ]  || [ "$arch" = "arm" ]) && ([ "$part" = "ROOT" ] || [ "$part" = "UPDATENFI" ] || [ "$part" = "UPDATEUSB" ]); then
 		kill_and_show
 	elif [ "$boxtype" = "ufs910" ]; then
 		kill_and_show	
@@ -754,7 +867,7 @@ for part in $target; do
 		got_mtd_part
 
 		### flash the image ###
-		if [ "$target" == "FULL" ] || [ "$target" == "ROOT" ] || [ "$target" = "UPDATENFI" ]; then mount /tmp/lib /lib; fi
+		if [ "$target" == "FULL" ] || [ "$target" == "ROOT" ] || [ "$target" = "UPDATENFI" ] || [ "$target" = "UPDATEUSB" ]; then mount /tmp/lib /lib; fi
 		flash_img
 
 		if [ "$targetfull" != "fullbackup" ];then
@@ -884,6 +997,7 @@ for i in 9 8 7 6 5 4 3 2 1 0; do
 done
 
 echo "[update.sh] reboot"
+
 start_sec.sh 2 /tmp/umount -ttmpfs -a -r
 start_sec.sh 2 /tmp/umount -tnoproc,noprocfs,nodevfs,nosysfs,nousbfs,nousbdevfs,nodevpts -d -a -r
 start_sec.sh 2 /tmp/mount -n -o remount,ro /
