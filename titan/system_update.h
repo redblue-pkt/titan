@@ -116,10 +116,17 @@ void screensystem_update(int mode)
 				drawscreen(load, 0, 0);
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, node->auth, 1, 0);
+#ifdef OEBUILD
+				if(node->imgtype == 1)
+					cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+				else
+					cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);	
+#else
 				if(node->imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
+#endif
 				system(cmd);
 				free(cmd),cmd = NULL;
 				clearscreen(load);
@@ -158,10 +165,17 @@ void screensystem_update(int mode)
 				drawscreen(load, 0, 0);
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, node->auth, 1, 0);
+#ifdef OEBUILD
+				if(node->imgtype == 1)
+					cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+				else
+					cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);	
+#else
 				if(node->imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
+#endif
 				system(cmd);
 				free(cmd),cmd = NULL;
 				clearscreen(load);
@@ -214,11 +228,17 @@ void screensystem_update(int mode)
 					
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, node->auth, 1, 0);
+#ifdef OEBUILD
+					if(node->imgtype == 1)
+						cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+					else
+						cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
+#else
 					if(node->imgtype == 1)
 						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-
+#endif
 					if(file_exist("/var/swap"))
 					{
 						if(!file_exist("/var/swap/logs"))
