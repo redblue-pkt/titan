@@ -1997,10 +1997,17 @@ struct update* createupdatelist(int mode)
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, newnode->auth, 1, 0);
+#ifdef OEBUILD
+		if(newnode->imgtype == 1)
+			cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+		else
+			cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
+#else 
 		if(newnode->imgtype == 1)
 			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 		else
 			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+#endif
 		system(cmd);
 		free(cmd),cmd = NULL;
 
@@ -2024,10 +2031,17 @@ struct update* createupdatelist(int mode)
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, newnode->auth, 1, 0);
+#ifdef OEBUILD
+		if(newnode->imgtype == 1)
+			cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+		else
+			cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
+#else
 		if(newnode->imgtype == 1)
 			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 		else
 			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+#endif
 		system(cmd);
 		free(cmd),cmd = NULL;
 		newnode->skinname = "systemupdate_usb_online_menu";
