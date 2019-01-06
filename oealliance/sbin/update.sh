@@ -14,8 +14,11 @@ arch=`cat /etc/.arch`
 event=`cat /mnt/config/titan.cfg | grep rcdev= | tr '/' '\n' | tail -n1`
 swtype="titan"
 board=`cat /etc/.board`
-bootversion=`cat /etc/version`
-
+if [ -e /etc/.oebuild ];then
+	bootversion=`cat /etc/version-svn`
+else
+	bootversion=`cat /etc/version`
+fi
 echo "[update.sh] booted version $bootversion"
 
 source=$1			# getfilelist|tmp|online
@@ -47,7 +50,11 @@ if [ "$imgtype" == "dev" ]; then
 	folder="image-beta"
 fi
 
-tversion=`cat /etc/version | tr '_' '\n' | tail -n1`
+if [ -e /etc/.oebuild ];then
+	tversion=`cat /etc/version-svn | tr '_' '\n' | tail -n1`
+else
+	tversion=`cat /etc/version | tr '_' '\n' | tail -n1`
+fi
 
 ### get online filelist if source=getfilelist ###
 if [ "$source" == "getfilelist" ]; then
@@ -80,7 +87,11 @@ if [ "$source" == "getfilelist" ]; then
 		filelist=`cat /tmp/list."$boxtype"`
 	fi
 
-	imgversion=`cat /etc/version | cut -d "_" -f2 | sed 's/M//'`
+	if [ -e /etc/.oebuild ];then
+		imgversion=`cat /etc/version-svn | cut -d "_" -f2 | sed 's/M//'`
+	else
+		imgversion=`cat /etc/version | cut -d "_" -f2 | sed 's/M//'`
+	fi
 	if [ -z "$imgversion" ]; then
 		echo "[update.sh] imgversion not found, use 0"
 		imgversion=0;
@@ -635,7 +646,7 @@ got_mtd_part()
 md5_check()
 {
 	if [ "$source" == "online" ];then
-		md5=`/sbin/md5sum "$file" | cut -d"/" -f1 | tr -d " "`
+		md5=`md5sum "$file" | cut -d"/" -f1 | tr -d " "`
 		echo "[update.sh] md5=$md5"
 		md5file=`cat "$file_md5" | tr -d " "`
 		echo "[update.sh] md5file=$md5file"
