@@ -1030,7 +1030,7 @@ for part in $target; do
 
 	### kill unneedet prozess and showiframe ###
 	echo "[update.sh] check box: $boxtype part: $part"
-	if ([ "$arch" = "mipsel" ]  || [ "$arch" = "arm" ]) && ([ "$part" = "ROOT" ] || [ "$part" = "UPDATENFI" ] || [ "$part" = "UPDATEUSB" ]); then
+	if [ ! -e /etc/.oebuild ] && ([ "$arch" = "mipsel" ]  || [ "$arch" = "arm" ]) && ([ "$part" = "ROOT" ] || [ "$part" = "UPDATENFI" ] || [ "$part" = "UPDATEUSB" ]); then
 		kill_and_show
 	elif [ "$boxtype" = "ufs910" ]; then
 		kill_and_show	
