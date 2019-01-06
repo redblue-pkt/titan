@@ -193,6 +193,9 @@ if [ "$target" == "UPDATEUSB" ] && [ "$board" == "dm920" ]; then target="UPDATEU
 if [ "$target" == "UPDATEUSB" ] && [ "$board" == "wetek" ]; then target="UPDATEUSB"; fi
 if [ "$target" == "UPDATEUSB" ] && [ "$board" == "hd51" ]; then target="UPDATEUSB"; fi
 if [ "$target" == "FULLBACKUP" ]; then target="FULL"; fi
+if [ -e /etc/.oebuild ];then
+	if [ "$target" == "UPDATEUSB" ]; then target="UPDATEUSB"; fi
+fi
 
 ### other update handling for some boxes if full image is to big for /tmp (usb) ###
 #if [ "USBFULL" == `basename "$file" | cut -d "_" -f9` ]; then bigimage=1; fi
@@ -203,6 +206,164 @@ if [ "$boxtype" == "ufs912" ] || [ "$boxtype" == "spark" ] || [ "$boxtype" == "s
 fi
 
 ### functions ###
+getboxbranding()
+{
+	cat /etc/image-version | sed -nr "s/.*$1=([^*]+)*/\1/p"
+}
+
+killproc_oe()
+{
+	killall nmbd
+	killall smbd
+	killall rpc.mountd
+	killall rpc.statd
+	/etc/init.d/softcam stop
+	killall CCcam
+	pkill -9 -f '[Oo][Ss][Cc][Aa][Mm]'
+	ps w | grep -i oscam | grep -v grep | awk '{print $1}' | xargs kill -9
+	pkill -9 -f '[Ww][Ii][Cc][Aa][Rr][Dd][Dd]'
+	ps w | grep -i wicardd | grep -v grep | awk '{print $1}' | xargs kill -9
+	killall kodi.bin
+	killall hddtemp
+	killall transmission-daemon
+	killall openvpn
+	/etc/init.d/sabnzbd stop
+	pkill -9 -f cihelper
+	pkill -9 -f ciplus_helper
+	pkill -9 -f ciplushelper
+	# kill VMC
+	pkill -f vmc.sh
+	pkill -f DBServer.py
+	# stop autofs
+	/etc/init.d/autofs stop
+
+	# sync filesystem
+	echo "Syncing filesystem"
+	sync 
+	sleep 1
+
+	init 2
+}
+
+umount_rootfs()
+{
+	multilib=0
+	if [ -e /lib64 ];then multilib=1; fi
+	echo multilib=$multilib
+
+	echo "start umount_rootfs"
+	# the start script creates /newroot dir and mount tmpfs on it
+	# create directories
+
+#	rm -rf /newroot
+	mkdir /newroot
+	cd /newroot
+	mkdir -p /newroot/{bin,dev/pts,etc,lib,media,oldroot,oldroot_bind,proc,run,sbin,sys,usr/lib/autofs,var,var/volatile}
+
+	if [ "$multilib" == 1 ];then
+		mkdir -p /newroot/{lib64,usr/lib64/autofs}
+	fi
+
+	# we need init and libs to be able to exec init u later
+	if [ "$multilib" == 1 ];then
+		cp -arf /bin/busybox*     /newroot/bin
+		cp -arf /bin/sh*          /newroot/bin
+		cp -arf /bin/bash*        /newroot/bin
+		cp -arf /sbin/init*       /newroot/sbin
+		cp -arf /lib64/libc*        /newroot/lib64
+		cp -arf /lib64/ld*          /newroot/lib64
+		cp -arf /lib64/libtinfo*    /newroot/lib64
+		cp -arf /lib64/libdl*       /newroot/lib64
+	else
+		cp -arf /bin/busybox*     /newroot/bin
+		cp -arf /bin/sh*          /newroot/bin
+		cp -arf /bin/bash*        /newroot/bin
+		cp -arf /sbin/init*       /newroot/sbin
+		cp -arf /lib/libc*        /newroot/lib
+		cp -arf /lib/ld*          /newroot/lib
+		cp -arf /lib/libtinfo*    /newroot/lib
+		cp -arf /lib/libdl*       /newroot/lib
+	fi
+
+	# libcrypt is moved from /lib to /usr/libX in new OE versions
+	if [ "$multilib" == 1 ];then
+		cp -arf /lib64/libcrypt*    /newroot/lib64
+		cp -arf /usr/lib64/libcrypt*    /newroot/usr/lib64
+	else
+		cp -arf /lib/libcrypt*    /newroot/lib
+		cp -arf /usr/lib/libcrypt*    /newroot/usr/lib
+	fi
+
+	# copy for automount ignore errors as autofs is maybe not installed
+	if [ "$multilib" == 1 ];then
+		cp -arf /usr/sbin/autom*  /newroot/bin
+		cp -arf /etc/auto*        /newroot/etc
+		cp -arf /lib64/libpthread*  /newroot/lib64
+		cp -arf /lib64/libnss*      /newroot/lib64
+		cp -arf /lib64/libnsl*      /newroot/lib64
+		cp -arf /lib64/libresolv*   /newroot/lib64
+		cp -arf /usr/lib64/libtirp* /newroot/usr/lib64
+		cp -arf /usr/lib64/autofs/* /newroot/usr/lib64/autofs
+		cp -arf /etc/nsswitch*    /newroot/etc
+		cp -arf /etc/resolv*      /newroot/etc
+	else
+		cp -arf /usr/sbin/autom*  /newroot/bin
+		cp -arf /etc/auto*        /newroot/etc
+		cp -arf /lib/libpthread*  /newroot/lib
+		cp -arf /lib/libnss*      /newroot/lib
+		cp -arf /lib/libnsl*      /newroot/lib
+		cp -arf /lib/libresolv*   /newroot/lib
+		cp -arf /usr/lib/libtirp* /newroot/usr/lib
+		cp -arf /usr/lib/autofs/* /newroot/usr/lib/autofs
+		cp -arf /etc/nsswitch*    /newroot/etc
+		cp -arf /etc/resolv*      /newroot/etc
+	fi
+
+	echo "Switching to user mode 2"
+	init 2
+	killall -9 start.sh
+	killall -9 titan
+	sleep 2
+
+	pivot_root /newroot oldroot
+
+	cd /
+	# move mounts to new root
+	mount --move /oldroot/dev/ dev/
+	mount --move /oldroot/proc/ proc/
+	mount --move /oldroot/sys/ sys/
+	mount --move /oldroot/var/volatile var/volatile/
+
+	# create link for tmp
+	ln -s /var/volatile/tmp /tmp
+
+	mount --move /oldroot/media/ media/
+
+	# /media is no tmpfs -> move every mount
+	echo "/media is not tmpfs"
+
+	# create link for mount/umount for autofs
+	ln -s /bin/busybox /bin/mount
+	ln -s /bin/busybox /bin/umount
+
+	exec init u
+	sleep 2
+
+	// kill all remaining open processes which prevent umounting rootfs
+	fuser -k -m /oldroot/
+	sleep 3
+
+	umount /oldroot/newroot
+	umount /oldroot
+
+	ret=$?		
+	if [ $ret -eq 0 ]; then
+		echo "umount successful"
+	else
+		echo "umount not successful"
+	fi
+}
+
 flash_img()
 {
 	if [ "$targetfull" = "fullbackup" ];then
@@ -228,7 +389,27 @@ flash_img()
 			fi
 
 			if [ "$part" = "UPDATEUSB" ];then
-				if [ "$board" = "dm520" ];then
+				if [ -e /etc/.oebuild ];then
+					tmp=/tmp
+					showtime=33
+					if [ "$board" = "hd51" ];then showtime=40 ;fi
+					infobox -pos -1 75% 100$showtime "UPDATEUSB" "            Schreibe Daten            " &
+
+					time unzip "$file" -x $board/*.img -x usb_update.bin -d /tmp
+					rm -f "$file"
+
+					sync
+
+					imagedir=$(getboxbranding imagedir)
+					rootfile=$(getboxbranding rootfile)
+ 					time tar -xvjf $tmp/$imagedir/$rootfile --exclude=./mnt --exclude=./var/media -C $helproot
+
+
+					imagedir=$(getboxbranding imagedir)
+					mtdrootfs=$(getboxbranding mtdrootfs)
+					mtdkernel=$(getboxbranding mtdkernel)
+					ofgwrite -r$mtdrootfs -k$mtdkernel $tmp/$imagedir
+				elif [ "$board" = "dm520" ];then
 					infobox -pos -1 75% 10125 "UPDATEUSB" "            Schreibe Daten            " &
 					unzip "$file" -d /tmp
 					flash-kernel /tmp/kernel.bin
@@ -241,8 +422,7 @@ flash_img()
 					mount -t ubifs ubi0:dreambox-rootfs $helproot
 					erase_root $helproot
 					tar -xvjf /tmp/rootfs.tar.bz2 --exclude=./mnt --exclude=./var/media -C $helproot
-				fi
-				if [ "$board" = "dm900" ] || [ "$board" = "dm920" ] || [ "$board" = "wetek" ] || [ "$board" = "hd51" ];then
+				elif [ "$board" = "dm900" ] || [ "$board" = "dm920" ] || [ "$board" = "wetek" ] || [ "$board" = "hd51" ];then
 					showtime=33
 					if [ "$board" = "hd51" ];then showtime=40 ;fi
 
@@ -532,7 +712,8 @@ got_basename()
 	if [ "$targetfull" != "fullbackup" ];then
 		file=`echo "$origfile" | sed "s/_FULL_/_${part}_/"`
 	fi
-	file_md5="${file%.*}"; file_md5="${file_md5%.*}"; file_md5="$file_md5.md5"
+#	file_md5="${file%.*}"; file_md5="${file_md5%.*}"; file_md5="$file_md5.md5"
+	file_md5="${file%.*}".md5;
 #	file_md5=`echo $file | sed 's/.img/.md5/' | sed 's/.tar.gz/.md5/'`
 	base=`basename "$file"`
 	base_md5=`basename "$file_md5"`
@@ -603,6 +784,11 @@ make_tmp()
 		cp /usr/lib/libcrypto* /tmp/lib		#for wget
 		cp /lib/libssl* /tmp/lib		#for wget
 		cp /usr/share/fonts/default.ttf /tmp	# for infobox
+
+		cp /lib/libresolv.so* /tmp/lib		#for gzip
+
+		cp /lib/libpam.so* /tmp/lib		#for login
+		cp /lib/libpam_misc.so* /tmp/lib		#for login
 
 		cp -a /lib/libtinfo.so.* /tmp/lib
 		cp /usr/sbin/flash-kernel /tmp
