@@ -49,7 +49,11 @@ void screensystem_update(int mode)
 				if(ostrstr(label, "MINI") != NULL)
 				{
 					cmd = ostrcat("cat /autofs/", pch, 0, 0);
+#ifdef OEBUILD
+					cmd = ostrcat(cmd, "/etc/version-svn", 1, 0);
+#else
 					cmd = ostrcat(cmd, "/etc/version", 1, 0);
+#endif
 					version = command(cmd);
 
 					showname = ostrcat(label, "-", 0, 0);
