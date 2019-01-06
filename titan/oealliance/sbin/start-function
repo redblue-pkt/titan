@@ -200,7 +200,11 @@ startUserSettings()
 			sync-rcconfig.sh $arch
 			sed "s!auto,sync,noatime!auto,noatime!g" -i /mnt/network/auto.misc
 
-			MVERSION=`cat /etc/version | cut -d"_" -f2 | sed 's/M//'`
+			if [ -e /etc/.oebuild ];then
+				MVERSION=`cat /etc/version-svn | cut -d"_" -f2 | sed 's/M//'`
+			else
+				MVERSION=`cat /etc/version | cut -d"_" -f2 | sed 's/M//'`
+			fi
 			if [ "$MVERSION" == "39147" ];then
 				# zwangs restore on stable 1.85
 				cp -a /etc/titan.restore/mnt/config/skinconfig* /mnt/config/
