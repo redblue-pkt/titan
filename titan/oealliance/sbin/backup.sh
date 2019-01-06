@@ -168,7 +168,7 @@ fi
 echo "[backup.sh] freespace ok: filesize ($filesize) freespace ($freespace)"
 
 time=`date +"%Y.%m.%d_%H.%M.%S"`
-version=`cat /etc/version`
+version=`cat /etc/version-svn`
 
 killall infobox
 fullname="$time"_"$version"_"$name"BACKUP

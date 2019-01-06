@@ -14,11 +14,7 @@ arch=`cat /etc/.arch`
 event=`cat /mnt/config/titan.cfg | grep rcdev= | tr '/' '\n' | tail -n1`
 swtype="titan"
 board=`cat /etc/.board`
-if [ -e /etc/.oebuild ];then
-	bootversion=`cat /etc/version-svn`
-else
-	bootversion=`cat /etc/version`
-fi
+bootversion=`cat /etc/version-svn`
 echo "[update.sh] booted version $bootversion"
 
 source=$1			# getfilelist|tmp|online
@@ -50,11 +46,7 @@ if [ "$imgtype" == "dev" ]; then
 	folder="image-beta"
 fi
 
-if [ -e /etc/.oebuild ];then
-	tversion=`cat /etc/version-svn | tr '_' '\n' | tail -n1`
-else
-	tversion=`cat /etc/version | tr '_' '\n' | tail -n1`
-fi
+tversion=`cat /etc/version-svn | tr '_' '\n' | tail -n1`
 
 ### get online filelist if source=getfilelist ###
 if [ "$source" == "getfilelist" ]; then
@@ -87,11 +79,7 @@ if [ "$source" == "getfilelist" ]; then
 		filelist=`cat /tmp/list."$boxtype"`
 	fi
 
-	if [ -e /etc/.oebuild ];then
-		imgversion=`cat /etc/version-svn | cut -d "_" -f2 | sed 's/M//'`
-	else
-		imgversion=`cat /etc/version | cut -d "_" -f2 | sed 's/M//'`
-	fi
+	imgversion=`cat /etc/version-svn | cut -d "_" -f2 | sed 's/M//'`
 	if [ -z "$imgversion" ]; then
 		echo "[update.sh] imgversion not found, use 0"
 		imgversion=0;
@@ -404,7 +392,7 @@ flash_img()
 					tmp=/tmp
 					showtime=33
 					if [ "$board" = "hd51" ];then showtime=40 ;fi
-					infobox -pos -1 75% 100$showtime "UPDATEUSB" "            Schreibe Daten            " &
+					infobox -pos -1 75% 100$showtime "UPDATEUSB" "            Entpacke Image            " &
 
 					time unzip "$file" -x $board/*.img -x usb_update.bin -d /tmp
 					rm -f "$file"
@@ -412,14 +400,11 @@ flash_img()
 					sync
 
 					imagedir=$(getboxbranding imagedir)
-					rootfile=$(getboxbranding rootfile)
- 					time tar -xvjf $tmp/$imagedir/$rootfile --exclude=./mnt --exclude=./var/media -C $helproot
-
-
-					imagedir=$(getboxbranding imagedir)
 					mtdrootfs=$(getboxbranding mtdrootfs)
 					mtdkernel=$(getboxbranding mtdkernel)
+					killall infobox
 					ofgwrite -r$mtdrootfs -k$mtdkernel $tmp/$imagedir
+					exit
 				elif [ "$board" = "dm520" ];then
 					infobox -pos -1 75% 10125 "UPDATEUSB" "            Schreibe Daten            " &
 					unzip "$file" -d /tmp
@@ -797,6 +782,8 @@ make_tmp()
 		cp /usr/share/fonts/default.ttf /tmp	# for infobox
 
 		cp /lib/libresolv.so* /tmp/lib		#for gzip
+		cp /lib/librt* /tmp/lib		#for automount
+		cp /usr/lib/libcrypt.* /tmp/lib		#for sleep
 
 		cp /lib/libpam.so* /tmp/lib		#for login
 		cp /lib/libpam_misc.so* /tmp/lib		#for login
