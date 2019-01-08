@@ -48,6 +48,15 @@ fi
 
 tversion=`cat /etc/version-svn | tr '_' '\n' | tail -n1`
 
+getboxbranding()
+{
+	cat /etc/image-version | sed -nr "s/.*$1=([^*]+)*/\1/p"
+}
+
+if [ -e /etc/.oebuild ];then
+	boxtype=$(getboxbranding box_type)
+fi
+
 ### get online filelist if source=getfilelist ###
 if [ "$source" == "getfilelist" ]; then
 	umount -fl /tmp/mnt > /dev/null 2>&1
@@ -205,10 +214,6 @@ if [ "$boxtype" == "ufs912" ] || [ "$boxtype" == "spark" ] || [ "$boxtype" == "s
 fi
 
 ### functions ###
-getboxbranding()
-{
-	cat /etc/image-version | sed -nr "s/.*$1=([^*]+)*/\1/p"
-}
 
 killproc_oe()
 {
