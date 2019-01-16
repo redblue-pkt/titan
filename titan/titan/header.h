@@ -1077,4 +1077,16 @@ void forwardKey(int key);
 struct dvbdev* encoderopen(int flag);
 #endif
 
+#ifdef OEBUILD
+//ipkg.h 
+void freeipkg(); 
+int ipkg_update(void); 
+int ipkg_upgrade(void); 
+int ipkg_list(void); 
+int ipkg_install(const char* package); 
+int ipkg_remove(const char* package, int purge); 
+struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, int flag); 
+int ipkg_list_installed(void); 
+#endif
+
 #endif
