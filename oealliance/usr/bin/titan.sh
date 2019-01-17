@@ -1,6 +1,29 @@
 if [ -L /mnt ];then
-	mv -f /mnt /mnt_old
+	rm -f /mnt
+fi
+
+if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
+	infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
+	if [ -e /mnt ];then
+		echo "remove mnt files"
+		rm -rf /mnt
+	fi
 	cp -a /etc/titan.restore/mnt /
+	mkdir /mnt/swapextensions
+	mkdir /mnt/bin
+	sleep 10
+	rm -r /var/etc/.erasemtd
+	rm -r /var/etc/.backupmtd
+
+	#ubifs needs sync
+	sync
+
+	#startMicomUpdate
+
+	killall infobox
+	infobox 9999 INFO "Initializing MNT" "" "you can power off the receiver now,"  "in case it does not reboot" &
+	sleep 2
+	reboot
 fi
 
 date
@@ -46,7 +69,7 @@ fi
 #check for sundtek tuner helper lib
 if [ -e /opt/lib/libmediaclient.so ]; then
 	LIBS="/opt/lib/libmediaclient.so /usr/lib/libopen.so.0.0.0"
-else
+elif [ -e /usr/lib/libopen.so.0.0.0 ]; then
 	LIBS="/usr/lib/libopen.so.0.0.0"
 fi
 
