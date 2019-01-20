@@ -163,4 +163,4 @@ case $ret in
 	*)
 		rm -f /tmp/.listen.camd.socket.ignore
 		;;
-
+esac
