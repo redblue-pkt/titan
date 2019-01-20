@@ -86,10 +86,11 @@ fi
 # in case sysctl.conf is not properly loaded - load sysctl.conf here again...
 sysctl -p
 
-(sleep 2; echo "enigma2 is the main pvr application... adjust oom score!"; PID=$(pidof enigma2); \
-        [ -e /proc/$PID/oom_score_adj ] && echo "-999" > /proc/$PID/oom_score_adj || echo "-17" > /proc/$PID/oom_adj;) &
+if [ -e /usr/lib/libssl.so.1.0.2 ] && [ ! -e /usr/lib/libssl.so.1.0.0 ];then
+	echo "create symlink /usr/lib/libssl.so.1.0.2 -> /usr/lib/libssl.so.1.0.0"
+	ln -s /usr/lib/libssl.so.1.0.2 /usr/lib/libssl.so.1.0.0
+fi
 
-sleep 5
 LD_PRELOAD=$LIBS /usr/local/bin/titan /mnt/config/titan.cfg
 
 # enigma2 exit codes:
