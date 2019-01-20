@@ -394,22 +394,32 @@ flash_img()
 
 			if [ "$part" = "UPDATEUSB" ];then
 				if [ -e /etc/.oebuild ];then
-					tmp=/tmp
-					showtime=33
-					if [ "$board" = "hd51" ];then showtime=40 ;fi
-					infobox -pos -1 75% 100$showtime "UPDATEUSB" "            Entpacke Image            " &
+					imagefs=$(getboxbranding imagefs)
+					if [ "$imagefs" = "ubinfi" ];then
+						infobox -pos -1 75% 10065 "UPDATENFI" "            Schreibe Daten            " &
+						mkdir /tmp/ramfs
+						mount -t ramfs ramfs /tmp/ramfs				
+						cp "$file" /tmp/ramfs/flash.nfi
+						rm "$file"
+						nfiwrite -l -b -r -s -f -v /tmp/ramfs/flash.nfi
+					else
+						tmp=/tmp
+						showtime=33
+						if [ "$board" = "hd51" ];then showtime=40 ;fi
+						infobox -pos -1 75% 100$showtime "UPDATEUSB" "            Entpacke Image            " &
 
-					time unzip "$file" -x $board/*.img -x usb_update.bin -d /tmp
-					rm -f "$file"
+						time unzip "$file" -x $board/*.img -x usb_update.bin -d /tmp
+						rm -f "$file"
 
-					sync
+						sync
 
-					imagedir=$(getboxbranding imagedir)
-					mtdrootfs=$(getboxbranding mtdrootfs)
-					mtdkernel=$(getboxbranding mtdkernel)
-					killall infobox
-					ofgwrite -r$mtdrootfs -k$mtdkernel $tmp/$imagedir
-					exit
+						imagedir=$(getboxbranding imagedir)
+						mtdrootfs=$(getboxbranding mtdrootfs)
+						mtdkernel=$(getboxbranding mtdkernel)
+						killall infobox
+						ofgwrite -r$mtdrootfs -k$mtdkernel $tmp/$imagedir
+						exit
+					fi
 				elif [ "$board" = "dm520" ];then
 					infobox -pos -1 75% 10125 "UPDATEUSB" "            Schreibe Daten            " &
 					unzip "$file" -d /tmp
