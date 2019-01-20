@@ -808,6 +808,8 @@ make_tmp()
 		cp /usr/sbin/librecovery /tmp
 		cp /usr/bin/unzip /tmp
 		cp /bin/rm /tmp
+
+		cp /lib/libcap.so.* /tmp/lib		#for avahi-daemon
 	fi
 
 	cp /usr/share/fonts/default.ttf /tmp	# for infobox
