@@ -395,23 +395,28 @@ flash_img()
 			if [ "$part" = "UPDATEUSB" ];then
 				if [ -e /etc/.oebuild ];then
 					imagefs=$(getboxbranding imagefs)
-#					tmp=/tmp
+					imagedir=$(getboxbranding imagedir)
+					mtdrootfs=$(getboxbranding mtdrootfs)
+					mtdkernel=$(getboxbranding mtdkernel)
 					tmp=/tmp/ramfs
 					mkdir $tmp
 					mount -t ramfs ramfs $tmp				
+					if [ -e /media/hdd/backup ];then
+						FLASHTIME=`date "+%Y%m%d%H%M"`
+						BACKUPDIR=/media/hdd/backup/mnt_${FLASHTIME}
+						cp -a /mnt $BACKUPDIR
+						echo "$BACKUPDIR" > /media/hdd/backup/.oebuildbackup
+						sync
+					fi
 
 					if [ "$imagefs" = "ubinfi" ];then
-						infobox -pos -1 75% 10065 "UPDATENFI" "            Schreibe Daten            " &
-#						mkdir /tmp/ramfs
-#						mount -t ramfs ramfs /tmp/ramfs				
+						showtime=92
+						if [ "$board" = "dm7020hd" ];then showtime=92 ;fi
 						cp "$file" $tmp/flash.nfi
 						rm "$file"
-#						nfiwrite -l -b -r -s -f -v $tmp/flash.nfi
-#						exit
-
-						#/usr/sbin/nfiwrite -l -b -r -s -f "/media/hdd/backup/openATV-exp-dm7020hdv2-2019-01-21-14-40.nfi"
 						echo "#!/bin/sh -x" > /tmp/dflash.sh
 						echo "init 4" >> /tmp/dflash.sh
+						echo "infobox -pos -1 75% 100$showtime 'UPDATENFI' '            Schreibe Daten            ' &" >> /tmp/dflash.sh
 						echo "sleep 3" >> /tmp/dflash.sh
 						echo "echo 50 > /proc/progress" >> /tmp/dflash.sh
 						echo "/usr/sbin/nfiwrite -l -b -r -s -f $tmp/flash.nfi" >> /tmp/dflash.sh
@@ -420,19 +425,12 @@ flash_img()
 						start-stop-daemon -S -b -n dflash.sh -x /tmp/dflash.sh
 						exit
 					else
-#						tmp=/tmp
 						showtime=33
 						if [ "$board" = "hd51" ];then showtime=40 ;fi
 						infobox -pos -1 75% 100$showtime "UPDATEUSB" "            Entpacke Image            " &
-
 						time unzip "$file" -x $imagedir/*.img -x $board/*.img -x usb_update.bin -d $tmp
 						rm -f "$file"
-
 						sync
-
-						imagedir=$(getboxbranding imagedir)
-						mtdrootfs=$(getboxbranding mtdrootfs)
-						mtdkernel=$(getboxbranding mtdkernel)
 						killall infobox
 						ofgwrite -r$mtdrootfs -k$mtdkernel $tmp/$imagedir
 						exit
