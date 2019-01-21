@@ -18,19 +18,19 @@ if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
 		mkdir /mnt/bin
 		mkdir /mnt/tpk
 		sleep 10
+		rm -r /var/etc/.erasemtd
+		rm -r /var/etc/.backupmtd
+
+		#ubifs needs sync
+		sync
+
+		#startMicomUpdate
+
+	#	killall infobox
+	#	infobox 9999 INFO "Initializing MNT" "" "you can power off the receiver now,"  "in case it does not reboot" &
+	#	sleep 2
+		reboot
 	fi
-	rm -r /var/etc/.erasemtd
-	rm -r /var/etc/.backupmtd
-
-	#ubifs needs sync
-	sync
-
-	#startMicomUpdate
-
-#	killall infobox
-#	infobox 9999 INFO "Initializing MNT" "" "you can power off the receiver now,"  "in case it does not reboot" &
-#	sleep 2
-	reboot
 fi
 
 date
