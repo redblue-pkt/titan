@@ -3,16 +3,22 @@ if [ -L /mnt ];then
 fi
 
 if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
-	infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
-	if [ -e /mnt ];then
-		echo "remove mnt files"
-		rm -rf /mnt
+	if [ -e /media/hdd/backup/.oebuildbackup ];then
+		BACKUPDIR=$(cat /media/hdd/backup/.oebuildbackup)
+		cp -a $BACKUPDIR /mnt
+		mv -f /media/hdd/backup/.oebuildbackup /media/hdd/backup/.oebuildbackup.restored
+	else
+		infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
+		if [ -e /mnt ];then
+			echo "remove mnt files"
+			rm -rf /mnt
+		fi
+		cp -a /etc/titan.restore/mnt /
+		mkdir /mnt/swapextensions
+		mkdir /mnt/bin
+		mkdir /mnt/tpk
+		sleep 10
 	fi
-	cp -a /etc/titan.restore/mnt /
-	mkdir /mnt/swapextensions
-	mkdir /mnt/bin
-	mkdir /mnt/tpk
-	sleep 10
 	rm -r /var/etc/.erasemtd
 	rm -r /var/etc/.backupmtd
 
@@ -21,9 +27,9 @@ if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
 
 	#startMicomUpdate
 
-	killall infobox
-	infobox 9999 INFO "Initializing MNT" "" "you can power off the receiver now,"  "in case it does not reboot" &
-	sleep 2
+#	killall infobox
+#	infobox 9999 INFO "Initializing MNT" "" "you can power off the receiver now,"  "in case it does not reboot" &
+#	sleep 2
 	reboot
 fi
 
