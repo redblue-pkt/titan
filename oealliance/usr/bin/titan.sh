@@ -11,6 +11,7 @@ if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
 	cp -a /etc/titan.restore/mnt /
 	mkdir /mnt/swapextensions
 	mkdir /mnt/bin
+	mkdir /mnt/tpk
 	sleep 10
 	rm -r /var/etc/.erasemtd
 	rm -r /var/etc/.backupmtd
