@@ -5,15 +5,18 @@ Intelsat 14 (45.0W)#0#-450#0
 Intelsat 11 (43.1W)#0#-431#0
 SES-6 (40.5W)#0#-405#0
 Telstar 11N (37.6W)#0#-376#0
-Eutelsat 36WA (36.0W)#0#-360#0
-Intelsat 903 (34.5W)#0#-345#0
+Hispasat 36W-1 (36.0W)#0#-360#0
+Intelsat 35e (34.5W)#0#-345#0
 Hylas 1 (33.5W)#0#-335#0
 Intelsat 25 (31.5W)#0#-315#0
 Hispasat (30.0W)#0#-300#0
 Intelsat 907 (27.5W)#0#-275#0
+AlcomSat 1 (24.8W)#0#-248#0
 Intelsat 905 (24.5W)#0#-245#0
 SES 4 (22.0W)#0#-220#0
 NSS 7 (20.0W)#0#-200#0
+Intelsat 37E (18.0W)#0#-181#0
+Intelsat 37E(18.0W)#0#-181#0
 Intelsat 901 (18.0W)#0#-180#0
 Telstar 12 (15.0W)#0#-150#0
 Express-AM8 (14.0W)#0#-140#0
@@ -23,41 +26,48 @@ Eutelsat 8WB (8.0W)#0#-80#0
 Eutelsat 7WA (7.2W)#0#-72#0
 Nilesat/ES7 (7.0W)#0#-70#0
 Eutelsat 5WA (5.0W)#0#-50#0
-Amos (4.0W)#0#-40#0
-ABS-3A 3.0W)#0#-30#0
+Amos-3 (4.0W)#0#-40#0
+Amos-7 (3.9W)#0#-39#0
+ABS-3A (2.9W)#0#-29#0
 Intelsat 10-02/Thor (0.8W)#0#-8#0
-Rascom QAF 1R (2.8E)#0#28#0
-Eutelsat 3B (3.0E)#0#30#0
+BulgariaSat-1 (1.9E)#0#19#0
+Rascom QAF 1R (2.9E)#0#29#0
+Eutelsat 3B (3.1E)#0#31#0
 Astra 4A/SES 5 (4.8E)#0#48#0
+Astra 4A Ka-Band  (4.8E)#0#49#0
 Eutelsat 7A/B (7.0E)#0#70#0
+Eutelsat 7B Ka-Band (7.0E)#0#71#0
 Eutelsat 9B (9.0E)#0#90#0
+Eutelsat 9B Ka-Band (9.0E)#0#91#0
 Eutelsat 10A (10.0E)#0#100#0
 Hot Bird 13 (13.0E)#0#130#0
 Eutelsat 16A (16.0E)#0#160#0
+Eutelsat 16A Ka-Band (16.0E)#0#161#0
 Astra (19.2E)#0#192#0
+Astra Ka-Band (19.2E)#0#193#0
 Arabsat 5C (20.0E)#0#200#0
 Eutelsat 21B (21.6E)#0#216#0
 Astra 3B (23.5E)#0#235#0
+Es'hail-1 Ka-Band (25.5E)#0#254#0
+Es'hail-1 (25.5E)#0#255#0
 Badr (26.0E)#0#260#0
-Astra 2E/2F/2G (28.2E)#0#282#0
+Astra 2 (28.2E)#0#282#0
 Arabsat-5A (30.5E)#0#305#0
-Intelsat 24 (31.0E)#0#310#0
 Astra 5B (31.5E)#0#315#0
-Eutelsat 33 (33.0E)#0#330#0
+Eutelsat 33 (33.1E)#0#331#0
 Eutelsat 36 (36.0E)#0#360#0
 Paksat 1 (38.0E)#0#380#0
-Hellas Sat 2 (39.0E)#0#390#0
+Hellas Sat (39.0E)#0#390#0
 Express-AM7 (40.0E)#0#400#0
 Turksat (42.0E)#0#420#0
-Intelsat 12 (45.0E)#0#450#0
-Galaxy 27 (45.1E)#0#451#0
-AzerSpace 1/Africasat-1A (46.0E)#0#460#0
-Intelsat 10 (47.5E)#0#475#0
+Galaxy 11 (44.9E)#0#449#0
+Intelsat 904 (45.1E)#0#451#0
+AzerSpace 1 (46.0E)#0#460#0
 Yamal 202 (49.0E)#0#490#0
-T�rksat 4B (50.0E)#0#500#0
+Turksat 4B (50.0E)#0#500#0
 Belintersat 1 (51.5E)#0#515#0
 TurkmenAlem/MonacoSAT (52.0E)#0#520#0
-Yahsat 1A (52.5E)#0#525#0
+Al Yah 1 (52.5E)#0#525#0
 Express AM22 (53.0E)#0#530#0
 Yamal 402 (54.9E)#0#549#0
 Bonum 1 (56.0E)#0#560#0
@@ -85,225 +95,294 @@ CableBruteforce Symbolrate 6900#0#5009#1
 CableBruteforce Symbolrate 6952#0#5010#1
 Cablecom Schweiz#0#5011#1
 Cablecom Vorarlberg#0#5012#1
-Caiway (NL) Gouda#0#5013#1
-Caiway (NL) (multi. regions?)#0#5014#1
-Cogas (NL)#0#5015#1
-DELTA (NL)#0#5016#1
-DNA Welho#0#5017#1
-Elisa#0#5018#1
-Euskaltel Spain#0#5019#1
-EWT Breitbandnetz#0#5020#1
-FAKS#0#5021#1
-GGA Pratteln#0#5022#1
-HiWay#0#5023#1
-InnLine#0#5024#1
-JSK Dresden#0#5025#1
-Kabel Berlin#0#5026#1
-Kabel Deutschland#0#5027#1
-Kabel Vienna#0#5028#1
-Kabelcom Rheinhessen#0#5029#1
-Kabelnetz Guben#0#5030#1
-Kabelsignal Austria#0#5031#1
-KKS Moeckl Mittweida#0#5032#1
-KMS-Muenchen#0#5033#1
-KTV-Krems#0#5034#1
-Lehrbaum Kabel-TV#0#5035#1
-LIWEST#0#5036#1
-Marienfeld-MM Duisburg#0#5037#1
-Martens TV Hamburg#0#5038#1
-Neftv#0#5039#1
-NetCologne#0#5040#1
-Netzwerksuche#0#5041#1
-neu.sw Medianet#0#5042#1
-NOS - Lisbon#0#5043#1
-Numericable-France-ref.freq.-xxx000#0#5044#1
-Numericable-France-ref.freq.-xxx000-alternative#0#5045#1
-Numericable-France-ref.freq.-xxx125#0#5046#1
-Numericable-France-ref.freq.-xxx250#0#5047#1
-Numericable-France-ref.freq.-xxx375#0#5048#1
-Numericable-Belgium#0#5049#1
-ONO Spain#0#5050#1
-Pircher#0#5051#1
-Primacom#0#5052#1
-RFT Kabel Brandenburg#0#5053#1
-RKS Berlin#0#5054#1
-Salzburg AG#0#5055#1
-SKV NL#0#5056#1
-Sonera#0#5057#1
-Stadtwerke Judenburg#0#5058#1
-Stadtwerke Kapfenberg HiWay#0#5059#1
-Starman - Estonia#0#5060#1
-TeleColumbus Berlin#0#5061#1
-TeleColumbus Plauen#0#5062#1
-Telesystem Tirol#0#5063#1
-Telenet (BE)#0#5064#1
-TTV#0#5065#1
-TV NOPP#0#5066#1
-Unitymedia/KabelBW#0#5067#1
-UPC Kabel Wien#0#5068#1
-Virgin Media Ireland Bruteforce#0#5069#1
-Virgin Media UK (6952)#0#5070#1
-Virgin Media UK (ex CW)#0#5071#1
-VOO-Belgium#0#5072#1
-VOO-Belgium-VOD#0#5073#1
-WTC Berlin#0#5074#1
-WTNET#0#5075#1
-WWZ-ZUG#0#5076#1
-Ziggo (NL) (alle netwerken)#0#5077#1
-Ziggo (NL) (vm. UPC, alle netwerken)#0#5078#1
-Ziggo (NL) Noord-Holland (vm. Multikabel HE Alkmaar)#0#5079#1
-Ziggo Noord (NL)#0#5080#1
-Ziggo West (NL)#0#5081#1
-ZIGGO Zuid (NL)#0#5082#1
-Europe, Middle East, Africa: DVB-T Frequencies#0#10000#2
-Europe, Middle East, Africa: DVB-C Frequencies#0#10001#2
-Scandinavia (Europe DVB-T/T2)#0#10002#2
-Andorra (ad) (Europe DVB-T/T2)#0#10003#2
-Australia, all regions(au) (DVB-T/T2)#0#10004#2
-Adelaide(au) (Australia DVB-T/T2)#0#10005#2
-Brisbane(au) (Australia DVB-T/T2)#0#10006#2
-Cairns(au) (Australia DVB-T/T2)#0#10007#2
-Canberra(au) (Australia DVB-T/T2)#0#10008#2
-Darwin(au) (Australia DVB-T/T2)#0#10009#2
-Geelong(au) (Australia DVB-T/T2)#0#10010#2
-Gold Coast(au) (Australia DVB-T/T2)#0#10011#2
-Hobart(au) (Australia DVB-T/T2)#0#10012#2
-Melbourne(au) (Australia DVB-T/T2)#0#10013#2
-Newcastle(au) (Australia DVB-T/T2)#0#10014#2
-Sunshine Coast(au) (Australia DVB-T/T2)#0#10015#2
-Sydney(au) (Australia DVB-T/T2)#0#10016#2
-Toowoomba(au) (Australia DVB-T/T2)#0#10017#2
-Townsville(au) (Australia DVB-T/T2)#0#10018#2
-Wollongong(au) (Australia DVB-T/T2)#0#10019#2
-Perth(au) (Australia DVB-T/T2)#0#10020#2
-Praha(cz) (Europe DVB-T/T2)#0#10021#2
-Berlin/Brandenburg(de) (Europe DVB-T/T2)#0#10022#2
-Bremen/Bremerhaven(de) (Europe DVB-T/T2)#0#10023#2
-Duesseldorf/Ruhrgebiet(de) (Europe DVB-T/T2)#0#10024#2
-Essen(de) (Europe DVB-T/T2)#0#10025#2
-Hamburg/Luebeck(de) (Europe DVB-T/T2)#0#10026#2
-Hannover/Braunschweig(de) (Europe DVB-T/T2)#0#10027#2
-Braunschweig(de) Broitzem+Kraftwerk(Europe DVB-T/T2)#0#10028#2
-Hunau(de) (Europe DVB-T/T2)#0#10029#2
-Kiel(de) (Europe DVB-T/T2)#0#10030#2
-Koeln/Bonn(de) (Europe DVB-T/T2)#0#10031#2
-Muenchen/Suedbayern(de) (Europe DVB-T/T2)#0#10032#2
-Nuernberg(de) (Europe DVB-T/T2)#0#10033#2
-Rhein-Main(de) (Europe DVB-T/T2)#0#10034#2
-Heidelberg/BadenBaden/Donnersberg/Pforzheim(de) (Europe DVB-T/T2)#0#10035#2
-Copenhagen(dk) (Europe DVB-T/T2)#0#10036#2
-Andalucia(es) (Europe DVB-T/T2)#0#10037#2
-Aragon(es) (Europe DVB-T/T2)#0#10038#2
-Asturias(es) (Europe DVB-T/T2)#0#10039#2
-Canarias(es) (Europe DVB-T/T2)#0#10040#2
-Castilla-la Mancha(es) (Europe DVB-T/T2)#0#10041#2
-Castilla-Leon(es) (Europe DVB-T/T2)#0#10042#2
-Catalunya(es) (Europe DVB-T/T2)#0#10043#2
-Ceuta y Melilla(es) (Europe DVB-T/T2)#0#10044#2
-Comunidad de Madrid(es) (Europe DVB-T/T2)#0#10045#2
-Comunidad Valenciana(es) (Europe DVB-T/T2)#0#10046#2
-Euskadi(es) (Europe DVB-T/T2)#0#10047#2
-Extremadura(es) (Europe DVB-T/T2)#0#10048#2
-Galiza(es) (Europe DVB-T/T2)#0#10049#2
-La Rioja(es) (Europe DVB-T/T2)#0#10050#2
-Murcia(es) (Europe DVB-T/T2)#0#10051#2
-Ses Illes(es) (Europe DVB-T/T2)#0#10052#2
-Suomi(fi) (Europe DVB-T/T2)#0#10053#2
-France TNT(fr) (Europe DVB-T/T2)#0#10054#2
-United Kingdom, all regions(gb) (Europe DVB-T/T2)#0#10055#2
-Beacon Hill A, Torbay(gb) (Europe DVB-T/T2)#0#10056#2
-Black Hill(gb) (Europe DVB-T/T2)#0#10057#2
-Caldbeck, Cumbria(gb) (Europe DVB-T/T2)#0#10058#2
-Crystal Palace, London(gb) (Europe DVB-T/T2)#0#10059#2
-Emley Moor(gb) (Europe DVB-T/T2)#0#10060#2
-Hannington(gb) (Europe DVB-T/T2)#0#10061#2
-Mendip(gb) (Europe DVB-T/T2)#0#10062#2
-Oxford(gb) (Europe DVB-T/T2)#0#10063#2
-Pontop Pike(gb) (Europe DVB-T/T2)#0#10064#2
-Redruth(gb) (Europe DVB-T/T2)#0#10065#2
-Reigate(gb) (Europe DVB-T/T2)#0#10066#2
-Rowridge(gb) (Europe DVB-T/T2)#0#10067#2
-Sandy Heath(gb) (Europe DVB-T/T2)#0#10068#2
-Sutton Coldfield, Birmingham(gb) (Europe DVB-T/T2)#0#10069#2
-Winter Hill(gb) (Europe DVB-T/T2)#0#10070#2
-Republic of Ireland, all regions(ie) (Europe DVB-T/T2)#0#10071#2
-Clare Primary Tx,(ie), (Woodcock Hill, Europe DVB-T)#0#10072#2
-Clare (Primary Tx)(ie), (Maghera, Europe DVB-T)#0#10073#2
-Clare(ie), (Ennistymon, Europe DVB-T)#0#10074#2
-Cork (Primary Tx),(ie), (Spur Hill, Europe DVB-T)#0#10075#2
-Cork(ie), (Bandon, Europe DVB-T)#0#10076#2
-Cork(ie), (Bantry, Europe DVB-T)#0#10077#2
-Cork(ie), (Castletownbere, Europe DVB-T)#0#10078#2
-Cork(ie), (Clonakilty, Europe DVB-T)#0#10079#2
-Cork(ie), (Collins Barracks, Europe DVB-T)#0#10080#2
-Cork(ie), (Crosshaven, Europe DVB-T)#0#10081#2
-Cork(ie), (Drimoleague, Europe DVB-T)#0#10082#2
-Cork(ie), (Fermoy, Europe DVB-T)#0#10083#2
-Cork(ie), (Glanmire, Europe DVB-T)#0#10084#2
-Cork(ie), (Leap, Europe DVB-T)#0#10085#2
-Cork(ie), (Kinsale, Europe DVB-T)#0#10086#2
-Cork(ie), (Mitchelstown, Europe DVB-T)#0#10087#2
-Cork(ie), (Mt. Gabriel, Europe DVB-T)#0#10088#2
-Cork(ie), (Rosscarbery, Europe DVB-T)#0#10089#2
-Cork(ie), (Timoleague,Europe DVB-T)#0#10090#2
-Donegal (Primary Tx)(ie), (Holywell Hill, Europe DVB-T)#0#10091#2
-Donegal(ie), (Aranmore, Europe DVB-T)#0#10092#2
-Donegal(ie), (Ballybofey, Europe DVB-T)#0#10093#2
-Donegal(ie), (Clonmany, Europe DVB-T)#0#10094#2
-Donegal(ie), (Fanad, Europe DVB-T)#0#10095#2
-Donegal(ie), (Glencolumcille, Europe DVB-T)#0#10096#2
-Donegal(ie), (Glenties, Europe DVB-T)#0#10097#2
-Donegal(ie), (Letterkenny, Europe DVB-T)#0#10098#2
-Donegal(ie), (Magheraroarty, Europe DVB-T)#0#10099#2
-Donegal(ie), (Malin, Europe DVB-T)#0#10100#2
-Donegal(ie), (Moville, Europe DVB-T)#0#10101#2
-Dublin (Primary Tx)(ie), ( Europe DVB-T)#0#10102#2
-Galway(ie), (Casla, Europe DVB-T)#0#10103#2
-Galway(ie), (Clifden, Europe DVB-T)#0#10104#2
-Galway(ie), (Tonabrocky, Europe DVB-T)#0#10105#2
-Kerry(Primary Tx)(ie), (Mullaghanish, Europe DVB-T)#0#10106#2
-Kerry(ie), (Cnoc an Óir, Europe DVB-T)#0#10107#2
-Kerry(ie), (Dingle, Europe DVB-T)#0#10108#2
-Kerry(ie), (Kilkeaveragh, Europe DVB-T)#0#10109#2
-Kerry(ie), (Knockmoyle, Europe DVB-T)#0#10110#2
-Kerry(ie), (Maamclassach, Europe DVB-T)#0#10111#2
-Kilkenny(ie), (Suir Valley, Europe DVB-T)#0#10112#2
-Longford (Primary Tx)(ie), (Cairn Hill, Europe DVB-T)#0#10113#2
-Louth(Primary Tx)(ie),(Clermont Carn, Europe DVB-T)#0#10114#2
-Louth(ie), (Greenore, Europe DVB-T)#0#10115#2
-Mayo(ie), (Achill, Europe DVB-T)#0#10116#2
-Mayo(ie), (Dooncarton, Europe DVB-T)#0#10117#2
-Mayo(ie), (Castlebar, Europe DVB-T)#0#10118#2
-Monaghan(ie), (Monaghan, Europe DVB-T)#0#10119#2
-Sligo(Primary Tx)(ie),(Tx Truskmore, Europe DVB-T)#0#10120#2
-Tipperary(ie), (Ballina, Europe DVB-T)#0#10121#2
-Tipperary(ie), (Cahir, Europe DVB-T)#0#10122#2
-Tipperary(ie), (Clonmel, Europe DVB-T)#0#10123#2
-Tipperary(ie), (Kilduff, Europe DVB-T)#0#10124#2
-Waterford (Primary Tx)(ie), (Dungarvan, Europe DVB-T)#0#10125#2
-Waterford(ie), (Ferrypoint, Europe DVB-T)#0#10126#2
-Waterford(ie), (Gallows Hill, Europe DVB-T)#0#10127#2
-Waterford(ie), (Kilmacthomas, Europe DVB-T)#0#10128#2
-Wexford (Primary Tx)(ie), (Mount Leinster, Europe DVB-T)#0#10129#2
-Wexford(ie), (Forth Mountain, Europe DVB-T)#0#10130#2
-Wexford(ie), (Gorey, Europe DVB-T)#0#10131#2
-Wicklow(Primary Tx)(ie), (Kippure, Europe DVB-T)#0#10132#2
-Wicklow(ie), (Arklow, Europe DVB-T)#0#10133#2
-Wicklow(ie), (Greystones, Europe DVB-T)#0#10134#2
-Wicklow(ie), (Laragh, Europe DVB-T)#0#10135#2
-Israel/Palestine(il) (Europe DVB-T/T2)#0#10136#2
-Iceland(is) (Europe DVB-T/T2)#0#10137#2
-Italia(it) (Europe DVB-T/T2)#0#10138#2
-Digitenne(nl) (Europe DVB-T/T2)#0#10139#2
-AlphenaandenRijn(nl) (Europe DVB-T/T2)#0#10140#2
-Randstad(nl) (Europe DVB-T/T2)#0#10141#2
-Venlo(nl) (Europe DVB-T/T2)#0#10142#2
-Roermond(nl) (Europe DVB-T/T2)#0#10143#2
-Polska(pl) (Europe DVB-T/T2)#0#10144#2
-Russia(ru) (Europe DVB-T/T2)#0#10145#2
-Russia, Moscow: DVB-T2#0#10146#2
-Russia, Krasnodar: DVB-T2#0#10147#2
-Russia, Novosibirsk: DVB-T2#0#10148#2
-Russia, Volgodonsk: DVB-T2#0#10149#2
-Russia, Elets: DVB-T2#0#10150#2
-Gavle(se) (Europe DVB-T/T2)#0#10151#2
+Cablesurf, Dungarvan, (ie)#0#5013#1
+Caiway (NL) Gouda#0#5014#1
+Caiway (NL) (multi. regions?)#0#5015#1
+Cogas (NL)#0#5016#1
+Com Hem (SWE)#0#5017#1
+DELTA (NL)#0#5018#1
+DNA Welho#0#5019#1
+Elisa#0#5020#1
+Euskaltel Spain#0#5021#1
+EWT Breitbandnetz#0#5022#1
+FAKS#0#5023#1
+GGA Pratteln#0#5024#1
+HiWay#0#5025#1
+InnLine#0#5026#1
+JSK Dresden#0#5027#1
+Kabel Berlin#0#5028#1
+Kabel Deutschland#0#5029#1
+Kabel Vienna#0#5030#1
+Kabelcom Rheinhessen#0#5031#1
+Kabelnetz Guben#0#5032#1
+Kabelsignal Austria#0#5033#1
+KKS Moeckl Mittweida#0#5034#1
+KMS-Muenchen#0#5035#1
+KTV-Krems#0#5036#1
+Lehrbaum Kabel-TV#0#5037#1
+LIWEST#0#5038#1
+Marienfeld-MM Duisburg#0#5039#1
+Martens TV Hamburg#0#5040#1
+Neftv#0#5041#1
+NetCologne#0#5042#1
+Netzwerksuche#0#5043#1
+neu.sw Medianet#0#5044#1
+NOS - Lisbon#0#5045#1
+Numericable-France-ref.freq.-xxx000#0#5046#1
+Numericable-France-ref.freq.-xxx000-alternative#0#5047#1
+Numericable-France-ref.freq.-xxx125#0#5048#1
+Numericable-France-ref.freq.-xxx250#0#5049#1
+Numericable-France-ref.freq.-xxx375#0#5050#1
+Numericable-Belgium#0#5051#1
+ONO Spain#0#5052#1
+Pircher#0#5053#1
+Primacom#0#5054#1
+RFT Kabel Brandenburg#0#5055#1
+RKS Berlin#0#5056#1
+Salzburg AG#0#5057#1
+SKV NL#0#5058#1
+Sonera#0#5059#1
+Stadtwerke Judenburg#0#5060#1
+Stadtwerke Kapfenberg HiWay#0#5061#1
+Starman - Estonia#0#5062#1
+TeleColumbus Berlin#0#5063#1
+TeleColumbus Plauen#0#5064#1
+Telesystem Tirol#0#5065#1
+Telenet (BE)#0#5066#1
+TTV#0#5067#1
+TV NOPP#0#5068#1
+Unitymedia#0#5069#1
+UPC Kabel Wien#0#5070#1
+Virgin Media Ireland Bruteforce#0#5071#1
+Virgin Media UK (ex CW)#0#5072#1
+Virgin Media UK (Pure)#0#5073#1
+Virgin Media UK (Telewest)#0#5074#1
+Virgin Media UK (All systems)#0#5075#1
+VOO-Belgium#0#5076#1
+VOO-Belgium-VOD#0#5077#1
+WTC Berlin#0#5078#1
+WTNET#0#5079#1
+WWZ-ZUG#0#5080#1
+Ziggo (NL) (alle netwerken)#0#5081#1
+Ziggo (NL) (vm. UPC, alle netwerken)#0#5082#1
+Ziggo (NL) Noord-Holland (vm. Multikabel HE Alkmaar)#0#5083#1
+Ziggo Noord (NL)#0#5084#1
+Ziggo West (NL)#0#5085#1
+ZIGGO Zuid (NL)#0#5086#1
+Europe, Middle East, Africa: DVB-T/T2 Frequencies#0#10000#2
+Scandinavia (Europe DVB-T/T2)#0#10001#2
+Andorra  (Europe DVB-T/T2)#0#10002#2
+Australia, all regions (DVB-T/T2)#0#10003#2
+Adelaide (Australia DVB-T/T2)#0#10004#2
+Brisbane (Australia DVB-T/T2)#0#10005#2
+Cairns (Australia DVB-T/T2)#0#10006#2
+Canberra (Australia DVB-T/T2)#0#10007#2
+Darwin (Australia DVB-T/T2)#0#10008#2
+Geelong (Australia DVB-T/T2)#0#10009#2
+Gold Coast (Australia DVB-T/T2)#0#10010#2
+Hobart (Australia DVB-T/T2)#0#10011#2
+Melbourne (Australia DVB-T/T2)#0#10012#2
+Newcastle (Australia DVB-T/T2)#0#10013#2
+Sunshine Coast (Australia DVB-T/T2)#0#10014#2
+Sydney (Australia DVB-T/T2)#0#10015#2
+Toowoomba (Australia DVB-T/T2)#0#10016#2
+Townsville (Australia DVB-T/T2)#0#10017#2
+Wollongong (Australia DVB-T/T2)#0#10018#2
+Perth (Australia DVB-T/T2)#0#10019#2
+Praha (Europe DVB-T/T2)#0#10020#2
+Berlin/Brandenburg (Europe DVB-T2)#0#10021#2
+Bremen/Bremerhaven (Europe DVB-T/T2)#0#10022#2
+Duesseldorf/Ruhrgebiet (Europe DVB-T/T2)#0#10023#2
+Essen (Europe DVB-T/T2)#0#10024#2
+Hamburg/Luebeck (Europe DVB-T/T2)#0#10025#2
+Hannover/Braunschweig (Europe DVB-T/T2)#0#10026#2
+Braunschweig Broitzem+Kraftwerk(Europe DVB-T/T2)#0#10027#2
+Hunau (Europe DVB-T/T2)#0#10028#2
+Kiel (Europe DVB-T/T2)#0#10029#2
+Koeln/Bonn (Europe DVB-T/T2)#0#10030#2
+Muenchen/Suedbayern (Europe DVB-T/T2)#0#10031#2
+Nuernberg (Europe DVB-T/T2)#0#10032#2
+Rhein-Main (Europe DVB-T/T2)#0#10033#2
+Heidelberg/BadenBaden/Donnersberg/Pforzheim (Europe DVB-T/T2)#0#10034#2
+Stuttgart-Frauenkopf (Europe DVB-T/T2)#0#10035#2
+Copenhagen (Europe DVB-T/T2)#0#10036#2
+Andalucia (Europe DVB-T/T2)#0#10037#2
+Aragon (Europe DVB-T/T2)#0#10038#2
+Asturias (Europe DVB-T/T2)#0#10039#2
+Canarias (Europe DVB-T/T2)#0#10040#2
+Castilla-la Mancha (Europe DVB-T/T2)#0#10041#2
+Castilla-Leon (Europe DVB-T/T2)#0#10042#2
+Catalunya (Europe DVB-T/T2)#0#10043#2
+Ceuta y Melilla (Europe DVB-T/T2)#0#10044#2
+Comunidad de Madrid (Europe DVB-T/T2)#0#10045#2
+Comunidad Valenciana (Europe DVB-T/T2)#0#10046#2
+Euskadi (Europe DVB-T/T2)#0#10047#2
+Extremadura (Europe DVB-T/T2)#0#10048#2
+Galiza (Europe DVB-T/T2)#0#10049#2
+La Rioja (Europe DVB-T/T2)#0#10050#2
+Murcia (Europe DVB-T/T2)#0#10051#2
+Ses Illes (Europe DVB-T/T2)#0#10052#2
+Estonia - Tallinn/Teletorn (Europe DVB-T/T2)#0#10053#2
+Estonia - Valgjärve (Europe DVB-T/T2)#0#10054#2
+Estonia - Koeru (Europe DVB-T/T2)#0#10055#2
+Estonia - Tallinn/Kristiine (Europe DVB-T/T2)#0#10056#2
+Estonia - Tartu/Soinaste (Europe DVB-T/T2)#0#10057#2
+Estonia - Pärnu (Europe DVB-T/T2)#0#10058#2
+Estonia - Haapsalu (Europe DVB-T/T2)#0#10059#2
+Estonia - Orissaare (Europe DVB-T/T2)#0#10060#2
+Estonia - Sauvere (Europe DVB-T/T2)#0#10061#2
+Estonia - Narva (Europe DVB-T/T2)#0#10062#2
+Estonia - Kohtla-Nõmme (Europe DVB-T/T2)#0#10063#2
+Suomi (Europe DVB-T/T2)#0#10064#2
+France TNT (Europe DVB-T/T2)#0#10065#2
+United Kingdom, all regions (Europe DVB-T/T2)#0#10066#2
+Beacon Hill A, Torbay (Europe DVB-T/T2)#0#10067#2
+Black Hill (Europe DVB-T/T2)#0#10068#2
+Caldbeck, Cumbria (Europe DVB-T/T2)#0#10069#2
+Craigkelly, Fife (Europe DVB-T/T2)#0#10070#2
+Crystal Palace, London (Europe DVB-T/T2)#0#10071#2
+Emley Moor (Europe DVB-T/T2)#0#10072#2
+Hannington (Europe DVB-T/T2)#0#10073#2
+Mendip (Europe DVB-T/T2)#0#10074#2
+Oxford (Europe DVB-T/T2)#0#10075#2
+Pontop Pike (Europe DVB-T/T2)#0#10076#2
+Redruth (Europe DVB-T/T2)#0#10077#2
+Reigate (Europe DVB-T/T2)#0#10078#2
+Rowridge (Europe DVB-T/T2)#0#10079#2
+Sandy Heath (Europe DVB-T/T2)#0#10080#2
+Sutton Coldfield, Birmingham (Europe DVB-T/T2)#0#10081#2
+Winter Hill (Europe DVB-T/T2)#0#10082#2
+Republic of Ireland, all regions (Europe DVB-T/T2)#0#10083#2
+Clare Primary Tx,, (Woodcock Hill, Europe DVB-T)#0#10084#2
+Clare (Primary Tx), (Maghera, Europe DVB-T)#0#10085#2
+Clare, (Ennistymon, Europe DVB-T)#0#10086#2
+Cork (Primary Tx),, (Spur Hill, Europe DVB-T)#0#10087#2
+Cork, (Bandon, Europe DVB-T)#0#10088#2
+Cork, (Bantry, Europe DVB-T)#0#10089#2
+Cork, (Castletownbere, Europe DVB-T)#0#10090#2
+Cork, (Clonakilty, Europe DVB-T)#0#10091#2
+Cork, (Collins Barracks, Europe DVB-T)#0#10092#2
+Cork, (Crosshaven, Europe DVB-T)#0#10093#2
+Cork, (Drimoleague, Europe DVB-T)#0#10094#2
+Cork, (Fermoy, Europe DVB-T)#0#10095#2
+Cork, (Glanmire, Europe DVB-T)#0#10096#2
+Cork, (Leap, Europe DVB-T)#0#10097#2
+Cork, (Kinsale, Europe DVB-T)#0#10098#2
+Cork, (Mitchelstown, Europe DVB-T)#0#10099#2
+Cork, (Mt. Gabriel, Europe DVB-T)#0#10100#2
+Cork, (Rosscarbery, Europe DVB-T)#0#10101#2
+Cork, (Timoleague,Europe DVB-T)#0#10102#2
+Donegal (Primary Tx), (Holywell Hill, Europe DVB-T)#0#10103#2
+Donegal, (Aranmore, Europe DVB-T)#0#10104#2
+Donegal, (Ballybofey, Europe DVB-T)#0#10105#2
+Donegal, (Clonmany, Europe DVB-T)#0#10106#2
+Donegal, (Fanad, Europe DVB-T)#0#10107#2
+Donegal, (Glencolumcille, Europe DVB-T)#0#10108#2
+Donegal, (Glenties, Europe DVB-T)#0#10109#2
+Donegal, (Letterkenny, Europe DVB-T)#0#10110#2
+Donegal, (Magheraroarty, Europe DVB-T)#0#10111#2
+Donegal, (Malin, Europe DVB-T)#0#10112#2
+Donegal, (Moville, Europe DVB-T)#0#10113#2
+Dublin (Primary Tx), ( Europe DVB-T)#0#10114#2
+Galway, (Casla, Europe DVB-T)#0#10115#2
+Galway, (Clifden, Europe DVB-T)#0#10116#2
+Galway, (Tonabrocky, Europe DVB-T)#0#10117#2
+Kerry(Primary Tx), (Mullaghanish, Europe DVB-T)#0#10118#2
+Kerry, (Cnoc an Óir, Europe DVB-T)#0#10119#2
+Kerry, (Dingle, Europe DVB-T)#0#10120#2
+Kerry, (Kilkeaveragh, Europe DVB-T)#0#10121#2
+Kerry, (Knockmoyle, Europe DVB-T)#0#10122#2
+Kerry, (Maamclassach, Europe DVB-T)#0#10123#2
+Kilkenny, (Suir Valley, Europe DVB-T)#0#10124#2
+Longford (Primary Tx), (Cairn Hill, Europe DVB-T)#0#10125#2
+Louth(Primary Tx),(Clermont Carn, Europe DVB-T)#0#10126#2
+Louth, (Greenore, Europe DVB-T)#0#10127#2
+Mayo, (Achill, Europe DVB-T)#0#10128#2
+Mayo, (Dooncarton, Europe DVB-T)#0#10129#2
+Mayo, (Castlebar, Europe DVB-T)#0#10130#2
+Monaghan, (Monaghan, Europe DVB-T)#0#10131#2
+Sligo(Primary Tx),(Tx Truskmore, Europe DVB-T)#0#10132#2
+Tipperary, (Ballina, Europe DVB-T)#0#10133#2
+Tipperary, (Cahir, Europe DVB-T)#0#10134#2
+Tipperary, (Clonmel, Europe DVB-T)#0#10135#2
+Tipperary, (Kilduff, Europe DVB-T)#0#10136#2
+Waterford (Primary Tx), (Dungarvan, Europe DVB-T)#0#10137#2
+Waterford, (Ferrypoint, Europe DVB-T)#0#10138#2
+Waterford, (Gallows Hill, Europe DVB-T)#0#10139#2
+Waterford, (Kilmacthomas, Europe DVB-T)#0#10140#2
+Wexford (Primary Tx), (Mount Leinster, Europe DVB-T)#0#10141#2
+Wexford, (Forth Mountain, Europe DVB-T)#0#10142#2
+Wexford, (Gorey, Europe DVB-T)#0#10143#2
+Wicklow(Primary Tx), (Kippure, Europe DVB-T)#0#10144#2
+Wicklow, (Arklow, Europe DVB-T)#0#10145#2
+Wicklow, (Greystones, Europe DVB-T)#0#10146#2
+Wicklow, (Laragh, Europe DVB-T)#0#10147#2
+Israel/Palestine (Europe DVB-T/T2)#0#10148#2
+Iceland (Europe DVB-T/T2)#0#10149#2
+Italia (Europe DVB-T/T2)#0#10150#2
+Digitenne (Europe DVB-T/T2)#0#10151#2
+Alkmaar (Europe DVB-T/T2)#0#10152#2
+Almere (Europe DVB-T/T2)#0#10153#2
+Alphen aan den Rijn (Europe DVB-T/T2)#0#10154#2
+Amersfoort (Europe DVB-T/T2)#0#10155#2
+Amsterdam Hemweg (Europe DVB-T/T2)#0#10156#2
+Amsterdam Rai (Europe DVB-T/T2)#0#10157#2
+Apeldoorn (Europe DVB-T/T2)#0#10158#2
+Arnhem (Europe DVB-T/T2)#0#10159#2
+Breda (Europe DVB-T/T2)#0#10160#2
+Delft ** (Europe DVB-T/T2)#0#10161#2
+Den Bosch (Europe DVB-T/T2)#0#10162#2
+Den Burg (Europe DVB-T/T2)#0#10163#2
+Den Haag Beatrixlaan (Europe DVB-T/T2)#0#10164#2
+Den Haag Kerkelanden (Europe DVB-T/T2)#0#10165#2
+Deventer (Europe DVB-T/T2)#0#10166#2
+Doetinchem (Europe DVB-T/T2)#0#10167#2
+Eindhoven 1 (Europe DVB-T/T2)#0#10168#2
+Eindhoven 2 (Europe DVB-T/T2)#0#10169#2
+Enkhuizen (Europe DVB-T/T2)#0#10170#2
+Enschede (Europe DVB-T/T2)#0#10171#2
+Goes (Europe DVB-T/T2)#0#10172#2
+Gorinchem ** (Europe DVB-T/T2)#0#10173#2
+Gouda (Europe DVB-T/T2)#0#10174#2
+Groningen (Europe DVB-T/T2)#0#10175#2
+Haarlem (Europe DVB-T/T2)#0#10176#2
+Heerlen (Europe DVB-T/T2)#0#10177#2
+Helmond (Europe DVB-T/T2)#0#10178#2
+Hengelo (Europe DVB-T/T2)#0#10179#2
+Hilversum (Europe DVB-T/T2)#0#10180#2
+Hoorn (Europe DVB-T/T2)#0#10181#2
+IJsselstein (Lopik) (Europe DVB-T/T2)#0#10182#2
+Krimpen aan den IJssel (Europe DVB-T/T2)#0#10183#2
+Leeuwarden (Europe DVB-T/T2)#0#10184#2
+Lelystad (Europe DVB-T/T2)#0#10185#2
+Loon op Zand (Europe DVB-T/T2)#0#10186#2
+Maarssen (Europe DVB-T/T2)#0#10187#2
+Maastricht (Europe DVB-T/T2)#0#10188#2
+Nijmegen (Europe DVB-T/T2)#0#10189#2
+Oegstgeest (Europe DVB-T/T2)#0#10190#2
+Oss (Noord-Brabant) (Europe DVB-T/T2)#0#10191#2
+Oss (gelderland) (Europe DVB-T/T2)#0#10192#2
+Roermond (Europe DVB-T/T2)#0#10193#2
+Roosendaal (Europe DVB-T/T2)#0#10194#2
+Rotterdam Maastoren (Europe DVB-T/T2)#0#10195#2
+Rotterdam Waalhaven (Europe DVB-T/T2)#0#10196#2
+Sittard (Europe DVB-T/T2)#0#10197#2
+Sliedrecht (Europe DVB-T/T2)#0#10198#2
+Smilde (Europe DVB-T/T2)#0#10199#2
+Utrecht (Europe DVB-T/T2)#0#10200#2
+Veenendaal (Gelderland) (Europe DVB-T/T2)#0#10201#2
+Veenendaal (Utrecht) (Europe DVB-T/T2)#0#10202#2
+Venlo (Europe DVB-T/T2)#0#10203#2
+Vlaardingen (Europe DVB-T/T2)#0#10204#2
+Wormer (Europe DVB-T/T2)#0#10205#2
+Zoetermeer (Europe DVB-T/T2)#0#10206#2
+Zwolle (Europe DVB-T/T2)#0#10207#2
+Polska (Europe DVB-T/T2)#0#10208#2
+Russia (Europe DVB-T/T2)#0#10209#2
+Russia, Moscow: DVB-T/T2#0#10210#2
+Russia, Krasnodar: DVB-T/T2#0#10211#2
+Russia, Novosibirsk: DVB-T/T2#0#10212#2
+Russia, Volgodonsk: DVB-T/T2#0#10213#2
+Russia, Elets: DVB-T/T2#0#10214#2
+Sweden, Gavle (Europe DVB-T/T2)#0#10215#2
+Sweden, Sundsvall S Stadsberget (Europe DVB-T/T2)#0#10216#2
