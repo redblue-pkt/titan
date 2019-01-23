@@ -139,9 +139,9 @@ else
 	$SRC/tmp/sysroots/$ARCH/usr/bin/arm-oe-linux-gnueabi/arm-oe-linux-gnueabi-gcc  -mhard-float --sysroot=$SRC/tmp/sysroots/$BOX -shared  -fPIC -DPIC  .libs/lib$2.o    -mhard-float $devflag --sysroot=$SRC/tmp/sysroots/$BOX -DMIPSEL -DCAMSUPP -DEPLAYER4 -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,lib$2.so.0 $LIB -o .libs/lib$2.so $4
 fi
 
-	cp -a .libs/lib$2.so $2.so
+	cp -a .libs/lib$2.so lib$2.so
 
-	$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/arm-oe-linux-gnueabi-strip $2.so
+	$SRC/tmp/sysroots/$ARCH/usr/bin/$GCCPATH/arm-oe-linux-gnueabi-strip lib$2.so
 	cd ..
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Plugin $1 done"
