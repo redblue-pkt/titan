@@ -36,7 +36,7 @@ startmnt()
 	fi
 }
 
-checkopkg()
+startopkg()
 {
 	if [ $(cat /etc/opkg/opkg.conf | grep "dest / /" | wc -l) -eq 0 ];then
 		echo "dest / /" >> /etc/opkg/opkg.conf
@@ -49,7 +49,7 @@ checkopkg()
 	fi
 }
 
-checklibs()
+startlibs()
 {
 	#check for sundtek tuner helper lib
 	if [ -e /opt/lib/libmediaclient.so ]; then
@@ -78,7 +78,7 @@ checklibs()
 
 }
 
-setdate()
+startdate()
 {
 	date
 	echo npdate
@@ -117,7 +117,7 @@ startbootlogo()
 	fi
 }
 
-startsethomedir()
+starthomedir()
 {
 	if [ -d /home/root ]; then
 		cd /home/root
@@ -203,10 +203,10 @@ startgui()
 	esac
 }
 
-startmountmnt
+startmnt
 startopkg
-startsetdate
+startdate
 startbootlogo
-startchecklibs
-startsethomedir
+startlibs
+starthomedir
 startgui
