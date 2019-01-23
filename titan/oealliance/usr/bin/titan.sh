@@ -125,6 +125,10 @@ starthomedir()
 	fi
 }
 
+startEmu() {
+		emu.sh "start" "" &
+}
+
 startgui()
 {
 	LD_PRELOAD=$LIBS /usr/local/bin/titan /mnt/config/titan.cfg
@@ -204,6 +208,7 @@ startgui()
 }
 
 startmnt
+startEmu
 startopkg
 startdate
 startbootlogo
