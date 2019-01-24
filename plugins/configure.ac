@@ -60,6 +60,7 @@ scriptexec/Makefile
 stock/Makefile
 stopifnotused/Makefile
 streaminfo/Makefile
+sudoku/Makefile
 tinews/Makefile
 tithek/Makefile
 tiwakeup/Makefile
@@ -67,7 +68,6 @@ tmc/Makefile
 tmdb/Makefile
 TopfieldVFD/Makefile
 tsSchnitt/Makefile
-sudoku/Makefile
 usbreset/Makefile
 weather/Makefile
 wins3/Makefile
