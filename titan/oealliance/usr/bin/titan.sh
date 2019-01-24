@@ -1,3 +1,12 @@
+startautofs()
+{
+	if [ ! -L /etc/auto.network ];then
+		rm /etc/auto.network
+		ln -s /mnt/network/auto-misc /etc/auto.network
+	fi
+		
+}
+
 startmnt()
 {
 	if [ -L /mnt ];then
@@ -5,10 +14,18 @@ startmnt()
 	fi
 
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
-		if [ -e /media/hdd/backup/.oebuildbackup ];then
-			BACKUPDIR=$(cat /media/hdd/backup/.oebuildbackup)
-			cp -a $BACKUPDIR /mnt
-			mv -f /media/hdd/backup/.oebuildbackup /media/hdd/backup/.oebuildbackup.restored
+		if [ -e /media/hdd/.update/.last ];then
+			BACKUPDIR=/media/hdd/.update
+			BACKUPFILE=$(cat $BACKUPDIR/.last)
+			cp -a $BACKUPDIR/$BACKUPFILE /mnt
+			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
+			sync
+		elif [ -e /media/usb/.update/.last ];then
+			BACKUPDIR=/media/usb/.update
+			BACKUPFILE=$(cat $BACKUPDIR/.last)
+			cp -a $BACKUPDIR/$BACKUPFILE /mnt
+			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
+			sync
 		else
 			infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
 			if [ -e /mnt ];then
@@ -80,12 +97,7 @@ startlibs()
 
 startdate()
 {
-	date
-	echo npdate
-	ntpdate -b ptbtime1.ptb.de &
-	echo "####################################"
-	date
-	echo "####################################"
+		(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &
 }
 
 startbootlogo()
@@ -208,6 +220,7 @@ startgui()
 }
 
 startmnt
+startautofs
 startEmu
 startopkg
 startdate
