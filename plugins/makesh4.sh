@@ -130,13 +130,13 @@ compile()
 		#/bin/sh $HOME/flashimg/source.titan/plugins/libtool  --tag=CC   --mode=link $HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-gcc  -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/freetype2 -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/gstreamer-1.0 -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/glib-2.0 -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/include/libxml2 -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib/glib-2.0/include -I$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib/gstreamer-1.0/include -I$HOME/flashimg/BUILDGIT/checkout_$STM/driver/bpamem -I$HOME/flashimg/BUILDGIT/checkout_$STM/apps/titan/libdreamdvd -I$HOME/flashimg/BUILDGIT/checkout_$STM/apps/tools/libeplayer3/include -I$HOME/flashimg/BUILDGIT/checkout_$STM/apps/tools/libmmeimage -I$HOME/flashimg/BUILDGIT/checkout_$STM/apps/titan/titan  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/lib -o lib$2.la -rpath /lib $2.lo
 		$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-gcc  -shared  -fPIC -DPIC  .libs/$2.o    $devflag -DSH4 -D$eplayer -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,lib$2.so.0 -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/lib $LIB -o .libs/lib$2.so $4
 	
-		cp .libs/lib$2.so $2.so
+		cp .libs/lib$2.so lib$2.so
 	else
 		$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-gcc -D$eplayer -Os $devflag -fPIC -Wall -Wno-unused-but-set-variable $4 -I$eplayerinclude -c $2.c -o $2.o
-		$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-gcc  -shared  -fPIC -DPIC  $2.o    $devflag -DSH4 -D$eplayer -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,lib$2.so.0 -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/lib $LIB -o $2.so $4
+		$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-gcc  -shared  -fPIC -DPIC  $2.o    $devflag -DSH4 -D$eplayer -Wl,-O1 -Wl,--as-needed   -Wl,-soname -Wl,lib$2.so.0 -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/usr/lib -L$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cdkroot/lib $LIB -o lib$2.so $4
 	fi
 
-	$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-strip $2.so
+	$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-strip lib$2.so
 
 	cd ..
 	echo "[titan]--------------------------------------------------------"
