@@ -411,6 +411,7 @@ flash_img()
 							if [ $(ls -1 $BACKUPDIR | wc -l) -gt 4 ];then
 								rm -rf $BACKUPDIR/*
 							fi
+							if [ -e $BACKUPDIR/$BACKUPFILE ];then rm -rf $BACKUPDIR/$BACKUPFILE;fi
 							cp -a /mnt $BACKUPDIR/$BACKUPFILE
 							echo "$BACKUPDIR/$BACKUPFILE" > $BACKUPDIR/.last
 							rm $BACKUPDIR/.last.restored
@@ -423,6 +424,7 @@ flash_img()
 							if [ $(ls -1 $BACKUPDIR | wc -l) -gt 4 ];then
 								rm -rf $BACKUPDIR/*
 							fi
+							if [ -e $BACKUPDIR/$BACKUPFILE ];then rm -rf $BACKUPDIR/$BACKUPFILE;fi
 							cp -a /mnt $BACKUPDIR/$BACKUPFILE
 							echo "$BACKUPDIR/$BACKUPFILE" > $BACKUPDIR/.last
 							rm $BACKUPDIR/.last.restored
