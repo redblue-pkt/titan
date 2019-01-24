@@ -137,8 +137,16 @@ starthomedir()
 	fi
 }
 
+startplugins()
+{
+	if [ ! -L /var/usr/local/share/titan/plugins ];then
+		rm -rf /var/usr/local/share/titan/plugins
+		ln -sf /usr/local/share/titan/plugins /var/usr/local/share/titan/plugins
+	fi
+}
+
 startEmu() {
-		emu.sh "start" "" &
+	emu.sh "start" "" &
 }
 
 startgui()
@@ -220,6 +228,7 @@ startgui()
 }
 
 startmnt
+startplugins
 startautofs
 startEmu
 startopkg
