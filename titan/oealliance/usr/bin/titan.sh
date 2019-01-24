@@ -56,7 +56,7 @@ startmnt()
 startopkg()
 {
 	if [ $(cat /etc/opkg/opkg.conf | grep "dest / /" | wc -l) -eq 0 ];then
-		echo "dest / /" >> /etc/opkg/opkg.conf
+		echo "dest /var /var" >> /etc/opkg/opkg.conf
 	fi
 	if [ $(cat /etc/opkg/opkg.conf | grep "dest /mnt/swapextensions /mnt/swapextensions" | wc -l) -eq 0 ];then
 		echo "dest /mnt/swapextensions /mnt/swapextensions" >> /etc/opkg/opkg.conf
