@@ -401,14 +401,34 @@ flash_img()
 					tmp=/tmp/ramfs
 					mkdir $tmp
 					mount -t ramfs ramfs $tmp				
-					if [ -e /media/hdd/backup ];then
-						FLASHTIME=`date "+%Y%m%d%H%M"`
-						BACKUPDIR=/media/hdd/backup/mnt_${FLASHTIME}
-						cp -a /mnt $BACKUPDIR
-						echo "$BACKUPDIR" > /media/hdd/backup/.oebuildbackup
-						sync
-					fi
 
+					FLASHTIME=`date "+%Y%m%d"`
+					BACKUPFILE=mnt_${FLASHTIME}
+					if [ -e /media/hdd ];then
+						BACKUPDIR=/media/hdd/.update
+						if [ ! -e $BACKUPDIR ];then mkdir $BACKUPDIR; fi
+						if [ -e $BACKUPDIR ];then
+							if [ $(ls -1 $BACKUPDIR | wc -l) -gt 4 ];then
+								rm -rf $BACKUPDIR/*
+							fi
+							cp -a /mnt $BACKUPDIR/$BACKUPFILE
+							echo "$BACKUPDIR/$BACKUPFILE" > $BACKUPDIR/.last
+							rm $BACKUPDIR/.last.restored
+							sync
+						fi
+					elif [ -e /media/usb ];then
+						BACKUPDIR=/media/usb/.update
+						if [ ! -e $BACKUPDIR ];then mkdir $BACKUPDIR; fi
+						if [ -e $BACKUPDIR ];then
+							if [ $(ls -1 $BACKUPDIR | wc -l) -gt 4 ];then
+								rm -rf $BACKUPDIR/*
+							fi
+							cp -a /mnt $BACKUPDIR/$BACKUPFILE
+							echo "$BACKUPDIR/$BACKUPFILE" > $BACKUPDIR/.last
+							rm $BACKUPDIR/.last.restored
+							sync
+						fi
+					fi
 					if [ "$imagefs" = "ubinfi" ];then
 						showtime=92
 						if [ "$board" = "dm7020hd" ];then showtime=92 ;fi
