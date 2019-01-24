@@ -17,13 +17,13 @@ startmnt()
 		if [ -e /media/hdd/.update/.last ];then
 			BACKUPDIR=/media/hdd/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
-			cp -a $BACKUPDIR/$BACKUPFILE /mnt
+			cp -a $BACKUPFILE /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
 		elif [ -e /media/usb/.update/.last ];then
 			BACKUPDIR=/media/usb/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
-			cp -a $BACKUPDIR/$BACKUPFILE /mnt
+			cp -a $BACKUPFILE /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
 		else
