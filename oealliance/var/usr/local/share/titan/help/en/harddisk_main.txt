@@ -1,1 +1,0 @@
-Here you can select your hard disks and USB flash drives for configuration.

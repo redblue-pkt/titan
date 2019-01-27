@@ -1,1 +1,0 @@
-Bevor Sie Signal / SNR / Ber sehen können, müssen Sie auf einen Kanal des gesuchten Satelliten umschalten.
