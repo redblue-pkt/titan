@@ -11,6 +11,7 @@ GROUP=$3
 BOX=$4
 DISTRO=$5
 
+
 if [ -z "$STM" ]; then
 	echo "error: use makesh4.sh <stm23|stm23|stm24> <1|2>"
 	exit 1
