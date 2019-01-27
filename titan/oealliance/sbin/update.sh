@@ -430,6 +430,19 @@ flash_img()
 							rm $BACKUPDIR/.last.restored
 							sync
 						fi
+					elif [ -e /media/sdb ];then
+						BACKUPDIR=/media/sdb/.update
+						if [ ! -e $BACKUPDIR ];then mkdir $BACKUPDIR; fi
+						if [ -e $BACKUPDIR ];then
+							if [ $(ls -1 $BACKUPDIR | wc -l) -gt 4 ];then
+								rm -rf $BACKUPDIR/*
+							fi
+							if [ -e $BACKUPDIR/$BACKUPFILE ];then rm -rf $BACKUPDIR/$BACKUPFILE;fi
+							cp -a /mnt $BACKUPDIR/$BACKUPFILE
+							echo "$BACKUPDIR/$BACKUPFILE" > $BACKUPDIR/.last
+							rm $BACKUPDIR/.last.restored
+							sync
+						fi
 					fi
 					if [ "$imagefs" = "ubinfi" ];then
 						showtime=92
