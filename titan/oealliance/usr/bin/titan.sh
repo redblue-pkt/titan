@@ -155,6 +155,7 @@ startEmu() {
 
 startgui()
 {
+	fuser -k 80/tcp
 	LD_PRELOAD=$LIBS /usr/local/bin/titan /mnt/config/titan.cfg
 
 	# titan exit codes:
