@@ -26,6 +26,12 @@ startmnt()
 			cp -a $BACKUPFILE /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
+		elif [ -e /media/sdb/.update/.last ];then
+			BACKUPDIR=/media/sdb/.update
+			BACKUPFILE=$(cat $BACKUPDIR/.last)
+			cp -a $BACKUPFILE /mnt
+			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
+			sync
 		else
 			infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
 			if [ -e /mnt ];then
