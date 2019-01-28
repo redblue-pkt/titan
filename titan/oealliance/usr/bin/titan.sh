@@ -1,3 +1,15 @@
+startconfig=/mnt/config/start-config
+if [ ! -e "$startconfig" ]; then startconfig="/etc/titan.restore/mnt/config/start-config"; fi
+
+. $startconfig
+. /sbin/start-progress
+. /sbin/start-function
+
+model=`cat /etc/model`
+realbox=`cat /proc/stb/info/boxtype`
+arch=`cat /etc/.arch`
+board=`cat /etc/.board`
+
 startautofs()
 {
 	if [ ! -L /etc/auto.network ];then
@@ -22,7 +34,7 @@ startmnt()
 			cp -a /mnt/script /tmp/backupmtd
 			mkdir /tmp/backupmtd/swapextensions
 			cp -a /mnt/swapextensions/player /tmp/backupmtd/swapextensions
-#			backuptpk
+			backuptpk
 		fi
 
 		if [ -e /media/hdd/.update/.last ];then
@@ -56,7 +68,7 @@ startmnt()
 			sleep 10
 
 			if [ -e /var/etc/.backupmtd ]; then
-#				restoretpk
+				restoretpk
 
 				rm -rf /mnt/settings
 				rm -rf /mnt/config
