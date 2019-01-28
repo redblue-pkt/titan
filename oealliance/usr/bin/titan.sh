@@ -14,6 +14,17 @@ startmnt()
 	fi
 
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
+		if [ -e /var/etc/.backupmtd ]; then
+			mkdir /tmp/backupmtd
+			cp -a /mnt/settings /tmp/backupmtd
+			cp -a /mnt/config /tmp/backupmtd
+			cp -a /mnt/network /tmp/backupmtd
+			cp -a /mnt/script /tmp/backupmtd
+			mkdir /tmp/backupmtd/swapextensions
+			cp -a /mnt/swapextensions/player /tmp/backupmtd/swapextensions
+#			backuptpk
+		fi
+
 		if [ -e /media/hdd/.update/.last ];then
 			BACKUPDIR=/media/hdd/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
@@ -43,6 +54,22 @@ startmnt()
 			mkdir /mnt/bin
 			mkdir /mnt/tpk
 			sleep 10
+
+			if [ -e /var/etc/.backupmtd ]; then
+#				restoretpk
+
+				rm -rf /mnt/settings
+				rm -rf /mnt/config
+				rm -rf /mnt/network
+				rm -rf /mnt/script
+				rm -rf /mnt/swapextensions/player
+				cp -a /tmp/backupmtd/* /mnt
+#			else
+#				mkdir /mnt/tpk
+#				mkdir /mnt/script
+#				reset.sh
+			fi
+
 			rm -r /var/etc/.erasemtd
 			rm -r /var/etc/.backupmtd
 
