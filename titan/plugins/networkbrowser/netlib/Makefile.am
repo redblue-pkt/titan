@@ -1,4 +1,4 @@
-include $(top_srcdir)/Rules-cpp.mak
+#include $(top_srcdir)/Rules-cpp.mak
 
 #plugindir = $(libdir)/enigma2/python/Plugins/SystemPlugins/NetworkBrowser
 plugindir = /usr/local/share/titan/plugins/networkbrowser
