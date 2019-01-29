@@ -3,9 +3,9 @@
 #plugindir = $(libdir)/enigma2/python/Plugins/SystemPlugins/NetworkBrowser
 plugindir = /usr/local/share/titan/plugins/networkbrowser
 
-plugin_LTLIBRARIES = netscan.la
+plugin_LTLIBRARIES = libnetscan.la
 
-netscan_la_SOURCES = \
+libnetscan_la_SOURCES = \
 	errors.h \
 	list.c \
 	list.h \
@@ -23,5 +23,5 @@ netscan_la_SOURCES = \
 	statusq.h \
 	time_compat.h
 
-netscan_la_LDFLAGS = \
+libnetscan_la_LDFLAGS = \
 	$(PLUGIN_LIBTOOL_FLAGS)
