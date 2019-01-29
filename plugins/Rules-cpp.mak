@@ -1,16 +1,12 @@
 AM_CFLAGS = \
-	-Wall \
-	@DEBUG_CFLAGS@
+	-Wall
 
 AM_CPPFLAGS = \
-	@PYTHON_CPPFLAGS@ \
-	-include Python.h \
-	-include enigma2-plugins-config.h
+	-include Python.h
 
 AM_CXXFLAGS = \
 	-Wall \
 	-fno-exceptions \
-	@DEBUG_CFLAGS@ \
 	@ENIGMA2_CFLAGS@ \
 	@GSTREAMER_CFLAGS@ \
 	@LIBCRYPTO_CFLAGS@ \
