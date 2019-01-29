@@ -51,6 +51,7 @@ lcdsamsung/Makefile
 mboxinfo/Makefile
 mc/Makefile
 networkbrowser/Makefile
+networkbrowser/netlib/Makefile
 optimize/Makefile
 panel/Makefile
 permtime/Makefile
