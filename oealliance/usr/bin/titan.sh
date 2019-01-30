@@ -16,7 +16,7 @@ startautofs()
 		rm /etc/auto.network
 		ln -s /mnt/network/auto.misc /etc/auto.network
 	fi
-		
+	hotplug.sh first
 }
 
 startmnt()
