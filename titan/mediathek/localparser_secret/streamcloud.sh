@@ -523,7 +523,7 @@ hoster()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	hoster) $INPUT;;
 	hosterlist) $INPUT;;
