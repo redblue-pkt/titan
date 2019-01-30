@@ -359,7 +359,7 @@ play()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	new) $INPUT;;
 	search) $INPUT;;
