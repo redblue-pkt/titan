@@ -1,9 +1,3 @@
-#include $(top_srcdir)/Rules-cpp.mak
-
-#plugindir = $(libdir)/enigma2/python/Plugins/SystemPlugins/NetworkBrowser
-plugindir = /usr/local/share/titan/plugins/networkbrowser
-
-#plugin_LTLIBRARIES = libnetscan.la
 noinst_LTLIBRARIES = libnetscan.la
 
 libnetscan_la_SOURCES = \
