@@ -10,12 +10,21 @@ realbox=`cat /proc/stb/info/boxtype`
 arch=`cat /etc/.arch`
 board=`cat /etc/.board`
 
-startautofs()
+startfixautofs()
 {
 	if [ ! -L /etc/auto.network ];then
 		rm /etc/auto.network
 		ln -s /mnt/network/auto.misc /etc/auto.network
 	fi
+	if [ ! -L /etc/udev/mount-helper.sh ];then
+		mv /etc/udev/mount-helper.sh /etc/udev/mount-helper_oe.sh
+		ln -s /sbin/hotplug.sh /etc/udev/mount-helper.sh
+	fi
+
+}
+
+starthotplug()
+{
 	hotplug.sh first
 }
 
@@ -279,9 +288,10 @@ startgui()
 	esac
 }
 
+startfixautofs
 startmnt
 startplugins
-startautofs
+starthotplug
 startEmu
 startopkg
 startdate
