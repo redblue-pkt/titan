@@ -12,11 +12,13 @@ board=`cat /etc/.board`
 
 starthotplug()
 {
+	echo "[$0] starthotplug"
 	hotplug.sh first
 }
 
 startautofsrestart()
 {
+		echo "[$0] startautofsrestart"
 		mkdir -p /mnt/network
 		cp /etc/titan.restore/mnt/network/auto.misc /mnt/network
 		if [ ! -L /etc/auto.network ];then
@@ -33,7 +35,7 @@ startautofsrestart()
 
 startmnt()
 {
-
+	echo "[$0] startmnt"
 	if [ -L /mnt ];then
 		rm -f /mnt
 		startautofsrestart
@@ -61,7 +63,7 @@ startmnt()
 			BACKUPDIR=/var/backup/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
 			rm -f /mnt
-			cp -a $BACKUPFILE /mnt
+			cp -a $BACKUPFILE/* /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
 		elif [ -e /var/swap/.update/.last ];then
