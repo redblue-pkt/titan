@@ -296,7 +296,6 @@ startgui()
 	esac
 }
 
-startfixautofs
 startmnt
 startplugins
 starthotplug
