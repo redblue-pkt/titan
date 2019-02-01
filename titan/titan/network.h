@@ -191,10 +191,10 @@ iface wlan0 inet dhcp
 		{
 			savesettings = ostrcat(savesettings, "\n\tpre-up wpa_supplicant -i", 1, 0);
 			savesettings = ostrcat(savesettings, net->device, 1, 0);
-//			savesettings = ostrcat(savesettings, " -c/etc/wpa_supplicant.", 1, 0);
+//			savesettings = ostrcat(savesettings, " -c/mnt/network/wpa_supplicant.", 1, 0);
 //			savesettings = ostrcat(savesettings, net->device, 1, 0);
 //			savesettings = ostrcat(savesettings, ".conf -B -dd -Dwext || true", 1, 0);
-			savesettings = ostrcat(savesettings, " -c/etc/wpa_supplicant.conf -B -dd -Dwext || true", 1, 0);
+			savesettings = ostrcat(savesettings, " -c/mnt/network/wpa_supplicant.conf -B -dd -Dwext || true", 1, 0);
 
 			savesettings = ostrcat(savesettings, "\n\tpre-down wpa_cli -i", 1, 0);
 			savesettings = ostrcat(savesettings, net->device, 1, 0);
