@@ -54,19 +54,20 @@ startmnt()
 		if [ -e /media/hdd/.update/.last ];then
 			BACKUPDIR=/media/hdd/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
-			cp -a $BACKUPFILE /mnt
+			cp -a $BACKUPFILE/* /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
 		elif [ -e /var/backup/.update/.last ];then
 			BACKUPDIR=/var/backup/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
+			rm -f /mnt
 			cp -a $BACKUPFILE /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
 		elif [ -e /var/swap/.update/.last ];then
 			BACKUPDIR=/var/swap/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
-			cp -a $BACKUPFILE /mnt
+			cp -a $BACKUPFILE/* /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
 		else
