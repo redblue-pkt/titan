@@ -10,28 +10,33 @@ realbox=`cat /proc/stb/info/boxtype`
 arch=`cat /etc/.arch`
 board=`cat /etc/.board`
 
-startfixautofs()
-{
-	if [ ! -L /etc/auto.network ];then
-		rm /etc/auto.network
-		ln -s /mnt/network/auto.misc /etc/auto.network
-	fi
-	if [ ! -L /etc/udev/mount-helper.sh ];then
-		mv /etc/udev/mount-helper.sh /etc/udev/mount-helper_oe.sh
-		ln -s /sbin/hotplug.sh /etc/udev/mount-helper.sh
-	fi
-
-}
-
 starthotplug()
 {
 	hotplug.sh first
 }
 
+startautofsrestart()
+{
+		mkdir -p /mnt/network
+		cp /etc/titan.restore/mnt/network/auto.misc /mnt/network
+		if [ ! -L /etc/auto.network ];then
+			rm /etc/auto.network
+			ln -s /mnt/network/auto.misc /etc/auto.network
+		fi
+		if [ ! -L /etc/udev/mount-helper.sh ];then
+			mv /etc/udev/mount-helper.sh /etc/udev/mount-helper_oe.sh
+			ln -s /sbin/hotplug.sh /etc/udev/mount-helper.sh
+		fi
+		/etc/init.d/autofs restart
+		starthotplug
+}
+
 startmnt()
 {
+
 	if [ -L /mnt ];then
 		rm -f /mnt
+		startautofsrestart
 	fi
 
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
@@ -52,14 +57,14 @@ startmnt()
 			cp -a $BACKUPFILE /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
-		elif [ -e /media/usb/.update/.last ];then
-			BACKUPDIR=/media/usb/.update
+		elif [ -e /var/backup/.update/.last ];then
+			BACKUPDIR=/var/backup/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
 			cp -a $BACKUPFILE /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
-		elif [ -e /media/sdb/.update/.last ];then
-			BACKUPDIR=/media/sdb/.update
+		elif [ -e /var/swap/.update/.last ];then
+			BACKUPDIR=/var/swap/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
 			cp -a $BACKUPFILE /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
