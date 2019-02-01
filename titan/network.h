@@ -187,6 +187,7 @@ iface wlan0 inet dhcp
 */
 
 #ifdef OEBUILD
+printf("net->device: %s\n", net->device);
 		if(ostrncmp(net->device, "wlan", 4) == 0)
 		{
 			savesettings = ostrcat(savesettings, "\n\tpre-up wpa_supplicant -i", 1, 0);
@@ -351,9 +352,6 @@ void screennetwork_restart(struct inetwork *net, int flag)
 			cmd = ostrcat(cmd, "/etc/init.d/networking -i ", 1, 0);
 			cmd = ostrcat(cmd, net->device, 1, 0);
 #endif
-
-			cmd = ostrcat(cmd, "/etc/init.d/networking -i ", 1, 0);
-			cmd = ostrcat(cmd, net->device, 1, 0);
 			cmd = ostrcat(cmd, " restart", 1, 0);
 			tmpstr = ostrcat(tmpstr, command(cmd), 1, 1);
 			free(cmd); cmd = NULL;
