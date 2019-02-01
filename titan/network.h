@@ -845,7 +845,10 @@ void screennetwork_wlan()
 			if(tmp1 != NULL)
 				changetext(tmp1, _("searching..."));
 			drawscreen(wlan, 0, 0);
-
+#ifdef OEBUILD
+			system("ifconfig wlan0 up");
+			system("ifconfig ra0 up");
+#endif
 			system("wlan.sh notstart");
 			tmpstr = command("iwlist scanning | grep 'ESSID:' | sed 's/ESSID:\\\"\\\"/ESSID:\\\"unknown\\\"/' | sed 's/[ ]*ESSID://' | tr -d \\\"");
 
