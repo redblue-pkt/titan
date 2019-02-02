@@ -180,22 +180,15 @@ int writeinterfaces()
 			}
 			savesettings = ostrcat(savesettings, "\n", 1, 0);
 		}
-/*
-iface wlan0 inet dhcp
-        pre-up wpa_supplicant -iwlan0 -c/etc/wpa_supplicant.wlan0.conf -B -dd -Dwext || true
-        pre-down wpa_cli -iwlan0 terminate || true
-*/
-
 #ifdef OEBUILD
-printf("net->device: %s\n", net->device);
 		if(ostrncmp(net->device, "wlan", 4) == 0)
 		{
 			savesettings = ostrcat(savesettings, "\n\tpre-up wpa_supplicant -i", 1, 0);
 			savesettings = ostrcat(savesettings, net->device, 1, 0);
+			savesettings = ostrcat(savesettings, " -c/mnt/network/wpa_supplicant.conf -B -dd -Dwext || true", 1, 0);
 //			savesettings = ostrcat(savesettings, " -c/mnt/network/wpa_supplicant.", 1, 0);
 //			savesettings = ostrcat(savesettings, net->device, 1, 0);
 //			savesettings = ostrcat(savesettings, ".conf -B -dd -Dwext || true", 1, 0);
-			savesettings = ostrcat(savesettings, " -c/mnt/network/wpa_supplicant.conf -B -dd -Dwext || true", 1, 0);
 
 			savesettings = ostrcat(savesettings, "\n\tpre-down wpa_cli -i", 1, 0);
 			savesettings = ostrcat(savesettings, net->device, 1, 0);
@@ -331,12 +324,12 @@ void screennetwork_restart(struct inetwork *net, int flag)
 				if(net->flag == 1)
 				{
 #ifdef OEBUILD
-					cmd = ostrcat(cmd, "/etc/init.d/networking ", 1, 0);
+					cmd = ostrcat(cmd, "/etc/init.d/networking restart", 1, 0);
 #else
 					cmd = ostrcat(cmd, "/etc/init.d/networking -i ", 1, 0);
 					cmd = ostrcat(cmd, net->device, 1, 0);
-#endif
 					cmd = ostrcat(cmd, " restart", 1, 0);
+#endif
 					tmpstr = ostrcat(tmpstr, command(cmd), 1, 1);
 					tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
 					free(cmd); cmd = NULL;
@@ -347,12 +340,12 @@ void screennetwork_restart(struct inetwork *net, int flag)
 		else
 		{
 #ifdef OEBUILD
-			cmd = ostrcat(cmd, "/etc/init.d/networking ", 1, 0);
+			cmd = ostrcat(cmd, "/etc/init.d/networking restart", 1, 0);
 #else
 			cmd = ostrcat(cmd, "/etc/init.d/networking -i ", 1, 0);
 			cmd = ostrcat(cmd, net->device, 1, 0);
-#endif
 			cmd = ostrcat(cmd, " restart", 1, 0);
+#endif
 			tmpstr = ostrcat(tmpstr, command(cmd), 1, 1);
 			free(cmd); cmd = NULL;
 		}
@@ -686,7 +679,7 @@ start:
 int wlanstart()
 {
 	int ret = 0;
-#ifdef OEBUILD
+#ifndef OEBUILD
 	system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
 	ret = system("wlan.sh");
 #endif
@@ -833,10 +826,6 @@ void screennetwork_wlan()
 							if(net != NULL)
 							{
 								net->type = 1; //dhcp
-#ifdef OEBUILD
-								writeinterfaces();
-								screennetwork_restart(NULL, 0);
-#endif
 								screennetwork_adapterext(0, net->device);
 							}
 						}
@@ -880,11 +869,9 @@ void screennetwork_wlan()
 			if(tmp1 != NULL)
 				changetext(tmp1, _("searching..."));
 			drawscreen(wlan, 0, 0);
-#ifdef OEBUILD
-			system("ifconfig wlan0 up");
-			system("ifconfig ra0 up");
-#endif
+#ifndef OEBUILD
 			system("wlan.sh notstart");
+#endif
 			tmpstr = command("iwlist scanning | grep 'ESSID:' | sed 's/ESSID:\\\"\\\"/ESSID:\\\"unknown\\\"/' | sed 's/[ ]*ESSID://' | tr -d \\\"");
 
 			tmp1 = NULL;
