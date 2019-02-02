@@ -40,6 +40,7 @@ startnetworkrestart()
 			rm /etc/network/interfaces
 			ln -s /mnt/network/interfaces /etc/network/interfaces
 		fi
+		/etc/init.d/networking restart
 }
 
 startmnt()
@@ -48,7 +49,6 @@ startmnt()
 	if [ -L /mnt ];then
 		rm -f /mnt
 		startautofsrestart
-		startnetworkrestart
 	fi
 
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
@@ -122,6 +122,7 @@ startmnt()
 		#	sleep 2
 			reboot
 		fi
+		startnetworkrestart
 	fi
 }
 
