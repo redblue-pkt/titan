@@ -33,9 +33,9 @@ startautofsrestart()
 		starthotplug
 }
 
-startnetworkrestart()
+startnetwork()
 {
-		echo "[$0] startnetworkrestart"
+		echo "[$0] startnetwork $1"
 		if [ ! -L /etc/network/interfaces ];then
 			rm /etc/network/interfaces
 			ln -s /mnt/network/interfaces /etc/network/interfaces
