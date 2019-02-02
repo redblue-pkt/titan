@@ -50,7 +50,7 @@ void screenvfdisplay()
 		addchoicebox(blinkoff, "1", _("off"));
 		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
 	}
-	else if(checkrealbox("HD51") == 1 || checkbox("ATEMIO6200") == 1)
+	else if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("ATEMIO6200") == 1)
 	{
 		changetext(blinkoff, _("continuous text"));
 		addchoicebox(blinkoff, "1", _("on"));
@@ -278,7 +278,7 @@ void screenvfdisplay()
 				addconfig("skinblinkoff", blinkoff->ret);
 				setled(1);
 			}
-			if(checkrealbox("HD51") == 1 || checkbox("ATEMIO6200") == 1)
+			if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("ATEMIO6200") == 1)
 			{
 				addconfig("vfd_scroll", blinkoff->ret);
 			}

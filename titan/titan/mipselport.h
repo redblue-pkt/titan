@@ -203,7 +203,7 @@ void blitfb2(struct fb* fbnode, int flag)
 	debug(444, "FB: var_screeninfo.bits_per_pixel %d", var_screeninfo.bits_per_pixel);
 	debug(444, "FB: var_screeninfo.grayscale %d", var_screeninfo.grayscale);
 	
-	if(checkrealbox("HD51") == 0 && checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("WETEK") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 )
+	if(checkrealbox("HD51") == 0 && checkrealbox("HD60") == 0 && checkrealbox("HD61") == 0 && checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("WETEK") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 )
 	{
 		if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
 		{

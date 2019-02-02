@@ -652,7 +652,7 @@ int main(int argc, char *argv[])
 	ret = setaudiosource(getconfig("av_audiosource", NULL));
 	ret = setac3(getconfig("av_ac3mode", NULL));
 
-	if(checkrealbox("HD51") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 	{
 		if(isfile("/proc/stb/audio/ac3plus_choices"))
 		{
@@ -701,7 +701,7 @@ int main(int argc, char *argv[])
 		ret = system("mount | grep titan");
   
 #ifndef SIMULATE
-	if(checkrealbox("HD51") == 1 || checkrealbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("VUSOLO2") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("VUSOLO2") == 1)
 		ret = 0;
 
 	// set pvr 1 = allowed , 0 = disabled
@@ -847,7 +847,7 @@ int main(int argc, char *argv[])
 	waitvsync();
 	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 		setfbosd();
-	if(checkrealbox("HD51") == 1 || checkrealbox("SF8008") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1)
 		setfbosdnull();
 	status.usedirectfb = 1;
 #endif

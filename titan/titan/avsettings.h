@@ -106,7 +106,7 @@ void screenavsettings(int flag)
 	ret = getpolicy();
 	setchoiceboxselection(policy, ret);
 	free(ret); ret = NULL;
-	if(checkrealbox("HD51") == 0)
+	if(checkrealbox("HD51") == 0 && checkrealbox("HD60") == 0 && checkrealbox("HD61") == 0)
 	{
 		ret = getaspectchoices();
 		changeinput(aspect, ret);
@@ -122,7 +122,7 @@ void screenavsettings(int flag)
 	aspect->hidden = YES;
 #endif
 
-	if(checkrealbox("HD51") == 0)
+	if(checkrealbox("HD51") == 0 && checkrealbox("HD60") == 0 && checkrealbox("HD61") == 0)
 	{
 		ret = getcolorformat(2);
 		if(ret == NULL || strlen(ret) == 0)
@@ -186,7 +186,7 @@ void screenavsettings(int flag)
 	setchoiceboxselection(ac3mode, ret);
 	free(ret); ret = NULL;
 
-	if(checkrealbox("HD51") == 0)
+	if(checkrealbox("HD51") == 0 && checkrealbox("HD60") == 0 && checkrealbox("HD61") == 0)
 	{
 		ret = getaacchoices();
 		changeinput(aacmode, ret);
@@ -197,8 +197,8 @@ void screenavsettings(int flag)
 	}
 	else
 		aacmode->hidden = YES;
-	
-	if((checkrealbox("HD51") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && ac3plusmode != NULL)
+
+	if((checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1) && ac3plusmode != NULL)
 	{
 		if(getconfigint("av_can_ac3plusmode", NULL) == YES)
 		{
@@ -249,7 +249,7 @@ void screenavsettings(int flag)
 		aacmode->hidden = YES;
 #endif
 
-	if(checkrealbox("HD51") == 0)
+	if(checkrealbox("HD51") == 0 && checkrealbox("HD60") == 0 && checkrealbox("HD61") == 0)	
 	{	
 		ret = getwsschoices();
 		changeinput(wssmode, ret);
