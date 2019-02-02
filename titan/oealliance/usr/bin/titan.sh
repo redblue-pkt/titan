@@ -33,12 +33,22 @@ startautofsrestart()
 		starthotplug
 }
 
+startnetworkrestart()
+{
+		echo "[$0] startnetworkrestart"
+		if [ ! -L /etc/network/interfaces ];then
+			rm /etc/network/interfaces
+			ln -s /mnt/network/interfaces /etc/network/interfaces
+		fi
+}
+
 startmnt()
 {
 	echo "[$0] startmnt"
 	if [ -L /mnt ];then
 		rm -f /mnt
 		startautofsrestart
+		startnetworkrestart
 	fi
 
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
