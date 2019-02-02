@@ -16,9 +16,9 @@ starthotplug()
 	hotplug.sh first
 }
 
-startautofsrestart()
+startautofs()
 {
-		echo "[$0] startautofsrestart"
+		echo "[$0] startautofs"
 		mkdir -p /mnt/network
 		cp /etc/titan.restore/mnt/network/auto.misc /mnt/network
 		if [ ! -L /etc/auto.network ];then
@@ -29,7 +29,8 @@ startautofsrestart()
 			mv /etc/udev/mount-helper.sh /etc/udev/mount-helper_oe.sh
 			ln -s /sbin/hotplug.sh /etc/udev/mount-helper.sh
 		fi
-		/etc/init.d/autofs restart
+
+		if [ "$1" == "restart" ];then /etc/init.d/autofs restart;fi
 		starthotplug
 }
 
@@ -52,7 +53,7 @@ startmnt()
 	echo "[$0] startmnt"
 	if [ -L /mnt ];then
 		rm -f /mnt
-		startautofsrestart
+		startautofs restart
 		startnetwork link
 	fi
 
