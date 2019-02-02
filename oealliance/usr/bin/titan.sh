@@ -40,6 +40,10 @@ startnetworkrestart()
 			rm /etc/network/interfaces
 			ln -s /mnt/network/interfaces /etc/network/interfaces
 		fi
+		if [ ! -L /etc/resolv.conf ];then
+			rm /etc/resolv.conf
+			ln -s /mnt/network/resolv.conf /etc/resolv.conf
+		fi
 		/etc/init.d/networking restart
 }
 
@@ -224,8 +228,29 @@ startplugins()
 	fi
 }
 
-startEmu() {
+startemu()
+{
 	emu.sh "start" "" &
+}
+
+checkemu()
+{
+	emuret=`emu.sh check | grep "checkemu running emu="`
+	if [ -z "$emuret" ]; then
+		startemu restart
+	fi
+}
+
+startusercmd()
+{
+	if [ -e /mnt/config/usercmd.sh ]; then
+		/mnt/config/usercmd.sh
+	fi
+}
+
+startdropcaches()
+{
+	echo 3 > /proc/sys/vm/drop_caches
 }
 
 startgui()
@@ -307,13 +332,22 @@ startgui()
 	esac
 }
 
-startmnt
-startplugins
-starthotplug
-startEmu
-startopkg
-startdate
-startbootlogo
-startlibs
-starthomedir
-startgui
+case $1 in
+	first)
+		startmnt
+		startplugins
+		starthotplug
+		startemu
+		startopkg
+		startdate
+		startbootlogo
+		startlibs
+		starthomedir
+		startgui;;
+	last)
+		checkemu
+		startusercmd;;
+	reboot)
+		startdropcaches;;
+esac
+
