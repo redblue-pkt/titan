@@ -44,7 +44,7 @@ startnetworkrestart()
 			rm /etc/resolv.conf
 			ln -s /mnt/network/resolv.conf /etc/resolv.conf
 		fi
-		/etc/init.d/networking restart
+		if [ "$1" == "restart" ];then /etc/init.d/networking restart;fi
 }
 
 startmnt()
@@ -53,6 +53,7 @@ startmnt()
 	if [ -L /mnt ];then
 		rm -f /mnt
 		startautofsrestart
+		startnetwork link
 	fi
 
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
@@ -126,7 +127,7 @@ startmnt()
 		#	sleep 2
 			reboot
 		fi
-		startnetworkrestart
+		startnetwork restart
 	fi
 }
 
