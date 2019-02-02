@@ -256,8 +256,101 @@ startdropcaches()
 
 startgui()
 {
+	STARTDEFAULT="/usr/local/bin/titan /mnt/config/titan.cfg"
+
+	if [ -e "/var/etc/.checkdualboot" ] && [ -e "/usr/bin/enigma2" ];then
+#		startbootlogo
+		(sleep 10; killall infobox) &
+		pid=$!
+		if [ -e "/mnt/config/dualboot" ];then
+			infobox -pos -1 75% GUI#2 "Aktiviere Auswahlmenu (TitanNit/Enigma2)" "  Dualboot - nein" "  Dualboot - ja" ; ret=$?
+		else
+			infobox -pos -1 75% GUI#1 "Aktiviere Auswahlmenu (TitanNit/Enigma2)" "  Dualboot - nein" "  Dualboot - ja" ; ret=$?
+		fi
+		kill -9 $pid
+		echo " " > /dev/vfd
+
+		if [ "$ret" = "2" ];then
+			infobox -pos -1 75% 2 "Dualboot"  "  an" &
+			echo enable dualboot
+			touch /mnt/config/dualboot
+		else
+			if [ "$ret" = "1" ];then
+				rm /mnt/config/dualboot
+				infobox -pos -1 75% 2 "Dualboot" "  aus" &
+			else
+				if [ -e "/mnt/config/dualboot" ];then
+					infobox -pos -1 75% 2 "Dualboot"  "  an" &
+				else
+					infobox -pos -1 75% 2 "Dualboot" "  aus" &
+				fi
+			fi
+		fi
+		echo "Starting" > /dev/vfd
+		echo remove checkdualboot flag
+		rm -f /var/etc/.checkdualboot
+		sync
+		sleep 10
+#	else
+#		rm -f /etc/rc2.d/*
+#		rm -f /etc/rc3.d/*
+#		rm -f /etc/rcS.d/*
+	fi
+
+	# kill webif
 	fuser -k 80/tcp
-	LD_PRELOAD=$LIBS /usr/local/bin/titan /mnt/config/titan.cfg
+
+	if [ -e /mnt/config/dualboot ] && [ -e "/usr/bin/enigma2" ];then
+		if [ ! -e /mnt/config/dualboot.titan ] && [ ! -e /mnt/config/dualboot.enigma2 ] || [ -e /mnt/config/dualboot.titan ];then
+
+			(sleep 10; killall infobox) &
+			pid=$!
+			infobox -pos -1 75% GUI#1 "++ DualBoot-Auswahl ++" "---- TitanNit  ----" "---- Enigma2 ----" ; ret=$?
+			kill -9 $pid
+			echo " " > /dev/vfd
+
+			case $ret in
+				2)
+					START="/usr/bin/enigma2"
+					rm -f /mnt/config/dualboot.titan
+					touch /mnt/config/dualboot.enigma2
+					$STARTDEFAULT;;
+				*)
+					START="/usr/local/bin/titan /mnt/config/titan.cfg"
+					rm -f /mnt/config/dualboot.enigma2
+					touch /mnt/config/dualboot.titan;;
+			esac
+		else
+
+			(sleep 10; killall infobox) &
+			pid=$!
+			infobox -pos -1 75% GUI#2 "++ DualBoot-Auswahl ++" "---- TitanNit  ----" "---- Enigma2 ----" ; ret=$?
+			kill -9 $pid
+			echo " " > /dev/vfd
+
+			case $ret in
+				1)
+					START="/usr/local/bin/titan /mnt/config/titan.cfg"
+					rm -f /mnt/config/dualboot.enigma2
+					touch /mnt/config/dualboot.titan;;
+				*)
+					START="/usr/bin/enigma2"
+					rm -f /mnt/config/dualboot.titan
+					touch /mnt/config/dualboot.enigma2
+					$STARTDEFAULT;;
+			esac
+		fi
+	fi
+
+#	if [ "$START" = "/usr/bin/enigma2" ];then
+#		startInit3
+#		#/usr/bin/showiframe /usr/share/bootlogo.mvi
+#		startbootlogo
+#	fi
+
+	if [ -z "$START" ]; then START="$STARTDEFAULT"; fi
+
+	LD_PRELOAD=$LIBS $START
 
 	# titan exit codes:
 	#
