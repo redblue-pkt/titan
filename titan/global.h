@@ -2396,6 +2396,7 @@ int checkdev(char* dev)
 
 int setsaturation(int value)
 {
+#ifndef OEBUILD
 	char* saturationdev;
 
 	saturationdev = getconfig("saturationdev", NULL);
@@ -2405,12 +2406,13 @@ int setsaturation(int value)
 		debug(100, "set %s to %d", saturationdev, value);
 		return writesysint(saturationdev, value, 1);
 	}
-
+#endif
 	return 0;
 }
 
 int setbrightness(int value)
 {
+#ifndef OEBUILD
 	char* brightnessdev;
 
 	brightnessdev = getconfig("brightnessdev", NULL);
@@ -2420,12 +2422,13 @@ int setbrightness(int value)
 		debug(100, "set %s to %d", brightnessdev, value);
 		return writesysint(brightnessdev, value, 1);
 	}
-
+#endif
 	return 0;
 }
 
 int setcontrast(int value)
 {
+#ifndef OEBUILD
 	char* contrastdev;
 
 	contrastdev = getconfig("contrastdev", NULL);
@@ -2435,12 +2438,13 @@ int setcontrast(int value)
 		debug(100, "set %s to %d", contrastdev, value);
 		return writesysint(contrastdev, value, 1);
 	}
-
+#endif
 	return 0;
 }
 
 int settint(int value)
 {
+#ifndef OEBUILD
 	char* tintdev;
 
 	tintdev = getconfig("tintdev", NULL);
@@ -2450,7 +2454,7 @@ int settint(int value)
 		debug(100, "set %s to %d", tintdev, value);
 		return writesysint(tintdev, value, 1);
 	}
-
+#endif
 	return 0;
 }
 
