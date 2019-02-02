@@ -303,7 +303,7 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, len);
 			tmpvalue[8] = '\0';
 		}
-		else if(checkrealbox("HD51") == 1 && len > 16 && getconfigint("vfd_scroll", NULL) != 1)
+		else if((checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1) && len > 16 && getconfigint("vfd_scroll", NULL) != 1)
 		{
 			memcpy(tmpvalue, value, len);
 			tmpvalue[16] = '\0';

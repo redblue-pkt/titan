@@ -107,7 +107,7 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 		free(buf);
 	}
 	
-	if(checkrealbox("HD51") == 1 && type == DEMUXDEV)
+	if((checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1) && type == DEMUXDEV)
 		newnode->fedmxsource = -1;
 	
 	if(node != NULL)

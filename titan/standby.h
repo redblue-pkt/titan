@@ -17,7 +17,7 @@ void screenstandby()
 	}
 
 	//wenn ON dann startet die GUI bei einer Aufnahme neu
-	if(checkrealbox("HD51") == 1 || checkchipset("BCM7424") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("BCM7424") == 1)
 		addconfig("standbytuneroff", "0");
 
 	//check if all tuner unlocked, if yes set all volt off
