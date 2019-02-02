@@ -686,10 +686,10 @@ start:
 int wlanstart()
 {
 	int ret = 0;
-//#ifdef OEBUILD
+#ifdef OEBUILD
 	system("killall wpa_supplicant; sleep 2; killall -9 wpa_supplicant");
 	ret = system("wlan.sh");
-//#endif
+#endif
 
 	addinetworkall(NULL);
 
@@ -833,6 +833,10 @@ void screennetwork_wlan()
 							if(net != NULL)
 							{
 								net->type = 1; //dhcp
+#ifdef OEBUILD
+								writeinterfaces();
+								screennetwork_restart(NULL, 0);
+#endif
 								screennetwork_adapterext(0, net->device);
 							}
 						}
