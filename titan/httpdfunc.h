@@ -5677,15 +5677,15 @@ char* webgetupdatelist(char* param, int fmt)
 		buf = ostrcat(buf, "<br><br>", 1, 0);
 	}
 #ifdef OEBUILD
-		if(mode == 0)
-			tmpstr = command("ls -1 /tmp/online | grep '.nfi\\|.zip\\|.img' | sort -r");
+	if(mode == 0)
+		tmpstr = command("ls -1 /tmp/online | grep '.nfi\\|.zip\\|.img' | sort -r");
+	else
+	{
+		if(file_exist("/var/backup"))
+			tmpstr = command("ls -1 /var/backup/ | grep '.nfi\\|.zip\\|.img' | sort -r");
 		else
-		{
-			if(file_exist("/var/backup"))
-				tmpstr = command("ls -1 /var/backup/ | grep '.nfi\\|.zip\\|.img' | sort -r");
-			else
-				tmpstr = command("ls -1 /tmp | grep '.nfi\\|.zip\\|.img' | sort -r");
-		}
+			tmpstr = command("ls -1 /tmp | grep '.nfi\\|.zip\\|.img' | sort -r");
+	}
 #else
 	if(checkrealbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
@@ -5738,7 +5738,7 @@ char* webgetupdatelist(char* param, int fmt)
 		{
 			buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getupdate&", 1, 0);
 
-			if(ostrstr(ret1[i].part, "_FULL_") != NULL || ostrstr(ret1[i].part, "_FULLBACKUP.") != NULL || ostrstr(ret1[i].part, "_UPDATENFI_") != NULL)
+			if(ostrstr(ret1[i].part, "_FULL_") != NULL || ostrstr(ret1[i].part, "_FULLBACKUP.") != NULL || ostrstr(ret1[i].part, "_UPDATENFI_") != NULL || ostrstr(ret1[i].part, "_UPDATEUSB_") != NULL)
 			{
 //				if(checkrealbox("DM900") == 1)
 //					cmd = ostrcat(cmd, "/sbin/update2.sh ", 1, 0);
@@ -5763,10 +5763,18 @@ char* webgetupdatelist(char* param, int fmt)
 				cmd = ostrcat(cmd, ret1[i].part, 1, 0);
 
 				cmd = ostrcat(cmd, node->auth, 1, 0);
+#ifdef OEBUILD
+				if(node->imgtype == 1)
+					cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+				else
+					cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
+
+#else
 				if(node->imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+#endif
 				if(file_exist("/var/swap"))
 				{
 					if(!file_exist("/var/swap/logs"))
