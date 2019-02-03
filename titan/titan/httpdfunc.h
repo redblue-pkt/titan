@@ -5676,7 +5676,17 @@ char* webgetupdatelist(char* param, int fmt)
 		buf = ostrcat(buf, tmpstr, 1, 1);
 		buf = ostrcat(buf, "<br><br>", 1, 0);
 	}
-
+#ifdef OEBUILD
+		if(mode == 0)
+			tmpstr = command("ls -1 /tmp/online | grep '.nfi\|.zip\|.img' | sort -r");
+		else
+		{
+			if(file_exist("/var/backup"))
+				tmpstr = command("ls -1 /var/backup/ | grep '.nfi\|.zip\|.img' | sort -r");
+			else
+				tmpstr = command("ls -1 /tmp | grep '.nfi\|.zip\|.img' | sort -r");
+		}
+#else
 	if(checkrealbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
 		if(mode == 0)
@@ -5713,7 +5723,7 @@ char* webgetupdatelist(char* param, int fmt)
 				tmpstr = command("ls -1 /tmp | grep .img | sort -r");
 		}
 	}
-
+#endif
 	int count, i, max;
 	count = 0;
 	struct splitstr* ret1 = NULL;
