@@ -10,6 +10,14 @@ realbox=`cat /proc/stb/info/boxtype`
 arch=`cat /etc/.arch`
 board=`cat /etc/.board`
 
+startwebif()
+{
+	if [ ! -L /var/usr/local/share/titan/web/tmp ];then
+		rm -rf /var/usr/local/share/titan/web/tmp
+		ln -s /tmp /var/usr/local/share/titan/web/tmp
+	fi
+}
+
 starthotplug()
 {
 	echo "[$0] starthotplug"
@@ -55,6 +63,7 @@ startmnt()
 		rm -f /mnt
 		startautofs restart
 		startnetwork link
+		startwebif
 	fi
 
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
