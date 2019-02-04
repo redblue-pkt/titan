@@ -2049,7 +2049,11 @@ struct update* createupdatelist(int mode)
 		system(cmd);
 		free(cmd),cmd = NULL;
 		newnode->skinname = "systemupdate_usb_online_menu";
+#ifdef OEBUILD
+		newnode->filemask = ostrcat(newnode->filemask, "*.img *.nfi *.zip *.tar.gz", 1, 0);
+#else
 		newnode->filemask = ostrcat(newnode->filemask, "*.tar.gz", 1, 0);
+#endif
 		newnode->filepath = ostrcat(newnode->filepath, "/tmp/online", 1, 0);
 		newnode->type = ostrcat(newnode->type, "online", 1, 0);
 	}
