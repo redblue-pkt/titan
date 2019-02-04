@@ -31,14 +31,11 @@ void screensystem_update(int mode)
 	if(mode == 2 || mode == 3)
 	{
 #ifdef OEBUILD
-		char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\1/p' | sort -u");
+		char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sort -u");
 #else
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 #endif
 		char* rootpart = command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'");
-
-printf("devicelist: %s\n",devicelist);
-printf("rootpart: %s\n",rootpart);
 
 		if(devicelist != NULL && strlen(devicelist) != 0)
 		{
@@ -56,8 +53,6 @@ printf("rootpart: %s\n",rootpart);
 #else
 				label = get_label(pch);
 #endif
-printf("label: %s pch: %s\n",label, pch);
-
 				if(ostrstr(label, "MINI") != NULL || ostrstr(label, "STARTUP") != NULL)
 				{
 					cmd = ostrcat("cat /autofs/", pch, 0, 0);
@@ -251,10 +246,6 @@ printf("label: %s pch: %s\n",label, pch);
 						// send multiboot device to update.sh
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, device->text, 1, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, device->name, 1, 0);
 					}
 #else
 					if(node->imgtype == 1)
