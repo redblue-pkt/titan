@@ -64,6 +64,7 @@ startmnt()
 		startautofs restart
 		startnetwork link
 		startwebif
+		sleep 10
 	fi
 
 	if [ -e /var/etc/.erasemtd ] || [ ! -e /mnt/swapextensions ]; then
@@ -81,19 +82,21 @@ startmnt()
 		if [ -e /media/hdd/.update/.last ];then
 			BACKUPDIR=/media/hdd/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
+			echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
 			cp -a $BACKUPFILE/* /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
 		elif [ -e /var/backup/.update/.last ];then
 			BACKUPDIR=/var/backup/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
-			rm -f /mnt
+			echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
 			cp -a $BACKUPFILE/* /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
 		elif [ -e /var/swap/.update/.last ];then
 			BACKUPDIR=/var/swap/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
+			echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
 			cp -a $BACKUPFILE/* /mnt
 			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
 			sync
