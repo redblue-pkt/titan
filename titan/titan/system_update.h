@@ -246,7 +246,7 @@ printf("label: %s pch: %s\n",label, pch);
 					else
 						cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
 
-					if((mode == 2 || mode == 3) && device->ret != NULL && ostrstr(device->ret, "no device found", "no device found") != NULL)
+					if((mode == 2 || mode == 3) && device->ret != NULL && ostrstr(device->ret, "no device found") != NULL)
 					{
 						// send multiboot device to update.sh
 						cmd = ostrcat(cmd, " ", 1, 0);
