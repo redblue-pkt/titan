@@ -241,9 +241,9 @@ void screensystem_update(int mode)
 					else
 						cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
 
-					if((mode == 2 || mode == 3) && device->ret != NULL && ostrstr(device->ret, "no device found") != NULL)
+					if(mode == 2 || mode == 3)
 					{
-						// send multiboot device to update.sh
+						// send multiboot label
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
 					}
