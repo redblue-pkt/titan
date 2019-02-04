@@ -53,7 +53,7 @@ void screensystem_update(int mode)
 #else
 				label = get_label(pch);
 #endif
-				if(ostrstr(label, "MINI") != NULL)
+				if(ostrstr(label, "MINI") != NULL || ostrstr(label, "STARTUP") != NULL)
 				{
 					cmd = ostrcat("cat /autofs/", pch, 0, 0);
 					cmd = ostrcat(cmd, "/etc/version-svn", 1, 0);
