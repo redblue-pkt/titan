@@ -31,7 +31,7 @@ void screensystem_update(int mode)
 	if(mode == 2 || mode == 3)
 	{
 #ifdef OEBUILD
-		char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\/dev\/([^\/]+) rootfstype.*/\1/p' | sort -u");
+		char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\1/p' | sort -u");
 #else
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 #endif
