@@ -251,6 +251,10 @@ printf("label: %s pch: %s\n",label, pch);
 						// send multiboot device to update.sh
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, device->ret, 1, 0);
+						cmd = ostrcat(cmd, " ", 1, 0);
+						cmd = ostrcat(cmd, device->text, 1, 0);
+						cmd = ostrcat(cmd, " ", 1, 0);
+						cmd = ostrcat(cmd, device->name, 1, 0);
 					}
 #else
 					if(node->imgtype == 1)
