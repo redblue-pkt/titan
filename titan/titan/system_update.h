@@ -30,7 +30,11 @@ void screensystem_update(int mode)
 
 	if(mode == 2 || mode == 3)
 	{
+#ifdef OEBUILD
+		char* devicelist = command("cat /boot/STARTUP* | sed -nr 's#.*root=/dev/([^/]+) rootfstype.*#\1#p' | sort -u");
+#else
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
+#endif
 		char* rootpart = command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'");
 
 		if(devicelist != NULL && strlen(devicelist) != 0)
@@ -44,8 +48,11 @@ void screensystem_update(int mode)
 			while(pch != NULL)
 			{
 				count += 1;
+#ifdef OEBUILD
+				label= ostrcat("STARTUP_", oitoa(count), 0, 1);
+#else
 				label = get_label(pch);
-
+#endif
 				if(ostrstr(label, "MINI") != NULL)
 				{
 					cmd = ostrcat("cat /autofs/", pch, 0, 0);
@@ -233,6 +240,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 					else
 						cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
+
+					// send multiboot device to update.sh
+					cmd = ostrcat(cmd, device->ret, 1, 0);
 #else
 					if(node->imgtype == 1)
 						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);

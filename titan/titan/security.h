@@ -1259,7 +1259,9 @@ void setskinnodeslocked(int flag)
 
 #ifdef MIPSEL
 			if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
+#ifndef OEBUILD
 			if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = 1;
+#endif
 #endif
 			if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1)
 			{
@@ -1290,7 +1292,9 @@ void setskinnodeslocked(int flag)
 
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
+#ifndef OEBUILD
 			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
+#endif
 			else if(ostrcmp("sambasettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("nfssettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("mediaplayer", child->name) == 0)
