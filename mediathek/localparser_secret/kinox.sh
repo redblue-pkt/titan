@@ -290,7 +290,7 @@ kino()
 {
 #	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 #	rm $TMP/$FILENAME.list
-	if [ ! -e "$TMP/$FILENAME.sort.list" ]; then
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 #		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
 		$ACTIVEBIN "$URL/$PAGE" > $TMP/cache.$FILENAME.1
@@ -385,11 +385,11 @@ kino()
 			fi
 
 		done 3<$TMP/cache.$FILENAME.2
-		cat "$TMP/$FILENAME.list" | sort -r > "$TMP/$FILENAME.sort.list"
+		cat "$TMP/$FILENAME.list"
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 
 	fi
-	echo "$TMP/$FILENAME.sort.list"
+	echo "$TMP/$FILENAME.list"
 }
 
 case $INPUT in
