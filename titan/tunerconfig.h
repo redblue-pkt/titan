@@ -686,6 +686,16 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 			tmpstr = ostrcat(tuner->feshortname, "_hyprid", 0, 0);
 			addconfig(tmpstr, listbox->select->ret);
 			free(tmpstr); tmpstr = NULL;
+			
+			if(tuner->adapter < 10)
+				tmpstr = ostrcat(tmpstr, "fe_0", 1, 0);
+			else
+				tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
+	 	  tmpstr = ostrcat(tmpstr, "_hyprid", 0, 0);
+			addconfig(tmpstr, listbox->select->ret);
+
+			free(tmpstr); tmpstr = NULL;
+			
 			writeallconfig(1);
 
 			clearscreen(tunerreceptionhyprid);
