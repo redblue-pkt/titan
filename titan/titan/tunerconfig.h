@@ -702,11 +702,12 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 			char* realname = gethypridtunerchoicesvaluename(tuner->devnr, listbox->select->ret);
 			
 //			if(realname != NULL && ostrcmp(realname, "DVB-T2") == 0)
-			if(realname != NULL && ostrstr(realname, "DVB-T") != NULL)
+			if(realname != NULL && (ostrstr(realname, "DVB-T") != NULL || ostrcmp(realname, "DVB-T2") != NULL))
 			{
 				ret = screentunerreceptiondvbt(tuner);
 				if(ret == 1)
 				{
+					tuner->feinfo->type = FE_OFDM;
 /*#ifdef MIPSEL
 					sethypridtunernew(tuner, listbox->select->ret);
 #else
@@ -722,7 +723,6 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 							oshutdown(2, 1);
 					}
 					changedvbdev(tuner);
-					tuner->feinfo->type = FE_QAM;
 				}
 			}
 //			else if(realname != NULL && ostrcmp(realname, "DVB-C") == 0)
@@ -731,6 +731,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 				ret = screentunerreceptiondvbc(tuner);
 				if(ret == 1)
 				{
+					tuner->feinfo->type = FE_QAM;
 /*#ifdef MIPSEL
 					sethypridtunernew(tuner, listbox->select->ret);
 #else
@@ -746,7 +747,6 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 							oshutdown(2, 1);
 					}
 					changedvbdev(tuner);
-					tuner->feinfo->type = FE_OFDM;
 				}
 			}
 			free(realname), realname = NULL;
