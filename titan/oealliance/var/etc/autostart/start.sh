@@ -38,8 +38,10 @@ startautofs()
 			mv /etc/udev/mount-helper.sh /etc/udev/mount-helper_oe.sh
 			ln -s /sbin/hotplug.sh /etc/udev/mount-helper.sh
 		fi
+		cp /etc/titan.restore/etc/auto.master /etc/auto.master
 
 		if [ "$1" == "restart" ];then /etc/init.d/autofs restart;fi
+		if [ "$1" == "reload" ];then /etc/init.d/autofs reload;fi
 		starthotplug
 }
 
@@ -62,7 +64,7 @@ startmnt()
 	echo "[$0] startmnt"
 	if [ -L /mnt ];then
 		rm -f /mnt
-		startautofs restart
+		startautofs reload
 		startnetwork link
 		startwebif
 		sleep 10
