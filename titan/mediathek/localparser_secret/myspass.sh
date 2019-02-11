@@ -55,7 +55,7 @@ season()
 		$curlbin -o - $URL/$PAGE | sed 's/{"format_id":/\n{"format_id":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 			{
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
@@ -78,12 +78,12 @@ season()
 				i = index($0, "\"node_id\":\"") + 11
 	            j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
-				gsub(/\\/, "", newpage, newpage)
+				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
 	            j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
-				gsub(/\\/, "", pic, pic)
+				gsub(/\\/, "", pic)
 
 				piccount += 1
 				if ( pic == "" )
@@ -115,7 +115,7 @@ year()
 		$curlbin -o - $URL/$PAGE | sed 's/{"season_id":/\n{"season_id":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 			{
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
@@ -138,12 +138,12 @@ year()
 				i = index($0, "\"node_id\":\"") + 11
 	            j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
-				gsub(/\\/, "", newpage, newpage)
+				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
 	            j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
-				gsub(/\\/, "", pic, pic)
+				gsub(/\\/, "", pic)
 
 				piccount += 1
 				if ( pic == "" )
@@ -175,7 +175,7 @@ episodes()
 		$curlbin -o - $URL/$PAGE | sed 's/{"format":/\n{"format":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 			{
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
@@ -190,7 +190,7 @@ episodes()
 				i = index($0, "\"title\":\"") + 9
 	            j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
-				gsub(" - Teil 1", "", title, title)
+				gsub(" - Teil 1", "", title)
 
 				i = index($0, "\"season_name\":\"") + 15
 	            j = index(substr($0, i), "\",\"") - 1
@@ -207,12 +207,12 @@ episodes()
 				i = index($0, "\"myspass_url\":\"") + 15
 	            j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
-				gsub(/\\/, "", newpage, newpage)
+				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
 	            j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
-				gsub(/\\/, "", pic, pic)
+				gsub(/\\/, "", pic)
 
 				piccount += 1
 				if ( pic == "" )
@@ -241,7 +241,7 @@ search()
 		$curlbin -o - $URL/$PAGE | sed 's/{"uniqueID":/\n{"uniqueID":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 			{
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
@@ -263,14 +263,14 @@ search()
 				i = index($0, "\"url\":\"") + 7
 	            j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
-				gsub(/\\/, "", newpage, newpage)
+				gsub(/\\/, "", newpage)
 
 #			print "newpage: " newpage
 
 				i = index($0, "\"teaser\":\"") + 10
 	            j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
-				gsub(/\\/, "", pic, pic)
+				gsub(/\\/, "", pic)
 #			print "pic: " pic
 
 				piccount += 1

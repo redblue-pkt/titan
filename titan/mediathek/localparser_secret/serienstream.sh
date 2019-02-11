@@ -85,7 +85,7 @@ all()
 		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""'| sort -u | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 				{
 #					print "start"
 				}
@@ -141,7 +141,7 @@ season()
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 				{
 					suche = 0
 				}
@@ -207,7 +207,7 @@ episode()
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 				{
 					suche = 0
 				}
@@ -277,7 +277,7 @@ list()
 		$curlbin -o - $URL/$PAGE | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 				{
 					suche = 0
 				}
@@ -351,7 +351,7 @@ hosterlist()
 		$curlbin -o - $URL/$PAGE | tr -d '\n' | tr -d '\r' | sed 's/<li class="col-md-4 col-xs-12 col-sm-6/\n<li class="col-md-4 col-xs-12 col-sm-6/g' |  grep ^'<li class="col-md-4 col-xs-12 col-sm-6' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 				{
 					suche = 1
 				}

@@ -284,7 +284,6 @@ videos()
 					i = index($0, "<b>") + 3
 					j = index($0, "</b>") - i
 					title = substr($0, i, j)
-#					gsub("&ndash;", "-", title, title)
 					gsub("&ndash;", "-", title)
 					next
 				}

@@ -56,7 +56,7 @@ search()
 		$curlbin -o - $URL/$PAGE/$NEXT/ | tr '\n' ' ' | sed 's/<div class="poster"/\n<div class="poster"/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 			{
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
@@ -87,10 +87,10 @@ search()
 				i = index($0, "<a href=\"") + 9
 	            j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
-				gsub("http://openloadmovie.co/", "", newpage, newpage)
-				gsub("https://openloadmovie.co/", "", newpage, newpage)
-				gsub("http://openloadmovie.me/", "", newpage, newpage)
-				gsub("https://openloadmovie.me/", "", newpage, newpage)
+				gsub("http://openloadmovie.co/", "", newpage)
+				gsub("https://openloadmovie.co/", "", newpage)
+				gsub("http://openloadmovie.me/", "", newpage)
+				gsub("https://openloadmovie.me/", "", newpage)
 
 				i = index($0, "<img src=\"") + 10
 	            j = index(substr($0, i), "\"") - 1
@@ -99,7 +99,7 @@ search()
 				i = index($0, "alt=\"") + 5
 	            j = index(substr($0, i), "\"") - 1
 				title = substr($0, i, j)
-				gsub(" Openload Movies", "", title, title)
+				gsub(" Openload Movies", "", title)
 
 
 				piccount += 1
@@ -142,7 +142,7 @@ hoster()
 		$curlbin -o - $PAGE/ | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 			{
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
