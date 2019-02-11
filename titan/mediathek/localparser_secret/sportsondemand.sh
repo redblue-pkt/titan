@@ -202,7 +202,7 @@ videos()
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			# 1. BEGIN variable setzen
-			BEGIN
+			BEGIN \
 			{
 				# 2. setzt suchvariable auf 0 vor dem start
 				suche = 0
@@ -258,8 +258,8 @@ videos()
 				if (suche == 1)
 				{
 					i = index($0, "href=\"") + 6
-		            		j = index(substr($0, i), "\"") - 1
-		            		newpage = substr($0, i, j)
+					j = index(substr($0, i), "\"") - 1
+					newpage = substr($0, i, j)
 # disable eventifo link sometimes http://livetv.sx/enx/eventinfo/_oklahoma_chicago/ 
 # "An error has occurred. The link you clicked, or the URL you typed into your browser, did not work. It is possible that we have a bad link floating out there but you may also have typed the page address incorrectly."
 # workaround disable and list all links simultan
@@ -284,8 +284,8 @@ videos()
 					i = index($0, "<b>") + 3
 					j = index($0, "</b>") - i
 					title = substr($0, i, j)
-					gsub("&ndash;", "-", title, title)
-
+#					gsub("&ndash;", "-", title, title)
+					gsub("&ndash;", "-", title)
 					next
 				}
 			}
@@ -301,15 +301,15 @@ videos()
 				}
 			}
 			# <tr><td><nobr><a href="/enx/showvideo/437361/"><img src="//cdn.livetvcdn.net/img/v.gif"></a> <a class="small" href="/enx/showvideo/437361/">Full match record</a></nobr></td></tr>
-                        #
-                        #<tr><td><nobr><img src="//cdn.livetvcdn.net/img/v.gif"> <a class="small" href="/enx/showvideo/524797/">Full match record</a></nobr></td></tr>							
+			#
+			#<tr><td><nobr><img src="//cdn.livetvcdn.net/img/v.gif"> <a class="small" href="/enx/showvideo/524797/">Full match record</a></nobr></td></tr>							
 			/>Full match record<\/a>/ \
 			{
 				if(eventinfo == 0)
 				{
 					i = index($0, "href=\"") + 6
-		            		j = index(substr($0, i), "\"") - 1
-		            		fullmatch_newpage = substr($0, i, j)
+					j = index(substr($0, i), "\"") - 1
+					fullmatch_newpage = substr($0, i, j)
 					fullmatch_title = "Full"
 				}
 			}
@@ -319,8 +319,8 @@ videos()
 				if(eventinfo == 0)
 				{
 					i = index($0, "href=\"") + 6
-		            		j = index(substr($0, i), "\"") - 1
-		            		highlights_newpage = substr($0, i, j)
+					j = index(substr($0, i), "\"") - 1
+					highlights_newpage = substr($0, i, j)
 					highlights_title = "Highlights"
 
 				}
