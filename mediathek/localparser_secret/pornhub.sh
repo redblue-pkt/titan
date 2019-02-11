@@ -92,7 +92,7 @@ genre()
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			# 1. BEGIN variable setzen
-			BEGIN
+			BEGIN \
 			{
 				# 2. setzt suchvariable auf 0 vor dem start
 				suche = 0
@@ -166,7 +166,7 @@ genre()
 	
 						# 23. tausche leehrzeichen in punkte
 						# 24. titel = reife.frauen
-		            	gsub(" ", ".", picname, picname)
+		            	gsub(" ", ".", picname)
 						pic = "http://atemio.dyndns.tv/mediathek/menu/" picname ".jpg"
 					}
 	
@@ -292,7 +292,7 @@ search()
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 				{
 					# setzt suchvariable auf 0 vor dem start
 					suche = 1
@@ -575,7 +575,7 @@ pornstars()
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 				{
 					# setzt suchvariable auf 0 vor dem start
 					suche = 0

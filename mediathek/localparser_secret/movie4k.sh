@@ -639,7 +639,7 @@ hosterlist()
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
-			BEGIN
+			BEGIN \
 				{
 					suche = 1
 				}

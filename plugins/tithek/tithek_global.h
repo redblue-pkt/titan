@@ -669,6 +669,7 @@ char* createfilename1(char* title, char* title2)
 	filename = string_replace_all("-", "_", filename, 1);
 	filename = string_replace_all("._.", "_", filename, 1);
 	filename = string_replace_all(".._", "_", filename, 1);
+	filename = string_replace_all(":", ".", filename, 1);
 
 	return filename;
 }
@@ -796,6 +797,7 @@ char* createfilename(char* title, char* title2, int flag)
 		tmpstr = string_replace_all("-", "_", tmpstr, 1);
 		tmpstr = string_replace_all("._.", "_", tmpstr, 1);
 		tmpstr = string_replace_all(".._", "_", tmpstr, 1);
+		tmpstr = string_replace_all(":", ".", tmpstr, 1);
 		tmpstr = string_replace_all("..", ".", tmpstr, 1);
 	}
 	else
@@ -806,7 +808,7 @@ char* createfilename(char* title, char* title2, int flag)
 		tmpstr = string_replace_all("(", "", tmpstr, 1);
 		tmpstr = string_replace_all(")", "", tmpstr, 1);
 		tmpstr = string_replace_all("/", ".", tmpstr, 1);
-
+		tmpstr = string_replace_all(":", ".", tmpstr, 1);
 	}
 
 	if(flag == 0)
