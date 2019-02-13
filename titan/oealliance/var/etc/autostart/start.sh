@@ -65,7 +65,7 @@ startmnt()
 	if [ -L /mnt ];then
 		rm -f /mnt
 		startautofs reload
-		startnetwork link
+		startnetwork restart
 		startwebif
 		sleep 10
 	fi
