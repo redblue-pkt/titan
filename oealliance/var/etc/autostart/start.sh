@@ -64,7 +64,7 @@ startmnt()
 	echo "[$0] startmnt"
 	if [ -L /mnt ];then
 		rm -f /mnt
-		startautofs reload
+#		startautofs reload
 		startnetwork restart
 		startwebif
 		sleep 10
@@ -85,24 +85,36 @@ startmnt()
 		if [ -e /media/hdd/.update/.last ];then
 			BACKUPDIR=/media/hdd/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
-			echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
-			cp -a $BACKUPFILE/* /mnt
-			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
-			sync
+			if [ ! -z "$BACKUPFILE" ];then
+				echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
+				cp -a $BACKUPFILE/* /mnt
+				mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
+				sync
+			echo
+				echo "[$0] startmnt: skip cp -a $BACKUPFILE/* /mnt"
+			fi
 		elif [ -e /var/backup/.update/.last ];then
 			BACKUPDIR=/var/backup/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
-			echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
-			cp -a $BACKUPFILE/* /mnt
-			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
-			sync
+			if [ ! -z "$BACKUPFILE" ];then
+				echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
+				cp -a $BACKUPFILE/* /mnt
+				mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
+				sync
+			echo
+				echo "[$0] startmnt: skip cp -a $BACKUPFILE/* /mnt"
+			fi
 		elif [ -e /var/swap/.update/.last ];then
 			BACKUPDIR=/var/swap/.update
 			BACKUPFILE=$(cat $BACKUPDIR/.last)
-			echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
-			cp -a $BACKUPFILE/* /mnt
-			mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
-			sync
+			if [ ! -z "$BACKUPFILE" ];then
+				echo "[$0] startmnt: cp -a $BACKUPFILE/* /mnt"
+				cp -a $BACKUPFILE/* /mnt
+				mv -f $BACKUPDIR/.last $BACKUPDIR/.last.restored
+				sync
+			echo
+				echo "[$0] startmnt: skip cp -a $BACKUPFILE/* /mnt"
+			fi
 		else
 			infobox -pos -1 75% 10015 "MNT" "            Formatiere Laufwerk            " &
 			if [ -e /mnt ];then
@@ -446,7 +458,7 @@ case $1 in
 	first)
 		startmnt
 		startplugins
-		starthotplug
+#		starthotplug
 		startemu
 		startopkg
 		startdate
