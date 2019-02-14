@@ -160,7 +160,11 @@ int writeinterfaces()
 		if(net->type == 1)
 			savesettings = ostrcat(savesettings, " inet dhcp\n", 1, 0);
 		else if(net->type == 2)
+#ifdef OEBUILD
+			savesettings = ostrcat(savesettings, " inet manual\n", 1, 0);
+#else
 			savesettings = ostrcat(savesettings, " inet off\n", 1, 0);
+#endif
 		else
 		{
 			savesettings = ostrcat(savesettings, " inet static\n", 1, 0);
@@ -810,6 +814,7 @@ void screennetwork_wlan()
 						{
 							net->type = 2; //deaktivate
 							writeinterfaces();
+							system("ip addr flush dev eth0 scope global");
 							screennetwork_restart(net, 2);
 						}
 					}
