@@ -354,7 +354,11 @@ int addinetworkall(struct stimerthread* self)
 			{
 				cmd = ostrcat(cmd, "cat /mnt/network/interfaces | grep ", 1, 0);
 				cmd = ostrcat(cmd, tmp_device, 1, 0);
+#ifdef OEBUILD
+				cmd = ostrcat(cmd, " | grep manual | wc -l", 1, 0);
+#else
 				cmd = ostrcat(cmd, " | grep off | wc -l", 1, 0);
+#endif
 				tmpstr = command(cmd);
 				if(tmpstr != NULL && atoi(tmpstr) == 1)
 					tmp_type = 2;
