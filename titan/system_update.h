@@ -254,7 +254,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 #endif
 #ifdef OEBUILD
-					if(file_exist("/media/hdd/.update"))
+					if(file_exist("/media/hdd"))
 					{
 						if(!file_exist("/media/hdd/.update/logs"))
 							 mkdir("/media/hdd/.update/logs", 777);
@@ -262,7 +262,7 @@ void screensystem_update(int mode)
 						if(file_exist("/media/hdd/.update/logs"))
 							cmd = ostrcat(cmd, " > /media/hdd/.update/logs/update_debug.log 2>&1", 1, 0);		
 					}
-					else if(file_exist("/var/backup/.update"))
+					else if(file_exist("/var/backup"))
 					{
 						if(!file_exist("/var/backup/.update/logs"))
 							 mkdir("/var/backup/.update/logs", 777);
@@ -270,7 +270,7 @@ void screensystem_update(int mode)
 						if(file_exist("/var/backup/.update/logs"))
 							cmd = ostrcat(cmd, " > /var/backup/.update/logs/update_debug.log 2>&1", 1, 0);		
 					}
-					else if(file_exist("/var/swap/.update"))
+					else if(file_exist("/var/swap"))
 					{
 						if(!file_exist("/var/swap/.update/logs"))
 							 mkdir("/var/swap/.update/logs", 777);
