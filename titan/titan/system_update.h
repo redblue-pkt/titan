@@ -253,12 +253,39 @@ void screensystem_update(int mode)
 					else
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 #endif
+#ifdef OEBUILD
+					if(file_exist("/media/hdd/.update"))
+					{
+						if(!file_exist("/media/hdd/.update/logs"))
+							 mkdir("/media/hdd/.update/logs", 777);
+					
+						if(file_exist("/media/hdd/.update/logs"))
+							cmd = ostrcat(cmd, " > /media/hdd/.update/logs/update_debug.log 2>&1", 1, 0);		
+					}
+					else if(file_exist("/var/backup/.update"))
+					{
+						if(!file_exist("/var/backup/.update/logs"))
+							 mkdir("/var/backup/.update/logs", 777);
+					
+						if(file_exist("/var/backup/.update/logs"))
+							cmd = ostrcat(cmd, " > /var/backup/.update/logs/update_debug.log 2>&1", 1, 0);		
+					}
+					else if(file_exist("/var/swap/.update"))
+					{
+						if(!file_exist("/var/swap/.update/logs"))
+							 mkdir("/var/swap/.update/logs", 777);
+					
+						if(file_exist("/var/swap/.update/logs"))
+							cmd = ostrcat(cmd, " > /var/swap/.update/logs/update_debug.log 2>&1", 1, 0);		
+					}
+
+#else
 					if(file_exist("/var/swap"))
 					{
 						if(!file_exist("/var/swap/logs"))
 							 mkdir("/var/swap/logs", 777);
 					
-						if(file_exist("/etc/.test") && file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
+						if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
 							cmd = ostrcat(cmd, " > /var/swap/logs/update_debug.log 2>&1", 1, 0);		
 					}
 					else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1 && checkbox("DM520") != 1&& checkbox("DM525") != 1)
@@ -269,7 +296,7 @@ void screensystem_update(int mode)
 						if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
 							cmd = ostrcat(cmd, " > /mnt/logs/update_debug.log 2>&1", 1, 0);
 					}
-
+#endif
 					if(ostrstr(filelist->select->text, "_FULL_") != NULL)
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					else if(ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL)
