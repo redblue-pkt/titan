@@ -634,6 +634,7 @@ start:
 		if(tmp != NULL)
 		{
 			tmpstr = ostrcat(inetworknode->device, " (", 0, 0);
+			printf("inetworknode->device: %s inetworknode->ip: %s inetworknode->type: %d\n", inetworknode->device, inetworknode->ip, inetworknode->type);
 			if(inetworknode->type == 2)
 				tmpstr = ostrcat(tmpstr, _("disable"), 1, 0);
 			else
