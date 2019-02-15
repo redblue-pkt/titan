@@ -258,7 +258,7 @@ void screensystem_update(int mode)
 						if(!file_exist("/var/swap/logs"))
 							 mkdir("/var/swap/logs", 777);
 					
-						if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
+						if(file_exist("/etc/.test") && file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
 							cmd = ostrcat(cmd, " > /var/swap/logs/update_debug.log 2>&1", 1, 0);		
 					}
 					else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1 && checkbox("DM520") != 1&& checkbox("DM525") != 1)
