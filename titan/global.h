@@ -2247,7 +2247,7 @@ int checkdate()
 {
 	time_t dvbtime = 0;
 
-	if(time(NULL) < 1072224000 || status.timeupdatecount > 3600) // 01.01.2004
+	if(timeokw == 0 || time(NULL) < 1072224000 || status.timeupdatecount > 3600) // 01.01.2004
 	{
 		if(dvbgetdate(&dvbtime, 10000000) == 0) //10 sek
 		{
@@ -2256,6 +2256,7 @@ int checkdate()
 			setrtctimemips();
 #endif
 			status.timeupdatecount = 0;
+			timeokw = 1;
 			return 0;
 		}
 		return 1;
