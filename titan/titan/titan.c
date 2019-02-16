@@ -62,6 +62,8 @@ struct style* style = NULL;
 struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
 struct channelslot *channelslot = NULL;
 
+int timeokw = 0;
+
 #ifdef SH4
 #include "sh4port.h"
 #endif
@@ -1045,7 +1047,7 @@ int main(int argc, char *argv[])
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
-
+	timeokw = 0;
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
 	if(checkbox("ATEMIO510") == 0)
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
