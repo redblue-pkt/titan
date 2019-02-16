@@ -1047,7 +1047,12 @@ int main(int argc, char *argv[])
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
+//workaround fuer time im neuen Image
+#ifdef OEBUILD	
 	timeokw = 0;
+#else
+	timeokw = 1;
+#endif
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
 	if(checkbox("ATEMIO510") == 0)
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
