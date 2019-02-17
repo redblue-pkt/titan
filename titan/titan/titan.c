@@ -1050,6 +1050,8 @@ int main(int argc, char *argv[])
 //workaround fuer time im neuen Image
 #ifdef OEBUILD	
 	timeokw = 0;
+	if(file_exist("/bin/fake-hwclock"))
+		system("mv /bin/fake-hwclock /bin/fake-hwclock_test");
 #else
 	timeokw = 1;
 #endif
