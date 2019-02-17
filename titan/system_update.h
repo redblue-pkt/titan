@@ -257,7 +257,7 @@ void screensystem_update(int mode)
 					if(file_exist("/media/hdd"))
 					{
 						if(!file_exist("/media/hdd/.update/logs"))
-							 mkdir("/media/hdd/.update/logs", 777);
+							 mkdir("/media/hdd/.update/logs", 0777);
 					
 						if(file_exist("/media/hdd/.update/logs"))
 							cmd = ostrcat(cmd, " > /media/hdd/.update/logs/update_debug.log 2>&1", 1, 0);		
@@ -265,7 +265,7 @@ void screensystem_update(int mode)
 					else if(file_exist("/var/backup"))
 					{
 						if(!file_exist("/var/backup/.update/logs"))
-							 mkdir("/var/backup/.update/logs", 777);
+							 mkdir("/var/backup/.update/logs", 0777);
 					
 						if(file_exist("/var/backup/.update/logs"))
 							cmd = ostrcat(cmd, " > /var/backup/.update/logs/update_debug.log 2>&1", 1, 0);		
@@ -273,7 +273,7 @@ void screensystem_update(int mode)
 					else if(file_exist("/var/swap"))
 					{
 						if(!file_exist("/var/swap/.update/logs"))
-							 mkdir("/var/swap/.update/logs", 777);
+							 mkdir("/var/swap/.update/logs", 0777);
 					
 						if(file_exist("/var/swap/.update/logs"))
 							cmd = ostrcat(cmd, " > /var/swap/.update/logs/update_debug.log 2>&1", 1, 0);		
