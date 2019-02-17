@@ -263,7 +263,11 @@ void screensystem_update(int mode)
 							 mkdir("/media/hdd/.update/logs", 777);
 
 						if(file_exist("/media/hdd/.update/logs"))
-							cmd = ostrcat(cmd, " > /media/hdd/.update/logs/update_debug.log 2>&1", 1, 0);		
+						{
+							cmd = ostrcat(cmd, " > /media/hdd/.update/logs/update_", 1, 0);		
+							cmd = ostrcat(cmd, getboxtype(), 1, 0);
+							cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
+						}
 					}
 					else if(file_exist("/var/backup"))
 					{
@@ -274,7 +278,11 @@ void screensystem_update(int mode)
 							 mkdir("/var/backup/.update/logs", 777);
 					
 						if(file_exist("/var/backup/.update/logs"))
-							cmd = ostrcat(cmd, " > /var/backup/.update/logs/update_debug.log 2>&1", 1, 0);		
+						{
+							cmd = ostrcat(cmd, " > /var/backup/.update/logs/update_", 1, 0);		
+							cmd = ostrcat(cmd, getboxtype(), 1, 0);
+							cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
+						}
 					}
 					else if(file_exist("/var/swap"))
 					{
@@ -285,9 +293,12 @@ void screensystem_update(int mode)
 							 mkdir("/var/swap/.update/logs", 777);
 					
 						if(file_exist("/var/swap/.update/logs"))
-							cmd = ostrcat(cmd, " > /var/swap/.update/logs/update_debug.log 2>&1", 1, 0);		
+						{
+							cmd = ostrcat(cmd, " > /var/swap/.update/logs/update_", 1, 0);		
+							cmd = ostrcat(cmd, getboxtype(), 1, 0);
+							cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
+						}
 					}
-
 #else
 					if(file_exist("/var/swap"))
 					{

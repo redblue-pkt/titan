@@ -5678,13 +5678,13 @@ char* webgetupdatelist(char* param, int fmt)
 	}
 #ifdef OEBUILD
 	if(mode == 0)
-		tmpstr = command("ls -1 /tmp/online | grep '.nfi\\|.zip\\|.img' | sort -r");
+		tmpstr = command("ls -1 /tmp/online | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r");
 	else
 	{
 		if(file_exist("/var/backup"))
-			tmpstr = command("ls -1 /var/backup/ | grep '.nfi\\|.zip\\|.img' | sort -r");
+			tmpstr = command("ls -1 /var/backup/ | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r");
 		else
-			tmpstr = command("ls -1 /tmp | grep '.nfi\\|.zip\\|.img' | sort -r");
+			tmpstr = command("ls -1 /tmp | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r");
 	}
 #else
 	if(checkrealbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
@@ -5775,6 +5775,53 @@ char* webgetupdatelist(char* param, int fmt)
 				else
 					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 #endif
+#ifdef OEBUILD
+				if(file_exist("/media/hdd"))
+				{
+					if(!file_exist("/media/hdd/.update"))
+						 mkdir("/media/hdd/.update", 777);
+
+					if(!file_exist("/media/hdd/.update/logs"))
+						 mkdir("/media/hdd/.update/logs", 777);
+
+					if(file_exist("/media/hdd/.update/logs"))
+					{
+						cmd = ostrcat(cmd, " > /media/hdd/.update/logs/update_", 1, 0);		
+						cmd = ostrcat(cmd, getboxtype(), 1, 0);
+						cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
+					}
+				}
+				else if(file_exist("/var/backup"))
+				{
+					if(!file_exist("/var/backup/.update"))
+						 mkdir("/var/backup/.update", 777);
+
+					if(!file_exist("/var/backup/.update/logs"))
+						 mkdir("/var/backup/.update/logs", 777);
+				
+					if(file_exist("/var/backup/.update/logs"))
+					{
+						cmd = ostrcat(cmd, " > /var/backup/.update/logs/update_", 1, 0);		
+						cmd = ostrcat(cmd, getboxtype(), 1, 0);
+						cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
+					}
+				}
+				else if(file_exist("/var/swap"))
+				{
+					if(!file_exist("/var/swap/.update"))
+						 mkdir("/var/swap/.update", 777);
+
+					if(!file_exist("/var/swap/.update/logs"))
+						 mkdir("/var/swap/.update/logs", 777);
+				
+					if(file_exist("/var/swap/.update/logs"))
+					{
+						cmd = ostrcat(cmd, " > /var/swap/.update/logs/update_", 1, 0);		
+						cmd = ostrcat(cmd, getboxtype(), 1, 0);
+						cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
+					}
+				}
+#else
 				if(file_exist("/var/swap"))
 				{
 					if(!file_exist("/var/swap/logs"))
@@ -5791,6 +5838,7 @@ char* webgetupdatelist(char* param, int fmt)
 					if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
 						cmd = ostrcat(cmd, " > /mnt/logs/update_debug.log 2>&1", 1, 0);
 				}
+#endif
 				tmpstr1 = htmlencode(cmd);
 				buf = ostrcat(buf, tmpstr1, 1, 0);
 				free(tmpstr1), tmpstr1 = NULL;
