@@ -270,7 +270,7 @@ int playerstartts(char* file, int flag)
 	status.bufferpercent = 0;
 #endif
 	//supermagic = getsupermagic(file);
-	
+	printf("player--> playerstartts flag:%i\n", flag);
 	addconfig("lastplayertype", "1");
 
 	if(supermagic == NFS_SUPER_MAGIC || supermagic == SMB_SUPER_MAGIC)
@@ -361,7 +361,7 @@ int playerstartts(char* file, int flag)
 			}
 			free(testfile); testfile = NULL;
 		}
-				
+		printf("player--> create channel\n");		
 		delchannel(serviceid, 0, 1);
 		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0, -1);
 		if(chnode != NULL) chnode->pmtpid = pmtpid;
@@ -403,7 +403,9 @@ int playerstartts(char* file, int flag)
 		}
 	}
 
+	printf("player--> recordstartreal.. start\n");
 	ret = recordstartreal(NULL, fd, dvrnode->fd, RECPLAY, 0, NULL, tssize);
+	printf("player--> recordstartreal.. stop ret:%i\n",ret);
 	if(ret != 0)
 	{
 		err("start play thread");

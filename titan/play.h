@@ -1741,6 +1741,7 @@ playerstart:
 		drawscreen(skin, 0, 0);
 		drawscreen(load, 0, 0);
 		playwritevfd(file, showname);
+		printf("player--> playertype: %i\n", playertype);
 		if(playertype == 1)
 			rcret = playerstartts(file, 0);
 		else if(playertype == 2)
