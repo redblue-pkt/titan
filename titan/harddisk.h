@@ -801,7 +801,7 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext4") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
-endif
+#endif
 
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
 			
