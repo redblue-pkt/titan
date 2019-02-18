@@ -779,7 +779,7 @@ void hddformat(char* dev, char* filesystem)
 				backup = 1;
 		}
 			
-	
+#ifndef OEBUILD	
 		if(ostrcmp(filesystem, "vfat") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.fat.gui -F 32\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "jfs") == 0)
@@ -790,6 +790,18 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3.gui -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext4") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4.gui -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+#else
+		if(ostrcmp(filesystem, "vfat") == 0)
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.fat -F 32\" /dev/" , dev, 0, 0);
+		else if(ostrcmp(filesystem, "jfs") == 0)
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.jfs -q\" /dev/" , dev, 0, 0);
+		else if(ostrcmp(filesystem, "ext2") == 0)
+			cmd = ostrcat("/sbin/cmd.sh mkfs.ext2 /dev/" , dev, 0, 0);
+		else if(ostrcmp(filesystem, "ext3") == 0)
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+		else if(ostrcmp(filesystem, "ext4") == 0)
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+endif
 
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
 			
