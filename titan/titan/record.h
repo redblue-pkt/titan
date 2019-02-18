@@ -555,7 +555,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			return 1;
 		}
 	}
-	
+	printf("record.h--> recdmx:%i\n", servicenode->recdmxstart);
 	if(servicenode->recdmxstart == 0)
 	{
 		dmxstart(servicenode->dmxvideodev);
@@ -1144,6 +1144,7 @@ not needed we use wakeup_record_device on recordstartreal
 		posix_fadvise(fd, 0, 0, POSIX_FADV_RANDOM); //turn off kernel cache
 	}
 
+	printf("record.h--> addservice\n");
 	servicenode = addservice(NULL);
 	if(servicenode == NULL)
 	{
@@ -1155,7 +1156,7 @@ not needed we use wakeup_record_device on recordstartreal
 	servicenode->channel = chnode;
 	servicenode->transponder = tpnode;
 	if(rectimernode != NULL) servicenode->rectimestamp = ostrcat(rectimernode->timestamp, NULL, 0, 0);
-
+	printf("record.h--> filefd:%i\n",filefd);
 	if(filefd < 0 && chnode->serviceid != 65535)
 	{
 		//got frontend dev
@@ -1442,7 +1443,7 @@ not needed we use wakeup_record_device on recordstartreal
 
 	if(type != RECSTREAM && type != RECSTREAMENC && type != RECTIMESHIFT && type != RECPLAY)
 		recordwriteepg(filename, chnode, rectimernode);
-
+	printf("record.h--> readwritethread start\n");
 	//start readwrite thread
 	addtimer(&readwritethread, START, 1000, 1, (void*)servicenode, NULL, NULL);
 
