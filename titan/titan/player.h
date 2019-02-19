@@ -295,7 +295,7 @@ int playerstartts(char* file, int flag)
 		close(fd);
 		return 1;
 	}
-	printf("player-> dvrnode: %i:%i\n", dvrnode->devnr, dvrnode->->adapter);
+	printf("player-> dvrnode: %i:%i\n", dvrnode->devnr, dvrnode->adapter);
 	if(flag == 0 || flag == 2)
 	{
 		//TODO: funktion to get tssize from file content
