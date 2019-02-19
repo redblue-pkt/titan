@@ -295,7 +295,7 @@ case $1 in
 	first)
 #		startmnt
 #		startplugins
-#		starthotplug
+		starthotplug
 		startemu
 #		startopkg
 		startdate
