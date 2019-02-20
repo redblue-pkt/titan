@@ -1008,7 +1008,13 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 		path = ostrcat("find?q=", search, 0, 0);
 		path = ostrcat(path, "&s=nm", 1, 0);
 
-		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+//		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+		char* newurl = NULL;
+		newurl = ostrcat("www.imdb.com", "/", 0, 0);
+		newurl = ostrcat(newurl, path, 1, 0);
+		tmpstr = gethttps(newurl, NULL, NULL, NULL, NULL, NULL, 1);
+		free(newurl), newurl = NULL;
+ 
 		titheklog(debuglevel, "/tmp/kinox10_cast_tmpstr1", NULL, NULL, NULL, tmpstr);
 		tmpstr = string_replace_all("<td class=\"primary_photo\"> <a href=\"/name/", "\nfound=\"", tmpstr, 1);
 		titheklog(debuglevel, "/tmp/kinox10_cast_tmpstr2", NULL, NULL, NULL, tmpstr);
