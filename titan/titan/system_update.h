@@ -329,7 +329,8 @@ void screensystem_update(int mode)
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					else if(ostrstr(filelist->select->text, ".nfi") != NULL)
 						msgtxt = ostrcat(msgtxt, _("starting Nfi Update ?"), 1, 0);
-
+					else if(ostrstr(filelist->select->text, "_UPDATEUSB_") != NULL)
+						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 				}
 
 				clearscreen(systemupdate);
