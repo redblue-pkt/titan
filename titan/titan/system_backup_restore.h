@@ -32,8 +32,11 @@ void screensystem_backup_restore()
 			{
 				changetext(info, _("Please wait ...\n\nAll Settings are restored.\n\nBox will start in few seconds."));
 				drawscreen(backup_restore, 0, 0);
-
+#ifdef OEBUILD
+				if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+#else
 				if(isfile("/tmp/.backupdev") || file_exist("/var/backup"))
+#endif
 				{
 					ret = system("/sbin/settings.sh restore > /tmp/backup.log 2>&1");
 					if(ret != 0)
@@ -60,7 +63,11 @@ void screensystem_backup_restore()
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
+#ifdef OEBUILD
+			if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+#else
 			if(isfile("/tmp/.backupdev") || file_exist("/var/backup"))
+#endif
 			{
 				changetitle(backup_restore, _("Backup - Settings"));
 				changetext(info, _("Backup started\n\nPlease wait..."));

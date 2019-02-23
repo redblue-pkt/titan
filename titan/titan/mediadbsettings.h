@@ -20,7 +20,11 @@ void screenmediadbsettings()
 	if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
 		addchoicebox(mediadbpath, "/mnt/swapextensions/.mediadb", "/mnt/swapextensions/.mediadb");
 	addchoicebox(mediadbpath, "/media/hdd/.mediadb", "/media/hdd/.mediadb");
+#ifdef OEBUILD
+	if(file_exist("/media/.swapextensionsdev") == 1)
+#else
 	if(file_exist("/tmp/.swapextensionsdev") == 1)
+#endif
 		addchoicebox(mediadbpath, "/var/swap/.mediadb", "/var/swap/.mediadb");
 
 	setchoiceboxselection(mediadbpath, getconfig("mediadbpath", NULL));
