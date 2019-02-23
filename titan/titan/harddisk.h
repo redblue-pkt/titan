@@ -511,11 +511,13 @@ start:
 
 	while(hddnode != NULL)
 	{
+/*
 		if(mode == 2 && hddnode->partition == 0)
 		{
 			hddnode = hddnode->next;
 			continue;
 		}
+*/
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
