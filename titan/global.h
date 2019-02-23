@@ -7593,7 +7593,11 @@ char* getmoviedev()
 {
 	char* tmpstr = NULL, *buf = NULL;
 
+#ifdef OEBUILD
+	tmpstr = readfiletomem("/media/.moviedev", 1);
+#else
 	tmpstr = readfiletomem("/tmp/.moviedev", 1);
+#endif
 	printf("tmpstr: %s\n", tmpstr);
 
 	buf = oregex("sd([a-z]{1,1}).*", tmpstr);
