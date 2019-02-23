@@ -511,13 +511,16 @@ start:
 
 	while(hddnode != NULL)
 	{
-/*
-		if(mode == 2 && hddnode->partition == 0)
+
+		path = ostrcat("/media/usb-oe/", hddnode->device, 0, 0);
+		if(mode == 2 && !file_exist(path) && hddnode->partition == 0)
 		{
 			hddnode = hddnode->next;
+			free(path); path = NULL;
 			continue;
 		}
-*/
+		free(path); path = NULL;
+
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
