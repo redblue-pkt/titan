@@ -511,8 +511,11 @@ start:
 
 	while(hddnode != NULL)
 	{
-
+#ifdef OEBUILD
 		path = ostrcat("/media/usb-oe/", hddnode->device, 0, 0);
+#else
+		path = ostrcat("/media/usb/", hddnode->device, 0, 0);
+#endif
 		if(mode == 2 && !file_exist(path) && hddnode->partition == 0)
 		{
 			hddnode = hddnode->next;
