@@ -119,6 +119,12 @@ startdropcaches()
 	echo 3 > /proc/sys/vm/drop_caches
 }
 
+startrcreboot()
+{
+		RCDEV=`grep "rcdev=" /mnt/config/titan.cfg | cut -d "=" -f 2`
+		awk -f /etc/init.d/getfb.awk $RCDEV &
+}
+
 startgui()
 {
 	STARTDEFAULT="/usr/local/bin/titan /mnt/config/titan.cfg"
@@ -302,6 +308,7 @@ case $1 in
 		startbootlogo
 		startlibs
 		starthomedir
+		startrcreboot
 		startgui;;
 	last)
 		checkemu

@@ -256,45 +256,36 @@ void screensystem_update(int mode)
 #ifdef OEBUILD
 					if(file_exist("/media/hdd"))
 					{
-						if(!file_exist("/media/hdd/.update"))
-							 mkdir("/media/hdd/.update", 777);
+						if(!file_exist("/media/hdd/logs"))
+							 mkdir("/media/hdd/logs", 777);
 
-						if(!file_exist("/media/hdd/.update/logs"))
-							 mkdir("/media/hdd/.update/logs", 777);
-
-						if(file_exist("/media/hdd/.update/logs"))
+						if(file_exist("/media/hdd/logs"))
 						{
-							cmd = ostrcat(cmd, " > /media/hdd/.update/logs/update_", 1, 0);		
+							cmd = ostrcat(cmd, " > /media/hdd/logs/update_", 1, 0);		
 							cmd = ostrcat(cmd, getboxtype(), 1, 0);
 							cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
 						}
 					}
 					else if(file_exist("/var/backup"))
 					{
-						if(!file_exist("/var/backup/.update"))
-							 mkdir("/var/backup/.update", 777);
-
-						if(!file_exist("/var/backup/.update/logs"))
-							 mkdir("/var/backup/.update/logs", 777);
+						if(!file_exist("/var/backup/logs"))
+							 mkdir("/var/backup/logs", 777);
 					
-						if(file_exist("/var/backup/.update/logs"))
+						if(file_exist("/var/backup/logs"))
 						{
-							cmd = ostrcat(cmd, " > /var/backup/.update/logs/update_", 1, 0);		
+							cmd = ostrcat(cmd, " > /var/backup/logs/update_", 1, 0);		
 							cmd = ostrcat(cmd, getboxtype(), 1, 0);
 							cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
 						}
 					}
 					else if(file_exist("/var/swap"))
 					{
-						if(!file_exist("/var/swap/.update"))
-							 mkdir("/var/swap/.update", 777);
-
-						if(!file_exist("/var/swap/.update/logs"))
-							 mkdir("/var/swap/.update/logs", 777);
+						if(!file_exist("/var/swap/logs"))
+							 mkdir("/var/swap/logs", 777);
 					
-						if(file_exist("/var/swap/.update/logs"))
+						if(file_exist("/var/swap/logs"))
 						{
-							cmd = ostrcat(cmd, " > /var/swap/.update/logs/update_", 1, 0);		
+							cmd = ostrcat(cmd, " > /var/swap/logs/update_", 1, 0);		
 							cmd = ostrcat(cmd, getboxtype(), 1, 0);
 							cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
 						}
