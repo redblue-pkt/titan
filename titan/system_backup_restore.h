@@ -38,7 +38,11 @@ void screensystem_backup_restore()
 				if(isfile("/tmp/.backupdev") || file_exist("/var/backup"))
 #endif
 				{
+#ifdef OEBUILD
+					ret = system("/sbin/settings.sh restore /var/backup > /tmp/backup.log 2>&1");
+#else
 					ret = system("/sbin/settings.sh restore > /tmp/backup.log 2>&1");
+#endif
 					if(ret != 0)
 						textbox(_("Message"), _("Restore failed, see log"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 					else
@@ -76,9 +80,11 @@ void screensystem_backup_restore()
 				drawscreen(backup_restore, 0, 0);
 
 				writeallconfig(1);
-				
+#ifdef OEBUILD
+				ret = system("/sbin/settings.sh backup /var/backup > /tmp/backup.log 2>&1");
+#else
 				ret = system("/sbin/settings.sh backup > /tmp/backup.log 2>&1");
-	
+#endif
 				changetitle(backup_restore, _("Backup / Restore Settings"));
 				changetext(info, _(infotext));
 				info->textposx = 0;
