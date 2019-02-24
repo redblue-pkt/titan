@@ -2257,6 +2257,14 @@ int checkdate()
 #endif
 			status.timeupdatecount = 0;
 			timeokw = 1;
+#ifdef OEBUILD	
+			if(file_exist("/bin/fake-hwclock"))
+			{
+				system("/bin/fake-hwclock save force");
+				system("/bin/fake-hwclock load force");
+				system("mv /bin/fake-hwclock /bin/fake-hwclock_test");
+			}
+#endif
 			return 0;
 		}
 		return 1;
