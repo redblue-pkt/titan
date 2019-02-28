@@ -1048,7 +1048,7 @@ int main(int argc, char *argv[])
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
 //workaround fuer time im neuen Image
-#ifdef OEBUILD
+#ifdef OEBUILD 
 	timeokw = 0;
 #else
 	timeokw = 1;
