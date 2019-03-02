@@ -456,7 +456,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					int mirrormax = 1;
 					int j = 0;
 
-					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br/>.*", ret1[i].part);
+//					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br/>.*", ret1[i].part);
+					mirrormaxtmp = oregex("<b>Mirror</b>: .*/(.*)<br.*", ret1[i].part);
 
 					if(mirrormaxtmp != NULL)
 						mirrormax = atoi(mirrormaxtmp);
