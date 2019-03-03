@@ -1430,14 +1430,14 @@ start:
 			}
 			continue;
 		}
-		if(list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL) || rcret == getrcconfigint("rclast", NULL) || rcret == getrcconfigint("rcprev", NULL))) 
+		if(list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL) || rcret == getrcconfigint("rclast", NULL) || rcret == getrcconfigint("rcprev", NULL) || rcret == getrcconfigint("rcnext", NULL))) 
 		{
 			struct mainbouquet* tmpaktlist = ((struct mainbouquet*)aktlist);
 
 			int round = 0;
 			while(tmpaktlist != NULL)
 			{
-				if(rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcprev", NULL))
+				if(rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcprev", NULL) || rcret == getrcconfigint("rcnext", NULL))
 				{
 					tmpaktlist = tmpaktlist->next;
 					if(tmpaktlist == NULL && round == 0)	
