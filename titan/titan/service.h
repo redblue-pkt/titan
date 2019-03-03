@@ -440,12 +440,18 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		if(audionode != NULL)
 		{
 			audioselectsource(audionode, AUDIO_SOURCE_DEMUX);
+			if(checkchipset("3798MV200") == 1)
+			{
+				dmxstart(status.aktservice->dmxaudiodev);
+				audiopause(audionode);
+				audioplay(audionode);
+			}
 			audiosetbypassmode(audionode, chnode->audiocodec);
 			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
 				audiopause(audionode);
 			if(status.mute != 1)
 			{
-				if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200"))
+				if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 					dmxstart(status.aktservice->dmxaudiodev);
 				audioplay(audionode);
 			}
@@ -467,6 +473,15 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}
 		if(videonode != NULL)
 		{
+			if(checkchipset("3798MV200") == 1)
+			{
+				dmxstart(status.aktservice->dmxvideodev);
+				videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
+				videofreeze(videonode);
+				dmxstart(status.aktservice->dmxvideodev);
+				videoplay(videonode);
+				videocontinue(videonode);
+			}
 			videocontinue(videonode);
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
 			setencoding(chnode, videonode);
