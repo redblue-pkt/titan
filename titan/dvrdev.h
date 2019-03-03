@@ -17,6 +17,7 @@ struct dvbdev* dvropen(struct dvbdev* fenode)
 
 	if(node != NULL)
 	{
+		debug(200, "open dvr %s", node->dev);
 		if((fd = open(node->dev, O_WRONLY)) < 0)
 		{
 			debug(200, "open dvr failed %s", node->dev);
@@ -36,7 +37,8 @@ struct dvbdev* dvropen(struct dvbdev* fenode)
 int dvropendirect(char *dvrdev)
 {
 	int fd = -1;
-
+	
+	debug(200, "open direct dvr %s", dvrdev);
 	if((fd = open(dvrdev, O_WRONLY)) < 0)
 	{
 		debug(200, "open dvr failed %s", dvrdev);

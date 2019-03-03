@@ -45,6 +45,7 @@ struct dvbdev* dmxopen(struct dvbdev* fenode, int flag)
 
 	if(node != NULL)
 	{
+		debug(200, "open dmx %s", node->dev);
 		if(flag == 0)
 			fd = open(node->dev, O_RDWR);
 		if(flag == 1)
@@ -75,6 +76,7 @@ int dmxopendirect(char *dmxdev)
 {
 	int fd = -1;
 	
+	debug(200, "open direct dmx %s", dmxdev);
 	if((fd = open(dmxdev, O_RDWR)) < 0)
 	{
 		debug(200, "open dmx failed %s", dmxdev);
@@ -116,6 +118,8 @@ int dmxstop(struct dvbdev* node)
 
 int dmxstart(struct dvbdev* node)
 {
+	
+	debug(200, "start dmx ");
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -468,15 +472,19 @@ int dmxgetstc(struct dvbdev* node, int64_t* stc)
 
 int dmxsetsource(struct dvbdev* node, int source)
 {
+	debug(200, "dmxsetsource startet... sorce=%d", source);
 	if(node == NULL)
 	{
 		err("NULL detect");
 		return 1;
 	}
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("SF8008") == 1) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("3798MV200") == 1) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
 	{
 		if(node->fedmxsource == source)
+		{
+			debug(200, "workaround mutant");
 			return 0;
+		}
 	}
 
 #ifdef MIPSEL
@@ -486,6 +494,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 	{ 
 		int sourcehelp = DMX_SOURCE_DVR0;
 		ioctl(node->fd, DMX_SET_SOURCE, &sourcehelp);
+		debug(200, "woraround DMX_SET_SOURCE=%d", sourcehelp);
 		status.setdvr0 = 1;
 	}
 #endif
@@ -498,9 +507,9 @@ int dmxsetsource(struct dvbdev* node, int source)
 	}
 	else
 	{
-		if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("DM920") == 1 || checkbox("SF8008") == 1)
+		if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("DM920") == 1 || checkchipset("3798MV200") == 1)
 		{
-		  	struct dvbdev* nodeh = dvbdev;
+		  struct dvbdev* nodeh = dvbdev;
 			while(nodeh != NULL)
 			{
 				if(nodeh->type == DEMUXDEV && nodeh->adapter == node->adapter && nodeh->devnr == node->devnr)
@@ -510,6 +519,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 		}
 	}
 //#endif
+	debug(200, "dmxsetsource end");
 	return 0;
 }
 
