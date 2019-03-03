@@ -32,7 +32,7 @@ struct unicable* addunicable(char *line, int count, struct unicable* last)
 	}
 
 	ret = sscanf(line, "%[^#]#%[^#]#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d", manufacturer, product, &newnode->scr1, &newnode->scr2, &newnode->scr3, &newnode->scr4, &newnode->scr5, &newnode->scr6, &newnode->scr7, &newnode->scr8, &newnode->scr9, &newnode->scr10, &newnode->scr11, &newnode->scr12, &newnode->scr13, &newnode->scr14, &newnode->scr15, &newnode->scr16, &newnode->scr17, &newnode->scr18, &newnode->scr19, &newnode->scr20, &newnode->scr21, &newnode->scr22, &newnode->scr23, &newnode->scr24, &newnode->scr25, &newnode->scr26, &newnode->scr27, &newnode->scr28, &newnode->scr29, &newnode->scr30, &newnode->scr31, &newnode->scr32, &newnode->lofl, &newnode->lofh);
-	if(ret != 12)
+	if(ret != 36)
 	{
 		if(count > 0)
 		{
