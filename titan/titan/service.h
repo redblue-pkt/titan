@@ -300,7 +300,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 #endif		
 	audiostop(status.aktservice->audiodev);
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 )
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200") == 1)
 		dmxstop(status.aktservice->dmxaudiodev);
 
 // gost
@@ -503,7 +503,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 	if(status.mute != 1)
 	{
-		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 ))
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200") == 1)
 			dmxstart(status.aktservice->dmxaudiodev);
 		audioplay(status.aktservice->audiodev);
 	}
@@ -817,7 +817,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag == 4) node->type = STILLPIC;
 	
 		audiostop(node->audiodev);
-		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 )
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200") == 1)
 			dmxstop(status.aktservice->dmxaudiodev);
 
 		if(checkbox("VUSOLO2") == 1)
