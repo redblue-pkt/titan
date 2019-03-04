@@ -38,9 +38,9 @@ init()
 
 mainmenu()
 {
-	echo "Search Serien#$SRC $SRC searchtv '7tvsearch/search/query/%search%/type/format/offset/0/limit/5'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >$TMP/$FILENAME.list
-	echo "Search Clips#$SRC $SRC searchtv '7tvsearch/search/query/%search%/type/clip/offset/0/limit/5'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
-	echo "Search Ganue Folgen#$SRC $SRC searchtv '7tvsearch/search/query/%search%/type/episode/offset/0/limit/5'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Search Serien#$SRC $SRC search '7tvsearch/search/query/%search%/type/format/offset/0/limit/5'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >$TMP/$FILENAME.list
+	echo "Search Clips#$SRC $SRC search '7tvsearch/search/query/%search%/type/clip/offset/0/limit/5'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Search Ganue Folgen#$SRC $SRC search '7tvsearch/search/query/%search%/type/episode/offset/0/limit/5'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
