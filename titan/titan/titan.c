@@ -625,6 +625,10 @@ int main(int argc, char *argv[])
 	m_lock(&status.waitrcmutex, 24);
 	initvfd();
 
+	//Workaround für Framebuffer, es muss noch eine Funktion gebaut werden die fbset ersetzt.
+	if(checkchipset("BCM7424") == 1) //inihdp
+		system("fbset -g 1280 720 1280 1440 32");
+
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
 	if(checkchipset("BCM7424") == 1) //inihdp
