@@ -626,7 +626,7 @@ int main(int argc, char *argv[])
 	initvfd();
 
 	//Workaround für Framebuffer, es muss noch eine Funktion gebaut werden die fbset ersetzt.
-	if(checkchipset("BCM7424") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1) //inihdp
+	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1) //inihdp
 		system("fbset -g 1280 720 1280 1440 32");
 
 	if(checkbox("UFS922") == 1)
