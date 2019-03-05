@@ -1704,9 +1704,9 @@ playerstart:
 	if(file != NULL)
 	{
 		//if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(file, ".ts") == 0)
-		int noworaround = 1;
+		int noworkaround = 1;
 		if(checkchipset("3798MV200") == 1)
-			noworaround = getconfigint("playintern", NULL);
+			noworkaround = getconfigint("playintern", NULL);
 		if(cmpfilenameext(file, ".ts") == 0 && checkbox("VUSOLO2") != 1 && noworkaround == 1)
 		{
 			playertype = 1;
