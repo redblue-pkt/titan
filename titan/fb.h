@@ -447,11 +447,10 @@ void blitfb1()
 void changefbresolution(char *value, int flag)
 {
 	debug(444, "fb->colbytes: %d", fb->colbytes);
-#ifndef OEBUILD
 #ifdef MIPSEL
 	return;
 #endif
-#endif
+
 	if(ostrcmp("pal", value) == 0)
 	{
 		fb->width = 720;
