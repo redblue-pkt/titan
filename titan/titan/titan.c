@@ -849,7 +849,7 @@ int main(int argc, char *argv[])
 	waitvsync();
 	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 		setfbosd();
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || if(checkchipset("BCM7424") == 1))
 		setfbosdnull();
 	status.usedirectfb = 1;
 #endif
