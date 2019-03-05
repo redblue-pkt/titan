@@ -702,7 +702,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 			char* realname = gethypridtunerchoicesvaluename(tuner->devnr, listbox->select->ret);
 			
 //			if(realname != NULL && ostrcmp(realname, "DVB-T2") == 0)
-			if(realname != NULL && (ostrstr(realname, "DVB-T") != NULL || ostrcmp(realname, "DVB-T2") != NULL))
+			if(realname != NULL && (ostrstr(realname, "DVB-T") != NULL || ostrstr(realname, "DVB-T2") != NULL))
 			{
 				ret = screentunerreceptiondvbt(tuner);
 				if(ret == 1)
