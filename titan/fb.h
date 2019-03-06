@@ -639,4 +639,47 @@ void write_FB_to_JPEG_file(unsigned char *inbuffer, int image_width, int image_h
 	free(helpbuffer);
 }
 
+int setframebuffer(int width, int height, int vwidth, int vheight, int bits)
+{
+	struct fb_var_screeninfo var_screeninfo;
+	int fd = -1;
+	char *fbdev = getconfig("fbdev", NULL);
+	
+	if(fbdev == NULL)
+	{
+		err("failed to find fbdev in config file");
+		return -1;
+	}
+
+	fd = open(fbdev, O_RDWR);
+	if(fd == -1)
+	{
+		perr("failed to open %s", fbdev);
+		return -1;
+	}
+	
+	if(ioctl(fd, FBIOGET_VSCREENINFO, &var_screeninfo) < 0)
+	{
+		err("failed to read VSCREENINFO");
+		close(fd);
+		return -1;
+	}
+
+	var_screeninfo.xres = width;
+	var_screeninfo.yres = height;
+	var_screeninfo.xres_virtual = vwidth;
+	var_screeninfo.yres_virtual = vheight;
+	var_screeninfo.bits_per_pixel  = bits;
+
+	if(ioctl(fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
+	{
+		err("failed to put VSCREENINFO");
+		close(fd);
+		return -1;
+	}
+
+	close(fd);
+	return 0;	
+}
+
 #endif
