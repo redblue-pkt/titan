@@ -2060,7 +2060,11 @@ struct update* createupdatelist(int mode)
 	else if (mode == 3)
 	{
 		newnode->skinname = "systemupdate_usb_tmp_menu";
+#ifdef OEBUILD
+		newnode->filemask = ostrcat(newnode->filemask, "*.zip *.tar.gz *.tar.xz", 1, 0);
+#else
 		newnode->filemask = ostrcat(newnode->filemask, "*.tar.gz", 1, 0);
+#endif
 		if(file_exist("/var/backup"))
 			newnode->filepath = ostrcat(newnode->filepath, "/var/backup", 1, 0);
 		else
