@@ -567,6 +567,16 @@ int main(int argc, char *argv[])
 	printf("[%s] copyright by %s - version %s (%d)\n", PROGNAME, COPYRIGHT, OVERSION, PLUGINVERSION);
 	printf("[%s] crontribut: %s\n", PROGNAME, CRONTRIBUT);
 
+//workaround fuer time im neuen Image
+timeokw = 1;
+#ifdef OEBUILD 
+	if(file_exist("/bin/fake-hwclock"))
+	{
+		system("opkg remove fake-hwclock --force-depends");
+		timeokw = 0;
+	}
+#endif
+
 	sa.sa_handler = (void *)sighandler;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_RESTART;
@@ -1051,17 +1061,6 @@ int main(int argc, char *argv[])
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
-//workaround fuer time im neuen Image
-#ifdef OEBUILD 
-	timeokw = 0;
-	if(file_exist("/bin/fake-hwclock"))
-	{
-		system("/bin/fake-hwclock save");
-		system("mv /bin/fake-hwclock /bin/fake-hwclock_test");
-	}
-#else
-	timeokw = 1;
-#endif
 	addtimer(&checkdate, START, 2000, -1, NULL, NULL, NULL);
 	if(checkbox("ATEMIO510") == 0)
 		addtimer(&updatevfd, START, 1000, -1, NULL, NULL, NULL);
