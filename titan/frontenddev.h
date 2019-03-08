@@ -315,8 +315,12 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			dvbnode = dvbnode->next;
 			continue;
 		}
+		if(getconfigint("debug", NULL) == 200 && dvbnode->type == FRONTENDDEV)
+			debug(200, "fegetfree: dvbnode->feinfo-typ:%d tpnode->fetype:%d dvbnode->felock:%d dvbnode->devnr:%d dvbnode->feshortname:%s dvbnode->fehyprid:%s", dvbnode->feinfo->type, tpnode->fetype, dvbnode->felock, dvbnode->devnr, dvbnode->feshortname, dvbnode->fehyprid);
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype)
 		{
+			if(getconfigint("debug", NULL) == 200 && dvbnode->feakttransponder != NULL)
+				debug(200, "dvbnode->feakttransponder->orbitalpos:%d tpnode->orbitalpos:%d dvbnode->feakttransponder->frequency:%d tpnode->frequency:%d dvbnode->feaktpolarization:%d tpnode->polarization:%d", dvbnode->feakttransponder->orbitalpos, tpnode->orbitalpos, dvbnode->feakttransponder->frequency, tpnode->frequency, dvbnode->feaktpolarization, tpnode->polarization);
 			if(dvbnode->feakttransponder != NULL && dvbnode->felock == 0 && status.aktservice->fedev != dvbnode)
 			{
 				if(flag != 1) debug(200, "clear tuner %s", dvbnode->feshortname);
