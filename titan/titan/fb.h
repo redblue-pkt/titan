@@ -682,4 +682,65 @@ int setframebuffer(int width, int height, int vwidth, int vheight, int bits)
 	return 0;	
 }
 
+#ifdef OEBUILD 
+int saveframebuffer()
+{
+	int fd = -1;
+	char *fbdev = getconfig("fbdev", NULL);
+	
+	if(fbdev == NULL)
+	{
+		err("failed to find fbdev in config file");
+		return -1;
+	}
+
+	fd = open(fbdev, O_RDWR);
+	if(fd == -1)
+	{
+		perr("failed to open %s", fbdev);
+		return -1;
+	}
+	
+	if(ioctl(fd, FBIOGET_VSCREENINFO, &save_var_screeninfo) < 0)
+	{
+		err("failed to read VSCREENINFO");
+		close(fd);
+		return -1;
+	}
+
+	close(fd);
+	return 0;	
+}
+
+int restoreframebuffer()
+{
+	int fd = -1;
+	char *fbdev = getconfig("fbdev", NULL);
+	
+	if(fbdev == NULL)
+	{
+		err("failed to find fbdev in config file");
+		return -1;
+	}
+
+	fd = open(fbdev, O_RDWR);
+	if(fd == -1)
+	{
+		perr("failed to open %s", fbdev);
+		return -1;
+	}
+	
+	if(ioctl(fd, FBIOPUT_VSCREENINFO, &save_var_screeninfo) < 0)
+	{
+		err("failed to write VSCREENINFO");
+		close(fd);
+		return -1;
+	}
+
+	close(fd);
+	return 0;	
+}
+#endif
+
+
 #endif

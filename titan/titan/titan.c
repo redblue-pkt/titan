@@ -62,6 +62,10 @@ struct style* style = NULL;
 struct download* bgdownload[MAXBGDOWNLOAD] = {NULL};
 struct channelslot *channelslot = NULL;
 
+#ifdef OEBUILD 
+struct fb_var_screeninfo save_var_screeninfo;
+#endif
+
 int timeokw = 0;
 
 #ifdef SH4
