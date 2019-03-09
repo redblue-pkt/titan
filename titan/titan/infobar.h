@@ -645,7 +645,9 @@ void screeninfobar()
 					close(status.fdrctxt);
 					status.fdrctxt = -1;
 				}
+#ifndef OEBUILD 
 				system("resetfb.sh");
+#endif
 				enablemanualblit();
 #else
 				system(tmpstr);
