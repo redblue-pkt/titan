@@ -586,7 +586,9 @@ void screeninfobar()
 					tmpstr = ostrcat(tmpstr, " ", 1, 0);
 					tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
 				}
-        
+#ifdef OEBUILD         
+        saveframebuffer();
+#endif
 				drawscreen(skin, 0, 0);
 				status.tuxtxt = 1;
 #ifdef MIPSEL
@@ -652,6 +654,9 @@ void screeninfobar()
 
 				if(status.aktservice != NULL)
 					resetvmpeg(status.aktservice->videodev);
+#endif
+#ifdef OEBUILD 
+				restoreframebuffer();
 #endif
 				status.tuxtxt = 0;
 				free(tmpstr); tmpstr = NULL; tmpnr = NULL;
