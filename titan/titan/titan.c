@@ -576,6 +576,7 @@ timeokw = 1;
 #ifdef OEBUILD 
 	if(file_exist("/bin/fake-hwclock"))
 	{
+		printf("--> loesche fake-hwclock");
 		system("opkg remove fake-hwclock --force-depends");
 		timeokw = 0;
 	}
