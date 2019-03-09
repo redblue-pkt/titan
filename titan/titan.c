@@ -67,6 +67,7 @@ struct fb_var_screeninfo save_var_screeninfo;
 #endif
 
 int timeokw = 0;
+int timeokz = 0;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -579,6 +580,7 @@ timeokw = 1;
 		printf("--> loesche fake-hwclock");
 		system("opkg remove fake-hwclock --force-depends");
 		timeokw = 0;
+		timeokz = 0;
 	}
 #endif
 
