@@ -2090,6 +2090,7 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 		fesetvoltage(node, SEC_VOLTAGE_13, 10);
 	else
 //		fesetvoltage(node, SEC_VOLTAGE_OFF, 10);
+		//99 gleich SEC_VOLTAGE_OFF nur ohne loeschen node
 		fesetvoltage(node, 99, 10);
 	free(tmpstr); tmpstr = NULL;
 	
