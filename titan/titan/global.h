@@ -2257,7 +2257,7 @@ int checkdate()
 			setrtctimemips();
 #endif
 			status.timeupdatecount = 0;
-			if(timeok == 0)
+			if(timeokw == 0)
 			{
 				if(timeokz == 5)
 					timeokw = 1;
