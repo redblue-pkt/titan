@@ -944,6 +944,7 @@ int fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 int fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 {
 	int ret = 0;
+	int voltm = volt;
 	
 	if(node == NULL)
 	{
@@ -951,6 +952,10 @@ int fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 		return 1;
 	}
 
+	//DVB-T setzt Volt auch beim tunen und da sollte node nicht geloescht werden (siehe voltm)
+	if(voltm == 99)
+		volt = SEC_VOLTAGE_OFF;
+	
 	debug(200, "FE_SET_VOLT: %d (%s)", volt, node->feshortname);
 	if(ioctl(node->fd, FE_SET_VOLTAGE, volt) == -1)
 	{
@@ -962,7 +967,7 @@ int fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 		node->feaktvolt = volt;
 		if(wait > 0) usleep(wait * 1000);
 
-		if(volt == SEC_VOLTAGE_OFF && node->fetype != 2)
+		if(volt == SEC_VOLTAGE_OFF && voltm != 99)
 		{
 			node->feakttransponder = NULL;
 			node->felasttransponder = NULL;
@@ -2084,7 +2089,8 @@ int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	if(getconfigint(tmpstr, NULL) == 1)
 		fesetvoltage(node, SEC_VOLTAGE_13, 10);
 	else
-		fesetvoltage(node, SEC_VOLTAGE_OFF, 10);
+//		fesetvoltage(node, SEC_VOLTAGE_OFF, 10);
+		fesetvoltage(node, 99, 10);
 	free(tmpstr); tmpstr = NULL;
 	
 	
