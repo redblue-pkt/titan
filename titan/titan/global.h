@@ -2249,6 +2249,8 @@ int checkdate()
 	if(timeokw == 0 || time(NULL) < 1072224000 || status.timeupdatecount > 3600) // 01.01.2004
 	{
 		printf("--> check dvbtime");
+		if(timeokw == 0)
+			sleep 10
 		if(dvbgetdate(&dvbtime, 10000000) == 0) //10 sek
 		{
 			printf("--> set dvbtime");
@@ -2259,7 +2261,7 @@ int checkdate()
 			status.timeupdatecount = 0;
 			if(timeokw == 0)
 			{
-				if(timeokz == 5)
+				if(timeokz == 0)
 					timeokw = 1;
 				else
 					timeokz = timeokz + 1;
