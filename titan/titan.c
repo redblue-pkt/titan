@@ -579,11 +579,12 @@ timeokw = 1;
 	{
 		printf("--> loesche fake-hwclock");
 		system("opkg remove fake-hwclock --force-depends");
-		system("date 0101000003");
-		system("(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &");
 //		timeokw = 0;
 //		timeokz = 0;
 	}
+	system("date 0101000003");
+	if(getconfigint("nontpdate", NULL) == 0) 
+		system("(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &");
 #endif
 
 	sa.sa_handler = (void *)sighandler;
