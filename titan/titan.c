@@ -579,6 +579,7 @@ timeokw = 1;
 	{
 		printf("--> loesche fake-hwclock");
 		system("opkg remove fake-hwclock --force-depends");
+		oshutdown(2, 1);
 //		timeokw = 0;
 //		timeokz = 0;
 	}
