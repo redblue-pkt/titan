@@ -2250,7 +2250,7 @@ int checkdate()
 	{
 		printf("--> check dvbtime");
 		if(timeokw == 0)
-			sleep 4
+			sleep(4);
 		if(dvbgetdate(&dvbtime, 10000000) == 0) //10 sek
 		{
 			printf("--> set dvbtime");
