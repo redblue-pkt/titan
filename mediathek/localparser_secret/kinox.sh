@@ -291,7 +291,7 @@ search()
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 
-#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 	echo "$TMP/$FILENAME.list"
 }
@@ -299,8 +299,8 @@ search()
 kino()
 {
 #echo kino
-	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	rm $TMP/$FILENAME.list
+#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#	rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 #		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
@@ -380,7 +380,7 @@ kino()
 			fi
 
 		done 3<$TMP/cache.$FILENAME.2
-#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 
 	fi
 	echo "$TMP/$FILENAME.list"
