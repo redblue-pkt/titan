@@ -1,4 +1,4 @@
-#include "struct.h"
+#include "struct.h" 
 #ifdef CONFIG_ION
 #include "ion.h"
 #endif
@@ -577,9 +577,9 @@ timeokw = 1;
 #ifdef OEBUILD 
 	if(file_exist("/bin/fake-hwclock"))
 	{
-		printf("--> loesche fake-hwclock");
-		system("opkg remove fake-hwclock --force-depends");
-		oshutdown(2, 1);
+		//printf("--> loesche fake-hwclock");
+		//system("opkg remove fake-hwclock --force-depends");
+		//oshutdown(2, 1);
 		timeokw = 0;
 		timeokz = 0;
 	}

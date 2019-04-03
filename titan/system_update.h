@@ -1,4 +1,4 @@
-#ifndef SYSTEM_UPDATE_H
+#ifndef SYSTEM_UPDATE_H 
 #define SYSTEM_UPDATE_H
 
 void screensystem_update(int mode)
@@ -258,7 +258,7 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 #endif
 #ifdef OEBUILD
-					if(file_exist("/media/hdd"))
+					if(file_exist("/media/hdd") && isdir("/media/hdd"))
 					{
 						if(!file_exist("/media/hdd/logs"))
 							 mkdir("/media/hdd/logs", 777);
