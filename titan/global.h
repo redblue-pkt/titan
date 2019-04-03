@@ -2257,11 +2257,11 @@ int checkdate()
 			setsystime(&dvbtime);
 #ifdef MIPSEL
 			setrtctimemips();
-			if(file_exist("/bin/fake-hwclock"))
-			{
-				system("/bin/fake-hwclock save force");
-				system("/bin/fake-hwclock load force");
-			}
+//			if(file_exist("/bin/fake-hwclock"))
+//			{
+//				system("/bin/fake-hwclock save force");
+//				system("/bin/fake-hwclock load force");
+//			}
 #endif
 			status.timeupdatecount = 0;
 			if(timeokw == 0)

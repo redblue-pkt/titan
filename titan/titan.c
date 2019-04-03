@@ -574,15 +574,15 @@ int main(int argc, char *argv[])
 
 //workaround fuer time im neuen Image
 timeokw = 1;
-#ifdef OEBUILD 
-	if(file_exist("/bin/fake-hwclock"))
-	{
+//#ifdef OEBUILD 
+//	if(file_exist("/bin/fake-hwclock"))
+//	{
 		//printf("--> loesche fake-hwclock");
 		//system("opkg remove fake-hwclock --force-depends");
 		//oshutdown(2, 1);
-		timeokw = 0;
-		timeokz = 0;
-	}
+//		timeokw = 0;
+//		timeokz = 0;
+//	}
 //	if(getconfigint("nontpdate", NULL) == 0) 
 //		system("(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &");
 #endif
