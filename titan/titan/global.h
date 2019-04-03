@@ -1,4 +1,4 @@
-#ifndef GLOBAL_H
+#ifndef GLOBAL_H 
 #define GLOBAL_H
 
 //flag 0: video+gui+freez
@@ -2257,6 +2257,11 @@ int checkdate()
 			setsystime(&dvbtime);
 #ifdef MIPSEL
 			setrtctimemips();
+			if(file_exist("/bin/fake-hwclock"))
+			{
+				system("/bin/fake-hwclock save force");
+				system("/bin/fake-hwclock load force");
+			}
 #endif
 			status.timeupdatecount = 0;
 			if(timeokw == 0)
