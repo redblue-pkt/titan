@@ -567,7 +567,7 @@ int main(int argc, char *argv[])
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
 	mtrace();
 	status.security = 1;
-#endif
+#endif 
 
 	printf("[%s] copyright by %s - version %s (%d)\n", PROGNAME, COPYRIGHT, OVERSION, PLUGINVERSION);
 	printf("[%s] crontribut: %s\n", PROGNAME, CRONTRIBUT);
