@@ -5,7 +5,6 @@ if [ ! -e "$startconfig" ]; then startconfig="/etc/titan.restore/mnt/config/star
 . /sbin/start-progress
 . /sbin/start-function
 
-
 model=`cat /etc/model`
 realbox=`cat /proc/stb/info/boxtype`
 arch=`cat /etc/.arch`
