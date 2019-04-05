@@ -2242,7 +2242,7 @@ char* convert_dtimesec(int sec)
 
 	return buf;
 }
-
+ 
 int checkdate()
 {
 	time_t dvbtime = 0;
