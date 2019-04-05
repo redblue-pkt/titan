@@ -585,7 +585,7 @@ timeokw = 1;
 //	}
 //	if(getconfigint("nontpdate", NULL) == 0) 
 //		system("(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &");
-#endif
+//#endif
 
 	sa.sa_handler = (void *)sighandler;
 	sigemptyset(&sa.sa_mask);
