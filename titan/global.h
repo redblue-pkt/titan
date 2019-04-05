@@ -2245,7 +2245,7 @@ char* convert_dtimesec(int sec)
 
 int checkdate()
 {
-	time_t dvbtime = 0; 
+	time_t dvbtime = 0;
 	if(timeokw == 0 || time(NULL) < 1072224000 || status.timeupdatecount > 3600) // 01.01.2004
 	{
 		printf("--> check dvbtime");
