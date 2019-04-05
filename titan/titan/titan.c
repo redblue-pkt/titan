@@ -562,7 +562,7 @@ int main(int argc, char *argv[])
 	struct stimerthread *tmpthread = NULL;
 	//struct sched_param schedparam;
 
-#ifdef SIMULATE 
+#ifdef SIMULATE
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
 	mtrace();
