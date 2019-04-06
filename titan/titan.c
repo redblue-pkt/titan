@@ -1,4 +1,4 @@
-#include "struct.h" 
+#include "struct.h"
 #ifdef CONFIG_ION
 #include "ion.h"
 #endif
