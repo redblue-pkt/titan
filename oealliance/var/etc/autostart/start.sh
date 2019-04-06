@@ -54,7 +54,7 @@ startdate()
 # dm7020hdv2 ok
 #		(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &
 		echo "[startdate] ntpdate -b ptbtime1.ptb.de; /bin/fake-hwclock save force"
-		(ntpdate -b ptbtime1.ptb.de; /bin/fake-hwclock save force; date) &
+		(ntpdate -b ptbtime1.ptb.de; /bin/fake-hwclock save force; date; date -u) &
 }
 
 startbootlogo()
