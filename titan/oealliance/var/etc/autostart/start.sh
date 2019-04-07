@@ -53,8 +53,12 @@ startdate()
 {
 # dm7020hdv2 ok
 #		(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &
-		echo "[startdate] ntpdate -b ptbtime1.ptb.de; /bin/fake-hwclock save force"
-		(ntpdate -b ptbtime1.ptb.de; /bin/fake-hwclock save force; date; date -u) &
+#		echo "[startdate] ntpdate -b ptbtime1.ptb.de; /bin/fake-hwclock save force"
+#		(ntpdate -b ptbtime1.ptb.de; /bin/fake-hwclock save force; date; date -u) &
+		if [ -e /bin/fake-hwclock ]; then
+			opkg remove fake-hwclock --force-depends
+			date -d "1974-01-04"
+		fi
 }
 
 startbootlogo()
