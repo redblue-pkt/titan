@@ -61,6 +61,14 @@ startdate()
 		fi
 }
 
+startdelpack
+{
+	if [ -e /var/etc/.firstok ]; then
+		opkg remove minidlna --force-depends
+		rm /var/etc/.firstok
+	fi
+}
+
 startbootlogo()
 {
 	if [ -e /proc/stb/info/boxtype ]; then
@@ -313,6 +321,7 @@ case $1 in
 		startlibs
 		starthomedir
 		startrcreboot
+		startdelpack
 		startgui;;
 	last)
 		checkemu
