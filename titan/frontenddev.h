@@ -2034,7 +2034,9 @@ int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 		default: system = 1; break;
 #endif
 	}
-	
+	//Workaround... neue scan Tabelle ist in Khz und nicht mehr in Hz 
+	if(tpnode->frequency < 1000000)
+		tpnode->frequency = tpnode->frequency * 1000;
 	p[0].cmd = DTV_CLEAR;
 	p[1].cmd = DTV_DELIVERY_SYSTEM, p[1].u.data = system;
 	p[2].cmd = DTV_FREQUENCY,	p[2].u.data = tpnode->frequency;
