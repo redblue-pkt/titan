@@ -47,6 +47,16 @@ startlibs()
 		echo "create symlink /usr/lib/libcrypto.so.1.0.2 -> /usr/lib/libcrypto.so.1.0.0"
 		ln -s /usr/lib/libcrypto.so.1.0.2 /usr/lib/libcrypto.so.1.0.0
 	fi
+
+	if [ -e /usr/lib/libssl.so.1.0.2 ] && [ ! -e /usr/lib/libssl.so.0.9.8 ];then
+		echo "create symlink /usr/lib/libssl.so.1.0.2 -> /usr/lib/libssl.so.0.9.8"
+		ln -s /usr/lib/libssl.so.1.0.2 /usr/lib/libssl.so.0.9.8
+	fi
+
+	if [ -e /usr/lib/libcrypto.so.1.0.2 ] && [ ! -e /usr/lib/libcrypto.so.0.9.8 ];then
+		echo "create symlink /usr/lib/libcrypto.so.1.0.2 -> /usr/lib/libcrypto.so.0.9.80"
+		ln -s /usr/lib/libcrypto.so.1.0.2 /usr/lib/libcrypto.so.0.9.8
+	fi
 }
 
 startdate()
