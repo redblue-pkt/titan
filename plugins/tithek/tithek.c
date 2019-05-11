@@ -123,10 +123,10 @@ void start(void)
 	status.listboxselectcol = convertcol("tithek_selectcol");
 
 	if(getconfig("tithek_kinox_url", NULL) == NULL)
-		addconfigtmp("tithek_kinox_url", "http://kinox.mobi");
+		addconfigtmp("tithek_kinox_url", "http://kinox.party");
 
 	if(getconfig("tithek_kinox_localhoster", NULL) == NULL)
-		addconfigtmp("tithek_kinox_localhoster", "2");
+		addconfigtmp("tithek_kinox_localhoster", "1");
 
 	if(getconfig("tithek_kinox_pic", NULL) == NULL)
 		addconfigtmp("tithek_kinox_pic", "0");
