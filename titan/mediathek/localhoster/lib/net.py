@@ -464,7 +464,7 @@ class Net:
 
         url = url.rstrip('/')
 #        query = '%s/cdn-cgi/l/chk_jschl?jschl_vc=%s&jschl_answer=%s' % (url, jschl, answer)
-        query = '%s/cdn-cgi/l/chk_jschl?s=%s&jschl_vc=%s&jschl_answer=%s' % (url, urllib.quote_plus(s), jschl, answer)
+        query = '%s/cdn-cgi/l/chk_jschl?s=%s&jschl_vc=%s&jschl_answer=%s' % (url, s, jschl, answer)
 #        print "query1", query
 
         if 'type="hidden" name="pass"' in challenge:
@@ -472,7 +472,7 @@ class Net:
 #            query = '%s/cdn-cgi/l/chk_jschl?pass=%s&jschl_vc=%s&jschl_answer=%s' % \
 #                    (url, urllib.quote_plus(passval), jschl, answer)
             query = '%s/cdn-cgi/l/chk_jschl?s=%s&jschl_vc=%s&pass=%s&jschl_answer=%s' % \
-                    (url, urllib.quote_plus(s), jschl, passval, answer)
+                    (url, s, jschl, passval, answer)
 #            print "query2", query
 
             time.sleep(9)
