@@ -279,7 +279,7 @@ class Net:
         val = float(eval(chain))
         return val
 
-    def _extract_js(self, htmlcontent, domain):
+    def _extract_js_old(self, htmlcontent, domain):
         line1 = re.findall('var s,t,o,p,b,r,e,a,k,i,n,g,f, (.+?)={"(.+?)":\+*(.+?)};', htmlcontent)
         varname = line1[0][0] + '.' + line1[0][1]
         calc = self.parseInt(line1[0][2])
@@ -290,7 +290,103 @@ class Net:
         rep = calc + len(domain)
         return format(rep, '.10f')
 
-    def createUrl(sUrl, oRequest):
+#######################
+# neu
+#######################
+
+    def cf_sample_domain_function(self, func_expression, domain):
+#        print "cf_sample_domain_functio"
+        parameter_start_index = func_expression.find('}(') + 2
+        sample_index = self.cf_parse_expression(func_expression[parameter_start_index: func_expression.rfind(')))')])
+        return ord(domain[int(sample_index)])
+
+    def cf_arithmetic_op(self, op, a, b):
+#        print "cf_arithmetic_op"
+
+        if op == '+':
+            return a + b
+        elif op == '/':
+            return a / float(b)
+        elif op == '*':
+            return a * float(b)
+        elif op == '-':
+            return a - b
+        else:
+            raise Exception('Unknown operation')
+
+    def _get_jsfuck_number(self, section):
+#        print "_get_jsfuck_number"
+
+        digit_expressions = section.replace('!+[]', '1').replace('+!![]', '1').replace('+[]', '0').split('+')
+        return int(''.join(str(sum(int(digit_char) for digit_char in digit_expression[1:-1]))
+                               for digit_expression in digit_expressions))
+
+    def cf_parse_expression(self, expression, domain=None):
+#        print "cf_parse_expression"
+
+        if '/' in expression:
+            dividend, divisor = expression.split('/')
+            dividend = dividend[2:-1]
+            if domain:
+                divisor_a, divisor_b = divisor.split('))+(')
+                divisor_a = self._get_jsfuck_number(divisor_a[5:])
+                divisor_b = self.cf_sample_domain_function(divisor_b, domain)
+                return self._get_jsfuck_number(dividend) / float(divisor_a + divisor_b)
+            else:
+                divisor = divisor[2:-1]
+                return self._get_jsfuck_number(dividend) / float(self._get_jsfuck_number(divisor))
+        else:	
+            return self._get_jsfuck_number(expression[2:-1])
+	
+#    @staticmethod
+    def _extract_js(self, body, domain):
+#        print "1 body", body
+#        return "123"
+#        print "2 domain", domain
+
+        form_index = body.find('id="challenge-form"')
+#        print "3 form_index", form_index
+
+        sub_body = body[form_index:]
+#        print "4 sub_body", sub_body
+
+        if body.find('id="cf-dn-', form_index) != -1:
+            extra_div_expression = re.search('id="cf-dn-.*?>(.+?)<', sub_body).group(1)
+#            print "5 extra_div_expression", extra_div_expression
+
+        js_answer = self.cf_parse_expression(re.search('setTimeout\(function\(.*?:(.*?)}', body, re.DOTALL).group(1)) 
+#        print "6 js_answer", js_answer
+
+        builder = re.search("challenge-form'\);\s*;(.*);a.value", body, re.DOTALL).group(1)
+#        print "7 builder", builder
+
+        lines = builder.replace(' return +(p)}();', '', 1).split(';')
+#        print "8 lines", lines
+        for line in lines:
+#            print "9 line", line
+            if len(line) and '=' in line:
+                heading, expression = line.split('=', 1)
+                if 'eval(eval(' in expression:
+                    expression_value = self.cf_parse_expression(extra_div_expression)
+                elif 'function(p' in expression:
+                    expression_value = self.cf_parse_expression(expression, domain)
+                else:
+                    expression_value = self.cf_parse_expression(expression)
+#                print "10 js_answer"
+                js_answer = self.cf_arithmetic_op(heading[-1], js_answer, expression_value)
+#                print "11 js_answer", js_answer
+#            print "12 js_answer"
+
+        if '+ t.length' in body:
+            js_answer += len(domain)
+        
+        ret = format(js_answer, '.10f')
+#        print "end ret", ret
+        return (str(ret))
+
+############################
+
+    def createUrl(self, sUrl, oRequest):
         parsed_url = urlparse(sUrl)
         netloc = parsed_url.netloc[4:] if parsed_url.netloc.startswith('www.') else parsed_url.netloc
         cfId = oRequest.getCookie('__cfduid', '.' + netloc)
@@ -319,21 +415,38 @@ class Net:
 
         jschl = re.compile('name="jschl_vc" value="(.+?)"/>').findall(challenge)[0]
         passw = re.compile('name="pass" value="(.+?)"/>').findall(challenge)[0]
+        s = re.compile('name="s"\svalue="(?P<s_value>[^"]+)').findall(challenge)[0]
+
+#        print "jschl", jschl
+#        print "passw", passw
+#        print "s", s
+
         js = self._extract_js(challenge, url)
 
+#        body = response.read()
         body = challenge
         parsed_url = urlparse(url)
         submit_url = "%s://%s/cdn-cgi/l/chk_jschl" % (parsed_url.scheme, parsed_url.netloc)
+
         params = {}
+#        print "123", submit_url
+
         try:
+#            print "try", submit_url
+
             params["jschl_vc"] = re.search(r'name="jschl_vc" value="(\w+)"', body).group(1)
             params["pass"] = re.search(r'name="pass" value="(.+?)"', body).group(1)
+            params["s"] = re.search(r'name="s"\svalue="(?P<s_value>[^"]+)', body).group(1)
+
             js = self._extract_js(body, parsed_url.netloc)
         except:
+            print "except", submit_url
+
             return None
 
         params["jschl_answer"] = js
         sParameters = urllib.urlencode(params, True)
+
         request = urllib2.Request("%s?%s" % (submit_url, sParameters))
 
         for key in headers:
@@ -350,15 +463,23 @@ class Net:
         answer = js
 
         url = url.rstrip('/')
-        query = '%s/cdn-cgi/l/chk_jschl?jschl_vc=%s&jschl_answer=%s' % (url, jschl, answer)
+#        query = '%s/cdn-cgi/l/chk_jschl?jschl_vc=%s&jschl_answer=%s' % (url, jschl, answer)
+        query = '%s/cdn-cgi/l/chk_jschl?s=%s&jschl_vc=%s&jschl_answer=%s' % (url, urllib.quote_plus(s), jschl, answer)
+#        print "query1", query
 
         if 'type="hidden" name="pass"' in challenge:
             passval = re.compile('name="pass" value="(.*?)"').findall(challenge)[0]
-            query = '%s/cdn-cgi/l/chk_jschl?pass=%s&jschl_vc=%s&jschl_answer=%s' % \
-                    (url, urllib.quote_plus(passval), jschl, answer)
+#            query = '%s/cdn-cgi/l/chk_jschl?pass=%s&jschl_vc=%s&jschl_answer=%s' % \
+#                    (url, urllib.quote_plus(passval), jschl, answer)
+            query = '%s/cdn-cgi/l/chk_jschl?s=%s&jschl_vc=%s&pass=%s&jschl_answer=%s' % \
+                    (url, urllib.quote_plus(s), jschl, passval, answer)
+#            print "query2", query
+
             time.sleep(9)
 
-        self._update_opener(cloudflare_jar=True)
+#        createUrl(sUrl, oRequest):
+ 
+        self._update_opener()
         req = urllib2.Request(query)
         if form_data:
             form_data = urllib.urlencode(form_data)
@@ -392,17 +513,23 @@ class Net:
             compression (bool): If ``True`` (default), try to use gzip
             compression.
         """
+#        print "_set_cloudflare"
         netloc = urlparse(url).netloc
         if not netloc:
             netloc = urlparse(url).path
         cloudflare_url = urlunparse((urlparse(url).scheme, netloc, '', '', '', ''))
+
         try:
+#            print "_set_cloudflare try"
             self._cloudflare_challenge(cloudflare_url, challenge, form_data, headers, compression)
             for c in self._cloudflare_jar:
+#                print "_set_cloudflare c: ", c
                 self._cj.set_cookie(c)
-            self._update_opener()
+            self._update_opener(cloudflare_jar=True)
         except:
             # make sure we update to main jar
+#            print "_set_cloudflare except"
+
             self._update_opener()
             raise Exception
 
@@ -551,6 +678,8 @@ class Net:
             An :class:`HttpResponse` object containing headers and other 
             meta-information about the page and the page content.
         '''
+#        print "http_GET"
+
         if cloudflare is None:
             cloudflare = self.cloudflare
         return self._fetch(url, headers=headers, compression=compression, cloudflare=cloudflare)
@@ -631,6 +760,7 @@ class Net:
             An :class:`HttpResponse` object containing headers and other 
             meta-information about the page and the page content.
         '''
+#        print "_fetch"
         if cloudflare is None:
             cloudflare = self.cloudflare
         encoding = ''
