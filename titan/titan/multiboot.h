@@ -158,7 +158,8 @@ void screenmultiboot(void)
 			}
 			if(rcret == getrcconfigint("rcgreen", NULL)) 
 			{
-				tmpstr = screeninputhelp(partitions->ret, 0, 0, 0);
+				textbox("MultiBoot", _("Renaming is not available at the moment."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 650, 200, 0, 0);
+				/*tmpstr = screeninputhelp(partitions->ret, 0, 0, 0);
 				if(tmpstr != NULL)
 				{
 					tmpstr = ostrcat("/boot/", tmpstr, 0, 1);
@@ -171,7 +172,7 @@ void screenmultiboot(void)
  	 				free(tmpstr2); tmpstr2 = NULL;
  	 				free(tmpstr3); tmpstr3 = NULL;
 					break;
-				}
+				}*/
 			}
 		}
 		delownerrc(screen);
