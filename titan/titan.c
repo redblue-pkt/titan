@@ -732,8 +732,8 @@ timeokw = 1;
 
 	// set pvr 1 = allowed , 0 = disabled
 	status.pvr = 1;	
-	if(file_exist("/etc/.stable") && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1))
-		status.pvr = 0;
+//	if(file_exist("/etc/.stable") && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1))
+//		status.pvr = 0;
 
 	int sos = getconfigint("sos", NULL);
 	sos = 1; //workaround
