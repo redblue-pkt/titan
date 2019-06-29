@@ -282,7 +282,7 @@ void screensystem_update(int mode)
 							cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
 						}
 					}
-					else if(file_exist("/var/swap"))
+					else if(file_exist("/var/swap") && !isdir("/var/swap"))
 					{
 						if(!file_exist("/var/swap/logs"))
 							 mkdir("/var/swap/logs", 777);
