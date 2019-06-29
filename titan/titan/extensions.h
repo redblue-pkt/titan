@@ -169,7 +169,7 @@ char* getinstallpath(char* path, char* size)
 	if(path == NULL || path[0] == '*' || ostrstr(path, "swap") != NULL)
 	{
 #ifdef OEBUILD
-		if(file_exist("/media/.swapextensionsdev") == 1 || file_exist("/var/swap"))
+		if(file_exist("/media/.swapextensionsdev") == 1 || (file_exist("/var/swap") && !isdir("/var/swap")))
 #else
 		if(file_exist("/tmp/.swapextensionsdev") == 1 || file_exist("/var/swap"))
 #endif
