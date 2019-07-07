@@ -147,6 +147,15 @@ startrcreboot()
 		awk -f /etc/init.d/getfb.awk $RCDEV &
 }
 
+workarounds()
+{
+	if [ $realbox == "hd51" ]; then
+		if [ ! -e "/usr/bin/enigma2" ];then
+			touch /usr/bin/enigma2
+		fi
+	fi
+}
+
 startgui()
 {
 	STARTDEFAULT="/usr/local/bin/titan /mnt/config/titan.cfg"
@@ -332,6 +341,7 @@ case $1 in
 		starthomedir
 		startrcreboot
 		startdelpack
+		workarounds
 		startgui;;
 	last)
 		checkemu
