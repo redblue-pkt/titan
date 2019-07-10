@@ -906,6 +906,7 @@ void freeregexstruct(struct regex* node);
 char fromhex(char c);
 char* unhexlify(char *hexstr);
 int isdir(char* name);
+int islink(char* name);
 void htmldecode3(char* to, char* from);
 char* string_deltags(char* str);
 char* readfromlinetoline(char* str, int start, int end, int flag);

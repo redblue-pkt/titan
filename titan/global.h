@@ -2875,6 +2875,19 @@ int isfile(char* name)
 	return 0;
 }
 
+int islink(char* name)
+{
+	struct stat sbuf;
+
+	if(lstat(name, &sbuf) == -1)
+		return 0;
+
+	if(S_ISLNK(sbuf.st_mode))
+		return 1;
+
+	return 0;
+}
+
 int isdir(char* name)
 {
 	struct stat64 sbuf;
