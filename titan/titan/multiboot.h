@@ -26,6 +26,82 @@ int install_image(char* part)
 	return 1;
 }
 
+char* getmultinames(int part)
+{
+	FILE *datei;
+  char *line = NULL;
+  char *pos = NULL;
+  char *link = NULL;
+  char *data = NULL;
+  char *cmd  = NULL;
+  char *wert = NULL;
+  
+  int MINMALLOC = 50;
+  
+  line = malloc(MINMALLOC);
+	if(line == NULL)
+	{
+		//err("no mem");
+		return NULL;
+	}
+  
+  if(part == 1)
+  {
+  	link = ostrcat("/dev/block/by-name/linuxrootfs", NULL, 0, 0);
+  	data = ostrcat("/tmp/multi/linuxrootfs1/etc/issue", NULL, 0, 0);
+  }
+  else if(part == 2)
+  {
+  	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
+  	data = ostrcat("/tmp/multi/linuxrootfs2/etc/issue", NULL, 0, 0);
+  }
+  else if(part == 3)
+  {
+  	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
+  	data = ostrcat("/tmp/multi/linuxrootfs3/etc/issue", NULL, 0, 0);
+  }
+  else if(part == 4)
+  {
+  	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
+  	data = ostrcat("/tmp/multi/linuxrootfs4/etc/issue", NULL, 0, 0);
+  }
+  
+  system("mkdir /tmp/multi");
+
+  if(islink(link))
+  {
+  		cmd = ostrcat("mount ", link, 0, 0);
+  		cmd = ostrcat(cmd, " /tmp/multi", 1, 0);
+  		if( system(cmd) != -1);
+  		{
+  			datei = fopen (data, "r");
+  			if(datei != NULL)
+				{
+  				fgets(line, 50, datei);
+					fgets(line, 50, datei);
+					pos = strstr(line, "\\n");
+					if(pos != NULL) 
+					{
+						pos[0] = '\0';
+						//printf ("line: %s\n", line);
+						wert = ostrcat(line, NULL, 0, 0);
+					}
+					fclose (datei);
+				}
+			system("umount /tmp/multi");
+			}
+			free(cmd);
+	}
+	
+	system("rmdir /tmp/multi");
+
+	free(link);
+	free(data);
+	free(line);
+	
+	return wert;
+}
+
 void screenmultiboot(void)
 {
 	int rcret = 0;
