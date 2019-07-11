@@ -132,9 +132,11 @@ void screenmultiboot(void)
 	char *ownpart = NULL;
 	char *instpart = NULL;
 	char *ownpartname = NULL;
+	char *partname = NULL;
 	int neustart = 0;
 	int ret = 0;
 	int end = 0;
+	int part = 0;
 	
 	struct skin* screen = getscreen("multiboot");
 	struct skin* listbox = getscreennode(screen, "listbox");
@@ -157,6 +159,9 @@ void screenmultiboot(void)
 		dir = opendir("/boot"); /* oeffne aktuelles Verzeichnis */
 		if (dir)
 		{
+			if(islink("/dev/block/by-name/linuxrootfs"))
+				part = 1;
+				
 			while (0 != (member = readdir(dir)))
 			{
  	  		if(ostrcmp(".", member->d_name) != 0 && ostrcmp("..", member->d_name) != 0 && ostrcmp("STARTUP", member->d_name) != 0)
@@ -172,7 +177,15 @@ void screenmultiboot(void)
 	   					ownpartname = ostrcat(member->d_name, NULL, 0, 0);
 	   					printf("----> own: %s\n", ownpartname);
 	   				}
-	   				addchoicebox(partitions, member->d_name, member->d_name);
+	   				if(part > 0 && part < 5)
+	   				{
+	   					partname = getmultinames(part);
+	   					addchoicebox(partitions, member->d_name, partname);
+	   					free(partname); partname = NULL;
+	   					part = part + 1
+	   				}
+	   				else
+	   					addchoicebox(partitions, member->d_name, member->d_name);
  	  			}     		
    				free(tmpstr); tmpstr = NULL;
    				free(tmpstr2); tmpstr2 = NULL;
