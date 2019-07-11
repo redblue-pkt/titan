@@ -37,8 +37,6 @@ char* getmultinames(int part)
   char *wert = NULL;
   char *idir = NULL;
   
-  int MINMALLOC = 50;
-  
   line = malloc(MINMALLOC);
 	if(line == NULL)
 	{
