@@ -35,6 +35,7 @@ char* getmultinames(int part)
   char *data = NULL;
   char *cmd  = NULL;
   char *wert = NULL;
+  char *idir = NULL;
   
   int MINMALLOC = 50;
   
@@ -49,55 +50,72 @@ char* getmultinames(int part)
   {
   	link = ostrcat("/dev/block/by-name/linuxrootfs", NULL, 0, 0);
   	data = ostrcat("/tmp/multi/linuxrootfs1/etc/issue", NULL, 0, 0);
+  	idir = ostrcat("/tmp/multi/linuxrootfs1", NULL, 0, 0);
   }
   else if(part == 2)
   {
   	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
   	data = ostrcat("/tmp/multi/linuxrootfs2/etc/issue", NULL, 0, 0);
+  	idir = ostrcat("/tmp/multi/linuxrootfs2", NULL, 0, 0);
   }
   else if(part == 3)
   {
   	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
   	data = ostrcat("/tmp/multi/linuxrootfs3/etc/issue", NULL, 0, 0);
+  	idir = ostrcat("/tmp/multi/linuxrootfs3", NULL, 0, 0);
   }
   else if(part == 4)
   {
   	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
   	data = ostrcat("/tmp/multi/linuxrootfs4/etc/issue", NULL, 0, 0);
+  	idir = ostrcat("/tmp/multi/linuxrootfs4", NULL, 0, 0);
   }
   
   system("mkdir /tmp/multi");
-
   if(islink(link))
   {
   		cmd = ostrcat("mount ", link, 0, 0);
   		cmd = ostrcat(cmd, " /tmp/multi", 1, 0);
-  		if( system(cmd) != -1);
+  		if( system(cmd) != -1)
   		{
-  			datei = fopen (data, "r");
-  			if(datei != NULL)
-				{
-  				fgets(line, 50, datei);
-					fgets(line, 50, datei);
-					pos = strstr(line, "\\n");
-					if(pos != NULL) 
+  			if(file_exist(idir))
+  			{
+  				datei = fopen (data, "r");
+  				if(datei != NULL)
 					{
-						pos[0] = '\0';
-						//printf ("line: %s\n", line);
-						wert = ostrcat(line, NULL, 0, 0);
+						fgets(line, 50, datei);
+						fgets(line, 50, datei);
+						pos = strstr(line, "\\n");
+						if(pos != NULL)
+						{
+							pos[0] = '\0';
+							//printf ("line: %s\n", line);
+							wert = ostrcat(line, NULL, 0, 0);
+						}
+						fclose (datei);
 					}
-					fclose (datei);
+					else
+					wert = ostrcat("unknown", NULL, 0, 0);
+					system("umount /tmp/multi");
 				}
-			system("umount /tmp/multi");
+				else
+				{
+					wert = ostrcat("free", NULL, 0, 0);
+					system("umount /tmp/multi");
+				}
 			}
+			else
+				wert = ostrcat("free", NULL, 0, 0);
 			free(cmd);
 	}
-	
+	else
+		wert = ostrcat("can not be determined", NULL, 0, 0);
 	system("rmdir /tmp/multi");
 
 	free(link);
 	free(data);
 	free(line);
+	free(idir);
 	
 	return wert;
 }
