@@ -152,6 +152,7 @@ workarounds()
 	if [ $realbox == "hd51" ]; then
 		if [ ! -e "/usr/bin/enigma2" ];then
 			touch /usr/bin/enigma2
+			/etc/init.d/partitions-by-name.sh &
 		fi
 	fi
 }
