@@ -182,7 +182,7 @@ void screenmultiboot(void)
 	   					partname = getmultinames(part);
 	   					addchoicebox(partitions, member->d_name, partname);
 	   					free(partname); partname = NULL;
-	   					part = part + 1
+	   					part = part + 1;
 	   				}
 	   				else
 	   					addchoicebox(partitions, member->d_name, member->d_name);
