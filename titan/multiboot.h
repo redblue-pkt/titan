@@ -46,28 +46,64 @@ char* getmultinames(int part)
   
   if(part == 1)
   {
-  	link = ostrcat("/dev/block/by-name/linuxrootfs", NULL, 0, 0);
-  	data = ostrcat("/tmp/multi/linuxrootfs1/etc/issue", NULL, 0, 0);
-  	idir = ostrcat("/tmp/multi/linuxrootfs1", NULL, 0, 0);
+  	if(islink("/dev/block/by-name/linuxrootfs"))
+  	{
+  		link = ostrcat("/dev/block/by-name/linuxrootfs", NULL, 0, 0);
+  		data = ostrcat("/tmp/multi/linuxrootfs1/etc/issue", NULL, 0, 0);
+  		idir = ostrcat("/tmp/multi/linuxrootfs1", NULL, 0, 0);
+  	}
+  	else
+  	{
+  		link = ostrcat("/dev/block/by-name/rootfs1", NULL, 0, 0);
+  		data = ostrcat("/tmp/multi/etc/issue", NULL, 0, 0);
+  		idir = ostrcat("/tmp/multi/etc", NULL, 0, 0);
+  	}
   }
   else if(part == 2)
   {
-  	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
-  	data = ostrcat("/tmp/multi/linuxrootfs2/etc/issue", NULL, 0, 0);
-  	idir = ostrcat("/tmp/multi/linuxrootfs2", NULL, 0, 0);
+  	if(islink("/dev/block/by-name/userdata"))
+  	{
+  		link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
+  		data = ostrcat("/tmp/multi/linuxrootfs2/etc/issue", NULL, 0, 0);
+  		idir = ostrcat("/tmp/multi/linuxrootfs2", NULL, 0, 0);
+  	}
+  	else
+  	{
+  		link = ostrcat("/dev/block/by-name/rootfs2", NULL, 0, 0);
+  		data = ostrcat("/tmp/multi/etc/issue", NULL, 0, 0);
+  		idir = ostrcat("/tmp/multi/etc", NULL, 0, 0);
+  	}
   }
   else if(part == 3)
   {
-  	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
-  	data = ostrcat("/tmp/multi/linuxrootfs3/etc/issue", NULL, 0, 0);
-  	idir = ostrcat("/tmp/multi/linuxrootfs3", NULL, 0, 0);
+  	if(islink("/dev/block/by-name/userdata"))
+  	{
+  		link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
+  		data = ostrcat("/tmp/multi/linuxrootfs3/etc/issue", NULL, 0, 0);
+  		idir = ostrcat("/tmp/multi/linuxrootfs3", NULL, 0, 0);
+  	}
+  	else
+  	{
+  		link = ostrcat("/dev/block/by-name/rootfs3", NULL, 0, 0);
+  		data = ostrcat("/tmp/multi/etc/issue", NULL, 0, 0);
+  		idir = ostrcat("/tmp/multi/etc", NULL, 0, 0);
+  	}
   }
   else if(part == 4)
   {
-  	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
-  	data = ostrcat("/tmp/multi/linuxrootfs4/etc/issue", NULL, 0, 0);
-  	idir = ostrcat("/tmp/multi/linuxrootfs4", NULL, 0, 0);
-  }
+  	if(islink("/dev/block/by-name/userdata"))
+  	{
+ 	  	link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
+  		data = ostrcat("/tmp/multi/linuxrootfs4/etc/issue", NULL, 0, 0);
+  		idir = ostrcat("/tmp/multi/linuxrootfs4", NULL, 0, 0);
+		}
+		else
+  	{
+  		link = ostrcat("/dev/block/by-name/rootfs4", NULL, 0, 0);
+  		data = ostrcat("/tmp/multi/etc/issue", NULL, 0, 0);
+  		idir = ostrcat("/tmp/multi/etc", NULL, 0, 0);
+  	}
+	}
   
   system("mkdir /tmp/multi");
   if(islink(link))
@@ -158,6 +194,8 @@ void screenmultiboot(void)
 		if (dir)
 		{
 			if(islink("/dev/block/by-name/linuxrootfs"))
+				part = 1;
+			else if(islink("/dev/block/by-name/rootfs1"))
 				part = 1;
 				
 			while (0 != (member = readdir(dir)))
