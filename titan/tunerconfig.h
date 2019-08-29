@@ -749,6 +749,15 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 					changedvbdev(tuner);
 				}
 			}
+			else
+			{
+				ret = screentunerreceptiondvbs(tuner);
+				if(ret == 1)
+				{
+					tuner->feinfo->type = FE_QPSK;
+					changedvbdev(tuner);
+				}
+			}
 			free(realname), realname = NULL;
 /*
 			if(listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") == 0)
@@ -1214,7 +1223,12 @@ void screentunerconfig()
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QPSK)
 				{
 					clearscreen(tunerconfig);
-					ret = screentunerreceptiondvbs((struct dvbdev*)listbox->select->handle);
+					if(((struct dvbdev*)listbox->select->handle)->fehyprid == NULL)
+						ret = screentunerreceptiondvbs((struct dvbdev*)listbox->select->handle);
+					else
+						ret = screentunerreceptionhyprid((struct dvbdev*)listbox->select->handle);
+						
+					changetunername(tunernode, ((struct dvbdev*)listbox->select->handle)->adapter, ((struct dvbdev*)listbox->select->handle)->devnr, ((struct dvbdev*)listbox->select->handle)->feinfo->name, ((struct dvbdev*)listbox->select->handle)->fehyprid);
 					drawscreen(tunerconfig, 0, 0);
 				}
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QAM)
