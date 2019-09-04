@@ -2419,7 +2419,8 @@ int fegetdev()
 				  	else
 				  	{
 				  		printf("------> name %s %d\n", t_feinfo->name, t_feinfo->type);
-				  		if(ostrstr(t_feinfo->name, "Si2166D" && y == 0) != NULL) //tripple Tuner DM900
+				  		if(ostrstr(feinfo->name, "BCM45208") != NULL)
+				  		if(ostrstr(t_feinfo->name, "Si2166D") != NULL && y == 0) //tripple Tuner DM900
 							{
 				  			mz = 0;
 				  			break;
@@ -2533,7 +2534,7 @@ int fegetdev()
 					}
 					else
 						addconfig(tmpstr, "");
-					if(ostrstr(feinfo->name, "Si2166B") != NULL || (ostrstr(feinfo->name, "Si2166D") != NULL && y == 0 )) //test Tuner DM920 oder erster DM900
+					if((strstr(feinfo->name, "Si2166B") != NULL || ostrstr(feinfo->name, "Si2166D") != NULL) && y == 0 ) //test Tuner DM920 oder erster DM900
 					{
 #ifdef MIPSEL						
 						fechangetype2(dvbnode, "DVB-S", "DVB-S");
