@@ -2419,7 +2419,6 @@ int fegetdev()
 				  	else
 				  	{
 				  		printf("------> name %s %d\n", t_feinfo->name, t_feinfo->type);
-				  		if(ostrstr(feinfo->name, "BCM45208") != NULL)
 				  		if(ostrstr(t_feinfo->name, "Si2166D") != NULL && y == 0) //tripple Tuner DM900
 							{
 				  			mz = 0;
