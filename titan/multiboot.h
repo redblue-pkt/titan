@@ -110,6 +110,10 @@ char* getmultinames(int part)
   {
   		cmd = ostrcat("mount ", link, 0, 0);
   		cmd = ostrcat(cmd, " /tmp/multi", 1, 0);
+  		if(part == 1) wert = ostrcat("1-", NULL, 0, 0);
+  		if(part == 2) wert = ostrcat("2-", NULL, 0, 0);
+  		if(part == 3) wert = ostrcat("3-", NULL, 0, 0);
+  		if(part == 4) wert = ostrcat("4-", NULL, 0, 0);
   		if( system(cmd) != -1)
   		{
   			if(file_exist(idir))
@@ -118,28 +122,31 @@ char* getmultinames(int part)
   				if(datei != NULL)
 					{
 						fgets(line, 50, datei);
-						fgets(line, 50, datei);
+						if(ostrstr("opennfr", line) == NULL)
+						{
+							fgets(line, 50, datei);
+						}
 						pos = strstr(line, "\\n");
 						if(pos != NULL)
 						{
 							pos[0] = '\0';
 							//printf ("line: %s\n", line);
-							wert = ostrcat(line, NULL, 0, 0);
+							wert = ostrcat(wert, line, 1, 0);
 						}
 						fclose (datei);
 					}
 					else
-					wert = ostrcat("unknown", NULL, 0, 0);
+					wert = ostrcat(wert, "unknown", 1, 0);
 					system("umount /tmp/multi");
 				}
 				else
 				{
-					wert = ostrcat("free", NULL, 0, 0);
+					wert = ostrcat(wert, "free", 1, 0);
 					system("umount /tmp/multi");
 				}
 			}
 			else
-				wert = ostrcat("free", NULL, 0, 0);
+				wert = ostrcat(wert, "free", 1, 0);
 			free(cmd);
 	}
 	else
