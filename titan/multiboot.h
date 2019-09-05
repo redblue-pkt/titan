@@ -122,7 +122,7 @@ char* getmultinames(int part)
   				if(datei != NULL)
 					{
 						fgets(line, 50, datei);
-						if(ostrstr("opennfr", line) == NULL)
+						if(ostrstr(line, "opennfr") == NULL)
 						{
 							fgets(line, 50, datei);
 						}
