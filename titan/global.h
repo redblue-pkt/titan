@@ -3435,7 +3435,8 @@ int setlang(char *lang)
 
 	setenv("LANG", lang, 1);
 	setenv("LANGUAGE", lang, 1);
-	ret = setlocale(LC_MESSAGES, lang);
+	//ret = setlocale(LC_MESSAGES, lang);
+	ret = setlocale(LC_ALL, lang);
 	if(ret == NULL)
 	{
 		printf("can't set LC_MESSAGES to %s\n", lang);
