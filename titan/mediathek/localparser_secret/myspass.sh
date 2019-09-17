@@ -51,6 +51,8 @@ mainmenu()
 
 season()
 {
+rm "$TMP/$FILENAME.list"
+
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | sed 's/{"format_id":/\n{"format_id":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
@@ -97,11 +99,11 @@ season()
 
 				next
 			}
-			END
-			{
+#			END
+#			{
 #				if (curpage != pages)
 #					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
-			}
+#			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
@@ -157,11 +159,11 @@ year()
 
 				next
 			}
-			END
-			{
+#			END
+#			{
 #				if (curpage != pages)
 #					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
-			}
+#			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
@@ -223,11 +225,11 @@ episodes()
 
 				next
 			}
-			END
-			{
+#			END
+#			{
 #				if (curpage != pages)
 #					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
-			}
+#			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
@@ -281,11 +283,11 @@ search()
 				print title " (" extra ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 				next
 			}
-			END
-			{
+#			END
+#			{
 #				if (curpage != pages)
 #					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
-			}
+#			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
