@@ -34,8 +34,14 @@ fi
 
 URL=`cat /mnt/config/titan.cfg | grep tithek_kinox_url | grep -v "#" | cut -d "=" -f2`
 if [ -z "$URL" ];then
-	URL=https://kinoxto.stream
+	URL=https://kinox.pub
 fi
+
+#KinoX.to Alternativ Adressen: http://kinoS.TO - http://kinox.TV - http://kinox.ME - http://kinox.SI - http://kinox.IO
+#Mirrors: http://kinox.SX - http://kinox.AM - http://kinox.NU - http://kinox.SG - http://kinox.GRATIS - http://kinox.MOBI
+#http://kinox.SH - http://kinox.LOL - http://kinox.WTF - http://kinox.FUN - http://kinox.FYI - http://kinox.CLOUD http://kinox.AI - http://kinox.CLICK - http://kinox.TUBE - http://kinox.CLUB - http://kinox.DIGITAL http://kinox.DIRECT - http://kinox.PUB - http://kinox.EXPRESS - http://kinox.PARTY - http://kinox.LC 
+#http://kinox.MS - http://kinox.MU - http://kinox.GS - http://kinox.BZ - http://kinox.GY - http://kinox.AF 
+
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=KinoX
 
