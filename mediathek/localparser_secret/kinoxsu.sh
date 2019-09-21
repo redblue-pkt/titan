@@ -148,7 +148,7 @@ search()
 					next
 
 				}
-			END
+			END \
 				{
 #				print "pages3: " pages
 #				print "NEXT + 1: " NEXT + 1
