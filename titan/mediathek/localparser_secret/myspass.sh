@@ -51,7 +51,7 @@ mainmenu()
 
 season()
 {
-rm "$TMP/$FILENAME.list"
+	rm "$TMP/$FILENAME.list"
 
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | sed 's/{"format_id":/\n{"format_id":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
@@ -66,31 +66,31 @@ rm "$TMP/$FILENAME.list"
 			/"format_id"/ \
 			{
 				i = index($0, "\"format_id\":\"") + 13
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				id = substr($0, i, j)
 
 				i = index($0, "\"format\":\"") + 10
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 
 				i = index($0, "\"number_of_seasons\":\"") + 21
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
 
 				i = index($0, "\"node_id\":\"") + 11
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
 
 				piccount += 1
 				if ( pic == "" )
 				{
-	            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				else
 					pic = "http:" pic
@@ -99,11 +99,11 @@ rm "$TMP/$FILENAME.list"
 
 				next
 			}
-#			END
-#			{
-#				if (curpage != pages)
-#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
-#			}
+			END \
+			{
+				if (curpage != pages)
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
@@ -126,31 +126,31 @@ year()
 			/"season_id"/ \
 			{
 				i = index($0, "\"season_id\":\"") + 13
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				id = substr($0, i, j)
 
 				i = index($0, "\"season_number\":\"") + 17
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 
 				i = index($0, "\"season_name\":\"") + 15
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
 
 				i = index($0, "\"node_id\":\"") + 11
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
 
 				piccount += 1
 				if ( pic == "" )
 				{
-	            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				else
 					pic = "http:" pic
@@ -159,11 +159,11 @@ year()
 
 				next
 			}
-#			END
-#			{
-#				if (curpage != pages)
-#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
-#			}
+			END \
+			{
+				if (curpage != pages)
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
@@ -186,50 +186,50 @@ episodes()
 			/"format"/ \
 			{
 				i = index($0, "\"episode_id\":\"") + 14
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				id = substr($0, i, j)
 
 				i = index($0, "\"title\":\"") + 9
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 				gsub(" - Teil 1", "", title)
 
 				i = index($0, "\"season_name\":\"") + 15
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
 
 				i = index($0, "\"season_number\":\"") + 17
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				season = substr($0, i, j)
 
 				i = index($0, "\"episode_nr\":\"") + 14
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				episode = substr($0, i, j)
 
 				i = index($0, "\"myspass_url\":\"") + 15
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
 
 				piccount += 1
 				if ( pic == "" )
 				{
-	            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				print "S" season "E" episode " - " title "#" SRC " " SRC " parts \x27" newpage "\x27#http:" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 				next
 			}
-#			END
-#			{
-#				if (curpage != pages)
-#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
-#			}
+			END \
+			{
+				if (curpage != pages)
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
@@ -251,43 +251,43 @@ search()
 			}
 			/"uniqueID"/ \
 			{
-#			print "1111111" $0
+#				print "1111111" $0
 				i = index($0, "\"title\":\"") + 9
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
-#			print "title: " title
+#				print "title: " title
 
 				i = index($0, "\"broadcast\":\"") + 13
-	            j = index(substr($0, i), "\",\"") - 1
+	            		j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
-#			print "extra: " extra
+#				print "extra: " extra
 
 				i = index($0, "\"url\":\"") + 7
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
-#			print "newpage: " newpage
+#				print "newpage: " newpage
 
 				i = index($0, "\"teaser\":\"") + 10
-	            j = index(substr($0, i), "\"") - 1
+	            		j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
-#			print "pic: " pic
+#				print "pic: " pic
 
 				piccount += 1
 				if ( pic == "" )
 				{
-	            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				print title " (" extra ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 				next
 			}
-#			END
-#			{
-#				if (curpage != pages)
-#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
-#			}
+			END \
+			{
+				if (curpage != pages)
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
