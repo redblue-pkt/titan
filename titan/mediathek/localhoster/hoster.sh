@@ -737,6 +737,7 @@ youtube_dl()
 
 	if [ ! -z "$INPUT" ];then
 		$BIN $youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+		echo $INPUT >> $TMP/$TYPE.$hoster.$FILENAME.streamlist
 	else
 		echo "errormsg=Error: Youtube DL has Emthy Url from Parser" > $TMP/$TYPE.$hoster.$FILENAME.streamlist
 	fi

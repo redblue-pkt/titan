@@ -1316,7 +1316,7 @@ char* list_hoster_streams(char* input)
 {
 	char* streamurl = NULL, *tmpstr = NULL, *nummer = NULL, *title = NULL, *pic = NULL, *filename = NULL;
 
-	int count = 0, i = 0;	
+	int count = 0, i = 0, last = 0;	
 
 	filename = ostrcat(input, NULL, 0, 0); 
 
@@ -1335,8 +1335,9 @@ char* list_hoster_streams(char* input)
 	struct menulist* mlist = NULL, *mbox = NULL;
 //	ret1 = strsplit(string_decode(tmpstr2, 0), "\n", &count);
 	ret1 = strsplit(tmpstr, "\n", &count);
+	last = count - 1;
 	for(i = 0; i < count; i++)
-	{
+	{		
 //		if(ret1[i].part != NULL && ostrstr(ret1[i].part, "_quality") != NULL)
 		if(ret1[i].part != NULL)
 		{
@@ -1385,6 +1386,23 @@ char* list_hoster_streams(char* input)
 				title = ostrcat(title, nummer, 1, 0);
 				title = ostrcat(title, ")", 1, 0);
 			}
+ 
+			if(ostrstr(filename, "youtube_dl") != NULL)
+			{
+				title = ostrcat(title, " (", 1, 0);
+				if(last == i)
+					title = ostrcat(title, Orginal, 1, 0);
+				else
+					title = ostrcat(title, Youtube DL, 1, 0);
+				title = ostrcat(title, ")", 1, 0);
+			}
+			
+			//test show link
+			title = ostrcat(title, " (", 1, 0);
+			title = ostrcat(title, ret1[i].part, 1, 0);
+			title = ostrcat(title, ")", 1, 0);
+			//end
+
 			debug(99, "(%d) title: %s streamurl: %s\n", i, title, streamurl);																									
 			addmenulist(&mlist, title, streamurl, pic, 0, 0);
 
