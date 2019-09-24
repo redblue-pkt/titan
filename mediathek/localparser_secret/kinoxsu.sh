@@ -136,7 +136,7 @@ search()
 						# in naechste zeile springen
 						# \x27 = single quotes
 						gsub(/^ /, "", type)
-						print title " (" type ")#" SRC " " SRC " play \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+						print title " (" type ")#" SRC " " SRC " hoster \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 					}
 	
 					# 27. reset variables
@@ -180,10 +180,26 @@ play()
 	cat $STREAMURL
 }
 
+hoster()
+{
+	rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
+	#/mnt/parser/kinoxsu.sh /mnt/parser/kinoxsu.sh hosterlist 'https://kinox.su/262-terminator-genisys-2015.html'
+
+	rm "$TMP/$FILENAME.list"
+	$curlbin "$PAGE" -o "$TMP/cache.$FILENAME.1"
+
+	#<iframe src="https://verystream.com/e/CiamZWPYHZt/" width="640" height="360" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" frameborder="0"></iframe>
+
+	URL=`cat "$TMP/cache.$FILENAME.1" | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+	echo $URL
+}
+
 
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	search) $INPUT;;
 	play) $INPUT;;
+	hoster) $INPUT;;
+
 esac
