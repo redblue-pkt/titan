@@ -1391,9 +1391,9 @@ char* list_hoster_streams(char* input)
 			{
 				title = ostrcat(title, " (", 1, 0);
 				if(last == i)
-					title = ostrcat(title, Orginal, 1, 0);
+					title = ostrcat(title, "Orginal", 1, 0);
 				else
-					title = ostrcat(title, Youtube DL, 1, 0);
+					title = ostrcat(title, "Youtube DL", 1, 0);
 				title = ostrcat(title, ")", 1, 0);
 			}
 			
