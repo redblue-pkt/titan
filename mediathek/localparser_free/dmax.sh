@@ -37,10 +37,10 @@ fi
 
 init()
 {
-	if [ "$ARCH" == "arm" ] || [ "$ARCH" == "mipsel" ] || ([ "$ARCH" == "sh4" ] && [ -e "/etc/.beta" ]);then
+#	if [ "$ARCH" == "arm" ] || [ "$ARCH" == "mipsel" ] || ([ "$ARCH" == "sh4" ] && [ -e "/etc/.beta" ]);then
 		rm -rf $TMP > /dev/null 2>&1
 		echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
-	fi
+#	fi
 }
 
 mainmenu()
