@@ -329,7 +329,8 @@ videos()
 			#<tr><td></td></tr>
 #			/<div style=\"display: none;\" class=\"tif\"/ \
 #			/<td background=\"\/\/cdn.livetvcdn.net\/img\/v3.gif\"/ \
-			/<td background=\"\/\/cdn.livetv208.me\/img\/v3.gif\"/ \
+#			/<td background=\"\/\/cdn.livetv208.me\/img\/v3.gif\"/ \
+			/\/img\/v3.gif\"/ \
 			{
 				if (title != "")
 				{
