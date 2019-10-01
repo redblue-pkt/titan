@@ -189,8 +189,13 @@ hoster()
 	$curlbin "$PAGE" -o "$TMP/cache.$FILENAME.1"
 
 	#<iframe src="https://verystream.com/e/CiamZWPYHZt/" width="640" height="360" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" frameborder="0"></iframe>
-
 	URL=`cat "$TMP/cache.$FILENAME.1" | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+
+	if [ -z "$URL" ];then
+		#<div class="iframe-2-link" data-link="https://verystream.com/e/iUXMxvDD9SZ/"></div>
+		URL=`cat "$TMP/cache.$FILENAME.1" | grep "iframe-2-link" | sed -nr 's/.*data-link="([^"]+)".*/\1/p'`
+	fi
+
 	echo $URL
 }
 
