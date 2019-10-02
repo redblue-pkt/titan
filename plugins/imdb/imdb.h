@@ -75,9 +75,9 @@ start:
 
 	if(tmpstr != NULL)
 	{
-		if(ostrstr(tmpstr, "<b>Keine Treffer.</b>") != NULL)
+		if(ostrstr(tmpstr, "No results found for") != NULL)
 		{
-			debug(133, "<b>Keine Treffer.</b>");
+			debug(133, "No results found for");
 			free(tmpstr); tmpstr = NULL;
 			return NULL;
 		}
