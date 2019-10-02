@@ -1957,7 +1957,7 @@ int mediadbffmpeg5(char* tmpjpg, char* tmpmpg, char* timestamp, char* file, char
 
 	if(tmpjpg == NULL || tmpmpg == NULL) return 1;
 
-#ifdef MIPSEL
+#ifdef MIPSEL_OLD_GIT
 	cmd = ostrcat(cmd, "jpeg2yuv -v 1 -f 25 -n1 -I p -j ", 1, 0);
 	cmd = ostrcat(cmd, tmpjpg, 1, 0);
 	cmd = ostrcat(cmd, " | mpeg2enc -v 1 -x 1280 -y 720 -a 3 -f12 -4 1 -2 1 -q 1 -H -o ", 1, 0);
@@ -2114,7 +2114,7 @@ int mediadbjpegtran(char* tmpjpg, char* timestamp)
 
 	if(tmpjpg == NULL || timestamp == NULL) return 1;
 
-#ifdef MIPSEL
+#ifdef MIPSEL_OLD_GIT
 	cmd = ostrcat(cmd, "cp -a ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
@@ -2216,7 +2216,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			tmpjpg = ostrcat(tmpjpg, ".jpg", 1, 0);
 			
 			tmpmpg = ostrcat("/tmp/backdrop.resize.", timen, 0, 0);
-#ifdef MIPSEL
+#ifdef MIPSEL_OLD_GIT
 			tmpmpg = ostrcat(tmpmpg, ".mvi", 1, 0);
 #else
 			tmpmpg = ostrcat(tmpmpg, ".mpg", 1, 0);
@@ -2412,7 +2412,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				if(filesize < 1500000)
 				{
 					char* size = NULL;
-#ifndef MIPSEL
+#ifndef MIPSEL_OLD_GIT
 					mediadbffmpeg4(timestamp, tmpmeta);
 						
 					cmd = ostrcat(cmd, "cat ", 1, 0);
@@ -2446,7 +2446,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 									if(cmediadb == NULL) cmediadb = createmediadb(node, timestamp, type, shortname, NULL, NULL, NULL, NULL, NULL, NULL, NULL, plot, poster, NULL, NULL, shortpath, file, shortname, fileinfo, 0, backdrop);
 								}	
 							}
-#ifndef MIPSEL
+#ifndef MIPSEL_OLD_GIT
 						}
 						else
 						{
