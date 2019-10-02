@@ -63,9 +63,9 @@ start:
 		tmpsearch = ostrcat("/title/tt", title, 0, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
-	debug(133, "search: http://www.imdb.de/%s", tmpsearch);
+	debug(133, "search: http://www.imdb.com/%s", tmpsearch);
 
-	tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+	tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //	writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr0", tmpstr, 1);
 
 	
@@ -212,7 +212,7 @@ current not working
 			tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
 			tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 	
-			tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+			tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrj", tmpstr, 0);
 			
 			debug(133, "tmpsearch: %s", tmpsearch);
@@ -461,7 +461,7 @@ current not working
 		tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 		tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
 	
-		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+		tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 		
 		debug(133, "tmpsearch: %s", tmpsearch);
 		free(tmpsearch); tmpsearch = NULL;
@@ -484,7 +484,7 @@ current not working
 		tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 		tmpsearch = ostrcat(tmpsearch, "/plotsummary", 1, 0);
 
-		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+		tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //		writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrplot", tmpstr, 0);
 		
 		debug(133, "tmpsearch: %s", tmpsearch);
