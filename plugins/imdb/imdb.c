@@ -1,9 +1,9 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
+#include "imdb_header.h"
 #include "imdb.h"
 #include "imdb_global.h"
-#include "imdb_header.h"
 
 char pluginname[] = "IMDb";
 char plugindesc[] = "Extensions";
