@@ -1,8 +1,9 @@
+#define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
+
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
 #include "imdb.h"
-#include "../tithek/tithek_header.h"
 #include "../tithek/tithek_global.h"
 
 char pluginname[] = "IMDb";
