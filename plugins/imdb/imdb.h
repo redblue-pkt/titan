@@ -65,8 +65,7 @@ start:
 
 	debug(133, "search: http://www.imdb.com/%s", tmpsearch);
 
-	tmpurl = ostrcat("www.imdb.com", "/", 0, 0);
-	tmpurl = ostrcat(tmpurl, tmpsearch, 1, 0);
+	tmpurl = ostrcat("www.imdb.com/", tmpsearch, 0, 0);
 	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 //	tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //	writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr0", tmpstr, 1);
@@ -215,8 +214,7 @@ current not working
 			tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 
 			free(tmpurl), tmpurl = NULL;
-			tmpurl = ostrcat("www.imdb.com", "/", 0, 0);
-			tmpurl = ostrcat(tmpurl, tmpsearch, 1, 0);
+			tmpurl = ostrcat("www.imdb.com/", tmpsearch, 0, 0);
 			tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 //			tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrj", tmpstr, 0);
@@ -468,8 +466,7 @@ current not working
 		tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
 
 		free(tmpurl), tmpurl = NULL;
-		tmpurl = ostrcat("www.imdb.com", "/", 0, 0);
-		tmpurl = ostrcat(tmpurl, tmpsearch, 1, 0);
+		tmpurl = ostrcat("www.imdb.com/", tmpsearch, 0, 0);
 		tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);	
 //		tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 		
@@ -495,8 +492,7 @@ current not working
 		tmpsearch = ostrcat(tmpsearch, "/plotsummary", 1, 0);
 
 		free(tmpurl), tmpurl = NULL;
-		tmpurl = ostrcat("www.imdb.com", "/", 0, 0);
-		tmpurl = ostrcat(tmpurl, tmpsearch, 1, 0);
+		tmpurl = ostrcat("www.imdb.com/", tmpsearch, 0, 0);
 		tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 //		tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //		writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrplot", tmpstr, 0);
