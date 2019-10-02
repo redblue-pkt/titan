@@ -91,7 +91,7 @@ start:
 		}
 
 		if(flag == 0)
-			(*first)->id = string_resub("<a href=\"/title/tt", "/", tmpstr, 0);
+			(*first)->id = string_resub("<td class=\"primary_photo\"> <a href=\"/title/tt", "/", tmpstr, 0);
 		else
 			(*first)->id = ostrcat(title, NULL, 0, 0);
 
