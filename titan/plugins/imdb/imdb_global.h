@@ -1,5 +1,5 @@
-#ifndef IMDB_H
-#define IMDB_H
+#ifndef IMDB_GLOBAL_H
+#define IMDB_GLOBAL_H
 
 #include <curl/curl.h>
 
