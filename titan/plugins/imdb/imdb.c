@@ -2,6 +2,7 @@
 #include "../titan/debug.h"
 #include "../titan/header.h"
 #include "imdb.h"
+#include "tithek_global.h"
 
 char pluginname[] = "IMDb";
 char plugindesc[] = "Extensions";
