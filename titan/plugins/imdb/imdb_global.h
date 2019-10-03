@@ -37,7 +37,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 	int debuglevel = getconfigint("debuglevel", NULL);
 
 	char* tmpstr = NULL;
-    FILE *fp;
+    	FILE *fp;
 
 	CURL *curl_handle;
 	CURLcode res;
@@ -53,7 +53,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 	curl_handle = curl_easy_init();
 	if(curl_handle)
 	{
-	    if(localfile != NULL)
+	    	if(localfile != NULL)
 		    fp = fopen(localfile,"wb");
 	       
 		/* specify URL to get */
@@ -73,7 +73,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 			curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDS, data);
 
 			/* example.com is redirected, so we tell libcurl to send POST on 301, 302 and
-		     303 HTTP response codes */
+		     	303 HTTP response codes */
 			curl_easy_setopt(curl_handle, CURLOPT_POSTREDIR, CURL_REDIR_POST_ALL);
 		}
 		if(flag == 1)
@@ -83,13 +83,13 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 //		curl_easy_setopt(curl_handle, CURLOPT_RETURNTRANSFER, 1);
 
 		/* send all data to this function  */
-	    if(localfile == NULL)
+	    	if(localfile == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
 		else
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, NULL);
 
 		/* we pass our 'chunk' struct to the callback function */
-	    if(localfile == NULL)
+	    	if(localfile == NULL)
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
 		else
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, fp);
@@ -151,13 +151,15 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 			fclose(fp);
 	}
 
-	tmpstr = ostrcat(chunk.memory, NULL, 0, 0);
-  	free(chunk.memory);
-  	/* we're done with libcurl, so clean it up */
-   	curl_global_cleanup();
+	if(localfile != NULL)
+	{
+		tmpstr = ostrcat(chunk.memory, NULL, 0, 0);
+	  	free(chunk.memory);
+  		/* we're done with libcurl, so clean it up */
+   		curl_global_cleanup();
 
-	if(localfile != NULL) 
 		free(tmpstr), tmpstr = NULL;
+	}
 	return tmpstr;
 }
 
