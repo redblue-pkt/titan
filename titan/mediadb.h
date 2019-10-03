@@ -1576,6 +1576,9 @@ printf("###### strip () strings end ############################################
 	{
 		string_tolower(shortname);
 		shortname = string_shortname(shortname, 2);
+
+		shortname = string_replace_remove_last_chars("(", "", shortname, 1);
+
 		string_removechar(shortname);
 		strstrip(shortname);
 	}
@@ -1585,6 +1588,8 @@ printf("###### strip () strings end ############################################
 		cut = ostrcat(cut, "\0", 1, 0);
 		shortname = string_replace(cut, "\0", shortname, 1);
 		free(cut); cut = NULL;
+
+		shortname = string_replace_remove_last_chars("(", "", shortname, 1);
 
 		string_removechar(shortname);
 		strstrip(shortname);
