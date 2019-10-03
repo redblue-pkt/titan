@@ -1497,6 +1497,10 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 
 printf("###### strip () strings start ############################################\n");
 
+	printf("shortname first : %s\n", shortname);
+	shortname = string_replace_remove_last_chars("(", "", shortname, 1);
+	printf("filename strip remove all chars after (... from: %s\n", shortname);
+
 // strip () strings
 // for (channel)-movie-(..).ts name
 	tmpstr1 = string_resub("(", ")", shortname, 0);
@@ -1576,9 +1580,6 @@ printf("###### strip () strings end ############################################
 	{
 		string_tolower(shortname);
 		shortname = string_shortname(shortname, 2);
-
-		shortname = string_replace_remove_last_chars("(", "", shortname, 1);
-
 		string_removechar(shortname);
 		strstrip(shortname);
 	}
@@ -1588,8 +1589,6 @@ printf("###### strip () strings end ############################################
 		cut = ostrcat(cut, "\0", 1, 0);
 		shortname = string_replace(cut, "\0", shortname, 1);
 		free(cut); cut = NULL;
-
-		shortname = string_replace_remove_last_chars("(", "", shortname, 1);
 
 		string_removechar(shortname);
 		strstrip(shortname);
