@@ -16,9 +16,9 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
  
   mem->memory = realloc(mem->memory, mem->size + realsize + 1);
   if(mem->memory == NULL) {
-    /* out of memory! */ 
-    printf("not enough memory (realloc returned NULL)\n");
-    return 0;
+	/* out of memory! */ 
+	printf("not enough memory (realloc returned NULL)\n");
+	return 0;
   }
  
   memcpy(&(mem->memory[mem->size]), contents, realsize);
@@ -151,15 +151,15 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 			fclose(fp);
 	}
 
-	if(localfile != NULL)
-	{
+	if(localfile == NULL)
 		tmpstr = ostrcat(chunk.memory, NULL, 0, 0);
-	  	free(chunk.memory);
-  		/* we're done with libcurl, so clean it up */
-   		curl_global_cleanup();
+  	free(chunk.memory);
+	/* we're done with libcurl, so clean it up */
+	curl_global_cleanup();
 
+	if(localfile != NULL)
 		free(tmpstr), tmpstr = NULL;
-	}
+
 	return tmpstr;
 }
 
