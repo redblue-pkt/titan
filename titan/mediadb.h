@@ -1498,9 +1498,11 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 printf("###### strip () strings start ############################################\n");
 
 	printf("shortname first : %s\n", shortname);
-	shortname = string_replace_remove_last_chars("(", "", shortname, 1);
-	printf("filename strip remove all chars after (... from: %s\n", shortname);
-
+	if(cmpfilenameext(tmpstr, ".ts") != 0)
+	{
+		shortname = string_replace_remove_last_chars("(", "", shortname, 1);
+		printf("filename strip remove all chars after (... from: %s\n", shortname);
+	}
 // strip () strings
 // for (channel)-movie-(..).ts name
 	tmpstr1 = string_resub("(", ")", shortname, 0);
