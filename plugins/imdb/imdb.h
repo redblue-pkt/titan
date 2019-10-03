@@ -67,6 +67,7 @@ start:
 
 	tmpurl = ostrcat("www.imdb.com/", tmpsearch, 0, 0);
 	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
+
 //	tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //	writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr0", tmpstr, 1);
 
@@ -216,6 +217,7 @@ current not working
 			free(tmpurl), tmpurl = NULL;
 			tmpurl = ostrcat("www.imdb.com/", tmpsearch, 0, 0);
 			tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
+
 //			tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrj", tmpstr, 0);
 			
@@ -468,6 +470,7 @@ current not working
 		free(tmpurl), tmpurl = NULL;
 		tmpurl = ostrcat("www.imdb.com/", tmpsearch, 0, 0);
 		tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);	
+
 //		tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 		
 		debug(133, "tmpsearch: %s", tmpsearch);
@@ -494,6 +497,7 @@ current not working
 		free(tmpurl), tmpurl = NULL;
 		tmpurl = ostrcat("www.imdb.com/", tmpsearch, 0, 0);
 		tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
+
 //		tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 //		writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrplot", tmpstr, 0);
 		
@@ -539,13 +543,22 @@ current not working
 				savefile = ostrcat(getconfig("mediadbpath", NULL), "/tt", 0, 0);
 				savefile = ostrcat(savefile, (*first)->id, 1, 0);
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
-				gethttp(ip, path, 80, savefile, NULL, 5000, NULL, 0);
+
+				free(tmpurl), tmpurl = NULL;
+				tmpurl = ostrcat("www.imdb.com/", path, 0, 0);
+				gethttps(tmpurl, savefile, NULL, NULL, NULL, NULL, 0);
+
+//				gethttp(ip, path, 80, savefile, NULL, 5000, NULL, 0);
 				free((*first)->poster);
 				(*first)->poster = savefile;
 			}
 			else
 			{
-				gethttp(ip, path, 80, TMPIMDBPIC1, NULL, 5000, NULL, 0);
+				free(tmpurl), tmpurl = NULL;
+				tmpurl = ostrcat("www.imdb.com/", path, 0, 0);
+				gethttps(tmpurl, TMPIMDBPIC1, NULL, NULL, NULL, NULL, 0);
+
+//				gethttp(ip, path, 80, TMPIMDBPIC1, NULL, 5000, NULL, 0);
 				free((*first)->poster);
 				(*first)->poster = ostrcat(TMPIMDBPIC1, NULL, 0, 0);
 			}
@@ -571,13 +584,22 @@ current not working
 				savefile = ostrcat(getconfig("mediadbpath", NULL), "/tt", 0, 0);
 				savefile = ostrcat(savefile, (*first)->id, 1, 0);
 				savefile = ostrcat(savefile, "_thumb.jpg", 1, 0);
-				gethttp(ip, path, 80, savefile, NULL, 5000, NULL, 0);
+
+				free(tmpurl), tmpurl = NULL;
+				tmpurl = ostrcat("www.imdb.com/", path, 0, 0);
+				gethttps(tmpurl, savefile, NULL, NULL, NULL, NULL, 0);
+
+//				gethttp(ip, path, 80, savefile, NULL, 5000, NULL, 0);
 				free((*first)->thumb);
 				(*first)->thumb = savefile;
 			}
 			else
 			{
-				gethttp(ip, path, 80, TMPIMDBPIC2, NULL, 5000, NULL, 0);
+				free(tmpurl), tmpurl = NULL;
+				tmpurl = ostrcat("www.imdb.com/", path, 0, 0);
+				gethttps(tmpurl, TMPIMDBPIC2, NULL, NULL, NULL, NULL, 0);
+
+//				gethttp(ip, path, 80, TMPIMDBPIC2, NULL, 5000, NULL, 0);
 				free((*first)->thumb);
 				(*first)->thumb = ostrcat(TMPIMDBPIC2, NULL, 0, 0);
 			}
