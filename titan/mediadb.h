@@ -1995,6 +1995,8 @@ int mediadbffmpeg5(char* tmpjpg, char* tmpmpg, char* timestamp, char* file, char
 int mediadbcp(char* timestamp, char* poster)
 {
 	char* cmd = NULL;
+	debug(133, "timestamp %s", timestamp);
+	debug(133, "poster %s", poster);
 
 	if(timestamp == NULL || poster == NULL) return 1;
 

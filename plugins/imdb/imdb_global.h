@@ -1,7 +1,14 @@
 #ifndef IMDB_GLOBAL_H
 #define IMDB_GLOBAL_H
 
+#include <stdio.h>
 #include <curl/curl.h>
+
+/* This callback is, currently, a simple wrapper around fwrite(). You
+   could get it to write to memory, or do anything else you'd like
+   with the output. For more info, see
+   http://curl.haxx.se/libcurl/c/CURLOPT_WRITEFUNCTION.html
+ */
 
 struct MemoryStruct {
   char *memory;
@@ -26,6 +33,10 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
   mem->memory[mem->size] = 0;
  
   return realsize;
+}
+
+static size_t writeCallback(void *contents, size_t size, size_t nitems, FILE *file) {
+  return fwrite(contents, size, nitems, file);
 }
 
 // flag = 0 (without header in output)
@@ -82,17 +93,29 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 3);
 //		curl_easy_setopt(curl_handle, CURLOPT_RETURNTRANSFER, 1);
 
-		/* send all data to this function  */
 	    	if(localfile == NULL)
+		{
+			/* send all data to this function  */
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
+		}
 		else
-			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, NULL);
+		{
+			/* When data arrives, curl will call writeCallback. */
+			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, writeCallback);
+		}
 
-		/* we pass our 'chunk' struct to the callback function */
+
+
 	    	if(localfile == NULL)
+		{
+			/* we pass our 'chunk' struct to the callback function */
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
+		}
 		else
-			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, fp);
+		{
+			/* The last argument to writeCallback will be our file: */
+			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)fp);
+		}
 
 		/* some servers don't like requests that are made without a user-agent field, so we provide one */
 //		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
@@ -118,6 +141,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		/* allow three redirects */
 		curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 3L);
 
+
 		/* enable all supported built-in compressions */
 		curl_easy_setopt(curl_handle, CURLOPT_ACCEPT_ENCODING, "");
   
@@ -126,8 +150,10 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		else
 			curl_easy_setopt(curl_handle, CURLOPT_REFERER, referer);
 
+
 		/* get it! */
 		res = curl_easy_perform(curl_handle);
+
 		/* check for errors */
 		if(res != CURLE_OK)
 		{
@@ -153,8 +179,10 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 
 	if(localfile == NULL)
 		tmpstr = ostrcat(chunk.memory, NULL, 0, 0);
+
   	free(chunk.memory);
 	/* we're done with libcurl, so clean it up */
+
 	curl_global_cleanup();
 
 	if(localfile != NULL)
