@@ -117,15 +117,15 @@ msgstr "SD разрешение"
 msgid "--- Time to switch"
 msgstr "Время переключения"
 
-#: imdbapi.h:271 imdb.h:731
+#: imdbapi.h:271 imdb.h:732
 msgid "--actors--"
 msgstr "Актёры"
 
-#: imdbapi.h:267 imdb.h:727
+#: imdbapi.h:267 imdb.h:728
 msgid "--director--"
 msgstr "Директор"
 
-#: imdbapi.h:269 imdb.h:729 tmdb.h:881
+#: imdbapi.h:269 imdb.h:730 tmdb.h:881
 msgid "--genre--"
 msgstr "Жанр"
 
@@ -133,7 +133,7 @@ msgstr "Жанр"
 msgid "--orgname--"
 msgstr "Организация"
 
-#: imdbapi.h:265 imdb.h:725 tmdb.h:877
+#: imdbapi.h:265 imdb.h:726 tmdb.h:877
 msgid "--plot--"
 msgstr "Сюжет"
 
@@ -141,15 +141,15 @@ msgstr "Сюжет"
 msgid "--rating--"
 msgstr "Рейтинг"
 
-#: imdbapi.h:270 imdb.h:730 tmdb.h:882
+#: imdbapi.h:270 imdb.h:731 tmdb.h:882
 msgid "--releasetime--"
 msgstr "Релиз"
 
-#: imdbapi.h:266 imdb.h:726 tmdb.h:878
+#: imdbapi.h:266 imdb.h:727 tmdb.h:878
 msgid "--title--"
 msgstr "Название"
 
-#: imdbapi.h:268 imdb.h:728
+#: imdbapi.h:268 imdb.h:729
 msgid "--writers--"
 msgstr "Авторы"
 
@@ -3455,7 +3455,7 @@ msgstr "Ошибка: Установка завершилась с ошибко�
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
-#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:661 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:706 infobar.h:830 infobar.h:1144
 #: info.h:27 ipkg.h:359 keyactions.h:208 kinox.h:101 kinox.h:358 language.h:54
 #: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
@@ -3701,7 +3701,7 @@ msgstr "Ошибка, файл не поддерживается"
 msgid "Error in Save Settings"
 msgstr "Ошибка сохранения настроек"
 
-#: imdbapi.h:200 imdb.h:660 tmdb.h:797
+#: imdbapi.h:200 imdb.h:661 tmdb.h:797
 msgid "Error, Internet Connection not found"
 msgstr "Ошибка: Нет подключения к Интернету"
 
@@ -6384,7 +6384,7 @@ msgstr "Лист меню"
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:660 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:706
+#: imdb.h:661 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:706
 #: infobar.h:830 infobar.h:1144 ipkg.h:359 keyactions.h:208 kinox.h:101
 #: kinox.h:358 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
 #: language.h:62 lcdpearl1.c:49 lcdsamsung.c:113 letwatch.h:29 letwatch.h:60
@@ -7017,7 +7017,7 @@ msgstr "Ж"
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:660 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:706
+#: imdb.h:661 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:706
 #: infobar.h:830 infobar.h:1144 info.h:27 ipkg.h:359 keyactions.h:208
 #: kinox.h:101 kinox.h:358 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
 #: language.h:54 lcdpearl1.c:49 lcdsamsung.c:113 letwatch.h:29 letwatch.h:60
@@ -9276,7 +9276,7 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: amazon.h:96 amazon.h:103 amazon.h:128 amazon.h:130 amazon.h:854
 #: amazon.h:856 ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179
 #: epgsearch.h:193 epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82
-#: imdbapi.h:287 imdb.h:746 internetradio.h:13 internetradio.h:15
+#: imdbapi.h:287 imdb.h:747 internetradio.h:13 internetradio.h:15
 #: internettv.h:13 internettv.h:15 kinox.h:35 kinox.h:37 kinox.h:248
 #: kinox.h:250 kinox.h:989 kinox.h:991 mlehd.h:90 mlehd.h:92 movie2k.h:74
 #: movie2k.h:76 movie2k.h:231 movie2k.h:233 movie4k.h:146 movie4k.h:148
