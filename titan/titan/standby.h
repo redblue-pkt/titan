@@ -89,7 +89,7 @@ void screenstandby()
 	savevideomode = getvideomode();
 	//setvideomode("720p24", 1);
 	writesys("/proc/stb/avs/0/input", "aux", 1);
-	if(checkrealbox("SF8008") == 1)
+	if(checkrealbox("SF8008") == 1 || checkchipset("HI3798MV200") == 1)
 		writesys("/proc/stb/hdmi/output", "off", 1);
 #endif
 
@@ -126,7 +126,7 @@ void screenstandby()
 	writesys("/proc/stb/avs/0/input", "encoder", 1);
 	setvideomode(savevideomode, 1);
 	free(savevideomode); savevideomode = NULL;
-	if(checkrealbox("SF8008") == 1)
+	if(checkrealbox("SF8008") == 1 || checkchipset("HI3798MV200") == 1)
 		writesys("/proc/stb/hdmi/output", "on", 1);
 #endif
 
