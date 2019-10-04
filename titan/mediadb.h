@@ -1838,6 +1838,9 @@ struct mediadb* mediadbcheckfile(char* file, char* path, char* shortpath)
 int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 {
 	char* cmd = NULL;
+	debug(133, "backdrop1.jpg timestamp %s", timestamp);
+	debug(133, "backdrop1.jpg file %s", file);
+	debug(133, "backdrop1.jpg path %s", path);
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
@@ -1872,6 +1875,9 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 {
 	char* cmd = NULL;
+	debug(133, "thumb.jpg timestamp %s", timestamp);
+	debug(133, "thumb.jpg file %s", file);
+	debug(133, "thumb.jpg path %s", path);
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
@@ -1905,6 +1911,9 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 {
 	char* cmd = NULL;
+	debug(133, "cover.jpg timestamp %s", timestamp);
+	debug(133, "cover.jpg file %s", file);
+	debug(133, "cover.jpg path %s", path);
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
