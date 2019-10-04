@@ -149,10 +149,10 @@ startrcreboot()
 
 workarounds()
 {
-	if [ $realbox == "hd51" ]; then
+	if [ $realbox == "hd51" ] || [ $realbox == "multibox" ]; then
 		if [ ! -e "/usr/bin/enigma2" ];then
 			touch /usr/bin/enigma2
-			/etc/init.d/partitions-by-name.sh &
+			/etc/init.d/partitions-by-name &
 		fi
 	fi
 }
