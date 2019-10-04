@@ -105,9 +105,10 @@ start:
 			debug(133, "----------------------imdb start----------------------");
 			debug(133, "id: %s", (*first)->id);
 			debug(133, "----------------------imdb end----------------------");
-	
-			free(tmpstr); tmpstr = NULL;	
-			return *first;
+
+// test	
+//			free(tmpstr); tmpstr = NULL;	
+//			return *first;
 		}
 		
 // todo - use Meistgesuchte Titel (default)
