@@ -450,7 +450,7 @@ current not working
 		if(ostrstr(tmpstr, "<meta property='og:image' content=\"") != NULL)
 		{
 			(*first)->thumb = string_resub("<meta property='og:image' content=\"", "\"", tmpstr, 0);
-			(*first)->poster = string_resub("<meta property='og:image' content=\"", "\"", tmpstr, 0);
+//			(*first)->poster = string_resub("<meta property='og:image' content=\"", "\"", tmpstr, 0);
 		}
 
 		if(ostrstr(tmpstr, "/media/rm") != NULL)
@@ -545,8 +545,8 @@ current not working
 				savefile = ostrcat(savefile, (*first)->id, 1, 0);
 				savefile = ostrcat(savefile, "_poster.jpg", 1, 0);
 
-//				free(tmpurl), tmpurl = NULL;
-//				tmpurl = ostrcat("https:/", path, 0, 0);
+				free(tmpurl), tmpurl = NULL;
+				tmpurl = ostrcat("https:/", path, 0, 0);
 				gethttps(tmpurl, savefile, NULL, NULL, NULL, NULL, 0);
 
 //				gethttp(ip, path, 80, savefile, NULL, 5000, NULL, 0);
@@ -555,8 +555,8 @@ current not working
 			}
 			else
 			{
-//				free(tmpurl), tmpurl = NULL;
-//				tmpurl = ostrcat("https:/", path, 0, 0);
+				free(tmpurl), tmpurl = NULL;
+				tmpurl = ostrcat("https:/", path, 0, 0);
 				gethttps(tmpurl, TMPIMDBPIC1, NULL, NULL, NULL, NULL, 0);
 
 //				gethttp(ip, path, 80, TMPIMDBPIC1, NULL, 5000, NULL, 0);
@@ -586,8 +586,8 @@ current not working
 				savefile = ostrcat(savefile, (*first)->id, 1, 0);
 				savefile = ostrcat(savefile, "_thumb.jpg", 1, 0);
 
-//				free(tmpurl), tmpurl = NULL;
-//				tmpurl = ostrcat("https:/", path, 0, 0);
+				free(tmpurl), tmpurl = NULL;
+				tmpurl = ostrcat("https:/", path, 0, 0);
 				gethttps(tmpurl, savefile, NULL, NULL, NULL, NULL, 0);
 
 //				gethttp(ip, path, 80, savefile, NULL, 5000, NULL, 0);
