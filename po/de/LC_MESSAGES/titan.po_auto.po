@@ -14832,6 +14832,3 @@ msgstr ""
 #: tpk_showname.h:240
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Cable: default Settings Kabel Deutschland"
-#~ msgstr "Kabel: Standard-Senderliste Kabel Deutschland"
