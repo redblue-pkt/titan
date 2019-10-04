@@ -96,7 +96,8 @@ start:
 		else
 			(*first)->id = ostrcat(title, NULL, 0, 0);
 
-		if(flag1 == 1)
+//		if(flag1 == 1)
+		if(flag != 2 && flag1 == 1)
 		{
 			if((*first)->id != NULL)
 				(*first)->id = ostrcat("tt", (*first)->id, 0, 1);
