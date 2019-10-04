@@ -2255,7 +2255,8 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				 	if((flag == 1) || (flag == 2))
 					{
 						tmpid = string_replace("tt", "", tmpid, 1);
-						imdb = startplugin(&imdb, tmpid, 2, 0, 0); //load with imdbid with save
+//						imdb = startplugin(&imdb, tmpid, 2, 0, 0); //load with imdbid with save
+						imdb = startplugin(&imdb, tmpid, 2, 1, 0); //load with imdbid with save
 					}
 					else
 						imdb = startplugin(&imdb, shortname, 0, 1, 0);
