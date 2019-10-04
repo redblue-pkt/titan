@@ -836,7 +836,7 @@ int servicestop(struct service *node, int clear, int flag)
 
 			dmxstop(node->dmxaudiodev);
 			videostop(node->videodev, clear);
-			if(clear == 1 && (checkchipset("3798MV200") == 1 || checkchipset("HH3798MV200") == 1)
+			if(clear == 1 && (checkchipset("3798MV200") == 1 || checkchipset("HH3798MV200") == 1))
 				videoclearbuffer(status.aktservice->videodev);
 		}
 		int	fastzap = getconfigint("fastzap", NULL);
