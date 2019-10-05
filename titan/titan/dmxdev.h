@@ -478,7 +478,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 		err("NULL detect");
 		return 1;
 	}
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("3798MV200") == 1 || checkchipset("HI3798mv200") == 1) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
 	{
 		if(node->fedmxsource == source)
 		{
