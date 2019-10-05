@@ -585,7 +585,7 @@ int dmxgetdev()
 	
 	//workaround HD51 kann nur max 4 dvr ... warum??
 	int help = MAXDEMUXDEV;
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("HI3798MV200") == 1)
 		help = 4;
 	//
 
