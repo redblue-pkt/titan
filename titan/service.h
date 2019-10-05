@@ -445,7 +445,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				audiopause(audionode);
 			if(status.mute != 1)
 			{
-				if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+				if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
 					dmxstart(status.aktservice->dmxaudiodev);
 				audioplay(audionode);
 			}
@@ -470,6 +470,10 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			videocontinue(videonode);
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
 			setencoding(chnode, videonode);
+			if(checkchipset("HI3798MV200") == 1)
+			{
+				dmxstart(status.aktservice->dmxvideodev);
+			}
 // gost
 //			if(checkbox("VUSOLO2") == 1)
 //			{
