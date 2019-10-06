@@ -406,10 +406,23 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				dmxclose(dmxvideonode, -1);
 				dmxvideonode = NULL;
 			}
-			if(dmxsetpesfilter(dmxvideonode, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO, 0) != 0)
+#ifdef MIPSEL			
+			if (checkchipset("HI3798MV200") == 1)
 			{
-				dmxclose(dmxvideonode, -1);
-				dmxvideonode = NULL;
+				if(dmxsetpesfilter(dmxvideonode, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO0, 0) != 0)
+				{
+					dmxclose(dmxvideonode, -1);
+					dmxvideonode = NULL;
+				}
+			}
+#endif
+			if (checkchipset("HI3798MV200") != 1)		
+			{		
+				if(dmxsetpesfilter(dmxvideonode, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO, 0) != 0)
+				{
+					dmxclose(dmxvideonode, -1);
+					dmxvideonode = NULL;
+				}
 			}
 		}
 		else

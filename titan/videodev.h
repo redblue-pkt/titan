@@ -24,6 +24,7 @@ struct dvbdev* videoopen(int adapter, int devnr)
 
 	if(node != NULL)
 	{
+		printf("[videodev] open devnr: %i\n");
 		if((fd = open(node->dev, O_RDWR)) < 0)
 		{
 			debug(200, "open video failed %s", node->dev);
