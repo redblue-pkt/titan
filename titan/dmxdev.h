@@ -542,6 +542,8 @@ int dmxsetpesfilterfd(int fd, int pid, int input, int output, int pestype, int n
 	pesflt.pid = pid;
 	if(nostart == 0)
 		pesflt.flags = DMX_IMMEDIATE_START;
+	if(checkchipset("HI3798MV200") == 1)
+		pesflt.flags = 0;
 	pesflt.pes_type = pestype;
 
 	debug(200, "DMX_SET_PES_FILTER pid=%d, pestype=%d, input=%d, output=%d", pid, pestype, pesflt.input, output);
@@ -550,6 +552,8 @@ int dmxsetpesfilterfd(int fd, int pid, int input, int output, int pestype, int n
 		perr("DMX_SET_PES_FILTER");
 		return 1;
 	}
+	if(checkchipset("HI3798MV200") == 1)
+		dmxstart(fd);
 
 	return 0;
 }
@@ -585,7 +589,7 @@ int dmxgetdev()
 	
 	//workaround HD51 kann nur max 4 dvr ... warum??
 	int help = MAXDEMUXDEV;
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("HI3798MV200") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1)
 		help = 4;
 	//
 
@@ -603,7 +607,8 @@ int dmxgetdev()
 					adddvbdev(buf, i, y, -1, DEMUXDEV, NULL, NULL, NULL, 0);
 				//without this, on atevio7500, if the second tuner is the maintuner
 				//no picture (i don't know why)
-				dmxsetpesfilterfd(fd, 0, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
+				if(checkchipset("HI3798MV200") != 1)
+					dmxsetpesfilterfd(fd, 0, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
 				dmxclose(NULL, fd);
 			}
 		}
