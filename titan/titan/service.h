@@ -191,7 +191,35 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			}
 		}
 #endif
-		
+#ifdef MIPSEL
+		if(status.aktservice->fedev != fenode && checkchipset("HI3798MV200") == 1)
+		{
+			int fastzap = getconfigint("fastzap", NULL);
+			if(fastzap == 1)
+			{
+				audioclose(status.aktservice->audiodev, -1);
+				status.aktservice->audiodev = NULL;
+				dmxstop(status.aktservice->dmxaudiodev);
+				dmxclose(status.aktservice->dmxaudiodev, -1);
+				status.aktservice->dmxaudiodev = NULL;
+			}
+			if(fastzap == 1 || fastzap == 2)
+			{
+				videoclose(status.aktservice->videodev, -1);
+				status.aktservice->videodev = NULL;
+				dmxstop(status.aktservice->dmxvideodev);
+				dmxclose(status.aktservice->dmxvideodev, -1);
+				status.aktservice->dmxvideodev = NULL;
+				dmxstop(status.aktservice->dmxpcrdev);
+				dmxclose(status.aktservice->dmxpcrdev, -1);
+				status.aktservice->dmxpcrdev = NULL;
+				dmxstop(status.aktservice->dmxsubtitledev);
+				dmxclose(status.aktservice->dmxsubtitledev, -1);
+				status.aktservice->dmxsubtitledev = NULL;
+			}
+		}
+#endif
+				
 		status.aktservice->fedev = fenode;
 
 		//frontend tune
@@ -371,6 +399,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				dmxclose(dmxaudionode, -1);
 				dmxaudionode = NULL;
 			}
+			else if(checkchipset("HI3798MV200") == 1 && status.aktservice->audiodev != NULL)
+				audiopause(status.aktservice->audiodev);
 		}
 		else
 			err("demux audio dev not ok");
@@ -406,24 +436,13 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				dmxclose(dmxvideonode, -1);
 				dmxvideonode = NULL;
 			}
-#ifdef MIPSEL			
-			if (checkchipset("HI3798MV200") == 1)
+			if(dmxsetpesfilter(dmxvideonode, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO, 0) != 0)
 			{
-				if(dmxsetpesfilter(dmxvideonode, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO0, 0) != 0)
-				{
-					dmxclose(dmxvideonode, -1);
-					dmxvideonode = NULL;
-				}
+				dmxclose(dmxvideonode, -1);
+				dmxvideonode = NULL;
 			}
-#endif
-			if (checkchipset("HI3798MV200") != 1)		
-			{		
-				if(dmxsetpesfilter(dmxvideonode, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO, 0) != 0)
-				{
-					dmxclose(dmxvideonode, -1);
-					dmxvideonode = NULL;
-				}
-			}
+			else if(checkchipset("HI3798MV200") == 1 && status.aktservice->videodev != NULL)
+				videofreeze(status.aktservice->videodev);
 		}
 		else
 			err("demux video dev not ok");
@@ -454,7 +473,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		{
 			audioselectsource(audionode, AUDIO_SOURCE_DEMUX);
 			audiosetbypassmode(audionode, chnode->audiocodec);
-			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
+			if(checkbox("VUSOLO2") == 1 || checkchipset("HI3798MV200") == 1) //fixt only audio no video.. blackscreen after zap
 				audiopause(audionode);
 			if(status.mute != 1)
 			{
@@ -482,11 +501,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		{
 			videocontinue(videonode);
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
-			setencoding(chnode, videonode);
-			if(checkchipset("HI3798MV200") == 1)
-			{
-				dmxstart(status.aktservice->dmxvideodev);
-			}
 // gost
 //			if(checkbox("VUSOLO2") == 1)
 //			{
@@ -520,7 +534,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 	if(status.mute != 1)
 	{
-		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1)
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200") == 1)
 			dmxstart(status.aktservice->dmxaudiodev);
 		audioplay(status.aktservice->audiodev);
 	}
@@ -853,7 +867,7 @@ int servicestop(struct service *node, int clear, int flag)
 
 			dmxstop(node->dmxaudiodev);
 			videostop(node->videodev, clear);
-			if(clear == 1 && (checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1))
+			if(clear == 1 && checkchipset("3798MV200") == 1)
 				videoclearbuffer(status.aktservice->videodev);
 		}
 		int	fastzap = getconfigint("fastzap", NULL);
@@ -907,6 +921,8 @@ void servicechangeaudio(struct channel* chnode, struct audiotrack* tracknode)
 	//clear videobuffer on playback for syncing video / audio
 	if(status.playing == 1) videoclearbuffer(status.aktservice->videodev);
 	dmxsetpesfilter(status.aktservice->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
+	if(checkchipset("HI3798MV200") == 1 && status.aktservice->audiodev != NULL)
+		audiopause(status.aktservice->audiodev);
 
 	//don't start audio play, if we are in timeshift record, but not playing mode
 	if(status.timeshifttype == 0 && status.timeshift == 1 && status.playing == 0) return;
