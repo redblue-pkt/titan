@@ -880,7 +880,7 @@ timeokw = 1;
 	{
 		setfbosdnull();
 		printf("[titan.c] set osd to NULL\n");
-		printf("Test Multibox 1\n");
+		printf("Test Multibox 2\n");
 	}
 	status.usedirectfb = 1;
 #endif
