@@ -552,8 +552,6 @@ int dmxsetpesfilterfd(int fd, int pid, int input, int output, int pestype, int n
 		perr("DMX_SET_PES_FILTER");
 		return 1;
 	}
-	if(checkchipset("HI3798MV200") == 1)
-		dmxstart(fd);
 
 	return 0;
 }
@@ -565,7 +563,10 @@ int dmxsetpesfilter(struct dvbdev* node, int pid, int input, int output, int pes
 		err("NULL detect");
 		return 1;
 	}
-	return dmxsetpesfilterfd(node->fd, pid, input, output, pestype, nostart);
+	int rc = dmxsetpesfilterfd(node->fd, pid, input, output, pestype, nostart);
+	if(checkchipset("HI3798MV200") == 1)
+		dmxstart(node);
+	return rc; 
 }
 
 int dmxgetdev()
