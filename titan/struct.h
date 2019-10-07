@@ -1429,6 +1429,8 @@ struct status
 	int slowspeed;
 	int prefillbuffer;
 	int playpic;
+	int singlepicfd;
+	int singlepicthreadstatus;
 #ifdef EPLAYER4
 	int prefillbuffercount;
 	int bufferpercent;
@@ -1518,6 +1520,8 @@ struct status
 	struct stimerthread* thumbthread;
 	// rectimer thread
 	struct stimerthread* rectimerthread;
+	// singlepic thread
+	struct stimerthread* singlepicthread;
 	// rguid sock filedescriptor for rguid
 	int rguidfd;
 	struct service* aktservice;

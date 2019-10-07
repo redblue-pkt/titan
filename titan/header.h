@@ -615,6 +615,7 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 
 //showiframe.h
 int singlepicstart(const char *filename, int flag);
+void showsinglepic();
 
 //player.h
 void playerslowts(int speed);
