@@ -501,6 +501,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		{
 			videocontinue(videonode);
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
+			setencoding(chnode, videonode);
 // gost
 //			if(checkbox("VUSOLO2") == 1)
 //			{
