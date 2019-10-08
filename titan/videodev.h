@@ -5,6 +5,8 @@
 #define VIDEO_SET_ENCODING              _IO('o',  81)
 #endif
 
+// flag 1 = dont close
+// flag 0 = close
 struct dvbdev* videoopen(int adapter, int devnr)
 {
 	int fd = -1;
@@ -25,15 +27,34 @@ struct dvbdev* videoopen(int adapter, int devnr)
 	if(node != NULL)
 	{
 		printf("[videodev] open devnr: %i\n");
-		if((fd = open(node->dev, O_RDWR)) < 0)
+
+		if(checkchipset("3798MV200") == 1)
 		{
-			debug(200, "open video failed %s", node->dev);
-			node = NULL;
+			if((fd = open(node->dev, O_WRONLY)) < 0)
+			{
+				debug(200, "open video failed %s", node->dev);
+				node = NULL;
+			}
+			else
+			{
+				node->fd = fd;
+	
+				closeonexec(fd);
+			}
 		}
 		else
 		{
-			node->fd = fd;
-			closeonexec(fd);
+			if((fd = open(node->dev, O_RDWR)) < 0)
+			{
+				debug(200, "open video failed %s", node->dev);
+				node = NULL;
+			}
+			else
+			{
+				node->fd = fd;
+	
+				closeonexec(fd);
+			}
 		}
 	}
 
