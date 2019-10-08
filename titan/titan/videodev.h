@@ -28,33 +28,16 @@ struct dvbdev* videoopen(int adapter, int devnr)
 	{
 		printf("[videodev] open devnr: %i\n");
 
-		if(checkchipset("3798MV200") == 1)
+		if((fd = open(node->dev, O_RDONLY | O_WRONLY)) < 0)
 		{
-			if((fd = open(node->dev, O_WRONLY)) < 0)
-			{
-				debug(200, "open video failed %s", node->dev);
-				node = NULL;
-			}
-			else
-			{
-				node->fd = fd;
-	
-				closeonexec(fd);
-			}
+			debug(200, "open video failed %s", node->dev);
+			node = NULL;
 		}
 		else
 		{
-			if((fd = open(node->dev, O_RDWR)) < 0)
-			{
-				debug(200, "open video failed %s", node->dev);
-				node = NULL;
-			}
-			else
-			{
-				node->fd = fd;
-	
-				closeonexec(fd);
-			}
+			node->fd = fd;
+
+			closeonexec(fd);
 		}
 	}
 
