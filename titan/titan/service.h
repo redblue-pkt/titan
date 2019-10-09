@@ -191,34 +191,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			}
 		}
 #endif
-#ifdef MIPSEL
-		if(status.aktservice->fedev != fenode && checkchipset("HI3798MV200") == 1)
-		{
-			int fastzap = getconfigint("fastzap", NULL);
-			if(fastzap == 1)
-			{
-				audioclose(status.aktservice->audiodev, -1);
-				status.aktservice->audiodev = NULL;
-				dmxstop(status.aktservice->dmxaudiodev);
-				dmxclose(status.aktservice->dmxaudiodev, -1);
-				status.aktservice->dmxaudiodev = NULL;
-			}
-			if(fastzap == 1 || fastzap == 2)
-			{
-				videoclose(status.aktservice->videodev, -1);
-				status.aktservice->videodev = NULL;
-				dmxstop(status.aktservice->dmxvideodev);
-				dmxclose(status.aktservice->dmxvideodev, -1);
-				status.aktservice->dmxvideodev = NULL;
-				dmxstop(status.aktservice->dmxpcrdev);
-				dmxclose(status.aktservice->dmxpcrdev, -1);
-				status.aktservice->dmxpcrdev = NULL;
-				dmxstop(status.aktservice->dmxsubtitledev);
-				dmxclose(status.aktservice->dmxsubtitledev, -1);
-				status.aktservice->dmxsubtitledev = NULL;
-			}
-		}
-#endif
 				
 		status.aktservice->fedev = fenode;
 
@@ -338,6 +310,13 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 //		dmxstop(status.aktservice->dmxvideodev);
 //	}
 
+// gost test multibox
+	if(checkchipset("HI3798MV200") == 1)
+	{
+		videostop(status.aktservice->videodev, 1);
+		dmxstop(status.aktservice->dmxvideodev);
+	}
+
 	//demux pcr start
 	if(flag == 0 && chnode->pcrpid > 0)
 	{
@@ -399,8 +378,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				dmxclose(dmxaudionode, -1);
 				dmxaudionode = NULL;
 			}
-			else if(checkchipset("HI3798MV200") == 1 && status.aktservice->audiodev != NULL)
-				audiopause(status.aktservice->audiodev);
 		}
 		else
 			err("demux audio dev not ok");
@@ -441,8 +418,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				dmxclose(dmxvideonode, -1);
 				dmxvideonode = NULL;
 			}
-			else if(checkchipset("HI3798MV200") == 1 && status.aktservice->videodev != NULL)
-				videofreeze(status.aktservice->videodev);
 		}
 		else
 			err("demux video dev not ok");
@@ -477,7 +452,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				audiopause(audionode);
 			if(status.mute != 1)
 			{
-				if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
+				if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 					dmxstart(status.aktservice->dmxaudiodev);
 				audioplay(audionode);
 			}
