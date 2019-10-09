@@ -572,6 +572,7 @@ int dmxsetpesfilter(struct dvbdev* node, int pid, int input, int output, int pes
 		else
 			audiopause(node);
 		debug(200, "DMX_START test HI3798MV200");
+	}
 	return rc; 
 }
 
