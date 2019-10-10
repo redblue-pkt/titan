@@ -24,7 +24,7 @@ void singlepicthread(struct stimerthread* self, struct dvbdev* node , char* file
 		count++;
 	}
 */
-	usleep(150000);
+//	usleep(150000);
 
 	showsinglepic(node, filename);
 
@@ -75,7 +75,7 @@ int singlepicstart(const char *filename, int flag)
 		struct stat s;
 		fstat(fd, &s);
 
-		if(checkchipset("3798MV200") == 1 || status.aktservice->type != STILLPIC)
+		if(/*checkchipset("3798MV200") == 1 || */status.aktservice->type != STILLPIC)
 		{
 			if(status.aktservice->videodev != NULL)
 			{
@@ -93,6 +93,7 @@ int singlepicstart(const char *filename, int flag)
 		}
 		else
 			videonode = status.aktservice->videodev;
+
 
 		if(videonode != NULL)
 		{
@@ -114,7 +115,6 @@ int singlepicstart(const char *filename, int flag)
 			TEMP_FAILURE_RETRY(read(fd, iframe, s.st_size));
 			stillpic.iFrame = iframe;
 			stillpic.size = s.st_size;
-
 #ifdef MIPSEL
 			int seq_end_avail = 0;
 			size_t pos = 0;
@@ -124,6 +124,7 @@ int singlepicstart(const char *filename, int flag)
 
 			memset(stuffing, 0, 8192);
 
+/*
 			if(checkchipset("3798MV200") == 1)
 			{
 				int streamtype;
@@ -138,7 +139,7 @@ int singlepicstart(const char *filename, int flag)
 				videocontinue(videonode);
 				videoclearbuffer(videonode);
 			}
-
+*/
 			while(pos <= (s.st_size - 4) && !(seq_end_avail = (!iframe[pos] && !iframe[pos + 1] && iframe[pos + 2] == 1 && iframe[pos + 3] == 0xB7)))
 				++pos;
 		
@@ -153,8 +154,10 @@ int singlepicstart(const char *filename, int flag)
 				write(videonode->fd, seq_end, sizeof(seq_end));
 		
 			write(videonode->fd, stuffing, 8192);
+/*
 			if(checkchipset("3798MV200") == 1)
-				addtimer(&singlepicthread, START, 150000, 1, (void*)videonode, (void*)ostrcat(filename, NULL, 0, 0), NULL);
+				addtimer(&singlepicthread, START, 1000, 1, (void*)videonode, (void*)ostrcat(filename, NULL, 0, 0), NULL);
+*/
 #else
 			videoclearbuffer(videonode);
 			videostillpicture(videonode, &stillpic);

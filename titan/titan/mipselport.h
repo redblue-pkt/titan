@@ -151,6 +151,7 @@ void fbsetoffset(int x, int y)
 void blitfb2(struct fb* fbnode, int flag)
 {
 	int doblit = 1;
+	int m_number_of_pages = 1;
 	struct fb_var_screeninfo var_screeninfo;
 
 	var_screeninfo.xres_virtual = fb->width;
@@ -213,11 +214,17 @@ void blitfb2(struct fb* fbnode, int flag)
 				perr("FBIOPUT_VSCREENINFO");
 			}
 			debug(444, "FB: double buffering not available");
+			debug(10, "FB: double buffering not available");
 		}
 		else
 		{
 			debug(444, "FB: double buffering available!");
+			debug(10, "FB: double buffering available!");
 		}
+
+		m_number_of_pages = var_screeninfo.yres_virtual / fb->height;
+		debug(444, "FB: %d page(s) available!", m_number_of_pages);
+		debug(10, "FB: %d page(s) available!", m_number_of_pages);
 
 		ioctl(fb->fd, FBIOGET_VSCREENINFO, &var_screeninfo);
 		if ((var_screeninfo.xres!=fb->width) && (var_screeninfo.yres!=fb->height) && (var_screeninfo.bits_per_pixel!=fb->colbytes))
