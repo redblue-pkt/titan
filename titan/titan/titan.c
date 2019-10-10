@@ -914,7 +914,7 @@ timeokw = 1;
 		if(ret > 0 && status.bcm == 1) 
 		{
 			skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, fb->fd, fb->fb + fb->varfbsize, fb->fixfbsize, fb->data_phys + fb->varfbsize);
-			if(skinfb != NULL)
+			if(skinfb != NULL && checkchipset("HI3798MV200") != 1)
 			{
 				status.usedirectfb = 0;
 				ret = getfbsize(0);
