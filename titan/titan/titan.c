@@ -876,11 +876,9 @@ timeokw = 1;
 	waitvsync();
 	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 		setfbosd();
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1)
 	{
 		setfbosdnull();
-		printf("[titan.c] set osd to NULL\n");
-		printf("Test Multibox 2\n");
 	}
 	status.usedirectfb = 1;
 #endif
@@ -914,7 +912,7 @@ timeokw = 1;
 		if(ret > 0 && status.bcm == 1) 
 		{
 			skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, fb->fd, fb->fb + fb->varfbsize, fb->fixfbsize, fb->data_phys + fb->varfbsize);
-			if(skinfb != NULL && checkchipset("HI3798MV200") != 1)
+			if(skinfb != NULL)
 			{
 				status.usedirectfb = 0;
 				ret = getfbsize(0);
