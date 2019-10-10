@@ -75,7 +75,7 @@ int singlepicstart(const char *filename, int flag)
 		struct stat s;
 		fstat(fd, &s);
 
-		if(/*checkchipset("3798MV200") == 1 || */status.aktservice->type != STILLPIC)
+		if(checkchipset("3798MV200") == 1 || status.aktservice->type != STILLPIC)
 		{
 			if(status.aktservice->videodev != NULL)
 			{
