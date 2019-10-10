@@ -492,6 +492,13 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}
 		else
 			err("can't get free video dev");
+		if(checkchipset("HI3798MV200") == 1)
+		{
+			videoslowmotion(videonode, 0);
+			videofastforward(videonode, 0);
+			videocontinue(videonode);
+			audiocontinue(audionode);
+		}
 	}
 
 #ifdef MIPSEL
