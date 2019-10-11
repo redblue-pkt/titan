@@ -6809,7 +6809,6 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 		free(tmpstr), tmpstr = NULL;
 		return 0;
 	}
-	free(tmpstrh), tmpstrh = NULL;
 	
 	if(fechangetype(tuner, value) == 1)
 	{
