@@ -6803,7 +6803,7 @@ int sethypridtunernew(struct dvbdev* tuner, char* value)
 	char* buf1 = NULL;
 	
 	tmpstr = ostrcat(tuner->feshortname, "_hyprid_last", 0, 0);
-	if(ostrcmp(getconfig(tmpstr, "0"), value) == 0)
+	if(ostrcmp(getconfigdef(tmpstr, NULL, "0"), value) == 0)
 	{
 		printf("set hyprid.. new value %s eq old value %s\n", value, getconfig(tmpstr, "0"));
 		free(tmpstr), tmpstr = NULL;

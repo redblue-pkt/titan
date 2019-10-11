@@ -227,6 +227,15 @@ char* getconfig(char *key, char *ext)
 	return getlist(config, key, ext);
 }
 
+char* getconfigdef(char *key, char *ext, char *def)
+{
+	getlist(config, key, ext);
+	if(getlist(config, key, ext) == NULL)
+		return ostrcat(def, NULL,0,0);
+	else
+		return getlist(config, key, ext);
+}
+
 int getconfigint(char *key, char *ext)
 {
 	char *ret = NULL;
