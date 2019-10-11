@@ -26,7 +26,7 @@ struct dvbdev* videoopen(int adapter, int devnr)
 
 	if(node != NULL)
 	{
-		printf("[videodev] open devnr: %i\n");
+		printf("[videodev] open devnr: %i\n", devnr);
 
 		if((fd = open(node->dev, O_RDONLY | O_WRONLY)) < 0)
 		{
