@@ -603,11 +603,9 @@ void screenadjust()
 				system("touch /mnt/config/dualboot");
 #endif
 
-#ifdef MIPSEL
 			addconfigscreen("zapmode", zapmode);
 			if(zapmode->ret != NULL)
 				setzapmode(zapmode->ret);
-#endif
 
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
