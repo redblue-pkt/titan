@@ -782,6 +782,11 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 	delmarkedscreennodes(tunerreceptionhyprid, 1);
 	delownerrc(tunerreceptionhyprid);
 	clearscreen(tunerreceptionhyprid);
+	if(checkchipset("HI3798MV200") == 1)
+	{
+		if(textbox(_("Message"), _("Hybrid tuner mode changed, receiver will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			oshutdown(2, 1);
+	}
 	return ret;
 }
 

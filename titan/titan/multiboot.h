@@ -317,7 +317,11 @@ void screenmultiboot(void)
 			if(rcret == getrcconfigint("rcok", NULL)) 
 			{
 				tmpstr = ostrcat("cp /boot/", partitions->ret, 0, 0);
-				tmpstr = ostrcat(tmpstr, " /boot/startup", 1, 0);
+				if(checkchipset("HI3798MV200") == 1)
+					tmpstr = ostrcat(tmpstr, " /boot/STARTUP", 1, 0);
+				else
+					tmpstr = ostrcat(tmpstr, " /boot/startup", 1, 0);
+				printf("----> activate startup: %s\n", tmpstr);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				if(textbox("MultiBoot", _("Do you want to start now the selected image?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 650, 200, 0, 0) == 1)
