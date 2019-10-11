@@ -426,8 +426,8 @@ void createhypridlist(struct dvbdev* tuner, struct skin* tunerreceptionhyprid, s
 	char* hypridlist = gethypridtunerchoices(tuner->devnr);
 	char* hypridlistvalve = gethypridtunerchoicesvalue(tuner->devnr);
 	
-	printf("---> hypridlist:      $s\n");
-	printf("---> hypridlistvalve: $s\n");
+	printf("---> hypridlist:      %s\n");
+	printf("---> hypridlistvalve: %s\n");
 	
 	tmp = addlistbox(tunerreceptionhyprid, listbox, tmp, 1);
 	if(tmp != NULL)
