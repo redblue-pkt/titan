@@ -691,6 +691,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 				tmpstr = ostrcat(tmpstr, "fe_0", 1, 0);
 			else
 				tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(tuner->devnr), 1, 1);
 	 	  tmpstr = ostrcat(tmpstr, "_hyprid", 0, 0);
 			addconfig(tmpstr, listbox->select->ret);
 
@@ -707,6 +708,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 				ret = screentunerreceptiondvbt(tuner);
 				if(ret == 1)
 				{
+					writetunerconfigterr(tuner, tunerreceptionhyprid);
 					tuner->feinfo->type = FE_OFDM;
 /*#ifdef MIPSEL
 					sethypridtunernew(tuner, listbox->select->ret);
@@ -728,6 +730,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 //			else if(realname != NULL && ostrcmp(realname, "DVB-C") == 0)
 			else if(realname != NULL && ostrstr(realname, "DVB-C") != NULL)
 			{
+				writetunerconfigcable(tuner, tunerreceptionhyprid);
 				ret = screentunerreceptiondvbc(tuner);
 				if(ret == 1)
 				{
@@ -751,6 +754,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 			}
 			else
 			{
+				writetunerconfigsat(tuner, tunerreceptionhyprid);
 				ret = screentunerreceptiondvbs(tuner);
 				if(ret == 1)
 				{
