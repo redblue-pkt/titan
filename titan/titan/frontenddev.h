@@ -744,8 +744,10 @@ void feclose(struct dvbdev* node, int fd)
 {
 	if(node != NULL)
 	{
-		close(node->fd);
-		node->fd = -1;
+		if(close(node->fd) < 0)
+			err("close frontend failed");
+		else
+			node->fd = -1;
 	}
 	else
 		close(fd);

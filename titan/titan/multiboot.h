@@ -205,6 +205,7 @@ void screenmultiboot(void)
 			{
 				tmpstr2[23] = '\0';
 				ownpart = ostrcat(tmpstr2+22, NULL, 0, 0);
+				printf("----> own part: %s\n", ownpart);
  	 		}
  	 	}
 		else
@@ -225,6 +226,8 @@ void screenmultiboot(void)
 			if(islink("/dev/block/by-name/linuxrootfs"))
 				part = 1;
 			else if(islink("/dev/block/by-name/rootfs1"))
+				part = 1;
+			else if(islink("/dev/block/by-name/linuxkernel1"))
 				part = 1;
 				
 			while (0 != (member = readdir(dir)))
