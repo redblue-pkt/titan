@@ -54,9 +54,18 @@ char* getmultinames(int part)
   	}
   	else
   	{
-  		link = ostrcat("/dev/block/by-name/rootfs1", NULL, 0, 0);
-  		data = ostrcat("/tmp/multi/etc/issue", NULL, 0, 0);
-  		idir = ostrcat("/tmp/multi/etc", NULL, 0, 0);
+  		if(checkchipset("HI3798MV200") == 1)
+  		{
+  			link = ostrcat("/dev/block/by-name/userdata", NULL, 0, 0);
+  			data = ostrcat("/tmp/multi/linuxrootfs1/etc/issue", NULL, 0, 0);
+  			idir = ostrcat("/tmp/multi/linuxrootfs1", NULL, 0, 0);
+  		}
+  		else
+  		{
+  			link = ostrcat("/dev/block/by-name/rootfs1", NULL, 0, 0);
+  			data = ostrcat("/tmp/multi/etc/issue", NULL, 0, 0);
+  			idir = ostrcat("/tmp/multi/etc", NULL, 0, 0);
+  		}
   	}
   }
   else if(part == 2)
@@ -188,12 +197,25 @@ void screenmultiboot(void)
 		changechoiceboxvalue(partitions, NULL);
 		
 		tmpstr = readsys("/boot/STARTUP", 1);
-		tmpstr2 = ostrstr(tmpstr, "kernel");
-		if(tmpstr2 != NULL)
+		
+		if(checkchipset("HI3798MV200") == 1)
 		{
-			tmpstr2[7] = '\0';
-			ownpart = ostrcat(tmpstr2+6, NULL, 0, 0);
- 	 }
+			tmpstr2 = ostrstr(tmpstr, "rootsubdir");
+			if(tmpstr2 != NULL)
+			{
+				tmpstr2[23] = '\0';
+				ownpart = ostrcat(tmpstr2+22, NULL, 0, 0);
+ 	 		}
+ 	 	}
+		else
+		{
+			tmpstr2 = ostrstr(tmpstr, "kernel");
+			if(tmpstr2 != NULL)
+			{
+				tmpstr2[7] = '\0';
+				ownpart = ostrcat(tmpstr2+6, NULL, 0, 0);
+ 	 		}
+ 	 	}
  	 free(tmpstr); tmpstr = NULL;
  	 tmpstr2 = NULL;    		
 		
@@ -209,26 +231,58 @@ void screenmultiboot(void)
 			{
  	  		if(ostrcmp(".", member->d_name) != 0 && ostrcmp("..", member->d_name) != 0 && ostrcmp("STARTUP", member->d_name) != 0)
  		 		{
-	   			tmpstr = ostrcat("/boot/", member->d_name, 0, 0);
-  	 			tmpstr2 = readsys(tmpstr, 1);
-  		 		tmpstr3 = ostrstr(tmpstr2, "kernel");
- 	  			if(tmpstr3 != NULL)
- 	  			{
-	   				tmpstr3[7] = '\0';
-	   				if(ostrcmp(ownpart, tmpstr3+6) == 0)
+	   			if(checkchipset("HI3798MV200") == 1)
+					{
+	   				if(ostrstr(member->d_name, "STARTUP_LINUX") != NULL)
 	   				{
-	   					ownpartname = ostrcat(member->d_name, NULL, 0, 0);
-	   					printf("----> own: %s\n", ownpartname);
-	   				}
-	   				if(part > 0 && part < 5)
-	   				{
-	   					partname = getmultinames(part);
-	   					addchoicebox(partitions, member->d_name, partname);
-	   					free(partname); partname = NULL;
-	   					part = part + 1;
+	   			 		tmpstr = ostrcat("/boot/", member->d_name, 0, 0);
+  	 					tmpstr2 = readsys(tmpstr, 1);
+  		 				tmpstr3 = ostrstr(tmpstr2, "kernel");
+ 	  					if(tmpstr3 != NULL)
+ 	  					{
+ 	  						tmpstr3[23] = '\0';
+	   						if(ostrcmp(ownpart, tmpstr3+22) == 0)
+	   						{
+	   							ownpartname = ostrcat(member->d_name, NULL, 0, 0);
+	   							printf("----> own: %s\n", ownpartname);
+	   						}
+	   					}
+	   					if(part > 0 && part < 5)
+	   					{
+	   						partname = getmultinames(part);
+	   						addchoicebox(partitions, member->d_name, partname);
+	   						free(partname); partname = NULL;
+	   						part = part + 1;
+	   					}
+	   					else
+	   						addchoicebox(partitions, member->d_name, member->d_name);
 	   				}
 	   				else
-	   					addchoicebox(partitions, member->d_name, member->d_name);
+	   					continue;
+	   			}
+	   			else
+	   			{
+	   				tmpstr = ostrcat("/boot/", member->d_name, 0, 0);
+  	 				tmpstr2 = readsys(tmpstr, 1);
+  		 			tmpstr3 = ostrstr(tmpstr2, "kernel");
+ 	  				if(tmpstr3 != NULL)
+ 	  				{
+	   					tmpstr3[7] = '\0';
+	   					if(ostrcmp(ownpart, tmpstr3+6) == 0)
+	   					{
+	   						ownpartname = ostrcat(member->d_name, NULL, 0, 0);
+	   						printf("----> own: %s\n", ownpartname);
+	   					}
+	   					if(part > 0 && part < 5)
+	   					{
+	   						partname = getmultinames(part);
+	   						addchoicebox(partitions, member->d_name, partname);
+	   						free(partname); partname = NULL;
+	   						part = part + 1;
+	   					}
+	   					else
+	   						addchoicebox(partitions, member->d_name, member->d_name);
+	   				}
  	  			}     		
    				free(tmpstr); tmpstr = NULL;
    				free(tmpstr2); tmpstr2 = NULL;
