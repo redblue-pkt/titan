@@ -8111,4 +8111,45 @@ int checkshutdown(int flag)
 	return 0;
 }
 
+char* getzapmode()
+{
+	char *zapmodedev = NULL;
+	char *value = NULL;
+
+	zapmodedev = getconfig("zapmodedev", NULL);
+
+	if(zapmodedev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(zapmodedev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	return value;
+}
+
+int setzapmode(char* value)
+{
+	char* zapmodedev;
+	int ret = 0;
+
+	zapmodedev = getconfig("zapmodedev", NULL);
+
+	if(zapmodedev != NULL && value != NULL)
+	{
+		debug(10, "set %s to %s", zapmodedev, value);
+
+		ret = writesys(zapmodedev, value, 0);
+		return ret;
+	}
+
+	return 0;
+}
+
 #endif

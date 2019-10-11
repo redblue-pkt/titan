@@ -5,6 +5,7 @@ void screenadjust()
 {
 	int rcret = 0;
 	char* tmpstr = NULL;
+	char* ret = NULL;
 
 	struct skin* adjust = getscreen("adjust");
 	struct skin* listbox = getscreennode(adjust, "listbox");
@@ -53,6 +54,8 @@ void screenadjust()
 	struct skin* community_user = getscreennode(adjust, "community_user");
 	struct skin* community_pass = getscreennode(adjust, "community_pass");
 	struct skin* debuglevel = getscreennode(adjust, "debuglevel");
+	struct skin* zapmode = getscreennode(adjust, "zapmode");
+
 
 	struct skin* tmp = NULL;
 
@@ -262,6 +265,19 @@ void screenadjust()
 	else
 		changeinput(community_pass, "****");
 
+//	if(file_exist("/proc/stb/video/zapmode") || file_exist("/proc/stb/video/zapping_mode"))
+	if(file_exist(getconfig("zapmode", NULL)) == 1)
+	{
+		addchoicebox(zapmode, "mute", _("Black screen"));
+		addchoicebox(zapmode, "hold", _("Hold screen"));
+		addchoicebox(zapmode, "mutetilllock", _("Black screen till locked"));
+		addchoicebox(zapmode, "holdtilllock", _("Hold till locked"));
+		ret = getzapmode();
+		setchoiceboxselection(zapmode, ret);
+		free(ret); ret = NULL;
+	}
+	else
+		zapmode->hidden = YES;
 
 // setdebuglevel
 #ifndef BETA
@@ -586,6 +602,13 @@ void screenadjust()
 			else
 				system("touch /mnt/config/dualboot");
 #endif
+
+#ifdef MIPSEL
+			addconfigscreen("zapmode", zapmode);
+			if(zapmode->ret != NULL)
+				setzapmode(zapmode->ret);
+#endif
+
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 
