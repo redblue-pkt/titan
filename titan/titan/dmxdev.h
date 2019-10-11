@@ -478,7 +478,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 		err("NULL detect");
 		return 1;
 	}
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("HI3798MV200") == 1) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("3798MV200") == 1 || checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1) //source darf bei dieser Box nur einmal gesetzt werden, l\F6scht ansonsten die Filter.
 	{
 		if(node->fedmxsource == source)
 		{
@@ -490,7 +490,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 #ifdef MIPSEL
 	//Workaround da ansonsten DVR4 nicht funktioniert (Treiberproblem)
 	
-	if(source > DMX_SOURCE_DVR0 && status.setdvr0 == 0 && checkchipset("HI3798MV200") == 0)
+	if(source > DMX_SOURCE_DVR0 && status.setdvr0 == 0 && checkchipset("3798MV200") == 0 && checkchipset("HI3798MV200") == 0)
 	{ 
 		int sourcehelp = DMX_SOURCE_DVR0;
 		ioctl(node->fd, DMX_SET_SOURCE, &sourcehelp);
