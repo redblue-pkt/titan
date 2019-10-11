@@ -160,7 +160,7 @@ struct dvbdev* changedvbdev(struct dvbdev *node)
 				if(getconfig(tmpstr, NULL) != NULL)
 					sethypridtunernew(node, getconfig(tmpstr, NULL));
 				else
-					sethypridtunernew(node, "0"));
+					sethypridtunernew(node, "0");
 #else
 				if(getconfig(tmpstr, NULL) != NULL)
 					sethypridtuner(node->devnr, getconfig(tmpstr, NULL));
