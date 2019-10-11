@@ -444,7 +444,7 @@ void createhypridlist(struct dvbdev* tuner, struct skin* tunerreceptionhyprid, s
 //		tmpstr = ostrcat(tmpstr, tuner->fehyprid, 1, 0);
 		changename(tmp, tmpstr);		
 		
-		setchoiceboxselection(tmp, getconfig(tmpstr, "0"));
+		setchoiceboxselection(tmp, getconfigdef(tmpstr, NULL, "0"));
 
 		free(tmpstr); tmpstr = NULL;
 		tmp->del = 1;
