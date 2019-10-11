@@ -725,13 +725,15 @@ int feopen(struct dvbdev* node, char *fedev)
 	if(node != NULL)
 	{	
 		if((fd = open(node->dev, O_RDWR | O_NONBLOCK)) < 0)
-			debug(200, "open frontend failed %s", node->dev);
+			//debug(200, "open frontend failed %s", node->dev);
+			err("open1 frontend failed %s", node->dev);
 		node->fd = fd;
 	}
 	else
 	{
 		if((fd = open(fedev, O_RDWR | O_NONBLOCK)) < 0)
-			debug(200, "open frontend failed %s", fedev);
+			//debug(200, "open frontend failed %s", fedev);
+			err("open2 frontend failed %s", fedev);
 	}
 
 	closeonexec(fd);
@@ -2626,7 +2628,12 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	if(tuner->fd == -1)
 	{
 		if(feopen(tuner, NULL) < 0)
+		{
 			err("open tuner dev");
+			feclose(tuner, -1);
+			if(feopen(tuner, NULL) < 0)
+				err("open tuner dev");
+		}
 	}
 	else
 		wasopen = 1;

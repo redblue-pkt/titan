@@ -237,7 +237,7 @@ void screenmultiboot(void)
 	   				{
 	   			 		tmpstr = ostrcat("/boot/", member->d_name, 0, 0);
   	 					tmpstr2 = readsys(tmpstr, 1);
-  		 				tmpstr3 = ostrstr(tmpstr2, "kernel");
+  		 				tmpstr3 = ostrstr(tmpstr2, "rootsubdir");
  	  					if(tmpstr3 != NULL)
  	  					{
  	  						tmpstr3[23] = '\0';
