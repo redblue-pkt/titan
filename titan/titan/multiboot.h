@@ -17,6 +17,7 @@ int install_image(char* part)
 	command = ostrcat("ofgwrite -m", part, 0, 0);
 	command = ostrcat(command, " ", 1, 0);
 	command = ostrcat(command, imagedir, 1, 0);
+	printf("----> install command: %s\n", command);
 	int merksec = status.sec;
 	status.sec = 0; //deaktiviere Spinner
 	system(command);
@@ -335,11 +336,23 @@ void screenmultiboot(void)
 			{
 				tmpstr = ostrcat("/boot/", partitions->ret, 0, 0);
 				tmpstr2 = readsys(tmpstr, 1);
-				tmpstr3 = ostrstr(tmpstr2, "kernel");
-				if(tmpstr3 != NULL)
+				if(checkchipset("HI3798MV200") == 1)
 				{
-					tmpstr3[7] = '\0';
-					instpart = ostrcat(tmpstr3+6, NULL, 0, 0);
+					tmpstr3 = ostrstr(tmpstr2, "rootsubdir");
+ 	  			if(tmpstr3 != NULL)
+ 	  			{
+ 	 					tmpstr3[23] = '\0';
+ 	 					instpart = ostrcat(tmpstr3+22, NULL, 0, 0);
+	   			}
+	   		}
+				else
+				{
+					tmpstr3 = ostrstr(tmpstr2, "kernel");
+					if(tmpstr3 != NULL)
+					{
+						tmpstr3[7] = '\0';
+						instpart = ostrcat(tmpstr3+6, NULL, 0, 0);
+ 	 				}
  	 			}
  	 			free(tmpstr); tmpstr = NULL;
  	 			free(tmpstr2); tmpstr2 = NULL;
