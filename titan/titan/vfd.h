@@ -296,7 +296,7 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, len);
 			tmpvalue[5] = '\0';
 		}
-		else if(getconfigint("vfdisplay", NULL) == 3 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 ))
+		else if(getconfigint("vfdisplay", NULL) == 3 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkchipset("3798MV200") == 1))
 		{	
 			memcpy(tmpvalue, value, len);
 			tmpvalue[5] = '\0';
