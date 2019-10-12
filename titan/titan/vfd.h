@@ -286,12 +286,12 @@ int writevfd(char *value)
 
 		len = strlen(value);
 
-		if(checkbox("ATEMIO530") != 1  && checkbox("ATEMIO520") != 1 && checkbox("IPBOX91") != 1 && checkbox("ATEMIO6000") != 1 && checkbox("ATEMIO6100") != 1 && checkbox("SPARK") != 1 && checkbox("ATEMIO6200") != 1 && checkbox("SPARK7162") != 1 && len > 63)
+		if(checkbox("ATEMIO530") != 1  && checkbox("ATEMIO520") != 1 && checkbox("IPBOX91") != 1 && checkbox("ATEMIO6000") != 1 && checkbox("ATEMIO6100") != 1 && checkbox("SPARK") != 1 && checkbox("ATEMIO6200") != 1 && checkbox("SPARK7162") != 1 && checkchipset("3798MV200") != 1 && len > 63)
 		{
 			memcpy(tmpvalue, value, 63);
 			tmpvalue[62] = '\0';
 		}
-		else if(status.standby > 0 && getconfigint("vfdisplaystandby", NULL) == 0 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1) )
+		else if(status.standby > 0 && getconfigint("vfdisplaystandby", NULL) == 0 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkchipset("3798MV200") == 1))
 		{	
 			memcpy(tmpvalue, value, len);
 			tmpvalue[5] = '\0';
@@ -301,12 +301,12 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, len);
 			tmpvalue[5] = '\0';
 		}
-		else if((checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1 || checkbox("IPBOX91") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("SPARK") == 1) && len > 4)
+		else if((checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1 || checkbox("IPBOX91") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("SPARK") == 1 || checkchipset("3798MV200") == 1) && len > 4)
 		{
 			memcpy(tmpvalue, value, 4);
 			tmpvalue[4] = '\0';
 		}
-		else if((checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1 || checkbox("IPBOX91") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("SPARK") == 1) && len < 4)
+		else if((checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1 || checkbox("IPBOX91") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("SPARK") == 1 || checkchipset("3798MV200") == 1) && len < 4)
 		{
 			memcpy(tmpvalue, value, len);
 			tmpvalue[4] = '\0';
