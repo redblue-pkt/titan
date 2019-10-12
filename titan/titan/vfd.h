@@ -41,12 +41,12 @@ int setvfdbrightness(int value)
 	char *vfddev;
 	if(checkchipset("3798MV200") == 1)
 	{
-		vfddev = getconfig("vfddev", NULL);
+		vfdbrightnessdev = getconfig("vfdbrightnessdev", NULL);
 	
 		if(vfddev != NULL)
 		{
-			debug(10, "set %s to %d", vfddev, value);
-			return writesysint(vfddev, value, 0);
+			debug(10, "set %s to %d", vfdbrightnessdev, value);
+			return writesysint(vfdbrightnessdev, value, 0);
 		}
 	
 		return 0;
