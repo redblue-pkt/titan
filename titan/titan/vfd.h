@@ -38,13 +38,29 @@ int durchlauf = 0;
 int setvfdbrightness(int value)
 {
 
-if(checkbox("UFS913") == 1)
-{
-	if(value == 0)
-		value = 1;
-	if(value == 7)
-		value = 6;
-}
+	char *vfddev;
+	if(checkchipset("3798MV200") == 1)
+	{
+		vfddev = getconfig("vfddev", NULL);
+	
+		if(vfddev != NULL && value != NULL)
+		{
+			speedSet = ostrcat(speedSet, oitoa(base + 70), 1, 1);
+
+			debug(10, "set %s to %d", vfddev, value);
+			return writesysint(vfddev, value, 0);
+		}
+	
+		return 0;
+	}
+
+	if(checkbox("UFS913") == 1)
+	{
+		if(value == 0)
+			value = 1;
+		if(value == 7)
+			value = 6;
+	}
 
 #ifdef MIPSEL
 	FILE *f=fopen("/proc/stb/lcd/oled_brightness", "w");
@@ -56,7 +72,6 @@ if(checkbox("UFS913") == 1)
 	return 0;
 #endif
 
-	char *vfddev;
 	struct vfdioctl data;
 	int fd;
 
