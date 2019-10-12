@@ -646,8 +646,10 @@ timeokw = 1;
 	initvfd();
 
 	//setze groesse Framebuffer
-	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1 || checkchipset("HI3798MV200") == 1)
+	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1)
 		setframebuffer(1280, 720, 1280, 1440, 32);
+	if(checkchipset("HI3798MV200") == 1)
+		setframebuffer(1280, 720, 1280, 2880, 32);
 
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
