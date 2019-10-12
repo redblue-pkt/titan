@@ -43,7 +43,7 @@ int setvfdbrightness(int value)
 	{
 		vfdbrightnessdev = getconfig("vfdbrightnessdev", NULL);
 	
-		if(vfddev != NULL)
+		if(vfdbrightnessdev != NULL)
 		{
 			debug(10, "set %s to %d", vfdbrightnessdev, value);
 			return writesysint(vfdbrightnessdev, value, 0);
