@@ -266,7 +266,7 @@ void screenadjust()
 		changeinput(community_pass, "****");
 
 //	if(file_exist("/proc/stb/video/zapmode") || file_exist("/proc/stb/video/zapping_mode"))
-	if(file_exist(getconfig("zapmode", NULL)) == 1)
+	if(file_exist(getconfig("zapmodedev", NULL)))
 	{
 		addchoicebox(zapmode, "mute", _("Black screen"));
 		addchoicebox(zapmode, "hold", _("Hold screen"));
