@@ -232,6 +232,13 @@ struct fb* openfb(char *fbdev, int devnr)
 	}
 	closeonexec(fd);
 	
+	//workarounnd
+	if(checkchipset("HI3798MV200") == 1)
+	{
+		printf("---> setframebuffer(1280, 720, 1280, 2880, 32)\n");
+		setframebuffer(1280, 720, 1280, 2880, 32);
+	}
+	
 	if(ioctl(fd, FBIOGET_VSCREENINFO, &var_screeninfo) == -1)
 	{
 		perr("ioctl FBIOGET_VSCREENINFO failed");
@@ -702,6 +709,12 @@ int saveframebuffer()
 	{
 		perr("failed to open %s", fbdev);
 		return -1;
+	}
+	//workaround
+	if(checkchipset("HI3798MV200") == 1)
+	{
+		printf("---> setframebuffer(1280, 720, 1280, 2880, 32)\n");
+		setframebuffer(1280, 720, 1280, 2880, 32);
 	}
 	
 	if(ioctl(fd, FBIOGET_VSCREENINFO, &save_var_screeninfo) < 0)
