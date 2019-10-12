@@ -38,7 +38,7 @@ int durchlauf = 0;
 int setvfdbrightness(int value)
 {
 
-	char *vfddev;
+	char *vfdbrightnessdev;
 	if(checkchipset("3798MV200") == 1)
 	{
 		vfdbrightnessdev = getconfig("vfdbrightnessdev", NULL);
