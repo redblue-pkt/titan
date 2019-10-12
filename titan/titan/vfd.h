@@ -37,7 +37,6 @@ int durchlauf = 0;
 // Set the brightness of the VFD
 int setvfdbrightness(int value)
 {
-
 	char *vfdbrightnessdev;
 	if(checkchipset("3798MV200") == 1)
 	{
@@ -45,8 +44,8 @@ int setvfdbrightness(int value)
 	
 		if(vfdbrightnessdev != NULL)
 		{
-			debug(10, "set %s to %d", vfdbrightnessdev, value);
-			return writesysint(vfdbrightnessdev, value, 0);
+			debug(10, "set %s to %d", vfdbrightnessdev, value * 36);
+			return writesysint(vfdbrightnessdev, value * 36, 0);
 		}
 	
 		return 0;
