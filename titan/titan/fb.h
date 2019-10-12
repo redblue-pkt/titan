@@ -677,7 +677,10 @@ int setframebuffer(int width, int height, int vwidth, int vheight, int bits)
 		close(fd);
 		return -1;
 	}
-
+	
+	printf("---> FBIOPUT_VSCREENINFO endet\n");
+	system("fbset");
+		
 	close(fd);
 	return 0;	
 }

@@ -197,10 +197,9 @@ void screenmultiboot(void)
 	{
 		changechoiceboxvalue(partitions, NULL);
 		
-		tmpstr = readsys("/boot/STARTUP", 1);
-		
 		if(checkchipset("HI3798MV200") == 1)
 		{
+			tmpstr = readsys("/boot/STARTUP", 2);
 			tmpstr2 = ostrstr(tmpstr, "rootsubdir");
 			if(tmpstr2 != NULL)
 			{
@@ -211,6 +210,7 @@ void screenmultiboot(void)
  	 	}
 		else
 		{
+			tmpstr = readsys("/boot/STARTUP", 1);
 			tmpstr2 = ostrstr(tmpstr, "kernel");
 			if(tmpstr2 != NULL)
 			{
@@ -240,7 +240,7 @@ void screenmultiboot(void)
 	   				if(ostrstr(member->d_name, "STARTUP_LINUX") != NULL)
 	   				{
 	   			 		tmpstr = ostrcat("/boot/", member->d_name, 0, 0);
-  	 					tmpstr2 = readsys(tmpstr, 1);
+  	 					tmpstr2 = readsys(tmpstr, 2);
   		 				tmpstr3 = ostrstr(tmpstr2, "rootsubdir");
  	  					if(tmpstr3 != NULL)
  	  					{
@@ -335,9 +335,9 @@ void screenmultiboot(void)
 			if(rcret == getrcconfigint("rcred", NULL)) 
 			{
 				tmpstr = ostrcat("/boot/", partitions->ret, 0, 0);
-				tmpstr2 = readsys(tmpstr, 1);
 				if(checkchipset("HI3798MV200") == 1)
 				{
+					tmpstr2 = readsys(tmpstr, 2);
 					tmpstr3 = ostrstr(tmpstr2, "rootsubdir");
  	  			if(tmpstr3 != NULL)
  	  			{
@@ -347,6 +347,7 @@ void screenmultiboot(void)
 	   		}
 				else
 				{
+					tmpstr2 = readsys(tmpstr, 1);
 					tmpstr3 = ostrstr(tmpstr2, "kernel");
 					if(tmpstr3 != NULL)
 					{
