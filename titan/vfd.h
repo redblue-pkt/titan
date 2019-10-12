@@ -43,10 +43,8 @@ int setvfdbrightness(int value)
 	{
 		vfddev = getconfig("vfddev", NULL);
 	
-		if(vfddev != NULL && value != NULL)
+		if(vfddev != NULL)
 		{
-			speedSet = ostrcat(speedSet, oitoa(base + 70), 1, 1);
-
 			debug(10, "set %s to %d", vfddev, value);
 			return writesysint(vfddev, value, 0);
 		}
