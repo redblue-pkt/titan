@@ -72,6 +72,7 @@ int setvfdbrightness(int value)
 
 	struct vfdioctl data;
 	int fd;
+	char *vfddev;
 
 	if(status.updatevfd == STOP) return 0;
 
