@@ -2634,9 +2634,6 @@ int fechangetype(struct dvbdev* tuner, char* value)
 		if(feopen(tuner, NULL) < 0)
 		{
 			err("open tuner dev");
-			feclose(tuner, -1);
-			if(feopen(tuner, NULL) < 0)
-				err("open tuner dev");
 		}
 	}
 	else
