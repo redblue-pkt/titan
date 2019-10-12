@@ -1200,6 +1200,8 @@ firstwizzardstep1:
 // fixt manual start 
 	resettvpic();
 
+	ret = setzapmode(getconfig("zapmode", NULL));
+
 	//start auto shutdown thread
 	addtimer(&checkshutdowntimer, START, 10000, -1, NULL, NULL, NULL);
 	//start demo mode
