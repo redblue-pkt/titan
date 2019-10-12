@@ -1319,6 +1319,14 @@ not needed we use wakeup_record_device on recordstartreal
 				videoselectsource(servicenode->videodev, VIDEO_SOURCE_DEMUX);
 				setencoding(chnode, servicenode->videodev);
 				videoplay(servicenode->videodev);
+				
+				if(checkchipset("HI3798MV200") == 1)
+				{
+					videoslowmotion(servicenode->videodev, 0);
+					videofastforward(servicenode->videodev, 0);
+					videocontinue(servicenode->videodev);
+					audiocontinue(servicenode->audiodev);
+				}
 				 
 				encnode->fd = encoderopendirect(encnode->dev);
 				servicenode->recdmxstart = 1;
