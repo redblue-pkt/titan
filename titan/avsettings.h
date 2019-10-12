@@ -92,14 +92,14 @@ void screenavsettings(int flag)
 
 	changeinput(playerstart, "30\n40\n50\n60\n70\n80\n90\n100\n10\n20");
 	setchoiceboxselection(playerstart, getconfig("vol_playerstart", NULL));
-#ifdef MIPSEL
+//#ifdef MIPSEL
 		playerstart->hidden = YES;
-#endif
+//#endif
 	changeinput(playerstop, "70\n80\n90\n100\n10\n20\n30\n40\n50\n60");
 	setchoiceboxselection(playerstop, getconfig("vol_playerstop", NULL));
-#ifdef MIPSEL
+//#ifdef MIPSEL
 		playerstop->hidden = YES;
-#endif
+//#endif
 	ret = getpolicychoices();
 	changeinput(policy, ret);
 	free(ret); ret = NULL;
