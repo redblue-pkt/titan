@@ -7,9 +7,24 @@ int install_image(char* part)
 	char* point = NULL;
 	char* command = NULL;
 		
-	imagedir = screendir("/tmp", "*.bz2", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
+	imagedir = screendir("/tmp", "*.bz2 *.zip", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 	if(imagedir == NULL)
 		return 2;
+	
+	if(cmpfilenameext(imagedir, "zip") == 0)
+	{
+		command = ostrcat("unzip ", imagedir, 0, 0);
+		command = ostrcat(command, " -d /tmp -j -o", 1, 0);
+		printf("----> unzip command: %s\n", command);
+		system(command);
+		free(command); command = NULL;
+		command = ostrcat("rm ", imagedir, 0, 0);
+		system(command);
+		free(command); command = NULL;
+		free(imagedir); imagedir = NULL;
+		imagedir = ostrcat("/tmp/rootfs.tar.bz2", NULL, 0, 0);
+	}
+		
 	point = strrchr(imagedir,'/');
 	if(point == NULL)
 		return 0;
