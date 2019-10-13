@@ -733,7 +733,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcgreen", NULL) || rcret ==  getrcconfigint("rcvmode", NULL))
 		{
 			subtitlepause(1);
 			status.infobar = 0;
