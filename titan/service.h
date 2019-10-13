@@ -503,10 +503,12 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			videoslowmotion(videonode, 0);
 			videofastforward(videonode, 0);
 			videocontinue(videonode);
-			audiocontinue(audionode);
 		}
 	}
-
+	if(checkchipset("HI3798MV200") == 1)
+	{
+		audiocontinue(audionode);
+	}	
 #ifdef MIPSEL
 	if(tmpmute == 1)
 	{
