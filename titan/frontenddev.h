@@ -2628,6 +2628,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	int wasopen = 0;
 	char* realname = gethypridtunerchoicesvaluename(tuner->devnr, value);
 	char* tmpstr = NULL;
+	struct dvb_frontend_info* feinfo = NULL;
 	
 	if(tuner->fd == -1)
 	{
@@ -2721,6 +2722,14 @@ int fechangetype(struct dvbdev* tuner, char* value)
 	else
 	{
 		printf("fe set property value %s data %d ... RC:%i\n", value, p[1].u.data, ret);
+		feinfo = fegetinfo(NULL, tuner->fd);
+		if(feinfo != NULL)
+		{
+			free(tuner->feinfo);
+			tuner->feinfo = NULL;
+			tuner-feinfo = feinfo;
+		}
+		
 	}
 	
 	if(type == feTerrestrial)
