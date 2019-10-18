@@ -735,8 +735,8 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 						if(textbox(_("Message"), _("Hybrid tuner mode changed, receiver will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 							oshutdown(2, 1);
 					}
-					changedvbdev(tuner);
-					//changedvbdev(dvbnode);
+					//changedvbdev(tuner);
+					changedvbdev(dvbnode);
 				}
 			}
 //			else if(realname != NULL && ostrcmp(realname, "DVB-C") == 0)
@@ -761,8 +761,8 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 						if(textbox(_("Message"), _("Hybrid tuner mode changed, receiver will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 							oshutdown(2, 1);
 					}
-					changedvbdev(tuner);
-					//changedvbdev(dvbnode);
+					//changedvbdev(tuner);
+					changedvbdev(dvbnode);
 				}
 			}
 			else
@@ -772,8 +772,8 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 				if(ret == 1)
 				{
 					tuner->feinfo->type = FE_QPSK;
-					changedvbdev(tuner);
-					//changedvbdev(dvbnode);
+					//changedvbdev(tuner);
+					changedvbdev(dvbnode);
 				}
 			}
 			free(realname), realname = NULL;
