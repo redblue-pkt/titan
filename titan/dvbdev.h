@@ -134,15 +134,19 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 
 struct dvbdev* changedvbdev(struct dvbdev *node)
 {
+	int fd = -1;
 	if(node == NULL) return NULL;
 
 	char *fehyprid = NULL, *tmpstr = NULL;
 	struct dvb_frontend_info* feinfo = NULL;
 	
-	close(node->fd);
-	node->fd = -1;
-	
-	int fd = feopen(NULL, node->dev);
+	if(close(node->fd) > -1 || node->fd == -1)
+	{
+		node->fd = -1;
+		fd = feopen(NULL, node->dev);
+	}
+	else
+		fd = node->fd 
 	if(fd >= 0)
 	{
 		fehyprid = gethypridtunerchoicesvalue(node->devnr);
