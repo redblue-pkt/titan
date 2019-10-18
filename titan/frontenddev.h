@@ -2727,7 +2727,7 @@ int fechangetype(struct dvbdev* tuner, char* value)
 		{
 			free(tuner->feinfo);
 			tuner->feinfo = NULL;
-			tuner-feinfo = feinfo;
+			tuner->feinfo = feinfo;
 		}
 		
 	}
