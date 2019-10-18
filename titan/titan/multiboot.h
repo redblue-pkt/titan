@@ -12,7 +12,7 @@ int install_image(char* part)
 		return 2;
 	
 	printf("----> imagedir: %s\n", imagedir);
-	if(cmpfilenameext(imagedir, "zip") == 0)
+	if(cmpfilenameext(imagedir, ".zip") == 0)
 	{
 		command = ostrcat("unzip ", imagedir, 0, 0);
 		command = ostrcat(command, " -d /tmp -j -o", 1, 0);
