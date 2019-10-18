@@ -146,7 +146,7 @@ struct dvbdev* changedvbdev(struct dvbdev *node)
 		fd = feopen(NULL, node->dev);
 	}
 	else
-		fd = node->fd 
+		fd = node->fd; 
 	if(fd >= 0)
 	{
 		fehyprid = gethypridtunerchoicesvalue(node->devnr);
