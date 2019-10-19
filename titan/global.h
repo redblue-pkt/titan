@@ -6591,6 +6591,8 @@ char* gethypridtunerchoices(int dev)
 #ifdef MIPSEL
 	char *tmpstr2 = NULL;
 	char *tmpstr3 = NULL;
+	char *tmpstr4 = NULL;
+	char *tmpstr5 = NULL;
 #endif
 
 #if defined DTV_ENUM_DELSYS
@@ -6618,8 +6620,32 @@ char* gethypridtunerchoices(int dev)
 	start = ostrcat(start, ":", 1, 0);
 
 #ifdef MIPSEL
-
 	tmpstr1 = string_resub(start, "I2C_Device", tmpstr, 0);
+	
+#if defined DTV_ENUM_DELSYS
+	tmpstr5 = ostrstr(tmpstr1, "Mode ");
+	if(tmpstr5 != NULL)
+	{
+		tmpstr2 = string_resub("Mode ", ":", tmpstr5, 0);
+		value = ostrcat(tmpstr2, "\n", 0, 0);
+		tmpstr5[0] = '\n'
+	}
+	tmpstr5 = ostrstr(tmpstr5, "Mode ");
+	if(tmpstr5 != NULL)
+	{
+		tmpstr3 = string_resub("Mode ", ":", tmpstr5, 0);
+		value = ostrcat(tmpstr3, "\n", 0, 0);
+		tmpstr5[0] = '\n'
+	}
+		tmpstr5 = ostrstr(tmpstr5, "Mode ");
+	if(tmpstr5 != NULL)
+	{
+		tmpstr4 = string_resub("Mode ", ":", tmpstr5, 0);
+		value = ostrcat(tmpstr4, "\n", 0, 0);
+		tmpstr5[0] = '\n'
+	}
+#else
+
 	tmpstr2 = string_resub("Mode ", ":", tmpstr1, 0);
 	tmpstr3 = oregex(".*Mode ([0-9]{1}):.*", tmpstr1);
 
@@ -6627,12 +6653,15 @@ char* gethypridtunerchoices(int dev)
 		value = ostrcat(tmpstr2, "\n", 0, 0);
 	if(tmpstr3 != NULL)
 		value = ostrcat(value, tmpstr3, 1, 0);
+#endif
 
 	free(start), start = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
 	free(tmpstr2), tmpstr2 = NULL;
 	free(tmpstr3), tmpstr3 = NULL;
+	free(tmpstr4), tmpstr4 = NULL;
+	free(tmpstr5), tmpstr4 = NULL;
 #else
 	tmpstr1 = string_resub(start, "Frontend_Device", tmpstr, 0);
 	free(start), start = NULL;
