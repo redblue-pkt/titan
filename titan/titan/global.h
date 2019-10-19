@@ -6661,7 +6661,7 @@ char* gethypridtunerchoices(int dev)
 	free(tmpstr2), tmpstr2 = NULL;
 	free(tmpstr3), tmpstr3 = NULL;
 	free(tmpstr4), tmpstr4 = NULL;
-	free(tmpstr5), tmpstr4 = NULL;
+	tmpstr5 = NULL;
 #else
 	tmpstr1 = string_resub(start, "Frontend_Device", tmpstr, 0);
 	free(start), start = NULL;
