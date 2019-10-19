@@ -6628,21 +6628,21 @@ char* gethypridtunerchoices(int dev)
 	{
 		tmpstr2 = string_resub("Mode ", ":", tmpstr5, 0);
 		value = ostrcat(tmpstr2, "\n", 0, 0);
-		tmpstr5[0] = '\n'
+		tmpstr5[0] = '\n';
 	}
 	tmpstr5 = ostrstr(tmpstr5, "Mode ");
 	if(tmpstr5 != NULL)
 	{
 		tmpstr3 = string_resub("Mode ", ":", tmpstr5, 0);
 		value = ostrcat(tmpstr3, "\n", 0, 0);
-		tmpstr5[0] = '\n'
+		tmpstr5[0] = '\n';
 	}
 		tmpstr5 = ostrstr(tmpstr5, "Mode ");
 	if(tmpstr5 != NULL)
 	{
 		tmpstr4 = string_resub("Mode ", ":", tmpstr5, 0);
 		value = ostrcat(tmpstr4, "\n", 0, 0);
-		tmpstr5[0] = '\n'
+		tmpstr5[0] = '\n';
 	}
 #else
 
