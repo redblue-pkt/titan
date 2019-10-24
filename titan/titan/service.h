@@ -300,15 +300,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 #endif		
 	audiostop(status.aktservice->audiodev);
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
 		dmxstop(status.aktservice->dmxaudiodev);
-
-// gost
-//	if(checkbox("VUSOLO2") == 1)
-//	{
-//		videostop(status.aktservice->videodev, 1);
-//		dmxstop(status.aktservice->dmxvideodev);
-//	}
 
 // gost test multibox
 	if(checkchipset("HI3798MV200") == 1)
@@ -483,11 +476,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			if(checkchipset("3798MV200") == 1)
 				dmxstart(status.aktservice->dmxvideodev);
 
-// gost
-//			if(checkbox("VUSOLO2") == 1)
-//			{
-//				dmxstart(status.aktservice->dmxvideodev);
-//			}
 			if(checkbox("VUSOLO2") == 1) //fixt only audio no video.. blackscreen after zap
 				videofreeze(videonode);
 
@@ -525,7 +513,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 	if(status.mute != 1)
 	{
-		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200") == 1)
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
 			dmxstart(status.aktservice->dmxaudiodev);
 		audioplay(status.aktservice->audiodev);
 	}
@@ -839,7 +827,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag == 4) node->type = STILLPIC;
 	
 		audiostop(node->audiodev);
-		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1)
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
 			dmxstop(status.aktservice->dmxaudiodev);
 
 		if(checkbox("VUSOLO2") == 1)
@@ -858,8 +846,6 @@ int servicestop(struct service *node, int clear, int flag)
 
 			dmxstop(node->dmxaudiodev);
 			videostop(node->videodev, clear);
-			if(clear == 1 && checkchipset("3798MV200") == 1)
-				videoclearbuffer(status.aktservice->videodev);
 		}
 		int	fastzap = getconfigint("fastzap", NULL);
 
