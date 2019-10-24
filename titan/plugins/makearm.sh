@@ -218,5 +218,7 @@ compile "wm2018" "wm2018" "" ""
 compile "kravencfg" "kravencfg" "" ""
 compile "multiimage" "MultiImage" "" ""
 compile "sispmctl" "sispmctl" "" ""
+compile "kodistarter" "kodistarter" "" ""
+compile "e2starter" "e2starter" "" ""
 
 #rm -r networkbrowser/networkbrowser
