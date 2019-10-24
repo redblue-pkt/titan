@@ -1,0 +1,5 @@
+<screen fontcol=fontcol name=kodistarter pic=%pluginpath%/kodistarter/skin/background.jpg fontsize=30 posx=0 posy=0 width=100% height=100% bordersize=0>
+<node name=picture picwidth=1280 picheight=720 valign=middle halign=center bordercol=bordercol bordersize=0 width=100% height=100%>
+<node textposx=50 name=guiname posx=0 posy=90% width=100% height=30 fontcol=fontcol/>
+<node textposx=50 name=install posx=0 posy=95% width=100% height=30 fontcol=fontcol/>
+</screen>
