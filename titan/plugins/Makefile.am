@@ -7,6 +7,7 @@ SUBDIRS = \
 	catcatch \
 	dlna \
 	dvdplayer \
+	e2starter \
 	facebook \
 	filemanager \
 	gmediarender \
@@ -15,6 +16,7 @@ SUBDIRS = \
 	imdbapi \
 	instar \
 	keylock \
+	kodistarter \
 	kravencfg \
 	lcdpearl1 \
 	lcdsamsung \
