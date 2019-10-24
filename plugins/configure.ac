@@ -37,6 +37,7 @@ callmonitor1/Makefile
 catcatch/Makefile
 dlna/Makefile
 dvdplayer/Makefile
+e2starter/Makefile
 facebook/Makefile
 filemanager/Makefile
 gmediarender/Makefile
@@ -45,6 +46,7 @@ imdb/Makefile
 imdbapi/Makefile
 instar/Makefile
 keylock/Makefile
+kodistarter/Makefile
 kravencfg/Makefile
 lcdpearl1/Makefile
 lcdsamsung/Makefile
