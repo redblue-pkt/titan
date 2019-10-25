@@ -20,7 +20,17 @@ void screene2starter()
 	drawscreen(skin, 0, 0);
 	drawscreen(e2starter, 0, 0);
 
-	cmd = ostrcat(cmd, "/sbin/e2.sh", 1, 0);
+	cmd = ostrcat(cmd, "/sbin/e2.sh &", 1, 0);
+	status.hangtime = 1;
+
+	subtitlepause(1);
+
+	int tmprcret = -1;
+
+#ifdef MIPSEL
+	delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
+	delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
+#endif
 
 	//start gui
 	debug(10, "cmd: %s", cmd);
@@ -37,16 +47,22 @@ void screene2starter()
 	changepic(e2starter, "%pluginpath%/e2starter/skin/background.jpg");					
 	drawscreen(e2starter, 0, 0);
 
+	drawscreen(loading, 0, 0);
+
+	disablemanualblit();
+
 	while(1)
 	{
+		printf("screene2starter while\n");
 		rcret = waitrcext(NULL, rcwait, 0, 0);
-
  		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
+//		if(rcret == getrcconfigint("rcok", NULL)) break;
 	}
 
 	//stop renderer
 	system("killall -9 e2.sh");
+	system("rm /tmp/e2starter.sh");
+	system("killall -9 e2starter.sh");
 		
 	if(status.lastservice != NULL)
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
@@ -56,6 +72,14 @@ void screene2starter()
 	delownerrc(e2starter);
 	clearscreen(loading);
 	clearscreen(e2starter);
+
+#ifdef MIPSEL
+	enablemanualblit();
+	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
+	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+#endif
+
+	status.hangtime = getconfigint("hangtime", NULL);
 }
 
 #endif
