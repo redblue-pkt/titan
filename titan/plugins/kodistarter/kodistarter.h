@@ -20,7 +20,17 @@ void screenkodistarter()
 	drawscreen(skin, 0, 0);
 	drawscreen(kodistarter, 0, 0);
 
-	cmd = ostrcat(cmd, "/sbin/kodi.sh", 1, 0);
+	cmd = ostrcat(cmd, "/sbin/kodi.sh &", 1, 0);
+	status.hangtime = 1;
+
+	subtitlepause(1);
+
+	int tmprcret = -1;
+
+#ifdef MIPSEL
+	delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
+	delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
+#endif
 
 	//start gui
 	debug(10, "cmd: %s", cmd);
@@ -37,16 +47,21 @@ void screenkodistarter()
 	changepic(kodistarter, "%pluginpath%/kodistarter/skin/background.jpg");					
 	drawscreen(kodistarter, 0, 0);
 
+	drawscreen(loading, 0, 0);
+
+	disablemanualblit();
+
 	while(1)
 	{
+		printf("screenkodistarter while\n");
 		rcret = waitrcext(NULL, rcwait, 0, 0);
-
  		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL)) break;
 	}
 
-	//stop renderer
+	//stop install script
 	system("killall -9 kodi.sh");
+	system("rm /tmp/kodistarter.sh");
+	system("killall -9 kodistarter.sh");
 		
 	if(status.lastservice != NULL)
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
@@ -56,6 +71,14 @@ void screenkodistarter()
 	delownerrc(kodistarter);
 	clearscreen(loading);
 	clearscreen(kodistarter);
+
+#ifdef MIPSEL
+	enablemanualblit();
+	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
+	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+#endif
+
+	status.hangtime = getconfigint("hangtime", NULL);
 }
 
 #endif

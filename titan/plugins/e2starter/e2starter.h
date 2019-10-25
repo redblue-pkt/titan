@@ -56,10 +56,9 @@ void screene2starter()
 		printf("screene2starter while\n");
 		rcret = waitrcext(NULL, rcwait, 0, 0);
  		if(rcret == getrcconfigint("rcexit", NULL)) break;
-//		if(rcret == getrcconfigint("rcok", NULL)) break;
 	}
 
-	//stop renderer
+	//stop install script
 	system("killall -9 e2.sh");
 	system("rm /tmp/e2starter.sh");
 	system("killall -9 e2starter.sh");
