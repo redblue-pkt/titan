@@ -71,7 +71,7 @@ startdate()
 		fi
 }
 
-startdelpack
+startdelpack()
 {
 	if [ -e /var/etc/.firstok ]; then
 		opkg remove minidlna --force-depends
@@ -341,7 +341,7 @@ case $1 in
 		startlibs
 		starthomedir
 		startrcreboot
-		startdelpack
+#		startdelpack
 		workarounds
 		startgui;;
 	last)
