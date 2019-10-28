@@ -507,7 +507,8 @@ int dmxsetsource(struct dvbdev* node, int source)
 	}
 	else
 	{
-		if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("DM920") == 1 || checkchipset("HI3798MV200") == 1)
+		// fixt dvb-t pixelsalat
+		if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("DM920") == 1 || checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1)
 		{
 		  struct dvbdev* nodeh = dvbdev;
 			while(nodeh != NULL)
