@@ -811,7 +811,8 @@ hosterlist()
 		$curlbin "$URL/$PAGE" -o $TMP/cache.$PARSER.$FROM.$FILENAME.1
 
 #		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!show_webplayer('!\nfound=('!g" | sed 's!src="!\nsrc="!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
-		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s!<td width=16><img title=!\nfound=!g" | grep '^found=' | grep  show_webplayer >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed "s#<td width=16><img title=#\nfound=#g" | grep '^found=' | grep  show_webplayer >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | sed -e 's/\ \+/./g' | sed -e 's/\t\+/./g' | tr '\r' ' ' | tr '\n' ' ' | sed "s#title=#\nfound=#g" | grep '^found=' | grep webplayer >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1 | sed 's!/webplayer.php!/export/webplayer.iframe.php!'`
@@ -890,6 +891,46 @@ hosterlist()
 			fi
 
 		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.3
+
+#		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | sed -e 's/\ \+/./g' | sed -e 's/\t\+/./g' | tr '\r' ' ' | tr '\n' ' ' | sed "s#title=#\nfound=#g" | grep '^found=' | grep webplayer >$TMP/cache.$PARSER.$FROM.$FILENAME.4
+		cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | grep ';return false;" href="' | sed -nr 's/.*href="([^"]+)".*/\1/p'  >$TMP/cache.$PARSER.$FROM.$FILENAME.4
+
+		while read -u 3 ROUND; do
+			count=`expr $count + 1`
+			URL=`echo $ROUND`
+			if [ "`echo $URL | grep ^// | wc -l`" -eq 1 ];then
+				URL="http:$URL"
+			fi
+			TITLE="WEB STREAM $count"
+#			EXTRA="`echo $ROUND | sed 's!http://cdn.livetvcdn.net/webplayer.php?t=!!'`"
+			TMPURL=`hoster1 "$URL"`
+			EXTRA="$TMPURL"
+			URL="$TMPURL"
+
+#			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			HOST=$(echo "$EXTRA" | sed -nr 's/.*[http|https]:\/\/([^\/]+)\/.*/\1/p' | tr [A-Z] [a-z])
+			PIC="http://atemio.dyndns.tv/mediathek/menu/"$HOST".jpg"
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$EXTRA" ];then
+				TITLE="$TITLE ($EXTRA)"
+			fi
+
+			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
+				if [ ! -e $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list ];then
+					touch $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
+				fi
+				piccount=`expr $piccount + 1`
+
+#				URL="$SRC $SRC hoster '$URL'"
+##				URL="$SRC $SRC findhoster $FROM '$URL'"
+
+#				LINE="$TITLE#$URL#$PIC#$PARSER_$piccount.jpg#$NAME#111"
+				LINE="$TITLE#$URL#$PIC#$PARSER.$HOST.jpg#$NAME#14"
+				echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
+			fi
+
+		done 3<$TMP/cache.$PARSER.$FROM.$FILENAME.4
+
 
 	fi
 	echo "$TMP/$PARSER.$INPUT.$FROM.$FILENAME.list"
