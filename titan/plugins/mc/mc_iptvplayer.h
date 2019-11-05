@@ -340,6 +340,11 @@ void screenmc_iptvplayer()
 				filename = ostrcat(listbox->select->name, NULL, 0, 0);
 				showname = ostrcat(listbox->select->text, NULL, 0, 0);
 
+				if(cmpfilenameext(filename, ".ts") == 0 && !file_exist("/etc/.oebuild"))
+					playertype = 1;
+				else
+					playertype = 0;
+
 				changetext(b2, _("Playlist-Mode"));
 			
 				debug(50, "screensaver title: %s", listbox->select->text);
