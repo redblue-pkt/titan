@@ -3386,7 +3386,7 @@ int setlang(char *lang)
 	debug(10, "lang: %s", lang);
 	char *ret;
 
-#ifdef MIPSEL
+#ifdef OEBUILD
 	// old: po/de new: de_DE
 	char* tmpstr = NULL, *src = NULL, *dest = NULL, *cmd = NULL;
 	tmpstr = ostrcat(lang, NULL, 0, 0);
