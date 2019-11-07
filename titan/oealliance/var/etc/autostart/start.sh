@@ -157,6 +157,16 @@ workarounds()
 	fi
 }
 
+startCi()
+{
+	if [ "$model" == "hd51" ] || [ "$model" == "mutant51" ]; then
+		if [ -e /mnt/bin/ciplushelper ];then
+			/mnt/bin/ciplushelper &
+			sleep 1
+		fi
+	fi
+}
+
 startgui()
 {
 	STARTDEFAULT="/usr/local/bin/titan /mnt/config/titan.cfg"
@@ -342,6 +352,7 @@ case $1 in
 		starthomedir
 		startrcreboot
 #		startdelpack
+		startCi
 		workarounds
 		startgui;;
 	last)
