@@ -8183,4 +8183,42 @@ int setzapmode(char* value)
 	return 0;
 }
 
+int update_iptv(int file)
+{
+	char* path = NULL, *ip = NULL, *tmpstr = NULL, *link = NULL;
+	int ret = 0;
+
+	tmpstr = dirname(file);
+	link = getconfig("iptvserver", NULL);
+
+	if(link != NULL)
+	{
+		debug(10, "update %s", link);
+
+		if(!file_exist(tmpstr))
+			mkdir(tmpstr, 0777);
+
+		tmpstr = ostrcat(tmpstr, "/iptv.m3u", 1, 0);
+		if(file_exist(tmpstr))
+			unlink(tmpstr);
+
+		ip = oregex("://(.*)/.*", link);
+		path = oregex("://.*/(.*).*", link);
+
+
+		if(!file_exist(tmpstr))
+			gethttp(ip, path, 80, tmpstr, HTTPAUTH, 5000, NULL, 0);
+
+		if(file_exist(tmpstr)) ret = 1;
+
+	}
+
+	free(ip), ip = NULL;
+	free(path), path = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(link), link = NULL;
+
+	return ret;
+}
+
 #endif

@@ -648,6 +648,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			addmenulist(&mlist, "Delete File", _("Delete File"), NULL, 0, 0);
 			addmenulist(&mlist, "Rename File", _("Delete File"), NULL, 0, 0);
 			addmenulist(&mlist, "Create Folder", _("Create Folder"), NULL, 0, 0);
+			addmenulist(&mlist, "Update Iptv", _("Update Iptv"), NULL, 0, 0);
 		}
 		if(status.mediadbfiles > 0)
 			addmenulist(&mlist, "MediaDB Scan Info", _("MediaDB Scan Info"), NULL, 0, 0);
@@ -756,6 +757,8 @@ printf("mbox->name=%s\n", mbox->name);
 			get_mediadb_scan_info();
 		else if(ostrcmp(mbox->name, "MediaDB Edit") == 0)
 			screenmediadbedit(file, 0, 0);
+		else if(ostrcmp(mbox->name, "Update Iptv") == 0)
+			ret = update_iptv(file);
 		else if(ostrcmp(mbox->name, "Delete File") == 0)
 		{
 			playcheckdirrcret(file, 1);
