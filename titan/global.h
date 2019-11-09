@@ -8183,7 +8183,7 @@ int setzapmode(char* value)
 	return 0;
 }
 
-int update_iptv(int file)
+int update_iptv(char* file)
 {
 	char* tmpstr = NULL, *link = NULL;
 	int ret = 0;
