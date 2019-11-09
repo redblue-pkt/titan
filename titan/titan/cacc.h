@@ -116,13 +116,13 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		else
 			printf("[titan] #### CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x\n", index, parity);	
 	}
-	if(testwork == 0)
+	/*if(testwork == 0)
 	{
 		if(checkbox("DM900") == 1)
 				descrambler_deinit();
 	}
 	else
-		testwork = 0;
+		testwork = 0;*/
 	//descrambler_close(); 
 
 #else
