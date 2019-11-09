@@ -22,6 +22,8 @@ static const char *descrambler_filename = "/dev/dvb/adapter0/ca3";
 static int desc_fd = -1;
 static int desc_user_count = 0;
 
+static int testwork = 0;
+
 unsigned char dh_p[256] = {       /* prime */
 	0xd6, 0x27, 0x14, 0x7a, 0x7c, 0x0c, 0x26, 0x63, 0x9d, 0x82, 0xeb, 0x1f, 0x4a, 0x18, 0xff, 0x6c,
 	0x34, 0xad, 0xea, 0xa6, 0xc0, 0x23, 0xe6, 0x65, 0xfc, 0x8e, 0x32, 0xc3, 0x33, 0xf4, 0x91, 0xa7,
@@ -114,6 +116,13 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 		else
 			printf("[titan] #### CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x\n", index, parity);	
 	}
+	if(testwork == 0)
+	{
+		if(checkbox("DM900") == 1)
+				descrambler_deinit();
+	}
+	else
+		testwork = 0;
 	//descrambler_close(); 
 
 #else
@@ -262,6 +271,7 @@ int descrambler_set_pid(int index, int enable, int pid)
 		{
 			printf("[titan] **** CA_SET_PID pid=0x%04x index=0x%04x\n", p.pid, p.index);
 		}
+		testwork = 1;
 		//descrambler_close();
 	}
 	return 0;
