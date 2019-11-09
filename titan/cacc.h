@@ -221,7 +221,7 @@ int aes_xcbc_mac_done(struct aes_xcbc_mac_ctx *ctx, uint8_t *out)
 
 void descrambler_close(void)
 {
-	debug(620, "start");
+	debug(620, "descrambler_close");
 	close(desc_fd);
 	desc_fd = -1;
 }
@@ -290,7 +290,7 @@ int descrambler_set_pid(int index, int enable, int pid)
 
 int descrambler_open(void)
 {
-	debug(620, "start");
+	debug(620, "descrambler_open");
 	if(desc_fd == -1)
 	{
 		desc_fd = open(descrambler_filename, O_RDWR | O_NONBLOCK );
@@ -308,7 +308,7 @@ int descrambler_open(void)
 
 int descrambler_init(void)
 {
-	debug(620, "start");
+	debug(620, "descrambler_init");
 	desc_user_count++;
 	debug(620, "desc_user_count: %d", desc_user_count);
 
@@ -317,10 +317,13 @@ int descrambler_init(void)
 
 void descrambler_deinit(void)
 {
-	debug(620, "start");
+	debug(620, "descrambler_deinit");
 	desc_user_count--;
 	if (desc_user_count <= 0 && desc_fd > 0)
+	{
 		descrambler_close();
+		desc_user_count = 0;
+	}
 }
 
 static int pkcs_1_mgf1(const uint8_t *seed, unsigned long seedlen, uint8_t *mask, unsigned long masklen)
