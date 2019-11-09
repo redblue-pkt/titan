@@ -109,7 +109,7 @@ size_t curl_write( void *ptr, size_t size, size_t nmemb, void *stream)
 	return size * nmemb;
 }
 
-char* gethttps(char* url)
+char* gethttps1(char* url)
 {
 	CURL *curl;
 	CURLcode res;
@@ -160,7 +160,7 @@ void screenfaceregister()
 
 	tmpstr = ostrcat(FACEBOOKURL, "/oauth/device?type=device_code&client_id=", 0, 0);
 	tmpstr = ostrcat(tmpstr, FACEBOOKAPPID, 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(curlretbuf == NULL)
 	{
@@ -192,7 +192,7 @@ void screenfaceregister()
 		if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcok", NULL) || count > 100)
 			break;
 		
-		curlretbuf = gethttps(tmpstr);
+		curlretbuf = gethttps1(tmpstr);
 		access_token = getxmlentry(curlretbuf, "\"access_token\":");
 		if(access_token != NULL)
 		{
@@ -230,7 +230,7 @@ int getfacefriens(struct skin* facefriends, struct skin* listbox, char* id)
 	tmpstr = ostrcat(tmpstr, FACEMAXFRIEND, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	debug(369, "url=%s", tmpstr);
 	debug(369, "ret=%s", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
@@ -310,7 +310,7 @@ int getfaceuser(struct skin* name, struct skin* status, struct skin* gender, str
 	tmpstr = ostrcat(tmpstr, id, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	debug(369, "url=%s", tmpstr);
 	debug(369, "ret=%s", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
@@ -364,7 +364,7 @@ int getfacestream(struct skin* facebook, struct skin* listbox, char* id)
 	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	debug(369, "url=%s", tmpstr);
 	debug(369, "ret=%s", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
@@ -544,7 +544,7 @@ int getfacenote(struct skin* facebook, struct skin* listbox, char* id)
 	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	debug(369, "url=%s", tmpstr);
 	debug(369, "ret=%s", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
@@ -658,7 +658,7 @@ int getfacepicture(struct skin* facebook, struct skin* listbox, struct skin* fac
 	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	debug(369, "url=%s", tmpstr);
 	debug(369, "ret=%s", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
@@ -809,7 +809,7 @@ int getfacealbum(struct skin* facebook, struct skin* listbox, struct skin* facef
 	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	debug(369, "url=%s", tmpstr);
 	debug(369, "ret=%s", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
@@ -915,7 +915,7 @@ int getfacecomment(struct skin* facecomment, struct skin* listbox, struct skin* 
 	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	debug(369, "url=%s", tmpstr);
 	debug(369, "ret=%s", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
@@ -1037,7 +1037,7 @@ int getfacesubcomment(struct skin* facesubcomment, struct skin* listbox, char* i
 	tmpstr = ostrcat(tmpstr, FACEMAXENTRY, 1, 0);
 	tmpstr = ostrcat(tmpstr, "&access_token=", 1, 0);
 	tmpstr = ostrcat(tmpstr, getconfig("facebooktoken", NULL), 1, 0);
-	curlretbuf = gethttps(tmpstr);
+	curlretbuf = gethttps1(tmpstr);
 	debug(369, "url=%s", tmpstr);
 	debug(369, "ret=%s", curlretbuf);
 	free(tmpstr); tmpstr = NULL;
