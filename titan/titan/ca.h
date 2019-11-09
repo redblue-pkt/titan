@@ -2404,6 +2404,8 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 		if(foundcaid == 0)
 		{
 			debug(620, "cam not supports caid");
+			if(checkbox("DM900") == 1)
+				descrambler_deinit();
 			return 1;
 		}
 
