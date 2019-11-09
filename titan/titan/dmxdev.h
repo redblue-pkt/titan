@@ -38,7 +38,7 @@ struct dvbdev* dmxopen(struct dvbdev* fenode, int flag)
 	
 	while(node != NULL)
 	{
-		if(node->fd == -1 && node->type == DEMUXDEV && node->adapter == fenode->adapter && node->devnr == fenode->devnr + 1)
+		if(node->fd == -1 && node->type == DEMUXDEV && node->adapter == fenode->adapter && node->devnr == fenode->devnr)
 			break;
 		node = node->next;
 	}
