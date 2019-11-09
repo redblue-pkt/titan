@@ -5,6 +5,8 @@
 #include "header.h"
 #include "debug.h" 
 #include "crc32.h"
+#include <stdio.h>
+#include <curl/curl.h>
 #include "sock.h" 
 
 #define SYSCODE 0UL
