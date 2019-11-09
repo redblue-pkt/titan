@@ -321,7 +321,7 @@ void descrambler_deinit(void)
 	desc_user_count--;
 	if (desc_user_count <= 0 && desc_fd > 0)
 	{
-		cainit(desc_fd)
+		cainit(desc_fd);
 		descrambler_close();
 		desc_user_count = 0;
 	}
