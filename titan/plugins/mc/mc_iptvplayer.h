@@ -155,18 +155,26 @@ void screenmc_iptvplayer()
 		}
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
-			if(playlist == 0)
+			if(status.play == 1)
+				playrcred(filename, NULL, playinfobarstatus, playertype, flag);
+			else
 			{
-				int sort = screendirsort();
-				debug(50, "rcred: tmpsort=%d", sort);
+				if(playlist == 0)
+				{
+					int sort = screendirsort();
+					debug(50, "rcred: tmpsort=%d", sort);
 
-				addconfiginttmp("dirsort", sort);
-				mc_changeview(tmpview, filelist, apskin, flag);
+					// fixt grey if sorting >10s
+					drawscreen(skin, 0, 0);
+	
+					addconfiginttmp("dirsort", sort);
+					mc_changeview(tmpview, filelist, apskin, flag);
 
-				delownerrc(apskin);	
-				getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
-				addscreenrc(apskin, filelist);
-				drawscreen(apskin, 0, 0);
+					delownerrc(apskin);	
+					getfilelist(apskin, filelistpath, filelist, filelistpath->text, filemask, tmpview, filelist->select->name);
+					addscreenrc(apskin, filelist);
+					drawscreen(apskin, 0, 0);
+				}
 			}
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))
@@ -233,7 +241,10 @@ void screenmc_iptvplayer()
 //				{
 					filename = createpath(filelistpath->text, filelist->select->name);
 					debug(133, "filename: %s", filename);				
-					playrcred(filename, NULL, playinfobarstatus, playertype, flag);
+					int check = playrcred(filename, NULL, playinfobarstatus, playertype, flag);
+					if(check == 1)
+						textbox(_("Message"), _("Update Iptv M3U ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+
 //				}
 			}
 			else
