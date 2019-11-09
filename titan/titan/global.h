@@ -8213,7 +8213,7 @@ int update_iptv(int file)
 
 		if(!file_exist(tmpstr))
 //			gethttp(ip, path, port, tmpstr, HTTPAUTH, 5000, NULL, 0);
-			gethttps(link, tmpstr, NULL, NULL, NULL, NULL, 1);
+			gethttps(link, tmpstr, NULL, NULL, NULL, NULL, 0);
 
 		if(file_exist(tmpstr)) ret = 1;
 
