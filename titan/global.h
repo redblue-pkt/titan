@@ -8185,7 +8185,7 @@ int setzapmode(char* value)
 
 int update_iptv(int file)
 {
-	char* path = NULL, *ip = NULL, *port = NULL, *tmpstr = NULL, *link = NULL;
+	char* tmpstr = NULL, *link = NULL;
 	int ret = 0;
 
 	tmpstr = dirname(file);
@@ -8202,25 +8202,13 @@ int update_iptv(int file)
 		if(file_exist(tmpstr))
 			unlink(tmpstr);
 
-		ip = oregex("://(.*):.*", link);
-		path = oregex("://.*/(.*).*", link);
-		port = oregex("://.*/.*:(.*)/.*", link);
-
-		debug(10, "ip %s", ip);
-		debug(10, "path %s", path);
-		debug(10, "port %s", port);
-
-
 		if(!file_exist(tmpstr))
-//			gethttp(ip, path, port, tmpstr, HTTPAUTH, 5000, NULL, 0);
 			gethttps(link, tmpstr, NULL, NULL, NULL, NULL, 0);
 
 		if(file_exist(tmpstr)) ret = 1;
 
 	}
 
-	free(ip), ip = NULL;
-	free(path), path = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(link), link = NULL;
 
