@@ -243,7 +243,7 @@ echo "[titan]--------------------------------------------------------"
 if [ $MEDIAFW = 1 ]; then
     eplayer=EPLAYER3
     eplayerinclude="$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libeplayer3/include
-	linking="-lm -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz -lssl -lcrypto"
+	linking="-lm -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lz -lssl -lcrypto -lcurl"
 fi
 if [ $MEDIAFW = 2 ]; then
     eplayer=EPLAYER4
