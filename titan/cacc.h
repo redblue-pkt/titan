@@ -254,8 +254,8 @@ int descrambler_set_pid(int index, int enable, int pid)
 		descrambler_open();
 	if (desc_fd > 0)
 	{
-		if(checkbox("DM900") == 1)
-			cainit(desc_fd);  // GOst test 
+		/*if(checkbox("DM900") == 1)
+			cainit(desc_fd);*/  // GOst test 
 		if (index)
 			flags |= 0x40;
 
