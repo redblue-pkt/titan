@@ -123,7 +123,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 	}
 	else
 		testwork = 0;*/
-	//descrambler_close(); 
+	descrambler_close(); 
 
 #else
 	
