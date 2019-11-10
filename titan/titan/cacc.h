@@ -158,7 +158,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 
 void resendKey(struct dvbdev* dvbnode)
 {
-	debug(620, "start");
+	debug(620, "resendKey");
 //	if (!tslot->SidBlackListed && (tslot->inUse || tslot->slot == cCA::GetInstance()->GetLiveSlot()))
 //		descrambler_set_key((int)tslot->source, tslot->lastParity, tslot->lastKey);
 //	if (!dvbnode->caslot->sidblacklisted && (dvbnode->caslot->inuse || dvbnode->caslot->slot == cCA::GetInstance()->GetLiveSlot()))
@@ -254,6 +254,8 @@ int descrambler_set_pid(int index, int enable, int pid)
 		descrambler_open();
 	if (desc_fd > 0)
 	{
+		if(checkbox("DM900") == 1)
+			cainit(desc_fd);  // GOst test 
 		if (index)
 			flags |= 0x40;
 
