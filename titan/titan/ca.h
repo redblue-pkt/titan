@@ -2327,11 +2327,11 @@ int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* 
 	if(node == NULL && dvbnode == NULL) return 1;
 
 	// cacc
-	if(dvbnode->caslot->scrambled == 1)
+	/*if(dvbnode->caslot->scrambled == 1)
 	{
 		if(checkbox("DM900") == 1)
 			descrambler_deinit();
-	}
+	}*/
 	dvbnode->caslot->scrambled = 0;
 	debug(620, "set scrambled=%d", dvbnode->caslot->scrambled);
 
