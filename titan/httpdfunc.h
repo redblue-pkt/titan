@@ -1126,7 +1126,7 @@ char* webvideo(char* param, int fmt)
 printf("#############################################\n");
 
 printf("[webvideo] param: %s\n",param);
-printf("[webvideo] param: %d\n",fmt);
+printf("[webvideo] fmt: %d\n",fmt);
 
 	if(param == NULL) return NULL;
 
