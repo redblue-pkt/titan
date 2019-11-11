@@ -12,14 +12,14 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	
 	int lcdfd1 = open(getconfig("vfddev", NULL), O_RDWR);
 	
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox(VUDUO4K) == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)
 		lfb1 = malloc(xres * yres * 2);
 	else
 		lfb1 = malloc(xres * yres);
 	if(lfb1 == NULL)
 		return;
 
-	if(checkbox("DM900") != 1 && checkbox("DM920") != 1 || checkbox(VUDUO4K) == 1)
+	if(checkbox("DM900") != 1 && checkbox("DM920") != 1 || checkbox("VUDUO4K") == 1)
 	{
 		
 		for(i = 0; i <= xres*yres; i++)
@@ -114,7 +114,7 @@ int oledtext(char *value)
 				OLED_all = getscreen(getskinconfig("OLED_dream1", NULL));
 		}
 	}
-	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1  || checkbox(VUDUO4K) == 1)
+	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1  || checkbox("VUDUO4K") == 1)
 	{
 		if(status.updatevfd == PAUSE)
 			OLED_all = getscreen("OLED_dream2_menu");
