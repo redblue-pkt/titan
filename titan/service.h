@@ -493,7 +493,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			videocontinue(videonode);
 		}
 	}
-	if(checkchipset("HI3798MV200") == 1 || defbox1 == 1))
+	if(checkchipset("HI3798MV200") == 1 || defbox1 == 1)
 	{
 		audiocontinue(audionode);
 	}	
