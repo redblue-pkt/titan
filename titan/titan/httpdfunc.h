@@ -1130,6 +1130,14 @@ printf("[webvideo] param: %d\n",fmt);
 
 	if(param == NULL) return NULL;
 
+	if(ostrcmp("play=", param) == 0)
+	{
+		printf("[webvideo] free: %s\n",status.webplayfile);
+
+		free(status.webplayfile); status.webplayfile = NULL;
+		printf("[webvideo] free: %s\n",status.webplayfile);
+	}
+
 	if(ostrcmp("status", param) == 0) // status is only available for queryraw
 	{
 printf("[webvideo] 111111111\n");
