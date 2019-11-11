@@ -1123,26 +1123,11 @@ char* webgetvideo(char* param, int connfd, int fmt)
 char* webvideo(char* param, int fmt)
 {
 	char* buf = NULL, *param1 = NULL, *tmpbuf = NULL;
-printf("#############################################\n");
-
-printf("[webvideo] param: %s\n",param);
-printf("[webvideo] fmt: %d\n",fmt);
 
 	if(param == NULL) return NULL;
 
-//	if(ostrcmp("play=", param) == 0)
-	if(ostrstr(param, "play=") == param)
-	{
-		printf("[webvideo] free: %s\n",status.webplayfile);
-
-		free(status.webplayfile); status.webplayfile = NULL;
-		printf("[webvideo] free: %s\n",status.webplayfile);
-	}
-
 	if(ostrcmp("status", param) == 0) // status is only available for queryraw
 	{
-printf("[webvideo] 111111111\n");
-
 		char buf[30];
 		int active = (status.webplayfile != NULL ? 1 : 0);
 		int st = 0; // status, 0: paused, 1: playing
@@ -1162,7 +1147,6 @@ printf("[webvideo] 111111111\n");
 
 		return ostrcat(buf, NULL, 0, 0);
 	}
-printf("[webvideo] 222222222\n");
 
 	//create param1
 	param1 = strchr(param, '&');
@@ -1171,27 +1155,15 @@ printf("[webvideo] 222222222\n");
 
 	if(param1 == NULL) return NULL;
 
-printf("[webvideo] 3333333333\n");
-
 	htmldecode(param1, param1);
 	if(param1 != NULL)
 	{
-printf("[webvideo] 4444444444\n");
-
 		if(status.play == 0 && status.webplayfile == NULL)
 		{
-printf("[webvideo] 5555555555\n");
-
 			if(ostrstr(param1, "url=") == param1)
-{
-printf("[webvideo] 666666666666\n");
-
 				status.webplayfile = ostrcat(param1 + 4, NULL, 0, 0);
-}
 			else if(ostrstr(param1, "hosterurl=") == param1)
 			{
-printf("[webvideo] 7777777777777\n");
-
 				status.webplayfile = ostrcat(param1 + 10, NULL, 0, 0);
 
 				// stream over tithek enable start
@@ -1211,28 +1183,14 @@ printf("[webvideo] 7777777777777\n");
 				// stream over tithek enable end
 			}
 			else
-{
-printf("[webvideo] 88888888\n");
-
 				status.webplayfile = ostrcat(param1, NULL, 0, 0);
-}
 		}
-printf("[webvideo] 99999999999999\n");
-
 	}
 	tmpbuf = ostrcat("not in play mode", NULL, 0, 0);
-
-printf("[webvideo] aaaaaaaaaaaaa\n");
-printf("[webvideo] aaaaaaaaaaaaa status.play: %d\n",status.play);
-printf("[webvideo] aaaaaaaaaaaaa status.timeshift: %d\n",status.timeshift);
-printf("[webvideo] aaaaaaaaaaaaa status.webplayfile: %s\n",status.webplayfile);
-
 
 	int count = 0;
 	if(status.timeshift == 0 && status.play == 0 && (ostrcmp("play", param) == 0 || ostrcmp("play=", param) == 0))
 	{
-printf("[webvideo] bbbbbbbbbbbb\n");
-
 		int count = 0;
 
 		int rcret = getrcconfigint("rcwebplay", NULL);
@@ -1246,27 +1204,17 @@ printf("[webvideo] bbbbbbbbbbbb\n");
 		}
 	}
 	else
-{
-printf("[webvideo] ccccccccccccccc\n");
-
 		count = 31;
-}
-printf("[webvideo] dddddddddddddd\n");
 
 	if(count >= 30 && status.play == 0)
 	{
-printf("[webvideo] eeeeeeeeeee\n");
-
 		free(status.webplayfile); status.webplayfile = NULL;
 		free(tmpbuf); tmpbuf = NULL;
 		tmpbuf = ostrcat("can not start playback", NULL, 0, 0);
 	}
-printf("[webvideo] fffffffffffffff\n");
 
 	if(status.timeshift == 0 && status.play == 1)
 	{
-printf("[webvideo] ggggggggggggg\n");
-
 		if(ostrcmp("stop", param) == 0 || ostrcmp("stop=", param) == 0)
 			writerc(getrcconfigint("rcstop", NULL));
 
@@ -1315,12 +1263,9 @@ printf("[webvideo] ggggggggggggg\n");
 			tmpbuf = ostrcat(buf, olutoa(status.playercan), 1, 1);
 		}
 	}
-printf("[webvideo] hhhhhhhhhhhhh\n");
 
 	if(fmt == 0)
 	{
-printf("[webvideo] iiiiiiiiiiiiiiiii\n");
-
 		buf = webcreatehead(buf, NULL, 1);
 		buf = ostrcat(buf, "<tr><td align=center valign=top><font class=biglabel><br><br>Video ", 1, 0);
 		buf = ostrcat(buf, tmpbuf, 1, 1);
@@ -1328,13 +1273,7 @@ printf("[webvideo] iiiiiiiiiiiiiiiii\n");
 		buf = webcreatetail(buf, 1);
 	}
 	else
-{
-printf("[webvideo] jjjjjjjjjjjjjjjjjj\n");
-
 		buf = ostrcat(buf, tmpbuf, 1, 1);
-}
-printf("[webvideo] kkkkkkkkkkkk \n");
-printf("#############################################\n");
 
 	return buf;
 }
