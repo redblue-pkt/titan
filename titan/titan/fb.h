@@ -238,6 +238,12 @@ struct fb* openfb(char *fbdev, int devnr)
 		printf("---> setframebuffer(1280, 720, 1280, 2880, 32)\n");
 		setframebuffer(1280, 720, 1280, 2880, 32);
 	}
+	if(frameb1 == 1)
+	{
+		printf("---> setframebuffer(1280, 720, 1280, 1440, 32)\n");
+		setframebuffer(1280, 720, 1280, 1440, 32);
+	}
+	
 	
 	if(ioctl(fd, FBIOGET_VSCREENINFO, &var_screeninfo) == -1)
 	{
@@ -715,6 +721,11 @@ int saveframebuffer()
 	{
 		printf("---> setframebuffer(1280, 720, 1280, 2880, 32)\n");
 		setframebuffer(1280, 720, 1280, 2880, 32);
+	}
+	if(frameb1 == 1)
+	{
+		printf("---> setframebuffer(1280, 720, 1280, 1440, 32)\n");
+		setframebuffer(1280, 720, 1280, 1440, 32);
 	}
 	
 	if(ioctl(fd, FBIOGET_VSCREENINFO, &save_var_screeninfo) < 0)
