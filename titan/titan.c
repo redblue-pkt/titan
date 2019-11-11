@@ -68,6 +68,8 @@ struct fb_var_screeninfo save_var_screeninfo;
 
 int timeokw = 0;
 int timeokz = 0;
+int defbox1 = 0;
+int frameb1 = 0;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -569,6 +571,19 @@ int main(int argc, char *argv[])
 	status.security = 1;
 #endif
 
+	if(checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1)
+	{
+		//Standart Service abarbeitung
+		defbox1 = 1;
+		//1280, 720, 1280, 1440, 32
+		frameb1 = 1;
+	}
+	else
+	{
+		defbox1 = 0;
+		frameb1 = 0;
+	}
+
 	printf("[%s] copyright by %s - version %s (%d)\n", PROGNAME, COPYRIGHT, OVERSION, PLUGINVERSION);
 	printf("[%s] crontribut: %s\n", PROGNAME, CRONTRIBUT);
 
@@ -646,7 +661,7 @@ timeokw = 1;
 	initvfd();
 
 	//setze groesse Framebuffer
-	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1)
+	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1 || frameb1 == 1)
 		setframebuffer(1280, 720, 1280, 1440, 32);
 	if(checkchipset("HI3798MV200") == 1)
 	{
@@ -881,7 +896,7 @@ timeokw = 1;
 	waitvsync();
 	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
 		setfbosd();
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1 || defbox1 == 1)
 	{
 		setfbosdnull();
 	}

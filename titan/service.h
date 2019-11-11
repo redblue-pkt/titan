@@ -300,11 +300,11 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 #endif		
 	audiostop(status.aktservice->audiodev);
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1 || defbox1 == 1)
 		dmxstop(status.aktservice->dmxaudiodev);
 
 // gost test multibox
-	if(checkchipset("HI3798MV200") == 1)
+	if(checkchipset("HI3798MV200") == 1 || defbox1 == 1)
 	{
 		videostop(status.aktservice->videodev, 1);
 		dmxstop(status.aktservice->dmxvideodev);
@@ -441,7 +441,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		{
 			audioselectsource(audionode, AUDIO_SOURCE_DEMUX);
 			audiosetbypassmode(audionode, chnode->audiocodec);
-			if(checkbox("VUSOLO2") == 1 || checkchipset("HI3798MV200") == 1) //fixt only audio no video.. blackscreen after zap
+			if(checkbox("VUSOLO2") == 1 || checkchipset("HI3798MV200") == 1 || defbox1 == 1) //fixt only audio no video.. blackscreen after zap
 				audiopause(audionode);
 			if(status.mute != 1)
 			{
@@ -486,14 +486,14 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}
 		else
 			err("can't get free video dev");
-		if(checkchipset("HI3798MV200") == 1)
+		if(checkchipset("HI3798MV200") == 1 || defbox1 == 1)
 		{
 			videoslowmotion(videonode, 0);
 			videofastforward(videonode, 0);
 			videocontinue(videonode);
 		}
 	}
-	if(checkchipset("HI3798MV200") == 1)
+	if(checkchipset("HI3798MV200") == 1 || defbox1 == 1))
 	{
 		audiocontinue(audionode);
 	}	
@@ -827,7 +827,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(flag == 4) node->type = STILLPIC;
 	
 		audiostop(node->audiodev);
-		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
+		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1 || defbox1 == 1)
 			dmxstop(status.aktservice->dmxaudiodev);
 
 		if(checkbox("VUSOLO2") == 1)
@@ -898,7 +898,7 @@ void servicechangeaudio(struct channel* chnode, struct audiotrack* tracknode)
 	//clear videobuffer on playback for syncing video / audio
 	if(status.playing == 1) videoclearbuffer(status.aktservice->videodev);
 	dmxsetpesfilter(status.aktservice->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0);
-	if(checkchipset("HI3798MV200") == 1 && status.aktservice->audiodev != NULL)
+	if((checkchipset("HI3798MV200") == 1 || defbox1 == 1) && status.aktservice->audiodev != NULL)
 		audiopause(status.aktservice->audiodev);
 
 	//don't start audio play, if we are in timeshift record, but not playing mode
