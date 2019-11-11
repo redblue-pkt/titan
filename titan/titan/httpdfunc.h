@@ -1130,7 +1130,8 @@ printf("[webvideo] fmt: %d\n",fmt);
 
 	if(param == NULL) return NULL;
 
-	if(ostrcmp("play=", param) == 0)
+//	if(ostrcmp("play=", param) == 0)
+	if(ostrstr(param1, "play=") == param)
 	{
 		printf("[webvideo] free: %s\n",status.webplayfile);
 
