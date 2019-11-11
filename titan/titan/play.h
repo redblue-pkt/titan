@@ -1628,6 +1628,8 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 		if(rcret == 1) return ret;
 	}
 
+printf("[screenplay] status.webplayfile: %s\n",status.webplayfile);
+
 	if(status.webplayfile != NULL)
 	{
 		// stream over tithek enable start
@@ -1647,11 +1649,14 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 		else
 			startfile = status.webplayfile;
 
+printf("[screenplay] 1startfile: %s\n",startfile);
+
 		// stream over tithek enable end
 
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
 	}
+printf("[screenplay] 2startfile: %s\n",startfile);
 
 	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
 	if(startfolder == 1)
