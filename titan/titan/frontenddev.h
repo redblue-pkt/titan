@@ -336,8 +336,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				dvbnode = dvbnode->next;
 				continue;
 			}
-			else
-				ciplus = 1;
 		}
 		
 		if(getconfigint("debuglevel", NULL) == 200 && dvbnode->type == FRONTENDDEV)
@@ -386,7 +384,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus == 0)
+		if(ciplus == 0 && dvbnode->devnr == 0)
 		{
 			debug(200, "CI+ nutzt Tuner 0");
 			dvbnode = dvbnode->next;
@@ -498,7 +496,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus == 0)
+		if(ciplus == 0 && dvbnode->devnr == 0)
 		{
 			debug(200, "CI+ nutzt Tuner 0");
 			dvbnode = dvbnode->next;
@@ -630,7 +628,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus == 0)
+		if(ciplus == 0 && dvbnode->devnr == 0)
 		{
 			debug(200, "CI+ nutzt Tuner 0");
 			dvbnode = dvbnode->next;
