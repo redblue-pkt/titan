@@ -317,7 +317,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		}
 		
 		//workaround fuer CI+ bei mehr wie einen Tuner
-		if(checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1 && dvbnode->devnr == 0 && dvbnode->next != NULL)
+		if(flag == 0 && checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1 && dvbnode->devnr == 0 && dvbnode->next != NULL)
 		{
 			int ciplus = 0;
 			struct channelslot *channelslotnode = channelslot; 
@@ -333,6 +333,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			if(ciplus == 0)
 			{
 				debug(200, "CI+ nutzt Tuner 0");
+				dvbnode = dvbnode->next;
 				continue;
 			}
 		}
