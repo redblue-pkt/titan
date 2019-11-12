@@ -571,19 +571,6 @@ int main(int argc, char *argv[])
 	status.security = 1;
 #endif
 
-	if(checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1)
-	{
-		//Standart Service abarbeitung
-		defbox1 = 1;
-		//1280, 720, 1280, 1440, 32
-		frameb1 = 1;
-	}
-	else
-	{
-		defbox1 = 0;
-		frameb1 = 0;
-	}
-
 	printf("[%s] copyright by %s - version %s (%d)\n", PROGNAME, COPYRIGHT, OVERSION, PLUGINVERSION);
 	printf("[%s] crontribut: %s\n", PROGNAME, CRONTRIBUT);
 
@@ -601,6 +588,20 @@ timeokw = 1;
 //	if(getconfigint("nontpdate", NULL) == 0) 
 //		system("(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &");
 //#endif
+
+	if(checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1)
+	{
+		//Standart Service abarbeitung
+		defbox1 = 1;
+		//1280, 720, 1280, 1440, 32
+		frameb1 = 1;
+	}
+	else
+	{
+		defbox1 = 0;
+		frameb1 = 0;
+	}
+	printf("[titan] box=%s defbox=%i frameb1=%i\n", getboxtype(), defbox, frameb1);
 
 	sa.sa_handler = (void *)sighandler;
 	sigemptyset(&sa.sa_mask);
