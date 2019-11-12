@@ -1324,7 +1324,7 @@ void doscan(struct stimerthread* timernode)
 			{
 				feset(fenode, tpnode);
 				//workaround fur fec Tuner um ein gutes Ergenis zu erziehlen
-				if(ostrstr(fenode->feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "45308X FBC") != NULL)
+				if(ostrstr(fenode->feinfo->name, "BCM45208") != NULL || ostrstr(fenode->feinfo->name, "Vuplus FE") != NULL)
 				{
 					debug(200, "workaround for fbc... set fec and pilot to auto");
 					tpnode->fec = 0;   //FEC_AUTO
