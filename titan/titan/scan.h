@@ -883,7 +883,7 @@ unsigned int satblindscan(struct stimerthread* timernode, int onlycalc)
 							if(tpnode != NULL)
 							{
 
-								fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+								fenode = fegetfree(tpnode, 0, scaninfo.fenode, NULL);
 								if(fenode == NULL )
 								{
 									debug(500, "Frontend for scan not free");
@@ -1036,7 +1036,7 @@ unsigned int cableblindscan(struct stimerthread* timernode, int onlycalc)
 					if(tpnode != NULL)
 					{
 
-						fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+						fenode = fegetfree(tpnode, 0, scaninfo.fenode, NULL);
 						if(fenode == NULL )
 						{
 							debug(500, "Frontend for scan not free");
@@ -1170,7 +1170,7 @@ unsigned int terrblindscan(struct stimerthread* timernode, int onlycalc)
 									if(tpnode != NULL)
 									{
 
-										fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+										fenode = fegetfree(tpnode, 0, scaninfo.fenode, NULL);
 										if(fenode == NULL )
 										{
 											debug(500, "Frontend for scan not free");
@@ -1309,7 +1309,7 @@ void doscan(struct stimerthread* timernode)
 				continue;
 			}
 
-			fenode = fegetfree(tpnode, 0, scaninfo.fenode);
+			fenode = fegetfree(tpnode, 0, scaninfo.fenode, NULL);
 			if(fenode == NULL || (scaninfo.scantype != 3 && fenode != scaninfo.fenode))
 			{
 				scaninfo.tpcount++;
