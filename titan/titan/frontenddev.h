@@ -336,6 +336,8 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				dvbnode = dvbnode->next;
 				continue;
 			}
+			else
+				ciplus = 1;
 		}
 		
 		if(getconfigint("debuglevel", NULL) == 200 && dvbnode->type == FRONTENDDEV)
