@@ -115,6 +115,7 @@ int descrambler_set_key(struct dvbdev* node, int index, int parity, unsigned cha
 			printf("[titan] #### ERROR: CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x (errno=%d %s)\n", index, parity, errno, strerror(errno));
 		else
 			printf("[titan] #### CA_DATA_IV - CA_SET_DESCR_DATA index=0x%04x parity=0x%04x\n", index, parity);	
+		ciplusrun = 1;
 	}
 	/*if(testwork == 0)
 	{

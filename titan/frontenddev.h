@@ -282,7 +282,7 @@ void settunerstatus()
 //flag 1 = check only
 //flag 2 = from record
 //flag 3 = from rectimer
-struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dvbfirst, struct service* channode)
+struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dvbfirst, struct channel* chnode)
 {
 	struct dvbdev* dvbnode = NULL;
 	struct dvbdev* tmpdvbnode = NULL;

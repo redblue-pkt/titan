@@ -70,6 +70,7 @@ int timeokw = 0;
 int timeokz = 0;
 int defbox1 = 0;
 int frameb1 = 0;
+int ciplusrun = 0;
 
 #ifdef SH4
 #include "sh4port.h"
