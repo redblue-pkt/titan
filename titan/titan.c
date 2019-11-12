@@ -601,7 +601,7 @@ timeokw = 1;
 		defbox1 = 0;
 		frameb1 = 0;
 	}
-	printf("[titan] box=%s defbox=%i frameb1=%i\n", getboxtype(), defbox, frameb1);
+	printf("[titan] box=%s defbox1=%i frameb1=%i\n", getboxtype(), defbox1, frameb1);
 
 	sa.sa_handler = (void *)sighandler;
 	sigemptyset(&sa.sa_mask);
