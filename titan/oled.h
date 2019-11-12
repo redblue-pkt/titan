@@ -19,7 +19,7 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	if(lfb1 == NULL)
 		return;
 
-	if(checkbox("DM900") != 1 && checkbox("DM920") != 1 || checkbox("VUDUO4K") == 1)
+	if(checkbox("DM900") != 1 && checkbox("DM920") != 1 && checkbox("VUDUO4K") != 1)
 	{
 		
 		for(i = 0; i <= xres*yres; i++)

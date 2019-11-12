@@ -236,7 +236,7 @@ void settunerstatus()
 		//FRONTENDDEV first in the list
 		if(dvbnode->type != FRONTENDDEV) break;
 		
-		if(dvbnode != NULL && (ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "45308X FBC") != NULL ))
+		if(dvbnode != NULL && (ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "Vuplus FE") != NULL ))
 			fbc = 1;
 		else
 			fbc = 0;
@@ -842,7 +842,7 @@ int fewait(struct dvbdev* node)
 			debug(200, "wait for tuner end with 0");
 			return 0;
 		}
-		if(node != NULL && (ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "45308X FBC") != NULL))
+		if(node != NULL && (ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(node->feinfo->name, "Vuplus FE") != NULL))
 		{
 			if(status & FE_TIMEDOUT)
 			{
@@ -1647,7 +1647,7 @@ uint16_t fereadsnr(struct dvbdev* node)
 		{
 			ret = snr*10;
 		}
-		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "45308X FBC") != NULL)
+		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(node->feinfo->name, "Vuplus FE") != NULL)
 		{
 			ret = (snr * 100) >> 8;
 		}
@@ -1766,7 +1766,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	else
 	{
 		printf("brutto STRENGTH %d tuner:%s\n", signal, node->feinfo->name );  
-		if(ostrstr(node->feinfo->name, "Si2166B") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "45308X FBC") != NULL)
+		if(ostrstr(node->feinfo->name, "Si2166B") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(node->feinfo->name, "Vuplus FE") != NULL)
 			signal = signal * 257;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
@@ -2532,7 +2532,7 @@ int fegetdev()
 						tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
 					tmpstr = ostrcat(tmpstr, oitoa(y), 1, 1);
 					tmpstr = ostrcat(tmpstr, "_fbc", 1, 0);
-					if(ostrstr(feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "45308X FBC") != NULL) //fbc Tuner
+					if(ostrstr(feinfo->name, "BCM45208") != NULL || ostrstr(feinfo->name, "Vuplus FE") != NULL) //fbc Tuner
 					{
 						if(getconfig(tmpstr, NULL) == NULL)
 							addconfig(tmpstr, "A");
