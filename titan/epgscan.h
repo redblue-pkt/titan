@@ -227,9 +227,9 @@ void epgscanlistthread(struct stimerthread* self)
 		}
 
 		if(status.standby > 0)
-			fenode = fegetfree(chnode->transponder, 0, NULL);
+			fenode = fegetfree(chnode->transponder, 0, NULL, NULL);
 		else
-			fenode = fegetfree(chnode->transponder, 2, NULL);
+			fenode = fegetfree(chnode->transponder, 2, NULL, NULL);
 		if(fenode == NULL || (status.standby == 0 && fenode == status.aktservice->fedev))
 		{
 			debug(400, "epgscan no free frontend found channel=%s", chname);

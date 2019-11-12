@@ -18,7 +18,7 @@ int channelnottunable(struct channel* node)
 	if(node->transponder == NULL) return 1;
 	if(node->transponder->tunablestatus == 0)
 	{
-		if(fegetfree(node->transponder, 1, NULL) == NULL)
+		if(fegetfree(node->transponder, 1, NULL, NULL) == NULL)
 		{
 			node->transponder->tunablestatus = 2;
 			return 1;
