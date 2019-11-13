@@ -289,7 +289,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 	char* tmpstr = NULL, *tmpnr = NULL, *aktnr = NULL;
 	int i, orbitalpos = 0, band = 0;
 	int found = 0;
-	int ciplus = 0;
+	int ciplus = 1;
 	//char *CharPtrTmp[20];
 	struct dvbdev* CharPtrTmp[20];
 	
@@ -304,6 +304,8 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		return NULL;
 	}
 
+	ciplus = 0;
+	
 	//suche tuner der auf der gleichen orbitalpos/frequency/pol/band ist
 	while(dvbnode != NULL)
 	{
@@ -318,24 +320,37 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		}
 		
 		//workaround fuer CI+ bei mehr wie einen Tuner
-		if(flag == 0 && checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1 && dvbnode->devnr == 0 && dvbnode->next != NULL)
+		if(flag == 0 && checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1 && dvbnode->next != NULL)
 		{
+			ciplus = 1;
 			struct channelslot *channelslotnode = channelslot; 
 			while(channelslotnode != NULL)
 			{
 				if(channelslotnode->transponderid == chnode->transponderid && channelslotnode->serviceid == chnode->serviceid)
 				{
-					ciplus = 1;
-					break;
+					if(dvbnode->devnr == 0)
+					{
+						ciplus = 2;
+						break;
+					}
+					else
+					{
+						ciplus = 3;
+						break;
+					}
 				}
 				channelslotnode = channelslotnode->next;			
 			}
-			if(ciplus == 0)
+			if(ciplus == 3)
 			{
-				debug(200, "CI+ nutzt Tuner 0");
-				dvbnode = dvbnode->next;
-				continue;
+				debug(200, "CI+ reserviert Tuner 0");
+				break;
 			}
+		}
+		else
+		{ 
+			ciplus == 0;
+			debug(200, "CI+ workaround nicht aktiv");
 		}
 		
 		if(getconfigint("debuglevel", NULL) == 200 && dvbnode->type == FRONTENDDEV)
@@ -384,13 +399,22 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus == 0 && dvbnode->devnr == 0)
+		if(ciplus != 0)
 		{
-			debug(200, "CI+ nutzt Tuner 0");
-			dvbnode = dvbnode->next;
-			continue;
+			if(ciplus == 1 && dvbnode->devnr == 0)
+			{
+				debug(200, "CI+ reserviert Tuner 0");
+				dvbnode = dvbnode->next;
+				continue;
+			}
+			if(ciplus > 1 && dvbnode->devnr != 0)
+			{
+				debug(200, "CI+ erzwingt Tuner 0, aktiver Tuner: %i", dvbnode->devnr);
+				dvbnode = dvbnode->next;
+				continue;
+			}
 		}
-		
+	
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && (dvbnode->felock != 0 || (flag == 2 && status.aktservice->fedev == dvbnode)))
 		{
 			//check if tuner is main tuner
@@ -496,12 +520,21 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus == 0 && dvbnode->devnr == 0)
+		if(ciplus != 0)
 		{
-			debug(200, "CI+ nutzt Tuner 0");
-			dvbnode = dvbnode->next;
-			continue;
-		}		
+			if(ciplus == 1 && dvbnode->devnr == 0)
+			{
+				debug(200, "CI+ reserviert Tuner 0");
+				dvbnode = dvbnode->next;
+				continue;
+			}
+			if(ciplus > 1 && dvbnode->devnr != 0)
+			{
+				debug(200, "CI+ erzwingt Tuner 0, aktiver Tuner: %i", dvbnode->devnr);
+				dvbnode = dvbnode->next;
+				continue;
+			}
+		}
 		
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock == 0)
 		{
@@ -628,11 +661,20 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus == 0 && dvbnode->devnr == 0)
+		if(ciplus != 0)
 		{
-			debug(200, "CI+ nutzt Tuner 0");
-			dvbnode = dvbnode->next;
-			continue;
+			if(ciplus == 1 && dvbnode->devnr == 0)
+			{
+				debug(200, "CI+ reserviert Tuner 0");
+				dvbnode = dvbnode->next;
+				continue;
+			}
+			if(ciplus > 1 && dvbnode->devnr != 0)
+			{
+				debug(200, "CI+ erzwingt Tuner 0, aktiver Tuner: %i", dvbnode->devnr);
+				dvbnode = dvbnode->next;
+				continue;
+			}
 		}
 		
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock == 0)
