@@ -320,7 +320,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		}
 		
 		//workaround fuer CI+ bei mehr wie einen Tuner
-		if(flag == 0 && checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1 && dvbnode->next != NULL)
+		if((flag == 0 || flag == 2) && checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1 && dvbnode->next != NULL)
 		{
 			ciplus = 1;
 			struct channelslot *channelslotnode = channelslot; 
@@ -2602,6 +2602,13 @@ int fegetdev()
 				if(feinfo != NULL)
 				{
 					count++;
+					
+					//workaround zu testen fuer mega
+					if(checkbox("VUZERO4K") == 1)
+					{
+						sprintf(feinfo->name, "%s", "Mega Tuner DVB-S");
+					}
+					
 					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL, fehyprid, 0);
 #ifdef MIPSEL
 					if(fehyprid != NULL && getconfig(tmpstr, NULL) != NULL)
