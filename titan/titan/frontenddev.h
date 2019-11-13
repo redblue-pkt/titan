@@ -349,7 +349,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		}
 		else
 		{ 
-			ciplus == 0;
+			ciplus = 0;
 			debug(200, "CI+ workaround nicht aktiv");
 		}
 		
