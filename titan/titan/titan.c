@@ -68,8 +68,8 @@ struct fb_var_screeninfo save_var_screeninfo;
 
 int timeokw = 0;
 int timeokz = 0;
-int defbox1 = 0;
 int frameb1 = 0;
+int vubox1 = 0;
 int ciplusrun = 0;
 
 #ifdef SH4
@@ -593,16 +593,16 @@ timeokw = 1;
 	if(checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1)
 	{
 		//Standart Service abarbeitung
-		defbox1 = 1;
-		//1280, 720, 1280, 1440, 32
+		vubox1 = 1;
+		//fbset 1920x1080-32
 		frameb1 = 1;
 	}
 	else
 	{
-		defbox1 = 0;
+		vubox1 = 0;
 		frameb1 = 0;
 	}
-	printf("[titan] box=%s defbox1=%i frameb1=%i\n", getboxtype(), defbox1, frameb1);
+	printf("[titan] box=%s vubox1=%i frameb1=%i\n", getboxtype(), vubox1, frameb1);
 
 	sa.sa_handler = (void *)sighandler;
 	sigemptyset(&sa.sa_mask);
@@ -663,8 +663,13 @@ timeokw = 1;
 	initvfd();
 
 	//setze groesse Framebuffer
-	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1 || frameb1 == 1)
+	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1)
 		setframebuffer(1280, 720, 1280, 1440, 32);
+	if(checkchipset(frameb1 == 1)
+	{
+		printf("---> setframebuffer(1920, 1080, 1920, 2160, 32)\n");
+		setframebuffer(1920, 1080, 1920, 2160, 32);
+	}
 	if(checkchipset("HI3798MV200") == 1)
 	{
 		printf("---> setframebuffer(1280, 720, 1280, 2880, 32)\n");
@@ -749,7 +754,7 @@ timeokw = 1;
 		ret = system("mount | grep titan");
   
 #ifndef SIMULATE
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("VUSOLO2") == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkbox("VUSOLO2") == 1 || vubox1 == 1)
 		ret = 0;
 
 	// set pvr 1 = allowed , 0 = disabled
@@ -896,9 +901,9 @@ timeokw = 1;
 
 #ifdef MIPSEL
 	waitvsync();
-	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0)
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 || vubox1 == 1)
 		setfbosd();
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1 || defbox1 == 1)
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1)
 	{
 		setfbosdnull();
 	}

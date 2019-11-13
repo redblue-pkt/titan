@@ -1320,7 +1320,7 @@ not needed we use wakeup_record_device on recordstartreal
 				setencoding(chnode, servicenode->videodev);
 				videoplay(servicenode->videodev);
 				
-				if(checkchipset("HI3798MV200") == 1 || defbox1 == 1)
+				if(checkchipset("HI3798MV200") == 1 || vubox1 == 1)
 				{
 					videoslowmotion(servicenode->videodev, 0);
 					videofastforward(servicenode->videodev, 0);
