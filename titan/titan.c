@@ -665,7 +665,7 @@ timeokw = 1;
 	//setze groesse Framebuffer
 	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1)
 		setframebuffer(1280, 720, 1280, 1440, 32);
-	if(checkchipset(frameb1 == 1)
+	if(frameb1 == 1)
 	{
 		printf("---> setframebuffer(1920, 1080, 1920, 2160, 32)\n");
 		setframebuffer(1920, 1080, 1920, 2160, 32);
