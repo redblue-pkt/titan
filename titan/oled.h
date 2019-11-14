@@ -12,7 +12,7 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	
 	int lcdfd1 = open(getconfig("vfddev", NULL), O_RDWR);
 	
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1 || checkbox("VUDUO4K") != 1)
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)
 		lfb1 = malloc(xres * yres * 2);
 	else
 		lfb1 = malloc(xres * yres);
