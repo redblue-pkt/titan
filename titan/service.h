@@ -830,7 +830,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
 			dmxstop(status.aktservice->dmxaudiodev);
 
-		if(checkbox("VUSOLO2") == 1 || vubox1 == 1)
+		if(checkbox("VUSOLO2") == 1)
 		{
 //			videofreeze(status.aktservice->videodev);
 //			dmxstart(status.aktservice->dmxaudiodev);
@@ -840,6 +840,11 @@ int servicestop(struct service *node, int clear, int flag)
 			audioclearbuffer(status.aktservice->audiodev);
 //			videoslowmotion(status.aktservice->videodev, 0);
 //			videofastforward(status.aktservice->videodev, 0);
+		}
+		else if(vubox1 == 1)
+		{
+			videoclearbuffer(node->videodev);
+			audioclearbuffer(node->audiodev);
 		}
 		else
 		{

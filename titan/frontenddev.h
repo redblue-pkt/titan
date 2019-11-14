@@ -236,7 +236,7 @@ void settunerstatus()
 		//FRONTENDDEV first in the list
 		if(dvbnode->type != FRONTENDDEV) break;
 		
-		if(dvbnode != NULL && (ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "Vuplus FE") != NULL ))
+		if(dvbnode != NULL && (ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL || fbctuner == 1 ))
 			fbc = 1;
 		else
 			fbc = 0;
@@ -931,7 +931,7 @@ int fewait(struct dvbdev* node)
 			debug(200, "wait for tuner end with 0");
 			return 0;
 		}
-		if(node != NULL && (ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(node->feinfo->name, "Vuplus FE") != NULL))
+		if(node != NULL && (ostrstr(node->feinfo->name, "BCM45208") != NULL || fbctuner == 1))
 		{
 			if(status & FE_TIMEDOUT)
 			{
@@ -1736,7 +1736,7 @@ uint16_t fereadsnr(struct dvbdev* node)
 		{
 			ret = snr*10;
 		}
-		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(node->feinfo->name, "Vuplus FE") != NULL)
+		else if(ostrstr(node->feinfo->name, "BCM4506") != NULL || ostrstr(node->feinfo->name, "BCM4506 (internal)") != NULL || ostrstr(node->feinfo->name, "BCM4505") != NULL || ostrstr(node->feinfo->name, "BCM73625 (G3)") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL || fbctuner == 1)
 		{
 			ret = (snr * 100) >> 8;
 		}
@@ -1855,7 +1855,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 	else
 	{
 		printf("brutto STRENGTH %d tuner:%s\n", signal, node->feinfo->name );  
-		if(ostrstr(node->feinfo->name, "Si2166B") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(node->feinfo->name, "Vuplus FE") != NULL)
+		if(ostrstr(node->feinfo->name, "Si2166B") != NULL || ostrstr(node->feinfo->name, "BCM45208") != NULL || fbctuner == 1)
 			signal = signal * 257;
 		debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
 	}
@@ -2604,10 +2604,10 @@ int fegetdev()
 					count++;
 					
 					//workaround zu testen fuer mega
-					if(checkbox("VUZERO4K") == 1)
+					/*if(checkbox("VUZERO4K") == 1)
 					{
 						sprintf(feinfo->name, "%s", "Mega Tuner DVB-S");
-					}
+					}*/
 					
 					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL, fehyprid, 0);
 #ifdef MIPSEL
@@ -2628,7 +2628,7 @@ int fegetdev()
 						tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
 					tmpstr = ostrcat(tmpstr, oitoa(y), 1, 1);
 					tmpstr = ostrcat(tmpstr, "_fbc", 1, 0);
-					if(ostrstr(feinfo->name, "BCM45208") != NULL || ostrstr(feinfo->name, "Vuplus FE") != NULL) //fbc Tuner
+					if(ostrstr(feinfo->name, "BCM45208") != NULL || fbctuner == 1) //fbc Tuner
 					{
 						if(getconfig(tmpstr, NULL) == NULL)
 							addconfig(tmpstr, "A");

@@ -954,7 +954,7 @@ void createloopstr(struct dvbdev* node, char** loopstr, char** loopstr1)
 	int fbc = 0;
 	
 	//if(dvbnode != NULL && ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL)
-	if(dvbnode != NULL && (ostrstr(node->feinfo->name, "BCM45208") != NULL || ostrstr(node->feinfo->name, "Vuplus FE") != NULL))
+	if(dvbnode != NULL && (ostrstr(node->feinfo->name, "BCM45208") != NULL || fbctuner == 1))
 		fbc = 1;
 
 	printf("------> 1. Name: %s FBC: %i \n", node->feinfo->name, fbc);
@@ -1171,7 +1171,7 @@ void screentunerconfig()
 			tunernode = addlistbox(tunerconfig, listbox, tunernode, 1);
 			if(tunernode != NULL)
 			{
-				if(ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL || ostrstr(dvbnode->feinfo->name, "Vuplus FE") != NULL)
+				if(ostrstr(dvbnode->feinfo->name, "BCM45208") != NULL || fbctuner == 1)
 					fbc = 1;
 				else
 					fbc = 0;
@@ -1212,7 +1212,7 @@ void screentunerconfig()
 		rcret = waitrc(tunerconfig, 0, 0);
 		tmp =  listbox->select;
 
-		if(listbox->select != NULL && listbox->select->handle != NULL && ostrstr(((struct dvbdev*)listbox->select->handle)->feinfo->name, "BCM45208") != NULL && ostrstr(((struct dvbdev*)listbox->select->handle)->feinfo->name, "Vuplus FE") != NULL)
+		if(listbox->select != NULL && listbox->select->handle != NULL && (ostrstr(((struct dvbdev*)listbox->select->handle)->feinfo->name, "BCM45208") != NULL || fbctuner == 1))
 			fbc = 1;
 		else
 			fbc = 0;

@@ -70,7 +70,9 @@ int timeokw = 0;
 int timeokz = 0;
 int frameb1 = 0;
 int vubox1 = 0;
+int fbctuner = 0;
 int ciplusrun = 0;
+char* tunermerkmale = NULL;
 
 #ifdef SH4
 #include "sh4port.h"
@@ -603,6 +605,23 @@ timeokw = 1;
 		frameb1 = 0;
 	}
 	printf("[titan] box=%s vubox1=%i frameb1=%i\n", getboxtype(), vubox1, frameb1);
+	
+	fbctuner = 0;
+	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+	if(hypridtunerchoices == NULL)
+		err("hypridtunerchoices NULL detect");
+	else
+	{	
+		tunermerkmale = readfiletomem(hypridtunerchoices, 1);
+		if(tunermerkmale == NULL)
+			err("tunermerkmale NULL detect");
+	}
+	else
+	{
+		if(ostrstr(tunermerkmale, "45308X") != NULL)
+			fbctuner = 1;
+			
+	}
 
 	sa.sa_handler = (void *)sighandler;
 	sigemptyset(&sa.sa_mask);
@@ -1082,7 +1101,7 @@ timeokw = 1;
 		ret = readscreen("/var/usr/local/share/titan/skin/default/keyskin.xml", 0, 0);
 	else
 		ret = readscreen(getconfig("keyskin_file", NULL), 0, 0);
-	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1)  //inihdp
+	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)  //inihdp
 	{
 		if(getconfig("oledskin_path", NULL) == NULL)
 			ret = readscreen("/var/usr/local/share/titan/skin/default/oledskin.xml", 0, 0);
