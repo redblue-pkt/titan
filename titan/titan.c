@@ -609,12 +609,16 @@ timeokw = 1;
 	fbctuner = 0;
 	char* hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 	if(hypridtunerchoices == NULL)
+	{
 		err("hypridtunerchoices NULL detect");
+	}
 	else
 	{	
 		tunermerkmale = readfiletomem(hypridtunerchoices, 1);
 		if(tunermerkmale == NULL)
+		{
 			err("tunermerkmale NULL detect");
+		}
 		else
 		{
 			if(ostrstr(tunermerkmale, "45308X") != NULL)
@@ -920,7 +924,7 @@ timeokw = 1;
 
 #ifdef MIPSEL
 	waitvsync();
-	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 || vubox1 == 1)
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 && vubox1 == 1)
 		setfbosd();
 	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1)
 	{
