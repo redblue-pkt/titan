@@ -607,7 +607,7 @@ timeokw = 1;
 	printf("[titan] box=%s vubox1=%i frameb1=%i\n", getboxtype(), vubox1, frameb1);
 	
 	fbctuner = 0;
-	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+	char* hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 	if(hypridtunerchoices == NULL)
 		err("hypridtunerchoices NULL detect");
 	else
@@ -615,12 +615,12 @@ timeokw = 1;
 		tunermerkmale = readfiletomem(hypridtunerchoices, 1);
 		if(tunermerkmale == NULL)
 			err("tunermerkmale NULL detect");
-	}
-	else
-	{
-		if(ostrstr(tunermerkmale, "45308X") != NULL)
-			fbctuner = 1;
-			
+		else
+		{
+			if(ostrstr(tunermerkmale, "45308X") != NULL)
+				fbctuner = 1;
+		}
+		free(hypridtunerchoices); hypridtunerchoices=NULL;
 	}
 
 	sa.sa_handler = (void *)sighandler;
