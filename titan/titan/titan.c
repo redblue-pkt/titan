@@ -606,27 +606,6 @@ timeokw = 1;
 	}
 	printf("[titan] box=%s vubox1=%i frameb1=%i\n", getboxtype(), vubox1, frameb1);
 	
-	fbctuner = 0;
-	char* hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
-	if(hypridtunerchoices == NULL)
-	{
-		err("hypridtunerchoices NULL detect");
-	}
-	else
-	{	
-		tunermerkmale = readfiletomem(hypridtunerchoices, 1);
-		if(tunermerkmale == NULL)
-		{
-			err("tunermerkmale NULL detect");
-		}
-		else
-		{
-			if(ostrstr(tunermerkmale, "45308X") != NULL)
-				fbctuner = 1;
-		}
-		free(hypridtunerchoices); hypridtunerchoices=NULL;
-	}
-
 	sa.sa_handler = (void *)sighandler;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_RESTART;
@@ -684,6 +663,27 @@ timeokw = 1;
 	initmutex(1);
 	m_lock(&status.waitrcmutex, 24);
 	initvfd();
+	
+	fbctuner = 0;
+	char* hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+	if(hypridtunerchoices == NULL)
+	{
+		err("hypridtunerchoices NULL detect");
+	}
+	else
+	{	
+		tunermerkmale = readfiletomem(hypridtunerchoices, 1);
+		if(tunermerkmale == NULL)
+		{
+			err("tunermerkmale NULL detect");
+		}
+		else
+		{
+			if(ostrstr(tunermerkmale, "45308X") != NULL)
+				fbctuner = 1;
+		}
+		free(hypridtunerchoices); hypridtunerchoices=NULL;
+	}
 
 	//setze groesse Framebuffer
 	if(checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1)
