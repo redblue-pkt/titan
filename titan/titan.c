@@ -698,6 +698,9 @@ timeokw = 1;
 		printf("---> setframebuffer(1280, 720, 1280, 2880, 32)\n");
 		setframebuffer(1280, 720, 1280, 2880, 32);
 	}
+	
+	if(checkbox("VUDUO4K") == 1)
+		initOLEDdream1
 
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
