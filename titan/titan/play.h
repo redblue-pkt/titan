@@ -1715,7 +1715,7 @@ playerstart:
 		int noworkaround = 1;
 		if(checkchipset("HI3798MV200") == 1)
 			noworkaround = getconfigint("playintern", NULL);
-		if(cmpfilenameext(file, ".ts") == 0 && checkbox("VUSOLO2") != 1 && noworkaround == 1)
+		if(cmpfilenameext(file, ".ts") == 0 && checkbox("VUSOLO2") != 1 && vubox1 != 1 && noworkaround == 1)
 		{
 			playertype = 1;
 			addconfig("lastplayertype", "1");
