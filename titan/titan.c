@@ -700,7 +700,7 @@ timeokw = 1;
 	}
 	
 	if(checkbox("VUDUO4K") == 1)
-		initOLEDdream1
+		initOLEDdream1();
 
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
