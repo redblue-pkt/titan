@@ -60,6 +60,7 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	else
 	{
 		//gggbbbbbrrrrrggg
+		printf("----> write2oled\n");
 		for(i = 0; i < xres*yres*2; i = i + 2)
 		{
 			lfb1[i] = ((buf[bi+1] << 3) & 0xE0) | ((buf[bi] >> 3) & 0x1F);
@@ -68,7 +69,7 @@ void write2oled(unsigned char *buf, int xres, int yres)
 		}
 		ret = write(lcdfd1, lfb1, xres * yres * 2);
 		if(ret != xres * yres * 2)
-			err("write to oled dm900 - %s - was not ok", getconfig("vfddev", NULL));
+			err("write to oled2 - %s - was not ok", getconfig("vfddev", NULL));
 		free(lfb2);
 	}
 	close(lcdfd1);
