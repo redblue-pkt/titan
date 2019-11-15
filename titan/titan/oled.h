@@ -7,13 +7,16 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	unsigned char* lfb2 = NULL;
 	unsigned char byte;
 	int i = 0;
+	int i1 = 0;
 	int bi = 0;
 	int ret = 0;
 	
 	int lcdfd1 = open(getconfig("vfddev", NULL), O_RDWR);
 	
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 		lfb1 = malloc(xres * yres * 2);
+	else if(checkbox("VUDUO4K") == 1)
+		lfb1 = malloc(480 * 320 * 4);
 	else
 		lfb1 = malloc(xres * yres);
 	if(lfb1 == NULL)
@@ -60,7 +63,18 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	else if(checkbox("VUDUO4K") == 1)
 	{
 		//ret = write(lcdfd1, buf, xres * yres * 4);
-		ret = write(lcdfd1, buf, 480 * 320 * 4);
+		//test loop
+		bi = 0;
+		for(i = 0; i < 240; i = i + 1)
+		{
+			for(i1 = 0; i1 < 400; i1 = i1 + 1)
+			{
+				lfb1[(480*i*4)+i1)] = buf[bi];
+				bi = bi+1;
+			}
+		}
+		
+		ret = write(lcdfd1, lfb1, 480 * 320 * 4);
 		if(ret != xres * yres * 4)
 			err("write to oled2 VUDUO4K - %s - was not ok", getconfig("vfddev", NULL));
 	}
