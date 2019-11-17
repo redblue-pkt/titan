@@ -493,11 +493,11 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			videocontinue(videonode);
 		}
 	}
+#ifdef MIPSEL
 	if(checkchipset("HI3798MV200") == 1 || vubox1 == 1)
 	{
 		audiocontinue(audionode);
 	}	
-#ifdef MIPSEL
 	if(tmpmute == 1)
 	{
 		tmpmute = 0;
