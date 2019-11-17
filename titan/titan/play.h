@@ -1210,8 +1210,9 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 			{
 				videoslowmotion(status.aktservice->videodev, 0);
 				videofastforward(status.aktservice->videodev, 0);
-				videocontinue(status.aktservice-videodev);
-				audiocontinue(status.aktservice-audiodev);
+				videocontinue(status.aktservice->videodev);
+				audiocontinue(status.aktservice->
+audiodev);
 			}
 			else
 				playerpausets();
