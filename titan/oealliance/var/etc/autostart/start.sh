@@ -167,6 +167,20 @@ startCi()
 	fi
 }
 
+starthyprid()
+{
+	if [ "$model" == "spark7162" ]; then
+		echo "[$0] starthyprid"
+		if [ `cat /mnt/config/titan.cfg | grep ^"hypridtuner=" | cut -d "=" -f2 | wc -l` -eq 1 ]; then
+			hypridtuner=`cat /mnt/config/titan.cfg | grep ^"hypridtuner=" | cut -d "=" -f2`
+		else
+			hypridtuner=c
+		fi
+
+		sed "s/sed options spark7162 UnionTunerType=.*/sed options spark7162 UnionTunerType=$hypridtuner/" -i /etc/modprobe.d/_spark7162.conf
+	fi
+}
+
 startgui()
 {
 	STARTDEFAULT="/usr/local/bin/titan /mnt/config/titan.cfg"
@@ -341,6 +355,7 @@ startgui()
 
 case $1 in
 	first)
+		starthyprid
 #		startmnt
 #		startplugins
 		starthotplug
