@@ -448,9 +448,9 @@ void initvfd()
 	addvfdiconstate(VFD_REC);
 	addvfdiconstate(VFD_CLOCK);
 
-	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1  || checkbox("VUDUO4K") == 1)
 		initOLEDdream1();
-	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1  || checkbox("VUDUO4K") == 1)
+	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 		setled(1);
 	else
 		setallvfdsymbols(0);
