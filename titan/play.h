@@ -1202,12 +1202,15 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 	free(status.playfile); status.playfile = NULL;
 	status.playfile = ostrcat(file, NULL, 0, 0);
 
+	debug(10, "playertype: %i, playspeed %i, slowspeed %i", playertype, status.playspeed, status.slowspeed);
 	if(playertype == 1)
 	{
+		
 		if(status.playspeed != 0 || status.slowspeed != 0)
 		{
 			if(checkchipset("HI3798MV200") == 1)
 			{
+				playerpausets();
 				videoslowmotion(status.aktservice->videodev, 0);
 				videofastforward(status.aktservice->videodev, 0);
 				videocontinue(status.aktservice->videodev);
