@@ -75,7 +75,8 @@ void write2oled(unsigned char *buf, int xres, int yres)
 		}
 		
 		ret = write(lcdfd1, lfb1, 480 * 320 * 4);
-		if(ret != xres * yres * 4)
+		//if(ret != xres * yres * 4)
+		if(ret != 480 * 320 * 4)
 			err("write to oled2 VUDUO4K - %s - was not ok", getconfig("vfddev", NULL));
 	}
 	else
@@ -199,7 +200,8 @@ void initOLEDdream1()
 #define	LCD_MODE_BIN			1
 #endif
 
-return; //wird nicht benötigt
+	if(checkbox("VUDUO4K") != 1)
+		return; //wird nicht benötigt
 
 	int i=LCD_MODE_BIN;
 	//int lcdfd = open("/dev/dbox/oled0", O_RDWR);
