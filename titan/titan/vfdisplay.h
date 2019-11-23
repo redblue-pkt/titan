@@ -136,10 +136,13 @@ void screenvfdisplay()
 		vfdrecord->hidden = NO;
 		addchoicebox(vfdrecord, "0", _("off"));
 		addchoicebox(vfdrecord, "1", _("blink"));
-		addchoicebox(vfdrecord, "2", _("fade out/in"));
-		addchoicebox(vfdrecord, "3", _("show record"));
-		addchoicebox(vfdrecord, "4", _("star"));
-		addchoicebox(vfdrecord, "5", _("blink star"));
+		if(checkbox("VUZERO4K") != 1)
+		{
+			addchoicebox(vfdrecord, "2", _("fade out/in"));
+			addchoicebox(vfdrecord, "3", _("show record"));
+			addchoicebox(vfdrecord, "4", _("star"));
+			addchoicebox(vfdrecord, "5", _("blink star"));
+		}
 		setchoiceboxselection(vfdrecord, getconfig("vfdisplayrecord", NULL));
 	}
 
