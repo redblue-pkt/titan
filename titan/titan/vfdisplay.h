@@ -78,7 +78,7 @@ void screenvfdisplay()
 		addchoicebox(blinkoff, "1", _("off"));
 		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
 	}	
-	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)
+	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 	{
 		char *tmp1 = NULL, *tmp2 = NULL;		
 		int i = 0;		
@@ -208,8 +208,10 @@ void screenvfdisplay()
 					OLED_all = getscreen("OLED_nemesis");
 				else if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 					OLED_all = getscreen("OLED_dream1");
-				else if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)
+				else if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 					OLED_all = getscreen("OLED_dream2");
+				else if(checkbox("VUDUO4K") == 1)
+					OLED_all = getscreen("OLED_vu1");
 			}	
 			struct skin* textbox = getscreennode(OLED_all, "textbox");
 			changetext(textbox, tmpstr);
@@ -273,7 +275,7 @@ void screenvfdisplay()
 				system(tmpstr);
 				free(tmpstr); tmpstr=NULL;
 			}
-			if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)
+			if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 			{
 				addconfigscreencheck("dm900frontrun", at7000frontrun, "0");
 				addconfigscreencheck("dm900frontsleep", at7000frontsleep, "0");

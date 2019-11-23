@@ -4319,6 +4319,16 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 					return -2;
 				}
 			}
+			else if(node->name != NULL && ostrstr(node->name, "OLED_vu1") != NULL) {
+				debug(100, "alloc OLED_vu1 framebuffer");
+				oledskinfb = oledaddfb(480, 320);
+				if(oledskinfb == NULL)
+				{
+					if(flag == 0 || flag == 4)
+						m_unlock(&status.drawingmutex, 0);
+					return -2;
+				}
+			}
 		}
 		merkskinfb = skinfb;
 		skinfb = oledskinfb;

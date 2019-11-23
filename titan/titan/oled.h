@@ -62,21 +62,8 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	}
 	else if(checkbox("VUDUO4K") == 1)
 	{
-		//ret = write(lcdfd1, buf, xres * yres * 4);
-		//test loop
-		bi = 0;
-		for(i = 0; i < 240; i = i + 1)
-		{
-			for(i1 = 0; i1 < 400; i1 = i1 + 1)
-			{
-				lfb1[(480*i*4)+i1] = buf[bi];
-				bi = bi+1;
-			}
-		}
-		
-		ret = write(lcdfd1, lfb1, 480 * 320 * 4);
-		//if(ret != xres * yres * 4)
-		if(ret != 480 * 320 * 4)
+		ret = write(lcdfd1, buf, xres * yres * 4);
+		if(ret != xres * yres * 4)
 			err("write to oled2 VUDUO4K - %s - was not ok", getconfig("vfddev", NULL));
 	}
 	else
@@ -137,7 +124,7 @@ int oledtext(char *value)
 				OLED_all = getscreen(getskinconfig("OLED_dream1", NULL));
 		}
 	}
-	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1  || checkbox("VUDUO4K") == 1)
+	else if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 	{
 		if(status.updatevfd == PAUSE)
 			OLED_all = getscreen("OLED_dream2_menu");
@@ -150,7 +137,21 @@ int oledtext(char *value)
 			else
 				OLED_all = getscreen(getskinconfig("OLED_dream2", NULL));
 		}
-	}		
+	}
+	else if(checkbox("VUDUO4K") == 1)		
+	{
+		if(status.updatevfd == PAUSE)
+			OLED_all = getscreen("OLED_vu1_menu");
+		else if(status.standby > 0)
+			OLED_all = getscreen("OLED_vu1_standby");
+		else
+		{
+			if(getskinconfig("OLED_vu1", NULL) == NULL)
+				OLED_all = getscreen("OLED_vu1");
+			else
+				OLED_all = getscreen(getskinconfig("OLED_vu1", NULL));
+		}
+	}
 		
 	
 	struct skin* textbox = getscreennode(OLED_all, "textbox");
