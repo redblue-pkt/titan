@@ -68,6 +68,8 @@ int setvfdbrightness(int value)
 			return 1;
 	}
 	int brightness = value * 36;
+	if( vubox1 == 1 )
+		brightness = value * 100;
 	fprintf(f, "%d", brightness);
 	fclose(f);
 	return 0;
