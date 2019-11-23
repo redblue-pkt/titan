@@ -68,8 +68,6 @@ int setvfdbrightness(int value)
 			return 1;
 	}
 	int brightness = value * 36;
-	if(checkbox("VUZERO4K") == 1)
-		brightness = value * 15;
 	fprintf(f, "%d", brightness);
 	fclose(f);
 	return 0;
