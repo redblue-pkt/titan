@@ -62,8 +62,14 @@ int setvfdbrightness(int value)
 #ifdef MIPSEL
 	FILE *f=fopen("/proc/stb/lcd/oled_brightness", "w");
 	if (!f)
-		return 1;
+	{
+		*f=fopen("/proc/stb/fp/oled_brightness", "w");
+		if (!f)
+			return 1;
+	}
 	int brightness = value * 36;
+	if(checkbox("VUZERO4K") == 1)
+		brightness = value * 15;
 	fprintf(f, "%d", brightness);
 	fclose(f);
 	return 0;

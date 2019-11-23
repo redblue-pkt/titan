@@ -87,7 +87,7 @@ void screenadjust()
 	addchoicebox(nozapclear, "1", _("yes"));
 	setchoiceboxselection(nozapclear, getconfig("nozapclear", NULL));
 
-	if(checkbox("ATEMIO7600") == 1)
+	if(checkbox("ATEMIO7600") == 1 || vubox1 == 1)
 		fastzap->hidden = YES;
 	else
 		fastzap->hidden = NO;
