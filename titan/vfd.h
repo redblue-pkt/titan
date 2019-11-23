@@ -60,10 +60,10 @@ int setvfdbrightness(int value)
 	}
 
 #ifdef MIPSEL
-	FILE *f=fopen("/proc/stb/lcd/oled_brightness", "w");
+	FILE* f=fopen("/proc/stb/lcd/oled_brightness", "w");
 	if (!f)
 	{
-		*f=fopen("/proc/stb/fp/oled_brightness", "w");
+		f=fopen("/proc/stb/fp/oled_brightness", "w");
 		if (!f)
 			return 1;
 	}
