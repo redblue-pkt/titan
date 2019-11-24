@@ -99,6 +99,27 @@ void screenvfdisplay()
 		addchoicebox(blinkoff, "1", _("off"));
 		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
 	}	
+	else if(checkbox("VUDUO4K") == 1)
+	{
+		char *tmp1 = NULL, *tmp2 = NULL;		
+		int i = 0;		
+		if(checkscreen("OLED_vu1") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_vu1", "v1");		
+		for (i=2;i<30;i++)
+		{
+			tmp1 = ostrcat("OLED_vu1_v",oitoa(i), 0, 1);
+			tmp2 = ostrcat("v",oitoa(i), 0, 1);
+			if(checkscreen(tmp1) != status.skinerr)
+   				addchoicebox(oled_sel, tmp1,tmp2);
+			free(tmp1);tmp1=NULL;
+			free(tmp2);tmp2=NULL;
+		}
+		
+		setchoiceboxselection(oled_sel, getskinconfig("OLED_vu1", NULL));
+		addchoicebox(blinkoff, "0", _("on"));
+		addchoicebox(blinkoff, "1", _("off"));
+		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
+	}	
 	else
 	{
 		oled_sel->hidden = YES;
