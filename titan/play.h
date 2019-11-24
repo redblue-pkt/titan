@@ -1208,18 +1208,17 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 		
 		if(status.playspeed != 0 || status.slowspeed != 0)
 		{
+			playerpausets();
 			if(checkchipset("HI3798MV200") == 1)
 			{
 				videoslowmotion(status.aktservice->videodev, 0);
 				videofastforward(status.aktservice->videodev, 0);
 			}
-			else
-				playerpausets();
 		}
 		if(status.slowspeed != 0)
 			audioclearbuffer(status.aktservice->audiodev);
 		playercontinuets();
-		if(status.playspeed != 0 || status.slowspeed != 0)
+		if((status.playspeed != 0 || status.slowspeed != 0) && checkchipset("HI3798MV200") != 1)
 			playerresetts();
 	}
 	else if(playertype == 2)
