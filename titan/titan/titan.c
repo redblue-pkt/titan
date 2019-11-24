@@ -365,8 +365,10 @@ void oshutdown(int exitcode, int flag)
 
 	ret = checkshutdown(flag);
 	if(ret == 1) return;
-
-	ret = servicestop(status.aktservice, 1, 1);
+	if(vubox1 ==1)
+		ret = servicestop(status.aktservice, 1, 0);
+	else
+		ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
 	
 	if(exitcode == 1)
