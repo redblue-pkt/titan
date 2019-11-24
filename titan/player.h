@@ -546,6 +546,8 @@ void playercontinuets()
 {
 	videocontinue(status.aktservice->videodev);
 #ifdef MIPSEL
+	if(checkchipset("HI3798MV200") == 1)
+		audioplay(status.aktservice->audiodev)
 	audiocontinue(status.aktservice->audiodev);
 #else
 	audioplay(status.aktservice->audiodev);
