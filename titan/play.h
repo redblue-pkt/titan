@@ -1210,11 +1210,8 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 		{
 			if(checkchipset("HI3798MV200") == 1)
 			{
-				playerpausets();
 				videoslowmotion(status.aktservice->videodev, 0);
 				videofastforward(status.aktservice->videodev, 0);
-				videocontinue(status.aktservice->videodev);
-				audiocontinue(status.aktservice->audiodev);
 			}
 			else
 				playerpausets();
@@ -1228,7 +1225,14 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 	else if(playertype == 2)
 		dvdcontinue();
 	else
+	{
+		if(checkchipset("HI3798MV200") == 1)
+		{
+			videoslowmotion(status.aktservice->videodev, 0);
+			videofastforward(status.aktservice->videodev, 0);
+		}
 		playercontinue();
+	}
 	status.slowspeed = 0;
 	status.playspeed = 0;
 	status.pause = 0;
