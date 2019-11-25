@@ -598,7 +598,7 @@ timeokw = 1;
 	{
 		//Standart Service abarbeitung
 		vubox1 = 1;
-		//fbset 1920x1080-32
+		//fbset 1920x1080-32 
 		frameb1 = 1;
 	}
 	else
