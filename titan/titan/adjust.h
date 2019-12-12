@@ -280,9 +280,9 @@ void screenadjust()
 		zapmode->hidden = YES;
 
 // setdebuglevel
-#ifndef BETA
-	debuglevel->hidden = YES;
-#else
+//#ifndef BETA
+//	debuglevel->hidden = YES;
+//#else
 	tmpstr = ostrcat("10 - ", _("Minimal"), 0, 0);
 	addchoicebox(debuglevel, "10", tmpstr);
 	free(tmpstr), tmpstr = NULL;
@@ -441,7 +441,7 @@ void screenadjust()
 	free(tmpstr), tmpstr = NULL;
 
 	setchoiceboxselection(debuglevel, getconfig("debuglevel", NULL));
-#endif
+//#endif
 
 
 #ifdef MIPSEL
@@ -610,10 +610,10 @@ void screenadjust()
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 
-#ifdef BETA
+//#ifdef BETA
 			addconfigscreencheck("debuglevel", debuglevel, "0");
 			setdebuglevel();
-#endif
+//#endif
 			if(community_user->ret != NULL && ostrcmp(community_user->ret, "****") != 0)
 			{
 				debug(99, "community_user: write");
