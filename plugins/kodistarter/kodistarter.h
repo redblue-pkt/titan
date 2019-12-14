@@ -32,11 +32,6 @@ void screenkodistarter()
 	delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
 #endif
 
-	//start gui
-	debug(10, "cmd: %s", cmd);
-	system(cmd);
-	free(cmd), cmd = NULL;
-
 	tmpstr = ostrcat(tmpstr, _("Kodi Gui Starter"), 1, 0);
 	changetext(guiname, tmpstr);
 	free(tmpstr), tmpstr = NULL;
@@ -49,7 +44,12 @@ void screenkodistarter()
 
 	drawscreen(loading, 0, 0);
 
-	disablemanualblit();
+	//start gui
+	debug(10, "cmd: %s", cmd);
+	system(cmd);
+	free(cmd), cmd = NULL;
+
+//	disablemanualblit();
 
 	while(1)
 	{
@@ -73,7 +73,7 @@ void screenkodistarter()
 	clearscreen(kodistarter);
 
 #ifdef MIPSEL
-	enablemanualblit();
+//	enablemanualblit();
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
 #endif
