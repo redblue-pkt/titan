@@ -733,7 +733,7 @@ youtube_dl()
 	if [ ! -z "$USER" ];then USER="--username $USER";fi
 	if [ ! -z "$PASS" ];then PASS="--password $PASS";fi
 
-	echo "$BIN $youtubebin $INPUT $USER $PASS" > /tmp/.last_hoster_youtube_dl.log
+	echo "$BIN $youtubebin $INPUT $USER $PASS" > /tmp/.last_hoster_$TYPE.log
 
 	if [ ! -z "$INPUT" ];then
 		$BIN $youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
@@ -786,10 +786,17 @@ hlsdl()
 
 	echo $HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_$TYPE.log
 	$HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_$TYPE.log
-#	$HLSBIN "$URL" -v -u "$USERA" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_$TYPE.log
+#	$HLSBIN "$URL" -v -u "$USERA" -h "$REFERER" -o "$DEST" >> /tmp/.last_hlsdl_hoster_$TYPE.log
 
 }
 
+curldl()
+{
+	mkdir $TMP > /dev/null 2>&1
+
+	echo "$CURLBIN $INPUT -o $DEST " > /tmp/.last_hoster_$TYPE.log
+	$CURLBIN "$INPUT" -o "$DEST"
+}
 
 if [ "$TYPE" == "get" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
@@ -857,6 +864,13 @@ if [ "$TYPE" == "hlsdl" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
 		*) hlsdl $INPUT;;
+	esac
+fi
+
+if [ "$TYPE" == "curldl" ];then
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
+	case $hoster in
+		*) curldl $INPUT;;
 	esac
 fi
 

@@ -1739,6 +1739,28 @@ void backgroundhlsdl(char* link, char* filename)
 		hlsbgdownload = 1;
 }
 
+void backgroundcurldl(char* link, char* filename)
+{
+	int ret = 0;
+	char *file = NULL, *cmd = NULL;
+
+	file = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
+	file = ostrcat(file, filename, 1, 0);
+
+	cmd = ostrcat("/tmp/localhoster/hoster.sh curldl \"", link, 0, 0);
+	cmd = ostrcat(cmd, "\" \"", 1, 0);
+	cmd = ostrcat(cmd, file, 1, 0);
+	cmd = ostrcat(cmd, "\" &", 1, 0);
+
+	printf("cmd: %s\n", cmd);
+	ret = system(cmd);
+	free(cmd), cmd = NULL;
+	if(ret == 1)
+		textbox(_("Message"), _("Can't start download.\nPlease try later."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+//	else
+//		curlbgdownload = 1;
+}
+
 void backgrounddl(char* link, char* filename)
 {
 	int port = 80, ret = 0;
@@ -2076,6 +2098,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 				if(ostrstr(tmpstr1, "hls") != NULL && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 					addmenulist(&mlist, "Download Full File (hlsdl)", _("Download Full File (hlsdl)"), NULL, 0, 0);
+				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
+					addmenulist(&mlist, "Download Full File (curldl)", _("Download Full File (curldl)"), NULL, 0, 0);
 
 				if(python == 1 && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 					addmenulist(&mlist, "Download Full File (youtube_dl)", _("Download Full File (youtube_dl)"), NULL, 0, 0);
@@ -2189,6 +2213,13 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			char* search = textinput(_("Filename"), filename);
 			if(search != NULL)
 				backgroundhlsdl(tmpstr1, search);
+			free(search), search = NULL;
+		}
+		else if(ostrcmp(keyconf, "Download Full File (curldl)") == 0)
+		{
+			char* search = textinput(_("Filename"), filename);
+			if(search != NULL)
+				backgroundcurldl(tmpstr1, search);
 			free(search), search = NULL;
 		}
 
