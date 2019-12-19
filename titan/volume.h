@@ -3,7 +3,7 @@
 
 void changevolume(int direction, struct skin* volumebar)
 {
-	int vol = 0;
+	int vol = 0; 
 
 	vol = getvol();
 
