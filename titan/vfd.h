@@ -69,7 +69,10 @@ int setvfdbrightness(int value)
 	}
 	int brightness = value * 36;
 	if( vubox1 == 1 )
+	{
 		brightness = value * 100;
+		debug(10, "set vfdbrightness to %d", value * 100);
+	}
 	fprintf(f, "%d", brightness);
 	fclose(f);
 	return 0;
@@ -615,7 +618,8 @@ void updatevfd()
 		}
 
 		// Switch off all VFD icons:
-		if(checkchipset("BCM7424") != 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1  || checkbox("VUDUO4K") == 1) //inihdp
+		//if(checkchipset("BCM7424") != 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1  || checkbox("VUDUO4K") == 1) //inihdp
+		if(checkchipset("BCM7424") != 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1) //inihdp
 			setallvfdsymbols(0);
 	}
 	if(VFD_Recordthread != NULL && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)

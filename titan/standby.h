@@ -47,6 +47,7 @@ void screenstandby()
 //	clearfb(skinfb);
 //	blitfb(0);
 	setfbtransparent(0);
+	debug(10, "[standby] set vfdstandbybrightness");
 	setvfdbrightness(getconfigint("vfdstandbybrightness", NULL));
 	setoverclockfreq(0);
 	
