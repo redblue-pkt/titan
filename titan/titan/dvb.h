@@ -1107,7 +1107,12 @@ int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, 
 	if(endpts != NULL && *endpts > 0) end = *endpts;
 
 	if(start == 0 || (bitrate != NULL && bitrate == 0))
+	{
 		ret = getpts(fd, 0, 0, 256 * 1024, &start, &startfindpos, 1, tssize);
+		//workaround fuer Aufnahmen mit fehlerhaften Anfang (springe 30 sekunden)
+		if(ret!=0)
+			ret = getpts(fd, 37000000, 0, 256 * 1024, &start, &startfindpos, 1, tssize);	 
+	}
 
 	if((ret == 0 && end == 0) || (bitrate != NULL && bitrate == 0))
 		ret = getpts(fd, 0, 0, 256 * 1024, &end, &endfindpos, -1, tssize);

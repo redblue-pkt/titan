@@ -191,7 +191,7 @@ void screenvfdisplay()
 		at7000frontsleep->hidden = YES;
 	}
 
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)
+	if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 	{
 		addchoicebox(at7000frontrun, "0", _("off"));
 		addchoicebox(at7000frontrun, "1", _("red"));
@@ -287,6 +287,8 @@ void screenvfdisplay()
 			addconfigscreencheck("vfdisplayrecord", vfdrecord, "0");
 			addconfigint("vfdbrightness", vfdbrightness);
 			addconfigint("vfdstandbybrightness", vfdstandbybrightness);
+			debug(10, "add vfdbrightness %d", vfdbrightness);
+			debug(10, "add vfdstandbybrightness %d", vfdstandbybrightness);
 			
 			if(checkbox("ATEVIO7000") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("SPARK") == 1)
 			{
@@ -303,6 +305,11 @@ void screenvfdisplay()
 				addskinconfigscreencheck("OLED_dream2", oled_sel, "0");
 				addconfig("skinblinkoff", blinkoff->ret);
 				setled(1);
+			}
+			if(checkbox("VUDUO4K") == 1)
+			{
+				addskinconfigscreencheck("OLED_dream2", oled_sel, "0");
+				addconfig("skinblinkoff", blinkoff->ret);
 			}
 			if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("ATEMIO6200") == 1)
 			{
