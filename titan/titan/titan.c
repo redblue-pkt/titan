@@ -594,7 +594,7 @@ timeokw = 1;
 //		system("(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &");
 //#endif
 
-	if(checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1)
+	if(checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1  || checkbox("VUUNO4K") == 1)
 	{
 		//Standart Service abarbeitung
 		vubox1 = 1;
@@ -701,7 +701,7 @@ timeokw = 1;
 		setframebuffer(1280, 720, 1280, 2880, 32);
 	}
 	
-	if(checkbox("VUDUO4K") == 1)
+	if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4K") == 1)
 		initOLEDdream1();
 
 	if(checkbox("UFS922") == 1)
@@ -1110,7 +1110,7 @@ timeokw = 1;
 		ret = readscreen("/var/usr/local/share/titan/skin/default/keyskin.xml", 0, 0);
 	else
 		ret = readscreen(getconfig("keyskin_file", NULL), 0, 0);
-	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1)  //inihdp
+	if(checkchipset("BCM7424") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("VUDUO4K") == 1 || checkbox("VUUNO4K") == 1)  //inihdp
 	{
 		if(getconfig("oledskin_path", NULL) == NULL)
 			ret = readscreen("/var/usr/local/share/titan/skin/default/oledskin.xml", 0, 0);
