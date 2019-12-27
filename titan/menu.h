@@ -553,7 +553,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1)
 		{
-			if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1)
+			if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF4008") == 1 || checkrealbox("SF8008") == 1 || checkrealbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1)
 				return 0;
 			else
 				return 1;
