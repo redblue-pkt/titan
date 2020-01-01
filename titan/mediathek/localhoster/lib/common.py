@@ -33,7 +33,7 @@ addon_version = '1.0'
 #open_settings = kodi.open_settings
 #has_addon = kodi.has_addon
 
-profilePath = "/tmp/pro"
+profilePath = "/mnt/network"
 
 RAND_UA = get_ua()
 IE_USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko'

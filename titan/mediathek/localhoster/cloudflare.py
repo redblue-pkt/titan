@@ -5,12 +5,17 @@ import sys
 from lib.net import Net
 import lib.common as common
 import re
+import cookielib
+from lib.cCFScrape import cCFScrape
+#from lib.cloudflare import cloudflare
 import lib.cloudflare as cloudflare
+#from lib.cCFScrape import cCFScrape
 
 class CloudflareResolver(object):
     def __init__(self):
         self.net = Net(cookie_file='/mnt/network/cookies', http_debug=True, cloudflare=True)
 #        self.net = Net(cookie_file='/mnt/network/cookies', cloudflare=True)
+
         url = str(sys.argv[1])
         return self.get_answer_code(url)
 
@@ -23,16 +28,16 @@ class CloudflareResolver(object):
                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
                    'Content-Type': 'text/html; charset=utf-8'}
 
-#        html = self.net.http_GET(web_url, headers=headers).content
-#        #html = self.request(web_url, cookie_file=/mnt/network/cookies, cloudflare=True)
-#        ret = self.net.save_cookies('/mnt/network/cookies')      
-#        print "html", html.encode('utf8')
-
         CF = cloudflare.CloudflareBypass()
         html = CF.GetHtml(web_url)
+        ret = self.net.save_cookies('/mnt/network/cookies')      
+
         print CF.GetReponseInfo()
-        print "html", html
+
+        try:
+            print "html", html.encode('utf8')
+        except:
+            print html
 
 sys.stdout = CloudflareResolver()
-
 
