@@ -23,19 +23,15 @@ class CloudflareResolver(object):
                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
                    'Content-Type': 'text/html; charset=utf-8'}
 
+#        html = self.net.http_GET(web_url, headers=headers).content
+#        #html = self.request(web_url, cookie_file=/mnt/network/cookies, cloudflare=True)
+#        ret = self.net.save_cookies('/mnt/network/cookies')      
+#        print "html", html.encode('utf8')
 
-#        print "cloudflare.CheckIfActive: ", web_url
-
-        try:
-            CF = cloudflare.CloudflareBypass()
-            html = CF.GetHtml(web_url)
-            print CF.GetReponseInfo()
-            print "html", html
-        except:
-            html = self.net.http_GET(web_url, headers=headers).content
-            #html = self.request(web_url, cookie_file=/mnt/network/cookies, cloudflare=True)
-            ret = self.net.save_cookies('/mnt/network/cookies')      
-            print "html", html.encode('utf8')
+        CF = cloudflare.CloudflareBypass()
+        html = CF.GetHtml(web_url)
+        print CF.GetReponseInfo()
+        print "html", html
 
 sys.stdout = CloudflareResolver()
 
