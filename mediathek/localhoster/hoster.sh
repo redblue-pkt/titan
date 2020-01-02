@@ -188,6 +188,11 @@ youwatch()
 	$BIN $CMD/youwatch.py $INPUT
 }
 
+streamz()
+{
+	$BIN $CMD/streamz.py $INPUT
+}
+
 thevideo()
 {
 	$BIN $CMD/thevideo.py $INPUT > $TMP/cache.$FILENAME.1
@@ -835,6 +840,7 @@ if [ "$TYPE" == "get" ];then
 		assia) assia $INPUT;;
 		cricfree) cricfree $INPUT;;
 		adca) broadcast $INPUT;;
+		streamcrypt|streamz) streamz $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
