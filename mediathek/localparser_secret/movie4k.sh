@@ -610,9 +610,9 @@ rm $TMP/$FILENAME.list
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
 							if ( newpage != "" )
-								print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
+								print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 							else
-								print title "(ERROR)#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
+								print title "(ERROR)#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 						}
 						next
 					}
