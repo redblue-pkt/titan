@@ -33,7 +33,7 @@ if [ -z "$FILENAME" ]; then
 fi
 
 #URL=http://movie4k.to
-URL=https://movie4k.to/
+URL=https://movie4k.org/
 
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=Movie4k
@@ -568,75 +568,67 @@ search()
 
 kino()
 {
+rm $TMP/$FILENAME.list
+#<a href="Star-Wars-Der-Aufstieg-Skywalkers-online-film-16849319.html"><img src="https://www2.movie4k.org//thumbs/cover-16849576-Star-Wars-Der-Aufstieg-Skywalkers-movie4k-film.jpg" border=0 style="width:105px;max-width:105px;max-height:160px;min-height:140px;" alt="Star Wars: Der Aufstieg Skywalkers kostenlos" title="Star Wars: Der Aufstieg Skywalkers kostenlos"></a>
+
+#$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > /tmp/localcache/movie4k.123
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		piccount=0
-	#	/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$PARSER.$INPUT.1
-#		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
-		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$FILENAME.1
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+				{
+					suche = 0
+				}
+				/\/public-announcement.php/ \
+ 				{
+					suche = 1
+					next
+				}
+				/^<a href=/ \
+ 				{
+					if ( suche == 1 )
+					{
+						i = index($0, "<a href=\"") + 9
+					        j = index(substr($0, i), "\"") - 1
+					        newpage = substr($0, i, j)
 
-		cat $TMP/cache.$FILENAME.1 | grep ^"<a href=" | grep "<img src=" >$TMP/cache.$FILENAME.2
+						i = index($0, "<img src=\"") + 10
+					        j = index(substr($0, i), "\"") - 1
+					        pic = substr($0, i, j)
 
-		while read -u 3 ROUND; do
-			ID=`echo $ROUND | cut -d'"' -f1 | tail -n1`
-			PIC=`echo $ROUND | sed 's!<img src=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | tail -n1`
-			TITLE=`echo $ROUND | sed 's!title=!\nfound=>!g' | grep ^found= | cut -d'"' -f2 | tail -n1 | sed 's/ kostenlos//'`
-			NEWPAGE=`echo $ROUND | sed 's!<a href=!\nfound=!g' | grep ^found= | cut -d'"' -f2 | tail -n1`
+						i = index($0, "title=\"") + 7
+					        j = index(substr($0, i), "\"") - 1
+					        title = substr($0, i, j)
 
-			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-			fi
+						gsub(/ kostenlos/,"",title)
 
-			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+						if (title != "")
+						{
 
-			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-				if [ ! -e $TMP/$FILENAME.list ];then
-					touch $TMP/$FILENAME.list
-				fi
-				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$SRC $SRC hosterlist $NEWPAGE#$PIC#$PARSER.$INPUT.$NEXT.$PAGE2.$FILENAME.$piccount.jpg#$NAME#0"
+							piccount += 1
+							# 25. in naechste zeile springen
+							# 26. \x27 = single quotes
+							if ( newpage != "" )
+								print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
+							else
+								print title "(ERROR)#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
+						}
+						next
+					}
+				}
 
-				echo "$LINE" >> $TMP/$FILENAME.list
-			fi
-
-		done 3<$TMP/cache.$FILENAME.2
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
 	fi
-	echo "$TMP/$FILENAME.list"
-}
 
-hosterlistold()
-{
-	if [ ! -e "$TMP/$FILENAME.list" ]; then
-#		/tmp/localhoster/hoster.sh get $URL/$PAGE > $TMP/cache.$FILENAME.1
-		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > $TMP/cache.$FILENAME.1
-
-		cat $TMP/cache.$FILENAME.1 | grep ^"links\[" >$TMP/cache.$FILENAME.2
-
-		while read -u 3 ROUND; do
-
-			NEWPAGE="`echo $ROUND | sed 's!<a href=!\nfound=!g' | grep found= | cut -d '"' -f2 | sed 's/;/%3B/g' | head -n1`"
-			TITLE=`echo $ROUND | sed 's!&nbsp;!\nfound=<!g' | grep ^"found=<" | cut -d"<" -f2` 		
-	
-			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
-				PIC=`echo $TITLE | tr [A-Z] [a-z] | cut -d"." -f1 | sed 's/streamclou/streamcloud/'`
-	#			LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
-				LINE="$TITLE#$SRC $SRC hoster $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
-
-				echo "$LINE" >> $TMP/$FILENAME.list
-			fi
-		done 3<$TMP/cache.$FILENAME.2
-#		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	fi
 	echo "$TMP/$FILENAME.list"
 }
 
 hosterlist()
 {
-#$curlbin $URL/$PAGE -o /tmp/localparser/1234
-
-#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -644,19 +636,19 @@ hosterlist()
 					suche = 1
 				}
 #				/^links\[/ \
-                /tablemoviesindex2/ \
+                		/tablemoviesindex2/ \
 				{
 					if ( suche == 1 )
 					{
 #						# extrahiere den newpage pfad
 #						i = index($0, "href=\\\"") + 7
-#				        j = index(substr($0, i), "\\") - 1
-#				        newpage = substr($0, i, j)
+#				        	j = index(substr($0, i), "\\") - 1
+#				        	newpage = substr($0, i, j)
 
 						# extrahiere den newpage pfad
 						i = index($0, "window.location.href = \x27") + 24
-					    j = index(substr($0, i), "\x27") - 1
-					    newpage = substr($0, i, j)
+					    	j = index(substr($0, i), "\x27") - 1
+					    	newpage = substr($0, i, j)
 #print "0" newpage
 
 						if (newpage == "")
@@ -677,12 +669,12 @@ hosterlist()
 
 						# extrahiere den title pfad
 						i = index($0, "> &nbsp;") + 8
-				        j = index(substr($0, i), "</a>") - 1
-				        title = substr($0, i, j)
+				        	j = index(substr($0, i), "</a>") - 1
+				        	title = substr($0, i, j)
 
 						i = index($0, "html\\\">") + 7
-				        j = index(substr($0, i), "<") - 1
-				        extra = substr($0, i, j)
+				        	j = index(substr($0, i), "<") - 1
+				        	extra = substr($0, i, j)
 #print "4" extra
 
 						if (extra == "")
@@ -819,9 +811,9 @@ case $INPUT in
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 	search) $INPUT;;
-    searchtv) $INPUT;;
-    season) $INPUT;;
-    episode) $INPUT;;
+	searchtv) $INPUT;;
+    	season) $INPUT;;
+    	episode) $INPUT;;
 	kino) $INPUT;;
 	sorted) $INPUT;;
 	genre) $INPUT;;
