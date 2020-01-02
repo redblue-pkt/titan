@@ -6,7 +6,7 @@ from lib.net import Net
 import lib.common as common
 import re
 import cookielib
-from lib.cCFScrape import cCFScrape
+#from lib.cCFScrape import cCFScrape
 #from lib.cloudflare import cloudflare
 import lib.cloudflare as cloudflare
 #from lib.cCFScrape import cCFScrape
