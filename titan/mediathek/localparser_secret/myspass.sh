@@ -312,7 +312,7 @@ parts()
 		FOUND=`echo $PAGE | sed 's/Teil/\n/g' | grep ^http | sed 's!http://www.myspass.de/myspass!!g' | sed 's!http://www.myspass.de!!g'`
 #		IDLIST=`$curlbin "$PAGE" | grep "$FOUND" | sed 's/<a href=/\nfound=/g' | grep ^found= | grep title= | grep -v myspassTeaserTextDesc | cut -d '"' -f2 | sort -u | tr '/' ' ' | awk '{ print $NF }'`
 		IDLIST=`$curlbin "$PAGE" | grep "$FOUND"| sed 's/<a href=/\nfound=/g' | grep ^found= | tr -d ' ' | cut -d "/" -f6 | sort -u`
-
+#echo idlist $IDLIST
 		for ROUND in $IDLIST; do
 			$curlbin http://www.myspass.de/includes/apps/video/getvideometadataxml.php?id=$ROUND > "$TMP/cache.$FILENAME.$ROUND.1"
 			
@@ -322,6 +322,45 @@ parts()
 
 			TITLE="`cat $TMP/cache.$FILENAME.$ROUND.1 | sed 's/<title><!\[CDATA\[/\nfound=\]/g' | grep ^found= | cut -d"]" -f2`"
 			NEWPAGE="`cat $TMP/cache.$FILENAME.$ROUND.1 | sed 's/<url_flv><!\[CDATA\[/\nfound=\]/g' | grep ^found= | cut -d"]" -f2`"
+
+#<id><![CDATA[29870]]></id>
+#<format_id><![CDATA[104]]></format_id>
+#<season_id><![CDATA[836]]></season_id>
+
+#https://cldf-od.r53.cdn.tv1.eu/secdl/aa257d4ea8f9de7da13100c6e915a3c0/5e0d413e/11021brainpool/ondemand/3583brainpool/163840/myspass2009/104/24971320/355453000/892216900/892216900_61.mp4
+
+#https://cldf-od.r53.cdn.tv1.eu/secdl/aa257d4ea8f9de7da13100c6e915a3c0/5e0d413e/11021brainpool/ondemand/3583brainpool/163840/myspass2009/104/836/11905/29870/29870_61.mp4
+
+#https://cldf-od.r53.cdn.tv1.eu/secdl/5e6d2242be7cca293dc96d629127fa69/5e0d428f/11021brainpool/ondemand/3583brainpool/163840/myspass2009/104/836/11900/29870/29870_61.mp4
+
+#sed -nr 's/.*myspass.*\/.*\/([.*]+)\/.*/\1/p'
+#sed -nr 's/.*src="([^"]+)".*/\1/p'
+#echo https://cldf-od.r53.cdn.tv1.eu/secdl/aa257d4ea8f9de7da13100c6e915a3c0/5e0d413e/11021brainpool/ondemand/3583brainpool/163840/myspass2009/104/24971320/355453000/892216900/892216900_61.mp4 | sed -nr 's/.*myspass.*\/.*\/(.*+)\/.*/\1/p'
+#echo https://cldf-od.r53.cdn.tv1.eu/secdl/aa257d4ea8f9de7da13100c6e915a3c0/5e0d413e/11021brainpool/ondemand/3583brainpool/163840/myspass2009/104/24971320/355453000/892216900/892216900_61.mp4 | sed -nr 's/.*myspass.*\/.*\/(.*+)\/.*/\1/p'
+#echo https://cldf-od.r53.cdn.tv1.eu/secdl/aa257d4ea8f9de7da13100c6e915a3c0/5e0d413e/11021brainpool/ondemand/3583brainpool/163840/myspass2009/104/24971320/355453000/892216900/892216900_61.mp4 | sed -nr 's/.*myspass.*\/(.*+)\/.*/\1/p'
+
+ID_DUMMY=$(echo $NEWPAGE | sed -nr 's/.*myspass.*\/.*\/(.*+)\/.*/\1/p')
+EXTRAID_DUMMY=$(echo $NEWPAGE | sed -nr 's/.*myspass.*\/(.*+)\/.*\/.*/\1/p')
+SEASONID_DUMMY=$(echo $NEWPAGE | sed -nr 's/.*myspass.*\/(.*+)\/.*\/.*\/.*/\1/p')
+EXTRAID=$(expr $EXTRAID_DUMMY / $ROUND)
+SEASONID=$(cat $TMP/cache.$FILENAME.$ROUND.1 | sed -nr 's/.*season_id.*\[CDATA\[(.*+)].*].*/\1/p')
+
+#echo ID_DUMMY $ID_DUMMY
+#echo EXTRAID_DUMMY $EXTRAID_DUMMY
+#echo SEASONID_DUMMY $SEASONID_DUMMY
+#echo EXTRAID $EXTRAID
+#echo SEASONID $SEASONID
+#echo NEWPAGE $NEWPAGE
+
+NEWPAGE=$(echo $NEWPAGE | sed "s!/$ID_DUMMY\_!/$ROUND\_!")
+#echo NEWPAGE1 $NEWPAGE
+NEWPAGE=$(echo $NEWPAGE | sed "s!/$ID_DUMMY/!/$ROUND/!")
+#echo NEWPAGE2 $NEWPAGE
+NEWPAGE=$(echo $NEWPAGE | sed "s!/$EXTRAID_DUMMY/!/$EXTRAID/!")
+#echo NEWPAGE3 $NEWPAGE
+NEWPAGE=$(echo $NEWPAGE | sed "s!/$SEASONID_DUMMY/!/$SEASONID/!")
+#echo NEWPAGE4 $NEWPAGE
+
 			PIC="http:`cat $TMP/cache.$FILENAME.$ROUND.1 | sed 's/<imagePreview><!\[CDATA\[/\nfound=\]/g' | grep ^found= | cut -d"]" -f2`"
 
 			if [ -z "$PIC" ] || "$PIC" = "http:" ] ; then
