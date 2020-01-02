@@ -4,10 +4,10 @@ import re
 from lib import jsunpack
 from lib.net import Net
 
-class VidUpMeResolver(object):
+class StreamzResolver(object):
     name = "streamz"
-    domains = ['streamz.cc']
-    pattern = r'(?://|\.)(streamz\.cc)/([0-9a-zA-Z]+)'
+    domains = ['streamz.cc|streamcrypt.net']
+    pattern = r'(?://|\.)(streamz\.cc|streamcrypt\.net)/([0-9a-zA-Z]+)'
 
     def __init__(self):
         self.net = Net()
@@ -15,7 +15,7 @@ class VidUpMeResolver(object):
         host = self.get_host_and_id(url)[0]
         media_id = self.get_host_and_id(url)[1]
 
-        return self.get_media_url(host, media_id)
+        return self.get_media_url(host, media_id, url)
  
     def get_host_and_id(self, url):
         r = re.search(self.pattern, url, re.I)
@@ -24,8 +24,9 @@ class VidUpMeResolver(object):
         else:
             return False
 
-    def get_media_url(self, host, media_id):
-        web_url = self.get_url(host, media_id)
+    def get_media_url(self, host, media_id, url):
+        web_url = self.get_url(host, media_id, url)
+ #       print "web_url", web_url
         html = self.net.http_GET(web_url).content
 
         js_data = re.findall('(eval\(function.*?)</script>', html.replace('\n', ''))
@@ -52,8 +53,9 @@ class VidUpMeResolver(object):
 #            if stream_url:
 #                 print stream_url[-1]
 
-    def get_url(self, host, media_id):
-        return 'http://%s/%s' % (host,media_id)
+    def get_url(self, host, media_id, url):
+ #       return 'http://%s/%s' % (host,media_id)
+        return '%s' % (url)
 
 
-sys.stdout = VidUpMeResolver()
+sys.stdout = StreamzResolver()
