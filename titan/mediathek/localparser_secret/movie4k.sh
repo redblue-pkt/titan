@@ -33,7 +33,7 @@ if [ -z "$FILENAME" ]; then
 fi
 
 #URL=http://movie4k.to
-URL=https://movie4k.org/
+URL=https://www2.movie4k.org/
 
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=Movie4k
@@ -568,7 +568,7 @@ search()
 
 kino()
 {
-rm $TMP/$FILENAME.list
+#rm $TMP/$FILENAME.list
 #<a href="Star-Wars-Der-Aufstieg-Skywalkers-online-film-16849319.html"><img src="https://www2.movie4k.org//thumbs/cover-16849576-Star-Wars-Der-Aufstieg-Skywalkers-movie4k-film.jpg" border=0 style="width:105px;max-width:105px;max-height:160px;min-height:140px;" alt="Star Wars: Der Aufstieg Skywalkers kostenlos" title="Star Wars: Der Aufstieg Skywalkers kostenlos"></a>
 
 #$BIN /tmp/localhoster/cloudflare.py "$URL/$PAGE" > /tmp/localcache/movie4k.123
