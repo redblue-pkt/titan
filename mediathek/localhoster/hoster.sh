@@ -851,7 +851,7 @@ if [ "$TYPE" == "get" ];then
 		vidup) vidup $INPUT;;
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
-		goldesel|movie4k|movie4kto|kinox|kinos|kinoxto|foxx) cloudflare $INPUT;;
+		goldesel|movie4k|movie4kto|kinox|kinos|kinoz|kinoxto|foxx) cloudflare $INPUT;;
 		streamcloud) streamcloud $INPUT;;	
 		nowvideo) nowvideo $INPUT;;
 		divxstage|cloudtime) divxstage $INPUT;;
