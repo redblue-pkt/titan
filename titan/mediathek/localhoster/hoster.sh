@@ -657,6 +657,33 @@ cricfree()
 	fi
 }
 
+#pl.init('http://78.142.19.151:8080/hls/streama113384/index.m3u8?st=dxSilE8xi3eR1Hk5_SLv1w');
+#apl3
+apl3()
+{
+	#http://assia.tv/live/gol-tv/?lang=ru
+	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
+	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
+
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+
+	$curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+	#pl.init('http://87.120.36.57:8080/hls/streama113535/index.m3u8?st=VsL7dEPX4fBHn3tcJmmcKw');
+	TMPURL=$(cat $TMP/cache.hoster.$hoster.1 | grep pl.init | cut -d"'" -f2)
+	# enable httponly cookie
+	sed 's/#HttpOnly_//g' -i /mnt/network/cookies
+
+	if [ ! -z "$TMPURL" ];then
+		#hls://http://tier2.pokercoalition.pw/o10/17733.m3u8?sf=NTk5NGE3YzRhMzljNQ==&token=jvVfe9gic8uQ3QqCXmZemw&expires=1512879969|Referer=http%3A%2F%2Fbro.adca.st%2Fstream.php%3Fid%3D17733%26p%3D1%26c%3D0%26stretching%3Duniform%26old%3D0&User-Agent=Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML,%20like%20Gecko)%20Chrome%2F61.0.3163.100%20Safari%2F537.36
+		echo "$TMPURL$TOKEN$EXTRA" > $STREAMLIST
+		echo "$STREAMLIST"
+	fi
+}
+
 broadcast()
 {
 	#http://assia.tv/live/gol-tv/?lang=ru
@@ -803,9 +830,11 @@ curldl()
 	$CURLBIN "$INPUT" -o "$DEST"
 }
 
+
 if [ "$TYPE" == "get" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
+		apl3) apl3 $INPUT;;
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
 		nosvideo) nosvideo $INPUT;;
