@@ -188,11 +188,6 @@ youwatch()
 	$BIN $CMD/youwatch.py $INPUT
 }
 
-streamz()
-{
-	$BIN $CMD/streamz.py $INPUT
-}
-
 thevideo()
 {
 	$BIN $CMD/thevideo.py $INPUT > $TMP/cache.$FILENAME.1
@@ -346,6 +341,16 @@ vidlox()
 vidcloud()
 {
 	$BIN $CMD/vidcloud.py $INPUT
+}
+
+streamz()
+{
+	$BIN $CMD/streamz.py $INPUT
+}
+
+mixdrop()
+{
+	$BIN $CMD/mixdrop.py $INPUT
 }
 
 vodlocker()
@@ -870,6 +875,7 @@ if [ "$TYPE" == "get" ];then
 		cricfree) cricfree $INPUT;;
 		adca) broadcast $INPUT;;
 		streamcrypt|streamz) streamz $INPUT;;
+		mixdrop) mixdrop $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
