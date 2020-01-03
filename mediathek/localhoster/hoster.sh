@@ -877,7 +877,7 @@ fi
 if [ "$TYPE" == "hoster" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
-		kinox|kinos|kinoxto) kinox $INPUT;;
+		kinox|kinos|kinoz|kinoxto) kinox $INPUT;;
 	esac
 fi
 
