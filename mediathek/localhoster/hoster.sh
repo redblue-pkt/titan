@@ -191,7 +191,16 @@ youwatch()
 thevideo()
 {
 	$BIN $CMD/thevideo.py $INPUT > $TMP/cache.$FILENAME.1
+# new #
+	videocode=`cat $TMP/cache.$FILENAME.1`
 
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	echo "https://thevideos.ga/$videocode" > $STREAMLIST 
+	echo $STREAMLIST
+#######
+exit
+#	$curlbin --referer $INPUT $INPUT -o $TMP/cache.$FILENAME.1
+	
 	videocode=`cat $TMP/cache.$FILENAME.1`
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 
@@ -352,6 +361,19 @@ mixdrop()
 {
 	$BIN $CMD/mixdrop.py $INPUT
 }
+
+
+streamcrypt()
+{
+
+hoster=$(echo $INPUT | sed -nr 's/.*:\/\/.*\/([^\/]+)\/.*/\1/p')
+hostercheck=$(echo $hoster | tr '.' '\n' | wc -l)
+hosterline=$(expr $hostercheck - 1)
+if [ "$hosterline" == "0" ];then hosterline=1; fi
+echo $hoster | tr 'A-Z' 'a-z' | cut -d"." -f$hosterline
+#INPUT=$(echo $INPUT | sed "s!streamcrypt.net/!!")
+}
+
 
 vodlocker()
 {
@@ -874,10 +896,55 @@ if [ "$TYPE" == "get" ];then
 		assia) assia $INPUT;;
 		cricfree) cricfree $INPUT;;
 		adca) broadcast $INPUT;;
-		streamcrypt|streamz) streamz $INPUT;;
+		streamz) streamz $INPUT;;
 		mixdrop) mixdrop $INPUT;;
+		streamcrypt) hoster2=$(streamcrypt $INPUT);;
 #		*) all $INPUT;;
 	esac
+if [ ! -z "$hoster2" ];then
+	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster2.log
+	case $hoster2 in
+		apl3) apl3 $INPUT;;
+		ecostream) ecostream $INPUT;;
+		giga) giga $INPUT;;
+		nosvideo) nosvideo $INPUT;;
+		allmyvideos) allmyvideos $INPUT;;
+		flashx) flashx $INPUT;;
+		openload|oload) openload $INPUT;;
+		briskfile) briskfile $INPUT;;
+		videoweed|bitvid) videoweed $INPUT;;
+		vodlocker) vodlocker $INPUT;;
+		youwatch|chouhaa|ay8ou8ohth) youwatch $INPUT;;
+		thevideo|tvad|vev) thevideo $INPUT;;
+		movshare|wholecloud|vidgg) movshare $INPUT;;
+		vidto) vidto $INPUT;;
+		vidup) vidup $INPUT;;
+		vidzi) vidzi $INPUT;;
+		vivo) vivo $INPUT;;
+		goldesel|movie4k|movie4kto|kinox|kinos|kinoz|kinoxto|foxx) cloudflare $INPUT;;
+		streamcloud) streamcloud $INPUT;;	
+		nowvideo) nowvideo $INPUT;;
+		divxstage|cloudtime) divxstage $INPUT;;
+		novamov|auroravid) novamov $INPUT;;
+		xvidstage) xvidstage $INPUT;;
+		waaw|netu|hqq) waaw $INPUT;;
+		vidcloud|loadvid) vidcloud $INPUT;;
+		streamango|streamcherry) streamango $INPUT;;
+		vidlox) vidlox $INPUT;;
+		redirector|googlevideo|vodcloud|google|skyfall|s4) directstream "$INPUT";;
+		aliez|aplayer1) aliez $INPUT;;
+		sport7) sport7 $INPUT;;
+		sportstream365) sportstream365 $INPUT;;
+		sportsonline) sportsonline $INPUT;;
+		assia) assia $INPUT;;
+		cricfree) cricfree $INPUT;;
+		adca) broadcast $INPUT;;
+		streamz) streamz $INPUT;;
+		mixdrop) mixdrop $INPUT;;
+		streamcrypt) streamcrypt $INPUT;;
+#		*) all $INPUT;;
+	esac
+fi
 fi
 
 if [ "$TYPE" == "hoster" ];then
