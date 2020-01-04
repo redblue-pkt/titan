@@ -15,17 +15,18 @@ INTERVALS = 5
 class TheVideoResolver(object):
     name = "thevideo"
     domains = ["thevideo.me"]
-    pattern = '(?://|\.)(thevideo\.me|thevideo\.cc|vev\.io|tvad./me)/(?:embed-|download/)?([0-9a-zA-Z]+)'
+    pattern = '(?://|\.)(streamcrypt\.net|thevideo\.me|thevideo\.cc|vev\.io|tvad./me)/(?:embed-|download/)?([0-9a-zA-Z]+)'
 
     def __init__(self):
 #        self.net = Net()
         self.net = Net(cookie_file='/mnt/network/cookies', http_debug = False)
         self.headers = {'User-Agent': common.ANDROID_USER_AGENT}
         url = str(sys.argv[1])
+#        print "url", url
         host = self.get_host_and_id(url)[0]
         media_id = self.get_host_and_id(url)[1]
-
-        return self.get_media_url(host, media_id)
+        return self.get_media_url(url)
+#        return self.get_media_url(host, media_id)
 
     def get_host_and_id(self, url):
         r = re.search(self.pattern, url, re.I)
@@ -34,8 +35,9 @@ class TheVideoResolver(object):
         else:
             return False
 
-    def get_media_url(self, host, media_id):
-        web_url = self.get_url(host, media_id)
+    def get_media_url(self, url):
+#        web_url = self.get_url(host, media_id)
+        web_url = url
 
         headers = {
             'Referer': web_url
@@ -43,9 +45,17 @@ class TheVideoResolver(object):
         headers.update(self.headers)
 
         response = self.net.http_GET(web_url, headers=headers).content
+        js_data = re.findall('(eval\(function.*?)</script>', response.replace('\n', ''))
+#        print "js_data1", js_data
+        for i in js_data:
+            response += jsunpack.unpack(i)
+#        print "js_data2", js_data
+
+#        print "response", response
         ret = self.net.save_cookies('/mnt/network/cookies')
-        videoCode = self.getSearchGroups(response, r'''['"]video_code['"]\s*:\s*['"]([^'^"]+?)['"]''')[0]
-        print videoCode
+#        videoCode = self.getSearchGroups(response, r'''['"]video_code['"]\s*:\s*['"]([^'^"]+?)['"]''')[0]
+        videoCode = re.findall("video/mp4.*'(.*?)\\\\'.*;", response)
+        print videoCode[0]
 
     def getSearchGroups(self, data, pattern, grupsNum=1, ignoreCase=False):
         tab = []
