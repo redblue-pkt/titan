@@ -195,7 +195,9 @@ thevideo()
 	videocode=`cat $TMP/cache.$FILENAME.1`
 
 	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
-	echo "https://thevideos.ga/$videocode" > $STREAMLIST 
+	echo "https://thevideos.ga/$videocode" > $STREAMLIST
+	#start dummy page not found then works playback without input/outout error
+	curl "https://thevideos.ga/$videocode"
 	echo $STREAMLIST
 #######
 exit
@@ -365,13 +367,12 @@ mixdrop()
 
 streamcrypt()
 {
-
-hoster=$(echo $INPUT | sed -nr 's/.*:\/\/.*\/([^\/]+)\/.*/\1/p')
-hostercheck=$(echo $hoster | tr '.' '\n' | wc -l)
-hosterline=$(expr $hostercheck - 1)
-if [ "$hosterline" == "0" ];then hosterline=1; fi
-echo $hoster | tr 'A-Z' 'a-z' | cut -d"." -f$hosterline
-#INPUT=$(echo $INPUT | sed "s!streamcrypt.net/!!")
+	hoster=$(echo $INPUT | sed -nr 's/.*:\/\/.*\/([^\/]+)\/.*/\1/p')
+	hostercheck=$(echo $hoster | tr '.' '\n' | wc -l)
+	hosterline=$(expr $hostercheck - 1)
+	if [ "$hosterline" == "0" ];then hosterline=1; fi
+	echo $hoster | tr 'A-Z' 'a-z' | cut -d"." -f$hosterline
+	#INPUT=$(echo $INPUT | sed "s!streamcrypt.net/!!")
 }
 
 
