@@ -197,7 +197,7 @@ thevideo()
 	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
 	echo "https://thevideos.ga/$videocode" > $STREAMLIST
 	#start dummy page not found then works playback without input/outout error
-	curl "https://thevideos.ga/$videocode"
+	curl "https://thevideos.ga/$videocode" > /dev/null 2>&1
 	echo $STREAMLIST
 #######
 exit
