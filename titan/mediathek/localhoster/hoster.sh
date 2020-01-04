@@ -902,7 +902,6 @@ if [ "$TYPE" == "get" ];then
 		streamcrypt) hoster2=$(streamcrypt $INPUT);;
 #		*) all $INPUT;;
 	esac
-
 if [ ! -z "$hoster2" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster2.log
 	case $hoster2 in
