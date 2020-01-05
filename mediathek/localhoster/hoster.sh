@@ -164,6 +164,17 @@ flashx()
 	echo $STREAMLIST
 }
 
+vshare()
+{
+#	$BIN $CMD/flashx.py $INPUT
+#exit
+	$BIN $CMD/vshare.py $INPUT > $TMP/cache.$FILENAME.2
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	cat $TMP/cache.$FILENAME.2  > $STREAMLIST
+#	cat $TMP/cache.$FILENAME.2 | grep "video/mp4" | sed -nr "s/.*src:\\\'([^']+)\\\'.*/\1/p" > $STREAMLIST
+	echo $STREAMLIST
+}
+
 openload()
 {
 	$BIN $CMD/openload.py $INPUT
@@ -905,6 +916,7 @@ if [ "$TYPE" == "get" ];then
 		adca) broadcast $INPUT;;
 		streamz) streamz $INPUT;;
 		mixdrop) mixdrop $INPUT;;
+		vshare) vshare $INPUT;;
 		streamcrypt) hoster2=$(streamcrypt $INPUT);;
 #		*) all $INPUT;;
 	esac
@@ -948,6 +960,7 @@ if [ ! -z "$hoster2" ];then
 		adca) broadcast $INPUT;;
 		streamz) streamz $INPUT;;
 		mixdrop) mixdrop $INPUT;;
+		vshare) vshare $INPUT;;
 		streamcrypt) streamcrypt $INPUT;;
 #		*) all $INPUT;;
 	esac
