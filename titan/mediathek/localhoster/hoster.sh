@@ -155,14 +155,12 @@ allmyvideos()
 
 flashx()
 {
-	TMPURL=$(echo $INPUT | sed "s!\.tv/!\.tv/embed-!")
-	$curlbin "$TMPURL" -o $TMP/cache.$FILENAME.1
-        TMPURL=`cat $TMP/cache.$FILENAME.1 | sed -nr "s/.*location.href='([^']+)'.*/\1/p" `
-	$BIN $CMD/flashx.py $TMPURL > $TMP/cache.$FILENAME.2
-#	cat $TMP/cache.$FILENAME.2 | grep "video/mp4" | sed -nr "s/.*src:\\\'([^']+)\\\'.*/\1/p"
-
+#	$BIN $CMD/flashx.py $INPUT
+#exit
+	$BIN $CMD/flashx.py $INPUT > $TMP/cache.$FILENAME.2
 	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
-	cat $TMP/cache.$FILENAME.2 | grep "video/mp4" | sed -nr "s/.*src:\\\'([^']+)\\\'.*/\1/p" > $STREAMLIST
+	cat $TMP/cache.$FILENAME.2  > $STREAMLIST
+#	cat $TMP/cache.$FILENAME.2 | grep "video/mp4" | sed -nr "s/.*src:\\\'([^']+)\\\'.*/\1/p" > $STREAMLIST
 	echo $STREAMLIST
 }
 
