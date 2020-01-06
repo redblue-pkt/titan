@@ -795,6 +795,10 @@ hoster()
 
 	STREAMURL=`cat $TMP/cache.$FILENAME.1 | sed 's!<a target="_blank" href="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2`
 
+        if [ ! -z "$STREAMURL" ] && [ `echo "$STREAMURL" | grep ^"https://" | wc -l` -eq 0 ]; then
+		STREAMURL="https://$STREAMURL"
+	fi
+
 	if [ `echo $STREAMURL | grep ^http | wc -l` -eq 0 ]; then
 #		<iframe src="//www.rapidvideo.com/e/FIW59O2DED" width="730" height="460" frameborder="0" scrolling="no"></iframe><BR> <div id="underplayer">
 		STREAMURL=`cat $TMP/cache.$FILENAME.1 | sed 's!<iframe src="!\nstreamurl="!' | grep ^streamurl= | cut -d'"' -f2 | tr ' ' '\n' | head -n1`
