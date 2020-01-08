@@ -12,7 +12,7 @@ URL=http://www.clipfish.de
 NAME="ClipFish"
 
 case $2 in
-	init) echo skip load hoster.sh;;
+	init)	;;
 	*) 	. /tmp/localhoster/hoster.sh
 	   	mkdir $TMP > /dev/null 2>&1
 		FILENAME="$PARSER $INPUT $PAGE $NEXT"
