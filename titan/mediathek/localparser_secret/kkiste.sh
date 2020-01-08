@@ -1,28 +1,25 @@
 #!/bin/bash
 # box parser for titannit
 
-case $2 in
-	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
-esac
-
 SRC=$1
 INPUT=$2
 PAGE=$3
 NEXT=$4
 
-FILENAME=`echo $PAGE | tr '/' '.' | tr '?' '.'  | tr '=' '.'`
-FILENAME=`echo $FILENAME | tr '&' '.'`
-
-if [ -z "$FILENAME" ]; then
-	FILENAME=none
-fi
-
 URL="http://kkiste.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:2} | tr '[a-z]' '[A-Z]'`${PARSER:2}
 
-mkdir $TMP > /dev/null 2>&1
+case $2 in
+	init) echo skip load hoster.sh;;
+	*) 	. /tmp/localhoster/hoster.sh
+	   	mkdir $TMP > /dev/null 2>&1
+		FILENAME="$PARSER $INPUT $PAGE $NEXT"
+	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
+		if [ -z "$FILENAME" ]; then FILENAME=none;fi
+		PICNAME="$FILENAME"
+		;;
+esac
 
 if [ `echo $SRC | grep ^"/mnt/parser" |wc -l` -gt 0 ];then
 	TYPE="$SRC - Shell script"

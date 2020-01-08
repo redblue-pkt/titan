@@ -37,7 +37,10 @@ URL=https://s.to
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=SerienStream
 
-mkdir $TMP > /dev/null 2>&1
+case $2 in
+	init) echo skip mkdir $TMP;;
+	*) if [ ! -e $TMP ];then mkdir $TMP;fi > /dev/null 2>&1;;
+esac
 
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then
 	TYPE="$SRC - Shell script"
