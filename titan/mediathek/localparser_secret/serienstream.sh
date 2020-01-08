@@ -1,23 +1,6 @@
 #!/bin/sh
 # first sh box parser for titannit mfg obi
 
-case $2 in
-	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
-esac
-
-#SRC=$1
-#INPUT=$2
-#PAGE=$3
-#NEXT=$4
-#
-#FILENAME=`echo $PAGE | tr '/' '.'`
-#FILENAME=`echo $FILENAME | tr '&' '.'`
-#
-#if [ -z "$PAGE" ]; then
-#	FILENAME=none
-#fi
-
 SRC=$1
 INPUT=$2
 PAGE=$3
@@ -25,21 +8,19 @@ NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-FILENAME="$PARSER $INPUT $PAGE $NEXT $PAGE2"
-FILENAME=`echo $FILENAME  | sed -e 's/\-\+/./g' | sed -e 's/\+\+/./g' | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
-PICNAME=`echo $FILENAME`
-
-if [ -z "$FILENAME" ]; then
-	FILENAME=none
-fi
-
 URL=https://s.to
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=SerienStream
 
 case $2 in
-	init) echo skip mkdir $TMP;;
-	*) if [ ! -e $TMP ];then mkdir $TMP;fi > /dev/null 2>&1;;
+	init)	;;
+	*) 	. /tmp/localhoster/hoster.sh
+	   	mkdir $TMP > /dev/null 2>&1
+		FILENAME="$PARSER $INPUT $PAGE $NEXT $PAGE2"
+	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
+		if [ -z "$FILENAME" ]; then FILENAME=none;fi
+		PICNAME="$FILENAME"
+		;;
 esac
 
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then

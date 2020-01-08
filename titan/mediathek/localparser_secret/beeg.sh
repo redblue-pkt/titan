@@ -9,7 +9,7 @@ PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 
 case $2 in
-	init) echo skip load hoster.sh;;
+	init)	;;
 	*) 	. /tmp/localhoster/hoster.sh
 	   	mkdir $TMP > /dev/null 2>&1
 		FILENAME="$PARSER $INPUT $PAGE $PARAM"
