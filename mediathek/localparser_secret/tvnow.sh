@@ -1,11 +1,6 @@
 #!/bin/sh
 # first sh box parser for titannit mfg obi
 
-case $2 in
-	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
-esac
-
 SRC=$1
 INPUT=$2
 PAGE=$3
@@ -13,29 +8,32 @@ NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-## start filename work, filename to long
-LIST="5B 1896 500 page Id 7B 22 5D 7D filter containsNotIn Disabled maxPerPage v3 formats? fields= id, title, station, title, titleGroup, seoUrl, icon, hasFreeEpisodes, hasPayEpisodes, categoryId, searchAliasName, genres fields= formatTabs. formatTabPages. container. annualNavigation"
-TMPPAGE="$PAGE"
-for ROUND in $LIST; do
-	TMPPAGE=$(echo $TMPPAGE | sed "s/$ROUND/./g")
-done
-TMPPAGE=`echo $TMPPAGE | tr ':' '.' | tr '*' '.' | tr ',' '.' | tr '-' '.' | tr '%' '.' | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
-## done
-
-#FILENAME="$PARSER $INPUT $PAGE $NEXT $PAGE2"
-FILENAME="$PARSER $INPUT $TMPPAGE $NEXT $PAGE2"
-FILENAME=`echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
-
-if [ -z "$FILENAME" ]; then
-	FILENAME=none
-fi
-
 URL=https://api.tvnow.de
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME="TvNow"
 
-mkdir $TMP > /dev/null 2>&1
-#TMP=/tmp/localcache
+case $2 in
+	init) echo skip load hoster.sh;;
+	*) 	. /tmp/localhoster/hoster.sh
+	   	mkdir $TMP > /dev/null 2>&1
+		## start filename work, filename to long
+		LIST="5B 1896 500 page Id 7B 22 5D 7D filter containsNotIn Disabled maxPerPage v3 formats? fields= id, title, station, title, titleGroup, seoUrl, icon, hasFreeEpisodes, hasPayEpisodes, categoryId, searchAliasName, genres fields= formatTabs. formatTabPages. container. annualNavigation"
+		TMPPAGE="$PAGE"
+		for ROUND in $LIST; do
+			TMPPAGE=$(echo $TMPPAGE | sed "s/$ROUND/./g")
+		done
+		TMPPAGE=`echo $TMPPAGE | tr ':' '.' | tr '*' '.' | tr ',' '.' | tr '-' '.' | tr '%' '.' | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
+		## done
+
+		FILENAME="$PARSER $INPUT $TMPPAGE $NEXT $PAGE2"
+		FILENAME=`echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
+
+	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
+		if [ -z "$FILENAME" ]; then FILENAME=none;fi
+		PICNAME="$FILENAME"
+		;;
+esac
+
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then
 	TYPE="$SRC - Shell script"
 elif [ `echo $SRC | grep ^"/var/swap" | wc -l` -gt 0 ];then

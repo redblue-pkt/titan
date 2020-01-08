@@ -1,41 +1,12 @@
 #!/bin/sh
 # first sh box parser for titannit mfg obi
 
-case $2 in
-	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
-esac
-
-#SRC=$1
-#INPUT=$2
-#PAGE=$3
-#NEXT=$4
-#
-#FILENAME=`echo $PAGE | tr '/' '.'`
-#FILENAME=`echo $FILENAME | tr '&' '.'`
-#
-#if [ -z "$PAGE" ]; then
-#	FILENAME=none
-#fi
-
 SRC=$1
 INPUT=$2
 PAGE=$3
 NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-
-FILENAME="$PARSER $INPUT $PAGE $NEXT $PAGE2"
-FILENAME=`echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.'  | tr '=' '.' | sed 's/ \+/./g' | sed 's/\.\+/./g'`
-
-if [ -z "$FILENAME" ]; then
-	FILENAME=none
-fi
-
-URL=`cat /mnt/config/titan.cfg | grep tithek_kinox_url | grep -v "#" | cut -d "=" -f2`
-if [ -z "$URL" ];then
-	URL=https://kinox.pub
-fi
 
 #KinoX.to Alternativ Adressen: http://kinoS.TO - http://kinox.TV - http://kinox.ME - http://kinox.SI - http://kinox.IO
 #Mirrors: http://kinox.SX - http://kinox.AM - http://kinox.NU - http://kinox.SG - http://kinox.GRATIS - http://kinox.MOBI
@@ -46,16 +17,25 @@ fi
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=KinoX
 
-if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=1 | wc -l` -eq 1 ];then
-	ACTIVEBIN="$curlbin" 
-elif [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=2 | wc -l` -eq 1 ];then
-	ACTIVEBIN="$BIN /tmp/localhoster/cloudflare.py"
-else
-	ACTIVEBIN="$curlbin" 
-	URL=`echo $URL | sed 's/https:/http:/'`
-fi
-
-mkdir $TMP > /dev/null 2>&1
+case $2 in
+	init) echo skip load hoster.sh;;
+	*) 	. /tmp/localhoster/hoster.sh
+	   	mkdir $TMP > /dev/null 2>&1
+		FILENAME="$PARSER $INPUT $PAGE $NEXT $PAGE2"
+	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
+		if [ -z "$FILENAME" ]; then FILENAME=none;fi
+           	PICNAME="$FILENAME"
+		URL=`cat /mnt/config/titan.cfg | grep tithek_kinox_url | grep -v "#" | cut -d "=" -f2`
+		if [ -z "$URL" ];then URL=https://kinoz.to; fi
+		if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=1 | wc -l` -eq 1 ];then
+			ACTIVEBIN="$curlbin" 
+		elif [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=2 | wc -l` -eq 1 ];then
+			ACTIVEBIN="$BIN /tmp/localhoster/cloudflare.py"
+		else
+			ACTIVEBIN="$curlbin" 
+		fi
+	   ;;
+esac
 
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then
 	TYPE="$SRC - Shell script"

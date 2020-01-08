@@ -1,11 +1,6 @@
 #!/bin/sh
 # first sh box parser for titannit mfg obi
 
-case $2 in
-	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
-esac
-
 SRC=$1
 INPUT=$2
 PAGE=$3
@@ -13,18 +8,19 @@ NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-FILENAME="`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'` $INPUT $PAGE $NEXT $PAGE2"
-FILENAME="`echo $FILENAME | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g'`"
-PICNAME=`echo $FILENAME`
-
-if [ -z "$FILENAME" ]; then
-	FILENAME=none
-fi
-
 URL=http://www.clipfish.de
 NAME="ClipFish"
 
-mkdir $TMP > /dev/null 2>&1
+case $2 in
+	init) echo skip load hoster.sh;;
+	*) 	. /tmp/localhoster/hoster.sh
+	   	mkdir $TMP > /dev/null 2>&1
+		FILENAME="$PARSER $INPUT $PAGE $NEXT"
+	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
+		if [ -z "$FILENAME" ]; then FILENAME=none;fi
+		PICNAME="$FILENAME"
+		;;
+esac
 
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then
 	TYPE="$SRC - Shell script"

@@ -1,30 +1,27 @@
 #!/bin/sh
 # first sh box parser for titannit mfg obi
 
-case $2 in
-	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
-esac
-
 SRC=$1
 INPUT=$2
 CURPAGE=$3
 MAXPAGE=$4
 PAGE=$5
 
-FILENAME=`echo $PAGE | tr '/' '.'`
-FILENAME=`echo $FILENAME | tr '&' '.'`
-
-if [ -z "$PAGE" ]; then
-	FILENAME=none
-fi
-
 URL=https://www.watchbox.de
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME="Watchbox"
 
-mkdir $TMP > /dev/null 2>&1
-#TMP=/tmp/localcache
+case $2 in
+	init) echo skip load hoster.sh;;
+	*) 	. /tmp/localhoster/hoster.sh
+	   	mkdir $TMP > /dev/null 2>&1
+		FILENAME="$PARSER $INPUT $PAGE $NEXT"
+	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
+		if [ -z "$FILENAME" ]; then FILENAME=none;fi
+		PICNAME="$FILENAME"
+		;;
+esac
+
 if [ `echo $SRC | grep ^"/mnt/parser" | wc -l` -gt 0 ];then
 	TYPE="$SRC - Shell script"
 elif [ `echo $SRC | grep ^"/var/swap" | wc -l` -gt 0 ];then

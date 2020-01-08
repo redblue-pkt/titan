@@ -1,11 +1,6 @@
 #!/bin/bash
+
 # titannit box parser for burning series
-
-case $2 in
-	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
-esac
-
 SRC=$1
 INPUT=$2
 PARAM=$3
@@ -14,8 +9,16 @@ URL="https://bs.to/"
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME="burningseries"
 
-#rm -rf $TMP > /dev/null 2>&1
-mkdir $TMP > /dev/null 2>&1
+case $2 in
+	init) echo skip load hoster.sh;;
+	*) 	. /tmp/localhoster/hoster.sh
+	   	mkdir $TMP > /dev/null 2>&1
+		FILENAME="$PARSER $INPUT $PAGE $PARAM $PARAM2"
+	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
+		if [ -z "$FILENAME" ]; then FILENAME=none;fi
+		PICNAME="$FILENAME"
+		;;
+esac
 
 if [ `echo $SRC | grep ^"/mnt/parser" |wc -l` -gt 0 ];then
 	TYPE="$SRC - Shell script"
