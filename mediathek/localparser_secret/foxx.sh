@@ -1,11 +1,6 @@
 #!/bin/sh
 # first sh box parser for titannit mfg obi
 
-case $2 in
-	init) echo skip load hoster.sh;;
-	*) . /tmp/localhoster/hoster.sh;;
-esac
-
 SRC=$1
 INPUT=$2
 CURPAGE=$3
