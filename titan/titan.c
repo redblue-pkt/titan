@@ -5,7 +5,7 @@
 #include "header.h" 
 #include "debug.h" 
 #include "crc32.h"
-#include "sock.h" 
+#include "sock.h"
 
 #define SYSCODE 0UL
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
