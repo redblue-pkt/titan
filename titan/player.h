@@ -49,12 +49,11 @@ extern ManagerHandler_t ManagerHandler;
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <errno.h>
-
 #include <pthread.h>
 #endif
 #include "common.h"
 #ifdef OEBUILD
-#include "misc.h"
+//#include "misc.h"
 #endif
 extern int ffmpeg_av_dict_set(const char *key, const char *value, int flags);
 extern void       aac_software_decoder_set(const int32_t val);
@@ -190,10 +189,11 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
                 {
 #ifdef OEBUILD
                     E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d,\"an\":%d,\"ad\":%d}}\n", \
+                    argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name, track->width, track->height, track->frame_rate, track->progressive, track->aspect_ratio_num, track->aspect_ratio_den);
 #else
 		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d,\"an\":%d,\"ad\":%d}}\n", \
-#endif
                     argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name, track->width, track->height, track->frame_rate, track->progressive, track->aspect_ratio_num, track->aspect_ratio_den);
+#endif
                 }
                 free(track->Encoding);
                 free(track->Name);
