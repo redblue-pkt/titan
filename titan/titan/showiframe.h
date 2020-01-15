@@ -89,7 +89,7 @@ int singlepicstart(const char *filename, int flag)
 			videosetformat(videonode, VIDEO_FORMAT_16_9);
 			videosetstreamtype(videonode, MPEGV);
 			videoplay(videonode);
-
+			videocontinue(videonode);
 		}
 		else
 			videonode = status.aktservice->videodev;
