@@ -676,6 +676,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 		if(flag == 0) m_unlock(&status.tsseekmutex, 15);
 		return 1;
 	}
+	playerpausets();
 	if(servicenode->endoffile > 0)
 		endoffile = servicenode->endoffile - (servicenode->tssize * 2);
 	else
