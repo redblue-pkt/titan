@@ -866,7 +866,16 @@ int servicestop(struct service *node, int clear, int flag)
 		
 		if(flag == 4 || flag == 1 || (flag == 0 && fastzap == 0))
 		{
+			printf("[titan] service.h -> servicestop close all");
 			videoclose(node->videodev, -1);
+			//test iframe in MC
+			if(checkchipset("HI3798MV200") == 1)
+			{
+				dmxstop(status.aktservice->dmxvideodev);
+				dmxclose(status.aktservice->dmxvideodev, -1);
+				videostop(status.aktservice->videodev, 0);
+				videoclose(status.aktservice->videodev, -1);
+			}
 			node->videodev = NULL;
 			dmxstop(node->dmxvideodev);
 			dmxclose(node->dmxvideodev, -1);
