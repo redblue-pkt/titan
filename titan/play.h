@@ -1859,7 +1859,7 @@ playerstart:
 				}
 #else
 #ifdef EXTEPLAYER3
-				getsubtext();
+//				getsubtext();
 #endif
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
@@ -1896,8 +1896,8 @@ playerstart:
 				}
 
 #ifdef EXTEPLAYER3
-				if(rcret == getrcconfigint("rchelp", NULL))
-					printf("getsubtext: %s\n", getsubtext());
+//				if(rcret == getrcconfigint("rchelp", NULL))
+//					printf("getsubtext: %s\n", getsubtext());
 #endif
 
 				if(rcret == getrcconfigint("rcpip", NULL))
