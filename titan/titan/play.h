@@ -1219,7 +1219,10 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 			audioclearbuffer(status.aktservice->audiodev);
 		playercontinuets();
 		if((status.playspeed != 0 || status.slowspeed != 0) && checkchipset("HI3798MV200") != 1)
+		{
+			playerpausets();
 			playerresetts();
+		}
 	}
 	else if(playertype == 2)
 		dvdcontinue();
