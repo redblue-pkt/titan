@@ -8183,36 +8183,4 @@ int setzapmode(char* value)
 	return 0;
 }
 
-int update_iptv(char* file)
-{
-	char* tmpstr = NULL, *link = NULL;
-	int ret = 0;
-
-	tmpstr = dirname(file);
-	link = getconfig("iptvserver", NULL);
-
-	if(link != NULL)
-	{
-		debug(10, "update %s", link);
-
-		if(!file_exist(tmpstr))
-			mkdir(tmpstr, 0777);
-
-		tmpstr = ostrcat(tmpstr, "/iptv.m3u", 1, 0);
-		if(file_exist(tmpstr))
-			unlink(tmpstr);
-
-		if(!file_exist(tmpstr))
-			gethttps(link, tmpstr, NULL, NULL, NULL, NULL, 0);
-
-		if(file_exist(tmpstr)) ret = 1;
-
-	}
-
-	free(tmpstr), tmpstr = NULL;
-	free(link), link = NULL;
-
-	return ret;
-}
-
 #endif

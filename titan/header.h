@@ -312,7 +312,6 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 int sockreceive(int *fd, unsigned char* data, int count, int timeout);
 void gethttpstruct(struct stimerthread* timernode, struct download* node, int flag);
 void gethttpstructmsg(struct stimerthread* timernode, struct download* node, int flag);
-char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, char* referer, int flag);
 
 //numinput.h
 char* numinput(char* title, char* num, char* mask, int isip);
