@@ -132,8 +132,9 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
             {
                 int i = 0;
 #ifdef OEBUILD
-                E2iStartMsg();
-                E2iSendMsg("{\"%c_%c\": [", argvBuff[0], argvBuff[1]);
+//                E2iStartMsg();
+//                E2iSendMsg("{\"%c_%c\": [", argvBuff[0], argvBuff[1]);
+		fprintf(stderr, "{\"%c_%c\": [", argvBuff[0], argvBuff[1]);
 #else
 		fprintf(stderr, "{\"%c_%c\": [", argvBuff[0], argvBuff[1]);
 #endif
@@ -148,9 +149,10 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
 #endif
                     }
 #ifdef OEBUILD
-                    E2iSendMsg("{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}", TrackList[i].Id , TrackList[i].Encoding, TrackList[i].Name);
+//                   E2iSendMsg("{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}", TrackList[i].Id , TrackList[i].Encoding, TrackList[i].Name);
+	            fprintf(stderr, "{\"%c_%c\": [", argvBuff[0], argvBuff[1]);
 #else
-			fprintf(stderr, "{\"%c_%c\": [", argvBuff[0], argvBuff[1]);
+		    fprintf(stderr, "{\"%c_%c\": [", argvBuff[0], argvBuff[1]);
 #endif
                     free(TrackList[i].Encoding);
                     free(TrackList[i].Name);
@@ -163,7 +165,8 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
             {
                 // not tracks 
 #ifdef OEBUILD
-                E2iSendMsg("{\"%c_%c\": []}\n", argvBuff[0], argvBuff[1]);
+//                E2iSendMsg("{\"%c_%c\": []}\n", argvBuff[0], argvBuff[1]);
+		fprintf(stderr, "{\"%c_%c\": []}\n", argvBuff[0], argvBuff[1]);
 #else
 		fprintf(stderr, "{\"%c_%c\": []}\n", argvBuff[0], argvBuff[1]);
 #endif
@@ -180,7 +183,8 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
                 if ('a' == argvBuff[0] || 's' == argvBuff[0])
                 {
 #ifdef OEBUILD
-                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name);
+//                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name);
+		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name);
 #else
 		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name);
 #endif
@@ -188,7 +192,9 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
                 else // video
                 {
 #ifdef OEBUILD
-                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d,\"an\":%d,\"ad\":%d}}\n", \
+//                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d,\"an\":%d,\"ad\":%d}}\n", \
+//                    argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name, track->width, track->height, track->frame_rate, track->progressive, track->aspect_ratio_num, track->aspect_ratio_den);
+		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d,\"an\":%d,\"ad\":%d}}\n", \
                     argvBuff[0], argvBuff[1], track->Id , track->Encoding, track->Name, track->width, track->height, track->frame_rate, track->progressive, track->aspect_ratio_num, track->aspect_ratio_den);
 #else
 		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d,\"an\":%d,\"ad\":%d}}\n", \
@@ -205,7 +211,8 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
                 if ('a' == argvBuff[0] || 's' == argvBuff[0])
                 {
 #ifdef OEBUILD
-                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], -1, "", "");
+//                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], -1, "", "");
+		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], -1, "", "");
 #else
 		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\"}}\n", argvBuff[0], argvBuff[1], -1, "", "");
 #endif
@@ -213,7 +220,8 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
                 else // video
                 {
 #ifdef OEBUILD
-                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d}}\n", argvBuff[0], argvBuff[1], -1, "", "", -1, -1, 0, -1);
+//                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d}}\n", argvBuff[0], argvBuff[1], -1, "", "", -1, -1, 0, -1);
+		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d}}\n", argvBuff[0], argvBuff[1], -1, "", "", -1, -1, 0, -1);
 #else
 		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"e\":\"%s\",\"n\":\"%s\",\"w\":%d,\"h\":%d,\"f\":%u,\"p\":%d}}\n", argvBuff[0], argvBuff[1], -1, "", "", -1, -1, 0, -1);
 #endif
@@ -265,7 +273,8 @@ static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbac
                 {
                     commandRetVal = player->playback->Command(player, playbackSwitchCmd, (void*)&id);
 #ifdef OEBUILD
-                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"sts\":%d}}\n", argvBuff[0], 's', id, commandRetVal);
+//                    E2iSendMsg("{\"%c_%c\":{\"id\":%d,\"sts\":%d}}\n", argvBuff[0], 's', id, commandRetVal);
+		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"sts\":%d}}\n", argvBuff[0], 's', id, commandRetVal);
 #else
 		    fprintf(stderr, "{\"%c_%c\":{\"id\":%d,\"sts\":%d}}\n", argvBuff[0], 's', id, commandRetVal);
 #endif
