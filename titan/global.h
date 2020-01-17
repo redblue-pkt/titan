@@ -5132,6 +5132,8 @@ int setmute(int value)
 
 int setvol(int value)
 {
+printf("setvol1: value=%d\n", value);
+
 	char* voldev;
 	int ret = 0, tmpvol = value;
 
@@ -5158,11 +5160,13 @@ int setvol(int value)
 				ret = writesysint(voldev, value, 0);
 			else
 				ret = 0;
+
+printf("setvol2: value=%d\n", value);
+
+			if(checkchipset("3798MV200") == 1)
+				return ret;
+
 #ifdef MIPSEL
-
-printf("setvol: value=%d\n", value);
-
-
 			struct dvbdev *audionode = NULL;
 			int openaudio = 0;
 
