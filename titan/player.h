@@ -63,14 +63,14 @@ extern void       wma_software_decoder_set(const int32_t val);
 extern void       ac3_software_decoder_set(const int32_t val);
 extern void      eac3_software_decoder_set(const int32_t val);
 extern void       mp3_software_decoder_set(const int32_t val);
-#ifdef OEBUILD
+#ifdef OEBUILD1
 extern void       amr_software_decoder_set(const int32_t val);
 extern void    vorbis_software_decoder_set(const int32_t val);
 extern void      opus_software_decoder_set(const int32_t val);
 #endif
 extern void            rtmp_proto_impl_set(const int32_t val);
 extern void        flv2mpeg4_converter_set(const int32_t val);
-#ifdef OEBUILD
+#ifdef OEBUILD1
 extern void        sel_program_id_set(const int32_t val);
 #endif
 extern void pcm_resampling_set(int32_t val);
@@ -2050,7 +2050,7 @@ int playergetbufferstatus()
 	if(player && player->container && player->container->selectedContainer)
 		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_STATUS, (void*)&ret);
 #endif
-
+printf("playergetbufferstatus: %d\n", ret);
 	return ret;
 }
 
