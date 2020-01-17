@@ -866,7 +866,7 @@ int servicestop(struct service *node, int clear, int flag)
 		
 		if(flag == 4 || flag == 1 || (flag == 0 && fastzap == 0))
 		{
-			printf("[titan] service.h -> servicestop close all");
+			printf("[titan] service.h -> servicestop close all\n");
 			if(checkchipset("HI3798MV200") == 1)
 			{
 				videocontinue(node->videodev);
