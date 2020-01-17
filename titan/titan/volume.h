@@ -6,10 +6,10 @@ void changevolume(int direction, struct skin* volumebar)
 	int vol = 0;
 	int volbase = 5;
 
-printf("changevolume: %d", direction);
+printf("changevolume: %d\n", direction);
 	vol = getvol();
 	if(checkchipset("3798MV200") == 1)
-		volbase = 1;
+		volbase = 3;
 	if(direction == 0)
 		vol += volbase;
 	if(direction == 1)
@@ -96,7 +96,7 @@ void screenvolumeup(struct skin* screen, struct skin* node, int screencalc, int 
 #ifdef MIPSEL
 	if(getconfigint("ForwardVolume", NULL) == 1)
 	{
-printf("screenvolumeup: ForwardVolume");
+printf("screenvolumeup: ForwardVolume\n");
 
 		forwardKey(getrcconfigint("rcvolup", NULL));
 		return;
@@ -112,7 +112,7 @@ void screenvolumedown(struct skin* screen, struct skin* node, int screencalc, in
 #ifdef MIPSEL
 	if(getconfigint("ForwardVolume", NULL) == 1)
 	{
-printf("screenvolumedown: ForwardVolume");
+printf("screenvolumedown: ForwardVolume\n");
 
 		forwardKey(getrcconfigint("rcvoldown", NULL));
 		return;
