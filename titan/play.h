@@ -1227,11 +1227,8 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 		dvdcontinue();
 	else
 	{
-		//if(checkchipset("HI3798MV200") == 1)
-		//{
-			videoslowmotion(status.aktservice->videodev, 0);
-			videofastforward(status.aktservice->videodev, 0);
-		//}
+		if(status.playspeed != 0 || status.slowspeed != 0)
+			playerpause();
 		playercontinue();
 	}
 	status.slowspeed = 0;
