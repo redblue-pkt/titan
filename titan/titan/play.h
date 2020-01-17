@@ -1220,7 +1220,6 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 		playercontinuets();
 		if((status.playspeed != 0 || status.slowspeed != 0) && checkchipset("HI3798MV200") != 1)
 		{
-			playerpausets();
 			playerresetts();
 		}
 	}
