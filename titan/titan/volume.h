@@ -7,7 +7,7 @@ void changevolume(int direction, struct skin* volumebar)
 	int volbase = 5;
 
 	if(checkchipset("3798MV200") == 1)
-		volbase = 2;
+		volbase = 1;
 
 	vol = getvol();
 

@@ -5146,7 +5146,8 @@ int setvol(int value)
 			if(status.volautochange == 0)
 				value = value - (status.volautochangevalue * value / 100);
 		}
-		value = 63 - value * 63 / 100;
+		if(checkchipset("_3798MV200") == 0)
+			value = 63 - value * 63 / 100;
 		debug(100, "set %s to %d", voldev, value);
 		ret = 0;
 		if(status.mute == 1)
@@ -5159,10 +5160,11 @@ int setvol(int value)
 			else
 				ret = 0;
 
-			if(checkchipset("_3798MV200") == 1)
+			if(checkchipset("3798MV200") == 1)
 			{
 				if(ret == 0)
 					status.volume = value;
+
 				if(ret == 0 && status.mute != 2) addconfigint("vol", tmpvol);
 				return ret;
 			}
