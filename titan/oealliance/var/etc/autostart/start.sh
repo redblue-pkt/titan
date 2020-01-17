@@ -181,6 +181,14 @@ starthyprid()
 	fi
 }
 
+startled()
+{
+	if [ "$model" == "sf8008" ]; then
+		echo "[$0] startled ser power > blue"
+		echo 1 > /proc/stb/fp/ledpowercolor
+	fi
+}
+
 startgui()
 {
 	STARTDEFAULT="/usr/local/bin/titan /mnt/config/titan.cfg"
@@ -369,6 +377,7 @@ case $1 in
 #		startdelpack
 		startCi
 		workarounds
+		startled
 		startgui;;
 	last)
 		checkemu
