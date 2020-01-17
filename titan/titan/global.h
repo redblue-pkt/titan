@@ -5159,10 +5159,11 @@ int setvol(int value)
 			else
 				ret = 0;
 
-			if(checkchipset("3798MV200") == 1)
+			if(checkchipset("_3798MV200") == 1)
 			{
 				if(ret == 0)
 					status.volume = value;
+				if(ret == 0 && status.mute != 2) addconfigint("vol", tmpvol);
 				return ret;
 			}
 #ifdef MIPSEL
