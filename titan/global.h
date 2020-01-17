@@ -5159,6 +5159,10 @@ int setvol(int value)
 			else
 				ret = 0;
 #ifdef MIPSEL
+
+printf("setvol: value=%d\n", value);
+
+
 			struct dvbdev *audionode = NULL;
 			int openaudio = 0;
 
