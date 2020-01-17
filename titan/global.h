@@ -5236,7 +5236,8 @@ int getvol()
 			tmpvol = status.volume;
 	}
 	free(value);
-	tmpvol = 100 - tmpvol * 100 / 63;
+	if(checkchipset("3798MV200") != 1)
+		tmpvol = 100 - tmpvol * 100 / 63;
 	if(status.volautochangevalue != 0)
 	{
 		if(status.volautochange == 0 && status.volautochangevalue < 100)
