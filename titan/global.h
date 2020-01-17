@@ -5146,7 +5146,7 @@ int setvol(int value)
 			if(status.volautochange == 0)
 				value = value - (status.volautochangevalue * value / 100);
 		}
-		if(checkchipset("_3798MV200") == 0)
+		if(checkchipset("_3798MV200") != 1)
 			value = 63 - value * 63 / 100;
 		debug(100, "set %s to %d", voldev, value);
 		ret = 0;
