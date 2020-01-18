@@ -726,9 +726,8 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	offset += currentpos;
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_SET);
 	
+	playerresetts();
 	playercontinuets();
-	if(checkchipset("HI3798MV200") != 1)
-		playerresetts();
 
 	if(flag == 0) m_unlock(&status.tsseekmutex, 15);
 	return 0;
