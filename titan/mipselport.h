@@ -97,7 +97,7 @@ void setfbvarsize(struct fb* newnode)
 
 void enablemanualblit()
 {
-#ifndef CONFIG_ION
+#if !defined(CONFIG_ION) && !defined(CONFIG_HISILICON_FB)
 	unsigned char tmp = 1;
 	if (ioctl(fb->fd, FBIO_SET_MANUAL_BLIT, &tmp)<0)
 		perror("FBIO_SET_MANUAL_BLIT");
@@ -108,7 +108,7 @@ void enablemanualblit()
 
 void disablemanualblit()
 {
-#ifndef CONFIG_ION
+#if !defined(CONFIG_ION) && !defined(CONFIG_HISILICON_FB)
 	unsigned char tmp = 0;
 	if (ioctl(fb->fd, FBIO_SET_MANUAL_BLIT, &tmp)<0)
 		perror("FBIO_SET_MANUAL_BLIT");
@@ -119,7 +119,7 @@ void disablemanualblit()
 
 void blit()
 {
-#if !defined(CONFIG_ION)
+#if !defined(CONFIG_ION) && !defined(CONFIG_HISILICON_FB)
 	if (g_manual_blit == 1) {
 		if (ioctl(fb->fd, FBIO_BLIT) < 0)
 			perror("FBIO_BLIT");
