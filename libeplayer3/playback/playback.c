@@ -265,7 +265,7 @@ static int PlaybackPause(Context_t  *context)
         set_pause_timeout(1);
 //obi      
         if(context->playback->SlowMotion) 
-             context->output->Command(context, OUTPUT_CLEAR, NULL);        context->output->Command(context, OUTPUT_PAUSE, NULL);
+             context->output->Command(context, OUTPUT_CLEAR, NULL);
 //obi (end)
 
         context->output->Command(context, OUTPUT_PAUSE, NULL);
@@ -302,7 +302,8 @@ static int32_t PlaybackContinue(Context_t  *context)
 
 //obi      
         if(context->playback->SlowMotion) 
-             context->output->Command(context, OUTPUT_CLEAR, NULL);        context->output->Command(context, OUTPUT_PAUSE, NULL);
+             context->output->Command(context, OUTPUT_CLEAR, NULL);
+
 //obi (end)
         context->output->Command(context, OUTPUT_CONTINUE, NULL);
 
