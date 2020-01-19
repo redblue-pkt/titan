@@ -349,7 +349,7 @@ startgui()
 
 case $1 in
 	first)
-		starthyprid
+#		starthyprid
 #		startmnt
 #		startplugins
 		starthotplug
