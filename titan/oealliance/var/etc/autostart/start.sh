@@ -369,6 +369,7 @@ case $1 in
 		checkemu
 		startusercmd;;
 	reboot)
+		starthyprid
 		startdropcaches;;
 esac
 
