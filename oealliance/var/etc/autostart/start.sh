@@ -304,6 +304,7 @@ startgui()
 			if [ -f /proc/stb/fp/force_restart ]; then
 				echo 1 > /proc/stb/fp/force_restart
 			fi
+			/var/etc/autostart/start.sh reboot 
 			/sbin/reboot
 			;;
 		3)
