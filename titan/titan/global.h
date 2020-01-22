@@ -6611,8 +6611,7 @@ char* gethypridtunerchoices(int dev)
 		hypridtunerchoices = getconfig("tempnim", NULL);	
 	else
 #endif
-
-	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+		hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
 	if(hypridtunerchoices == NULL)
 	{
@@ -6683,6 +6682,11 @@ char* gethypridtunerchoices(int dev)
 	printf("tmpstr1: %s\n", tmpstr1);
 
 	if(ostrstr(tmpstr1, "(T/C)") != NULL)
+	{
+		value = ostrcat("t", "\n", 0, 0);
+		value = ostrcat(value, "c", 1, 0);
+	}
+	if(ostrstr(tmpstr1, "(T2/C)") != NULL)
 	{
 		value = ostrcat("t", "\n", 0, 0);
 		value = ostrcat(value, "c", 1, 0);
@@ -6767,6 +6771,11 @@ char* gethypridtunerchoicesvalue(int dev)
 	printf("tmpstr1: %s\n", tmpstr1);
 
 	if(ostrstr(tmpstr1, "(T/C)") != NULL)
+	{
+		value = ostrcat("DVB-T", "\n", 0, 0);
+		value = ostrcat(value, "DVB-C", 1, 0);
+	}
+	if(ostrstr(tmpstr1, "(T2/C)") != NULL)
 	{
 		value = ostrcat("DVB-T", "\n", 0, 0);
 		value = ostrcat(value, "DVB-C", 1, 0);
