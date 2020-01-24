@@ -6686,7 +6686,7 @@ char* gethypridtunerchoices(int dev)
 		value = ostrcat("t", "\n", 0, 0);
 		value = ostrcat(value, "c", 1, 0);
 	}
-	if(ostrstr(tmpstr1, "(T2/C)") != NULL)
+	if(ostrstr(tmpstr1, "(T/T2/C)") != NULL)
 	{
 		value = ostrcat("t", "\n", 0, 0);
 		value = ostrcat(value, "c", 1, 0);
@@ -6775,7 +6775,7 @@ char* gethypridtunerchoicesvalue(int dev)
 		value = ostrcat("DVB-T", "\n", 0, 0);
 		value = ostrcat(value, "DVB-C", 1, 0);
 	}
-	if(ostrstr(tmpstr1, "(T2/C)") != NULL)
+	if(ostrstr(tmpstr1, "(T/T2/C)") != NULL)
 	{
 		value = ostrcat("DVB-T", "\n", 0, 0);
 		value = ostrcat(value, "DVB-C", 1, 0);
