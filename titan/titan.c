@@ -667,7 +667,7 @@ timeokw = 1;
 	initvfd();
 	
 	fbctuner = 0;
-	char* hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+	char* hypridtunerchoices = ostrcat(getconfig("hypridtunerchoices", NULL), NULL, 0, 0);
 	if(hypridtunerchoices == NULL)
 	{
 		err("hypridtunerchoices NULL detect");
