@@ -69,6 +69,12 @@ startdate()
 			opkg remove fake-hwclock --force-depends
 			date -d "1974-01-04"
 		fi
+
+		if [ ! -e /tmp/.timefix ] && [ "$model" == "spark7162" ]; then
+			time=`date +%s`
+			echo -e `expr $time + 3600` > /proc/stb/fp/rtc
+			touch /tmp/.timefix
+		fi
 }
 
 startdelpack()
