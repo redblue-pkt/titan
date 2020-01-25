@@ -10,7 +10,7 @@ void screensystem_backup_restore()
 	struct skin* b_yellow = getscreennode(backup_restore, "b3");
 	struct skin* b_blue = getscreennode(backup_restore, "b4");
 	struct skin* info = getscreennode(backup_restore, "info");
-	char* tmpstr = NULL, *infotext = NULL;
+	char* tmpstr = NULL, *infotext = NULL, *BACKUPDIR = NULL;
 
 	infotext = _("Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!");
 
@@ -33,13 +33,24 @@ void screensystem_backup_restore()
 				changetext(info, _("Please wait ...\n\nAll Settings are restored.\n\nBox will start in few seconds."));
 				drawscreen(backup_restore, 0, 0);
 #ifdef OEBUILD
-				if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+				char* BACKUPDIR = NULL;
+				if(isfile("/media/.moviedev") || file_exist("/media/hdd"))
+					BACKUPDIR = ostrcat("/media/hdd", NULL, 0, 0);
+				else if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+					BACKUPDIR = ostrcat("/var/backup", NULL, 0, 0);
+				else if(isfile("/media/.swapextensionsdev") || file_exist("/var/swap"))
+					BACKUPDIR = ostrcat("/var/swap", NULL, 0, 0);
+				if(BACKUPDIR != NULL)
 #else
 				if(isfile("/tmp/.backupdev") || file_exist("/var/backup"))
 #endif
 				{
 #ifdef OEBUILD
-					ret = system("/sbin/settings.sh restore /var/backup > /tmp/backup.log 2>&1");
+					tmpstr = ostrcat("/sbin/settings.sh restore ", BACKUPDIR, 0, 0);
+					tmpstr = ostrcat(tmpstr, " > /tmp/backup.log 2>&1", 1, 0);
+					printf("cmd: %s\n", tmpstr);
+					ret = system(tmpstr);
+					free(tmpstr), tmpstr = NULL;
 #else
 					ret = system("/sbin/settings.sh restore > /tmp/backup.log 2>&1");
 #endif
@@ -47,10 +58,21 @@ void screensystem_backup_restore()
 						textbox(_("Message"), _("Restore failed, see log"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 					else
 					{
+#ifdef OEBUILD
+						tmpstr = ostrcat(_("Backup restored successfully"), "\n\n", 0, 0);
+						tmpstr = ostrcat(tmpstr, BACKUPDIR, 1, 0);		
+						textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+						free(tmpstr); tmpstr = NULL;
+#else
+						textbox(_("Message"), _("Backup restored successfully"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+#endif
+
 						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-							screenextensions(3, NULL, NULL, 1); 
+							screenextensions(3, NULL, NULL, 1); 						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+
 						ret = system("init 6");
 					}
+					free(BACKUPDIR), BACKUPDIR = NULL;
 				}
 				else
 				{
@@ -68,7 +90,13 @@ void screensystem_backup_restore()
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 #ifdef OEBUILD
-			if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+			if(isfile("/media/.moviedev") || file_exist("/media/hdd"))
+				BACKUPDIR = ostrcat("/media/hdd", NULL, 0, 0);
+			else if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+				BACKUPDIR = ostrcat("/var/backup", NULL, 0, 0);
+			else if(isfile("/media/.swapextensionsdev") || file_exist("/var/swap"))
+				BACKUPDIR = ostrcat("/var/swap", NULL, 0, 0);
+			if(BACKUPDIR != NULL)
 #else
 			if(isfile("/tmp/.backupdev") || file_exist("/var/backup"))
 #endif
@@ -81,7 +109,11 @@ void screensystem_backup_restore()
 
 				writeallconfig(1);
 #ifdef OEBUILD
-				ret = system("/sbin/settings.sh backup /var/backup > /tmp/backup.log 2>&1");
+				tmpstr = ostrcat("/sbin/settings.sh backup ", BACKUPDIR, 0, 0);
+				tmpstr = ostrcat(cmd, " > /tmp/backup.log 2>&1", 1, 0);
+				printf("cmd: %s\n", tmpstr);
+				ret = system(tmpstr);
+				free(tmpstr), tmpstr = NULL;
 #else
 				ret = system("/sbin/settings.sh backup > /tmp/backup.log 2>&1");
 #endif
@@ -92,7 +124,18 @@ void screensystem_backup_restore()
 				if(ret != 0)
 					textbox(_("Message"), _("Backup failed, see log"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
 				else
+				{
+#ifdef OEBUILD
+					tmpstr = ostrcat(_("Backup created successfully"), "\n\n", 0, 0);
+					tmpstr = ostrcat(tmpstr, BACKUPDIR, 1, 0);
+
+			
+					textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+					free(tmpstr); tmpstr = NULL;
+#else
 					textbox(_("Message"), _("Backup created successfully"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 7, 0);
+#endif
+				}
 				drawscreen(backup_restore, 0, 0);
 			}
 			else
