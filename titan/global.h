@@ -1953,6 +1953,45 @@ int setrtctime(int value)
 	return 0;
 }
 
+int setrtctimemips()
+{
+	char *rtctimedev = NULL, *tmpstr = NULL;
+	int ret = 0;
+//	int value = 0;
+	
+	time_t t = time(NULL);
+	struct tm *local = localtime(&t);
+ 	time_t rawlocal = mktime(local);
+ 	
+ 	t = time(NULL);
+	struct tm *gmt = gmtime(&t);
+	time_t rawgmt = mktime(gmt);
+  
+	int offset = difftime(rawlocal, rawgmt);
+
+	tmpstr = oitoa(offset);
+	rtctimedev = getconfig("rtctime_offsetdev", NULL);
+	if(rtctimedev != NULL)
+		ret = writesys(rtctimedev, tmpstr, 0);
+	else
+		ret = writesys("/proc/stb/fp/rtc_offset", tmpstr, 0);
+	free(tmpstr); tmpstr = NULL;
+	rtctimedev = NULL;
+	
+	if(ret == 0)
+	{
+		tmpstr = oitoa(rawlocal);
+		rtctimedev = getconfig("rtctimedev", NULL);
+		if(rtctimedev != NULL)
+			ret = writesys(rtctimedev, tmpstr, 0);
+		else
+			ret = writesys("/proc/stb/fp/rtc", tmpstr, 0);
+		free(tmpstr); tmpstr = NULL;
+		rtctimedev = NULL;
+	}
+	return ret;
+}
+
 int changepolicy()
 {
 	char *tmppolicy = NULL, *tmpstr = NULL;
@@ -2284,6 +2323,10 @@ int setdate()
 	if(dvbgetdate(&dvbtime, 10000000) == 0) //10 sek
 	{
 		setsystime(&dvbtime);
+#if defined(OEBUILD) && defined(SH4)
+printf("start setrtctimemips\n");
+		setrtctimemips();
+#endif
 #ifdef MIPSEL
 		setrtctimemips();
 #endif
