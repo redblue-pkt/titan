@@ -110,7 +110,7 @@ void screensystem_backup_restore()
 				writeallconfig(1);
 #ifdef OEBUILD
 				tmpstr = ostrcat("/sbin/settings.sh backup ", BACKUPDIR, 0, 0);
-				tmpstr = ostrcat(cmd, " > /tmp/backup.log 2>&1", 1, 0);
+				tmpstr = ostrcat(tmpstr, " > /tmp/backup.log 2>&1", 1, 0);
 				printf("cmd: %s\n", tmpstr);
 				ret = system(tmpstr);
 				free(tmpstr), tmpstr = NULL;
