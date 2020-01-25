@@ -15,14 +15,14 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	
 	if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 		lfb1 = malloc(xres * yres * 2);
-	else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4K") == 1  || checkbox("VUULTIMO4K") == 1)
+	else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)
 		lfb1 = malloc(480 * 320 * 4);
 	else
 		lfb1 = malloc(xres * yres);
 	if(lfb1 == NULL)
 		return;
 
-	if(checkbox("DM900") != 1 && checkbox("DM920") != 1 && checkbox("VUDUO4K") != 1 && checkbox("VUUNO4K") != 1)
+	if(checkbox("DM900") != 1 && checkbox("DM920") != 1 && checkbox("VUDUO4K") != 1 && checkbox("VUUNO4KSE") != 1)
 	{
 		
 		for(i = 0; i <= xres*yres; i++)
@@ -60,7 +60,7 @@ void write2oled(unsigned char *buf, int xres, int yres)
 			free(lfb2);
 		}
 	}
-	else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4K") == 1  || checkbox("VUULTIMO4K") == 1)
+	else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)
 	{
 		ret = write(lcdfd1, buf, xres * yres * 4);
 		if(ret != xres * yres * 4)
@@ -138,7 +138,7 @@ int oledtext(char *value)
 				OLED_all = getscreen(getskinconfig("OLED_dream2", NULL));
 		}
 	}
-	else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4K") == 1  || checkbox("VUULTIMO4K") == 1)		
+	else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)		
 	{
 		if(status.updatevfd == PAUSE)
 			OLED_all = getscreen("OLED_vu1_menu");
@@ -201,7 +201,7 @@ void initOLEDdream1()
 #define	LCD_MODE_BIN			1
 #endif
 
-	if(checkbox("VUDUO4K") != 1 && checkbox("VUUNO4K") != 1  && checkbox("VUULTIMO4K") != 1)
+	if(checkbox("VUDUO4K") != 1 && checkbox("VUUNO4KSE") != 1  && checkbox("VUULTIMO4K") != 1)
 		return; //wird nicht benötigt
 
 	int i=LCD_MODE_BIN;
