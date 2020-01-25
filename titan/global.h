@@ -2294,6 +2294,9 @@ int checkdate()
 		{
 			printf("--> set dvbtime");
 			setsystime(&dvbtime);
+#if defined(OEBUILD) && defined(SH4)
+			setrtctimemips();
+#endif
 #ifdef MIPSEL
 			setrtctimemips();
 //			if(file_exist("/bin/fake-hwclock"))
@@ -2324,7 +2327,6 @@ int setdate()
 	{
 		setsystime(&dvbtime);
 #if defined(OEBUILD) && defined(SH4)
-printf("start setrtctimemips\n");
 		setrtctimemips();
 #endif
 #ifdef MIPSEL
