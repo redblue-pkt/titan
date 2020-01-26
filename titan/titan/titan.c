@@ -1428,7 +1428,7 @@ firstwizzardstep1:
 		}
 	}
 
-	//addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
+	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
 
 	startinternreader(1);
 	screeninfobar();
