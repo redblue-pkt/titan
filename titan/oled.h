@@ -17,6 +17,8 @@ void write2oled(unsigned char *buf, int xres, int yres)
 		lfb1 = malloc(xres * yres * 2);
 	else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)
 		lfb1 = malloc(480 * 320 * 4);
+	else if(checkbox("VUUNO4KSE") == 1)
+		lfb1 = malloc(400 * 240 * 4);
 	else
 		lfb1 = malloc(xres * yres);
 	if(lfb1 == NULL)
