@@ -97,13 +97,6 @@ void screentimezone()
 				}
 			}
 			break;
-#if defined(OEBUILD) && defined(SH4)
-			setrtctimemips();
-#endif
-#ifdef MIPSEL
-			setrtctimemips();
-#endif
-
 		}
 	}
 
