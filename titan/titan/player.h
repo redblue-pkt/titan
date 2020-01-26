@@ -744,7 +744,8 @@ void playerffts(int speed)
 
 	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
-	videocontinue(status.aktservice->videodev);
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
+		videocontinue(status.aktservice->videodev);
 #else	
 	videofastforward(status.aktservice->videodev, speed);
 #endif
@@ -786,7 +787,8 @@ void playerfrts(int speed, int flag)
 #endif
 	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
-	videocontinue(status.aktservice->videodev);
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
+		videocontinue(status.aktservice->videodev);
 #else	
 	videofastforward(status.aktservice->videodev, speed);
 #endif
