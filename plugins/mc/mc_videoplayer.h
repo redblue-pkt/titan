@@ -839,8 +839,8 @@ void screenmc_videoplayer()
 				debug(50, "filelist->select->text: %s", filelist->select->text);
 				filename = createpath(filelistpath->text, filelist->select->name);
 
-				if(cmpfilenameext(filename, ".ts") == 0 && checkbox("VUSOLO2") != 1)		
-//				if(cmpfilenameext(filename, ".ts") == 0)
+//				if(cmpfilenameext(filename, ".ts") == 0 && checkbox("VUSOLO2") != 1)		
+				if(cmpfilenameext(filename, ".ts") == 0)
 					playertype = 1;
 				else
 					playertype = 0;
