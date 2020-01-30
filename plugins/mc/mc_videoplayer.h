@@ -717,10 +717,10 @@ void screenmc_videoplayer()
 				debug(50, "listbox->select->name: %s", listbox->select->name);
 				filename = ostrcat("", listbox->select->name, 0, 0);
 
-				if(cmpfilenameext(filename, ".ts") == 0 && ostrstr(filename, "://") == NULL && checkbox("VUSOLO2") != 1)
+//				if(cmpfilenameext(filename, ".ts") == 0 && ostrstr(filename, "://") == NULL && checkbox("VUSOLO2") != 1)
 //				if(cmpfilenameext(filename, ".ts") == 0 && ostrstr(filename, "://") == NULL)
-					playertype = 1;
-				else
+//					playertype = 1;
+//				else
 					playertype = 0;
 
 				changetext(b2, _("Playlist-Mode"));
@@ -840,9 +840,9 @@ void screenmc_videoplayer()
 				filename = createpath(filelistpath->text, filelist->select->name);
 
 //				if(cmpfilenameext(filename, ".ts") == 0 && checkbox("VUSOLO2") != 1)		
-				if(cmpfilenameext(filename, ".ts") == 0)
-					playertype = 1;
-				else
+//				if(cmpfilenameext(filename, ".ts") == 0)
+//					playertype = 1;
+//				else
 					playertype = 0;
 
 				if(cmpfilenameext(filename, ".rar") == 0 || cmpfilenameext(filename, ".iso") == 0 || cmpfilenameext(filename, ".img") == 0)
