@@ -523,9 +523,11 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		if(servicenode->type == RECORDPLAY)
 		{
 			recbsize = servicenode->tssize * 188;
+printf("check recordplay work 1\n");
 			// recordplay work vuplus start
 			if(checkbox("VUSOLO2") == 1 || checkbox("VUDUO4K") == 1)
 			{
+printf("use recordplay work 1\n");
 				recbsize = 12032;
 				writetimeout = 3000000;
 			}
@@ -815,9 +817,15 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						recbsize = servicenode->tssize * 1024; //aligned to 188 and 4096
 						tmprecbsize = 188 * 1024; //aligned to 188 and 4096
 
+printf("check recordplay work 2\n");
+
 						// recordplay work vuplus start
 						if(checkbox("VUSOLO2") == 1 || checkbox("VUDUO4K") == 1)
+{
+printf("use recordplay work 2\n");
+
 							recbsize = 12032;
+}
 						// recordplay work vuplus end
 
 						free(buf);
