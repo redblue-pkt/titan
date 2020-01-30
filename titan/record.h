@@ -525,14 +525,14 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			recbsize = servicenode->tssize * 188;
 
 			// recordplay work vuplus start
-			if(getconfigint("recordplay_recbsize", NULL) != 0 && recbsize != getconfigint("recordplay_recbsize", NULL);
+			if(getconfigint("recordplay_recbsize", NULL) != 0 && recbsize != getconfigint("recordplay_recbsize", NULL))
 			{
 				printf("recordplay1 recbsize: %d\n", recbsize);
 				recbsize = getconfigint("recordplay_recbsize", NULL);
 				printf("recordplay1 recbsize change to: %d\n", recbsize);
 //				recbsize = 12032;
 			}
-			if(getconfigint("recordplay_writetimeout", NULL) != 0 && writetimeout != getconfigint("recordplay_writetimeout", NULL);
+			if(getconfigint("recordplay_writetimeout", NULL) != 0 && writetimeout != getconfigint("recordplay_writetimeout", NULL))
 			{
 				printf("recordplay1 writetimeout: %d\n", recbsize);
 				writetimeout = getconfigint("recordplay_writetimeout", NULL);
@@ -827,7 +827,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 						tmprecbsize = 188 * 1024; //aligned to 188 and 4096
 
 						// recordplay work vuplus start
-						if(getconfigint("recordplay_recbsize", NULL) != 0 && recbsize != getconfigint("recordplay_recbsize", NULL);
+						if(getconfigint("recordplay_recbsize", NULL) != 0 && recbsize != getconfigint("recordplay_recbsize", NULL))
 						{
 							printf("recordplay2 recbsize: %d\n", recbsize);
 							recbsize = getconfigint("recordplay_recbsize", NULL);
