@@ -68,7 +68,7 @@ void screensystem_backup_restore()
 #endif
 
 						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-							screenextensions(3, NULL, NULL, 1); 						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+							screenextensions(3, NULL, NULL, 1);
 
 						ret = system("init 6");
 					}
