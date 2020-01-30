@@ -441,7 +441,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		{
 			audioselectsource(audionode, AUDIO_SOURCE_DEMUX);
 			audiosetbypassmode(audionode, chnode->audiocodec);
-			if(checkbox("VUSOLO2") == 1 || checkchipset("HI3798MV200") == 1 || vubox1 == 1) //fixt only audio no video.. blackscreen after zap
+			if(checkchipset("HI3798MV200") == 1 || vubox1 == 1) //fixt only audio no video.. blackscreen after zap
 				audiopause(audionode);
 			if(status.mute != 1)
 			{
@@ -476,7 +476,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			if(checkchipset("3798MV200") == 1)
 				dmxstart(status.aktservice->dmxvideodev);
 
-			if(checkbox("VUSOLO2") == 1 || vubox1 == 1 ) //fixt only audio no video.. blackscreen after zap
+			if(vubox1 == 1 ) //fixt only audio no video.. blackscreen after zap
 				videofreeze(videonode);
 
 			if(videoplay(videonode)!= 0) {

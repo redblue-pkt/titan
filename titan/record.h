@@ -523,15 +523,24 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		if(servicenode->type == RECORDPLAY)
 		{
 			recbsize = servicenode->tssize * 188;
-printf("check recordplay work 1\n");
+
 			// recordplay work vuplus start
-			if(checkbox("VUSOLO2") == 1/* || checkbox("VUDUO4K") == 1*/)
+			if(getconfigint("recordplay_recbsize", NULL) != 0 && recbsize != getconfigint("recordplay_recbsize", NULL);
 			{
-printf("use recordplay work 1\n");
-				recbsize = 12032;
-				writetimeout = 3000000;
+				printf("recordplay1 recbsize: %d\n", recbsize);
+				recbsize = getconfigint("recordplay_recbsize", NULL);
+				printf("recordplay1 recbsize change to: %d\n", recbsize);
+//				recbsize = 12032;
+			}
+			if(getconfigint("recordplay_writetimeout", NULL) != 0 && writetimeout != getconfigint("recordplay_writetimeout", NULL);
+			{
+				printf("recordplay1 writetimeout: %d\n", recbsize);
+				writetimeout = getconfigint("recordplay_writetimeout", NULL);
+				printf("recordplay1 writetimeout change to: %d\n", writetimeout);
+//				writetimeout = 3000000;
 			}
 			// recordplay work vuplus end
+
 			tmprecbsize = 188 * 188;
 		}
 
@@ -817,15 +826,14 @@ printf("use recordplay work 1\n");
 						recbsize = servicenode->tssize * 1024; //aligned to 188 and 4096
 						tmprecbsize = 188 * 1024; //aligned to 188 and 4096
 
-printf("check recordplay work 2\n");
-
 						// recordplay work vuplus start
-						if(checkbox("VUSOLO2") == 1/* || checkbox("VUDUO4K") == 1*/)
-{
-printf("use recordplay work 2\n");
-
-							recbsize = 12032;
-}
+						if(getconfigint("recordplay_recbsize", NULL) != 0 && recbsize != getconfigint("recordplay_recbsize", NULL);
+						{
+							printf("recordplay2 recbsize: %d\n", recbsize);
+							recbsize = getconfigint("recordplay_recbsize", NULL);
+							printf("recordplay2 recbsize change to: %d\n", recbsize);
+//							recbsize = 12032;
+						}
 						// recordplay work vuplus end
 
 						free(buf);
