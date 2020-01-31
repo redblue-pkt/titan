@@ -3634,6 +3634,12 @@ int writesys(const char *filename, char *value, int flag)
 		return 1;
 	}
 
+#ifdef OEBUILD
+	// workaround for vuboxes dont send a \n to procfs
+	if(!ostrncmp("/proc/", (char*)filename, 6) && flag == 1)
+		flag = 0;
+#endif
+
 	if(flag == 2 || flag == 3)
 		fd = fopen(filename, "a");
 	else
