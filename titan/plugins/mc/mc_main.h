@@ -84,6 +84,7 @@ printf("menuentry->name: %s\n", menuentry->name);
 			tmpstr = createpluginpath("/mc/skin/black.mvi", 0);
 			singlepicstart(tmpstr, 0);
 			free(tmpstr); tmpstr = NULL;
+			sleep(1);
 		}
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_mediathek(NULL);
