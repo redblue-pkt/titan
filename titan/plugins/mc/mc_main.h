@@ -79,6 +79,12 @@ printf("menuentry->name: %s\n", menuentry->name);
 	else if(ostrcmp("mc_mediathek", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
+		if(file_exist("/proc/stb/info/vumodel"))
+		{
+			tmpstr = createpluginpath("/mc/skin/black.mvi", 0);
+			singlepicstart(tmpstr, 0);
+			free(tmpstr); tmpstr = NULL;
+		}
 		servicestop(status.aktservice, 1, 1);	
 		screenmc_mediathek(NULL);
 //		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
