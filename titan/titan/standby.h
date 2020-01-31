@@ -90,7 +90,7 @@ void screenstandby()
 	savevideomode = getvideomode();
 	//setvideomode("720p24", 1);
 	writesys("/proc/stb/avs/0/input", "aux", 1);
-	if(checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1 && vubox1 == 1)
+	if(checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1 || vubox1 == 1)
 		writesys("/proc/stb/hdmi/output", "off", 1);
 #endif
 
