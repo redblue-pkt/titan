@@ -7680,7 +7680,12 @@ char* system_logs(int mode)
 		path = ostrcat(path, boxversion, 1, 0);
 		path = ostrcat(path, ".titan", 1, 0);
 
+#ifdef OEBUILD
+		tmpstr1 = gethttp("titannit.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+#else
 		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+#endif
+
 
 		tmpstr = readfromlinetoline(tmpstr1, 37, 537, 1);
 	}
@@ -7688,12 +7693,17 @@ char* system_logs(int mode)
 	{
 #ifdef MIPSEL
 		path = ostrcat(path, "git.mipsel", 1, 0);
+#elif ARM
+		path = ostrcat(path, "git.mipsel", 1, 0);
 #else
 		path = ostrcat(path, "git.sh4", 1, 0);
 #endif
 
+#ifdef OEBUILD
+		tmpstr1 = gethttp("titannit.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+#else
 		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
-
+#endif
 		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
 	}
 	else if(mode == 3)
