@@ -365,9 +365,9 @@ void oshutdown(int exitcode, int flag)
 
 	ret = checkshutdown(flag);
 	if(ret == 1) return;
-//	if(vubox1 ==1)
-//		ret = servicestop(status.aktservice, 1, 0);
-//	else
+	if(vubox1 ==1)
+		ret = servicestop(status.aktservice, 1, 0);
+	else
 		ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
 	
@@ -594,7 +594,7 @@ timeokw = 1;
 //		system("(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &");
 //#endif
 
-	if(checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1  || checkbox("VUUNO4K") == 1 || checkbox("VUUNO4KSE") == 1 || checkbox("VUULTIMO4K") == 1 || checkbox("VUSOLO2") == 1)
+	if(checkbox("VUDUO") == 1 || checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1 || checkbox("VUZERO") == 1  || checkbox("VUUNO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)
 	{
 		//Standart Service abarbeitung
 		vubox1 = 1;
@@ -929,8 +929,7 @@ timeokw = 1;
 
 #ifdef MIPSEL
 	waitvsync();
-//	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 && vubox1 == 1)
-	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 && vubox1 == 1)
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && checkbox("VUSOLO2") == 0 && checkbox("DM900") == 0 && checkbox("DM920") == 0 && checkbox("DM520") == 0 && checkbox("DM525") == 0 && vubox1 == 1)
 		setfbosd();
 	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkrealbox("SF8008") == 1 || checkbox("SF4008") == 1 || checkbox("SF8008S") == 1 || checkrealbox("SF8008T") == 1 || checkchipset("HI3798MV200") == 1)
 	{
@@ -1429,7 +1428,7 @@ firstwizzardstep1:
 		}
 	}
 
-	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
+	//addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
 
 	startinternreader(1);
 	screeninfobar();
