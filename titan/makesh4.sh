@@ -113,7 +113,7 @@ echo "[titan]--------------------------------------------------------"
 
 rm -rf "$HOME"/flashimg/$SRCDIR/skin
 mkdir "$HOME"/flashimg/$SRCDIR/skin 
-svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skinsdefault_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/$SRCDIR/skin/default
+svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skins_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/$SRCDIR/skin/default
 echo sh4 remove oled stuff
 rm -rf "$HOME"/flashimg/$SRCDIR/skin/default/oled
 rm -f "$HOME"/flashimg/$SRCDIR/skin/default/oledskin.xml

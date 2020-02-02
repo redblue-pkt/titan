@@ -131,7 +131,7 @@ mkdir "$HOME"/flashimg/$SRCDIR/skin
 #    svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skinsdefault_defnominitv/_path_/usr/local/share/titan/skin/defnominitv "$HOME"/flashimg/$SRCDIR/skin/default
 #else
 	CREATE=1
-    svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skinsdefault_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/$SRCDIR/skin/default
+    svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skins_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/$SRCDIR/skin/default
 	if [ "$TYPE" = "atemio5200" ];then
 		cp -a "$HOME"/flashimg/$SRCDIR/skin/default/skinconfig "$HOME"/flashimg/$SRCDIR/skin/default/skinconfig.minitv
 		mv -f "$HOME"/flashimg/$SRCDIR/skin/default/skinconfig.nominitv "$HOME"/flashimg/$SRCDIR/skin/default/skinconfig
