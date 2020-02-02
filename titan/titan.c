@@ -365,10 +365,10 @@ void oshutdown(int exitcode, int flag)
 
 	ret = checkshutdown(flag);
 	if(ret == 1) return;
-	if(vubox1 ==1)
+//	if(vubox1 ==1)
 		ret = servicestop(status.aktservice, 1, 0);
-	else
-		ret = servicestop(status.aktservice, 1, 1);
+//	else
+//		ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
 	
 	if(exitcode == 1)
@@ -594,7 +594,7 @@ timeokw = 1;
 //		system("(ntpdate -b ptbtime1.ptb.de; time=`date +%s`; echo -e `expr $time + 7200`  > /proc/stb/fp/rtc) &");
 //#endif
 
-	if(checkbox("VUDUO") == 1 || checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1 || checkbox("VUZERO") == 1  || checkbox("VUUNO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)
+	if(checkbox("VUSOLO2") == 1 || checkbox("VUDUO") == 1 || checkbox("VUDUO4K") == 1 || checkbox("VUZERO4K") == 1 || checkbox("VUZERO") == 1  || checkbox("VUUNO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)
 	{
 		//Standart Service abarbeitung
 		vubox1 = 1;
@@ -1428,7 +1428,7 @@ firstwizzardstep1:
 		}
 	}
 
-	//addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
+	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
 
 	startinternreader(1);
 	screeninfobar();
