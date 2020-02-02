@@ -3209,6 +3209,8 @@ int tpkgetindex(int flag)
 
 #ifdef SH4
 			if(ostrcmp(path, "/svn/tpk/nightly-sh4-secret") == 0)
+#elif ARM
+			if(ostrcmp(path, "/svn/tpk/nightly-arm-secret") == 0)
 #else
 			if(ostrcmp(path, "/svn/tpk/nightly-mipsel-secret") == 0)
 #endif
