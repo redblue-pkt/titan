@@ -156,7 +156,7 @@ startrcreboot()
 
 workarounds()
 {
-	if [ $realbox == "hd51" ] || [ $realbox == "multibox" ]; then
+	if [ "$board" == "hd51" ] || [ "$board" == "multibox" ]; then
 		if [ ! -e "/usr/bin/enigma2" ];then
 			touch /usr/bin/enigma2
 			/etc/init.d/partitions-by-name &
@@ -186,7 +186,7 @@ startgui()
 {
 	STARTDEFAULT="/usr/local/bin/titan /mnt/config/titan.cfg"
 
-	if [ -e "/var/etc/.checkdualboot" ] && [ -e "/usr/bin/enigma2" ];then
+	if [ -e "/var/etc/.checkdualboot" ] && [ -e "/usr/bin/enigma2" ] && [ -e "/usr/share/enigma2/skin.xml" ];then
 #		startbootlogo
 		(sleep 10; killall infobox) &
 		pid=$!
@@ -228,7 +228,7 @@ startgui()
 	# kill webif
 	fuser -k 80/tcp
 
-	if [ -e /mnt/config/dualboot ] && [ -e "/usr/bin/enigma2" ];then
+	if [ -e /mnt/config/dualboot ] && [ -e "/usr/bin/enigma2" ] && [ -e "/usr/share/enigma2/skin.xml" ];then
 		if [ ! -e /mnt/config/dualboot.titan ] && [ ! -e /mnt/config/dualboot.enigma2 ] || [ -e /mnt/config/dualboot.titan ];then
 
 			(sleep 10; killall infobox) &
