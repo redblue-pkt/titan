@@ -151,7 +151,7 @@ startrcreboot()
 		RCOK=$(cat /mnt/config/rcconfig | grep rcok | cut -d= -f2)
 		RCPOWER=$(cat /mnt/config/rcconfig | grep rcpower | cut -d= -f2)
 		RCDEV=$(grep "rcdev=" /mnt/config/titan.cfg | cut -d "=" -f 2)
-		evtest $RCDEV | LC_ALL=C awk -v RCOK=$RCOK -v RCPOWER=$RCPOWER -f /etc/init.d/getfb.awk
+		evtest $RCDEV | LC_ALL=C awk -v RCOK=$RCOK -v RCPOWER=$RCPOWER -f /etc/init.d/getfb.awk &
 }
 
 workarounds()
