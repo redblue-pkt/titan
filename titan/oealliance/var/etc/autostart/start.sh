@@ -166,7 +166,7 @@ workarounds()
 
 startCi()
 {
-	if [ "$model" == "hd51" ] || [ "$model" == "mutant51" ]; then
+	if [ "$board" == "hd51" ]; then
 		if [ -e /mnt/bin/ciplushelper ];then
 			/mnt/bin/ciplushelper &
 			sleep 1
