@@ -1712,11 +1712,15 @@ void screenrecorddirect()
 		servicenode = servicenode->next;
 	}
 
+	// currently works only 1 rec or timeshift
+	if((checkbox("VUSOLO2") == 1 && status.recording == 0) || checkbox("VUSOLO2") == 0)
+	{
 		//65535 gleich HDMIIN
-	if(status.aktservice->channel->serviceid != 65535)
-		addmenulist(&mlist, _("add recording (stop after current event)"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("add recording (indefinitely)"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("add recording (enter duration)"), NULL, NULL, 0, 0);
+		if(status.aktservice->channel->serviceid != 65535)
+			addmenulist(&mlist, _("add recording (stop after current event)"), NULL, NULL, 0, 0);
+		addmenulist(&mlist, _("add recording (indefinitely)"), NULL, NULL, 0, 0);
+		addmenulist(&mlist, _("add recording (enter duration)"), NULL, NULL, 0, 0);
+	}
 
 	mbox = menulistbox(mlist, "recordlist", _("Record"), NULL, NULL, NULL, 0, 0);
 	
