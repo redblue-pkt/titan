@@ -7682,12 +7682,15 @@ char* system_logs(int mode)
 
 #ifdef OEBUILD
 		tmpstr1 = gethttp("titannit.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+#ifdef SH4
+		tmpstr = readfromlinetoline(tmpstr1, 37, 537, 1);
+#else
+		tmpstr = readfromlinetoline(tmpstr1, 37, 29000, 1);
+#endif
 #else
 		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
-#endif
-
-
 		tmpstr = readfromlinetoline(tmpstr1, 37, 537, 1);
+#endif
 	}
 	else if(mode == 2)
 	{
@@ -7701,10 +7704,15 @@ char* system_logs(int mode)
 
 #ifdef OEBUILD
 		tmpstr1 = gethttp("titannit.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+#ifdef SH4
+		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
+#else
+		tmpstr = readfiletomem(tmpstr1, 0);
+#endif
 #else
 		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
-#endif
 		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
+#endif
 	}
 	else if(mode == 3)
 	{
