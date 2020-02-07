@@ -1209,7 +1209,7 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 		if(status.playspeed != 0 || status.slowspeed != 0)
 		{
 			playerpausets();
-			if(checkchipset("HI3798MV200") == 1)
+			if(checkchipset("HI3798MV200") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 			{
 				videoslowmotion(status.aktservice->videodev, 0);
 				videofastforward(status.aktservice->videodev, 0);
@@ -1217,7 +1217,7 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 		}
 		if(status.slowspeed != 0)
 			audioclearbuffer(status.aktservice->audiodev);
-		if((status.playspeed != 0 || status.slowspeed != 0) && checkchipset("HI3798MV200") != 1)
+		if((status.playspeed != 0 || status.slowspeed != 0) && checkchipset("HI3798MV200") != 1 && checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1)
 		{
 			playerresetts();
 		}
