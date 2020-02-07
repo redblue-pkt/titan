@@ -1213,6 +1213,8 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 			{
 				videoslowmotion(status.aktservice->videodev, 0);
 				videofastforward(status.aktservice->videodev, 0);
+				if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+					dmxstart(status.aktservice->dmxaudiodev);
 			}
 		}
 		if(status.slowspeed != 0)
