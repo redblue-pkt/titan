@@ -729,7 +729,8 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	offset += currentpos;
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_SET);
 	
-	playerresetts();
+	if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1)
+		playerresetts();
 	playercontinuets();
 
 	if(flag == 0) m_unlock(&status.tsseekmutex, 15);
@@ -808,14 +809,26 @@ void playerfrts(int speed, int flag)
 	}
 	speed *= -1;
 #ifdef MIPSEL
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	{
+		//audiopause(status.aktservice->audiodev);
+		audiostop(status.aktservice->audiodev);
+		dmxstop(status.aktservice->dmxaudiodev);
+		videoslowmotion(status.aktservice->videodev, 0);
+		videofastforward(status.aktservice->videodev, speed);
+		videocontinue(status.aktservice->videodev);
+		//audiocontinue(status.aktservice->audiodev);
+	}
+	else
+	{
 	audiostop(status.aktservice->audiodev);
 #ifdef DREAMBOX 
 	dmxstop(status.aktservice->dmxaudiodev);
 #endif
 	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
-	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
-		videocontinue(status.aktservice->videodev);
+	videocontinue(status.aktservice->videodev);
+	}
 #else	
 	videofastforward(status.aktservice->videodev, speed);
 #endif
