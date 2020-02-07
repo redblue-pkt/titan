@@ -583,10 +583,13 @@ void playerstopts(int flag, int flag1)
 void playerresetts()
 {
 #ifdef DREAMBOX
-	videofreeze(status.aktservice->videodev);
-	dmxstart(status.aktservice->dmxaudiodev);
-	audioplay(status.aktservice->audiodev);
-	audiopause(status.aktservice->audiodev);
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
+	{
+		videofreeze(status.aktservice->videodev);
+		dmxstart(status.aktservice->dmxaudiodev);
+		audioplay(status.aktservice->audiodev);
+		audiopause(status.aktservice->audiodev);
+	}
 #else
 	audiostop(status.aktservice->audiodev);
 	videostop(status.aktservice->videodev, 0);
@@ -736,16 +739,26 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 void playerffts(int speed)
 {
 #ifdef MIPSEL
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	{
+		audiopause(status.aktservice->audiodev);
+		videofreeze(status.aktservice->videodev);
+		videoslowmotion(status.aktservice->videodev, 0);
+		videofastforward(status.aktservice->videodev, speed);
+		videocontinue(status.aktservice->videodev);
+		audiocontinue(status.aktservice->audiodev);
+	}
+	else
+	{
 	audiostop(status.aktservice->audiodev);
-
 #ifdef DREAMBOX 
 	dmxstop(status.aktservice->dmxaudiodev);
 #endif
 
 	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
-	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
-		videocontinue(status.aktservice->videodev);
+	videocontinue(status.aktservice->videodev);
+	}
 #else	
 	videofastforward(status.aktservice->videodev, speed);
 #endif
