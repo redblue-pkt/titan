@@ -744,10 +744,11 @@ void playerffts(int speed)
 #ifdef MIPSEL
 	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
-		audiopause(status.aktservice->audiodev);
+		//audiopause(status.aktservice->audiodev);
 		videoslowmotion(status.aktservice->videodev, 0);
 		videofastforward(status.aktservice->videodev, speed);
 		videocontinue(status.aktservice->videodev);
+		audiocontinue(status.aktservice->audiodev);
 	}
 	else
 	{
@@ -770,10 +771,11 @@ void playerslowts(int speed)
 #ifdef MIPSEL
 	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
-		audiopause(status.aktservice->audiodev);
+		//audiopause(status.aktservice->audiodev);
 		videoslowmotion(status.aktservice->videodev, speed);
 		videofastforward(status.aktservice->videodev, 0);
 		videocontinue(status.aktservice->videodev);
+		audiocontinue(status.aktservice->audiodev);
 	}
 	else
 	{
