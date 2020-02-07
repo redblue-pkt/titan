@@ -615,7 +615,7 @@ void playercontinuets()
 {
 	videocontinue(status.aktservice->videodev);
 #ifdef MIPSEL
-	if(checkchipset("HI3798MV200") == 1)
+	if(checkchipset("HI3798MV200") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 		audioplay(status.aktservice->audiodev);
 	audiocontinue(status.aktservice->audiodev);
 #else
