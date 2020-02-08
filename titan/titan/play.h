@@ -1231,7 +1231,7 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 	else
 	{
 		if(status.playspeed != 0 || status.slowspeed != 0)
-			playerff(0);
+			playerff(99);
 			playerpause();
 		playercontinue();
 	}
