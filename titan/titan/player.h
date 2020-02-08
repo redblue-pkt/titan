@@ -2252,6 +2252,8 @@ void playerafterend()
 void playerpause()
 {
 #ifdef EPLAYER3
+	if(status.playspeed != 0 || status.slowspeed != 0)
+		playerff(0);
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_PAUSE, NULL);
 #endif
@@ -2305,7 +2307,7 @@ void playerff(int speed)
 #ifdef EPLAYER3
 
 	int speedmap = 0;
-	if(speed == 99)
+	if(speed == 0)
 	{
 		if(player && player->playback)
 		{
