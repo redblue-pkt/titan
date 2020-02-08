@@ -589,7 +589,7 @@ void screenhostname()
 
 	if(newhostname != NULL && strlen(newhostname) > 0)
 	{
-		ret = writesys("/etc/hostname", newhostname, 1);
+		ret = writesys("/mnt/network/hostname", newhostname, 1);
 		if(ret == 0)
 		{
 			cmd = ostrcat(cmd, "hostname \"", 1, 0);
