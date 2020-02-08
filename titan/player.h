@@ -2305,10 +2305,13 @@ void playerff(int speed)
 #ifdef EPLAYER3
 
 	int speedmap = 0;
-	if(player && player->playback && speed == 0)
+	if(speed == 99)
 	{
-		player->playback->Command(player, PLAYBACK_FASTFORWARD, &speedmap);
-		return;
+		if(player && player->playback)
+		{
+			player->playback->Command(player, PLAYBACK_FASTFORWARD, &speedmap);
+			return;
+		}
 	}
 	
 
