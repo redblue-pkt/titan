@@ -731,6 +731,11 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	
 	if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1)
 		playerresetts();
+	else
+	{
+		videoclearbuffer(status.aktservice->videodev);
+		audioclearbuffer(status.aktservice->audiodev);
+	}	
 	playercontinuets();
 
 	if(flag == 0) m_unlock(&status.tsseekmutex, 15);
