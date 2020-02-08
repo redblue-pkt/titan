@@ -2303,7 +2303,14 @@ void playercontinue()
 void playerff(int speed)
 {
 #ifdef EPLAYER3
+
 	int speedmap = 0;
+	if(player && player->playback && speed == 0)
+	{
+		player->playback->Command(player, PLAYBACK_FASTFORWARD, &speedmap);
+		return;
+	}
+	
 
 	if (speed < 1) speed = 1;
 	if (speed > 7) speed = 7;
@@ -2319,8 +2326,7 @@ void playerff(int speed)
 		case 7: speedmap = 127; break;
 	}
 
-	if(player && player->playback)
-		player->playback->Command(player, PLAYBACK_FASTFORWARD, &speedmap);
+	
 #ifdef MIPSEL
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_CONTINUE, NULL);
