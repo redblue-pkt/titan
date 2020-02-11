@@ -99,7 +99,7 @@ void screenvfdisplay()
 		addchoicebox(blinkoff, "1", _("off"));
 		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
 	}	
-	else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)
+	else if(checkbox("VUDUO4K") == 1 || checkbox("VUULTIMO4K") == 1)
 	{
 		char *tmp1 = NULL, *tmp2 = NULL;		
 		int i = 0;		
@@ -116,6 +116,27 @@ void screenvfdisplay()
 		}
 		
 		setchoiceboxselection(oled_sel, getskinconfig("OLED_vu1", NULL));
+		addchoicebox(blinkoff, "0", _("on"));
+		addchoicebox(blinkoff, "1", _("off"));
+		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
+	}	
+	else if(checkbox("VUUNO4KSE") == 1)
+	{
+		char *tmp1 = NULL, *tmp2 = NULL;		
+		int i = 0;		
+		if(checkscreen("OLED_vu2") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_vu1", "v1");		
+		for (i=2;i<30;i++)
+		{
+			tmp1 = ostrcat("OLED_vu2_v",oitoa(i), 0, 1);
+			tmp2 = ostrcat("v",oitoa(i), 0, 1);
+			if(checkscreen(tmp1) != status.skinerr)
+   				addchoicebox(oled_sel, tmp1,tmp2);
+			free(tmp1);tmp1=NULL;
+			free(tmp2);tmp2=NULL;
+		}
+		
+		setchoiceboxselection(oled_sel, getskinconfig("OLED_vu2", NULL));
 		addchoicebox(blinkoff, "0", _("on"));
 		addchoicebox(blinkoff, "1", _("off"));
 		setchoiceboxselection(blinkoff, getconfig("skinblinkoff", NULL));
@@ -231,8 +252,10 @@ void screenvfdisplay()
 					OLED_all = getscreen("OLED_dream1");
 				else if(checkbox("DM900") == 1 || checkbox("DM920") == 1)
 					OLED_all = getscreen("OLED_dream2");
-				else if(checkbox("VUDUO4K") == 1 || checkbox("VUUNO4KSE") == 1  || checkbox("VUULTIMO4K") == 1)
+				else if(checkbox("VUDUO4K") == 1 || checkbox("VUULTIMO4K") == 1)
 					OLED_all = getscreen("OLED_vu1");
+				else if(checkbox("VUUNO4KSE") == 1)
+					OLED_all = getscreen("OLED_vu2");
 			}	
 			struct skin* textbox = getscreennode(OLED_all, "textbox");
 			changetext(textbox, tmpstr);
