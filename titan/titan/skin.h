@@ -4330,7 +4330,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				}
 			}
 			else if(node->name != NULL && ostrstr(node->name, "OLED_vu2") != NULL) {
-				debug(100, "alloc OLED_vu1 framebuffer");
+				debug(100, "alloc OLED_vu2 framebuffer");
 				oledskinfb = oledaddfb(400, 240);
 				if(oledskinfb == NULL)
 				{
