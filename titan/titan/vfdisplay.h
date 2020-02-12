@@ -125,7 +125,7 @@ void screenvfdisplay()
 		char *tmp1 = NULL, *tmp2 = NULL;		
 		int i = 0;		
 		if(checkscreen("OLED_vu2") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_vu1", "v1");		
+			addchoicebox(oled_sel, "OLED_vu2", "v1");		
 		for (i=2;i<30;i++)
 		{
 			tmp1 = ostrcat("OLED_vu2_v",oitoa(i), 0, 1);
