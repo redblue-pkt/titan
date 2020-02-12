@@ -306,6 +306,29 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 
 	ciplus = 0;
 	
+	//workaround fuer CI+ bei mehr wie einen Tuner
+	if(checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1)
+	{
+		struct channelslot *channelslotnode = channelslot;
+		ciplus = 1;
+		while(channelslotnode != NULL)
+		{
+			if(channelslotnode->transponderid == chnode->transponderid && channelslotnode->serviceid == chnode->serviceid)
+			{
+				ciplus = 2;
+				debug(200, "CI+ reserviert Tuner 0");
+				break;
+			}
+			channelslotnode = channelslotnode->next;			
+		}
+	}
+	else
+	{ 
+		ciplus = 0;
+		debug(200, "CI+ workaround nicht aktiv");
+	}
+		 
+	
 	//suche tuner der auf der gleichen orbitalpos/frequency/pol/band ist
 	while(dvbnode != NULL)
 	{
@@ -319,38 +342,16 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		//workaround fuer CI+ bei mehr wie einen Tuner
-		if((flag == 0 || flag == 2) && checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1 && dvbnode->next != NULL)
+		//check CI+ workaround
+		if(ciplus == 1 && dvbnode->devnr == 0)
 		{
-			ciplus = 1;
-			struct channelslot *channelslotnode = channelslot; 
-			while(channelslotnode != NULL)
-			{
-				if(channelslotnode->transponderid == chnode->transponderid && channelslotnode->serviceid == chnode->serviceid)
-				{
-					if(dvbnode->devnr == 0)
-					{
-						ciplus = 2;
-						break;
-					}
-					else
-					{
-						ciplus = 3;
-						break;
-					}
-				}
-				channelslotnode = channelslotnode->next;			
-			}
-			if(ciplus == 3)
-			{
-				debug(200, "CI+ reserviert Tuner 0");
-				break;
-			}
+			dvbnode = dvbnode->next;
+			continue;
 		}
-		else
-		{ 
-			ciplus = 0;
-			debug(200, "CI+ workaround nicht aktiv");
+		if(ciplus == 2)
+		{
+			dvbnode = dvbnode->next;
+			continue;
 		}
 		
 		if(getconfigint("debuglevel", NULL) == 200 && dvbnode->type == FRONTENDDEV)
@@ -399,22 +400,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus != 0)
-		{
-			if(ciplus == 1 && dvbnode->devnr == 0)
-			{
-				debug(200, "CI+ reserviert Tuner 0");
-				dvbnode = dvbnode->next;
-				continue;
-			}
-			if(ciplus > 1 && dvbnode->devnr != 0)
-			{
-				debug(200, "CI+ erzwingt Tuner 0, aktiver Tuner: %i", dvbnode->devnr);
-				dvbnode = dvbnode->next;
-				continue;
-			}
-		}
-	
+		
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && (dvbnode->felock != 0 || (flag == 2 && status.aktservice->fedev == dvbnode)))
 		{
 			//check if tuner is main tuner
@@ -428,7 +414,9 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				dvbnode = dvbnode->next;
 				continue;				
 			}
+			
 			found = 0;
+			int ciplusc = 0;
 			//check looptuner is free
 			tmpstr = getconfigbyval(dvbnode->feshortname, NULL);
 			CharPtrTmp[0] = NULL;
@@ -437,6 +425,24 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				tmpdvbnode = fegetbyshortname(tmpstr);
 				if(tmpdvbnode != NULL)
 				{
+					//check CI+ workaround
+					if(ciplus != 0)
+					{
+						if(ciplus == 1 && tmpdvbnode->devnr == 0)
+						{
+							CharPtrTmp[found] = tmpdvbnode;
+							found = found + 1;
+							tmpstr = getconfigbyval(tmpstr, NULL); //loop tuner also loop  ?	
+							continue;
+						}
+						if(ciplus == 2 && tmpdvbnode->devnr != 0)
+						{
+							CharPtrTmp[found] = tmpdvbnode;
+							found = found + 1;
+							tmpstr = getconfigbyval(tmpstr, NULL); //loop tuner also loop  ?	
+							continue;
+						}
+					}
 					if(tmpdvbnode->feakttransponder == NULL || (tmpdvbnode->felock == 0 && status.aktservice->fedev != tmpdvbnode))
 					{
 						found = 99;
@@ -520,20 +526,16 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus != 0)
+		//check CI+ workaround
+		if(ciplus == 1 && dvbnode->devnr == 0)
 		{
-			if(ciplus == 1 && dvbnode->devnr == 0)
-			{
-				debug(200, "CI+ reserviert Tuner 0");
-				dvbnode = dvbnode->next;
-				continue;
-			}
-			if(ciplus > 1 && dvbnode->devnr != 0)
-			{
-				debug(200, "CI+ erzwingt Tuner 0, aktiver Tuner: %i", dvbnode->devnr);
-				dvbnode = dvbnode->next;
-				continue;
-			}
+			dvbnode = dvbnode->next;
+			continue;
+		}
+		if(ciplus == 2 && dvbnode->devnr != 0)
+		{
+			dvbnode = dvbnode->next;
+			continue;
 		}
 		
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock == 0)
@@ -661,22 +663,6 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			continue;
 		}
 		
-		if(ciplus != 0)
-		{
-			if(ciplus == 1 && dvbnode->devnr == 0)
-			{
-				debug(200, "CI+ reserviert Tuner 0");
-				dvbnode = dvbnode->next;
-				continue;
-			}
-			if(ciplus > 1 && dvbnode->devnr != 0)
-			{
-				debug(200, "CI+ erzwingt Tuner 0, aktiver Tuner: %i", dvbnode->devnr);
-				dvbnode = dvbnode->next;
-				continue;
-			}
-		}
-		
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo->type == tpnode->fetype && dvbnode->felock == 0)
 		{
 			if(flag == 2 && status.aktservice->fedev == dvbnode)
@@ -697,6 +683,23 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 				tmpdvbnode = fegetbyshortname(tmpstr);
 				if(tmpdvbnode != NULL)
 				{
+					if(ciplus != 0)
+					{
+						if(ciplus == 1 && tmpdvbnode->devnr == 0)
+						{
+							CharPtrTmp[found] = tmpdvbnode;
+							found = found + 1;
+							tmpstr = getconfigbyval(tmpstr, NULL); //loop tuner also loop  ?	
+							continue;
+						}
+						if(ciplus == 2 && tmpdvbnode->devnr != 0)
+						{
+							CharPtrTmp[found] = tmpdvbnode;
+							found = found + 1;
+							tmpstr = getconfigbyval(tmpstr, NULL); //loop tuner also loop  ?	
+							continue;
+						}
+					}
 					if(tmpdvbnode->feakttransponder != NULL && (tmpdvbnode->feaktpolarization != tpnode->polarization || tmpdvbnode->feakttransponder->orbitalpos != tpnode->orbitalpos) && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
 					{
 						found = -1;
