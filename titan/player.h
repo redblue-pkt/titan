@@ -729,7 +729,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	offset += currentpos;
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_SET);
 	
-	if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && vubox1 == 1)
+	if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && vubox1 != 1)
 		playerresetts();
 	else
 	{
