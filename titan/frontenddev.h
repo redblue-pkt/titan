@@ -349,7 +349,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 			dvbnode = dvbnode->next;
 			continue;
 		}
-		if(ciplus == 2)
+		if(ciplus == 2 && dvbnode->devnr != 0)
 		{
 			dvbnode = dvbnode->next;
 			continue;

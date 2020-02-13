@@ -6,7 +6,8 @@
 void timeshiftpause(int flag)
 {
 	int ret = 0;
-		
+	int tsextern = getconfigint("tsextern", NULL);
+			
 	if(flag == 0 && status.timeshift == 1 && status.playing == 0 && status.timeshifttype == 1 && status.timeshiftpos == 0) //stop service
 	{
 		ret = servicestop(status.aktservice, 0, 2);
@@ -51,7 +52,10 @@ void timeshiftpause(int flag)
 		status.playspeed = 0;
 		status.play = 0;
 		status.pause = 1;
-		playerpausets();
+		if(tsextern == 0)
+			playerpausets();
+		else
+			playerpause();
 	}
 }
 
@@ -63,6 +67,7 @@ void timeshiftstop(int flag)
 {
 	int i = 0, ret = 0;
 	char* file = NULL;
+	int tsextern = getconfigint("tsextern", NULL);
 
 	if(flag == 1 && status.timeshifttype == 1 && status.playing == 0 && status.timeshiftpos > 0)
 		return;
@@ -74,12 +79,21 @@ void timeshiftstop(int flag)
 		{
 			if(status.playspeed != 0 || status.slowspeed != 0)
 			{
-				playerpausets();
-				playercontinuets();
+				if(tsextern == 0)
+				{
+					playerpausets();
+					playercontinuets();
+				}
+				else
+				{
+					playerpause();
+					playercontinue();
+				}
 			}
-
-			playerstopts(1, flag);
-
+			if(tsextern == 0)
+				playerstopts(1, flag);
+			else
+				playerstop();
 			writevfdmenu("Player");
 			screenplayinfobar(NULL, NULL, 1, 1, 4);
 
@@ -92,11 +106,22 @@ void timeshiftstop(int flag)
 	
 	if(status.playspeed != 0 || status.slowspeed != 0)
 	{ 
-		playerpausets();
-		playercontinuets();
+		if(tsextern == 0)
+		{
+			playerpausets();
+			playercontinuets();
+		}
+		else
+		{
+			playerpause();
+			playercontinue();
+		}
 	}
 	
-	playerstopts(1, flag);
+	if(tsextern == 0)
+		playerstopts(1, flag);
+	else
+		playerstop();
 
 	writevfdmenu("Player");
 	screenplayinfobar(NULL, NULL, 1, 1, 4);
@@ -133,7 +158,10 @@ startservice:
 		servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 3), 0);
 	
 	//if timeshift ends in pause status, we must reactivate continue in player driver
-	playercontinuets();
+	if(tsextern == 0)
+		playercontinuets();
+	else
+		playercontinue();
 	status.timeshiftstart = 0;
 	status.timeshiftpos = 0;
 	status.playspeed = 0;
@@ -145,6 +173,7 @@ startservice:
 void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 {
 	int ret = 1, waiting = 15;
+	int tsextern = getconfigint("tsextern", NULL);
 
 #ifdef MIPSEL
 	waiting = 30;
@@ -167,7 +196,8 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 			return;
 		}
 	
-		if(snode != NULL) ret = playerstartts(snode->recname, 1);
+		if(snode != NULL && tsextern == 0) ret = playerstartts(snode->recname, 1);
+		if(snode != NULL && tsextern == 1) ret = playerstart(snode->recname);
 		if(ret != 0)
 		{
 			textbox(_("Message"), _("Can't start timeshift play !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
@@ -189,12 +219,27 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 	else if(status.playing == 1)
 	{
 		if(status.playspeed != 0 || status.slowspeed != 0)
-			playerpausets();
+		{
+			if(tsextern == 0)
+				playerpausets();
+			else
+				playerpause();
+		}
 		if(status.slowspeed != 0)
 			audioclearbuffer(status.aktservice->audiodev);
-		playercontinuets();
+		
+		if(tsextern == 0)
+			playercontinuets();
+		else
+			playercontinue();
+				
 		if(status.playspeed != 0 || status.slowspeed != 0)
-			playerresetts();
+		{
+			if(tsextern == 0)
+				playerresetts();
+			else
+				playercontinue();
+		}
 	}
 	
 	if(status.playing == 0) return;
@@ -396,6 +441,7 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 
 void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 {
+	int tsextern = getconfigint("tsextern", NULL);
 	if(status.playing == 0 && status.playspeed == 0)
 	{
 		*playinfobarstatus = 2;
@@ -439,6 +485,7 @@ void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 
 void timeshiftposplay(int* playinfobarstatus, int* playinfobarcount)
 {
+	int tsextern = getconfigint("tsextern", NULL);
 	unsigned long long oldpos = status.timeshiftpos;
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	if(snode != NULL)
