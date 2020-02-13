@@ -2681,7 +2681,9 @@ int fecreatedummy()
 	if(dvbnode != NULL)
 	{
 		sprintf(buf, frontenddev, 0, dvbnode->devnr);
-		adddvbdev(buf, 0, dvbnode->devnr, -1, FRONTENDDEVDUMMY, NULL, NULL, NULL, 0);
+		//test vu Boxen
+		if(vubox1 == 0 || dvbnode->devnr != 1)
+			adddvbdev(buf, 0, dvbnode->devnr, -1, FRONTENDDEVDUMMY, NULL, NULL, NULL, 0);
 	}
 
 	free(buf);
