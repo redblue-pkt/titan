@@ -593,7 +593,7 @@ void playerresetts()
 #endif
 
 #ifdef MIPSEL
-	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0)
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 || vubox1 == 0)
 	{
 		videoclearbuffer(status.aktservice->videodev);
 		audioclearbuffer(status.aktservice->audiodev);
@@ -615,7 +615,7 @@ void playercontinuets()
 {
 	videocontinue(status.aktservice->videodev);
 #ifdef MIPSEL
-	if(checkchipset("HI3798MV200") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	if(checkchipset("HI3798MV200") == 1 || checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || vubox1 == 1)
 		audioplay(status.aktservice->audiodev);
 	audiocontinue(status.aktservice->audiodev);
 #else
@@ -729,7 +729,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 	offset += currentpos;
 	currentpos = lseek64(servicenode->recsrcfd, offset, SEEK_SET);
 	
-	if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1)
+	if(checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && vubox1 == 1)
 		playerresetts();
 	else
 	{
@@ -745,7 +745,7 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 void playerffts(int speed)
 {
 #ifdef MIPSEL
-	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || vubox1 == 1)
 	{
 		//audiopause(status.aktservice->audiodev);
 		audiostop(status.aktservice->audiodev);
@@ -774,7 +774,7 @@ void playerffts(int speed)
 void playerslowts(int speed)
 {
 #ifdef MIPSEL
-	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || vubox1 == 1)
 	{
 		audiostop(status.aktservice->audiodev);
 		dmxstop(status.aktservice->dmxaudiodev);
@@ -814,7 +814,7 @@ void playerfrts(int speed, int flag)
 	}
 	speed *= -1;
 #ifdef MIPSEL
-	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
+	if(checkbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1 || vubox1 == 1)
 	{
 		//audiopause(status.aktservice->audiodev);
 		audiostop(status.aktservice->audiodev);
