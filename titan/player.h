@@ -593,7 +593,7 @@ void playerresetts()
 #endif
 
 #ifdef MIPSEL
-	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 || vubox1 == 0)
+	if(checkbox("DM7020HD") == 0 && checkbox("DM7020HDV2") == 0 && vubox1 == 0)
 	{
 		videoclearbuffer(status.aktservice->videodev);
 		audioclearbuffer(status.aktservice->audiodev);
