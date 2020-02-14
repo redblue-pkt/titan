@@ -667,7 +667,9 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				playerseekts(servicenode, -3, 1);
 				readret = dvbreadfd(servicenode->recsrcfd, buf, 0, recbsize, readtimeout, 1);
 			}
-			pthread_mutex_unlock(&status.tsseekmutex);				
+			pthread_mutex_unlock(&status.tsseekmutex);
+			if(vubox1 == 1)
+				usleep(1000);				
 		
 			if(status.playspeed < 0 || status.playspeed > 0)
 			{
@@ -766,7 +768,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					}
 				}*/
 //Workaround scrambled Bits
-					if(getconfigint("rec_workaround_off", NULL) == 0)
+					if(getconfigint("rec_workaround_off", NULL) == 0 && vubox1 != 0)
 					{
 #ifndef MIPSEL
 						if(servicenode->type == RECORDPLAY)
