@@ -1197,7 +1197,7 @@ not needed we use wakeup_record_device on recordstartreal
 	if(filefd < 0 && chnode->serviceid != 65535)
 	{
 		//got frontend dev
-		fenode = fegetfree(tpnode, 2, NULL, NULL);
+		fenode = fegetfree(tpnode, 2, NULL, chnode);
 		if(fenode == NULL)
 		{
 			if(status.standby == 0 && (type == RECSTREAM || type == RECSTREAMENC))
@@ -1221,7 +1221,7 @@ not needed we use wakeup_record_device on recordstartreal
 					
 					if(status.standby > 0) servicestop(status.aktservice, 1, 0);	
 					
-					fenode = fegetfree(tpnode, 2, NULL, NULL);
+					fenode = fegetfree(tpnode, 2, NULL, chnode);
 					if(fenode == NULL)
 					{
 						ret = 5;
