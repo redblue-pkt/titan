@@ -669,7 +669,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			}
 			pthread_mutex_unlock(&status.tsseekmutex);
 			if(vubox1 == 1)
-				usleep(2500);				
+				usleep(25000);				
 		
 			if(status.playspeed < 0 || status.playspeed > 0)
 			{
