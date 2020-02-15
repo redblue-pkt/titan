@@ -531,6 +531,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				recbsize = getconfigint("recordplay_recbsize", NULL);
 				printf("recordplay1 recbsize change to: %d\n", recbsize);
 //				recbsize = 12032;
+				if(vubox1 == 1)
+					recbzize = 17672;
 			}
 			if(getconfigint("recordplay_writetimeout", NULL) != 0 && writetimeout != getconfigint("recordplay_writetimeout", NULL))
 			{
@@ -542,6 +544,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			// recordplay work vuplus end
 
 			tmprecbsize = 188 * 188;
+			if(vubox1 == 1)
+				tmprecbzize = 17672;
 		}
 
 		if(servicenode->type == RECORDSTREAM)
