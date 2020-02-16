@@ -813,6 +813,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 #endif
 					}
 //*
+					if((servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT) && vubox1 ==1)
+						usleep(25000);
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 					if((servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT) && vubox1 ==1)
 						usleep(25000);
