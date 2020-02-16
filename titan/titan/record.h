@@ -768,7 +768,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					}
 				}*/
 //Workaround scrambled Bits
-					if(getconfigint("rec_workaround_off", NULL) == 0 && vubox1 != 0)
+					if(getconfigint("rec_workaround_off", NULL) == 0)
 					{
 #ifndef MIPSEL
 						if(servicenode->type == RECORDPLAY)
@@ -814,8 +814,10 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					}
 //*
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
+					if((servicenode->type == RECORDDIRECT || servicenode->type == RECORDTIMER || servicenode->type == RECORDTIMESHIFT) && vubox1 ==1)
+						usleep(25000);
 				}
-
+				
 				//inject first pakets slower/smaler, so demux can start and read
 				if(servicenode->type == RECORDPLAY && count < 20)
 				{
