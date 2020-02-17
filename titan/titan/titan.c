@@ -1093,10 +1093,17 @@ timeokw = 1;
 	setvol(getconfigint("vol", NULL));
 
 	//ciplus workaround.... muss als erstes starten
+	
 	if(getconfigint("ciplusrun", NULL) == 1)
 	{
+		startchannellist = getconfig("channellist", NULL);
+		startserviceid = getconfigint("serviceid", NULL);
+		starttransponderid = getconfigllu("ciplus_transponderid", NULL);
 		serviceret = servicestart(getchannel(getconfigint("ciplus_serviceid", NULL), getconfigllu("ciplus_transponderid", NULL)), getconfig("ciplus_channellist", NULL), NULL, 0);
 		sleep(2); 
+		addconfig("channellist", startchannellist);
+		addconfigint("serviceid", startserviceid);
+		addconfigllu("transponderid", starttransponderid);
 	}
 
 	//tune to channel
