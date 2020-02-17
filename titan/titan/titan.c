@@ -1099,13 +1099,13 @@ timeokw = 1;
 		printf("ci workaround start\n");
 		startchannellist = getconfig("channellist", NULL);
 		startserviceid = getconfigint("serviceid", NULL);
-		starttransponderid = getconfigllu("ciplus_transponderid", NULL);
+		starttransponderid = getconfigllu("transponderid", NULL);
 		serviceret = servicestart(getchannel(getconfigint("ciplus_serviceid", NULL), getconfigllu("ciplus_transponderid", NULL)), getconfig("ciplus_channellist", NULL), NULL, 0);
 		sleep(2); 
 		addconfig("channellist", startchannellist);
 		addconfigint("serviceid", startserviceid);
 		addconfigllu("transponderid", starttransponderid);
-		printf("ci workaround ende\n");
+		printf("ci workaround1 ende\n");
 	}
 
 	//tune to channel
