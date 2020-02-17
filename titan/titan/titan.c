@@ -1096,6 +1096,7 @@ timeokw = 1;
 	
 	if(getconfigint("ciplusrun", NULL) == 1)
 	{
+		printf("ci workaround start\n");
 		startchannellist = getconfig("channellist", NULL);
 		startserviceid = getconfigint("serviceid", NULL);
 		starttransponderid = getconfigllu("ciplus_transponderid", NULL);
@@ -1104,6 +1105,7 @@ timeokw = 1;
 		addconfig("channellist", startchannellist);
 		addconfigint("serviceid", startserviceid);
 		addconfigllu("transponderid", starttransponderid);
+		printf("ci workaround ende\n");
 	}
 
 	//tune to channel
