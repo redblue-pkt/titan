@@ -1105,6 +1105,9 @@ timeokw = 1;
 		addconfig("channellist", startchannellist);
 		addconfigint("serviceid", startserviceid);
 		addconfigllu("transponderid", starttransponderid);
+		status.aktservice = addservice(NULL);
+		status.lastservice = addservice(NULL);
+		status.pipservice = addservice(NULL);
 		printf("ci workaround ende\n");
 	}
 
