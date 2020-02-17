@@ -1096,7 +1096,7 @@ timeokw = 1;
 	if(getconfigint("ciplusrun", NULL) == 1)
 	{
 		serviceret = servicestart(getchannel(getconfigint("ciplus_serviceid", NULL), getconfigllu("ciplus_transponderid", NULL)), getconfig("ciplus_channellist", NULL), NULL, 0);
-		sleep(2);
+		sleep(2); 
 	}
 
 	//tune to channel
