@@ -605,6 +605,15 @@ void screensettings_autostart_network()
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 
+	node = addlistbox(settings_autostart, listbox, node, 1);
+	if(node != NULL)
+	{
+		node->type = CHOICEBOX;
+		changetext(node, _("Ipsec")); changename(node, "ipsec");
+		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+		setchoiceboxselection(node, getownconfig(node->name));
+	}
+
 	drawscreen(settings_autostart, 0, 0);
 	tmp = listbox->select;
 
