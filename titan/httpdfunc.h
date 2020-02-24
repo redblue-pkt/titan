@@ -5678,14 +5678,17 @@ char* webgetupdatelist(char* param, int fmt)
 	}
 #ifdef OEBUILD
 	if(mode == 0)
-		tmpstr = command("ls -1 /tmp/online | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r");
+		cmd = ostrcat("ls -1 /tmp/online | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r", NULL, 0, 0);
 	else
 	{
 		if(file_exist("/var/backup"))
-			tmpstr = command("ls -1 /var/backup/ | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r");
+			cmd = ostrcat("ls -1 /var/backup/ | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r", NULL, 0, 0);
 		else
-			tmpstr = command("ls -1 /tmp | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r");
+			cmd = ostrcat("ls -1 /tmp | grep '.nfi\\|.zip\\|.img\\|.tar.xz' | sort -r", NULL, 0, 0);
 	}
+	printf("cmd: %s\n", cmd);
+	tmpstr = command(cmd);
+	free(cmd), cmd = NULL;
 #else
 	if(checkrealbox("DM7020HD") == 1 || checkbox("DM7020HDV2") == 1)
 	{
@@ -5778,45 +5781,36 @@ char* webgetupdatelist(char* param, int fmt)
 #ifdef OEBUILD
 				if(file_exist("/media/hdd"))
 				{
-					if(!file_exist("/media/hdd/.update"))
-						 mkdir("/media/hdd/.update", 777);
+					if(!file_exist("/media/hdd/logs"))
+						 mkdir("/media/hdd/logs", 777);
 
-					if(!file_exist("/media/hdd/.update/logs"))
-						 mkdir("/media/hdd/.update/logs", 777);
-
-					if(file_exist("/media/hdd/.update/logs"))
+					if(file_exist("/media/hdd/logs"))
 					{
-						cmd = ostrcat(cmd, " > /media/hdd/.update/logs/update_", 1, 0);		
+						cmd = ostrcat(cmd, " > /media/hdd/logs/update_", 1, 0);		
 						cmd = ostrcat(cmd, getboxtype(), 1, 0);
 						cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
 					}
 				}
 				else if(file_exist("/var/backup"))
 				{
-					if(!file_exist("/var/backup/.update"))
-						 mkdir("/var/backup/.update", 777);
-
-					if(!file_exist("/var/backup/.update/logs"))
-						 mkdir("/var/backup/.update/logs", 777);
+					if(!file_exist("/var/backup/logs"))
+						 mkdir("/var/backup/logs", 777);
 				
-					if(file_exist("/var/backup/.update/logs"))
+					if(file_exist("/var/backup/logs"))
 					{
-						cmd = ostrcat(cmd, " > /var/backup/.update/logs/update_", 1, 0);		
+						cmd = ostrcat(cmd, " > /var/backup/logs/update_", 1, 0);		
 						cmd = ostrcat(cmd, getboxtype(), 1, 0);
 						cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
 					}
 				}
 				else if(file_exist("/var/swap"))
 				{
-					if(!file_exist("/var/swap/.update"))
-						 mkdir("/var/swap/.update", 777);
-
-					if(!file_exist("/var/swap/.update/logs"))
-						 mkdir("/var/swap/.update/logs", 777);
+					if(!file_exist("/var/swap/logs"))
+						 mkdir("/var/swap/logs", 777);
 				
-					if(file_exist("/var/swap/.update/logs"))
+					if(file_exist("/var/swap/logs"))
 					{
-						cmd = ostrcat(cmd, " > /var/swap/.update/logs/update_", 1, 0);		
+						cmd = ostrcat(cmd, " > /var/swap/logs/update_", 1, 0);		
 						cmd = ostrcat(cmd, getboxtype(), 1, 0);
 						cmd = ostrcat(cmd, "_debug.log 2>&1", 1, 0);		
 					}
@@ -6789,14 +6783,28 @@ char* webgetcreaterestore(char* param, int fmt)
 
 	int mode = atoi(param);
 
+	char* BACKUPDIR = NULL;
+#ifdef OEBUILD
+	if(isfile("/media/.moviedev") || file_exist("/media/hdd"))
+		BACKUPDIR = ostrcat(" /media/hdd", NULL, 0, 0);
+	else if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+		BACKUPDIR = ostrcat(" /var/backup", NULL, 0, 0);
+	else if(isfile("/media/.swapextensionsdev") || file_exist("/var/swap"))
+		BACKUPDIR = ostrcat(" /var/swap", NULL, 0, 0);
+#endif
+
+
 	if(mode == 1)
-		tmpstr = command("/sbin/settings.sh restore");
+		cmd = ostrcat("/sbin/settings.sh restore", BACKUPDIR, 0, 0);
 
 	if(mode == 2)
 	{
+		cmd = ostrcat("/sbin/settings.sh backup", BACKUPDIR, 0, 0);
 		writeallconfig(1);
-		tmpstr = command("/sbin/settings.sh backup");
 	}
+
+	printf("cmd: %s\n", cmd);
+	tmpstr = command(cmd);
 
 //	if(fmt == 0)
 //	{
