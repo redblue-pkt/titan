@@ -6779,7 +6779,7 @@ char* webgetcreaterestore(char* param, int fmt)
 {
 	if(status.security == 0) return NULL;
 
-	char* buf = NULL, *tmpstr = NULL;
+	char* buf = NULL, *tmpstr = NULL, *cmd = NULL;
 
 	int mode = atoi(param);
 
@@ -6805,6 +6805,7 @@ char* webgetcreaterestore(char* param, int fmt)
 
 	printf("cmd: %s\n", cmd);
 	tmpstr = command(cmd);
+	free(cmd), cmd = NULL;
 
 //	if(fmt == 0)
 //	{
