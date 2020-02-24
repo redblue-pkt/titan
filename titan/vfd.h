@@ -245,7 +245,7 @@ int writevfdmenu(char *value)
 {
 	int ret = 0;
 
-	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0 && checkbox("SPARK7162") == 0 && checkchipset("3798MV200") == 0)
+	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0 && checkbox("SPARK7162") == 0 && checkchipset("3798MV200") == 0 && checkchipset("STI7162") == 0)
 		ret = writevfd(value);
 	return ret;
 }
@@ -295,7 +295,7 @@ int writevfd(char *value)
 
 		len = strlen(value);
 
-		if(checkbox("ATEMIO530") != 1  && checkbox("ATEMIO520") != 1 && checkbox("IPBOX91") != 1 && checkbox("ATEMIO6000") != 1 && checkbox("ATEMIO6100") != 1 && checkbox("SPARK") != 1 && checkbox("ATEMIO6200") != 1 && checkbox("SPARK7162") != 1 && checkchipset("3798MV200") != 1 && len > 63)
+		if(checkbox("ATEMIO530") != 1  && checkbox("ATEMIO520") != 1 && checkbox("IPBOX91") != 1 && checkbox("ATEMIO6000") != 1 && checkbox("ATEMIO6100") != 1 && checkbox("SPARK") != 1 && checkbox("ATEMIO6200") != 1 && checkbox("SPARK7162") != 1 && checkchipset("3798MV200") != 1 && checkchipset("STI7162") != 1 && len > 63)
 		{
 			memcpy(tmpvalue, value, 63);
 			tmpvalue[62] = '\0';
@@ -320,7 +320,7 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, len);
 			tmpvalue[4] = '\0';
 		}
-		else if(checkbox("SPARK7162") == 1 || (checkbox("ATEMIO6200") == 1 && getconfigint("vfd_scroll", NULL) != 1 && len > 8))
+		else if(checkchipset("STI7162") == 1 || checkbox("SPARK7162") == 1 || (checkbox("ATEMIO6200") == 1 && getconfigint("vfd_scroll", NULL) != 1 && len > 8))
 		{
 			memcpy(tmpvalue, value, len);
 			tmpvalue[8] = '\0';
