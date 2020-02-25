@@ -71,7 +71,7 @@ startdate()
 		fi
 		if [ ! -e /tmp/.timefix ] && [ "$board" == "spark7162" ]; then
 			time=`date +%s`
-			echo -e `expr $time + 3600` > /proc/stb/fp/rtc
+			echo -e `expr $time + 7200` > /proc/stb/fp/rtc
 			touch /tmp/.timefix
 		fi
 }
