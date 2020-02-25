@@ -5678,13 +5678,13 @@ char* webgetupdatelist(char* param, int fmt)
 	}
 #ifdef OEBUILD
 	if(mode == 0)
-		cmd = ostrcat("ls -1 /tmp/online | grep '.nfi|.zip|.img|.tar.xz' | sort -r", NULL, 0, 0);
+		cmd = ostrcat("ls -1 /tmp/online | grep '.nfi\|.zip\|.img\|.tar.xz' | sort -r", NULL, 0, 0);
 	else
 	{
 		if(file_exist("/var/backup"))
-			cmd = ostrcat("ls -1 /var/backup/ | grep '.nfi|.zip|.img|.tar.xz' | sort -r", NULL, 0, 0);
+			cmd = ostrcat("ls -1 /var/backup/ | grep '.nfi\|.zip\|.img\|.tar.xz' | sort -r", NULL, 0, 0);
 		else
-			cmd = ostrcat("ls -1 /tmp | grep '.nfi|.zip|.img|.tar.xz' | sort -r", NULL, 0, 0);
+			cmd = ostrcat("ls -1 /tmp | grep '.nfi\|.zip\|.img\|.tar.xz' | sort -r", NULL, 0, 0);
 	}
 	printf("cmd: %s\n", cmd);
 	tmpstr = command(cmd);
