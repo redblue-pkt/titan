@@ -245,7 +245,8 @@ int writevfdmenu(char *value)
 {
 	int ret = 0;
 
-	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0 && checkbox("SPARK7162") == 0 && checkchipset("3798MV200") == 0 && checkchipset("STI7162") == 0)
+//	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0 && checkbox("SPARK7162") == 0 && checkchipset("3798MV200") == 0 && checkchipset("STI7162") == 0)
+	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0 && checkchipset("3798MV200") == 0)
 		ret = writevfd(value);
 	return ret;
 }
