@@ -65,7 +65,7 @@ void screenmc_videoplayer()
 	// set allowed filemask
 	char* filemask = NULL;
 	if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
-		filemask = ostrcat("*.m3u8 *.m3u *.pls *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.rm *.wmv", NULL, 0, 0);
+		filemask = ostrcat("*.m3u8 *.m3u *.pls *.ifo *.rar *.iso *.img *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.rm *.wmv *.part", NULL, 0, 0);
 	else
 		filemask = ostrcat("*.m3u *.pls *.avi *.mkv *.mpg *.mpeg *.ts *.mp2t", NULL, 0, 0);
 	
