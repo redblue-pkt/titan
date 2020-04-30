@@ -713,7 +713,6 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	}
 	free(tmpstr); tmpstr = NULL;
 
-/*
 	debug(99, "---------------------------------------");
 	debug(99, "link: %s", link);
 	debug(99, "localname: %s", localname);
@@ -724,7 +723,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	debug(99, "localfile: %s", localfile);
 	debug(99, "pw: %s", pw);
 	debug(99, "---------------------------------------");
-*/
+
 	if(flag == 0)
 	{
 		if(localfile != NULL && !file_exist(localfile))
@@ -2360,8 +2359,17 @@ void screentithekplay(char* titheklink, char* title, int first)
 					}
 					*/
 
+                    if(!file_exist(tithekpic))
+					{
+                        debug(99, "not found: %s use default", tithekpic);
+						free(tithekpic); tithekpic = NULL;
+						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
+					}
 					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+					{
+                        debug(99, "changepic: %s", tithekpic);
 						changepic(tmp, tithekpic);
+					}
 					free(tithekpic); tithekpic = NULL;
 				}
 				tmp = tmp->prev;
@@ -2385,8 +2393,18 @@ void screentithekplay(char* titheklink, char* title, int first)
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
 					*/
+                    if(!file_exist(tithekpic))
+					{
+                        debug(99, "not found: %s use default", tithekpic);
+						free(tithekpic); tithekpic = NULL;
+						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
+					}
+
 					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+					{
+                        debug(99, "changepic: %s", tithekpic);
 						changepic(tmp, tithekpic);
+					}
 					free(tithekpic); tithekpic = NULL;
 				}
 				tmp = tmp->next;
