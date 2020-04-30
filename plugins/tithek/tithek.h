@@ -2425,8 +2425,11 @@ waitrcstart:
 				if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
-	//				if(file_exist(tithekpic))
+					if(file_exist(tithekpic))
+					{
+                        debug(99, "changepic: %s", tithekpic);
 						changepic(listbox->select, tithekpic);
+					}
 	//				else
 	//				{
 	//					free(tithekpic); tithekpic = NULL;
