@@ -579,6 +579,8 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 
 		if(node->cmd != NULL)
 			system(node->cmd);
+		else if(node->link != NULL)
+			gethttps(link, node->filename, NULL, NULL, NULL, NULL, 0);
 		else
 			gethttpreal(node->host, node->page, node->port, node->filename, node->auth, NULL, 0, NULL, NULL, node->timeout, 0);
 		if(ostrcmp(node->filename, "/media/hdd/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/var/swap/.tithek/python.tar") == 0 || ostrcmp(node->filename, "/mnt/.tithek/python.tar") == 0)
@@ -729,10 +731,11 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		if(localfile != NULL && !file_exist(localfile))
 		{
 			if(pic == 1)
-			{				
-				if(ssl == 1)
-					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
-				else if(usecmd == 0 && tithekdownloadcount >= 24) //start max 24 threads
+			{
+//				if(ssl == 1)
+//					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
+//				else if(usecmd == 0 && tithekdownloadcount >= 24) //start max 24 threads
+				if(usecmd == 0 && ssl == 0 && tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 				else
 				{
@@ -740,6 +743,8 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 					struct download* dnode = calloc(1, sizeof(struct download));
 					if(dnode != NULL)
 					{
+        				if(ssl == 1)
+							dnode->link = ostrcat(link, NULL, 0, 0);
 						if(usecmd == 1)
 							dnode->cmd = ostrcat(link, NULL, 0, 0);
 						dnode->host = ostrcat(ip, NULL, 0, 0);
@@ -2432,9 +2437,9 @@ waitrcstart:
 					}
 					else
 					{
-                        debug(99, "not found: %s use default", tithekpic);
+                        debug(99, "not found: %s use default /tmp/tithek/default.jpg", tithekpic);
 						free(tithekpic); tithekpic = NULL;
-						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
+						tithekpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
 						changepic(listbox->select, tithekpic);
 					}
 					free(tithekpic); tithekpic = NULL;

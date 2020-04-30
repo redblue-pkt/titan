@@ -695,6 +695,7 @@ struct epgrecord
 
 struct download
 {
+	char* link;
 	char* cmd;
 	char* host;
 	char* page;
