@@ -2432,6 +2432,7 @@ waitrcstart:
 					}
 					else
 					{
+                        debug(99, "not found: %s use default", tithekpic);
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 						changepic(listbox->select, tithekpic);
