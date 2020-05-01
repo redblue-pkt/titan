@@ -2367,7 +2367,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 
                     if(!file_exist(tithekpic))
 					{
-                        debug(99, "not found: %s use default", tithekpic);
+                        debug(99, "not found: %s use default /var/usr/local/share/titan/plugins/tithek/default.jpg", tithekpic);
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
@@ -2401,7 +2401,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 					*/
                     if(!file_exist(tithekpic))
 					{
-                        debug(99, "not found: %s use default", tithekpic);
+                        debug(99, "not found: %s use default /var/usr/local/share/titan/plugins/tithek/default.jpg", tithekpic);
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
