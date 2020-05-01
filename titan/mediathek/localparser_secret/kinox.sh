@@ -321,7 +321,8 @@ kino()
 			searchname=`echo $filename | sed 's!.html!!'`	
 
 			TITLE=`echo $ROUND | sed -nr 's/.*title="([^"]+)".*/\1/p'`
-			PIC="$URL""/statics/thumbs/"`echo $ROUND | sed -nr 's/.*\/statics\/thumbs\/(.*)" \/>.*/\1/p'`
+#			PIC="$URL""/statics/thumbs/"`echo $ROUND | sed -nr 's/.*\/statics\/thumbs\/(.*)" \/>.*/\1/p'`
+			PIC="$URL""/statics/thumbs/"`echo $ROUND | sed -nr 's/.*\/statics\/thumbs\/(.*)" \/><.*/\1/p'`
 			PLOT=`echo $ROUND | sed -nr 's/.*<div class="Descriptor">([^>]+)<\/div>.*/\1/p'`
 			LANG=`echo $ROUND | grep 'src="/gr/sys/lng' | sed 's!src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
 			IMDB=`echo $ROUND | sed -nr 's/.*<b>IMDb:<\/b> ([^ ]+) \/.*/\1/p'`
