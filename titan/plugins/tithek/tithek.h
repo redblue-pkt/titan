@@ -2367,13 +2367,14 @@ void screentithekplay(char* titheklink, char* title, int first)
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
 					*/
-
+/*
                     if(!file_exist(tithekpic))
 					{
                         debug(99, "not found: %s use default /var/usr/local/share/titan/plugins/tithek/default.jpg", tithekpic);
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
+*/
 					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 					{
                         debug(99, "changepic: %s", tithekpic);
@@ -2402,13 +2403,14 @@ void screentithekplay(char* titheklink, char* title, int first)
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
 					*/
+/*
                     if(!file_exist(tithekpic))
 					{
                         debug(99, "not found: %s use default /var/usr/local/share/titan/plugins/tithek/default.jpg", tithekpic);
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
-
+*/
 					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 					{
                         debug(99, "changepic: %s", tithekpic);
@@ -2434,11 +2436,12 @@ waitrcstart:
 				if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
 				{
 					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
-					if(file_exist(tithekpic))
-					{
+//					if(file_exist(tithekpic))
+//					{
                         debug(99, "changepic: %s", tithekpic);
 						changepic(listbox->select, tithekpic);
-					}
+//					}
+/*
 					else
 					{
                         debug(99, "not found: %s use default /tmp/tithek/default.jpg", tithekpic);
@@ -2448,6 +2451,7 @@ waitrcstart:
 						tithekpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
 						changepic(listbox->select, tithekpic);
 					}
+*/
 					free(tithekpic); tithekpic = NULL;
 				}
 			}
