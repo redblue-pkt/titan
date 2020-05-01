@@ -735,10 +735,10 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		{
 			if(pic == 1)
 			{
-//				if(ssl == 1)
-//					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
-//				else if(usecmd == 0 && tithekdownloadcount >= 24) //start max 24 threads
-				if(usecmd == 0 && ssl == 0 && tithekdownloadcount >= 24) //start max 24 threads
+				if(ssl == 1)
+					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
+				else if(usecmd == 0 && tithekdownloadcount >= 24) //start max 24 threads
+//				if(usecmd == 0 && ssl == 0 && tithekdownloadcount >= 24) //start max 24 threads
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
 				else
 				{
@@ -746,8 +746,8 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 					struct download* dnode = calloc(1, sizeof(struct download));
 					if(dnode != NULL)
 					{
-        				if(ssl == 1)
-							dnode->link = ostrcat(link, NULL, 0, 0);
+//        				if(ssl == 1)
+//							dnode->link = ostrcat(link, NULL, 0, 0);
 						if(usecmd == 1)
 							dnode->cmd = ostrcat(link, NULL, 0, 0);
 						dnode->host = ostrcat(ip, NULL, 0, 0);
