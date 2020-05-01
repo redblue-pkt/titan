@@ -666,6 +666,9 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	if(link == NULL) return NULL;
 	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8) && ostrncmp("/tmp/localhoster/hoster.sh", link, 26)) return NULL;
 
+//    link = stringreplacecharonce(link, '"', '\0');
+//    link = stringreplacecharonce(link, ' ', '\0');
+
 	if(!ostrncmp("/tmp/localhoster/hoster.sh", link, 26))
 		usecmd = 1;
 	else if(!ostrncmp("https://", link, 8))
