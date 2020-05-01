@@ -275,6 +275,7 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
 char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, char* referer, int flag)
 {
 	debug(99, "url: %s", url);
+    if(ostrncmp("http", url, 4)) return NULL;
 
 	int debuglevel = getconfigint("debuglevel", NULL);
 
