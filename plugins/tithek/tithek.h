@@ -2276,6 +2276,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 			rcret = servicestop(status.aktservice, 1, 1);
 			if(rcret == 1) return;
 		}
+    	gethttp("atemio.dyndns.tv", "/mediathek/menu/default.jpg", 80, "/tmp/tithek/default.jpg", HTTPAUTH, 5000, NULL, 0);
 	}
 
 	struct skin* grid = getscreen("titheklist");
@@ -2438,6 +2439,8 @@ waitrcstart:
 					else
 					{
                         debug(99, "not found: %s use default /tmp/tithek/default.jpg", tithekpic);
+                        if(!file_exist("/tmp/tithek/default.jpg"))
+    	                    gethttp("atemio.dyndns.tv", "/mediathek/menu/default.jpg", 80, "/tmp/tithek/default.jpg", HTTPAUTH, 5000, NULL, 0);
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
 						changepic(listbox->select, tithekpic);
