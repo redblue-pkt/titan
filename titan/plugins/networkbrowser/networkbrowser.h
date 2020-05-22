@@ -639,8 +639,11 @@ void savenetworkbrowser(char* filename)
  				savesettings = ostrcat(savesettings, node->password, 1, 0);
 			}
 			else
+#ifdef OEBUILD
+				savesettings = ostrcat(savesettings, ",user=root,pass=", 1, 0);
+#else
 				savesettings = ostrcat(savesettings, ",user=,pass=", 1, 0);
-
+#endif
 			savesettings = ostrcat(savesettings, "\t://", 1, 0);
  			if(ostrcmp(node->usedns, "1") == 0)
 	 			savesettings = ostrcat(savesettings, node->dns, 1, 0);
