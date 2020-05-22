@@ -189,8 +189,11 @@ starthostname()
     IP=$(ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2 | tr '.' '-')
     #IP=$(ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2)
     MODEL=$(cat /etc/model) 
-    hostname "$MODEL ($IP)"
-    echo "$MODEL ($IP)" > /etc/hostname
+#    hostname "$MODEL ($IP)"
+    echo "$MODEL-$IP" > /etc/hostname
+    sysctl "kernel.hostname=$MODEL-$IP.local.host"
+    hostname -F /etc/hostname
+
     /etc/init.d/samba restart
     /etc/init.d/vsftpd restart
     /etc/init.d/dropbear restart
