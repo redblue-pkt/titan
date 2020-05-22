@@ -386,7 +386,7 @@ case $1 in
 		startCi
 		workarounds
 		startled
-        starthostname
+		starthostname
 		startgui;;
 	last)
 		checkemu
