@@ -184,6 +184,18 @@ startled()
 	fi
 }
 
+starthostname()
+{
+    IP=$(ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2 | tr '.' '-')
+    #IP=$(ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2)
+    MODEL=$(cat /etc/model) 
+    hostname "$MODEL ($IP)"
+    echo "$MODEL ($IP)" > /etc/hostname
+    /etc/init.d/samba restart
+    /etc/init.d/vsftpd restart
+    /etc/init.d/dropbear restart
+}
+
 startgui()
 {
 	STARTDEFAULT="/usr/local/bin/titan /mnt/config/titan.cfg"
@@ -374,6 +386,7 @@ case $1 in
 		startCi
 		workarounds
 		startled
+        starthostname
 		startgui;;
 	last)
 		checkemu
