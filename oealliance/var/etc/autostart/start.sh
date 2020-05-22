@@ -187,13 +187,13 @@ startled()
 starthostname()
 {
     IP=$(ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2 | tr '.' '-')
-    #IP=$(ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2)
+#    IP=$(ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2)
     MODEL=$(cat /etc/model) 
 #    hostname "$MODEL ($IP)"
     echo "$MODEL-$IP" > /etc/hostname
     sysctl "kernel.hostname=$MODEL-$IP.local.host"
     hostname -F /etc/hostname
-
+    mv -f /etc/samba/private/smbpasswd /etc/samba/private/smbpasswd.org
     /etc/init.d/samba restart
     /etc/init.d/vsftpd restart
     /etc/init.d/dropbear restart
