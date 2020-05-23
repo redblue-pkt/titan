@@ -620,7 +620,6 @@ void savenetworkbrowser(char* filename)
 
 		if(ostrcmp(node->mode, "0") == 0)
 		{
-
 			#ifdef MIPSEL
 				savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,iocharset=utf8,rsize=", 1, 0);
 			#else
@@ -640,10 +639,11 @@ void savenetworkbrowser(char* filename)
 			}
 			else
 #ifdef OEBUILD
-				savesettings = ostrcat(savesettings, ",user=root,pass=", 1, 0);
+				savesettings = ostrcat(savesettings, ",guest,user=,pass=", 1, 0);
 #else
 				savesettings = ostrcat(savesettings, ",user=,pass=", 1, 0);
 #endif
+
 			savesettings = ostrcat(savesettings, "\t://", 1, 0);
  			if(ostrcmp(node->usedns, "1") == 0)
 	 			savesettings = ostrcat(savesettings, node->dns, 1, 0);
