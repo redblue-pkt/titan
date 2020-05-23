@@ -14,6 +14,14 @@ starthotplug()
 {
 	echo "[$0] starthotplug"
 	hotplug.sh first
+
+    CIFSGUESTLIST=$(cat /mnt/network/auto.misc | grep cifs | grep guest | sed -nr 's!.*\t:([^:]+).*!\1!p')
+    for ROUND in $CIFSGUESTLIST; do
+        mkdir /tmp/tmpmount
+        mount -o guest $ROUND /tmp/tmpmount
+        umount -fl /tmp/tmpmount
+        rmdir /tmp/tmpmount
+    done
 }
 
 startlibs()
@@ -197,6 +205,20 @@ starthostname()
     /etc/init.d/samba restart
     /etc/init.d/vsftpd restart
     /etc/init.d/dropbear restart
+}
+
+startcifswork()
+{
+	echo "[$0] startcifswork"
+    CIFSGUESTLIST=$(cat /mnt/network/auto.misc | grep cifs | grep guest | sed -nr 's!.*\t:([^:]+).*!\1!p')
+    for ROUND in $CIFSGUESTLIST; do
+        mkdir /tmp/tmpmount
+        mount -o guest $ROUND /tmp/tmpmount
+        sleep 3
+        ls -al /media/net/
+        umount -fl /tmp/tmpmount
+        rmdir /tmp/tmpmount
+    done
 }
 
 startgui()
@@ -389,7 +411,8 @@ case $1 in
 		startCi
 		workarounds
 		startled
-		starthostname
+        startcifswork &
+		starthostname &
 		startgui;;
 	last)
 		checkemu
