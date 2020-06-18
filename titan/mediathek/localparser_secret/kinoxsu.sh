@@ -10,7 +10,7 @@ PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
 # curl https://kinox.su/779-meine-teuflisch-gute-freundin-2018.
 
-URL=https://kinox.su/
+URL=https://1kinox.su/
 
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=KinoXsu
