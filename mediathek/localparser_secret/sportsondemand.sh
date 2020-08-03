@@ -991,6 +991,9 @@ hoster()
 #		cat /tmp/localcache/cache.sportsondemand.hoster..1 | tr -d '\r'|  tr -d '\n' | sed 's/<iframe/\n<iframe/g' | grep ^"<iframe" |awk 'BEGIN {} /<iframe/ { i = index($0, "src=\"") + 5;j = index(substr($0, i), "\"") - 1;newpage = substr($0, i, j); print newpage; next}' | grep -v gif | grep -v allowTransparency
 		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | tr -d '\r'|  tr -d '\n' | sed 's/<iframe/\n<iframe/g' | grep ^"<iframe" |awk 'BEGIN {} /<iframe/ { i = index($0, "src=\"") + 5;j = index(substr($0, i), "\"") - 1;newpage = substr($0, i, j); print newpage; next}' | grep -v gif | grep -v allowTransparency`
 
+        if [ ! `echo $URL | grep " //" | wc -l` -eq 0 ];then
+            URL=$(echo $URL | sed 's! //!\nhttp://!' | tail -n1)
+        fi
 #		$curlbin --referer ${PAGE} -o $TMP/cache.$PARSER.$INPUT.$FROM.2 ${URL}
 
 	fi
