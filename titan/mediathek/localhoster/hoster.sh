@@ -879,7 +879,7 @@ curldl()
 if [ "$TYPE" == "get" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
-		apl3|apl13) apl3 $INPUT;;
+		apl3|apl13|apl14|apl15) apl3 $INPUT;;
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
 		nosvideo) nosvideo $INPUT;;
@@ -923,7 +923,7 @@ if [ "$TYPE" == "get" ];then
 if [ ! -z "$hoster2" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster2.log
 	case $hoster2 in
-		apl3|apl13) apl3 $INPUT;;
+		apl3|apl13|apl14|apl15) apl3 $INPUT;;
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
 		nosvideo) nosvideo $INPUT;;
