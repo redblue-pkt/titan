@@ -4,7 +4,9 @@
 SRC=$1
 INPUT=$2
 PARAM=$3
-URL="https://beeg.com/api/v6/1525723877/"
+#URL="https://beeg.com/api/v6/1525723877/"
+URL="https://beeg.com/api/v6/1546225636701/"
+
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 
@@ -36,104 +38,133 @@ init()
 
 mainmenu()
 {
-	echo "Sorted by date#$SRC $SRC videos index/main/0/pc#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
-        echo "Popular Tags#$SRC $SRC tags popular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
+#	echo "Sorted by date#$SRC $SRC videos index/main/0/pc#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
+	echo "Sorted by date#$SRC $SRC videos index/main/1/pc#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
+#        echo "Popular Tags#$SRC $SRC tags popular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
         echo "All Tags#$SRC $SRC tags nonpopular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-        echo "Long Videos#$SRC $SRC videos index/tag/0/pc?tag=long+videos#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-        echo "Search#$SRC $SRC videos index/search/0/pc?query=#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>/tmp/tithek/$PARSER.list
+#        echo "Long Videos#$SRC $SRC videos index/tag/0/pc?tag=long+videos#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
+#        echo "Search#$SRC $SRC videos index/search/0/pc?query=#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>/tmp/tithek/$PARSER.list
 	echo "/tmp/tithek/$PARSER.list"
 }
 
+
+#{"quality":null,"title":"Pink panty stuffing and cum","set_id":106551,"full":1,"ps_name":"Jessica Starling","nt_name":null,"svid":1786133462,"duration":425,"datetime":"2020-10-25 19:00:06","thumbs":[{"pid":1219962,"offset":4,"image":"106551-0004.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219963,"offset":46,"image":"106551-0046.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219964,"offset":48,"image":"106551-0048.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219965,"offset":49,"image":"106551-0049.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219966,"offset":52,"image":"106551-0052.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219967,"offset":54,"image":"106551-0054.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219968,"offset":56,"image":"106551-0056.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219969,"offset":57,"image":"106551-0057.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219970,"offset":58,"image":"106551-0058.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219971,"offset":62,"image":"106551-0062.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219972,"offset":72,"image":"106551-0072.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219973,"offset":75,"image":"106551-0075.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219974,"offset":81,"image":"106551-0081.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219975,"offset":84,"image":"106551-0084.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219976,"offset":86,"image":"106551-0086.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219977,"offset":89,"image":"106551-0089.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}},{"pid":1219978,"offset":90,"image":"106551-0090.jpg","start":null,"end":null,"crops":{"16x9":{"left":null,"top":null,"width":null,"height":null},"4x3":{"left":null,"top":null,"width":null,"height":null},"3x2":{"left":null,"top":null,"width":null,"height":null},"1x1":{"left":null,"top":null,"width":null,"height":null}}}]},
+
+
 videos()
 {
-	$curlbin -o - $URL$PARAM | sed -e 's/{/{\n/g' -e 's/,/,\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v SRC=$SRC -v PARSER=$PARSER -v NAME=$NAME '
-BEGIN { table = ""
-        title = ""
-        id = ""
-      }
-/\"/  { m = 1
-        while (m == 1) {
-           s = $0
-           i = gsub("[\"]", "x", s)
-           m = i % 2
-           if (m == 1) {
-              getline l
-              $0 = $0 l
-           }
-        }
-      }
-/^\{/ { next
-      }
-/\[$/ { split($0, a, "\"")
-        table = a[2]
-        next
-      }
-/^\}/ { if (table == "videos") {
-           print title "#" SRC " " SRC " play video/" id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#111"
-#           print title "#" SRC " " SRC " hosterlist " id "#https://img.beeg.com/236x177/" id ".jpg#" PARSER "_" id ".jpg#" NAME "#0"
+#{"quality":null,"title":"Tipping the pizza guy","set_id":106427,"full":1,"ps_name":"Jenny Jinx","nt_name":null,"svid":1122173165,"duration":563,"datetime":"2020-10-25 15:00:05","thumbs":
 
-           title = ""
-           id = ""
-        }
-        next
+#$curlbin $URL$PARAM > /tmp/1234
+
+#$curlbin $URL$PARAM > /tmp/a123
+#	$curlbin -o - $URL$PARAM | sed -e 's/{/{\n/g' -e 's/,/,\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v SRC=$SRC -v PARSER=$PARSER -v NAME=$NAME '
+#	$curlbin -o - $URL$PARAM | sed -e 's/{/{\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v SRC=$SRC -v PARSER=$PARSER -v NAME=$NAME '
+	$curlbin -o - $URL$PARAM | sed -e 's/{\"quality\"/{\n\"quality\"/g' | awk -v SRC=$SRC -v PARSER=$PARSER -v NAME=$NAME '
+
+BEGIN {     title = ""
+            id = ""
+            svid = ""
+            setid = ""
+            duration = ""
+            pic = ""
+            image = ""
       }
-/^\]/ { table = ""
-        next
-      }
-      { if (table == "videos") {
-           split($0, a, "\"")
-           if (a[3] ==":") {
-              value = a[4]
-           }
-           else {
-              value = substr(a[3], 2, length(a[3]) - 2)
-           }
-           if (a[2] == "title") {
-              title = value
-           }
-           else {
-              if (a[2] == "id") {
-                 id = value
-              }
-           }
-        }
+/"quality":/ { 
+					# extrahiere den newpage pfad
+					i = index($0, "\"title\":\"") + 9
+		            j = index(substr($0, i), "\"") - 1
+		            title = substr($0, i, j)
+#print "00000: " $0
+#print "title: " title
+					# extrahiere den newpage pfad
+					i = index($0, "\"svid\":") + 7
+		            j = index(substr($0, i), ",") - 1
+		            svid = substr($0, i, j)
+#print "svid: " svid
+
+					# extrahiere den newpage pfad
+					i = index($0, "\"set_id\":") + 9
+		            j = index(substr($0, i), ",") - 1
+		            setid = substr($0, i, j)
+#print "setid: " setid
+
+					# extrahiere den newpage pfad
+					i = index($0, "\"duration\":") + 12
+		            j = index(substr($0, i), ",") - 1
+		            duration = substr($0, i, j)
+
+					# extrahiere den newpage pfad
+					i = index($0, "\"image\":\"") + 9
+		            j = index(substr($0, i), "\"") - 1
+		            image = substr($0, i, j)
+
+
+if (length(duration) == 1)
+{
+#    print "duration: 000+" duration
+    pic = pid "-000"duration
+}
+else if (length(duration) == 2)
+{
+#    print "duration: 00+" duration
+    pic = pid "-00"duration
+}
+else if (length(duration) == 3)
+{
+#    print "duration: 0+" duration
+    pic = pid "-0"duration
+}
+
+else
+{
+#    print "duration: " duration
+    pic = pid "-"duration
+}
+
+pic = image
+
+#print "pic: " pic
+
+
+					if (title != "")
+					{
+        #           title = toupper(tag)
+        #           gsub(/ /, "%20", tag)
+        #           print title "#" SRC " " SRC " play video/" id "#https://img.beeg.com/236x177/" pic ".jpg#" PARSER "_" pic ".jpg#" NAME "#111"
+					if (image != "")
+                        print title "#" SRC " " SRC " hoster " svid "#https://img.beeg.com/236x177/" image "#" PARSER "_" image "#" NAME "#111"
+                    else
+                        print title "#" SRC " " SRC " hoster " svid "#https://img.beeg.com/236x177/" pic ".jpg#" PARSER "_" pic ".jpg#" NAME "#111"
+
+                    }
+            title = ""
+            id = ""
+            svid = ""
+            setid = ""
+            duration = ""
+            pic = ""
+            image = ""
+
       }
 ' >/tmp/tithek/$PARSER.list
 	echo "/tmp/tithek/$PARSER.list"
 }
 
-hosterlist()
+play()
 {
-	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		/tmp/localhoster/hoster.sh youtube_dl http://beeg.com/$PARAM > $TMP/cache.$FILENAME.1
-		piccount=0
+	/tmp/localhoster/hoster.sh youtube_dl https://beeg.com/$PARAM > $TMP/cache.$PARSER.$INPUT.1
+	STREAMURL=`cat $TMP/cache.$PARSER.$INPUT.1`
+	cat $STREAMURL | head -n1
+}
 
-		while read -u 3 ROUND; do
-			TITLE=`echo $ROUND | cut -d"/" -f6`
-			PIC="http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr '/' '.'`.jpg"
-			NEWPAGE="$ROUND"
-
-			if [ -z "$PIC" ] || [ "$PIC" = ".jpg" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-			fi
-
-			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-				if [ ! -e $TMP/$FILENAME.list ];then
-					touch $TMP/$FILENAME.list
-				fi
-				piccount=`expr $piccount + 1`
-				LINE="$TITLE#$NEWPAGE#$PIC#$TITLE.$piccount.jpg#$NAME#2"
-				echo "$LINE" >> $TMP/$FILENAME.list
-			fi
-
-		done 3<$TMP/cache.$FILENAME.1
-		rm $TMP/cache.* > /dev/null 2>&1
-	fi
-	echo "$TMP/$FILENAME.list"
+hoster()
+{
+	echo https://beeg.com/$PARAM
 }
 
 #unused
-play()
+play1()
 {
 	$curlbin -o - $URL$PARAM | sed -e 's/{/{\n/g' -e 's/,/,\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v PARSER=$PARSER -v NAME=$NAME '
 BEGIN { table = ""
@@ -270,48 +301,32 @@ function decrypt_url(url)
 
 tags()
 {
-	$curlbin -o - ${URL}index/main/0/pc | sed -e 's/{DATA_MARKERS}/data=pc.XX/g' -e 's/{/{\n/g' -e 's/,/,\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
+
+if [ ! -e "/tmp/tithek/$PARSER.list" ]; then
+#{"tag":"pump","videos":11}
+#	$curlbin -o - ${URL}index/main/0/pc | sed -e 's/{DATA_MARKERS}/data=pc.XX/g' -e 's/{/{\n/g' -e 's/,/,\n/g' -e 's/\[/\[\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v PARAM=$PARAM -v 
+	$curlbin -o - ${URL}index/main/0/pc | sed -e 's/{DATA_MARKERS}/data=pc.XX/g' -e 's/{/{\n/g' -e 's/\}/\n\}/g' -e 's/\]/\n\]/g' | awk -v PARAM=$PARAM -v SRC=$SRC -v NAME=$NAME '
 BEGIN { table = ""
       }
-/\"/  { m = 1
-        while (m == 1) {
-           s = $0
-           i = gsub("[\"]", "x", s)
-           m = i % 2
-           if (m == 1) {
-              getline l
-              $0 = $0 l
-           }
-        }
-      }
-/^\{/ { next
-      }
-/\[$/ { split($0, a, "\"")
-        table = a[2]
-        next
-      }
-/^\}/ { next
-      }
-/^\]/ { table = ""
-        next
-      }
-      { if (table == PARAM) {
-           split($0, a, "\"")
-           title = a[2]
-           tag = title
+/"tag":/ { split($0, a, "\"")
+           tag = a[4]
+#print "00000: " $0
+#print "22222: " tag
+           title = toupper(tag)
            gsub(/ /, "%20", tag)
            print title "#" SRC " " SRC " videos index/tag/0/pc?tag=" tag "#http://atemio.dyndns.tv/mediathek/menu/" tag ".jpg#" tag ".jpg#" NAME "#0"
-        }
       }
 ' >/tmp/tithek/$PARSER.list
 	echo "/tmp/tithek/$PARSER.list"
+fi
+
 }
 
 case $INPUT in
-#	init) $INPUT;;
+	init) $INPUT;;
 	mainmenu) $INPUT;;
 	videos) $INPUT;;
-	hosterlist) $INPUT;;
+	hoster) $INPUT;;
 	play) $INPUT;;
 	tags) $INPUT;;
 	page) $INPUT;;
