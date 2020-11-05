@@ -40,7 +40,7 @@ init()
 mainmenu()
 {
 	echo "Genre#$SRC $SRC genre 'categories'#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://atemio.dyndns.tv/mediathek/menu/pornstars.jpg#pornstars.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://atemio.dyndns.tv/mediathek/menu/pornstars.jpg#pornstars.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Suchen#$SRC $SRC search '/video/search?search=%search%&page=' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
@@ -462,7 +462,7 @@ search()
 							piccount += 1
 							# in naechste zeile springen
 							# \x27 = single quotes
-							print title "#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 						}
 		
 						# 27. reset variables
@@ -475,7 +475,7 @@ search()
 		         	}
 				}
 				# next page init
-			END
+			END \
 				{
 #				print "pages3: " pages
 #				print "NEXT + 1: " NEXT + 1
@@ -523,7 +523,7 @@ searchold()
 				piccount=`expr $piccount + 1`
 
 				if [ `cat $TMP/$FILENAME.list | grep "#$NEWPAGE#" | wc -l` -eq 0 ];then
-					LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#111"
+					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#111"
 				fi
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
@@ -755,7 +755,7 @@ pornstars()
 		         	}
 				}				
 				# next page init
-			END
+			END \
 				{
 					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
@@ -775,6 +775,11 @@ play()
 #	echo $URL$PAGE
 }
 
+hoster()
+{
+	echo $URL$PAGE
+}
+
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
@@ -784,5 +789,5 @@ case $INPUT in
 	genre) $INPUT;;
 	genreold) $INPUT;;
 	pornstars) $INPUT;;
-
+	hoster) $INPUT;;
 esac
