@@ -7,8 +7,8 @@ PAGE=$3
 NEXT=$4
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-#URL=http://www.myspass.de
-URL=http://m.myspass.de
+URL=http://www.myspass.de
+#URL=http://m.myspass.de
 NAME="MySpass"
 
 case $2 in
@@ -40,12 +40,341 @@ init()
 
 mainmenu()
 {
-	echo "Ganze Folgen#$SRC $SRC season 'api/index.php?command=formats' 1#http://atemio.dyndns.tv/mediathek/menu/shows.jpg#shows.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Von A-Z#$SRC $SRC season 'sendungen-a-bis-z/' 1#http://atemio.dyndns.tv/mediathek/menu/shows.jpg#a-z.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Suchen#$SRC $SRC search 'frontend/json/search-videos.php?QUERY_STRING=%search%' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
 season()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+			{
+				# setzt suchvariable auf 0 vor dem start
+				piccount = 0
+				pages = "1"
+			}
+			/<div id=\"content\" class=\"container\"/ \
+			{
+                found = 1
+            }
+			/<a href=/ \
+			{
+                if(found == 1)
+                {
+    				i = index($0, "<a href=\"") + 9
+    	       		j = index(substr($0, i), "\"") - 1
+	    			url = substr($0, i, j)
+                }
+            }
+			/data-src=/ \
+			{
+                if(found == 1)
+                {
+				    i = index($0, "data-src=\"") + 10
+	                j = index(substr($0, i), "\"") - 1
+				    pic = substr($0, i, j)
+                }
+            }
+			/ alt=\"/ \
+			{
+                if(found == 1)
+                {
+	    			i = index($0, "alt=\"") + 5
+               		j = index(substr($0, i), "\"") - 1
+	    			title = substr($0, i, j)
+                }
+            }
+			/data-srcset=/ \
+			{
+                if(found == 1)
+                {
+	    			i = index($0, "alt=\"") + 5
+               		j = index(substr($0, i), "\"") - 1
+	    			title = substr($0, i, j)
+                    if(title != "")
+                    {
+				        piccount += 1
+				        if ( pic == "" )
+				        {
+	                    			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				        }
+				        else
+					        pic = "http:" pic
+
+				        print title "#" SRC " " SRC " year \x27" url "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+                        title = ""
+                        url = ""
+                        pic = ""
+                    }
+                }
+			}
+			/<img class=/ \
+			{
+                if(found == 1)
+                {
+    				i = index($0, " src=\"") + 6
+	           		j = index(substr($0, i), "\"") - 1
+	    			pic = substr($0, i, j)
+
+                    if(title != "")
+                    {
+				        piccount += 1
+				        if ( pic == "" )
+				        {
+	                    			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				        }
+				        else
+					        pic = "http:" pic
+
+				        print title "#" SRC " " SRC " year \x27" url "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+                        title = ""
+                        url = ""
+                        pic = ""
+                    }
+                }
+            }
+			/<footer class="footer-info row">/ \
+			{
+                found = 0
+                title = ""
+                url = ""
+                pic = ""
+            }
+			END \
+			{
+#				if (curpage != pages)
+#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+			}
+		# schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+}
+
+year()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | tr -d '\n' | tr -d '\r' | sed 's/<option/\n<option/g' | sed 's!</option>!</option>\n!g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+			{
+				# setzt suchvariable auf 0 vor dem start
+				piccount = 0
+				pages = "1"
+                found = 1
+			}
+			/<div id=\"content\" class=\"container\"/ \
+			{
+                found = 1
+            }
+			/data-remote-endpoint=/ \
+            {
+    				i = index($0, "data-remote-endpoint=\"") + 22
+    	       		j = index(substr($0, i), "\"") - 1
+	    			url1 = substr($0, i, j)
+            }
+			/<option data-remote-args=/ \
+			{
+                if(found == 1)
+                {
+    				i = index($0, "<option data-remote-args=\"") + 26
+    	       		j = index(substr($0, i), "\"") - 1
+	    			url2 = substr($0, i, j)
+
+                    i = index($0, ">") + 1
+    	       		j = index(substr($0, i), "<") - 1
+	    			title = substr($0, i, j)
+
+                    gsub(/^[ \t]+/,"",title)
+                    gsub(/[ \t]+$/,"",title)
+                    gsub(/\t+/," / ",title)
+
+    				i = index($0, "&category=") + 10
+    	       		j = index(substr($0, i), "\"") - 1
+	    			category = substr($0, i, j)
+
+    				print "Staffel " title " (" category ")#" SRC " " SRC " episodes \x27" url1 url2 "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+
+                }
+            }
+			/<footer class="footer-info row">/ \
+			{
+                found = 0
+                title = ""
+                url = ""
+                pic = ""
+            }
+			END \
+			{
+#				if (curpage != pages)
+#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+			}
+		# schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+}
+
+episodes()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | sed 's/\\n/\n/g' | tr -d '\\' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+			{
+				# setzt suchvariable auf 0 vor dem start
+				piccount = 0
+				pages = "1"
+                found = 1
+			}
+			/<div id=\"content\" class=\"container\"/ \
+			{
+                found = 1
+            }
+			/<td><a href=/ \
+			{
+                if(found == 1)
+                {
+    				i = index($0, "<a href=\"") + 9
+    	       		j = index(substr($0, i), "\"") - 1
+	    			url = substr($0, i, j)
+
+	    			i = index($0, "/\">") + 3
+               		j = index(substr($0, i), "<") - 1
+	    			title = substr($0, i, j)
+
+                    if(title != "")
+                    {
+				        piccount += 1
+				        if ( pic == "" )
+				        {
+	                    	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				        }
+				        else
+					        pic = "http:" pic
+
+				        print title "#" SRC " " SRC " play \x27" url "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+                        title = ""
+                        url = ""
+                        pic = ""
+                    }
+                }
+            }
+			END \
+			{
+#				if (curpage != pages)
+#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+			}
+		# schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+}
+
+search()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | sed 's/{"uniqueID":/\n{"uniqueID":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+			{
+				# setzt suchvariable auf 0 vor dem start
+				piccount = 0
+				pages = "1"
+			}
+			/"uniqueID"/ \
+			{
+#				print "1111111" $0
+				i = index($0, "\"title\":\"") + 9
+	            		j = index(substr($0, i), "\",\"") - 1
+				title = substr($0, i, j)
+#				print "title: " title
+
+				i = index($0, "\"broadcast\":\"") + 13
+	            		j = index(substr($0, i), "\",\"") - 1
+				extra = substr($0, i, j)
+#				print "extra: " extra
+
+				i = index($0, "\"url\":\"") + 7
+	            		j = index(substr($0, i), "\"") - 1
+				newpage = substr($0, i, j)
+				gsub(/\\/, "", newpage)
+
+#				print "newpage: " newpage
+
+				i = index($0, "\"teaser\":\"") + 10
+	            		j = index(substr($0, i), "\"") - 1
+				pic = substr($0, i, j)
+				gsub(/\\/, "", pic)
+#				print "pic: " pic
+
+				piccount += 1
+				if ( pic == "" )
+				{
+	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				}
+				print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+				next
+			}
+			END \
+			{
+				if (curpage != pages)
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+			}
+		# schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+}
+
+play()
+{
+	rm $TMP/$FILENAME.list
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+        ID=$(echo $PAGE | tr '/' '\n' | tail -n2 | head -n1)
+        ROUND=$ID
+		$curlbin https://www.myspass.de/includes/apps/video/getvideometadataxml.php?id=$ID > "$TMP/cache.$FILENAME.$ROUND.1"
+		
+
+		TITLE="`cat $TMP/cache.$FILENAME.$ROUND.1 | sed 's/<title><!\[CDATA\[/\nfound=\]/g' | grep ^found= | cut -d"]" -f2`"
+		NEWPAGE="`cat $TMP/cache.$FILENAME.$ROUND.1 | sed 's/<url_flv><!\[CDATA\[/\nfound=\]/g' | grep ^found= | cut -d"]" -f2`"
+
+        ID_DUMMY=$(echo $NEWPAGE | sed -nr 's/.*myspass.*\/.*\/(.*+)\/.*/\1/p')
+        EXTRAID_DUMMY=$(echo $NEWPAGE | sed -nr 's/.*myspass.*\/(.*+)\/.*\/.*/\1/p')
+        SEASONID_DUMMY=$(echo $NEWPAGE | sed -nr 's/.*myspass.*\/(.*+)\/.*\/.*\/.*/\1/p')
+        EXTRAID=$(expr $EXTRAID_DUMMY / $ROUND)
+        SEASONID=$(cat $TMP/cache.$FILENAME.$ROUND.1 | sed -nr 's/.*season_id.*\[CDATA\[(.*+)].*].*/\1/p')
+
+
+        NEWPAGE=$(echo $NEWPAGE | sed "s!/$ID_DUMMY\_!/$ROUND\_!")
+        NEWPAGE=$(echo $NEWPAGE | sed "s!/$ID_DUMMY/!/$ROUND/!")
+        NEWPAGE=$(echo $NEWPAGE | sed "s!/$EXTRAID_DUMMY/!/$EXTRAID/!")
+        NEWPAGE=$(echo $NEWPAGE | sed "s!/$SEASONID_DUMMY/!/$SEASONID/!")
+
+		PIC="http:`cat $TMP/cache.$FILENAME.$ROUND.1 | sed 's/<imagePreview><!\[CDATA\[/\nfound=\]/g' | grep ^found= | cut -d"]" -f2`"
+
+		if [ -z "$PIC" ] || "$PIC" = "http:" ] ; then
+			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+		fi
+
+		echo "$NEWPAGE" > $TMP/$FILENAME.list
+    fi
+	echo "$TMP/$FILENAME.list"
+}
+
+
+seasonapi()
 {
 	rm "$TMP/$FILENAME.list"
 
@@ -107,7 +436,7 @@ season()
 	echo "$TMP/$FILENAME.list"
 }
 
-year()
+yearapi()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | sed 's/{"season_id":/\n{"season_id":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
@@ -167,7 +496,7 @@ year()
 	echo "$TMP/$FILENAME.list"
 }
 
-episodes()
+episodesapi()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | sed 's/{"format":/\n{"format":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
@@ -233,7 +562,7 @@ episodes()
 	echo "$TMP/$FILENAME.list"
 }
 
-search()
+searchapi()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | sed 's/{"uniqueID":/\n{"uniqueID":/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
@@ -291,25 +620,26 @@ search()
 	echo "$TMP/$FILENAME.list"
 }
 
-hoster()
+hosterapi()
 {
 	echo $URL$PAGE
 }
 
-play()
+playapi()
 {
 	echo $URL$PAGE
 }
 
-parts()
+partsapi()
 {
 	rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		FOUND=`echo $PAGE | sed 's/Teil/\n/g' | grep ^http | sed 's!http://www.myspass.de/myspass!!g' | sed 's!http://www.myspass.de!!g'`
 #		IDLIST=`$curlbin "$PAGE" | grep "$FOUND" | sed 's/<a href=/\nfound=/g' | grep ^found= | grep title= | grep -v myspassTeaserTextDesc | cut -d '"' -f2 | sort -u | tr '/' ' ' | awk '{ print $NF }'`
 		IDLIST=`$curlbin "$PAGE" | grep "$FOUND"| sed 's/<a href=/\nfound=/g' | grep ^found= | tr -d ' ' | cut -d "/" -f6 | sort -u`
-#echo idlist $IDLIST
+
 		for ROUND in $IDLIST; do
+
 			$curlbin http://www.myspass.de/includes/apps/video/getvideometadataxml.php?id=$ROUND > "$TMP/cache.$FILENAME.$ROUND.1"
 			
 			#	<title><![CDATA[23. September 2006 - Teil 1]]></title>
@@ -380,4 +710,6 @@ case $INPUT in
 	episodes) $INPUT;;
 	play) $INPUT;;
 	parts) $INPUT;;
+	alpha) $INPUT;;
+	play) $INPUT;;
 esac
