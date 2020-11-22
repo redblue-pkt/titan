@@ -392,6 +392,12 @@ streamcrypt()
 	#INPUT=$(echo $INPUT | sed "s!streamcrypt.net/!!")
 }
 
+voe() 
+{ 
+	URL=`$curlbin "$INPUT" | sed -nr "s/.*src: '([^']+)'.*/\1/p"` 
+	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'` 
+	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
+} 
 
 vodlocker()
 {
@@ -918,6 +924,7 @@ if [ "$TYPE" == "get" ];then
 		mixdrop) mixdrop $INPUT;;
 		vshare) vshare $INPUT;;
 		streamcrypt) hoster2=$(streamcrypt $INPUT);;
+		voe) voe $INPUT;;
 #		*) all $INPUT;;
 	esac
 if [ ! -z "$hoster2" ];then
@@ -962,6 +969,7 @@ if [ ! -z "$hoster2" ];then
 		mixdrop) mixdrop $INPUT;;
 		vshare) vshare $INPUT;;
 		streamcrypt) streamcrypt $INPUT;;
+		voe) voe $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
