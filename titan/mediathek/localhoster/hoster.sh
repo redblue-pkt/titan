@@ -396,8 +396,8 @@ voe()
 { 
 	URL=`$curlbin "$INPUT" | sed -nr "s/.*src: '([^']+)'.*/\1/p"` 
 	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'` 
-#	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
-	echo "$URL" 
+	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
+#	echo "$URL" 
 } 
 
 vodlocker()
