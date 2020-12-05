@@ -126,7 +126,7 @@ void start(void)
 		addconfigtmp("tithek_kinox_url", "https://kinos.to");
 
 	if(getconfig("tithek_kinox_localhoster", NULL) == NULL)
-		addconfigtmp("tithek_kinox_localhoster", "2");
+		addconfigtmp("tithek_kinox_localhoster", "1");
 
 	if(getconfig("tithek_kinox_pic", NULL) == NULL)
 		addconfigtmp("tithek_kinox_pic", "0");
