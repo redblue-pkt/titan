@@ -309,10 +309,6 @@ int subtitleflag = 0;
 char *subtext = NULL;
 #else
 struct stimerthread* subtitlethread = NULL;
-uint32_t buf_pos_ms = 0;
-uint32_t duration_ms = 0;
-int subtitleflag = 0;
-char *subtext = NULL;
 #endif
 
 //titan player
@@ -1070,41 +1066,88 @@ void playersubtitle_thread()
 	subtitlethread = NULL;
 }
 #else
-void playersubtitle_thread()
+//void playersubtitle_thread()
+//void tithekdownloadthread(struct stimerthread* timernode, struct download* node, int flag)
+void playersubtitle_thread(struct stimerthread* timernode, char* input, int flag)
 {
-	struct skin* framebuffer = getscreen("framebuffer");
-	struct skin* subtitle = getscreen("gstsubtitle");
-	char* bg = NULL;
-	int count = 0;
-	
-	subtitle->bgcol = -1;
-	
-	setnodeattr(subtitle, framebuffer, 0);
-	bg = savescreen(subtitle);
-	
-	while(subtitlethread->aktion != STOP)
+    uint32_t sub_duration_ms = 0;
+    uint32_t sub_pts_ms = 0;
+    char *sub_text = NULL;
+    int sub_sec = 0;
+
+	char* sub_duration = oregex(".*duration=(.*);pts=.*", input);
+
+	if(sub_duration != NULL)
+		sub_duration_ms = atoi(sub_duration);
+
+	char* sub_pts = oregex(".*;pts=(.*);trackid=.*", input);
+
+	if(sub_pts != NULL)
 	{
-		if(duration_ms != 0)
-		{
-			count = 0;
-			changetext(subtitle, subtext);
-			count = duration_ms / 100;
-			drawscreen(subtitle, 0, 0);
-			while(count > 0 && subtitlethread->aktion != STOP)
-			{
-				usleep(100000);
-				count = count - 1;
-			}
-			changetext(subtitle, " ");
-			drawscreen(subtitle, 0, 0);
-			duration_ms = 0;
-		}
-		else
-			usleep(100000);
+        sub_pts_ms = atoi(sub_pts);
+        sub_sec = sub_pts_ms / 90000;
 	}
-	free(subtext); subtext = NULL;
-	restorescreen(bg, subtitle);
-	blitfb(0);
+
+	char* sub_trackid = oregex(".*;trackid=(.*);subtext.*", input);
+
+	sub_text = oregex(".*;subtext=(.*).*", input);
+
+//    if(sub_text != NULL)
+//    {
+	    struct skin* framebuffer = getscreen("framebuffer");
+	    struct skin* subtitle = getscreen("gstsubtitle");
+	    char* bg = NULL;
+	    int count = 0;
+	    
+	    subtitle->bgcol = -1;
+	    
+	    setnodeattr(subtitle, framebuffer, 0);
+	    bg = savescreen(subtitle);
+	    
+	    while(subtitlethread->aktion != STOP)
+	    {
+		    if(sub_duration_ms != 0)
+		    {
+            	int64_t pts = 0;
+            	int sec = 0;
+
+            	if(player && player->playback)
+            	{
+            		player->playback->Command(player, PLAYBACK_PTS, &pts);
+            		sec = pts / 90000;
+
+            	}
+           
+		        while(sec < sub_sec && subtitlethread->aktion != STOP)
+		        {
+			        sleep(1);
+			        sec++;
+		        }
+
+		        count = 0;
+		        changetext(subtitle, sub_text);
+printf("send sub_text: %s\n", sub_text);
+//			    count = duration_ms / 100;
+    			count = sub_duration_ms;
+			    drawscreen(subtitle, 0, 0);
+
+			    while(count > 0 && subtitlethread->aktion != STOP)
+			    {
+				    usleep(100000);
+				    count = count - 1;
+			    }
+			    changetext(subtitle, " ");
+			    drawscreen(subtitle, 0, 0);
+			    sub_duration_ms = 0;
+		    }
+		    else
+			    usleep(100000);
+
+	    }
+    	restorescreen(bg, subtitle);
+    	blitfb(0);
+    	free(sub_text); sub_text = NULL;
+//    }
 	subtitlethread = NULL;
 }
 #endif
@@ -2211,6 +2254,7 @@ int playerstop()
 
 	free(player);
 	player = NULL;
+
 // move to mc
 //	set_player_sound(1);
 #endif
@@ -3820,51 +3864,8 @@ char* getsubtext()
 	if(player && player->container && player->container->selectedContainer)
 		player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)&tmpstr);
 
-	char* duration = oregex(".*duration=(.*);pts=.*", tmpstr);
-//	printf("[TITAN/getsubtext] duration %s\n", duration);
-	debug(150, "duration %s", duration);
-
-	int debugdummy = 1;
-
-	if(duration != NULL)
-	{
-		debugdummy = 1;
-//		printf("[TITAN/getsubtext] duration %d\n", atoi(duration));
-//		debug(150, "duration %d", atoi(duration));
-		duration_ms = atoi(duration);
-	}
-
-	char* pts = oregex(".*;pts=(.*);trackid=.*", tmpstr);
-//	printf("[TITAN/getsubtext] pts %s\n", pts);
-	debug(150, "pts %s", pts);
-
-	if(pts != NULL)
-	{
-		debugdummy = 1;
-//		printf("[TITAN/getsubtext] pts int %d\n", atoi(pts));
-//		debug(150, "pts int %d", atoi(pts);
-		debugdummy = 0;
-	}
-
-	char* trackid = oregex(".*;trackid=(.*);trackid=.*", tmpstr);
-//	printf("[TITAN/getsubtext] trackid %s\n", trackid);
-	debug(150, "trackid %s", trackid);
-
-	if(trackid != NULL)
-	{
-		debugdummy = 1;
-//		printf("[TITAN/getsubtext] trackid int %d\n", atoi(trackid));
-//		debug(150, "trackid int %d", atoi(trackid);
-		debugdummy = 0;
-	}
-
-	subtext = oregex(".*;subtext=(.*).*", tmpstr);
-//	printf("[TITAN/getsubtext] subtext %s\n", subtext);
-	debug(150, "subtext %s", subtext);
-
-	if(subtitlethread == NULL)
-		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
-
+//	if(subtitlethread == NULL)
+		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, (void*)tmpstr, NULL, NULL);
 
 	return subtext;
 }
