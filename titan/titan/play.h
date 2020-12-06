@@ -1861,7 +1861,7 @@ playerstart:
 				}
 #else
 #ifdef EXTEPLAYER3
-//				getsubtext();
+				getsubtext();
 #endif
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
