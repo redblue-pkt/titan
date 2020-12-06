@@ -111,7 +111,7 @@ void screenmc_videoplayer()
 			refresh = 0;
 
 #ifdef EXTEPLAYER3
-//		getsubtext();
+		getsubtext();
 #endif
 		if(status.play == 1 || status.playspeed != 0)
 		{
