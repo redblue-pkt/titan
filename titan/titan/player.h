@@ -1066,8 +1066,6 @@ void playersubtitle_thread()
 	subtitlethread = NULL;
 }
 #else
-//void playersubtitle_thread()
-//void tithekdownloadthread(struct stimerthread* timernode, struct download* node, int flag)
 void playersubtitle_thread(struct stimerthread* timernode, char* input, int flag)
 {
     uint32_t sub_duration_ms = 0;
