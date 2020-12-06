@@ -2266,7 +2266,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			struct skin* imdbapiplugin = NULL;
 			struct skin* tmdbplugin = NULL;
 
-			if(flag > 0 || (isrec == 0 && iscam == 0 && id != NULL))
+			if(flag > 0 || (isrec == 0 && iscam == 0))
 			{
 				if(flag == 2 && imdb != NULL && id != NULL)
 					imdb->id = ostrcat(id, NULL, 0, 0);
@@ -2316,7 +2316,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 
 				if(tmdb != NULL && tmdb->mvi != NULL) backdrop = atoi(tmdb->mvi);
 			}
-			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0) || id == NULL)
+			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0))
 			{
 				char* poster = NULL, *plot = NULL, *timestamp = NULL, *cmd = NULL, *tmpstr1 = NULL;
 
