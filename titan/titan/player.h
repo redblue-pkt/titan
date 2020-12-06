@@ -1068,86 +1068,87 @@ void playersubtitle_thread()
 #else
 void playersubtitle_thread(struct stimerthread* timernode, char* input, int flag)
 {
-    uint32_t sub_duration_ms = 0;
-    uint32_t sub_pts_ms = 0;
-    char *sub_text = NULL;
-    int sub_sec = 0;
+	uint32_t sub_duration_ms = 0;
+	uint32_t sub_pts_ms = 0;
+	char *sub_text = NULL;
+	int sub_pts_sec = 0;
+	int sub_duration_sec = 0;
 
 	char* sub_duration = oregex(".*duration=(.*);pts=.*", input);
 
 	if(sub_duration != NULL)
+	{
 		sub_duration_ms = atoi(sub_duration);
+		sub_duration_sec = sub_duration_ms / 1000 + 1;
+	}
 
 	char* sub_pts = oregex(".*;pts=(.*);trackid=.*", input);
 
 	if(sub_pts != NULL)
 	{
-        sub_pts_ms = atoi(sub_pts);
-        sub_sec = sub_pts_ms / 90000;
+		sub_pts_ms = atoi(sub_pts);
+		sub_pts_sec = sub_pts_ms / 90000;
 	}
 
-	char* sub_trackid = oregex(".*;trackid=(.*);subtext.*", input);
 
+	char* sub_trackid = oregex(".*;trackid=(.*);subtext.*", input);
 	sub_text = oregex(".*;subtext=(.*).*", input);
 
-//    if(sub_text != NULL)
-//    {
-	    struct skin* framebuffer = getscreen("framebuffer");
-	    struct skin* subtitle = getscreen("gstsubtitle");
-	    char* bg = NULL;
-	    int count = 0;
-	    
-	    subtitle->bgcol = -1;
-	    
-	    setnodeattr(subtitle, framebuffer, 0);
-	    bg = savescreen(subtitle);
-	    
-	    while(subtitlethread->aktion != STOP)
-	    {
-		    if(sub_duration_ms != 0)
-		    {
-            	int64_t pts = 0;
-            	int sec = 0;
+	struct skin* framebuffer = getscreen("framebuffer");
+	struct skin* subtitle = getscreen("gstsubtitle");
+	char* bg = NULL;
+	int count = 0;
 
-            	if(player && player->playback)
-            	{
-            		player->playback->Command(player, PLAYBACK_PTS, &pts);
-            		sec = pts / 90000;
+	subtitle->bgcol = -1;
 
-            	}
-           
-		        while(sec < sub_sec && subtitlethread->aktion != STOP)
-		        {
-			        sleep(1);
-			        sec++;
-		        }
+	setnodeattr(subtitle, framebuffer, 0);
+	bg = savescreen(subtitle);
 
-		        count = 0;
-		        changetext(subtitle, sub_text);
-printf("send sub_text: %s\n", sub_text);
-//			    count = duration_ms / 100;
-    			count = sub_duration_ms;
-			    drawscreen(subtitle, 0, 0);
+	while(subtitlethread->aktion != STOP)
+	{
+		if(sub_duration_ms != 0)
+		{
+			int64_t pts = 0;
+			int sec = 0;
 
-			    while(count > 0 && subtitlethread->aktion != STOP)
-			    {
-				    usleep(100000);
-				    count = count - 1;
-			    }
-			    changetext(subtitle, " ");
-			    drawscreen(subtitle, 0, 0);
-			    sub_duration_ms = 0;
-		    }
-		    else
-			    usleep(100000);
+			if(player && player->playback)
+			{
+				player->playback->Command(player, PLAYBACK_PTS, &pts);
+				sec = pts / 90000;
+			}
 
-	    }
-    	restorescreen(bg, subtitle);
-    	blitfb(0);
-    	free(sub_text); sub_text = NULL;
-//    }
-	subtitlethread = NULL;
-}
+			while(sec < sub_pts_sec && subtitlethread->aktion != STOP)
+			{
+				sleep(1);
+				sec++;
+			}
+
+			count = 0;
+			changetext(subtitle, sub_text);
+			printf("send sub_duration_ms=%d sub_duration_sec=%d sub_text: %s\n",sub_duration_ms, sub_duration_sec , sub_text);
+			
+//		    count = sub_duration_ms / 100;
+			count = sub_duration_ms;
+			drawscreen(subtitle, 0, 0);
+
+			while(count > 0 && subtitlethread->aktion != STOP)
+			{
+				usleep(100000);
+				count = count - 1;
+			}
+			changetext(subtitle, " ");
+			drawscreen(subtitle, 0, 0);
+			sub_duration_ms = 0;
+		}
+		else
+			usleep(100000);
+
+		}
+		restorescreen(bg, subtitle);
+		blitfb(0);
+		free(sub_text); sub_text = NULL;
+		subtitlethread = NULL;
+	}
 #endif
 
 #ifdef EPLAYER4
