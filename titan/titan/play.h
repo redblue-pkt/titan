@@ -2051,6 +2051,10 @@ playerstart:
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can
 			//produce a segfault
+			
+			if(status.repeat == 1)
+				goto playerstart;
+			
 playerend:
 			sleep(1);
 			if(playertype == 1)

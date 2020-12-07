@@ -2300,12 +2300,14 @@ void screentithekplay(char* titheklink, char* title, int first)
 	if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 	{
 		changetext(b4, _("EDIT FAV"));
+		changetext(b5, _("DEL FAV"));
 		b5->hidden = NO;
 	}
 	else
 	{
 		changetext(b4, _("ADD FAV"));
-		b5->hidden = YES;
+		changetext(b5, _("Repeat"));
+//		b5->hidden = YES;
 	}
 
 	drawscreen(load, 0, 0);
@@ -2511,12 +2513,13 @@ waitrcstart:
 		if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 		{
 //			changetext(b4, _("EDIT FAV"));
+//			changetext(b5, _("DEL FAV"));
 			b5->hidden = NO;
 		}
 		else
 		{
 //			changetext(b4, _("ADD FAV"));
-			b5->hidden = YES;
+//			b5->hidden = YES;
 		}
 
 		if(rcret == getrcconfigint("rcred", NULL))
@@ -3151,6 +3154,22 @@ why ?
 				}
 			}
 		}
+		else if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			if(listbox->select != NULL && listbox->select->handle != NULL)
+			{
+				if(status.repeat == 0)
+				{
+					changetext(b5, _("Repeat-On"));
+					status.repeat = 1;
+				}
+				else
+				{
+					status.repeat = 0;
+					changetext(b5, _("Repeat"));
+				}
+			}
+		}
 //		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) != 0)
 //		else if(rcret == getrcconfigint("rcgreen", NULL) && (ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0 || !ostrncmp("/", ((struct tithek*)listbox->select->handle)->link, 1)))
 		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrstr(title, _("Tithek - Mainmenu - Favoriten")) == NULL)
@@ -3186,12 +3205,18 @@ why ?
 		if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 		{
 			changetext(b4, _("EDIT FAV"));
+			changetext(b5, _("DEL FAV"));
+
 			b5->hidden = NO;
 		}
 		else
 		{
 			changetext(b4, _("ADD FAV"));
-			b5->hidden = YES;
+//			b5->hidden = YES;
+			if(status.repeat == 0)
+				changetext(b5, _("Repeat"));
+			else
+				changetext(b5, _("Repeat-On"));
 		}
 
 
@@ -3206,6 +3231,7 @@ why ?
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
 	clearscreen(grid);
+	status.repeat = 0;
 
 	if(first == 1)
 	{
