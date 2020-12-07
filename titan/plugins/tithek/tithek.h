@@ -2288,26 +2288,53 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* countpage = getscreennode(grid, "countpage");
 	struct skin* b4 = getscreennode(grid, "b4");
 	struct skin* b5 = getscreennode(grid, "b5");
+	struct skin* b6 = getscreennode(grid, "b6");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
 
 	b4->usesavebg = 1;
 	b5->usesavebg = 1;
+	b6->usesavebg = 1;
 	drawscreen(grid, 2, 0);
-
+/*
 //	if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
 	if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 	{
 		changetext(b4, _("EDIT FAV"));
 		changetext(b5, _("DEL FAV"));
+		changetext(b6, _("Repeat"));
 		b5->hidden = NO;
 	}
 	else
 	{
 		changetext(b4, _("ADD FAV"));
 		changetext(b5, _("Repeat"));
+		changetext(b6, _("Exit Tithek"));
 //		b5->hidden = YES;
+	}
+
+*/
+	if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
+	{
+		changetext(b4, _("EDIT FAV"));
+		changetext(b5, _("DEL FAV"));
+		if(status.repeat == 0)
+			changetext(b6, _("Repeat"));
+		else
+			changetext(b6, _("Repeat-On"));
+//			b5->hidden = NO;
+	}
+	else
+	{
+		changetext(b4, _("ADD FAV"));
+//			b5->hidden = YES;
+		if(status.repeat == 0)
+			changetext(b5, _("Repeat"));
+		else
+			changetext(b5, _("Repeat-On"));
+
+		changetext(b6, _("Exit Tithek"));
 	}
 
 	drawscreen(load, 0, 0);
@@ -2473,11 +2500,11 @@ waitrcstart:
 			goto waitrcstart;
 		}
 
-		if(rcret == getrcconfigint("rcblue", NULL))
-		{
-			tithekexit = 1;
-			break;
-		}
+//		if(rcret == getrcconfigint("rcblue", NULL))
+//		{
+//			tithekexit = 1;
+//			break;
+//		}
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -2513,8 +2540,7 @@ waitrcstart:
 		if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 		{
 //			changetext(b4, _("EDIT FAV"));
-//			changetext(b5, _("DEL FAV"));
-			b5->hidden = NO;
+//			b5->hidden = NO;
 		}
 		else
 		{
@@ -3159,16 +3185,25 @@ why ?
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
 				if(status.repeat == 0)
-				{
-					changetext(b5, _("Repeat-On"));
 					status.repeat = 1;
-				}
 				else
-				{
 					status.repeat = 0;
-					changetext(b5, _("Repeat"));
-				}
 			}
+		}
+		else if(rcret == getrcconfigint("rcblue", NULL) && ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
+		{
+			if(listbox->select != NULL && listbox->select->handle != NULL)
+			{
+				if(status.repeat == 0)
+					status.repeat = 1;
+				else
+					status.repeat = 0;
+			}
+		}
+		else if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			tithekexit = 1;
+			break;
 		}
 //		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) != 0)
 //		else if(rcret == getrcconfigint("rcgreen", NULL) && (ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0 || !ostrncmp("/", ((struct tithek*)listbox->select->handle)->link, 1)))
@@ -3206,8 +3241,11 @@ why ?
 		{
 			changetext(b4, _("EDIT FAV"));
 			changetext(b5, _("DEL FAV"));
-
-			b5->hidden = NO;
+			if(status.repeat == 0)
+				changetext(b6, _("Repeat"));
+			else
+				changetext(b6, _("Repeat-On"));
+//			b5->hidden = NO;
 		}
 		else
 		{
@@ -3217,6 +3255,8 @@ why ?
 				changetext(b5, _("Repeat"));
 			else
 				changetext(b5, _("Repeat-On"));
+
+			changetext(b6, _("Exit Tithek"));
 		}
 
 
