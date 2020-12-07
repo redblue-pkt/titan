@@ -1844,7 +1844,7 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
-	cmd = ostrcat(cmd, "ffmpeg -ss 200 -i \"", 1, 0);
+	cmd = ostrcat(cmd, "ffmpeg -ss 30 -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
@@ -1917,7 +1917,7 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
-	cmd = ostrcat(cmd, "ffmpeg -ss 60 -i \"", 1, 0);
+	cmd = ostrcat(cmd, "ffmpeg -ss 50 -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
