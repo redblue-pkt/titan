@@ -1106,6 +1106,13 @@ void playersubtitle_thread(struct stimerthread* timernode, char* input, int flag
 
 	while(subtitlethread->aktion != STOP)
 	{
+/*
+		if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+		{
+			subtitlethread->aktion = STOP;
+			goto subend;
+		}
+*/
 		if(sub_duration_ms != 0)
 		{
 			int64_t pts = 0;
@@ -1119,6 +1126,12 @@ void playersubtitle_thread(struct stimerthread* timernode, char* input, int flag
 
 			while(sec < sub_pts_sec && subtitlethread->aktion != STOP)
 			{
+				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+				{
+//					subtitlethread->aktion = STOP;
+					goto subend;
+				}
+
 				sleep(1);
 				sec++;
 			}
@@ -1133,9 +1146,16 @@ void playersubtitle_thread(struct stimerthread* timernode, char* input, int flag
 
 			while(count > 0 && subtitlethread->aktion != STOP)
 			{
+				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+				{
+//					subtitlethread->aktion = STOP;
+					goto subend;
+				}
+
 				usleep(100000);
 				count = count - 1;
 			}
+subend:
 			changetext(subtitle, " ");
 			drawscreen(subtitle, 0, 0);
 			sub_duration_ms = 0;
@@ -2251,6 +2271,9 @@ int playerstop()
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_CLOSE, NULL);
 
+//	if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+//		subtitlethread->aktion = STOP;
+					
 	free(player);
 	player = NULL;
 
@@ -3864,6 +3887,7 @@ char* getsubtext()
 		player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)&tmpstr);
 
 //	if(subtitlethread == NULL)
+	if(status.play == 1 && status.pause == 0)
 		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, (void*)tmpstr, NULL, NULL);
 
 	return subtext;
