@@ -55,7 +55,8 @@ external/flv2mpeg4/src/flv2mpeg4.c \
 external/plugins/src/png.c
 
 #libeplayer3_la_LIBADD = -lpthread -lavformat -lavcodec -lavutil -lswresample -lz -lass -lm -lpng
-libeplayer3_la_LIBADD = -lswscale -ldl -lpthread -lavformat -lavcodec -lavutil -lswresample
+#libeplayer3_la_LIBADD = -lswscale -ldl -lpthread -lavformat -lavcodec -lavutil -lswresample
+libeplayer3_la_LIBADD = -lswscale -ldl -lpthread -lavformat -lavcodec -lavutil -lswresample -lz -lass -lm -lpng
 
 bin_PROGRAMS = eplayer3
 eplayer3_SOURCES = main/exteplayer.c
