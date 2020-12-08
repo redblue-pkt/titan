@@ -106,6 +106,7 @@ ssize_t WriteWithRetry(Context_t *context, int pipefd, int fd, void *pDVBMtx, co
     int maxFd = pipefd > fd ? pipefd : fd;
     struct timeval tv;
 
+//    while(size > 0 && !context->playback->isSeeking)
     while(size > 0 && 0 == PlaybackDieNow(0) && !context->playback->isSeeking)
     {
         FD_ZERO(&rfds);
@@ -189,7 +190,8 @@ ssize_t write_with_retry(int fd, const void *buf, int size)
 {
     ssize_t ret;
     int retval = 0;
-    while(size > 0 && 0 == PlaybackDieNow(0))
+//    while(size > 0 && 0 == PlaybackDieNow(0))
+    while(size > 0)
     {
         ret = write(fd, buf, size);
         if (ret < 0)
@@ -239,7 +241,7 @@ ssize_t writev_with_retry(int fd, const struct iovec *iov, int ic)
         len += iov[i].iov_len;
         if(PlaybackDieNow(0))
         {
-            return -1;
+//            return -1;
         }
     }
     return len;
