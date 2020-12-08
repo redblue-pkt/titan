@@ -125,13 +125,13 @@ static int32_t ffmpeg_read_wrapper_base(void *opaque, uint8_t *buf, int32_t buf_
 {
     int32_t len = 0;
 //obi
-  if(0 == PlaybackDieNow(0))
-  {
+//  if(0 == PlaybackDieNow(0))
+//  {
 //obi (end)
         len = ffmpeg_real_read_org(opaque, buf, buf_size);
 //obi
-      while(len < buf_size && g_context && 0 == PlaybackDieNow(0))
-//        while(len < buf_size && g_context)
+//      while(len < buf_size && g_context && 0 == PlaybackDieNow(0))
+        while(len < buf_size && g_context)
 //obi (end)
         {
             if(type && len > 0)
@@ -158,7 +158,7 @@ static int32_t ffmpeg_read_wrapper_base(void *opaque, uint8_t *buf, int32_t buf_
             continue;
         }
 //obi
-  }
+//  }
 //obi (end)
     //printf("len [%d] finishTimeout[%d]\n", len, finishTimeout);
     return len;
@@ -274,12 +274,12 @@ static void ffmpeg_filler(Context_t *context, int32_t id, int32_t* inpause, int3
     while( (flag == 0 && avContextTab[0] != NULL && avContextTab[0]->pb != NULL && rwdiff > FILLBUFDIFF) || 
            (flag == 1 && hasfillerThreadStarted[id] == 1 && avContextTab[0] != NULL && avContextTab[0]->pb != NULL && rwdiff > FILLBUFDIFF) )
     {
-         if( 0 == PlaybackDieNow(0))
-         {
+//         if( 0 == PlaybackDieNow(0))
+//         {
 //obi
-           break;
+//           break;
 //obi (end)
-         }
+//         }
          
          if(flag == 0 && ffmpeg_buf_stop == 1)
          {
@@ -533,8 +533,8 @@ static int32_t ffmpeg_read(void *opaque, uint8_t *buf, int32_t buf_size)
     int32_t count = 2000;
 
 //obi
-    while(sumlen < buf_size && (--count) > 0 && 0 == PlaybackDieNow(0))
-//    while(sumlen < buf_size && (--count) > 0)
+//    while(sumlen < buf_size && (--count) > 0 && 0 == PlaybackDieNow(0))
+    while(sumlen < buf_size && (--count) > 0)
 //obi (end)
     {
         len = ffmpeg_read_real(opaque, buf, buf_size - sumlen);
