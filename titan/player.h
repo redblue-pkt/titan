@@ -134,6 +134,14 @@ void E2iEndMsg(void)
     funlockfile(stderr);
 }
 
+static void TerminateWakeUp()
+{
+    int ret = write(g_pfd[1], "x", 1);
+    if (ret != 1) {
+        printf("TerminateWakeUp write return %d\n", ret);
+    }
+}
+
 #endif
 
 static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbackSwitchCmd, const char *argvBuff)
@@ -1512,8 +1520,8 @@ int playerstart(char* file)
 //			container_set_ffmpeg_buf_size(size);
 #endif
 
-			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
-			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);
+//			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
+//			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);			
 		}
 		
 		debug(150, "eplayername = %s", player->output->Name);
@@ -1527,6 +1535,9 @@ int playerstart(char* file)
 		player->output->Command(player, OUTPUT_ADD, "audio");
 		player->output->Command(player, OUTPUT_ADD, "video");
 		player->output->Command(player, OUTPUT_ADD, "subtitle");
+#ifdef OEBUILD
+		player->output->Command(player, OUTPUT_SET_BUFFER_SIZE, (void*)&size);
+#endif
 #ifndef EXTEPLAYER3
 		//for subtitle
 //		SubtitleOutputDef_t subout;
@@ -1548,6 +1559,7 @@ int playerstart(char* file)
 			return 1;
 		}
 #else
+		PlaybackDieNowRegisterCallback(TerminateWakeUp);
 	    player->manager->video->Command(player, MANAGER_REGISTER_UPDATED_TRACK_INFO, UpdateVideoTrack);
 	    if (strncmp(file, "rtmp", 4) && strncmp(file, "ffrtmp", 4))
 	    {
@@ -1580,9 +1592,7 @@ int playerstart(char* file)
 			free(tmpfile);
 			return 1;
 		}
-#endif		
-
-
+#endif
 		player->output->Command(player, OUTPUT_OPEN, NULL);
 		player->playback->Command(player, PLAYBACK_PLAY, NULL);
 
@@ -2167,7 +2177,8 @@ int playergetbuffersize()
 
 #ifdef EPLAYER3
 	if(player && player->container && player->container->selectedContainer)
-		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_SIZE, (void*)&ret);
+//		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_SIZE, (void*)&ret);
+		player->output->Command(player, OUTPUT_GET_BUFFER_SIZE, &ret);
 #endif
 
 	return ret;
@@ -2179,7 +2190,8 @@ int playergetbufferstatus()
 
 #ifdef EPLAYER3
 	if(player && player->container && player->container->selectedContainer)
-		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_STATUS, (void*)&ret);
+//		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_STATUS, (void*)&ret);
+		player->output->Command(player, OUTPUT_GET_BUFFER_STATUS, &ret);
 #endif
 printf("playergetbufferstatus: %d\n", ret);
 	return ret;
@@ -2293,6 +2305,8 @@ int playerstop()
 	}
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_CLOSE, NULL);
+
+	PlaybackDieNow(1);
 
 //	if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
 //		subtitlethread->aktion = STOP;
