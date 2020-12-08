@@ -1520,8 +1520,8 @@ int playerstart(char* file)
 //			container_set_ffmpeg_buf_size(size);
 #endif
 
-//			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
-//			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);			
+			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
+			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);			
 		}
 		
 		debug(150, "eplayername = %s", player->output->Name);
@@ -1536,8 +1536,12 @@ int playerstart(char* file)
 		player->output->Command(player, OUTPUT_ADD, "video");
 		player->output->Command(player, OUTPUT_ADD, "subtitle");
 #ifdef OEBUILD
-		int32_t* size = (int32_t*)getconfigint("playerbuffersize", NULL);
-		player->output->Command(player, OUTPUT_SET_BUFFER_SIZE, (void*)&size);
+//		int32_t* size = (int32_t*)getconfigint("playerbuffersize", NULL);
+//printf("size: %d\n", size);
+//size = 10485760;
+//printf("size2: %d\n", size);
+
+//		player->output->Command(player, OUTPUT_SET_BUFFER_SIZE, (void*)&size);
 #endif
 #ifndef EXTEPLAYER3
 		//for subtitle
@@ -1560,6 +1564,10 @@ int playerstart(char* file)
 			return 1;
 		}
 #else
+
+//uint32_t linuxDvbBufferSizeMB = 1024*1024*10;
+//		player->output->Command(player, OUTPUT_SET_BUFFER_SIZE, &linuxDvbBufferSizeMB);
+
 		PlaybackDieNowRegisterCallback(TerminateWakeUp);
 	    player->manager->video->Command(player, MANAGER_REGISTER_UPDATED_TRACK_INFO, UpdateVideoTrack);
 	    if (strncmp(file, "rtmp", 4) && strncmp(file, "ffrtmp", 4))
@@ -2178,8 +2186,8 @@ int playergetbuffersize()
 
 #ifdef EPLAYER3
 	if(player && player->container && player->container->selectedContainer)
-//		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_SIZE, (void*)&ret);
-		player->output->Command(player, OUTPUT_GET_BUFFER_SIZE, &ret);
+		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_SIZE, (void*)&ret);
+//		player->output->Command(player, OUTPUT_GET_BUFFER_SIZE, &ret);
 #endif
 
 	return ret;
@@ -2191,8 +2199,8 @@ int playergetbufferstatus()
 
 #ifdef EPLAYER3
 	if(player && player->container && player->container->selectedContainer)
-//		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_STATUS, (void*)&ret);
-		player->output->Command(player, OUTPUT_GET_BUFFER_STATUS, &ret);
+		player->container->selectedContainer->Command(player, CONTAINER_GET_BUFFER_STATUS, (void*)&ret);
+//		player->output->Command(player, OUTPUT_GET_BUFFER_STATUS, &ret);
 #endif
 printf("playergetbufferstatus: %d\n", ret);
 	return ret;
