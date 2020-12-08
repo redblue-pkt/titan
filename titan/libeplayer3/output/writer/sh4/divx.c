@@ -34,12 +34,12 @@
 #include <sys/uio.h>
 #include <linux/dvb/video.h>
 #include <linux/dvb/audio.h>
-#include <linux/dvb/stm_ioctls.h>
 #include <memory.h>
 #include <asm/types.h>
 #include <pthread.h>
 #include <errno.h>
 
+#include "stm_ioctls.h"
 #include "common.h"
 #include "output.h"
 #include "debug.h"
@@ -177,7 +177,7 @@ static int writeData(void* _call)
     iov[ic].iov_base = call->data;
     iov[ic++].iov_len = call->len;
 
-    int len = writev(call->fd, iov, ic);
+    int len = call->WriteV(call->fd, iov, ic);
 
     divx_printf(10, "xvid_Write < len=%d\n", len);
 

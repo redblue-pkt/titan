@@ -34,12 +34,12 @@
 #include <sys/uio.h>
 #include <linux/dvb/video.h>
 #include <linux/dvb/audio.h>
-#include <linux/dvb/stm_ioctls.h>
 #include <memory.h>
 #include <asm/types.h>
 #include <pthread.h>
 #include <errno.h>
 
+#include "stm_ioctls.h"
 #include "common.h"
 #include "output.h"
 #include "debug.h"
@@ -50,28 +50,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-
-#ifdef SAM_WITH_DEBUG
-#define DIVX_DEBUG
-#else
-#define DIVX_SILENT
-#endif
-
-#ifdef DIVX_DEBUG
-
-static short debug_level = 0;
-
-#define divx_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define divx_printf(level, fmt, x...)
-#endif
-
-#ifndef DIVX_SILENT
-#define divx_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define divx_err(fmt, x...)
-#endif
 
 /* ***************************** */
 /* Types                         */
@@ -207,7 +185,7 @@ static int writeData(void* _call)
     iov[ic].iov_base = call->data;
     iov[ic++].iov_len = call->len;
 
-    int len = writev(call->fd, iov, ic);
+    int len = call->WriteV(call->fd, iov, ic);
 
     divx_printf(10, "xvid_Write < len=%d\n", len);
 

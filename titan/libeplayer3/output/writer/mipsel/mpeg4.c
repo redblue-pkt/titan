@@ -53,29 +53,6 @@
 /* Makros/Constants              */
 /* ***************************** */
 
-//#define SAM_WITH_DEBUG
-#ifdef SAM_WITH_DEBUG
-#define MPEG4_DEBUG
-#else
-#define MPEG4_SILENT
-#endif
-
-#ifdef MPEG4_DEBUG
-
-static short debug_level = 0;
-
-#define mpeg4_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define mpeg4_printf(level, fmt, x...)
-#endif
-
-#ifndef MPEG4_SILENT
-#define mpeg4_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define mpeg4_err(fmt, x...)
-#endif
-
 /* ***************************** */
 /* Types                         */
 /* ***************************** */
@@ -133,7 +110,7 @@ static int writeData(void* _call)
         PacketLength += call->private_size;
     }
 
-    struct iovec iov[2];
+    struct iovec iov[3];
     int ic = 0;
     iov[ic].iov_base = PesHeader;
     iov[ic++].iov_len = InsertPesHeader (PesHeader, PacketLength, MPEG_VIDEO_PES_START_CODE, call->Pts, 0);
@@ -147,7 +124,7 @@ static int writeData(void* _call)
     iov[ic].iov_base = call->data;
     iov[ic++].iov_len = call->len;
 
-    int len = writev_with_retry(call->fd, iov, ic);
+    int len = call->WriteV(call->fd, iov, ic);
 
     mpeg4_printf(10, "xvid_Write < len=%d\n", len);
 
@@ -172,4 +149,20 @@ struct Writer_s WriterVideoMPEG4 = {
     &writeData,
     NULL,
     &mpeg4p2_caps
+};
+
+static WriterCaps_t caps_h263 = {
+    "h263",
+    eVideo,
+    "V_H263",
+    VIDEO_ENCODING_H263,
+    STREAMTYPE_H263,
+    -1
+};
+
+struct Writer_s WriterVideoH263 = {
+    &reset,
+    &writeData,
+    NULL,
+    &caps_h263
 };

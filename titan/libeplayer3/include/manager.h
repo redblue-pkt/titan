@@ -17,6 +17,8 @@ typedef enum {
     MANAGER_INIT_UPDATE,
     MANAGER_UPDATED_TRACK_INFO,
     MANAGER_REGISTER_UPDATED_TRACK_INFO,
+    MANAGER_REF_LIST,
+    MANAGER_REF_LIST_SIZE,
 } ManagerCmd_t;
 
 typedef enum {
@@ -27,7 +29,9 @@ typedef enum {
 typedef struct Track_s {
     char *                Name;
     char *                Encoding;
+// obi
     char *                File;
+// obi
     int32_t               Id;
     int32_t               AVIdx;
 

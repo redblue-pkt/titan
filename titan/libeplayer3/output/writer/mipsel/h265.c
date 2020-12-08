@@ -55,23 +55,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-//#define H265_DEBUG
-#ifdef H265_DEBUG
-
-static short debug_level = 10;
-
-#define h264_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define h264_printf(level, fmt, x...)
-#endif
-
-#ifndef H265_SILENT
-#define h264_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define h264_err(fmt, x...)
-#endif
-
 #define IOVEC_SIZE                                      128
 
 /* ***************************** */
@@ -96,14 +79,15 @@ static unsigned int            CodecDataLen   = 0;
 
 static int32_t PreparCodecData(unsigned char *data, unsigned int cd_len, unsigned int *NalLength)
 {
-    h264_printf(10, "H265 check codec data..!\n");
+    h265_printf(10, "H265 check codec data..!\n");
     int32_t ret = -100;
+
     if (data)
     {
         unsigned char tmp[2048];
         unsigned int tmp_len = 0;
 
-        h264_printf(10, "H265 have codec data..!");
+        h265_printf(10, "H265 have codec data..!");
 
         if (cd_len > 3 && (data[0] || data[1] || data[2] > 1))
         {
@@ -112,7 +96,7 @@ static int32_t PreparCodecData(unsigned char *data, unsigned int cd_len, unsigne
                 int i;
                 if (data[0] != 0) 
                 {
-                    h264_printf(10, "Unsupported extra data version %d, decoding may fail", (int)data[0]);
+                    h265_printf(10, "Unsupported extra data version %d, decoding may fail", (int)data[0]);
                 }
                 
                 *NalLength = (data[21] & 3) + 1;
@@ -123,30 +107,38 @@ static int32_t PreparCodecData(unsigned char *data, unsigned int cd_len, unsigne
                     int j;
                     if (pos + 3 > cd_len) 
                     {
-                        h264_printf(10, "Buffer underrun in extra header (%d >= %u)", pos + 3, cd_len);
+                        h265_printf(10, "Buffer underrun in extra header (%d >= %u)", pos + 3, cd_len);
                         break;
                     }
                     // ignore flags + NAL type (1 byte)
+                    int nal_type = data[pos] & 0x3f;
                     int nal_count = data[pos + 1] << 8 | data[pos + 2];
                     pos += 3;
                     for (j = 0; j < nal_count; j++)
                     {
                         if (pos + 2 > cd_len)
                         {
-                            h264_printf(10, "Buffer underrun in extra nal header (%d >= %u)", pos + 2, cd_len);
+                            h265_printf(10, "Buffer underrun in extra nal header (%d >= %u)\n", pos + 2, cd_len);
                             break;
                         }
                         int nal_size = data[pos] << 8 | data[pos + 1];
                         pos += 2;
                         if (pos + nal_size > cd_len)
                         {
-                            h264_printf(10, "Buffer underrun in extra nal (%d >= %u)", pos + 2 + nal_size, cd_len);
+                            h265_printf(10, "Buffer underrun in extra nal (%d >= %u)\n", pos + 2 + nal_size, cd_len);
                             break;
                         }
-                        memcpy(tmp+tmp_len, "\x00\x00\x00\x01", 4);
-                        tmp_len += 4;
-                        memcpy(tmp + tmp_len, data + pos, nal_size);
-                        tmp_len += nal_size;
+                        if ((nal_type == 0x20 || nal_type == 0x21 || nal_type == 0x22) && ((tmp_len + 4 + nal_size) < sizeof(tmp) )) // use only VPS, SPS, PPS nals
+                        {
+                            memcpy(tmp+tmp_len, "\x00\x00\x00\x01", 4);
+                            tmp_len += 4;
+                            memcpy(tmp + tmp_len, data + pos, nal_size);
+                            tmp_len += nal_size;
+                        }
+                        else if ((tmp_len + 4 + nal_size) >= sizeof(tmp))
+                        {
+                            h264_err("Ignoring nal as tmp buffer is too small tmp_len + nal = %d\n", tmp_len + 4 + nal_size);
+                        }
                         pos += nal_size;
                     }
                 }
@@ -182,7 +174,7 @@ static int writeData(void* _call)
     int                     len = 0;
     int ic = 0;
     struct iovec iov[IOVEC_SIZE];
-    h264_printf(20, "\n");
+    h265_printf(20, "\n");
 
     if (call == NULL)
     {
@@ -194,7 +186,7 @@ static int writeData(void* _call)
     TimeScale = call->FrameScale;
     VideoPts  = call->Pts;
     
-    h264_printf(20, "VideoPts %lld - %d %d\n", call->Pts, TimeDelta, TimeScale);
+    h265_printf(20, "VideoPts %lld - %d %d\n", call->Pts, TimeDelta, TimeScale);
 
     if ((call->data == NULL) || (call->len <= 0))
     {
@@ -208,9 +200,9 @@ static int writeData(void* _call)
         return 0;
     }
     
-    if( call->InfoFlags & 0x1 ) // TS container
+    if( call->InfoFlags & 0x1) // TS container
     {
-        h264_printf(10, "H265 simple inject method!\n");
+        h265_printf(10, "H265 simple inject method!\n");
         uint32_t PacketLength = 0;
         uint32_t FakeStartCode = (call->Version << 8) | PES_VERSION_FAKE_START_CODE;
         
@@ -233,7 +225,7 @@ static int writeData(void* _call)
         
         iov[0].iov_len = InsertPesHeader(PesHeader, -1, MPEG_VIDEO_PES_START_CODE, VideoPts, FakeStartCode);
         
-        return writev_with_retry(call->fd, iov, ic);
+        return call->WriteV(call->fd, iov, ic);
     }
 
     uint32_t PacketLength = 0;
@@ -271,6 +263,7 @@ static int writeData(void* _call)
             if (ic >= IOVEC_SIZE)
             {
                 h264_err(">> Drop data due to ic overflow\n");
+                exit(-1);
                 break;
             }
             
@@ -299,10 +292,10 @@ static int writeData(void* _call)
             
         } while ((pos + NalLengthBytes) < call->len);
         
-        h264_printf (10, "<<<< PacketLength [%d]\n", PacketLength);
+        h265_printf (10, "<<<< PacketLength [%d]\n", PacketLength);
         iov[0].iov_len = InsertPesHeader(PesHeader, -1, MPEG_VIDEO_PES_START_CODE, VideoPts, 0);
         
-        len = writev_with_retry(call->fd, iov, ic);
+        len = call->WriteV(call->fd, iov, ic);
         PacketLength += iov[0].iov_len;
         if (PacketLength != len)
         {
@@ -310,7 +303,7 @@ static int writeData(void* _call)
         }
     }
 
-    h264_printf (10, "< len %d\n", len);
+    h265_printf (10, "< len %d\n", len);
     return len;
 }
 

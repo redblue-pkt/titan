@@ -34,7 +34,6 @@
 #include <sys/uio.h>
 #include <linux/dvb/video.h>
 #include <linux/dvb/audio.h>
-#include <linux/dvb/stm_ioctls.h>
 #include <memory.h>
 #include <asm/types.h>
 #include <pthread.h>
@@ -42,6 +41,7 @@
 #include <assert.h>
 #include <stdint.h>
 
+#include "stm_ioctls.h"
 #include "common.h"
 #include "output.h"
 #include "debug.h"
@@ -52,30 +52,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-//#define H264_DEBUG
-
-#ifdef SAM_WITH_DEBUG
-#define H264_DEBUG
-#else
-#define H264_SILENT
-#endif
-
-#ifdef H264_DEBUG
-
-static short debug_level = 0;
-
-#define h264_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define h264_printf(level, fmt, x...)
-#endif
-
-#ifndef H264_SILENT
-#define h264_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define h264_err(fmt, x...)
-#endif
-
 #define NALU_TYPE_PLAYER2_CONTAINER_PARAMETERS          24
 #define CONTAINER_PARAMETERS_VERSION                    0x00
 
@@ -286,7 +262,7 @@ static int32_t writeData(void* _call)
         iov[ic++].iov_len = 1;
         
         iov[0].iov_len = InsertPesHeader(PesHeader, -1, MPEG_VIDEO_PES_START_CODE, VideoPts, FakeStartCode);
-        int ret = writev(call->fd, iov, ic);
+        int ret = call->WriteV(call->fd, iov, ic);
         return ret;
     }
     else if( !call->private_data || call->private_size < 7 || 1 != call->private_data[0])
@@ -353,7 +329,7 @@ static int32_t writeData(void* _call)
         iov[ic++].iov_len = InsertPesHeader (PesHeader, ParametersLength, MPEG_VIDEO_PES_START_CODE, INVALID_PTS_VALUE, 0);
         iov[ic].iov_base = HeaderData;
         iov[ic++].iov_len = ParametersLength;
-        len = writev(call->fd, iov, ic);
+        len = call->WriteV(call->fd, iov, ic);
         if (len < 0)
         {
             return len;
@@ -409,7 +385,7 @@ static int32_t writeData(void* _call)
         }
 
         iov[0].iov_len = InsertPesHeader (PesHeader, InitialHeaderLength, MPEG_VIDEO_PES_START_CODE, INVALID_PTS_VALUE, 0);
-        ssize_t l = writev(call->fd, iov, ic);
+        ssize_t l = call->WriteV(call->fd, iov, ic);
         
         if (private_data != call->private_data)
         {
@@ -474,7 +450,7 @@ static int32_t writeData(void* _call)
             h264_printf (20, "  pts=%llu\n", VideoPts);
 
             iov[0].iov_len = InsertPesHeader (PesHeader, NalLength, MPEG_VIDEO_PES_START_CODE, VideoPts, 0);
-            ssize_t l = writev(call->fd, iov, ic);
+            ssize_t l = call->WriteV(call->fd, iov, ic);
             if (l < 0)
                 return l;
             len += l;

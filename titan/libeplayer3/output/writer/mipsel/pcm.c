@@ -55,27 +55,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-#ifdef SAM_WITH_DEBUG
-#define PCM_DEBUG
-#else
-#define PCM_SILENT
-#endif
-
-#ifdef PCM_DEBUG
-
-static uint16_t debug_level = 0;
-
-#define pcm_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define pcm_printf(level, fmt, x...)
-#endif
-
-#ifndef PCM_SILENT
-#define pcm_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define pcm_err(fmt, x...)
-#endif
 
 /* ***************************** */
 /* Types                         */
@@ -99,7 +78,6 @@ static uint32_t fixed_bufferfilled;
 /* ***************************** */
 /* MISC Functions                */
 /* ***************************** */
-
 
 static int32_t reset()
 {
@@ -140,17 +118,6 @@ static int32_t writeData(void *_call)
     
     if( pcmPrivateData->bResampling || NULL == fixed_buffer )
     {
-        if (0)
-        {
-            printf( "ioctl %d", ioctl(call->fd, AUDIO_SELECT_SOURCE, AUDIO_SOURCE_MEMORY));
-            printf( "ioctl %d", ioctl(call->fd, AUDIO_PAUSE));
-            printf( "ioctl %d", ioctl(call->fd, AUDIO_SET_BYPASS_MODE, 0x30));
-            printf( "ioctl %d", ioctl(call->fd, AUDIO_PLAY));
-            printf( "ioctl %d", ioctl(call->fd, AUDIO_CONTINUE));
-        }
-        
-        int32_t format = 0x01;
-        
         int32_t width = 0;
         int32_t depth = 0;
         int32_t rate = (uint64_t)pcmPrivateData->sample_rate;
@@ -158,7 +125,7 @@ static int32_t writeData(void *_call)
         int32_t block_align = 0;
         int32_t byterate = 0;
 
-        uint32_t codecID   = (uint32_t)pcmPrivateData->ffmpeg_codec_id;
+        uint32_t codecID   = (uint32_t)pcmPrivateData->codec_id;
         
         uint8_t dataPrecision = 0;
         uint8_t LE = 0;
@@ -194,6 +161,7 @@ static int32_t writeData(void *_call)
         }
         
         uint8_t *data = codec_data;
+        uint16_t format = LE ? 0x0001 : 0x0100;
         
         byterate = channels * rate * width / 8;
         block_align = channels * width / 8;
@@ -236,7 +204,7 @@ static int32_t writeData(void *_call)
             fixed_buffer = malloc(fixed_buffersize);
         }
         fixed_bufferfilled = 0;
-        //printf("PCM fixed_buffersize [%u] [%s]\n", fixed_buffersize, LE ? "LE":"BE");
+        pcm_printf(40, "PCM fixed_buffersize [%u] [%s]\n", fixed_buffersize, LE ? "LE":"BE");
     }
     
     while (size > 0)
@@ -255,12 +223,12 @@ static int32_t writeData(void *_call)
         size -= cpSize;
         
         uint32_t addHeaderSize = 0;
-        if( IsDreambox() )
+        if( STB_DREAMBOX == GetSTBType() )
         {
             addHeaderSize = 4;
         }
         uint32_t headerSize = InsertPesHeader(PesHeader, fixed_buffersize + 4 + addHeaderSize + sizeof(codec_data), MPEG_AUDIO_PES_START_CODE, fixed_buffertimestamp, 0);
-        if( IsDreambox() )
+        if( STB_DREAMBOX == GetSTBType() )
         {
             PesHeader[headerSize++] = 0x42; // B
             PesHeader[headerSize++] = 0x43; // C
@@ -283,13 +251,8 @@ static int32_t writeData(void *_call)
         iov[0].iov_len  = headerSize;
         iov[1].iov_base = fixed_buffer;
         iov[1].iov_len  = fixed_buffersize;
-        writev_with_retry(call->fd, iov, 2);
+        call->WriteV(call->fd, iov, 2);
         fixed_buffertimestamp += fixed_bufferduration;
-        
-        int g_fd_dump = open("/hdd/lpcm/ffmpeg.pes", O_CREAT |
-        O_RDWR | O_APPEND, S_IRUSR | S_IWUSR);
-        writev_with_retry(g_fd_dump, iov, 2);
-        close(g_fd_dump);
     }
     
     return size;
@@ -304,7 +267,7 @@ static WriterCaps_t caps_pcm =
     "pcm",
     eAudio,
     "A_PCM",
-    AUDIO_ENCODING_LPCMA,
+    -1,
     0x30,
     -1
 };
@@ -322,7 +285,7 @@ static WriterCaps_t caps_ipcm =
     "ipcm",
     eAudio,
     "A_IPCM",
-    AUDIO_ENCODING_LPCMA,
+    -1,
     0x30,
     -1
 };

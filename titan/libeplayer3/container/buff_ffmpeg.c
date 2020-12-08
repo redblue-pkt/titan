@@ -101,7 +101,7 @@ static void update_finish_timeout()
             maxInjectedPts = 0;
         }
         
-        //printf("ret[%d] playPts[%lld] currPts[%lld] maxInjectedPts[%lld]\n", ret, playPts, currPts, maxInjectedPts);
+        //printf("ret[%d] playPts[%"PRId64"] currPts[%"PRId64"] maxInjectedPts[%"PRId64"]\n", ret, playPts, currPts, maxInjectedPts);
         
         /* On some STBs PTS readed from decoder is invalid after seek or at start 
          * this is the reason for additional validation when we what to close immediately
@@ -125,13 +125,13 @@ static int32_t ffmpeg_read_wrapper_base(void *opaque, uint8_t *buf, int32_t buf_
 {
     int32_t len = 0;
 //obi
-//    if(0 == PlaybackDieNow(0))
-//    {
+  if(0 == PlaybackDieNow(0))
+  {
 //obi (end)
         len = ffmpeg_real_read_org(opaque, buf, buf_size);
 //obi
-//        while(len < buf_size && g_context && 0 == PlaybackDieNow(0))
-        while(len < buf_size && g_context)
+      while(len < buf_size && g_context && 0 == PlaybackDieNow(0))
+//        while(len < buf_size && g_context)
 //obi (end)
         {
             if(type && len > 0)
@@ -158,7 +158,7 @@ static int32_t ffmpeg_read_wrapper_base(void *opaque, uint8_t *buf, int32_t buf_
             continue;
         }
 //obi
-//    }
+  }
 //obi (end)
     //printf("len [%d] finishTimeout[%d]\n", len, finishTimeout);
     return len;
@@ -193,7 +193,7 @@ void getfillerMutex(const char *filename, const char *function, int line)
     ffmpeg_printf(100, "::%d received mutex\n", line);
 }
 
-void releasefillerMutex(const char *filename, const char *function, int line) 
+void releasefillerMutex(const char *filename, const const char *function, int line) 
 {
     pthread_mutex_unlock(&fillermutex);
 
@@ -277,7 +277,7 @@ static void ffmpeg_filler(Context_t *context, int32_t id, int32_t* inpause, int3
          if( 0 == PlaybackDieNow(0))
          {
 //obi
-//            break;
+           break;
 //obi (end)
          }
          
@@ -531,9 +531,10 @@ static int32_t ffmpeg_read(void *opaque, uint8_t *buf, int32_t buf_size)
     int32_t sumlen = 0;
     int32_t len = 0;
     int32_t count = 2000;
+
 //obi
-//    while(sumlen < buf_size && (--count) > 0 && 0 == PlaybackDieNow(0))
-    while(sumlen < buf_size && (--count) > 0)
+    while(sumlen < buf_size && (--count) > 0 && 0 == PlaybackDieNow(0))
+//    while(sumlen < buf_size && (--count) > 0)
 //obi (end)
     {
         len = ffmpeg_read_real(opaque, buf, buf_size - sumlen);
@@ -601,7 +602,7 @@ static int64_t ffmpeg_seek(void *opaque, int64_t offset, int32_t whence)
     if(diff > 0 && diff < rwdiff)
     {
         /* can do the seek inside the buffer */
-        ffmpeg_printf(20, "buffer-seek diff=%lld\n", diff);
+        ffmpeg_printf(20, "buffer-seek diff=%"PRId64"\n", diff);
         if(diff > (ffmpeg_buf + ffmpeg_buf_size) - ffmpeg_buf_read)
         {
             ffmpeg_buf_read = ffmpeg_buf + (diff - ((ffmpeg_buf + ffmpeg_buf_size) - ffmpeg_buf_read));
@@ -614,7 +615,7 @@ static int64_t ffmpeg_seek(void *opaque, int64_t offset, int32_t whence)
     else if(diff < 0 && diff * -1 < ffmpeg_buf_valid_size)
     {
         /* can do the seek inside the buffer */
-        ffmpeg_printf(20, "buffer-seek diff=%lld\n", diff);
+        ffmpeg_printf(20, "buffer-seek diff=%"PRId64"\n", diff);
         int32_t tmpdiff = diff * -1;
         if(tmpdiff > ffmpeg_buf_read - ffmpeg_buf)
         {
@@ -628,7 +629,7 @@ static int64_t ffmpeg_seek(void *opaque, int64_t offset, int32_t whence)
     else
     {
         releasefillerMutex(__FILE__, __FUNCTION__,__LINE__);
-        ffmpeg_printf(20, "real-seek diff=%lld\n", diff);
+        ffmpeg_printf(20, "real-seek diff=%"PRId64"\n", diff);
 
         ffmpeg_do_seek_ret = 0;
         ffmpeg_do_seek = diff;

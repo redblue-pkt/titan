@@ -25,35 +25,28 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <pthread.h>
 
 #include "misc.h"
 #include "writer.h"
+#include "common.h"
+#include "debug.h"
 
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-
-#define WRITER_DEBUG
-
-#ifdef WRITER_DEBUG
-
-static short debug_level = 0;
-
-#define writer_printf(level, x...) do { \
-if (debug_level >= level) printf(x); } while (0)
-#else
-#define writer_printf(level, x...)
-#endif
-
-#ifndef WRITER_SILENT
-#define writer_err(x...) do { printf(x); } while (0)
-#else
-#define writer_err(x...)
-#endif
+#define getDVBMutex(pmtx) do { if (pmtx) pthread_mutex_lock(pmtx);} while(false);
+#define releaseDVBMutex(pmtx) do { if (pmtx) pthread_mutex_unlock(pmtx);} while(false);
 
 /* ***************************** */
 /* Types                         */
 /* ***************************** */
+typedef enum {
+    DVB_STS_UNKNOWN, 
+    DVB_STS_SEEK, 
+    DVB_STS_PAUSE, 
+    DVB_STS_EXIT
+} DVBState_t; 
 
 /* ***************************** */
 /* Varaibles                     */
@@ -73,7 +66,9 @@ static Writer_t * AvailableWriter[] = {
     &WriterAudioDTS,
     &WriterAudioWMA,
     &WriterAudioWMAPRO,
-    
+    &WriterAudioOPUS,
+    &WriterAudioVORBIS,
+
     &WriterVideoH264,
     &WriterVideoH265,
     &WriterVideoH263,
@@ -85,8 +80,12 @@ static Writer_t * AvailableWriter[] = {
     &WriterVideoVP6,
     &WriterVideoVP8,
     &WriterVideoVP9,
-    &WriterVideoSPARK,
+    &WriterVideoFLV,
     &WriterVideoWMV,
+    &WriterVideoMJPEG,
+    &WriterVideoRV40,
+    &WriterVideoRV30,
+    &WriterVideoAVS2,
     NULL
 };
 
@@ -97,17 +96,102 @@ static Writer_t * AvailableWriter[] = {
 /* ***************************** */
 /*  Functions                    */
 /* ***************************** */
-ssize_t write_with_retry(int fd, const void *buf, size_t size)
+ssize_t WriteWithRetry(Context_t *context, int pipefd, int fd, void *pDVBMtx, const void *buf, int size)
+{
+    fd_set rfds;
+    fd_set wfds;
+
+    ssize_t ret;
+    int retval = -1;
+    int maxFd = pipefd > fd ? pipefd : fd;
+    struct timeval tv;
+
+    while(size > 0 && 0 == PlaybackDieNow(0) && !context->playback->isSeeking)
+    {
+        FD_ZERO(&rfds);
+        FD_ZERO(&wfds);
+
+        FD_SET(pipefd, &rfds);
+        FD_SET(fd, &wfds);
+
+        /* When we PAUSE LINUX DVB outputs buffers, then audio/video buffers 
+         * will continue to be filled. Unfortunately, in such case after resume 
+         * select() will never return with fd set - bug in DVB drivers?
+         * There are to workarounds possible:
+         *   1. write to pipe at resume to return from select() immediately
+         *   2. make timeout select(), limit max time spend in the select()
+         *      to for example 0,1s 
+         *   (at now first workaround is used)
+         */
+        //tv.tv_sec = 0;
+        //tv.tv_usec = 100000; // 100ms
+        
+        retval = select(maxFd + 1, &rfds, &wfds, NULL, NULL); //&tv);
+        if (retval < 0)
+        {
+            break;
+        }
+        
+        //if (retval == 0)
+        //{
+        //    //printf("RETURN FROM SELECT DUE TO TIMEOUT\n");
+        //    continue;
+        //}
+        
+        if(FD_ISSET(pipefd, &rfds))
+        {
+            FlushPipe(pipefd);
+            //printf("RETURN FROM SELECT DUE TO pipefd SET\n");
+            continue;
+        }
+        
+        if(FD_ISSET(fd, &wfds))
+        {
+            ret = write(fd, buf, size);
+            if (ret < 0)
+            {
+                switch(errno)
+                {
+                    case EINTR:
+                    case EAGAIN:
+                        continue;
+                    default:
+                        retval = -3;
+                        break;
+                }
+                if (retval < 0)
+                {
+                    break;
+                }
+                
+                return ret;
+            }
+            else if (ret == 0)
+            {
+                // printf("This should not happen. Select return fd ready to write, but write return 0, errno [%d]\n", errno);
+                // wait 10ms before next try
+                tv.tv_sec = 0;
+                tv.tv_usec = 10000; // 10ms
+                retval = select(pipefd + 1, &rfds, NULL, NULL, &tv);
+                if (retval)
+                    FlushPipe(pipefd);
+                continue;
+            }
+            
+            size -= ret;
+            buf += ret;
+        }
+    }
+    return 0;
+}
+
+ssize_t write_with_retry(int fd, const void *buf, int size)
 {
     ssize_t ret;
     int retval = 0;
-//obi
-//    while(size > 0 && 0 == PlaybackDieNow(0))
-    while(size > 0)
-//obi (end)
+    while(size > 0 && 0 == PlaybackDieNow(0))
     {
         ret = write(fd, buf, size);
-        //printf("[%d] write [%lld]\n", fd, ret);
         if (ret < 0)
         {
             switch(errno)
@@ -145,7 +229,7 @@ ssize_t write_with_retry(int fd, const void *buf, size_t size)
     return 0;
 }
 
-ssize_t writev_with_retry(int fd, const struct iovec *iov, size_t ic) 
+ssize_t writev_with_retry(int fd, const struct iovec *iov, int ic) 
 {
     ssize_t len = 0;
     int i = 0;
@@ -155,9 +239,7 @@ ssize_t writev_with_retry(int fd, const struct iovec *iov, size_t ic)
         len += iov[i].iov_len;
         if(PlaybackDieNow(0))
         {
-//obi
-//            return -1;
-//obi (end)
+            return -1;
         }
     }
     return len;
