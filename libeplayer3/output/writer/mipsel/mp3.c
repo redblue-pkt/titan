@@ -52,23 +52,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-#define MP3_DEBUG
-
-#ifdef MP3_DEBUG
-
-static short debug_level = 0;
-
-#define mp3_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define mp3_printf(level, fmt, x...)
-#endif
-
-#ifndef MP3_SILENT
-#define mp3_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define mp3_err(fmt, x...)
-#endif
 
 /* ***************************** */
 /* Types                         */
@@ -99,25 +82,12 @@ static int writeData(void* _call)
 
     mp3_printf(10, "\n");
 
-    if (call == NULL)
-    {
-        mp3_err("call data is NULL...\n");
+    if (call == NULL || call->data == NULL || call->len <= 0 || call->fd < 0) {
+        wma_err("Wrong input call: %p, data: %p, len: %d, fd: %d\n", call, call->data, call->len, call->fd);
         return 0;
     }
 
     mp3_printf(10, "AudioPts %lld\n", call->Pts);
-
-    if ((call->data == NULL) || (call->len <= 0))
-    {
-        mp3_err("parsing NULL Data. ignoring...\n");
-        return 0;
-    }
-
-    if (call->fd < 0)
-    {
-        mp3_err("file pointer < 0. ignoring ...\n");
-        return 0;
-    }
 
     call->private_size = 0;
     
@@ -133,7 +103,7 @@ static int writeData(void* _call)
     iov[1].iov_base = call->data;
     iov[1].iov_len = call->len;
 
-    int len = writev_with_retry(call->fd, iov, 2);
+    int len = call->WriteV(call->fd, iov, 2);
 
     mp3_printf(10, "mp3_Write-< len=%d\n", len);
     return len;
@@ -174,20 +144,3 @@ struct Writer_s WriterAudioMPEGL3 = {
     NULL,
     &caps_mpegl3
 };
-
-static WriterCaps_t caps_vorbis = {
-    "vorbis",
-    eAudio,
-    "A_VORBIS",
-    AUDIO_ENCODING_VORBIS,
-    AUDIO_ENCODING_MP3,
-    -1
-};
-
-struct Writer_s WriterAudioVORBIS = {
-    &reset,
-    &writeData,
-    NULL,
-    &caps_vorbis
-};
-

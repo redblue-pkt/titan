@@ -34,7 +34,6 @@
 #include <sys/uio.h>
 #include <linux/dvb/video.h>
 #include <linux/dvb/audio.h>
-#include <linux/dvb/stm_ioctls.h>
 #include <memory.h>
 #include <asm/types.h>
 #include <pthread.h>
@@ -42,6 +41,7 @@
 
 #include <libavcodec/avcodec.h>
 
+#include "stm_ioctls.h"
 #include "common.h"
 #include "output.h"
 #include "debug.h"
@@ -53,27 +53,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-#ifdef SAM_WITH_DEBUG
-#define PCM_DEBUG
-#else
-#define PCM_SILENT
-#endif
-
-#ifdef PCM_DEBUG
-
-static short debug_level = 0;
-
-#define pcm_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define pcm_printf(level, fmt, x...)
-#endif
-
-#ifndef PCM_SILENT
-#define pcm_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define pcm_err(fmt, x...)
-#endif
 
 /* ***************************** */
 /* Types                         */
@@ -216,7 +195,7 @@ static int32_t writeData(void *_call)
 
     if (initialHeader)
     {
-        uint32_t codecID = (uint32_t)pcmPrivateData->ffmpeg_codec_id;
+        uint32_t codecID = (uint32_t)pcmPrivateData->codec_id;
         uint8_t LE = 0;
         switch (codecID)
         {
@@ -323,7 +302,7 @@ static int32_t writeData(void *_call)
         lpcm_prv[1] = ((lpcm_prv[1]+SubFramesPerPES) & 0x1F);
 
         iov[0].iov_len = InsertPesHeader (PesHeader, iov[1].iov_len + iov[2].iov_len, PCM_PES_START_CODE, call->Pts, 0);
-        int32_t len = writev(call->fd, iov, 3);
+        int32_t len = call->WriteV(call->fd, iov, 3);
         if (len < 0)
         {
             break;

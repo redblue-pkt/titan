@@ -41,10 +41,12 @@
 
 #include <libavutil/intreadwrite.h>
 #include "ffmpeg/latmenc.h"
+#include "ffmpeg/mpeg4audio.h"
 
 #include "stm_ioctls.h"
 #include "bcm_ioctls.h"
 
+#include "debug.h"
 #include "common.h"
 #include "output.h"
 #include "debug.h"
@@ -57,30 +59,6 @@
 /* Makros/Constants              */
 /* ***************************** */
 
-//#define SAM_WITH_DEBUG
-
-#ifdef SAM_WITH_DEBUG
-#define AAC_DEBUG
-#else
-#define AAC_SILENT
-#endif
-
-#ifdef AAC_DEBUG
-
-static short debug_level = 0;
-
-#define aac_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define aac_printf(level, fmt, x...)
-#endif
-
-#ifndef AAC_SILENT
-#define aac_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define aac_err(fmt, x...)
-#endif
-
 /* ***************************** */
 /* Types                         */
 /* ***************************** */
@@ -88,6 +66,7 @@ if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); 
 /* ***************************** */
 /* Varaibles                     */
 /* ***************************** */
+static bool needInitHeader = true;
 
 /// ** AAC ADTS format **
 ///
@@ -152,6 +131,7 @@ static int reset()
         free(pLATMCtx);
         pLATMCtx = NULL;
     }
+    needInitHeader = true;
     return 0;
 }
 
@@ -181,6 +161,14 @@ static int _writeData(void *_call, int type)
             aac_err("parsing Data with missing syncword. ignoring...\n");
             return 0;
         }
+        
+        // STB can handle only AAC LC profile
+        if (0 == (call->data[2] & 0xC0))
+        {
+            // change profile AAC Main -> AAC LC (Low Complexity)
+            aac_printf(1, "change profile AAC Main -> AAC LC (Low Complexity) in the ADTS header");
+            call->data[2] = (call->data[2] & 0x1F) | 0x40;
+        }
     }
     else // check LOAS header
     {
@@ -203,7 +191,7 @@ static int _writeData(void *_call, int type)
     iov[0].iov_len = HeaderLength;
     iov[1].iov_base = call->data;
     iov[1].iov_len = call->len;
-    return writev_with_retry(call->fd, iov, 2);
+    return call->WriteV(call->fd, iov, 2);
 }
 
 static int writeDataADTS(void *_call)
@@ -212,46 +200,35 @@ static int writeDataADTS(void *_call)
     
     aac_printf(10, "\n");
 
-    if (call == NULL)
+    if (call == NULL || call->data == NULL || call->len <= 0 || call->fd < 0)
     {
         aac_err("call data is NULL...\n");
         return 0;
     }
-    
-    if ((call->data == NULL) || (call->len <= 0))
-    {
-        aac_err("parsing NULL Data. ignoring...\n");
-        return 0;
-    }
 
-    if (call->fd < 0)
-    {
-        aac_err("file pointer < 0. ignoring ...\n");
-        return 0;
-    }
-    
     if( (call->private_data && 0 == strncmp("ADTS", call->private_data, call->private_size)) || 
         HasADTSHeader(call->data, call->len) )
     {
+        //printf("%hhx %hhx %hhx %hhx %hhx %hhx %hhx %hhx\n", call->data[0], call->data[1], call->data[2], call->data[3], call->data[4], call->data[5], call->data[6], call->data[7]);
         return _writeData(_call, 0);
     }
 
-    uint32_t PacketLength = call->len + AAC_HEADER_LENGTH;
-    uint8_t PesHeader[PES_MAX_HEADER_SIZE + AAC_HEADER_LENGTH];
+    uint32_t adtsHeaderSize = (call->private_data == NULL || needInitHeader == false) ? AAC_HEADER_LENGTH : call->private_size;
+    uint32_t PacketLength = call->len + adtsHeaderSize;
+    uint8_t PesHeader[PES_MAX_HEADER_SIZE + AAC_HEADER_LENGTH + MAX_PCE_SIZE];
     uint32_t headerSize = InsertPesHeader (PesHeader, PacketLength, MPEG_AUDIO_PES_START_CODE, call->Pts, 0);
     uint8_t *pExtraData = &PesHeader[headerSize];
-    
+
+    needInitHeader = false;
     aac_printf(10, "AudioPts %lld\n", call->Pts);
-    if (call->private_data == NULL)
-    {
+    if (call->private_data == NULL) {
         aac_printf(10, "private_data = NULL\n");
         memcpy (pExtraData, DefaultAACHeader, AAC_HEADER_LENGTH);
     }
-    else
-    {
-        memcpy (pExtraData, call->private_data, AAC_HEADER_LENGTH);
+    else {
+        memcpy (pExtraData, call->private_data, adtsHeaderSize);
     }
-    
+
     pExtraData[3] &= 0xC0;
     /* frame size over last 2 bits */
     pExtraData[3] |= (PacketLength & 0x1800) >> 11;
@@ -269,11 +246,11 @@ static int writeDataADTS(void *_call)
 
     struct iovec iov[2];
     iov[0].iov_base = PesHeader;
-    iov[0].iov_len = headerSize + AAC_HEADER_LENGTH;
+    iov[0].iov_len = headerSize + adtsHeaderSize;
     iov[1].iov_base = call->data;
     iov[1].iov_len = call->len;
     
-    return writev_with_retry(call->fd, iov, 2);
+    return call->WriteV(call->fd, iov, 2);
 }
 
 static int writeDataLATM(void *_call)
@@ -319,8 +296,8 @@ static int writeDataLATM(void *_call)
     int ret = latmenc_decode_extradata(pLATMCtx, call->private_data, call->private_size);
     if (ret)
     {
-        printf("%02x %02x %02x %02x %02x %02x %02x %02x\n", (int)call->data[0], (int)call->data[1], (int)call->data[2], (int)call->data[3],\
-                                                            (int)call->data[4], (int)call->data[5], (int)call->data[6], (int)call->data[7]);
+        //printf("%02x %02x %02x %02x %02x %02x %02x %02x\n", (int)call->data[0], (int)call->data[1], (int)call->data[2], (int)call->data[3],\
+        //                             (int)call->data[4], (int)call->data[5], (int)call->data[6], (int)call->data[7]);
         aac_err("latm_decode_extradata failed. ignoring...\n");
         return 0;
     }
@@ -343,7 +320,7 @@ static int writeDataLATM(void *_call)
     iov[2].iov_base = pLATMCtx->buffer;
     iov[2].iov_len  = pLATMCtx->len;
     
-    return writev_with_retry(call->fd, iov, 3);
+    return call->WriteV(call->fd, iov, 3);
 }
 
 /* ***************************** */
@@ -397,3 +374,4 @@ struct Writer_s WriterAudioAACPLUS = {
     NULL,
     &caps_aacplus
 };
+

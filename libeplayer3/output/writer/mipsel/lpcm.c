@@ -57,29 +57,6 @@
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-//#define SAM_WITH_DEBUG
-#ifdef SAM_WITH_DEBUG
-#define LPCM_DEBUG
-#else
-#define LPCM_SILENT
-#endif
-
-#ifdef LPCM_DEBUG
-
-static uint16_t debug_level = 1;
-
-#define lpcm_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define lpcm_printf(level, fmt, x...)
-#endif
-
-#ifndef LPCM_SILENT
-#define lpcm_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define lpcm_err(fmt, x...)
-#endif
-
 #define LLPCM_VOB_HEADER_LEN (6)
 
 /* ***************************** */
@@ -256,7 +233,7 @@ static int32_t writeData(void *_call)
         iov[0].iov_len  = pes_header_size;
         iov[1].iov_base = frame;
         iov[1].iov_len  = i_frame_size;
-        i_ret_size += writev_with_retry(call->fd, iov, 2);
+        i_ret_size += call->WriteV(call->fd, iov, 2);
     }
     
     memcpy( p_buffer, call->data + i_bytes_consumed, i_leftover_samples * i_channels * 2 );

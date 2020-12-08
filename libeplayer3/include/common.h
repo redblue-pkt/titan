@@ -9,12 +9,16 @@
 #include "playback.h"
 #include <pthread.h>
 
-typedef char PlayFilesTab_t[2];
-
 typedef struct PlayFiles_t 
 { 
     char *szFirstFile;
     char *szSecondFile;
+    char *szFirstMoovAtomFile;
+    char *szSecondMoovAtomFile;
+    uint64_t iFirstFileSize;
+    uint64_t iSecondFileSize;
+    uint64_t iFirstMoovAtomOffset;
+    uint64_t iSecondMoovAtomOffset;
 } PlayFiles_t;
 
 typedef struct Context_s 
@@ -24,8 +28,17 @@ typedef struct Context_s
     OutputHandler_t		*output;
     ManagerHandler_t	*manager;
 } Context_t;
-
+// obi
 char* subtext;
-
+// obi
 int container_ffmpeg_update_tracks(Context_t *context, char *filename, int initial);
+
+const char* GetGraphicSubPath();
+int32_t GetGraphicWindowWidth();
+int32_t GetGraphicWindowHeight();
+
+void E2iSendMsg(const char * format, ...);
+void E2iStartMsg(void);
+void E2iEndMsg(void);
+
 #endif

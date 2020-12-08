@@ -2,6 +2,10 @@
 #define PLAYBACK_H_
 #include <sys/types.h>
 #include <stdint.h>
+#include <stdbool.h>
+
+typedef void( * PlaybackDieNowCallback )();
+bool PlaybackDieNowRegisterCallback(PlaybackDieNowCallback callback);
 
 typedef enum {PLAYBACK_OPEN, PLAYBACK_CLOSE, PLAYBACK_PLAY, PLAYBACK_STOP, PLAYBACK_PAUSE, PLAYBACK_CONTINUE, PLAYBACK_FLUSH, PLAYBACK_TERM, PLAYBACK_FASTFORWARD, PLAYBACK_SEEK, PLAYBACK_SEEK_ABS, PLAYBACK_PTS, PLAYBACK_LENGTH, PLAYBACK_SWITCH_AUDIO, PLAYBACK_SWITCH_SUBTITLE, PLAYBACK_INFO, PLAYBACK_SLOWMOTION, PLAYBACK_FASTBACKWARD, PLAYBACK_GET_FRAME_COUNT} PlaybackCmd_t;
 
@@ -36,6 +40,8 @@ typedef struct PlaybackHandler_s
     uint8_t noprobe; /* hack: only minimal probing in av_find_stream_info */
     uint8_t isLoopMode;
     uint8_t isTSLiveMode;
+
+    void *stamp;
 } PlaybackHandler_t;
 
 #endif

@@ -8,6 +8,7 @@
 /* ***************************** */
 
 #include <stdlib.h>
+#include <inttypes.h>
 #include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -21,41 +22,20 @@
 #include <stdint.h>
 
 #include "playback.h"
+#include "debug.h"
 #include "common.h"
 #include "misc.h"
 
 /* ***************************** */
 /* Makros/Constants              */
 /* ***************************** */
-// SULGE DEBUG
-//#define SAM_WITH_DEBUG
-
-#ifdef SAM_WITH_DEBUG
-#define PLAYBACK_DEBUG
-#else
-#define PLAYBACK_SILENT
-#endif
-
-static short debug_level = 20;
-
-#ifdef PLAYBACK_DEBUG
-#define playback_printf(level, fmt, x...) do { \
-if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define playback_printf(level, fmt, x...)
-#endif
-
-#ifndef PLAYBACK_SILENT
-#define playback_err(fmt, x...) do { printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); } while (0)
-#else
-#define playback_err(fmt, x...)
-#endif
-
 #define cERR_PLAYBACK_NO_ERROR      0
 #define cERR_PLAYBACK_ERROR        -1
 
 #define cMaxSpeed_ff   128 /* fixme: revise */
 #define cMaxSpeed_fr   -320 /* fixme: revise */
+
+#define MAX_PLAYBACK_DIE_NOW_CALLBACKS 10
 
 /* ***************************** */
 /* Varaibles                     */
@@ -67,17 +47,56 @@ if (debug_level >= level) printf("[%s:%s] " fmt, __FILE__, __FUNCTION__, ## x); 
 extern void set_pause_timeout(uint8_t pause);
 static int32_t PlaybackTerminate(Context_t  *context);
 
+static int8_t dieNow = 0;
+static PlaybackDieNowCallback playbackDieNowCallbacks[MAX_PLAYBACK_DIE_NOW_CALLBACKS] = {NULL};
+
 /* ***************************** */
 /* MISC Functions                */
 /* ***************************** */
 int8_t PlaybackDieNow(int8_t val)
 {
-    static int8_t dieNow = 0;
-    if(val)
+    if(val && dieNow == 0)
     {
+        uint32_t i = 0;
         dieNow = 1;
+        while (i < MAX_PLAYBACK_DIE_NOW_CALLBACKS)
+        {
+            if (playbackDieNowCallbacks[i] == NULL)
+            {
+                break;
+            }
+            playbackDieNowCallbacks[i]();
+            i += 1;
+        }
     }
+    return 0;
     return dieNow;
+}
+
+bool PlaybackDieNowRegisterCallback(PlaybackDieNowCallback callback)
+{
+    bool ret = false;
+    if (callback)
+    {
+        uint32_t i = 0;
+        while (i < MAX_PLAYBACK_DIE_NOW_CALLBACKS)
+        {
+            if (playbackDieNowCallbacks[i] == callback)
+            {
+                ret = true;
+                break;
+            }
+            
+            if (playbackDieNowCallbacks[i] == NULL)
+            {
+                playbackDieNowCallbacks[i] = callback;
+                ret = true;
+                break;
+            }
+            i += 1;
+        }
+    }
+    return ret;
 }
 
 /* ***************************** */
@@ -263,14 +282,16 @@ static int PlaybackPause(Context_t  *context)
     if (context->playback->isPlaying && !context->playback->isPaused) 
     {
         set_pause_timeout(1);
+
 //obi      
         if(context->playback->SlowMotion) 
              context->output->Command(context, OUTPUT_CLEAR, NULL);
 //obi (end)
 
+        context->playback->isPaused     = 1;
+        
         context->output->Command(context, OUTPUT_PAUSE, NULL);
 
-        context->playback->isPaused     = 1;
         //context->playback->isPlaying  = 1;
         context->playback->isForwarding = 0;
         context->playback->BackWard     = 0;
@@ -305,6 +326,7 @@ static int32_t PlaybackContinue(Context_t  *context)
              context->output->Command(context, OUTPUT_CLEAR, NULL);
 
 //obi (end)
+
         context->output->Command(context, OUTPUT_CONTINUE, NULL);
 
         context->playback->isPaused     = 0;
@@ -331,6 +353,7 @@ static int32_t PlaybackStop(Context_t  *context)
     playback_printf(10, "\n");
     
     PlaybackDieNow(1);
+    context->playback->stamp = (void *)-1;
 
     if (context && context->playback && context->playback->isPlaying) 
     {
@@ -518,12 +541,20 @@ static int32_t PlaybackSlowMotion(Context_t  *context,int* speed) {
 static int32_t PlaybackSeek(Context_t  *context, int64_t *pos, uint8_t absolute) 
 {
     int32_t ret = cERR_PLAYBACK_NO_ERROR;
+    static uint32_t stamp = 0;
 
-    playback_printf(10, "pos: %lldd\n", *pos);
+    playback_printf(10, "pos: %"PRIu64"\n", *pos);
 
     if (context->playback->isPlaying && !context->playback->isForwarding && !context->playback->BackWard && !context->playback->SlowMotion && !context->playback->isPaused) 
     {
         context->playback->isSeeking = 1;
+        /* We changing current stamp, so all frames with old stamps will be skipped
+         * Without this there could be situation when the ffmpeg thread is 
+         * in the av_read_frame(), so, even if we flushed data,  still 
+         * data from the old position were written
+         */
+        stamp += 1;
+        context->playback->stamp = (void *)stamp;
         context->output->Command(context, OUTPUT_CLEAR, NULL);
         if (absolute)
         {
@@ -871,4 +902,5 @@ PlaybackHandler_t PlaybackHandler = {
     0,          //noprobe
     0,          //isLoopMode
     0,          //isTSLiveMode
+    NULL,       //stamp
 };
