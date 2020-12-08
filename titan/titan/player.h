@@ -1536,6 +1536,7 @@ int playerstart(char* file)
 		player->output->Command(player, OUTPUT_ADD, "video");
 		player->output->Command(player, OUTPUT_ADD, "subtitle");
 #ifdef OEBUILD
+		int32_t* size = (int32_t*)getconfigint("playerbuffersize", NULL);
 		player->output->Command(player, OUTPUT_SET_BUFFER_SIZE, (void*)&size);
 #endif
 #ifndef EXTEPLAYER3
