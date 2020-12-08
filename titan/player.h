@@ -63,14 +63,14 @@ extern void       wma_software_decoder_set(const int32_t val);
 extern void       ac3_software_decoder_set(const int32_t val);
 extern void      eac3_software_decoder_set(const int32_t val);
 extern void       mp3_software_decoder_set(const int32_t val);
-#ifdef OEBUILD1
+#ifdef OEBUILD
 extern void       amr_software_decoder_set(const int32_t val);
 extern void    vorbis_software_decoder_set(const int32_t val);
 extern void      opus_software_decoder_set(const int32_t val);
 #endif
 extern void            rtmp_proto_impl_set(const int32_t val);
 extern void        flv2mpeg4_converter_set(const int32_t val);
-#ifdef OEBUILD1
+#ifdef OEBUILD
 extern void        sel_program_id_set(const int32_t val);
 #endif
 extern void pcm_resampling_set(int32_t val);
@@ -92,26 +92,49 @@ static void SetBuffering()
     fcntl(stdin->_fileno, F_SETFL, flags | O_NONBLOCK); 
 }
 
-/*
-static void SetNice(int prio)
+#ifdef OEBUILD
+static int g_pfd[2] = {-1, -1}; /* Used to wake terminate thread and kbhit */
+static int isPlaybackStarted = 0;
+static pthread_mutex_t playbackStartMtx;
+
+static int32_t g_windows_width = 1280;
+static int32_t g_windows_height = 720;
+static char *g_graphic_sub_path;
+
+const char* GetGraphicSubPath()
 {
-#if 0
-    setpriority(PRIO_PROCESS, 0, -8);
-    
-    int prio = sched_get_priority_max(SCHED_RR) / 2;
-    struct sched_param param = {
-        .sched_priority = prio
-    };
-    sched_setscheduler(0, SCHED_RR, &param);
-#else
-    int prevPrio = getpriority(PRIO_PROCESS, 0);
-    if (-1 == setpriority(PRIO_PROCESS, 0, prio))
-    {
-        printf("setpriority - failed\n");
-    }
-#endif
+    return g_graphic_sub_path;
 }
-*/
+
+int32_t GetGraphicWindowWidth()
+{
+    return g_windows_width;
+}
+
+int32_t GetGraphicWindowHeight()
+{
+    return g_windows_height;
+}
+
+void E2iSendMsg(const char *format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    vfprintf(stderr, format, args);
+    va_end(args);
+}
+
+void E2iStartMsg(void)
+{
+    flockfile(stderr);
+}
+
+void E2iEndMsg(void)
+{
+    funlockfile(stderr);
+}
+
+#endif
 
 static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbackSwitchCmd, const char *argvBuff)
 {
