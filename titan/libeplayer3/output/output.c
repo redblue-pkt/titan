@@ -543,17 +543,18 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
         }
         break;
     }
-    case OUTPUT_GET_BUFFER_SIZE:
+    //obi
+    case OUTPUT_GET_BUFFER_STATUS:
     {
         if (context && context->playback)
         {
             if (context->output->video)
             {
-                return context->output->video->Command(context, OUTPUT_GET_BUFFER_SIZE, argument);
+                return context->output->video->Command(context, OUTPUT_GET_BUFFER_STATUS, argument);
             }
             else if (context->output->audio)
             {
-                return context->output->audio->Command(context, OUTPUT_GET_BUFFER_SIZE, argument);
+                return context->output->audio->Command(context, OUTPUT_GET_BUFFER_STATUS, argument);
             }
         }
         else
@@ -562,6 +563,7 @@ static int Command(void  *_context, OutputCmd_t command, void * argument)
         }
         break;
     }
+    //obi
     default:
         output_err("%s::%s OutputCmd %d not supported!\n", FILENAME, __FUNCTION__, command);
         ret = cERR_OUTPUT_INTERNAL_ERROR;

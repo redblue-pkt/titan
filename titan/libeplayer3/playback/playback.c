@@ -69,7 +69,7 @@ int8_t PlaybackDieNow(int8_t val)
             i += 1;
         }
     }
-    return 0;
+//    return 0;
     return dieNow;
 }
 

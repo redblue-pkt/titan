@@ -77,7 +77,9 @@ static BufferingNode_t *bufferingQueueTail = NULL;
 
 static uint32_t maxBufferingDataSize = 0;
 static uint32_t bufferingDataSize = 0;
-
+//obi
+static uint32_t chunkSize = 0;
+//obi
 static int videofd = -1;
 static int audiofd = -1;
 static int g_pfd[2] = {-1, -1};
@@ -228,7 +230,12 @@ uint32_t LinuxDvbBuffGetSize()
 {
     return maxBufferingDataSize;
 }
-
+//obi
+uint32_t LinuxDvbBuffGetStatus()
+{
+    return chunkSize;
+}
+//obi
 int32_t LinuxDvbBuffOpen(Context_t *context, char *type, int outfd, void *mtx)
 {
     int32_t error = 0;
@@ -394,7 +401,8 @@ ssize_t BufferingWriteV(int fd, const struct iovec *iov, int ic)
     OutputType_t dataType = OUTPUT_UNK;
     BufferingNode_t *nodePtr = NULL;
     uint8_t *dataPtr = NULL;
-    uint32_t chunkSize = 0;
+//obi
+//    uint32_t chunkSize = 0;
     uint32_t i = 0;
     
     buff_printf(60, "ENTER\n");

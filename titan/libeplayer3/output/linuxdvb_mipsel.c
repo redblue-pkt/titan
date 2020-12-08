@@ -1174,6 +1174,13 @@ static int Command(void  *_context, OutputCmd_t command, void * argument) {
         *((uint32_t*)argument) = LinuxDvbBuffGetSize();
         break;
     }
+    //obi
+    case OUTPUT_GET_BUFFER_STATUS: {
+        ret = cERR_LINUXDVB_NO_ERROR;
+        *((uint32_t*)argument) = LinuxDvbBuffGetStatus();
+        break;
+    }
+//obi
     default:
         linuxdvb_err("ContainerCmd %d not supported!\n", command);
         ret = cERR_LINUXDVB_ERROR;

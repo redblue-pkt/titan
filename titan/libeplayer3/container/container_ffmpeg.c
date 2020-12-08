@@ -68,7 +68,7 @@
  * due to this we set own which use fopen/fread from
  * std library.
  */
-#define USE_CUSTOM_IO
+//#define USE_CUSTOM_IO
 
 /* Error Constants */
 #define cERR_CONTAINER_FFMPEG_NO_ERROR        0
@@ -859,7 +859,7 @@ static void FFMPEGThread(Context_t *context)
 
     uint32_t bufferSize = 0;
     context->output->Command(context, OUTPUT_GET_BUFFER_SIZE, &bufferSize);
-    ffmpeg_printf(10, "bufferSize [%u]\n", bufferSize);
+    ffmpeg_printf(10, "2bufferSize [%u]\n", bufferSize);
 
     int8_t isWaitingForFinish = 0;
     while ( context && context->playback && context->playback->isPlaying ) 
@@ -1655,8 +1655,8 @@ static int32_t interrupt_cb(void *ctx)
 {
     PlaybackHandler_t *p = (PlaybackHandler_t *)ctx;
 //obi
-    return p->abortRequested || PlaybackDieNow(0);
-//    return p->abortRequested;
+//    return p->abortRequested || PlaybackDieNow(0);
+    return p->abortRequested;
 //obi (end)
 }
 
@@ -2070,7 +2070,7 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
     {
         av_dict_set(&avio_opts, "timeout", "20000000", 0); //20sec
 //obi
-/*
+
 		char* cookie = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr4 = NULL, *headers = NULL, *useragent = NULL;
 		int count = 0, count1 = 0, count2 = 0, count3 = 0, i = 0, i1 = 0, i2 = 0, i3 = 0, usetslivemode = 0;
 
@@ -2223,7 +2223,6 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 		   	ffmpeg_printf(10, "set tslivemode\n");
 			context->playback->isTSLiveMode = 1;
 		}
-		*/
 //obi (end)
 
         av_dict_set(&avio_opts, "reconnect", "1", 0);
@@ -2301,7 +2300,7 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 
                     if(ffmpeg_buf != NULL)
                     {
-                        ffmpeg_printf(10, "buffer size=%d\n", ffmpeg_buf_size);
+                        ffmpeg_printf(10, "1buffer size=%d\n", ffmpeg_buf_size);
                         
                         ffmpeg_read_org = avContextTab[AVIdx]->pb->read_packet;
                         avContextTab[AVIdx]->pb->read_packet = ffmpeg_read;
