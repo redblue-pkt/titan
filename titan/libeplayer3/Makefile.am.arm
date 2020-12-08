@@ -59,9 +59,9 @@ libeplayer3_la_LIBADD = -lswscale -ldl -lpthread -lavformat -lavcodec -lavutil -
 
 bin_PROGRAMS = eplayer3
 eplayer3_SOURCES = main/exteplayer.c
-#eplayer3_LDADD = -leplayer3 -lpthread
+eplayer3_LDADD = -leplayer3 -lpthread
 #eplayer3_LDADD = -leplayer3 -lpthread -lass -lm -lpng
-eplayer3_LDADD = -leplayer3 -lswscale -ldl -lpthread -lavformat -lavcodec -lavutil -lswresample
+#eplayer3_LDADD = -leplayer3 -lswscale -ldl -lpthread -lavformat -lavcodec -lavutil -lswresample
 eplayer3_DEPENDENCIES = libeplayer3.la
 
 
