@@ -2419,6 +2419,7 @@ void playerff(int speed)
 #ifdef EPLAYER3
 
 	int speedmap = 0;
+/*
 	if(speed == 0)
 	{
 		if(player && player->playback)
@@ -2427,8 +2428,7 @@ void playerff(int speed)
 			return;
 		}
 	}
-	
-
+*/
 	if (speed < 1) speed = 1;
 	if (speed > 7) speed = 7;
 
@@ -2441,8 +2441,19 @@ void playerff(int speed)
 		case 5: speedmap = 31; break;
 		case 6: speedmap = 63; break;
 		case 7: speedmap = 127; break;
+
+		case -1: speedmap = -5; break;
+		case -2: speedmap = -10; break;
+		case -3: speedmap = -20; break;
+		case -4: speedmap = -40; break;
+		case -5: speedmap = -80; break;
+		case -6: speedmap = -160; break;
+		case -7: speedmap = -320; break;
+		
 	}
 
+	if(player && player->playback)
+		player->playback->Command(player, PLAYBACK_FASTFORWARD, &speedmap);
 	
 #ifdef MIPSEL
 	if(player && player->playback)
