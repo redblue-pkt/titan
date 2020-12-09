@@ -501,7 +501,6 @@ int LinuxDvbFastForward(Context_t  *context, char * type) {
 
     if (video && videofd != -1) {
 
-//        getLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
         getLinuxDVBMutex();
 
         /* konfetti comment: speed is a value given in skipped frames */
@@ -513,8 +512,7 @@ int LinuxDvbFastForward(Context_t  *context, char * type) {
             ret = cERR_LINUXDVB_ERROR;
         }
 
-//        releaseLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
-		releaseLinuxDVBMutex();
+        releaseLinuxDVBMutex();
     }
 
     linuxdvb_printf(10, "exiting with value %d\n", ret);
@@ -541,41 +539,37 @@ int LinuxDvbFastForward(Context_t  *context, char * type) {
 
     if (video && videofd != -1) {
 
-//        getLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
-		getLinuxDVBMutex();
+        getLinuxDVBMutex();
 
         speedIndex = context->playback->Speed % (sizeof (SpeedList) / sizeof (int));
 
         linuxdvb_printf(1, "speedIndex %d\n", speedIndex);
 
-        // if (ioctl(videofd, VIDEO_SET_SPEED, SpeedList[speedIndex]) == -1)
-        // {
-            // linuxdvb_err("ioctl failed with errno %d\n", errno);
-            // linuxdvb_err("VIDEO_SET_SPEED: %s\n", strerror(errno));
-            // ret = cERR_LINUXDVB_ERROR;
-        // }
+        if (ioctl(videofd, VIDEO_SET_SPEED, SpeedList[speedIndex]) == -1)
+        {
+            linuxdvb_err("ioctl failed with errno %d\n", errno);
+            linuxdvb_err("VIDEO_SET_SPEED: %s\n", strerror(errno));
+            ret = cERR_LINUXDVB_ERROR;
+        }
 
-//        releaseLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
-		releaseLinuxDVBMutex();
+        releaseLinuxDVBMutex();
     }
 
     if (audio && audiofd != -1) {
 
-//        getLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
-		getLinuxDVBMutex();
+        getLinuxDVBMutex();
 
         speedIndex = context->playback->Speed % (sizeof (SpeedList) / sizeof (int));
 
         linuxdvb_printf(1, "speedIndex %d\n", speedIndex);
 
-        // if (ioctl(audiofd, AUDIO_SET_SPEED, SpeedList[speedIndex]) == -1)
-        // {
-            // linuxdvb_err("ioctl failed with errno %d\n", errno);
-            // linuxdvb_err("AUDIO_SET_SPEED: %s\n", strerror(errno));
-            // ret = cERR_LINUXDVB_ERROR;
-        // }
+        if (ioctl(audiofd, AUDIO_SET_SPEED, SpeedList[speedIndex]) == -1)
+        {
+            linuxdvb_err("ioctl failed with errno %d\n", errno);
+            linuxdvb_err("AUDIO_SET_SPEED: %s\n", strerror(errno));
+            ret = cERR_LINUXDVB_ERROR;
+        }
 
-//        releaseLinuxDVBMutex(FILENAME, __FUNCTION__,__LINE__);
         releaseLinuxDVBMutex();
     }
 
@@ -584,7 +578,6 @@ int LinuxDvbFastForward(Context_t  *context, char * type) {
     return ret;
 }
 #endif
-
 
 int LinuxDvbReverse(Context_t  *context __attribute__((unused)), char * type __attribute__((unused))) {
     int ret = cERR_LINUXDVB_NO_ERROR;
