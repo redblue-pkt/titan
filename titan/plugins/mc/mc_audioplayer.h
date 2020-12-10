@@ -76,7 +76,7 @@ void screenmc_audioplayer()
 	// set allowed filemask
 	char* filemask = NULL;
 	if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
-		filemask = ostrcat("*.m3u *.pls *.mp3 *.flac *.ogg *.wma *.ra *.wav", NULL, 0, 0);
+		filemask = ostrcat("*.aac *.flac *.mp3 *.wma *.m4a *.ogg *.wav *.ra *.amr *.m3u *.pls", NULL, 0, 0);
 	else
 		filemask = ostrcat("*.m3u *.pls *.mp3 *.flac *.ogg", NULL, 0, 0);
 	
