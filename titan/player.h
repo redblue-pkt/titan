@@ -92,7 +92,7 @@ static void SetBuffering()
     fcntl(stdin->_fileno, F_SETFL, flags | O_NONBLOCK); 
 }
 
-#ifdef OEBUILD
+//#ifdef OEBUILD
 static int g_pfd[2] = {-1, -1}; /* Used to wake terminate thread and kbhit */
 static int isPlaybackStarted = 0;
 static pthread_mutex_t playbackStartMtx;
@@ -142,7 +142,7 @@ static void TerminateWakeUp()
     }
 }
 
-#endif
+//#endif
 
 static int HandleTracks(const Manager_t *ptrManager, const PlaybackCmd_t playbackSwitchCmd, const char *argvBuff)
 {

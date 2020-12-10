@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// libeplayer3/playback/playback.h
+int8_t PlaybackDieNow(int8_t val);
+bool PlaybackDieNowRegisterCallback(PlaybackDieNowCallback callback);
 
 // ca.h
 void sendSPDU(struct dvbdev* dvbnode, unsigned char tag, void *data, int len, int sessionnr, void *apdu, int alen);
@@ -565,6 +568,7 @@ void fb2png_thread();
 int fb2png(unsigned char *buf_p, int width, int height, char *outfile);
 void clearfball();
 void closefb();
+int setframebuffer(int width, int height, int vwidth, int vheight, int bits);
 
 //timerthread.h
 struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void* param1, void* param2, struct stimerthread* last);
