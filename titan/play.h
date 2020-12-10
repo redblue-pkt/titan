@@ -1680,10 +1680,9 @@ printf("[screenplay] 2startfile: %s\n",startfile);
 	if(startfolder == 1)
 		formats = ostrcat(formats, ".ts", 1, 0);
 	else if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
-		formats = ostrcat(formats, ".m3u8 .flac .ogg .mp3 .avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", 1, 0);
+		formats = ostrcat(formats, "aac .avi .mkv .mp4 .ts .mov .flv .flac .mp3 .mpg .m2ts .vob .evo .wmv .wma .asf .mp2 .m4v .m4a .fla .divx .dat .mpeg .trp .mts .vdr .ogg .wav .wtv .asx .mvi .png .jpg .jpeg .ra .ram .rm .3gp .amr .rmvb .rm .webm .opus .m3u8 .mpd", 1, 0);
 	else
 		formats = ostrcat(formats, ".avi .mkv .mpg .mpeg .ts .mp3 .flac .ogg", 1, 0);
-
 	
 	status.updatevfd = PAUSE;
 	tmppolicy = getpolicy();

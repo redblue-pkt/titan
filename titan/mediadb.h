@@ -1844,7 +1844,7 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
-	cmd = ostrcat(cmd, "ffmpeg -ss 30 -i \"", 1, 0);
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
@@ -1881,7 +1881,7 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
-	cmd = ostrcat(cmd, "ffmpeg -ss 40 -i \"", 1, 0);
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
@@ -1917,7 +1917,7 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
-	cmd = ostrcat(cmd, "ffmpeg -ss 50 -i \"", 1, 0);
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
@@ -2723,7 +2723,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 			
 			if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 			{
-				if(!filelistflt(".avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", entry->d_name)) //video
+				if(!filelistflt(".avi .mkv .mp4 .ts .mov .flv .mpg .m2ts .vob .evo .wmv .asf .mp2 .m4v .fla .divx .dat .mpeg .trp .mts .vdr .ogg .wtv .asx .mvi .ram .rm .3gp .rmvb .rm .webm .opus .mpd", entry->d_name)) //video
 				{				
 					if(type == 0 || type == 100 || type == 90 || type == 91)
 					{					
@@ -2733,7 +2733,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 							count += 1;
 					}
 				}
-				else if(!filelistflt(".mp3 .flac .ogg .wma .ra .wav", entry->d_name)) //audio
+				else if(!filelistflt(".aac .flac .mp3 .wma .m4a .ogg .wav .ra .amr", entry->d_name)) //audio
 				{
 					if(type == 1 || type == 100 || type == 90 || type == 92)
 					{
