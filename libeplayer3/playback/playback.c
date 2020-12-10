@@ -286,6 +286,9 @@ static int PlaybackPause(Context_t  *context)
 //obi      
         if(context->playback->SlowMotion) 
              context->output->Command(context, OUTPUT_CLEAR, NULL);
+
+        if(context->playback->BackWard) 
+			context->output->Command(context, OUTPUT_AUDIOMUTE, "0");
 //obi (end)
 
         context->playback->isPaused     = 1;
