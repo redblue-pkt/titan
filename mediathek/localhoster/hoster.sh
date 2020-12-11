@@ -211,19 +211,11 @@ thevideo()
 # new #
 	videocode=`cat $TMP/cache.$FILENAME.1`
 
-	if [ "$ARCH" == "sh4" ];then
-		STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
-		echo "http://thevideos.ga/$videocode" > $STREAMLIST
-		#start dummy page not found then works playback without input/outout error
-		curl "http://thevideos.ga/$videocode" > /dev/null 2>&1
-		echo $STREAMLIST
-	else
-		STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
-		echo "https://thevideos.ga/$videocode" > $STREAMLIST
-		#start dummy page not found then works playback without input/outout error
-		curl "https://thevideos.ga/$videocode" > /dev/null 2>&1
-		echo $STREAMLIST
-	fi
+	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+	echo "https://thevideos.ga/$videocode" > $STREAMLIST
+	#start dummy page not found then works playback without input/outout error
+	curl "https://thevideos.ga/$videocode" > /dev/null 2>&1
+	echo $STREAMLIST
 #######
 exit
 #	$curlbin --referer $INPUT $INPUT -o $TMP/cache.$FILENAME.1
