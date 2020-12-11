@@ -1725,8 +1725,8 @@ playerstart:
 
 	if(file != NULL)
 	{
-		if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(file, ".ts") == 0)
 //		if(cmpfilenameext(file, ".ts") == 0)
+        if(getconfigint("playertype", NULL) == 1 && (cmpfilenameext(file, ".ts") == 0 || cmpfilenameext(file, ".mts") == 0 || cmpfilenameext(file, ".m2ts") == 0))
 		{
 			playertype = 1;
 			addconfig("lastplayertype", "1");
