@@ -211,11 +211,19 @@ thevideo()
 # new #
 	videocode=`cat $TMP/cache.$FILENAME.1`
 
-	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
-	echo "https://thevideos.ga/$videocode" > $STREAMLIST
-	#start dummy page not found then works playback without input/outout error
-	curl "https://thevideos.ga/$videocode" > /dev/null 2>&1
-	echo $STREAMLIST
+	if [ "$ARCH" == "sh4" ];then
+		STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+		echo "http://thevideos.ga/$videocode" > $STREAMLIST
+		#start dummy page not found then works playback without input/outout error
+		curl "http://thevideos.ga/$videocode" > /dev/null 2>&1
+		echo $STREAMLIST
+	else
+		STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
+		echo "https://thevideos.ga/$videocode" > $STREAMLIST
+		#start dummy page not found then works playback without input/outout error
+		curl "https://thevideos.ga/$videocode" > /dev/null 2>&1
+		echo $STREAMLIST
+	fi
 #######
 exit
 #	$curlbin --referer $INPUT $INPUT -o $TMP/cache.$FILENAME.1
@@ -393,8 +401,12 @@ streamcrypt()
 }
 
 voe() 
-{ 
-	URL=`$curlbin "$INPUT" | sed -nr "s/.*src: '([^']+)'.*/\1/p"` 
+{
+	if [ "$ARCH" == "sh4" ];then
+		URL=`$curlbin "$INPUT" | sed -nr "s/.*src: '([^']+)'.*/\1/p" | sed 's/https:/http:/g'` 
+	else
+		URL=`$curlbin "$INPUT" | sed -nr "s/.*src: '([^']+)'.*/\1/p"` 
+	fi
 	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'` 
 	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
 #	echo "$URL" 
