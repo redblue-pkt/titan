@@ -1220,11 +1220,8 @@ void playrcplay(char* file, char* showname, int* playinfobarstatus, int* playinf
 		if(status.slowspeed != 0)
 			audioclearbuffer(status.aktservice->audiodev);
 		if((status.playspeed != 0 || status.slowspeed != 0) && checkchipset("HI3798MV200") != 1 && checkbox("DM7020HD") != 1 && checkbox("DM7020HDV2") != 1 && vubox1 != 1)
-		{
 			playerresetts();
-		}
-		else
-			playercontinuets();
+		playercontinuets();
 	}
 	else if(playertype == 2)
 		dvdcontinue();
@@ -1728,9 +1725,8 @@ playerstart:
 
 	if(file != NULL)
 	{
-		int noworkaround = getconfigint("playnotintern", NULL);
-		//if(cmpfilenameext(file, ".ts") == 0 && checkbox("VUSOLO2") != 1 && vubox1 != 1 && noworkaround == 0)
-		if(cmpfilenameext(file, ".ts") == 0)
+		if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(file, ".ts") == 0)
+//		if(cmpfilenameext(file, ".ts") == 0)
 		{
 			playertype = 1;
 			addconfig("lastplayertype", "1");
