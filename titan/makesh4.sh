@@ -334,7 +334,7 @@ rm -rf "$HOME"/flashimg/BUILD/titan-smal
 
 if [ ! -e ./titan ]; then
     echo "[titan]--------------------------------------------------------"
-    echo "[titan] building error !!!"
+    echo "[titan] building titan bin error !!!"
     echo "[titan] check your src"
     echo "[titan]--------------------------------------------------------"
     touch "$HOME"/flashimg/.ipk-build-error
@@ -350,7 +350,7 @@ rm -rf "$HOME"/flashimg/$SRCDIR/tpk/tpk
 
 if [ ! -e "$HOME"/flashimg/$SRCDIR/tpk/tpk ]; then
     echo "[titan]--------------------------------------------------------"
-    echo "[titan] building error !!!"
+    echo "[titan] building tpk bin error !!!"
     echo "[titan] check your src"
     echo "[titan]--------------------------------------------------------"
     touch "$HOME"/flashimg/.ipk-build-error
