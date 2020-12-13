@@ -816,7 +816,7 @@ void screeninfobar()
 			status.tuxtxt = 1;
 
 			char* res = NULL;
-			res = string_newline(command("fbset | sed -nr 's/.*mode.*\"([^\"]+)-.*/\1/p' | tr 'x' ' '"));
+			res = string_newline(command("fbset | sed -nr 's/.*mode.*\"([^\"]+)-.*/\\1/p' | tr 'x' ' '"));
 			if(res == NULL)
 			{
 				printf("set default res\n");
