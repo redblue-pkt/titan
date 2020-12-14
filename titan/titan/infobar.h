@@ -816,14 +816,16 @@ void screeninfobar()
 			status.tuxtxt = 1;
 
 			char* res = NULL;
-			res = string_newline(command("fbset | sed -nr 's/.*mode.*\\"([^\\"]+)-.*/\\1/p' | tr 'x' ' '"));
-
+			char* cmd = NULL;
+			cmd = ostrcat("fbset | sed -nr 's/.*mode.*\\"([^\\"]+)-.*/\\1/p' | tr 'x' ' '", NULL, 0, 0);
+			debug(10, "cmd=%s", cmd);
+			res = string_newline(command(cmd));
 			if(res == NULL)
 			{
-				printf("set default res\n");
+				debug(10, "set default res: %s", res);
 				res = ostrcat("1280 720", NULL, 0, 0);
 			}
-			tmpstr = ostrcat("run.sh restart ", res, 0, 1);
+			tmpstr = ostrcat("run.sh restart ", res, 0, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
 			tmpstr = ostrcat(tmpstr, status.aktservice->channel->hbbtvurl, 1, 0);
 			tmpstr = ostrcat(tmpstr, " &", 1, 0);
@@ -834,9 +836,11 @@ void screeninfobar()
 			delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
 			delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
 
-			printf("cmd1: %s\n", tmpstr);
+			debug(10, "cmd=%s", tmpstr);
 			system(tmpstr);
 			free(tmpstr), tmpstr = NULL;
+			free(res), res = NULL;
+			free(cmd), cmd = NULL;
 
 			while(1)
 			{
@@ -889,9 +893,12 @@ void screeninfobar()
 #endif
 			enablemanualblit();
 #else
-			printf("cmd2: %s\n", tmpstr);
+			debug(10, "cmd=%s", tmpstr);
 			system(tmpstr);
 			free(tmpstr), tmpstr = NULL;
+			free(res), res = NULL;
+			free(cmd), cmd = NULL;
+
 #endif
 
 #ifdef MIPSEL
