@@ -2584,6 +2584,38 @@ int tpkupdatepre()
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
 
+#ifdef OEBUILD
+				//get install path from control file
+				char* installpath = tpkgetinstallpath(path);
+printf("get installpath: %s\n", installpath);
+				//execute post install
+				tmpstr = ostrcat(tmpstr, path, 1, 0);
+				tmpstr = ostrcat(tmpstr, "/postinst", 1, 0);
+				if(file_exist(tmpstr) == 1)
+				{
+					tmpstr = ostrcat(tmpstr, " \"", 1, 0);
+					tmpstr = ostrcat(tmpstr, installpath, 1, 0);
+					tmpstr = ostrcat(tmpstr, "\"", 1, 0);
+printf("execute: %s\n", tmpstr);
+					tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
+					tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
+					tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
+printf("execute2: %s\n", tmpstr);
+					ret = system(tmpstr);
+					if(ret != 0)
+					{
+						err("executing postinst %s", tmpstr);
+						free(tmpstr); tmpstr = NULL;
+//						ret = 1;
+//						goto end;
+					}
+				}
+				free(tmpstr); tmpstr = NULL;
+				//free installpath
+printf("free installpath: %s\n", installpath);
+				free(installpath), installpath = NULL;
+#endif
+
 				//copy postrm file
 				tmpstr = ostrcat(tmpstr, path, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/postrm", 1, 0);
