@@ -817,8 +817,8 @@ void screeninfobar()
 
 			char* res = NULL;
 			char* cmd = NULL;
-			cmd = ostrcat("fbset | sed -nr 's/.*mode.*\\\"([^\\\"]+)-.*/\\\1/p' | tr 'x' ' '", NULL, 0, 0);
-//			cmd = ostrcat("fbset | sed -nr 's/.*mode.*"([^"]+)-.*/\1/p' | tr 'x' ' '", NULL, 0, 0);
+//			cmd = ostrcat("fbset | sed -nr 's/.*mode.*\\\"([^\\\"]+)-.*/\\\1/p' | tr 'x' ' '", NULL, 0, 0);
+			cmd = ostrcat("fbset | sed -nr 's/.*mode.*\"([^\"]+)-.*/\\1/p' | tr 'x' ' '", NULL, 0, 0);
 	
 			debug(10, "cmd=%s", cmd);
 			res = string_newline(command(cmd));
