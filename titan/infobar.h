@@ -815,9 +815,9 @@ void screeninfobar()
 			drawscreen(skin, 0, 0);
 			status.tuxtxt = 1;
 
-			tmpstr = ostrcat("run.sh restart ", oitoa(getfbxres()), 0, 0);
+			tmpstr = ostrcat("run.sh restart ", oitoa(getfbxres()), 0, 1);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, oitoa(getfbyres()), 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(getfbyres()), 1, 1);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
 			tmpstr = ostrcat(tmpstr, status.aktservice->channel->hbbtvurl, 1, 0);
 			tmpstr = ostrcat(tmpstr, " &", 1, 0);
