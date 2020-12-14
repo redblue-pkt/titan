@@ -58,6 +58,66 @@ long getfbsize(int dev)
 	return fix_screeninfo.smem_len - fbmemcount;
 }
 
+int getfbxres()
+{
+	struct fb_var_screeninfo var_screeninfo;
+	int fd = -1;
+	char *fbdev = getconfig("fbdev", NULL);
+	
+	if(fbdev == NULL)
+	{
+		err("failed to find fbdev in config file");
+		return -1;
+	}
+
+	fd = open(fbdev, O_RDWR);
+	if(fd == -1)
+	{
+		perr("failed to open %s", fbdev);
+		return -1;
+	}
+	
+	if(ioctl(fd, FBIOGET_VSCREENINFO, &var_screeninfo) < 0)
+	{
+		err("failed to read VSCREENINFO");
+		close(fd);
+		return -1;
+	}
+
+	close(fd);
+	return var_screeninfo.xres;
+}
+
+int getfbyres()
+{
+	struct fb_var_screeninfo var_screeninfo;
+	int fd = -1;
+	char *fbdev = getconfig("fbdev", NULL);
+	
+	if(fbdev == NULL)
+	{
+		err("failed to find fbdev in config file");
+		return -1;
+	}
+
+	fd = open(fbdev, O_RDWR);
+	if(fd == -1)
+	{
+		perr("failed to open %s", fbdev);
+		return -1;
+	}
+	
+	if(ioctl(fd, FBIOGET_VSCREENINFO, &var_screeninfo) < 0)
+	{
+		err("failed to read VSCREENINFO");
+		close(fd);
+		return -1;
+	}
+
+	close(fd);
+	return var_screeninfo.yres;
+}
+
 struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize, unsigned long data_phys)
 {
 	struct fb *newnode = NULL, *node = fb;

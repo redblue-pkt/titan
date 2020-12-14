@@ -815,19 +815,9 @@ void screeninfobar()
 			drawscreen(skin, 0, 0);
 			status.tuxtxt = 1;
 
-			char* res = NULL;
-			char* cmd = NULL;
-//			cmd = ostrcat("fbset | sed -nr 's/.*mode.*\\\"([^\\\"]+)-.*/\\\1/p' | tr 'x' ' '", NULL, 0, 0);
-			cmd = ostrcat("fbset | sed -nr 's/.*mode.*\"([^\"]+)-.*/\\1/p' | tr 'x' ' '", NULL, 0, 0);
-	
-			debug(10, "cmd=%s", cmd);
-			res = string_newline(command(cmd));
-			if(res == NULL)
-			{
-				debug(10, "set default res: %s", res);
-				res = ostrcat("1280 720", NULL, 0, 0);
-			}
-			tmpstr = ostrcat("run.sh restart ", res, 0, 0);
+			tmpstr = ostrcat("run.sh restart ", oitoa(getfbxres()), 0, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(getfbyres()), 1, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
 			tmpstr = ostrcat(tmpstr, status.aktservice->channel->hbbtvurl, 1, 0);
 			tmpstr = ostrcat(tmpstr, " &", 1, 0);
@@ -841,8 +831,6 @@ void screeninfobar()
 			debug(10, "cmd=%s", tmpstr);
 			system(tmpstr);
 			free(tmpstr), tmpstr = NULL;
-			free(res), res = NULL;
-			free(cmd), cmd = NULL;
 
 			while(1)
 			{
@@ -898,9 +886,6 @@ void screeninfobar()
 			debug(10, "cmd=%s", tmpstr);
 			system(tmpstr);
 			free(tmpstr), tmpstr = NULL;
-			free(res), res = NULL;
-			free(cmd), cmd = NULL;
-
 #endif
 
 #ifdef MIPSEL
