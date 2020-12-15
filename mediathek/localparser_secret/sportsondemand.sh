@@ -66,6 +66,10 @@ basketball()
 	echo "NBA (Teams)#$SRC $SRC submenu enx/leagueresults/3/#http://atemio.dyndns.tv/mediathek/menu/nba.teams.jpg#nba.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "NBA (Sorted Date)#$SRC $SRC year enx/videotourney/3/#http://atemio.dyndns.tv/mediathek/menu/nba.date.jpg#nba.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
+	echo "NBA PreSeason (Latest)#$SRC $SRC videos enx/videotourney/2821#http://atemio.dyndns.tv/mediathek/menu/nba.latest.jpg#nba.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "NBA PreSeason (Teams)#$SRC $SRC submenu enx/leagueresults/2821/#http://atemio.dyndns.tv/mediathek/menu/nba.teams.jpg#nba.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "NBA PreSeason (Sorted Date)#$SRC $SRC year enx/videotourney/2821/#http://atemio.dyndns.tv/mediathek/menu/nba.date.jpg#nba.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+
 	echo "German Bundesliga (Latest)#$SRC $SRC videos enx/videotourney/421#http://atemio.dyndns.tv/mediathek/menu/german.bundesliga.latest.jpg#german.bundesliga.latest.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "German Bundesliga (Teams)#$SRC $SRC submenu enx/leagueresults/421/#http://atemio.dyndns.tv/mediathek/menu/german.bundesliga.teams.jpg#german.bundesliga.teams.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	echo "German Bundesliga (Sorted Date)#$SRC $SRC year enx/videotourney/421/#http://atemio.dyndns.tv/mediathek/menu/german.bundesliga.date.jpg#german.bundesliga.date.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
@@ -759,7 +763,11 @@ livelist()
 #		zcat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr '\n' ' ' | sed 's!<img width=27!\nfound=!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
 
 		zcat $TMP/cache.$PARSER.$FROM.$FILENAME.1 >$TMP/cache.$PARSER.$FROM.$FILENAME.2a
-        cat $TMP/cache.$PARSER.$FROM.$FILENAME.2a | tr -d '\n' | sed 's!<img width=27!\nfound=!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		if [ `cat /tmp/localcache/cache.sportsondemand..sportsondemand.livelist.de.2a | wc -l` -eq 0 ];then 
+	        cat $TMP/cache.$PARSER.$FROM.$FILENAME.1 | tr -d '\n' | sed 's!<img width=27!\nfound=!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2		
+		else
+	        cat $TMP/cache.$PARSER.$FROM.$FILENAME.2a | tr -d '\n' | sed 's!<img width=27!\nfound=!g' | grep '^found=' >$TMP/cache.$PARSER.$FROM.$FILENAME.2
+		fi
 
 		while read -u 3 ROUND; do
 			URL=`echo $ROUND | sed 's!href=!\nurl=!g' | grep ^url= | cut -d'"' -f2 | head -n1`
