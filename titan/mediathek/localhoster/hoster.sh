@@ -890,7 +890,7 @@ curldl()
 if [ "$TYPE" == "get" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
-		apl3|apl13|apl14|apl15) apl3 $INPUT;;
+		apl0|apl1|apl2|apl3|apl4|apl5|apl6|apl7|apl8|apl9|apl10|apl11|apl12|apl13|apl14|apl15|apl16|apl17|apl18|apl19|apl20|apl21|apl22|apl23|apl24|apl25|apl26|apl27|apl28|apl29|apl30) apl3 $INPUT;;
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
 		nosvideo) nosvideo $INPUT;;
@@ -935,7 +935,7 @@ if [ "$TYPE" == "get" ];then
 if [ ! -z "$hoster2" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster2.log
 	case $hoster2 in
-		apl3|apl13|apl14|apl15) apl3 $INPUT;;
+		apl0|apl1|apl2|apl3|apl4|apl5|apl6|apl7|apl8|apl9|apl10|apl11|apl12|apl13|apl14|apl15|apl16|apl17|apl18|apl19|apl20|apl21|apl22|apl23|apl24|apl25|apl26|apl27|apl28|apl29|apl30) apl3 $INPUT;;
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
 		nosvideo) nosvideo $INPUT;;
