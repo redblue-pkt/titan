@@ -397,6 +397,7 @@ streamcrypt()
 
 voe() 
 {
+	curlbin=$(echo $curlbin | sed "s!$PROXY!!")
 	if [ "$ARCH" == "sh4" ];then
 		URL=`$curlbin "$INPUT" | sed -nr "s/.*src: '([^']+)'.*/\1/p" | sed 's/https:/http:/g'` 
 	else
