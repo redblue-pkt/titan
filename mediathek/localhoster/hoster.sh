@@ -42,9 +42,6 @@ proxy=`cat /mnt/config/titan.cfg | grep tithek_proxy | cut -d"=" -f2`
 if [ ! -z "$proxy" ];then PROXY="--proxy $proxy"; fi
 curlbin="$CURLBIN $PROXY -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 curlbin2="$CURLBIN $PROXY -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
-
-curlbin="$CURLBIN -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
-curlbin2="$CURLBIN -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
 hlsdlbg="$HLSBIN -u $USERAGENT -o"
