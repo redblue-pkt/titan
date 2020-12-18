@@ -369,6 +369,9 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		else
 			curl_easy_setopt(curl_handle, CURLOPT_REFERER, referer);
 
+		if(getconfig("tithek_proxy", NULL) != NULL)
+			curl_easy_setopt(curl_handle, CURLOPT_PROXY, getconfig("tithek_proxy", NULL));
+
 		/* get it! */
 		res = curl_easy_perform(curl_handle);
 		/* check for errors */
