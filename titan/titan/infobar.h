@@ -602,6 +602,7 @@ void screeninfobar()
 				delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
 
 				tmpstr = ostrcat(tmpstr, " &", 1, 0);
+				printf("cmd1: %s\n", tmpstr);
 				system(tmpstr);
 
 				while(1)
@@ -654,6 +655,7 @@ void screeninfobar()
 #endif
 				enablemanualblit();
 #else
+				printf("cmd2: %s\n", tmpstr);
 				system(tmpstr);
 #endif
 #ifdef MIPSEL
