@@ -245,9 +245,18 @@ char* hoster(char* url)
 	return streamurl;
 }
 
+#include <stdio.h>
+#include <curl/curl.h>
+
+/* This callback is, currently, a simple wrapper around fwrite(). You
+   could get it to write to memory, or do anything else you'd like
+   with the output. For more info, see
+   http://curl.haxx.se/libcurl/c/CURLOPT_WRITEFUNCTION.html
+ */
+
 struct MemoryStruct {
   char *memory;
-  size_t size;
+  size_t size;	
 };
 
 static size_t
@@ -258,9 +267,9 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
  
   mem->memory = realloc(mem->memory, mem->size + realsize + 1);
   if(mem->memory == NULL) {
-    /* out of memory! */ 
-    printf("not enough memory (realloc returned NULL)\n");
-    return 0;
+	/* out of memory! */ 
+	printf("not enough memory (realloc returned NULL)\n");
+	return 0;
   }
  
   memcpy(&(mem->memory[mem->size]), contents, realsize);
@@ -270,12 +279,15 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
   return realsize;
 }
 
+static size_t writeCallback(void *contents, size_t size, size_t nitems, FILE *file) {
+  return fwrite(contents, size, nitems, file);
+}
 // flag = 0 (without header in output)
 // flag = 1 (with header in output)
 char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, char* referer, int flag)
 {
 	debug(99, "url: %s", url);
-//    if(ostrncmp("http", url, 4)) return NULL;
+	printf("url: %s\n", url);
 
 	int debuglevel = getconfigint("debuglevel", NULL);
 
@@ -296,7 +308,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 	curl_handle = curl_easy_init();
 	if(curl_handle)
 	{
-	    if(localfile != NULL)
+	   	if(localfile != NULL)
 		    fp = fopen(localfile,"wb");
 	       
 		/* specify URL to get */
@@ -304,8 +316,8 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 
 		if(user != NULL && pass != NULL)
 		{
-			curl_easy_setopt(curl_handle, CURLOPT_USERNAME, user);
-			curl_easy_setopt(curl_handle, CURLOPT_PASSWORD, pass);
+			curl_easy_setopt(curl_handle, CURLOPT_USERNAME, HTTPUSER);
+			curl_easy_setopt(curl_handle, CURLOPT_PASSWORD, HTTPPASS);
 			curl_easy_setopt(curl_handle, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
 		}
 		if(data == NULL)
@@ -316,7 +328,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 			curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDS, data);
 
 			/* example.com is redirected, so we tell libcurl to send POST on 301, 302 and
-		     303 HTTP response codes */
+		     	303 HTTP response codes */
 			curl_easy_setopt(curl_handle, CURLOPT_POSTREDIR, CURL_REDIR_POST_ALL);
 		}
 		if(flag == 1)
@@ -325,17 +337,30 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 3);
 //		curl_easy_setopt(curl_handle, CURLOPT_RETURNTRANSFER, 1);
 
-		/* send all data to this function  */
-	    if(localfile == NULL)
+	   	if(localfile == NULL)
+		{
+			/* send all data to this function  */
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
+		}
 		else
-			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, NULL);
+		{
+			/* When data arrives, curl will call writeCallback. */
+			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, writeCallback);
+//			curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, NULL);		
+		}
 
-		/* we pass our 'chunk' struct to the callback function */
-	    if(localfile == NULL)
+
+
+	   	if(localfile == NULL)
+		{
+			/* we pass our 'chunk' struct to the callback function */
 			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
+		}
 		else
-			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, fp);
+		{
+			/* The last argument to writeCallback will be our file: */
+			curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)fp);
+		}
 
 		/* some servers don't like requests that are made without a user-agent field, so we provide one */
 //		curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
@@ -361,6 +386,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		/* allow three redirects */
 		curl_easy_setopt(curl_handle, CURLOPT_MAXREDIRS, 3L);
 
+
 		/* enable all supported built-in compressions */
 		curl_easy_setopt(curl_handle, CURLOPT_ACCEPT_ENCODING, "");
   
@@ -369,11 +395,12 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 		else
 			curl_easy_setopt(curl_handle, CURLOPT_REFERER, referer);
 
-		if(getconfig("tithek_proxy", NULL) != NULL)
+		if(getconfig("tithek_proxy", NULL) != NULL && getconfigint("tithek_useproxy", NULL) == 1)
 			curl_easy_setopt(curl_handle, CURLOPT_PROXY, getconfig("tithek_proxy", NULL));
 
 		/* get it! */
 		res = curl_easy_perform(curl_handle);
+
 		/* check for errors */
 		if(res != CURLE_OK)
 		{
@@ -397,13 +424,17 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 			fclose(fp);
 	}
 
-	tmpstr = ostrcat(chunk.memory, NULL, 0, 0);
-  	free(chunk.memory);
-  	/* we're done with libcurl, so clean it up */
-   	curl_global_cleanup();
+	if(localfile == NULL)
+		tmpstr = ostrcat(chunk.memory, NULL, 0, 0);
 
-	if(localfile != NULL) 
+  	free(chunk.memory);
+	/* we're done with libcurl, so clean it up */
+
+	curl_global_cleanup();
+
+	if(localfile != NULL)
 		free(tmpstr), tmpstr = NULL;
+
 	return tmpstr;
 }
 

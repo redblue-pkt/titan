@@ -1,4 +1,6 @@
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
+#define HTTPUSER "aUtzhFRTzuDFa"
+#define HTTPPASS "JNHZbghnjuz"
 
 
 #include "../titan/struct.h"
