@@ -316,8 +316,8 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 
 		if(user != NULL && pass != NULL)
 		{
-			curl_easy_setopt(curl_handle, CURLOPT_USERNAME, HTTPUSER);
-			curl_easy_setopt(curl_handle, CURLOPT_PASSWORD, HTTPPASS);
+			curl_easy_setopt(curl_handle, CURLOPT_USERNAME, user);
+			curl_easy_setopt(curl_handle, CURLOPT_PASSWORD, pass);
 			curl_easy_setopt(curl_handle, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
 		}
 		if(data == NULL)
