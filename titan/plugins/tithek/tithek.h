@@ -666,8 +666,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	if(link == NULL) return NULL;
 	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8) && ostrncmp("/tmp/localhoster/hoster.sh", link, 26)) return NULL;
 
-//    link = stringreplacecharonce(link, '"', '\0');
-//    link = stringreplacecharonce(link, ' ', '\0');
+	link = stringreplacecharonce(link, ' ', '\0');
 
 	if(!ostrncmp("/tmp/localhoster/hoster.sh", link, 26))
 		usecmd = 1;
@@ -746,7 +745,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 					struct download* dnode = calloc(1, sizeof(struct download));
 					if(dnode != NULL)
 					{
-//        				if(ssl == 1)
+//+        				if(ssl == 1)
 //							dnode->link = ostrcat(link, NULL, 0, 0);
 						if(usecmd == 1)
 							dnode->cmd = ostrcat(link, NULL, 0, 0);
@@ -2089,7 +2088,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					addmenulist(&mlist, "Streaming Playback Caching (10MB)", _("Streaming Playback Caching (10MB)"), NULL, 0, 0);
 				}
 //#endif
-				if(!ostrncmp("http://", tmpstr1, 7) && (file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
+				if((!ostrncmp("http://", tmpstr1, 7) || !ostrncmp("https://", tmpstr1, 8)) && (file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
 //				if(!ostrncmp("http", tmpstr1, 4) && (file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
 				{
 /*
@@ -2121,66 +2120,90 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			addconfigtmp("playerbuffersize", "0");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "524288");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "1048576");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "2097152");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "3145728");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "4194304");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "5242880");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (7.5MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "7864320");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (10MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "10485760");
 			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "File Caching Playback (10MB / 120s)") == 0)
 		{
 			cacheplay(tmpstr1, filename, 1);
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "File Caching Playback (20MB / 240s)") == 0)
 		{
 			cacheplay(tmpstr1, filename, 2);
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "File Caching Playback (30MB / 360s)") == 0)
 		{
 			cacheplay(tmpstr1, filename, 3);
+			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 		}
 		else if(ostrcmp(keyconf, "Download Full File") == 0)
 		{
@@ -2197,6 +2220,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					tmpstr2 = ostrcat(tmpstr2, search, 1, 0);
 					screenplay(tmpstr2, filename, 2, flag);
 					free(tmpstr2); tmpstr2 = NULL;
+					if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
+						servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 				}
 			}
 			free(search), search = NULL;
@@ -2274,7 +2299,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 		savevol = getvol();
 
 		mkdir("/tmp/tithek", 777);
-		if(status.mcaktiv == 0)
+		if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 1)
 		{
 			rcret = servicestop(status.aktservice, 1, 1);
 			if(rcret == 1) return;
@@ -3287,7 +3312,7 @@ why ?
 
 		python = 0;
 
-		if(status.mcaktiv == 0)
+		if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 1)
 			servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 	}
 }

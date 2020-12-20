@@ -36,13 +36,16 @@
 		<node parent="listbox" name="kinox_url" text="KinoX Url" type="inputbox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="kinox_pic" text="KinoX Load Preview Pic" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="kinox_localhoster" text="KinoX Localhoster" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="useproxy" text="Use Proxy" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="proxy" text="Proxy" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="delservice" text="Del Service" type="choicebox" valign="middle" width="100%" height="35">
 	<node name="buttonbar" posx="0" posy="0" width="100%" height="50" hspace="5" fontcol="black" fontsize="25" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"    posx="0"   posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png"  posx="70"  posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b3" picmem="skin/key_text_70x40.png" posx="140" posy="center" width="70" height="40"valign="middle" >
 		<node parent="buttonbar" name="b4" picmem="skin/key_red_30x30.png" posx="220" posy="center" width="280" height="30" valign="middle" textposx="40" text="Remove Cookies">
 		<node parent="buttonbar" name="b5" picmem="skin/key_green_30x30.png" posx="440" posy="center" width="280" height="30" valign="middle" textposx="40" text="Screensaver">
+		<node parent="buttonbar" name="b6" picmem="skin/key_yellow_30x30.png" posx="680" posy="center" width="280" height="30" valign="middle" textposx="40" text="Current IP Check">
 </screen>
 
 

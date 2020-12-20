@@ -20,7 +20,9 @@ void screentithek_settings()
 	struct skin* kinox_url = getscreennode(tithek_settings, "kinox_url");
 	struct skin* kinox_pic = getscreennode(tithek_settings, "kinox_pic");
 	struct skin* kinox_localhoster = getscreennode(tithek_settings, "kinox_localhoster");
+	struct skin* useproxy = getscreennode(tithek_settings, "useproxy");
 	struct skin* proxy = getscreennode(tithek_settings, "proxy");
+	struct skin* delservice = getscreennode(tithek_settings, "delservice");
 	
 	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
@@ -90,9 +92,6 @@ void screentithek_settings()
 	changemask(kinox_url, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(kinox_url, getconfig("tithek_kinox_url", NULL));
 
-	changemask(proxy, "abcdefghijklmnopqrstuvwxyz0123456789://@");
-	changeinput(proxy, getconfig("tithek_proxy", NULL));
-
 	addchoicebox(kinox_pic, "0", _("no"));
 	addchoicebox(kinox_pic, "1", _("yes"));	
 	setchoiceboxselection(kinox_pic, getconfig("tithek_kinox_pic", NULL));
@@ -101,6 +100,17 @@ void screentithek_settings()
 	addchoicebox(kinox_localhoster, "1", _("https"));	
 	addchoicebox(kinox_localhoster, "2", _("cloudfare"));	
 	setchoiceboxselection(kinox_localhoster, getconfig("tithek_kinox_localhoster", NULL));
+
+	changemask(proxy, "abcdefghijklmnopqrstuvwxyz0123456789://@");
+	changeinput(proxy, getconfig("tithek_proxy", NULL));
+
+	addchoicebox(useproxy, "0", _("no"));
+	addchoicebox(useproxy, "1", _("yes"));	
+	setchoiceboxselection(useproxy, getconfig("tithek_useproxy", NULL));
+
+	addchoicebox(delservice, "0", _("no"));
+	addchoicebox(delservice, "1", _("yes"));	
+	setchoiceboxselection(delservice, getconfig("tithek_delservice", NULL));
 
 	if(!file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
 		kinox_url->hidden = YES;
@@ -117,7 +127,12 @@ void screentithek_settings()
 		addscreenrc(tithek_settings, tmp);
 		rcret = waitrc(tithek_settings, 0, 0);
 		tmp = listbox->select;
-	
+/*
+		if(useproxy->ret != NULL && ostrcmp(useproxy->ret, "0") == 0)
+			proxy->hidden = YES;
+		else
+			proxy->hidden = NO;
+*/		
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -130,7 +145,9 @@ void screentithek_settings()
 			addconfigscreen("tithek_kinox_url", kinox_url);
 			addconfigscreencheck("tithek_kinox_pic", kinox_pic, NULL);
 			addconfigscreencheck("tithek_kinox_localhoster", kinox_localhoster, NULL);
+			addconfigscreencheck("tithek_useproxy", useproxy, NULL);
 			addconfigscreen("tithek_proxy", proxy);
+			addconfigscreencheck("tithek_delservice", delservice, NULL);
 /*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
@@ -192,6 +209,30 @@ void screentithek_settings()
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			unlink("/mnt/network/cookies");
+		}
+		else if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			char* tmpstr = NULL;
+			char* cmd = NULL;
+			if(kinox_localhoster->ret != NULL && ostrcmp(kinox_localhoster->ret, "0") == 0)
+				tmpstr = gethttp("checkip.dyndns.org", "/", 80, NULL, NULL, 10000, NULL, 0);
+			else if(kinox_localhoster->ret != NULL && ostrcmp(kinox_localhoster->ret, "1") == 0)
+				tmpstr = gethttps("http://checkip.dyndns.org/", NULL, NULL, NULL, NULL, NULL, 1);
+			else if(kinox_localhoster->ret != NULL && ostrcmp(kinox_localhoster->ret, "2") == 0)
+			{
+	// new start
+				cmd = ostrcat("/tmp/localhoster/hoster.sh cloudflare 'http://checkip.dyndns.org/'", NULL, 0, 0);
+				debug(99, "cmd: %s", cmd);
+
+				tmpstr = command(cmd);
+				free(cmd), cmd = NULL;
+	// new end
+			}
+			cmd = string_resub("<body>", "</body>", tmpstr, 0);
+			free(tmpstr), tmpstr = NULL;
+
+			textbox(_("Message"), cmd, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			free(cmd), cmd = NULL;
 		}
 
 		if(file_exist("/mnt/network/cookies") && (/*ostrcmp(listbox->select->name, "amazon_user") == 0 || ostrcmp(listbox->select->name, "amazon_pass") == 0 || */ostrcmp(listbox->select->name, "vk_user") == 0 || ostrcmp(listbox->select->name, "vk_pass") == 0))

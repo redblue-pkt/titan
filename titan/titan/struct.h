@@ -702,6 +702,8 @@ struct download
 	int port;
 	char* filename;
 	char* auth;
+	char* user;
+	char* pass;
 	int connfd;
 	int proz;
 	unsigned int maxkb;
