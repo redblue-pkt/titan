@@ -1638,7 +1638,7 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	resettvpic();
 
 #ifdef SH4
-	if((startfolder == 0 && flag != 3) || getconfigint("tithek_delservice", NULL) == 1)
+	if((startfolder == 0 && flag != 3) || getconfigint("tithek_delservice", NULL) == 0)
 	{
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
