@@ -1781,13 +1781,16 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 //	system("rm /mnt/network/cookies");
 	int debuglevel = getconfigint("debuglevel", NULL);
 
-	if(debuglevel == 99)
+	if(debuglevel == 199)
 		tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d 'consent=1&securitytoken=guest' https://aaf-digital.info/forum/ajax/api/user/updateGuestPrivacyConsent", NULL, 0, 0);
 	else
 		tmplink = ostrcat("curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d 'consent=1&securitytoken=guest' https://aaf-digital.info/forum/ajax/api/user/updateGuestPrivacyConsent", NULL, 0, 0);
-	printf("cmd1: %s\n", tmplink);
+
+	if(debuglevel == 199)
+		printf("cmd1: %s\n", tmplink);
 	tmpstr = command(tmplink);
-	printf("tmpstr1: %s\n", tmpstr);
+	if(debuglevel == 199)
+		printf("tmpstr1: %s\n", tmpstr);
 	free(tmpstr) , tmpstr = NULL;
 	free(tmplink) , tmplink = NULL;
 	if(user != NULL && pass != NULL)
@@ -1797,16 +1800,16 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		hash = ostrcat(hash, pass, 1, 0);
 		hash = ostrcat(hash, "&privacyconsent=1&securitytoken=guest", 1, 0);
 		tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
-		if(debuglevel == 99)
+		if(debuglevel == 199)
 			tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
 		else
 			tmplink = ostrcat("curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
 
 		tmplink = ostrcat(tmplink, "' https://aaf-digital.info/forum/auth/ajax-login", 1, 0);
-		if(debuglevel == 99)
+		if(debuglevel == 199)
 			printf("cmd2: %s\n", tmplink);
 		tmpstr = command(tmplink);
-		if(debuglevel == 99)
+		if(debuglevel == 199)
 			printf("tmpstr2: %s\n", tmpstr);
 		free(tmplink) , tmplink = NULL;
 		free(hash); hash = NULL;	
@@ -1817,15 +1820,17 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	free(tmpstr); tmpstr = NULL;
 
 	tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
-	if(debuglevel == 99)
+	if(debuglevel == 199)
 		tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
 	else
 		tmplink = ostrcat("curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
 
 	tmplink = ostrcat(tmplink, "' https://aaf-digital.info/forum", 1, 0);
-	if(debuglevel == 99)
+	if(debuglevel == 199)
 		printf("cmd3: %s\n", tmplink);
 	tmpstr = command(tmplink);
+	if(debuglevel == 199)
+		printf("tmpstr3: %s\n", tmplink);
 #endif
 //	printf("tmpstr3: %s\n", tmpstr);
 	free(tmplink) , tmplink = NULL;

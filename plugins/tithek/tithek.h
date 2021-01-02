@@ -2088,8 +2088,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					addmenulist(&mlist, "Streaming Playback Caching (10MB)", _("Streaming Playback Caching (10MB)"), NULL, 0, 0);
 				}
 //#endif
-//				if((!ostrncmp("http://", tmpstr1, 7) || !ostrncmp("https://", tmpstr1, 8)) && (file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
-				if(!ostrncmp("http", tmpstr1, 4) && (file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
+//				if(!ostrncmp("http", tmpstr1, 4) && (file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
+				if(!ostrncmp("http://", tmpstr1, 7) && (file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))))
 				{
 /*
 #ifndef EPLAYER3
