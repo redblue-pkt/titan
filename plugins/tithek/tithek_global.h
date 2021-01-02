@@ -289,6 +289,8 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 	debug(99, "url: %s", url);
 	printf("url: %s\n", url);
 
+	if(url == NULL) return NULL;
+
 	int debuglevel = getconfigint("debuglevel", NULL);
 
 	char* tmpstr = NULL;
