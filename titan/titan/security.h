@@ -1547,7 +1547,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	}
 
 	tmppath = ostrcat("/", path, 0, 0);
-
+#ifdef BULLETIN_OLD
 	if(checkbox("ATEMIO-NEMESIS") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?390", NULL, 0, 0);
 	else if(checkbox("ATEMIO6000") == 1)
@@ -1738,6 +1738,106 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 
 	if(ostrstr(tmpstr, "<input type=\"hidden\" name=\"securitytoken\" value=\"guest\" />") != NULL)
 		ret = 1;
+#else
+//vBulletin.version = '5.6.1';
+#ifdef GETHTTPS
+//	system("rm /mnt/network/cookies");
+//	system("sed 's/#HttpOnly_//g' -i /mnt/network/cookies");
+	tmplink = ostrcat("https://aaf-digital.info/forum/ajax/api/user/updateGuestPrivacyConsent", NULL, 0, 0);
+	printf("tmplink1: %s\n", tmplink);
+	hash = ostrcat("consent=1&securitytoken=guest", NULL, 0, 0);
+	printf("hash1: %s\n", hash);
+	tmpstr = gethttps(tmplink, NULL, hash, NULL, NULL, NULL, 0);
+	free(tmplink) , tmplink = NULL;
+	free(hash) , hash = NULL;
+	free(tmpstr) , tmpstr = NULL;
+
+	if(user != NULL && pass != NULL)
+	{
+//		system("sed 's/#HttpOnly_//g' -i /mnt/network/cookies");
+		hash = ostrcat("username=", user, 0, 0);
+		hash = ostrcat(hash, "&password=", 1, 0);
+		hash = ostrcat(hash, pass, 1, 0);
+		hash = ostrcat(hash, "&privacyconsent=1&securitytoken=guest", 1, 0);
+		printf("hash2: %s\n", hash);
+		tmplink = ostrcat("https://aaf-digital.info/forum/auth/ajax-login", NULL, 0, 0);
+		printf("tmplink2: %s\n", tmplink);
+		tmpstr = gethttps(tmplink, NULL, hash, NULL, NULL, NULL, 0);
+		free(tmplink) , tmplink = NULL;
+		free(hash); hash = NULL;
+		sleep(1);
+	}
+//	system("sed 's/#HttpOnly_//g' -i /mnt/network/cookies");
+//	hash = string_resub("{", "}", tmpstr, 0);
+//	hash = string_replace_all("\"", "", hash, 1);
+	hash = ostrcat(tmpstr, NULL, 0, 0);
+
+	free(tmpstr); tmpstr = NULL;
+	printf("hash3: %s\n", hash);
+	tmplink = ostrcat("https://aaf-digital.info/forum", NULL, 0, 0);
+	printf("tmplink3: %s\n", tmplink);
+	tmpstr = gethttps(tmplink, NULL, hash, NULL, NULL, NULL, 0);
+#else
+//	system("rm /mnt/network/cookies");
+	int debuglevel = getconfigint("debuglevel", NULL);
+
+	if(debuglevel == 99)
+		tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d 'consent=1&securitytoken=guest' https://aaf-digital.info/forum/ajax/api/user/updateGuestPrivacyConsent", NULL, 0, 0);
+	else
+		tmplink = ostrcat("curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d 'consent=1&securitytoken=guest' https://aaf-digital.info/forum/ajax/api/user/updateGuestPrivacyConsent", NULL, 0, 0);
+	printf("cmd1: %s\n", tmplink);
+	tmpstr = command(tmplink);
+	printf("tmpstr1: %s\n", tmpstr);
+	free(tmpstr) , tmpstr = NULL;
+	free(tmplink) , tmplink = NULL;
+	if(user != NULL && pass != NULL)
+	{
+		hash = ostrcat("username=", user, 0, 0);
+		hash = ostrcat(hash, "&password=", 1, 0);
+		hash = ostrcat(hash, pass, 1, 0);
+		hash = ostrcat(hash, "&privacyconsent=1&securitytoken=guest", 1, 0);
+		tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
+		if(debuglevel == 99)
+			tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
+		else
+			tmplink = ostrcat("curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
+
+		tmplink = ostrcat(tmplink, "' https://aaf-digital.info/forum/auth/ajax-login", 1, 0);
+		if(debuglevel == 99)
+			printf("cmd2: %s\n", tmplink);
+		tmpstr = command(tmplink);
+		if(debuglevel == 99)
+			printf("tmpstr2: %s\n", tmpstr);
+		free(tmplink) , tmplink = NULL;
+		free(hash); hash = NULL;	
+	}
+//	hash = string_resub("{", "}", tmpstr, 0);
+	hash = ostrcat(tmpstr, NULL, 0, 0);
+
+	free(tmpstr); tmpstr = NULL;
+
+	tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
+	if(debuglevel == 99)
+		tmplink = ostrcat("curl -v -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
+	else
+		tmplink = ostrcat("curl -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -d '", hash, 0, 0);
+
+	tmplink = ostrcat(tmplink, "' https://aaf-digital.info/forum", 1, 0);
+	if(debuglevel == 99)
+		printf("cmd3: %s\n", tmplink);
+	tmpstr = command(tmplink);
+#endif
+//	printf("tmpstr3: %s\n", tmpstr);
+	free(tmplink) , tmplink = NULL;
+	free(hash); hash = NULL;
+	hash = string_resub("\"username\": \"", "\"", tmpstr, 0);
+	printf("found user: %s\n", hash);
+	free(hash); hash = NULL;
+	
+	if(ostrstr(tmpstr, "\"securitytoken\": \"guest\",") != NULL)
+		ret = 1;
+
+#endif
 
 	free(send); send = NULL;
 	free(tmpstr); tmpstr = NULL;
