@@ -266,7 +266,7 @@ if [ $MEDIAFW = 4 ]; then
 fi
 
 #if [ "$GROUP" = "dev" ] && ([ "$TYPE" = "spark" ] || [ "$TYPE" = "spark7162" ]); then
-if [ "$TYPE" = "spark" ] || [ "$TYPE" = "spark7162" ]; then
+if [ "$TYPE" = "spark_aus" ] || [ "$TYPE" = "spark7162_aus" ]; then
     devflag="-finstrument-functions -rdynamic -DBETA -DEPLAYER3"
 elif [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
     devflag="-finstrument-functions -rdynamic -DBETA -DEXTEPLAYER3"
