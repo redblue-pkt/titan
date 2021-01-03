@@ -1636,20 +1636,15 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	int skip79 = getconfigint("skip79", NULL);
 
 	resettvpic();
+printf("[screenplay] flag: %d startfolder: %d\n", flag, startfolder);
 
-#ifdef SH4
-	if((startfolder == 0 && flag != 3) || getconfigint("tithek_delservice", NULL) == 0)
-	{
-		rcret = servicestop(status.aktservice, 1, 1);
-		if(rcret == 1) return ret;
-	}
-#else
 	if(startfolder == 0 && flag != 3)
 	{
+printf("[screenplay] stopservice\n");
+
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
 	}
-#endif
 
 printf("[screenplay] status.webplayfile: %s\n",status.webplayfile);
 

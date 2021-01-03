@@ -88,7 +88,7 @@ startbootlogo()
 {
 	if [ -e /proc/stb/info/boxtype ]; then
 		stbcheck=`cat /proc/stb/info/boxtype`
-		if [ $stbcheck == "sf8008" ] || [ $stbcheck == "sf8008s" ] || [ $stbcheck == "sf8008t" ] || [ $stbcheck == "ustym4kpro" ] || [ $stbcheck == "cc1" ]; then
+		if [ $stbcheck == "sf8008" ] || [ $stbcheck == "sf8008m" ] || [ $stbcheck == "ustym4kpro" ] || [ $stbcheck == "cc1" ]; then
 			count=`ps -ef |grep libreader |grep -v "grep" |wc -l`
 			if [ 0 == $count ];then
 				libreader 720P_50
@@ -299,7 +299,7 @@ startgui()
 				killall -9 showiframe; sleep 5
 			fi
 			stbcheck=`cat /proc/stb/info/boxtype`
-			if [ $stbcheck == "sf8008" ] || [ $stbcheck == "sf8008s" ] || [ $stbcheck == "sf8008t" ] || [ $stbcheck == "ustym4kpro" ] || [ $stbcheck == "cc1" ] ; then
+			if [ $stbcheck == "sf8008" ] || [ $stbcheck == "sf8008m" ] || [ $stbcheck == "ustym4kpro" ] || [ $stbcheck == "cc1" ] ; then
 				killall -9 libreader; sleep 5
 			fi
 		fi
