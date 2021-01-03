@@ -1683,7 +1683,7 @@ void cacheplay(char* link, char* filename, int flag)
 		free(tmpstr), tmpstr = NULL;
 	}
 
-	screenplay(file, filename, 3, 0);
+	screenplay(file, filename, 2, 0);
 	sockclose(&dnode->connfd);
 	free(dnode); dnode = NULL;
 
@@ -2118,7 +2118,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "0");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2126,7 +2126,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "524288");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2134,7 +2134,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "1048576");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2142,7 +2142,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "2097152");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2150,7 +2150,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "3145728");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2158,7 +2158,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "4194304");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2166,7 +2166,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "5242880");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2174,7 +2174,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (7.5MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "7864320");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2182,7 +2182,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(ostrcmp(keyconf, "Streaming Playback Caching (10MB)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "10485760");
-			screenplay(tmpstr1, filename, 3, flag);
+			screenplay(tmpstr1, filename, 2, flag);
 			delconfigtmp("playerbuffersize");
 			if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 				servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
@@ -2218,7 +2218,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 				{
 					tmpstr2 = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
 					tmpstr2 = ostrcat(tmpstr2, search, 1, 0);
-					screenplay(tmpstr2, filename, 3, flag);
+					screenplay(tmpstr2, filename, 2, flag);
 					free(tmpstr2); tmpstr2 = NULL;
 					if(status.mcaktiv == 0 && getconfigint("tithek_delservice", NULL) == 0)
 						servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
