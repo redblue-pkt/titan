@@ -1638,7 +1638,7 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	resettvpic();
 printf("[screenplay] flag: %d startfolder: %d\n", flag, startfolder);
 
-	if((startfolder == 0 && flag != 3) || startfolder == 3 && getconfigint("tithek_delservice", NULL) == 0)
+	if((startfolder == 0 && flag != 3) || (startfolder == 3 && getconfigint("tithek_delservice", NULL) == 0))
 	{
 printf("[screenplay] stopservice\n");
 
