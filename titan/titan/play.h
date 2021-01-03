@@ -1618,6 +1618,7 @@ void playstartservice()
 // flag 3 = not stop/start live service
 // flag 4 = playing with screensaver
 // startfolder 2 = do nothing with playstop/playstart
+// startfolder 3 = do nothing with playstop/playstart start from tithek
 int screenplay(char* startfile, char* showname, int startfolder, int flag)
 {
 	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0, holdselection = 0, waitofbuffer = 0, videooff = 0;
