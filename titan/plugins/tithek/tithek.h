@@ -914,6 +914,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		localfile = 1;
 	}
 
+	status.tithekaktiv = 1;
 //	amazon_init(titheklink, tithekfile);
 //init locale parser
 	localparser_init(titheklink, tithekfile, flag);
@@ -3292,6 +3293,7 @@ why ?
 	}
 
 //	amazon_deinit();
+	status.tithekaktiv = 0;
 
 	delmarkedscreennodes(grid, 1);
 	delownerrc(grid);
