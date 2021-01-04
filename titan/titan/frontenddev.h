@@ -903,10 +903,10 @@ int fewait(struct dvbdev* node)
 	if(checkrealbox("DM920") == 1 || checkchipset("HI3798MV200") == 1)
 		timer = 4000;
 		//timer = 6000;
-	if(checkrealbox("spark7162") == 1)
+	if(checkrealbox("SPARK7162") == 1)
 		timer = 5;
 
-printf("fewait; timer=%d\n",timer);
+printf("fewait: timer=%d\n",timer);
 	//wait for tuner ready
 	debug(200, "wait for tuner start");
 	while(count <= timer)
