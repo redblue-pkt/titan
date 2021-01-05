@@ -61,12 +61,16 @@ mainmenu()
 	echo "Movie (Popular)#$SRC $SRC latest 'Popular-Movies.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Movies.jpg#Popular-Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Movie (A-Z)#$SRC $SRC sorted movie#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 
-	echo "Tv (Latest)#$SRC $SRC latest 'Latest-TVSeries.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Series.jpg#Latest-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Tv (Popular)#$SRC $SRC latest 'Popular-TVSeries.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Series.jpg#Popular-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Tv (Latest)#$SRC $SRC latest 'Latest-TVSeries.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Series.jpg#Latest-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Tv (Popular)#$SRC $SRC latest 'Popular-TVSeries.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Series.jpg#Popular-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Tv (Latest)#$SRC $SRC latest 'Latest-TVSerien.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Series.jpg#Latest-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Tv (Popular)#$SRC $SRC latest 'Popular-TVSerien.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Series.jpg#Popular-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Tv (A-Z)#$SRC $SRC sorted series#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 
-	echo "Doku (Latest)#$SRC $SRC latest 'Latest-Documentations.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Documentations.jpg#Latest-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Doku (Popular)#$SRC $SRC latest 'Popular-Documentations.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Documentations.jpg#Popular-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Doku (Latest)#$SRC $SRC latest 'Latest-Documentations.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Documentations.jpg#Latest-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Doku (Popular)#$SRC $SRC latest 'Popular-Documentations.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Documentations.jpg#Popular-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Doku (Latest)#$SRC $SRC latest 'Latest-Dokumentationen.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Documentations.jpg#Latest-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Doku (Popular)#$SRC $SRC latest 'Popular-Dokumentationen.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Documentations.jpg#Popular-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Doku (A-Z)#$SRC $SRC sorted documentation#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 
 	echo "Actor (A-Z)#$SRC $SRC sorted actor#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
