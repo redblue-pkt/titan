@@ -407,7 +407,7 @@ latest()
 
 		while read -u 3 ROUND; do
 			piccount=`expr $piccount + 1`
-			filename=`echo $ROUND | sed -nr 's/.*<a href="\/Stream\/([^\/]+)" .*/\1/p'`
+			filename=`echo $ROUND | sed -nr 's/.*<a href="\/Stream\/([^\/]+)" .*/\1/p' | cut -d'"' -f1`
 			picname=`echo $filename | sed 's!.html!.jpg!'`
 			searchname=`echo $filename | sed 's!.html!!'`	
 
@@ -480,7 +480,7 @@ latest()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE$LANGTXT$YEARTXT$IMDBTXT#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#22aaaa"
+				LINE="$TITLE$LANGTXT$YEARTXT$IMDBTXT#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#22"
 
 				if [ `cat $TMP/$FILENAME.list | grep "$TITLE" | wc -l` -eq 0 ];then
 					echo "$LINE" >> $TMP/$FILENAME.list
