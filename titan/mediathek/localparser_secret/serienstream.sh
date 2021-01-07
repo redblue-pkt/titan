@@ -43,9 +43,10 @@ mainmenu()
 {
 	echo "Tv-Shows (A-Z)#$SRC $SRC sorted 'katalog'#http://atemio.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "All Series#$SRC $SRC all 'serien'#http://atemio.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Search#$SRC $SRC search 'serien' 1 '%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
-
+#https://s.to/search?q={search_string}
 
 sorted()
 {
@@ -57,7 +58,7 @@ sorted()
 		for ROUND in $watchlist; do
 			TITLE=`echo $ROUND`
 			filename=`echo $TITLE | tr [A-Z] [a-z]`
-			echo "$TITLE#$SRC $SRC list '$PAGE/$ROUND'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC list '$PAGE/$ROUND' 1#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -258,12 +259,14 @@ episode()
 list()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
+		if [ "$NEXT" == "1" ]; then PAGE2=$($curlbin $URL/$PAGE/$NEXT | grep '<ul><li class="active">' | sed 's/<a href=/\npages:<a href=/g' |  grep -v "&gt" | sed -nr 's/.*>([^>]+)<.*/\1/p' | tail -n1);fi
+		$curlbin -o - $URL/$PAGE/$NEXT | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v SRC=$SRC -v pages=$pages -v NAME=$NAME -v NEXT=$NEXT -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT -v PAGE2=$PAGE2 \
 		'
 			# BEGIN variable setzen
 			BEGIN \
 				{
 					suche = 0
+					print "pages: " $pages
 				}
 				# next page init
 				/<div class="seriesListContainer row">/ \
@@ -319,6 +322,11 @@ list()
 						}
 #						next
 					}
+				}
+			END \
+				{
+					if (NEXT != PAGE2)
+						print "Page (" NEXT + 1 "/" PAGE2 ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 " " PAGE2 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -397,6 +405,56 @@ hoster()
 	echo $URL
 }
 
+search()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""' | grep $PAGE2 | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+				{
+#					print "start"
+				}
+				# next page init
+				# <li><a data-alternative-title="" href="/serie/stream/zwei-himmlische-toechter" title="Zwei himmlische Töchter Stream anschauen">Zwei himmlische Töchter</a></li>
+				/href/ \
+				{
+#					print "$0" $0
+
+					# extrahiere den newpage pfad
+					i = index($0, "href=\"") + 6
+		            j = index(substr($0, i), "\"") - 1
+					# newpage = /view_video.php?viewkey=127170590
+		            newpage = substr($0, i, j)
+
+					# extrahiere den newpage pfad
+					i = index($0, "\">") + 2
+		            j = index(substr($0, i), "<") - 1
+					# newpage = /view_video.php?viewkey=127170590
+		            title = substr($0, i, j)
+
+					if (title != "")
+					{
+						if ( pic == "" )
+						{
+			      			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+						}
+
+						piccount += 1
+						# 25. in naechste zeile springen
+						# 26. \x27 = single quotes
+						print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+					}
+					next
+				}
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+#	cat "$TMP/$FILENAME.list"
+}
+
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
@@ -407,4 +465,5 @@ case $INPUT in
 	list) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
+	search) $INPUT;;
 esac
