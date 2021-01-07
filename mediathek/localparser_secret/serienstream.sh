@@ -266,7 +266,6 @@ list()
 			BEGIN \
 				{
 					suche = 0
-					print "pages: " $pages
 				}
 				# next page init
 				/<div class="seriesListContainer row">/ \
