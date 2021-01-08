@@ -7707,7 +7707,8 @@ char* system_logs(int mode)
 #ifdef SH4
 		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
 #else
-		tmpstr = readfiletomem(tmpstr1, 0);
+//		tmpstr = readfiletomem(tmpstr1, 0);
+		tmpstr = readfromlinetoline(tmpstr1, 0, 29000, 1);
 #endif
 #else
 		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
