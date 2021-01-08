@@ -214,7 +214,7 @@ play()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	genre) $INPUT;;
 	series) $INPUT;;
