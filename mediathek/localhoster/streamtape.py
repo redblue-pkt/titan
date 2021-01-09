@@ -33,7 +33,6 @@ class StreamTapeResolver(object):
     name = "streamtape"
     domains = ['streamtape.com']
     pattern = r'(?://|\.)(streamtape\.com)/(?:e|v)/([0-9a-zA-Z]+)'
-    print "1111111111111"
 
 #    def __init__(self):
 #        self.net = common.Net()
