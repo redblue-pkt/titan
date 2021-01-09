@@ -175,10 +175,10 @@ def scrape_sources(html, result_blacklist=None, scheme='http', patterns=None, ge
 
     return source_list
 
-
-def get_media_url(url, result_blacklist=None, patterns=None, generic_patterns=True):
-    if patterns is None: patterns = []
-    scheme = urlparse(url).scheme
+def get_media_url(url, result_blacklist=None, patterns=None, generic_patterns=True, referer=True):
+    if patterns is None:
+        patterns = []
+    scheme = urllib_parse.urlparse(url).scheme
     if result_blacklist is None:
         result_blacklist = []
     elif isinstance(result_blacklist, str):
@@ -187,15 +187,16 @@ def get_media_url(url, result_blacklist=None, patterns=None, generic_patterns=Tr
     result_blacklist = list(set(result_blacklist + ['.smil']))  # smil(not playable) contains potential sources, only blacklist when called from here
     net = common.Net()
     headers = {'User-Agent': common.RAND_UA}
-
+    if referer:
+        headers.update({'Referer': url})
     response = net.http_GET(url, headers=headers)
     response_headers = response.get_headers(as_dict=True)
-    headers.update({'Referer': url})
     cookie = response_headers.get('Set-Cookie', None)
     if cookie:
         headers.update({'Cookie': cookie})
     html = response.content
-
+    if not referer:
+        headers.update({'Referer': url})
     source_list = scrape_sources(html, result_blacklist, scheme, patterns, generic_patterns)
     source = pick_source(source_list)
     return source + append_headers(headers)
@@ -284,3 +285,9 @@ def get_redirect_url(url, headers={}):
     request.get_method = lambda: 'HEAD'
     response = urllib_request.urlopen(request)
     return response.geturl()
+    
+def _default_get_url(self, host, media_id, template=None):
+    if template is None:
+        template = 'http://{host}/embed-{media_id}.html'
+    host = self._get_host(host)
+    return template.format(host=host, media_id=media_id)
