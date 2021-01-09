@@ -384,6 +384,16 @@ mixdrop()
 	$BIN $CMD/mixdrop.py $INPUT
 }
 
+streamtape()
+{
+	$BIN $CMD/streamtape.py $INPUT
+}
+
+upstream()
+{
+	$BIN $CMD/upstream.py $INPUT
+}
+
 
 streamcrypt()
 {
@@ -936,6 +946,8 @@ if [ "$TYPE" == "get" ];then
 		vshare) vshare $INPUT;;
 		streamcrypt) hoster2=$(streamcrypt $INPUT);;
 		voe) voe $INPUT;;
+		streamtape) streamtape $INPUT;;
+		upstream) upstream $INPUT;;
 #		*) all $INPUT;;
 	esac
 if [ ! -z "$hoster2" ];then
@@ -981,6 +993,8 @@ if [ ! -z "$hoster2" ];then
 		vshare) vshare $INPUT;;
 		streamcrypt) streamcrypt $INPUT;;
 		voe) voe $INPUT;;
+		streamtape) streamtape $INPUT;;
+		upstream) upstream $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
