@@ -399,6 +399,11 @@ evoload()
 	$BIN $CMD/evoload.py $INPUT
 }
 
+abcvideo()
+{
+	$BIN $CMD/abcvideo.py $INPUT
+}
+
 streamcrypt()
 {
 	hoster=$(echo $INPUT | sed -nr 's/.*:\/\/.*\/([^\/]+)\/.*/\1/p')
@@ -953,6 +958,7 @@ if [ "$TYPE" == "get" ];then
 		streamtape) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
+		abcvideo) abcvideo $INPUT;;
 #		*) all $INPUT;;
 	esac
 if [ ! -z "$hoster2" ];then
@@ -1001,6 +1007,7 @@ if [ ! -z "$hoster2" ];then
 		streamtape) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
+		abcvideo) abcvideo $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
