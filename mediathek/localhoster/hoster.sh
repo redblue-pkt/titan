@@ -394,6 +394,10 @@ upstream()
 	$BIN $CMD/upstream.py $INPUT
 }
 
+evoload()
+{
+	$BIN $CMD/evoload.py $INPUT
+}
 
 streamcrypt()
 {
@@ -948,6 +952,7 @@ if [ "$TYPE" == "get" ];then
 		voe) voe $INPUT;;
 		streamtape) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
+		evoload) evoload $INPUT;;
 #		*) all $INPUT;;
 	esac
 if [ ! -z "$hoster2" ];then
@@ -995,6 +1000,7 @@ if [ ! -z "$hoster2" ];then
 		voe) voe $INPUT;;
 		streamtape) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
+		evoload) evoload $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
