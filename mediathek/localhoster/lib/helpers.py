@@ -37,7 +37,7 @@ def get_hidden(html, form_id=None, index=None, include_submit=True):
     html = cleanse_html(html)
 
     for i, form in enumerate(re.finditer(pattern, html, re.DOTALL | re.I)):
-        common.logger.log(form.group(1))
+#        common.logger.log(form.group(1))
         if index is None or i == index:
             for field in re.finditer('''<input [^>]*type=['"]?hidden['"]?[^>]*>''', form.group(1)):
                 match = re.search(r'''name\s*=\s*['"]([^'"]+)''', field.group(0))
@@ -53,13 +53,13 @@ def get_hidden(html, form_id=None, index=None, include_submit=True):
                     if name and value:
                         hidden[name.group(1)] = value.group(1)
 
-    common.logger.log_debug('Hidden fields are: %s' % (hidden))
+#    common.logger.log_debug('Hidden fields are: %s' % (hidden))
     return hidden
 
 
 def pick_source(sources, auto_pick=None):
-    if auto_pick is None:
-        auto_pick = common.get_setting('auto_pick') == 'true'
+#    if auto_pick is None:
+#        auto_pick = common.get_setting('auto_pick') == 'true'
 
     if len(sources) == 1:
         return sources[0][1]
@@ -99,11 +99,13 @@ def sort_sources_list(sources):
         try:
             sources.sort(key=lambda x: int(re.sub(r"\D", "", x[0])), reverse=True)
         except:
-            common.logger.log_debug(r'Scrape sources sort failed |int(re.sub("\D", "", x[0])|')
+            dummy = 1
+#            common.logger.log_debug(r'Scrape sources sort failed |int(re.sub("\D", "", x[0])|')
             try:
                 sources.sort(key=lambda x: re.sub("[^a-zA-Z]", "", x[0].lower()))
             except:
-                common.logger.log_debug('Scrape sources sort failed |re.sub("[^a-zA-Z]", "", x[0].lower())|')
+                 dummy = 1
+#                common.logger.log_debug('Scrape sources sort failed |re.sub("[^a-zA-Z]", "", x[0].lower())|')
     return sources
 
 
@@ -157,8 +159,8 @@ def scrape_sources(html, result_blacklist=None, scheme='http', patterns=None, ge
             streams.append(stream_url)
 
         matches = zip(labels, streams) if six.PY2 else list(zip(labels, streams))
-        if matches:
-            common.logger.log_debug('Scrape sources |%s| found |%s|' % (regex, matches))
+#        if matches:
+#            common.logger.log_debug('Scrape sources |%s| found |%s|' % (regex, matches))
         return matches
 
     if result_blacklist is None:
@@ -182,7 +184,7 @@ def scrape_sources(html, result_blacklist=None, scheme='http', patterns=None, ge
 
     source_list = list(set(source_list))
 
-    common.logger.log(source_list)
+#    common.logger.log(source_list)
     source_list = sort_sources_list(source_list)
 
     return source_list
