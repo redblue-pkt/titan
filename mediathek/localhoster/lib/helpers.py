@@ -186,6 +186,7 @@ def get_media_url(url, result_blacklist=None, patterns=None, generic_patterns=Tr
 
     result_blacklist = list(set(result_blacklist + ['.smil']))  # smil(not playable) contains potential sources, only blacklist when called from here
     net = common.Net()
+#    net = common.Net(cookie_file='/mnt/network/cookies')
     headers = {'User-Agent': common.RAND_UA}
     if referer:
         headers.update({'Referer': url})
@@ -199,6 +200,7 @@ def get_media_url(url, result_blacklist=None, patterns=None, generic_patterns=Tr
         headers.update({'Referer': url})
     source_list = scrape_sources(html, result_blacklist, scheme, patterns, generic_patterns)
     source = pick_source(source_list)
+#    ret = self.net.save_cookies('/mnt/network/cookies')
     return source + append_headers(headers)
 
 def cleanse_html(html):
