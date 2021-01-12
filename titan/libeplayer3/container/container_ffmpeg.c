@@ -2125,6 +2125,7 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 				free(tmpstr1), tmpstr1 = NULL;
 			}
 		}
+/*
 		if(cookie != NULL)
 		{
 			ffmpeg_printf(10, "set cookies: %s\n", cookie);
@@ -2132,10 +2133,10 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 		}
 		else
 			ffmpeg_printf(10, "skip set cookies : %s\n", cookie);
-
+*/
 		ffmpeg_printf(10, "check user-agent and header\n");
 
-	        if (ostrstr(filename, "&tslivemode=1") != NULL)
+		if (ostrstr(filename, "&tslivemode=1") != NULL)
 			usetslivemode = 1;
 
 		if(ostrstr(filename, "|") != NULL)
@@ -2171,11 +2172,9 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 								for(i3 = 0; i3 < max; i3++)
 								{
 									if(ostrcmp("User-Agent", ret3[i3].part) == 0)
-									{
-										av_dict_set(&avio_opts, "user-agent", ret3[i3 + 1].part, 0);
-									   	ffmpeg_printf(10, "set user-agent: %s\n", ret3[i3 + 1].part);
-									   	useragent = ostrcat(useragent, ret3[i3 + 1].part, 1, 0);
-					   				}
+									   	useragent = ostrcat(ret3[i3 + 1].part, NULL, 0, 0);
+									else if(ostrcmp("Cookie", ret3[i3].part) == 0)
+									   	cookie = ostrcat(cookie, ret3[i3 + 1].part, 1, 0);
 					   				else
 									{
 									    headers = ostrcat(headers, ret3[i3].part, 1, 0);
@@ -2195,16 +2194,49 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 
 			    if(headers != NULL)
 				{
+/*
+Referer: https %3A %2F %2F upstream.to %2F embed-ldd233xca41c.html
+Referer: https :   /   /   upstream.to /   embed-ldd233xca41c.html
+*/
+					headers = string_replace_all("%3A", ":", headers, 1);
+					headers = string_replace_all("%3B", ";", headers, 1);
 					headers = string_replace_all("%3D", "=", headers, 1);
 					headers = string_replace_all("%26", "&", headers, 1);
+					headers = string_replace_all("%28", "(", headers, 1);
+					headers = string_replace_all("%29", ")", headers, 1);					
+					headers = string_replace_all("%2C", ",", headers, 1);
+					headers = string_replace_all("%2F", "/", headers, 1);
+					headers = string_replace_all("%3A", ":", headers, 1);
+					headers = string_replace_all("+", " ", headers, 1);
+
 			        av_dict_set(&avio_opts, "headers", headers, 0);
 				   	ffmpeg_printf(10, "set headers: %s\n", headers);
 				}
 				else
 					ffmpeg_printf(10, "skip set headers: %s\n", headers);
 
-			    if(useragent == NULL)
-					ffmpeg_printf(10, "skip set user-agent: %s\n", headers);
+			    if(useragent != NULL)
+			    {
+/*
+User-Agent: Mozilla %2F 5.0+ %28 Windows+NT+10.0 %3B +rv %3A 44.0 %29 +Gecko %2F 20100101+Firefox %2F 44.0
+User-Agent: Mozilla /   5.0+ (   Windows+NT+10.0 ;   +rv :   44.0 )   +Gecko /   20100101+Firefox /   44.0
+
+*/
+					useragent = string_replace_all("%3A", ":", useragent, 1);
+					useragent = string_replace_all("%3B", ";", useragent, 1);
+					useragent = string_replace_all("%3D", "=", useragent, 1);
+					useragent = string_replace_all("%26", "&", useragent, 1);
+					useragent = string_replace_all("%28", "(", useragent, 1);
+					useragent = string_replace_all("%29", ")", useragent, 1);					
+					useragent = string_replace_all("%2C", ",", useragent, 1);
+					useragent = string_replace_all("%2F", "/", useragent, 1);
+					useragent = string_replace_all("%3A", ":", useragent, 1);
+					useragent = string_replace_all("+", " ", useragent, 1);
+				   	ffmpeg_printf(10, "set user-agent: %s\n", useragent);
+					av_dict_set(&avio_opts, "user-agent", useragent, 0);
+				}
+			    else
+					ffmpeg_printf(10, "skip set user-agent: %s\n", useragent);
 			}
 
 			free(useragent), useragent = NULL;
@@ -2213,13 +2245,38 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 			free(tmpstr1), tmpstr1 = NULL;
 			stringreplacechar(filename, '|', '\0');		
 		   	ffmpeg_printf(10, "changed filename: %s\n", filename);
-
 		}
+
+	    if(cookie != NULL)
+	    {
+/*
+__ddg1 %3D w1mW5o1idPp9sUV8MaSL %3B +Domain %3D .upstream.to %3B +HttpOnly %3B +Path %3D %2F %3B +Expires %3D Wed %2C +12-Jan-2022+13 %3A 37 %3A 51+GMT
+__ddg1 =   w1mW5o1idPp9sUV8MaSL ;   +Domain =   .upstream.to ;   +HttpOnly ;   +Path =   /   ;   +Expires =   Wed ,   +12-Jan-2022+13 :   37 :   51+GMT
+*/
+			cookie = string_replace_all("%3A", ":", cookie, 1);
+			cookie = string_replace_all("%3B", ";", cookie, 1);
+			cookie = string_replace_all("%3D", "=", cookie, 1);
+			cookie = string_replace_all("%26", "&", cookie, 1);
+			cookie = string_replace_all("%28", "(", cookie, 1);
+			cookie = string_replace_all("%29", ")", cookie, 1);					
+			cookie = string_replace_all("%2C", ",", cookie, 1);
+			cookie = string_replace_all("%2F", "/", cookie, 1);
+			cookie = string_replace_all("%3A", ":", cookie, 1);
+			cookie = string_replace_all("+", " ", cookie, 1);
+			
+			av_dict_set(&avio_opts, "cookies", cookie, 0);
+		   	ffmpeg_printf(10, "set cookies: %s\n", cookie);
+		}
+	    else
+			ffmpeg_printf(10, "skip set cookies: %s\n", cookie);
+
+		free(cookie), cookie = NULL;
+
 	   	ffmpeg_printf(10, "check tslivemode\n");
 
 //        	if (ostrstr(filename, ".m3u8") != NULL)
-	        if (usetslivemode == 1)
-	        {
+		if (usetslivemode == 1)
+		{
 		   	ffmpeg_printf(10, "set tslivemode\n");
 			context->playback->isTSLiveMode = 1;
 		}
