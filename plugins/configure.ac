@@ -52,6 +52,7 @@ lcdpearl1/Makefile
 lcdsamsung/Makefile
 mboxinfo/Makefile
 mc/Makefile
+multiimage/Makefile
 networkbrowser/Makefile
 networkbrowser/netlib/Makefile
 optimize/Makefile
@@ -60,6 +61,7 @@ permtime/Makefile
 readerconfig/Makefile
 rgui/Makefile
 scriptexec/Makefile
+sispmctl/Makefile
 stock/Makefile
 stopifnotused/Makefile
 streaminfo/Makefile

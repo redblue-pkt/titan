@@ -22,6 +22,7 @@ SUBDIRS = \
 	lcdsamsung \
 	mboxinfo \
 	mc \
+	multiimage \
 	networkbrowser \
 	optimize \
 	panel \
@@ -29,6 +30,7 @@ SUBDIRS = \
 	readerconfig \
 	rgui \
 	scriptexec \
+	sispmctl \
 	stock \
 	stopifnotused \
 	streaminfo \
