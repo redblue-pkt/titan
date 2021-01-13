@@ -4949,14 +4949,39 @@ void switchvideomode()
 int setvideomode(char* value, int flag)
 {
 	char* videomodedev;
+	char* videomodedev_24hz = NULL,videomodedev_50hz = NULL, videomodedev_60hz = NULL;
 	int ret = 0;
 
 	videomodedev = getconfig("videomodedev", NULL);
+	videomodedev_24hz = ostrcat(getconfig("videomodedev", NULL), "_24hz", 0, 0);
+	videomodedev_50hz = ostrcat(getconfig("videomodedev", NULL), "_50hz", 0, 0);
+	videomodedev_60hz = ostrcat(getconfig("videomodedev", NULL), "_60hz", 0, 0);
 
 	if(videomodedev != NULL && value != NULL)
 	{
-		debug(100, "set %s to %s", videomodedev, value);
-		ret = writesys(videomodedev, value, 0);
+		if(file_exist(videomodedev_24hz))
+		{
+			debug(100, "set %s to %s", videomodedev_24hz, value);
+			ret = writesys(videomodedev_24hz, value, 0);
+			free(videomodedev_24hz), videomodedev_24hz = NULL;
+		}
+		if(file_exist(videomodedev_50hz))
+		{
+			debug(100, "set %s to %s", videomodedev_50hz, value);
+			ret = writesys(videomodedev_50hz, value, 0);
+			free(videomodedev_50hz), videomodedev_50hz = NULL;
+		}
+		if(file_exist(videomodedev_60hz))
+		{
+			debug(100, "set %s to %s", videomodedev_60hz, value);
+			ret = writesys(videomodedev_60hz, value, 0);
+			free(videomodedev_60hz), videomodedev_60hz = NULL;
+		}
+		if(file_exist(videomodedev))
+		{
+			debug(100, "set %s to %s", videomodedev, value);
+			ret = writesys(videomodedev, value, 0);
+		}
 		if(ret == 0 && flag == 0) addconfig("av_videomode", value);
 		return ret;
 	}
