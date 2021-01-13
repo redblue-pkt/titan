@@ -4949,7 +4949,7 @@ void switchvideomode()
 int setvideomode(char* value, int flag)
 {
 	char* videomodedev;
-	char* videomodedev_24hz = NULL,videomodedev_50hz = NULL, videomodedev_60hz = NULL;
+	char* videomodedev_24hz = NULL,*videomodedev_50hz = NULL, *videomodedev_60hz = NULL;
 	int ret = 0;
 
 	videomodedev = getconfig("videomodedev", NULL);
