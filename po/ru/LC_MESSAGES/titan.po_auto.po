@@ -76,10 +76,6 @@ msgstr ""
 msgid "( --votes-- )"
 msgstr "Голосов"
 
-#: skin_default_oledskin.xml.h:1
-msgid "()="
-msgstr ""
-
 #: skin_default_skin.xml.h:624
 msgid "(Stop)"
 msgstr "(Стоп)"
