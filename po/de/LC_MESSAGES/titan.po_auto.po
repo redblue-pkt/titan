@@ -11474,11 +11474,11 @@ msgstr "USB Geräte"
 
 #: skin_default_skin.xml.h:716
 msgid "Usbupdate (online)"
-msgstr "USB-Image (Online)"
+msgstr "USB-Multiboot-Image (Online)"
 
 #: skin_default_skin.xml.h:717
 msgid "Usbupdate (tmp)"
-msgstr "USB-Image (Lokal)"
+msgstr "USB-Multiboot-Image (Lokal)"
 
 #: skin_default_skin.xml.h:719
 msgid "Use EPG Endtime"
@@ -14342,11 +14342,11 @@ msgstr "Flash-Image Aktualisierung (Lokal)"
 
 #: webif_help.h:102
 msgid "systemupdate_usb_online_menu"
-msgstr "USB-Image Aktualisierung (Online)"
+msgstr "USB-Multiboot-Image Aktualisierung (Online)"
 
 #: webif_help.h:103
 msgid "systemupdate_usb_tmp_menu"
-msgstr "USB-Image Aktualisierung (Lokal)"
+msgstr "USB-Multiboot-Image Aktualisierung (Lokal)"
 
 #: webif_help.h:101
 msgid "systemupdatemenu"
