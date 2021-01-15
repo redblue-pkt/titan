@@ -6785,7 +6785,7 @@ msgid ""
 "Multiboot installation completed successfully\n"
 "Activate your new startup"
 msgstr ""
-"Multiboot Installation erfogreich abgeschlossen\n"
+"Multiboot Installation erfolgreich abgeschlossen\n"
 "Aktivieren sie ihr aktives Multiboot Laufwerk"
 
 #: moduleconfig.h:479
