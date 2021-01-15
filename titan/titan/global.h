@@ -7756,7 +7756,7 @@ char* system_logs(int mode)
 
 char* getimgnamereal()
 {
-	char* tmpstr = NULL, *tmpstr = NULL;
+	char* tmpstr = NULL, *tmpstr2 = NULL;
 
 
 	tmpstr = readfiletomem(getconfig("imagenamefile", NULL), 1);
