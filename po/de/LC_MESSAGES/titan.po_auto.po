@@ -1499,7 +1499,7 @@ msgstr "Die Sicherung wurde erfolgreich erstellt"
 
 #: global.h:7952
 msgid "Backup ended with error"
-msgstr ""
+msgstr "Sicherung endet mit einem Fehler"
 
 #: system_backup_restore.h:125
 msgid "Backup failed, see log"
@@ -1509,7 +1509,7 @@ msgstr ""
 
 #: system_backup_restore.h:62 system_backup_restore.h:67
 msgid "Backup restored successfully"
-msgstr ""
+msgstr "Die Sicherung wurde erfolgreich eingespielt"
 
 #: system_backup_restore.h:105
 msgid ""
@@ -6789,6 +6789,8 @@ msgid ""
 "Multiboot installation completed successfully\n"
 "Activate your new startup"
 msgstr ""
+"Multiboot Installation erfogreich abgeschlossen\n"
+"Aktivieren sie ihr aktives Multiboot Laufwerk"
 
 #: moduleconfig.h:479
 msgid "Multiple Service"
