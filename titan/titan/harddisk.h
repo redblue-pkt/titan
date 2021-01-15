@@ -698,7 +698,19 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat(cmd , filesystem, 1, 0);
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
-
+#ifdef OEBUILD
+		if(!file_exist("/mnt/logs"))
+			 mkdir("/mnt/logs", 777);
+	
+		if(file_exist("/mnt/logs"))
+			cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
+#else
+		if(!file_exist("/mnt/logs"))
+			 mkdir("/mnt/logs", 777);
+	
+		if(file_exist("/mnt/logs"))
+			cmd = ostrcat(cmd, " > /mnt/logs/fsck_debug.log 2>&1", 1, 0);
+			
 			if(file_exist("/var/swap"))
 			{
 				if(!file_exist("/var/swap/logs"))
@@ -715,7 +727,7 @@ void hddformat(char* dev, char* filesystem)
 				if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
 					cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
 			}
-
+#endif
 			debug(80, "fdisk create cmd: %s", cmd);
 			system(cmd);
 			format = 2;
@@ -745,7 +757,13 @@ void hddformat(char* dev, char* filesystem)
 
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
-
+#ifdef OEBUILD
+			if(!file_exist("/mnt/logs"))
+				 mkdir("/mnt/logs", 777);
+		
+			if(file_exist("/mnt/logs"))
+				cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
+#else
 			if(file_exist("/var/swap"))
 			{
 				if(!file_exist("/var/swap/logs"))
@@ -762,7 +780,7 @@ void hddformat(char* dev, char* filesystem)
 				if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
 					cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
 			}
-
+#endif
 			debug(80, "fdisk update cmd: %s", cmd);
 			system(cmd);
 			format = 1;
@@ -832,7 +850,13 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat(cmd , " 1", 1, 0);
 		else
 			cmd = ostrcat(cmd , " 0", 1, 0);
-
+#ifdef OEBUILD
+		if(!file_exist("/mnt/logs"))
+			 mkdir("/mnt/logs", 777);
+	
+		if(file_exist("/mnt/logs"))
+			cmd = ostrcat(cmd, " >> /mnt/logs/format_debug.log 2>&1", 1, 0);		
+#else
 		if(file_exist("/var/swap"))
 		{
 			if(!file_exist("/var/swap/logs"))
@@ -849,7 +873,7 @@ void hddformat(char* dev, char* filesystem)
 			if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
 				cmd = ostrcat(cmd, " >> /mnt/logs/format_debug.log 2>&1", 1, 0);
 		}
-
+#endif
 		debug(80, "format cmd: %s", cmd);
 		rc = system(cmd);
 		free(cmd); cmd = NULL;
@@ -889,7 +913,13 @@ int hddfsck(char* dev)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext3.gui -f -p\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "ext4") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext4.gui -f -p\" /dev/" , dev, 0, 0);
-
+#ifdef OEBUILD
+		if(!file_exist("/mnt/logs"))
+			 mkdir("/mnt/logs", 777);
+	
+		if(file_exist("/mnt/logs"))
+			cmd = ostrcat(cmd, " > /mnt/logs/fsck_debug.log 2>&1", 1, 0);
+#else
 		if(file_exist("/var/swap"))
 		{
 			if(!file_exist("/var/swap/logs"))
@@ -906,7 +936,7 @@ int hddfsck(char* dev)
 			if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
 				cmd = ostrcat(cmd, " > /mnt/logs/fsck_debug.log 2>&1", 1, 0);
 		}
-		
+#endif		
 		debug(80, "fsck cmd: %s", cmd);
 		system(cmd);
 		free(cmd); cmd = NULL;
