@@ -351,9 +351,13 @@ void screensystem_update(int mode)
 					if(ret == 0)
 					{
 						system(cmd);
+#ifdef OEBUILD
+						textbox(_("Message"), _("Multiboot installation completed successfully\nActivate your new startup"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+#else
 						//should only reached if system fails
 						textbox(_("Message"), _("Can't start system update\nSyntax Error on updatefile"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 						debug(40, "update error cmd: %s", cmd);
+#endif
 					}
 					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, node->filepath, node->filemask, 0, NULL);
