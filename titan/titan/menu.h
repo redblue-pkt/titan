@@ -541,19 +541,27 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1)
 		{
-			if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+//			if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+			if(file_exist("/proc/stb/fp/boot_mode") || file_exist("/boot/STARTUP_RECOVERY"))
 				return 0;
 			else
 				return 1;
 		}
-		writesys("/proc/stb/fp/boot_mode", "rescue", 1);	
+
+		if(file_exist("/proc/stb/fp/boot_mode"))
+			writesys("/proc/stb/fp/boot_mode", "rescue", 1);
+		
+		if(file_exist("/boot/STARTUP_RECOVERY"))
+			system("cp /boot/STARTUP_RECOVERY /boot/STARTUP");
+
 		oshutdown(2, 1);
 	}
 	else if(ostrcmp("multiboot", menuentry->name) == 0)
 	{
 		if(check == 1)
 		{
-			if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("SF4008") == 1 || checkchipset("HI3798MV200") == 1)
+//			if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("SF4008") == 1 || checkchipset("HI3798MV200") == 1)
+			if(file_exist("/boot/STARTUP"))
 				return 0;
 			else
 				return 1;
