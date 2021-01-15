@@ -7756,10 +7756,19 @@ char* system_logs(int mode)
 
 char* getimgnamereal()
 {
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpstr = NULL;
+
 
 	tmpstr = readfiletomem(getconfig("imagenamefile", NULL), 1);
-
+#ifdef OEBUILD
+	if(file_exist("/boot/STARTUP"))
+	{
+		tmpstr2 = command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'");
+		tmpstr = ostrcat(tmpstr, " (", 1, 0);
+		tmpstr = ostrcat(tmpstr, tmpstr2, 1, 1);
+		tmpstr = ostrcat(tmpstr, ")", 1, 0);
+	}
+#endif
 	return tmpstr;
 }
 

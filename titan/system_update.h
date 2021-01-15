@@ -37,7 +37,7 @@ void screensystem_update(int mode)
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 		char* rootpart = command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'");
 #endif
-
+printf("devicelist: %s\n", devicelist);
 		if(devicelist != NULL && strlen(devicelist) != 0)
 		{
 			char* pch;
@@ -68,6 +68,8 @@ void screensystem_update(int mode)
 						showname = ostrcat(showname, _("non-version"), 1, 0);
 					else
 						showname = ostrcat(showname, strstrip(version), 1, 0);
+printf("rootpart: %s\n", rootpart);
+printf("phc: %s\n", phc);
 
 					if(ostrcmp(pch, rootpart) == 0)
 						showname = ostrcat(showname, " (active)", 1, 0);
