@@ -31,11 +31,12 @@ void screensystem_update(int mode)
 	if(mode == 2 || mode == 3)
 	{
 #ifdef OEBUILD
-		char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sort -u");
+		char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g' | sort -u");
+		char* rootpart = command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'");
 #else
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
-#endif
 		char* rootpart = command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'");
+#endif
 
 		if(devicelist != NULL && strlen(devicelist) != 0)
 		{
@@ -352,6 +353,7 @@ void screensystem_update(int mode)
 					{
 						system(cmd);
 #ifdef OEBUILD
+						sleep(3);
 						textbox(_("Message"), _("Multiboot installation completed successfully\nActivate your new startup"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 #else
 						//should only reached if system fails
