@@ -10351,11 +10351,11 @@ msgstr "Flash-Image Aktualisierung (Lokal/Backup)"
 
 #: skin_default_skin.xml.h:649
 msgid "System - Usbupdate (online)"
-msgstr "USB-Image Aktualisieren (Online)"
+msgstr "USB-Multiboot-Image Aktualisieren (Online)"
 
 #: skin_default_skin.xml.h:650
 msgid "System - Usbupdate (tmp)"
-msgstr "USB-Image Aktualisieren (Lokal)"
+msgstr "USB-Multiboot-Image Aktualisieren (Lokal)"
 
 #: httpdfunc.h:6684 skin_default_skin.xml.h:642 webif_system.h:3
 msgid "System Backup"
