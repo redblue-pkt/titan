@@ -2105,7 +2105,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "Ошибка воспроизведения!"
 
-#: system_update.h:365
+#: system_update.h:378
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -2364,7 +2364,7 @@ msgstr "Выберите закладку из списка ниже"
 msgid "Choose your Language from the following list"
 msgstr "Выберите язык из списка"
 
-#: global.h:8391
+#: global.h:8404
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -3547,8 +3547,8 @@ msgstr "Ошибка: Установка завершилась с ошибко�
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:70
-#: system_backup_restore.h:151 system_update.h:345 system_update.h:351
-#: system_update.h:362 system_update.h:365 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:358 system_update.h:364
+#: system_update.h:375 system_update.h:378 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1248 titan.c:1257 titan.c:1388 titan.c:1409 titan.c:1415
@@ -3722,7 +3722,7 @@ msgstr "Ошибка"
 msgid "Error create filename"
 msgstr "Ошибка создания файла"
 
-#: system_update.h:345
+#: system_update.h:358
 msgid "Error file not supported"
 msgstr "Ошибка, файл не поддерживается"
 
@@ -6485,8 +6485,8 @@ msgstr "Лист меню"
 #: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:58
 #: system_backup_restore.h:64 system_backup_restore.h:67
 #: system_backup_restore.h:70 system_backup_restore.h:125
-#: system_backup_restore.h:133 system_backup_restore.h:136 system_update.h:345
-#: system_update.h:351 system_update.h:362 system_update.h:365 thefile.h:34
+#: system_backup_restore.h:133 system_backup_restore.h:136 system_update.h:358
+#: system_update.h:364 system_update.h:375 system_update.h:378 thefile.h:34
 #: thefile.h:69 thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72
 #: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
 #: titan.c:316 titan.c:1388 titan.c:1409 titan.c:1415 titan.c:1426 titan.c:1432
@@ -6679,7 +6679,7 @@ msgstr "Установка/Переименование мультиимиджа
 msgid "Multiboot"
 msgstr "Мультизагрузка"
 
-#: system_update.h:362
+#: system_update.h:375
 msgid ""
 "Multiboot installation completed successfully\n"
 "Activate your new startup"
@@ -7142,8 +7142,8 @@ msgstr "Ж"
 #: system_backup_restore.h:70 system_backup_restore.h:80
 #: system_backup_restore.h:125 system_backup_restore.h:133
 #: system_backup_restore.h:136 system_backup_restore.h:144
-#: system_backup_restore.h:151 system_update.h:345 system_update.h:351
-#: system_update.h:362 system_update.h:365 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:358 system_update.h:364
+#: system_update.h:375 system_update.h:378 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1248 titan.c:1257 titan.c:1388 titan.c:1409 titan.c:1415
@@ -13273,7 +13273,7 @@ msgstr "Нет"
 msgid "no description found"
 msgstr "Нет описания"
 
-#: global.h:8386
+#: global.h:8399
 msgid "no device found"
 msgstr ""
 
@@ -13289,7 +13289,7 @@ msgstr "Канал для записи не найден"
 msgid "non"
 msgstr "Оригинал"
 
-#: global.h:8361 system_update.h:70
+#: global.h:8370 system_update.h:79
 msgid "non-version"
 msgstr "Нет версии"
 
@@ -14039,7 +14039,7 @@ msgstr "Контроль SSL"
 msgid "ssl_try"
 msgstr ""
 
-#: skin_default_skin.xml.h:612 system_update.h:25 system_update.h:167
+#: skin_default_skin.xml.h:612 system_update.h:25 system_update.h:180
 msgid "stable"
 msgstr "Официальный фид"
 
@@ -14066,19 +14066,19 @@ msgstr "Активен"
 msgid "starting"
 msgstr "Выполнить"
 
-#: system_update.h:324
+#: system_update.h:337
 msgid "starting Full Update (from backup) ?"
 msgstr "Начало полного обновления (Из архива)"
 
-#: httpdfunc.h:5894 system_update.h:322 system_update.h:333 system_update.h:338
+#: httpdfunc.h:5894 system_update.h:335 system_update.h:346 system_update.h:351
 msgid "starting Full Update ?"
 msgstr "Запустить полное обновление FLASH?"
 
-#: system_update.h:326 system_update.h:336
+#: system_update.h:339 system_update.h:349
 msgid "starting Nfi Update ?"
 msgstr "Начать обновление Nfi"
 
-#: system_update.h:328 system_update.h:331
+#: system_update.h:341 system_update.h:344
 msgid "starting Usb Update ?"
 msgstr "Начать обновление USB?"
 
@@ -14417,7 +14417,7 @@ msgstr ""
 msgid "unlock -> lock it"
 msgstr ""
 
-#: system_update.h:27 system_update.h:173
+#: system_update.h:27 system_update.h:186
 msgid "unstable"
 msgstr "Бэта фид"
 
