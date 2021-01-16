@@ -8350,6 +8350,15 @@ printf("devicelist: %s\n", devicelist);
 				cmd = ostrcat("cat /autofs/", pch, 0, 0);
 				cmd = ostrcat(cmd, "/etc/version-svn", 1, 0);
 				version = command(cmd);
+				free(cmd), cmd = NULL;
+
+				if(version == NULL)
+				{
+					cmd = ostrcat("cat /autofs/", pch, 0, 0);
+					cmd = ostrcat(cmd, "/etc/issue | sed -e '/^ *$/d' | sed 's/Welcome to //' | sed 's/\\\\n \\\\l//g' | tr 'a-z' 'A-Z' | tr ' ' '\n'| sed -e '/^ *$/d' | sort -ur | tr '\n' ' ' | sed 's/[ \t]*$//'", 1, 0);
+					version = command(cmd);
+					free(cmd), cmd = NULL;
+				}
 
 				showname = ostrcat(label, " ", 0, 0);
 
@@ -8361,7 +8370,11 @@ printf("devicelist: %s\n", devicelist);
 					showname = ostrcat(showname, _("non-version"), 1, 0);
 				}
 				else
+				{
+					showname = ostrcat(label, " (", 0, 0);
 					showname = ostrcat(showname, strstrip(version), 1, 0);
+					showname = ostrcat(showname, ") ", 1, 0);
+				}
 printf("rootpart: %s\n", rootpart);
 printf("pch: %s\n", pch);
 
