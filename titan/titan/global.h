@@ -7765,7 +7765,7 @@ printf("tmpstr1: %s\n", tmpstr);
 #ifdef OEBUILD
 	if(file_exist("/boot/STARTUP"))
 	{
-		tmpstr2 = string_newline(command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'"));
+		tmpstr2 = string_newline(command("/sbin/startup.sh"));
 printf("tmpstr2: %s\n", tmpstr2);
 
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
