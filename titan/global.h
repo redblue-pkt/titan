@@ -7759,13 +7759,13 @@ char* getimgnamereal()
 	char* tmpstr = NULL, *tmpstr2 = NULL;
 
 
-	tmpstr = readfiletomem(getconfig("imagenamefile", NULL), 1);
+	tmpstr = string_newline(readfiletomem(getconfig("imagenamefile", NULL), 1));
 printf("tmpstr1: %s\n", tmpstr);
 
 #ifdef OEBUILD
 	if(file_exist("/boot/STARTUP"))
 	{
-		tmpstr2 = command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'");
+		tmpstr2 = string_newline(command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'"));
 printf("tmpstr2: %s\n", tmpstr2);
 
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
