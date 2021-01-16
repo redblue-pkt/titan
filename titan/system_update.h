@@ -32,10 +32,10 @@ void screensystem_update(int mode)
 	{
 #ifdef OEBUILD
 		char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g' | sort -u");
-		char* rootpart = command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'");
+		char* rootpart = string_newline(command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'"));
 #else
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
-		char* rootpart = command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'");
+		char* rootpart = string_newline(command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'"));
 #endif
 printf("devicelist: %s\n", devicelist);
 		if(devicelist != NULL && strlen(devicelist) != 0)
