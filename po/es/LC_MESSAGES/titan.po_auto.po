@@ -2360,6 +2360,10 @@ msgstr "Seleccione los marcadores de internet de la lista de abajo"
 msgid "Choose your Language from the following list"
 msgstr ""
 
+#: global.h:8391
+msgid "Choose your Multiboot STARTUP entry from the following list"
+msgstr ""
+
 #: mc_global.h:617
 msgid "Choose your Playlist Mode from the following list"
 msgstr ""
@@ -3495,7 +3499,7 @@ msgstr ""
 #: mc_videoplayer.h:336 mc_videoplayer.h:765 mc_videoplayer.h:800
 #: mc_videoplayer.h:904 mc_videoplayer.h:920 mc_wetterinfo.h:36
 #: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477 mediadb.h:2543
-#: mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1015 menu.h:1017
+#: mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1017 menu.h:1019
 #: mightyupload.h:27 mightyupload.h:69 mightyupload.h:75 movie2k.h:23
 #: movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104 movie4k.h:411
 #: movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101 movshare.h:191
@@ -3728,7 +3732,7 @@ msgstr "ERROR: No se puede crear fichero"
 msgid "Error file not supported"
 msgstr "ERROR: Tipo de archivo no soportado"
 
-#: menu.h:1015
+#: menu.h:1017
 msgid "Error in Save Settings"
 msgstr "ERROR: Los ajustes no podran guardarse!"
 
@@ -7063,8 +7067,8 @@ msgstr "Ö"
 #: mc_pictureplayer.h:461 mc_videoplayer.h:336 mc_videoplayer.h:765
 #: mc_videoplayer.h:800 mc_videoplayer.h:904 mc_videoplayer.h:920
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2543 mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1015
-#: menu.h:1017 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
+#: mediadb.h:2543 mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1017
+#: menu.h:1019 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
 #: movshare.h:191 movshare.h:197 multiboot.h:344 multiboot.h:380
@@ -9078,7 +9082,7 @@ msgstr "Sabado"
 msgid "Save"
 msgstr "Guardar"
 
-#: autotimer.c:603 menu.h:1015 menu.h:1017 skin_default_skin.xml.h:540
+#: autotimer.c:603 menu.h:1017 menu.h:1019 skin_default_skin.xml.h:540
 msgid "Save Settings"
 msgstr "Guarda Configuracion"
 
@@ -9392,6 +9396,10 @@ msgstr "Seccion: "
 msgid "Select Language"
 msgstr ""
 
+#: global.h:8321
+msgid "Select Multiboot"
+msgstr ""
+
 #: skin_default_skin.xml.h:562
 msgid "Select Path"
 msgstr "Seleccion de trazado"
@@ -9570,7 +9578,7 @@ msgstr "Guardar la configuracion?"
 msgid "Settings backup/restore"
 msgstr "Configuracion backup/restaurar"
 
-#: menu.h:1017
+#: menu.h:1019
 msgid "Settings succesfull saved"
 msgstr "Configuracion guardada con EExito"
 
@@ -13256,6 +13264,10 @@ msgstr "No"
 msgid "no description found"
 msgstr "Descripcion no encontrado"
 
+#: global.h:8386
+msgid "no device found"
+msgstr ""
+
 #: tmc.h:553
 msgid "no pic"
 msgstr "No imagen"
@@ -13268,7 +13280,7 @@ msgstr ""
 msgid "non"
 msgstr "Tamaño del original"
 
-#: system_update.h:68
+#: global.h:8361 system_update.h:68
 msgid "non-version"
 msgstr ""
 
