@@ -60,12 +60,15 @@ printf("devicelist: %s\n", devicelist);
 					cmd = ostrcat(cmd, "/etc/version-svn", 1, 0);
 					version = command(cmd);
 
-					showname = ostrcat(label, "-", 0, 0);
-					showname = ostrcat(showname, pch, 1, 0);
-					showname = ostrcat(showname, "-", 1, 0);
+					showname = ostrcat(label, " ", 0, 0);
 
 					if(version == NULL)
+					{
+						showname = ostrcat(label, " (", 0, 0);
+						showname = ostrcat(showname, pch, 1, 0);
+						showname = ostrcat(showname, ") ", 1, 0);
 						showname = ostrcat(showname, _("non-version"), 1, 0);
+					}
 					else
 						showname = ostrcat(showname, strstrip(version), 1, 0);
 printf("rootpart: %s\n", rootpart);
