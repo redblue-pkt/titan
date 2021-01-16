@@ -8313,4 +8313,102 @@ int setzapmode(char* value)
 	return 0;
 }
 
+int multiboot()
+{
+	int ret = 1;
+	struct menulist* mlist = NULL, *mbox = NULL;
+
+	char* skintitle = _("Select Multiboot");
+	char* cmd = NULL;
+
+#ifdef OEBUILD
+	char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g' | sort -u");
+	char* rootpart = string_newline(command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'"));
+#else
+	char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
+	char* rootpart = string_newline(command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'"));
+#endif
+printf("devicelist: %s\n", devicelist);
+	if(devicelist != NULL && strlen(devicelist) != 0)
+	{
+		char* pch;
+		char* label = NULL;
+		char* showname = NULL;
+		char* version = NULL;
+		pch = strtok (devicelist, "\n");
+		int count = 0;
+		while(pch != NULL)
+		{
+			count += 1;
+#ifdef OEBUILD
+			label= ostrcat("STARTUP_", oitoa(count), 0, 1);
+#else
+			label = get_label(pch);
+#endif
+			if(ostrstr(label, "MINI") != NULL || ostrstr(label, "STARTUP") != NULL)
+			{
+				cmd = ostrcat("cat /autofs/", pch, 0, 0);
+				cmd = ostrcat(cmd, "/etc/version-svn", 1, 0);
+				version = command(cmd);
+
+				showname = ostrcat(label, " ", 0, 0);
+
+				if(version == NULL)
+				{
+					showname = ostrcat(label, " (", 0, 0);
+					showname = ostrcat(showname, pch, 1, 0);
+					showname = ostrcat(showname, ") ", 1, 0);
+					showname = ostrcat(showname, _("non-version"), 1, 0);
+				}
+				else
+					showname = ostrcat(showname, strstrip(version), 1, 0);
+printf("rootpart: %s\n", rootpart);
+printf("pch: %s\n", pch);
+
+				if(ostrcmp(pch, rootpart) == 0)
+					showname = ostrcat(showname, " (active)", 1, 0);
+
+				debug(40, "addchoicebox: device=%s, label=%s showname=%s", pch, label, showname);
+				addmenulist(&mlist, showname, label, NULL, 0, 0);
+
+				free(cmd), cmd = NULL;
+				free(showname), showname = NULL;
+				free(version), version = NULL;
+			}
+
+			pch = strtok (NULL, "\n");
+			free(label), label = NULL;
+		}
+		free(pch), pch = NULL;
+
+	}
+	else
+		addmenulist(&mlist, "no device found", _("no device found"), NULL, 0, 0);
+
+	free(devicelist), devicelist = NULL;
+	free(rootpart), rootpart = NULL;
+
+	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Multiboot STARTUP entry from the following list"), NULL, NULL, 1, 0);
+	if(mbox != NULL)
+	{
+		printf("mbox->name=%s\n", mbox->name);
+		printf("mbox->text=%s\n", mbox->text);
+
+		cmd = ostrcat(cmd, "cp /boot/", 1, 0);
+		cmd = ostrcat(cmd, mbox->text, 1, 0);
+		cmd = ostrcat(cmd, " /boot/STARTUP", 1, 0);
+		printf("cmd=%s\n", cmd);
+		system(cmd);
+		free(cmd), cmd = NULL;
+
+		oshutdown(2, 1);
+	}
+
+	freemenulist(mlist, 1); mlist = NULL;
+	drawscreen(skin, 0, 0);
+	resettvpic();
+
+	return ret;
+}
+
 #endif

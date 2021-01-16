@@ -566,7 +566,9 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 			else
 				return 1;
 		}
-		screenmultiboot();
+		multiboot();
+// install via systemupdate
+//		screenmultiboot();
 	}
 	else if(ostrcmp("guirestart", menuentry->name) == 0)
 	{
