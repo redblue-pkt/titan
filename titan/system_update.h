@@ -69,7 +69,7 @@ printf("devicelist: %s\n", devicelist);
 					else
 						showname = ostrcat(showname, strstrip(version), 1, 0);
 printf("rootpart: %s\n", rootpart);
-printf("phc: %s\n", phc);
+printf("pch: %s\n", pch);
 
 					if(ostrcmp(pch, rootpart) == 0)
 						showname = ostrcat(showname, " (active)", 1, 0);
