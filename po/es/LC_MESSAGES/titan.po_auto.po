@@ -1462,12 +1462,12 @@ msgstr "Guardar ajustes"
 msgid "Backup / Restore Settings"
 msgstr "Backup/Restaurar Configuracion"
 
-#: global.h:7950 httpdfunc.h:6728 httpdfunc.h:6822 system_backup_restore.h:129
+#: global.h:7959 httpdfunc.h:6728 httpdfunc.h:6822 system_backup_restore.h:129
 #: system_backup_restore.h:136
 msgid "Backup created successfully"
 msgstr "La copia de seguridad se ha creado correctamente"
 
-#: global.h:7952
+#: global.h:7961
 msgid "Backup ended with error"
 msgstr ""
 
@@ -2096,7 +2096,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "La Reproduccion no se pudo iniciar"
 
-#: system_update.h:360
+#: system_update.h:362
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -3471,9 +3471,9 @@ msgstr ""
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6396 global.h:7294 global.h:7313 global.h:7815
-#: global.h:7835 global.h:7855 global.h:7875 global.h:7895 global.h:8227
-#: global.h:8232 global.h:8244 global.h:8249 harddisk.h:355 harddisk.h:686
+#: flashx.h:57 global.h:6396 global.h:7294 global.h:7313 global.h:7824
+#: global.h:7844 global.h:7864 global.h:7884 global.h:7904 global.h:8236
+#: global.h:8241 global.h:8253 global.h:8258 harddisk.h:355 harddisk.h:686
 #: harddisk.h:694 harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802
 #: harddisk.h:804 harddisk.h:901 harddisk.h:904 harddisk.h:1141 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -3549,8 +3549,8 @@ msgstr ""
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:70
-#: system_backup_restore.h:151 system_update.h:340 system_update.h:346
-#: system_update.h:357 system_update.h:360 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:342 system_update.h:348
+#: system_update.h:359 system_update.h:362 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1248 titan.c:1257 titan.c:1388 titan.c:1409 titan.c:1415
@@ -3724,7 +3724,7 @@ msgstr ""
 msgid "Error create filename"
 msgstr "ERROR: No se puede crear fichero"
 
-#: system_update.h:340
+#: system_update.h:342
 msgid "Error file not supported"
 msgstr "ERROR: Tipo de archivo no soportado"
 
@@ -4310,14 +4310,14 @@ msgstr ""
 "Se ha encontrado nuevo Stick\n"
 "Puede configurar en el menu de disco duro"
 
-#: global.h:8249
+#: global.h:8258
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:8227 global.h:8244
+#: global.h:8236 global.h:8253
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4325,7 +4325,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:8232
+#: global.h:8241
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -6400,9 +6400,9 @@ msgstr "Lista de Menus"
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
 #: flashx.h:57 global.h:6396 global.h:7224 global.h:7294 global.h:7313
-#: global.h:7815 global.h:7823 global.h:7835 global.h:7843 global.h:7855
-#: global.h:7863 global.h:7875 global.h:7883 global.h:7895 global.h:7903
-#: global.h:8227 global.h:8232 global.h:8244 global.h:8249 harddisk.h:686
+#: global.h:7824 global.h:7832 global.h:7844 global.h:7852 global.h:7864
+#: global.h:7872 global.h:7884 global.h:7892 global.h:7904 global.h:7912
+#: global.h:8236 global.h:8241 global.h:8253 global.h:8258 harddisk.h:686
 #: harddisk.h:694 harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802
 #: harddisk.h:804 harddisk.h:882 harddisk.h:901 harddisk.h:904 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5890 httpdfunc.h:6280
@@ -6459,8 +6459,8 @@ msgstr "Lista de Menus"
 #: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:58
 #: system_backup_restore.h:64 system_backup_restore.h:67
 #: system_backup_restore.h:70 system_backup_restore.h:125
-#: system_backup_restore.h:133 system_backup_restore.h:136 system_update.h:340
-#: system_update.h:346 system_update.h:357 system_update.h:360 thefile.h:34
+#: system_backup_restore.h:133 system_backup_restore.h:136 system_update.h:342
+#: system_update.h:348 system_update.h:359 system_update.h:362 thefile.h:34
 #: thefile.h:69 thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72
 #: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
 #: titan.c:316 titan.c:1388 titan.c:1409 titan.c:1415 titan.c:1426 titan.c:1432
@@ -6653,7 +6653,7 @@ msgstr ""
 msgid "Multiboot"
 msgstr ""
 
-#: system_update.h:357
+#: system_update.h:359
 msgid ""
 "Multiboot installation completed successfully\n"
 "Activate your new startup"
@@ -7038,9 +7038,9 @@ msgstr "Ö"
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
 #: flashx.h:57 global.h:6396 global.h:7224 global.h:7294 global.h:7313
-#: global.h:7815 global.h:7823 global.h:7835 global.h:7843 global.h:7855
-#: global.h:7863 global.h:7875 global.h:7883 global.h:7895 global.h:7903
-#: global.h:8227 global.h:8232 global.h:8244 global.h:8249 harddisk.h:355
+#: global.h:7824 global.h:7832 global.h:7844 global.h:7852 global.h:7864
+#: global.h:7872 global.h:7884 global.h:7892 global.h:7904 global.h:7912
+#: global.h:8236 global.h:8241 global.h:8253 global.h:8258 harddisk.h:355
 #: harddisk.h:487 harddisk.h:686 harddisk.h:694 harddisk.h:740 harddisk.h:795
 #: harddisk.h:800 harddisk.h:802 harddisk.h:804 harddisk.h:882 harddisk.h:901
 #: harddisk.h:904 harddisk.h:1141 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
@@ -7116,8 +7116,8 @@ msgstr "Ö"
 #: system_backup_restore.h:70 system_backup_restore.h:80
 #: system_backup_restore.h:125 system_backup_restore.h:133
 #: system_backup_restore.h:136 system_backup_restore.h:144
-#: system_backup_restore.h:151 system_update.h:340 system_update.h:346
-#: system_update.h:357 system_update.h:360 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:342 system_update.h:348
+#: system_update.h:359 system_update.h:362 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1248 titan.c:1257 titan.c:1388 titan.c:1409 titan.c:1415
@@ -7981,7 +7981,7 @@ msgstr "Apagado Temporizado"
 msgid "Present"
 msgstr "Disponible"
 
-#: global.h:7962 system_backup_restore.h:15
+#: global.h:7971 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -9987,23 +9987,23 @@ msgstr "Autoinicio RGUID"
 msgid "Start Record"
 msgstr ""
 
-#: global.h:7815
+#: global.h:7824
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7835
+#: global.h:7844
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7875
+#: global.h:7884
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7855
+#: global.h:7864
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7895
+#: global.h:7904
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -10493,7 +10493,7 @@ msgstr "Texto"
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7915
+#: global.h:7924
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -10819,7 +10819,7 @@ msgid "Titan MediaCenter"
 msgstr ""
 
 #: extensions.h:276 extensions.h:336 extensions.h:435 extensions.h:474
-#: global.h:7823 global.h:7843 global.h:7863 global.h:7883 global.h:7903
+#: global.h:7832 global.h:7852 global.h:7872 global.h:7892 global.h:7912
 #: kravencfg.c:212 skinadjust.h:619 skinadjust.h:685 skinadjust.h:1110
 #: skinadjust.h:1172
 msgid "Titan will be restarted!"
@@ -14022,7 +14022,7 @@ msgstr "SSL control"
 msgid "ssl_try"
 msgstr "Try SSL"
 
-#: skin_default_skin.xml.h:612 system_update.h:25 system_update.h:162
+#: skin_default_skin.xml.h:612 system_update.h:25 system_update.h:164
 msgid "stable"
 msgstr "Nocturno-Img"
 
@@ -14049,19 +14049,19 @@ msgstr "Iniciando"
 msgid "starting"
 msgstr "Comenzando"
 
-#: system_update.h:319
+#: system_update.h:321
 msgid "starting Full Update (from backup) ?"
 msgstr "Iniciar actualizacin completa de una copia de seguridad?"
 
-#: httpdfunc.h:5894 system_update.h:317 system_update.h:328 system_update.h:333
+#: httpdfunc.h:5894 system_update.h:319 system_update.h:330 system_update.h:335
 msgid "starting Full Update ?"
 msgstr "Iniciar actualizacin completa?"
 
-#: system_update.h:321 system_update.h:331
+#: system_update.h:323 system_update.h:333
 msgid "starting Nfi Update ?"
 msgstr ""
 
-#: system_update.h:323 system_update.h:326
+#: system_update.h:325 system_update.h:328
 msgid "starting Usb Update ?"
 msgstr ""
 
@@ -14400,7 +14400,7 @@ msgstr "Desbloqueado -> Deja desbloqueado"
 msgid "unlock -> lock it"
 msgstr "Desbloqueado -> Bloqueo "
 
-#: system_update.h:27 system_update.h:168
+#: system_update.h:27 system_update.h:170
 msgid "unstable"
 msgstr "svn-beta"
 
