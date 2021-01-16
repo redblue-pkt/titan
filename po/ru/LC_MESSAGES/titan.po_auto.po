@@ -1478,12 +1478,12 @@ msgstr "Настройки бекапа"
 msgid "Backup / Restore Settings"
 msgstr "Бэкап/ресторе настроек"
 
-#: global.h:7959 httpdfunc.h:6728 httpdfunc.h:6822 system_backup_restore.h:129
+#: global.h:7965 httpdfunc.h:6728 httpdfunc.h:6822 system_backup_restore.h:129
 #: system_backup_restore.h:136
 msgid "Backup created successfully"
 msgstr "Бекап создан успешно"
 
-#: global.h:7961
+#: global.h:7967
 msgid "Backup ended with error"
 msgstr "Бекап завершился с ошибкой"
 
@@ -3465,9 +3465,9 @@ msgstr "Ошибка: Установка завершилась с ошибко�
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6396 global.h:7294 global.h:7313 global.h:7824
-#: global.h:7844 global.h:7864 global.h:7884 global.h:7904 global.h:8236
-#: global.h:8241 global.h:8253 global.h:8258 harddisk.h:355 harddisk.h:686
+#: flashx.h:57 global.h:6396 global.h:7294 global.h:7313 global.h:7830
+#: global.h:7850 global.h:7870 global.h:7890 global.h:7910 global.h:8242
+#: global.h:8247 global.h:8259 global.h:8264 harddisk.h:355 harddisk.h:686
 #: harddisk.h:694 harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802
 #: harddisk.h:804 harddisk.h:901 harddisk.h:904 harddisk.h:1141 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -4296,7 +4296,7 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr "Обнаружен новый накопитель. Настройте его в меню настроек"
 
-#: global.h:8258
+#: global.h:8264
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
@@ -4306,7 +4306,7 @@ msgstr ""
 "Остановить процесс?\n"
 "OK для продолжения, Exit для выхода"
 
-#: global.h:8236 global.h:8253
+#: global.h:8242 global.h:8259
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4318,7 +4318,7 @@ msgstr ""
 "Продолжить запись?\n"
 "OK для продолжения, Exit для выхода"
 
-#: global.h:8241
+#: global.h:8247
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -6422,9 +6422,9 @@ msgstr "Лист меню"
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
 #: flashx.h:57 global.h:6396 global.h:7224 global.h:7294 global.h:7313
-#: global.h:7824 global.h:7832 global.h:7844 global.h:7852 global.h:7864
-#: global.h:7872 global.h:7884 global.h:7892 global.h:7904 global.h:7912
-#: global.h:8236 global.h:8241 global.h:8253 global.h:8258 harddisk.h:686
+#: global.h:7830 global.h:7838 global.h:7850 global.h:7858 global.h:7870
+#: global.h:7878 global.h:7890 global.h:7898 global.h:7910 global.h:7918
+#: global.h:8242 global.h:8247 global.h:8259 global.h:8264 harddisk.h:686
 #: harddisk.h:694 harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802
 #: harddisk.h:804 harddisk.h:882 harddisk.h:901 harddisk.h:904 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5890 httpdfunc.h:6280
@@ -7060,9 +7060,9 @@ msgstr "Ж"
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
 #: flashx.h:57 global.h:6396 global.h:7224 global.h:7294 global.h:7313
-#: global.h:7824 global.h:7832 global.h:7844 global.h:7852 global.h:7864
-#: global.h:7872 global.h:7884 global.h:7892 global.h:7904 global.h:7912
-#: global.h:8236 global.h:8241 global.h:8253 global.h:8258 harddisk.h:355
+#: global.h:7830 global.h:7838 global.h:7850 global.h:7858 global.h:7870
+#: global.h:7878 global.h:7890 global.h:7898 global.h:7910 global.h:7918
+#: global.h:8242 global.h:8247 global.h:8259 global.h:8264 harddisk.h:355
 #: harddisk.h:487 harddisk.h:686 harddisk.h:694 harddisk.h:740 harddisk.h:795
 #: harddisk.h:800 harddisk.h:802 harddisk.h:804 harddisk.h:882 harddisk.h:901
 #: harddisk.h:904 harddisk.h:1141 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
@@ -7999,7 +7999,7 @@ msgstr "Таймер выключения"
 msgid "Present"
 msgstr "Сейчас"
 
-#: global.h:7971 system_backup_restore.h:15
+#: global.h:7977 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -10006,23 +10006,23 @@ msgstr "Старт RGUID"
 msgid "Start Record"
 msgstr "Старт записи"
 
-#: global.h:7824
+#: global.h:7830
 msgid "Start Restore Default Bouquets ?"
 msgstr "Начать восстановления по умолчанию букетов?"
 
-#: global.h:7844
+#: global.h:7850
 msgid "Start Restore Default Channel Settings ?"
 msgstr "Начать восстановления по умолчанию настроек каналов?"
 
-#: global.h:7884
+#: global.h:7890
 msgid "Start Restore Default Channels ?"
 msgstr "Начать восстановления по умолчанию каналов?"
 
-#: global.h:7864
+#: global.h:7870
 msgid "Start Restore Default Providers ?"
 msgstr "Начать восстановления по умолчанию провайдеров?"
 
-#: global.h:7904
+#: global.h:7910
 msgid "Start Restore Default Sats ?"
 msgstr "Начать восстановления по умолчанию спутников?"
 
@@ -10504,7 +10504,7 @@ msgstr "Текст"
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7924
+#: global.h:7930
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -10833,7 +10833,7 @@ msgid "Titan MediaCenter"
 msgstr "Медиацентр"
 
 #: extensions.h:276 extensions.h:336 extensions.h:435 extensions.h:474
-#: global.h:7832 global.h:7852 global.h:7872 global.h:7892 global.h:7912
+#: global.h:7838 global.h:7858 global.h:7878 global.h:7898 global.h:7918
 #: kravencfg.c:212 skinadjust.h:619 skinadjust.h:685 skinadjust.h:1110
 #: skinadjust.h:1172
 msgid "Titan will be restarted!"
