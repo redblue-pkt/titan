@@ -569,6 +569,11 @@ int main(int argc, char *argv[])
 	struct stimerthread *tmpthread = NULL;
 	//struct sched_param schedparam;
 
+	if(file_exist("/tmp/pipetest") && ostrcmp(string_newline(command("echo 'pipetest:ok' | cut -d':' -f2")), "") == 1)
+	{
+		printf("found Bash Pipe Bug, init Gui Restart\n");
+		oshutdown(3, 1);
+	}		
 #ifdef SIMULATE
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
