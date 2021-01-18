@@ -8338,6 +8338,7 @@ printf("devicelist: %s\n", devicelist);
 		char* label = NULL;
 		char* showname = NULL;
 		char* version = NULL;
+		char* issue = NULL;
 		pch = strtok (devicelist, "\n");
 		int count = 0;
 		while(pch != NULL)
@@ -8355,28 +8356,34 @@ printf("devicelist: %s\n", devicelist);
 				version = command(cmd);
 				free(cmd), cmd = NULL;
 
-				if(version == NULL)
-				{
-					cmd = ostrcat("cat /autofs/", pch, 0, 0);
-					cmd = ostrcat(cmd, "/etc/issue | sed -e '/^ *$/d' | sed 's/Welcome to //' | sed 's/\\\\n \\\\l//g' | tr 'a-z' 'A-Z' | tr ' ' '\n'| sed -e '/^ *$/d' | sort -ur | tr '\n' ' ' | sed 's/[ \t]*$//'", 1, 0);
-					version = command(cmd);
-					free(cmd), cmd = NULL;
-				}
+				cmd = ostrcat("cat /autofs/", pch, 0, 0);
+//				cmd = ostrcat(cmd, "/etc/issue | sed -e '/^ *$/d' | sed 's/Welcome to //' | sed 's/\\\\n \\\\l//g' | tr 'a-z' 'A-Z' | tr ' ' '\n'| sed -e '/^ *$/d' | sort -ur | tr '\n' ' ' | sed 's/[ \t]*$//'", 1, 0);
+				cmd = ostrcat(cmd, "/etc/issue | sed 's/Welcome to //' | tr ' ' '\n' | sort -uf | sed 's/\\\\n//g' | sed 's/\\\\l//g' | sed -e '/^ *$/d' | sort -r | tr '\n' ' ' | sed 's/[ \t]*$//'", 1, 0);
+
+				issue = command(cmd);
+				free(cmd), cmd = NULL;
 
 				showname = ostrcat(label, " ", 0, 0);
 
+				if(issue != NULL)
+				{
+					showname = ostrcat(showname, "(", 1, 0);
+					showname = ostrcat(showname, strstrip(issue), 1, 0);
+					showname = ostrcat(showname, ")", 1, 0);
+				}
+
 				if(version == NULL)
 				{
-					showname = ostrcat(label, " (", 0, 0);
+					showname = ostrcat(showname, "(", 1, 0);
 					showname = ostrcat(showname, pch, 1, 0);
 					showname = ostrcat(showname, ") ", 1, 0);
 					showname = ostrcat(showname, _("non-version"), 1, 0);
 				}
 				else
 				{
-					showname = ostrcat(label, " (", 0, 0);
+					showname = ostrcat(showname, "(", 1, 0);
 					showname = ostrcat(showname, strstrip(version), 1, 0);
-					showname = ostrcat(showname, ") ", 1, 0);
+					showname = ostrcat(showname, ")", 1, 0);
 				}
 printf("rootpart: %s\n", rootpart);
 printf("pch: %s\n", pch);
@@ -8385,11 +8392,13 @@ printf("pch: %s\n", pch);
 					showname = ostrcat(showname, " (active)", 1, 0);
 
 				debug(40, "addchoicebox: device=%s, label=%s showname=%s", pch, label, showname);
+				// need switch label > showname from system_update.h function
 				addmenulist(&mlist, showname, label, NULL, 0, 0);
 
 				free(cmd), cmd = NULL;
 				free(showname), showname = NULL;
 				free(version), version = NULL;
+				free(issue), issue = NULL;
 			}
 
 			pch = strtok (NULL, "\n");
