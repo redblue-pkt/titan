@@ -85,21 +85,20 @@ printf("devicelist: %s\n", devicelist);
 					{
 						showname = ostrcat(showname, "(", 1, 0);
 						showname = ostrcat(showname, strstrip(issue), 1, 0);
-						showname = ostrcat(showname, ")", 1, 0);
+						showname = ostrcat(showname, ") ", 1, 0);
+						if(version != NULL)
+						{
+							showname = ostrcat(showname, "(", 1, 0);
+							showname = ostrcat(showname, strstrip(version), 1, 0);
+							showname = ostrcat(showname, ")", 1, 0);
+						}
 					}
-
-					if(version == NULL)
+					else if(version == NULL)
 					{
 						showname = ostrcat(showname, "(", 1, 0);
 						showname = ostrcat(showname, pch, 1, 0);
 						showname = ostrcat(showname, ") ", 1, 0);
 						showname = ostrcat(showname, _("non-version"), 1, 0);
-					}
-					else
-					{
-						showname = ostrcat(showname, "(", 1, 0);
-						showname = ostrcat(showname, strstrip(version), 1, 0);
-						showname = ostrcat(showname, ")", 1, 0);
 					}
 printf("rootpart: %s\n", rootpart);
 printf("pch: %s\n", pch);
