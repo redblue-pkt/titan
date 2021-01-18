@@ -569,9 +569,11 @@ int main(int argc, char *argv[])
 	struct stimerthread *tmpthread = NULL;
 	//struct sched_param schedparam;
 
-	if(file_exist("/tmp/pipetest") && ostrcmp(string_newline(command("echo 'pipetest:ok' | cut -d':' -f2")), "") == 1)
-	{
-		printf("found Bash Pipe Bug, init Gui Restart\n");
+	if(ostrcmp(string_newline(command("echo 'pipetest:ok' | cut -d':' -f2")), "ok") == 0)
+		printf("[titan] skip Bash Pipe Bug detection\n");
+	else
+	{	
+		printf("[titan] found Bash Pipe Bug, init Gui Restart\n");
 		oshutdown(3, 1);
 	}		
 #ifdef SIMULATE
