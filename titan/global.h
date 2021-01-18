@@ -8339,6 +8339,8 @@ printf("devicelist: %s\n", devicelist);
 		char* showname = NULL;
 		char* version = NULL;
 		char* issue = NULL;
+		char* pic = NULL;
+		char* active = NULL;
 		pch = strtok (devicelist, "\n");
 		int count = 0;
 		while(pch != NULL)
@@ -8364,41 +8366,51 @@ printf("devicelist: %s\n", devicelist);
 				free(cmd), cmd = NULL;
 
 				showname = ostrcat(label, " ", 0, 0);
-
+	
 				if(issue != NULL)
 				{
 					showname = ostrcat(showname, "(", 1, 0);
 					showname = ostrcat(showname, strstrip(issue), 1, 0);
-					showname = ostrcat(showname, ")", 1, 0);
-				}
+					showname = ostrcat(showname, ") ", 1, 0);
+					issue = stringreplacecharonce(issue, ' ', '\0');
+					string_tolower(issue);
+					pic = ostrcat(getconfig("skinpath", NULL), "/skin/", 0, 0);
+					pic = ostrcat(pic, issue, 1, 0);
+					pic = ostrcat(pic, ".png", 1, 0);
 
-				if(version == NULL)
+					if(version != NULL)
+					{
+						showname = ostrcat(showname, "(", 1, 0);
+						showname = ostrcat(showname, strstrip(version), 1, 0);
+						showname = ostrcat(showname, ")", 1, 0);
+					}
+				}
+				else if(version == NULL)
 				{
 					showname = ostrcat(showname, "(", 1, 0);
 					showname = ostrcat(showname, pch, 1, 0);
 					showname = ostrcat(showname, ") ", 1, 0);
 					showname = ostrcat(showname, _("non-version"), 1, 0);
 				}
-				else
-				{
-					showname = ostrcat(showname, "(", 1, 0);
-					showname = ostrcat(showname, strstrip(version), 1, 0);
-					showname = ostrcat(showname, ")", 1, 0);
-				}
 printf("rootpart: %s\n", rootpart);
 printf("pch: %s\n", pch);
 
 				if(ostrcmp(pch, rootpart) == 0)
+				{
 					showname = ostrcat(showname, " (active)", 1, 0);
+//					pic = ostrcat(getconfig("skinpath", NULL), "/skin/active.png", 0, 0);
+					active = ostrcat(showname, NULL, 0, 0);
+				}
 
-				debug(40, "addchoicebox: device=%s, label=%s showname=%s", pch, label, showname);
+				debug(40, "addchoicebox: device=%s, label=%s showname=%s pic=%s", pch, label, showname, pic);
 				// need switch label > showname from system_update.h function
-				addmenulist(&mlist, showname, label, NULL, 0, 0);
+				addmenulist(&mlist, showname, label, pic, 0, 0);
 
 				free(cmd), cmd = NULL;
 				free(showname), showname = NULL;
 				free(version), version = NULL;
 				free(issue), issue = NULL;
+				free(pic), pic = NULL;
 			}
 
 			pch = strtok (NULL, "\n");
@@ -8412,6 +8424,8 @@ printf("pch: %s\n", pch);
 
 	free(devicelist), devicelist = NULL;
 	free(rootpart), rootpart = NULL;
+
+	setmenulistdefault(mlist, active);
 
 	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Multiboot STARTUP entry from the following list"), NULL, NULL, 1, 0);
 	if(mbox != NULL)
@@ -8429,6 +8443,7 @@ printf("pch: %s\n", pch);
 		oshutdown(2, 1);
 	}
 
+	free(active), active = NULL;
 	freemenulist(mlist, 1); mlist = NULL;
 	drawscreen(skin, 0, 0);
 	resettvpic();
