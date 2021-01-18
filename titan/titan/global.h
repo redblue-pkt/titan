@@ -8320,7 +8320,8 @@ int multiboot()
 
 	char* skintitle = _("Select Multiboot");
 	char* cmd = NULL;
-
+	char* active = NULL;
+		
 #ifdef OEBUILD
 //	char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g' | sort -u");
 	char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) kernel=.*/\\1/p' | sed 's! rootsubdir=!/!g' | sed 's! rootfstype=.*!!' | sort -u");
@@ -8340,7 +8341,6 @@ printf("devicelist: %s\n", devicelist);
 		char* version = NULL;
 		char* issue = NULL;
 		char* pic = NULL;
-		char* active = NULL;
 		pch = strtok (devicelist, "\n");
 		int count = 0;
 		while(pch != NULL)
