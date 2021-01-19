@@ -2246,6 +2246,12 @@ char* getabout()
 //	tmpstr = command("gst-launch-1.0 --version | grep GStreamer");
 	tmpstr = command("eplayer3 > /tmp/ep.ver 2>&1; cat /tmp/ep.ver | grep version | tr -d '{}\"\"' | sed 's/:version:/ Version /' | tr '_' ' '");
 	text = ostrcat(text, tmpstr, 1, 1);
+	text = ostrcat(text, "\n", 1, 0);
+
+	text = ostrcat(text, _("E2 Player"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	tmpstr = command("gst-launch-1.0 --version | grep GStreamer");
+	text = ostrcat(text, tmpstr, 1, 1);
 #else
 	text = ostrcat(text, _("External Player"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
