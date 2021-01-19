@@ -2223,6 +2223,13 @@ char* getabout()
 	text = ostrcat(text, ": ", 1, 0);
 	text = ostrcat(text, OVERSION, 1, 0);
 	text = ostrcat(text, "\n", 1, 0);
+#ifdef OEBUILD
+	text = ostrcat(text, _("OE-GIT Version"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	tmpstr = command"cat /etc/issue | sed -e '/^ *$/d' | sed 's/Welcome to //' | sed 's/\\\\n \\\\l//g' | tr 'a-z' 'A-Z' | tr ' ' '\n'| sed -e '/^ *$/d' | sort -ur | tr '\n' ' ' | sed 's/[ \t]*$//'", 1, 0);
+	text = ostrcat(text, tmpstr, 1, 1);
+	text = ostrcat(text, "\n", 1, 0);
+#endif
 	text = ostrcat(text, _("Installed:"), 1, 0);
 	text = ostrcat(text, " ", 1, 0);
 	text = ostrcat(text, imgversion, 1, 1);
@@ -2236,7 +2243,8 @@ char* getabout()
 
 	text = ostrcat(text, _("External Player"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
-	tmpstr = command("gst-launch-1.0 --version | grep GStreamer");
+//	tmpstr = command("gst-launch-1.0 --version | grep GStreamer");
+	tmpstr = command("eplayer3 > /tmp/ep.ver 2>&1; cat /tmp/ep.ver | grep version | tr -d '{}\"\"' | sed 's/:version:/ Version /' | tr '_' ' '");
 	text = ostrcat(text, tmpstr, 1, 1);
 #else
 	text = ostrcat(text, _("External Player"), 1, 0);
