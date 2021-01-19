@@ -71,14 +71,6 @@ printf("devicelist: %s\n", devicelist);
 					version = command(cmd);
 					free(cmd), cmd = NULL;
 
-					if(version == NULL)
-					{
-						cmd = ostrcat("cat /autofs/", pch, 0, 0);
-						cmd = ostrcat(cmd, "/etc/issue | sed -e '/^ *$/d' | sed 's/Welcome to //' | sed 's/\\\\n \\\\l//g' | tr 'a-z' 'A-Z' | tr ' ' '\n'| sed -e '/^ *$/d' | sort -ur | tr '\n' ' ' | sed 's/[ \t]*$//'", 1, 0);
-						version = command(cmd);
-						free(cmd), cmd = NULL;
-					}
-
 					showname = ostrcat(label, " ", 0, 0);
 
 					if(issue != NULL)
