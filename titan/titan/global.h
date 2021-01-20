@@ -196,10 +196,17 @@ int osystem(char* cmd, int timeout)
 	int ret = 0;
 	char* tmpstr = NULL;
 
+//#ifdef OEBUILD
+//	tmpstr = ostrcat(tmpstr, "timeout -s 9 ", 1, 0);
+//	tmpstr = ostrcat(tmpstr, oitoa(timeout), 1, 1);
+//	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+//#else
 	tmpstr = ostrcat(tmpstr, "timeout -t ", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(timeout), 1, 1);
 	tmpstr = ostrcat(tmpstr, " -s 9 ", 1, 0);
+//#endif
 	tmpstr = ostrcat(tmpstr, cmd, 1, 0);
+printf("cmd: %s\n", tmpstr);
 	ret = system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
