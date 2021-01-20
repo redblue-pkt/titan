@@ -8323,11 +8323,8 @@ int multiboot()
 	char* active = NULL;
 		
 #ifdef OEBUILD
-//	char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g' | sort -u");
-	char* devicelist = command("cat /boot/STARTUP* | sed -nr 's/.*root=\\/dev\\/([^\\/]+) kernel=.*/\\1/p' | sed 's! rootsubdir=!/!g' | sed 's! rootfstype=.*!!' | sort -u");
-//	char* rootpart = string_newline(command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) rootfstype.*/\\1/p' | sed 's! rootsubdir=!/!g'"));
+	char* devicelist = command("ls -1 /boot/STARTUP_* | sed 's!/boot/!!g' | grep -v _RECOVERY | sed -e '/^ *$/d'");
 	char* rootpart = string_newline(command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) kernel=.*/\\1/p' | sed 's! rootsubdir=!/!g' | sed 's! rootfstype=.*!!'"));
-
 #else
 	char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 	char* rootpart = string_newline(command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'"));
@@ -8341,32 +8338,46 @@ printf("devicelist: %s\n", devicelist);
 		char* version = NULL;
 		char* issue = NULL;
 		char* pic = NULL;
+		char* pchroot = NULL;
 		pch = strtok (devicelist, "\n");
 		int count = 0;
 		while(pch != NULL)
 		{
 			count += 1;
 #ifdef OEBUILD
-			label= ostrcat("STARTUP_", oitoa(count), 0, 1);
+			label= ostrcat(pch, NULL, 0, 0);
 #else
 			label = get_label(pch);
 #endif
 			if(ostrstr(label, "MINI") != NULL || ostrstr(label, "STARTUP") != NULL)
 			{
+#ifdef OEBUILD
+				cmd = ostrcat("cat /boot/", pch, 0, 0);
+				cmd = ostrcat(cmd, " | sed -nr 's/.*root=\\/dev\\/([^\\/]+) kernel=.*/\\1/p' | sed 's! rootsubdir=!/!g' | sed 's! rootfstype=.*!!'", 1, 0);
+				pchroot = string_newline(command(cmd));
+				free(cmd), cmd = NULL;
+
+				cmd = ostrcat("cat /autofs/", pchroot, 0, 0);
+#else
 				cmd = ostrcat("cat /autofs/", pch, 0, 0);
+#endif
 				cmd = ostrcat(cmd, "/etc/version-svn", 1, 0);
 				version = command(cmd);
 				free(cmd), cmd = NULL;
-
+#ifdef OEBUILD
+				cmd = ostrcat("cat /autofs/", pchroot, 0, 0);
+#else
 				cmd = ostrcat("cat /autofs/", pch, 0, 0);
-//				cmd = ostrcat(cmd, "/etc/issue | sed -e '/^ *$/d' | sed 's/Welcome to //' | sed 's/\\\\n \\\\l//g' | tr 'a-z' 'A-Z' | tr ' ' '\n'| sed -e '/^ *$/d' | sort -ur | tr '\n' ' ' | sed 's/[ \t]*$//'", 1, 0);
+#endif
 				cmd = ostrcat(cmd, "/etc/issue | sed 's/Welcome to //' | tr ' ' '\n' | sort -uf | sed 's/\\\\n//g' | sed 's/\\\\l//g' | sed -e '/^ *$/d' | sort -r | tr '\n' ' ' | sed 's/[ \t]*$//'", 1, 0);
-
 				issue = command(cmd);
 				free(cmd), cmd = NULL;
 
 				showname = ostrcat(label, " ", 0, 0);
-	
+				showname = string_replace("STARTUP_", "Startup_", showname, 1);
+				showname = string_replace("_LINUX_", "_", showname, 1);
+				showname = string_replace("_BOXMODE_", "_B", showname, 1);
+
 				if(issue != NULL)
 				{
 					showname = ostrcat(showname, "(", 1, 0);
@@ -8388,21 +8399,36 @@ printf("devicelist: %s\n", devicelist);
 				else if(version == NULL)
 				{
 					showname = ostrcat(showname, "(", 1, 0);
+#ifdef OEBUILD
+					showname = ostrcat(showname, pchroot, 1, 0);
+#else
 					showname = ostrcat(showname, pch, 1, 0);
+#endif
 					showname = ostrcat(showname, ") ", 1, 0);
 					showname = ostrcat(showname, _("non-version"), 1, 0);
 				}
 printf("rootpart: %s\n", rootpart);
-printf("pch: %s\n", pch);
+#ifdef OEBUILD
+	printf("pchroot: %s\n", pchroot);
+#else
+	printf("pch: %s\n", pch);
+#endif
 
+#ifdef OEBUILD
+				if(ostrcmp(pchroot, rootpart) == 0)
+#else
 				if(ostrcmp(pch, rootpart) == 0)
+#endif
 				{
 					showname = ostrcat(showname, " (active)", 1, 0);
 //					pic = ostrcat(getconfig("skinpath", NULL), "/skin/active.png", 0, 0);
 					active = ostrcat(showname, NULL, 0, 0);
 				}
-
+#ifdef OEBUILD
+				debug(40, "addchoicebox: device=%s, label=%s showname=%s pic=%s", pchroot, label, showname, pic);
+#else
 				debug(40, "addchoicebox: device=%s, label=%s showname=%s pic=%s", pch, label, showname, pic);
+#endif
 				// need switch label > showname from system_update.h function
 				addmenulist(&mlist, showname, label, pic, 0, 0);
 
@@ -8415,6 +8441,7 @@ printf("pch: %s\n", pch);
 
 			pch = strtok (NULL, "\n");
 			free(label), label = NULL;
+			free(pchroot), pchroot = NULL;
 		}
 		free(pch), pch = NULL;
 
