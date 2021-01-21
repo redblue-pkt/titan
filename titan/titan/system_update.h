@@ -123,7 +123,14 @@ printf("pch: %s\n", pch);
 #else
 					debug(40, "addchoicebox: device=%s, label=%s showname=%s", pchroot, label, showname);
 #endif
-					addchoicebox(device, label, _(showname));
+					free(issue), issue = NULL;
+
+					cmd = ostrcat("flashdev=$(cat /boot/", label, 0, 0);
+					cmd = ostrcat(cmd, " | sed -nr 's#.*root=/dev/([^/]+)#}\1#p' | awk '{ print $1 }'); cat /proc/diskstats | awk {'print $3'} | grep 'mmcblk0[a-z][0-9]\\|sd[a-z][0-9]' | grep -c $flashdev$", 1, 0);
+					printf("cmd: %s\n", cmd);
+
+					if(ostrcmp(string_newline(command(cmd)), "1") == 0)
+						addchoicebox(device, label, _(showname));
 
 					free(cmd), cmd = NULL;
 					free(showname), showname = NULL;
