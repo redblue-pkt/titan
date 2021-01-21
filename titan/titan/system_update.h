@@ -126,7 +126,7 @@ printf("pch: %s\n", pch);
 					free(issue), issue = NULL;
 
 					cmd = ostrcat("flashdev=$(cat /boot/", label, 0, 0);
-					cmd = ostrcat(cmd, " | sed -nr 's#.*root=/dev/([^/]+)#}\1#p' | awk '{ print $1 }'); cat /proc/diskstats | awk {'print $3'} | grep 'mmcblk0[a-z][0-9]\\|sd[a-z][0-9]' | grep -c $flashdev$", 1, 0);
+					cmd = ostrcat(cmd, " | sed -nr 's#.*root=/dev/([^/]+)#}\\1#p' | awk '{ print $1 }'); cat /proc/diskstats | awk {'print $3'} | grep 'mmcblk0[a-z][0-9]\\|sd[a-z][0-9]' | grep -c $flashdev$", 1, 0);
 					printf("cmd: %s\n", cmd);
 
 					if(ostrcmp(string_newline(command(cmd)), "1") == 0)
