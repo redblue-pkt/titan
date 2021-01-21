@@ -2066,7 +2066,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "Non è possibile riprodurre!"
 
-#: system_update.h:412
+#: system_update.h:419
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -2320,7 +2320,7 @@ msgstr ""
 msgid "Choose your Language from the following list"
 msgstr ""
 
-#: global.h:8464
+#: global.h:8475
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -3503,8 +3503,8 @@ msgstr ""
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:70
-#: system_backup_restore.h:151 system_update.h:392 system_update.h:398
-#: system_update.h:409 system_update.h:412 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:399 system_update.h:405
+#: system_update.h:416 system_update.h:419 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1255 titan.c:1264 titan.c:1395 titan.c:1416 titan.c:1422
@@ -3676,7 +3676,7 @@ msgstr ""
 msgid "Error create filename"
 msgstr "non puo essere creato il file"
 
-#: system_update.h:392
+#: system_update.h:399
 msgid "Error file not supported"
 msgstr "Errore File non Supportato!"
 
@@ -6365,8 +6365,8 @@ msgstr ""
 #: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:58
 #: system_backup_restore.h:64 system_backup_restore.h:67
 #: system_backup_restore.h:70 system_backup_restore.h:125
-#: system_backup_restore.h:133 system_backup_restore.h:136 system_update.h:392
-#: system_update.h:398 system_update.h:409 system_update.h:412 thefile.h:34
+#: system_backup_restore.h:133 system_backup_restore.h:136 system_update.h:399
+#: system_update.h:405 system_update.h:416 system_update.h:419 thefile.h:34
 #: thefile.h:69 thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72
 #: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
 #: titan.c:316 titan.c:1395 titan.c:1416 titan.c:1422 titan.c:1433 titan.c:1439
@@ -6559,7 +6559,7 @@ msgstr ""
 msgid "Multiboot"
 msgstr ""
 
-#: system_update.h:409
+#: system_update.h:416
 msgid ""
 "Multiboot installation completed successfully\n"
 "Activate your new startup"
@@ -7021,8 +7021,8 @@ msgstr ""
 #: system_backup_restore.h:70 system_backup_restore.h:80
 #: system_backup_restore.h:125 system_backup_restore.h:133
 #: system_backup_restore.h:136 system_backup_restore.h:144
-#: system_backup_restore.h:151 system_update.h:392 system_update.h:398
-#: system_update.h:409 system_update.h:412 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:399 system_update.h:405
+#: system_update.h:416 system_update.h:419 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1255 titan.c:1264 titan.c:1395 titan.c:1416 titan.c:1422
@@ -13108,7 +13108,7 @@ msgstr ""
 msgid "no description found"
 msgstr "nessuna desrizione trovata"
 
-#: global.h:8457
+#: global.h:8468
 msgid "no device found"
 msgstr ""
 
@@ -13871,7 +13871,7 @@ msgstr "Controllo EMU"
 msgid "ssl_try"
 msgstr ""
 
-#: skin_default_skin.xml.h:612 system_update.h:25 system_update.h:214
+#: skin_default_skin.xml.h:612 system_update.h:25 system_update.h:221
 msgid "stable"
 msgstr "stabile"
 
@@ -13898,19 +13898,19 @@ msgstr "partito"
 msgid "starting"
 msgstr ""
 
-#: system_update.h:371
+#: system_update.h:378
 msgid "starting Full Update (from backup) ?"
 msgstr "starting Full Update ?"
 
-#: httpdfunc.h:5894 system_update.h:369 system_update.h:380 system_update.h:385
+#: httpdfunc.h:5894 system_update.h:376 system_update.h:387 system_update.h:392
 msgid "starting Full Update ?"
 msgstr ""
 
-#: system_update.h:373 system_update.h:383
+#: system_update.h:380 system_update.h:390
 msgid "starting Nfi Update ?"
 msgstr ""
 
-#: system_update.h:375 system_update.h:378
+#: system_update.h:382 system_update.h:385
 msgid "starting Usb Update ?"
 msgstr ""
 
@@ -14249,7 +14249,7 @@ msgstr ""
 msgid "unlock -> lock it"
 msgstr ""
 
-#: system_update.h:27 system_update.h:220
+#: system_update.h:27 system_update.h:227
 msgid "unstable"
 msgstr "non stabile"
 
