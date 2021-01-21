@@ -834,7 +834,9 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("system_update_flash_online", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		addconfigtmp("dirsort", "4");
 		screensystem_update(0);
+		delconfigtmp("dirsort");
 	}
 	else if(ostrcmp("system_update_flash_tmp", menuentry->name) == 0)
 	{
@@ -844,7 +846,9 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("system_update_usb_online", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+		addconfigtmp("dirsort", "4");
 		screensystem_update(2);
+		delconfigtmp("dirsort");
 	}
 	else if(ostrcmp("system_update_usb_tmp", menuentry->name) == 0)
 	{
