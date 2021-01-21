@@ -8445,7 +8445,7 @@ printf("rootpart: %s\n", rootpart);
 				cmd = ostrcat(cmd, "/etc", 1, 0);
 
 				// need switch label > showname from system_update.h function
-				if(file_exist(cmd)
+				if(file_exist(cmd))
 					addmenulist(&mlist, showname, label, pic, 0, 0);
 
 				free(cmd), cmd = NULL;
