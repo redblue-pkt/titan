@@ -8436,8 +8436,19 @@ printf("rootpart: %s\n", rootpart);
 #else
 				debug(40, "addchoicebox: device=%s, label=%s showname=%s pic=%s", pch, label, showname, pic);
 #endif
+
+#ifdef OEBUILD
+				cmd = ostrcat("cat /autofs/", pchroot, 0, 0);
+#else
+				cmd = ostrcat("cat /autofs/", pch, 0, 0);
+#endif
+				cmd = ostrcat(cmd, "/etc", 1, 0);
+
 				// need switch label > showname from system_update.h function
-				addmenulist(&mlist, showname, label, pic, 0, 0);
+				if(file_exist(cmd == 1)
+					addmenulist(&mlist, showname, label, pic, 0, 0);
+
+				free(cmd), cmd = NULL;
 
 				free(cmd), cmd = NULL;
 				free(showname), showname = NULL;
