@@ -8438,9 +8438,9 @@ printf("rootpart: %s\n", rootpart);
 #endif
 
 #ifdef OEBUILD
-				cmd = ostrcat("cat /autofs/", pchroot, 0, 0);
+				cmd = ostrcat("/autofs/", pchroot, 0, 0);
 #else
-				cmd = ostrcat("cat /autofs/", pch, 0, 0);
+				cmd = ostrcat("/autofs/", pch, 0, 0);
 #endif
 				cmd = ostrcat(cmd, "/etc", 1, 0);
 
