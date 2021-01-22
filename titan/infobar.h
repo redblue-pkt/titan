@@ -828,7 +828,7 @@ void screeninfobar()
 			tmpstr = ostrcat(tmpstr, status.aktservice->channel->hbbtvurl, 1, 0);
 			tmpstr = ostrcat(tmpstr, " &", 1, 0);
 #ifdef MIPSEL
-			disablemanualblit();
+//			disablemanualblit();
 			int tmprcret = -1;
 
 			delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
@@ -887,7 +887,7 @@ void screeninfobar()
 #ifndef OEBUILD 
 			system("resetfb.sh");
 #endif
-			enablemanualblit();
+//			enablemanualblit();
 #else
 			debug(10, "cmd=%s", tmpstr);
 			system(tmpstr);
