@@ -21,7 +21,9 @@ void screenshoot(int flag)
 		cmd = ostrcat("grab -v -j 100 -r 960", NULL, 0, 0);
 	else if(flag == 3)
 		cmd = ostrcat("grab -o -j 100 -r 960", NULL, 0, 0);
-
+#ifdef OEBUILD
+	cmd = ostrcat(" > /tmp/screenshot.jpg", NULL, 0, 0);
+#endif
 	if(cmd != NULL)
 	{
 		unlink("/tmp/screenshot.jpg");
