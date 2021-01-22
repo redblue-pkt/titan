@@ -1,4 +1,4 @@
-<screen name="tithekmenu" title="TiThek Menu" titlealign="center" fontcol="fontcol" hspace="30" vspace="30" fontsize="30" posx="center" posy="center" width="50%" height="75%" bordercol="bordercol" bordersize="1" bgcol="bgcol">
+<screen name="tithekmenu" title="Tithek Menu" titlealign="center" fontcol="fontcol" hspace="30" vspace="30" fontsize="30" posx="center" posy="center" width="50%" height="75%" bordercol="bordercol" bordersize="1" bgcol="bgcol">
 	<node name="listbox" type="listbox" scrollbar="auto" bordercol="bordercol" fontsize="30" width="100%" height="100%">
 </screen>
 
@@ -21,7 +21,7 @@
 </screen>
 
 
-<screen name="tithek_settings" title="TiThek Settings" titlealign="center" fontsize="36" fontcol="black" posx="center" posy="center" width="1220" height="680" valign="bottom" bordercol="black" bordersize="1" borderradius="8" titlebgcol="titlebgcol" titlebgcol2="white" titlegradient="topmiddle" bgcol="black">
+<screen name="tithek_settings" title="Tithek Settings" titlealign="center" fontsize="36" fontcol="black" posx="center" posy="center" width="1220" height="680" valign="bottom" bordercol="black" bordersize="1" borderradius="8" titlebgcol="titlebgcol" titlebgcol2="white" titlegradient="topmiddle" bgcol="black">
 	<node name="listbox" type="listbox" scrollbar="auto" fontsize="28" fontcol="fontcol" bordersize="1" bordercol="titlebgcol" posx="center" posy="center" width="800" height="300">
 		<node parent="listbox" name="view" text="View Sections" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="cover" text="View Cover" type="choicebox" valign="middle" width="100%" height="35">
@@ -55,7 +55,7 @@
 
 
 <screen name="tithekedit" bgcol="bgcol" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
-	<node name="titletext" text="TiThek - Favorite Edit" fontcol="black" fontsize="36" posx="0" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+	<node name="titletext" text="Tithek - Favorite Edit" fontcol="black" fontsize="36" posx="0" posy="0" width="100%" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 		<node fontsize=30 bordercol=titlebgcol fontcol=fontcol scrollbar=auto type=listbox name=listbox posx=30 posy=80 width=95% height=-35>
 		<node name="title" text="Title" parent=listbox type=inputbox width=100% height=30>
 		<node name="link" text="Stream Link" parent=listbox type=inputbox width=100% height=30>

@@ -1168,7 +1168,7 @@ char* webvideo(char* param, int fmt)
 
 				// stream over tithek enable start
 				printf("status.webplayfile: %s\n",status.webplayfile);
-				struct skin* tithekplugin = getplugin("TiTan Mediathek");
+				struct skin* tithekplugin = getplugin("Titan Mediathek");
 				if(tithekplugin != NULL)
 				{
 					struct tithek* (*startplugin)(char*);

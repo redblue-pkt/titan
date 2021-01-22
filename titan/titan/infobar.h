@@ -821,6 +821,8 @@ void screeninfobar()
 
 			tmpstr = ostrcat("run.sh restart ", oitoa(getfbxres()), 0, 1);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			printf("getfbxres %d\n", getfbxres());
+			printf("status.videosize.w %d\n", status.videosize.w);
 			tmpstr = ostrcat(tmpstr, oitoa(getfbyres()), 1, 1);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
 			tmpstr = ostrcat(tmpstr, status.aktservice->channel->hbbtvurl, 1, 0);
