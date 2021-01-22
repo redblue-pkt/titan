@@ -56,7 +56,7 @@ void screenkeyactions(int key, int flag)
 				{
 					if(ostrcmp(child->name, "Media Center") == 0)
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);			
-					else if(ostrcmp(child->name, "TiTan Mediathek") == 0)
+					else if(ostrcmp(child->name, "Titan Mediathek") == 0)
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 					else if(ostrcmp(child->name, "Titan Media Center") == 0)
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
@@ -64,6 +64,8 @@ void screenkeyactions(int key, int flag)
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 					else if(ostrcmp(child->name, "DVD Player") == 0)
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
+					else if(ostrcmp(child->name, "KodiStarter") == 0)
+						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);						
 				}
 				child = child->next;
 			}
@@ -130,7 +132,11 @@ void screenkeyactions(int key, int flag)
 		else if(ostrcmp(keyconf, "MediaDB Scan Info") == 0)
 			get_mediadb_scan_info();
 		else if(ostrcmp(keyconf, "Record Player") == 0)
+		{
+			addconfigtmp("dirsort", "4");
 			screenplay(NULL, NULL, 1, 0);
+			delconfigtmp("dirsort");
+		}
 		else if(ostrcmp(keyconf, "Media Player") == 0)
 			screenplay(NULL, NULL, 0, 0);
 		else if(ostrcmp(keyconf, "Media Plugins List") == 0)

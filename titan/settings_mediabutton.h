@@ -16,25 +16,17 @@ void screensettings_mediabutton()
 		if(child->del == PLUGINDELMARK && (status.security >= 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 		{
 			if(ostrcmp(child->name, "Media Center") == 0)
-			{
 				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);			
-			}
-			else if(ostrcmp(child->name, "TiTan Mediathek") == 0)
-			{
+			else if(ostrcmp(child->name, "Titan Mediathek") == 0)
 				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
-			}
 			else if(ostrcmp(child->name, "Titan Media Center") == 0)
-			{
 				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
-			}
 			else if(ostrcmp(child->name, "GmediaRender") == 0)
-			{
 				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
-			}
 			else if(ostrcmp(child->name, "DVD Player") == 0)
-			{
 				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
-			}
+			else if(ostrcmp(child->name, "KodiStarter") == 0)
+				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 		}
 		child = child->next;
 	}
