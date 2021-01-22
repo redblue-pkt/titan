@@ -1652,7 +1652,7 @@ printf("[screenplay] status.webplayfile: %s\n",status.webplayfile);
 	{
 		// stream over tithek enable start
 		printf("startfile: %s\n", status.webplayfile);
-		struct skin* tithekplugin = getplugin("TiTan Mediathek");
+		struct skin* tithekplugin = getplugin("Titan Mediathek");
 		if(tithekplugin != NULL)
 		{
 			struct tithek* (*startplugin)(char*);

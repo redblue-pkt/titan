@@ -66,8 +66,8 @@
 #include "vidzi.h"
 #include "vidag.h"
 
-char pluginname[] = "TiTan Mediathek";
-char plugindesc[] = "TiTan Mediathek";
+char pluginname[] = "Titan Mediathek";
+char plugindesc[] = "Titan Mediathek";
 char pluginpic[] = "%pluginpath%/tithek/plugin.png";
 
 int pluginaktiv = 0;
@@ -84,7 +84,7 @@ void init(void)
 
 	mkdir("/tmp/tithek", 777);
 	pluginaktiv = 1;
-	debug(10, "TiThek Plugin loadet !!!");
+	debug(10, "Tithek Plugin loadet !!!");
 }
 
 //wird beim entladen ausgefuehrt
@@ -93,7 +93,7 @@ void deinit(void)
 	delmarkedscreen(195);
 	delallfiles("/tmp/tithek", NULL);
 	pluginaktiv = 0;
-	debug(10, "TiThek Plugin removed !!!");
+	debug(10, "Tithek Plugin removed !!!");
 }
 
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt

@@ -1103,7 +1103,7 @@ int checkpluginskip(char* name)
 	else if(ostrcmp(name, "Stock") == 0) return 1;
 	else if(ostrcmp(name, "Stop if not used") == 0) return 1;
 	else if(ostrcmp(name, "Streaminfo") == 0) return 1;
-	else if(ostrcmp(name, "TiTan Mediathek") == 0) return 1;
+	else if(ostrcmp(name, "Titan Mediathek") == 0) return 1;
 	else if(ostrcmp(name, "Titan Media Center") == 0) return 1;
 	else if(ostrcmp(name, "TMDb") == 0) return 1;
 	else if(ostrcmp(name, "TopfieldVFD") == 0) return 1;
