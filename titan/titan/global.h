@@ -21,9 +21,10 @@ void screenshoot(int flag)
 		cmd = ostrcat("grab -v -j 100 -r 960", NULL, 0, 0);
 	else if(flag == 3)
 		cmd = ostrcat("grab -o -j 100 -r 960", NULL, 0, 0);
-#ifdef OEBUILD
-	cmd = ostrcat(" > /tmp/screenshot.jpg", NULL, 0, 0);
-#endif
+		
+	if(checkchipset("3798MV200") == 1)
+		cmd = ostrcat(cmd, " > /tmp/screenshot.jpg", 1, 0);
+
 	if(cmd != NULL)
 	{
 		unlink("/tmp/screenshot.jpg");
@@ -198,6 +199,7 @@ int osystem(char* cmd, int timeout)
 	int ret = 0;
 	char* tmpstr = NULL;
 
+//  busybox 1.31
 //#ifdef OEBUILD
 //	tmpstr = ostrcat(tmpstr, "timeout -s 9 ", 1, 0);
 //	tmpstr = ostrcat(tmpstr, oitoa(timeout), 1, 1);
