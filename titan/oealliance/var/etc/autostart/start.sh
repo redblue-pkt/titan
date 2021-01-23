@@ -164,6 +164,9 @@ workarounds()
 			/etc/init.d/partitions-by-name &
 		fi
 	fi
+	if [ ! -e "/lib/titan" ];then
+		ln -s /var/usr/local/share/titan/skin /lib/titan
+	fi
 }
 
 startCi()
