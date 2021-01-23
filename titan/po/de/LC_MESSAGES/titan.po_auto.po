@@ -329,17 +329,17 @@ msgstr "16 Bit skalieren auf 100%"
 msgid "16 Bit Scale 200 Percent"
 msgstr "16 Bit skalieren auf 200%"
 
-#: global.h:2034 global.h:2045 global.h:4457 global.h:4498 global.h:4557
+#: global.h:2038 global.h:2049 global.h:4461 global.h:4502 global.h:4561
 #: videomode.h:20
 msgid "16:9_set_bestfit_to_policy_show_justscale"
 msgstr "16:9 Inhalt anzeigen als Just Scale"
 
-#: global.h:2035 global.h:2036 global.h:4459 global.h:4503 global.h:4563
+#: global.h:2039 global.h:2040 global.h:4463 global.h:4507 global.h:4567
 #: videomode.h:21
 msgid "16:9_set_letterbox_to_policy_show_panscan"
 msgstr "16:9 Inhalt anzeigen als Pan&Scan"
 
-#: global.h:2037 global.h:2038 global.h:4461 global.h:4508 global.h:4569
+#: global.h:2041 global.h:2042 global.h:4465 global.h:4512 global.h:4573
 #: videomode.h:22
 msgid "16:9_set_panscan_to_policy_show_pillarbox"
 msgstr "16:9 Inhalt anzeigen als PillarBox"
@@ -506,17 +506,17 @@ msgstr ""
 msgid "4 sec"
 msgstr "4 Sekunden"
 
-#: global.h:2039 global.h:2040 global.h:4463 global.h:4519 global.h:4575
+#: global.h:2043 global.h:2044 global.h:4467 global.h:4523 global.h:4579
 #: videomode.h:23
 msgid "4:3_set_bestfit_to_policy2_show_justscale"
 msgstr "4:3 Inhalt anzeigen als Just Scale"
 
-#: global.h:2041 global.h:2042 global.h:4465 global.h:4524 global.h:4582
+#: global.h:2045 global.h:2046 global.h:4469 global.h:4528 global.h:4586
 #: videomode.h:24
 msgid "4:3_set_letterbox_to_policy2_show_letterbox"
 msgstr "4:3 Inhalt anzeigen als Letterbox"
 
-#: global.h:2043 global.h:2044 global.h:4467 global.h:4529 global.h:4589
+#: global.h:2047 global.h:2048 global.h:4471 global.h:4533 global.h:4593
 #: videomode.h:25
 msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr "4:3 Inhalt anzeigen als Pan&Scan"
@@ -1095,7 +1095,7 @@ msgstr "App Hintergrund"
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
-#: global.h:6653
+#: global.h:6657
 msgid "April"
 msgstr ""
 
@@ -1268,7 +1268,7 @@ msgstr "Audio Verzögerung (pcm)"
 msgid "Audio/Subt."
 msgstr "Ton/Untertitel"
 
-#: global.h:6657
+#: global.h:6661
 msgid "August"
 msgstr ""
 
@@ -1286,7 +1286,7 @@ msgstr "Authentifizierung"
 msgid "Auto"
 msgstr ""
 
-#: keyactions.h:75 settings_pluginbutton.h:13 settings_redbutton.h:13
+#: keyactions.h:77 settings_pluginbutton.h:13 settings_redbutton.h:13
 msgid "Auto Resolution"
 msgstr "Automatische Auflösung"
 
@@ -1488,12 +1488,12 @@ msgstr "Einstellungen werden gesichert"
 msgid "Backup / Restore Settings"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: global.h:7972 httpdfunc.h:6728 httpdfunc.h:6822 system_backup_restore.h:129
+#: global.h:7976 httpdfunc.h:6728 httpdfunc.h:6822 system_backup_restore.h:129
 #: system_backup_restore.h:136
 msgid "Backup created successfully"
 msgstr "Die Sicherung wurde erfolgreich erstellt"
 
-#: global.h:7974
+#: global.h:7978
 msgid "Backup ended with error"
 msgstr "Sicherung endet mit einem Fehler"
 
@@ -1782,7 +1782,7 @@ msgstr "Rahmenfarbe"
 msgid "Bouquet Color"
 msgstr "Favoriten Farbe"
 
-#: keyactions.h:79 settings_bluebutton.h:15 settings_redbutton.h:16
+#: keyactions.h:81 settings_bluebutton.h:15 settings_redbutton.h:16
 #: skin_default_skin.xml.h:78
 msgid "Bouquet List"
 msgstr "Favoriten Liste"
@@ -2337,7 +2337,7 @@ msgstr "Am Ort angemeldet"
 msgid "Child"
 msgstr "Kinder"
 
-#: keyactions.h:83 settings_bluebutton.h:20 settings_pluginbutton.h:20
+#: keyactions.h:85 settings_bluebutton.h:20 settings_pluginbutton.h:20
 #: settings_redbutton.h:21 skin_default_skin.xml.h:100
 msgid "Child Protection"
 msgstr "Jugendschutz"
@@ -2389,7 +2389,7 @@ msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste
 msgid "Choose your Language from the following list"
 msgstr "Wählen Sie eine Sprache aus der folgenden Liste"
 
-#: global.h:8475
+#: global.h:8479
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -2714,19 +2714,19 @@ msgstr "Erstelle Aufnahme Vorschaubild"
 msgid "Create Satellites/Provider"
 msgstr "Erzeuge Satelliten/Anbieter"
 
-#: global.h:7169
+#: global.h:7173
 msgid "Create Satellites/Provider (All)"
 msgstr "Erzeuge Satelliten/Anbieter (Alle)"
 
-#: global.h:7167
+#: global.h:7171
 msgid "Create Satellites/Provider (Cable)"
 msgstr "Erzeuge Satelliten/Anbieter (Kabel)"
 
-#: global.h:7166
+#: global.h:7170
 msgid "Create Satellites/Provider (Sat)"
 msgstr "Erzeuge Satelliten/Anbieter (Sat)"
 
-#: global.h:7168
+#: global.h:7172
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr "Erzeuge Satelliten/Anbieter (Terrestrisch)"
 
@@ -2962,7 +2962,7 @@ msgstr ""
 msgid "Debuglevel"
 msgstr ""
 
-#: global.h:6661
+#: global.h:6665
 msgid "December"
 msgstr "Dezember"
 
@@ -3272,7 +3272,7 @@ msgstr ""
 msgid "Download finished!"
 msgstr "Download abgeschlossen!"
 
-#: keyactions.h:85 play.h:717 settings_bluebutton.h:22
+#: keyactions.h:87 play.h:717 settings_bluebutton.h:22
 #: settings_pluginbutton.h:22 settings_redbutton.h:23
 #: skin_default_skin.xml.h:167
 msgid "Downloads"
@@ -3471,7 +3471,7 @@ msgid ""
 "partition could not be created"
 msgstr "FEHLER: Partition konnte nicht erstellt werden!"
 
-#: global.h:6403 keyactions.h:208
+#: global.h:6407 keyactions.h:214
 msgid "ERROR cant read res"
 msgstr "FEHLER: Auflösung nicht erkannt"
 
@@ -3514,9 +3514,9 @@ msgstr ""
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6403 global.h:7301 global.h:7320 global.h:7837
-#: global.h:7857 global.h:7877 global.h:7897 global.h:7917 global.h:8249
-#: global.h:8254 global.h:8266 global.h:8271 harddisk.h:355 harddisk.h:686
+#: flashx.h:57 global.h:6407 global.h:7305 global.h:7324 global.h:7841
+#: global.h:7861 global.h:7881 global.h:7901 global.h:7921 global.h:8253
+#: global.h:8258 global.h:8270 global.h:8275 harddisk.h:355 harddisk.h:686
 #: harddisk.h:694 harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802
 #: harddisk.h:804 harddisk.h:901 harddisk.h:904 harddisk.h:1141 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -3525,8 +3525,8 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:715 infobar.h:939 infobar.h:1253
-#: info.h:27 ipkg.h:359 keyactions.h:208 kinox.h:101 kinox.h:358 language.h:54
+#: inadyn.h:190 inadyn.h:200 infobar.h:717 infobar.h:943 infobar.h:1257
+#: info.h:27 ipkg.h:359 keyactions.h:214 kinox.h:101 kinox.h:358 language.h:54
 #: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
@@ -3538,7 +3538,7 @@ msgstr ""
 #: mc_videoplayer.h:336 mc_videoplayer.h:765 mc_videoplayer.h:800
 #: mc_videoplayer.h:904 mc_videoplayer.h:920 mc_wetterinfo.h:36
 #: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477 mediadb.h:2543
-#: mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1017 menu.h:1019
+#: mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1021 menu.h:1023
 #: mightyupload.h:27 mightyupload.h:69 mightyupload.h:75 movie2k.h:23
 #: movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104 movie4k.h:411
 #: movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101 movshare.h:191
@@ -3771,7 +3771,7 @@ msgstr "FEHLER: Dateiname kann nicht erzeugt werden!"
 msgid "Error file not supported"
 msgstr "FEHLER: Dateiformat wird nicht unterstützt!"
 
-#: menu.h:1017
+#: menu.h:1021
 msgid "Error in Save Settings"
 msgstr "Fehler beim Speichern der Einstellungen"
 
@@ -3789,11 +3789,11 @@ msgstr ""
 "FEHLER: Das Ergebnis hat keine IMDB-ID und kann daher nicht in der MediaDB\n"
 "gespeichert werden!"
 
-#: global.h:7318
+#: global.h:7322
 msgid "Error: Transponder Source file no data"
 msgstr "Fehler: Transponder ist leer"
 
-#: global.h:7296
+#: global.h:7300
 msgid "Error: Transponder Source file not found"
 msgstr "Fehler: Transponder Quell Datei nicht gefunden"
 
@@ -4088,7 +4088,7 @@ msgstr "Favoriten"
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: global.h:6651
+#: global.h:6655
 msgid "February"
 msgstr "Februar"
 
@@ -4357,7 +4357,7 @@ msgstr ""
 "Neuer Datenträger erkannt.\n"
 "Sie können diesen im Festplatten Menü konfigurieren."
 
-#: global.h:8271
+#: global.h:8275
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
@@ -4367,7 +4367,7 @@ msgstr ""
 "Receiver trotzdem herunterfahren?\n"
 "OK zum fortfahren, Exit um abzubrechen."
 
-#: global.h:8249 global.h:8266
+#: global.h:8253 global.h:8270
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4378,7 +4378,7 @@ msgstr ""
 "Update trotzdem durchführen?\n"
 "OK zum fortfahren, Exit um abzubrechen."
 
-#: global.h:8254
+#: global.h:8258
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4433,11 +4433,11 @@ msgstr "Frequenz"
 msgid "Frequency:"
 msgstr "Frequenz:"
 
-#: global.h:6669
+#: global.h:6673
 msgid "Fri"
 msgstr "Fre"
 
-#: global.h:6634 global.h:6644 rectimer.h:1104 skin_default_skin.xml.h:229
+#: global.h:6638 global.h:6648 rectimer.h:1104 skin_default_skin.xml.h:229
 msgid "Friday"
 msgstr "Freitag"
 
@@ -4642,7 +4642,7 @@ msgstr "Senderlogos im grafischen EPG anzeigen"
 msgid "Graphic EPG Zoom"
 msgstr "Vergrößerungsfaktor des grafischen EPG"
 
-#: epgsettings.h:142 keyactions.h:81 settings_bluebutton.h:18
+#: epgsettings.h:142 keyactions.h:83 settings_bluebutton.h:18
 #: settings_pluginbutton.h:18 settings_redbutton.h:19
 #: skin_default_skin.xml.h:240
 msgid "Graphic Multi EPG"
@@ -5431,7 +5431,7 @@ msgstr ""
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: global.h:7171
+#: global.h:7175
 msgid "Import mode"
 msgstr ""
 
@@ -5653,7 +5653,7 @@ msgstr "Schnittstelle"
 msgid "Internet Browser"
 msgstr ""
 
-#: infobar.h:939
+#: infobar.h:943
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin nicht installiert!"
 
@@ -5698,11 +5698,11 @@ msgstr "Italiano"
 msgid "J"
 msgstr ""
 
-#: global.h:6650
+#: global.h:6654
 msgid "January"
 msgstr "Januar"
 
-#: global.h:6656
+#: global.h:6660
 msgid "July"
 msgstr "Juli"
 
@@ -5715,7 +5715,7 @@ msgstr "Springen"
 msgid "Jump To (min)"
 msgstr "Springe von akt. Position vor (min)"
 
-#: global.h:6655
+#: global.h:6659
 msgid "June"
 msgstr "Juni"
 
@@ -6284,7 +6284,7 @@ msgstr "Manuelle Kabelsuche"
 msgid "Manual Search Terrestrial"
 msgstr "Manuelle terrestrische Suche"
 
-#: global.h:6652
+#: global.h:6656
 msgid "March"
 msgstr "März"
 
@@ -6328,7 +6328,7 @@ msgstr "Maximale Frequenz"
 msgid "Maximal signalrate"
 msgstr "Maximale Signalrate"
 
-#: global.h:6654
+#: global.h:6658
 msgid "May"
 msgstr "Mai"
 
@@ -6377,7 +6377,7 @@ msgstr "Medien Ordner 4"
 msgid "Media Key Action - Setup"
 msgstr "Media Taste - Belegungsmenü"
 
-#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:369
+#: keyactions.h:72 settings_mediabutton.h:34 skin_default_skin.xml.h:369
 msgid "Media Player"
 msgstr "MiniPlayer (Medien wiedergeben)"
 
@@ -6534,10 +6534,10 @@ msgstr "Menüliste"
 #: filemanager.h:279 filemanager.h:289 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6403 global.h:7231 global.h:7301 global.h:7320
-#: global.h:7837 global.h:7845 global.h:7857 global.h:7865 global.h:7877
-#: global.h:7885 global.h:7897 global.h:7905 global.h:7917 global.h:7925
-#: global.h:8249 global.h:8254 global.h:8266 global.h:8271 harddisk.h:686
+#: flashx.h:57 global.h:6407 global.h:7235 global.h:7305 global.h:7324
+#: global.h:7841 global.h:7849 global.h:7861 global.h:7869 global.h:7881
+#: global.h:7889 global.h:7901 global.h:7909 global.h:7921 global.h:7929
+#: global.h:8253 global.h:8258 global.h:8270 global.h:8275 harddisk.h:686
 #: harddisk.h:694 harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802
 #: harddisk.h:804 harddisk.h:882 harddisk.h:901 harddisk.h:904 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5890 httpdfunc.h:6280
@@ -6546,8 +6546,8 @@ msgstr "Menüliste"
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:715 infobar.h:939 infobar.h:1253
-#: ipkg.h:359 keyactions.h:208 kinox.h:101 kinox.h:358 kravencfg.c:66
+#: inadyn.h:190 inadyn.h:200 infobar.h:717 infobar.h:943 infobar.h:1257
+#: ipkg.h:359 keyactions.h:214 kinox.h:101 kinox.h:358 kravencfg.c:66
 #: kravencfg.c:212 kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49
 #: lcdsamsung.c:113 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:411
@@ -6687,11 +6687,11 @@ msgstr "Module"
 msgid "Module Type"
 msgstr "Modul Typ"
 
-#: global.h:6665
+#: global.h:6669
 msgid "Mon"
 msgstr ""
 
-#: global.h:6630 global.h:6640 rectimer.h:1100 skin_default_skin.xml.h:384
+#: global.h:6634 global.h:6644 rectimer.h:1100 skin_default_skin.xml.h:384
 msgid "Monday"
 msgstr "Montag"
 
@@ -6762,7 +6762,7 @@ msgstr "Filme"
 msgid "Multi (EPG)"
 msgstr ""
 
-#: epgsettings.h:141 epgsettings.h:182 keyactions.h:80 settings_bluebutton.h:17
+#: epgsettings.h:141 epgsettings.h:182 keyactions.h:82 settings_bluebutton.h:17
 #: settings_pluginbutton.h:17 settings_redbutton.h:18
 #: skin_default_skin.xml.h:393
 msgid "Multi EPG"
@@ -6800,7 +6800,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "mehrere Sender gleichzeitig"
 
-#: global.h:7110
+#: global.h:7114
 msgid "Multituner adjustable"
 msgstr "Multituner einstellbar"
 
@@ -7140,7 +7140,7 @@ msgstr "StopIfNotUsed Einstellungen"
 msgid "Note created"
 msgstr "nicht angelegt"
 
-#: global.h:6660
+#: global.h:6664
 msgid "November"
 msgstr ""
 
@@ -7182,10 +7182,10 @@ msgstr ""
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6403 global.h:7231 global.h:7301 global.h:7320
-#: global.h:7837 global.h:7845 global.h:7857 global.h:7865 global.h:7877
-#: global.h:7885 global.h:7897 global.h:7905 global.h:7917 global.h:7925
-#: global.h:8249 global.h:8254 global.h:8266 global.h:8271 harddisk.h:355
+#: flashx.h:57 global.h:6407 global.h:7235 global.h:7305 global.h:7324
+#: global.h:7841 global.h:7849 global.h:7861 global.h:7869 global.h:7881
+#: global.h:7889 global.h:7901 global.h:7909 global.h:7921 global.h:7929
+#: global.h:8253 global.h:8258 global.h:8270 global.h:8275 harddisk.h:355
 #: harddisk.h:487 harddisk.h:686 harddisk.h:694 harddisk.h:740 harddisk.h:795
 #: harddisk.h:800 harddisk.h:802 harddisk.h:804 harddisk.h:882 harddisk.h:901
 #: harddisk.h:904 harddisk.h:1141 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
@@ -7195,8 +7195,8 @@ msgstr ""
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:715 infobar.h:939 infobar.h:1253 info.h:27 ipkg.h:359
-#: keyactions.h:208 kinox.h:101 kinox.h:358 kravencfg.c:66 kravencfg.c:212
+#: infobar.h:717 infobar.h:943 infobar.h:1257 info.h:27 ipkg.h:359
+#: keyactions.h:214 kinox.h:101 kinox.h:358 kravencfg.c:66 kravencfg.c:212
 #: kravencfg.c:248 language.h:54 lcdpearl1.c:49 lcdsamsung.c:113 letwatch.h:29
 #: letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:411
@@ -7208,8 +7208,8 @@ msgstr ""
 #: mc_pictureplayer.h:461 mc_videoplayer.h:336 mc_videoplayer.h:765
 #: mc_videoplayer.h:800 mc_videoplayer.h:904 mc_videoplayer.h:920
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2543 mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1017
-#: menu.h:1019 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
+#: mediadb.h:2543 mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1021
+#: menu.h:1023 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
 #: movshare.h:191 movshare.h:197 multiboot.h:344 multiboot.h:380
@@ -7344,7 +7344,7 @@ msgstr ""
 msgid "OTHER"
 msgstr "mehr"
 
-#: global.h:6659
+#: global.h:6663
 msgid "October"
 msgstr "Oktober"
 
@@ -8126,7 +8126,7 @@ msgstr "Ausschalttimer"
 msgid "Present"
 msgstr "vorhanden"
 
-#: global.h:7984 system_backup_restore.h:15
+#: global.h:7988 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -9123,7 +9123,7 @@ msgstr ""
 msgid "Samsung SPF.. Settings"
 msgstr "Einstellungen"
 
-#: global.h:6670
+#: global.h:6674
 msgid "Sat"
 msgstr "Sam"
 
@@ -9200,7 +9200,7 @@ msgstr "Satelliten Auswahl"
 msgid "Satellite"
 msgstr "Satellit"
 
-#: global.h:7231
+#: global.h:7235
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and\n"
@@ -9222,7 +9222,7 @@ msgstr "Empfangsqualität (Satfinder)"
 msgid "Saturation"
 msgstr "Sättigung"
 
-#: global.h:6635 global.h:6645 rectimer.h:1105 skin_default_skin.xml.h:538
+#: global.h:6639 global.h:6649 rectimer.h:1105 skin_default_skin.xml.h:538
 msgid "Saturday"
 msgstr "Samstag"
 
@@ -9230,7 +9230,7 @@ msgstr "Samstag"
 msgid "Save"
 msgstr "Speichern"
 
-#: autotimer.c:603 menu.h:1017 menu.h:1019 skin_default_skin.xml.h:540
+#: autotimer.c:603 menu.h:1021 menu.h:1023 skin_default_skin.xml.h:540
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
@@ -9546,7 +9546,7 @@ msgstr "Rubrik: "
 msgid "Select Language"
 msgstr ""
 
-#: global.h:8328
+#: global.h:8332
 msgid "Select Multiboot"
 msgstr ""
 
@@ -9562,7 +9562,7 @@ msgstr "Unicable Hersteller auswählen"
 msgid "Select Your Remote Control"
 msgstr "Fernbedienungsauswahl Menü"
 
-#: settings_mediabutton.h:48
+#: settings_mediabutton.h:40
 msgid "Select a function for the Media button"
 msgstr "Wählen Sie eine Funktion für die Media Taste"
 
@@ -9614,7 +9614,7 @@ msgstr "Übermittle alle CAIDs an das Modul"
 msgid "Send remote box into standby ?"
 msgstr "Entfernten Receiver in Standby versetzen?"
 
-#: global.h:6658
+#: global.h:6662
 msgid "September"
 msgstr ""
 
@@ -9728,7 +9728,7 @@ msgstr "Einstellungen speichern?"
 msgid "Settings backup/restore"
 msgstr "Einstellungen sichern/wiederherstellen"
 
-#: menu.h:1019
+#: menu.h:1023
 msgid "Settings succesfull saved"
 msgstr "Einstellungen wurden erfolgreich gespeichert"
 
@@ -9748,7 +9748,7 @@ msgstr "PiP-Einstellungen"
 msgid "Sharename can't be empty!"
 msgstr "Freigabename darf nicht leer sein!"
 
-#: infobar.h:715 mc_audioplayer.h:411 mc_iptvplayer.h:106 mc_main.h:283
+#: infobar.h:717 mc_audioplayer.h:411 mc_iptvplayer.h:106 mc_main.h:283
 #: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -9993,7 +9993,7 @@ msgstr "Überspringe Private CA Descriptor"
 msgid "Sleep"
 msgstr ""
 
-#: keyactions.h:82 settings_bluebutton.h:19 settings_pluginbutton.h:19
+#: keyactions.h:84 settings_bluebutton.h:19 settings_pluginbutton.h:19
 #: settings_redbutton.h:20
 msgid "Sleep Timer"
 msgstr "Ausschalt Timer"
@@ -10022,7 +10022,7 @@ msgstr ""
 msgid "Social Network Client for Facebook."
 msgstr ""
 
-#: keyactions.h:77 settings_bluebutton.h:14 settings_pluginbutton.h:15
+#: keyactions.h:79 settings_bluebutton.h:14 settings_pluginbutton.h:15
 #: settings_redbutton.h:15 skin_default_skin.xml.h:601
 msgid "Softcam Panel"
 msgstr "Softcam"
@@ -10145,23 +10145,23 @@ msgstr "Autostart RGUID"
 msgid "Start Record"
 msgstr "Aufnahme starten"
 
-#: global.h:7837
+#: global.h:7841
 msgid "Start Restore Default Bouquets ?"
 msgstr "Favoritenliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7857
+#: global.h:7861
 msgid "Start Restore Default Channel Settings ?"
 msgstr "Komplette Liste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7897
+#: global.h:7901
 msgid "Start Restore Default Channels ?"
 msgstr "Senderliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7877
+#: global.h:7881
 msgid "Start Restore Default Providers ?"
 msgstr "Anbieterliste (Werkseinstellung) wiederherstellen?"
 
-#: global.h:7917
+#: global.h:7921
 msgid "Start Restore Default Sats ?"
 msgstr "Satellitenliste (Werkseinstellung) wiederherstellen?"
 
@@ -10320,7 +10320,7 @@ msgstr ""
 msgid "Style"
 msgstr "Stil"
 
-#: keyactions.h:84 settings_bluebutton.h:21 settings_pluginbutton.h:21
+#: keyactions.h:86 settings_bluebutton.h:21 settings_pluginbutton.h:21
 #: settings_redbutton.h:22 videomode.h:31
 msgid "Subchannel"
 msgstr "Unterkanäle"
@@ -10356,11 +10356,11 @@ msgstr ""
 msgid "Sudoku Help"
 msgstr "Sudoku Hilfe"
 
-#: global.h:6671
+#: global.h:6675
 msgid "Sun"
 msgstr "Son"
 
-#: global.h:6636 global.h:6646 rectimer.h:1106 skin_default_skin.xml.h:633
+#: global.h:6640 global.h:6650 rectimer.h:1106 skin_default_skin.xml.h:633
 msgid "Sunday"
 msgstr "Sonntag"
 
@@ -10653,7 +10653,7 @@ msgstr ""
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7937
+#: global.h:7941
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -10782,7 +10782,7 @@ msgstr "Grenzwert"
 msgid "Thriller"
 msgstr ""
 
-#: global.h:6668
+#: global.h:6672
 msgid "Thu"
 msgstr "Don"
 
@@ -10790,7 +10790,7 @@ msgstr "Don"
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6633 global.h:6643 rectimer.h:1103 skin_default_skin.xml.h:655
+#: global.h:6637 global.h:6647 rectimer.h:1103 skin_default_skin.xml.h:655
 msgid "Thursday"
 msgstr "Donnerstag"
 
@@ -10798,21 +10798,9 @@ msgstr "Donnerstag"
 msgid "TiTan Mediathek"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
-msgid "TiThek - Favorite Edit"
-msgstr "Favoriten bearbeiten"
-
-#: plugins_tithek_skin.xml.h:33 skins_tithek_skin.xml.h:33
-msgid "TiThek Menu"
-msgstr "TiThek Menü"
-
 #: skin_default_skin.xml.h:668
 msgid "TiThek Select Color"
 msgstr "Cursor Farbe für TiThek"
-
-#: plugins_tithek_skin.xml.h:34 skins_tithek_skin.xml.h:34
-msgid "TiThek Settings"
-msgstr "TiThek Einstellungen"
 
 #: tpk_description.h:173
 msgid "TiThek the Multimedia-thek"
@@ -10991,7 +10979,7 @@ msgid "Titan MediaCenter"
 msgstr "Titan Media Center"
 
 #: extensions.h:276 extensions.h:336 extensions.h:435 extensions.h:474
-#: global.h:7845 global.h:7865 global.h:7885 global.h:7905 global.h:7925
+#: global.h:7849 global.h:7869 global.h:7889 global.h:7909 global.h:7929
 #: kravencfg.c:212 skinadjust.h:619 skinadjust.h:685 skinadjust.h:1110
 #: skinadjust.h:1172
 msgid "Titan will be restarted!"
@@ -11042,6 +11030,10 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
+#: plugins_tithek_skin.xml.h:25 skins_tithek_skin.xml.h:25
+msgid "Tithek - Favorite Edit"
+msgstr ""
+
 #: tithek.c:141 tithek_global.h:637 tithek_global.h:760
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
@@ -11054,6 +11046,14 @@ msgstr "TiThek - Hauptmenü - Favoriten"
 #: webif_playurl.h:4
 msgid "Tithek Hoster URL with http://"
 msgstr "Tithek Hoster URL (http://...)"
+
+#: plugins_tithek_skin.xml.h:33 skins_tithek_skin.xml.h:33
+msgid "Tithek Menu"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:34 skins_tithek_skin.xml.h:34
+msgid "Tithek Settings"
+msgstr ""
 
 #: mediadb.h:2536 plugins_tithek_skin.xml.h:26 skin_default_skin.xml.h:669
 #: skins_tithek_skin.xml.h:26
@@ -11270,11 +11270,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr "14 Tägige Testphase endet in"
 
-#: global.h:6666
+#: global.h:6670
 msgid "Tue"
 msgstr "Die"
 
-#: global.h:6631 global.h:6641 rectimer.h:1101 skin_default_skin.xml.h:691
+#: global.h:6635 global.h:6645 rectimer.h:1101 skin_default_skin.xml.h:691
 msgid "Tuesday"
 msgstr "Dienstag"
 
@@ -11286,7 +11286,7 @@ msgstr "Sender kann nicht angesteuert werden"
 msgid "Tuner"
 msgstr ""
 
-#: global.h:7101
+#: global.h:7105
 msgid "Tuner "
 msgstr ""
 
@@ -11908,11 +11908,11 @@ msgstr ""
 msgid "Webbrowser Plugin"
 msgstr ""
 
-#: global.h:6667
+#: global.h:6671
 msgid "Wed"
 msgstr "Mit"
 
-#: global.h:6632 global.h:6642 rectimer.h:1102 skin_default_skin.xml.h:741
+#: global.h:6636 global.h:6646 rectimer.h:1102 skin_default_skin.xml.h:741
 msgid "Wednesday"
 msgstr "Mittwoch"
 
@@ -13431,7 +13431,7 @@ msgstr "Nein"
 msgid "no description found"
 msgstr "keine Beschreibung gefunden"
 
-#: global.h:8468
+#: global.h:8472
 msgid "no device found"
 msgstr ""
 
@@ -13439,7 +13439,7 @@ msgstr ""
 msgid "no pic"
 msgstr "Kein Bild"
 
-#: infobar.h:1253
+#: infobar.h:1257
 msgid "no record channel found"
 msgstr ""
 
@@ -13447,7 +13447,7 @@ msgstr ""
 msgid "non"
 msgstr "Originalgröße"
 
-#: global.h:8415 system_update.h:109
+#: global.h:8419 system_update.h:109
 msgid "non-version"
 msgstr "keine Version"
 
@@ -14926,3 +14926,12 @@ msgstr ""
 #: tpk_showname.h:243
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "TiThek - Favorite Edit"
+#~ msgstr "Favoriten bearbeiten"
+
+#~ msgid "TiThek Menu"
+#~ msgstr "TiThek Menü"
+
+#~ msgid "TiThek Settings"
+#~ msgstr "TiThek Einstellungen"
