@@ -1512,14 +1512,26 @@ void guestthread()
 			addconfigtmp("nopluginversion", "1");
 			writeallconfig(1);
 
-			if(!file_exist("/var/etc/.tpkupgrade"))
-			{
+//			if(!file_exist("/var/etc/.tpkupgrade"))
+//			{
 				debug(199, "Community connecting: tpk upgrade");
-//				screenextensions(3, NULL, NULL, 1);
+				writesys("/tmp/.tpk_upgrade_start", "0", 0);
 				tpkupdate(1);
-			}
-
-			loadplugin();
+				loadplugin();
+				unlink(TPKLOG);
+				if(file_exist("/tmp/.tpk_needs_reboot"))
+				{
+					unlink("/tmp/.tpk_needs_reboot");
+					textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					//sync usb
+					system("sync");
+					//write only config file
+					writeallconfig(3);
+					//gui restart and write no config
+					oshutdown(3, 2);
+				}
+				unlink("/tmp/.tpk_upgrade_start");
+//			}
 		}
 		sleep(status.sleepcount);
 	}
