@@ -1516,7 +1516,7 @@ void guestthread()
 			{
 				debug(199, "Community connecting: tpk upgrade");
 //				screenextensions(3, NULL, NULL, 1);
-				tpkupdate(1)
+				tpkupdate(1);
 			}
 
 			loadplugin();
