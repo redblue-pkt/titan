@@ -1517,7 +1517,7 @@ void guestthread()
 				debug(199, "1Community connecting: tpk upgrade");
 				printf("Community connecting: tpk upgrade count=%d\n", count);
 //				if(count == 1)
-					tpkgetindex(0)
+					tpkgetindex(0);
 
 				writesys("/tmp/.tpk_upgrade_start", "0", 0);
 				printf("2Community connecting: tpk upgrade count=%d\n", count);
