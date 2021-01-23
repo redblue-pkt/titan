@@ -1511,7 +1511,6 @@ void guestthread()
 			debug(199, "Community connecting: set nopluginversion");
 			addconfigtmp("nopluginversion", "1");
 			writeallconfig(1);
-			loadplugin();
 
 			if(!file_exist("/var/etc/.tpkupgrade"))
 			{
@@ -1519,6 +1518,7 @@ void guestthread()
 				screenextensions(3, NULL, NULL, 1);
 			}
 
+			loadplugin();
 		}
 		sleep(status.sleepcount);
 	}
