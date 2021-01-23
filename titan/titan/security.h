@@ -1515,6 +1515,8 @@ void guestthread()
 //			if(!file_exist("/var/etc/.tpkupgrade"))
 //			{
 				debug(199, "Community connecting: tpk upgrade");
+				if(count == 1)
+					tpkgetindex(0)
 				writesys("/tmp/.tpk_upgrade_start", "0", 0);
 				tpkupdate(1);
 				loadplugin();
