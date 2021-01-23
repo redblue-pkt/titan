@@ -3388,7 +3388,7 @@ printf("dd\n");
 			ip = "atemio.dyndns.tv";
 		else if(ostrcmp("97.74.32.10", ip) == 0)
 			ip = "beta.dyndns.tv";
-
+printf("dd flag1=%d\n", flag1);
     	debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
 		if(flag1 == 0)
 			screendownload("Download", ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, 0);
