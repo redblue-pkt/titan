@@ -2924,7 +2924,7 @@ msgstr "Czyś przes szukaniem"
 msgid "Delete wrong inputs"
 msgstr ""
 
-#: tpk.h:3512
+#: tpk.h:3530
 msgid "Description:"
 msgstr "Rozdzielczość:"
 
@@ -3487,7 +3487,7 @@ msgstr ""
 #: tithek.h:2618 tithek.h:2806 tithek.h:3131 tithek.h:3196 tithek.h:3239
 #: tithek.h:3252 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3250 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: TopfieldVFD.c:72 tpk.h:3268 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
 #: tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
@@ -6342,7 +6342,7 @@ msgstr ""
 #: tithek.h:2217 tithek.h:2262 tithek.h:2618 tithek.h:2806 tithek.h:3131
 #: tithek.h:3196 tithek.h:3239 tithek.h:3252 tithek_settings.h:234
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3250
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3268
 #: tpk.new.h:3167 tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
 #: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
@@ -6997,7 +6997,7 @@ msgstr ""
 #: tithek.h:2618 tithek.h:2806 tithek.h:3131 tithek.h:3196 tithek.h:3239
 #: tithek.h:3252 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3250 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: TopfieldVFD.c:72 tpk.h:3268 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
 #: tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
@@ -9231,7 +9231,7 @@ msgstr ""
 msgid "Second Infobar"
 msgstr "Druga belka info"
 
-#: tpk.h:3509
+#: tpk.h:3527
 msgid "Section: "
 msgstr "Rozdzielczość:"
 
@@ -10452,22 +10452,8 @@ msgstr ""
 msgid "Thursday"
 msgstr "Czwartek"
 
-#: tpk_showname.h:205
-msgid "TiTan Mediathek"
-msgstr ""
-
 #: skin_default_skin.xml.h:668
 msgid "TiThek Select Color"
-msgstr ""
-
-#: tpk_description.h:173
-msgid "TiThek the Multimedia-thek"
-msgstr ""
-
-#: tpk_description.h:174
-msgid ""
-"TiThek the Multimedia-thek. For UFS910/922, you must install the Network/"
-"Libpack tpk."
 msgstr ""
 
 #: harddisk.h:978 skin_default_skin.xml.h:662
@@ -10628,6 +10614,10 @@ msgstr ""
 msgid "Titan MediaCenter"
 msgstr ""
 
+#: tpk_showname.h:205
+msgid "Titan Mediathek"
+msgstr ""
+
 #: extensions.h:276 extensions.h:336 extensions.h:435 extensions.h:474
 #: global.h:7849 global.h:7869 global.h:7889 global.h:7909 global.h:7929
 #: kravencfg.c:212 skinadjust.h:619 skinadjust.h:685 skinadjust.h:1110
@@ -10703,6 +10693,16 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:34 skins_tithek_skin.xml.h:34
 msgid "Tithek Settings"
+msgstr ""
+
+#: tpk_description.h:173
+msgid "Tithek the Multimedia-thek"
+msgstr ""
+
+#: tpk_description.h:174
+msgid ""
+"Tithek the Multimedia-thek. For UFS910/922, you must install the Network/"
+"Libpack tpk."
 msgstr ""
 
 #: mediadb.h:2536 plugins_tithek_skin.xml.h:26 skin_default_skin.xml.h:669
@@ -12160,7 +12160,7 @@ msgstr ""
 msgid "channelslotlist"
 msgstr ""
 
-#: ipkg.h:359 tpk.h:3250 tpk.new.h:3167
+#: ipkg.h:359 tpk.h:3268 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr ""
 
@@ -12699,7 +12699,7 @@ msgstr ""
 msgid "install"
 msgstr ""
 
-#: tpk.h:3500
+#: tpk.h:3518
 msgid "installed"
 msgstr ""
 
@@ -13057,7 +13057,7 @@ msgstr "Serwer NFS"
 msgid "no"
 msgstr ""
 
-#: ipkg.h:576 tpk.h:3517 tpk.new.h:3411
+#: ipkg.h:576 tpk.h:3535 tpk.new.h:3411
 msgid "no description found"
 msgstr ""
 
@@ -14538,9 +14538,3 @@ msgstr ""
 #: tpk_showname.h:243
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "TiThek Menu"
-#~ msgstr "Menu główne"
-
-#~ msgid "TiThek Settings"
-#~ msgstr "ustawienia udostępniania"
