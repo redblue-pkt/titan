@@ -955,7 +955,7 @@ void screennetwork_userauth()
 	char* ret = NULL;
 	char* cmd = NULL;
 
-	struct skin* userauth = getscreen("userauth");
+	struct skin* userauth = getscreen("userauthsettings");
 	struct skin* listbox = getscreennode(userauth, "listbox");	
 	struct skin* rootpass = getscreennode(userauth, "rootpass");
 	struct skin* tmp = NULL;
