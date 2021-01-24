@@ -2173,11 +2173,10 @@ int tpkinstall(char* file, char* installpath, int flag)
 		}
 	}
 
+	debug(130, "getboxtype: %s", getboxtype());
+	debug(130, "tpknode->boxtype: %s", tpknode->boxtype);
+	debug(130, "tpknode->name: %s", tpknode->name);
 	//check boxtype
-	printf("getboxtype: %s\n", getboxtype());
-	printf("tpknode->boxtype: %s\n", tpknode->boxtype);
-	printf("tpknode->name: %s\n", tpknode->name);
-
 	if(tpknode->boxtype != NULL && ostrcmp(tpknode->boxtype, "*") != 0 && ostrstr(tpknode->boxtype, getboxtype()) == NULL)
 	{
 		printf("skiped\n");
@@ -2587,7 +2586,7 @@ int tpkupdatepre()
 #ifdef OEBUILD
 				//get install path from control file
 				char* installpath = tpkgetinstallpath(path);
-printf("get installpath: %s\n", installpath);
+
 				//execute post install
 				tmpstr = ostrcat(tmpstr, path, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/postinst", 1, 0);
@@ -2596,11 +2595,11 @@ printf("get installpath: %s\n", installpath);
 					tmpstr = ostrcat(tmpstr, " \"", 1, 0);
 					tmpstr = ostrcat(tmpstr, installpath, 1, 0);
 					tmpstr = ostrcat(tmpstr, "\"", 1, 0);
-printf("execute: %s\n", tmpstr);
+
 					tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
 					tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 					tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
-printf("execute2: %s\n", tmpstr);
+
 					ret = system(tmpstr);
 					if(ret != 0)
 					{
@@ -2612,7 +2611,6 @@ printf("execute2: %s\n", tmpstr);
 				}
 				free(tmpstr); tmpstr = NULL;
 				//free installpath
-printf("free installpath: %s\n", installpath);
 				free(installpath), installpath = NULL;
 #endif
 
@@ -3079,33 +3077,28 @@ int tpkupdate(int flag)
 	tpklist();
 	tpkmainlist = tpk;
 	tpk = NULL;
-printf("11\n");
+
 	tpkinstallednode = tpkinstalled;
 	while(tpkinstallednode != NULL)
 	{
-printf("22\n");
 		tpknode = tpkmainlist;
 		while(tpknode != NULL)
 		{
-printf("33\n");
 			// disable settings upgrade group 100
 			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version && tpkinstallednode->group != 100 && tpknode->minversion <= PLUGINVERSION)
 			{
-printf("44\n");
 				debug(10, "Tpk Upgrade: %s (Install Version %d > %d Installed Version) (Min Version %d <= %d Plugin Version) (Group %d)", tpknode->name, tpknode->version, tpkinstallednode->version, tpknode->minversion, PLUGINVERSION, tpkinstallednode->group);
 				//TODO: remove file that never exist in new pakages
 				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
 				tmpstr = ostrcat(tmpstr, tpkinstallednode->name, 1, 0);
-
 				tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, ".update", 1, 0);
-printf("55\n");
+
 				ret = rename(tmpstr, tmpstr1);
-printf("66\n");
+
 				if(ret != 0)
 				{
-printf("77\n");
 					perr("rename file %s -> %s", tmpstr, tmpstr1);
 					ret = 0;
 					err++;
@@ -3114,16 +3107,12 @@ printf("77\n");
 					tpknode = tpknode->next;
 					continue;
 				}
-printf("88\n");
 				ret = tpkgetpackage(tpknode->filename, tpknode->url, tpkinstallednode->installpath, 1, flag);
-printf("99\n");
+
 				if(ret == 0) //install ok
 				{
-printf("10\n");
 					tpkcleanworkdir(tmpstr1);
-printf("11\n");
 					ret = rmdir(tmpstr1);
-printf("12\n");
 					if(ret != 0 && errno != ENOENT)
 					{
 						perr("remove dir %s", tmpstr1);
@@ -3131,39 +3120,28 @@ printf("12\n");
 				}
 				else //install nok
 				{
-printf("13\n");
 					err++;
 					ret = rename(tmpstr1, tmpstr);
-printf("14\n");
 					if(ret != 0)
 					{
 						perr("rename file %s -> %s", tmpstr1, tmpstr);
 					}
 				}
-printf("15\n");
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
 				ret = 0;
 				break;
 			}
 			tpknode = tpknode->next;
-printf("16\n");
 		}
 		tpkinstallednode = tpkinstallednode->next;
-printf("17\n");
 	}
-printf("18\n");
 
 	freetpk();
-printf("19\n");
 	tpk = tpkinstalled;
-printf("20\n");
 	freetpk();
-printf("21\n");
 	tpk = tpkmainlist;
-printf("22\n");
 	freetpk();
-printf("23\n");
 	return err;
 }
 
@@ -3342,7 +3320,7 @@ int tpkgetpackage(char* package, char* url, char* installpath, int flag, int fla
 	char* ip = NULL, *path = NULL;
 	char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 	char* tmpurl = NULL;
-printf("aa\n");
+
 	struct skin* load = getscreen("loading");
 
 	if(package == NULL || url == NULL)
@@ -3351,7 +3329,7 @@ printf("aa\n");
 		ret = 1;
 		goto end;
 	}
-printf("bb\n");
+
 	ret = mkdir(TMP, 0777);
 	if(ret != 0 && errno != EEXIST)
 	{
@@ -3361,10 +3339,10 @@ printf("bb\n");
 	}
 	else
 		ret = 0;
-printf("cc\n");
+
 	tmpurl = ostrcat(url, NULL, 0, 0);
 	tpkgeturl(tmpurl, &ip, &path, &port);
-printf("dd\n");
+
 	if(ip != NULL && path != NULL)
 	{
 		tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
@@ -3388,7 +3366,7 @@ printf("dd\n");
 			ip = "atemio.dyndns.tv";
 		else if(ostrcmp("97.74.32.10", ip) == 0)
 			ip = "beta.dyndns.tv";
-printf("dd flag1=%d\n", flag1);
+
     	debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
 		if(flag1 == 0)
 			screendownload("Download", ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, 0);
