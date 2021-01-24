@@ -771,10 +771,10 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screennetwork_inadyn();
 	}
-	else if(ostrcmp("userauthsettings", menuentry->name) == 0)
+	else if(ostrcmp("passwordsettings", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screennetwork_userauth();
+		screennetwork_password();
 	}
 	else if(ostrcmp("blindscanadjust", menuentry->name) == 0)
 	{

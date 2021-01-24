@@ -948,16 +948,16 @@ void screennetwork_wlan()
 	clearscreen(wlan);
 }
 
-void screennetwork_userauth()
+void screennetwork_password()
 {
 	int rcret = 0;
 	char* tmpstr = NULL;
 	char* ret = NULL;
 	char* cmd = NULL;
 
-	struct skin* userauth = getscreen("userauthsettings");
-	struct skin* listbox = getscreennode(userauth, "listbox");	
-	struct skin* rootpass = getscreennode(userauth, "rootpass");
+	struct skin* password = getscreen("passwordsettings");
+	struct skin* listbox = getscreennode(password, "listbox");	
+	struct skin* rootpass = getscreennode(password, "rootpass");
 	struct skin* tmp = NULL;
 
 	changemask(rootpass, "****");
@@ -966,14 +966,14 @@ void screennetwork_userauth()
 	else
 		changeinput(rootpass, "****");
 
-	drawscreen(userauth, 0, 0);
-	addscreenrc(userauth, listbox);
+	drawscreen(password, 0, 0);
+	addscreenrc(password, listbox);
 
 	tmp = listbox->select;
 	while(1)
 	{
-		addscreenrc(userauth, tmp);
-		rcret = waitrc(userauth, 0, 0);
+		addscreenrc(password, tmp);
+		rcret = waitrc(password, 0, 0);
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -1008,8 +1008,8 @@ void screennetwork_userauth()
 			break;
 		}
 	}
-	delownerrc(userauth);
-	clearscreen(userauth);
+	delownerrc(password);
+	clearscreen(password);
 }
 
 #endif
