@@ -510,7 +510,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 		// fixt dvb-t pixelsalat
 		if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkbox("DM920") == 1 || checkchipset("3798MV200") == 1 || checkchipset("HI3798MV200") == 1 || vubox1 == 1)
 		{
-		  struct dvbdev* nodeh = dvbdev;
+		  	struct dvbdev* nodeh = dvbdev;
 			while(nodeh != NULL)
 			{
 				if(nodeh->type == DEMUXDEV && nodeh->adapter == node->adapter && nodeh->devnr == node->devnr)
