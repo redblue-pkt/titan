@@ -1013,4 +1013,69 @@ void screennetwork_password()
 	clearscreen(password);
 }
 
+void screennetwork_ipsec()
+{
+	int rcret = 0;
+	char* tmpstr = NULL;
+	char* ret = NULL;
+	char* cmd = NULL;
+
+	struct skin* ipsec = getscreen("ipsecsettings");
+	struct skin* listbox = getscreennode(ipsec, "listbox");	
+	struct skin* rootpass = getscreennode(ipsec, "rootpass");
+	struct skin* tmp = NULL;
+
+	changemask(rootpass, "****");
+	if(getconfig("rootpass", NULL) == NULL)
+		changeinput(rootpass, getconfig("rootpass", NULL));
+	else
+		changeinput(rootpass, "****");
+
+	drawscreen(ipsec, 0, 0);
+	addscreenrc(ipsec, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(ipsec, tmp);
+		rcret = waitrc(ipsec, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			if(rootpass->ret != NULL && ostrcmp(rootpass->ret, "****") != 0)
+			{
+				//echo -e "linuxpassword\nlinuxpassword" | passwd root
+				cmd = ostrcat("echo -e \"", rootpass->ret, 0, 0);
+				cmd = ostrcat(cmd, "\\n", 1, 0);
+				cmd = ostrcat(cmd, rootpass->ret, 1, 0);
+				cmd = ostrcat(cmd, "\" | passwd root", 1, 0);
+				printf("cmd: %s\n", cmd);
+
+				tmpstr = command(cmd);
+				printf("tmpstr: %s\n", tmpstr);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 400, 10, 0);
+				free(cmd), cmd = NULL;
+				free(tmpstr), tmpstr = NULL;
+
+				debug(99, "rootpass: write");
+				debug(99, "rootpass: %s", rootpass->ret);
+				addconfigscreen("rootpass", rootpass);
+			}
+			else
+			{
+				debug(99, "rootpass: skipped");
+			}
+			writeallconfig(1);
+
+			debug(99, "rootpass read: %s", getconfig("rootpass", NULL));
+
+			break;
+		}
+	}
+	delownerrc(ipsec);
+	clearscreen(ipsec);
+}
+
 #endif
