@@ -955,7 +955,7 @@ void screennetwork_userauth()
 	char* ret = NULL;
 	char* cmd = NULL;
 
-	struct skin* adjust = getscreen("userauth");
+	struct skin* userauth = getscreen("userauth");
 	struct skin* listbox = getscreennode(userauth, "listbox");	
 	struct skin* rootpass = getscreennode(userauth, "rootpass");
 	struct skin* tmp = NULL;
@@ -966,14 +966,14 @@ void screennetwork_userauth()
 	else
 		changeinput(rootpass, "****");
 
-	drawscreen(systemuser, 0, 0);
-	addscreenrc(systemuser, listbox);
+	drawscreen(userauth, 0, 0);
+	addscreenrc(userauth, listbox);
 
 	tmp = listbox->select;
 	while(1)
 	{
-		addscreenrc(systemuser, tmp);
-		rcret = waitrc(systemuser, 0, 0);
+		addscreenrc(userauth, tmp);
+		rcret = waitrc(userauth, 0, 0);
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -1008,8 +1008,8 @@ void screennetwork_userauth()
 			break;
 		}
 	}
-	delownerrc(systemuser);
-	clearscreen(systemuser);
+	delownerrc(userauth);
+	clearscreen(userauth);
 }
 
 #endif
