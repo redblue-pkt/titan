@@ -989,7 +989,8 @@ void screennetwork_password()
 				printf("cmd: %s\n", cmd);
 
 				tmpstr = command(cmd);
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				printf("tmpstr: %s\n", tmpstr);
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 400, 10, 0);
 				free(cmd), cmd = NULL;
 				free(tmpstr), tmpstr = NULL;
 
