@@ -200,15 +200,15 @@ int osystem(char* cmd, int timeout)
 	char* tmpstr = NULL;
 
 //  busybox 1.31
-//#ifdef OEBUILD
-//	tmpstr = ostrcat(tmpstr, "timeout -s 9 ", 1, 0);
-//	tmpstr = ostrcat(tmpstr, oitoa(timeout), 1, 1);
-//	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-//#else
+#ifdef OEBUILD
+	tmpstr = ostrcat(tmpstr, "timeout -s 9 ", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(timeout), 1, 1);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+#else
 	tmpstr = ostrcat(tmpstr, "timeout -t ", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(timeout), 1, 1);
 	tmpstr = ostrcat(tmpstr, " -s 9 ", 1, 0);
-//#endif
+#endif
 	tmpstr = ostrcat(tmpstr, cmd, 1, 0);
 printf("cmd: %s\n", tmpstr);
 	ret = system(tmpstr);
