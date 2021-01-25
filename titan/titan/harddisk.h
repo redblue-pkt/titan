@@ -804,8 +804,9 @@ void hddformat(char* dev, char* filesystem)
 			if(textbox(_("Message"), _("use medium for backup"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				backup = 1;
 		}
-			
-#ifndef OEBUILD	
+
+		
+//#ifndef OEBUILD	
 		if(ostrcmp(filesystem, "vfat") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.fat.gui -F 32\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "jfs") == 0)
@@ -813,10 +814,14 @@ void hddformat(char* dev, char* filesystem)
 		else if(ostrcmp(filesystem, "ext2") == 0)
 			cmd = ostrcat("/sbin/cmd.sh mkfs.ext2.gui /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext3") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3.gui -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3.gui -T largefile -N 262144 -F -F -m0 -O ^metadata_csum -O dir_index,sparse_super\" /dev/" , dev, 0, 0);
+//			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3.gui -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext4") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4.gui -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4.gui -T largefile -N 262144 -F -F -m0 -O ^metadata_csum -O dir_index,sparse_super\" /dev/" , dev, 0, 0);
+//			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4.gui -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+/*
 #else
+
 		if(ostrcmp(filesystem, "vfat") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.fat -F 32\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "jfs") == 0)
@@ -830,7 +835,7 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4 -T largefile -N 262144 -F -F -m0 -O ^metadata_csum -O dir_index,sparse_super\" /dev/" , dev, 0, 0);
 //			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 #endif
-
+*/
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
 			
 		if(record == 1) 
