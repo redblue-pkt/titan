@@ -871,7 +871,13 @@ void hddformat(char* dev, char* filesystem)
 		}
 #endif
 		debug(80, "format cmd: %s", cmd);
+#ifdef OEBUILD
+		disablemanualblit();
+#endif
 		rc = system(cmd);
+#ifdef OEBUILD
+		enablemanualblit();
+#endif
 		free(cmd); cmd = NULL;
 		if(rc != 0)
 		{
