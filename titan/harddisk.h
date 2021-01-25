@@ -676,6 +676,11 @@ void hddformat(char* dev, char* filesystem)
 	struct hdd* node = NULL;
 	resettvpic();
 
+#ifdef OEBUILD
+	int tmphangtime = 999999;
+	status.hangtime = tmphangtime;
+#endif
+
 	node = gethdd(dev);
 	if(node == NULL) return;
 	
@@ -887,7 +892,12 @@ int hddfsck(char* dev)
 {
 	char* cmd = NULL;
 	struct hdd* node = NULL;
-	
+
+#ifdef OEBUILD
+	int tmphangtime = 999999;
+	status.hangtime = tmphangtime;
+#endif
+
 	node = gethdd(dev);
 	if(node == NULL) return 1;
 	if(node->filesystem == NULL) return 1;
