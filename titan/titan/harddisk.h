@@ -677,8 +677,7 @@ void hddformat(char* dev, char* filesystem)
 	resettvpic();
 
 #ifdef OEBUILD
-	int tmphangtime = 999999;
-	status.hangtime = tmphangtime;
+	status.hangtime = 99999;
 #endif
 
 	node = gethdd(dev);
@@ -728,7 +727,10 @@ void hddformat(char* dev, char* filesystem)
 			}
 #endif
 			debug(80, "fdisk create cmd: %s", cmd);
+printf("1status.hangtime: %d\n", status.hangtime);
 			system(cmd);
+printf("2status.hangtime: %d\n", status.hangtime);
+
 			format = 2;
 			free(cmd); cmd = NULL;
 		}
@@ -780,8 +782,12 @@ void hddformat(char* dev, char* filesystem)
 					cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
 			}
 #endif
+printf("3status.hangtime: %d\n", status.hangtime);
+
 			debug(80, "fdisk update cmd: %s", cmd);
 			system(cmd);
+printf("4status.hangtime: %d\n", status.hangtime);
+
 			format = 1;
 			free(cmd); cmd = NULL;
 		}
@@ -877,7 +883,12 @@ void hddformat(char* dev, char* filesystem)
 #endif
 		debug(80, "format cmd: %s", cmd);
 
+#ifdef OEBUILD
+		printf("5status.hangtime: %d\n", status.hangtime);
+		status.hangtime = 99999;
+#endif
 		rc = system(cmd);
+		printf("6status.hangtime: %d\n", status.hangtime);
 
 		free(cmd); cmd = NULL;
 		if(rc != 0)
@@ -886,6 +897,7 @@ void hddformat(char* dev, char* filesystem)
 			return;
 		}
 	}
+		printf("7status.hangtime: %d\n", status.hangtime);
 }
 
 int hddfsck(char* dev)
@@ -894,8 +906,8 @@ int hddfsck(char* dev)
 	struct hdd* node = NULL;
 
 #ifdef OEBUILD
-	int tmphangtime = 999999;
-	status.hangtime = tmphangtime;
+		printf("1status.hangtime: %d\n", status.hangtime);
+		status.hangtime = 99999;
 #endif
 
 	node = gethdd(dev);
@@ -944,9 +956,13 @@ int hddfsck(char* dev)
 			if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
 				cmd = ostrcat(cmd, " > /mnt/logs/fsck_debug.log 2>&1", 1, 0);
 		}
-#endif		
+#endif
+		printf("2status.hangtime: %d\n", status.hangtime);
+
 		debug(80, "fsck cmd: %s", cmd);
 		system(cmd);
+		printf("3status.hangtime: %d\n", status.hangtime);
+
 		free(cmd); cmd = NULL;
 	}
 
