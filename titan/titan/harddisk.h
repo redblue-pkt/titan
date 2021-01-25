@@ -699,18 +699,12 @@ void hddformat(char* dev, char* filesystem)
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
 #ifdef OEBUILD
-		if(!file_exist("/mnt/logs"))
-			 mkdir("/mnt/logs", 777);
-	
-		if(file_exist("/mnt/logs"))
-			cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
+			if(!file_exist("/mnt/logs"))
+				 mkdir("/mnt/logs", 777);
+		
+			if(file_exist("/mnt/logs"))
+				cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
 #else
-		if(!file_exist("/mnt/logs"))
-			 mkdir("/mnt/logs", 777);
-	
-		if(file_exist("/mnt/logs"))
-			cmd = ostrcat(cmd, " > /mnt/logs/fsck_debug.log 2>&1", 1, 0);
-			
 			if(file_exist("/var/swap"))
 			{
 				if(!file_exist("/var/swap/logs"))
