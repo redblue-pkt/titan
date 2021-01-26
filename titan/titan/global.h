@@ -205,7 +205,7 @@ int osystem(char* cmd, int timeout)
 
 	brev = string_newline(command("busybox | grep 'BusyBox v' | cut -d'.' -f2"))
 printf("busybox version: %s\n", brev);
-	if(brev != NULL) irev = atoi(rev);
+	if(brev != NULL) irev = atoi(brev);
 
 	free(brev), brev = NULL;
 printf("busybox version: %d\n", irev);
