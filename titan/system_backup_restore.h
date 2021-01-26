@@ -33,12 +33,11 @@ void screensystem_backup_restore()
 				changetext(info, _("Please wait ...\n\nAll Settings are restored.\n\nBox will start in few seconds."));
 				drawscreen(backup_restore, 0, 0);
 #ifdef OEBUILD
-				char* BACKUPDIR = NULL;
 				if(isfile("/media/.moviedev") || file_exist("/media/hdd"))
 					BACKUPDIR = ostrcat("/media/hdd", NULL, 0, 0);
-				else if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+				else if((isfile("/media/.backupdev") || file_exist("/var/backup")) && !isdir("/var/backup"))
 					BACKUPDIR = ostrcat("/var/backup", NULL, 0, 0);
-				else if(isfile("/media/.swapextensionsdev") || file_exist("/var/swap"))
+				else if((isfile("/media/.swapextensionsdev") || file_exist("/var/swap")) && !isdir("/var/swap"))
 					BACKUPDIR = ostrcat("/var/swap", NULL, 0, 0);
 				if(BACKUPDIR != NULL)
 #else
@@ -72,7 +71,6 @@ void screensystem_backup_restore()
 
 						ret = system("init 6");
 					}
-					free(BACKUPDIR), BACKUPDIR = NULL;
 				}
 				else
 				{
@@ -81,6 +79,7 @@ void screensystem_backup_restore()
 					changetext(info, _(infotext));
 					drawscreen(backup_restore, 0, 0);
 				}
+				free(BACKUPDIR), BACKUPDIR = NULL;
 			}
 			else
 			{
@@ -92,9 +91,9 @@ void screensystem_backup_restore()
 #ifdef OEBUILD
 			if(isfile("/media/.moviedev") || file_exist("/media/hdd"))
 				BACKUPDIR = ostrcat("/media/hdd", NULL, 0, 0);
-			else if(isfile("/media/.backupdev") || file_exist("/var/backup"))
+			else if((isfile("/media/.backupdev") || file_exist("/var/backup")) && !isdir("/var/backup"))
 				BACKUPDIR = ostrcat("/var/backup", NULL, 0, 0);
-			else if(isfile("/media/.swapextensionsdev") || file_exist("/var/swap"))
+			else if((isfile("/media/.swapextensionsdev") || file_exist("/var/swap")) && !isdir("/var/swap"))
 				BACKUPDIR = ostrcat("/var/swap", NULL, 0, 0);
 			if(BACKUPDIR != NULL)
 #else
@@ -144,6 +143,7 @@ void screensystem_backup_restore()
 				textbox(_("BACKUP ERROR"), _("A record hdd or a swapstick must be mounted!\n\nAborting backup..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				drawscreen(backup_restore, 0, 0);
 			}
+			free(BACKUPDIR), BACKUPDIR = NULL;
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
