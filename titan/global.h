@@ -203,7 +203,7 @@ int osystem(char* cmd, int timeout)
 	int irev = 0;
 	char* brev = NULL;
 
-	brev = string_newline(command("busybox | grep 'BusyBox v' | cut -d'.' -f2"))
+	brev = string_newline(command("busybox | grep 'BusyBox v' | cut -d'.' -f2"));
 printf("busybox version: %s\n", brev);
 	if(brev != NULL) irev = atoi(brev);
 
