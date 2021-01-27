@@ -5744,6 +5744,13 @@ char* webgetupdatelist(char* param, int fmt)
 			buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getupdate&", 1, 0);
 
 			if(ostrstr(ret1[i].part, "_FULL_") != NULL || ostrstr(ret1[i].part, "_FULLBACKUP.") != NULL || ostrstr(ret1[i].part, "_UPDATENFI_") != NULL || ostrstr(ret1[i].part, "_UPDATEUSB_") != NULL)
+
+#ifdef OEBUILD
+			if(ostrstr(ret1[i].part, "_FULL_") != NULL || ostrstr(ret1[i].part, "_FULLBACKUP.") != NULL || ostrstr(ret1[i].part, "_UPDATENFI_") != NULL || ostrstr(ret1[i].part, "_UPDATEUSB_") != NULL || ostrstr(ret1[i].part, ".zip") != NULL || ostrstr(ret1[i].part, ".nfi") != NULL || ostrstr(ret1[i].part, ".tar.gz") != NULL)
+#else
+			if(ostrstr(ret1[i].part, "_FULL_") != NULL || ostrstr(ret1[i].part, "_FULLBACKUP.") != NULL || ostrstr(ret1[i].part, "_UPDATENFI_") != NULL || ostrstr(ret1[i].part, "_UPDATEUSB_") != NULL)
+#endif
+
 			{
 //				if(checkrealbox("DM900") == 1)
 //					cmd = ostrcat(cmd, "/sbin/update2.sh ", 1, 0);
@@ -5754,12 +5761,22 @@ char* webgetupdatelist(char* param, int fmt)
 
 				if(ostrstr(ret1[i].part, "_FULL_") != NULL)
 					cmd = ostrcat(cmd, "full ", 1, 0);
+#ifdef OEBUILD
+				else if(ostrstr(ret1[i].part, ".zip") != NULL)
+					cmd = ostrcat(cmd, "updateusb ", 1, 0);
+				else if(ostrstr(ret1[i].part, ".nfi") != NULL)
+					cmd = ostrcat(cmd, "updateusb ", 1, 0);
+				else if(ostrstr(ret1[i].part, ".tar.gz") != NULL)
+					cmd = ostrcat(cmd, "updateusb ", 1, 0);
+#endif
 				else if(ostrstr(ret1[i].part, "_FULLBACKUP.") != NULL)
 					cmd = ostrcat(cmd, "fullbackup ", 1, 0);
 				else if(ostrstr(ret1[i].part, "_UPDATENFI_") != NULL)
 					cmd = ostrcat(cmd, "updatenfi ", 1, 0);
 				else if(ostrstr(ret1[i].part, "_UPDATEUSB_") != NULL)
 					cmd = ostrcat(cmd, "updateusb ", 1, 0);
+				else if(ostrstr(ret1[i].part, ".zip") != NULL)
+					cmd = ostrcat(cmd, "full ", 1, 0);
 
 				if(mode == 0)
 					cmd = ostrcat(cmd, "/tmp/online/", 1, 0);

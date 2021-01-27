@@ -289,6 +289,10 @@ printf("pch: %s\n", pch);
 #ifdef OEBUILD
 					else if(ostrstr(filelist->select->text, ".zip") != NULL)
 						cmd = ostrcat(cmd, "updateusb ", 1, 0);
+					else if(ostrstr(filelist->select->text, ".nfi") != NULL)
+						cmd = ostrcat(cmd, "updateusb ", 1, 0);
+					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
+						cmd = ostrcat(cmd, "updateusb ", 1, 0);
 #endif
 					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 						cmd = ostrcat(cmd, "updatenfi ", 1, 0);
@@ -300,11 +304,7 @@ printf("pch: %s\n", pch);
 						cmd = ostrcat(cmd, " ", 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, ".zip") != NULL)
-#ifdef OEBUILD
-						cmd = ostrcat(cmd, "updateusb ", 1, 0);
-#else
 						cmd = ostrcat(cmd, "full ", 1, 0);
-#endif
 
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, node->auth, 1, 0);
