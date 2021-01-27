@@ -25,9 +25,10 @@ void screensystem_update(int mode)
 		changetext(b6, _("stable"));
 	else
 		changetext(b6, _("unstable"));
-		
-	if(!file_exist("/etc/.beta")) b6->hidden = YES;
 
+#ifndef OEBUILD
+	if(!file_exist("/etc/.beta")) b6->hidden = YES;
+#endif
 	if(mode == 2 || mode == 3)
 	{
 #ifdef OEBUILD
@@ -275,12 +276,20 @@ printf("pch: %s\n", pch);
 				writeallconfig(1);
 
 				debug(40, "Update: update with log");
+#ifdef OEBUILD
+				if(ostrstr(filelist->select->text, "_USB_") != NULL || ostrstr(filelist->select->text, "_FULL_") != NULL || ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL || ostrstr(filelist->select->text, "_UPDATENFI_") != NULL || ostrstr(filelist->select->text, "_UPDATEUSB_") != NULL || ostrstr(filelist->select->text, ".zip") != NULL || ostrstr(filelist->select->text, ".nfi") != NULL || ostrstr(filelist->select->text, ".tar.gz") != NULL)
+#else
 				if(ostrstr(filelist->select->text, "_USB_") != NULL || ostrstr(filelist->select->text, "_FULL_") != NULL || ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL || ostrstr(filelist->select->text, "_UPDATENFI_") != NULL || ostrstr(filelist->select->text, "_UPDATEUSB_") != NULL || ostrstr(filelist->select->text, ".zip") != NULL)
+#endif
 				{
 					if(ostrstr(filelist->select->text, "_FULL_") != NULL)
 						cmd = ostrcat(cmd, "full ", 1, 0);
 					else if(ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL)
 						cmd = ostrcat(cmd, "fullbackup ", 1, 0);
+#ifdef OEBUILD
+					else if(ostrstr(filelist->select->text, ".zip") != NULL)
+						cmd = ostrcat(cmd, "updateusb ", 1, 0);
+#endif
 					else if(ostrstr(filelist->select->text, "_UPDATENFI_") != NULL)
 						cmd = ostrcat(cmd, "updatenfi ", 1, 0);
 					else if(ostrstr(filelist->select->text, "_UPDATEUSB_") != NULL)
