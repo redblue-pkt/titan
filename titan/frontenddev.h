@@ -308,7 +308,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 	
 	//workaround fuer CI+ bei mehr wie einen Tuner
 	//if(checkbox("DM900") == 1 && chnode != NULL && ciplusrun == 1)
-	if(checkbox("DM900") == 1 && chnode != NULL && getconfigint("ciplusrun", NULL) == 1)
+	if((checkbox("DM900") == 1 || checkbox("DM920") == 1) && chnode != NULL && getconfigint("ciplusrun", NULL) == 1)
 	{
 		struct channelslot *channelslotnode = channelslot;
 		ciplus = 1;
