@@ -26,9 +26,9 @@ void screensystem_update(int mode)
 	else
 		changetext(b6, _("unstable"));
 
-#ifndef OEBUILD
+//#ifndef OEBUILD
 	if(!file_exist("/etc/.beta")) b6->hidden = YES;
-#endif
+//#endif
 	if(mode == 2 || mode == 3)
 	{
 #ifdef OEBUILD
