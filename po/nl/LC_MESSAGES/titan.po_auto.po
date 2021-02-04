@@ -4795,9 +4795,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:263
 msgid ""
-"Here you can configure your Fritzbox VPN Settings.\n"
-"\n"
-"VPN-Type: IPSec Xauth PSK"
+"Here you can configure your Fritzbox VPN Settings. VPN-Type: IPSec Xauth PSK"
 msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
