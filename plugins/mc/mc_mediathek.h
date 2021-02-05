@@ -13,7 +13,7 @@ void screenmc_mediathek()
 	{
 		if(child->del == PLUGINDELMARK)
 		{
-			if(ostrcmp(child->name, "TiTan Mediathek") == 0)
+			if(ostrcmp(child->name, "Titan Mediathek") == 0)
 				treffer = 1;
 		}
 		child = child->next;
@@ -21,7 +21,7 @@ void screenmc_mediathek()
 
 	if(treffer == 1)
 	{
-		pluginnode = getplugin("TiTan Mediathek");
+		pluginnode = getplugin("Titan Mediathek");
 		if(pluginnode != NULL)
 		{
 			startplugin = dlsym(pluginnode->pluginhandle, "start");
