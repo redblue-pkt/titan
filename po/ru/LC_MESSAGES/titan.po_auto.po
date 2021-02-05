@@ -13291,7 +13291,7 @@ msgstr "Автостарт NFS сервера"
 #: moduleconfig.h:347 moduleconfig.h:355 moduleconfig.h:359 moduleconfig.h:363
 #: moduleconfig.h:367 networkbrowser.h:1642 networkbrowser.h:1646
 #: networkbrowser.h:1655 networkbrowser.h:1660 networkbrowser.h:1664
-#: networkbrowser.h:1698 network.h:720 network.h:1075
+#: networkbrowser.h:1698 network.h:720 network.h:1081
 #: panel_settings_autostart.h:35 panel_settings_autostart.h:96
 #: panel_settings_autostart.h:113 panel_settings_autostart.h:123
 #: panel_settings_autostart.h:141 panel_settings_autostart.h:150
@@ -14761,7 +14761,7 @@ msgstr "Жёлтая"
 #: moduleconfig.h:356 moduleconfig.h:360 moduleconfig.h:364 moduleconfig.h:368
 #: networkbrowser.h:1643 networkbrowser.h:1647 networkbrowser.h:1656
 #: networkbrowser.h:1661 networkbrowser.h:1665 networkbrowser.h:1699
-#: network.h:721 network.h:1076 panel_settings_autostart.h:35
+#: network.h:721 network.h:1082 panel_settings_autostart.h:35
 #: panel_settings_autostart.h:96 panel_settings_autostart.h:113
 #: panel_settings_autostart.h:123 panel_settings_autostart.h:141
 #: panel_settings_autostart.h:150 panel_settings_autostart.h:159
