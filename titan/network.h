@@ -1038,6 +1038,12 @@ void screennetwork_ipsec()
 	struct skin* skin_rekey = getscreennode(ipsec, "rekey");
 	struct skin* tmp = NULL;
 
+	if(!file_exist("/mnt/network/ipsec.conf"))
+		system("cp /etc/titan.restore/mnt/network/ipsec.conf /mnt/network/ipsec.conf");
+
+	if(!file_exist("/mnt/network/ipsec.secret"))
+		system("cp /etc/titan.restore/mnt/network/ipsec.secret /mnt/network/ipsec.secret");
+
 	name = string_newline(command("cat /mnt/network/ipsec.conf | grep -v '^#' | grep -v %default | sed -nr 's/.*conn ([^ ]+).*/\\1/p'"));
 	user = string_newline(command("cat /mnt/network/ipsec.conf | grep -v '^#' | sed -nr 's/.*xauth_identity=([^=]+).*/\\1/p'"));
 	pass = string_newline(command("cat /mnt/network/ipsec.secrets | grep -v '^#' | sed -nr 's/.*: XAUTH \"([^\"]+)\".*/\\1/p'"));
