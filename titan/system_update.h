@@ -81,6 +81,18 @@ printf("devicelist: %s\n", devicelist);
 					version = command(cmd);
 					free(cmd), cmd = NULL;
 
+					if(version == NULL)
+					{
+#ifdef OEBUILD
+						cmd = ostrcat("date -r /autofs/", pchroot, 0, 0);
+#else
+						cmd = ostrcat("date -r /autofs/", pch, 0, 0);
+#endif
+						cmd = ostrcat(cmd, "/etc/image-version '+%Y-%m-%d'", 1, 0);
+						version = command(cmd);
+						free(cmd), cmd = NULL;
+					}
+
 					showname = ostrcat(label, " ", 0, 0);
 					showname = string_replace("STARTUP_", "Startup_", showname, 1);
 					showname = string_replace("_LINUX_", "_", showname, 1);
