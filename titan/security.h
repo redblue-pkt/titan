@@ -2243,7 +2243,7 @@ char* getabout()
 #ifdef OEBUILD
 	text = ostrcat(text, _("OE-GIT Version"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
-	tmpstr = command("cat /etc/issue | sed -e '/^ *$/d' | sed 's/Welcome to //' | sed 's/\\\\n \\\\l//g' | tr 'a-z' 'A-Z' | tr ' ' '\n'| sed -e '/^ *$/d' | sort -ur | tr '\n' ' ' | sed 's/[ \t]*$//'");
+	tmpstr = string_newline(command("cat /etc/.distro"));
 	text = ostrcat(text, tmpstr, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
 #endif
