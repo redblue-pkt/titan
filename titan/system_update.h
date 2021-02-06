@@ -88,7 +88,7 @@ printf("devicelist: %s\n", devicelist);
 #else
 						cmd = ostrcat("date -r /autofs/", pch, 0, 0);
 #endif
-						cmd = ostrcat(cmd, "/etc/image-version '+%Y-%m-%d'", 1, 0);
+						cmd = ostrcat(cmd, "/etc/inittab '+%Y-%m-%d'", 1, 0);
 						version = command(cmd);
 						free(cmd), cmd = NULL;
 					}
