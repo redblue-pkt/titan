@@ -8389,6 +8389,18 @@ printf("devicelist: %s\n", devicelist);
 				cmd = ostrcat(cmd, "/etc/version-svn", 1, 0);
 				version = command(cmd);
 				free(cmd), cmd = NULL;
+
+				if(version == NULL)
+				{
+#ifdef OEBUILD
+					cmd = ostrcat("date -r /autofs/", pchroot, 0, 0);
+#else
+					cmd = ostrcat("date -r /autofs/", pch, 0, 0);
+#endif
+					cmd = ostrcat(cmd, "/etc/image-version '+%Y-%m-%d'", 1, 0);
+					version = command(cmd);
+					free(cmd), cmd = NULL;
+				}
 #ifdef OEBUILD
 				cmd = ostrcat("cat /autofs/", pchroot, 0, 0);
 #else
