@@ -2096,7 +2096,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "La Reproduccion no se pudo iniciar"
 
-#: system_update.h:428
+#: system_update.h:440
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -2360,7 +2360,7 @@ msgstr "Seleccione los marcadores de internet de la lista de abajo"
 msgid "Choose your Language from the following list"
 msgstr ""
 
-#: global.h:8493
+#: global.h:8505
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -3557,8 +3557,8 @@ msgstr ""
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:69
-#: system_backup_restore.h:151 system_update.h:408 system_update.h:414
-#: system_update.h:425 system_update.h:428 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:420 system_update.h:426
+#: system_update.h:437 system_update.h:440 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1255 titan.c:1264 titan.c:1395 titan.c:1416 titan.c:1422
@@ -3732,7 +3732,7 @@ msgstr ""
 msgid "Error create filename"
 msgstr "ERROR: No se puede crear fichero"
 
-#: system_update.h:408
+#: system_update.h:420
 msgid "Error file not supported"
 msgstr "ERROR: Tipo de archivo no soportado"
 
@@ -6485,8 +6485,8 @@ msgstr "Lista de Menus"
 #: stream.h:33 system_backup_restore.h:57 system_backup_restore.h:63
 #: system_backup_restore.h:66 system_backup_restore.h:69
 #: system_backup_restore.h:124 system_backup_restore.h:132
-#: system_backup_restore.h:135 system_update.h:408 system_update.h:414
-#: system_update.h:425 system_update.h:428 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:135 system_update.h:420 system_update.h:426
+#: system_update.h:437 system_update.h:440 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1395 titan.c:1416 titan.c:1422 titan.c:1433 titan.c:1439
@@ -6679,7 +6679,7 @@ msgstr ""
 msgid "Multiboot"
 msgstr ""
 
-#: system_update.h:425
+#: system_update.h:437
 msgid ""
 "Multiboot installation completed successfully\n"
 "Activate your new startup"
@@ -7151,8 +7151,8 @@ msgstr ""
 #: system_backup_restore.h:69 system_backup_restore.h:78
 #: system_backup_restore.h:124 system_backup_restore.h:132
 #: system_backup_restore.h:135 system_backup_restore.h:143
-#: system_backup_restore.h:151 system_update.h:408 system_update.h:414
-#: system_update.h:425 system_update.h:428 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:420 system_update.h:426
+#: system_update.h:437 system_update.h:440 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1255 titan.c:1264 titan.c:1395 titan.c:1416 titan.c:1422
@@ -13323,7 +13323,7 @@ msgstr "No"
 msgid "no description found"
 msgstr "Descripcion no encontrado"
 
-#: global.h:8486
+#: global.h:8498
 msgid "no device found"
 msgstr ""
 
@@ -13339,7 +13339,7 @@ msgstr ""
 msgid "non"
 msgstr "Tamaño del original"
 
-#: global.h:8433 system_update.h:110
+#: global.h:8445 system_update.h:122
 msgid "non-version"
 msgstr ""
 
@@ -14093,7 +14093,7 @@ msgstr "SSL control"
 msgid "ssl_try"
 msgstr "Try SSL"
 
-#: skin_default_skin.xml.h:621 system_update.h:25 system_update.h:222
+#: skin_default_skin.xml.h:621 system_update.h:25 system_update.h:234
 msgid "stable"
 msgstr "Nocturno-Img"
 
@@ -14120,19 +14120,19 @@ msgstr "Iniciando"
 msgid "starting"
 msgstr "Comenzando"
 
-#: system_update.h:387
+#: system_update.h:399
 msgid "starting Full Update (from backup) ?"
 msgstr "Iniciar actualizacin completa de una copia de seguridad?"
 
-#: httpdfunc.h:5911 system_update.h:385 system_update.h:396 system_update.h:401
+#: httpdfunc.h:5911 system_update.h:397 system_update.h:408 system_update.h:413
 msgid "starting Full Update ?"
 msgstr "Iniciar actualizacin completa?"
 
-#: system_update.h:389 system_update.h:399
+#: system_update.h:401 system_update.h:411
 msgid "starting Nfi Update ?"
 msgstr ""
 
-#: system_update.h:391 system_update.h:394
+#: system_update.h:403 system_update.h:406
 msgid "starting Usb Update ?"
 msgstr ""
 
@@ -14471,7 +14471,7 @@ msgstr "Desbloqueado -> Deja desbloqueado"
 msgid "unlock -> lock it"
 msgstr "Desbloqueado -> Bloqueo "
 
-#: system_update.h:27 system_update.h:228
+#: system_update.h:27 system_update.h:240
 msgid "unstable"
 msgstr "svn-beta"
 
