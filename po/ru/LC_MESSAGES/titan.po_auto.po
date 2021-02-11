@@ -2364,7 +2364,7 @@ msgstr "Выберите закладку из списка ниже"
 msgid "Choose your Language from the following list"
 msgstr "Выберите язык из списка"
 
-#: global.h:8511
+#: global.h:8517
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -13332,7 +13332,7 @@ msgstr "Нет"
 msgid "no description found"
 msgstr "Нет описания"
 
-#: global.h:8502
+#: global.h:8508
 msgid "no device found"
 msgstr ""
 
