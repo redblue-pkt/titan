@@ -8464,6 +8464,8 @@ printf("activelabel: %s\n", activelabel);
 					showname = ostrcat(showname, " (active)", 1, 0);
 //					pic = ostrcat(getconfig("skinpath", NULL), "/skin/active.png", 0, 0);
 					active = ostrcat(showname, NULL, 0, 0);
+					free(pic), pic = NULL;
+					pic = ostrcat(getconfig("skinpath", NULL), "/skin/active.png", 0, 0);
 				}
 #ifdef OEBUILD
 				debug(40, "addchoicebox: device=%s, label=%s showname=%s pic=%s", pchroot, label, showname, pic);
@@ -8480,8 +8482,12 @@ printf("activelabel: %s\n", activelabel);
 
 				// need switch label > showname from system_update.h function
 				if(file_exist(cmd))
+				{
+					printf("showname: %s\n", showname);
 					addmenulist(&mlist, showname, label, pic, 0, 0);
-
+				}
+				else
+					printf("skip add showname: %s\n", showname);
 				free(cmd), cmd = NULL;
 
 				free(cmd), cmd = NULL;
