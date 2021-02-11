@@ -8453,6 +8453,8 @@ printf("rootpart: %s\n", rootpart);
 #endif
 
 #ifdef OEBUILD
+printf("label: %s\n", label);
+printf("activelabel: %s\n", activelabel);
 //				if(ostrcmp(pchroot, rootpart) == 0)
 				if(ostrcmp(label, activelabel) == 0)
 #else

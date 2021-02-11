@@ -124,8 +124,9 @@ printf("devicelist: %s\n", devicelist);
 					}
 printf("rootpart: %s\n", rootpart);
 printf("pch: %s\n", pch);
-
 #ifdef OEBUILD
+printf("label: %s\n", label);
+printf("activelabel: %s\n", activelabel);
 //					if(ostrcmp(pchroot, rootpart) == 0)
 					if(ostrcmp(label, activelabel) == 0)
 #else
