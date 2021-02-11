@@ -2389,7 +2389,7 @@ msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste
 msgid "Choose your Language from the following list"
 msgstr "Wählen Sie eine Sprache aus der folgenden Liste"
 
-#: global.h:8511
+#: global.h:8517
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -13482,7 +13482,7 @@ msgstr "Nein"
 msgid "no description found"
 msgstr "keine Beschreibung gefunden"
 
-#: global.h:8502
+#: global.h:8508
 msgid "no device found"
 msgstr ""
 

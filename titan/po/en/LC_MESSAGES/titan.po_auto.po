@@ -2350,7 +2350,7 @@ msgstr ""
 msgid "Choose your Language from the following list"
 msgstr ""
 
-#: global.h:8511
+#: global.h:8517
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -13267,7 +13267,7 @@ msgstr "No"
 msgid "no description found"
 msgstr "No description found"
 
-#: global.h:8502
+#: global.h:8508
 msgid "no device found"
 msgstr ""
 
