@@ -2084,7 +2084,7 @@ msgstr ""
 msgid "Can't start playback !"
 msgstr "Nepavyko paleisti atkrim !"
 
-#: system_update.h:440
+#: system_update.h:445
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -2347,7 +2347,7 @@ msgstr "Pasirinkite savo interneto mgstamus i io srao"
 msgid "Choose your Language from the following list"
 msgstr ""
 
-#: global.h:8505
+#: global.h:8509
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -3538,8 +3538,8 @@ msgstr ""
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:69
-#: system_backup_restore.h:151 system_update.h:420 system_update.h:426
-#: system_update.h:437 system_update.h:440 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:425 system_update.h:431
+#: system_update.h:442 system_update.h:445 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1255 titan.c:1264 titan.c:1395 titan.c:1416 titan.c:1422
@@ -3713,7 +3713,7 @@ msgstr ""
 msgid "Error create filename"
 msgstr "ERROR: Can't create Filename"
 
-#: system_update.h:420
+#: system_update.h:425
 msgid "Error file not supported"
 msgstr "KLAIDA: Failo tipas nepalaikomas"
 
@@ -6448,8 +6448,8 @@ msgstr ""
 #: stream.h:33 system_backup_restore.h:57 system_backup_restore.h:63
 #: system_backup_restore.h:66 system_backup_restore.h:69
 #: system_backup_restore.h:124 system_backup_restore.h:132
-#: system_backup_restore.h:135 system_update.h:420 system_update.h:426
-#: system_update.h:437 system_update.h:440 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:135 system_update.h:425 system_update.h:431
+#: system_update.h:442 system_update.h:445 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1395 titan.c:1416 titan.c:1422 titan.c:1433 titan.c:1439
@@ -6642,7 +6642,7 @@ msgstr ""
 msgid "Multiboot"
 msgstr ""
 
-#: system_update.h:437
+#: system_update.h:442
 msgid ""
 "Multiboot installation completed successfully\n"
 "Activate your new startup"
@@ -7114,8 +7114,8 @@ msgstr ""
 #: system_backup_restore.h:69 system_backup_restore.h:78
 #: system_backup_restore.h:124 system_backup_restore.h:132
 #: system_backup_restore.h:135 system_backup_restore.h:143
-#: system_backup_restore.h:151 system_update.h:420 system_update.h:426
-#: system_update.h:437 system_update.h:440 thefile.h:34 thefile.h:69
+#: system_backup_restore.h:151 system_update.h:425 system_update.h:431
+#: system_update.h:442 system_update.h:445 thefile.h:34 thefile.h:69
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
 #: titan.c:1255 titan.c:1264 titan.c:1395 titan.c:1416 titan.c:1422
@@ -13266,7 +13266,7 @@ msgstr "Ne"
 msgid "no description found"
 msgstr "No description found"
 
-#: global.h:8498
+#: global.h:8500
 msgid "no device found"
 msgstr ""
 
@@ -13282,7 +13282,7 @@ msgstr ""
 msgid "non"
 msgstr ""
 
-#: global.h:8445 system_update.h:122
+#: global.h:8446 system_update.h:123
 msgid "non-version"
 msgstr ""
 
@@ -14031,7 +14031,7 @@ msgstr "SSL kontrol"
 msgid "ssl_try"
 msgstr "Pabandykite SSL"
 
-#: skin_default_skin.xml.h:621 system_update.h:25 system_update.h:234
+#: skin_default_skin.xml.h:621 system_update.h:25 system_update.h:239
 msgid "stable"
 msgstr "stabili"
 
@@ -14058,19 +14058,19 @@ msgstr "pradta"
 msgid "starting"
 msgstr "Startuoja"
 
-#: system_update.h:399
+#: system_update.h:404
 msgid "starting Full Update (from backup) ?"
 msgstr "Pradti Full Update i atsargins kopijos ?"
 
-#: httpdfunc.h:5911 system_update.h:397 system_update.h:408 system_update.h:413
+#: httpdfunc.h:5911 system_update.h:402 system_update.h:413 system_update.h:418
 msgid "starting Full Update ?"
 msgstr "Pradti Full Update ?"
 
-#: system_update.h:401 system_update.h:411
+#: system_update.h:406 system_update.h:416
 msgid "starting Nfi Update ?"
 msgstr ""
 
-#: system_update.h:403 system_update.h:406
+#: system_update.h:408 system_update.h:411
 msgid "starting Usb Update ?"
 msgstr ""
 
@@ -14409,7 +14409,7 @@ msgstr "Atrakinta -> Palikite atrakinta"
 msgid "unlock -> lock it"
 msgstr "Atrakinta -> Urakink j"
 
-#: system_update.h:27 system_update.h:240
+#: system_update.h:27 system_update.h:245
 msgid "unstable"
 msgstr "svn-beta"
 
