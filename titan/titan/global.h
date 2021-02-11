@@ -7790,7 +7790,7 @@ printf("tmpstr1: %s\n", tmpstr);
 #ifdef OEBUILD
 	if(file_exist("/boot/STARTUP"))
 	{
-		tmpstr2 = string_newline(command("/sbin/startup.sh"));
+		tmpstr2 = string_newline(command("/sbin/startup.sh label"));
 printf("tmpstr2: %s\n", tmpstr2);
 
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
@@ -8350,6 +8350,7 @@ int multiboot()
 #ifdef OEBUILD
 	char* devicelist = command("ls -1 /boot/STARTUP_* | sed 's!/boot/!!g' | grep -v _RECOVERY | sed -e '/^ *$/d'");
 	char* rootpart = string_newline(command("cat /proc/cmdline | sed -nr 's/.*root=\\/dev\\/([^\\/]+) kernel=.*/\\1/p' | sed 's! rootsubdir=!/!g' | sed 's! rootfstype=.*!!'"));
+	char* activelabel = string_newline(command("/sbin/startup.sh"));
 #else
 	char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 	char* rootpart = string_newline(command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'"));
@@ -8452,7 +8453,8 @@ printf("rootpart: %s\n", rootpart);
 #endif
 
 #ifdef OEBUILD
-				if(ostrcmp(pchroot, rootpart) == 0)
+//				if(ostrcmp(pchroot, rootpart) == 0)
+				if(ostrcmp(label, activelabel) == 0)
 #else
 				if(ostrcmp(pch, rootpart) == 0)
 #endif
@@ -8499,7 +8501,9 @@ printf("rootpart: %s\n", rootpart);
 
 	free(devicelist), devicelist = NULL;
 	free(rootpart), rootpart = NULL;
-
+#ifdef OEBUILD
+	free(activelabel), activelabel = NULL;
+#endif
 	setmenulistdefault(mlist, active);
 
 	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Multiboot STARTUP entry from the following list"), NULL, NULL, 1, 0);
