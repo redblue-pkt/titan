@@ -8461,7 +8461,7 @@ printf("activelabel: %s\n", activelabel);
 				if(ostrcmp(pch, rootpart) == 0)
 #endif
 				{
-					showname = ostrcat(showname, " (active)", 1, 0);
+//					showname = ostrcat(showname, " (active)", 1, 0);
 //					pic = ostrcat(getconfig("skinpath", NULL), "/skin/active.png", 0, 0);
 					active = ostrcat(showname, NULL, 0, 0);
 					free(pic), pic = NULL;
