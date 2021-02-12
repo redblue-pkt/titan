@@ -39,7 +39,9 @@ void screensystem_update(int mode)
 		char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 		char* rootpart = string_newline(command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'"));
 #endif
-printf("devicelist: %s\n", devicelist);
+		debug(40, "devicelist=%s", devicelist);
+		debug(40, "rootpart=%s", rootpart);
+
 		if(devicelist != NULL && strlen(devicelist) != 0)
 		{
 			char* pch;
@@ -122,11 +124,7 @@ printf("devicelist: %s\n", devicelist);
 						showname = ostrcat(showname, ") ", 1, 0);
 						showname = ostrcat(showname, _("non-version"), 1, 0);
 					}
-printf("rootpart: %s\n", rootpart);
-printf("pch: %s\n", pch);
 #ifdef OEBUILD
-printf("label: %s\n", label);
-printf("activelabel: %s\n", activelabel);
 //					if(ostrcmp(pchroot, rootpart) == 0)
 					if(ostrcmp(label, activelabel) == 0)
 #else
@@ -134,18 +132,18 @@ printf("activelabel: %s\n", activelabel);
 #endif
 						showname = ostrcat(showname, " (active)", 1, 0);
 
-#ifdef OEBUILD
-					debug(40, "addchoicebox: device=%s, label=%s showname=%s", pch, label, showname);
-#else
-					debug(40, "addchoicebox: device=%s, label=%s showname=%s", pchroot, label, showname);
-#endif
 					free(issue), issue = NULL;
+#ifdef OEBUILD
+					debug(40, "addchoicebox: device=%s, label=%s activelabel=%s showname=%s", pch, label, activelabel, showname);
 
 					cmd = ostrcat("flashdev=$(cat /boot/", label, 0, 0);
 					cmd = ostrcat(cmd, " | sed -nr 's#.*root=/dev/([^/]+)#\\1#p' | awk '{ print $1 }'); cat /proc/diskstats | awk {'print $3'} | grep 'mmcblk0[a-z][0-9]\\|sd[a-z][0-9]' | grep -c $flashdev$", 1, 0);
-					printf("cmd: %s\n", cmd);
+					debug(40, "cmd=%s", cmd);
 
 					if(ostrcmp(string_newline(command(cmd)), "1") == 0)
+#else
+					debug(40, "addchoicebox: device=%s, label=%s showname=%s", pchroot, label, showname);
+#endif
 						addchoicebox(device, label, _(showname));
 
 					free(cmd), cmd = NULL;
