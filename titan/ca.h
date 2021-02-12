@@ -3,7 +3,6 @@
 
 char oldpids[256];
 
-
 //wait for a module inserted
 void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 {
