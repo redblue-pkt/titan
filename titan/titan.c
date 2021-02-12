@@ -568,14 +568,7 @@ int main(int argc, char *argv[])
 	struct sigaction sa;
 	struct stimerthread *tmpthread = NULL;
 	//struct sched_param schedparam;
-
-	if(ostrcmp(string_newline(command("echo 'pipetest:ok' | cut -d':' -f2")), "ok") == 0)
-		printf("[titan] skip Bash Pipe Bug detection\n");
-	else
-	{	
-		printf("[titan] found Bash Pipe Bug, init Gui Restart\n");
-		oshutdown(3, 1);
-	}		
+		
 #ifdef SIMULATE
 	// for mem leak debug
 	setenv("MALLOC_TRACE", "/home/nit/titan/m.txt", 1);
@@ -999,6 +992,15 @@ timeokw = 1;
 		//lcdskinfb = addfb("lcdskinfb", 999, 1024, 768, 4, -1, mmapfb, 4 * 1024 * 768);
 		// mmapfb = NULL;
 	//}
+
+	if(ostrcmp(string_newline(command("echo 'pipetest:ok' | cut -d':' -f2")), "ok") == 0)
+		printf("[titan] skip Bash Pipe Bug detection\n");
+	else
+	{	
+		printf("[titan] found Bash Pipe Bug, init Gui Restart\n");
+		system("touch /tmp/.found.bash.pipe.bug.init.gui.restart");
+		oshutdown(3, 1);
+	}
 
 	ret = createstartscreen();
 	if(ret != 0)
