@@ -7785,20 +7785,20 @@ char* getimgnamereal()
 
 
 	tmpstr = string_newline(readfiletomem(getconfig("imagenamefile", NULL), 1));
-printf("tmpstr1: %s\n", tmpstr);
+	debug(40, "tmpstr=%s", tmpstr);
 
 #ifdef OEBUILD
 	if(file_exist("/boot/STARTUP"))
 	{
 		tmpstr2 = string_newline(command("/sbin/startup.sh label"));
-printf("tmpstr2: %s\n", tmpstr2);
+		debug(40, "tmpstr2=%s", tmpstr2);
 
 		tmpstr = ostrcat(tmpstr, " (", 1, 0);
 		tmpstr = ostrcat(tmpstr, tmpstr2, 1, 1);
 		tmpstr = ostrcat(tmpstr, ")", 1, 0);
 	}
 #endif
-printf("tmpstr3: %s\n", tmpstr);
+	debug(40, "tmpstr=%s", tmpstr);
 
 	return tmpstr;
 }
@@ -8355,7 +8355,9 @@ int multiboot()
 	char* devicelist = command("cat /proc/diskstats | awk {'print $3'} | grep 'sd[a-z][0-9]'");
 	char* rootpart = string_newline(command("cat /proc/cmdline | sed 's/^.*root=//;s/ .*$//' | sed 's!/dev/!!'"));
 #endif
-printf("devicelist: %s\n", devicelist);
+	debug(40, "devicelist=%s", devicelist);
+	debug(40, "rootpart=%s", rootpart);
+
 	if(devicelist != NULL && strlen(devicelist) != 0)
 	{
 		char* pch;
@@ -8445,30 +8447,19 @@ printf("devicelist: %s\n", devicelist);
 					showname = ostrcat(showname, ") ", 1, 0);
 					showname = ostrcat(showname, _("non-version"), 1, 0);
 				}
-printf("rootpart: %s\n", rootpart);
 #ifdef OEBUILD
-	printf("pchroot: %s\n", pchroot);
-#else
-	printf("pch: %s\n", pch);
-#endif
-
-#ifdef OEBUILD
-printf("label: %s\n", label);
-printf("activelabel: %s\n", activelabel);
 //				if(ostrcmp(pchroot, rootpart) == 0)
 				if(ostrcmp(label, activelabel) == 0)
 #else
 				if(ostrcmp(pch, rootpart) == 0)
 #endif
 				{
-//					showname = ostrcat(showname, " (active)", 1, 0);
-//					pic = ostrcat(getconfig("skinpath", NULL), "/skin/active.png", 0, 0);
 					active = ostrcat(showname, NULL, 0, 0);
 					free(pic), pic = NULL;
 					pic = ostrcat(getconfig("skinpath", NULL), "/skin/active.png", 0, 0);
 				}
 #ifdef OEBUILD
-				debug(40, "addchoicebox: device=%s, label=%s showname=%s pic=%s", pchroot, label, showname, pic);
+				debug(40, "addchoicebox: device=%s, label=%s activelabel=%s showname=%s pic=%s", pchroot, label, activelabel, showname, pic);
 #else
 				debug(40, "addchoicebox: device=%s, label=%s showname=%s pic=%s", pch, label, showname, pic);
 #endif
@@ -8482,13 +8473,7 @@ printf("activelabel: %s\n", activelabel);
 
 				// need switch label > showname from system_update.h function
 				if(file_exist(cmd))
-				{
-					printf("showname: %s\n", showname);
 					addmenulist(&mlist, showname, label, pic, 0, 0);
-				}
-				else
-					printf("skip add showname: %s\n", showname);
-				free(cmd), cmd = NULL;
 
 				free(cmd), cmd = NULL;
 				free(showname), showname = NULL;
@@ -8517,13 +8502,11 @@ printf("activelabel: %s\n", activelabel);
 	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Multiboot STARTUP entry from the following list"), NULL, NULL, 1, 0);
 	if(mbox != NULL)
 	{
-		printf("mbox->name=%s\n", mbox->name);
-		printf("mbox->text=%s\n", mbox->text);
-
 		cmd = ostrcat(cmd, "cp /boot/", 1, 0);
 		cmd = ostrcat(cmd, mbox->text, 1, 0);
 		cmd = ostrcat(cmd, " /boot/STARTUP", 1, 0);
-		printf("cmd=%s\n", cmd);
+		debug(40, "cmd=%s", cmd);
+
 		system(cmd);
 		free(cmd), cmd = NULL;
 
