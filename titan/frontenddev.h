@@ -270,10 +270,21 @@ void settunerstatus()
 		}
 		//check if tuner is deactivate
 		if(ostrcmp("x", getconfig(dvbnode->feshortname, NULL)) == 0)
+		{
 			dvbnode->deactive = 1;
+			if(dvbnode->fd == -1)
+			{
+				feopen(dvbnode, NULL);
+			}
+		}
 		else
+		{
 			dvbnode->deactive = 0;
-
+			if(dvbnode->fd > -1)
+			{
+				feclose(dvbnode, -1);
+			}
+		}
 		dvbnode = dvbnode->next;
 	}
 }
