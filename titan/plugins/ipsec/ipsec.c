@@ -1,7 +1,7 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "minisatip.h"
+#include "ipsec.h"
 
 char pluginname[] = "Ipsec VPN Client";
 char plugindesc[] = "Ipsec VPN Client Settings";

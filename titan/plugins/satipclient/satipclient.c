@@ -1,7 +1,7 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "minisatip.h"
+#include "satip.h"
 
 char pluginname[] = "SAT-IP Client";
 char plugindesc[] = "SAT-IP Client Settings";
