@@ -57,16 +57,14 @@ void screenminisatip()
 			writeallconfig(1);
 			break;
 		}
-
-		if(rcret == getrcconfigint("rcred", NULL))
+		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			debug(10, "cmd: %s", minisatipstop);
 			system(minisatipstop);
 			textbox(_("Message"), _("Mini SAT-IP Server now stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(minisatip, 0, 0);
 		}
-
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			debug(10, "cmd: %s", minisatipstop);
 			system(minisatipstop);
@@ -78,8 +76,7 @@ void screenminisatip()
 				textbox(_("Message"), _("Mini SAT-IP Server not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(minisatip, 0, 0);
 		}
-
-		if(rcret == getrcconfigint("rcyellow", NULL))
+		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			screentunerconfig();
 			writeallconfig(1);

@@ -12,6 +12,7 @@ void screensatipclient()
 
 	satipclientstop = ostrcat("/etc/init.d/satipclient stop", NULL, 0, 0);
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
+	satipclientscan = createpluginpath("/satipclient/scan.py", 0);
 
 	addscreenrc(satipclient, listbox);
 	listbox->aktline = 1;
@@ -57,16 +58,14 @@ void screensatipclient()
 			writeallconfig(1);
 			break;
 		}
-
-		if(rcret == getrcconfigint("rcred", NULL))
+		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			debug(10, "cmd: %s", satipclientstop);
 			system(satipclientstop);
 			textbox(_("Message"), _("SAT-IP Client now stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(satipclient, 0, 0);
 		}
-
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			debug(10, "cmd: %s", satipclientstop);
 			system(satipclientstop);
@@ -78,8 +77,15 @@ void screensatipclient()
 				textbox(_("Message"), _("SAT-IP Client not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(satipclient, 0, 0);
 		}
-
-		if(rcret == getrcconfigint("rcyellow", NULL))
+		else if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			debug(10, "cmd: %s", satipclientscan);
+			tmpstr = command(satipclientscan);
+			debug(10, "cmd: %s", satipclientstart);
+			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 500, 0, 0);
+			drawscreen(satipclient, 0, 0);
+		}
+		else if(rcret == getrcconfigint("rcblue", NULL))
 		{
 			screentunerconfig();
 			writeallconfig(1);
