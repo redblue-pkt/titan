@@ -14,7 +14,7 @@ void screennetwork_ipsec()
 	char* psk = NULL;
 	char* name = NULL;
 	char* id = NULL;
-	char* minisatipstop = NULL;
+	char* ipsecstop = NULL;
 	char* ipsecstart = NULL;
 
 	struct skin* ipsec = getscreen("ipsecsettings");
@@ -80,7 +80,7 @@ void screennetwork_ipsec()
 	drawscreen(ipsec, 0, 0);
 	addscreenrc(ipsec, listbox);
 
-	node = addlistbox(minisatip, listbox, node, 1);
+	node = addlistbox(ipsec, listbox, node, 1);
 	if(node != NULL)
 	{
 		node->type = CHOICEBOX;
