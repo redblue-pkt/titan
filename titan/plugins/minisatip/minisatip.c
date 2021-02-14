@@ -3,8 +3,8 @@
 #include "../titan/header.h"
 #include "minisatip.h"
 
-char pluginname[] = "minisatip";
-char plugindesc[] = "minisatip Settings";
+char pluginname[] = "Mini SAT-IP Server";
+char plugindesc[] = "Mini SAT-IP Server Settings";
 char pluginpic[] = "%pluginpath%/minisatip/plugin.png";
 
 int pluginaktiv = 0;
