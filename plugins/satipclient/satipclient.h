@@ -6,7 +6,7 @@ void screensatipclient()
 	int rcret = -1, ret = 0;
 	struct skin* satipclient = getscreen("satipclientsettings");
 	struct skin* listbox = getscreennode(satipclient, "listbox");
-	char* tmpstr = NULL, *satipclientstop = NULL, *satipclientstart = NULL;
+	char* tmpstr = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientscan = NULL;
 	struct skin* tmp = NULL;
 	struct skin* node = NULL;
 
@@ -83,6 +83,7 @@ void screensatipclient()
 			tmpstr = command(satipclientscan);
 			debug(10, "cmd: %s", satipclientstart);
 			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 500, 0, 0);
+			free(tmpstr), tmpstr = NULL;
 			drawscreen(satipclient, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rcblue", NULL))
