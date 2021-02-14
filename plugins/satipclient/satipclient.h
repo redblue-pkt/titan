@@ -32,7 +32,7 @@ void screensatipclient()
 	while(1)
 	{
 		addscreenrc(satipclient, tmp);
-
+		rcret = waitrc(minisatip, 0, 0);
 		tmp = listbox->select;
 
 		if(listbox->select != NULL)
