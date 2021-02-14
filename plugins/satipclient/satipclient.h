@@ -12,7 +12,12 @@ void screensatipclient()
 
 	satipclientstop = ostrcat("/etc/init.d/satipclient stop", NULL, 0, 0);
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
+
+	tmpstr = createpluginpath("/satipclient/scan.py", 0);
+printf("tmpstr: %s\n", tmpstr);
+
 	satipclientscan = ostrcat("python ", createpluginpath("/satipclient/scan.py", 0), 0, 0);
+printf("satipclientscan: %s\n", satipclientscan);
 
 	addscreenrc(satipclient, listbox);
 	listbox->aktline = 1;
