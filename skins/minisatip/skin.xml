@@ -1,7 +1,7 @@
 #xupnpdsettings fullscreen, max 1220x660, Xspace=30 !
 <screen name="minisatipsettings" fontsize="28" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
-	<node name="titletext" text="Minisatip Server" fontcol="black" fontsize="36" posx="0" posy="0" width="840" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-	<node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Here you can make your Minisatip autostart settings.">
+	<node name="titletext" text="Mini SAT-IP Server" fontcol="black" fontsize="36" posx="0" posy="0" width="840" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+	<node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Here you can make your Mini SAT-IP Server autostart settings. Deactivate an Tuner on Tunerconfig">
 		<node name="minitv" func="gettvpic" param1="494:35:210">
 		<node bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="205" bgcol="0" transparent="255">
 		<node bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="205" transparent="0">
@@ -12,4 +12,5 @@
 		<node parent="buttonbar" name="b3" picmem="skin/key_control_cross_70x40.png" valign="middle" posx="140" posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b3" picmem="skin/key_red_30x30.png"   valign="middle" posx="220"   posy="center" width="170" height="30" textposx="40" text="STOP">
 		<node parent="buttonbar" name="b4" picmem="skin/key_green_30x30.png" valign="middle" posx="400"   posy="center" width="280" height="30" textposx="40" text="START">
+		<node parent="buttonbar" name="b4" picmem="skin/key_yellow_30x30.png" valign="middle" posx="620"   posy="center" width="280" height="30" textposx="40" text="Tunerconfig">
 </screen>

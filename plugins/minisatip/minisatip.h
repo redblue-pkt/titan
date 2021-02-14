@@ -49,9 +49,9 @@ void screenminisatip()
 			debug(10, "cmd: %s", minisatipstart);
 			ret = system(minisatipstart);
 			if(ret == 0)
-				textbox(_("Message"), _("minisatip started and config saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+				textbox(_("Message"), _("Mini SAT-IP Server started and config saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			else
-				textbox(_("Message"), _("minisatip not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Mini SAT-IP Server not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(minisatip, 0, 0);			
 			writeownconfigtmp();
 			writeallconfig(1);
@@ -62,7 +62,7 @@ void screenminisatip()
 		{
 			debug(10, "cmd: %s", minisatipstop);
 			system(minisatipstop);
-			textbox(_("Message"), _("minisatip now stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			textbox(_("Message"), _("Mini SAT-IP Server now stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(minisatip, 0, 0);
 		}
 
@@ -73,9 +73,16 @@ void screenminisatip()
 			debug(10, "cmd: %s", minisatipstart);
 			ret = system(minisatipstart);
 			if(ret == 0)
-				textbox(_("Message"), _("minisatip started."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+				textbox(_("Message"), _("Mini SAT-IP Server started."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			else
-				textbox(_("Message"), _("minisatip not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Mini SAT-IP Server not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			drawscreen(minisatip, 0, 0);
+		}
+
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			screentunerconfig();
+			writeallconfig(1);
 			drawscreen(minisatip, 0, 0);
 		}
 	}
