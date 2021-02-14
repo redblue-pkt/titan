@@ -6488,6 +6488,7 @@ msgid "Mighty Zeo Caps"
 msgstr ""
 
 #: plugins_minisatip_skin.xml.h:2 skins_minisatip_skin.xml.h:2
+#: tpk_showname.h:94
 msgid "Mini SAT-IP Server"
 msgstr ""
 
@@ -6507,6 +6508,10 @@ msgstr ""
 
 #: minisatip.h:76
 msgid "Mini SAT-IP Server started."
+msgstr ""
+
+#: tpk_description.h:120
+msgid "Mini SAT-IP Streaming Server"
 msgstr ""
 
 #: tpk_description.h:119
@@ -13115,14 +13120,6 @@ msgstr ""
 #: mc_pictureplayer_settings.h:30 moduleconfig.h:351
 msgid "middle"
 msgstr "Middel"
-
-#: tpk_showname.h:94
-msgid "minisatip"
-msgstr ""
-
-#: tpk_description.h:120
-msgid "minisatip Streaming Server (SAT-IP SERVER)"
-msgstr ""
 
 #: screensaveradjust.h:38
 msgid "mixed mode"
