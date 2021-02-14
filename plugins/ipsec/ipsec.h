@@ -88,7 +88,8 @@ void screenipsec()
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-	
+
+	drawscreen(ipsec, 0, 0);
 	tmp = listbox->select;
 	while(1)
 	{
