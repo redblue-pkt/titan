@@ -22,6 +22,7 @@ SUBDIRS = \
 	lcdsamsung \
 	mboxinfo \
 	mc \
+	minisatip \
 	multiimage \
 	networkbrowser \
 	optimize \
