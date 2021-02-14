@@ -4890,7 +4890,9 @@ msgid "Here you can make your HDMI-CEC settings."
 msgstr ""
 
 #: plugins_minisatip_skin.xml.h:1 skins_minisatip_skin.xml.h:1
-msgid "Here you can make your Minisatip autostart settings."
+msgid ""
+"Here you can make your Mini SAT-IP Server autostart settings. Deactivate an "
+"Tuner on Tunerconfig"
 msgstr ""
 
 #: skin_default_skin.xml.h:288
@@ -6485,6 +6487,28 @@ msgstr ""
 msgid "Mighty Zeo Caps"
 msgstr ""
 
+#: plugins_minisatip_skin.xml.h:2 skins_minisatip_skin.xml.h:2
+msgid "Mini SAT-IP Server"
+msgstr ""
+
+#: minisatip.h:54 minisatip.h:78
+msgid ""
+"Mini SAT-IP Server not started,\n"
+"Please check your config."
+msgstr ""
+
+#: minisatip.h:65
+msgid "Mini SAT-IP Server now stopped"
+msgstr ""
+
+#: minisatip.h:52
+msgid "Mini SAT-IP Server started and config saved"
+msgstr ""
+
+#: minisatip.h:76
+msgid "Mini SAT-IP Server started."
+msgstr ""
+
 #: tpk_description.h:119
 msgid "MiniDLNA Medien Server (upnp)"
 msgstr ""
@@ -6499,10 +6523,6 @@ msgstr ""
 
 #: skin_default_skin.xml.h:382
 msgid "Minimal signalrate"
-msgstr ""
-
-#: plugins_minisatip_skin.xml.h:2 skins_minisatip_skin.xml.h:2
-msgid "Minisatip Server"
 msgstr ""
 
 #: plugins_zapback_skin.xml.h:3 skins_zapback_skin.xml.h:3
@@ -11137,7 +11157,8 @@ msgstr ""
 msgid "Tuner:"
 msgstr ""
 
-#: skin_default_skin.xml.h:703
+#: plugins_minisatip_skin.xml.h:5 skin_default_skin.xml.h:703
+#: skins_minisatip_skin.xml.h:5
 msgid "Tunerconfig"
 msgstr ""
 
@@ -13101,24 +13122,6 @@ msgstr ""
 
 #: tpk_description.h:120
 msgid "minisatip Streaming Server (SAT-IP SERVER)"
-msgstr ""
-
-#: minisatip.h:54 minisatip.h:78
-msgid ""
-"minisatip not started,\n"
-"Please check your config."
-msgstr ""
-
-#: minisatip.h:65
-msgid "minisatip now stopped"
-msgstr ""
-
-#: minisatip.h:52
-msgid "minisatip started and config saved"
-msgstr ""
-
-#: minisatip.h:76
-msgid "minisatip started."
 msgstr ""
 
 #: screensaveradjust.h:38
