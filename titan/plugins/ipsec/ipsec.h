@@ -1,7 +1,7 @@
 #ifndef IPSEC_H
 #define IPSEC_H
 
-void screennetwork_ipsec()
+void screenipsec()
 {
 	int rcret = 0;
 	char* tmpstr = NULL;
