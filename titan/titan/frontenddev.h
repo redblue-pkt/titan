@@ -274,7 +274,7 @@ void settunerstatus()
 			dvbnode->deactive = 1;
 			if(dvbnode->fd > -1)
 			{
-				feclose(dvbnode, NULL);
+				feclose(dvbnode, -1);
 			}
 		}
 		else
@@ -282,7 +282,7 @@ void settunerstatus()
 			dvbnode->deactive = 0;
 			if(dvbnode->fd == -1)
 			{
-				feopen(dvbnode, -1);
+				feopen(dvbnode, NULL);
 			}
 		}
 		dvbnode = dvbnode->next;
