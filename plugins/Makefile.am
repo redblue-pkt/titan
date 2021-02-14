@@ -30,6 +30,7 @@ SUBDIRS = \
 	permtime \
 	readerconfig \
 	rgui \
+	satipclient \
 	scriptexec \
 	sispmctl \
 	stock \

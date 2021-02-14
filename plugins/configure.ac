@@ -61,6 +61,7 @@ panel/Makefile
 permtime/Makefile
 readerconfig/Makefile
 rgui/Makefile
+satipclient/Makefile
 scriptexec/Makefile
 sispmctl/Makefile
 stock/Makefile
