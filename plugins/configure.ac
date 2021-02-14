@@ -45,6 +45,7 @@ hello/Makefile
 imdb/Makefile
 imdbapi/Makefile
 instar/Makefile
+ipsec/Makefile
 keylock/Makefile
 kodistarter/Makefile
 kravencfg/Makefile

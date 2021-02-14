@@ -15,6 +15,7 @@ SUBDIRS = \
 	imdb \
 	imdbapi \
 	instar \
+	ipsec \
 	keylock \
 	kodistarter \
 	kravencfg \

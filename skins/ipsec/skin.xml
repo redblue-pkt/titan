@@ -1,0 +1,24 @@
+#ipsecsettings fullscreen, max 1220x660, Xspace=30 !
+<screen name="ipsecsettings" fontsize="28" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
+	<node name="titletext" text="Ipsec VPN Settings" fontcol="black" fontsize="36" posx="0" posy="0" width="840" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+	<node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Here you can configure your Fritzbox VPN Settings. VPN-Type: IPSec Xauth PSK">
+		<node name="minitv" func="gettvpic" param1="494:35:210">
+		<node bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="205" bgcol="0" transparent="255">
+		<node bordersize="0" bordercol="black" posx="850" posy="0" width="370" height="205" transparent="0">
+	<node name="listbox" type="listbox" scrollbar="auto" bordercol="titlebgcol" bordersize="1" fontsize="28" posx="center" posy="215" width="1000" height="385" hspace="5" vspace="5">
+		<node parent="listbox" name="name" text="Name (Description)" type="inputbox" valign="middle" width="100%">
+		<node parent="listbox" name="dyndns" text="Serveraddress (Server)" type="inputbox" valign="middle" width="100%">
+		<node parent="listbox" name="id" text="IPSec-ID (Group)" type="inputbox" valign="middle" width="100%">
+		<node parent="listbox" name="psk" text="IPSec-Key (Psk)" type="inputbox" valign="middle" width="100%">
+		<node parent="listbox" name="user" text="Username" type="inputbox" valign="middle" width="100%">
+		<node parent="listbox" name="pass" text="Password" type="inputbox" valign="middle" width="100%">
+		<node parent="listbox" name="rekey" text="Rekey" type="choicebox" valign="middle" width="100%">
+	<node name="buttonbar" posx="0" posy="610" width="100%" height="50" hspace="5" fontcol="black" fontsize="25" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png" valign="middle" posx="0" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" valign="middle" posx="70" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b3" picmem="skin/key_control_cross_70x40.png" valign="middle" posx="140" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b3" picmem="skin/key_red_30x30.png"   valign="middle" posx="220"   posy="center" width="170" height="30" textposx="40" text="STOP">
+		<node parent="buttonbar" name="b4" picmem="skin/key_green_30x30.png" valign="middle" posx="400"   posy="center" width="280" height="30" textposx="40" text="START">
+		<node parent="buttonbar" name="b4" picmem="skin/key_yellow_30x30.png" valign="middle" posx="620"   posy="center" width="280" height="30" textposx="40" text="Tunerconfig">
+</screen>
+
