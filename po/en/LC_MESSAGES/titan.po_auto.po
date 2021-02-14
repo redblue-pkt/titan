@@ -4914,6 +4914,12 @@ msgstr ""
 msgid "Here you can make your PIN security settings."
 msgstr ""
 
+#: plugins_satipclient_skin.xml.h:1 skins_satipclient_skin.xml.h:1
+msgid ""
+"Here you can make your SAT-IP Client autostart settings. Configure your SAT-"
+"IP Tuner on Tunerconfig"
+msgstr ""
+
 #: skin_default_skin.xml.h:292
 msgid "Here you can make your USB autostart settings."
 msgstr ""
@@ -6443,13 +6449,14 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905
-#: scan.h:2167 scan.h:2258 scan.h:2651 scart.h:12 scart.h:25 security.h:1529
-#: security.h:2082 service.h:806 service.h:1083 shared.h:29 shared.h:66
-#: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
-#: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
-#: skinselector.h:231 sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478
-#: solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
+#: rtl2now.h:34 satipclient.h:52 satipclient.h:54 satipclient.h:65
+#: satipclient.h:76 satipclient.h:78 scan.h:1863 scan.h:1865 scan.h:1893
+#: scan.h:1895 scan.h:1905 scan.h:2167 scan.h:2258 scan.h:2651 scart.h:12
+#: scart.h:25 security.h:1529 security.h:2082 service.h:806 service.h:1083
+#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619
+#: skinadjust.h:627 skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110
+#: skinadjust.h:1172 skinselector.h:231 sock.h:955 softcam.h:414 softcam.h:477
+#: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
 #: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
 #: stream.h:33 system_backup_restore.h:57 system_backup_restore.h:63
@@ -7130,9 +7137,10 @@ msgstr ""
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:34 restoredefault.h:45
 #: restoredefault.h:49 restoredefault.h:58 restoredefault.h:73 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 scan.h:1863 scan.h:1865 scan.h:1893
-#: scan.h:1895 scan.h:2167 scan.h:2258 scan.h:2651 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:668 security.h:685 security.h:1529
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 satipclient.h:52 satipclient.h:54
+#: satipclient.h:65 satipclient.h:76 satipclient.h:78 scan.h:1863 scan.h:1865
+#: scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258 scan.h:2651 scart.h:12
+#: scart.h:25 scriptexec.h:41 security.h:668 security.h:685 security.h:1529
 #: security.h:2082 service.h:806 service.h:1083 shared.h:29 shared.h:66
 #: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
@@ -8816,6 +8824,28 @@ msgstr ""
 msgid "SAT"
 msgstr "Satellite"
 
+#: plugins_satipclient_skin.xml.h:2 skins_satipclient_skin.xml.h:2
+msgid "SAT-IP Client"
+msgstr ""
+
+#: satipclient.h:54 satipclient.h:78
+msgid ""
+"SAT-IP Client not started,\n"
+"Please check your config."
+msgstr ""
+
+#: satipclient.h:65
+msgid "SAT-IP Client now stopped"
+msgstr ""
+
+#: satipclient.h:52
+msgid "SAT-IP Client started and config saved"
+msgstr ""
+
+#: satipclient.h:76
+msgid "SAT-IP Client started."
+msgstr ""
+
 #: tpk_showname.h:140
 msgid "SAT/Cable 19.2 13.0 KabelD | 25.10.2020"
 msgstr ""
@@ -8948,13 +8978,14 @@ msgstr ""
 #: plugins_autotimer_skin.xml.h:9 plugins_dlna_skin.xml.h:11
 #: plugins_instar_skin.xml.h:26 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:16 plugins_minisatip_skin.xml.h:3
-#: plugins_multiimage_skin.xml.h:16 plugins_stopifnotused_skin.xml.h:5
-#: plugins_tsSchnitt_skin.xml.h:7 plugins_wlandisplay_skin.xml.h:12
-#: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:626
-#: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
-#: skins_instar_skin.xml.h:26 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:16 skins_minisatip_skin.xml.h:3
-#: skins_multiimage_skin.xml.h:16 skins_stopifnotused_skin.xml.h:5
+#: plugins_multiimage_skin.xml.h:16 plugins_satipclient_skin.xml.h:3
+#: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
+#: plugins_wlandisplay_skin.xml.h:12 plugins_xupnpd_skin.xml.h:2
+#: skin_default_skin.xml.h:626 skins_autotimer_skin.xml.h:9
+#: skins_dlna_skin.xml.h:11 skins_instar_skin.xml.h:26
+#: skins_lcdpearl1_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:16
+#: skins_minisatip_skin.xml.h:3 skins_multiimage_skin.xml.h:16
+#: skins_satipclient_skin.xml.h:3 skins_stopifnotused_skin.xml.h:5
 #: skins_tsSchnitt_skin.xml.h:7 skins_wlandisplay_skin.xml.h:12
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
@@ -8976,9 +9007,10 @@ msgid "STICK "
 msgstr "Stick"
 
 #: plugins_dlna_skin.xml.h:13 plugins_minisatip_skin.xml.h:4
-#: plugins_tsSchnitt_skin.xml.h:9 plugins_xupnpd_skin.xml.h:3
-#: skin_default_skin.xml.h:634 skins_dlna_skin.xml.h:13
-#: skins_minisatip_skin.xml.h:4 skins_tsSchnitt_skin.xml.h:9
+#: plugins_satipclient_skin.xml.h:4 plugins_tsSchnitt_skin.xml.h:9
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:634
+#: skins_dlna_skin.xml.h:13 skins_minisatip_skin.xml.h:4
+#: skins_satipclient_skin.xml.h:4 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
 msgstr "Stop"
@@ -11179,8 +11211,9 @@ msgstr ""
 msgid "Tuner:"
 msgstr ""
 
-#: plugins_minisatip_skin.xml.h:5 skin_default_skin.xml.h:703
-#: skins_minisatip_skin.xml.h:5
+#: plugins_minisatip_skin.xml.h:5 plugins_satipclient_skin.xml.h:5
+#: skin_default_skin.xml.h:703 skins_minisatip_skin.xml.h:5
+#: skins_satipclient_skin.xml.h:5
 msgid "Tunerconfig"
 msgstr ""
 
@@ -12229,7 +12262,7 @@ msgstr "automatic"
 msgid "autores"
 msgstr ""
 
-#: minisatip.h:24 xupnpd.h:29
+#: minisatip.h:24 satipclient.h:24 xupnpd.h:29
 msgid "autostart"
 msgstr ""
 
@@ -13279,25 +13312,26 @@ msgstr "NFS Server"
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:2037
-#: scan.h:2520 scan.h:2524 scan.h:2528 scan.h:2532 scan.h:2537 scan.h:2545
-#: scan.h:2549 scan.h:2553 scan.h:2557 screensaveradjust.h:19
-#: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
-#: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
-#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
-#: settings_autostart.h:305 settings_autostart.h:316 settings_autostart.h:430
-#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:502
-#: settings_autostart.h:511 settings_autostart.h:568 settings_autostart.h:577
-#: settings_autostart.h:586 settings_autostart.h:595 settings_autostart.h:604
-#: settings_autostart.h:613 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 sispmctl.h:693
-#: sispmctl.h:697 sispmctl.h:737 sispmctl.h:741 sispmctl.h:781 sispmctl.h:785
-#: sispmctl.h:825 sispmctl.h:829 skinadjust.h:252 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:52
-#: tithek_settings.h:56 tithek_settings.h:60 tithek_settings.h:64
-#: tithek_settings.h:95 tithek_settings.h:107 tithek_settings.h:111 tmc.h:531
-#: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
-#: tunerconfig.h:327 tunerconfig.h:897 xupnpd.h:30
+#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140
+#: satipclient.h:25 scan.h:2037 scan.h:2520 scan.h:2524 scan.h:2528 scan.h:2532
+#: scan.h:2537 scan.h:2545 scan.h:2549 scan.h:2553 scan.h:2557
+#: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
+#: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
+#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
+#: settings_autostart.h:285 settings_autostart.h:305 settings_autostart.h:316
+#: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
+#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
+#: settings_autostart.h:604 settings_autostart.h:613
+#: settings_overclocking.h:214 settings_overclocking.h:234
+#: settings_overclocking.h:244 sispmctl.h:693 sispmctl.h:697 sispmctl.h:737
+#: sispmctl.h:741 sispmctl.h:781 sispmctl.h:785 sispmctl.h:825 sispmctl.h:829
+#: skinadjust.h:252 stopifnotused.c:94 timeshiftsettings.h:59
+#: timeshiftsettings.h:63 tithek_settings.h:52 tithek_settings.h:56
+#: tithek_settings.h:60 tithek_settings.h:64 tithek_settings.h:95
+#: tithek_settings.h:107 tithek_settings.h:111 tmc.h:531 tmc.h:535
+#: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
+#: tunerconfig.h:897 xupnpd.h:30
 msgid "no"
 msgstr "No"
 
@@ -14743,16 +14777,16 @@ msgstr ""
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:110 pin.h:182 pin.h:200 play.h:581 play.h:588 play.h:603
 #: readerconfig.h:255 rectimer.h:1111 rectimer.h:1116 rectimer.h:1121
-#: rectimer.h:1126 rectimer.h:1131 rectimer.h:1136 rectimer.h:1141 scan.h:2038
-#: scan.h:2521 scan.h:2525 scan.h:2529 scan.h:2533 scan.h:2536 scan.h:2546
-#: scan.h:2550 scan.h:2554 scan.h:2558 screensaveradjust.h:20
-#: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
-#: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
-#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
-#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
-#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
-#: settings_autostart.h:604 settings_autostart.h:613
+#: rectimer.h:1126 rectimer.h:1131 rectimer.h:1136 rectimer.h:1141
+#: satipclient.h:25 scan.h:2038 scan.h:2521 scan.h:2525 scan.h:2529 scan.h:2533
+#: scan.h:2536 scan.h:2546 scan.h:2550 scan.h:2554 scan.h:2558
+#: screensaveradjust.h:20 settings_autostart.h:26 settings_autostart.h:132
+#: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
+#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
+#: settings_autostart.h:285 settings_autostart.h:316 settings_autostart.h:430
+#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:502
+#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:595 settings_autostart.h:604 settings_autostart.h:613
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 sispmctl.h:692 sispmctl.h:696 sispmctl.h:736
 #: sispmctl.h:740 sispmctl.h:780 sispmctl.h:784 sispmctl.h:824 sispmctl.h:828
