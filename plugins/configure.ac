@@ -52,6 +52,7 @@ lcdpearl1/Makefile
 lcdsamsung/Makefile
 mboxinfo/Makefile
 mc/Makefile
+minisatip/Makefile
 multiimage/Makefile
 networkbrowser/Makefile
 networkbrowser/netlib/Makefile
