@@ -6450,7 +6450,7 @@ msgstr ""
 #: mc_videoplayer.h:904 mc_videoplayer.h:920 mc_wetterinfo.h:36
 #: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477 mediadbsettings.h:99
 #: menu.h:160 menu.h:215 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
-#: minisatip.h:52 minisatip.h:54 minisatip.h:65 minisatip.h:76 minisatip.h:78
+#: minisatip.h:52 minisatip.h:54 minisatip.h:64 minisatip.h:74 minisatip.h:76
 #: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
 #: movshare.h:191 movshare.h:197 MultiImage.c:46 MultiImage.c:436
@@ -6473,24 +6473,25 @@ msgstr ""
 #: rectimer.h:577 rectimer.h:1258 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:34 restoredefault.h:45
 #: restoredefault.h:49 restoredefault.h:58 restoredefault.h:73 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 satipclient.h:52 satipclient.h:54
-#: satipclient.h:65 satipclient.h:76 satipclient.h:78 scan.h:1863 scan.h:1865
-#: scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167 scan.h:2258 scan.h:2651
-#: scart.h:12 scart.h:25 security.h:1529 security.h:2082 service.h:806
-#: service.h:1083 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
-#: skinadjust.h:619 skinadjust.h:627 skinadjust.h:668 skinadjust.h:685
-#: skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231 sock.h:955
-#: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
-#: solarmovie.h:375 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:75 streamcloud.h:81 streamcloud.h:91 streamcloud.h:104
-#: streamcloud.h:135 streamcloud.h:194 stream.h:33 system_backup_restore.h:57
-#: system_backup_restore.h:63 system_backup_restore.h:66
-#: system_backup_restore.h:69 system_backup_restore.h:124
-#: system_backup_restore.h:132 system_backup_restore.h:135 system_update.h:424
-#: system_update.h:430 system_update.h:441 system_update.h:444 thefile.h:34
-#: thefile.h:69 thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72
-#: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
-#: titan.c:316 titan.c:1397 titan.c:1418 titan.c:1424 titan.c:1435 titan.c:1441
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 satipclient.h:53 satipclient.h:55
+#: satipclient.h:65 satipclient.h:75 satipclient.h:77 satipclient.h:85
+#: scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167
+#: scan.h:2258 scan.h:2651 scart.h:12 scart.h:25 security.h:1529
+#: security.h:2082 service.h:806 service.h:1083 shared.h:29 shared.h:66
+#: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
+#: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
+#: skinselector.h:231 sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478
+#: solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
+#: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
+#: stream.h:33 system_backup_restore.h:57 system_backup_restore.h:63
+#: system_backup_restore.h:66 system_backup_restore.h:69
+#: system_backup_restore.h:124 system_backup_restore.h:132
+#: system_backup_restore.h:135 system_update.h:424 system_update.h:430
+#: system_update.h:441 system_update.h:444 thefile.h:34 thefile.h:69
+#: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
+#: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:316
+#: titan.c:1397 titan.c:1418 titan.c:1424 titan.c:1435 titan.c:1441
 #: tithek.c:105 tithek_global.h:228 tithek.h:782 tithek.h:1694 tithek.h:1721
 #: tithek.h:1743 tithek.h:1765 tithek.h:1822 tithek.h:2001 tithek.h:2016
 #: tithek.h:2217 tithek.h:2262 tithek.h:2618 tithek.h:2806 tithek.h:3131
@@ -6532,13 +6533,13 @@ msgstr ""
 msgid "Mini SAT-IP Server"
 msgstr ""
 
-#: minisatip.h:54 minisatip.h:78
+#: minisatip.h:54 minisatip.h:76
 msgid ""
 "Mini SAT-IP Server not started,\n"
 "Please check your config."
 msgstr ""
 
-#: minisatip.h:65
+#: minisatip.h:64
 msgid "Mini SAT-IP Server now stopped"
 msgstr ""
 
@@ -6546,7 +6547,7 @@ msgstr ""
 msgid "Mini SAT-IP Server started and config saved"
 msgstr ""
 
-#: minisatip.h:76
+#: minisatip.h:74
 msgid "Mini SAT-IP Server started."
 msgstr ""
 
@@ -7129,7 +7130,7 @@ msgstr ""
 #: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477 mediadb.h:2543
 #: mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1031 menu.h:1033
 #: mightyupload.h:27 mightyupload.h:69 mightyupload.h:75 minisatip.h:52
-#: minisatip.h:54 minisatip.h:65 minisatip.h:76 minisatip.h:78 movie2k.h:23
+#: minisatip.h:54 minisatip.h:64 minisatip.h:74 minisatip.h:76 movie2k.h:23
 #: movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104 movie4k.h:411
 #: movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101 movshare.h:191
 #: movshare.h:197 multiboot.h:344 multiboot.h:380 multiboot.h:387
@@ -7163,16 +7164,16 @@ msgstr ""
 #: rectimer.h:1405 rectimer.h:1417 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:34 restoredefault.h:45
 #: restoredefault.h:49 restoredefault.h:58 restoredefault.h:73 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:34 satipclient.h:52 satipclient.h:54
-#: satipclient.h:65 satipclient.h:76 satipclient.h:78 scan.h:1863 scan.h:1865
-#: scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258 scan.h:2651 scart.h:12
-#: scart.h:25 scriptexec.h:41 security.h:668 security.h:685 security.h:1529
-#: security.h:2082 service.h:806 service.h:1083 shared.h:29 shared.h:66
-#: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
-#: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
-#: skins_dlna_skin.xml.h:7 skinselector.h:231 skins_facebook_skin.xml.h:3
-#: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
-#: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 satipclient.h:53 satipclient.h:55
+#: satipclient.h:65 satipclient.h:75 satipclient.h:77 satipclient.h:85
+#: scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258
+#: scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
+#: security.h:685 security.h:1529 security.h:2082 service.h:806 service.h:1083
+#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619
+#: skinadjust.h:627 skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110
+#: skinadjust.h:1172 skins_dlna_skin.xml.h:7 skinselector.h:231
+#: skins_facebook_skin.xml.h:3 skins_mboxinfo_skin.xml.h:2
+#: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:955 softcam.h:414 softcam.h:477
 #: softcam.h:478 solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
@@ -8852,7 +8853,7 @@ msgstr "Satellieten"
 msgid "SAT-IP Client"
 msgstr ""
 
-#: satipclient.h:54 satipclient.h:78
+#: satipclient.h:55 satipclient.h:77
 msgid ""
 "SAT-IP Client not started,\n"
 "Please check your config."
@@ -8862,11 +8863,11 @@ msgstr ""
 msgid "SAT-IP Client now stopped"
 msgstr ""
 
-#: satipclient.h:52
+#: satipclient.h:53
 msgid "SAT-IP Client started and config saved"
 msgstr ""
 
-#: satipclient.h:76
+#: satipclient.h:75
 msgid "SAT-IP Client started."
 msgstr ""
 
@@ -8909,6 +8910,10 @@ msgstr "Opslaan"
 
 #: skin_default_skin.xml.h:549
 msgid "SAVETRANSPONDER"
+msgstr ""
+
+#: plugins_satipclient_skin.xml.h:3 skins_satipclient_skin.xml.h:3
+msgid "SCAN"
 msgstr ""
 
 #: skin_default_skin.xml.h:556
@@ -9007,14 +9012,14 @@ msgstr ""
 #: plugins_instar_skin.xml.h:26 plugins_ipsec_skin.xml.h:9
 #: plugins_lcdpearl1_skin.xml.h:11 plugins_lcdsamsung_skin.xml.h:16
 #: plugins_minisatip_skin.xml.h:3 plugins_multiimage_skin.xml.h:16
-#: plugins_satipclient_skin.xml.h:3 plugins_stopifnotused_skin.xml.h:5
+#: plugins_satipclient_skin.xml.h:4 plugins_stopifnotused_skin.xml.h:5
 #: plugins_tsSchnitt_skin.xml.h:7 plugins_wlandisplay_skin.xml.h:12
 #: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:626
 #: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
 #: skins_instar_skin.xml.h:26 skins_ipsec_skin.xml.h:9
 #: skins_lcdpearl1_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:16
 #: skins_minisatip_skin.xml.h:3 skins_multiimage_skin.xml.h:16
-#: skins_satipclient_skin.xml.h:3 skins_stopifnotused_skin.xml.h:5
+#: skins_satipclient_skin.xml.h:4 skins_stopifnotused_skin.xml.h:5
 #: skins_tsSchnitt_skin.xml.h:7 skins_wlandisplay_skin.xml.h:12
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
@@ -9036,11 +9041,11 @@ msgid "STICK "
 msgstr "Stick"
 
 #: plugins_dlna_skin.xml.h:13 plugins_ipsec_skin.xml.h:10
-#: plugins_minisatip_skin.xml.h:4 plugins_satipclient_skin.xml.h:4
+#: plugins_minisatip_skin.xml.h:4 plugins_satipclient_skin.xml.h:5
 #: plugins_tsSchnitt_skin.xml.h:9 plugins_xupnpd_skin.xml.h:3
 #: skin_default_skin.xml.h:634 skins_dlna_skin.xml.h:13
 #: skins_ipsec_skin.xml.h:10 skins_minisatip_skin.xml.h:4
-#: skins_satipclient_skin.xml.h:4 skins_tsSchnitt_skin.xml.h:9
+#: skins_satipclient_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
 msgstr "Stop"
@@ -11240,9 +11245,9 @@ msgid "Tuner:"
 msgstr ""
 
 #: plugins_ipsec_skin.xml.h:11 plugins_minisatip_skin.xml.h:5
-#: plugins_satipclient_skin.xml.h:5 skin_default_skin.xml.h:703
+#: plugins_satipclient_skin.xml.h:6 skin_default_skin.xml.h:703
 #: skins_ipsec_skin.xml.h:11 skins_minisatip_skin.xml.h:5
-#: skins_satipclient_skin.xml.h:5
+#: skins_satipclient_skin.xml.h:6
 msgid "Tunerconfig"
 msgstr ""
 
@@ -12289,7 +12294,7 @@ msgstr "Automatisch"
 msgid "autores"
 msgstr ""
 
-#: ipsec.h:87 minisatip.h:24 satipclient.h:24 xupnpd.h:29
+#: ipsec.h:87 minisatip.h:24 satipclient.h:25 xupnpd.h:29
 msgid "autostart"
 msgstr ""
 
@@ -13340,7 +13345,7 @@ msgstr "NFS server"
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
 #: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
 #: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140
-#: satipclient.h:25 scan.h:2037 scan.h:2520 scan.h:2524 scan.h:2528 scan.h:2532
+#: satipclient.h:26 scan.h:2037 scan.h:2520 scan.h:2524 scan.h:2528 scan.h:2532
 #: scan.h:2537 scan.h:2545 scan.h:2549 scan.h:2553 scan.h:2557
 #: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
@@ -14805,7 +14810,7 @@ msgstr "Geel"
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
 #: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
 #: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 satipclient.h:25 scan.h:2038 scan.h:2521 scan.h:2525
+#: rectimer.h:1141 satipclient.h:26 scan.h:2038 scan.h:2521 scan.h:2525
 #: scan.h:2529 scan.h:2533 scan.h:2536 scan.h:2546 scan.h:2550 scan.h:2554
 #: scan.h:2558 screensaveradjust.h:20 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
