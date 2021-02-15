@@ -81,7 +81,7 @@ void screensatipclient()
 		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
 			debug(10, "cmd: %s", satipclientrun);
-			tmpstr = command(satipclientrun;
+			tmpstr = command(satipclientrun);
 
 			debug(10, "cmd: %s", satipclientscript);
 			tmpstr = command(satipclientscript);
