@@ -96,6 +96,11 @@ void screensatipclient()
 		}
 	}
 
+	free(satipclientstart), satipclientstart = NULL;
+	free(satipclientstop), satipclientstop = NULL;
+	free(satipclientscan), satipclientscan = NULL;
+	free(satipclientrun), satipclientrun = NULL;
+
 	delownconfigtmpall();
 	delmarkedscreennodes(satipclient, 1);
 	delownerrc(satipclient);
