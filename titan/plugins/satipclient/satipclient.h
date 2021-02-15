@@ -82,10 +82,11 @@ void screensatipclient()
 			cmd = ostrcat(satipclientrun, " ", 0, 0);
 			cmd = ostrcat(cmd, satipclientscan, 1, 0);
 			debug(10, "cmd: %s", cmd);
+			
 			tmpstr = command(cmd);
 			free(cmd), cmd = NULL;
-
 			debug(10, "tmpstr: %s", tmpstr);
+
 			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 500, 0, 0);
 			free(tmpstr), tmpstr = NULL;
 			drawscreen(satipclient, 0, 0);
