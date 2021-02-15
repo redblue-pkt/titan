@@ -12,8 +12,8 @@ void screensatipclient()
 
 	satipclientstop = ostrcat("/etc/init.d/satipclient stop", NULL, 0, 0);
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
-	satipclientscan = ostrcat(createpluginpath("/satipclient/scan.py", 0), NULL, 0, 0);
-	satipclientscript = ostrcat(createpluginpath("/satipclient/satipclient.sh", 0), NULL, 0, 0);
+	satipclientscan = ostrcat(createpluginpath("/satipclient/files/scan.py", 0), NULL, 0, 0);
+	satipclientscript = ostrcat(createpluginpath("/satipclient/files/satipclient.sh", 0), " test", 0, 0);
 
 	addscreenrc(satipclient, listbox);
 	listbox->aktline = 1;
@@ -79,8 +79,13 @@ void screensatipclient()
 		}
 		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
+		{
+			debug(10, "cmd: %s", satipclientscript);
+			tmpstr = command(satipclientscript);
+
 			debug(10, "cmd: %s", satipclientscan);
 			tmpstr = command(satipclientscan);
+
 			debug(10, "tmpstr: %s", tmpstr);
 			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 500, 0, 0);
 			free(tmpstr), tmpstr = NULL;
