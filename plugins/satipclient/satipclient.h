@@ -14,7 +14,7 @@ void screensatipclient()
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
 	satipclientscan = createpluginpath("/satipclient/files/scan.py", 0);
 	satipclientrun = createpluginpath("/satipclient/files/run.sh", 0);
-	satipclientconfig = ostrcat("cp /mnt/network/vturner.conf /etc", NULL, 0, 0);
+	satipclientconfig = ostrcat("cp /mnt/network/vtuner.conf /etc", NULL, 0, 0);
 
 	addscreenrc(satipclient, listbox);
 	listbox->aktline = 1;
