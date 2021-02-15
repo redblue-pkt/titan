@@ -6,15 +6,15 @@ void screensatipclient()
 	int rcret = -1, ret = 0;
 	struct skin* satipclient = getscreen("satipclientsettings");
 	struct skin* listbox = getscreennode(satipclient, "listbox");
-	char* tmpstr = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientscan = NULL, *satipclientrun = NULL;
+	char* tmpstr = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientscan = NULL, *cmd = NULL;
 	struct skin* tmp = NULL;
 	struct skin* node = NULL;
 
 	satipclientstop = ostrcat("/etc/init.d/satipclient stop", NULL, 0, 0);
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
 	satipclientscan = ostrcat(createpluginpath("/satipclient/files/scan.py", 0), NULL, 0, 0);
-	satipclientrun = ostrcat(createpluginpath("/satipclient/files/run.sh", 0), " ", 0, 0);
-	satipclientrun = ostrcat(satipclientrun, satipclientscan, 1, 0);
+	cmd = ostrcat(createpluginpath("/satipclient/files/run.sh", 0), " ", 0, 0);
+	cmd = ostrcat(cmd, satipclientscan, 1, 0);
 
 	addscreenrc(satipclient, listbox);
 	listbox->aktline = 1;
@@ -80,8 +80,8 @@ void screensatipclient()
 		}
 		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			debug(10, "cmd: %s", satipclientrun);
-			tmpstr = command(satipclientrun);
+			debug(10, "cmd: %s", cmd);
+			tmpstr = command(cmd);
 
 			debug(10, "tmpstr: %s", tmpstr);
 			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 500, 0, 0);
@@ -99,7 +99,7 @@ void screensatipclient()
 	free(satipclientstart), satipclientstart = NULL;
 	free(satipclientstop), satipclientstop = NULL;
 	free(satipclientscan), satipclientscan = NULL;
-	free(satipclientrun), satipclientrun = NULL;
+	free(cmd), cmd = NULL;
 
 	delownconfigtmpall();
 	delmarkedscreennodes(satipclient, 1);
