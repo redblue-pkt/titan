@@ -6,7 +6,7 @@ void screensatipclient()
 	int rcret = -1, ret = 0;
 	struct skin* satipclient = getscreen("satipclientsettings");
 	struct skin* listbox = getscreennode(satipclient, "listbox");
-	char* tmpstr = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientscan = NULL, *satipclientrun = NULL, *cmd = NULL;
+	char* tmpstr = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientscan = NULL, *satipclientrun = NULL, *satipclientconfig = NULL, *cmd = NULL;
 	struct skin* tmp = NULL;
 	struct skin* node = NULL;
 
@@ -14,6 +14,7 @@ void screensatipclient()
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
 	satipclientscan = createpluginpath("/satipclient/files/scan.py", 0);
 	satipclientrun = createpluginpath("/satipclient/files/run.sh", 0);
+	satipclientconfig = ostrcat("cp /mnt/network/vturner.conf /etc", NULL, 0, 0);
 
 	addscreenrc(satipclient, listbox);
 	listbox->aktline = 1;
@@ -45,6 +46,9 @@ void screensatipclient()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
+			debug(10, "cmd: %s", satipclientconfig);
+			system(satipclientconfig);
+
 			debug(10, "cmd: %s", satipclientstop);
 			system(satipclientstop);
 			debug(10, "cmd: %s", satipclientstart);
@@ -67,8 +71,12 @@ void screensatipclient()
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))
 		{
+			debug(10, "cmd: %s", satipclientconfig);
+			system(satipclientconfig);
+
 			debug(10, "cmd: %s", satipclientstop);
 			system(satipclientstop);
+
 			debug(10, "cmd: %s", satipclientstart);
 			ret = system(satipclientstart);
 			if(ret == 0)
@@ -87,7 +95,7 @@ void screensatipclient()
 			free(cmd), cmd = NULL;
 			debug(10, "tmpstr: %s", tmpstr);
 
-			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 500, 0, 0);
+			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 900, 500, 0, 0);
 			free(tmpstr), tmpstr = NULL;
 			drawscreen(satipclient, 0, 0);
 		}
@@ -102,6 +110,7 @@ void screensatipclient()
 	free(satipclientstart), satipclientstart = NULL;
 	free(satipclientstop), satipclientstop = NULL;
 	free(satipclientscan), satipclientscan = NULL;
+	free(satipclientconfig), satipclientconfig = NULL;
 
 	delownconfigtmpall();
 	delmarkedscreennodes(satipclient, 1);
