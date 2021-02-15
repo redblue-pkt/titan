@@ -6,14 +6,14 @@ void screensatipclient()
 	int rcret = -1, ret = 0;
 	struct skin* satipclient = getscreen("satipclientsettings");
 	struct skin* listbox = getscreennode(satipclient, "listbox");
-	char* tmpstr = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientscan = NULL;
+	char* tmpstr = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientscan = NULL, *satipclientscript = NULL;
 	struct skin* tmp = NULL;
 	struct skin* node = NULL;
 
 	satipclientstop = ostrcat("/etc/init.d/satipclient stop", NULL, 0, 0);
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
-	satipclientscan = ostrcat(createpluginpath("/satipclient/satipclient.sh", 0), " ", 0, 0);
-	satipclientscan = ostrcat(satipclientscan, createpluginpath("/satipclient/scan.py", 0), 1, 0);
+	satipclientscan = ostrcat(createpluginpath("/satipclient/scan.py", 0), NULL, 0, 0);
+	satipclientscript = ostrcat(createpluginpath("/satipclient/satipclient.sh", 0), NULL, 0, 0);
 
 	addscreenrc(satipclient, listbox);
 	listbox->aktline = 1;
