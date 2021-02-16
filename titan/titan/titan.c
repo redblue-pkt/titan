@@ -399,6 +399,9 @@ void oshutdown(int exitcode, int flag)
 	}
 	else
 		clearfball();
+		
+	if(exitcode == 1)
+		setcecstandby(1);
 
 	//stop all records
 	while(servicenode != NULL)
@@ -541,9 +544,6 @@ void oshutdown(int exitcode, int flag)
 	}
 	else
 		freetimer(1);
-
-	if(exitcode == 1)
-		setcecstandby(1);
 
 	starthttpd(0);
 	startrguid(0);
