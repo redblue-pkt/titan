@@ -5,7 +5,7 @@ void screensatipclient()
 {
 	int rcret = -1, ret = 0, i, j, count1 = 0, count2, restart;
 	char* tmpstr = NULL,*tmpstr1 = NULL, *tmpstr2 = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientrestart = NULL, *satipclientscan = NULL, *satipclientrun = NULL, *satipclientconfig = NULL, *cmd = NULL;
-	char* name = NULL, *text = NULL, *type = NULL, *ip = NULL, *showname = NULL, *desc = NULL, *vtunerconf = NULL;
+	char* name = NULL, *text = NULL, *type = NULL, *ip = NULL, *showname = NULL, *desc = NULL, *vtunerconf = NULL, *vtunertmp = NULL;
 
 start:
 
@@ -15,13 +15,24 @@ start:
 	satipclientrestart = ostrcat("/etc/init.d/satipclient restart", NULL, 0, 0);
 	satipclientscan = createpluginpath("/satipclient/files/scan.py", 0);
 	satipclientrun = createpluginpath("/satipclient/files/run.sh", 0);
-	satipclientconfig = ostrcat("cp /mnt/network/vtuner.conf /etc", NULL, 0, 0);
-	vtunerconf = ostrcat("/mnt/network/vtuner.conf", NULL, 0, 0);
+//	satipclientconfig = ostrcat("cp /mnt/network/vtuner.conf /etc", NULL, 0, 0);
+//	vtunerconf = ostrcat("/mnt/network/vtuner.conf", NULL, 0, 0);
+	satipclientconfig = ostrcat("cp /etc/vtuner.conf /etc", NULL, 0, 0);
+	vtunerconf = ostrcat("/etc/vtuner.conf", NULL, 0, 0);
+	vtunertmp = ostrcat("/tmp/vtuner.help", NULL, 0, 0);
 
 	struct skin* satipclient = getscreen("satipclientsettings");
 	struct skin* listbox = getscreennode(satipclient, "listbox");
 	struct skin* tmp = NULL;
 	struct skin* node = NULL;
+	
+	cmd = ostrcat(satipclientrun, " ", 0, 0);
+	cmd = ostrcat(cmd, satipclientscan, 1, 0);
+	debug(10, "cmd: %s", cmd);
+	tmpstr = command(cmd);
+	debug(10, "tmpstr: %s", tmpstr);
+	free(cmd), cmd = NULL;
+	free(tmpstr), tmpstr = NULL;
 
 	addscreenrc(satipclient, listbox);
 	listbox->aktline = 1;
@@ -33,6 +44,11 @@ start:
 	cmd = ostrcat("cat ", vtunerconf, 0, 0);
 	cmd = ostrcat(cmd, " | cut -d'=' -f2", 1, 0);
 	tmpstr1 = string_newline(command(cmd));
+	
+	free(cmd), cmd = NULL;
+	cmd = ostrcat("cat ", vtunertmp, 0, 0);
+	cmd = ostrcat(cmd, " | cut -d'=' -f2", 1, 0);
+	
 	struct splitstr* ret1 = NULL;
 
 	ret1 = strsplit(tmpstr1, "\n", &count1);
@@ -160,8 +176,9 @@ start:
 			debug(10, "cmd: %s", cmd);
 			
 			tmpstr = command(cmd);
-			free(cmd), cmd = NULL;
 			debug(10, "tmpstr: %s", tmpstr);
+			free(cmd), cmd = NULL;
+			
 
 			textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 900, 500, 0, 0);
 			free(tmpstr), tmpstr = NULL;

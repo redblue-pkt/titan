@@ -6,6 +6,7 @@ import os
 import httplib
 import copy
 
+
 SATIPSERVERDATA = {}
 
 DEVICE_ATTR = [ 
@@ -20,8 +21,9 @@ DEVICE_ATTR = [
 'presentationURL'
 ]
 
-#SATIP_CONFFILE = "/etc/vtuner.conf"
-SATIP_CONFFILE = "/mnt/network/vtuner.conf"
+SATIP_CONFFILE = "/etc/vtuner.conf"
+SATIP_HELPFILE = "/tmp/vtuner.help"
+
 
 SSDP_ADDR = "239.255.255.250";
 #SSDP_ADDR = "10.0.0.255";
@@ -219,14 +221,30 @@ def getUUIDFromIP(ip):
 		server_default = server_choices[0][0]
 	
 	return server_choices
+	
+def getCapability(uuid):
+	capability = { 'DVB-S' : 0, 'DVB-C' : 0, 'DVB-T' : 0}
+	data = getServerInfo(uuid, "X_SATIPCAP")
+	if data is not None:
+		for x in data.split(','):
+			if x.upper().find("DVBS") != -1:
+				capability['DVB-S'] = int(x.split('-')[1])
+			elif x.upper().find("DVBC") != -1:
+				capability['DVB-C'] = int(x.split('-')[1])
+			elif x.upper().find("DVBT") != -1:
+				capability['DVB-T'] = int(x.split('-')[1])
+	else:
+		capability = { 'DVB-S' : 1, 'DVB-C' : 0, 'DVB-T' : 0}
+	return capability
+	
 
-def loadConfig():
+def loadConfig(datei):
 	vtunerConfig = []
 	for idx in vtunerIndex:
 		vtunerConfig.append({'vtuner_type':"usb_tuner"})
 
-	if os.access(SATIP_CONFFILE, os.R_OK):
-		fd = open(SATIP_CONFFILE)
+	if os.access(datei, os.R_OK):
+		fd = open(datei)
 		confData = fd.read()
 		fd.close()
 
@@ -261,7 +279,7 @@ def loadConfig():
 
 	return vtunerConfig
 	
-def saveConfig():
+def saveConfig(datei):
 	data = ""
 
 	for idx in vtunerIndex:
@@ -278,7 +296,7 @@ def saveConfig():
 		data += idx + '=' + ",".join(attr)+"\n"
 
 	if data:
-		fd = open(SATIP_CONFFILE, 'w')
+		fd = open(datei, 'w')
 		fd.write(data)
 		fd.close()
 
@@ -286,33 +304,44 @@ def sortVtunerConfig():
 	vtunerConfig.sort(reverse=True)
 	
 def addConf():
-	z = -1
-	for vtuner_idx in vtunerIndex:
-		vtuner = vtunerConfig[int(vtuner_idx)]
-		if vtuner['vtuner_type'] == "satip_client":
-			for uuid in getServerKeys():
-				if vtuner['uuid'] == uuid:
-				  SATIPSERVERDATA[uuid] = "delete"
-		else:
-			if z == -1:
-				z = int(vtuner_idx)
+#	z = -1
+#	for vtuner_idx in vtunerIndex:
+#		vtuner = vtunerConfig[int(vtuner_idx)]
+#		if vtuner['vtuner_type'] == "satip_client":
+#			for uuid in getServerKeys():
+#				if vtuner['uuid'] == uuid:
+#					print SATIPSERVERDATA[uuid]
+#				  SATIPSERVERDATA[uuid] = "delete"
+#		else:
+#			if z == -1:
+#				z = int(vtuner_idx)
+	z = 0
 	for uuid in getServerKeys():
-	  if SATIPSERVERDATA[uuid] <> "delete":
-			vtunerConfig[z]['tuner_type'] = "DVB-S"
-			vtunerConfig[z]['ipaddr'] = getServerInfo(uuid, "ipaddress")
-			vtunerConfig[z]['uuid'] = uuid
-			vtunerConfig[z]['vtuner_type'] = 'satip_client'
-			vtunerConfig[z]['desc'] = getServerInfo(uuid, "modelName")
-			z = z + 1
+		if SATIPSERVERDATA[uuid] <> "delete":
+			cap = getCapability(uuid)
+			print cap
+			for tuner in ['DVB-S', 'DVB-T', 'DVB-C']:
+				if cap[tuner] > 0:
+					vtunerConfig[z]['tuner_type'] = tuner
+					vtunerConfig[z]['ipaddr'] = getServerInfo(uuid, "ipaddress")
+					vtunerConfig[z]['uuid'] = uuid
+					vtunerConfig[z]['vtuner_type'] = 'satip_client'
+					vtunerConfig[z]['desc'] = getServerInfo(uuid, "modelName")
+					print vtunerConfig[z]['tuner_type']
+					z = z + 1
+			
 	
 
 vtunerIndex = VTUNER_IDX_LIST
-vtunerConfig = loadConfig()
+vtunerConfig = loadConfig(SATIP_HELPFILE)
+print vtunerConfig
+if not os.path.exists(SATIP_CONFFILE):
+	saveConfig(SATIP_CONFFILE)
 #sortVtunerConfig()
 old_vtunerConfig = copy.deepcopy(vtunerConfig)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.settimeout(5)
+sock.settimeout(2)
 sock.sendto(ssdpRequest, (SSDP_ADDR, SSDP_PORT))
 
 while 1:
@@ -329,4 +358,4 @@ while 1:
 #	print getServerInfo(uuid, "modelName")
 
 addConf()
-saveConfig()
+saveConfig(SATIP_HELPFILE)
