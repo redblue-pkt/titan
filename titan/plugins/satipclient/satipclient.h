@@ -4,7 +4,7 @@
 void screensatipclient()
 {
 	int rcret = -1, ret = 0, i, j, count1 = 0, count2, restart;
-	char* tmpstr = NULL,*tmpstr1 = NULL, *tmpstr2 = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientscan = NULL, *satipclientrun = NULL, *satipclientconfig = NULL, *cmd = NULL;
+	char* tmpstr = NULL,*tmpstr1 = NULL, *tmpstr2 = NULL, *satipclientstop = NULL, *satipclientstart = NULL, *satipclientrestart = NULL, *satipclientscan = NULL, *satipclientrun = NULL, *satipclientconfig = NULL, *cmd = NULL;
 	char* name = NULL, *text = NULL, *type = NULL, *ip = NULL, *showname = NULL, *desc = NULL, *vtunerconf = NULL;
 
 start:
@@ -12,6 +12,7 @@ start:
 	restart = 0;
 	satipclientstop = ostrcat("/etc/init.d/satipclient stop", NULL, 0, 0);
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
+	satipclientrestart = ostrcat("/etc/init.d/satipclient restart", NULL, 0, 0);
 	satipclientscan = createpluginpath("/satipclient/files/scan.py", 0);
 	satipclientrun = createpluginpath("/satipclient/files/run.sh", 0);
 	satipclientconfig = ostrcat("cp /mnt/network/vtuner.conf /etc", NULL, 0, 0);
@@ -118,9 +119,7 @@ start:
 				debug(10, "cmd: %s", satipclientconfig);
 				system(satipclientconfig);
 
-				debug(10, "cmd: %s", satipclientstop);
-				system(satipclientstop);
-				debug(10, "cmd: %s", satipclientstart);
+				debug(10, "cmd: %s", satipclientrestart);
 				ret = system(satipclientstart);
 				if(ret == 0)
 					textbox(_("Message"), _("SAT-IP Client started and config saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
@@ -183,6 +182,7 @@ start:
 
 	free(vtunerconf), vtunerconf = NULL;
 	free(satipclientstart), satipclientstart = NULL;
+	free(satipclientrestart), satipclientrestart = NULL;
 	free(satipclientstop), satipclientstop = NULL;
 	free(satipclientscan), satipclientscan = NULL;
 	free(satipclientconfig), satipclientconfig = NULL;
