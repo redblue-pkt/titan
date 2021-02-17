@@ -111,7 +111,7 @@ start:
 		{
 			writelist(myconfig, vtunerconf);
 
-			if(textbox(_("Message"), _("Titan will be restarted ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
+			if(textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
 				oshutdown(3, 1);
 			else
 			{
