@@ -909,7 +909,9 @@ int fewait(struct dvbdev* node)
 #ifdef ARM
 	timer = 500;
 #endif
-	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1 || checkchipset("3798MV200") == 1)
+	if(checkchipset("3798MV200") == 1)
+		timer = 5000;
+	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1)
 		timer = 1000;
 	if(checkchipset("HI3798MV200") == 1)
 		timer = 4000;
