@@ -917,10 +917,9 @@ void screenmc_videoplayer()
 							FILE* fbseek = fopen(fileseek, "r");
 							if(fbseek != NULL)
 							{
-//								int ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
-//printf("ret=%d\n", ret);
-//								if(ret == 0 || ret == 1)
-								if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
+								int ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
+printf("ret=%d\n", ret);
+								if(ret == 0 || ret == 1)
 								{
 									char* skip1 = calloc(1, 20); 
 									if(skip1 != NULL) 
