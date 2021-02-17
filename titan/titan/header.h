@@ -472,7 +472,6 @@ void screennetwork_restart(struct inetwork* net, int flag);
 void screennetwork_test();
 void screennetwork_wlan();
 void screennetwork_password();
-void screennetwork_ipsec();
 
 //channel.h
 int writechannel(const char *filename);
