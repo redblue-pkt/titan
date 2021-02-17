@@ -910,11 +910,9 @@ int fewait(struct dvbdev* node)
 	timer = 500;
 #endif
 
-	if(checkchipset("3798MV200") == 1)
-		timer = 5000;
 	if(checkrealbox("HD51") == 1 || checkrealbox("HD60") == 1 || checkrealbox("HD61") == 1)
 		timer = 1000;
-	if(checkchipset("HI3798MV200") == 1)
+	if(checkchipset("HI3798MV200") == 1 || checkchipset("3798MV200") == 1)
 		timer = 4000;
 		//timer = 6000;
 	if(checkrealbox("SPARK7162") == 1)
