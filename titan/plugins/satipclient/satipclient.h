@@ -111,21 +111,22 @@ start:
 		{
 			writelist(myconfig, vtunerconf);
 
-			debug(10, "cmd: %s", satipclientconfig);
-			system(satipclientconfig);
-
-			debug(10, "cmd: %s", satipclientstop);
-			system(satipclientstop);
-			debug(10, "cmd: %s", satipclientstart);
-			ret = system(satipclientstart);
-			if(ret == 0)
-				textbox(_("Message"), _("SAT-IP Client started and config saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
-			else
-				textbox(_("Message"), _("SAT-IP Client not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-
 			if(textbox(_("Message"), _("Titan will be restarted ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
 				oshutdown(3, 1);
+			else
+			{
+				debug(10, "cmd: %s", satipclientconfig);
+				system(satipclientconfig);
 
+				debug(10, "cmd: %s", satipclientstop);
+				system(satipclientstop);
+				debug(10, "cmd: %s", satipclientstart);
+				ret = system(satipclientstart);
+				if(ret == 0)
+					textbox(_("Message"), _("SAT-IP Client started and config saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+				else
+					textbox(_("Message"), _("SAT-IP Client not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			}
 			drawscreen(satipclient, 0, 0);			
 
 			break;
