@@ -120,9 +120,9 @@ start:
 				system(satipclientconfig);
 
 				debug(10, "cmd: %s", satipclientrestart);
-				ret = system(satipclientstart);
+				ret = system(satipclientrestart);
 				if(ret == 0)
-					textbox(_("Message"), _("SAT-IP Client started and config saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+					textbox(_("Message"), _("SAT-IP Client restarted and config saved"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 				else
 					textbox(_("Message"), _("SAT-IP Client not started,\nPlease check your config."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			}
@@ -144,11 +144,9 @@ start:
 			debug(10, "cmd: %s", satipclientconfig);
 			system(satipclientconfig);
 
-			debug(10, "cmd: %s", satipclientstop);
-			system(satipclientstop);
-
 			debug(10, "cmd: %s", satipclientstart);
 			ret = system(satipclientstart);
+
 			if(ret == 0)
 				textbox(_("Message"), _("SAT-IP Client started."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			else
