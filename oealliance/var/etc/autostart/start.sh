@@ -202,13 +202,13 @@ startminisatip()
 
 startsatipclient()
 {
-	echo "[$0] startsatipclient: check"
-	activ=$(cat /mnt/config/start-config | sed -nr "s/.*satipclient=([^*]+)*/\1/p")
-	if [ "$activ" == "y" ];	then
+#	echo "[$0] startsatipclient: check"
+#	activ=$(cat /mnt/config/start-config | sed -nr "s/.*satipclient=([^*]+)*/\1/p")
+#	if [ "$activ" == "y" ];	then
 		if [ -e /mnt/network/vtuner.conf ];then cp /mnt/network/vtuner.conf /etc;fi
 		echo "[$0] startsatipclient: starting"
 		/etc/init.d/satipclient restart
-	fi
+#	fi
 }
 
 startgui()
