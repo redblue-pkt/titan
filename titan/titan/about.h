@@ -1,6 +1,7 @@
 #ifndef ABOUT_H
 #define ABOUT_H
 
+
 int screenabout(void) 
 {
 	char* tmpstr = NULL;
