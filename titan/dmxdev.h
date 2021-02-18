@@ -486,7 +486,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 			return 0;
 		}
 	}
-
+#ifndef SIMULATE 
 #ifdef MIPSEL
 	//Workaround da ansonsten DVR4 nicht funktioniert (Treiberproblem)
 	
@@ -520,6 +520,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 		}
 	}
 //#endif
+#endif
 	debug(200, "dmxsetsource end");
 	return 0;
 }

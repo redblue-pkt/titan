@@ -1675,8 +1675,10 @@ struct status
 	char* extplugin;
 	//node oled blinken
 	int skinblink;
+#ifndef SIMULATE
 	//BCM accel interface 
 	int bcm;
+#endif
 	//Volume
 	int volume;
 	int screenshot;

@@ -1060,6 +1060,7 @@ void playersubtitleclean(char* data, int len)
 }
 #endif
 
+#ifndef SIMULATE
 #ifdef EPLAYER4
 void playersubtitle_thread()
 {
@@ -1202,6 +1203,7 @@ subend:
 		free(sub_text); sub_text = NULL;
 		subtitlethread = NULL;
 	}
+#endif
 #endif
 
 #ifdef EPLAYER4
