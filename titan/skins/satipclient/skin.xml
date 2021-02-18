@@ -10,9 +10,9 @@
 		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png" valign="middle" posx="0" posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" valign="middle" posx="70" posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b3" picmem="skin/key_control_cross_70x40.png" valign="middle" posx="140" posy="center" width="70" height="40">
-		<node parent="buttonbar" name="b3" picmem="skin/key_red_30x30.png"   valign="middle" posx="220"   posy="center" width="170" height="30" textposx="40" text="STOP">
-		<node parent="buttonbar" name="b4" picmem="skin/key_green_30x30.png" valign="middle" posx="400"   posy="center" width="280" height="30" textposx="40" text="START">
-		<node parent="buttonbar" name="b5" picmem="skin/key_yellow_30x30.png" valign="middle" posx="620"   posy="center" width="280" height="30" textposx="40" text="SCAN">
+#		<node parent="buttonbar" name="b3" picmem="skin/key_red_30x30.png"   valign="middle" posx="220"   posy="center" width="170" height="30" textposx="40" text="STOP">
+#		<node parent="buttonbar" name="b4" picmem="skin/key_green_30x30.png" valign="middle" posx="400"   posy="center" width="280" height="30" textposx="40" text="START">
+#		<node parent="buttonbar" name="b5" picmem="skin/key_yellow_30x30.png" valign="middle" posx="620"   posy="center" width="280" height="30" textposx="40" text="SCAN">
 		<node parent="buttonbar" name="b6" picmem="skin/key_blue_30x30.png" valign="middle" posx="800"   posy="center" width="280" height="30" textposx="40" text="Tunerconfig">
 </screen>
 
