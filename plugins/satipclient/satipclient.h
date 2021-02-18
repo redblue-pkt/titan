@@ -26,11 +26,17 @@ start:
 	struct skin* tmp = NULL;
 	struct skin* node = NULL;
 	
+	struct skin* load = getscreen("loading");
+	
 	cmd = ostrcat(satipclientrun, " ", 0, 0);
 	cmd = ostrcat(cmd, satipclientscan, 1, 0);
 	debug(10, "cmd: %s", cmd);
+	
+	drawscreen(load, 0, 0);
 	tmpstr = command(cmd);
 	debug(10, "tmpstr: %s", tmpstr);
+	clearscreen(load);
+
 	free(cmd), cmd = NULL;
 	free(tmpstr), tmpstr = NULL;
 
@@ -128,8 +134,8 @@ start:
 		{
 			writelist(myconfig, vtunerconf);
 
-			if(textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
-				oshutdown(3, 1);
+			if(textbox(_("Message"), _("Box will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
+				oshutdown(2, 1);
 			else
 			{
 				debug(10, "cmd: %s", satipclientconfig);
@@ -146,11 +152,11 @@ start:
 
 			break;
 		}
-		else if(rcret == getrcconfigint("rcred", NULL))
+/*		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			debug(10, "cmd: %s", satipclientstop);
-			system(satipclientstop);
-			textbox(_("Message"), _("SAT-IP Client now stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+			//system(satipclientstop);
+			//textbox(_("Message"), _("SAT-IP Client now stopped"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
 			drawscreen(satipclient, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rcgreen", NULL))
@@ -186,7 +192,7 @@ start:
 
 			restart = 1;
 			break;
-		}
+		}*/
 		else if(rcret == getrcconfigint("rcblue", NULL))
 		{
 			screentunerconfig();
