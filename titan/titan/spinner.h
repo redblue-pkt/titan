@@ -75,8 +75,10 @@ findspinner:
 
 	//restore bg
 	restorescreen(bg, spinner);
+#ifndef SIMULATE
 	if(status.bcm != 1)
 		blitfb(0);
+#endif
 	m_unlock(&status.drawingmutex, 0);
 	usleep(1000);
 }

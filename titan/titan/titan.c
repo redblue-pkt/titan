@@ -112,9 +112,13 @@ char* tunermerkmale = NULL;
 #include "videodev.h"
 #include "audiodev.h"
 #include "cidev.h"
+#ifndef SIMULATE
 #include "cadev.h"
+#endif
 #include "scdev.h"
+#ifndef SIMULATE
 #include "cacc.h"
+#endif
 #include "ca.h"
 #include "dvrdev.h"
 #include "cam.h"
@@ -256,7 +260,9 @@ char* tunermerkmale = NULL;
 #include "settings_autostart.h"
 #include "settings_overclocking.h"
 #include "settings_pluginbutton.h"
+#ifndef SIMULATE
 #include "bcm.h"
+#endif
 #include "settings_mediabutton.h"
 #include "oled.h"
 #ifdef MIPSEL
@@ -265,7 +271,6 @@ char* tunermerkmale = NULL;
 #endif
 
 #define TIMECODE "1543512105"
-
 #if !defined(HAVE_HISILICON_ACCEL)
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
@@ -294,6 +299,7 @@ extern void dinobot_accel_fill(
 extern bool dinobot_accel_has_alphablending();
 #endif
 
+#ifndef SIMULATE
 #ifdef BCM_ACCEL
 extern int bcm_accel_init(void);
 extern void bcm_accel_close(void);
@@ -308,6 +314,7 @@ extern void bcm_accel_fill(
 		int x, int y, int width, int height,
 		unsigned long color);
 extern bool bcm_accel_has_alphablending();
+#endif
 #endif
 // mipsel end
 
