@@ -4,10 +4,6 @@
 #define xx_debug    0
 #define yy_debug    0
 
-#ifdef CERTIN
-#include "certs.h"
-#include <shadow.h>
-#endif
 #ifdef QUIET
 char authie[7];
 char devie[7];
