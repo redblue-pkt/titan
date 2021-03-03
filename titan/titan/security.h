@@ -2125,9 +2125,9 @@ struct update* createupdatelist(int mode)
 		cmd = ostrcat(cmd, newnode->auth, 1, 0);
 #ifdef OEBUILD
 		if(newnode->imgtype == 1)
-			cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+			cmd = ostrcat(cmd, " dev openaaf.dyndns.tv", 1, 0);
 		else
-			cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
+			cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);
 #else 
 		if(newnode->imgtype == 1)
 			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
@@ -2159,9 +2159,9 @@ struct update* createupdatelist(int mode)
 		cmd = ostrcat(cmd, newnode->auth, 1, 0);
 #ifdef OEBUILD
 		if(newnode->imgtype == 1)
-			cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+			cmd = ostrcat(cmd, " dev openaaf.dyndns.tv", 1, 0);
 		else
-			cmd = ostrcat(cmd, " release titannit.dyndns.tv", 1, 0);
+			cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);
 #else
 		if(newnode->imgtype == 1)
 			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);

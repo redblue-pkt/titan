@@ -7731,7 +7731,7 @@ char* system_logs(int mode)
 		path = ostrcat(path, ".titan", 1, 0);
 
 #ifdef OEBUILD
-		tmpstr1 = gethttp("titannit.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr1 = gethttp("openaaf.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 #ifdef SH4
 		tmpstr = readfromlinetoline(tmpstr1, 37, 537, 1);
 #else
@@ -7753,7 +7753,7 @@ char* system_logs(int mode)
 #endif
 
 #ifdef OEBUILD
-		tmpstr1 = gethttp("titannit.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr1 = gethttp("openaaf.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 #ifdef SH4
 		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
 #else
