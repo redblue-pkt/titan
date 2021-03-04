@@ -1,4 +1,4 @@
-ALL_CFLAGS= -DSH4 -DEPLAYER3AUS -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable
+ALL_CFLAGS= -DSH4 -DEPLAYER3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable
 
 INCLUDES = \
 	-I../../../tufsbox/cdkroot/usr/include \
