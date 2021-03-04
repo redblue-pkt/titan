@@ -32,14 +32,14 @@ fi
 
 init()
 {
-	echo "Burning Series ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "Burning Series ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-        echo "Genres#$SRC $SRC genres#http://atemio.dyndns.tv/mediathek/menu/serien.genre.jpg#serien.genre.jpg#$NAME#0" >/tmp/tithek/$PARSER.mainmenu.list
-        echo "All Series#$SRC $SRC allseries#http://atemio.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
-        echo "Search#$SRC $SRC search#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
+        echo "Genres#$SRC $SRC genres#http://openaaf.dyndns.tv/mediathek/menu/serien.genre.jpg#serien.genre.jpg#$NAME#0" >/tmp/tithek/$PARSER.mainmenu.list
+        echo "All Series#$SRC $SRC allseries#http://openaaf.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
+        echo "Search#$SRC $SRC search#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#0" >>/tmp/tithek/$PARSER.mainmenu.list
 	echo "/tmp/tithek/$PARSER.mainmenu.list"
 }
 
@@ -57,7 +57,7 @@ BEGIN { in_genres = 0
                    j = index($0, "</strong></span>") - i
                    title = substr($0, i, j)
                    pic = tolower(title)
-                   print title "#" SRC " " SRC " series " title "#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
+                   print title "#" SRC " " SRC " series " title "#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
                    next
                  }
 
@@ -81,7 +81,7 @@ series()
                       k = i + j + 2
                       l = index(substr($0, k), "</a></li>") - 1
                       title = substr($0, k, l)
-                      print title "#" SRC " " SRC " staffel " url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#0"
+                      print title "#" SRC " " SRC " staffel " url "#http://openaaf.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#0"
                    }
                    next
                  }
@@ -105,7 +105,7 @@ allseries()
                       k = i + j + 2
                       l = index(substr($0, k), "</a></li>") - 1
                       title = substr($0, k, l)
-                      print title "#" SRC " " SRC " staffel " url "#http://atemio.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#0"
+                      print title "#" SRC " " SRC " staffel " url "#http://openaaf.dyndns.tv/mediathek/menu/default.jpg#default.jpg#" NAME "#0"
                    }
                    next
                  }
@@ -129,7 +129,7 @@ BEGIN { in_class_clearfix = 0
                       k = i + j + 2
                       l = index(substr($0, k), "</a></li>") - 1
                       staffel = substr($0, k, l)
-                      print "Staffel " staffel "#" SRC " " SRC " episode " url " " staffel "#http://atemio.dyndns.tv/mediathek/menu/s" staffel ".jpg#s" staffel ".jpg#" NAME "#0"
+                      print "Staffel " staffel "#" SRC " " SRC " episode " url " " staffel "#http://openaaf.dyndns.tv/mediathek/menu/s" staffel ".jpg#s" staffel ".jpg#" NAME "#0"
                    }
                  }
 
@@ -159,7 +159,7 @@ BEGIN { in_table_row = 0
                       k = i + j + 2
                       l = index(substr($0, k), "</a></td>") - 1
                       episode = substr($0, k, l)
-                      print title "#" SRC " " SRC " hosterlist " url "#http://atemio.dyndns.tv/mediathek/menu/s" PARAM2 "e" episode ".jpg#s" PARAM2 "e" episode ".jpg#" NAME "#0"
+                      print title "#" SRC " " SRC " hosterlist " url "#http://openaaf.dyndns.tv/mediathek/menu/s" PARAM2 "e" episode ".jpg#s" PARAM2 "e" episode ".jpg#" NAME "#0"
                    }
                    next
                  }
@@ -193,7 +193,7 @@ BEGIN { in_hosterlist = 0
                  i = index($0, "</span>&nbsp;") + 13
                  title = substr($0, i)
                  pic = tolower(title)
-                 print title "#" SRC " " SRC " hoster " url "#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+                 print title "#" SRC " " SRC " hoster " url "#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
               }
               next
             }

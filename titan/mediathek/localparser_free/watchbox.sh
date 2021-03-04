@@ -35,15 +35,15 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Neue Filme#$SRC $SRC new 1 0 'filme/neu/'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Neue Serien#$SRC $SRC series 1 0 'serien/neu/'#http://atemio.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Filme suchen#$SRC $SRC search 1 0 'https://api.watchbox.de/v1/search/?active=true&maxPerPage=30&page=1&types=%5B%22film%22%5D&term='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
-	echo "Serien suchen#$SRC $SRC search2 1 0 'https://api.watchbox.de/v1/search/?active=true&maxPerPage=30&page=1&types=%5B%22serie%22%5D&term='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
+	echo "Neue Filme#$SRC $SRC new 1 0 'filme/neu/'#http://openaaf.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Neue Serien#$SRC $SRC series 1 0 'serien/neu/'#http://openaaf.dyndns.tv/mediathek/menu/serien.jpg#serien.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Filme suchen#$SRC $SRC search 1 0 'https://api.watchbox.de/v1/search/?active=true&maxPerPage=30&page=1&types=%5B%22film%22%5D&term='#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
+	echo "Serien suchen#$SRC $SRC search2 1 0 'https://api.watchbox.de/v1/search/?active=true&maxPerPage=30&page=1&types=%5B%22serie%22%5D&term='#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
 
 	if [ "`echo $TMP/$PARSER.new.*.list`" != "$TMP/$PARSER.new.*.list" ] ; then
 		rm $TMP/$PARSER.new.*.list
@@ -80,7 +80,7 @@ new()
 			NEWPAGE=`echo $ROUND | sed 's/href=/\nhref=/' | sed 's!href=!href=https://www.watchbox.de!g' | grep ^"href=" | cut -d '"' -f2`
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=watchbox_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -98,7 +98,7 @@ new()
 		
 		NEWPAGE=`expr $CURPAGE + 1`
 		
-		echo "Page $NEWPAGE#$SRC $SRC new $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
+		echo "Page $NEWPAGE#$SRC $SRC new $NEWPAGE $MAXPAGE '$PAGE'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
 		fi
 		
 
@@ -130,7 +130,7 @@ series()
 			NEWPAGE=`echo $ROUND | sed 's/href=/\nhref=/' | sed 's!href=!href=https://www.watchbox.de!g' | grep ^"href=" | cut -d '"' -f2`
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=watchbox_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -148,7 +148,7 @@ series()
 		
 		NEWPAGE=`expr $CURPAGE + 1`
 		
-		echo "Page $NEWPAGE#$SRC $SRC series $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
+		echo "Page $NEWPAGE#$SRC $SRC series $NEWPAGE $MAXPAGE '$PAGE'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
 		fi
 		
 
@@ -184,7 +184,7 @@ season()
 			NEWPAGE=`echo $ROUND | sed 's/href=/\nhref=/' | sed 's!href=!href=https://www.watchbox.de!g' | grep ^"href=" | cut -d '"' -f2`
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=watchbox_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -232,7 +232,7 @@ episode()
 			NEWPAGE=`echo $ROUND | sed 's/href=/\nhref=/' | sed 's!href=!href=https://www.watchbox.de!g' | grep ^"href=" | cut -d '"' -f2`
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=watchbox.$INPUT.`echo $PIC | tr '/' '\n' | tail -n1`
@@ -273,7 +273,7 @@ search()
 			NEWPAGE="/filme/"$SEOPATH"-"$ENTITYID".html"
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=watchbox_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -295,7 +295,7 @@ search()
 		if [ "$MAXPAGE" -gt "$CURPAGE" ] ; then
 				NEWPAGE=`expr $CURPAGE + 1`
 				PAGE=$(echo $PAGE | sed -e "s!page=$CURPAGE!page=$NEWPAGE!g")
-				echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
+				echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
 		fi
 
 		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1
@@ -318,7 +318,7 @@ search2()
 			NEWPAGE="/filme/"$SEOPATH"-"$ENTITYID".html"
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=watchbox_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -341,7 +341,7 @@ search2()
 			
 			NEWPAGE=`expr $CURPAGE + 1`
 			PAGE=$(echo $PAGE | sed -e "s!page=$CURPAGE!page=$NEWPAGE!g")
-			echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
+			echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
 		fi
 
 		rm $TMP/cache.$PARSER.$INPUT.* > /dev/null 2>&1

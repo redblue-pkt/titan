@@ -18,7 +18,7 @@ char* hoster(char* url)
 	string_tolower(tmplink);
 
 	if(!file_exist("/tmp/localhoster"))
-		localparser_init("http://atemio.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
 
 	drawscreen(load, 0, 0);
 
@@ -121,7 +121,7 @@ char* hoster(char* url)
 	if(streamurl == NULL && skip == 0)
 	{
 		if(!file_exist("/tmp/localhoster"))
-			localparser_init("http://atemio.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+			localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
 
 		drawscreen(load, 0, 0);
 
@@ -883,7 +883,7 @@ int all_search_local(struct skin* grid, struct skin* listbox, struct skin* count
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/all/all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/all/all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -913,7 +913,7 @@ int all_search_local(struct skin* grid, struct skin* listbox, struct skin* count
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/all.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -1184,7 +1184,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *line = NULL, *path = NULL;
 	struct skin* load = getscreen("loading");
 
-	if(ostrcmp("http://atemio.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
+	if(ostrcmp("http://openaaf.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
 	{
 		path = ostrcat("/tmp/localparser", NULL, 0, 0);
 		drawscreen(load, 0, 0);
@@ -1200,7 +1200,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			if(!file_exist(path))
 				mkdir(path, 0777);
 	
-			gethttp("atemio.dyndns.tv", "/mediathek/parser_free.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
+			gethttp("openaaf.dyndns.tv", "/mediathek/parser_free.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
 	
 			cmd = ostrcat("tar -xf /tmp/parser.tar -C ", path, 0, 0);
 			printf("[tithek] start cmd: %s\n", cmd);
@@ -1212,7 +1212,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 	
 			if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 			{
-				gethttp("atemio.dyndns.tv", "/mediathek/parser_secret.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
+				gethttp("openaaf.dyndns.tv", "/mediathek/parser_secret.tar", 80, "/tmp/parser.tar", HTTPAUTH, 5000, NULL, 0);
 				cmd = ostrcat("tar -xf /tmp/parser.tar -C ", path, 0, 0);
 				printf("[tithek] start cmd: %s\n", cmd);
 				system(cmd);
@@ -1222,7 +1222,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 				unlink("/tmp/parser.tar");
 			}
 	
-			gethttp("atemio.dyndns.tv", "/mediathek/hoster.tar", 80, "/tmp/hoster.tar", HTTPAUTH, 5000, NULL, 0);
+			gethttp("openaaf.dyndns.tv", "/mediathek/hoster.tar", 80, "/tmp/hoster.tar", HTTPAUTH, 5000, NULL, 0);
 			cmd = ostrcat("tar -xf /tmp/hoster.tar -C ", "/tmp/localhoster", 0, 0);
 			printf("[tithek] start cmd: %s\n", cmd);
 			system(cmd);
@@ -1235,7 +1235,7 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 			struct download* dnode = calloc(1, sizeof(struct download));
 			if(dnode != NULL)
 			{
-				dnode->host = ostrcat("atemio.dyndns.tv", NULL, 0, 0);
+				dnode->host = ostrcat("openaaf.dyndns.tv", NULL, 0, 0);
 				dnode->page = ostrcat("/mediathek/python.tar", NULL, 0, 0);	
 				dnode->port = 80;
 				dnode->filename = ostrcat("/tmp/python.tar", NULL, 0, 0);
@@ -1536,7 +1536,7 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 
 		if(tmpstr != NULL)
 		{
-			tmpstr = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", tmpstr, 1);
+			tmpstr = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", tmpstr, 1);
 			menu = ostrcat(filename, NULL, 0, 0);
 //			writesys(menu, tmpstr, 0);
 			struct tithek* tnode = (struct tithek*)listbox->select->handle;

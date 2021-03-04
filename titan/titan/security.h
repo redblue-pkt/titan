@@ -749,7 +749,7 @@ void checkserial(char* input)
 	if(status.security == 1)
 	{
 		char* blackfile = NULL;
-		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		blackfile = gethttp("openaaf.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		count = 0;
 		if(blackfile != NULL)
@@ -1424,7 +1424,7 @@ int checkbox(char* box)
 void checkgthread()
 {
 	char* tmpstr = NULL;
-	tmpstr = gethttp("atemio.dyndns.tv", "/svn/auth/connect", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+	tmpstr = gethttp("openaaf.dyndns.tv", "/svn/auth/connect", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 	int count = 0;
 	struct splitstr* ret1 = NULL;
@@ -1876,7 +1876,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 
 		//Blacklist check
 		char* blackfile = NULL;
-		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		blackfile = gethttp("openaaf.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		count = 0;
 		if(blackfile != NULL)
@@ -1916,7 +1916,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 /////////////
 
 		char* authfile = NULL, *idextra = NULL;
-		authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		authfile = gethttp("openaaf.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		count = 0;
 		i = 0;
@@ -2056,18 +2056,18 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		send = ostrcat(send, HTTPAUTH, 1, 0);
 		send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);
 		send = ostrcat(send, "\r\nHost: ", 1, 0);
-		send = ostrcat(send, "atemio.dyndns.tv", 1, 0);
+		send = ostrcat(send, "openaaf.dyndns.tv", 1, 0);
 		send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", 1, 0);
 		send = ostrcat(send, "\r\nConnection: close", 1, 0);
 		send = ostrcat(send, "\r\nReferer: ", 1, 0);
-		send = ostrcat(send, "http://atemio.dyndns.tv/control/", 1, 0);
+		send = ostrcat(send, "http://openaaf.dyndns.tv/control/", 1, 0);
 		send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded", 1, 0);
 		send = ostrcat(send, "\r\n\r\n", 1, 0);
 		send = ostrcat(send, hash, 1, 0);
 #ifdef OBI
 		debug(299, "send: %s", send);
 #endif
-		tmpstr = gethttpreal("atemio.dyndns.tv", "/control/", 80, NULL, HTTPAUTH, NULL, 0, send, NULL, 5000, 1);
+		tmpstr = gethttpreal("openaaf.dyndns.tv", "/control/", 80, NULL, HTTPAUTH, NULL, 0, send, NULL, 5000, 1);
 #ifdef OBI
 		debug(299, "tmpstr: %s", tmpstr);
 #endif
@@ -2132,7 +2132,7 @@ struct update* createupdatelist(int mode)
 		if(newnode->imgtype == 1)
 			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 		else
-			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+			cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);
 #endif
 		system(cmd);
 		free(cmd),cmd = NULL;
@@ -2166,7 +2166,7 @@ struct update* createupdatelist(int mode)
 		if(newnode->imgtype == 1)
 			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 		else
-			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+			cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);
 #endif
 		system(cmd);
 		free(cmd),cmd = NULL;

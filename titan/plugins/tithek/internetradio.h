@@ -21,7 +21,7 @@ int internetradio_search_local(struct skin* grid, struct skin* listbox, struct s
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/internetradio/streams/internetradio.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/internetradio/streams/internetradio.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -51,7 +51,7 @@ int internetradio_search_local(struct skin* grid, struct skin* listbox, struct s
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/internetradio.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;

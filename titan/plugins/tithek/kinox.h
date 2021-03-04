@@ -199,7 +199,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							line = ostrcat(line, pic, 1, 0);
 						}
 						else
-							line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+							line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 						line = ostrcat(line, "#kinox_search_", 1, 0);
 
 						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
@@ -218,7 +218,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 			free(ret1), ret1 = NULL;
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/kinox.search.", oitoa(time(NULL)), 0, 1);
 				menu = ostrcat(menu, ".list", 1, 0);
 
@@ -256,7 +256,7 @@ int kinox_search_local(struct skin* grid, struct skin* listbox, struct skin* cou
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/kinox/streams/kinox.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/kinox/streams/kinox.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -286,7 +286,7 @@ int kinox_search_local(struct skin* grid, struct skin* listbox, struct skin* cou
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/kinox.search.", oitoa(time(NULL)), 0, 1);
 				menu = ostrcat(menu, ".list", 1, 0);
 
@@ -410,7 +410,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							line = ostrcat(line, ";", 1, 0);
 							line = ostrcat(line, oitoa(j), 1, 0);
 							line = ostrcat(line, "#", 1, 0);
-							line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
+							line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/s", 1, 0);
 							line = ostrcat(line, oitoa(i), 1, 0);
 							line = ostrcat(line, "e", 1, 0);
 							line = ostrcat(line, oitoa(j), 1, 0);
@@ -561,7 +561,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							line = ostrcat(line, "http:", 1, 0);
 						line = ostrcat(line, url, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+						line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/", 1, 0);
 						line = ostrcat(line, pichname, 1, 0);
 						line = ostrcat(line, ".jpg#kinox_", 1, 0);
 						line = ostrcat(line, pichname, 1, 0);
@@ -596,7 +596,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 	if(line != NULL)
 	{
-		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+		line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		if(series == 0)
 		{
 			tmpstr = ostrcat("/tmp/tithek/kinox.hoster.", oitoa(time(NULL)), 0, 1);
@@ -930,7 +930,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, url, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+						line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/", 1, 0);
 						line = ostrcat(line, pichname, 1, 0);
 						line = ostrcat(line, ".jpg#kinox_", 1, 0);
 						line = ostrcat(line, pichname, 1, 0);
@@ -960,7 +960,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 	free(tmpstr), tmpstr = NULL;	
 	if(line != NULL)
 	{
-		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+		line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.series.", oitoa(time(NULL)), 0, 1);
 		tmpstr = ostrcat(tmpstr, ".list", 1, 0);
 			
@@ -1075,7 +1075,7 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 			free(ret1), ret1 = NULL;
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/kinox.search.cast.", oitoa(time(NULL)), 0, 1);
 				menu = ostrcat(menu, ".list", 1, 0);
 			

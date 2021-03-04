@@ -36,15 +36,15 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Channels#$SRC $SRC channels 'good.json'#http://atemio.dyndns.tv/mediathek/menu/channels.jpg#channels.jpg#$NAME#0" > $TMP/$FILENAME.list
-	echo "Shows#$SRC $SRC shows 'good.json'#http://atemio.dyndns.tv/mediathek/menu/shows.jpg#shows.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	echo "Date#$SRC $SRC date 'good.json'#http://atemio.dyndns.tv/mediathek/menu/date.jpg#date.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	echo "ALL#$SRC $SRC videos 'good.json'#http://atemio.dyndns.tv/mediathek/menu/all.jpg#all.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Channels#$SRC $SRC channels 'good.json'#http://openaaf.dyndns.tv/mediathek/menu/channels.jpg#channels.jpg#$NAME#0" > $TMP/$FILENAME.list
+	echo "Shows#$SRC $SRC shows 'good.json'#http://openaaf.dyndns.tv/mediathek/menu/shows.jpg#shows.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Date#$SRC $SRC date 'good.json'#http://openaaf.dyndns.tv/mediathek/menu/date.jpg#date.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "ALL#$SRC $SRC videos 'good.json'#http://openaaf.dyndns.tv/mediathek/menu/all.jpg#all.jpg#$NAME#0" >> $TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 } 
 
@@ -76,7 +76,7 @@ channels1()
 	for ROUND0 in $watchlist; do
 		TITLE=`echo $ROUND0 | tr '/' '-' | sed 's/-filme//g'`
 		filename=`echo $TITLE | tr 'A-Z' 'a-z'`	
-		echo "$TITLE#$SRC $SRC videosgrep 'good.json' '$ROUND0'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+		echo "$TITLE#$SRC $SRC videosgrep 'good.json' '$ROUND0'#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 	done
   	echo "$TMP/$FILENAME.list"
 }
@@ -91,7 +91,7 @@ date()
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | cut -d'"' -f2`
 			filename=`echo $TITLE | tr 'A-Z' 'a-z'`	
-			echo "$TITLE#$SRC $SRC videosgrep 'good.json' $ROUND#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC videosgrep 'good.json' $ROUND#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done 3<$TMP/cache.$FILENAME.1
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -106,7 +106,7 @@ channels()
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | cut -d'"' -f2`
 			filename=`echo $TITLE | tr 'A-Z' 'a-z'`		
-			echo "$TITLE#$SRC $SRC videosgrep 'good.json' $ROUND#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC videosgrep 'good.json' $ROUND#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done 3<$TMP/cache.$FILENAME.1
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -121,7 +121,7 @@ shows()
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | cut -d'"' -f2`
 			filename=`echo $TITLE | tr 'A-Z' 'a-z'`	
-			echo "$TITLE#$SRC $SRC videosgrep 'good.json' $ROUND#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC videosgrep 'good.json' $ROUND#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done 3<$TMP/cache.$FILENAME.1
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -146,7 +146,7 @@ videosgrep()
 				# print "222222" $0
 
 				split($0, a, "\"")
-            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+            	pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 
 				sender = a[2]
 				title = a[4]
@@ -199,7 +199,7 @@ videos()
 				# print "a14" a[14]
 				# print "a15" a[15]
 				
-            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+            	pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 
 				sender = a[2]
 				title = a[4]

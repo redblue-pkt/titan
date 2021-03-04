@@ -209,7 +209,7 @@ void screensystem_update(int mode)
 				if(node->imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
-					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
+					cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);	
 #endif
 				system(cmd);
 				free(cmd),cmd = NULL;
@@ -258,7 +258,7 @@ void screensystem_update(int mode)
 				if(node->imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
-					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
+					cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);	
 #endif
 				system(cmd);
 				free(cmd),cmd = NULL;
@@ -340,7 +340,7 @@ void screensystem_update(int mode)
 					if(node->imgtype == 1)
 						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
-						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+						cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);
 #endif
 #ifdef OEBUILD
 					if(file_exist("/media/hdd") && isdir("/media/hdd"))

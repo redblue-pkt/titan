@@ -151,7 +151,7 @@ int movie2k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					pic = string_resub(from, from, tmpstr, 0);	
 					pic = string_resub("<img src='", "' alt=", pic, 1);	
 					if(pic == NULL)
-						pic = ostrcat("http://atemio.dyndns.tv/mediathek/menu/default.jpg", NULL, 0, 0);
+						pic = ostrcat("http://openaaf.dyndns.tv/mediathek/menu/default.jpg", NULL, 0, 0);
 
 					if(ostrstr(link, "online-serie-") != NULL)
 						type = ostrcat("40", NULL, 0, 0);
@@ -201,7 +201,7 @@ int movie2k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 
 		if(line != NULL)
 		{
-			line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+			line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 			menu = ostrcat("/tmp/tithek/movie2k.search.", oitoa(time(NULL)), 0, 1);
 			menu = ostrcat(menu, ".list", 1, 0);
 			writesys(menu, line, 0);
@@ -239,7 +239,7 @@ int movie2k_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/movie2k/streams/movie2k.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/movie2k/streams/movie2k.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -269,7 +269,7 @@ int movie2k_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/movie2k.search.", oitoa(time(NULL)), 0, 1);
 				menu = ostrcat(menu, ".list", 1, 0);
 				writesys(menu, line, 0);
@@ -369,7 +369,7 @@ printf("-----------------------------------------------------\n");
 					ostrcatbig(&line, tmphname, &maxlen, &bigpos);
 					ostrcatbig(&line, "#", &maxlen, &bigpos);
 					ostrcatbig(&line, url, &maxlen, &bigpos);
-					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://openaaf.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 					ostrcatbig(&line, pichname, &maxlen, &bigpos);
 					ostrcatbig(&line, ".jpg#movie2k_", &maxlen, &bigpos);
 					ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -390,7 +390,7 @@ printf("-----------------------------------------------------\n");
 
 	if(line != NULL)
 	{
-		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+		line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		tmpstr = ostrcat("/tmp/tithek/movie2k.hoster.", oitoa(time(NULL)), 0, 1);
 		tmpstr = ostrcat(tmpstr, ".list", 1, 0);
 
@@ -505,7 +505,7 @@ int movie2k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 							ostrcatbig(&line, episode, &maxlen, &bigpos);
 							ostrcatbig(&line, "#http://www.movie2k.to/", &maxlen, &bigpos);
 							ostrcatbig(&line, link, &maxlen, &bigpos);
-							ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
+							ostrcatbig(&line, "#http://openaaf.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
 							ostrcatbig(&line, ci, &maxlen, &bigpos);
 							ostrcatbig(&line, "e", &maxlen, &bigpos);
 //							ostrcatbig(&line, cj, &maxlen, &bigpos);
@@ -537,7 +537,7 @@ int movie2k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 
 	if(line != NULL)
 	{
-		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+		line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		if(series == 0)
 		{
 			tmpstr = ostrcat("/tmp/tithek/movie2k.hoster.", oitoa(time(NULL)), 0, 1);
@@ -635,7 +635,7 @@ int movie2k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 					ostrcatbig(&line, lang, &maxlen, &bigpos);
 					ostrcatbig(&line, "#http://www.movie2k.to/", &maxlen, &bigpos);
 					ostrcatbig(&line, link, &maxlen, &bigpos);
-					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://openaaf.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
 					ostrcatbig(&line, season, &maxlen, &bigpos);
 					ostrcatbig(&line, ".jpg#s", &maxlen, &bigpos);
 					ostrcatbig(&line, season, &maxlen, &bigpos);
@@ -658,7 +658,7 @@ int movie2k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 
 	if(line != NULL)
 	{
-		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+		line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		tmpstr = ostrcat("/tmp/tithek/movie2k.series.", oitoa(time(NULL)), 0, 1);
 		tmpstr = ostrcat(tmpstr, ".list", 1, 0);
 
@@ -754,7 +754,7 @@ int movie2k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 					ostrcatbig(&line, lang, &maxlen, &bigpos);
 					ostrcatbig(&line, "#http://www.movie2k.to/", &maxlen, &bigpos);
 					ostrcatbig(&line, link, &maxlen, &bigpos);
-					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://openaaf.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
 					ostrcatbig(&line, season, &maxlen, &bigpos);
 					ostrcatbig(&line, "e", &maxlen, &bigpos);
 					ostrcatbig(&line, episode, &maxlen, &bigpos);
@@ -782,7 +782,7 @@ int movie2k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 
 	if(line != NULL)
 	{
-		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+		line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		tmpstr = ostrcat("/tmp/tithek/movie2k.series.listed.", oitoa(time(NULL)), 0, 1);
 		tmpstr = ostrcat(tmpstr, ".list", 1, 0);
 

@@ -34,13 +34,13 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Search 10#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAL9jCDWvRD2G5nUgBrLEgEhZTQsRvzt80&type=video&maxResults=10'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >$TMP/$FILENAME.list
-	echo "Search 50#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAL9jCDWvRD2G5nUgBrLEgEhZTQsRvzt80&type=video&maxResults=50'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Search 10#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAL9jCDWvRD2G5nUgBrLEgEhZTQsRvzt80&type=video&maxResults=10'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >$TMP/$FILENAME.list
+	echo "Search 50#$SRC $SRC search '/youtube/v3/search?q=%search%&regionCode=US&part=snippet&hl=en_US&key=AIzaSyAL9jCDWvRD2G5nUgBrLEgEhZTQsRvzt80&type=video&maxResults=50'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -65,7 +65,7 @@ search()
 			fi
 
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -97,11 +97,11 @@ hosterlist()
 
 		while read -u 3 ROUND; do
 			TITLE=`echo $ROUND | sed 's/mime=/\nfound=\&/g' | grep ^"found=&" | cut -d'&' -f2 | sed 's#%2F#/#g'`
-			PIC="http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr '/' '.'`.jpg"
+			PIC="http://openaaf.dyndns.tv/mediathek/menu/`echo $TITLE | tr '/' '.'`.jpg"
 			NEWPAGE="$ROUND"
 
 			if [ -z "$PIC" ] || [ "$PIC" = ".jpg" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 
 			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then

@@ -33,13 +33,13 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Kinofilme#$SRC $SRC new '/'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Filme#$SRC $SRC page 'filme'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Kinofilme#$SRC $SRC new '/'#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Filme#$SRC $SRC page 'filme'#http://openaaf.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
@@ -67,7 +67,7 @@ new()
 			NEWPAGE=`echo $ROUND | sed 's/<a~href=/\nhref=/' | grep ^"href=" | cut -d '"' -f2`
 
 			if [ "$PIC" == "$URL/" ] ; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=goldesel_`echo $PIC | cut -d '/' -f6`
@@ -108,7 +108,7 @@ page()
 			NEWPAGE=`echo $ROUND | cut -d '"' -f2`
 	
 			if [ "$PIC" == "$URL/" ] ; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=goldesel_`echo $PIC | cut -d '/' -f6`
@@ -142,7 +142,7 @@ hosterlist()
 			if [ -z "$TITLE" ];then TITLE=$PIC; fi
 			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 				PIC=`echo $TITLE | tr [A-Z] [a-z]`
-				LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://atemio.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
+				LINE="$TITLE#$SRC $SRC hoster $NEWPAGE '--referer $URL/$PAGE'#http://openaaf.dyndns.tv/mediathek/menu/$PIC.jpg#$PIC.jpg#$NAME#111"
 				echo "$LINE" >> $TMP/$PARSER.$INPUT.list
 			fi
 		done 3<$TMP/cache.$PARSER.$INPUT.2

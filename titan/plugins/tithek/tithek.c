@@ -134,11 +134,11 @@ void start(void)
 		addconfigtmp("tithek_kinox_pic", "0");
 
 //	if(checkbox("WHITEBOX") == 1)
-//		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
+//		screentithekplay("http://openaaf.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
 //	else
 //		screentithekplay("http://ks387398.kimsufi.com/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
-//		screentithekmenu("http://atemio.dyndns.tv/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
-		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
+//		screentithekmenu("http://openaaf.dyndns.tv/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
+		screentithekplay("http://openaaf.dyndns.tv/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
 
 	//reset markcolor  
 	status.listboxselectcol = tmplistboxselectcol;

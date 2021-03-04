@@ -36,14 +36,14 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Random Movie#$SRC $SRC new 0 0 '?get=movies'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$FILENAME.list
-	#echo "Serien#$SRC $SRC new 0 0 '?get=tv'#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$FILENAME.list
-    echo "Search#$SRC $SRC search 1 0 '?s=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$FILENAME.list
+	echo "Random Movie#$SRC $SRC new 0 0 '?get=movies'#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$FILENAME.list
+	#echo "Serien#$SRC $SRC new 0 0 '?get=tv'#http://openaaf.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >> $TMP/$FILENAME.list
+    echo "Search#$SRC $SRC search 1 0 '?s=%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$FILENAME.list
 
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
@@ -80,7 +80,7 @@ new()
 				NEWPAGE=https:$NEWPAGE
 			fi
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=goldesel_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -146,7 +146,7 @@ search()
 			fi
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=foxx_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -178,7 +178,7 @@ search()
 		fi
 		if [ "$CURPAGE" -lt "$MAXPAGE" ] ; then
 			NEWPAGE=`expr $CURPAGE + 1`
-			echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "Page ($NEWPAGE/$MAXPAGE)#$SRC $SRC search $NEWPAGE $MAXPAGE '$PAGE'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$FILENAME.list
         fi
 
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
@@ -227,7 +227,7 @@ hosterlist()
 			PIC=`echo $TITLE | tr [A-Z] [a-z]`
 #ffplay -debug 1 "https://master.foxx.to/videoplayback?hash=df8cbe41-1fcd-468e-be40-90b2aeef6a9c&expireAt=1533097023189" -user-agent "Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0" -headers "cookie: cf_clearance=2ace7e2a04dc45592043701ae70fc07b06a4244d-1533078966-14400;"
 #			REFERER=`echo "$TEMP" | sed -e 's/=/%3D/g' -e 's/&/%26/g'` 
-			LINE="Http Stream ($TITLE)#$NEWPAGE|User-Agent=$USERAGENT#http://atemio.dyndns.tv/mediathek/menu/foxx.jpg#foxx.jpg#$NAME#2"
+			LINE="Http Stream ($TITLE)#$NEWPAGE|User-Agent=$USERAGENT#http://openaaf.dyndns.tv/mediathek/menu/foxx.jpg#foxx.jpg#$NAME#2"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 	done 3<$TMP/cache.$FILENAME.6
@@ -256,7 +256,7 @@ season()
 			until [ "$i" -gt "$seasons" ]
 			do
 			TMPURL=`echo $TMPURL | sed -e "s/&season=.*//" -e "s/&episode=.*//" -e "s/&referrer=.*//"`
-			echo "Season $i#$SRC $SRC episode $i 0 '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/s"$i".jpg#s"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
+			echo "Season $i#$SRC $SRC episode $i 0 '$PAGE'#http://openaaf.dyndns.tv/mediathek/menu/s"$i".jpg#s"$i".jpg#$NAME#0" | sort -r >> $TMP/$FILENAME.list
 			i=`expr $i + 1` 
 			done
 		fi
@@ -306,7 +306,7 @@ episode()
 
 			if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 #				LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#$PIC#foxx.jpg#$NAME#0"
-				LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/s"$CURPAGE"e"$NUM".jpg#s"$CURPAGE"e"$NUM".jpg#$NAME#0"
+				LINE="$TITLE#$SRC $SRC hosterlist 0 0 $NEWPAGE#http://openaaf.dyndns.tv/mediathek/menu/s"$CURPAGE"e"$NUM".jpg#s"$CURPAGE"e"$NUM".jpg#$NAME#0"
 
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi

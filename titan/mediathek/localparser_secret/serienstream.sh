@@ -36,14 +36,14 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Tv-Shows (A-Z)#$SRC $SRC sorted 'katalog'#http://atemio.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "All Series#$SRC $SRC all 'serien'#http://atemio.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Search#$SRC $SRC search 'serien' 1 '%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Tv-Shows (A-Z)#$SRC $SRC sorted 'katalog'#http://openaaf.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "All Series#$SRC $SRC all 'serien'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Search#$SRC $SRC search 'serien' 1 '%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 #https://s.to/search?q={search_string}
@@ -58,7 +58,7 @@ sorted()
 		for ROUND in $watchlist; do
 			TITLE=`echo $ROUND`
 			filename=`echo $TITLE | tr [A-Z] [a-z]`
-			echo "$TITLE#$SRC $SRC list '$PAGE/$ROUND' 1#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC list '$PAGE/$ROUND' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -96,7 +96,7 @@ all()
 					{
 						if ( pic == "" )
 						{
-			      			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			      			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 						}
 
 						piccount += 1
@@ -154,7 +154,7 @@ season()
 						{
 							if ( pic == "" )
 							{
-					  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+					  			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
 
 							piccount += 1
@@ -163,7 +163,7 @@ season()
 
 							split(title, a, " ")
 							season = a[2]
-							print title "#" SRC " " SRC " episode \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/s" season ".jpg#s" season ".jpg#" NAME "#0"
+							print title "#" SRC " " SRC " episode \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season ".jpg#s" season ".jpg#" NAME "#0"
 #							print title "#" SRC " " SRC " episode \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 						}
 						next
@@ -221,7 +221,7 @@ episode()
 						{
 							if ( pic == "" )
 							{
-					  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+					  			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
 
 							piccount += 1
@@ -232,7 +232,7 @@ episode()
 							split(title, a, " ")
 							season = a[2]
 							episode = a[4]
-							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
+							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
 
 #							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 						}
@@ -311,7 +311,7 @@ list()
 						{
 							if ( pic == "" )
 							{
-				  				pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				  				pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
 
 							piccount += 1
@@ -325,7 +325,7 @@ list()
 			END \
 				{
 					if (NEXT != PAGE2)
-						print "Page (" NEXT + 1 "/" PAGE2 ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 " " PAGE2 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+						print "Page (" NEXT + 1 "/" PAGE2 ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 " " PAGE2 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -372,13 +372,13 @@ hosterlist()
 						{
 							if ( pic == "" )
 							{
-					  			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+					  			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
 
 							piccount += 1
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
-							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
 						}
 #						next
 					}
@@ -436,7 +436,7 @@ search()
 					{
 						if ( pic == "" )
 						{
-			      			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			      			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 						}
 
 						piccount += 1

@@ -38,18 +38,18 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Kino#$SRC $SRC kino 'index.php?lang=de'#http://atemio.dyndns.tv/mediathek/menu/kino.jpg#kino.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "Movies (A-Z)#$SRC $SRC sorted#http://atemio.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Movies (Genre)#$SRC $SRC genre#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Tv-Shows (A-Z)#$SRC $SRC sortedtv#http://atemio.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Tv-Shows (Genre)#$SRC $SRC genretv#http://atemio.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Search Movie#$SRC $SRC search 'movies.php?list=search&search=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
-	echo "Search Tv#$SRC $SRC searchtv 'movies.php?list=search&search=%search%'#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Kino#$SRC $SRC kino 'index.php?lang=de'#http://openaaf.dyndns.tv/mediathek/menu/kino.jpg#kino.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Movies (A-Z)#$SRC $SRC sorted#http://openaaf.dyndns.tv/mediathek/menu/Movies.jpg#Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Movies (Genre)#$SRC $SRC genre#http://openaaf.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Tv-Shows (A-Z)#$SRC $SRC sortedtv#http://openaaf.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Tv-Shows (Genre)#$SRC $SRC genretv#http://openaaf.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Search Movie#$SRC $SRC search 'movies.php?list=search&search=%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Search Tv#$SRC $SRC searchtv 'movies.php?list=search&search=%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -91,7 +91,7 @@ genre()
 			NUMMER=`echo $ROUND0 | cut -d"-" -f3`
 
 			filename=`echo $TITLE | tr [A-Z] [a-z]`	
-			echo "$TITLE#$SRC $SRC search 'movies-genre-$NUMMER-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC search 'movies-genre-$NUMMER-' 1 '.html'#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -135,7 +135,7 @@ genretv()
 			NUMMER=`echo $ROUND0 | cut -d"-" -f3`
 
 			filename=`echo $TITLE | tr [A-Z] [a-z]`	
-			echo "$TITLE#$SRC $SRC searchtv 'tvshows-genre-$NUMMER-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC searchtv 'tvshows-genre-$NUMMER-' 1 '.html'#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -151,7 +151,7 @@ sorted()
 		for ROUND0 in $watchlist; do
 			TITLE=`echo $ROUND0`
 			filename=`echo $TITLE | tr [A-Z] [a-z]`
-			echo "$TITLE#$SRC $SRC search 'movies-all-$ROUND0-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC search 'movies-all-$ROUND0-' 1 '.html'#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -167,7 +167,7 @@ sortedtv()
 		for ROUND0 in $watchlist; do
 			TITLE=`echo $ROUND0`
 			filename=`echo $TITLE | tr [A-Z] [a-z]`
-			echo "$TITLE#$SRC $SRC searchtv 'tvshows-all-$ROUND0-' 1 '.html'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC searchtv 'tvshows-all-$ROUND0-' 1 '.html'#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -213,7 +213,7 @@ searchtv()
 			fi
 	
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 	
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -232,7 +232,7 @@ searchtv()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC searchtv '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC searchtv '$PAGE' $NEXTPAGE '$PAGE2'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
@@ -277,7 +277,7 @@ searchtold()
 			fi
 		
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 	
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -295,7 +295,7 @@ searchtold()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC searchtv '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC searchtv '$PAGE' $NEXTPAGE '$PAGE2'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
@@ -335,7 +335,7 @@ season()
 						touch $TMP/$FILENAME.list
 					fi
 					piccount=`expr $piccount + 1`
-					LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#http://atemio.dyndns.tv/mediathek/menu/s"$SEASON"e"$EPISODE".jpg#s"$SEASON"e"$EPISODE".jpg#$NAME#0"
+					LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#http://openaaf.dyndns.tv/mediathek/menu/s"$SEASON"e"$EPISODE".jpg#s"$SEASON"e"$EPISODE".jpg#$NAME#0"
 
 					echo "$LINE" >> $TMP/$FILENAME.list
 				fi
@@ -344,7 +344,7 @@ season()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC season '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC season '$PAGE' $NEXTPAGE '$PAGE2'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
@@ -393,7 +393,7 @@ seasonold()
 			fi
 		
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 	
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -412,7 +412,7 @@ seasonold()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC season '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC season '$PAGE' $NEXTPAGE '$PAGE2'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
@@ -460,7 +460,7 @@ episode()
 			fi
 	
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 	
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -479,7 +479,7 @@ episode()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE '$PAGE2'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
@@ -524,7 +524,7 @@ search()
 			fi
 	
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 	
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/ä/g' -e 's/&uuml;/ü/g' -e 's/&ouml;/ö/g' -e 's/&eacute;/é/g' -e 's/&egrave;/è/g' -e 's/%F6/ö/g' -e 's/%FC/ü/g' -e 's/%E4/ä/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -543,7 +543,7 @@ search()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE '$PAGE2'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE '$PAGE2'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
@@ -747,9 +747,9 @@ hosterlist()
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
 							if ( newpage != "" )
-								print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+								print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
 							else
-								print title "(ERROR)#" SRC " " SRC " hoster \x27" newpage "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+								print title "(ERROR)#" SRC " " SRC " hoster \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
 						}
 						next
 					}

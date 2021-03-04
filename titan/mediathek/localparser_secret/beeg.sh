@@ -37,23 +37,23 @@ fi
 
 init()
 {
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#1000"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#1000"
 }
 
 mainmenu()
 {
 
-#	echo "Kino#$SRC $SRC search 'filme/' 1 '/?order=veroeffentlichung'#http://atemio.dyndns.tv/mediathek/menu/kino.ger.jpg#kino.ger.jpg#$NAME#0" >$TMP/$FILENAME.list
+#	echo "Kino#$SRC $SRC search 'filme/' 1 '/?order=veroeffentlichung'#http://openaaf.dyndns.tv/mediathek/menu/kino.ger.jpg#kino.ger.jpg#$NAME#0" >$TMP/$FILENAME.list
 
 
-#	echo "Sorted by date#$SRC $SRC videos index/main/0/pc#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
-	echo "Sorted by date#$SRC $SRC videos 'index/main/' 0 '/pc'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
-#        echo "Popular Tags#$SRC $SRC tags popular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-        echo "All Tags#$SRC $SRC tags nonpopular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-        echo "Pornstar#$SRC $SRC pornstar nonpopular#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
+#	echo "Sorted by date#$SRC $SRC videos index/main/0/pc#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
+	echo "Sorted by date#$SRC $SRC videos 'index/main/' 0 '/pc'#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
+#        echo "Popular Tags#$SRC $SRC tags popular#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
+        echo "All Tags#$SRC $SRC tags nonpopular#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
+        echo "Pornstar#$SRC $SRC pornstar nonpopular#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
 
-#        echo "Long Videos#$SRC $SRC videos index/tag/0/pc?tag=long+videos#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
-#        echo "Search#$SRC $SRC videos index/search/0/pc?query=#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>/tmp/tithek/$PARSER.list
+#        echo "Long Videos#$SRC $SRC videos index/tag/0/pc?tag=long+videos#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
+#        echo "Search#$SRC $SRC videos index/search/0/pc?query=#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>/tmp/tithek/$PARSER.list
 	echo "/tmp/tithek/$PARSER.list"
 }
 
@@ -152,7 +152,7 @@ pic = image
 			END \
 			{
 #				if (curpage != pages)
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 " \x27" PAGE2 "\x27#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 " \x27" PAGE2 "\x27#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 ' >$TMP/$FILENAME.list
 fi
@@ -186,7 +186,7 @@ BEGIN { table = ""
 #print "22222: " tag
            title = toupper(tag)
            gsub(/ /, "%20", tag)
-           print title "#" SRC " " SRC " videos \x27index/tag/\x27 0 \x27/pc?tag=" tag "\x27#http://atemio.dyndns.tv/mediathek/menu/" tag ".jpg#" tag ".jpg#" NAME "#0"
+           print title "#" SRC " " SRC " videos \x27index/tag/\x27 0 \x27/pc?tag=" tag "\x27#http://openaaf.dyndns.tv/mediathek/menu/" tag ".jpg#" tag ".jpg#" NAME "#0"
       }
 ' >$TMP/$FILENAME.list
 fi
@@ -219,7 +219,7 @@ BEGIN { table = ""
            title = ps_name
 
 #           gsub(/ /, "%20", ps_name)
-           print title "#" SRC " " SRC " videos \x27index/people/\x27 0 \x27/pc?search_mode=code&people=" ps_name "\x27#http://atemio.dyndns.tv/mediathek/menu/" ps_name ".jpg#" ps_name ".jpg#" NAME "#0"
+           print title "#" SRC " " SRC " videos \x27index/people/\x27 0 \x27/pc?search_mode=code&people=" ps_name "\x27#http://openaaf.dyndns.tv/mediathek/menu/" ps_name ".jpg#" ps_name ".jpg#" NAME "#0"
       }
 ' >$TMP/$FILENAME.list
 fi

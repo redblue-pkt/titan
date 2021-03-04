@@ -47,7 +47,7 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 
@@ -72,14 +72,14 @@ init()
 
 mainmenu()
 {
-	echo "Rtl#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl#http://atemio.dyndns.tv/mediathek/menu/rtl.jpg#rtl.jpg#$NAME#0" > $TMP/$FILENAME.list
-	echo "Vox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station vox#http://atemio.dyndns.tv/mediathek/menu/vox.jpg#vox.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	echo "Rtl2#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl2#http://atemio.dyndns.tv/mediathek/menu/rtl2.jpg#rtl2.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	echo "Nitro#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station nitro#http://atemio.dyndns.tv/mediathek/menu/nitro.jpg#nitro.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	echo "N-Tv#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station ntv#http://atemio.dyndns.tv/mediathek/menu/ntv.jpg#ntv.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	echo "RTLplus#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtlplus#http://atemio.dyndns.tv/mediathek/menu/rtlplus.jpg#rtlplus.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	echo "Super RTL#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station superrtl#http://atemio.dyndns.tv/mediathek/menu/superrtl.jpg#superrtl.jpg#$NAME#0" >> $TMP/$FILENAME.list
-	echo "WatchBox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station watchbox#http://atemio.dyndns.tv/mediathek/menu/watchbox.jpg#watchbox.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Rtl#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl#http://openaaf.dyndns.tv/mediathek/menu/rtl.jpg#rtl.jpg#$NAME#0" > $TMP/$FILENAME.list
+	echo "Vox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station vox#http://openaaf.dyndns.tv/mediathek/menu/vox.jpg#vox.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Rtl2#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtl2#http://openaaf.dyndns.tv/mediathek/menu/rtl2.jpg#rtl2.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Nitro#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station nitro#http://openaaf.dyndns.tv/mediathek/menu/nitro.jpg#nitro.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "N-Tv#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station ntv#http://openaaf.dyndns.tv/mediathek/menu/ntv.jpg#ntv.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "RTLplus#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station rtlplus#http://openaaf.dyndns.tv/mediathek/menu/rtlplus.jpg#rtlplus.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "Super RTL#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station superrtl#http://openaaf.dyndns.tv/mediathek/menu/superrtl.jpg#superrtl.jpg#$NAME#0" >> $TMP/$FILENAME.list
+	echo "WatchBox#$SRC $SRC new 'v3/formats?fields=id,title,station,title,titleGroup,seoUrl,icon,hasFreeEpisodes,hasPayEpisodes,categoryId,searchAliasName,genres&filter=%7B%22Id%22:%7B%22containsNotIn%22:%5B%221896%22%5D%7D,%22Disabled%22:0%7D&maxPerPage=500&page=1' station watchbox#http://openaaf.dyndns.tv/mediathek/menu/watchbox.jpg#watchbox.jpg#$NAME#0" >> $TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -99,7 +99,7 @@ new()
 			PIC=`echo $ROUND | sed 's!data-original=!\nsrc=!' | grep ^"src=" | cut -d '"' -f2`
 			NEWPAGE="v3/formats/seo?fields=*,.*,formatTabs.*,formatTabs.formatTabPages.*,formatTabs.formatTabPages.container.*,annualNavigation.*&name=$seoUrl.php&station=$PAGE2"
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=nowtv_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -155,7 +155,7 @@ videos()
 			NEWPAGE=$PART1$PART2-audio=128000-video=1400000.m3u8
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=nowtv_`echo $PIC | tr '/' '\n' | tail -n1`
