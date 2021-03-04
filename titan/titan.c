@@ -261,9 +261,7 @@ char* tunermerkmale = NULL;
 #include "settings_overclocking.h"
 #include "settings_pluginbutton.h"
 #ifndef SIMULATE
-#ifdef MIPSEL
 #include "bcm.h"
-#endif
 #endif
 #include "settings_mediabutton.h"
 #include "oled.h"
