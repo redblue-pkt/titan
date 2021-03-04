@@ -37,13 +37,13 @@ fi
 
 init()
 {
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#1000"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#1000"
 }
 
 mainmenu()
 {
-   	echo "Sorted by date#$SRC $SRC videos '/new/' 0#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
-    echo "All Tags#$SRC $SRC tags '/tags/'#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
+   	echo "Sorted by date#$SRC $SRC videos '/new/' 0#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >/tmp/tithek/$PARSER.list
+    echo "All Tags#$SRC $SRC tags '/tags/'#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >>/tmp/tithek/$PARSER.list
 	echo "/tmp/tithek/$PARSER.list"
 }
 
@@ -105,7 +105,7 @@ BEGIN {     title = ""
 			END \
 			{
 #				if (curpage != pages)
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1"#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1"#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 ' >$TMP/$FILENAME.list
 fi
@@ -132,7 +132,7 @@ if (tag != "" && tag != "tags-list")
            title = toupper(tag)
            gsub(/\/TAGS\//, "", title)
            pic = tolower(title)
-           print title "#" SRC " " SRC " videos \x27" tag "\x27#http://atemio.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
+           print title "#" SRC " " SRC " videos \x27" tag "\x27#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
 }
       }
 ' >$TMP/$FILENAME.list

@@ -36,13 +36,13 @@ init()
 #	if [ "$ARCH" != "sh4" ] || [ -e /etc/.beta ];then
 #		rm -f /mnt/network/cookies > /dev/null 2>&1
 		rm -rf $TMP > /dev/null 2>&1
-		echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+		echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 #	fi
 }
 
 mainmenu()
 {
-	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Category#$SRC $SRC category#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -54,7 +54,7 @@ category()
 		until [ "$i" -gt "$tagcount" ]
 		do
 		TITLE="Page $i"
-		echo "$TITLE#$SRC $SRC page category '?p=$i&q=&sort=1'#http://atemio.dyndns.tv/mediathek/menu/page.jpg#page.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
+		echo "$TITLE#$SRC $SRC page category '?p=$i&q=&sort=1'#http://openaaf.dyndns.tv/mediathek/menu/page.jpg#page.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
 		i=`expr $i + 1`
 		done
 	fi
@@ -80,7 +80,7 @@ page()
 			fi
 
 			if [ -z "$PIC" ] || [ "$PIC" = "http:" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 
 			TITLE=`echo $URL | tr '/' '\n' | tail -n1 | sed 's/_/ /g'`

@@ -35,21 +35,21 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Category#$SRC $SRC category#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
 category()
 {
-	echo "Movies (Year)#$SRC $SRC movieyear#http://atemio.dyndns.tv/mediathek/menu/movie.year.jpg#movie.year.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Movies (Genre)#$SRC $SRC moviegenre#http://atemio.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-	echo "Series#$SRC $SRC page category 'free/tv-series/page/' 1#http://atemio.dyndns.tv/mediathek/menu/series.jpg#series.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
-    echo "Search#$SRC $SRC page category '?s='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
+	echo "Movies (Year)#$SRC $SRC movieyear#http://openaaf.dyndns.tv/mediathek/menu/movie.year.jpg#movie.year.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Movies (Genre)#$SRC $SRC moviegenre#http://openaaf.dyndns.tv/mediathek/menu/movie.genre.jpg#movie.genre.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+	echo "Series#$SRC $SRC page category 'free/tv-series/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/series.jpg#series.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+    echo "Search#$SRC $SRC page category '?s='#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
 	echo "$TMP/$PARSER.$INPUT.list"
 }
 
@@ -66,7 +66,7 @@ movieyear()
 			i=1950
 			until [ "$i" -gt "$tagcount" ]
 			do
-			echo "$i#$SRC $SRC page category '$ROUND0-$i/page/' 1#http://atemio.dyndns.tv/mediathek/menu/$i.jpg#$i.jpg#$NAME#0" | sort -r >> $TMP/$PARSER.$INPUT.list
+			echo "$i#$SRC $SRC page category '$ROUND0-$i/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/$i.jpg#$i.jpg#$NAME#0" | sort -r >> $TMP/$PARSER.$INPUT.list
 			i=`expr $i + 1` 
 			done
 		done
@@ -103,7 +103,7 @@ moviegenre()
 	for ROUND0 in $watchlist; do
 		TITLE=`echo $ROUND0 | tr '/' '-' | sed 's/free-//g'`
 		filename=`echo $TITLE`	
-		echo "$TITLE#$SRC $SRC page category '$ROUND0/page/' 1#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
+		echo "$TITLE#$SRC $SRC page category '$ROUND0/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.list
 	done
   	echo "$TMP/$PARSER.$INPUT.list"
 }
@@ -134,7 +134,7 @@ page()
 				PIC=http:`echo $ROUND | sed s'!src=!\nsrc=!' | grep ^"src=" | cut -d '"' -f2 | tr '~' ' '`
 			
 				if [ -z "$PIC" ] || [ "$PIC" = "http:" ]; then  
-					PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+					PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				fi
 			
 				if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
@@ -151,7 +151,7 @@ page()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC page category '$PAGE' $NEXTPAGE#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC page category '$PAGE' $NEXTPAGE#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list
 		fi
 		rm $TMP/cache.* > /dev/null 2>&1
@@ -170,7 +170,7 @@ hosterlist()
 		TITLE=`echo $ROUND | sed s'!target="_blank">!\nurl=<!' | grep ^'url=<' | cut -d '<' -f2`
 		if [ ! -z "$TITLE" ] && [ "$TITLE" != " " ] && [ ! -z "$NEWPAGE" ];then
 			PIC="`echo $TITLE | tr [A-Z] [a-z] | cut -d "." -f1`.jpg"
-			LINE="$TITLE#$SRC $SRC hoster page $NEWPAGE $NEWPAGE#http://atemio.dyndns.tv/mediathek/menu/$PIC#$PIC#$NAME#111"
+			LINE="$TITLE#$SRC $SRC hoster page $NEWPAGE $NEWPAGE#http://openaaf.dyndns.tv/mediathek/menu/$PIC#$PIC#$NAME#111"
 			echo "$LINE" >> $TMP/$PARSER.$INPUT.$FROM.$NEXT.$FILENAME.list
 		fi
 	done 3<$TMP/cache.$PARSER.$FROM.$NEXT.$FILENAME.2

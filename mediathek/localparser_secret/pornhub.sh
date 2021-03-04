@@ -34,14 +34,14 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#1000"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#1000"
 }
 
 mainmenu()
 {
-	echo "Genre#$SRC $SRC genre 'categories'#http://atemio.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
-#	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://atemio.dyndns.tv/mediathek/menu/pornstars.jpg#pornstars.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Suchen#$SRC $SRC search '/video/search?search=%search%&page=' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Genre#$SRC $SRC genre 'categories'#http://openaaf.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
+#	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://openaaf.dyndns.tv/mediathek/menu/pornstars.jpg#pornstars.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Suchen#$SRC $SRC search '/video/search?search=%search%&page=' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -163,7 +163,7 @@ genre()
 						# 23. tausche leehrzeichen in punkte
 						# 24. titel = reife.frauen
 		            	gsub(" ", ".", picname)
-						pic = "http://atemio.dyndns.tv/mediathek/menu/" picname ".jpg"
+						pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
 					}
 	
 					if (title != "")
@@ -204,8 +204,8 @@ genreold()
 			NEWPAGE=`echo $ROUND | cut -d'"' -f2 | head -n1`
 	
 			if [ -z "$PIC" ]; then
-#				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-				PIC="http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr 'A-Z' 'a-z'`.jpg"
+#				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/`echo $TITLE | tr 'A-Z' 'a-z'`.jpg"
 			fi
 	
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -454,7 +454,7 @@ search()
 
 						if ( pic == "" )
 						{
-			            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			            	pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 						}
 
 						if (title != "")
@@ -481,7 +481,7 @@ search()
 #				print "NEXT + 1: " NEXT + 1
 
 					if (pages != "0")# && pages >= NEXT + 1)
-						print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+						print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -532,7 +532,7 @@ searchold()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
@@ -679,7 +679,7 @@ pornstars()
 
 						if ( pic == "" )
 						{
-			            	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			            	pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 						}
 #				print "pic: " pic
 
@@ -757,7 +757,7 @@ pornstars()
 				# next page init
 			END \
 				{
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list

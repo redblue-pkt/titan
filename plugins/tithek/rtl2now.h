@@ -257,7 +257,7 @@ int rtl2now_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/rtl2now/streams/rtl2now.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/rtl2now/streams/rtl2now.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -287,7 +287,7 @@ int rtl2now_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/rtl2now.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -321,7 +321,7 @@ int rtlnow_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/rtl-now/streams/rtl-now.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/rtl-now/streams/rtl-now.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -351,7 +351,7 @@ int rtlnow_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/rtl-now.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -385,7 +385,7 @@ int superrtlnow_search_local(struct skin* grid, struct skin* listbox, struct ski
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/superrtlnow/streams/superrtlnow.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/superrtlnow/streams/superrtlnow.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -415,7 +415,7 @@ int superrtlnow_search_local(struct skin* grid, struct skin* listbox, struct ski
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/superrtlnow.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -449,7 +449,7 @@ int voxnow_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/voxnow/streams/voxnow.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/voxnow/streams/voxnow.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -479,7 +479,7 @@ int voxnow_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/voxnow.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -513,7 +513,7 @@ int rtlnitronow_search_local(struct skin* grid, struct skin* listbox, struct ski
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/rtlnitronow/streams/rtlnitronow.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/rtlnitronow/streams/rtlnitronow.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -543,7 +543,7 @@ int rtlnitronow_search_local(struct skin* grid, struct skin* listbox, struct ski
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/rtlnitronow.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -577,7 +577,7 @@ int ntvnow_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/n-tvnow/streams/n-tvnow.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/n-tvnow/streams/n-tvnow.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -607,7 +607,7 @@ int ntvnow_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/n-tvnow.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;

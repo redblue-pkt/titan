@@ -14,8 +14,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Grzegorz Swiatek
  */
 public class Create {
-	private static final String LINK_PREFIX = "http://atemio.dyndns.tv/mediathek/filmon/";
-	private static final String MENU_LINK_PREFIX = "http://atemio.dyndns.tv/mediathek/menu/";
+	private static final String LINK_PREFIX = "http://openaaf.dyndns.tv/mediathek/filmon/";
+	private static final String MENU_LINK_PREFIX = "http://openaaf.dyndns.tv/mediathek/menu/";
 	private static final String MENU = "FilmOn";
 	private static final String SUB_DIR = "streams";
 

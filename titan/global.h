@@ -7308,7 +7308,7 @@ int converte2settings(int flag)
 	}
 
 	if(!file_exist(filename))
-		gethttp("atemio.dyndns.tv", path, 80, filename, HTTPAUTH, 5000, NULL, 0);
+		gethttp("openaaf.dyndns.tv", path, 80, filename, HTTPAUTH, 5000, NULL, 0);
 
 	char* tmptext = NULL;
 	tmptext = ostrcat(_("Error: Transponder Source file not found"), "\nfilename: ", 0, 0);
@@ -7738,7 +7738,7 @@ char* system_logs(int mode)
 		tmpstr = readfromlinetoline(tmpstr1, 37, 29000, 1);
 #endif
 #else
-		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr1 = gethttp("openaaf.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 		tmpstr = readfromlinetoline(tmpstr1, 37, 537, 1);
 #endif
 	}
@@ -7761,7 +7761,7 @@ char* system_logs(int mode)
 		tmpstr = readfromlinetoline(tmpstr1, 0, 29000, 1);
 #endif
 #else
-		tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr1 = gethttp("openaaf.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
 #endif
 	}

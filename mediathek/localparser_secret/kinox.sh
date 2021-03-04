@@ -50,33 +50,33 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Kino#$SRC $SRC kino 'Kino-filme.html'#http://atemio.dyndns.tv/mediathek/menu/Cine-Films.jpg#Cine-Films.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Kino#$SRC $SRC kino 'Kino-filme.html'#http://openaaf.dyndns.tv/mediathek/menu/Cine-Films.jpg#Cine-Films.jpg#$NAME#0" >$TMP/$FILENAME.list
 
-	echo "Movie (Latest)#$SRC $SRC latest 'Latest-Movies.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Movies.jpg#Latest-Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Movie (Popular)#$SRC $SRC latest 'Popular-Movies.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Movies.jpg#Popular-Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Movie (A-Z)#$SRC $SRC sorted movie#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Movie (Latest)#$SRC $SRC latest 'Latest-Movies.html'#http://openaaf.dyndns.tv/mediathek/menu/Latest-Movies.jpg#Latest-Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Movie (Popular)#$SRC $SRC latest 'Popular-Movies.html'#http://openaaf.dyndns.tv/mediathek/menu/Popular-Movies.jpg#Popular-Movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Movie (A-Z)#$SRC $SRC sorted movie#http://openaaf.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 
-#	echo "Tv (Latest)#$SRC $SRC latest 'Latest-TVSeries.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Series.jpg#Latest-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
-#	echo "Tv (Popular)#$SRC $SRC latest 'Popular-TVSeries.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Series.jpg#Popular-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Tv (Latest)#$SRC $SRC latest 'Latest-TVSerien.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Series.jpg#Latest-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Tv (Popular)#$SRC $SRC latest 'Popular-TVSerien.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Series.jpg#Popular-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Tv (A-Z)#$SRC $SRC sorted series#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Tv (Latest)#$SRC $SRC latest 'Latest-TVSeries.html'#http://openaaf.dyndns.tv/mediathek/menu/Latest-Series.jpg#Latest-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Tv (Popular)#$SRC $SRC latest 'Popular-TVSeries.html'#http://openaaf.dyndns.tv/mediathek/menu/Popular-Series.jpg#Popular-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Tv (Latest)#$SRC $SRC latest 'Latest-TVSerien.html'#http://openaaf.dyndns.tv/mediathek/menu/Latest-Series.jpg#Latest-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Tv (Popular)#$SRC $SRC latest 'Popular-TVSerien.html'#http://openaaf.dyndns.tv/mediathek/menu/Popular-Series.jpg#Popular-Series.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Tv (A-Z)#$SRC $SRC sorted series#http://openaaf.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 
-#	echo "Doku (Latest)#$SRC $SRC latest 'Latest-Documentations.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Documentations.jpg#Latest-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
-#	echo "Doku (Popular)#$SRC $SRC latest 'Popular-Documentations.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Documentations.jpg#Popular-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Doku (Latest)#$SRC $SRC latest 'Latest-Dokumentationen.html'#http://atemio.dyndns.tv/mediathek/menu/Latest-Documentations.jpg#Latest-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Doku (Popular)#$SRC $SRC latest 'Popular-Dokumentationen.html'#http://atemio.dyndns.tv/mediathek/menu/Popular-Documentations.jpg#Popular-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Doku (A-Z)#$SRC $SRC sorted documentation#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Doku (Latest)#$SRC $SRC latest 'Latest-Documentations.html'#http://openaaf.dyndns.tv/mediathek/menu/Latest-Documentations.jpg#Latest-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Doku (Popular)#$SRC $SRC latest 'Popular-Documentations.html'#http://openaaf.dyndns.tv/mediathek/menu/Popular-Documentations.jpg#Popular-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Doku (Latest)#$SRC $SRC latest 'Latest-Dokumentationen.html'#http://openaaf.dyndns.tv/mediathek/menu/Latest-Documentations.jpg#Latest-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Doku (Popular)#$SRC $SRC latest 'Popular-Dokumentationen.html'#http://openaaf.dyndns.tv/mediathek/menu/Popular-Documentations.jpg#Popular-Documentations.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Doku (A-Z)#$SRC $SRC sorted documentation#http://openaaf.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 
-	echo "Actor (A-Z)#$SRC $SRC sorted actor#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Director (A-Z)#$SRC $SRC sorted director#http://atemio.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Search#http://atemio.dyndns.tv/mediathek/youtube/streams/kinox.all-sorted.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#KinoX#21" >>$TMP/$FILENAME.list
-	echo "Search Cast#http://atemio.dyndns.tv/mediathek/youtube/streams/kinox.all-sorted.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search10.jpg#KinoX#31" >>$TMP/$FILENAME.list
+	echo "Actor (A-Z)#$SRC $SRC sorted actor#http://openaaf.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Director (A-Z)#$SRC $SRC sorted director#http://openaaf.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Search#http://openaaf.dyndns.tv/mediathek/youtube/streams/kinox.all-sorted.list#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#KinoX#21" >>$TMP/$FILENAME.list
+	echo "Search Cast#http://openaaf.dyndns.tv/mediathek/youtube/streams/kinox.all-sorted.list#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search10.jpg#KinoX#31" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -108,8 +108,8 @@ sorted()
 			fi
 
 			filename=`echo $TITLE | tr [A-Z] [a-z]`
-#			echo "$TITLE#$SRC $SRC search '$ROUND0' 1 $PAGE#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
-			echo "$TITLE#$SRC $SRC search '$PAGE' 1 '$ROUND0'#http://atemio.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+#			echo "$TITLE#$SRC $SRC search '$ROUND0' 1 $PAGE#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			echo "$TITLE#$SRC $SRC search '$PAGE' 1 '$ROUND0'#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 
 		done
 	fi
@@ -233,7 +233,7 @@ search()
 				PIC=$URL/`cat $TMP/cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
 				LANG=`cat $TMP/cache."$filename".list | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
 			else
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				LANG=1
 			fi
 
@@ -255,7 +255,7 @@ search()
 				NEWPAGE="/People/$TMPPFAD"
 			fi
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/\E4/g' -e 's/&uuml;/\FC/g' -e 's/&ouml;/\F6/g' -e 's/&eacute;/\E9/g' -e 's/&egrave;/\E8/g' -e 's/%F6/\F6/g' -e 's/%FC/\FC/g' -e 's/%E4/\E4/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -278,7 +278,7 @@ search()
 
 		if [ "$NEXT" -lt "$pages" ]; then
 			NEXTPAGE=`expr $NEXT + 30`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE $PAGE2#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
+			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE $PAGE2#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
 			echo "$LINE" >> $TMP/$FILENAME.list
 		fi
 
@@ -354,7 +354,7 @@ kino()
 			fi
 
 			if [ -z "$PIC" ] || [ "$PIC" == "$URL""/statics/thumbs/" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 
 #			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/\E4/g' -e 's/&uuml;/\FC/g' -e 's/&ouml;/\F6/g' -e 's/&eacute;/\E9/g' -e 's/&egrave;/\E8/g' -e 's/%F6/\F6/g' -e 's/%FC/\FC/g' -e 's/%E4/\E4/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
@@ -444,7 +444,7 @@ latest()
 				PIC=$URL/`cat $TMP/cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
 				LANG=`cat $TMP/cache."$filename".list | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
 			else
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 #				LANG=1
 			fi
 
@@ -470,7 +470,7 @@ latest()
 			NEWPAGE="$URL$PAGE"
 
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/\C3x/g' -e 's/&ndash;/-/g' -e 's/&Auml;/\C3/g' -e 's/&Uuml;/\C3S/g' -e 's/&Ouml;/\C3/g' -e 's/&auml;/\E4/g' -e 's/&uuml;/\FC/g' -e 's/&ouml;/\F6/g' -e 's/&eacute;/\E9/g' -e 's/&egrave;/\E8/g' -e 's/%F6/\F6/g' -e 's/%FC/\FC/g' -e 's/%E4/\E4/g' -e 's/%26/&/g' -e 's/%C4/\C3/g' -e 's/%D6/\C3/g' -e 's/%DC/\C3S/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`

@@ -99,9 +99,9 @@ int readnewsletter()
 	unlink(newsletterfile);
 
 //	if(checkbox("WHITEBOX") == 1)
-//		gethttp("atemio.dyndns.tv", "/mediathek/newsletter.crenova.txt", 80, newsletterfile, HTTPAUTH, 5000, NULL, 0);
+//		gethttp("openaaf.dyndns.tv", "/mediathek/newsletter.crenova.txt", 80, newsletterfile, HTTPAUTH, 5000, NULL, 0);
 //	else
-		gethttp("atemio.dyndns.tv", "/mediathek/newsletter.txt", 80, newsletterfile, HTTPAUTH, 5000, NULL, 0);
+		gethttp("openaaf.dyndns.tv", "/mediathek/newsletter.txt", 80, newsletterfile, HTTPAUTH, 5000, NULL, 0);
 	
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)

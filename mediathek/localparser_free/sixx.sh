@@ -34,12 +34,12 @@ init()
 {
 #	rm -f /mnt/network/cookies > /dev/null 2>&1
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Tv Shows#$SRC $SRC serien tv/#http://atemio.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" > $TMP/$FILENAME.list
+	echo "Tv Shows#$SRC $SRC serien tv/#http://openaaf.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" > $TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -55,7 +55,7 @@ serien()
 			NEWPAGE=`echo $ROUND | cut -d'"' -f2`
 
 			TITLE=$(echo $ROUND | sed -nr 's/.*">([^>]+)<\/a>.*/\1/p')
-			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
@@ -72,7 +72,7 @@ serien()
 		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
 	fi
 #work start
-	LINE="Big Brother#/tmp/localparser/sixx.sh /tmp/localparser/sixx.sh episode '/tv/big-brother'#http://atemio.dyndns.tv/mediathek/menu/default.jpg#sixx.serien.tv..41.jpg#Sixx#0"
+	LINE="Big Brother#/tmp/localparser/sixx.sh /tmp/localparser/sixx.sh episode '/tv/big-brother'#http://openaaf.dyndns.tv/mediathek/menu/default.jpg#sixx.serien.tv..41.jpg#Sixx#0"
 	echo "$LINE" > $TMP/$FILENAME.list
 #end
 	echo "$TMP/$FILENAME.list"

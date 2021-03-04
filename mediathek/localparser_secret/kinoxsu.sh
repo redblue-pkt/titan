@@ -39,12 +39,12 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Suchen#$SRC $SRC search 'do=search&subaction=search&story=%search%' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" > $TMP/$FILENAME.list
+	echo "Suchen#$SRC $SRC search 'do=search&subaction=search&story=%search%' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" > $TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -112,7 +112,7 @@ search()
 
 					if ( pic == "" )
 					{
-			            		pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			            		pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 					}
 
 					if (title != "")
@@ -139,7 +139,7 @@ search()
 #				print "NEXT + 1: " NEXT + 1
 
 					if (pages != "0")# && pages >= NEXT + 1)
-						print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+						print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list

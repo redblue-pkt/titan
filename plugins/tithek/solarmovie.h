@@ -243,7 +243,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 
 		if(line != NULL)
 		{
-			line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+			line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 			menu = ostrcat("/tmp/tithek/solarmovie.search.list", NULL, 0, 0);
 			writesys(menu, line, 0);
 			free(line); line = NULL;
@@ -280,7 +280,7 @@ int solarmovie_search_local(struct skin* grid, struct skin* listbox, struct skin
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/solarmovie/streams/solarmovie.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/solarmovie/streams/solarmovie.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -310,7 +310,7 @@ int solarmovie_search_local(struct skin* grid, struct skin* listbox, struct skin
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/solarmovie.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -470,7 +470,7 @@ printf("11111111111111111111111111111\n");
 				line = ostrcat(line, "http://www.thesolarmovie.me/link/play/", 1, 0);
 				line = ostrcat(line, id, 1, 0);
 				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+				line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/", 1, 0);
 				line = ostrcat(line, pichname, 1, 0);
 				line = ostrcat(line, ".jpg#solarmovie_", 1, 0);
 				line = ostrcat(line, pichname, 1, 0);
@@ -552,7 +552,7 @@ printf("11111111111111111111111111111\n");
 					line = ostrcat(line, "http://www.thesolarmovie.me/link/play/", 1, 0);
 					line = ostrcat(line, id, 1, 0);
 					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+					line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/", 1, 0);
 					line = ostrcat(line, pichname, 1, 0);
 					line = ostrcat(line, ".jpg#solarmovie_", 1, 0);
 					line = ostrcat(line, pichname, 1, 0);
@@ -621,7 +621,7 @@ printf("22222222222222222222222222222222\n");
 //				line = ostrcat(line, ";", 1, 0);
 //				line = ostrcat(line, episode, 1, 0);
 				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
+				line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/s", 1, 0);
 				line = ostrcat(line, session, 1, 0);
 				line = ostrcat(line, "e", 1, 0);
 				line = ostrcat(line, episode, 1, 0);
@@ -644,7 +644,7 @@ printf("22222222222222222222222222222222\n");
 
 	if(line != NULL)
 	{
-		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+		line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		if(series == 0)
 			tmpstr = ostrcat("/tmp/tithek/solarmovie.hoster.list", NULL, 0, 0);
 		else

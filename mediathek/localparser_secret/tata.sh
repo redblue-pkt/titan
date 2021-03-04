@@ -33,12 +33,12 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Channels#$SRC $SRC channels 'channels'#http://atemio.dyndns.tv/mediathek/menu/channels.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Channels#$SRC $SRC channels 'channels'#http://openaaf.dyndns.tv/mediathek/menu/channels.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
 	if [ -e "$TMP/$PARSER.channels.list" ] ; then
 		rm $TMP/$PARSER.channels.list
 	fi
@@ -63,7 +63,7 @@ channels()
 			TITLE=`echo $NEWPAGE | tr '/' '\n' | tail -n1`
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=tata_`echo $PIC | tr '/' '\n' | tail -n1`

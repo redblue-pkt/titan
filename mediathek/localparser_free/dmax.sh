@@ -36,14 +36,14 @@ init()
 {
 #	if [ "$ARCH" == "arm" ] || [ "$ARCH" == "mipsel" ] || ([ "$ARCH" == "sh4" ] && [ -e "/etc/.beta" ]);then
 		rm -rf $TMP > /dev/null 2>&1
-		echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+		echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 #	fi
 }
 
 mainmenu()
 {
-	echo "Genres#$SRC $SRC genre 1 0 'themen'#http://atemio.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
-	echo "Search#$SRC $SRC series 1 0 '/api/search?query='#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
+	echo "Genres#$SRC $SRC genre 1 0 'themen'#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" > $TMP/$PARSER.$INPUT.list
+	echo "Search#$SRC $SRC series 1 0 '/api/search?query='#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >> $TMP/$PARSER.$INPUT.list
 
 	if [ -e "$TMP/$PARSER.new.list" ] ; then
 		rm $TMP/$PARSER.new.list
@@ -69,7 +69,7 @@ genre()
 			NEWPAGE=`echo $ROUND | sed 's/"url/\n"url/g' | grep ^'"url"' | sed 's!"url"!!g'| cut -d '"' -f2 | sed 's!themen!api/genres!g'`
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=$PARSER'_'`echo $PIC | tr '/' '\n' | tail -n1`
@@ -117,7 +117,7 @@ series()
 			NEWPAGE=api/show-detail/`echo $ROUND | sed 's/"id"/\n"id"/' | grep ^'"id":' | sed 's!"id":!!g'| cut -d '"' -f2`
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=$PARSER_`echo $PIC | tr '/' '\n' | tail -n1`
@@ -135,7 +135,7 @@ series()
 		if [ $MAXPAGE != $CURPAGE ];then
 		
 		NEWPAGE=`expr $CURPAGE + 1`
-		echo "Page $NEWPAGE#$SRC $SRC series $NEWPAGE $MAXPAGE '$PAGE'#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
+		echo "Page $NEWPAGE#$SRC $SRC series $NEWPAGE $MAXPAGE '$PAGE'#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0" >> $TMP/$PARSER.$INPUT.$CURPAGE.list
 		fi
 		
 
@@ -170,7 +170,7 @@ season()
 			NEWPAGE=https://sonic-eu1-prod.disco-api.com/playback/videoPlaybackInfo/`echo $ROUND | sed 's!"id"!\n"id"!g' | grep ^'"id":' | cut -d '"' -f4`
 
 			if [ -z  "$PIC" ]; then  
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				TMPPIC="default.jpg"
 			else
 				TMPPIC=$PARSER'_'`echo $PIC | tr '/' '\n' | tail -n1`

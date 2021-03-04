@@ -35,13 +35,13 @@ fi
 init()
 {
 	rm -rf $TMP > /dev/null 2>&1
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Von A-Z#$SRC $SRC season 'sendungen-a-bis-z/' 1#http://atemio.dyndns.tv/mediathek/menu/shows.jpg#a-z.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "Suchen#$SRC $SRC search 'frontend/json/search-videos.php?QUERY_STRING=%search%' 1#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Von A-Z#$SRC $SRC season 'sendungen-a-bis-z/' 1#http://openaaf.dyndns.tv/mediathek/menu/shows.jpg#a-z.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Suchen#$SRC $SRC search 'frontend/json/search-videos.php?QUERY_STRING=%search%' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -100,7 +100,7 @@ season()
 				        piccount += 1
 				        if ( pic == "" )
 				        {
-	                    			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	                    			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				        }
 				        else
 					        pic = "http:" pic
@@ -125,7 +125,7 @@ season()
 				        piccount += 1
 				        if ( pic == "" )
 				        {
-	                    			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	                    			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				        }
 				        else
 					        pic = "http:" pic
@@ -147,7 +147,7 @@ season()
 			END \
 			{
 #				if (curpage != pages)
-#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -213,7 +213,7 @@ year()
 			END \
 			{
 #				if (curpage != pages)
-#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -256,7 +256,7 @@ episodes()
 				        piccount += 1
 				        if ( pic == "" )
 				        {
-	                    	pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	                    	pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				        }
 				        else
 					        pic = "http:" pic
@@ -271,7 +271,7 @@ episodes()
 			END \
 			{
 #				if (curpage != pages)
-#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+#					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -321,7 +321,7 @@ search()
 				piccount += 1
 				if ( pic == "" )
 				{
-	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 				next
@@ -329,7 +329,7 @@ search()
 			END \
 			{
 				if (curpage != pages)
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -365,7 +365,7 @@ play()
 		PIC="http:`cat $TMP/cache.$FILENAME.$ROUND.1 | sed 's/<imagePreview><!\[CDATA\[/\nfound=\]/g' | grep ^found= | cut -d"]" -f2`"
 
 		if [ -z "$PIC" ] || "$PIC" = "http:" ] ; then
-			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 		fi
 
 		echo "$NEWPAGE" > $TMP/$FILENAME.list
@@ -415,7 +415,7 @@ seasonapi()
 				piccount += 1
 				if ( pic == "" )
 				{
-	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				else
 					pic = "http:" pic
@@ -427,7 +427,7 @@ seasonapi()
 			END \
 			{
 				if (curpage != pages)
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -475,7 +475,7 @@ yearapi()
 				piccount += 1
 				if ( pic == "" )
 				{
-	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				else
 					pic = "http:" pic
@@ -487,7 +487,7 @@ yearapi()
 			END \
 			{
 				if (curpage != pages)
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -544,7 +544,7 @@ episodesapi()
 				piccount += 1
 				if ( pic == "" )
 				{
-	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				print "S" season "E" episode " - " title "#" SRC " " SRC " parts \x27" newpage "\x27#http:" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
@@ -553,7 +553,7 @@ episodesapi()
 			END \
 			{
 				if (curpage != pages)
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -603,7 +603,7 @@ searchapi()
 				piccount += 1
 				if ( pic == "" )
 				{
-	            			pic = "http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				}
 				print title " (" extra ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 				next
@@ -611,7 +611,7 @@ searchapi()
 			END \
 			{
 				if (curpage != pages)
-					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://atemio.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 			}
 		# schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -690,7 +690,7 @@ NEWPAGE=$(echo $NEWPAGE | sed "s!/$SEASONID_DUMMY/!/$SEASONID/!")
 			PIC="http:`cat $TMP/cache.$FILENAME.$ROUND.1 | sed 's/<imagePreview><!\[CDATA\[/\nfound=\]/g' | grep ^found= | cut -d"]" -f2`"
 
 			if [ -z "$PIC" ] || "$PIC" = "http:" ] ; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 
 			echo "$TITLE#$NEWPAGE#$PIC#$PICNAME$piccount.jpg#$NAME#2" >> $TMP/$FILENAME.list

@@ -677,7 +677,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		ip = string_replace("http://", "", (char*)link, 0);
 
 		// tithek security
-		ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
+		ip = string_replace_all("imageshack.us/md/up/grd/", "openaaf.dyndns.tv/", ip, 1);
 
 		ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
 		//ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
@@ -1447,7 +1447,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	input = ostrcat(input, description, 1, 0);
 
 	// tithek security
-	input = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", input, 1);
+	input = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", input, 1);
 
 	tmpstr1 = ostrcat(tmpstr1, input, 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
@@ -1558,7 +1558,7 @@ int showinfo(struct skin* listbox, char* title, char* link, char* pic, char* loc
 	tmpstr = ostrcat(tmpstr, description, 1, 0);
 
 	// tithek security
-//	tmpstr = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", tmpstr, 1);
+//	tmpstr = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", tmpstr, 1);
 	tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 	
 	char* savefile = ostrcat("/tmp/tithek/infomenu.list", NULL, 0, 0);
@@ -2275,7 +2275,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 	if(!file_exist(disclaimer))
 	{
-		char* tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/disclaimer.txt", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		char* tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/disclaimer.txt", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 		if(textbox(_("TitanNit Tithek disclaimer"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 650, 0, 0) == 1)
 		{
 			writesys(disclaimer, tmpstr, 0);
@@ -2304,7 +2304,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 			rcret = servicestop(status.aktservice, 1, 1);
 			if(rcret == 1) return;
 		}
-    	gethttp("atemio.dyndns.tv", "/mediathek/menu/default.jpg", 80, "/tmp/tithek/default.jpg", HTTPAUTH, 5000, NULL, 0);
+    	gethttp("openaaf.dyndns.tv", "/mediathek/menu/default.jpg", 80, "/tmp/tithek/default.jpg", HTTPAUTH, 5000, NULL, 0);
 	}
 
 	struct skin* grid = getscreen("titheklist");
@@ -2500,7 +2500,7 @@ waitrcstart:
 					{
                         debug(99, "not found: %s use default /tmp/tithek/default.jpg", tithekpic);
                         if(!file_exist("/tmp/tithek/default.jpg"))
-    	                    gethttp("atemio.dyndns.tv", "/mediathek/menu/default.jpg", 80, "/tmp/tithek/default.jpg", HTTPAUTH, 5000, NULL, 0);
+    	                    gethttp("openaaf.dyndns.tv", "/mediathek/menu/default.jpg", 80, "/tmp/tithek/default.jpg", HTTPAUTH, 5000, NULL, 0);
 						free(tithekpic); tithekpic = NULL;
 						tithekpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
 						changepic(listbox->select, tithekpic);

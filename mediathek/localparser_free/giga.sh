@@ -32,13 +32,13 @@ fi
 
 init()
 {
-	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://atemio.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
+	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
 mainmenu()
 {
-	echo "Category#$SRC $SRC category#http://atemio.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > /tmp/tithek/$PARSER.$INPUT.list
-#	echo "Suche#$SRC $SRC suche#http://atemio.dyndns.tv/mediathek/menu/search.jpg#giga.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
+	echo "Category#$SRC $SRC category#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" > /tmp/tithek/$PARSER.$INPUT.list
+#	echo "Suche#$SRC $SRC suche#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#giga.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
 	echo "/tmp/tithek/$PARSER.$INPUT.list"
 }
 
@@ -55,7 +55,7 @@ category()
 			do
 			tags="$tags~"$ROUND0"/page/$i"
 			TITLE="`echo $ROUND0 | sed 's!/! !g' | sed 's!-! !g'` Page $i"
-			echo "$TITLE#$SRC $SRC page $ROUND0/page/$i#http://atemio.dyndns.tv/mediathek/menu/page.jpg#page.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
+			echo "$TITLE#$SRC $SRC page $ROUND0/page/$i#http://openaaf.dyndns.tv/mediathek/menu/page.jpg#page.jpg#$NAME#0" >> /tmp/tithek/$PARSER.$INPUT.list
 			i=`expr $i + 1`
 			done
 		done
@@ -77,7 +77,7 @@ page()
 			TITLE=`echo $ROUND2 | sed 's/ alt="/\n alt="/g' | grep '^ alt=' | cut -d'"' -f2 | cut -d'"' -f1`
 
 			if [ -z "$PIC" ]; then
-				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 			fi
 
 			if [ `echo $PIC | grep ".png" | wc -l` -eq 0 ];then

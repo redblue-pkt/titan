@@ -3251,7 +3251,7 @@ int tpkgetindex(int flag)
 		if(ip != NULL && path != NULL)
 		{
 			if(ostrcmp("97.74.32.10", ip) == 0 && !file_exist("/etc/.beta"))
-				ip = "atemio.dyndns.tv";
+				ip = "openaaf.dyndns.tv";
 			else if(ostrcmp("97.74.32.10", ip) == 0)
 				ip = "beta.dyndns.tv";
 
@@ -3363,7 +3363,7 @@ int tpkgetpackage(char* package, char* url, char* installpath, int flag, int fla
 		tmpstr3 = ostrcat(tmpstr3, ".tpk", 1, 0);
 
 		if(ostrcmp("97.74.32.10", ip) == 0 && !file_exist("/etc/.beta"))
-			ip = "atemio.dyndns.tv";
+			ip = "openaaf.dyndns.tv";
 		else if(ostrcmp("97.74.32.10", ip) == 0)
 			ip = "beta.dyndns.tv";
 

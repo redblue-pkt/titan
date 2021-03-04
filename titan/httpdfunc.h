@@ -5795,7 +5795,7 @@ char* webgetupdatelist(char* param, int fmt)
 				if(node->imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
-					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+					cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);
 #endif
 #ifdef OEBUILD
 				if(file_exist("/media/hdd"))

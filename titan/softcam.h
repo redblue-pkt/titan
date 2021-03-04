@@ -467,7 +467,7 @@ void screensoftcam()
 			int ret = 1;
 
 			debug(696, "tmpstr1: %s", tmpstr1);
-			gethttp("atemio.dyndns.tv", tmpstr1, 80, "/tmp/.tmp.tar.gz", HTTPAUTH, 5000, NULL, 0);		
+			gethttp("openaaf.dyndns.tv", tmpstr1, 80, "/tmp/.tmp.tar.gz", HTTPAUTH, 5000, NULL, 0);		
 
 			debug(696, "extract: %s", extract);
 			ret = system(extract);

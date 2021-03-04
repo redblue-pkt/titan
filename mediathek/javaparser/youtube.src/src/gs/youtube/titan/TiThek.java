@@ -15,9 +15,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class TiThek {
 
-	private static final String LINK_PREFIX = "http://atemio.dyndns.tv/mediathek/youtube/";
+	private static final String LINK_PREFIX = "http://openaaf.dyndns.tv/mediathek/youtube/";
 	//private static final String LINK_PREFIX = "http://192.168.1.40:8080/mediathek/youtube/";
-	private static final String MENU_LINK_PREFIX = "http://atemio.dyndns.tv/mediathek/menu/";
+	private static final String MENU_LINK_PREFIX = "http://openaaf.dyndns.tv/mediathek/menu/";
 	private static final String MENU = "YouTube";
 	private static final String SUB_DIR = "streams";
 	private static final char[] LETTERS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',

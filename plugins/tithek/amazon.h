@@ -9,8 +9,8 @@ void amazon_init(char* titheklink, char* tithekfile)
 	int ret = 0;
 	char* tmpstr = NULL;
 	
-	if(ostrcmp("http://atemio.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
-		writesys(tithekfile, "Amazon#/tmp/tithek/amazon.mainmenu.list#http://atemio.dyndns.tv/mediathek/menu/amazon.jpg#amazon.jpg#TiThek#0", 3);
+	if(ostrcmp("http://openaaf.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
+		writesys(tithekfile, "Amazon#/tmp/tithek/amazon.mainmenu.list#http://openaaf.dyndns.tv/mediathek/menu/amazon.jpg#amazon.jpg#TiThek#0", 3);
 
 	if(ostrcmp("/tmp/tithek/amazon.mainmenu.list", titheklink) == 0)
 	{
@@ -29,80 +29,80 @@ void amazon_init(char* titheklink, char* tithekfile)
 		printf("add amazon mainmenu entrys\n");
 
 
-//		writesys(tithekfile, "Currently (Movie)#/tmp/tithek/amazon.currently.movie.list#http://atemio.dyndns.tv/mediathek/menu/currently.movie.jpg#currently.movie.jpg#Amazon#86", 3);
+//		writesys(tithekfile, "Currently (Movie)#/tmp/tithek/amazon.currently.movie.list#http://openaaf.dyndns.tv/mediathek/menu/currently.movie.jpg#currently.movie.jpg#Amazon#86", 3);
 		tmpstr = ostrcat(_("Currently"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.currently.movie.list#http://atemio.dyndns.tv/mediathek/menu/currently.movie.jpg#currently.movie.jpg#Amazon#86", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.currently.movie.list#http://openaaf.dyndns.tv/mediathek/menu/currently.movie.jpg#currently.movie.jpg#Amazon#86", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Popularity Kids (Movie)#/tmp/tithek/amazon.popularity.kids.movie.list#http://atemio.dyndns.tv/mediathek/menu/popularity.kids.movie.jpg#popularity.kids.movie.jpg#Amazon#84", 3);
+//		writesys(tithekfile, "Popularity Kids (Movie)#/tmp/tithek/amazon.popularity.kids.movie.list#http://openaaf.dyndns.tv/mediathek/menu/popularity.kids.movie.jpg#popularity.kids.movie.jpg#Amazon#84", 3);
 		tmpstr = ostrcat(_("Popularity Kids"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.movie.list#http://atemio.dyndns.tv/mediathek/menu/popularity.kids.movie.jpg#popularity.kids.movie.jpg#Amazon#84", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.movie.list#http://openaaf.dyndns.tv/mediathek/menu/popularity.kids.movie.jpg#popularity.kids.movie.jpg#Amazon#84", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Popularity Kids (Series)#/tmp/tithek/amazon.popularity.kids.tv.list#http://atemio.dyndns.tv/mediathek/menu/popularity.kids.tv.jpg#popularity.kids.tv.jpg#Amazon#85", 3);
+//		writesys(tithekfile, "Popularity Kids (Series)#/tmp/tithek/amazon.popularity.kids.tv.list#http://openaaf.dyndns.tv/mediathek/menu/popularity.kids.tv.jpg#popularity.kids.tv.jpg#Amazon#85", 3);
 		tmpstr = ostrcat(_("Popularity Kids"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.tv.list#http://atemio.dyndns.tv/mediathek/menu/popularity.kids.tv.jpg#popularity.kids.tv.jpg#Amazon#85", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.kids.tv.list#http://openaaf.dyndns.tv/mediathek/menu/popularity.kids.tv.jpg#popularity.kids.tv.jpg#Amazon#85", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Popularity (Movie)#/tmp/tithek/amazon.popularity.rank.movie.list#http://atemio.dyndns.tv/mediathek/menu/popularity.rank.movie.jpg#popularity.rank.movie.jpg#Amazon#81", 3);
+//		writesys(tithekfile, "Popularity (Movie)#/tmp/tithek/amazon.popularity.rank.movie.list#http://openaaf.dyndns.tv/mediathek/menu/popularity.rank.movie.jpg#popularity.rank.movie.jpg#Amazon#81", 3);
 		tmpstr = ostrcat(_("Popularity Rank"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.rank.movie.list#http://atemio.dyndns.tv/mediathek/menu/popularity.rank.movie.jpg#popularity.rank.movie.jpg#Amazon#81", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.rank.movie.list#http://openaaf.dyndns.tv/mediathek/menu/popularity.rank.movie.jpg#popularity.rank.movie.jpg#Amazon#81", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Popularity (Series)#/tmp/tithek/amazon.popularity.rank.tv.list#http://atemio.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#Amazon#83", 3);
+//		writesys(tithekfile, "Popularity (Series)#/tmp/tithek/amazon.popularity.rank.tv.list#http://openaaf.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#Amazon#83", 3);
 		tmpstr = ostrcat(_("Popularity Rank"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.rank.tv.list#http://atemio.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#Amazon#83", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.popularity.rank.tv.list#http://openaaf.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#Amazon#83", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Genre (Movie)#/tmp/tithek/amazon.genre.movie.list#http://atemio.dyndns.tv/mediathek/menu/genre.movie.jpg#watchlist.movie.jpg#Amazon#87", 3);
+//		writesys(tithekfile, "Genre (Movie)#/tmp/tithek/amazon.genre.movie.list#http://openaaf.dyndns.tv/mediathek/menu/genre.movie.jpg#watchlist.movie.jpg#Amazon#87", 3);
 		tmpstr = ostrcat(_("Genre"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.genre.movie.list#http://atemio.dyndns.tv/mediathek/menu/genre.movie.jpg#watchlist.movie.jpg#Amazon#87", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.genre.movie.list#http://openaaf.dyndns.tv/mediathek/menu/genre.movie.jpg#watchlist.movie.jpg#Amazon#87", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Genre (Series)#/tmp/tithek/amazon.genre.tv.list#http://atemio.dyndns.tv/mediathek/menu/genre.tv.jpg#watchlist.movie.jpg#Amazon#89", 3);
+//		writesys(tithekfile, "Genre (Series)#/tmp/tithek/amazon.genre.tv.list#http://openaaf.dyndns.tv/mediathek/menu/genre.tv.jpg#watchlist.movie.jpg#Amazon#89", 3);
 		tmpstr = ostrcat(_("Genre"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.genre.tv.list#http://atemio.dyndns.tv/mediathek/menu/genre.tv.jpg#watchlist.movie.jpg#Amazon#89", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.genre.tv.list#http://openaaf.dyndns.tv/mediathek/menu/genre.tv.jpg#watchlist.movie.jpg#Amazon#89", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Watchlist (Movie)#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 3);
+//		writesys(tithekfile, "Watchlist (Movie)#/tmp/tithek/amazon.watchlist.movie.list#http://openaaf.dyndns.tv/mediathek/menu/watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 3);
 		tmpstr = ostrcat(_("Watchlist"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.watchlist.movie.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.watchlist.movie.list#http://openaaf.dyndns.tv/mediathek/menu/watchlist.movie.jpg#watchlist.movie.jpg#Amazon#79", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Watchlist (Series)#/tmp/tithek/amazon.watchlist.tv.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.tv.jpg#watchlist.tv.jpg#Amazon#80", 3);
+//		writesys(tithekfile, "Watchlist (Series)#/tmp/tithek/amazon.watchlist.tv.list#http://openaaf.dyndns.tv/mediathek/menu/watchlist.tv.jpg#watchlist.tv.jpg#Amazon#80", 3);
 		tmpstr = ostrcat(_("Watchlist"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.watchlist.tv.list#http://atemio.dyndns.tv/mediathek/menu/watchlist.tv.jpg#watchlist.tv.jpg#Amazon#80", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.watchlist.tv.list#http://openaaf.dyndns.tv/mediathek/menu/watchlist.tv.jpg#watchlist.tv.jpg#Amazon#80", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Search (Movie)#/tmp/tithek/amazon.search.movie.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#76", 3);
+//		writesys(tithekfile, "Search (Movie)#/tmp/tithek/amazon.search.movie.list#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#76", 3);
 		tmpstr = ostrcat(_("Search"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Movies"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.search.movie.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#76", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.search.movie.list#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#76", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 
-//		writesys(tithekfile, "Search (Tv)#/tmp/tithek/amazon.search.tv.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#77", 3);
+//		writesys(tithekfile, "Search (Tv)#/tmp/tithek/amazon.search.tv.list#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#77", 3);
 		tmpstr = ostrcat(_("Search"), " (", 0, 0);
 		tmpstr = ostrcat(tmpstr, _("Series"), 0, 0);
-		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.search.tv.list#http://atemio.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#77", 0, 0);
+		tmpstr = ostrcat(tmpstr, ")#/tmp/tithek/amazon.search.tv.list#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#Amazon#77", 0, 0);
 		writesys(tithekfile, tmpstr, 3);
 		free(tmpstr), tmpstr = NULL;
 		
@@ -326,7 +326,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
 					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
 					if(pic == NULL)
-						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+						pic = ostrcat(pic, "http://openaaf.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 					atitle = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
 					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
@@ -338,7 +338,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					streamurl = string_resub("\" href=\"", "\">", ret1[j].part, 0);
 					pic = string_resub("\" src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
-						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+						pic = ostrcat(pic, "http://openaaf.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 					atitle = string_resub("\" title=\"", "\"", ret1[j].part, 0);
 					year = string_resub("<span class=\"a-size-small a-color-secondary\">", "</span>", ret1[j].part, 0);
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
@@ -350,7 +350,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
 					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
-						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+						pic = ostrcat(pic, "http://openaaf.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 					atitle = string_resub("<span class=\"episode-title\">", "</span>", ret1[j].part, 0);
 					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
 					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
@@ -362,7 +362,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					streamurl = string_resub("href=\"", "\"", ret1[j].part, 0);
 					pic = string_resub("src=\"", "\"", ret1[j].part, 0);
 					if(pic == NULL)
-						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+						pic = ostrcat(pic, "http://openaaf.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 					atitle = string_resub("data-title=\"", "\"", ret1[j].part, 0);
 					year = string_resub("<span class=\"dv-badge release-date\">", "</span>", ret1[j].part, 0);
 					runtime = string_resub("<span class=\"dv-badge runtime\">", "</span>", ret1[j].part, 0);
@@ -376,7 +376,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					streamurl = string_resub("\" href=\\\"", "\\\">", ret1[j].part, 0);
 					pic = string_resub("\" src=\\\"", "\\\"", ret1[j].part, 0);
 					if(pic == NULL)
-						pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+						pic = ostrcat(pic, "http://openaaf.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 					atitle = string_resub("\" title=\\\"", "\\\"", ret1[j].part, 0);
 					year = string_resub("<span class=\\\"a-size-small a-color-secondary\\\">", "</span>", ret1[j].part, 0);
 					runtime = oregex(".*a-size-small a-color-secondary.*>(.*)</span>.*", ret1[j].part);
@@ -388,7 +388,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 					streamurl = string_resub("<a href=\"", "\">", ret1[j].part, 0);
 					streamurl = string_replace_all("/s/", "https://www.amazon.de/mn/search/ajax/", streamurl, 1);
 					streamurl = string_replace_all("&amp;", "&", streamurl, 1);
-					pic = ostrcat(pic, "http://atemio.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+					pic = ostrcat(pic, "http://openaaf.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
 					atitle = string_resub("<span class=\"refinementLink\">", "</span>", ret1[j].part, 0);
 //					id = oregex("http.*//.*/.*/(.*)/ref.*", streamurl);
 					id = string_resub("bbn=", "&", streamurl, 0);
@@ -480,7 +480,7 @@ int amazon_search(struct skin* grid, struct skin* listbox, struct skin* countlab
 				line = ostrcat(line, ")#", 1, 0);
 				line = ostrcat(line, url, 1, 0);
 				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/next.jpg", 1, 0);
+				line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/next.jpg", 1, 0);
 				line = ostrcat(line, "#amazon_search_", 1, 0);
 				line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
 				line = ostrcat(line, ".jpg#Amazon - Search#", 1, 0);
@@ -862,7 +862,7 @@ int amazon_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/amazon/streams/amazon.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("openaaf.dyndns.tv", "/mediathek/amazon/streams/amazon.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -892,7 +892,7 @@ int amazon_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 
 			if(line != NULL)
 			{
-				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
+				line = string_replace_all("http://openaaf.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/amazon.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
