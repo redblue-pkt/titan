@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <ctype.h>
+#include <sys/sysmacros.h>
 
 char* ostrcat(char* value1, char* value2, int free1, int free2);
 int file_exist(char* filename);
