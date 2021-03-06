@@ -133,9 +133,12 @@ void screenkeyactions(int key, int flag)
 			get_mediadb_scan_info();
 		else if(ostrcmp(keyconf, "Record Player") == 0)
 		{
-			addconfigtmp("dirsort", "4");
+			int oldsort = getconfigint("dirsort", NULL);
+//			addconfigtmp("dirsort", "4");
+			addconfigint("dirsort", "4");
 			screenplay(NULL, NULL, 1, 0);
-			delconfigtmp("dirsort");
+//			delconfigtmp("dirsort");
+			addconfigint("dirsort", oldsort);
 		}
 		else if(ostrcmp(keyconf, "Media Player") == 0)
 			screenplay(NULL, NULL, 0, 0);
