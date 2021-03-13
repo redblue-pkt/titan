@@ -25,6 +25,7 @@ BIN="$CMD"/bin/python."$ARCH"
 HLSBIN="$CMD"/bin/hlsdl."$ARCH"
 CURLBIN="$CMD"/bin/curl."$ARCH"
 DUKBIN="$CMD"/bin/duk."$ARCH"
+
 if [ "$ARCH" == "i386" ]; then
 BIN=/usr/bin/python
 HLSBIN=/usr/bin/hlsdl
@@ -44,8 +45,15 @@ proxy=`cat /mnt/config/titan.cfg | grep tithek_proxy | cut -d"=" -f2`
 if [ ! -z "$proxy" ];then PROXY="--proxy $proxy"; fi
 curlbin="$CURLBIN $PROXY -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 curlbin2="$CURLBIN $PROXY -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
-youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
-youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+
+if [ -e /etc/.oebuild ];then
+	youtubebin="/usr/bin/youtube_dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+	youtubebinbg="/usr/bin/youtube_dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+else
+	youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+	youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+fi
+
 hlsdlbg="$HLSBIN -u $USERAGENT -o"
 
 if [ -e /mnt/network/cookies ];then sed 's/#HttpOnly_//g' -i /mnt/network/cookies; fi
@@ -848,10 +856,17 @@ youtube_dl()
 	if [ ! -z "$USER" ];then USER="--username $USER";fi
 	if [ ! -z "$PASS" ];then PASS="--password $PASS";fi
 
-	echo "$BIN $youtubebin $INPUT $USER $PASS" > /tmp/.last_hoster_$TYPE.log
-
+	if [ -e /etc/.oebuild ];then
+		echo "$youtubebin $INPUT $USER $PASS" > /tmp/.last_hoster_$TYPE.log
+	else
+		echo "$BIN $youtubebin $INPUT $USER $PASS" > /tmp/.last_hoster_$TYPE.log
+	fi
 	if [ ! -z "$INPUT" ];then
-		$BIN $youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+		if [ -e /etc/.oebuild ];then
+			$youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+		else
+			$BIN $youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+		fi
 		echo $INPUT >> $TMP/$TYPE.$hoster.$FILENAME.streamlist
 	else
 		echo "errormsg=Error: Youtube DL has Emthy Url from Parser" > $TMP/$TYPE.$hoster.$FILENAME.streamlist
@@ -867,9 +882,14 @@ youtube_dlbg()
 #	echo "$URL" >> /tmp/.last_hoster_youtube_dlbg.log
 #	echo $URL
 	mkdir $TMP > /dev/null 2>&1
+	if [ -e /etc/.oebuild ];then
+		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
+		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
+	else
+		echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
+		$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
+	fi
 
-	echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
-	$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
 	cat /tmp/.last_hoster_$TYPE.log | tail -n1
 #	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
 }
