@@ -47,8 +47,12 @@ curlbin="$CURLBIN $PROXY -k -s -L --cookie /mnt/network/cookies --cookie-jar /mn
 curlbin2="$CURLBIN $PROXY -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 
 if [ -e /etc/.oebuild ];then
-	youtubebin="/usr/bin/youtube_dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
-	youtubebinbg="/usr/bin/youtube_dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+	if [ ! -e /usr/bin/youtube-dl ];then
+		opkg update 
+		opkg install python-youtube-dl
+	fi
+	youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+	youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
 else
 	youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 	youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
