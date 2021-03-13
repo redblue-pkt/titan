@@ -867,6 +867,8 @@ youtube_dl()
 	fi
 	if [ ! -z "$INPUT" ];then
 		if [ -e /etc/.oebuild ];then
+			echo remove cookies
+			rm /mnt/network/cookies
 			$youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
 		else
 			$BIN $youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
@@ -887,6 +889,8 @@ youtube_dlbg()
 #	echo $URL
 	mkdir $TMP > /dev/null 2>&1
 	if [ -e /etc/.oebuild ];then
+		echo remove cookies
+		rm /mnt/network/cookies
 		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
 		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
 	else
