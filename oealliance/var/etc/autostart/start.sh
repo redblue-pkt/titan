@@ -166,7 +166,7 @@ workarounds()
 		fi
 	fi
 
-	if [ "$distro" == "4.4" ] && [ "$board" == "sf8008" ]; then
+	if [ "$distro" == "6.4" ] && [ "$board" == "sf8008" ]; then
 		echo "[$0] enable 100mbit LAN workaround"
 		ethtool -s eth0 speed 100 duplex full autoneg on
 	fi
