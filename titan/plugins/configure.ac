@@ -79,6 +79,7 @@ tsSchnitt/Makefile
 usbreset/Makefile
 weather/Makefile
 wins3/Makefile
+wlandisplay/Makefile
 wm2018/Makefile
 xupnpd/Makefile
 zapback/Makefile

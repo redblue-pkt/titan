@@ -1,3 +1,3 @@
-lib_LTLIBRARIES = liblcdsamsung.la
-liblcdsamsung_la_SOURCES = lcdsamsung.c
+lib_LTLIBRARIES = libwlandisplay.la
+liblcdsamsung_la_SOURCES = wlandisplay.c
 
