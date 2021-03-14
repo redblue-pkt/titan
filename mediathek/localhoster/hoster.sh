@@ -47,10 +47,6 @@ curlbin="$CURLBIN $PROXY -k -s -L --cookie /mnt/network/cookies --cookie-jar /mn
 curlbin2="$CURLBIN $PROXY -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 
 if [ -e /etc/.oebuild ];then
-	if [ ! -e /usr/bin/youtube-dl ];then
-		opkg update 
-		opkg install python-youtube-dl
-	fi
 	youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 	youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
 else
@@ -867,8 +863,15 @@ youtube_dl()
 	fi
 	if [ ! -z "$INPUT" ];then
 		if [ -e /etc/.oebuild ];then
+			if [ ! -e /usr/bin/youtube-dl ];then
+				opkg update 
+				echo install python-youtube-dl 
+				opkg install python-youtube-dl
+			fi
 			echo remove cookies
 			rm /mnt/network/cookies
+			unset PYTHONHOME
+			unset LD_LIBRARY_PATH
 			$youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
 		else
 			$BIN $youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
@@ -889,8 +892,15 @@ youtube_dlbg()
 #	echo $URL
 	mkdir $TMP > /dev/null 2>&1
 	if [ -e /etc/.oebuild ];then
+		if [ ! -e /usr/bin/youtube-dl ];then
+			opkg update 
+			echo install python-youtube-dl 
+			opkg install python-youtube-dl
+		fi
 		echo remove cookies
 		rm /mnt/network/cookies
+		unset PYTHONHOME
+		unset LD_LIBRARY_PATH
 		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
 		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
 	else
