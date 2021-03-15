@@ -868,7 +868,7 @@ youtube_dl()
 				echo install python-youtube-dl 
 				opkg install python-youtube-dl
 			fi
-			echo remove cookies
+#			echo remove cookies
 			rm /mnt/network/cookies
 			unset PYTHONHOME
 			unset LD_LIBRARY_PATH
