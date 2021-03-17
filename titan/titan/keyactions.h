@@ -134,14 +134,16 @@ void screenkeyactions(int key, int flag)
 		else if(ostrcmp(keyconf, "Record Player") == 0)
 		{
 			int oldsort = getconfigint("dirsort", NULL);
-//			addconfigtmp("dirsort", "4");
-			addconfigint("dirsort", "4");
+			addconfigint("dirsort", 4);
 			screenplay(NULL, NULL, 1, 0);
-//			delconfigtmp("dirsort");
 			addconfigint("dirsort", oldsort);
 		}
 		else if(ostrcmp(keyconf, "Media Player") == 0)
+		{
+			int oldsort = getconfigint("dirsort", NULL);
 			screenplay(NULL, NULL, 0, 0);
+			addconfigint("dirsort", oldsort);
+		}
 		else if(ostrcmp(keyconf, "Media Plugins List") == 0)
 			screenkeyactions(3, 1);
 		else if(ostrcmp(keyconf, "Bouquet List") == 0)
