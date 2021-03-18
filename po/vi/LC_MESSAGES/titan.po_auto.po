@@ -12195,7 +12195,7 @@ msgstr "Hình ảnh"
 msgid "audiotrack"
 msgstr ""
 
-#: instar.h:479 instar.h:499 instar.h:519 instar.h:539
+#: instar.h:499 instar.h:521 instar.h:542 instar.h:563
 msgid "aus"
 msgstr "hỏi"
 
@@ -12614,7 +12614,7 @@ msgstr ""
 msgid "east"
 msgstr "trái"
 
-#: instar.h:480 instar.h:500 instar.h:520 instar.h:540
+#: instar.h:500 instar.h:522 instar.h:543 instar.h:564
 msgid "ein"
 msgstr "Mật khẩu"
 
@@ -12971,7 +12971,7 @@ msgid "j"
 msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
-#: callmon_main.h:123 callmon_main.h:127 instar.h:472 lcdpearl1.c:507
+#: callmon_main.h:123 callmon_main.h:127 instar.h:492 lcdpearl1.c:507
 #: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:1233 lcdsamsung.c:1237
 #: lcdsamsung.c:1241 wlandisplay.c:1226 wlandisplay.c:1230 wlandisplay.c:1234
 msgid "ja"
@@ -13179,7 +13179,7 @@ msgid "n"
 msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
-#: callmon_main.h:124 callmon_main.h:128 instar.h:471 lcdpearl1.c:506
+#: callmon_main.h:124 callmon_main.h:128 instar.h:491 lcdpearl1.c:506
 #: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:1232 lcdsamsung.c:1236
 #: lcdsamsung.c:1240 wlandisplay.c:1225 wlandisplay.c:1229 wlandisplay.c:1233
 msgid "nein"
