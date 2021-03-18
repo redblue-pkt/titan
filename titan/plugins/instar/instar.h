@@ -78,6 +78,11 @@ int show_control()
 					tmpstr = ostrcat(cam1, "/cgi-bin/images_cgi?channel=0", 0, 0);
 					tmpstr = ostrcat(tmpstr, cam11, 1, 0);
 				}
+				else if(getconfigint("instar_1", NULL) == 7)
+				{
+					tmpstr = ostrcat(cam1, "/snapshot.jpg", 0, 0);
+					tmpstr = ostrcat(tmpstr, cam11, 1, 0);
+				}
 				else
 					tmpstr = ostrcat(cam1, "/snapshot.cgi", 0, 0);
 				if(getconfigint("instar_alterwebif", NULL) == 1)
@@ -104,6 +109,11 @@ int show_control()
 				else if(getconfigint("instar_2", NULL) == 6)
 				{
 					tmpstr = ostrcat(cam2, "/cgi-bin/images_cgi?channel=0", 0, 0);
+					tmpstr = ostrcat(tmpstr, cam21, 1, 0);
+				}
+				else if(getconfigint("instar_2", NULL) == 7)
+				{
+					tmpstr = ostrcat(cam2, "/snapshot.jpg", 0, 0);
 					tmpstr = ostrcat(tmpstr, cam21, 1, 0);
 				}
 				else
@@ -134,6 +144,11 @@ int show_control()
 					tmpstr = ostrcat(cam3, "/cgi-bin/images_cgi?channel=0", 0, 0);
 					tmpstr = ostrcat(tmpstr, cam31, 1, 0);
 				}
+				else if(getconfigint("instar_3", NULL) == 7)
+				{
+					tmpstr = ostrcat(cam3, "/snapshot.jpg", 0, 0);
+					tmpstr = ostrcat(tmpstr, cam31, 1, 0);
+				}
 				else
 					tmpstr = ostrcat(cam3, "/snapshot.cgi", 0, 0);
 				if(getconfigint("instar_alterwebif", NULL) == 1)
@@ -160,6 +175,11 @@ int show_control()
 				else if(getconfigint("instar_4", NULL) == 6)
 				{
 					tmpstr = ostrcat(cam4, "/cgi-bin/images_cgi?channel=0", 0, 0);
+					tmpstr = ostrcat(tmpstr, cam41, 1, 0);
+				}
+				else if(getconfigint("instar_4", NULL) == 7)
+				{
+					tmpstr = ostrcat(cam4, "/snapshot.jpg", 0, 0);
 					tmpstr = ostrcat(tmpstr, cam41, 1, 0);
 				}
 				else
@@ -486,6 +506,8 @@ int instar_settings()
 	addchoicebox(typCam1, "4", "4");
 	addchoicebox(typCam1, "5", "5");
 	addchoicebox(typCam1, "6", "6");
+	addchoicebox(typCam1, "7", "7");
+	
 	setchoiceboxselection(typCam1, getconfig("instar_1", NULL));
 	changemask(ipCam1, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam1, getlist(myconfig, "InstarCam1IP", NULL));
@@ -506,6 +528,7 @@ int instar_settings()
 	addchoicebox(typCam2, "4", "4");
 	addchoicebox(typCam2, "5", "5");
 	addchoicebox(typCam2, "6", "6");
+	addchoicebox(typCam2, "7", "7");
 	setchoiceboxselection(typCam2, getconfig("instar_2", NULL));
 	changemask(ipCam2, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam2, getlist(myconfig, "InstarCam2IP", NULL));
@@ -526,6 +549,7 @@ int instar_settings()
 	addchoicebox(typCam3, "4", "4");
 	addchoicebox(typCam3, "5", "5");
 	addchoicebox(typCam3, "6", "6");
+	addchoicebox(typCam3, "7", "7");
 	setchoiceboxselection(typCam3, getconfig("instar_3", NULL));
 	changemask(ipCam3, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam3, getlist(myconfig, "InstarCam3IP", NULL));
@@ -546,6 +570,7 @@ int instar_settings()
 	addchoicebox(typCam4, "4", "4");
 	addchoicebox(typCam4, "5", "5");
 	addchoicebox(typCam4, "6", "6");
+	addchoicebox(typCam4, "7", "7");
 	setchoiceboxselection(typCam4, getconfig("instar_4", NULL));
 	changemask(ipCam4, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam4, getlist(myconfig, "InstarCam4IP", NULL));
