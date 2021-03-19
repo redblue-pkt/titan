@@ -679,7 +679,7 @@ void instar_main()
 		{
 			if(ostrcmp(getlist(myconfig, "InstarCam1", NULL), "ein") == 0 || ext == 1)
 			{
-				if(getconfigint("instar_1", NULL) != 5)
+				if(getconfigint("instar_1", NULL) != 5 && getconfigint("instar_1", NULL) != 7)
 				{
 					if(getconfigint("instar_alterwebif", NULL) == 0)
 						cam1 = ostrcat("wget --output-document=/tmp/instar1.jpg http://", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
@@ -706,9 +706,12 @@ void instar_main()
 					cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1IP", NULL), 1, 0);
 					cam1 = ostrcat(cam1, ":",1, 0);
 					cam1 = ostrcat(cam1, getlist(myconfig, "InstarCam1Port", NULL), 1, 0);
-					cam11 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
-					cam11 = ostrcat(cam11, "%26pwd%3D", 1, 0);
-					cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
+					if(getconfigint("instar_1", NULL) == 5)
+					{
+						cam11 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam1User", NULL), 0, 0);
+						cam11 = ostrcat(cam11, "%26pwd%3D", 1, 0);
+						cam11 = ostrcat(cam11, getlist(myconfig, "InstarCam1Pass", NULL), 1, 0);
+					}
 					//cam11 = ostrcat(cam11, "&", 1, 0);
 					
 				}
@@ -718,7 +721,7 @@ void instar_main()
 			
 			if(ostrcmp(getlist(myconfig, "InstarCam2", NULL), "ein") == 0 || ext == 2)
 			{
-				if(getconfigint("instar_2", NULL) != 5)
+				if(getconfigint("instar_2", NULL) != 5 && getconfigint("instar_2", NULL) != 7)
 				{				
 					if(getconfigint("instar_alterwebif", NULL) == 0)
 						cam2 = ostrcat("wget --output-document=/tmp/instar2.jpg http://", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
@@ -745,16 +748,19 @@ void instar_main()
 					cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2IP", NULL), 1, 0);
 					cam2 = ostrcat(cam2, ":",1, 0);
 					cam2 = ostrcat(cam2, getlist(myconfig, "InstarCam2Port", NULL), 1, 0);
-					cam21 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
-					cam21 = ostrcat(cam21, "%26pwd%3D", 1, 0);
-					cam21 = ostrcat(cam21, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
-					//cam21 = ostrcat(cam21, "&", 1, 0);
+					if(getconfigint("instar_2", NULL) == 5)
+					{
+						cam21 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam2User", NULL), 0, 0);
+						cam21 = ostrcat(cam21, "%26pwd%3D", 1, 0);
+						cam21 = ostrcat(cam21, getlist(myconfig, "InstarCam2Pass", NULL), 1, 0);
+						//cam21 = ostrcat(cam21, "&", 1, 0);
+					}
 				}				
 			}
 			
 			if(ostrcmp(getlist(myconfig, "InstarCam3", NULL), "ein") == 0)
 			{
-				if(getconfigint("instar_3", NULL) != 5)
+				if(getconfigint("instar_3", NULL) != 5 && getconfigint("instar_3", NULL) != 7)
 				{				
 					if(getconfigint("instar_alterwebif", NULL) == 0)
 						cam3 = ostrcat("wget --output-document=/tmp/instar3.jpg http://", getlist(myconfig, "Instarcam3User", NULL), 0, 0);
@@ -781,16 +787,19 @@ void instar_main()
 					cam3 = ostrcat(cam3, getlist(myconfig, "InstarCam3IP", NULL), 1, 0);
 					cam3 = ostrcat(cam3, ":",1, 0);
 					cam3 = ostrcat(cam3, getlist(myconfig, "InstarCam3Port", NULL), 1, 0);
-					cam31 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam3User", NULL), 0, 0);
-					cam31 = ostrcat(cam31, "%26pwd%3D", 1, 0);
-					cam31 = ostrcat(cam31, getlist(myconfig, "InstarCam3Pass", NULL), 1, 0);
-					//cam31 = ostrcat(cam31, "&", 1, 0);
+					if(getconfigint("instar_3", NULL) == 5)
+					{
+						cam31 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam3User", NULL), 0, 0);
+						cam31 = ostrcat(cam31, "%26pwd%3D", 1, 0);
+						cam31 = ostrcat(cam31, getlist(myconfig, "InstarCam3Pass", NULL), 1, 0);
+						//cam31 = ostrcat(cam31, "&", 1, 0);
+					}
 				}				
 			}
 			
 			if(ostrcmp(getlist(myconfig, "InstarCam4", NULL), "ein") == 0)
 			{
-				if(getconfigint("instar_4", NULL) != 5)
+				if(getconfigint("instar_4", NULL) != 5 && getconfigint("instar_4", NULL) != 7)
 				{				
 					if(getconfigint("instar_alterwebif", NULL) == 0)
 						cam4 = ostrcat("wget --output-document=/tmp/instar4.jpg http://", getlist(myconfig, "InstarCam3User", NULL), 0, 0);
@@ -817,10 +826,13 @@ void instar_main()
 					cam4 = ostrcat(cam4, getlist(myconfig, "InstarCam4IP", NULL), 1, 0);
 					cam4 = ostrcat(cam4, ":",1, 0);
 					cam4 = ostrcat(cam4, getlist(myconfig, "InstarCam4Port", NULL), 1, 0);
-					cam41 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam4User", NULL), 0, 0);
-					cam41 = ostrcat(cam41, "%26pwd%3D", 1, 0);
-					cam41 = ostrcat(cam41, getlist(myconfig, "InstarCam4Pass", NULL), 1, 0);
-					//cam41 = ostrcat(cam41, "&", 1, 0);
+					if(getconfigint("instar_1", NULL) == 5)
+					{
+						cam41 = ostrcat("%26usr%3D", getlist(myconfig, "InstarCam4User", NULL), 0, 0);
+						cam41 = ostrcat(cam41, "%26pwd%3D", 1, 0);
+						cam41 = ostrcat(cam41, getlist(myconfig, "InstarCam4Pass", NULL), 1, 0);
+						//cam41 = ostrcat(cam41, "&", 1, 0);
+					}
 				}				
 			}						
 					
