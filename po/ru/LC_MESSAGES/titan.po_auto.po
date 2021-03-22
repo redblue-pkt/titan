@@ -3488,7 +3488,7 @@ msgstr "Ошибка: Установка завершилась с ошибко�
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:717 infobar.h:943 infobar.h:1257
+#: inadyn.h:190 inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258
 #: info.h:27 ipkg.h:359 keyactions.h:219 kinox.h:101 kinox.h:358 language.h:54
 #: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
@@ -5591,7 +5591,7 @@ msgstr "Интерфейс"
 msgid "Internet Browser"
 msgstr "Интернет браузер"
 
-#: infobar.h:943
+#: infobar.h:944
 msgid "Internet Browser Plugin not installed !"
 msgstr "Плагин браузера не установлен!"
 
@@ -6504,7 +6504,7 @@ msgstr "Лист меню"
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:717 infobar.h:943 infobar.h:1257
+#: inadyn.h:190 inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258
 #: ipkg.h:359 ipsec.h:193 ipsec.h:195 ipsec.h:206 ipsec.h:216 ipsec.h:218
 #: keyactions.h:219 kinox.h:101 kinox.h:358 kravencfg.c:66 kravencfg.c:212
 #: kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:113
@@ -7181,7 +7181,7 @@ msgstr ""
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:717 infobar.h:943 infobar.h:1257 info.h:27 ipkg.h:359 ipsec.h:193
+#: infobar.h:718 infobar.h:944 infobar.h:1258 info.h:27 ipkg.h:359 ipsec.h:193
 #: ipsec.h:195 ipsec.h:206 ipsec.h:216 ipsec.h:218 keyactions.h:219 kinox.h:101
 #: kinox.h:358 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
 #: lcdpearl1.c:49 lcdsamsung.c:113 letwatch.h:29 letwatch.h:60 letwatch.h:66
@@ -9773,7 +9773,7 @@ msgstr "Параметры PiP"
 msgid "Sharename can't be empty!"
 msgstr "Имя папки не может быть пустым!"
 
-#: infobar.h:717 mc_audioplayer.h:411 mc_iptvplayer.h:106 mc_main.h:283
+#: infobar.h:718 mc_audioplayer.h:411 mc_iptvplayer.h:106 mc_main.h:283
 #: mc_pictureplayer.h:124 mc_videoplayer.h:336 menu.h:215
 msgid ""
 "Shooting Background done !\n"
@@ -13454,7 +13454,7 @@ msgstr ""
 msgid "no pic"
 msgstr "Без картинки"
 
-#: infobar.h:1257
+#: infobar.h:1258
 msgid "no record channel found"
 msgstr "Канал для записи не найден"
 
