@@ -694,9 +694,10 @@ void screeninfobar()
 			status.infobar = 0;
 			status.infobaraktiv = 0;
 			clearscreen(infobar);
-			addconfigtmp("dirsort", "4");
+			int oldsort = getconfigint("dirsort", NULL);
+			addconfigint("dirsort", 4);
 			screenplay(NULL, NULL, 1, 0);
-			delconfigtmp("dirsort");
+			addconfigint("dirsort", oldsort);
 			status.infobaraktiv = 1;
 			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
