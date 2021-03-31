@@ -1019,8 +1019,24 @@ timeokw = 1;
 	ret = openrc();
 	if(ret != 0)
 	{
-		tmpstr = ostrcat(tmpstr, _("Error: open rc device !!"), 1, 0);
-		goto starterror;
+		//teste andere Geräte
+		addconfig("rcdev", "/dev/input/event1");
+		ret = openrc();
+	  if(ret != 0)
+	  {
+	  	addconfig("rcdev", "/dev/input/event2");
+			ret = openrc();
+	  	if(ret != 0)
+	  	{
+	  		addconfig("rcdev", "/dev/input/event3");
+				ret = openrc();
+	  		if(ret != 0)
+	  		{
+					tmpstr = ostrcat(tmpstr, _("Error: open rc device !!"), 1, 0);
+					goto starterror;
+				}
+			}
+		}
 	}
 
 	if(fegetdev() < 1)
