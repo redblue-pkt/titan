@@ -865,6 +865,7 @@ youtube_dl()
 		if [ -e /etc/.oebuild ];then
 			if [ ! -e /usr/bin/youtube-dl ];then
 				opkg update > /dev/null 2>&1
+				opkg install $(opkg list *python* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 				echo install python-youtube-dl > /dev/null 2>&1
 				opkg install python-youtube-dl > /dev/null 2>&1
 			fi
@@ -894,6 +895,7 @@ youtube_dlbg()
 	if [ -e /etc/.oebuild ];then
 		if [ ! -e /usr/bin/youtube-dl ];then
 			opkg update > /dev/null 2>&1
+			opkg install $(opkg list *python* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 			echo install python-youtube-dl > /dev/null 2>&1
 			opkg install python-youtube-dl > /dev/null 2>&1
 		fi
