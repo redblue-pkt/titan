@@ -864,12 +864,12 @@ youtube_dl()
 	if [ ! -z "$INPUT" ];then
 		if [ -e /etc/.oebuild ];then
 			if [ ! -e /usr/bin/youtube-dl ];then
-				opkg update 
-				echo install python-youtube-dl 
-				opkg install python-youtube-dl
+				opkg update > /dev/null 2>&1
+				echo install python-youtube-dl > /dev/null 2>&1
+				opkg install python-youtube-dl > /dev/null 2>&1
 			fi
 #			echo remove cookies
-			rm /mnt/network/cookies
+			rm /mnt/network/cookies > /dev/null 2>&1
 			unset PYTHONHOME
 			unset LD_LIBRARY_PATH
 			$youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
@@ -893,12 +893,12 @@ youtube_dlbg()
 	mkdir $TMP > /dev/null 2>&1
 	if [ -e /etc/.oebuild ];then
 		if [ ! -e /usr/bin/youtube-dl ];then
-			opkg update 
-			echo install python-youtube-dl 
-			opkg install python-youtube-dl
+			opkg update > /dev/null 2>&1
+			echo install python-youtube-dl > /dev/null 2>&1
+			opkg install python-youtube-dl > /dev/null 2>&1
 		fi
-		echo remove cookies
-		rm /mnt/network/cookies
+#		echo remove cookies
+		rm /mnt/network/cookies > /dev/null 2>&1
 		unset PYTHONHOME
 		unset LD_LIBRARY_PATH
 		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
