@@ -186,7 +186,7 @@ hoster()
 
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	search) $INPUT;;
 	play) $INPUT;;

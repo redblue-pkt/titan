@@ -168,7 +168,7 @@ hoster()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	new) $INPUT;;
 	page) $INPUT;;
