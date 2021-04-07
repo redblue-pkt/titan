@@ -174,7 +174,7 @@ play()
 
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	play) $INPUT;;
 	search) $INPUT;;
