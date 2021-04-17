@@ -225,9 +225,12 @@ thevideo()
 	videocode=`cat $TMP/cache.$FILENAME.1`
 
 	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
-	echo "https://thevideos.ga/$videocode" > $STREAMLIST
+#	echo "https://thevideos.ga/$videocode" > $STREAMLIST
+	echo "https://thevideome.com/$videocode" > $STREAMLIST
+
 	#start dummy page not found then works playback without input/outout error
-	curl "https://thevideos.ga/$videocode" > /dev/null 2>&1
+#	curl "https://thevideos.ga/$videocode" > /dev/null 2>&1
+	curl "https://thevideome.com/$videocode" > /dev/null 2>&1
 	echo $STREAMLIST
 #######
 exit
