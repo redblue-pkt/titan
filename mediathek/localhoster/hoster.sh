@@ -17,6 +17,11 @@ if [ -z "$FILENAME" ]; then
 	FILENAME=none
 fi
 
+if [ -e /etc/.distro ];then
+    DISTRO=$(cat /etc/.distro)
+else
+    DISTRO=6.3
+fi
 ARCH=`cat /etc/.arch`
 BOX=`cat /etc/model`
 TMP=/tmp/localcache
@@ -866,7 +871,7 @@ youtube_dl()
 	fi
 	if [ ! -z "$INPUT" ];then
 		if [ -e /etc/.oebuild ];then
-			if [ ! -e /usr/bin/youtube-dl ];then
+    		if [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" == "6.4" ];then
 				opkg update > /dev/null 2>&1
 				opkg install $(opkg list *python* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 				echo install python-youtube-dl > /dev/null 2>&1
@@ -896,7 +901,7 @@ youtube_dlbg()
 #	echo $URL
 	mkdir $TMP > /dev/null 2>&1
 	if [ -e /etc/.oebuild ];then
-		if [ ! -e /usr/bin/youtube-dl ];then
+		if [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" == "6.4" ];then
 			opkg update > /dev/null 2>&1
 			opkg install $(opkg list *python* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 			echo install python-youtube-dl > /dev/null 2>&1
