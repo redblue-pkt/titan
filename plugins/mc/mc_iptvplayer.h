@@ -370,6 +370,12 @@ void screenmc_iptvplayer()
 				drawscreen(loadmediadb, 0, 0);
 				setfbtransparent(255);
 //////
+
+                if (ostrstr(filename, "&tslivemode=1") == NULL)
+                    filename = ostrcat(filename, "&tslivemode=1", 1, 0);		
+
+				debug(50, "playerstart change: %s", filename);
+
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
@@ -484,11 +490,6 @@ void screenmc_iptvplayer()
 				// mvi showiframe screensaver working and playback canceld
 				//servicestop(status.aktservice, 1, 1);	
 #endif
-
-                if (ostrstr(filename, "&tslivemode=1") == NULL)
-                    filename = ostrcat(filename, "&tslivemode=1", 1, 0);		
-
-				debug(50, "playerstart change: %s", filename);
 
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
