@@ -2082,7 +2082,7 @@ msgstr ""
 " Bandykite dar kart vliau."
 
 #: dvdplay.h:62 mc_audioplayer.h:685 mc_audioplayer.h:797 mc_global.h:781
-#: mc_global.h:1086 mc_iptvplayer.h:386 mc_iptvplayer.h:497
+#: mc_global.h:1086 mc_iptvplayer.h:386 mc_iptvplayer.h:502
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:765 mc_videoplayer.h:904 play.h:1796
 msgid "Can't start playback !"
@@ -3482,7 +3482,7 @@ msgstr ""
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
 #: mc_audioplayer.h:797 mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1086
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:246
-#: mc_iptvplayer.h:386 mc_iptvplayer.h:497 mc_main.h:283 mc_main.h:292
+#: mc_iptvplayer.h:386 mc_iptvplayer.h:502 mc_main.h:283 mc_main.h:292
 #: mc_mediathek.h:35 mc_pictureplayer.h:100 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:242 mc_pictureplayer.h:368 mc_pictureplayer.h:461
 #: mc_videoplayer.h:336 mc_videoplayer.h:765 mc_videoplayer.h:800
@@ -6453,7 +6453,7 @@ msgstr ""
 #: marker.h:215 marker.h:229 mc_audioplayer.h:411 mc_audioplayer.h:685
 #: mc_audioplayer.h:797 mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1086
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:246
-#: mc_iptvplayer.h:386 mc_iptvplayer.h:497 mc_main.h:283 mc_main.h:292
+#: mc_iptvplayer.h:386 mc_iptvplayer.h:502 mc_main.h:283 mc_main.h:292
 #: mc_mediathek.h:35 mc_pictureplayer.h:100 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:242 mc_pictureplayer.h:368 mc_pictureplayer.h:461
 #: mc_videoplayer.h:336 mc_videoplayer.h:765 mc_videoplayer.h:800
@@ -7130,7 +7130,7 @@ msgstr ""
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
 #: mc_audioplayer.h:797 mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1086
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:246
-#: mc_iptvplayer.h:386 mc_iptvplayer.h:497 mc_main.h:283 mc_main.h:292
+#: mc_iptvplayer.h:386 mc_iptvplayer.h:502 mc_main.h:283 mc_main.h:292
 #: mc_mediathek.h:35 mc_pictureplayer.h:100 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:242 mc_pictureplayer.h:368 mc_pictureplayer.h:461
 #: mc_videoplayer.h:336 mc_videoplayer.h:765 mc_videoplayer.h:800
