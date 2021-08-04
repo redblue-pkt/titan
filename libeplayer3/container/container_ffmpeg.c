@@ -2139,7 +2139,9 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 		if (ostrstr(filename, "&tslivemode=1") != NULL)
         {
 			usetslivemode = 1;
-            filename = string_replace_all("&tslivemode=1", "", filename, 1);
+//[container/container_ffmpeg.c:container_ffmpeg_stop] ret 0
+//free(): double free detected in tcache 2
+            filename = string_replace("&tslivemode=1", "", filename, 0);
         }
 
 		if(ostrstr(filename, "|") != NULL)
