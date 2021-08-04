@@ -2137,7 +2137,10 @@ int32_t container_ffmpeg_init_av_context(Context_t *context, char *filename, uin
 		ffmpeg_printf(10, "check user-agent and header\n");
 
 		if (ostrstr(filename, "&tslivemode=1") != NULL)
+        {
 			usetslivemode = 1;
+            filename = string_replace_all("&tslivemode=1", "", filename, 1);
+        }
 
 		if(ostrstr(filename, "|") != NULL)
 		{
