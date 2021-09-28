@@ -475,37 +475,35 @@ int dh_gen_exp(uint8_t *dest, int dest_len, uint8_t *dh_g, int dh_g_len, uint8_t
 	debug(620, "start");
 #ifdef OEBUILD
 // source from https://github.com/catalinii/minisatip/blob/master/src/ca.c
-	DH *dh;
+    DH *dh;
     BIGNUM *p, *g;
     const BIGNUM *priv_key;
-	int len;
-	unsigned int gap;
+    int len;
+    unsigned int gap;
 
-	dh = DH_new();
+    dh = DH_new();
 
-	p = BN_bin2bn(dh_p, dh_p_len, 0);
-	g = BN_bin2bn(dh_g, dh_g_len, 0);
+    p = BN_bin2bn(dh_p, dh_p_len, 0);
+    g = BN_bin2bn(dh_g, dh_g_len, 0);
     DH_set0_pqg(dh, p, NULL, g);
     DH_set_flags(dh, DH_FLAG_NO_EXP_CONSTTIME);
 
-//	dh->flags |= DH_FLAG_NO_EXP_CONSTTIME;
-
-	DH_generate_key(dh);
+    DH_generate_key(dh);
 
     DH_get0_key(dh, NULL, &priv_key);
-	len = BN_num_bytes(dh->priv_key);
-	if (len > dest_len) {
-		printf("len > dest_len\n");
-		return -1;
-	}
+    len = BN_num_bytes(priv_key);
+    if (len > dest_len) {
+        LOG("len > dest_len");
+        return -1;
+    }
 
-	gap = dest_len - len;
-	memset(dest, 0, gap);
-	BN_bn2bin(dh->priv_key, &dest[gap]);
+    gap = dest_len - len;
+    memset(dest, 0, gap);
+    BN_bn2bin(priv_key, &dest[gap]);
 
-	DH_free(dh);
+    DH_free(dh);
 
-	return 0;
+    return 0;
 #else
 	DH *dh;
 	int len;
