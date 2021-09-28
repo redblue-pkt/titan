@@ -493,7 +493,7 @@ int dh_gen_exp(uint8_t *dest, int dest_len, uint8_t *dh_g, int dh_g_len, uint8_t
     DH_get0_key(dh, NULL, &priv_key);
     len = BN_num_bytes(priv_key);
     if (len > dest_len) {
-        LOG("len > dest_len");
+        printf("len > dest_len\n");
         return -1;
     }
 
@@ -1054,8 +1054,7 @@ static int certificate_validate(struct cert_ctx *ctx, X509 *cert)
     ret = X509_verify_cert(store_ctx);
 
     if (ret != 1) {
-        LOG("%s",
-            X509_verify_cert_error_string(X509_STORE_CTX_get_error(store_ctx)));
+        fprintf(stderr, "%s\n", X509_verify_cert_error_string(X509_STORE_CTX_get_error(store_ctx));
     }
 
     X509_STORE_CTX_free(store_ctx);
