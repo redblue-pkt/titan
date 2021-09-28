@@ -1054,7 +1054,7 @@ static int certificate_validate(struct cert_ctx *ctx, X509 *cert)
     ret = X509_verify_cert(store_ctx);
 
     if (ret != 1) {
-        fprintf(stderr, "%s\n", X509_verify_cert_error_string(X509_STORE_CTX_get_error(store_ctx));
+        fprintf(stderr, "%s\n", X509_verify_cert_error_string(X509_STORE_CTX_get_error(store_ctx)));
     }
 
     X509_STORE_CTX_free(store_ctx);
