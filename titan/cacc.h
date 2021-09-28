@@ -473,6 +473,40 @@ LBL_ERR:
 int dh_gen_exp(uint8_t *dest, int dest_len, uint8_t *dh_g, int dh_g_len, uint8_t *dh_p, int dh_p_len)
 {
 	debug(620, "start");
+#ifdef OEBUILD
+// source from https://github.com/catalinii/minisatip/blob/master/src/ca.c
+	DH *dh;
+    BIGNUM *p, *g;
+    const BIGNUM *priv_key;
+	int len;
+	unsigned int gap;
+
+	dh = DH_new();
+
+	p = BN_bin2bn(dh_p, dh_p_len, 0);
+	g = BN_bin2bn(dh_g, dh_g_len, 0);
+    DH_set0_pqg(dh, p, NULL, g);
+    DH_set_flags(dh, DH_FLAG_NO_EXP_CONSTTIME);
+
+//	dh->flags |= DH_FLAG_NO_EXP_CONSTTIME;
+
+	DH_generate_key(dh);
+
+    DH_get0_key(dh, NULL, &priv_key);
+	len = BN_num_bytes(dh->priv_key);
+	if (len > dest_len) {
+		printf("len > dest_len\n");
+		return -1;
+	}
+
+	gap = dest_len - len;
+	memset(dest, 0, gap);
+	BN_bn2bin(dh->priv_key, &dest[gap]);
+
+	DH_free(dh);
+
+	return 0;
+#else
 	DH *dh;
 	int len;
 	unsigned int gap;
@@ -498,6 +532,7 @@ int dh_gen_exp(uint8_t *dest, int dest_len, uint8_t *dh_g, int dh_g_len, uint8_t
 	DH_free(dh);
 
 	return 0;
+#endif
 }
 
 /* dest = base ^ exp % mod */
@@ -1007,6 +1042,31 @@ static X509 *certificate_open(const char *filename)
 static int certificate_validate(struct cert_ctx *ctx, X509 *cert)
 {
 	debug(620, "start");
+#ifdef OEBUILD
+// source from https://github.com/catalinii/minisatip/blob/master/src/ca.c
+    X509_STORE_CTX *store_ctx;
+    int ret;
+
+    store_ctx = X509_STORE_CTX_new();
+
+    X509_STORE_CTX_init(store_ctx, ctx->store, cert, NULL);
+    X509_STORE_CTX_set_verify_cb(store_ctx, verify_cb);
+    X509_STORE_CTX_set_flags(store_ctx, X509_V_FLAG_IGNORE_CRITICAL);
+
+    ret = X509_verify_cert(store_ctx);
+
+    if (ret != 1) {
+        LOG("%s",
+            X509_verify_cert_error_string(X509_STORE_CTX_get_error(store_ctx)));
+    }
+
+    X509_STORE_CTX_free(store_ctx);
+
+    if (ret == 1)
+        return 1;
+    else
+        return 0;
+#else
 	X509_STORE_CTX *store_ctx;
 	int ret;
 
@@ -1024,6 +1084,7 @@ static int certificate_validate(struct cert_ctx *ctx, X509 *cert)
 	X509_STORE_CTX_free(store_ctx);
 
 	return ret == 1;
+#endif
 }
 
 static X509 *certificate_load_and_check(struct cert_ctx *ctx, const char *filename)
