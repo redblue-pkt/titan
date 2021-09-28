@@ -242,7 +242,6 @@ static int32_t flv2mpeg4_converter = 0;
 /* MISC Functions                */
 /* ***************************** */
 
-/*
 //obi
     uint32_t         tmptrackId;
 //    uint8_t         *tmpdata;
@@ -253,6 +252,7 @@ static int32_t flv2mpeg4_converter = 0;
     int64_t          tmpduration; // duration in miliseconds
     char            *tmptype;
     int 	     enablesub = 0;
+    char* subtext;
 
 void dvbsub_ass_write(Context_t *context, AVCodecContext *c, AVSubtitle *sub, int pid, AVPacket *packet)
 {
@@ -289,7 +289,7 @@ void dvbsub_ass_write(Context_t *context, AVCodecContext *c, AVSubtitle *sub, in
 
 		ret = sscanf((char *)sub->rects[i]->ass, "Dialogue: 0,%d:%d:%d.%d,%d:%d:%d.%d,", &horIni, &minIni, &secIni, &milIni, &horFim, &minFim, &secFim, &milFim);
 
-		if (ret!=8) continue; // Data is not in correct format
+		if (ret!=8) continue; /* Data is not in correct format */
 		ffmpeg_printf(0, "ret %d\n", ret);
 
 		ffmpeg_printf(0, "horIni %d\n", horIni);
@@ -301,12 +301,13 @@ void dvbsub_ass_write(Context_t *context, AVCodecContext *c, AVSubtitle *sub, in
 		ffmpeg_printf(0, "minFim %d\n", minFim);
 		ffmpeg_printf(0, "secFim %d\n", secFim);
 		ffmpeg_printf(0, "milFim %d\n", milFim);
+/*
+		Pts = (horIni*3600 + minIni*60 + secIni)*1000 + milIni;
+		Duration = ((horFim*3600 + minFim*60 + secFim) * 1000  + milFim - Pts) / 1000.0;
+		ffmpeg_printf(0, "new Pts %llu\n", Pts);
+		ffmpeg_printf(0, "new Duration %f\n", Duration);
 
-//		Pts = (horIni*3600 + minIni*60 + secIni)*1000 + milIni;
-//		Duration = ((horFim*3600 + minFim*60 + secFim) * 1000  + milFim - Pts) / 1000.0;
-//		ffmpeg_printf(0, "new Pts %llu\n", Pts);
-//		ffmpeg_printf(0, "new Duration %f\n", Duration);
-
+*/
 		tmppts = (horIni*3600 + minIni*60 + secIni)*1000 + milIni;
 		tmpduration = ((horFim*3600 + minFim*60 + secFim) * 1000  + milFim - Pts) / 1000.0;
 		tmpdata = packet->data;
@@ -451,7 +452,6 @@ int ReadSubtitles(Context_t *context, const char *filename)
 	return ret;
 }
 //obi (end)
-*/
 
 static void ffmpeg_silen_callback(void *avcl, int level, const char *fmt, va_list vl)
 {
