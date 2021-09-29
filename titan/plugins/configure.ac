@@ -1,7 +1,7 @@
 AC_INIT(tuxbox-apps-titan-plugins,0.0.1,,tuxbox-titan-plugins)
 AM_INIT_AUTOMAKE(tuxbox-titan-plugins,0.0.1)
 
-#TUXBOX_APPS
+TUXBOX_APPS
 
 AC_PROG_CC
 AC_PROG_CXX
