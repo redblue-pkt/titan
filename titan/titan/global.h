@@ -2897,6 +2897,16 @@ int setbit(int value, int bitpos)
 	return value;
 }
 
+#ifdef OEBUILD
+int stime(const time_t *t)
+{
+    struct timeval tv;
+    tv.tv_sec = *t;
+    tv.tv_usec = 0;
+    return settimeofday(&tv, NULL);
+}
+#endif
+
 int setsystime(time_t* newtime)
 {
 	if (stime(newtime))
