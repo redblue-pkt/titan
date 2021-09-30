@@ -26,6 +26,7 @@
 #include "nbtscan.h"
 #include "smbinfo.h"
 #include "showmount.h"
+#include "Python.h"
 
 static PyObject *error;
 
