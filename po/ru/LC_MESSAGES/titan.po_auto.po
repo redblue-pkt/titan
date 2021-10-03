@@ -328,17 +328,17 @@ msgstr "16-разрядная, масштаб 100%"
 msgid "16 Bit Scale 200 Percent"
 msgstr "16-разрядная, масштаб 200%"
 
-#: global.h:2052 global.h:2063 global.h:4475 global.h:4516 global.h:4575
+#: global.h:2052 global.h:2063 global.h:4485 global.h:4526 global.h:4585
 #: videomode.h:20
 msgid "16:9_set_bestfit_to_policy_show_justscale"
 msgstr "Лучшая подгонка (16:9)"
 
-#: global.h:2053 global.h:2054 global.h:4477 global.h:4521 global.h:4581
+#: global.h:2053 global.h:2054 global.h:4487 global.h:4531 global.h:4591
 #: videomode.h:21
 msgid "16:9_set_letterbox_to_policy_show_panscan"
 msgstr "Режим ящика с чёрными полосками слева и справа (16:9)"
 
-#: global.h:2055 global.h:2056 global.h:4479 global.h:4526 global.h:4587
+#: global.h:2055 global.h:2056 global.h:4489 global.h:4536 global.h:4597
 #: videomode.h:22
 msgid "16:9_set_panscan_to_policy_show_pillarbox"
 msgstr "Панорама с чёрными полосками слева и справа (16:9)"
@@ -505,17 +505,17 @@ msgstr "4 Гб"
 msgid "4 sec"
 msgstr "4 сек"
 
-#: global.h:2057 global.h:2058 global.h:4481 global.h:4537 global.h:4593
+#: global.h:2057 global.h:2058 global.h:4491 global.h:4547 global.h:4603
 #: videomode.h:23
 msgid "4:3_set_bestfit_to_policy2_show_justscale"
 msgstr "Лучшая подгонка (4:3)"
 
-#: global.h:2059 global.h:2060 global.h:4483 global.h:4542 global.h:4600
+#: global.h:2059 global.h:2060 global.h:4493 global.h:4552 global.h:4610
 #: videomode.h:24
 msgid "4:3_set_letterbox_to_policy2_show_letterbox"
 msgstr "Режим ящика с чёрными полосками слева и справа (4:3)"
 
-#: global.h:2061 global.h:2062 global.h:4485 global.h:4547 global.h:4607
+#: global.h:2061 global.h:2062 global.h:4495 global.h:4557 global.h:4617
 #: videomode.h:25
 msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr "Панорама с чёрными полосками слева и справа (4:3)"
@@ -1091,7 +1091,7 @@ msgstr "Добавил историю"
 msgid "Apple Trailer"
 msgstr ""
 
-#: global.h:6671
+#: global.h:6681
 msgid "April"
 msgstr "Апрель"
 
@@ -1258,7 +1258,7 @@ msgstr "Аудио задержки (PCM)"
 msgid "Audio/Subt."
 msgstr "Аудио/Субтитры"
 
-#: global.h:6675
+#: global.h:6685
 msgid "August"
 msgstr "Август"
 
@@ -1478,12 +1478,12 @@ msgstr "Настройки бекапа"
 msgid "Backup / Restore Settings"
 msgstr "Бэкап/ресторе настроек"
 
-#: global.h:7990 httpdfunc.h:6745 httpdfunc.h:6839 system_backup_restore.h:128
+#: global.h:8000 httpdfunc.h:6745 httpdfunc.h:6839 system_backup_restore.h:128
 #: system_backup_restore.h:135
 msgid "Backup created successfully"
 msgstr "Бекап создан успешно"
 
-#: global.h:7992
+#: global.h:8002
 msgid "Backup ended with error"
 msgstr "Бекап завершился с ошибкой"
 
@@ -2368,7 +2368,7 @@ msgstr "Выберите закладку из списка ниже"
 msgid "Choose your Language from the following list"
 msgstr "Выберите язык из списка"
 
-#: global.h:8502
+#: global.h:8512
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -2677,19 +2677,19 @@ msgstr "Сделать запись видео"
 msgid "Create Satellites/Provider"
 msgstr "Создать сеттинги/Провайдер"
 
-#: global.h:7187
+#: global.h:7197
 msgid "Create Satellites/Provider (All)"
 msgstr "Создать сеттинги/Провайдер (Все)"
 
-#: global.h:7185
+#: global.h:7195
 msgid "Create Satellites/Provider (Cable)"
 msgstr "Создать сеттинги/Провайдер (Кабель)"
 
-#: global.h:7184
+#: global.h:7194
 msgid "Create Satellites/Provider (Sat)"
 msgstr "Создать сеттинги/Провайдер (Спутник)"
 
-#: global.h:7186
+#: global.h:7196
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr "Создать сеттинги/Провайдер (Наземка)"
 
@@ -2925,7 +2925,7 @@ msgstr "Отладка модулей"
 msgid "Debuglevel"
 msgstr "Уровень отладки"
 
-#: global.h:6679
+#: global.h:6689
 msgid "December"
 msgstr "Декабрь"
 
@@ -3434,7 +3434,7 @@ msgid ""
 "partition could not be created"
 msgstr "Ошибка: Раздел не может быть создан!"
 
-#: global.h:6421 keyactions.h:219
+#: global.h:6431 keyactions.h:219
 msgid "ERROR cant read res"
 msgstr "Ошибка: Нет доступа"
 
@@ -3477,9 +3477,9 @@ msgstr "Ошибка: Установка завершилась с ошибко�
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6421 global.h:7319 global.h:7338 global.h:7855
-#: global.h:7875 global.h:7895 global.h:7915 global.h:7935 global.h:8267
-#: global.h:8272 global.h:8284 global.h:8289 harddisk.h:355 harddisk.h:692
+#: flashx.h:57 global.h:6431 global.h:7329 global.h:7348 global.h:7865
+#: global.h:7885 global.h:7905 global.h:7925 global.h:7945 global.h:8277
+#: global.h:8282 global.h:8294 global.h:8299 harddisk.h:355 harddisk.h:692
 #: harddisk.h:700 harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802
 #: harddisk.h:804 harddisk.h:925 harddisk.h:928 harddisk.h:1170 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
@@ -3750,11 +3750,11 @@ msgstr "Ошибка. Программа не стартовала!"
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr "Ошибка, данные не могут быть сохранены в MediaDB"
 
-#: global.h:7336
+#: global.h:7346
 msgid "Error: Transponder Source file no data"
 msgstr "Ошибка: Исходный файл транспондера пуст"
 
-#: global.h:7314
+#: global.h:7324
 msgid "Error: Transponder Source file not found"
 msgstr "Ошибка: Исходный файл транспондера не найден"
 
@@ -4048,7 +4048,7 @@ msgstr "Фавориты"
 msgid "Favorites"
 msgstr "Фавориты"
 
-#: global.h:6669
+#: global.h:6679
 msgid "February"
 msgstr "Февраль"
 
@@ -4308,7 +4308,7 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr "Обнаружен новый накопитель. Настройте его в меню настроек"
 
-#: global.h:8289
+#: global.h:8299
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
@@ -4318,7 +4318,7 @@ msgstr ""
 "Остановить процесс?\n"
 "OK для продолжения, Exit для выхода"
 
-#: global.h:8267 global.h:8284
+#: global.h:8277 global.h:8294
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4330,7 +4330,7 @@ msgstr ""
 "Продолжить запись?\n"
 "OK для продолжения, Exit для выхода"
 
-#: global.h:8272
+#: global.h:8282
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -4386,11 +4386,11 @@ msgstr "Частота"
 msgid "Frequency:"
 msgstr "Частота"
 
-#: global.h:6687
+#: global.h:6697
 msgid "Fri"
 msgstr "Пт"
 
-#: global.h:6652 global.h:6662 rectimer.h:1104 skin_default_skin.xml.h:229
+#: global.h:6662 global.h:6672 rectimer.h:1104 skin_default_skin.xml.h:229
 msgid "Friday"
 msgstr "Пятница"
 
@@ -5369,7 +5369,7 @@ msgstr "Плагин ImdB Info"
 msgid "ImdBapi Info Plugin"
 msgstr "Плагин ImdBapi Info"
 
-#: global.h:7189
+#: global.h:7199
 msgid "Import mode"
 msgstr "Режим импорта"
 
@@ -5658,11 +5658,11 @@ msgstr "Итальянский"
 msgid "J"
 msgstr "О"
 
-#: global.h:6668
+#: global.h:6678
 msgid "January"
 msgstr "Январь"
 
-#: global.h:6674
+#: global.h:6684
 msgid "July"
 msgstr "Июль"
 
@@ -5675,7 +5675,7 @@ msgstr "Пропуск"
 msgid "Jump To (min)"
 msgstr "Перейти к (Мин)"
 
-#: global.h:6673
+#: global.h:6683
 msgid "June"
 msgstr "Июнь"
 
@@ -6244,7 +6244,7 @@ msgstr "Ручной поиск кабельного ТВ"
 msgid "Manual Search Terrestrial"
 msgstr "Ручной поиск наземного ТВ"
 
-#: global.h:6670
+#: global.h:6680
 msgid "March"
 msgstr "Март"
 
@@ -6284,7 +6284,7 @@ msgstr "Макс частота"
 msgid "Maximal signalrate"
 msgstr "Макс сигнал"
 
-#: global.h:6672
+#: global.h:6682
 msgid "May"
 msgstr "Май"
 
@@ -6492,10 +6492,10 @@ msgstr "Лист меню"
 #: filemanager.h:279 filemanager.h:289 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6421 global.h:7249 global.h:7319 global.h:7338
-#: global.h:7855 global.h:7863 global.h:7875 global.h:7883 global.h:7895
-#: global.h:7903 global.h:7915 global.h:7923 global.h:7935 global.h:7943
-#: global.h:8267 global.h:8272 global.h:8284 global.h:8289 harddisk.h:692
+#: flashx.h:57 global.h:6431 global.h:7259 global.h:7329 global.h:7348
+#: global.h:7865 global.h:7873 global.h:7885 global.h:7893 global.h:7905
+#: global.h:7913 global.h:7925 global.h:7933 global.h:7945 global.h:7953
+#: global.h:8277 global.h:8282 global.h:8294 global.h:8299 harddisk.h:692
 #: harddisk.h:700 harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802
 #: harddisk.h:804 harddisk.h:896 harddisk.h:925 harddisk.h:928 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5907 httpdfunc.h:6297
@@ -6675,11 +6675,11 @@ msgstr "Параметры модуля"
 msgid "Module Type"
 msgstr "Тип модуля"
 
-#: global.h:6683
+#: global.h:6693
 msgid "Mon"
 msgstr "Пн"
 
-#: global.h:6648 global.h:6658 rectimer.h:1100 skin_default_skin.xml.h:385
+#: global.h:6658 global.h:6668 rectimer.h:1100 skin_default_skin.xml.h:385
 msgid "Monday"
 msgstr "Понедельник"
 
@@ -6786,7 +6786,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr "Мульти канал"
 
-#: global.h:7128
+#: global.h:7138
 msgid "Multituner adjustable"
 msgstr "Мульти-тюнер"
 
@@ -7126,7 +7126,7 @@ msgstr "Не использовать настройки"
 msgid "Note created"
 msgstr "Примечание создано"
 
-#: global.h:6678
+#: global.h:6688
 msgid "November"
 msgstr "Ноябрь"
 
@@ -7168,10 +7168,10 @@ msgstr ""
 #: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
 #: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
 #: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 global.h:6421 global.h:7249 global.h:7319 global.h:7338
-#: global.h:7855 global.h:7863 global.h:7875 global.h:7883 global.h:7895
-#: global.h:7903 global.h:7915 global.h:7923 global.h:7935 global.h:7943
-#: global.h:8267 global.h:8272 global.h:8284 global.h:8289 harddisk.h:355
+#: flashx.h:57 global.h:6431 global.h:7259 global.h:7329 global.h:7348
+#: global.h:7865 global.h:7873 global.h:7885 global.h:7893 global.h:7905
+#: global.h:7913 global.h:7925 global.h:7933 global.h:7945 global.h:7953
+#: global.h:8277 global.h:8282 global.h:8294 global.h:8299 harddisk.h:355
 #: harddisk.h:487 harddisk.h:692 harddisk.h:700 harddisk.h:740 harddisk.h:795
 #: harddisk.h:800 harddisk.h:802 harddisk.h:804 harddisk.h:896 harddisk.h:925
 #: harddisk.h:928 harddisk.h:1170 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
@@ -7333,7 +7333,7 @@ msgstr "OSD+Видео"
 msgid "OTHER"
 msgstr "Другие"
 
-#: global.h:6677
+#: global.h:6687
 msgid "October"
 msgstr "Октябрь"
 
@@ -8116,7 +8116,7 @@ msgstr "Таймер выключения"
 msgid "Present"
 msgstr "Сейчас"
 
-#: global.h:8002 system_backup_restore.h:15
+#: global.h:8012 system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -9148,7 +9148,7 @@ msgstr "Файл сервера Samba"
 msgid "Samsung SPF.. Settings"
 msgstr "Настройка Samsung SPF"
 
-#: global.h:6688
+#: global.h:6698
 msgid "Sat"
 msgstr "Сб"
 
@@ -9225,7 +9225,7 @@ msgstr "Тип спутника"
 msgid "Satellite"
 msgstr "Спутник"
 
-#: global.h:7249
+#: global.h:7259
 msgid ""
 "Satellite/Provider import done, Titan will be restarted!\n"
 "Please check tuner config and\n"
@@ -9247,7 +9247,7 @@ msgstr "Уровень и качество сигнала"
 msgid "Saturation"
 msgstr "Насыщенность"
 
-#: global.h:6653 global.h:6663 rectimer.h:1105 skin_default_skin.xml.h:541
+#: global.h:6663 global.h:6673 rectimer.h:1105 skin_default_skin.xml.h:541
 msgid "Saturday"
 msgstr "Суббота"
 
@@ -9567,7 +9567,7 @@ msgstr "Секция "
 msgid "Select Language"
 msgstr "Выбор языка"
 
-#: global.h:8346
+#: global.h:8356
 msgid "Select Multiboot"
 msgstr ""
 
@@ -9635,7 +9635,7 @@ msgstr "Отправить все CAID модулей"
 msgid "Send remote box into standby ?"
 msgstr "Отправить дистанционно ресивер в режим ожидания?"
 
-#: global.h:6676
+#: global.h:6686
 msgid "September"
 msgstr "Сентябрь"
 
@@ -10168,23 +10168,23 @@ msgstr "Старт RGUID"
 msgid "Start Record"
 msgstr "Старт записи"
 
-#: global.h:7855
+#: global.h:7865
 msgid "Start Restore Default Bouquets ?"
 msgstr "Начать восстановления по умолчанию букетов?"
 
-#: global.h:7875
+#: global.h:7885
 msgid "Start Restore Default Channel Settings ?"
 msgstr "Начать восстановления по умолчанию настроек каналов?"
 
-#: global.h:7915
+#: global.h:7925
 msgid "Start Restore Default Channels ?"
 msgstr "Начать восстановления по умолчанию каналов?"
 
-#: global.h:7895
+#: global.h:7905
 msgid "Start Restore Default Providers ?"
 msgstr "Начать восстановления по умолчанию провайдеров?"
 
-#: global.h:7935
+#: global.h:7945
 msgid "Start Restore Default Sats ?"
 msgstr "Начать восстановления по умолчанию спутников?"
 
@@ -10377,11 +10377,11 @@ msgstr "Игра Sudoku"
 msgid "Sudoku Help"
 msgstr ""
 
-#: global.h:6689
+#: global.h:6699
 msgid "Sun"
 msgstr "Вс"
 
-#: global.h:6654 global.h:6664 rectimer.h:1106 skin_default_skin.xml.h:636
+#: global.h:6664 global.h:6674 rectimer.h:1106 skin_default_skin.xml.h:636
 msgid "Sunday"
 msgstr "Воскресенье"
 
@@ -10666,7 +10666,7 @@ msgstr "Текст"
 msgid "The Grim Reaper"
 msgstr ""
 
-#: global.h:7955
+#: global.h:7965
 msgid ""
 "The backup image will be saved to /tmp or /var/backup. In case of "
 "insufficient internal\n"
@@ -10790,7 +10790,7 @@ msgstr ""
 msgid "Thriller"
 msgstr "Триллер"
 
-#: global.h:6686
+#: global.h:6696
 msgid "Thu"
 msgstr "Чт"
 
@@ -10798,7 +10798,7 @@ msgstr "Чт"
 msgid "Thumbnails"
 msgstr "Эскизы"
 
-#: global.h:6651 global.h:6661 rectimer.h:1103 skin_default_skin.xml.h:658
+#: global.h:6661 global.h:6671 rectimer.h:1103 skin_default_skin.xml.h:658
 msgid "Thursday"
 msgstr "Четверг"
 
@@ -10973,7 +10973,7 @@ msgid "Titan Mediathek"
 msgstr ""
 
 #: extensions.h:276 extensions.h:336 extensions.h:435 extensions.h:474
-#: global.h:7863 global.h:7883 global.h:7903 global.h:7923 global.h:7943
+#: global.h:7873 global.h:7893 global.h:7913 global.h:7933 global.h:7953
 #: kravencfg.c:212 security.h:1529 skinadjust.h:619 skinadjust.h:685
 #: skinadjust.h:1110 skinadjust.h:1172
 msgid "Titan will be restarted!"
@@ -11274,11 +11274,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr "Триал период закончится через"
 
-#: global.h:6684
+#: global.h:6694
 msgid "Tue"
 msgstr "Вт"
 
-#: global.h:6649 global.h:6659 rectimer.h:1101 skin_default_skin.xml.h:694
+#: global.h:6659 global.h:6669 rectimer.h:1101 skin_default_skin.xml.h:694
 msgid "Tuesday"
 msgstr "Вторник"
 
@@ -11290,7 +11290,7 @@ msgstr "Не удалось настроиться на канал"
 msgid "Tuner"
 msgstr "Тюнер"
 
-#: global.h:7119
+#: global.h:7129
 msgid "Tuner "
 msgstr "Тюнер "
 
@@ -11920,11 +11920,11 @@ msgstr "Веб-браузер Netsurf"
 msgid "Webbrowser Plugin"
 msgstr "Веб-браузер "
 
-#: global.h:6685
+#: global.h:6695
 msgid "Wed"
 msgstr "Ср"
 
-#: global.h:6650 global.h:6660 rectimer.h:1102 skin_default_skin.xml.h:745
+#: global.h:6660 global.h:6670 rectimer.h:1102 skin_default_skin.xml.h:745
 msgid "Wednesday"
 msgstr "Среда"
 
@@ -13446,7 +13446,7 @@ msgstr "Нет"
 msgid "no description found"
 msgstr "Нет описания"
 
-#: global.h:8493
+#: global.h:8503
 msgid "no device found"
 msgstr ""
 
@@ -13462,7 +13462,7 @@ msgstr "Канал для записи не найден"
 msgid "non"
 msgstr "Оригинал"
 
-#: global.h:8448 system_update.h:125
+#: global.h:8458 system_update.h:125
 msgid "non-version"
 msgstr "Нет версии"
 
