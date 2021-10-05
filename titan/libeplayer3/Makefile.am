@@ -70,3 +70,4 @@ eplayer3_DEPENDENCIES = libeplayer3.la
 #meta_LDADD = -leplayer3 -lpthread -lavformat -lavcodec -lavutil -lass -lm -lpng
 #meta_DEPENDENCIES = libeplayer3.la
 
+
