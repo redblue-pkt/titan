@@ -1040,7 +1040,25 @@ static X509 *certificate_open(const char *filename)
 static int certificate_validate(struct cert_ctx *ctx, X509 *cert)
 {
 	debug(620, "start");
-#ifdef OEBUILD
+#ifdef TITANNIT
+	X509_STORE_CTX *store_ctx;
+	int ret;
+
+	store_ctx = X509_STORE_CTX_new();
+
+	X509_STORE_CTX_init(store_ctx, ctx->store, cert, NULL);
+	X509_STORE_CTX_set_verify_cb(store_ctx, verify_cb);
+	X509_STORE_CTX_set_flags(store_ctx, X509_V_FLAG_IGNORE_CRITICAL);
+
+	ret = X509_verify_cert(store_ctx);
+
+	if (ret != 1)
+		fprintf(stderr, "%s\n", X509_verify_cert_error_string(store_ctx->error));
+
+	X509_STORE_CTX_free(store_ctx);
+
+	return ret == 1;
+#elif OEBUILD
 // source from https://github.com/catalinii/minisatip/blob/master/src/ca.c
     X509_STORE_CTX *store_ctx;
     int ret;
