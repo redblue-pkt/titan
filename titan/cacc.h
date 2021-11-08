@@ -473,7 +473,8 @@ LBL_ERR:
 int dh_gen_exp(uint8_t *dest, int dest_len, uint8_t *dh_g, int dh_g_len, uint8_t *dh_p, int dh_p_len)
 {
 	debug(620, "start");
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+//#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#ifdef SSLNEW
 // source from https://github.com/catalinii/minisatip/blob/master/src/ca.c
     DH *dh;
     BIGNUM *p, *g;
@@ -1040,7 +1041,9 @@ static X509 *certificate_open(const char *filename)
 static int certificate_validate(struct cert_ctx *ctx, X509 *cert)
 {
 	debug(620, "start");
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+
+//#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#ifdef SSLNEW
 // source from https://github.com/catalinii/minisatip/blob/master/src/ca.c
     X509_STORE_CTX *store_ctx;
     int ret;
