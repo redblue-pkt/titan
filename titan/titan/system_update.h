@@ -438,9 +438,13 @@ void screensystem_update(int mode)
 						system(cmd);
 #ifdef OEBUILD
                     	if(!file_exist("/tmp/.update"))
+                        {
        						sleep(200);
+                        }
                         else
+                        {
        						sleep(3);
+                        }
 						textbox(_("Message"), _("Multiboot installation completed successfully\nActivate your new startup"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 #else
 						//should only reached if system fails
