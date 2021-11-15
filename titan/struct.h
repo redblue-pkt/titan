@@ -121,7 +121,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER " -   - "
+#define DRIVER ""
 #define OVERSION "1.97"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"

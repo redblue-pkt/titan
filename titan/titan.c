@@ -10,6 +10,14 @@
 #define SYSCODE 0UL
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
+#ifdef OVBUILD
+#define IPKG_LIB
+#include "../libipkg/config.h"
+#include "../libipkg/libipkg.h"
+#include "../libipkg/args.h"
+#include "../libipkg/ipkg_cmd.h"
+#endif
+
 struct clist *config[LISTHASHSIZE] = {NULL};
 struct clist *ownconfig[LISTHASHSIZE] = {NULL};
 struct clist *rcconfig[LISTHASHSIZE] = {NULL};
@@ -88,6 +96,9 @@ char* tunermerkmale = NULL;
 
 #include "oldentry.h"
 #include "tpk.h"
+#ifdef OVBUILD
+#include "ipkg.h"
+#endif
 #include "queue.h"
 #include "channelcache.h"
 #include "transpondercache.h"
@@ -270,7 +281,7 @@ char* tunermerkmale = NULL;
 #include "encoder.h"
 #endif
 
-#define TIMECODE "1543512105"
+#define TIMECODE "1636829031"
 #if !defined(HAVE_HISILICON_ACCEL)
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */

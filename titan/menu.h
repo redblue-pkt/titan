@@ -836,6 +836,36 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenextensions_check(1);
 	}
+	else if(ostrcmp("feed_ipk", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenfeed_ipk(0);
+	}
+	else if(ostrcmp("extensions_ipkinstall", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenextensions_ipk(0, NULL, NULL, 1);
+	}
+	else if(ostrcmp("extensions_ipkremove", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenextensions_ipk(1, NULL, NULL, 1);
+	}
+	else if(ostrcmp("extensions_imptpkinstall", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenextensions_ipk(2, NULL, NULL, 1);
+	}
+	else if(ostrcmp("extensions_ipkupgrade", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenextensions_ipk(3, NULL, NULL, 1);
+	}
+	else if(ostrcmp("extensions_mediatikinstall", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screenextensions_check_ipk(1);
+	}
 	else if(ostrcmp("system_update_flash_online", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
