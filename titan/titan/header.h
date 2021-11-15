@@ -262,6 +262,9 @@ void screenfeed(int flag);
 void screenextensions(int mode, char* path, char* defentry, int first);
 void screenextensions_check(int flag);
 char* gettpklog(char* installpath, int flag);
+void screenfeed_ipk(int flag);
+void screenextensions_ipk(int mode, char* path, char* defentry, int first);
+void screenextensions_check_ipk(int flag);
 
 //...port.h
 void fbsave();
@@ -471,7 +474,6 @@ void screennetwork_adapter();
 void screennetwork_restart(struct inetwork* net, int flag);
 void screennetwork_test();
 void screennetwork_wlan();
-void screennetwork_password();
 void screennetwork_password();
 
 //channel.h
@@ -694,6 +696,19 @@ struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* 
 struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, char* skintitle, char* skindetails, char* paramskinpath, char* defaultpic, int showpng, int* rcreturn, int flag);
 void setmenulistdefault(struct menulist* mlist, char* defaultentry);
 void changemenulistparam(struct menulist* mlist, char* param, char* param1, char* param2, char* param3);
+
+#ifdef OVBUILD
+//ipkg.h 
+void freeipkg(); 
+int ipkg_update(void); 
+int ipkg_upgrade(void); 
+int ipkg_list(void); 
+int ipkg_install(const char* package); 
+int ipkg_remove(const char* package, int purge); 
+
+struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, char* defentry, int flag); 
+int ipkg_list_installed(void); 
+#endif
 
 //skinfunc.h
 char* gettime(struct skin* node, char* format);
@@ -1083,18 +1098,6 @@ void setFixedPhysicalAddress(int address);
 void forwardKey(int key);
 //encoder.h
 struct dvbdev* encoderopen(int flag);
-#endif
-
-#ifdef OEBUILD
-//ipkg.h 
-void freeipkg(); 
-int ipkg_update(void); 
-int ipkg_upgrade(void); 
-int ipkg_list(void); 
-int ipkg_install(const char* package); 
-int ipkg_remove(const char* package, int purge); 
-struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, int flag); 
-int ipkg_list_installed(void); 
 #endif
 
 #endif

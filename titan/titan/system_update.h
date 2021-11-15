@@ -202,7 +202,7 @@ void screensystem_update(int mode)
 				cmd = ostrcat(cmd, node->auth, 1, 0);
 #ifdef OEBUILD
 				if(node->imgtype == 1)
-					cmd = ostrcat(cmd, " dev openaaf.dyndns.tv", 1, 0);
+					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);	
 #else
@@ -251,7 +251,7 @@ void screensystem_update(int mode)
 				cmd = ostrcat(cmd, node->auth, 1, 0);
 #ifdef OEBUILD
 				if(node->imgtype == 1)
-					cmd = ostrcat(cmd, " dev openaaf.dyndns.tv", 1, 0);
+					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);	
 #else
@@ -326,7 +326,7 @@ void screensystem_update(int mode)
 					cmd = ostrcat(cmd, node->auth, 1, 0);
 #ifdef OEBUILD
 					if(node->imgtype == 1)
-						cmd = ostrcat(cmd, " dev openaaf.dyndns.tv", 1, 0);
+						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
 						cmd = ostrcat(cmd, " release openaaf.dyndns.tv", 1, 0);
 
@@ -437,7 +437,10 @@ void screensystem_update(int mode)
 					{
 						system(cmd);
 #ifdef OEBUILD
-						sleep(3);
+                    	if(!file_exist("/tmp/.update"))
+       						sleep(200);
+                        else
+       						sleep(3);
 						textbox(_("Message"), _("Multiboot installation completed successfully\nActivate your new startup"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 #else
 						//should only reached if system fails

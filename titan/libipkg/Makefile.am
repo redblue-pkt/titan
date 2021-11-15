@@ -10,7 +10,7 @@ bin_PROGRAMS = ipkg-cl
 
 lib_LTLIBRARIES = libipkg.la
 
-bin_SCRIPTS = update-alternatives
+bin_SCRIPTS = update-alternatives-ipkg
 
 interceptdir = $(datadir)/ipkg/intercept
 intercept_DATA = intercept/ldconfig intercept/depmod intercept/update-modules
@@ -81,7 +81,7 @@ ipkg_util_sources = file_util.c file_util.h ipkg_message.h ipkg_message.c md5.c 
 # ipkg_SOURCES = $(ipkg_core_sources) $(ipkg_cmd_sources) $(ipkg_db_sources) \
 #	       $(ipkg_util_sources) $(ipkg_list_sources)
 
-EXTRA_DIST = ipkg.c update-alternatives $(intercept_DATA)
+EXTRA_DIST = ipkg.c update-alternatives-ipkg $(intercept_DATA)
 
 MAINTAINERCLEANFILES= \
 	configure \

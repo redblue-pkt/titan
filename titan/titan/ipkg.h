@@ -467,7 +467,8 @@ char* get_ipk_section()
 	free(namelist), namelist = NULL;
 	return sectionlist;
 }
-
+/*
+use from tpk.h
 int findsectiondone(char* section)
 {
 	struct ipkg* node = ipkg;
@@ -483,11 +484,11 @@ int findsectiondone(char* section)
 
 	return 0;
 }
-
+*/
 //flag 0: show section
 //flag 1: show entrys
 //flag 2: show entrys for remove
-struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, int flag)
+struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* section, int showpng, char* defentry, int flag)
 {
 	int skip = 0;
 	struct ipkg* node = ipkg, *ipkg_installed = NULL, *node_installed = NULL;
@@ -585,7 +586,9 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			}
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
-			changemenulistparam(tmpmlist, node->showname, NULL);
+//			changemenulistparam(tmpmlist, node->name, node->titanname, NULL, NULL);
+			changemenulistparam(tmpmlist, node->name, node->name, NULL, NULL);
+
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(tmppic); tmppic = NULL;
@@ -602,7 +605,8 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		ipkg = node;
 	}
 
-	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, "/skin/plugin.png", showpng, 0);
+    setmenulistdefault(mlist, defentry);
+	return menulistbox(mlist, paramskinname, skintitle, NULL, paramskinpath, "/skin/plugin.png", showpng, 0);
 }
 
 char* get_ipk_tmpinstall(char* path, char* ipk)
