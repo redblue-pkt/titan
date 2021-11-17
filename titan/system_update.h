@@ -437,7 +437,7 @@ void screensystem_update(int mode)
 					{
 						system(cmd);
 #ifdef OEBUILD
-                    	if(!file_exist("/tmp/.update"))
+                    	if(file_exist("/tmp/.update"))
                         {
        						sleep(200);
                         }
