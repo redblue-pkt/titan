@@ -919,8 +919,17 @@ hlsdl()
 
 	URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
 
-	echo $HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-	$HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+	if [ -e /etc/.oebuild ];then
+		if [ ! -e /usr/bin/hlsdl ] && [ "$DISTRO" != "6.3" ];then
+			opkg update > /dev/null 2>&1
+			echo install hlsdl > /dev/null 2>&1
+			opkg install hlsdl > /dev/null 2>&1
+		fi
+        cp /usr/bin/hlsdl $HLSBIN
+    fi
+
+	echo $HLSBIN "$URL" -v -C /mnt/network/cookies -b -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+	$HLSBIN "$URL" -v -C /mnt/network/cookies -b -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 #	$HLSBIN "$URL" -v -u "$USERA" -h "$REFERER" -o "$DEST" >> /tmp/.last_hlsdl_hoster_${TYPE}_${CURTIME}.log
 
 }
