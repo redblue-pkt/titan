@@ -422,6 +422,11 @@ abcvideo()
 	$BIN $CMD/abcvideo.py $INPUT
 }
 
+doodstream()
+{
+	$BIN $CMD/doodstream.py $INPUT
+}
+
 streamcrypt()
 {
 	hoster=$(echo $INPUT | sed -nr 's/.*:\/\/.*\/([^\/]+)\/.*/\1/p')
@@ -1005,10 +1010,11 @@ if [ "$TYPE" == "get" ];then
 		vshare) vshare $INPUT;;
 		streamcrypt) hoster2=$(streamcrypt $INPUT);;
 		voe) voe $INPUT;;
-		streamtape) streamtape $INPUT;;
+		streamtape|strtape|streamta|strcloud) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
 		abcvideo) abcvideo $INPUT;;
+		dood|doodstream) doodstream $INPUT;;
 #		*) all $INPUT;;
 	esac
 if [ ! -z "$hoster2" ];then
@@ -1054,10 +1060,11 @@ if [ ! -z "$hoster2" ];then
 		vshare) vshare $INPUT;;
 		streamcrypt) streamcrypt $INPUT;;
 		voe) voe $INPUT;;
-		streamtape) streamtape $INPUT;;
+		streamtape|strtape|streamta|strcloud) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
 		abcvideo) abcvideo $INPUT;;
+		dood|doodstream) doodstream $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
