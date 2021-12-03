@@ -878,10 +878,16 @@ youtube_dlbg()
 		unset PYTHONHOME
 		unset LD_LIBRARY_PATH
 		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+#		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+        URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
+		echo "$youtubebinbg $DEST $URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+		$youtubebinbg "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 	else
 		echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-		$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+#		$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+        URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
+		echo "$BIN $youtubebinbg $DEST $URL" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+		$BIN $youtubebinbg "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 	fi
 
 	cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | tail -n1
