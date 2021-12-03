@@ -43,6 +43,7 @@ if [ ! -e "$CURLBIN" ];then CURLBIN=curl; fi
 AUTH='aUtzhFRTzuDFa:JNHZbghnjuz'
 USERAGENT='Mozilla%2F5.0+%28Windows+NT+6.3%3B+rv%3A36.0%29+Gecko%2F20100101+Firefox%2F36.0'
 USERAGENT2='Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'
+CURTIME=`date +%s`
 
 debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
 PROXY=""
@@ -836,7 +837,7 @@ youtube_dl()
 	fi
 	if [ ! -z "$INPUT" ];then
 		if [ -e /etc/.oebuild ];then
-    		if [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" == "6.4" ];then
+    		if [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" != "6.3" ];then
 				opkg update > /dev/null 2>&1
 				opkg install $(opkg list *python* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 				echo install python-youtube-dl > /dev/null 2>&1
@@ -866,7 +867,7 @@ youtube_dlbg()
 #	echo $URL
 	mkdir $TMP > /dev/null 2>&1
 	if [ -e /etc/.oebuild ];then
-		if [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" == "6.4" ];then
+		if [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" != "6.3" ];then
 			opkg update > /dev/null 2>&1
 			opkg install $(opkg list *python* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 			echo install python-youtube-dl > /dev/null 2>&1
@@ -876,14 +877,14 @@ youtube_dlbg()
 		rm /mnt/network/cookies > /dev/null 2>&1
 		unset PYTHONHOME
 		unset LD_LIBRARY_PATH
-		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
-		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
+		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 	else
-		echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
-		$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_$TYPE.log
+		echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+		$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 	fi
 
-	cat /tmp/.last_hoster_$TYPE.log | tail -n1
+	cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | tail -n1
 #	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
 }
 
@@ -891,7 +892,7 @@ hlsdl()
 {
 	mkdir $TMP > /dev/null 2>&1
 
-	echo "$HLSBIN $hlsdlbg $DEST $INPUT" > /tmp/.last_hoster_$TYPE.log
+	echo "$HLSBIN $hlsdlbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 
 	REFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+)&.*/\1/p')
 	if [ -z "$REFERER" ];then
@@ -912,9 +913,9 @@ hlsdl()
 
 	URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
 
-	echo $HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_$TYPE.log
-	$HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_$TYPE.log
-#	$HLSBIN "$URL" -v -u "$USERA" -h "$REFERER" -o "$DEST" >> /tmp/.last_hlsdl_hoster_$TYPE.log
+	echo $HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+	$HLSBIN "$URL" -v -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+#	$HLSBIN "$URL" -v -u "$USERA" -h "$REFERER" -o "$DEST" >> /tmp/.last_hlsdl_hoster_${TYPE}_${CURTIME}.log
 
 }
 
