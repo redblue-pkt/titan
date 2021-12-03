@@ -78,7 +78,7 @@ class StreamTapeResolver(object):
             src_url = 'https:' + src_url if src_url.startswith('//') else src_url
             print helpers.get_redirect_url(src_url, headers) + helpers.append_headers(headers)
 #        raise ResolverError('Video cannot be located.')
-        else
+        else:
             print 'errormsg=Video cannot be located.'
 
     def get_url(self, host, media_id):
