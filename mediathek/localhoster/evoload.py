@@ -29,7 +29,7 @@ import lib.common as common
 class EvoLoadResolver(object):
     name = "evoload"
     domains = ["evoload.io"]
-    pattern = r'(?://|\.)(evoload\.io)/(?:e|f)/([0-9a-zA-Z]+)'
+    pattern = r'(?://|\.)(evoload\.io)/(?:e|f|v)/([0-9a-zA-Z]+)'
 
 #    def __init__(self):
 #        self.net = common.Net()
@@ -51,32 +51,26 @@ class EvoLoadResolver(object):
 
     def get_media_url(self, host, media_id):
         surl = 'https://evoload.io/SecurePlayer'
-        domain = 'aHR0cHM6Ly9ldm9sb2FkLmlvOjQ0Mw..'
         web_url = self.get_url(host, media_id)
         rurl = 'https://{0}/'.format(host)
         headers = {'User-Agent': common.FF_USER_AGENT,
                    'Referer': rurl}
         html = self.net.http_GET(web_url, headers).content
-        token = helpers.girc(html, rurl, domain)
-
-        if token:
-            edata = {'code': media_id,
-                     'token': token}
-            headers.update({'Origin': rurl[:-1],
-                            'X-XSRF-TOKEN': ''})
-            shtml = self.net.http_POST(surl, form_data=edata, headers=headers, jdata=True).content
-            r = re.search('"src":"([^"]+)', shtml)
-            if r:
-                headers.pop('X-XSRF-TOKEN')
-                print r.group(1) + helpers.append_headers(headers)
+        passe = re.search('<div id="captcha_pass" value="(.+?)"></div>', html).group(1)
+        headers.update({'Origin': rurl[:-1]})
+        crsv = self.net.http_GET('https://csrv.evosrv.com/captcha?m412548', headers).content
+        post = {"code": media_id, "csrv_token": crsv, "pass": passe, "token": "ok"}
+        shtml = self.net.http_POST(surl, form_data=post, headers=headers, jdata=True).content
+        r = json.loads(shtml).get('stream')
+        if r:
+            surl = r.get('backup') if r.get('backup') else r.get('src')
+            if surl:
+                print surl + helpers.append_headers(headers)
             else:
-                print 'errormsg=File Not Found or removed'
-        else:
-             print 'errormsg=Token Not Found or removed'
-#        raise ResolverError('File Not Found or removed')
+                print 'errormsg=File1 Not Found or removed'
 
-#    def get_url(self, host, media_id):
-#        return self._default_get_url(host, media_id, template='https://{host}/e/{media_id}')
+        else:
+            print 'errormsg=File Not Found or removed'
 
     def get_url(self, host, media_id):
         return 'https://%s/e/%s.html' % (host, media_id)
