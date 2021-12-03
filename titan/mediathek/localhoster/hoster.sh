@@ -844,7 +844,7 @@ youtube_dl()
 				opkg install python-youtube-dl > /dev/null 2>&1
 			fi
 #			echo remove cookies
-			rm /mnt/network/cookies > /dev/null 2>&1
+#			rm /mnt/network/cookies > /dev/null 2>&1
 			unset PYTHONHOME
 			unset LD_LIBRARY_PATH
 			$youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
@@ -874,7 +874,7 @@ youtube_dlbg()
 			opkg install python-youtube-dl > /dev/null 2>&1
 		fi
 #		echo remove cookies
-		rm /mnt/network/cookies > /dev/null 2>&1
+#		rm /mnt/network/cookies > /dev/null 2>&1
 		unset PYTHONHOME
 		unset LD_LIBRARY_PATH
 		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
