@@ -31,8 +31,8 @@ import lib.common as common
 
 class StreamTapeResolver(object):
     name = "streamtape"
-    domains = ['streamtape.com']
-    pattern = r'(?://|\.)(streamtape\.com)/(?:e|v)/([0-9a-zA-Z]+)'
+    domains = ['streamtape.com', 'strtape.cloud', 'streamtape.net', 'streamta.pe', 'streamtape.site', 'strcloud.link']
+    pattern = r'(?://|\.)(str(?:eam)?(?:tap?e?|cloud)\.(?:com|cloud|net|pe|site|link))/(?:e|v)/([0-9a-zA-Z]+)'
 
 #    def __init__(self):
 #        self.net = common.Net()
@@ -56,15 +56,30 @@ class StreamTapeResolver(object):
         web_url = self.get_url(host, media_id)
         headers = {'User-Agent': common.FF_USER_AGENT,
                    'Referer': 'https://{0}/'.format(host)}
-        r = self.net.http_GET(web_url, headers=headers)
-        src = re.search(r'''ById\('vi.+?=\s*["']([^"']+)['"].+?["']([^"']+)''', r.content)
+        try:
+            r = self.net.http_GET(web_url, headers=headers).content
+        except urllib_error.HTTPError:
+#            raise ResolverError('Video deleted or removed.')
+            print 'errormsg=Video deleted or removed.'
+            return
+        src = re.findall(r'''ById\('.+?=\s*(["']//[^;<]+)''', r)
         if src:
-            src_url = 'https:{0}{1}&stream=1'.format(src.group(1), src.group(2))
+            src_url = ''
+            parts = src[-1].replace("'", '"').split('+')
+            for part in parts:
+                p1 = re.findall(r'"([^"]*)', part)[0]
+                p2 = 0
+                if 'substring' in part:
+                    subs = re.findall(r'substring\((\d+)', part)
+                    for sub in subs:
+                        p2 += int(sub)
+                src_url += p1[p2:]
+            src_url += '&stream=1'
+            src_url = 'https:' + src_url if src_url.startswith('//') else src_url
             print helpers.get_redirect_url(src_url, headers) + helpers.append_headers(headers)
 #        raise ResolverError('Video cannot be located.')
-
-#    def get_url(self, host, media_id):
-#        return self._default_get_url(host, media_id, template='https://{host}/e/{media_id}')
+        else
+            print 'errormsg=Video cannot be located.'
 
     def get_url(self, host, media_id):
         return 'https://%s/e/%s' % (host, media_id)
