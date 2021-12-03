@@ -55,7 +55,11 @@ class TheVideoResolver(object):
         ret = self.net.save_cookies('/mnt/network/cookies')
 #        videoCode = self.getSearchGroups(response, r'''['"]video_code['"]\s*:\s*['"]([^'^"]+?)['"]''')[0]
         videoCode = re.findall("video/mp4.*'(.*?)\\\\'.*;", response)
-        print videoCode[0]
+#        print videoCode[0]
+
+        sStreamUrl = 'https://thevideome.com/%s' % (videoCode[0])
+        sUrl = self.redirectHoster(sStreamUrl)
+        print sUrl
 
     def getSearchGroups(self, data, pattern, grupsNum=1, ignoreCase=False):
         tab = []
@@ -94,5 +98,25 @@ class TheVideoResolver(object):
  
     def get_url(self, host, media_id):
         return 'http://%s/embed-%s-640x360.html' % (host, media_id)
+
+    def redirectHoster(self, url):
+        try:
+            from urllib2 import build_opener, HTTPError
+        except ImportError:
+            from urllib.error import HTTPError
+            from urllib.request import build_opener
+        opener = build_opener()
+        opener.addheaders = [('Referer', url)]
+        try:
+            resp = opener.open(url)
+            if url != resp.geturl():
+                return resp.geturl()
+            else:
+                return url
+        except HTTPError as e:
+            if e.code == 403:
+                if url != e.geturl():
+                    return e.geturl()
+            raise
 
 sys.stdout = TheVideoResolver()

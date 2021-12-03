@@ -225,52 +225,7 @@ youwatch()
 
 thevideo()
 {
-	$BIN $CMD/thevideo.py $INPUT > $TMP/cache.$FILENAME.1
-# new #
-	videocode=`cat $TMP/cache.$FILENAME.1`
-
-	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
-#	echo "https://thevideos.ga/$videocode" > $STREAMLIST
-	echo "https://thevideome.com/$videocode" > $STREAMLIST
-
-	#start dummy page not found then works playback without input/outout error
-#	curl "https://thevideos.ga/$videocode" > /dev/null 2>&1
-	curl "https://thevideome.com/$videocode" > /dev/null 2>&1
-	echo $STREAMLIST
-#######
-exit
-#	$curlbin --referer $INPUT $INPUT -o $TMP/cache.$FILENAME.1
-	
-	videocode=`cat $TMP/cache.$FILENAME.1`
-	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
-
-	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
-	if [ -e "$STREAMLIST" ];then
-		rm -f $STREAMLIST > /dev/null 2>&1
-	fi
-
-	$curlbin --data '{}' https://vev.io/api/serve/video/$videocode -o $TMP/cache.$FILENAME.2
-	cat $TMP/cache.$FILENAME.2 | sed 's/{/\n/g' | sed 's/,/\n/g' | grep "/stream/" >$TMP/cache.$FILENAME.3
-
-	#{"code":400,"message":"invalid video specified","errors":[]}
-	if [ `cat $TMP/cache.$FILENAME.2 | grep '"code":400,' | wc -l` -eq 1 ];then
-		ERROR=`cat $TMP/cache.$FILENAME.2 | sed -nr 's/.*"message":"([^"]+)".*/\1/p'`
-		echo "errormsg=$ERROR"
-	else
-		while read -u 3 ROUND; do
-			TITEL=`echo $ROUND | cut -d'"' -f2`
-			URL=`echo $ROUND | cut -d'"' -f4`
-
-			if [ ! -z "$URL" ];then
-				echo "$URL" | tr -d '\n' | tr -d '\r' >> $STREAMLIST
-				echo "" >> $STREAMLIST
-			fi
-
-
-		done 3<$TMP/cache.$FILENAME.3
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-		echo $STREAMLIST
-	fi
+	$BIN $CMD/thevideo.py $INPUT
 }
 
 movshare()
