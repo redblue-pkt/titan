@@ -427,6 +427,11 @@ doodstream()
 	$BIN $CMD/doodstream.py $INPUT
 }
 
+voesx()
+{
+	$BIN $CMD/voesx.py $INPUT
+}
+
 streamcrypt()
 {
 	hoster=$(echo $INPUT | sed -nr 's/.*:\/\/.*\/([^\/]+)\/.*/\1/p')
@@ -1009,7 +1014,7 @@ if [ "$TYPE" == "get" ];then
 		mixdrop) mixdrop $INPUT;;
 		vshare) vshare $INPUT;;
 		streamcrypt) hoster2=$(streamcrypt $INPUT);;
-		voe) voe $INPUT;;
+		voe) voesx $INPUT;;
 		streamtape|strtape|streamta|strcloud) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
@@ -1059,7 +1064,7 @@ if [ ! -z "$hoster2" ];then
 		mixdrop) mixdrop $INPUT;;
 		vshare) vshare $INPUT;;
 		streamcrypt) streamcrypt $INPUT;;
-		voe) voe $INPUT;;
+		voe) voesx $INPUT;;
 		streamtape|strtape|streamta|strcloud) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
