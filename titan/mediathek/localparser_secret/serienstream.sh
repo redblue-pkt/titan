@@ -8,7 +8,8 @@ NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-URL=https://s.to
+#URL=https://s.to
+URL=http://190.115.18.20
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=SerienStream
 
@@ -337,9 +338,8 @@ list()
 
 hosterlist()
 {
-#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | tr -d '\n' | tr -d '\r' | sed 's/<li class="col-md-4 col-xs-12 col-sm-6/\n<li class="col-md-4 col-xs-12 col-sm-6/g' |  grep ^'<li class="col-md-4 col-xs-12 col-sm-6' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL/$PAGE | tr -d '\n' | tr -d '\r' | sed 's/<li class="col-md-3 col-xs-12 col-sm-6/\n<li class="col-md-3 col-xs-12 col-sm-6/g' |  grep ^'<li class="col-md-3 col-xs-12 col-sm-6' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -348,7 +348,7 @@ hosterlist()
 				}
 				# next page init
 #				/<div><a href="\/redirect/ \
-				/<li class="col-md-4 col-xs-12 col-sm-6 episodeLink/ \
+				/<li class="col-md-3 col-xs-12 col-sm-6 episodeLink/ \
 				{
 					if ( suche == 1 )
 					{
