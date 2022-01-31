@@ -621,7 +621,7 @@ void savenetworkbrowser(char* filename)
 		if(ostrcmp(node->mode, "0") == 0)
 		{
 			#ifdef MIPSEL
-				savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,iocharset=utf8,rsize=", 1, 0);
+				savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,vers=2.0,iocharset=utf8,rsize=", 1, 0);
 			#else
 				savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,rsize=", 1, 0);
 			#endif
