@@ -3556,17 +3556,18 @@ msgstr ""
 #: tithek.h:2618 tithek.h:2806 tithek.h:3131 tithek.h:3196 tithek.h:3239
 #: tithek.h:3252 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3246 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:738
-#: tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
-#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
-#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
-#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
-#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
-#: vodlocker.h:87 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
-#: xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
+#: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
+#: tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
+#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
+#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
+#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
+#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 xvidstage.h:29 xvidstage.h:59
+#: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79
+#: zdf.h:29
 msgid "EXIT"
 msgstr "Ieiti"
 
@@ -6594,9 +6595,9 @@ msgstr ""
 #: tithek.h:3196 tithek.h:3239 tithek.h:3252 tithek_settings.h:234
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
-#: tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
-#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: tpk.new.h:3167 tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
+#: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
 #: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
 #: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
 #: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
@@ -7293,31 +7294,31 @@ msgstr ""
 #: tithek.h:2618 tithek.h:2806 tithek.h:3131 tithek.h:3196 tithek.h:3239
 #: tithek.h:3252 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3246 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:738
-#: tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
-#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
-#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
-#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
-#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
-#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
-#: vodlocker.h:87 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
-#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
-#: webif_index.dm520.h:38 webif_index.dm525.h:38 webif_index.dm7020hd.h:38
-#: webif_index.dm7020hdv2.h:38 webif_index.dm900.h:38 webif_index.mutant51.h:38
-#: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
-#: webif_rc_virtual.atemio5200.h:20 webif_rc_virtual.atemio520.h:20
-#: webif_rc_virtual.atemio530.h:20 webif_rc_virtual.atemio6000.h:20
-#: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
-#: webif_rc_virtual.atemio-nemesis.h:20 webif_rc_virtual.dm520.h:20
-#: webif_rc_virtual.dm525.h:20 webif_rc_virtual.dm7020hd.h:20
-#: webif_rc_virtual.dm7020hdv2.h:20 webif_rc_virtual.dm900.h:20
-#: webif_rc_virtual.dm920.h:20 webif_rc_virtual.h:20
-#: webif_rc_virtual.wetek.h:20 wlandisplay.c:108 xupnpd.h:57 xupnpd.h:59
-#: xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29 xvidstage.h:59
-#: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79
-#: zdf.h:29
+#: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
+#: tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61
+#: vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
+#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
+#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
+#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
+#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
+#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 webif_index.atemio5200.h:38
+#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
+#: webif_index.atemio-nemesis.h:38 webif_index.dm520.h:38
+#: webif_index.dm525.h:38 webif_index.dm7020hd.h:38 webif_index.dm7020hdv2.h:38
+#: webif_index.dm900.h:38 webif_index.mutant51.h:38 webif_rc.atemio510.h:33
+#: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
+#: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
+#: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
+#: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
+#: webif_rc_virtual.dm520.h:20 webif_rc_virtual.dm525.h:20
+#: webif_rc_virtual.dm7020hd.h:20 webif_rc_virtual.dm7020hdv2.h:20
+#: webif_rc_virtual.dm900.h:20 webif_rc_virtual.dm920.h:20
+#: webif_rc_virtual.h:20 webif_rc_virtual.wetek.h:20 wlandisplay.c:108
+#: xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
+#: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228
+#: zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "Gerai"
 
@@ -12573,7 +12574,7 @@ msgstr ""
 msgid "channelslotlist"
 msgstr ""
 
-#: ipkg.h:359 tpk.h:3246
+#: ipkg.h:359 tpk.h:3246 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Check the secret feed address!"
 
@@ -13474,7 +13475,7 @@ msgstr "NFS serveris"
 msgid "no"
 msgstr "Ne"
 
-#: ipkg.h:577 tpk.h:3513
+#: ipkg.h:577 tpk.h:3513 tpk.new.h:3411
 msgid "no description found"
 msgstr "No description found"
 
