@@ -218,7 +218,7 @@ videos()
 }
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	channels) $INPUT;;
 	date) $INPUT;;
