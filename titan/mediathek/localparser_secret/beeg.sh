@@ -232,7 +232,7 @@ fi
 #{"tag":"white","videos":33058},{"tag":"whore","videos":100},{"tag":"widow","videos":1},{"tag":"wife","videos":618},{"tag":"wife share","videos":2},{"tag":"wild","videos":256},
 
 case $INPUT in
-	init) $INPUT;;
+#	init) $INPUT;;
 	mainmenu) $INPUT;;
 	videos) $INPUT;;
 	hoster) $INPUT;;
