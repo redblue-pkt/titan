@@ -989,15 +989,26 @@ hoster()
 
 	$curlbin -o $TMP/cache.$PARSER.$INPUT.$FROM.1 ${PAGE}
 	URL=`zcat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p'`
+#echo URL1 $URL
 	if [ -z "$URL" ];then
 		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep iframe | sed -nr 's/.*src="([^"]+)".*/\1/p'`
 	fi
+#echo URL2 $URL
+
+	if [ -z "$URL" ];then
+		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | tr -d '\r' | tr -d '\n' | grep emb.apl | sed -nr 's/.*(emb.apl.*)" style=.*/\1/p'`
+	fi
+#echo URL2a $URL
+
 	if [ -z "$URL" ];then
 		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | grep "text/javascript" | grep -v jQuery | sed -nr 's/.*src="([^"]+)".*/\1/p'`
 	fi
+#echo URL3 $URL
+
 	if [ -z "$URL" ];then
 #		cat /tmp/localcache/cache.sportsondemand.hoster..1 | tr -d '\r'|  tr -d '\n' | sed 's/<iframe/\n<iframe/g' | grep ^"<iframe" |awk 'BEGIN {} /<iframe/ { i = index($0, "src=\"") + 5;j = index(substr($0, i), "\"") - 1;newpage = substr($0, i, j); print newpage; next}' | grep -v gif | grep -v allowTransparency
 		URL=`cat $TMP/cache.$PARSER.$INPUT.$FROM.1 | tr -d '\r'|  tr -d '\n' | sed 's/<iframe/\n<iframe/g' | grep ^"<iframe" |awk 'BEGIN {} /<iframe/ { i = index($0, "src=\"") + 5;j = index(substr($0, i), "\"") - 1;newpage = substr($0, i, j); print newpage; next}' | grep -v gif | grep -v allowTransparency`
+#echo URL4 $URL
 
         if [ ! `echo $URL | grep " //" | wc -l` -eq 0 ];then
             URL=$(echo $URL | sed 's! //!\nhttp://!' | tail -n1)
@@ -1005,6 +1016,8 @@ hoster()
 #		$curlbin --referer ${PAGE} -o $TMP/cache.$PARSER.$INPUT.$FROM.2 ${URL}
 
 	fi
+#echo URL5 $URL
+
 	echo $URL
 }
 
