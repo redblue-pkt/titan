@@ -296,7 +296,9 @@ startgui()
 
     if [ -z "$START" ]; then START="$STARTDEFAULT"; fi
 
-    LD_PRELOAD=$LIBS $START
+#    LD_PRELOAD=$LIBS $START
+
+    $START
 
     # titan exit codes:
     #
