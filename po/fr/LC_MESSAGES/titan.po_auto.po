@@ -8022,7 +8022,7 @@ msgid "Power Off Timer"
 msgstr "Arrét chronomètré"
 
 #: tpk_description.h:139
-msgid "Power off if box not used"
+msgid "Power off if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then"
 msgstr ""
 
 #: webif_boxcontrol.h:1

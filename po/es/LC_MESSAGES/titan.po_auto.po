@@ -8171,8 +8171,8 @@ msgid "Power Off Timer"
 msgstr "Apagado Temporizado"
 
 #: tpk_description.h:139
-msgid "Power off if box not used"
-msgstr "Apagar el receptor si no se utiliza."
+msgid "Power off if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then"
+msgstr ""
 
 #: webif_boxcontrol.h:1
 msgid "PowerControl"
@@ -15023,3 +15023,6 @@ msgstr ""
 #: tpk_showname.h:246
 msgid "zapback (Werbezapper)"
 msgstr ""
+
+#~ msgid "Power off if box not used"
+#~ msgstr "Apagar el receptor si no se utiliza."
