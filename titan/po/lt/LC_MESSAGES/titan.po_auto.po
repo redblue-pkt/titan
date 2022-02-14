@@ -8128,7 +8128,7 @@ msgid "Power Off Timer"
 msgstr ""
 
 #: tpk_description.h:139
-msgid "Power off if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then"
+msgid "Power off if box not used"
 msgstr ""
 
 #: webif_boxcontrol.h:1

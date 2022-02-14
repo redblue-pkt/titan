@@ -8189,7 +8189,7 @@ msgid "Power Off Timer"
 msgstr "Таймер выключения"
 
 #: tpk_description.h:139
-msgid "Power off if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then"
+msgid "Power off if box not used"
 msgstr ""
 
 #: webif_boxcontrol.h:1
@@ -15028,6 +15028,3 @@ msgstr "н"
 #: tpk_showname.h:246
 msgid "zapback (Werbezapper)"
 msgstr ""
-
-#~ msgid "Power off if box not used"
-#~ msgstr "Отключение питания ресивера при простое"
