@@ -39,14 +39,21 @@ init()
 
 mainmenu()
 {
-	echo "Suchen#$SRC $SRC search '/search/title/%search%/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >$TMP/$FILENAME.list
+	echo "New#$SRC $SRC search '/page/' 0#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#new.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Filme#$SRC $SRC search '/movies/new/page/' 0#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Serien#$SRC $SRC search '/serien/view/page/' 0#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#serien.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Top#$SRC $SRC search '/movies/top/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#top.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Englisch#$SRC $SRC search '/search/genre/Englisch/' 1#http://openaaf.dyndns.tv/mediathek/menu/englisch.jpg#search.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Suchen#$SRC $SRC search '/search/title/%search%/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+
 	echo "$TMP/$FILENAME.list"
 }
 
 search()
 {
+	PAGE2=$($curlbin $URL$PAGE$NEXT | sed "s!$PAGE!\n$PAGE!g" | grep ^$PAGE | cut -d'>' -f2| cut -d'<' -f1 | sort | tail -n1)
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT -v URL=$URL \
+		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v PAGE2=$PAGE2 -v NEXT=$NEXT -v URL=$URL \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -56,14 +63,14 @@ search()
 					newpage = ""
 					pages = "0"
 					piccount = 0
+                    foundpages = 0
 				}
 				# eindeutige zeile vor ersten treffer
                 #<h3 style="padding:20px;">Suchergebnisse: 5</h3>
 				/<h3 style="padding:20px;">Suchergebnisse:/  \
 				{
-#				    print "aaaaaa: " $0
-                    if (suche == 0)
-				    {
+#	    			    print "aaaaaa: " $0
+
 					    # suche erlauben ab dieser zeile
 					    suche = 1
 					    # in naechste zeile springen
@@ -71,7 +78,7 @@ search()
 					    i = index($0, ">Suchergebnisse: ") + 17
 		                j = index(substr($0, i), "<") - 1
 		                results = substr($0, i, j)
-#                        print "results: " results
+#                       print "results: " results
                         if (int(results) > 32)
                         {
                             pages = int((results / 32) + 1)
@@ -80,10 +87,15 @@ search()
                         {
                             pages = 0
                         }
-#                        print "pages: " pages
-                    }
+                    foundpages = 1
 					next
 				}
+                /<div id="content" role="main"/ \
+                {
+#                   print "bbbbbb: " $0
+				    suche = 1
+                    next
+                }
                 #</div>
                 #    <a href="//filmpalast.to/stream/rambo-5-last-blood" title="Rambo 5 Last Blood"> <img  width="236px" height="338px" src="/files/movies/315/rambo-5-last-blood.jpg" class="cover-opacity" alt="stream Rambo 5 Last Blood"/></a>
                 #</article>  
@@ -97,8 +109,12 @@ search()
                 }
                 /<a href="/ \
                 {
-                    if (found == 1)
+				    print "1cccccc: " $0
+
+                    if (found == 1 && $0 ~ /title=\"/)
 				    {
+#        			    print "2cccccc: " $0
+
                         found = 0
 					    i = index($0, "<a href=\"") + 9
 		                j = index(substr($0, i), "\"") - 1
@@ -107,7 +123,8 @@ search()
 					    i = index($0, "title=\"") + 7
 		                j = index(substr($0, i), "\"") - 1
 		                title = substr($0, i, j)
-	    
+    				    print "title: " title
+
 					    i = index($0, "src=\"") + 5
 		                j = index(substr($0, i), "\"") - 1
 		                pic = substr($0, i, j)
@@ -149,11 +166,13 @@ search()
                         next
 
                 }
-				# next page init
 			END \
 				{
 					if (pages != "0")# && pages >= NEXT + 1)
 						print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+					else if (NEXT != PAGE2 && PAGE2 != "")
+						print "Page (" NEXT + 1 "/" PAGE2 ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 " " PAGE2 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
+
 				}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
@@ -178,10 +197,18 @@ hosterlist()
 				}
                 /class="button rb iconPlay"/ \
                 {
-				    i = index($0, "href=\"") + 6
+				    print "hosterlist: " $0
 
-	                j = index(substr($0, i), "\"") - 1
-	                newpage = substr($0, i, j)
+				    i = index($0, "href=\"") + 6
+                    j = index(substr($0, i), "\"") - 1
+                    newpage = substr($0, i, j)
+
+                    if ($0 ~ /data-player-url=/)
+                    {
+    				    i = index($0, "data-player-url=\"") + 17
+	                    j = index(substr($0, i), "\"") - 1
+	                    newpage = substr($0, i, j)
+                    }
 
 				    i = index($0, "//") + 2
 	                j = index(substr($0, i), "/") - 1
@@ -238,6 +265,7 @@ case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
 	search) $INPUT;;
+	search1) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 esac
