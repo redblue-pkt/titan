@@ -42,9 +42,12 @@ init()
 
 mainmenu()
 {
-	echo "Tv-Shows (A-Z)#$SRC $SRC sorted 'katalog'#http://openaaf.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "All Series#$SRC $SRC all 'serien'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Search#$SRC $SRC search 'serien' 1 '%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Neue Episoden#$SRC $SRC latest 'neue-episoden'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Neue Serien#$SRC $SRC list 'neu'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Populär#$SRC $SRC list 'beliebte-serien'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Alle#$SRC $SRC all 'serien'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "A-Z#$SRC $SRC sorted 'katalog'#http://openaaf.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Suche#$SRC $SRC search 'serien' 1 '%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 #https://s.to/search?q={search_string}
@@ -336,6 +339,112 @@ list()
 #	cat "$TMP/$FILENAME.list"
 }
 
+latest()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE/$NEXT | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v SRC=$SRC -v pages=$pages -v NAME=$NAME -v NEXT=$NEXT -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT -v PAGE2=$PAGE2 \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+				{
+					suche = 0
+				}
+				# next page init
+				/<div class="newEpisodeList">/ \
+				{
+					suche = 1
+				}
+				/<div class="cf"><\/div>/ \
+				{
+					if ( suche == 1 )
+					{
+						suche = 0
+					}
+					next
+				}
+				/<a href=/ \
+				{
+					if ( suche == 1 )
+					{
+						# extrahiere den newpage pfad
+						i = index($0, "href=\"") + 6
+			        	j = index(substr($0, i), "\"") - 1
+			        	newpage = substr($0, i, j)
+#print "newpage: " newpage
+						# extrahiere den newpage pfad
+						i = index($0, "<strong>") + 8
+			        	j = index(substr($0, i), "<") - 1
+			        	name = substr($0, i, j)
+#print "name: " name
+						# extrahiere den newpage pfad
+						i = index($0, "blue2\">") + 7
+			        	j = index(substr($0, i), "<") - 1
+			        	title = substr($0, i, j)
+#print "title: " title
+						# extrahiere den newpage pfad
+						i = index($0, "elementFloatRight\">") + 19
+			        	j = index(substr($0, i), "<") - 1
+			        	date = substr($0, i, j)
+#print "date: " date
+						# extrahiere den newpage pfad
+						i = index($0, "src=\"") + 5
+			        	j = index(substr($0, i), "\"") - 1
+			        	pic = substr($0, i, j)
+#print "pic: " pic
+						# extrahiere den newpage pfad
+						i = index($0, "title=\"") + 7
+			        	j = index(substr($0, i), "\"") - 1
+			        	episodename = substr($0, i, j)
+#print "episodename: " episodename
+
+						# extrahiere den newpage pfad
+						i = index($0, "/svg/") + 5
+			        	j = index(substr($0, i), ".") - 1
+			        	lang = substr($0, i, j)
+#print "lang: " lang
+						if (title != "")
+						{
+							if ( pic == "" )
+							{
+				  				pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
+							}
+
+							piccount += 1
+							# 25. in naechste zeile springen
+							# 26. \x27 = single quotes
+							print name "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+
+							#Staffel 3 Episode 26
+							split(title, a, " ")
+							season = a[1]
+							episode = a[2]
+
+                            gsub("S0", "S", season)
+                            gsub("E0", "E", episode)
+
+                            gsub("S", "", season)
+                            gsub("E", "", episode)
+
+#print "season: " season
+#print "episode: " episode
+
+#							print name " - " title " - " episodename " - " lang "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
+							print name " - " title " - " episodename "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
+						}
+                        next
+					}
+                }             
+			END \
+				{
+				}
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+#	cat "$TMP/$FILENAME.list"
+}
+
 hosterlist()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
@@ -461,6 +570,7 @@ case $INPUT in
 	sorted) $INPUT;;
 	season) $INPUT;;
 	episode) $INPUT;;
+	latest) $INPUT;;
 	list) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
