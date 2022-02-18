@@ -290,26 +290,30 @@ list()
 					{
 						# extrahiere den newpage pfad
 						i = index($0, "href=\"") + 6
-				        	j = index(substr($0, i), "\"") - 1
-				        	newpage = substr($0, i, j)
+				        j = index(substr($0, i), "\"") - 1
+				        newpage = substr($0, i, j)
 
 						# extrahiere den title pfad
 #						i = index($0, "title=\"") + 7
-##				        	j = index(substr($0, i), "\"") - 1
-#				        	j = index(substr($0, i), "stream online") - 2
-#				       		title = substr($0, i, j)
+##				        j = index(substr($0, i), "\"") - 1
+#				        j = index(substr($0, i), "stream online") - 2
+#				       	title = substr($0, i, j)
 
 
 						# extrahiere den title pfad
 						i = index($0, "<h3>") + 4
-				        	j = index(substr($0, i), "<") - 1
-				        	title = substr($0, i, j)
+				        j = index(substr($0, i), "<") - 1
+				        title = substr($0, i, j)
 
 
 #						i = index($0, "img src=\"") + 9
-						i = index($0, "src=\"") + 5
-				        	j = index(substr($0, i), "\"") - 1
-				        	pic = substr($0, i, j)
+#						i = index($0, "src=\"") + 5
+						i = index($0, "data-src=\"") + 10
+
+				        j = index(substr($0, i), "\"") - 1
+				        pic = substr($0, i, j)
+#print "a: " $a
+#print "pic: " pic
 
 						if (title != "")
 						{
@@ -318,10 +322,18 @@ list()
 				  				pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
 
+                            if (pic ~ /.png/)
+                                picext = ".png"
+                            else
+                                picext = ".jpg"
+
 							piccount += 1
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
-							print title "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+#							print title "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+#							print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+							print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount picext "#" NAME "#0"
+
 						}
 #						next
 					}
@@ -387,10 +399,12 @@ latest()
 			        	date = substr($0, i, j)
 #print "date: " date
 						# extrahiere den newpage pfad
-						i = index($0, "src=\"") + 5
+#						i = index($0, "src=\"") + 5
+						i = index($0, "data-src=\"") + 10
+
 			        	j = index(substr($0, i), "\"") - 1
 			        	pic = substr($0, i, j)
-#print "pic: " pic
+print "pic: " pic
 						# extrahiere den newpage pfad
 						i = index($0, "title=\"") + 7
 			        	j = index(substr($0, i), "\"") - 1
@@ -404,7 +418,7 @@ latest()
 #print "lang: " lang
 						if (title != "")
 						{
-							if ( pic == "" )
+							if ( pic == "" || pic ~ /.svg/)
 							{
 				  				pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
@@ -412,7 +426,8 @@ latest()
 							piccount += 1
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
-							print name "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+#							print name "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+							print name "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 							#Staffel 3 Episode 26
 							split(title, a, " ")
