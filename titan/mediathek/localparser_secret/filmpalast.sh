@@ -54,7 +54,8 @@ mainmenu()
 sorted()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		watchlist="0-9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+#		watchlist="0-9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+		watchlist=$($curlbin $URL$PAGE$NEXT | sed -nr 's!.*/alpha/([^/]+)".*!\1!p' | sort -u)
 
 		rm $TMP/$FILENAME.list > /dev/null 2>&1
 
