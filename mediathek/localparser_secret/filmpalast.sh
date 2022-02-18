@@ -43,10 +43,44 @@ mainmenu()
 	echo "Filme#$SRC $SRC search '/movies/new/page/' 0#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Serien#$SRC $SRC search '/serien/view/page/' 0#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#serien.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Top#$SRC $SRC search '/movies/top/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#top.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Englisch#$SRC $SRC search '/search/genre/Englisch/' 1#http://openaaf.dyndns.tv/mediathek/menu/englisch.jpg#search.jpg#$NAME#0" >>$TMP/$FILENAME.list
+#	echo "Englisch#$SRC $SRC search '/search/genre/Englisch/' 1#http://openaaf.dyndns.tv/mediathek/menu/englisch.jpg#search.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Genre#$SRC $SRC genre#http://openaaf.dyndns.tv/mediathek/menu/genre.jpg#genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "A-Z#$SRC $SRC sorted#http://openaaf.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Suchen#$SRC $SRC search '/search/title/%search%/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 
 	echo "$TMP/$FILENAME.list"
+}
+
+sorted()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		watchlist="0-9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+
+		rm $TMP/$FILENAME.list > /dev/null 2>&1
+
+		for ROUND0 in $watchlist; do
+			TITLE=`echo $ROUND0`
+			filename=`echo $TITLE | tr [A-Z] [a-z]`
+			echo "$TITLE#$SRC $SRC search '/search/alpha/$ROUND0/' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+		done
+	fi
+  	echo "$TMP/$FILENAME.list"
+}
+
+genre()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		watchlist=$($curlbin $URL$PAGE$NEXT | sed -nr 's!.*/genre/([^/]+)".*!\1!p' | sort -u)
+
+		rm $TMP/$FILENAME.list > /dev/null 2>&1
+
+		for ROUND0 in $watchlist; do
+			TITLE=`echo $ROUND0`
+			filename=`echo $TITLE | tr [A-Z] [a-z]`
+			echo "$TITLE#$SRC $SRC search '/search/genre/$ROUND0/' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+		done
+	fi
+  	echo "$TMP/$FILENAME.list"
 }
 
 search()
@@ -264,8 +298,9 @@ hoster()
 case $INPUT in
 	init) $INPUT;;
 	mainmenu) $INPUT;;
+	genre) $INPUT;;
 	search) $INPUT;;
-	search1) $INPUT;;
+	sorted) $INPUT;;
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 esac
