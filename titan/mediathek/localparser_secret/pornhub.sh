@@ -40,7 +40,7 @@ init()
 mainmenu()
 {
 	echo "Genre#$SRC $SRC genre 'categories'#http://openaaf.dyndns.tv/mediathek/menu/Movies.genre.jpg#Movies.genre.jpg#$NAME#0" >$TMP/$FILENAME.list
-#	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://openaaf.dyndns.tv/mediathek/menu/pornstars.jpg#pornstars.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Pornstars#$SRC $SRC pornstars '/pornstars?page=' 1#http://openaaf.dyndns.tv/mediathek/menu/pornstars.jpg#pornstars.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Suchen#$SRC $SRC search '/video/search?search=%search%&page=' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
@@ -91,37 +91,12 @@ genre()
 			BEGIN \
 			{
 				# 2. setzt suchvariable auf 0 vor dem start
-				suche = 0
+				suche = 1
 				newpage = ""
 				piccount = 0
 			}
-			# 3. eindeutige zeile vor ersten treffer
-			/<ul class=\"headerSubMenu\">/ \
-			{
-				# 4. suche erlauben ab dieser zeile
-				suche = 1
-				# 5. in naechste zeile springen
-				next
-			}
-			# 6. eindeutige zeile nach letzen treffer
-			/<\/ul>/ \
-			{
-				# 7. suche verbieten ab dieser zeile
-				suche = 0
-				# 8. in naechste zeile springen
-	        	next
-			}
-			# 9. eindeutige zeile nach letzen treffer backup fals erste nicht klappt
-			/categoryDefault/ \
-			{
-				# 10. suche verbieten ab dieser zeile
-				suche = 0
-				# 11. in naechste zeile springen
-	            next
-			}
-			# 12. nextpage zeile
-			# href=\"\/video?c=28
-			/href=\"\/video?/ \
+            #<div class="checkHomepage clearfix"><a class="sidebarIndent js-mxp" data-mxptype="Category" data-mxptext="Amateur" href="/video?c=3">
+            /<div class=\"checkHomepage clearfix\">/ \
 			{
 				if (suche == 1)
 				{
@@ -132,28 +107,13 @@ genre()
 					# 14. newpage = /video?c=28
 		            newpage = substr($0, i, j)
 					# 15. in naechste zeile springen
-					next
-				}
-			}
-			# 16. erste zeile mit treffer
-			/<img class=\"/ \
-			{
-				if (suche == 1 && newpage != "")
-				{
-					# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">
-					# 17. extrahiere den titel alt="Reife Frauen"
-					i = index($0, "alt=\"") + 5
+
+                    #data-mxptext="Pissing"
+					i = index($0, "data-mxptext=\"") + 14
 		            j = index(substr($0, i), "\"") - 1
 					# 18. titel = Reife Frauen
 		            title = substr($0, i, j)
 	
-					# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">	
-					# 19. extrahiere den piclink data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184"
-					i = index($0, "data-image=\"") + 12
-		            j = index(substr($0, i), "\"") - 1
-					# 20. pic = http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184
-		            pic = substr($0, i, j)
-					
 					if ( pic == "" )
 					{
 						# 21. erstelle lokalen picname aus kleingeschriebenen titel
@@ -181,50 +141,12 @@ genre()
 					pic = ""
 					# 28. in naechste zeile springen
 					next
-	         	}
+				}
 			}
 		# 29. schreibe alles in die list datei
 		' >$TMP/$FILENAME.list
 	fi
 	# 30. gebe titan den list namen mit pfad zurueck
-	echo "$TMP/$FILENAME.list"
-}
-
-
-genreold()
-{
-	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		piccount=0
-		$curlbin $URL/$PAGE -o $TMP/cache.$FILENAME.1
-		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed 's/<a href=/\n\n\nfound=/g' | grep ^found= | grep "/video?c=" | tr '\t' ' ' | sed 's/ \+/ /g' | grep "img src" | grep ".jpg" >$TMP/cache.$FILENAME.2
-		
-		while read -u 3 ROUND; do
-			PIC=`echo $ROUND | sed 's!<img src=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
-			TITLE=`echo $ROUND | sed 's!data-mxptext=!\ntitle=!g' | grep ^title= | cut -d'"' -f2`
-			NEWPAGE=`echo $ROUND | cut -d'"' -f2 | head -n1`
-	
-			if [ -z "$PIC" ]; then
-#				PIC="http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				PIC="http://openaaf.dyndns.tv/mediathek/menu/`echo $TITLE | tr 'A-Z' 'a-z'`.jpg"
-			fi
-	
-			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-	
-			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
-				if [ ! -e $TMP/$FILENAME.list ];then
-					touch $TMP/$FILENAME.list
-				fi
-				piccount=`expr $piccount + 1`
-	
-				if [ `cat $TMP/$FILENAME.list | grep "#$NEWPAGE#" | wc -l` -eq 0 ];then
-					LINE="$TITLE#$SRC $SRC search '$NEWPAGE&page=' 1#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#0"
-				fi
-				echo "$LINE" >> $TMP/$FILENAME.list
-			fi
-	
-		done 3<$TMP/cache.$FILENAME.2
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	fi
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -281,9 +203,6 @@ COMMENT
 
 search()
 {
-#echo $URL$PAGE$NEXT
-#$curlbin -vo - $URL$PAGE$NEXT > /mnt/parser/7777
-#$curlbin -vo - $URL$PAGE$NEXT > /tmp/localparser/6666
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
@@ -299,8 +218,6 @@ search()
 				#<li class="page_next"><a href="/video/search?search=billions&amp;page=2" class="orangeButton">Next</a></li>
 				/class=\"page_next222222\">/ \
 				{
-#				print "88888888822" $0
-
 					# da 2 pages sources geht keine variable ob schon gesetzt.
 #					if (pages == "0" && $0 ~ /page=/)
 					if ($0 ~ /page=/)
@@ -323,8 +240,6 @@ search()
 				# <li class="page_next_set"><a class="greyButton" href="/video?c=95&amp;page=10">10</a></li>
 				/class=\"page_next_set\">/ \
 				{
-#				print "aaaaaaaaaaaa" $0
-
 					# da 2 pages sources geht keine variable ob schon gesetzt.
 #					if (pages == "0" && $0 ~ /page=/)
 					if ($0 ~ /page=/)
@@ -346,8 +261,6 @@ search()
 				# <li class="page_number"><a class="greyButton" href="/video/search?search=michaela&amp;page=5">5</a></li>
 				/class=\"page_number\">/ \
 				{
-#				print "bbbbbbbbbbb" $0
-
 					# da 2 pages sources geht keine variable ob schon gesetzt.
 #					if (pages == "0" && $0 ~ /page=/)
 					if ($0 ~ /page=/)
@@ -361,8 +274,6 @@ search()
 #						if (pagesold != 0 && pagesold > pages)
 #							pages = pagesold
 							
-#				print "pages2: " pages
-
 						# in naechste zeile springen
 						next
 					}
@@ -370,8 +281,6 @@ search()
 				# eindeutige zeile vor ersten treffer
 				/<ul class=\"nf-videos videos search-video-thumbs\">/ \
 				{
-#				print "aaaaaa" $0
-
 					# suche erlauben ab dieser zeile
 					suche = 1
 					# in naechste zeile springen
@@ -379,8 +288,6 @@ search()
 				}
 				/<ul class=\"videos row-5-thumbs search-video-thumbs\">/ \
 				{
-#				print "bbbbbb" $0
-
 					# suche erlauben ab dieser zeile
 					suche = 1
 					# in naechste zeile springen
@@ -388,8 +295,6 @@ search()
 				}
 				/<ul class=\"dropdownHottestVideos videos\">/ \
 				{
-#				print "cccccc" $0
-
 					# suche erlauben ab dieser zeile
 					suche = 1
 					# in naechste zeile springen
@@ -415,9 +320,6 @@ search()
 				# <a href="/view_video.php?viewkey=127170590" title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14" class="img" data-related-url="/video/ajax_related_video?vkey=127170590" >
 				/<a href=\"\/view_video.php?/ \
 				{
-#print "ddddd" $0
-#print "suche" suche
-
 					if (suche == 1)
 					{
 						# extrahiere den newpage pfad
@@ -425,7 +327,6 @@ search()
 			            j = index(substr($0, i), "\"") - 1
 						# newpage = /view_video.php?viewkey=127170590
 			            newpage = substr($0, i, j)
-#print "newpage" newpage
 	
 						# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">
 						# extrahiere den titel title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
@@ -433,14 +334,11 @@ search()
 			            j = index(substr($0, i), "\"") - 1
 						# title = "Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
 			            title = substr($0, i, j)
-#print "title" title
 
 						# in naechste zeile springen
 						next
 					}
 				}
-				# bildlink treffer
-#data-image
 				# data-mediumthumb="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/....
 				/data-mediumthumb=/ \
 				{
@@ -477,9 +375,6 @@ search()
 				# next page init
 			END \
 				{
-#				print "pages3: " pages
-#				print "NEXT + 1: " NEXT + 1
-
 					if (pages != "0")# && pages >= NEXT + 1)
 						print "Page (" NEXT + 1 "/" pages ")#" SRC " " SRC " " INPUT " \x27" PAGE "\x27 " NEXT + 1 "#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#" NAME "#0"
 				}
@@ -487,56 +382,6 @@ search()
 		' >$TMP/$FILENAME.list
 	fi
 	# 30. gebe titan den list namen mit pfad zurueck
-	echo "$TMP/$FILENAME.list"
-}
-
-searchold()
-{
-	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		piccount=0
-
-		$curlbin $URL/$PAGE$NEXT -o $TMP/cache.$FILENAME.1
-		cat $TMP/cache.$FILENAME.1 | tr '\n' ' ' | sed 's/<a href=/\n\n\nfound=/g' | grep ^found= | grep "/view_video.php?viewkey=" | tr '\t' ' ' | sed 's/ \+/ /g' | grep "img src" >$TMP/cache.$FILENAME.2
-	
-#		<li class="page_next_set"><a class="greyButton" href="/video?c=95&amp;page=10">10</a></li>
-		pages=`cat $TMP/cache.$FILENAME.1 | grep "&amp;page" | grep "page_next_set" | sed 's/&amp;page=/\nfound="/g' | grep ^found= | cut -d'"' -f2 | tail -n1`
-
-#		<li class="page_number"><a class="greyButton" href="/video/search?search=michaela&amp;page=5">5</a></li>
-		if [ -z "$pages" ];then
-			pages=`cat $TMP/cache.$FILENAME.1 | grep "page_number" | sed 's/&amp;page=/\nfound="/g' | grep ^found= | cut -d'"' -f2 | tail -n1`
-		fi
-
-		while read -u 3 ROUND; do
-			PIC=`echo $ROUND | sed 's!data-mediumthumb=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
-#			if [ -z "$PIC" ];then
-#				PIC=`echo $ROUND | sed 's!data-path=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
-#			fi
-
-			TITLE=`echo $ROUND | sed 's!title=!\ntitle=!g' | grep ^title= | cut -d'"' -f2`
-			NEWPAGE=`echo $ROUND | cut -d'"' -f2`	
-			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/%28/(/g' -e 's/%29/)/g' -e 's/%3A/:/g' -e 's/%40/@/g' -e 's/%2B/&/g' -e 's/%C3/A/g' -e 's/%B1/&/g' -e 's/%5B//g' -e 's/%5D//g' -e 's!%2F!/!g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-	
-			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ] && [ ! -z "$PIC" ];then
-				if [ ! -e $TMP/$FILENAME.list ];then
-					touch $TMP/$FILENAME.list
-				fi
-				piccount=`expr $piccount + 1`
-
-				if [ `cat $TMP/$FILENAME.list | grep "#$NEWPAGE#" | wc -l` -eq 0 ];then
-					LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$FILENAME.$NEXT.$piccount.jpg#$NAME#111"
-				fi
-				echo "$LINE" >> $TMP/$FILENAME.list
-			fi
-	
-		done 3<$TMP/cache.$FILENAME.2
-
-		if [ "$NEXT" -lt "$pages" ]; then
-			NEXTPAGE=`expr $NEXT + 1`
-			LINE="Page ($NEXTPAGE/$pages)#$SRC $SRC search '$PAGE' $NEXTPAGE#http://openaaf.dyndns.tv/mediathek/menu/next.jpg#next.jpg#$NAME#0"
-			echo "$LINE" >> $TMP/$FILENAME.list
-		fi
-		rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	fi
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -566,7 +411,6 @@ COMMENT
 
 pornstars()
 {
-#echo $URL$PAGE$NEXT
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
@@ -574,7 +418,7 @@ pornstars()
 			BEGIN \
 				{
 					# setzt suchvariable auf 0 vor dem start
-					suche = 0
+					suche = 1
 					newpage = ""
 					pages = "0"
 					piccount = 0
@@ -582,144 +426,70 @@ pornstars()
 				# <li class="page_next_set"><a class="greyButton" href="/video?c=95&amp;page=10">10</a></li>
 				/class=\"page_next_set\">/ \
 				{
-#				print "888888888" $0
-
-					# da 2 pages sources geht keine variable ob schon gesetzt.
-					#if (pages == "0")
-					#{
 						# extrahiere die max pages unter 10 pages
-#						i = index($0, "&amp;page=") + 10
 						i = index($0, "page=") + 5
 			            j = index(substr($0, i), "\"") - 1
 			            pages = substr($0, i, j)
-#			            print "pages" pages
+			            print "pages" pages
 			            # in naechste zeile springen
 						next
-					#}
 				}
 				# <li class="page_number"><a class="greyButton" href="/video/search?search=michaela&amp;page=5">5</a></li>
 				/class=\"greyButton\">/ \
 				{
-#				print "77777777777" $0
-
-					# da 2 pages sources geht keine variable ob schon gesetzt.
-					#if (pages == "0")
-					#{
 						# extrahiere die max pages groesser 10 pages
 						i = index($0, "page=") + 5
 			            j = index(substr($0, i), "\"") - 1
 			            pages = substr($0, i, j)
-#				print "pages" pages
+				print "pages2" pages
 
 						# in naechste zeile springen
 						next
-					#}
 				}
-				# eindeutige zeile vor ersten treffer
-				/<ul class=\"videos row-5-thumbs popular-pornstar/ \
+                #<a class="js-mxp" data-mxptype="Pornstar" data-mxptext="Leolulu" href="/pornstar/leolulu">
+				/<a class=\"js-mxp\" data-mxptype=\"Pornstar\"/ \
 				{
-#				print "000000000000"
-
-					# suche erlauben ab dieser zeile
-					suche = 1
-					# in naechste zeile springen
-					next
-				}
-				# eindeutige zeile nach letzen treffer
-				/<\/ul>/ \
-				{
-					# suche verbieten ab dieser zeile
-					suche = 0
-					# in naechste zeile springen
-		        	next
-				}
-				# eindeutige zeile nach letzen treffer backup fals erste nicht klappt
-				/<div class="pagination3\">/ \
-				{
-					# suche verbieten ab dieser zeile
-					suche = 0
-					# in naechste zeile springen
-		            next
-				}
-				# nextpage zeile
-				# <a href="/view_video.php?viewkey=127170590" title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14" class="img" data-related-url="/video/ajax_related_video?vkey=127170590" >
-				/<a href=\"\/pornstar\// \
-				{
-#				print "33333333333"
 					if (suche == 1)
 					{
-#				print "44444444444"
-
 						# extrahiere den newpage pfad
 						i = index($0, "href=\"") + 6
 			            j = index(substr($0, i), "\"") - 1
-						# newpage = /view_video.php?viewkey=127170590
 			            newpage = substr($0, i, j)
-#				print "newpage: " newpage
 
+						i = index($0, "data-mxptext=\"") + 14
+			            j = index(substr($0, i), "\"") - 1
+			            title = substr($0, i, j)
 						next
 					}
 				}
-				# bildlink treffer
-				# data-mediumthumb="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/....
-				/<img src=/ \
+#				data-thumb_url="https://di.phncdn.com/pics/users/229/015/532/avatar1632735588/(m=eQJ6GCjadOf)(mh=ptGd9vVV0JdzLQFH)200x200.jpg"
+				/data-thumb_url/ \
 				{
-#				print "11111111111"
-
-#					if (suche == 1 && newpage != "")
 					if (suche == 1)
 					{
-#				print "222222222222"
-
-						# extrahiere den piclink data-image="http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/............
+						# extrahiere den newpage pfad
+						i = index($0, "data-thumb_url=\"") + 16
+			            j = index(substr($0, i), "\"") - 1
+			            pic = substr($0, i, j)
+						next
+					}
+				}
+                #<img src="https://di.phncdn.com/pics/users/433/074/032/avatar1551452811/(m=eQJ6GCjadOf)(mh=TT-sZ5VEN7ufxL9W)200x200.jpg" alt="Aidra Fox"/>
+				/<img src=/ \
+				{
+					if (suche == 1 && pic == "")
+					{
+						# extrahiere den newpage pfad
 						i = index($0, "<img src=\"") + 10
 			            j = index(substr($0, i), "\"") - 1
-						# pic = http://i0.cdn2b.image.pornhub.phncdn.com/videos/201702/17/106465292/original/........
 			            pic = substr($0, i, j)
-
-						if ( pic == "" )
-						{
-			            	pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-						}
-#				print "pic: " pic
-
-
-						# <img class="js-menuSwap" data-image="http://cdn1b.static.pornhub.phncdn.com/images/categories/118x88/28.jpg?cache=1488300184" width="118" height="88" alt="Reife Frauen">
-						# extrahiere den titel title="Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
-						i = index($0, "alt=\"") + 5
-			            j = index(substr($0, i), "\"") - 1
-						# title = "Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
-			            title = substr($0, i, j)
-						# in naechste zeile springen
-#				print "title: " title
-
-#						if (title != "")
-#						{
-#							piccount += 1
-#							# in naechste zeile springen
-#							# \x27 = single quotes
-#							print title "#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
-#						}
-#		
-#						# 27. reset variables
-#						newpage = ""
-#						title = ""
-#						picname = ""
-#						pic = ""
-#						# 28. in naechste zeile springen
-#						next
-		         	}
+						next
+					}
 				}
 				/<span class=\"videosNumber\">/ \
 				{
-#				print "55555555555"
-
-
 					if (suche == 1 && newpage != "")
 					{
-#				print "66666666666"
-
-
 						i = index($0, "<span class=\"videosNumber\">") + 28
 			            j = index(substr($0, i), "</span>") - 1
 						# <span class="videosNumber">1074 Videos			40M Aufrufe </span>
@@ -732,8 +502,6 @@ pornstars()
 						gsub(/[ \t]+$/,"",extra)
 						# trim middle "  Hallo   tester   "
 						gsub(/\t+/," / ",extra)
-
-#				print "extra: " extra
 
 						if (title != "")
 						{
@@ -781,13 +549,11 @@ hoster()
 }
 
 case $INPUT in
-#	init) $INPUT;;
+	init) $INPUT;;
 	mainmenu) $INPUT;;
 	play) $INPUT;;
 	search) $INPUT;;
-	searchold) $INPUT;;
 	genre) $INPUT;;
-	genreold) $INPUT;;
 	pornstars) $INPUT;;
 	hoster) $INPUT;;
 esac
