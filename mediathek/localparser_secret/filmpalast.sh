@@ -39,9 +39,9 @@ init()
 
 mainmenu()
 {
-	echo "New#$SRC $SRC search '/page/' 0#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#new.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "Filme#$SRC $SRC search '/movies/new/page/' 0#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Serien#$SRC $SRC search '/serien/view/page/' 0#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#serien.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "New#$SRC $SRC search '/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#new.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Filme#$SRC $SRC search '/movies/new/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#movies.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Serien#$SRC $SRC search '/serien/view/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#serien.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Top#$SRC $SRC search '/movies/top/page/' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#top.jpg#$NAME#0" >>$TMP/$FILENAME.list
 #	echo "Englisch#$SRC $SRC search '/search/genre/Englisch/' 1#http://openaaf.dyndns.tv/mediathek/menu/englisch.jpg#search.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Genre#$SRC $SRC genre#http://openaaf.dyndns.tv/mediathek/menu/genre.jpg#genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
@@ -54,8 +54,7 @@ mainmenu()
 sorted()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-#		watchlist="0-9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
-		watchlist=$($curlbin $URL$PAGE$NEXT | sed -nr 's!.*/alpha/([^/]+)".*!\1!p' | sort -u)
+		watchlist="0-9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
 
 		rm $TMP/$FILENAME.list > /dev/null 2>&1
 
@@ -86,6 +85,8 @@ genre()
 
 search()
 {
+rm $TMP/$FILENAME.list
+$curlbin -o - $URL$PAGE$NEXT > /tmp/123
 	PAGE2=$($curlbin $URL$PAGE$NEXT | sed "s!$PAGE!\n$PAGE!g" | grep ^$PAGE | cut -d'>' -f2| cut -d'<' -f1 | sort | tail -n1)
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v PAGE2=$PAGE2 -v NEXT=$NEXT -v URL=$URL \
@@ -144,13 +145,9 @@ search()
                 }
                 /<a href="/ \
                 {
-				    print "1cccccc: " $0
-
                     if (found == 1 && $0 ~ /title=\"/)
 				    {
-#        			    print "2cccccc: " $0
-
-                        found = 0
+                        found = 2
 					    i = index($0, "<a href=\"") + 9
 		                j = index(substr($0, i), "\"") - 1
 		                newpage = substr($0, i, j)
@@ -158,40 +155,115 @@ search()
 					    i = index($0, "title=\"") + 7
 		                j = index(substr($0, i), "\"") - 1
 		                title = substr($0, i, j)
-    				    print "title: " title
 
-					    i = index($0, "src=\"") + 5
-		                j = index(substr($0, i), "\"") - 1
-		                pic = substr($0, i, j)
-					    
-					    if ( pic == "" )
-					    {
-						    picname = tolower(title)
-	    
-						    # 23. tausche leehrzeichen in punkte
-						    # 24. titel = reife.frauen
-		                	gsub(" ", ".", picname)
-						    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
-					    }
+                        if ($0 ~ / src=\"/)
+				        {
+
+					        i = index($0, " src=\"") + 6
+		                    j = index(substr($0, i), "\"") - 1
+		                    pic = substr($0, i, j)
+					        
+					        if ( pic == "" )
+					        {
+						        picname = tolower(title)
+	        
+						        # 23. tausche leehrzeichen in punkte
+						        # 24. titel = reife.frauen
+		                    	gsub(" ", ".", picname)
+						        pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
+					        }
+                            else
+                            {
+                                pic = URL pic
+                            }
+	        
+					        if (title != "")
+					        {
+						        piccount += 1
+						        # 25. in naechste zeile springen
+						        # 26. \x27 = single quotes
+    #                            cmd="curl https:" newpage "| tr -d \"\\n\" | grep description"; cmd|getline description; cmd|getline description;close(cmd)
+
+    #cmd="curl https:" newpage; cmd|getline description;close(cmd)
+    #while (getline cmd) {
+    #       getline tmp; print "tmp " tmp; print "cmd " cmd
+    #       file += getline tmp; print tmp; print cmd
+    #}
+
+    #                           cmd="curl https:" newpage "| tr -d \"\\n\" | grep description"; cmd|getline description;close(cmd)
+    #	  				        i = index(description, "<span itemprop=\"description\">") + 29
+    #	 	                    j = index(substr(description, i), "<") - 1
+    #		                    desc = substr(description, i, j)
+    #                           sub(/\n+/," / ",desc)
+    #                           print "desc " desc
+
+                                desc = "curl https:" newpage " | tr -d \"\\n\" | sed -nr \"s/.*<span itemprop=\\\"description\\\">([^>]+)<.*/\\1/p\""
+
+                                if (desc != "")
+        							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
+                                else
+        							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+					        }
+					        
+					        # 27. reset variables
+    					    newpage = ""
+    					    title = ""
+    					    picname = ""
+    					    pic = ""
+                            description = ""
+                            desc = ""
+					        # 28. in naechste zeile springen
+                        }
+					    next
+                    }
+                }
+                /<img src="/ \
+                {
+                    if (found == 2 && $0 ~ /alt=\"/)
+				    {
+                        found = 0
+
+				        i = index($0, "<img src=\"") + 10
+	                    j = index(substr($0, i), "\"") - 1
+	                    pic = substr($0, i, j)
+				        
+				        if ( pic == "" )
+				        {
+					        picname = tolower(title)
+        
+					        # 23. tausche leehrzeichen in punkte
+					        # 24. titel = reife.frauen
+	                    	gsub(" ", ".", picname)
+					        pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
+				        }
                         else
                         {
                             pic = URL pic
                         }
-	    
-					    if (title != "")
-					    {
-						    piccount += 1
-						    # 25. in naechste zeile springen
-						    # 26. \x27 = single quotes
-							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
-					    }
-					    
-					    # 27. reset variables
+        
+				        if (title != "")
+				        {
+					        piccount += 1
+					        # 25. in naechste zeile springen
+					        # 26. \x27 = single quotes
+
+                            desc = "curl https:" newpage " | tr -d \"\\n\" | sed -nr \"s/.*<span itemprop=\\\"description\\\">([^>]+)<.*/\\1/p\""
+
+                            if (desc != "")
+    							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
+                            else
+    							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+				        }
+				        
+				        # 27. reset variables
 					    newpage = ""
 					    title = ""
 					    picname = ""
 					    pic = ""
-					    # 28. in naechste zeile springen
+                        description = ""
+                        desc = ""
+				        # 28. in naechste zeile springen
+
 					    next
                     }
                 }
@@ -199,7 +271,6 @@ search()
                 {
                         suche = 0
                         next
-
                 }
 			END \
 				{

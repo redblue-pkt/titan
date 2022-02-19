@@ -1158,6 +1158,11 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 				posx = 0;
 				if(titheknode->description == NULL) 
 					titheknode->description = ostrcat(_("No Description found..."), NULL, 0, 0);
+//                else if(!ostrncmp("curl ", titheknode->description, 5))
+ //               {
+ //                   addconfigtmp("tithek_cmd", ostrcat(titheknode->description, NULL, 0, 0));
+//					titheknode->description = ostrcat(_("Description is loading..."), NULL, 0, 0);
+//                }
 			}
 			else
 			{
@@ -1239,7 +1244,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			}
 			changetext(tmp, titheknode->title);
 			changename(tmp, titheknode->title);
-			changetext2(tmp, titheknode->description);
+            if(ostrncmp("curl ", titheknode->description, 5))
+          	    changetext2(tmp, titheknode->description);
 
 			tmp->handle = (char*)titheknode;
 			posx += tmp->width;
@@ -2508,6 +2514,20 @@ waitrcstart:
 */
 					free(tithekpic); tithekpic = NULL;
 				}
+
+        		if(getconfigint("tithek_description", NULL) == 1 && ((struct tithek*)listbox->select->handle)->description != NULL && !ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->description, 5))
+                {
+                    printf("found description cmd: %s\n", ((struct tithek*)listbox->select->handle)->description);
+                    char * desc = NULL;
+                    desc = command(((struct tithek*)listbox->select->handle)->description);
+                    if(desc != NULL)
+                    {
+                        ((struct tithek*)listbox->select->handle)->description = desc;                    
+                        printf("set description: %s\n", desc);
+                        changetext2(listbox->select, desc);
+                    }
+                    free(desc), desc = NULL;
+                }
 			}
 		}
 
