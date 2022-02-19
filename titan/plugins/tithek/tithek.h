@@ -679,7 +679,7 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 		// tithek security
 		ip = string_replace_all("imageshack.us/md/up/grd/", "openaaf.dyndns.tv/", ip, 1);
 
-		ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
+//		ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
 		//ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
 
 		if(ip != NULL)
@@ -2408,7 +2408,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				changetext(countpage, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
-				if(tmp->handle != NULL)// && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
@@ -2444,7 +2444,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 			{
 				if(tmp->pagecount != listbox->aktpage) break;
 
-				if(tmp->handle != NULL)// && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
@@ -2483,7 +2483,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 waitrcstart:
 
 		// reload selected pic
-		if(getconfigint("tithek_description", NULL) == 1)
+		if(getconfigint("tithek_description", NULL) == 1 || (getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
