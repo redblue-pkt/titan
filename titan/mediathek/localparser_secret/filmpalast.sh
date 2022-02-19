@@ -85,8 +85,6 @@ genre()
 
 search()
 {
-rm $TMP/$FILENAME.list
-$curlbin -o - $URL$PAGE$NEXT > /tmp/123
 	PAGE2=$($curlbin $URL$PAGE$NEXT | sed "s!$PAGE!\n$PAGE!g" | grep ^$PAGE | cut -d'>' -f2| cut -d'<' -f1 | sort | tail -n1)
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL$PAGE$NEXT | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v PAGE2=$PAGE2 -v NEXT=$NEXT -v URL=$URL \
