@@ -180,22 +180,22 @@ search()
 						        piccount += 1
 						        # 25. in naechste zeile springen
 						        # 26. \x27 = single quotes
-    #                            cmd="curl https:" newpage "| tr -d \"\\n\" | grep description"; cmd|getline description; cmd|getline description;close(cmd)
+    #                            cmd="curl --connect-timeout 5 https:" newpage "| tr -d \"\\n\" | grep description"; cmd|getline description; cmd|getline description;close(cmd)
 
-    #cmd="curl https:" newpage; cmd|getline description;close(cmd)
+    #cmd="curl --connect-timeout 5 https:" newpage; cmd|getline description;close(cmd)
     #while (getline cmd) {
     #       getline tmp; print "tmp " tmp; print "cmd " cmd
     #       file += getline tmp; print tmp; print cmd
     #}
 
-    #                           cmd="curl https:" newpage "| tr -d \"\\n\" | grep description"; cmd|getline description;close(cmd)
+    #                           cmd="curl --connect-timeout 5 https:" newpage "| tr -d \"\\n\" | grep description"; cmd|getline description;close(cmd)
     #	  				        i = index(description, "<span itemprop=\"description\">") + 29
     #	 	                    j = index(substr(description, i), "<") - 1
     #		                    desc = substr(description, i, j)
     #                           sub(/\n+/," / ",desc)
     #                           print "desc " desc
 
-                                desc = "curl https:" newpage " | tr -d \"\\n\" | sed -nr \"s/.*<span itemprop=\\\"description\\\">([^>]+)<.*/\\1/p\""
+                                desc = "curl --connect-timeout 5 https:" newpage " | tr -d \"\\n\" | sed -nr \"s/.*<span itemprop=\\\"description\\\">([^>]+)<.*/\\1/p\""
 
                                 if (desc != "")
         							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
@@ -245,7 +245,7 @@ search()
 					        # 25. in naechste zeile springen
 					        # 26. \x27 = single quotes
 
-                            desc = "curl https:" newpage " | tr -d \"\\n\" | sed -nr \"s/.*<span itemprop=\\\"description\\\">([^>]+)<.*/\\1/p\""
+                            desc = "curl --connect-timeout 5 https:" newpage " | tr -d \"\\n\" | sed -nr \"s/.*<span itemprop=\\\"description\\\">([^>]+)<.*/\\1/p\""
 
                             if (desc != "")
     							print title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
