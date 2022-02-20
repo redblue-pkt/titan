@@ -196,7 +196,7 @@ season()
 #	cat "$TMP/$FILENAME.list"
 }
 
-episode()
+episode_old()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
@@ -256,6 +256,75 @@ episode()
 						suche = 0
 					}
 					next
+				}
+
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+#	cat "$TMP/$FILENAME.list"
+}
+
+episode()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+				{
+					suche = 1
+				}
+                /<td class="seasonEpisodeTitle"><a href=/ \
+				{
+					if ( suche == 1 )
+					{
+						# extrahiere den newpage pfad
+						i = index($0, "href=\"") + 6
+				        j = index(substr($0, i), "\"") - 1
+				        newpage = substr($0, i, j)
+
+						# extrahiere den title pfad
+						i = index($0, "<strong>") + 8
+				        j = index(substr($0, i), "<") - 1
+				        title = substr($0, i, j)
+
+						if (newpage != "")
+						{
+							if ( pic == "" )
+							{
+					  			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
+							}
+
+							piccount += 1
+							# 25. in naechste zeile springen
+							# 26. \x27 = single quotes
+
+						    # extrahiere den title pfad
+						    i = index(newpage, "/staffel-") + 9
+				            j = index(substr(newpage, i), "/") - 1
+				            season = substr(newpage, i, j)
+
+						    # extrahiere den title pfad
+						    i = index(newpage, "/episode-") + 9
+    #				        j = index(substr(newpage, i), "\n") - 1
+                            j = length(newpage)
+				            episode = substr(newpage, i, j)
+
+#							#Staffel 3 Episode 26
+#							split(extra, a, " ")
+#							season = a[2]
+#							episode = a[4]
+#							print title "(" extra ")#" SRC " " SRC " hosterlist \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+
+    						if (title == "")
+    							print "S" season "E" episode "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
+                            else
+       							print "S" season "E" episode " - " title "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
+                        }
+						next
+					}
 				}
 
 		# 29. schreibe alles in die list datei
@@ -435,7 +504,7 @@ print "pic: " pic
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
 #							print name "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
-							print name "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
+#							print name "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
 
 							#Staffel 3 Episode 26
 							split(title, a, " ")
@@ -452,7 +521,10 @@ print "pic: " pic
 #print "episode: " episode
 
 #							print name " - " title " - " episodename " - " lang "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
-							print name " - " title " - " episodename "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
+#							print name " - " title " - " episodename "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
+#							print title " - " episodename " - " lang " - " date "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
+#							print name " (" title ") (" episodename ") (" date ")#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
+							print name " (" title ") (" episodename ") (" date ")#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
 						}
                         next
 					}
@@ -482,6 +554,7 @@ hosterlist()
 #				/<div><a href="\/redirect/ \
 				/<li class="col-md-3 col-xs-12 col-sm-6 episodeLink/ \
 				{
+#print "a " $a
 					if ( suche == 1 )
 					{
 						# extrahiere den newpage pfad
@@ -498,6 +571,20 @@ hosterlist()
 				        j = index(substr($0, i), "<") - 1
 				        title = substr($0, i, j)
 
+						# extrahiere den title pfad
+						i = index($0, "data-lang-key=\"") + 15
+				        j = index(substr($0, i), "\"") - 1
+				        langck = substr($0, i, j)
+
+                        if ($0 ~ /data-lang-key="1"/)
+                            lang = "de"
+                        else if ($0 ~ /data-lang-key="2"/)
+                            lang = "en"
+                        else if ($0 ~ /data-lang-key="3"/)
+                            lang = "de sub"
+                        else
+                            lang = "??"
+
 				        pic = tolower(title)
 
 						if (title != "")
@@ -510,9 +597,9 @@ hosterlist()
 							piccount += 1
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
-							print title "#" SRC " " SRC " hoster \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
+							print title " (" lang ")#" SRC " " SRC " hoster \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#111"
 						}
-#						next
+						next
 					}
 				}
 		# 29. schreibe alles in die list datei
