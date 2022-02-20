@@ -71,7 +71,7 @@ sorted()
 all()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""'| sort -u | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""'| sort -u | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -103,10 +103,16 @@ all()
 			      			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 						}
 
+                        desc = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+
+#<div class="backdrop" style="background-image: url(https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-dGoiANWASrQtOOxy58TI9aKYfqDqq4sk_800x300.png)"></div>            <div class="container row">
+#<div class="seriesCoverBox"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAAAA6fptVAAAACklEQVR4nGP6AgAA+gD3odZZSQAAAABJRU5ErkJggg==" data-src="https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-GTyjOBAKAL3Ifah66vuKkBDC1Z2esgrm_220x330.jpg" alt="Reacher, Cover, HD, Serien Stream, ganze Folge" itemprop="image" title="Cover Reacher SerienStream"><noscript><img src="https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-GTyjOBAKAL3Ifah66vuKkBDC1Z2esgrm_220x330.jpg" alt="Reacher, Cover, HD, Serien Stream, ganze Folge" itemprop="image" title="Cover Reacher SerienStream"></noscript></div>
+                        pic = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*<noscript><img src=\\\"([^\\\"]+)\\\".*/\\1/p\""
+
 						piccount += 1
 						# 25. in naechste zeile springen
 						# 26. \x27 = single quotes
-						print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+						print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
 					}
 					next
 				}
@@ -327,13 +333,13 @@ list()
                             else
                                 picext = ".jpg"
 
+                            desc = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+
 							piccount += 1
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
-#							print title "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
-#							print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
-							print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount picext "#" NAME "#0"
 
+    						print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount picext "#" NAME "#0#" desc
 						}
 #						next
 					}
@@ -423,11 +429,13 @@ print "pic: " pic
 				  				pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
 
+                            desc = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+
 							piccount += 1
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
 #							print name "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
-							print name "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+							print name "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
 
 							#Staffel 3 Episode 26
 							split(title, a, " ")
@@ -444,7 +452,7 @@ print "pic: " pic
 #print "episode: " episode
 
 #							print name " - " title " - " episodename " - " lang "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
-							print name " - " title " - " episodename "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
+							print name " - " title " - " episodename "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
 						}
                         next
 					}
@@ -563,10 +571,12 @@ search()
 			      			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 						}
 
+                        desc = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+
 						piccount += 1
 						# 25. in naechste zeile springen
 						# 26. \x27 = single quotes
-						print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+						print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
 					}
 					next
 				}

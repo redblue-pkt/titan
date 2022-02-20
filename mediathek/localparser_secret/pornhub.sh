@@ -498,10 +498,9 @@ pornstars()
 
 						# trim left "  Hallo   tester   "
 						gsub(/^[ \t]+/,"",extra)
-						# trim right "  Hallo   tester   "
 						gsub(/[ \t]+$/,"",extra)
-						# trim middle "  Hallo   tester   "
 						gsub(/\t+/," / ",extra)
+						gsub(/ +/," ",extra)
 
 						if (title != "")
 						{
