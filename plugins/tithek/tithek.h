@@ -663,6 +663,14 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	char* ip = NULL, *pos = NULL, *path = NULL;
 	char* tmpstr = NULL, *localfile = NULL;
 
+/*
+printf("link1: %s\n", link);
+    if(!ostrncmp("curl ", link, 5))
+        link = command(link);
+
+printf("link2: %s\n", link);
+*/
+
 	if(link == NULL) return NULL;
 	if(ostrncmp("http://", link, 7) && ostrncmp("https://", link, 8) && ostrncmp("/tmp/localhoster/hoster.sh", link, 26)) return NULL;
 
@@ -2416,6 +2424,12 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
+                    if(!ostrncmp("curl ", ((struct tithek*)tmp->handle)->pic, 5))
+                        ((struct tithek*)tmp->handle)->pic = command(((struct tithek*)tmp->handle)->pic);
+
+                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
+                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
+
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					/* not working with thread download
@@ -2452,6 +2466,12 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
+                    if(!ostrncmp("curl ", ((struct tithek*)tmp->handle)->pic, 5))
+                        ((struct tithek*)tmp->handle)->pic = command(((struct tithek*)tmp->handle)->pic);
+
+                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
+                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
+
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					/* not working with thread download
@@ -2495,12 +2515,19 @@ waitrcstart:
 			{
 				if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
 				{
+                    if(!ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->pic, 5))
+                        ((struct tithek*)listbox->select->handle)->pic = command(((struct tithek*)listbox->select->handle)->pic);
+
+                    if(cmpfilenameext(((struct tithek*)listbox->select->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)listbox->select->handle)->localname, ".png"))
+                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)listbox->select->handle)->localname, ".png", 0, 0);
+
 					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
-//					if(file_exist(tithekpic))
-//					{
+
+					if(file_exist(tithekpic))
+					{
                         debug(99, "changepic: %s", tithekpic);
 						changepic(listbox->select, tithekpic);
-//					}
+					}
 /*
 					else
 					{
@@ -2512,7 +2539,7 @@ waitrcstart:
 						changepic(listbox->select, tithekpic);
 					}
 */
-					free(tithekpic); tithekpic = NULL;
+//					free(tithekpic); tithekpic = NULL;
 				}
 
         		if(getconfigint("tithek_description", NULL) == 1 && ((struct tithek*)listbox->select->handle)->description != NULL && !ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->description, 5))
@@ -2527,7 +2554,14 @@ waitrcstart:
                         changetext2(listbox->select, desc);
                     }
                     free(desc), desc = NULL;
+					if(file_exist(tithekpic))
+					{
+                        debug(99, "changepic: %s", tithekpic);
+						changepic(listbox->select, tithekpic);
+					}
                 }
+					free(tithekpic); tithekpic = NULL;
+
 			}
 		}
 
