@@ -786,6 +786,43 @@ broadcast()
 	fi
 }
 
+popofthestream()
+{
+    rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+
+    #INPUT=http://www.popofthestream.com/embed/aliez-skymain.html
+    HOST=$(echo $INPUT | sed -nr 's!.*://.*/([^/]+).*!\1!p')
+    PFAD=$($curlbin $INPUT | sed -nr 's/.*src=".([^.]+).*/\1/p')
+    #echo HOST $HOST
+    #echo PFAD $PFAD
+    #echo INPUT $INPUT
+    $curlbin "$INPUT" -o $TMP/cache.hoster.$hoster.1
+    HOST=$(echo $INPUT | sed -nr 's!(.*://.*/.*)/.*!\1!p')
+    #<iframe allowFullScreen frameborder=0 marginheight=0 marginwidth=0 scrolling="no" src="./aliez/bein1fr.html" width="728" height="450">Your browser does not support inline frames or is currently configured not to display inline frames.</iframe>
+    #<iframe allowFullScreen frameborder=0 marginheight=0 marginwidth=0 scrolling="no" src="./aliez/skymain.html" width="728" height="450">Your browser does not support inline frames or is currently configured not to display inline frames.</iframe>
+    PFAD=$(cat $TMP/cache.hoster.$hoster.1 | sed -nr 's!.*src=".(.*)" width=.*!\1!p')
+    #echo HOST2 $HOST
+    #echo PFAD2 $PFAD
+    $curlbin "$HOST$PFAD" -o $TMP/cache.hoster.$hoster.2
+    HOST=$(echo $HOST$PFAD | sed -nr 's!(.*://.*/.*/.*)/.*!\1!p')
+    #let fetchResult = await fetch("./skymain.json?" + Date.parse(new Date().toString()));
+    PFAD=$(cat $TMP/cache.hoster.$hoster.2 | sed -nr 's!.*fetch\(\".(.*)\?.*!\1!p')
+    #echo HOST3 $HOST
+    #echo PFAD3 $PFAD
+    $curlbin "$HOST/$PFAD" -o $TMP/cache.hoster.$hoster.3
+    #{"id":"174476"}
+    ID=$(cat $TMP/cache.hoster.$hoster.3 | cut -d'"' -f4)
+    #document.getElementById("player").innerHTML = '<iframe allowFullScreen frameborder=0 marginheight=0 marginwidth=0 scrolling="no" src="http://emb.apl111.me/player/live.php?id=' + chInfos.id + '&w=728&h=450" width="728" height="450">Your browser does not support inline frames or is currently configured not to display inline frames.</iframe>';
+    URL=$(cat $TMP/cache.hoster.$hoster.2 | sed -nr 's/.*src="([^"]+)".*/\1/p' | grep "?id=" | sed "s/'.*'/$ID/")
+
+    #echo HOST4 $HOST
+    #echo PFAD4 $PFAD
+    #echo ID4 $ID
+
+    #echo $URL
+    /tmp/localhoster/hoster.sh get $URL
+}
+
 all()
 {
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
@@ -931,7 +968,6 @@ hlsdl()
 	echo $HLSBIN "$URL" -v -C /mnt/network/cookies -b -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 	$HLSBIN "$URL" -v -C /mnt/network/cookies -b -f -u "$USERAGENT" -h "$REFERER" -o "$DEST" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 #	$HLSBIN "$URL" -v -u "$USERA" -h "$REFERER" -o "$DEST" >> /tmp/.last_hlsdl_hoster_${TYPE}_${CURTIME}.log
-
 }
 
 curldl()
@@ -942,12 +978,10 @@ curldl()
 	$CURLBIN "$INPUT" -o "$DEST"
 }
 
-
 if [ "$TYPE" == "get" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
 		apl*) apl3 $INPUT;;
-		apl0|apl1|apl2|apl3|apl4|apl5|apl6|apl7|apl8|apl9|apl10|apl11|apl12|apl13|apl14|apl15|apl16|apl17|apl18|apl19|apl20|apl21|apl22|apl23|apl24|apl25|apl26|apl27|apl28|apl29|apl30|apl31|apl32|apl33|apl34|apl35|apl36|apl37|apl38|apl39|apl40|apl41|apl42|apl43|apl44|apl45|apl46|apl47|apl48|apl49|apl50|apl51|apl52|apl53|apl54|apl55|apl56|apl57|apl58|apl59|apl60|apl61|apl62|apl63|apl64|apl65|apl66|apl67|apl68|apl69|apl70|apl71|apl72|apl73|apl74|apl75|apl76|apl77|apl78|apl79|apl80|apl81|apl82|apl83|apl84|apl85|apl86|apl87|apl88|apl89|apl90|apl91|apl92|apl93|apl94|apl95|apl96|apl97|apl98|apl99|apl100|apl101|apl102|apl103|apl104|apl105|apl106|apl107|apl108|apl109) apl3 $INPUT;;
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
 		nosvideo) nosvideo $INPUT;;
@@ -992,13 +1026,13 @@ if [ "$TYPE" == "get" ];then
 		evoload) evoload $INPUT;;
 		abcvideo) abcvideo $INPUT;;
 		dood|doodstream) doodstream $INPUT;;
+        popofthestream) popofthestream $INPUT;;
 #		*) all $INPUT;;
 	esac
 if [ ! -z "$hoster2" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster2.log
 	case $hoster2 in
 		apl*) apl3 $INPUT;;
-		apl0|apl1|apl2|apl3|apl4|apl5|apl6|apl7|apl8|apl9|apl10|apl11|apl12|apl13|apl14|apl15|apl16|apl17|apl18|apl19|apl20|apl21|apl22|apl23|apl24|apl25|apl26|apl27|apl28|apl29|apl30|apl31|apl32|apl33|apl34|apl35|apl36|apl37|apl38|apl39|apl40|apl41|apl42|apl43|apl44|apl45|apl46|apl47|apl48|apl49|apl50|apl51|apl52|apl53|apl54|apl55|apl56|apl57|apl58|apl59|apl60|apl61|apl62|apl63|apl64|apl65|apl66|apl67|apl68|apl69|apl70|apl71|apl72|apl73|apl74|apl75|apl76|apl77|apl78|apl79|apl80|apl81|apl82|apl83|apl84|apl85|apl86|apl87|apl88|apl89|apl90|apl91|apl92|apl93|apl94|apl95|apl96|apl97|apl98|apl99|apl100|apl101|apl102|apl103|apl104|apl105|apl106|apl107|apl108|apl109) apl3 $INPUT;;
 		ecostream) ecostream $INPUT;;
 		giga) giga $INPUT;;
 		nosvideo) nosvideo $INPUT;;
@@ -1043,6 +1077,7 @@ if [ ! -z "$hoster2" ];then
 		evoload) evoload $INPUT;;
 		abcvideo) abcvideo $INPUT;;
 		dood|doodstream) doodstream $INPUT;;
+        popofthestream) popofthestream $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
