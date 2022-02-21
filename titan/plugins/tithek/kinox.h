@@ -137,9 +137,10 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						lang = ostrcat(lang, " (en)", 1, 0);
 					else
 						lang = ostrcat(lang, " (\?\?)", 1, 0);
-														
+/*														
 					newurl = ostrcat(getconfig("tithek_kinox_url", NULL), "/", 0, 0);
 					newurl = ostrcat(newurl, path, 1, 0);
+
 
 					if(usepic == 1)
 					{
@@ -168,7 +169,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					
 					if(pic == NULL)
 						pic = ostrcat("dummy", NULL, 0, 0);
-
+*/
 					title = ostrcat(path, NULL, 0, 0);
 					title = string_replace_all("/Stream/", "", title, 1);
 					title = string_replace_all(".html", "", title, 1);
@@ -192,6 +193,13 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						line = ostrcat(line, "#", 1, 0);
 						line = ostrcat(line, url, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
+
+						line = ostrcat(line, "echo ", 1, 0);
+					    line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
+      					line = ostrcat(line, " | tr -d '\\n' && /tmp/localhoster/hoster.sh get '", 1, 0);
+						line = ostrcat(line, url, 1, 0);
+						line = ostrcat(line, "' | sed -nr 's/.*<div class=\\\"Grahpics\\\"><a href=\\\".*img src=\\\"([^\\\"]+)\\\".*/\\1/p' | tr -d '\\n'", 1, 0);
+/*
 						if(usepic == 1)
 						{
 							line = ostrcat(line, getconfig("tithek_kinox_url", NULL), 1, 0);
@@ -200,10 +208,13 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						}
 						else
 							line = ostrcat(line, "http://openaaf.dyndns.tv/mediathek/menu/default.jpg", 1, 0);
+*/
 						line = ostrcat(line, "#kinox_search_", 1, 0);
-
 						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
-						line = ostrcat(line, ".jpg#KinoX - Search#22\n", 1, 0);
+//						line = ostrcat(line, ".jpg#KinoX - Search#22\n", 1, 0);
+						line = ostrcat(line, ".jpg#KinoX - Search#22#/tmp/localhoster/hoster.sh get '", 1, 0);
+						line = ostrcat(line, url, 1, 0);
+						line = ostrcat(line, "' | sed -nr 's/.*<div class=\\\"Descriptore\\\">([^>]+)<.*/\\1/p'\n", 1, 0);
 					}
 					free(url), url = NULL;
 					free(path), path = NULL;
