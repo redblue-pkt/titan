@@ -118,8 +118,6 @@ sorted()
 
 search()
 {
-#rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 #		$ACTIVEBIN "$URL/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$NEXT&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22$PAGE2%22%2C%22fLetter%22%3A%22$PAGE%22%7D" > $TMP/cache.$FILENAME.1
@@ -265,10 +263,18 @@ search()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE$LANGTXT#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#22"
+
+                #<div class="Descriptore">John Rambo ist in einem Provinznest auf der Suche nach einem Kriegskameraden, mit dem er in Vietnam in einer Spezialeinheit gewesen war. Aber sein Freund ist bereits gestorben. Die Polizei hält den hochdekorierten Vietnam-Veteranen Rambo für einen Landstreicher und nimmt ihn fest. Polizeichef Teasle, der ihn auf der Wache quält und demütigt, ahnt nicht, dass er damit eine Lawine ins Rollen bringt: Rambos Instinkte werden wach. In einer atemberaubenden Aktion flieht er in die Berge. Teasle hetzt ihm den gesamten Polizeistab hinterher, doch Rambo ist ganz in seinem Element und lässt den Beamten keine Chance.<br /> <br /> <a href="">Jetzt herunterladen!</a>
+                #</div>
+                desc="$ACTIVEBIN --connect-timeout 5 $NEWPAGE | sed -nr 's/.*<div class=\"Descriptore\">([^>]+)<.*/\1/p'"
+
+                #<div class="Grahpics"><a href="/Stream/Rambo_First_Blood.html"><img src="/statics/thumbs/00002000/Rambo_First_Blood.jpg" alt="Rambo: First Blood" /></a></div>
+                PIC="echo $URL | tr -d '\n' && $ACTIVEBIN --connect-timeout 5 $NEWPAGE | sed -nr 's/.*<div class=\"Grahpics\"><a href=\".*img src=\"([^\"]+)\".*/\1/p' | tr -d '\n'"
+
+				LINE="$TITLE$LANGTXT#$NEWPAGE#$PIC#$FILENAME"_"$piccount"_"$filename.jpg#KinoX#22#$desc"
 				if [ "$PAGE" == "actor" ] || [ "$PAGE" == "director" ];then
 #					LINE="$TITLE#$SRC $SRC search 'movie' 1 '$NEWPAGE'#$PIC#kinox_$piccount.jpg#KinoX#0"
-					LINE="$TITLE#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#32"
+					LINE="$TITLE#$NEWPAGE#$PIC#$FILENAME"_"$piccount"_"$filename.jpg#KinoX#32#$desc"
 
 				fi
 				echo "$LINE" >> $TMP/$FILENAME.list
@@ -364,7 +370,7 @@ kino()
 					touch $TMP/$FILENAME.list
 				fi
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE$LANGTXT$YEARTXT$IMDBTXT#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#22#$PLOT"
+				LINE="$TITLE$LANGTXT$YEARTXT$IMDBTXT#$NEWPAGE#$PIC#$FILENAME"_"$piccount"_"$filename.jpg#KinoX#22#$PLOT"
 
 				if [ `cat $TMP/$FILENAME.list | grep "$TITLE" | wc -l` -eq 0 ];then
 					echo "$LINE" >> $TMP/$FILENAME.list
@@ -380,8 +386,8 @@ kino()
 
 latest()
 {
-#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-#	rm $TMP/$FILENAME.list
+	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+	rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 #		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
@@ -479,8 +485,17 @@ latest()
 				if [ ! -e $TMP/$FILENAME.list ];then
 					touch $TMP/$FILENAME.list
 				fi
+
+                #<div class="Descriptore">John Rambo ist in einem Provinznest auf der Suche nach einem Kriegskameraden, mit dem er in Vietnam in einer Spezialeinheit gewesen war. Aber sein Freund ist bereits gestorben. Die Polizei hält den hochdekorierten Vietnam-Veteranen Rambo für einen Landstreicher und nimmt ihn fest. Polizeichef Teasle, der ihn auf der Wache quält und demütigt, ahnt nicht, dass er damit eine Lawine ins Rollen bringt: Rambos Instinkte werden wach. In einer atemberaubenden Aktion flieht er in die Berge. Teasle hetzt ihm den gesamten Polizeistab hinterher, doch Rambo ist ganz in seinem Element und lässt den Beamten keine Chance.<br /> <br /> <a href="">Jetzt herunterladen!</a>
+                #</div>
+                desc="$ACTIVEBIN --connect-timeout 5 $NEWPAGE | sed -nr 's/.*<div class=\"Descriptore\">([^>]+)<.*/\1/p'"
+
+                #<div class="Grahpics"><a href="/Stream/Rambo_First_Blood.html"><img src="/statics/thumbs/00002000/Rambo_First_Blood.jpg" alt="Rambo: First Blood" /></a></div>
+                PIC="echo $URL | tr -d '\n' && $ACTIVEBIN --connect-timeout 5 $NEWPAGE | sed -nr 's/.*<div class=\"Grahpics\"><a href=\".*img src=\"([^\"]+)\".*/\1/p' | tr -d '\n'"
+
 				piccount=`expr $piccount + 1`
-				LINE="$TITLE$LANGTXT$YEARTXT$IMDBTXT#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#22"
+#				LINE="$TITLE$LANGTXT$YEARTXT$IMDBTXT#$NEWPAGE#$PIC#kinox_$piccount.jpg#KinoX#22"
+				LINE="$TITLE$LANGTXT$YEARTXT$IMDBTXT#$NEWPAGE#$PIC#$FILENAME"_"$piccount"_"$filename.jpg#KinoX#22#$desc"
 
 				if [ `cat $TMP/$FILENAME.list | grep "$TITLE" | wc -l` -eq 0 ];then
 					echo "$LINE" >> $TMP/$FILENAME.list
@@ -492,7 +507,6 @@ latest()
 	fi
 	echo "$TMP/$FILENAME.list"
 }
-
 
 case $INPUT in
 	init) $INPUT;;
