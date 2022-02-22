@@ -224,8 +224,9 @@ year()
 
 episodes()
 {
+rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | sed 's/\\n/\n/g' | tr -d '\\' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL/$PAGE | sed 's/\\n/\n/g' | tr -d '\\' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT -v URL=$URL \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -261,7 +262,13 @@ episodes()
 				        else
 					        pic = "http:" pic
 
-				        print title "#" SRC " " SRC " play \x27" url "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+                        cmd="echo " url " | tr \"/\" \"\\n\" | tail -n2 | head -n1"; cmd|getline id;close(cmd)
+                        desc = "curl --connect-timeout 5 https://www.myspass.de/includes/apps/video/getvideometadataxml.php?id=" id " | sed -nr \"s/.*<description><.*\\\[(.*)\\\]\\\].*/\\1/p\""
+                        pic = "echo https:// | tr -d \"\\n\" && curl --connect-timeout 5 https://www.myspass.de/includes/apps/video/getvideometadataxml.php?id=" id " | sed -nr \"s;.*<imagePreview><.*\\\[\/\/(.*)\\\]\\\].*;\\1;p\" | tr -d \"\\n\""
+
+				        print "episodes: " title "#" SRC " " SRC " play \x27" url "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111#" desc
+
+                        desc = "" 
                         title = ""
                         url = ""
                         pic = ""
