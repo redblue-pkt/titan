@@ -787,8 +787,8 @@ msgstr ""
 msgid "ADD BOUQUET"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2369
-#: tithek.h:3331
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2371
+#: tithek.h:3348
 msgid "ADD FAV"
 msgstr "Favorieten toevoegen"
 
@@ -879,11 +879,11 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr "iMDB manueel invoegen"
 
-#: tithek.h:3293
+#: tithek.h:3310
 msgid "Add this link as Favorite ?"
 msgstr "Wilt u deze favoriet toevoegen?"
 
-#: tithek.h:2672 tithek.h:2860
+#: tithek.h:2689 tithek.h:2877
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -2689,7 +2689,7 @@ msgstr "Nieuwe aanmaken"
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:2657 tithek.h:2845
+#: tithek.h:2674 tithek.h:2862
 msgid "Create sub folder"
 msgstr ""
 
@@ -2744,8 +2744,8 @@ msgstr ""
 msgid "DEL"
 msgstr "Vewijderen"
 
-#: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6 tithek.h:2360
-#: tithek.h:3322
+#: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6 tithek.h:2362
+#: tithek.h:3339
 msgid "DEL FAV"
 msgstr "Favorieten wissen"
 
@@ -3284,7 +3284,7 @@ msgstr "Bewerken"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:2359 tithek.h:3321
+#: tithek.h:2361 tithek.h:3338
 msgid "EDIT FAV"
 msgstr "Favorieten bewerken"
 
@@ -3472,7 +3472,7 @@ msgstr ""
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258
-#: info.h:27 ipkg.h:359 keyactions.h:219 kinox.h:101 kinox.h:358 language.h:54
+#: info.h:27 ipkg.h:359 keyactions.h:219 kinox.h:101 kinox.h:369 language.h:54
 #: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
@@ -3546,8 +3546,8 @@ msgstr ""
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228 tithek.h:790
 #: tithek.h:1708 tithek.h:1735 tithek.h:1757 tithek.h:1779 tithek.h:1836
 #: tithek.h:2015 tithek.h:2030 tithek.h:2231 tithek.h:2276 tithek.h:2293
-#: tithek.h:2672 tithek.h:2860 tithek.h:3185 tithek.h:3250 tithek.h:3293
-#: tithek.h:3306 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2689 tithek.h:2877 tithek.h:3202 tithek.h:3267 tithek.h:3310
+#: tithek.h:3323 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -3592,7 +3592,7 @@ msgstr "Afspeellijst bewerken"
 msgid "Edit mode"
 msgstr "Hernoem Modus"
 
-#: tithek.h:3306
+#: tithek.h:3323
 msgid "Edit this Favorite ?"
 msgstr "Wilt u deze favoriet bewerken?"
 
@@ -3696,7 +3696,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG Kanalen: "
 
-#: kinox.h:403 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
+#: kinox.h:414 movie2k.h:502 movie2k.h:750 movie4k.h:871 movie4k.h:1119
 #: solarmovie.h:606
 msgid "Episode"
 msgstr "Aflevering"
@@ -3808,8 +3808,8 @@ msgstr ""
 msgid "Exit Color"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:2376
-#: tithek.h:3338
+#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:2378
+#: tithek.h:3355
 msgid "Exit Tithek"
 msgstr "TiThek Afsluiten"
 
@@ -4277,7 +4277,7 @@ msgstr ""
 "WLAN apparaat gevonden maar geen driver gevonden\n"
 "Installeer AUB driver:"
 
-#: kinox.h:96 kinox.h:353 tithek.h:2010
+#: kinox.h:96 kinox.h:364 tithek.h:2010
 msgid "Found error Msg:"
 msgstr ""
 
@@ -6526,7 +6526,7 @@ msgstr ""
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258
 #: ipkg.h:359 ipsec.h:193 ipsec.h:195 ipsec.h:206 ipsec.h:216 ipsec.h:218
-#: keyactions.h:219 kinox.h:101 kinox.h:358 kravencfg.c:66 kravencfg.c:212
+#: keyactions.h:219 kinox.h:101 kinox.h:369 kravencfg.c:66 kravencfg.c:212
 #: kravencfg.c:248 language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:113
 #: letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:411 mc_audioplayer.h:685
@@ -6582,8 +6582,8 @@ msgstr ""
 #: titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
 #: tithek.c:105 tithek_global.h:228 tithek.h:790 tithek.h:1708 tithek.h:1735
 #: tithek.h:1757 tithek.h:1779 tithek.h:1836 tithek.h:2015 tithek.h:2030
-#: tithek.h:2231 tithek.h:2276 tithek.h:2672 tithek.h:2860 tithek.h:3185
-#: tithek.h:3250 tithek.h:3293 tithek.h:3306 tithek_settings.h:234
+#: tithek.h:2231 tithek.h:2276 tithek.h:2689 tithek.h:2877 tithek.h:3202
+#: tithek.h:3267 tithek.h:3310 tithek.h:3323 tithek_settings.h:234
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
 #: tpk.new.h:3167 tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163
@@ -7207,7 +7207,7 @@ msgstr ""
 #: imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190 inadyn.h:200
 #: infobar.h:718 infobar.h:944 infobar.h:1258 info.h:27 ipkg.h:359 ipsec.h:193
 #: ipsec.h:195 ipsec.h:206 ipsec.h:216 ipsec.h:218 keyactions.h:219 kinox.h:101
-#: kinox.h:358 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
+#: kinox.h:369 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54
 #: lcdpearl1.c:49 lcdsamsung.c:113 letwatch.h:29 letwatch.h:60 letwatch.h:66
 #: letwatch.h:72 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
 #: mboxinfo.c:163 mc_audioplayer.h:411 mc_audioplayer.h:685
@@ -7282,8 +7282,8 @@ msgstr ""
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228 tithek.h:790
 #: tithek.h:1708 tithek.h:1735 tithek.h:1757 tithek.h:1779 tithek.h:1836
 #: tithek.h:2015 tithek.h:2030 tithek.h:2231 tithek.h:2276 tithek.h:2293
-#: tithek.h:2672 tithek.h:2860 tithek.h:3185 tithek.h:3250 tithek.h:3293
-#: tithek.h:3306 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2689 tithek.h:2877 tithek.h:3202 tithek.h:3267 tithek.h:3310
+#: tithek.h:3323 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -7549,7 +7549,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:2416
+#: tithek.h:2418
 msgid "Page"
 msgstr "Pagina"
 
@@ -8702,7 +8702,7 @@ msgstr "Verwijder start"
 msgid "Remove success"
 msgstr "Succesvol verwijderd"
 
-#: tithek.h:3250
+#: tithek.h:3267
 msgid "Remove this Favorite ?"
 msgstr "Wilt u deze favoriet wissen ?"
 
@@ -8736,7 +8736,7 @@ msgstr ""
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:324 mc_pictureplayer.h:157
 #: mc_pictureplayer.h:322 mc_videoplayer.h:440 mc_videoplayer.h:685
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:516 skins_mc_skin.xml.h:48
-#: tithek.h:2362 tithek.h:2372 tithek.h:3324 tithek.h:3334
+#: tithek.h:2364 tithek.h:2374 tithek.h:3341 tithek.h:3351
 msgid "Repeat"
 msgstr "Herhalen"
 
@@ -8745,8 +8745,8 @@ msgid "Repeat type"
 msgstr ""
 
 #: mc_audioplayer.h:486 mc_global.h:1145 mc_iptvplayer.h:141
-#: mc_pictureplayer.h:150 mc_videoplayer.h:433 tithek.h:2364 tithek.h:2374
-#: tithek.h:3326 tithek.h:3336
+#: mc_pictureplayer.h:150 mc_videoplayer.h:433 tithek.h:2366 tithek.h:2376
+#: tithek.h:3343 tithek.h:3353
 msgid "Repeat-On"
 msgstr "Herhalen Aan"
 
@@ -9503,8 +9503,8 @@ msgstr "Script heeft geen output of is gestart op de achtergrond."
 #: ard.h:126 ard.h:128 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:80 giga.h:82 imdbapi.h:287
 #: imdb.h:746 internetradio.h:13 internetradio.h:15 internettv.h:13
-#: internettv.h:15 kinox.h:35 kinox.h:37 kinox.h:248 kinox.h:250 kinox.h:989
-#: kinox.h:991 mlehd.h:90 mlehd.h:92 movie2k.h:74 movie2k.h:76 movie2k.h:231
+#: internettv.h:15 kinox.h:35 kinox.h:37 kinox.h:259 kinox.h:261 kinox.h:1000
+#: kinox.h:1002 mlehd.h:90 mlehd.h:92 movie2k.h:74 movie2k.h:76 movie2k.h:231
 #: movie2k.h:233 movie4k.h:146 movie4k.h:148 movie4k.h:303 movie4k.h:305
 #: myvideo.h:231 myvideo.h:233 myvideo.h:375 myvideo.h:377 nbastream.h:221
 #: nbastream.h:223 netzkino.h:13 netzkino.h:15 nowtv.h:133 nowtv.h:135
@@ -9563,7 +9563,7 @@ msgstr "Zoek op Netzkino (lokaal)"
 msgid "Search only aktual epg ?"
 msgstr "Alleen in actuele EPG zoeken?"
 
-#: kinox.h:399 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
+#: kinox.h:410 movie2k.h:498 movie2k.h:630 movie2k.h:746 movie4k.h:867
 #: movie4k.h:999 movie4k.h:1115 solarmovie.h:602
 msgid "Season"
 msgstr "Seizoen"
@@ -10708,7 +10708,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:228 tithek.h:3185
+#: tithek_global.h:228 tithek.h:3202
 msgid "The hoster is not yet supported !"
 msgstr "De hoster wordt momenteel nog niet ondersteund"
 
@@ -11044,8 +11044,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "Tithek - Hoofdmenu"
 
-#: tithek_global.h:633 tithek_global.h:756 tithek.h:2357 tithek.h:2619
-#: tithek.h:3246 tithek.h:3272 tithek.h:3289 tithek.h:3302 tithek.h:3319
+#: tithek_global.h:633 tithek_global.h:756 tithek.h:2359 tithek.h:2636
+#: tithek.h:3263 tithek.h:3289 tithek.h:3306 tithek.h:3319 tithek.h:3336
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
