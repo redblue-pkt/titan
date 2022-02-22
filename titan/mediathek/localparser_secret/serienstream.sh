@@ -479,7 +479,7 @@ latest()
 
 			        	j = index(substr($0, i), "\"") - 1
 			        	pic = substr($0, i, j)
-print "pic: " pic
+#print "pic: " pic
 						# extrahiere den newpage pfad
 						i = index($0, "title=\"") + 7
 			        	j = index(substr($0, i), "\"") - 1
