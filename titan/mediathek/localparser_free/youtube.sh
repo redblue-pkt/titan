@@ -79,7 +79,8 @@ search()
 #				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
 #				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#0"
 
-                desc="curl --connect-timeout 5 $NEWPAGE | sed -nr 's/.*<meta name=\"description\" content=\"([^\"]+)\".*/\1/p'"
+#                desc="curl --connect-timeout 5 $NEWPAGE | sed -nr 's/.*<meta name=\"description\" content=\"([^\"]+)\".*/\1/p'"
+    			desc=`echo $ROUND | sed 's!"description": !\ndescription=!g' | grep ^description= | cut -d'"' -f2 | tail -n1 | sed 's/#/~/g'`
 
 #				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
 				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111#$desc"

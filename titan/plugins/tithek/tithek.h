@@ -2432,10 +2432,17 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
                     if(!ostrncmp("curl ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)tmp->handle)->pic, 30))
+                    {
+                        debug(99, "pic cmd: %s", ((struct tithek*)tmp->handle)->pic);
                         ((struct tithek*)tmp->handle)->pic = command(((struct tithek*)tmp->handle)->pic);
-
+                        debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
+                    }
                     if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
+                    {
+                        debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
                         ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
+                        debug(99, "pic change localname: %s", ((struct tithek*)tmp->handle)->localname);
+                    }
 
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
@@ -2479,10 +2486,17 @@ void screentithekplay(char* titheklink, char* title, int first)
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
                     if(!ostrncmp("curl ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)tmp->handle)->pic, 30))
+                    {
+                        debug(99, "pic cmd: %s", ((struct tithek*)tmp->handle)->pic);
                         ((struct tithek*)tmp->handle)->pic = command(((struct tithek*)tmp->handle)->pic);
-
+                        debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
+                    }
                     if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
+                    {
+                        debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
                         ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
+                        debug(99, "pic change localname: %s", ((struct tithek*)tmp->handle)->localname);
+                    }
 
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
@@ -2533,11 +2547,17 @@ waitrcstart:
 				if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
 				{
                     if(!ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)listbox->select->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)listbox->select->handle)->pic, 30))
+                    {
+                        debug(99, "pic cmd: %s", ((struct tithek*)listbox->select->handle)->pic);
                         ((struct tithek*)listbox->select->handle)->pic = command(((struct tithek*)listbox->select->handle)->pic);
-
+                        debug(99, "pic change to: %s", ((struct tithek*)listbox->select->handle)->pic);
+                    }
                     if(cmpfilenameext(((struct tithek*)listbox->select->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)listbox->select->handle)->localname, ".png"))
+                    {
+                        debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
                         ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)listbox->select->handle)->localname, ".png", 0, 0);
-
+                        debug(99, "pic change localname: %s", ((struct tithek*)listbox->select->handle)->localname);
+                    }
 					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					if(file_exist(tithekpic))
@@ -2561,13 +2581,14 @@ waitrcstart:
 
         		if(getconfigint("tithek_description", NULL) == 1 && ((struct tithek*)listbox->select->handle)->description != NULL && (!ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->description, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)listbox->select->handle)->description, 30)))
                 {
-                    printf("found description cmd: %s\n", ((struct tithek*)listbox->select->handle)->description);
+                    debug(99, "found description cmd: %s", ((struct tithek*)listbox->select->handle)->description);
                     char * desc = NULL;
                     desc = command(((struct tithek*)listbox->select->handle)->description);
                     if(desc != NULL)
                     {
-                        ((struct tithek*)listbox->select->handle)->description = desc;                    
-                        printf("set description: %s\n", desc);
+        				desc = string_replace_all("#", ":", desc, 1);
+                        ((struct tithek*)listbox->select->handle)->description = desc;
+                        debug(99, "set description: %s", desc);
                         changetext2(listbox->select, desc);
                     }
                     free(desc), desc = NULL;
