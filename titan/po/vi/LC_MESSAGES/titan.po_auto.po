@@ -784,7 +784,7 @@ msgid "ADD BOUQUET"
 msgstr "thêm 1"
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:2371
-#: tithek.h:3348
+#: tithek.h:3369
 msgid "ADD FAV"
 msgstr "Thêm ưu thích"
 
@@ -875,11 +875,11 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: tithek.h:3310
+#: tithek.h:3331
 msgid "Add this link as Favorite ?"
 msgstr " Muốn thêm vào mục ưa thích này?"
 
-#: tithek.h:2689 tithek.h:2877
+#: tithek.h:2710 tithek.h:2898
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -2674,7 +2674,7 @@ msgstr "Tạo thư mục"
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:2674 tithek.h:2862
+#: tithek.h:2695 tithek.h:2883
 msgid "Create sub folder"
 msgstr ""
 
@@ -2730,7 +2730,7 @@ msgid "DEL"
 msgstr "Xóa"
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6 tithek.h:2362
-#: tithek.h:3339
+#: tithek.h:3360
 msgid "DEL FAV"
 msgstr "Xóa ưu thích"
 
@@ -3269,7 +3269,7 @@ msgstr "chỉnh sửa"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:2361 tithek.h:3338
+#: tithek.h:2361 tithek.h:3359
 msgid "EDIT FAV"
 msgstr ""
 
@@ -3529,8 +3529,8 @@ msgstr ""
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228 tithek.h:790
 #: tithek.h:1708 tithek.h:1735 tithek.h:1757 tithek.h:1779 tithek.h:1836
 #: tithek.h:2015 tithek.h:2030 tithek.h:2231 tithek.h:2276 tithek.h:2293
-#: tithek.h:2689 tithek.h:2877 tithek.h:3202 tithek.h:3267 tithek.h:3310
-#: tithek.h:3323 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2710 tithek.h:2898 tithek.h:3223 tithek.h:3288 tithek.h:3331
+#: tithek.h:3344 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -3575,7 +3575,7 @@ msgstr "Chỉnh sửa danh sách"
 msgid "Edit mode"
 msgstr "chỉnh sửa"
 
-#: tithek.h:3323
+#: tithek.h:3344
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -3790,7 +3790,7 @@ msgid "Exit Color"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:2378
-#: tithek.h:3355
+#: tithek.h:3376
 msgid "Exit Tithek"
 msgstr ""
 
@@ -6539,8 +6539,8 @@ msgstr ""
 #: titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
 #: tithek.c:105 tithek_global.h:228 tithek.h:790 tithek.h:1708 tithek.h:1735
 #: tithek.h:1757 tithek.h:1779 tithek.h:1836 tithek.h:2015 tithek.h:2030
-#: tithek.h:2231 tithek.h:2276 tithek.h:2689 tithek.h:2877 tithek.h:3202
-#: tithek.h:3267 tithek.h:3310 tithek.h:3323 tithek_settings.h:234
+#: tithek.h:2231 tithek.h:2276 tithek.h:2710 tithek.h:2898 tithek.h:3223
+#: tithek.h:3288 tithek.h:3331 tithek.h:3344 tithek_settings.h:234
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
 #: tpk.new.h:3167 tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163
@@ -7239,8 +7239,8 @@ msgstr ""
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228 tithek.h:790
 #: tithek.h:1708 tithek.h:1735 tithek.h:1757 tithek.h:1779 tithek.h:1836
 #: tithek.h:2015 tithek.h:2030 tithek.h:2231 tithek.h:2276 tithek.h:2293
-#: tithek.h:2689 tithek.h:2877 tithek.h:3202 tithek.h:3267 tithek.h:3310
-#: tithek.h:3323 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2710 tithek.h:2898 tithek.h:3223 tithek.h:3288 tithek.h:3331
+#: tithek.h:3344 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
 #: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
@@ -8657,7 +8657,7 @@ msgstr "xóa chia sẻ"
 msgid "Remove success"
 msgstr "Đã hủy thành công!"
 
-#: tithek.h:3267
+#: tithek.h:3288
 msgid "Remove this Favorite ?"
 msgstr "Hủy bỏ ưu thích này ?"
 
@@ -8691,7 +8691,7 @@ msgstr ""
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:324 mc_pictureplayer.h:157
 #: mc_pictureplayer.h:322 mc_videoplayer.h:440 mc_videoplayer.h:685
 #: plugins_mc_skin.xml.h:48 skin_default_skin.xml.h:516 skins_mc_skin.xml.h:48
-#: tithek.h:2364 tithek.h:2374 tithek.h:3341 tithek.h:3351
+#: tithek.h:2364 tithek.h:2374 tithek.h:3362 tithek.h:3372
 msgid "Repeat"
 msgstr "Lặp lại"
 
@@ -8701,7 +8701,7 @@ msgstr "Chế độ lập lại"
 
 #: mc_audioplayer.h:486 mc_global.h:1145 mc_iptvplayer.h:141
 #: mc_pictureplayer.h:150 mc_videoplayer.h:433 tithek.h:2366 tithek.h:2376
-#: tithek.h:3343 tithek.h:3353
+#: tithek.h:3364 tithek.h:3374
 msgid "Repeat-On"
 msgstr "Lập lại"
 
@@ -10654,7 +10654,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:228 tithek.h:3202
+#: tithek_global.h:228 tithek.h:3223
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
@@ -10986,8 +10986,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:633 tithek_global.h:756 tithek.h:2359 tithek.h:2636
-#: tithek.h:3263 tithek.h:3289 tithek.h:3306 tithek.h:3319 tithek.h:3336
+#: tithek_global.h:633 tithek_global.h:756 tithek.h:2359 tithek.h:2657
+#: tithek.h:3284 tithek.h:3310 tithek.h:3327 tithek.h:3340 tithek.h:3357
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
