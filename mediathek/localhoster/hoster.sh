@@ -49,8 +49,8 @@ debuglevel=`cat /mnt/config/titan.cfg | grep debuglevel | cut -d"=" -f2`
 PROXY=""
 proxy=`cat /mnt/config/titan.cfg | grep tithek_proxy | cut -d"=" -f2`
 if [ ! -z "$proxy" ];then PROXY="--proxy $proxy"; fi
-curlbin="$CURLBIN $PROXY -k -s -L --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
-curlbin2="$CURLBIN $PROXY -k -s --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
+curlbin="$CURLBIN $PROXY -k -s -L --connect-timeout 5 --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
+curlbin2="$CURLBIN $PROXY -k -s --connect-timeout 5 --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 
 if [ -e /etc/.oebuild ];then
 	youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
@@ -273,11 +273,6 @@ cloudflare()
 }
 
 kinox()
-{
-	$curlbin $INPUT
-}
-
-kinoxcloudflare()
 {
 	mkdir $TMP > /dev/null 2>&1
 	rm -f $TMP/cache.hoster.$hoster.1 > /dev/null 2>&1
@@ -1003,7 +998,7 @@ if [ "$TYPE" == "get" ];then
 		vidup) vidup $INPUT;;
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
-		goldesel|movie4k|movie4kto|foxx) cloudflare $INPUT;;
+		goldesel|movie4k|movie4kto|kinox|kinos|kinoz|kinoxto|foxx) cloudflare $INPUT;;
 		streamcloud) streamcloud $INPUT;;	
 		nowvideo) nowvideo $INPUT;;
 		divxstage|cloudtime) divxstage $INPUT;;
@@ -1032,7 +1027,6 @@ if [ "$TYPE" == "get" ];then
 		abcvideo) abcvideo $INPUT;;
 		dood|doodstream) doodstream $INPUT;;
         popofthestream) popofthestream $INPUT;;
-        kinox|kinos|kinoz|kinoxto) kinox $INPUT;;
 #		*) all $INPUT;;
 	esac
 if [ ! -z "$hoster2" ];then
@@ -1055,7 +1049,7 @@ if [ ! -z "$hoster2" ];then
 		vidup) vidup $INPUT;;
 		vidzi) vidzi $INPUT;;
 		vivo) vivo $INPUT;;
-		goldesel|movie4k|movie4kto|foxx) cloudflare $INPUT;;
+		goldesel|movie4k|movie4kto|kinox|kinos|kinoz|kinoxto|foxx) cloudflare $INPUT;;
 		streamcloud) streamcloud $INPUT;;	
 		nowvideo) nowvideo $INPUT;;
 		divxstage|cloudtime) divxstage $INPUT;;
@@ -1084,7 +1078,6 @@ if [ ! -z "$hoster2" ];then
 		abcvideo) abcvideo $INPUT;;
 		dood|doodstream) doodstream $INPUT;;
         popofthestream) popofthestream $INPUT;;
-        kinox|kinos|kinoz|kinoxto) kinox $INPUT;;
 #		*) all $INPUT;;
 	esac
 fi
@@ -1093,7 +1086,7 @@ fi
 if [ "$TYPE" == "hoster" ];then
 	echo  "$INPUT" > /tmp/.last_hoster_$TYPE_$hoster.log
 	case $hoster in
-		kinox|kinos|kinoz|kinoxto) kinoxcloudflare $INPUT;;
+		kinox|kinos|kinoz|kinoxto) kinox $INPUT;;
 	esac
 fi
 

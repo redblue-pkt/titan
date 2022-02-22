@@ -2328,6 +2328,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* b4 = getscreennode(grid, "b4");
 	struct skin* b5 = getscreennode(grid, "b5");
 	struct skin* b6 = getscreennode(grid, "b6");
+	struct skin* b8 = getscreennode(grid, "b8");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
@@ -2335,6 +2336,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	b4->usesavebg = 1;
 	b5->usesavebg = 1;
 	b6->usesavebg = 1;
+	b8->usesavebg = 1;
 	drawscreen(grid, 2, 0);
 /*
 //	if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
@@ -2422,6 +2424,11 @@ void screentithekplay(char* titheklink, char* title, int first)
 				changetext(countpage, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
+        		if(tmp->handle != NULL && ((struct tithek*)tmp->handle)->description == NULL)
+            		b8->hidden = YES;
+                else
+             		b8->hidden = NO;
+
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
                     if(!ostrncmp("curl ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)tmp->handle)->pic, 30))
@@ -2462,6 +2469,11 @@ void screentithekplay(char* titheklink, char* title, int first)
 			if(tmp != NULL) tmp = tmp->next;
 			while(tmp != NULL)
 			{
+        		if(tmp->handle != NULL && ((struct tithek*)tmp->handle)->description == NULL)
+            		b8->hidden = YES;
+                else
+             		b8->hidden = NO;
+
 				if(tmp->pagecount != listbox->aktpage) break;
 
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
@@ -2513,6 +2525,11 @@ waitrcstart:
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
+        		if(((struct tithek*)listbox->select->handle)->description == NULL)
+            		b8->hidden = YES;
+                else
+             		b8->hidden = NO;
+
 				if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
 				{
                     if(!ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)listbox->select->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)listbox->select->handle)->pic, 30))
