@@ -224,7 +224,6 @@ year()
 
 episodes()
 {
-rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL/$PAGE | sed 's/\\n/\n/g' | tr -d '\\' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT -v URL=$URL \
 		'
