@@ -78,7 +78,11 @@ search()
 #				LINE="$TITLE#$URL#$PIC#$FILENAME_$piccount.jpg#$NAME#14"
 #				LINE="$TITLE#$SRC $SRC hoster '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
 #				LINE="$TITLE#$SRC $SRC hosterlist '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#0"
-				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
+
+                desc="curl --connect-timeout 5 $NEWPAGE | sed -nr 's/.*<meta name=\"description\" content=\"([^\"]+)\".*/\1/p'"
+
+#				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111"
+				LINE="$TITLE#$SRC $SRC play '$NEWPAGE'#$PIC#$FILENAME.$piccount.jpg#$NAME#111#$desc"
 
 				echo "$LINE" >> $TMP/$FILENAME.list
 			fi
