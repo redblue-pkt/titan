@@ -641,14 +641,16 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 
 				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
 #				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
-				URLTMP="https://www.youtube.com/watch/$ID"		
+#				URLTMP="https://www.youtube.com/watch/$ID"
+				URLTMP="https://www.youtube.com/watch?v=$ID"
 #				URL="`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`"
 				URL="gethoster2 $URLTMP"
 
 				#errormsg
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.2 | tr '\n' ' ' | sed 's!<h1 id="unavailable-message" class="message">!\nERROR: !' | grep ^ERROR: | cut -d"." -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3
 				ERROR=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3`
-				if [ "$URLTMP" == "https://www.youtube.com/watch/" ];then
+#				if [ "$URLTMP" == "https://www.youtube.com/watch/" ];then
+				if [ "$URLTMP" == "https://www.youtube.com/watch?v=" ];then
 					URL="$ERROR"
 				fi
 			elif [ `echo $URLTMP | grep "openload.co" | wc -l` -eq 1 ];then
@@ -690,14 +692,16 @@ rm $TMP/$PARSER.$INPUT.$FROM.$FILENAME.list
 				ID=`echo $URLTMP | tr '/' '\n' | tail -n1`
 
 #				URL="https://www.youtube.com/get_video_info?el=leanback&cplayer=UNIPLAYER&cos=Windows&height=1080&cbr=Chrome&hl=en_US&cver=4&ps=leanback&c=TVHTML5&video_id=$ID&cbrver=40.0.2214.115&width=1920&cosver=6.1&ssl_stream=1"
-				URLTMP="https://www.youtube.com/watch/$ID"		
+#				URLTMP="https://www.youtube.com/watch/$ID"
+				URLTMP="https://www.youtube.com//watch?v=$ID"
 #				URL="`/tmp/localhoster/hoster.sh youtube_dl $URLTMP`"
 				URL="gethoster2 $URLTMP"
 
 				#errormsg
 				cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.3 | tr '\n' ' ' | sed 's!<h1 id="unavailable-message" class="message">!\nerrormsg= !' | grep ^errormsg= | cut -d"." -f1 >$TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5
 				ERROR=`cat $TMP/cache.$PARSER.$INPUT.$FROM.$FILENAME.5`
-				if [ "$URLTMP" == "https://www.youtube.com/watch/" ];then
+#				if [ "$URLTMP" == "https://www.youtube.com/watch/" ];then
+				if [ "$URLTMP" == "https://www.youtube.com/watch?v=" ];then
 					URL="$ERROR"
 				fi
 			else
