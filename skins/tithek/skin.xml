@@ -15,9 +15,10 @@
 		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png"   posx="70"  posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b3" picmem="skin/key_red_30x30.png"    posx="150" posy="center" width="180" height="30" valign="middle" textposx="40" text="Red-Menu">
 		<node parent="buttonbar" name="b4" picmem="skin/key_green_30x30.png"  posx="340" posy="center" width="280" height="30" valign="middle" textposx="40" text="ADD FAV">
-		<node parent="buttonbar" name="b5" picmem="skin/key_yellow_30x30.png" posx="630" posy="center" width="280" height="30" valign="middle" textposx="40" text="DEL FAV">
-		<node parent="buttonbar" name="b6" picmem="skin/key_blue_30x30.png"   posx="920" posy="center" width="210" height="30" valign="middle" textposx="40" text="Exit Tithek">
-		<node parent="buttonbar" name="b7" picmem="skin/key_menu_70x40.png"   posx="right" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b5" picmem="skin/key_yellow_30x30.png" posx="620" posy="center" width="280" height="30" valign="middle" textposx="40" text="DEL FAV">
+		<node parent="buttonbar" name="b6" picmem="skin/key_blue_30x30.png"   posx="850" posy="center" width="210" height="30" valign="middle" textposx="40" text="Exit Tithek">
+		<node parent="buttonbar" name="b7" picmem="skin/key_menu_70x40.png"   posx="1065" posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b8" picmem="skin/key_info_70x40.png"   posx="right" posy="center" width="70" height="40">
 </screen>
 
 
