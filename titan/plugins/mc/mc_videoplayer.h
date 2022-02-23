@@ -336,7 +336,7 @@ void screenmc_videoplayer()
 //				recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, NULL, NULL, NULL);
 
 //            filename = createpath(filelistpath->text, filelist->select->name);
-            if((status.pause == 1))
+            if(status.pause == 1)
                 drawscreen(skin, 0, 0);
         	struct stimerthread *recthumbfirstthread = NULL;
 		    recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
