@@ -1495,27 +1495,27 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 	// create filelist info
 	tmpstr = ostrcat(tmpstr, file, 1, 0);
 
-printf("###### strip () strings start ############################################\n");
+//printf("###### strip () strings start ############################################\n");
 
 	printf("shortname first : %s\n", shortname);
 	if(cmpfilenameext(tmpstr, ".ts") != 0)
 	{
 		shortname = string_replace_remove_last_chars("(", "", shortname, 1);
-		printf("filename strip remove all chars after (... from: %s\n", shortname);
+//		printf("filename strip remove all chars after (... from: %s\n", shortname);
 	}
 // strip () strings
 // for (channel)-movie-(..).ts name
 	tmpstr1 = string_resub("(", ")", shortname, 0);
 	if(tmpstr1 != NULL)
 	{
-printf("found recnew filename strip (channel)-movie-(..).ts name from: %s\n", tmpstr);
+//printf("found recnew filename strip (channel)-movie-(..).ts name from: %s\n", tmpstr);
 		tmpstr1 = ostrcat("(", tmpstr1, 0, 1);
 		tmpstr1 = ostrcat(tmpstr1, ")", 1, 0);
-printf("shortname: %s\n", shortname);
-printf("tmpstr1: %s\n", tmpstr1);
+//printf("shortname: %s\n", shortname);
+//printf("tmpstr1: %s\n", tmpstr1);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
-printf("shortname stripped: %s\n", shortname);
-printf("--------------------------------------------------\n");
+//printf("shortname stripped: %s\n", shortname);
+//printf("--------------------------------------------------\n");
 		if(fileinfo != NULL)
 			fileinfo = ostrcat(fileinfo, " ", 1, 0);
 		fileinfo = ostrcat(fileinfo, "recnew", 1, 0);
@@ -1528,14 +1528,14 @@ printf("--------------------------------------------------\n");
 	tmpstr1 = string_resub("(", ")", shortname, 0);
 	if(tmpstr1 != NULL)
 	{
-printf("found recnew filename strip movie-(channel-...).ts name from: %s\n", tmpstr);
+//printf("found recnew filename strip movie-(channel-...).ts name from: %s\n", tmpstr);
 		tmpstr1 = ostrcat("(", tmpstr1, 0, 1);
 		tmpstr1 = ostrcat(tmpstr1, ")", 1, 0);
-printf("shortname: %s\n", shortname);
-printf("tmpstr1: %s\n", tmpstr1);
+//printf("shortname: %s\n", shortname);
+//printf("tmpstr1: %s\n", tmpstr1);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
-printf("shortname stripped: %s\n", shortname);
-printf("--------------------------------------------------\n");
+//printf("shortname stripped: %s\n", shortname);
+//printf("--------------------------------------------------\n");
 		if(fileinfo != NULL)
 			fileinfo = ostrcat(fileinfo, " ", 1, 0);
 		fileinfo = ostrcat(fileinfo, "recnew", 1, 0);
@@ -1544,7 +1544,7 @@ printf("--------------------------------------------------\n");
 	}
 	free(tmpstr1); tmpstr1 = NULL;
 // end
-printf("###### strip () strings end ############################################\n");
+//printf("###### strip () strings end ############################################\n");
 
 	tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
 	if(tmpstr1 != NULL)
