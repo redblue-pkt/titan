@@ -47,7 +47,7 @@ void screenmc_videoplayer_settings()
 
 	addchoicebox(scantype, "0", _("fast"));	
 	addchoicebox(scantype, "1", _("slow"));
-	setchoiceboxselection(slow, getconfig("mc_vp_scantype", NULL));
+	setchoiceboxselection(scantype, getconfig("mc_vp_scantype", NULL));
 
 	changeinput(defaultdir, getconfig("mc_vp_defaultdir", NULL));
 
