@@ -230,7 +230,7 @@ printf("status.playspeed %d\n",status.pause);
 printf("filename %s\n",filename);
 printf("dname %s\n",dname);
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1)))
 	{
 		char* cmd = NULL;
         if(checkchipset("3798MV200") == 1)
@@ -256,7 +256,7 @@ printf("cmd %s\n",cmd);
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1)))
 	{
 		char* cmd = NULL;
         if(checkchipset("3798MV200") == 1)
@@ -281,7 +281,7 @@ printf("cmd %s\n",cmd);
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1)))
 	{
 		char* cmd = NULL;
 	    if(checkchipset("3798MV200") == 1)
@@ -297,7 +297,7 @@ printf("cmd %s\n",cmd);
 		free(cmd); cmd = NULL;
 	}
 
-	if(filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1))
+	if(filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1))
     {
 printf("before recthumblastthread %s\n",filename);
 
