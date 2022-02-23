@@ -220,7 +220,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1)))
+	if(status.recording > 0 || (status.mcaktiv == 2 && filename != NULL && dname != NULL && (status.play == 1 || status.pause == 1)))
 	{
 		char* cmd = NULL;
         if(checkchipset("3798MV200") == 1)
@@ -245,7 +245,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1)))
+	if(status.recording > 0 || (status.mcaktiv == 2 && filename != NULL && dname != NULL && (status.play == 1 || status.pause == 1)))
 	{
 		char* cmd = NULL;
         if(checkchipset("3798MV200") == 1)
@@ -269,7 +269,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1)))
+	if(status.recording > 0 || (status.mcaktiv == 2 && filename != NULL && dname != NULL && (status.play == 1 || status.pause == 1)))
 	{
 		char* cmd = NULL;
 	    if(checkchipset("3798MV200") == 1)
@@ -284,7 +284,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		free(cmd); cmd = NULL;
 	}
 
-	if(filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1))
+	if(status.mcaktiv == 2 && filename != NULL && dname != NULL && (status.play == 1 || status.pause == 1))
     {
     	struct stimerthread *recthumblastthread = NULL;
         recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);

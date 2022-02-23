@@ -1849,7 +1849,11 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
 //cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
-	cmd = ostrcat(cmd, "\" -ss 5 -vframes 1 -s 1280x720 ", 1, 0);
+//    if(flag == 1)
+//    	cmd = ostrcat(cmd, "\" -ss 20 -vframes 1 -s 1280x720 ", 1, 0);
+//    else
+    	cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
+
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);
@@ -1885,7 +1889,10 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
-	cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
+//    if(flag == 1)
+//    	cmd = ostrcat(cmd, "\" -ss 30 -vframes 1 -s 160x120 ", 1, 0);
+//    else
+    	cmd = ostrcat(cmd, "\" -ss 30 -vframes 1 -s 160x120 ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);
@@ -1921,7 +1928,10 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
-	cmd = ostrcat(cmd, "\" -ss 1 -vframes 1 -s 500x400 ", 1, 0);
+//    if(flag == 1)
+//    	cmd = ostrcat(cmd, "\" -ss 25 -vframes 1 -s 500x400 ", 1, 0);
+//    else
+    	cmd = ostrcat(cmd, "\" -ss 25 -vframes 1 -s 500x400 ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);
@@ -2266,7 +2276,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 			struct skin* imdbapiplugin = NULL;
 			struct skin* tmdbplugin = NULL;
 
-			if(flag > 0 || (isrec == 0 && iscam == 0 && (imdb != NULL && imdb->id != NULL)))
+			if(status.mcaktiv != 2 && (flag > 0 || (isrec == 0 && iscam == 0 && (imdb != NULL && imdb->id != NULL))))
 			{
 				if(flag == 2 && imdb != NULL && id != NULL)
 					imdb->id = ostrcat(id, NULL, 0, 0);
@@ -2316,7 +2326,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 
 				if(tmdb != NULL && tmdb->mvi != NULL) backdrop = atoi(tmdb->mvi);
 			}
-			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0) || id == NULL)
+			else if((cmpfilenameext(file, ".ts") == 0) || (cmpfilenameext(file, ".mts") == 0) || id == NULL || status.mcaktiv == 2)
 			{
 				char* poster = NULL, *plot = NULL, *timestamp = NULL, *cmd = NULL, *tmpstr1 = NULL;
 
