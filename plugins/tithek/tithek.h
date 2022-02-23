@@ -2503,8 +2503,13 @@ void screentithekplay(char* titheklink, char* title, int first)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
                         debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
-                        ((struct tithek*)tmp->handle)->localname = ostrcat(getfilenameext(((struct tithek*)tmp->handle)->pic), NULL, 0, 0);
+//                        ((struct tithek*)tmp->handle)->localname = ostrcat(getfilenameext(((struct tithek*)tmp->handle)->pic), NULL, 0, 0);
+//                        debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
+
+                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, changefilenameext(((struct tithek*)tmp->handle)->localname, getfilenameext(((struct tithek*)tmp->handle)->pic)), 1, 1);
                         debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
+
+//						tmpstr = ostrcat(tmpstr, changefilenameext(filelist[i]->d_name, ".jpg"), 1, 1);
 
 //                        debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
 //                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);

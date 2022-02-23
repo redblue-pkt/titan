@@ -1497,7 +1497,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 
 //printf("###### strip () strings start ############################################\n");
 
-	printf("shortname first : %s\n", shortname);
+//	printf("shortname first : %s\n", shortname);
 	if(cmpfilenameext(tmpstr, ".ts") != 0)
 	{
 		shortname = string_replace_remove_last_chars("(", "", shortname, 1);
@@ -1855,7 +1855,7 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, file, 1, 0);
 //  cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
 	if(getconfigint("mc_vp_scantype", NULL) == 1)
-    	cmd = ostrcat(cmd, "\" -ss 20 -vframes 1 -s 1280x720 ", 1, 0);
+    	cmd = ostrcat(cmd, "\" -ss 5 -vframes 1 -s 1280x720 ", 1, 0);
     else
     	cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
 	cmd = ostrcat(cmd, jpg, 1, 0);
@@ -1960,7 +1960,7 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
 	if(getconfigint("mc_vp_scantype", NULL) == 1)
-    	cmd = ostrcat(cmd, "\" -ss 25 -vframes 1 -s 500x400 ", 1, 0);
+    	cmd = ostrcat(cmd, "\" -ss 10 -vframes 1 -s 500x400 ", 1, 0);
     else
     	cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
 	cmd = ostrcat(cmd, jpg, 1, 0);
