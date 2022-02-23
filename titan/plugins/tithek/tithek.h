@@ -2437,11 +2437,17 @@ void screentithekplay(char* titheklink, char* title, int first)
                         ((struct tithek*)tmp->handle)->pic = command(((struct tithek*)tmp->handle)->pic);
                         debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
                     }
-                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
+//                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
+                    if(ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
-                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
-                        debug(99, "pic change localname: %s", ((struct tithek*)tmp->handle)->localname);
+                        debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
+                        ((struct tithek*)tmp->handle)->localname = ostrcat(getfilenameext(((struct tithek*)tmp->handle)->pic, NULL, 0, 0);
+                        debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
+
+//                        debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
+//                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
+//                        debug(99, "pic change localname: %s", ((struct tithek*)tmp->handle)->localname);
                     }
 
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
@@ -2491,11 +2497,17 @@ void screentithekplay(char* titheklink, char* title, int first)
                         ((struct tithek*)tmp->handle)->pic = command(((struct tithek*)tmp->handle)->pic);
                         debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
                     }
-                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
+//                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
+                    if(ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
-                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
-                        debug(99, "pic change localname: %s", ((struct tithek*)tmp->handle)->localname);
+                        debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
+                        ((struct tithek*)tmp->handle)->localname = ostrcat(getfilenameext(((struct tithek*)tmp->handle)->pic, NULL, 0, 0);
+                        debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
+
+//                        debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
+//                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
+//                        debug(99, "pic change localname: %s", ((struct tithek*)tmp->handle)->localname);
                     }
 
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
@@ -2552,11 +2564,17 @@ waitrcstart:
                         ((struct tithek*)listbox->select->handle)->pic = command(((struct tithek*)listbox->select->handle)->pic);
                         debug(99, "pic change to: %s", ((struct tithek*)listbox->select->handle)->pic);
                     }
-                    if(cmpfilenameext(((struct tithek*)listbox->select->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)listbox->select->handle)->localname, ".png"))
+//                    if(cmpfilenameext(((struct tithek*)listbox->select->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)listbox->select->handle)->localname, ".png"))
+                    if(ostrcmp(getfilenameext(((struct tithek*)listbox->select->handle)->pic), getfilenameext(((struct tithek*)listbox->select->handle)->localname)) != 0)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
-                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)listbox->select->handle)->localname, ".png", 0, 0);
-                        debug(99, "pic change localname: %s", ((struct tithek*)listbox->select->handle)->localname);
+                        debug(99, "pic localname: %s", ((struct tithek*)listbox->select->handle)->localname);
+                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(getfilenameext(((struct tithek*)listbox->select->handle)->pic, NULL, 0, 0);
+                        debug(99, "pic localname change: %s", ((struct tithek*)listbox->select->handle)->localname);
+                    
+//                        debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
+//                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)listbox->select->handle)->localname, ".png", 0, 0);
+//                        debug(99, "pic change localname: %s", ((struct tithek*)listbox->select->handle)->localname);
                     }
 					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
