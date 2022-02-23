@@ -282,7 +282,10 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 	}
 
 	if(filename != NULL && dname != NULL && status.play == 1)
+    {
+    	struct stimerthread *recthumblastthread = NULL;
         recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
+    }
 
 	debug(777, "createrecthumblast thread (record thumb) end");
 
