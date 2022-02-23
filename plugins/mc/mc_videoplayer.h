@@ -350,7 +350,6 @@ void screenmc_videoplayer()
 				count++;
 			}
 //            drawscreen(apskin, 0, 0);
-            status.mcaktiv == 1;
 
             char* cmd = NULL;
 	        if(checkchipset("3798MV200") == 1)
