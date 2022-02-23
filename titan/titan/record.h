@@ -212,8 +212,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 	
 	int count = 0;
 
-	if(filename != NULL)
-        count = 599;
+	if(filename != NULL) count = 599;
 
 	while(count < 600)
 	{
@@ -221,43 +220,43 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && (status.play == 1 || status.playspeed != 0)))
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.play == 1))
 	{
 		char* cmd = NULL;
-	    if(checkchipset("3798MV200") == 1)
-    		cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
+        if(checkchipset("3798MV200") == 1)
+            cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
         else
-    		cmd = ostrcat("grab -v -j 100 -r 1280:720 /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
+            cmd = ostrcat("grab -v -j 100 -r 1280:720 /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
 	
 		if(cmd != NULL)
 			system(cmd);
 		debug(777, "cmd: %s", cmd);
 
-		free(cmd);
+		free(cmd); cmd = NULL;
 	}
 
 	count = 0;
-	if(filename != NULL)
-        count = 55;
+	if(filename != NULL) count = 55;
+
 	while(count < 60)
 	{
 		sleep(1);
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && (status.play == 1 || status.playspeed != 0)))
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.play == 1))
 	{
 		char* cmd = NULL;
-	    if(checkchipset("3798MV200") == 1)
-    		cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot_cover.jpg", NULL, 0, 0);
+        if(checkchipset("3798MV200") == 1)
+            cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot_cover.jpg", NULL, 0, 0);
         else
-    		cmd = ostrcat("grab -v -j 100 -r 500:400 /tmp/screenshot_cover.jpg", NULL, 0, 0);
+            cmd = ostrcat("grab -v -j 100 -r 500:400 /tmp/screenshot_cover.jpg", NULL, 0, 0);
 	
 		if(cmd != NULL)
 			system(cmd);
 		debug(777, "cmd: %s", cmd);
 
-		free(cmd);
+		free(cmd); cmd = NULL;
 	}
 
 	count = 0;
@@ -267,22 +266,22 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && (status.play == 1 || status.playspeed != 0)))
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.play == 1))
 	{
 		char* cmd = NULL;
 	    if(checkchipset("3798MV200") == 1)
-    		cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot_thumb.jpg", NULL, 0, 0);
+            cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot_thumb.jpg", NULL, 0, 0);
         else
-    		cmd = ostrcat("grab -v -j 100 -r 160:120 /tmp/screenshot_thumb.jpg", NULL, 0, 0);
+            cmd = ostrcat("grab -v -j 100 -r 160:120 /tmp/screenshot_thumb.jpg", NULL, 0, 0);
 	
 		if(cmd != NULL)
 			system(cmd);
 		debug(777, "cmd: %s", cmd);
 
-		free(cmd);
+		free(cmd); cmd = NULL;
 	}
 
-	if(filename != NULL && dname != NULL && (status.play == 1 || status.playspeed != 0))
+	if(filename != NULL && dname != NULL && status.play == 1)
         recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
 
 	debug(777, "createrecthumblast thread (record thumb) end");
