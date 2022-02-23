@@ -122,9 +122,6 @@ printf("menuentry->name: %s\n", menuentry->name);
 
 void mc_main()
 {
-
-printf("111111111111111111111111111\n");
-
 	status.mcaktiv = 1;
 	status.hangtime = 99999;
 	int rcret = 0, ret = 0;
@@ -155,8 +152,8 @@ printf("111111111111111111111111111\n");
 	writesysint("/proc/sys/vm/drop_caches", 3, 0);
 	
 	debug(50, "[mc_main] umounting: fuse, (rarfs,isofs,imgfs)");
-	system("/bin/umount -fl `mount | grep fuse | grep rarfs | grep -v '/dev/' | cut -d ' ' -f3` > /dev/null 2>&1; killall -9 rarfs > /dev/null 2>&1");
-	system("/bin/umount -fl `mount | grep fuse | grep -v '/dev/' | cut -d ' ' -f3` > /dev/null 2>&1; /bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3` `mount | grep udf | cut -d ' ' -f3` > /dev/null 2>&1; killall -9 rarfs fusesmb curlftpfs > /dev/null 2>&1");
+	system("umount -fl `mount | grep fuse | grep rarfs | grep -v '/dev/' | cut -d ' ' -f3` > /dev/null 2>&1; killall -9 rarfs > /dev/null 2>&1");
+	system("umount -fl `mount | grep fuse | grep -v '/dev/' | cut -d ' ' -f3` > /dev/null 2>&1; /bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3` `mount | grep udf | cut -d ' ' -f3` > /dev/null 2>&1; killall -9 rarfs fusesmb curlftpfs > /dev/null 2>&1");
 	system("umount -a -f -t fuse.rarfs,iso9660,udf,fuse.djmount,fuse.fusesmb,fuse.curlftpfs > /dev/null 2>&1");
 
 	char* tmpstr = NULL;
@@ -279,7 +276,14 @@ printf("111111111111111111111111111\n");
 
 		if (rcret == getrcconfigint("rcrecord", NULL) || rcret == getrcconfigint("rcshoot", NULL))
 		{
-			system("grab -j 100");
+            char* cmd = NULL;
+	        if(checkchipset("3798MV200") == 1)
+        		cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot.jpg", NULL, 0, 0);
+            else
+        		cmd = ostrcat("grab -v -j 100 -r 160:120 /tmp/screenshot.jpg", NULL, 0, 0);
+		    debug(133, "cmd: %s", cmd);
+            system(cmd);
+            free(cmd), cmd = NULL;
 			textbox(_("Message"), _("Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 			drawscreen(mc_main, 0, 0);
 		}
