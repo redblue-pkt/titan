@@ -589,7 +589,15 @@ void screenmc_videoplayer()
 		{
 //		if(dname != NULL && filename != NULL && getconfigint("recordpicture", NULL) == 1)
 //			recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
-
+/*
+				//wait for recthumblastthread end before shutdown
+				int count = 0;
+				while(gettimer(recthumblastthread) != NULL && count < 60)
+				{
+					sleep(1);
+					count++;
+				}
+*/
 			debug(50, "rcstop: stopplayback");
 			drawscreen(blackscreen, 0, 0);
 			drawscreen(loadmediadb, 0, 0);
