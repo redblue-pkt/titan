@@ -176,10 +176,7 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 
 void createrecthumblastthread(struct stimerthread* self, char* dname, char* filename)
 {
-printf("in createrecthumblastthread %s\n",filename);
-
 	if(status.mediadbthread != NULL || self == NULL) return;
-printf("in 2 createrecthumblastthread %s\n",filename);
 
 	debug(777, "createrecthumblast thread (record thumb) start");
 
@@ -190,7 +187,6 @@ printf("in 2 createrecthumblastthread %s\n",filename);
 	if(dname != NULL && filename != NULL)
 	{
 		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
-printf("in3 createrecthumblastthread %s\n",filename);
 
 		debug(133, "path: %s",dname);
 		debug(133, "file: %s",filename);
@@ -224,12 +220,6 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-printf("status.recording %d\n",status.recording);
-printf("status.mcaktiv %d\n",status.mcaktiv);
-printf("status.playspeed %d\n",status.pause);
-printf("filename %s\n",filename);
-printf("dname %s\n",dname);
-
 	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1)))
 	{
 		char* cmd = NULL;
@@ -240,9 +230,8 @@ printf("dname %s\n",dname);
 	
 		if(cmd != NULL)
 			system(cmd);
-printf("cmd %s\n",cmd);
 
-		debug(777, "cmd1: %s", cmd);
+		debug(777, "cmd: %s", cmd);
 
 		free(cmd); cmd = NULL;
 	}
@@ -266,9 +255,8 @@ printf("cmd %s\n",cmd);
 	
 		if(cmd != NULL)
 			system(cmd);
-printf("cmd %s\n",cmd);
 
-		debug(777, "cmd2: %s", cmd);
+		debug(777, "cmd: %s", cmd);
 
 		free(cmd); cmd = NULL;
 	}
@@ -291,16 +279,13 @@ printf("cmd %s\n",cmd);
 	
 		if(cmd != NULL)
 			system(cmd);
-		debug(777, "cmd3: %s", cmd);
-printf("cmd %s\n",cmd);
+		debug(777, "cmd: %s", cmd);
 
 		free(cmd); cmd = NULL;
 	}
 
 	if(filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.pause == 1))
     {
-printf("before recthumblastthread %s\n",filename);
-
     	struct stimerthread *recthumblastthread = NULL;
         recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
     }

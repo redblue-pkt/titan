@@ -1844,12 +1844,12 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
-	cmd = ostrcat(cmd, "ffmpeg -i -ss 30 \"", 1, 0);
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
 //cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
-	cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
+	cmd = ostrcat(cmd, "\" -ss 5 -vframes 1 -s 1280x720 ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);
@@ -1881,7 +1881,7 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
-	cmd = ostrcat(cmd, "ffmpeg -i -ss 40 \"", 1, 0);
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
@@ -1917,11 +1917,11 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
-	cmd = ostrcat(cmd, "ffmpeg -i -ss 50 -i \"", 1, 0);
+	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
-	cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
+	cmd = ostrcat(cmd, "\" -ss 1 -vframes 1 -s 500x400 ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);
