@@ -220,7 +220,13 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
+printf("status.recording %d\n",status.recording);
+printf("status.mcaktiv %d\n",status.mcaktiv);
+printf("status.playspeed %d\n",status.pause);
+printf("filename %d\n",filename);
+printf("dname %d\n",dname);
+
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
 	{
 		char* cmd = NULL;
         if(checkchipset("3798MV200") == 1)
@@ -230,6 +236,8 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 	
 		if(cmd != NULL)
 			system(cmd);
+printf("cmd %s\n",cmd);
+
 		debug(777, "cmd: %s", cmd);
 
 		free(cmd); cmd = NULL;
@@ -244,7 +252,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
 	{
 		char* cmd = NULL;
         if(checkchipset("3798MV200") == 1)
@@ -254,6 +262,8 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 	
 		if(cmd != NULL)
 			system(cmd);
+printf("cmd %s\n",cmd);
+
 		debug(777, "cmd: %s", cmd);
 
 		free(cmd); cmd = NULL;
@@ -267,7 +277,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		count++;
 	}
 
-	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
+	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
 	{
 		char* cmd = NULL;
 	    if(checkchipset("3798MV200") == 1)
@@ -278,6 +288,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		if(cmd != NULL)
 			system(cmd);
 		debug(777, "cmd: %s", cmd);
+printf("cmd %s\n",cmd);
 
 		free(cmd); cmd = NULL;
 	}
