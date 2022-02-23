@@ -2438,8 +2438,8 @@ void screentithekplay(char* titheklink, char* title, int first)
                         debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
                     }
 //                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
-                     if(ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
-                   {
+                    if(ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
+                    {
                         debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
                         debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
                         ((struct tithek*)tmp->handle)->localname = ostrcat(getfilenameext(((struct tithek*)tmp->handle)->pic), NULL, 0, 0);
@@ -2450,7 +2450,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 //                        debug(99, "pic change localname: %s", ((struct tithek*)tmp->handle)->localname);
                     }
 
-					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
+                    if(!file_exist(((struct tithek*)tmp->handle)->localname))
+    					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					/* not working with thread download
 					off64_t checkpic = getfilesize(tithekpic);
@@ -2469,7 +2470,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
 */
-					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+					if(file_exist(tithekpic) && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 					{
                         debug(99, "changepic: %s", tithekpic);
 						changepic(tmp, tithekpic);
@@ -2510,7 +2511,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 //                        debug(99, "pic change localname: %s", ((struct tithek*)tmp->handle)->localname);
                     }
 
-					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
+                    if(!file_exist(((struct tithek*)tmp->handle)->localname))
+    					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					/* not working with thread download
 					off64_t checkpic = getfilesize(tithekpic);
@@ -2529,7 +2531,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
 					}
 */
-					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
+					if(file_exist(tithekpic) && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 					{
                         debug(99, "changepic: %s", tithekpic);
 						changepic(tmp, tithekpic);
@@ -2576,7 +2578,8 @@ waitrcstart:
 //                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)listbox->select->handle)->localname, ".png", 0, 0);
 //                        debug(99, "pic change localname: %s", ((struct tithek*)listbox->select->handle)->localname);
                     }
-					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
+                    if(!file_exist(((struct tithek*)listbox->select->handle)->localname))
+    					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					if(file_exist(tithekpic))
 					{
