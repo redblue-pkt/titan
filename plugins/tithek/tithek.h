@@ -2442,7 +2442,8 @@ void screentithekplay(char* titheklink, char* title, int first)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
                         debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
-                        ((struct tithek*)tmp->handle)->localname = ostrcat(getfilenameext(((struct tithek*)tmp->handle)->pic), NULL, 0, 0);
+//                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
+                        ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ostrcat(".", getfilenameext(((struct tithek*)tmp->handle)->pic), 0, 1));
                         debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
 
 //                        debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
@@ -2503,13 +2504,9 @@ void screentithekplay(char* titheklink, char* title, int first)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
                         debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
-//                        ((struct tithek*)tmp->handle)->localname = ostrcat(getfilenameext(((struct tithek*)tmp->handle)->pic), NULL, 0, 0);
-//                        debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-
-                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, changefilenameext(((struct tithek*)tmp->handle)->localname, getfilenameext(((struct tithek*)tmp->handle)->pic)), 1, 1);
+//                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
+                        ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ostrcat(".", getfilenameext(((struct tithek*)tmp->handle)->pic), 0, 1));
                         debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-
-//						tmpstr = ostrcat(tmpstr, changefilenameext(filelist[i]->d_name, ".jpg"), 1, 1);
 
 //                        debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
 //                        ((struct tithek*)tmp->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
@@ -2576,33 +2573,19 @@ waitrcstart:
                     {
                         debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
                         debug(99, "pic localname: %s", ((struct tithek*)listbox->select->handle)->localname);
-                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(getfilenameext(((struct tithek*)listbox->select->handle)->pic), NULL, 0, 0);
-                        debug(99, "pic localname change: %s", ((struct tithek*)listbox->select->handle)->localname);
-                    
-//                        debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
 //                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)listbox->select->handle)->localname, ".png", 0, 0);
-//                        debug(99, "pic change localname: %s", ((struct tithek*)listbox->select->handle)->localname);
+                        ((struct tithek*)listbox->select->handle)->localname = changefilenameext(((struct tithek*)listbox->select->handle)->localname, ostrcat(".", getfilenameext(((struct tithek*)listbox->select->handle)->pic), 0, 1));
+                        debug(99, "pic localname change: %s", ((struct tithek*)listbox->select->handle)->localname);
                     }
-                    if(!file_exist(((struct tithek*)listbox->select->handle)->localname))
-    					tithekpic = tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
-					if(file_exist(tithekpic))
+                    if(!file_exist(((struct tithek*)listbox->select->handle)->localname))
+    					((struct tithek*)listbox->select->handle)->localname = ostrcat(tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0), NULL, 1, 0);
+
+					if(file_exist(((struct tithek*)listbox->select->handle)->localname) && ostrcmp(((struct tithek*)listbox->select->handle)->localname, listbox->select) == 0)
 					{
-                        debug(99, "changepic: %s", tithekpic);
-						changepic(listbox->select, tithekpic);
+                        debug(99, "changepic: %s", ((struct tithek*)listbox->select->handle)->localname);
+						changepic(listbox->select, ((struct tithek*)listbox->select->handle)->localname);
 					}
-/*
-					else
-					{
-                        debug(99, "not found: %s use default /tmp/tithek/default.jpg", tithekpic);
-                        if(!file_exist("/tmp/tithek/default.jpg"))
-    	                    gethttp("openaaf.dyndns.tv", "/mediathek/menu/default.jpg", 80, "/tmp/tithek/default.jpg", HTTPAUTH, 5000, NULL, 0);
-						free(tithekpic); tithekpic = NULL;
-						tithekpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
-						changepic(listbox->select, tithekpic);
-					}
-*/
-//					free(tithekpic); tithekpic = NULL;
 				}
 
         		if(getconfigint("tithek_description", NULL) == 1 && ((struct tithek*)listbox->select->handle)->description != NULL && (!ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->description, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)listbox->select->handle)->description, 30)))
@@ -2618,14 +2601,14 @@ waitrcstart:
                         changetext2(listbox->select, desc);
                     }
                     free(desc), desc = NULL;
-					if(file_exist(tithekpic))
-					{
-                        debug(99, "changepic: %s", tithekpic);
-						changepic(listbox->select, tithekpic);
-					}
-                }
-					free(tithekpic); tithekpic = NULL;
 
+					if(file_exist(((struct tithek*)listbox->select->handle)->localname))
+					{
+                        debug(99, "changepic: %s", ((struct tithek*)listbox->select->handle)->localname);
+						changepic(listbox->select, ((struct tithek*)listbox->select->handle)->localname);
+					}
+
+                }
 			}
 		}
 
