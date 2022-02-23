@@ -293,7 +293,7 @@ printf("cmd %s\n",cmd);
 		free(cmd); cmd = NULL;
 	}
 
-	if(filename != NULL && dname != NULL && status.play == 1)
+	if(filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1))
     {
     	struct stimerthread *recthumblastthread = NULL;
         recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
