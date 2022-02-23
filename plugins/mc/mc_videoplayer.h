@@ -332,7 +332,20 @@ void screenmc_videoplayer()
 
 		if (rcret == getrcconfigint("rcrecord", NULL))
 		{
-			system("grab -j 100");
+//			if(getconfigint("recordpicture", NULL) == 1)
+//				recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, NULL, NULL, NULL);
+
+//            filename = createpath(filelistpath->text, filelist->select->name);
+		    recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
+
+	        if(checkchipset("3798MV200") == 1)
+        		cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot.jpg", NULL, 0, 0);
+            else
+        		cmd = ostrcat("grab -v -j 100 -r 160:120 /tmp/screenshot.jpg", NULL, 0, 0);
+		    debug(133, "cmd: %s", cmd);
+            system(cmd);
+            free(cmd), cmd = NULL;
+
 			textbox(_("Message"), _("Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		}
 		else if(rcret == getrcconfigint("rc2", NULL))
@@ -572,6 +585,9 @@ void screenmc_videoplayer()
 		}
 		else if(rcret == getrcconfigint("rcstop", NULL) || (rcret == getrcconfigint("rcexit", NULL) && status.play == 1))
 		{
+//		if(dname != NULL && filename != NULL && getconfigint("recordpicture", NULL) == 1)
+			recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
+
 			debug(50, "rcstop: stopplayback");
 			drawscreen(blackscreen, 0, 0);
 			drawscreen(loadmediadb, 0, 0);
