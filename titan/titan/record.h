@@ -178,7 +178,7 @@ void createrecthumblastthread(struct stimerthread* self, char* dname, char* file
 {
 	if(status.mediadbthread != NULL || self == NULL) return;
 
-	debug(777, "createrecthumbfirst thread (record thumb) start");
+	debug(777, "createrecthumblast thread (record thumb) start");
 
 	status.mediadbthreadstatus = 1;
 	status.mediadbthread = self;
@@ -203,12 +203,12 @@ void createrecthumblastthread(struct stimerthread* self, char* dname, char* file
 	status.mediadbthread = NULL;
 	status.mediadbthreadstatus = 0;
 
-	debug(777, "createrecthumbfirst thread (record thumb) end");
+	debug(777, "createrecthumblast thread (record thumb) end");
 }
 
 void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* filename)
 {
-	debug(777, "createrecthumblast thread (record thumb) start");
+	debug(777, "createrecthumbfirst thread (record thumb) start");
 	
 	int count = 0;
 
@@ -223,8 +223,8 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 printf("status.recording %d\n",status.recording);
 printf("status.mcaktiv %d\n",status.mcaktiv);
 printf("status.playspeed %d\n",status.pause);
-printf("filename %d\n",filename);
-printf("dname %d\n",dname);
+printf("filename %s\n",filename);
+printf("dname %s\n",dname);
 
 	if(status.recording > 0 || (filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1)))
 	{
@@ -238,7 +238,7 @@ printf("dname %d\n",dname);
 			system(cmd);
 printf("cmd %s\n",cmd);
 
-		debug(777, "cmd: %s", cmd);
+		debug(777, "cmd1: %s", cmd);
 
 		free(cmd); cmd = NULL;
 	}
@@ -264,7 +264,7 @@ printf("cmd %s\n",cmd);
 			system(cmd);
 printf("cmd %s\n",cmd);
 
-		debug(777, "cmd: %s", cmd);
+		debug(777, "cmd2: %s", cmd);
 
 		free(cmd); cmd = NULL;
 	}
@@ -287,7 +287,7 @@ printf("cmd %s\n",cmd);
 	
 		if(cmd != NULL)
 			system(cmd);
-		debug(777, "cmd: %s", cmd);
+		debug(777, "cmd3: %s", cmd);
 printf("cmd %s\n",cmd);
 
 		free(cmd); cmd = NULL;
@@ -295,11 +295,13 @@ printf("cmd %s\n",cmd);
 
 	if(filename != NULL && dname != NULL && status.mcaktiv == 1 && (status.play == 1 || status.playspeed != 0 || status.pause == 1))
     {
+printf("before recthumblastthread %s\n",filename);
+
     	struct stimerthread *recthumblastthread = NULL;
         recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
     }
 
-	debug(777, "createrecthumblast thread (record thumb) end");
+	debug(777, "createrecthumbfirst thread (record thumb) end");
 
 }
 
