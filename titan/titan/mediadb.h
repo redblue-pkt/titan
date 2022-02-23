@@ -1837,27 +1837,28 @@ struct mediadb* mediadbcheckfile(char* file, char* path, char* shortpath)
 
 int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 {
-	char* cmd = NULL;
+	char* cmd = NULL, *jpg = NULL;
 	debug(133, "backdrop1.jpg timestamp %s", timestamp);
 	debug(133, "backdrop1.jpg file %s", file);
 	debug(133, "backdrop1.jpg path %s", path);
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
+	jpg = ostrcat(jpg, getconfig("mediadbpath", NULL), 1, 0);
+	jpg = ostrcat(jpg, "/", 1, 0);
+	jpg = ostrcat(jpg, timestamp, 1, 0);
+	jpg = ostrcat(jpg, "_backdrop1.jpg", 1, 0);
+
 	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
-//cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
-    if(status.mcaktiv == 2)
+//  cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
+	if(getconfigint("mc_vp_scantype", NULL) == 1)
     	cmd = ostrcat(cmd, "\" -ss 20 -vframes 1 -s 1280x720 ", 1, 0);
     else
     	cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
-
-	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, timestamp, 1, 0);
-	cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+	cmd = ostrcat(cmd, jpg, 1, 0);
 
 	if(logfile != NULL && getconfigint("mediadbdebug", NULL) == 1)
 	{
@@ -1872,6 +1873,31 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 	debug(133, "cmd %s", cmd);
 	system(cmd);
 	free(cmd); cmd = NULL;
+
+    if(!file_exist(jpg) && getconfigint("mc_vp_scantype", NULL) == 1)
+    {
+	    cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+	    cmd = ostrcat(cmd, path, 1, 0);
+	    cmd = ostrcat(cmd, "/", 1, 0);
+	    cmd = ostrcat(cmd, file, 1, 0);
+      	cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
+	    cmd = ostrcat(cmd, jpg, 1, 0);
+
+	    if(logfile != NULL && getconfigint("mediadbdebug", NULL) == 1)
+	    {
+		    filedebug(logfile, "#############\nLocalfile: %s/%s_backdrop1.jpg\n#############", getconfig("mediadbpath", NULL), timestamp);
+		    cmd = ostrcat(cmd, " >> ", 1, 0);
+		    cmd = ostrcat(cmd, logfile, 1, 0);
+		    cmd = ostrcat(cmd, " 2>&1", 1, 0);
+	    }
+	    else
+		    cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+
+	    debug(133, "cmd %s", cmd);
+	    system(cmd);
+	    free(cmd); cmd = NULL;
+    }
+	free(jpg), jpg = NULL;
 
 	return 0;
 }
@@ -1889,7 +1915,7 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
-    if(status.mcaktiv == 2)
+	if(getconfigint("mc_vp_scantype", NULL) == 1)
     	cmd = ostrcat(cmd, "\" -ss 30 -vframes 1 -s 160x120 ", 1, 0);
     else
     	cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
@@ -1917,25 +1943,27 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 
 int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 {
-	char* cmd = NULL;
+	char* cmd = NULL, *jpg = NULL;
 	debug(133, "cover.jpg timestamp %s", timestamp);
 	debug(133, "cover.jpg file %s", file);
 	debug(133, "cover.jpg path %s", path);
 
 	if(file == NULL || path == NULL || timestamp == NULL) return 1;
 
+	jpg = ostrcat(jpg, getconfig("mediadbpath", NULL), 1, 0);
+	jpg = ostrcat(jpg, "/", 1, 0);
+	jpg = ostrcat(jpg, timestamp, 1, 0);
+	jpg = ostrcat(jpg, "_cover.jpg", 1, 0);
+
 	cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
-    if(status.mcaktiv == 2)
+	if(getconfigint("mc_vp_scantype", NULL) == 1)
     	cmd = ostrcat(cmd, "\" -ss 25 -vframes 1 -s 500x400 ", 1, 0);
     else
     	cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
-	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
-	cmd = ostrcat(cmd, "/", 1, 0);
-	cmd = ostrcat(cmd, timestamp, 1, 0);
-	cmd = ostrcat(cmd, "_cover.jpg", 1, 0);
+	cmd = ostrcat(cmd, jpg, 1, 0);
 
 	if(logfile != NULL && getconfigint("mediadbdebug", NULL) == 1)
 	{
@@ -1950,6 +1978,30 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 	debug(133, "cmd %s", cmd);
 	system(cmd);
 	free(cmd); cmd = NULL;
+
+    if(!file_exist(jpg) && getconfigint("mc_vp_scantype", NULL) == 1)
+    {
+	    cmd = ostrcat(cmd, "ffmpeg -i \"", 1, 0);
+	    cmd = ostrcat(cmd, path, 1, 0);
+	    cmd = ostrcat(cmd, "/", 1, 0);
+	    cmd = ostrcat(cmd, file, 1, 0);
+        cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
+	    cmd = ostrcat(cmd, jpg, 1, 0);
+
+	    if(logfile != NULL && getconfigint("mediadbdebug", NULL) == 1)
+	    {
+		    filedebug(logfile, "#############\nLocalfile: %s/%s_cover.jpg\n#############", getconfig("mediadbpath", NULL), timestamp);
+		    cmd = ostrcat(cmd, " >> ", 1, 0);
+		    cmd = ostrcat(cmd, logfile, 1, 0);
+		    cmd = ostrcat(cmd, " 2>&1", 1, 0);
+	    }
+	    else
+		    cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+	    debug(133, "cmd %s", cmd);
+	    system(cmd);
+	    free(cmd); cmd = NULL;
+    }
+    free(jpg); jpg = NULL;
 
 	return 0;
 }
