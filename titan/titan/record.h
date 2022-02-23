@@ -203,6 +203,8 @@ void createrecthumblastthread(struct stimerthread* self, char* dname, char* file
 	status.mediadbthread = NULL;
 	status.mediadbthreadstatus = 0;
 
+	if(status.mcaktiv == 2) status.mcaktiv = 1;
+
 	debug(777, "createrecthumblast thread (record thumb) end");
 }
 
