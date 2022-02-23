@@ -336,8 +336,10 @@ void screenmc_videoplayer()
 //				recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, NULL, NULL, NULL);
 
 //            filename = createpath(filelistpath->text, filelist->select->name);
+        	struct stimerthread *recthumbfirstthread = NULL;
 		    recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
 
+            char* cmd = NULL;
 	        if(checkchipset("3798MV200") == 1)
         		cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot.jpg", NULL, 0, 0);
             else
@@ -586,7 +588,7 @@ void screenmc_videoplayer()
 		else if(rcret == getrcconfigint("rcstop", NULL) || (rcret == getrcconfigint("rcexit", NULL) && status.play == 1))
 		{
 //		if(dname != NULL && filename != NULL && getconfigint("recordpicture", NULL) == 1)
-			recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
+//			recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
 
 			debug(50, "rcstop: stopplayback");
 			drawscreen(blackscreen, 0, 0);
