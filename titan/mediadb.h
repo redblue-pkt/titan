@@ -1849,9 +1849,9 @@ int mediadbffmpeg1(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
 //cmd = ostrcat(cmd, "\" -vframes 1 -s 1920x1080 ", 1, 0);
-//    if(flag == 1)
-//    	cmd = ostrcat(cmd, "\" -ss 20 -vframes 1 -s 1280x720 ", 1, 0);
-//    else
+    if(status.mcaktiv == 2)
+    	cmd = ostrcat(cmd, "\" -ss 20 -vframes 1 -s 1280x720 ", 1, 0);
+    else
     	cmd = ostrcat(cmd, "\" -vframes 1 -s 1280x720 ", 1, 0);
 
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
@@ -1889,10 +1889,10 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
-//    if(flag == 1)
-//    	cmd = ostrcat(cmd, "\" -ss 30 -vframes 1 -s 160x120 ", 1, 0);
-//    else
+    if(status.mcaktiv == 2)
     	cmd = ostrcat(cmd, "\" -ss 30 -vframes 1 -s 160x120 ", 1, 0);
+    else
+    	cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);
@@ -1928,10 +1928,10 @@ int mediadbffmpeg3(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
-//    if(flag == 1)
-//    	cmd = ostrcat(cmd, "\" -ss 25 -vframes 1 -s 500x400 ", 1, 0);
-//    else
+    if(status.mcaktiv == 2)
     	cmd = ostrcat(cmd, "\" -ss 25 -vframes 1 -s 500x400 ", 1, 0);
+    else
+    	cmd = ostrcat(cmd, "\" -vframes 1 -s 500x400 ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);

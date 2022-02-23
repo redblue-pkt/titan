@@ -339,7 +339,7 @@ void screenmc_videoplayer()
             if(status.pause == 1)
                 drawscreen(skin, 0, 0);
         	struct stimerthread *recthumbfirstthread = NULL;
-            status.mcaktiv == 2;
+            status.mcaktiv = 2;
 		    recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
 
 			//wait for recthumblastthread end before shutdown
