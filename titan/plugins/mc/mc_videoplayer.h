@@ -351,7 +351,7 @@ void screenmc_videoplayer()
 				        count++;
 			        }
                 }
-            fi
+            }
             char* cmd = NULL;
 	        if(checkchipset("3798MV200") == 1)
         		cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot.jpg", NULL, 0, 0);
