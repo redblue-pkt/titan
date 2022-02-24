@@ -178,33 +178,35 @@ void createrecthumblastthread(struct stimerthread* self, char* dname, char* file
 {
 	debug(777, "createrecthumblast thread (record thumb) start");
 
-	if(status.mediadbthread != NULL || self == NULL) return;
+//	if(status.mediadbthread != NULL || self == NULL) return;
+	if(status.mediadbthread == NULL || self != NULL)
+    {
 
-	debug(777, "createrecthumblast thread (record thumb) start ok");
+	    debug(777, "createrecthumblast thread (record thumb) start ok");
 
-	status.mediadbthreadstatus = 1;
-	status.mediadbthread = self;
-	status.mediadbsavetime = 1;
+	    status.mediadbthreadstatus = 1;
+	    status.mediadbthread = self;
+	    status.mediadbsavetime = 1;
 
-	if(dname != NULL && filename != NULL)
-	{
-		readmediadb(getconfig("mediadbfile", NULL), 0, 0);
+	    if(dname != NULL && filename != NULL)
+	    {
+		    readmediadb(getconfig("mediadbfile", NULL), 0, 0);
 
-		debug(133, "path: %s",dname);
-		debug(133, "file: %s",filename);
-		debug(133, "type: 2");
-	
-		addconfigtmp("mediadbscantimeout", "0");
-		mediadbfindfilecb(dname, filename, 0, NULL, 0);
-		delconfigtmp("mediadbscantimeout");
-	}
+		    debug(133, "path: %s",dname);
+		    debug(133, "file: %s",filename);
+		    debug(133, "type: 2");
+	    
+		    addconfigtmp("mediadbscantimeout", "0");
+		    mediadbfindfilecb(dname, filename, 0, NULL, 0);
+		    delconfigtmp("mediadbscantimeout");
+	    }
 
-	free(dname); dname = NULL;
-	free(filename); filename = NULL;
-	status.mediadbsavetime = 0;
-	status.mediadbthread = NULL;
-	status.mediadbthreadstatus = 0;
-
+	    free(dname); dname = NULL;
+	    free(filename); filename = NULL;
+	    status.mediadbsavetime = 0;
+	    status.mediadbthread = NULL;
+	    status.mediadbthreadstatus = 0;
+    }
 	if(status.mcaktiv == 2) status.mcaktiv = 1;
 
 	debug(777, "createrecthumblast thread (record thumb) end");

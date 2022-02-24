@@ -336,19 +336,34 @@ void screenmc_videoplayer()
 //				recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, NULL, NULL, NULL);
 
 //            filename = createpath(filelistpath->text, filelist->select->name);
-            if(status.pause == 1)
-                drawscreen(skin, 0, 0);
-        	struct stimerthread *recthumbfirstthread = NULL;
-            status.mcaktiv = 2;
-		    recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
 
-			//wait for recthumblastthread end before shutdown
-			int count = 0;
-			while(gettimer(recthumbfirstthread) != NULL && count < 60)
-			{
-				sleep(1);
-				count++;
-			}
+//	status.mediadbsavetime = 0;
+//	status.mediadbfiles = 0;
+//	status.mediadbthread = NULL;
+//	status.mediadbthreadstatus = 0;
+printf("status.mediadbsavetime: %d\n",status.mediadbsavetime);
+printf("status.mediadbfiles: %d\n",status.mediadbsavetime);
+printf("status.mediadbthreadstatus: %d\n",status.mediadbsavetime);
+printf("status.writemediadb: %d\n",status.writemediadb);
+
+        	if(status.mediadbthread != NULL)
+            {
+printf("status.mediadbthread != NULL started\n");
+
+                if(status.pause == 1)
+                    drawscreen(skin, 0, 0);
+            	struct stimerthread *recthumbfirstthread = NULL;
+                status.mcaktiv = 2;
+		        recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
+
+			    //wait for recthumblastthread end before shutdown
+			    int count = 0;
+			    while(gettimer(recthumbfirstthread) != NULL && count < 60)
+			    {
+				    sleep(1);
+				    count++;
+			    }
+            }
 //            drawscreen(apskin, 0, 0);
 
             char* cmd = NULL;
