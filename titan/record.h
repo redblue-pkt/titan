@@ -176,9 +176,11 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 
 void createrecthumblastthread(struct stimerthread* self, char* dname, char* filename)
 {
+	debug(777, "createrecthumblast thread (record thumb) start");
+
 	if(status.mediadbthread != NULL || self == NULL) return;
 
-	debug(777, "createrecthumblast thread (record thumb) start");
+	debug(777, "createrecthumblast thread (record thumb) start ok");
 
 	status.mediadbthreadstatus = 1;
 	status.mediadbthread = self;
