@@ -1121,7 +1121,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 			count++;
 		}
 
-		if(!file_exist("/tmp/.autoscan"))
+		if(!file_exist("/tmp/.autoscan") || status.mcaktiv == 2)
 		{
 			free(path); path = NULL;
 			return;
