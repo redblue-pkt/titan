@@ -63,6 +63,7 @@
 <node name=view type=choicebox parent=listbox valign=middle posx=0 text="View" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=autoscan type=choicebox parent=listbox valign=middle posx=0 text="MediaDB autoscan" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=scantype type=choicebox parent=listbox valign=middle posx=0 text="MediaDB scantype" bordercol=bordercol bordersize=1 width=100% height=25>
+<node name=recordpicture type=choicebox parent=listbox valign=middle posx=0 text="MediaDB recordpicture" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=defaultdir type=choicebox parent=listbox valign=middle posx=0 text="default Directory" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=uselastdir type=choicebox parent=listbox valign=middle posx=0 text="use last Directory" bordercol=bordercol bordersize=1 width=100% height=25>
 <node name=backdrop type=choicebox parent=listbox valign=middle posx=0 text="Backdrop Interval" bordercol=bordercol bordersize=1 width=100% height=25>

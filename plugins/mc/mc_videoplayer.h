@@ -332,40 +332,26 @@ void screenmc_videoplayer()
 
 		if (rcret == getrcconfigint("rcrecord", NULL))
 		{
-//			if(getconfigint("recordpicture", NULL) == 1)
-//				recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, NULL, NULL, NULL);
-
-//            filename = createpath(filelistpath->text, filelist->select->name);
-
-//	status.mediadbsavetime = 0;
-//	status.mediadbfiles = 0;
-//	status.mediadbthread = NULL;
-//	status.mediadbthreadstatus = 0;
-printf("status.mediadbsavetime: %d\n",status.mediadbsavetime);
-printf("status.mediadbfiles: %d\n",status.mediadbsavetime);
-printf("status.mediadbthreadstatus: %d\n",status.mediadbsavetime);
-printf("status.writemediadb: %d\n",status.writemediadb);
-
-        	if(status.mediadbthread != NULL)
+			if(getconfigint("mc_vp_recordpicture", NULL) == 1)
             {
-printf("status.mediadbthread != NULL started\n");
+            	status.mediadbthread = NULL;
+            	if(status.mediadbthread == NULL)
+                {
+                    if(status.pause == 1)
+                        drawscreen(skin, 0, 0);
+                	struct stimerthread *recthumbfirstthread = NULL;
+                    status.mcaktiv = 2;
+		            recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
 
-                if(status.pause == 1)
-                    drawscreen(skin, 0, 0);
-            	struct stimerthread *recthumbfirstthread = NULL;
-                status.mcaktiv = 2;
-		        recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, (void*)ostrcat(filelistpath->text, NULL, 0, 0), (void*)ostrcat(filelist->select->name, NULL, 0, 0), NULL);
-
-			    //wait for recthumblastthread end before shutdown
-			    int count = 0;
-			    while(gettimer(recthumbfirstthread) != NULL && count < 60)
-			    {
-				    sleep(1);
-				    count++;
-			    }
-            }
-//            drawscreen(apskin, 0, 0);
-
+			        //wait for recthumblastthread end before shutdown
+			        int count = 0;
+			        while(gettimer(recthumbfirstthread) != NULL && count < 60)
+			        {
+				        sleep(1);
+				        count++;
+			        }
+                }
+            fi
             char* cmd = NULL;
 	        if(checkchipset("3798MV200") == 1)
         		cmd = ostrcat("grab -v -j 100 -r 960 > /tmp/screenshot.jpg", NULL, 0, 0);
