@@ -1916,7 +1916,7 @@ int mediadbffmpeg2(char* file, char* path, char* timestamp, char* logfile)
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, file, 1, 0);
 	if(getconfigint("mc_vp_scantype", NULL) == 1)
-    	cmd = ostrcat(cmd, "\" -ss 30 -vframes 1 -s 160x120 ", 1, 0);
+    	cmd = ostrcat(cmd, "\" -ss 3 -vframes 1 -s 160x120 ", 1, 0);
     else
     	cmd = ostrcat(cmd, "\" -vframes 1 -s 160x120 ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
