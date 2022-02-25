@@ -9,13 +9,16 @@ PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
 #URL=https://s.to
-URL=https://api.netzkino.de.simplecache.net
+URL=https://api.netzkino.de.simplecache.net/
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=Netzkino
 
 #http://api.netzkino.de.simplecache.net/capi-2.0a/categories/scifikino.json?d=www
 #http://api.netzkino.de.simplecache.net/capi-2.0a/categories/kinoab18.json?d=www
 
+
+#URL_MAIN = 'https://api.netzkino.de.simplecache.net/capi-2.0a/categories/%s.json?d=www&l=de-DE'
+#URL_SEARCH = 'https://api.netzkino.de.simplecache.net/capi-2.0a/search?q=%s&d=www&l=de-DE'
 
 case $2 in
 	init)	;;
@@ -47,8 +50,7 @@ init()
 mainmenu()
 {
 	echo "Kategorien#$SRC $SRC category '/devmobileapp/metachannels' 1#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "A-Z#$SRC $SRC sorted 'katalog'#http://openaaf.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Suche#$SRC $SRC search 'serien' 1 '%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Suche#$SRC $SRC list 'capi-2.0a/search?q=%search%&d=www' 2#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -64,41 +66,28 @@ category()
 			# BEGIN variable setzen
 			BEGIN \
 			{
-#print "a " $a
-
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
 				pages = "1"
 			}
 			/"id"/ \
 			{
-#print "a " $a
 				i = index($0, "\"id\":\"") + 6
 	            j = index(substr($0, i), "\",\"") - 1
 				id = substr($0, i, j)
-#print "id " id
+
 				i = index($0, "\"title\":\"") + 9
 	            j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 
-#split($0, a, "\"")
-#title = a[8]
-
-#print "title " title
-
 				i = index($0, "\"slug\":\"") + 8
 	            j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
-#print "newpage " newpage
 
 				picname = title
 
-#print "picname " picname				
-
                 gsub(" ", "_", picname)
                 gsub("-", "_", picname)
-
-#print "picname " picname
 
 	           	pic = "http://openaaf.dyndns.tv/mediathek/menu/"
 
@@ -124,20 +113,15 @@ category()
 	echo "$TMP/$FILENAME.list"
 }
 
-#http://api.netzkino.de.simplecache.net/capi-2.0a/categories/kinoab18.json?d=www
-#eplayer3 http://netzkino_and-vh.akamaihd.net/i/Great_Movies_NK/Jackie_Chan_-_Eagle_Shadow_Fist.mp4/master.m3u8
-
 list()
-{
-curl -o - $PAGE$NEXT  > $TMP/$FILENAME.list1
-rm $TMP/$FILENAME.list		
+{	
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		curl -o - $PAGE$NEXT | sed 's/{/\n\n{/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+        if [ -z "$NEXT" ];then URL=""; fi
+		curl -o - $URL$PAGE$NEXT | sed 's/{/\n\n{/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
 			{
-#print "a " $a
 				# setzt suchvariable auf 0 vor dem start
 				piccount = 0
 				pages = "1"
@@ -145,7 +129,6 @@ rm $TMP/$FILENAME.list
 			}
 			/"id"/ \
 			{
-print "a " $a
                 suche = 1
 
 				i = index($0, "\"id\":\"") + 6
@@ -164,7 +147,6 @@ print "a " $a
 			}
 			/"Adaptives_Streaming"/ \
 			{
-print "b " $a
                 if (suche == 1)
                 {
 				    i = index($0, "\"Streaming\":[\"") + 14
