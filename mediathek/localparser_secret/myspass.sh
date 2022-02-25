@@ -98,10 +98,8 @@ season()
                     if(title != "")
                     {
 				        piccount += 1
-				        if ( pic == "" )
-				        {
-	                    			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				        }
+				        if (pic == "")
+                            pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				        else
 					        pic = "http:" pic
 
@@ -124,9 +122,7 @@ season()
                     {
 				        piccount += 1
 				        if ( pic == "" )
-				        {
-	                    			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				        }
+                            pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				        else
 					        pic = "http:" pic
 
@@ -175,9 +171,9 @@ year()
             }
 			/data-remote-endpoint=/ \
             {
-    				i = index($0, "data-remote-endpoint=\"") + 22
-    	       		j = index(substr($0, i), "\"") - 1
-	    			url1 = substr($0, i, j)
+			    i = index($0, "data-remote-endpoint=\"") + 22
+           		j = index(substr($0, i), "\"") - 1
+			    url1 = substr($0, i, j)
             }
 			/<option data-remote-args=/ \
 			{
@@ -200,7 +196,6 @@ year()
 	    			category = substr($0, i, j)
 
     				print "Staffel " title " (" category ")#" SRC " " SRC " episodes \x27" url1 url2 "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
-
                 }
             }
 			/<footer class="footer-info row">/ \
@@ -254,10 +249,8 @@ episodes()
                     if(title != "")
                     {
 				        piccount += 1
-				        if ( pic == "" )
-				        {
+				        if (pic == "")
 	                    	pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				        }
 				        else
 					        pic = "http:" pic
 
@@ -302,33 +295,31 @@ search()
 			{
 #				print "1111111" $0
 				i = index($0, "\"title\":\"") + 9
-	            		j = index(substr($0, i), "\",\"") - 1
+	            j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 #				print "title: " title
 
 				i = index($0, "\"broadcast\":\"") + 13
-	            		j = index(substr($0, i), "\",\"") - 1
+        		j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
 #				print "extra: " extra
 
 				i = index($0, "\"url\":\"") + 7
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
 #				print "newpage: " newpage
 
 				i = index($0, "\"teaser\":\"") + 10
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
 #				print "pic: " pic
 
 				piccount += 1
-				if ( pic == "" )
-				{
-	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				}
+				if (pic == "")
+	            	pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 				next
 			}
@@ -379,7 +370,6 @@ play()
 	echo "$TMP/$FILENAME.list"
 }
 
-
 seasonapi()
 {
 	rm "$TMP/$FILENAME.list"
@@ -397,32 +387,30 @@ seasonapi()
 			/"format_id"/ \
 			{
 				i = index($0, "\"format_id\":\"") + 13
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				id = substr($0, i, j)
 
 				i = index($0, "\"format\":\"") + 10
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 
 				i = index($0, "\"number_of_seasons\":\"") + 21
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
 
 				i = index($0, "\"node_id\":\"") + 11
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
 
 				piccount += 1
-				if ( pic == "" )
-				{
-	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				}
+				if (pic == "")
+                    pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				else
 					pic = "http:" pic
 
@@ -457,32 +445,30 @@ yearapi()
 			/"season_id"/ \
 			{
 				i = index($0, "\"season_id\":\"") + 13
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				id = substr($0, i, j)
 
 				i = index($0, "\"season_number\":\"") + 17
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 
 				i = index($0, "\"season_name\":\"") + 15
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
 
 				i = index($0, "\"node_id\":\"") + 11
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
 
 				piccount += 1
-				if ( pic == "" )
-				{
-	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				}
+				if (pic == "")
+                    pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				else
 					pic = "http:" pic
 
@@ -517,41 +503,39 @@ episodesapi()
 			/"format"/ \
 			{
 				i = index($0, "\"episode_id\":\"") + 14
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				id = substr($0, i, j)
 
 				i = index($0, "\"title\":\"") + 9
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 				gsub(" - Teil 1", "", title)
 
 				i = index($0, "\"season_name\":\"") + 15
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
 
 				i = index($0, "\"season_number\":\"") + 17
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				season = substr($0, i, j)
 
 				i = index($0, "\"episode_nr\":\"") + 14
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				episode = substr($0, i, j)
 
 				i = index($0, "\"myspass_url\":\"") + 15
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
 				i = index($0, "\"original_image\":\"") + 18
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
 
 				piccount += 1
-				if ( pic == "" )
-				{
-	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				}
+				if (pic == "")
+                    pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				print "S" season "E" episode " - " title "#" SRC " " SRC " parts \x27" newpage "\x27#http:" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
 
 				next
@@ -584,33 +568,31 @@ searchapi()
 			{
 #				print "1111111" $0
 				i = index($0, "\"title\":\"") + 9
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				title = substr($0, i, j)
 #				print "title: " title
 
 				i = index($0, "\"broadcast\":\"") + 13
-	            		j = index(substr($0, i), "\",\"") - 1
+                j = index(substr($0, i), "\",\"") - 1
 				extra = substr($0, i, j)
 #				print "extra: " extra
 
 				i = index($0, "\"url\":\"") + 7
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				newpage = substr($0, i, j)
 				gsub(/\\/, "", newpage)
 
 #				print "newpage: " newpage
 
 				i = index($0, "\"teaser\":\"") + 10
-	            		j = index(substr($0, i), "\"") - 1
+                j = index(substr($0, i), "\"") - 1
 				pic = substr($0, i, j)
 				gsub(/\\/, "", pic)
 #				print "pic: " pic
 
 				piccount += 1
-				if ( pic == "" )
-				{
-	            			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
-				}
+				if (pic == "")
+                    pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 				print title " (" extra ")#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 				next
 			}
