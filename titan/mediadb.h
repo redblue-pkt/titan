@@ -1132,7 +1132,16 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 		writevfdmenu("iMDB start");
 		count = 0;
 	}
-	
+
+// test for mc slow autoscan crash
+/*
+    if(getconfigint("mc_vp_scantype", NULL) == 1 && getconfigint("mediadbdebug", NULL) == 1)
+    {
+        printf("check1 mediadbdebug: %d\n", getconfigint("mediadbdebug", NULL));
+    	addconfigtmp("mediadbdebug", "0");
+        printf("check2 mediadbdebug: %d\n", getconfigint("mediadbdebug", NULL));
+    }
+*/
 	//clear all other db in mem
 	freemediadbfilter(0);
 
@@ -1477,6 +1486,12 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 	textbox(_("Message"), _("MediaDB scan finished"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 	writevfdmenu("iMDB Done !");
 
+/*
+// test for mc slow autoscan crash
+    printf("check3 mediadbdebug: %d\n", getconfigint("mediadbdebug", NULL));
+    delconfigtmp("mediadbdebug");
+    printf("check4 mediadbdebug: %d\n", getconfigint("mediadbdebug", NULL));
+*/
 	status.mediadbsavetime = 0;
 	status.mediadbfiles = 0;
 	status.mediadbthread = NULL;

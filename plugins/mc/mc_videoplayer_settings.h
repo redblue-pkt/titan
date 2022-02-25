@@ -52,7 +52,7 @@ void screenmc_videoplayer_settings()
 
     addchoicebox(recordpicture, "0", _("no"));
     addchoicebox(recordpicture, "1", _("yes"));
-	setchoiceboxselection(recordpicture, getconfig("mc_vp_recordpicture,", NULL));
+	setchoiceboxselection(recordpicture, getconfig("mc_vp_recordpicture", NULL));
 
 	changeinput(defaultdir, getconfig("mc_vp_defaultdir", NULL));
 
