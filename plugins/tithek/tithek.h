@@ -2438,7 +2438,7 @@ void screentithekplay(char* titheklink, char* title, int first)
                         debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
                     }
 //                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
-                    if(ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
+                    if(!filelistflt(".jpg .png", ((struct tithek*)tmp->handle)->pic) && ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
                         debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
@@ -2501,7 +2501,7 @@ void screentithekplay(char* titheklink, char* title, int first)
                         debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
                     }
 //                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
-                    if(ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
+                    if(!filelistflt(".jpg .png", ((struct tithek*)tmp->handle)->pic) && ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
                         debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
@@ -2571,7 +2571,7 @@ waitrcstart:
                         debug(99, "pic change to: %s", ((struct tithek*)listbox->select->handle)->pic);
                     }
 //                    if(cmpfilenameext(((struct tithek*)listbox->select->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)listbox->select->handle)->localname, ".png"))
-                    if(ostrcmp(getfilenameext(((struct tithek*)listbox->select->handle)->pic), getfilenameext(((struct tithek*)listbox->select->handle)->localname)) != 0)
+                    if(!filelistflt(".jpg .png", ((struct tithek*)listbox->select->handle)->pic) && ostrcmp(getfilenameext(((struct tithek*)listbox->select->handle)->pic), getfilenameext(((struct tithek*)listbox->select->handle)->localname)) != 0)
                     {
                         debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
                         debug(99, "pic localname: %s", ((struct tithek*)listbox->select->handle)->localname);
