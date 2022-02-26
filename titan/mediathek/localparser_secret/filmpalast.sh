@@ -103,24 +103,24 @@ search()
                 #<h3 style="padding:20px;">Suchergebnisse: 5</h3>
 				/<h3 style="padding:20px;">Suchergebnisse:/  \
 				{
-#	    			    print "aaaaaa: " $0
+#	    			print "aaaaaa: " $0
 
-					    # suche erlauben ab dieser zeile
-					    suche = 1
-					    # in naechste zeile springen
+				    # suche erlauben ab dieser zeile
+				    suche = 1
+				    # in naechste zeile springen
 
-					    i = index($0, ">Suchergebnisse: ") + 17
-		                j = index(substr($0, i), "<") - 1
-		                results = substr($0, i, j)
-#                       print "results: " results
-                        if (int(results) > 32)
-                        {
-                            pages = int((results / 32) + 1)
-                        }
-                        else
-                        {
-                            pages = 0
-                        }
+				    i = index($0, ">Suchergebnisse: ") + 17
+	                j = index(substr($0, i), "<") - 1
+	                results = substr($0, i, j)
+#                   print "results: " results
+                    if (int(results) > 32)
+                    {
+                        pages = int((results / 32) + 1)
+                    }
+                    else
+                    {
+                        pages = 0
+                    }
                     foundpages = 1
 					next
 				}
@@ -301,7 +301,7 @@ hosterlist()
 				}
                 /class="button rb iconPlay"/ \
                 {
-				    print "hosterlist: " $0
+#				    print "hosterlist: " $0
 
 				    i = index($0, "href=\"") + 6
                     j = index(substr($0, i), "\"") - 1
