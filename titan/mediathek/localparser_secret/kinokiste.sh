@@ -41,8 +41,6 @@ init()
 
 mainmenu()
 {
-#https://api.tmdb.club/data/browse/?lang=all&type=movies&order_by=featured&page=1
-
 #	echo "en 1movies-featured#$SRC $SRC list '/data/browse/?lang=1&type=movies&order_by=featured&page=' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
 #	echo "de 2movies-featured#$SRC $SRC list '/data/browse/?lang=2&type=movies&order_by=featured&page=' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
 #	echo "en 3movies-featured#$SRC $SRC list '/data/browse/?lang=3&type=movies&order_by=featured&page=' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
@@ -55,22 +53,42 @@ mainmenu()
 
 category()
 {
-#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
         if [ "$PAGE" == "movies" ];then
-    		watchlist="featured releases trending updates requested rating votes views"
+    		watchlist="Kinofilme-featured Neu-releases Trend-trending Aktualisiert-updates Nachgefragt-requested IMDB-rating Bewertung-votes Aufrufe-views"
         elif [ "$PAGE" == "tvseries" ];then
-		    watchlist="releases trending updates requested rating votes views"
+    		watchlist="Neu-releases Trend-trending Aktualisiert-updates Nachgefragt-requested IMDB-rating Bewertung-votes Aufrufe-views"
         fi
 
 		rm $TMP/$FILENAME.list > /dev/null 2>&1
 
+		for ROUND in $watchlist; do
+            if [ "$PAGE" == "movies" ];then TITLE="Filme ("`echo $ROUND | cut -d "-" -f1`")"; fi
+            if [ "$PAGE" == "tvseries" ];then TITLE="Serien ("`echo $ROUND | cut -d "-" -f1`")"; fi
+            TYPE=`echo $ROUND | cut -d "-" -f2`
+			filename=`echo $TYPE | tr [A-Z] [a-z]`
+            typename=`echo $PAGE | tr [A-Z] [a-z]`
+            picname="$typename.$filename"
+	        echo "$TITLE#$SRC $SRC search '/data/browse/?lang=all&type=$PAGE&order_by=$TYPE&page=' 1#http://openaaf.dyndns.tv/mediathek/menu/$picname.jpg#$picname.jpg#$NAME#0" >>$TMP/$FILENAME.list
+		done
+	fi
+  	echo "$TMP/$FILENAME.list"
+}
+
+episode()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+#   	watchlist=$(curl https://api.tmdb.club//data/watch/?_id=6195193358607cdfb9fb2bca | sed 's/{/\n\n{/g' | sed -nr 's/.*"e":([^:]+),.*/\1/p' | sort -nu)
+		watchlist=$(curl $URL$PAGE$NEXT | sed 's/{/\n\n{/g' | sed -nr 's/.*"e":([^:]+),.*/\1/p' | sort -nu)
+
+		rm $TMP/$FILENAME.list > /dev/null 2>&1
+
 		for ROUND0 in $watchlist; do
-			TITLE=`echo $ROUND0`
+			TITLE="Folge "`echo $ROUND0`
 			filename=`echo $TITLE | tr [A-Z] [a-z]`
             typename=`echo $PAGE | tr [A-Z] [a-z]`
             picname="$typename.$filename"
-	        echo "$TITLE#$SRC $SRC search '/data/browse/?lang=all&type=$PAGE&order_by=$ROUND0&page=' 1#http://openaaf.dyndns.tv/mediathek/menu/$picname.jpg#$picname.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	        echo "$TITLE#$SRC $SRC hosterlist '$PAGE' $ROUND0#http://openaaf.dyndns.tv/mediathek/menu/$picname.jpg#$picname.jpg#$NAME#0" >>$TMP/$FILENAME.list
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -78,10 +96,8 @@ category()
 
 search()
 {
-#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-#        if [ -z "$NEXT" ];then URL=""; fi
-		curl -o - $URL$PAGE$NEXT | sed 's/{/\n\n{/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
+		curl -o - $URL$PAGE$NEXT | sed 's/{/\n\n{/g' | sed 's/\\//g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -103,7 +119,6 @@ search()
 			}
 			/"slug"/ \
 			{
-#print "a " $a
                 suche = 1
 
 				i = index($0, "\"_id\":\"") + 7
@@ -131,13 +146,16 @@ search()
 
                 next
 			}
+			/"tv":/ \
+			{
+                if (suche == 1)
+                    tv = 1
+            }
             /"poster_path"/ \
 			{
-#print "b " $a
                 gsub(/\\"/, "\"", $a)
-#print "c " $a
                 gsub(/\\/, "", $a)
-#print "d " $a
+
                 if (suche == 1)
                 {
 				    i = index($0, "\"poster_path\":\"") + 15
@@ -146,14 +164,14 @@ search()
 
                     if ( pic == "" )
                     {
-                        print "pic emthy"
+#                        print "pic emthy"
 				        i = index($0, "\"poster\":\"") + 10
 	                    j = index(substr($0, i), "\"") - 1
 				        pic = substr($0, i, j)
                     }
                     else if ( pic == "" )
                     {
-                        print "pic emthy2"
+#                        print "pic emthy2"
                         #"img_link":"http://i.imgur.com/jBGWN7t.jpg"
 				        i = index($0, "\"img_link\":\"") + 12
 	                    j = index(substr($0, i), "\"") - 1
@@ -162,28 +180,19 @@ search()
                     else
                         pic = "https://image.tmdb.org/t/p/w300"pic
 
-#print "desc1 " desc
-
                     if ( desc == "\"" || desc == "" )
                     {
         				i = index($0, "\"overview\":\"") + 12
         	            j = index(substr($0, i), "\",\"") - 1
 
         				desc = substr($0, i, j)
-#print "desc2 " desc
 
                         if ( desc == "\"" || desc == "" )
                         {
-
                             gsub(/\\"/, "\"", $0)
-#print "d " $a
-
-
-#print "desc emthy"
         	    			i = index($0, "\"storyline\":\"") + 13
         	                j = index(substr($0, i), "\",\"") - 1
         	    			desc = substr($0, i, j)
-#print "desc3 " desc
                         }
                     }
                     if (lang == 2)
@@ -201,14 +210,22 @@ search()
                         extra = ""
 
 				    piccount += 1
-#    			    print title extra "#" SRC " " SRC " hosterlist \x27https://api.tmdb.club/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
-#"storyline":false
-#"overview":"",
-                    if ($a ~ /\"storyline\":false/ && $a ~ /\"overview\":\"\"/)
-        			    print title extra "#" SRC " " SRC " hosterlist \x27" URL "/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#"
-                    else
-        			    print title extra "#" SRC " " SRC " hosterlist \x27" URL "/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
 
+                    if (tv == 1)
+                    {
+                        if ($a ~ /\"storyline\":false/ && $a ~ /\"overview\":\"\"/)
+            			    print title extra "#" SRC " " SRC " episode \x27/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#"
+                        else
+            			    print title extra "#" SRC " " SRC " episode \x27/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
+                    }
+                    else
+                    {
+                        if ($a ~ /\"storyline\":false/ && $a ~ /\"overview\":\"\"/)
+            			    print title extra "#" SRC " " SRC " hosterlist \x27/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#"
+                        else
+            			    print title extra "#" SRC " " SRC " hosterlist \x27/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
+                    }
+                    
                     id = ""
                     title = ""
                     pic = ""
@@ -234,10 +251,8 @@ search()
 
 hosterlist()
 {
-#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-        if [ -z "$NEXT" ];then URL=""; fi
-		curl -o - $URL$PAGE$NEXT | sed 's/{/\n\n{/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		curl -o - $URL$PAGE | sed 's/{/\n\n{/g' | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -255,12 +270,15 @@ hosterlist()
 	                j = index(substr($0, i), "\"") - 1
 				    newpage = substr($0, i, j)
 
-				    i = index(newpage, "://") + 3
+                	gsub("^//", "https://", newpage)
+
+
+				    i = index(newpage, "//") + 2
 	                j = index(substr(newpage, i), "/") - 1
 				    title = substr(newpage, i, j)
 
-                    split(title, a, ".")
-				    picname = tolower(a[1])
+                    split(title, b, ".")
+				    picname = tolower(b[1])
 
 				    # 23. tausche leehrzeichen in punkte
 				    # 24. titel = reife.frauen
@@ -283,7 +301,16 @@ hosterlist()
                         extra = ""
 
 				    piccount += 1
-    			    print title extra "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+
+				    i = index($0, "\"e\":") + 4
+	                j = index(substr($0, i), ",") - 1
+				    episode = substr($0, i, j)
+
+#                    if ($a ~ /"e"/ && episode == NEXT)
+                    if (episode == NEXT)
+        			    print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+                    else if (NEXT == "")
+        			    print title extra "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 
                     newpage = ""
                     title = ""
@@ -291,6 +318,7 @@ hosterlist()
                     extra = ""
                     release = ""
                     data = ""
+                    episode = ""
                 }
 				next
 			}
@@ -325,4 +353,5 @@ case $INPUT in
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 	search) $INPUT;;
+    episode) $INPUT;;
 esac
