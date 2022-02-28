@@ -386,8 +386,8 @@ kino()
 
 latest()
 {
-	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
-	rm $TMP/$FILENAME.list
+#	rm $TMP/cache.$FILENAME.* > /dev/null 2>&1
+#	rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		piccount=0
 #		$curlbin "$URL/$PAGE" -o "$TMP/cache.$FILENAME.1"
