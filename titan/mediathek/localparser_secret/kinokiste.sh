@@ -79,16 +79,15 @@ episode()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 #   	watchlist=$(curl https://api.tmdb.club//data/watch/?_id=6195193358607cdfb9fb2bca | sed 's/{/\n\n{/g' | sed -nr 's/.*"e":([^:]+),.*/\1/p' | sort -nu)
-		watchlist=$(curl $URL$PAGE$NEXT | sed 's/{/\n\n{/g' | sed -nr 's/.*"e":([^:]+),.*/\1/p' | sort -nu)
+		watchlist=$(curl $URL$PAGE | sed 's/{/\n\n{/g' | sed -nr 's/.*"e":([^:]+),.*/\1/p' | sort -nu)
 
 		rm $TMP/$FILENAME.list > /dev/null 2>&1
 
-		for ROUND0 in $watchlist; do
-			TITLE="Folge "`echo $ROUND0`
-			filename=`echo $TITLE | tr [A-Z] [a-z]`
-            typename=`echo $PAGE | tr [A-Z] [a-z]`
-            picname="$typename.$filename"
-	        echo "$TITLE#$SRC $SRC hosterlist '$PAGE' $ROUND0#http://openaaf.dyndns.tv/mediathek/menu/$picname.jpg#$picname.jpg#$NAME#0" >>$TMP/$FILENAME.list
+		for EPISODE in $watchlist; do
+            SEASON=$NEXT
+            TITLE="Staffel $SEASON Folge $EPISODE"
+            PICNAME="s"$SEASON"e"$EPISODE
+	        echo "$TITLE#$SRC $SRC hosterlist '$PAGE' $EPISODE#http://openaaf.dyndns.tv/mediathek/menu/$PICNAME.jpg#$PICNAME.jpg#$NAME#0" >>$TMP/$FILENAME.list
 		done
 	fi
   	echo "$TMP/$FILENAME.list"
@@ -119,6 +118,7 @@ search()
 			}
 			/"slug"/ \
 			{
+#print "a " $a
                 suche = 1
 
 				i = index($0, "\"_id\":\"") + 7
@@ -144,13 +144,15 @@ search()
                 j = index(substr($0, i), ",") - 1
 			    lang = substr($0, i, j)
 
+                if ($a ~ /\"tv\":1,/)
+                {
+				    i = index($0, "\"s\":") + 4
+	                j = index(substr($0, i), ",") - 1
+				    season = substr($0, i, j)
+                    tv = 1
+                }
                 next
 			}
-			/"tv":/ \
-			{
-                if (suche == 1)
-                    tv = 1
-            }
             /"poster_path"/ \
 			{
                 gsub(/\\"/, "\"", $a)
@@ -164,14 +166,14 @@ search()
 
                     if ( pic == "" )
                     {
-#                        print "pic emthy"
+                        print "pic emthy"
 				        i = index($0, "\"poster\":\"") + 10
 	                    j = index(substr($0, i), "\"") - 1
 				        pic = substr($0, i, j)
                     }
                     else if ( pic == "" )
                     {
-#                        print "pic emthy2"
+                        print "pic emthy2"
                         #"img_link":"http://i.imgur.com/jBGWN7t.jpg"
 				        i = index($0, "\"img_link\":\"") + 12
 	                    j = index(substr($0, i), "\"") - 1
@@ -214,9 +216,9 @@ search()
                     if (tv == 1)
                     {
                         if ($a ~ /\"storyline\":false/ && $a ~ /\"overview\":\"\"/)
-            			    print title extra "#" SRC " " SRC " episode \x27/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#"
+            			    print title extra "#" SRC " " SRC " episode \x27/data/watch/?_id=" id "\x27 " season "#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#"
                         else
-            			    print title extra "#" SRC " " SRC " episode \x27/data/watch/?_id=" id "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
+            			    print title extra "#" SRC " " SRC " episode \x27/data/watch/?_id=" id "\x27 " season "#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
                     }
                     else
                     {
