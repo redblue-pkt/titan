@@ -523,7 +523,7 @@ void screenextensions_check(int flag)
 	}
 }
 
-#ifdef OVBUILD
+#if defined(OVBUILD) || defined (OEBUILD)
 void screenfeed_ipk(int flag)
 {
 	char* tmpstr = NULL, *line = NULL, *lastline = NULL;

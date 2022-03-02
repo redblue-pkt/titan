@@ -697,7 +697,7 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 void setmenulistdefault(struct menulist* mlist, char* defaultentry);
 void changemenulistparam(struct menulist* mlist, char* param, char* param1, char* param2, char* param3);
 
-#ifdef OVBUILD
+#if defined(OVBUILD) || defined (OEBUILD)
 //ipkg.h 
 void freeipkg(); 
 int ipkg_update(void); 
