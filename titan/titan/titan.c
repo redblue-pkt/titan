@@ -96,7 +96,7 @@ char* tunermerkmale = NULL;
 
 #include "oldentry.h"
 #include "tpk.h"
-#ifdef OVBUILD
+#if defined(OVBUILD) || defined (OEBUILD)
 #include "ipkg.h"
 #endif
 #include "queue.h"
