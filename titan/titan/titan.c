@@ -10,7 +10,7 @@
 #define SYSCODE 0UL
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
-#ifdef OVBUILD
+#if defined(OVBUILD) || defined (OEBUILD)
 #define IPKG_LIB
 #include "../libipkg/config.h"
 #include "../libipkg/libipkg.h"
