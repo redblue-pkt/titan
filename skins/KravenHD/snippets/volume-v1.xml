@@ -1,0 +1,11 @@
+#volume-v1.xml
+<screen name="volume" posx="center" posy="100" width="352" height="68" bordercol="white" bordersize="2" bgcol="kraven_bgcol" transparent="20">
+	<node name="volume" picmem="icons/volume2.png" posx="0" posy="0" width="348" height="64">
+	<node name="line" bgcol="white" posx="65" posy="middle" width="270" height="1">
+	<node name="volumebar" progresscol="white" posx="65" posy="middle" width="270" height="7">
+</screen>
+
+
+<screen name="mute" posx="center" posy="100" width="68" height="68" bordercol="white" bordersize="2" bgcol="kraven_bgcol" transparent="20">
+	<node name="mute" picmem="icons/mute3.png" posx="0" posy="0" width="64" height="64">
+</screen>
