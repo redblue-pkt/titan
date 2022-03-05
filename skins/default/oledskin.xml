@@ -1,0 +1,434 @@
+# by mega and friends @ change and claws forbidden, respect this please!
+
+
+#oled_nemesis Skin 1 (256x64)
+<screen name="OLED_nemesis" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node halign="center" text="" name="textbox" fontsize="30" posx="0" posy="0" width="256" height="30">
+	<node halign="center" bordersize="2" progresscol="#CD661D" bgcol="white" halign="left" func="getepgakttimeline" bordercol="bordercol" borderradius="5" name="epgline" posy="37" posx="28" width="200" height="10">
+	<node halign="center" func="getepgakttitle" bordersize="0" bordercol="bordercol" fontsize="15" posx="28" posy="49" width="200" height="15" fontcol="#FFFFFF">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="0" posy="49" width="11" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="12" posy="49" width="12" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledtimeshift" picmem="png/titan_timeshift.png" name="oled_timeshift" posx="235" posy="49" width="21" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledstreaming" picmem="png/titan_streaming.png" name="oled_streaming" posx="235" posy="33" width="20" height="15">
+</screen>
+
+#oled_nemesis Skin 2
+<screen name="OLED_nemesis_v2" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node name="picon" func="getpicon" posx="0" posy="0" width="50" height="30" picwidth="50" picheight="30">
+	<node halign="center" text="" name="textbox" fontsize="30" posx="56" posy="0" width="200" height="30">
+	<node halign="center" bordersize="2" progresscol="#CD661D" bgcol="white" halign="left" func="getepgakttimeline" bordercol="bordercol" borderradius="5" name="epgline" posy="37" posx="56" width="200" height="10">
+	<node halign="center" func="getepgakttitle" bordersize="0" bordercol="bordercol" fontsize="15" posx="56" posy="49" width="200" height="15" fontcol="#FFFFFF">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="0" posy="49" width="11" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="0" posy="33" width="12" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledtimeshift" picmem="png/titan_timeshift.png" name="oled_timeshift" posx="12" posy="49" width="21" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledstreaming" picmem="png/titan_streaming.png" name="oled_streaming" posx="13" posy="33" width="20" height="15">
+</screen>
+
+#oled_nemesis Skin 3
+<screen name="OLED_nemesis_v3" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node name="picon" func="getpicon" posx="73" posy="0" width="100" height="60">
+	<node halign="center" bordersize="1" progresscol="#CD661D" bgcol="white" halign="left" func="getepgakttimeline" bordercol="bordercol" borderradius="2" name="epgline" posy="60" posx="28" width="200" height="4">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="0" posy="49" width="11" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="12" posy="49" width="12" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledtimeshift" picmem="png/titan_timeshift.png" name="oled_timeshift" posx="235" posy="49" width="21" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledstreaming" picmem="png/titan_streaming.png" name="oled_streaming" posx="235" posy="33" width="20" height="15">
+</screen>
+
+#oled_nemesis Skin 4
+<screen name="OLED_nemesis_v4" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node halign="center" text="" name="textbox" fontsize="31" posx="0" posy="20" width="256" height="31">
+	<node halign="center" progresscol="#CD661D" bgcol="white" halign="left" func="getepgakttimeline" bordersize="1" bordercol="bordercol" borderradius="3" name="epgline" posy="56" posx="10" width="236" height="8">
+	<node halign="center" nodestyle="blink" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="0" posy="0" width="11" height="15">
+	<node halign="center" nodestyle="blink" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="12" posy="0" width="12" height="15">
+	<node halign="center" nodestyle="blink" func="getoledtimeshift" picmem="png/titan_timeshift.png" name="oled_timeshift" posx="25" posy="0" width="21" height="15">
+	<node halign="center" nodestyle="blink" func="getoledstreaming" picmem="png/titan_streaming.png" name="oled_streaming" posx="47" posy="0" width="20" height="15">
+	<node halign="center" func="getoledchannelresolution576" picmem="png/titan_576.png" name="oled_channelresolution576" posx="104" posy="0" width="35" height="15">
+	<node halign="center" func="getoledchannelresolution720" picmem="png/titan_720.png" name="oled_channelresolution720" posx="104" posy="0" width="35" height="15">
+	<node halign="center" func="getoledchannelresolution1080" picmem="png/titan_1080.png" name="oled_channelresolution1080" posx="104" posy="0" width="35" height="15">
+	<node halign="center" func="getoledhd" picmem="png/titan_hd.png" name="oled_hd" posx="140" posy="0" width="21" height="15">
+	<node halign="center" func="getoledcrypt" picmem="png/titan_crypt.png" name="oled_crypt" posx="241" posy="0" width="15" height="15">
+</screen>
+
+#oled_nemesis Skin 5
+<screen name="OLED_nemesis_v5" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node halign="center" text="" name="textbox" fontsize="31" posx="0" posy="0" width="256" height="31">
+	<node halign="center" progresscol="#CD661D" bgcol="white" halign="left" func="getepgakttimeline" bordersize="1" bordercol="bordercol" borderradius="3" name="epgline" posy="36" posx="10" width="236" height="8">
+	<node halign="center" nodestyle="blink" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="0" posy="49" width="11" height="15">
+	<node halign="center" nodestyle="blink" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="12" posy="49" width="12" height="15">
+	<node halign="center" nodestyle="blink" func="getoledtimeshift" picmem="png/titan_timeshift.png" name="oled_timeshift" posx="25" posy="49" width="21" height="15">
+	<node halign="center" nodestyle="blink" func="getoledstreaming" picmem="png/titan_streaming.png" name="oled_streaming" posx="47" posy="49" width="20" height="15">
+	<node halign="center" func="getoledchannelaspect" picmem="png/titan_16_9.png" name="oled_channelaspect" posx="68" posy="49" width="35" height="15">
+	<node halign="center" func="getoledchannelresolution576" picmem="png/titan_576.png" name="oled_channelresolution576" posx="104" posy="49" width="35" height="15">
+	<node halign="center" func="getoledchannelresolution720" picmem="png/titan_720.png" name="oled_channelresolution720" posx="104" posy="49" width="35" height="15">
+	<node halign="center" func="getoledchannelresolution1080" picmem="png/titan_1080.png" name="oled_channelresolution1080" posx="104" posy="49" width="35" height="15">
+	<node halign="center" func="getoledhd" picmem="png/titan_hd.png" name="oled_hd" posx="140" posy="49" width="21" height="15">
+	<node halign="center" func="getoledcrypt" picmem="png/titan_crypt.png" name="oled_crypt" posx="241" posy="49" width="15" height="15">
+</screen>
+
+#oled_nemesis Skin 6
+<screen name="OLED_nemesis_v6" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node halign="center" text="" name="textbox" fontsize="29" posx="0" posy="0" width="256" height="31">
+	<node halign="center" progresscol="#CD661D" bgcol="white" func="getepgakttimeline" bordersize="1" bordercol="bordercol" borderradius="3" name="epgline" posy="36" posx="0" width="177" height="8">
+	<node halign="center" func="gettime" param1="%H:%M" name="time" fontsize="28" posx="180" posy="34" width="76" height="30">
+	<node halign="center" func="getoledchannelaspect" picmem="png/titan_16_9.png" name="oled_channelaspect" posx="0" posy="49" width="35" height="15">
+	<node halign="center" func="getoledhd" picmem="png/titan_hd.png" name="oled_hd" posx="36" posy="49" width="21" height="15">
+	<node halign="center" func="getoledchannelresolution576" picmem="png/titan_576.png" name="oled_channelresolution576" posx="58" posy="49" width="35" height="15">
+	<node halign="center" func="getoledchannelresolution720" picmem="png/titan_720.png" name="oled_channelresolution720" posx="58" posy="49" width="35" height="15">
+	<node halign="center" func="getoledchannelresolution1080" picmem="png/titan_1080.png" name="oled_channelresolution1080" posx="58" posy="49" width="35" height="15">
+	<node halign="center" nodestyle="blink" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="94" posy="49" width="11" height="15">
+	<node halign="center" nodestyle="blink" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="106" posy="49" width="12" height="15">
+	<node halign="center" nodestyle="blink" func="getoledtimeshift" picmem="png/titan_timeshift.png" name="oled_timeshift" posx="119" posy="49" width="21" height="15">
+	<node halign="center" nodestyle="blink" func="getoledstreaming" picmem="png/titan_streaming.png" name="oled_streaming" posx="141" posy="49" width="20" height="15">
+	<node halign="center" func="getoledcrypt" picmem="png/titan_crypt.png" name="oled_crypt" posx="162" posy="49" width="15" height="15">
+</screen>
+
+#oled_nemesis Skin 7 'openatv default style'
+<screen name="OLED_nemesis_v7" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node name="textbox" text="" font="nmsbd" fontsize="24" posx="0" posy="0" width="178" height="24" halign="left" valign="top">
+	<node name="eventtitle" func="getepgakttitle" font="nmsbd" fontsize="16" posx="0" posy="26" width="256" height="16" halign="left">
+	<node name="progressline" func="getepgakttimeline" progresscol="#FFFFFF" posx="0" posy="46" width="140" height="12" bgcol="#000000" bordersize="1" bordercol="#FFFFFF">
+	<node name="tuner_a" func="gettunerlocktext" param2="0" fontsize="20" posx="146" posy="44" width="16" height="20">
+	<node name="tuner_b" func="gettunerlocktext" param2="1" fontsize="20" posx="162" posy="44" width="16" height="20">
+	<node name="tuner_c" func="gettunerlocktext" param2="2" fontsize="20" posx="178" posy="44" width="16" height="20">
+	<!--node name="tuner_d" func="gettunerlocktext" param2="3" fontsize="20" posx="186" posy="44" width="16" height="20"-->
+	<node name="time" func="gettime" param1="%H:%M" fontsize="22" posx="202" posy="44" width="53" height="20" bgcol="#000000" halign="center" valign="center">
+	<node name="oled_rec" func="getoledrec" picmem="png/rec.png" nodestyle="blink" posx="180" posy="0" width="32" height="12">
+	<node name="oled_hd" func="getoledhd" picmem="png/hd.png" posx="215" posy="0" width="21" height="12">
+	<node name="oled_dolby" func="getoleddolby" picmem="png/dolby.png" posx="238" posy="0" width="17" height="12">
+</screen>
+
+#oled menu
+<screen name="OLED_nemesis_menu" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node name="textbox" text="" halign="center" fontsize="28" posx="0" posy="center" width="100%" height="28">
+</screen>
+
+#oled standby
+<screen name="OLED_nemesis_standby" fontcol="#FFFFFF" posx="0" posy="0" width="256" height="64">
+	<node name="textbox" text="" halign="center" fontsize="44" posx="0" posy="17" width="100%" height="44">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" param1="skin" name="oled_rec" posx="0" posy="0" width="11" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledstreaming" param1="skin" name="oled_streaming" posx="47" posy="0" width="21" height="15">
+	<node name="tuner_a" func="gettunerlocktext" param2="0" fontsize="20" posx="204" posy="0" width="16" height="22">
+	<node name="tuner_b" func="gettunerlocktext" param2="1" fontsize="20" posx="220" posy="0" width="16" height="22">
+	<node name="tuner_c" func="gettunerlocktext" param2="2" fontsize="20" posx="236" posy="0" width="16" height="22">
+</screen>
+
+
+#oled_dream_7020hd Skin 1 (128x64x4)
+<screen name="OLED_dream1" fontcol="#FFFFFF" posx="0" posy="0" width="128" height="64">
+	<node halign="center" text="" name="textbox" fontsize="22" posx="0" posy="0" width="128" height="22">
+	<node halign="center" bordersize="2" progresscol="#CD661D" bgcol="white" halign="left" func="getepgakttimeline" bordercol="bordercol" borderradius="5" name="epgline" posy="25" posx="20" width="88" height="10">
+	<node halign="center" func="getepgakttitle" bordersize="0" bordercol="bordercol" fontsize="10" posx="10" posy="38" width="108" height="10" fontcol="#FFFFFF">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="0" posy="49" width="11" height="15">
+	<node halign="center" valign="left" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="12" posy="49" width="12" height="15">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledtimeshift" picmem="png/titan_timeshift.png" name="oled_timeshift" posx="25" posy="49" width="21" height="15">
+	<node halign="center" valign="left" func="getoledstreaming" picmem="png/titan_streaming.png" name="oled_streaming" posx="46" posy="49" width="20" height="15">
+</screen>
+
+#oled menu DM7020HD
+<screen name="OLED_dream1_menu" fontcol="#FFFFFF" posx="0" posy="0" width="128" height="64">
+	<node name="textbox" text="" halign="center" fontsize="20" posx="0" posy="center" width="100%" height="28">
+</screen>
+
+#oled standby DM7020HD
+<screen name="OLED_dream1_standby" fontcol="#FFFFFF" posx="0" posy="0" width="128" height="64">
+	<node name="textbox" text="" halign="center" fontsize="44" posx="0" posy="17" width="100%" height="44">
+</screen>
+
+#oled_dream_900 Skin 1 (400x240)
+<screen name="OLED_dream2" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" text="" fontcol="#F2F2F2" name="textbox" fontsize="50" posx="5" posy="0" width="395" height="50">
+	<node bordersize=2 progresscol="#2E2EFE" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="90" posx="center" width="380" height="60">
+	<node nodestyle="blink" valign="center" func="getoledrec" bgcol=#B40404 name="oled_rec" posx=center posy=90 width=380 height=60>
+	<node func=getepgakttimeremaining fontsize=55 fontcol=#000000 param1="+%d min" bordersize=0 posx=right posy=89 width=300 height=55>
+	<node func="gettime" fontcol="#BDBDBD" param1="%H:%M:%S" name="time" fontsize="65" posx="157" posy="170" width="243" height="65">
+</screen>
+
+#oled_dream_900 Skin 2 (400x240)
+<screen name="OLED_dream2_v2" fontcol="#F2F2F2" bgcol="#0B0B3B" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node func=getalternatepicon posx="5" posy="0" width="215" height="140" picwidth="215" picheight="140">
+	<node bordersize="2" progresscol="#2E2EFE" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="210" posx="center" width="300" height="20">
+	<node func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="60" posx="240" posy="50" width="160" height="60">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="5" posy="190" width="40" height="40">
+	<node halign="center" func="getepgakttitle" fontsize="45" posx="5" posy="150" width="395" height="45" fontcol="#F2F2F2">
+</screen>
+
+#oled_dream_900 Skin 3 (400x240)
+<screen name="OLED_dream2_v3" fontcol="#F2F2F2" bgcol="#0B0B3B" posx="0" posy="0" width="400" height="240">
+	<node func=getalternatepicon posx="5" posy="0" width="395" height="240" picwidth="400" picheight="240">
+</screen>
+
+#oled_dream_900 Skin 4 (400x240)
+<screen name="OLED_dream2_v4" fontcol="#F2F2F2" bgcol="#0B0B3B" posx="0" posy="0" width="400" height="240">
+	<node func=getalternatepicon posx="center" posy="50" width="370" height="190" picwidth="370" picheight="190">
+	<node bordersize="2" progresscol="#DF7401" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="4" posx="center" width="300" height="20">
+</screen>
+
+#oled_dream_900 Skin 5 (400x240)
+<screen name="OLED_dream2_v5" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" text="" fontcol=#F2F2F2 name="textbox" fontsize="50" posx="5" posy="0" width="395" height="50">
+	<node posx="center" bgcol=#E6E6E6 posy="104" width="300" height="8">
+	<node progresscol=#E6E6E6 halign=center func=getepgakttimeline name=epgline posy=93 posx=center width=300 height=30>
+	<node halign="center" func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="80" posx="center" posy="150" width="300" height="80">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="40" posy="175" width="40" height="40">
+</screen>
+
+#oled_dream_900 Skin 6 (400x240)
+<screen name="OLED_dream2_v6" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" valign="center" text="" fontcol=#F2F2F2 name="textbox" type=textbox wrap=yes fontsize="50" posx="5" posy="0" width="395" height="100">
+	<node bordersize="2" progresscol="#484848" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="140" posx="center" width="300" height="20">
+	<node halign="center" func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="70" posx="center" posy="170" width="300" height="70">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="40" posy="185" width="40" height="40">
+</screen>
+
+#oled_dream_900 Skin 7 (400x240)
+<screen name="OLED_dream2_v7" fontcol="#FFFFFF" posx="0" posy="0" width="400" height="240">
+	<node halign="center" valign="center" text="" name="textbox" type=textbox wrap=yes fontsize="55" posx=0 posy="0" width="400" height="116" hspace=3 vspace=3>
+	<node halign="center" bordersize="3" progresscol="#CD661D" bgcol="white" halign="left" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="122" posx="40" width="320" height="20">
+	<node halign="center" func="getepgakttitle" bordersize="0" bordercol="bordercol" fontsize="27" posx="20" posy="145" width="360" height="27" fontcol="#FFFFFF">
+	<node halign="center" valign="center" func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="49" posx="250" posy="191" width="150" height="49">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="5" posy="200" width="40" height="40" picwidth=40 picheight=40>
+	<node halign="center" valign="left" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="55" posy="200" width="40" height="40" picwidth=40 picheight=40>
+</screen>
+
+#oled_dream_900 Skin 8 (400x240)
+<screen name="OLED_dream2_v8" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" nodestyle="blink" valign="center" func="getoledrec" bgcol=#B40404 name="oled_rec" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" valign="center" text="" fontcol=#F2F2F2 name="textbox" type=textbox wrap=yes fontsize="45" posx="5" posy="0" width="395" height="90">
+	<node halign="center" valign="center" text="" func="getepgakttitle" type=textbox wrap=yes fontsize="45" posx="5" posy="145" width="395" height="90" fontcol="#D8D8D8">
+	<node bordersize="2" progresscol="#484848" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="105" posx="center" width="350" height="30">
+</screen>
+
+#oled_dream_900 Skin 9 (400x240)
+<screen name="OLED_dream2_v9" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node bgcol="#0B0B3B" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" valign="center" text="" fontcol=#BDBDBD name="textbox" type=textbox wrap=yes fontsize="52" posx="5" posy="0" width="395" height="110">
+	<node func="gettime" fontcol=#848484 param1="%H:%M" name="time" fontsize="70" posx="10" posy="160" width="200" height="70">
+	<node halign="right" func=getepgakttimeremaining fontsize=60 fontcol=#BDBDBD param1="+%d m" bordersize=0 posx="right" posy=170 width=250 height=60>
+	<node name="line" posx=0 posy=130 width=400 height=20 bgcol="bgcol" bgcol2="white" gradient="leftmiddle">
+	<node nodestyle="blink" func="getoledrec" bgcol=#B40404 name="oled_rec" posx=0 posy=130 width=400 height=20 gradient="leftmiddle">
+</screen>
+
+#oled_dream_900 Skin 10 (400x240)
+<screen name="OLED_dream2_v10" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+<node bgcol="#0B0B3B" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=0 posy=5 width=400 height=50 picwidth=400 picheight=50>
+<node name="volume" func="getvolume" bgcol="black" bordersize="1" bordercol="black" borderradius="12" posx="20" posy="200" width="210" height="30">
+<node name="volumebar" func="getvolumebar" progresscol="#848484" bgcol="white" bordersize="1" bordercol="black" borderradius="12" posx="20" posy="200" width="210" height="30">
+<node name="textbox" type=textbox wrap=yes text="" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+<node func="gettime" fontcol=#BDBDBD param1="%H:%M" name="time" fontsize="65" posx="245" posy="175" width="230" height="65">
+<node nodestyle="blink" func="getoledrec" bgcol=#B40404 name="oled_rec" posx="20" posy="200" width="210" height="30">
+</screen>
+
+#oled_dream_900 Skin 11 (400x240)
+<screen name="OLED_dream2_v11" fontcol="#FFFFFF" posx="0" posy="0" width="400" height="240">
+<node bgcol="#0040FF" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+<node name="volume" func="getvolume" bgcol="#0040FF" bordersize="8" bordercol="black" borderradius="1" posx="70" posy="180" width="160" height="50">
+<node name="volumebar" func="getvolumebar" progresscol="#FFFFFF" bordersize="8" bordercol="black" borderradius="1" posx="70" posy="180" width="160" height="50">
+<node name="textbox" type=textbox wrap=yes text="()=" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+<node func="gettime" fontcol=#FFFFFF param1="%H:%M" name="time" fontsize="65" posx="240" posy="170" width="230" height="65">
+<node bordersize="8" progresscol="#FFFFFF" bgcol="#0040FF" func="getepgakttimeline" bordercol="black" borderradius="1" name="epgline" posy="10" posx="center" width="350" height="50">
+<node picmem="oled/volume.png" name="oled" func="getoled" valign="bottom" posx=15 posy=175 width=40 height=60 picwidth=40 picheight=60>
+<node nodestyle="blink" func="getoledrec" picmem="oled/volume_rec.png" name="oled_rec" posx="15" posy="175" width="40" height="60">
+</screen>
+
+#oled_dream_900 Skin 12 (400x240)
+<screen name="OLED_dream2_v12" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+<node bgcol="#0B0B3B" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=0 posy=5 width=400 height=50 picwidth=400 picheight=50>
+<node bordersize="1" progresscol="#848484" bgcol="#FFFFFF" func="getepgakttimeline" bordercol="black" borderradius="12" name="epgline" posx="20" posy="200" width="210" height="30">
+<node name="textbox" type=textbox wrap=yes text="" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+<node func="gettime" fontcol=#BDBDBD param1="%H:%M" name="time" fontsize="65" posx="245" posy="175" width="230" height="65">
+<node nodestyle="blink" func="getoledrec" bgcol=#B40404 name="oled_rec" posx="20" posy="200" width="210" height="30">
+</screen>
+
+#oled menu dream_900
+<screen name="OLED_dream2_menu" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=0 posy=5 width=395 height=50 picwidth=395 picheight=50>
+	<node name="textbox" type=textbox wrap=yes text="" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+</screen>
+
+#oled standby dream_900
+<screen name="OLED_dream2_standby" fontcol="#E6E6E6" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=0 posy=5 width=395 height=50 picwidth=395 picheight=50>
+	<node name="textbox" text="" halign="center" fontsize="70" posx="0" posy="center" width="100%" height="70">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="20" posy="185" width="40" height="40">
+</screen>
+
+#oled_vu+ Skin 1 (480x320)
+<screen name="OLED_vu1" fontcol="#F2F2F2" bgcol="#0B0B3B" posx="0" posy="0" width="480" height="320">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=480 height=320 picwidth=480 picheight=320>
+	<node func=getalternatepicon posx="5" posy="20" width="215" height="140" picwidth="215" picheight="140">
+	<node bordersize="2" progresscol="#2E2EFE" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="280" posx="center" width="400" height="25">
+	<node func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="60" posx="300" posy="50" width="160" height="60">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="5" posy="230" width="40" height="40">
+	<node halign="center" func="getepgakttitle" fontsize="45" posx="5" posy="180" width="470" height="45" fontcol="#F2F2F2">
+</screen>
+
+#oled_vu+ Skin 2 (480x320)
+<screen name="OLED_vu1_v2" fontcol="#F2F2F2" posx="0" posy="0" width="480" height="320">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=480 height=320 picwidth=480 picheight=320>
+	<node halign="center" text="" fontcol="#F2F2F2" name="textbox" fontsize="60" posx="6" posy="20" width="474" height="65">
+	<node bordersize=2 progresscol="#2E2EFE" func="getepgakttimeline" bordercol="white" borderradius="7" name="epgline" posy="105" posx="center" width="450" height="70">
+	<node nodestyle="blink" valign="center" func="getoledrec" bgcol=#B40404 name="oled_rec" posx=center posy=105 width=450 height=70>
+	<node func=getepgakttimeremaining fontsize=55 fontcol=#000000 param1="+%d min" bordersize=0 posx=right posy=110 width=360 height=70>
+	<node func="gettime" fontcol="#BDBDBD" param1="%H:%M:%S" name="time" fontsize="85" posx=center posy="205" width="70%" height="85">
+</screen>
+
+#oled_vu+ Skin 3 (480x320)
+<screen name="OLED_vu1_v3" fontcol="#F2F2F2" posx="0" posy="0" width="480" height="320">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=480 height=320 picwidth=480 picheight=320>
+	<node halign="center" text="" fontcol="#F2F2F2" name="textbox" fontsize="60" posx="6" posy="20" width="474" height="65">
+	<node bordersize=2 progresscol="#2E2EFE" func="getepgakttimeline" bordercol="white" borderradius="7" name="epgline" posy="105" posx="center" width="450" height="70">
+	<node nodestyle="blink" valign="center" func="getoledrec" bgcol=#B40404 name="oled_rec" posx=center posy=105 width=450 height=70>
+	<node func=getepgakttimeremaining fontsize=55 fontcol=#000000 param1="+%d min" bordersize=0 posx=right posy=110 width=360 height=70>
+	<node func="gettime" fontcol="#BDBDBD" param1="%H:%M:%S" name="time" fontsize="85" posx=center posy="205" width="70%" height="85">
+</screen>
+
+#oled menu vu+
+<screen name="OLED_vu1_menu" fontcol="#F2F2F2" posx="0" posy="0" width="480" height="320">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=480 height=320 picwidth=480 picheight=320>
+	<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=center posy=10 width=395 height=50 picwidth=395 picheight=50>
+	<node name="textbox" type=textbox wrap=yes text="" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+</screen>
+
+#oled standby vu+
+<screen name="OLED_vu1_standby" fontcol="#E6E6E6" posx="0" posy="0" width="480" height="320">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=480 height=320 picwidth=480 picheight=320>
+	<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=center posy=5 width=395 height=50 picwidth=395 picheight=50>
+	<node name="textbox" text="" halign="center" fontsize="70" posx="0" posy="center" width="100%" height="70">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="20" posy="185" width="40" height="40">
+</screen>
+
+#oled_vu+UnoSE Skin 1 (400x240)
+<screen name="OLED_vu2" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" text="" fontcol="#F2F2F2" name="textbox" fontsize="50" posx="5" posy="0" width="395" height="50">
+	<node bordersize=2 progresscol="#2E2EFE" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="90" posx="center" width="380" height="60">
+	<node nodestyle="blink" valign="center" func="getoledrec" bgcol=#B40404 name="oled_rec" posx=center posy=90 width=380 height=60>
+	<node func=getepgakttimeremaining fontsize=55 fontcol=#000000 param1="+%d min" bordersize=0 posx=right posy=89 width=300 height=55>
+	<node func="gettime" fontcol="#BDBDBD" param1="%H:%M:%S" name="time" fontsize="65" posx="157" posy="170" width="243" height="65">
+</screen>
+
+#oled_vu+UnoSE  Skin 2 (400x240)
+<screen name=OLED_vu2_v2" fontcol="#F2F2F2" bgcol="#0B0B3B" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node func=getalternatepicon posx="5" posy="0" width="215" height="140" picwidth="215" picheight="140">
+	<node bordersize="2" progresscol="#2E2EFE" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="210" posx="center" width="300" height="20">
+	<node func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="60" posx="240" posy="50" width="160" height="60">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="5" posy="190" width="40" height="40">
+	<node halign="center" func="getepgakttitle" fontsize="45" posx="5" posy="150" width="395" height="45" fontcol="#F2F2F2">
+</screen>
+
+#oled_dream_vu+UnoSE 3 (400x240)
+<screen name="OLED_vu2_v3" fontcol="#F2F2F2" bgcol="#0B0B3B" posx="0" posy="0" width="400" height="240">
+	<node func=getalternatepicon posx="5" posy="0" width="395" height="240" picwidth="400" picheight="240">
+</screen>
+
+#oled_vu+UnoSE Skin 4 (400x240)
+<screen name="OLED_vu2_v4" fontcol="#F2F2F2" bgcol="#0B0B3B" posx="0" posy="0" width="400" height="240">
+	<node func=getalternatepicon posx="center" posy="50" width="370" height="190" picwidth="370" picheight="190">
+	<node bordersize="2" progresscol="#DF7401" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="4" posx="center" width="300" height="20">
+</screen>
+
+#oled_vu+UnoSE Skin 5 (400x240)
+<screen name="OLED_vu2_v5" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" text="" fontcol=#F2F2F2 name="textbox" fontsize="50" posx="5" posy="0" width="395" height="50">
+	<node posx="center" bgcol=#E6E6E6 posy="104" width="300" height="8">
+	<node progresscol=#E6E6E6 halign=center func=getepgakttimeline name=epgline posy=93 posx=center width=300 height=30>
+	<node halign="center" func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="80" posx="center" posy="150" width="300" height="80">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="40" posy="175" width="40" height="40">
+</screen>
+
+#oled_vu+UnoSE Skin 6 (400x240)
+<screen name="OLED_vu2_v6" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" valign="center" text="" fontcol=#F2F2F2 name="textbox" type=textbox wrap=yes fontsize="50" posx="5" posy="0" width="395" height="100">
+	<node bordersize="2" progresscol="#484848" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="140" posx="center" width="300" height="20">
+	<node halign="center" func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="70" posx="center" posy="170" width="300" height="70">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="40" posy="185" width="40" height="40">
+</screen>
+
+#oled_vu+UnoSE Skin 7 (400x240)
+<screen name="OLED_vu2_v7" fontcol="#FFFFFF" posx="0" posy="0" width="400" height="240">
+	<node halign="center" valign="center" text="" name="textbox" type=textbox wrap=yes fontsize="55" posx=0 posy="0" width="400" height="116" hspace=3 vspace=3>
+	<node halign="center" bordersize="3" progresscol="#CD661D" bgcol="white" halign="left" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="122" posx="40" width="320" height="20">
+	<node halign="center" func="getepgakttitle" bordersize="0" bordercol="bordercol" fontsize="27" posx="20" posy="145" width="360" height="27" fontcol="#FFFFFF">
+	<node halign="center" valign="center" func="gettime" fontcol=#F2F2F2 param1="%H:%M" name="time" fontsize="49" posx="250" posy="191" width="150" height="49">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="png/titan_rec.png" name="oled_rec" posx="5" posy="200" width="40" height="40" picwidth=40 picheight=40>
+	<node halign="center" valign="left" func="getoledmute" picmem="png/titan_mute.png" name="oled_mute" posx="55" posy="200" width="40" height="40" picwidth=40 picheight=40>
+</screen>
+
+#oled_vu+UnoSE Skin 8 (400x240)
+<screen name="OLED_vu2_v8" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" nodestyle="blink" valign="center" func="getoledrec" bgcol=#B40404 name="oled_rec" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" valign="center" text="" fontcol=#F2F2F2 name="textbox" type=textbox wrap=yes fontsize="45" posx="5" posy="0" width="395" height="90">
+	<node halign="center" valign="center" text="" func="getepgakttitle" type=textbox wrap=yes fontsize="45" posx="5" posy="145" width="395" height="90" fontcol="#D8D8D8">
+	<node bordersize="2" progresscol="#484848" bgcol="white" func="getepgakttimeline" bordercol="white" borderradius="6" name="epgline" posy="105" posx="center" width="350" height="30">
+</screen>
+
+#oled_vu+UnoSE Skin 9 (400x240)
+<screen name="OLED_vu2_v9" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node bgcol="#0B0B3B" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node halign="center" valign="center" text="" fontcol=#BDBDBD name="textbox" type=textbox wrap=yes fontsize="52" posx="5" posy="0" width="395" height="110">
+	<node func="gettime" fontcol=#848484 param1="%H:%M" name="time" fontsize="70" posx="10" posy="160" width="200" height="70">
+	<node halign="right" func=getepgakttimeremaining fontsize=60 fontcol=#BDBDBD param1="+%d m" bordersize=0 posx="right" posy=170 width=250 height=60>
+	<node name="line" posx=0 posy=130 width=400 height=20 bgcol="bgcol" bgcol2="white" gradient="leftmiddle">
+	<node nodestyle="blink" func="getoledrec" bgcol=#B40404 name="oled_rec" posx=0 posy=130 width=400 height=20 gradient="leftmiddle">
+</screen>
+
+#oled_vu+UnoSE Skin 10 (400x240)
+<screen name="OLED_vu2_v10" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+<node bgcol="#0B0B3B" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=0 posy=5 width=400 height=50 picwidth=400 picheight=50>
+<node name="volume" func="getvolume" bgcol="black" bordersize="1" bordercol="black" borderradius="12" posx="20" posy="200" width="210" height="30">
+<node name="volumebar" func="getvolumebar" progresscol="#848484" bgcol="white" bordersize="1" bordercol="black" borderradius="12" posx="20" posy="200" width="210" height="30">
+<node name="textbox" type=textbox wrap=yes text="" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+<node func="gettime" fontcol=#BDBDBD param1="%H:%M" name="time" fontsize="65" posx="245" posy="175" width="230" height="65">
+<node nodestyle="blink" func="getoledrec" bgcol=#B40404 name="oled_rec" posx="20" posy="200" width="210" height="30">
+</screen>
+
+#oled_vu+UnoSE Skin 11 (400x240)
+<screen name="OLED_vu2_v11" fontcol="#FFFFFF" posx="0" posy="0" width="400" height="240">
+<node bgcol="#0040FF" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+<node name="volume" func="getvolume" bgcol="#0040FF" bordersize="8" bordercol="black" borderradius="1" posx="70" posy="180" width="160" height="50">
+<node name="volumebar" func="getvolumebar" progresscol="#FFFFFF" bordersize="8" bordercol="black" borderradius="1" posx="70" posy="180" width="160" height="50">
+<node name="textbox" type=textbox wrap=yes text="()=" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+<node func="gettime" fontcol=#FFFFFF param1="%H:%M" name="time" fontsize="65" posx="240" posy="170" width="230" height="65">
+<node bordersize="8" progresscol="#FFFFFF" bgcol="#0040FF" func="getepgakttimeline" bordercol="black" borderradius="1" name="epgline" posy="10" posx="center" width="350" height="50">
+<node picmem="oled/volume.png" name="oled" func="getoled" valign="bottom" posx=15 posy=175 width=40 height=60 picwidth=40 picheight=60>
+<node nodestyle="blink" func="getoledrec" picmem="oled/volume_rec.png" name="oled_rec" posx="15" posy="175" width="40" height="60">
+</screen>
+
+#oled_vu+UnoSE 12 (400x240)
+<screen name="OLED_vu2_v12" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+<node bgcol="#0B0B3B" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=0 posy=5 width=400 height=50 picwidth=400 picheight=50>
+<node bordersize="1" progresscol="#848484" bgcol="#FFFFFF" func="getepgakttimeline" bordercol="black" borderradius="12" name="epgline" posx="20" posy="200" width="210" height="30">
+<node name="textbox" type=textbox wrap=yes text="" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+<node func="gettime" fontcol=#BDBDBD param1="%H:%M" name="time" fontsize="65" posx="245" posy="175" width="230" height="65">
+<node nodestyle="blink" func="getoledrec" bgcol=#B40404 name="oled_rec" posx="20" posy="200" width="210" height="30">
+</screen>
+
+#oled menu vu+UnoSE
+<screen name="OLED_vu2_menu" fontcol="#F2F2F2" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=0 posy=5 width=395 height=50 picwidth=395 picheight=50>
+	<node name="textbox" type=textbox wrap=yes text="" halign="center" valign="center" fontsize="50" posx="5" posy="center" width="100%" height="110" hspace=3 vspace=3>
+</screen>
+
+#oled standby vu+UnoSE
+<screen name="OLED_vu2_standby" fontcol="#E6E6E6" posx="0" posy="0" width="400" height="240">
+	<node picmem="oled/display_bg.png" name="oled" func="getoled" valign="bottom" posx=0 posy=0 width=400 height=240 picwidth=400 picheight=240>
+	<node picmem="oled/display_bg2.png" name="oled" func="getoled" valign="bottom" posx=0 posy=5 width=395 height=50 picwidth=395 picheight=50>
+	<node name="textbox" text="" halign="center" fontsize="70" posx="0" posy="center" width="100%" height="70">
+	<node halign="center" nodestyle="blink" valign="left" func="getoledrec" picmem="oled/rec_2.png" name="oled_rec" posx="20" posy="185" width="40" height="40">
+</screen>
