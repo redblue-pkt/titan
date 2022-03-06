@@ -1187,6 +1187,7 @@ char* getpicon(struct skin* node)
 
 char* getalternatepicon(struct skin* node)
 {
+prinf("getalternatepicon 111\n");
 	char* tmpstr = NULL;
 	tmpstr = createpiconpath(status.aktservice->channel, 1);
 	if(ostrstr(tmpstr, "defpicon.png") != NULL)
@@ -1194,6 +1195,8 @@ char* getalternatepicon(struct skin* node)
 		free(tmpstr); tmpstr=NULL;
 		tmpstr = createpiconpath(status.aktservice->channel, 0);
 	}
+prinf("getalternatepicon 222\n");
+
 	return tmpstr;
 }
 

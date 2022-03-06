@@ -111,7 +111,9 @@ void* convertfunc(char *value, uint8_t *rettype)
 	}
 	if(ostrcmp("getalternatepicon", value) == 0)
 	{
+printf("convertfunc 111\n");
 		*rettype = FUNCPIC;
+printf("convertfunc 222\n");
 		return &getalternatepicon;
 	}
 	if(ostrcmp("getallpicon", value) == 0)
@@ -1032,7 +1034,10 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			newnode->skinfunc = convertfunc(ret, &newnode->funcrettype);
+printf("1111: ret=%s\n");
 			free(ret);
+printf("2222: ret=%s\n");
+
 		}
 		ret = getxmlentry(line, " param1=");
 		if(ret != NULL)
