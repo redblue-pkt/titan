@@ -1034,9 +1034,9 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			newnode->skinfunc = convertfunc(ret, &newnode->funcrettype);
-printf("1111: ret=%s\n");
+printf("1111: ret=%s\n", ret);
 			free(ret);
-printf("2222: ret=%s\n");
+printf("2222: ret=%s\n", ret);
 
 		}
 		ret = getxmlentry(line, " param1=");
