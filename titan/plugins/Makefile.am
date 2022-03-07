@@ -51,4 +51,5 @@ SUBDIRS = \
 	wlandisplay \
 	wm2018 \
 	xupnpd \
-	zapback
+	zapback \
+    info
