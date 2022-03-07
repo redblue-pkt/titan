@@ -1,8 +1,0 @@
-Package: titan-plugin-infos-imdb
-Version: 0.1
-Architecture: armv7
-Section: infos
-Description: ImdB Info Plugin
-Titanname: IMDb
-Minversion: 0.1
-Showname: IMDb

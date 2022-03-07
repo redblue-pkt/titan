@@ -30,58 +30,63 @@ AC_SUBST(MULTICOM324)
 
 
 AC_OUTPUT([
-Makefile
-autotimer/Makefile
-browser/Makefile
-callmonitor1/Makefile
-catcatch/Makefile
-dlna/Makefile
-dvdplayer/Makefile
-e2starter/Makefile
-facebook/Makefile
-filemanager/Makefile
-gmediarender/Makefile
-hello/Makefile
-imdb/Makefile
-imdbapi/Makefile
-instar/Makefile
-ipsec/Makefile
-keylock/Makefile
-kodistarter/Makefile
-kravencfg/Makefile
-lcdpearl1/Makefile
-lcdsamsung/Makefile
-mboxinfo/Makefile
-mc/Makefile
-minisatip/Makefile
-multiimage/Makefile
-networkbrowser/Makefile
-networkbrowser/netlib/Makefile
-optimize/Makefile
-panel/Makefile
-permtime/Makefile
-readerconfig/Makefile
-rgui/Makefile
-satipclient/Makefile
-scriptexec/Makefile
-sispmctl/Makefile
-stock/Makefile
-stopifnotused/Makefile
-streaminfo/Makefile
-sudoku/Makefile
-tinews/Makefile
-tithek/Makefile
-tiwakeup/Makefile
-tmc/Makefile
-tmdb/Makefile
-TopfieldVFD/Makefile
-tsSchnitt/Makefile
-usbreset/Makefile
-weather/Makefile
-wins3/Makefile
-wlandisplay/Makefile
-wm2018/Makefile
-xupnpd/Makefile
-zapback/Makefile
-testsection-imdb/Makefile
+    Makefile
+    browser_browser/Makefile
+
+    games_catcatch/Makefile
+    games_sudoku/Makefile
+    games_wins3/Makefile
+
+    gui_e2starter/Makefile
+    gui_kodistarter/Makefile
+
+    infos_imdb/Makefile
+    infos_imdbapi/Makefile
+    infos_mboxinfo/Makefile
+    infos_stock/Makefile
+    infos_streaminfo/Makefile
+    infos_tmdb/Makefile
+    infos_tinews/Makefile
+    infos_weather/Makefile
+    infos_wm2018/Makefile
+
+    network_dlna/Makefile
+    network_facebook/Makefile
+    network_ipsec/Makefile
+    network_minisatip/Makefile
+    network_networkbrowser/Makefile
+    network_networkbrowser/netlib/Makefile
+    network_satipclient/Makefile
+    network_xupnpd/Makefile
+
+    player_dvdplayer/Makefile
+    player_gmediarender/Makefile
+    player_mc/Makefile
+    player_tithek/Makefile
+    player_tmc/Makefile
+
+    tools_autotimer/Makefile
+    tools_callmonitor1/Makefile
+    tools_filemanager/Makefile
+    tools_hello/Makefile
+    tools_instar/Makefile
+    tools_keylock/Makefile
+    tools_kravencfg/Makefile
+    tools_lcdpearl1/Makefile
+    tools_lcdsamsung/Makefile
+    tools_multiimage/Makefile
+    tools_optimize/Makefile
+    tools_panel/Makefile
+    tools_permtime/Makefile
+    tools_readerconfig/Makefile
+    tools_rgui/Makefile
+    tools_scriptexec/Makefile
+    tools_sispmctl/Makefile
+    tools_stopifnotused/Makefile
+    tools_tiwakeup/Makefile
+    tools_TopfieldVFD/Makefile
+    tools_tsSchnitt/Makefile
+    tools_usbreset/Makefile
+    tools_wlandisplay/Makefile
+    tools_zapback/Makefile
 ])
