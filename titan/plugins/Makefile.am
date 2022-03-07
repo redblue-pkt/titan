@@ -1,7 +1,7 @@
 AUTOMAKE_OPTIONS = gnu
 
 SUBDIRS = \
-    browser_browser \
+    browser_netsurf \
     \
     games_catcatch \
     games_sudoku \

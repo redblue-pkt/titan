@@ -31,7 +31,7 @@ AC_SUBST(MULTICOM324)
 
 AC_OUTPUT([
     Makefile
-    browser_browser/Makefile
+    browser_netsurf/Makefile
 
     games_catcatch/Makefile
     games_sudoku/Makefile
