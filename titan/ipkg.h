@@ -467,9 +467,9 @@ char* get_ipk_section()
 	free(namelist), namelist = NULL;
 	return sectionlist;
 }
-/*
-use from tpk.h
-int findsectiondone(char* section)
+
+//use from tpk.h
+int findsectiondoneipk(char* section)
 {
 	struct ipkg* node = ipkg;
 	
@@ -484,7 +484,7 @@ int findsectiondone(char* section)
 
 	return 0;
 }
-*/
+
 //flag 0: show section
 //flag 1: show entrys
 //flag 2: show entrys for remove
@@ -512,7 +512,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			if(flag == 0)
 			{
 				//check if section have seen
-				if(findsectiondone(node->section) == 1)
+				if(findsectiondoneipk(node->section) == 1)
 				{
 					node = node->next;
 					continue;
