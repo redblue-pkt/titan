@@ -52,4 +52,4 @@ SUBDIRS = \
 	wm2018 \
 	xupnpd \
 	zapback \
-    infos
+    infos/imdb
