@@ -836,7 +836,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenextensions_check(1);
 	}
-#ifdef OEVISION
+#if defined(OVBUILD) || defined (OEBUILD)
 	else if(ostrcmp("feed_ipk", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
