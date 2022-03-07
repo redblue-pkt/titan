@@ -25,7 +25,6 @@ SUBDIRS = \
     network_ipsec \
     network_minisatip \
     network_networkbrowser \
-    network_networkbrowser/netlib \
     network_satipclient \
     network_xupnpd \
     \
