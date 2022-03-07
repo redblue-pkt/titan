@@ -1,55 +1,62 @@
 AUTOMAKE_OPTIONS = gnu
 
 SUBDIRS = \
-	autotimer \
-	browser \
-	callmonitor1 \
-	catcatch \
-	dlna \
-	dvdplayer \
-	e2starter \
-	facebook \
-	filemanager \
-	gmediarender \
-	hello \
-	imdb \
-	imdbapi \
-	instar \
-	ipsec \
-	keylock \
-	kodistarter \
-	kravencfg \
-	lcdpearl1 \
-	lcdsamsung \
-	mboxinfo \
-	mc \
-	minisatip \
-	multiimage \
-	networkbrowser \
-	optimize \
-	panel \
-	permtime \
-	readerconfig \
-	rgui \
-	satipclient \
-	scriptexec \
-	sispmctl \
-	stock \
-	stopifnotused \
-	streaminfo \
-	sudoku \
-	tinews \
-	tithek \
-	tiwakeup \
-	tsSchnitt \
-	tmc \
-	tmdb \
-	TopfieldVFD \
-	usbreset \
-	weather \
-	wins3 \
-	wlandisplay \
-	wm2018 \
-	xupnpd \
-	zapback \
-    testsection-imdb
+    browser_browser \
+    \
+    games_catcatch \
+    games_sudoku \
+    games_wins3 \
+    \
+    gui_e2starter \
+    gui_kodistarter \
+    \
+    infos_imdb \
+    infos_imdbapi \
+    infos_mboxinfo \
+    infos_stock \
+    infos_streaminfo \
+    infos_tmdb \
+    infos_tinews \
+    infos_weather \
+    infos_wm2018 \
+    \
+    network_dlna \
+    network_facebook \
+    network_ipsec \
+    network_minisatip \
+    network_networkbrowser \
+    network_networkbrowser/netlib \
+    network_satipclient \
+    network_xupnpd \
+    \
+    player_dvdplayer \
+    player_gmediarender \
+    player_mc \
+    player_tithek \
+    player_tmc \
+    \
+    tools_autotimer \
+    tools_callmonitor1 \
+    tools_filemanager \
+    tools_hello \
+    tools_instar \
+    tools_keylock \
+    tools_kravencfg \
+    tools_lcdpearl1 \
+    tools_lcdsamsung \
+    tools_multiimage \
+    tools_optimize \
+    tools_panel \
+    tools_permtime \
+    tools_readerconfig \
+    tools_rgui \
+    tools_scriptexec \
+    tools_sispmctl \
+    tools_stopifnotused \
+    tools_tiwakeup \
+    tools_TopfieldVFD \
+    tools_tsSchnitt \
+    tools_usbreset \
+    tools_wlandisplay \
+    tools_zapback
+
