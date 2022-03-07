@@ -1,0 +1,23 @@
+<screen name="imdb" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
+<node name="titletext" text="IMDb - Plugin" fontcol="black" fontsize="36" posx="0" posy="0" width="635" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="titletext" text="Title:" fontcol=fontcol fontsize=22 posx=20 posy=60 width=49% height=30 bordertype=2 bordersize=2 bordercol=bordercol/>
+<node name="title" text="" fontcol=fontcol fontsize=22 posx=130 posy=63 width=49% height=30/>
+<node name="genretext" text="Genre:" fontcol=fontcol fontsize=22 posx=20 posy=100 width=49% height=30 bordertype=2 bordersize=2 bordercol=bordercol/>
+<node name="genre" text="" fontcol=fontcol fontsize=22 posx=130 posy=103 width=49% height=30/>
+<node name="releasetimetext" text="Release:" fontcol=fontcol fontsize=22 posx=20 posy=140 width=49% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name="releasetime" text="" fontcol=fontcol fontsize=22 posx=130 posy=143 width=49% height=30/>
+<node name="directortext" text="Director:" fontcol=fontcol fontsize=22 posx=20 posy=180 width=49% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name="director" text="" fontcol=fontcol fontsize=22 posx=130 posy=183 width=49% height=30/>
+<node name="writerstext" text="Writers:" fontcol=fontcol fontsize=22 posx=20 posy=220 width=49% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name="writers" text="" fontcol=fontcol fontsize=22 posx=130 posy=223 width=49% height=30/>
+<node name="actorstext" text="Actors:" fontcol=fontcol fontsize=22 posx=20 posy=260 width=49% bordertype=2 bordersize=2 bordercol=bordercol height=30/>
+<node name="actors" text="" fontcol=fontcol fontsize=22 posx=130 posy=263 width=49% height=30/>
+<node name="plottext" text="Plot:" fontcol=fontcol fontsize=22 posx=20 posy=300 width=49% bordertype=2 bordersize=2 bordercol=bordercol height=300/>
+<node name="plot" text="" fontcol=fontcol fontsize=22 posx=20 posy=340 width=50% height=295 type=textbox wrap=yes/>
+<node name="cover" valign=middle halign=middle parent=listbox posx=640 posy=0 width=640 height=720 picwidth=640 picheight=720/>
+<node name="buttonbar" posx=left posy="610" width="635" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node name="b5" picmem="skin/key_ok_70x40.png"   posx="30"  posy="615" width="70" height="40">
+<node name="b6" picmem="skin/key_exit_70x40.png" posx="105" posy="615" width="70" height="40">
+<node name="b1" text="SEARCH" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="185" posy="620" width="180" height="30">
+<node name="b2" text="SAVE" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="335" posy="620" width="200" height="30">
+</screen>
