@@ -83,5 +83,5 @@ wlandisplay/Makefile
 wm2018/Makefile
 xupnpd/Makefile
 zapback/Makefile
-infos/imdb/Makefile
+testsection-imdb/Makefile
 ])
