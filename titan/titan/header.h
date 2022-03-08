@@ -758,7 +758,7 @@ int changepicmem(struct skin* node, char* text, int timeout, int del);
 int convertxmlentry(char *value, uint8_t *proz);
 unsigned char* savejpg(char* filename, int width, int height, int channels, int newwidth, int newheight, int quality, unsigned char *buf);
 unsigned char * resize(unsigned char *origin, int ox, int oy, int dx, int dy, int type, unsigned char * dst, int flag);
-#ifndef SH4
+#ifdef MIPSEL
 static inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color);
 static inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color);
 static inline void drawpixelfast(int posx, int posy, unsigned long color);
