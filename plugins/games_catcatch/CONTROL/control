@@ -1,0 +1,8 @@
+Package: titan-plugin-games-catcatch
+Version: 0.1
+Architecture: armv7
+Section: games
+Description: first titan game
+Titanname: Cat-Catch
+Showname: Cat-Catch
+Minversion: 0.1
