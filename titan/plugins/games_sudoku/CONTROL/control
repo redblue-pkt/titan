@@ -1,0 +1,8 @@
+Package: titan-plugin-games-sudoku
+Version: 1.0
+Architecture: armv7
+Section: games
+Description: Sudoku
+Titanname: Sudoku
+Showname: Sudoku
+Minversion: 0.1
