@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-optimize
+Version: 0.1
+Architecture: armv7
+Section: tools
+Description: optimize Plugin
+Titanname: Optimize
+Minversion: 0.1
+Showname: Optimize

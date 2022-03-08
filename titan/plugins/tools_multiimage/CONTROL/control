@@ -1,0 +1,13 @@
+Package: titan-plugin-tools-multiimage
+Architecture: armv7
+Showname: MultiImage
+Version: 1
+Section: tools
+Description: MultiGUI Plugin
+Group: 0
+Minversion: 0
+Preinstalled: 0
+Size: 4284
+Titanname: MultiImage
+Usepath: *
+Boxtype: *

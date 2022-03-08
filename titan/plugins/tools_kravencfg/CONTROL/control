@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-kravencfg
+Version: 1.0
+Architecture: armv7
+Section: tools
+Description: Configuration plugin for KravenHD skin
+Titanname: kravencfg
+Showname: KravenConfig
+Minversion: 1.0

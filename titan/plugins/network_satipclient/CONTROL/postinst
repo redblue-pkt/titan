@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install satipclient
+	opkg install titan-plugin-satipclient --dest $1
+fi
+
+exit 0

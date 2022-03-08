@@ -1,0 +1,14 @@
+#!/bin/sh
+INSTDIR="$1"
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/xupnpd"
+export XUPNPDROOTDIR=$INSTDIR/etc/xupnpd
+echo INSTDIR $INSTDIR
+echo PLUGINDIR $PLUGINDIR
+mkdir $INSTDIR/etc/xupnpd/config
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install titan-plugin-xupnpd --dest $1
+fi
+
+exit 0

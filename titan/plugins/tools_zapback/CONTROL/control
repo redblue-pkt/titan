@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-zapback
+Version: 0.1
+Architecture: armv7
+Section: tools
+Description: Werbezapper
+Titanname: zapback (Werbezapper)
+Minversion: 0.1
+Showname: zapback (Werbezapper)

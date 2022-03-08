@@ -1,0 +1,9 @@
+Package: titan-plugin-network-satipclient
+Version: 1.033
+Description: SAT-IP Streaming Client
+Section: network
+Architecture: armv7
+Titanname: SAT-IP Client
+Showname: SAT-IP Client
+Usepath: mnt,swap
+Minversion: 0.1

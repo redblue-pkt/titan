@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-filemanager
+Version: 0.1
+Architecture: armv7
+Section: tools
+Description: File Manager
+Titanname: File Manager
+Minversion: 0.1
+Showname: File Manager

@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-permtime
+Version: 0.2
+Architecture: armv7
+Section: tools
+Description: Permanente Uhrzeit am Bildschirm
+Titanname: Permanent Time
+Minversion: 0.1
+Showname: Permanent Time

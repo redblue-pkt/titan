@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-usbreset
+Version: 0.1
+Architecture: armv7
+Section: tools
+Description: usbreset Plugin
+Titanname: USB-RESET
+Minversion: 0.1
+Showname: USB-RESET

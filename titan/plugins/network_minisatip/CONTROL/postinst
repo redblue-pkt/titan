@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install minisatip
+	opkg install titan-plugin-minisatip --dest $1
+fi
+
+exit 0

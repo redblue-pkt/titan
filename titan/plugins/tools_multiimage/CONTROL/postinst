@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install titan-plugin-multiimage --dest $1
+fi
+
+exit 0

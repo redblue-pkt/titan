@@ -1,0 +1,13 @@
+Package: titan-plugin-tools-sispmctl
+Version: 1.0
+Architecture: arm
+OE: GEMBIRD_Powermanager
+Section: tools
+Priority: optional
+Maintainer: AAF
+Homepage: http://www.aaf-digital.info
+Source: GOst4711 by AAF 
+Description: schalten der Steckdosenleiste von GEMBRIT
+Titanname: GEMBIRD_Powermanager
+Minversion: 0.1
+Showname: GEMBIRD_Powermanager

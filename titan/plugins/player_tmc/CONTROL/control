@@ -1,0 +1,8 @@
+Package: titan-plugin-player-tmc
+Version: 1.0
+Description: Titan MediaCenter
+Section: player
+Architecture: armv7
+Titanname: Titan MediaCenter
+Showname: Titan MediaCenter
+Minversion: 0.1

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg remove titan-plugin-callmonitor1 --dest $1
+else
+	INSTDIR="$1"  
+	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/callmonitor1"
+
+	rm -rf "$PLUGINDIR" >/dev/null 2>&1
+fi
+
+exit 0

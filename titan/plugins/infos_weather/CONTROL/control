@@ -1,0 +1,8 @@
+Package: titan-plugin-infos-weather
+Version: 1.6
+Architecture: armv7
+Section: infos
+Description: weather Plugin
+Titanname: Weather
+Minversion: 0.1
+Showname: Weather

@@ -1,0 +1,16 @@
+#!/bin/sh
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg remove titan-plugin-gmediarender --dest $1
+	opkg remove titan-gmediarender
+else
+	INSTDIR="$1"
+	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/gmediarender"
+
+	rm -rf "$PLUGINDIR" >/dev/null 2>&1
+
+	if [ "/var" != "$INSTDIR" ]; then
+		rm -rf /var/usr/lib/gstreamer-0.10
+	fi
+fi
+
+exit 0

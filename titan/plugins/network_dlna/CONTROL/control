@@ -1,0 +1,8 @@
+Package: titan-plugin-network-dlna
+Version: 1.1.0
+Description: MiniDLNA Medien Server (upnp)
+Section: network
+Architecture: armv7
+Titanname: DLNA
+Minversion: 0.1
+Showname: DLNA (MiniDLNA Server)

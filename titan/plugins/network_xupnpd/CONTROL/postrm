@@ -1,0 +1,12 @@
+#!/bin/sh
+INSTDIR="$1"
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/xupnpd"
+
+rm -rf "$PLUGINDIR" >/dev/null 2>&1
+rm -rf $INSTDIR/etc/xupnpd >/dev/null 2>&1
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg remove titan-plugin-xupnpd --dest $1
+fi
+
+exit 0

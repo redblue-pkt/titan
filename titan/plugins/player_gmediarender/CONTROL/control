@@ -1,0 +1,8 @@
+Package: titan-plugin-player-gmediarender
+Version: 0.1
+Architecture: armv7
+Section: player
+Description: GMediaRender is a UPnP media renderer for POSIX-compliant systems
+Titanname: GMediaRender
+Showname: GMediaRender
+Minversion: 0.1

@@ -1,0 +1,8 @@
+Package: titan-plugin-player-tithek
+Version: 1.0
+Description: Tithek the Multimedia-thek
+Section: player
+Architecture: armv7
+Titanname: Titan Mediathek
+Showname: Titan Mediathek
+Minversion: 0.1

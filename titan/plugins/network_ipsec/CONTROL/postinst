@@ -1,0 +1,17 @@
+#!/bin/sh
+
+ARCH=$(cat /etc/.arch)
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install strongswan
+	if [ "$ARCH" == "sh4" ];then
+		opkg install kernel-module-aes-generic
+		opkg install kernel-module-sha1-generic
+	fi
+	opkg install iptables
+	opkg install iptables-module-xt-policy
+	opkg install titan-plugin-ipsec --dest $1
+fi
+
+exit 0

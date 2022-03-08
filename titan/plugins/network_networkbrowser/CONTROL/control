@@ -1,0 +1,8 @@
+Package: titan-plugin-network-networkbrowser
+Version: 1.0
+Description: Scan and manage cifs/nfs/ftp shares
+Section: network
+Architecture: armv7
+Titanname: Networkbrowser
+Minversion: 0.1
+Showname: Networkbrowser

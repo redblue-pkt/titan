@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-stopifnotused
+Version: 0.1
+Architecture: armv7
+Section: tools
+Description: Power off if box not used
+Titanname: Stop if not used
+Minversion: 0.1
+Showname: Stop if not used

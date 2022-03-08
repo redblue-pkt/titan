@@ -1,0 +1,9 @@
+Package: titan-plugin-network-ipsec
+Version: 1.033
+Description: IPSEC VPN Client for Fritzbox Router
+Section: network
+Architecture: armv7
+Titanname: IPSEC VPN Client
+Showname: IPSEC VPN Client
+Usepath: mnt,swap
+Minversion: 0.1
