@@ -1,0 +1,8 @@
+Package: titan-plugin-infos-imdbapi
+Version: 0.1
+Architecture: armv7
+Section: infos
+Description: ImdBapi Info Plugin
+Titanname: IMDb-API
+Minversion: 0.1
+Showname: IMDb-API
