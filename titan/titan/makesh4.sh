@@ -113,7 +113,9 @@ echo "[titan]--------------------------------------------------------"
 
 rm -rf "$HOME"/flashimg/$SRCDIR/skin
 mkdir "$HOME"/flashimg/$SRCDIR/skin 
-svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skins_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/$SRCDIR/skin/default
+#svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skins_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/$SRCDIR/skin/default
+cp -a "$HOME"/flashimg/$SRCDIR/skins/default "$HOME"/flashimg/$SRCDIR/skin/default
+
 echo sh4 remove oled stuff
 rm -rf "$HOME"/flashimg/$SRCDIR/skin/default/oled
 rm -f "$HOME"/flashimg/$SRCDIR/skin/default/oledskin.xml
@@ -133,7 +135,8 @@ elif [ "$TYPE1" = "homecastpro-sat" ];then
 elif [ "$TYPE1" = "homecastpro-cable" ];then
     svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_kabelplus_cable_1_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 else
-    svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
+#    svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
+    cp -a "$HOME"/flashimg/$SRCDIR/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 fi
 sort -u "$HOME"/flashimg/$SRCDIR/settings.svn/channel > "$HOME"/flashimg/$SRCDIR/settings.svn/channel.sort
 mv -f "$HOME"/flashimg/$SRCDIR/settings.svn/channel.sort "$HOME"/flashimg/$SRCDIR/settings.svn/channel

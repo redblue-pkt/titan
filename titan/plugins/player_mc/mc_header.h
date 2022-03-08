@@ -31,4 +31,7 @@ char* gethttps(char* url, char* localfile, char* data, char* user, char* pass, c
 // record
 void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* filename);
 
+// player.h
+char* getsubtext();
+
 #endif
