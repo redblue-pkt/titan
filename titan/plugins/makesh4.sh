@@ -170,6 +170,7 @@ compile "games_wins3" "wins3" "" ""
 
 compile "infos_imdb" "imdb" "" "-l curl"
 compile "infos_imdbapi" "imdbapi" "" ""
+compile "infos_mboxinfo" "mboxinfo" "" ""
 compile "infos_stock" "stock" "" ""
 compile "infos_streaminfo" "streaminfo" "" ""
 compile "infos_tinews" "tinews" "" ""
@@ -211,6 +212,5 @@ compile "tools_wlandisplay" "wlandisplay" "" ""
 compile "tools_zapback" "zapback" "" ""
 
 compile "TopfieldVFD" "TopfieldVFD" "" ""
-compile "mboxinfo" "mboxinfo" "" ""
 compile "hbbtv_sh4" "hbbtv" "" ""
 
