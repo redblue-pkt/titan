@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-pearllcd
+Version: 5.0
+Description: Treiber fuer Pearl LCD V5.0
+Section: tools
+Architecture: armv7
+Titanname: LCD Pearl
+Minversion: 0.1
+Showname: LCD Pearl

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install titan-plugin-callmonitor1 --dest $1
+fi
+
+INSTDIR="$1"  
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/callmonitor1"
+
+if [ -e /tmp/callmon.conf ]; then
+	mv "$PLUGINDIR/callmon.conf" "$PLUGINDIR/callmon.conf_org"
+	cp /tmp/callmon.conf "$PLUGINDIR/callmon.conf"
+	rm /tmp/callmon.conf
+fi
+
+exit 0

@@ -1,0 +1,15 @@
+#!/bin/sh
+INSTDIR="$1" 
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/sispmctl"
+
+if [ -e "$PLUGINDIR/sispmctl.conf" ]; then
+	cp "$PLUGINDIR/sispmctl.conf" /tmp/sispmctl.conf 
+	cp "$PLUGINDIR/bin/g1_script.sh" /tmp/g1_script.sh >/dev/null 2>&1
+	cp "$PLUGINDIR/bin/g2_script.sh" /tmp/g2_script.sh >/dev/null 2>&1
+	cp "$PLUGINDIR/bin/g3_script.sh" /tmp/g3_script.sh >/dev/null 2>&1
+	cp "$PLUGINDIR/bin/g4_script.sh" /tmp/g4_script.sh >/dev/null 2>&1
+fi
+
+rm -rf "$PLUGINDIR"
+
+exit 0

@@ -1,0 +1,6 @@
+#!/bin/sh
+INSTDIR="$1"
+
+echo prerm INSTDIR $INSTDIR
+
+exit 0

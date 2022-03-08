@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-scriptexec
+Version: 0.1
+Architecture: armv7
+Section: tools
+Description: scriptexec Plugin
+Titanname: Script execute
+Minversion: 0.1
+Showname: Script execute

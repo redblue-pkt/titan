@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-autotimer
+Version: 1.0
+Architecture: armv7
+Section: tools
+Description: Automatisch Timer setzen
+Titanname: Auto Timer
+Minversion: 0.1
+Showname: Auto Timer

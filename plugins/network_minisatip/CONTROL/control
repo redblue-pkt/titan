@@ -1,0 +1,9 @@
+Package: titan-plugin-network-minisatip
+Version: 1.033
+Description: Mini SAT-IP Streaming Server
+Section: network
+Architecture: armv7
+Titanname: Mini SAT-IP Server
+Showname: Mini SAT-IP Server
+Usepath: mnt,swap
+Minversion: 0.1

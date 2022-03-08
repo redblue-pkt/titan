@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-callmonitor
+Version: 2.0
+Architecture: armv7
+Section: tools
+Description: Callmonitor Plugin
+Titanname: CallMonitor
+Minversion: 0.1
+Showname: CallMonitor

@@ -1,0 +1,8 @@
+Package: titan-plugin-network-facebook
+Version: 1.0
+Description: Social Network Client for Facebook.
+Section: network
+Architecture: armv7
+Titanname: Facebook
+Minversion: 0.1
+Showname: Facebook

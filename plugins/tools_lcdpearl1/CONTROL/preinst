@@ -1,0 +1,7 @@
+#!/bin/sh
+INSTDIR="$1"  
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/lcdpearl1" 
+
+rm -rf "$PLUGINDIR"
+
+exit 0

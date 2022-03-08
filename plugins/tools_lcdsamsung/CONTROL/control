@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-samsunglcd
+Version: 2.0
+Description: Treiber fuer Samsung LCD
+Section: tools
+Architecture: armv7
+Titanname: LCD Samsung SPF..
+Minversion: 0.1
+Showname: LCD Samsung SPF..

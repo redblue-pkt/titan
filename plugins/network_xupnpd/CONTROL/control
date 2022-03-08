@@ -1,0 +1,9 @@
+Package: titan-plugin-network-xupnpd
+Version: 1.033
+Description: xupnpd Medien Server (upnp)
+Section: network
+Architecture: armv7
+Titanname: xupnpd
+Showname: xupnpd
+Minversion: 0.1
+Usepath: mnt

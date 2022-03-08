@@ -1,0 +1,8 @@
+Package: titan-plugin-infos-wm2018
+Version: 1.0
+Architecture: armv7
+Section: infos
+Description: WM2018 Plugin
+Titanname: WM2018
+Showname: WM2018
+Minversion: 0.1

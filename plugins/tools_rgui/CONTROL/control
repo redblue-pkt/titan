@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-rgui
+Version: 0.1
+Architecture: armv7
+Section: tools
+Description: remote Desktop Plugin
+Titanname: RGUI
+Minversion: 0.1
+Showname: RGUI

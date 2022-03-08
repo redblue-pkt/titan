@@ -1,0 +1,11 @@
+#!/bin/sh
+INSTDIR="$1"
+
+echo prerm INSTDIR $INSTDIR
+
+if [ ! -e "$INSTDIR/etc/minidlna.conf.minidlna" ]; then
+	echo "remove tpk minidlna.conf"
+	rm -f "$INSTDIR/etc/minidlna.conf"
+fi
+
+exit 0

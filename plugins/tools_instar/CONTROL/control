@@ -1,0 +1,13 @@
+Package: titan-plugin-tools-ipkamera
+Version: 1.0
+Architecture: armv7
+OE: IPKamera
+Section: tools
+Priority: optional
+Maintainer: AAF
+Homepage: http://www.aaf-digital.info
+Source: GOst4711 by AAF 
+Description: IP-Kamera zB. Firma INSTAR
+Titanname: IP-Kamera
+Minversion: 0.1
+Showname: IP-Kamera

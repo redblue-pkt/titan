@@ -1,0 +1,18 @@
+#!/bin/sh
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install titan-plugin-gmediarender --dest $1
+	opkg install titan-gmediarender
+else
+	INSTDIR="$1"
+	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/gmediarender"
+
+	sed s#_path_#"$INSTDIR"#g -i "$PLUGINDIR/run"
+
+	if [ "/var" != "$INSTDIR" ]; then
+		rm -rf /var/usr/lib/gstreamer-0.10
+		ln -s "$INSTDIR/lib/gstreamer-0.10" /var/usr/lib
+	fi
+fi
+
+exit 0

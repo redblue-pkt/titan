@@ -1,0 +1,14 @@
+Package: titan-plugin-tools-recordcut
+Architecture: armv7
+Showname: Record cut
+Version: 0
+Section: tools
+Description: cut record files
+Group: 0
+Minversion: 0
+Preinstalled: 0
+Size: 7943
+Titanname: Record cut
+Minversion: 0.1
+Usepath: *
+Boxtype: *

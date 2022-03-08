@@ -1,0 +1,38 @@
+#!/bin/sh
+INSTDIR="$1" 
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/sispmctl"
+
+if [ -e /tmp/sispmctl.conf ]; then
+	mv "$PLUGINDIR/sispmctl.conf" "$PLUGINDIR/sispmctl.conf_org"
+	cp /tmp/sispmctl.conf "$PLUGINDIR/sispmctl.conf"
+	rm /tmp/sispmctl.conf >/dev/null 2>&1 
+ 	         
+	mv "$PLUGINDIR/g1_script.sh" "$PLUGINDIR/bin/g1_script.sh_org" >/dev/null 2>&1 
+	mv "$PLUGINDIR/g2_script.sh" "$PLUGINDIR/bin/g2_script.sh_org" >/dev/null 2>&1 
+	mv "$PLUGINDIR/g3_script.sh" "$PLUGINDIR/bin/g3_script.sh_org" >/dev/null 2>&1 
+	mv "$PLUGINDIR/g4_script.sh" "$PLUGINDIR/bin/g4_script.sh_org" >/dev/null 2>&1 
+ 	         
+	cp /tmp/g1_script.sh "$PLUGINDIR/bin/g1_script.sh" >/dev/null 2>&1 
+	cp /tmp/g2_script.sh "$PLUGINDIR/bin/g2_script.sh" >/dev/null 2>&1 
+	cp /tmp/g3_script.sh "$PLUGINDIR/bin/g3_script.sh" >/dev/null 2>&1 
+	cp /tmp/g4_script.sh "$PLUGINDIR/bin/g4_script.sh" >/dev/null 2>&1 
+
+	rm /tmp/isispmctl.conf
+fi
+
+if [ ! -d /mnt/plugin ]; then 
+	mkdir -p /mnt/plugin 
+fi 
+if [ ! -f /mnt/plugin/ps01sispm ]; then 
+	cp "$PLUGINDIR/ps01sispm_dummy" /mnt/plugin/ps01sispm 
+	cp "$PLUGINDIR/pe01sispm_dummy" /mnt/plugin/pe01sispm
+fi
+
+#cp "$PLUGINDIR/lib/libusb-0.1.so.4" "/usr/lib/libusb-0.1.so.4"
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install titan-plugin-sispmctl --dest $1
+fi
+
+exit 0

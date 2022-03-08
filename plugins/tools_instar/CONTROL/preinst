@@ -1,0 +1,11 @@
+#!/bin/sh
+INSTDIR="$1" 
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/instar"
+
+if [ -e "$PLUGINDIR/instar.conf" ]; then
+	cp "$PLUGINDIR/instar.conf" /tmp/instar.conf 
+fi
+
+rm -rf "$PLUGINDIR"
+
+exit 0

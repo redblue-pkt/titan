@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	sed 's/ipsec=.*//g' -i /mnt/config/start-config
+	opkg remove strongswan --force-removal-of-dependent-packages
+	opkg remove kernel-module-aes-generic --force-removal-of-dependent-packages
+	opkg remove kernel-module-sha1-generic --force-removal-of-dependent-packages
+	opkg remove iptables --force-removal-of-dependent-packages
+	opkg remove titan-plugin-ipsec --dest $1
+fi
+
+exit 0

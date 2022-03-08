@@ -1,0 +1,8 @@
+Package: titan-plugin-tools-wlandisplay
+Version: 2.0
+Description: Treiber fuer Wlan Displays
+Section: tools
+Architecture: armv7
+Titanname: Wlan Display
+Minversion: 0.1
+Showname: Wlan Display

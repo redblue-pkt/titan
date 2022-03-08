@@ -1,0 +1,8 @@
+Package: titan-plugin-player-dvdplayer
+Version: 1.0
+Description: DVD-Player plugin
+Section: player
+Architecture: armv7
+Titanname: DVD Player
+Minversion: 0.1
+Showname: DVD Player

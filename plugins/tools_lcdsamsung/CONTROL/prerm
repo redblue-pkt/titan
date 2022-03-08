@@ -1,0 +1,7 @@
+#!/bin/sh
+INSTDIR="$1"  
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/lcdsamsung" 
+
+mv "$PLUGINDIR/skin.xml" /tmp/skin.xml_sam
+
+exit 0
