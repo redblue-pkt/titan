@@ -152,7 +152,7 @@ rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.so"`
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make networkbrowser"
 echo "[titan]--------------------------------------------------------"
-cd networkbrowser/netlib
+cd network_networkbrowser/netlib
 cp Makefile."$STM".sh4 Makefile
 make clean
 make
@@ -165,14 +165,15 @@ echo "[titan]--------------------------------------------------------"
 compile "browser_netsurf" "browser" "" ""
 
 compile "games_catcatch" "catcatch" "" ""
+compile "games_sudoku" "sudoku" "" ""
 compile "games_wins3" "wins3" "" ""
-compile "games_wm2018" "wm2018" "" ""
 
 compile "infos_imdb" "imdb" "" "-l curl"
 compile "infos_imdbapi" "imdbapi" "" ""
 compile "infos_streaminfo" "streaminfo" "" ""
 compile "infos_tinews" "tinews" "" ""
 compile "infos_tmdb" "tmdb" "" ""
+compile "infos_wm2018" "wm2018" "" ""
 
 compile "network_dlna" "dlna" "" ""
 compile "network_facebook" "facebook" "" "-l curl"
