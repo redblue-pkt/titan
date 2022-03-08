@@ -1483,22 +1483,22 @@ inline unsigned long getpixel(int posx, int posy)
 	return skinfb->fblong[(skinfb->width * posy) + posx];
 }
 
-static inline void drawpixelfast(int posx, int posy, unsigned long color)
+inline void drawpixelfast(int posx, int posy, unsigned long color)
 {
 	skinfb->fblong[posy + posx] = color;
 }
 
-static inline void drawpixel(int posx, int posy, unsigned long color)
+inline void drawpixel(int posx, int posy, unsigned long color)
 {
 	skinfb->fblong[(skinfb->width * posy) + posx] = color;
 }
 
-static inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color)
+inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color)
 {
 	node->fblong[posy + posx] = color;
 }
 
-static inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color)
+inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color)
 {
 	node->fblong[(node->width * posy) + posx] = color;
 }
