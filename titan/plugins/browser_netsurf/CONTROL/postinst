@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg update
+	opkg install titan-plugin-browser --dest $1
+	opkg install titan-netsurf
+fi
+
+exit 0

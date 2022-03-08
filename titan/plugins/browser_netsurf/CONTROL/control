@@ -1,0 +1,7 @@
+Package: titan-plugin-browser-netsurf
+Version: 0.1
+Architecture: armv7
+Section: browser
+Description: Webbrowser Plugin
+Minversion: 0.1
+Showname: Webbrowser Netsurf
