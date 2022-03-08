@@ -1,0 +1,8 @@
+Package: titan-plugin-infos-stock
+Version: 1.6
+Architecture: armv7
+Section: infos
+Description: stock Plugin
+Titanname: Stock
+Minversion: 0.1
+Showname: Stock

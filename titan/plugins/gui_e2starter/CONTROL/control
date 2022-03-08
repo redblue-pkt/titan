@@ -1,0 +1,8 @@
+Package: titan-plugin-gui-e2starter
+Version: 0.1
+Architecture: armv7
+Section: gui
+Description: Install and start Enigma2 Gui and enable Dualboot on your System
+Titanname: E2Starter
+Showname: E2Starter
+Minversion: 0.1

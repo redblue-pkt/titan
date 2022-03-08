@@ -1,0 +1,8 @@
+Package: titan-plugin-infos-streaminfo
+Version: 1.6
+Architecture: armv7
+Section: infos
+Description: streaminfo Plugin
+Titanname: Streaminfo
+Minversion: 0.1
+Showname: Streaminfo

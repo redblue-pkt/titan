@@ -1,0 +1,8 @@
+Package: titan-plugin-infos-tmdb
+Version: 0.1
+Architecture: armv7
+Section: infos
+Description: TMDb Movie Database Plugin
+Titanname: TMDb
+Minversion: 0.1
+Showname: TMDb

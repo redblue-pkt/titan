@@ -1,0 +1,8 @@
+Package: titan-plugin-gui-kodistarter
+Version: 0.1
+Architecture: armv7
+Section: gui
+Description: Install and start Kodi Gui and enable Dualboot on your System
+Titanname: KodiStarter
+Showname: KodiStarter
+Minversion: 0.1
