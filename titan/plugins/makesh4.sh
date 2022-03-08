@@ -206,11 +206,11 @@ compile "tools_rgui" "rgui" "" ""
 compile "tools_scriptexec" "scriptexec" "" ""
 compile "tools_stopifnotused" "stopifnotused" "" ""
 compile "tools_tiwakeup" "tiwakeup" "" ""
+compile "tools_TopfieldVFD" "TopfieldVFD" "" ""
 compile "tools_tsSchnitt" "tsSchnitt" "" ""
 compile "tools_usbreset" "usbreset" "" ""
 compile "tools_wlandisplay" "wlandisplay" "" ""
 compile "tools_zapback" "zapback" "" ""
 
-compile "TopfieldVFD" "TopfieldVFD" "" ""
 compile "hbbtv_sh4" "hbbtv" "" ""
 
