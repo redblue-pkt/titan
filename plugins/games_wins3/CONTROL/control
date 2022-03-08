@@ -1,0 +1,8 @@
+Package: titan-plugin-games-wins3
+Version: 0.1
+Architecture: armv7
+Section: games
+Description: first titan game
+Titanname: 3 Wins
+Showname: 3 Wins
+Minversion: 0.1

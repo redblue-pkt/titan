@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	opkg remove titan-plugin-e2starter --dest $1
+	e2.sh remove
+fi
+
+exit 0

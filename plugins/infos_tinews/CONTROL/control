@@ -1,0 +1,8 @@
+Package: titan-plugin-infos-tinews
+Version: 1.6
+Architecture: armv7
+Section: infos
+Description: news Plugin
+Titanname: News
+Minversion: 0.1
+Showname: News
