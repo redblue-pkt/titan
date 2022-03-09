@@ -89,4 +89,6 @@ AC_OUTPUT([
     tools_usbreset/Makefile
     tools_wlandisplay/Makefile
     tools_zapback/Makefile
+
+    infos/imdb/Makefile
 ])

@@ -10,6 +10,7 @@ SUBDIRS = \
     gui_e2starter \
     gui_kodistarter \
     \
+    infos \
     infos_imdb \
     infos_imdbapi \
     infos_mboxinfo \
