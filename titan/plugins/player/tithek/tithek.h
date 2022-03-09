@@ -637,7 +637,10 @@ void tithekdownloadthread(struct stimerthread* timernode, struct download* node,
 			{
 				m_lock(&status.tithekmutex, 20);
 				unlink(node->filename);
-				symlink("/var/usr/local/share/titan/plugins/tithek/default.jpg", node->filename);
+                char* defaultpic = NULL;
+                defaultpic = createpluginpath("/tithek/default.jpg", 0);
+				symlink(defaultpic, node->filename);
+                free(defaultpic), defaultpic = NULL;
 				m_unlock(&status.tithekmutex, 20);
 			}
 		}
