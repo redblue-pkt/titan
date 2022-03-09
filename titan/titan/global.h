@@ -163,8 +163,60 @@ char* createpluginpath(char* text, int flag)
 
 	if(flag == 0)
 	{
-	  tmpstr = ostrcat(getconfig("pluginpath", NULL), text, 0, 0);
-	  if(file_exist(tmpstr) == 1) return tmpstr;
+
+
+
+/////////////////
+	struct dirent **filelist;
+
+	int count = 0;
+	char *pluginpath = NULL;
+	char *tmpstr = NULL;
+	char *tmppath = NULL;
+
+	//pluginpath
+	tmppath = getconfig("pluginpath", NULL);
+
+	if(tmppath == NULL)
+		return NULL;
+
+	count = scandir(tmppath, &filelist, 0, 0);
+	if(count < 0)
+	{
+		perr("scandir1");
+		return NULL;
+	}
+
+	while(count--)
+	{
+		//check if link is a dir
+		if(filelist[count]->d_type == DT_LNK || filelist[count]->d_type == DT_UNKNOWN)
+		{
+			tmpstr = createpath(tmppath, filelist[count]->d_name);
+			if(isdir(tmpstr) == 1)
+				filelist[count]->d_type = DT_DIR;
+
+			free(tmpstr); tmpstr = NULL;
+		}
+
+		if(filelist[count]->d_type == DT_DIR && ostrcmp(filelist[count]->d_name, ".") != 0 && ostrcmp(filelist[count]->d_name, "..") != 0)
+		{
+			tmppath = createpath(tmppath, filelist[count]->d_name);
+            tmpstr = ostrcat(tmppath, text, 0, 0);
+//printf("tmpstr: %s\n", tmpstr);
+            if(file_exist(tmpstr) == 1)
+            {
+                printf("file exist tmpstr: %s\n", tmpstr);
+                return tmpstr;
+            }
+		}
+		free(filelist[count]);
+	}
+	free(filelist);
+
+/////////////
+//	  tmpstr = ostrcat(getconfig("pluginpath", NULL), text, 0, 0);
+//	  if(file_exist(tmpstr) == 1) return tmpstr;
 
 	  free(tmpstr); tmpstr = NULL;
 	  tmpstr = ostrcat(getconfig("pluginpath1", NULL), text, 0, 0);
@@ -178,8 +230,58 @@ char* createpluginpath(char* text, int flag)
 	{
 		if(strlen(text) < 13) return NULL;
 
-		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[12], 0, 0);
-		if(file_exist(tmpstr) == 1) return tmpstr;
+/////////////////
+	struct dirent **filelist;
+
+	int count = 0;
+	char *pluginpath = NULL;
+	char *tmpstr = NULL;
+	char *tmppath = NULL;
+
+	//pluginpath
+	tmppath = getconfig("pluginpath", NULL);
+
+	if(tmppath == NULL)
+		return NULL;
+
+	count = scandir(tmppath, &filelist, 0, 0);
+	if(count < 0)
+	{
+		perr("scandir1");
+		return NULL;
+	}
+
+	while(count--)
+	{
+		//check if link is a dir
+		if(filelist[count]->d_type == DT_LNK || filelist[count]->d_type == DT_UNKNOWN)
+		{
+			tmpstr = createpath(tmppath, filelist[count]->d_name);
+			if(isdir(tmpstr) == 1)
+				filelist[count]->d_type = DT_DIR;
+
+			free(tmpstr); tmpstr = NULL;
+		}
+
+		if(filelist[count]->d_type == DT_DIR && ostrcmp(filelist[count]->d_name, ".") != 0 && ostrcmp(filelist[count]->d_name, "..") != 0)
+		{
+			tmppath = createpath(tmppath, filelist[count]->d_name);
+            tmpstr = ostrcat(tmppath, &text[12], 0, 0);
+//printf("tmpstr2: %s\n", tmpstr);
+            if(file_exist(tmpstr) == 1)
+            {
+                printf("file exist tmpstr2: %s\n", tmpstr);
+                return tmpstr;
+            }
+		}
+		free(filelist[count]);
+	}
+	free(filelist);
+
+/////////////
+
+//		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[12], 0, 0);
+//		if(file_exist(tmpstr) == 1) return tmpstr;
 
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat(getconfig("pluginpath1", NULL), &text[12], 0, 0);
