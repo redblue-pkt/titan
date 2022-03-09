@@ -226,16 +226,10 @@ int loadplugin()
 
 	//pluginpath
 	subdir = getconfig("pluginpath", NULL);
-
-	if(subdir == NULL)
-		return 1;
+	if(subdir == NULL) return 1;
 
 	count = scandir(subdir, &filelist, 0, 0);
-	if(count < 0)
-	{
-		perr("scandir1");
-		return 1;
-	}
+	if(count < 0) return 1;
 
 	while(count--)
 	{
@@ -243,9 +237,8 @@ int loadplugin()
 		if(filelist[count]->d_type == DT_LNK || filelist[count]->d_type == DT_UNKNOWN)
 		{
 			tmpstr = createpath(subdir, filelist[count]->d_name);
-			if(isdir(tmpstr) == 1)
-				filelist[count]->d_type = DT_DIR;
 
+			if(isdir(tmpstr) == 1) filelist[count]->d_type = DT_DIR;
 			free(tmpstr); tmpstr = NULL;
 		}
 
@@ -254,29 +247,22 @@ int loadplugin()
 			tmppath = createpath(subdir, filelist[count]->d_name);
 
 	        count2 = scandir(tmppath, &filelist2, 0, 0);
-	        if(count2 < 0)
-	        {
-		        perr("scandir1a");
-		        return 0;
-	        }
+	        if(count2 < 0) return 0;
 
 	        while(count2--)
 	        {
 		        //check if link is a dir
 		        if(filelist2[count2]->d_type == DT_LNK || filelist2[count2]->d_type == DT_UNKNOWN)
 		        {
-
 			        tmpstr = createpath(tmppath, filelist2[count2]->d_name);
-			        if(isdir(tmpstr) == 1)
-				        filelist2[count2]->d_type = DT_DIR;
 
+			        if(isdir(tmpstr) == 1) filelist2[count2]->d_type = DT_DIR;
 			        free(tmpstr); tmpstr = NULL;
 		        }
 
 		        if(filelist2[count2]->d_type == DT_DIR && ostrcmp(filelist2[count2]->d_name, ".") != 0 && ostrcmp(filelist2[count2]->d_name, "..") != 0)
 		        {
 			        pluginpath = createpath(tmppath, filelist2[count2]->d_name);
-printf("pluginpath: %s\n",pluginpath);
 			        readplugin(pluginpath);
 			        free(pluginpath); pluginpath = NULL;
 		        }
@@ -290,16 +276,10 @@ printf("pluginpath: %s\n",pluginpath);
 
 	//pluginpath1
 	subdir = getconfig("pluginpath1", NULL);
-
-	if(subdir == NULL)
-		return 1;
+	if(subdir == NULL) return 1;
 
 	count = scandir(subdir, &filelist, 0, 0);
-	if(count < 0)
-	{
-		perr("scandir2");
-		return 1;
-	}
+	if(count < 0) return 1;
 
 	while(count--)
 	{
@@ -307,9 +287,8 @@ printf("pluginpath: %s\n",pluginpath);
 		if(filelist[count]->d_type == DT_LNK || filelist[count]->d_type == DT_UNKNOWN)
 		{
 			tmpstr = createpath(subdir, filelist[count]->d_name);
-			if(isdir(tmpstr) == 1)
-				filelist[count]->d_type = DT_DIR;
 
+			if(isdir(tmpstr) == 1) filelist[count]->d_type = DT_DIR;
 			free(tmpstr); tmpstr = NULL;
 		}
 
@@ -318,30 +297,22 @@ printf("pluginpath: %s\n",pluginpath);
 			tmppath = createpath(subdir, filelist[count]->d_name);
 
 	        count2 = scandir(tmppath, &filelist2, 0, 0);
-	        if(count2 < 0)
-	        {
-		        perr("scandir2a");
-		        return 0;
-	        }
+	        if(count2 < 0) return 0;
 
 	        while(count2--)
 	        {
 		        //check if link is a dir
 		        if(filelist2[count2]->d_type == DT_LNK || filelist2[count2]->d_type == DT_UNKNOWN)
 		        {
-
 			        tmpstr = createpath(tmppath, filelist2[count2]->d_name);
-			        if(isdir(tmpstr) == 1)
-				        filelist2[count2]->d_type = DT_DIR;
 
+			        if(isdir(tmpstr) == 1) filelist2[count2]->d_type = DT_DIR;
 			        free(tmpstr); tmpstr = NULL;
 		        }
 
 		        if(filelist2[count2]->d_type == DT_DIR && ostrcmp(filelist2[count2]->d_name, ".") != 0 && ostrcmp(filelist2[count2]->d_name, "..") != 0)
 		        {
 			        pluginpath = createpath(tmppath, filelist2[count2]->d_name);
-printf("pluginpath1: %s\n",pluginpath);
-
 			        readplugin(pluginpath);
 			        free(pluginpath); pluginpath = NULL;
 		        }
@@ -355,16 +326,10 @@ printf("pluginpath1: %s\n",pluginpath);
 
 	//pluginpath2
 	subdir = getconfig("pluginpath2", NULL);
-
-	if(subdir == NULL)
-		return 1;
+	if(subdir == NULL) return 1;
 
 	count = scandir(subdir, &filelist, 0, 0);
-	if(count < 0)
-	{
-		perr("scandir3");
-		return 1;
-	}
+	if(count < 0) return 1;
 
 	while(count--)
 	{
@@ -372,41 +337,31 @@ printf("pluginpath1: %s\n",pluginpath);
 		if(filelist[count]->d_type == DT_LNK || filelist[count]->d_type == DT_UNKNOWN)
 		{
 			tmpstr = createpath(subdir, filelist[count]->d_name);
-			if(isdir(tmpstr) == 1)
-				filelist[count]->d_type = DT_DIR;
 
+			if(isdir(tmpstr) == 1) filelist[count]->d_type = DT_DIR;
 			free(tmpstr); tmpstr = NULL;
 		}
 
 		if(filelist[count]->d_type == DT_DIR && ostrcmp(filelist[count]->d_name, ".") != 0 && ostrcmp(filelist[count]->d_name, "..") != 0)
 		{
 			tmppath = createpath(subdir, filelist[count]->d_name);
-
 	        count2 = scandir(tmppath, &filelist2, 0, 0);
-	        if(count2 < 0)
-	        {
-		        perr("scandir3a");
-		        return 0;
-	        }
+	        if(count2 < 0) return 0;
 
 	        while(count2--)
 	        {
 		        //check if link is a dir
 		        if(filelist2[count2]->d_type == DT_LNK || filelist2[count2]->d_type == DT_UNKNOWN)
 		        {
-
 			        tmpstr = createpath(tmppath, filelist2[count2]->d_name);
-			        if(isdir(tmpstr) == 1)
-				        filelist2[count2]->d_type = DT_DIR;
 
+			        if(isdir(tmpstr) == 1) filelist2[count2]->d_type = DT_DIR;
 			        free(tmpstr); tmpstr = NULL;
 		        }
 
 		        if(filelist2[count2]->d_type == DT_DIR && ostrcmp(filelist2[count2]->d_name, ".") != 0 && ostrcmp(filelist2[count2]->d_name, "..") != 0)
 		        {
 			        pluginpath = createpath(tmppath, filelist2[count2]->d_name);
-printf("pluginpath2: %s\n",pluginpath);
-
 			        readplugin(pluginpath);
 			        free(pluginpath); pluginpath = NULL;
 		        }
