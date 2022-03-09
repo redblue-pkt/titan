@@ -1,6 +1,5 @@
 SUBDIRS = \
     autotimer \
-    betarobot \
     callmonitor1 \
     filemanager \
     hello \
