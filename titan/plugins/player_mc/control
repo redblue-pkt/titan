@@ -1,7 +1,0 @@
-Package: titan-plugin-player-mediacenter
-Version: 1.0
-Description: AAF MediaCenter, the best multimedia player on armv7
-Section: player
-Architecture: armv7
-Showname: MediaCenter
-Minversion: 0.1
