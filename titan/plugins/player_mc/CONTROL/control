@@ -1,0 +1,7 @@
+Package: titan-plugin-player-mediacenter
+Version: 1.0
+Description: AAF MediaCenter, the best multimedia player on mipsel
+Section: player
+Architecture: mipsel
+Showname: MediaCenter
+Minversion: 0.1
