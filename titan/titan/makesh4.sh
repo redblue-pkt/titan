@@ -146,7 +146,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] get settings done"
 echo "[titan]--------------------------------------------------------"
 
-cp -a "$HOME"/flashimg/$SRCDIR/skins/[^.]* "$HOME"/flashimg/$SRCDIR/plugins
+#cp -a "$HOME"/flashimg/$SRCDIR/skins/[^.]* "$HOME"/flashimg/$SRCDIR/plugins
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup"
@@ -447,40 +447,40 @@ rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual.*.h
 #cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index."$TYPE".html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index.html
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index.*.html
 
-cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgMusic."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgMusic.*.mvi
-cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgBrowser."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.*.mvi
-cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgPicture."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgPicture.*.mvi
-cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgVideo."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgVideo.*.mvi
-cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.*.mvi
-cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.mvi
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.*.mvi
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgDVD.*
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgRadio.*
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgRSS.*
-#rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.*
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgVLC.*
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.*
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic.mvi
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic.*.mvi
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgBrowser."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgBrowser.mvi
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgBrowser.*.mvi
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgPicture."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgPicture.mvi
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgPicture.*.mvi
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgVideo."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgVideo.mvi
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgVideo.*.mvi
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgSettings."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgSettings.mvi
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgSettings.*.mvi
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgWeather."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgWeather.mvi
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgWeather.*.mvi
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgDVD.*
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgRadio.*
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgRSS.*
+#rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgSettings.*
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgVLC.*
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgWeather.*
 
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/black.mvi
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/black.mvi
 
 #if [ "$TYPE" == "ufs910" ] || [ "$TYPE" == "ufs922" ];then
-#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgMusic.*
-#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.*
-#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgPicture.*
-#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.*
-#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.*
+#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic.*
+#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgBrowser.*
+#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgPicture.*
+#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgSettings.*
+#   rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgWeather.*
 #
-#   cd "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/
-#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi
-#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi
-#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi
-#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi
-#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.mvi
+#   cd "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/
+#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic.mvi
+#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgBrowser.mvi
+#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgPicture.mvi
+#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgSettings.mvi
+#   ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgWeather.mvi
 #   cd "$HOME"/flashimg/$SRCDIR/titan
 #fi
 
@@ -655,9 +655,9 @@ rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.Tpo"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "make.sh"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "Makefile.am"`
 
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/networkbrowser/netlib
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/menu
-rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/tithekmainmenu
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/network/networkbrowser/netlib
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/tithek/menu
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/tithek/tithekmainmenu
 
 cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan."$TYPE".cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan.cfg
 cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan."$TYPE1".cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan.cfg
