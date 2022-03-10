@@ -85,6 +85,7 @@ fi
     -I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/driver/bpamem
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/apps/tools/libmme_image
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/build_tmp/linux-sh4-2.6.32.71_stm24_0217/include
+	-I "$HOME"/flashimg/$SRCDIR/titan
     -I "$HOME"/flashimg/$SRCDIR"
 #else
 #	eplayerinclude="$eplayerinclude
@@ -138,7 +139,7 @@ compile()
 
 	$HOME/flashimg/BUILDGIT/checkout_$STM/tufsbox/cross/bin/sh4-linux-strip lib$2.so
 
-	cd ..
+cd "$HOME"/flashimg/$SRCDIR/plugins
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Plugin $1 done"
 	echo "[titan]--------------------------------------------------------"
@@ -152,7 +153,7 @@ rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.so"`
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make networkbrowser"
 echo "[titan]--------------------------------------------------------"
-cd network_networkbrowser/netlib
+cd network/networkbrowser/netlib
 cp Makefile."$STM".sh4 Makefile
 make clean
 make
@@ -162,55 +163,54 @@ echo "[titan] networkbrowser done"
 echo "[titan]--------------------------------------------------------"
 
 #dir, file, extralib
-compile "browser_netsurf" "browser" "" ""
+compile "browser/netsurf" "browser" "" ""
 
-compile "games_catcatch" "catcatch" "" ""
-compile "games_sudoku" "sudoku" "" ""
-compile "games_wins3" "wins3" "" ""
+compile "games/catcatch" "catcatch" "" ""
+compile "games/sudoku" "sudoku" "" ""
+compile "games/wins3" "wins3" "" ""
 
-compile "infos_imdb" "imdb" "" "-l curl"
-compile "infos_imdbapi" "imdbapi" "" ""
-compile "infos_mboxinfo" "mboxinfo" "" ""
-compile "infos_stock" "stock" "" ""
-compile "infos_streaminfo" "streaminfo" "" ""
-compile "infos_tinews" "tinews" "" ""
-compile "infos_tmdb" "tmdb" "" ""
-compile "infos_weather" "weather" "" ""
-compile "infos_wm2018" "wm2018" "" ""
+compile "infos/imdb" "imdb" "" "-l curl"
+compile "infos/imdbapi" "imdbapi" "" ""
+compile "infos/mboxinfo" "mboxinfo" "" ""
+compile "infos/stock" "stock" "" ""
+compile "infos/streaminfo" "streaminfo" "" ""
+compile "infos/tinews" "tinews" "" ""
+compile "infos/tmdb" "tmdb" "" ""
+compile "infos/weather" "weather" "" ""
+compile "infos/wm2018" "wm2018" "" ""
 
-compile "network_dlna" "dlna" "" ""
-compile "network_facebook" "facebook" "" "-l curl"
-compile "network_networkbrowser" "networkbrowser" "netlib/netlib" ""
-compile "network_xupnpd" "xupnpd" "" ""
+compile "network/dlna" "dlna" "" ""
+compile "network/facebook" "facebook" "" "-l curl"
+compile "network/networkbrowser" "networkbrowser" "netlib/netlib" ""
+compile "network/xupnpd" "xupnpd" "" ""
 
-compile "player_dvdplayer" "dvdplay" "" ""
-compile "player_gmediarender" "gmediarender" "" ""
-compile "player_mc" "mc" "" "-l curl"
-compile "player_tithek" "tithek" "" "-l curl"
-compile "player_tmc" "tmc" "" ""
+compile "player/dvdplayer" "dvdplay" "" ""
+compile "player/gmediarender" "gmediarender" "" ""
+compile "player/hbbtv_sh4" "hbbtv" "" ""
+compile "player/mc" "mc" "" "-l curl"
+compile "player/tithek" "tithek" "" "-l curl"
+compile "player/tmc" "tmc" "" ""
 
-compile "tools_autotimer" "autotimer" "" ""
-compile "tools_callmonitor1" "callmonitor1" "" ""
-compile "tools_filemanager" "filemanager" "" ""
-compile "tools_hello" "hello" "" ""
-compile "tools_instar" "instar" "" ""
-compile "tools_keylock" "keylock" "" ""
-compile "tools_kravencfg" "kravencfg" "" ""
-compile "tools_lcdpearl1" "lcdpearl1" "" ""
-compile "tools_lcdsamsung" "lcdsamsung" "" ""
-compile "tools_optimize" "optimize" "" ""
-compile "tools_panel" "panel" "" ""
-compile "tools_permtime" "permtime" "" ""
-compile "tools_readerconfig" "readerconfig" "" ""
-compile "tools_rgui" "rgui" "" ""
-compile "tools_scriptexec" "scriptexec" "" ""
-compile "tools_stopifnotused" "stopifnotused" "" ""
-compile "tools_tiwakeup" "tiwakeup" "" ""
-compile "tools_TopfieldVFD" "TopfieldVFD" "" ""
-compile "tools_tsSchnitt" "tsSchnitt" "" ""
-compile "tools_usbreset" "usbreset" "" ""
-compile "tools_wlandisplay" "wlandisplay" "" ""
-compile "tools_zapback" "zapback" "" ""
-
-compile "hbbtv_sh4" "hbbtv" "" ""
+compile "tools/autotimer" "autotimer" "" ""
+compile "tools/callmonitor1" "callmonitor1" "" ""
+compile "tools/filemanager" "filemanager" "" ""
+compile "tools/hello" "hello" "" ""
+compile "tools/instar" "instar" "" ""
+compile "tools/keylock" "keylock" "" ""
+compile "tools/kravencfg" "kravencfg" "" ""
+compile "tools/lcdpearl1" "lcdpearl1" "" ""
+compile "tools/lcdsamsung" "lcdsamsung" "" ""
+compile "tools/optimize" "optimize" "" ""
+compile "tools/panel" "panel" "" ""
+compile "tools/permtime" "permtime" "" ""
+compile "tools/readerconfig" "readerconfig" "" ""
+compile "tools/rgui" "rgui" "" ""
+compile "tools/scriptexec" "scriptexec" "" ""
+compile "tools/stopifnotused" "stopifnotused" "" ""
+compile "tools/tiwakeup" "tiwakeup" "" ""
+compile "tools/TopfieldVFD" "TopfieldVFD" "" ""
+compile "tools/tsSchnitt" "tsSchnitt" "" ""
+compile "tools/usbreset" "usbreset" "" ""
+compile "tools/wlandisplay" "wlandisplay" "" ""
+compile "tools/zapback" "zapback" "" ""
 
