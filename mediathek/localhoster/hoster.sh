@@ -53,11 +53,11 @@ curlbin="$CURLBIN $PROXY -k -s -L --connect-timeout 5 --cookie /mnt/network/cook
 curlbin2="$CURLBIN $PROXY -k -s --connect-timeout 5 --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 
 if [ -e /etc/.oebuild ];then
-	youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
-	youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+	youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format ytsearch:mp4 --restrict-filenames --ignore-errors -g"
+	youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format ytsearch:mp4 --restrict-filenames --ignore-errors --output"
 else
-	youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
-	youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+	youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format ytsearch:mp4 --restrict-filenames --ignore-errors -g"
+	youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format ytsearch:mp4 --restrict-filenames --ignore-errors --output"
 fi
 
 hlsdlbg="$HLSBIN -u $USERAGENT -o"
