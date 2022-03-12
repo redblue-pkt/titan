@@ -653,8 +653,7 @@ rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.a"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.la"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.lo"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.Tpo"`
-rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "make.sh"`
-rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "Makefile.am"`
+rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "make*"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "Makefile*"`
 
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/network/networkbrowser/netlib
