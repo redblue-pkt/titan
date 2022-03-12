@@ -213,7 +213,7 @@ int readplugin(char *dir)
 
 int loadplugin()
 {
-#if defined(OVBUILD) || defined (OEBUILD)
+//#if defined(OVBUILD) || defined (OEBUILD)
 	struct dirent **filelist;
 	struct dirent **filelist2;
 
@@ -372,6 +372,7 @@ int loadplugin()
 		free(filelist[count]);
 	}
 	free(filelist);
+/*
 #else
 	struct dirent **filelist;
 	int count = 0;
@@ -484,6 +485,7 @@ int loadplugin()
 	}
 	free(filelist);	
 #endif
+*/
 	return 0;
 }
 
