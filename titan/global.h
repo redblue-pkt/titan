@@ -163,7 +163,7 @@ char* createpluginpath(char* text, int flag)
 
 	if(flag == 0)
 	{
-#if defined(OVBUILD) || defined (OEBUILD)
+//#if defined(OVBUILD) || defined (OEBUILD)
 	struct dirent **filelist;
 
 	int count = 0;
@@ -275,23 +275,23 @@ char* createpluginpath(char* text, int flag)
 		free(filelist[count]);
 	}
 	free(filelist);
-#else
-    tmpstr = ostrcat(getconfig("pluginpath", NULL), text, 0, 0);
-    if(file_exist(tmpstr) == 1) return tmpstr;
-
-    free(tmpstr); tmpstr = NULL;
-    tmpstr = ostrcat(getconfig("pluginpath1", NULL), text, 0, 0);
-    if(file_exist(tmpstr) == 1) return tmpstr;
-
-    free(tmpstr); tmpstr = NULL;
-    tmpstr = ostrcat(getconfig("pluginpath2", NULL), text, 0, 0);
-    if(file_exist(tmpstr) == 1) return tmpstr;
-#endif
+//#else
+//    tmpstr = ostrcat(getconfig("pluginpath", NULL), text, 0, 0);
+//    if(file_exist(tmpstr) == 1) return tmpstr;
+//
+//    free(tmpstr); tmpstr = NULL;
+//    tmpstr = ostrcat(getconfig("pluginpath1", NULL), text, 0, 0);
+//    if(file_exist(tmpstr) == 1) return tmpstr;
+//
+//    free(tmpstr); tmpstr = NULL;
+//    tmpstr = ostrcat(getconfig("pluginpath2", NULL), text, 0, 0);
+//    if(file_exist(tmpstr) == 1) return tmpstr;
+//#endif
 	}
 	else
 	{
 		if(strlen(text) < 13) return NULL;
-#if defined(OVBUILD) || defined (OEBUILD)
+//#if defined(OVBUILD) || defined (OEBUILD)
 	    struct dirent **filelist;
 
 	    int count = 0;
@@ -403,18 +403,18 @@ char* createpluginpath(char* text, int flag)
 		    free(filelist[count]);
 	    }
 	    free(filelist);
-#else
-		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[12], 0, 0);
-		if(file_exist(tmpstr) == 1) return tmpstr;
-
-		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat(getconfig("pluginpath1", NULL), &text[12], 0, 0);
-		if(file_exist(tmpstr) == 1) return tmpstr;
-
-		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat(getconfig("pluginpath2", NULL), &text[12], 0, 0);
-		if(file_exist(tmpstr) == 1) return tmpstr;
-#endif
+//#else
+//		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[12], 0, 0);
+//		if(file_exist(tmpstr) == 1) return tmpstr;
+//
+//		free(tmpstr); tmpstr = NULL;
+//		tmpstr = ostrcat(getconfig("pluginpath1", NULL), &text[12], 0, 0);
+//		if(file_exist(tmpstr) == 1) return tmpstr;
+//
+//		free(tmpstr); tmpstr = NULL;
+//		tmpstr = ostrcat(getconfig("pluginpath2", NULL), &text[12], 0, 0);
+//		if(file_exist(tmpstr) == 1) return tmpstr;
+//#endif
 	}
 
 	free(tmpstr); tmpstr = NULL;
