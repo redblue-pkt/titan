@@ -19,7 +19,7 @@ SUBDIRS = \
     stopifnotused \
     tiwakeup \
     TopfieldVFD \
-    tsSchnitt \
+    tsschnitt \
     usbreset \
     wlandisplay \
     zapback
