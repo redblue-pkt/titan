@@ -92,7 +92,7 @@ AC_OUTPUT([
     tools/stopifnotused/Makefile
     tools/tiwakeup/Makefile
     tools/TopfieldVFD/Makefile
-    tools/tsSchnitt/Makefile
+    tools/tsschnitt/Makefile
     tools/usbreset/Makefile
     tools/wlandisplay/Makefile
     tools/zapback/Makefile
