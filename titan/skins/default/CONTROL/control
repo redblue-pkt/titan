@@ -1,0 +1,6 @@
+Package: titan-plugin-skins-default
+Version: 1.0
+Description: Default Skin
+Section: skins
+Architecture: all
+Showname: Skin Default

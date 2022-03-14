@@ -1,0 +1,7 @@
+#!/bin/sh
+INSTDIR="$1"
+
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/cool/skinconfig"
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/cool/skinconfig.default"
+
+exit 0

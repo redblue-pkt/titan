@@ -1,0 +1,10 @@
+#!/bin/sh
+INSTDIR="$1"
+
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/ufs912/skinconfig"
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/ufs912/skinconfig.default"
+
+# special for ufs912 skin
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/ufs912/skinconfig.listbox_white"
+
+exit 0
