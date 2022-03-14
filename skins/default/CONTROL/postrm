@@ -1,0 +1,13 @@
+#!/bin/sh
+INSTDIR="$1"
+
+if [ "$INSTDIR" == "/var" ]; then
+	rm -rf "$INSTDIR/usr/local/share/titan/skin/default"
+
+	echo "restore default skin"
+	ln -s /lib/titan/default "$INSTDIR/usr/local/share/titan/skin/default"
+	rm -rf "$INSTDIR/etc/titan/skinconfig"
+	cp -a /lib/titan/default/skinconfig.default "$INSTDIR/etc/titan/skinconfig"
+fi
+
+exit 0

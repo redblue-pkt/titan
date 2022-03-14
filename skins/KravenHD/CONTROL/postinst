@@ -1,0 +1,9 @@
+#!/bin/sh
+INSTDIR="$1"
+
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/KravenHD/skinconfig"
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/KravenHD/skinconfig.default"
+
+ln -snf /var/usr/local/share/titan/skin/default/skin $INSTDIR/usr/local/share/titan/skin/KravenHD/skin
+
+exit 0

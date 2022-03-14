@@ -1,0 +1,7 @@
+#!/bin/sh
+INSTDIR="$1"
+
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/Atemio/skinconfig"
+sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/Atemio/skinconfig.default"
+
+exit 0

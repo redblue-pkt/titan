@@ -1,0 +1,8 @@
+#!/bin/sh
+INSTDIR="$1"
+
+if [ "$INSTDIR" == "/var" ]; then
+	rm -rf "$INSTDIR/usr/local/share/titan/skin/default"
+fi
+
+exit 0
