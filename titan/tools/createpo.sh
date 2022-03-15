@@ -62,7 +62,7 @@ done
 cat "$HOME"/ipk/source*/*/CONTROL/control | sed 's/\x0D$//' | grep Section: | sort -u | sed 's!Section: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_section.h
 cat "$HOME"/ipk/source*/*/CONTROL/control | sed 's/\x0D$//' | grep Showname: | sort -u | sed 's!Showname: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_showname.h
 cat "$HOME"/ipk/source*/*/CONTROL/control | sed 's/\x0D$//' | grep Description: | sort -u | sed 's!Description: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_description.h
-cat "$HOME"/flashimg/$SRCDIR/skins/tithek/tithekmainmenu/*.list | sed 's/\x0D$//' | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e '/^\s*$/d' | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_mainmenu.h
+cat "$HOME"/flashimg/$SRCDIR/mediathek/tithekmainmenu/*.list | sed 's/\x0D$//' | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e '/^\s*$/d' | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_mainmenu.h
 #cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_submenu.h
 ls "$HOME"/flashimg/$SRCDIR/help/de/ | sed 's/.txt/");/g' | sed 's/^/tmpstr = _("/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_help.h
 
