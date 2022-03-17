@@ -1,6 +1,10 @@
 #ifndef OIPKG_H
 #define OIPKG_H
 
+#define IPKGFEEDFILE "/etc/ipkg/official-feed.conf"
+#define IPKGTMP "/tmp/ipkg"
+//#define IPKGTMP "/tmp/preview"
+
 struct ipkg
 {
 	char* name;
@@ -494,11 +498,15 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	struct ipkg* node = ipkg, *ipkg_installed = NULL, *node_installed = NULL;
 	struct menulist* tmpmlist = NULL;
 	char* tmpstr = NULL, *tmpinfo = NULL, *tmppic = NULL;
-	
+
+printf("aaaa\n");
+
 	if(node == NULL) return NULL;
 	
 	if(flag == 1)
 	{
+printf("bbbb\n");
+
 		ipkg = NULL;
 		ipkg_list_installed();
 		ipkg_installed = ipkg;
@@ -507,13 +515,23 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	
 	while(node != NULL)
 	{
+printf("cccc node->section %s\n", node->section);
+printf("cccc node->showname %s\n", node->showname);
+printf("cccc node->name %s\n", node->name);
+
 		if(flag == 0 || flag == 2)
 		{
+printf("dddd\n");
+
 			if(flag == 0)
 			{
+printf("eeee\n");
+
 				//check if section have seen
 				if(findsectiondoneipk(node->section) == 1)
 				{
+printf("ffff\n");
+
 					node = node->next;
 					continue;
 				}
@@ -523,12 +541,16 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		
 			if(flag == 0)
 			{
+printf("gggg\n");
+
 				node->done = 1;
 				addmenulist(&mlist, node->section, NULL, tmppic, 0, 0);
 			}
 			
 			if(flag == 2)
 			{
+printf("hhhh\n");
+
 				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
 				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
@@ -538,44 +560,65 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			
 			free(tmppic); tmppic = NULL;
 		}
-		
+printf("iiii\n");
+
 		if(flag == 1)
 		{
-			//check if ipkg is installed
+printf("jjjj\n");
+
+			//check if tpk is installed
 			node_installed = ipkg_installed;
 			skip = 0;
 			while(node_installed != NULL)
 			{
+printf("kkkk\n");
+
 				if(ostrcmp(node->section, node_installed->section) == 0 && ostrcmp(node->showname, node_installed->showname) == 0)
 				{
+printf("llll\n");
+
 					skip = 1;
 					break;
 				}
 				node_installed = node_installed->next;
 			}
-			
-			//check if ipkg is in section
-			if(section != NULL && ostrcmp(node->section, section) != 0)
-				skip = 1;
 
-			if(skip == 1)
+			//check if tpk is in section
+			if(section != NULL && ostrcmp(node->section, section) != 0)
+				skip = 2;
+
+			if(skip == 2)
 			{
+printf("mmmm\n");
+
 				node = node->next;
 				continue;
 			}
+
+			if(skip == 1)
+			{
+printf("nnnn\n");
+
+				tmpstr = ostrcat(tmpstr, "(", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("installed"), 1, 0);
+				tmpstr = ostrcat(tmpstr, ") ", 1, 0);
+			}
 			
-			tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
+			tmpstr = ostrcat(tmpstr, _(node->showname), 1, 0);
 			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
 			tmpstr = ostrcat(tmpstr, node->version, 1, 0);
 
-			tmpinfo = ostrcat(tmpinfo, "\nSection: ", 1, 0);
-			tmpinfo = ostrcat(tmpinfo, node->section, 1, 0);
-			tmpinfo = ostrcat(tmpinfo, "\nDescription:\n", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, "\n", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("Section: "), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _(node->section), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, "\n", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("Description:"), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, "\n", 1, 0);
 			if(node->desc != NULL)
-				tmpinfo = ostrcat(tmpinfo, node->desc, 1, 0);
+				tmpinfo = ostrcat(tmpinfo, _(node->desc), 1, 0);
 			else
 				tmpinfo = ostrcat(tmpinfo, _("no description found"), 1, 0);
-			
+/*			
 			tmppic = ostrcat(tmppic, node->showname, 1, 0);
 			if(tmppic != NULL)
 			{
@@ -584,8 +627,76 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmppic = ostrcat("titan-pluginpreview-", tmppic, 0, 1);
 				tmppic = ostrcat(tmppic, ".png", 1, 0);
 			}
+*/
+/////////////////
 
-			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
+			tmppic = ostrcat(tmppic, node->name, 1, 0);
+printf("1111111111111\n");
+			if(tmppic != NULL)
+			{
+printf("2222222222222\n");
+
+				tmppic = ostrcat(tmppic, ".png", 1, 0);
+
+				//if pic not exist, get it from server
+				int port = 80;
+				char* ip = NULL, *path = NULL;
+				char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+
+				tmpstr1 = ostrcat(tmpstr1, IPKGTMP, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, tmppic, 1, 0);
+printf("2222222222222 tmpstr1 %s\n", tmpstr1);
+
+//                tmppic = ostrcat(tmppic, tmpstr1, 1, 0);
+
+				if(file_exist(tmpstr1) == 0)
+				{
+printf("3333333333333\n");
+
+//					tmpstr3 = ostrcat(tmpstr3, node->url, 1, 0);
+       				tmpstr3 = ostrcat(tmpstr3, "http://openaaf.dyndns.tv/6.4/sf8008/sf8008", 1, 0);
+					tpkgeturl(tmpstr3, &ip, &path, &port);
+
+					if(ip != NULL && path != NULL)
+					{
+printf("4444444444444\n");
+
+                        char* box = ostrcat(status.boxtype, NULL, 0, 0);
+                        string_tolower(box);
+						tmpstr2 = ostrcat(tmpstr2, path, 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
+//						tmpstr2 = ostrcat(tmpstr2, node->filename, 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, node->name, 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, "_", 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, node->version, 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, "_", 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, box, 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, ".png", 1, 0);
+                        free(box), box = NULL;
+	          			debug(130, "get http://%s/%s -> %s", ip, tmpstr2, tmpstr1);
+printf("get http://%s/%s -> %s\n", ip, tmpstr2, tmpstr1);
+
+						gethttp(ip, tmpstr2, port, tmpstr1, HTTPAUTH, 10000, NULL, 0);
+//	          			debug(130, "get2 %s -> %s", tmpstr3, tmpstr1);
+
+//						gethttps(tmpstr3, tmpstr1, NULL, NULL, NULL, NULL, 0);
+//            			free(tmppic); tmppic = NULL;
+//                        tmppic = ostrcat(tmppic, tmpstr1, 1, 0);
+					}
+				}
+
+printf("555555555555\n");
+
+				free(tmpstr1); tmpstr1 = NULL;
+				free(tmpstr2); tmpstr2 = NULL;
+				free(tmpstr3); tmpstr3 = NULL;
+			}
+/////////////////
+			if(skip == 1)
+				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 1, 0);
+			else
+				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
 //			changemenulistparam(tmpmlist, node->name, node->titanname, NULL, NULL);
 			changemenulistparam(tmpmlist, node->name, node->name, NULL, NULL);
 
@@ -645,6 +756,132 @@ char* get_ipk_tmplistinstall(char* path)
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
+
+//flag 0: only package list
+//flag 1: package + preview
+int ipkggetindex(int flag)
+{
+	int ret = 0, len = 0, port = 80, err = 0;
+	FILE *fd = NULL;
+	char* fileline = NULL, *ip = NULL, *path = NULL, *httpret = NULL;
+	char* tmpstr1 = NULL, *tmpstr2 = NULL;
+
+	ret = mkdir(IPKGTMP, 0777);
+	if(ret != 0 && errno != EEXIST)
+	{
+		perr("create path %s", IPKGTMP);
+		err = 1;
+		goto end;
+	}
+/*
+	tpkcleantmp(0);
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no mem");
+		err = 1;
+		goto end;
+	}
+
+	fd = fopen(FEEDFILE, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", FEEDFILE);
+		err = 1;
+		goto end;
+	}
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		len = strlen(fileline) - 1;
+		if(len >= 0 && fileline[len] == '\n')
+			fileline[len] = '\0';
+		len--;
+		if(len >= 0 && fileline[len] == '\r')
+			fileline[len] = '\0';
+
+		tpkgeturl(fileline, &ip, &path, &port);
+
+		if(ostrcmp("97.74.32.10", ip) == 0)
+		{
+//			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
+
+#ifdef SH4
+			if(ostrcmp(path, "/svn/tpk/nightly-sh4-secret") == 0)
+#elif ARM
+			if(ostrcmp(path, "/svn/tpk/nightly-arm-secret") == 0)
+#else
+			if(ostrcmp(path, "/svn/tpk/nightly-mipsel-secret") == 0)
+#endif
+			{
+				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+				err = 1;
+			}
+		}
+
+		if(ip != NULL && path != NULL)
+		{
+			if(ostrcmp("97.74.32.10", ip) == 0 && !file_exist("/etc/.beta"))
+				ip = "openaaf.dyndns.tv";
+			else if(ostrcmp("97.74.32.10", ip) == 0)
+				ip = "beta.dyndns.tv";
+
+			tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+			tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+			tmpstr1 = ostrcat(tmpstr1, HTTPPACKAGES, 1, 0);
+
+			tmpstr2 = ostrcat(tmpstr2, TMP, 1, 0);
+			tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
+			tmpstr2 = ostrcat(tmpstr2, HTTPPACKAGES, 1, 0);
+
+			debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
+			httpret = gethttp(ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+			if(httpret == NULL)
+			{
+				err("http download error %s/%s", ip, tmpstr1);
+				unlink(tmpstr2);
+			}
+			free(tmpstr1); tmpstr1 = NULL;
+			free(tmpstr2); tmpstr2 = NULL;
+
+			if(httpret != NULL)
+			{
+				if(flag == 1)
+				{
+					tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+					tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+					tmpstr1 = ostrcat(tmpstr1, HTTPPREVIEW, 1, 0);
+
+					tmpstr2 = ostrcat(tmpstr2, TMP, 1, 0);
+					tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
+					tmpstr2 = ostrcat(tmpstr2, HTTPPREVIEW, 1, 0);
+
+          			debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
+					gethttp(ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+					free(tmpstr1); tmpstr1 = NULL;
+					free(tmpstr2); tmpstr2 = NULL;
+				}
+
+				tmpstr1 = ostrcat(tmpstr1, "http://", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, ip, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+				ret = tpkextractindex(tmpstr1);
+				if(ret != 0) err = 1;
+				free(tmpstr1); tmpstr1 = NULL;
+			}
+			else
+				err = 1;
+		}
+	}
+*/
+end:
+	if(fd != NULL) fclose(fd);
+	free(fileline); fileline = NULL;
+	return err;
+}
+
 
 #endif
 

@@ -606,6 +606,8 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 	{
 		drawscreen(load, 0, 0);
 
+		if(first == 1) ipkggetindex(0);
+
 		ipkg_update();
 		ipkg_list();
 
@@ -616,7 +618,8 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 		if(mbox != NULL)
 		{
 			debug(130, "section: %s", mbox->name);
-			mbox1 = ipkmenulist(mlist1, "ipkinstall", "Ipk Install - select file", "/tmp/preview", mbox->name, 2, NULL, 1);
+//			mbox1 = ipkmenulist(mlist1, "ipkinstall", "Ipk Install - select file", "/tmp/preview", mbox->name, 2, NULL, 1);
+			mbox1 = ipkmenulist(mlist1, "ipkinstall", "Ipk Install - select file", IPKGTMP, mbox->name, 2, NULL, 1);
 			
 			if(mbox1 != NULL)
 			{
