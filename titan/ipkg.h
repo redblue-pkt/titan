@@ -499,14 +499,10 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	struct menulist* tmpmlist = NULL;
 	char* tmpstr = NULL, *tmpinfo = NULL, *tmppic = NULL;
 
-printf("aaaa\n");
-
 	if(node == NULL) return NULL;
 	
 	if(flag == 1)
 	{
-printf("bbbb\n");
-
 		ipkg = NULL;
 		ipkg_list_installed();
 		ipkg_installed = ipkg;
@@ -515,23 +511,13 @@ printf("bbbb\n");
 	
 	while(node != NULL)
 	{
-printf("cccc node->section %s\n", node->section);
-printf("cccc node->showname %s\n", node->showname);
-printf("cccc node->name %s\n", node->name);
-
 		if(flag == 0 || flag == 2)
 		{
-printf("dddd\n");
-
 			if(flag == 0)
 			{
-printf("eeee\n");
-
 				//check if section have seen
 				if(findsectiondoneipk(node->section) == 1)
 				{
-printf("ffff\n");
-
 					node = node->next;
 					continue;
 				}
@@ -541,16 +527,12 @@ printf("ffff\n");
 		
 			if(flag == 0)
 			{
-printf("gggg\n");
-
 				node->done = 1;
 				addmenulist(&mlist, node->section, NULL, tmppic, 0, 0);
 			}
 			
 			if(flag == 2)
 			{
-printf("hhhh\n");
-
 				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
 				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
@@ -560,23 +542,16 @@ printf("hhhh\n");
 			
 			free(tmppic); tmppic = NULL;
 		}
-printf("iiii\n");
 
 		if(flag == 1)
 		{
-printf("jjjj\n");
-
 			//check if tpk is installed
 			node_installed = ipkg_installed;
 			skip = 0;
 			while(node_installed != NULL)
 			{
-printf("kkkk\n");
-
 				if(ostrcmp(node->section, node_installed->section) == 0 && ostrcmp(node->showname, node_installed->showname) == 0)
 				{
-printf("llll\n");
-
 					skip = 1;
 					break;
 				}
@@ -589,16 +564,12 @@ printf("llll\n");
 
 			if(skip == 2)
 			{
-printf("mmmm\n");
-
 				node = node->next;
 				continue;
 			}
 
 			if(skip == 1)
 			{
-printf("nnnn\n");
-
 				tmpstr = ostrcat(tmpstr, "(", 1, 0);
 				tmpstr = ostrcat(tmpstr, _("installed"), 1, 0);
 				tmpstr = ostrcat(tmpstr, ") ", 1, 0);
@@ -631,11 +602,9 @@ printf("nnnn\n");
 /////////////////
 
 			tmppic = ostrcat(tmppic, node->name, 1, 0);
-printf("1111111111111\n");
+
 			if(tmppic != NULL)
 			{
-printf("2222222222222\n");
-
 				tmppic = ostrcat(tmppic, ".png", 1, 0);
 
 				//if pic not exist, get it from server
@@ -646,22 +615,15 @@ printf("2222222222222\n");
 				tmpstr1 = ostrcat(tmpstr1, IPKGTMP, 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, tmppic, 1, 0);
-printf("2222222222222 tmpstr1 %s\n", tmpstr1);
-
-//                tmppic = ostrcat(tmppic, tmpstr1, 1, 0);
 
 				if(file_exist(tmpstr1) == 0)
 				{
-printf("3333333333333\n");
-
 //					tmpstr3 = ostrcat(tmpstr3, node->url, 1, 0);
        				tmpstr3 = ostrcat(tmpstr3, "http://openaaf.dyndns.tv/6.4/sf8008/sf8008", 1, 0);
 					tpkgeturl(tmpstr3, &ip, &path, &port);
 
 					if(ip != NULL && path != NULL)
 					{
-printf("4444444444444\n");
-
                         char* box = ostrcat(status.boxtype, NULL, 0, 0);
                         string_tolower(box);
 						tmpstr2 = ostrcat(tmpstr2, path, 1, 0);
@@ -678,15 +640,8 @@ printf("4444444444444\n");
 printf("get http://%s/%s -> %s\n", ip, tmpstr2, tmpstr1);
 
 						gethttp(ip, tmpstr2, port, tmpstr1, HTTPAUTH, 10000, NULL, 0);
-//	          			debug(130, "get2 %s -> %s", tmpstr3, tmpstr1);
-
-//						gethttps(tmpstr3, tmpstr1, NULL, NULL, NULL, NULL, 0);
-//            			free(tmppic); tmppic = NULL;
-//                        tmppic = ostrcat(tmppic, tmpstr1, 1, 0);
 					}
 				}
-
-printf("555555555555\n");
 
 				free(tmpstr1); tmpstr1 = NULL;
 				free(tmpstr2); tmpstr2 = NULL;
