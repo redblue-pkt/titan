@@ -884,7 +884,7 @@ char* string_quote(char* str);
 int file_exist(char* filename);
 char* ostrstr(char* str, char* search);
 char* createpath(char* dir, char* file);
-char* get_ipk_install(char* ipk);
+char* get_ipk_install(char* ipk, char* dest);
 char* get_ipk_tmpinstall(char* path, char* ipk);
 char* get_ipk_listinstall();
 char* get_ipk_tmplistinstall();
