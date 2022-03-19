@@ -624,9 +624,15 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 			if(mbox1 != NULL)
 			{
 				debug(130, "file: %s", mbox1->name);
-				tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
-				tmpstr = ostrcat(tmpstr, "-", 1, 0);
+//				tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
+//				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, mbox1->param, 1, 0);
+				debug(130, "tmpstr: %s", tmpstr);
+
+char* installpath = "root";
+//					installpath = getinstallpath(mbox1->param2, mbox1->param3);
+//					if(installpath != NULL)
+//					{
 
 				tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
@@ -642,6 +648,14 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 					drawscreen(load, 0, 0);
 					resettvpic();
 					char* log = NULL;
+
+					log = get_ipk_install(tmpstr, installpath);
+
+			        if(log == NULL) log = ostrcat("No output found !", NULL, 0, 0);
+			        textbox(_("Ipk Install Info - Install OK"), _(log), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+			        free(log); log = NULL;
+
+/*
 					if(ipkg_install(tmpstr) == 0)
 					{
 						log = readfiletomem("/tmp/ipkg.log", 0);
@@ -654,6 +668,7 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 						if(log == NULL) log = ostrcat("Install error", NULL, 0, 0);
 						textbox(_("Ipk Install Info - Install ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 					}
+*/
 					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 					loadplugin();
 					free(log), log = NULL;
