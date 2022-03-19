@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
-	opkg remove titan-plugin-wins3 --dest $1
+	opkg remove titan-plugin-games-wins3 --dest $1
 fi
 
 exit 0

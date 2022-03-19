@@ -6,7 +6,7 @@ chmod 755 $INSTDIR/usr/local/share/titan/plugins/kravencfg/kravencfg.sh
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg update
-	opkg install titan-plugin-kravencfg --dest $1
+	opkg install titan-plugin-tools-kravencfg --dest $1
 fi
 
 exit 0

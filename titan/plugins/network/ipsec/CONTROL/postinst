@@ -11,7 +11,7 @@ if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	fi
 	opkg install iptables
 	opkg install iptables-module-xt-policy
-	opkg install titan-plugin-ipsec --dest $1
+	opkg install titan-plugin-network-ipsec --dest $1
 fi
 
 exit 0

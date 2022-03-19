@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg update
-	opkg install titan-plugin-gmediarender --dest $1
+	opkg install titan-plugin-player-gmediarender --dest $1
 	opkg install titan-gmediarender
 else
 	INSTDIR="$1"

@@ -4,7 +4,7 @@ PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/lcdpearl1"
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg update
-	opkg install titan-plugin-lcdpearl1 --dest $1
+	opkg install titan-plugin-tools-lcdpearl1 --dest $1
 fi
 
 exit 0
