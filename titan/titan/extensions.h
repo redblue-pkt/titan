@@ -624,8 +624,8 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 			if(mbox1 != NULL)
 			{
 				debug(130, "file: %s", mbox1->name);
-				tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
-				tmpstr = ostrcat(tmpstr, "-", 1, 0);
+//				tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
+//				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, mbox1->param, 1, 0);
 
 				tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
@@ -694,7 +694,8 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 		{
 			debug(130, "file: %s", mbox->name);
 
-			tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
+//			tmpstr = ostrcat("titan-plugin-", mbox->name, 0, 0);
+			tmpstr = ostrcat(mbox->name, NULL, 0, 0);
 
 			tmpinfo = ostrcat(tmpinfo, _("Removeing"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
