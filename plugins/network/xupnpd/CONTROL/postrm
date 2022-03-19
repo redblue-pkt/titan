@@ -6,7 +6,7 @@ rm -rf "$PLUGINDIR" >/dev/null 2>&1
 rm -rf $INSTDIR/etc/xupnpd >/dev/null 2>&1
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
-	opkg remove titan-plugin-xupnpd --dest $1
+	opkg remove titan-plugin-network-xupnpd --dest $1
 fi
 
 exit 0

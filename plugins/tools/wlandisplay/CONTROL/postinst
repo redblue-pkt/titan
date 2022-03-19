@@ -10,7 +10,7 @@ fi
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg update
-	opkg install titan-plugin-wlandisplay --dest $1
+	opkg install titan-plugin-tools-wlandisplay --dest $1
 fi
 
 exit 0

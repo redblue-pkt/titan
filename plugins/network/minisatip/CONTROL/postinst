@@ -3,7 +3,7 @@
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg update
 	opkg install minisatip
-	opkg install titan-plugin-minisatip --dest $1
+	opkg install titan-plugin-network-minisatip --dest $1
 fi
 
 exit 0

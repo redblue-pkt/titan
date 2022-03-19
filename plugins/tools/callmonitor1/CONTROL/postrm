@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
-	opkg remove titan-plugin-callmonitor1 --dest $1
+	opkg remove titan-plugin-tools-callmonitor1 --dest $1
 else
 	INSTDIR="$1"  
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/callmonitor1"

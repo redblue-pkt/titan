@@ -32,7 +32,7 @@ fi
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg update
-	opkg install titan-plugin-sispmctl --dest $1
+	opkg install titan-plugin-tools-sispmctl --dest $1
 fi
 
 exit 0

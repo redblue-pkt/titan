@@ -2,7 +2,7 @@
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg update
-	opkg install titan-plugin-kodistarter --dest $1
+	opkg install titan-plugin-gui-kodistarter --dest $1
 	opkg install kodi
 fi
 

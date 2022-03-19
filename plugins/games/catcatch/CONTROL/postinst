@@ -2,7 +2,7 @@
 
 if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg update
-	opkg install titan-plugin-catcatch --dest $1
+	opkg install titan-plugin-games-catcatch --dest $1
 fi
 
 exit 0

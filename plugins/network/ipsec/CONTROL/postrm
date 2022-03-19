@@ -6,7 +6,7 @@ if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
 	opkg remove kernel-module-aes-generic --force-removal-of-dependent-packages
 	opkg remove kernel-module-sha1-generic --force-removal-of-dependent-packages
 	opkg remove iptables --force-removal-of-dependent-packages
-	opkg remove titan-plugin-ipsec --dest $1
+	opkg remove titan-plugin-network-ipsec --dest $1
 fi
 
 exit 0
