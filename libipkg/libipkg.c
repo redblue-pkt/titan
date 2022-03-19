@@ -161,21 +161,28 @@ ipkg_packages_install (args_t * args, const char *name)
 	ipkg_cmd_t *cmd;
 	ipkg_conf_t ipkg_conf;
 	int err;
-
+printf("111111 %s\n", name);
 	/* this error should be handled in application */
 	if (!name || !strlen (name))
 		return (-1);
+printf("222222 %s\n", name);
 
 	err = ipkg_conf_init (&ipkg_conf, args);
 	if (err)
 	{
+printf("333333 %s\n", name);
+
 		return err;
 	}
+printf("444444 %s\n", name);
 
 	/* we need to do this because of static declarations,
 	 * maybe a good idea to change */
 	cmd = ipkg_cmd_find ("install");
+printf("555555 %s\n", name);
+
 	err = ipkg_cmd_exec (cmd, &ipkg_conf, 1, &name, NULL);
+printf("555555 %s\n", name);
 
 	ipkg_conf_deinit(&ipkg_conf);
 	return (err);
