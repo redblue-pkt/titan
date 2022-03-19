@@ -3,6 +3,7 @@
 
 #define IPKGFEEDFILE "/etc/ipkg/official-feed.conf"
 #define IPKGTMP "/tmp/ipkg"
+#define IPKGLOG "/tmp/ipkg.log"
 //#define IPKGTMP "/tmp/preview"
 
 struct ipkg
@@ -312,6 +313,28 @@ char* get_ipk_install(char* package, char* dest)
 	tmpstr = command(cmd);
 
 	debug(130, "out %s",cmd);
+	free(cmd); cmd = NULL;
+	return tmpstr;
+}
+
+char* get_ipk_remove(char* package)
+{
+	debug(130, "package: %s", package);
+
+//	unlink("/var/usr/lib/ipkg/cross");
+//	unlink("/var/usr/lib/ipkg/secret");
+//	unlink("/var/usr/lib/ipkg/titan");	
+
+	char* cmd = NULL, *tmpstr = NULL;
+	cmd = ostrcat(cmd, "opkg remove ", 1, 0);
+//	cmd = ostrcat(cmd, path, 1, 0);
+//	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, package, 1, 0);
+//	cmd = ostrcat(cmd, " --dest ", 1, 0);
+//	cmd = ostrcat(cmd, dest, 1, 0);
+
+	tmpstr = command(cmd);
+
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
