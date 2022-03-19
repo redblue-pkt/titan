@@ -653,7 +653,7 @@ printf("get http://%s/%s -> %s\n", ip, tmpstr2, tmpstr1);
 			else
 				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
 //			changemenulistparam(tmpmlist, node->name, node->titanname, NULL, NULL);
-			changemenulistparam(tmpmlist, node->name, node->name, NULL, NULL);
+			changemenulistparam(tmpmlist, node->name, node->showname, NULL, NULL);
 
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
