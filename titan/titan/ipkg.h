@@ -275,7 +275,7 @@ int ipkg_info(const char* package)
 	return err;
 }
 
-int ipkg_install(const char* package)
+int ipkg_install_org(const char* package)
 {
 	debug(130, "package: %s", package);
 
@@ -291,6 +291,29 @@ int ipkg_install(const char* package)
 	debug(130, "package3: %s", package);
 #endif	
 	return err;
+}
+
+char* get_ipk_install(char* package, char* dest)
+{
+	debug(130, "package: %s (%s)", package, dest);
+
+//	unlink("/var/usr/lib/ipkg/cross");
+//	unlink("/var/usr/lib/ipkg/secret");
+//	unlink("/var/usr/lib/ipkg/titan");	
+
+	char* cmd = NULL, *tmpstr = NULL;
+	cmd = ostrcat(cmd, "opkg install ", 1, 0);
+//	cmd = ostrcat(cmd, path, 1, 0);
+//	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, package, 1, 0);
+	cmd = ostrcat(cmd, " --dest ", 1, 0);
+	cmd = ostrcat(cmd, dest, 1, 0);
+
+	tmpstr = command(cmd);
+
+	debug(130, "out %s",cmd);
+	free(cmd); cmd = NULL;
+	return tmpstr;
 }
 
 int ipkg_remove(const char* package, int purge)
