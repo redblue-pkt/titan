@@ -11,7 +11,7 @@
 
 #define TPKUSEBACKUP 1
 #define TPKLOG "/tmp/tpk.log"
-#define FEEDFILE "/etc/tkg/official-feed.conf"
+#define FEEDFILE "/etc/tpk/official-feed.conf"
 #define PREDIR "/etc/tpk.restore"
 #define TMP "/tmp/tpk"
 #define TMPALLPACKAGES TMP"/AllPackages"
