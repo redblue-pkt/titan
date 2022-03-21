@@ -55,6 +55,7 @@ void screenadjust()
 	struct skin* community_pass = getscreennode(adjust, "community_pass");
 	struct skin* debuglevel = getscreennode(adjust, "debuglevel");
 	struct skin* zapmode = getscreennode(adjust, "zapmode");
+	struct skin* extensions_type = getscreennode(adjust, "extensions_type");
 
 
 	struct skin* tmp = NULL;
@@ -240,6 +241,11 @@ void screenadjust()
 	addchoicebox(usecec, "0", _("no"));
 	addchoicebox(usecec, "1", _("yes"));
 	setchoiceboxselection(usecec, getconfig("usecec", NULL));
+
+	addchoicebox(extensions_type, "0", _("Tpk"));
+	addchoicebox(extensions_type, "1", _("Ipkg"));
+	addchoicebox(extensions_type, "2", _("Tpk / Ipkg"));
+	setchoiceboxselection(extensions_type, getconfig("extensions_type", NULL));
 
 	if(!file_exist("/mnt/config/dualboot"))
 	{
@@ -584,6 +590,8 @@ void screenadjust()
 
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 				addconfigscreencheck("usecec", usecec, "0");
+
+			addconfigscreencheck("extensions_type", extensions_type, "0");
 
 			if(checkbox("ATEMIO7600") == 1)
 			{
