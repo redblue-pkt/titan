@@ -463,11 +463,11 @@ msgstr ""
 msgid "1"
 msgstr ""
 
-#: adjust.h:135 httpdfunc.h:4185
+#: adjust.h:136 httpdfunc.h:4185
 msgid "1 GB"
 msgstr "1 Гб"
 
-#: adjust.h:125 httpdfunc.h:4125
+#: adjust.h:126 httpdfunc.h:4125
 msgid "1 sec"
 msgstr "1 сек"
 
@@ -596,7 +596,7 @@ msgstr "1 сек"
 msgid "2"
 msgstr ""
 
-#: adjust.h:136 httpdfunc.h:4192
+#: adjust.h:137 httpdfunc.h:4192
 msgid "2 GB"
 msgstr "2 Гб"
 
@@ -604,7 +604,7 @@ msgstr "2 Гб"
 msgid "2 Khz"
 msgstr "2 КГц"
 
-#: adjust.h:126 avsettings.h:83 httpdfunc.h:4132
+#: adjust.h:127 avsettings.h:83 httpdfunc.h:4132
 msgid "2 sec"
 msgstr "2 сек"
 
@@ -663,7 +663,7 @@ msgstr "2 сек"
 msgid "3"
 msgstr ""
 
-#: adjust.h:137 httpdfunc.h:4199
+#: adjust.h:138 httpdfunc.h:4199
 msgid "3 GB"
 msgstr "3 Гб"
 
@@ -748,7 +748,7 @@ msgstr "3 сек"
 msgid "4"
 msgstr ""
 
-#: adjust.h:138 httpdfunc.h:4206
+#: adjust.h:139 httpdfunc.h:4206
 msgid "4 GB"
 msgstr "4 Гб"
 
@@ -2403,11 +2403,11 @@ msgstr "Чёрные 3D пиконы Astra 19.2"
 msgid "Black Picons - Eutelsat 36.0E."
 msgstr ""
 
-#: adjust.h:277
+#: adjust.h:278
 msgid "Black screen"
 msgstr ""
 
-#: adjust.h:279
+#: adjust.h:280
 msgid "Black screen till locked"
 msgstr ""
 
@@ -2781,11 +2781,11 @@ msgstr "С"
 msgid "C-Band"
 msgstr ""
 
-#: adjust.h:421
+#: adjust.h:422
 msgid "CA"
 msgstr ""
 
-#: adjust.h:364
+#: adjust.h:365
 msgid "CA Device"
 msgstr ""
 
@@ -3236,7 +3236,7 @@ msgstr "Распределение каналов"
 msgid "Channel Down"
 msgstr "Канал вниз"
 
-#: adjust.h:75 epgsettings.h:139 httpdfunc.h:3912
+#: adjust.h:76 epgsettings.h:139 httpdfunc.h:3912
 #: skins_0acht5zehn_skin.xml.h:135
 msgid "Channel EPG"
 msgstr "EPG канала"
@@ -3287,7 +3287,7 @@ msgstr "Список каналов"
 msgid "Channel List selection"
 msgstr "Выбор списка каналов"
 
-#: adjust.h:413
+#: adjust.h:414
 msgid "Channel Scan"
 msgstr "Сканирование каналов"
 
@@ -4132,7 +4132,7 @@ msgstr ""
 msgid "DTS-HD Mode"
 msgstr ""
 
-#: adjust.h:360
+#: adjust.h:361
 msgid "DVB Devices"
 msgstr "Устройства DVB"
 
@@ -4144,7 +4144,7 @@ msgstr ""
 msgid "DVBS2"
 msgstr ""
 
-#: adjust.h:388 tpk_showname.h:31
+#: adjust.h:389 tpk_showname.h:31
 msgid "DVD Player"
 msgstr "DVD плеер"
 
@@ -4716,7 +4716,7 @@ msgstr "Загрузки"
 msgid "Draw"
 msgstr ""
 
-#: adjust.h:417
+#: adjust.h:418
 msgid "Draw Screen"
 msgstr ""
 
@@ -4852,7 +4852,7 @@ msgstr "Извлечь"
 msgid "ELBEKANAL rtmp (German)"
 msgstr ""
 
-#: adjust.h:74 httpdfunc.h:3905 play.h:1714 skin_default_skin.xml.h:184
+#: adjust.h:75 httpdfunc.h:3905 play.h:1714 skin_default_skin.xml.h:184
 #: skins_0acht5zehn_skin.xml.h:222 skins_atemio_skin.xml.h:219
 #: skins_cool_skin.xml.h:266 skins_default_skin.xml.h:184
 #: skins_kravenhd_skin.xml.h:193 skins_megastyleblue_skin.xml.h:267
@@ -5007,7 +5007,7 @@ msgstr "Поиск EPG"
 msgid "EPG Settings"
 msgstr "Параметры EPG"
 
-#: adjust.h:396
+#: adjust.h:397
 msgid "EPG Task"
 msgstr "Задача EPG"
 
@@ -5848,7 +5848,7 @@ msgstr "Файл существует. Действительно переиме
 msgid "File Manager"
 msgstr "Файловый менеджер"
 
-#: adjust.h:437
+#: adjust.h:438
 msgid "File Operation"
 msgstr "Операции с файлом"
 
@@ -6221,7 +6221,7 @@ msgstr ""
 msgid "Frage"
 msgstr "Вопрос"
 
-#: adjust.h:409
+#: adjust.h:410
 msgid "Framebuffer"
 msgstr "Буфер"
 
@@ -6411,7 +6411,7 @@ msgstr "Спутники"
 msgid "GREEN"
 msgstr "Зелёная"
 
-#: adjust.h:117 httpdfunc.h:4081 skin_default_skin.xml.h:246
+#: adjust.h:118 httpdfunc.h:4081 skin_default_skin.xml.h:246
 #: skins_0acht5zehn_skin.xml.h:285 skins_atemio_skin.xml.h:280
 #: skins_cool_skin.xml.h:339 skins_default_skin.xml.h:246
 #: skins_kravenhd_skin.xml.h:256 skins_megastyleblue_skin.xml.h:340
@@ -6491,7 +6491,7 @@ msgstr ""
 msgid "Git Changelog Full"
 msgstr "Журнал изменений GIT (Полный)"
 
-#: adjust.h:340
+#: adjust.h:341
 msgid "Global"
 msgstr ""
 
@@ -6718,11 +6718,11 @@ msgstr "Имя хоста"
 msgid "HT1 mms (German)"
 msgstr ""
 
-#: adjust.h:336
+#: adjust.h:337
 msgid "HTTP Header/Community"
 msgstr "HTTP Заголовок/Сообщество"
 
-#: adjust.h:368
+#: adjust.h:369
 msgid "HTTP Server/Stream/Record"
 msgstr "HTTP Сервер/Стрим/Запись"
 
@@ -6771,7 +6771,7 @@ msgstr "Время предупреждения (Сек)"
 msgid "Hard"
 msgstr "Тяжёлый"
 
-#: adjust.h:320 harddisk.h:487 skin_default_skin.xml.h:248
+#: adjust.h:321 harddisk.h:487 skin_default_skin.xml.h:248
 #: skins_0acht5zehn_skin.xml.h:289 skins_0acht5zehn_skin.xml.h:832
 #: skins_atemio_skin.xml.h:284 skins_cool_skin.xml.h:343
 #: skins_default_skin.xml.h:248 skins_kravenhd_skin.xml.h:258
@@ -7286,11 +7286,11 @@ msgstr "Подсказка: Используйте кнопку текст дл�
 msgid "History"
 msgstr "История"
 
-#: adjust.h:278
+#: adjust.h:279
 msgid "Hold screen"
 msgstr ""
 
-#: adjust.h:280
+#: adjust.h:281
 msgid "Hold till locked"
 msgstr ""
 
@@ -7381,7 +7381,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: adjust.h:376
+#: adjust.h:377
 msgid "ID3"
 msgstr ""
 
@@ -7940,7 +7940,7 @@ msgstr ""
 msgid "Ipk Remove Info - Remove OK"
 msgstr ""
 
-#: adjust.h:246
+#: adjust.h:247
 msgid "Ipkg"
 msgstr ""
 
@@ -8136,7 +8136,7 @@ msgstr "Ключ"
 msgid "Key Action - Plugins"
 msgstr "Плагины"
 
-#: adjust.h:308
+#: adjust.h:309
 msgid "Key Actions"
 msgstr "Основные действия"
 
@@ -8745,7 +8745,7 @@ msgstr "M"
 msgid "MTD"
 msgstr "Распределение FLASH"
 
-#: adjust.h:296
+#: adjust.h:297
 msgid "MTD Operation/System Update"
 msgstr "MTD Операция/Обновление системы"
 
@@ -8967,7 +8967,7 @@ msgstr "Медиаплеер"
 msgid "Media Plugins List"
 msgstr "Список медиаплагинов"
 
-#: adjust.h:300 tpk_showname.h:90
+#: adjust.h:301 tpk_showname.h:90
 msgid "MediaCenter"
 msgstr "Медиацентр"
 
@@ -8975,7 +8975,7 @@ msgstr "Медиацентр"
 msgid "MediaCenter FolderIcons"
 msgstr ""
 
-#: adjust.h:425
+#: adjust.h:426
 msgid "MediaDB"
 msgstr "Плагин MediaDB"
 
@@ -9067,7 +9067,7 @@ msgstr "Сканиравание MediaDB завершено"
 msgid "MediaDB scantype"
 msgstr ""
 
-#: adjust.h:352
+#: adjust.h:353
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
@@ -9325,7 +9325,7 @@ msgstr ""
 msgid "MiniDLNA Medien Server (upnp)"
 msgstr ""
 
-#: adjust.h:292
+#: adjust.h:293
 msgid "Minimal"
 msgstr "Минимал"
 
@@ -9556,7 +9556,7 @@ msgstr ""
 msgid "MultiGUI Plugin"
 msgstr "Плагин MultiGUI"
 
-#: adjust.h:324 tpk_showname.h:97
+#: adjust.h:325 tpk_showname.h:97
 msgid "MultiImage"
 msgstr "Мультиимидж"
 
@@ -9625,7 +9625,7 @@ msgstr "Музыка"
 msgid "Mute"
 msgstr "Без звука"
 
-#: adjust.h:433
+#: adjust.h:434
 msgid "Mutex"
 msgstr ""
 
@@ -9760,7 +9760,7 @@ msgstr "Параметры сетевого адаптера"
 msgid "Network Adapter Test"
 msgstr "Тест сетевого адаптера"
 
-#: adjust.h:304
+#: adjust.h:305
 msgid "Network Interface"
 msgstr "Сетевой интерфейс"
 
@@ -9808,7 +9808,7 @@ msgstr "Тест сети"
 msgid "Network browser extension for better Win7 compatibility"
 msgstr "Расширение браузера сети для лучшей совместимости с Win7"
 
-#: adjust.h:312 skin_default_skin.xml.h:414 skins_0acht5zehn_skin.xml.h:388
+#: adjust.h:313 skin_default_skin.xml.h:414 skins_0acht5zehn_skin.xml.h:388
 #: skins_atemio_skin.xml.h:387 skins_cool_skin.xml.h:457
 #: skins_default_skin.xml.h:414 skins_kravenhd_skin.xml.h:411
 #: skins_megastyleblue_skin.xml.h:458 skins_megastylegrey_skin.xml.h:458
@@ -9870,7 +9870,7 @@ msgstr ""
 msgid "News"
 msgstr "Последние новости"
 
-#: adjust.h:405 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:419
+#: adjust.h:406 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:419
 #: skins_0acht5zehn_skin.xml.h:392 skins_0acht5zehn_skin.xml.h:852
 #: skins_atemio_skin.xml.h:392 skins_cool_skin.xml.h:462
 #: skins_default_skin.xml.h:419 skins_kravenhd_skin.xml.h:416
@@ -10381,7 +10381,7 @@ msgstr "Цвет Ok"
 msgid "Old Audiofw"
 msgstr "Cтарые аудио FW"
 
-#: adjust.h:401
+#: adjust.h:402
 msgid "Old Entry"
 msgstr "Старый вход"
 
@@ -10776,7 +10776,7 @@ msgstr ""
 msgid "Photos postet"
 msgstr "Фото отправлено"
 
-#: adjust.h:445 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
+#: adjust.h:446 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
 #: webif_index.atemio6200.h:64 webif_index.atemio6200.h:120
 #: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
 #: webif_index.atemio-nemesis.h:64 webif_index.atemio-nemesis.h:120
@@ -11341,11 +11341,11 @@ msgstr "Питание"
 msgid "Power = reboot receiver"
 msgstr "Питание = Перезагрузить ресивер"
 
-#: adjust.h:113 httpdfunc.h:4053
+#: adjust.h:114 httpdfunc.h:4053
 msgid "Power Menu"
 msgstr "Меню выключения"
 
-#: adjust.h:114 adjust.h:120 httpdfunc.h:4060 httpdfunc.h:4096
+#: adjust.h:115 adjust.h:121 httpdfunc.h:4060 httpdfunc.h:4096
 #: skin_default_skin.xml.h:470 skins_0acht5zehn_skin.xml.h:444
 #: skins_atemio_skin.xml.h:443 skins_cool_skin.xml.h:527
 #: skins_default_skin.xml.h:470 skins_kravenhd_skin.xml.h:467
@@ -11794,7 +11794,7 @@ msgstr "Радио плеер"
 msgid "Radio: "
 msgstr "Радио"
 
-#: adjust.h:372
+#: adjust.h:373
 msgid "Radiotext"
 msgstr "Радиотекст"
 
@@ -12417,7 +12417,7 @@ msgstr "Разрешение"
 msgid "Rest:"
 msgstr ""
 
-#: adjust.h:116 httpdfunc.h:4074 skin_default_skin.xml.h:525
+#: adjust.h:117 httpdfunc.h:4074 skin_default_skin.xml.h:525
 #: skins_0acht5zehn_skin.xml.h:502 skins_atemio_skin.xml.h:497
 #: skins_cool_skin.xml.h:595 skins_default_skin.xml.h:525
 #: skins_kravenhd_skin.xml.h:533 skins_megastyleblue_skin.xml.h:597
@@ -12827,7 +12827,7 @@ msgstr "SID"
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr "SMB клиент"
 
-#: adjust.h:441
+#: adjust.h:442
 msgid "SMTP"
 msgstr ""
 
@@ -13252,7 +13252,7 @@ msgstr "Фантастика"
 msgid "Score:"
 msgstr "Оценка"
 
-#: adjust.h:332 player_mc_skin.xml.h:54 player_tithek_skin.xml.h:22
+#: adjust.h:333 player_mc_skin.xml.h:54 player_tithek_skin.xml.h:22
 #: skins_cool_skin.xml.h:639 skins_megastyleblue_skin.xml.h:641
 #: skins_megastylegrey_skin.xml.h:641
 msgid "Screensaver"
@@ -14409,7 +14409,7 @@ msgstr "Спорт"
 msgid "StandBy Mode"
 msgstr "Режим выключеня"
 
-#: adjust.h:115 adjust.h:121 httpdfunc.h:4067 httpdfunc.h:4103
+#: adjust.h:116 adjust.h:122 httpdfunc.h:4067 httpdfunc.h:4103
 #: powerofftimer.h:118 skin_default_skin.xml.h:631
 #: skins_0acht5zehn_skin.xml.h:599 skins_atemio_skin.xml.h:601
 #: skins_cool_skin.xml.h:712 skins_default_skin.xml.h:631
@@ -14702,7 +14702,7 @@ msgstr "Кэширование потокового воспроизведени
 msgid "Streaming succesfull stopped."
 msgstr "Поток остановлен"
 
-#: adjust.h:344
+#: adjust.h:345
 msgid "Stringconvert"
 msgstr "Преобразование строк"
 
@@ -14726,7 +14726,7 @@ msgstr "Субканал"
 msgid "Subservices"
 msgstr "Субканал"
 
-#: adjust.h:380 skin_default_skin.xml.h:650 skins_0acht5zehn_skin.xml.h:884
+#: adjust.h:381 skin_default_skin.xml.h:650 skins_0acht5zehn_skin.xml.h:884
 #: skins_atemio_skin.xml.h:620 skins_cool_skin.xml.h:733
 #: skins_default_skin.xml.h:650 skins_kravenhd_skin.xml.h:659
 #: skins_megastyleblue_skin.xml.h:735 skins_megastylegrey_skin.xml.h:735
@@ -15058,7 +15058,7 @@ msgstr "Плагины"
 msgid "TMDb Movie Database Plugin"
 msgstr "Плагин TMDb Movie Database"
 
-#: adjust.h:348
+#: adjust.h:349
 msgid "TPK"
 msgstr ""
 
@@ -15435,7 +15435,7 @@ msgstr "Триллер"
 msgid "Thu"
 msgstr "Чт"
 
-#: adjust.h:384
+#: adjust.h:385
 msgid "Thumbnails"
 msgstr "Эскизы"
 
@@ -15772,7 +15772,7 @@ msgstr "Веб-контроль TitanNit"
 msgid "TitanNit on fire"
 msgstr ""
 
-#: adjust.h:328
+#: adjust.h:329
 msgid "Tithek"
 msgstr ""
 
@@ -15938,11 +15938,11 @@ msgstr ""
 "\n"
 "Ждите реализации"
 
-#: adjust.h:245
+#: adjust.h:246
 msgid "Tpk"
 msgstr ""
 
-#: adjust.h:247
+#: adjust.h:248
 msgid "Tpk / Ipkg"
 msgstr ""
 
@@ -17073,7 +17073,7 @@ msgstr "Погода"
 msgid "Weather Infos"
 msgstr "Погода"
 
-#: adjust.h:316
+#: adjust.h:317
 msgid "Web Adjust"
 msgstr "Настройка Web"
 
@@ -17591,7 +17591,7 @@ msgstr ""
 msgid "allways del file"
 msgstr "Всегда удалять файл таймшифта"
 
-#: adjust.h:105 httpdfunc.h:4003 mc_audioplayer_settings.h:27
+#: adjust.h:106 httpdfunc.h:4003 mc_audioplayer_settings.h:27
 #: mc_iptvplayer_settings.h:23 mc_pictureplayer_settings.h:42
 #: mc_videoplayer_settings.h:25 player_mc_skin.xml.h:4
 #: skin_default_skin.xml.h:30 skins_0acht5zehn_skin.xml.h:73
@@ -17613,15 +17613,15 @@ msgstr "Альтернативный WebIf"
 msgid "always"
 msgstr "Всегда"
 
-#: adjust.h:177 httpdfunc.h:4507
+#: adjust.h:178 httpdfunc.h:4507
 msgid "anim. both"
 msgstr "Анимация"
 
-#: adjust.h:176 httpdfunc.h:4500
+#: adjust.h:177 httpdfunc.h:4500
 msgid "anim. height"
 msgstr "Вертикально"
 
-#: adjust.h:175 httpdfunc.h:4493
+#: adjust.h:176 httpdfunc.h:4493
 msgid "anim. width"
 msgstr "Горизонтально"
 
@@ -17656,7 +17656,7 @@ msgstr "От"
 msgid "ausgehende Anrufe"
 msgstr "Исходящие звонки"
 
-#: adjust.h:164 autotimer.c:479 autotimer.c:512 avsettings.h:74
+#: adjust.h:165 autotimer.c:479 autotimer.c:512 avsettings.h:74
 #: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1206
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
@@ -17847,7 +17847,7 @@ msgstr "Канал + время"
 msgid "channel number"
 msgstr "Номер канала"
 
-#: adjust.h:208 httpdfunc.h:4632
+#: adjust.h:209 httpdfunc.h:4632
 msgid "channel-movie"
 msgstr "Канал/Название"
 
@@ -17963,7 +17963,7 @@ msgstr "в"
 msgid "daily"
 msgstr "Ежедневно"
 
-#: adjust.h:109 httpdfunc.h:4031 mc_audioplayer_settings.h:31
+#: adjust.h:110 httpdfunc.h:4031 mc_audioplayer_settings.h:31
 #: mc_iptvplayer_settings.h:27 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:29 player_mc_skin.xml.h:13
 #: skin_default_skin.xml.h:134 skins_0acht5zehn_skin.xml.h:171
@@ -18074,7 +18074,7 @@ msgstr "Имя директории"
 msgid "dirsort"
 msgstr "Сортировка папок"
 
-#: adjust.h:124 adjust.h:134 epgsettings.h:148 epgsettings.h:154
+#: adjust.h:125 adjust.h:135 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 network.h:420 network.h:639
 #: panel_settings.h:29
 msgid "disable"
@@ -18152,7 +18152,7 @@ msgstr "Пусто"
 msgid "e"
 msgstr "у"
 
-#: adjust.h:356
+#: adjust.h:357
 msgid "ePlayer"
 msgstr ""
 
@@ -18191,7 +18191,7 @@ msgstr "Вкл"
 msgid "end search"
 msgstr "Конец поиска"
 
-#: adjust.h:127 httpdfunc.h:4139 pin.h:193
+#: adjust.h:128 httpdfunc.h:4139 pin.h:193
 msgid "endless"
 msgstr "Бесконечно"
 
@@ -18219,7 +18219,7 @@ msgstr "Ошибка!"
 msgid "event"
 msgstr "События"
 
-#: adjust.h:223 httpdfunc.h:4712
+#: adjust.h:224 httpdfunc.h:4712
 msgid "expert (11)"
 msgstr "Эксперт"
 
@@ -18239,7 +18239,7 @@ msgstr "Расширенные настройки панели"
 msgid "extensionsmenu"
 msgstr "Меню расширений"
 
-#: adjust.h:156 adjust.h:476 httpdfunc.h:4381 httpdfunc.h:4866
+#: adjust.h:157 adjust.h:477 httpdfunc.h:4381 httpdfunc.h:4866
 #: httpdsettings.h:50
 msgid "extern"
 msgstr "Внешний"
@@ -18258,7 +18258,7 @@ msgstr "а"
 msgid "fade out/in"
 msgstr "Плавно мигающий"
 
-#: adjust.h:98 adjust.h:190 httpdfunc.h:3966 httpdfunc.h:4529
+#: adjust.h:99 adjust.h:191 httpdfunc.h:3966 httpdfunc.h:4529
 #: mc_audioplayer_settings.h:35 mc_iptvplayer_settings.h:31
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:33
 #: mc_videoplayer_settings.h:49 moduleconfig.h:352 player_mc_skin.xml.h:20
@@ -18432,7 +18432,7 @@ msgstr "Использовать папку для записей"
 msgid "helpbox"
 msgstr "Помощь"
 
-#: adjust.h:196 httpdfunc.h:4565 pin.h:111
+#: adjust.h:197 httpdfunc.h:4565 pin.h:111
 msgid "hidden"
 msgstr "Не отображать"
 
@@ -18503,7 +18503,7 @@ msgstr "В фоновом режиме"
 msgid "inadynsettings"
 msgstr "Настройки INADYN"
 
-#: adjust.h:73 httpdfunc.h:3898 webif_help.h:35
+#: adjust.h:74 httpdfunc.h:3898 webif_help.h:35
 msgid "infobar"
 msgstr "Инфобар"
 
@@ -18541,7 +18541,7 @@ msgstr "Установлен"
 msgid "interfacelist"
 msgstr "Лист интерфейса"
 
-#: adjust.h:157 adjust.h:477 httpdfunc.h:4388 httpdfunc.h:4873
+#: adjust.h:158 adjust.h:478 httpdfunc.h:4388 httpdfunc.h:4873
 #: httpdsettings.h:49
 msgid "intern"
 msgstr "Внутренний"
@@ -18674,7 +18674,7 @@ msgstr "Скины LCD Samsung"
 msgid "left"
 msgstr "Влево"
 
-#: adjust.h:179
+#: adjust.h:180
 msgid "left to right"
 msgstr "Слева направо"
 
@@ -18773,7 +18773,7 @@ msgstr ""
 msgid "mediadbsettings"
 msgstr "Настройки MediaDB"
 
-#: adjust.h:97 httpdfunc.h:3959
+#: adjust.h:98 httpdfunc.h:3959
 msgid "medium"
 msgstr "Средне"
 
@@ -18824,7 +18824,7 @@ msgstr "Перемещение каналов"
 msgid "move west"
 msgstr "На Запад"
 
-#: adjust.h:209 httpdfunc.h:4639
+#: adjust.h:210 httpdfunc.h:4639
 msgid "movie-channel"
 msgstr "Название/Канал"
 
@@ -18908,10 +18908,10 @@ msgstr "NFS"
 msgid "nfs server"
 msgstr "Автостарт NFS сервера"
 
-#: adjust.h:72 adjust.h:87 adjust.h:96 adjust.h:101 adjust.h:130 adjust.h:160
-#: adjust.h:170 adjust.h:174 adjust.h:200 adjust.h:204 adjust.h:212
-#: adjust.h:216 adjust.h:220 adjust.h:226 adjust.h:230 adjust.h:237
-#: adjust.h:241 adjust.h:252 adjust.h:258 adjust.h:485 autotimer.c:453
+#: adjust.h:73 adjust.h:88 adjust.h:97 adjust.h:102 adjust.h:131 adjust.h:161
+#: adjust.h:171 adjust.h:175 adjust.h:201 adjust.h:205 adjust.h:213
+#: adjust.h:217 adjust.h:221 adjust.h:227 adjust.h:231 adjust.h:238
+#: adjust.h:242 adjust.h:253 adjust.h:259 adjust.h:486 autotimer.c:453
 #: autotimer.c:486 avsettings.h:178 avsettings.h:286 avsettings.h:291
 #: avsettings.h:303 avsettings.h:315 avsettings.h:328 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
@@ -19007,7 +19007,7 @@ msgstr "Ничего"
 msgid "nonlinear"
 msgstr "Нелинейно"
 
-#: adjust.h:191 fancontrol.h:65 httpdfunc.h:4536 timeshiftsettings.h:49
+#: adjust.h:192 fancontrol.h:65 httpdfunc.h:4536 timeshiftsettings.h:49
 #: tmc.h:557
 msgid "normal"
 msgstr "Нормально"
@@ -19020,7 +19020,7 @@ msgstr "Север"
 msgid "not started akttime higher than timer endtime"
 msgstr "Ошибка: Текущее время больше, чем время окончания записи"
 
-#: adjust.h:165 autotimer.c:480 autotimer.c:513 epgsettings.h:216
+#: adjust.h:166 autotimer.c:480 autotimer.c:513 epgsettings.h:216
 #: httpdfunc.h:4434 rectimer.h:1207
 msgid "nothing"
 msgstr "Ничего"
@@ -19313,7 +19313,7 @@ msgstr "Позиция"
 msgid "possetup"
 msgstr ""
 
-#: adjust.h:167 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
+#: adjust.h:168 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
 #: rectimer.h:1209 stopifnotused.c:111
 msgid "power off"
 msgstr "Выключение"
@@ -19505,7 +19505,7 @@ msgstr "Повтор"
 msgid "resolutionsettings"
 msgstr ""
 
-#: adjust.h:106 httpdfunc.h:4010 mc_audioplayer_settings.h:28
+#: adjust.h:107 httpdfunc.h:4010 mc_audioplayer_settings.h:28
 #: mc_iptvplayer_settings.h:24 mc_pictureplayer_settings.h:43
 #: mc_videoplayer_settings.h:26 player_mc_skin.xml.h:51
 #: skin_default_skin.xml.h:534 skins_0acht5zehn_skin.xml.h:510
@@ -19518,7 +19518,7 @@ msgstr ""
 msgid "reverse alpha"
 msgstr "Обратный алфавит"
 
-#: adjust.h:110 httpdfunc.h:4038 mc_audioplayer_settings.h:32
+#: adjust.h:111 httpdfunc.h:4038 mc_audioplayer_settings.h:32
 #: mc_iptvplayer_settings.h:28 mc_pictureplayer_settings.h:47
 #: mc_videoplayer_settings.h:30 player_mc_skin.xml.h:52
 #: skin_default_skin.xml.h:535 skins_0acht5zehn_skin.xml.h:511
@@ -19531,7 +19531,7 @@ msgstr "Обратный алфавит"
 msgid "reverse date"
 msgstr "Дата по убыванию"
 
-#: adjust.h:108 httpdfunc.h:4024 mc_audioplayer_settings.h:30
+#: adjust.h:109 httpdfunc.h:4024 mc_audioplayer_settings.h:30
 #: mc_iptvplayer_settings.h:26 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:28 player_mc_skin.xml.h:53
 #: skin_default_skin.xml.h:536 skins_0acht5zehn_skin.xml.h:512
@@ -19784,7 +19784,7 @@ msgstr "Имя папки"
 msgid "shortepg"
 msgstr ""
 
-#: adjust.h:197
+#: adjust.h:198
 msgid "show"
 msgstr "Отображать"
 
@@ -19828,7 +19828,7 @@ msgstr "Показать на дисплее ресивера"
 msgid "singleepg"
 msgstr ""
 
-#: adjust.h:107 httpdfunc.h:4017 mc_audioplayer_settings.h:29
+#: adjust.h:108 httpdfunc.h:4017 mc_audioplayer_settings.h:29
 #: mc_iptvplayer_settings.h:25 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:27 player_mc_skin.xml.h:57
 #: skin_default_skin.xml.h:608 skins_0acht5zehn_skin.xml.h:575
@@ -19862,15 +19862,15 @@ msgstr "Скины"
 msgid "skinselect"
 msgstr "Выбор скина"
 
-#: adjust.h:184
+#: adjust.h:185
 msgid "slide from bottom"
 msgstr ""
 
-#: adjust.h:183
+#: adjust.h:184
 msgid "slide from left"
 msgstr ""
 
-#: adjust.h:192 httpdfunc.h:4543 mc_videoplayer_settings.h:50
+#: adjust.h:193 httpdfunc.h:4543 mc_videoplayer_settings.h:50
 #: moduleconfig.h:350 tmc.h:556
 msgid "slow"
 msgstr "Медленно"
@@ -19952,7 +19952,7 @@ msgstr ""
 msgid "stable"
 msgstr "Официальный фид"
 
-#: adjust.h:166 autotimer.c:481 autotimer.c:514 fancontrol.h:72
+#: adjust.h:167 autotimer.c:481 autotimer.c:514 fancontrol.h:72
 #: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:688 sispmctl.h:702
 #: sispmctl.h:732 sispmctl.h:746 sispmctl.h:776 sispmctl.h:790 sispmctl.h:820
 #: sispmctl.h:834 stopifnotused.c:112 webif_help.h:91
@@ -20621,7 +20621,7 @@ msgstr ""
 msgid "tools"
 msgstr "Утилиты"
 
-#: adjust.h:180
+#: adjust.h:181
 msgid "top to bottom"
 msgstr "Сверху вниз"
 
@@ -20849,11 +20849,11 @@ msgstr "Допустимый"
 msgid "verwerfen"
 msgstr "Отбросить"
 
-#: adjust.h:189 httpdfunc.h:4522
+#: adjust.h:190 httpdfunc.h:4522
 msgid "very fast"
 msgstr "Очень быстро"
 
-#: adjust.h:193 httpdfunc.h:4550
+#: adjust.h:194 httpdfunc.h:4550
 msgid "very slow"
 msgstr "Очень медленно"
 
@@ -21061,9 +21061,9 @@ msgstr "я"
 msgid "yellow"
 msgstr "Жёлтая"
 
-#: adjust.h:88 adjust.h:102 adjust.h:131 adjust.h:161 adjust.h:171 adjust.h:201
-#: adjust.h:205 adjust.h:213 adjust.h:217 adjust.h:221 adjust.h:227
-#: adjust.h:231 adjust.h:238 adjust.h:242 adjust.h:253 adjust.h:257
+#: adjust.h:89 adjust.h:103 adjust.h:132 adjust.h:162 adjust.h:172 adjust.h:202
+#: adjust.h:206 adjust.h:214 adjust.h:218 adjust.h:222 adjust.h:228
+#: adjust.h:232 adjust.h:239 adjust.h:243 adjust.h:254 adjust.h:258
 #: autotimer.c:454 autotimer.c:487 avsettings.h:179 avsettings.h:287
 #: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
 #: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:633 cec.h:637 cec.h:641
@@ -21121,15 +21121,15 @@ msgstr "Жёлтая"
 msgid "yes"
 msgstr "Да"
 
-#: adjust.h:232 httpdfunc.h:4763
+#: adjust.h:233 httpdfunc.h:4763
 msgid "yes / vzap 1 sec"
 msgstr "Да, через 1 сек"
 
-#: adjust.h:233 httpdfunc.h:4770
+#: adjust.h:234 httpdfunc.h:4770
 msgid "yes / vzap 2 sec"
 msgstr "Да, через 2 сек"
 
-#: adjust.h:234 httpdfunc.h:4777
+#: adjust.h:235 httpdfunc.h:4777
 msgid "yes / vzap endless"
 msgstr "Да, медленно"
 
