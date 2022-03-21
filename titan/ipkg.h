@@ -430,6 +430,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			ip = ostrcat("openaaf.dyndns.tv", NULL, 0, 0);
 		}
 
+/*
 		if(!file_exist(checkfile)) // +status.ipkg = date + 1day
 		{
 			char* tmppath = NULL;
@@ -442,7 +443,7 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 			unlink("/tmp/Packages.preview.tar.gz");
 			writesys(checkfile, ".", 1);
 		}
-
+*/
 		free(checkfile); checkfile = NULL;		
 		gethttp(ip, path, 80, (char*)filename, HTTPAUTH, 5000, NULL, 0);
 	}
@@ -665,7 +666,17 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				if(file_exist(tmpstr1) == 0)
 				{
 //					tmpstr3 = ostrcat(tmpstr3, node->url, 1, 0);
-       				tmpstr3 = ostrcat(tmpstr3, "http://openaaf.dyndns.tv/6.4/sf8008/sf8008", 1, 0);
+//       			tmpstr3 = ostrcat(tmpstr3, "http://openaaf.dyndns.tv/6.4/sf8008/sf8008", 1, 0);
+                    char* cmd = NULL;
+                    cmd = ostrcat(cmd, "cat ", 1, 0);
+                    cmd = ostrcat(cmd, getconfig("feed", NULL), 1, 0);
+                    cmd = ostrcat(cmd, " | sed -nr 's/.*(http.*).*/\\1/p'", 1, 0);
+//    				tmpstr3 = command("cat /etc/ipkg/official-feed.conf | sed -nr 's/.*(http.*).*/\1/p'");
+
+                    debug(130, "cmd %s", cmd);
+       				tmpstr3 = string_newline(command(cmd));
+                    free(cmd), cmd = NULL;
+                    debug(130, "url %s", tmpstr3);
 					tpkgeturl(tmpstr3, &ip, &path, &port);
 
 					if(ip != NULL && path != NULL)
@@ -683,7 +694,6 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 						tmpstr2 = ostrcat(tmpstr2, ".png", 1, 0);
                         free(box), box = NULL;
 	          			debug(130, "get http://%s/%s -> %s", ip, tmpstr2, tmpstr1);
-printf("get http://%s/%s -> %s\n", ip, tmpstr2, tmpstr1);
 
 						gethttp(ip, tmpstr2, port, tmpstr1, HTTPAUTH, 10000, NULL, 0);
 					}
@@ -885,4 +895,5 @@ end:
 
 
 #endif
+
 
