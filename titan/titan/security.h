@@ -1268,6 +1268,58 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("moduleconfig", child->name) == 0) child->locked = 1;
 			}
 
+            if(getconfigint("extensions_type", NULL) == 0)
+            {
+                // tpk active ipkg inactive
+                if(ostrcmp("feed_ipk", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_ipkinstall", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_ipkremove", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_tmpipkinstall", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_ipkupgrade", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_mediaipkinstall", child->name) == 0) child->locked = 1;
+
+                if(ostrcmp("feed", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tpkinstall", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tpkremove", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tmptpkinstall", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tpkupgrade", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_mediatpkinstall", child->name) == 0) child->locked = 0;
+            }
+            else if(getconfigint("extensions_type", NULL) == 1)
+            {
+                // ipkg active tpk inactive
+                if(ostrcmp("feed_ipk", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_ipkinstall", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_ipkremove", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tmpipkinstall", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_ipkupgrade", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_mediaipkinstall", child->name) == 0) child->locked = 0;
+
+                if(ostrcmp("feed", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_tpkinstall", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_tpkremove", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_tmptpkinstall", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_tpkupgrade", child->name) == 0) child->locked = 1;
+                if(ostrcmp("extensions_mediatpkinstall", child->name) == 0) child->locked = 1;
+            }
+            else if(getconfigint("extensions_type", NULL) == 2)
+            {
+                // ipkg active tpk active
+                if(ostrcmp("feed_ipk", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_ipkinstall", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_ipkremove", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tmpipkinstall", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_ipkupgrade", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_mediaipkinstall", child->name) == 0) child->locked = 0;
+
+                if(ostrcmp("feed", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tpkinstall", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tpkremove", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tmptpkinstall", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_tpkupgrade", child->name) == 0) child->locked = 0;
+                if(ostrcmp("extensions_mediatpkinstall", child->name) == 0) child->locked = 0;
+            }
+
 			// hide pvr / timeshift
 			if(status.pvr == 0)
 			{

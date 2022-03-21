@@ -852,7 +852,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenextensions_ipk(1, NULL, NULL, 1);
 	}
-	else if(ostrcmp("extensions_impipkinstall", menuentry->name) == 0)
+	else if(ostrcmp("extensions_tmpipkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screenextensions_ipk(2, NULL, NULL, 1);
@@ -862,7 +862,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenextensions_ipk(3, NULL, NULL, 1);
 	}
-	else if(ostrcmp("extensions_mediatipkinstall", menuentry->name) == 0)
+	else if(ostrcmp("extensions_mediaipkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screenextensions_check_ipk(1);
