@@ -1,4 +1,4 @@
-msgid ""
+Msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.83\n"
 "POT-Creation-Date: \n"
@@ -7600,7 +7600,7 @@ msgstr "IPK Pakete installieren (Internet)"
 
 #: skin_default_skin.xml.h:339 skins_default_skin.xml.h:339
 msgid "IPK media (media)"
-msgstr "IPK installieren aus /media"
+msgstr "IPK installieren (Media)"
 
 #: skin_default_skin.xml.h:340 skins_default_skin.xml.h:340
 msgid "IPK remove"
@@ -7608,7 +7608,7 @@ msgstr "IPK Pakete löschen"
 
 #: skin_default_skin.xml.h:341 skins_default_skin.xml.h:341
 msgid "IPK tmp (tmp)"
-msgstr "IPK installieren aus /tmp"
+msgstr "IPK installieren (tmp)"
 
 #: skin_default_skin.xml.h:342 skins_default_skin.xml.h:342
 msgid "IPK upgrade (online)"
