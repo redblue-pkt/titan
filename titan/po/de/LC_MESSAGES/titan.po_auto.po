@@ -464,11 +464,11 @@ msgstr ""
 msgid "1"
 msgstr ""
 
-#: adjust.h:135 httpdfunc.h:4185
+#: adjust.h:136 httpdfunc.h:4185
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:125 httpdfunc.h:4125
+#: adjust.h:126 httpdfunc.h:4125
 msgid "1 sec"
 msgstr "1 Sekunde"
 
@@ -597,7 +597,7 @@ msgstr "1 Sek"
 msgid "2"
 msgstr ""
 
-#: adjust.h:136 httpdfunc.h:4192
+#: adjust.h:137 httpdfunc.h:4192
 msgid "2 GB"
 msgstr ""
 
@@ -605,7 +605,7 @@ msgstr ""
 msgid "2 Khz"
 msgstr ""
 
-#: adjust.h:126 avsettings.h:83 httpdfunc.h:4132
+#: adjust.h:127 avsettings.h:83 httpdfunc.h:4132
 msgid "2 sec"
 msgstr "2 Sekunden"
 
@@ -664,7 +664,7 @@ msgstr "2 Sek"
 msgid "3"
 msgstr ""
 
-#: adjust.h:137 httpdfunc.h:4199
+#: adjust.h:138 httpdfunc.h:4199
 msgid "3 GB"
 msgstr ""
 
@@ -749,7 +749,7 @@ msgstr "3 Sek"
 msgid "4"
 msgstr ""
 
-#: adjust.h:138 httpdfunc.h:4206
+#: adjust.h:139 httpdfunc.h:4206
 msgid "4 GB"
 msgstr ""
 
@@ -2412,11 +2412,11 @@ msgstr "Schwarze 3D-Senderlogos - Astra 19.2"
 msgid "Black Picons - Eutelsat 36.0E."
 msgstr ""
 
-#: adjust.h:277
+#: adjust.h:278
 msgid "Black screen"
 msgstr ""
 
-#: adjust.h:279
+#: adjust.h:280
 msgid "Black screen till locked"
 msgstr ""
 
@@ -2790,11 +2790,11 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: adjust.h:421
+#: adjust.h:422
 msgid "CA"
 msgstr ""
 
-#: adjust.h:364
+#: adjust.h:365
 msgid "CA Device"
 msgstr ""
 
@@ -3258,7 +3258,7 @@ msgstr "Sender Zuordnung"
 msgid "Channel Down"
 msgstr "Sender ab"
 
-#: adjust.h:75 epgsettings.h:139 httpdfunc.h:3912
+#: adjust.h:76 epgsettings.h:139 httpdfunc.h:3912
 #: skins_0acht5zehn_skin.xml.h:135
 msgid "Channel EPG"
 msgstr "Sender EPG"
@@ -3309,7 +3309,7 @@ msgstr "Senderliste"
 msgid "Channel List selection"
 msgstr "Senderlisten Ansicht"
 
-#: adjust.h:413
+#: adjust.h:414
 msgid "Channel Scan"
 msgstr ""
 
@@ -4173,7 +4173,7 @@ msgstr "DTS-Downmix-Firmware"
 msgid "DTS-HD Mode"
 msgstr ""
 
-#: adjust.h:360
+#: adjust.h:361
 msgid "DVB Devices"
 msgstr ""
 
@@ -4185,7 +4185,7 @@ msgstr "DVB-S"
 msgid "DVBS2"
 msgstr "DVB-S2"
 
-#: adjust.h:388 tpk_showname.h:31
+#: adjust.h:389 tpk_showname.h:31
 msgid "DVD Player"
 msgstr "DVD-Player"
 
@@ -4759,7 +4759,7 @@ msgstr ""
 msgid "Draw"
 msgstr "Unentschieden"
 
-#: adjust.h:417
+#: adjust.h:418
 msgid "Draw Screen"
 msgstr ""
 
@@ -4893,7 +4893,7 @@ msgstr "Auswerfen"
 msgid "ELBEKANAL rtmp (German)"
 msgstr ""
 
-#: adjust.h:74 httpdfunc.h:3905 play.h:1714 skin_default_skin.xml.h:184
+#: adjust.h:75 httpdfunc.h:3905 play.h:1714 skin_default_skin.xml.h:184
 #: skins_0acht5zehn_skin.xml.h:222 skins_atemio_skin.xml.h:219
 #: skins_cool_skin.xml.h:266 skins_default_skin.xml.h:184
 #: skins_kravenhd_skin.xml.h:193 skins_megastyleblue_skin.xml.h:267
@@ -5048,7 +5048,7 @@ msgstr "Suche"
 msgid "EPG Settings"
 msgstr "EPG-Einstellungen"
 
-#: adjust.h:396
+#: adjust.h:397
 msgid "EPG Task"
 msgstr ""
 
@@ -5892,7 +5892,7 @@ msgstr "Datei bereits vorhanden, trotzdem umbenennen und überschreiben?"
 msgid "File Manager"
 msgstr "Datei Manager"
 
-#: adjust.h:437
+#: adjust.h:438
 msgid "File Operation"
 msgstr ""
 
@@ -6272,7 +6272,7 @@ msgstr ""
 msgid "Frage"
 msgstr ""
 
-#: adjust.h:409
+#: adjust.h:410
 msgid "Framebuffer"
 msgstr ""
 
@@ -6462,7 +6462,7 @@ msgstr "Grafisches Multi-EPG - Satellit"
 msgid "GREEN"
 msgstr "grün"
 
-#: adjust.h:117 httpdfunc.h:4081 skin_default_skin.xml.h:246
+#: adjust.h:118 httpdfunc.h:4081 skin_default_skin.xml.h:246
 #: skins_0acht5zehn_skin.xml.h:285 skins_atemio_skin.xml.h:280
 #: skins_cool_skin.xml.h:339 skins_default_skin.xml.h:246
 #: skins_kravenhd_skin.xml.h:256 skins_megastyleblue_skin.xml.h:340
@@ -6542,7 +6542,7 @@ msgstr "GIT Änderungsprotokoll (extern)"
 msgid "Git Changelog Full"
 msgstr "GIT Änderungsprotokoll (komplett)"
 
-#: adjust.h:340
+#: adjust.h:341
 msgid "Global"
 msgstr ""
 
@@ -6772,11 +6772,11 @@ msgstr "Hostname"
 msgid "HT1 mms (German)"
 msgstr ""
 
-#: adjust.h:336
+#: adjust.h:337
 msgid "HTTP Header/Community"
 msgstr ""
 
-#: adjust.h:368
+#: adjust.h:369
 msgid "HTTP Server/Stream/Record"
 msgstr ""
 
@@ -6825,7 +6825,7 @@ msgstr "Zeit bis Warnmeldung erscheint (sek)"
 msgid "Hard"
 msgstr "schwer"
 
-#: adjust.h:320 harddisk.h:487 skin_default_skin.xml.h:248
+#: adjust.h:321 harddisk.h:487 skin_default_skin.xml.h:248
 #: skins_0acht5zehn_skin.xml.h:289 skins_0acht5zehn_skin.xml.h:832
 #: skins_atemio_skin.xml.h:284 skins_cool_skin.xml.h:343
 #: skins_default_skin.xml.h:248 skins_kravenhd_skin.xml.h:258
@@ -7389,11 +7389,11 @@ msgstr "Hinweis: Benutzen Sie die TEXT Taste, um den Image Namen zu bearbeiten"
 msgid "History"
 msgstr "Geschichte"
 
-#: adjust.h:278
+#: adjust.h:279
 msgid "Hold screen"
 msgstr ""
 
-#: adjust.h:280
+#: adjust.h:281
 msgid "Hold till locked"
 msgstr ""
 
@@ -7484,7 +7484,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: adjust.h:376
+#: adjust.h:377
 msgid "ID3"
 msgstr ""
 
@@ -8043,7 +8043,7 @@ msgstr ""
 msgid "Ipk Remove Info - Remove OK"
 msgstr ""
 
-#: adjust.h:246
+#: adjust.h:247
 msgid "Ipkg"
 msgstr ""
 
@@ -8239,7 +8239,7 @@ msgstr "Schlüssel"
 msgid "Key Action - Plugins"
 msgstr "Schnellstart"
 
-#: adjust.h:308
+#: adjust.h:309
 msgid "Key Actions"
 msgstr ""
 
@@ -8848,7 +8848,7 @@ msgstr ""
 msgid "MTD"
 msgstr "Flash Aufteilung"
 
-#: adjust.h:296
+#: adjust.h:297
 msgid "MTD Operation/System Update"
 msgstr ""
 
@@ -9074,7 +9074,7 @@ msgstr "MiniPlayer (Medien wiedergeben)"
 msgid "Media Plugins List"
 msgstr "Media Plugins Liste"
 
-#: adjust.h:300 tpk_showname.h:90
+#: adjust.h:301 tpk_showname.h:90
 msgid "MediaCenter"
 msgstr "Media Center"
 
@@ -9082,7 +9082,7 @@ msgstr "Media Center"
 msgid "MediaCenter FolderIcons"
 msgstr "Media Center Odnersymbole"
 
-#: adjust.h:425
+#: adjust.h:426
 msgid "MediaDB"
 msgstr ""
 
@@ -9172,7 +9172,7 @@ msgstr "MediaDB Suche beendet"
 msgid "MediaDB scantype"
 msgstr ""
 
-#: adjust.h:352
+#: adjust.h:353
 msgid "MediaDB/IMDb/TMDb"
 msgstr ""
 
@@ -9430,7 +9430,7 @@ msgstr ""
 msgid "MiniDLNA Medien Server (upnp)"
 msgstr ""
 
-#: adjust.h:292
+#: adjust.h:293
 msgid "Minimal"
 msgstr ""
 
@@ -9661,7 +9661,7 @@ msgstr ""
 msgid "MultiGUI Plugin"
 msgstr ""
 
-#: adjust.h:324 tpk_showname.h:97
+#: adjust.h:325 tpk_showname.h:97
 msgid "MultiImage"
 msgstr ""
 
@@ -9732,7 +9732,7 @@ msgstr "Musik"
 msgid "Mute"
 msgstr "Stumm"
 
-#: adjust.h:433
+#: adjust.h:434
 msgid "Mutex"
 msgstr ""
 
@@ -9867,7 +9867,7 @@ msgstr "Netzwerk"
 msgid "Network Adapter Test"
 msgstr "Test"
 
-#: adjust.h:304
+#: adjust.h:305
 msgid "Network Interface"
 msgstr ""
 
@@ -9915,7 +9915,7 @@ msgstr "Verbindungstest"
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: adjust.h:312 skin_default_skin.xml.h:414 skins_0acht5zehn_skin.xml.h:388
+#: adjust.h:313 skin_default_skin.xml.h:414 skins_0acht5zehn_skin.xml.h:388
 #: skins_atemio_skin.xml.h:387 skins_cool_skin.xml.h:457
 #: skins_default_skin.xml.h:414 skins_kravenhd_skin.xml.h:411
 #: skins_megastyleblue_skin.xml.h:458 skins_megastylegrey_skin.xml.h:458
@@ -9977,7 +9977,7 @@ msgstr ""
 msgid "News"
 msgstr "Aktuelle Meldungen"
 
-#: adjust.h:405 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:419
+#: adjust.h:406 httpdfunc.h:4647 httpdfunc.h:5434 skin_default_skin.xml.h:419
 #: skins_0acht5zehn_skin.xml.h:392 skins_0acht5zehn_skin.xml.h:852
 #: skins_atemio_skin.xml.h:392 skins_cool_skin.xml.h:462
 #: skins_default_skin.xml.h:419 skins_kravenhd_skin.xml.h:416
@@ -10492,7 +10492,7 @@ msgstr "OK Farbe"
 msgid "Old Audiofw"
 msgstr "Alte Audio-Firmware"
 
-#: adjust.h:401
+#: adjust.h:402
 msgid "Old Entry"
 msgstr ""
 
@@ -10887,7 +10887,7 @@ msgstr ""
 msgid "Photos postet"
 msgstr "Bild veröffentlicht"
 
-#: adjust.h:445 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
+#: adjust.h:446 webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
 #: webif_index.atemio6200.h:64 webif_index.atemio6200.h:120
 #: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
 #: webif_index.atemio-nemesis.h:64 webif_index.atemio-nemesis.h:120
@@ -11456,11 +11456,11 @@ msgstr ""
 msgid "Power = reboot receiver"
 msgstr "Power = Receiver Neustart"
 
-#: adjust.h:113 httpdfunc.h:4053
+#: adjust.h:114 httpdfunc.h:4053
 msgid "Power Menu"
 msgstr "Ausschaltmenü"
 
-#: adjust.h:114 adjust.h:120 httpdfunc.h:4060 httpdfunc.h:4096
+#: adjust.h:115 adjust.h:121 httpdfunc.h:4060 httpdfunc.h:4096
 #: skin_default_skin.xml.h:470 skins_0acht5zehn_skin.xml.h:444
 #: skins_atemio_skin.xml.h:443 skins_cool_skin.xml.h:527
 #: skins_default_skin.xml.h:470 skins_kravenhd_skin.xml.h:467
@@ -11909,7 +11909,7 @@ msgstr "Radio"
 msgid "Radio: "
 msgstr ""
 
-#: adjust.h:372
+#: adjust.h:373
 msgid "Radiotext"
 msgstr ""
 
@@ -12534,7 +12534,7 @@ msgstr "Auflösung TV:"
 msgid "Rest:"
 msgstr ""
 
-#: adjust.h:116 httpdfunc.h:4074 skin_default_skin.xml.h:525
+#: adjust.h:117 httpdfunc.h:4074 skin_default_skin.xml.h:525
 #: skins_0acht5zehn_skin.xml.h:502 skins_atemio_skin.xml.h:497
 #: skins_cool_skin.xml.h:595 skins_default_skin.xml.h:525
 #: skins_kravenhd_skin.xml.h:533 skins_megastyleblue_skin.xml.h:597
@@ -12944,7 +12944,7 @@ msgstr ""
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr ""
 
-#: adjust.h:441
+#: adjust.h:442
 msgid "SMTP"
 msgstr ""
 
@@ -13373,7 +13373,7 @@ msgstr "Science Fiction"
 msgid "Score:"
 msgstr "Punkte:"
 
-#: adjust.h:332 player_mc_skin.xml.h:54 player_tithek_skin.xml.h:22
+#: adjust.h:333 player_mc_skin.xml.h:54 player_tithek_skin.xml.h:22
 #: skins_cool_skin.xml.h:639 skins_megastyleblue_skin.xml.h:641
 #: skins_megastylegrey_skin.xml.h:641
 msgid "Screensaver"
@@ -14532,7 +14532,7 @@ msgstr ""
 msgid "StandBy Mode"
 msgstr "Standby Modus"
 
-#: adjust.h:115 adjust.h:121 httpdfunc.h:4067 httpdfunc.h:4103
+#: adjust.h:116 adjust.h:122 httpdfunc.h:4067 httpdfunc.h:4103
 #: powerofftimer.h:118 skin_default_skin.xml.h:631
 #: skins_0acht5zehn_skin.xml.h:599 skins_atemio_skin.xml.h:601
 #: skins_cool_skin.xml.h:712 skins_default_skin.xml.h:631
@@ -14827,7 +14827,7 @@ msgstr ""
 msgid "Streaming succesfull stopped."
 msgstr "Streaming erfolgreich beendet"
 
-#: adjust.h:344
+#: adjust.h:345
 msgid "Stringconvert"
 msgstr ""
 
@@ -14851,7 +14851,7 @@ msgstr "Unterkanäle"
 msgid "Subservices"
 msgstr "Unterkanäle"
 
-#: adjust.h:380 skin_default_skin.xml.h:650 skins_0acht5zehn_skin.xml.h:884
+#: adjust.h:381 skin_default_skin.xml.h:650 skins_0acht5zehn_skin.xml.h:884
 #: skins_atemio_skin.xml.h:620 skins_cool_skin.xml.h:733
 #: skins_default_skin.xml.h:650 skins_kravenhd_skin.xml.h:659
 #: skins_megastyleblue_skin.xml.h:735 skins_megastylegrey_skin.xml.h:735
@@ -15185,7 +15185,7 @@ msgstr "TMDb"
 msgid "TMDb Movie Database Plugin"
 msgstr "TMDb Filmdatenbank"
 
-#: adjust.h:348
+#: adjust.h:349
 msgid "TPK"
 msgstr ""
 
@@ -15573,7 +15573,7 @@ msgstr ""
 msgid "Thu"
 msgstr "Don"
 
-#: adjust.h:384
+#: adjust.h:385
 msgid "Thumbnails"
 msgstr ""
 
@@ -15914,7 +15914,7 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: adjust.h:328
+#: adjust.h:329
 msgid "Tithek"
 msgstr ""
 
@@ -16080,11 +16080,11 @@ msgstr ""
 "\n"
 "Folgt bald"
 
-#: adjust.h:245
+#: adjust.h:246
 msgid "Tpk"
 msgstr ""
 
-#: adjust.h:247
+#: adjust.h:248
 msgid "Tpk / Ipkg"
 msgstr ""
 
@@ -17222,7 +17222,7 @@ msgstr "Wetter"
 msgid "Weather Infos"
 msgstr "Wetter Infos"
 
-#: adjust.h:316
+#: adjust.h:317
 msgid "Web Adjust"
 msgstr ""
 
@@ -17741,7 +17741,7 @@ msgstr ""
 msgid "allways del file"
 msgstr "Timeshiftdatei immer löschen"
 
-#: adjust.h:105 httpdfunc.h:4003 mc_audioplayer_settings.h:27
+#: adjust.h:106 httpdfunc.h:4003 mc_audioplayer_settings.h:27
 #: mc_iptvplayer_settings.h:23 mc_pictureplayer_settings.h:42
 #: mc_videoplayer_settings.h:25 player_mc_skin.xml.h:4
 #: skin_default_skin.xml.h:30 skins_0acht5zehn_skin.xml.h:73
@@ -17763,15 +17763,15 @@ msgstr ""
 msgid "always"
 msgstr "immer"
 
-#: adjust.h:177 httpdfunc.h:4507
+#: adjust.h:178 httpdfunc.h:4507
 msgid "anim. both"
 msgstr "zoom"
 
-#: adjust.h:176 httpdfunc.h:4500
+#: adjust.h:177 httpdfunc.h:4500
 msgid "anim. height"
 msgstr "vertikal"
 
-#: adjust.h:175 httpdfunc.h:4493
+#: adjust.h:176 httpdfunc.h:4493
 msgid "anim. width"
 msgstr "horizontal"
 
@@ -17806,7 +17806,7 @@ msgstr ""
 msgid "ausgehende Anrufe"
 msgstr ""
 
-#: adjust.h:164 autotimer.c:479 autotimer.c:512 avsettings.h:74
+#: adjust.h:165 autotimer.c:479 autotimer.c:512 avsettings.h:74
 #: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:110 rectimer.h:1206
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
@@ -17997,7 +17997,7 @@ msgstr "Sender + Uhrzeit"
 msgid "channel number"
 msgstr "Sender Nr."
 
-#: adjust.h:208 httpdfunc.h:4632
+#: adjust.h:209 httpdfunc.h:4632
 msgid "channel-movie"
 msgstr "Sender-Titel"
 
@@ -18113,7 +18113,7 @@ msgstr ""
 msgid "daily"
 msgstr "Täglich"
 
-#: adjust.h:109 httpdfunc.h:4031 mc_audioplayer_settings.h:31
+#: adjust.h:110 httpdfunc.h:4031 mc_audioplayer_settings.h:31
 #: mc_iptvplayer_settings.h:27 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:29 player_mc_skin.xml.h:13
 #: skin_default_skin.xml.h:134 skins_0acht5zehn_skin.xml.h:171
@@ -18224,7 +18224,7 @@ msgstr "Verzeichnisname"
 msgid "dirsort"
 msgstr "Sortierung"
 
-#: adjust.h:124 adjust.h:134 epgsettings.h:148 epgsettings.h:154
+#: adjust.h:125 adjust.h:135 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4118 httpdfunc.h:4178 network.h:420 network.h:639
 #: panel_settings.h:29
 msgid "disable"
@@ -18302,7 +18302,7 @@ msgstr ""
 msgid "e"
 msgstr ""
 
-#: adjust.h:356
+#: adjust.h:357
 msgid "ePlayer"
 msgstr ""
 
@@ -18341,7 +18341,7 @@ msgstr "aktivieren"
 msgid "end search"
 msgstr "Suche beenden"
 
-#: adjust.h:127 httpdfunc.h:4139 pin.h:193
+#: adjust.h:128 httpdfunc.h:4139 pin.h:193
 msgid "endless"
 msgstr "endlos"
 
@@ -18369,7 +18369,7 @@ msgstr "!!! FEHLER !!!"
 msgid "event"
 msgstr "Ereignis"
 
-#: adjust.h:223 httpdfunc.h:4712
+#: adjust.h:224 httpdfunc.h:4712
 msgid "expert (11)"
 msgstr ""
 
@@ -18389,7 +18389,7 @@ msgstr ""
 msgid "extensionsmenu"
 msgstr "Erweiterungsmenü"
 
-#: adjust.h:156 adjust.h:476 httpdfunc.h:4381 httpdfunc.h:4866
+#: adjust.h:157 adjust.h:477 httpdfunc.h:4381 httpdfunc.h:4866
 #: httpdsettings.h:50
 msgid "extern"
 msgstr ""
@@ -18408,7 +18408,7 @@ msgstr ""
 msgid "fade out/in"
 msgstr "Ein/Ausblenden"
 
-#: adjust.h:98 adjust.h:190 httpdfunc.h:3966 httpdfunc.h:4529
+#: adjust.h:99 adjust.h:191 httpdfunc.h:3966 httpdfunc.h:4529
 #: mc_audioplayer_settings.h:35 mc_iptvplayer_settings.h:31
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:33
 #: mc_videoplayer_settings.h:49 moduleconfig.h:352 player_mc_skin.xml.h:20
@@ -18582,7 +18582,7 @@ msgstr "Netzwerk Freigabe als Aufnahmeort"
 msgid "helpbox"
 msgstr "Hilfebox"
 
-#: adjust.h:196 httpdfunc.h:4565 pin.h:111
+#: adjust.h:197 httpdfunc.h:4565 pin.h:111
 msgid "hidden"
 msgstr "ausblenden"
 
@@ -18653,7 +18653,7 @@ msgstr "im Hintergrund"
 msgid "inadynsettings"
 msgstr "Indyn Einstellungen"
 
-#: adjust.h:73 httpdfunc.h:3898 webif_help.h:35
+#: adjust.h:74 httpdfunc.h:3898 webif_help.h:35
 msgid "infobar"
 msgstr "Informationsleiste"
 
@@ -18691,7 +18691,7 @@ msgstr "installiert"
 msgid "interfacelist"
 msgstr "Netzwerkliste"
 
-#: adjust.h:157 adjust.h:477 httpdfunc.h:4388 httpdfunc.h:4873
+#: adjust.h:158 adjust.h:478 httpdfunc.h:4388 httpdfunc.h:4873
 #: httpdsettings.h:49
 msgid "intern"
 msgstr ""
@@ -18824,7 +18824,7 @@ msgstr "Samsung-LCD-Skins"
 msgid "left"
 msgstr "links"
 
-#: adjust.h:179
+#: adjust.h:180
 msgid "left to right"
 msgstr ""
 
@@ -18923,7 +18923,7 @@ msgstr "MediaDB bearbeiten"
 msgid "mediadbsettings"
 msgstr "MediaDB Einstellungen"
 
-#: adjust.h:97 httpdfunc.h:3959
+#: adjust.h:98 httpdfunc.h:3959
 msgid "medium"
 msgstr "mittel"
 
@@ -18974,7 +18974,7 @@ msgstr "Eintrag verschieben"
 msgid "move west"
 msgstr "nach West"
 
-#: adjust.h:209 httpdfunc.h:4639
+#: adjust.h:210 httpdfunc.h:4639
 msgid "movie-channel"
 msgstr "Titel-Sender"
 
@@ -19058,10 +19058,10 @@ msgstr "NFS"
 msgid "nfs server"
 msgstr "NFSD Kernel Server autostart"
 
-#: adjust.h:72 adjust.h:87 adjust.h:96 adjust.h:101 adjust.h:130 adjust.h:160
-#: adjust.h:170 adjust.h:174 adjust.h:200 adjust.h:204 adjust.h:212
-#: adjust.h:216 adjust.h:220 adjust.h:226 adjust.h:230 adjust.h:237
-#: adjust.h:241 adjust.h:252 adjust.h:258 adjust.h:485 autotimer.c:453
+#: adjust.h:73 adjust.h:88 adjust.h:97 adjust.h:102 adjust.h:131 adjust.h:161
+#: adjust.h:171 adjust.h:175 adjust.h:201 adjust.h:205 adjust.h:213
+#: adjust.h:217 adjust.h:221 adjust.h:227 adjust.h:231 adjust.h:238
+#: adjust.h:242 adjust.h:253 adjust.h:259 adjust.h:486 autotimer.c:453
 #: autotimer.c:486 avsettings.h:178 avsettings.h:286 avsettings.h:291
 #: avsettings.h:303 avsettings.h:315 avsettings.h:328 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
@@ -19157,7 +19157,7 @@ msgstr "keines"
 msgid "nonlinear"
 msgstr "Originalgröße"
 
-#: adjust.h:191 fancontrol.h:65 httpdfunc.h:4536 timeshiftsettings.h:49
+#: adjust.h:192 fancontrol.h:65 httpdfunc.h:4536 timeshiftsettings.h:49
 #: tmc.h:557
 msgid "normal"
 msgstr ""
@@ -19170,7 +19170,7 @@ msgstr "Nord"
 msgid "not started akttime higher than timer endtime"
 msgstr "FEHLER: Timer nicht gestartet, Endzeit bereits vergangen"
 
-#: adjust.h:165 autotimer.c:480 autotimer.c:513 epgsettings.h:216
+#: adjust.h:166 autotimer.c:480 autotimer.c:513 epgsettings.h:216
 #: httpdfunc.h:4434 rectimer.h:1207
 msgid "nothing"
 msgstr "nichts tun"
@@ -19463,7 +19463,7 @@ msgstr "Position"
 msgid "possetup"
 msgstr "Tuner Positions Einstellungen"
 
-#: adjust.h:167 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
+#: adjust.h:168 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
 #: rectimer.h:1209 stopifnotused.c:111
 msgid "power off"
 msgstr "Ausschalten"
@@ -19655,7 +19655,7 @@ msgstr "wiederholen"
 msgid "resolutionsettings"
 msgstr "Auflösung Einstellungen"
 
-#: adjust.h:106 httpdfunc.h:4010 mc_audioplayer_settings.h:28
+#: adjust.h:107 httpdfunc.h:4010 mc_audioplayer_settings.h:28
 #: mc_iptvplayer_settings.h:24 mc_pictureplayer_settings.h:43
 #: mc_videoplayer_settings.h:26 player_mc_skin.xml.h:51
 #: skin_default_skin.xml.h:534 skins_0acht5zehn_skin.xml.h:510
@@ -19668,7 +19668,7 @@ msgstr "Auflösung Einstellungen"
 msgid "reverse alpha"
 msgstr "Alphabetisch (Z-A)"
 
-#: adjust.h:110 httpdfunc.h:4038 mc_audioplayer_settings.h:32
+#: adjust.h:111 httpdfunc.h:4038 mc_audioplayer_settings.h:32
 #: mc_iptvplayer_settings.h:28 mc_pictureplayer_settings.h:47
 #: mc_videoplayer_settings.h:30 player_mc_skin.xml.h:52
 #: skin_default_skin.xml.h:535 skins_0acht5zehn_skin.xml.h:511
@@ -19681,7 +19681,7 @@ msgstr "Alphabetisch (Z-A)"
 msgid "reverse date"
 msgstr "Datum (Alt-Neu)"
 
-#: adjust.h:108 httpdfunc.h:4024 mc_audioplayer_settings.h:30
+#: adjust.h:109 httpdfunc.h:4024 mc_audioplayer_settings.h:30
 #: mc_iptvplayer_settings.h:26 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:28 player_mc_skin.xml.h:53
 #: skin_default_skin.xml.h:536 skins_0acht5zehn_skin.xml.h:512
@@ -19939,7 +19939,7 @@ msgstr "Freigabename"
 msgid "shortepg"
 msgstr "EPG-Kurzübersicht"
 
-#: adjust.h:197
+#: adjust.h:198
 msgid "show"
 msgstr "anzeigen"
 
@@ -19983,7 +19983,7 @@ msgstr "Zeige IP Adresse im Display beim Start"
 msgid "singleepg"
 msgstr "Einfach EPG"
 
-#: adjust.h:107 httpdfunc.h:4017 mc_audioplayer_settings.h:29
+#: adjust.h:108 httpdfunc.h:4017 mc_audioplayer_settings.h:29
 #: mc_iptvplayer_settings.h:25 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:27 player_mc_skin.xml.h:57
 #: skin_default_skin.xml.h:608 skins_0acht5zehn_skin.xml.h:575
@@ -20017,15 +20017,15 @@ msgstr "Skins"
 msgid "skinselect"
 msgstr "Skin-Auswahl"
 
-#: adjust.h:184
+#: adjust.h:185
 msgid "slide from bottom"
 msgstr ""
 
-#: adjust.h:183
+#: adjust.h:184
 msgid "slide from left"
 msgstr ""
 
-#: adjust.h:192 httpdfunc.h:4543 mc_videoplayer_settings.h:50
+#: adjust.h:193 httpdfunc.h:4543 mc_videoplayer_settings.h:50
 #: moduleconfig.h:350 tmc.h:556
 msgid "slow"
 msgstr "langsam"
@@ -20107,7 +20107,7 @@ msgstr "SSL versuchen"
 msgid "stable"
 msgstr "Offizieller Feed"
 
-#: adjust.h:166 autotimer.c:481 autotimer.c:514 fancontrol.h:72
+#: adjust.h:167 autotimer.c:481 autotimer.c:514 fancontrol.h:72
 #: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:688 sispmctl.h:702
 #: sispmctl.h:732 sispmctl.h:746 sispmctl.h:776 sispmctl.h:790 sispmctl.h:820
 #: sispmctl.h:834 stopifnotused.c:112 webif_help.h:91
@@ -20776,7 +20776,7 @@ msgstr ""
 msgid "tools"
 msgstr "Tools"
 
-#: adjust.h:180
+#: adjust.h:181
 msgid "top to bottom"
 msgstr ""
 
@@ -21012,11 +21012,11 @@ msgstr "gültig"
 msgid "verwerfen"
 msgstr ""
 
-#: adjust.h:189 httpdfunc.h:4522
+#: adjust.h:190 httpdfunc.h:4522
 msgid "very fast"
 msgstr "sehr schnell"
 
-#: adjust.h:193 httpdfunc.h:4550
+#: adjust.h:194 httpdfunc.h:4550
 msgid "very slow"
 msgstr "sehr langsam"
 
@@ -21224,9 +21224,9 @@ msgstr ""
 msgid "yellow"
 msgstr "gelb"
 
-#: adjust.h:88 adjust.h:102 adjust.h:131 adjust.h:161 adjust.h:171 adjust.h:201
-#: adjust.h:205 adjust.h:213 adjust.h:217 adjust.h:221 adjust.h:227
-#: adjust.h:231 adjust.h:238 adjust.h:242 adjust.h:253 adjust.h:257
+#: adjust.h:89 adjust.h:103 adjust.h:132 adjust.h:162 adjust.h:172 adjust.h:202
+#: adjust.h:206 adjust.h:214 adjust.h:218 adjust.h:222 adjust.h:228
+#: adjust.h:232 adjust.h:239 adjust.h:243 adjust.h:254 adjust.h:258
 #: autotimer.c:454 autotimer.c:487 avsettings.h:179 avsettings.h:287
 #: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
 #: blindscanadjust.h:188 blindscanadjust.h:192 cec.h:633 cec.h:637 cec.h:641
@@ -21284,15 +21284,15 @@ msgstr "gelb"
 msgid "yes"
 msgstr "Ja"
 
-#: adjust.h:232 httpdfunc.h:4763
+#: adjust.h:233 httpdfunc.h:4763
 msgid "yes / vzap 1 sec"
 msgstr "Ja/VZAP 1 Sek"
 
-#: adjust.h:233 httpdfunc.h:4770
+#: adjust.h:234 httpdfunc.h:4770
 msgid "yes / vzap 2 sec"
 msgstr "Ja/VZAP 2 Sek"
 
-#: adjust.h:234 httpdfunc.h:4777
+#: adjust.h:235 httpdfunc.h:4777
 msgid "yes / vzap endless"
 msgstr "Ja/VZAP unendlich"
 
