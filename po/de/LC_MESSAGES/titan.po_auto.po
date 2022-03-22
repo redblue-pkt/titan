@@ -1,4 +1,4 @@
-Msgid ""
+msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.83\n"
 "POT-Creation-Date: \n"
