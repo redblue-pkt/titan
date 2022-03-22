@@ -553,6 +553,7 @@ void screenadjust()
 				status.recsplitsize = atoi(recsplitsize->ret);
 				status.recsplitsize *= 1000 * 1000 * 1000;
 			}
+
 			addconfigscreen("skip13", skip13);
 			addconfigscreen("skip46", skip46);
 			addconfigscreen("skip79", skip79);
@@ -593,6 +594,14 @@ void screenadjust()
 				addconfigscreencheck("usecec", usecec, "0");
 #if defined(OVBUILD) || defined (OEBUILD)
 			addconfigscreencheck("extensions_type", extensions_type, "0");
+			if(extensions_type->ret != NULL)
+			{
+	            //set skinentrys locked
+	            if(status.security == 0)
+		            setskinnodeslocked(1);
+	            else
+		            setskinnodeslocked(0);
+			}
 #endif
 			if(checkbox("ATEMIO7600") == 1)
 			{
