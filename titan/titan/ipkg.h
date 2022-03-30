@@ -668,10 +668,10 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 //					tmpstr3 = ostrcat(tmpstr3, node->url, 1, 0);
 //       			tmpstr3 = ostrcat(tmpstr3, "http://openaaf.dyndns.tv/6.4/sf8008/sf8008", 1, 0);
                     char* cmd = NULL;
-                    cmd = ostrcat(cmd, "cat ", 1, 0);
-                    cmd = ostrcat(cmd, getconfig("feed", NULL), 1, 0);
-                    cmd = ostrcat(cmd, " | sed -nr 's/.*(http.*).*/\\1/p'", 1, 0);
-//    				tmpstr3 = command("cat /etc/ipkg/official-feed.conf | sed -nr 's/.*(http.*).*/\1/p'");
+//                    cmd = ostrcat(cmd, "cat ", 1, 0);
+//                    cmd = ostrcat(cmd, getconfig("feed", NULL), 1, 0);
+//                    cmd = ostrcat(cmd, " | sed -nr 's/.*(http.*).*/\\1/p'", 1, 0);
+    				cmd = command("cat /etc/ipkg/official-feed.conf | sed -nr 's/.*(http.*).*/\\1/p'");
 
                     debug(130, "cmd %s", cmd);
        				tmpstr3 = string_newline(command(cmd));
