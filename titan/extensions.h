@@ -884,7 +884,7 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 
 		if(file_exist("/tmp/.ipkg_needs_reboot"))
 		{
-			unlink("/tmp/.tpk_needs_reboot");
+			unlink("/tmp/.ipkg_needs_reboot");
 			textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			//sync usb
 			system("sync");
