@@ -671,7 +671,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 //                    cmd = ostrcat(cmd, "cat ", 1, 0);
 //                    cmd = ostrcat(cmd, getconfig("feed", NULL), 1, 0);
 //                    cmd = ostrcat(cmd, " | sed -nr 's/.*(http.*).*/\\1/p'", 1, 0);
-    				cmd = command("cat /etc/ipkg/official-feed.conf | sed -nr 's/.*(http.*).*/\\1/p'");
+    				cmd = command("cat /etc/ipkg/official-feed.conf | sed -nr 's/.*(http.*).*/\\1/p' | grep -v secret | head -n1");
 
                     debug(130, "cmd %s", cmd);
        				tmpstr3 = string_newline(command(cmd));
