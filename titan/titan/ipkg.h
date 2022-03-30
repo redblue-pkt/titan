@@ -160,7 +160,8 @@ int ipkg_list_cb(char *name, char *desc, char *version, pkg_state_status_t statu
 	tmpstr = ostrcat(name, NULL, 0, 0);
 	ret = strsplit(tmpstr, "-", &count);
 
-	if(count >= 4 && ostrstr(name, "titan-plugin-") != NULL)
+//	if(count >= 4 && ostrstr(name, "titan-plugin-") != NULL)
+	if(count == 4 && ostrstr(name, "titan-plugin-") != NULL)
 	{
 		if(desc)
 			addipkg(name, desc, version, (&ret[2])->part, (&ret[3])->part, NULL);
