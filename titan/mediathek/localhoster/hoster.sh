@@ -64,9 +64,12 @@ hlsdlbg="$HLSBIN -u $USERAGENT -o"
 
 if [ -e /mnt/network/cookies ];then sed 's/#HttpOnly_//g' -i /mnt/network/cookies; fi
 
-export PYTHONHOME=/tmp/localhoster
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
-
+if [ ! -e /etc/.oebuild ];then
+    export PYTHONHOME=/tmp/localhoster
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
+else
+    BIN=python
+fi
 
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
