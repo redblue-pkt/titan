@@ -54,6 +54,7 @@ curlbin2="$CURLBIN $PROXY -k -s --connect-timeout 5 --cookie /mnt/network/cookie
 
 if [ -e /etc/.oebuild ];then
 	youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format ytsearch:mp4 --restrict-filenames --ignore-errors -g"
+	youtubebin2="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --restrict-filenames --ignore-errors -g"
 	youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format ytsearch:mp4 --restrict-filenames --ignore-errors --output"
 else
 	youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format ytsearch:mp4 --restrict-filenames --ignore-errors -g"
@@ -887,7 +888,11 @@ youtube_dl()
 #			rm /mnt/network/cookies > /dev/null 2>&1
 			unset PYTHONHOME
 			unset LD_LIBRARY_PATH
+
 			$youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+            if [ `cat $TMP/$TYPE.$hoster.$FILENAME.streamlist | wc -l` -eq 0 ];then
+    			$youtubebin2 "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
+            fi
 		else
 			$BIN $youtubebin "$INPUT" $USER $PASS > $TMP/$TYPE.$hoster.$FILENAME.streamlist
 		fi
@@ -922,6 +927,9 @@ youtube_dlbg()
         URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
 		echo "$youtubebinbg $DEST $URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 		$youtubebinbg "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+        if [ `cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | wc -l` -eq 0 ];then
+			$youtubebinbg2 "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+        fi
 	else
 		echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 #		$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
