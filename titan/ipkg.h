@@ -13,6 +13,7 @@ struct ipkg
 	char* version;
 	char* section;
 	char* showname;
+	char* usepath;
 	int done;
 	struct ipkg* prev;
 	struct ipkg* next;
@@ -36,6 +37,8 @@ void debugipkg()
 			printf("pkg section: %s\n", node->section);
 		if(node->showname != NULL)
 			printf("pkg showname: %s\n", node->showname);
+		if(node->usepath != NULL)
+			printf("pkg usepath: %s\n", node->usepath);
 		node = node->next;
 	}
 }
@@ -622,11 +625,11 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmpstr = ostrcat(tmpstr, _("installed"), 1, 0);
 				tmpstr = ostrcat(tmpstr, ") ", 1, 0);
 			}
-			
+/*			
 			tmpstr = ostrcat(tmpstr, _(node->showname), 1, 0);
 			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
 			tmpstr = ostrcat(tmpstr, node->version, 1, 0);
-
+*/
 			tmpinfo = ostrcat(tmpinfo, "\n", 1, 0);
 			tmpinfo = ostrcat(tmpinfo, _("Section: "), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, _(node->section), 1, 0);
@@ -658,7 +661,8 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				//if pic not exist, get it from server
 				int port = 80;
 				char* ip = NULL, *path = NULL;
-				char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+				char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr4 = NULL, *tmpstr5 = NULL, *tmpstr6 = NULL;
+				char* usepath = NULL, *showname = NULL;
 
 				tmpstr1 = ostrcat(tmpstr1, IPKGTMP, 1, 0);
 				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
@@ -692,27 +696,60 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 						tmpstr2 = ostrcat(tmpstr2, node->version, 1, 0);
 						tmpstr2 = ostrcat(tmpstr2, "_", 1, 0);
 						tmpstr2 = ostrcat(tmpstr2, box, 1, 0);
+
+                        tmpstr4 = ostrcat(tmpstr4, tmpstr2, 1, 0);
+                        tmpstr4 = ostrcat(tmpstr4, ".usepath", 1, 0);
+
+                        tmpstr5 = ostrcat(tmpstr5, tmpstr2, 1, 0);
+                        tmpstr5 = ostrcat(tmpstr5, ".showname", 1, 0);
+
 						tmpstr2 = ostrcat(tmpstr2, ".png", 1, 0);
                         free(box), box = NULL;
 	          			debug(130, "get http://%s/%s -> %s", ip, tmpstr2, tmpstr1);
-
 						gethttp(ip, tmpstr2, port, tmpstr1, HTTPAUTH, 10000, NULL, 0);
+
+	          			debug(130, "get http://%s/%s", ip, tmpstr4);
+                        usepath = string_newline(gethttp(ip, tmpstr4, 80, NULL, NULL, 10000, NULL, 0));
+                        debug(130, "usepath: %s",usepath);
+
+                    	if(usepath != NULL && usepath[0] != '<')
+                    		node->usepath = strstrip(ostrcat(usepath, NULL, 0, 0));
+                        debug(130, "node->usepath: %s",node->usepath);
+
+	          			debug(130, "get http://%s/%s", ip, tmpstr5);
+                        showname = string_newline(gethttp(ip, tmpstr5, 80, NULL, NULL, 10000, NULL, 0));
+                        debug(130, "showname: %s",showname);
+
+                    	if(showname != NULL && showname[0] != '<')
+                    		node->showname = strstrip(ostrcat(showname, NULL, 0, 0));
+                        debug(130, "node->showname: %s",node->showname);
 					}
 				}
 
 				free(tmpstr1); tmpstr1 = NULL;
 				free(tmpstr2); tmpstr2 = NULL;
 				free(tmpstr3); tmpstr3 = NULL;
+				free(tmpstr4); tmpstr4 = NULL;
+				free(tmpstr5); tmpstr5 = NULL;
+				free(usepath); usepath = NULL;
+				free(showname); showname = NULL;
 			}
 /////////////////
+
+			tmpstr = ostrcat(tmpstr, _(node->showname), 1, 0);
+			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
+			tmpstr = ostrcat(tmpstr, node->version, 1, 0);
+
 			if(skip == 1)
 				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 1, 0);
 			else
 				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
 //			changemenulistparam(tmpmlist, node->name, node->titanname, NULL, NULL);
-			changemenulistparam(tmpmlist, node->name, node->showname, NULL, NULL);
+//			char* size = oitoa(node->size);
+//  		changemenulistparam(tmpmlist, node->filename, node->url, node->usepath, size);
+			changemenulistparam(tmpmlist, node->name, node->showname, node->usepath, NULL);
 
-			free(tmpstr); tmpstr = NULL;
+    		free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
 			free(tmppic); tmppic = NULL;
 		}
@@ -727,6 +764,8 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		freeipkg();
 		ipkg = node;
 	}
+
+//debugipkg();
 
     setmenulistdefault(mlist, defentry);
 	return menulistbox(mlist, paramskinname, skintitle, NULL, paramskinpath, "/skin/plugin.png", showpng, 0);

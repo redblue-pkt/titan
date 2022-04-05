@@ -602,6 +602,9 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 		
 	status.hangtime = 99999;
 	
+//    needed for usepath
+    delallfiles(IPKGTMP, ".png");
+
 	if(mode == 0)
 	{
 		drawscreen(load, 0, 0);
@@ -637,7 +640,13 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 
 //				installpath = getinstallpath(node->usepath, size);
 
-				installpath = getinstallpath(NULL, 0);
+//				installpath = getinstallpath(NULL, 0);
+//				installpath = getinstallpath(node->usepath, 0);
+
+printf("mbox1->param2: %s\n", mbox1->param2);
+printf("mbox1->param3: %s\n", mbox1->param3);
+
+				installpath = getinstallpath(mbox1->param2, mbox1->param3);
 				if(installpath != NULL)
 				{
 				    tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
