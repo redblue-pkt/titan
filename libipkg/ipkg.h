@@ -36,7 +36,9 @@
 #define IPKG_LEGAL_PKG_NAME_CHARS "abcdefghijklmnopqrstuvwxyz0123456789.+-"
 #define IPKG_PKG_VERSION_SEP_CHAR '_'
 
-#define IPKG_STATE_DIR_PREFIX IPKGLIBDIR"/ipkg"
+//#define IPKG_STATE_DIR_PREFIX IPKGLIBDIR"/ipkg"
+#define IPKG_STATE_DIR_PREFIX "/var/lib/opkg"
+
 #define IPKG_LISTS_DIR_SUFFIX "lists"
 #define IPKG_INFO_DIR_SUFFIX "info"
 #define IPKG_STATUS_FILE_SUFFIX "status"
