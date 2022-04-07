@@ -658,7 +658,7 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 				    tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
 				    tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-				    if(textbox(_("Ipk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				    if(textbox(_("Ipk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 				    {
 					    drawscreen(load, 0, 0);
 					    resettvpic();
@@ -667,7 +667,7 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 					    log = get_ipk_install(tmpstr, installpath);
 
 			            if(log == NULL) log = ostrcat("Install error", NULL, 0, 0);
-			            textbox(_("Ipk Install Info - Install OK"), _(log), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+			            textbox(_("Ipk Install Info - Install OK"), _(log), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
         		        free(log); log = NULL;
     /*
 					    if(ipkg_install(tmpstr) == 0)
@@ -740,7 +740,7 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 			tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-			if(textbox(_("Ipk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			if(textbox(_("Ipk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 			{
 				drawscreen(load, 0, 0);
 				resettvpic();
@@ -833,7 +833,7 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 			tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
-			if(textbox(_(text2), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+			if(textbox(_(text2), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 2)
 			{
 				char* log = NULL;				
 				drawscreen(load, 0, 0);
@@ -844,7 +844,7 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 					log = get_ipk_tmpinstall(path, mbox->name);
 
 				if(log == NULL) log = ostrcat("No output found !", NULL, 0, 0);
-				textbox(_(text2), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+				textbox(_(text2), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 
 				free(log); log = NULL;
 				unlink(IPKGLOG);
