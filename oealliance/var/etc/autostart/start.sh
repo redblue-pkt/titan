@@ -387,7 +387,7 @@ if [ ! -e /tmp/.update ];then
 		    startdate
 		    startbootlogo
 		    startlibs
-		    starthomedir
+	#	    starthomedir
 		    startrcreboot
     #		startdelpack
 		    startCi
