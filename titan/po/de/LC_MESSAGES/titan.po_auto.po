@@ -18546,7 +18546,7 @@ msgstr "grau"
 
 #: tpk_section.h:6
 msgid "gui"
-msgstr ""
+msgstr "Grafische Benutzeroberfläche"
 
 #: skin_default_keyskin.xml.h:34 skins_0acht5zehn_skin.xml.h:286
 #: skins_atemio_skin.xml.h:281 skins_cool_skin.xml.h:340
