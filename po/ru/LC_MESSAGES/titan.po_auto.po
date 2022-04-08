@@ -4374,7 +4374,7 @@ msgstr "Удалить неверные записи"
 msgid "Deluxe Music TV (German)"
 msgstr ""
 
-#: ipkg.h:633 tpk.h:3508
+#: ipkg.h:637 tpk.h:3508
 msgid "Description:"
 msgstr "Описание "
 
@@ -5087,8 +5087,8 @@ msgstr ""
 #: extensions.h:258 extensions.h:262 extensions.h:267 extensions.h:313
 #: extensions.h:321 extensions.h:328 extensions.h:370 extensions.h:396
 #: extensions.h:427 extensions.h:461 extensions.h:465 extensions.h:522
-#: extensions.h:652 extensions.h:734 extensions.h:742 extensions.h:806
-#: extensions.h:934 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
+#: extensions.h:661 extensions.h:743 extensions.h:751 extensions.h:815
+#: extensions.h:943 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
 #: faststream.h:80 faststream.h:92 faststream.h:104 faststream.h:110
 #: faststream.h:167 filemanager.h:95 filemanager.h:100 filemanager.h:206
 #: filemanager.h:279 filemanager.h:289 filemanager.h:319 filemanager.h:329
@@ -5108,7 +5108,7 @@ msgstr ""
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190
 #: inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258 info.h:27
-#: infos_mboxinfo_skin.xml.h:1 ipkg.h:409 keyactions.h:219 kinox.h:101
+#: infos_mboxinfo_skin.xml.h:1 ipkg.h:413 keyactions.h:219 kinox.h:101
 #: kinox.h:369 language.h:54 letwatch.h:29 letwatch.h:60 letwatch.h:66
 #: letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:411
@@ -7849,7 +7849,7 @@ msgstr ""
 msgid "Installed:"
 msgstr "Установлено"
 
-#: extensions.h:240 extensions.h:388 extensions.h:643 extensions.h:820
+#: extensions.h:240 extensions.h:388 extensions.h:652 extensions.h:829
 msgid "Installing"
 msgstr "Установка"
 
@@ -7916,27 +7916,27 @@ msgstr ""
 msgid "Ipk Install - select install medium"
 msgstr ""
 
-#: extensions.h:616
+#: extensions.h:619
 msgid "Ipk Install - select section"
 msgstr ""
 
-#: extensions.h:652 extensions.h:934
+#: extensions.h:661 extensions.h:943
 msgid "Ipk Install Info"
 msgstr ""
 
-#: extensions.h:661
+#: extensions.h:670
 msgid "Ipk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:719
+#: extensions.h:728
 msgid "Ipk Remove - select file"
 msgstr ""
 
-#: extensions.h:734
+#: extensions.h:743
 msgid "Ipk Remove Info"
 msgstr ""
 
-#: extensions.h:742
+#: extensions.h:751
 msgid "Ipk Remove Info - Remove OK"
 msgstr ""
 
@@ -9183,8 +9183,8 @@ msgstr "Лист меню"
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:276
 #: extensions.h:336 extensions.h:370 extensions.h:430 extensions.h:435
-#: extensions.h:474 extensions.h:685 extensions.h:765 extensions.h:806
-#: extensions.h:842 extensions.h:847 extensions.h:888 facebook.h:66
+#: extensions.h:474 extensions.h:694 extensions.h:774 extensions.h:815
+#: extensions.h:851 extensions.h:856 extensions.h:897 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:80
 #: faststream.h:92 faststream.h:104 faststream.h:110 faststream.h:167
 #: filemanager.h:95 filemanager.h:100 filemanager.h:206 filemanager.h:279
@@ -9203,7 +9203,7 @@ msgstr "Лист меню"
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190
-#: inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258 ipkg.h:409
+#: inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258 ipkg.h:413
 #: ipsec.h:193 ipsec.h:195 ipsec.h:206 ipsec.h:216 ipsec.h:218 keyactions.h:219
 #: kinox.h:101 kinox.h:369 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
 #: language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:113 letwatch.h:29
@@ -10002,7 +10002,7 @@ msgstr "Нет установленного имиджа"
 msgid "No memory"
 msgstr "Ошибка: Недостаточно памяти"
 
-#: extensions.h:370 extensions.h:522 extensions.h:806 extensions.h:934
+#: extensions.h:370 extensions.h:522 extensions.h:815 extensions.h:943
 msgid "No plugin found."
 msgstr "Плагины не найдены"
 
@@ -10095,9 +10095,9 @@ msgstr ""
 #: extensions.h:313 extensions.h:321 extensions.h:328 extensions.h:336
 #: extensions.h:370 extensions.h:396 extensions.h:427 extensions.h:435
 #: extensions.h:461 extensions.h:465 extensions.h:474 extensions.h:522
-#: extensions.h:652 extensions.h:685 extensions.h:734 extensions.h:742
-#: extensions.h:765 extensions.h:806 extensions.h:847 extensions.h:888
-#: extensions.h:934 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
+#: extensions.h:661 extensions.h:694 extensions.h:743 extensions.h:751
+#: extensions.h:774 extensions.h:815 extensions.h:856 extensions.h:897
+#: extensions.h:943 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
 #: faststream.h:80 faststream.h:92 faststream.h:104 faststream.h:110
 #: faststream.h:167 filemanager.h:95 filemanager.h:100 filemanager.h:206
 #: filemanager.h:279 filemanager.h:289 filemanager.h:319 filemanager.h:329
@@ -10118,7 +10118,7 @@ msgstr ""
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190
 #: inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258 info.h:27
-#: infos_mboxinfo_skin.xml.h:2 ipkg.h:409 ipsec.h:193 ipsec.h:195 ipsec.h:206
+#: infos_mboxinfo_skin.xml.h:2 ipkg.h:413 ipsec.h:193 ipsec.h:195 ipsec.h:206
 #: ipsec.h:216 ipsec.h:218 keyactions.h:219 kinox.h:101 kinox.h:369
 #: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:113 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
@@ -12294,7 +12294,7 @@ msgstr "Удалить неиспользуемые спутники/прова�
 msgid "Remove unused Transponder on used Satellites/Providers"
 msgstr "Удалить неиспользуемые транспондеры спутников/провайдеров"
 
-#: extensions.h:308 extensions.h:727
+#: extensions.h:308 extensions.h:736
 msgid "Removeing"
 msgstr "Удаление"
 
@@ -13522,7 +13522,7 @@ msgstr "Сезон"
 msgid "Second Infobar"
 msgstr "Второй инфобар (Двойное нажатие INFO)"
 
-#: ipkg.h:630 tpk.h:3505
+#: ipkg.h:634 tpk.h:3505
 msgid "Section: "
 msgstr "Секция "
 
@@ -14295,7 +14295,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Выбор эмулятора"
 
-#: extensions.h:430 extensions.h:842
+#: extensions.h:430 extensions.h:851
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -15724,7 +15724,7 @@ msgid "Titan Mediathek"
 msgstr ""
 
 #: extensions.h:276 extensions.h:336 extensions.h:435 extensions.h:474
-#: extensions.h:685 extensions.h:765 extensions.h:847 extensions.h:888
+#: extensions.h:694 extensions.h:774 extensions.h:856 extensions.h:897
 #: global.h:8100 global.h:8120 global.h:8140 global.h:8160 global.h:8180
 #: kravencfg.c:212 security.h:1581 skinadjust.h:619 skinadjust.h:685
 #: skinadjust.h:1110 skinadjust.h:1172
@@ -17871,7 +17871,7 @@ msgstr "Меню каналов"
 msgid "channelslotlist"
 msgstr ""
 
-#: ipkg.h:409 tpk.h:3246 tpk.new.h:3167
+#: ipkg.h:413 tpk.h:3246 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Проверьте Ваш скрытый фид!"
 
@@ -18533,7 +18533,7 @@ msgstr "Инициализация"
 msgid "install"
 msgstr "Установить"
 
-#: ipkg.h:621 tpk.h:3496
+#: ipkg.h:625 tpk.h:3496
 msgid "installed"
 msgstr "Установлен"
 
@@ -18973,7 +18973,7 @@ msgstr "Автостарт NFS сервера"
 msgid "no"
 msgstr "Нет"
 
-#: ipkg.h:638 tpk.h:3513 tpk.new.h:3411
+#: ipkg.h:642 tpk.h:3513 tpk.new.h:3411
 msgid "no description found"
 msgstr "Нет описания"
 
@@ -19972,7 +19972,7 @@ msgstr "Звёздочка + название канала"
 msgid "start"
 msgstr ""
 
-#: extensions.h:649 extensions.h:731 extensions.h:824 softcam.h:91 softcam.h:99
+#: extensions.h:658 extensions.h:740 extensions.h:833 softcam.h:91 softcam.h:99
 msgid "started"
 msgstr "Активен"
 
