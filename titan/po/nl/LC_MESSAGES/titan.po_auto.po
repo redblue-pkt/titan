@@ -3050,7 +3050,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:685 mc_audioplayer.h:797 mc_global.h:781
 #: mc_global.h:1086 mc_iptvplayer.h:392 mc_iptvplayer.h:503
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:804 mc_videoplayer.h:943 play.h:1796
+#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:1796
 msgid "Can't start playback !"
 msgstr "Weergave kan niet gestart worden!"
 
@@ -5097,8 +5097,8 @@ msgstr ""
 #: mc_iptvplayer.h:246 mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:287
 #: mc_main.h:296 mc_mediathek.h:35 mc_pictureplayer.h:100
 #: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:364 mc_videoplayer.h:804
-#: mc_videoplayer.h:839 mc_videoplayer.h:943 mc_videoplayer.h:962
+#: mc_pictureplayer.h:461 mc_videoplayer.h:364 mc_videoplayer.h:805
+#: mc_videoplayer.h:840 mc_videoplayer.h:944 mc_videoplayer.h:963
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1486
 #: mediadb.h:2633 mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1058
 #: menu.h:1060 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
@@ -5870,7 +5870,7 @@ msgstr ""
 #: mc_audioplayer.h:598 mc_audioplayer.h:642 mc_audioplayer.h:764
 #: mc_iptvplayer.h:278 mc_iptvplayer.h:322 mc_iptvplayer.h:471
 #: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
-#: mc_videoplayer.h:648 mc_videoplayer.h:722 mc_videoplayer.h:909
+#: mc_videoplayer.h:649 mc_videoplayer.h:723 mc_videoplayer.h:910
 #: player_mc_skin.xml.h:24 skins_cool_skin.xml.h:303
 #: skins_megastyleblue_skin.xml.h:304 skins_megastylegrey_skin.xml.h:304
 msgid "Filelist-Mode"
@@ -6133,7 +6133,7 @@ msgid ""
 "this again !"
 msgstr ""
 
-#: mc_videoplayer.h:839
+#: mc_videoplayer.h:840
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr ""
 
@@ -9146,8 +9146,8 @@ msgstr ""
 #: mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:287 mc_main.h:296
 #: mc_mediathek.h:35 mc_pictureplayer.h:100 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:242 mc_pictureplayer.h:368 mc_pictureplayer.h:461
-#: mc_videoplayer.h:364 mc_videoplayer.h:804 mc_videoplayer.h:839
-#: mc_videoplayer.h:943 mc_videoplayer.h:962 mc_wetterinfo.h:36
+#: mc_videoplayer.h:364 mc_videoplayer.h:805 mc_videoplayer.h:840
+#: mc_videoplayer.h:944 mc_videoplayer.h:963 mc_wetterinfo.h:36
 #: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1486 mediadbsettings.h:99
 #: menu.h:160 menu.h:215 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
 #: minisatip.h:52 minisatip.h:54 minisatip.h:64 minisatip.h:74 minisatip.h:76
@@ -10061,8 +10061,8 @@ msgstr ""
 #: mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:287 mc_main.h:296
 #: mc_mediathek.h:35 mc_pictureplayer.h:100 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:242 mc_pictureplayer.h:368 mc_pictureplayer.h:461
-#: mc_videoplayer.h:364 mc_videoplayer.h:804 mc_videoplayer.h:839
-#: mc_videoplayer.h:943 mc_videoplayer.h:962 mc_wetterinfo.h:36
+#: mc_videoplayer.h:364 mc_videoplayer.h:805 mc_videoplayer.h:840
+#: mc_videoplayer.h:944 mc_videoplayer.h:963 mc_wetterinfo.h:36
 #: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1486 mediadb.h:2633
 #: mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1058 menu.h:1060
 #: mightyupload.h:27 mightyupload.h:69 mightyupload.h:75 minisatip.h:52
@@ -11048,7 +11048,7 @@ msgid "Playlist download"
 msgstr ""
 
 #: mc_audioplayer.h:664 mc_iptvplayer.h:354 mc_pictureplayer.h:341
-#: mc_videoplayer.h:764
+#: mc_videoplayer.h:765
 msgid "Playlist-Mode"
 msgstr "Afspeellijst modus"
 
@@ -11737,7 +11737,7 @@ msgid "Ran 1 rtmp (German)"
 msgstr ""
 
 #: mc_audioplayer.h:643 mc_global.h:566 mc_global.h:594 mc_global.h:1142
-#: mc_iptvplayer.h:323 mc_pictureplayer.h:321 mc_videoplayer.h:723
+#: mc_iptvplayer.h:323 mc_pictureplayer.h:321 mc_videoplayer.h:724
 #: player_mc_skin.xml.h:49 skins_cool_skin.xml.h:556
 #: skins_megastyleblue_skin.xml.h:558 skins_megastylegrey_skin.xml.h:558
 msgid "Random"
@@ -12235,7 +12235,7 @@ msgstr ""
 
 #: mc_audioplayer.h:493 mc_audioplayer.h:644 mc_global.h:1147
 #: mc_iptvplayer.h:148 mc_iptvplayer.h:324 mc_pictureplayer.h:157
-#: mc_pictureplayer.h:322 mc_videoplayer.h:468 mc_videoplayer.h:724
+#: mc_pictureplayer.h:322 mc_videoplayer.h:468 mc_videoplayer.h:725
 #: player_mc_skin.xml.h:50 skin_default_skin.xml.h:517
 #: skins_cool_skin.xml.h:586 skins_default_skin.xml.h:517
 #: skins_kravenhd_skin.xml.h:524 skins_megastyleblue_skin.xml.h:588
@@ -14435,7 +14435,7 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr "WLAN starten?"
 
-#: mc_videoplayer.h:962 player.h:417
+#: mc_videoplayer.h:963 player.h:417
 msgid "Start at last position ?"
 msgstr "Starten bij de laatse positie?"
 
