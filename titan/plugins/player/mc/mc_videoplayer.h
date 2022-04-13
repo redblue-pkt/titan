@@ -19,9 +19,8 @@ void screenmc_videoplayer()
 	char* lastid = NULL, *filename = NULL, *tmppolicy = NULL ,*currentdirectory = NULL, *selectedfile = NULL, *tmpstr = NULL;
 	int rcret = 0, rcwait = 1000, playerret = 0, flag = 1, skip = 0, eof = 0, playinfobarcount = 0, playinfobarstatus = 1, tmpview = 0, playlist = 0, playertype = 0, mviwait = 0, mvinum = 0, exit = 0;
 
-	tmpstr = ostrcat(getconfig("mc_vp_dirsort", NULL), NULL, 0, 0);
-	addconfigtmp("dirsort", tmpstr);
-	free(tmpstr), tmpstr = NULL;
+	int sort = getconfigint("mc_vp_dirsort", NULL);
+	addconfiginttmp("dirsort", sort);
 
 	// main screen
 	struct skin* apskin = getscreen("mc_videoplayer");
@@ -85,6 +84,7 @@ void screenmc_videoplayer()
 		initscreensaver();
 
 	tmpview = view;
+
 	mc_changeview(view, filelist, apskin, flag);
 	thumb->hidden = YES;
 	plot->hidden = YES;
@@ -485,7 +485,7 @@ void screenmc_videoplayer()
 			{
 				if(playlist == 0)
 				{
-					int sort = screendirsort();
+					sort = screendirsort();
 					debug(50, "rcred: tmpsort=%d", sort);
 
 					// fixt grey if sorting >10s
@@ -549,6 +549,7 @@ void screenmc_videoplayer()
 				printf("1view in: %d\n", view);
 				printf("1tmpview in: %d\n", tmpview);
 				
+                addconfiginttmp("dirsort", sort);
 				mc_changeview(tmpview, filelist, apskin, flag);
 
 				drawscreen(blackscreen, 0, 0);
