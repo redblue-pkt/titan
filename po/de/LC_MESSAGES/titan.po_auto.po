@@ -7612,7 +7612,7 @@ msgstr "IPK installieren (tmp)"
 
 #: skin_default_skin.xml.h:342 skins_default_skin.xml.h:342
 msgid "IPK upgrade (online)"
-msgstr "IPK Pakete aktualiesieren (Internet)"
+msgstr "IPK Pakete aktualisieren (Internet)"
 
 #: tpk_showname.h:55
 msgid "IPSEC VPN Client"
