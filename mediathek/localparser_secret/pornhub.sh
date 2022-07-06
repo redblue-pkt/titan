@@ -334,6 +334,7 @@ search()
 			            j = index(substr($0, i), "\"") - 1
 						# title = "Young-Devotion - Verdammt! Ist mir das jetzt wirklich passiert 17.02.14"
 			            title = substr($0, i, j)
+                        gsub(/#+/," / ",title)
 
 						# in naechste zeile springen
 						next
