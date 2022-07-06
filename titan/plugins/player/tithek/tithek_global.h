@@ -1553,41 +1553,18 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 
 int localparser_search_file(char* localparser, char* filename)
 {
-	char* tmpstr = NULL, *menu = NULL, *search = NULL, *cmd = NULL;
+	char* tmpstr = NULL, *menu = NULL, *search = NULL, *cmd = NULL, *link = NULL;
 	int ret = 1;
-char* link = NULL;
-
 
     search = ostrcat(basename(filename), NULL, 0, 0);
-/*
-if(ostrcmp(type, "Search on PornHub") == 0)
-    link = ostrcat("/tmp/localparser/pornhub.sh /tmp/localparser/pornhub.sh search '/video/search?search=%search%&page=' 1", NULL, 0, 0);
-else if(ostrcmp(type, "Search on XVideos") == 0)
-    link = ostrcat("/tmp/localparser/pornhub.sh /tmp/localparser/pornhub.sh search '/video/search?search=%search%&page=' 1", NULL, 0, 0);
 
-link = ostrcat("SRC= ", type, 0, 0);
-link = ostrcat(link, " ; cat $SRC | grep \"$SRC $SRC search \" | cut -d\"#\" -f2", 1, 0);
-*/
-cmd = ostrcat("cat ", localparser, 0, 0);
-cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
-cmd = ostrcat(cmd, localparser, 1, 0);
-cmd = ostrcat(cmd, "!g'", 1, 0);
+    cmd = ostrcat("cat ", localparser, 0, 0);
+    cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
+    cmd = ostrcat(cmd, localparser, 1, 0);
+    cmd = ostrcat(cmd, "!g'", 1, 0);
 
-printf("cmd: %s\n", cmd);
-
-link = command(cmd);
-		free(cmd), cmd = NULL;
-
-//link: cat /tmp/localhoster/pornhub.sh /tmp/localhoster/pornhub.sh | grep /tmp/localhoster/pornhub.sh /tmp/localhoster/pornhub.shsearch " | cut -d"#" -f2
-
-
-printf("localparser: %s\n", localparser);
-
-printf("filename: %s\n", filename);
-
-printf("search: %s\n", search);
-
-printf("link: %s\n", link);
+    link = command(cmd);
+	free(cmd), cmd = NULL;
 
 	if(!file_exist("/tmp/localhoster"))
 //	if(!file_exist(localparser))
@@ -1597,10 +1574,8 @@ printf("link: %s\n", link);
 
 	drawscreen(load, 0, 0);
 
-
 	if(search != NULL)
 	{
-
 		strstrip(search);
 		string_tolower(search);
 		search = stringreplacechar(search, ' ', '+');
@@ -1612,7 +1587,6 @@ printf("link: %s\n", link);
 			cmd = string_replace_all("%search%", search, cmd, 1);
 		else
 			cmd = ostrcat(link, search, 0, 0);
-printf("cmd: %s\n", cmd);
 
 		debug(99, "cmd: %s", cmd);
 		char* filename = command(cmd);
@@ -1620,49 +1594,38 @@ printf("cmd: %s\n", cmd);
 		tmpstr = readfiletomem(filename, 1);
 		free(cmd), cmd = NULL;
 
-printf("tmpstr: %s\n", tmpstr);
-printf("filename: %s\n", filename);
-
 ///////
-	int aktplayerbuffersize = getconfigint("playerbuffersize", NULL);
-	status.hangtime = 99999;
-	tithekdownloadrun = 0;
-	tithekdownloadcount = 0;
-	tithekrun = 1;
-	tithekexit = 0;
-//	tithekmovie4k = 1;
-	tithekkinox = 1;
-//	titheksolarmovie = 1;
-	//tithekmlehd = 1;
-//	amazonlogin = 0;
-	python = 0;
-	ytbgdownload = 0;
-	hlsbgdownload = 0;
-	
-//change markcolor
-	long tmplistboxselectcol = status.listboxselectcol;
-	status.listboxselectcol = convertcol("tithek_selectcol");
+	    int aktplayerbuffersize = getconfigint("playerbuffersize", NULL);
+	    status.hangtime = 99999;
+	    tithekdownloadrun = 0;
+	    tithekdownloadcount = 0;
+	    tithekrun = 1;
+	    tithekexit = 0;
+    //	tithekmovie4k = 1;
+	    tithekkinox = 1;
+    //	titheksolarmovie = 1;
+	    //tithekmlehd = 1;
+    //	amazonlogin = 0;
+	    python = 0;
+	    ytbgdownload = 0;
+	    hlsbgdownload = 0;
+	    
+    //change markcolor
+	    long tmplistboxselectcol = status.listboxselectcol;
+	    status.listboxselectcol = convertcol("tithek_selectcol");
 
-screentithekplay(filename, _("Tithek - Mainmenu"), 1);
-	//reset markcolor  
-	status.listboxselectcol = tmplistboxselectcol;
-	
-	tithekrun = 0;
-	addconfigint("playerbuffersize", aktplayerbuffersize);
-	status.hangtime = getconfigint("hangtime", NULL);
-///////////
-printf("tmpstr2: %s\n", tmpstr);
-printf("filename2: %s\n", filename);
+        screentithekplay(filename, _("Tithek - Mainmenu"), 1);
+	    //reset markcolor  
+	    status.listboxselectcol = tmplistboxselectcol;
+	    
+	    tithekrun = 0;
+	    addconfigint("playerbuffersize", aktplayerbuffersize);
+	    status.hangtime = getconfigint("hangtime", NULL);
 
 //		free(filename), filename = NULL;
-printf("111\n");
-
 		free(tmpstr), tmpstr = NULL;
-printf("222\n");
-
 	}
 	free(search), search = NULL;
-printf("333\n");
 
 	return ret;
 }

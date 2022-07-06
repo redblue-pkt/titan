@@ -857,14 +857,12 @@ printf("mbox->name=%s\n", mbox->name);
 			ret = 27;
 		else if(ostrcmp(mbox->name, "Search on PornHub") == 0 || ostrcmp(mbox->name, "Search on Xvideos") == 0)
         {
-		    printf("file: %s\n", file);
-char* localparser = NULL;
+            char* localparser = NULL;
             localparser = ostrcat(mbox->name, NULL, 0, 0);
             localparser = string_replace_all("Search on ", "/tmp/localparser/", localparser, 1);
             strstrip(localparser);
 		    string_tolower(localparser);
             localparser = ostrcat(localparser, ".sh", 1, 0);
-		    printf("localparser: %s\n", localparser);
 
 		    struct skin* tithekplugin = getplugin("Titan Mediathek");
 		    if(tithekplugin != NULL)
@@ -874,17 +872,11 @@ char* localparser = NULL;
 			    startplugin = dlsym(tithekplugin->pluginhandle, "localparser_search_file");
 			    if(startplugin != NULL)
 			    {
-//				    file = (char*)startplugin(localparser, file);
-//				    printf("file changed: %s\n", file);
 				    startplugin(localparser, file);
 
 			    }
 		    }
-printf("444\n");
-
-free(localparser), localparser = NULL;
-printf("555\n");
-
+            free(localparser), localparser = NULL;
         }
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
@@ -913,7 +905,7 @@ printf("555\n");
 		screenplayinfobar(file, showname, 0, playertype, flag);
 
 	status.hangtime = hangtime;
-printf("ret=%d\n", ret);
+
 	return ret;
 }
 
