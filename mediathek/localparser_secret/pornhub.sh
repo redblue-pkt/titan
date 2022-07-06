@@ -8,7 +8,7 @@ NEXT=$4
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
 URL=http://www.pornhub.com
-NAME="Pornhub"
+NAME="PornHub"
 
 case $2 in
 	init)	;;
