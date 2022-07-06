@@ -649,9 +649,12 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			addmenulist(&mlist, "Rename File", _("Delete File"), NULL, 0, 0);
 			addmenulist(&mlist, "Create Folder", _("Create Folder"), NULL, 0, 0);
 //			addmenulist(&mlist, "Update Iptv", _("Update Iptv"), NULL, 0, 0);
+    		addmenulist(&mlist, "Search on PornHub", _("Search on PornHub"), NULL, 0, 0);
+    		addmenulist(&mlist, "Search on Xvideos", _("Search on Xvideos"), NULL, 0, 0);
 		}
 		if(status.mediadbfiles > 0)
 			addmenulist(&mlist, "MediaDB Scan Info", _("MediaDB Scan Info"), NULL, 0, 0);
+
 	}
 	else
 	{
@@ -852,6 +855,37 @@ printf("mbox->name=%s\n", mbox->name);
 			ret = 26;
 		else if(ostrcmp(mbox->name, "Search on FilmOn (local)") == 0)
 			ret = 27;
+		else if(ostrcmp(mbox->name, "Search on PornHub") == 0 || ostrcmp(mbox->name, "Search on Xvideos") == 0)
+        {
+		    printf("file: %s\n", file);
+char* localparser = NULL;
+            localparser = ostrcat(mbox->name, NULL, 0, 0);
+            localparser = string_replace_all("Search on ", "/tmp/localparser/", localparser, 1);
+            strstrip(localparser);
+		    string_tolower(localparser);
+            localparser = ostrcat(localparser, ".sh", 1, 0);
+		    printf("localparser: %s\n", localparser);
+
+		    struct skin* tithekplugin = getplugin("Titan Mediathek");
+		    if(tithekplugin != NULL)
+		    {
+			    struct tithek* (*startplugin)(char*, char*);
+
+			    startplugin = dlsym(tithekplugin->pluginhandle, "localparser_search_file");
+			    if(startplugin != NULL)
+			    {
+//				    file = (char*)startplugin(localparser, file);
+//				    printf("file changed: %s\n", file);
+				    startplugin(localparser, file);
+
+			    }
+		    }
+printf("444\n");
+
+free(localparser), localparser = NULL;
+printf("555\n");
+
+        }
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
 			if(status.play == 1)
