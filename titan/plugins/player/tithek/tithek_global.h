@@ -1556,19 +1556,23 @@ int localparser_search_file(char* localparser, char* filename)
 	char* tmpstr = NULL, *menu = NULL, *search = NULL, *cmd = NULL, *link = NULL;
 	int ret = 1;
 
-    search = ostrcat(basename(filename), NULL, 0, 0);
+//    search = ostrcat(basename(filename), NULL, 0, 0);
+    search = textinputhist(_("Search"), basename(filename), "searchhist");
+
+//	if(!file_exist("/tmp/localhoster"))
+	if(!file_exist(localparser))
+		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
 
     cmd = ostrcat("cat ", localparser, 0, 0);
     cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
     cmd = ostrcat(cmd, localparser, 1, 0);
     cmd = ostrcat(cmd, "!g'", 1, 0);
 
+printf("cmd: %s\n", cmd);
     link = command(cmd);
 	free(cmd), cmd = NULL;
 
-	if(!file_exist("/tmp/localhoster"))
-//	if(!file_exist(localparser))
-		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+printf("link: %s\n", link);
 
 	struct skin* load = getscreen("loading");
 
@@ -1587,6 +1591,8 @@ int localparser_search_file(char* localparser, char* filename)
 			cmd = string_replace_all("%search%", search, cmd, 1);
 		else
 			cmd = ostrcat(link, search, 0, 0);
+
+printf("cmd2: %s\n", cmd);
 
 		debug(99, "cmd: %s", cmd);
 		char* filename = command(cmd);
