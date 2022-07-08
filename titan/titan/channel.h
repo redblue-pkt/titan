@@ -527,9 +527,6 @@ int delchannel(int serviceid, uint64_t transponderid, int flag)
             free(node->hbbtvurl);
             node->hbbtvurl = NULL;
 
-            free(node->streamurl);
-            node->streamurl = NULL;
-
 			free(node);
 			node = NULL;
 
@@ -744,7 +741,7 @@ int writechannel(const char *filename)
 			node = node->next;
 			continue;
 		}
-		ret = fprintf(fd, "%s#%llu#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%s\n", node->name, node->transponderid, node->providerid, node->serviceid, node->servicetype, node->flag, node->videocodec, node->audiocodec, node->videopid, node->audiopid, node->protect, node->pcrpid, node->streamurl);
+		ret = fprintf(fd, "%s#%llu#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d\n", node->name, node->transponderid, node->providerid, node->serviceid, node->servicetype, node->flag, node->videocodec, node->audiocodec, node->videopid, node->audiopid, node->protect, node->pcrpid);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);
