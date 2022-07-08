@@ -1243,6 +1243,7 @@ struct channel
 	int16_t aitpid;
 	uint8_t protect;
 	char* hbbtvurl;
+	char* streamurl;
 	struct transponder *transponder;
 	struct provider *provider;
 	struct audiotrack *audiotrack;
