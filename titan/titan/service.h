@@ -141,7 +141,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		m_unlock(&status.servicemutex, 2);
 		return 22;
 	}
-	
+
 	//reset channel info
 	if(flag == 0) serviceresetchannelinfo(chnode);
 
@@ -153,8 +153,21 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0 && status.aktservice->type == CHANNEL)
 		changechannellist(chnode, channellist);
 
+if(chnode->streamurl != NULL)
+{
+printf("obi2.....: %s\n", chnode->name);
+printf("obi2.....: %s\n", chnode->streamurl);
+//printf("playerstop\n");
+
+//playerstopts(1,1);
+printf("playerstart\n");
+
+        playerstart(chnode->streamurl);
+}
+
+
 	//got frontend dev
-	if(flag == 0)
+	if(chnode->streamurl == NULL && flag == 0)
 	{
 		fenode = fegetfree(tpnode, 0, NULL, chnode);
 		if(fenode == NULL)
@@ -219,14 +232,30 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		status.aktservice->fedev = fenode;
 	}
 
-	if(fenode == NULL)
+
+printf("playerstart1\n");
+
+// iptv working...
+
+	if(chnode->streamurl != NULL)
 	{
+printf("playerstart2a\n");
+
+//		m_unlock(&status.servicemutex, 2);
+//		return 0;
+	}
+
+	if(chnode->streamurl == NULL && fenode == NULL)
+	{
+printf("playerstart2\n");
+
 		m_unlock(&status.servicemutex, 2);
 		return 1;
 	}
+printf("playerstart3\n");
 
 	//check pmt if not all infos in channellist
-	if(chnode->audiopid == -1 || chnode->videopid == -1 || chnode->pcrpid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3))
+	if(chnode->streamurl == NULL && (chnode->audiopid == -1 || chnode->videopid == -1 || chnode->pcrpid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3)))
 	{
 		//wait for tuner lock
 		if(flag == 0)
@@ -283,6 +312,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 
 	if(flag != 0) checkpmt = 1;
+printf("playerstart4\n");
 
 	//set mute for scat problem
 #ifdef MIPSEL	
@@ -298,309 +328,322 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		//setmute(1);
 		audiosetmute(status.aktservice->audiodev, 1);
 	}
-#endif		
-	audiostop(status.aktservice->audiodev);
-	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
-		dmxstop(status.aktservice->dmxaudiodev);
+#endif
+/////////////////////
+	if(chnode->streamurl == NULL)
+    {
+    	audiostop(status.aktservice->audiodev);
+
+    	if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1 || checkchipset("HI3798MV200") == 1)
+    		dmxstop(status.aktservice->dmxaudiodev);
 
 // gost test multibox
-	if(checkchipset("HI3798MV200") == 1  || vubox1 == 1)
-	{
-		videostop(status.aktservice->videodev, 1);
-		dmxstop(status.aktservice->dmxvideodev);
-	}
+    	if(checkchipset("HI3798MV200") == 1  || vubox1 == 1)
+    	{
+    		videostop(status.aktservice->videodev, 1);
+    		dmxstop(status.aktservice->dmxvideodev);
+    	}
+printf("playerstart5\n");
 
-	//demux pcr start
-	if(flag == 0 && chnode->pcrpid > 0)
-	{
-		if(status.aktservice->dmxpcrdev != NULL && status.aktservice->dmxpcrdev->fd >= 0 && status.aktservice->dmxpcrdev->adapter == fenode->adapter && status.aktservice->dmxpcrdev->devnr == fenode->devnr)
-			dmxpcrnode = status.aktservice->dmxpcrdev;
-		else
-		{
-			dmxclose(status.aktservice->dmxpcrdev, -1);
-			dmxpcrnode = dmxopen(fenode, 2);
-		}
-		if(dmxpcrnode != NULL)
-		{
-			if(dmxsetsource(dmxpcrnode, fenode->fedmxsource) != 0)
-			{
-				dmxclose(dmxpcrnode, -1);
-				dmxpcrnode = NULL;
-			}
-			if(dmxsetpesfilter(dmxpcrnode, chnode->pcrpid, -1, DMX_OUT_DECODER, DMX_PES_PCR, 0) != 0)
-			{
-				dmxclose(dmxpcrnode, -1);
-				dmxpcrnode = NULL;
-			}
-		}
-		else
-			err("demux pcr dev not ok");
-	}
-	else
-	{
-		err("dmx pcrpid not valid (%d)", chnode->pcrpid);
-		dmxclose(status.aktservice->dmxpcrdev, -1);
-	}
+    	//demux pcr start
+    	if(chnode->streamurl == NULL && flag == 0 && chnode->pcrpid > 0)
+    	{
+    		if(status.aktservice->dmxpcrdev != NULL && status.aktservice->dmxpcrdev->fd >= 0 && status.aktservice->dmxpcrdev->adapter == fenode->adapter && status.aktservice->dmxpcrdev->devnr == fenode->devnr)
+    			dmxpcrnode = status.aktservice->dmxpcrdev;
+    		else
+    		{
+    			dmxclose(status.aktservice->dmxpcrdev, -1);
+    			dmxpcrnode = dmxopen(fenode, 2);
+    		}
+    		if(dmxpcrnode != NULL)
+    		{
+			    if(dmxsetsource(dmxpcrnode, fenode->fedmxsource) != 0)
+			    {
+				    dmxclose(dmxpcrnode, -1);
+				    dmxpcrnode = NULL;
+			    }
+			    if(dmxsetpesfilter(dmxpcrnode, chnode->pcrpid, -1, DMX_OUT_DECODER, DMX_PES_PCR, 0) != 0)
+			    {
+				    dmxclose(dmxpcrnode, -1);
+				    dmxpcrnode = NULL;
+			    }
+		    }
+		    else
+			    err("demux pcr dev not ok");
+	    }
+	    else
+	    {
+		    err("dmx pcrpid not valid (%d)", chnode->pcrpid);
+            if(chnode->streamurl == NULL) 
+		        dmxclose(status.aktservice->dmxpcrdev, -1);
 
-	status.aktservice->dmxpcrdev = dmxpcrnode;
+	    }
 
-	//demux audio start
-	if(chnode->audiopid > 0)
-	{
-		if(status.aktservice->dmxaudiodev != NULL && status.aktservice->dmxaudiodev->fd >= 0 && status.aktservice->dmxaudiodev->adapter == fenode->adapter && status.aktservice->dmxaudiodev->devnr == fenode->devnr)
-			dmxaudionode = status.aktservice->dmxaudiodev;
-		else
-		{
-			dmxclose(status.aktservice->dmxaudiodev, -1);
-			dmxaudionode = dmxopen(fenode, 2);
-			if(dmxsetbuffersize(dmxaudionode, getconfigint("dmxaudiobuffersize", NULL)) != 0)
-			{
-				dmxclose(dmxaudionode, -1);
-				dmxaudionode = NULL;
-			}
-		}
-		if(dmxaudionode != NULL)
-		{
-			if(dmxsetsource(dmxaudionode, fenode->fedmxsource) != 0)
-			{
-				dmxclose(dmxaudionode, -1);
-				dmxaudionode = NULL;
-			}
-			if(dmxsetpesfilter(dmxaudionode, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0) != 0)
-			{
-				dmxclose(dmxaudionode, -1);
-				dmxaudionode = NULL;
-			}
-		}
-		else
-			err("demux audio dev not ok");
-	}
-	else
-	{
-		err("dmx audiopid not valid (%d)", chnode->audiopid);
-		dmxclose(status.aktservice->dmxaudiodev, -1);
-	}
+	    status.aktservice->dmxpcrdev = dmxpcrnode;
 
-	status.aktservice->dmxaudiodev = dmxaudionode;
+	    //demux audio start
+	    if(chnode->audiopid > 0)
+	    {
+		    if(status.aktservice->dmxaudiodev != NULL && status.aktservice->dmxaudiodev->fd >= 0 && status.aktservice->dmxaudiodev->adapter == fenode->adapter && status.aktservice->dmxaudiodev->devnr == fenode->devnr)
+			    dmxaudionode = status.aktservice->dmxaudiodev;
+		    else
+		    {
+			    dmxclose(status.aktservice->dmxaudiodev, -1);
+			    dmxaudionode = dmxopen(fenode, 2);
+			    if(dmxsetbuffersize(dmxaudionode, getconfigint("dmxaudiobuffersize", NULL)) != 0)
+			    {
+				    dmxclose(dmxaudionode, -1);
+				    dmxaudionode = NULL;
+			    }
+		    }
+		    if(dmxaudionode != NULL)
+		    {
+			    if(dmxsetsource(dmxaudionode, fenode->fedmxsource) != 0)
+			    {
+				    dmxclose(dmxaudionode, -1);
+				    dmxaudionode = NULL;
+			    }
+			    if(dmxsetpesfilter(dmxaudionode, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO, 0) != 0)
+			    {
+				    dmxclose(dmxaudionode, -1);
+				    dmxaudionode = NULL;
+			    }
+		    }
+		    else
+			    err("demux audio dev not ok");
+	    }
+	    else
+	    {
+		    err("dmx audiopid not valid (%d)", chnode->audiopid);
+	        dmxclose(status.aktservice->dmxaudiodev, -1);
+	    }
 
-	//demux video start
-	if(chnode->videopid > 0)
-	{
-		if(status.aktservice->dmxvideodev != NULL && status.aktservice->dmxvideodev->fd >= 0 && status.aktservice->dmxvideodev->adapter == fenode->adapter && status.aktservice->dmxvideodev->devnr == fenode->devnr)
-			dmxvideonode = status.aktservice->dmxvideodev;
-		else
-		{
-			dmxclose(status.aktservice->dmxvideodev, -1);
-			dmxvideonode = dmxopen(fenode, 2);
-			if(dmxsetbuffersize(dmxvideonode, getconfigint("dmxvideobuffersize", NULL)) != 0)
-			{
-				dmxclose(dmxvideonode, -1);
-				dmxvideonode = NULL;
-			}
-			status.aktservice->dmxvideodev = dmxvideonode;
-		}
-		if(dmxvideonode != NULL)
-		{
-			if(dmxsetsource(dmxvideonode, fenode->fedmxsource) != 0)
-			{
-				dmxclose(dmxvideonode, -1);
-				dmxvideonode = NULL;
-			}
-			if(dmxsetpesfilter(dmxvideonode, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO, 0) != 0)
-			{
-				dmxclose(dmxvideonode, -1);
-				dmxvideonode = NULL;
-			}
-		}
-		else
-			err("demux video dev not ok");
-	}
-	else
-	{
-		err("dmx videopid not valid (%d)", chnode->videopid);
-		dmxclose(status.aktservice->dmxvideodev, -1);
-	}
+	    status.aktservice->dmxaudiodev = dmxaudionode;
+printf("playerstart6\n");
 
-	status.aktservice->dmxvideodev = dmxvideonode;
+	    //demux video start
+	    if(chnode->videopid > 0)
+	    {
+		    if(status.aktservice->dmxvideodev != NULL && status.aktservice->dmxvideodev->fd >= 0 && status.aktservice->dmxvideodev->adapter == fenode->adapter && status.aktservice->dmxvideodev->devnr == fenode->devnr)
+			    dmxvideonode = status.aktservice->dmxvideodev;
+		    else
+		    {
+			    dmxclose(status.aktservice->dmxvideodev, -1);
+			    dmxvideonode = dmxopen(fenode, 2);
+			    if(dmxsetbuffersize(dmxvideonode, getconfigint("dmxvideobuffersize", NULL)) != 0)
+			    {
+				    dmxclose(dmxvideonode, -1);
+				    dmxvideonode = NULL;
+			    }
+			    status.aktservice->dmxvideodev = dmxvideonode;
+		    }
+		    if(dmxvideonode != NULL)
+		    {
+			    if(dmxsetsource(dmxvideonode, fenode->fedmxsource) != 0)
+			    {
+				    dmxclose(dmxvideonode, -1);
+				    dmxvideonode = NULL;
+			    }
+			    if(dmxsetpesfilter(dmxvideonode, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO, 0) != 0)
+			    {
+				    dmxclose(dmxvideonode, -1);
+				    dmxvideonode = NULL;
+			    }
+		    }
+		    else
+			    err("demux video dev not ok");
+	    }
+	    else
+	    {
+		    err("dmx videopid not valid (%d)", chnode->videopid);
+       		dmxclose(status.aktservice->dmxvideodev, -1);
+	    }
+
+        status.aktservice->dmxvideodev = dmxvideonode;
 	
 	//workaround for some audio channel not playing (for test)
-	usleep(100000);
+    	usleep(100000);
+printf("playerstart7\n");
 
-	//audio start
-	if(dmxaudionode != NULL)
-	{
-		if(status.aktservice->audiodev != NULL && status.aktservice->audiodev->fd >= 0 && status.aktservice->audiodev->adapter == fenode->adapter) 
-			audionode = status.aktservice->audiodev;
-		else
-		{
-			audioclose(status.aktservice->audiodev, -1);
-			audionode = audioopen(fenode->adapter);
-			status.aktservice->audiodev = audionode;
-		}
-		if(audionode != NULL)
-		{
-			audioselectsource(audionode, AUDIO_SOURCE_DEMUX);
-			audiosetbypassmode(audionode, chnode->audiocodec);
-			if(checkchipset("HI3798MV200") == 1 || vubox1 == 1) //fixt only audio no video.. blackscreen after zap
-				audiopause(audionode);
-			if(status.mute != 1)
-			{
-				// needs for ts playback
-				if(checkchipset("3798MV200") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
-					dmxstart(status.aktservice->dmxaudiodev);
-				audioplay(audionode);
-			}
-		}
-		else
-			err("can't get free audio dev");
-	}
-	
-	//video start
-	if(dmxvideonode != NULL)
-	{
-		if(status.aktservice->videodev != NULL && status.aktservice->videodev->fd >= 0 && status.aktservice->videodev->adapter == fenode->adapter)
-			videonode = status.aktservice->videodev;
-		else
-		{
-			videoclose(status.aktservice->videodev, -1);
-			videonode = videoopen(fenode->adapter, 0);
-			status.aktservice->videodev = videonode;
-		}
-		if(videonode != NULL)
-		{
-			videocontinue(videonode);
-			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
-			setencoding(chnode, videonode);
+	    //audio start
+	    if(dmxaudionode != NULL)
+	    {
+		    if(status.aktservice->audiodev != NULL && status.aktservice->audiodev->fd >= 0 && status.aktservice->audiodev->adapter == fenode->adapter) 
+			    audionode = status.aktservice->audiodev;
+		    else
+		    {
+			    audioclose(status.aktservice->audiodev, -1);
+			    audionode = audioopen(fenode->adapter);
+			    status.aktservice->audiodev = audionode;
+		    }
+		    if(audionode != NULL)
+		    {
+			    audioselectsource(audionode, AUDIO_SOURCE_DEMUX);
+			    audiosetbypassmode(audionode, chnode->audiocodec);
+			    if(checkchipset("HI3798MV200") == 1 || vubox1 == 1) //fixt only audio no video.. blackscreen after zap
+				    audiopause(audionode);
+			    if(status.mute != 1)
+			    {
+				    // needs for ts playback
+				    if(checkchipset("3798MV200") == 1 || checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+					    dmxstart(status.aktservice->dmxaudiodev);
+				    audioplay(audionode);
+			    }
+		    }
+		    else
+			    err("can't get free audio dev");
+	    }
+printf("playerstart8\n");
 
-			// needs for ts playpack
-			if(checkchipset("3798MV200") == 1)
-				dmxstart(status.aktservice->dmxvideodev);
+	    //video start
+	    if(dmxvideonode != NULL)
+	    {
+		    if(status.aktservice->videodev != NULL && status.aktservice->videodev->fd >= 0 && status.aktservice->videodev->adapter == fenode->adapter)
+			    videonode = status.aktservice->videodev;
+		    else
+		    {
+			    videoclose(status.aktservice->videodev, -1);
+			    videonode = videoopen(fenode->adapter, 0);
+			    status.aktservice->videodev = videonode;
+		    }
+		    if(videonode != NULL)
+		    {
+			    videocontinue(videonode);
+			    videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
+			    setencoding(chnode, videonode);
 
-			if(vubox1 == 1 ) //fixt only audio no video.. blackscreen after zap
-				videofreeze(videonode);
+			    // needs for ts playpack
+			    if(checkchipset("3798MV200") == 1)
+				    dmxstart(status.aktservice->dmxvideodev);
 
-			if(videoplay(videonode)!= 0) {
-				usleep(500000);
-				videoplay(videonode);
-			}
-		}
-		else
-			err("can't get free video dev");
-		if(checkchipset("HI3798MV200") == 1 || vubox1 == 1)
-		{
-			videoslowmotion(videonode, 0);
-			videofastforward(videonode, 0);
-			videocontinue(videonode);
-		}
-	}
+			    if(vubox1 == 1 ) //fixt only audio no video.. blackscreen after zap
+				    videofreeze(videonode);
+
+			    if(videoplay(videonode)!= 0) {
+				    usleep(500000);
+				    videoplay(videonode);
+			    }
+		    }
+		    else
+			    err("can't get free video dev");
+		    if(checkchipset("HI3798MV200") == 1 || vubox1 == 1)
+		    {
+			    videoslowmotion(videonode, 0);
+			    videofastforward(videonode, 0);
+			    videocontinue(videonode);
+		    }
+	    }
 #ifdef MIPSEL
-	if(checkchipset("HI3798MV200") == 1 || vubox1 == 1)
-	{
-		audiocontinue(audionode);
-	}	
-	if(tmpmute == 1)
-	{
-		tmpmute = 0;
-		setmute(1);
-	}
+	    if(checkchipset("HI3798MV200") == 1 || vubox1 == 1)
+	    {
+		    audiocontinue(audionode);
+	    }	
+	    if(tmpmute == 1)
+	    {
+		    tmpmute = 0;
+		    setmute(1);
+	    }
 #else	
-	//unset mute if set here
-	if(tmpmute == 1)
-	{
-		tmpmute = 0;
-		audiosetmute(status.aktservice->audiodev, 0);
-		//setmute(0);
-	}
-	if(status.mute != 1)
-	{
-		if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
-			dmxstart(status.aktservice->dmxaudiodev);
-		audioplay(status.aktservice->audiodev);
-	}
+	    //unset mute if set here
+	    if(tmpmute == 1)
+	    {
+		    tmpmute = 0;
+		    audiosetmute(status.aktservice->audiodev, 0);
+		    //setmute(0);
+	    }
+	    if(status.mute != 1)
+	    {
+		    if(checkbox("DM900") == 1 || checkbox("DM920") == 1 || checkbox("DM520") == 1 || checkbox("DM525") == 1)
+			    dmxstart(status.aktservice->dmxaudiodev);
+		    audioplay(status.aktservice->audiodev);
+	    }
 #endif
-	
-	//check pmt if not done
-	if(checkpmt == 0)
-	{
-		//wait for tuner lock
-		if(flag == 0)
-		{
-			if(fenode->felasttransponder != tpnode)
-				festatus = fewait(fenode);
-			else
-			{
-				festatus = fegetunlock(fenode);
-				if(festatus != 0)
-				{
-					debug(200, "fegetunlock rc:%d ... now fewait", festatus);	
-					festatus = fewait(fenode);
-				}
-			}
+printf("playerstart9\n");
 
-			if(debug_level == 200)
-			{
-				fereadstatus(fenode);
-				fegetfrontend(fenode);
-			}
-			if(festatus != 0)
-			{
-				m_unlock(&status.servicemutex, 2);
-				return 2;
-			}
-		}
+	    //check pmt if not done
+	    if(checkpmt == 0)
+	    {
+		    //wait for tuner lock
+		    if(flag == 0)
+		    {
+			    if(fenode->felasttransponder != tpnode)
+				    festatus = fewait(fenode);
+			    else
+			    {
+				    festatus = fegetunlock(fenode);
+				    if(festatus != 0)
+				    {
+					    debug(200, "fegetunlock rc:%d ... now fewait", festatus);	
+					    festatus = fewait(fenode);
+				    }
+			    }
 
-		checkpmt = 1;
-		patbuf = dvbgetpat(fenode, -1);
-		if(patbuf == NULL) status.secondzap = 3;
-		debug(200, "3-secondzap=%i", status.secondzap);	
-		free(status.aktservice->pmtbuf);
-		status.aktservice->pmtbuf = NULL;
-		status.aktservice->pmtlen = 0;
-		if(patbuf != NULL)
-			status.aktservice->pmtbuf = dvbgetpmt(fenode, patbuf, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 0);
-		else if(chnode->pmtpid > 0)
-			status.aktservice->pmtbuf = dvbgetpmt(fenode, NULL, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 1);
+			    if(debug_level == 200)
+			    {
+				    fereadstatus(fenode);
+				    fegetfrontend(fenode);
+			    }
+			    if(festatus != 0)
+			    {
+				    m_unlock(&status.servicemutex, 2);
+				    return 2;
+			    }
+		    }
 
-		if(status.aktservice->pmtbuf == NULL) status.secondzap = 4;
-		debug(200, "4-secondzap=%i", status.secondzap);
-		if(dvbgetinfo(status.aktservice->pmtbuf, chnode) == 1)
-		{
-			//audio or video pid or codec changed
-			free(status.aktservice->pmtbuf);
-			status.aktservice->pmtbuf = NULL;
-			status.aktservice->pmtlen = -1;
-		}
+		    checkpmt = 1;
+		    patbuf = dvbgetpat(fenode, -1);
+		    if(patbuf == NULL) status.secondzap = 3;
+		    debug(200, "3-secondzap=%i", status.secondzap);	
+		    free(status.aktservice->pmtbuf);
+		    status.aktservice->pmtbuf = NULL;
+		    status.aktservice->pmtlen = 0;
+		    if(patbuf != NULL)
+			    status.aktservice->pmtbuf = dvbgetpmt(fenode, patbuf, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 0);
+		    else if(chnode->pmtpid > 0)
+			    status.aktservice->pmtbuf = dvbgetpmt(fenode, NULL, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 1);
 
-		if(flag == 0)
-		{
-			if(status.pmtmode == 1)
-			{
-				if(recordcheckcrypt(fenode, CHANNEL) == 0)
-					dvbwritepmt(status.aktservice, status.aktservice->pmtbuf);
-				else
-					debug(200, "don't write pmt.tmp, another crypt channel use this frontend");
-			}
-			else
-				sendcapmt(status.aktservice, 0, 0);
-		}
-		free(patbuf);
-	}
+		    if(status.aktservice->pmtbuf == NULL) status.secondzap = 4;
+		    debug(200, "4-secondzap=%i", status.secondzap);
+		    if(dvbgetinfo(status.aktservice->pmtbuf, chnode) == 1)
+		    {
+			    //audio or video pid or codec changed
+			    free(status.aktservice->pmtbuf);
+			    status.aktservice->pmtbuf = NULL;
+			    status.aktservice->pmtlen = -1;
+		    }
 
-	//get ait and parse it for hbbtv url
-	if(flag == 0 && chnode->aitpid > 0)
-	{
-		unsigned char* aitbuf = NULL;
-		aitbuf = dvbgetait(fenode, chnode->aitpid, 0, -1);
-		if(aitbuf != NULL)
-		{
-			free(chnode->hbbtvurl); chnode->hbbtvurl = NULL;
-			chnode->hbbtvurl = dvbgethbbtvurl(aitbuf);
-		}
+		    if(flag == 0)
+		    {
+			    if(status.pmtmode == 1)
+			    {
+				    if(recordcheckcrypt(fenode, CHANNEL) == 0)
+					    dvbwritepmt(status.aktservice, status.aktservice->pmtbuf);
+				    else
+					    debug(200, "don't write pmt.tmp, another crypt channel use this frontend");
+			    }
+			    else
+				    sendcapmt(status.aktservice, 0, 0);
+		    }
+		    free(patbuf);
+	    }
 
-		debug(200, "hbbtvurl=%s", chnode->hbbtvurl);
-		free(aitbuf); aitbuf = NULL;
-	}
+	    //get ait and parse it for hbbtv url
+	    if(flag == 0 && chnode->aitpid > 0)
+	    {
+		    unsigned char* aitbuf = NULL;
+		    aitbuf = dvbgetait(fenode, chnode->aitpid, 0, -1);
+		    if(aitbuf != NULL)
+		    {
+			    free(chnode->hbbtvurl); chnode->hbbtvurl = NULL;
+			    chnode->hbbtvurl = dvbgethbbtvurl(aitbuf);
+		    }
 
+		    debug(200, "hbbtvurl=%s", chnode->hbbtvurl);
+		    free(aitbuf); aitbuf = NULL;
+	    }
+printf("playerstarta\n");
+    }
+/////////////////////
 	if(flag == 0)
 	{
 		//add channel to history
@@ -611,7 +654,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				createmostzap(chnode->serviceid, chnode->transponderid);
 		}
 		festatus = fewait(fenode);
-		if(festatus != 0)
+		if(chnode->streamurl == NULL && festatus != 0)
 		{
 			m_unlock(&status.servicemutex, 2);
 			err("festatus=%i", festatus );
@@ -619,53 +662,60 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}
 	}
 
-	//wait for epg thread stops
-	if(flag == 0 && status.epgthread != NULL)
-	{
-		i = 0;
-		while(status.epgthread->status != INPAUSE)
-		{
-			usleep(10000);
-			i++; if(i > 300) break;
-		}
-		status.epgthread->aktion = START;
-	}
+/////////////////////
 
-	status.videosizevalid = time(NULL);
-	m_unlock(&status.servicemutex, 2);
-	
-	//auto change channel name
-	if(flag == 0 && status.autochangechannelname == 1)
-		addtimer(&autochangechannelname, START, 1000, 1, NULL, NULL, NULL);
-	
-	//autoresolution
-	if(flag == 0 && ostrcmp(getconfig("av_videomode_autores", NULL), "auto") == 0)
-	{
-		int sec = 7;
-		char* av_videomode_autores_ts = getconfig("av_videomode_autores_ts", NULL);
-		if(av_videomode_autores_ts != NULL)
-			sec = atoi(av_videomode_autores_ts);
-		if(status.restimer == NULL)
-			status.restimer = addtimer(&setaktres, START, 1000, 1, (void*)sec, NULL, NULL);
-		else
-		{
-			status.restimer->aktion = STOP;
+    //wait for epg thread stops
+    if(flag == 0 && status.epgthread != NULL)
+    {
+	    i = 0;
+	    while(status.epgthread->status != INPAUSE)
+	    {
+		    usleep(10000);
+		    i++; if(i > 300) break;
+	    }
+	    status.epgthread->aktion = START;
+    }
+    printf("playerstartb\n");
+
+    status.videosizevalid = time(NULL);
+    m_unlock(&status.servicemutex, 2);
+    
+    //auto change channel name
+    if(flag == 0 && status.autochangechannelname == 1)
+	    addtimer(&autochangechannelname, START, 1000, 1, NULL, NULL, NULL);
+    
+    //autoresolution
+    if(flag == 0 && ostrcmp(getconfig("av_videomode_autores", NULL), "auto") == 0)
+    {
+	    int sec = 7;
+	    char* av_videomode_autores_ts = getconfig("av_videomode_autores_ts", NULL);
+	    if(av_videomode_autores_ts != NULL)
+		    sec = atoi(av_videomode_autores_ts);
+	    if(status.restimer == NULL)
+		    status.restimer = addtimer(&setaktres, START, 1000, 1, (void*)sec, NULL, NULL);
+	    else
+	    {
+		    status.restimer->aktion = STOP;
  			status.restimer = addtimer(&setaktres, START, 1000, 1, (void*)sec, NULL, NULL);
-		}			
-	}
-	
-	if(flag == 0 && status.autosubtitle == 1) subtitlestartlast(); //start subtitle
-	if(flag == 0 && status.timeshifttype == 1)
-	{
-		i = 0;
-		while(status.timeshift > 0)
-		{
-			usleep(100000);
-			i++; if(i > 20) break;
-		}
-		timeshiftpause(); //start permanent timeshift record
-	}
-	
+	    }			
+    }
+    printf("playerstartc\n");
+
+    if(flag == 0 && status.autosubtitle == 1) subtitlestartlast(); //start subtitle
+    printf("playerstartc1\n");
+
+    if(flag == 0 && status.timeshifttype == 1)
+    {
+	    i = 0;
+	    while(status.timeshift > 0)
+	    {
+		    usleep(100000);
+		    i++; if(i > 20) break;
+	    }
+	    timeshiftpause(); //start permanent timeshift record
+    }
+
+    printf("servicestartreal... ended with 0\n");	
 	debug(200, "servicestartreal... ended with 0");
 	return 0;
 }
