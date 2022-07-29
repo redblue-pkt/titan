@@ -258,8 +258,7 @@ int movechannelup(struct channel* node)
 struct channel* addchannel(char *line, int count, struct channel* last)
 {
 	struct channel *newnode = NULL, *prev = NULL, *node = NULL;
-	char *name = NULL;
-	char *streamurl = NULL;
+	char *name = NULL, *streamurl = NULL, *epgurl = NULL;
 
 	int ret = 0;
 
@@ -280,6 +279,14 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 		return NULL;
 	}
 
+	epgurl = malloc(MINMALLOC);
+	if(epgurl == NULL)
+	{
+		err("no memory");
+		free(newnode);
+		return NULL;
+	}
+
 	name = malloc(MINMALLOC);
 	if(name == NULL)
 	{
@@ -291,7 +298,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 printf("line: %s\n", line);
 
 //    ret = sscanf(line, "%[^#]#%llu#%d#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu8"#%"SCNu16"#%[^\n]\n", name, &newnode->transponderid, &newnode->providerid, &newnode->serviceid, &newnode->servicetype, &newnode->flag, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid, &newnode->protect, &newnode->pcrpid, streamurl);
-    ret = sscanf(line, "%[^#]#%llu#%d#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu8"#%"SCNu16"#%s", name, &newnode->transponderid, &newnode->providerid, &newnode->serviceid, &newnode->servicetype, &newnode->flag, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid, &newnode->protect, &newnode->pcrpid, streamurl);
+    ret = sscanf(line, "%[^#]#%llu#%d#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu8"#%"SCNu16"#%[^#]#%s", name, &newnode->transponderid, &newnode->providerid, &newnode->serviceid, &newnode->servicetype, &newnode->flag, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid, &newnode->protect, &newnode->pcrpid, streamurl, epgurl);
 
 printf("ret: %d\n", ret);
 
@@ -307,12 +314,25 @@ printf("ret: %d\n", ret);
         printf("newnode->streamurl: %s\n", newnode->streamurl);
 	}
 
+	if(ret == 14)
+	{
+    	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
+    	newnode->epgurl = ostrcat(epgurl, NULL, 0, 0);
+        printf("newnode->streamurl: %s\n", newnode->streamurl);
+        printf("newnode->epgurl: %s\n", newnode->epgurl);
+	}
+
 	if(ret == 12)
 	{
 		ret++;
 	}
 
-	if(ret != 13 || getchannel(newnode->serviceid, newnode->transponderid) != NULL)
+	if(ret == 13)
+	{
+		ret++;
+	}
+
+	if(ret != 14 || getchannel(newnode->serviceid, newnode->transponderid) != NULL)
 	{
 		if(count > 0)
 		{
@@ -324,6 +344,7 @@ printf("ret: %d\n", ret);
 		}
 		free(name);
 		free(streamurl);
+		free(epgurl);
 		free(newnode);
 		return NULL;
 	}
@@ -371,7 +392,7 @@ printf("ret: %d\n", ret);
 	return newnode;
 }
 
-struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect, int pcrpid)
+struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect, int pcrpid, char *streamurl, char *epgurl)
 {
 	struct channel* chnode = NULL;
 	char* tmpstr = NULL;
@@ -399,6 +420,10 @@ struct channel* createchannel(char* name, uint64_t transponderid, int providerid
 	tmpstr = ostrcat(tmpstr, oitoa(protect), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(pcrpid), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, streamurl, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, epgurl, 1, 0);
 
 	chnode = addchannel(tmpstr, 1, NULL);
 
@@ -741,7 +766,7 @@ int writechannel(const char *filename)
 			node = node->next;
 			continue;
 		}
-		ret = fprintf(fd, "%s#%llu#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d\n", node->name, node->transponderid, node->providerid, node->serviceid, node->servicetype, node->flag, node->videocodec, node->audiocodec, node->videopid, node->audiopid, node->protect, node->pcrpid);
+		ret = fprintf(fd, "%s#%llu#%d#%d#%d#%d#%d#%d#%d#%d#%d#%d#%s#%s\n", node->name, node->transponderid, node->providerid, node->serviceid, node->servicetype, node->flag, node->videocodec, node->audiocodec, node->videopid, node->audiopid, node->protect, node->pcrpid, node->streamurl, node->epgurl);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);

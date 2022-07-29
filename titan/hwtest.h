@@ -108,7 +108,7 @@ void testzap(char* testtransponder, char* testchannel)
 						textbox(_("Message"), _("testchannel entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 					else
 					{
-						chnode = createchannel("testchannel", tpid, 0, serviceid, 99, 0, videocodec, audiocodec, videopid, audiopid, 0, pcrpid);
+						chnode = createchannel("testchannel", tpid, 0, serviceid, 99, 0, videocodec, audiocodec, videopid, audiopid, 0, pcrpid, NULL, NULL);
 						if(chnode == NULL)
 							textbox(_("Message"), _("can't create new channel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 						else
