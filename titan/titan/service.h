@@ -153,21 +153,17 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0 && status.aktservice->type == CHANNEL)
 		changechannellist(chnode, channellist);
 
-if(chnode->streamurl != NULL)
-{
-printf("obi2.....: %s\n", chnode->name);
-printf("obi2.....: %s\n", chnode->streamurl);
-//printf("playerstop\n");
-
-//playerstopts(1,1);
-printf("playerstart\n");
-
+    if(chnode->streamurl != NULL && chnode->epgurl != NULL)
+    {
+        printf("playerstart1 name: %s\n", chnode->name);
+        printf("playerstart1 streamurl: %s\n", chnode->streamurl);
+        printf("playerstart1 epgurl: %s\n", chnode->epgurl);
         playerstart(chnode->streamurl);
-}
+    }
 
 
 	//got frontend dev
-	if(chnode->streamurl == NULL && flag == 0)
+	if(chnode->epgurl == NULL && flag == 0)
 	{
 		fenode = fegetfree(tpnode, 0, NULL, chnode);
 		if(fenode == NULL)
@@ -232,33 +228,17 @@ printf("playerstart\n");
 		status.aktservice->fedev = fenode;
 	}
 
-
-printf("playerstart1\n");
-
-// iptv working...
-
-	if(chnode->streamurl != NULL)
-	{
-printf("playerstart2a\n");
-
-//		m_unlock(&status.servicemutex, 2);
-//		return 0;
-	}
-
 	if(chnode->streamurl == NULL && fenode == NULL)
 	{
-printf("playerstart2\n");
-
 		m_unlock(&status.servicemutex, 2);
 		return 1;
 	}
-printf("playerstart3\n");
 
 	//check pmt if not all infos in channellist
-	if(chnode->streamurl == NULL && (chnode->audiopid == -1 || chnode->videopid == -1 || chnode->pcrpid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3)))
+	if((chnode->audiopid == -1 || chnode->videopid == -1 || chnode->pcrpid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3)))
 	{
 		//wait for tuner lock
-		if(flag == 0)
+		if(chnode->streamurl == NULL && flag == 0)
 		{
 			if(fenode->felasttransponder != tpnode)
 				festatus = fewait(fenode);
@@ -283,6 +263,7 @@ printf("playerstart3\n");
 			patbuf = dvbgetpat(fenode, -1);
 			if(patbuf == NULL) status.secondzap = 1;
 		}
+
 		debug(200, "1-secondzap=%i", status.secondzap);
 		free(status.aktservice->pmtbuf);
 		status.aktservice->pmtbuf = NULL;
@@ -312,7 +293,6 @@ printf("playerstart3\n");
 	}
 
 	if(flag != 0) checkpmt = 1;
-printf("playerstart4\n");
 
 	//set mute for scat problem
 #ifdef MIPSEL	
@@ -329,8 +309,8 @@ printf("playerstart4\n");
 		audiosetmute(status.aktservice->audiodev, 1);
 	}
 #endif
-/////////////////////
-	if(chnode->streamurl == NULL)
+
+	if(chnode->epgurl == NULL)
     {
     	audiostop(status.aktservice->audiodev);
 
@@ -343,10 +323,9 @@ printf("playerstart4\n");
     		videostop(status.aktservice->videodev, 1);
     		dmxstop(status.aktservice->dmxvideodev);
     	}
-printf("playerstart5\n");
 
     	//demux pcr start
-    	if(chnode->streamurl == NULL && flag == 0 && chnode->pcrpid > 0)
+    	if(flag == 0 && chnode->pcrpid > 0)
     	{
     		if(status.aktservice->dmxpcrdev != NULL && status.aktservice->dmxpcrdev->fd >= 0 && status.aktservice->dmxpcrdev->adapter == fenode->adapter && status.aktservice->dmxpcrdev->devnr == fenode->devnr)
     			dmxpcrnode = status.aktservice->dmxpcrdev;
@@ -374,9 +353,7 @@ printf("playerstart5\n");
 	    else
 	    {
 		    err("dmx pcrpid not valid (%d)", chnode->pcrpid);
-            if(chnode->streamurl == NULL) 
-		        dmxclose(status.aktservice->dmxpcrdev, -1);
-
+		    dmxclose(status.aktservice->dmxpcrdev, -1);
 	    }
 
 	    status.aktservice->dmxpcrdev = dmxpcrnode;
@@ -419,7 +396,6 @@ printf("playerstart5\n");
 	    }
 
 	    status.aktservice->dmxaudiodev = dmxaudionode;
-printf("playerstart6\n");
 
 	    //demux video start
 	    if(chnode->videopid > 0)
@@ -463,7 +439,6 @@ printf("playerstart6\n");
 	
 	//workaround for some audio channel not playing (for test)
     	usleep(100000);
-printf("playerstart7\n");
 
 	    //audio start
 	    if(dmxaudionode != NULL)
@@ -493,7 +468,6 @@ printf("playerstart7\n");
 		    else
 			    err("can't get free audio dev");
 	    }
-printf("playerstart8\n");
 
 	    //video start
 	    if(dmxvideonode != NULL)
@@ -537,7 +511,8 @@ printf("playerstart8\n");
 	    if(checkchipset("HI3798MV200") == 1 || vubox1 == 1)
 	    {
 		    audiocontinue(audionode);
-	    }	
+	    }
+
 	    if(tmpmute == 1)
 	    {
 		    tmpmute = 0;
@@ -558,7 +533,14 @@ printf("playerstart8\n");
 		    audioplay(status.aktservice->audiodev);
 	    }
 #endif
-printf("playerstart9\n");
+
+        if(chnode->streamurl != NULL)
+        {
+            printf("playerstart2 name: %s\n", chnode->name);
+            printf("playerstart2 streamurl: %s\n", chnode->streamurl);
+            printf("playerstart2 epgurl: %s\n", chnode->epgurl);
+            playerstart(chnode->streamurl);
+        }
 
 	    //check pmt if not done
 	    if(checkpmt == 0)
@@ -641,9 +623,8 @@ printf("playerstart9\n");
 		    debug(200, "hbbtvurl=%s", chnode->hbbtvurl);
 		    free(aitbuf); aitbuf = NULL;
 	    }
-printf("playerstarta\n");
     }
-/////////////////////
+
 	if(flag == 0)
 	{
 		//add channel to history
@@ -662,8 +643,6 @@ printf("playerstarta\n");
 		}
 	}
 
-/////////////////////
-
     //wait for epg thread stops
     if(flag == 0 && status.epgthread != NULL)
     {
@@ -675,7 +654,6 @@ printf("playerstarta\n");
 	    }
 	    status.epgthread->aktion = START;
     }
-    printf("playerstartb\n");
 
     status.videosizevalid = time(NULL);
     m_unlock(&status.servicemutex, 2);
@@ -699,10 +677,8 @@ printf("playerstarta\n");
  			status.restimer = addtimer(&setaktres, START, 1000, 1, (void*)sec, NULL, NULL);
 	    }			
     }
-    printf("playerstartc\n");
 
     if(flag == 0 && status.autosubtitle == 1) subtitlestartlast(); //start subtitle
-    printf("playerstartc1\n");
 
     if(flag == 0 && status.timeshifttype == 1)
     {
@@ -715,7 +691,6 @@ printf("playerstarta\n");
 	    timeshiftpause(); //start permanent timeshift record
     }
 
-    printf("servicestartreal... ended with 0\n");	
 	debug(200, "servicestartreal... ended with 0");
 	return 0;
 }
@@ -1170,7 +1145,7 @@ void servicefullHDMIin_start()
 	chnode = getchannel(65535, 0);
 	if(chnode == NULL)
 		//chnode = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
-		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1);
+		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1, NULL, NULL);
 	status.aktservice->channel = chnode;
 }
 #endif

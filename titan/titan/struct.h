@@ -1244,6 +1244,7 @@ struct channel
 	uint8_t protect;
 	char* hbbtvurl;
 	char* streamurl;
+	char* epgurl;
 	struct transponder *transponder;
 	struct provider *provider;
 	struct audiotrack *audiotrack;
