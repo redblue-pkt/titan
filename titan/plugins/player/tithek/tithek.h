@@ -2275,7 +2275,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		}
 		else if(ostrcmp(keyconf, "Save Streamurl") == 0)
 		{
+printf("Save Streamurl: filename=%s\n", filename);
+printf("Save Streamurl: tmpstr1=%s\n", tmpstr1);
 			status.streamurl = ostrcat(tmpstr1, NULL, 0, 0);
+printf("status.streamurl: %s\n", status.streamurl);
+
 		}
 
 		free(filename), filename = NULL;
