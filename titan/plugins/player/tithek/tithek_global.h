@@ -1620,8 +1620,9 @@ printf("cmd2: %s\n", cmd);
 	    long tmplistboxselectcol = status.listboxselectcol;
 	    status.listboxselectcol = convertcol("tithek_selectcol");
 
+        status.streamurl = NULL;
         screentithekplay(filename, _("Tithek - Mainmenu"), 1);
-    printf("status.streamurl3: %s\n", status.streamurl);
+        printf("status.streamurl3: %s\n", status.streamurl);
 
 	    //reset markcolor  
 	    status.listboxselectcol = tmplistboxselectcol;
