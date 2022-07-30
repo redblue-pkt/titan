@@ -310,14 +310,17 @@ printf("ret: %d\n", ret);
 
 	if(ret == 13)
 	{
-    	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
+        if(streamurl != NULL)
+        	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
         printf("newnode->streamurl: %s\n", newnode->streamurl);
 	}
 
 	if(ret == 14)
 	{
-    	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
-    	newnode->epgurl = ostrcat(epgurl, NULL, 0, 0);
+        if(streamurl != NULL)
+        	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
+        if(epgurl != NULL)
+        	newnode->epgurl = ostrcat(epgurl, NULL, 0, 0);
         printf("newnode->streamurl: %s\n", newnode->streamurl);
         printf("newnode->epgurl: %s\n", newnode->epgurl);
 	}
