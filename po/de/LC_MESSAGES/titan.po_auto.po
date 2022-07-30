@@ -13275,7 +13275,7 @@ msgstr "Einstellungen speichern"
 
 #: tithek.h:2127
 msgid "Save Streamurl"
-msgstr ""
+msgstr "Stream Link speichern"
 
 #: player_tmc_skin.xml.h:14
 msgid "Scan"
@@ -14809,7 +14809,7 @@ msgstr ""
 
 #: channellist.h:663
 msgid "Stream mode"
-msgstr ""
+msgstr "Stream Link"
 
 #: infos_streaminfo_skin.xml.h:3 skins_kravenhd_skin.xml.h:654
 #: tpk_showname.h:200
@@ -20213,7 +20213,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:649 skins_default_skin.xml.h:649
 msgid "streamurl service"
-msgstr ""
+msgstr "Stream Link zuweisen"
 
 #: webif_help.h:92
 msgid "subtitle"
