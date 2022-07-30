@@ -1551,7 +1551,7 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 	return ret;
 }
 
-int localparser_search_file(char* localparser, char* filename)
+char* localparser_search_file(char* localparser, char* filename)
 {
 	char* tmpstr = NULL, *menu = NULL, *search = NULL, *cmd = NULL, *link = NULL;
 	int ret = 1;
@@ -1635,7 +1635,9 @@ printf("cmd2: %s\n", cmd);
 	}
 	free(search), search = NULL;
 
-	return ret;
+    printf("status.streamurl4: %s\n", status.streamurl);
+
+	return status.streamurl;
 }
 
 #endif
