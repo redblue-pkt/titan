@@ -2278,7 +2278,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 printf("Save Streamurl: filename=%s\n", filename);
 printf("Save Streamurl: tmpstr1=%s\n", tmpstr1);
 			status.streamurl = ostrcat(tmpstr1, NULL, 0, 0);
-printf("status.streamurl: %s\n", status.streamurl);
+printf("status.streamurl2: %s\n", status.streamurl);
 
 		}
 
