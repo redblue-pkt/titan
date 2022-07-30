@@ -2123,6 +2123,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					addmenulist(&mlist, "Download Full File (hlsdl)", _("Download Full File (hlsdl)"), NULL, 0, 0);
 				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 					addmenulist(&mlist, "Download Full File (curldl)", _("Download Full File (curldl)"), NULL, 0, 0);
+				if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
+					addmenulist(&mlist, "Save Streamurl", _("Save Streamurl"), NULL, 0, 0);
 
 				if(python == 1 && file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 					addmenulist(&mlist, "Download Full File (youtube_dl)", _("Download Full File (youtube_dl)"), NULL, 0, 0);
@@ -2270,6 +2272,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			if(search != NULL)
 				backgroundcurldl(tmpstr1, search);
 			free(search), search = NULL;
+		}
+		else if(ostrcmp(keyconf, "Save Streamurl") == 0)
+		{
+			status.streamurl = ostrcat(tmpstr1, NULL, 0, 0);
 		}
 
 		free(filename), filename = NULL;

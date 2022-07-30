@@ -1705,6 +1705,7 @@ struct status
 	int fdrc1;
 	// Anzah VideoDevs
 	int videodevs;
+	char* streamurl;
 } status;
 
 struct fb
