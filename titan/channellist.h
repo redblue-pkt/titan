@@ -976,10 +976,10 @@ start:
 			            startplugin = dlsym(tithekplugin->pluginhandle, "localparser_search_file");
 			            if(startplugin != NULL)
 			            {
-printf("status.streamurl1: %s\n", status.streamurl);
-printf("status.streamurl1: %s\n", ((struct channel*)listbox->select->handle)->name);
-                        streamurl = (char*)startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
-printf("streamurl: %s\n", streamurl);
+                            status.streamurl = ostrcat(((struct channel*)listbox->select->handle)->name, NULL, 0, 0);
+                            printf("status.streamurl1: %s\n", status.streamurl);    
+                            streamurl = (char*)startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
+                            printf("streamurl: %s\n", streamurl);
   			            }
 		            }
                     free(localparser), localparser = NULL;
@@ -987,7 +987,10 @@ printf("streamurl: %s\n", streamurl);
                     if (streamurl != NULL)
                         ((struct channel*)listbox->select->handle)->streamurl = ostrcat(streamurl, NULL, 0, 0);
 
+printf("free: 1\n");
                     free(streamurl), streamurl = NULL;
+printf("free: 2\n");
+
 					status.writechannel = 1;
 				}
 				delmarkedscreennodes(channellist, 1);
