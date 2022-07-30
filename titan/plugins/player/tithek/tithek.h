@@ -2277,9 +2277,11 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		{
 printf("Save Streamurl: filename=%s\n", filename);
 printf("Save Streamurl: tmpstr1=%s\n", tmpstr1);
-			status.streamurl = ostrcat(tmpstr1, NULL, 0, 0);
-printf("status.streamurl2: %s\n", status.streamurl);
-
+	        if(ostrncmp("http", tmpstr1, 4) && ostrncmp("rtmp", tmpstr1, 4) && ostrncmp("mms", tmpstr1, 3) && ostrncmp("rtsp", tmpstr1, 4))
+            {
+    			status.streamurl = ostrcat(tmpstr1, NULL, 0, 0);
+                printf("status.streamurl2 set: %s\n", status.streamurl);
+            }
 		}
 
 		free(filename), filename = NULL;
