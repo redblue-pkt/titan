@@ -36,10 +36,9 @@ init()
 	echo "$NAME ($TYPE)#$SRC $SRC mainmenu#http://openaaf.dyndns.tv/mediathek/menu/$PARSER.jpg#$PARSER.jpg#TiThek#0"
 }
 
-mainmenu()
+getkey()
 {
-
-    if [ ! -e $TMP/vavoo.3.signed.base64 ];then
+    if [ ! -e $TMP/vavoo.7.signed.base64.timestamp.sed ];then
         curl -v -L -s --user-agent "VAVOO/2.6" -X POST http://www.vavoo.tv/api/box/guest > $TMP/vavoo.1.guest
         token=$(cat $TMP/vavoo.1.guest | awk 'BEGIN {} /token/ { i = index($0, "token\":\"") + 8;j = index(substr($0, i), "\"") - 1;token = substr($0, i, j); print token; next}')
         echo $token > $TMP/vavoo.2.token
@@ -52,7 +51,10 @@ mainmenu()
 #        cat $TMP/vavoo.5.signed.base64 | sed 's#false#true#g' | sed 's#\\"Daily usage duration reached\\"#null#g' | sed 's#\\"version\\":null#\\"version\\":\\"2.6\\"#g' | sed 's#\\"serivce\\":null#\\"serivce\\":\\"1.2.26\\"#g' | sed 's#\\"platform\\":null#\\"platform\\":\\"vavoo\\"#g' | sed "s#160#260#g" | sed "s#3.#4.#g" | sed "s#5.#6.#g" | sed "s#7.#8.#g" | sed "s#9.#0.#g" > $TMP/vavoo.7.signed.base64.timestamp.sed
         cat $TMP/vavoo.5.signed.base64 | sed 's#false#true#g' | sed 's#\\"Daily usage duration reached\\"#null#g' | sed 's#\\"version\\":null#\\"version\\":\\"2.6\\"#g' | sed 's#\\"serivce\\":null#\\"serivce\\":\\"1.2.26\\"#g' | sed 's#\\"platform\\":null#\\"platform\\":\\"vavoo\\"#g' | sed "s#:16#:26#g" > $TMP/vavoo.7.signed.base64.timestamp.sed
     fi
+}
 
+mainmenu()
+{
 	echo "Category#$SRC $SRC category#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Suchen#$SRC $SRC search 'dummy' '%search%' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
@@ -60,7 +62,9 @@ mainmenu()
 
 category()
 {
+    getkey
     vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
+
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
@@ -104,7 +108,9 @@ category()
 
 search()
 {
+    getkey
     vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
+
     NEXT=$(echo $NEXT | tr '+' ' ')
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		$curlbin -o - $URL | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
