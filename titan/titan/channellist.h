@@ -976,20 +976,12 @@ start:
 			            startplugin = dlsym(tithekplugin->pluginhandle, "localparser_search_file");
 			            if(startplugin != NULL)
 			            {
-                            status.streamurl = ostrcat(((struct channel*)listbox->select->handle)->name, NULL, 0, 0);
-                            printf("status.streamurl1: %s\n", status.streamurl);    
-                            streamurl = (char*)startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
-                            printf("streamurl: %s\n", streamurl);
+                            printf("name: %s\n", ((struct channel*)listbox->select->handle)->name);    
+                            ((struct channel*)listbox->select->handle)->streamurl = (char*)startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
+                            printf("streamurl: %s\n", ((struct channel*)listbox->select->handle)->streamurl);
   			            }
 		            }
                     free(localparser), localparser = NULL;
-
-                    if (streamurl != NULL)
-                        ((struct channel*)listbox->select->handle)->streamurl = ostrcat(streamurl, NULL, 0, 0);
-
-printf("free: 1\n");
-                    free(streamurl), streamurl = NULL;
-printf("free: 2\n");
 
 					status.writechannel = 1;
 				}
