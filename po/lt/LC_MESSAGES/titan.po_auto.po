@@ -254,9 +254,9 @@ msgstr "--- Pato kodas"
 msgid "--- SD resolution"
 msgstr ""
 
-#: skin_default_skin.xml.h:681 skins_0acht5zehn_skin.xml.h:703
+#: skin_default_skin.xml.h:682 skins_0acht5zehn_skin.xml.h:703
 #: skins_atemio_skin.xml.h:652 skins_cool_skin.xml.h:768
-#: skins_default_skin.xml.h:681 skins_kravenhd_skin.xml.h:687
+#: skins_default_skin.xml.h:682 skins_kravenhd_skin.xml.h:687
 #: skins_megastyleblue_skin.xml.h:770 skins_megastylegrey_skin.xml.h:770
 #: skins_metrixhd_skin.xml.h:670 skins_nogfx_skin.xml.h:611
 #: skins_sevenhd_skin.xml.h:614 skins_smarttv_skin.xml.h:670
@@ -310,9 +310,9 @@ msgstr "--Author--"
 msgid "->"
 msgstr ""
 
-#: pip.h:660 skin_default_skin.xml.h:652 skins_0acht5zehn_skin.xml.h:617
+#: pip.h:660 skin_default_skin.xml.h:653 skins_0acht5zehn_skin.xml.h:617
 #: skins_atemio_skin.xml.h:622 skins_cool_skin.xml.h:735
-#: skins_default_skin.xml.h:652 skins_kravenhd_skin.xml.h:661
+#: skins_default_skin.xml.h:653 skins_kravenhd_skin.xml.h:661
 #: skins_megastyleblue_skin.xml.h:737 skins_megastylegrey_skin.xml.h:737
 #: skins_metrixhd_skin.xml.h:639 skins_nogfx_skin.xml.h:584
 #: skins_sevenhd_skin.xml.h:588 skins_smarttv_skin.xml.h:642
@@ -1203,7 +1203,7 @@ msgstr ""
 
 #: player_tithek_skin.xml.h:1 skins_cool_skin.xml.h:64
 #: skins_megastyleblue_skin.xml.h:65 skins_megastylegrey_skin.xml.h:65
-#: tithek.h:2374 tithek.h:3397
+#: tithek.h:2386 tithek.h:3409
 msgid "ADD FAV"
 msgstr "Pridti"
 
@@ -1357,11 +1357,11 @@ msgstr "Pridti Laikmatis"
 msgid "Add iMDB manuel"
 msgstr "Rankiniu bdu pridti IMDB"
 
-#: tithek.h:3359
+#: tithek.h:3371
 msgid "Add this link as Favorite ?"
 msgstr "Ar norite pridti i nuorod  savo mgstamiausi ?"
 
-#: tithek.h:2738 tithek.h:2926
+#: tithek.h:2750 tithek.h:2938
 msgid "Add this sub folder as Favorite ?"
 msgstr ""
 
@@ -1442,7 +1442,7 @@ msgstr "Aktyvuoti nauj tinklo konfigracij ?"
 msgid "Album:"
 msgstr "Albumas:"
 
-#: channellist.h:815 channellist.h:1259
+#: channellist.h:823 channellist.h:1298
 msgid "All Channels"
 msgstr "Visi kanalai"
 
@@ -2633,7 +2633,7 @@ msgstr ""
 msgid "Bouquet List"
 msgstr ""
 
-#: listedit.h:88
+#: listedit.h:93
 msgid "Bouquet Name"
 msgstr "Mgstami Vardas"
 
@@ -2655,7 +2655,7 @@ msgstr "No. Puokts :"
 msgid "BouquetEntrys: "
 msgstr "Puokt raai:"
 
-#: channellist.h:750 channellist.h:1274 channellist.h:1483
+#: channellist.h:758 channellist.h:1313 channellist.h:1522
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Mgstami"
@@ -2955,7 +2955,7 @@ msgstr "Negalima sukurti aplanko !"
 msgid "Can't create service"
 msgstr "ERROR: Can't create Service"
 
-#: service.h:1066
+#: service.h:1091
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -2975,7 +2975,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Can't get EPG time or the EPG Endtime is faulty."
 
-#: tithek.h:2279
+#: tithek.h:2291
 msgid "Can't get Streamurl !"
 msgstr "Streamurl nra pasiekiami !"
 
@@ -3005,13 +3005,13 @@ msgstr "ERROR: Can't open Frontend Device"
 msgid "Can't open file"
 msgstr "ERROR: Can't open File"
 
-#: service.h:1072
+#: service.h:1097
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
 "Frontend Tipas unknown."
 
-#: channellist.h:1053
+#: channellist.h:1092
 msgid "Can't remove akive Service"
 msgstr "Negalima paalinti aktyvaus Serviso"
 
@@ -3050,7 +3050,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:685 mc_audioplayer.h:797 mc_global.h:781
 #: mc_global.h:1086 mc_iptvplayer.h:392 mc_iptvplayer.h:503
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:1796
+#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:1822
 msgid "Can't start playback !"
 msgstr "Nepavyko paleisti atkrim !"
 
@@ -3170,7 +3170,7 @@ msgstr "Pakeisti  SCART ivest"
 msgid "Change: "
 msgstr "Pokytis:"
 
-#: channellist.h:766 channellist.h:1621 skin_default_skin.xml.h:92
+#: channellist.h:774 channellist.h:1660 skin_default_skin.xml.h:92
 #: skins_0acht5zehn_skin.xml.h:133 skins_atemio_skin.xml.h:132
 #: skins_cool_skin.xml.h:159 skins_default_skin.xml.h:92
 #: skins_kravenhd_skin.xml.h:96 skins_megastyleblue_skin.xml.h:161
@@ -3344,7 +3344,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "No. Kanal :"
 
-#: service.h:1077
+#: service.h:1102
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "KLAIDA: Channellist tuias arba corrupt\n"
@@ -3360,7 +3360,7 @@ msgstr ""
 msgid "Channellist view"
 msgstr "Kanal sarao vaizdas"
 
-#: channellist.h:1340
+#: channellist.h:1379
 msgid "Channels A-Z"
 msgstr "Kanalai A-Z"
 
@@ -3449,7 +3449,7 @@ msgstr ""
 msgid "Choose your Playlist Mode from the following list"
 msgstr "Pasirinkite grojaraio reim i srao"
 
-#: play.h:739
+#: play.h:742
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Pasirinkite Raudon Meniu i srao"
 
@@ -3474,7 +3474,7 @@ msgstr "Pasirinkite Bendrinamus i srao"
 msgid "Choose your Streaming Format from the following list"
 msgstr "Pasirinkite savo Srauto Format i emiau pateikto srao"
 
-#: tithek.h:2132
+#: tithek.h:2134
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr "Pasirinkite savo Streaming atkrimo Modus i io srao"
 
@@ -3812,19 +3812,19 @@ msgstr ""
 msgid "Copy mode"
 msgstr "Kopijuoti"
 
-#: channellist.h:962
+#: channellist.h:1001
 msgid "Copy providerlist not ok"
 msgstr "DMESIO : Transliuotojai nenukopijuoti"
 
-#: channellist.h:960
+#: channellist.h:999
 msgid "Copy providerlist successfull"
 msgstr "Transliuotojai skmingai nukopijuoti"
 
-#: channellist.h:969
+#: channellist.h:1008
 msgid "Copy satlist not ok"
 msgstr "DMESIO : kanalai nenukopijuoti"
 
-#: channellist.h:967
+#: channellist.h:1006
 msgid "Copy satlist successfull"
 msgstr "Kanalai skmingai nukopijuoti"
 
@@ -3850,15 +3850,15 @@ msgstr ""
 msgid "Create Default Favorites"
 msgstr ""
 
-#: play.h:658
+#: play.h:661
 msgid "Create Favorites sub folder"
 msgstr ""
 
-#: play.h:659
+#: play.h:662
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1568
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:650 play.h:1594
 msgid "Create Folder"
 msgstr "Sukurti aplank"
 
@@ -3940,7 +3940,7 @@ msgstr "Sukurti nauj"
 msgid "Create new Skinstyle ?"
 msgstr ""
 
-#: tithek.h:2723 tithek.h:2911
+#: tithek.h:2735 tithek.h:2923
 msgid "Create sub folder"
 msgstr ""
 
@@ -4014,7 +4014,7 @@ msgid "DEFAULT"
 msgstr ""
 
 #: infos_stock_skin.xml.h:3 infos_weather_skin.xml.h:2
-#: network_networkbrowser_skin.xml.h:6 play.h:1714
+#: network_networkbrowser_skin.xml.h:6 play.h:1740
 #: skin_default_keyskin.xml.h:27 skin_default_skin.xml.h:144
 #: skins_0acht5zehn_skin.xml.h:181 skins_atemio_skin.xml.h:182
 #: skins_cool_skin.xml.h:218 skins_default_keyskin.xml.h:27
@@ -4028,7 +4028,7 @@ msgstr "Trinti"
 
 #: player_tithek_skin.xml.h:6 skins_cool_skin.xml.h:224
 #: skins_megastyleblue_skin.xml.h:225 skins_megastylegrey_skin.xml.h:225
-#: tithek.h:2365 tithek.h:3388
+#: tithek.h:2377 tithek.h:3400
 msgid "DEL FAV"
 msgstr "Itrinti"
 
@@ -4679,7 +4679,7 @@ msgstr ""
 msgid "Download Full File (hlsdl)"
 msgstr ""
 
-#: tithek.h:2128
+#: tithek.h:2130
 msgid "Download Full File (youtube_dl)"
 msgstr ""
 
@@ -4687,7 +4687,7 @@ msgstr ""
 msgid "Download finished!"
 msgstr "Siuntimas baigtas!"
 
-#: keyactions.h:87 play.h:717 settings_bluebutton.h:22
+#: keyactions.h:87 play.h:720 settings_bluebutton.h:22
 #: settings_pluginbutton.h:22 settings_redbutton.h:23
 #: skin_default_skin.xml.h:167 skins_0acht5zehn_skin.xml.h:823
 #: skins_atemio_skin.xml.h:754 skins_cool_skin.xml.h:245
@@ -4795,7 +4795,7 @@ msgstr "Redaguoti"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:2364 tithek.h:3387
+#: tithek.h:2376 tithek.h:3399
 msgid "EDIT FAV"
 msgstr "Redaguoti mgstamiausi"
 
@@ -4837,7 +4837,7 @@ msgstr "Istumti"
 msgid "ELBEKANAL rtmp (German)"
 msgstr ""
 
-#: adjust.h:75 httpdfunc.h:3905 play.h:1714 skin_default_skin.xml.h:184
+#: adjust.h:75 httpdfunc.h:3905 play.h:1740 skin_default_skin.xml.h:184
 #: skins_0acht5zehn_skin.xml.h:222 skins_atemio_skin.xml.h:219
 #: skins_cool_skin.xml.h:266 skins_default_skin.xml.h:184
 #: skins_kravenhd_skin.xml.h:193 skins_megastyleblue_skin.xml.h:267
@@ -4875,7 +4875,7 @@ msgstr ""
 msgid "EPG (epg)"
 msgstr ""
 
-#: player_tmc_skin.xml.h:17 play.h:1407 play.h:1413
+#: player_tmc_skin.xml.h:17 play.h:1433 play.h:1439
 msgid "EPG Info"
 msgstr "EPG informacija"
 
@@ -5066,8 +5066,8 @@ msgid "EURONEWS (German)"
 msgstr ""
 
 #: about.h:10 amazon.h:760 avsettings.h:404 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 channellist.h:960 channellist.h:962 channellist.h:967
-#: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
+#: blindscanadjust.h:25 channellist.h:999 channellist.h:1001 channellist.h:1006
+#: channellist.h:1008 channellist.h:1092 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27
 #: epgsettings.h:317 epgsettings.h:331 extensions.h:198 extensions.h:249
@@ -5125,9 +5125,9 @@ msgstr ""
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:417 player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:1407
-#: play.h:1413 play.h:1428 play.h:1429 play.h:1465 play.h:1466 play.h:1480
-#: play.h:1564 possetup.h:98 primeshare.h:29 primeshare.h:74 primeshare.h:80
+#: player.h:417 player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:1433
+#: play.h:1439 play.h:1454 play.h:1455 play.h:1491 play.h:1492 play.h:1506
+#: play.h:1590 possetup.h:98 primeshare.h:29 primeshare.h:74 primeshare.h:80
 #: primeshare.h:125 promptfile.h:26 promptfile.h:35 putlocker.h:32
 #: putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
 #: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
@@ -5135,8 +5135,8 @@ msgstr ""
 #: record.h:1792 rectimer.h:577 rectimer.h:1405 restoredefault.h:10
 #: restoredefault.h:34 restoredefault.h:58 restoredefault.h:73 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 satipclient.h:137 scan.h:2651 scart.h:12
-#: scart.h:25 scriptexec.h:41 security.h:668 security.h:685 service.h:806
-#: service.h:1083 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
+#: scart.h:25 scriptexec.h:41 security.h:668 security.h:685 service.h:831
+#: service.h:1108 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
 #: skinadjust.h:627 skinadjust.h:668 skin_default_skin.xml.h:199
 #: skins_0acht5zehn_skin.xml.h:237 skins_atemio_skin.xml.h:234
 #: skins_cool_skin.xml.h:281 skins_default_skin.xml.h:199 skinselector.h:231
@@ -5156,9 +5156,9 @@ msgstr ""
 #: titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228 tithek.h:793
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
-#: tithek.h:2018 tithek.h:2033 tithek.h:2234 tithek.h:2279 tithek.h:2296
-#: tithek.h:2738 tithek.h:2926 tithek.h:3251 tithek.h:3316 tithek.h:3359
-#: tithek.h:3372 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2308
+#: tithek.h:2750 tithek.h:2938 tithek.h:3263 tithek.h:3328 tithek.h:3371
+#: tithek.h:3384 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_autotimer_skin.xml.h:6 tools_callmonitor1_skin.xml.h:10
 #: tools_instar_skin.xml.h:8 tools_lcdpearl1_skin.xml.h:6
@@ -5221,7 +5221,7 @@ msgstr "Redaguoti Grojarat"
 msgid "Edit mode"
 msgstr "Redaguoti"
 
-#: tithek.h:3372
+#: tithek.h:3384
 msgid "Edit this Favorite ?"
 msgstr "Redaguoti  Pamgt viet?"
 
@@ -5499,7 +5499,7 @@ msgstr ""
 
 #: player_tithek_skin.xml.h:8 skins_cool_skin.xml.h:283
 #: skins_megastyleblue_skin.xml.h:284 skins_megastylegrey_skin.xml.h:284
-#: tithek.h:2381 tithek.h:3404
+#: tithek.h:2393 tithek.h:3416
 msgid "Exit Tithek"
 msgstr "Udaryti"
 
@@ -5825,7 +5825,7 @@ msgstr ""
 msgid "Feed"
 msgstr "Praome vesti adres"
 
-#: play.h:1480
+#: play.h:1506
 msgid "File Exist, Really Rename and Overwrite exist File ?"
 msgstr ""
 
@@ -5883,7 +5883,7 @@ msgstr ""
 msgid "Filelist-Mode"
 msgstr "Fail srao reimas"
 
-#: tithek.h:2227 tithek.h:2248 tithek.h:2255 tithek.h:2262 tithek.h:2269
+#: tithek.h:2229 tithek.h:2250 tithek.h:2257 tithek.h:2264 tithek.h:2271
 msgid "Filename"
 msgstr "Failo pavadinimas"
 
@@ -6791,9 +6791,9 @@ msgstr ""
 msgid "Hello World !"
 msgstr ""
 
-#: httpdfunc.h:5163 skin_default_skin.xml.h:771 skins_0acht5zehn_skin.xml.h:833
+#: httpdfunc.h:5163 skin_default_skin.xml.h:772 skins_0acht5zehn_skin.xml.h:833
 #: skins_atemio_skin.xml.h:757 skins_cool_skin.xml.h:883
-#: skins_default_skin.xml.h:771 skins_kravenhd_skin.xml.h:778
+#: skins_default_skin.xml.h:772 skins_kravenhd_skin.xml.h:778
 #: skins_megastyleblue_skin.xml.h:884 skins_megastylegrey_skin.xml.h:884
 #: skins_metrixhd_skin.xml.h:763 skins_nogfx_skin.xml.h:735
 #: skins_sevenhd_skin.xml.h:741 skins_smarttv_skin.xml.h:767
@@ -7964,7 +7964,7 @@ msgstr ""
 msgid "Jump"
 msgstr "Pereiti"
 
-#: play.h:1315
+#: play.h:1341
 msgid "Jump To (min)"
 msgstr "Pereiti  (min)"
 
@@ -8797,11 +8797,11 @@ msgstr ""
 msgid "Marker Overview"
 msgstr ""
 
-#: play.h:2032
+#: play.h:2058
 msgid "Marker autoseek is started"
 msgstr "Marker autoseek started"
 
-#: play.h:2043
+#: play.h:2069
 msgid "Marker autoseek is stopped"
 msgstr "Marker autoseek stopped"
 
@@ -8954,7 +8954,7 @@ msgid ""
 "Configure it in MediaDB Settings"
 msgstr ""
 
-#: keyactions.h:24 play.h:654
+#: keyactions.h:24 play.h:656
 msgid "MediaDB Scan Info"
 msgstr "MediaDB Scan Informacija"
 
@@ -9118,8 +9118,8 @@ msgid "Menulist"
 msgstr ""
 
 #: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:404 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:960
-#: channellist.h:962 channellist.h:967 channellist.h:969 channellist.h:1053
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:999
+#: channellist.h:1001 channellist.h:1006 channellist.h:1008 channellist.h:1092
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:276
@@ -9172,8 +9172,8 @@ msgstr ""
 #: network.h:993 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:1428 play.h:1465
-#: play.h:1796 play.h:2032 play.h:2043 possetup.h:98 primeshare.h:29
+#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:1454 play.h:1491
+#: play.h:1822 play.h:2058 play.h:2069 possetup.h:98 primeshare.h:29
 #: primeshare.h:74 primeshare.h:80 primeshare.h:125 promptfile.h:26
 #: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
 #: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
@@ -9185,7 +9185,7 @@ msgstr ""
 #: rgui.h:118 rgui.h:134 rtl2now.h:34 satipclient.h:137 satipclient.h:147
 #: satipclient.h:149 scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895
 #: scan.h:1905 scan.h:2167 scan.h:2258 scan.h:2651 scart.h:12 scart.h:25
-#: security.h:1581 service.h:806 service.h:1083 shared.h:29 shared.h:66
+#: security.h:1581 service.h:831 service.h:1108 shared.h:29 shared.h:66
 #: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 #: skinselector.h:231 sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478
@@ -9202,8 +9202,8 @@ msgstr ""
 #: titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
 #: tithek.c:105 tithek_global.h:228 tithek.h:793 tithek.h:1711 tithek.h:1738
 #: tithek.h:1760 tithek.h:1782 tithek.h:1839 tithek.h:2018 tithek.h:2033
-#: tithek.h:2234 tithek.h:2279 tithek.h:2738 tithek.h:2926 tithek.h:3251
-#: tithek.h:3316 tithek.h:3359 tithek.h:3372 tithek_settings.h:234
+#: tithek.h:2236 tithek.h:2291 tithek.h:2750 tithek.h:2938 tithek.h:3263
+#: tithek.h:3328 tithek.h:3371 tithek.h:3384 tithek_settings.h:234
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
 #: tpk.new.h:3167 tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163
@@ -10027,8 +10027,8 @@ msgstr ""
 #: about.h:10 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:404 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
-#: callmon_main.h:39 channellist.h:960 channellist.h:962 channellist.h:967
-#: channellist.h:969 channellist.h:1053 cloudzilla.h:39 cloudzilla.h:45
+#: callmon_main.h:39 channellist.h:999 channellist.h:1001 channellist.h:1006
+#: channellist.h:1008 channellist.h:1092 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27
 #: epgsettings.h:317 epgsettings.h:331 extensions.h:198 extensions.h:249
@@ -10095,8 +10095,8 @@ msgstr ""
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
 #: played.h:115 played.h:172 player.h:417 player_mc_skin.xml.h:40 play.h:497
-#: play.h:614 play.h:1407 play.h:1413 play.h:1428 play.h:1429 play.h:1465
-#: play.h:1466 play.h:1480 play.h:1564 play.h:1796 play.h:2032 play.h:2043
+#: play.h:614 play.h:1433 play.h:1439 play.h:1454 play.h:1455 play.h:1491
+#: play.h:1492 play.h:1506 play.h:1590 play.h:1822 play.h:2058 play.h:2069
 #: possetup.h:98 primeshare.h:29 primeshare.h:74 primeshare.h:80
 #: primeshare.h:125 promptfile.h:26 promptfile.h:35 putlocker.h:32
 #: putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
@@ -10109,7 +10109,7 @@ msgstr ""
 #: rtl2now.h:34 satipclient.h:137 satipclient.h:147 satipclient.h:149
 #: scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258
 #: scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1581 service.h:806 service.h:1083 shared.h:29
+#: security.h:685 security.h:1581 service.h:831 service.h:1108 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 #: skins_0acht5zehn_skin.xml.h:398 skins_atemio_skin.xml.h:397
@@ -10133,9 +10133,9 @@ msgstr ""
 #: titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228 tithek.h:793
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
-#: tithek.h:2018 tithek.h:2033 tithek.h:2234 tithek.h:2279 tithek.h:2296
-#: tithek.h:2738 tithek.h:2926 tithek.h:3251 tithek.h:3316 tithek.h:3359
-#: tithek.h:3372 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2308
+#: tithek.h:2750 tithek.h:2938 tithek.h:3263 tithek.h:3328 tithek.h:3371
+#: tithek.h:3384 tithek_settings.h:234 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_optimize_skin.xml.h:2 tools_rgui_skin.xml.h:2
 #: tools_tiwakeup_skin.xml.h:2 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
@@ -10591,7 +10591,7 @@ msgid "Paddington Bold"
 msgstr ""
 
 #: skins_megastyleblue_skin.xml.h:490 skins_megastylegrey_skin.xml.h:490
-#: tithek.h:2421
+#: tithek.h:2433
 msgid "Page"
 msgstr ""
 
@@ -11482,7 +11482,7 @@ msgstr "Apsaugoti"
 msgid "Prov"
 msgstr ""
 
-#: channellist.h:797 channellist.h:1373 channellist.h:1697
+#: channellist.h:805 channellist.h:1412 channellist.h:1736
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr "Transliuotojas"
@@ -11694,7 +11694,7 @@ msgstr ""
 msgid "RTV AU mms (German)"
 msgstr ""
 
-#: channellist.h:737 channellist.h:1806 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:745 channellist.h:1846 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:714 skin_default_skin.xml.h:487 skins_0acht5zehn_skin.xml.h:468
 #: skins_cool_skin.xml.h:554 skins_default_skin.xml.h:487
 #: skins_kravenhd_skin.xml.h:492 skins_megastyleblue_skin.xml.h:556
@@ -11816,15 +11816,15 @@ msgstr "activated"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1564
+#: play.h:1590
 msgid "Really Create Folder in ?"
 msgstr ""
 
-#: play.h:1429
+#: play.h:1455
 msgid "Really Delete ?"
 msgstr "Tikrai Trinti?"
 
-#: play.h:1466
+#: play.h:1492
 msgid "Really Rename ?"
 msgstr ""
 
@@ -12003,7 +12003,7 @@ msgstr ""
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1428 play.h:1465
+#: play.h:1454 play.h:1491
 msgid "Record in progress"
 msgstr "raymas aktyvus"
 
@@ -12199,7 +12199,7 @@ msgstr "alinimas pradtas"
 msgid "Remove success"
 msgstr "skmingai paalintas"
 
-#: tithek.h:3316
+#: tithek.h:3328
 msgid "Remove this Favorite ?"
 msgstr "Norite paalinti pasirinkt ra i savo mgstamiausi ?"
 
@@ -12237,7 +12237,7 @@ msgstr ""
 msgid "Removeing"
 msgstr ""
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1470
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1496
 #: skin_default_skin.xml.h:515 skins_0acht5zehn_skin.xml.h:492
 #: skins_default_skin.xml.h:515 tools_multiimage_skin.xml.h:13
 msgid "Rename"
@@ -12253,8 +12253,8 @@ msgstr ""
 #: player_mc_skin.xml.h:50 skin_default_skin.xml.h:517
 #: skins_cool_skin.xml.h:586 skins_default_skin.xml.h:517
 #: skins_kravenhd_skin.xml.h:524 skins_megastyleblue_skin.xml.h:588
-#: skins_megastylegrey_skin.xml.h:588 tithek.h:2367 tithek.h:2377 tithek.h:3390
-#: tithek.h:3400
+#: skins_megastylegrey_skin.xml.h:588 tithek.h:2379 tithek.h:2389 tithek.h:3402
+#: tithek.h:3412
 msgid "Repeat"
 msgstr "Kartojimas"
 
@@ -12264,8 +12264,8 @@ msgid "Repeat type"
 msgstr ""
 
 #: mc_audioplayer.h:486 mc_global.h:1145 mc_iptvplayer.h:141
-#: mc_pictureplayer.h:150 mc_videoplayer.h:461 tithek.h:2369 tithek.h:2379
-#: tithek.h:3392 tithek.h:3402
+#: mc_pictureplayer.h:150 mc_videoplayer.h:461 tithek.h:2381 tithek.h:2391
+#: tithek.h:3404 tithek.h:3414
 msgid "Repeat-On"
 msgstr "Kartojimo reimas Ijungtas"
 
@@ -12731,7 +12731,7 @@ msgstr "SCART 4: 3 /16: 9"
 msgid "SEARCH"
 msgstr "Paieka"
 
-#: dvdplay.h:29 network_dlna_skin.xml.h:9 play.h:1714
+#: dvdplay.h:29 network_dlna_skin.xml.h:9 play.h:1740
 #: skins_kravenhd_skin.xml.h:584
 msgid "SELECT"
 msgstr "Pasirinkti"
@@ -12789,7 +12789,7 @@ msgstr ""
 msgid "SONNENKLAR rtmp (German)"
 msgstr ""
 
-#: play.h:1714
+#: play.h:1740
 msgid "SORT"
 msgstr "Riuoti"
 
@@ -13040,7 +13040,7 @@ msgid ""
 "execute a channel search after restart."
 msgstr ""
 
-#: channellist.h:781 channellist.h:1307 channellist.h:1556
+#: channellist.h:789 channellist.h:1346 channellist.h:1595
 msgid "Satellites"
 msgstr "Palydovas"
 
@@ -13089,6 +13089,10 @@ msgstr "Saugoti"
 #: skins_tobayer01_skin.xml.h:531 skins_ufs912_skin.xml.h:529
 msgid "Save Settings"
 msgstr "Isaugoti nustatymus"
+
+#: tithek.h:2127
+msgid "Save Streamurl"
+msgstr ""
 
 #: player_tmc_skin.xml.h:14
 msgid "Scan"
@@ -13383,9 +13387,9 @@ msgstr ""
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:679 tithek_global.h:806 tithek_global.h:875
 #: tithek_global.h:877 tithek_global.h:1512 tithek_global.h:1514
-#: tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530 tvtoast.h:532 xvideos.h:57
-#: xvideos.h:59 youtube.h:253 youtube.h:255 youtube.h:367 youtube.h:369
-#: zdf.h:147 zdf.h:149
+#: tithek_global.h:1560 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
+#: tvtoast.h:532 xvideos.h:57 xvideos.h:59 youtube.h:253 youtube.h:255
+#: youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Paieka"
 
@@ -13409,33 +13413,41 @@ msgstr ""
 msgid "Search Serie"
 msgstr ""
 
-#: play.h:696
+#: play.h:699
 msgid "Search on ARD (local)"
 msgstr "Paieka ARD (vietinis )"
 
-#: play.h:713
+#: play.h:716
 msgid "Search on All (local)"
 msgstr ""
 
-#: play.h:685
+#: play.h:688
 msgid "Search on FilmOn (local)"
 msgstr "Paieka FilmOn (vietinis )"
 
-#: play.h:712
+#: play.h:715
 msgid "Search on InternetRadio (local)"
 msgstr "Paieka InternetRadio (vietinis )"
 
-#: play.h:665
+#: play.h:668
 msgid "Search on KinoX"
 msgstr "Paieka KinoX"
 
-#: play.h:666
+#: play.h:669
 msgid "Search on KinoX (local)"
 msgstr "Paieka KinoX (vietinis )"
 
-#: play.h:687
+#: play.h:690
 msgid "Search on Netzkino (local)"
 msgstr "Paieka Netzkino (vietinis )"
+
+#: play.h:652
+msgid "Search on PornHub"
+msgstr ""
+
+#: play.h:653
+msgid "Search on Xvideos"
+msgstr ""
 
 #: epgsearch.h:27
 msgid "Search only aktual epg ?"
@@ -14473,7 +14485,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr ""
 
-#: tithek.h:2234
+#: tithek.h:2236
 msgid "Start playback"
 msgstr "Pradti atkrim"
 
@@ -14608,6 +14620,10 @@ msgstr ""
 msgid "Stream Transcode"
 msgstr ""
 
+#: channellist.h:663
+msgid "Stream mode"
+msgstr ""
+
 #: infos_streaminfo_skin.xml.h:3 skins_kravenhd_skin.xml.h:654
 #: tpk_showname.h:200
 msgid "Streaminfo"
@@ -14654,9 +14670,9 @@ msgstr ""
 msgid "Subchannel"
 msgstr "Subservices"
 
-#: skin_default_skin.xml.h:649 skins_0acht5zehn_skin.xml.h:883
+#: skin_default_skin.xml.h:650 skins_0acht5zehn_skin.xml.h:883
 #: skins_atemio_skin.xml.h:619 skins_cool_skin.xml.h:732
-#: skins_default_skin.xml.h:649 skins_kravenhd_skin.xml.h:658
+#: skins_default_skin.xml.h:650 skins_kravenhd_skin.xml.h:658
 #: skins_megastyleblue_skin.xml.h:734 skins_megastylegrey_skin.xml.h:734
 #: skins_metrixhd_skin.xml.h:636 skins_nogfx_skin.xml.h:783
 #: skins_sevenhd_skin.xml.h:789 skins_smarttv_skin.xml.h:639
@@ -14664,9 +14680,9 @@ msgstr "Subservices"
 msgid "Subservices"
 msgstr ""
 
-#: adjust.h:381 skin_default_skin.xml.h:650 skins_0acht5zehn_skin.xml.h:884
+#: adjust.h:381 skin_default_skin.xml.h:651 skins_0acht5zehn_skin.xml.h:884
 #: skins_atemio_skin.xml.h:620 skins_cool_skin.xml.h:733
-#: skins_default_skin.xml.h:650 skins_kravenhd_skin.xml.h:659
+#: skins_default_skin.xml.h:651 skins_kravenhd_skin.xml.h:659
 #: skins_megastyleblue_skin.xml.h:735 skins_megastylegrey_skin.xml.h:735
 #: skins_metrixhd_skin.xml.h:637 skins_nogfx_skin.xml.h:784
 #: skins_sevenhd_skin.xml.h:790 skins_smarttv_skin.xml.h:640
@@ -14702,9 +14718,9 @@ msgstr ""
 msgid "Sun"
 msgstr "Sek"
 
-#: global.h:6891 global.h:6901 rectimer.h:1106 skin_default_skin.xml.h:651
+#: global.h:6891 global.h:6901 rectimer.h:1106 skin_default_skin.xml.h:652
 #: skins_0acht5zehn_skin.xml.h:616 skins_atemio_skin.xml.h:621
-#: skins_cool_skin.xml.h:734 skins_default_skin.xml.h:651
+#: skins_cool_skin.xml.h:734 skins_default_skin.xml.h:652
 #: skins_kravenhd_skin.xml.h:660 skins_megastyleblue_skin.xml.h:736
 #: skins_megastylegrey_skin.xml.h:736 skins_metrixhd_skin.xml.h:638
 #: skins_nogfx_skin.xml.h:583 skins_sevenhd_skin.xml.h:587
@@ -14738,9 +14754,9 @@ msgid "Svn Changelog Full"
 msgstr "Svn Pasikeitimai Pilnas"
 
 #: httpdfunc.h:5317 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:653 skins_0acht5zehn_skin.xml.h:618
+#: skin_default_skin.xml.h:654 skins_0acht5zehn_skin.xml.h:618
 #: skins_atemio_skin.xml.h:623 skins_cool_skin.xml.h:736
-#: skins_default_skin.xml.h:653 skins_kravenhd_skin.xml.h:662
+#: skins_default_skin.xml.h:654 skins_kravenhd_skin.xml.h:662
 #: skins_megastyleblue_skin.xml.h:738 skins_megastylegrey_skin.xml.h:738
 #: skins_metrixhd_skin.xml.h:640 skins_nogfx_skin.xml.h:585
 #: skins_sevenhd_skin.xml.h:589 skins_smarttv_skin.xml.h:643
@@ -14757,9 +14773,9 @@ msgstr "Maximum Sectors size for 'swap'"
 msgid "Swap Size"
 msgstr ""
 
-#: skin_default_skin.xml.h:654 skins_0acht5zehn_skin.xml.h:619
+#: skin_default_skin.xml.h:655 skins_0acht5zehn_skin.xml.h:619
 #: skins_atemio_skin.xml.h:624 skins_cool_skin.xml.h:737
-#: skins_default_skin.xml.h:654 skins_kravenhd_skin.xml.h:663
+#: skins_default_skin.xml.h:655 skins_kravenhd_skin.xml.h:663
 #: skins_megastyleblue_skin.xml.h:739 skins_megastylegrey_skin.xml.h:739
 #: skins_metrixhd_skin.xml.h:641 skins_nogfx_skin.xml.h:586
 #: skins_sevenhd_skin.xml.h:590 skins_smarttv_skin.xml.h:644
@@ -14767,9 +14783,9 @@ msgstr ""
 msgid "Switch TV to the correct input"
 msgstr ""
 
-#: skin_default_skin.xml.h:656 skins_0acht5zehn_skin.xml.h:621
+#: skin_default_skin.xml.h:657 skins_0acht5zehn_skin.xml.h:621
 #: skins_atemio_skin.xml.h:626 skins_cool_skin.xml.h:739
-#: skins_default_skin.xml.h:656 skins_kravenhd_skin.xml.h:665
+#: skins_default_skin.xml.h:657 skins_kravenhd_skin.xml.h:665
 #: skins_megastyleblue_skin.xml.h:741 skins_megastylegrey_skin.xml.h:741
 #: skins_metrixhd_skin.xml.h:643 skins_nogfx_skin.xml.h:588
 #: skins_sevenhd_skin.xml.h:592 skins_smarttv_skin.xml.h:646
@@ -14777,9 +14793,9 @@ msgstr ""
 msgid "Symbol rate:"
 msgstr ""
 
-#: skin_default_skin.xml.h:655 skins_0acht5zehn_skin.xml.h:620
+#: skin_default_skin.xml.h:656 skins_0acht5zehn_skin.xml.h:620
 #: skins_atemio_skin.xml.h:625 skins_cool_skin.xml.h:738
-#: skins_default_skin.xml.h:655 skins_kravenhd_skin.xml.h:664
+#: skins_default_skin.xml.h:656 skins_kravenhd_skin.xml.h:664
 #: skins_megastyleblue_skin.xml.h:740 skins_megastylegrey_skin.xml.h:740
 #: skins_metrixhd_skin.xml.h:642 skins_nogfx_skin.xml.h:587
 #: skins_sevenhd_skin.xml.h:591 skins_smarttv_skin.xml.h:645
@@ -14787,18 +14803,18 @@ msgstr ""
 msgid "Symbolrate"
 msgstr ""
 
-#: skin_default_skin.xml.h:657 skins_0acht5zehn_skin.xml.h:885
+#: skin_default_skin.xml.h:658 skins_0acht5zehn_skin.xml.h:885
 #: skins_atemio_skin.xml.h:627 skins_cool_skin.xml.h:740
-#: skins_default_skin.xml.h:657 skins_megastyleblue_skin.xml.h:742
+#: skins_default_skin.xml.h:658 skins_megastyleblue_skin.xml.h:742
 #: skins_megastylegrey_skin.xml.h:742 skins_nogfx_skin.xml.h:785
 #: skins_sevenhd_skin.xml.h:791 skins_tobayer01_skin.xml.h:817
 #: skins_ufs912_skin.xml.h:815
 msgid "Sysinfo"
 msgstr ""
 
-#: skin_default_skin.xml.h:658 skins_0acht5zehn_skin.xml.h:622
+#: skin_default_skin.xml.h:659 skins_0acht5zehn_skin.xml.h:622
 #: skins_0acht5zehn_skin.xml.h:886 skins_atemio_skin.xml.h:628
-#: skins_cool_skin.xml.h:741 skins_default_skin.xml.h:658
+#: skins_cool_skin.xml.h:741 skins_default_skin.xml.h:659
 #: skins_kravenhd_skin.xml.h:666 skins_megastyleblue_skin.xml.h:743
 #: skins_megastylegrey_skin.xml.h:743 skins_metrixhd_skin.xml.h:644
 #: skins_nogfx_skin.xml.h:589 skins_nogfx_skin.xml.h:786
@@ -14817,18 +14833,18 @@ msgstr ""
 msgid "System - Flash Update (tmp)"
 msgstr ""
 
-#: skin_default_skin.xml.h:661 skins_0acht5zehn_skin.xml.h:888
+#: skin_default_skin.xml.h:662 skins_0acht5zehn_skin.xml.h:888
 #: skins_atemio_skin.xml.h:631 skins_cool_skin.xml.h:744
-#: skins_default_skin.xml.h:661 skins_kravenhd_skin.xml.h:669
+#: skins_default_skin.xml.h:662 skins_kravenhd_skin.xml.h:669
 #: skins_megastyleblue_skin.xml.h:746 skins_megastylegrey_skin.xml.h:746
 #: skins_metrixhd_skin.xml.h:647 skins_nogfx_skin.xml.h:788
 #: skins_sevenhd_skin.xml.h:794 skins_smarttv_skin.xml.h:650
 msgid "System - Flashupdate (online)"
 msgstr ""
 
-#: skin_default_skin.xml.h:662 skins_0acht5zehn_skin.xml.h:889
+#: skin_default_skin.xml.h:663 skins_0acht5zehn_skin.xml.h:889
 #: skins_atemio_skin.xml.h:632 skins_cool_skin.xml.h:745
-#: skins_default_skin.xml.h:662 skins_kravenhd_skin.xml.h:670
+#: skins_default_skin.xml.h:663 skins_kravenhd_skin.xml.h:670
 #: skins_megastyleblue_skin.xml.h:747 skins_megastylegrey_skin.xml.h:747
 #: skins_metrixhd_skin.xml.h:648 skins_nogfx_skin.xml.h:789
 #: skins_sevenhd_skin.xml.h:795 skins_smarttv_skin.xml.h:651
@@ -14843,28 +14859,28 @@ msgstr ""
 msgid "System - USB Update (tmp)"
 msgstr ""
 
-#: skin_default_skin.xml.h:667 skins_0acht5zehn_skin.xml.h:891
+#: skin_default_skin.xml.h:668 skins_0acht5zehn_skin.xml.h:891
 #: skins_atemio_skin.xml.h:637 skins_cool_skin.xml.h:750
-#: skins_default_skin.xml.h:667 skins_megastyleblue_skin.xml.h:752
+#: skins_default_skin.xml.h:668 skins_megastyleblue_skin.xml.h:752
 #: skins_megastylegrey_skin.xml.h:752 skins_metrixhd_skin.xml.h:653
 #: skins_nogfx_skin.xml.h:791 skins_sevenhd_skin.xml.h:797
 #: skins_smarttv_skin.xml.h:655
 msgid "System - Usbupdate (online)"
 msgstr ""
 
-#: skin_default_skin.xml.h:668 skins_0acht5zehn_skin.xml.h:892
+#: skin_default_skin.xml.h:669 skins_0acht5zehn_skin.xml.h:892
 #: skins_atemio_skin.xml.h:638 skins_cool_skin.xml.h:751
-#: skins_default_skin.xml.h:668 skins_megastyleblue_skin.xml.h:753
+#: skins_default_skin.xml.h:669 skins_megastyleblue_skin.xml.h:753
 #: skins_megastylegrey_skin.xml.h:753 skins_metrixhd_skin.xml.h:654
 #: skins_nogfx_skin.xml.h:792 skins_sevenhd_skin.xml.h:798
 #: skins_smarttv_skin.xml.h:656
 msgid "System - Usbupdate (tmp)"
 msgstr ""
 
-#: httpdfunc.h:6697 skin_default_skin.xml.h:660 skins_0acht5zehn_skin.xml.h:624
+#: httpdfunc.h:6697 skin_default_skin.xml.h:661 skins_0acht5zehn_skin.xml.h:624
 #: skins_0acht5zehn_skin.xml.h:887 skins_atemio_skin.xml.h:630
 #: skins_atemio_skin.xml.h:769 skins_cool_skin.xml.h:743
-#: skins_default_skin.xml.h:660 skins_kravenhd_skin.xml.h:668
+#: skins_default_skin.xml.h:661 skins_kravenhd_skin.xml.h:668
 #: skins_megastyleblue_skin.xml.h:745 skins_megastylegrey_skin.xml.h:745
 #: skins_metrixhd_skin.xml.h:646 skins_nogfx_skin.xml.h:591
 #: skins_nogfx_skin.xml.h:787 skins_sevenhd_skin.xml.h:595
@@ -14878,9 +14894,9 @@ msgstr "Sistemos atsargin kopija"
 msgid "System Backup on your Box not Supported"
 msgstr ""
 
-#: skin_default_skin.xml.h:663 skins_0acht5zehn_skin.xml.h:625
+#: skin_default_skin.xml.h:664 skins_0acht5zehn_skin.xml.h:625
 #: skins_atemio_skin.xml.h:633 skins_cool_skin.xml.h:746
-#: skins_default_skin.xml.h:663 skins_kravenhd_skin.xml.h:671
+#: skins_default_skin.xml.h:664 skins_kravenhd_skin.xml.h:671
 #: skins_megastyleblue_skin.xml.h:748 skins_megastylegrey_skin.xml.h:748
 #: skins_metrixhd_skin.xml.h:649 skins_nogfx_skin.xml.h:592
 #: skins_sevenhd_skin.xml.h:596 skins_smarttv_skin.xml.h:652
@@ -14889,9 +14905,9 @@ msgstr ""
 msgid "System Info"
 msgstr "sistemos informacija"
 
-#: skin_default_skin.xml.h:664 skins_0acht5zehn_skin.xml.h:626
+#: skin_default_skin.xml.h:665 skins_0acht5zehn_skin.xml.h:626
 #: skins_atemio_skin.xml.h:634 skins_cool_skin.xml.h:747
-#: skins_default_skin.xml.h:664 skins_megastyleblue_skin.xml.h:749
+#: skins_default_skin.xml.h:665 skins_megastyleblue_skin.xml.h:749
 #: skins_megastylegrey_skin.xml.h:749 skins_metrixhd_skin.xml.h:650
 #: skins_nogfx_skin.xml.h:593 skins_sevenhd_skin.xml.h:597
 #: skins_tobayer01_skin.xml.h:626 skins_ufs912_skin.xml.h:624
@@ -14899,9 +14915,9 @@ msgstr "sistemos informacija"
 msgid "System Infos"
 msgstr "Sistemos Info"
 
-#: httpdfunc.h:5261 skin_default_skin.xml.h:665 skins_0acht5zehn_skin.xml.h:627
+#: httpdfunc.h:5261 skin_default_skin.xml.h:666 skins_0acht5zehn_skin.xml.h:627
 #: skins_atemio_skin.xml.h:635 skins_cool_skin.xml.h:748
-#: skins_default_skin.xml.h:665 skins_kravenhd_skin.xml.h:672
+#: skins_default_skin.xml.h:666 skins_kravenhd_skin.xml.h:672
 #: skins_megastyleblue_skin.xml.h:750 skins_megastylegrey_skin.xml.h:750
 #: skins_metrixhd_skin.xml.h:651 skins_nogfx_skin.xml.h:594
 #: skins_sevenhd_skin.xml.h:598 skins_smarttv_skin.xml.h:653
@@ -14910,10 +14926,10 @@ msgstr "Sistemos Info"
 msgid "System Status"
 msgstr "sistemos bsena"
 
-#: httpdfunc.h:5666 httpdfunc.h:5897 skin_default_skin.xml.h:666
+#: httpdfunc.h:5666 httpdfunc.h:5897 skin_default_skin.xml.h:667
 #: skins_0acht5zehn_skin.xml.h:628 skins_0acht5zehn_skin.xml.h:890
 #: skins_atemio_skin.xml.h:636 skins_cool_skin.xml.h:749
-#: skins_default_skin.xml.h:666 skins_kravenhd_skin.xml.h:673
+#: skins_default_skin.xml.h:667 skins_kravenhd_skin.xml.h:673
 #: skins_megastyleblue_skin.xml.h:751 skins_megastylegrey_skin.xml.h:751
 #: skins_metrixhd_skin.xml.h:652 skins_nogfx_skin.xml.h:595
 #: skins_nogfx_skin.xml.h:790 skins_sevenhd_skin.xml.h:599
@@ -14933,9 +14949,9 @@ msgstr ""
 msgid "System-Info"
 msgstr "Sistemos informacija"
 
-#: skin_default_skin.xml.h:659 skins_0acht5zehn_skin.xml.h:623
+#: skin_default_skin.xml.h:660 skins_0acht5zehn_skin.xml.h:623
 #: skins_atemio_skin.xml.h:629 skins_cool_skin.xml.h:742
-#: skins_default_skin.xml.h:659 skins_kravenhd_skin.xml.h:667
+#: skins_default_skin.xml.h:660 skins_kravenhd_skin.xml.h:667
 #: skins_megastyleblue_skin.xml.h:744 skins_megastylegrey_skin.xml.h:744
 #: skins_metrixhd_skin.xml.h:645 skins_nogfx_skin.xml.h:590
 #: skins_sevenhd_skin.xml.h:594 skins_smarttv_skin.xml.h:648
@@ -14957,8 +14973,8 @@ msgstr ""
 msgid "TERR"
 msgstr "Antemin"
 
-#: skin_default_skin.xml.h:670 skins_cool_skin.xml.h:755
-#: skins_default_skin.xml.h:670 skins_kravenhd_skin.xml.h:675
+#: skin_default_skin.xml.h:671 skins_cool_skin.xml.h:755
+#: skins_default_skin.xml.h:671 skins_kravenhd_skin.xml.h:675
 #: skins_megastyleblue_skin.xml.h:757 skins_megastylegrey_skin.xml.h:757
 #: skins_metrixhd_skin.xml.h:658 skins_smarttv_skin.xml.h:660
 msgid "TEST"
@@ -14974,9 +14990,9 @@ msgstr ""
 msgid "TITHEK SETTINGS"
 msgstr ""
 
-#: skin_default_skin.xml.h:688 skins_0acht5zehn_skin.xml.h:710
+#: skin_default_skin.xml.h:689 skins_0acht5zehn_skin.xml.h:710
 #: skins_atemio_skin.xml.h:659 skins_cool_skin.xml.h:776
-#: skins_default_skin.xml.h:688 skins_kravenhd_skin.xml.h:695
+#: skins_default_skin.xml.h:689 skins_kravenhd_skin.xml.h:695
 #: skins_megastyleblue_skin.xml.h:778 skins_megastylegrey_skin.xml.h:778
 #: skins_metrixhd_skin.xml.h:677 skins_nogfx_skin.xml.h:618
 #: skins_sevenhd_skin.xml.h:621 skins_smarttv_skin.xml.h:677
@@ -15018,9 +15034,9 @@ msgstr ""
 "Atnaujinta.\n"
 " imtuvas persikraus dabar"
 
-#: skin_default_skin.xml.h:697 skins_0acht5zehn_skin.xml.h:719
+#: skin_default_skin.xml.h:698 skins_0acht5zehn_skin.xml.h:719
 #: skins_atemio_skin.xml.h:668 skins_cool_skin.xml.h:785
-#: skins_default_skin.xml.h:697 skins_kravenhd_skin.xml.h:704
+#: skins_default_skin.xml.h:698 skins_kravenhd_skin.xml.h:704
 #: skins_megastyleblue_skin.xml.h:787 skins_megastylegrey_skin.xml.h:787
 #: skins_metrixhd_skin.xml.h:686 skins_nogfx_skin.xml.h:627
 #: skins_sevenhd_skin.xml.h:630 skins_smarttv_skin.xml.h:686
@@ -15037,9 +15053,9 @@ msgstr ""
 msgid "TPK installation - select install medium"
 msgstr ""
 
-#: httpdfunc.h:6334 skin_default_skin.xml.h:700 skins_0acht5zehn_skin.xml.h:720
+#: httpdfunc.h:6334 skin_default_skin.xml.h:701 skins_0acht5zehn_skin.xml.h:720
 #: skins_atemio_skin.xml.h:671 skins_cool_skin.xml.h:786
-#: skins_default_skin.xml.h:700 skins_kravenhd_skin.xml.h:707
+#: skins_default_skin.xml.h:701 skins_kravenhd_skin.xml.h:707
 #: skins_megastyleblue_skin.xml.h:788 skins_megastylegrey_skin.xml.h:788
 #: skins_metrixhd_skin.xml.h:689 skins_nogfx_skin.xml.h:628
 #: skins_sevenhd_skin.xml.h:631 skins_smarttv_skin.xml.h:689
@@ -15048,9 +15064,9 @@ msgstr ""
 msgid "TPK media (media)"
 msgstr "TPK Diegimas ( Lokal )"
 
-#: skin_default_skin.xml.h:701 skins_0acht5zehn_skin.xml.h:721
+#: skin_default_skin.xml.h:702 skins_0acht5zehn_skin.xml.h:721
 #: skins_atemio_skin.xml.h:672 skins_cool_skin.xml.h:787
-#: skins_default_skin.xml.h:701 skins_kravenhd_skin.xml.h:708
+#: skins_default_skin.xml.h:702 skins_kravenhd_skin.xml.h:708
 #: skins_megastyleblue_skin.xml.h:789 skins_megastylegrey_skin.xml.h:789
 #: skins_metrixhd_skin.xml.h:690 skins_nogfx_skin.xml.h:629
 #: skins_sevenhd_skin.xml.h:632 skins_smarttv_skin.xml.h:690
@@ -15059,9 +15075,9 @@ msgstr "TPK Diegimas ( Lokal )"
 msgid "TPK remove"
 msgstr "TPK paalinti"
 
-#: httpdfunc.h:6332 skin_default_skin.xml.h:702 skins_0acht5zehn_skin.xml.h:722
+#: httpdfunc.h:6332 skin_default_skin.xml.h:703 skins_0acht5zehn_skin.xml.h:722
 #: skins_atemio_skin.xml.h:673 skins_cool_skin.xml.h:788
-#: skins_default_skin.xml.h:702 skins_kravenhd_skin.xml.h:709
+#: skins_default_skin.xml.h:703 skins_kravenhd_skin.xml.h:709
 #: skins_megastyleblue_skin.xml.h:790 skins_megastylegrey_skin.xml.h:790
 #: skins_metrixhd_skin.xml.h:691 skins_nogfx_skin.xml.h:630
 #: skins_sevenhd_skin.xml.h:633 skins_smarttv_skin.xml.h:691
@@ -15070,9 +15086,9 @@ msgstr "TPK paalinti"
 msgid "TPK tmp (tmp)"
 msgstr "TPK tmp ( tmp )"
 
-#: skin_default_skin.xml.h:703 skins_0acht5zehn_skin.xml.h:723
+#: skin_default_skin.xml.h:704 skins_0acht5zehn_skin.xml.h:723
 #: skins_atemio_skin.xml.h:674 skins_cool_skin.xml.h:789
-#: skins_default_skin.xml.h:703 skins_kravenhd_skin.xml.h:710
+#: skins_default_skin.xml.h:704 skins_kravenhd_skin.xml.h:710
 #: skins_megastyleblue_skin.xml.h:791 skins_megastylegrey_skin.xml.h:791
 #: skins_metrixhd_skin.xml.h:692 skins_nogfx_skin.xml.h:631
 #: skins_sevenhd_skin.xml.h:634 skins_smarttv_skin.xml.h:692
@@ -15081,8 +15097,8 @@ msgstr "TPK tmp ( tmp )"
 msgid "TPK upgrade (online)"
 msgstr "TPK atnaujinti (online)"
 
-#: skin_default_skin.xml.h:707 skins_atemio_skin.xml.h:678
-#: skins_cool_skin.xml.h:793 skins_default_skin.xml.h:707
+#: skin_default_skin.xml.h:708 skins_atemio_skin.xml.h:678
+#: skins_cool_skin.xml.h:793 skins_default_skin.xml.h:708
 #: skins_kravenhd_skin.xml.h:714 skins_megastyleblue_skin.xml.h:795
 #: skins_megastylegrey_skin.xml.h:795 skins_metrixhd_skin.xml.h:696
 #: skins_nogfx_skin.xml.h:635 skins_sevenhd_skin.xml.h:638
@@ -15091,9 +15107,9 @@ msgstr "TPK atnaujinti (online)"
 msgid "TRANSPONDEREDIT"
 msgstr ""
 
-#: skin_default_skin.xml.h:708 skins_0acht5zehn_skin.xml.h:727
+#: skin_default_skin.xml.h:709 skins_0acht5zehn_skin.xml.h:727
 #: skins_atemio_skin.xml.h:679 skins_cool_skin.xml.h:794
-#: skins_default_skin.xml.h:708 skins_kravenhd_skin.xml.h:715
+#: skins_default_skin.xml.h:709 skins_kravenhd_skin.xml.h:715
 #: skins_megastyleblue_skin.xml.h:796 skins_megastylegrey_skin.xml.h:796
 #: skins_metrixhd_skin.xml.h:697 skins_nogfx_skin.xml.h:636
 #: skins_sevenhd_skin.xml.h:639 skins_smarttv_skin.xml.h:697
@@ -15101,7 +15117,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: cec.h:673 channellist.h:742 channellist.h:1801 httpdfunc.h:286
+#: cec.h:673 channellist.h:750 channellist.h:1841 httpdfunc.h:286
 #: httpdfunc.h:696 scan.h:712 webif_index.atemio5200.h:68
 #: webif_index.atemio5200.h:74 webif_index.atemio5200.h:124
 #: webif_index.atemio6200.h:68 webif_index.atemio6200.h:74
@@ -15131,9 +15147,9 @@ msgstr "Televizija"
 msgid "TV Baden Wuerttemberg rtmp (German)"
 msgstr ""
 
-#: skin_default_skin.xml.h:717 skins_0acht5zehn_skin.xml.h:734
+#: skin_default_skin.xml.h:718 skins_0acht5zehn_skin.xml.h:734
 #: skins_atemio_skin.xml.h:688 skins_cool_skin.xml.h:802
-#: skins_default_skin.xml.h:717 skins_kravenhd_skin.xml.h:722
+#: skins_default_skin.xml.h:718 skins_kravenhd_skin.xml.h:722
 #: skins_megastyleblue_skin.xml.h:804 skins_megastylegrey_skin.xml.h:804
 #: skins_metrixhd_skin.xml.h:704 skins_nogfx_skin.xml.h:643
 #: skins_sevenhd_skin.xml.h:646 skins_smarttv_skin.xml.h:704
@@ -15141,9 +15157,9 @@ msgstr ""
 msgid "TV Resolution (h):"
 msgstr ""
 
-#: skin_default_skin.xml.h:718 skins_0acht5zehn_skin.xml.h:735
+#: skin_default_skin.xml.h:719 skins_0acht5zehn_skin.xml.h:735
 #: skins_atemio_skin.xml.h:689 skins_cool_skin.xml.h:803
-#: skins_default_skin.xml.h:718 skins_kravenhd_skin.xml.h:723
+#: skins_default_skin.xml.h:719 skins_kravenhd_skin.xml.h:723
 #: skins_megastyleblue_skin.xml.h:805 skins_megastylegrey_skin.xml.h:805
 #: skins_metrixhd_skin.xml.h:705 skins_nogfx_skin.xml.h:644
 #: skins_sevenhd_skin.xml.h:647 skins_smarttv_skin.xml.h:705
@@ -15166,9 +15182,9 @@ msgstr "TV/Radija"
 msgid "TV: "
 msgstr "TV:"
 
-#: skin_default_skin.xml.h:720 skins_0acht5zehn_skin.xml.h:737
+#: skin_default_skin.xml.h:721 skins_0acht5zehn_skin.xml.h:737
 #: skins_atemio_skin.xml.h:691 skins_cool_skin.xml.h:805
-#: skins_default_skin.xml.h:720 skins_kravenhd_skin.xml.h:725
+#: skins_default_skin.xml.h:721 skins_kravenhd_skin.xml.h:725
 #: skins_megastyleblue_skin.xml.h:807 skins_megastylegrey_skin.xml.h:807
 #: skins_metrixhd_skin.xml.h:707 skins_nogfx_skin.xml.h:646
 #: skins_sevenhd_skin.xml.h:649 skins_smarttv_skin.xml.h:707
@@ -15204,8 +15220,8 @@ msgstr "Antemin"
 msgid "Terrestrial: "
 msgstr "Antemin :"
 
-#: skin_default_skin.xml.h:669 skins_atemio_skin.xml.h:641
-#: skins_cool_skin.xml.h:754 skins_default_skin.xml.h:669
+#: skin_default_skin.xml.h:670 skins_atemio_skin.xml.h:641
+#: skins_cool_skin.xml.h:754 skins_default_skin.xml.h:670
 #: skins_kravenhd_skin.xml.h:674 skins_megastyleblue_skin.xml.h:756
 #: skins_megastylegrey_skin.xml.h:756 skins_metrixhd_skin.xml.h:657
 #: skins_nogfx_skin.xml.h:598 skins_sevenhd_skin.xml.h:602
@@ -15265,7 +15281,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr ""
 
-#: tithek_global.h:228 tithek.h:3251
+#: tithek_global.h:228 tithek.h:3263
 msgid "The hoster is not yet supported !"
 msgstr "The hoster is not supported at present!"
 
@@ -15349,9 +15365,9 @@ msgstr "is failas nebeegzistuoja ms serveriuose."
 msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr "is vaizdo raas buvo itrintas. Atsipraome u nepatogumus."
 
-#: skin_default_skin.xml.h:672 skins_0acht5zehn_skin.xml.h:693
+#: skin_default_skin.xml.h:673 skins_0acht5zehn_skin.xml.h:693
 #: skins_atemio_skin.xml.h:643 skins_cool_skin.xml.h:758
-#: skins_default_skin.xml.h:672 skins_kravenhd_skin.xml.h:678
+#: skins_default_skin.xml.h:673 skins_kravenhd_skin.xml.h:678
 #: skins_megastyleblue_skin.xml.h:760 skins_megastylegrey_skin.xml.h:760
 #: skins_metrixhd_skin.xml.h:661 skins_nogfx_skin.xml.h:602
 #: skins_sevenhd_skin.xml.h:605 skins_smarttv_skin.xml.h:661
@@ -15371,9 +15387,9 @@ msgstr "Ket"
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6888 global.h:6898 rectimer.h:1103 skin_default_skin.xml.h:673
+#: global.h:6888 global.h:6898 rectimer.h:1103 skin_default_skin.xml.h:674
 #: skins_0acht5zehn_skin.xml.h:694 skins_atemio_skin.xml.h:644
-#: skins_cool_skin.xml.h:759 skins_default_skin.xml.h:673
+#: skins_cool_skin.xml.h:759 skins_default_skin.xml.h:674
 #: skins_kravenhd_skin.xml.h:679 skins_megastyleblue_skin.xml.h:761
 #: skins_megastylegrey_skin.xml.h:761 skins_metrixhd_skin.xml.h:662
 #: skins_nogfx_skin.xml.h:603 skins_sevenhd_skin.xml.h:606
@@ -15392,9 +15408,9 @@ msgstr ""
 msgid "TiThek PlayList"
 msgstr ""
 
-#: skin_default_skin.xml.h:686 skins_0acht5zehn_skin.xml.h:708
+#: skin_default_skin.xml.h:687 skins_0acht5zehn_skin.xml.h:708
 #: skins_atemio_skin.xml.h:657 skins_cool_skin.xml.h:773
-#: skins_default_skin.xml.h:686 skins_kravenhd_skin.xml.h:692
+#: skins_default_skin.xml.h:687 skins_kravenhd_skin.xml.h:692
 #: skins_megastyleblue_skin.xml.h:775 skins_megastylegrey_skin.xml.h:775
 #: skins_metrixhd_skin.xml.h:675 skins_nogfx_skin.xml.h:616
 #: skins_sevenhd_skin.xml.h:619 skins_smarttv_skin.xml.h:675
@@ -15402,9 +15418,9 @@ msgstr ""
 msgid "TiThek Select Color"
 msgstr ""
 
-#: harddisk.h:1007 skin_default_skin.xml.h:680 skins_0acht5zehn_skin.xml.h:701
+#: harddisk.h:1007 skin_default_skin.xml.h:681 skins_0acht5zehn_skin.xml.h:701
 #: skins_atemio_skin.xml.h:651 skins_cool_skin.xml.h:766
-#: skins_default_skin.xml.h:680 skins_kravenhd_skin.xml.h:686
+#: skins_default_skin.xml.h:681 skins_kravenhd_skin.xml.h:686
 #: skins_megastyleblue_skin.xml.h:768 skins_megastylegrey_skin.xml.h:768
 #: skins_metrixhd_skin.xml.h:669 skins_nogfx_skin.xml.h:610
 #: skins_sevenhd_skin.xml.h:613 skins_smarttv_skin.xml.h:669
@@ -15418,9 +15434,9 @@ msgstr "Powersave (Sleep) in"
 msgid "Time to stop "
 msgstr "Laikas sustabdyti (min)"
 
-#: httpdfunc.h:4884 skin_default_skin.xml.h:682 skins_0acht5zehn_skin.xml.h:704
+#: httpdfunc.h:4884 skin_default_skin.xml.h:683 skins_0acht5zehn_skin.xml.h:704
 #: skins_atemio_skin.xml.h:653 skins_cool_skin.xml.h:769
-#: skins_default_skin.xml.h:682 skins_kravenhd_skin.xml.h:688
+#: skins_default_skin.xml.h:683 skins_kravenhd_skin.xml.h:688
 #: skins_megastyleblue_skin.xml.h:771 skins_megastylegrey_skin.xml.h:771
 #: skins_metrixhd_skin.xml.h:671 skins_nogfx_skin.xml.h:612
 #: skins_sevenhd_skin.xml.h:615 skins_smarttv_skin.xml.h:671
@@ -15432,9 +15448,9 @@ msgstr "Time to wait after seek to fill buffer"
 msgid "TimeTv"
 msgstr ""
 
-#: skin_default_skin.xml.h:674 skins_0acht5zehn_skin.xml.h:695
+#: skin_default_skin.xml.h:675 skins_0acht5zehn_skin.xml.h:695
 #: skins_atemio_skin.xml.h:645 skins_cool_skin.xml.h:760
-#: skins_default_skin.xml.h:674 skins_kravenhd_skin.xml.h:680
+#: skins_default_skin.xml.h:675 skins_kravenhd_skin.xml.h:680
 #: skins_megastyleblue_skin.xml.h:762 skins_megastylegrey_skin.xml.h:762
 #: skins_metrixhd_skin.xml.h:663 skins_nogfx_skin.xml.h:604
 #: skins_sevenhd_skin.xml.h:607 skins_smarttv_skin.xml.h:663
@@ -15469,9 +15485,9 @@ msgstr ""
 msgid "Timer List"
 msgstr ""
 
-#: skin_default_skin.xml.h:676 skins_0acht5zehn_skin.xml.h:697
+#: skin_default_skin.xml.h:677 skins_0acht5zehn_skin.xml.h:697
 #: skins_atemio_skin.xml.h:647 skins_cool_skin.xml.h:762
-#: skins_default_skin.xml.h:676 skins_kravenhd_skin.xml.h:682
+#: skins_default_skin.xml.h:677 skins_kravenhd_skin.xml.h:682
 #: skins_megastyleblue_skin.xml.h:764 skins_megastylegrey_skin.xml.h:764
 #: skins_metrixhd_skin.xml.h:665 skins_nogfx_skin.xml.h:606
 #: skins_sevenhd_skin.xml.h:609 skins_smarttv_skin.xml.h:665
@@ -15483,9 +15499,9 @@ msgstr ""
 msgid "Timer Record start !"
 msgstr "Laikmatis raymas prasidjo !"
 
-#: skin_default_skin.xml.h:675 skins_0acht5zehn_skin.xml.h:696
+#: skin_default_skin.xml.h:676 skins_0acht5zehn_skin.xml.h:696
 #: skins_0acht5zehn_skin.xml.h:893 skins_atemio_skin.xml.h:646
-#: skins_cool_skin.xml.h:761 skins_default_skin.xml.h:675
+#: skins_cool_skin.xml.h:761 skins_default_skin.xml.h:676
 #: skins_kravenhd_skin.xml.h:681 skins_megastyleblue_skin.xml.h:763
 #: skins_megastylegrey_skin.xml.h:763 skins_metrixhd_skin.xml.h:664
 #: skins_nogfx_skin.xml.h:605 skins_nogfx_skin.xml.h:793
@@ -15532,9 +15548,9 @@ msgstr "Laikmatis 1 aktyvus"
 msgid "Timer2 activ"
 msgstr "Laikmatis 2 aktyvus"
 
-#: skin_default_skin.xml.h:677 skins_0acht5zehn_skin.xml.h:698
+#: skin_default_skin.xml.h:678 skins_0acht5zehn_skin.xml.h:698
 #: skins_atemio_skin.xml.h:648 skins_cool_skin.xml.h:763
-#: skins_default_skin.xml.h:677 skins_kravenhd_skin.xml.h:683
+#: skins_default_skin.xml.h:678 skins_kravenhd_skin.xml.h:683
 #: skins_megastyleblue_skin.xml.h:765 skins_megastylegrey_skin.xml.h:765
 #: skins_metrixhd_skin.xml.h:666 skins_nogfx_skin.xml.h:607
 #: skins_sevenhd_skin.xml.h:610 skins_smarttv_skin.xml.h:666
@@ -15542,9 +15558,9 @@ msgstr "Laikmatis 2 aktyvus"
 msgid "Timeshift Path"
 msgstr ""
 
-#: skin_default_skin.xml.h:678 skins_0acht5zehn_skin.xml.h:699
+#: skin_default_skin.xml.h:679 skins_0acht5zehn_skin.xml.h:699
 #: skins_0acht5zehn_skin.xml.h:894 skins_atemio_skin.xml.h:649
-#: skins_cool_skin.xml.h:764 skins_default_skin.xml.h:678
+#: skins_cool_skin.xml.h:764 skins_default_skin.xml.h:679
 #: skins_kravenhd_skin.xml.h:684 skins_megastyleblue_skin.xml.h:766
 #: skins_megastylegrey_skin.xml.h:766 skins_metrixhd_skin.xml.h:667
 #: skins_nogfx_skin.xml.h:608 skins_nogfx_skin.xml.h:794
@@ -15563,7 +15579,7 @@ msgstr ""
 "Timeshift fail short\n"
 "Please palaukti iek tiek ir bandykite dar kart"
 
-#: service.h:806
+#: service.h:831
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -15577,9 +15593,9 @@ msgid ""
 "if timeshift is running !"
 msgstr "KLAIDA: Js negalite keisti Timeshift nustatym Timeshift veikimo metu!"
 
-#: skin_default_skin.xml.h:679 skins_0acht5zehn_skin.xml.h:700
+#: skin_default_skin.xml.h:680 skins_0acht5zehn_skin.xml.h:700
 #: skins_atemio_skin.xml.h:650 skins_cool_skin.xml.h:765
-#: skins_default_skin.xml.h:679 skins_kravenhd_skin.xml.h:685
+#: skins_default_skin.xml.h:680 skins_kravenhd_skin.xml.h:685
 #: skins_megastyleblue_skin.xml.h:767 skins_megastylegrey_skin.xml.h:767
 #: skins_metrixhd_skin.xml.h:668 skins_nogfx_skin.xml.h:609
 #: skins_sevenhd_skin.xml.h:612 skins_smarttv_skin.xml.h:668
@@ -15587,9 +15603,9 @@ msgstr "KLAIDA: Js negalite keisti Timeshift nustatym Timeshift veikimo metu!"
 msgid "Timeshifttype"
 msgstr ""
 
-#: skin_default_skin.xml.h:683 skins_0acht5zehn_skin.xml.h:705
+#: skin_default_skin.xml.h:684 skins_0acht5zehn_skin.xml.h:705
 #: skins_0acht5zehn_skin.xml.h:895 skins_atemio_skin.xml.h:654
-#: skins_cool_skin.xml.h:770 skins_default_skin.xml.h:683
+#: skins_cool_skin.xml.h:770 skins_default_skin.xml.h:684
 #: skins_kravenhd_skin.xml.h:689 skins_megastyleblue_skin.xml.h:772
 #: skins_megastylegrey_skin.xml.h:772 skins_metrixhd_skin.xml.h:672
 #: skins_nogfx_skin.xml.h:613 skins_nogfx_skin.xml.h:795
@@ -15600,9 +15616,9 @@ msgstr ""
 msgid "Timezone"
 msgstr ""
 
-#: skin_default_skin.xml.h:684 skins_0acht5zehn_skin.xml.h:706
+#: skin_default_skin.xml.h:685 skins_0acht5zehn_skin.xml.h:706
 #: skins_atemio_skin.xml.h:655 skins_cool_skin.xml.h:771
-#: skins_default_skin.xml.h:684 skins_kravenhd_skin.xml.h:690
+#: skins_default_skin.xml.h:685 skins_kravenhd_skin.xml.h:690
 #: skins_megastyleblue_skin.xml.h:773 skins_megastylegrey_skin.xml.h:773
 #: skins_metrixhd_skin.xml.h:673 skins_nogfx_skin.xml.h:614
 #: skins_sevenhd_skin.xml.h:617 skins_smarttv_skin.xml.h:673
@@ -15614,9 +15630,9 @@ msgstr ""
 msgid "Tips und Tricks"
 msgstr ""
 
-#: info.h:47 skin_default_skin.xml.h:685 skins_0acht5zehn_skin.xml.h:707
+#: info.h:47 skin_default_skin.xml.h:686 skins_0acht5zehn_skin.xml.h:707
 #: skins_atemio_skin.xml.h:656 skins_cool_skin.xml.h:772
-#: skins_default_skin.xml.h:685 skins_kravenhd_skin.xml.h:691
+#: skins_default_skin.xml.h:686 skins_kravenhd_skin.xml.h:691
 #: skins_megastyleblue_skin.xml.h:774 skins_megastylegrey_skin.xml.h:774
 #: skins_metrixhd_skin.xml.h:674 skins_nogfx_skin.xml.h:615
 #: skins_sevenhd_skin.xml.h:618 skins_smarttv_skin.xml.h:674
@@ -15689,7 +15705,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:2296
+#: tithek.h:2308
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek disclaimer"
 
@@ -15714,12 +15730,12 @@ msgstr ""
 msgid "Tithek - Favorite Edit"
 msgstr ""
 
-#: tithek.c:141 tithek_global.h:637 tithek_global.h:760
+#: tithek.c:141 tithek_global.h:637 tithek_global.h:760 tithek_global.h:1624
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Mainmenu"
 
-#: tithek_global.h:633 tithek_global.h:756 tithek.h:2362 tithek.h:2685
-#: tithek.h:3312 tithek.h:3338 tithek.h:3355 tithek.h:3368 tithek.h:3385
+#: tithek_global.h:633 tithek_global.h:756 tithek.h:2374 tithek.h:2697
+#: tithek.h:3324 tithek.h:3350 tithek.h:3367 tithek.h:3380 tithek.h:3397
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
@@ -15745,9 +15761,9 @@ msgid ""
 "Libpack tpk."
 msgstr ""
 
-#: mediadb.h:2626 player_tithek_skin.xml.h:26 skin_default_skin.xml.h:687
+#: mediadb.h:2626 player_tithek_skin.xml.h:26 skin_default_skin.xml.h:688
 #: skins_0acht5zehn_skin.xml.h:709 skins_atemio_skin.xml.h:658
-#: skins_cool_skin.xml.h:775 skins_default_skin.xml.h:687
+#: skins_cool_skin.xml.h:775 skins_default_skin.xml.h:688
 #: skins_kravenhd_skin.xml.h:693 skins_megastyleblue_skin.xml.h:777
 #: skins_megastylegrey_skin.xml.h:777 skins_metrixhd_skin.xml.h:676
 #: skins_nogfx_skin.xml.h:617 skins_sevenhd_skin.xml.h:620
@@ -15756,9 +15772,9 @@ msgstr ""
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: skin_default_skin.xml.h:693 skins_0acht5zehn_skin.xml.h:715
+#: skin_default_skin.xml.h:694 skins_0acht5zehn_skin.xml.h:715
 #: skins_atemio_skin.xml.h:664 skins_cool_skin.xml.h:781
-#: skins_default_skin.xml.h:693 skins_kravenhd_skin.xml.h:700
+#: skins_default_skin.xml.h:694 skins_kravenhd_skin.xml.h:700
 #: skins_megastyleblue_skin.xml.h:783 skins_megastylegrey_skin.xml.h:783
 #: skins_metrixhd_skin.xml.h:682 skins_nogfx_skin.xml.h:623
 #: skins_sevenhd_skin.xml.h:626 skins_smarttv_skin.xml.h:682
@@ -15771,9 +15787,9 @@ msgstr ""
 msgid "Title:"
 msgstr "Pavadinimas :"
 
-#: skin_default_skin.xml.h:689 skins_0acht5zehn_skin.xml.h:711
+#: skin_default_skin.xml.h:690 skins_0acht5zehn_skin.xml.h:711
 #: skins_atemio_skin.xml.h:660 skins_cool_skin.xml.h:777
-#: skins_default_skin.xml.h:689 skins_kravenhd_skin.xml.h:696
+#: skins_default_skin.xml.h:690 skins_kravenhd_skin.xml.h:696
 #: skins_megastyleblue_skin.xml.h:779 skins_megastylegrey_skin.xml.h:779
 #: skins_metrixhd_skin.xml.h:678 skins_nogfx_skin.xml.h:619
 #: skins_sevenhd_skin.xml.h:622 skins_smarttv_skin.xml.h:678
@@ -15781,9 +15797,9 @@ msgstr "Pavadinimas :"
 msgid "Titlebar Background Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:690 skins_0acht5zehn_skin.xml.h:712
+#: skin_default_skin.xml.h:691 skins_0acht5zehn_skin.xml.h:712
 #: skins_atemio_skin.xml.h:661 skins_cool_skin.xml.h:778
-#: skins_default_skin.xml.h:690 skins_kravenhd_skin.xml.h:697
+#: skins_default_skin.xml.h:691 skins_kravenhd_skin.xml.h:697
 #: skins_megastyleblue_skin.xml.h:780 skins_megastylegrey_skin.xml.h:780
 #: skins_metrixhd_skin.xml.h:679 skins_nogfx_skin.xml.h:620
 #: skins_sevenhd_skin.xml.h:623 skins_smarttv_skin.xml.h:679
@@ -15791,9 +15807,9 @@ msgstr ""
 msgid "Titlebar Background Color 2"
 msgstr ""
 
-#: skin_default_skin.xml.h:691 skins_0acht5zehn_skin.xml.h:713
+#: skin_default_skin.xml.h:692 skins_0acht5zehn_skin.xml.h:713
 #: skins_atemio_skin.xml.h:662 skins_cool_skin.xml.h:779
-#: skins_default_skin.xml.h:691 skins_kravenhd_skin.xml.h:698
+#: skins_default_skin.xml.h:692 skins_kravenhd_skin.xml.h:698
 #: skins_megastyleblue_skin.xml.h:781 skins_megastylegrey_skin.xml.h:781
 #: skins_metrixhd_skin.xml.h:680 skins_nogfx_skin.xml.h:621
 #: skins_sevenhd_skin.xml.h:624 skins_smarttv_skin.xml.h:680
@@ -15801,9 +15817,9 @@ msgstr ""
 msgid "Titlebar Border Color"
 msgstr ""
 
-#: skin_default_skin.xml.h:692 skins_0acht5zehn_skin.xml.h:714
+#: skin_default_skin.xml.h:693 skins_0acht5zehn_skin.xml.h:714
 #: skins_atemio_skin.xml.h:663 skins_cool_skin.xml.h:780
-#: skins_default_skin.xml.h:692 skins_kravenhd_skin.xml.h:699
+#: skins_default_skin.xml.h:693 skins_kravenhd_skin.xml.h:699
 #: skins_megastyleblue_skin.xml.h:782 skins_megastylegrey_skin.xml.h:782
 #: skins_metrixhd_skin.xml.h:681 skins_nogfx_skin.xml.h:622
 #: skins_sevenhd_skin.xml.h:625 skins_smarttv_skin.xml.h:681
@@ -15823,9 +15839,9 @@ msgstr "ERROR: Too many read-erros or reached end of file"
 msgid "Tonburst A/B"
 msgstr ""
 
-#: skin_default_skin.xml.h:694 skins_0acht5zehn_skin.xml.h:716
+#: skin_default_skin.xml.h:695 skins_0acht5zehn_skin.xml.h:716
 #: skins_atemio_skin.xml.h:665 skins_cool_skin.xml.h:782
-#: skins_default_skin.xml.h:694 skins_kravenhd_skin.xml.h:701
+#: skins_default_skin.xml.h:695 skins_kravenhd_skin.xml.h:701
 #: skins_megastyleblue_skin.xml.h:784 skins_megastylegrey_skin.xml.h:784
 #: skins_metrixhd_skin.xml.h:683 skins_nogfx_skin.xml.h:624
 #: skins_sevenhd_skin.xml.h:627 skins_smarttv_skin.xml.h:683
@@ -15833,9 +15849,9 @@ msgstr ""
 msgid "Tone Burst"
 msgstr ""
 
-#: skin_default_skin.xml.h:695 skins_0acht5zehn_skin.xml.h:717
+#: skin_default_skin.xml.h:696 skins_0acht5zehn_skin.xml.h:717
 #: skins_atemio_skin.xml.h:666 skins_cool_skin.xml.h:783
-#: skins_default_skin.xml.h:695 skins_kravenhd_skin.xml.h:702
+#: skins_default_skin.xml.h:696 skins_kravenhd_skin.xml.h:702
 #: skins_megastyleblue_skin.xml.h:785 skins_megastylegrey_skin.xml.h:785
 #: skins_metrixhd_skin.xml.h:684 skins_nogfx_skin.xml.h:625
 #: skins_sevenhd_skin.xml.h:628 skins_smarttv_skin.xml.h:684
@@ -15843,9 +15859,9 @@ msgstr ""
 msgid "Tone Mode"
 msgstr ""
 
-#: httpdfunc.h:5319 skin_default_skin.xml.h:696 skins_0acht5zehn_skin.xml.h:718
+#: httpdfunc.h:5319 skin_default_skin.xml.h:697 skins_0acht5zehn_skin.xml.h:718
 #: skins_atemio_skin.xml.h:667 skins_cool_skin.xml.h:784
-#: skins_default_skin.xml.h:696 skins_kravenhd_skin.xml.h:703
+#: skins_default_skin.xml.h:697 skins_kravenhd_skin.xml.h:703
 #: skins_megastyleblue_skin.xml.h:786 skins_megastylegrey_skin.xml.h:786
 #: skins_metrixhd_skin.xml.h:685 skins_nogfx_skin.xml.h:626
 #: skins_sevenhd_skin.xml.h:629 skins_smarttv_skin.xml.h:685
@@ -15880,9 +15896,9 @@ msgstr ""
 msgid "Tpk / Ipkg"
 msgstr ""
 
-#: extensions.h:230 httpdfunc.h:6013 skin_default_skin.xml.h:698
+#: extensions.h:230 httpdfunc.h:6013 skin_default_skin.xml.h:699
 #: skins_0acht5zehn_skin.xml.h:896 skins_atemio_skin.xml.h:669
-#: skins_cool_skin.xml.h:889 skins_default_skin.xml.h:698
+#: skins_cool_skin.xml.h:889 skins_default_skin.xml.h:699
 #: skins_kravenhd_skin.xml.h:705 skins_megastyleblue_skin.xml.h:890
 #: skins_megastylegrey_skin.xml.h:890 skins_metrixhd_skin.xml.h:687
 #: skins_nogfx_skin.xml.h:796 skins_sevenhd_skin.xml.h:802
@@ -15890,9 +15906,9 @@ msgstr ""
 msgid "Tpk Install - select file"
 msgstr "TPK diegimas - pasirinkite fail"
 
-#: skin_default_skin.xml.h:699 skins_0acht5zehn_skin.xml.h:897
+#: skin_default_skin.xml.h:700 skins_0acht5zehn_skin.xml.h:897
 #: skins_atemio_skin.xml.h:670 skins_cool_skin.xml.h:890
-#: skins_default_skin.xml.h:699 skins_kravenhd_skin.xml.h:706
+#: skins_default_skin.xml.h:700 skins_kravenhd_skin.xml.h:706
 #: skins_megastyleblue_skin.xml.h:891 skins_megastylegrey_skin.xml.h:891
 #: skins_metrixhd_skin.xml.h:688 skins_nogfx_skin.xml.h:797
 #: skins_sevenhd_skin.xml.h:803 skins_smarttv_skin.xml.h:688
@@ -15947,9 +15963,9 @@ msgstr "Takelis:"
 msgid "Trade time: "
 msgstr "Prekybos laikas:"
 
-#: skin_default_skin.xml.h:704 skins_0acht5zehn_skin.xml.h:724
+#: skin_default_skin.xml.h:705 skins_0acht5zehn_skin.xml.h:724
 #: skins_atemio_skin.xml.h:675 skins_cool_skin.xml.h:790
-#: skins_default_skin.xml.h:704 skins_kravenhd_skin.xml.h:711
+#: skins_default_skin.xml.h:705 skins_kravenhd_skin.xml.h:711
 #: skins_megastyleblue_skin.xml.h:792 skins_megastylegrey_skin.xml.h:792
 #: skins_metrixhd_skin.xml.h:693 skins_nogfx_skin.xml.h:632
 #: skins_sevenhd_skin.xml.h:635 skins_smarttv_skin.xml.h:693
@@ -15957,9 +15973,9 @@ msgstr "Prekybos laikas:"
 msgid "Transcode Stream"
 msgstr ""
 
-#: skin_default_skin.xml.h:705 skins_0acht5zehn_skin.xml.h:725
+#: skin_default_skin.xml.h:706 skins_0acht5zehn_skin.xml.h:725
 #: skins_atemio_skin.xml.h:676 skins_cool_skin.xml.h:791
-#: skins_default_skin.xml.h:705 skins_kravenhd_skin.xml.h:712
+#: skins_default_skin.xml.h:706 skins_kravenhd_skin.xml.h:712
 #: skins_megastyleblue_skin.xml.h:793 skins_megastylegrey_skin.xml.h:793
 #: skins_metrixhd_skin.xml.h:694 skins_nogfx_skin.xml.h:633
 #: skins_sevenhd_skin.xml.h:636 skins_smarttv_skin.xml.h:694
@@ -15967,9 +15983,9 @@ msgstr ""
 msgid "Transmission"
 msgstr ""
 
-#: skin_default_skin.xml.h:706 skins_0acht5zehn_skin.xml.h:726
+#: skin_default_skin.xml.h:707 skins_0acht5zehn_skin.xml.h:726
 #: skins_atemio_skin.xml.h:677 skins_cool_skin.xml.h:792
-#: skins_default_skin.xml.h:706 skins_kravenhd_skin.xml.h:713
+#: skins_default_skin.xml.h:707 skins_kravenhd_skin.xml.h:713
 #: skins_megastyleblue_skin.xml.h:794 skins_megastylegrey_skin.xml.h:794
 #: skins_metrixhd_skin.xml.h:695 skins_nogfx_skin.xml.h:634
 #: skins_sevenhd_skin.xml.h:637 skins_smarttv_skin.xml.h:695
@@ -16057,9 +16073,9 @@ msgstr ""
 msgid "Tue"
 msgstr "Ant"
 
-#: global.h:6886 global.h:6896 rectimer.h:1101 skin_default_skin.xml.h:709
+#: global.h:6886 global.h:6896 rectimer.h:1101 skin_default_skin.xml.h:710
 #: skins_0acht5zehn_skin.xml.h:728 skins_atemio_skin.xml.h:680
-#: skins_cool_skin.xml.h:795 skins_default_skin.xml.h:709
+#: skins_cool_skin.xml.h:795 skins_default_skin.xml.h:710
 #: skins_kravenhd_skin.xml.h:716 skins_megastyleblue_skin.xml.h:797
 #: skins_megastylegrey_skin.xml.h:797 skins_metrixhd_skin.xml.h:698
 #: skins_nogfx_skin.xml.h:637 skins_sevenhd_skin.xml.h:640
@@ -16072,9 +16088,9 @@ msgstr "Antradienis"
 msgid "Tune to channel failed"
 msgstr "ERROR: Tuning to Channel failed"
 
-#: skin_default_skin.xml.h:710 skins_0acht5zehn_skin.xml.h:729
+#: skin_default_skin.xml.h:711 skins_0acht5zehn_skin.xml.h:729
 #: skins_atemio_skin.xml.h:681 skins_cool_skin.xml.h:796
-#: skins_default_skin.xml.h:710 skins_kravenhd_skin.xml.h:717
+#: skins_default_skin.xml.h:711 skins_kravenhd_skin.xml.h:717
 #: skins_megastyleblue_skin.xml.h:798 skins_megastylegrey_skin.xml.h:798
 #: skins_metrixhd_skin.xml.h:699 skins_nogfx_skin.xml.h:638
 #: skins_sevenhd_skin.xml.h:641 skins_smarttv_skin.xml.h:699
@@ -16086,9 +16102,9 @@ msgstr "Imtuvas"
 msgid "Tuner "
 msgstr "Imtuvas"
 
-#: skin_default_skin.xml.h:713 skins_0acht5zehn_skin.xml.h:731
+#: skin_default_skin.xml.h:714 skins_0acht5zehn_skin.xml.h:731
 #: skins_atemio_skin.xml.h:684 skins_cool_skin.xml.h:799
-#: skins_default_skin.xml.h:713 skins_kravenhd_skin.xml.h:719
+#: skins_default_skin.xml.h:714 skins_kravenhd_skin.xml.h:719
 #: skins_megastyleblue_skin.xml.h:801 skins_megastylegrey_skin.xml.h:801
 #: skins_metrixhd_skin.xml.h:701 skins_nogfx_skin.xml.h:640
 #: skins_sevenhd_skin.xml.h:643 skins_smarttv_skin.xml.h:701
@@ -16097,15 +16113,15 @@ msgstr "Imtuvas"
 msgid "Tuner Configuration"
 msgstr ""
 
-#: skin_default_skin.xml.h:714 skins_0acht5zehn_skin.xml.h:732
-#: skins_atemio_skin.xml.h:685 skins_default_skin.xml.h:714
+#: skin_default_skin.xml.h:715 skins_0acht5zehn_skin.xml.h:732
+#: skins_atemio_skin.xml.h:685 skins_default_skin.xml.h:715
 #: skins_nogfx_skin.xml.h:641 skins_sevenhd_skin.xml.h:644
 msgid "Tuner List"
 msgstr ""
 
-#: skin_default_skin.xml.h:715 skins_0acht5zehn_skin.xml.h:899
+#: skin_default_skin.xml.h:716 skins_0acht5zehn_skin.xml.h:899
 #: skins_atemio_skin.xml.h:686 skins_cool_skin.xml.h:800
-#: skins_default_skin.xml.h:715 skins_kravenhd_skin.xml.h:720
+#: skins_default_skin.xml.h:716 skins_kravenhd_skin.xml.h:720
 #: skins_megastyleblue_skin.xml.h:802 skins_megastylegrey_skin.xml.h:802
 #: skins_metrixhd_skin.xml.h:702 skins_nogfx_skin.xml.h:799
 #: skins_sevenhd_skin.xml.h:805 skins_smarttv_skin.xml.h:702
@@ -16117,9 +16133,9 @@ msgstr ""
 msgid "Tuner Type"
 msgstr "Imtuvo tipas"
 
-#: skin_default_skin.xml.h:711 skins_0acht5zehn_skin.xml.h:730
+#: skin_default_skin.xml.h:712 skins_0acht5zehn_skin.xml.h:730
 #: skins_atemio_skin.xml.h:682 skins_cool_skin.xml.h:797
-#: skins_default_skin.xml.h:711 skins_kravenhd_skin.xml.h:718
+#: skins_default_skin.xml.h:712 skins_kravenhd_skin.xml.h:718
 #: skins_megastyleblue_skin.xml.h:799 skins_megastylegrey_skin.xml.h:799
 #: skins_metrixhd_skin.xml.h:700 skins_nogfx_skin.xml.h:639
 #: skins_sevenhd_skin.xml.h:642 skins_smarttv_skin.xml.h:700
@@ -16128,9 +16144,9 @@ msgid "Tuner:"
 msgstr ""
 
 #: network_ipsec_skin.xml.h:11 network_minisatip_skin.xml.h:5
-#: network_satipclient_skin.xml.h:6 skin_default_skin.xml.h:712
+#: network_satipclient_skin.xml.h:6 skin_default_skin.xml.h:713
 #: skins_0acht5zehn_skin.xml.h:898 skins_atemio_skin.xml.h:683
-#: skins_cool_skin.xml.h:798 skins_default_skin.xml.h:712
+#: skins_cool_skin.xml.h:798 skins_default_skin.xml.h:713
 #: skins_megastyleblue_skin.xml.h:800 skins_megastylegrey_skin.xml.h:800
 #: skins_nogfx_skin.xml.h:798 skins_sevenhd_skin.xml.h:804
 msgid "Tunerconfig"
@@ -16144,9 +16160,9 @@ msgstr ""
 "ERROR: Tuner configuration is not allowed during a recording\n"
 "or during Stream Playback"
 
-#: security.h:2161 skin_default_skin.xml.h:716 skins_0acht5zehn_skin.xml.h:733
+#: security.h:2161 skin_default_skin.xml.h:717 skins_0acht5zehn_skin.xml.h:733
 #: skins_atemio_skin.xml.h:687 skins_cool_skin.xml.h:801
-#: skins_default_skin.xml.h:716 skins_kravenhd_skin.xml.h:721
+#: skins_default_skin.xml.h:717 skins_kravenhd_skin.xml.h:721
 #: skins_megastyleblue_skin.xml.h:803 skins_megastylegrey_skin.xml.h:803
 #: skins_metrixhd_skin.xml.h:703 skins_nogfx_skin.xml.h:642
 #: skins_sevenhd_skin.xml.h:645 skins_smarttv_skin.xml.h:703
@@ -16154,13 +16170,13 @@ msgstr ""
 msgid "Tunertype"
 msgstr "Imtuvo Tipas"
 
-#: service.h:1069
+#: service.h:1094
 msgid "Tuning to Channel failed!"
 msgstr "KLAIDA: Kanalo nra"
 
-#: skin_default_skin.xml.h:719 skins_0acht5zehn_skin.xml.h:736
+#: skin_default_skin.xml.h:720 skins_0acht5zehn_skin.xml.h:736
 #: skins_atemio_skin.xml.h:690 skins_cool_skin.xml.h:804
-#: skins_default_skin.xml.h:719 skins_kravenhd_skin.xml.h:724
+#: skins_default_skin.xml.h:720 skins_kravenhd_skin.xml.h:724
 #: skins_megastyleblue_skin.xml.h:806 skins_megastylegrey_skin.xml.h:806
 #: skins_metrixhd_skin.xml.h:706 skins_nogfx_skin.xml.h:645
 #: skins_sevenhd_skin.xml.h:648 skins_smarttv_skin.xml.h:706
@@ -16172,9 +16188,9 @@ msgstr ""
 msgid "Typ"
 msgstr ""
 
-#: player_tithek_skin.xml.h:27 skin_default_skin.xml.h:722
+#: player_tithek_skin.xml.h:27 skin_default_skin.xml.h:723
 #: skins_0acht5zehn_skin.xml.h:739 skins_atemio_skin.xml.h:693
-#: skins_cool_skin.xml.h:807 skins_default_skin.xml.h:722
+#: skins_cool_skin.xml.h:807 skins_default_skin.xml.h:723
 #: skins_kravenhd_skin.xml.h:727 skins_megastyleblue_skin.xml.h:809
 #: skins_megastylegrey_skin.xml.h:809 skins_metrixhd_skin.xml.h:709
 #: skins_nogfx_skin.xml.h:648 skins_sevenhd_skin.xml.h:651
@@ -16183,9 +16199,9 @@ msgstr ""
 msgid "Type"
 msgstr "Tipas"
 
-#: skin_default_skin.xml.h:724 skins_0acht5zehn_skin.xml.h:741
+#: skin_default_skin.xml.h:725 skins_0acht5zehn_skin.xml.h:741
 #: skins_atemio_skin.xml.h:695 skins_cool_skin.xml.h:809
-#: skins_default_skin.xml.h:724 skins_kravenhd_skin.xml.h:729
+#: skins_default_skin.xml.h:725 skins_kravenhd_skin.xml.h:729
 #: skins_megastyleblue_skin.xml.h:811 skins_megastylegrey_skin.xml.h:811
 #: skins_metrixhd_skin.xml.h:711 skins_nogfx_skin.xml.h:650
 #: skins_sevenhd_skin.xml.h:653 skins_smarttv_skin.xml.h:711
@@ -16193,9 +16209,9 @@ msgstr "Tipas"
 msgid "Type of Scan"
 msgstr ""
 
-#: skin_default_skin.xml.h:723 skins_0acht5zehn_skin.xml.h:740
+#: skin_default_skin.xml.h:724 skins_0acht5zehn_skin.xml.h:740
 #: skins_atemio_skin.xml.h:694 skins_cool_skin.xml.h:808
-#: skins_default_skin.xml.h:723 skins_kravenhd_skin.xml.h:728
+#: skins_default_skin.xml.h:724 skins_kravenhd_skin.xml.h:728
 #: skins_megastyleblue_skin.xml.h:810 skins_megastylegrey_skin.xml.h:810
 #: skins_metrixhd_skin.xml.h:710 skins_nogfx_skin.xml.h:649
 #: skins_sevenhd_skin.xml.h:652 skins_smarttv_skin.xml.h:710
@@ -16232,9 +16248,9 @@ msgstr ""
 msgid "UNC"
 msgstr ""
 
-#: skin_default_skin.xml.h:725 skins_0acht5zehn_skin.xml.h:745
+#: skin_default_skin.xml.h:726 skins_0acht5zehn_skin.xml.h:745
 #: skins_atemio_skin.xml.h:699 skins_cool_skin.xml.h:813
-#: skins_default_skin.xml.h:725 skins_kravenhd_skin.xml.h:730
+#: skins_default_skin.xml.h:726 skins_kravenhd_skin.xml.h:730
 #: skins_megastyleblue_skin.xml.h:815 skins_megastylegrey_skin.xml.h:815
 #: skins_nogfx_skin.xml.h:654 skins_sevenhd_skin.xml.h:657
 #: skins_tobayer01_skin.xml.h:682 skins_ufs912_skin.xml.h:680
@@ -16245,8 +16261,8 @@ msgstr ""
 msgid "UNKNOWN"
 msgstr "Neinomas"
 
-#: skin_default_skin.xml.h:729 skins_atemio_skin.xml.h:702
-#: skins_cool_skin.xml.h:816 skins_default_skin.xml.h:729
+#: skin_default_skin.xml.h:730 skins_atemio_skin.xml.h:702
+#: skins_cool_skin.xml.h:816 skins_default_skin.xml.h:730
 #: skins_kravenhd_skin.xml.h:732 skins_megastyleblue_skin.xml.h:817
 #: skins_megastylegrey_skin.xml.h:817 skins_metrixhd_skin.xml.h:717
 #: skins_nogfx_skin.xml.h:657 skins_sevenhd_skin.xml.h:660
@@ -16259,9 +16275,9 @@ msgstr ""
 msgid "UNRELIABLE SOURCES(English)"
 msgstr ""
 
-#: httpdfunc.h:5323 skin_default_skin.xml.h:732 skins_0acht5zehn_skin.xml.h:751
+#: httpdfunc.h:5323 skin_default_skin.xml.h:733 skins_0acht5zehn_skin.xml.h:751
 #: skins_atemio_skin.xml.h:705 skins_cool_skin.xml.h:819
-#: skins_default_skin.xml.h:732 skins_kravenhd_skin.xml.h:735
+#: skins_default_skin.xml.h:733 skins_kravenhd_skin.xml.h:735
 #: skins_megastyleblue_skin.xml.h:820 skins_megastylegrey_skin.xml.h:820
 #: skins_metrixhd_skin.xml.h:720 skins_nogfx_skin.xml.h:660
 #: skins_sevenhd_skin.xml.h:663 skins_smarttv_skin.xml.h:718
@@ -16298,9 +16314,9 @@ msgstr ""
 msgid "Unchanged"
 msgstr "Nekeiskite"
 
-#: skin_default_skin.xml.h:726 skins_0acht5zehn_skin.xml.h:746
+#: skin_default_skin.xml.h:727 skins_0acht5zehn_skin.xml.h:746
 #: skins_atemio_skin.xml.h:700 skins_cool_skin.xml.h:814
-#: skins_default_skin.xml.h:726 skins_kravenhd_skin.xml.h:731
+#: skins_default_skin.xml.h:727 skins_kravenhd_skin.xml.h:731
 #: skins_megastyleblue_skin.xml.h:816 skins_megastylegrey_skin.xml.h:816
 #: skins_metrixhd_skin.xml.h:714 skins_nogfx_skin.xml.h:655
 #: skins_sevenhd_skin.xml.h:658 skins_smarttv_skin.xml.h:714
@@ -16308,9 +16324,9 @@ msgstr "Nekeiskite"
 msgid "Uncommitted Diseqc command"
 msgstr ""
 
-#: skin_default_skin.xml.h:727 skins_0acht5zehn_skin.xml.h:747
+#: skin_default_skin.xml.h:728 skins_0acht5zehn_skin.xml.h:747
 #: skins_atemio_skin.xml.h:701 skins_cool_skin.xml.h:815
-#: skins_default_skin.xml.h:727 skins_metrixhd_skin.xml.h:715
+#: skins_default_skin.xml.h:728 skins_metrixhd_skin.xml.h:715
 #: skins_nogfx_skin.xml.h:656 skins_sevenhd_skin.xml.h:659
 msgid "Unicable Configuration"
 msgstr ""
@@ -16372,9 +16388,9 @@ msgstr ""
 msgid "Update Plugins to new Version?"
 msgstr "Atnaujinti pltinius nauja versija ?"
 
-#: skin_default_skin.xml.h:731 skins_0acht5zehn_skin.xml.h:750
+#: skin_default_skin.xml.h:732 skins_0acht5zehn_skin.xml.h:750
 #: skins_atemio_skin.xml.h:704 skins_cool_skin.xml.h:818
-#: skins_default_skin.xml.h:731 skins_kravenhd_skin.xml.h:734
+#: skins_default_skin.xml.h:732 skins_kravenhd_skin.xml.h:734
 #: skins_megastyleblue_skin.xml.h:819 skins_megastylegrey_skin.xml.h:819
 #: skins_metrixhd_skin.xml.h:719 skins_nogfx_skin.xml.h:659
 #: skins_sevenhd_skin.xml.h:662 skins_smarttv_skin.xml.h:717
@@ -16382,9 +16398,9 @@ msgstr "Atnaujinti pltinius nauja versija ?"
 msgid "Update entrys on scan"
 msgstr ""
 
-#: skin_default_skin.xml.h:733 skins_0acht5zehn_skin.xml.h:752
+#: skin_default_skin.xml.h:734 skins_0acht5zehn_skin.xml.h:752
 #: skins_atemio_skin.xml.h:706 skins_cool_skin.xml.h:820
-#: skins_default_skin.xml.h:733 skins_kravenhd_skin.xml.h:736
+#: skins_default_skin.xml.h:734 skins_kravenhd_skin.xml.h:736
 #: skins_megastyleblue_skin.xml.h:821 skins_megastylegrey_skin.xml.h:821
 #: skins_metrixhd_skin.xml.h:721 skins_nogfx_skin.xml.h:661
 #: skins_sevenhd_skin.xml.h:664 skins_smarttv_skin.xml.h:719
@@ -16393,9 +16409,9 @@ msgstr ""
 msgid "Usb Device"
 msgstr "USB renginys (s)"
 
-#: skin_default_skin.xml.h:734 skins_0acht5zehn_skin.xml.h:753
+#: skin_default_skin.xml.h:735 skins_0acht5zehn_skin.xml.h:753
 #: skins_atemio_skin.xml.h:707 skins_cool_skin.xml.h:821
-#: skins_default_skin.xml.h:734 skins_megastyleblue_skin.xml.h:822
+#: skins_default_skin.xml.h:735 skins_megastyleblue_skin.xml.h:822
 #: skins_megastylegrey_skin.xml.h:822 skins_metrixhd_skin.xml.h:722
 #: skins_nogfx_skin.xml.h:662 skins_sevenhd_skin.xml.h:665
 #: skins_smarttv_skin.xml.h:720 skins_tobayer01_skin.xml.h:690
@@ -16403,9 +16419,9 @@ msgstr "USB renginys (s)"
 msgid "Usbupdate (online)"
 msgstr ""
 
-#: skin_default_skin.xml.h:735 skins_0acht5zehn_skin.xml.h:754
+#: skin_default_skin.xml.h:736 skins_0acht5zehn_skin.xml.h:754
 #: skins_atemio_skin.xml.h:708 skins_cool_skin.xml.h:822
-#: skins_default_skin.xml.h:735 skins_megastyleblue_skin.xml.h:823
+#: skins_default_skin.xml.h:736 skins_megastyleblue_skin.xml.h:823
 #: skins_megastylegrey_skin.xml.h:823 skins_metrixhd_skin.xml.h:723
 #: skins_nogfx_skin.xml.h:663 skins_sevenhd_skin.xml.h:666
 #: skins_smarttv_skin.xml.h:721 skins_tobayer01_skin.xml.h:691
@@ -16413,9 +16429,9 @@ msgstr ""
 msgid "Usbupdate (tmp)"
 msgstr ""
 
-#: skin_default_skin.xml.h:737 skins_0acht5zehn_skin.xml.h:757
+#: skin_default_skin.xml.h:738 skins_0acht5zehn_skin.xml.h:757
 #: skins_atemio_skin.xml.h:710 skins_cool_skin.xml.h:825
-#: skins_default_skin.xml.h:737 skins_kravenhd_skin.xml.h:739
+#: skins_default_skin.xml.h:738 skins_kravenhd_skin.xml.h:739
 #: skins_megastyleblue_skin.xml.h:826 skins_megastylegrey_skin.xml.h:826
 #: skins_metrixhd_skin.xml.h:725 skins_nogfx_skin.xml.h:665
 #: skins_sevenhd_skin.xml.h:668 skins_smarttv_skin.xml.h:724
@@ -16448,9 +16464,9 @@ msgstr "Use configuration from Flash (temporary)"
 msgid "Use config from Stick or HDD"
 msgstr "Use configuration from Swap (permanent)"
 
-#: httpdfunc.h:4742 skin_default_skin.xml.h:736 skins_0acht5zehn_skin.xml.h:755
+#: httpdfunc.h:4742 skin_default_skin.xml.h:737 skins_0acht5zehn_skin.xml.h:755
 #: skins_atemio_skin.xml.h:709 skins_cool_skin.xml.h:823
-#: skins_default_skin.xml.h:736 skins_kravenhd_skin.xml.h:737
+#: skins_default_skin.xml.h:737 skins_kravenhd_skin.xml.h:737
 #: skins_megastyleblue_skin.xml.h:824 skins_megastylegrey_skin.xml.h:824
 #: skins_metrixhd_skin.xml.h:724 skins_nogfx_skin.xml.h:664
 #: skins_sevenhd_skin.xml.h:667 skins_smarttv_skin.xml.h:722
@@ -16458,9 +16474,9 @@ msgstr "Use configuration from Swap (permanent)"
 msgid "Use cross control for fast zapping and vol"
 msgstr "Naudokite kryminio kontrol greitai perirai ir garsui"
 
-#: skin_default_skin.xml.h:738 skins_0acht5zehn_skin.xml.h:758
+#: skin_default_skin.xml.h:739 skins_0acht5zehn_skin.xml.h:758
 #: skins_atemio_skin.xml.h:711 skins_cool_skin.xml.h:826
-#: skins_default_skin.xml.h:738 skins_kravenhd_skin.xml.h:740
+#: skins_default_skin.xml.h:739 skins_kravenhd_skin.xml.h:740
 #: skins_megastyleblue_skin.xml.h:827 skins_megastylegrey_skin.xml.h:827
 #: skins_metrixhd_skin.xml.h:726 skins_nogfx_skin.xml.h:666
 #: skins_sevenhd_skin.xml.h:669 skins_smarttv_skin.xml.h:725
@@ -16468,9 +16484,9 @@ msgstr "Naudokite kryminio kontrol greitai perirai ir garsui"
 msgid "Use fixed physical address"
 msgstr ""
 
-#: skin_default_skin.xml.h:739 skins_0acht5zehn_skin.xml.h:759
+#: skin_default_skin.xml.h:740 skins_0acht5zehn_skin.xml.h:759
 #: skins_atemio_skin.xml.h:712 skins_cool_skin.xml.h:828
-#: skins_default_skin.xml.h:739 skins_kravenhd_skin.xml.h:741
+#: skins_default_skin.xml.h:740 skins_kravenhd_skin.xml.h:741
 #: skins_megastyleblue_skin.xml.h:829 skins_megastylegrey_skin.xml.h:829
 #: skins_metrixhd_skin.xml.h:727 skins_nogfx_skin.xml.h:667
 #: skins_sevenhd_skin.xml.h:670 skins_smarttv_skin.xml.h:726
@@ -16478,9 +16494,9 @@ msgstr ""
 msgid "Use numeric keys"
 msgstr ""
 
-#: network_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:740
+#: network_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:741
 #: skins_0acht5zehn_skin.xml.h:761 skins_atemio_skin.xml.h:713
-#: skins_cool_skin.xml.h:831 skins_default_skin.xml.h:740
+#: skins_cool_skin.xml.h:831 skins_default_skin.xml.h:741
 #: skins_kravenhd_skin.xml.h:743 skins_megastyleblue_skin.xml.h:832
 #: skins_megastylegrey_skin.xml.h:832 skins_metrixhd_skin.xml.h:728
 #: skins_nogfx_skin.xml.h:668 skins_sevenhd_skin.xml.h:671
@@ -16489,12 +16505,12 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: skin_default_skin.xml.h:741 skins_default_skin.xml.h:741
+#: skin_default_skin.xml.h:742 skins_default_skin.xml.h:742
 msgid "Userauth"
 msgstr ""
 
-#: network_ipsec_skin.xml.h:12 skin_default_skin.xml.h:742
-#: skins_default_skin.xml.h:742
+#: network_ipsec_skin.xml.h:12 skin_default_skin.xml.h:743
+#: skins_default_skin.xml.h:743
 msgid "Username"
 msgstr ""
 
@@ -16508,9 +16524,9 @@ msgstr ""
 msgid "V"
 msgstr ""
 
-#: skin_default_skin.xml.h:743 skins_0acht5zehn_skin.xml.h:767
+#: skin_default_skin.xml.h:744 skins_0acht5zehn_skin.xml.h:767
 #: skins_0acht5zehn_skin.xml.h:900 skins_atemio_skin.xml.h:716
-#: skins_cool_skin.xml.h:837 skins_default_skin.xml.h:743
+#: skins_cool_skin.xml.h:837 skins_default_skin.xml.h:744
 #: skins_kravenhd_skin.xml.h:747 skins_megastyleblue_skin.xml.h:838
 #: skins_megastylegrey_skin.xml.h:838 skins_metrixhd_skin.xml.h:731
 #: skins_nogfx_skin.xml.h:671 skins_nogfx_skin.xml.h:800
@@ -16550,7 +16566,7 @@ msgstr "VLC Grotuvas"
 msgid "VOX-Now"
 msgstr ""
 
-#: skin_default_skin.xml.h:757 skins_default_skin.xml.h:757
+#: skin_default_skin.xml.h:758 skins_default_skin.xml.h:758
 msgid "VPN Ipsec Settings"
 msgstr ""
 
@@ -16582,8 +16598,8 @@ msgstr ""
 msgid "Vertikal"
 msgstr ""
 
-#: skin_default_skin.xml.h:744 skins_0acht5zehn_skin.xml.h:768
-#: skins_cool_skin.xml.h:838 skins_default_skin.xml.h:744
+#: skin_default_skin.xml.h:745 skins_0acht5zehn_skin.xml.h:768
+#: skins_cool_skin.xml.h:838 skins_default_skin.xml.h:745
 #: skins_kravenhd_skin.xml.h:748 skins_megastyleblue_skin.xml.h:839
 #: skins_megastylegrey_skin.xml.h:839 skins_metrixhd_skin.xml.h:732
 #: skins_nogfx_skin.xml.h:672 skins_sevenhd_skin.xml.h:675
@@ -16592,9 +16608,9 @@ msgstr ""
 msgid "Video"
 msgstr "Filmai"
 
-#: skin_default_skin.xml.h:748 skins_0acht5zehn_skin.xml.h:769
+#: skin_default_skin.xml.h:749 skins_0acht5zehn_skin.xml.h:769
 #: skins_atemio_skin.xml.h:720 skins_cool_skin.xml.h:843
-#: skins_default_skin.xml.h:748 skins_kravenhd_skin.xml.h:752
+#: skins_default_skin.xml.h:749 skins_kravenhd_skin.xml.h:752
 #: skins_megastyleblue_skin.xml.h:844 skins_megastylegrey_skin.xml.h:844
 #: skins_metrixhd_skin.xml.h:736 skins_nogfx_skin.xml.h:673
 #: skins_sevenhd_skin.xml.h:676 skins_smarttv_skin.xml.h:739
@@ -16607,9 +16623,9 @@ msgstr ""
 msgid "Video Player"
 msgstr "Film grotuvas"
 
-#: play.h:639 skin_default_skin.xml.h:749 skins_0acht5zehn_skin.xml.h:770
+#: play.h:639 skin_default_skin.xml.h:750 skins_0acht5zehn_skin.xml.h:770
 #: skins_0acht5zehn_skin.xml.h:904 skins_atemio_skin.xml.h:721
-#: skins_cool_skin.xml.h:845 skins_default_skin.xml.h:749
+#: skins_cool_skin.xml.h:845 skins_default_skin.xml.h:750
 #: skins_kravenhd_skin.xml.h:753 skins_megastyleblue_skin.xml.h:846
 #: skins_megastylegrey_skin.xml.h:846 skins_metrixhd_skin.xml.h:737
 #: skins_nogfx_skin.xml.h:674 skins_nogfx_skin.xml.h:804
@@ -16632,9 +16648,9 @@ msgstr ""
 msgid "Video postet"
 msgstr "Video posted"
 
-#: skin_default_skin.xml.h:745 skins_0acht5zehn_skin.xml.h:901
+#: skin_default_skin.xml.h:746 skins_0acht5zehn_skin.xml.h:901
 #: skins_atemio_skin.xml.h:717 skins_cool_skin.xml.h:840
-#: skins_default_skin.xml.h:745 skins_kravenhd_skin.xml.h:749
+#: skins_default_skin.xml.h:746 skins_kravenhd_skin.xml.h:749
 #: skins_megastyleblue_skin.xml.h:841 skins_megastylegrey_skin.xml.h:841
 #: skins_metrixhd_skin.xml.h:733 skins_nogfx_skin.xml.h:801
 #: skins_sevenhd_skin.xml.h:807 skins_smarttv_skin.xml.h:736
@@ -16642,9 +16658,9 @@ msgstr "Video posted"
 msgid "VideoMode Aspect Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:746 skins_0acht5zehn_skin.xml.h:902
+#: skin_default_skin.xml.h:747 skins_0acht5zehn_skin.xml.h:902
 #: skins_atemio_skin.xml.h:718 skins_cool_skin.xml.h:841
-#: skins_default_skin.xml.h:746 skins_kravenhd_skin.xml.h:750
+#: skins_default_skin.xml.h:747 skins_kravenhd_skin.xml.h:750
 #: skins_megastyleblue_skin.xml.h:842 skins_megastylegrey_skin.xml.h:842
 #: skins_metrixhd_skin.xml.h:734 skins_nogfx_skin.xml.h:802
 #: skins_sevenhd_skin.xml.h:808 skins_smarttv_skin.xml.h:737
@@ -16652,9 +16668,9 @@ msgstr ""
 msgid "VideoMode Resolution Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:747 skins_0acht5zehn_skin.xml.h:903
+#: skin_default_skin.xml.h:748 skins_0acht5zehn_skin.xml.h:903
 #: skins_atemio_skin.xml.h:719 skins_cool_skin.xml.h:842
-#: skins_default_skin.xml.h:747 skins_kravenhd_skin.xml.h:751
+#: skins_default_skin.xml.h:748 skins_kravenhd_skin.xml.h:751
 #: skins_megastyleblue_skin.xml.h:843 skins_megastylegrey_skin.xml.h:843
 #: skins_metrixhd_skin.xml.h:735 skins_nogfx_skin.xml.h:803
 #: skins_sevenhd_skin.xml.h:809 skins_smarttv_skin.xml.h:738
@@ -16674,9 +16690,9 @@ msgstr "Videomode must be set to 576i for SCART output"
 msgid "Videotune"
 msgstr "Vaizdo santykis"
 
-#: skin_default_skin.xml.h:750 skins_0acht5zehn_skin.xml.h:771
+#: skin_default_skin.xml.h:751 skins_0acht5zehn_skin.xml.h:771
 #: skins_atemio_skin.xml.h:722 skins_cool_skin.xml.h:847
-#: skins_default_skin.xml.h:750 skins_kravenhd_skin.xml.h:754
+#: skins_default_skin.xml.h:751 skins_kravenhd_skin.xml.h:754
 #: skins_megastyleblue_skin.xml.h:848 skins_megastylegrey_skin.xml.h:848
 #: skins_metrixhd_skin.xml.h:738 skins_nogfx_skin.xml.h:675
 #: skins_sevenhd_skin.xml.h:678 skins_smarttv_skin.xml.h:741
@@ -16700,9 +16716,9 @@ msgstr "Perirti virelis"
 msgid "View Sections"
 msgstr "Perirti Profiliai"
 
-#: httpdfunc.h:4111 skin_default_skin.xml.h:751 skins_0acht5zehn_skin.xml.h:772
+#: httpdfunc.h:4111 skin_default_skin.xml.h:752 skins_0acht5zehn_skin.xml.h:772
 #: skins_atemio_skin.xml.h:724 skins_cool_skin.xml.h:852
-#: skins_default_skin.xml.h:751 skins_kravenhd_skin.xml.h:756
+#: skins_default_skin.xml.h:752 skins_kravenhd_skin.xml.h:756
 #: skins_megastyleblue_skin.xml.h:853 skins_megastylegrey_skin.xml.h:853
 #: skins_metrixhd_skin.xml.h:739 skins_nogfx_skin.xml.h:677
 #: skins_sevenhd_skin.xml.h:680 skins_smarttv_skin.xml.h:742
@@ -16714,8 +16730,8 @@ msgstr ""
 msgid "Vizion Plus"
 msgstr ""
 
-#: skin_default_skin.xml.h:752 skins_atemio_skin.xml.h:725
-#: skins_cool_skin.xml.h:856 skins_default_skin.xml.h:752
+#: skin_default_skin.xml.h:753 skins_atemio_skin.xml.h:725
+#: skins_cool_skin.xml.h:856 skins_default_skin.xml.h:753
 #: skins_megastyleblue_skin.xml.h:857 skins_megastylegrey_skin.xml.h:857
 #: skins_nogfx_skin.xml.h:678 skins_sevenhd_skin.xml.h:681
 #: skins_smarttv_skin.xml.h:743
@@ -16726,9 +16742,9 @@ msgstr ""
 msgid "Voltage"
 msgstr ""
 
-#: skin_default_skin.xml.h:753 skins_0acht5zehn_skin.xml.h:773
+#: skin_default_skin.xml.h:754 skins_0acht5zehn_skin.xml.h:773
 #: skins_atemio_skin.xml.h:726 skins_cool_skin.xml.h:857
-#: skins_default_skin.xml.h:753 skins_kravenhd_skin.xml.h:757
+#: skins_default_skin.xml.h:754 skins_kravenhd_skin.xml.h:757
 #: skins_megastyleblue_skin.xml.h:858 skins_megastylegrey_skin.xml.h:858
 #: skins_metrixhd_skin.xml.h:740 skins_nogfx_skin.xml.h:679
 #: skins_sevenhd_skin.xml.h:682 skins_smarttv_skin.xml.h:744
@@ -16786,8 +16802,8 @@ msgstr "Tyliau"
 msgid "Volume Up"
 msgstr "Garsiau"
 
-#: skin_default_skin.xml.h:755 skins_0acht5zehn_skin.xml.h:775
-#: skins_default_skin.xml.h:755 skins_kravenhd_skin.xml.h:759
+#: skin_default_skin.xml.h:756 skins_0acht5zehn_skin.xml.h:775
+#: skins_default_skin.xml.h:756 skins_kravenhd_skin.xml.h:759
 #: skins_sevenhd_skin.xml.h:684
 msgid "Volume forward to"
 msgstr ""
@@ -16796,9 +16812,9 @@ msgstr ""
 msgid "Volume: "
 msgstr "Kiekis :"
 
-#: httpdfunc.h:3714 skin_default_skin.xml.h:754 skins_0acht5zehn_skin.xml.h:774
+#: httpdfunc.h:3714 skin_default_skin.xml.h:755 skins_0acht5zehn_skin.xml.h:774
 #: skins_atemio_skin.xml.h:727 skins_cool_skin.xml.h:858
-#: skins_default_skin.xml.h:754 skins_kravenhd_skin.xml.h:758
+#: skins_default_skin.xml.h:755 skins_kravenhd_skin.xml.h:758
 #: skins_megastyleblue_skin.xml.h:859 skins_megastylegrey_skin.xml.h:859
 #: skins_metrixhd_skin.xml.h:741 skins_nogfx_skin.xml.h:680
 #: skins_sevenhd_skin.xml.h:683 skins_smarttv_skin.xml.h:745
@@ -16806,9 +16822,9 @@ msgstr "Kiekis :"
 msgid "Volumebar Timeout"
 msgstr "Time to Volumebar Fadeout (sec)"
 
-#: skin_default_skin.xml.h:756 skins_0acht5zehn_skin.xml.h:776
+#: skin_default_skin.xml.h:757 skins_0acht5zehn_skin.xml.h:776
 #: skins_atemio_skin.xml.h:728 skins_cool_skin.xml.h:859
-#: skins_default_skin.xml.h:756 skins_kravenhd_skin.xml.h:760
+#: skins_default_skin.xml.h:757 skins_kravenhd_skin.xml.h:760
 #: skins_megastyleblue_skin.xml.h:860 skins_megastylegrey_skin.xml.h:860
 #: skins_metrixhd_skin.xml.h:742 skins_nogfx_skin.xml.h:681
 #: skins_sevenhd_skin.xml.h:685 skins_smarttv_skin.xml.h:746
@@ -16846,9 +16862,9 @@ msgstr "WLAN Informacija"
 msgid "WLAN LOG"
 msgstr "WLAN urnalas"
 
-#: skin_default_skin.xml.h:763 skins_0acht5zehn_skin.xml.h:784
+#: skin_default_skin.xml.h:764 skins_0acht5zehn_skin.xml.h:784
 #: skins_0acht5zehn_skin.xml.h:905 skins_atemio_skin.xml.h:736
-#: skins_cool_skin.xml.h:869 skins_default_skin.xml.h:763
+#: skins_cool_skin.xml.h:869 skins_default_skin.xml.h:764
 #: skins_kravenhd_skin.xml.h:767 skins_megastyleblue_skin.xml.h:870
 #: skins_megastylegrey_skin.xml.h:870 skins_metrixhd_skin.xml.h:750
 #: skins_nogfx_skin.xml.h:689 skins_nogfx_skin.xml.h:805
@@ -16887,14 +16903,14 @@ msgstr ""
 msgid "WM2018 Plugin"
 msgstr ""
 
-#: skin_default_skin.xml.h:764 skins_default_skin.xml.h:764
+#: skin_default_skin.xml.h:765 skins_default_skin.xml.h:765
 #: skins_kravenhd_skin.xml.h:768 skins_sevenhd_skin.xml.h:694
 msgid "WMA-Pro Mode"
 msgstr ""
 
-#: skin_default_skin.xml.h:765 skins_0acht5zehn_skin.xml.h:785
+#: skin_default_skin.xml.h:766 skins_0acht5zehn_skin.xml.h:785
 #: skins_atemio_skin.xml.h:737 skins_cool_skin.xml.h:870
-#: skins_default_skin.xml.h:765 skins_kravenhd_skin.xml.h:769
+#: skins_default_skin.xml.h:766 skins_kravenhd_skin.xml.h:769
 #: skins_megastyleblue_skin.xml.h:871 skins_megastylegrey_skin.xml.h:871
 #: skins_metrixhd_skin.xml.h:751 skins_nogfx_skin.xml.h:690
 #: skins_sevenhd_skin.xml.h:695 skins_smarttv_skin.xml.h:755
@@ -16910,9 +16926,9 @@ msgstr ""
 msgid "WPA2"
 msgstr ""
 
-#: skin_default_skin.xml.h:768 skins_0acht5zehn_skin.xml.h:789
+#: skin_default_skin.xml.h:769 skins_0acht5zehn_skin.xml.h:789
 #: skins_atemio_skin.xml.h:739 skins_cool_skin.xml.h:873
-#: skins_default_skin.xml.h:768 skins_kravenhd_skin.xml.h:773
+#: skins_default_skin.xml.h:769 skins_kravenhd_skin.xml.h:773
 #: skins_megastyleblue_skin.xml.h:874 skins_megastylegrey_skin.xml.h:874
 #: skins_metrixhd_skin.xml.h:753 skins_nogfx_skin.xml.h:692
 #: skins_sevenhd_skin.xml.h:697 skins_smarttv_skin.xml.h:758
@@ -16939,9 +16955,9 @@ msgstr ""
 msgid "Wait"
 msgstr ""
 
-#: skin_default_skin.xml.h:758 skins_0acht5zehn_skin.xml.h:779
+#: skin_default_skin.xml.h:759 skins_0acht5zehn_skin.xml.h:779
 #: skins_atemio_skin.xml.h:731 skins_cool_skin.xml.h:862
-#: skins_default_skin.xml.h:758 skins_kravenhd_skin.xml.h:761
+#: skins_default_skin.xml.h:759 skins_kravenhd_skin.xml.h:761
 #: skins_megastyleblue_skin.xml.h:863 skins_megastylegrey_skin.xml.h:863
 #: skins_metrixhd_skin.xml.h:745 skins_nogfx_skin.xml.h:684
 #: skins_sevenhd_skin.xml.h:688 skins_smarttv_skin.xml.h:749
@@ -16961,9 +16977,9 @@ msgstr "Palaukite prijungimo ar paspauskite mygtuk EXIT"
 msgid "Wait for install or press EXIT"
 msgstr ""
 
-#: skin_default_skin.xml.h:760 skins_0acht5zehn_skin.xml.h:781
+#: skin_default_skin.xml.h:761 skins_0acht5zehn_skin.xml.h:781
 #: skins_atemio_skin.xml.h:733 skins_cool_skin.xml.h:864
-#: skins_default_skin.xml.h:760 skins_kravenhd_skin.xml.h:763
+#: skins_default_skin.xml.h:761 skins_kravenhd_skin.xml.h:763
 #: skins_megastyleblue_skin.xml.h:865 skins_megastylegrey_skin.xml.h:865
 #: skins_metrixhd_skin.xml.h:747 skins_nogfx_skin.xml.h:686
 #: skins_sevenhd_skin.xml.h:690 skins_smarttv_skin.xml.h:751
@@ -16971,9 +16987,9 @@ msgstr ""
 msgid "Wakeup A/V Receiver"
 msgstr ""
 
-#: skin_default_skin.xml.h:761 skins_0acht5zehn_skin.xml.h:782
+#: skin_default_skin.xml.h:762 skins_0acht5zehn_skin.xml.h:782
 #: skins_atemio_skin.xml.h:734 skins_cool_skin.xml.h:865
-#: skins_default_skin.xml.h:761 skins_kravenhd_skin.xml.h:764
+#: skins_default_skin.xml.h:762 skins_kravenhd_skin.xml.h:764
 #: skins_megastyleblue_skin.xml.h:866 skins_megastylegrey_skin.xml.h:866
 #: skins_metrixhd_skin.xml.h:748 skins_nogfx_skin.xml.h:687
 #: skins_sevenhd_skin.xml.h:691 skins_smarttv_skin.xml.h:752
@@ -16981,9 +16997,9 @@ msgstr ""
 msgid "Wakeup TV"
 msgstr ""
 
-#: skin_default_skin.xml.h:759 skins_0acht5zehn_skin.xml.h:780
+#: skin_default_skin.xml.h:760 skins_0acht5zehn_skin.xml.h:780
 #: skins_atemio_skin.xml.h:732 skins_cool_skin.xml.h:863
-#: skins_default_skin.xml.h:759 skins_kravenhd_skin.xml.h:762
+#: skins_default_skin.xml.h:760 skins_kravenhd_skin.xml.h:762
 #: skins_megastyleblue_skin.xml.h:864 skins_megastylegrey_skin.xml.h:864
 #: skins_metrixhd_skin.xml.h:746 skins_nogfx_skin.xml.h:685
 #: skins_sevenhd_skin.xml.h:689 skins_smarttv_skin.xml.h:750
@@ -17034,9 +17050,9 @@ msgstr ""
 msgid "Wed"
 msgstr "Tre"
 
-#: global.h:6887 global.h:6897 rectimer.h:1102 skin_default_skin.xml.h:762
+#: global.h:6887 global.h:6897 rectimer.h:1102 skin_default_skin.xml.h:763
 #: skins_0acht5zehn_skin.xml.h:783 skins_atemio_skin.xml.h:735
-#: skins_cool_skin.xml.h:868 skins_default_skin.xml.h:762
+#: skins_cool_skin.xml.h:868 skins_default_skin.xml.h:763
 #: skins_kravenhd_skin.xml.h:766 skins_megastyleblue_skin.xml.h:869
 #: skins_megastylegrey_skin.xml.h:869 skins_metrixhd_skin.xml.h:749
 #: skins_nogfx_skin.xml.h:688 skins_sevenhd_skin.xml.h:692
@@ -17150,8 +17166,8 @@ msgstr ""
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 
-#: skin_default_skin.xml.h:766 skins_0acht5zehn_skin.xml.h:786
-#: skins_default_skin.xml.h:766
+#: skin_default_skin.xml.h:767 skins_0acht5zehn_skin.xml.h:786
+#: skins_default_skin.xml.h:767
 msgid "Workaround pink screen"
 msgstr ""
 
@@ -17159,9 +17175,9 @@ msgstr ""
 msgid "Write error"
 msgstr "!!! WRITE ERROR !!!"
 
-#: skin_default_skin.xml.h:767 skins_0acht5zehn_skin.xml.h:787
+#: skin_default_skin.xml.h:768 skins_0acht5zehn_skin.xml.h:787
 #: skins_atemio_skin.xml.h:738 skins_cool_skin.xml.h:871
-#: skins_default_skin.xml.h:767 skins_kravenhd_skin.xml.h:770
+#: skins_default_skin.xml.h:768 skins_kravenhd_skin.xml.h:770
 #: skins_megastyleblue_skin.xml.h:872 skins_megastylegrey_skin.xml.h:872
 #: skins_metrixhd_skin.xml.h:752 skins_nogfx_skin.xml.h:691
 #: skins_sevenhd_skin.xml.h:696 skins_smarttv_skin.xml.h:756
@@ -17258,9 +17274,9 @@ msgstr ""
 msgid "Y-Resolution"
 msgstr "Y- Rezoliucija:"
 
-#: skin_default_skin.xml.h:769 skins_0acht5zehn_skin.xml.h:794
+#: skin_default_skin.xml.h:770 skins_0acht5zehn_skin.xml.h:794
 #: skins_atemio_skin.xml.h:744 skins_cool_skin.xml.h:878
-#: skins_default_skin.xml.h:769 skins_kravenhd_skin.xml.h:775
+#: skins_default_skin.xml.h:770 skins_kravenhd_skin.xml.h:775
 #: skins_megastyleblue_skin.xml.h:879 skins_megastylegrey_skin.xml.h:879
 #: skins_metrixhd_skin.xml.h:759 skins_nogfx_skin.xml.h:697
 #: skins_sevenhd_skin.xml.h:702 skins_smarttv_skin.xml.h:763
@@ -17348,9 +17364,9 @@ msgstr "Switch back"
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback aktivuoas. Ar norite j sustabdyti ?"
 
-#: skin_default_skin.xml.h:770 skins_0acht5zehn_skin.xml.h:797
+#: skin_default_skin.xml.h:771 skins_0acht5zehn_skin.xml.h:797
 #: skins_atemio_skin.xml.h:747 skins_cool_skin.xml.h:882
-#: skins_default_skin.xml.h:770 skins_kravenhd_skin.xml.h:777
+#: skins_default_skin.xml.h:771 skins_kravenhd_skin.xml.h:777
 #: skins_megastyleblue_skin.xml.h:883 skins_megastylegrey_skin.xml.h:883
 #: skins_metrixhd_skin.xml.h:762 skins_nogfx_skin.xml.h:700
 #: skins_sevenhd_skin.xml.h:705 skins_smarttv_skin.xml.h:766
@@ -18719,8 +18735,8 @@ msgstr ""
 msgid "menuprotect"
 msgstr ""
 
-#: skin_default_skin.xml.h:772 skins_0acht5zehn_skin.xml.h:846
-#: skins_default_skin.xml.h:772 webif_help.h:51
+#: skin_default_skin.xml.h:773 skins_0acht5zehn_skin.xml.h:846
+#: skins_default_skin.xml.h:773 webif_help.h:51
 msgid "messagebox"
 msgstr ""
 
@@ -19973,6 +19989,10 @@ msgstr "Isaugoti padt"
 msgid "streaminfo Plugin"
 msgstr ""
 
+#: skin_default_skin.xml.h:649 skins_default_skin.xml.h:649
+msgid "streamurl service"
+msgstr ""
+
 #: webif_help.h:92
 msgid "subtitle"
 msgstr "subtitr"
@@ -20022,7 +20042,7 @@ msgstr ""
 msgid "system_backup_restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:774 skins_default_skin.xml.h:774
+#: skin_default_skin.xml.h:775 skins_default_skin.xml.h:775
 msgid "system_infos"
 msgstr ""
 
@@ -20034,7 +20054,7 @@ msgstr ""
 msgid "system_sysinfos_main"
 msgstr ""
 
-#: skin_default_skin.xml.h:773 skins_default_skin.xml.h:773 webif_help.h:96
+#: skin_default_skin.xml.h:774 skins_default_skin.xml.h:774 webif_help.h:96
 msgid "systeminfo"
 msgstr ""
 
@@ -20479,8 +20499,8 @@ msgstr ""
 msgid "textinputhist"
 msgstr ""
 
-#: skin_default_skin.xml.h:671 skins_0acht5zehn_skin.xml.h:692
-#: skins_cool_skin.xml.h:757 skins_default_skin.xml.h:671
+#: skin_default_skin.xml.h:672 skins_0acht5zehn_skin.xml.h:692
+#: skins_cool_skin.xml.h:757 skins_default_skin.xml.h:672
 #: skins_megastyleblue_skin.xml.h:759 skins_megastylegrey_skin.xml.h:759
 #: skins_nogfx_skin.xml.h:601
 msgid "thereafter on this Channel:"
@@ -20586,9 +20606,9 @@ msgstr ""
 msgid "tunerreceptiondvbt"
 msgstr ""
 
-#: network_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:721
+#: network_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:722
 #: skins_0acht5zehn_skin.xml.h:738 skins_atemio_skin.xml.h:692
-#: skins_cool_skin.xml.h:806 skins_default_skin.xml.h:721
+#: skins_cool_skin.xml.h:806 skins_default_skin.xml.h:722
 #: skins_kravenhd_skin.xml.h:726 skins_megastyleblue_skin.xml.h:808
 #: skins_megastylegrey_skin.xml.h:808 skins_metrixhd_skin.xml.h:708
 #: skins_nogfx_skin.xml.h:647 skins_sevenhd_skin.xml.h:650
@@ -20646,8 +20666,8 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5568 httpdfunc.h:5614 hwtest.h:478 moduleconfig.h:449
-#: security.h:2159 skin_default_skin.xml.h:728 skins_0acht5zehn_skin.xml.h:748
-#: skins_default_skin.xml.h:728 skinselector.h:138
+#: security.h:2159 skin_default_skin.xml.h:729 skins_0acht5zehn_skin.xml.h:748
+#: skins_default_skin.xml.h:729 skinselector.h:138
 #: skins_metrixhd_skin.xml.h:716 skins_tobayer01_skin.xml.h:684
 #: skins_ufs912_skin.xml.h:682 stream.h:22 transponder.h:122 transponder.h:158
 #: transponder.h:194 transponder.h:227 transponder.h:259 transponder.h:295
@@ -20673,9 +20693,9 @@ msgstr "Atrakinta -> Urakink j"
 msgid "unstable"
 msgstr "svn-beta"
 
-#: skin_default_skin.xml.h:730 skins_0acht5zehn_skin.xml.h:749
+#: skin_default_skin.xml.h:731 skins_0acht5zehn_skin.xml.h:749
 #: skins_atemio_skin.xml.h:703 skins_cool_skin.xml.h:817
-#: skins_default_skin.xml.h:730 skins_kravenhd_skin.xml.h:733
+#: skins_default_skin.xml.h:731 skins_kravenhd_skin.xml.h:733
 #: skins_megastyleblue_skin.xml.h:818 skins_megastylegrey_skin.xml.h:818
 #: skins_metrixhd_skin.xml.h:718 skins_nogfx_skin.xml.h:658
 #: skins_sevenhd_skin.xml.h:661 skins_smarttv_skin.xml.h:716
