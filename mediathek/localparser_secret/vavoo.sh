@@ -163,7 +163,9 @@ search()
 			}
 		' >$TMP/$FILENAME.list
 	fi
-	echo "$TMP/$FILENAME.list"
+#	echo "$TMP/$FILENAME.list"
+    cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
+	echo "$TMP/$FILENAME.sort.list"
 }
 
 play()
