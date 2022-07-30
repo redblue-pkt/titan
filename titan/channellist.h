@@ -657,6 +657,14 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 		listbox->fontcol = convertcol("editmode_fontcol");
 		changetitle(channellist, tmpstr);
 	}
+	else if(listmode == STREAMMODE)
+	{
+		tmpstr = ostrcat(*oldtitle, " - ", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Stream mode"), 1, 0);
+		listbox->bgcol = convertcol("protectmode_bgcol");
+		listbox->fontcol = convertcol("protectmode_fontcol");
+		changetitle(channellist, tmpstr);
+	}
 	else
 	{	
 		changetitle(channellist, *oldtitle);
@@ -837,6 +845,7 @@ start:
 			resettvpic();
 			listmode = screenlistedit(list, (struct channel*)listbox->select->handle, aktlist);
 		}
+
 		if(listmode == NOMODE) goto end;
 		if(nochanneltitle == 0) changechanneltitle(channellist, listbox, listmode, &oldtitle, &oldfontcol, &oldbgcol);
 	}
@@ -898,7 +907,6 @@ start:
 
 		if((flag == 0 || flag == 3) && listmode > NOMODE)
 		{
-
 			if(rcret == getrcconfigint("rcmenu", NULL))
 			{
 				int sid = 0;
@@ -952,6 +960,7 @@ start:
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, flag);
 				drawscreen(channellist, 0, 0);
 			}
+
 			if(listmode == STREAMMODE && listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
 				if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select->handle != NULL)
@@ -968,7 +977,8 @@ start:
 			            if(startplugin != NULL)
 			            {
 printf("status.streamurl1: %s\n", status.streamurl);
-                        startplugin(localparser, ((struct provider*)listbox->select->handle1)->name);
+printf("status.streamurl1: %s\n", ((struct channel*)listbox->select->handle)->name);
+                        startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
 printf("status.streamurl2: %s\n", status.streamurl);
   			            }
 		            }
@@ -1766,6 +1776,7 @@ printf("status.streamurl2: %s\n", status.streamurl);
 
 			clearscreen(channellist);
 			resettvpic();
+printf("status.streamurlc2: %s\n", status.streamurl);
 
 			if(listbox->select != NULL)
 				listmode = screenlistedit(list, (struct channel*)listbox->select->handle, aktlist);
