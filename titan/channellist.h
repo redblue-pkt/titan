@@ -968,6 +968,7 @@ start:
 			            if(startplugin != NULL)
 			            {
 				            streamurl = (char*)startplugin(localparser, ((struct provider*)listbox->select->handle1)->name);
+printf("streamurl1: %s\n", streamurl);
 			            }
 		            }
                     free(localparser), localparser = NULL;
