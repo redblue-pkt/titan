@@ -965,7 +965,7 @@ start:
 			{
 				if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select->handle != NULL)
 				{
-                    char* localparser = NULL;
+                    char* localparser = NULL, *streamurl = NULL;
                     localparser = ostrcat("/tmp/localparser/vavoo.sh", NULL, 0, 0);
 
 		            struct skin* tithekplugin = getplugin("Titan Mediathek");
@@ -978,16 +978,16 @@ start:
 			            {
 printf("status.streamurl1: %s\n", status.streamurl);
 printf("status.streamurl1: %s\n", ((struct channel*)listbox->select->handle)->name);
-                        startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
-printf("status.streamurl2: %s\n", status.streamurl);
+                        streamurl = (char*)startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
+printf("streamurl: %s\n", streamurl);
   			            }
 		            }
                     free(localparser), localparser = NULL;
 
-                    if (status.streamurl != NULL)
-                        ((struct channel*)listbox->select->handle)->streamurl = ostrcat(status.streamurl, NULL, 0, 0);
+                    if (streamurl != NULL)
+                        ((struct channel*)listbox->select->handle)->streamurl = ostrcat(streamurl, NULL, 0, 0);
 
-                    free(status.streamurl), status.streamurl = NULL;
+                    free(streamurl), streamurl = NULL;
 					status.writechannel = 1;
 				}
 				delmarkedscreennodes(channellist, 1);
