@@ -966,6 +966,7 @@
 		<node parent="listbox" name="protectmode" text="protect service" valign="middle" width="100%">
 		<node parent="listbox" name="addmode" text="add service" valign="middle" width="100%">
 		<node parent="listbox" name="editmode" text="rename service" valign="middle" width="100%">
+		<node parent="listbox" name="streammode" text="streamurl service" valign="middle" width="100%">
 		<node parent="listbox" name="sortmode" text="sort service" valign="middle" width="100%">
 		<node parent="listbox" name="setstartchannel" text="set startchannel" valign="middle" width="100%">
 		<node parent="listbox" name="delstartchannel" text="del startchannel" valign="middle" width="100%">

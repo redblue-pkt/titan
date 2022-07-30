@@ -952,6 +952,38 @@ start:
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, flag);
 				drawscreen(channellist, 0, 0);
 			}
+			if(listmode == STREAMMODE && listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcok", NULL))
+			{
+				if((list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL) && listbox->select->handle != NULL)
+				{
+                    char* localparser = NULL, *streamurl = NULL;
+                    localparser = ostrcat("/tmp/localparser/vavoo.sh", NULL, 0, 0);
+
+		            struct skin* tithekplugin = getplugin("Titan Mediathek");
+		            if(tithekplugin != NULL)
+		            {
+			            struct tithek* (*startplugin)(char*, char*);
+
+			            startplugin = dlsym(tithekplugin->pluginhandle, "localparser_search_streamurl");
+			            if(startplugin != NULL)
+			            {
+				            streamurl = (char*)startplugin(localparser, ((struct provider*)listbox->select->handle1)->name);
+			            }
+		            }
+                    free(localparser), localparser = NULL;
+
+                    if (streamurl != NULL)
+                        ((struct channel*)listbox->select->handle)->streamurl = ostrcat(streamurl, NULL, 0, 0);
+
+                    free(streamurl), streamurl = NULL;
+					status.writechannel = 1;
+				}
+				delmarkedscreennodes(channellist, 1);
+				delmarkedscreennodes(channellist, 2);
+				recalclist(list, aktlist, listmode, channellist, listbox, channeltimeline);
+				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, flag);
+				drawscreen(channellist, 0, 0);
+			}
 			if(listmode == CPMODE && listbox->select != NULL && listbox->select->handle != NULL && rcret == getrcconfigint("rcok", NULL))
 			{
 				if(list == PROVIDERLIST)

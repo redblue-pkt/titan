@@ -10,6 +10,7 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 	struct skin* rmmode = getscreennode(listedit, "rmmode");
 	struct skin* movemode = getscreennode(listedit, "movemode");
 	struct skin* protectmode = getscreennode(listedit, "protectmode");
+	struct skin* streammode = getscreennode(listedit, "streammode");
 	struct skin* addmode = getscreennode(listedit, "addmode");
 	struct skin* editmode = getscreennode(listedit, "editmode");
 	struct skin* sortmode = getscreennode(listedit, "sortmode");
@@ -25,6 +26,7 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 	rmmode->hidden = NO;
 	movemode->hidden = NO;
 	protectmode->hidden = NO;
+	streammode->hidden = NO;
 	addmode->hidden = YES;
 	editmode->hidden = YES;
 	sortmode->hidden = YES;
@@ -37,6 +39,7 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 	{
 		cpmode->hidden = YES;
 		protectmode->hidden = YES;
+		streammode->hidden = YES;
 	}
 	if(list == SATLIST || list == PROVIDERLIST)
 		cpmode->hidden = NO;
@@ -81,6 +84,8 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 				ret = CPMODE;
 			if(ostrcmp(listbox->select->name, "protectmode") == 0)
 				ret = PROTECTMODE;
+			if(ostrcmp(listbox->select->name, "streammode") == 0)
+				ret = STREAMMODE;
 			if(ostrcmp(listbox->select->name, "editmode") == 0)
 				ret = EDITMODE;
 			if(ostrcmp(listbox->select->name, "addmode") == 0)
