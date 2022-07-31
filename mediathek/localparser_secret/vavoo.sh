@@ -125,6 +125,7 @@ search()
 			}
             /#EXTINF/ \
 			{
+                IGNORECASE=1;
                 if ($0 ~ NEXT)
                 {
 				    if (found == 0)
