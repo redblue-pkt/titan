@@ -1518,7 +1518,7 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 		drawscreen(load, 0, 0);
 
 		strstrip(search);
-		string_tolower(search);
+//		string_tolower(search);
 		search = stringreplacechar(search, ' ', '+');
 
 		cmd = ostrcat(link, NULL, 0, 0);
@@ -1581,7 +1581,7 @@ printf("link: %s\n", link);
 	if(search != NULL)
 	{
 		strstrip(search);
-		string_tolower(search);
+//		string_tolower(search);
 		search = stringreplacechar(search, ' ', '+');
 		search = stringreplacechar(search, '\'', '+');
 
