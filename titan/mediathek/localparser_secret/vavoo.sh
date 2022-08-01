@@ -144,25 +144,48 @@ search()
 		                j = index(substr($0, i), "\"") - 1
 		                title = substr($0, i, j)
 
+					    picname = tolower(title)
+#	                	gsub(" ", ".", picname)
+	                	gsub(/ FHD/, "", picname)
+	                	gsub(/ HD\+/, "", picname)
+	                	gsub(/ HD/, "", picname)
+	                	gsub(/ RAW/, "", picname)
+	                	gsub(/ HEVC/, "", picname)
+                        gsub(/\(.*\)/, "", picname)
+	                	gsub(/\+/, "", picname)
+
+                        gsub(/^[ \t]+/, "", picname)
+                        gsub(/[ \t]+$/, "", picname)
+                        gsub(/\t+/, "", picname)
+
+                        gsub(/^[ ]+/, "", picname)
+                        gsub(/[ ]+$/, "", picname)
+                        gsub(/ +/, "", picname)
+
                         if ($0 ~ /tvg-logo=/)
                         {
     					    i = index($0, "tvg-logo=\"") + 10
 	    	                j = index(substr($0, i), "\"") - 1
 	       	                pic = substr($0, i, j)
                             gsub("https://vjackson", "https://www2.vjackson", pic)
+
                         }
 
-					    if ( pic == "" )
-					    {
-						    picname = tolower(title)
-		                	gsub(" ", ".", picname)
-						    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
-					    }
-	    
                         if (pic ~ /.png/)
                             picext = "png"
                         else
-                            picext = "jpg"                        
+                            picext = "jpg"  
+
+					    if ( pic == "" )
+					    {
+#						    pic = "http://2openaaf.dyndns.tv/mediathek/menu/" picname ".png"
+#						    pic = "http://aus.openaaf.dyndns.tv/mediathek/menu/default.jpg"
+						    pic = "http://aus.openaaf.dyndns.tv/mediathek/menu/default.png"
+                            picext = "none"
+					    }
+
+# show 1 sender
+#                       gsub(/(.*)/, "", title)
 
                         found = 1
 					    next
@@ -177,7 +200,8 @@ search()
 				    if (title != "" && title !~ "= = =")
 				    {
 					    piccount += 1
-					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
+					    print title "#" newpage "#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
+#					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
 #						print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 #						print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 				    }
