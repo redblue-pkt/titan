@@ -6,7 +6,7 @@ INPUT=$2
 PAGE=$3
 NEXT=$4
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-URL=https://www2.vjackson.info/live2/index
+URL=https://www2.vjackson.info
 NAME="VaVoo"
 
 case $2 in
@@ -55,8 +55,8 @@ getkey()
 
 mainmenu()
 {
-	echo "Category#$SRC $SRC category#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "Suchen#$SRC $SRC search 'dummy' '%search%' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "Category#$SRC $SRC category '/live2/index'#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Suchen#$SRC $SRC search '/live2/index' '%search%' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -66,7 +66,7 @@ category()
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
 
-		$curlbin -o - $URL | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
@@ -82,20 +82,12 @@ category()
 		            j = index(substr($0, i), "\"") - 1
 		            title = substr($0, i, j)
 
-#                    if ($0 ~ /tvg-logo=/)
-#                    {
-#					    i = index($0, "tvg-logo=\"") + 10
-#    	                j = index(substr($0, i), "\"") - 1
-#       	             pic = substr($0, i, j)
-#                        gsub("https://vjackson", "https://www2.vjackson", pic)
-#                    }
+				    picname = tolower(title)
+                	gsub(" ", ".", picname)
+				    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
 
-#				    if ( pic == "" )
-#				    {
-					    picname = tolower(title)
-	                	gsub(" ", ".", picname)
-					    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
-#				    }
+                    if(title == "Germany")
+                        pic = "https://www2.vjackson.info/live2/logo/3597546190.jpeg"
 
 #germany
 #https://www2.vjackson.info/live2/logo/3198653999.jpeg
@@ -104,7 +96,8 @@ category()
 					if (title != "")
 					{
                         titletmp = titletmp title
-						print title "#" SRC " " SRC " search \x27" PAGE "\x27 \x27" title "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+#						print title "#" SRC " " SRC " search \x27" PAGE "\x27 \x27" title "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+						print title "#" SRC " " SRC " search \x27" PAGE "\x27 \x27" title "\x27#" pic "#" PICNAME "." picname ".jpg#" NAME "#0"
                     }
 					newpage = ""
 					title = ""
@@ -128,7 +121,7 @@ search()
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
 
-		$curlbin -o - $URL | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
@@ -149,7 +142,7 @@ search()
 		                title = substr($0, i, j)
 
 					    picname = tolower(title)
-#	                	gsub(" ", ".", picname)
+
 	                	gsub(/ FHD/, "", picname)
 	                	gsub(/ HD\+/, "", picname)
 	                	gsub(/ HD/, "", picname)
@@ -171,7 +164,7 @@ search()
     					    i = index($0, "tvg-logo=\"") + 10
 	    	                j = index(substr($0, i), "\"") - 1
 	       	                pic = substr($0, i, j)
-                            gsub("https://vjackson", "https://www2.vjackson", pic)
+                            gsub("https://vjackson.info", URL, pic)
 
                         }
 
