@@ -97,6 +97,10 @@ category()
 					    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
 #				    }
 
+#germany
+#https://www2.vjackson.info/live2/logo/3198653999.jpeg
+#https://www2.vjackson.info/live2/logo/3597546190.jpeg
+
 					if (title != "")
 					{
                         titletmp = titletmp title
@@ -171,20 +175,13 @@ search()
 
                         }
 
+					    if ( pic == "" )
+						    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
+
                         if (pic ~ /.png/)
                             picext = "png"
                         else
                             picext = "jpg"  
-
-					    if ( pic == "" )
-					    {
-#						    pic = "http://2openaaf.dyndns.tv/mediathek/menu/" picname ".png"
-#						    pic = "http://aus.openaaf.dyndns.tv/mediathek/menu/default.jpg"
-#						    pic = "http://openaaf.dyndns.tv/mediathek/menu/default.auto"
-						    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".auto"
-
-                            picext = "auto"
-					    }
 
 # show 1 sender
 #                       gsub(/(.*)/, "", title)
