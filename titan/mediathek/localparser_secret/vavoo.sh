@@ -39,10 +39,10 @@ init()
 getkey()
 {
     if [ ! -e $TMP/vavoo.7.signed.base64.timestamp.sed ];then
-        curl -v -L -s --user-agent "VAVOO/2.6" -X POST http://www.vavoo.tv/api/box/guest > $TMP/vavoo.1.guest
+        $curlbin -X POST http://www.vavoo.tv/api/box/guest > $TMP/vavoo.1.guest
         token=$(cat $TMP/vavoo.1.guest | awk 'BEGIN {} /token/ { i = index($0, "token\":\"") + 8;j = index(substr($0, i), "\"") - 1;token = substr($0, i, j); print token; next}')
         echo $token > $TMP/vavoo.2.token
-        curl -v -L -s --user-agent "VAVOO/2.6" --data "token=$token" -X POST https://www.vavoo.tv/api/box/ping2 > $TMP/vavoo.3.ping2
+        $curlbin --data "token=$token" -X POST https://www.vavoo.tv/api/box/ping2 > $TMP/vavoo.3.ping2
         signed=$(cat $TMP/vavoo.3.ping2 | awk 'BEGIN {} /signed/ { i = index($0, "signed\":\"") + 9;j = index(substr($0, i), "\"") - 1;signed = substr($0, i, j); print signed; next}')
         echo $signed > $TMP/vavoo.4.signed
         base64 -d $TMP/vavoo.4.signed > $TMP/vavoo.5.signed.base64
