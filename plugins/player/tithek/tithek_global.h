@@ -1641,4 +1641,76 @@ printf("cmd2: %s\n", cmd);
 	return status.streamurl;
 }
 
+void checkpic(char* localfile, int flag)
+{
+    int defpic = 0;
+    off64_t picsize = 0;
+
+    char* tmp = NULL;
+    tmp = readbintomem(localfile, 3);
+    if(ostrncmp("GIF", tmp, 3) == 0) defpic = 1; //gif
+    if(defpic == 1) goto end;
+    if(ostrncmp("<", tmp, 1) == 0) defpic = 1; //html
+    if(defpic == 1) goto end;
+    if(ostrncmp("{", tmp, 1) == 0) defpic = 1; //java
+    if(defpic == 1) goto end;
+    
+    if(!islink(localfile))
+    {
+        picsize = getfilesize(localfile);
+        if(picsize < 200) defpic = 1;
+        if(defpic == 1) goto end;
+    }
+
+    free(tmp); tmp = NULL;
+    tmp = readbintomem(localfile, 300);
+
+    if(ostrstr(tmp, "{") != NULL) defpic = 1; //java
+    if(defpic == 1) goto end;
+    if(ostrstr(tmp, "<") != NULL) defpic = 1; //java
+    if(defpic == 1) goto end;
+    if(ostrstr(tmp, "GIF") != NULL) defpic = 1; //java
+    if(defpic == 1) goto end;
+    if(ostrstr(tmp, "(") != NULL) defpic = 1; //java
+    if(defpic == 1) goto end;
+
+end:
+
+    printf("checkpic flag: %d localfile: %s defpic: %d picsize: %lld tmp: %s\n", flag, localfile, defpic, picsize, tmp);
+    free(tmp); tmp = NULL;
+
+    if(defpic == 1)
+    {
+        m_lock(&status.tithekmutex, 20);
+        char* defaultpic = NULL;
+
+#ifdef MIPSEL
+        if(flag == 2 || flag == 3)
+            defaultpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
+        else
+            defaultpic = createpluginpath("/tithek/default.jpg", 0);
+
+        char* cmd = NULL;
+        cmd = ostrcat(cmd, "cp -a ", 1, 0);
+        cmd = ostrcat(cmd, defaultpic, 1, 0);
+        cmd = ostrcat(cmd, " ", 1, 0);
+        cmd = ostrcat(cmd, localfile, 1, 0);
+        system(cmd);
+        free(cmd), cmd = NULL;
+
+#else
+        unlink(localfile);
+
+        if(flag == 2 || flag == 3)
+            defaultpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
+        else
+            defaultpic = createpluginpath("/tithek/default.jpg", 0);
+
+        symlink(defaultpic, localfile);
+#endif
+
+        free(defaultpic), defaultpic = NULL;
+        m_unlock(&status.tithekmutex, 20);
+    }
+}
 #endif
