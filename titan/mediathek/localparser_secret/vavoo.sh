@@ -89,6 +89,19 @@ category()
                     if(title == "Germany")
                         pic = "https://www2.vjackson.info/live2/logo/3597546190.jpeg"
 
+                    if(title == "France")
+                        pic = "https://www2.vjackson.info/live2/logo/1277148681.jpeg"
+
+                    if(title == "Albania")
+                        pic = "https://www2.vjackson.info/live2/logo/2745766782.jpeg"
+
+#albania
+#https://www2.vjackson.info/live2/logo/2745766782.jpeg
+
+#france
+#https://www2.vjackson.info/live2/logo/665190824.jpeg
+#https://www2.vjackson.info/live2/logo/1277148681.jpeg
+
 #germany
 #https://www2.vjackson.info/live2/logo/3198653999.jpeg
 #https://www2.vjackson.info/live2/logo/3597546190.jpeg
@@ -143,13 +156,17 @@ search()
 
 					    picname = tolower(title)
 
-	                	gsub(/ FHD/, "", picname)
-	                	gsub(/ HD\+/, "", picname)
-	                	gsub(/ HD/, "", picname)
-	                	gsub(/ RAW/, "", picname)
-	                	gsub(/ HEVC/, "", picname)
+                        gsub(/^[(]+/, "", picname)
+
+	                	gsub(/ FHD/, " ", picname)
+	                	gsub(/ HD\+/, " ", picname)
+	                	gsub(/ HD/, " ", picname)
+	                	gsub(/ RAW/, " ", picname)
+	                	gsub(/ HEVC/, " ", picname)
                         gsub(/\(.*\)/, "", picname)
 	                	gsub(/\+/, "", picname)
+	                	gsub(/\//, " ", picname)
+                        gsub(/+[)]+/, "", picname)
 
                         gsub(/^[ \t]+/, "", picname)
                         gsub(/[ \t]+$/, "", picname)
