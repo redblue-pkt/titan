@@ -544,7 +544,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
             printf("playerstart2 name: %s\n", chnode->name);
             printf("playerstart2 streamurl: %s\n", chnode->streamurl);
             printf("playerstart2 epgurl: %s\n", chnode->epgurl);
-			screenplay(tmpstr1, filename, 2, flag);
             addconfigtmp("playerbuffersize", "0");
             addconfigtmp("playerbufferseektime", "0");
             playerstart(chnode->streamurl);
