@@ -14,6 +14,14 @@ char* localparser_hoster(char* link);
 int localparser_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 char* list_hoster_streams(char* input);
 void checkpic(char* localfile, int flag);
+char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag);
+
+//void tithekmenuthread(struct stimerthread* timernode, struct skin* listbox, int flag);
+//void tithekmenutest(struct skin* listbox, int flag);
+void tithekmenutestlast(struct skin* listbox, int flag);
+void updatemenu(struct skin* listbox, int flag);
+void updatemenuthread(struct stimerthread* timernode, struct download* node, int flag);
+void createtithekmenuthread(struct stimerthread* timernode, struct skin* listbox, int flag);
 
 void titheklog(int debuglevel, char* name1, char* name2, char* name3, char* name4, char* content)
 {
