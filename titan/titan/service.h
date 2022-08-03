@@ -161,7 +161,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
         addconfigtmp("playerbuffersize", "0");
         addconfigtmp("playerbufferseektime", "0");
         playerstart(chnode->streamurl);
-        sleep(1);
+//        sleep(1);
 		delconfigtmp("playerbuffersize");
 		delconfigtmp("playerbufferseektime");
     }
@@ -547,7 +547,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
             addconfigtmp("playerbuffersize", "0");
             addconfigtmp("playerbufferseektime", "0");
             playerstart(chnode->streamurl);
-            sleep(1);
+//            sleep(1);
 			delconfigtmp("playerbuffersize");
 			delconfigtmp("playerbufferseektime");
         }
