@@ -5,6 +5,10 @@
 #define TITHEKPATH "/tmp/tithek"
 int tithekdownloadrun = 0;
 int tithekdownloadcount = 0;
+
+int tithekmenurun = 0;
+int tithekmenucount = 0;
+
 int tithekrun = 0;
 int tithekexit = 0;
 //int tithekmovie4k = 0;
@@ -552,6 +556,7 @@ void freetithek()
 	debug(1000, "out");
 }
 
+
 void tithekdownloadthread(struct stimerthread* timernode, struct download* node, int flag)
 {
 	int defpic = 0;
@@ -701,16 +706,16 @@ printf("link2: %s\n", link);
 	}
 	free(tmpstr); tmpstr = NULL;
 
-	debug(99, "---------------------------------------");
-	debug(99, "link: %s", link);
-	debug(99, "localname: %s", localname);
-	debug(99, "---------------------------------------");
-	debug(99, "ip: %s", ip);
-	debug(99, "port: %d", port);
-	debug(99, "path: %s", path);
-	debug(99, "localfile: %s", localfile);
-	debug(99, "pw: %s", pw);
-	debug(99, "---------------------------------------");
+	debug(88, "---------------------------------------");
+	debug(88, "link: %s", link);
+	debug(88, "localname: %s", localname);
+	debug(88, "---------------------------------------");
+	debug(88, "ip: %s", ip);
+	debug(88, "port: %d", port);
+	debug(88, "path: %s", path);
+	debug(88, "localfile: %s", localfile);
+	debug(88, "pw: %s", pw);
+	debug(88, "---------------------------------------");
 
 	if(flag == 99)
 	{
@@ -726,25 +731,35 @@ printf("link2: %s\n", link);
 		{
 			if(pic == 1)
 			{
+printf("ssl=%d usecmd=%d localfile %s link %s\n", ssl, usecmd, localfile, link);
+
 				if(ssl == 1)
                 {
+printf("1ssl=%d usecmd=%d localfile %s link %s\n", ssl, usecmd, localfile, link);
+
   					gethttps(link, localfile, NULL, NULL, NULL, NULL, 0);
-                    checkpic(localfile, flag);
+//                    checkpic(localfile, flag);
                 }
 #ifdef MIPSEL
-				else if(usecmd == 0 && tithekdownloadcount >= 200) //start max 24 threads
+				else if(usecmd == 0 && tithekdownloadcount >= 50) //start max 24 threads
 #else
 				else if(usecmd == 0 && tithekdownloadcount >= 24) //start max 24 threads
 #endif
 //				if(usecmd == 0 && ssl == 0 && tithekdownloadcount >= 24) //start max 24 threads
                 {
+printf("2ssl=%d usecmd=%d localfile %s link %s\n", ssl, usecmd, localfile, link);
+
 					gethttp(ip, path, port, localfile, pw, timeout, NULL, 0);
-                    checkpic(localfile, flag);
+//                    checkpic(localfile, flag);
                 }
 				else
 				{
+printf("3ssl=%d usecmd=%d localfile %s link %s\n", ssl, usecmd, localfile, link);
+
 					//dnode is freed in thread
 					struct download* dnode = calloc(1, sizeof(struct download));
+printf("4ssl=%d usecmd=%d localfile %s link %s\n", ssl, usecmd, localfile, link);
+
 					if(dnode != NULL)
 					{
 //        				if(ssl == 1)
@@ -767,7 +782,7 @@ printf("link2: %s\n", link);
 			{
 				if(usecmd == 1)
 				{
-					debug(99, "cmd: %s", link);
+					debug(88, "cmd: %s", link);
 					system(link);
 				}
 				else if(ssl == 1)
@@ -1188,7 +1203,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			}
 
 
-			debug(99, "--- START ----------------------------------------------------");
+			debug(88, "--- START ----------------------------------------------------");
 			if(title != NULL)
 				tmpstr1 = ostrcat(title, " - ", 0, 0);
 			else
@@ -1202,7 +1217,7 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			if(file_exist(tmpstr2))
 			{
 				new = 1;
-				debug(99, "found oldfile %s", tmpstr2);
+				debug(88, "found oldfile %s", tmpstr2);
 			}
 			free(tmpstr2), tmpstr2 = NULL;
 
@@ -1211,13 +1226,13 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 			if(file_exist(tmpstr2))
 			{
 				fav = 1;
-				debug(99, "found oldfav %s", tmpstr2);
+				debug(88, "found oldfav %s", tmpstr2);
 			}
 			free(tmpstr2), tmpstr2 = NULL;
 
 			free(tmpstr1), tmpstr1 = NULL;
 			
-			debug(99, "--- END -----------------------------------------------------");
+			debug(88, "--- END -----------------------------------------------------");
 
 			if(fav == 1)
 //				tmp->fontcol = 0x0091c9; //get favcol=0091c9
@@ -1243,9 +1258,11 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 			tmp->handle = (char*)titheknode;
 			posx += tmp->width;
-
+printf("createtithekplay 7\n");
 			if(count >= zcount)
 			{
+printf("createtithekplay 8\n");
+
 				count = 0;
 				posx = 0;
 				gridbr = 0;
@@ -1253,6 +1270,8 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 			if(count1 >= pcount)
 			{
+printf("createtithekplay 9\n");
+
 				count1 = 0;
 				pagecount++;
 				skip = 1;
@@ -1261,10 +1280,13 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		titheknode = titheknode->next;
 	}
 
+printf("createtithekplay 10\n");
+
 	if(skip == 0)
 		pagecount++;
 
 	tmpstr = oitoa(sumcount);
+printf("createtithekplay 11\n");
 
 	tmpstr1 = ostrcat(_("found"), NULL, 0, 0);
 	tmpstr1 = ostrcat(tmpstr1, " ", 1, 0);
@@ -1279,15 +1301,19 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 	if(localfile == 0)
 		unlink(tithekfile);
 
+printf("createtithekplay 12\n");
+
 	free(tithekfile); tithekfile = NULL;
+printf("createtithekplay 13\n");
+
 	return pagecount;
 }
 
 //void removefav(char* title, char* link, char* pic, char* localname, char* menutitle, char* fullmenutitle, int flag)
 void removefav(char* title, char* link, char* pic, char* localname, char* menutitle, char* description, int flag)
 {
-debug(99, "removefav title: %s", title);
-debug(99, "removefav menutitle: %s", menutitle);
+debug(88, "removefav title: %s", title);
+debug(88, "removefav menutitle: %s", menutitle);
 
 	int count = 0, i = 0;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *input = NULL;
@@ -1327,12 +1353,12 @@ debug(99, "removefav menutitle: %s", menutitle);
 //				tmpstr2 = createfilename(fullmenutitle, title, 1);
 				tmpstr2 = createfilename(menutitle, title, 1);
 
-				debug(99, "tmpstr2: %s", tmpstr2);
+				debug(88, "tmpstr2: %s", tmpstr2);
 
 				if(file_exist(tmpstr2))
 				{
 					unlink(tmpstr2);
-					debug(99, "remove favorite color entry %s", tmpstr2);
+					debug(88, "remove favorite color entry %s", tmpstr2);
 				}
 				free(tmpstr2), tmpstr2 = NULL;
 			}
@@ -1415,20 +1441,20 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 //		char* filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title);
 
 
-//	debug(99, "fullmenutitle: %s", fullmenutitle);
-	debug(99, "menutitle: %s", menutitle);
-	debug(99, "title: %s", title);
+//	debug(88, "fullmenutitle: %s", fullmenutitle);
+	debug(88, "menutitle: %s", menutitle);
+	debug(88, "title: %s", title);
 
 
 	tmpstr = createfilename(menutitle, title, 1);
 //	tmpstr = createfilename(fullmenutitle, title, 1);
 
-	debug(99, "tmpstr: %s", tmpstr);
+	debug(88, "tmpstr: %s", tmpstr);
 
 	if(!file_exist(tmpstr))
 	{
 		writesys(tmpstr, "1", 0);
-		debug(99, "add favorite color entry %s", tmpstr);
+		debug(88, "add favorite color entry %s", tmpstr);
 	}
 	free(tmpstr), tmpstr = NULL;
 
@@ -1604,14 +1630,14 @@ void cacheplay(char* link, char* filename, int flag)
 		port = atoi(oregex("http://.*:(.*)/.*", link));
 	}
 
-	debug(99, "---------------------------------------");
-	debug(99, "link: %s", link);
-	debug(99, "---------------------------------------");
-	debug(99, "host: %s", host);
-	debug(99, "port: %d", port);
-	debug(99, "path: %s", path);
-	debug(99, "local: %s", file);
-	debug(99, "---------------------------------------");
+	debug(88, "---------------------------------------");
+	debug(88, "link: %s", link);
+	debug(88, "---------------------------------------");
+	debug(88, "host: %s", host);
+	debug(88, "port: %d", port);
+	debug(88, "path: %s", path);
+	debug(88, "local: %s", file);
+	debug(88, "---------------------------------------");
 
 
 	struct download* dnode = NULL;
@@ -1657,17 +1683,17 @@ void cacheplay(char* link, char* filename, int flag)
 
 		int proz = 0;
 		int proz1 = size * 100 / msize;
-		debug(99, "size (%dprozent)", proz1);
+		debug(88, "size (%dprozent)", proz1);
 
 		int proz2 = count * 100 / mcount;
-		debug(99, "time (%dprozent)", proz2);
+		debug(88, "time (%dprozent)", proz2);
 
 		if(proz1 > proz2)
 			proz = proz1;
 		else
 			proz = proz2;
 
-		debug(99, "cacheing...(%lldkb) (%dprozent)", size / 1024, proz);
+		debug(88, "cacheing...(%lldkb) (%dprozent)", size / 1024, proz);
 
 		if(size >= msize)
 			break;
@@ -1790,14 +1816,14 @@ void backgrounddl(char* link, char* filename)
 		port = atoi(oregex("http://.*:(.*)/.*", link));
 	}
 
-	debug(99, "---------------------------------------");
-	debug(99, "link: %s", link);
-	debug(99, "---------------------------------------");
-	debug(99, "host: %s", host);
-	debug(99, "port: %d", port);
-	debug(99, "path: %s", path);
-	debug(99, "local: %s", file);
-	debug(99, "---------------------------------------");
+	debug(88, "---------------------------------------");
+	debug(88, "link: %s", link);
+	debug(88, "---------------------------------------");
+	debug(88, "host: %s", host);
+	debug(88, "port: %d", port);
+	debug(88, "path: %s", path);
+	debug(88, "local: %s", file);
+	debug(88, "---------------------------------------");
 
 	if(ostrstr(path, "|User-Agent=") != NULL)
 	{
@@ -1965,18 +1991,18 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	free(tmpstr2); tmpstr2 = NULL;
 
 	debug(10, "Streamurl check: %s", tmpstr1);
-	debug(99, "Streamurl check: %s", tmpstr1);
+	debug(88, "Streamurl check: %s", tmpstr1);
 	tmpstr = ostrcat(tmpstr1, NULL, 0, 0);
 	tmpstr1 = list_hoster_streams(tmpstr);
 	if(ostrcmp(tmpstr, tmpstr1) != 0)
 	{
 		debug(10, "Streamurl changed to: %s", tmpstr1);
-		debug(99, "Streamurl changed to: %s", tmpstr1);
+		debug(88, "Streamurl changed to: %s", tmpstr1);
 	}
 	else
 	{
 		debug(10, "Streamurl check ok: %s", tmpstr1);
-		debug(99, "Streamurl check ok: %s", tmpstr1);
+		debug(88, "Streamurl check ok: %s", tmpstr1);
 	}
 
 	free(tmpstr), tmpstr = NULL;
@@ -1986,9 +2012,9 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 	if(ostrstr(tmpstr1, "&amp;") != NULL)
 	{
-		debug(99, "change streamurl from: %s", tmpstr1);
+		debug(88, "change streamurl from: %s", tmpstr1);
 		tmpstr1 = string_replace_all("&amp;", "&", tmpstr1, 1);
-		debug(99, "change streamurl to: %s", tmpstr1);
+		debug(88, "change streamurl to: %s", tmpstr1);
 	}
 
 	if(!ostrncmp("errormsg=", tmpstr1, 9))
@@ -1997,14 +2023,14 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 		tmpstr = string_replace("errormsg=", "", tmpstr, 1);
 
-		debug(99, "Found error Msg: %s", tmpstr1);
+		debug(88, "Found error Msg: %s", tmpstr1);
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
 	}
 	else if(!ostrncmp("skip", tmpstr1, 4))
 	{
-		debug(99, "skip playback screen, cancel by user");
+		debug(88, "skip playback screen, cancel by user");
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
 	}
@@ -2012,7 +2038,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		tmpstr = ostrcat(_("Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link"), "\n\n", 0, 0);
 		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
-		debug(99, "Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link: %s", tmpstr1);
+		debug(88, "Parsing Error cant find http*|rtmp*|mms*|rtsp* Stream Link: %s", tmpstr1);
 		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 600, 0, 2);
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
@@ -2023,10 +2049,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 //		char* filename = createfilename(title, title2, 0);
 //		char* filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title);
 
-		debug(99, "::: START :::::::::::::::::::::::::::::::::::::::::::::::::::");
-		debug(99, "flag: %d", ((struct tithek*)listbox->select->handle)->flag);
-		debug(99, "title: %s", ((struct tithek*)listbox->select->handle)->title);
-		debug(99, "menutitle: %s", ((struct tithek*)listbox->select->handle)->menutitle);
+		debug(88, "::: START :::::::::::::::::::::::::::::::::::::::::::::::::::");
+		debug(88, "flag: %d", ((struct tithek*)listbox->select->handle)->flag);
+		debug(88, "title: %s", ((struct tithek*)listbox->select->handle)->title);
+		debug(88, "menutitle: %s", ((struct tithek*)listbox->select->handle)->menutitle);
 
 		char* filename = NULL;
 		filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title, 0);
@@ -2034,7 +2060,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		if(!file_exist(filename))
 		{
 			writesys(filename, "1", 0);
-			debug(99, "create newfile %s", filename);
+			debug(88, "create newfile %s", filename);
 		}
 		free(filename), filename = NULL;
 
@@ -2045,7 +2071,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 //		free(filename), filename = NULL;
 
 		filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->flag);
-		debug(99, "::: END ::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		debug(88, "::: END ::::::::::::::::::::::::::::::::::::::::::::::::::::");
 
 		char* keyconf = NULL;
 		char* skintitle = _("Choice Playback");
@@ -2116,7 +2142,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		}
 		mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Streaming Playback Modus from the following list"), NULL, NULL, 1, 0);
 		if(mbox != NULL) keyconf = mbox->name;
-		debug(99, "tmpstr1: %s filename: %s flag: %d", tmpstr1, filename, flag);
+		debug(88, "tmpstr1: %s filename: %s flag: %d", tmpstr1, filename, flag);
 		if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 		{
 			addconfigtmp("playerbuffersize", "0");
@@ -2276,6 +2302,11 @@ printf("Save Streamurl: tmpstr1=%s\n", tmpstr1);
 	free(tmpstr1); tmpstr1 = NULL;
 }
 
+struct stimerthread *tithekmenuthread = NULL;
+struct stimerthread *tithekmenuthread1 = NULL;
+struct stimerthread *tithekmenuthread2 = NULL;
+struct stimerthread *tithekmenuthread3 = NULL;
+
 void screentithekplay(char* titheklink, char* title, int first)
 {
 	int savevol = 0;
@@ -2409,8 +2440,15 @@ void screentithekplay(char* titheklink, char* title, int first)
 		if(listbox->select != NULL && listbox->select->handle != NULL)
 		{
 			tmp = listbox->select;
+
 			while(tmp != NULL)
 			{
+printf("1tmp->pagecount: %d\n",tmp->pagecount);
+printf("1tmp->linecount: %d\n",tmp->linecount);
+printf("1tmp->poscount: %d\n",tmp->poscount);
+
+printf("1tmp->aktpage: %d\n",tmp->aktpage);
+printf("1tmp->aktline: %d\n",tmp->aktline);
 				if(tmp->pagecount != listbox->aktpage) break;
 
 				char* tmpstr = ostrcat(_("Page"), NULL, 0, 0);
@@ -2429,84 +2467,20 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
-                    if(!ostrncmp("curl ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)tmp->handle)->pic, 30))
-                    {
-                        debug(99, "pic cmd: %s", ((struct tithek*)tmp->handle)->pic);
-                        ((struct tithek*)tmp->handle)->pic = command(((struct tithek*)tmp->handle)->pic);
-                        debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
-                    }
-//                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
-                        if(!filelistflt(".jpeg .jpg .png", ((struct tithek*)tmp->handle)->pic))
-                        {
-                            debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
-                            debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
-                            debug(99, "getfilenameext: %s", getfilenameext(((struct tithek*)tmp->handle)->pic), 0, 1);
-
-                            char* tmppath = NULL, *checkpic1 = NULL, *checkpic2 = NULL, *checkpic3 = NULL;
-                            tmppath = ostrcat(TITHEKPATH, "/", 0, 0);
-                            checkpic1 = ostrcat(tmppath, changefilenameext(((struct tithek*)tmp->handle)->localname, ".png"), 0, 1);
-                            checkpic2 = ostrcat(tmppath, changefilenameext(((struct tithek*)tmp->handle)->localname, ".jpg"), 0, 1);
-                            checkpic3 = ostrcat(tmppath, changefilenameext(((struct tithek*)tmp->handle)->localname, ".jpeg"), 0, 1);
-
-                            if(file_exist(checkpic1))
-                            {
-                                ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ".png");
-                                debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-                            }
-                            else if(file_exist(checkpic2))
-                            {
-                                ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ".jpg");
-                                debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-                            }
-                            else if(file_exist(checkpic3))
-                            {
-                                ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ".jpeg");
-                                debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-                            }
-                            else if(ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
-                            {
-                                debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
-                                debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
-        //                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
-                                ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ostrcat(".", getfilenameext(((struct tithek*)tmp->handle)->pic), 0, 1));
-                                debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-                            }
-
-                            free(checkpic1), checkpic1 = NULL;
-                            free(checkpic2), checkpic2 = NULL;
-                            free(checkpic3), checkpic3 = NULL;
-                            free(tmppath), tmppath = NULL;
-                        }
-
-//                    if(!file_exist(((struct tithek*)tmp->handle)->localname))
-    					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, ((struct tithek*)tmp->handle)->flag);
+// zeichnet auf der ersten seite das selectierte und die zeile
 
 
-					/* not working with thread download
-					off64_t checkpic = getfilesize(tithekpic);
+//                    if(tithekmenucount <= 30)
 
-					if(checkpic < 1000)
-					{
-						free(tithekpic); tithekpic = NULL;
-						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
-					}
-					*/
-/*
-                    if(!file_exist(tithekpic))
-					{
-                        debug(99, "not found: %s use default /var/usr/local/share/titan/plugins/tithek/default.jpg", tithekpic);
-						free(tithekpic); tithekpic = NULL;
-						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
-					}
-*/
-//					if(file_exist(tithekpic) && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
-					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
-					{
-                        debug(99, "changepic: %s", tithekpic);
-						changepic(tmp, tithekpic);
-					}
-					free(tithekpic); tithekpic = NULL;
-				}
+//                        struct stimerthread *tithekmenuthread = NULL;
+//    					tithekmenuthread = addtimer(&createtithekmenuthread, START, 1, 1, (void*)tmp, (void*)1, NULL);
+
+                    tithekmenutestlast(tmp, 1);
+//updatemenu(tmp, 1);
+//                        if(tithekmenuthread == NULL)
+//    					    tithekmenuthread1 = addtimer(&createtithekmenuthread, START, 10000, 1, (void*)tmp, (void*)1, NULL);
+
+    			}
 				tmp = tmp->prev;
 			}
 			tmp = listbox->select;
@@ -2518,98 +2492,35 @@ void screentithekplay(char* titheklink, char* title, int first)
                 else
              		b8->hidden = NO;
 
-				if(tmp->pagecount != listbox->aktpage) break;
+printf("2tmp->pagecount: %d\n",tmp->pagecount);
+printf("2tmp->linecount: %d\n",tmp->linecount);
+printf("2tmp->poscount: %d\n",tmp->poscount);
+
+printf("2tmp->aktpage: %d\n",tmp->aktpage);
+printf("2tmp->aktline: %d\n",tmp->aktline);
+
+				if(tmp->pagecount != listbox->aktpage)
+                {                
+                    printf("2tmp->aktline: %d\n",tmp->aktline);
+                    break;
+                }
 
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
-                    if(!ostrncmp("curl ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)tmp->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)tmp->handle)->pic, 30))
-                    {
-                        debug(99, "pic cmd: %s", ((struct tithek*)tmp->handle)->pic);
-                        ((struct tithek*)tmp->handle)->pic = command(((struct tithek*)tmp->handle)->pic);
-                        debug(99, "pic change to: %s", ((struct tithek*)tmp->handle)->pic);
-                    }
+// zeichnet erste seite ausser selectiertes erstes feld
+//und nach der ersten seite jeweils die aktuelle zeile wenn man im ersten oder letzten feld steht
 
-//                    if(cmpfilenameext(((struct tithek*)tmp->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)tmp->handle)->localname, ".png"))
-                        if(!filelistflt(".jpeg .jpg .png", ((struct tithek*)tmp->handle)->pic))
-                        {
-                            debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
-                            debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
-                            debug(99, "getfilenameext: %s", getfilenameext(((struct tithek*)tmp->handle)->pic), 0, 1);
+//                        if(tithekmenuthread == NULL)
+ //   					    tithekmenuthread2 = addtimer(&createtithekmenuthread, START, 1, 1, (void*)tmp, (void*)2, NULL);
 
-                            char* tmppath = NULL, *checkpic1 = NULL, *checkpic2 = NULL, *checkpic3 = NULL;
-                            tmppath = ostrcat(TITHEKPATH, "/", 0, 0);
-                            checkpic1 = ostrcat(tmppath, changefilenameext(((struct tithek*)tmp->handle)->localname, ".png"), 0, 1);
-                            checkpic2 = ostrcat(tmppath, changefilenameext(((struct tithek*)tmp->handle)->localname, ".jpg"), 0, 1);
-                            checkpic3 = ostrcat(tmppath, changefilenameext(((struct tithek*)tmp->handle)->localname, ".jpeg"), 0, 1);
 
-                            if(file_exist(checkpic1))
-                            {
-                                ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ".png");
-                                debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-                            }
-                            else if(file_exist(checkpic2))
-                            {
-                                ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ".jpg");
-                                debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-                            }
-                            else if(file_exist(checkpic3))
-                            {
-                                ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ".jpeg");
-                                debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-                            }
-                            else if(ostrcmp(getfilenameext(((struct tithek*)tmp->handle)->pic), getfilenameext(((struct tithek*)tmp->handle)->localname)) != 0)
-                            {
-                                debug(99, "pic png: %s", ((struct tithek*)tmp->handle)->pic);
-                                debug(99, "pic localname: %s", ((struct tithek*)tmp->handle)->localname);
-        //                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
-                                ((struct tithek*)tmp->handle)->localname = changefilenameext(((struct tithek*)tmp->handle)->localname, ostrcat(".", getfilenameext(((struct tithek*)tmp->handle)->pic), 0, 1));
-                                debug(99, "pic localname change: %s", ((struct tithek*)tmp->handle)->localname);
-                            }
+//                    if(tithekmenucount <= 30)
+//    				    addtimer(&tithekmenuthread, START, 100, 1, (void*)tmp, (void*)2, NULL);
+                    tithekmenutestlast(tmp, 2);
+//updatemenu(tmp, 2);
+ //   					    tithekmenuthread1 = addtimer(&createtithekmenuthread, START, 1, 1, (void*)tmp, (void*)2, NULL);
 
-                            free(checkpic1), checkpic1 = NULL;
-                            free(checkpic2), checkpic2 = NULL;
-                            free(checkpic3), checkpic3 = NULL;
-                            free(tmppath), tmppath = NULL;
-                        }
 
-//                  if(!file_exist(((struct tithek*)tmp->handle)->localname))
-    				    tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, ((struct tithek*)tmp->handle)->flag);
-/*
-                        if((((struct tithek*)tmp->handle)->flag == 2 || ((struct tithek*)tmp->handle)->flag == 3) && islink(tithekpic))
-			            {
-				            m_lock(&status.tithekmutex, 20);
-				            unlink(tithekpic);
-                            char* defaultpic = NULL;
-                            defaultpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
-				            symlink(defaultpic, tithekpic);
-                            free(defaultpic), defaultpic = NULL;
-				            m_unlock(&status.tithekmutex, 20);
-			            }
-*/
-					/* not working with thread download
-					off64_t checkpic = getfilesize(tithekpic);
-
-					if(checkpic < 1000)
-					{
-						free(tithekpic); tithekpic = NULL;
-						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
-					}
-					*/
-/*
-                    if(!file_exist(tithekpic))
-					{
-                        debug(99, "not found: %s use default /var/usr/local/share/titan/plugins/tithek/default.jpg", tithekpic);
-						free(tithekpic); tithekpic = NULL;
-						tithekpic = ostrcat("/var/usr/local/share/titan/plugins/tithek/default.jpg", NULL, 0, 0);
-					}
-*/
-//					if(file_exist(tithekpic) && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
-					if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
-					{
-                        debug(99, "changepic: %s", tithekpic);
-						changepic(tmp, tithekpic);
-					}
-					free(tithekpic); tithekpic = NULL;
 				}
 				tmp = tmp->next;
 			}
@@ -2637,85 +2548,29 @@ waitrcstart:
 
 				if(((struct tithek*)listbox->select->handle)->pic != NULL && ((struct tithek*)listbox->select->handle)->localname != NULL)
 				{
-                    if(!ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)listbox->select->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)listbox->select->handle)->pic, 30))
+/*                    if(!ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->pic, 5) || !ostrncmp("echo ", ((struct tithek*)listbox->select->handle)->pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)listbox->select->handle)->pic, 30))
                     {
                         debug(99, "pic cmd: %s", ((struct tithek*)listbox->select->handle)->pic);
                         ((struct tithek*)listbox->select->handle)->pic = command(((struct tithek*)listbox->select->handle)->pic);
                         debug(99, "pic change to: %s", ((struct tithek*)listbox->select->handle)->pic);
                     }
+//                    if(cmpfilenameext(((struct tithek*)listbox->select->handle)->pic, ".png") != cmpfilenameext(((struct tithek*)listbox->select->handle)->localname, ".png"))
+                    if(!filelistflt(".jpg .png", ((struct tithek*)listbox->select->handle)->pic) && ostrcmp(getfilenameext(((struct tithek*)listbox->select->handle)->pic), getfilenameext(((struct tithek*)listbox->select->handle)->localname)) != 0)
+                    {
+                        debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
+                        debug(99, "pic localname: %s", ((struct tithek*)listbox->select->handle)->localname);
+//                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)listbox->select->handle)->localname, ".png", 0, 0);
+                        ((struct tithek*)listbox->select->handle)->localname = changefilenameext(((struct tithek*)listbox->select->handle)->localname, ostrcat(".", getfilenameext(((struct tithek*)listbox->select->handle)->pic), 0, 1));
+                        debug(99, "pic localname change: %s", ((struct tithek*)listbox->select->handle)->localname);
+                    }
 
-                        if(!filelistflt(".jpeg .jpg .png", ((struct tithek*)listbox->select->handle)->pic))
-                        {
-                            debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
-                            debug(99, "pic localname: %s", ((struct tithek*)listbox->select->handle)->localname);
-                            debug(99, "getfilenameext: %s", getfilenameext(((struct tithek*)listbox->select->handle)->pic), 0, 1);
-
-                            char* tmppath = NULL, *checkpic1 = NULL, *checkpic2 = NULL, *checkpic3 = NULL;
-                            tmppath = ostrcat(TITHEKPATH, "/", 0, 0);
-                            checkpic1 = ostrcat(tmppath, changefilenameext(((struct tithek*)listbox->select->handle)->localname, ".png"), 0, 1);
-                            checkpic2 = ostrcat(tmppath, changefilenameext(((struct tithek*)listbox->select->handle)->localname, ".jpg"), 0, 1);
-                            checkpic3 = ostrcat(tmppath, changefilenameext(((struct tithek*)listbox->select->handle)->localname, ".jpeg"), 0, 1);
-
-                            if(file_exist(checkpic1))
-                            {
-                                ((struct tithek*)listbox->select->handle)->localname = changefilenameext(((struct tithek*)listbox->select->handle)->localname, ".png");
-                                debug(99, "pic localname change: %s", ((struct tithek*)listbox->select->handle)->localname);
-                            }
-                            else if(file_exist(checkpic2))
-                            {
-                                ((struct tithek*)listbox->select->handle)->localname = changefilenameext(((struct tithek*)listbox->select->handle)->localname, ".jpg");
-                                debug(99, "pic localname change: %s", ((struct tithek*)listbox->select->handle)->localname);
-                            }
-                            else if(file_exist(checkpic3))
-                            {
-                                ((struct tithek*)listbox->select->handle)->localname = changefilenameext(((struct tithek*)listbox->select->handle)->localname, ".jpeg");
-                                debug(99, "pic localname change: %s", ((struct tithek*)listbox->select->handle)->localname);
-                            }
-                            else if(ostrcmp(getfilenameext(((struct tithek*)listbox->select->handle)->pic), getfilenameext(((struct tithek*)listbox->select->handle)->localname)) != 0)
-                            {
-                                debug(99, "pic png: %s", ((struct tithek*)listbox->select->handle)->pic);
-                                debug(99, "pic localname: %s", ((struct tithek*)listbox->select->handle)->localname);
-        //                        ((struct tithek*)listbox->select->handle)->localname = ostrcat(((struct tithek*)tmp->handle)->localname, ".png", 0, 0);
-                                ((struct tithek*)listbox->select->handle)->localname = changefilenameext(((struct tithek*)listbox->select->handle)->localname, ostrcat(".", getfilenameext(((struct tithek*)listbox->select->handle)->pic), 0, 1));
-                                debug(99, "pic localname change: %s", ((struct tithek*)listbox->select->handle)->localname);
-                            }
-
-                            free(checkpic1), checkpic1 = NULL;
-                            free(checkpic2), checkpic2 = NULL;
-                            free(checkpic3), checkpic3 = NULL;
-                            free(tmppath), tmppath = NULL;
-                        }
-//old
-   					tithekpic = ostrcat(tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0), NULL, 1, ((struct tithek*)listbox->select->handle)->flag);
-/*
-                    if((((struct tithek*)listbox->select->handle)->flag == 2 || ((struct tithek*)listbox->select->handle)->flag == 3) && islink(tithekpic))
-			        {
-				        m_lock(&status.tithekmutex, 20);
-				        unlink(tithekpic);
-                        char* defaultpic = NULL;
-                        defaultpic = ostrcat("/tmp/tithek/default.jpg", NULL, 0, 0);
-				        symlink(defaultpic, tithekpic);
-                        free(defaultpic), defaultpic = NULL;
-				        m_unlock(&status.tithekmutex, 20);
-			        }
-*/
+   					tithekpic = ostrcat(tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0), NULL, 1, 0);
                     changepic(listbox->select, tithekpic);
                     free(tithekpic); tithekpic = NULL;
-/*
-
-//new start
-                    if(!file_exist(((struct tithek*)listbox->select->handle)->localname))
-    					((struct tithek*)listbox->select->handle)->localname = ostrcat(tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0), NULL, 1, 0);
-
- 
-//					if(file_exist(((struct tithek*)listbox->select->handle)->localname) && ostrcmp(((struct tithek*)listbox->select->handle)->localname, listbox->select) == 0)
-//					if(ostrcmp(((struct tithek*)listbox->select->handle)->localname, listbox->select) == 0)
-//					{
-                        debug(99, "changepic: %s", ((struct tithek*)listbox->select->handle)->localname);
-						changepic(listbox->select, ((struct tithek*)listbox->select->handle)->localname);
-//					}
-//new end
 */
+                    tithekmenutestlast(listbox, 0);
+//    					    tithekmenuthread2 = addtimer(&createtithekmenuthread, START, 10000, 1, (void*)listbox, (void*)0, NULL);
+
 				}
 
         		if(getconfigint("tithek_description", NULL) == 1 && ((struct tithek*)listbox->select->handle)->description != NULL && (!ostrncmp("curl ", ((struct tithek*)listbox->select->handle)->description, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", ((struct tithek*)listbox->select->handle)->description, 30)))
@@ -2731,17 +2586,6 @@ waitrcstart:
                         changetext2(listbox->select, desc);
                     }
                     free(desc), desc = NULL;
-
-  					tithekpic = ostrcat(tithekdownload(((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0), NULL, 1, ((struct tithek*)listbox->select->handle)->flag);
-                    changepic(listbox->select, tithekpic);
-                    free(tithekpic); tithekpic = NULL;
-
-//					if(file_exist(((struct tithek*)listbox->select->handle)->localname))
-//					{
- //                       debug(99, "changepic: %s", ((struct tithek*)listbox->select->handle)->localname);
-//						changepic(listbox->select, ((struct tithek*)listbox->select->handle)->localname);
-//					}
-
                 }
 			}
 		}
@@ -2768,6 +2612,31 @@ waitrcstart:
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
+
+            if(tithekmenuthread != NULL)
+            {
+                tithekmenuthread->aktion = STOP;
+                tithekmenuthread1->aktion = STOP;
+                tithekmenuthread2->aktion = STOP;
+                tithekmenuthread3->aktion = STOP;
+tithekmenuthread1 = NULL;
+tithekmenuthread2 = NULL;
+tithekmenuthread3= NULL;
+
+/*
+                while (tithekmenuthread->aktion != STOP)
+                    printf("stop tithekmenuthread\n");
+*/
+	            int count = 0;
+	            while(gettimer(tithekmenuthread) != NULL && count < 60)
+	            {
+                    printf("while tithekmenuthread %d\n", count);
+		            sleep(1);
+		            count++;
+	            }
+
+            }
+
 			delconfigtmp("tithek_description");
 			break;
 		}
@@ -2814,7 +2683,7 @@ waitrcstart:
 			{
 
 				char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->title, NULL, 0, 0);
-				debug(99, "tmpstr: %s", tmpstr);
+				debug(88, "tmpstr: %s", tmpstr);
 				tmpstr = string_replace("-1 (de)", "", tmpstr, 1);
 				tmpstr = string_replace("-1 (en)", "", tmpstr, 1);
 				tmpstr = string_replace("-1 (\?\?)", "", tmpstr, 1);
@@ -2830,7 +2699,7 @@ waitrcstart:
 				tmpstr = string_replace_all("_", " ", tmpstr, 1);
 				tmpstr = string_replace_all("-", " ", tmpstr, 1);
 				tmpstr = string_replace_all(".", " ", tmpstr, 1);
-				debug(99, "tmpstr: %s", tmpstr);
+				debug(88, "tmpstr: %s", tmpstr);
 
 				int check = playrcred(tmpstr, NULL, 1, 0, 99);
 				if(check == 0 || check == 1000)
