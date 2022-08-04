@@ -366,6 +366,10 @@ void screenadjust()
 	addchoicebox(debuglevel, "201", tmpstr);
 	free(tmpstr), tmpstr = NULL;
 
+	tmpstr = ostrcat("202 - ", _("Iptv"), 0, 0);
+	addchoicebox(debuglevel, "202", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+
 	tmpstr = ostrcat("250 - ", _("HTTP Server/Stream/Record"), 0, 0);
 	addchoicebox(debuglevel, "250", tmpstr);
 	free(tmpstr), tmpstr = NULL;

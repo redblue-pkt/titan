@@ -87,13 +87,13 @@ category()
 				    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
 
                     if(title == "Germany")
-                        pic = "https://www2.vjackson.info/live2/logo/3597546190.jpeg"
+                        pic = URL "/live2/logo/3597546190.jpeg"
 
                     if(title == "France")
-                        pic = "https://www2.vjackson.info/live2/logo/1277148681.jpeg"
+                        pic = URL "/live2/logo/1277148681.jpeg"
 
                     if(title == "Albania")
-                        pic = "https://www2.vjackson.info/live2/logo/2745766782.jpeg"
+                        pic = URL "/live2/logo/2745766782.jpeg"
 
 #albania
 #https://www2.vjackson.info/live2/logo/2745766782.jpeg
@@ -126,22 +126,68 @@ category()
 	echo "$TMP/$FILENAME.sort.list"
 }
 
+
+write()
+{
+#    rm /mnt/settings/bouquets.cfg.*
+#    rm /mnt/settings/transponder.*
+#    rm /mnt/settings/channel.*
+#    rm /mnt/settings/bouguets.iptv.*.tv.*
+#    cp -a /mnt/settings/channel /mnt/settings/channel.tmp
+#    cp -a /mnt/settings/transponder /mnt/settings/transponder.tmp
+#    cp -a /mnt/settings/bouquets.cfg /mnt/settings/bouquets.cfg.tmp
+    search 1
+#    cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel
+#    cat /mnt/settings/transponder.tmp | sort -u > /mnt/settings/transponder
+#    NEXT=$(echo $NEXT | tr '+' ' ')
+#    cat /mnt/settings/bouguets.iptv."$NEXT".tv.tmp | sort -u > /mnt/settings/bouguets.iptv."$NEXT".tv
+
+#                       cmd = "cat /mnt/settings/bouquets.cfg.tmp | sort -u > /mnt/settings/bouquets.cfg.new"
+#                       system(cmd)
+#    cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
+#    rm /mnt/settings/bouquets.cfg.*
+#    rm /mnt/settings/transponder.*
+#    rm /mnt/settings/channel.*
+#    rm /mnt/settings/bouguets.iptv.*.tv.*
+    killall -9 titan
+}
 search()
 {
-	if [ ! -e "$TMP/$FILENAME.list" ]; then
-        NEXT=$(echo $NEXT | tr '+' ' ')
+    NEXT=$(echo $NEXT | tr '+' ' ')
 
+    ADD2CHANNEL=0
+    if [ ! -z "$1" ];then 
+        ADD2CHANNEL=1
+        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
+        rm /mnt/settings/transponder.* > /dev/null 2>&1
+        rm /mnt/settings/channel.* > /dev/null 2>&1
+        rm /mnt/settings/bouguets.iptv."$NEXT".tv > /dev/null 2>&1
+        rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
+    fi
+
+	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" == "1" ]; then
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
 
-		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v ADD2CHANNEL="$ADD2CHANNEL" -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
 				found = 0
 				newpage = ""
 				piccount = 0
+                
+                if(ADD2CHANNEL == 1)
+                {
+                    cmd = "cp -a /mnt/settings/channel /mnt/settings/channel.tmp"
+                    system(cmd)
 
+                    cmd = "cp -a /mnt/settings/transponder /mnt/settings/transponder.tmp"
+                    system(cmd)
+
+                    cmd = "cp -a /mnt/settings/bouquets.cfg /mnt/settings/bouquets.cfg.tmp"
+                    system(cmd)
+                }
 			}
             /#EXTINF/ \
 			{
@@ -209,6 +255,28 @@ search()
 				    if (title != "" && title !~ "= = =")
 				    {
 					    piccount += 1
+
+
+					    i = index($0, "/live/") + 6
+		                j = index(substr($0, i), ".ts") - 1
+		                id = substr($0, i, j)
+
+                        if(ADD2CHANNEL == 1)
+                        {
+                            epgurl = "http://epgurl.dummy.to/" id
+                            cmd = "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "#" epgurl "\" >> /mnt/settings/channel.tmp"
+                            system(cmd)
+
+                            cmd = "echo \"" id "#0#0#0#192#0#0#0#0#0#0#2\" >> /mnt/settings/transponder.tmp"
+                            system(cmd)
+
+                            cmd = "echo \"0#" id "\" >> /mnt/settings/bouguets.iptv." NEXT ".tv.tmp"
+                            system(cmd)
+
+                            cmd = "echo \"Iptv-" NEXT "#0#/mnt/settings/bouguets.iptv." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
+                            system(cmd)
+                        }
+
 					    print title "#" newpage "#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
 #					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
 #						print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
@@ -223,12 +291,46 @@ search()
 				    next
 				}
 			}
+			END \
+				{
+                    if(ADD2CHANNEL == 1)
+                    {
+                        cmd = "cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel"
+                        system(cmd)
+
+#                        cmd = "cat /mnt/settings/transponder.tmp | sort -u > /mnt/settings/transponder"
+#                        system(cmd)
+
+#                        cmd = "cat /mnt/settings/bouguets.iptv." NEXT ".tv.tmp | sort -u > /mnt/settings/bouguets.iptv." NEXT ".tv"
+                        cmd = "cp -a /mnt/settings/bouguets.iptv." NEXT ".tv.tmp /mnt/settings/bouguets.iptv." NEXT ".tv"
+                        system(cmd)
+
+#                       cmd = "cat /mnt/settings/bouquets.cfg.tmp | sort -u > /mnt/settings/bouquets.cfg"
+#                       system(cmd)
+                    }
+				}
 		' >$TMP/$FILENAME.list
 	fi
-#	echo "$TMP/$FILENAME.list"
-    cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
-	echo "$TMP/$FILENAME.sort.list"
+
+    if [ "$ADD2CHANNEL" == "1" ];then
+        cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
+        cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
+        sed s/"^ *"// -i /mnt/settings/channel
+
+        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
+        rm /mnt/settings/transponder.* > /dev/null 2>&1
+        rm /mnt/settings/channel.* > /dev/null 2>&1
+        rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
+        echo "errormsg: add2channel done"
+    else
+        cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
+	    echo "$TMP/$FILENAME.sort.list"
+    fi
 }
+
+
+#ZEE ONE FHD (3)#http://77.247.109.150:8008/a/willene/live/2141884413.ts?n=1&b=5&vavoo_auth=eyJkYXRhIjoie1widGltZVwiOjI2NTk2Mzk3NjUzODksXCJ2YWxpZFVudGlsXCI6MjY1OTY0MDM2NTM4OSxcImlwc1wiOltcIjkxLjEzNy4xNi4yMTdcIl0sXCJydWxlc2V0XCI6XCJndWVzdFwiLFwidmVyaWZpZWRcIjp0cnVlLFwiZXJyb3JcIjpudWxsLFwiYXBwXCI6e1wicGxhdGZvcm1cIjpcInZhdm9vXCIsXCJ2ZXJzaW9uXCI6XCIyLjZcIixcInNlcml2Y2VcIjpcIjEuMi4yNlwiLFwib2tcIjp0cnVlfSxcInV1aWRcIjpcIkJVakNyREp1bTJ2VHpOdHY4YmEvdzhhVXQvbERjZGVZS2lremNyMURiamM9XCJ9Iiwic2lnbmF0dXJlIjoiUE5JVnlQbkNaK0k5U3lUUzV1SWhDUDNqK0gvUnVWNFZubFFiUUo3VW01MkNHZTZQcFA4NjJxK0xFU1pWeThkbmpYT0trTUdvaGRxRk05VzFFRUNFT0wwN1pMUTRYZi9HS0Y5SlhHNDhIM1ZhMXFXUTV5aEJGMHpjZVZOT0I2OEIzeTBKdSs1SkdRa2tTS3NhLzRPbW9HNXdDTTU3S3dtWUZCWGRGR1lUbVM4PSJ9|User-Agent=VAVOO/2.#http://openaaf.dyndns.tv/mediathek/menu/zeeone.jpg#vavoo.search.live2.index.Germany.zeeone.jpg#VaVoo#2
+#IPTV - 13TH STREET (3)#522635010#0#0#0#0#0#0#0#0#0#0#(null)#(null)
 
 play()
 {
@@ -251,4 +353,5 @@ case $INPUT in
 	search) $INPUT;;
 	category) $INPUT;;
 	hoster) $INPUT;;
+	write) $INPUT;;
 esac

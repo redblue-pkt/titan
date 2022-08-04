@@ -295,12 +295,8 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 		return NULL;
 	}
 
-printf("line: %s\n", line);
-
 //    ret = sscanf(line, "%[^#]#%llu#%d#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu8"#%"SCNu16"#%[^\n]\n", name, &newnode->transponderid, &newnode->providerid, &newnode->serviceid, &newnode->servicetype, &newnode->flag, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid, &newnode->protect, &newnode->pcrpid, streamurl);
     ret = sscanf(line, "%[^#]#%llu#%d#%d#%d#%"SCNu8"#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu8"#%"SCNu16"#%[^#]#%s", name, &newnode->transponderid, &newnode->providerid, &newnode->serviceid, &newnode->servicetype, &newnode->flag, &newnode->videocodec, &newnode->audiocodec, &newnode->videopid, &newnode->audiopid, &newnode->protect, &newnode->pcrpid, streamurl, epgurl);
-
-printf("ret: %d\n", ret);
 
 	if(ret == 11)
 	{
@@ -313,8 +309,7 @@ printf("ret: %d\n", ret);
         if(streamurl != NULL && ostrcmp("(null)", streamurl) == 0)
         {
         	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
-            printf("set newnode->streamurl: %s\n", streamurl);
-
+    		debug(202, "set newnode->streamurl:", streamurl);
         }
         else
             newnode->streamurl = NULL;
@@ -325,8 +320,7 @@ printf("ret: %d\n", ret);
         if(streamurl != NULL && ostrcmp("(null)", streamurl) != 0)
         {
         	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
-            printf("set newnode->streamurl: %s\n", streamurl);
-
+    		debug(202, "set newnode->streamurl:", streamurl);
         }
         else
             newnode->streamurl = NULL;
@@ -335,6 +329,7 @@ printf("ret: %d\n", ret);
         {
         	newnode->epgurl = ostrcat(streamurl, NULL, 0, 0);
             printf("set newnode->epgurl: %s\n", epgurl);
+    		debug(202, "set newnode->epgurl:", epgurl);
         }
         else
             newnode->epgurl = NULL;
