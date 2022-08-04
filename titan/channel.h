@@ -328,7 +328,6 @@ struct channel* addchannel(char *line, int count, struct channel* last)
         if(epgurl != NULL && ostrcmp("(null)", epgurl) != 0)
         {
         	newnode->epgurl = ostrcat(streamurl, NULL, 0, 0);
-            printf("set newnode->epgurl: %s\n", epgurl);
     		debug(202, "set newnode->epgurl:", epgurl);
         }
         else
