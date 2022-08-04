@@ -106,7 +106,8 @@ category()
 #https://www2.vjackson.info/live2/logo/3198653999.jpeg
 #https://www2.vjackson.info/live2/logo/3597546190.jpeg
 
-					if (title != "")
+                    # fix dublicate lines
+					if (++dup[title] == 1 && title != "")
 					{
                         titletmp = titletmp title
 #						print title "#" SRC " " SRC " search \x27" PAGE "\x27 \x27" title "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
@@ -252,10 +253,9 @@ search()
                 if (found == 1)
                 {
 	                newpage = substr($0, 1, length($0) - 1)
-				    if (title != "" && title !~ "= = =")
+				    if (++dup[title] == 1 && title != "" && title !~ "= = =")
 				    {
 					    piccount += 1
-
 
 					    i = index($0, "/live/") + 6
 		                j = index(substr($0, i), ".ts") - 1
