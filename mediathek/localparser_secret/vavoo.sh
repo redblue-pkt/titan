@@ -321,19 +321,11 @@ search()
 		' >$TMP/$FILENAME.list
 	fi
 
-    if [ "$ADD2CHANNEL" >= "0" ];then
-#        cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
-#        cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
-#        sed s/"^ *"// -i /mnt/settings/channel
-
-#        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
-#        rm /mnt/settings/transponder.* > /dev/null 2>&1
-#        rm /mnt/settings/channel.* > /dev/null 2>&1
-#        rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
-        echo "errormsg: add2channel done"
-    else
+    if [ "$ADD2CHANNEL" == "0" ];then
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
 	    echo "$TMP/$FILENAME.sort.list"
+    else
+        echo "errormsg: add2channel done"
     fi
 }
 
