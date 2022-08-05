@@ -667,6 +667,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			{
 				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
+				addmenulist(&mlist, "Add2Channel from VaVoo", _("Add2Channel from VaVoo"), NULL, 0, 0);
+
 /*
 				addmenulist(&mlist, "Search on Movie4k", NULL, _("Search on Movie4k"), 0, 0);
 				addmenulist(&mlist, "Search on Movie4k (local)", _("Search on Movie4k (local)"), NULL, 0, 0);
@@ -876,6 +878,45 @@ printf("mbox->name=%s\n", mbox->name);
 
 			    }
 		    }
+            free(localparser), localparser = NULL;
+        }
+		else if(ostrcmp(mbox->name, "Add2Channel from VaVoo") == 0 || ostrcmp(mbox->name, "Add2Channel from IpTv") == 0)
+        {
+            char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL;
+            localparser = ostrcat(mbox->name, NULL, 0, 0);
+            localparser = string_replace_all("Add2Channel from ", "/tmp/localparser/", localparser, 1);
+            strstrip(localparser);
+		    string_tolower(localparser);
+            localparser = ostrcat(localparser, ".sh", 1, 0);
+
+            cmd = ostrcat("cat ", localparser, 0, 0);
+            cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
+            cmd = ostrcat(cmd, localparser, 1, 0);
+            cmd = ostrcat(cmd, "!g'", 1, 0);
+            cmd = string_replace_all(" search ", " write ", cmd, 1);
+            cmd = string_replace_all("%search%", file, cmd, 1);
+
+            printf("cmd: %s\n", cmd);
+
+            link = command(cmd);
+	        free(cmd), cmd = NULL;
+
+            printf("link: %s\n", link);
+
+	        if(!ostrncmp("errormsg=", link, 9))
+	        {
+		        tmpstr = ostrcat(_("Add2Channel from VaVoo"), "\n\n", 0, 0);
+		        tmpstr = ostrcat(tmpstr, link, 1, 0);
+		        tmpstr = ostrcat(tmpstr, file, 1, 0);
+		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		        tmpstr = string_replace("errormsg=", "", tmpstr, 1);
+
+		        debug(88, "Found error Msg: %s", link);
+		        textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
+		        free(tmpstr); tmpstr = NULL;
+	        }
+
+	        free(link); link = NULL;
             free(localparser), localparser = NULL;
         }
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
