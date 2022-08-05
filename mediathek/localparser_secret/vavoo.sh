@@ -316,7 +316,7 @@ search()
 	fi
 
     if [ "$ADD2CHANNEL" != "0" ];then
-        echo "errormsg: add2channel done"
+        echo "errormsg: add2channel $NEXT done"
     else
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
 	    echo "$TMP/$FILENAME.sort.list"
