@@ -169,7 +169,7 @@ search()
         rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
     fi
 
-	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" == "1" ]; then
+	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
 
@@ -181,7 +181,7 @@ search()
 				newpage = ""
 				piccount = 0
                 
-                if(ADD2CHANNEL >= 0)
+                if(ADD2CHANNEL != 0)
                 {
                     cmd = "cp -a /mnt/settings/channel /mnt/settings/channel.tmp"
                     system(cmd)
@@ -264,7 +264,7 @@ search()
 		                j = index(substr($0, i), ".ts") - 1
 		                id = substr($0, i, j)
 
-                        if(ADD2CHANNEL >= 0)
+                        if(ADD2CHANNEL != 0)
                         {
                             epgurl = "http://epgurl.dummy.to/" id
                             cmd = "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "#" epgurl "\" >> /mnt/settings/channel.tmp"
@@ -296,7 +296,7 @@ search()
 			}
 			END \
 				{
-                    if(ADD2CHANNEL == 1)
+                    if(ADD2CHANNEL != 0)
                     {
 #                        cmd = "cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel"
 #                        system(cmd)
@@ -315,11 +315,11 @@ search()
 		' >$TMP/$FILENAME.list
 	fi
 
-    if [ "$ADD2CHANNEL" == "0" ];then
+    if [ "$ADD2CHANNEL" != "0" ];then
+        echo "errormsg: add2channel done"
+    else
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
 	    echo "$TMP/$FILENAME.sort.list"
-    else
-        echo "errormsg: add2channel done"
     fi
 }
 
