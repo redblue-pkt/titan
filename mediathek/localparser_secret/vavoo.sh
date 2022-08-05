@@ -145,7 +145,10 @@ writecmd()
 
 save()
 {
-    NEXT=$1
+    if [ ! -z "$1" ];then 
+        NEXT=$1
+    fi
+
     cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel
     cp -a /mnt/settings/bouguets.iptv."$NEXT".tv.tmp /mnt/settings/bouguets.iptv."$NEXT".tv
 
@@ -157,7 +160,9 @@ save()
 
 remove()
 {
-    NEXT=$1
+    if [ ! -z "$1" ];then 
+        NEXT=$1
+    fi
     rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
     rm /mnt/settings/transponder.* > /dev/null 2>&1
     rm /mnt/settings/channel.* > /dev/null 2>&1
