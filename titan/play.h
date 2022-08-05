@@ -883,42 +883,63 @@ printf("mbox->name=%s\n", mbox->name);
         }
 		else if(ostrcmp(mbox->name, "Add2Channel from VaVoo") == 0 || ostrcmp(mbox->name, "Add2Channel from IpTV") == 0)
         {
-            char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL;
+            char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
             localparser = ostrcat(mbox->name, NULL, 0, 0);
             localparser = string_replace_all("Add2Channel from ", "/tmp/localparser/", localparser, 1);
             strstrip(localparser);
 		    string_tolower(localparser);
             localparser = ostrcat(localparser, ".sh", 1, 0);
+		    debug(202, "localparser: %s", localparser);
 
             cmd = ostrcat("cat ", localparser, 0, 0);
             cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
             cmd = ostrcat(cmd, localparser, 1, 0);
             cmd = ostrcat(cmd, "!g'", 1, 0);
-            cmd = string_replace_all(" search ", " write ", cmd, 1);
-            cmd = string_replace_all("%search%", file, cmd, 1);
-
-            printf("cmd: %s\n", cmd);
+		    debug(202, "cmd: %s", cmd);
 
             link = command(cmd);
 	        free(cmd), cmd = NULL;
 
-            printf("link: %s\n", link);
+            cmd = ostrcat(link, NULL, 0, 0);
+	        free(link), link = NULL;
+            cmd = string_replace_all(" search ", " write ", cmd, 1);
+		    if(ostrstr(cmd, "%search%") != NULL)
+			    cmd = string_replace_all("%search%", search, cmd, 1);
+		    else
+			    cmd = ostrcat(link, search, 0, 0);
 
-	        if(!ostrncmp("errormsg=", link, 9))
+		    debug(202, "cmd2: %s", cmd);
+		    tmpstr1 = command(cmd);
+	        free(cmd), cmd = NULL;
+
+    		debug(202, "return from parser: %s", tmpstr1);
+
+	        if(!ostrncmp("errormsg=", tmpstr1, 9))
 	        {
 		        tmpstr = ostrcat(_("Add2Channel from VaVoo"), "\n\n", 0, 0);
-		        tmpstr = ostrcat(tmpstr, link, 1, 0);
+		        tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 		        tmpstr = ostrcat(tmpstr, file, 1, 0);
 		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		        tmpstr = string_replace("errormsg=", "", tmpstr, 1);
 
-		        debug(88, "Found error Msg: %s", link);
+		        debug(202, "Found error Msg: %s", tmpstr1);
+
 		        textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
 		        free(tmpstr); tmpstr = NULL;
 
 	            if(textbox(_("Message"), _("Save Imported New Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	            {
+                    cmd = ostrcat(localparser, " ", 0, 0);
+                    cmd = ostrcat(cmd, " ", 1, 0);
+                    cmd = ostrcat(cmd, localparser, 1, 0);
+                    cmd = ostrcat(cmd, " save", 1, 0);
+           		    debug(202, "cmd3: %s", cmd);
+                    system(cmd);
+        	        free(cmd), cmd = NULL;
+
             		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+        		    debug(202, "Titan will be restarted!");
+
 	                //sync usb
 	                system("sync");
 	                //write only config file
@@ -928,6 +949,7 @@ printf("mbox->name=%s\n", mbox->name);
                 }
 	        }
 
+	        free(tmpstr1); tmpstr1 = NULL;
 	        free(link); link = NULL;
             free(localparser), localparser = NULL;
         }
