@@ -943,7 +943,7 @@ printf("mbox->name=%s\n", mbox->name);
                     cmd = ostrcat(localparser, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
                     cmd = ostrcat(cmd, localparser, 1, 0);
-                    cmd = ostrcat(cmd, " save ", 1, 0);
+                    cmd = ostrcat(cmd, " save '' ", 1, 0);
                     cmd = ostrcat(cmd, file, 1, 0);
            		    debug(202, "cmd3: %s", cmd);
                     system(cmd);
