@@ -382,4 +382,5 @@ case $INPUT in
 	category) $INPUT;;
 	hoster) $INPUT;;
 	write) $INPUT;;
+	writecmd) $INPUT;;
 esac
