@@ -159,10 +159,11 @@ search()
     ADD2CHANNEL=0
     if [ ! -z "$1" ];then 
         ADD2CHANNEL=1
-        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
-        rm /mnt/settings/transponder.* > /dev/null 2>&1
-        rm /mnt/settings/channel.* > /dev/null 2>&1
-        rm /mnt/settings/bouguets.iptv."$NEXT".tv > /dev/null 2>&1
+#        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
+#        rm /mnt/settings/transponder.* > /dev/null 2>&1
+#        rm /mnt/settings/channel.* > /dev/null 2>&1
+#        rm /mnt/settings/bouguets.iptv."$NEXT".tv > /dev/null 2>&1
+        remove $NEXT
         rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
     fi
 
@@ -295,32 +296,32 @@ search()
 				{
                     if(ADD2CHANNEL == 1)
                     {
-                        cmd = "cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel"
-                        system(cmd)
-
-#                        cmd = "cat /mnt/settings/transponder.tmp | sort -u > /mnt/settings/transponder"
+#                        cmd = "cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel"
 #                        system(cmd)
-
-#                        cmd = "cat /mnt/settings/bouguets.iptv." NEXT ".tv.tmp | sort -u > /mnt/settings/bouguets.iptv." NEXT ".tv"
-                        cmd = "cp -a /mnt/settings/bouguets.iptv." NEXT ".tv.tmp /mnt/settings/bouguets.iptv." NEXT ".tv"
-                        system(cmd)
-
-#                       cmd = "cat /mnt/settings/bouquets.cfg.tmp | sort -u > /mnt/settings/bouquets.cfg"
-#                       system(cmd)
+#
+##                        cmd = "cat /mnt/settings/transponder.tmp | sort -u > /mnt/settings/transponder"
+##                        system(cmd)
+#
+##                        cmd = "cat /mnt/settings/bouguets.iptv." NEXT ".tv.tmp | sort -u > /mnt/settings/bouguets.iptv." NEXT ".tv"
+#                        cmd = "cp -a /mnt/settings/bouguets.iptv." NEXT ".tv.tmp /mnt/settings/bouguets.iptv." NEXT ".tv"
+#                        system(cmd)
+#
+##                       cmd = "cat /mnt/settings/bouquets.cfg.tmp | sort -u > /mnt/settings/bouquets.cfg"
+##                       system(cmd)
                     }
 				}
 		' >$TMP/$FILENAME.list
 	fi
 
     if [ "$ADD2CHANNEL" == "1" ];then
-        cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
-        cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
-        sed s/"^ *"// -i /mnt/settings/channel
+#        cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
+#        cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
+#        sed s/"^ *"// -i /mnt/settings/channel
 
-        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
-        rm /mnt/settings/transponder.* > /dev/null 2>&1
-        rm /mnt/settings/channel.* > /dev/null 2>&1
-        rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
+#        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
+#        rm /mnt/settings/transponder.* > /dev/null 2>&1
+#        rm /mnt/settings/channel.* > /dev/null 2>&1
+#        rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
         echo "errormsg: add2channel done"
     else
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
@@ -328,6 +329,26 @@ search()
     fi
 }
 
+save()
+{
+    NEXT=$1
+    cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel
+    cp -a /mnt/settings/bouguets.iptv."$NEXT".tv.tmp /mnt/settings/bouguets.iptv."$NEXT".tv
+
+    cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
+    cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
+    sed s/"^ *"// -i /mnt/settings/channel
+    remove $NEXT
+}
+
+remove()
+{
+    NEXT=$1
+    rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
+    rm /mnt/settings/transponder.* > /dev/null 2>&1
+    rm /mnt/settings/channel.* > /dev/null 2>&1
+    rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
+}
 
 #ZEE ONE FHD (3)#http://77.247.109.150:8008/a/willene/live/2141884413.ts?n=1&b=5&vavoo_auth=eyJkYXRhIjoie1widGltZVwiOjI2NTk2Mzk3NjUzODksXCJ2YWxpZFVudGlsXCI6MjY1OTY0MDM2NTM4OSxcImlwc1wiOltcIjkxLjEzNy4xNi4yMTdcIl0sXCJydWxlc2V0XCI6XCJndWVzdFwiLFwidmVyaWZpZWRcIjp0cnVlLFwiZXJyb3JcIjpudWxsLFwiYXBwXCI6e1wicGxhdGZvcm1cIjpcInZhdm9vXCIsXCJ2ZXJzaW9uXCI6XCIyLjZcIixcInNlcml2Y2VcIjpcIjEuMi4yNlwiLFwib2tcIjp0cnVlfSxcInV1aWRcIjpcIkJVakNyREp1bTJ2VHpOdHY4YmEvdzhhVXQvbERjZGVZS2lremNyMURiamM9XCJ9Iiwic2lnbmF0dXJlIjoiUE5JVnlQbkNaK0k5U3lUUzV1SWhDUDNqK0gvUnVWNFZubFFiUUo3VW01MkNHZTZQcFA4NjJxK0xFU1pWeThkbmpYT0trTUdvaGRxRk05VzFFRUNFT0wwN1pMUTRYZi9HS0Y5SlhHNDhIM1ZhMXFXUTV5aEJGMHpjZVZOT0I2OEIzeTBKdSs1SkdRa2tTS3NhLzRPbW9HNXdDTTU3S3dtWUZCWGRGR1lUbVM4PSJ9|User-Agent=VAVOO/2.#http://openaaf.dyndns.tv/mediathek/menu/zeeone.jpg#vavoo.search.live2.index.Germany.zeeone.jpg#VaVoo#2
 #IPTV - 13TH STREET (3)#522635010#0#0#0#0#0#0#0#0#0#0#(null)#(null)
