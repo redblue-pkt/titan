@@ -883,6 +883,8 @@ printf("mbox->name=%s\n", mbox->name);
         }
 		else if(ostrcmp(mbox->name, "Add2Channel from VaVoo") == 0 || ostrcmp(mbox->name, "Add2Channel from IpTV") == 0)
         {
+	        struct skin* load = getscreen("loading");
+	        drawscreen(load, 0, 0);
             char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
             localparser = ostrcat(mbox->name, NULL, 0, 0);
             localparser = string_replace_all("Add2Channel from ", "/tmp/localparser/", localparser, 1);
