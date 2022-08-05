@@ -150,7 +150,7 @@ write()
 #    rm /mnt/settings/transponder.*
 #    rm /mnt/settings/channel.*
 #    rm /mnt/settings/bouguets.iptv.*.tv.*
-    killall -9 titan
+#    killall -9 titan
 }
 search()
 {
