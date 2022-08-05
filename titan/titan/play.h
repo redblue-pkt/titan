@@ -907,9 +907,12 @@ printf("mbox->name=%s\n", mbox->name);
 			    cmd = string_replace_all("%search%", file, cmd, 1);
 		    else
 			    cmd = ostrcat(link, file, 0, 0);
+            cmd = string_newline(cmd);
 
 		    debug(202, "cmd2: %s", cmd);
 		    tmpstr1 = command(cmd);
+            cmd = string_newline(cmd);
+
 	        free(cmd), cmd = NULL;
 
     		debug(202, "return from parser: %s", tmpstr1);
