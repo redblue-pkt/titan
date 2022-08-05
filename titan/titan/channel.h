@@ -309,7 +309,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
         if(streamurl != NULL && ostrcmp("(null)", streamurl) == 0)
         {
         	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
-    		debug(202, "set newnode->streamurl:", streamurl);
+    		debug(202, "set newnode->streamurl: %s", streamurl);
         }
         else
             newnode->streamurl = NULL;
@@ -320,7 +320,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
         if(streamurl != NULL && ostrcmp("(null)", streamurl) != 0)
         {
         	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
-    		debug(202, "set newnode->streamurl:", streamurl);
+    		debug(202, "set newnode->streamurl: %s", streamurl);
         }
         else
             newnode->streamurl = NULL;
@@ -328,7 +328,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
         if(epgurl != NULL && ostrcmp("(null)", epgurl) != 0)
         {
         	newnode->epgurl = ostrcat(streamurl, NULL, 0, 0);
-    		debug(202, "set newnode->epgurl:", epgurl);
+    		debug(202, "set newnode->epgurl: %s", epgurl);
         }
         else
             newnode->epgurl = NULL;
