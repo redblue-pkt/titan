@@ -152,17 +152,24 @@ write()
 #    rm /mnt/settings/bouguets.iptv.*.tv.*
 #    killall -9 titan
 }
+
+writecmd()
+{
+    NEXT=$(echo $NEXT | tr '+' ' ')
+
+    remove $NEXT
+    search 2
+    save $NEXT
+    killall -9 titan
+}
+
 search()
 {
     NEXT=$(echo $NEXT | tr '+' ' ')
 
     ADD2CHANNEL=0
     if [ ! -z "$1" ];then 
-        ADD2CHANNEL=1
-#        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
-#        rm /mnt/settings/transponder.* > /dev/null 2>&1
-#        rm /mnt/settings/channel.* > /dev/null 2>&1
-#        rm /mnt/settings/bouguets.iptv."$NEXT".tv > /dev/null 2>&1
+        ADD2CHANNEL=$1
         remove $NEXT
         rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
     fi
@@ -179,7 +186,7 @@ search()
 				newpage = ""
 				piccount = 0
                 
-                if(ADD2CHANNEL == 1)
+                if(ADD2CHANNEL >= 0)
                 {
                     cmd = "cp -a /mnt/settings/channel /mnt/settings/channel.tmp"
                     system(cmd)
@@ -262,7 +269,7 @@ search()
 		                j = index(substr($0, i), ".ts") - 1
 		                id = substr($0, i, j)
 
-                        if(ADD2CHANNEL == 1)
+                        if(ADD2CHANNEL >= 0)
                         {
                             epgurl = "http://epgurl.dummy.to/" id
                             cmd = "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "#" epgurl "\" >> /mnt/settings/channel.tmp"
@@ -313,7 +320,7 @@ search()
 		' >$TMP/$FILENAME.list
 	fi
 
-    if [ "$ADD2CHANNEL" == "1" ];then
+    if [ "$ADD2CHANNEL" >= "0" ];then
 #        cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
 #        cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
 #        sed s/"^ *"// -i /mnt/settings/channel
