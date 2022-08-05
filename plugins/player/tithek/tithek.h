@@ -2443,12 +2443,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 			while(tmp != NULL)
 			{
-printf("1tmp->pagecount: %d\n",tmp->pagecount);
-printf("1tmp->linecount: %d\n",tmp->linecount);
-printf("1tmp->poscount: %d\n",tmp->poscount);
-
-printf("1tmp->aktpage: %d\n",tmp->aktpage);
-printf("1tmp->aktline: %d\n",tmp->aktline);
 				if(tmp->pagecount != listbox->aktpage) break;
 
 				char* tmpstr = ostrcat(_("Page"), NULL, 0, 0);
@@ -2491,13 +2485,6 @@ printf("1tmp->aktline: %d\n",tmp->aktline);
             		b8->hidden = YES;
                 else
              		b8->hidden = NO;
-
-printf("2tmp->pagecount: %d\n",tmp->pagecount);
-printf("2tmp->linecount: %d\n",tmp->linecount);
-printf("2tmp->poscount: %d\n",tmp->poscount);
-
-printf("2tmp->aktpage: %d\n",tmp->aktpage);
-printf("2tmp->aktline: %d\n",tmp->aktline);
 
 				if(tmp->pagecount != listbox->aktpage)
                 {                

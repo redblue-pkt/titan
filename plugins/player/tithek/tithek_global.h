@@ -593,7 +593,6 @@ char* getfilekey(char* w, char* i, char* s, char* e)
 
 void createtithekmenuthread(struct stimerthread* timernode, struct skin* listbox, int flag)
 {
-    printf("tithekmenuthread; %d\n", flag);
     tithekmenucount++;
 
     tithekmenutestlast(listbox, flag);
@@ -639,9 +638,7 @@ void updatemenuthread(struct stimerthread* timernode, struct download* node, int
 void tithekmenutest(char *pic, char *localname, int flag1 , int flag)
 {
     char* tithekpic = NULL, *tmppath = NULL, *checkpic1 = NULL, *checkpic2 = NULL, *checkpic3 = NULL;
-printf("tithekmenutest1: %d\n", flag);
 
-printf("tithekmenutest3\n");
 //        m_lock(&status.tithekmutex, 20);
 
     if(!ostrncmp("curl ", pic, 5) || !ostrncmp("echo ", pic, 5) || !ostrncmp("/tmp/localhoster/hoster.sh get", pic, 30))
@@ -665,7 +662,7 @@ printf("tithekmenutest3\n");
         if(localname != NULL && pic != NULL && file_exist(checkpic1))
         {
             localname = changefilenameext(localname, ".png");
-            debug(8, "pic localname change: %s", localname);
+            debug(88, "pic localname change: %s", localname);
         }
         else if(localname != NULL && pic != NULL && file_exist(checkpic2))
         {
@@ -692,17 +689,14 @@ printf("tithekmenutest3\n");
         free(tmppath), tmppath = NULL;
     }
 
-printf("tithekmenutest4\n");
-
 // crash
     if(localname != NULL && pic != NULL)
-{
+    {
             debug(88, "pic: %s", pic);
             debug(88, "localname: %s", localname);
 
         tithekpic = ostrcat(tithekdownload(pic, localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0), NULL, 1, flag1);
-}
-printf("tithekmenutest5\n");
+    }
 
 /*
     if(flag == 33)
@@ -713,12 +707,10 @@ printf("tithekmenutest5\n");
     else if(((struct tithek*)tmp) != NULL)
         changepic(tmp, tithekpic);
 */
-printf("tithekmenutest6\n");
 
     free(tithekpic); tithekpic = NULL;
 
 //        m_unlock(&status.tithekmutex, 20);
-printf("tithekmenutest7 end\n");
 
 }
 
@@ -728,10 +720,10 @@ void tithekmenutestlast(struct skin* listbox, int flag)
     struct skin* tmp = NULL;
 
     char* tithekpic = NULL, *tmppath = NULL, *checkpic1 = NULL, *checkpic2 = NULL, *checkpic3 = NULL, *pic = NULL;
-printf("tithekmenutest1: %d\n", flag);
+
     if(listbox == NULL)
     {
-        printf("tithekmenutest1: %d return\n", flag);
+        debug(88, "return");
         return;
     }
      
@@ -739,11 +731,9 @@ printf("tithekmenutest1: %d\n", flag);
         tmp = listbox;
     else
         tmp = listbox->select;
-printf("tithekmenutest2\n");
 
     if(((struct tithek*)tmp) != NULL && ((struct tithek*)tmp->handle) != NULL)
     {
-printf("tithekmenutest3\n");
 //        m_lock(&status.tithekmutex, 20);
 
 
@@ -795,24 +785,15 @@ printf("tithekmenutest3\n");
             free(tmppath), tmppath = NULL;
         }
 
-printf("tithekmenutest4\n");
-
    	    tithekpic = ostrcat(tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0), NULL, 1, ((struct tithek*)tmp->handle)->flag);
-
-printf("tithekmenutest5\n");
 
         if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
             changepic(tmp, tithekpic);
-
-printf("tithekmenutest6\n");
 
         free(tithekpic); tithekpic = NULL;
 
 //        m_unlock(&status.tithekmutex, 20);
     }
-
-printf("tithekmenutest7 end\n");
-
 }
 
 int screenlistbox(struct skin* grid, struct skin* listbox,struct skin* countlabel, char* title, char* titheklink, int* pagecount, int* tithekexit, int* oaktpage, int* oaktline, int* ogridcol, int flag, int cflag)
