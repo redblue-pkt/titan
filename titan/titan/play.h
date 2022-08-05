@@ -668,6 +668,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
 				addmenulist(&mlist, "Add2Channel from VaVoo", _("Add2Channel from VaVoo"), NULL, 0, 0);
+				addmenulist(&mlist, "Add2Channel from IpTV", _("Add2Channel from IpTV"), NULL, 0, 0);
 
 /*
 				addmenulist(&mlist, "Search on Movie4k", NULL, _("Search on Movie4k"), 0, 0);
@@ -880,7 +881,7 @@ printf("mbox->name=%s\n", mbox->name);
 		    }
             free(localparser), localparser = NULL;
         }
-		else if(ostrcmp(mbox->name, "Add2Channel from VaVoo") == 0 || ostrcmp(mbox->name, "Add2Channel from IpTv") == 0)
+		else if(ostrcmp(mbox->name, "Add2Channel from VaVoo") == 0 || ostrcmp(mbox->name, "Add2Channel from IpTV") == 0)
         {
             char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL;
             localparser = ostrcat(mbox->name, NULL, 0, 0);
@@ -914,6 +915,17 @@ printf("mbox->name=%s\n", mbox->name);
 		        debug(88, "Found error Msg: %s", link);
 		        textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
 		        free(tmpstr); tmpstr = NULL;
+
+	            if(textbox(_("Message"), _("Save Imported New Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+	            {
+            		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+	                //sync usb
+	                system("sync");
+	                //write only config file
+	                writeallconfig(3);
+	                //gui restart and write no config
+	                oshutdown(3, 2);
+                }
 	        }
 
 	        free(link); link = NULL;
