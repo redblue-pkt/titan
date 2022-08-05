@@ -921,18 +921,24 @@ printf("mbox->name=%s\n", mbox->name);
 
 	        if(!ostrncmp("errormsg=", tmpstr1, 9))
 	        {
-		        tmpstr = ostrcat(_("Add2Channel from VaVoo"), "\n\n", 0, 0);
+		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
 		        tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
-		        tmpstr = ostrcat(tmpstr, file, 1, 0);
 		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		        tmpstr = ostrcat(tmpstr, file, 1, 0);
 		        tmpstr = string_replace("errormsg=", "", tmpstr, 1);
-
 		        debug(202, "Found error Msg: %s", tmpstr1);
 
 		        textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
-		        free(tmpstr); tmpstr = NULL;
+            }
+            else
+            {
+		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
+		        tmpstr = ostrcat(tmpstr, _("Sure to Save the Bouquets"), 1, 0);
+		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		        tmpstr = ostrcat(tmpstr, file, 1, 0);
+		        tmpstr = ostrcat(tmpstr, "?", 1, 0);
 
-	            if(textbox(_("Message"), _("Save Imported New Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+	            if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 	            {
                     cmd = ostrcat(localparser, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
@@ -955,6 +961,7 @@ printf("mbox->name=%s\n", mbox->name);
                 }
 	        }
 
+            free(tmpstr); tmpstr = NULL;
 	        free(tmpstr1); tmpstr1 = NULL;
 	        free(link); link = NULL;
             free(localparser), localparser = NULL;

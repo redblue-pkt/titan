@@ -317,6 +317,17 @@ search()
 
     if [ "$ADD2CHANNEL" != "0" ];then
         echo "errormsg: add2channel $NEXT done"
+
+    error=0
+    if [ ! -e /mnt/settings/bouquets.cfg.tmp ];then error=1; fi
+    if [ ! -e /mnt/settings/transponder.tmp ];then error=1; fi
+    if [ ! -e /mnt/settings/channel.tmp ];then error=1; fi
+    if [ ! -e /mnt/settings/bouguets.iptv."$NEXT".tv.tmp ];then error=1; fi
+    if [ "$error" == "1" ];then
+        echo "errormsg: add2channel $NEXT has been canceled"
+    else
+        echo "add2channel $NEXT has been completed"
+    fi
     else
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
 	    echo "$TMP/$FILENAME.sort.list"
