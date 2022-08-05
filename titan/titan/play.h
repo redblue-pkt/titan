@@ -904,9 +904,9 @@ printf("mbox->name=%s\n", mbox->name);
 	        free(link), link = NULL;
             cmd = string_replace_all(" search ", " write ", cmd, 1);
 		    if(ostrstr(cmd, "%search%") != NULL)
-			    cmd = string_replace_all("%search%", search, cmd, 1);
+			    cmd = string_replace_all("%search%", file, cmd, 1);
 		    else
-			    cmd = ostrcat(link, search, 0, 0);
+			    cmd = ostrcat(link, file, 0, 0);
 
 		    debug(202, "cmd2: %s", cmd);
 		    tmpstr1 = command(cmd);
