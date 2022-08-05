@@ -1258,11 +1258,9 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 			tmp->handle = (char*)titheknode;
 			posx += tmp->width;
-printf("createtithekplay 7\n");
+
 			if(count >= zcount)
 			{
-printf("createtithekplay 8\n");
-
 				count = 0;
 				posx = 0;
 				gridbr = 0;
@@ -1270,8 +1268,6 @@ printf("createtithekplay 8\n");
 
 			if(count1 >= pcount)
 			{
-printf("createtithekplay 9\n");
-
 				count1 = 0;
 				pagecount++;
 				skip = 1;
@@ -1280,13 +1276,10 @@ printf("createtithekplay 9\n");
 		titheknode = titheknode->next;
 	}
 
-printf("createtithekplay 10\n");
-
 	if(skip == 0)
 		pagecount++;
 
 	tmpstr = oitoa(sumcount);
-printf("createtithekplay 11\n");
 
 	tmpstr1 = ostrcat(_("found"), NULL, 0, 0);
 	tmpstr1 = ostrcat(tmpstr1, " ", 1, 0);
@@ -1301,10 +1294,7 @@ printf("createtithekplay 11\n");
 	if(localfile == 0)
 		unlink(tithekfile);
 
-printf("createtithekplay 12\n");
-
 	free(tithekfile); tithekfile = NULL;
-printf("createtithekplay 13\n");
 
 	return pagecount;
 }
