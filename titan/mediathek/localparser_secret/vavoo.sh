@@ -95,17 +95,6 @@ category()
                     if(title == "Albania")
                         pic = URL "/live2/logo/2745766782.jpeg"
 
-#albania
-#https://www2.vjackson.info/live2/logo/2745766782.jpeg
-
-#france
-#https://www2.vjackson.info/live2/logo/665190824.jpeg
-#https://www2.vjackson.info/live2/logo/1277148681.jpeg
-
-#germany
-#https://www2.vjackson.info/live2/logo/3198653999.jpeg
-#https://www2.vjackson.info/live2/logo/3597546190.jpeg
-
                     # fix dublicate lines
 					if (++dup[title] == 1 && title != "")
 					{
