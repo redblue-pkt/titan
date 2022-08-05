@@ -667,8 +667,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			{
 				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
-				addmenulist(&mlist, "Add2Channel from VaVoo", _("Add2Channel from VaVoo"), NULL, 0, 0);
-				addmenulist(&mlist, "Add2Channel from IpTV", _("Add2Channel from IpTV"), NULL, 0, 0);
+				addmenulist(&mlist, "Create Bouquets from VaVoo", _("Create Bouquets from VaVoo"), NULL, 0, 0);
+				addmenulist(&mlist, "Create Bouquets from IpTV", _("Create Bouquets from IpTV"), NULL, 0, 0);
 
 /*
 				addmenulist(&mlist, "Search on Movie4k", NULL, _("Search on Movie4k"), 0, 0);
@@ -881,13 +881,13 @@ printf("mbox->name=%s\n", mbox->name);
 		    }
             free(localparser), localparser = NULL;
         }
-		else if(ostrcmp(mbox->name, "Add2Channel from VaVoo") == 0 || ostrcmp(mbox->name, "Add2Channel from IpTV") == 0)
+		else if(ostrcmp(mbox->name, "Create Bouquets from VaVoo") == 0 || ostrcmp(mbox->name, "Create Bouquets from IpTV") == 0)
         {
 	        struct skin* load = getscreen("loading");
 	        drawscreen(load, 0, 0);
             char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
             localparser = ostrcat(mbox->name, NULL, 0, 0);
-            localparser = string_replace_all("Add2Channel from ", "/tmp/localparser/", localparser, 1);
+            localparser = string_replace_all("Create Bouquets from ", "/tmp/localparser/", localparser, 1);
             strstrip(localparser);
 		    string_tolower(localparser);
             localparser = ostrcat(localparser, ".sh", 1, 0);
