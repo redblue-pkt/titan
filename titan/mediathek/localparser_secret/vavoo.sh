@@ -152,6 +152,7 @@ remove()
     if [ ! -z "$1" ];then 
         NEXT=$1
     fi
+
     rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
     rm /mnt/settings/transponder.* > /dev/null 2>&1
     rm /mnt/settings/channel.* > /dev/null 2>&1
@@ -276,7 +277,8 @@ search()
                             cmd = "echo \"0#" id "\" >> /mnt/settings/bouguets.iptv." NEXT ".tv.tmp"
                             system(cmd)
 
-                            cmd = "echo \"Iptv-" NEXT "#0#/mnt/settings/bouguets.iptv." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
+                            if(++dup[cmd] == 1)
+                                cmd = "echo \"Iptv-" NEXT "#0#/mnt/settings/bouguets.iptv." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
                             system(cmd)
                         }
 
@@ -357,4 +359,6 @@ case $INPUT in
 	hoster) $INPUT;;
 	write) $INPUT;;
 	writecmd) $INPUT;;
+	remove) $INPUT;;
+	save) $INPUT;;
 esac
