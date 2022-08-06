@@ -23,6 +23,7 @@ void screentithek_settings()
 	struct skin* useproxy = getscreennode(tithek_settings, "useproxy");
 	struct skin* proxy = getscreennode(tithek_settings, "proxy");
 	struct skin* delservice = getscreennode(tithek_settings, "delservice");
+	struct skin* iptvurl = getscreennode(tithek_settings, "iptvurl");
 	
 	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
@@ -104,6 +105,9 @@ void screentithek_settings()
 	changemask(proxy, "abcdefghijklmnopqrstuvwxyz0123456789://@");
 	changeinput(proxy, getconfig("tithek_proxy", NULL));
 
+	changemask(iptvurl, "abcdefghijklmnopqrstuvwxyz0123456789://@");
+	changeinput(iptvurl, getconfig("tithek_iptvurl", NULL));
+
 	addchoicebox(useproxy, "0", _("no"));
 	addchoicebox(useproxy, "1", _("yes"));	
 	setchoiceboxselection(useproxy, getconfig("tithek_useproxy", NULL));
@@ -148,6 +152,7 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_useproxy", useproxy, NULL);
 			addconfigscreen("tithek_proxy", proxy);
 			addconfigscreencheck("tithek_delservice", delservice, NULL);
+			addconfigscreen("tithek_iptvurl", iptvurl);
 /*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
