@@ -786,9 +786,7 @@ void tithekmenutestlast(struct skin* listbox, int flag)
         }
 
    	    tithekpic = ostrcat(tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0), NULL, 1, ((struct tithek*)tmp->handle)->flag);
-
-        if(getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
-            changepic(tmp, tithekpic);
+        changepic(tmp, tithekpic);
 
         free(tithekpic); tithekpic = NULL;
 
