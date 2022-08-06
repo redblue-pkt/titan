@@ -67,6 +67,7 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
 	long long deaktivcol = convertcol("deaktivcol");
+    char* tmpstr = NULL;
 
 	while(tmpchannel != NULL)
 	{
@@ -80,7 +81,16 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 					chnode->fontcol = convertcol("favcol");
 				if(tmpchannel->protect > 0)
 					chnode->fontcol = convertcol("protectcol");
-				changetext(chnode, tmpchannel->name);
+                if(tmpchannel->streamurl != NULL)
+                {
+                    tmpstr = ostrcat(tmpchannel->name, " (IpTV)", 0, 0);
+    				changetext(chnode, tmpstr);
+                    free(tmpstr), tmpstr = NULL;
+                }
+                else
+                {
+    				changetext(chnode, tmpchannel->name);
+                }
 				chnode->handle = (char*) tmpchannel;
 				chnode->handle1 = (char*) tmpchannel;
 				if(mode == 0 && channelnottunable(tmpchannel) == 1)
