@@ -633,14 +633,11 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	char* skintitle = _("Menu");
     char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 
-debug(202, "showname1: %s", showname);
-
     if(!ostrncmp("/", showname, 1))
     {
         localparser = ostrcat(showname, NULL, 0, 0);
         localparser = stringreplacecharonce(localparser, ' ', '\0');
     }
-debug(202, "showname2: %s", showname);
 		
 	if(flag < 99)
 	{
@@ -677,10 +674,8 @@ debug(202, "showname2: %s", showname);
 			{
 				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
-//				addmenulist(&mlist, "Create Bouquets from VaVoo", _("Create Bouquets from VaVoo"), NULL, 0, 0);
-//showname
-///tmp/localparser/vavoo.sh /tmp/localparser/vavoo.sh search '/live2/index' 'Germany'
 
+                debug(202, "showname: %s", showname);
     		    debug(202, "localparser: %s", localparser);
                 if(localparser != NULL && ostrstr(showname, " search ") != NULL)
                 {
