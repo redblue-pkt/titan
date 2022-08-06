@@ -2678,7 +2678,7 @@ tithekmenuthread3= NULL;
 				tmpstr = string_replace_all(".", " ", tmpstr, 1);
 				debug(88, "tmpstr: %s", tmpstr);
 
-				int check = playrcred(tmpstr, NULL, 1, 0, 99);
+                int check = playrcred(tmpstr, ((struct tithek*)listbox->select->handle)->link, 1, 0, 99);
 				if(check == 0 || check == 1000)
 				{
 					char* search = textinputhist(_("Create sub folder"), " ", "searchhist");
