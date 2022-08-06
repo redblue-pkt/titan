@@ -631,6 +631,13 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	struct skin* child = plugin->child;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = _("Menu");
+    char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
+
+    if(!ostrncmp("/", showname, 1))
+    {
+        localparser = ostrcat(showname, NULL, 0, 0);
+        localparser = stringreplacecharonce(localparser, ' ', '\0');
+    }
 		
 	if(flag < 99)
 	{
@@ -667,8 +674,26 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			{
 				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
-				addmenulist(&mlist, "Create Bouquets from VaVoo", _("Create Bouquets from VaVoo"), NULL, 0, 0);
-				addmenulist(&mlist, "Create Bouquets from IpTV", _("Create Bouquets from IpTV"), NULL, 0, 0);
+//				addmenulist(&mlist, "Create Bouquets from VaVoo", _("Create Bouquets from VaVoo"), NULL, 0, 0);
+//showname
+///tmp/localparser/vavoo.sh /tmp/localparser/vavoo.sh search '/live2/index' 'Germany'
+
+    		    debug(202, "localparser: %s", localparser);
+
+                if(localparser != NULL && ostrstr(showname, " search ") != NULL)
+                {
+                    cmd = ostrcat("cat ", localparser, 0, 0);
+                    cmd = ostrcat(cmd, " | grep '^write()' | wc -l", 1, 0);
+		            debug(202, "cmd: %s", cmd);
+           	        free(cmd), cmd = NULL;
+                    if(ostrcmp(string_newline(command(cmd)), "1") == 0)
+                    {
+        				addmenulist(&mlist, "Create Service Bouquets", _("Create Service Bouquets"), NULL, 0, 0);
+                    }
+                }
+
+
+
 
 /*
 				addmenulist(&mlist, "Search on Movie4k", NULL, _("Search on Movie4k"), 0, 0);
@@ -866,7 +891,6 @@ printf("mbox->name=%s\n", mbox->name);
             strstrip(localparser);
 		    string_tolower(localparser);
             localparser = ostrcat(localparser, ".sh", 1, 0);
-
 		    struct skin* tithekplugin = getplugin("Titan Mediathek");
 		    if(tithekplugin != NULL)
 		    {
@@ -881,29 +905,14 @@ printf("mbox->name=%s\n", mbox->name);
 		    }
             free(localparser), localparser = NULL;
         }
-		else if(ostrcmp(mbox->name, "Create Bouquets from VaVoo") == 0 || ostrcmp(mbox->name, "Create Bouquets from IpTV") == 0)
+		else if(ostrcmp(mbox->name, "Create Service Bouquets") == 0)
         {
 	        struct skin* load = getscreen("loading");
 	        drawscreen(load, 0, 0);
-            char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
-            localparser = ostrcat(mbox->name, NULL, 0, 0);
-            localparser = string_replace_all("Create Bouquets from ", "/tmp/localparser/", localparser, 1);
-            strstrip(localparser);
-		    string_tolower(localparser);
-            localparser = ostrcat(localparser, ".sh", 1, 0);
-		    debug(202, "localparser: %s", localparser);
 
-            cmd = ostrcat("cat ", localparser, 0, 0);
-            cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
-            cmd = ostrcat(cmd, localparser, 1, 0);
-            cmd = ostrcat(cmd, "!g'", 1, 0);
-		    debug(202, "cmd: %s", cmd);
 
-            link = command(cmd);
-	        free(cmd), cmd = NULL;
-
-            cmd = ostrcat(link, NULL, 0, 0);
-	        free(link), link = NULL;
+            cmd = ostrcat(showname, NULL, 0, 0);
+//	        free(link), link = NULL;
             cmd = string_replace_all(" search ", " write ", cmd, 1);
 		    if(ostrstr(cmd, "%search%") != NULL)
 			    cmd = string_replace_all("%search%", file, cmd, 1);
@@ -938,7 +947,7 @@ printf("mbox->name=%s\n", mbox->name);
 		        tmpstr = ostrcat(tmpstr, file, 1, 0);
 		        tmpstr = ostrcat(tmpstr, "?", 1, 0);
 
-	            if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+	            if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
 	            {
                     cmd = ostrcat(localparser, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
