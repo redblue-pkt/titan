@@ -633,11 +633,14 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	char* skintitle = _("Menu");
     char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 
+debug(202, "showname1: %s", showname);
+
     if(!ostrncmp("/", showname, 1))
     {
         localparser = ostrcat(showname, NULL, 0, 0);
         localparser = stringreplacecharonce(localparser, ' ', '\0');
     }
+debug(202, "showname2: %s", showname);
 		
 	if(flag < 99)
 	{
@@ -679,17 +682,16 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 ///tmp/localparser/vavoo.sh /tmp/localparser/vavoo.sh search '/live2/index' 'Germany'
 
     		    debug(202, "localparser: %s", localparser);
-
                 if(localparser != NULL && ostrstr(showname, " search ") != NULL)
                 {
                     cmd = ostrcat("cat ", localparser, 0, 0);
                     cmd = ostrcat(cmd, " | grep '^write()' | wc -l", 1, 0);
 		            debug(202, "cmd: %s", cmd);
-           	        free(cmd), cmd = NULL;
                     if(ostrcmp(string_newline(command(cmd)), "1") == 0)
                     {
         				addmenulist(&mlist, "Create Service Bouquets", _("Create Service Bouquets"), NULL, 0, 0);
                     }
+           	        free(cmd), cmd = NULL;
                 }
 
 
@@ -912,17 +914,16 @@ printf("mbox->name=%s\n", mbox->name);
 
 
             cmd = ostrcat(showname, NULL, 0, 0);
-//	        free(link), link = NULL;
             cmd = string_replace_all(" search ", " write ", cmd, 1);
+
 		    if(ostrstr(cmd, "%search%") != NULL)
 			    cmd = string_replace_all("%search%", file, cmd, 1);
-		    else
-			    cmd = ostrcat(link, file, 0, 0);
-            cmd = string_newline(cmd);
 
-		    debug(202, "cmd2: %s", cmd);
-		    tmpstr1 = command(cmd);
             cmd = string_newline(cmd);
+		    debug(202, "cmd2: %s", cmd);
+
+		    tmpstr1 = command(cmd);
+            tmpstr1 = string_newline(tmpstr1);
 
 	        free(cmd), cmd = NULL;
 
@@ -942,7 +943,7 @@ printf("mbox->name=%s\n", mbox->name);
             else
             {
 		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
-		        tmpstr = ostrcat(tmpstr, _("Sure to Save the Bouquets"), 1, 0);
+		        tmpstr = ostrcat(tmpstr, _("Sure to Save the Service Bouquets"), 1, 0);
 		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		        tmpstr = ostrcat(tmpstr, file, 1, 0);
 		        tmpstr = ostrcat(tmpstr, "?", 1, 0);
@@ -952,8 +953,9 @@ printf("mbox->name=%s\n", mbox->name);
                     cmd = ostrcat(localparser, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
                     cmd = ostrcat(cmd, localparser, 1, 0);
-                    cmd = ostrcat(cmd, " save '' ", 1, 0);
+                    cmd = ostrcat(cmd, " save '' '", 1, 0);
                     cmd = ostrcat(cmd, file, 1, 0);
+                    cmd = ostrcat(cmd, "'", 1, 0);
            		    debug(202, "cmd3: %s", cmd);
                     system(cmd);
         	        free(cmd), cmd = NULL;
@@ -967,6 +969,18 @@ printf("mbox->name=%s\n", mbox->name);
 	                writeallconfig(3);
 	                //gui restart and write no config
 	                oshutdown(3, 2);
+                }
+                else
+                {
+                    cmd = ostrcat(localparser, " ", 0, 0);
+                    cmd = ostrcat(cmd, " ", 1, 0);
+                    cmd = ostrcat(cmd, localparser, 1, 0);
+                    cmd = ostrcat(cmd, " remove '' '", 1, 0);
+                    cmd = ostrcat(cmd, file, 1, 0);
+                    cmd = ostrcat(cmd, "'", 1, 0);
+           		    debug(202, "cmd4: %s", cmd);
+                    system(cmd);
+        	        free(cmd), cmd = NULL;
                 }
 	        }
 
