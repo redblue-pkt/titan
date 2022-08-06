@@ -3968,7 +3968,7 @@ msgstr "Erzeuge Satelliten/Anbieter (Terrestrisch)"
 
 #: play.h:687
 msgid "Create Service Bouquets"
-msgstr ""
+msgstr "Erstelle diesen Titel als Sender Favoriten"
 
 #: skin_default_skin.xml.h:130 skins_0acht5zehn_skin.xml.h:820
 #: skins_atemio_skin.xml.h:166 skins_cool_skin.xml.h:198
@@ -14941,7 +14941,7 @@ msgstr ""
 
 #: play.h:941
 msgid "Sure to Save the Service Bouquets"
-msgstr ""
+msgstr "Soll gespeichert werden, Sender Favorite "
 
 #: tsschnitt.c:347
 msgid "Sure to cancel the cut process?"
