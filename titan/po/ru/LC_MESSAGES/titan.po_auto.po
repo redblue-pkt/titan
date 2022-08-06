@@ -7905,6 +7905,10 @@ msgstr "Инверсия"
 msgid "Inversion:"
 msgstr "Инверсия"
 
+#: adjust.h:369
+msgid "IpTV"
+msgstr ""
+
 #: player_tithek_skin.xml.h:10
 msgid "IpTV Url"
 msgstr ""
@@ -7978,10 +7982,6 @@ msgstr ""
 
 #: network_ipsec_skin.xml.h:4
 msgid "Ipsec VPN Settings"
-msgstr ""
-
-#: adjust.h:369
-msgid "Iptv"
 msgstr ""
 
 #: player_mc_skin.xml.h:31
