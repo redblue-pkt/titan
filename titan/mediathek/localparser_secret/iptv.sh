@@ -188,7 +188,8 @@ search()
 				    if (title != "" && title !~ "= = =")
 				    {
 					    piccount += 1
-					    print title "#" newpage "#" pic "#" PICNAME "." piccount ".jpg#" NAME "#2"
+					    print title "#" newpage "#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
+#					    print title "#" newpage "#" pic "#" PICNAME "." piccount ".jpg#" NAME "#2"
 #						print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 #						print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 
