@@ -282,7 +282,7 @@ search()
                             system(cmd)
                         }
 
-					    print title "#" newpage "#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
+					    print title "#" newpage "&tslivemode=1#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
 #					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
 #						print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
 #						print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
