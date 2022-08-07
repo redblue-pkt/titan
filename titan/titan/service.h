@@ -160,6 +160,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
         printf("playerstart1 epgurl: %s\n", chnode->epgurl);
         addconfigtmp("playerbuffersize", "0");
         addconfigtmp("playerbufferseektime", "0");
+        playerstop();
         playerstart(chnode->streamurl);
 //        sleep(1);
 		delconfigtmp("playerbuffersize");
@@ -546,6 +547,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
             printf("playerstart2 epgurl: %s\n", chnode->epgurl);
             addconfigtmp("playerbuffersize", "0");
             addconfigtmp("playerbufferseektime", "0");
+            playerstop();
             playerstart(chnode->streamurl);
 //            sleep(1);
 			delconfigtmp("playerbuffersize");
