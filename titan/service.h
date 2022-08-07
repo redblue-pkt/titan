@@ -153,7 +153,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0 && status.aktservice->type == CHANNEL)
 		changechannellist(chnode, channellist);
 
-    playerstop();
+    if(flag == 0)
+        playerstop();
 
     if(chnode->streamurl != NULL && chnode->epgurl != NULL)
     {
