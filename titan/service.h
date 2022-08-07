@@ -153,6 +153,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0 && status.aktservice->type == CHANNEL)
 		changechannellist(chnode, channellist);
 
+    playerstop();
+
     if(chnode->streamurl != NULL && chnode->epgurl != NULL)
     {
         printf("playerstart1 name: %s\n", chnode->name);
@@ -160,12 +162,12 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
         printf("playerstart1 epgurl: %s\n", chnode->epgurl);
         addconfigtmp("playerbuffersize", "0");
         addconfigtmp("playerbufferseektime", "0");
-        playerstop();
         playerstart(chnode->streamurl);
 //        sleep(1);
 		delconfigtmp("playerbuffersize");
 		delconfigtmp("playerbufferseektime");
     }
+
 
 
 	//got frontend dev
@@ -547,7 +549,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
             printf("playerstart2 epgurl: %s\n", chnode->epgurl);
             addconfigtmp("playerbuffersize", "0");
             addconfigtmp("playerbufferseektime", "0");
-            playerstop();
             playerstart(chnode->streamurl);
 //            sleep(1);
 			delconfigtmp("playerbuffersize");
