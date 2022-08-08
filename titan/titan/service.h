@@ -153,9 +153,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0 && status.aktservice->type == CHANNEL)
 		changechannellist(chnode, channellist);
 
-    if(status.aktservice->type != STILLPIC)
-        playerstop();
-
     if(chnode->streamurl != NULL && chnode->epgurl != NULL)
     {
         printf("playerstart1 name: %s\n", chnode->name);
@@ -164,12 +161,10 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
         addconfigtmp("playerbuffersize", "0");
         addconfigtmp("playerbufferseektime", "0");
         playerstart(chnode->streamurl);
-//        sleep(1);
+        status.play = 2;
 		delconfigtmp("playerbuffersize");
 		delconfigtmp("playerbufferseektime");
     }
-
-
 
 	//got frontend dev
 	if(chnode->epgurl == NULL && flag == 0)
@@ -551,7 +546,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
             addconfigtmp("playerbuffersize", "0");
             addconfigtmp("playerbufferseektime", "0");
             playerstart(chnode->streamurl);
-//            sleep(1);
+            status.play = 2;
 			delconfigtmp("playerbuffersize");
 			delconfigtmp("playerbufferseektime");
         }
@@ -838,6 +833,12 @@ int servicestop(struct service *node, int clear, int flag)
 	if(node != NULL)
 	{
 		status.tvpic = 0;
+
+        if(status.play == 2 && getconfigint("lastplayertype", NULL) == 0)
+        {
+            printf("servicestop playerstop IpTV flag=%d\n", flag);
+            playerstop();
+        }
 
 		if(status.timeshift == 1 && flag != 2)
 		{
