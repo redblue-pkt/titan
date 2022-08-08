@@ -245,6 +245,24 @@ char* hoster(char* url)
 	return streamurl;
 }
 
+char* autoupdate(char* url)
+{
+	debug(202, "url: %s", url);
+	char* tmpstr = NULL, *cmd = NULL;
+
+	if(!file_exist("/tmp/localhoster"))
+		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+
+	cmd = ostrcat(cmd, url, 1, 0);
+printf("cmd: %s\n", cmd);
+	tmpstr = command(cmd);
+
+	debug(202, "tmpstr: %s", tmpstr);
+printf("tmpstr: %s\n", tmpstr);
+
+	return tmpstr;
+}
+
 #include <stdio.h>
 #include <curl/curl.h>
 
