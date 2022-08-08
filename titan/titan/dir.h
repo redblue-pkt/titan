@@ -253,7 +253,7 @@ char* screendirreal(char* path, char* mask, char* selection, int *dirrcret, char
 		if(rcret == getrcconfigint("rcinfo", NULL) && status.play == 0 && flag == 64)
 		{
 			char* file = createpath(filelistpath->text, filelist->select->text);
-			if(playrcred(file, NULL, 0, 1, 1) == 9999)
+			if(playrcred(file, NULL, NULL, NULL, 0, 1, 1) == 9999)
 			{
 				delmarkedscreennodes(dir, FILELISTDELMARK);
 				createfilelist(dir, filelist, 0);

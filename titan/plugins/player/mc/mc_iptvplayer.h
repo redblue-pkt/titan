@@ -156,7 +156,7 @@ void screenmc_iptvplayer()
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.play == 1)
-				playrcred(filename, NULL, playinfobarstatus, playertype, flag);
+				playrcred(filename, NULL, NULL, NULL, playinfobarstatus, playertype, flag);
 			else
 			{
 				if(playlist == 0)
@@ -241,7 +241,7 @@ void screenmc_iptvplayer()
 //				{
 					filename = createpath(filelistpath->text, filelist->select->name);
 					debug(133, "filename: %s", filename);				
-					int check = playrcred(filename, NULL, playinfobarstatus, playertype, flag);
+					int check = playrcred(filename, NULL, NULL, NULL, playinfobarstatus, playertype, flag);
 					if(check == 1)
 						textbox(_("Message"), _("Update Iptv M3U ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 

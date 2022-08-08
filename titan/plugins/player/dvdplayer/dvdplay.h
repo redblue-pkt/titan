@@ -134,7 +134,7 @@ playerstart:
 				}
 					
 				if(rcret == getrcconfigint("rcred", NULL))
-					playrcred(file, NULL, playinfobarstatus, playertype, flag);
+					playrcred(file, NULL, NULL, NULL, playinfobarstatus, playertype, flag);
 
 				if(rcret == getrcconfigint("rcinfo", NULL))
 					playrcinfo(file, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);

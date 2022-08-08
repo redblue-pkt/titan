@@ -165,7 +165,7 @@ void screenmc_pictureplayer()
 		else if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(status.play == 1)
-				playrcred(filename, NULL, playinfobarstatus, playertype, flag);
+				playrcred(filename, NULL, NULL, NULL, playinfobarstatus, playertype, flag);
 			else
 			{
 				if(playlist == 0)
