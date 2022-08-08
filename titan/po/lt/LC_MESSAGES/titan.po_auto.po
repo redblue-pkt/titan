@@ -2955,7 +2955,7 @@ msgstr "Negalima sukurti aplanko !"
 msgid "Can't create service"
 msgstr "ERROR: Can't create Service"
 
-#: service.h:1105
+#: service.h:1107
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -3005,7 +3005,7 @@ msgstr "ERROR: Can't open Frontend Device"
 msgid "Can't open file"
 msgstr "ERROR: Can't open File"
 
-#: service.h:1111
+#: service.h:1113
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
@@ -3344,7 +3344,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "No. Kanal :"
 
-#: service.h:1116
+#: service.h:1118
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "KLAIDA: Channellist tuias arba corrupt\n"
@@ -5141,7 +5141,7 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 service.h:845 service.h:1122 shared.h:29
+#: security.h:668 security.h:685 service.h:847 service.h:1124 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
 #: skin_default_skin.xml.h:199 skins_0acht5zehn_skin.xml.h:237
 #: skins_atemio_skin.xml.h:234 skins_cool_skin.xml.h:281
@@ -9199,8 +9199,8 @@ msgstr ""
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 satipclient.h:137 satipclient.h:147 satipclient.h:149
 #: scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167
-#: scan.h:2258 scan.h:2651 scart.h:12 scart.h:25 security.h:1581 service.h:845
-#: service.h:1122 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
+#: scan.h:2258 scan.h:2651 scart.h:12 scart.h:25 security.h:1581 service.h:847
+#: service.h:1124 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
 #: skinadjust.h:619 skinadjust.h:627 skinadjust.h:668 skinadjust.h:685
 #: skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231 sock.h:955
 #: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
@@ -10124,7 +10124,7 @@ msgstr ""
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258 scan.h:2651
 #: scart.h:12 scart.h:25 scriptexec.h:41 security.h:668 security.h:685
-#: security.h:1581 service.h:845 service.h:1122 shared.h:29 shared.h:66
+#: security.h:1581 service.h:847 service.h:1124 shared.h:29 shared.h:66
 #: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 #: skins_0acht5zehn_skin.xml.h:398 skins_atemio_skin.xml.h:397
@@ -15598,7 +15598,7 @@ msgstr ""
 "Timeshift fail short\n"
 "Please palaukti iek tiek ir bandykite dar kart"
 
-#: service.h:845
+#: service.h:847
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -16189,7 +16189,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr "Imtuvo Tipas"
 
-#: service.h:1108
+#: service.h:1110
 msgid "Tuning to Channel failed!"
 msgstr "KLAIDA: Kanalo nra"
 
