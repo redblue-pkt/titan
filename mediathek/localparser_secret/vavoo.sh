@@ -166,7 +166,7 @@ search()
     ADD2CHANNEL=0
     if [ ! -z "$1" ];then 
         ADD2CHANNEL=$1
-        remove $NAME $NEXT
+        remove $NEXT
         rm /mnt/settings/bouguets."$NAME"."$NEXT".tv.* > /dev/null 2>&1
     fi
 
