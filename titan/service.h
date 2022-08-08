@@ -838,6 +838,7 @@ int servicestop(struct service *node, int clear, int flag)
         {
             printf("servicestop playerstop IpTV flag=%d\n", flag);
             playerstop();
+            status.play = 0;
         }
 
 		if(status.timeshift == 1 && flag != 2)
