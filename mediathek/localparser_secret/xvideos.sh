@@ -14,6 +14,9 @@ fi
 NAME=`echo -n ${PARSER:0:1} | tr '[a-z]' '[A-Z]'`${PARSER:1}
 URL="https://xvideos.com"
 
+#https://api-search.xvideos.best/id/35443907/?format=ajax
+#https://api-search.xvideos.best/id/35443907/?format=json
+
 case $2 in
 	init)	;;
 	*) 	. /tmp/localhoster/hoster.sh
