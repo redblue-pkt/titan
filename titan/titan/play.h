@@ -672,9 +672,6 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
 		{
 			if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 			{
-				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
-//				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
-
                 debug(202, "showname: %s", showname);
                 debug(202, "menutitle: %s", menutitle);
                 debug(202, "link: %s", link);
@@ -690,7 +687,9 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
                     }
            	        free(cmd), cmd = NULL;
                 }
+				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 /*
+				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on Movie4k", NULL, _("Search on Movie4k"), 0, 0);
 				addmenulist(&mlist, "Search on Movie4k (local)", _("Search on Movie4k (local)"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on Solarmovies (movie)", _("Search on Solarmovies (movie)"), NULL, 0, 0);
