@@ -633,7 +633,7 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
 	char* skintitle = _("Menu");
     char* localparser = NULL, *cmd = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 
-    if(!ostrncmp("/", showname, 1))
+    if(link != NULL && !ostrncmp("/", link, 1))
     {
         localparser = ostrcat(link, NULL, 0, 0);
         localparser = stringreplacecharonce(localparser, ' ', '\0');
