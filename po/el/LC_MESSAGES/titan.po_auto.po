@@ -1086,8 +1086,8 @@ msgstr ""
 #: skin_default_skin.xml.h:57 skins_cool_skin.xml.h:115
 #: skins_default_skin.xml.h:57 skins_kravenhd_skin.xml.h:62
 #: skins_megastyleblue_skin.xml.h:117 skins_megastylegrey_skin.xml.h:117
-#: skins_metrixhd_skin.xml.h:96 skins_smarttv_skin.xml.h:96 tithek_global.h:890
-#: tithek_global.h:1017 tithek_mainmenu.h:19 webif_channellist.h:4
+#: skins_metrixhd_skin.xml.h:96 skins_smarttv_skin.xml.h:96 tithek_global.h:908
+#: tithek_global.h:1035 tithek_mainmenu.h:19 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -1443,7 +1443,7 @@ msgstr ""
 msgid "All New first"
 msgstr ""
 
-#: tithek_global.h:886 tithek_global.h:1013 tithek_mainmenu.h:4
+#: tithek_global.h:904 tithek_global.h:1031 tithek_mainmenu.h:4
 msgid "All Sorted"
 msgstr ""
 
@@ -3018,7 +3018,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:685 mc_audioplayer.h:797 mc_global.h:781
 #: mc_global.h:1086 mc_iptvplayer.h:392 mc_iptvplayer.h:503
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:1950
+#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:1909
 msgid "Can't start playback !"
 msgstr ""
 
@@ -3057,7 +3057,7 @@ msgstr ""
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_global.h:866 tithek_global.h:989 tithek_mainmenu.h:24
+#: tithek_global.h:884 tithek_global.h:1007 tithek_mainmenu.h:24
 msgid "Category"
 msgstr ""
 
@@ -3408,7 +3408,7 @@ msgstr ""
 msgid "Choose your Playlist Mode from the following list"
 msgstr ""
 
-#: play.h:765
+#: play.h:745
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
@@ -3429,7 +3429,7 @@ msgid "Choose your Shares from the following list"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1659 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1677 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -3465,7 +3465,7 @@ msgstr ""
 msgid "Ci-Modul internal Menu"
 msgstr ""
 
-#: tithek_global.h:993
+#: tithek_global.h:1011
 msgid "Cine Films"
 msgstr ""
 
@@ -3813,7 +3813,7 @@ msgstr ""
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:657 play.h:1722
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:657 play.h:1681
 msgid "Create Folder"
 msgstr ""
 
@@ -3867,7 +3867,7 @@ msgstr ""
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
-#: play.h:689
+#: play.h:686
 msgid "Create Service Bouquets"
 msgstr ""
 
@@ -3973,7 +3973,7 @@ msgid "DEFAULT"
 msgstr ""
 
 #: infos_stock_skin.xml.h:3 infos_weather_skin.xml.h:2
-#: network_networkbrowser_skin.xml.h:6 play.h:1868
+#: network_networkbrowser_skin.xml.h:6 play.h:1827
 #: skin_default_keyskin.xml.h:27 skin_default_skin.xml.h:144
 #: skins_0acht5zehn_skin.xml.h:181 skins_atemio_skin.xml.h:182
 #: skins_cool_skin.xml.h:218 skins_default_keyskin.xml.h:27
@@ -4632,7 +4632,7 @@ msgstr ""
 msgid "Download finished!"
 msgstr ""
 
-#: keyactions.h:87 play.h:743 settings_bluebutton.h:22
+#: keyactions.h:87 play.h:723 settings_bluebutton.h:22
 #: settings_pluginbutton.h:22 settings_redbutton.h:23
 #: skin_default_skin.xml.h:167 skins_0acht5zehn_skin.xml.h:823
 #: skins_atemio_skin.xml.h:754 skins_cool_skin.xml.h:245
@@ -4782,7 +4782,7 @@ msgstr ""
 msgid "ELBEKANAL rtmp (German)"
 msgstr ""
 
-#: adjust.h:75 httpdfunc.h:3905 play.h:1868 skin_default_skin.xml.h:184
+#: adjust.h:75 httpdfunc.h:3905 play.h:1827 skin_default_skin.xml.h:184
 #: skins_0acht5zehn_skin.xml.h:222 skins_atemio_skin.xml.h:219
 #: skins_cool_skin.xml.h:266 skins_default_skin.xml.h:184
 #: skins_kravenhd_skin.xml.h:193 skins_megastyleblue_skin.xml.h:267
@@ -4820,7 +4820,7 @@ msgstr ""
 msgid "EPG (epg)"
 msgstr ""
 
-#: player_tmc_skin.xml.h:17 play.h:1561 play.h:1567
+#: player_tmc_skin.xml.h:17 play.h:1520 play.h:1526
 msgid "EPG Info"
 msgstr "Info"
 
@@ -5069,9 +5069,9 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:417
-#: player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:936 play.h:949
-#: play.h:1561 play.h:1567 play.h:1582 play.h:1583 play.h:1619 play.h:1620
-#: play.h:1634 play.h:1718 possetup.h:98 primeshare.h:29 primeshare.h:74
+#: player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:897 play.h:911
+#: play.h:1520 play.h:1526 play.h:1541 play.h:1542 play.h:1578 play.h:1579
+#: play.h:1593 play.h:1677 possetup.h:98 primeshare.h:29 primeshare.h:74
 #: primeshare.h:80 primeshare.h:125 promptfile.h:26 promptfile.h:35
 #: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
 #: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
@@ -5766,7 +5766,7 @@ msgstr ""
 msgid "Feed"
 msgstr ""
 
-#: play.h:1634
+#: play.h:1593
 msgid "File Exist, Really Rename and Overwrite exist File ?"
 msgstr ""
 
@@ -7883,7 +7883,7 @@ msgstr ""
 msgid "Jump"
 msgstr ""
 
-#: play.h:1469
+#: play.h:1428
 msgid "Jump To (min)"
 msgstr ""
 
@@ -8716,11 +8716,11 @@ msgstr ""
 msgid "Marker Overview"
 msgstr ""
 
-#: play.h:2186
+#: play.h:2145
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:2197
+#: play.h:2156
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -9089,8 +9089,8 @@ msgstr ""
 #: network.h:993 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:974 play.h:1582
-#: play.h:1619 play.h:1950 play.h:2186 play.h:2197 possetup.h:98
+#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:934 play.h:1541
+#: play.h:1578 play.h:1909 play.h:2145 play.h:2156 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
@@ -10005,9 +10005,9 @@ msgstr ""
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
 #: played.h:115 played.h:172 player.h:417 player_mc_skin.xml.h:40 play.h:497
-#: play.h:614 play.h:936 play.h:949 play.h:974 play.h:1561 play.h:1567
-#: play.h:1582 play.h:1583 play.h:1619 play.h:1620 play.h:1634 play.h:1718
-#: play.h:1950 play.h:2186 play.h:2197 possetup.h:98 primeshare.h:29
+#: play.h:614 play.h:897 play.h:911 play.h:934 play.h:1520 play.h:1526
+#: play.h:1541 play.h:1542 play.h:1578 play.h:1579 play.h:1593 play.h:1677
+#: play.h:1909 play.h:2145 play.h:2156 possetup.h:98 primeshare.h:29
 #: primeshare.h:74 primeshare.h:80 primeshare.h:125 promptfile.h:26
 #: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
 #: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
@@ -11712,15 +11712,15 @@ msgstr "Απενεργοποίηση"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1718
+#: play.h:1677
 msgid "Really Create Folder in ?"
 msgstr ""
 
-#: play.h:1583
+#: play.h:1542
 msgid "Really Delete ?"
 msgstr ""
 
-#: play.h:1620
+#: play.h:1579
 msgid "Really Rename ?"
 msgstr ""
 
@@ -11899,7 +11899,7 @@ msgstr ""
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1582 play.h:1619
+#: play.h:1541 play.h:1578
 msgid "Record in progress"
 msgstr "Timer εγγραφής"
 
@@ -12133,7 +12133,7 @@ msgstr ""
 msgid "Removeing"
 msgstr ""
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1624
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1583
 #: skin_default_skin.xml.h:515 skins_0acht5zehn_skin.xml.h:492
 #: skins_default_skin.xml.h:515 tools_multiimage_skin.xml.h:13
 msgid "Rename"
@@ -12627,7 +12627,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr ""
 
-#: dvdplay.h:29 network_dlna_skin.xml.h:9 play.h:1868
+#: dvdplay.h:29 network_dlna_skin.xml.h:9 play.h:1827
 #: skins_kravenhd_skin.xml.h:584
 msgid "SELECT"
 msgstr ""
@@ -12685,7 +12685,7 @@ msgstr ""
 msgid "SONNENKLAR rtmp (German)"
 msgstr ""
 
-#: play.h:1868
+#: play.h:1827
 msgid "SORT"
 msgstr "Διαλογή"
 
@@ -13281,23 +13281,23 @@ msgstr ""
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:574
 #: skins_default_skin.xml.h:574 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:882 tithek_global.h:1009 tithek_global.h:1078
-#: tithek_global.h:1080 tithek_global.h:1715 tithek_global.h:1717
-#: tithek_global.h:1763 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
+#: tithek_global.h:900 tithek_global.h:1027 tithek_global.h:1096
+#: tithek_global.h:1098 tithek_global.h:1733 tithek_global.h:1735
+#: tithek_global.h:1781 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
 #: tvtoast.h:532 xvideos.h:57 xvideos.h:59 youtube.h:253 youtube.h:255
 #: youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Χειροκίνητη αναζήτηση"
 
-#: tithek_global.h:874 tithek_global.h:1001 tithek_mainmenu.h:108
+#: tithek_global.h:892 tithek_global.h:1019 tithek_mainmenu.h:108
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_global.h:870 tithek_global.h:997 tithek_mainmenu.h:110
+#: tithek_global.h:888 tithek_global.h:1015 tithek_mainmenu.h:110
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_global.h:878 tithek_global.h:1005 tithek_mainmenu.h:109
+#: tithek_global.h:896 tithek_global.h:1023 tithek_mainmenu.h:109
 msgid "Search Cast"
 msgstr ""
 
@@ -13309,32 +13309,12 @@ msgstr ""
 msgid "Search Serie"
 msgstr ""
 
-#: play.h:722
-msgid "Search on ARD (local)"
-msgstr ""
-
-#: play.h:739
-msgid "Search on All (local)"
-msgstr ""
-
-#: play.h:711
-msgid "Search on FilmOn (local)"
-msgstr ""
-
-#: play.h:738
+#: play.h:717
 msgid "Search on InternetRadio (local)"
 msgstr ""
 
-#: play.h:675
+#: play.h:690
 msgid "Search on KinoX"
-msgstr ""
-
-#: play.h:676
-msgid "Search on KinoX (local)"
-msgstr ""
-
-#: play.h:713
-msgid "Search on Netzkino (local)"
 msgstr ""
 
 #: play.h:659
@@ -14479,7 +14459,7 @@ msgid "Stream Link"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1659 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1677 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
@@ -14625,7 +14605,7 @@ msgstr ""
 msgid "SuperRTL-Now"
 msgstr ""
 
-#: play.h:941
+#: play.h:903
 msgid "Sure to Save the Service Bouquets"
 msgstr ""
 
@@ -15551,7 +15531,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:974
+#: play.h:934
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
@@ -15612,11 +15592,11 @@ msgstr ""
 msgid "Tithek - Favorite Edit"
 msgstr ""
 
-#: tithek.c:141 tithek_global.h:840 tithek_global.h:963 tithek_global.h:1827
+#: tithek.c:141 tithek_global.h:858 tithek_global.h:981 tithek_global.h:1845
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:836 tithek_global.h:959 tithek.h:2378 tithek.h:2646
+#: tithek_global.h:854 tithek_global.h:977 tithek.h:2378 tithek.h:2646
 #: tithek.h:3273 tithek.h:3299 tithek.h:3316 tithek.h:3329 tithek.h:3346
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
