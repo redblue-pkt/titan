@@ -278,7 +278,7 @@ search()
                             system(cmd)
 
                             if(++dup[cmd] == 1)
-                                cmd = "echo \"Iptv-" NEXT "#0#/mnt/settings/bouguets." NAME "." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
+                                cmd = "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouguets." NAME "." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
                             system(cmd)
                         }
 
