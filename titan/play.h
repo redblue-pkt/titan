@@ -616,7 +616,7 @@ void get_mediadb_scan_info()
 }
 
 // flag 100 = tithek
-int playrcred(char* file, char* showname, int playinfobarstatus, int playertype, int flag)
+int playrcred(char* file, char* showname, char* menutitle, char* link, int playinfobarstatus, int playertype, int flag)
 {
 	int ret = 1;
 //	if(checkbit(status.playercan, 5) == 0) return;
@@ -631,11 +631,11 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	struct skin* child = plugin->child;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = _("Menu");
-    char* localparser = NULL, *cmd = NULL, *link = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
+    char* localparser = NULL, *cmd = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 
     if(!ostrncmp("/", showname, 1))
     {
-        localparser = ostrcat(showname, NULL, 0, 0);
+        localparser = ostrcat(link, NULL, 0, 0);
         localparser = stringreplacecharonce(localparser, ' ', '\0');
     }
 		
@@ -676,6 +676,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
 
                 debug(202, "showname: %s", showname);
+                debug(202, "menutitle: %s", menutitle);
+                debug(202, "link: %s", link);
     		    debug(202, "localparser: %s", localparser);
                 if(localparser != NULL && ostrstr(showname, " search ") != NULL)
                 {
@@ -688,10 +690,6 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
                     }
            	        free(cmd), cmd = NULL;
                 }
-
-
-
-
 /*
 				addmenulist(&mlist, "Search on Movie4k", NULL, _("Search on Movie4k"), 0, 0);
 				addmenulist(&mlist, "Search on Movie4k (local)", _("Search on Movie4k (local)"), NULL, 0, 0);
@@ -908,7 +906,7 @@ printf("mbox->name=%s\n", mbox->name);
 	        drawscreen(load, 0, 0);
 
 
-            cmd = ostrcat(showname, NULL, 0, 0);
+            cmd = ostrcat(link, NULL, 0, 0);
             cmd = string_replace_all(" search ", " write ", cmd, 1);
 
 		    if(ostrstr(cmd, "%search%") != NULL)
@@ -926,44 +924,68 @@ printf("mbox->name=%s\n", mbox->name);
 
 	        if(!ostrncmp("errormsg=", tmpstr1, 9))
 	        {
-		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
+//		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
 		        tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		        tmpstr = ostrcat(tmpstr, menutitle, 1, 0);
+		        tmpstr = ostrcat(tmpstr, "-", 1, 0);
 		        tmpstr = ostrcat(tmpstr, file, 1, 0);
 		        tmpstr = string_replace("errormsg=", "", tmpstr, 1);
 		        debug(202, "Found error Msg: %s", tmpstr1);
 
-		        textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
+		        textbox(_(mbox->name), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 2);
             }
             else
             {
-		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
+//		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
 		        tmpstr = ostrcat(tmpstr, _("Sure to Save the Service Bouquets"), 1, 0);
 		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
+		        tmpstr = ostrcat(tmpstr, menutitle, 1, 0);
+		        tmpstr = ostrcat(tmpstr, "-", 1, 0);
 		        tmpstr = ostrcat(tmpstr, file, 1, 0);
 		        tmpstr = ostrcat(tmpstr, "?", 1, 0);
 
-	            if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
+//	            if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
+	            if(textbox(_(mbox->name), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
 	            {
                     cmd = ostrcat(localparser, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
                     cmd = ostrcat(cmd, localparser, 1, 0);
                     cmd = ostrcat(cmd, " save '' '", 1, 0);
+                    cmd = ostrcat(cmd, menutitle, 1, 0);
+                    cmd = ostrcat(cmd, "' '", 1, 0);
                     cmd = ostrcat(cmd, file, 1, 0);
                     cmd = ostrcat(cmd, "'", 1, 0);
+
            		    debug(202, "cmd3: %s", cmd);
                     system(cmd);
         	        free(cmd), cmd = NULL;
 
-            		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
-        		    debug(202, "Titan will be restarted!");
+//            		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+//        		    debug(202, "Titan will be restarted!");
 
 	                //sync usb
-	                system("sync");
+//	                system("sync");
 	                //write only config file
-	                writeallconfig(3);
+//	                writeallconfig(3);
 	                //gui restart and write no config
-	                oshutdown(3, 2);
+//	                oshutdown(3, 2);
+
+            		textbox(_("Message"), _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+        		    debug(202, "Titan will be reloaded channellist!");
+		            freesat();
+		            freeallbouquet();
+		            freemainbouquet(0);
+		            freechannel(0);
+		            freetransponder();
+		            freeprovider();
+	                ret = readsat(getconfig("satfile", NULL));
+	                ret = readtransponder(getconfig("transponderfile", NULL));
+	                ret = readprovider(getconfig("providerfile", NULL));
+	                ret = readchannel(getconfig("channelfile", NULL));
+	                ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
+	                ret = readmainbouquet(getconfig("bouquetfile", NULL));
+	                ret = readallbouquet();
                 }
                 else
                 {
@@ -2062,7 +2084,7 @@ playerstart:
 					playrcok(file, showname, playinfobarstatus, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcred", NULL))
-					playrcred(file, showname, playinfobarstatus, playertype, flag);
+					playrcred(file, showname, NULL, NULL, playinfobarstatus, playertype, flag);
 
 				if(rcret == getrcconfigint("rcinfo", NULL))
 					playrcinfo(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);

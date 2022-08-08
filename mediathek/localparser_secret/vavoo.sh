@@ -128,35 +128,43 @@ writecmd()
 
 #    remove $NEXT
     search 2
-    save $NEXT
+    save $NAME $NEXT
     killall -9 titan
 }
 
 save()
 {
     if [ ! -z "$1" ];then 
-        NEXT=$1
+        NAME=$1
+    fi
+
+    if [ ! -z "$2" ];then 
+        NEXT=$2
     fi
 
     cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel
-    cp -a /mnt/settings/bouguets.iptv."$NEXT".tv.tmp /mnt/settings/bouguets.iptv."$NEXT".tv
+    cp -a /mnt/settings/bouguets."$NAME"."$NEXT".tv.tmp /mnt/settings/bouguets."$NAME"."$NEXT".tv
 
     cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
     cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
     sed s/"^ *"// -i /mnt/settings/channel
-    remove $NEXT
+    remove $NAME $NEXT
 }
 
 remove()
 {
     if [ ! -z "$1" ];then 
-        NEXT=$1
+        NAME=$1
+    fi
+
+    if [ ! -z "$2" ];then 
+        NEXT=$2
     fi
 
     rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
     rm /mnt/settings/transponder.* > /dev/null 2>&1
     rm /mnt/settings/channel.* > /dev/null 2>&1
-    rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
+    rm /mnt/settings/bouguets."$NAME"."$NEXT".tv.* > /dev/null 2>&1
 }
 
 search()
@@ -166,8 +174,8 @@ search()
     ADD2CHANNEL=0
     if [ ! -z "$1" ];then 
         ADD2CHANNEL=$1
-        remove $NEXT
-        rm /mnt/settings/bouguets.iptv."$NEXT".tv.* > /dev/null 2>&1
+        remove $NAME $NEXT
+        rm /mnt/settings/bouguets."$NAME"."$NEXT".tv.* > /dev/null 2>&1
     fi
 
 	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
@@ -274,11 +282,11 @@ search()
                             cmd = "echo \"" id "#0#0#0#192#0#0#0#0#0#0#2\" >> /mnt/settings/transponder.tmp"
                             system(cmd)
 
-                            cmd = "echo \"0#" id "\" >> /mnt/settings/bouguets.iptv." NEXT ".tv.tmp"
+                            cmd = "echo \"0#" id "\" >> /mnt/settings/bouguets." NAME "." NEXT ".tv.tmp"
                             system(cmd)
 
                             if(++dup[cmd] == 1)
-                                cmd = "echo \"Iptv-" NEXT "#0#/mnt/settings/bouguets.iptv." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
+                                cmd = "echo \"Iptv-" NEXT "#0#/mnt/settings/bouguets." NAME "." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
                             system(cmd)
                         }
 
@@ -306,8 +314,8 @@ search()
 ##                        cmd = "cat /mnt/settings/transponder.tmp | sort -u > /mnt/settings/transponder"
 ##                        system(cmd)
 #
-##                        cmd = "cat /mnt/settings/bouguets.iptv." NEXT ".tv.tmp | sort -u > /mnt/settings/bouguets.iptv." NEXT ".tv"
-#                        cmd = "cp -a /mnt/settings/bouguets.iptv." NEXT ".tv.tmp /mnt/settings/bouguets.iptv." NEXT ".tv"
+##                        cmd = "cat /mnt/settings/bouguets." NAME "." NEXT ".tv.tmp | sort -u > /mnt/settings/bouguets." NAME "." NEXT ".tv"
+#                        cmd = "cp -a /mnt/settings/bouguets." NAME "." NEXT ".tv.tmp /mnt/settings/bouguets." NAME "." NEXT ".tv"
 #                        system(cmd)
 #
 ##                       cmd = "cat /mnt/settings/bouquets.cfg.tmp | sort -u > /mnt/settings/bouquets.cfg"
@@ -322,11 +330,11 @@ search()
         if [ ! -e /mnt/settings/bouquets.cfg.tmp ];then error=1; fi
         if [ ! -e /mnt/settings/transponder.tmp ];then error=1; fi
         if [ ! -e /mnt/settings/channel.tmp ];then error=1; fi
-        if [ ! -e /mnt/settings/bouguets.iptv."$NEXT".tv.tmp ];then error=1; fi
+        if [ ! -e /mnt/settings/bouguets."$NAME"."$NEXT".tv.tmp ];then error=1; fi
         if [ "$error" == "1" ];then
-            echo "errormsg: add2channel $NEXT has been creating error as .tmp"
+            echo "errormsg: add2channel "$NAME"-"$NEXT" has been creating error as .tmp"
         else
-            echo "add2channel $NEXT has been completed as .tmp"
+            echo "add2channel "$NAME"-"$NEXT" has been completed as .tmp"
         fi
     else
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list

@@ -2590,29 +2590,29 @@ waitrcstart:
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 
-            if(tithekmenuthread != NULL)
-            {
-                tithekmenuthread->aktion = STOP;
-                tithekmenuthread1->aktion = STOP;
-                tithekmenuthread2->aktion = STOP;
-                tithekmenuthread3->aktion = STOP;
-tithekmenuthread1 = NULL;
-tithekmenuthread2 = NULL;
-tithekmenuthread3= NULL;
+//            if(tithekmenuthread != NULL)
+//            {
+//                tithekmenuthread->aktion = STOP;
+//                tithekmenuthread1->aktion = STOP;
+//                tithekmenuthread2->aktion = STOP;
+//                tithekmenuthread3->aktion = STOP;
+//tithekmenuthread1 = NULL;
+//tithekmenuthread2 = NULL;
+//tithekmenuthread3= NULL;
 
 /*
                 while (tithekmenuthread->aktion != STOP)
                     printf("stop tithekmenuthread\n");
 */
-	            int count = 0;
-	            while(gettimer(tithekmenuthread) != NULL && count < 60)
-	            {
-                    printf("while tithekmenuthread %d\n", count);
-		            sleep(1);
-		            count++;
-	            }
+//	            int count = 0;
+//	            while(gettimer(tithekmenuthread) != NULL && count < 60)
+//	            {
+ //                   printf("while tithekmenuthread %d\n", count);
+//		            sleep(1);
+//		            count++;
+//	            }
 
-            }
+//            }
 
 			delconfigtmp("tithek_description");
 			break;
@@ -2678,7 +2678,7 @@ tithekmenuthread3= NULL;
 				tmpstr = string_replace_all(".", " ", tmpstr, 1);
 				debug(88, "tmpstr: %s", tmpstr);
 
-                int check = playrcred(tmpstr, ((struct tithek*)listbox->select->handle)->link, 1, 0, 99);
+                int check = playrcred(tmpstr, NULL, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->link, 1, 0, 99);
 				if(check == 0 || check == 1000)
 				{
 					char* search = textinputhist(_("Create sub folder"), " ", "searchhist");
@@ -2866,7 +2866,7 @@ why ?
 			}
 			else
 			{
-				int check = playrcred(NULL, NULL, 1, 0, 199);
+				int check = playrcred(NULL, NULL, NULL, NULL, 1, 0, 199);
 				if(check == 0 || check == 1000)
 				{
 					char* search = textinputhist(_("Create sub folder"), " ", "searchhist");

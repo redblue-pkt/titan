@@ -537,7 +537,7 @@ void playwritevfd(char* file, char* showname);
 void playstartservice();
 void screenplayinfobar(char* file, char* showname, int mode, int playertype, int flag);
 void playrcgreen(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
-int playrcred(char* file, char* showname, int playinfobarstatus, int playertype, int flag);
+int playrcred(char* file, char* showname, char* menutitle, char* link, int playinfobarstatus, int playertype, int flag);
 void playrcinfo(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void playrcff(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 void playrcfr(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
