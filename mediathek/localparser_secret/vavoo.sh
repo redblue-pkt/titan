@@ -128,18 +128,14 @@ writecmd()
 
 #    remove $NEXT
     search 2
-    save $NAME $NEXT
+    save $NEXT
     killall -9 titan
 }
 
 save()
 {
     if [ ! -z "$1" ];then 
-        NAME=$1
-    fi
-
-    if [ ! -z "$2" ];then 
-        NEXT=$2
+        NEXT=$1
     fi
 
     cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel
@@ -148,17 +144,13 @@ save()
     cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
     cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
     sed s/"^ *"// -i /mnt/settings/channel
-    remove $NAME $NEXT
+    remove $NEXT
 }
 
 remove()
 {
     if [ ! -z "$1" ];then 
-        NAME=$1
-    fi
-
-    if [ ! -z "$2" ];then 
-        NEXT=$2
+        NEXT=$1
     fi
 
     rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
