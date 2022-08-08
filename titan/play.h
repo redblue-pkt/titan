@@ -716,7 +716,8 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
 			addmenulist(&mlist, "Search on InternetTv (local)", _("Search on InternetTv (local)"), NULL, 0, 0);
 */
 			addmenulist(&mlist, "Search on InternetRadio (local)", _("Search on InternetRadio (local)"), NULL, 0, 0);
-			addmenulist(&mlist, "Search on All (local)", _("Search on All (local)"), NULL, 0, 0);
+//			addmenulist(&mlist, "Search on All (local)", _("Search on All (local)"), NULL, 0, 0);
+
 		}
 	}
 
