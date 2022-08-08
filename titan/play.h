@@ -885,6 +885,7 @@ printf("mbox->name=%s\n", mbox->name);
 	        if(!ostrncmp("errormsg=", tmpstr1, 9))
 	        {
 //		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
+		        tmpstr = ostrcat(tmpstr, "\n\n", 0, 0);
 		        tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		        tmpstr = ostrcat(tmpstr, menutitle, 1, 0);
@@ -898,6 +899,7 @@ printf("mbox->name=%s\n", mbox->name);
             else
             {
 //		        tmpstr = ostrcat(_(mbox->name), "\n\n", 0, 0);
+		        tmpstr = ostrcat(tmpstr, "\n\n", 0, 0);
 		        tmpstr = ostrcat(tmpstr, _("Sure to Save the Service Bouquets"), 1, 0);
 		        tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		        tmpstr = ostrcat(tmpstr, menutitle, 1, 0);
@@ -911,7 +913,7 @@ printf("mbox->name=%s\n", mbox->name);
                     cmd = ostrcat(localparser, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
                     cmd = ostrcat(cmd, localparser, 1, 0);
-                    cmd = ostrcat(cmd, " save '' '", 1, 0);
+                    cmd = ostrcat(cmd, " save '", 1, 0);
                     cmd = ostrcat(cmd, menutitle, 1, 0);
                     cmd = ostrcat(cmd, "' '", 1, 0);
                     cmd = ostrcat(cmd, file, 1, 0);
@@ -952,7 +954,9 @@ printf("mbox->name=%s\n", mbox->name);
                     cmd = ostrcat(localparser, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
                     cmd = ostrcat(cmd, localparser, 1, 0);
-                    cmd = ostrcat(cmd, " remove '' '", 1, 0);
+                    cmd = ostrcat(cmd, " remove '", 1, 0);
+                    cmd = ostrcat(cmd, menutitle, 1, 0);
+                    cmd = ostrcat(cmd, "' '", 1, 0);
                     cmd = ostrcat(cmd, file, 1, 0);
                     cmd = ostrcat(cmd, "'", 1, 0);
            		    debug(202, "cmd4: %s", cmd);
@@ -963,7 +967,6 @@ printf("mbox->name=%s\n", mbox->name);
 
             free(tmpstr); tmpstr = NULL;
 	        free(tmpstr1); tmpstr1 = NULL;
-	        free(link); link = NULL;
             free(localparser), localparser = NULL;
         }
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
