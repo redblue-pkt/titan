@@ -306,8 +306,8 @@ search()
 ##                        cmd = "cat /mnt/settings/transponder.tmp | sort -u > /mnt/settings/transponder"
 ##                        system(cmd)
 #
-##                        cmd = "cat /mnt/settings/bouguets." NAME "." NEXT ".tv.tmp | sort -u > /mnt/settings/bouguets." NAME "." NEXT ".tv"
-#                        cmd = "cp -a /mnt/settings/bouguets." NAME "." NEXT ".tv.tmp /mnt/settings/bouguets." NAME "." NEXT ".tv"
+##                        cmd = "cat /mnt/settings/bouguets.tithek.autoupdate." NAME "." NEXT ".tv.tmp | sort -u > /mnt/settings/bouguets.tithek.autoupdate." NAME "." NEXT ".tv"
+#                        cmd = "cp -a /mnt/settings/bouguets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /mnt/settings/bouguets.tithek.autoupdate." NAME "." NEXT ".tv"
 #                        system(cmd)
 #
 ##                       cmd = "cat /mnt/settings/bouquets.cfg.tmp | sort -u > /mnt/settings/bouquets.cfg"
