@@ -139,7 +139,7 @@ save()
     fi
 
     cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel
-    cp -a /mnt/settings/bouguets."$NAME"."$NEXT".tv.tmp /mnt/settings/bouguets."$NAME"."$NEXT".tv
+    cp -a /mnt/settings/bouguets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp /mnt/settings/bouguets.tithek.autoupdate."$NAME"."$NEXT".tv
 
     cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
     cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
@@ -156,7 +156,7 @@ remove()
     rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
     rm /mnt/settings/transponder.* > /dev/null 2>&1
     rm /mnt/settings/channel.* > /dev/null 2>&1
-    rm /mnt/settings/bouguets."$NAME"."$NEXT".tv.* > /dev/null 2>&1
+    rm /mnt/settings/bouguets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
 }
 
 search()
@@ -167,7 +167,7 @@ search()
     if [ ! -z "$1" ];then 
         ADD2CHANNEL=$1
         remove $NEXT
-        rm /mnt/settings/bouguets."$NAME"."$NEXT".tv.* > /dev/null 2>&1
+        rm /mnt/settings/bouguets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
     fi
 
 	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
@@ -274,11 +274,11 @@ search()
                             cmd = "echo \"" id "#0#0#0#192#0#0#0#0#0#0#2\" >> /mnt/settings/transponder.tmp"
                             system(cmd)
 
-                            cmd = "echo \"0#" id "\" >> /mnt/settings/bouguets." NAME "." NEXT ".tv.tmp"
+                            cmd = "echo \"0#" id "\" >> /mnt/settings/bouguets.tithek.autoupdate." NAME "." NEXT ".tv.tmp"
                             system(cmd)
 
                             if(++dup[cmd] == 1)
-                                cmd = "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouguets." NAME "." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
+                                cmd = "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouguets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
                             system(cmd)
                         }
 
@@ -322,7 +322,7 @@ search()
         if [ ! -e /mnt/settings/bouquets.cfg.tmp ];then error=1; fi
         if [ ! -e /mnt/settings/transponder.tmp ];then error=1; fi
         if [ ! -e /mnt/settings/channel.tmp ];then error=1; fi
-        if [ ! -e /mnt/settings/bouguets."$NAME"."$NEXT".tv.tmp ];then error=1; fi
+        if [ ! -e /mnt/settings/bouguets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp ];then error=1; fi
         if [ "$error" == "1" ];then
             echo "errormsg: add2channel "$NAME"-"$NEXT" has been creating error as .tmp"
         else
