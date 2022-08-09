@@ -1963,7 +1963,7 @@ void servicebouquets_update(int flag)
 			ret2 = strsplit(tmpstr2, ".", &count2);
             if(ret2 != NULL && count2 >= 3)
             {
-                localparser = ostrcat(localparser, "/tmp/localcache/", 1, 0);
+                localparser = ostrcat(localparser, "/tmp/localparser/", 1, 0);
                 localparser = ostrcat(localparser, (&ret2[0])->part, 1, 0);
                 strstrip(localparser);
                 string_tolower(localparser);
