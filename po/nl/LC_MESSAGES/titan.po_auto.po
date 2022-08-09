@@ -21106,12 +21106,3 @@ msgstr ""
 #: skins_ufs912_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Search on ARD (local)"
-#~ msgstr "Zoek op ARD (lokaal)"
-
-#~ msgid "Search on KinoX (local)"
-#~ msgstr "Zoek op KinoX (lokaal)"
-
-#~ msgid "Search on Netzkino (local)"
-#~ msgstr "Zoek op Netzkino (lokaal)"
