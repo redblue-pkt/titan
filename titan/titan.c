@@ -1493,6 +1493,7 @@ firstwizzardstep1:
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
 	addtimer(&setdate, START, 10000, 1, NULL, NULL, NULL);
+	addtimer(&servicebouquetsthread, START, 1000, 1, NULL, (void*)1, NULL);
 
 	startinternreader(1);
 	screeninfobar();

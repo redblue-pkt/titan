@@ -24,6 +24,7 @@ void screentithek_settings()
 	struct skin* proxy = getscreennode(tithek_settings, "proxy");
 	struct skin* delservice = getscreennode(tithek_settings, "delservice");
 	struct skin* iptvurl = getscreennode(tithek_settings, "iptvurl");
+	struct skin* servicebouquets_autoupdate = getscreennode(tithek_settings, "servicebouquets_autoupdate");
 	
 	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
 	struct skin* b3 = getscreennode(tithek_settings, "b3");
@@ -116,6 +117,10 @@ void screentithek_settings()
 	addchoicebox(delservice, "1", _("yes"));	
 	setchoiceboxselection(delservice, getconfig("tithek_delservice", NULL));
 
+	addchoicebox(servicebouquets_autoupdate, "0", _("no"));
+	addchoicebox(servicebouquets_autoupdate, "1", _("yes"));	
+	setchoiceboxselection(servicebouquets_autoupdate, getconfig("tithek_servicebouquets_autoupdate", NULL));
+
 	if(!file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
 		kinox_url->hidden = YES;
 
@@ -153,6 +158,7 @@ void screentithek_settings()
 			addconfigscreen("tithek_proxy", proxy);
 			addconfigscreencheck("tithek_delservice", delservice, NULL);
 			addconfigscreen("tithek_iptvurl", iptvurl);
+			addconfigscreencheck("tithek_servicebouquets_autoupdate", servicebouquets_autoupdate, NULL);
 /*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{

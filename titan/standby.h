@@ -200,6 +200,7 @@ void screenstandby()
 #ifdef MIPSEL
 	cecwakeup();
 #endif
+	addtimer(&servicebouquetsthread, START, 1000, 1, NULL, (void*)2, NULL);
 }
 
 #endif

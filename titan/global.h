@@ -8758,4 +8758,30 @@ int multiboot()
 	return ret;
 }
 
+void servicebouquetsthread(struct stimerthread* timernode, int flag)
+{
+    if(getconfigint("tithek_servicebouquets_autoupdate", NULL) == 1)
+    {
+        int count = 0;
+
+        while(count < 5)
+        {
+	        sleep(1);
+	        count++;
+        }
+
+        struct skin* tithekplugin = getplugin("Titan Mediathek");
+        if(tithekplugin != NULL)
+        {
+	        struct tithek* (*startplugin)(int);
+
+	        startplugin = dlsym(tithekplugin->pluginhandle, "servicebouquets_update");
+	        if(startplugin != NULL)
+	        {
+		        startplugin(flag);
+	        }
+        }
+    }
+}
+
 #endif
