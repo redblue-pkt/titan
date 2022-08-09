@@ -245,24 +245,6 @@ char* hoster(char* url)
 	return streamurl;
 }
 
-char* autoupdate(char* url)
-{
-	debug(202, "url: %s", url);
-	char* tmpstr = NULL, *cmd = NULL;
-
-	if(!file_exist("/tmp/localhoster"))
-		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
-
-	cmd = ostrcat(cmd, url, 1, 0);
-printf("cmd: %s\n", cmd);
-	tmpstr = command(cmd);
-
-	debug(202, "tmpstr: %s", tmpstr);
-printf("tmpstr: %s\n", tmpstr);
-
-	return tmpstr;
-}
-
 #include <stdio.h>
 #include <curl/curl.h>
 
@@ -1934,4 +1916,80 @@ end:
         m_unlock(&status.tithekmutex, 20);
     }
 }
+
+void servicebouquets_update(int flag)
+{
+	debug(202, "flag: %d", flag);
+	char* tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *localparser = NULL;
+
+	if(!file_exist("/tmp/localhoster"))
+		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+
+	cmd = ostrcat(cmd, url, 1, 0);
+    debug(202, "cmd: %s", cmd);
+    printf("cmd: %s\n", cmd);
+
+	tmpstr1 = command(cmd);
+    free(cmd), cmd= NULL;
+    debug(202, "tmpstr1: %s", tmpstr1);
+    printf("tmpstr1: %s\n", tmpstr1);
+//	tmpstr = readfiletomem(filename, 1);
+
+    if(tmpstr1 != NULL)
+    {
+		struct splitstr* ret1 = NULL;
+		int count = 0;
+		int i = 0;
+		ret1 = strsplit(tmpstr1, "\n", &count);
+	
+		for(i = 0; i < count; i++)
+		{
+			struct splitstr* ret2 = NULL;
+			int count2 = 0;
+			int i2 = 0;
+			tmpstr2 = ostrcat((&ret1[i])->part, NULL, 0, 0);
+            debug(202, "tmpstr2: %s", tmpstr2);
+            printf("tmpstr2: %s\n", tmpstr2);
+
+			ret2 = strsplit(tmpstr2, "-", &count2);
+            if(ret2 != NULL && count2 >= 2)
+            {
+                localparser = ostrcat(localparser, "/tmp/localcache/", 1, 0);
+                localparser = ostrcat(localparser, (&ret2[0])->part, 1, 0);
+                strstrip(localparser);
+                string_tolower(localparser);
+                localparser = ostrcat(localparser, ".sh", 1, 0);
+                debug(202, "localparser: %s", localparser);
+                printf("localparser: %s\n", localparser);
+
+	            if(!file_exist("/tmp/localhoster"))
+		            localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+                
+	            if(file_exist(localparser))
+                {
+                    cmd = ostrcat("cat ", localparser, 0, 0);
+                    cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
+                    cmd = ostrcat(cmd, localparser, 1, 0);
+                    cmd = ostrcat(cmd, "!g'", 1, 0);
+                    cmd = string_replace_all(" search ", " writecmd ", cmd, 1);
+                    cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
+
+                    debug(202, "cmd2: %s", cmd);
+                    printf("cmd2: %s\n", cmd);
+
+                    log = command(cmd);
+                    debug(202, "log: %s", log);
+                    printf("log: %s\n", log);
+
+                    free(cmd), cmd = NULL;
+                }
+                free(localparser), localparser = NULL;
+            }
+			free(ret2), ret2 = NULL;
+			free(tmpstr2), tmpstr2 = NULL;
+		}
+		free(ret1), ret1 = NULL;
+    }
+}
+
 #endif
