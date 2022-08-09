@@ -1940,6 +1940,7 @@ void servicebouquets_update(int flag)
 		struct splitstr* ret1 = NULL;
 		int count = 0;
 		int i = 0;
+        int ret = 0;
 		ret1 = strsplit(tmpstr1, "\n", &count);
 	
 		for(i = 0; i < count; i++)
