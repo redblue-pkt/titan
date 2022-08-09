@@ -1925,7 +1925,7 @@ void servicebouquets_update(int flag)
 	if(!file_exist("/tmp/localhoster"))
 		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
 
-	cmd = ostrcat(cmd, url, 1, 0);
+	cmd = ostrcat(cmd, "ls -1 /mnt/settings/bouquets.tithek.autoupdate.*", 1, 0);
     debug(202, "cmd: %s", cmd);
     printf("cmd: %s\n", cmd);
 
