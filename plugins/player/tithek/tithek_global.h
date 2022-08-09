@@ -1999,7 +1999,7 @@ void servicebouquets_update(int flag)
 
         if(updated >= 1)
         {
-            getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
+            if(getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
         		textbox(_("Message"), _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 	        debug(202, "Titan will be reloaded channellist!");
             freesat();
