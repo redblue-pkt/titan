@@ -1920,7 +1920,7 @@ end:
 void servicebouquets_update(int flag)
 {
 	debug(202, "flag: %d", flag);
-	char* tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *localparser = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *localparser = NULL;
 
 	if(!file_exist("/tmp/localhoster"))
 		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
@@ -1977,9 +1977,9 @@ void servicebouquets_update(int flag)
                     debug(202, "cmd2: %s", cmd);
                     printf("cmd2: %s\n", cmd);
 
-                    log = command(cmd);
-                    debug(202, "log: %s", log);
-                    printf("log: %s\n", log);
+                    tmpstr = command(cmd);
+                    debug(202, "tmpstr: %s", tmpstr);
+                    printf("tmpstr: %s\n", tmpstr);
 
                     free(cmd), cmd = NULL;
                 }
