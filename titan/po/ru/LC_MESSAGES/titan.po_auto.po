@@ -21196,18 +21196,3 @@ msgstr ""
 #: skins_ufs912_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Search on ARD (local)"
-#~ msgstr "Поиск в ARD (Локально)"
-
-#~ msgid "Search on All (local)"
-#~ msgstr "Поиск везде (Локально)"
-
-#~ msgid "Search on FilmOn (local)"
-#~ msgstr "Поиск в FilmOn (Локально)"
-
-#~ msgid "Search on KinoX (local)"
-#~ msgstr "Поиск в KinoX (Локально)"
-
-#~ msgid "Search on Netzkino (local)"
-#~ msgstr "Поиск в Netzkino (Локально)"
