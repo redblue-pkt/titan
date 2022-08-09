@@ -1921,7 +1921,7 @@ end:
 void servicebouquets_update(int flag)
 {
 	debug(202, "flag: %d", flag);
-    printf("servicebouquets_update channellist flag: %d\n", flag);
+    printf("servicebouquets_update flag: %d\n", flag);
 
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *localparser = NULL;
 
@@ -1930,12 +1930,12 @@ void servicebouquets_update(int flag)
 
 	cmd = ostrcat(cmd, "ls -1 /mnt/settings/bouquets.tithek.autoupdate.*", 1, 0);
     debug(202, "cmd: %s", cmd);
-    printf("servicebouquets_update channellist cmd: %s\n", cmd);
+    printf("servicebouquets_update cmd: %s\n", cmd);
 
 	tmpstr1 = command(cmd);
     free(cmd), cmd= NULL;
     debug(202, "tmpstr1: %s", tmpstr1);
-    printf("servicebouquets_update channellist tmpstr1: %s\n", tmpstr1);
+    printf("servicebouquets_update tmpstr1: %s\n", tmpstr1);
 //	tmpstr = readfiletomem(filename, 1);
 
     if(tmpstr1 != NULL)
@@ -1955,10 +1955,10 @@ void servicebouquets_update(int flag)
 			int i2 = 0;
 			tmpstr2 = ostrcat((&ret1[i])->part, NULL, 0, 0);
             debug(202, "tmpstr2: %s", tmpstr2);
-            printf("servicebouquets_update channellist tmpstr2: %s\n", tmpstr2);
+            printf("servicebouquets_update tmpstr2: %s\n", tmpstr2);
 
             tmpstr2 = string_replace_all("/mnt/settings/bouquets.tithek.autoupdate.", "", tmpstr2, 1);
-            printf("servicebouquets_update channellist tmpstr2a: %s\n", tmpstr2);
+            printf("servicebouquets_update tmpstr2a: %s\n", tmpstr2);
 
 			ret2 = strsplit(tmpstr2, ".", &count2);
             if(ret2 != NULL && count2 >= 3)
@@ -1983,22 +1983,20 @@ void servicebouquets_update(int flag)
 //                    cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
 
                     debug(202, "cmd2: %s", cmd);
-                    printf("servicebouquets_update channellist cmd2: %s\n", cmd);
+                    printf("servicebouquets_update cmd2: %s\n", cmd);
 
                     tmpstr = command(cmd);
                     debug(202, "tmpstr: %s", tmpstr);
-                    printf("servicebouquets_update channellist tmpstr: %s\n", tmpstr);
+                    printf("servicebouquets_update tmpstr: %s\n", tmpstr);
 
-                    printf("servicebouquets_update channellist ret0: %s\n", (&ret2[0])->part);
-                    printf("servicebouquets_update channellist ret1: %s\n", (&ret2[1])->part);
-                    printf("servicebouquets_update channellist ret2: %s\n", (&ret2[2])->part);
+                    free(cmd), cmd = NULL;
+                    cmd = ostrcat(cmd, tmpstr, 1, 0);
+                    cmd = string_replace_all(" search ", " writecmd ", cmd, 1);
+                    cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
+                    printf("servicebouquets_update cmd3: %s\n", cmd);
 
-                    tmpstr = string_replace_all(" search ", " writecmd ", tmpstr, 1);
-                    printf("servicebouquets_update channellist tmpstra: %s\n", tmpstr);
-
-                    tmpstr = string_replace_all("%search%", (&ret2[1])->part, tmpstr, 1);
-                    printf("servicebouquets_update channellist tmpstrb: %s\n", tmpstr);
-
+                    tmpstr = command(cmd);
+                    printf("servicebouquets_update tmpstr: %s\n", tmpstr);
 
                     free(cmd), cmd = NULL;
                     updated++;
@@ -2012,10 +2010,12 @@ void servicebouquets_update(int flag)
 
         if(updated >= 1)
         {
+tmpstr
+
             if(getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
-        		textbox(_("Message"), _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+        		textbox(tmpstr, _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
 	        debug(202, "Titan will be reloaded channellist!");
-            printf("servicebouquets_update channellist: Titan will be reloaded channellist!\n");
+            printf("servicebouquets_update channellist: Titan will be reloaded channellist!\n%s\n", tmpstr);
 
             freesat();
             freeallbouquet();
@@ -2032,7 +2032,7 @@ void servicebouquets_update(int flag)
             ret = readallbouquet();
         }
         else
-            printf("servicebouquets_update channellist: channellist unchanged\n");
+            printf("servicebouquets_update channellist: channellist unchanged\n%s\n", tmpstr);
     }
 }
 
