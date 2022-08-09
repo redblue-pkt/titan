@@ -1390,11 +1390,12 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 	if(ostrcmp("http://openaaf.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
 	{
 		path = ostrcat("/tmp/localparser", NULL, 0, 0);
-		drawscreen(load, 0, 0);
+		if(flag == 1)
+    		drawscreen(load, 0, 0);
 
 		char* titheklocalfile = ostrcat("/tmp/tithek/mainmenu.local.list", NULL, 0, 0);
 
-		if(flag == 1)
+		if(flag == 1 || flag == 2)
 		{
 			if(!file_exist("/tmp/localhoster"))
 				mkdir("/tmp/localhoster", 0777);
@@ -1923,7 +1924,7 @@ void servicebouquets_update(int flag)
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *localparser = NULL;
 
 	if(!file_exist("/tmp/localhoster"))
-		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 2);
 
 	cmd = ostrcat(cmd, "ls -1 /mnt/settings/bouquets.tithek.autoupdate.*", 1, 0);
     debug(202, "cmd: %s", cmd);
@@ -1964,7 +1965,7 @@ void servicebouquets_update(int flag)
                 printf("localparser: %s\n", localparser);
 
 	            if(!file_exist("/tmp/localhoster"))
-		            localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 1);
+		            localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "mainmenu.local.list", 2);
                 
 	            if(file_exist(localparser))
                 {
