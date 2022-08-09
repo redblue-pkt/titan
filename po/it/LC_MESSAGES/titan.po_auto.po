@@ -1085,8 +1085,8 @@ msgstr "Nessuna directory di backup trovato"
 #: skin_default_skin.xml.h:57 skins_cool_skin.xml.h:115
 #: skins_default_skin.xml.h:57 skins_kravenhd_skin.xml.h:62
 #: skins_megastyleblue_skin.xml.h:117 skins_megastylegrey_skin.xml.h:117
-#: skins_metrixhd_skin.xml.h:96 skins_smarttv_skin.xml.h:96 tithek_global.h:908
-#: tithek_global.h:1035 tithek_mainmenu.h:19 webif_channellist.h:4
+#: skins_metrixhd_skin.xml.h:96 skins_smarttv_skin.xml.h:96 tithek_global.h:890
+#: tithek_global.h:1017 tithek_mainmenu.h:19 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -1442,7 +1442,7 @@ msgstr "tutti i canali"
 msgid "All New first"
 msgstr ""
 
-#: tithek_global.h:904 tithek_global.h:1031 tithek_mainmenu.h:4
+#: tithek_global.h:886 tithek_global.h:1013 tithek_mainmenu.h:4
 msgid "All Sorted"
 msgstr ""
 
@@ -1982,7 +1982,7 @@ msgstr ""
 msgid "Automatic start last subtitle"
 msgstr ""
 
-#: titan.c:1537
+#: titan.c:1538
 msgid "Automatic stop in 10 seconds."
 msgstr "Restart in 5 Secondi !"
 
@@ -3071,7 +3071,7 @@ msgstr ""
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_global.h:884 tithek_global.h:1007 tithek_mainmenu.h:24
+#: tithek_global.h:866 tithek_global.h:989 tithek_mainmenu.h:24
 msgid "Category"
 msgstr ""
 
@@ -3443,7 +3443,7 @@ msgid "Choose your Shares from the following list"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1677 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1659 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
@@ -3479,7 +3479,7 @@ msgstr ""
 msgid "Ci-Modul internal Menu"
 msgstr ""
 
-#: tithek_global.h:1011
+#: tithek_global.h:993
 msgid "Cine Films"
 msgstr ""
 
@@ -5129,7 +5129,7 @@ msgstr ""
 #: tithek.h:1710 tithek.h:1737 tithek.h:1759 tithek.h:1781 tithek.h:1838
 #: tithek.h:2017 tithek.h:2032 tithek.h:2235 tithek.h:2290 tithek.h:2312
 #: tithek.h:2699 tithek.h:2887 tithek.h:3212 tithek.h:3277 tithek.h:3320
-#: tithek.h:3333 tithek_settings.h:239 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:3333 tithek_settings.h:245 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_autotimer_skin.xml.h:6 tools_callmonitor1_skin.xml.h:10
 #: tools_instar_skin.xml.h:8 tools_lcdpearl1_skin.xml.h:6
@@ -9152,7 +9152,7 @@ msgstr ""
 #: tithek.c:105 tithek_global.h:228 tithek.h:723 tithek.h:1710 tithek.h:1737
 #: tithek.h:1759 tithek.h:1781 tithek.h:1838 tithek.h:2017 tithek.h:2032
 #: tithek.h:2235 tithek.h:2290 tithek.h:2699 tithek.h:2887 tithek.h:3212
-#: tithek.h:3277 tithek.h:3320 tithek.h:3333 tithek_settings.h:239
+#: tithek.h:3277 tithek.h:3320 tithek.h:3333 tithek_settings.h:245
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
 #: tpk.new.h:3167 tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163
@@ -10080,7 +10080,7 @@ msgstr ""
 #: tithek.h:1710 tithek.h:1737 tithek.h:1759 tithek.h:1781 tithek.h:1838
 #: tithek.h:2017 tithek.h:2032 tithek.h:2235 tithek.h:2290 tithek.h:2312
 #: tithek.h:2699 tithek.h:2887 tithek.h:3212 tithek.h:3277 tithek.h:3320
-#: tithek.h:3333 tithek_settings.h:239 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:3333 tithek_settings.h:245 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_optimize_skin.xml.h:2 tools_rgui_skin.xml.h:2
 #: tools_tiwakeup_skin.xml.h:2 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
@@ -13319,23 +13319,23 @@ msgstr ""
 #: rtl2now.h:569 rtl2now.h:571 skin_default_skin.xml.h:574
 #: skins_default_skin.xml.h:574 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
-#: tithek_global.h:900 tithek_global.h:1027 tithek_global.h:1096
-#: tithek_global.h:1098 tithek_global.h:1733 tithek_global.h:1735
-#: tithek_global.h:1781 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
+#: tithek_global.h:882 tithek_global.h:1009 tithek_global.h:1078
+#: tithek_global.h:1080 tithek_global.h:1715 tithek_global.h:1717
+#: tithek_global.h:1763 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
 #: tvtoast.h:532 xvideos.h:57 xvideos.h:59 youtube.h:253 youtube.h:255
 #: youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Cerca"
 
-#: tithek_global.h:892 tithek_global.h:1019 tithek_mainmenu.h:108
+#: tithek_global.h:874 tithek_global.h:1001 tithek_mainmenu.h:108
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_global.h:888 tithek_global.h:1015 tithek_mainmenu.h:110
+#: tithek_global.h:870 tithek_global.h:997 tithek_mainmenu.h:110
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_global.h:896 tithek_global.h:1023 tithek_mainmenu.h:109
+#: tithek_global.h:878 tithek_global.h:1005 tithek_mainmenu.h:109
 msgid "Search Cast"
 msgstr ""
 
@@ -13537,6 +13537,10 @@ msgstr ""
 #: skins_tobayer01_skin.xml.h:551 skins_ufs912_skin.xml.h:549 webif_info.h:1
 msgid "Service"
 msgstr "Servizio"
+
+#: player_tithek_skin.xml.h:24
+msgid "Service Bouquets Auto Update"
+msgstr ""
 
 #: skins_tobayer01_skin.xml.h:804 skins_ufs912_skin.xml.h:802
 msgid "Service Information"
@@ -13746,7 +13750,7 @@ msgstr ""
 msgid "Show Modules"
 msgstr ""
 
-#: player_tithek_skin.xml.h:24 skins_cool_skin.xml.h:676
+#: player_tithek_skin.xml.h:25 skins_cool_skin.xml.h:676
 #: skins_megastyleblue_skin.xml.h:678 skins_megastylegrey_skin.xml.h:678
 msgid "Show Pay Streams"
 msgstr ""
@@ -14492,12 +14496,12 @@ msgstr ""
 msgid "Stream Config (iOS)"
 msgstr ""
 
-#: player_tithek_skin.xml.h:25
+#: player_tithek_skin.xml.h:26
 msgid "Stream Link"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1677 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1659 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
@@ -15630,15 +15634,15 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
-#: player_tithek_skin.xml.h:26
+#: player_tithek_skin.xml.h:27
 msgid "Tithek - Favorite Edit"
 msgstr ""
 
-#: tithek.c:141 tithek_global.h:858 tithek_global.h:981 tithek_global.h:1845
+#: tithek.c:141 tithek_global.h:840 tithek_global.h:963 tithek_global.h:1827
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:854 tithek_global.h:977 tithek.h:2378 tithek.h:2646
+#: tithek_global.h:836 tithek_global.h:959 tithek.h:2378 tithek.h:2646
 #: tithek.h:3273 tithek.h:3299 tithek.h:3316 tithek.h:3329 tithek.h:3346
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
@@ -15647,11 +15651,11 @@ msgstr ""
 msgid "Tithek Hoster URL with http://"
 msgstr ""
 
-#: player_tithek_skin.xml.h:34
+#: player_tithek_skin.xml.h:35
 msgid "Tithek Menu"
 msgstr ""
 
-#: player_tithek_skin.xml.h:35
+#: player_tithek_skin.xml.h:36
 msgid "Tithek Settings"
 msgstr ""
 
@@ -15665,7 +15669,7 @@ msgid ""
 "Libpack tpk."
 msgstr ""
 
-#: mediadb.h:2626 player_tithek_skin.xml.h:27 skin_default_skin.xml.h:688
+#: mediadb.h:2626 player_tithek_skin.xml.h:28 skin_default_skin.xml.h:688
 #: skins_0acht5zehn_skin.xml.h:709 skins_atemio_skin.xml.h:658
 #: skins_cool_skin.xml.h:775 skins_default_skin.xml.h:688
 #: skins_kravenhd_skin.xml.h:693 skins_megastyleblue_skin.xml.h:777
@@ -16087,7 +16091,7 @@ msgstr ""
 msgid "Typ"
 msgstr ""
 
-#: player_tithek_skin.xml.h:28 skin_default_skin.xml.h:723
+#: player_tithek_skin.xml.h:29 skin_default_skin.xml.h:723
 #: skins_0acht5zehn_skin.xml.h:739 skins_atemio_skin.xml.h:693
 #: skins_cool_skin.xml.h:807 skins_default_skin.xml.h:723
 #: skins_kravenhd_skin.xml.h:727 skins_megastyleblue_skin.xml.h:809
@@ -16250,7 +16254,7 @@ msgstr ""
 msgid "Unitymedia NRW | 13.12.2017 (caliban)"
 msgstr ""
 
-#: titan.c:1535
+#: titan.c:1536
 msgid "Unknown Error."
 msgstr "Errore Sconosciuto"
 
@@ -16338,7 +16342,7 @@ msgstr ""
 msgid "Use EPG Endtime"
 msgstr ""
 
-#: player_tithek_skin.xml.h:29 skins_cool_skin.xml.h:830
+#: player_tithek_skin.xml.h:30 skins_cool_skin.xml.h:830
 #: skins_megastyleblue_skin.xml.h:831 skins_megastylegrey_skin.xml.h:831
 msgid "Use Proxy"
 msgstr ""
@@ -16446,12 +16450,12 @@ msgstr ""
 msgid "VIDEO SETTINGS"
 msgstr "Impostazioni VIDEO"
 
-#: player_tithek_skin.xml.h:32 skins_cool_skin.xml.h:853
+#: player_tithek_skin.xml.h:33 skins_cool_skin.xml.h:853
 #: skins_megastyleblue_skin.xml.h:854 skins_megastylegrey_skin.xml.h:854
 msgid "VK Pass"
 msgstr ""
 
-#: player_tithek_skin.xml.h:33 skins_cool_skin.xml.h:854
+#: player_tithek_skin.xml.h:34 skins_cool_skin.xml.h:854
 #: skins_megastyleblue_skin.xml.h:855 skins_megastylegrey_skin.xml.h:855
 msgid "VK User"
 msgstr ""
@@ -16605,12 +16609,12 @@ msgstr ""
 msgid "View"
 msgstr "Mostra"
 
-#: player_tithek_skin.xml.h:30 skins_cool_skin.xml.h:849
+#: player_tithek_skin.xml.h:31 skins_cool_skin.xml.h:849
 #: skins_megastyleblue_skin.xml.h:850 skins_megastylegrey_skin.xml.h:850
 msgid "View Cover"
 msgstr ""
 
-#: player_tithek_skin.xml.h:31 skins_cool_skin.xml.h:850
+#: player_tithek_skin.xml.h:32 skins_cool_skin.xml.h:850
 #: skins_megastyleblue_skin.xml.h:851 skins_megastylegrey_skin.xml.h:851
 msgid "View Sections"
 msgstr ""
@@ -17737,7 +17741,7 @@ msgstr ""
 msgid "close window"
 msgstr ""
 
-#: tithek_settings.h:102
+#: tithek_settings.h:103
 msgid "cloudfare"
 msgstr ""
 
@@ -18295,7 +18299,7 @@ msgstr ""
 msgid "html"
 msgstr ""
 
-#: tithek_settings.h:100
+#: tithek_settings.h:101
 msgid "http"
 msgstr ""
 
@@ -18303,7 +18307,7 @@ msgstr ""
 msgid "httpdsettings"
 msgstr ""
 
-#: tithek_settings.h:101
+#: tithek_settings.h:102
 msgid "https"
 msgstr ""
 
@@ -18811,11 +18815,12 @@ msgstr "NFS-Server"
 #: settings_overclocking.h:234 settings_overclocking.h:244 sispmctl.h:693
 #: sispmctl.h:697 sispmctl.h:737 sispmctl.h:741 sispmctl.h:781 sispmctl.h:785
 #: sispmctl.h:825 sispmctl.h:829 skinadjust.h:252 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:53
-#: tithek_settings.h:57 tithek_settings.h:61 tithek_settings.h:65
-#: tithek_settings.h:96 tithek_settings.h:111 tithek_settings.h:115 tmc.h:531
-#: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
-#: tunerconfig.h:327 tunerconfig.h:897 xupnpd.h:30
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:54
+#: tithek_settings.h:58 tithek_settings.h:62 tithek_settings.h:66
+#: tithek_settings.h:97 tithek_settings.h:112 tithek_settings.h:116
+#: tithek_settings.h:120 tmc.h:531 tmc.h:535 tunerconfig.h:234
+#: tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327 tunerconfig.h:897
+#: xupnpd.h:30
 msgid "no"
 msgstr ""
 
@@ -19631,31 +19636,31 @@ msgstr ""
 msgid "show"
 msgstr ""
 
-#: tithek_settings.h:35 tithek_settings.h:46
+#: tithek_settings.h:36 tithek_settings.h:47
 msgid "show 12 entrys"
 msgstr ""
 
-#: tithek_settings.h:33 tithek_settings.h:44
+#: tithek_settings.h:34 tithek_settings.h:45
 msgid "show 2 entrys"
 msgstr ""
 
-#: tithek_settings.h:36 tithek_settings.h:47
+#: tithek_settings.h:37 tithek_settings.h:48
 msgid "show 20 entrys"
 msgstr ""
 
-#: tithek_settings.h:37 tithek_settings.h:48
+#: tithek_settings.h:38 tithek_settings.h:49
 msgid "show 30 entrys"
 msgstr ""
 
-#: tithek_settings.h:34 tithek_settings.h:45
+#: tithek_settings.h:35 tithek_settings.h:46
 msgid "show 6 entrys"
 msgstr ""
 
-#: tithek_settings.h:32 tithek_settings.h:43
+#: tithek_settings.h:33 tithek_settings.h:44
 msgid "show auto entrys"
 msgstr ""
 
-#: tithek_settings.h:38 tithek_settings.h:49
+#: tithek_settings.h:39 tithek_settings.h:50
 msgid "show in list"
 msgstr ""
 
@@ -20959,10 +20964,10 @@ msgstr "Giallo"
 #: settings_overclocking.h:244 sispmctl.h:692 sispmctl.h:696 sispmctl.h:736
 #: sispmctl.h:740 sispmctl.h:780 sispmctl.h:784 sispmctl.h:824 sispmctl.h:828
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:54 tithek_settings.h:58
-#: tithek_settings.h:62 tithek_settings.h:66 tithek_settings.h:97
-#: tithek_settings.h:112 tithek_settings.h:116 tmc.h:532 tmc.h:536
-#: tunerconfig.h:897 xupnpd.h:30
+#: timeshiftsettings.h:62 tithek_settings.h:55 tithek_settings.h:59
+#: tithek_settings.h:63 tithek_settings.h:67 tithek_settings.h:98
+#: tithek_settings.h:113 tithek_settings.h:117 tithek_settings.h:121 tmc.h:532
+#: tmc.h:536 tunerconfig.h:897 xupnpd.h:30
 msgid "yes"
 msgstr "SI"
 
