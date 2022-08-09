@@ -1942,6 +1942,8 @@ void servicebouquets_update(int flag)
 		int count = 0;
 		int i = 0;
         int ret = 0;
+		int updated = 0;
+
 		ret1 = strsplit(tmpstr1, "\n", &count);
 	
 		for(i = 0; i < count; i++)
@@ -1953,8 +1955,10 @@ void servicebouquets_update(int flag)
             debug(202, "tmpstr2: %s", tmpstr2);
             printf("tmpstr2: %s\n", tmpstr2);
 
+            tmpstr2 = string_replace_all("/mnt/settings/bouquets.tithek.autoupdate.", "", tmpstr2, 1);
+
 			ret2 = strsplit(tmpstr2, "-", &count2);
-            if(ret2 != NULL && count2 >= 2)
+            if(ret2 != NULL && count2 >= 3)
             {
                 localparser = ostrcat(localparser, "/tmp/localcache/", 1, 0);
                 localparser = ostrcat(localparser, (&ret2[0])->part, 1, 0);
@@ -1984,6 +1988,7 @@ void servicebouquets_update(int flag)
                     printf("tmpstr: %s\n", tmpstr);
 
                     free(cmd), cmd = NULL;
+                    updated++;
                 }
                 free(localparser), localparser = NULL;
             }
@@ -1992,22 +1997,25 @@ void servicebouquets_update(int flag)
 		}
 		free(ret1), ret1 = NULL;
 
-        if(getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
-    		textbox(_("Message"), _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
-	    debug(202, "Titan will be reloaded channellist!");
-        freesat();
-        freeallbouquet();
-        freemainbouquet(0);
-        freechannel(0);
-        freetransponder();
-        freeprovider();
-        ret = readsat(getconfig("satfile", NULL));
-        ret = readtransponder(getconfig("transponderfile", NULL));
-        ret = readprovider(getconfig("providerfile", NULL));
-        ret = readchannel(getconfig("channelfile", NULL));
-        ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
-        ret = readmainbouquet(getconfig("bouquetfile", NULL));
-        ret = readallbouquet();
+        if(updated >= 1)
+        {
+            getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
+        		textbox(_("Message"), _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+	        debug(202, "Titan will be reloaded channellist!");
+            freesat();
+            freeallbouquet();
+            freemainbouquet(0);
+            freechannel(0);
+            freetransponder();
+            freeprovider();
+            ret = readsat(getconfig("satfile", NULL));
+            ret = readtransponder(getconfig("transponderfile", NULL));
+            ret = readprovider(getconfig("providerfile", NULL));
+            ret = readchannel(getconfig("channelfile", NULL));
+            ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
+            ret = readmainbouquet(getconfig("bouquetfile", NULL));
+            ret = readallbouquet();
+        }
     }
 }
 
