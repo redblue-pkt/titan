@@ -8762,7 +8762,7 @@ void servicebouquetsthread(struct stimerthread* timernode, int flag)
 {
     if(getconfigint("tithek_servicebouquets_autoupdate", NULL) == 1)
     {
-        int count = 0;
+        int count = 0, ret = 0;
 
         while(count < 5)
         {
@@ -8781,6 +8781,22 @@ void servicebouquetsthread(struct stimerthread* timernode, int flag)
 		        startplugin(flag);
 	        }
         }
+        if(getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
+    		textbox(_("Message"), _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
+	    debug(202, "Titan will be reloaded channellist!");
+        freesat();
+        freeallbouquet();
+        freemainbouquet(0);
+        freechannel(0);
+        freetransponder();
+        freeprovider();
+        ret = readsat(getconfig("satfile", NULL));
+        ret = readtransponder(getconfig("transponderfile", NULL));
+        ret = readprovider(getconfig("providerfile", NULL));
+        ret = readchannel(getconfig("channelfile", NULL));
+        ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
+        ret = readmainbouquet(getconfig("bouquetfile", NULL));
+        ret = readallbouquet();
     }
 }
 
