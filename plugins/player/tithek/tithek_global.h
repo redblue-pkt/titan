@@ -1980,7 +1980,7 @@ void servicebouquets_update(int flag)
                     cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
                     cmd = ostrcat(cmd, localparser, 1, 0);
                     cmd = ostrcat(cmd, "!g'", 1, 0);
-                    cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
+//                    cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
 
                     debug(202, "cmd2: %s", cmd);
                     printf("servicebouquets_update channellist cmd2: %s\n", cmd);
@@ -1989,8 +1989,16 @@ void servicebouquets_update(int flag)
                     debug(202, "tmpstr: %s", tmpstr);
                     printf("servicebouquets_update channellist tmpstr: %s\n", tmpstr);
 
+                    printf("servicebouquets_update channellist ret0: %s\n", (&ret2[0])->part);
+                    printf("servicebouquets_update channellist ret1: %s\n", (&ret2[1])->part);
+                    printf("servicebouquets_update channellist ret2: %s\n", (&ret2[2])->part);
+
                     tmpstr = string_replace_all(" search ", " writecmd ", tmpstr, 1);
                     printf("servicebouquets_update channellist tmpstra: %s\n", tmpstr);
+
+                    tmpstr = string_replace_all("%search%", (&ret2[1])->part, tmpstr, 1);
+                    printf("servicebouquets_update channellist tmpstrb: %s\n", tmpstr);
+
 
                     free(cmd), cmd = NULL;
                     updated++;
