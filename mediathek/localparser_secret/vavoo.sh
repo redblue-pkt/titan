@@ -66,7 +66,9 @@ category()
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
 
-		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+#		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+
+		$curlbin -o - $URL$PAGE | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
@@ -124,9 +126,12 @@ write()
 
 writecmd()
 {
+#rm -rf /mnt/settings
+#cp -a /etc/titan.restore/mnt/settings /mnt
+
     NEXT=$(echo $NEXT | tr '+' ' ')
 
-#    remove $NEXT
+    remove $NEXT
     search 2
     save $NEXT
 #    killall -9 titan
@@ -163,6 +168,8 @@ search()
 {
     NEXT=$(echo $NEXT | tr '+' ' ')
 
+#    ADD2CHANNEL=2
+
     ADD2CHANNEL=0
     if [ ! -z "$1" ];then 
         ADD2CHANNEL=$1
@@ -170,6 +177,14 @@ search()
         rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
     fi
 
+    if [ -e /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then
+        LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")
+        #LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate.VaVoo.Germany.tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")
+        #cat /mnt/settings/channel | grep -v $LIST| wc -l
+        cat /mnt/settings/channel | grep -v $LIST > /mnt/settings/channel.tmp
+    else
+        cp -a /mnt/settings/channel /mnt/settings/channel.tmp
+    fi
 	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
@@ -184,8 +199,8 @@ search()
                 
                 if(ADD2CHANNEL != 0)
                 {
-                    cmd = "cp -a /mnt/settings/channel /mnt/settings/channel.tmp"
-                    system(cmd)
+ #                   cmd = "cp -a /mnt/settings/channel /mnt/settings/channel.tmp"
+ #                   system(cmd)
 
                     cmd = "cp -a /mnt/settings/transponder /mnt/settings/transponder.tmp"
                     system(cmd)
@@ -256,7 +271,8 @@ search()
 			{
                 if (found == 1)
                 {
-	                newpage = substr($0, 1, length($0) - 1)
+#	                newpage = substr($0, 1, length($0) - 1)
+	                newpage = substr($0, 1, length($0))
 				    if (++dup[title] == 1 && title != "" && title !~ "= = =")
 				    {
 					    piccount += 1
@@ -268,6 +284,47 @@ search()
                         if(ADD2CHANNEL != 0)
                         {
                             epgurl = "http://epgurl.dummy.to/" id
+
+#                            cmd = "sed \"s!" title "#" id "#.*!!g\" -i /mnt/settings/channel.tmp"
+#                            remove all channels with tis transponder id
+
+#real    5m4.713s
+#user    4m33.678s
+#sys     0m20.330s
+#                            cmd = "sed \"s!.*#" id "#.*!!g\" -i /mnt/settings/channel.tmp"
+#                            system(cmd)
+
+#real    2m42.387s
+#user    2m6.805s
+#sys     0m28.073s
+
+#                            cmd = "cat /mnt/settings/channel.tmp | grep -v \"#" id "#\" > /mnt/settings/channel.clean"
+#                            system(cmd)
+
+#                            cmd = "cp /mnt/settings/channel.clean /mnt/settings/channel.tmp"
+#                            system(cmd)
+
+#real    1m45.041s
+#user    1m24.475s
+#sys     0m13.042s
+
+ #                           gsub(/&/, /!/, newpage)
+                            # update sat channels with streamurl
+#                            cmd = "sed \"s;#http.*/" id ".ts.*VAVOO/2.6\\n!" newpage "\\n!g\" -i /mnt/settings/channel.tmp"
+#                            system(cmd)
+
+#                            cmd = "NEW=\"" newpage "\";sed \"s!#http.*" id ".ts.*VAVOO/2.6#!#$NEW#!g\" -i /mnt/settings/channel.tmp"
+#                            system(cmd)
+
+#last
+#                            cmd = "NEW=$(echo \"" newpage "\" | sed \"s/&/\&/g\") ;sed \"s;#http.*/" id ".ts.*VAVOO/2.6;#$NEW;g\" -i /mnt/settings/channel.tmp"
+#print "cmd " cmd
+#                            system(cmd)
+
+
+#                            cmd = "sed \"s!#http.*" id ".ts.*VAVOO/2.6!#" newpage "!g\" -i /mnt/settings/channel.tmp"
+#                            system(cmd)
+
                             cmd = "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "#" epgurl "\" >> /mnt/settings/channel.tmp"
                             system(cmd)
 
