@@ -2014,12 +2014,13 @@ void servicebouquets_update(int flag)
 
         if(updated >= 1)
         {
-            tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-            tmpstr = ostrcat(tmpstr, _("Titan will be reloaded Channellist!"), 1, 0);
+            tmpstr2 = ostrcat(tmpstr2, "\n\n", 1, 0);
+            tmpstr2 = ostrcat(tmpstr, _("Titan will be reloaded Channellist!"), 0, 0);
             if(getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
-        		textbox(_("Message"), _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 0, 0);
-	        debug(202, "%s", tmpstr);
-            printf("servicebouquets_update channellist: %s\n", tmpstr);
+        		textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 0, 0);
+	        debug(202, "%s", tmpstr2);
+            printf("servicebouquets_update channellist: %s\n", tmpstr2);
+            free(tmpstr2), tmpstr2 = NULL;
             freesat();
             freeallbouquet();
             freemainbouquet(0);
