@@ -1993,7 +1993,7 @@ void servicebouquets_update(int flag)
                     cmd = ostrcat(cmd, tmpstr, 1, 0);
                     if(getconfigint("tithek_servicebouquets_autoupdate_allchannels", NULL) == 1)
                         cmd = string_replace_all(" search ", " allchannels ", cmd, 1);
-                    else if
+                    else
                         cmd = string_replace_all(" search ", " bouquets ", cmd, 1);
 
                     cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
