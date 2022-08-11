@@ -129,7 +129,7 @@ bouquets()
     NEXT=$(echo $NEXT | tr '+' ' ')
 
     remove $NEXT
-    search 2
+    search 1
     save $NEXT
 }
 	
@@ -138,7 +138,7 @@ allchannels()
     NEXT=$(echo $NEXT | tr '+' ' ')
 
     remove $NEXT
-    search 3
+    search 2
     save $NEXT
 }
 
@@ -153,7 +153,7 @@ writecmd()
 #only create 0m8.507s
 #    search 2
 #create and update sat channels with streamid (fast) sed -e .. -i 1m2.206s
-    search 3
+    search 2
 #create and update sat channels with streamid (slow) sed -- -i 1m28.566s
 #    search 4
 #create and update sat channels with streamid (very slow) echo sed -i 3m24.186s
@@ -244,8 +244,7 @@ search()
                     cmd = cmd "cp -a /tmp/settings/transponder.org /tmp/settings/transponder.tmp\n"
                     cmd = cmd "cp -a /mnt/settings/bouquets.cfg /tmp/settings/bouquets.cfg.org\n"
                     cmd = cmd "cp -a /tmp/settings/bouquets.cfg.org /tmp/settings/bouquets.cfg.tmp\n"
- cmd3 = "sed "
-
+                    cmd2 = "sed "
                 }
 			}
             /#EXTINF/ \
@@ -325,26 +324,26 @@ search()
 		                    j = index(substr($0, 1), "?n=1&b=5&vavoo_auth=") - 1
                             newpage2 = substr($0, 1, j)
 
-                            if(ADD2CHANNEL == 3)
+                            if(ADD2CHANNEL == 2)
                             {
                                 #real    0m54.244s
                                 #user    0m50.252s
                                 #sys     0m1.571
-                                cmd3 = cmd3 " -e \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\""
+                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\""
                             }
-                            else if(ADD2CHANNEL == 4)
+                            else if(ADD2CHANNEL == 3)
                             {
                                 #real    1m14.364s
                                 #user    1m4.393s
                                 #sys     0m5.993s
-                                cmd4 = cmd4 "sed \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
                             }
-                            else if(ADD2CHANNEL == 5)
+                            else if(ADD2CHANNEL == 4)
                             {
                                 #real    3m0.390s
                                 #user    2m45.126s
                                 #sys     0m11.977s
-                                cmd5 = cmd5 "NEW=$(echo \"" newpage "\" | sed \"s/&/\\&/g\") ;sed \"s;#http.*/" id ".ts.*VAVOO/2.6\\&tslivemode=1;#$NEW\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+                                cmd4 = cmd4 "NEW=$(echo \"" newpage "\" | sed \"s/&/\\&/g\") ;sed \"s;#http.*/" id ".ts.*VAVOO/2.6\\&tslivemode=1;#$NEW\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
                             }
                             else
                             {
@@ -352,8 +351,6 @@ search()
                                 #user    0m4.576s
                                 #sys     0m1.168s
                             }
-
-
 
                             cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
                             cmd = cmd "echo \"" id "#0#0#0#192#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
@@ -382,26 +379,26 @@ search()
 				{
                     if(ADD2CHANNEL != 0)
                     {
-                        cmd6 = cmd6 "cat /tmp/settings/channel.tmp | sort -u > /tmp/settings/channel\n"
-                        cmd6 = cmd6 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
-                        cmd6 = cmd6 "cp -a /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\n"
-                        cmd6 = cmd6 "cat /tmp/settings/bouquets.cfg.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/bouquets.cfg\n"
-                        cmd6 = cmd6 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/transponder\n"
-                        cmd6 = cmd6 "sed s/\"^ *\"// -i /mnt/settings/channel\n"
+                        cmd5 = cmd5 "cat /tmp/settings/channel.tmp | sort -u > /tmp/settings/channel\n"
+                        cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
+                        cmd5 = cmd5 "cp -a /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\n"
+                        cmd5 = cmd5 "cat /tmp/settings/bouquets.cfg.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/bouquets.cfg\n"
+                        cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/transponder\n"
+                        cmd5 = cmd5 "sed s/\"^ *\"// -i /mnt/settings/channel\n"
 
-                       print cmd
+                        print cmd
  
-                       if(ADD2CHANNEL == 3)
+                        if(ADD2CHANNEL == 2)
                         {
-                            cmd3 = cmd3 " -i /tmp/settings/channel.tmp\n"
-                            print cmd3
+                            cmd2 = cmd2 " -i /tmp/settings/channel.tmp\n"
+                            print cmd2
                         }
+                        else if(ADD2CHANNEL == 3)
+                            print cmd3
                         else if(ADD2CHANNEL == 4)
                             print cmd4
-                        else if(ADD2CHANNEL == 5)
-                            print cmd5
 
-                        print cmd6
+                        print cmd5
                     }
 				}
 		' >$TMP/$FILENAME.list
@@ -421,9 +418,9 @@ search()
         if [ ! -e /tmp/settings/transponder ];then error=1; fi
         if [ ! -e /tmp/settings/channel ];then error=1; fi
         if [ ! -e /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then error=1; fi
-        if [ "$ADD2CHANNEL" == "2" ];then
+        if [ "$ADD2CHANNEL" == "1" ];then
             MSG="Create Only Service Bouquets\n"
-        elif [ "$ADD2CHANNEL" == "3" ];then
+        elif [ "$ADD2CHANNEL" == "2" ];then
             MSG="Update All Service with Streamurl and Create Service Bouquets\n"
         fi
         if [ "$error" == "1" ];then
