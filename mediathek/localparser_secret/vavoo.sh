@@ -179,7 +179,7 @@ save()
 #    cat /tmp/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
 #    cat /tmp/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
 #    sed s/"^ *"// -i /mnt/settings/channel
-    remove $NEXT
+#    remove $NEXT
 }
 
 remove()
