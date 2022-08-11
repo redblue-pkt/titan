@@ -15540,7 +15540,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:934 tithek_global.h:2018 tithek_global.h:2020
+#: play.h:934 tithek_global.h:2018
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
