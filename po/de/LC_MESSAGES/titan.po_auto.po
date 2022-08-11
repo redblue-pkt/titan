@@ -13808,7 +13808,7 @@ msgstr "Sender"
 
 #: player_tithek_skin.xml.h:24
 msgid "Service Bouquets Auto Update"
-msgstr ""
+msgstr "Sender Favorite Automatische Aktualisierung"
 
 #: skins_tobayer01_skin.xml.h:804 skins_ufs912_skin.xml.h:802
 msgid "Service Information"
@@ -14032,7 +14032,7 @@ msgstr "Zeige Bild Titel"
 
 #: player_tithek_skin.xml.h:26
 msgid "Show Service Bouquets Auto Update Message"
-msgstr ""
+msgstr "Zeige Sender Favorite Automatische Aktualisierungs Mitteilung"
 
 #: webif_index.atemio510.h:9 webif_index.atemio5200.h:9
 #: webif_index.atemio6000.h:9 webif_index.atemio6100.h:9
@@ -16610,7 +16610,7 @@ msgstr "Installierte Plugins aktualisieren?"
 
 #: player_tithek_skin.xml.h:31
 msgid "Update all Services with Streamurl"
-msgstr ""
+msgstr "Aktualisiere alle Sender mit Stream Link"
 
 #: skin_default_skin.xml.h:732 skins_0acht5zehn_skin.xml.h:750
 #: skins_atemio_skin.xml.h:704 skins_cool_skin.xml.h:818
