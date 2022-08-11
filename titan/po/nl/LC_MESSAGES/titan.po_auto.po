@@ -9205,23 +9205,24 @@ msgstr ""
 #: thefile.h:69 thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72
 #: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
 #: titan.c:334 titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
-#: tithek.c:105 tithek_global.h:228 tithek.h:723 tithek.h:1710 tithek.h:1737
-#: tithek.h:1759 tithek.h:1781 tithek.h:1838 tithek.h:2017 tithek.h:2032
-#: tithek.h:2235 tithek.h:2290 tithek.h:2699 tithek.h:2887 tithek.h:3212
-#: tithek.h:3277 tithek.h:3320 tithek.h:3333 tithek_settings.h:257
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
-#: tpk.new.h:3167 tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 vidag.h:29 vidag.h:55
-#: vidag.h:61 vidag.h:67 vidbull.h:30 vidbull.h:68 vidbull.h:74 videomode.h:67
-#: videoweed.h:35 videoweed.h:86 vidstream.h:45 vidstream.h:87 vidstream.h:99
-#: vidstream.h:168 vidto.h:31 vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95
-#: vidto.h:129 vidto.h:175 vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57
-#: vidzi.h:63 vivo.h:38 vivo.h:44 vivo.h:61 vivo.h:67 vodlocker.h:30
-#: vodlocker.h:75 vodlocker.h:81 vodlocker.h:87 webif_boxcontrol.h:2
-#: wlandisplay.c:108 xupnpd.h:57 xupnpd.h:59 xupnpd.h:70 xupnpd.h:81
-#: xupnpd.h:83 xvidstage.h:29 xvidstage.h:59 xvidstage.h:65 xvidstage.h:71
-#: xvidstage.h:77 youtube.h:228 zapback.c:79 zdf.h:29
+#: tithek.c:105 tithek_global.h:228 tithek_global.h:2020 tithek.h:723
+#: tithek.h:1710 tithek.h:1737 tithek.h:1759 tithek.h:1781 tithek.h:1838
+#: tithek.h:2017 tithek.h:2032 tithek.h:2235 tithek.h:2290 tithek.h:2699
+#: tithek.h:2887 tithek.h:3212 tithek.h:3277 tithek.h:3320 tithek.h:3333
+#: tithek_settings.h:257 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
+#: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tunerconfig.h:738
+#: tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 vidag.h:29 vidag.h:55 vidag.h:61 vidag.h:67 vidbull.h:30
+#: vidbull.h:68 vidbull.h:74 videomode.h:67 videoweed.h:35 videoweed.h:86
+#: vidstream.h:45 vidstream.h:87 vidstream.h:99 vidstream.h:168 vidto.h:31
+#: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
+#: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
+#: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
+#: vodlocker.h:87 webif_boxcontrol.h:2 wlandisplay.c:108 xupnpd.h:57
+#: xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
+#: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228
+#: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Mededeling"
 
@@ -10138,7 +10139,7 @@ msgstr ""
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:334
 #: titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228
-#: tithek_global.h:2018 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
+#: tithek_global.h:2020 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
 #: tithek.h:1781 tithek.h:1838 tithek.h:2017 tithek.h:2032 tithek.h:2235
 #: tithek.h:2290 tithek.h:2312 tithek.h:2699 tithek.h:2887 tithek.h:3212
 #: tithek.h:3277 tithek.h:3320 tithek.h:3333 tithek_settings.h:257
@@ -15664,7 +15665,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:934 tithek_global.h:2018
+#: play.h:934 tithek_global.h:2018 tithek_global.h:2020
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
