@@ -2329,6 +2329,12 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 	if(first == 1)
 	{
+//		delallfiles("/tmp/tithek", NULL);
+//		if(ytbgdownload == 0 && hlsbgdownload == 0)
+			system("rm -rf /tmp/localhoster");
+//		system("rm -rf /tmp/localparser");
+//		system("rm -rf /tmp/localcache");
+//		system("rm -rf /tmp/parser");
 		savevol = getvol();
 
 		mkdir("/tmp/tithek", 777);
