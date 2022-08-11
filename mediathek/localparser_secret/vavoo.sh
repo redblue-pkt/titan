@@ -132,9 +132,17 @@ writecmd()
     NEXT=$(echo $NEXT | tr '+' ' ')
 
     remove $NEXT
-    search 2
+#only create 0m8.507s
+#    search 2
+#create and update sat channels with streamid (fast) sed -e .. -i 1m2.206s
+    search 3
+#create and update sat channels with streamid (slow) sed -- -i 1m28.566s
+#    search 4
+#create and update sat channels with streamid (very slow) echo sed -i 3m24.186s
+#    search 5
+
     save $NEXT
-#    killall -9 titan
+    killall -9 titan
 }
 
 save()
@@ -143,12 +151,16 @@ save()
         NEXT=$1
     fi
 
-    cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel
-    cp -a /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv
+    cp /tmp/settings/bouquets.cfg /mnt/settings/bouquets.cfg
+    cp /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv 
+    cp /tmp/settings/channel /mnt/settings/channel
+    cp /tmp/settings/transponder /mnt/settings/transponder
 
-    cat /mnt/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
-    cat /mnt/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
-    sed s/"^ *"// -i /mnt/settings/channel
+#    cat /tmp/settings/channel.tmp | sort -u > /mnt/settings/channel
+#    cp -a /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv
+#    cat /tmp/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
+#    cat /tmp/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
+#    sed s/"^ *"// -i /mnt/settings/channel
     remove $NEXT
 }
 
@@ -158,14 +170,20 @@ remove()
         NEXT=$1
     fi
 
-    rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
-    rm /mnt/settings/transponder.* > /dev/null 2>&1
-    rm /mnt/settings/channel.* > /dev/null 2>&1
-    rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
+    if [ -e /tmp/settings ];then
+        rm -rf /tmp/settings
+    else
+        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
+        rm /mnt/settings/transponder.* > /dev/null 2>&1
+        rm /mnt/settings/channel.* > /dev/null 2>&1
+        rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
+    fi
 }
 
 search()
 {
+    echo 3 > /proc/sys/vm/drop_caches
+
     NEXT=$(echo $NEXT | tr '+' ' ')
 
 #    ADD2CHANNEL=2
@@ -175,21 +193,24 @@ search()
         ADD2CHANNEL=$1
         remove $NEXT
         rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
+
+        if [ ! -e /tmp/settings ];then mkdir /tmp/settings; fi
+        if [ -e /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then
+            echo "LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")" >$TMP/$FILENAME.cmd.list
+            #LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate.VaVoo.Germany.tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")
+            #cat /mnt/settings/channel | grep -v $LIST| wc -l
+            echo "cat /mnt/settings/channel | grep -v $LIST > /tmp/settings/channel.tmp" >> $TMP/$FILENAME.cmd.list
+            echo "cp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.org" >> $TMP/$FILENAME.cmd.list
+        else
+            echo "cp /mnt/settings/channel /tmp/settings/channel.tmp" > $TMP/$FILENAME.cmd.list
+        fi
     fi
 
-    if [ -e /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then
-        LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")
-        #LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate.VaVoo.Germany.tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")
-        #cat /mnt/settings/channel | grep -v $LIST| wc -l
-        cat /mnt/settings/channel | grep -v $LIST > /mnt/settings/channel.tmp
-    else
-        cp -a /mnt/settings/channel /mnt/settings/channel.tmp
-    fi
 	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
 
-		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v ADD2CHANNEL="$ADD2CHANNEL" -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v vavoo_auth="$vavoo_auth" -v ADD2CHANNEL="$ADD2CHANNEL" -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
@@ -199,14 +220,14 @@ search()
                 
                 if(ADD2CHANNEL != 0)
                 {
- #                   cmd = "cp -a /mnt/settings/channel /mnt/settings/channel.tmp"
- #                   system(cmd)
+                    cmd = cmd "cp -a /mnt/settings/channel /tmp/settings/channel.org\n"
+                    cmd = cmd "cp -a /tmp/settings/channel.org /tmp/settings/channel.tmp\n"
+                    cmd = cmd "cp -a /mnt/settings/transponder /tmp/settings/transponder.org\n"
+                    cmd = cmd "cp -a /tmp/settings/transponder.org /tmp/settings/transponder.tmp\n"
+                    cmd = cmd "cp -a /mnt/settings/bouquets.cfg /tmp/settings/bouquets.cfg.org\n"
+                    cmd = cmd "cp -a /tmp/settings/bouquets.cfg.org /tmp/settings/bouquets.cfg.tmp\n"
+ cmd3 = "sed "
 
-                    cmd = "cp -a /mnt/settings/transponder /mnt/settings/transponder.tmp"
-                    system(cmd)
-
-                    cmd = "cp -a /mnt/settings/bouquets.cfg /mnt/settings/bouquets.cfg.tmp"
-                    system(cmd)
                 }
 			}
             /#EXTINF/ \
@@ -259,9 +280,6 @@ search()
                         else
                             picext = "jpg"  
 
-# show 1 sender
-#                       gsub(/(.*)/, "", title)
-
                         found = 1
 					    next
                     }
@@ -285,64 +303,53 @@ search()
                         {
                             epgurl = "http://epgurl.dummy.to/" id
 
-#                            cmd = "sed \"s!" title "#" id "#.*!!g\" -i /mnt/settings/channel.tmp"
-#                            remove all channels with tis transponder id
+                            newpage2 = newpage
+		                    j = index(substr($0, 1), "?n=1&b=5&vavoo_auth=") - 1
+                            newpage2 = substr($0, 1, j)
 
-#real    5m4.713s
-#user    4m33.678s
-#sys     0m20.330s
-#                            cmd = "sed \"s!.*#" id "#.*!!g\" -i /mnt/settings/channel.tmp"
-#                            system(cmd)
-
-#real    2m42.387s
-#user    2m6.805s
-#sys     0m28.073s
-
-#                            cmd = "cat /mnt/settings/channel.tmp | grep -v \"#" id "#\" > /mnt/settings/channel.clean"
-#                            system(cmd)
-
-#                            cmd = "cp /mnt/settings/channel.clean /mnt/settings/channel.tmp"
-#                            system(cmd)
-
-#real    1m45.041s
-#user    1m24.475s
-#sys     0m13.042s
-
- #                           gsub(/&/, /!/, newpage)
-                            # update sat channels with streamurl
-#                            cmd = "sed \"s;#http.*/" id ".ts.*VAVOO/2.6\\n!" newpage "\\n!g\" -i /mnt/settings/channel.tmp"
-#                            system(cmd)
-
-#                            cmd = "NEW=\"" newpage "\";sed \"s!#http.*" id ".ts.*VAVOO/2.6#!#$NEW#!g\" -i /mnt/settings/channel.tmp"
-#                            system(cmd)
-
-#last
-#                            cmd = "NEW=$(echo \"" newpage "\" | sed \"s/&/\&/g\") ;sed \"s;#http.*/" id ".ts.*VAVOO/2.6;#$NEW;g\" -i /mnt/settings/channel.tmp"
-#print "cmd " cmd
-#                            system(cmd)
+                            if(ADD2CHANNEL == 3)
+                            {
+                                #real    0m54.244s
+                                #user    0m50.252s
+                                #sys     0m1.571
+                                cmd3 = cmd3 " -e \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\""
+                            }
+                            else if(ADD2CHANNEL == 4)
+                            {
+                                #real    1m14.364s
+                                #user    1m4.393s
+                                #sys     0m5.993s
+                                cmd4 = cmd4 "sed \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+                            }
+                            else if(ADD2CHANNEL == 5)
+                            {
+                                #real    3m0.390s
+                                #user    2m45.126s
+                                #sys     0m11.977s
+                                cmd5 = cmd5 "NEW=$(echo \"" newpage "\" | sed \"s/&/\\&/g\") ;sed \"s;#http.*/" id ".ts.*VAVOO/2.6\\&tslivemode=1;#$NEW\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+                            }
+                            else
+                            {
+                                #real    0m6.421s
+                                #user    0m4.576s
+                                #sys     0m1.168s
+                            }
 
 
-#                            cmd = "sed \"s!#http.*" id ".ts.*VAVOO/2.6!#" newpage "!g\" -i /mnt/settings/channel.tmp"
-#                            system(cmd)
 
-                            cmd = "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "#" epgurl "\" >> /mnt/settings/channel.tmp"
-                            system(cmd)
-
-                            cmd = "echo \"" id "#0#0#0#192#0#0#0#0#0#0#2\" >> /mnt/settings/transponder.tmp"
-                            system(cmd)
-
-                            cmd = "echo \"0#" id "\" >> /mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp"
-                            system(cmd)
-
+                            cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
+                            cmd = cmd "echo \"" id "#0#0#0#192#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
+                            cmd = cmd "echo \"0#" id "\" >> /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\n"
                             if(++dup[cmd] == 1)
-                                cmd = "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /mnt/settings/bouquets.cfg.tmp"
-                            system(cmd)
+                                cmd = cmd "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
                         }
-
-					    print title "#" newpage "&tslivemode=1#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
-#					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
-#						print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
-#						print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+                        else
+                        {
+    					    print title "#" newpage "&tslivemode=1#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
+#   					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
+#	    					print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+#	    					print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+                        }
 				    }
 				    
 				    newpage = ""
@@ -357,33 +364,49 @@ search()
 				{
                     if(ADD2CHANNEL != 0)
                     {
-#                        cmd = "cat /mnt/settings/channel.tmp | sort -u > /mnt/settings/channel"
-#                        system(cmd)
-#
-##                        cmd = "cat /mnt/settings/transponder.tmp | sort -u > /mnt/settings/transponder"
-##                        system(cmd)
-#
-##                        cmd = "cat /mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp | sort -u > /mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv"
-#                        cmd = "cp -a /mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv"
-#                        system(cmd)
-#
-##                       cmd = "cat /mnt/settings/bouquets.cfg.tmp | sort -u > /mnt/settings/bouquets.cfg"
-##                       system(cmd)
+                        cmd6 = cmd6 "cat /tmp/settings/channel.tmp | sort -u > /tmp/settings/channel\n"
+                        cmd6 = cmd6 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
+                        cmd6 = cmd6 "cp -a /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\n"
+                        cmd6 = cmd6 "cat /tmp/settings/bouquets.cfg.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/bouquets.cfg\n"
+                        cmd6 = cmd6 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/transponder\n"
+                        cmd6 = cmd6 "sed s/\"^ *\"// -i /mnt/settings/channel\n"
+
+                       print cmd
+ 
+                       if(ADD2CHANNEL == 3)
+                        {
+                            cmd3 = cmd3 " -i /tmp/settings/channel.tmp\n"
+                            print cmd3
+                        }
+                        else if(ADD2CHANNEL == 4)
+                            print cmd4
+                        else if(ADD2CHANNEL == 5)
+                            print cmd5
+
+                        print cmd6
                     }
 				}
 		' >$TMP/$FILENAME.list
-	fi
+	fi 
 
     if [ "$ADD2CHANNEL" != "0" ];then
+        if [ -e $TMP/$FILENAME.list ];then 
+#            cat $TMP/$FILENAME.list >> $TMP/$FILENAME.cmd.list
+#            cp $TMP/$FILENAME.list $TMP/$FILENAME.cmd.list
+            chmod 755 $TMP/$FILENAME.list
+#            chmod 755 $TMP/$FILENAME.cmd.list
+#            $TMP/$FILENAME.cmd.list
+            $TMP/$FILENAME.list
+        fi
         error=0
-        if [ ! -e /mnt/settings/bouquets.cfg.tmp ];then error=1; fi
-        if [ ! -e /mnt/settings/transponder.tmp ];then error=1; fi
-        if [ ! -e /mnt/settings/channel.tmp ];then error=1; fi
-        if [ ! -e /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp ];then error=1; fi
+        if [ ! -e /tmp/settings/bouquets.cfg ];then error=1; fi
+        if [ ! -e /tmp/settings/transponder ];then error=1; fi
+        if [ ! -e /tmp/settings/channel ];then error=1; fi
+        if [ ! -e /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then error=1; fi
         if [ "$error" == "1" ];then
-            echo "errormsg: add2channel "$NAME"-"$NEXT" has been creating error as .tmp"
+            echo "errormsg: add2channel "$NAME"-"$NEXT" has been creating error in /tmp/settings"
         else
-            echo "add2channel "$NAME"-"$NEXT" has been completed as .tmp"
+            echo "add2channel "$NAME"-"$NEXT" has been completed in /tmp/settings"
         fi
     else
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
