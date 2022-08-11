@@ -132,7 +132,7 @@ bouquets()
     search 2
     save $NEXT
 }
-
+	
 allchannels()
 {
     NEXT=$(echo $NEXT | tr '+' ' ')
@@ -141,7 +141,6 @@ allchannels()
     search 3
     save $NEXT
 }
-
 
 writecmd()
 {
