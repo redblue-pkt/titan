@@ -124,6 +124,25 @@ write()
     search 1
 }
 
+bouquets()
+{
+    NEXT=$(echo $NEXT | tr '+' ' ')
+
+    remove $NEXT
+    search 2
+    save $NEXT
+}
+
+allchannels()
+{
+    NEXT=$(echo $NEXT | tr '+' ' ')
+
+    remove $NEXT
+    search 3
+    save $NEXT
+}
+
+
 writecmd()
 {
 #rm -rf /mnt/settings
@@ -439,4 +458,6 @@ case $INPUT in
 	writecmd) $INPUT;;
 	remove) $INPUT;;
 	save) $INPUT;;
+    bouquets) $INPUT;;
+    allchannels) $INPUT;;
 esac
