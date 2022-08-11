@@ -421,10 +421,15 @@ search()
         if [ ! -e /tmp/settings/transponder ];then error=1; fi
         if [ ! -e /tmp/settings/channel ];then error=1; fi
         if [ ! -e /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then error=1; fi
+        if [ "$ADD2CHANNEL" == "2" ];then
+            MSG="Create Only Service Bouquets\n"
+        elif [ "$ADD2CHANNEL" == "3" ];then
+            MSG="Update All Service with Streamurl and Create Service Bouquets\n"
+        fi
         if [ "$error" == "1" ];then
-            echo "errormsg: add2channel "$NAME"-"$NEXT" has been creating error in /tmp/settings"
+            echo "errormsg: $MSG "$NAME"-"$NEXT" has been creating error in /tmp/settings"
         else
-            echo "add2channel "$NAME"-"$NEXT" has been completed in /tmp/settings"
+            echo "$MSG "$NAME"-"$NEXT" has been completed in /tmp/settings"
         fi
     else
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
