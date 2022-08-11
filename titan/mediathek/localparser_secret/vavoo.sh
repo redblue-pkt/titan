@@ -239,7 +239,7 @@ search()
                 if(ADD2CHANNEL != 0)
                 {
                     cmd = cmd "cp -a /mnt/settings/channel /tmp/settings/channel.org\n"
-                    cmd = cmd "cp -a /tmp/settings/channel.org /tmp/settings/channel.tmp\n"
+#                    cmd = cmd "cp -a /tmp/settings/channel.org /tmp/settings/channel.tmp\n"
                     cmd = cmd "cp -a /mnt/settings/transponder /tmp/settings/transponder.org\n"
                     cmd = cmd "cp -a /tmp/settings/transponder.org /tmp/settings/transponder.tmp\n"
                     cmd = cmd "cp -a /mnt/settings/bouquets.cfg /tmp/settings/bouquets.cfg.org\n"
@@ -406,12 +406,12 @@ search()
 
     if [ "$ADD2CHANNEL" != "0" ];then
         if [ -e $TMP/$FILENAME.list ];then 
-#            cat $TMP/$FILENAME.list >> $TMP/$FILENAME.cmd.list
+            cat $TMP/$FILENAME.list >> $TMP/$FILENAME.cmd.list
 #            cp $TMP/$FILENAME.list $TMP/$FILENAME.cmd.list
-            chmod 755 $TMP/$FILENAME.list
-#            chmod 755 $TMP/$FILENAME.cmd.list
-#            $TMP/$FILENAME.cmd.list
-            $TMP/$FILENAME.list
+#            chmod 755 $TMP/$FILENAME.list
+#            $TMP/$FILENAME.list
+            chmod 755 $TMP/$FILENAME.cmd.list
+            $TMP/$FILENAME.cmd.list
         fi
         error=0
         if [ ! -e /tmp/settings/bouquets.cfg ];then error=1; fi
