@@ -679,7 +679,7 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
                 if(localparser != NULL && ostrstr(link, " search ") != NULL)
                 {
                     cmd = ostrcat("cat ", localparser, 0, 0);
-                    cmd = ostrcat(cmd, " | grep '^write()' | wc -l", 1, 0);
+                    cmd = ostrcat(cmd, " | grep '^create_service_bouquets()' | wc -l", 1, 0);
 		            debug(202, "cmd: %s", cmd);
                     if(ostrcmp(string_newline(command(cmd)), "1") == 0)
                     {
@@ -867,7 +867,7 @@ printf("mbox->name=%s\n", mbox->name);
 	        drawscreen(load, 0, 0);
 
             cmd = ostrcat(link, NULL, 0, 0);
-            cmd = string_replace_all(" search ", " write ", cmd, 1);
+            cmd = string_replace_all(" search ", " create_service_bouquets ", cmd, 1);
 
 		    if(ostrstr(cmd, "%search%") != NULL)
 			    cmd = string_replace_all("%search%", file, cmd, 1);
