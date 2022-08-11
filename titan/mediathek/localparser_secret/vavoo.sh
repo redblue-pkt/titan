@@ -425,9 +425,9 @@ search()
         if [ ! -e /tmp/settings/channel ];then error=1; fi
         if [ ! -e /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then error=1; fi
         if [ "$ADD2CHANNEL" == "1" ];then
-            MSG="Create Only Service Bouquets"
+            MSG="Create Service Bouquets"
         elif [ "$ADD2CHANNEL" == "2" ];then
-            MSG="Update All Service with Streamurl and Create Service Bouquets"
+            MSG="Update all Services with Streamurl and Service Bouquets"
         fi
         if [ "$error" == "1" ];then
             echo "errormsg: $MSG "$NAME"-"$NEXT" has been creating error in /tmp/settings"
