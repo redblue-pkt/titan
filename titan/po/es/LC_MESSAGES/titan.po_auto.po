@@ -5183,7 +5183,7 @@ msgstr ""
 #: tithek.h:1710 tithek.h:1737 tithek.h:1759 tithek.h:1781 tithek.h:1838
 #: tithek.h:2017 tithek.h:2032 tithek.h:2235 tithek.h:2290 tithek.h:2312
 #: tithek.h:2699 tithek.h:2887 tithek.h:3212 tithek.h:3277 tithek.h:3320
-#: tithek.h:3333 tithek_settings.h:251 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:3333 tithek_settings.h:257 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_autotimer_skin.xml.h:6 tools_callmonitor1_skin.xml.h:10
 #: tools_instar_skin.xml.h:8 tools_lcdpearl1_skin.xml.h:6
@@ -9254,7 +9254,7 @@ msgstr "Lista de Menus"
 #: tithek.c:105 tithek_global.h:228 tithek.h:723 tithek.h:1710 tithek.h:1737
 #: tithek.h:1759 tithek.h:1781 tithek.h:1838 tithek.h:2017 tithek.h:2032
 #: tithek.h:2235 tithek.h:2290 tithek.h:2699 tithek.h:2887 tithek.h:3212
-#: tithek.h:3277 tithek.h:3320 tithek.h:3333 tithek_settings.h:251
+#: tithek.h:3277 tithek.h:3320 tithek.h:3333 tithek_settings.h:257
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
 #: tpk.new.h:3167 tunerconfig.h:738 tunerconfig.h:765 tunerconfig.h:1163
@@ -10184,10 +10184,10 @@ msgstr ""
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:334
 #: titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228
-#: tithek_global.h:2014 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
+#: tithek_global.h:2018 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
 #: tithek.h:1781 tithek.h:1838 tithek.h:2017 tithek.h:2032 tithek.h:2235
 #: tithek.h:2290 tithek.h:2312 tithek.h:2699 tithek.h:2887 tithek.h:3212
-#: tithek.h:3277 tithek.h:3320 tithek.h:3333 tithek_settings.h:251
+#: tithek.h:3277 tithek.h:3320 tithek.h:3333 tithek_settings.h:257
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 tools_optimize_skin.xml.h:2 tools_rgui_skin.xml.h:2
 #: tools_tiwakeup_skin.xml.h:2 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
@@ -15732,7 +15732,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:934 tithek_global.h:2014
+#: play.h:934 tithek_global.h:2018
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
@@ -15806,11 +15806,11 @@ msgstr ""
 msgid "Tithek Hoster URL with http://"
 msgstr ""
 
-#: player_tithek_skin.xml.h:36
+#: player_tithek_skin.xml.h:37
 msgid "Tithek Menu"
 msgstr ""
 
-#: player_tithek_skin.xml.h:37
+#: player_tithek_skin.xml.h:38
 msgid "Tithek Settings"
 msgstr ""
 
@@ -16452,6 +16452,10 @@ msgstr ""
 msgid "Update Plugins to new Version?"
 msgstr "Actualizacin de las extensiones a la nueva version?"
 
+#: player_tithek_skin.xml.h:31
+msgid "Update all Services with Streamurl"
+msgstr ""
+
 #: skin_default_skin.xml.h:732 skins_0acht5zehn_skin.xml.h:750
 #: skins_atemio_skin.xml.h:704 skins_cool_skin.xml.h:818
 #: skins_default_skin.xml.h:732 skins_kravenhd_skin.xml.h:734
@@ -16503,7 +16507,7 @@ msgstr "USB Actualizar (tmp)"
 msgid "Use EPG Endtime"
 msgstr "Para mostrar final"
 
-#: player_tithek_skin.xml.h:31 skins_cool_skin.xml.h:830
+#: player_tithek_skin.xml.h:32 skins_cool_skin.xml.h:830
 #: skins_megastyleblue_skin.xml.h:831 skins_megastylegrey_skin.xml.h:831
 msgid "Use Proxy"
 msgstr ""
@@ -16611,12 +16615,12 @@ msgstr "Video"
 msgid "VIDEO SETTINGS"
 msgstr "Video Ajustes"
 
-#: player_tithek_skin.xml.h:34 skins_cool_skin.xml.h:853
+#: player_tithek_skin.xml.h:35 skins_cool_skin.xml.h:853
 #: skins_megastyleblue_skin.xml.h:854 skins_megastylegrey_skin.xml.h:854
 msgid "VK Pass"
 msgstr ""
 
-#: player_tithek_skin.xml.h:35 skins_cool_skin.xml.h:854
+#: player_tithek_skin.xml.h:36 skins_cool_skin.xml.h:854
 #: skins_megastyleblue_skin.xml.h:855 skins_megastylegrey_skin.xml.h:855
 msgid "VK User"
 msgstr ""
@@ -16770,12 +16774,12 @@ msgstr "Vietnan"
 msgid "View"
 msgstr "Ver"
 
-#: player_tithek_skin.xml.h:32 skins_cool_skin.xml.h:849
+#: player_tithek_skin.xml.h:33 skins_cool_skin.xml.h:849
 #: skins_megastyleblue_skin.xml.h:850 skins_megastylegrey_skin.xml.h:850
 msgid "View Cover"
 msgstr "Tapa arroyos (streams)"
 
-#: player_tithek_skin.xml.h:33 skins_cool_skin.xml.h:850
+#: player_tithek_skin.xml.h:34 skins_cool_skin.xml.h:850
 #: skins_megastyleblue_skin.xml.h:851 skins_megastylegrey_skin.xml.h:851
 msgid "View Sections"
 msgstr "Seleccionar Menu"
@@ -17907,7 +17911,7 @@ msgstr "CIFS"
 msgid "close window"
 msgstr ""
 
-#: tithek_settings.h:104
+#: tithek_settings.h:105
 msgid "cloudfare"
 msgstr ""
 
@@ -18467,7 +18471,7 @@ msgstr "Mantener"
 msgid "html"
 msgstr "HTML"
 
-#: tithek_settings.h:102
+#: tithek_settings.h:103
 msgid "http"
 msgstr ""
 
@@ -18475,7 +18479,7 @@ msgstr ""
 msgid "httpdsettings"
 msgstr ""
 
-#: tithek_settings.h:103
+#: tithek_settings.h:104
 msgid "https"
 msgstr ""
 
@@ -18983,12 +18987,12 @@ msgstr "NFS Servidor"
 #: settings_overclocking.h:234 settings_overclocking.h:244 sispmctl.h:693
 #: sispmctl.h:697 sispmctl.h:737 sispmctl.h:741 sispmctl.h:781 sispmctl.h:785
 #: sispmctl.h:825 sispmctl.h:829 skinadjust.h:252 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:55
-#: tithek_settings.h:59 tithek_settings.h:63 tithek_settings.h:67
-#: tithek_settings.h:98 tithek_settings.h:113 tithek_settings.h:117
-#: tithek_settings.h:121 tithek_settings.h:125 tmc.h:531 tmc.h:535
-#: tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327
-#: tunerconfig.h:897 xupnpd.h:30
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:56
+#: tithek_settings.h:60 tithek_settings.h:64 tithek_settings.h:68
+#: tithek_settings.h:99 tithek_settings.h:114 tithek_settings.h:118
+#: tithek_settings.h:122 tithek_settings.h:126 tithek_settings.h:130 tmc.h:531
+#: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
+#: tunerconfig.h:327 tunerconfig.h:897 xupnpd.h:30
 msgid "no"
 msgstr "No"
 
@@ -19811,31 +19815,31 @@ msgstr ""
 msgid "show"
 msgstr ""
 
-#: tithek_settings.h:37 tithek_settings.h:48
+#: tithek_settings.h:38 tithek_settings.h:49
 msgid "show 12 entrys"
 msgstr "Mostrar 12 entradas"
 
-#: tithek_settings.h:35 tithek_settings.h:46
+#: tithek_settings.h:36 tithek_settings.h:47
 msgid "show 2 entrys"
 msgstr "Mostrar 2 entradas"
 
-#: tithek_settings.h:38 tithek_settings.h:49
+#: tithek_settings.h:39 tithek_settings.h:50
 msgid "show 20 entrys"
 msgstr "Mostrar 20 entradas"
 
-#: tithek_settings.h:39 tithek_settings.h:50
+#: tithek_settings.h:40 tithek_settings.h:51
 msgid "show 30 entrys"
 msgstr "Mostrar 30 entradas"
 
-#: tithek_settings.h:36 tithek_settings.h:47
+#: tithek_settings.h:37 tithek_settings.h:48
 msgid "show 6 entrys"
 msgstr "Mostrar 6 entradas"
 
-#: tithek_settings.h:34 tithek_settings.h:45
+#: tithek_settings.h:35 tithek_settings.h:46
 msgid "show auto entrys"
 msgstr "Mostrar entradas (Auto amount)"
 
-#: tithek_settings.h:40 tithek_settings.h:51
+#: tithek_settings.h:41 tithek_settings.h:52
 msgid "show in list"
 msgstr "Mostrar en lista"
 
@@ -21141,10 +21145,11 @@ msgstr "amarillo"
 #: settings_overclocking.h:244 sispmctl.h:692 sispmctl.h:696 sispmctl.h:736
 #: sispmctl.h:740 sispmctl.h:780 sispmctl.h:784 sispmctl.h:824 sispmctl.h:828
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:56 tithek_settings.h:60
-#: tithek_settings.h:64 tithek_settings.h:68 tithek_settings.h:99
-#: tithek_settings.h:114 tithek_settings.h:118 tithek_settings.h:122
-#: tithek_settings.h:126 tmc.h:532 tmc.h:536 tunerconfig.h:897 xupnpd.h:30
+#: timeshiftsettings.h:62 tithek_settings.h:57 tithek_settings.h:61
+#: tithek_settings.h:65 tithek_settings.h:69 tithek_settings.h:100
+#: tithek_settings.h:115 tithek_settings.h:119 tithek_settings.h:123
+#: tithek_settings.h:127 tithek_settings.h:131 tmc.h:532 tmc.h:536
+#: tunerconfig.h:897 xupnpd.h:30
 msgid "yes"
 msgstr "Si"
 
