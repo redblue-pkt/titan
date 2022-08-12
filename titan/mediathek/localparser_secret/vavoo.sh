@@ -325,30 +325,25 @@ search()
                         {
                             epgurl = "http://epgurl.dummy.to/" id
 
-                            newpage2 = newpage
-		                    j = index(substr($0, 1), "?n=1&b=5&vavoo_auth=") - 1
-                            newpage2 = substr($0, 1, j)
-
                             if(ADD2CHANNEL == 2)
                             {
-                                #real    0m54.244s
-                                #user    0m50.252s
-                                #sys     0m1.571
-                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1#;g\" \x5c\n"
+#                               newpage2 = newpage
+#                                j = index(substr($0, 1), "?n=1&b=5&vavoo_auth=") - 1
+#                                newpage2 = substr($0, 1, j)
+                                #real    1m3.487s
+#                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1#;g\" \x5c\n"
+                                newpage3 = newpage
+                                gsub("(&)", "\\\\\\&", newpage3) 
+                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage3 "\\&tslivemode=1#;g\" \x5c\n"
                             }
                             else if(ADD2CHANNEL == 3)
                             {
-                                #real    1m14.364s
-                                #user    1m4.393s
-                                #sys     0m5.993s
-                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
-                            }
-                            else if(ADD2CHANNEL == 4)
-                            {
-                                #real    3m0.390s
-                                #user    2m45.126s
-                                #sys     0m11.977s
-                                cmd4 = cmd4 "NEW=$(echo \"" newpage "\" | sed \"s/&/\\&/g\") ;sed \"s;#http.*/" id ".ts.*VAVOO/2.6\\&tslivemode=1;#$NEW\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+#                                newpage2 = newpage
+#                                j = index(substr($0, 1), "?n=1&b=5&vavoo_auth=") - 1
+#                                newpage2 = substr($0, 1, j)
+                                #real    1m27.071s
+#                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/#;#" newpage3 "\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
                             }
                             else
                             {
@@ -360,8 +355,8 @@ search()
                             cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
                             cmd = cmd "echo \"" id "#0#0#0#192#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
                             cmd = cmd "echo \"0#" id "\" >> /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\n"
-                            if(++dup[cmd5] == 1)
-                                cmd5 = cmd5 "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
+                           if(++dup[cmd4] == 1)
+                                cmd4 = cmd4 "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
                         }
                         else
                         {
@@ -384,12 +379,12 @@ search()
 				{
                     if(ADD2CHANNEL != 0)
                     {
-                        cmd6 = cmd6 "cat /tmp/settings/channel.tmp | sort -u > /tmp/settings/channel\n"
-                        cmd6 = cmd6 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
-                        cmd6 = cmd6 "cp -a /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\n"
-                        cmd6 = cmd6 "cat /tmp/settings/bouquets.cfg.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/bouquets.cfg\n"
-                        cmd6 = cmd6 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/transponder\n"
-                        cmd6 = cmd6 "sed s/\"^ *\"// -i /mnt/settings/channel\n"
+                        cmd5 = cmd5 "cat /tmp/settings/channel.tmp | sort -u > /tmp/settings/channel\n"
+                        cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
+                        cmd5 = cmd5 "cp -a /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\n"
+                        cmd5 = cmd5 "cat /tmp/settings/bouquets.cfg.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/bouquets.cfg\n"
+                        cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/transponder\n"
+                        cmd5 = cmd5 "sed s/\"^ *\"// -i /mnt/settings/channel\n"
 
                         print cmd
  
@@ -400,11 +395,9 @@ search()
                         }
                         else if(ADD2CHANNEL == 3)
                             print cmd3
-                        else if(ADD2CHANNEL == 4)
-                            print cmd4
 
+                        print cmd4
                         print cmd5
-                        print cmd6
                     }
 				}
 		' >$TMP/$FILENAME.list
@@ -427,7 +420,7 @@ search()
         if [ "$ADD2CHANNEL" == "1" ];then
             MSG="Create Service Bouquets"
         elif [ "$ADD2CHANNEL" == "2" ];then
-            MSG="Update all Services with Streamurl and Service Bouquets"
+            MSG="Update all Services with VaVoo Streamurl and Service Bouquets"
         fi
         if [ "$error" == "1" ];then
             echo "errormsg: $MSG "$NAME"-"$NEXT" has been creating error in /tmp/settings"

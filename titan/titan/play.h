@@ -631,7 +631,7 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
 	struct skin* child = plugin->child;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = _("Menu");
-    char* localparser = NULL, *cmd = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
+    char* localparser = NULL, *cmd = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 
     if(link != NULL && !ostrncmp("/", link, 1))
     {
@@ -688,6 +688,69 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
            	        free(cmd), cmd = NULL;
                 }
 				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
+//start
+printf("localparser: %s flag: %d\n", localparser, flag);
+                if(localparser != NULL)
+                {
+	                cmd = ostrcat(cmd, "cat /tmp/tithek/mainmenu.local.list | awk '{ print $1 \" \" $2 \" \" $3 \" \" $4 \" \" $5 }'", 1, 0);
+                    printf("playrcred cmd: %s\n", cmd);
+
+	                tmpstr1 = command(cmd);
+                    free(cmd), cmd= NULL;
+
+                    printf("playrcred tmpstr1: %s\n", tmpstr1);
+                //	tmpstr = readfiletomem(filename, 1);
+
+                    if(tmpstr1 != NULL)
+                    {
+		                struct splitstr* ret1 = NULL;
+		                int count = 0;
+		                int i = 0;
+                        int ret = 0;
+		                int updated = 0;
+
+		                ret1 = strsplit(tmpstr1, "\n", &count);
+	                
+		                for(i = 0; i < count; i++)
+		                {
+			                struct splitstr* ret2 = NULL;
+			                int count2 = 0;
+			                int i2 = 0;
+			                tmpstr2 = ostrcat((&ret1[i])->part, NULL, 0, 0);
+                            printf("playrcred tmpstr2: %s\n", tmpstr2);
+			                ret2 = strsplit(tmpstr2, "#", &count2);
+                            if(ret2 != NULL && count2 >= 1)
+                            {
+                                localparser = ostrcat((&ret2[1])->part, NULL, 0, 0);
+                                printf("playrcred localparser: %s\n", localparser);
+                               
+	                            if(file_exist(localparser))
+                                {
+                                    cmd = ostrcat("cat ", localparser, 0, 0);
+                                    cmd = ostrcat(cmd, " | grep '^search()' | wc -l", 1, 0);
+		                            printf("cmd: %s\n", cmd);
+                                    if(ostrcmp(string_newline(command(cmd)), "1") == 0)
+                                    {
+                                        tmpstr = ostrcat(_("Search on"), " ", 0, 0);
+                                        tmpstr = ostrcat(tmpstr, (&ret2[0])->part, 1, 0);
+
+                        				addmenulist(&mlist, _(tmpstr), (&ret2[1])->part, NULL, 0, 0);
+                //        				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
+                                        free(tmpstr), tmpstr = NULL;
+                                    }
+                                    free(cmd), cmd = NULL;
+                                }
+                                free(localparser), localparser = NULL;
+                            }
+			                free(ret2), ret2 = NULL;
+			                free(tmpstr2), tmpstr2 = NULL;
+		                }
+		                free(ret1), ret1 = NULL;
+                    }
+                    free(tmpstr2), tmpstr2 = NULL;
+                }
+//end
+
 /*
 				addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);
 				addmenulist(&mlist, "Search on Movie4k", NULL, _("Search on Movie4k"), 0, 0);
@@ -746,6 +809,7 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
 	if(mbox != NULL)
 	{
 printf("mbox->name=%s\n", mbox->name);
+printf("mbox->text=%s\n", mbox->text);
 
 		if(ostrcmp(mbox->name, "Video Settings") == 0)
 			screenvideosettings();
@@ -964,6 +1028,68 @@ printf("mbox->name=%s\n", mbox->name);
             free(tmpstr); tmpstr = NULL;
 	        free(tmpstr1); tmpstr1 = NULL;
             free(localparser), localparser = NULL;
+        }
+		else if(ostrncmp("/tmp/localparser/", mbox->text,17) == 0 || ostrncmp("/mnt/parser/", mbox->text,12) == 0)
+        {
+	        struct skin* load = getscreen("loading");
+	        drawscreen(load, 0, 0);
+            
+printf("playrcred mbox->text2: %s\n", mbox->text);
+printf("playrcred file: %s\n", file);
+
+
+            if(file_exist(mbox->text))
+            {
+		        struct skin* tithekplugin = getplugin("Titan Mediathek");
+		        if(tithekplugin != NULL)
+		        {
+			        struct tithek* (*startplugin)(char*, char*);
+
+			        startplugin = dlsym(tithekplugin->pluginhandle, "localparser_search_file");
+			        if(startplugin != NULL)
+			        {
+				        startplugin(mbox->text, file);
+
+			        }
+		        }
+            }
+//            free(localparser), localparser = NULL;
+/*
+                cmd = ostrcat("cat ", mbox->text, 0, 0);
+                cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
+                cmd = ostrcat(cmd, mbox->text, 1, 0);
+                cmd = ostrcat(cmd, "!g'", 1, 0);
+//                    cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
+
+                debug(202, "cmd2: %s", cmd);
+                printf("playrcred cmd2: %s\n", cmd);
+
+                tmpstr = command(cmd);
+                debug(202, "tmpstr: %s", tmpstr);
+                printf("playrcred tmpstr: %s\n", tmpstr);
+
+                free(cmd), cmd = NULL;
+                cmd = ostrcat(cmd, tmpstr, 1, 0);
+
+//                if(getconfigint("tithek_servicebouquets_autoupdate_allchannels", NULL) == 1)
+//                    cmd = string_replace_all(" search ", " update_all_channels ", cmd, 1);
+//                else
+//                    cmd = string_replace_all(" search ", " update_service_bouquets ", cmd, 1);
+
+                cmd = string_replace_all("%search%", file, cmd, 1);
+                printf("playrcred cmd3: %s\n", cmd);
+
+                tmpstr = command(cmd);
+                printf("playrcred tmpstr: %s\n", tmpstr);
+
+                free(cmd), cmd = NULL;
+            }
+//            free(localparser), localparser = NULL;
+
+            free(tmpstr); tmpstr = NULL;
+//            free(localparser), localparser = NULL;
+*/
+
         }
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
