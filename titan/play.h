@@ -633,10 +633,14 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
 	char* skintitle = _("Menu");
     char* localparser = NULL, *cmd = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 
+printf("playrcred link: %s flag: %d\n", link, flag);
+
     if(link != NULL && !ostrncmp("/", link, 1))
     {
         localparser = ostrcat(link, NULL, 0, 0);
         localparser = stringreplacecharonce(localparser, ' ', '\0');
+printf("playrcred set localparser: %s\n", localparser);
+
     }
 		
 	if(flag < 99)
