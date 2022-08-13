@@ -142,7 +142,8 @@ stb_type_t GetSTBType()
             // please see: https://gitlab.com/e2i/e2iplayer/issues/282
             type = STB_VUPLUS;
         }
-        else if (access("/sys/firmware/devicetree/base/soc/hisilicon_clock/name", F_OK) != -1) {
+        else if (access("/sys/firmware/devicetree/base/soc/hisilicon_clock/name", F_OK) != -1 || \
+                 access("/usr/bin/hihalt", F_OK) != -1 ) {
             type = STB_HISILICON;
         }
         else {
