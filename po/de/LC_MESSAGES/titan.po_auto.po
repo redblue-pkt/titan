@@ -13618,7 +13618,7 @@ msgstr ""
 
 #: play.h:740
 msgid "Search on"
-msgstr "Suche diesen Titel bei "
+msgstr "Suche diesen Titel bei"
 
 #: play.h:786
 msgid "Search on InternetRadio (local)"
