@@ -1264,7 +1264,7 @@ msgstr ""
 msgid "AUTH SETTINGS"
 msgstr "Ajustes"
 
-#: play.h:647
+#: play.h:651
 msgid "AV Settings"
 msgstr "Audio/Video Ajustes"
 
@@ -3062,7 +3062,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:685 mc_audioplayer.h:797 mc_global.h:781
 #: mc_global.h:1086 mc_iptvplayer.h:392 mc_iptvplayer.h:503
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:1909
+#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:2041
 msgid "Can't start playback !"
 msgstr "La Reproduccion no se pudo iniciar"
 
@@ -3463,7 +3463,7 @@ msgid "Choose your Playlist Mode from the following list"
 msgstr ""
 "seleccione el modo de lista de reproduccion que desee de la lista siguiente"
 
-#: play.h:745
+#: play.h:814
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Seleccione la entrada deseada para el menú rojo de la lista de abajo"
 
@@ -3869,15 +3869,15 @@ msgstr ""
 msgid "Create Default Favorites"
 msgstr "Crear favoritos predeterminados"
 
-#: play.h:668
+#: play.h:672
 msgid "Create Favorites sub folder"
 msgstr ""
 
-#: play.h:669
+#: play.h:673
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:657 play.h:1681
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:661 play.h:1813
 msgid "Create Folder"
 msgstr "Crear Carpeta"
 
@@ -3931,7 +3931,7 @@ msgstr ""
 msgid "Create Satellites/Provider (Terrestrial)"
 msgstr ""
 
-#: play.h:686
+#: play.h:690
 msgid "Create Service Bouquets"
 msgstr ""
 
@@ -4037,7 +4037,7 @@ msgid "DEFAULT"
 msgstr "Defecto"
 
 #: infos_stock_skin.xml.h:3 infos_weather_skin.xml.h:2
-#: network_networkbrowser_skin.xml.h:6 play.h:1827
+#: network_networkbrowser_skin.xml.h:6 play.h:1959
 #: skin_default_keyskin.xml.h:27 skin_default_skin.xml.h:144
 #: skins_0acht5zehn_skin.xml.h:181 skins_atemio_skin.xml.h:182
 #: skins_cool_skin.xml.h:218 skins_default_keyskin.xml.h:27
@@ -4346,7 +4346,7 @@ msgstr "Eliminar todo"
 msgid "Delete EPG after read"
 msgstr "Eliminar archivo EPG despues de la carga"
 
-#: play.h:655 play.h:656
+#: play.h:659 play.h:660
 msgid "Delete File"
 msgstr "Eliminar Archivo"
 
@@ -4710,7 +4710,7 @@ msgstr ""
 msgid "Download finished!"
 msgstr "Descargar terminado!"
 
-#: keyactions.h:87 play.h:723 settings_bluebutton.h:22
+#: keyactions.h:87 play.h:792 settings_bluebutton.h:22
 #: settings_pluginbutton.h:22 settings_redbutton.h:23
 #: skin_default_skin.xml.h:167 skins_0acht5zehn_skin.xml.h:823
 #: skins_atemio_skin.xml.h:754 skins_cool_skin.xml.h:245
@@ -4860,7 +4860,7 @@ msgstr "Expulsar"
 msgid "ELBEKANAL rtmp (German)"
 msgstr ""
 
-#: adjust.h:75 httpdfunc.h:3905 play.h:1827 skin_default_skin.xml.h:184
+#: adjust.h:75 httpdfunc.h:3905 play.h:1959 skin_default_skin.xml.h:184
 #: skins_0acht5zehn_skin.xml.h:222 skins_atemio_skin.xml.h:219
 #: skins_cool_skin.xml.h:266 skins_default_skin.xml.h:184
 #: skins_kravenhd_skin.xml.h:193 skins_megastyleblue_skin.xml.h:267
@@ -4898,7 +4898,7 @@ msgstr ""
 msgid "EPG (epg)"
 msgstr ""
 
-#: player_tmc_skin.xml.h:17 play.h:1520 play.h:1526
+#: player_tmc_skin.xml.h:17 play.h:1652 play.h:1658
 msgid "EPG Info"
 msgstr ""
 
@@ -5149,9 +5149,9 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:417
-#: player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:897 play.h:911
-#: play.h:1520 play.h:1526 play.h:1541 play.h:1542 play.h:1578 play.h:1579
-#: play.h:1593 play.h:1677 possetup.h:98 primeshare.h:29 primeshare.h:74
+#: player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:967 play.h:981
+#: play.h:1652 play.h:1658 play.h:1673 play.h:1674 play.h:1710 play.h:1711
+#: play.h:1725 play.h:1809 possetup.h:98 primeshare.h:29 primeshare.h:74
 #: primeshare.h:80 primeshare.h:125 promptfile.h:26 promptfile.h:35
 #: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
 #: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
@@ -5851,7 +5851,7 @@ msgstr ""
 msgid "Feed"
 msgstr "Por Favor intruducir direccion de fuente"
 
-#: play.h:1593
+#: play.h:1725
 msgid "File Exist, Really Rename and Overwrite exist File ?"
 msgstr ""
 
@@ -8011,7 +8011,7 @@ msgstr ""
 msgid "Jump"
 msgstr "Saltar"
 
-#: play.h:1428
+#: play.h:1560
 msgid "Jump To (min)"
 msgstr "Saltar a Posicion (min)"
 
@@ -8844,13 +8844,13 @@ msgstr ""
 msgid "Marker Overview"
 msgstr ""
 
-#: play.h:2145
+#: play.h:2277
 msgid "Marker autoseek is started"
 msgstr ""
 "autoseek marcador se pone en marchaBúsqueda automática de marcadores\n"
 "comenzado comenzo marcador Autoseek"
 
-#: play.h:2156
+#: play.h:2288
 msgid "Marker autoseek is stopped"
 msgstr "Autoseek Marcador detuvo"
 
@@ -8977,7 +8977,7 @@ msgstr ""
 msgid "MediaDB Debug"
 msgstr "MediaDB Debug "
 
-#: play.h:651 skin_default_skin.xml.h:379 skins_0acht5zehn_skin.xml.h:842
+#: play.h:655 skin_default_skin.xml.h:379 skins_0acht5zehn_skin.xml.h:842
 #: skins_cool_skin.xml.h:419 skins_default_skin.xml.h:379
 #: skins_kravenhd_skin.xml.h:377 skins_megastyleblue_skin.xml.h:420
 #: skins_megastylegrey_skin.xml.h:420 skins_metrixhd_skin.xml.h:363
@@ -9005,7 +9005,7 @@ msgstr ""
 "MediaDB ruta no encontrada!\n"
 " Configurar en MediaDB Ajustes"
 
-#: keyactions.h:24 play.h:663
+#: keyactions.h:24 play.h:667
 msgid "MediaDB Scan Info"
 msgstr "MediaDB informacion exploracion"
 
@@ -9223,8 +9223,8 @@ msgstr "Lista de Menus"
 #: network.h:993 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:934 play.h:1541
-#: play.h:1578 play.h:1909 play.h:2145 play.h:2156 possetup.h:98
+#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:1004 play.h:1673
+#: play.h:1710 play.h:2041 play.h:2277 play.h:2288 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
@@ -10147,9 +10147,9 @@ msgstr ""
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
 #: played.h:115 played.h:172 player.h:417 player_mc_skin.xml.h:40 play.h:497
-#: play.h:614 play.h:897 play.h:911 play.h:934 play.h:1520 play.h:1526
-#: play.h:1541 play.h:1542 play.h:1578 play.h:1579 play.h:1593 play.h:1677
-#: play.h:1909 play.h:2145 play.h:2156 possetup.h:98 primeshare.h:29
+#: play.h:614 play.h:967 play.h:981 play.h:1004 play.h:1652 play.h:1658
+#: play.h:1673 play.h:1674 play.h:1710 play.h:1711 play.h:1725 play.h:1809
+#: play.h:2041 play.h:2277 play.h:2288 possetup.h:98 primeshare.h:29
 #: primeshare.h:74 primeshare.h:80 primeshare.h:125 promptfile.h:26
 #: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
 #: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
@@ -11875,15 +11875,15 @@ msgstr "Activar Reader"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1677
+#: play.h:1809
 msgid "Really Create Folder in ?"
 msgstr ""
 
-#: play.h:1542
+#: play.h:1674
 msgid "Really Delete ?"
 msgstr "Realmente Eliminar?"
 
-#: play.h:1579
+#: play.h:1711
 msgid "Really Rename ?"
 msgstr ""
 
@@ -12062,7 +12062,7 @@ msgstr "Grabacion Programada"
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1541 play.h:1578
+#: play.h:1673 play.h:1710
 msgid "Record in progress"
 msgstr "grabacion activa"
 
@@ -12296,7 +12296,7 @@ msgstr ""
 msgid "Removeing"
 msgstr "Borrar"
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1583
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1715
 #: skin_default_skin.xml.h:515 skins_0acht5zehn_skin.xml.h:492
 #: skins_default_skin.xml.h:515 tools_multiimage_skin.xml.h:13
 msgid "Rename"
@@ -12790,7 +12790,7 @@ msgstr "SCART 4:3/16:9"
 msgid "SEARCH"
 msgstr "Buscar"
 
-#: dvdplay.h:29 network_dlna_skin.xml.h:9 play.h:1827
+#: dvdplay.h:29 network_dlna_skin.xml.h:9 play.h:1959
 #: skins_kravenhd_skin.xml.h:584
 msgid "SELECT"
 msgstr "Seleccionar"
@@ -12848,7 +12848,7 @@ msgstr "SNR: "
 msgid "SONNENKLAR rtmp (German)"
 msgstr ""
 
-#: play.h:1827
+#: play.h:1959
 msgid "SORT"
 msgstr "especie"
 
@@ -13474,19 +13474,23 @@ msgstr ""
 msgid "Search Serie"
 msgstr ""
 
-#: play.h:717
+#: play.h:740
+msgid "Search on"
+msgstr ""
+
+#: play.h:786
 msgid "Search on InternetRadio (local)"
 msgstr "Buscar este objeto en Internet-Radio (local)"
 
-#: play.h:690
+#: play.h:694
 msgid "Search on KinoX"
 msgstr "Buscar este título en KinoX"
 
-#: play.h:659
+#: play.h:663
 msgid "Search on PornHub"
 msgstr ""
 
-#: play.h:660
+#: play.h:664
 msgid "Search on Xvideos"
 msgstr ""
 
@@ -14786,7 +14790,7 @@ msgstr ""
 msgid "SuperRTL-Now"
 msgstr ""
 
-#: play.h:903
+#: play.h:973
 msgid "Sure to Save the Service Bouquets"
 msgstr ""
 
@@ -15733,7 +15737,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:934 tithek_global.h:2019
+#: play.h:1004 tithek_global.h:2019
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
@@ -16692,7 +16696,7 @@ msgstr "Video PID: "
 msgid "Video Player"
 msgstr "Peliculas Player"
 
-#: play.h:646 skin_default_skin.xml.h:750 skins_0acht5zehn_skin.xml.h:770
+#: play.h:650 skin_default_skin.xml.h:750 skins_0acht5zehn_skin.xml.h:770
 #: skins_0acht5zehn_skin.xml.h:904 skins_atemio_skin.xml.h:721
 #: skins_cool_skin.xml.h:845 skins_default_skin.xml.h:750
 #: skins_kravenhd_skin.xml.h:753 skins_megastyleblue_skin.xml.h:846
@@ -18498,7 +18502,7 @@ msgstr ""
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:648
+#: play.h:652
 msgid "iD3Tag Info"
 msgstr ""
 
