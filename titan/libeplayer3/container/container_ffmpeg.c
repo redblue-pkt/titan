@@ -48,6 +48,10 @@
 #include <libavformat/avformat.h>
 #include <libswresample/swresample.h>
 #include <libavutil/opt.h>
+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 0, 100)
+#include <libavcodec/bsf.h>
+#include <libavcodec/avcodec.h>
+#endif
 
 #include <ffmpeg/mpeg4audio.h>
 
@@ -2332,9 +2336,12 @@ __ddg1 =   w1mW5o1idPp9sUV8MaSL ;   +Domain =   .upstream.to ;   +HttpOnly ;   +
         }
     }
 
-    avContextTab[AVIdx]->iformat->flags |= AVFMT_SEEK_TO_PTS;
+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 0, 100)
+    //ffmpeg5: error: assignment of member 'flags' in read-only object -> so commented out next line
+    //avContextTab[AVIdx]->iformat->flags |= AVFMT_SEEK_TO_PTS;
+#else
     avContextTab[AVIdx]->flags = AVFMT_FLAG_GENPTS;
-
+#endif
     if (context->playback->noprobe)
     {
         wrapped_set_max_analyze_duration(avContextTab[AVIdx], 1);
@@ -2767,8 +2774,11 @@ int32_t container_ffmpeg_update_tracks(Context_t *context, char *filename, int32
                         {
                             ffmpeg_printf(10, " Handle inject_as_pcm = %d\n", track.inject_as_pcm);
 
+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 0, 100)
+                            const AVCodec *codec = avcodec_find_decoder(get_codecpar(stream)->codec_id);
+#else
                             AVCodec *codec = avcodec_find_decoder(get_codecpar(stream)->codec_id);
-
+#endif
                             int errorCode = avcodec_open2(track.avCodecCtx, codec, NULL);
                             if(codec != NULL && !errorCode)
                             {
