@@ -717,6 +717,8 @@ printf("localparser: %s flag: %d\n", localparser, flag);
 	                
 		                for(i = 0; i < count; i++)
 		                {
+                            //hid kinox.sh
+	                        if(ostrstr((&ret1[i])->part, "kinox.sh") != NULL) continue;
 			                struct splitstr* ret2 = NULL;
 			                int count2 = 0;
 			                int i2 = 0;
