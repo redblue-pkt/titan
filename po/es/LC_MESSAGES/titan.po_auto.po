@@ -13669,10 +13669,6 @@ msgstr ""
 msgid "Service"
 msgstr "Canal"
 
-#: player_tithek_skin.xml.h:24
-msgid "Service Bouquets Auto Update"
-msgstr ""
-
 #: skins_tobayer01_skin.xml.h:804 skins_ufs912_skin.xml.h:802
 msgid "Service Information"
 msgstr ""
@@ -13883,7 +13879,7 @@ msgstr "Mostrar el espacio libre de disco duro?"
 msgid "Show Modules"
 msgstr "Mostrar CI Detalles Mdulo?"
 
-#: player_tithek_skin.xml.h:25 skins_cool_skin.xml.h:676
+#: player_tithek_skin.xml.h:24 skins_cool_skin.xml.h:676
 #: skins_megastyleblue_skin.xml.h:678 skins_megastylegrey_skin.xml.h:678
 msgid "Show Pay Streams"
 msgstr "Mostrar imputables Streams"
@@ -13892,10 +13888,6 @@ msgstr "Mostrar imputables Streams"
 #: skins_megastyleblue_skin.xml.h:679 skins_megastylegrey_skin.xml.h:679
 msgid "Show Pictitle"
 msgstr "Mostrar titulo foto"
-
-#: player_tithek_skin.xml.h:26
-msgid "Show Service Bouquets Auto Update Message"
-msgstr ""
 
 #: webif_index.atemio510.h:9 webif_index.atemio5200.h:9
 #: webif_index.atemio6000.h:9 webif_index.atemio6100.h:9
@@ -13915,6 +13907,10 @@ msgstr ""
 #: skins_tobayer01_skin.xml.h:570 skins_ufs912_skin.xml.h:568
 msgid "Show Timeline in Channellist"
 msgstr "Mostrar barra de progreso en lista de canales?"
+
+#: player_tithek_skin.xml.h:25
+msgid "Show VaVoo Service Bouquets Auto Update Info"
+msgstr ""
 
 #: httpdfunc.h:4669 skin_default_skin.xml.h:598 skins_0acht5zehn_skin.xml.h:564
 #: skins_atemio_skin.xml.h:565 skins_cool_skin.xml.h:671
@@ -14639,7 +14635,7 @@ msgstr ""
 msgid "Stream Config (iOS)"
 msgstr ""
 
-#: player_tithek_skin.xml.h:27
+#: player_tithek_skin.xml.h:26
 msgid "Stream Link"
 msgstr ""
 
@@ -15794,7 +15790,7 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
-#: player_tithek_skin.xml.h:28
+#: player_tithek_skin.xml.h:27
 msgid "Tithek - Favorite Edit"
 msgstr ""
 
@@ -15829,7 +15825,7 @@ msgid ""
 "Libpack tpk."
 msgstr ""
 
-#: mediadb.h:2626 player_tithek_skin.xml.h:29 skin_default_skin.xml.h:688
+#: mediadb.h:2626 player_tithek_skin.xml.h:28 skin_default_skin.xml.h:688
 #: skins_0acht5zehn_skin.xml.h:709 skins_atemio_skin.xml.h:658
 #: skins_cool_skin.xml.h:775 skins_default_skin.xml.h:688
 #: skins_kravenhd_skin.xml.h:693 skins_megastyleblue_skin.xml.h:777
@@ -16257,7 +16253,7 @@ msgstr "Dos pasos silencio"
 msgid "Typ"
 msgstr ""
 
-#: player_tithek_skin.xml.h:30 skin_default_skin.xml.h:723
+#: player_tithek_skin.xml.h:29 skin_default_skin.xml.h:723
 #: skins_0acht5zehn_skin.xml.h:739 skins_atemio_skin.xml.h:693
 #: skins_cool_skin.xml.h:807 skins_default_skin.xml.h:723
 #: skins_kravenhd_skin.xml.h:727 skins_megastyleblue_skin.xml.h:809
@@ -16457,8 +16453,8 @@ msgstr ""
 msgid "Update Plugins to new Version?"
 msgstr "Actualizacin de las extensiones a la nueva version?"
 
-#: player_tithek_skin.xml.h:31
-msgid "Update all Services with Streamurl"
+#: player_tithek_skin.xml.h:30
+msgid "Update all Services with VaVoo Streamurl"
 msgstr ""
 
 #: skin_default_skin.xml.h:732 skins_0acht5zehn_skin.xml.h:750
@@ -16512,7 +16508,7 @@ msgstr "USB Actualizar (tmp)"
 msgid "Use EPG Endtime"
 msgstr "Para mostrar final"
 
-#: player_tithek_skin.xml.h:32 skins_cool_skin.xml.h:830
+#: player_tithek_skin.xml.h:31 skins_cool_skin.xml.h:830
 #: skins_megastyleblue_skin.xml.h:831 skins_megastylegrey_skin.xml.h:831
 msgid "Use Proxy"
 msgstr ""
@@ -16645,6 +16641,10 @@ msgstr ""
 
 #: satipclient.h:73
 msgid "VTUNER"
+msgstr ""
+
+#: player_tithek_skin.xml.h:32
+msgid "VaVoo Service Bouquets Auto Update"
 msgstr ""
 
 #: security.h:2072
