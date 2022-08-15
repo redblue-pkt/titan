@@ -3488,7 +3488,7 @@ msgstr ""
 "entrar los datos del usuario."
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1660 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1661 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Escoja su formato Streaming de la siguiente lista"
 
@@ -9251,7 +9251,7 @@ msgstr "Lista de Menus"
 #: thefile.h:69 thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72
 #: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
 #: titan.c:334 titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
-#: tithek.c:105 tithek_global.h:228 tithek_global.h:2021 tithek.h:723
+#: tithek.c:105 tithek_global.h:228 tithek_global.h:2022 tithek.h:723
 #: tithek.h:1710 tithek.h:1737 tithek.h:1759 tithek.h:1781 tithek.h:1838
 #: tithek.h:2017 tithek.h:2032 tithek.h:2235 tithek.h:2290 tithek.h:2705
 #: tithek.h:2893 tithek.h:3218 tithek.h:3283 tithek.h:3326 tithek.h:3339
@@ -10185,7 +10185,7 @@ msgstr ""
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:334
 #: titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228
-#: tithek_global.h:2021 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
+#: tithek_global.h:2022 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
 #: tithek.h:1781 tithek.h:1838 tithek.h:2017 tithek.h:2032 tithek.h:2235
 #: tithek.h:2290 tithek.h:2312 tithek.h:2705 tithek.h:2893 tithek.h:3218
 #: tithek.h:3283 tithek.h:3326 tithek.h:3339 tithek_settings.h:257
@@ -13447,8 +13447,8 @@ msgstr "El guión no tiene salida o se inició en el fondo"
 #: skins_default_skin.xml.h:574 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:882 tithek_global.h:1009 tithek_global.h:1078
-#: tithek_global.h:1080 tithek_global.h:1716 tithek_global.h:1718
-#: tithek_global.h:1764 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
+#: tithek_global.h:1080 tithek_global.h:1717 tithek_global.h:1719
+#: tithek_global.h:1765 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
 #: tvtoast.h:532 xvideos.h:57 xvideos.h:59 youtube.h:253 youtube.h:255
 #: youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
@@ -14640,7 +14640,7 @@ msgid "Stream Link"
 msgstr ""
 
 #: amazon.h:801 ard.h:96 giga.h:53 nbaondemand.h:126 nowtv.h:108
-#: tithek_global.h:1660 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
+#: tithek_global.h:1661 tvtoast.h:298 tvtoast.h:499 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr "Stream Menü"
 
@@ -15733,7 +15733,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:1004 tithek_global.h:2019
+#: play.h:1004 tithek_global.h:2020
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
@@ -15794,7 +15794,7 @@ msgstr ""
 msgid "Tithek - Favorite Edit"
 msgstr ""
 
-#: tithek.c:141 tithek_global.h:840 tithek_global.h:963 tithek_global.h:1828
+#: tithek.c:141 tithek_global.h:840 tithek_global.h:963 tithek_global.h:1829
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Menu Principal"
 
