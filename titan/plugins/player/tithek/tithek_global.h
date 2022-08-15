@@ -18,7 +18,7 @@ char* hoster(char* url)
 	string_tolower(tmplink);
 
 	if(!file_exist("/tmp/localhoster"))
-		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 5);
+		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 1);
 
 	drawscreen(load, 0, 0);
 
@@ -121,7 +121,7 @@ char* hoster(char* url)
 	if(streamurl == NULL && skip == 0)
 	{
 		if(!file_exist("/tmp/localhoster"))
-			localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 6);
+			localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 1);
 
 		drawscreen(load, 0, 0);
 
@@ -1386,11 +1386,9 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *line = NULL, *path = NULL;
 	struct skin* load = getscreen("loading");
-printf("localparser_init titheklink=%s tithekfile=%s flag=%d\n", titheklink, tithekfile, flag);
+
 	if(ostrcmp("http://openaaf.dyndns.tv/mediathek/mainmenu.list", titheklink) == 0)
 	{
-printf("drin localparser_init titheklink=%s tithekfile=%s flag=%d\n", titheklink, tithekfile, flag);
-
 		path = ostrcat("/tmp/localparser", NULL, 0, 0);
 		if(flag == 1)
     		drawscreen(load, 0, 0);
@@ -1929,7 +1927,7 @@ void servicebouquets_update(int flag)
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *localparser = NULL;
 
 	if(!file_exist("/tmp/localhoster"))
-		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 3);
+		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 2);
 
 	cmd = ostrcat(cmd, "ls -1 /mnt/settings/bouquets.tithek.autoupdate.*", 1, 0);
     debug(202, "cmd: %s", cmd);
@@ -1975,7 +1973,7 @@ void servicebouquets_update(int flag)
                 printf("servicebouquets_update channellist localparser: %s\n", localparser);
 
 	            if(!file_exist("/tmp/localhoster"))
-		            localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 4);
+		            localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 2);
                 
 	            if(file_exist(localparser))
                 {
