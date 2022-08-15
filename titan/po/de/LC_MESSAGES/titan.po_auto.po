@@ -21378,12 +21378,3 @@ msgstr ""
 #: skins_ufs912_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Service Bouquets Auto Update"
-#~ msgstr "Sender Favorite Automatische Aktualisierung"
-
-#~ msgid "Show Service Bouquets Auto Update Message"
-#~ msgstr "Zeige Sender Favorite Automatische Aktualisierungs Mitteilung"
-
-#~ msgid "Update all Services with Streamurl"
-#~ msgstr "Aktualisiere alle Sender mit Stream Link"
