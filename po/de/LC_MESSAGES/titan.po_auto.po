@@ -14052,7 +14052,7 @@ msgstr "Zeige Fortschrittsbalken in Senderliste"
 
 #: player_tithek_skin.xml.h:25
 msgid "Show VaVoo Service Bouquets Auto Update Info"
-msgstr ""
+msgstr "VaVoo Aktualisierungs Info anzeigen"
 
 #: httpdfunc.h:4669 skin_default_skin.xml.h:598 skins_0acht5zehn_skin.xml.h:564
 #: skins_atemio_skin.xml.h:565 skins_cool_skin.xml.h:671
@@ -16611,7 +16611,7 @@ msgstr "Installierte Plugins aktualisieren?"
 
 #: player_tithek_skin.xml.h:30
 msgid "Update all Services with VaVoo Streamurl"
-msgstr ""
+msgstr "Aktualisiere alle Sender mit VaVoo Stream Link"
 
 #: skin_default_skin.xml.h:732 skins_0acht5zehn_skin.xml.h:750
 #: skins_atemio_skin.xml.h:704 skins_cool_skin.xml.h:818
@@ -16801,7 +16801,7 @@ msgstr ""
 
 #: player_tithek_skin.xml.h:32
 msgid "VaVoo Service Bouquets Auto Update"
-msgstr ""
+msgstr "VaVoo Sender Favorite Aktualisierung"
 
 #: security.h:2072
 msgid "Version"
