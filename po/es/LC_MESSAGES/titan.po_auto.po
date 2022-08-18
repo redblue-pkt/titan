@@ -1444,7 +1444,7 @@ msgstr "Activar nueva configuracion de red?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:838 channellist.h:1313
+#: channellist.h:842 channellist.h:1317
 msgid "All Channels"
 msgstr "Todos los Canales"
 
@@ -2661,7 +2661,7 @@ msgstr "Numero de Bouquets: "
 msgid "BouquetEntrys: "
 msgstr "Bouquet Entradas: "
 
-#: channellist.h:773 channellist.h:1328 channellist.h:1537
+#: channellist.h:777 channellist.h:1332 channellist.h:1541
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Favoritos"
@@ -3023,7 +3023,7 @@ msgstr ""
 "ERROR: No se puede abrir DispositivoFrontend o\n"
 "Tipo Frontend es desconocido."
 
-#: channellist.h:1107
+#: channellist.h:1111
 msgid "Can't remove akive Service"
 msgstr "No se puede quitar el servicio activo"
 
@@ -3182,7 +3182,7 @@ msgstr "Cambiar a la salida SCART"
 msgid "Change: "
 msgstr "Cambio: "
 
-#: channellist.h:789 channellist.h:1675 skin_default_skin.xml.h:92
+#: channellist.h:793 channellist.h:1679 skin_default_skin.xml.h:92
 #: skins_0acht5zehn_skin.xml.h:133 skins_atemio_skin.xml.h:132
 #: skins_cool_skin.xml.h:159 skins_default_skin.xml.h:92
 #: skins_kravenhd_skin.xml.h:96 skins_megastyleblue_skin.xml.h:161
@@ -3371,7 +3371,7 @@ msgstr "Lista de canales vacíos o corruptos (canal no encontrado)!"
 msgid "Channellist view"
 msgstr "Ver Lista de Canales"
 
-#: channellist.h:1394
+#: channellist.h:1398
 msgid "Channels A-Z"
 msgstr "Canales A-Z"
 
@@ -3827,23 +3827,23 @@ msgstr ""
 msgid "Copy Modus Font Color"
 msgstr ""
 
-#: channellist.h:654
+#: channellist.h:658
 msgid "Copy mode"
 msgstr "Copiar"
 
-#: channellist.h:1016
+#: channellist.h:1020
 msgid "Copy providerlist not ok"
 msgstr "ATENCION: Providers no copiados"
 
-#: channellist.h:1014
+#: channellist.h:1018
 msgid "Copy providerlist successfull"
 msgstr "Proveedores copiados con Exito"
 
-#: channellist.h:1023
+#: channellist.h:1027
 msgid "Copy satlist not ok"
 msgstr "ATENCION: Canales no copiados"
 
-#: channellist.h:1021
+#: channellist.h:1025
 msgid "Copy satlist successfull"
 msgstr "Canales copiados con Exito"
 
@@ -5089,8 +5089,8 @@ msgid "EURONEWS (German)"
 msgstr ""
 
 #: about.h:10 amazon.h:760 avsettings.h:404 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 channellist.h:1014 channellist.h:1016
-#: channellist.h:1021 channellist.h:1023 channellist.h:1107 cloudzilla.h:39
+#: blindscanadjust.h:25 channellist.h:1018 channellist.h:1020
+#: channellist.h:1025 channellist.h:1027 channellist.h:1111 cloudzilla.h:39
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36 divxstage.h:86
 #: divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 epgsettings.h:331
@@ -5242,7 +5242,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr "Editar Playlist"
 
-#: channellist.h:670
+#: channellist.h:674
 msgid "Edit mode"
 msgstr "Editar"
 
@@ -9169,8 +9169,8 @@ msgid "Menulist"
 msgstr "Lista de Menus"
 
 #: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:404 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:1014
-#: channellist.h:1016 channellist.h:1021 channellist.h:1023 channellist.h:1107
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:1018
+#: channellist.h:1020 channellist.h:1025 channellist.h:1027 channellist.h:1111
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:276
@@ -9493,7 +9493,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:638 skins_kravenhd_skin.xml.h:397
+#: channellist.h:642 skins_kravenhd_skin.xml.h:397
 msgid "Move mode"
 msgstr "Mover"
 
@@ -10079,8 +10079,8 @@ msgstr ""
 #: about.h:10 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:404 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
-#: callmon_main.h:39 channellist.h:1014 channellist.h:1016 channellist.h:1021
-#: channellist.h:1023 channellist.h:1107 cloudzilla.h:39 cloudzilla.h:45
+#: callmon_main.h:39 channellist.h:1018 channellist.h:1020 channellist.h:1025
+#: channellist.h:1027 channellist.h:1111 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27
 #: epgsettings.h:317 epgsettings.h:331 extensions.h:198 extensions.h:249
@@ -11527,7 +11527,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:662
+#: channellist.h:666
 msgid "Protect mode"
 msgstr "Proteger"
 
@@ -11541,7 +11541,7 @@ msgstr "Proteger"
 msgid "Prov"
 msgstr "Proveedor"
 
-#: channellist.h:820 channellist.h:1427 channellist.h:1751
+#: channellist.h:824 channellist.h:1431 channellist.h:1755
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr "Proveedor"
@@ -11753,7 +11753,7 @@ msgstr ""
 msgid "RTV AU mms (German)"
 msgstr ""
 
-#: channellist.h:760 channellist.h:1861 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:764 channellist.h:1865 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:714 skin_default_skin.xml.h:487 skins_0acht5zehn_skin.xml.h:468
 #: skins_cool_skin.xml.h:554 skins_default_skin.xml.h:487
 #: skins_kravenhd_skin.xml.h:492 skins_megastyleblue_skin.xml.h:556
@@ -12246,7 +12246,7 @@ msgstr ""
 msgid "Remove error"
 msgstr "ERROR: Eliminacion Fallida!"
 
-#: channellist.h:646
+#: channellist.h:650
 msgid "Remove mode"
 msgstr "Eliminar"
 
@@ -13099,7 +13099,7 @@ msgid ""
 "execute a channel search after restart."
 msgstr ""
 
-#: channellist.h:804 channellist.h:1361 channellist.h:1610
+#: channellist.h:808 channellist.h:1365 channellist.h:1614
 msgid "Satellites"
 msgstr "Satelite"
 
@@ -14669,7 +14669,7 @@ msgstr ""
 msgid "Stream Transcode"
 msgstr ""
 
-#: channellist.h:678
+#: channellist.h:682
 msgid "Stream mode"
 msgstr ""
 
@@ -15170,7 +15170,7 @@ msgstr "Editar Transpondedor "
 msgid "TSID:"
 msgstr "TSID: "
 
-#: cec.h:673 channellist.h:765 channellist.h:1856 httpdfunc.h:286
+#: cec.h:673 channellist.h:769 channellist.h:1860 httpdfunc.h:286
 #: httpdfunc.h:696 scan.h:712 webif_index.atemio5200.h:68
 #: webif_index.atemio5200.h:74 webif_index.atemio5200.h:124
 #: webif_index.atemio6200.h:68 webif_index.atemio6200.h:74
