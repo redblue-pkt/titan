@@ -180,6 +180,7 @@ save()
     cp /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv 
     cp /tmp/settings/channel /mnt/settings/channel
     cp /tmp/settings/transponder /mnt/settings/transponder
+    cp /tmp/settings/satellites /mnt/settings/satellites
 
 #    cat /tmp/settings/channel.tmp | sort -u > /mnt/settings/channel
 #    cp -a /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv
@@ -201,6 +202,7 @@ remove()
         rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
         rm /mnt/settings/transponder.* > /dev/null 2>&1
         rm /mnt/settings/channel.* > /dev/null 2>&1
+        rm /mnt/settings/satellites.* > /dev/null 2>&1
         rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
     fi
 }
