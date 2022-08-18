@@ -631,15 +631,15 @@ int playrcred(char* file, char* showname, char* menutitle, char* link, int playi
 	struct skin* child = plugin->child;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = _("Menu");
-    char* localparser = NULL, *cmd = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
+    char* localparser = NULL, *localparser_input = NULL, *cmd = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 
 printf("playrcred link: %s flag: %d\n", link, flag);
 
     if(link != NULL && !ostrncmp("/", link, 1))
     {
-        localparser = ostrcat(link, NULL, 0, 0);
-        localparser = stringreplacecharonce(localparser, ' ', '\0');
-printf("playrcred set localparser: %s\n", localparser);
+        localparser_input = ostrcat(link, NULL, 0, 0);
+        localparser_input = stringreplacecharonce(localparser_input, ' ', '\0');
+printf("playrcred set localparser_input: %s\n", localparser_input);
 
     }
 		
@@ -679,10 +679,10 @@ printf("playrcred set localparser: %s\n", localparser);
                 debug(202, "showname: %s", showname);
                 debug(202, "menutitle: %s", menutitle);
                 debug(202, "link: %s", link);
-    		    debug(202, "localparser: %s", localparser);
-                if(localparser != NULL && ostrstr(link, " search ") != NULL)
+    		    debug(202, "localparser_input: %s", localparser_input);
+                if(localparser_input != NULL && ostrstr(link, " search ") != NULL)
                 {
-                    cmd = ostrcat("cat ", localparser, 0, 0);
+                    cmd = ostrcat("cat ", localparser_input, 0, 0);
                     cmd = ostrcat(cmd, " | grep '^create_service_bouquets()' | wc -l", 1, 0);
 		            debug(202, "cmd: %s", cmd);
                     if(ostrcmp(string_newline(command(cmd)), "1") == 0)
@@ -693,8 +693,8 @@ printf("playrcred set localparser: %s\n", localparser);
                 }
 				addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 //start
-printf("localparser: %s flag: %d\n", localparser, flag);
-                if(localparser != NULL)
+printf("localparser_input: %s flag: %d\n", localparser_input, flag);
+                if(localparser_input != NULL)
                 {
 	                cmd = ostrcat(cmd, "cat /tmp/tithek/mainmenu.local.list | awk '{ print $1 \" \" $2 \" \" $3 \" \" $4 \" \" $5 }'", 1, 0);
                     printf("playrcred cmd: %s\n", cmd);
@@ -911,7 +911,6 @@ printf("mbox->text=%s\n", mbox->text);
 */
 		else if(ostrcmp(mbox->name, "Search on PornHub") == 0 || ostrcmp(mbox->name, "Search on Xvideos") == 0)
         {
-            char* localparser = NULL;
             localparser = ostrcat(mbox->name, NULL, 0, 0);
             localparser = string_replace_all("Search on ", "/tmp/localparser/", localparser, 1);
             strstrip(localparser);
@@ -980,9 +979,9 @@ printf("mbox->text=%s\n", mbox->text);
 //	            if(textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
 	            if(textbox(_(mbox->name), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 300, 0, 0) == 1)
 	            {
-                    cmd = ostrcat(localparser, " ", 0, 0);
+                    cmd = ostrcat(localparser_input, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
-                    cmd = ostrcat(cmd, localparser, 1, 0);
+                    cmd = ostrcat(cmd, localparser_input, 1, 0);
                     cmd = ostrcat(cmd, " save '' '", 1, 0);
                     cmd = ostrcat(cmd, file, 1, 0);
                     cmd = ostrcat(cmd, "'", 1, 0);
@@ -1019,9 +1018,9 @@ printf("mbox->text=%s\n", mbox->text);
                 }
                 else
                 {
-                    cmd = ostrcat(localparser, " ", 0, 0);
+                    cmd = ostrcat(localparser_input, " ", 0, 0);
                     cmd = ostrcat(cmd, " ", 1, 0);
-                    cmd = ostrcat(cmd, localparser, 1, 0);
+                    cmd = ostrcat(cmd, localparser_input, 1, 0);
                     cmd = ostrcat(cmd, " remove '' '", 1, 0);
                     cmd = ostrcat(cmd, file, 1, 0);
                     cmd = ostrcat(cmd, "'", 1, 0);
@@ -1033,7 +1032,7 @@ printf("mbox->text=%s\n", mbox->text);
 
             free(tmpstr); tmpstr = NULL;
 	        free(tmpstr1); tmpstr1 = NULL;
-            free(localparser), localparser = NULL;
+            free(localparser_input), localparser_input = NULL;
         }
 		else if(ostrncmp("/tmp/localparser/", mbox->text,17) == 0 || ostrncmp("/mnt/parser/", mbox->text,12) == 0)
         {
