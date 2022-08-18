@@ -8763,7 +8763,6 @@ void servicebouquetsthread(struct stimerthread* timernode, int flag)
     if(getconfigint("tithek_vavoo_servicebouquets_autoupdate", NULL) == 1)
     {
         int count = 0, ret = 0;
-        char* tmpstr = 1;
 
         while(count < 5)
         {
