@@ -84,6 +84,11 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
                 if(tmpchannel->streamurl != NULL)
                 {
                     tmpstr = ostrcat(tmpchannel->name, " (IpTV)", 0, 0);
+                    if(tmpchannel->epgurl != NULL)
+                        tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
+                    else
+                        tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
+
     				changetext(chnode, tmpstr);
                     free(tmpstr), tmpstr = NULL;
                 }
@@ -93,12 +98,12 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
                 }
 				chnode->handle = (char*) tmpchannel;
 				chnode->handle1 = (char*) tmpchannel;
-				if(mode == 0 && channelnottunable(tmpchannel) == 1)
+				if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
 				{
-					if(status.channellistview == 0)
-						chnode->hidden = YES;
-					else
-						chnode->deaktivcol = deaktivcol;
+				    if(status.channellistview == 0)
+					    chnode->hidden = YES;
+				    else
+					    chnode->deaktivcol = deaktivcol;
 				}
 				if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
 				{
@@ -178,7 +183,7 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 					changechannelepg(tmpbouquet->channel, chnode);
 					chnode->handle = (char*) tmpbouquet->channel;
 					chnode->handle1 = (char*) tmpbouquet;
-					if(mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
+					if(tmpbouquet->channel->epgurl == NULL && mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
@@ -231,7 +236,7 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 						chnode->fontcol = convertcol("protectcol");
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
-					if(mode == 0 && channelnottunable(tmpchannel) == 1)
+					if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
@@ -329,7 +334,7 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct skin*
 						chnode->fontcol = convertcol("protectcol");
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
-					if(mode == 0 && channelnottunable(tmpchannel) == 1)
+					if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
@@ -434,7 +439,7 @@ void showazchannel(struct skin* channellist, struct skin* listbox, struct skin* 
 						chnode->fontcol = convertcol("protectcol");
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
-					if(mode == 0 && channelnottunable(tmpchannel) == 1)
+					if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
