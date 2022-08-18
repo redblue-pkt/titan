@@ -247,6 +247,8 @@ search()
 #                    cmd = cmd "cp -a /tmp/settings/channel.org /tmp/settings/channel.tmp\n"
                     cmd = cmd "cp -a /mnt/settings/transponder /tmp/settings/transponder.org\n"
                     cmd = cmd "cp -a /tmp/settings/transponder.org /tmp/settings/transponder.tmp\n"
+                    cmd = cmd "cp -a /mnt/settings/satellites /tmp/settings/satellites.org\n"
+                    cmd = cmd "cp -a /tmp/settings/satellites.org /tmp/settings/satellites.tmp\n"
                     cmd = cmd "cp -a /mnt/settings/bouquets.cfg /tmp/settings/bouquets.cfg.org\n"
                     cmd = cmd "cp -a /tmp/settings/bouquets.cfg.org /tmp/settings/bouquets.cfg.tmp\n"
                     cmd2 = "sed "
@@ -353,7 +355,8 @@ search()
                             }
 
                             cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
-                            cmd = cmd "echo \"" id "#0#0#0#192#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
+                            cmd = cmd "echo \"" id "#0#0#0#20000#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
+                            cmd = cmd "echo \"VaVoo (IpTV)#0#20000#3\" >> /tmp/settings/satellites.tmp\n"
                             cmd = cmd "echo \"0#" id "\" >> /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\n"
                            if(++dup[cmd4] == 1)
                                 cmd4 = cmd4 "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
@@ -380,10 +383,12 @@ search()
                     if(ADD2CHANNEL != 0)
                     {
                         cmd5 = cmd5 "cat /tmp/settings/channel.tmp | sort -u > /tmp/settings/channel\n"
-                        cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
+#                        cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
                         cmd5 = cmd5 "cp -a /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\n"
                         cmd5 = cmd5 "cat /tmp/settings/bouquets.cfg.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/bouquets.cfg\n"
                         cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/transponder\n"
+                        cmd5 = cmd5 "cat /tmp/settings/satellites.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/satellites\n"
+
                         cmd5 = cmd5 "sed s/\"^ *\"// -i /mnt/settings/channel\n"
 
                         print cmd
