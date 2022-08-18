@@ -400,6 +400,10 @@ void showsat(struct skin* channellist, struct skin* listbox)
 			dvbnode = dvbnode->next;
 		}
 
+        // show iptv on channellist>sat 
+        if(node->orbitalpos >= 20000)
+            treffer = 1;
+
 		if(treffer == 0) 
 		{
 			node = node->next;
