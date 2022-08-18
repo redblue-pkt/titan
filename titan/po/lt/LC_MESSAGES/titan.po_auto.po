@@ -1442,7 +1442,7 @@ msgstr "Aktyvuoti nauj tinklo konfigracij ?"
 msgid "Album:"
 msgstr "Albumas:"
 
-#: channellist.h:833 channellist.h:1308
+#: channellist.h:838 channellist.h:1313
 msgid "All Channels"
 msgstr "Visi kanalai"
 
@@ -2655,7 +2655,7 @@ msgstr "No. Puokts :"
 msgid "BouquetEntrys: "
 msgstr "Puokt raai:"
 
-#: channellist.h:768 channellist.h:1323 channellist.h:1532
+#: channellist.h:773 channellist.h:1328 channellist.h:1537
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Mgstami"
@@ -3011,7 +3011,7 @@ msgstr ""
 "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
 "Frontend Tipas unknown."
 
-#: channellist.h:1102
+#: channellist.h:1107
 msgid "Can't remove akive Service"
 msgstr "Negalima paalinti aktyvaus Serviso"
 
@@ -3170,7 +3170,7 @@ msgstr "Pakeisti  SCART ivest"
 msgid "Change: "
 msgstr "Pokytis:"
 
-#: channellist.h:784 channellist.h:1670 skin_default_skin.xml.h:92
+#: channellist.h:789 channellist.h:1675 skin_default_skin.xml.h:92
 #: skins_0acht5zehn_skin.xml.h:133 skins_atemio_skin.xml.h:132
 #: skins_cool_skin.xml.h:159 skins_default_skin.xml.h:92
 #: skins_kravenhd_skin.xml.h:96 skins_megastyleblue_skin.xml.h:161
@@ -3360,7 +3360,7 @@ msgstr ""
 msgid "Channellist view"
 msgstr "Kanal sarao vaizdas"
 
-#: channellist.h:1389
+#: channellist.h:1394
 msgid "Channels A-Z"
 msgstr "Kanalai A-Z"
 
@@ -3808,23 +3808,23 @@ msgstr ""
 msgid "Copy Modus Font Color"
 msgstr ""
 
-#: channellist.h:649
+#: channellist.h:654
 msgid "Copy mode"
 msgstr "Kopijuoti"
 
-#: channellist.h:1011
+#: channellist.h:1016
 msgid "Copy providerlist not ok"
 msgstr "DMESIO : Transliuotojai nenukopijuoti"
 
-#: channellist.h:1009
+#: channellist.h:1014
 msgid "Copy providerlist successfull"
 msgstr "Transliuotojai skmingai nukopijuoti"
 
-#: channellist.h:1018
+#: channellist.h:1023
 msgid "Copy satlist not ok"
 msgstr "DMESIO : kanalai nenukopijuoti"
 
-#: channellist.h:1016
+#: channellist.h:1021
 msgid "Copy satlist successfull"
 msgstr "Kanalai skmingai nukopijuoti"
 
@@ -5070,8 +5070,8 @@ msgid "EURONEWS (German)"
 msgstr ""
 
 #: about.h:10 amazon.h:760 avsettings.h:404 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 channellist.h:1009 channellist.h:1011
-#: channellist.h:1016 channellist.h:1018 channellist.h:1102 cloudzilla.h:39
+#: blindscanadjust.h:25 channellist.h:1014 channellist.h:1016
+#: channellist.h:1021 channellist.h:1023 channellist.h:1107 cloudzilla.h:39
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36 divxstage.h:86
 #: divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 epgsettings.h:331
@@ -5223,7 +5223,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr "Redaguoti Grojarat"
 
-#: channellist.h:665
+#: channellist.h:670
 msgid "Edit mode"
 msgstr "Redaguoti"
 
@@ -9132,8 +9132,8 @@ msgid "Menulist"
 msgstr ""
 
 #: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:404 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:1009
-#: channellist.h:1011 channellist.h:1016 channellist.h:1018 channellist.h:1102
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:1014
+#: channellist.h:1016 channellist.h:1021 channellist.h:1023 channellist.h:1107
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:276
@@ -9456,7 +9456,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:633 skins_kravenhd_skin.xml.h:397
+#: channellist.h:638 skins_kravenhd_skin.xml.h:397
 msgid "Move mode"
 msgstr "Perkelti"
 
@@ -10042,8 +10042,8 @@ msgstr ""
 #: about.h:10 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:404 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
-#: callmon_main.h:39 channellist.h:1009 channellist.h:1011 channellist.h:1016
-#: channellist.h:1018 channellist.h:1102 cloudzilla.h:39 cloudzilla.h:45
+#: callmon_main.h:39 channellist.h:1014 channellist.h:1016 channellist.h:1021
+#: channellist.h:1023 channellist.h:1107 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27
 #: epgsettings.h:317 epgsettings.h:331 extensions.h:198 extensions.h:249
@@ -11484,7 +11484,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:657
+#: channellist.h:662
 msgid "Protect mode"
 msgstr "Apsaugoti"
 
@@ -11498,7 +11498,7 @@ msgstr "Apsaugoti"
 msgid "Prov"
 msgstr ""
 
-#: channellist.h:815 channellist.h:1422 channellist.h:1746
+#: channellist.h:820 channellist.h:1427 channellist.h:1751
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr "Transliuotojas"
@@ -11710,7 +11710,7 @@ msgstr ""
 msgid "RTV AU mms (German)"
 msgstr ""
 
-#: channellist.h:755 channellist.h:1856 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:760 channellist.h:1861 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:714 skin_default_skin.xml.h:487 skins_0acht5zehn_skin.xml.h:468
 #: skins_cool_skin.xml.h:554 skins_default_skin.xml.h:487
 #: skins_kravenhd_skin.xml.h:492 skins_megastyleblue_skin.xml.h:556
@@ -12203,7 +12203,7 @@ msgstr ""
 msgid "Remove error"
 msgstr "KLAIDA : alinimas nepavyko!"
 
-#: channellist.h:641
+#: channellist.h:646
 msgid "Remove mode"
 msgstr "Paalinti"
 
@@ -13056,7 +13056,7 @@ msgid ""
 "execute a channel search after restart."
 msgstr ""
 
-#: channellist.h:799 channellist.h:1356 channellist.h:1605
+#: channellist.h:804 channellist.h:1361 channellist.h:1610
 msgid "Satellites"
 msgstr "Palydovas"
 
@@ -14624,7 +14624,7 @@ msgstr ""
 msgid "Stream Transcode"
 msgstr ""
 
-#: channellist.h:673
+#: channellist.h:678
 msgid "Stream mode"
 msgstr ""
 
@@ -15125,7 +15125,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: cec.h:673 channellist.h:760 channellist.h:1851 httpdfunc.h:286
+#: cec.h:673 channellist.h:765 channellist.h:1856 httpdfunc.h:286
 #: httpdfunc.h:696 scan.h:712 webif_index.atemio5200.h:68
 #: webif_index.atemio5200.h:74 webif_index.atemio5200.h:124
 #: webif_index.atemio6200.h:68 webif_index.atemio6200.h:74
