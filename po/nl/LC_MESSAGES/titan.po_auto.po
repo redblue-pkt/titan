@@ -3050,7 +3050,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:685 mc_audioplayer.h:797 mc_global.h:781
 #: mc_global.h:1086 mc_iptvplayer.h:392 mc_iptvplayer.h:503
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:2041
+#: mc_pictureplayer.h:461 mc_videoplayer.h:805 mc_videoplayer.h:944 play.h:2040
 msgid "Can't start playback !"
 msgstr "Weergave kan niet gestart worden!"
 
@@ -3851,7 +3851,7 @@ msgstr ""
 msgid "Create Favorites sub folder(PIN secured)"
 msgstr ""
 
-#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:661 play.h:1813
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97 play.h:661 play.h:1812
 msgid "Create Folder"
 msgstr "Map maken"
 
@@ -4011,7 +4011,7 @@ msgid "DEFAULT"
 msgstr ""
 
 #: infos_stock_skin.xml.h:3 infos_weather_skin.xml.h:2
-#: network_networkbrowser_skin.xml.h:6 play.h:1959
+#: network_networkbrowser_skin.xml.h:6 play.h:1958
 #: skin_default_keyskin.xml.h:27 skin_default_skin.xml.h:144
 #: skins_0acht5zehn_skin.xml.h:181 skins_atemio_skin.xml.h:182
 #: skins_cool_skin.xml.h:218 skins_default_keyskin.xml.h:27
@@ -4834,7 +4834,7 @@ msgstr "Uitwerpen"
 msgid "ELBEKANAL rtmp (German)"
 msgstr ""
 
-#: adjust.h:75 httpdfunc.h:3905 play.h:1959 skin_default_skin.xml.h:184
+#: adjust.h:75 httpdfunc.h:3905 play.h:1958 skin_default_skin.xml.h:184
 #: skins_0acht5zehn_skin.xml.h:222 skins_atemio_skin.xml.h:219
 #: skins_cool_skin.xml.h:266 skins_default_skin.xml.h:184
 #: skins_kravenhd_skin.xml.h:193 skins_megastyleblue_skin.xml.h:267
@@ -4872,7 +4872,7 @@ msgstr ""
 msgid "EPG (epg)"
 msgstr ""
 
-#: player_tmc_skin.xml.h:17 play.h:1652 play.h:1658
+#: player_tmc_skin.xml.h:17 play.h:1651 play.h:1657
 msgid "EPG Info"
 msgstr "EPG informatie"
 
@@ -5123,9 +5123,9 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:417
-#: player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:967 play.h:981
-#: play.h:1652 play.h:1658 play.h:1673 play.h:1674 play.h:1710 play.h:1711
-#: play.h:1725 play.h:1809 possetup.h:98 primeshare.h:29 primeshare.h:74
+#: player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:966 play.h:980
+#: play.h:1651 play.h:1657 play.h:1672 play.h:1673 play.h:1709 play.h:1710
+#: play.h:1724 play.h:1808 possetup.h:98 primeshare.h:29 primeshare.h:74
 #: primeshare.h:80 primeshare.h:125 promptfile.h:26 promptfile.h:35
 #: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
 #: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
@@ -5826,7 +5826,7 @@ msgstr ""
 msgid "Feed"
 msgstr "Feed adres ingaven AUB"
 
-#: play.h:1725
+#: play.h:1724
 msgid "File Exist, Really Rename and Overwrite exist File ?"
 msgstr ""
 
@@ -7967,7 +7967,7 @@ msgstr ""
 msgid "Jump"
 msgstr "Spring"
 
-#: play.h:1560
+#: play.h:1559
 msgid "Jump To (min)"
 msgstr "Spring naar (min)"
 
@@ -8800,11 +8800,11 @@ msgstr ""
 msgid "Marker Overview"
 msgstr ""
 
-#: play.h:2277
+#: play.h:2276
 msgid "Marker autoseek is started"
 msgstr "Markering automatisch zoeken is gestart"
 
-#: play.h:2288
+#: play.h:2287
 msgid "Marker autoseek is stopped"
 msgstr "Markering automatisch zoeken is gestopt"
 
@@ -9177,8 +9177,8 @@ msgstr ""
 #: network.h:993 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:1004 play.h:1673
-#: play.h:1710 play.h:2041 play.h:2277 play.h:2288 possetup.h:98
+#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:1003 play.h:1672
+#: play.h:1709 play.h:2040 play.h:2276 play.h:2287 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
@@ -10101,9 +10101,9 @@ msgstr ""
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
 #: played.h:115 played.h:172 player.h:417 player_mc_skin.xml.h:40 play.h:497
-#: play.h:614 play.h:967 play.h:981 play.h:1004 play.h:1652 play.h:1658
-#: play.h:1673 play.h:1674 play.h:1710 play.h:1711 play.h:1725 play.h:1809
-#: play.h:2041 play.h:2277 play.h:2288 possetup.h:98 primeshare.h:29
+#: play.h:614 play.h:966 play.h:980 play.h:1003 play.h:1651 play.h:1657
+#: play.h:1672 play.h:1673 play.h:1709 play.h:1710 play.h:1724 play.h:1808
+#: play.h:2040 play.h:2276 play.h:2287 possetup.h:98 primeshare.h:29
 #: primeshare.h:74 primeshare.h:80 primeshare.h:125 promptfile.h:26
 #: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
 #: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
@@ -11818,15 +11818,15 @@ msgstr "Reader geactiveerd"
 msgid "Real URL with http://"
 msgstr ""
 
-#: play.h:1809
+#: play.h:1808
 msgid "Really Create Folder in ?"
 msgstr ""
 
-#: play.h:1674
+#: play.h:1673
 msgid "Really Delete ?"
 msgstr "Echt verwijderen?"
 
-#: play.h:1711
+#: play.h:1710
 msgid "Really Rename ?"
 msgstr ""
 
@@ -12005,7 +12005,7 @@ msgstr ""
 msgid "Record cut"
 msgstr ""
 
-#: play.h:1673 play.h:1710
+#: play.h:1672 play.h:1709
 msgid "Record in progress"
 msgstr "Opname bezig"
 
@@ -12239,7 +12239,7 @@ msgstr ""
 msgid "Removeing"
 msgstr "Verwijderen"
 
-#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1715
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92 play.h:1714
 #: skin_default_skin.xml.h:515 skins_0acht5zehn_skin.xml.h:492
 #: skins_default_skin.xml.h:515 tools_multiimage_skin.xml.h:13
 msgid "Rename"
@@ -12733,7 +12733,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr "Zoek"
 
-#: dvdplay.h:29 network_dlna_skin.xml.h:9 play.h:1959
+#: dvdplay.h:29 network_dlna_skin.xml.h:9 play.h:1958
 #: skins_kravenhd_skin.xml.h:584
 msgid "SELECT"
 msgstr "Selecteer"
@@ -12791,7 +12791,7 @@ msgstr ""
 msgid "SONNENKLAR rtmp (German)"
 msgstr ""
 
-#: play.h:1959
+#: play.h:1958
 msgid "SORT"
 msgstr "Sorteren"
 
@@ -14726,7 +14726,7 @@ msgstr ""
 msgid "SuperRTL-Now"
 msgstr ""
 
-#: play.h:973
+#: play.h:972
 msgid "Sure to Save the Service Bouquets"
 msgstr ""
 
@@ -15665,7 +15665,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:1004 tithek_global.h:2020
+#: play.h:1003 tithek_global.h:2020
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
