@@ -2959,7 +2959,7 @@ msgstr "Map kan niet aangemaakt worden!"
 msgid "Can't create service"
 msgstr "Service kan niet gemaakt worden"
 
-#: service.h:1111
+#: service.h:1114
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -3007,7 +3007,7 @@ msgstr "FRONTEND apparaat kan niet geopend worden"
 msgid "Can't open file"
 msgstr "Bestand kan niet geopend worden"
 
-#: service.h:1117
+#: service.h:1120
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Frontend kan niet geopend worden of onbekend Type!"
 
@@ -3343,7 +3343,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "Kanalen: "
 
-#: service.h:1122
+#: service.h:1125
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Zenderlijst is leeg of corrupt (zender niet gevonden)!"
 
@@ -5134,7 +5134,7 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 service.h:851 service.h:1128 shared.h:29
+#: security.h:668 security.h:685 service.h:854 service.h:1131 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
 #: skin_default_skin.xml.h:199 skins_0acht5zehn_skin.xml.h:237
 #: skins_atemio_skin.xml.h:234 skins_cool_skin.xml.h:281
@@ -9190,8 +9190,8 @@ msgstr ""
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167 scan.h:2258
-#: scan.h:2651 scart.h:12 scart.h:25 security.h:1581 service.h:851
-#: service.h:1128 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
+#: scan.h:2651 scart.h:12 scart.h:25 security.h:1581 service.h:854
+#: service.h:1131 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
 #: skinadjust.h:619 skinadjust.h:627 skinadjust.h:668 skinadjust.h:685
 #: skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231 sock.h:955
 #: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
@@ -10116,7 +10116,7 @@ msgstr ""
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258 scan.h:2651
 #: scart.h:12 scart.h:25 scriptexec.h:41 security.h:668 security.h:685
-#: security.h:1581 service.h:851 service.h:1128 shared.h:29 shared.h:66
+#: security.h:1581 service.h:854 service.h:1131 shared.h:29 shared.h:66
 #: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 #: skins_0acht5zehn_skin.xml.h:398 skins_atemio_skin.xml.h:397
@@ -15569,7 +15569,7 @@ msgstr ""
 "Timeshift: Bestand is te klein\n"
 "wacht een moment en probeer op nieuw"
 
-#: service.h:851
+#: service.h:854
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -16164,7 +16164,7 @@ msgstr "Tuner instellingen niet toegestaan/nbij lopende opname of stream!"
 msgid "Tunertype"
 msgstr "Tuner type"
 
-#: service.h:1114
+#: service.h:1117
 msgid "Tuning to Channel failed!"
 msgstr "Kanaal niet beschikbaar !"
 
