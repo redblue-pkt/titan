@@ -160,7 +160,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
         printf("playerstart1 epgurl: %s\n", chnode->epgurl);
         addconfigtmp("playerbuffersize", "0");
         addconfigtmp("playerbufferseektime", "0");
-    	if(status.play != 2 && checkbox("DM900") == 1)
+        if(status.play != 2/* && checkbox("DM900") == 1*/)
             servicestop(status.aktservice, 1, 1);
         playerstart(chnode->streamurl);
         status.play = 2;
@@ -179,32 +179,35 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}
 		
 #ifdef DREAMBOX
-		if(status.aktservice->fedev != fenode)
-		{
-			int fastzap = getconfigint("fastzap", NULL);
-			if(fastzap == 1)
-			{
-				audioclose(status.aktservice->audiodev, -1);
-				status.aktservice->audiodev = NULL;
-				dmxstop(status.aktservice->dmxaudiodev);
-				dmxclose(status.aktservice->dmxaudiodev, -1);
-				status.aktservice->dmxaudiodev = NULL;
-			}
-			if(fastzap == 1 || fastzap == 2)
-			{
-				videoclose(status.aktservice->videodev, -1);
-				status.aktservice->videodev = NULL;
-				dmxstop(status.aktservice->dmxvideodev);
-				dmxclose(status.aktservice->dmxvideodev, -1);
-				status.aktservice->dmxvideodev = NULL;
-				dmxstop(status.aktservice->dmxpcrdev);
-				dmxclose(status.aktservice->dmxpcrdev, -1);
-				status.aktservice->dmxpcrdev = NULL;
-				dmxstop(status.aktservice->dmxsubtitledev);
-				dmxclose(status.aktservice->dmxsubtitledev, -1);
-				status.aktservice->dmxsubtitledev = NULL;
-			}
-		}
+        if(chnode->streamurl == NULL)
+        {
+		    if(status.aktservice->fedev != fenode)
+		    {
+			    int fastzap = getconfigint("fastzap", NULL);
+			    if(fastzap == 1)
+			    {
+				    audioclose(status.aktservice->audiodev, -1);
+				    status.aktservice->audiodev = NULL;
+				    dmxstop(status.aktservice->dmxaudiodev);
+				    dmxclose(status.aktservice->dmxaudiodev, -1);
+				    status.aktservice->dmxaudiodev = NULL;
+			    }
+			    if(fastzap == 1 || fastzap == 2)
+			    {
+				    videoclose(status.aktservice->videodev, -1);
+				    status.aktservice->videodev = NULL;
+				    dmxstop(status.aktservice->dmxvideodev);
+				    dmxclose(status.aktservice->dmxvideodev, -1);
+				    status.aktservice->dmxvideodev = NULL;
+				    dmxstop(status.aktservice->dmxpcrdev);
+				    dmxclose(status.aktservice->dmxpcrdev, -1);
+				    status.aktservice->dmxpcrdev = NULL;
+				    dmxstop(status.aktservice->dmxsubtitledev);
+				    dmxclose(status.aktservice->dmxsubtitledev, -1);
+				    status.aktservice->dmxsubtitledev = NULL;
+			    }
+		    }
+        }
 #endif
 				
 		status.aktservice->fedev = fenode;
@@ -547,8 +550,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
             printf("playerstart2 epgurl: %s\n", chnode->epgurl);
             addconfigtmp("playerbuffersize", "0");
             addconfigtmp("playerbufferseektime", "0");
-//        	if(checkbox("DM900") == 1)
-//                servicestop(status.aktservice, 1, 1);
+            if(status.play != 2 && checkbox("DM900") == 1)
+                servicestop(status.aktservice, 1, 1);
             playerstart(chnode->streamurl);
             status.play = 2;
 			delconfigtmp("playerbuffersize");
