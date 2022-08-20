@@ -30,6 +30,7 @@
 #include <stddef.h>
 
 #include "libavutil/intreadwrite.h"
+#include <limits.h>
 #include "libavutil/avassert.h"
 
 typedef struct PutBitContext {
