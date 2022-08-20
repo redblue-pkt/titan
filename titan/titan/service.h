@@ -646,8 +646,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		//add channel to history
 		if(chnode->streamurl != NULL || status.aktservice->type == CHANNEL)
 		{
-			addchannelhistory(chnode, status.aktservice->channellist);
-			if(status.servicetype == 0) //only for tv
+    		addchannelhistory(chnode, status.aktservice->channellist);
+			if(chnode->streamurl == NULL && status.servicetype == 0) //only for tv
 				createmostzap(chnode->serviceid, chnode->transponderid);
 		}
 		festatus = fewait(fenode);
