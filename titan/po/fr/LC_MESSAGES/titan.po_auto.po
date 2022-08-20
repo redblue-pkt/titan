@@ -2938,7 +2938,7 @@ msgstr ""
 msgid "Can't create service"
 msgstr "Supprime Service"
 
-#: service.h:1109
+#: service.h:1111
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -2982,7 +2982,7 @@ msgstr ""
 msgid "Can't open file"
 msgstr "Fichier alternative"
 
-#: service.h:1115
+#: service.h:1117
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
@@ -3308,7 +3308,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "Chaine"
 
-#: service.h:1120
+#: service.h:1122
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -5083,7 +5083,7 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 service.h:849 service.h:1126 shared.h:29
+#: security.h:668 security.h:685 service.h:851 service.h:1128 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
 #: skin_default_skin.xml.h:199 skins_0acht5zehn_skin.xml.h:237
 #: skins_atemio_skin.xml.h:234 skins_cool_skin.xml.h:281
@@ -9105,8 +9105,8 @@ msgstr "Liste de Menu"
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167 scan.h:2258
-#: scan.h:2651 scart.h:12 scart.h:25 security.h:1581 service.h:849
-#: service.h:1126 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
+#: scan.h:2651 scart.h:12 scart.h:25 security.h:1581 service.h:851
+#: service.h:1128 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
 #: skinadjust.h:619 skinadjust.h:627 skinadjust.h:668 skinadjust.h:685
 #: skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231 sock.h:955
 #: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
@@ -10024,7 +10024,7 @@ msgstr ""
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258 scan.h:2651
 #: scart.h:12 scart.h:25 scriptexec.h:41 security.h:668 security.h:685
-#: security.h:1581 service.h:849 service.h:1126 shared.h:29 shared.h:66
+#: security.h:1581 service.h:851 service.h:1128 shared.h:29 shared.h:66
 #: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 #: skins_0acht5zehn_skin.xml.h:398 skins_atemio_skin.xml.h:397
@@ -15451,7 +15451,7 @@ msgid ""
 "please wait a little and try again"
 msgstr ""
 
-#: service.h:849
+#: service.h:851
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -16039,7 +16039,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr "type de tuner"
 
-#: service.h:1112
+#: service.h:1114
 msgid "Tuning to Channel failed!"
 msgstr ""
 
