@@ -644,7 +644,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0)
 	{
 		//add channel to history
-		if(status.aktservice->type == CHANNEL)
+		if(chnode->streamurl != NULL || status.aktservice->type == CHANNEL)
 		{
 			addchannelhistory(chnode, status.aktservice->channellist);
 			if(status.servicetype == 0) //only for tv
