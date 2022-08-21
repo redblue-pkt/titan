@@ -160,7 +160,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
         printf("playerstart1 epgurl: %s\n", chnode->epgurl);
         addconfigtmp("playerbuffersize", "0");
         addconfigtmp("playerbufferseektime", "0");
-        if(status.play != 2 && checkbox("DM900") == 1)
+        if(status.play != 2 && getconfigint("lastplayertype", NULL) == 0 && checkbox("DM900") == 1)
             servicestop(status.aktservice, 1, 1);
         playerstart(chnode->streamurl);
         status.play = 2;
@@ -550,7 +550,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
             printf("playerstart2 epgurl: %s\n", chnode->epgurl);
             addconfigtmp("playerbuffersize", "0");
             addconfigtmp("playerbufferseektime", "0");
-            if(status.play != 2 && checkbox("DM900") == 1)
+            if(status.play != 2 && getconfigint("lastplayertype", NULL) == 0 && checkbox("DM900") == 1)
                 servicestop(status.aktservice, 1, 1);
             playerstart(chnode->streamurl);
             status.play = 2;
