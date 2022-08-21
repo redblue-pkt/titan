@@ -2030,19 +2030,28 @@ void servicebouquets_update(int flag)
             freetransponder();
             freeprovider();
             ret = readsat(getconfig("satfile", NULL));
+            printf("servicebouquets_update ret1: %d\n", ret);
             ret = readtransponder(getconfig("transponderfile", NULL));
+            printf("servicebouquets_update ret2: %d\n", ret);
             ret = readprovider(getconfig("providerfile", NULL));
+            printf("servicebouquets_update ret3: %d\n", ret);
             ret = readchannel(getconfig("channelfile", NULL));
+            printf("servicebouquets_update ret4: %d\n", ret);
             ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
+            printf("servicebouquets_update ret5: %d\n", ret);
             ret = readmainbouquet(getconfig("bouquetfile", NULL));
+            printf("servicebouquets_update ret6: %d\n", ret);
             ret = readallbouquet();
+            printf("servicebouquets_update ret7: %d\n", ret);
 
 	        //tune new if tunerconfig saved
-	        if(ret == 1)
-	        {
+//	        if(ret == 0)
+//	        {
 		        ret = servicestop(status.aktservice, 1, 1);
+                printf("servicebouquets_update ret7: %d\n", ret);
 		        if(ret == 0)
 		        {
+                    printf("servicebouquets_update ret8: %d\n", ret);
 			        status.aktservice->transponder = NULL;
 			        servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
 		        }
@@ -2050,7 +2059,7 @@ void servicebouquets_update(int flag)
 //		        drawscreen(tunerconfig, 0, 0);
 //		        clearscreen(tunerconfig);
 //		        drawscreen(skin, 0, 0);
-	        }
+//	        }
 
         }
         else
