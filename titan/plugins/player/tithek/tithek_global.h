@@ -2036,6 +2036,22 @@ void servicebouquets_update(int flag)
             ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
             ret = readmainbouquet(getconfig("bouquetfile", NULL));
             ret = readallbouquet();
+
+	        //tune new if tunerconfig saved
+	        if(ret == 1)
+	        {
+		        ret = servicestop(status.aktservice, 1, 1);
+		        if(ret == 0)
+		        {
+			        status.aktservice->transponder = NULL;
+			        servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
+		        }
+//		        resettvpic();
+//		        drawscreen(tunerconfig, 0, 0);
+//		        clearscreen(tunerconfig);
+//		        drawscreen(skin, 0, 0);
+	        }
+
         }
         else
             printf("servicebouquets_update channellist: channellist unchanged\n%s\n", tmpstr);
