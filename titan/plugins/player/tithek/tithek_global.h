@@ -1394,10 +1394,10 @@ void localparser_init(char* titheklink, char* tithekfile, int flag)
     		drawscreen(load, 0, 0);
 
 		char* titheklocalfile = ostrcat("/tmp/tithek/mainmenu.local.list", NULL, 0, 0);
-        unlink(titheklocalfile);
 
 		if(flag == 1 || flag == 2)
 		{
+            unlink(titheklocalfile);
 			if(!file_exist("/tmp/localhoster"))
 				mkdir("/tmp/localhoster", 0777);
 			if(!file_exist("/mnt/parser"))
