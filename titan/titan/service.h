@@ -841,7 +841,7 @@ int servicestop(struct service *node, int clear, int flag)
 	{
 		status.tvpic = 0;
 
-        if(status.play == 2 /*&& getconfigint("lastplayertype", NULL) == 0*/)
+        if(status.play == 2 && getconfigint("lastplayertype", NULL) == 0)
         {
             printf("servicestop playerstop IpTV flag=%d\n", flag);
             playerstop();

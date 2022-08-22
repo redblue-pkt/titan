@@ -2049,9 +2049,9 @@ void servicebouquets_update(int flag)
 //	        {
 		        ret = servicestop(status.aktservice, 1, 1);
                 printf("servicebouquets_update ret7: %d\n", ret);
-		        if(ret == 0)
+		        if(ret == 0 && status.play != 1)
 		        {
-                    printf("servicebouquets_update ret8: %d\n", ret);
+                    printf("servicebouquets_update restart aktservice: %s\n", status.aktservice->channel);
 			        status.aktservice->transponder = NULL;
 			        servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
 		        }
