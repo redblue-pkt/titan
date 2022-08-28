@@ -225,7 +225,7 @@ search()
         if [ -e /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then
             echo "LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")" >$TMP/$FILENAME.cmd.list
             echo "cat /mnt/settings/channel | grep -v \$LIST >> /tmp/settings/channel.tmp" >> $TMP/$FILENAME.cmd.list
-            echo "cp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.org" >> $TMP/$FILENAME.cmd.list
+            echo "cp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.org" >> $TMP/$FILENAME.cmd.list
         else
             echo "cp /mnt/settings/channel /tmp/settings/channel.tmp" > $TMP/$FILENAME.cmd.list
         fi
