@@ -2024,6 +2024,7 @@ void servicebouquets_update(int flag)
         		textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 5, 2);
 	        debug(202, "%s", tmpstr2);
             printf("servicebouquets_update channellist: %s\n", tmpstr2);
+		    drawscreen(skin, 0, 0);
             free(tmpstr2), tmpstr2 = NULL;
             freesat();
             freeallbouquet();
@@ -2045,7 +2046,6 @@ void servicebouquets_update(int flag)
             printf("servicebouquets_update ret6: %d\n", ret);
             ret = readallbouquet();
             printf("servicebouquets_update ret7: %d\n", ret);
-		    drawscreen(skin, 0, 0);
 
 //	        status.aktservice = addservice(NULL);
 //	        status.lastservice = addservice(NULL);
