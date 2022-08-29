@@ -1919,6 +1919,8 @@ end:
     }
 }
 
+extern struct skin* skin;
+
 void servicebouquets_update(int flag)
 {
 	debug(202, "flag: %d", flag);
@@ -2019,7 +2021,7 @@ void servicebouquets_update(int flag)
             tmpstr2 = ostrcat(tmpstr2, "\n\n", 1, 0);
             tmpstr2 = ostrcat(tmpstr, _("Titan will be reloaded Channellist!"), 0, 0);
             if(getconfigint("tithek_vavoo_servicebouquets_autoupdate_msg", NULL) == 1)
-        		textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 0, 2);
+        		textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 5, 2);
 	        debug(202, "%s", tmpstr2);
             printf("servicebouquets_update channellist: %s\n", tmpstr2);
             free(tmpstr2), tmpstr2 = NULL;
@@ -2043,10 +2045,16 @@ void servicebouquets_update(int flag)
             printf("servicebouquets_update ret6: %d\n", ret);
             ret = readallbouquet();
             printf("servicebouquets_update ret7: %d\n", ret);
+		    drawscreen(skin, 0, 0);
+
+//	        status.aktservice = addservice(NULL);
+//	        status.lastservice = addservice(NULL);
+//	        status.pipservice = addservice(NULL);
 
 	        //tune new if tunerconfig saved
 //	        if(ret == 0)
 //	        {
+/*
 		        ret = servicestop(status.aktservice, 1, 1);
                 printf("servicebouquets_update ret7: %d\n", ret);
 		        if(ret == 0 && status.play != 1)
@@ -2055,6 +2063,7 @@ void servicebouquets_update(int flag)
 			        status.aktservice->transponder = NULL;
 			        servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
 		        }
+*/
 //		        resettvpic();
 //		        drawscreen(tunerconfig, 0, 0);
 //		        clearscreen(tunerconfig);
