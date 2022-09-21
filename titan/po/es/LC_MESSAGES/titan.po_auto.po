@@ -9251,7 +9251,7 @@ msgstr "Lista de Menus"
 #: thefile.h:69 thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72
 #: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
 #: titan.c:334 titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
-#: tithek.c:105 tithek_global.h:228 tithek_global.h:2024 tithek.h:723
+#: tithek.c:105 tithek_global.h:228 tithek_global.h:2030 tithek.h:723
 #: tithek.h:1710 tithek.h:1737 tithek.h:1759 tithek.h:1781 tithek.h:1838
 #: tithek.h:2017 tithek.h:2032 tithek.h:2235 tithek.h:2290 tithek.h:2705
 #: tithek.h:2893 tithek.h:3218 tithek.h:3283 tithek.h:3326 tithek.h:3339
@@ -10185,7 +10185,7 @@ msgstr ""
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:334
 #: titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228
-#: tithek_global.h:2024 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
+#: tithek_global.h:2030 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
 #: tithek.h:1781 tithek.h:1838 tithek.h:2017 tithek.h:2032 tithek.h:2235
 #: tithek.h:2290 tithek.h:2312 tithek.h:2705 tithek.h:2893 tithek.h:3218
 #: tithek.h:3283 tithek.h:3326 tithek.h:3339 tithek_settings.h:257
@@ -15733,7 +15733,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:1003 tithek_global.h:2022
+#: play.h:1003 tithek_global.h:2028
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
