@@ -3230,6 +3230,9 @@ why ?
 					int pincheck = 0;
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
+					else if(((struct tithek*)listbox->select->handle)->flag == 2000)
+						pincheck = screenpincheck(4, NULL);
+
 					if(pincheck == 0)
 //						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, ((struct tithek*)listbox->select->handle)->flag) == 0) break;
@@ -3239,6 +3242,8 @@ why ?
 					int pincheck = 0;
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
+					else if(((struct tithek*)listbox->select->handle)->flag == 2000)
+						pincheck = screenpincheck(4, NULL);
 					if(pincheck == 0)
 //						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, ((struct tithek*)listbox->select->handle)->flag) == 0) break;
