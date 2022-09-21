@@ -1926,7 +1926,7 @@ void servicebouquets_update(int flag)
 	debug(202, "flag: %d", flag);
     printf("servicebouquets_update flag: %d\n", flag);
 
-	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *cmd = NULL, *localparser = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *cmd = NULL, *localparser = NULL;
 
 	if(!file_exist("/tmp/localhoster"))
 		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 2);
@@ -1963,6 +1963,12 @@ void servicebouquets_update(int flag)
             tmpstr2 = string_replace_all("/mnt/settings/bouquets.tithek.autoupdate.", "", tmpstr2, 1);
             printf("servicebouquets_update tmpstr2a: %s\n", tmpstr2);
 
+			tmpstr3 = ostrcat(tmpstr2, NULL, 0, 0);
+            tmpstr3 = string_replace_all(".tv", "", tmpstr3, 1);
+            tmpstr3 = stringreplacecharonce(tmpstr3, '.', '-');
+            debug(202, "tmpstr3: %s", tmpstr3);
+            printf("servicebouquets_update tmpstr3: %s\n", tmpstr3);
+
 			ret2 = strsplit(tmpstr2, ".", &count2);
             if(ret2 != NULL && count2 >= 3)
             {
@@ -1993,7 +1999,7 @@ void servicebouquets_update(int flag)
                     printf("servicebouquets_update tmpstr: %s\n", tmpstr);
 
                     free(cmd), cmd = NULL;
-                    cmd = ostrcat(cmd, tmpstr, 1, 0);
+                    cmd = ostrcat(cmd, tmpstr, 1, 1);
 
                     if(getconfigint("tithek_vavoo_servicebouquets_autoupdate_allchannels", NULL) == 1)
                         cmd = string_replace_all(" search ", " update_all_channels ", cmd, 1);
@@ -2046,6 +2052,22 @@ void servicebouquets_update(int flag)
             printf("servicebouquets_update ret6: %d\n", ret);
             ret = readallbouquet();
             printf("servicebouquets_update ret7: %d\n", ret);
+
+            //sort bouquet
+            void* aktlist = NULL;
+		    struct mainbouquet* mainbouquetnode = NULL;
+		    mainbouquetnode = getmainbouquet(tmpstr3);
+ 		    if(mainbouquetnode != NULL && mainbouquetnode->bouquet != NULL)
+		    {
+			    aktlist = (void*)mainbouquetnode;
+			    if(aktlist != NULL)
+			    {
+                    printf("servicebouquets_update sort: %s\n", tmpstr3);
+				    sortbouquet(&((struct mainbouquet*)aktlist)->bouquet);
+				    recalcbouquetnr();
+			    }
+		    }
+            free(tmpstr3), tmpstr3 = NULL;
 
 //	        status.aktservice = addservice(NULL);
 //	        status.lastservice = addservice(NULL);
