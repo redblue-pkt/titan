@@ -1205,7 +1205,7 @@ msgstr "Añadir Favoritos"
 
 #: player_tithek_skin.xml.h:1 skins_cool_skin.xml.h:64
 #: skins_megastyleblue_skin.xml.h:65 skins_megastylegrey_skin.xml.h:65
-#: tithek.h:2396 tithek.h:3364
+#: tithek.h:2396 tithek.h:3369
 msgid "ADD FAV"
 msgstr "Añadir"
 
@@ -1359,7 +1359,7 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr "Añadir Manual IMDB"
 
-#: tithek.h:3326
+#: tithek.h:3331
 msgid "Add this link as Favorite ?"
 msgstr "Quieres añadir el enlace a tus favoritos?"
 
@@ -4051,7 +4051,7 @@ msgstr "Eliminar"
 
 #: player_tithek_skin.xml.h:6 skins_cool_skin.xml.h:224
 #: skins_megastyleblue_skin.xml.h:225 skins_megastylegrey_skin.xml.h:225
-#: tithek.h:2387 tithek.h:3355
+#: tithek.h:2387 tithek.h:3360
 msgid "DEL FAV"
 msgstr "Eliminar"
 
@@ -4818,7 +4818,7 @@ msgstr "Editar"
 msgid "EDIT DiSEqC"
 msgstr ""
 
-#: tithek.h:2386 tithek.h:3354
+#: tithek.h:2386 tithek.h:3359
 msgid "EDIT FAV"
 msgstr "Editar Favoritos"
 
@@ -5182,8 +5182,8 @@ msgstr ""
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228 tithek.h:723
 #: tithek.h:1710 tithek.h:1737 tithek.h:1759 tithek.h:1781 tithek.h:1838
 #: tithek.h:2017 tithek.h:2032 tithek.h:2235 tithek.h:2290 tithek.h:2312
-#: tithek.h:2705 tithek.h:2893 tithek.h:3218 tithek.h:3283 tithek.h:3326
-#: tithek.h:3339 tithek_settings.h:257 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2705 tithek.h:2893 tithek.h:3218 tithek.h:3288 tithek.h:3331
+#: tithek.h:3344 tithek_settings.h:257 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_autotimer_skin.xml.h:6 tools_callmonitor1_skin.xml.h:10
 #: tools_instar_skin.xml.h:8 tools_lcdpearl1_skin.xml.h:6
@@ -5246,7 +5246,7 @@ msgstr "Editar Playlist"
 msgid "Edit mode"
 msgstr "Editar"
 
-#: tithek.h:3339
+#: tithek.h:3344
 msgid "Edit this Favorite ?"
 msgstr "Editar este favorito?"
 
@@ -5525,7 +5525,7 @@ msgstr ""
 
 #: player_tithek_skin.xml.h:8 skins_cool_skin.xml.h:283
 #: skins_megastyleblue_skin.xml.h:284 skins_megastylegrey_skin.xml.h:284
-#: tithek.h:2403 tithek.h:3371
+#: tithek.h:2403 tithek.h:3376
 msgid "Exit Tithek"
 msgstr "Salir"
 
@@ -9254,7 +9254,7 @@ msgstr "Lista de Menus"
 #: tithek.c:105 tithek_global.h:228 tithek_global.h:2030 tithek.h:723
 #: tithek.h:1710 tithek.h:1737 tithek.h:1759 tithek.h:1781 tithek.h:1838
 #: tithek.h:2017 tithek.h:2032 tithek.h:2235 tithek.h:2290 tithek.h:2705
-#: tithek.h:2893 tithek.h:3218 tithek.h:3283 tithek.h:3326 tithek.h:3339
+#: tithek.h:2893 tithek.h:3218 tithek.h:3288 tithek.h:3331 tithek.h:3344
 #: tithek_settings.h:257 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
 #: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tunerconfig.h:738
@@ -10188,7 +10188,7 @@ msgstr ""
 #: tithek_global.h:2030 tithek.h:723 tithek.h:1710 tithek.h:1737 tithek.h:1759
 #: tithek.h:1781 tithek.h:1838 tithek.h:2017 tithek.h:2032 tithek.h:2235
 #: tithek.h:2290 tithek.h:2312 tithek.h:2705 tithek.h:2893 tithek.h:3218
-#: tithek.h:3283 tithek.h:3326 tithek.h:3339 tithek_settings.h:257
+#: tithek.h:3288 tithek.h:3331 tithek.h:3344 tithek_settings.h:257
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 tools_optimize_skin.xml.h:2 tools_rgui_skin.xml.h:2
 #: tools_tiwakeup_skin.xml.h:2 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
@@ -12258,7 +12258,7 @@ msgstr "Extraccion comenzo"
 msgid "Remove success"
 msgstr "Eliminado con eExito"
 
-#: tithek.h:3283
+#: tithek.h:3288
 msgid "Remove this Favorite ?"
 msgstr "Desea eliminar la entrada seleccionada de sus favoritos?"
 
@@ -12312,8 +12312,8 @@ msgstr ""
 #: player_mc_skin.xml.h:50 skin_default_skin.xml.h:517
 #: skins_cool_skin.xml.h:586 skins_default_skin.xml.h:517
 #: skins_kravenhd_skin.xml.h:524 skins_megastyleblue_skin.xml.h:588
-#: skins_megastylegrey_skin.xml.h:588 tithek.h:2389 tithek.h:2399 tithek.h:3357
-#: tithek.h:3367
+#: skins_megastylegrey_skin.xml.h:588 tithek.h:2389 tithek.h:2399 tithek.h:3362
+#: tithek.h:3372
 msgid "Repeat"
 msgstr "Repetir"
 
@@ -12324,7 +12324,7 @@ msgstr "modo de repeticion"
 
 #: mc_audioplayer.h:486 mc_global.h:1145 mc_iptvplayer.h:141
 #: mc_pictureplayer.h:150 mc_videoplayer.h:461 tithek.h:2391 tithek.h:2401
-#: tithek.h:3359 tithek.h:3369
+#: tithek.h:3364 tithek.h:3374
 msgid "Repeat-On"
 msgstr "Modo repeticion On"
 
@@ -15799,7 +15799,7 @@ msgid "Tithek - Mainmenu"
 msgstr "TiThek - Menu Principal"
 
 #: tithek_global.h:836 tithek_global.h:959 tithek.h:2384 tithek.h:2652
-#: tithek.h:3279 tithek.h:3305 tithek.h:3322 tithek.h:3335 tithek.h:3352
+#: tithek.h:3284 tithek.h:3310 tithek.h:3327 tithek.h:3340 tithek.h:3357
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
