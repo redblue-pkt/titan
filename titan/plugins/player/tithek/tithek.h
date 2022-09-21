@@ -87,6 +87,7 @@ int hlsbgdownload = 0;
 //flag 64   - tvtoast
 //flag 65   - tvtoast local serach
 //flag 66   - coming soon dummy
+//flag 666   - coming soon dummy
 //flag 67   - rtlnitronow
 //flag 68   - rtlnitronow pay
 //flag 69   - rtlnitronow local search
@@ -3213,7 +3214,7 @@ why ?
 						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 */
-				else if((((struct tithek*)listbox->select->handle)->flag == 66))
+				else if((((struct tithek*)listbox->select->handle)->flag == 666))
 				{
 					textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 					continue;
@@ -3230,7 +3231,7 @@ why ?
 					int pincheck = 0;
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
-					else if(((struct tithek*)listbox->select->handle)->flag == 2000)
+					else if(((struct tithek*)listbox->select->handle)->flag == 66)
 						pincheck = screenpincheck(4, NULL);
 
 					if(pincheck == 0)
@@ -3242,7 +3243,7 @@ why ?
 					int pincheck = 0;
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
-					else if(((struct tithek*)listbox->select->handle)->flag == 2000)
+					else if(((struct tithek*)listbox->select->handle)->flag == 66)
 						pincheck = screenpincheck(4, NULL);
 					if(pincheck == 0)
 //						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
