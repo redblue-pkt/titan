@@ -489,6 +489,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		oshutdown(2, 1);
 	else if(query != NULL && ostrstr(query, "guirestart") == query)
 		oshutdown(3, 1);
+	else if(query != NULL && ostrstr(query, "reloadsettings") == query)
+		reloadsettings(NULL);
 	else if(query != NULL && ostrstr(query, "standby") == query)
 	{
 		status.standby = 2;
