@@ -8802,4 +8802,73 @@ void servicebouquetsthread(struct stimerthread* timernode, int flag)
     }
 }
 
+void reloadsettings(char* input)
+{
+    int ret = 0;
+
+    freesat();
+    freeallbouquet();
+    freemainbouquet(0);
+    freechannel(0);
+    freetransponder();
+    freeprovider();
+    ret = readsat(getconfig("satfile", NULL));
+    printf("servicebouquets_update ret1: %d\n", ret);
+    ret = readtransponder(getconfig("transponderfile", NULL));
+    printf("servicebouquets_update ret2: %d\n", ret);
+    ret = readprovider(getconfig("providerfile", NULL));
+    printf("servicebouquets_update ret3: %d\n", ret);
+    ret = readchannel(getconfig("channelfile", NULL));
+    printf("servicebouquets_update ret4: %d\n", ret);
+    ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
+    printf("servicebouquets_update ret5: %d\n", ret);
+    ret = readmainbouquet(getconfig("bouquetfile", NULL));
+    printf("servicebouquets_update ret6: %d\n", ret);
+    ret = readallbouquet();
+    printf("servicebouquets_update ret7: %d\n", ret);
+
+    if(input != NULL)
+    {
+        //sort bouquet
+        void* aktlist = NULL;
+        struct mainbouquet* mainbouquetnode = NULL;
+        mainbouquetnode = getmainbouquet(input);
+	    if(mainbouquetnode != NULL && mainbouquetnode->bouquet != NULL)
+        {
+	        aktlist = (void*)mainbouquetnode;
+	        if(aktlist != NULL)
+	        {
+                printf("servicebouquets_update sort: %s\n", input);
+		        sortbouquet(&((struct mainbouquet*)aktlist)->bouquet);
+		        recalcbouquetnr();
+	        }
+        }
+    }
+//            free(tmpstr3), tmpstr3 = NULL;
+
+//	        status.aktservice = addservice(NULL);
+//	        status.lastservice = addservice(NULL);
+//	        status.pipservice = addservice(NULL);
+
+    //tune new if tunerconfig saved
+//	        if(ret == 0)
+//	        {
+/*
+        ret = servicestop(status.aktservice, 1, 1);
+        printf("servicebouquets_update ret7: %d\n", ret);
+        if(ret == 0 && status.play != 1)
+        {
+            printf("servicebouquets_update restart aktservice: %s\n", status.aktservice->channel);
+	        status.aktservice->transponder = NULL;
+	        servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
+        }
+*/
+//		        resettvpic();
+//		        drawscreen(tunerconfig, 0, 0);
+//		        clearscreen(tunerconfig);
+//		        drawscreen(skin, 0, 0);
+//	        }
+
+}
+
 #endif
