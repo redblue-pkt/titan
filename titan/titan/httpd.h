@@ -490,7 +490,13 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	else if(query != NULL && ostrstr(query, "guirestart") == query)
 		oshutdown(3, 1);
 	else if(query != NULL && ostrstr(query, "reloadsettings") == query)
+    {
 		reloadsettings(NULL);
+		if(fmt == 0)
+			sendoktext(connfd, "reloadsettings", auth);
+		else
+			buf = ostrcat("reloadsettings", NULL, 0, 0);
+    }
 	else if(query != NULL && ostrstr(query, "standby") == query)
 	{
 		status.standby = 2;
