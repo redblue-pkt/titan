@@ -714,7 +714,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			if(servicenode->type == RECORDSTREAM)
 			{
 //Workaround scrambled Bits
-				if(getconfigint("stream_workaround_off", NULL) == 0)
+				if(getconfigint("stream_scrambled", NULL) == 0)
 				{
 #ifdef MIPSEL
 					debug(251, "data len %i", readret);
@@ -796,7 +796,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					}
 				}*/
 //Workaround scrambled Bits
-					if(getconfigint("rec_workaround_off", NULL) == 0)
+					if(getconfigint("rec_scrambled", NULL) == 0)
 					{
 #ifndef MIPSEL
 						if(servicenode->type == RECORDPLAY)

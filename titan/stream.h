@@ -61,7 +61,7 @@ void streamthreadfunc(struct stimerthread* timernode)
 	{
 		if(streamfd < 0)
 		{
-			sockportcreate(&streamfd, getconfigint("streamport", NULL), 5);
+			sockportcreate(&streamfd, getconfigint("stream_port", NULL), 5);
 			if(streamfd < 0) break;
 
 			//set nonblocking

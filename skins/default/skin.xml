@@ -2065,14 +2065,18 @@
 		<node parent="listbox" name="password" text="Password" type="inputbox" valign="middle" width="100%">
 		<node parent="listbox" name="httpdport" text="HTTPD Port" type="inputboxnum" valign="middle" width="100%">
 		<node parent="listbox" name="webifip" text="IP for Stream" type="choicebox" valign="middle" width="100%">
-		<node parent="listbox" name="streamport" text="Stream Port" type="inputboxnum" valign="middle" width="100%">
 		<node parent="listbox" name="rguidstart" text="Start RGUID" type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="rguidport" text="RGUID Port" type="inputboxnum" valign="middle" width="100%">
 		<node parent="listbox" name="transcode" text="Transcode Stream" type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="bitrate" text="Bitrate" type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="resolution" text="Resolution" type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="aspectratio" text="Aspect Ratio" type="choicebox" valign="middle" width="100%">
-		<node parent="listbox" name="streamzapping" text="Allowed Zapping via Streamlink" type="choicebox" valign="middle" width="100%">
+		<node parent="listbox" name="stream_port" text="Stream Port" type="inputboxnum" valign="middle" width="100%">
+		<node parent="listbox" name="stream_zapping" text="Allowed Zapping via Streamlink" type="choicebox" valign="middle" width="100%">
+		<node parent="listbox" name="stream_ecm" text="Stream ECM Pids" type="choicebox" valign="middle" width="100%">
+		<node parent="listbox" name="stream_scrambled" text="Stream scrambled" type="choicebox" valign="middle" width="100%">
+		<node parent="listbox" name="rec_scrambled" text="Record scrambled" type="choicebox" valign="middle" width="100%">
+
 	<node name="buttonbar" posx="0" posy="610" width="100%" height="50" hspace="5" fontcol="buttonbar_fontcol" fontsize="25" bordercol="buttonbar_bordercol" bordersize="1" borderradius="8" bgcol="buttonbar_bgcol" bgcol2="buttonbar_bgcol2" gradient="topmiddle">
 		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"   valign="middle" posx="0"   posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" valign="middle" posx="70"  posy="center" width="70" height="40">
