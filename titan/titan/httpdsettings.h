@@ -10,16 +10,18 @@ void screenhttpdsettings()
 	struct skin* user = getscreennode(httpdsettings, "user");
 	struct skin* password = getscreennode(httpdsettings, "password");
 	struct skin* httpdport = getscreennode(httpdsettings, "httpdport");
-	struct skin* streamport = getscreennode(httpdsettings, "streamport");
+	struct skin* stream_port = getscreennode(httpdsettings, "stream_port");
+	struct skin* stream_zapping = getscreennode(httpdsettings, "stream_zapping");
+	struct skin* stream_ecm = getscreennode(httpdsettings, "stream_ecm");
+	struct skin* stream_scrambled = getscreennode(httpdsettings, "stream_scrambled");
+	struct skin* rec_scrambled = getscreennode(httpdsettings, "rec_scrambled");
 	struct skin* rguidstart = getscreennode(httpdsettings, "rguidstart");
 	struct skin* rguidport = getscreennode(httpdsettings, "rguidport");
 	struct skin* webifip = getscreennode(httpdsettings, "webifip");
-	struct skin* streamzapping = getscreennode(httpdsettings, "streamzapping");
 	struct skin* transcode = getscreennode(httpdsettings, "transcode");
 	struct skin* bitrate = getscreennode(httpdsettings, "bitrate");
 	struct skin* resolution = getscreennode(httpdsettings, "resolution");
 	struct skin* aspectratio = getscreennode(httpdsettings, "aspectratio");
-	
 
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *pos = NULL;
@@ -50,9 +52,9 @@ void screenhttpdsettings()
 	addchoicebox(webifip, "1", _("extern"));
 	setchoiceboxselection(webifip, getconfig("webifip", NULL));
 
-	changemask(streamport, "00000");
-	changeinput(streamport, getconfig("streamport", NULL));
-	streamport->input = mask(streamport->input, 5, "0");
+	changemask(stream_port, "00000");
+	changeinput(stream_port, getconfig("stream_port", NULL));
+	stream_port->input = mask(stream_port->input, 5, "0");
 	
 	addchoicebox(rguidstart, "0", _("no"));
 	addchoicebox(rguidstart, "1", _("yes"));
@@ -62,9 +64,21 @@ void screenhttpdsettings()
 	changeinput(rguidport, getconfig("rguidport", NULL));
 	rguidport->input = mask(rguidport->input, 5, "0");
 
-	addchoicebox(streamzapping, "0", _("no"));
-	addchoicebox(streamzapping, "1", _("yes"));
-	setchoiceboxselection(streamzapping, getconfig("streamzapping", NULL));
+	addchoicebox(stream_zapping, "0", _("no"));
+	addchoicebox(stream_zapping, "1", _("yes"));
+	setchoiceboxselection(stream_zapping, getconfig("stream_zapping", NULL));
+
+	addchoicebox(stream_ecm, "0", _("no"));
+	addchoicebox(stream_ecm, "1", _("yes"));
+	setchoiceboxselection(stream_ecm, getconfig("stream_ecm", NULL));
+
+	addchoicebox(stream_scrambled, "0", _("no"));
+	addchoicebox(stream_scrambled, "1", _("yes"));
+	setchoiceboxselection(stream_scrambled, getconfig("stream_scrambled", NULL));
+
+	addchoicebox(rec_scrambled, "0", _("no"));
+	addchoicebox(rec_scrambled, "1", _("yes"));
+	setchoiceboxselection(rec_scrambled, getconfig("rec_scrambled", NULL));
 	
 #ifndef MIPSEL
 	transcode->hidden=YES;
@@ -181,12 +195,15 @@ void screenhttpdsettings()
 			}
 
 			addconfigscreencheck("webifip", webifip, "0");
-			addconfigscreencheck("streamzapping", streamzapping, "0");
+			addconfigscreencheck("stream_zapping", stream_zapping, "0");
+			addconfigscreencheck("stream_ecm", stream_ecm, "0");
+			addconfigscreencheck("stream_scrambled", stream_scrambled, "0");
+			addconfigscreencheck("rec_scrambled", rec_scrambled, "0");
 
-			if(streamport->ret != NULL)
+			if(stream_port->ret != NULL)
 			{
-				int sport = atoi(streamport->ret);
-				addconfigint("streamport", sport);
+				int sport = atoi(stream_port->ret);
+				addconfigint("stream_port", sport);
 			}
 			if(rguidstart->ret != NULL)
 			{
