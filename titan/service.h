@@ -155,17 +155,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 
     if(chnode->streamurl != NULL && chnode->epgurl != NULL)
     {
-        printf("playerstart1 name: %s\n", chnode->name);
-        printf("playerstart1 streamurl: %s\n", chnode->streamurl);
-        printf("playerstart1 epgurl: %s\n", chnode->epgurl);
-        addconfigtmp("playerbuffersize", "0");
-        addconfigtmp("playerbufferseektime", "0");
-        if(/*status.play != 2 && getconfigint("lastplayertype", NULL) == 0 && */checkbox("DM900") == 1)
-            servicestop(status.aktservice, 1, 1);
-        playerstart(chnode->streamurl);
-        status.play = 2;
-		delconfigtmp("playerbuffersize");
-		delconfigtmp("playerbufferseektime");
+        streamplayer(chnode, 1);
     }
 
 	//got frontend dev
@@ -545,17 +535,11 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 
         if(chnode->streamurl != NULL)
         {
-            printf("playerstart2 name: %s\n", chnode->name);
-            printf("playerstart2 streamurl: %s\n", chnode->streamurl);
-            printf("playerstart2 epgurl: %s\n", chnode->epgurl);
-            addconfigtmp("playerbuffersize", "0");
-            addconfigtmp("playerbufferseektime", "0");
-            if(/*status.play != 2 && getconfigint("lastplayertype", NULL) == 0 && */checkbox("DM900") == 1)
-                servicestop(status.aktservice, 1, 1);
-            playerstart(chnode->streamurl);
-            status.play = 2;
-			delconfigtmp("playerbuffersize");
-			delconfigtmp("playerbufferseektime");
+            struct stimerthread *startservicethread = NULL;
+            if(!ostrncmp("http://127.0.0.1:17999/", chnode->streamurl, 23))
+                startservicethread = addtimer(&createstartservicethread, START, 1000, 1, (void*)chnode, NULL, NULL);
+            else
+                streamplayer(chnode, 2);
         }
 
 	    //check pmt if not done
@@ -721,7 +705,8 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 	if(status.secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
 	{
 		debug(200, "first zap not ok, make second zap (%d)", status.secondzap);
-		ret = servicestartreal(chnode, channellist, pin, 6);
+//        if(chnode->streamurl == NULL)
+       		ret = servicestartreal(chnode, channellist, pin, 6);
 	}
 	debug(200, "servicestart... ended");
 	return ret;
@@ -1172,5 +1157,30 @@ void servicefullHDMIin_start()
 	status.aktservice->channel = chnode;
 }
 #endif
+
+void createstartservicethread(struct stimerthread* self, struct channel* chnode)
+{
+	printf("createstartservicethread start");
+
+	if(status.startservicethread == NULL/* || self != NULL*/)
+    {
+	
+	    int count = 585;
+        status.startservicethread = self;
+
+//    	while(count < 600)
+	    while(status.httpthread == NULL)
+	    {
+		    sleep(1);
+		    count++;
+	    }
+
+        streamplayer(chnode, 3);
+
+	    printf("createstartservicethread end");
+
+        status.startservicethread = NULL;
+    }
+}
 
 #endif

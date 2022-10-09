@@ -1527,6 +1527,8 @@ struct status
 	struct stimerthread* rectimerthread;
 	// singlepic thread
 	struct stimerthread* singlepicthread;
+    // service thread
+    struct stimerthread* startservicethread;
 	// rguid sock filedescriptor for rguid
 	int rguidfd;
 	struct service* aktservice;

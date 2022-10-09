@@ -715,56 +715,56 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			{
 //Workaround scrambled Bits
 				if(getconfigint("stream_workaround_off", NULL) == 0)
-					{
+				{
 #ifdef MIPSEL
-						debug(251, "data len %i", readret);
-						if(servicenode->tssize == 188)
+					debug(251, "data len %i", readret);
+					if(servicenode->tssize == 188)
+					{
+						i = 0;
+						if(buf[i] != 0x47)
 						{
-							i = 0;
-							if(buf[i] != 0x47)
+							debug(251, "no sync byte at beginn len %i", readret);
+							i = 1;
+							while(i <= 188)
 							{
-								debug(251, "no sync byte at beginn len %i", readret);
-								i = 1;
-								while(i <= 188)
+								if(buf[i] == 0x47)
 								{
-									if(buf[i] == 0x47)
-									{
-										 debug(251, "sync byte found at offset %i", i);
-										 break;
-									}
-									i++;
+									 debug(251, "sync byte found at offset %i", i);
+									 break;
 								}
+								i++;
 							}
-							if(i <= 188)
+						}
+						if(i <= 188)
+						{
+							while(i < readret-4)
 							{
-								while(i < readret-4)
+								if(buf[i] == 0x47)
 								{
-									if(buf[i] == 0x47)
+									buf[i+3] = buf[i+3] & 0x3f;
+									i = i + 188;
+								}
+								else
+								{
+									debug(251, "no sync byte at data len %i", readret);
+									while(i < readret-4)
 									{
-										buf[i+3] = buf[i+3] & 0x3f;
-										i = i + 188;
-									}
-									else
-									{
-										debug(251, "no sync byte at data len %i", readret);
-										while(i < readret-4)
+										i = i + 1;
+										if(buf[i] == 0x47)
 										{
-											i = i + 1;
-											if(buf[i] == 0x47)
-											{
-												debug(251, "sync byte found at offset %i", i);
-												buf[i+3] = buf[i+3] & 0x3f;
-												i = i + 188;
-												break;
-											}
-										}	
-									}
+											debug(251, "sync byte found at offset %i", i);
+											buf[i+3] = buf[i+3] & 0x3f;
+											i = i + 188;
+											break;
+										}
+									}	
 								}
 							}
 						}
-#endif
 					}
-//*
+#endif
+				}
+//
 				writeret = sockwrite(servicenode->recdstfd, buf, readret, writetimeout);
 			}
 			else
@@ -1070,6 +1070,8 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	struct transponder* tpnode = NULL;
 	int input = DMX_IN_FRONTEND;
 
+	struct cadesc *canode = NULL;
+
 	//wakeup hdd work
 	if(type != RECSTREAM && type != RECSTREAMENC)
 		wakeup_record_device();
@@ -1321,6 +1323,7 @@ not needed we use wakeup_record_device on recordstartreal
 				pmtbuf = dvbgetpmt(fenode, patbuf, chnode->serviceid, &chnode->pmtpid, NULL, -1, 0);
 				dvbgetinfo(pmtbuf, chnode);
 			}
+
 			if(status.pmtmode == 1)
 			{
 				if(recordcheckcrypt(fenode, servicetype) == 0)
@@ -1330,6 +1333,7 @@ not needed we use wakeup_record_device on recordstartreal
 			}
 			else
 				sendcapmt(servicenode, 0, 3);
+
 			m_unlock(&status.servicemutex, 2);
 
 			free(pmtbuf); pmtbuf = NULL;
@@ -1400,9 +1404,13 @@ not needed we use wakeup_record_device on recordstartreal
 			else
 			{
 #endif
+				//add audiopid
 				if(chnode->audiopid > 0) dmxaddpid(dmxnode, chnode->audiopid);
+				//add videopid
 				if(chnode->videopid > 0) dmxaddpid(dmxnode, chnode->videopid);
+				//add pmtpid
 				dmxaddpid(dmxnode, chnode->pmtpid);
+
 				//add all audiotracks
 				atrack = chnode->audiotrack;
 				while(atrack != NULL)
@@ -1424,9 +1432,32 @@ not needed we use wakeup_record_device on recordstartreal
 					subnode = subnode->next;
 				}
 				m_unlock(&status.subtitlemutex, 8);
-			
+
 				//add epg pid
 				if(getconfigint("epg2record", NULL) == 1) dmxaddpid(dmxnode, 0x12);	
+
+                //add PAT
+//				dmxaddpid(dmxnode, 0);
+                //add TDT
+				dmxaddpid(dmxnode, 0x14);
+
+                if(getconfigint("stream_ecm", NULL) == 1)
+                {
+                    //add ECM
+				    canode = chnode->cadesc;
+				    while(canode != NULL)
+				    {
+                        printf("record: find ECM Pid %d\n", canode->capid);
+                        printf("record: find ECM Pid 0x%04x\n", canode->capid);
+                        //if g_settings.streaming_ecmmode
+					    if(canode->capid > 0)
+                        {
+                            printf("record: skip add ECM Pid 0x%04x\n", canode->capid);
+						    dmxaddpid(dmxnode, canode->capid);
+                        }
+					    canode = canode->next;
+				    }
+                }
 #ifdef MIPSEL
 			}
 #endif

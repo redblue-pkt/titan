@@ -81,7 +81,18 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 					chnode->fontcol = convertcol("favcol");
 				if(tmpchannel->protect > 0)
 					chnode->fontcol = convertcol("protectcol");
-                if(tmpchannel->streamurl != NULL)
+                if(tmpchannel->streamurl != NULL && ostrstr(tmpchannel->streamurl, "http://127.0.0.1:17999/") != NULL)
+                {
+                    tmpstr = ostrcat(tmpchannel->name, " (Icam)", 0, 0);
+//                    if(tmpchannel->epgurl != NULL)
+//                        tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
+//                    else
+                        tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
+
+    				changetext(chnode, tmpstr);
+                    free(tmpstr), tmpstr = NULL;
+                }
+                else if(tmpchannel->streamurl != NULL)
                 {
                     tmpstr = ostrcat(tmpchannel->name, " (IpTV)", 0, 0);
                     if(tmpchannel->epgurl != NULL)

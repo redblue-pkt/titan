@@ -559,6 +559,7 @@ void playrcjumpto(char* file, char* showname, int* playinfobarstatus, int* playi
 #ifdef EPLAYER4
 void playersend_ff_fr_event(gdouble rate);
 #endif
+void streamplayer(struct channel* chnode, int flag);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);
@@ -978,6 +979,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 void serviceresetchannelinfo(struct channel* chnode);
 struct service* getservice(int type, int flag);
 char* servicecheckret(int ret, int flag);
+void createstartservicethread(struct stimerthread* self, struct channel* chnode);
 
 //mainbouquets.h
 int writemainbouquet(const char *filename);
