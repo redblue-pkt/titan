@@ -1442,7 +1442,7 @@ msgstr "Activeer nieuwe netwerk instellingen ?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:842 channellist.h:1317
+#: channellist.h:853 channellist.h:1328
 msgid "All Channels"
 msgstr "Alle kanalen"
 
@@ -2656,7 +2656,7 @@ msgstr "Favorieten: "
 msgid "BouquetEntrys: "
 msgstr "Favorieten ingangen: "
 
-#: channellist.h:777 channellist.h:1332 channellist.h:1541
+#: channellist.h:788 channellist.h:1343 channellist.h:1552
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Favorieten"
@@ -2959,7 +2959,7 @@ msgstr "Map kan niet aangemaakt worden!"
 msgid "Can't create service"
 msgstr "Service kan niet gemaakt worden"
 
-#: service.h:1114
+#: service.h:1099
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -2967,7 +2967,7 @@ msgstr ""
 "Kan geen tuner vinden.\n"
 "Er is geen vrije tuner beschikbaar."
 
-#: record.h:1238
+#: record.h:1240
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -2975,7 +2975,7 @@ msgstr ""
 "Er is geen vrije Tuner .\n"
 "zappen naar opname/timeshift kanaal ?"
 
-#: record.h:1792
+#: record.h:1823
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG tijd kan niet gevonden worden of is niet juist"
 
@@ -3007,11 +3007,11 @@ msgstr "FRONTEND apparaat kan niet geopend worden"
 msgid "Can't open file"
 msgstr "Bestand kan niet geopend worden"
 
-#: service.h:1120
+#: service.h:1105
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Frontend kan niet geopend worden of onbekend Type!"
 
-#: channellist.h:1111
+#: channellist.h:1122
 msgid "Can't remove akive Service"
 msgstr "Actuele zender kan niet gewist worden"
 
@@ -3169,7 +3169,7 @@ msgstr "Omschakelen naar SCART"
 msgid "Change: "
 msgstr "Wissel: "
 
-#: channellist.h:793 channellist.h:1679 skin_default_skin.xml.h:92
+#: channellist.h:804 channellist.h:1690 skin_default_skin.xml.h:92
 #: skins_0acht5zehn_skin.xml.h:133 skins_atemio_skin.xml.h:132
 #: skins_cool_skin.xml.h:159 skins_default_skin.xml.h:92
 #: skins_kravenhd_skin.xml.h:96 skins_megastyleblue_skin.xml.h:161
@@ -3343,7 +3343,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "Kanalen: "
 
-#: service.h:1125
+#: service.h:1110
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Zenderlijst is leeg of corrupt (zender niet gevonden)!"
 
@@ -3357,7 +3357,7 @@ msgstr "Zenderlijst is leeg of corrupt (zender niet gevonden)!"
 msgid "Channellist view"
 msgstr "Zenderlijst beeld"
 
-#: channellist.h:1398
+#: channellist.h:1409
 msgid "Channels A-Z"
 msgstr "Zenders A-Z"
 
@@ -3801,23 +3801,23 @@ msgstr ""
 msgid "Copy Modus Font Color"
 msgstr ""
 
-#: channellist.h:658
+#: channellist.h:669
 msgid "Copy mode"
 msgstr "Kopieer Modus"
 
-#: channellist.h:1020
+#: channellist.h:1031
 msgid "Copy providerlist not ok"
 msgstr "Providerlijst kopiëren niet gelukt"
 
-#: channellist.h:1018
+#: channellist.h:1029
 msgid "Copy providerlist successfull"
 msgstr "Providerlijst kopiëren gelukt"
 
-#: channellist.h:1027
+#: channellist.h:1038
 msgid "Copy satlist not ok"
 msgstr "Satelietlijst kopiëren niet gelukt"
 
-#: channellist.h:1025
+#: channellist.h:1036
 msgid "Copy satlist successfull"
 msgstr "Satelietlijst kopiëren gelukt"
 
@@ -5063,8 +5063,8 @@ msgid "EURONEWS (German)"
 msgstr ""
 
 #: about.h:10 amazon.h:760 avsettings.h:404 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 channellist.h:1018 channellist.h:1020
-#: channellist.h:1025 channellist.h:1027 channellist.h:1111 cloudzilla.h:39
+#: blindscanadjust.h:25 channellist.h:1029 channellist.h:1031
+#: channellist.h:1036 channellist.h:1038 channellist.h:1122 cloudzilla.h:39
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36 divxstage.h:86
 #: divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 epgsettings.h:331
@@ -5130,11 +5130,11 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
 #: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:427 record.h:1238 record.h:1792 rectimer.h:577 rectimer.h:1405
+#: record.h:427 record.h:1240 record.h:1823 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 service.h:854 service.h:1131 shared.h:29
+#: security.h:668 security.h:685 service.h:839 service.h:1116 shared.h:29
 #: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
 #: skin_default_skin.xml.h:199 skins_0acht5zehn_skin.xml.h:237
 #: skins_atemio_skin.xml.h:234 skins_cool_skin.xml.h:281
@@ -5216,7 +5216,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr "Afspeellijst bewerken"
 
-#: channellist.h:674
+#: channellist.h:685
 msgid "Edit mode"
 msgstr "Hernoem Modus"
 
@@ -9123,8 +9123,8 @@ msgid "Menulist"
 msgstr ""
 
 #: amazon.h:21 amazon.h:24 amazon.h:760 avsettings.h:404 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:1018
-#: channellist.h:1020 channellist.h:1025 channellist.h:1027 channellist.h:1111
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:1029
+#: channellist.h:1031 channellist.h:1036 channellist.h:1038 channellist.h:1122
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:276
@@ -9183,15 +9183,15 @@ msgstr ""
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
 #: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:427 record.h:1238 record.h:1532 record.h:1792
-#: record.h:1817 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
+#: readerconfig.h:498 record.h:427 record.h:1240 record.h:1563 record.h:1823
+#: record.h:1848 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167 scan.h:2258
-#: scan.h:2651 scart.h:12 scart.h:25 security.h:1581 service.h:854
-#: service.h:1131 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
+#: scan.h:2651 scart.h:12 scart.h:25 security.h:1581 service.h:839
+#: service.h:1116 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
 #: skinadjust.h:619 skinadjust.h:627 skinadjust.h:668 skinadjust.h:685
 #: skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231 sock.h:955
 #: softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51 solarmovie.h:63
@@ -9447,7 +9447,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:642 skins_kravenhd_skin.xml.h:397
+#: channellist.h:653 skins_kravenhd_skin.xml.h:397
 msgid "Move mode"
 msgstr "Verplaats Modus"
 
@@ -10033,8 +10033,8 @@ msgstr ""
 #: about.h:10 amazon.h:21 amazon.h:24 amazon.h:760 autotimer.c:537
 #: autotimer.c:543 autotimer.c:568 autotimer.c:575 autotimer.c:603
 #: avsettings.h:404 betarobot.h:57 bgdownload.h:176 blindscanadjust.h:25
-#: callmon_main.h:39 channellist.h:1018 channellist.h:1020 channellist.h:1025
-#: channellist.h:1027 channellist.h:1111 cloudzilla.h:39 cloudzilla.h:45
+#: callmon_main.h:39 channellist.h:1029 channellist.h:1031 channellist.h:1036
+#: channellist.h:1038 channellist.h:1122 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27
 #: epgsettings.h:317 epgsettings.h:331 extensions.h:198 extensions.h:249
@@ -10108,7 +10108,7 @@ msgstr ""
 #: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
 #: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
 #: readerconfig.h:451 readerconfig.h:452 readerconfig.h:497 readerconfig.h:498
-#: record.h:427 record.h:1238 record.h:1532 record.h:1817 rectimer.h:577
+#: record.h:427 record.h:1240 record.h:1563 record.h:1848 rectimer.h:577
 #: rectimer.h:1258 rectimer.h:1405 rectimer.h:1417 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
@@ -10116,7 +10116,7 @@ msgstr ""
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258 scan.h:2651
 #: scart.h:12 scart.h:25 scriptexec.h:41 security.h:668 security.h:685
-#: security.h:1581 service.h:854 service.h:1131 shared.h:29 shared.h:66
+#: security.h:1581 service.h:839 service.h:1116 shared.h:29 shared.h:66
 #: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 #: skins_0acht5zehn_skin.xml.h:398 skins_atemio_skin.xml.h:397
@@ -11470,7 +11470,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:666
+#: channellist.h:677
 msgid "Protect mode"
 msgstr "Bescherm Modus"
 
@@ -11484,7 +11484,7 @@ msgstr "Bescherm Modus"
 msgid "Prov"
 msgstr ""
 
-#: channellist.h:824 channellist.h:1431 channellist.h:1755
+#: channellist.h:835 channellist.h:1442 channellist.h:1766
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr ""
@@ -11696,7 +11696,7 @@ msgstr ""
 msgid "RTV AU mms (German)"
 msgstr ""
 
-#: channellist.h:764 channellist.h:1865 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:775 channellist.h:1876 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:714 skin_default_skin.xml.h:487 skins_0acht5zehn_skin.xml.h:468
 #: skins_cool_skin.xml.h:554 skins_default_skin.xml.h:487
 #: skins_kravenhd_skin.xml.h:492 skins_megastyleblue_skin.xml.h:556
@@ -11903,7 +11903,7 @@ msgstr "Ontvanger succesvol vrijgegeven"
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1685 record.h:1759 webif_index.atemio5200.h:59
+#: record.h:1716 record.h:1790 webif_index.atemio5200.h:59
 #: webif_index.atemio5200.h:115 webif_index.atemio6200.h:59
 #: webif_index.atemio6200.h:115 webif_index.atemio7600.h:47
 #: webif_index.atemio7600.h:109 webif_index.atemio-nemesis.h:59
@@ -12017,7 +12017,7 @@ msgstr "Opname bezig"
 msgid "Record path"
 msgstr ""
 
-#: record.h:1817
+#: record.h:1848
 msgid "Record started"
 msgstr "Opname is gestart"
 
@@ -12189,7 +12189,7 @@ msgstr ""
 msgid "Remove error"
 msgstr "Verwijderen mislukt"
 
-#: channellist.h:650
+#: channellist.h:661
 msgid "Remove mode"
 msgstr "Wis Modus"
 
@@ -13042,7 +13042,7 @@ msgid ""
 "execute a channel search after restart."
 msgstr ""
 
-#: channellist.h:808 channellist.h:1365 channellist.h:1614
+#: channellist.h:819 channellist.h:1376 channellist.h:1625
 msgid "Satellites"
 msgstr "Satellieten"
 
@@ -14609,7 +14609,7 @@ msgstr ""
 msgid "Stream Transcode"
 msgstr ""
 
-#: channellist.h:682
+#: channellist.h:693
 msgid "Stream mode"
 msgstr ""
 
@@ -15106,7 +15106,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: cec.h:673 channellist.h:769 channellist.h:1860 httpdfunc.h:286
+#: cec.h:673 channellist.h:780 channellist.h:1871 httpdfunc.h:286
 #: httpdfunc.h:696 scan.h:712 webif_index.atemio5200.h:68
 #: webif_index.atemio5200.h:74 webif_index.atemio5200.h:124
 #: webif_index.atemio6200.h:68 webif_index.atemio6200.h:74
@@ -15487,7 +15487,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr ""
 
-#: record.h:1531
+#: record.h:1562
 msgid "Timer Record start !"
 msgstr "Timer Opname gestart!"
 
@@ -15569,7 +15569,7 @@ msgstr ""
 "Timeshift: Bestand is te klein\n"
 "wacht een moment en probeer op nieuw"
 
-#: service.h:854
+#: service.h:839
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -16164,7 +16164,7 @@ msgstr "Tuner instellingen niet toegestaan/nbij lopende opname of stream!"
 msgid "Tunertype"
 msgstr "Tuner type"
 
-#: service.h:1117
+#: service.h:1102
 msgid "Tuning to Channel failed!"
 msgstr "Kanaal niet beschikbaar !"
 
@@ -17473,15 +17473,15 @@ msgstr "Activeren"
 msgid "active"
 msgstr "Aktief"
 
-#: record.h:1756 record.h:1803
+#: record.h:1787 record.h:1834
 msgid "add recording (enter duration)"
 msgstr "Opname toevoegen (opnameduur ingeven)"
 
-#: record.h:1755 record.h:1798
+#: record.h:1786 record.h:1829
 msgid "add recording (indefinitely)"
 msgstr "Opname toevoegen (oneindig)"
 
-#: record.h:1754 record.h:1785
+#: record.h:1785 record.h:1816
 msgid "add recording (stop after current event)"
 msgstr "Opname toevoegen (deze uitzending)"
 
@@ -17778,7 +17778,7 @@ msgstr "Kaart gevonden"
 msgid "center"
 msgstr ""
 
-#: record.h:1731 record.h:1740 record.h:1769 skins_kravenhd_skin.xml.h:92
+#: record.h:1762 record.h:1771 record.h:1800 skins_kravenhd_skin.xml.h:92
 msgid "change"
 msgstr "Wijzig"
 
@@ -19965,8 +19965,8 @@ msgstr "Stap west"
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1666 record.h:1675 record.h:1687
-#: record.h:1716 record.h:1725 record.h:1763 skin_default_skin.xml.h:641
+#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1697 record.h:1706 record.h:1718
+#: record.h:1747 record.h:1756 record.h:1794 skin_default_skin.xml.h:641
 #: skins_0acht5zehn_skin.xml.h:609 skins_atemio_skin.xml.h:611
 #: skins_cool_skin.xml.h:723 skins_default_skin.xml.h:641
 #: skins_kravenhd_skin.xml.h:649 skins_megastyleblue_skin.xml.h:725
