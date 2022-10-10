@@ -764,6 +764,15 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					}
 #endif
 				}
+		        else if(servicenode->type == RECORDPLAY && servicenode->tssize == 192)
+		        {
+			        // remove 4 bytes per paket from mts and m2ts streams
+			        pktcount = readret / 192;
+			        for(i = 0; i < pktcount; i++)
+				        memcpy(tmpbuf + (i * 188), buf + (i * 192) + 4, 188);
+			        writeret = sockwrite(servicenode->recdstfd, tmpbuf, pktcount * 188, writetimeout);
+			        writeret = writeret + (pktcount * 4);
+		        }
 //
 				writeret = sockwrite(servicenode->recdstfd, buf, readret, writetimeout);
 			}
