@@ -2941,13 +2941,13 @@ msgid ""
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: record.h:1249
+#: record.h:1240
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:1832
+#: record.h:1823
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -5076,7 +5076,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
 #: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:427 record.h:1249 record.h:1832 rectimer.h:577 rectimer.h:1405
+#: record.h:427 record.h:1240 record.h:1823 rectimer.h:577 rectimer.h:1405
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41
@@ -9095,8 +9095,8 @@ msgstr ""
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
 #: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:427 record.h:1249 record.h:1572 record.h:1832
-#: record.h:1857 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
+#: readerconfig.h:498 record.h:427 record.h:1240 record.h:1563 record.h:1823
+#: record.h:1848 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -10013,7 +10013,7 @@ msgstr ""
 #: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
 #: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
 #: readerconfig.h:451 readerconfig.h:452 readerconfig.h:497 readerconfig.h:498
-#: record.h:427 record.h:1249 record.h:1572 record.h:1857 rectimer.h:577
+#: record.h:427 record.h:1240 record.h:1563 record.h:1848 rectimer.h:577
 #: rectimer.h:1258 rectimer.h:1405 rectimer.h:1417 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
@@ -11798,7 +11798,7 @@ msgstr ""
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1725 record.h:1799 webif_index.atemio5200.h:59
+#: record.h:1716 record.h:1790 webif_index.atemio5200.h:59
 #: webif_index.atemio5200.h:115 webif_index.atemio6200.h:59
 #: webif_index.atemio6200.h:115 webif_index.atemio7600.h:47
 #: webif_index.atemio7600.h:109 webif_index.atemio-nemesis.h:59
@@ -11916,7 +11916,7 @@ msgstr ""
 msgid "Record scrambled"
 msgstr ""
 
-#: record.h:1857
+#: record.h:1848
 msgid "Record started"
 msgstr "Διαδρομή φακέλλου εγγραφών"
 
@@ -15380,7 +15380,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr ""
 
-#: record.h:1571
+#: record.h:1562
 msgid "Timer Record start !"
 msgstr "Διαδρομή εγγραφών του Timer"
 
@@ -17351,15 +17351,15 @@ msgstr "Ενεργοποίηση"
 msgid "active"
 msgstr "Απενεργοποίηση"
 
-#: record.h:1796 record.h:1843
+#: record.h:1787 record.h:1834
 msgid "add recording (enter duration)"
 msgstr ""
 
-#: record.h:1795 record.h:1838
+#: record.h:1786 record.h:1829
 msgid "add recording (indefinitely)"
 msgstr ""
 
-#: record.h:1794 record.h:1825
+#: record.h:1785 record.h:1816
 msgid "add recording (stop after current event)"
 msgstr ""
 
@@ -17656,7 +17656,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1771 record.h:1780 record.h:1809 skins_kravenhd_skin.xml.h:92
+#: record.h:1762 record.h:1771 record.h:1800 skins_kravenhd_skin.xml.h:92
 msgid "change"
 msgstr ""
 
@@ -19844,8 +19844,8 @@ msgstr ""
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1706 record.h:1715 record.h:1727
-#: record.h:1756 record.h:1765 record.h:1803 skin_default_skin.xml.h:642
+#: httpdfunc.h:5561 httpdfunc.h:5607 record.h:1697 record.h:1706 record.h:1718
+#: record.h:1747 record.h:1756 record.h:1794 skin_default_skin.xml.h:642
 #: skins_0acht5zehn_skin.xml.h:609 skins_atemio_skin.xml.h:611
 #: skins_cool_skin.xml.h:723 skins_default_skin.xml.h:642
 #: skins_kravenhd_skin.xml.h:649 skins_megastyleblue_skin.xml.h:725
