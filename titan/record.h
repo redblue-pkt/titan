@@ -716,7 +716,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 //Workaround scrambled Bits
 				if(getconfigint("stream_scrambled", NULL) == 0)
 				{
-#ifdef MIPSEL
+//#ifdef MIPSEL
 					debug(251, "data len %i", readret);
 					if(servicenode->tssize == 188)
 					{
@@ -762,7 +762,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 							}
 						}
 					}
-#endif
+//#endif
 				}
 //
 				writeret = sockwrite(servicenode->recdstfd, buf, readret, writetimeout);
