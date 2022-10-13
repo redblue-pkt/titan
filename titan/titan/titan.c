@@ -1135,6 +1135,7 @@ timeokw = 1;
 	}
 	setvol(getconfigint("vol", NULL));
 
+/* move to later readmainbouquet need for iptv
 	//ciplus workaround.... muss als erstes starten
 	
 	if(getconfigint("ciplusrun", NULL) == 1)
@@ -1159,7 +1160,7 @@ timeokw = 1;
 		serviceret = servicestart(getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0);
 	else
 		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0);
-
+*/
 	if(checkbox("IPBOX9000") == 1 && !file_exist("/tmp/.opticum9600.workaround"))
 	{
 		printf("opticum.workaround start\n");
@@ -1186,6 +1187,32 @@ timeokw = 1;
 	}
 	ret = readmainbouquet(getconfig("bouquetfile", NULL));
 	ret = readallbouquet();
+
+	//ciplus workaround.... muss als erstes starten
+	
+	if(getconfigint("ciplusrun", NULL) == 1)
+	{
+		printf("ci workaround start\n");
+		startchannellist = getconfig("channellist", NULL);
+		startserviceid = getconfigint("serviceid", NULL);
+		starttransponderid = getconfigllu("transponderid", NULL);
+		serviceret = servicestart(getchannel(getconfigint("ciplus_serviceid", NULL), getconfigllu("ciplus_transponderid", NULL)), getconfig("ciplus_channellist", NULL), NULL, 0);
+		sleep(2); 
+		addconfig("channellist", startchannellist);
+		addconfigint("serviceid", startserviceid);
+		addconfigllu("transponderid", starttransponderid);
+		status.aktservice = addservice(NULL);
+		status.lastservice = addservice(NULL);
+		status.pipservice = addservice(NULL);
+		printf("ci workaround1 ende\n");
+	}
+
+	//tune to channel
+	if(status.servicetype == 0)
+		serviceret = servicestart(getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0);
+	else
+		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0);
+
 	ret = readmainplaylist(getconfig("playlistfile", NULL));
 	ret = readallplaylist();
 	ret = readrcmap(getconfig("rcmapfile", NULL));

@@ -1751,6 +1751,8 @@ struct bouquet
 	int nr;
 	int serviceid;
 	uint64_t transponderid;
+    char* streamurl;
+    char* epgurl;
 	struct channel *channel;
 	struct bouquet *prev;
 	struct bouquet *next;

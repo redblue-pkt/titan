@@ -458,7 +458,7 @@ int playerstartts(char* file, int flag)
 		}
 		printf("player--> create channel\n");		
 		delchannel(serviceid, 0, 1);
-		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0, -1, NULL, NULL);
+		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0, -1);
 		if(chnode != NULL) chnode->pmtpid = pmtpid;
 	}
 	else
