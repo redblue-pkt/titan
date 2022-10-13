@@ -2353,16 +2353,20 @@ playerend:
 	return ret;
 }
 
-void streamplayer(struct channel* chnode, int flag)
+void streamplayer(struct bouquet* bnode, int flag)
 {
-    printf("streamplayer playerstart%d name: %s\n", flag, chnode->name);
-    printf("streamplayer playerstart%d streamurl: %s\n", flag, chnode->streamurl);
-    printf("streamplayer playerstart%d epgurl: %s\n", flag, chnode->epgurl);
+    printf("streamplayer playerstart%d Bouquet: %s\n", flag, status.aktservice->channellist + 10);
+    printf("streamplayer playerstart%d name: %s\n", flag, bnode->channel->name);
+    printf("streamplayer playerstart%d serviceid: %d\n", flag, bnode->serviceid);
+    printf("streamplayer playerstart%d transponderid: %lld\n", flag, bnode->transponderid);
+    printf("streamplayer playerstart%d streamurl: %s\n", flag, bnode->streamurl);
+    printf("streamplayer playerstart%d epgurl: %s\n", flag, bnode->epgurl);
+
     addconfigtmp("playerbuffersize", "0");
     addconfigtmp("playerbufferseektime", "0");
-//    if(/*status.play != 2 && getconfigint("lastplayertype", NULL) == 0 && */checkbox("DM900") == 1)
-        servicestop(status.aktservice, 1, 1);
-    playerstart(chnode->streamurl);
+
+    servicestop(status.aktservice, 1, 1);
+    playerstart(bnode->streamurl);
     status.play = 2;
     delconfigtmp("playerbuffersize");
     delconfigtmp("playerbufferseektime");

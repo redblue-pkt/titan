@@ -153,13 +153,27 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0 && status.aktservice->type == CHANNEL)
 		changechannellist(chnode, channellist);
 
-    if(chnode->streamurl != NULL && chnode->epgurl != NULL)
+    struct bouquet* bnode = NULL;
+    struct mainbouquet* mnode = getmainbouquet(status.aktservice->channellist + 10);
+
+    if(mnode != NULL)
+        bnode = getbouquetbychannel(mnode->bouquet, status.aktservice->channel->serviceid, status.aktservice->channel->transponderid);
+
+
+    printf("servicestartreal playerstart%d Bouquet: %s\n", flag, status.aktservice->channellist + 10);
+    printf("servicestartreal playerstart%d name: %s\n", flag, bnode->channel->name);
+    printf("servicestartreal playerstart%d serviceid: %d\n", flag, bnode->serviceid);
+    printf("servicestartreal playerstart%d transponderid: %lld\n", flag, bnode->transponderid);
+    printf("servicestartreal playerstart%d streamurl: %s\n", flag, bnode->streamurl);
+    printf("servicestartreal playerstart%d epgurl: %s\n", flag, bnode->epgurl);
+
+    if(bnode != NULL && bnode->streamurl != NULL && bnode != NULL && bnode->epgurl != NULL)
     {
-        streamplayer(chnode, 1);
+        streamplayer(bnode, 1);
     }
 
 	//got frontend dev
-	if(chnode->epgurl == NULL && flag == 0)
+	if(bnode != NULL && bnode->epgurl == NULL && flag == 0)
 	{
 		fenode = fegetfree(tpnode, 0, NULL, chnode);
 		if(fenode == NULL)
@@ -169,7 +183,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		}
 		
 #ifdef DREAMBOX
-        if(chnode->streamurl == NULL)
+        if(bnode != NULL && bnode->streamurl == NULL)
         {
 		    if(status.aktservice->fedev != fenode)
 		    {
@@ -227,7 +241,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		status.aktservice->fedev = fenode;
 	}
 
-	if(chnode->streamurl == NULL && fenode == NULL)
+	if(bnode != NULL && bnode->streamurl == NULL && fenode == NULL)
 	{
 		m_unlock(&status.servicemutex, 2);
 		return 1;
@@ -237,7 +251,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if((chnode->audiopid == -1 || chnode->videopid == -1 || chnode->pcrpid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3)))
 	{
 		//wait for tuner lock
-		if(chnode->streamurl == NULL && flag == 0)
+		if(bnode != NULL && bnode->streamurl == NULL && flag == 0)
 		{
 			if(fenode->felasttransponder != tpnode)
 				festatus = fewait(fenode);
@@ -309,7 +323,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 #endif
 
-	if(chnode->epgurl == NULL)
+	if(bnode != NULL && bnode->epgurl == NULL)
     {
     	audiostop(status.aktservice->audiodev);
 
@@ -533,13 +547,13 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	    }
 #endif
 
-        if(chnode->streamurl != NULL)
+        if(bnode != NULL && bnode->streamurl != NULL)
         {
             struct stimerthread *startservicethread = NULL;
-            if(!ostrncmp("http://127.0.0.1:17999/", chnode->streamurl, 23))
-                startservicethread = addtimer(&createstartservicethread, START, 1000, 1, (void*)chnode, NULL, NULL);
+            if(!ostrncmp("http://127.0.0.1:17999/", bnode->streamurl, 23))
+                startservicethread = addtimer(&createstartservicethread, START, 1000, 1, (void*)bnode, NULL, NULL);
             else
-                streamplayer(chnode, 2);
+                streamplayer(bnode, 2);
         }
 
 	    //check pmt if not done
@@ -628,14 +642,14 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0)
 	{
 		//add channel to history
-		if(chnode->streamurl != NULL || status.aktservice->type == CHANNEL)
+		if((bnode != NULL && bnode->streamurl != NULL) || status.aktservice->type == CHANNEL)
 		{
     		addchannelhistory(chnode, status.aktservice->channellist);
-			if(chnode->streamurl == NULL && checkbox("DM900") == 1 && status.servicetype == 0) //only for tv
+			if(bnode != NULL && bnode->streamurl == NULL && checkbox("DM900") == 1 && status.servicetype == 0) //only for tv
 				createmostzap(chnode->serviceid, chnode->transponderid);
 		}
 		festatus = fewait(fenode);
-		if(chnode->streamurl == NULL && festatus != 0)
+		if(bnode != NULL && bnode->streamurl == NULL && festatus != 0)
 		{
 			m_unlock(&status.servicemutex, 2);
 			err("festatus=%i", festatus );
@@ -1153,14 +1167,14 @@ void servicefullHDMIin_start()
 	chnode = getchannel(65535, 0);
 	if(chnode == NULL)
 		//chnode = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
-		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1, NULL, NULL);
+		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1);
 	status.aktservice->channel = chnode;
 }
 #endif
 
-void createstartservicethread(struct stimerthread* self, struct channel* chnode)
+void createstartservicethread(struct stimerthread* self, struct bouquet* bnode)
 {
-	printf("createstartservicethread start");
+	printf("createstartservicethread start\n");
 
 	if(status.startservicethread == NULL/* || self != NULL*/)
     {
@@ -1175,9 +1189,9 @@ void createstartservicethread(struct stimerthread* self, struct channel* chnode)
 		    count++;
 	    }
 
-        streamplayer(chnode, 3);
+        streamplayer(bnode, 3);
 
-	    printf("createstartservicethread end");
+	    printf("createstartservicethread end\n");
 
         status.startservicethread = NULL;
     }

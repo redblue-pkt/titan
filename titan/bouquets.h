@@ -286,6 +286,24 @@ struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int
 	struct bouquet *newnode = NULL, *prev = NULL, *node = *firstnode;
 	int ret = 0;
 
+	char *streamurl = NULL, *epgurl = NULL;
+
+	streamurl = malloc(MINMALLOC);
+	if(streamurl == NULL)
+	{
+		err("no memory");
+		free(newnode);
+		return NULL;
+	}
+
+	epgurl = malloc(MINMALLOC);
+	if(epgurl == NULL)
+	{
+		err("no memory");
+		free(newnode);
+		return NULL;
+	}
+
 	newnode = (struct bouquet*)calloc(1, sizeof(struct bouquet));
 	if(newnode == NULL)
 	{
@@ -294,9 +312,49 @@ struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int
 	}
 
 	status.writebouquet = 1;
+	ret = sscanf(line, "%d#%llu#%[^#]#%s", &newnode->serviceid, &newnode->transponderid, streamurl, epgurl);
 
-	ret = sscanf(line, "%d#%llu", &newnode->serviceid, &newnode->transponderid);
-	if(ret != 2)
+	if(ret == 3)
+	{
+        if(streamurl != NULL && ostrcmp("(null)", streamurl) == 0)
+        {
+        	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
+    		debug(10, "set newnode->streamurl: %s", streamurl);
+        }
+        else
+            newnode->streamurl = NULL;
+	}
+
+	if(ret == 4)
+	{
+        if(streamurl != NULL && ostrcmp("(null)", streamurl) != 0)
+        {
+        	newnode->streamurl = ostrcat(streamurl, NULL, 0, 0);
+    		debug(10, "set newnode->streamurl: %s", streamurl);
+        }
+        else
+            newnode->streamurl = NULL;
+
+        if(epgurl != NULL && ostrcmp("(null)", epgurl) != 0)
+        {
+        	newnode->epgurl = ostrcat(streamurl, NULL, 0, 0);
+    		debug(10, "set newnode->epgurl: %s", epgurl);
+        }
+        else
+            newnode->epgurl = NULL;
+	}
+
+	if(ret == 2)
+	{
+		ret++;
+	}
+
+	if(ret == 3)
+	{
+		ret++;
+	}
+
+	if(ret != 4)
 	{
 		if(count > 0)
 		{
@@ -347,6 +405,9 @@ struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int
 	}
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
+
+		free(streamurl);
+		free(epgurl);
 
 	return newnode;
 }
@@ -693,7 +754,7 @@ int writebouquet(const char *filename, struct bouquet *node)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%d#%llu\n", node->serviceid, node->transponderid);
+		ret = fprintf(fd, "%d#%llu#%s#%s\n", node->serviceid, node->transponderid, node->streamurl, node->epgurl);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);

@@ -478,7 +478,7 @@ void screennetwork_password();
 
 //channel.h
 int writechannel(const char *filename);
-struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect, int pcrpid, char *streamurl, char *epgurl);
+struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect, int pcrpid);
 void delchannelbytransponder(uint64_t transponderid);
 struct channel* gettmpchannel();
 int delchannel(int serviceid, uint64_t transponderid, int flag);
@@ -559,7 +559,7 @@ void playrcjumpto(char* file, char* showname, int* playinfobarstatus, int* playi
 #ifdef EPLAYER4
 void playersend_ff_fr_event(gdouble rate);
 #endif
-void streamplayer(struct channel* chnode, int flag);
+void streamplayer(struct bouquet* bnode, int flag);
 
 //inetwork.h
 struct inetwork* getinetworkbydevice(char* device);
@@ -979,7 +979,7 @@ int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 void serviceresetchannelinfo(struct channel* chnode);
 struct service* getservice(int type, int flag);
 char* servicecheckret(int ret, int flag);
-void createstartservicethread(struct stimerthread* self, struct channel* chnode);
+void createstartservicethread(struct stimerthread* self, struct bouquet* bnode);
 
 //mainbouquets.h
 int writemainbouquet(const char *filename);

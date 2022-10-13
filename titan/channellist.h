@@ -81,6 +81,7 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 					chnode->fontcol = convertcol("favcol");
 				if(tmpchannel->protect > 0)
 					chnode->fontcol = convertcol("protectcol");
+/*
                 if(tmpchannel->streamurl != NULL && ostrstr(tmpchannel->streamurl, "http://127.0.0.1:17999/") != NULL)
                 {
                     tmpstr = ostrcat(tmpchannel->name, " (Icam)", 0, 0);
@@ -105,8 +106,11 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
                 }
                 else
                 {
+*/
     				changetext(chnode, tmpchannel->name);
-                }
+//                }
+
+
 				chnode->handle = (char*) tmpchannel;
 				chnode->handle1 = (char*) tmpchannel;
 				if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
@@ -191,6 +195,42 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 					if(tmpbouquet->channel->protect > 0)
 						chnode->fontcol = convertcol("protectcol");
 
+
+
+
+                if(tmpbouquet->streamurl != NULL && ostrstr(tmpbouquet->streamurl, "http://127.0.0.1:17999/") != NULL)
+                {
+                    tmpstr = ostrcat(tmpbouquet->channel->name, " (Icam)", 0, 0);
+    				changetext(chnode, tmpstr);
+                    free(tmpstr), tmpstr = NULL;
+                }
+                else if(tmpbouquet->streamurl != NULL)
+                {
+                    if(ostrstr(tmpbouquet->streamurl, "vavoo_auth=") != NULL)
+                        tmpstr = ostrcat(tmpbouquet->channel->name, " (VaVoo)", 0, 0);
+                    else
+                        tmpstr = ostrcat(tmpbouquet->channel->name, " (IpTV)", 0, 0);
+                    if(tmpbouquet->epgurl != NULL)
+                        tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
+//                    else
+//                        tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
+
+    				changetext(chnode, tmpstr);
+                    free(tmpstr), tmpstr = NULL;
+                }
+                else
+                {
+    				changetext(chnode, tmpbouquet->channel->name);
+                }
+
+/*
+                    if(tmpbouquet->streamurl != NULL)
+                    {
+                        tmpstr = ostrcat(tmpbouquet->channel->name, " (Stream)", 0, 0);
+        				changetext(chnode, tmpstr);
+                        free(tmpstr), tmpstr = NULL;
+                    }
+*/ 
 					changechannelepg(tmpbouquet->channel, chnode);
 					chnode->handle = (char*) tmpbouquet->channel;
 					chnode->handle1 = (char*) tmpbouquet;
@@ -1007,8 +1047,9 @@ start:
 			            if(startplugin != NULL)
 			            {
                             printf("name: %s\n", ((struct channel*)listbox->select->handle)->name);    
-                            ((struct channel*)listbox->select->handle)->streamurl = (char*)startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
-                            printf("streamurl: %s\n", ((struct channel*)listbox->select->handle)->streamurl);
+//                            ((struct channel*)listbox->select->handle)->streamurl = (char*)startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
+                            ((struct bouquet*)listbox->select->handle1)->streamurl = (char*)startplugin(localparser, ((struct channel*)listbox->select->handle)->name);
+                            printf("bouquet streamurl: %s\n", ((struct bouquet*)listbox->select->handle1)->streamurl);
   			            }
 		            }
                     free(localparser), localparser = NULL;
@@ -1801,7 +1842,6 @@ start:
 
 			clearscreen(channellist);
 			resettvpic();
-printf("status.streamurlc2: %s\n", status.streamurl);
 
 			if(listbox->select != NULL)
 				listmode = screenlistedit(list, (struct channel*)listbox->select->handle, aktlist);
