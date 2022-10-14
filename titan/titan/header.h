@@ -287,8 +287,8 @@ void playerresetts();
 void playerinit(int argc, char* argv[]);
 
 //channelhistory.h
-void delchannelhistory(struct channel* chnode);
-void addchannelhistory(struct channel* chnode, char* channellist);
+void delchannelhistory(struct channel* chnode, struct bouquet* bnode);
+void addchannelhistory(struct channel* chnode, struct bouquet* bnode, char* channellist);
 void screenchannelhistory();
 void freechannelhistory();
 

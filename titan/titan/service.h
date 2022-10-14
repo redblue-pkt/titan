@@ -644,7 +644,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		//add channel to history
 		if((bnode != NULL && bnode->streamurl != NULL) || status.aktservice->type == CHANNEL)
 		{
-    		addchannelhistory(chnode, status.aktservice->channellist);
+    		addchannelhistory(chnode, bnode, status.aktservice->channellist);
+
 			if(bnode != NULL && bnode->streamurl == NULL && checkbox("DM900") == 1 && status.servicetype == 0) //only for tv
 				createmostzap(chnode->serviceid, chnode->transponderid);
 		}
@@ -904,6 +905,7 @@ int servicestop(struct service *node, int clear, int flag)
 		int	fastzap = getconfigint("fastzap", NULL);
 
 		if(flag == 3) flag = 0;
+		if(flag == 5) flag = 1;
 		if(flag == 4 || flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
 		{
 			audioclose(node->audiodev, -1);

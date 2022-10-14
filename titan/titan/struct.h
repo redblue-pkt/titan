@@ -536,6 +536,7 @@ struct menulist
 struct channelhistory
 {
 	struct channel* chnode;
+	struct bouquet* bnode;
 	char* channellist;
 };
 
