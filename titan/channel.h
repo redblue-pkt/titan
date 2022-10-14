@@ -430,7 +430,8 @@ int delchannel(int serviceid, uint64_t transponderid, int flag)
 	struct provider* providernode = NULL;
 
 	m_lock(&status.channelmutex, 5);
-  struct channel *node = channel, *prev = channel;
+    struct channel *node = channel, *prev = channel;
+    struct bouquet* bnode = NULL;
 
 	while(node != NULL)
 	{
@@ -461,7 +462,7 @@ int delchannel(int serviceid, uint64_t transponderid, int flag)
 
 			providernode = node->provider;
 			delchannelcache(node->serviceid, node->transponderid);
-			delchannelhistory(node);
+			delchannelhistory(node, bnode);
 			delmostzap(node->serviceid, node->transponderid, 0);
 
 			freeaudiotrack(node);
