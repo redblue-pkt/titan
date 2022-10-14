@@ -107,8 +107,8 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
                 else
                 {
 */
-    				changetext(chnode, tmpchannel->name);
-//                }
+    		    changetext(chnode, tmpchannel->name);
+//              }
 
 
 				chnode->handle = (char*) tmpchannel;
@@ -198,30 +198,30 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 
 
 
-                if(tmpbouquet->streamurl != NULL && ostrstr(tmpbouquet->streamurl, "http://127.0.0.1:17999/") != NULL)
-                {
-                    tmpstr = ostrcat(tmpbouquet->channel->name, " (Icam)", 0, 0);
-    				changetext(chnode, tmpstr);
-                    free(tmpstr), tmpstr = NULL;
-                }
-                else if(tmpbouquet->streamurl != NULL)
-                {
-                    if(ostrstr(tmpbouquet->streamurl, "vavoo_auth=") != NULL)
-                        tmpstr = ostrcat(tmpbouquet->channel->name, " (VaVoo)", 0, 0);
-                    else
-                        tmpstr = ostrcat(tmpbouquet->channel->name, " (IpTV)", 0, 0);
-                    if(tmpbouquet->epgurl != NULL)
-                        tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
-//                    else
-//                        tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
+                    if(tmpbouquet->streamurl != NULL && ostrstr(tmpbouquet->streamurl, "http://127.0.0.1:17999/") != NULL)
+                    {
+                        tmpstr = ostrcat(tmpbouquet->channel->name, " (Icam)", 0, 0);
+        				changetext(chnode, tmpstr);
+                        free(tmpstr), tmpstr = NULL;
+                    }
+                    else if(tmpbouquet->streamurl != NULL)
+                    {
+                        if(ostrstr(tmpbouquet->streamurl, "vavoo_auth=") != NULL)
+                            tmpstr = ostrcat(tmpbouquet->channel->name, " (VaVoo)", 0, 0);
+                        else
+                            tmpstr = ostrcat(tmpbouquet->channel->name, " (IpTV)", 0, 0);
+                        if(tmpbouquet->epgurl != NULL)
+                            tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
+//                        else
+//                           tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
 
-    				changetext(chnode, tmpstr);
-                    free(tmpstr), tmpstr = NULL;
-                }
-                else
-                {
-    				changetext(chnode, tmpbouquet->channel->name);
-                }
+        				changetext(chnode, tmpstr);
+                        free(tmpstr), tmpstr = NULL;
+                    }
+                    else
+                    {
+        				changetext(chnode, tmpbouquet->channel->name);
+                    }
 
 /*
                     if(tmpbouquet->streamurl != NULL)
