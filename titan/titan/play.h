@@ -2365,7 +2365,9 @@ void streamplayer(struct bouquet* bnode, int flag)
     addconfigtmp("playerbuffersize", "0");
     addconfigtmp("playerbufferseektime", "0");
 
-    servicestop(status.aktservice, 1, 1);
+    if(checkchipset("3798MV200") != 1)  
+        servicestop(status.aktservice, 1, 2);
+
     playerstart(bnode->streamurl);
     status.play = 2;
     delconfigtmp("playerbuffersize");
