@@ -39,6 +39,10 @@ void serviceresetchannelinfo(struct channel* chnode)
 
 void akttolast()
 {
+printf("akttolast: in status.aktservice->channel->name: %s\n", status.aktservice->channel->name);
+if(status.lastservice->channel != NULL && status.lastservice->channel->name != NULL)
+printf("akttolast: in status.lastservice->channel->name: %s\n", status.lastservice->channel->name);
+
 	if(status.aktservice->fedev != NULL && status.aktservice->fedev->type == FRONTENDDEVDUMMY) return;
 	status.lastservice->fedev = status.aktservice->fedev;
 	status.lastservice->dmxaudiodev = status.aktservice->dmxaudiodev;
@@ -51,6 +55,10 @@ void akttolast()
 	status.lastservice->channel = status.aktservice->channel;
 	free(status.lastservice->channellist);
 	status.lastservice->channellist = ostrcat(status.aktservice->channellist, NULL, 0, 0);
+printf("akttolast: out status.aktservice->channel->name: %s\n", status.aktservice->channel->name);
+if(status.lastservice->channel != NULL && status.lastservice->channel->name != NULL)
+printf("akttolast: out status.lastservice->channel->name: %s\n", status.lastservice->channel->name);
+
 }
 
 //flag 0: channel
@@ -87,8 +95,9 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	
 	if(flag == 0 && status.aktservice->type == CHANNEL && status.aktservice->channel != NULL && chnode == status.aktservice->channel)
 	{
-		m_unlock(&status.servicemutex, 2);
-		return 20;
+printf("service cancel: %s\n", status.aktservice->channel->name);
+//		m_unlock(&status.servicemutex, 2);
+//		return 20;
 	}
 	if(flag == 3 || flag == 5 || flag == 6) flag = 0;
 
@@ -833,6 +842,7 @@ struct service* getservice(int type, int flag)
 //flag 2: from timeshift/player
 //flag 3: same as 0 but no akttolast
 //flag 4: showiframe
+//flag 5: same as 1 but no akttolast
 int servicestop(struct service *node, int clear, int flag)
 {
 	int rcret = 0;
@@ -868,7 +878,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(status.epgthread != NULL) status.epgthread->aktion = PAUSE;
 		subtitlestop(0);
 
-
+printf("servicestop: flag=%d\n", flag);
 		if(node->type == CHANNEL && flag < 2) akttolast();
 
 		if(flag != 2) node->type = NOTHING;
