@@ -181,9 +181,8 @@ save()
     cp /tmp/settings/channel /mnt/settings/channel
     cp /tmp/settings/transponder /mnt/settings/transponder
     cp /tmp/settings/satellites /mnt/settings/satellites
-
 #neu
-    cp /tmp/settings/bouquets.*.tv /mnt/settings/ 
+    cp /tmp/settings/bouquets.*tv /mnt/settings/ 
 
 #    cat /tmp/settings/channel.tmp | sort -u > /mnt/settings/channel
 #    cp -a /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv
@@ -207,9 +206,9 @@ remove()
         rm /mnt/settings/channel.* > /dev/null 2>&1
         rm /mnt/settings/satellites.* > /dev/null 2>&1
         rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
-
 #neu
-        rm /mnt/settings/bouquets.*.tv.* > /dev/null 2>&1
+        rm /mnt/settings/bouquets.*tv.*.org > /dev/null 2>&1
+        rm /mnt/settings/bouquets.*tv.tmp > /dev/null 2>&1
     fi
 }
 
@@ -229,28 +228,18 @@ search()
 
         if [ ! -e /tmp/settings ];then mkdir /tmp/settings; fi
         if [ -e /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then
-            echo "LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")" >$TMP/$FILENAME.cmd.list
+            echo "LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv | cut -d"#" -f2 | sort -u | sed 's/^/#/g'| tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")" >$TMP/$FILENAME.cmd.list
             echo "cat /mnt/settings/channel | grep -v \$LIST >> /tmp/settings/channel.tmp" >> $TMP/$FILENAME.cmd.list
             echo "cp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.org" >> $TMP/$FILENAME.cmd.list
         else
             echo "cp /mnt/settings/channel /tmp/settings/channel.tmp" > $TMP/$FILENAME.cmd.list
         fi
 
-#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo $i | sed 's#/mnt/#/tmp#g' | sed 's/.tv/.tv.org/g'`; done" >> $TMP/$FILENAME.cmd.list
-#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo $i | sed 's#/mnt/#/tmp#g' | sed 's/.tv/.tv.tmp/g'`; done" >> $TMP/$FILENAME.cmd.list
-#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo ${i%.tv}.tv.org | sed 's#/mnt/#/tmp#g'`; done" >> $TMP/$FILENAME.cmd.list
-#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo ${i%.tv}.tv.tmp | sed 's#/mnt/#/tmp#g'`; done" >> $TMP/$FILENAME.cmd.list
+        for i in $(ls /mnt/settings/bouquets.*tv | sed 's/ /#/g'); do echo cp \"$(echo $i | sed 's!#! !g')\" \"$(echo ${i%tv}tv.org | sed 's#/mnt/#/tmp/#g' | sed 's!#! !g')\" >> $TMP/$FILENAME.cmd.list; done
+        for i in $(ls /mnt/settings/bouquets.*tv | sed 's/ /#/g'); do echo cp \"$(echo $i | sed 's!#! !g')\" \"$(echo ${i%tv}tv.tmp | sed 's#/mnt/#/tmp/#g' | sed 's!#! !g')\" >> $TMP/$FILENAME.cmd.list; done
 
-        for i in $(ls /mnt/settings/bouquets.*.tv); do echo "cp $i $(echo ${i%.tv}.tv.org | sed 's#/mnt/#/tmp/#g')" >> $TMP/$FILENAME.cmd.list; done
-        for i in $(ls /mnt/settings/bouquets.*.tv); do echo "cp $i $(echo ${i%.tv}.tv.tmp | sed 's#/mnt/#/tmp/#g')" >> $TMP/$FILENAME.cmd.list; done
-#        for i in $(ls /mnt/settings/bouquets.*.tmp); do echo "cp $i $(echo $i | sed 's/.tv.tmp/.tv/g' | sed 's#/mnt/#/tmp/#g')" > $TMP/$FILENAME.cmd.first.list; done
-
-        echo "echo create $TMP/$FILENAME.cmd.first.list" > $TMP/$FILENAME.cmd.first.list
-        for i in $(ls /mnt/settings/bouquets.*.tv); do echo "cp $(echo ${i%.tv}.tv.tmp | sed 's#/mnt/#/tmp/#g') $(echo $i | sed 's#/mnt/#/tmp/#g')" >> $TMP/$FILENAME.cmd.first.list; done
-
-
-#        for i in `ls /mnt/settings/bouquets.*.tv`; do echo "cp $i $(echo ${i%.tv}.tv.org | sed 's#/mnt/#/tmp#g' >> $TMP/$FILENAME.cmd.list)"; done
-
+        echo "#create $TMP/$FILENAME.cmd.first.list" > $TMP/$FILENAME.cmd.first.list
+        for i in $(ls /mnt/settings/bouquets.*tv | sed 's/ /#/g'); do echo cp \"$(echo ${i%tv}tv.tmp | sed 's#/mnt/#/tmp/#g' | sed 's!#! !g')\" \"$(echo $i | sed 's#/mnt/#/tmp/#g' | sed 's!#! !g')\" >> $TMP/$FILENAME.cmd.first.list; done
     fi
 
 	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
@@ -447,18 +436,7 @@ search()
 #            chmod 755 $TMP/$FILENAME.list
 #            $TMP/$FILENAME.list
 
-cat $TMP/$FILENAME.cmd.first.list >> $TMP/$FILENAME.cmd.list
-#echo "123" >> $TMP/$FILENAME.cmd.list
-
-#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo $i | sed 's#/mnt/#/tmp#g' | sed 's/.tv/.tv.tmp/g'`; done" >> $TMP/$FILENAME.cmd.list
-
-###            for i in $(ls /tmp/settings/bouquets.*.tmp); do echo "cp $i $(echo $i | sed 's/.tv.tmp/.tv/g')" >> $TMP/$FILENAME.cmd.list; done
-
-#            for i in $(ls /tmp/settings/bouquets.*.tmp); do echo "cp $i $(echo ${i%.tv.tmp}.tv)" >> $TMP/$FILENAME.cmd.list; done
-
-#            for i in $(ls /tmp/settings/bouquets.*.tmp); do echo "cp $i $(echo ${i%.tmp})" >> $TMP/$FILENAME.cmd.list; done
-
-#echo "456" >> $TMP/$FILENAME.cmd.list
+            cat $TMP/$FILENAME.cmd.first.list >> $TMP/$FILENAME.cmd.list
             chmod 755 $TMP/$FILENAME.cmd.list
             $TMP/$FILENAME.cmd.list
 
