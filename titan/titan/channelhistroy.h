@@ -88,13 +88,13 @@ void screenchannelhistory()
 			tmp = addlistbox(chistory, listbox, tmp, 1);
 			if(tmp != NULL)
 			{
-                if(channelhistory[i].bnode->streamurl != NULL && ostrstr(channelhistory[i].bnode->streamurl, "http://127.0.0.1:17999/") != NULL)
+                if(channelhistory[i].bnode != NULL && channelhistory[i].bnode->streamurl != NULL && ostrstr(channelhistory[i].bnode->streamurl, "http://127.0.0.1:17999/") != NULL)
                 {
                     tmpstr = ostrcat(channelhistory[i].chnode->name, " (Icam)", 0, 0);
     				changetext(tmp, tmpstr);
                     free(tmpstr), tmpstr = NULL;
                 }
-                else if(channelhistory[i].bnode->streamurl != NULL)
+                else if(channelhistory[i].bnode != NULL && channelhistory[i].bnode->streamurl != NULL)
                 {
                     if(ostrstr(channelhistory[i].bnode->streamurl, "vavoo_auth=") != NULL)
                         tmpstr = ostrcat(channelhistory[i].chnode->name, " (VaVoo)", 0, 0);
