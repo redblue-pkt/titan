@@ -177,10 +177,13 @@ save()
     fi
 
     cp /tmp/settings/bouquets.cfg /mnt/settings/bouquets.cfg
-    cp /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv 
+#    cp /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv 
     cp /tmp/settings/channel /mnt/settings/channel
     cp /tmp/settings/transponder /mnt/settings/transponder
     cp /tmp/settings/satellites /mnt/settings/satellites
+
+#neu
+    cp /tmp/settings/bouquets.*.tv /mnt/settings/ 
 
 #    cat /tmp/settings/channel.tmp | sort -u > /mnt/settings/channel
 #    cp -a /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv
@@ -204,6 +207,9 @@ remove()
         rm /mnt/settings/channel.* > /dev/null 2>&1
         rm /mnt/settings/satellites.* > /dev/null 2>&1
         rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
+
+#neu
+        rm /mnt/settings/bouquets.*.tv.* > /dev/null 2>&1
     fi
 }
 
@@ -229,6 +235,22 @@ search()
         else
             echo "cp /mnt/settings/channel /tmp/settings/channel.tmp" > $TMP/$FILENAME.cmd.list
         fi
+
+#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo $i | sed 's#/mnt/#/tmp#g' | sed 's/.tv/.tv.org/g'`; done" >> $TMP/$FILENAME.cmd.list
+#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo $i | sed 's#/mnt/#/tmp#g' | sed 's/.tv/.tv.tmp/g'`; done" >> $TMP/$FILENAME.cmd.list
+#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo ${i%.tv}.tv.org | sed 's#/mnt/#/tmp#g'`; done" >> $TMP/$FILENAME.cmd.list
+#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo ${i%.tv}.tv.tmp | sed 's#/mnt/#/tmp#g'`; done" >> $TMP/$FILENAME.cmd.list
+
+        for i in $(ls /mnt/settings/bouquets.*.tv); do echo "cp $i $(echo ${i%.tv}.tv.org | sed 's#/mnt/#/tmp/#g')" >> $TMP/$FILENAME.cmd.list; done
+        for i in $(ls /mnt/settings/bouquets.*.tv); do echo "cp $i $(echo ${i%.tv}.tv.tmp | sed 's#/mnt/#/tmp/#g')" >> $TMP/$FILENAME.cmd.list; done
+#        for i in $(ls /mnt/settings/bouquets.*.tmp); do echo "cp $i $(echo $i | sed 's/.tv.tmp/.tv/g' | sed 's#/mnt/#/tmp/#g')" > $TMP/$FILENAME.cmd.first.list; done
+
+        echo "echo create $TMP/$FILENAME.cmd.first.list" > $TMP/$FILENAME.cmd.first.list
+        for i in $(ls /mnt/settings/bouquets.*.tv); do echo "cp $(echo ${i%.tv}.tv.tmp | sed 's#/mnt/#/tmp/#g') $(echo $i | sed 's#/mnt/#/tmp/#g')" >> $TMP/$FILENAME.cmd.first.list; done
+
+
+#        for i in `ls /mnt/settings/bouquets.*.tv`; do echo "cp $i $(echo ${i%.tv}.tv.org | sed 's#/mnt/#/tmp#g' >> $TMP/$FILENAME.cmd.list)"; done
+
     fi
 
 	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
@@ -347,7 +369,9 @@ search()
 #                                newpage2 = substr($0, 1, j)
                                 #real    1m27.071s
 #                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
-                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/#;#" newpage3 "\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+#                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/#;#" newpage3 "\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/#;#" newpage3 "\\&tslivemode=1;g\" -i /tmp/settings/bouquets.*.tmp\n"
+
                             }
                             else
                             {
@@ -356,11 +380,14 @@ search()
                                 #sys     0m1.168s
                             }
 
-                            cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
+#                            cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
+                            cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0\" >> /tmp/settings/channel.tmp\n"
                             cmd = cmd "echo \"" id "#0#0#0#20000#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
                             cmd = cmd "echo \"VaVoo (IpTV)#0#20000#3\" >> /tmp/settings/satellites.tmp\n"
-                            cmd = cmd "echo \"0#" id "\" >> /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\n"
-                           if(++dup[cmd4] == 1)
+#                            cmd = cmd "echo \"0#" id "\" >> /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\n"
+                            cmd = cmd "echo \"0#" id "#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\n"
+
+                            if(++dup[cmd4] == 1)
                                 cmd4 = cmd4 "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
                         }
                         else
@@ -391,13 +418,15 @@ search()
                         cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/transponder\n"
                         cmd5 = cmd5 "cat /tmp/settings/satellites.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/satellites\n"
 
-                        cmd5 = cmd5 "sed s/\"^ *\"// -i /mnt/settings/channel\n"
+                        cmd5 = cmd5 "sed s/\"^ *\"// -i /tmp/settings/channel\n"
+                        cmd5 = cmd5 "sed s/\"^ *\"// -i /tmp/settings/bouquets.*.tmp\n"
 
                         print cmd
  
                         if(ADD2CHANNEL == 2)
                         {
-                            cmd2 = cmd2 " -i /tmp/settings/channel.tmp\n"
+#                            cmd2 = cmd2 " -i /tmp/settings/channel.tmp\n"
+                            cmd2 = cmd2 " -i /tmp/settings/bouquets.*.tmp\n"
                             print cmd2
                         }
                         else if(ADD2CHANNEL == 3)
@@ -410,14 +439,29 @@ search()
 		' >$TMP/$FILENAME.list
 	fi 
 
+#echo "ADD2CHANNEL $ADD2CHANNEL" >> $TMP/$FILENAME.cmd.list
     if [ "$ADD2CHANNEL" != "0" ];then
         if [ -e $TMP/$FILENAME.list ];then 
             cat $TMP/$FILENAME.list >> $TMP/$FILENAME.cmd.list
 #            cp $TMP/$FILENAME.list $TMP/$FILENAME.cmd.list
 #            chmod 755 $TMP/$FILENAME.list
 #            $TMP/$FILENAME.list
+
+cat $TMP/$FILENAME.cmd.first.list >> $TMP/$FILENAME.cmd.list
+#echo "123" >> $TMP/$FILENAME.cmd.list
+
+#        echo "for i in `ls /mnt/settings/bouquets.*.tv`; do cp $i `echo $i | sed 's#/mnt/#/tmp#g' | sed 's/.tv/.tv.tmp/g'`; done" >> $TMP/$FILENAME.cmd.list
+
+###            for i in $(ls /tmp/settings/bouquets.*.tmp); do echo "cp $i $(echo $i | sed 's/.tv.tmp/.tv/g')" >> $TMP/$FILENAME.cmd.list; done
+
+#            for i in $(ls /tmp/settings/bouquets.*.tmp); do echo "cp $i $(echo ${i%.tv.tmp}.tv)" >> $TMP/$FILENAME.cmd.list; done
+
+#            for i in $(ls /tmp/settings/bouquets.*.tmp); do echo "cp $i $(echo ${i%.tmp})" >> $TMP/$FILENAME.cmd.list; done
+
+#echo "456" >> $TMP/$FILENAME.cmd.list
             chmod 755 $TMP/$FILENAME.cmd.list
             $TMP/$FILENAME.cmd.list
+
         fi
         error=0
         if [ ! -e /tmp/settings/bouquets.cfg ];then error=1; fi
