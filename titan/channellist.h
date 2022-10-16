@@ -113,7 +113,7 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 
 				chnode->handle = (char*) tmpchannel;
 				chnode->handle1 = (char*) tmpchannel;
-				if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
+				if(mode == 0 && channelnottunable(tmpchannel) == 1)
 				{
 				    if(status.channellistview == 0)
 					    chnode->hidden = YES;
@@ -194,10 +194,7 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 					free(tmpstr); tmpstr = NULL;
 					if(tmpbouquet->channel->protect > 0)
 						chnode->fontcol = convertcol("protectcol");
-
-
-
-
+///////
                     if(tmpbouquet->streamurl != NULL && ostrstr(tmpbouquet->streamurl, "http://127.0.0.1:17999/") != NULL)
                     {
                         tmpstr = ostrcat(tmpbouquet->channel->name, " (Icam)", 0, 0);
@@ -234,7 +231,7 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 					changechannelepg(tmpbouquet->channel, chnode);
 					chnode->handle = (char*) tmpbouquet->channel;
 					chnode->handle1 = (char*) tmpbouquet;
-					if(tmpbouquet->channel->epgurl == NULL && mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
+					if(tmpbouquet->streamurl == NULL && mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
@@ -287,7 +284,7 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 						chnode->fontcol = convertcol("protectcol");
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
-					if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
+					if(mode == 0 && channelnottunable(tmpchannel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
