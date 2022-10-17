@@ -16,6 +16,11 @@ int channelnottunable(struct channel* node)
 {
 	if(node == NULL) return 1;
 	if(node->transponder == NULL) return 1;
+	if(node->transponder->orbitalpos >= 20000)
+    {
+		node->transponder->tunablestatus = 1;
+		return 0;
+    }
 	if(node->transponder->tunablestatus == 0)
 	{
 		if(fegetfree(node->transponder, 1, NULL, node) == NULL)
