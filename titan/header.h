@@ -486,6 +486,7 @@ int movechanneldown(struct channel* node);
 int movechannelup(struct channel* node);
 struct channel* sortchannel();
 void freechannel(int flag);
+int readchannel(const char* filename);
 
 //transponder.h
 struct transponder* gettransponder(uint64_t transponderid);
@@ -493,6 +494,8 @@ int writetransponder(const char *filename);
 void deltransponderbyorbitalpos(int orbitalpos);
 void deltransponder(struct transponder* tpnode);
 void freetransponder();
+int readtransponderencoding(const char* filename);
+int readtransponder(const char* filename);
 
 //sat.h
 int writesat(const char *filename);
@@ -502,6 +505,7 @@ int movesatdown(struct sat* node);
 int movesatup(struct sat* node);
 int sat2bouquet(int orbitalpos, int flag);
 void freesat();
+int readsat(const char* filename);
 
 //provider.h
 int writeprovider(const char *filename);
@@ -510,6 +514,7 @@ int moveproviderdown(struct provider* node);
 int moveproviderup(struct provider* node);
 struct provider* sortprovider();
 void freeprovider();
+int readprovider(const char* filename);
 
 //httpd.h
 void httpdthreadfunc(struct stimerthread* timernode);
@@ -995,6 +1000,8 @@ void delmainbouquet(char *name, int flag);
 void freemainbouquet(int flag);
 void freeallbouquet();
 struct mainbouquet* getmainbouquet(char *name);
+int readallbouquet();
+int readmainbouquet(char* filename);
 
 //listbox.h
 struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* last, int del);
