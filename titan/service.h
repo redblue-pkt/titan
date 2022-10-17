@@ -39,10 +39,6 @@ void serviceresetchannelinfo(struct channel* chnode)
 
 void akttolast()
 {
-printf("akttolast: in status.aktservice->channel->name: %s\n", status.aktservice->channel->name);
-if(status.lastservice->channel != NULL && status.lastservice->channel->name != NULL)
-printf("akttolast: in status.lastservice->channel->name: %s\n", status.lastservice->channel->name);
-
 	if(status.aktservice->fedev != NULL && status.aktservice->fedev->type == FRONTENDDEVDUMMY) return;
 	status.lastservice->fedev = status.aktservice->fedev;
 	status.lastservice->dmxaudiodev = status.aktservice->dmxaudiodev;
@@ -55,10 +51,6 @@ printf("akttolast: in status.lastservice->channel->name: %s\n", status.lastservi
 	status.lastservice->channel = status.aktservice->channel;
 	free(status.lastservice->channellist);
 	status.lastservice->channellist = ostrcat(status.aktservice->channellist, NULL, 0, 0);
-printf("akttolast: out status.aktservice->channel->name: %s\n", status.aktservice->channel->name);
-if(status.lastservice->channel != NULL && status.lastservice->channel->name != NULL)
-printf("akttolast: out status.lastservice->channel->name: %s\n", status.lastservice->channel->name);
-
 }
 
 //flag 0: channel
@@ -95,9 +87,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	
 	if(flag == 0 && status.aktservice->type == CHANNEL && status.aktservice->channel != NULL && chnode == status.aktservice->channel)
 	{
-printf("service cancel: %s\n", status.aktservice->channel->name);
-//		m_unlock(&status.servicemutex, 2);
-//		return 20;
+		m_unlock(&status.servicemutex, 2);
+		return 20;
 	}
 	if(flag == 3 || flag == 5 || flag == 6) flag = 0;
 
@@ -162,27 +153,13 @@ printf("service cancel: %s\n", status.aktservice->channel->name);
 	if(flag == 0 && status.aktservice->type == CHANNEL)
 		changechannellist(chnode, channellist);
 
-    struct bouquet* bnode = NULL;
-    struct mainbouquet* mnode = getmainbouquet(status.aktservice->channellist + 10);
-
-    if(mnode != NULL)
-        bnode = getbouquetbychannel(mnode->bouquet, status.aktservice->channel->serviceid, status.aktservice->channel->transponderid);
-
-
-    printf("servicestartreal playerstart%d Bouquet: %s\n", flag, status.aktservice->channellist + 10);
-    printf("servicestartreal playerstart%d name: %s\n", flag, bnode->channel->name);
-    printf("servicestartreal playerstart%d serviceid: %d\n", flag, bnode->serviceid);
-    printf("servicestartreal playerstart%d transponderid: %lld\n", flag, bnode->transponderid);
-    printf("servicestartreal playerstart%d streamurl: %s\n", flag, bnode->streamurl);
-    printf("servicestartreal playerstart%d epgurl: %s\n", flag, bnode->epgurl);
-
-    if(bnode != NULL && bnode->streamurl != NULL && bnode != NULL && bnode->epgurl != NULL)
+    if(chnode->streamurl != NULL && chnode->epgurl != NULL)
     {
-        streamplayer(bnode, 1);
+        streamplayer(chnode, 1);
     }
 
 	//got frontend dev
-	if(bnode != NULL && bnode->epgurl == NULL && flag == 0)
+	if(chnode->epgurl == NULL && flag == 0)
 	{
 		fenode = fegetfree(tpnode, 0, NULL, chnode);
 		if(fenode == NULL)
@@ -192,7 +169,7 @@ printf("service cancel: %s\n", status.aktservice->channel->name);
 		}
 		
 #ifdef DREAMBOX
-        if(bnode != NULL && bnode->streamurl == NULL)
+        if(chnode->streamurl == NULL)
         {
 		    if(status.aktservice->fedev != fenode)
 		    {
@@ -250,7 +227,7 @@ printf("service cancel: %s\n", status.aktservice->channel->name);
 		status.aktservice->fedev = fenode;
 	}
 
-	if(bnode != NULL && bnode->streamurl == NULL && fenode == NULL)
+	if(chnode->streamurl == NULL && fenode == NULL)
 	{
 		m_unlock(&status.servicemutex, 2);
 		return 1;
@@ -260,7 +237,7 @@ printf("service cancel: %s\n", status.aktservice->channel->name);
 	if((chnode->audiopid == -1 || chnode->videopid == -1 || chnode->pcrpid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3)))
 	{
 		//wait for tuner lock
-		if(bnode != NULL && bnode->streamurl == NULL && flag == 0)
+		if(chnode->streamurl == NULL && flag == 0)
 		{
 			if(fenode->felasttransponder != tpnode)
 				festatus = fewait(fenode);
@@ -332,7 +309,7 @@ printf("service cancel: %s\n", status.aktservice->channel->name);
 	}
 #endif
 
-	if(bnode != NULL && bnode->epgurl == NULL)
+	if(chnode->epgurl == NULL)
     {
     	audiostop(status.aktservice->audiodev);
 
@@ -556,13 +533,13 @@ printf("service cancel: %s\n", status.aktservice->channel->name);
 	    }
 #endif
 
-        if(bnode != NULL && bnode->streamurl != NULL)
+        if(chnode->streamurl != NULL)
         {
             struct stimerthread *startservicethread = NULL;
-            if(!ostrncmp("http://127.0.0.1:17999/", bnode->streamurl, 23))
-                startservicethread = addtimer(&createstartservicethread, START, 1000, 1, (void*)bnode, NULL, NULL);
+            if(!ostrncmp("http://127.0.0.1:17999/", chnode->streamurl, 23))
+                startservicethread = addtimer(&createstartservicethread, START, 1000, 1, (void*)chnode, NULL, NULL);
             else
-                streamplayer(bnode, 2);
+                streamplayer(chnode, 2);
         }
 
 	    //check pmt if not done
@@ -651,15 +628,14 @@ printf("service cancel: %s\n", status.aktservice->channel->name);
 	if(flag == 0)
 	{
 		//add channel to history
-		if((bnode != NULL && bnode->streamurl != NULL) || status.aktservice->type == CHANNEL)
+		if(chnode->streamurl != NULL || status.aktservice->type == CHANNEL)
 		{
-    		addchannelhistory(chnode, bnode, status.aktservice->channellist);
-
-			if(bnode != NULL && bnode->streamurl == NULL && checkbox("DM900") == 1 && status.servicetype == 0) //only for tv
+    		addchannelhistory(chnode, status.aktservice->channellist);
+			if(chnode->streamurl == NULL && checkbox("DM900") == 1 && status.servicetype == 0) //only for tv
 				createmostzap(chnode->serviceid, chnode->transponderid);
 		}
 		festatus = fewait(fenode);
-		if(bnode != NULL && bnode->streamurl == NULL && festatus != 0)
+		if(chnode->streamurl == NULL && festatus != 0)
 		{
 			m_unlock(&status.servicemutex, 2);
 			err("festatus=%i", festatus );
@@ -842,7 +818,6 @@ struct service* getservice(int type, int flag)
 //flag 2: from timeshift/player
 //flag 3: same as 0 but no akttolast
 //flag 4: showiframe
-//flag 5: same as 1 but no akttolast
 int servicestop(struct service *node, int clear, int flag)
 {
 	int rcret = 0;
@@ -878,7 +853,7 @@ int servicestop(struct service *node, int clear, int flag)
 		if(status.epgthread != NULL) status.epgthread->aktion = PAUSE;
 		subtitlestop(0);
 
-printf("servicestop: flag=%d\n", flag);
+
 		if(node->type == CHANNEL && flag < 2) akttolast();
 
 		if(flag != 2) node->type = NOTHING;
@@ -915,7 +890,6 @@ printf("servicestop: flag=%d\n", flag);
 		int	fastzap = getconfigint("fastzap", NULL);
 
 		if(flag == 3) flag = 0;
-		if(flag == 5) flag = 1;
 		if(flag == 4 || flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
 		{
 			audioclose(node->audiodev, -1);
@@ -1179,14 +1153,14 @@ void servicefullHDMIin_start()
 	chnode = getchannel(65535, 0);
 	if(chnode == NULL)
 		//chnode = createchannel("HDMIIN", 0, 0, 65535, 99, 0, -1, -1, -1, -1, 0, -1);
-		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1);
+		chnode = createchannel("HDMIIN", 0, 0, 65535, 0, 0, -1, -1, -1, -1, 0, -1, NULL, NULL);
 	status.aktservice->channel = chnode;
 }
 #endif
 
-void createstartservicethread(struct stimerthread* self, struct bouquet* bnode)
+void createstartservicethread(struct stimerthread* self, struct channel* chnode)
 {
-	printf("createstartservicethread start\n");
+	printf("createstartservicethread start");
 
 	if(status.startservicethread == NULL/* || self != NULL*/)
     {
@@ -1201,9 +1175,9 @@ void createstartservicethread(struct stimerthread* self, struct bouquet* bnode)
 		    count++;
 	    }
 
-        streamplayer(bnode, 3);
+        streamplayer(chnode, 3);
 
-	    printf("createstartservicethread end\n");
+	    printf("createstartservicethread end");
 
         status.startservicethread = NULL;
     }
