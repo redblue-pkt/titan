@@ -81,35 +81,40 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 					chnode->fontcol = convertcol("favcol");
 				if(tmpchannel->protect > 0)
 					chnode->fontcol = convertcol("protectcol");
-                if(tmpchannel->streamurl != NULL && ostrstr(tmpchannel->streamurl, "http://127.0.0.1:17999/") != NULL)
-                {
-                    tmpstr = ostrcat(tmpchannel->name, " (Icam)", 0, 0);
-//                    if(tmpchannel->epgurl != NULL)
-//                        tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
-//                    else
-                        tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
 
-    				changetext(chnode, tmpstr);
-                    free(tmpstr), tmpstr = NULL;
-                }
-                else if(tmpchannel->streamurl != NULL)
-                {
-                    tmpstr = ostrcat(tmpchannel->name, " (IpTV)", 0, 0);
-                    if(tmpchannel->epgurl != NULL)
-                        tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
-                    else
-                        tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
+				if(getconfigint("channel_source_info", NULL) == 1)
+				{
+					if(tmpchannel->streamurl != NULL && ostrstr(tmpchannel->streamurl, "http://127.0.0.1:17999/") != NULL)
+					{
+						tmpstr = ostrcat(tmpchannel->name, " (Stream Relay)", 0, 0);
+						if(tmpchannel->epgurl != NULL)
+							tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
+						else
+							tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
 
-    				changetext(chnode, tmpstr);
-                    free(tmpstr), tmpstr = NULL;
-                }
-                else
-                {
-    				changetext(chnode, tmpchannel->name);
-                }
+						changetext(chnode, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+					}
+					else if(tmpchannel->streamurl != NULL)
+					{
+						tmpstr = ostrcat(tmpchannel->name, " (IpTV)", 0, 0);
+						if(tmpchannel->epgurl != NULL)
+							tmpstr = ostrcat(tmpstr, " (Ext-Epg)", 1, 0);
+						else
+							tmpstr = ostrcat(tmpstr, " (Sat-Epg)", 1, 0);
+
+						changetext(chnode, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+					}
+					else
+						changetext(chnode, tmpchannel->name);
+				}
+				else
+					changetext(chnode, tmpchannel->name);
+
 				chnode->handle = (char*) tmpchannel;
 				chnode->handle1 = (char*) tmpchannel;
-				if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
+				if(mode == 0 && channelnottunable(tmpchannel) == 1)
 				{
 				    if(status.channellistview == 0)
 					    chnode->hidden = YES;
@@ -194,7 +199,32 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 					changechannelepg(tmpbouquet->channel, chnode);
 					chnode->handle = (char*) tmpbouquet->channel;
 					chnode->handle1 = (char*) tmpbouquet;
-					if(tmpbouquet->channel->epgurl == NULL && mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
+
+					if(getconfigint("channel_source_info", NULL) == 1)
+					{
+						if(tmpbouquet->channel->streamurl != NULL && ostrstr(tmpbouquet->channel->streamurl, "http://127.0.0.1:17999/") != NULL)
+						{
+							tmpstr = ostrcat(tmpbouquet->channel->name, " (Stream Relay)", 0, 0);
+							changetext(chnode, tmpstr);
+							free(tmpstr), tmpstr = NULL;
+						}
+						else if(tmpbouquet->channel->transponder->orbitalpos < 20000 && tmpbouquet->channel->streamurl != NULL)
+						{
+							if(ostrstr(tmpbouquet->channel->streamurl, "vavoo_auth=") != NULL)
+								tmpstr = ostrcat(tmpbouquet->channel->name, " (VaVoo)", 0, 0);
+							else
+								tmpstr = ostrcat(tmpbouquet->channel->name, " (IpTV)", 0, 0);
+
+							changetext(chnode, tmpstr);
+							free(tmpstr), tmpstr = NULL;
+						}
+						else
+							changetext(chnode, tmpbouquet->channel->name);
+					}
+					else
+						changetext(chnode, tmpbouquet->channel->name);
+
+					if(mode == 0 && channelnottunable(tmpbouquet->channel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
@@ -247,7 +277,7 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 						chnode->fontcol = convertcol("protectcol");
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
-					if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
+					if(mode == 0 && channelnottunable(tmpchannel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
@@ -345,7 +375,7 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct skin*
 						chnode->fontcol = convertcol("protectcol");
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
-					if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
+					if(mode == 0 && channelnottunable(tmpchannel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;
@@ -454,7 +484,7 @@ void showazchannel(struct skin* channellist, struct skin* listbox, struct skin* 
 						chnode->fontcol = convertcol("protectcol");
 					chnode->handle = (char*) tmpchannel;
 					chnode->handle1 = (char*) tmpchannel;
-					if(tmpchannel->epgurl == NULL && mode == 0 && channelnottunable(tmpchannel) == 1)
+					if(mode == 0 && channelnottunable(tmpchannel) == 1)
 					{
 						if(status.channellistview == 0)
 							chnode->hidden = YES;

@@ -81,7 +81,29 @@ void screenchannelhistory()
 			tmp = addlistbox(chistory, listbox, tmp, 1);
 			if(tmp != NULL)
 			{
-				changetext(tmp, channelhistory[i].chnode->name);
+				if(getconfigint("channel_source_info", NULL) == 1)
+				{
+					if(channelhistory[i].chnode->streamurl != NULL && ostrstr(channelhistory[i].chnode->streamurl, "http://127.0.0.1:17999/") != NULL)
+					{
+						tmpstr = ostrcat(channelhistory[i].chnode->name, " (Stream Relay)", 0, 0);
+						changetext(tmp, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+					}
+					else if(channelhistory[i].chnode->streamurl != NULL)
+					{
+						if(ostrstr(channelhistory[i].chnode->streamurl, "vavoo_auth=") != NULL)
+							tmpstr = ostrcat(channelhistory[i].chnode->name, " (VaVoo)", 0, 0);
+						else
+							tmpstr = ostrcat(channelhistory[i].chnode->name, " (IpTV)", 0, 0);
+
+						changetext(tmp, tmpstr);
+						free(tmpstr), tmpstr = NULL;
+					}
+					else
+						changetext(tmp, channelhistory[i].chnode->name);
+				}
+				else
+					changetext(tmp, channelhistory[i].chnode->name);
 
 				epgnode = getepgakt(channelhistory[i].chnode);
 				if(epgnode != NULL)

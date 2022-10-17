@@ -58,6 +58,8 @@ void screenadjust()
 #if defined(OVBUILD) || defined (OEBUILD)
 	struct skin* extensions_type = getscreennode(adjust, "extensions_type");
 #endif
+	struct skin* channel_source_info = getscreennode(adjust, "channel_source_info");
+
 
 	struct skin* tmp = NULL;
 
@@ -248,6 +250,11 @@ void screenadjust()
 	addchoicebox(extensions_type, "2", _("Tpk / Ipkg"));
 	setchoiceboxselection(extensions_type, getconfig("extensions_type", NULL));
 #endif
+
+	addchoicebox(channel_source_info, "0", _("no"));
+	addchoicebox(channel_source_info, "1", _("yes"));
+	setchoiceboxselection(channel_source_info, getconfig("channel_source_info", NULL));
+
 	if(!file_exist("/mnt/config/dualboot"))
 	{
 		addchoicebox(dualboot, "0", _("no"));
@@ -593,6 +600,7 @@ void screenadjust()
 			//addconfigscreencheck("crosscontrol", crosscontrol, "0");
 			status.crosscontrol = getconfigint("crosscontrol", NULL);
 			addconfigscreencheck("emucontrol", emucontrol, "0");
+			addconfigscreencheck("channel_source_info", channel_source_info, "0");
 
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 				addconfigscreencheck("usecec", usecec, "0");
