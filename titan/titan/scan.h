@@ -1535,7 +1535,7 @@ void scanaddchannel(struct skin* node, int scantype, struct transponder* tp1, in
 
 		if(chnode == NULL)
 		{
-			if(createchannel(node->param2, transponderid, providerid, serviceid, servicetype, 0, -1, -1, -1, -1, 0, -1) != NULL)
+			if(createchannel(node->param2, transponderid, providerid, serviceid, servicetype, 0, -1, -1, -1, -1, 0, -1, NULL, NULL) != NULL)
 				node->fontcol = convertcol("deaktivcol");
 		}
 		else
