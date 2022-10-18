@@ -4,7 +4,7 @@ PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/dlna"
 
 rm -rf "$PLUGINDIR" >/dev/null 2>&1
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg remove minidlna --dest $1
 fi
 

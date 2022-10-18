@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	sed 's/satipclient=.*//g' -i /mnt/config/start-config
 	opkg remove satipclient
 	opkg remove titan-plugin-network-satipclient --dest $1
