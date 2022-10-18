@@ -125,7 +125,7 @@ void start(void)
 	status.listboxselectcol = convertcol("tithek_selectcol");
 
 	if(getconfig("tithek_kinox_url", NULL) == NULL)
-		addconfigtmp("tithek_kinox_url", "https://kinoz.to");
+		addconfigtmp("tithek_kinox_url", "https://kinos.to");
 
 	if(getconfig("tithek_kinox_localhoster", NULL) == NULL)
 		addconfigtmp("tithek_kinox_localhoster", "1");
