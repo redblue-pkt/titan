@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install titan-plugin-tools-callmonitor1 --dest $1
 fi

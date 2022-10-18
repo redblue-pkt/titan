@@ -6,7 +6,7 @@ echo INSTDIR $INSTDIR
 echo PLUGINDIR $PLUGINDIR
 mkdir $INSTDIR/etc/xupnpd/config
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install titan-plugin-network-xupnpd --dest $1
 fi

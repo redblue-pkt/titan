@@ -2,7 +2,7 @@
 
 ARCH=$(cat /etc/.arch)
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install strongswan
 	if [ "$ARCH" == "sh4" ];then

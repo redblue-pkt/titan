@@ -8,7 +8,7 @@ if [ -e /tmp/skin.xml_sam ]; then
 	rm /tmp/skin.xml_sam >/dev/null 2>&1
 fi
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install titan-plugin-tools-lcdsamsung --dest $1
 fi

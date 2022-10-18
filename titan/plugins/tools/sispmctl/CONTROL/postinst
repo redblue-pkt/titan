@@ -30,7 +30,7 @@ fi
 
 #cp "$PLUGINDIR/lib/libusb-0.1.so.4" "/usr/lib/libusb-0.1.so.4"
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install titan-plugin-tools-sispmctl --dest $1
 fi

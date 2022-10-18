@@ -6,7 +6,7 @@ rm -r "$PLUGINDIR" >/dev/null 2>&1
 rm /mnt/plugin/ps01sispm 
 rm /mnt/plugin/pe01sispm 
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg remove titan-plugin-tools-sispmctl --dest $1
 fi
 

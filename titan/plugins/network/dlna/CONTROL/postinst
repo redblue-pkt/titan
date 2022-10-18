@@ -5,7 +5,7 @@ PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/dlna"
 echo INSTDIR $INSTDIR
 echo PLUGINDIR $PLUGINDIR
 
-if [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install minidlna --dest $1
 fi
