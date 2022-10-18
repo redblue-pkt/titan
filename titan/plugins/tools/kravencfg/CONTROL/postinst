@@ -1,4 +1,8 @@
 #!/bin/sh
+
+echo Use Install Dest: $1
+echo Start Install Script: $0
+
 INSTDIR="$1"
 
 chmod 644 $INSTDIR/usr/local/share/titan/plugins/kravencfg/*
