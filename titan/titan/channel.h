@@ -16,7 +16,14 @@ int channelnottunable(struct channel* node)
 {
 	if(node == NULL) return 1;
 	if(node->transponder == NULL) return 1;
+    // tithek fav like vavoo fix work
 	if(node->transponder->orbitalpos >= 20000)
+    {
+		node->transponder->tunablestatus = 1;
+		return 0;
+    }
+    // single tuner fix work
+	if(status.recording == 0)
     {
 		node->transponder->tunablestatus = 1;
 		return 0;

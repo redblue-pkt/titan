@@ -8486,8 +8486,8 @@ int checkshutdown(int flag)
 {
 	int i = 0;
 
-	//check if record running
-	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5 || flag == 6) && (status.streaming > 0 || status.recording > 0 || getrectimerbytimediff(300) != NULL))
+	//check if record running																				  streamplayer fix
+	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5 || flag == 6) && ((status.streaming > 0 && status.play != 2) || status.recording > 0 || getrectimerbytimediff(300) != NULL))
 	{
 		if(flag == 4 && status.fixpowerofftime > 1)
 		{
