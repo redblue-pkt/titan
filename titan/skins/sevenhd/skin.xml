@@ -583,6 +583,7 @@
 	<node parent="listbox" name="protectmode" text="protect service" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="addmode" text="add service" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="editmode" text="rename service" valign="middle" width="100%" height="35">
+	<node parent="listbox" name="streammode" text="streamurl service" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="sortmode" text="sort service" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="setstartchannel" text="set startchannel" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="delstartchannel" text="del startchannel" valign="middle" width="100%" height="35">
@@ -1473,7 +1474,11 @@
 	<node parent="listbox" name="bitrate" text="Bitrate" type="choicebox" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="resolution" text="Resolution" type="choicebox" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="aspectratio" text="Aspect Ratio" type="choicebox" valign="middle" width="100%" height="35">
-	<node parent="listbox" name="streamzapping" text="Allowed Zapping via Streamlink" type="choicebox" valign="middle" width="100%" height="35">
+	<node parent="listbox" name="stream_port" text="Stream Port" type="inputboxnum"  valign="middle" width="100%" height="35">
+	<node parent="listbox" name="stream_zapping" text="Allowed Zapping via Streamlink" type="choicebox"  valign="middle" width="100%" height="35">
+	<node parent="listbox" name="stream_ecm" text="Stream ECM Pids" type="choicebox"  valign="middle" width="100%" height="35">
+	<node parent="listbox" name="stream_scrambled" text="Stream scrambled" type="choicebox"  valign="middle" width="100%" height="35">
+	<node parent="listbox" name="rec_scrambled" text="Record scrambled" type="choicebox" valign="middle" width="100%">
 <node name="b1" text="OK"   halign="center" valign="middle" bordercol="okcol"   bordersize="6" bordertype="2" posx="0"   posy="0" width="100" height="39">
 <node name="b2" text="EXIT" halign="center" valign="middle" bordercol="exitcol" bordersize="6" bordertype="2" posx="110" posy="0" width="100" height="39">
 <node name="b3" text="TEXT" halign="center" valign="middle" bordercol="exitcol" bordersize="6" bordertype="2" posx="220" posy="0" width="120" height="39">
@@ -1504,7 +1509,7 @@
 		<node parent="listbox" name="skip13" text="Skip 1/3" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="skip46" text="Skip 4/6" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="skip79" text="Skip 7/9" type="choicebox" valign="middle" width="100%" height="35">
-		<node parent="listbox" name="playertype" text="Player for .ts" type="choicebox" valign="middle" width="100%" height="35">
+#		<node parent="listbox" name="playertype" text="Player for .ts" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="autochangechannelname" text="Change Channelname auto." type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="showchanneltimeline" text="Show Timeline in Channellist" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="screenanim" text="Animated Screens" type="choicebox" valign="middle" width="100%" height="35">
@@ -1519,7 +1524,7 @@
 		<node parent="listbox" name="crosscontrol" text="Use cross control for fast zapping and vol" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="emucontrol" text="Deactivate Crypt Support on Media Playback" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="usecec" text="Activate CEC" type="choicebox" valign="middle" width="100%" height="35">
-		<node parent="listbox" name="playerbuffersize" text="Playbackbuffer Size" type="choicebox" valign="middle" width="100%" height="35">
+#		<node parent="listbox" name="playerbuffersize" text="Playbackbuffer Size" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="playerbufferseektime" text="Time to wait after seek for fill buffer" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="sataswitch" text="SATA Connector" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="dualboot" text="Dualboot Menu TitanNit / E2" type="choicebox" valign="middle" width="100%" height="35">
@@ -1527,6 +1532,8 @@
 		<node parent="listbox" name="community_pass" text="Community Pass" type="inputbox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="debuglevel" text="Debuglevel" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="zapmode" text="Zapmode" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="extensions_type" text="Extensions Type" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="channel_source_info" text="Channel Source Info" type="choicebox" valign="middle" width="100%">
 <node name="b1" text="OK"   halign="center" valign="middle" bordercol="okcol"   bordersize="6" bordertype="2" posx="0"   posy="0" width="100" height="39">
 <node name="b2" text="EXIT" halign="center" valign="middle" bordercol="exitcol" bordersize="6" bordertype="2" posx="110" posy="0" width="100" height="39">
 <node name="b3" text="Text" halign="center" valign="middle" bordercol="white"   bordersize="6" bordertype="2" posx="220" posy="0" width="100" height="39">

@@ -676,7 +676,7 @@
 		<node parent="listbox" name="skip13" text="Skip 1/3" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="skip46" text="Skip 4/6" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="skip79" text="Skip 7/9" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
-		<node parent="listbox" name="playertype" text="Player for .ts" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+#		<node parent="listbox" name="playertype" text="Player for .ts" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="autochangechannelname" text="Change Channelname auto." type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="showchanneltimeline" text="Show Timeline in Channellist" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="screenanim" text="Animated Screens" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
@@ -691,14 +691,16 @@
 		<node parent="listbox" name="crosscontrol" text="Use cross control for fast zapping and vol" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="emucontrol" text="Deactivate Crypt Support on Media Playback" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="usecec" text="Activate CEC" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
-		<node parent="listbox" name="playerbuffersize" text="Playbackbuffer Size" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+#		<node parent="listbox" name="playerbuffersize" text="Playbackbuffer Size" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="playerbufferseektime" text="Time to wait after seek for fill buffer" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="sataswitch" text="SATA Connector" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="dualboot" text="Dualboot Menu TitanNit / E2" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="community_user" text="Community User" type="inputbox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="community_pass" text="Community Pass" type="inputbox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="debuglevel" text="Debuglevel" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
-		<node parent="listbox" name="zapmode" text="Zapmode" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+	  <node parent="listbox" name="zapmode" text="Zapmode" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+		<node parent="listbox" name="extensions_type" text="Extensions Type" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+		<node parent="listbox" name="channel_source_info" text="Channel Source Info" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 	<node name="details" bordercol="white" bordersize="1" type="textbox" wrap="yes" font="Regular" fontcol="white" fontsize="28" posx="60" posy="538" width="1160" height="72" hspace="5" vspace="5" text="Here you can make advanced settings.">
 	<node name="buttonbar" font="Regular" fontsize="22" fontcol="white" posx="0" posy="670" width="100%" height="40" hspace="40" vspace="0">
 		<node parent="buttonbar" name="b1" picmem="buttons/key_ok.png" posx="0" posy="0" width="180" height="22" textposx="47" text="Save">
@@ -959,6 +961,7 @@
 		<node parent="listbox" name="addmode" text="add service" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="editmode" text="rename service" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="sortmode" text="sort service" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+		<node parent="listbox" name="streammode" text="streamurl service" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="setstartchannel" text="set startchannel" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="delstartchannel" text="del startchannel" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="setdefaultbouquets" text="Restore Default Bouquets" hspace="20" vspace="5" valign="middle" width="100%" height="40">
@@ -2042,14 +2045,17 @@
 		<node parent="listbox" name="password" text="Password" type="inputbox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="httpdport" text="HTTPD Port" type="inputboxnum" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="webifip" text="IP for Stream" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
-		<node parent="listbox" name="streamport" text="Stream Port" type="inputboxnum" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="rguidstart" text="Start RGUID" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="rguidport" text="RGUID Port" type="inputboxnum" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="transcode" text="Transcode Stream" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="bitrate" text="Bitrate" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="resolution" text="Resolution" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="aspectratio" text="Aspect Ratio" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
-		<node parent="listbox" name="streamzapping" text="Allowed Zapping via Streamlink" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+		<node parent="listbox" name="stream_port" text="Stream Port" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+		<node parent="listbox" name="stream_zapping" text="Allowed Zapping via Streamlink" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+		<node parent="listbox" name="stream_ecm" text="Stream ECM Pids" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+		<node parent="listbox" name="stream_scrambled" text="Stream scrambled" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+		<node parent="listbox" name="rec_scrambled" text="Record scrambled" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 	<node name="details" bordercol="white" bordersize="1" type="textbox" wrap="yes" font="Regular" fontcol="white" fontsize="28" posx="60" posy="538" width="1160" height="72" hspace="5" vspace="5" text="Here you can configure: Webinterface, Transcoding and RGUI">
 	<node name="buttonbar" font="Regular" fontsize="22" fontcol="white" posx="0" posy="670" width="100%" height="40" hspace="40" vspace="0">
 		<node parent="buttonbar" name="b1" picmem="buttons/key_ok.png" posx="0" posy="0" width="180" height="22" textposx="47" text="Save">
