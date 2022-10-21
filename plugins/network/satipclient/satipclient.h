@@ -13,8 +13,8 @@ start:
 	satipclientstop = ostrcat("/etc/init.d/satipclient stop", NULL, 0, 0);
 	satipclientstart = ostrcat("/etc/init.d/satipclient start", NULL, 0, 0);
 	satipclientrestart = ostrcat("/etc/init.d/satipclient restart", NULL, 0, 0);
-	satipclientscan = createpluginpath("/satipclient/files/scan.py", 0);
-	satipclientrun = createpluginpath("/satipclient/files/run.sh", 0);
+	satipclientscan = createpluginpath("/satipclient/scan.py", 0);
+	satipclientrun = createpluginpath("/satipclient/run.sh", 0);
 //	satipclientconfig = ostrcat("cp /mnt/network/vtuner.conf /etc", NULL, 0, 0);
 //	vtunerconf = ostrcat("/mnt/network/vtuner.conf", NULL, 0, 0);
 	satipclientconfig = ostrcat("cp /etc/vtuner.conf /etc", NULL, 0, 0);
