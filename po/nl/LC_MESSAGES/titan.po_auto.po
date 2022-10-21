@@ -465,11 +465,10 @@ msgstr ""
 msgid "1..9"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:1 callmonitor1_mipsel_skin.xml.h:1
-#: callmonitor1_sh4_skin.xml.h:1 skins_0acht5zehn_skin.xml.h:35
-#: skins_cool_skin.xml.h:35 skins_megastyleblue_skin.xml.h:35
-#: skins_megastylegrey_skin.xml.h:35 skins_tobayer01_skin.xml.h:35
-#: skins_ufs912_skin.xml.h:35 tools_callmonitor1_skin.xml.h:1
+#: skins_0acht5zehn_skin.xml.h:35 skins_cool_skin.xml.h:35
+#: skins_megastyleblue_skin.xml.h:35 skins_megastylegrey_skin.xml.h:35
+#: skins_tobayer01_skin.xml.h:35 skins_ufs912_skin.xml.h:35
+#: tools_callmonitor1_skin.xml.h:1
 msgid "1.Rufnummer"
 msgstr "1.telefoonnummer"
 
@@ -599,11 +598,10 @@ msgstr ""
 msgid "2 sec"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:2 callmonitor1_mipsel_skin.xml.h:2
-#: callmonitor1_sh4_skin.xml.h:2 skins_0acht5zehn_skin.xml.h:37
-#: skins_cool_skin.xml.h:37 skins_megastyleblue_skin.xml.h:38
-#: skins_megastylegrey_skin.xml.h:38 skins_tobayer01_skin.xml.h:37
-#: skins_ufs912_skin.xml.h:37 tools_callmonitor1_skin.xml.h:2
+#: skins_0acht5zehn_skin.xml.h:37 skins_cool_skin.xml.h:37
+#: skins_megastyleblue_skin.xml.h:38 skins_megastylegrey_skin.xml.h:38
+#: skins_tobayer01_skin.xml.h:37 skins_ufs912_skin.xml.h:37
+#: tools_callmonitor1_skin.xml.h:2
 msgid "2.Rufnummer"
 msgstr "2.telefoonnummer"
 
@@ -1428,11 +1426,10 @@ msgstr ""
 msgid "Aktion after"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:3 callmonitor1_mipsel_skin.xml.h:3
-#: callmonitor1_sh4_skin.xml.h:3 skins_0acht5zehn_skin.xml.h:69
-#: skins_cool_skin.xml.h:72 skins_megastyleblue_skin.xml.h:73
-#: skins_megastylegrey_skin.xml.h:73 skins_tobayer01_skin.xml.h:68
-#: skins_ufs912_skin.xml.h:68 tools_callmonitor1_skin.xml.h:3
+#: skins_0acht5zehn_skin.xml.h:69 skins_cool_skin.xml.h:72
+#: skins_megastyleblue_skin.xml.h:73 skins_megastylegrey_skin.xml.h:73
+#: skins_tobayer01_skin.xml.h:68 skins_ufs912_skin.xml.h:68
+#: tools_callmonitor1_skin.xml.h:3
 msgid "Aktion wenn standby"
 msgstr "Actie bij Standby"
 
@@ -1597,11 +1594,10 @@ msgstr ""
 msgid "Antenne Kaernten"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:5 callmonitor1_mipsel_skin.xml.h:5
-#: callmonitor1_sh4_skin.xml.h:5 skins_0acht5zehn_skin.xml.h:76
-#: skins_cool_skin.xml.h:82 skins_megastyleblue_skin.xml.h:84
-#: skins_megastylegrey_skin.xml.h:84 skins_tobayer01_skin.xml.h:75
-#: skins_ufs912_skin.xml.h:75 tools_callmonitor1_skin.xml.h:5
+#: skins_0acht5zehn_skin.xml.h:76 skins_cool_skin.xml.h:82
+#: skins_megastyleblue_skin.xml.h:84 skins_megastylegrey_skin.xml.h:84
+#: skins_tobayer01_skin.xml.h:75 skins_ufs912_skin.xml.h:75
+#: tools_callmonitor1_skin.xml.h:5
 msgid "Anzeige in Sekunden"
 msgstr "Aankondiging in seconden"
 
@@ -2899,11 +2895,10 @@ msgstr ""
 msgid "CallMonitor"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:16 callmonitor1_mipsel_skin.xml.h:16
-#: callmonitor1_sh4_skin.xml.h:16 skins_0acht5zehn_skin.xml.h:813
-#: skins_cool_skin.xml.h:152 skins_megastyleblue_skin.xml.h:154
-#: skins_megastylegrey_skin.xml.h:154 skins_tobayer01_skin.xml.h:747
-#: skins_ufs912_skin.xml.h:745 tools_callmonitor1_skin.xml.h:18
+#: skins_0acht5zehn_skin.xml.h:813 skins_cool_skin.xml.h:152
+#: skins_megastyleblue_skin.xml.h:154 skins_megastylegrey_skin.xml.h:154
+#: skins_tobayer01_skin.xml.h:747 skins_ufs912_skin.xml.h:745
+#: tools_callmonitor1_skin.xml.h:18
 msgid "CallMonitor Settings"
 msgstr "CallMonitor instellingen"
 
@@ -6278,11 +6273,10 @@ msgstr ""
 msgid "Friday"
 msgstr "Vrijdag"
 
-#: callmonitor1_arm_skin.xml.h:10 callmonitor1_mipsel_skin.xml.h:10
-#: callmonitor1_sh4_skin.xml.h:10 skins_0acht5zehn_skin.xml.h:267
-#: skins_cool_skin.xml.h:319 skins_megastyleblue_skin.xml.h:320
-#: skins_megastylegrey_skin.xml.h:320 skins_tobayer01_skin.xml.h:263
-#: skins_ufs912_skin.xml.h:262 tools_callmonitor1_skin.xml.h:11
+#: skins_0acht5zehn_skin.xml.h:267 skins_cool_skin.xml.h:319
+#: skins_megastyleblue_skin.xml.h:320 skins_megastylegrey_skin.xml.h:320
+#: skins_tobayer01_skin.xml.h:263 skins_ufs912_skin.xml.h:262
+#: tools_callmonitor1_skin.xml.h:11
 msgid "FritzBook"
 msgstr ""
 
@@ -7408,11 +7402,10 @@ msgstr ""
 msgid "IP for Stream"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:11 callmonitor1_mipsel_skin.xml.h:11
-#: callmonitor1_sh4_skin.xml.h:11 skins_0acht5zehn_skin.xml.h:318
-#: skins_cool_skin.xml.h:372 skins_megastyleblue_skin.xml.h:373
-#: skins_megastylegrey_skin.xml.h:373 skins_tobayer01_skin.xml.h:311
-#: skins_ufs912_skin.xml.h:310 tools_callmonitor1_skin.xml.h:13
+#: skins_0acht5zehn_skin.xml.h:318 skins_cool_skin.xml.h:372
+#: skins_megastyleblue_skin.xml.h:373 skins_megastylegrey_skin.xml.h:373
+#: skins_tobayer01_skin.xml.h:311 skins_ufs912_skin.xml.h:310
+#: tools_callmonitor1_skin.xml.h:13
 msgid "IP-FritzBox"
 msgstr ""
 
@@ -10669,11 +10662,10 @@ msgstr "Wachtwoord"
 msgid "Password Settings"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:12 callmonitor1_mipsel_skin.xml.h:12
-#: callmonitor1_sh4_skin.xml.h:12 skins_0acht5zehn_skin.xml.h:420
-#: skins_cool_skin.xml.h:491 skins_megastyleblue_skin.xml.h:493
-#: skins_megastylegrey_skin.xml.h:493 skins_tobayer01_skin.xml.h:413
-#: skins_ufs912_skin.xml.h:411 tools_callmonitor1_skin.xml.h:16
+#: skins_0acht5zehn_skin.xml.h:420 skins_cool_skin.xml.h:491
+#: skins_megastyleblue_skin.xml.h:493 skins_megastylegrey_skin.xml.h:493
+#: skins_tobayer01_skin.xml.h:413 skins_ufs912_skin.xml.h:411
+#: tools_callmonitor1_skin.xml.h:16
 msgid "Passwort-FritzBox"
 msgstr "Wachtwoord-FritzBox"
 
@@ -17560,11 +17552,10 @@ msgstr ""
 msgid "alle Menus anzeigen"
 msgstr "Alle menu's tonen"
 
-#: callmonitor1_arm_skin.xml.h:4 callmonitor1_mipsel_skin.xml.h:4
-#: callmonitor1_sh4_skin.xml.h:4 skins_0acht5zehn_skin.xml.h:71
-#: skins_cool_skin.xml.h:76 skins_megastyleblue_skin.xml.h:77
-#: skins_megastylegrey_skin.xml.h:77 skins_tobayer01_skin.xml.h:70
-#: skins_ufs912_skin.xml.h:70 tools_callmonitor1_skin.xml.h:4
+#: skins_0acht5zehn_skin.xml.h:71 skins_cool_skin.xml.h:76
+#: skins_megastyleblue_skin.xml.h:77 skins_megastylegrey_skin.xml.h:77
+#: skins_tobayer01_skin.xml.h:70 skins_ufs912_skin.xml.h:70
+#: tools_callmonitor1_skin.xml.h:4
 msgid "alle Nummern"
 msgstr "Alle nummers"
 
@@ -17630,11 +17621,10 @@ msgstr ""
 msgid "aus"
 msgstr "Uit"
 
-#: callmonitor1_arm_skin.xml.h:6 callmonitor1_mipsel_skin.xml.h:6
-#: callmonitor1_sh4_skin.xml.h:6 skins_0acht5zehn_skin.xml.h:88
-#: skins_cool_skin.xml.h:99 skins_megastyleblue_skin.xml.h:101
-#: skins_megastylegrey_skin.xml.h:101 skins_tobayer01_skin.xml.h:87
-#: skins_ufs912_skin.xml.h:87 tools_callmonitor1_skin.xml.h:6
+#: skins_0acht5zehn_skin.xml.h:88 skins_cool_skin.xml.h:99
+#: skins_megastyleblue_skin.xml.h:101 skins_megastylegrey_skin.xml.h:101
+#: skins_tobayer01_skin.xml.h:87 skins_ufs912_skin.xml.h:87
+#: tools_callmonitor1_skin.xml.h:6
 msgid "ausgehende Anrufe"
 msgstr "Uitgaand gesprek"
 
@@ -17683,11 +17673,10 @@ msgstr "Balk kleur"
 msgid "begin search"
 msgstr "Start zoeken"
 
-#: callmonitor1_arm_skin.xml.h:7 callmonitor1_mipsel_skin.xml.h:7
-#: callmonitor1_sh4_skin.xml.h:7 skins_0acht5zehn_skin.xml.h:107
-#: skins_cool_skin.xml.h:128 skins_megastyleblue_skin.xml.h:130
-#: skins_megastylegrey_skin.xml.h:130 skins_tobayer01_skin.xml.h:104
-#: skins_ufs912_skin.xml.h:104 tools_callmonitor1_skin.xml.h:7
+#: skins_0acht5zehn_skin.xml.h:107 skins_cool_skin.xml.h:128
+#: skins_megastyleblue_skin.xml.h:130 skins_megastylegrey_skin.xml.h:130
+#: skins_tobayer01_skin.xml.h:104 skins_ufs912_skin.xml.h:104
+#: tools_callmonitor1_skin.xml.h:7
 msgid "bei Anruf stumm"
 msgstr "Bij gesprek dempen"
 
@@ -17751,13 +17740,12 @@ msgstr ""
 msgid "bouquetlist"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:8 callmonitor1_mipsel_skin.xml.h:8
-#: callmonitor1_sh4_skin.xml.h:8 skins_0acht5zehn_skin.xml.h:120
-#: skins_atemio_skin.xml.h:118 skins_cool_skin.xml.h:143
-#: skins_megastyleblue_skin.xml.h:145 skins_megastylegrey_skin.xml.h:145
-#: skins_metrixhd_skin.xml.h:118 skins_nogfx_skin.xml.h:110
-#: skins_sevenhd_skin.xml.h:111 skins_tobayer01_skin.xml.h:115
-#: skins_ufs912_skin.xml.h:115 tools_callmonitor1_skin.xml.h:8
+#: skins_0acht5zehn_skin.xml.h:120 skins_atemio_skin.xml.h:118
+#: skins_cool_skin.xml.h:143 skins_megastyleblue_skin.xml.h:145
+#: skins_megastylegrey_skin.xml.h:145 skins_metrixhd_skin.xml.h:118
+#: skins_nogfx_skin.xml.h:110 skins_sevenhd_skin.xml.h:111
+#: skins_tobayer01_skin.xml.h:115 skins_ufs912_skin.xml.h:115
+#: tools_callmonitor1_skin.xml.h:8
 msgid "broadcast"
 msgstr "Uitzending"
 
@@ -18148,11 +18136,10 @@ msgstr "Oost"
 msgid "ein"
 msgstr "Aan"
 
-#: callmonitor1_arm_skin.xml.h:9 callmonitor1_mipsel_skin.xml.h:9
-#: callmonitor1_sh4_skin.xml.h:9 skins_0acht5zehn_skin.xml.h:216
-#: skins_cool_skin.xml.h:259 skins_megastyleblue_skin.xml.h:260
-#: skins_megastylegrey_skin.xml.h:260 skins_tobayer01_skin.xml.h:212
-#: skins_ufs912_skin.xml.h:212 tools_callmonitor1_skin.xml.h:9
+#: skins_0acht5zehn_skin.xml.h:216 skins_cool_skin.xml.h:259
+#: skins_megastyleblue_skin.xml.h:260 skins_megastylegrey_skin.xml.h:260
+#: skins_tobayer01_skin.xml.h:212 skins_ufs912_skin.xml.h:212
+#: tools_callmonitor1_skin.xml.h:9
 msgid "eingehende Anrufe"
 msgstr "Inkomend gesprek"
 
@@ -20290,13 +20277,6 @@ msgid ""
 "fontsize=25 bordercol=exitcol bordersize=3 bordertype=2>"
 msgstr ""
 
-#: callmonitor1_arm_skin.xml.h:13 callmonitor1_mipsel_skin.xml.h:13
-#: callmonitor1_sh4_skin.xml.h:13
-msgid ""
-"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
-"bordertype=2 posx=160 posy=0 width=150 height=30/>"
-msgstr ""
-
 #: skins_0acht5zehn_skin.xml.h:654
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=3 "
@@ -20351,13 +20331,6 @@ msgstr ""
 msgid ""
 "text=LOAD-FritzBook halign=center valign=center posx=350 posy=0 width=250 "
 "height=44 fontsize=25 bordercol=blue bordersize=3 bordertype=2>"
-msgstr ""
-
-#: callmonitor1_arm_skin.xml.h:14 callmonitor1_mipsel_skin.xml.h:14
-#: callmonitor1_sh4_skin.xml.h:14
-msgid ""
-"text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 "
-"bordertype=2 posx=400 posy=0 width=200 height=30/>"
 msgstr ""
 
 #: skins_0acht5zehn_skin.xml.h:664
@@ -20478,13 +20451,6 @@ msgstr ""
 msgid ""
 "text=SAVE halign=center valign=center posx=75 posy=0 width=150 height=44 "
 "fontsize=25 bordercol=green bordersize=3 bordertype=2>"
-msgstr ""
-
-#: callmonitor1_arm_skin.xml.h:15 callmonitor1_mipsel_skin.xml.h:15
-#: callmonitor1_sh4_skin.xml.h:15
-msgid ""
-"text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
-"bordertype=2 posx=0 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: skins_cool_skin.xml.h:756 skins_megastyleblue_skin.xml.h:758
