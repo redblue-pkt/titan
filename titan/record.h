@@ -513,7 +513,7 @@ int recordsplit(struct service* servicenode, int flag)
 
 int readwritethread(struct stimerthread* stimer, struct service* servicenode, int flag)
 {
-	int fdrec = -1; readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0, frmulti = 0, frmultiread = 0;
+	int fdrec = -1, readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0, frmulti = 0, frmultiread = 0;
 	int readtimeout = -1, writetimeout = -1;
 	int recsync = 0, frcount = 0, count = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
