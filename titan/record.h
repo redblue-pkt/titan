@@ -528,7 +528,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	}
 	
 	if(servicenode->type == RECORDSTREAM) {
-	  if(getconfigint("testrec", NULL) == 1) fdrec = open(/hdd/movie/testrec.ts, O_WRONLY | O_CREAT | O_LARGEFILE, 0666);
+	  if(getconfigint("testrec", NULL) == 1) fdrec = open("/hdd/movie/testrec.ts", O_WRONLY | O_CREAT | O_LARGEFILE, 0666);
 	}
 
 	recsync = getconfigint("recsync", NULL);
