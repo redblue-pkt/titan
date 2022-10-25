@@ -513,7 +513,7 @@ int recordsplit(struct service* servicenode, int flag)
 
 int readwritethread(struct stimerthread* stimer, struct service* servicenode, int flag)
 {
-	int fdrec = -1, readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0, frmulti = 0, frmultiread = 0;
+	int readret = 0, writeret = 0, ret = 0, recbsize = 0, tmprecbsize = 0, i = 0, pktcount = 0, frbsize = 0, frmulti = 0, frmultiread = 0;
 	int readtimeout = -1, writetimeout = -1;
 	int recsync = 0, frcount = 0, count = 0;
 	unsigned char* buf = NULL, *tmpbuf = NULL;
@@ -527,10 +527,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		return 1;
 	}
 	
-	if(servicenode->type == RECORDSTREAM) {
-	  if(getconfigint("testrec", NULL) == 1) fdrec = open("/hdd/movie/testrec.ts", O_WRONLY | O_CREAT | O_LARGEFILE, 0666);
-	}
-
 	recsync = getconfigint("recsync", NULL);
 	frbsize = servicenode->tssize * 3072; //aligned to 188 and 4096
 
@@ -770,7 +766,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				}
 //
 				writeret = sockwrite(servicenode->recdstfd, buf, readret, writetimeout);
-				if(getconfigint("testrec", NULL) == 1) writeret = dvbwrite(fdrec, buf, readret, writetimeout);
 			}
 			else
 			{
@@ -989,8 +984,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 #ifdef SIMULATE
 	close(fd);
 #endif
-  if(getconfigint("testrec", NULL) == 1) close (fdrec);
-	if(buf != NULL) free(buf);
+  if(buf != NULL) free(buf);
 	if(tmpbuf != NULL) free(tmpbuf);
 	debug(250, "stop read-write thread");
 	return 0;
