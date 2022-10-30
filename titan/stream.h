@@ -237,4 +237,87 @@ void streamthreadfunc(struct stimerthread* timernode)
 	return;
 }
 
+int streamrecordrun(struct stimerthread* timernode, char* link, char* filename)
+{    
+   char* cmd = NULL;
+   struct sigaction sigchld_action = {
+        .sa_handler = SIG_DFL,
+        .sa_flags = SA_NOCLDWAIT
+    };
+    sigaction( SIGCHLD, &sigchld_action, NULL ) ;
+
+		debug(250, "start streamrecordrun");
+    
+    int pid = fork() ;
+    if( pid < 0 )
+    {
+      printf( "Fork failed\n" ) ;
+      return 1 ;
+    }
+    if( pid == 0 )
+    {
+      // ------------ Child process
+      cmd = ostrcat("curl ", link, 0, 0);
+      cmd = ostrcat(cmd," > ", 1, 0);
+      cmd = ostrcat(cmd, filename, 1, 0);
+      debug(250, "start %s",cmd);
+      while( 1 )
+      {
+      	execl("/bin/sh", "sh", "-c", cmd, NULL);
+      }       return 0 ; //never reached
+    }
+    // ------------ Parent process
+    printf( "Main program\n" ) ;
+    while(timernode->aktion != STOP)
+		{
+    	sleep(1);
+    }
+    // When you are ready, it can kill the child process
+    printf( "Killing child\n" ) ;
+    kill( pid, SIGTERM ) ;
+		free(cmd), cmd = NULL;
+    printf( "Finished\n" ) ;
+    debug(250, "ende streamrecordrun");
+    return 0 ;
+}
+
+
+int streamrecord(int type, struct channel* chnode)
+{
+	char* path = NULL, *chname = NULL, *filename = NULL, *moviename = NULL, *link = NULL;
+	struct epg* epgnode = NULL;
+	
+	if(type == 1)
+	{
+		debug(250, "start record.. stop after current event");
+	}
+	else if(type == 2)
+	{
+		debug(250, "start record.. direct");
+		path = getconfig("rec_path", NULL);
+		if(chnode != NULL)
+		{
+			chname = strstrip(chnode->name);
+			delspezchar(chname, 2);
+		}
+		epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
+		if(epgnode != NULL)
+		{
+			moviename = strstrip(epgnode->title);
+			delspezchar(moviename, 2);
+		}
+		link = chnode->streamurl;
+		filename = recordcreatefilename(path, chname, moviename, RECORDSTREAM);
+		addtimer(&streamrecordrun, START, 1000, 1, (void*)link, (void*)filename, NULL);
+	}
+	else if(type == 2)
+	{
+		debug(250, "start record.. enter duration");
+	}
+		
+	return 0;
+}
+
+
+
 #endif

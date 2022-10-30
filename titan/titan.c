@@ -115,7 +115,6 @@ char* tunermerkmale = NULL;
 #include "thumb.h"
 #include "global.h"
 #include "security.h"
-#include "stream.h"
 #include "dvbdev.h"
 #include "rotorcalc.h"
 #include "frontenddev.h"
@@ -123,6 +122,7 @@ char* tunermerkmale = NULL;
 #include "videodev.h"
 #include "audiodev.h"
 #include "cidev.h"
+#include "stream.h"
 #ifndef SIMULATE
 #include "cadev.h"
 #endif
@@ -281,7 +281,7 @@ char* tunermerkmale = NULL;
 #include "encoder.h"
 #endif
 
-#define TIMECODE "1636829031"
+#define TIMECODE "1667159904"
 #if !defined(HAVE_HISILICON_ACCEL)
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
