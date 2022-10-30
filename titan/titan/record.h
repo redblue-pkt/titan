@@ -1828,7 +1828,10 @@ void screenrecorddirect()
 		}
 		if(ostrcmp(mbox->name, _("add recording (indefinitely)")) == 0)
 		{
-			ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
+			if(status.aktservice->channel->streamurl == NULL)
+				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
+			else
+				ret = streamrecord(2, status.aktservice->channel);
 			newstart = 1;
 		}
 		if(ostrcmp(mbox->name, _("add recording (enter duration)")) == 0)

@@ -121,12 +121,12 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER ""
+#define DRIVER "Sun Oct 30 19:58:24 UTC 2022"
 #define OVERSION "1.99"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
-#define PLUGINVERSION 1
+#define PLUGINVERSION 46304
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
