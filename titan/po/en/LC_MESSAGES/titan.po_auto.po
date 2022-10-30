@@ -9199,7 +9199,7 @@ msgstr ""
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
 #: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
 #: readerconfig.h:498 record.h:427 record.h:1240 record.h:1563 record.h:1823
-#: record.h:1848 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
+#: record.h:1851 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -10123,7 +10123,7 @@ msgstr ""
 #: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
 #: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
 #: readerconfig.h:451 readerconfig.h:452 readerconfig.h:497 readerconfig.h:498
-#: record.h:427 record.h:1240 record.h:1563 record.h:1848 rectimer.h:577
+#: record.h:427 record.h:1240 record.h:1563 record.h:1851 rectimer.h:577
 #: rectimer.h:1258 rectimer.h:1405 rectimer.h:1417 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
@@ -12042,7 +12042,7 @@ msgstr ""
 msgid "Record scrambled"
 msgstr ""
 
-#: record.h:1848
+#: record.h:1851
 msgid "Record started"
 msgstr "Recording started"
 
@@ -17514,7 +17514,7 @@ msgstr ""
 msgid "active"
 msgstr "active"
 
-#: record.h:1787 record.h:1834
+#: record.h:1787 record.h:1837
 msgid "add recording (enter duration)"
 msgstr "Add recording (Enter duration)"
 
