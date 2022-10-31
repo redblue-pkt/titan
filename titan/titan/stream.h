@@ -237,7 +237,7 @@ void streamthreadfunc(struct stimerthread* timernode)
 	return;
 }
 
-int streamrecordrun(struct stimerthread* timernode, char* link, char* filename)
+int streamrecordrun(struct stimerthread* timernode, struct service* servicenode, char* link)
 {    
    char* cmd = NULL;
    struct sigaction sigchld_action = {
@@ -254,29 +254,31 @@ int streamrecordrun(struct stimerthread* timernode, char* link, char* filename)
       printf( "Fork failed\n" ) ;
       return 1 ;
     }
+    debug(250, "start PID: %d",pid);
     if( pid == 0 )
     {
       // ------------ Child process
-      cmd = ostrcat("curl ", link, 0, 0);
-      cmd = ostrcat(cmd," > ", 1, 0);
-      cmd = ostrcat(cmd, filename, 1, 0);
-      debug(250, "start %s",cmd);
+	    debug(250, "start %s",cmd);
       while( 1 )
       {
-      	execl("/bin/sh", "sh", "-c", cmd, NULL);
-      }       return 0 ; //never reached
+      	execl("/usr/bin/curl", "curl", link, "-o", servicenode->recname, NULL);
+      	debug(250, "ERROR start curl");
+      	sleep(1);
+      }
+      return 0 ; //never reached
     }
     // ------------ Parent process
     printf( "Main program\n" ) ;
-    while(timernode->aktion != STOP)
+    while(timernode->aktion != STOP && servicenode->recendtime != 2)
 		{
     	sleep(1);
     }
-    // When you are ready, it can kill the child process
-    printf( "Killing child\n" ) ;
+    printf( "\nKilling child\n" ) ;
+    debug(250, "kill PID: %d",pid);
     kill( pid, SIGTERM ) ;
 		free(cmd), cmd = NULL;
-    printf( "Finished\n" ) ;
+		status.recording--;
+		delservice(servicenode, 0);
     debug(250, "ende streamrecordrun");
     return 0 ;
 }
@@ -286,6 +288,7 @@ int streamrecord(int type, struct channel* chnode)
 {
 	char* path = NULL, *chname = NULL, *filename = NULL, *moviename = NULL, *link = NULL;
 	struct epg* epgnode = NULL;
+	struct service* servicenode = NULL;
 	
 	if(type == 1)
 	{
@@ -308,7 +311,12 @@ int streamrecord(int type, struct channel* chnode)
 		}
 		link = chnode->streamurl;
 		filename = recordcreatefilename(path, chname, moviename, RECORDSTREAM);
-		addtimer(&streamrecordrun, START, 1000, 1, (void*)link, (void*)filename, NULL);
+		servicenode = addservice(NULL);
+		servicenode->recname = ostrcat(filename, NULL, 0, 0);
+		servicenode->type = RECORDDIRECT;
+		servicenode->recendtime = 1;
+		status.recording++;
+		addtimer(&streamrecordrun, START, 1000, 1, (void*)servicenode, (void*)link, NULL);
 	}
 	else if(type == 2)
 	{
