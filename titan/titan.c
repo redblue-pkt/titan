@@ -281,7 +281,7 @@ char* tunermerkmale = NULL;
 #include "encoder.h"
 #endif
 
-#define TIMECODE "1667159904"
+#define TIMECODE "1667234340"
 #if !defined(HAVE_HISILICON_ACCEL)
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
