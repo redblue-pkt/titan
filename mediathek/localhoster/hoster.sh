@@ -405,17 +405,38 @@ streamcrypt()
 
 voe() 
 {
+	rm -f $TMP/$TYPE.hoster.$hoster.$FILENAME.* > /dev/null 2>&1
+	rm -f $TMP/cache.$TYPE.hoster.$hoster.* > /dev/null 2>&1
+
+	STREAMLIST="$TMP/$TYPE.hoster.$hoster.$FILENAME.streamlist"
+	if [ -e "$STREAMLIST" ];then
+		rm -f $STREAMLIST > /dev/null 2>&1
+	fi
+	
 	if [ ! -z "$PROXY" ];then 
 		curlbin=$(echo $curlbin | sed "s!$PROXY!!")
 	fi
+
+	$curlbin "$INPUT" -o $TMP/cache.$TYPE.hoster.$hoster.$FILENAME.1
+	cat $TMP/cache.$TYPE.hoster.$hoster.$FILENAME.1 | sed -nr "s/.*'hls'.*'([^']+)'.*/\1/p" >$TMP/cache.$TYPE.hoster.$hoster.$FILENAME.2
+	cat $TMP/cache.$TYPE.hoster.$hoster.$FILENAME.2 | tr -d '\n' | tr -d '\r' >> $STREAMLIST
+	echo "" >> $STREAMLIST
+		
+	cat $TMP/cache.$TYPE.hoster.$hoster.$FILENAME.1 | sed -nr "s/.*'mp4'.*'([^']+)'.*/\1/p" >$TMP/cache.$TYPE.hoster.$hoster.$FILENAME.3
+	cat $TMP/cache.$TYPE.hoster.$hoster.$FILENAME.3 | tr -d '\n' | tr -d '\r' >> $STREAMLIST
+	echo "" >> $STREAMLIST
+
 	if [ "$ARCH" == "sh4" ];then
-		URL=`$curlbin "$INPUT" | sed -nr "s/.*src: '([^']+)'.*/\1/p" | sed 's/https:/http:/g'` 
-	else
-		URL=`$curlbin "$INPUT" | sed -nr "s/.*src: '([^']+)'.*/\1/p"` 
+		sed 's!https://!http://!g' -i $STREAMLIST
 	fi
-	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'` 
-	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
-#	echo "$URL" 
+        
+#	REFERER=`echo "$INPUT" | sed -e 's/=/3D/g' -e 's/&/26/g'` 
+#	echo "$URL|Referer=$REFERER&User-Agent=$USERAGENT" 
+#	echo "$URL"
+
+	URL=$STREAMLIST
+	echo "$URL"
+	
 } 
 
 vodlocker()
@@ -1037,7 +1058,8 @@ if [ "$TYPE" == "get" ];then
 		mixdrop) mixdrop $INPUT;;
 		vshare) vshare $INPUT;;
 		streamcrypt) hoster2=$(streamcrypt $INPUT);;
-		voe) voesx $INPUT;;
+#		voe) voesx $INPUT;;
+		voe) voe $INPUT;;
 		streamtape|strtape|streamta|strcloud) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
@@ -1088,7 +1110,8 @@ if [ ! -z "$hoster2" ];then
 		mixdrop) mixdrop $INPUT;;
 		vshare) vshare $INPUT;;
 		streamcrypt) streamcrypt $INPUT;;
-		voe) voesx $INPUT;;
+#		voe) voesx $INPUT;;
+		voe) voe $INPUT;;
 		streamtape|strtape|streamta|strcloud) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
