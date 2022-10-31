@@ -618,7 +618,7 @@ hoster()
 #	$curlbin2 -v https://s.to/redirect/1131416
 	$curlbin2 -v "$URL/$PAGE" --dump-header $TMP/cache.hoster.$hoster.1
 	cat $TMP/cache.hoster.$hoster.1 | grep ^Location: | cut -d" " -f2 >$TMP/cache.hoster.$hoster.1.url1
-	URL=`cat $TMP/cache.hoster.$hoster.1.url1`
+	URL=`cat $TMP/cache.hoster.$hoster.1.url1 | tr -d '\n' | tr -d '\r'`
 
 	echo $URL
 }
