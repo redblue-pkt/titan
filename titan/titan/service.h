@@ -164,8 +164,13 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		fenode = fegetfree(tpnode, 0, NULL, chnode);
 		if(fenode == NULL)
 		{
-			m_unlock(&status.servicemutex, 2);
-			return 1;
+			sleep(2); 
+			fenode = fegetfree(tpnode, 0, NULL, chnode);
+			if(fenode == NULL)
+			{
+				m_unlock(&status.servicemutex, 2);
+				return 1;
+			}
 		}
 		
 #ifdef DREAMBOX
