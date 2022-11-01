@@ -822,7 +822,7 @@ struct service* getservice(int type, int flag)
 //flag 2: from timeshift/player
 //flag 3: same as 0 but no akttolast
 //flag 4: showiframe
-//flag 5: same as 1 but no akttolast and not clear node->type
+//flag 5: same as 1 but no akttolast and not clear node->type and not stop epg
 int servicestop(struct service *node, int clear, int flag)
 {
 	int rcret = 0;
@@ -855,7 +855,7 @@ int servicestop(struct service *node, int clear, int flag)
 		
 		status.videosizevalid = 0;
 
-		if(status.epgthread != NULL) status.epgthread->aktion = PAUSE;
+		if(status.epgthread != NULL && flag != 5) status.epgthread->aktion = PAUSE;
 		subtitlestop(0);
 
 		if(node->type == CHANNEL && flag < 2) akttolast();
