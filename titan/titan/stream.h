@@ -239,7 +239,21 @@ void streamthreadfunc(struct stimerthread* timernode)
 
 int streamrecordrun(struct stimerthread* timernode, struct service* servicenode, char* link)
 {    
-   char* cmd = NULL;
+  char* cmd = NULL;
+  char* token;
+  char* token2;
+  char* ret = NULL;
+
+	ret = strstr(link, "|User-Agent=");
+	if(ret != NULL)
+	{
+		ret = ret + 12;
+		token2 = strtok( ret, "&" );
+		printf("Token2: %s\n", token2);
+		token = strtok( link, "|" );
+		printf("Token: %s\n", token);
+	}
+   
    struct sigaction sigchld_action = {
         .sa_handler = SIG_DFL,
         .sa_flags = SA_NOCLDWAIT
@@ -261,7 +275,10 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 	    debug(250, "start %s",cmd);
       while( 1 )
       {
-      	execl("/usr/bin/curl", "curl", link, "-o", servicenode->recname, NULL);
+      	if(ret == NULL) 
+      		execl("/usr/bin/curl", "curl", link, "-o", servicenode->recname, NULL);
+      	else
+      		execl("/usr/bin/curl", "curl", token, "-A", token2, "-o", servicenode->recname, NULL);
       	debug(250, "ERROR start curl");
       	sleep(1);
       }
@@ -289,6 +306,7 @@ int streamrecord(int type, struct channel* chnode)
 	char* path = NULL, *chname = NULL, *filename = NULL, *moviename = NULL, *link = NULL;
 	struct epg* epgnode = NULL;
 	struct service* servicenode = NULL;
+	
 	
 	if(type == 1)
 	{
