@@ -145,7 +145,7 @@ void streamthreadfunc(struct stimerthread* timernode)
 						debug(250, "stream serviceid = %d, transponderid = %llu", serviceid, transponderid);
 						chnode = getchannel(serviceid, transponderid);
 
-						if(status.lastservice->channel != chnode && getconfigint("streamzapping", NULL) == 1)
+						if(status.lastservice->channel != chnode && getconfigint("streamzapping", NULL) == 1 && chnode->streamurl == NULL)
 							servicecheckret(servicestart(chnode, NULL, NULL, 5), 0);
 #ifndef MIPSEL
 						ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);

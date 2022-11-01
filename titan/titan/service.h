@@ -149,7 +149,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	status.aktservice->channel = chnode;
 	status.aktservice->type = CHANNEL;
 	if(status.epgthread != NULL) status.epgthread->aktion = PAUSE;
-
 	if(flag == 0 && status.aktservice->type == CHANNEL)
 		changechannellist(chnode, channellist);
 
@@ -823,6 +822,7 @@ struct service* getservice(int type, int flag)
 //flag 2: from timeshift/player
 //flag 3: same as 0 but no akttolast
 //flag 4: showiframe
+//flag 5: same as 1 but no akttolast and not clear node->type
 int servicestop(struct service *node, int clear, int flag)
 {
 	int rcret = 0;
@@ -858,10 +858,9 @@ int servicestop(struct service *node, int clear, int flag)
 		if(status.epgthread != NULL) status.epgthread->aktion = PAUSE;
 		subtitlestop(0);
 
-
 		if(node->type == CHANNEL && flag < 2) akttolast();
 
-		if(flag != 2) node->type = NOTHING;
+		if(flag != 2 && flag != 5) node->type = NOTHING;
 		if(flag == 4) node->type = STILLPIC;
 	
 		audiostop(node->audiodev);
@@ -895,6 +894,7 @@ int servicestop(struct service *node, int clear, int flag)
 		int	fastzap = getconfigint("fastzap", NULL);
 
 		if(flag == 3) flag = 0;
+		if(flag == 5) flag = 1;
 		if(flag == 4 || flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
 		{
 			audioclose(node->audiodev, -1);

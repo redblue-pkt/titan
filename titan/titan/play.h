@@ -2361,7 +2361,7 @@ void streamplayer(struct channel* chnode, int flag)
     addconfigtmp("playerbuffersize", "0");
     addconfigtmp("playerbufferseektime", "0");
 //    if(/*status.play != 2 && getconfigint("lastplayertype", NULL) == 0 && */checkbox("DM900") == 1)
-        servicestop(status.aktservice, 1, 1);
+        servicestop(status.aktservice, 1, 5);
     playerstart(chnode->streamurl);
     status.play = 2;
     delconfigtmp("playerbuffersize");
