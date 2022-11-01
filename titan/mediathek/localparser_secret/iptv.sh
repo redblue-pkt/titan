@@ -18,8 +18,8 @@ case $2 in
 	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
 		if [ -z "$FILENAME" ]; then FILENAME=none;fi
 		PICNAME="$FILENAME"
-		if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_iptvurl= | wc -l` -eq 1 ];then
-			URL=$(cat /mnt/config/titan.cfg | grep "tithek_kinox_iptvurl=" | sed -nr 's/.*tithek_kinox_iptvurl=([^=]+).*/\1/p') 
+		if [ `cat /mnt/config/titan.cfg | grep tithek_iptvurl= | wc -l` -eq 1 ];then
+			URL=$(cat /mnt/config/titan.cfg | grep "tithek_iptvurl=" | sed -nr 's/.*tithek_iptvurl=([^=]+).*/\1/p') 
 		else
 			URL="http://dummy.url"
 		fi
