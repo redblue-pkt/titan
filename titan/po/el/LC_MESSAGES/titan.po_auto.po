@@ -3498,7 +3498,7 @@ msgstr ""
 msgid "Clear before scan"
 msgstr ""
 
-#: rectimer.h:1578 rectimer.h:1580
+#: rectimer.h:1586 rectimer.h:1588
 msgid "Clear list"
 msgstr ""
 
@@ -4896,7 +4896,7 @@ msgstr ""
 msgid "EPG Scan Log"
 msgstr ""
 
-#: rectimer.h:577
+#: rectimer.h:585
 msgid "EPG Scan activate standby?"
 msgstr ""
 
@@ -5081,7 +5081,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
 #: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:427 record.h:1240 record.h:1828 rectimer.h:577 rectimer.h:1405
+#: record.h:427 record.h:1240 record.h:1828 rectimer.h:585 rectimer.h:1413
 #: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41
@@ -5338,7 +5338,7 @@ msgstr ""
 msgid "Ergebnis"
 msgstr ""
 
-#: rectimer.h:1405 rectimer.h:1417
+#: rectimer.h:1413 rectimer.h:1425
 msgid "Error"
 msgstr ""
 
@@ -6187,7 +6187,7 @@ msgstr ""
 msgid "Fri"
 msgstr ""
 
-#: global.h:6889 global.h:6899 rectimer.h:1104 skin_default_skin.xml.h:231
+#: global.h:6889 global.h:6899 rectimer.h:1112 skin_default_skin.xml.h:231
 #: skins_0acht5zehn_skin.xml.h:266 skins_atemio_skin.xml.h:263
 #: skins_cool_skin.xml.h:318 skins_default_skin.xml.h:231
 #: skins_kravenhd_skin.xml.h:241 skins_megastyleblue_skin.xml.h:319
@@ -9102,7 +9102,7 @@ msgstr ""
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
 #: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
 #: readerconfig.h:498 record.h:427 record.h:1240 record.h:1563 record.h:1828
-#: record.h:1864 rectimer.h:577 rectimer.h:1258 restoredefault.h:10
+#: record.h:1864 rectimer.h:585 rectimer.h:1266 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -9285,7 +9285,7 @@ msgstr "Module"
 msgid "Mon"
 msgstr ""
 
-#: global.h:6885 global.h:6895 rectimer.h:1100 skin_default_skin.xml.h:398
+#: global.h:6885 global.h:6895 rectimer.h:1108 skin_default_skin.xml.h:398
 #: skins_0acht5zehn_skin.xml.h:372 skins_atemio_skin.xml.h:370
 #: skins_cool_skin.xml.h:437 skins_default_skin.xml.h:398
 #: skins_kravenhd_skin.xml.h:396 skins_megastyleblue_skin.xml.h:439
@@ -10019,8 +10019,8 @@ msgstr ""
 #: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
 #: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
 #: readerconfig.h:451 readerconfig.h:452 readerconfig.h:497 readerconfig.h:498
-#: record.h:427 record.h:1240 record.h:1563 record.h:1864 rectimer.h:577
-#: rectimer.h:1258 rectimer.h:1405 rectimer.h:1417 restoredefault.h:10
+#: record.h:427 record.h:1240 record.h:1563 record.h:1864 rectimer.h:585
+#: rectimer.h:1266 rectimer.h:1413 rectimer.h:1425 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
 #: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
@@ -12800,7 +12800,7 @@ msgstr ""
 msgid "STOP"
 msgstr "Διακοπή της εκκίνησης"
 
-#: rectimer.h:1567 rectimer.h:1569 skin_default_skin.xml.h:646
+#: rectimer.h:1575 rectimer.h:1577 skin_default_skin.xml.h:646
 #: skins_atemio_skin.xml.h:614 skins_default_skin.xml.h:646
 #: skins_kravenhd_skin.xml.h:655 skins_metrixhd_skin.xml.h:631
 #: skins_nogfx_skin.xml.h:578 skins_sevenhd_skin.xml.h:585
@@ -12972,7 +12972,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: global.h:6890 global.h:6900 rectimer.h:1105 skin_default_skin.xml.h:557
+#: global.h:6890 global.h:6900 rectimer.h:1113 skin_default_skin.xml.h:557
 #: skins_0acht5zehn_skin.xml.h:532 skins_atemio_skin.xml.h:528
 #: skins_cool_skin.xml.h:627 skins_default_skin.xml.h:557
 #: skins_kravenhd_skin.xml.h:565 skins_megastyleblue_skin.xml.h:629
@@ -14616,7 +14616,7 @@ msgstr ""
 msgid "Sun"
 msgstr ""
 
-#: global.h:6891 global.h:6901 rectimer.h:1106 skin_default_skin.xml.h:656
+#: global.h:6891 global.h:6901 rectimer.h:1114 skin_default_skin.xml.h:656
 #: skins_0acht5zehn_skin.xml.h:616 skins_atemio_skin.xml.h:621
 #: skins_cool_skin.xml.h:734 skins_default_skin.xml.h:656
 #: skins_kravenhd_skin.xml.h:666 skins_megastyleblue_skin.xml.h:736
@@ -15281,7 +15281,7 @@ msgstr ""
 msgid "Thumbnails"
 msgstr ""
 
-#: global.h:6888 global.h:6898 rectimer.h:1103 skin_default_skin.xml.h:678
+#: global.h:6888 global.h:6898 rectimer.h:1111 skin_default_skin.xml.h:678
 #: skins_0acht5zehn_skin.xml.h:694 skins_atemio_skin.xml.h:644
 #: skins_cool_skin.xml.h:759 skins_default_skin.xml.h:678
 #: skins_kravenhd_skin.xml.h:685 skins_megastyleblue_skin.xml.h:761
@@ -15962,7 +15962,7 @@ msgstr ""
 msgid "Tue"
 msgstr ""
 
-#: global.h:6886 global.h:6896 rectimer.h:1101 skin_default_skin.xml.h:714
+#: global.h:6886 global.h:6896 rectimer.h:1109 skin_default_skin.xml.h:714
 #: skins_0acht5zehn_skin.xml.h:728 skins_atemio_skin.xml.h:680
 #: skins_cool_skin.xml.h:795 skins_default_skin.xml.h:714
 #: skins_kravenhd_skin.xml.h:722 skins_megastyleblue_skin.xml.h:797
@@ -16941,7 +16941,7 @@ msgstr ""
 msgid "Wed"
 msgstr ""
 
-#: global.h:6887 global.h:6897 rectimer.h:1102 skin_default_skin.xml.h:767
+#: global.h:6887 global.h:6897 rectimer.h:1110 skin_default_skin.xml.h:767
 #: skins_0acht5zehn_skin.xml.h:783 skins_atemio_skin.xml.h:735
 #: skins_cool_skin.xml.h:868 skins_default_skin.xml.h:767
 #: skins_kravenhd_skin.xml.h:772 skins_megastyleblue_skin.xml.h:869
@@ -17495,7 +17495,7 @@ msgid "ausgehende Anrufe"
 msgstr ""
 
 #: adjust.h:167 autotimer.c:479 autotimer.c:512 avsettings.h:74
-#: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:124 rectimer.h:1206
+#: fancontrol.h:108 httpdfunc.h:4427 httpdsettings.h:124 rectimer.h:1214
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
 #: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
@@ -17797,7 +17797,7 @@ msgstr ""
 msgid "d"
 msgstr ""
 
-#: rectimer.h:1093
+#: rectimer.h:1101
 msgid "daily"
 msgstr ""
 
@@ -18049,7 +18049,7 @@ msgstr ""
 msgid "epgsettings"
 msgstr ""
 
-#: rectimer.h:1539
+#: rectimer.h:1547
 msgid "error"
 msgstr "Errorboot"
 
@@ -18789,8 +18789,8 @@ msgstr "NFS server"
 #: panel_settings_autostart.h:360 panel_settings_overclocking.h:214
 #: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
 #: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
-#: readerconfig.h:254 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120
-#: rectimer.h:1125 rectimer.h:1130 rectimer.h:1135 rectimer.h:1140 scan.h:2037
+#: readerconfig.h:254 rectimer.h:1118 rectimer.h:1123 rectimer.h:1128
+#: rectimer.h:1133 rectimer.h:1138 rectimer.h:1143 rectimer.h:1148 scan.h:2037
 #: scan.h:2520 scan.h:2524 scan.h:2528 scan.h:2532 scan.h:2537 scan.h:2545
 #: scan.h:2549 scan.h:2553 scan.h:2557 screensaveradjust.h:19
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
@@ -18856,12 +18856,12 @@ msgstr ""
 msgid "north"
 msgstr ""
 
-#: rectimer.h:566
+#: rectimer.h:574
 msgid "not started akttime higher than timer endtime"
 msgstr ""
 
 #: adjust.h:168 autotimer.c:480 autotimer.c:513 epgsettings.h:216
-#: httpdfunc.h:4434 rectimer.h:1207
+#: httpdfunc.h:4434 rectimer.h:1215
 msgid "nothing"
 msgstr ""
 
@@ -18963,7 +18963,7 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: rectimer.h:1080 rectimer.h:1498 rectimer.h:1509
+#: rectimer.h:1088 rectimer.h:1506 rectimer.h:1517
 msgid "once"
 msgstr ""
 
@@ -19154,7 +19154,7 @@ msgid "possetup"
 msgstr ""
 
 #: adjust.h:170 autotimer.c:482 autotimer.c:515 httpdfunc.h:4448
-#: rectimer.h:1209 stopifnotused.c:111
+#: rectimer.h:1217 stopifnotused.c:111
 msgid "power off"
 msgstr "Σβήσιμο"
 
@@ -19277,11 +19277,11 @@ msgstr ""
 msgid "ready"
 msgstr ""
 
-#: rectimer.h:1495
+#: rectimer.h:1503
 msgid "rec"
 msgstr ""
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:593 rectimer.h:1069
+#: autotimer.c:475 autotimer.c:508 harddisk.h:593 rectimer.h:1077
 msgid "record"
 msgstr "Διαδρομή φακέλλου εγγραφών"
 
@@ -19337,7 +19337,7 @@ msgstr ""
 msgid "rename service"
 msgstr ""
 
-#: rectimer.h:1081 rectimer.h:1500 rectimer.h:1511
+#: rectimer.h:1089 rectimer.h:1508 rectimer.h:1519
 msgid "repeat"
 msgstr ""
 
@@ -19404,7 +19404,7 @@ msgstr ""
 msgid "rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp"
 msgstr ""
 
-#: audiotrack.h:50 play.h:278 play.h:286 rectimer.h:1535 subtitle.h:1624
+#: audiotrack.h:50 play.h:278 play.h:286 rectimer.h:1543 subtitle.h:1624
 msgid "running"
 msgstr ""
 
@@ -19790,7 +19790,7 @@ msgid "stable"
 msgstr "Απενεργοποίηση"
 
 #: adjust.h:169 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4441 rectimer.h:1208 sispmctl.h:688 sispmctl.h:702
+#: httpdfunc.h:4441 rectimer.h:1216 sispmctl.h:688 sispmctl.h:702
 #: sispmctl.h:732 sispmctl.h:746 sispmctl.h:776 sispmctl.h:790 sispmctl.h:820
 #: sispmctl.h:834 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
@@ -19865,7 +19865,7 @@ msgstr ""
 msgid "stop"
 msgstr "Διακοπή της εκκίνησης"
 
-#: rectimer.h:684
+#: rectimer.h:692
 msgid "stopped from user"
 msgstr ""
 
@@ -19886,7 +19886,7 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-#: rectimer.h:1537
+#: rectimer.h:1545
 msgid "success"
 msgstr ""
 
@@ -19894,11 +19894,11 @@ msgstr ""
 msgid "swap"
 msgstr "Swap"
 
-#: rectimer.h:1506
+#: rectimer.h:1514
 msgid "switch"
 msgstr "Εναλλαγή"
 
-#: autotimer.c:476 autotimer.c:509 rectimer.h:1070
+#: autotimer.c:476 autotimer.c:509 rectimer.h:1078
 msgid "switch channel"
 msgstr "Επιλογή καναλιού εκκίνησης"
 
@@ -20641,7 +20641,7 @@ msgstr ""
 msgid "useproxy"
 msgstr "use proxy"
 
-#: lnbconfig.h:149 rectimer.h:1096
+#: lnbconfig.h:149 rectimer.h:1104
 msgid "user defined"
 msgstr "Όνομα χρήστη"
 
@@ -20763,7 +20763,7 @@ msgstr ""
 msgid "wait for stopping download"
 msgstr ""
 
-#: rectimer.h:1533
+#: rectimer.h:1541
 msgid "waiting"
 msgstr ""
 
@@ -20775,7 +20775,7 @@ msgstr ""
 msgid "webdir"
 msgstr ""
 
-#: rectimer.h:1094
+#: rectimer.h:1102
 msgid "weekly"
 msgstr ""
 
@@ -20835,7 +20835,7 @@ msgstr ""
 msgid "wlansettings"
 msgstr ""
 
-#: rectimer.h:1095
+#: rectimer.h:1103
 msgid "workdays"
 msgstr ""
 
@@ -20940,9 +20940,9 @@ msgstr ""
 #: panel_settings_autostart.h:337 panel_settings_autostart.h:351
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:110 pin.h:182 pin.h:200 play.h:581
-#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1111 rectimer.h:1116
-#: rectimer.h:1121 rectimer.h:1126 rectimer.h:1131 rectimer.h:1136
-#: rectimer.h:1141 scan.h:2038 scan.h:2521 scan.h:2525 scan.h:2529 scan.h:2533
+#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1119 rectimer.h:1124
+#: rectimer.h:1129 rectimer.h:1134 rectimer.h:1139 rectimer.h:1144
+#: rectimer.h:1149 scan.h:2038 scan.h:2521 scan.h:2525 scan.h:2529 scan.h:2533
 #: scan.h:2536 scan.h:2546 scan.h:2550 scan.h:2554 scan.h:2558
 #: screensaveradjust.h:20 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
