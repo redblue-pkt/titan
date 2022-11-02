@@ -278,10 +278,10 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 			printf( "Fork failed\n" ) ;
 			return 1 ;
 		}
+//------------------------------Child process----------------------------------------------------------------		
 		debug(250, "start PID: %d",pid);
 		if( pid == 0 )
 		{
-			// ------------ Child process
 			debug(250, "start %s",cmd);
 			while( 1 )
 			{
@@ -294,7 +294,7 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 			}
 			return -1 ;
 		}
-		// ------------ Parent process
+//-------------------------------Parent process---------------------------------------------------------------
 		printf( "Main program\n" ) ;
 		while(timernode->aktion != STOP && servicenode->recendtime != 2)
 		{
@@ -304,20 +304,8 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 		
 		if(servicenode->type == RECORDTIMER)
 		{
-			m_lock(&status.rectimermutex, 1);
-			struct rectimer* rectimernode = getrectimerbyservice(servicenode);
-			if(rectimernode != NULL)
-			{
-				rectimernode->status = 3;
-				free(rectimernode->errstr);
-				//rectimernode->errstr = ostrcat(retstr, NULL, 0, 0);
-				rectimernode->errstr = NULL;
-				status.writerectimer = 1;
-				writerectimer(getconfig("rectimerfile", NULL), 1);
-			}
-			m_unlock(&status.rectimermutex, 1);
+			recordstop(servicenode, 0);
 		}
-		//free(retstr); retstr = NULL;
 
 		printf( "\nKilling record\n" ) ;
 		debug(250, "kill PID: %d",pid);

@@ -529,6 +529,7 @@ struct service* getrecordbyname(char* recname, int type);
 int recordskipplay(struct service* servicenode, int sekunden);
 void recordffrwts(struct service* servicenode, int speed);
 char* recordcreatefilename(char* path, char* channelname, char* moviename, int type);
+void recordstop(struct service* node, int ret);
 
 //dvdplayer.h
 int dvdstart(char* filename);
