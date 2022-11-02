@@ -1818,7 +1818,12 @@ void screenrecorddirect()
 			epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
 #ifndef SIMULATE
 			if(epgnode != NULL && epgnode->endtime > time(NULL))
-				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, epgnode->endtime, NULL);
+			{
+				if(status.aktservice->channel->streamurl == NULL)
+					ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, epgnode->endtime, NULL);
+				else
+					ret = streamrecord(1, status.aktservice->channel, epgnode->endtime);
+			}
 			else
 				textbox(_("Message"), _("Can't get EPG time or EPG endtime not ok"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 #else
@@ -1831,7 +1836,7 @@ void screenrecorddirect()
 			if(status.aktservice->channel->streamurl == NULL)
 				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
 			else
-				ret = streamrecord(2, status.aktservice->channel);
+				ret = streamrecord(2, status.aktservice->channel, 0);
 			newstart = 1;
 		}
 		if(ostrcmp(mbox->name, _("add recording (enter duration)")) == 0)
@@ -1840,8 +1845,16 @@ void screenrecorddirect()
 
 			if(ret1 > 0)
 			{
-				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, time(NULL) + (ret1 * 60), NULL);
-				newstart = 1;
+				if(status.aktservice->channel->streamurl == NULL)
+				{
+					ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, time(NULL) + (ret1 * 60), NULL);
+					newstart = 1;
+				}
+				else
+				{
+					ret = streamrecord(3, status.aktservice->channel, time(NULL) + (ret1 * 60));
+					newstart = 1;
+				}
 			}
 		}
 
