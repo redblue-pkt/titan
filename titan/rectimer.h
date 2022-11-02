@@ -537,7 +537,15 @@ void checkrectimer(struct stimerthread* self)
 			}
 			else
 			{
-				ret = recordstart(chnode, -1, 0, RECTIMER, node->end, node);
+				
+				if(chnode->streamurl == NULL)
+				{
+					ret = recordstart(chnode, -1, 0, RECTIMER, node->end, node);
+				}
+				else
+				{				
+					ret = streamrecord(1, chnode, RECORDTIMER, node->end, node);
+				}
 				if(ret == 14) ret = 0;
 			}
 

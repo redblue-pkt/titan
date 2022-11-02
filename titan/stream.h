@@ -49,7 +49,7 @@ void streamthreadfunc(struct stimerthread* timernode)
 {
 	struct timeval timeout;
 	fd_set rfds;
-	int ret = 0, streamfd = -1, connfd = -1, filefd = -1, serviceid = 0;
+	int ret = 0, streamfd = -1, connfd = -1, filefd = -1, serviceid = 0, zap = 0;
 	uint64_t transponderid = 0;
 	unsigned char* buf = NULL;
 	char* tmpstr = NULL, *filename = NULL;
@@ -145,7 +145,17 @@ void streamthreadfunc(struct stimerthread* timernode)
 						debug(250, "stream serviceid = %d, transponderid = %llu", serviceid, transponderid);
 						chnode = getchannel(serviceid, transponderid);
 
-						if(status.lastservice->channel != chnode && getconfigint("streamzapping", NULL) == 1 && chnode->streamurl == NULL)
+						zap = 0;
+						if(ostrncmp("http://127.0.0.1:17999/", chnode->streamurl, 23) == 0)
+						{
+							if(fegetfree(chnode->transponder, 2, NULL, chnode) == NULL)
+							{
+								printf("kein freier Tuner... zwangszap\n");
+								servicecheckret(servicestart(chnode, NULL, NULL, 5), 0);
+								zap = 1;
+							}
+						}
+						if(status.aktservice->channel != chnode && getconfigint("streamzapping", NULL) == 1 && zap == 0)
 							servicecheckret(servicestart(chnode, NULL, NULL, 5), 0);
 #ifndef MIPSEL
 						ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);
@@ -239,10 +249,10 @@ void streamthreadfunc(struct stimerthread* timernode)
 
 int streamrecordrun(struct stimerthread* timernode, struct service* servicenode, char* link)
 {    
-  char* cmd = NULL;
-  char* token;
-  char* token2;
-  char* ret = NULL;
+	char* cmd = NULL;
+	char* token;
+	char* token2;
+	char* ret = NULL;
 
 	ret = strstr(link, "|User-Agent=");
 	if(ret != NULL)
@@ -253,79 +263,120 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 		token = strtok( link, "|" );
 		printf("Token: %s\n", token);
 	}
-   
-   struct sigaction sigchld_action = {
-        .sa_handler = SIG_DFL,
-        .sa_flags = SA_NOCLDWAIT
-    };
-    sigaction( SIGCHLD, &sigchld_action, NULL ) ;
+	 
+	 struct sigaction sigchld_action = {
+				.sa_handler = SIG_DFL,
+				.sa_flags = SA_NOCLDWAIT
+		};
+		sigaction( SIGCHLD, &sigchld_action, NULL ) ;
 
 		debug(250, "start streamrecordrun");
-    
-    int pid = fork() ;
-    if( pid < 0 )
-    {
-      printf( "Fork failed\n" ) ;
-      return 1 ;
-    }
-    debug(250, "start PID: %d",pid);
-    if( pid == 0 )
-    {
-      // ------------ Child process
-	    debug(250, "start %s",cmd);
-      while( 1 )
-      {
-      	if(ret == NULL) 
-      		execl("/usr/bin/curl", "curl", link, "-o", servicenode->recname, NULL);
-      	else
-      		execl("/usr/bin/curl", "curl", token, "-A", token2, "-o", servicenode->recname, NULL);
-      	debug(250, "ERROR start curl");
-      	sleep(1);
-      }
-      return 0 ; //never reached
-    }
-    // ------------ Parent process
-    printf( "Main program\n" ) ;
-    while(timernode->aktion != STOP && servicenode->recendtime != 2 && servicenode->recendtime > time(NULL))
+		
+		int pid = fork() ;
+		if( pid < 0 )
 		{
-    	sleep(1);
-    }
-    printf( "\nKilling child\n" ) ;
-    debug(250, "kill PID: %d",pid);
-    kill( pid, SIGTERM ) ;
+			printf( "Fork failed\n" ) ;
+			return 1 ;
+		}
+		debug(250, "start PID: %d",pid);
+		if( pid == 0 )
+		{
+			// ------------ Child process
+			debug(250, "start %s",cmd);
+			while( 1 )
+			{
+				if(ret == NULL) 
+					execl("/usr/bin/curl", "curl", link, "-o", servicenode->recname, NULL);
+				else
+					execl("/usr/bin/curl", "curl", token, "-A", token2, "-o", servicenode->recname, NULL);
+				debug(250, "ERROR start curl");
+				break;
+			}
+			return -1 ;
+		}
+		// ------------ Parent process
+		printf( "Main program\n" ) ;
+		while(timernode->aktion != STOP && servicenode->recendtime != 2)
+		{
+			if(servicenode->recendtime > 2 && servicenode->recendtime < time(NULL)) break;
+			sleep(1);
+		}
+		
+		if(servicenode->type == RECORDTIMER)
+		{
+			m_lock(&status.rectimermutex, 1);
+			struct rectimer* rectimernode = getrectimerbyservice(servicenode);
+			if(rectimernode != NULL)
+			{
+				rectimernode->status = 3;
+				free(rectimernode->errstr);
+				//rectimernode->errstr = ostrcat(retstr, NULL, 0, 0);
+				rectimernode->errstr = NULL;
+				status.writerectimer = 1;
+				writerectimer(getconfig("rectimerfile", NULL), 1);
+			}
+			m_unlock(&status.rectimermutex, 1);
+		}
+		//free(retstr); retstr = NULL;
+
+		printf( "\nKilling record\n" ) ;
+		debug(250, "kill PID: %d",pid);
+		kill( pid, SIGTERM ) ;
 		free(cmd), cmd = NULL;
 		status.recording--;
 		delservice(servicenode, 0);
-    debug(250, "ende streamrecordrun");
-    return 0 ;
+		debug(250, "ende streamrecordrun");
+		return 0 ;
 }
 
 
-int streamrecord(int type, struct channel* chnode, time_t endtime)
+int streamrecord(int art, struct channel* chnode, int type, time_t endtime, struct rectimer* rectimernode)
 {
 	char* path = NULL, *chname = NULL, *filename = NULL, *moviename = NULL, *link = NULL;
 	struct epg* epgnode = NULL;
 	struct service* servicenode = NULL;
 	
-	path = getconfig("rec_path", NULL);
-	if(chnode != NULL)
-	{
-		chname = strstrip(chnode->name);
-		delspezchar(chname, 2);
-	}
-	epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
-	if(epgnode != NULL)
-	{
-		moviename = strstrip(epgnode->title);
-		delspezchar(moviename, 2);
-	}
 	link = chnode->streamurl;
+	
+	if(rectimernode == NULL)
+	{
+		path = getconfig("rec_path", NULL);
+		if(chnode != NULL)
+		{
+			chname = strstrip(chnode->name);
+			delspezchar(chname, 2);
+		}
+		epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
+		if(epgnode != NULL)
+		{
+			moviename = strstrip(epgnode->title);
+			delspezchar(moviename, 2);
+		}
+	}
+	else
+	{
+		if(rectimernode != NULL && rectimernode->recpath != NULL)
+			path = rectimernode->recpath;
+		else
+			path = getconfig("rec_timerpath", NULL);
+		if(chnode != NULL)
+		{
+			chname = strstrip(chnode->name);
+			delspezchar(chname, 2);
+		}
+		if(rectimernode != NULL && rectimernode->name != NULL)
+		{
+			moviename = strstrip(rectimernode->name);
+			delspezchar(moviename, 2);
+		}
+	}
 	filename = recordcreatefilename(path, chname, moviename, RECORDSTREAM);
 	servicenode = addservice(NULL);
+	if(rectimernode != NULL) rectimernode->servicenode = servicenode;
 	servicenode->recname = ostrcat(filename, NULL, 0, 0);
-	servicenode->type = RECORDDIRECT;
+	servicenode->type = type;
 	
-	if(type == 1)
+	if(art == 1)
 	{
 		debug(250, "start record.. stop after current event");
 		servicenode->recendtime = endtime;
@@ -333,14 +384,14 @@ int streamrecord(int type, struct channel* chnode, time_t endtime)
 		status.recording++;
 		addtimer(&streamrecordrun, START, 1000, 1, (void*)servicenode, (void*)link, NULL);
 	}
-	else if(type == 2)
+	else if(art == 2)
 	{
 		debug(250, "start record.. direct");
 		servicenode->recendtime = 1;
 		status.recording++;
 		addtimer(&streamrecordrun, START, 1000, 1, (void*)servicenode, (void*)link, NULL);
 	}
-	else if(type == 3)
+	else if(art == 3)
 	{
 		debug(250, "start record.. enter duration");
 		servicenode->recendtime = endtime;
