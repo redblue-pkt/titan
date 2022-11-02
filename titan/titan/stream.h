@@ -286,7 +286,7 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
     }
     // ------------ Parent process
     printf( "Main program\n" ) ;
-    while(timernode->aktion != STOP && servicenode->recendtime != 2)
+    while(timernode->aktion != STOP && servicenode->recendtime != 2 && servicenode->recendtime > time(NULL))
 		{
     	sleep(1);
     }
@@ -301,44 +301,52 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 }
 
 
-int streamrecord(int type, struct channel* chnode)
+int streamrecord(int type, struct channel* chnode, time_t endtime)
 {
 	char* path = NULL, *chname = NULL, *filename = NULL, *moviename = NULL, *link = NULL;
 	struct epg* epgnode = NULL;
 	struct service* servicenode = NULL;
 	
+	path = getconfig("rec_path", NULL);
+	if(chnode != NULL)
+	{
+		chname = strstrip(chnode->name);
+		delspezchar(chname, 2);
+	}
+	epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
+	if(epgnode != NULL)
+	{
+		moviename = strstrip(epgnode->title);
+		delspezchar(moviename, 2);
+	}
+	link = chnode->streamurl;
+	filename = recordcreatefilename(path, chname, moviename, RECORDSTREAM);
+	servicenode = addservice(NULL);
+	servicenode->recname = ostrcat(filename, NULL, 0, 0);
+	servicenode->type = RECORDDIRECT;
 	
 	if(type == 1)
 	{
 		debug(250, "start record.. stop after current event");
-	}
-	else if(type == 2)
-	{
-		debug(250, "start record.. direct");
-		path = getconfig("rec_path", NULL);
-		if(chnode != NULL)
-		{
-			chname = strstrip(chnode->name);
-			delspezchar(chname, 2);
-		}
-		epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
-		if(epgnode != NULL)
-		{
-			moviename = strstrip(epgnode->title);
-			delspezchar(moviename, 2);
-		}
-		link = chnode->streamurl;
-		filename = recordcreatefilename(path, chname, moviename, RECORDSTREAM);
-		servicenode = addservice(NULL);
-		servicenode->recname = ostrcat(filename, NULL, 0, 0);
-		servicenode->type = RECORDDIRECT;
-		servicenode->recendtime = 1;
+		servicenode->recendtime = endtime;
+		servicenode->reccount = 1;
 		status.recording++;
 		addtimer(&streamrecordrun, START, 1000, 1, (void*)servicenode, (void*)link, NULL);
 	}
 	else if(type == 2)
 	{
+		debug(250, "start record.. direct");
+		servicenode->recendtime = 1;
+		status.recording++;
+		addtimer(&streamrecordrun, START, 1000, 1, (void*)servicenode, (void*)link, NULL);
+	}
+	else if(type == 3)
+	{
 		debug(250, "start record.. enter duration");
+		servicenode->recendtime = endtime;
+		servicenode->reccount = 1;
+		status.recording++;
+		addtimer(&streamrecordrun, START, 1000, 1, (void*)servicenode, (void*)link, NULL);
 	}
 		
 	return 0;
