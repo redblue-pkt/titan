@@ -1933,12 +1933,10 @@ void servicebouquets_update(int flag)
 
 	cmd = ostrcat(cmd, "ls -1 /mnt/settings/bouquets.tithek.autoupdate.*", 1, 0);
     debug(202, "cmd: %s", cmd);
-    printf("servicebouquets_update cmd: %s\n", cmd);
 
 	tmpstr1 = command(cmd);
     free(cmd), cmd= NULL;
     debug(202, "tmpstr1: %s", tmpstr1);
-    printf("servicebouquets_update tmpstr1: %s\n", tmpstr1);
 //	tmpstr = readfiletomem(filename, 1);
 
     if(tmpstr1 != NULL)
@@ -1958,16 +1956,14 @@ void servicebouquets_update(int flag)
 			int i2 = 0;
 			tmpstr2 = ostrcat((&ret1[i])->part, NULL, 0, 0);
             debug(202, "tmpstr2: %s", tmpstr2);
-            printf("servicebouquets_update tmpstr2: %s\n", tmpstr2);
 
             tmpstr2 = string_replace_all("/mnt/settings/bouquets.tithek.autoupdate.", "", tmpstr2, 1);
-            printf("servicebouquets_update tmpstr2a: %s\n", tmpstr2);
+            debug(202, "tmpstr2a: %s", tmpstr2);
 
 			tmpstr3 = ostrcat(tmpstr2, NULL, 0, 0);
             tmpstr3 = string_replace_all(".tv", "", tmpstr3, 1);
             tmpstr3 = stringreplacecharonce(tmpstr3, '.', '-');
             debug(202, "tmpstr3: %s", tmpstr3);
-            printf("servicebouquets_update tmpstr3: %s\n", tmpstr3);
 
 			ret2 = strsplit(tmpstr2, ".", &count2);
             if(ret2 != NULL && count2 >= 3)
@@ -1978,7 +1974,6 @@ void servicebouquets_update(int flag)
                 string_tolower(localparser);
                 localparser = ostrcat(localparser, ".sh", 1, 0);
                 debug(202, "localparser: %s", localparser);
-                printf("servicebouquets_update channellist localparser: %s\n", localparser);
 
 	            if(!file_exist("/tmp/localhoster"))
 		            localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 2);
@@ -1992,11 +1987,9 @@ void servicebouquets_update(int flag)
 //                    cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
 
                     debug(202, "cmd2: %s", cmd);
-                    printf("servicebouquets_update cmd2: %s\n", cmd);
 
                     tmpstr = command(cmd);
                     debug(202, "tmpstr: %s", tmpstr);
-                    printf("servicebouquets_update tmpstr: %s\n", tmpstr);
 
                     free(cmd), cmd = NULL;
                     cmd = ostrcat(cmd, tmpstr, 1, 1);
@@ -2007,10 +2000,10 @@ void servicebouquets_update(int flag)
                         cmd = string_replace_all(" search ", " update_service_bouquets ", cmd, 1);
 
                     cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
-                    printf("servicebouquets_update cmd3: %s\n", cmd);
+                    debug(202, "cmd3: %s", cmd);
 
                     tmpstr = command(cmd);
-                    printf("servicebouquets_update tmpstr: %s\n", tmpstr);
+                    debug(202, "tmpstr: %s", tmpstr);
 
                     free(cmd), cmd = NULL;
                     updated++;
@@ -2029,7 +2022,6 @@ void servicebouquets_update(int flag)
             if(getconfigint("tithek_vavoo_servicebouquets_autoupdate_msg", NULL) == 1)
         		textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 5, 2);
 	        debug(202, "%s", tmpstr2);
-            printf("servicebouquets_update channellist: %s\n", tmpstr2);
 		    drawscreen(skin, 0, 0);
             free(tmpstr2), tmpstr2 = NULL;
 
@@ -2037,7 +2029,9 @@ void servicebouquets_update(int flag)
             free(tmpstr3), tmpstr3 = NULL;
         }
         else
-            printf("servicebouquets_update channellist: channellist unchanged\n%s\n", tmpstr);
+        {
+            debug(202, "channellist unchanged\n%s", tmpstr);
+		}
         free(tmpstr), tmpstr = NULL;
     }
 }

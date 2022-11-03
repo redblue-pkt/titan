@@ -276,6 +276,7 @@ struct mostzap* createmostzap(int serviceid, uint64_t transponderid);
 int writemostzap(const char *filename);
 int delmostzap(int serviceid, uint64_t transponderid, int flag);
 void mostzaptobouquet(struct mainbouquet* mbouquet);
+void freemostzap(int flag);
 
 //thumb.h
 char* checkthumb(char* path, char* file);
@@ -515,6 +516,7 @@ int moveproviderup(struct provider* node);
 struct provider* sortprovider();
 void freeprovider();
 int readprovider(const char* filename);
+struct provider* getprovider(int providerid);
 
 //httpd.h
 void httpdthreadfunc(struct stimerthread* timernode);

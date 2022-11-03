@@ -8782,51 +8782,47 @@ void servicebouquetsthread(struct stimerthread* timernode, int flag)
 		        startplugin(flag);
 	        }
         }
-/*
-        if(getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
-    		textbox(_("Message"), _("Titan will be reloaded Channellist!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1000, 200, 0, 0);
-	    debug(202, "Titan will be reloaded channellist!");
-        freesat();
-        freeallbouquet();
-        freemainbouquet(0);
-        freechannel(0);
-        freetransponder();
-        freeprovider();
-        ret = readsat(getconfig("satfile", NULL));
-        ret = readtransponder(getconfig("transponderfile", NULL));
-        ret = readprovider(getconfig("providerfile", NULL));
-        ret = readchannel(getconfig("channelfile", NULL));
-        ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
-        ret = readmainbouquet(getconfig("bouquetfile", NULL));
-        ret = readallbouquet();
-*/
     }
 }
 
 void reloadsettings(char* input)
 {
     int ret = 0;
+	char* tmpstr = NULL;
 
+	freemostzap(0);
+	//clear akt and last channel, so all channel can delete
+	freechannelhistory();
+	status.lastservice->channel = NULL;
+//	status.aktservice->channel = NULL;
+	
     freesat();
     freeallbouquet();
     freemainbouquet(0);
     freechannel(0);
     freetransponder();
     freeprovider();
+
     ret = readsat(getconfig("satfile", NULL));
-    printf("servicebouquets_update ret1: %d\n", ret);
+    debug(202, "ret1: %d", ret);
+
     ret = readtransponder(getconfig("transponderfile", NULL));
-    printf("servicebouquets_update ret2: %d\n", ret);
+    debug(202, "ret2: %d", ret);
+
     ret = readprovider(getconfig("providerfile", NULL));
-    printf("servicebouquets_update ret3: %d\n", ret);
+    debug(202, "ret3: %d", ret);
+
     ret = readchannel(getconfig("channelfile", NULL));
-    printf("servicebouquets_update ret4: %d\n", ret);
+    debug(202, "ret4: %d", ret);
+
     ret = readtransponderencoding(getconfig("transponderencodingfile", NULL));
-    printf("servicebouquets_update ret5: %d\n", ret);
+    debug(202, "ret5: %d", ret);
+
     ret = readmainbouquet(getconfig("bouquetfile", NULL));
-    printf("servicebouquets_update ret6: %d\n", ret);
+    debug(202, "ret6: %d", ret);
+
     ret = readallbouquet();
-    printf("servicebouquets_update ret7: %d\n", ret);
+    debug(202, "ret7: %d", ret);
 
     if(input != NULL)
     {
@@ -8839,37 +8835,28 @@ void reloadsettings(char* input)
 	        aktlist = (void*)mainbouquetnode;
 	        if(aktlist != NULL)
 	        {
-                printf("servicebouquets_update sort: %s\n", input);
+			    debug(202, "sort bouquet: %s", input);
 		        sortbouquet(&((struct mainbouquet*)aktlist)->bouquet);
+			    debug(202, "recalc bouquet: %s", input);
 		        recalcbouquetnr();
 	        }
         }
     }
-//            free(tmpstr3), tmpstr3 = NULL;
 
-//	        status.aktservice = addservice(NULL);
-//	        status.lastservice = addservice(NULL);
-//	        status.pipservice = addservice(NULL);
+	//recalc channels
+	struct channel* chnode = channel;
+	while(chnode != NULL)
+	{
+		if(chnode->servicetype != 99)
+		{
+		    debug(202, "recalc channel: %s", chnode->name);
+			chnode->transponder = gettransponder(chnode->transponderid);
+			chnode->provider = getprovider(chnode->providerid);
+		}
+		chnode = chnode->next;
+	}
 
-    //tune new if tunerconfig saved
-//	        if(ret == 0)
-//	        {
-/*
-        ret = servicestop(status.aktservice, 1, 1);
-        printf("servicebouquets_update ret7: %d\n", ret);
-        if(ret == 0 && status.play != 1)
-        {
-            printf("servicebouquets_update restart aktservice: %s\n", status.aktservice->channel);
-	        status.aktservice->transponder = NULL;
-	        servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
-        }
-*/
-//		        resettvpic();
-//		        drawscreen(tunerconfig, 0, 0);
-//		        clearscreen(tunerconfig);
-//		        drawscreen(skin, 0, 0);
-//	        }
-
+	writeallconfig(1);
 }
 
 #endif
