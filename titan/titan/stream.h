@@ -302,17 +302,20 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 			sleep(1);
 		}
 		
-		if(servicenode->type == RECORDTIMER)
-		{
-			recordstop(servicenode, 0);
-		}
-
 		printf( "\nKilling record\n" ) ;
 		debug(250, "kill PID: %d",pid);
 		kill( pid, SIGTERM ) ;
 		free(cmd), cmd = NULL;
-		status.recording--;
-		delservice(servicenode, 0);
+		if(servicenode->type == RECORDTIMER)
+		{
+			sleep(3);  //waiting for the decryption process to finish 
+			recordstop(servicenode, 0);
+		}
+		else
+		{
+			delservice(servicenode, 0);
+			status.recording--;
+		}
 		debug(250, "ende streamrecordrun");
 		return 0 ;
 }
