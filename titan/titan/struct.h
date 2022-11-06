@@ -121,12 +121,12 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER " -   - "
+#define DRIVER "Sun Nov  6 17:04:33 UTC 2022"
 #define OVERSION "1.99"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, gost"
-#define PLUGINVERSION 46306
+#define PLUGINVERSION 46320
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -1708,6 +1708,7 @@ struct status
 	// Anzah VideoDevs
 	int videodevs;
 	char* streamurl;
+	char* actplay;
 } status;
 
 struct fb
