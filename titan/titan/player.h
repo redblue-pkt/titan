@@ -1417,13 +1417,12 @@ int playerstart(char* file)
 	free(status.actplay);
 	status.actplay = ostrcat(file, NULL, 0, 0);
 	
-	if(status.actplay != 0 && getconfigint("showlastpos", NULL) == 1)
+	if(status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{ 
 			char* fileseek = changefilenameext(file, ".pts");
 			FILE* fbseek = fopen(fileseek, "r");
 			if(fbseek != NULL)
 			{
-				printf("++++ seek gefunden\n");
 				if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
 				{
 					char* skip1 = calloc(1, 20);
@@ -2351,7 +2350,6 @@ int playerstop()
 		if(fbseek != NULL)
 		{
 			off64_t pts = playergetpts();
-			printf("++++ pts: %lld\n", pts);
 			fprintf(fbseek,"%lld", pts);
 			fclose(fbseek);
 		}
@@ -2651,8 +2649,6 @@ void playerfr(int speed)
 
 void playerseek(float sec)
 {
-
-printf("++++ playerseek: %f sekunden\n", sec);
 
 #ifdef EPLAYER3
 #ifdef EXTEPLAYER3
