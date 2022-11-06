@@ -1410,8 +1410,37 @@ int playerstart(char* file)
 {
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
+	//float sec = 0;
+  int sec = 0;
 	
 	addconfig("lastplayertype", "0");
+	
+	free(status.actplay);
+	status.actplay = ostrcat(file, NULL, 0, 0);
+	
+	if(status.actplay != 0 && getconfigint("showlastpos", NULL) == 1)
+	{ 
+			char* fileseek = changefilenameext(file, ".pts");
+			FILE* fbseek = fopen(fileseek, "r");
+			if(fbseek != NULL)
+			{
+				printf("++++ seek gefunden\n");
+				if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
+				{
+					char* skip1 = calloc(1, 20);
+					if(skip1 != NULL)
+					{
+						fscanf(fbseek, "%s", skip1);
+						off64_t seekpos = atoll(skip1);
+						sec = seekpos / 90000;
+						printf("++++ seek sec: %d\n", sec);
+					}
+					free(skip1); skip1 = NULL;
+				}
+				fclose(fbseek);
+			}
+			free(fileseek); fileseek = NULL;
+	}	
 	
 #ifdef EPLAYER4
 	status.prefillbuffercount = 0;
@@ -1610,7 +1639,12 @@ int playerstart(char* file)
 		player->playback->Command(player, PLAYBACK_PLAY, NULL);
 
 		free(tmpfile);
-
+ 
+ 		if(sec > 0)
+ 		{
+ 			usleep(100000);
+ 			playerseek(sec);
+ 		}
 		return 0;
 #endif
 
@@ -1827,6 +1861,12 @@ int playerstart(char* file)
 			count++;
 			sleep(1);
 			m_gst_startpts = playergetpts();
+		}
+
+		if(sec > 0)
+		{
+			usleep(100000);	
+			playerseek(sec); 
 		}
 
 		return 0;
@@ -2292,7 +2332,7 @@ void playerplay()
 #ifdef EPLAYER3
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_PLAY, NULL);
-#endif
+#endif 
 
 #ifdef EPLAYER4
 	if(pipeline)
@@ -2304,6 +2344,23 @@ void playerplay()
 
 int playerstop()
 {
+
+	if(status.actplay != NULL)
+	{
+		char* fileseek = changefilenameext(status.actplay, ".pts");
+		FILE* fbseek = fopen(fileseek, "w");
+		if(fbseek != NULL)
+		{
+			off64_t pts = playergetpts();
+			printf("++++ pts: %lld\n", pts);
+			fprintf(fbseek,"%lld", pts);
+			fclose(fbseek);
+		}
+		free(fileseek); fileseek=NULL;
+		free(status.actplay); status.actplay=NULL;
+	}
+	 
+	 
 #ifdef EPLAYER3
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_STOP, NULL);
@@ -2595,6 +2652,9 @@ void playerfr(int speed)
 
 void playerseek(float sec)
 {
+
+printf("++++ playerseek: %f sekunden\n", sec);
+
 #ifdef EPLAYER3
 #ifdef EXTEPLAYER3
 	int64_t sectmp = (int64_t)sec;
