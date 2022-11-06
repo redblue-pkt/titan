@@ -2695,7 +2695,7 @@ msgstr "Favourites"
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:2033
+#: player.h:2073
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -5138,15 +5138,15 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
 #: played.h:91 played.h:103 played.h:115 played.h:172 player.h:417
-#: player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:966 play.h:980
-#: play.h:1651 play.h:1657 play.h:1672 play.h:1673 play.h:1709 play.h:1710
-#: play.h:1724 play.h:1808 possetup.h:98 primeshare.h:29 primeshare.h:74
-#: primeshare.h:80 primeshare.h:125 promptfile.h:26 promptfile.h:35
-#: putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143
-#: putlocker.h:153 putlocker.h:226 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:427 record.h:1240 record.h:1828 rectimer.h:585 rectimer.h:1413
-#: restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
+#: player.h:1428 player_mc_skin.xml.h:19 play.h:497 play.h:614 play.h:966
+#: play.h:980 play.h:1651 play.h:1657 play.h:1672 play.h:1673 play.h:1709
+#: play.h:1710 play.h:1724 play.h:1808 possetup.h:98 primeshare.h:29
+#: primeshare.h:74 primeshare.h:80 primeshare.h:125 promptfile.h:26
+#: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
+#: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
+#: readerconfig.h:451 readerconfig.h:452 readerconfig.h:497 readerconfig.h:498
+#: record.h:90 record.h:427 record.h:1240 record.h:1828 rectimer.h:585
+#: rectimer.h:1413 restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:668 security.h:685 service.h:844 service.h:1121 shared.h:29
@@ -9192,8 +9192,8 @@ msgstr ""
 #: network.h:993 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:417 play.h:614 play.h:1003 play.h:1672
-#: play.h:1709 play.h:2040 play.h:2276 play.h:2287 possetup.h:98
+#: played.h:115 played.h:172 player.h:417 player.h:1428 play.h:614 play.h:1003
+#: play.h:1672 play.h:1709 play.h:2040 play.h:2276 play.h:2287 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
 #: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
@@ -10115,24 +10115,24 @@ msgstr ""
 #: newsletter.h:292 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:417 player_mc_skin.xml.h:40 play.h:497
-#: play.h:614 play.h:966 play.h:980 play.h:1003 play.h:1651 play.h:1657
-#: play.h:1672 play.h:1673 play.h:1709 play.h:1710 play.h:1724 play.h:1808
-#: play.h:2040 play.h:2276 play.h:2287 possetup.h:98 primeshare.h:29
-#: primeshare.h:74 primeshare.h:80 primeshare.h:125 promptfile.h:26
-#: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
-#: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
-#: readerconfig.h:451 readerconfig.h:452 readerconfig.h:497 readerconfig.h:498
-#: record.h:427 record.h:1240 record.h:1563 record.h:1864 rectimer.h:585
-#: rectimer.h:1266 rectimer.h:1413 rectimer.h:1425 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
-#: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
-#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
-#: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258 scan.h:2651
-#: scart.h:12 scart.h:25 scriptexec.h:41 security.h:668 security.h:685
-#: security.h:1581 service.h:844 service.h:1121 shared.h:29 shared.h:66
-#: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
+#: played.h:115 played.h:172 player.h:417 player.h:1428 player_mc_skin.xml.h:40
+#: play.h:497 play.h:614 play.h:966 play.h:980 play.h:1003 play.h:1651
+#: play.h:1657 play.h:1672 play.h:1673 play.h:1709 play.h:1710 play.h:1724
+#: play.h:1808 play.h:2040 play.h:2276 play.h:2287 possetup.h:98
+#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
+#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
+#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
+#: readerconfig.h:498 record.h:427 record.h:1240 record.h:1563 record.h:1864
+#: rectimer.h:585 rectimer.h:1266 rectimer.h:1413 rectimer.h:1425
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
+#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:34 satipclient.h:137 satipclient.h:147 satipclient.h:149
+#: scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258
+#: scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
+#: security.h:685 security.h:1581 service.h:844 service.h:1121 shared.h:29
+#: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 #: skins_0acht5zehn_skin.xml.h:398 skins_atemio_skin.xml.h:397
 #: skins_cool_skin.xml.h:469 skinselector.h:231 skins_kravenhd_skin.xml.h:422
@@ -14475,7 +14475,7 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr "Start WLAN?"
 
-#: mc_videoplayer.h:963 player.h:417
+#: mc_videoplayer.h:963 player.h:417 player.h:1428
 msgid "Start at last position ?"
 msgstr "Resume from last position?"
 
