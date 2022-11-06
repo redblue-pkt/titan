@@ -1410,8 +1410,7 @@ int playerstart(char* file)
 {
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
-	//float sec = 0;
-  int sec = 0;
+	int sec = 0;
 	
 	addconfig("lastplayertype", "0");
 	

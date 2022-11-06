@@ -121,7 +121,7 @@
 #include <ddvdlib.h>
 #endif
 
-#define DRIVER "Sun Nov  6 17:04:33 UTC 2022"
+#define DRIVER " -   - "
 #define OVERSION "1.99"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
