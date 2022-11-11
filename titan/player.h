@@ -1935,22 +1935,22 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 			debug(150, "gst state change %s -> %s", gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
 	
 			GstStateChange transition = (GstStateChange)GST_STATE_TRANSITION(old_state, new_state);
-	
-			switch(transition)
+
+/*			switch(transition)
 			{
 				case GST_STATE_CHANGE_NULL_TO_READY:
 					break;
 				case GST_STATE_CHANGE_READY_TO_PAUSED:
-/*
-					GstElement *appsink = gst_bin_get_by_name(GST_BIN(pipeline), "subtitle_sink");
- 					if(appsink)
- 					{
- 						g_object_set(G_OBJECT(appsink), "max-buffers", 2, NULL);
- 						g_object_set(G_OBJECT(appsink), "sync", FALSE, NULL);
- 						g_object_set(G_OBJECT(appsink), "emit-signals", TRUE, NULL);
- 						gst_object_unref(appsink);
- 					}
-*/
+
+//					GstElement *appsink = gst_bin_get_by_name(GST_BIN(pipeline), "subtitle_sink");
+// 					if(appsink)
+// 					{
+// 						g_object_set(G_OBJECT(appsink), "max-buffers", 2, NULL);
+// 						g_object_set(G_OBJECT(appsink), "sync", FALSE, NULL);
+// 						g_object_set(G_OBJECT(appsink), "emit-signals", TRUE, NULL);
+// 						gst_object_unref(appsink);
+// 					}
+
 					break;
 				case GST_STATE_CHANGE_PAUSED_TO_PLAYING:
 					//if(m_sourceinfo.is_streaming && m_streamingsrc_timeout )
@@ -1963,7 +1963,9 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 				case GST_STATE_CHANGE_READY_TO_NULL:
 					ret = 0;
 					break;
+
 			}
+*/
 			break;
 		case GST_MESSAGE_ERROR:
 			debug(150, "gst player error");
