@@ -15,12 +15,13 @@
 
 #define FBIO_ACCEL  0x23
 
-/* disable bool work include come from libeplayer3 titan/libeplayer3/include/playback.h #include <stdbool.h>
+#ifdef EPLAYER4
+// disable bool work include come from libeplayer3 titan/libeplayer3/include/playback.h #include <stdbool.h>
 // bool work start
 typedef int bool;
 enum { false, true };
 // bool work end
-*/
+#endif
 
 static unsigned int displaylist[1024];
 static int ptr;
