@@ -10,8 +10,9 @@
 
 // libeplayer3/playback/playback.h
 int8_t PlaybackDieNow(int8_t val);
+#ifndef EPLAYER4 
 bool PlaybackDieNowRegisterCallback(PlaybackDieNowCallback callback);
-
+#endif
 // ca.h
 void sendSPDU(struct dvbdev* dvbnode, unsigned char tag, void *data, int len, int sessionnr, void *apdu, int alen);
 
