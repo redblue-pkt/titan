@@ -1434,7 +1434,7 @@ int playerstart(char* file)
 						printf("++++ seek sec: %d\n", sec);
 						usleep(50000);
 #ifdef EPLAYER4
-            sec = sec * 2		
+            sec = sec * 2;	
 #endif				
 						playerseek(sec);
 					}
