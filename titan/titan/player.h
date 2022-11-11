@@ -1432,6 +1432,8 @@ int playerstart(char* file)
 						off64_t seekpos = atoll(skip1);
 						sec = seekpos / 90000;
 						printf("++++ seek sec: %d\n", sec);
+						usleep(100000);
+						playerseek(sec);
 					}
 					free(skip1); skip1 = NULL;
 				}
