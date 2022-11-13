@@ -270,24 +270,33 @@ void screenplaytracklist(int mode, int playertype, int flag)
 					tmp->handle = (char*)atoi(tracklist[i]);
 				else
 					tmp->handle = (char*)(i / 2);
-				
-#ifdef EPLAYER4	
-				if(curtrackid == (i / 2))
+
+#if defined (EXTGST)
+				if(getconfigint("extplayer_type", NULL) == 1)
 				{
-					tmp->handle1 = "running";
-					changeinput(tmp, _("running"));
-				}
-				else
-					changeinput(tmp, "");
-#else
-				if((ostrcmp(curtrackname, tracklist[i]) == 0 && ostrcmp(curtrackencoding, tracklist[i + 1]) == 0) || (tracklist[i] != NULL && curtrackid == atoi(tracklist[i])))
-				{
-					tmp->handle1 = "running";
-					changeinput(tmp, _("running"));
-				}
-				else
-					changeinput(tmp, "");
 #endif
+
+	#ifdef EPLAYER4	
+					if(curtrackid == (i / 2))
+					{
+						tmp->handle1 = "running";
+						changeinput(tmp, _("running"));
+					}
+					else
+						changeinput(tmp, "");
+	#else
+					if((ostrcmp(curtrackname, tracklist[i]) == 0 && ostrcmp(curtrackencoding, tracklist[i + 1]) == 0) || (tracklist[i] != NULL && curtrackid == atoi(tracklist[i])))
+					{
+						tmp->handle1 = "running";
+						changeinput(tmp, _("running"));
+					}
+					else
+						changeinput(tmp, "");
+	#endif
+#if defined (EXTGST)
+				}
+#endif
+
 			}
 			i += 2;
 		}
@@ -317,9 +326,16 @@ void screenplaytracklist(int mode, int playertype, int flag)
 			{
 				if(mode == 1) {
 					playerchangeaudiotrack((int)listbox->select->handle);
-#ifdef EPLAYER4
-					if(playertype == 0)
-						playerseek(-1);
+#if defined (EXTGST)
+					if(getconfigint("extplayer_type", NULL) == 1)
+					{
+#endif
+	#ifdef EPLAYER4
+						if(playertype == 0)
+							playerseek(-1);
+	#endif
+#if defined (EXTGST)
+					}
 #endif
 				}
 				else if(mode == 2)
@@ -2017,22 +2033,30 @@ playerstart:
 			rcret = playerstart(file);
 		else
 		{
-#ifdef EPLAYER3
-			if(ostrstr(file, "http://") == file || ostrstr(file, "https://") == file)
+#if defined (EXTGST)
+			if(getconfigint("extplayer_type", NULL) == 0)
 			{
-				struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
-				rcret = playerstart(file);
-				if(bufferstatus != NULL && gettimer(bufferstatus) != NULL)
-				{
-					bufferstatus->aktion = STOP;
-					usleep(100000);
-				}
-			}
-			else
-				rcret = playerstart(file);
-#else
-			rcret = playerstart(file);
 #endif
+	#ifdef EPLAYER3
+				if(ostrstr(file, "http://") == file || ostrstr(file, "https://") == file)
+				{
+					struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
+					rcret = playerstart(file);
+					if(bufferstatus != NULL && gettimer(bufferstatus) != NULL)
+					{
+						bufferstatus->aktion = STOP;
+						usleep(100000);
+					}
+				}
+				else
+					rcret = playerstart(file);
+	#else
+				rcret = playerstart(file);
+	#endif
+#if defined (EXTGST)
+			}
+#endif
+
 		}
 #ifndef SIMULATE
 		if(rcret != 0)
@@ -2079,19 +2103,36 @@ playerstart:
 			while((playertype == 0 && playerisplaying()) || (playertype == 1 && playerisplayingts()))
 			{
 				rcret = waitrc(playinfobar, rcwait, 0);
-#ifdef EPLAYER4
-				debug(150, "waitofbuffer=%d status.cleaninfobar=%d status.prefillbuffer=%d status.prefillbuffercount=%d playinfobarstatus=%d playinfobarcount=%d",waitofbuffer , status.cleaninfobar, status.prefillbuffer, status.prefillbuffercount, playinfobarstatus, playinfobarcount);
+#if defined (EXTGST)
+				if(getconfigint("extplayer_type", NULL) == 1)
+				{
+#endif
+	#ifdef EPLAYER4
+					debug(150, "waitofbuffer=%d status.cleaninfobar=%d status.prefillbuffer=%d status.prefillbuffercount=%d playinfobarstatus=%d playinfobarcount=%d",waitofbuffer , status.cleaninfobar, status.prefillbuffer, status.prefillbuffercount, playinfobarstatus, playinfobarcount);
 
-				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && (status.cleaninfobar == 1 || status.prefillbuffercount == 200))
-				{
-					drawscreen(skin, 0, 0);
-					if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
-					waitofbuffer = 0;
-					status.cleaninfobar = 0;
-					
-				}
-				else if(waitofbuffer == 0 && status.prefillbuffer == 0 && (status.cleaninfobar == 0 || status.prefillbuffercount == 200))
-				{
+					if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && (status.cleaninfobar == 1 || status.prefillbuffercount == 200))
+					{
+						drawscreen(skin, 0, 0);
+						if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
+						waitofbuffer = 0;
+						status.cleaninfobar = 0;
+						
+					}
+					else if(waitofbuffer == 0 && status.prefillbuffer == 0 && (status.cleaninfobar == 0 || status.prefillbuffercount == 200))
+					{
+						playinfobarcount++;
+						if(playinfobarstatus > 0)
+							if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
+						if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+						{
+							playinfobarstatus = 0;
+							if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
+						}
+					}
+	#else
+	#ifdef EXTEPLAYER3
+					getsubtext();
+	#endif
 					playinfobarcount++;
 					if(playinfobarstatus > 0)
 						if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
@@ -2100,26 +2141,17 @@ playerstart:
 						playinfobarstatus = 0;
 						if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
 					}
-				}
-#else
-#ifdef EXTEPLAYER3
-				getsubtext();
-#endif
-				playinfobarcount++;
-				if(playinfobarstatus > 0)
-					if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
-				if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
-				{
-					playinfobarstatus = 0;
-					if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
-				}
 
-				if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
-				{
-					if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
-					waitofbuffer = 0;
+					if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
+					{
+						if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
+						waitofbuffer = 0;
+					}
+	#endif
+#if defined (EXTGST)
 				}
 #endif
+
 				if(flag == 4)
 				{
 					if(status.play == 1 && screensaver != NULL)
@@ -2128,20 +2160,36 @@ playerstart:
 					if(count > screensaver_delay && screensaver != NULL)
 					{
 						showscreensaver();
-#ifdef EPLAYER4
-						if(screensaver->speed < 50)
-							rcwait = screensaver->speed * 10;
-						else
-							rcwait = screensaver->speed;
-#else
-						rcwait = screensaver->speed;
+#if defined (EXTGST)
+						if(getconfigint("extplayer_type", NULL) == 1)
+						{
 #endif
+
+	#ifdef EPLAYER4
+							if(screensaver->speed < 50)
+								rcwait = screensaver->speed * 10;
+							else
+								rcwait = screensaver->speed;
+	#else
+							rcwait = screensaver->speed;
+	#endif
+#if defined (EXTGST)
+						}
+#endif
+
 					}
 				}
 
-#ifdef EXTEPLAYER3
-//				if(rcret == getrcconfigint("rchelp", NULL))
-//					printf("getsubtext: %s\n", getsubtext());
+#if defined (EXTGST)
+				if(getconfigint("extplayer_type", NULL) == 0)
+				{
+#endif
+	#ifdef EXTEPLAYER3
+	//				if(rcret == getrcconfigint("rchelp", NULL))
+	//					printf("getsubtext: %s\n", getsubtext());
+	#endif
+#if defined (EXTGST)
+				}
 #endif
 
 				if(rcret == getrcconfigint("rcpip", NULL))

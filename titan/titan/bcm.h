@@ -15,7 +15,7 @@
 
 #define FBIO_ACCEL  0x23
 
-#ifdef EPLAYER4
+#if defined(EPLAYER4) && !defined(EXTEPLAYER3)
 // disable bool work include come from libeplayer3 titan/libeplayer3/include/playback.h #include <stdbool.h>
 // bool work start
 typedef int bool;
