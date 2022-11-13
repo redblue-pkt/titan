@@ -1408,7 +1408,6 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 //extern player
 int playerstart(char* file)
 {
-printf("playerstart111111\n");
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
 	int sec = 0;
@@ -1417,7 +1416,6 @@ printf("playerstart111111\n");
 	
 	free(status.actplay);
 	status.actplay = ostrcat(file, NULL, 0, 0);
-printf("playerstart222222\n");
 	
 	if(status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{ 
