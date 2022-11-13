@@ -2027,6 +2027,7 @@ playerstart:
 		drawscreen(load, 0, 0);
 		playwritevfd(file, showname);
 		printf("player--> playertype: %i\n", playertype);
+
 		if(playertype == 1)
 			rcret = playerstartts(file, 0);
 		else if(playertype == 2)
@@ -2055,9 +2056,11 @@ playerstart:
 	#endif
 #if defined (EXTGST)
 			}
+			else
+				rcret = playerstart(file);
 #endif
-
 		}
+
 #ifndef SIMULATE
 		if(rcret != 0)
 		{
