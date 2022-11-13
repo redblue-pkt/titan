@@ -578,6 +578,9 @@ void screenadjust()
 			addconfigscreencheck("playertype", playertype, "0");
 #if defined (EXTGST)
 			addconfigscreencheck("extplayer_type", extplayer_type, "0");
+			if(extplayer_type->ret != NULL && ostrcmp(extplayer_type->ret, "1") == 0)
+				playerinit(0, NULL);
+			
 #endif
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
 			status.autochangechannelname = getconfigint("autochangechannelname", NULL);
