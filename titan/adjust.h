@@ -578,7 +578,7 @@ void screenadjust()
 			addconfigscreencheck("playertype", playertype, "0");
 #if defined (EXTGST)
 			addconfigscreencheck("extplayer_type", extplayer_type, "0");
-#endifa
+#endif
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
 			status.autochangechannelname = getconfigint("autochangechannelname", NULL);
 			addconfigscreencheck("def_rectimer_after", def_rectimer_after, "0");
