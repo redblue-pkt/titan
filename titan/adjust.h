@@ -31,6 +31,7 @@ void screenadjust()
 	struct skin* skip46 = getscreennode(adjust, "skip46");
 	struct skin* skip79 = getscreennode(adjust, "skip79");
 	struct skin* playertype = getscreennode(adjust, "playertype");
+	struct skin* extplayer_type = getscreennode(adjust, "extplayer_type");
 	struct skin* autochangechannelname = getscreennode(adjust, "autochangechannelname");
 	struct skin* def_rectimer_after = getscreennode(adjust, "def_rectimer_after");
 	struct skin* showchanneltimeline = getscreennode(adjust, "showchanneltimeline");
@@ -159,6 +160,12 @@ void screenadjust()
 	addchoicebox(playertype, "0", _("extern"));
 	addchoicebox(playertype, "1", _("intern"));
 	setchoiceboxselection(playertype, getconfig("playertype", NULL));
+#if defined (EXTGST)
+	addchoicebox(extplayer_type, "0", _("exteplayer3"));
+	addchoicebox(extplayer_type, "1", _("gst"));
+//	addchoicebox(extplayer_type, "2", _("eplayer3"));
+	setchoiceboxselection(extplayer_type, getconfig("extplayer_type", NULL));
+#endif
 
 	addchoicebox(autochangechannelname, "0", _("no"));
 	addchoicebox(autochangechannelname, "1", _("yes"));
@@ -569,6 +576,9 @@ void screenadjust()
 			addconfigscreen("skip46", skip46);
 			addconfigscreen("skip79", skip79);
 			addconfigscreencheck("playertype", playertype, "0");
+#if defined (EXTGST)
+			addconfigscreencheck("extplayer_type", extplayer_type, "0");
+#endifa
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
 			status.autochangechannelname = getconfigint("autochangechannelname", NULL);
 			addconfigscreencheck("def_rectimer_after", def_rectimer_after, "0");
