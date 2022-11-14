@@ -405,7 +405,7 @@ int playerstartts(char* file, int flag)
 		}
 		
 		lastpos = 0;
-		if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
+		if(status.mcaktiv == 0 && flag == 0 && getconfigint("showlastpos", NULL) == 1)
 		{ 
 			char* fileseek = changefilenameext(file, ".se");
 			FILE* fbseek = fopen(fileseek, "r");
@@ -1417,7 +1417,7 @@ int playerstart(char* file)
 	free(status.actplay);
 	status.actplay = ostrcat(file, NULL, 0, 0);
 	
-	if(status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
+	if(status.mcaktiv == 0 && status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{ 
 			char* fileseek = changefilenameext(file, ".pts");
 			FILE* fbseek = fopen(fileseek, "r");
