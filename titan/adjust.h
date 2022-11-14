@@ -162,7 +162,7 @@ void screenadjust()
 	setchoiceboxselection(playertype, getconfig("playertype", NULL));
 #if defined (EXTGST)
 	addchoicebox(extplayer_type, "0", _("exteplayer3"));
-	addchoicebox(extplayer_type, "1", _("gst"));
+	addchoicebox(extplayer_type, "1", _("gstreamer"));
 //	addchoicebox(extplayer_type, "2", _("eplayer3"));
 	setchoiceboxselection(extplayer_type, getconfig("extplayer_type", NULL));
 #endif
