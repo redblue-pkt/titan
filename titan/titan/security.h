@@ -1320,6 +1320,9 @@ void setskinnodeslocked(int flag)
                 if(ostrcmp("extensions_mediatpkinstall", child->name) == 0) child->locked = 0;
             }
 
+			// disable unused menu on oebuild
+			if(ostrcmp("feed_ipk", child->name) == 0) child->locked = 1;
+
 			// hide pvr / timeshift
 			if(status.pvr == 0)
 			{
