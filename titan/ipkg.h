@@ -313,10 +313,9 @@ char* get_ipk_install(char* package, char* dest)
 	cmd = ostrcat(cmd, package, 1, 0);
 	cmd = ostrcat(cmd, " --dest ", 1, 0);
 	cmd = ostrcat(cmd, dest, 1, 0);
+	debug(130, "cmd: %s", cmd);
 
 	tmpstr = command(cmd);
-
-	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
@@ -336,9 +335,9 @@ char* get_ipk_remove(char* package)
 	cmd = ostrcat(cmd, package, 1, 0);
 //	cmd = ostrcat(cmd, " --dest ", 1, 0);
 //	cmd = ostrcat(cmd, dest, 1, 0);
+	debug(130, "cmd: %s", cmd);
 
 	tmpstr = command(cmd);
-
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
@@ -354,6 +353,18 @@ int ipkg_remove(const char* package, int purge)
 	args_deinit(&args);
 #endif
 	return err;
+}
+
+char* ipkg_upgrade_cmd(void)
+{
+	char* cmd = NULL, *tmpstr = NULL;
+	cmd = ostrcat(cmd, "opkg update; opkg upgrade", 1, 0);
+	debug(130, "cmd: %s", cmd);
+
+	tmpstr = command(cmd);
+	free(cmd); cmd = NULL;
+
+	return tmpstr;
 }
 
 int ipkg_upgrade(void)
@@ -549,11 +560,13 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	struct ipkg* node = ipkg, *ipkg_installed = NULL, *node_installed = NULL;
 	struct menulist* tmpmlist = NULL;
 	char* tmpstr = NULL, *tmpinfo = NULL, *tmppic = NULL;
+	struct skin* load = getscreen("loading");
 
 	if(node == NULL) return NULL;
 	
 	if(flag == 1)
 	{
+		drawscreen(load, 0, 0);
 		ipkg = NULL;
 		ipkg_list_installed();
 		ipkg_installed = ipkg;
@@ -740,9 +753,12 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
 			tmpstr = ostrcat(tmpstr, node->version, 1, 0);
 
-			if(skip == 1)
-				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 1, 0);
-			else
+			debug(130, "skip=%d tmpstr: %s tmpinfo: %s tmppic: %s", skip, tmpstr, tmpinfo, tmppic);
+
+// disable this if only 1 entry and is installad is list emthy
+//			if(skip == 1)
+//				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 1, 0);
+//			else
 				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
 //			changemenulistparam(tmpmlist, node->name, node->titanname, NULL, NULL);
 //			char* size = oitoa(node->size);
@@ -763,6 +779,7 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		ipkg = ipkg_installed;
 		freeipkg();
 		ipkg = node;
+		clearscreen(load);
 	}
 
 //debugipkg();
@@ -773,8 +790,6 @@ struct menulist* ipkmenulist(struct menulist* mlist, char* paramskinname, char* 
 
 char* get_ipk_tmpinstall(char* path, char* ipk)
 {
-	debug(130, "in");
-
 	unlink("/var/usr/lib/ipkg/cross");
 	unlink("/var/usr/lib/ipkg/secret");
 	unlink("/var/usr/lib/ipkg/titan");	
@@ -784,26 +799,25 @@ char* get_ipk_tmpinstall(char* path, char* ipk)
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, ipk, 1, 0);
+	debug(130, "cmd %s",cmd);
 
 	tmpstr = command(cmd);
 
-	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }
 
 char* get_ipk_tmplistinstall(char* path)
 {
-	debug(130, "in");
 	char* cmd = NULL, *tmpstr = NULL;
 
 	cmd = ostrcat(cmd, "ls ", 1, 0);
 	cmd = ostrcat(cmd, path, 1, 0);
 	cmd = ostrcat(cmd, " | grep '\\.ipk'", 1, 0);
+	debug(130, "cmd %s",cmd);
 
 	tmpstr = command(cmd);
 
-	debug(130, "out %s",cmd);
 	free(cmd); cmd = NULL;
 	return tmpstr;
 }

@@ -45,6 +45,8 @@ void screenkeyactions(int key, int flag)
 				}
 				child = child->next;
 			}
+			addmenulist(&mlist, "Media Player", _("Media Player"), NULL, 0, 0);
+			addmenulist(&mlist, "Record Player", _("Record Player"), NULL, 0, 0);
 		}
 	
 		if(key == 3)
