@@ -1928,7 +1928,7 @@ msgstr ""
 msgid "Auto"
 msgstr "automatico"
 
-#: keyactions.h:77 settings_pluginbutton.h:13 settings_redbutton.h:13
+#: keyactions.h:79 settings_pluginbutton.h:13 settings_redbutton.h:13
 msgid "Auto Resolution"
 msgstr "Resolucion Automatica"
 
@@ -2628,7 +2628,7 @@ msgstr ""
 msgid "Bouquet Color"
 msgstr ""
 
-#: keyactions.h:81 settings_bluebutton.h:15 settings_redbutton.h:16
+#: keyactions.h:83 settings_bluebutton.h:15 settings_redbutton.h:16
 #: skin_default_skin.xml.h:78 skins_0acht5zehn_skin.xml.h:811
 #: skins_atemio_skin.xml.h:115 skins_cool_skin.xml.h:140
 #: skins_default_skin.xml.h:78 skins_kravenhd_skin.xml.h:81
@@ -3392,7 +3392,7 @@ msgstr "Registro de un lugar"
 msgid "Child"
 msgstr "Niños"
 
-#: keyactions.h:85 settings_bluebutton.h:20 settings_pluginbutton.h:20
+#: keyactions.h:87 settings_bluebutton.h:20 settings_pluginbutton.h:20
 #: settings_redbutton.h:21 skin_default_skin.xml.h:101
 #: skins_0acht5zehn_skin.xml.h:139 skins_atemio_skin.xml.h:139
 #: skins_cool_skin.xml.h:167 skins_default_skin.xml.h:101
@@ -4389,7 +4389,7 @@ msgstr "Eliminar entradas incorrectas"
 msgid "Deluxe Music TV (German)"
 msgstr ""
 
-#: ipkg.h:637 tpk.h:3508
+#: ipkg.h:650 tpk.h:3508
 msgid "Description:"
 msgstr "Descripcion: "
 
@@ -4622,6 +4622,10 @@ msgstr ""
 msgid "Do you really want to overwrite the chosen image?"
 msgstr ""
 
+#: extensions.h:899
+msgid "Do you really want to start the Upgrade?"
+msgstr ""
+
 #: panel_settings_wizard.h:6
 msgid ""
 "Do you really want to start the Wizard?\n"
@@ -4715,7 +4719,7 @@ msgstr ""
 msgid "Download finished!"
 msgstr "Descargar terminado!"
 
-#: keyactions.h:87 play.h:808 settings_bluebutton.h:22
+#: keyactions.h:89 play.h:808 settings_bluebutton.h:22
 #: settings_pluginbutton.h:22 settings_redbutton.h:23
 #: skin_default_skin.xml.h:168 skins_0acht5zehn_skin.xml.h:823
 #: skins_atemio_skin.xml.h:754 skins_cool_skin.xml.h:245
@@ -5061,7 +5065,7 @@ msgstr ""
 "ERROR:\n"
 "Particion no se pudo crear!"
 
-#: global.h:6658 keyactions.h:219
+#: global.h:6658 keyactions.h:221
 msgid "ERROR cant read res"
 msgstr "ERROR: No se puede leer la resolucion"
 
@@ -5102,72 +5106,72 @@ msgstr ""
 #: extensions.h:198 extensions.h:249 extensions.h:258 extensions.h:262
 #: extensions.h:267 extensions.h:313 extensions.h:321 extensions.h:328
 #: extensions.h:370 extensions.h:396 extensions.h:427 extensions.h:461
-#: extensions.h:465 extensions.h:522 extensions.h:661 extensions.h:743
-#: extensions.h:751 extensions.h:815 extensions.h:943 facebook.h:66
-#: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:80
-#: faststream.h:92 faststream.h:104 faststream.h:110 faststream.h:167
-#: filemanager.h:95 filemanager.h:100 filemanager.h:206 filemanager.h:279
-#: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
-#: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
-#: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
-#: flashx.h:57 games_catcatch_skin.xml.h:3 games_sudoku_skin.xml.h:7
-#: games_wins3_skin.xml.h:1 global.h:6658 global.h:7556 global.h:7575
-#: global.h:8092 global.h:8112 global.h:8132 global.h:8152 global.h:8172
-#: global.h:8505 global.h:8510 global.h:8522 global.h:8527 harddisk.h:355
-#: harddisk.h:692 harddisk.h:700 harddisk.h:740 harddisk.h:795 harddisk.h:800
-#: harddisk.h:802 harddisk.h:804 harddisk.h:925 harddisk.h:928 harddisk.h:1170
-#: hbbtv.h:362 hello.c:37 httpdfunc.h:1304 httpdfunc.h:3282 httpdfunc.h:3288
-#: httpdfunc.h:6297 httpdfunc.h:6562 httpdfunc.h:6633 hwtest.h:88 hwtest.h:93
-#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258
-#: info.h:27 infos_mboxinfo_skin.xml.h:1 ipkg.h:413 keyactions.h:219
-#: kinox.h:101 kinox.h:369 language.h:54 letwatch.h:29 letwatch.h:60
-#: letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229
-#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
-#: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1086
-#: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:246
-#: mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:287 mc_main.h:296
-#: mc_mediathek.h:35 mc_pictureplayer.h:100 mc_pictureplayer.h:124
-#: mc_pictureplayer.h:242 mc_pictureplayer.h:368 mc_pictureplayer.h:461
-#: mc_videoplayer.h:364 mc_videoplayer.h:805 mc_videoplayer.h:840
-#: mc_videoplayer.h:944 mc_videoplayer.h:963 mc_wetterinfo.h:36
-#: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1486 mediadb.h:2633
-#: mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1058 menu.h:1060
-#: mightyupload.h:27 mightyupload.h:69 mightyupload.h:75 movie2k.h:23
-#: movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104 movie4k.h:411
-#: movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101 movshare.h:191
-#: movshare.h:197 multiboot.h:344 multiboot.h:380 multiboot.h:387
-#: MultiImage.c:292 MultiImage.c:308 MultiImage.c:568 MultiImage.c:626
-#: MultiImage.c:706 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
-#: networkbrowser.h:969 networkbrowser.h:1030 networkbrowser.h:1034
-#: networkbrowser.h:1036 networkbrowser.h:1046 networkbrowser.h:1050
-#: networkbrowser.h:1214 networkbrowser.h:1788 networkbrowser.h:1795
-#: networkbrowser.h:1800 networkbrowser.h:1952 network_dlna_skin.xml.h:1
-#: network_facebook_skin.xml.h:2 network.h:302 network.h:317 network.h:361
-#: network.h:462 network.h:603 network.h:814 network.h:823 network.h:849
-#: network.h:853 network.h:908 network.h:915 network.h:937 network.h:993
-#: newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:97 novamov.h:103
-#: nowvideo.h:44 nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:85
-#: played.h:91 played.h:103 played.h:115 played.h:172 player.h:417
-#: player.h:1426 player_mc_skin.xml.h:19 play.h:513 play.h:630 play.h:982
-#: play.h:996 play.h:1667 play.h:1673 play.h:1688 play.h:1689 play.h:1725
-#: play.h:1726 play.h:1740 play.h:1824 possetup.h:98 primeshare.h:29
-#: primeshare.h:74 primeshare.h:80 primeshare.h:125 promptfile.h:26
-#: promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86 putlocker.h:92
-#: putlocker.h:143 putlocker.h:153 putlocker.h:226 readerconfig.h:351
-#: readerconfig.h:451 readerconfig.h:452 readerconfig.h:497 readerconfig.h:498
-#: record.h:90 record.h:427 record.h:1240 record.h:1828 rectimer.h:585
-#: rectimer.h:1413 restoredefault.h:10 restoredefault.h:34 restoredefault.h:58
-#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:668 security.h:685 service.h:844 service.h:1121 shared.h:29
-#: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
-#: skin_default_skin.xml.h:200 skins_0acht5zehn_skin.xml.h:237
+#: extensions.h:465 extensions.h:522 extensions.h:666 extensions.h:748
+#: extensions.h:756 extensions.h:820 extensions.h:901 extensions.h:909
+#: extensions.h:981 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
+#: faststream.h:80 faststream.h:92 faststream.h:104 faststream.h:110
+#: faststream.h:167 filemanager.h:95 filemanager.h:100 filemanager.h:206
+#: filemanager.h:279 filemanager.h:289 filemanager.h:319 filemanager.h:329
+#: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
+#: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
+#: firedrive.h:139 flashx.h:23 flashx.h:57 games_catcatch_skin.xml.h:3
+#: games_sudoku_skin.xml.h:7 games_wins3_skin.xml.h:1 global.h:6658
+#: global.h:7556 global.h:7575 global.h:8092 global.h:8112 global.h:8132
+#: global.h:8152 global.h:8172 global.h:8505 global.h:8510 global.h:8522
+#: global.h:8527 harddisk.h:355 harddisk.h:692 harddisk.h:700 harddisk.h:740
+#: harddisk.h:795 harddisk.h:800 harddisk.h:802 harddisk.h:804 harddisk.h:925
+#: harddisk.h:928 harddisk.h:1170 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
+#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6297 httpdfunc.h:6562
+#: httpdfunc.h:6633 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190
+#: inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258 info.h:27
+#: infos_mboxinfo_skin.xml.h:1 ipkg.h:424 keyactions.h:221 kinox.h:101
+#: kinox.h:369 language.h:54 letwatch.h:29 letwatch.h:60 letwatch.h:66
+#: letwatch.h:72 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
+#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:411
+#: mc_audioplayer.h:685 mc_audioplayer.h:797 mc_dateibrowser.h:36
+#: mc_global.h:781 mc_global.h:1086 mc_internetbrowser.h:36 mc_iptvplayer.h:106
+#: mc_iptvplayer.h:246 mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:287
+#: mc_main.h:296 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:364 mc_videoplayer.h:805
+#: mc_videoplayer.h:840 mc_videoplayer.h:944 mc_videoplayer.h:963
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1486
+#: mediadb.h:2633 mediadbsettings.h:99 menu.h:160 menu.h:215 menu.h:1058
+#: menu.h:1060 mightyupload.h:27 mightyupload.h:69 mightyupload.h:75
+#: movie2k.h:23 movie2k.h:32 movie4k.h:38 movie4k.h:60 movie4k.h:104
+#: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
+#: movshare.h:191 movshare.h:197 multiboot.h:344 multiboot.h:380
+#: multiboot.h:387 MultiImage.c:292 MultiImage.c:308 MultiImage.c:568
+#: MultiImage.c:626 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
+#: nbastream.h:126 networkbrowser.h:969 networkbrowser.h:1030
+#: networkbrowser.h:1034 networkbrowser.h:1036 networkbrowser.h:1046
+#: networkbrowser.h:1050 networkbrowser.h:1214 networkbrowser.h:1788
+#: networkbrowser.h:1795 networkbrowser.h:1800 networkbrowser.h:1952
+#: network_dlna_skin.xml.h:1 network_facebook_skin.xml.h:2 network.h:302
+#: network.h:317 network.h:361 network.h:462 network.h:603 network.h:814
+#: network.h:823 network.h:849 network.h:853 network.h:908 network.h:915
+#: network.h:937 network.h:993 newsletter.h:252 newsletter.h:292 novamov.h:35
+#: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
+#: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
+#: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
+#: player.h:417 player.h:1426 player_mc_skin.xml.h:19 play.h:513 play.h:630
+#: play.h:982 play.h:996 play.h:1667 play.h:1673 play.h:1688 play.h:1689
+#: play.h:1725 play.h:1726 play.h:1740 play.h:1824 possetup.h:98
+#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
+#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
+#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
+#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
+#: readerconfig.h:498 record.h:90 record.h:427 record.h:1240 record.h:1828
+#: rectimer.h:585 rectimer.h:1413 restoredefault.h:10 restoredefault.h:34
+#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:34 satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25
+#: scriptexec.h:41 security.h:668 security.h:685 service.h:844 service.h:1121
+#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627
+#: skinadjust.h:668 skin_default_skin.xml.h:200 skins_0acht5zehn_skin.xml.h:237
 #: skins_atemio_skin.xml.h:234 skins_cool_skin.xml.h:281
 #: skins_default_skin.xml.h:200 skinselector.h:231
 #: skins_kravenhd_skin.xml.h:209 skins_megastyleblue_skin.xml.h:282
@@ -6595,7 +6599,7 @@ msgstr "Graphical EPG Picon"
 msgid "Graphic EPG Zoom"
 msgstr "Factor de zoom para Graphical EPG"
 
-#: epgsettings.h:142 keyactions.h:83 settings_bluebutton.h:18
+#: epgsettings.h:142 keyactions.h:85 settings_bluebutton.h:18
 #: settings_pluginbutton.h:18 settings_redbutton.h:19
 #: skin_default_skin.xml.h:243 skins_default_skin.xml.h:243
 #: skins_kravenhd_skin.xml.h:254 skins_metrixhd_skin.xml.h:286
@@ -7843,7 +7847,7 @@ msgstr ""
 msgid "Installed:"
 msgstr "Instalado:"
 
-#: extensions.h:240 extensions.h:388 extensions.h:652 extensions.h:829
+#: extensions.h:240 extensions.h:388 extensions.h:657 extensions.h:834
 msgid "Installing"
 msgstr "Instalacion"
 
@@ -7918,28 +7922,36 @@ msgstr ""
 msgid "Ipk Install - select install medium"
 msgstr ""
 
-#: extensions.h:619
+#: extensions.h:624
 msgid "Ipk Install - select section"
 msgstr ""
 
-#: extensions.h:661 extensions.h:943
+#: extensions.h:666 extensions.h:981
 msgid "Ipk Install Info"
 msgstr ""
 
-#: extensions.h:670
+#: extensions.h:675
 msgid "Ipk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:728
+#: extensions.h:733
 msgid "Ipk Remove - select file"
 msgstr ""
 
-#: extensions.h:743
+#: extensions.h:748
 msgid "Ipk Remove Info"
 msgstr ""
 
-#: extensions.h:751
+#: extensions.h:756
 msgid "Ipk Remove Info - Remove OK"
+msgstr ""
+
+#: extensions.h:901
+msgid "Ipk Upgrade"
+msgstr ""
+
+#: extensions.h:909
+msgid "Ipk Upgrade Info - Upgrade OK"
 msgstr ""
 
 #: adjust.h:256
@@ -8957,13 +8969,14 @@ msgstr "Media ruta 4"
 msgid "Media Key Action - Setup"
 msgstr "botón Media - Menú Asignación"
 
-#: keyactions.h:72 settings_mediabutton.h:34 skin_default_skin.xml.h:384
-#: skins_0acht5zehn_skin.xml.h:359 skins_atemio_skin.xml.h:353
-#: skins_cool_skin.xml.h:422 skins_default_skin.xml.h:384
-#: skins_kravenhd_skin.xml.h:382 skins_megastyleblue_skin.xml.h:423
-#: skins_megastylegrey_skin.xml.h:423 skins_metrixhd_skin.xml.h:366
-#: skins_nogfx_skin.xml.h:338 skins_sevenhd_skin.xml.h:341
-#: skins_tobayer01_skin.xml.h:354 skins_ufs912_skin.xml.h:352
+#: keyactions.h:48 keyactions.h:74 settings_mediabutton.h:34
+#: skin_default_skin.xml.h:384 skins_0acht5zehn_skin.xml.h:359
+#: skins_atemio_skin.xml.h:353 skins_cool_skin.xml.h:422
+#: skins_default_skin.xml.h:384 skins_kravenhd_skin.xml.h:382
+#: skins_megastyleblue_skin.xml.h:423 skins_megastylegrey_skin.xml.h:423
+#: skins_metrixhd_skin.xml.h:366 skins_nogfx_skin.xml.h:338
+#: skins_sevenhd_skin.xml.h:341 skins_tobayer01_skin.xml.h:354
+#: skins_ufs912_skin.xml.h:352
 msgid "Media Player"
 msgstr "MiniPlayer (juego de Medios)"
 
@@ -9185,8 +9198,8 @@ msgstr "Lista de Menus"
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:276
 #: extensions.h:336 extensions.h:370 extensions.h:430 extensions.h:435
-#: extensions.h:474 extensions.h:694 extensions.h:774 extensions.h:815
-#: extensions.h:851 extensions.h:856 extensions.h:897 facebook.h:66
+#: extensions.h:474 extensions.h:699 extensions.h:779 extensions.h:820
+#: extensions.h:856 extensions.h:861 extensions.h:932 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:80
 #: faststream.h:92 faststream.h:104 faststream.h:110 faststream.h:167
 #: filemanager.h:95 filemanager.h:100 filemanager.h:206 filemanager.h:279
@@ -9205,8 +9218,8 @@ msgstr "Lista de Menus"
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190
-#: inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258 ipkg.h:413
-#: ipsec.h:193 ipsec.h:195 ipsec.h:206 ipsec.h:216 ipsec.h:218 keyactions.h:219
+#: inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258 ipkg.h:424
+#: ipsec.h:193 ipsec.h:195 ipsec.h:206 ipsec.h:216 ipsec.h:218 keyactions.h:221
 #: kinox.h:101 kinox.h:369 kravencfg.c:66 kravencfg.c:212 kravencfg.c:248
 #: language.h:54 language.h:62 lcdpearl1.c:49 lcdsamsung.c:113 letwatch.h:29
 #: letwatch.h:60 letwatch.h:66 letwatch.h:72 log.h:46 log.h:48 marker.h:215
@@ -9535,7 +9548,7 @@ msgstr ""
 msgid "Multi (EPG)"
 msgstr ""
 
-#: epgsettings.h:141 epgsettings.h:182 keyactions.h:82 settings_bluebutton.h:17
+#: epgsettings.h:141 epgsettings.h:182 keyactions.h:84 settings_bluebutton.h:17
 #: settings_pluginbutton.h:17 settings_redbutton.h:18
 #: skin_default_skin.xml.h:408 skins_0acht5zehn_skin.xml.h:381
 #: skins_atemio_skin.xml.h:379 skins_cool_skin.xml.h:445
@@ -10005,7 +10018,7 @@ msgstr ""
 msgid "No memory"
 msgstr "ERROR: No Memoria"
 
-#: extensions.h:370 extensions.h:522 extensions.h:815 extensions.h:943
+#: extensions.h:370 extensions.h:522 extensions.h:820 extensions.h:981
 msgid "No plugin found."
 msgstr "No se encontro Plugin"
 
@@ -10098,31 +10111,32 @@ msgstr ""
 #: extensions.h:313 extensions.h:321 extensions.h:328 extensions.h:336
 #: extensions.h:370 extensions.h:396 extensions.h:427 extensions.h:435
 #: extensions.h:461 extensions.h:465 extensions.h:474 extensions.h:522
-#: extensions.h:661 extensions.h:694 extensions.h:743 extensions.h:751
-#: extensions.h:774 extensions.h:815 extensions.h:856 extensions.h:897
-#: extensions.h:943 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
-#: faststream.h:80 faststream.h:92 faststream.h:104 faststream.h:110
-#: faststream.h:167 filemanager.h:95 filemanager.h:100 filemanager.h:206
-#: filemanager.h:279 filemanager.h:289 filemanager.h:319 filemanager.h:329
-#: filenuke.h:37 filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33
-#: firedrive.h:67 firedrive.h:73 firedrive.h:123 firedrive.h:129
-#: firedrive.h:139 flashx.h:23 flashx.h:57 games_sudoku_skin.xml.h:13
-#: games_wins3_skin.xml.h:3 global.h:6658 global.h:7486 global.h:7556
-#: global.h:7575 global.h:8092 global.h:8100 global.h:8112 global.h:8120
-#: global.h:8132 global.h:8140 global.h:8152 global.h:8160 global.h:8172
-#: global.h:8180 global.h:8505 global.h:8510 global.h:8522 global.h:8527
-#: harddisk.h:355 harddisk.h:487 harddisk.h:692 harddisk.h:700 harddisk.h:740
-#: harddisk.h:795 harddisk.h:800 harddisk.h:802 harddisk.h:804 harddisk.h:896
-#: harddisk.h:925 harddisk.h:928 harddisk.h:1170 hbbtv.h:362 httpdfunc.h:1304
-#: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6297 httpdfunc.h:6562
-#: httpdfunc.h:6633 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
-#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
-#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
-#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190
-#: inadyn.h:200 infobar.h:718 infobar.h:944 infobar.h:1258 info.h:27
-#: infos_mboxinfo_skin.xml.h:2 ipkg.h:413 ipsec.h:193 ipsec.h:195 ipsec.h:206
-#: ipsec.h:216 ipsec.h:218 keyactions.h:219 kinox.h:101 kinox.h:369
+#: extensions.h:666 extensions.h:699 extensions.h:748 extensions.h:756
+#: extensions.h:779 extensions.h:820 extensions.h:861 extensions.h:901
+#: extensions.h:909 extensions.h:932 extensions.h:981 facebook.h:66
+#: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:80
+#: faststream.h:92 faststream.h:104 faststream.h:110 faststream.h:167
+#: filemanager.h:95 filemanager.h:100 filemanager.h:206 filemanager.h:279
+#: filemanager.h:289 filemanager.h:319 filemanager.h:329 filenuke.h:37
+#: filenuke.h:67 filenuke.h:73 filenuke.h:79 firedrive.h:33 firedrive.h:67
+#: firedrive.h:73 firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23
+#: flashx.h:57 games_sudoku_skin.xml.h:13 games_wins3_skin.xml.h:3
+#: global.h:6658 global.h:7486 global.h:7556 global.h:7575 global.h:8092
+#: global.h:8100 global.h:8112 global.h:8120 global.h:8132 global.h:8140
+#: global.h:8152 global.h:8160 global.h:8172 global.h:8180 global.h:8505
+#: global.h:8510 global.h:8522 global.h:8527 harddisk.h:355 harddisk.h:487
+#: harddisk.h:692 harddisk.h:700 harddisk.h:740 harddisk.h:795 harddisk.h:800
+#: harddisk.h:802 harddisk.h:804 harddisk.h:896 harddisk.h:925 harddisk.h:928
+#: harddisk.h:1170 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
+#: httpdfunc.h:3288 httpdfunc.h:6297 httpdfunc.h:6562 httpdfunc.h:6633
+#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
+#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
+#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
+#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
+#: imdbapi.h:200 imdb.h:660 inadyn.h:188 inadyn.h:190 inadyn.h:200
+#: infobar.h:718 infobar.h:944 infobar.h:1258 info.h:27
+#: infos_mboxinfo_skin.xml.h:2 ipkg.h:424 ipsec.h:193 ipsec.h:195 ipsec.h:206
+#: ipsec.h:216 ipsec.h:218 keyactions.h:221 kinox.h:101 kinox.h:369
 #: kravencfg.c:66 kravencfg.c:212 kravencfg.c:248 language.h:54 lcdpearl1.c:49
 #: lcdsamsung.c:113 letwatch.h:29 letwatch.h:60 letwatch.h:66 letwatch.h:72
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
@@ -12044,7 +12058,7 @@ msgstr "Ruta Para Grabaciones"
 msgid "Record Path settings"
 msgstr "Ruta para Grabaciones Ajustes"
 
-#: keyactions.h:52 settings_mediabutton.h:12
+#: keyactions.h:49 keyactions.h:54 settings_mediabutton.h:12
 msgid "Record Player"
 msgstr "Grabaciones Player (.ts)"
 
@@ -12307,7 +12321,7 @@ msgstr ""
 msgid "Remove unused Transponder on used Satellites/Providers"
 msgstr ""
 
-#: extensions.h:308 extensions.h:736
+#: extensions.h:308 extensions.h:741
 msgid "Removeing"
 msgstr "Borrar"
 
@@ -13528,7 +13542,7 @@ msgstr "Temporada"
 msgid "Second Infobar"
 msgstr "Segunda Infobar"
 
-#: ipkg.h:634 tpk.h:3505
+#: ipkg.h:647 tpk.h:3505
 msgid "Section: "
 msgstr "Seccion: "
 
@@ -14233,7 +14247,7 @@ msgstr "Saltar considerado CA descriptor"
 msgid "Sleep"
 msgstr ""
 
-#: keyactions.h:84 settings_bluebutton.h:19 settings_pluginbutton.h:19
+#: keyactions.h:86 settings_bluebutton.h:19 settings_pluginbutton.h:19
 #: settings_redbutton.h:20
 msgid "Sleep Timer"
 msgstr "Apagado Temporizado"
@@ -14275,7 +14289,7 @@ msgstr ""
 msgid "Softcam"
 msgstr ""
 
-#: keyactions.h:79 settings_bluebutton.h:14 settings_pluginbutton.h:15
+#: keyactions.h:81 settings_bluebutton.h:14 settings_pluginbutton.h:15
 #: settings_redbutton.h:15 skin_default_skin.xml.h:622
 #: skins_0acht5zehn_skin.xml.h:587 skins_0acht5zehn_skin.xml.h:880
 #: skins_atemio_skin.xml.h:588 skins_cool_skin.xml.h:697
@@ -14305,7 +14319,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Softcam seleccion: "
 
-#: extensions.h:430 extensions.h:851
+#: extensions.h:430 extensions.h:856
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -14739,7 +14753,7 @@ msgstr ""
 msgid "Style"
 msgstr "Estilo"
 
-#: keyactions.h:86 settings_bluebutton.h:21 settings_pluginbutton.h:21
+#: keyactions.h:88 settings_bluebutton.h:21 settings_pluginbutton.h:21
 #: settings_redbutton.h:22 videomode.h:31
 msgid "Subchannel"
 msgstr "Subservicios"
@@ -15763,7 +15777,7 @@ msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
 #: extensions.h:276 extensions.h:336 extensions.h:435 extensions.h:474
-#: extensions.h:694 extensions.h:774 extensions.h:856 extensions.h:897
+#: extensions.h:699 extensions.h:779 extensions.h:861 extensions.h:932
 #: global.h:8100 global.h:8120 global.h:8140 global.h:8160 global.h:8180
 #: kravencfg.c:212 security.h:1581 skinadjust.h:619 skinadjust.h:685
 #: skinadjust.h:1110 skinadjust.h:1172
@@ -17921,7 +17935,7 @@ msgstr ""
 msgid "channelslotlist"
 msgstr ""
 
-#: ipkg.h:413 tpk.h:3246 tpk.new.h:3167
+#: ipkg.h:424 tpk.h:3246 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Revisa el feed IP secreto!"
 
@@ -18593,7 +18607,7 @@ msgstr "inicializar"
 msgid "install"
 msgstr "Instalar"
 
-#: ipkg.h:625 tpk.h:3496
+#: ipkg.h:638 tpk.h:3496
 msgid "installed"
 msgstr ""
 
@@ -19035,7 +19049,7 @@ msgstr "NFS Servidor"
 msgid "no"
 msgstr "No"
 
-#: ipkg.h:642 tpk.h:3513 tpk.new.h:3411
+#: ipkg.h:655 tpk.h:3513 tpk.new.h:3411
 msgid "no description found"
 msgstr "Descripcion no encontrado"
 
@@ -20038,7 +20052,7 @@ msgstr "Iniciar"
 msgid "start"
 msgstr ""
 
-#: extensions.h:658 extensions.h:740 extensions.h:833 softcam.h:91 softcam.h:99
+#: extensions.h:663 extensions.h:745 extensions.h:838 softcam.h:91 softcam.h:99
 msgid "started"
 msgstr "Iniciando"
 
