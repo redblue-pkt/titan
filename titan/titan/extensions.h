@@ -593,6 +593,11 @@ void screenfeed_ipk(int flag)
 	free(lastline);
 }
 
+// mode=0 install 
+// mode=1 remove 
+// mode=2 tmp install 
+// mode=3 upgrade 
+
 void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 {
 	char* tmpstr = NULL, *tmpinfo = NULL, *installpath = NULL;
@@ -885,23 +890,56 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 		unlink(IPKGLOG);
 		writesys("/tmp/.ipkg_upgrade_start", "0", 0);
 		ipkg_update();
-		ipkg_upgrade();
+//		ipkg_upgrade();
 		freeipkg();
 		loadplugin();
 		clearscreen(load);
 		drawscreen(skin, 0, 0);
 
-		if(file_exist("/tmp/.ipkg_needs_reboot"))
+		tmpinfo = ostrcat(tmpinfo, _("Do you really want to start the Upgrade?"), 1, 0);
+
+		if(textbox(_("Ipk Upgrade"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 		{
-			unlink("/tmp/.ipkg_needs_reboot");
-			textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-			//sync usb
-			system("sync");
-			//write only config file
-			writeallconfig(3);
-			//gui restart and write no config
-			oshutdown(3, 2);
+			drawscreen(load, 0, 0);
+			resettvpic();
+			char* log = NULL;
+			log = ipkg_upgrade_cmd();
+
+			if(log == NULL) log = ostrcat("Upgrade error", NULL, 0, 0);
+			textbox(_("Ipk Upgrade Info - Upgrade OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+	        free(log); log = NULL;
+/*
+			if(ipkg_remove(tmpstr, 1) == 0)
+			{
+				log = readfiletomem("/tmp/ipkg.log", 0);
+				if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
+				textbox(_("Ipk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+			}
+			else
+			{
+				log = readfiletomem("/tmp/ipkg.log", 0);
+				if(log == NULL) log = ostrcat("Remove error", NULL, 0, 0);
+				textbox(_("Ipk Remove Info - Remove ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
+			}
+*/
+//				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+            loadplugin();
+			free(log); log = NULL;
+			unlink(IPKGLOG);
+			if(file_exist("/tmp/.ipkg_needs_reboot"))
+			{
+				unlink("/tmp/.ipkg_needs_reboot");
+				textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				//sync usb
+				system("sync");
+				//write only config file
+				writeallconfig(3);
+				//gui restart and write no config
+				oshutdown(3, 2);
+			}
 		}
+		free(tmpinfo); tmpinfo = NULL;
+
 		unlink("/tmp/.ipkg_upgrade_start");
 	}
 	status.hangtime = getconfigint("hangtime", NULL);
