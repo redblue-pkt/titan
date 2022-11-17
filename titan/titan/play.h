@@ -214,7 +214,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 
 	if(mode == 1 && checkbit(status.playercan, 1) == 0) return;
 	if(mode == 2 && checkbit(status.playercan, 2) == 0) return;
-
+		
 	if(playertype == 1)
 	{
 		screenplayinfobar(NULL, NULL, 1, playertype, flag);
@@ -246,6 +246,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 	{
 		while(tracklist[i] != NULL)
 		{
+			printf("tracklist[i]: %s\n", tracklist[i]);
 			tmp = addlistbox(track, listbox, tmp, 1);
 			if(tmp != NULL)
 			{
@@ -295,6 +296,16 @@ void screenplaytracklist(int mode, int playertype, int flag)
 	#endif
 #if defined (EXTGST)
 				}
+				else
+				{
+					if((ostrcmp(curtrackname, tracklist[i]) == 0 && ostrcmp(curtrackencoding, tracklist[i + 1]) == 0) || (tracklist[i] != NULL && curtrackid == atoi(tracklist[i])))
+					{
+						tmp->handle1 = "running";
+						changeinput(tmp, _("running"));
+					}
+					else
+						changeinput(tmp, "");
+				}				
 #endif
 
 			}
@@ -2153,8 +2164,27 @@ playerstart:
 	#endif
 #if defined (EXTGST)
 				}
-#endif
+				else
+				{
+	#ifdef EXTEPLAYER3
+					getsubtext();
+	#endif
+					playinfobarcount++;
+					if(playinfobarstatus > 0)
+						if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
+					if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+					{
+						playinfobarstatus = 0;
+						if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
+					}
 
+					if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
+					{
+						if(videooff == 0) screenplayinfobar(file, showname, 0, playertype, flag);
+						waitofbuffer = 0;
+					}
+				}
+#endif
 				if(flag == 4)
 				{
 					if(status.play == 1 && screensaver != NULL)
