@@ -1167,6 +1167,28 @@ struct provider
 	struct provider *next;
 };
 
+struct playersubtitle
+{
+	char* subtext;
+
+#ifdef EPLAYER4
+	uint32_t buf_pos_ms;
+	uint32_t duration_ms;
+	gint64 duration_ns;
+	gint64 buf_pos;
+#endif
+
+#ifdef EXTEPLAYER3
+	uint32_t sub_duration_ms;
+	uint32_t sub_pts_ms;
+	int64_t sub_pts_int64;
+	
+	int sub_pts_sec;
+	int sub_duration_sec;
+#endif		
+	struct playersubtitle* next;
+};
+
 struct subtitle
 {
 	char* name;
