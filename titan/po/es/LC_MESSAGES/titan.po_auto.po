@@ -2701,7 +2701,7 @@ msgstr "Favoritos"
 msgid "Browser Resolution"
 msgstr ""
 
-#: player.h:2179
+#: player.h:2180
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -5158,7 +5158,7 @@ msgstr ""
 #: novamov.h:97 novamov.h:103 nowvideo.h:44 nowvideo.h:102 nowvideo.h:108
 #: p2pcast.h:41 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
-#: player.h:417 player.h:1493 player_mc_skin.xml.h:19 play.h:524 play.h:641
+#: player.h:417 player.h:1494 player_mc_skin.xml.h:19 play.h:524 play.h:641
 #: play.h:993 play.h:1007 play.h:1678 play.h:1684 play.h:1699 play.h:1700
 #: play.h:1736 play.h:1737 play.h:1751 play.h:1835 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
@@ -9246,7 +9246,7 @@ msgstr "Lista de Menus"
 #: network.h:993 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:417 player.h:1493 play.h:641 play.h:1030
+#: played.h:115 played.h:172 player.h:417 player.h:1494 play.h:641 play.h:1030
 #: play.h:1699 play.h:1736 play.h:2078 play.h:2357 play.h:2368 possetup.h:98
 #: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
 #: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
@@ -10170,7 +10170,7 @@ msgstr ""
 #: newsletter.h:292 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
-#: played.h:115 played.h:172 player.h:417 player.h:1493 player_mc_skin.xml.h:40
+#: played.h:115 played.h:172 player.h:417 player.h:1494 player_mc_skin.xml.h:40
 #: play.h:524 play.h:641 play.h:993 play.h:1007 play.h:1030 play.h:1678
 #: play.h:1684 play.h:1699 play.h:1700 play.h:1736 play.h:1737 play.h:1751
 #: play.h:1835 play.h:2078 play.h:2357 play.h:2368 possetup.h:98
@@ -14546,7 +14546,7 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr "Iniciar WLAN?"
 
-#: mc_videoplayer.h:963 player.h:417 player.h:1493
+#: mc_videoplayer.h:963 player.h:417 player.h:1494
 msgid "Start at last position ?"
 msgstr "Volver a empezar desde la ultima posicion?"
 
