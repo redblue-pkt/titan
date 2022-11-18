@@ -1084,8 +1084,8 @@ printf("playersubtitle_gst_thread\n");
 		{
 			count = 0;
 //new in
-			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
-				subtitle->bgcol = convertcol("black");
+//			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
+//				subtitle->bgcol = convertcol("black");
 
 			if(ostrstr(subtext, "<i>") != NULL)
 			{
@@ -1105,7 +1105,7 @@ printf("playersubtitle_gst_thread\n");
 				usleep(100000);
 				count = count - 1;
 			}
-			changetext(subtitle, " ");
+//			changetext(subtitle, " ");
 			drawscreen(subtitle, 0, 0);
 			duration_ms = 0;
 
@@ -1202,8 +1202,8 @@ printf("playersubtitle_ext_thread\n");
 
 			count = 0;
 //new in
-			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
-				subtitle->bgcol = convertcol("black");
+//			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
+//				subtitle->bgcol = convertcol("black");
 
 			if(ostrstr(sub_text, "<i>") != NULL)
 			{
@@ -1221,6 +1221,7 @@ printf("playersubtitle_ext_thread\n");
 			
 //		    count = sub_duration_ms / 100;
 			count = sub_duration_ms;
+						
 			drawscreen(subtitle, 0, 0);
 
 			while(count > 0 && subtitlethread->aktion != STOP)
@@ -1235,7 +1236,7 @@ printf("playersubtitle_ext_thread\n");
 				count = count - 1;
 			}
 subend:
-			changetext(subtitle, " ");
+//			changetext(subtitle, " ");
 			clearscreen(subtitle);
 			drawscreen(subtitle, 0, 0);
 			sub_duration_ms = 0;

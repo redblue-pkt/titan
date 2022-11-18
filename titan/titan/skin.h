@@ -2676,6 +2676,8 @@ void wrapstr(char* string, char* fontname, int fontsize, int mwidth, int charspa
 //flag 0: normal
 //flag 1: password
 //flag 2: color
+//flag 3: subtitle
+
 int drawstring(char* string, unsigned long linecount, unsigned int poscount, unsigned int markpos, int posx, int posy, int mwidth, int mheight, int halign, int valign, char* fontname, int fontsize, long color, int transparent, int wrap, int* lastposx, int* lastposy, int* len, int charspace, int flag)
 {
 	int charwidth = 0, lineend = 0;
@@ -2734,6 +2736,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	while(*string != '\0')
 	{
 		charcount++;
+
 		if(flag != 2)
 		{
 			if(markpos == charcount)
@@ -2755,6 +2758,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 			posy = posy + fontsize;
 			posx = oldposx;
 			string++;
+
 			posx = calcstrhalign(aktfont, string, posx, oldmwidth, halign, charspace);
 			continue;
 		}
@@ -2770,6 +2774,16 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 		if((charwidth = drawchar(aktfont, cret, posx, posy, mwidth, fontsize, color, transparent, charspace, 0)) == -1)
 			lineend = 1;
 
+		if(flag == 3)
+		{
+//			printf("drawstring > gstsubtitle > string: %s\n", string);
+//			printf("drawstring > gstsubtitle > charwidth: %d\n", charwidth);
+			fillrect(posx - 1, posy + 1, charwidth + 1, fontsize + 1, 0x000001, 1);
+
+			if((charwidth = drawchar(aktfont, cret, posx, posy, mwidth, fontsize, color, transparent, charspace, 0)) == -1)
+				lineend = 1;
+		}
+	
 		posx += charwidth;
 		if(len != NULL) *len += charwidth;
 		string++;
@@ -3383,8 +3397,18 @@ void drawnode(struct skin* node, int flag)
 		if(node->type & TEXTBOX)
 		{
 			int lastposy = 0;
-			drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
-			drawstring(node->text2, node->linecount, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight - (lastposy - node->iposy), node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
+
+			if(ostrcmp("gstsubtitle", node->name) == 0 && getconfigint("player_subtitle_use_bgcol", NULL) == 1)
+			{
+				// player subtitle use flag 3
+				drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 3);
+				drawstring(node->text2, node->linecount, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight - (lastposy - node->iposy), node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 3);
+			}
+			else
+			{
+				drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
+				drawstring(node->text2, node->linecount, node->poscount, -1, node->iposx + node->textposx2, lastposy, node->iwidth - node->textposx2, node->iheight - (lastposy - node->iposy), node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 0);
+			}
 		}
 		else if(node->type & GRIDBR)
 		{
