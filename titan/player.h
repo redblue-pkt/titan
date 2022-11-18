@@ -1205,10 +1205,10 @@ printf("playersubtitle_ext_thread\n");
 			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
 				subtitle->bgcol = convertcol("black");
 
-			if(ostrstr(subtext, "<i>") != NULL)
+			if(ostrstr(sub_text, "<i>") != NULL)
 			{
-				string_deltags(subtext);
-				string_decode(subtext, 1);
+				string_deltags(sub_text);
+				string_decode(sub_text, 1);
 
 				subtitle->fontcol = convertcol("yellow");
 			}
