@@ -19,9 +19,6 @@
 // 14 infobar
 // 15 slowmotion
 
-TrackDescription_t *g_subtitle_tracks = NULL;
-int g_subtitle_num = 0;
-
 #ifdef EPLAYER3
 Context_t * player = NULL; 
 extern OutputHandler_t OutputHandler; 
@@ -340,7 +337,7 @@ struct stimerthread* subtitlethread = NULL;
 uint32_t buf_pos_ms = 0;
 uint32_t duration_ms = 0;
 int subtitleflag = 0;
-//char *subtext = NULL;
+char *subtext = NULL;
 #else
 struct stimerthread* subtitlethread = NULL;
 #endif
@@ -1063,296 +1060,74 @@ void playersubtitleclean(char* data, int len)
 }
 #endif
 
-
-int32_t get_pts_pos2()
-{
-#ifdef EXTEPLAYER3
-				int64_t pts = 0;
-				int sec = 0;
-
-				if(player && player->playback)
-				{
-					player->playback->Command(player, PLAYBACK_PTS, &pts);
-					sec = pts / 90000;
-				}
-//printf("pts: %lld\n", pts);
-//printf("sec: %d\n", sec);
-//printf("ptsin: %lld\n", pts / 90);
-//printf("ptsin10: %lld\n", pts / 90 / 10);
-return sec;
-//return pts / 90;
-#endif
-}
-
-				
-int32_t get_pts_pos()
-{
-#ifdef EPLAYER4
-	time_t running_pts = 0;
-	gint64 pos = 0;
-	int32_t decoder_ms;
-	GstFormat fmt = GST_FORMAT_TIME;
-	
-#if GST_VERSION_MAJOR < 1
-	if (!gst_element_query_position(pipeline, &fmt, &pos))
-#else
-	if (!gst_element_query_position(pipeline, fmt, &pos))
-#endif
-	{
-		err("gst_element_query_position failed");
-		return 0;
-	}
-	running_pts = pos / 11111LL;
-	decoder_ms = running_pts / 90;
-	return decoder_ms / 10;
-#endif
-}
-
 #ifndef SIMULATE
-//void playersubtitle_thread()
-void playersubtitle_thread(struct stimerthread* timernode, struct playersubtitle* input, int flag)
+#ifdef EPLAYER4
+void playersubtitle_gst_thread()
 {
-printf("playersubtitle_thread start\n");
-	int count = 0;
-	char* bg = NULL;
-	char* subtext = NULL;
+printf("playersubtitle_gst_thread\n");
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* subtitle = getscreen("gstsubtitle");
-
-#if defined (EXTGST)
-	if(getconfigint("extplayer_type", NULL) == 1)
-	{
-#endif
-	#ifdef EPLAYER4
-printf("playersubtitle_thread buf_pos_ms %d\n", input->buf_pos_ms);
-printf("playersubtitle_thread duration_ms %d\n", input->duration_ms);
-printf("playersubtitle_thread duration_ns %lld\n", input->duration_ns);
-printf("playersubtitle_thread buf_pos %lld\n", input->buf_pos);
-printf("playersubtitle_thread subtext %s\n", input->subtext);
-
-//printf("playersubtitle_thread playergetpts2 %llu\n", *playergetpts2);
-printf("playersubtitle_thread playergetpts %d\n", (int)playergetpts);
-
-
-    	while(get_pts_pos() > input->buf_pos_ms && subtitlethread->aktion != STOP)
-	    {
-printf("playersubtitle_thread2 %d > %d\n", get_pts_pos() , input->buf_pos_ms);
-printf("playersubtitle_thread playergetpts %d\n", (int)playergetpts);
-		    usleep(100);
-	    }
-	   
+	char* bg = NULL;
+	int count = 0;
 	
-		while(subtitlethread->aktion != STOP)
-		{
-			if(input->duration_ms != 0)
-			{
-				count = 0;
-				subtext = ostrcat(input->subtext, NULL, 0, 0);
-printf("subtext: %s\n",subtext);
+	subtitle->bgcol = -1;
 
-
-				subtitle->bgcol = convertcol("black");
-
-				if(ostrstr(subtext, "<i>") != NULL)
-				{
-					string_deltags(subtext);
-					string_decode(subtext, 1);
-
-					subtitle->fontcol = convertcol("yellow");
-				}
-				else
-					subtitle->fontcol = convertcol("white");
-
-				changetext(subtitle, subtext);
-
-				count = input->duration_ms / 100;
-//				count = input->duration_ms;
-				drawscreen(subtitle, 0, 0);
-
-printf("playersubtitle_thread3 %d > %d\n", input->duration_ms, count);
-
-				while(count > 0 && subtitlethread->aktion != STOP)
-				{
-printf("playersubtitle_thread4 input->duration_ms: %d and %d > 0\n", input->duration_ms, count);
-					usleep(100000);
-
-					count = count - 1;
-				}
-
-				changetext(subtitle, " ");
-				drawscreen(subtitle, 0, 0);
-				input->duration_ms = 0;
-				
-				subtitlethread->aktion = STOP;
-			}
-			else
-				usleep(100000);
-		}
-		free(subtext); subtext = NULL;
-		clearscreen(subtitle);
-
-//		restorescreen(bg, subtitle);
-		blitfb(0);
-		subtitlethread = NULL;
-//}
-	#endif
-#if defined (EXTGST)
-	}
-	else
+	if(getconfigint("player_subtitle_clear", NULL) == 1)
 	{
-#endif
+		setnodeattr(subtitle, framebuffer, 0);
+		bg = savescreen(subtitle);
+	}
 
-//void playersubtitle_thread(struct stimerthread* timernode, char* input, int flag)
-//{
-	#ifdef EXTEPLAYER3
-printf("playersubtitle_thread sub_pts_ms %d\n", input->sub_pts_ms);
-printf("playersubtitle_thread sub_pts_sec %d\n", input->sub_pts_sec);
-printf("playersubtitle_thread sub_pts_int64 %lld\n", input->sub_pts_int64);
-printf("playersubtitle_thread sub_duration_ms %d\n", input->sub_duration_ms);
-printf("playersubtitle_thread sub_duration_sec %d\n", input->sub_duration_sec);
-printf("playersubtitle_thread subtext %s\n", input->subtext);
-
-//printf("playersubtitle_thread playergetpts2 %llu\n", *playergetpts2);
-printf("playersubtitle_thread playergetpts %d\n", (int)playergetpts);
-printf("playersubtitle_thread get_pts_pos2 %d\n", get_pts_pos2());
-//printf("playersubtitle_thread2ab %d > %lld\n", get_pts_pos2(), input->sub_pts_int64);
-printf("playersubtitle_thread2ab %d > %d\n", get_pts_pos2(), input->sub_pts_sec);
-
-    	while(get_pts_pos2() < input->sub_pts_sec && subtitlethread->aktion != STOP)
-	    {
-			printf("playersubtitle_thread2abc %d > %d\n", get_pts_pos2(), input->sub_pts_sec);
-			usleep(100000);
-	    }
-
-
-
-		while(subtitlethread->aktion != STOP)
+	while(subtitlethread->aktion != STOP)
+	{
+		if(duration_ms != 0)
 		{
-/*	
-			if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+			count = 0;
+//new in
+			subtitle->bgcol = convertcol("black");
+
+			if(ostrstr(subtext, "<i>") != NULL)
 			{
-				subtitlethread->aktion = STOP;
-				goto subend;
-			}
-*/	
-			if(input->sub_duration_ms != 0)
-			{
-/*
-				int64_t pts = 0;
-				int sec = 0;
+				string_deltags(subtext);
+				string_decode(subtext, 1);
 
-
-printf("playersubtitle_thread4 %d < %d\n", sec , input->sub_pts_sec);
-
-				if(player && player->playback)
-				{
-					player->playback->Command(player, PLAYBACK_PTS, &pts);
-					sec = pts / 90000;
-//					sec = pts / 90;
-				}
-
-
-				while(sec < input->sub_pts_sec && subtitlethread->aktion != STOP)
-				{
-printf("playersubtitle_thread4 %d < %d\n", sec , input->sub_pts_sec);
-		
-				
-printf("playersubtitle_thread1 sub_pts_ms %d\n", input->sub_pts_ms);
-printf("playersubtitle_thread1 sub_duration_ms %d\n", input->sub_duration_ms);
-printf("playersubtitle_thread1 sub_duration_sec %d\n", input->sub_duration_sec);
-printf("playersubtitle_thread1 sub_pts_sec %d\n", input->sub_pts_sec);
-printf("playersubtitle_thread1 subtext %s\n", input->subtext);
-//printf("playersubtitle_thread playergetpts2 %llu\n", *playergetpts2);
-printf("playersubtitle_thread1 playergetpts %d\n", (int)playergetpts);
-printf("playersubtitle_thread1 while %d < %d\n", sec, input->sub_pts_sec);
-
-				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
-				{
-//					subtitlethread->aktion = STOP;
-					goto subend;
-				}
-
-					sleep(1);
-					sec++;
-				}
-*/				
-			
-				count = 0;
-				subtext = ostrcat(input->subtext, NULL, 0, 0);
-printf("subtext: %s\n",subtext);
-
-
-				subtitle->bgcol = convertcol("black");
-
-				if(ostrstr(subtext, "<i>") != NULL)
-				{
-					string_deltags(subtext);
-					string_decode(subtext, 1);
-
-					subtitle->fontcol = convertcol("yellow");
-				}
-				else
-					subtitle->fontcol = convertcol("white");
-
-				changetext(subtitle, subtext);
-				printf("send sub_duration_ms=%d sub_duration_sec=%d subtext: %s\n",input->sub_duration_ms, input->sub_duration_sec , subtext);
-				
-	//		    count = sub_duration_ms / 100;
-//				count = input->sub_duration_ms;
-				count = input->sub_duration_ms / 100;
-//				count = input->sub_duration_ms / 90;
-
-				drawscreen(subtitle, 0, 0);
-
-printf("playersubtitle_thread3 %d > %d\n", input->duration_ms, count);
-
-				while(count > 0 && subtitlethread->aktion != STOP)
-				{
-printf("playersubtitle_thread4 input->duration_ms: %d and %d > 0\n", input->duration_ms, count);
-
-/*
-					if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
-					{
-						subtitlethread->aktion = STOP;
-						goto subend;
-					}
-*/
-					usleep(100000);
-//					usleep(100);
-					count = count - 1;
-				}
-	subend:
-				changetext(subtitle, " ");
-				drawscreen(subtitle, 0, 0);
-				input->sub_duration_ms = 0;
-				subtitlethread->aktion = STOP;
+				subtitle->fontcol = convertcol("yellow");
 			}
 			else
+				subtitle->fontcol = convertcol("white");
+//new out
+			changetext(subtitle, subtext);
+			count = duration_ms / 100;
+			drawscreen(subtitle, 0, 0);
+			while(count > 0 && subtitlethread->aktion != STOP)
+			{
 				usleep(100000);
+				count = count - 1;
+			}
+			changetext(subtitle, " ");
+			drawscreen(subtitle, 0, 0);
+			duration_ms = 0;
 
+			subtitlethread->aktion = STOP;
 		}
-		free(subtext); subtext = NULL;
-		clearscreen(subtitle);
-
-//		restorescreen(bg, subtitle);
-		blitfb(0);
-
-		subtitlethread = NULL;
-				
-//	}
-	#endif
-
-#if defined (EXTGST)
+		else
+			usleep(100000);
 	}
-#endif
+	free(subtext); subtext = NULL;
+	if(getconfigint("player_subtitle_clear", NULL) == 1)
+		clearscreen(subtitle);
+	else
+		restorescreen(bg, subtitle);
+
+	blitfb(0);
+	subtitlethread = NULL;
 }
 #endif
-
-#ifndef SIMULATE
 #ifdef EXTEPLAYER3
 void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int flag)
 {
 printf("playersubtitle_ext_thread\n");
+
 	uint32_t sub_duration_ms = 0;
 	uint32_t sub_pts_ms = 0;
 	char *sub_text = NULL;
@@ -1386,14 +1161,14 @@ printf("playersubtitle_ext_thread\n");
 
 	subtitle->bgcol = -1;
 
-	setnodeattr(subtitle, framebuffer, 0);
-	bg = savescreen(subtitle);
-printf("playersubtitle_ext_thread1\n");
+	if(getconfigint("player_subtitle_clear", NULL) == 0)
+	{
+		setnodeattr(subtitle, framebuffer, 0);
+		bg = savescreen(subtitle);
+	}
 
 	while(subtitlethread->aktion != STOP)
 	{
-printf("playersubtitle_ext_thread2\n");
-
 /*
 		if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
 		{
@@ -1425,6 +1200,20 @@ printf("playersubtitle_ext_thread2\n");
 			}
 
 			count = 0;
+//new in
+			subtitle->bgcol = convertcol("black");
+
+			if(ostrstr(subtext, "<i>") != NULL)
+			{
+				string_deltags(subtext);
+				string_decode(subtext, 1);
+
+				subtitle->fontcol = convertcol("yellow");
+			}
+			else
+				subtitle->fontcol = convertcol("white");
+//new out
+
 			changetext(subtitle, sub_text);
 			printf("send sub_duration_ms=%d sub_duration_sec=%d sub_text: %s\n",sub_duration_ms, sub_duration_sec , sub_text);
 			
@@ -1445,25 +1234,30 @@ printf("playersubtitle_ext_thread2\n");
 			}
 subend:
 			changetext(subtitle, " ");
+			clearscreen(subtitle);
 			drawscreen(subtitle, 0, 0);
 			sub_duration_ms = 0;
 		}
 		else
 			usleep(100000);
 
+		}
+		if(getconfigint("player_subtitle_clear", NULL) == 1)
+			clearscreen(subtitle);
+		else
+			restorescreen(bg, subtitle);
+
+		blitfb(0);
+		free(sub_text); sub_text = NULL;
+		subtitlethread = NULL;
 	}
-	restorescreen(bg, subtitle);
-	blitfb(0);
-	free(sub_text); sub_text = NULL;
-	subtitlethread = NULL;
-}
 #endif
 #endif
 
 #ifdef EPLAYER4
 void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
 {
-	printf("playersubtitleAvail subtitelflag: %i\n", subtitleflag);
+//	printf("++++++ subtitelflag: %i\n", subtitleflag);
 	if(subtitleflag == 0 || subtitleflag == 2) return;
 
 #if GST_VERSION_MAJOR < 1
@@ -1474,7 +1268,7 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	gint64 pos = 0;
 	int32_t decoder_ms;
 	GstFormat fmt = GST_FORMAT_TIME;
-	
+
 #if GST_VERSION_MAJOR < 1
 	if (!gst_element_query_position(pipeline, &fmt, &pos))
 #else
@@ -1486,140 +1280,39 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	}
 	running_pts = pos / 11111LL;
 	decoder_ms = running_pts / 90;
-
-//	if(subtitlethread == NULL)
-//		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
-//		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, (void*)subnode, NULL, NULL);
-
-#if GST_VERSION_MAJOR < 1
-	size_t len = GST_BUFFER_SIZE(buffer);
-#else
-//	size_t len = gst_buffer_get_size(buffer);
-	GstMapInfo map;
-	if(!gst_buffer_map(buffer, &map, GST_MAP_READ))
-	{
-		printf("playersubtitleAvail pullSubtitle gst_buffer_map failed\n");
-		return;
-	}
-
-	gint64 buf_pos = GST_BUFFER_PTS(buffer);
-	size_t len = map.size;
-#if GST_VERSION_MAJOR < 1
-	printf("gst_buffer_get_size %zu map.size %zu\n", gst_buffer_get_size(buffer), len);
-#endif
-	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
-#endif
-			
-//	printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
-//	printf("BUFFER_SIZE: %d\n", len);
-//	printf("BUFFER_DATA: %s\n", GST_BUFFER_DATA(buffer));
-	
-	while(duration_ms != 0 && subtitlethread != NULL)
-	{
-		usleep(100000);
-	}
-//	if(subtext != NULL)
-//		free(subtext);
-	char *subtext = NULL;
-	subtext = malloc(len+10);
-	if(subtext == NULL)
-	{
-		err("no mem");
-		return;
-	}
-#if GST_VERSION_MAJOR < 1
-	printf("playersubtitleAvail skip sprintf data\n");
-#else
-	guint8 *data;
-//	gsize size;
-//	GstMapInfo map;
-//	gst_buffer_map(buffer, &map, GST_MAP_READ);
-	data = map.data;
-/*
-	char* picfilename = NULL;
-	picfilename = ostrcat("/tmp/sub.", oitoa(time(NULL)), 0, 1);
-	picfilename = ostrcat(picfilename, ".png", 1, 0);
-*/
-	sprintf(subtext, "%s", data);
-//	writesys(picfilename, subtext, 0);
-
-//	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
-#endif
-	playersubtitleclean(subtext, len+10);
-	
-	double convert_fps = 1.0;
-	buf_pos_ms  = (buf_pos / 1000000ULL) * convert_fps;
-	duration_ms = duration_ns / 1000000ULL;
-
-//	if(subtitlethread == NULL)
-//		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
-//		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, (void*)gstsubtitle, NULL, NULL);
-printf("free111\n");
-free(subtext), subtext = NULL;
-printf("free222\n");
-
-	//printf("++++++ buff_pos  : %u\n", buf_pos_ms);
-	//printf("++++++ decoder_ms: %i\n", decoder_ms);
-}
-
-
-void playersubtitleAvail2(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
-{
-	printf("playersubtitleAvail subtitelflag: %i\n", subtitleflag);
-	if(subtitleflag == 0 || subtitleflag == 2) return;
-
-#if GST_VERSION_MAJOR < 1
-	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
-	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
-#endif	
-	time_t running_pts = 0;
-	gint64 pos = 0;
-	int32_t decoder_ms;
-	GstFormat fmt = GST_FORMAT_TIME;
-	
-#if GST_VERSION_MAJOR < 1
-	if (!gst_element_query_position(pipeline, &fmt, &pos))
-#else
-	if (!gst_element_query_position(pipeline, fmt, &pos))
-#endif
-	{
-		err("gst_element_query_position failed");
-		return;
-	}
-	running_pts = pos / 11111LL;
-	decoder_ms = running_pts / 90;
-
+		
 	if(subtitlethread == NULL)
-		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
-//		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, (void*)subnode, NULL, NULL);
+		subtitlethread = addtimer(&playersubtitle_gst_thread, START, 10000, 1, NULL, NULL, NULL);
 
-#if GST_VERSION_MAJOR < 1
-	size_t len = GST_BUFFER_SIZE(buffer);
-#else
-//	size_t len = gst_buffer_get_size(buffer);
-	GstMapInfo map;
-	if(!gst_buffer_map(buffer, &map, GST_MAP_READ))
-	{
-		printf("playersubtitleAvail pullSubtitle gst_buffer_map failed\n");
-		return;
-	}
+    if (!buffer)
+        return;
+
+    GstMapInfo map;
+    if (!gst_buffer_map(buffer, &map, GST_MAP_READ))
+    {
+        gst_buffer_unref(buffer);
+        return;
+    }
+
+    if (GST_BUFFER_PTS_IS_VALID(buffer) && GST_BUFFER_DURATION_IS_VALID(buffer))
+    {
+        gchar *data = g_strndup((const gchar *) map.data, map.size);
+		subtext = ostrcat(data, NULL, 0, 0);
+    }
 
 	gint64 buf_pos = GST_BUFFER_PTS(buffer);
-	size_t len = map.size;
-#if GST_VERSION_MAJOR < 1
-	printf("gst_buffer_get_size %zu map.size %zu\n", gst_buffer_get_size(buffer), len);
-#endif
 	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
-#endif
-			
-//	printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
-//	printf("BUFFER_SIZE: %d\n", len);
-//	printf("BUFFER_DATA: %s\n", GST_BUFFER_DATA(buffer));
-	
+
 	while(duration_ms != 0 && subtitlethread != NULL)
 	{
 		usleep(100000);
 	}
+
+//old
+/*
+	size_t len = map.size;
+//	size_t len = GST_BUFFER_SIZE(buffer);
+
 	if(subtext != NULL)
 		free(subtext);
 	subtext = malloc(len+10);
@@ -1636,24 +1329,29 @@ void playersubtitleAvail2(GstElement *subsink, GstBuffer *buffer, gpointer user_
 //	GstMapInfo map;
 //	gst_buffer_map(buffer, &map, GST_MAP_READ);
 	data = map.data;
-
-	char* picfilename = NULL;
-	picfilename = ostrcat("/tmp/sub.", oitoa(time(NULL)), 0, 1);
-	picfilename = ostrcat(picfilename, ".png", 1, 0);
-
 	sprintf(subtext, "%s", data);
-	writesys(picfilename, subtext, 0);
-
 //	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
+
+// test write subs data as png
+//	char* picfilename = NULL;
+//	picfilename = ostrcat("/tmp/sub.", oitoa(time(NULL)), 0, 1);
+//	picfilename = ostrcat(picfilename, ".png", 1, 0);
+
+	sprintf(subtext, "%s", map.data);
+//	writesys(picfilename, subtext, 0);
+
 #endif
+
 	playersubtitleclean(subtext, len+10);
-	
+*/
+//old
+
 	double convert_fps = 1.0;
 	buf_pos_ms  = (buf_pos / 1000000ULL) * convert_fps;
 	duration_ms = duration_ns / 1000000ULL;
 
 	//printf("++++++ buff_pos  : %u\n", buf_pos_ms);
-	//printf("++++++ decoder_ms: %i\n", decoder_ms);
+//	printf("++++++ decoder_ms: %i\n", decoder_ms);
 }
 #endif
 
@@ -1771,105 +1469,6 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 	gst_object_unref(source);
 }
 #endif
-
-static void escape_newline(const char *src, char **dest)
-{
-    int tocopy = 0;
-    int newline = 0;
-    const char *ppos_src = src;
-    char *ppos_src_newline = 0;
-    char *ppos_dest = 0;
-
-    while ((ppos_src_newline = strchr(ppos_src, '\n')) != NULL)
-    {
-        ppos_src = ppos_src_newline;
-        ppos_src++;
-        newline++;
-    }
-    int origlen = strlen(src);
-    int newlen = origlen + newline + 1;
-
-    *dest = (char *) malloc(sizeof(char) * newlen);
-    ppos_dest = *dest;
-
-    ppos_src = src;
-    ppos_src_newline = 0;
-
-    while ((ppos_src_newline = strchr(ppos_src, '\n')) != NULL)
-    {
-        tocopy = ppos_src_newline - ppos_src;
-        strncpy(ppos_dest, ppos_src, tocopy);
-        ppos_src = ppos_src_newline + 1;
-        ppos_dest += tocopy;
-        *(ppos_dest++) = '\\';
-        *(ppos_dest++) = 'n';
-    }
-    strcpy(ppos_dest, ppos_src);
-}
-
-static void gstCBsubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
-{
-    if (!buffer)
-        return;
-
-    GstMapInfo map;
-    if (!gst_buffer_map(buffer, &map, GST_MAP_READ))
-    {
-        gst_buffer_unref(buffer);
-        return;
-    }
-
-    if (GST_BUFFER_PTS_IS_VALID(buffer) && GST_BUFFER_DURATION_IS_VALID(buffer))
-    {
-        gchar *text = NULL;
-        gchar *data = g_strndup((const gchar *) map.data, map.size);
-        escape_newline(data, &text);
-
-        GstMessage *message = gst_message_new_application(GST_OBJECT(pipeline),
-            gst_structure_new ("subtitle",
-                "start", GST_TYPE_CLOCK_TIME, GST_BUFFER_PTS(buffer),
-                "duration", GST_TYPE_CLOCK_TIME, GST_BUFFER_DURATION(buffer),
-                "text", G_TYPE_STRING, text, NULL)
-            );
-
-printf("gstCBsubtitleAvail1 text:%s\n", text);
-	if(subtitlethread == NULL && data != NULL && text != NULL)
-	{
-printf("gstCBsubtitleAvail2 text:%s\n", text);
-
-					struct playersubtitle* snode = calloc(1, sizeof(struct playersubtitle));
-					
-//					gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
-					gint64 duration_ns = GST_BUFFER_DURATION(buffer);
-					gint64 buf_pos = GST_BUFFER_PTS(buffer);
-					double convert_fps = 1.0;
-					uint32_t buf_pos_ms  = (buf_pos / 1000000ULL) * convert_fps;
-					uint32_t duration_ms = duration_ns / 1000000ULL;
-		
-					if(snode != NULL)
-					{
-printf("gstCBsubtitleAvail3 text:%s\n", text);
-printf("gstCBsubtitleAvail4 text:%s\n", data);
-
-						snode->subtext = ostrcat(data, NULL, 0, 0);
-						snode->duration_ns = duration_ns;
-						snode->duration_ms = duration_ms;
-						snode->buf_pos = buf_pos;
-						snode->buf_pos_ms = buf_pos_ms;
-
-//						addtimer(&tithekdownloadthread, START, 100, 1, (void*)snode, (void*)flag, NULL);
-						subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, (void*)snode, NULL, NULL);
-					}
-					
-	}
-
-        g_free(data);
-        g_free(text);
-        gst_element_post_message(pipeline, message);
-    }
-    gst_buffer_unmap(buffer, &map);
-    gst_buffer_unref(buffer);
-}
 
 //extern player
 int playerstart(char* file)
@@ -2143,7 +1742,6 @@ int playerstart(char* file)
 #endif
 	#ifdef EPLAYER4
 			int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
-//			flags |= GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_TEXT;
 			
 			if(pipeline != NULL)
 			{
@@ -2269,26 +1867,19 @@ int playerstart(char* file)
 			else
 			{
 	//			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
-//				g_signal_connect (subsink, "new-buffer", G_CALLBACK (playersubtitleAvail), NULL);
-printf("gstCBsubtitleAvail.......\n");
-				g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), NULL);
+				g_signal_connect (subsink, "new-buffer", G_CALLBACK (playersubtitleAvail), NULL);
 
-//				g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
-
-//                flags |= GST_PLAY_FLAG_TEXT;
-
-//                g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), NULL);
+				g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 
 	#if GST_VERSION_MAJOR < 1
-                g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup"), NULL);
-//				g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
+				g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 	#else
 				g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; subpicture/x-dvd; subpicture/x-pgs"), NULL);
 	#endif
+
 				g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
 				subtitleflag = 1;
-				g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
-				//g_object_set (m_gst_playbin, "current-text", m_currentSubtitleStream, NULL);
+				//g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
 			}
 
 	//////////////////////////
@@ -2336,7 +1927,6 @@ printf("gstCBsubtitleAvail.......\n");
 			GstStateChangeReturn ret;
 			ret = gst_element_set_state (pipeline, GST_STATE_PLAYING);
 			g_object_set (G_OBJECT (pipeline), "current-text", 0, NULL);
-
 			if(ret == GST_STATE_CHANGE_FAILURE)
 			{
 				g_printerr ("Unable to set the pipeline to the playing state.\n");
@@ -2523,111 +2113,9 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 		case GST_MESSAGE_TAG:
 			debug(150, "gst player tag");
 			break;
-		case GST_MESSAGE_ASYNC_DONE:
-			debug(150, "gst player async done");
-			if(GST_MESSAGE_SRC(msg) != GST_OBJECT(pipeline))
-				break;
-
-			gint i, n_video = 0, n_audio = 0, n_text = 0;
-			//bool codec_tofix = false;
-
-			g_object_get (pipeline, "n-video", &n_video, NULL);
-			g_object_get (pipeline, "n-audio", &n_audio, NULL);
-			g_object_get (pipeline, "n-text", &n_text, NULL);
-
-			//eDebug("[eServiceMP3] async-done - %d video, %d audio, %d subtitle", n_video, n_audio, n_text);
-
-			if ( n_video + n_audio <= 0 )
-				printf("stop...\n");
-//				stop();
-
-//			m_audioStreams.clear();
-//			m_subtitleStreams.clear();
-
-			for (i = 0; i < n_audio; i++)
-			{
-//				audioStream audio;
-				gchar *g_codec, *g_lang;
-				GstTagList *tags = NULL;
-				GstPad* pad = 0;
-				g_signal_emit_by_name (pipeline, "get-audio-pad", i, &pad);
-#if GST_VERSION_MAJOR < 1
-				GstCaps* caps = gst_pad_get_negotiated_caps(pad);
-#else
-				GstCaps* caps = gst_pad_get_current_caps(pad);
-#endif
-				gst_object_unref(pad);
-				if (!caps)
-					continue;
-				GstStructure* str = gst_caps_get_structure(caps, 0);
-				const gchar *g_type = gst_structure_get_name(str);
-				//eDebug("[eServiceMP3] AUDIO STRUCT=%s", g_type);
-//				audio.type = gstCheckAudioPad(str);
-//				audio.language_code = "und";
-//				audio.codec = g_type;
-				g_codec = NULL;
-				g_lang = NULL;
-				g_signal_emit_by_name (pipeline, "get-audio-tags", i, &tags);
-#if GST_VERSION_MAJOR < 1
-				if (tags && gst_is_tag_list(tags))
-#else
-				if (tags && GST_IS_TAG_LIST(tags))
-#endif
-				{
-					if (gst_tag_list_get_string(tags, GST_TAG_AUDIO_CODEC, &g_codec))
-					{
-//						audio.codec = std::string(g_codec);
-						g_free(g_codec);
-					}
-					if (gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
-					{
-//						audio.language_code = std::string(g_lang);
-						g_free(g_lang);
-					}
-					gst_tag_list_free(tags);
-				}
-				//eDebug("[eServiceMP3] audio stream=%i codec=%s language=%s", i, audio.codec.c_str(), audio.language_code.c_str());
-				//codec_tofix = (audio.codec.find("MPEG-1 Layer 3 (MP3)") == 0 || audio.codec.find("MPEG-2 AAC") == 0) && n_audio - n_video == 1;
-//				m_audioStreams.push_back(audio);
-				gst_caps_unref(caps);
-			}
-
-			for (i = 0; i < n_text; i++)
-			{
-				gchar *g_codec = NULL, *g_lang = NULL;
-				GstTagList *tags = NULL;
-				g_signal_emit_by_name (pipeline, "get-text-tags", i, &tags);
-//				subtitleStream subs;
-//				subs.language_code = "und";
-#if GST_VERSION_MAJOR < 1
-				if (tags && gst_is_tag_list(tags))
-#else
-				if (tags && GST_IS_TAG_LIST(tags))
-#endif
-				{
-					if (gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
-					{
-//						subs.language_code = g_lang;
-						g_free(g_lang);
-					}
-					gst_tag_list_get_string(tags, GST_TAG_SUBTITLE_CODEC, &g_codec);
-					gst_tag_list_free(tags);
-				}
-
-				//eDebug("[eServiceMP3] subtitle stream=%i language=%s codec=%s", i, subs.language_code.c_str(), g_codec ? g_codec : "(null)");
-
-				GstPad* pad = 0;
-				g_signal_emit_by_name (pipeline, "get-text-pad", i, &pad);
-	//			if ( pad )
-	//				g_signal_connect (G_OBJECT (pad), "notify::caps", G_CALLBACK (gstTextpadHasCAPS), this);
-
-//				subs.type = getSubtitleType(pad, g_codec);
-				gst_object_unref(pad);
-				g_free(g_codec);
-	//			m_subtitleStreams.push_back(subs);
-			}
-			
-			break;
+		//case GST_MESSAGE_ASYNC_DONE:
+		//	debug(150, "gst player async done");
+		//	break;
 		case GST_MESSAGE_ELEMENT:
 			debug(150, "GST_MESSAGE_ELEMENT");
 			const GstStructure *msgstruct = gst_message_get_structure(msg);
@@ -2831,24 +2319,6 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 			}
 */
 			break;
-		case GST_MESSAGE_APPLICATION:
-//		    const GstStructure *msgstruct = gst_message_get_structure(msg);
-			debug(150, "GST_MESSAGE_APPLICATION");
-			const GstStructure *msgstruct1 = gst_message_get_structure(msg);
-		    if (msgstruct1 !=  NULL)
-		    {
-		        const gchar *messagename = gst_structure_get_name(msgstruct1);
-		        if (!strcmp(messagename, "subtitle"))
-		        {
-		            const gchar *text;
-		            GstClockTime start = GST_CLOCK_TIME_NONE;
-		            GstClockTime duration = GST_CLOCK_TIME_NONE;
-		            gst_structure_get_clock_time(msgstruct1, "start", &start);
-		            gst_structure_get_clock_time(msgstruct1, "duration", &duration);
-		            text = gst_structure_get_string(msgstruct1, "text");
-		            fprintf(stderr, "{\"PLAYBACK_SUBTITLE\":{\"start\":%lld, \"duration\":%lld, \"text\":\"%s\"}}\n", GST_TIME_AS_MSECONDS(start), GST_TIME_AS_MSECONDS(duration), text);
-		        }
-		    }
 		default:
 			debug(150, "gst player unknown message");
 			break;
@@ -3497,14 +2967,13 @@ audiotype_t gstCheckAudioPad(GstStructure* structure)
 
 subtype_t getSubtitleType(GstPad* pad, gchar *g_codec)
 {
-	g_codec = NULL;
+g_codec = NULL;
 	subtype_t type = stUnknown;
 #if GST_VERSION_MAJOR < 1
 	GstCaps* caps = gst_pad_get_negotiated_caps(pad);
 #else
 	GstCaps* caps = gst_pad_get_current_caps(pad);
 #endif
-
 	if (!caps && !g_codec)
 	{
 		caps = gst_pad_get_allowed_caps(pad);
@@ -3517,8 +2986,6 @@ subtype_t getSubtitleType(GstPad* pad, gchar *g_codec)
 		{
 			const gchar *g_type = gst_structure_get_name(str);
 			// eDebug("getSubtitleType::subtitle probe caps type=%s", g_type ? g_type : "(null)");
-			printf("getSubtitleType::subtitle probe caps type=%s\n", g_type ? g_type : "(null)");
-
 			if (g_type)
 			{
 #if GST_VERSION_MAJOR < 1
@@ -3541,7 +3008,6 @@ subtype_t getSubtitleType(GstPad* pad, gchar *g_codec)
 	}
 	else if ( g_codec )
 	{
-		printf("getSubtitleType::subtitle probe codec tag=%s\n", g_codec);
 		// eDebug("getSubtitleType::subtitle probe codec tag=%s", g_codec);
 		if ( !strcmp(g_codec, "VOB") )
 			type = stVOB;
@@ -3559,9 +3025,6 @@ subtype_t getSubtitleType(GstPad* pad, gchar *g_codec)
 	else
 		printf("getSubtitleType::unidentifiable subtitle stream!\n");
 
-	printf("getSubtitleType stSRT: %d\n", stSRT);
-	printf("getSubtitleType return type: %d\n", type);
-//	return stSRT;
 	return type;
 }
 
@@ -4023,6 +3486,8 @@ printf("return tracklist4b\n");
 #endif
 
 }
+
+
 
 //*CurTrackEncoding and *CurTrackName be freed
 void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char** CurTrackName)
@@ -5073,70 +4538,6 @@ char* getsubtext()
 #endif
 	// add this line complile: warning: control reaches end of non-void function
 	return NULL;
-}
-#endif
-
-#ifdef EXTEPLAYER3
-char* getsubtextneu()
-{
-	char* tmpstr = NULL;
-	if(player && player->container && player->container->selectedContainer)
-		player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)&tmpstr);
-
-//	if(subtitlethread == NULL)
-	if(status.play == 1 && status.pause == 0 && tmpstr != NULL)
-	{
-		if(subtitlethread == NULL && tmpstr != NULL)
-		{
-			struct playersubtitle* snode = calloc(1, sizeof(struct playersubtitle));
-
-			char* sub_duration = oregex(".*duration=(.*);pts=.*", tmpstr);
-
-			uint32_t sub_duration_ms = 0;
-			uint32_t sub_pts_ms = 0;
-			int64_t sub_pts_int64 = 0;
-			char *sub_text = NULL;
-			int sub_pts_sec = 0;
-			int sub_duration_sec = 0;
-	
-			if(sub_duration != NULL)
-			{
-				sub_duration_ms = atoi(sub_duration);
-				sub_duration_sec = sub_duration_ms / 1000 + 1;
-			}
-
-			char* sub_pts = oregex(".*;pts=(.*);trackid=.*", tmpstr);
-
-			if(sub_pts != NULL)
-			{
-				sub_pts_ms = atoi(sub_pts);
-				sub_pts_sec = sub_pts_ms / 90000;
-				sub_pts_int64 = sub_pts_ms / 90;
-			}
-
-
-			char* sub_trackid = oregex(".*;trackid=(.*);subtext.*", tmpstr);
-			sub_text = oregex(".*;subtext=(.*).*", tmpstr);
-
-			if(snode != NULL)
-			{
-				snode->subtext = ostrcat(sub_text, NULL, 0, 0);
-				snode->sub_duration_ms = sub_duration_ms;
-				snode->sub_duration_sec = sub_duration_sec;
-				snode->sub_pts_ms = sub_pts_ms;
-				snode->sub_pts_sec = sub_pts_sec;
-				snode->sub_pts_int64 = sub_pts_int64;
-
-				printf("[player.h] getsubtext sub_text: %s\n", sub_text);
-				subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, (void*)snode, NULL, NULL);
-			}
-			free(sub_text), sub_text = NULL;
-		}
-
-//			printf("[player.h] getsubtext tmpstr: %s\n", tmpstr);
-//			subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, (void*)tmpstr, NULL, NULL);
-	}
-	return subtext;
 }
 #endif
 
