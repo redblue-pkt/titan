@@ -2778,7 +2778,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 		{
 //			printf("drawstring > gstsubtitle > string: %s\n", string);
 //			printf("drawstring > gstsubtitle > charwidth: %d\n", charwidth);
-			fillrect(posx - 1, posy + 1, charwidth + 1, fontsize + 1, 0x000001, 1);
+			fillrect(posx - 1, posy + 1, charwidth + 4, fontsize + 1, 0x000001, 1);
 
 			if((charwidth = drawchar(aktfont, cret, posx, posy, mwidth, fontsize, color, transparent, charspace, 0)) == -1)
 				lineend = 1;
