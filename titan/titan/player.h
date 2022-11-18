@@ -1084,7 +1084,8 @@ printf("playersubtitle_gst_thread\n");
 		{
 			count = 0;
 //new in
-			subtitle->bgcol = convertcol("black");
+			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
+				subtitle->bgcol = convertcol("black");
 
 			if(ostrstr(subtext, "<i>") != NULL)
 			{
@@ -1201,7 +1202,8 @@ printf("playersubtitle_ext_thread\n");
 
 			count = 0;
 //new in
-			subtitle->bgcol = convertcol("black");
+			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
+				subtitle->bgcol = convertcol("black");
 
 			if(ostrstr(subtext, "<i>") != NULL)
 			{
