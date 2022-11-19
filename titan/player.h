@@ -1171,8 +1171,8 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 
 	subtitle->bgcol = -1;
 
-	setnodeattr(subtitle, framebuffer, 0);
-	bg = savescreen(subtitle);
+//	setnodeattr(subtitle, framebuffer, 0);
+//	bg = savescreen(subtitle);
 
 	while(subtitlethread->aktion != STOP)
 	{
@@ -1244,11 +1244,11 @@ subend:
 			usleep(100000);
 	}
 
-	if(status.writeplayersub == 1)
-	{
-		restorescreen(bg, subtitle);
-		blitfb(0);
-	}
+//	if(status.writeplayersub == 1)
+//	{
+//		restorescreen(bg, subtitle);
+//		blitfb(0);
+//	}
 
 	free(sub_text); sub_text = NULL;
 	subtitlethread = NULL;
@@ -1307,11 +1307,15 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	gint64 buf_pos = GST_BUFFER_PTS(buffer);
 	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
 
-	while(duration_ms != 0 && subtitlethread != NULL)
+
+
+//	while(duration_ms != 0 && subtitlethread != NULL)
+	while(duration_ms != 0 && subtitlethread->aktion != STOP)
 	{
 		debug(300, "while3 duration count: %d == 0", duration_ms);
 		usleep(100000);
 	}
+
 
 //old
 /*
