@@ -2160,6 +2160,7 @@ playerstart:
 						{
 							playinfobarstatus = 0;
 							if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
+							status.writeplayersub = 1;
 						}
 					}
 	#else
@@ -2173,6 +2174,7 @@ playerstart:
 					{
 						playinfobarstatus = 0;
 						if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
+						status.writeplayersub = 1;
 					}
 
 					if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
@@ -2195,6 +2197,7 @@ playerstart:
 					{
 						playinfobarstatus = 0;
 						if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, flag);
+						status.writeplayersub = 1;
 					}
 
 					if(waitofbuffer == 1 &&	status.prefillbuffer == 0)

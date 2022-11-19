@@ -124,6 +124,7 @@ void screenmc_videoplayer()
 			{
 				playinfobarstatus = 0;
 				if(videooff == 0) screenplayinfobar(NULL, NULL, 1, playertype, 0);
+				status.writeplayersub = 1
 			}
 		}
 		else if(exit == 0 && tmpview == 3 && filelist->select != NULL && status.play == 0 && status.pause == 0)
