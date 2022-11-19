@@ -1064,7 +1064,8 @@ void playersubtitleclean(char* data, int len)
 #ifdef EPLAYER4
 void playersubtitle_gst_thread()
 {
-printf("playersubtitle_gst_thread\n");
+	debug(300, "start");
+
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* subtitle = getscreen("gstsubtitle");
 	char* bg = NULL;
@@ -1072,20 +1073,22 @@ printf("playersubtitle_gst_thread\n");
 	
 	subtitle->bgcol = -1;
 
-	if(getconfigint("player_subtitle_clear", NULL) == 1)
-	{
-		setnodeattr(subtitle, framebuffer, 0);
-		bg = savescreen(subtitle);
-	}
+//	setnodeattr(subtitle, framebuffer, 0);
+//	bg = savescreen(subtitle);
 
 	while(subtitlethread->aktion != STOP)
 	{
+		debug(300, "start while1");
+
+		if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+			goto subend;
+
 		if(duration_ms != 0)
 		{
 			count = 0;
 //new in
-//			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
-//				subtitle->bgcol = convertcol("black");
+			if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+				goto subend;
 
 			if(ostrstr(subtext, "<i>") != NULL)
 			{
@@ -1098,36 +1101,43 @@ printf("playersubtitle_gst_thread\n");
 				subtitle->fontcol = convertcol("white");
 //new out
 			changetext(subtitle, subtext);
-			count = duration_ms / 100;
-			drawscreen(subtitle, 0, 0);
+//			count = duration_ms / 100;
+			count = duration_ms / 90;
+			debug(300, "status.writeplayersub=%d count=%d send duration_ms=%d subtext: %s", status.writeplayersub, count, duration_ms, subtext);
+
+			if(status.writeplayersub == 1)
+				drawscreen(subtitle, 0, 0);
 			while(count > 0 && subtitlethread->aktion != STOP)
 			{
+				debug(300, "while2 duration count: %d == 0", count);
+
+				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+					goto subend;
 				usleep(100000);
 				count = count - 1;
 			}
-//			changetext(subtitle, " ");
-			drawscreen(subtitle, 0, 0);
+subend:
 			duration_ms = 0;
-
 			subtitlethread->aktion = STOP;
 		}
 		else
 			usleep(100000);
 	}
 	free(subtext); subtext = NULL;
-	if(getconfigint("player_subtitle_clear", NULL) == 1)
-		clearscreen(subtitle);
-	else
-		restorescreen(bg, subtitle);
 
-	blitfb(0);
+//	if(status.writeplayersub == 1)
+//	{
+//		restorescreen(bg, subtitle);
+//		blitfb(0);
+//	}
 	subtitlethread = NULL;
+	debug(300, "end");
 }
 #endif
 #ifdef EXTEPLAYER3
 void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int flag)
 {
-printf("playersubtitle_ext_thread\n");
+	debug(300, "start");
 
 	uint32_t sub_duration_ms = 0;
 	uint32_t sub_pts_ms = 0;
@@ -1151,7 +1161,6 @@ printf("playersubtitle_ext_thread\n");
 		sub_pts_sec = sub_pts_ms / 90000;
 	}
 
-
 	char* sub_trackid = oregex(".*;trackid=(.*);subtext.*", input);
 	sub_text = oregex(".*;subtext=(.*).*", input);
 
@@ -1162,21 +1171,14 @@ printf("playersubtitle_ext_thread\n");
 
 	subtitle->bgcol = -1;
 
-	if(getconfigint("player_subtitle_clear", NULL) == 0)
-	{
-		setnodeattr(subtitle, framebuffer, 0);
-		bg = savescreen(subtitle);
-	}
+	setnodeattr(subtitle, framebuffer, 0);
+	bg = savescreen(subtitle);
 
 	while(subtitlethread->aktion != STOP)
 	{
-/*
 		if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
-		{
-			subtitlethread->aktion = STOP;
 			goto subend;
-		}
-*/
+
 		if(sub_duration_ms != 0)
 		{
 			int64_t pts = 0;
@@ -1190,11 +1192,10 @@ printf("playersubtitle_ext_thread\n");
 
 			while(sec < sub_pts_sec && subtitlethread->aktion != STOP)
 			{
+				debug(300, "while1 subpts=pts count: %s == %d", sec, sub_pts_sec);
+
 				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
-				{
-//					subtitlethread->aktion = STOP;
 					goto subend;
-				}
 
 				sleep(1);
 				sec++;
@@ -1202,14 +1203,10 @@ printf("playersubtitle_ext_thread\n");
 
 			count = 0;
 //new in
-//			if(getconfigint("player_subtitle_use_bgcol", NULL) == 1)
-//				subtitle->bgcol = convertcol("black");
-
 			if(ostrstr(sub_text, "<i>") != NULL)
 			{
 				string_deltags(sub_text);
 				string_decode(sub_text, 1);
-
 				subtitle->fontcol = convertcol("yellow");
 			}
 			else
@@ -1217,18 +1214,21 @@ printf("playersubtitle_ext_thread\n");
 //new out
 
 			changetext(subtitle, sub_text);
-			printf("send sub_duration_ms=%d sub_duration_sec=%d sub_text: %s\n",sub_duration_ms, sub_duration_sec , sub_text);
-			
-//		    count = sub_duration_ms / 100;
+
+//			printf("send sub_duration_ms=%d sub_duration_sec=%d sub_text: %s\n",sub_duration_ms, sub_duration_sec , sub_text);
+			debug(150, "send sub_duration_ms=%d sub_duration_sec=%d sub_text: %s",sub_duration_ms, sub_duration_sec , sub_text);
+
 			count = sub_duration_ms;
-						
-			drawscreen(subtitle, 0, 0);
+			
+			if(status.writeplayersub == 1)
+				drawscreen(subtitle, 0, 0);
 
 			while(count > 0 && subtitlethread->aktion != STOP)
 			{
+				debug(300, "while2 duration count: %d == 0", count);
+
 				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
 				{
-//					subtitlethread->aktion = STOP;
 					goto subend;
 				}
 
@@ -1236,24 +1236,25 @@ printf("playersubtitle_ext_thread\n");
 				count = count - 1;
 			}
 subend:
-//			changetext(subtitle, " ");
-			clearscreen(subtitle);
-			drawscreen(subtitle, 0, 0);
 			sub_duration_ms = 0;
+// crash sometimes
+//			subtitlethread->aktion = STOP;
 		}
 		else
 			usleep(100000);
-
-		}
-		if(getconfigint("player_subtitle_clear", NULL) == 1)
-			clearscreen(subtitle);
-		else
-			restorescreen(bg, subtitle);
-
-		blitfb(0);
-		free(sub_text); sub_text = NULL;
-		subtitlethread = NULL;
 	}
+
+	if(status.writeplayersub == 1)
+	{
+		restorescreen(bg, subtitle);
+		blitfb(0);
+	}
+
+	free(sub_text); sub_text = NULL;
+	subtitlethread = NULL;
+
+	debug(300, "end");
+}
 #endif
 #endif
 
@@ -1308,6 +1309,7 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 
 	while(duration_ms != 0 && subtitlethread != NULL)
 	{
+		debug(300, "while3 duration count: %d == 0", duration_ms);
 		usleep(100000);
 	}
 
@@ -1485,6 +1487,8 @@ int playerstart(char* file)
 	free(status.actplay);
 	status.actplay = ostrcat(file, NULL, 0, 0);
 	
+	status.writeplayersub = 1;
+	 
 	if(status.mcaktiv == 0 && status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{ 
 			char* fileseek = changefilenameext(file, ".pts");
