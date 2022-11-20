@@ -1732,6 +1732,7 @@ struct status
 	char* streamurl;
 	char* actplay;
 	int writeplayersub;
+	struct stimerthread* subtitlethread;
 } status;
 
 struct fb

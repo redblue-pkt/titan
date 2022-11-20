@@ -333,15 +333,14 @@ gint m_framerate;
 unsigned long long m_gst_startpts = 0;
 CustomData data;
 GstElement *video_sink = NULL;
-struct stimerthread* subtitlethread = NULL;
+//struct stimerthread* status.subtitlethread = NULL;
 uint32_t buf_pos_ms = 0;
 uint32_t duration_ms = 0;
 int subtitleflag = 0;
 char *subtext = NULL;
 #else
-struct stimerthread* subtitlethread = NULL;
+//struct stimerthread* status.subtitlethread = NULL;
 #endif
-
 //titan player
 
 //flag 0: from play
@@ -1067,7 +1066,7 @@ void playersubtitle_gst_thread()
 	debug(300, "start");
 
 	struct skin* framebuffer = getscreen("framebuffer");
-	struct skin* subtitle = getscreen("gstsubtitle");
+	struct skin* subtitle = getscreen("extplayer_subtitle");
 	char* bg = NULL;
 	int count = 0;
 	
@@ -1076,18 +1075,18 @@ void playersubtitle_gst_thread()
 //	setnodeattr(subtitle, framebuffer, 0);
 //	bg = savescreen(subtitle);
 
-	while(subtitlethread->aktion != STOP)
+	while(status.subtitlethread->aktion != STOP)
 	{
 		debug(300, "start while1");
 
-		if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+		if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
 			goto subend;
 
 		if(duration_ms != 0)
 		{
 			count = 0;
 //new in
-			if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+			if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
 				goto subend;
 
 			if(ostrstr(subtext, "<i>") != NULL)
@@ -1107,18 +1106,18 @@ void playersubtitle_gst_thread()
 
 			if(status.writeplayersub == 1)
 				drawscreen(subtitle, 0, 0);
-			while(count > 0 && subtitlethread->aktion != STOP)
+			while(count > 0 && status.subtitlethread->aktion != STOP)
 			{
 				debug(300, "while2 duration count: %d == 0", count);
 
-				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+				if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
 					goto subend;
 				usleep(100000);
 				count = count - 1;
 			}
 subend:
 			duration_ms = 0;
-			subtitlethread->aktion = STOP;
+			status.subtitlethread->aktion = STOP;
 		}
 		else
 			usleep(100000);
@@ -1130,7 +1129,7 @@ subend:
 //		restorescreen(bg, subtitle);
 //		blitfb(0);
 //	}
-	subtitlethread = NULL;
+	status.subtitlethread = NULL;
 	debug(300, "end");
 }
 #endif
@@ -1165,7 +1164,7 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 	sub_text = oregex(".*;subtext=(.*).*", input);
 
 	struct skin* framebuffer = getscreen("framebuffer");
-	struct skin* subtitle = getscreen("gstsubtitle");
+	struct skin* subtitle = getscreen("extplayer_subtitle");
 	char* bg = NULL;
 	int count = 0;
 
@@ -1174,9 +1173,9 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 //	setnodeattr(subtitle, framebuffer, 0);
 //	bg = savescreen(subtitle);
 
-	while(subtitlethread->aktion != STOP)
+	while(status.subtitlethread->aktion != STOP)
 	{
-		if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+		if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
 			goto subend;
 
 		if(sub_duration_ms != 0)
@@ -1190,11 +1189,11 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 				sec = pts / 90000;
 			}
 
-			while(sec < sub_pts_sec && subtitlethread->aktion != STOP)
+			while(sec < sub_pts_sec && status.subtitlethread->aktion != STOP)
 			{
 				debug(300, "while1 subpts=pts count: %d == %d", sec, sub_pts_sec);
 
-				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+				if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
 					goto subend;
 
 				sleep(1);
@@ -1223,11 +1222,11 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 			if(status.writeplayersub == 1)
 				drawscreen(subtitle, 0, 0);
 
-			while(count > 0 && subtitlethread->aktion != STOP)
+			while(count > 0 && status.subtitlethread->aktion != STOP)
 			{
 				debug(300, "while2 duration count: %d == 0", count);
 
-				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
+				if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
 				{
 					goto subend;
 				}
@@ -1238,7 +1237,7 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 subend:
 			sub_duration_ms = 0;
 // crash sometimes
-//			subtitlethread->aktion = STOP;
+//			status.subtitlethread->aktion = STOP;
 		}
 		else
 			usleep(100000);
@@ -1251,7 +1250,7 @@ subend:
 //	}
 
 	free(sub_text); sub_text = NULL;
-	subtitlethread = NULL;
+	status.subtitlethread = NULL;
 
 	debug(300, "end");
 }
@@ -1285,8 +1284,8 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	running_pts = pos / 11111LL;
 	decoder_ms = running_pts / 90;
 		
-	if(subtitlethread == NULL)
-		subtitlethread = addtimer(&playersubtitle_gst_thread, START, 10000, 1, NULL, NULL, NULL);
+	if(status.subtitlethread == NULL)
+		status.subtitlethread = addtimer(&playersubtitle_gst_thread, START, 10000, 1, NULL, NULL, NULL);
 
     if (!buffer)
         return;
@@ -1309,8 +1308,8 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 
 
 
-//	while(duration_ms != 0 && subtitlethread != NULL)
-	while(duration_ms != 0 && subtitlethread->aktion != STOP)
+//	while(duration_ms != 0 && status.subtitlethread != NULL)
+	while(duration_ms != 0 && status.subtitlethread->aktion != STOP)
 	{
 		debug(300, "while3 duration count: %d == 0", duration_ms);
 		usleep(100000);
@@ -1491,6 +1490,7 @@ int playerstart(char* file)
 	free(status.actplay);
 	status.actplay = ostrcat(file, NULL, 0, 0);
 	
+	status.subtitlethread = NULL;
 	status.writeplayersub = 1;
 	 
 	if(status.mcaktiv == 0 && status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
@@ -2499,6 +2499,7 @@ void playerplay()
 
 int playerstop()
 {
+	status.writeplayersub = 0;
 
 	if(status.actplay != NULL)
 	{
@@ -2535,8 +2536,8 @@ int playerstop()
 
 		PlaybackDieNow(1);
 
-	//	if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
-	//		subtitlethread->aktion = STOP;
+	//	if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
+	//		status.subtitlethread->aktion = STOP;
 						
 		free(player);
 		player = NULL;
@@ -2551,8 +2552,8 @@ int playerstop()
 #endif
 	#ifdef EPLAYER4
 		subtitleflag = 0;
-		if(subtitlethread != 0)
-			subtitlethread->aktion = STOP;
+		if(status.subtitlethread != 0)
+			status.subtitlethread->aktion = STOP;
 		if(video_sink)
 		{
 			gst_object_unref (video_sink);
@@ -3935,8 +3936,8 @@ void playerstopsubtitletrack()
 		subtitleflag = 0;
 		//if(pipeline != NULL)
 		//	g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);
-		if(subtitlethread != NULL)
-			subtitlethread->aktion = STOP;
+		if(status.subtitlethread != NULL)
+			status.subtitlethread->aktion = STOP;
 	#endif
 #if defined (EXTGST)
 	}
@@ -4537,11 +4538,11 @@ char* getsubtext()
 		if(player && player->container && player->container->selectedContainer)
 			player->container->selectedContainer->Command(player, CONTAINER_GET_SUBTEXT, (void*)&tmpstr);
 
-	//	if(subtitlethread == NULL)
+	//	if(status.subtitlethread == NULL)
 		if(status.play == 1 && status.pause == 0 && tmpstr != NULL)
 		{
 			printf("[player.h] getsubtext tmpstr: %s\n", tmpstr);
-			subtitlethread = addtimer(&playersubtitle_ext_thread, START, 10000, 1, (void*)tmpstr, NULL, NULL);
+			status.subtitlethread = addtimer(&playersubtitle_ext_thread, START, 10000, 1, (void*)tmpstr, NULL, NULL);
 		}
 		return subtext;
 #if defined (EXTGST)
