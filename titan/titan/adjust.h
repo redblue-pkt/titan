@@ -32,6 +32,7 @@ void screenadjust()
 	struct skin* skip79 = getscreennode(adjust, "skip79");
 	struct skin* playertype = getscreennode(adjust, "playertype");
 	struct skin* extplayer_type = getscreennode(adjust, "extplayer_type");
+	struct skin* extplayer_subtitle_use_bgcol = getscreennode(adjust, "extplayer_subtitle_use_bgcol");
 	struct skin* autochangechannelname = getscreennode(adjust, "autochangechannelname");
 	struct skin* def_rectimer_after = getscreennode(adjust, "def_rectimer_after");
 	struct skin* showchanneltimeline = getscreennode(adjust, "showchanneltimeline");
@@ -60,8 +61,6 @@ void screenadjust()
 	struct skin* extensions_type = getscreennode(adjust, "extensions_type");
 #endif
 	struct skin* channel_source_info = getscreennode(adjust, "channel_source_info");
-	struct skin* player_subtitle_clear = getscreennode(adjust, "player_subtitle_clear");
-	struct skin* player_subtitle_use_bgcol = getscreennode(adjust, "player_subtitle_use_bgcol");
 
 
 	struct skin* tmp = NULL;
@@ -264,13 +263,9 @@ void screenadjust()
 	addchoicebox(channel_source_info, "1", _("yes"));
 	setchoiceboxselection(channel_source_info, getconfig("channel_source_info", NULL));
 
-	addchoicebox(player_subtitle_clear, "0", _("no"));
-	addchoicebox(player_subtitle_clear, "1", _("yes"));
-	setchoiceboxselection(player_subtitle_clear, getconfig("player_subtitle_clear", NULL));
-
-	addchoicebox(player_subtitle_use_bgcol, "0", _("no"));
-	addchoicebox(player_subtitle_use_bgcol, "1", _("yes"));
-	setchoiceboxselection(player_subtitle_use_bgcol, getconfig("player_subtitle_use_bgcol", NULL));
+	addchoicebox(extplayer_subtitle_use_bgcol, "0", _("no"));
+	addchoicebox(extplayer_subtitle_use_bgcol, "1", _("yes"));
+	setchoiceboxselection(extplayer_subtitle_use_bgcol, getconfig("extplayer_subtitle_use_bgcol", NULL));
 
 	if(!file_exist("/mnt/config/dualboot"))
 	{
@@ -590,7 +585,7 @@ void screenadjust()
 			addconfigscreencheck("extplayer_type", extplayer_type, "0");
 			if(extplayer_type->ret != NULL && ostrcmp(extplayer_type->ret, "1") == 0)
 				playerinit(0, NULL);
-			
+			status.subtitlethread = NULL;
 #endif
 			addconfigscreencheck("autochangechannelname", autochangechannelname, "0");
 			status.autochangechannelname = getconfigint("autochangechannelname", NULL);
@@ -624,8 +619,7 @@ void screenadjust()
 			status.crosscontrol = getconfigint("crosscontrol", NULL);
 			addconfigscreencheck("emucontrol", emucontrol, "0");
 			addconfigscreencheck("channel_source_info", channel_source_info, "0");
-			addconfigscreencheck("player_subtitle_clear", player_subtitle_clear, "0");
-			addconfigscreencheck("player_subtitle_use_bgcol", player_subtitle_use_bgcol, "0");
+			addconfigscreencheck("extplayer_subtitle_use_bgcol", extplayer_subtitle_use_bgcol, "0");
 
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 				addconfigscreencheck("usecec", usecec, "0");

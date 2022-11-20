@@ -2466,7 +2466,18 @@ void streamplayer(struct channel* chnode, int flag)
 //    if(/*status.play != 2 && getconfigint("lastplayertype", NULL) == 0 && */checkbox("DM900") == 1)
 //    sleep(4); //woraround EPG
     servicestop(status.aktservice, 1, 5);
-    playerstart(chnode->streamurl);
+    printf("for console test add streamplayer_use_console=1 to titan.cfg\n");
+
+	if(getconfigint("streamplayer_use_console", NULL) == 1)
+	{
+	    printf("console test:\n");
+		printf("gst-launch playbin uri=%s\n", chnode->streamurl);
+		printf("gstplayer %s\n", chnode->streamurl);
+		printf("eplayer3 %s\n", chnode->streamurl);
+		printf("exteplayer3 %s\n", chnode->streamurl);
+	}
+	else
+	    playerstart(chnode->streamurl);
     status.play = 2;
     delconfigtmp("playerbuffersize");
     delconfigtmp("playerbufferseektime");

@@ -2776,8 +2776,8 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 
 		if(flag == 3)
 		{
-//			printf("drawstring > gstsubtitle > string: %s\n", string);
-//			printf("drawstring > gstsubtitle > charwidth: %d\n", charwidth);
+//			printf("drawstring > extplayer_subtitle > string: %s\n", string);
+//			printf("drawstring > extplayer_subtitle > charwidth: %d\n", charwidth);
 			fillrect(posx - 1, posy + 1, charwidth + 4, fontsize + 1, 0x000001, 1);
 
 			if((charwidth = drawchar(aktfont, cret, posx, posy, mwidth, fontsize, color, transparent, charspace, 0)) == -1)
@@ -3398,7 +3398,7 @@ void drawnode(struct skin* node, int flag)
 		{
 			int lastposy = 0;
 
-			if(ostrcmp("gstsubtitle", node->name) == 0 && getconfigint("player_subtitle_use_bgcol", NULL) == 1)
+			if(ostrcmp("extplayer_subtitle", node->name) == 0 && getconfigint("extplayer_subtitle_use_bgcol", NULL) == 1)
 			{
 				// player subtitle use flag 3
 				drawstring(node->text, node->linecount, node->poscount, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, node->wrap, NULL, &lastposy, NULL, node->charspace, 3);

@@ -2913,7 +2913,7 @@
 </screen>
 
 
-<screen name="gstsubtitle" type="textbox" scrollbar="auto" fontsize="30" fontcol="yellow" posx="left" posy="bottom" width="100%" height="100" halign="center" vspace="10" bgcol="#212121">
+<screen name="extplayer_subtitle" type="textbox" scrollbar="auto" fontsize="30" fontcol="yellow" posx="left" posy="bottom" width="100%" height="100" halign="center" vspace="10" bgcol="#212121">
 </screen>
 
 

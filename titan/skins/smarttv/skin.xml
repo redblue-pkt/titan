@@ -2697,5 +2697,5 @@
 			<node parent="listbox" name="null" text="key 0" type="choicebox" valign="middle" width="100%" height="34">
 </screen>
 
-<screen name="gstsubtitle" type="textbox" scrollbar="auto" fontsize="30" fontcol="#FFFF00" posx="left" posy="bottom" width="100%" height="100" halign="center" vspace="10" bgcol="#212121">
+<screen name="extplayer_subtitle" type="textbox" scrollbar="auto" fontsize="30" fontcol="#FFFF00" posx="left" posy="bottom" width="100%" height="100" halign="center" vspace="10" bgcol="#212121">
 </screen>
