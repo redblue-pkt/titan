@@ -1075,7 +1075,7 @@ void playersubtitle_gst_thread()
 //	setnodeattr(subtitle, framebuffer, 0);
 //	bg = savescreen(subtitle);
 
-	while(status.subtitlethread->aktion != STOP)
+	while(status.subtitlethread != NULL && status.subtitlethread->aktion != STOP)
 	{
 		debug(300, "start while1");
 
@@ -1106,7 +1106,7 @@ void playersubtitle_gst_thread()
 
 			if(status.writeplayersub == 1)
 				drawscreen(subtitle, 0, 0);
-			while(count > 0 && status.subtitlethread->aktion != STOP)
+			while(count > 0 && status.subtitlethread != NULL && status.subtitlethread->aktion != STOP)
 			{
 				debug(300, "while2 duration count: %d == 0", count);
 
@@ -1117,7 +1117,8 @@ void playersubtitle_gst_thread()
 			}
 subend:
 			duration_ms = 0;
-			status.subtitlethread->aktion = STOP;
+			if(status.subtitlethread != NULL)
+				status.subtitlethread->aktion = STOP;
 		}
 		else
 			usleep(100000);
@@ -1129,7 +1130,8 @@ subend:
 //		restorescreen(bg, subtitle);
 //		blitfb(0);
 //	}
-	status.subtitlethread = NULL;
+	if(status.subtitlethread != NULL)
+		status.subtitlethread = NULL;
 	debug(300, "end");
 }
 #endif
@@ -1173,7 +1175,7 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 //	setnodeattr(subtitle, framebuffer, 0);
 //	bg = savescreen(subtitle);
 
-	while(status.subtitlethread->aktion != STOP)
+	while(status.subtitlethread != NULL && status.subtitlethread->aktion != STOP)
 	{
 		if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
 			goto subend;
@@ -1189,11 +1191,11 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 				sec = pts / 90000;
 			}
 
-			while(sec < sub_pts_sec && status.subtitlethread->aktion != STOP)
+			while(sec < sub_pts_sec && status.subtitlethread != NULL && status.subtitlethread->aktion != STOP)
 			{
 				debug(300, "while1 subpts=pts count: %d == %d", sec, sub_pts_sec);
 
-				if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL)
+				if((status.play == 0 || status.pause == 1) && status.subtitlethread != NULL && status.subtitlethread != NULL)
 					goto subend;
 
 				sleep(1);
@@ -1222,7 +1224,7 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 			if(status.writeplayersub == 1)
 				drawscreen(subtitle, 0, 0);
 
-			while(count > 0 && status.subtitlethread->aktion != STOP)
+			while(count > 0 && status.subtitlethread != NULL && status.subtitlethread->aktion != STOP)
 			{
 				debug(300, "while2 duration count: %d == 0", count);
 
@@ -1237,7 +1239,8 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 subend:
 			sub_duration_ms = 0;
 // crash sometimes
-//			status.subtitlethread->aktion = STOP;
+			if(status.subtitlethread != NULL)
+				status.subtitlethread->aktion = STOP;
 		}
 		else
 			usleep(100000);
@@ -1250,7 +1253,8 @@ subend:
 //	}
 
 	free(sub_text); sub_text = NULL;
-	status.subtitlethread = NULL;
+	if(status.subtitlethread != NULL)
+		status.subtitlethread = NULL;
 
 	debug(300, "end");
 }
