@@ -1192,7 +1192,7 @@ void playersubtitle_ext_thread(struct stimerthread* timernode, char* input, int 
 
 			while(sec < sub_pts_sec && subtitlethread->aktion != STOP)
 			{
-				debug(300, "while1 subpts=pts count: %s == %d", sec, sub_pts_sec);
+				debug(300, "while1 subpts=pts count: %d == %d", sec, sub_pts_sec);
 
 				if((status.play == 0 || status.pause == 1) && subtitlethread != NULL)
 					goto subend;
