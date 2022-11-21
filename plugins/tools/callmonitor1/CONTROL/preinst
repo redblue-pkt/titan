@@ -7,6 +7,7 @@ INSTDIR="$1"
 PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/callmonitor1"
 
 if [ -e "$PLUGINDIR/callmon.conf" ]; then
+	echo "save callmon.conf"
 	cp "$PLUGINDIR/callmon.conf" /tmp/callmon.conf 
 fi
 
