@@ -619,10 +619,10 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 //    needed for usepath
     delallfiles(IPKGTMP, ".png");
 
-#if defined(OVBUILD) || defined (OEBUILD)
+//#if defined(OVBUILD) || defined (OEBUILD)
 	if(!file_exist("/etc/.opkg"))
 		system("touch /etc/.opkg");
-#endif
+//#endif
 	if(mode == 0)
 	{
 		drawscreen(load, 0, 0);
