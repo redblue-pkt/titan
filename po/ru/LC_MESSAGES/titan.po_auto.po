@@ -3004,7 +3004,7 @@ msgstr "Не удаётся получить время EPG или время о
 msgid "Can't get Streamurl !"
 msgstr "Не удаётся получить поток!"
 
-#: extensions.h:463 httpdfunc.h:6604
+#: extensions.h:465 httpdfunc.h:6604
 msgid "Can't get all TPK index !"
 msgstr "Не удалось загрузить список плагинов!"
 
@@ -3087,7 +3087,7 @@ msgstr ""
 msgid "Can't start timeshift play !"
 msgstr "Таймшифт не запущен!"
 
-#: extensions.h:467 httpdfunc.h:6616
+#: extensions.h:469 httpdfunc.h:6616
 msgid "Can't update all packages !"
 msgstr "Обновления для плагинов не найдены!"
 
@@ -4616,7 +4616,7 @@ msgstr ""
 msgid "Do you really want to overwrite the chosen image?"
 msgstr "Вы действительно хотите перезаписать выбранный имидж?"
 
-#: extensions.h:905
+#: extensions.h:912
 msgid "Do you really want to start the Upgrade?"
 msgstr ""
 
@@ -5097,12 +5097,12 @@ msgstr ""
 #: cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36 divxstage.h:86
 #: divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 epgsettings.h:331
-#: extensions.h:198 extensions.h:251 extensions.h:260 extensions.h:264
-#: extensions.h:269 extensions.h:315 extensions.h:323 extensions.h:330
-#: extensions.h:372 extensions.h:398 extensions.h:429 extensions.h:463
-#: extensions.h:467 extensions.h:526 extensions.h:672 extensions.h:754
-#: extensions.h:762 extensions.h:826 extensions.h:907 extensions.h:915
-#: extensions.h:987 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
+#: extensions.h:198 extensions.h:253 extensions.h:262 extensions.h:266
+#: extensions.h:271 extensions.h:317 extensions.h:325 extensions.h:332
+#: extensions.h:374 extensions.h:400 extensions.h:431 extensions.h:465
+#: extensions.h:469 extensions.h:531 extensions.h:679 extensions.h:761
+#: extensions.h:769 extensions.h:833 extensions.h:914 extensions.h:922
+#: extensions.h:994 facebook.h:66 facebook.h:157 facebook.h:167 faststream.h:30
 #: faststream.h:80 faststream.h:92 faststream.h:104 faststream.h:110
 #: faststream.h:167 filemanager.h:95 filemanager.h:100 filemanager.h:206
 #: filemanager.h:279 filemanager.h:289 filemanager.h:319 filemanager.h:329
@@ -5859,7 +5859,7 @@ msgstr "Фавориты"
 msgid "February"
 msgstr "Февраль"
 
-#: extensions.h:25 extensions.h:547 skins_cool_skin.xml.h:298
+#: extensions.h:25 extensions.h:552 skins_cool_skin.xml.h:298
 #: skins_megastyleblue_skin.xml.h:299 skins_megastylegrey_skin.xml.h:299
 msgid "Feed"
 msgstr "Введите адрес фида"
@@ -7873,7 +7873,7 @@ msgstr ""
 msgid "Installed:"
 msgstr "Установлено"
 
-#: extensions.h:242 extensions.h:390 extensions.h:663 extensions.h:840
+#: extensions.h:244 extensions.h:392 extensions.h:670 extensions.h:847
 msgid "Installing"
 msgstr "Установка"
 
@@ -7948,35 +7948,35 @@ msgstr ""
 msgid "Ipk Install - select install medium"
 msgstr ""
 
-#: extensions.h:630
+#: extensions.h:637
 msgid "Ipk Install - select section"
 msgstr ""
 
-#: extensions.h:672 extensions.h:987
+#: extensions.h:679 extensions.h:994
 msgid "Ipk Install Info"
 msgstr ""
 
-#: extensions.h:681
+#: extensions.h:688
 msgid "Ipk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:739
+#: extensions.h:746
 msgid "Ipk Remove - select file"
 msgstr ""
 
-#: extensions.h:754
+#: extensions.h:761
 msgid "Ipk Remove Info"
 msgstr ""
 
-#: extensions.h:762
+#: extensions.h:769
 msgid "Ipk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:907
+#: extensions.h:914
 msgid "Ipk Upgrade"
 msgstr ""
 
-#: extensions.h:915
+#: extensions.h:922
 msgid "Ipk Upgrade Info - Upgrade OK"
 msgstr ""
 
@@ -9222,10 +9222,10 @@ msgstr "Лист меню"
 #: channellist.h:1061 channellist.h:1066 channellist.h:1068 channellist.h:1152
 #: cloudzilla.h:39 cloudzilla.h:45 cloudzilla.h:51 divxstage.h:36
 #: divxstage.h:86 divxstage.h:178 divxstage.h:184 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:278
-#: extensions.h:338 extensions.h:372 extensions.h:432 extensions.h:437
-#: extensions.h:476 extensions.h:705 extensions.h:785 extensions.h:826
-#: extensions.h:862 extensions.h:867 extensions.h:938 facebook.h:66
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:317 extensions.h:280
+#: extensions.h:340 extensions.h:374 extensions.h:434 extensions.h:439
+#: extensions.h:478 extensions.h:712 extensions.h:792 extensions.h:833
+#: extensions.h:869 extensions.h:874 extensions.h:945 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:80
 #: faststream.h:92 faststream.h:104 faststream.h:110 faststream.h:167
 #: filemanager.h:95 filemanager.h:100 filemanager.h:206 filemanager.h:279
@@ -10044,7 +10044,7 @@ msgstr "Нет установленного имиджа"
 msgid "No memory"
 msgstr "Ошибка: Недостаточно памяти"
 
-#: extensions.h:372 extensions.h:526 extensions.h:826 extensions.h:987
+#: extensions.h:374 extensions.h:531 extensions.h:833 extensions.h:994
 msgid "No plugin found."
 msgstr "Плагины не найдены"
 
@@ -10132,14 +10132,14 @@ msgstr ""
 #: channellist.h:1068 channellist.h:1152 cloudzilla.h:39 cloudzilla.h:45
 #: cloudzilla.h:51 divxstage.h:36 divxstage.h:86 divxstage.h:178
 #: divxstage.h:184 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27
-#: epgsettings.h:317 epgsettings.h:331 extensions.h:198 extensions.h:251
-#: extensions.h:260 extensions.h:264 extensions.h:269 extensions.h:278
-#: extensions.h:315 extensions.h:323 extensions.h:330 extensions.h:338
-#: extensions.h:372 extensions.h:398 extensions.h:429 extensions.h:437
-#: extensions.h:463 extensions.h:467 extensions.h:476 extensions.h:526
-#: extensions.h:672 extensions.h:705 extensions.h:754 extensions.h:762
-#: extensions.h:785 extensions.h:826 extensions.h:867 extensions.h:907
-#: extensions.h:915 extensions.h:938 extensions.h:987 facebook.h:66
+#: epgsettings.h:317 epgsettings.h:331 extensions.h:198 extensions.h:253
+#: extensions.h:262 extensions.h:266 extensions.h:271 extensions.h:280
+#: extensions.h:317 extensions.h:325 extensions.h:332 extensions.h:340
+#: extensions.h:374 extensions.h:400 extensions.h:431 extensions.h:439
+#: extensions.h:465 extensions.h:469 extensions.h:478 extensions.h:531
+#: extensions.h:679 extensions.h:712 extensions.h:761 extensions.h:769
+#: extensions.h:792 extensions.h:833 extensions.h:874 extensions.h:914
+#: extensions.h:922 extensions.h:945 extensions.h:994 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:80
 #: faststream.h:92 faststream.h:104 faststream.h:110 faststream.h:167
 #: filemanager.h:95 filemanager.h:100 filemanager.h:206 filemanager.h:279
@@ -12343,7 +12343,7 @@ msgstr "Удалить неиспользуемые спутники/прова�
 msgid "Remove unused Transponder on used Satellites/Providers"
 msgstr "Удалить неиспользуемые транспондеры спутников/провайдеров"
 
-#: extensions.h:310 extensions.h:747
+#: extensions.h:312 extensions.h:754
 msgid "Removeing"
 msgstr "Удаление"
 
@@ -14344,7 +14344,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Выбор эмулятора"
 
-#: extensions.h:432 extensions.h:862
+#: extensions.h:434 extensions.h:869
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -15435,7 +15435,7 @@ msgstr "Страница не найдена, файл удалён"
 msgid "The video no longer exists"
 msgstr "Это видео больше не существует"
 
-#: extensions.h:237 extensions.h:264 extensions.h:426 httpdfunc.h:6276
+#: extensions.h:239 extensions.h:266 extensions.h:428 httpdfunc.h:6276
 #: tpk.h:3040
 msgid ""
 "There may only be one package installed from this section. To install "
@@ -15794,8 +15794,8 @@ msgstr ""
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
-#: extensions.h:278 extensions.h:338 extensions.h:437 extensions.h:476
-#: extensions.h:705 extensions.h:785 extensions.h:867 extensions.h:938
+#: extensions.h:280 extensions.h:340 extensions.h:439 extensions.h:478
+#: extensions.h:712 extensions.h:792 extensions.h:874 extensions.h:945
 #: global.h:8100 global.h:8120 global.h:8140 global.h:8160 global.h:8180
 #: kravencfg.c:212 security.h:1584 skinadjust.h:619 skinadjust.h:685
 #: skinadjust.h:1110 skinadjust.h:1172
@@ -16017,7 +16017,7 @@ msgstr ""
 msgid "Tpk / Ipkg"
 msgstr ""
 
-#: extensions.h:232 httpdfunc.h:6013 skin_default_skin.xml.h:705
+#: extensions.h:234 httpdfunc.h:6013 skin_default_skin.xml.h:705
 #: skins_0acht5zehn_skin.xml.h:896 skins_atemio_skin.xml.h:669
 #: skins_cool_skin.xml.h:889 skins_default_skin.xml.h:705
 #: skins_kravenhd_skin.xml.h:711 skins_megastyleblue_skin.xml.h:890
@@ -16036,39 +16036,39 @@ msgstr "Выбор файла"
 msgid "Tpk Install - select install medium"
 msgstr "Выберите пакет"
 
-#: extensions.h:227 httpdfunc.h:5949
+#: extensions.h:229 httpdfunc.h:5949
 msgid "Tpk Install - select section"
 msgstr "Выбор категории"
 
-#: extensions.h:198 extensions.h:251 extensions.h:526
+#: extensions.h:198 extensions.h:253 extensions.h:531
 msgid "Tpk Install Info"
 msgstr "Информация об установке"
 
-#: extensions.h:264 extensions.h:269 httpdfunc.h:6241 httpdfunc.h:6243
+#: extensions.h:266 extensions.h:271 httpdfunc.h:6241 httpdfunc.h:6243
 msgid "Tpk Install Info - Install ERROR"
 msgstr "Ошибка установки плагина"
 
-#: extensions.h:260 httpdfunc.h:6239
+#: extensions.h:262 httpdfunc.h:6239
 msgid "Tpk Install Info - Install OK"
 msgstr "Плагин успешно установлен"
 
-#: extensions.h:304 httpdfunc.h:6432
+#: extensions.h:306 httpdfunc.h:6432
 msgid "Tpk Remove - select file"
 msgstr "Выбор файла"
 
-#: extensions.h:315
+#: extensions.h:317
 msgid "Tpk Remove Info"
 msgstr "Информация об удалении"
 
-#: extensions.h:330 httpdfunc.h:6516
+#: extensions.h:332 httpdfunc.h:6516
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "Ошибка удаления плагина"
 
-#: extensions.h:323 httpdfunc.h:6512
+#: extensions.h:325 httpdfunc.h:6512
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Плагин успешно удалён"
 
-#: extensions.h:463 extensions.h:467 httpdfunc.h:6601 httpdfunc.h:6613
+#: extensions.h:465 extensions.h:469 httpdfunc.h:6601 httpdfunc.h:6613
 msgid "Tpk Update Info - Update ERROR"
 msgstr "Ошибка обновления плагина"
 
@@ -20063,11 +20063,11 @@ msgstr "Звёздочка + название канала"
 msgid "start"
 msgstr ""
 
-#: extensions.h:669 extensions.h:751 extensions.h:844 softcam.h:91 softcam.h:99
+#: extensions.h:676 extensions.h:758 extensions.h:851 softcam.h:91 softcam.h:99
 msgid "started"
 msgstr "Активен"
 
-#: extensions.h:248 extensions.h:394
+#: extensions.h:250 extensions.h:396
 msgid "starting"
 msgstr "Выполнить"
 
