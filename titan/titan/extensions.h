@@ -213,8 +213,10 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 	status.hangtime = 99999;
 	unlink(TPKLOG);
 
-	unlink("/etc/.opkg");
-			
+#if defined(OVBUILD) || defined (OEBUILD)
+	if(file_exist("/etc/.opkg"))
+		unlink("/etc/.opkg");
+#endif			
 	if(mode == 0)
 	{
 		drawscreen(load, 0, 0);
@@ -487,7 +489,10 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 	if(first == 1) tpkcleantmp(0);
 	status.hangtime = getconfigint("hangtime", NULL);
 
-	system("touch /etc/.opkg");
+#if defined(OVBUILD) || defined (OEBUILD)
+	if(!file_exist("/etc/.opkg"))
+		system("touch /etc/.opkg");
+#endif
 }
 
 //flag 0: without message
@@ -614,8 +619,10 @@ void screenextensions_ipk(int mode, char* path, char* defentry, int first)
 //    needed for usepath
     delallfiles(IPKGTMP, ".png");
 
-	system("touch /etc/.opkg");
-
+#if defined(OVBUILD) || defined (OEBUILD)
+	if(!file_exist("/etc/.opkg"))
+		system("touch /etc/.opkg");
+#endif
 	if(mode == 0)
 	{
 		drawscreen(load, 0, 0);
