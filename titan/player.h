@@ -1125,6 +1125,8 @@ subend:
 	}
 	free(subtext); subtext = NULL;
 
+	if(getconfigint("extplayer_subtitle_clear", NULL) == 1)
+		clearscreen(subtitle);
 //	if(status.writeplayersub == 1)
 //	{
 //		restorescreen(bg, subtitle);
@@ -1245,6 +1247,9 @@ subend:
 		else
 			usleep(100000);
 	}
+
+	if(getconfigint("extplayer_subtitle_clear", NULL) == 1)
+		clearscreen(subtitle);
 
 //	if(status.writeplayersub == 1)
 //	{
@@ -2923,7 +2928,9 @@ void playerseek(float sec)
 			if(nanos_pts >= nanos_len)
 			{
 				debug(150, "gst skip seeking");
-	//			playerstop();
+//				playerstop();
+				//seek 10s before end
+				gst_element_seek(pipeline, 1.0, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH, GST_SEEK_TYPE_SET, nanos_len - 2000, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
 			}
 			else
 				gst_element_seek(pipeline, 1.0, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH, GST_SEEK_TYPE_SET, nanos_pts, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
