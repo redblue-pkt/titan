@@ -33,6 +33,7 @@ void screenadjust()
 	struct skin* playertype = getscreennode(adjust, "playertype");
 	struct skin* extplayer_type = getscreennode(adjust, "extplayer_type");
 	struct skin* extplayer_subtitle_use_bgcol = getscreennode(adjust, "extplayer_subtitle_use_bgcol");
+	struct skin* extplayer_subtitle_clear = getscreennode(adjust, "extplayer_subtitle_clear");
 	struct skin* autochangechannelname = getscreennode(adjust, "autochangechannelname");
 	struct skin* def_rectimer_after = getscreennode(adjust, "def_rectimer_after");
 	struct skin* showchanneltimeline = getscreennode(adjust, "showchanneltimeline");
@@ -266,6 +267,10 @@ void screenadjust()
 	addchoicebox(extplayer_subtitle_use_bgcol, "0", _("no"));
 	addchoicebox(extplayer_subtitle_use_bgcol, "1", _("yes"));
 	setchoiceboxselection(extplayer_subtitle_use_bgcol, getconfig("extplayer_subtitle_use_bgcol", NULL));
+
+	addchoicebox(extplayer_subtitle_clear, "0", _("no"));
+	addchoicebox(extplayer_subtitle_clear, "1", _("yes"));
+	setchoiceboxselection(extplayer_subtitle_clear, getconfig("extplayer_subtitle_clear", NULL));
 
 	if(!file_exist("/mnt/config/dualboot"))
 	{
@@ -620,6 +625,7 @@ void screenadjust()
 			addconfigscreencheck("emucontrol", emucontrol, "0");
 			addconfigscreencheck("channel_source_info", channel_source_info, "0");
 			addconfigscreencheck("extplayer_subtitle_use_bgcol", extplayer_subtitle_use_bgcol, "0");
+			addconfigscreencheck("extplayer_subtitle_clear", extplayer_subtitle_clear, "0");
 
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 				addconfigscreencheck("usecec", usecec, "0");

@@ -677,6 +677,7 @@
 		<node parent="listbox" name="playertype" text="Player for .ts" type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="extplayer_type" text="External Player for all other Media Files" type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="extplayer_subtitle_use_bgcol" text="External Player Subtitle use Background Color" type="choicebox" valign="middle" width="100%">
+		<node parent="listbox" name="extplayer_subtitle_clear" text="External Player Subtitle clear" type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="autochangechannelname" text="Change Channelname auto." type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="showchanneltimeline" text="Show Timeline in Channellist" type="choicebox" valign="middle" width="100%">
 		<node parent="listbox" name="screenanim" text="Animated Screens" type="choicebox" valign="middle" width="100%">
