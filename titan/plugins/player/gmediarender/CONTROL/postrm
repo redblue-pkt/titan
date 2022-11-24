@@ -8,6 +8,8 @@ if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg remove titan-gmediarender
 else
 	INSTDIR="$1"
+if [ "$1" == "upgrade" ];then INSTDIR=$(echo $0 | grep "///" | sed "s!///!\n!g" | head -n1)
+echo "set INSTDIR $INSTDIR"
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/gmediarender"
 
 	rm -rf "$PLUGINDIR" >/dev/null 2>&1

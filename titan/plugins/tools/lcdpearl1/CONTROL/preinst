@@ -3,7 +3,9 @@
 echo Use Install Dest: $1
 echo Start Install Script: $0
 
-INSTDIR="$1"  
+INSTDIR="$1"
+if [ "$1" == "upgrade" ];then INSTDIR=$(echo $0 | grep "///" | sed "s!///!\n!g" | head -n1)
+echo "set INSTDIR $INSTDIR"
 PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/lcdpearl1" 
 
 rm -rf "$PLUGINDIR"
