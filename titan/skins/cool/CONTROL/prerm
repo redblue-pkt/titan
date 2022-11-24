@@ -1,7 +1,3 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
-
-
 exit 0

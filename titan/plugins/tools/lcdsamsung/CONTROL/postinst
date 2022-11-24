@@ -3,9 +3,7 @@
 echo Use Install Dest: $1
 echo Start Install Script: $0
 
-INSTDIR="$1"
-if [ "$1" == "upgrade" ];then INSTDIR=$(echo $0 | grep "///" | sed "s!///!\n!g" | head -n1);fi
-echo "set INSTDIR $INSTDIR"
+INSTDIR="$1"  
 PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/lcdsamsung" 
 
 if [ -e /tmp/skin.xml_sam ]; then
