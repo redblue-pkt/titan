@@ -8,7 +8,7 @@ if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg remove titan-plugin-tools-callmonitor1 --dest $1
 else
 	INSTDIR="$1"
-if [ "$1" == "upgrade" ];then INSTDIR=$(echo $0 | grep "///" | sed "s!///!\n!g" | head -n1)
+if [ "$1" == "upgrade" ];then INSTDIR=$(echo $0 | grep "///" | sed "s!///!\n!g" | head -n1);fi
 echo "set INSTDIR $INSTDIR"
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/callmonitor1"
 
