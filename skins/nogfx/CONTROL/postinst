@@ -1,11 +1,5 @@
 #!/bin/sh
-
-echo Use Install Dest: $1
-echo Start Install Script: $0
-
 INSTDIR="$1"
-if [ "$1" == "upgrade" ];then INSTDIR=$(echo $0 | grep "///" | sed "s!///!\n!g" | head -n1);fi
-echo "set INSTDIR $INSTDIR"
 
 sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/nogfx/skinconfig"
 sed s#_path_#"$INSTDIR"#g -i "$INSTDIR/usr/local/share/titan/skin/nogfx/skinconfig.default"

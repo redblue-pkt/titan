@@ -9,8 +9,6 @@ if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg install titan-gmediarender
 else
 	INSTDIR="$1"
-if [ "$1" == "upgrade" ];then INSTDIR=$(echo $0 | grep "///" | sed "s!///!\n!g" | head -n1);fi
-echo "set INSTDIR $INSTDIR"
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/gmediarender"
 
 	sed s#_path_#"$INSTDIR"#g -i "$PLUGINDIR/run"
