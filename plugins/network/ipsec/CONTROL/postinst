@@ -1,7 +1,7 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
+echo "Dest: $1"
+echo "Script: $0"
 
 
 ARCH=$(cat /etc/.arch)
