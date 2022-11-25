@@ -1,7 +1,7 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
+echo "Dest: $1"
+echo "Script: $0"
 
 if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
@@ -10,7 +10,7 @@ fi
 
 if [ "$1" != "upgrade" ];then
 	PLUGINDIR="$1/usr/local/share/titan/plugins/callmonitor1"
-	echo PLUGINDIR: $PLUGINDIR
+	echo "PLUGINDIR: $PLUGINDIR"
 
 	if [ ! -e "$PLUGINDIR/callmon.conf" ] && [ -e "$PLUGINDIR/callmon.conf.callmon" ]; then
 		echo "use tpk config file: callmon.conf"
