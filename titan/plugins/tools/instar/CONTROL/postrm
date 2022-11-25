@@ -1,16 +1,10 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
-
+echo "Dest: $1"
+echo "Script: $0"
 
 if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg remove titan-plugin-tools-instar --dest $1
-else
-	INSTDIR="$1" 
-	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/instar"
-
-	rm -r "$PLUGINDIR" >/dev/null 2>&1
 fi
 
 exit 0

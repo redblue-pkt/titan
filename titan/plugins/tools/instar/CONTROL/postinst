@@ -1,21 +1,25 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
-
+echo "Dest: $1"
+echo "Script: $0"
 
 if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install titan-plugin-tools-instar --dest $1
 fi
 
-INSTDIR="$1" 
-PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/instar"
+if [ "$1" != "upgrade" ];then
+	PLUGINDIR="$1/usr/local/share/titan/plugins/instar"
+	echo "PLUGINDIR: $PLUGINDIR"
 
-if [ -e /tmp/instar.conf ]; then
-	mv "$PLUGINDIR/instar.conf" "$PLUGINDIR/instar.conf_org"
-	cp /tmp/instar.conf "$PLUGINDIR/instar.conf"
-	rm /tmp/instar.conf
+	if [ ! -e "$PLUGINDIR/instar.conf" ] && [ -e "$PLUGINDIR/instar.conf.instar" ]; then
+		echo "use tpk config file: instar.conf"
+		echo "rename $PLUGINDIR/instar.conf.callmon > $PLUGINDIR/instar.conf"
+		mv "$PLUGINDIR/instar.conf.instar" "$PLUGINDIR/instar.conf"
+	else
+		echo "found user config file: instar.conf"
+		echo "skip tpk config file: instar.conf.instar"
+	fi
 fi
 
 exit 0

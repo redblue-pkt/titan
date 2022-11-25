@@ -1,7 +1,10 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
+echo "Dest: $1"
+echo "Script: $0"
 
+if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
+	opkg remove titan-plugin-tools-callmonitor1 --dest $1
+fi
 
 exit 0

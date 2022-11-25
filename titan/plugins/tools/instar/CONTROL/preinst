@@ -1,15 +1,6 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
-
-INSTDIR="$1" 
-PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/instar"
-
-if [ -e "$PLUGINDIR/instar.conf" ]; then
-	cp "$PLUGINDIR/instar.conf" /tmp/instar.conf 
-fi
-
-rm -rf "$PLUGINDIR"
+echo "Dest: $1"
+echo "Script: $0"
 
 exit 0
