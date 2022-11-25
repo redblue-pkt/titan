@@ -8,20 +8,18 @@ if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg install titan-plugin-tools-callmonitor1 --dest $1
 fi
 
-INSTDIR="$1"  
-if [ "$1" == "upgrade" ];then INSTDIR=$(echo $0 | grep "///" | sed "s!///!\n!g" | head -n1);fi
-echo INSTDIR: $INSTDIR
+if [ "$1" != "upgrade" ];then
+	PLUGINDIR="$1/usr/local/share/titan/plugins/callmonitor1"
+	echo PLUGINDIR: $PLUGINDIR
 
-PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/callmonitor1"
-echo PLUGINDIR: $PLUGINDIR
-
-if [ ! -e "$PLUGINDIR/oscam.conf" ] && [ -e "$PLUGINDIR/callmon.conf.callmon" ]; then
-	echo "use tpk config file: callmon.conf"
-	echo "rename $PLUGINDIR/callmon.conf.callmon > $PLUGINDIR/callmon.conf"
-	mv "$PLUGINDIR/callmon.conf.callmon" "$PLUGINDIR/callmon.conf"
-else
-	echo "found user config file: callmon.conf"
-	echo "skip tpk config file: callmon.conf.callmon"
+	if [ ! -e "$PLUGINDIR/callmon.conf" ] && [ -e "$PLUGINDIR/callmon.conf.callmon" ]; then
+		echo "use tpk config file: callmon.conf"
+		echo "rename $PLUGINDIR/callmon.conf.callmon > $PLUGINDIR/callmon.conf"
+		mv "$PLUGINDIR/callmon.conf.callmon" "$PLUGINDIR/callmon.conf"
+	else
+		echo "found user config file: callmon.conf"
+		echo "skip tpk config file: callmon.conf.callmon"
+	fi
 fi
 
 exit 0
