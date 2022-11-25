@@ -3,29 +3,31 @@
 echo "Dest: $1"
 echo "Script: $0"
 
-INSTDIR="$1"
-PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/dlna"
-
-echo INSTDIR $INSTDIR
-echo PLUGINDIR $PLUGINDIR
-
 if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install minidlna --dest $1
 fi
 
-model=`cat /etc/model`
-sed "s/friendly_name=.*/friendly_name=MiniDLNA-Server-$model/" -i $INSTDIR/etc/minidlna.conf.minidlna
-Name=`cat $INSTDIR/etc/minidlna.conf.minidlna | grep friendly_name= | cut -d"=" -f2`
-echo "Set ServerName ($Name) to minidlna.conf"
+if [ "$1" != "upgrade" ];then
+	INSTDIR="$1"
+	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/dlna"
 
-if [ ! -e "$INSTDIR/etc/minidlna.conf" ]; then
-	echo "use tpk config file: minidlna.conf"
-	echo "rename $INSTDIR/etc/minidlna.conf.minidlna > $INSTDIR/etc/minidlna.conf"
-	mv "$INSTDIR/etc/minidlna.conf.minidlna" "$INSTDIR/etc/minidlna.conf"
-else
-	echo "found user config file: minidlna.conf"
-	echo "skip tpk config file: minidlna.conf.minidlna"
+	echo INSTDIR $INSTDIR
+	echo PLUGINDIR $PLUGINDIR
+
+	model=`cat /etc/model`
+	sed "s/friendly_name=.*/friendly_name=MiniDLNA-Server-$model/" -i $INSTDIR/etc/minidlna.conf.minidlna
+	Name=`cat $INSTDIR/etc/minidlna.conf.minidlna | grep friendly_name= | cut -d"=" -f2`
+	echo "Set ServerName ($Name) to minidlna.conf"
+
+	if [ ! -e "$INSTDIR/etc/minidlna.conf" ]; then
+		echo "use tpk config file: minidlna.conf"
+		echo "rename $INSTDIR/etc/minidlna.conf.minidlna > $INSTDIR/etc/minidlna.conf"
+		mv "$INSTDIR/etc/minidlna.conf.minidlna" "$INSTDIR/etc/minidlna.conf"
+	else
+		echo "found user config file: minidlna.conf"
+		echo "skip tpk config file: minidlna.conf.minidlna"
+	fi
 fi
 
 exit 0
