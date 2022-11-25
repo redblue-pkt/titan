@@ -1,20 +1,25 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
-
-INSTDIR="$1"  
-PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/wlandisplay" 
-
-if [ -e /tmp/skin.xml_sam ]; then
-	mv "$PLUGINDIR/skin.xml" "$PLUGINDIR/skin.xml_org"
-	cp /tmp/skin.xml_sam "$PLUGINDIR/skin.xml"
-	rm /tmp/skin.xml_sam >/dev/null 2>&1
-fi
+echo "Dest: $1"
+echo "Script: $0"
 
 if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
 	opkg install titan-plugin-tools-wlandisplay --dest $1
+fi
+
+if [ "$1" != "upgrade" ];then
+	PLUGINDIR="$1/usr/local/share/titan/plugins/wlandisplay"
+	echo "PLUGINDIR: $PLUGINDIR"
+
+	if [ ! -e "$PLUGINDIR/skin.xml" ] && [ -e "$PLUGINDIR/skin.xml.skin" ]; then
+		echo "use tpk config file: skin.xml"
+		echo "rename $PLUGINDIR/skin.xml.skin > $PLUGINDIR/skin.xml"
+		mv "$PLUGINDIR/skin.xml.skin" "$PLUGINDIR/skin.xml"
+	else
+		echo "found user config file: skin.xml"
+		echo "skip tpk config file: skin.xml.skin"
+	fi
 fi
 
 exit 0
