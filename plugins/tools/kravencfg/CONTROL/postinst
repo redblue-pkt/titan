@@ -1,12 +1,7 @@
 #!/bin/sh
 
-echo Use Install Dest: $1
-echo Start Install Script: $0
-
-INSTDIR="$1"
-
-chmod 644 $INSTDIR/usr/local/share/titan/plugins/kravencfg/*
-chmod 755 $INSTDIR/usr/local/share/titan/plugins/kravencfg/kravencfg.sh
+echo "Dest: $1"
+echo "Script: $0"
 
 if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg update
