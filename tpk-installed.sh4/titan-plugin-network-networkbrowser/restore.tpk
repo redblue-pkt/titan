@@ -1,15 +1,16 @@
-/var/usr/local/share/titan/plugins/networkbrowser/skin.xml#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/networkbrowser.so#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/plugin.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/skin/netbrowser_cifs.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/skin/netbrowser_remove share.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/skin/netbrowser_nfs.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/skin/netbrowser_add new share.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/skin/netbrowser_ftpfs.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/skin/netbrowser_edit share.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/skin/netbrowser_scanshares.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser/skin#*#4#0#0#0#0
-/var/usr/local/share/titan/plugins/networkbrowser#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin.xml#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/networkbrowser.so#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/plugin.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin/netbrowser_cifs.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin/netbrowser_remove share.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin/netbrowser_nfs.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin/netbrowser_add new share.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin/netbrowser_ftpfs.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin/netbrowser_edit share.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin/netbrowser_scanshares.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser/skin#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/network/networkbrowser#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/network#*#4#4#1#0#0
 /var/usr/local/share/titan/plugins#*#4#4#1#0#0
 /var/usr/local/share/titan#*#4#4#1#0#0
 /var/usr/local/share#*#4#4#1#0#0

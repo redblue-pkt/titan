@@ -1,8 +1,9 @@
-/var/usr/local/share/titan/plugins/tithek/skin.xml#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/tithek/tithek.so#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/tithek/plugin.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/tithek/default.jpg#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/tithek#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/player/tithek/skin.xml#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/player/tithek/tithek.so#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/player/tithek/plugin.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/player/tithek/default.jpg#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/player/tithek#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/player#*#4#4#1#0#0
 /var/usr/local/share/titan/plugins#*#4#4#1#0#0
 /var/usr/local/share/titan#*#4#4#1#0#0
 /var/usr/local/share#*#4#4#1#0#0

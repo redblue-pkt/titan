@@ -1,7 +1,8 @@
-/var/usr/local/share/titan/plugins/filemanager/skin.xml#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/filemanager/plugin.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/filemanager/filemanager.so#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/filemanager#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/tools/filemanager/skin.xml#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/tools/filemanager/plugin.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/tools/filemanager/filemanager.so#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/tools/filemanager#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/tools#*#4#4#1#0#0
 /var/usr/local/share/titan/plugins#*#4#4#1#0#0
 /var/usr/local/share/titan#*#4#4#1#0#0
 /var/usr/local/share#*#4#4#1#0#0
