@@ -9,7 +9,7 @@ if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 fi
 
 if [ "$1" != "upgrade" ];then
-	PLUGINDIR="$1/usr/local/share/titan/plugins/callmonitor1"
+	PLUGINDIR="$1/usr/local/share/titan/plugins/tools/callmonitor1"
 	echo "PLUGINDIR: $PLUGINDIR"
 
 	if [ ! -e "$PLUGINDIR/callmon.conf" ] && [ -e "$PLUGINDIR/callmon.conf.callmon" ]; then

@@ -361,12 +361,12 @@ void screenopera(char* url)
 	
 	textbox(_("Message"), _("You can leave HBBTV with Record Key."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 15, 0);
 	
-  //if(isdir("/var/usr/local/share/titan/plugins/hbbtv/opera"))
-  //		opera_root = ostrcat("/var/usr/local/share/titan/plugins/hbbtv/opera", NULL, 0, 0);
-  //	else if(isdir("/var/swap/usr/local/share/titan/plugins/hbbtv/opera"))
-  //		opera_root = ostrcat("/var/swap/usr/local/share/titan/plugins/hbbtv/opera", NULL, 0, 0);
+  //if(isdir("/var/usr/local/share/titan/plugins/player/hbbtv/opera"))
+  //		opera_root = ostrcat("/var/usr/local/share/titan/plugins/player/hbbtv/opera", NULL, 0, 0);
+  //	else if(isdir("/var/swap/usr/local/share/titan/plugins/player/hbbtv/opera"))
+  //		opera_root = ostrcat("/var/swap/usr/local/share/titan/plugins/player/hbbtv/opera", NULL, 0, 0);
   //	else
-  //		opera_root = ostrcat("/mnt/swapextensions/usr/local/share/titan/plugins/hbbtv/opera", NULL, 0, 0);
+  //		opera_root = ostrcat("/mnt/swapextensions/usr/local/share/titan/plugins/player/hbbtv/opera", NULL, 0, 0);
     
 	opera_root = ostrcat("/usr/local/OpenOpera", NULL, 0, 0);
 	opera_bin = ostrcat(opera_root, "/launcher start", 0, 0);

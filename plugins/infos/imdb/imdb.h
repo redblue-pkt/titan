@@ -69,7 +69,7 @@ start:
 	tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 
 //	tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
-//	writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr0", tmpstr, 1);
+//	writesys("/var/usr/local/share/titan/plugins/infos/imdb/tmpstr0", tmpstr, 1);
 
 	debug(133, "tmpsearch: %s", tmpsearch);
 	free(tmpsearch); tmpsearch = NULL;
@@ -120,13 +120,13 @@ start:
 			char* tmp = tmpstr;
 			tmpstr = string_resub("<p><b>Titel", "</td></tr></table> </p>", tmpstr, 0);
 			free(tmp); tmp = NULL;
-//			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr", tmpstr, 0);
+//			writesys("/var/usr/local/share/titan/plugins/infos/imdb/tmpstr", tmpstr, 0);
 			
 			while(ostrstr(tmpstr, "</td><td valign=\"top\"><a href=\"/title/") != NULL)
 			{
 				tmpstr = string_replace("</td><td valign=\"top\"><a href=\"/title/", "\n\n", tmpstr, 1);
 			}
-//			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr1", tmpstr, 0);
+//			writesys("/var/usr/local/share/titan/plugins/infos/imdb/tmpstr1", tmpstr, 0);
 
 			struct menulist* mlist = NULL, *mbox = NULL;
 			
@@ -220,7 +220,7 @@ current not working
 			tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 
 //			tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
-//			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrj", tmpstr, 0);
+//			writesys("/var/usr/local/share/titan/plugins/infos/imdb/tmpstrj", tmpstr, 0);
 			
 			debug(133, "tmpsearch: %s", tmpsearch);
 			free(tmpsearch); tmpsearch = NULL;
@@ -501,7 +501,7 @@ current not working
 		tmpstr = gethttps(tmpurl, NULL, NULL, NULL, NULL, NULL, 1);
 
 //		tmpstr = gethttp("www.imdb.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
-//		writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrplot", tmpstr, 0);
+//		writesys("/var/usr/local/share/titan/plugins/infos/imdb/tmpstrplot", tmpstr, 0);
 		
 		debug(133, "tmpsearch: %s", tmpsearch);
 					

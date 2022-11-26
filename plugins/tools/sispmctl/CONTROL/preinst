@@ -4,7 +4,7 @@ echo "Dest: $1"
 echo "Script: $0"
 
 INSTDIR="$1" 
-PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/sispmctl"
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/tools/sispmctl"
 
 if [ -e "$PLUGINDIR/sispmctl.conf" ]; then
 	cp "$PLUGINDIR/sispmctl.conf" /tmp/sispmctl.conf 

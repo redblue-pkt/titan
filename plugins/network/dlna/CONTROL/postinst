@@ -10,7 +10,7 @@ fi
 
 if [ "$1" != "upgrade" ];then
 	INSTDIR="$1"
-	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/dlna"
+	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/network/dlna"
 
 	echo INSTDIR $INSTDIR
 	echo PLUGINDIR $PLUGINDIR

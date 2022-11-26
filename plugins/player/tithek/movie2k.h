@@ -11,10 +11,10 @@ char* movie2k(char* link)
 	if(link == NULL || ostrncmp("http://", link, 7)) return NULL;
 
 	tmpstr1 = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek//movie2k_streamurl_tmpstr1_a", NULL, NULL, NULL, tmpstr1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek//movie2k_streamurl_tmpstr1_a", NULL, NULL, NULL, tmpstr1);
 
 	tmpstr = string_resub("question.png", "underplayer", tmpstr1, 0);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek//movie2k_streamurl_tmpstr1_b", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek//movie2k_streamurl_tmpstr1_b", NULL, NULL, NULL, tmpstr);
 
 	free(tmpstr1), tmpstr1 = NULL;
 
@@ -25,7 +25,7 @@ char* movie2k(char* link)
 	}
 
 	url = oregex(".*<a href=\"(http://.*)\" target.*", tmpstr);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek//movie2k_streamurl_url1", NULL, NULL, NULL, url);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek//movie2k_streamurl_url1", NULL, NULL, NULL, url);
 
 	if(url == NULL)
 	{
@@ -34,7 +34,7 @@ char* movie2k(char* link)
 	}
 
 	streamurl = hoster(url);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek//movie2k_streamurl_url7", NULL, NULL, NULL, url);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek//movie2k_streamurl_url7", NULL, NULL, NULL, url);
 end:
 	free(url), url = NULL;
 	free(tmpstr), tmpstr = NULL;
@@ -299,7 +299,7 @@ int movie2k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	drawscreen(load, 0, 0);
 
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/movie2k1_hoster_tmpstr", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/movie2k1_hoster_tmpstr", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr != NULL)
 	{	
@@ -308,7 +308,7 @@ int movie2k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 		string_strip_whitechars(tmpstr);
 		tmpstr = string_replace_all("<tr id=\"tablemoviesindex2\"", "\n<tr id=\"tablemoviesindex2\"", tmpstr, 1);
 		tmpstr = string_replace_all("<select name=\"hosterlist\"", "\n<select name=\"hosterlist\"", tmpstr, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/movie2k2_hoster_tmpstr_replace", NULL, NULL, NULL, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/movie2k2_hoster_tmpstr_replace", NULL, NULL, NULL, tmpstr);
 
 		int count = 0;
 		int incount = 0;

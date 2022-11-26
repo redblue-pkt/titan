@@ -9,7 +9,7 @@ if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 fi
 
 if [ "$1" != "upgrade" ];then
-	PLUGINDIR="$1/usr/local/share/titan/plugins/lcdsamsung"
+	PLUGINDIR="$1/usr/local/share/titan/plugins/tools/lcdsamsung"
 	echo "PLUGINDIR: $PLUGINDIR"
 
 	if [ ! -e "$PLUGINDIR/skin.xml" ] && [ -e "$PLUGINDIR/skin.xml.skin" ]; then

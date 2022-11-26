@@ -426,7 +426,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 			tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 		}
 
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thefile1_tmp", NULL, NULL, NULL, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/thefile1_tmp", NULL, NULL, NULL, tmpstr);
 
 
 		int count = 0;

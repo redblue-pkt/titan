@@ -19,7 +19,7 @@ char* p2pcast(char* link)
 	char* curlstring = NULL;
 	char* token = NULL;
 
-	system("rm -rf /var/usr/local/share/titan/plugins/tithek/p2pcast*");
+	system("rm -rf /var/usr/local/share/titan/plugins/player/tithek/p2pcast*");
 /*
 	http://p2pcast.net/philadelphia-76ers-at-oklahoma-city-thunder-live-stream.html
 	<iframe  src="streams/nbanhl8.html" width="680" height="400" scrolling="no" frameborder="0" allowfullscreen></iframe><br>
@@ -31,7 +31,7 @@ char* p2pcast(char* link)
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/p2pcast1_tmpstr", NULL, host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/p2pcast1_tmpstr", NULL, host, path, tmpstr);
 
 
 
@@ -70,7 +70,7 @@ url3 = string_resub("<script src=\"", "\"", tmpstr2, 0);
 	path = string_replace_all(host, "", url3, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/p2pcast3a_tmpstr", NULL, host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/p2pcast3a_tmpstr", NULL, host, path, tmpstr);
 
 
 token = string_resub(".getJSON(\"", "\"", tmpstr, 0);
@@ -85,7 +85,7 @@ token = string_resub(".getJSON(\"", "\"", tmpstr, 0);
 	path = string_replace_all(host, "", url4, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/p2pcast5_tmpstr", NULL, host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/p2pcast5_tmpstr", NULL, host, path, tmpstr);
 
 //	url = oregex(".*<script src=\"(http://.*)\"></script>.*", tmpstr);
 //	url5 = ostrcat("http://p2pcast.tv/getToken.php", NULL, 0, 0);
@@ -100,7 +100,7 @@ token = string_resub(".getJSON(\"", "\"", tmpstr, 0);
 	path = string_replace_all(host, "", url5, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/p2pcast6_tmpstr", NULL, host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/p2pcast6_tmpstr", NULL, host, path, tmpstr);
 
 //	{"token":"I-OAZrLqbye4LgcL6nhHkQ"}
 	token = string_resub("{\"token\":\"", "\"", tmpstr, 0);
@@ -117,7 +117,7 @@ token = string_resub(".getJSON(\"", "\"", tmpstr, 0);
 	path = string_replace_all(host, "", streamurl, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/p2pcast7_tmpstr", NULL, host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/p2pcast7_tmpstr", NULL, host, path, tmpstr);
 
 
 	streamurl = string_replace("http://live.p2pcast.tv:8010", "http://e10.swfgames.xyz", streamurl, 1);

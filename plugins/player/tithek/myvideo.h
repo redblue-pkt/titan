@@ -77,7 +77,7 @@ char* myvideo(char* link)
 	unlink("/tmp/myvideo_tmpstr_uni");
 	unlink("/tmp/myvideo_tmpstr_error");
 
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo_tmpstr", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/myvideo_tmpstr", NULL, NULL, NULL, tmpstr);
 
 	titheklog(debuglevel, "/tmp/myvideo_tmpstr_error", NULL, NULL, NULL, tmpstr);
 				
@@ -96,7 +96,7 @@ char* myvideo(char* link)
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 
 	debug(99, "link: http://%s/%s", ip, path);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo_tmpstr2", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/myvideo_tmpstr2", NULL, NULL, NULL, tmpstr);
 
 	titheklog(debuglevel, "/tmp/myvideo_tmpstr", NULL, NULL, NULL, tmpstr);
 
@@ -253,18 +253,18 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		char* tmpstr = NULL;
 		char* tmpstr1 = NULL;
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo1_search_tmpstr", NULL, NULL, NULL, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/myvideo1_search_tmpstr", NULL, NULL, NULL, tmpstr);
 
 		if(flag == 0)
 		{
 			tmpstr = string_replace_all("<", "\n", tmpstr, 1);
 			tmpstr = string_replace_all(">", "\n", tmpstr, 1);
-			titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo2_search_tmpstr_replace", NULL, NULL, NULL, tmpstr);
+			titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/myvideo2_search_tmpstr_replace", NULL, NULL, NULL, tmpstr);
 		}
 		else
 		{
 			tmpstr1 = string_resub("MV.contentLists.chartlist = {", "</script>", tmpstr, 0);	
-			titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo2_search_tmpstr1_resub", NULL, NULL, NULL, tmpstr1);
+			titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/myvideo2_search_tmpstr1_resub", NULL, NULL, NULL, tmpstr1);
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat(tmpstr1, NULL, 0, 0);
 			free(tmpstr1), tmpstr1 = NULL;			

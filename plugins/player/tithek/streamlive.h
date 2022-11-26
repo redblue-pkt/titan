@@ -65,7 +65,7 @@ printf("444444444\n");
 
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);	
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	if(ostrstr(tmpstr, "<h1>To prove that you are not bot, please answer the question to continue</h1>") != NULL)
 	{
@@ -87,7 +87,7 @@ printf("444444444\n");
 		path = string_replace_all(host, "", link, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);	
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4a_tmpstr", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4a_tmpstr", oitoa(incount), host, path, tmpstr);
 	}
 
 	if(ostrstr(tmpstr, "'file': 'http") != NULL)
@@ -109,7 +109,7 @@ printf("444444444\n");
 		path = string_replace_all(host, "", url2, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);	
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
 	}
 
 	if(ostrstr(tmpstr, "'file': 'http") != NULL)
@@ -152,7 +152,7 @@ printf("444444444\n");
 		path = string_replace_all(host, "", url3, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
 	
 		token = string_resub("{\"token\":\"", "\"", tmpstr, 0);
 		free(tmpstr), tmpstr = NULL;

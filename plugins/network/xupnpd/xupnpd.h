@@ -14,7 +14,7 @@ void screenxupnpd()
 	xupnpdstop = ostrcat(tmpstr, " stop ", 0, 0);
 	xupnpdstart = ostrcat(tmpstr, " start ", 0, 0);
 	
-	tmpstr = string_replace("/usr/local/share/titan/plugins/xupnpd/xupnpd.sh", "/etc/xupnpd", tmpstr, 1);
+	tmpstr = string_replace("/usr/local/share/titan/plugins/network/xupnpd/xupnpd.sh", "/etc/xupnpd", tmpstr, 1);
 	xupnpdstop = ostrcat(xupnpdstop, tmpstr, 1, 0);
 	xupnpdstart = ostrcat(xupnpdstart, tmpstr, 1, 0);
 

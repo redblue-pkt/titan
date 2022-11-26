@@ -53,7 +53,7 @@ and get to youtube
 */
 
 	tmpstr = gethttps(tmplink, NULL, NULL, NULL, NULL, NULL, 1);
-	writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/player/tithek/youtube_tmpstr", tmpstr, 0);
 	free(tmplink), tmplink = NULL;
 
 //	if(flag == 1)
@@ -281,14 +281,14 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 
 		char* tmpstr = NULL;
 		tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);		
-		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr1", tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/player/tithek/tmpstr1", tmpstr, 0);
 
 		tmpstr = stringreplacechar(tmpstr, '\n', ' ');
 
 		tmpstr = string_replace_all("\"etag\":", "\n\"etag\":", tmpstr, 1);
 
 		tmpstr = string_replace_all("media:thumbnail", "\nthumbnail", tmpstr, 1);
-		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr2", tmpstr, 0);
+		writesys("/var/usr/local/share/titan/plugins/player/tithek/tmpstr2", tmpstr, 0);
 
 		int count = 0;
 		int incount = 0;

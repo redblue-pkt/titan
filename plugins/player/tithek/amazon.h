@@ -613,7 +613,7 @@ char* amazon(char* link)
 
 //////////////////////////////////////////////////
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get1", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/amazon_streamurl_get1", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
 
@@ -697,7 +697,7 @@ char* amazon(char* link)
 
 //////////////////////////////////////////////////	
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get2", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/amazon_streamurl_get2", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
 
@@ -714,7 +714,7 @@ char* amazon(char* link)
 
 //////////////////////////////////////////////////	
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/amazon_streamurl_get3", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/amazon_streamurl_get3", NULL, NULL, NULL, tmpstr);	
 	free(url), url = NULL;
 //////////////////////////////////////////////////	
 

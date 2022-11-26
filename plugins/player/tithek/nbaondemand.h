@@ -4,7 +4,7 @@
 char* nbaondemand(char* link)
 {
 	int debuglevel = getconfigint("debuglevel", NULL);
-	system("rm -f /var/usr/local/share/titan/plugins/tithek/nbaondemand*");
+	system("rm -f /var/usr/local/share/titan/plugins/player/tithek/nbaondemand*");
 
 	debug(99, "nbaondemand link=%s ", link);
 	char* streamurl = NULL, *title = NULL, *pic = NULL, *label = NULL;
@@ -21,7 +21,7 @@ char* nbaondemand(char* link)
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbaondemand1_tmpstr", NULL, host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/nbaondemand1_tmpstr", NULL, host, path, tmpstr);
 
 	url = string_resub("scrolling='no'src=\"", "\"", tmpstr, 0);
 	if(url != NULL)
@@ -33,7 +33,7 @@ char* nbaondemand(char* link)
 		path = string_replace_all(host, "", link, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbaondemand1a_tmpstr", NULL, host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/nbaondemand1a_tmpstr", NULL, host, path, tmpstr);
 		streamurl = string_resub("video height='480' width='700' src='", "'", tmpstr, 0);
 	}
 	else if(ostrstr(tmpstr, "config.playwire.com/19004/videos/v2/") != NULL)
@@ -76,7 +76,7 @@ char* nbaondemand(char* link)
 		path = string_replace_all(host, "", url, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/nbaondemand2_tmpstr", NULL, host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/nbaondemand2_tmpstr", NULL, host, path, tmpstr);
 	
 	///////////////
 		tmpstr = string_replace_all("\n", " ", tmpstr, 1);
