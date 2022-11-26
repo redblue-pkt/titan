@@ -1,7 +1,8 @@
-/mnt/swapextensions/usr/local/share/titan/plugins/mc#*#4#0#0#0#0
-/mnt/swapextensions/usr/local/share/titan/plugins#*#4#4#1#0#0
-/mnt/swapextensions/usr/local/share/titan#*#4#4#1#0#0
-/mnt/swapextensions/usr/local/share#*#4#4#1#0#0
-/mnt/swapextensions/usr/local#*#4#4#1#0#0
-/mnt/swapextensions/usr#*#4#4#1#0#0
-/mnt/swapextensions#*#4#4#1#0#0
+/var/usr/local/share/titan/plugins/player/mc#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/player#*#4#4#1#0#0
+/var/usr/local/share/titan/plugins#*#4#4#1#0#0
+/var/usr/local/share/titan#*#4#4#1#0#0
+/var/usr/local/share#*#4#4#1#0#0
+/var/usr/local#*#4#4#1#0#0
+/var/usr#*#4#4#1#0#0
+/var#*#4#4#1#0#0

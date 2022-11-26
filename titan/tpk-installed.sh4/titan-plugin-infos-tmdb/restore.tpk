@@ -1,7 +1,8 @@
-/var/usr/local/share/titan/plugins/tmdb/skin.xml#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/tmdb/tmdb.so#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/tmdb/plugin.png#*#8#0#0#0#0
-/var/usr/local/share/titan/plugins/tmdb#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/infos/tmdb/skin.xml#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/infos/tmdb/tmdb.so#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/infos/tmdb/plugin.png#*#8#0#0#0#0
+/var/usr/local/share/titan/plugins/infos/tmdb#*#4#0#0#0#0
+/var/usr/local/share/titan/plugins/infos#*#4#4#1#0#0
 /var/usr/local/share/titan/plugins#*#4#4#1#0#0
 /var/usr/local/share/titan#*#4#4#1#0#0
 /var/usr/local/share#*#4#4#1#0#0
