@@ -110,12 +110,12 @@ void screengmediarender()
 		tmpstr = ostrcat(tmpstr, net->ip, 1, 0);
 	}
 
-	if(file_exist("/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh") == 1)
-		cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh ", 1, 0);
-	else if(file_exist("/var/swap/usr/local/share/titan/plugins/gmediarender/gmediarender.sh") == 1)
-		cmd = ostrcat(cmd, "/var/swap/usr/local/share/titan/plugins/gmediarender/gmediarender.sh ", 1, 0);
+	if(file_exist("/var/usr/local/share/titan/plugins/player/gmediarender/gmediarender.sh") == 1)
+		cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/player/gmediarender/gmediarender.sh ", 1, 0);
+	else if(file_exist("/var/swap/usr/local/share/titan/plugins/player/gmediarender/gmediarender.sh") == 1)
+		cmd = ostrcat(cmd, "/var/swap/usr/local/share/titan/plugins/player/gmediarender/gmediarender.sh ", 1, 0);
 	else
-		cmd = ostrcat(cmd, "/mnt/swapextensions/usr/local/share/titan/plugins/gmediarender/gmediarender.sh ", 1, 0);
+		cmd = ostrcat(cmd, "/mnt/swapextensions/usr/local/share/titan/plugins/player/gmediarender/gmediarender.sh ", 1, 0);
 	
 	cmd = ostrcat(cmd, tmpstr, 1, 0);
 	cmd = ostrcat(cmd, " &", 1, 0);

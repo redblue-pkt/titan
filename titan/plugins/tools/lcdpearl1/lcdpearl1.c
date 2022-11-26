@@ -438,16 +438,16 @@ void init(void)
 	pluginaktiv = 1;
 	firststart = 1;
 
-	tmpstr = ostrcat("/var/usr/local/share/titan/plugins/lcdpearl1/skin2.xml", NULL, 0, 0);
+	tmpstr = ostrcat("/var/usr/local/share/titan/plugins/tools/lcdpearl1/skin2.xml", NULL, 0, 0);
 	if(!file_exist(tmpstr))
 	{
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat("/var/swap/usr/local/share/titan/plugins/lcdpearl1/skin2.xml", NULL, 0, 0);
+		tmpstr = ostrcat("/var/swap/usr/local/share/titan/plugins/tools/lcdpearl1/skin2.xml", NULL, 0, 0);
 	}
 	if(!file_exist(tmpstr))
 	{
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/plugins/lcdpearl1/skin2.xml", NULL, 0, 0);
+		tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/plugins/tools/lcdpearl1/skin2.xml", NULL, 0, 0);
 	}
 	if(!file_exist(tmpstr))
 	{

@@ -254,8 +254,8 @@ void screendlna()
 	
 	if(file_exist("/var/etc/minidlna.conf") == 1)
 	{
-		dlnastop = "/var/usr/local/share/titan/plugins/dlna/dlna.sh stop /var/etc/minidlna.conf";
-		dlnastart = "/var/usr/local/share/titan/plugins/dlna/dlna.sh start /var/etc/minidlna.conf";
+		dlnastop = "/var/usr/local/share/titan/plugins/network/dlna/dlna.sh stop /var/etc/minidlna.conf";
+		dlnastart = "/var/usr/local/share/titan/plugins/network/dlna/dlna.sh start /var/etc/minidlna.conf";
 		dlnaconfig = "/var/swap/etc/minidlna.conf";	
 	}
 	else if(file_exist("/var/swap/etc/minidlna.conf") == 1)

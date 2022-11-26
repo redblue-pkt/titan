@@ -21,7 +21,7 @@ char* zerocast(char* link, int incount)
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 
 //var url = 'http://zerocast.tv/embed.php?a=305&id=&width=650&height=480&autostart=true&strech=exactfit';
 	url1 = string_resub("var url = '", "'", tmpstr, 0);
@@ -31,7 +31,7 @@ char* zerocast(char* link, int incount)
 	path = string_replace_all(host, "", url1, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
 
 //curl = "cnRtcDovLzM3LjQ4LjgzLjY6MTkzNS9nb0xpdmUvP3dtc0F1dGhTaWduPWMyVnlkbVZ5WDNScGJXVTlNVEV2TVRVdk1qQXhOU0F6T2pFMU9qQTNJRkJOSm1oaGMyaGZkbUZzZFdVOVdUa3ZiazVtZFVaMWVUWk9Ra3RUVTJ4ME5rbG9VVDA5Sm5aaGJHbGtiV2x1ZFhSbGN6MDEvOXB4R0N0UDNhRW5KWWdvQkZGSDg=";
 	streamer = string_resub("curl = \"", "\"", tmpstr, 0);
@@ -50,7 +50,7 @@ char* zerocast(char* link, int incount)
 	path = string_replace_all(host, "", url2, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
 
 /*
 	rtmp://37.48.83.6:1935/goLive/?wmsAuthSign=c2VydmVyX3RpbWU9MTEvMTUvMjAxNSAyOjI0OjE5IFBNJmhhc2hfdmFsdWU9aFMremI4MmZCc0FtbFFkUWFYNXlpdz09JnZhbGlkbWludXRlcz01/9pxGCtP3aEnJYgoBFFH8 swfUrl=http://p.jwpcdn.com/6/12/jwplayer.flash.swf flashver=WIN\2019,0,0,226 timeout=15 live=true swfVfy=1 pageUrl=http://zerocast.tv/embed.php?a=305&id=&width=640&height=480&autostart=true&strech=exactfit
@@ -101,7 +101,7 @@ char* usachannels(char* link, int incount)
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 
 //<script type="text/javascript" src="http://miplayer.net/embed.php?id=hboouu&width=630&height=470&autoplay=true"></script>
 	url1 = string_resub("src=\"", "\"", tmpstr, 0);
@@ -113,7 +113,7 @@ char* usachannels(char* link, int incount)
 	path = string_replace_all(host, "", url1, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
 
 //document.write("<iframe src='http://miplayer.net/embedplayer.php?width=630&height=470&id=hboouu&autoplay=true&strech=exactfit' frameborder='0' marginheight='0' marginwidth='0' scrolling='no' width='630' height='470' allowfullscreen></iframe>");
 	url2 = string_resub("iframe src='", "'", tmpstr, 0);
@@ -125,7 +125,7 @@ char* usachannels(char* link, int incount)
 	path = string_replace_all(host, "", url2, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
 
 //curl = "cnRtcDovLzE4NS42My4yNTUuMTA6MTkzNS9saXZlZWRnZS8/d21zQXV0aFNpZ249YzJWeWRtVnlYM1JwYldVOU1URXZNVFF2TWpBeE5TQXhNVG94TlRveU5pQkJUU1pvWVhOb1gzWmhiSFZsUFhvdlJXd3dNSE5LYWtOS05VdGpZblZLZW5JeFRFRTlQU1oyWVd4cFpHMXBiblYwWlhNOU1UQT0vaGJvb3V1XzBkOXJxa2Mz";
 	streamer = string_resub("curl = \"", "\"", tmpstr, 0);
@@ -145,7 +145,7 @@ char* usachannels(char* link, int incount)
 	path = string_replace_all(host, "", url3, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast7_tmpstr", oitoa(incount), host, path, tmpstr);
 /*
 	if(tmpstr == NULL || ostrstr(tmpstr, "This channel is domain protected") != NULL)
 	{
@@ -199,7 +199,7 @@ char* liveonlinetv(char* link, int incount)
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	streamurl = string_resub("hls: \"", "\"", tmpstr, 0);
 	if(streamurl == NULL)
@@ -237,7 +237,7 @@ char* akamaistream(char* link, int incount)
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	streamurl1 = string_resub("Ref1=", "\n", tmpstr, 0);
 	streamurl2 = string_resub("Ref2=", "\n", tmpstr, 0);
@@ -340,7 +340,7 @@ char* tvnanet(char* link, int incount)
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	url = string_resub("SRC=\"", "\"", tmpstr, 0);
 	free(tmpstr), tmpstr = NULL;
@@ -351,7 +351,7 @@ char* tvnanet(char* link, int incount)
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	streamer = string_resub("streamer=", "\"", tmpstr, 0);
 	pageurl = ostrcat(link, NULL, 0, 0);
@@ -388,17 +388,17 @@ char* tvtoast(char* link)
 	char* path = NULL;
 	char* url = NULL;
 
-	system("rm -rf /var/usr/local/share/titan/plugins/tithek/tvtoast*");
+	system("rm -rf /var/usr/local/share/titan/plugins/player/tithek/tvtoast*");
 
 	host = string_resub("http://", "/", link, 0);
 	path = string_replace_all(host, "", link, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast1_tmpstr", "1", host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast1_tmpstr", "1", host, path, tmpstr);
 
 	tmpstr1 = string_resub("<ul class=\"player-top-links\">", "<div class=\"float-clear\"></div>", tmpstr, 0);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast2_tmpstr_tmpstr1_resub", "1", host, path, tmpstr1);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast2_tmpstr_tmpstr1_resub", "1", host, path, tmpstr1);
 	free(host), host = NULL;
 	free(path), path = NULL;
 				
@@ -425,7 +425,7 @@ char* tvtoast(char* link)
 				path = string_replace_all(host, "", url, 0);
 				path = string_replace_all("http://", "", path, 1);
 				path = string_replace_all(" ", "%20", path, 1);
-				titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast3_tmpstr", oitoa(incount), host, path, tmpstr);
+				titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast3_tmpstr", oitoa(incount), host, path, tmpstr);
 				free(url), url = NULL;
 				url = string_resub("src=\"", "\"", tmpstr, 0);				
 				typemsg = string_resub("http://", "/", url, 0);
@@ -454,7 +454,7 @@ char* tvtoast(char* link)
 					path = string_replace_all(host, "", url, 0);
 					path = string_replace_all("http://", "", path, 1);
 					path = string_replace_all(" ", "%20", path, 1);
-					titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_unused_tmpstr", oitoa(incount), host, path, tmpstr);
+					titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4_unused_tmpstr", oitoa(incount), host, path, tmpstr);
 				}
 				
 				debug(99, "streamurl%d streamurl: %s", incount, streamurl);
@@ -512,7 +512,7 @@ char* tvtoast(char* link)
 	free(path), path = NULL;
 	free(url), url = NULL;
 
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast_tmpstr10_streamurl", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast_tmpstr10_streamurl", NULL, NULL, NULL, tmpstr);
 
 	debug(99, "streamurl: %s", streamurl);	
 	return streamurl;

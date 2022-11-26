@@ -266,7 +266,7 @@ void screenmc_pictureplayer()
 			clearscreen(picscreen);
 			eof = 0;
 
-			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+			singlepicstart("/var/usr/local/share/titan/plugins/player/mc/skin/default.mvi", 0);
 	
 			apskin->hidden = NO;
 			filelist->hidden = NO;
@@ -418,7 +418,7 @@ void screenmc_pictureplayer()
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");
 	
-					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+					singlepicstart("/var/usr/local/share/titan/plugins/player/mc/skin/default.mvi", 0);
 					continue;
 				}
 				else if(cmpfilenameext(filename, ".m3u") == 0 || cmpfilenameext(filename, ".pls") == 0)

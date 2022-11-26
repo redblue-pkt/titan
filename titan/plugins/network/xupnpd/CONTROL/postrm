@@ -4,7 +4,7 @@ echo "Dest: $1"
 echo "Script: $0"
 
 INSTDIR="$1"
-PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/xupnpd"
+PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/network/xupnpd"
 
 rm -rf "$PLUGINDIR" >/dev/null 2>&1
 rm -rf $INSTDIR/etc/xupnpd >/dev/null 2>&1

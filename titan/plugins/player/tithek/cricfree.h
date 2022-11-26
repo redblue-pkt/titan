@@ -29,7 +29,7 @@ http://cricfree.sx/update/tsn1.php,
 		path = string_replace_all(host, "", link, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast4_tmpstr", oitoa(incount), host, path, tmpstr);
 //		url = string_resub("src=\"", "\"", tmpstr, 0);
 		url = oregex(".*src=\"(http://cricfree.*)\" id=\"iframe\".*", tmpstr);	
 //<iframe frameborder="0" marginheight="0" allowfullscreen="true" marginwidth="0" height="555" src="http://cricfree.sc/update/bbc2.php" id="iframe" name="iframe_a" scrolling="no" width="620">Your Browser Do not Support Iframe</iframe>
@@ -45,7 +45,7 @@ http://cricfree.sx/update/tsn1.php,
 	path = string_replace_all(host, "", url, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast5_tmpstr", oitoa(incount), host, path, tmpstr);
 	free(url), url = NULL;
 
 //<script type='text/javascript'>id='espnuk'; width='620'; height='490';</script><script type='text/javascript' src='http://theactionlive.com/livegamecr.js'></script>
@@ -75,7 +75,7 @@ http://cricfree.sx/update/tsn1.php,
 	path = string_replace_all(host, "", url, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast6_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	pageurl = string_resub("src=\"", "\"", tmpstr, 0);
 	pageurl = string_replace_all(" ", "", pageurl, 1);
@@ -93,7 +93,7 @@ http://cricfree.sx/update/tsn1.php,
 	path = string_replace_all(host, "", pageurl, 0);
 	path = string_replace_all("http://", "", path, 1);
 	path = string_replace_all(" ", "%20", path, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast7_tmpstr", oitoa(incount), host, path, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast7_tmpstr", oitoa(incount), host, path, tmpstr);
 
 	url = string_resub("file: \"", "\"", tmpstr, 0);
 
@@ -124,9 +124,9 @@ http://cricfree.sx/update/tsn1.php,
 		path = string_replace_all(host, "", url, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast8_tmpstr", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast8_tmpstr", oitoa(incount), host, path, tmpstr);
 		tmpstr = jsunpack(tmpstr);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast8a_tmpstr_jsunpack", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast8a_tmpstr_jsunpack", oitoa(incount), host, path, tmpstr);
 
 //		url: http://biggestplayer.me/streamcrnoscrape.php?id=+id+&width=&height=,
 
@@ -155,7 +155,7 @@ http://cricfree.sx/update/tsn1.php,
 		path = string_replace_all(host, "", url, 0);
 		path = string_replace_all("http://", "", path, 1);
 		path = string_replace_all(" ", "%20", path, 1);
-		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/tvtoast9_tmpstr", oitoa(incount), host, path, tmpstr);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/tvtoast9_tmpstr", oitoa(incount), host, path, tmpstr);
 		streamurl = string_resub("file: \"", "\"", tmpstr, 0);
 /*
 		http://178.18.31.52:8081/liverepeater/224731/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9MTEvNi8yMDE1IDM6MDc6MDIgUE0maGFzaF92YWx1ZT1TUUJsM3JoVWNLKzIwVytTdVdRVThRPT0mdmFsaWRtaW51dGVzPTQ=

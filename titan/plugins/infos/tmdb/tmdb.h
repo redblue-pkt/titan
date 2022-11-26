@@ -219,7 +219,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 
 	debug(133, "search: http://api.themoviedb.org/%s", tmpsearch);
 	tmpstr = gethttp("api.themoviedb.org", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tmdb/tmpstr", tmpstr, 1);
+//	writesys("/var/usr/local/share/titan/plugins/infos/tmdb/tmpstr", tmpstr, 1);
 	
 	debug(133, "tmpsearch: %s", tmpsearch);
 	debug(133, "tmpstr: %s", tmpstr);

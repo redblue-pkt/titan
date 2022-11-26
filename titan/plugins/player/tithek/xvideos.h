@@ -20,10 +20,10 @@ char* xvideos(char* link)
 //	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	tmpstr = gethttps(link, NULL, NULL, NULL, NULL, NULL, 1);
 
-	writesys("/var/usr/local/share/titan/plugins/tithek/xvideos1_tmpstr", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/player/tithek/xvideos1_tmpstr", tmpstr, 0);
 	
 	htmldecode(tmpstr, tmpstr);
-	writesys("/var/usr/local/share/titan/plugins/tithek/xvideos2_tmpstr", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/player/tithek/xvideos2_tmpstr", tmpstr, 0);
 
 	titheklog(debuglevel, "/tmp/xvideos1_tmpstr", NULL, NULL, NULL, tmpstr);
 

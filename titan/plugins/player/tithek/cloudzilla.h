@@ -9,8 +9,8 @@ char* cloudzilla(char* link)
 
 	if(link == NULL) return NULL;
 
-	unlink("/var/usr/local/share/titan/plugins/tithek//cloudzilla1_get");
-	unlink("/var/usr/local/share/titan/plugins/tithek//cloudzilla2_streamlink");
+	unlink("/var/usr/local/share/titan/plugins/player/tithek/cloudzilla1_get");
+	unlink("/var/usr/local/share/titan/plugins/player/tithek/cloudzilla2_streamlink");
 /////////////
 
 	url = string_replace("/share/file/", "/embed/", link, 0);
@@ -32,7 +32,7 @@ http://d2171.cloudzilla.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxs
 
 	debug(99, "url: %s", url);
 	tmpstr = gethttps(url, NULL, NULL, NULL, NULL, NULL, 1);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek//cloudzilla1_get", NULL, NULL, NULL, tmpstr);	
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/cloudzilla1_get", NULL, NULL, NULL, tmpstr);	
 
 	if(tmpstr == NULL)
 	{
@@ -54,7 +54,7 @@ http://d2171.cloudzilla.me:8777/ikjtbmjr5woammfvg77fchotfr76hz35ahh6bglfezhodqxs
 
 	streamlink = string_resub("var vurl = \"", "\"", tmpstr, 0);
 
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek//cloudzilla1_streamlink", NULL, NULL, NULL, streamlink);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/player/tithek/cloudzilla1_streamlink", NULL, NULL, NULL, streamlink);
 
 end:
 

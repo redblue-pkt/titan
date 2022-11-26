@@ -492,17 +492,17 @@ printf("11111111111111111111111111111\n");
 				
 /*
 //			string_strip_whitechars(tmpstr);
-			writesys("/var/usr/local/share/titan/plugins/tithek/1solarmovie8_tmpcat", tmpcat, 0);
+			writesys("/var/usr/local/share/titan/plugins/player/tithek/1solarmovie8_tmpcat", tmpcat, 0);
 	
 			char* ptmpcat = ostrstr(tmpcat, "<td class=\"qualit");
-			writesys("/var/usr/local/share/titan/plugins/tithek/1solarmovie8_ptmpcat", ptmpcat, 0);
+			writesys("/var/usr/local/share/titan/plugins/player/tithek/1solarmovie8_ptmpcat", ptmpcat, 0);
 
 			int i = 0, incount = 0;
 			while(ptmpcat != NULL)
 			{
 				i++;
 				tmpstr1 = ostrcat(tmpstr1, string_resub("<td class=\"qualit", "<div class=\"linkDetails\">", ptmpcat, 0), 1, 1);
-			writesys("/var/usr/local/share/titan/plugins/tithek/1solarmovie8_tmpstr1", tmpstr1, 0);
+			writesys("/var/usr/local/share/titan/plugins/player/tithek/1solarmovie8_tmpstr1", tmpstr1, 0);
 //return;
 				ptmpcat += 5;
 				ptmpcat = ostrstr(ptmpcat, "<td class=\"qualit");
@@ -583,7 +583,7 @@ printf("22222222222222222222222222222222\n");
 
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = command("cat /tmp/tithek/get_zcat | grep episode- | grep -v Episode | grep -v 'linkCount typicalGrey'");
-			writesys("/var/usr/local/share/titan/plugins/tithek/solarmovie8_tmpstr", tmpstr, 0);
+			writesys("/var/usr/local/share/titan/plugins/player/tithek/solarmovie8_tmpstr", tmpstr, 0);
 
 			int count = 0;
 			struct splitstr* ret1 = NULL;

@@ -69,7 +69,7 @@ void tsschnitt_thread()
 				if(z == 0)
 				{	
 					tmpstr = createpluginpath("/tsschnitt/avconv", 0);
-					//tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/plugins/tsschnitt/avconv", " -ss ", 0, 0);
+					//tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/plugins/tools/tsschnitt/avconv", " -ss ", 0, 0);
 					tmpstr = ostrcat(tmpstr, " -ss ", 0, 0);
 					tmpstr = ostrcat(tmpstr, convert_timesec(time), 0, 0);
 					tmpstr = ostrcat(tmpstr, " -i \"",0, 0);
