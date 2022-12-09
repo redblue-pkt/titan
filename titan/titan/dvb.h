@@ -14,7 +14,7 @@ int dvbwrite(int fd, unsigned char* buf, int count, int tout)
 	sec = (tout - usec) / 1000000;
 
 	fd_set wfds;
-
+ 
 	while (tmpcount > 0)
 	{
 		buffer = buf + (count - tmpcount);
