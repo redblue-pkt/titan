@@ -2477,10 +2477,17 @@ void streamplayer(struct channel* chnode, int flag)
 		printf("exteplayer3 %s\n", chnode->streamurl);
 	}
 	else
-	    playerstart(chnode->streamurl);
-    status.play = 2;
-    delconfigtmp("playerbuffersize");
-    delconfigtmp("playerbufferseektime");
+	{
+		playerstart(chnode->streamurl);
+#ifdef DREAMBOX
+		playerpause();
+	  usleep(1000000);
+	  playercontinue();
+#endif
+	}
+  status.play = 2;
+  delconfigtmp("playerbuffersize");
+  delconfigtmp("playerbufferseektime");
 }
 
 #endif
