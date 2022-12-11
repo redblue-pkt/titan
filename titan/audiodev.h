@@ -15,7 +15,6 @@ struct dvbdev* audioopen(int adapter)
 			break;
 		node = node->next;
 	}
-
 	if(node != NULL)
 	{
 		if((fd = open(node->dev, O_RDWR)) < 0)
