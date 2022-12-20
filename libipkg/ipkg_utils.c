@@ -25,6 +25,7 @@
 #include "pkg_hash.h"
 
 void print_pkg_status(pkg_t * pkg, FILE * file);
+struct errlist* error_list;
 
 int get_available_blocks(char * filesystem)
 {

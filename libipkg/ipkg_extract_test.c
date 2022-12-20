@@ -8,7 +8,7 @@
  * gcc -o ipkg_extract_test ipkg_extract_test.c -I./busybox-0.60.2/libbb -L./busybox-0.60.2 -lbb
  *
  */
-const char * applet_name;
+extern const char * applet_name;
 
 int main(int argc, char * argv[])
 {
