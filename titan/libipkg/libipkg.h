@@ -82,6 +82,9 @@ extern void push_error_list(struct errlist **errors,char * msg);
 extern void reverse_error_list(struct errlist **errors);
 extern void free_error_list();
 
+//struct errlist* error_list;
+
+
 #endif
 
 

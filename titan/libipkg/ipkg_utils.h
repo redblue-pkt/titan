@@ -26,4 +26,7 @@ char **read_raw_pkgs_from_stream(FILE *fp);
 char *trim_alloc(char * line);
 int line_is_blank(const char *line);
 
+//extern struct errlist* error_list;
+//struct errlist* error_list;
+
 #endif
