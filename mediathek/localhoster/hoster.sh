@@ -54,9 +54,15 @@ curlbin="$CURLBIN $PROXY -k -s -L --connect-timeout 5 --cookie /mnt/network/cook
 curlbin2="$CURLBIN $PROXY -k -s --connect-timeout 5 --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 
 if [ -e /etc/.oebuild ];then
-	youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
-	youtubebin2="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
-	youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+	if [ "$DISTRO" == "7-1" ];then
+		youtubebin="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+		youtubebin2="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+		youtubebinbg="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+	else
+		youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+		youtubebin2="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+		youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+	fi
 else
 	youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 	youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
@@ -905,7 +911,12 @@ youtube_dl()
 	fi
 	if [ ! -z "$INPUT" ];then
 		if [ -e /etc/.oebuild ];then
-    		if [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" != "6.3" ];then
+    		if [ ! -e /usr/bin/yt-dlp ] && [ "$DISTRO" == "7-1" ];then
+				opkg update > /dev/null 2>&1
+				opkg install $(opkg list *python3* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
+				echo install python3-yt-dlp > /dev/null 2>&1
+				opkg install python3-yt-dlp > /dev/null 2>&1
+			elif [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" != "6.3" ];then
 				opkg update > /dev/null 2>&1
 				opkg install $(opkg list *python* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 				echo install python-youtube-dl > /dev/null 2>&1
@@ -939,7 +950,12 @@ youtube_dlbg()
 #	echo $URL
 	mkdir $TMP > /dev/null 2>&1
 	if [ -e /etc/.oebuild ];then
-		if [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" != "6.3" ];then
+		if [ ! -e /usr/bin/yt-dlp ] && [ "$DISTRO" == "7-1" ];then
+			opkg update > /dev/null 2>&1
+			opkg install $(opkg list *python3* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
+			echo install python3-yt-dlp > /dev/null 2>&1
+			opkg install python3-yt-dlp > /dev/null 2>&1
+		elif [ ! -e /usr/bin/youtube-dl ] && [ "$DISTRO" != "6.3" ];then
 			opkg update > /dev/null 2>&1
 			opkg install $(opkg list *python* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 			echo install python-youtube-dl > /dev/null 2>&1
