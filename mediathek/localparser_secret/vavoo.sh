@@ -6,7 +6,6 @@ INPUT=$2
 PAGE=$3
 NEXT=$4
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-URL=https://www2.vavoo.to
 NAME="VaVoo"
 
 case $2 in
@@ -17,6 +16,8 @@ case $2 in
 	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
 		if [ -z "$FILENAME" ]; then FILENAME=none;fi
 		PICNAME="$FILENAME"
+		URL=`cat /mnt/config/titan.cfg | grep tithek_vavoo_url | grep -v "#" | cut -d "=" -f2`
+		if [ -z "$URL" ];then URL=https://www2.vavoo.to; fi
 		;;
 esac
 

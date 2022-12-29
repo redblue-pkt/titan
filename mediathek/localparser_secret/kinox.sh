@@ -26,7 +26,7 @@ case $2 in
 		if [ -z "$FILENAME" ]; then FILENAME=none;fi
            	PICNAME="$FILENAME"
 		URL=`cat /mnt/config/titan.cfg | grep tithek_kinox_url | grep -v "#" | cut -d "=" -f2`
-		if [ -z "$URL" ];then URL=https://kinoz.to; fi
+		if [ -z "$URL" ];then URL=https://kinos.to; fi
 		if [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=1 | wc -l` -eq 1 ];then
 			ACTIVEBIN="$curlbin" 
 		elif [ `cat /mnt/config/titan.cfg | grep tithek_kinox_localhoster=2 | wc -l` -eq 1 ];then
