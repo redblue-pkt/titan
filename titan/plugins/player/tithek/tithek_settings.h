@@ -23,7 +23,8 @@ void screentithek_settings()
 	struct skin* useproxy = getscreennode(tithek_settings, "useproxy");
 	struct skin* proxy = getscreennode(tithek_settings, "proxy");
 	struct skin* delservice = getscreennode(tithek_settings, "delservice");
-	struct skin* iptvurl = getscreennode(tithek_settings, "iptvurl");
+	struct skin* iptv_url = getscreennode(tithek_settings, "iptv_url");
+	struct skin* vavoo_url = getscreennode(tithek_settings, "vavoo_url");
 	struct skin* vavoo_servicebouquets_autoupdate = getscreennode(tithek_settings, "vavoo_servicebouquets_autoupdate");
 	struct skin* vavoo_servicebouquets_autoupdate_msg = getscreennode(tithek_settings, "vavoo_servicebouquets_autoupdate_msg");
 	struct skin* vavoo_servicebouquets_autoupdate_allchannels = getscreennode(tithek_settings, "vavoo_servicebouquets_autoupdate_allchannels");
@@ -108,8 +109,8 @@ void screentithek_settings()
 	changemask(proxy, "abcdefghijklmnopqrstuvwxyz0123456789://@");
 	changeinput(proxy, getconfig("tithek_proxy", NULL));
 
-	changemask(iptvurl, "abcdefghijklmnopqrstuvwxyz0123456789://@");
-	changeinput(iptvurl, getconfig("tithek_iptvurl", NULL));
+	changemask(iptv_url, "abcdefghijklmnopqrstuvwxyz0123456789://@");
+	changeinput(iptv_url, getconfig("tithek_iptv_url", NULL));
 
 	addchoicebox(useproxy, "0", _("no"));
 	addchoicebox(useproxy, "1", _("yes"));	
@@ -130,6 +131,9 @@ void screentithek_settings()
 	addchoicebox(vavoo_servicebouquets_autoupdate_allchannels, "0", _("no"));
 	addchoicebox(vavoo_servicebouquets_autoupdate_allchannels, "1", _("yes"));	
 	setchoiceboxselection(vavoo_servicebouquets_autoupdate_allchannels, getconfig("tithek_vavoo_servicebouquets_autoupdate_allchannels", NULL));
+
+	changemask(kinox_url, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(kinox_url, getconfig("tithek_vavoo_url", NULL));
 
 	if(!file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
 		kinox_url->hidden = YES;
@@ -167,7 +171,8 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_useproxy", useproxy, NULL);
 			addconfigscreen("tithek_proxy", proxy);
 			addconfigscreencheck("tithek_delservice", delservice, NULL);
-			addconfigscreen("tithek_iptvurl", iptvurl);
+			addconfigscreen("tithek_iptv_url", iptv_url);
+			addconfigscreen("tithek_vavoo_url", vavoo_url);
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate", vavoo_servicebouquets_autoupdate, NULL);
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_msg", vavoo_servicebouquets_autoupdate_msg, NULL);
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_allchannels", vavoo_servicebouquets_autoupdate_allchannels, NULL);

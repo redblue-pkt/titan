@@ -127,6 +127,9 @@ void start(void)
 	if(getconfig("tithek_kinox_url", NULL) == NULL)
 		addconfigtmp("tithek_kinox_url", "https://kinos.to");
 
+	if(getconfig("tithek_vavoo_url", NULL) == NULL)
+		addconfigtmp("tithek_vavoo_url", "https://www2.vavoo.to");
+
 	if(getconfig("tithek_kinox_localhoster", NULL) == NULL)
 		addconfigtmp("tithek_kinox_localhoster", "1");
 
