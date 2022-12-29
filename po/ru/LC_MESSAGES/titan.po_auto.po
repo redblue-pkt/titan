@@ -5186,7 +5186,7 @@ msgstr ""
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
 #: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2313
 #: tithek.h:2706 tithek.h:2894 tithek.h:3219 tithek.h:3289 tithek.h:3332
-#: tithek.h:3345 tithek_settings.h:257 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:3345 tithek_settings.h:262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_autotimer_skin.xml.h:6 tools_callmonitor1_skin.xml.h:10
 #: tools_instar_skin.xml.h:8 tools_lcdpearl1_skin.xml.h:6
@@ -9308,7 +9308,7 @@ msgstr "Лист меню"
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
 #: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2706
 #: tithek.h:2894 tithek.h:3219 tithek.h:3289 tithek.h:3332 tithek.h:3345
-#: tithek_settings.h:257 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
+#: tithek_settings.h:262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
 #: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tunerconfig.h:738
 #: tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20 unlock.h:66 unlock.h:71
@@ -10242,7 +10242,7 @@ msgstr ""
 #: tithek_global.h:2023 tithek.h:724 tithek.h:1711 tithek.h:1738 tithek.h:1760
 #: tithek.h:1782 tithek.h:1839 tithek.h:2018 tithek.h:2033 tithek.h:2236
 #: tithek.h:2291 tithek.h:2313 tithek.h:2706 tithek.h:2894 tithek.h:3219
-#: tithek.h:3289 tithek.h:3332 tithek.h:3345 tithek_settings.h:257
+#: tithek.h:3289 tithek.h:3332 tithek.h:3345 tithek_settings.h:262
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 tools_optimize_skin.xml.h:2 tools_rgui_skin.xml.h:2
 #: tools_tiwakeup_skin.xml.h:2 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
@@ -15855,7 +15855,7 @@ msgstr ""
 msgid "Tithek - Favorite Edit"
 msgstr ""
 
-#: tithek.c:141 tithek_global.h:840 tithek_global.h:963 tithek_global.h:1829
+#: tithek.c:144 tithek_global.h:840 tithek_global.h:963 tithek_global.h:1829
 msgid "Tithek - Mainmenu"
 msgstr "Главное меню"
 
@@ -15868,11 +15868,11 @@ msgstr "Фавориты"
 msgid "Tithek Hoster URL with http://"
 msgstr ""
 
-#: player_tithek_skin.xml.h:37
+#: player_tithek_skin.xml.h:38
 msgid "Tithek Menu"
 msgstr ""
 
-#: player_tithek_skin.xml.h:38
+#: player_tithek_skin.xml.h:39
 msgid "Tithek Settings"
 msgstr ""
 
@@ -16676,12 +16676,12 @@ msgstr "Видео"
 msgid "VIDEO SETTINGS"
 msgstr "Настройки отображения файлов видео"
 
-#: player_tithek_skin.xml.h:35 skins_cool_skin.xml.h:853
+#: player_tithek_skin.xml.h:36 skins_cool_skin.xml.h:853
 #: skins_megastyleblue_skin.xml.h:854 skins_megastylegrey_skin.xml.h:854
 msgid "VK Pass"
 msgstr "Пароль VK"
 
-#: player_tithek_skin.xml.h:36 skins_cool_skin.xml.h:854
+#: player_tithek_skin.xml.h:37 skins_cool_skin.xml.h:854
 #: skins_megastyleblue_skin.xml.h:855 skins_megastylegrey_skin.xml.h:855
 msgid "VK User"
 msgstr "Логин VK"
@@ -16705,6 +16705,10 @@ msgstr ""
 
 #: player_tithek_skin.xml.h:32
 msgid "VaVoo Service Bouquets Auto Update"
+msgstr ""
+
+#: player_tithek_skin.xml.h:33
+msgid "VaVoo Url"
 msgstr ""
 
 #: security.h:2075
@@ -16839,12 +16843,12 @@ msgstr "Вьетнамский"
 msgid "View"
 msgstr "Вид"
 
-#: player_tithek_skin.xml.h:33 skins_cool_skin.xml.h:849
+#: player_tithek_skin.xml.h:34 skins_cool_skin.xml.h:849
 #: skins_megastyleblue_skin.xml.h:850 skins_megastylegrey_skin.xml.h:850
 msgid "View Cover"
 msgstr "Как отображать миниатюры"
 
-#: player_tithek_skin.xml.h:34 skins_cool_skin.xml.h:850
+#: player_tithek_skin.xml.h:35 skins_cool_skin.xml.h:850
 #: skins_megastyleblue_skin.xml.h:851 skins_megastylegrey_skin.xml.h:851
 msgid "View Sections"
 msgstr "Как отображать разделы меню"
@@ -17974,7 +17978,7 @@ msgstr "CIFS"
 msgid "close window"
 msgstr "Закрыть окно"
 
-#: tithek_settings.h:105
+#: tithek_settings.h:106
 msgid "cloudfare"
 msgstr ""
 
@@ -18540,7 +18544,7 @@ msgstr "Удержать"
 msgid "html"
 msgstr ""
 
-#: tithek_settings.h:103
+#: tithek_settings.h:104
 msgid "http"
 msgstr ""
 
@@ -18548,7 +18552,7 @@ msgstr ""
 msgid "httpdsettings"
 msgstr "Настройки HTTP"
 
-#: tithek_settings.h:104
+#: tithek_settings.h:105
 msgid "https"
 msgstr ""
 
@@ -19058,10 +19062,10 @@ msgstr "Автостарт NFS сервера"
 #: settings_overclocking.h:234 settings_overclocking.h:244 sispmctl.h:693
 #: sispmctl.h:697 sispmctl.h:737 sispmctl.h:741 sispmctl.h:781 sispmctl.h:785
 #: sispmctl.h:825 sispmctl.h:829 skinadjust.h:252 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:56
-#: tithek_settings.h:60 tithek_settings.h:64 tithek_settings.h:68
-#: tithek_settings.h:99 tithek_settings.h:114 tithek_settings.h:118
-#: tithek_settings.h:122 tithek_settings.h:126 tithek_settings.h:130 tmc.h:531
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:57
+#: tithek_settings.h:61 tithek_settings.h:65 tithek_settings.h:69
+#: tithek_settings.h:100 tithek_settings.h:115 tithek_settings.h:119
+#: tithek_settings.h:123 tithek_settings.h:127 tithek_settings.h:131 tmc.h:531
 #: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
 #: tunerconfig.h:327 tunerconfig.h:897 xupnpd.h:30
 msgid "no"
@@ -19883,31 +19887,31 @@ msgstr ""
 msgid "show"
 msgstr "Отображать"
 
-#: tithek_settings.h:38 tithek_settings.h:49
+#: tithek_settings.h:39 tithek_settings.h:50
 msgid "show 12 entrys"
 msgstr "По 12 на экране"
 
-#: tithek_settings.h:36 tithek_settings.h:47
+#: tithek_settings.h:37 tithek_settings.h:48
 msgid "show 2 entrys"
 msgstr "По 2 на экране"
 
-#: tithek_settings.h:39 tithek_settings.h:50
+#: tithek_settings.h:40 tithek_settings.h:51
 msgid "show 20 entrys"
 msgstr "По 20 на экране"
 
-#: tithek_settings.h:40 tithek_settings.h:51
+#: tithek_settings.h:41 tithek_settings.h:52
 msgid "show 30 entrys"
 msgstr "По 30 на экране"
 
-#: tithek_settings.h:37 tithek_settings.h:48
+#: tithek_settings.h:38 tithek_settings.h:49
 msgid "show 6 entrys"
 msgstr "По 6 на экране"
 
-#: tithek_settings.h:35 tithek_settings.h:46
+#: tithek_settings.h:36 tithek_settings.h:47
 msgid "show auto entrys"
 msgstr "Автоматически"
 
-#: tithek_settings.h:41 tithek_settings.h:52
+#: tithek_settings.h:42 tithek_settings.h:53
 msgid "show in list"
 msgstr "В виде списка"
 
@@ -21216,10 +21220,10 @@ msgstr "Жёлтая"
 #: settings_overclocking.h:244 sispmctl.h:692 sispmctl.h:696 sispmctl.h:736
 #: sispmctl.h:740 sispmctl.h:780 sispmctl.h:784 sispmctl.h:824 sispmctl.h:828
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:57 tithek_settings.h:61
-#: tithek_settings.h:65 tithek_settings.h:69 tithek_settings.h:100
-#: tithek_settings.h:115 tithek_settings.h:119 tithek_settings.h:123
-#: tithek_settings.h:127 tithek_settings.h:131 tmc.h:532 tmc.h:536
+#: timeshiftsettings.h:62 tithek_settings.h:58 tithek_settings.h:62
+#: tithek_settings.h:66 tithek_settings.h:70 tithek_settings.h:101
+#: tithek_settings.h:116 tithek_settings.h:120 tithek_settings.h:124
+#: tithek_settings.h:128 tithek_settings.h:132 tmc.h:532 tmc.h:536
 #: tunerconfig.h:897 xupnpd.h:30
 msgid "yes"
 msgstr "Да"
