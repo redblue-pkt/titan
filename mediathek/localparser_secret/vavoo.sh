@@ -6,7 +6,7 @@ INPUT=$2
 PAGE=$3
 NEXT=$4
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
-URL=https://www2.vjackson.info
+URL=https://www2.vavoo.to
 NAME="VaVoo"
 
 case $2 in
