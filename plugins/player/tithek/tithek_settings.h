@@ -132,8 +132,8 @@ void screentithek_settings()
 	addchoicebox(vavoo_servicebouquets_autoupdate_allchannels, "1", _("yes"));	
 	setchoiceboxselection(vavoo_servicebouquets_autoupdate_allchannels, getconfig("tithek_vavoo_servicebouquets_autoupdate_allchannels", NULL));
 
-	changemask(kinox_url, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(kinox_url, getconfig("tithek_vavoo_url", NULL));
+	changemask(vavoo_url, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(vavoo_url, getconfig("tithek_vavoo_url", NULL));
 
 	if(!file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
 		kinox_url->hidden = YES;
