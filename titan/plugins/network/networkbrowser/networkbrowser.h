@@ -877,6 +877,8 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 		return;
 	}
 
+	tmpstr2 = oregex(".*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*", tmpstr);
+
 	s = ostrcat(s, tmpstr, 1, 0);
 	free(tmpstr); tmpstr = NULL;
 
@@ -912,7 +914,6 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 
 	freeNetInfo(nInfo);
 
-	tmpstr2 = oregex(".*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*", s);
 	cmd = createpluginpath("/networkbrowser/networkbrowser.sh", 0);
 	printf("cmd1: %s\n", cmd);	
 	if(file_exist(cmd))
