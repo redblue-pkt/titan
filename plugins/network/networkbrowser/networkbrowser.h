@@ -911,6 +911,40 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 	}
 
 	freeNetInfo(nInfo);
+
+	tmpstr1 = oregex(".*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*", s);
+	cmd = createpluginpath("/networkbrowser/networkbrowser.sh", 0);
+	if(file_exist(cmd)
+	{
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, tmpstr1, 1, 0);
+
+		printf("cmd: %s\n", cmd);	
+		tmpstr = command(cmd);
+
+		if(tmpstr != NULL)
+		{
+			int count = 0;
+			int i;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(tmpstr, "\n", &count);
+
+			if(ret1 != NULL && count > 0)
+			{
+				for(i = 0; i < count; i++)
+				{
+					struct menulist* tmpmlist = addmenulist(mlist, ret1[i].part, NULL, "netbrowser_scanshares.png", 0, 0);
+		//			changemenulistparam(tmpmlist, nInfo[i].ip, strstrip(nInfo[i].name), NULL, NULL);		
+				}
+			}
+
+			free(ret1), ret1 = NULL;
+			free(tmpstr), tmpstr = NULL;
+		}
+	}
+	free(cmd); cmd = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+
 	free(s); s = NULL;
 }
 
