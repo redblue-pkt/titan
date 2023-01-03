@@ -912,12 +912,12 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 
 	freeNetInfo(nInfo);
 
-	tmpstr1 = oregex(".*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*", s);
+	tmpstr2 = oregex(".*([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*", s);
 	cmd = createpluginpath("/networkbrowser/networkbrowser.sh", 0);
 	if(file_exist(cmd)
 	{
 		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, tmpstr1, 1, 0);
+		cmd = ostrcat(cmd, tmpstr2, 1, 0);
 
 		printf("cmd: %s\n", cmd);	
 		tmpstr = command(cmd);
@@ -943,7 +943,7 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 		}
 	}
 	free(cmd); cmd = NULL;
-	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
 
 	free(s); s = NULL;
 }
