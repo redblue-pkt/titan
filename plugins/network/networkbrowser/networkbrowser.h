@@ -863,7 +863,7 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 {
 	int i = 0;
 	netinfo* nInfo;
-	char *tmpstr = NULL, *s = NULL, *tmpstr2 = NULL;
+	char *tmpstr = NULL, *s = NULL, *tmpstr2 = NULL, *cmd = NULL;
 
 	if(net == NULL || mlist == NULL) return;
 
