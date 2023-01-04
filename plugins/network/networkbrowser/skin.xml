@@ -37,6 +37,7 @@
 		<node parent="listbox" name="skin_password" text="password" type="inputbox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="skin_protocol" text="protocol" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="skin_options" text="options" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="skin_vers" text="vers" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="skin_wsize" text="wsize" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="skin_rsize" text="rsize" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="skin_usessl" text="usessl" type="choicebox" valign="middle" width="100%" height="35">
