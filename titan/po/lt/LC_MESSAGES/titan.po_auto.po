@@ -1076,7 +1076,7 @@ msgid ""
 "search for new shares."
 msgstr ""
 
-#: networkbrowser.h:1795
+#: networkbrowser.h:1907
 msgid "A mount entry with this name already exists!"
 msgstr "KLAIDA: BendroNaudojimoPavadinimas jau egzistuoja !"
 
@@ -1337,15 +1337,15 @@ msgstr "Aktoriai:"
 msgid "Adapter Settings"
 msgstr ""
 
-#: networkbrowser.h:1365
+#: networkbrowser.h:1468
 msgid "Add Cifs Network Share"
 msgstr "Pridti CIFS Dalinim"
 
-#: networkbrowser.h:1455
+#: networkbrowser.h:1560
 msgid "Add Ftpfs Network Share"
 msgstr "Pridti FTPFS Dalinim"
 
-#: networkbrowser.h:1415
+#: networkbrowser.h:1519
 msgid "Add Nfs Network Share"
 msgstr "Pridti NFS Dalinim"
 
@@ -1564,11 +1564,11 @@ msgstr "Animacijos greitis"
 msgid "Animation"
 msgstr "Animacija"
 
-#: networkbrowser.h:1030 networkbrowser.h:1036 networkbrowser.h:1046
+#: networkbrowser.h:1133 networkbrowser.h:1139 networkbrowser.h:1149
 msgid "Anonymous login Access Denied !"
 msgstr "Anoniminis prisijungimas - Prieiga udrausta !"
 
-#: networkbrowser.h:1034 networkbrowser.h:1050
+#: networkbrowser.h:1137 networkbrowser.h:1153
 msgid "Anonymous login successful"
 msgstr "Anoniminis prisijungimas - Skmingas"
 
@@ -1621,7 +1621,7 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: networkbrowser.h:1952
+#: networkbrowser.h:2064
 msgid "Are you sure you want remove this share?"
 msgstr "Are you sure you want to remove this share?"
 
@@ -1663,7 +1663,7 @@ msgstr ""
 "OK = pradti atkrim\n"
 "EXIT = nutraukti atkrtm"
 
-#: networkbrowser.h:1800
+#: networkbrowser.h:1912
 msgid "Are you sure you want to save this network mount?"
 msgstr "Ar tikrai norite isaugoti  tinklo prijungim ?"
 
@@ -3422,7 +3422,7 @@ msgstr "Pasirinkite Playback"
 msgid "Choose your Config File from the following list"
 msgstr ""
 
-#: networkbrowser.h:1206
+#: networkbrowser.h:1309
 msgid "Choose your DNS-Share from the following list"
 msgstr "Pasirinkite savo DNS - Share i io srao"
 
@@ -3470,7 +3470,7 @@ msgstr ""
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 
-#: networkbrowser.h:1920
+#: networkbrowser.h:2032
 msgid "Choose your Shares from the following list"
 msgstr "Pasirinkite Bendrinamus i srao"
 
@@ -3499,7 +3499,7 @@ msgstr ""
 msgid "Choose your Unicable product from the following list"
 msgstr ""
 
-#: networkbrowser.h:1232
+#: networkbrowser.h:1335
 msgid "Choose your cifs/nfs Share from the following list"
 msgstr "Pasirinkite CIFS / NFS i io srao"
 
@@ -5128,10 +5128,10 @@ msgstr ""
 #: movshare.h:191 movshare.h:197 multiboot.h:344 multiboot.h:380
 #: multiboot.h:387 MultiImage.c:292 MultiImage.c:308 MultiImage.c:568
 #: MultiImage.c:626 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
-#: nbastream.h:126 networkbrowser.h:969 networkbrowser.h:1030
-#: networkbrowser.h:1034 networkbrowser.h:1036 networkbrowser.h:1046
-#: networkbrowser.h:1050 networkbrowser.h:1214 networkbrowser.h:1788
-#: networkbrowser.h:1795 networkbrowser.h:1800 networkbrowser.h:1952
+#: nbastream.h:126 networkbrowser.h:1067 networkbrowser.h:1133
+#: networkbrowser.h:1137 networkbrowser.h:1139 networkbrowser.h:1149
+#: networkbrowser.h:1153 networkbrowser.h:1317 networkbrowser.h:1900
+#: networkbrowser.h:1907 networkbrowser.h:1912 networkbrowser.h:2064
 #: network_dlna_skin.xml.h:1 network_facebook_skin.xml.h:2 network.h:302
 #: network.h:317 network.h:361 network.h:462 network.h:603 network.h:814
 #: network.h:823 network.h:849 network.h:853 network.h:908 network.h:915
@@ -6107,7 +6107,7 @@ msgstr ""
 msgid "Footballgirls"
 msgstr ""
 
-#: networkbrowser.h:969
+#: networkbrowser.h:1067
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr "Win7 palaikymui praome diegti TPK > Tinklas> smbclient"
@@ -9209,10 +9209,10 @@ msgstr ""
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
 #: movshare.h:191 movshare.h:197 MultiImage.c:46 MultiImage.c:436
 #: MultiImage.c:642 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
-#: networkbrowser.h:969 networkbrowser.h:1030 networkbrowser.h:1034
-#: networkbrowser.h:1036 networkbrowser.h:1046 networkbrowser.h:1050
-#: networkbrowser.h:1214 networkbrowser.h:1788 networkbrowser.h:1795
-#: networkbrowser.h:1800 networkbrowser.h:1952 network.h:462 network.h:603
+#: networkbrowser.h:1067 networkbrowser.h:1133 networkbrowser.h:1137
+#: networkbrowser.h:1139 networkbrowser.h:1149 networkbrowser.h:1153
+#: networkbrowser.h:1317 networkbrowser.h:1900 networkbrowser.h:1907
+#: networkbrowser.h:1912 networkbrowser.h:2064 network.h:462 network.h:603
 #: network.h:814 network.h:823 network.h:849 network.h:853 network.h:908
 #: network.h:993 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
@@ -9805,15 +9805,15 @@ msgstr ""
 msgid "Networkbrowser"
 msgstr "Tinklo narykl"
 
-#: networkbrowser.h:1920
+#: networkbrowser.h:2032
 msgid "Networkbrowser - show Shares"
 msgstr "Rodyti Bendrinamus"
 
-#: networkbrowser.h:1206
+#: networkbrowser.h:1309
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr "Networkbrowser - rodyti DNS - Failus"
 
-#: networkbrowser.h:1232
+#: networkbrowser.h:1335
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Rodyti nuskaitytas CIFS / NFS Dalinimosi katalogus"
 
@@ -10130,10 +10130,10 @@ msgstr ""
 #: MultiImage.c:205 MultiImage.c:274 MultiImage.c:292 MultiImage.c:308
 #: MultiImage.c:388 MultiImage.c:436 MultiImage.c:568 MultiImage.c:626
 #: MultiImage.c:642 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
-#: nbastream.h:126 networkbrowser.h:969 networkbrowser.h:1030
-#: networkbrowser.h:1034 networkbrowser.h:1036 networkbrowser.h:1046
-#: networkbrowser.h:1050 networkbrowser.h:1214 networkbrowser.h:1788
-#: networkbrowser.h:1795 networkbrowser.h:1800 networkbrowser.h:1952
+#: nbastream.h:126 networkbrowser.h:1067 networkbrowser.h:1133
+#: networkbrowser.h:1137 networkbrowser.h:1139 networkbrowser.h:1149
+#: networkbrowser.h:1153 networkbrowser.h:1317 networkbrowser.h:1900
+#: networkbrowser.h:1907 networkbrowser.h:1912 networkbrowser.h:2064
 #: network_dlna_skin.xml.h:7 network_facebook_skin.xml.h:3 network.h:281
 #: network.h:289 network.h:302 network.h:317 network.h:361 network.h:462
 #: network.h:603 network.h:814 network.h:823 network.h:849 network.h:853
@@ -13223,7 +13223,7 @@ msgstr ""
 msgid "ScanList"
 msgstr ""
 
-#: networkbrowser.h:1185 networkbrowser.h:1186
+#: networkbrowser.h:1288 networkbrowser.h:1289
 msgid "Scanning Network Shares, please wait !!"
 msgstr "Skenuojamas tinklas , praome palaukti !"
 
@@ -13812,7 +13812,7 @@ msgstr ""
 msgid "Setup PIP"
 msgstr ""
 
-#: networkbrowser.h:1788
+#: networkbrowser.h:1900
 msgid "Sharename can't be empty!"
 msgstr "KLAIDA: BendroNaudojimoPavadinimas turi bti raytas !"
 
@@ -16511,7 +16511,7 @@ msgstr ""
 msgid "Use Teletxt Workaround"
 msgstr "Naudokite Teleteksto apeiti"
 
-#: networkbrowser.h:1214
+#: networkbrowser.h:1317
 msgid "Use User authentication ?"
 msgstr "Naudoti Vartotojo autentifikavim ?"
 
@@ -17896,7 +17896,7 @@ msgstr ""
 msgid "check your Secret Feed !"
 msgstr "Check the secret feed address!"
 
-#: networkbrowser.h:1584
+#: networkbrowser.h:1691
 msgid "cifs"
 msgstr "CIFS"
 
@@ -18348,7 +18348,7 @@ msgstr "Filesystemcheck Root Partiton"
 msgid "ftdi"
 msgstr "Enable FTDI module"
 
-#: networkbrowser.h:1586
+#: networkbrowser.h:1693
 msgid "ftpfs"
 msgstr "FTPFS"
 
@@ -18474,7 +18474,7 @@ msgstr ""
 msgid "hold"
 msgstr "palaikykite"
 
-#: networkbrowser.h:1639
+#: networkbrowser.h:1750
 msgid "html"
 msgstr "HTML"
 
@@ -18929,7 +18929,7 @@ msgstr ""
 msgid "newsletter"
 msgstr "Naujienlaikis"
 
-#: networkbrowser.h:1585
+#: networkbrowser.h:1692
 msgid "nfs"
 msgstr "NFS"
 
@@ -18965,9 +18965,9 @@ msgstr "NFS serveris"
 #: mediadb.h:1092 mediadb.h:1107 mediadbsettings.h:32 mediadbsettings.h:36
 #: mediadbsettings.h:55 mediadbsettings.h:70 mediadbsettings.h:74
 #: minisatip.h:25 moduleconfig.h:347 moduleconfig.h:355 moduleconfig.h:359
-#: moduleconfig.h:363 moduleconfig.h:367 networkbrowser.h:1642
-#: networkbrowser.h:1646 networkbrowser.h:1655 networkbrowser.h:1660
-#: networkbrowser.h:1664 networkbrowser.h:1698 network.h:720
+#: moduleconfig.h:363 moduleconfig.h:367 networkbrowser.h:1753
+#: networkbrowser.h:1757 networkbrowser.h:1766 networkbrowser.h:1771
+#: networkbrowser.h:1775 networkbrowser.h:1809 network.h:720
 #: panel_settings_autostart.h:35 panel_settings_autostart.h:96
 #: panel_settings_autostart.h:113 panel_settings_autostart.h:123
 #: panel_settings_autostart.h:141 panel_settings_autostart.h:150
@@ -19580,7 +19580,7 @@ msgstr "dydis majania tvarka"
 msgid "right"
 msgstr "deinys"
 
-#: networkbrowser.h:1709
+#: networkbrowser.h:1820
 msgid "ro"
 msgstr "tik skaityti"
 
@@ -19601,7 +19601,7 @@ msgstr ""
 msgid "running"
 msgstr "veikia"
 
-#: networkbrowser.h:1708
+#: networkbrowser.h:1819
 msgid "rw"
 msgstr "read / write"
 
@@ -19912,11 +19912,11 @@ msgstr "ltas"
 msgid "small"
 msgstr ""
 
-#: networkbrowser.h:1638
+#: networkbrowser.h:1749
 msgid "socks4"
 msgstr "Socks4"
 
-#: networkbrowser.h:1637
+#: networkbrowser.h:1748
 msgid "socks5"
 msgstr "Socks5"
 
@@ -19957,7 +19957,7 @@ msgstr "greitis"
 msgid "spinner"
 msgstr ""
 
-#: networkbrowser.h:1634 network_networkbrowser_skin.xml.h:29
+#: networkbrowser.h:1745 network_networkbrowser_skin.xml.h:29
 #: skins_0acht5zehn_skin.xml.h:597 skins_cool_skin.xml.h:710
 #: skins_kravenhd_skin.xml.h:640 skins_megastyleblue_skin.xml.h:712
 #: skins_megastylegrey_skin.xml.h:712 skins_smarttv_skin.xml.h:619
@@ -19965,11 +19965,11 @@ msgstr ""
 msgid "ssl"
 msgstr "SSL"
 
-#: networkbrowser.h:1633
+#: networkbrowser.h:1744
 msgid "ssl_control"
 msgstr "SSL kontrol"
 
-#: networkbrowser.h:1632
+#: networkbrowser.h:1743
 msgid "ssl_try"
 msgstr "Pabandykite SSL"
 
@@ -20180,7 +20180,7 @@ msgstr ""
 msgid "t"
 msgstr ""
 
-#: networkbrowser.h:1705
+#: networkbrowser.h:1816
 msgid "tcp"
 msgstr "TCP"
 
@@ -20711,7 +20711,7 @@ msgstr "Tipas"
 msgid "u"
 msgstr ""
 
-#: networkbrowser.h:1704
+#: networkbrowser.h:1815
 msgid "udp"
 msgstr "UDP"
 
@@ -20882,6 +20882,10 @@ msgstr ""
 msgid "valid"
 msgstr ""
 
+#: network_networkbrowser_skin.xml.h:37
+msgid "vers"
+msgstr ""
+
 #: callmon_main.h:132
 msgid "verwerfen"
 msgstr "atmesti"
@@ -21034,7 +21038,7 @@ msgstr ""
 msgid "workdays"
 msgstr "iokiadieniai"
 
-#: network_networkbrowser_skin.xml.h:37 skins_0acht5zehn_skin.xml.h:788
+#: network_networkbrowser_skin.xml.h:38 skins_0acht5zehn_skin.xml.h:788
 #: skins_cool_skin.xml.h:872 skins_kravenhd_skin.xml.h:778
 #: skins_megastyleblue_skin.xml.h:873 skins_megastylegrey_skin.xml.h:873
 #: skins_smarttv_skin.xml.h:757 skins_tobayer01_skin.xml.h:723
@@ -21121,9 +21125,9 @@ msgstr "Geltona"
 #: mediadb.h:1090 mediadb.h:1105 mediadbsettings.h:33 mediadbsettings.h:37
 #: mediadbsettings.h:56 mediadbsettings.h:71 mediadbsettings.h:75
 #: minisatip.h:25 moduleconfig.h:346 moduleconfig.h:356 moduleconfig.h:360
-#: moduleconfig.h:364 moduleconfig.h:368 networkbrowser.h:1643
-#: networkbrowser.h:1647 networkbrowser.h:1656 networkbrowser.h:1661
-#: networkbrowser.h:1665 networkbrowser.h:1699 network.h:721
+#: moduleconfig.h:364 moduleconfig.h:368 networkbrowser.h:1754
+#: networkbrowser.h:1758 networkbrowser.h:1767 networkbrowser.h:1772
+#: networkbrowser.h:1776 networkbrowser.h:1810 network.h:721
 #: panel_settings_autostart.h:35 panel_settings_autostart.h:96
 #: panel_settings_autostart.h:113 panel_settings_autostart.h:123
 #: panel_settings_autostart.h:141 panel_settings_autostart.h:150
