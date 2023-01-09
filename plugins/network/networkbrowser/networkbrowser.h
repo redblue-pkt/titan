@@ -1096,7 +1096,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			tmpstr2 = string_resub("---------       ----      -------", "Server               Comment", tmpstr1, 0);
 
 		if(tmpstr2 == NULL)
-			tmpstr2 = string_resub("---------       ----      -------", "network services", tmpstr1, 0);
+			tmpstr2 = string_resub("---------       ----      -------", "\0", tmpstr1, 0);
 
 		debug(70, "------ result 2 ------");
 		debug(70, "%s", tmpstr2);
