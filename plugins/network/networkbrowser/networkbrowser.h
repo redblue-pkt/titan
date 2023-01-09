@@ -1180,7 +1180,7 @@ printf("tmpstr1 3 %s\n", tmpstr2);
 						break;
 					}
 
-					if(ostrncmp("\t", ret1[j].part, 1))
+					if(ostrncmp("\t", ret1[j].part, 1) == 0)
 					{
 						debug(70, "continue: no tab: %s\n", ret1[j].part);
 						continue;
