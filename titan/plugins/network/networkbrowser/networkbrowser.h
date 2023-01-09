@@ -390,29 +390,29 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 			{
 				if(ostrstr(line, "user=,") != NULL)
 				{
-					treffer = 6;
+					treffer = 7;
 				#if defined(OVBUILD) || defined (OEBUILD)
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,vers=%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 				#else
 					#ifdef MIPSEL
-						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],vers=2.0,iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,vers=%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 					#else
-						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],vers=%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 					#endif
 				#endif
 				}
 				else
 				{
-					treffer = 8;
+					treffer = 9;
 					free(newnode->userauth); newnode->userauth = NULL;
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
 				#if defined(OVBUILD) || defined (OEBUILD)
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,vers=%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
 				#else
 					#ifdef MIPSEL
-						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],vers=2.0,iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
+						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,vers=%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
 					#else
-						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
+						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],vers=%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
 					#endif
 				#endif
 				}
@@ -423,36 +423,34 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				newnode->usedns = ostrcat(newnode->usedns, "1", 1, 0);
 				if(ostrstr(line, "user=,") != NULL)
 				{
-					treffer = 6;
+					treffer = 7;
 				#if defined(OVBUILD) || defined (OEBUILD)
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,vers=%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
 				#else
 					#ifdef MIPSEL
-						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],vers=2.0,iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
+						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,vers=%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
 					#else
-						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
+						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],vers=%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
 					#endif
 				#endif
 				}
 				else
 				{
-					treffer = 8;
+					treffer = 9;
 					free(newnode->userauth); newnode->userauth = NULL;
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
 				#if defined(OVBUILD) || defined (OEBUILD)
 					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,vers=%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
 				#else
 					#ifdef MIPSEL
-						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],vers=2.0,iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
+						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,vers=%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
 					#else
-						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
+						ret = sscanf(line, "%s\t-fstype=cifs,%[^,],vers=%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->vers, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
 					#endif
 				#endif
 				}
 			}
-			#if defined(OVBUILD) || defined (OEBUILD)
-				treffer++;
-			#endif
+
 			if(ret != treffer)
 			{
 				if(count > 0)
@@ -659,9 +657,13 @@ void savenetworkbrowser(char* filename)
 				savesettings = ostrcat(savesettings, ",rsize=", 1, 0);
 			#else
 				#ifdef MIPSEL
-					savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,vers=2.0,iocharset=utf8,rsize=", 1, 0);
+					savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,iocharset=utf8,vers=", 1, 0);
+			 		savesettings = ostrcat(savesettings, node->vers, 1, 0);
+					savesettings = ostrcat(savesettings, ",rsize=", 1, 0);
 				#else
-					savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,rsize=", 1, 0);
+					savesettings = ostrcat(savesettings, "\t-fstype=cifs,rw,vers=", 1, 0);
+			 		savesettings = ostrcat(savesettings, node->vers, 1, 0);
+					savesettings = ostrcat(savesettings, ",rsize=", 1, 0);
 				#endif
 			#endif
 
