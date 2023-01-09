@@ -1724,6 +1724,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 
 	addchoicebox(skin_vers, "1.0", "1.0");
 	addchoicebox(skin_vers, "2.0", "2.0");
+	addchoicebox(skin_vers, "3.3.1", "3.3.1");
 	setchoiceboxselection(skin_vers, node->vers);
 
 	addchoicebox(skin_wsize, "32768", "32768");
