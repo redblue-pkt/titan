@@ -1066,7 +1066,9 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 		debug(70, "----------------------");
 		if(!ostrncmp("0", tmpstr1, 1))
 		{
+#if !defined(OVBUILD) && !defined (OEBUILD)
 			textbox(_("Message"), _("For Better Win7 Support install please Tpk Install > Network > Smbclient"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
+#endif
 			bin = ostrcat("smbclient", NULL , 0, 0);
 		}
 		else
@@ -1094,9 +1096,15 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
 		else
 			tmpstr2 = string_resub("---------       ----      -------", "Server               Comment", tmpstr1, 0);
+printf("tmpstr1 1%s", tmpstr2);
 
 		if(tmpstr2 == NULL)
 			tmpstr2 = string_resub("---------       ----      -------", "\0", tmpstr1, 0);
+printf("tmpstr1 2%s", tmpstr2);
+
+		if(tmpstr2 == NULL)
+			tmpstr2 = oregex("---------       ----      -------(.*)", tmpstr1);
+printf("tmpstr1 3%s", tmpstr2);
 
 		debug(70, "------ result 2 ------");
 		debug(70, "%s", tmpstr2);
