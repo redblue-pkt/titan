@@ -1091,7 +1091,7 @@ msgstr ""
 "Liste der aktuell genutzten Netzwerkfreigaben. Sie können Freigaben "
 "hinzufügen, editieren, löschen oder neue Freigaben suchen."
 
-#: networkbrowser.h:1907
+#: networkbrowser.h:1910
 msgid "A mount entry with this name already exists!"
 msgstr "Ein Eintrag mit diesem Namen existiert bereits!"
 
@@ -1352,15 +1352,15 @@ msgstr "Darsteller:"
 msgid "Adapter Settings"
 msgstr "Netzwerkkarte"
 
-#: networkbrowser.h:1468
+#: networkbrowser.h:1470
 msgid "Add Cifs Network Share"
 msgstr "Hinzufügen einer CIFS Freigabe"
 
-#: networkbrowser.h:1560
+#: networkbrowser.h:1562
 msgid "Add Ftpfs Network Share"
 msgstr "Hinzufügen einer FTP Freigabe"
 
-#: networkbrowser.h:1519
+#: networkbrowser.h:1521
 msgid "Add Nfs Network Share"
 msgstr "Hinzufügen einer NFS Freigabe"
 
@@ -1591,11 +1591,11 @@ msgstr "Animationsgeschwindigkeit"
 msgid "Animation"
 msgstr ""
 
-#: networkbrowser.h:1133 networkbrowser.h:1139 networkbrowser.h:1149
+#: networkbrowser.h:1135 networkbrowser.h:1141 networkbrowser.h:1151
 msgid "Anonymous login Access Denied !"
 msgstr "Anonymer Login Zugriff verweigert!"
 
-#: networkbrowser.h:1137 networkbrowser.h:1153
+#: networkbrowser.h:1139 networkbrowser.h:1155
 msgid "Anonymous login successful"
 msgstr "Anonymer Login erfolgreich"
 
@@ -1648,7 +1648,7 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: networkbrowser.h:2064
+#: networkbrowser.h:2067
 msgid "Are you sure you want remove this share?"
 msgstr "Möchten Sie diese Freigabe wirklich löschen?"
 
@@ -1690,7 +1690,7 @@ msgstr ""
 "OK = Wiederherstellung starten\n"
 "EXIT = Wiederherstellung abbrechen"
 
-#: networkbrowser.h:1912
+#: networkbrowser.h:1915
 msgid "Are you sure you want to save this network mount?"
 msgstr "Möchten Sie diese Freigabe wirklich speichern?"
 
@@ -3462,7 +3462,7 @@ msgstr "Wiedergabe auswählen"
 msgid "Choose your Config File from the following list"
 msgstr "Wählen Sie die gewünschte Konfiguration aus der folgenden Liste"
 
-#: networkbrowser.h:1309
+#: networkbrowser.h:1311
 msgid "Choose your DNS-Share from the following list"
 msgstr ""
 "Liste der gefundenen Server\n"
@@ -3515,7 +3515,7 @@ msgid "Choose your Restore Mode from the following list."
 msgstr ""
 "Wählen Sie den gewünschten Wiederherstellungsmodus aus der folgenden Liste"
 
-#: networkbrowser.h:2032
+#: networkbrowser.h:2035
 msgid "Choose your Shares from the following list"
 msgstr ""
 "Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
@@ -3549,7 +3549,7 @@ msgstr "Wählen Sie hier Ihr Unicable (SCR) Produkt aus"
 msgid "Choose your Unicable product from the following list"
 msgstr "Wählen Sie hier Ihr Unicable (SCR) Produkt aus"
 
-#: networkbrowser.h:1335
+#: networkbrowser.h:1337
 msgid "Choose your cifs/nfs Share from the following list"
 msgstr ""
 "Freigaben des Servers\n"
@@ -5182,10 +5182,10 @@ msgstr ""
 #: movshare.h:191 movshare.h:197 multiboot.h:344 multiboot.h:380
 #: multiboot.h:387 MultiImage.c:292 MultiImage.c:308 MultiImage.c:568
 #: MultiImage.c:626 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
-#: nbastream.h:126 networkbrowser.h:1067 networkbrowser.h:1133
-#: networkbrowser.h:1137 networkbrowser.h:1139 networkbrowser.h:1149
-#: networkbrowser.h:1153 networkbrowser.h:1317 networkbrowser.h:1900
-#: networkbrowser.h:1907 networkbrowser.h:1912 networkbrowser.h:2064
+#: nbastream.h:126 networkbrowser.h:1069 networkbrowser.h:1135
+#: networkbrowser.h:1139 networkbrowser.h:1141 networkbrowser.h:1151
+#: networkbrowser.h:1155 networkbrowser.h:1319 networkbrowser.h:1903
+#: networkbrowser.h:1910 networkbrowser.h:1915 networkbrowser.h:2067
 #: network_dlna_skin.xml.h:1 network_facebook_skin.xml.h:2 network.h:302
 #: network.h:317 network.h:361 network.h:462 network.h:603 network.h:814
 #: network.h:823 network.h:849 network.h:853 network.h:908 network.h:915
@@ -6169,7 +6169,7 @@ msgstr "Schriftgröße verändern in Pixel"
 msgid "Footballgirls"
 msgstr ""
 
-#: networkbrowser.h:1067
+#: networkbrowser.h:1069
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
@@ -9373,10 +9373,10 @@ msgstr "Menüliste"
 #: movie4k.h:411 movreel.h:30 movreel.h:138 movshare.h:40 movshare.h:101
 #: movshare.h:191 movshare.h:197 MultiImage.c:46 MultiImage.c:436
 #: MultiImage.c:642 myvideo.h:86 nbaondemand.h:61 nbastream.h:126
-#: networkbrowser.h:1067 networkbrowser.h:1133 networkbrowser.h:1137
-#: networkbrowser.h:1139 networkbrowser.h:1149 networkbrowser.h:1153
-#: networkbrowser.h:1317 networkbrowser.h:1900 networkbrowser.h:1907
-#: networkbrowser.h:1912 networkbrowser.h:2064 network.h:462 network.h:603
+#: networkbrowser.h:1069 networkbrowser.h:1135 networkbrowser.h:1139
+#: networkbrowser.h:1141 networkbrowser.h:1151 networkbrowser.h:1155
+#: networkbrowser.h:1319 networkbrowser.h:1903 networkbrowser.h:1910
+#: networkbrowser.h:1915 networkbrowser.h:2067 network.h:462 network.h:603
 #: network.h:814 network.h:823 network.h:849 network.h:853 network.h:908
 #: network.h:993 novamov.h:35 novamov.h:97 novamov.h:103 nowvideo.h:44
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
@@ -9971,15 +9971,15 @@ msgstr ""
 msgid "Networkbrowser"
 msgstr "Netzwerk Browser"
 
-#: networkbrowser.h:2032
+#: networkbrowser.h:2035
 msgid "Networkbrowser - show Shares"
 msgstr "Netzwerk Browser - Freigaben"
 
-#: networkbrowser.h:1309
+#: networkbrowser.h:1311
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr "Netzwerk Browser - gefundene Server"
 
-#: networkbrowser.h:1335
+#: networkbrowser.h:1337
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 
@@ -10300,10 +10300,10 @@ msgstr ""
 #: MultiImage.c:205 MultiImage.c:274 MultiImage.c:292 MultiImage.c:308
 #: MultiImage.c:388 MultiImage.c:436 MultiImage.c:568 MultiImage.c:626
 #: MultiImage.c:642 MultiImage.c:706 myvideo.h:86 nbaondemand.h:61
-#: nbastream.h:126 networkbrowser.h:1067 networkbrowser.h:1133
-#: networkbrowser.h:1137 networkbrowser.h:1139 networkbrowser.h:1149
-#: networkbrowser.h:1153 networkbrowser.h:1317 networkbrowser.h:1900
-#: networkbrowser.h:1907 networkbrowser.h:1912 networkbrowser.h:2064
+#: nbastream.h:126 networkbrowser.h:1069 networkbrowser.h:1135
+#: networkbrowser.h:1139 networkbrowser.h:1141 networkbrowser.h:1151
+#: networkbrowser.h:1155 networkbrowser.h:1319 networkbrowser.h:1903
+#: networkbrowser.h:1910 networkbrowser.h:1915 networkbrowser.h:2067
 #: network_dlna_skin.xml.h:7 network_facebook_skin.xml.h:3 network.h:281
 #: network.h:289 network.h:302 network.h:317 network.h:361 network.h:462
 #: network.h:603 network.h:814 network.h:823 network.h:849 network.h:853
@@ -13410,7 +13410,7 @@ msgstr "Suche sperren"
 msgid "ScanList"
 msgstr "Scanliste"
 
-#: networkbrowser.h:1288 networkbrowser.h:1289
+#: networkbrowser.h:1290 networkbrowser.h:1291
 msgid "Scanning Network Shares, please wait !!"
 msgstr "Suche Netzwerk Freigaben, bitte warten!"
 
@@ -13999,7 +13999,7 @@ msgstr "HDMI-CEC Einstellungen"
 msgid "Setup PIP"
 msgstr "PiP-Einstellungen"
 
-#: networkbrowser.h:1900
+#: networkbrowser.h:1903
 msgid "Sharename can't be empty!"
 msgstr "Freigabename darf nicht leer sein!"
 
@@ -16720,7 +16720,7 @@ msgstr ""
 msgid "Use Teletxt Workaround"
 msgstr "Workaround für Videotext nutzen"
 
-#: networkbrowser.h:1317
+#: networkbrowser.h:1319
 msgid "Use User authentication ?"
 msgstr "Möchten Sie mit User Authentifizierung suchen?"
 
@@ -18112,7 +18112,7 @@ msgstr "CI Schacht Senderzuordnung"
 msgid "check your Secret Feed !"
 msgstr "Bitte den Secret Feed überprüfen!"
 
-#: networkbrowser.h:1691
+#: networkbrowser.h:1693
 msgid "cifs"
 msgstr "CIFS"
 
@@ -18564,7 +18564,7 @@ msgstr "Dateisystemprüfung Root-Partition"
 msgid "ftdi"
 msgstr "Aktiviere FTDI Kartenleser Treiber"
 
-#: networkbrowser.h:1693
+#: networkbrowser.h:1695
 msgid "ftpfs"
 msgstr "FTPFS"
 
@@ -18690,7 +18690,7 @@ msgstr "hoch"
 msgid "hold"
 msgstr "Behalten"
 
-#: networkbrowser.h:1750
+#: networkbrowser.h:1753
 msgid "html"
 msgstr "HTML"
 
@@ -19145,7 +19145,7 @@ msgstr ""
 msgid "newsletter"
 msgstr "Aktuelle Meldungen"
 
-#: networkbrowser.h:1692
+#: networkbrowser.h:1694
 msgid "nfs"
 msgstr "NFS"
 
@@ -19181,9 +19181,9 @@ msgstr "NFSD Kernel Server autostart"
 #: mediadb.h:1092 mediadb.h:1107 mediadbsettings.h:32 mediadbsettings.h:36
 #: mediadbsettings.h:55 mediadbsettings.h:70 mediadbsettings.h:74
 #: minisatip.h:25 moduleconfig.h:347 moduleconfig.h:355 moduleconfig.h:359
-#: moduleconfig.h:363 moduleconfig.h:367 networkbrowser.h:1753
-#: networkbrowser.h:1757 networkbrowser.h:1766 networkbrowser.h:1771
-#: networkbrowser.h:1775 networkbrowser.h:1809 network.h:720
+#: moduleconfig.h:363 moduleconfig.h:367 networkbrowser.h:1756
+#: networkbrowser.h:1760 networkbrowser.h:1769 networkbrowser.h:1774
+#: networkbrowser.h:1778 networkbrowser.h:1812 network.h:720
 #: panel_settings_autostart.h:35 panel_settings_autostart.h:96
 #: panel_settings_autostart.h:113 panel_settings_autostart.h:123
 #: panel_settings_autostart.h:141 panel_settings_autostart.h:150
@@ -19796,7 +19796,7 @@ msgstr "Größe aufsteigend"
 msgid "right"
 msgstr "rechts"
 
-#: networkbrowser.h:1820
+#: networkbrowser.h:1823
 msgid "ro"
 msgstr "Schreibgeschützt"
 
@@ -19817,7 +19817,7 @@ msgstr ""
 msgid "running"
 msgstr "aktiv"
 
-#: networkbrowser.h:1819
+#: networkbrowser.h:1822
 msgid "rw"
 msgstr "Lesen/Schreiben"
 
@@ -20134,11 +20134,11 @@ msgstr "langsam"
 msgid "small"
 msgstr "klein"
 
-#: networkbrowser.h:1749
+#: networkbrowser.h:1752
 msgid "socks4"
 msgstr ""
 
-#: networkbrowser.h:1748
+#: networkbrowser.h:1751
 msgid "socks5"
 msgstr ""
 
@@ -20179,7 +20179,7 @@ msgstr "Geschwindigkeit"
 msgid "spinner"
 msgstr "Spinner"
 
-#: networkbrowser.h:1745 network_networkbrowser_skin.xml.h:29
+#: networkbrowser.h:1748 network_networkbrowser_skin.xml.h:29
 #: skins_0acht5zehn_skin.xml.h:597 skins_cool_skin.xml.h:710
 #: skins_kravenhd_skin.xml.h:640 skins_megastyleblue_skin.xml.h:712
 #: skins_megastylegrey_skin.xml.h:712 skins_smarttv_skin.xml.h:619
@@ -20187,11 +20187,11 @@ msgstr "Spinner"
 msgid "ssl"
 msgstr "SSL"
 
-#: networkbrowser.h:1744
+#: networkbrowser.h:1747
 msgid "ssl_control"
 msgstr "SSL Einstellungen"
 
-#: networkbrowser.h:1743
+#: networkbrowser.h:1746
 msgid "ssl_try"
 msgstr "SSL versuchen"
 
@@ -20402,7 +20402,7 @@ msgstr "ß"
 msgid "t"
 msgstr ""
 
-#: networkbrowser.h:1816
+#: networkbrowser.h:1819
 msgid "tcp"
 msgstr "TCP"
 
@@ -20933,7 +20933,7 @@ msgstr "Typ"
 msgid "u"
 msgstr ""
 
-#: networkbrowser.h:1815
+#: networkbrowser.h:1818
 msgid "udp"
 msgstr "UDP"
 
@@ -21357,9 +21357,9 @@ msgstr "gelb"
 #: mediadb.h:1090 mediadb.h:1105 mediadbsettings.h:33 mediadbsettings.h:37
 #: mediadbsettings.h:56 mediadbsettings.h:71 mediadbsettings.h:75
 #: minisatip.h:25 moduleconfig.h:346 moduleconfig.h:356 moduleconfig.h:360
-#: moduleconfig.h:364 moduleconfig.h:368 networkbrowser.h:1754
-#: networkbrowser.h:1758 networkbrowser.h:1767 networkbrowser.h:1772
-#: networkbrowser.h:1776 networkbrowser.h:1810 network.h:721
+#: moduleconfig.h:364 moduleconfig.h:368 networkbrowser.h:1757
+#: networkbrowser.h:1761 networkbrowser.h:1770 networkbrowser.h:1775
+#: networkbrowser.h:1779 networkbrowser.h:1813 network.h:721
 #: panel_settings_autostart.h:35 panel_settings_autostart.h:96
 #: panel_settings_autostart.h:113 panel_settings_autostart.h:123
 #: panel_settings_autostart.h:141 panel_settings_autostart.h:150
