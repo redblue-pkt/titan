@@ -135,8 +135,8 @@ elif [ "$TYPE1" = "homecastpro-sat" ];then
 elif [ "$TYPE1" = "homecastpro-cable" ];then
     svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_kabelplus_cable_1_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 else
-#    svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
-    cp -a "$HOME"/flashimg/$SRCDIR/settings "$HOME"/flashimg/$SRCDIR/settings.svn
+    svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
+#    cp -a "$HOME"/flashimg/$SRCDIR/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 fi
 sort -u "$HOME"/flashimg/$SRCDIR/settings.svn/channel > "$HOME"/flashimg/$SRCDIR/settings.svn/channel.sort
 mv -f "$HOME"/flashimg/$SRCDIR/settings.svn/channel.sort "$HOME"/flashimg/$SRCDIR/settings.svn/channel
