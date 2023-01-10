@@ -823,7 +823,41 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 			tmpstr = get_ipk_tmplistinstall("/tmp");
 		else
 		{
+// new start
+			char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+			int treffer = 0;
+			struct hdd *node = NULL;
+
+			addhddall();
+			node = hdd;
+
+			while(node != NULL)
+			{
+				if(node->partition != 0)
+				{
+					tmpstr1 = ostrcat("/autofs/", node->device, 0, 0);
+					tmpstr2 = gettpktmplist(tmpstr1);
+
+					if(tmpstr2 != NULL)
+					{
+						treffer = 1;
+	//					screenextensions(2, tmpstr1, NULL, 1);
+						tmpstr3 = ostrcat(tmpstr3, tmpstr1, 1, 0);
+						tmpstr3 = ostrcat(tmpstr3, "\n", 1, 0);
+					}
+
+					free(tmpstr1); tmpstr1 = NULL;
+					free(tmpstr2); tmpstr2 = NULL;
+				}
+				node = node->next;
+			}
+			tmpstr = get_ipk_tmplistinstall(tmpstr3);
+			free(tmpstr3); tmpstr3 = NULL;
+printf("tmpstr1: %s\n", tmpstr);
+// new end
 			tmpstr = get_ipk_tmplistinstall(path);
+printf("tmpstr2: %s\n", tmpstr);
+
 			text1 = "Ipk Media Install - select file";
 			text2 = "Ipk Media Info";
 		}

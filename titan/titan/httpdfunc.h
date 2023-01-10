@@ -4381,7 +4381,7 @@ printf("webadjust fmt: %d\n",fmt);
 	ostrcatbig(&buf, _("extern"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
 
-	if(getconfigint("faststop", NULL) == 1)
+	if(getconfigint("playertype", NULL) == 1)
 		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);
 	else
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
@@ -4390,6 +4390,73 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
 	sendstr = ostrcat(sendstr, ", playertype.value", 1 , 0);
+
+///////////////////
+#if defined (EXTGST)
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("External Player for all other Media Files"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"extplayer_type\" border=\"0\">", &maxlen, &pos);
+
+	if(getconfigint("extplayer_type", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("exteplayer3"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("extplayer_type", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("gstreamer"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", extplayer_type.value", 1 , 0);
+#endif
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("External Player Subtitle use Background Color"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"extplayer_subtitle_use_bgcol\" border=\"0\">", &maxlen, &pos);
+
+	if(getconfigint("extplayer_subtitle_use_bgcol", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("extplayer_subtitle_use_bgcol", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", extplayer_subtitle_use_bgcol.value", 1 , 0);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("External Player Subtitle clear"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"extplayer_subtitle_clear\" border=\"0\">", &maxlen, &pos);
+
+	if(getconfigint("extplayer_subtitle_clear", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("extplayer_subtitle_clear", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", extplayer_subtitle_clear.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4898,11 +4965,11 @@ printf("webadjust fmt: %d\n",fmt);
 	sendstr = ostrcat(sendstr, ", playerbufferseektime.value", 1 , 0);
 
 ///////////////////debuglevel
-#ifdef BETA
+//#ifdef BETA
 	char* tmpstr2 = NULL;
 	struct splitstr* ret2 = NULL;
-	tmpstr = ostrcat("10\n40\n50\n55\n60\n70\n77\n80\n81\n90\n99\n100\n110\n130\n133\n150\n200\n201\n250\n270\n278\n300\n307\n333\n400\n401\n427\n444\n500\n555\n620\n777\n900\n913\n975\n4440", NULL, 0, 0);
-	tmpstr2 = ostrcat(" - Minimal\n - MTD Operation/System Update\n - MediaCenter\n - Network Interface\n - Key Actions\n - Network Browser\n - Web Adjust\n - Harddisk\n - MultiImage\n - Screensaver\n - Tithek/HTTP Header/Community\n - Global\n - Stringconvert\n - TPK\n - MediaDB/IMDb/TMDb\n - ePlayer\n - DVB Devices\n - CA Device\n - HTTP Server/Stream/Record\n - Radiotext\n - ID3\n - Subtitle\n - Thumbnails\n - DVD Player\n - EPG Task\n - Old Entry\n - Newsletter\n - Framebuffer\n - Channel Scan\n - Draw Screen\n - CA\n - MediaDB\n - Mutex\n - File Operation\n - SMTP\n - PiP", NULL, 0, 0);
+	tmpstr = ostrcat("10\n40\n50\n55\n60\n70\n77\n80\n81\n88\n90\n99\n100\n110\n130\n133\n150\n200\n201\n202\n250\n270\n278\n300\n307\n333\n400\n401\n427\n444\n500\n555\n620\n777\n900\n913\n975\n4440", NULL, 0, 0);
+	tmpstr2 = ostrcat(" - Minimal\n - MTD Operation/System Update\n - MediaCenter\n - Network Interface\n - Key Actions\n - Network Browser\n - Web Adjust\n - Harddisk\n - MultiImage\n - Tithek\n - Screensaver\n - Tithek/HTTP Header/Community\n - Global\n - Stringconvert\n - TPK\n - MediaDB/IMDb/TMDb\n - ePlayer\n - DVB Devices\n - CA Device\n - IpTV\n - HTTP Server/Stream/Record\n - Radiotext\n - ID3\n - Subtitle\n - Thumbnails\n - DVD Player\n - EPG Task\n - Old Entry\n - Newsletter\n - Framebuffer\n - Channel Scan\n - Draw Screen\n - CA\n - MediaDB\n - Mutex\n - File Operation\n - SMTP\n - PiP", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Debuglevel"), &maxlen, &pos);
@@ -4937,7 +5004,7 @@ printf("webadjust fmt: %d\n",fmt);
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
 	free(tmpstr2), tmpstr2 = NULL;
-#endif
+//#endif
 
 ///////////////////
 #ifdef MIPSEL
@@ -4968,6 +5035,98 @@ printf("webadjust fmt: %d\n",fmt);
 	}
 #endif
 
+///////////////////
+	if(file_exist(getconfig("zapmodedev", NULL)))
+	{
+		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Zapmode"), &maxlen, &pos);
+		ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"zapmode\" border=\"0\">", &maxlen, &pos);
+
+		if(ostrcmp(getconfig("zapmode", NULL), "mute") == 0)
+			ostrcatbig(&buf, "<option value=\"mute\" selected>", &maxlen, &pos);
+		else
+			ostrcatbig(&buf, "<option value=\"mute\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Black screen"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+		if(ostrcmp(getconfig("zapmode", NULL), "hold") == 0)
+			ostrcatbig(&buf, "<option value=\"hold\" selected>", &maxlen, &pos);
+		else
+			ostrcatbig(&buf, "<option value=\"hold\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Hold screen"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+		if(ostrcmp(getconfig("zapmode", NULL), "mutetilllock") == 0)
+			ostrcatbig(&buf, "<option value=\"mutetilllock\" selected>", &maxlen, &pos);
+		else
+			ostrcatbig(&buf, "<option value=\"mutetilllock\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Black screen till locked"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+		if(ostrcmp(getconfig("zapmode", NULL), "holdtilllock") == 0)
+			ostrcatbig(&buf, "<option value=\"holdtilllock\" selected>", &maxlen, &pos);
+		else
+			ostrcatbig(&buf, "<option value=\"holdtilllock\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Hold till locked"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+		ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+		sendstr = ostrcat(sendstr, ", zapmode.value", 1 , 0);
+	}
+
+///////////////////
+#if defined(OVBUILD) || defined (OEBUILD)
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Extensions Type"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"extensions_type\" border=\"0\">", &maxlen, &pos);
+
+	if(getconfigint("extensions_type", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Tpk"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("extensions_type", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Ipkg"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("extensions_type", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Tpk / Ipkg"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", extensions_type.value", 1 , 0);
+#endif
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Channel Source Info"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"channel_source_info\" border=\"0\">", &maxlen, &pos);
+
+	if(getconfigint("channel_source_info", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("channel_source_info", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", channel_source_info.value", 1 , 0);
+
+///////////////////
 
 //	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
 //	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return volbartimeout.value, infobartimeout.value, infobarsleep.value, spinnerspeed.value, spinnertime.value, hangtime.value, secondinfobar.value, nozapclear.value, fastzap.value, faststop.value, dirsort.value, poweraktion.value, virtualzap.value, fasttextrender.value, recsplitsize.value, recforerun.value, recoverrun.value, skip13.value, skip46.value, skip79.value, playertype.value, autochangechannelname.value, def_rectimer_after.value, showchanneltimeline.value, screenanim.value, screenanimspeed.value, channellistview.value, showlastpos.value, recsync.value, recordnamefmt.value, newsletter.value, showhiddenfiles.value, expertmodus.value, infobarprogram.value, emucontrol.value, choiceminitv.value, usecec.value, playerbufferseektime.value, dualboot.value\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
@@ -6648,6 +6807,771 @@ char* webgettpkupgrade(int fmt)
 	return buf;
 }
 
+////////////////////////////
+#if defined(OVBUILD) || defined (OEBUILD)
+char* webgetipksection(int fmt)
+{
+	if(status.security == 0) return NULL;
+	char* buf = NULL;
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"ipksection\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Ipk Install - select section"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	status.hangtime = 99999;
+
+	unlink(IPKGLOG);
+	/*if(first == 1) */ipkggetindex(0);
+	ipkg_update();
+	ipkg_list();
+		
+	struct ipkg* node = ipkg;
+
+	if(node == NULL) buf = ostrcat(buf, _("No Ipk Sections Found."), 1, 0);
+
+	while(node != NULL)
+	{
+		if(findsectiondoneipk(node->section) == 1)
+		{
+			node = node->next;
+			continue;
+		}
+
+		node->done = 1;
+
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getipklist&", 1, 0);
+		buf = ostrcat(buf, node->section, 1, 0);
+		buf = ostrcat(buf, " target=main>", 1, 0);
+		buf = ostrcat(buf, _(node->section), 1, 0);
+		buf = ostrcat(buf, "</a>", 1, 0);
+		buf = ostrcat(buf, "</br></br>", 1, 0);
+
+		node = node->next;
+	}
+
+	freeipkg();
+		
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}
+
+//	tpkcleantmp(0);
+	status.hangtime = getconfigint("hangtime", NULL);
+
+	return buf;
+}
+
+char* webgetipklist(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+	int skip = 0;
+
+	char* buf = NULL;
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"ipklist\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Ipk Install - select file"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	status.hangtime = 99999;
+
+	unlink(IPKGLOG);
+//	if(!file_exist("/etc/.opkg"))
+//		system("touch /etc/.opkg");
+	/*if(first == 1) */ipkggetindex(0);
+	ipkg_update();
+	ipkg_list();
+
+	struct ipkg* node = ipkg, *ipkg_installed = NULL, *node_installed = NULL;
+
+	if(node == NULL) buf = ostrcat(buf, _("No Ipk Files Found."), 1, 0);
+
+	ipkg = NULL;
+	ipkg_list_installed();
+	ipkg_installed = ipkg;
+	ipkg = node;
+
+	while(node != NULL)
+	{
+		node_installed = ipkg_installed;
+		skip = 0;
+		while(node_installed != NULL)
+		{
+			if(ostrcmp(node->section, node_installed->section) == 0 && ostrcmp(node->showname, node_installed->showname) == 0)
+			{
+				skip = 1;
+				break;
+			}
+			node_installed = node_installed->next;
+		}
+
+		//check if ipk is in section
+		if(param != NULL && ostrcmp(node->section, param) != 0)
+			skip = 1;
+
+		if(skip == 1)
+		{
+			node = node->next;
+			continue;
+		}
+
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getipkinstallpath&", 1, 0);
+//		buf = ostrcat(buf, node->filename, 1, 0);
+		buf = ostrcat(buf, node->name, 1, 0);
+printf("node->name: %s\n",node->name);
+		buf = ostrcat(buf, " target=main>", 1, 0);
+		buf = ostrcat(buf, _(node->showname), 1, 0);
+		buf = ostrcat(buf, " v.", 1, 0);
+//		buf = ostrcat(buf, oitoa(node->version), 1, 1);
+		buf = ostrcat(buf, node->version, 1, 0);
+		buf = ostrcat(buf, "</a>", 1, 0);
+		buf = ostrcat(buf, "</br></br>", 1, 0);
+
+		node = node->next;
+	}
+
+	freeipkg();
+//	tpkcleantmp(0);
+	status.hangtime = getconfigint("hangtime", NULL);
+
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}
+
+	return buf;
+}
+
+char* webgetipkinstallpath(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL, *tmpstr = NULL, *path = NULL, *url = NULL, *showname = NULL;
+	int count = 0, size = 0;
+
+	status.hangtime = 99999;
+
+	unlink(IPKGLOG);
+//	if(!file_exist("/etc/.opkg"))
+//		system("touch /etc/.opkg");
+	/*if(first == 1) */ipkggetindex(0);
+	ipkg_update();
+	ipkg_list();
+
+	struct ipkg* node = ipkg;
+
+	while(node != NULL)
+	{
+		if(ostrcmp(node->name, param) == 0)
+		{
+//			size = node->size;
+			showname = ostrcat(node->showname, NULL, 0, 0);
+//			url = htmlencode(node->url);
+			path = ostrcat(node->usepath, NULL, 0, 0);
+			break;
+		}
+		node = node->next;
+	}
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"ipkinstallpath\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Choice Install Medium"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	if(path == NULL || path[0] == '*' || ostrstr(path, "mnt") != NULL)
+	{
+//		if(tpkchecksize(NULL, "/mnt/swapextensions", size) == 0)
+//		{
+			tmpstr = ostrcat(tmpstr, "<a class=linelink2 href=queryraw?getipkinstall&", 1, 0);
+			tmpstr = ostrcat(tmpstr, param, 1, 0);
+			tmpstr = ostrcat(tmpstr, "&", 1, 0);
+			tmpstr = ostrcat(tmpstr, url, 1, 0);
+			tmpstr = ostrcat(tmpstr, "&", 1, 0);
+			tmpstr = ostrcat(tmpstr, "/mnt/swapextensions", 1, 0);
+			tmpstr = ostrcat(tmpstr, " target=main>", 1, 0);
+			tmpstr = ostrcat(tmpstr, _("Install to MNT"), 1, 0);
+			tmpstr = ostrcat(tmpstr, "</a>\n", 1, 0);
+			tmpstr = ostrcat(tmpstr, "</br></br>\n", 1, 0);
+			count++;
+//		}
+	}
+
+	if(path == NULL || path[0] == '*' || ostrstr(path, "var") != NULL)
+	{
+//		if(tpkchecksize(NULL, "/var", size) == 0)
+//		{
+			tmpstr = ostrcat(tmpstr, "<a class=linelink2 href=queryraw?getipkinstall&", 1, 0);
+			tmpstr = ostrcat(tmpstr, param, 1, 0);
+			tmpstr = ostrcat(tmpstr, "&", 1, 0);
+			tmpstr = ostrcat(tmpstr, url, 1, 0);
+			tmpstr = ostrcat(tmpstr, "&", 1, 0);
+			tmpstr = ostrcat(tmpstr, "/var", 1, 0);
+			tmpstr = ostrcat(tmpstr, " target=main>", 1, 0);
+			tmpstr = ostrcat(tmpstr, _("Install to FLASH"), 1, 0);
+			tmpstr = ostrcat(tmpstr, "</a>\n", 1, 0);
+			tmpstr = ostrcat(tmpstr, "</br></br>\n", 1, 0);
+			count++;
+//		}
+	}
+
+	if(path == NULL || path[0] == '*' || ostrstr(path, "swap") != NULL)
+	{
+#ifdef OEBUILD
+		if(file_exist("/media/.swapextensionsdev") == 1 || file_exist("/var/swap"))
+#else
+		if(file_exist("/tmp/.swapextensionsdev") == 1 || file_exist("/var/swap"))
+#endif
+		{
+//			if(tpkchecksize(NULL, "/var/swap", size) == 0)
+//			{
+				tmpstr = ostrcat(tmpstr, "<a class=linelink2 href=queryraw?getipkinstall&", 1, 0);
+				tmpstr = ostrcat(tmpstr, param, 1, 0);
+				tmpstr = ostrcat(tmpstr, "&", 1, 0);
+				tmpstr = ostrcat(tmpstr, url, 1, 0);
+				tmpstr = ostrcat(tmpstr, "&", 1, 0);
+				tmpstr = ostrcat(tmpstr, "/var/swap", 1, 0);
+				tmpstr = ostrcat(tmpstr, " target=main>", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("Install to SWAP"), 1, 0);
+				tmpstr = ostrcat(tmpstr, "</a>", 1, 0);
+				tmpstr = ostrcat(tmpstr, "</br></br>", 1, 0);
+				count++;
+//			}
+		}
+	}
+
+	if(node == NULL && tmpstr == NULL) buf = ostrcat(buf, _("No Ipk Files Found."), 1, 0);
+	freeipkg();
+
+	if(count == 0)
+	{
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Can't install Package. Package to big."), 1, 0);
+	}
+
+	buf = ostrcat(buf, tmpstr, 1, 0);
+
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+	free(tmpstr), tmpstr = NULL;
+	free(showname), showname = NULL;
+	free(url), url = NULL;
+	free(path), path = NULL;
+
+//	tpkcleantmp(0);
+	status.hangtime = getconfigint("hangtime", NULL);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}
+
+	return buf;
+}
+
+char* webgetipkinstall(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL, *tmpstr = NULL, *param1 = NULL, *param2 = NULL;
+
+	//create param1
+	param1 = strchr(param, '&');
+	if(param1 != NULL)
+		*param1++ = '\0';
+
+	//create param2
+	param2 = strchr(param1, '&');
+	if(param2 != NULL)
+		*param2++ = '\0';
+
+	if(param == NULL) return NULL;
+	if(param1 == NULL) return NULL;
+	if(param2 == NULL) return NULL;
+
+	status.hangtime = 99999;
+
+	char* log = NULL;
+/*
+	int tpkret = tpkgetpackage(param, param1, param2, 0, 1);
+	log = get_ipk_install(tmpstr, installpath);
+
+	if(tpkret == 0)
+		tmpstr = ostrcat(_("Tpk Install Info - Install OK"), NULL, 0, 0);
+	else if(tpkret == 2)
+		tmpstr = ostrcat(_("Tpk Install Info - Install ERROR"), NULL, 0, 0);
+	else
+		tmpstr = ostrcat(_("Tpk Install Info - Install ERROR"), NULL, 0, 0);
+*/
+//	log = get_ipk_install(tmpstr, installpath);
+printf("param: %s\n",param);
+printf("param1: %s\n",param1);
+printf("param2: %s\n",param2);
+
+	if(!file_exist("/etc/.opkg"))
+		system("touch /etc/.opkg");
+
+	log = get_ipk_install(param, param2);
+
+	if(log == NULL)
+	{
+		log = ostrcat("Install error", NULL, 0, 0);
+		tmpstr = ostrcat(_("Ipk Install Info - Install ERROR"), NULL, 0, 0);
+	}
+	else
+		tmpstr = ostrcat(_("Ipk Install Info - Install OK"), NULL, 0, 0);
+	
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpkinstall\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _(tmpstr), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	free(tmpstr), tmpstr = NULL;
+
+//	if(tpkret == 0)
+	if(log == NULL)
+	{
+//		log = gettpklog(param2, 0);
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Install Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
+	}
+/*	else if(tpkret == 2)
+	{
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Install Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("There may only be one package installed from this section. To install another package from this section, remove the installed one. If the package is not visible after a software update, perform a TPK update to: "), 1, 0);
+	}*/
+	else
+	{
+		log = gettpklog(param2, 1);
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Install Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
+	}
+
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+	loadplugin();
+	free(log), log = NULL;
+	unlink(IPKGLOG);
+	if(file_exist("/tmp/.ipkg_needs_reboot"))
+	{
+// need other..
+		textbox(_("Message"), _("IPK Install done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("IPK Install done, your system will reboot !"), 1, 0);
+		buf = string_replace_all("<br>", "<br>\n", buf, 1);
+		//write only config file
+		writeallconfig(3);
+		oshutdown(2,2);
+		system("init 6");
+	}
+
+	status.hangtime = getconfigint("hangtime", NULL);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}
+
+	return buf;
+}
+
+char* webgetipktmplist(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+	int mode = atoi(param);
+
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"ipktmplist\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		if(mode == 0)
+			buf = ostrcat(buf, _("IPK tmp (tmp)"), 1, 0);
+		else
+			buf = ostrcat(buf, _("IPK media (media)"), 1, 0);
+
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	if(mode == 0)
+		tmpstr = get_ipk_tmplistinstall("/tmp");
+	else
+	{
+		int treffer = 0;
+		struct hdd *node = NULL;
+
+		addhddall();
+		node = hdd;
+
+		while(node != NULL)
+		{
+			if(node->partition != 0)
+			{
+				tmpstr1 = ostrcat("/autofs/", node->device, 0, 0);
+				tmpstr2 = get_ipk_tmplistinstall(tmpstr1);
+
+				if(tmpstr2 != NULL)
+				{
+					treffer = 1;
+//					screenextensions(2, tmpstr1, NULL, 1);
+					tmpstr3 = ostrcat(tmpstr3, tmpstr1, 1, 0);
+					tmpstr3 = ostrcat(tmpstr3, "\n", 1, 0);
+				}
+
+				free(tmpstr1); tmpstr1 = NULL;
+				free(tmpstr2); tmpstr2 = NULL;
+			}
+			node = node->next;
+		}
+
+		tmpstr = get_ipk_tmplistinstall(tmpstr3);
+		free(tmpstr3), tmpstr = NULL;
+	}
+
+	if(mode == 0)
+	{
+		if(tmpstr == NULL) buf = ostrcat(buf, _("No Ipk Files Found on /tmp Directory."), 1, 0);
+	}
+	else
+	{
+		if(tmpstr == NULL) buf = ostrcat(buf, _("No Ipk Files Found on Media Devices."), 1, 0);
+	}
+
+	int count, i, max;
+	count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	buf = ostrcat(buf, "<table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getipkinstallpath&", 1, 0);
+			buf = ostrcat(buf, ret1[i].part, 1, 0);
+			buf = ostrcat(buf, " target=main>", 1, 0);
+			buf = ostrcat(buf, _(stringreplacecharonce(ret1[i].part, '.', '\0')), 1, 0);
+			buf = ostrcat(buf, "</a>", 1, 0);
+			buf = ostrcat(buf, "</br></br>", 1, 0);
+		}
+	}
+
+	free(tmpstr), tmpstr = NULL;
+	free(ret1), ret1 = NULL;
+
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}
+
+	return buf;
+}
+
+char* webgetipkremovelist(int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL;
+	int skip;
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"ipkremovelist\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Ipk Remove - select file"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	status.hangtime = 99999;
+
+	unlink(IPKGLOG);
+	/*if(first == 1) */ipkggetindex(0);
+	ipkg_update();
+	ipkg_list();
+
+	struct ipkg* node = ipkg, *ipkg_installed = NULL, *node_installed = NULL;
+
+	if(node == NULL) buf = ostrcat(buf, _("No Ipk Files Found."), 1, 0);
+
+	ipkg = NULL;
+	ipkg_list_installed();
+	ipkg_installed = ipkg;
+	ipkg = node;
+
+	while(node != NULL)
+	{
+		node_installed = ipkg_installed;
+		skip = 1;
+		while(node_installed != NULL)
+		{
+			if(ostrcmp(node->showname, node_installed->showname) == 0)
+			{
+				skip = 0;
+				break;
+			}
+			node_installed = node_installed->next;
+		}
+
+		if(skip == 1)
+		{
+			node = node->next;
+			continue;
+		}
+
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getipkremove&", 1, 0);
+		buf = ostrcat(buf, node->name, 1, 0);
+		buf = ostrcat(buf, " target=main>", 1, 0);
+		buf = ostrcat(buf, _(node->showname), 1, 0);
+		buf = ostrcat(buf, " (", 1, 0);
+		buf = ostrcat(buf, _(node->section), 1, 0);
+		buf = ostrcat(buf, ")</a>", 1, 0);
+		buf = ostrcat(buf, "</br></br>", 1, 0);
+
+		node = node->next;
+	}
+
+	freeipkg();
+//	tpkcleantmp(0);
+	status.hangtime = getconfigint("hangtime", NULL);
+
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}
+
+	return buf;
+}
+
+char* webgetipkremove(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL, *tmpstr = NULL;
+
+	status.hangtime = 99999;
+
+	char* log = NULL;
+
+/*
+	int tpkret = tpkremove(param, 0, 0);
+
+	if(tpkret == 0)
+	{
+		tmpstr = ostrcat(_("Tpk Remove Info - Remove OK"), NULL, 0, 0);
+		if(param != NULL && param[0] != '*') delplugin(param);
+	}
+	else
+		tmpstr = ostrcat(_("Tpk Remove Info - Remove ERROR"), NULL, 0, 0);
+*/
+	if(!file_exist("/etc/.opkg"))
+		system("touch /etc/.opkg");
+
+	log = get_ipk_remove(param);
+	if(log == NULL)
+	{
+		log = ostrcat("Remove error", NULL, 0, 0);
+		tmpstr = ostrcat(_("Ipk Remove Info - Remove ERROR"), NULL, 0, 0);
+	}
+	else
+		tmpstr = ostrcat(_("Ipk Remove Info - Remove OK"), NULL, 0, 0);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpkremove\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _(tmpstr), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	free(tmpstr), tmpstr = NULL;
+
+//	if(tpkret == 0)
+	if(log == NULL)
+	{
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Remove Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
+	}
+	else
+	{
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Remove Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
+	}
+
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+	loadplugin();
+	free(log), log = NULL;
+	unlink(TPKLOG);
+	if(file_exist("/tmp/.ipkg_needs_reboot"))
+	{
+// need other..
+		textbox(_("Message"), _("IPK Remove done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("IPK Install done, your system will reboot !"), 1, 0);
+		buf = string_replace_all("<br>", "<br>\n", buf, 1);
+		//write only config file
+		writeallconfig(3);
+		oshutdown(2,2);
+		system("init 6");
+	}
+
+	status.hangtime = getconfigint("hangtime", NULL);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}
+
+	return buf;
+}
+
+char* webgetipkupgrade(int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL;
+
+	status.hangtime = 99999;
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"ipkupgrade\"><center>", 1, 0);
+	}
+
+	if(!file_exist("/etc/.opkg"))
+		system("touch /etc/.opkg");
+
+	char* log = NULL;
+	log = ipkg_upgrade_cmd();
+	if(log == NULL)
+	{
+		log = ostrcat("Upgrade error", NULL, 0, 0);
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Tpk Update Info - Update ERROR"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Remove Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
+	}
+	else
+	{
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Tpk Update Info - Update OK"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Remove Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
+	}
+	
+    free(log); log = NULL;
+
+	writesys("/tmp/.ipkg_upgrade_start", "0", 0);
+
+	loadplugin();
+	unlink(IPKGLOG);
+
+	if(file_exist("/tmp/.ipkg_needs_reboot"))
+	{
+		textbox(_("Message"), _("TPK Upgrade done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		//write only config file
+		writeallconfig(3);
+		oshutdown(2,2);
+		system("init 6");
+	}
+	unlink("/tmp/.ipkg_upgrade_start");
+
+	status.hangtime = getconfigint("hangtime", NULL);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}
+
+	return buf;
+}
+#endif
+////////////////
 char* webgetserviceinfo(int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL;

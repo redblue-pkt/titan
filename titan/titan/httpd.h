@@ -319,6 +319,20 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgettpktmplist(param, fmt);
 	else if(ostrcmp(query, "gettpkremove") == 0 && param != NULL)
 		buf = webgettpkremove(param, fmt);
+#if defined(OVBUILD) || defined (OEBUILD)
+	else if(ostrcmp(query, "getipksection") == 0)
+		buf = webgetipksection(fmt);
+	else if(ostrcmp(query, "getipklist") == 0 && param != NULL)
+		buf = webgetipklist(param, fmt);
+	else if(ostrcmp(query, "getipkinstall") == 0 && param != NULL)
+		buf = webgetipkinstall(param, fmt);
+	else if(ostrcmp(query, "getipkinstallpath") == 0 && param != NULL)
+		buf = webgetipkinstallpath(param, fmt);
+	else if(ostrcmp(query, "getipktmplist") == 0 && param != NULL)
+		buf = webgetipktmplist(param, fmt);
+	else if(ostrcmp(query, "getipkremove") == 0 && param != NULL)
+		buf = webgetipkremove(param, fmt);
+#endif
 	else if(ostrcmp(query, "getrestoredefault") == 0 && param != NULL)
 		buf = webgetrestoredefault(param, fmt);
 	else if(ostrcmp(query, "getchannelsettings") == 0 && param != NULL)
