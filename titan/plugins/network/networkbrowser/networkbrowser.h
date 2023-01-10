@@ -1099,11 +1099,11 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 printf("tmpstr1 1 %s\n", tmpstr2);
 
 		if(tmpstr2 == NULL)
-			tmpstr2 = oregex("---------       ----      -------(.*)", tmpstr1);
+			tmpstr2 = string_resub("---------       ----      -------", "SMB1 disabled -- no workgroup available", tmpstr1, 0);
 printf("tmpstr1 2 %s\n", tmpstr2);
 
 		if(tmpstr2 == NULL)
-			tmpstr2 = string_resub("---------       ----      -------", "SMB1 disabled -- no workgroup available", tmpstr1, 0);
+			tmpstr2 = oregex("---------       ----      -------(.*)", tmpstr1);
 printf("tmpstr1 3 %s\n", tmpstr2);
 
 		debug(70, "------ result 2 ------");
@@ -1180,7 +1180,7 @@ printf("tmpstr1 3 %s\n", tmpstr2);
 						break;
 					}
 
-					if(ostrncmp("\t", ret1[j].part, 1) == 0)
+					if(ostrncmp("\t", ret1[j].part, 1))
 					{
 						debug(70, "continue: no tab: %s\n", ret1[j].part);
 						continue;
