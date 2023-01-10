@@ -55,9 +55,9 @@ curlbin2="$CURLBIN $PROXY -k -s --connect-timeout 5 --cookie /mnt/network/cookie
 
 if [ -e /etc/.oebuild ];then
 	if [ "$DISTRO" == "7.1" ];then
-		youtubebin="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
-		youtubebin2="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
-		youtubebinbg="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+		youtubebin="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors -g"
+		youtubebin2="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors -g"
+		youtubebinbg="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors --output"
 	else
 		youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 		youtubebin2="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
