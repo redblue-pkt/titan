@@ -135,7 +135,7 @@ tags()
 				   title = toupper(tag)
 				   gsub(/\/TAGS\//, "", title)
 				   pic = tolower(title)
-				   print title "#" SRC " " SRC " videos \x27" tag "\x27#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
+				   print title "#" SRC " " SRC " search \x27" tag "\x27#http://openaaf.dyndns.tv/mediathek/menu/" pic ".jpg#" pic ".jpg#" NAME "#0"
 				}
 			}
 		' >$TMP/$FILENAME.list
