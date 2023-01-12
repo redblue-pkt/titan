@@ -968,6 +968,9 @@ youtube_dlbg()
 		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 #		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
         URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
+
+#yt-dlp --hls-use-mpegts --format mp4 --ignore-errors --output '/home/obi/xxxtest/%(title)s.%(ext)s' https://de.pornhub.com/video/search?search=fleshpleasures
+
 		echo "$youtubebinbg $DEST $URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 		$youtubebinbg "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
         if [ `cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | wc -l` -eq 0 ];then
