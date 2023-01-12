@@ -6,7 +6,7 @@ echo "Script: $0"
 if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg remove titan-plugin-player-gmediarender --dest $1
 	opkg remove titan-gmediarender
-else if [ "$1" != "upgrade" ];then
+else if [ "$1" != "upgrade" ] && [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];then
 	INSTDIR="$1"
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/player/gmediarender"
 
