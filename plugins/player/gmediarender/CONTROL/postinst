@@ -13,7 +13,7 @@ if [ "$1" != "upgrade" ];then
 	INSTDIR="$1"
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/player/gmediarender"
 
-	sed s#_path_#"$INSTDIR"#g -i "$PLUGINDIR/run"
+#	sed s#_path_#"$INSTDIR"#g -i "$PLUGINDIR/run"
 
 	if [ "/var" != "$INSTDIR" ]; then
 		rm -rf /var/usr/lib/gstreamer-0.10
