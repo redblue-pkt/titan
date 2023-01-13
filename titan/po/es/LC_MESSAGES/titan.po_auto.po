@@ -8216,7 +8216,7 @@ msgstr ""
 msgid "KinoX Url"
 msgstr ""
 
-#: kodistarter.h:35
+#: kodistarter.h:30
 msgid "Kodi Gui Starter"
 msgstr ""
 
@@ -17141,7 +17141,11 @@ msgstr ""
 "Tienes que esperar hasta que se establezca el proceso de conexion\n"
 " o cancelar -Exit-a traves del proceso"
 
-#: e2starter.h:44 kodistarter.h:39
+#: kodistarter.h:35
+msgid "Wait for install"
+msgstr ""
+
+#: e2starter.h:44
 msgid "Wait for install or press EXIT"
 msgstr ""
 

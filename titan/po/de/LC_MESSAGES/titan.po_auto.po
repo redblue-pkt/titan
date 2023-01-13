@@ -8341,7 +8341,7 @@ msgstr ""
 msgid "KinoX Url"
 msgstr ""
 
-#: kodistarter.h:35
+#: kodistarter.h:30
 msgid "Kodi Gui Starter"
 msgstr ""
 
@@ -17299,7 +17299,11 @@ msgstr ""
 "Warten Sie, bis die Verbindung hergestellt wurde\n"
 "oder brechen Sie durch -Exit- den Vorgang ab!"
 
-#: e2starter.h:44 kodistarter.h:39
+#: kodistarter.h:35
+msgid "Wait for install"
+msgstr ""
+
+#: e2starter.h:44
 msgid "Wait for install or press EXIT"
 msgstr ""
 

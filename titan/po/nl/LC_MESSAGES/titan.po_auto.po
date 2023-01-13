@@ -8172,7 +8172,7 @@ msgstr ""
 msgid "KinoX Url"
 msgstr ""
 
-#: kodistarter.h:35
+#: kodistarter.h:30
 msgid "Kodi Gui Starter"
 msgstr ""
 
@@ -17068,7 +17068,11 @@ msgstr "Wacht op beëindigen zenders zoeken"
 msgid "Wait for connect or press EXIT"
 msgstr "Wacht op verbinding of druk op EXIT"
 
-#: e2starter.h:44 kodistarter.h:39
+#: kodistarter.h:35
+msgid "Wait for install"
+msgstr ""
+
+#: e2starter.h:44
 msgid "Wait for install or press EXIT"
 msgstr ""
 
