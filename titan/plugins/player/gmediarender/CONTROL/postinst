@@ -9,17 +9,13 @@ echo "Script: $0"
 #	opkg install titan-gmediarender
 #fi
 
-if [ "$1" != "upgrade" ] && [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];then
+if [ -e /etc/.ddtbuild ];then
 	INSTDIR="$1"
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/player/gmediarender"
 
-#	sed s#_path_#"$INSTDIR"#g -i "$PLUGINDIR/run"
-
-	if [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];then
-		if [ "/var" != "$INSTDIR" ]; then
-			rm -rf /var/usr/lib/gstreamer-0.10
-			ln -s "$INSTDIR/lib/gstreamer-0.10" /var/usr/lib
-		fi
+	if [ "/var" != "$INSTDIR" ]; then
+		rm -rf /var/usr/lib/gstreamer-0.10
+		ln -s "$INSTDIR/lib/gstreamer-0.10" /var/usr/lib
 	fi
 fi
 
