@@ -15,9 +15,11 @@ if [ "$1" != "upgrade" ] && [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];the
 
 #	sed s#_path_#"$INSTDIR"#g -i "$PLUGINDIR/run"
 
-	if [ "/var" != "$INSTDIR" ]; then
-		rm -rf /var/usr/lib/gstreamer-0.10
-		ln -s "$INSTDIR/lib/gstreamer-0.10" /var/usr/lib
+	if [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];then
+		if [ "/var" != "$INSTDIR" ]; then
+			rm -rf /var/usr/lib/gstreamer-0.10
+			ln -s "$INSTDIR/lib/gstreamer-0.10" /var/usr/lib
+		fi
 	fi
 fi
 
