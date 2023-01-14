@@ -3,11 +3,11 @@
 echo "Dest: $1"
 echo "Script: $0"
 
-if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
-	opkg update
-	opkg install titan-plugin-player-gmediarender --dest $1
-	opkg install titan-gmediarender
-fi
+#if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
+#	opkg update
+#	opkg install titan-plugin-player-gmediarender --dest $1
+#	opkg install titan-gmediarender
+#fi
 
 if [ "$1" != "upgrade" ] && [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];then
 	INSTDIR="$1"
