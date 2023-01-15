@@ -9,7 +9,7 @@ if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg install titan-gmediarender
 fi
 
-if [ "$1" != "upgrade" ] && [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];then
+if [ ! -z "$1" ] && [ "$1" != "upgrade" ] && [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];then
 	INSTDIR="$1"
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/player/gmediarender"
 
