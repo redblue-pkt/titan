@@ -9,13 +9,20 @@ if [ ! -e /etc/.opkg ] && ([ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ]);then
 	opkg install titan-gmediarender
 fi
 
-if [ ! -z "$1" ] && [ "$1" != "upgrade" ] && [ ! -e /etc/.oebuild ] && [ ! -e /etc/.ovbuild ];then
+if [ -e /etc/.ddtbuild ];then
 	INSTDIR="$1"
 	PLUGINDIR="$INSTDIR/usr/local/share/titan/plugins/player/gmediarender"
 
 	if [ "/var" != "$INSTDIR" ]; then
 		rm -rf /var/usr/lib/gstreamer-0.10
 		ln -s "$INSTDIR/lib/gstreamer-0.10" /var/usr/lib
+	fi
+fi
+
+if [ "$1" != "upgrade" ] && [ -e /etc/.oebuild ] || [ -e /etc/.ovbuild ];then
+	if [ "root" != "$1" ]; then
+		rm -rf /usr/share/gmediarender
+		ln -s "$1/usr/share/gmediarender" /usr/share/gmediarender
 	fi
 fi
 
