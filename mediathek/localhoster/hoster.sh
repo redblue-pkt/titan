@@ -72,7 +72,7 @@ hlsdlbg="$HLSBIN -u $USERAGENT -o"
 
 if [ -e /mnt/network/cookies ];then sed 's/#HttpOnly_//g' -i /mnt/network/cookies; fi
 
-if [ ! -e /etc/.oebuild ];then
+if [ ! -e /etc/.oebuild ] || [ "$DISTRO" == "7.1" ];then
     export PYTHONHOME=/tmp/localhoster
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 else

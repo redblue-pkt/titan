@@ -697,7 +697,11 @@ printf("playrcred set localparser_input: %s\n", localparser_input);
 		}
 
 		addmenulist(&mlist, "MediaDB Edit", _("MediaDB Edit"), NULL, 0, 0);
-	
+
+printf("status.play %d\n",status.play);
+printf("status.actplay %s\n",status.actplay);
+printf("status.mcaktiv %d\n",status.mcaktiv);
+
 		if(status.play == 0)
 		{
 			addmenulist(&mlist, "Delete File", _("Delete File"), NULL, 0, 0);
@@ -707,9 +711,14 @@ printf("playrcred set localparser_input: %s\n", localparser_input);
     		addmenulist(&mlist, "Search on PornHub", _("Search on PornHub"), NULL, 0, 0);
     		addmenulist(&mlist, "Search on Xvideos", _("Search on Xvideos"), NULL, 0, 0);
 		}
-		if(status.mediadbfiles > 0)
-			addmenulist(&mlist, "MediaDB Scan Info", _("MediaDB Scan Info"), NULL, 0, 0);
+		else if(status.play == 1 && status.mcaktiv != 0)
+			addmenulist(&mlist, "Delete File", _("Delete File"), NULL, 0, 0);
+		else
+			addmenulist(&mlist, "Show Streamlink", _("Show Streamlink"), NULL, 0, 0);
 
+
+		if(status.mediadbfiles > 0)
+			addmenulist(&mlist, "MediaDB Scan Info", _("MediaDB Scan Info"), NULL, 0, 0);		
 	}
 	else
 	{
@@ -894,6 +903,8 @@ printf("mbox->text=%s\n", mbox->text);
 			playcheckdirrcret(file, 7);
 			ret = 9999;
 		}
+		else if(ostrcmp(mbox->name, "Show Streamlink") == 0)
+	       textbox(_(mbox->name), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 200, 0, 0);
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 			screenbgdownload(1);
 		else if(ostrcmp(mbox->name, "Create Favorites sub folder") == 0)
