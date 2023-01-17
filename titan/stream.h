@@ -291,7 +291,8 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 		{
 			if(ret == NULL)
 			{
-				string_remove_whitechars(link);
+//				string_remove_whitechars(link);				
+				link = string_replace_all(" ", "%20", link, 1);
 				debug(250, "found streamrelay link=", link);
 				execl("/usr/bin/curl", "curl", link, "-o", servicenode->recname, NULL);
 			}
