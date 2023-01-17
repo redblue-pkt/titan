@@ -264,60 +264,69 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 		printf("Token: %s\n", token);
 	}
 	 
-	 struct sigaction sigchld_action = {
-				.sa_handler = SIG_DFL,
-				.sa_flags = SA_NOCLDWAIT
-		};
-		sigaction( SIGCHLD, &sigchld_action, NULL ) ;
+	struct sigaction sigchld_action = {
+		.sa_handler = SIG_DFL,
+		.sa_flags = SA_NOCLDWAIT
+	};
+	sigaction( SIGCHLD, &sigchld_action, NULL ) ;
 
-		debug(250, "start streamrecordrun");
-		
-		int pid = fork() ;
-		if( pid < 0 )
+	debug(250, "start streamrecordrun");
+
+	int pid = fork() ;
+	if( pid < 0 )
+	{
+		printf( "Fork failed\n" ) ;
+		return 1 ;
+	}
+	//------------------------------Child process----------------------------------------------------------------		
+	debug(250, "start PID: %d",pid);
+	if( pid == 0 )
+	{
+		debug(250, "link %s", link);
+		debug(250, "recname %s", servicenode->recname);
+		debug(250, "token2 %s", token2);
+
+		while( 1 )
 		{
-			printf( "Fork failed\n" ) ;
-			return 1 ;
-		}
-//------------------------------Child process----------------------------------------------------------------		
-		debug(250, "start PID: %d",pid);
-		if( pid == 0 )
-		{
-			debug(250, "start %s",cmd);
-			while( 1 )
+			if(ret == NULL)
 			{
-				if(ret == NULL) 
-					execl("/usr/bin/curl", "curl", link, "-o", servicenode->recname, NULL);
-				else
-					execl("/usr/bin/curl", "curl", token, "-A", token2, "-o", servicenode->recname, NULL);
-				debug(250, "ERROR start curl");
-				break;
+				debug(250, "found streamrelay");
+				execl("/usr/bin/curl", "curl -v", link, "-o", servicenode->recname, NULL);
 			}
-			return -1 ;
+			else
+			{
+				debug(250, "found vavoo");
+				execl("/usr/bin/curl", "curl -v", token, "-A", token2, "-o", servicenode->recname, NULL);
+			}
+			debug(250, "ERROR start curl");
+			break;
 		}
-//-------------------------------Parent process---------------------------------------------------------------
-		printf( "Main program\n" ) ;
-		while(timernode->aktion != STOP && servicenode->recendtime != 2)
-		{
-			if(servicenode->recendtime > 2 && servicenode->recendtime < time(NULL)) break;
-			sleep(1);
-		}
-		
-		printf( "\nKilling record\n" ) ;
-		debug(250, "kill PID: %d",pid);
-		kill( pid, SIGTERM ) ;
-		free(cmd), cmd = NULL;
-		if(servicenode->type == RECORDTIMER)
-		{
-			sleep(3);  //waiting for the decryption process to finish 
-			recordstop(servicenode, 0);
-		}
-		else
-		{
-			delservice(servicenode, 0);
-			status.recording--;
-		}
-		debug(250, "ende streamrecordrun");
-		return 0 ;
+		return -1 ;
+	}
+	//-------------------------------Parent process---------------------------------------------------------------
+	printf( "Main program\n" ) ;
+	while(timernode->aktion != STOP && servicenode->recendtime != 2)
+	{
+		if(servicenode->recendtime > 2 && servicenode->recendtime < time(NULL)) break;
+		sleep(1);
+	}
+
+	printf( "\nKilling record\n" ) ;
+	debug(250, "kill PID: %d",pid);
+	kill( pid, SIGTERM ) ;
+	free(cmd), cmd = NULL;
+	if(servicenode->type == RECORDTIMER)
+	{
+		sleep(3);  //waiting for the decryption process to finish 
+		recordstop(servicenode, 0);
+	}
+	else
+	{
+		delservice(servicenode, 0);
+		status.recording--;
+	}
+	debug(250, "ende streamrecordrun");
+	return 0 ;
 }
 
 
