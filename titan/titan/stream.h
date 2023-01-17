@@ -282,10 +282,10 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 	debug(250, "start PID: %d",pid);
 	if( pid == 0 )
 	{
-		debug(250, "link %s", link);
-		debug(250, "recname %s", servicenode->recname);
-		debug(250, "token %s", token);
-		debug(250, "token2 %s", token2);
+		debug(250, "link: %s", link);
+		debug(250, "recname: %s", servicenode->recname);
+		debug(250, "token: %s", token);
+		debug(250, "token2: %s", token2);
 
 		while( 1 )
 		{
@@ -293,14 +293,14 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 			{
 //				string_remove_whitechars(link);				
 				link = string_replace_all(" ", "%20", link, 1);
-				debug(250, "found streamrelay link=", link);
+				debug(250, "found streamrelay link: %s", link);
 				execl("/usr/bin/curl", "curl", link, "-o", servicenode->recname, NULL);
 			}
 			else
 			{
 				debug(250, "found vavoo");
-				debug(250, "found vavoo token=", token);
-				debug(250, "found vavoo token2=", token2);
+				debug(250, "found vavoo token: %s", token);
+				debug(250, "found vavoo token2: %s", token2);
 				execl("/usr/bin/curl", "curl", token, "-A", token2, "-o", servicenode->recname, NULL);
 			}
 			debug(250, "ERROR start curl");
