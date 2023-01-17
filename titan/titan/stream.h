@@ -284,8 +284,6 @@ int streamrecordrun(struct stimerthread* timernode, struct service* servicenode,
 	{
 		debug(250, "link: %s", link);
 		debug(250, "recname: %s", servicenode->recname);
-		debug(250, "token: %s", token);
-		debug(250, "token2: %s", token2);
 
 		while( 1 )
 		{
