@@ -57,15 +57,18 @@ if [ -e /etc/.oebuild ];then
 	if [ "$DISTRO" == "7.1" ];then
 		youtubebin="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors -g"
 		youtubebin2="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors -g"
-		youtubebinbg="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors --output"
+		youtubebinbg="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+		youtubebinbghls="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors --output"
 	else
 		youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 		youtubebin2="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 		youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+		youtubebinbghls="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors --output"
 	fi
 else
 	youtubebin="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 	youtubebinbg="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+	youtubebinbghls="$CMD/lib/youtube_dl/__main__.py --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors --output"
 fi
 
 hlsdlbg="$HLSBIN -u $USERAGENT -o"
