@@ -285,6 +285,11 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 								//gui restart and write no config
 								oshutdown(3, 2);
 							}
+							//set skinentrys locked
+							if(status.security == 0)
+								setskinnodeslocked(1);
+							else
+								setskinnodeslocked(0);
 						}
 					}
 				}
@@ -325,6 +330,11 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 					textbox(_("Tpk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
 					//del plugin from memory if Titanname is defined in plugin control file
 					if(mbox->param1 != NULL && mbox->param1[0] != '*') delplugin(mbox->param1);
+			        //set skinentrys locked
+			        if(status.security == 0)
+				        setskinnodeslocked(1);
+			        else
+				        setskinnodeslocked(0);
 				}
 				else
 				{
@@ -444,6 +454,11 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						//gui restart and write no config
 						oshutdown(3, 2);
 					}
+			        //set skinentrys locked
+			        if(status.security == 0)
+				        setskinnodeslocked(1);
+			        else
+				        setskinnodeslocked(0);
 				}
 			}
 		}
@@ -717,6 +732,11 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 					        //gui restart and write no config
 					        oshutdown(3, 2);
 				        }
+						//set skinentrys locked
+						if(status.security == 0)
+							setskinnodeslocked(1);
+						else
+							setskinnodeslocked(0);
 				    }
                 }
 			}
@@ -797,6 +817,12 @@ printf("mbox1->param3: %s\n", mbox1->param3);
 					//gui restart and write no config
 					oshutdown(3, 2);
 				}
+				if(mbox->param1 != NULL && mbox->param1[0] != '*') delplugin(mbox->param1);
+		        //set skinentrys locked
+		        if(status.security == 0)
+			        setskinnodeslocked(1);
+		        else
+			        setskinnodeslocked(0);
 			}
 		}
 /*
@@ -913,7 +939,11 @@ printf("tmpstr2: %s\n", tmpstr);
 					//gui restart and write no config
 					oshutdown(3, 2);
 				}
-
+		        //set skinentrys locked
+		        if(status.security == 0)
+			        setskinnodeslocked(1);
+		        else
+			        setskinnodeslocked(0);
 			}
 		}
 /*

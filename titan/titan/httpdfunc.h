@@ -5075,6 +5075,7 @@ printf("webadjust fmt: %d\n",fmt);
 	}
 
 ///////////////////
+/*
 #if defined(OVBUILD) || defined (OEBUILD)
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Extensions Type"), &maxlen, &pos);
@@ -5104,6 +5105,7 @@ printf("webadjust fmt: %d\n",fmt);
 	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
 	sendstr = ostrcat(sendstr, ", extensions_type.value", 1 , 0);
 #endif
+*/
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Channel Source Info"), &maxlen, &pos);

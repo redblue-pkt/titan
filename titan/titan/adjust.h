@@ -58,9 +58,11 @@ void screenadjust()
 	struct skin* community_pass = getscreennode(adjust, "community_pass");
 	struct skin* debuglevel = getscreennode(adjust, "debuglevel");
 	struct skin* zapmode = getscreennode(adjust, "zapmode");
+/*
 #if defined(OVBUILD) || defined (OEBUILD)
 	struct skin* extensions_type = getscreennode(adjust, "extensions_type");
 #endif
+*/
 	struct skin* channel_source_info = getscreennode(adjust, "channel_source_info");
 
 
@@ -253,13 +255,14 @@ void screenadjust()
 	addchoicebox(usecec, "0", _("no"));
 	addchoicebox(usecec, "1", _("yes"));
 	setchoiceboxselection(usecec, getconfig("usecec", NULL));
+/*
 #if defined(OVBUILD) || defined (OEBUILD)
 	addchoicebox(extensions_type, "0", _("Tpk"));
 	addchoicebox(extensions_type, "1", _("Ipkg"));
 	addchoicebox(extensions_type, "2", _("Tpk / Ipkg"));
 	setchoiceboxselection(extensions_type, getconfig("extensions_type", NULL));
 #endif
-
+*/
 	addchoicebox(channel_source_info, "0", _("no"));
 	addchoicebox(channel_source_info, "1", _("yes"));
 	setchoiceboxselection(channel_source_info, getconfig("channel_source_info", NULL));
@@ -629,6 +632,7 @@ void screenadjust()
 
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 				addconfigscreencheck("usecec", usecec, "0");
+/*
 #if defined(OVBUILD) || defined (OEBUILD)
 			addconfigscreencheck("extensions_type", extensions_type, "0");
 			if(extensions_type->ret != NULL)
@@ -640,6 +644,7 @@ void screenadjust()
 		            setskinnodeslocked(0);
 			}
 #endif
+*/
 			if(checkbox("ATEMIO7600") == 1)
 			{
 				addconfigscreencheck("usecec", usecec, "0");
