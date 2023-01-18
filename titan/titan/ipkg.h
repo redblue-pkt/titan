@@ -417,7 +417,6 @@ int ipkg_download(ipkg_conf_t *conf, const char *src, const char *filename)
 	
 	if(withoutgui == 1)
 	{
-
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
 			if(ostrcmp((char*)src, "//97.74.32.10/svn/ipk/sh4/titan") != 0)	 	 
