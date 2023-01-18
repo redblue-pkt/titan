@@ -1267,7 +1267,7 @@ void setskinnodeslocked(int flag)
 			{
 				if(ostrcmp("moduleconfig", child->name) == 0) child->locked = 1;
 			}
-
+/*
             if(getconfigint("extensions_type", NULL) == 0)
             {
                 // tpk active ipkg inactive
@@ -1319,7 +1319,7 @@ void setskinnodeslocked(int flag)
                 if(ostrcmp("extensions_tpkupgrade", child->name) == 0) child->locked = 0;
                 if(ostrcmp("extensions_mediatpkinstall", child->name) == 0) child->locked = 0;
             }
-
+*/
 			// disable unused menu on oebuild
 			if(ostrcmp("feed_ipk", child->name) == 0) child->locked = 1;
 
@@ -1555,8 +1555,10 @@ void guestthread()
 			debug(99, "Community connecting: UserAuth OK");
 			debug(199, "Community connecting: UserAuth OK");
 			debug(299, "Community connecting: UserAuth OK");
+#ifdef DDTBUILD
 			debug(199, "set secret feed");
 			screenfeed(1);
+#endif
 			if(!file_exist("/mnt/swapextensions/etc/.codecpack"))
 			{
 				debug(199, "Community connecting: set codecpack");
