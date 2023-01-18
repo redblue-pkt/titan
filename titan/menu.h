@@ -811,6 +811,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenfeed(0);
 	}
+#ifdef DDTBUILD
 	else if(ostrcmp("extensions_tpkinstall", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
@@ -836,7 +837,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenextensions_check(1);
 	}
-#if defined(OVBUILD) || defined (OEBUILD)
+#else
 	else if(ostrcmp("feed_ipk", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;

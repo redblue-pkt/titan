@@ -1569,6 +1569,7 @@ void guestthread()
 
 //			if(!file_exist("/var/etc/.tpkupgrade"))
 //			{
+#ifdef DDTBUILD
 				debug(199, "1Community connecting: tpk upgrade");
 				if(count == 1)
 					tpkgetindex(0);
@@ -1576,6 +1577,7 @@ void guestthread()
 				writesys("/tmp/.tpk_upgrade_start", "0", 0);
 
 				tpkupdate(1);
+
 				loadplugin();
 				unlink(TPKLOG);
 				if(file_exist("/tmp/.tpk_needs_reboot"))
@@ -1590,6 +1592,29 @@ void guestthread()
 					oshutdown(3, 2);
 				}
 				unlink("/tmp/.tpk_upgrade_start");
+#else
+				ipkg_update();
+				freeipkg();
+				writesys("/tmp/.ipk_upgrade_start", "0", 0);
+
+				ipkg_upgrade_cmd();
+
+				loadplugin();
+				unlink(TPKLOG);
+				if(file_exist("/tmp/.ipkg_needs_reboot"))
+				{
+					unlink("/tmp/.ipkg_needs_reboot");
+					textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					//sync usb
+					system("sync");
+					//write only config file
+					writeallconfig(3);
+					//gui restart and write no config
+					oshutdown(3, 2);
+				}
+				unlink("/tmp/.ipkg_upgrade_start");
+#endif
+
 //			}
 		}
 		sleep(status.sleepcount);

@@ -270,13 +270,13 @@ fi
 
 #if [ "$GROUP" = "dev" ] && ([ "$TYPE" = "spark" ] || [ "$TYPE" = "spark7162" ]); then
 if [ "$TYPE" = "spark_aus" ] || [ "$TYPE" = "spark7162_aus" ]; then
-    devflag="-finstrument-functions -rdynamic -DBETA -DEPLAYER3"
+    devflag="-finstrument-functions -rdynamic -DBETA -DDDTBUILD -DEPLAYER3"
 elif [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
-    devflag="-finstrument-functions -rdynamic -DBETA -DEXTEPLAYER3"
+    devflag="-finstrument-functions -rdynamic -DBETA -DDDTBUILD -DEXTEPLAYER3"
 elif [ "$GROUP" = "dev" ]; then
-    devflag="-DBETA -DEXTEPLAYER3"
+    devflag="-DBETA -DDDTBUILD -DEXTEPLAYER3"
 else
-    devflag="-DEXTEPLAYER3"
+    devflag="-DDDTBUILD -DEXTEPLAYER3"
 fi
 
  #ffmpeg=3.4.2
@@ -446,6 +446,10 @@ cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual."$TY
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual.*.html
 #cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index."$TYPE".html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index.html
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index.*.html
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual."$TYPE".html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual.html
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual.*.html
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.DDTBUILD.html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.html
+rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.*.html
 
 cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic.mvi
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic.*.mvi
