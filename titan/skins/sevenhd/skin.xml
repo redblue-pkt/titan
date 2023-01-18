@@ -1532,7 +1532,7 @@
 		<node parent="listbox" name="community_pass" text="Community Pass" type="inputbox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="debuglevel" text="Debuglevel" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="zapmode" text="Zapmode" type="choicebox" valign="middle" width="100%" height="35">
-		<node parent="listbox" name="extensions_type" text="Extensions Type" type="choicebox" valign="middle" width="100%" height="35">
+#		<node parent="listbox" name="extensions_type" text="Extensions Type" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="channel_source_info" text="Channel Source Info" type="choicebox" valign="middle" width="100%">
 <node name="b1" text="OK"   halign="center" valign="middle" bordercol="okcol"   bordersize="6" bordertype="2" posx="0"   posy="0" width="100" height="39">
 <node name="b2" text="EXIT" halign="center" valign="middle" bordercol="exitcol" bordersize="6" bordertype="2" posx="110" posy="0" width="100" height="39">
@@ -1873,9 +1873,9 @@
 <node parent=grid1 posx=200 width=80 height=30 fontcol=black bgcol=yellow halign=center valign=middle text="Space" name=" ">
 <node parent=grid1 posx=310 width=120 height=30 bgcol=blue halign=center valign=middle text="abc/ABC" name=switch>
 
-<node type=gridbr parent=grid1 posx=0 width=40 height=30 halign=center valign=middle text="AE" name=Ä>
-<node parent=grid1 posx=40 width=40 height=30 halign=center valign=middle text="OE" name=Ö>
-<node parent=grid1 posx=80 width=40 height=30 halign=center valign=middle text="UE" name=Ü>
+<node type=gridbr parent=grid1 posx=0 width=40 height=30 halign=center valign=middle text="AE" name=\C4>
+<node parent=grid1 posx=40 width=40 height=30 halign=center valign=middle text="OE" name=\D6>
+<node parent=grid1 posx=80 width=40 height=30 halign=center valign=middle text="UE" name=\DC>
 <node parent=grid1 posx=120 width=40 height=30 halign=center valign=middle text="#" name=#>
 <node parent=grid1 posx=160 width=40 height=30 halign=center valign=middle text="$" name=$>
 <node parent=grid1 posx=200 width=40 height=30 halign=center valign=middle text="%" name=%>
@@ -1943,10 +1943,10 @@
 <node parent=grid2 posx=200 width=80 height=30 fontcol=black bgcol=yellow halign=center valign=middle text="Space" name=" ">
 <node parent=grid2 posx=310 width=120 height=30 bgcol=blue halign=center valign=middle text="ABC/abc" name=switch>
 
-<node type=gridbr parent=grid2 posx=0 width=40 height=30 halign=center valign=middle text="ae" name=ä>
-<node parent=grid2 posx=40 width=40 height=30 halign=center valign=middle text="oe" name=ö>
-<node parent=grid2 posx=80 width=40 height=30 halign=center valign=middle text="ue" name=ü>
-<node parent=grid2 posx=120 width=40 height=30 halign=center valign=middle text="sz" name=ß>
+<node type=gridbr parent=grid2 posx=0 width=40 height=30 halign=center valign=middle text="ae" name=\E4>
+<node parent=grid2 posx=40 width=40 height=30 halign=center valign=middle text="oe" name=\F6>
+<node parent=grid2 posx=80 width=40 height=30 halign=center valign=middle text="ue" name=\FC>
+<node parent=grid2 posx=120 width=40 height=30 halign=center valign=middle text="sz" name=\DF>
 <node parent=grid2 posx=160 width=40 height=30 halign=center valign=middle text="0" name=0>
 <node parent=grid2 posx=200 width=40 height=30 halign=center valign=middle text="1" name=1>
 <node parent=grid2 posx=240 width=40 height=30 halign=center valign=middle text="2" name=2>
