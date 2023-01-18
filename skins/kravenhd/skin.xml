@@ -699,7 +699,7 @@
 		<node parent="listbox" name="community_pass" text="Community Pass" type="inputbox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="debuglevel" text="Debuglevel" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 	  <node parent="listbox" name="zapmode" text="Zapmode" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
-		<node parent="listbox" name="extensions_type" text="Extensions Type" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
+#		<node parent="listbox" name="extensions_type" text="Extensions Type" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 		<node parent="listbox" name="channel_source_info" text="Channel Source Info" type="choicebox" hspace="20" vspace="5" valign="middle" width="100%" height="40">
 	<node name="details" bordercol="white" bordersize="1" type="textbox" wrap="yes" font="Regular" fontcol="white" fontsize="28" posx="60" posy="538" width="1160" height="72" hspace="5" vspace="5" text="Here you can make advanced settings.">
 	<node name="buttonbar" font="Regular" fontsize="22" fontcol="white" posx="0" posy="670" width="100%" height="40" hspace="40" vspace="0">
