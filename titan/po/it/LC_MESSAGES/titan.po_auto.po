@@ -31,7 +31,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: security.h:683 security.h:2160
+#: security.h:683 security.h:2163
 msgid " Days "
 msgstr ""
 
@@ -1789,7 +1789,7 @@ msgstr ""
 msgid "Atemio WLAN configuration"
 msgstr ""
 
-#: security.h:2165
+#: security.h:2168
 msgid "Atemio free license"
 msgstr ""
 
@@ -3803,7 +3803,7 @@ msgstr ""
 msgid "Copy satlist successfull"
 msgstr ""
 
-#: security.h:2174
+#: security.h:2177
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -4391,7 +4391,7 @@ msgstr ""
 msgid "Deutsches Anlegerfernsehen (German)"
 msgstr ""
 
-#: security.h:2167
+#: security.h:2170
 msgid "Dev free license"
 msgstr ""
 
@@ -4692,7 +4692,7 @@ msgstr ""
 msgid "Dresden Fernsehen rtmp (German)"
 msgstr ""
 
-#: security.h:2142
+#: security.h:2145
 msgid "Driver"
 msgstr ""
 
@@ -4746,7 +4746,7 @@ msgstr "Dvbapi (attivo)"
 msgid "E"
 msgstr ""
 
-#: security.h:2131
+#: security.h:2134
 msgid "E2 Player"
 msgstr ""
 
@@ -5535,7 +5535,7 @@ msgstr ""
 msgid "Extensions Type"
 msgstr ""
 
-#: security.h:2124 security.h:2136
+#: security.h:2127 security.h:2139
 msgid "External Player"
 msgstr ""
 
@@ -6276,7 +6276,7 @@ msgstr "VFDisplay"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2118
+#: security.h:2121
 msgid "Frontcontroller"
 msgstr ""
 
@@ -7495,7 +7495,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2099
+#: security.h:2102
 msgid "Image"
 msgstr ""
 
@@ -7771,7 +7771,7 @@ msgstr "Installing"
 msgid "Installed version:"
 msgstr ""
 
-#: httpdfunc.h:5835 security.h:2113 skin_default_skin.xml.h:333
+#: httpdfunc.h:5835 security.h:2116 skin_default_skin.xml.h:333
 #: skins_default_skin.xml.h:333 skins_kravenhd_skin.xml.h:340
 msgid "Installed:"
 msgstr "Installa"
@@ -8492,7 +8492,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2147
+#: security.h:2150
 msgid "License"
 msgstr ""
 
@@ -9187,7 +9187,7 @@ msgstr ""
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167 scan.h:2258
-#: scan.h:2651 scart.h:12 scart.h:25 security.h:1588 security.h:1609
+#: scan.h:2651 scart.h:12 scart.h:25 security.h:1591 security.h:1612
 #: service.h:844 service.h:1121 shared.h:29 shared.h:66 shared.h:83
 #: skinadjust.h:603 skinadjust.h:619 skinadjust.h:627 skinadjust.h:668
 #: skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231
@@ -10036,7 +10036,7 @@ msgstr ""
 msgid "OE"
 msgstr ""
 
-#: security.h:2107
+#: security.h:2110
 msgid "OE-GIT Version"
 msgstr ""
 
@@ -10127,7 +10127,7 @@ msgstr ""
 #: rtl2now.h:34 satipclient.h:137 satipclient.h:147 satipclient.h:149
 #: scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258
 #: scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1588 security.h:1609 service.h:844 service.h:1121
+#: security.h:685 security.h:1591 security.h:1612 service.h:844 service.h:1121
 #: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619
 #: skinadjust.h:627 skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110
 #: skinadjust.h:1172 skins_0acht5zehn_skin.xml.h:398
@@ -15681,7 +15681,7 @@ msgstr ""
 #: extensions.h:280 extensions.h:350 extensions.h:449 extensions.h:493
 #: extensions.h:727 extensions.h:812 extensions.h:934 extensions.h:1009
 #: global.h:8100 global.h:8120 global.h:8140 global.h:8160 global.h:8180
-#: kravencfg.c:212 security.h:1588 security.h:1609 skinadjust.h:619
+#: kravencfg.c:212 security.h:1591 security.h:1612 skinadjust.h:619
 #: skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 msgid "Titan will be restarted!"
 msgstr ""
@@ -16060,7 +16060,7 @@ msgstr ""
 msgid "Treiber fuer Wlan Displays"
 msgstr ""
 
-#: security.h:681 security.h:2157
+#: security.h:681 security.h:2160
 msgid "Trial period ends in"
 msgstr ""
 
@@ -16153,7 +16153,7 @@ msgid ""
 "or stream is running !"
 msgstr ""
 
-#: security.h:2191 skin_default_skin.xml.h:724 skins_0acht5zehn_skin.xml.h:733
+#: security.h:2194 skin_default_skin.xml.h:724 skins_0acht5zehn_skin.xml.h:733
 #: skins_atemio_skin.xml.h:687 skins_cool_skin.xml.h:801
 #: skins_default_skin.xml.h:724 skins_kravenhd_skin.xml.h:727
 #: skins_megastyleblue_skin.xml.h:803 skins_megastylegrey_skin.xml.h:803
@@ -16231,7 +16231,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2163
+#: security.h:2166
 msgid "UFS910 free license"
 msgstr ""
 
@@ -16580,7 +16580,7 @@ msgstr ""
 msgid "VaVoo Url"
 msgstr ""
 
-#: security.h:2102
+#: security.h:2105
 msgid "Version"
 msgstr ""
 
@@ -18181,7 +18181,7 @@ msgstr ""
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2169
+#: security.h:2172
 msgid "expired"
 msgstr ""
 
@@ -20688,7 +20688,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5729 httpdfunc.h:5775 hwtest.h:478 moduleconfig.h:449
-#: security.h:2189 skin_default_skin.xml.h:736 skins_0acht5zehn_skin.xml.h:748
+#: security.h:2192 skin_default_skin.xml.h:736 skins_0acht5zehn_skin.xml.h:748
 #: skins_default_skin.xml.h:736 skinselector.h:138
 #: skins_metrixhd_skin.xml.h:716 skins_tobayer01_skin.xml.h:684
 #: skins_ufs912_skin.xml.h:682 stream.h:22 transponder.h:122 transponder.h:158
@@ -20816,7 +20816,7 @@ msgstr ""
 msgid "v"
 msgstr ""
 
-#: security.h:2150
+#: security.h:2153
 msgid "valid"
 msgstr ""
 
