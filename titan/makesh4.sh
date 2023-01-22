@@ -435,11 +435,7 @@ cp -a "$HOME"/flashimg/$SRCDIR/po "$HOME"/flashimg/BUILD/titan/var/usr/local/sha
 cp titan "$HOME"/flashimg/BUILD/titan/usr/local/bin
 chmod 755 "$HOME"/flashimg/BUILD/titan/usr/local/bin/titan
 cp -a "$HOME"/flashimg/$SRCDIR/picons "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
-echo 111
-ls -al "$HOME"/flashimg/$SRCDIR/web/system_*
 cp -a "$HOME"/flashimg/$SRCDIR/web "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
-echo 222
-ls -al "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_*
 cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc."$TYPE".html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc.html
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc.*.html
 cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/img/rc."$TYPE".png "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/img/rc.png
@@ -452,9 +448,8 @@ rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual.*.h
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/index.*.html
 cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual."$TYPE".html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual.html
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc_virtual.*.html
-echo 333
-ls -al "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.DDTBUILD.html
-cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.DDTBUILD.html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.html
+echo use system_extensions.ddtbuild.html > system_extensions.html
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.ddtbuild.html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.html
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/system_extensions.*.html
 
 cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic."$TYPE".mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/player/mc/skin/bgMusic.mvi
