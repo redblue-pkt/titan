@@ -2162,7 +2162,7 @@ void screenscanconfig(int flag)
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
-	if(status.recording > 0 || status.streaming > 0)
+	if(status.recording > 0 || (status.play != 2 && status.streaming > 0))
 	{
 		textbox(_("Message"), _("Scan is not allowed if record or stream is running !"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 		return;
