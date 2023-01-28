@@ -1158,7 +1158,7 @@ void screentunerconfig()
 
 	b4->hidden = YES;
 
-	if(status.recording > 0 || status.streaming > 0)
+	if(status.recording > 0 || (status.play != 2 && status.streaming > 0))
 	{
 		textbox(_("Message"), _("Tunerconfig is not allowed if record\nor stream is running !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		return;
