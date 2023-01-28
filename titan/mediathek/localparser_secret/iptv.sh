@@ -19,7 +19,8 @@ case $2 in
 		if [ -z "$FILENAME" ]; then FILENAME=none;fi
 		PICNAME="$FILENAME"
 		if [ `cat /mnt/config/titan.cfg | grep tithek_iptv_url= | wc -l` -eq 1 ];then
-			URL=$(cat /mnt/config/titan.cfg | grep "tithek_iptv_url=" | sed -nr 's/.*tithek_iptv_url=([^=]+).*/\1/p') 
+#			URL=$(cat /mnt/config/titan.cfg | grep "tithek_iptv_url=" | sed -nr 's/.*tithek_iptv_url=([^=]+).*/\1/p') 
+			URL=$(cat /mnt/config/titan.cfg | grep "tithek_iptv_url=" | sed 's/tithek_iptv_url=//g') 
 		else
 			URL="http://dummy.url"
 		fi
@@ -55,8 +56,9 @@ mainmenu()
 category()
 {
     rm "$TMP/$FILENAME.list"
+  
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin -o - "$URL" | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
@@ -68,10 +70,20 @@ category()
 			{
 				if (suche == 1)
 				{
-					i = index($0, "group-title=\"") + 13
-		            j = index(substr($0, i), "\"") - 1
-		            title = substr($0, i, j)
-
+					if ($0 ~ /group-title=/)
+					{
+						i = index($0, "group-title=\"") + 13
+			            j = index(substr($0, i), "\"") - 1
+			            title = substr($0, i, j)
+					}
+					else
+					{
+						i = index($0, ":-1,") + 4
+						title = substr($0, i, length($0) - 1)
+						found = 2
+						next
+					}
+					
 #	            	gsub("<0xe2><0xad><0x90><0xef><0xb8><0x8f>", "", title)
 	            	gsub("⭐️", "", title)
 
@@ -105,6 +117,25 @@ category()
 					picname = ""
 					pic = ""
 					next
+				}
+			}
+            /^http/ \
+			{
+                if (found == 2)
+                {
+	                newpage = substr($0, 1, length($0) - 1)
+				    if (title != "" && title !~ "= = =")
+				    {
+					    piccount += 1
+					    print title "#" newpage "&tslivemode=1#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
+				    }
+				    
+				    newpage = ""
+				    title = ""
+				    picname = ""
+				    pic = ""
+                    found = 0
+				    next
 				}
 			}
 		' >$TMP/$FILENAME.list
