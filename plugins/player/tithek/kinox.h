@@ -1028,10 +1028,13 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 		free(newurl), newurl = NULL;
  
 		titheklog(debuglevel, "/tmp/kinox10_cast_tmpstr1", NULL, NULL, NULL, tmpstr);
-		tmpstr = string_replace_all("<td class=\"primary_photo\"> <a href=\"/name/", "\nfound=\"", tmpstr, 1);
+//		tmpstr = string_replace_all("<td class=\"primary_photo\"> <a href=\"/name/", "\nfound=\"", tmpstr, 1);
+//		tmpstr = string_replace_all("href=\"/name/", "\nfound=\"", tmpstr, 1);
+		tmpstr = string_replace_all("<li class=\"ipc-metadata-list-summary-item ", "\nfound=\"", tmpstr, 1);
 		titheklog(debuglevel, "/tmp/kinox10_cast_tmpstr2", NULL, NULL, NULL, tmpstr);
 
-		tmpstr1 = string_resub("<table class=\"findList\">", "</div>", tmpstr, 0);
+//		tmpstr1 = string_resub("<table class=\"findList\">", "</div>", tmpstr, 0);
+		tmpstr1 = string_resub("End INLINE20", "Begin INLINE40", tmpstr, 0);
 		titheklog(debuglevel, "/tmp/kinox10_cast_tmpstr3", NULL, NULL, NULL, tmpstr1);
 		free(tmpstr), tmpstr = NULL;
 
@@ -1050,12 +1053,10 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 			int max = count;
 			for(i = 0; i < max; i++)
 			{
-				url = string_resub("found=\"", "/", ret1[i].part, 0);
-				pic = string_resub("<img src=\"", "\"", ret1[i].part, 0);
-
-				tmpstr = string_resub("found=\"", "<small>", ret1[i].part, 0);
-//				name = oregex(".*<a href=\"/name/nm.*\ >(.*)</a>", tmpstr);
-				name = oregex(".*<a href=\"/name/nm.* >(.*)</a>", tmpstr);
+				url = oregex(".*href=\"/name(/nm.*)/.*\">.*</a>", ret1[i].part);
+//				pic = string_resub("loading=\"lazy\" src=\"", "\"", ret1[i].part, 0);
+				pic = string_resub(" src=\"", "\"", ret1[i].part, 0);
+				name = oregex(".*href=\"/name/nm.*>(.*)</a>", ret1[i].part);
 
 				debug(99, "(%d/%d) name: %s url: %s pic: %s\n",i, count, name, url, pic);
 				debug(99, "-------------------------------");
