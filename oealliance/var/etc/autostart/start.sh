@@ -246,6 +246,10 @@ startgui()
     # kill webif
     fuser -k 80/tcp
 
+    # kill streamport
+    STREAMPORT=$(cat /mnt/config/titan.cfg | sed -nr 's/.*stream_port=(.*).*/\1/p')
+    fuser -k $STREAMPORT/tcp
+
     if [ -e /mnt/config/dualboot ] && [ -e "/usr/bin/enigma2" ] && [ -e "/usr/share/enigma2/skin.xml" ];then
 	    if [ ! -e /mnt/config/dualboot.titan ] && [ ! -e /mnt/config/dualboot.enigma2 ] || [ -e /mnt/config/dualboot.titan ];then
 
