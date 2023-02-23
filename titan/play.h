@@ -2469,7 +2469,7 @@ playerend:
 
 void streamplayer(struct channel* chnode, int flag)
 {
-    char* newkey = NULL, *oldkey = NULL, *tmpstr = NULL;
+    char* newkey = NULL, *oldkey = NULL;
     printf("streamplayer playerstart%d name: %s\n", flag, chnode->name);
     printf("streamplayer playerstart%d streamurl: %s\n", flag, chnode->streamurl);
     printf("streamplayer playerstart%d epgurl: %s\n", flag, chnode->epgurl);
@@ -2480,24 +2480,24 @@ void streamplayer(struct channel* chnode, int flag)
     servicestop(status.aktservice, 1, 5);
     printf("for console test add streamplayer_use_console=1 to titan.cfg\n");
 
-    tmpstr = ostrcat(chnode->streamurl, NULL, 0, 0);
-
     if(getconfigint("tithek_vavoo_servicebouquets_autoupdate", NULL) == 1)
     {
         if(ostrstr(chnode->streamurl, "vavoo_auth=") != NULL)
         {
             if(file_exist("/tmp/vavoo.authkey"))
             {
-                oldkey = string_resub("vavoo_auth=", "|User-Agent", tmpstr, 0);
+                oldkey = string_resub("vavoo_auth=", "|User-Agent", chnode->streamurl, 0);
                 debug(202, "oldkey: %s", oldkey);
                 newkey = readfiletomem("/tmp/vavoo.authkey", 0);
                 debug(202, "newkey: %s", newkey);
                 if(ostrcmp(newkey, oldkey) != 0)
                 {
-                    printf("set new VaVoo Key\n");
+                    printf("streamplayer playerstart%d set new VaVoo Key\n");
                     debug(202, "set newkey: %s", newkey);
-                    tmpstr = string_replace(oldkey, newkey, tmpstr, 1);
-                }                
+                    chnode->streamurl = string_replace(oldkey, newkey, chnode->streamurl, 1);
+                }
+                free(newkey), newkey = NULL;
+                free(oldkey), oldkey = NULL;
             }
         }
     }
@@ -2512,16 +2512,13 @@ void streamplayer(struct channel* chnode, int flag)
 	}
 	else
 	{
-		playerstart(tmpstr);
+		playerstart(chnode->streamurl);
 #ifdef DREAMBOX
 		playerpause();
         usleep(1000000);
         playercontinue();
 #endif
 	}
-    free(tmpstr), tmpstr = NULL;
-    free(newkey), newkey = NULL;
-    free(oldkey), oldkey = NULL;
 
     status.play = 2;
     delconfigtmp("playerbuffersize");
