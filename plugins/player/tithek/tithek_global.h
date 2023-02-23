@@ -2015,7 +2015,7 @@ void servicebouquets_update(int flag)
 		}
 		free(ret1), ret1 = NULL;
 
-        if(updated >= 1)
+        if(updated >= 1 && flag == 1)
         {
             tmpstr2 = ostrcat(tmpstr2, "\n\n", 1, 0);
             tmpstr2 = ostrcat(tmpstr, _("Titan will be reloaded Channellist!"), 0, 0);
