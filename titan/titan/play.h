@@ -2485,7 +2485,7 @@ void streamplayer(struct channel* chnode, int flag)
 
     if(ostrstr(chnode->streamurl, "vavoo_auth=") != NULL)
     {
-        if(file_exist("/tmp/localcache/vavoo.4.signed"))
+        if(file_exist("/tmp/vavoo.authkey"))
         {
             key = readfiletomem("/tmp/vavoo.authkey", 0);
             printf("new key: %s\n", key);
