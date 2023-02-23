@@ -8789,7 +8789,7 @@ start:
 	        sleep(1);
 	        count++;
         }
-        flag++:
+        flag++;
         goto start;
     }
 }
