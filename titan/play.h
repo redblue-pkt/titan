@@ -2493,6 +2493,9 @@ void streamplayer(struct channel* chnode, int flag)
                 printf("new key: %s\n", newkey);
                 oldkey = string_resub("vavoo_auth=", "|User-Agent", tmpstr, 0);
                 printf("old key: %s\n", oldkey);
+                if(ostrcmp(newkey, oldkey) == 0)
+                    printf("set new key: %s\n", newkey);
+
                 tmpstr = string_replace(oldkey, newkey, tmpstr, 1);
                 printf("tmpstr2: %s\n", tmpstr);
             }
