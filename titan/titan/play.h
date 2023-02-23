@@ -2469,7 +2469,7 @@ playerend:
 
 void streamplayer(struct channel* chnode, int flag)
 {
-    char* key = NULL, *oldkey = NULL, *tmpstr = NULL;
+    char* newkey = NULL, *oldkey = NULL, *tmpstr = NULL;
     printf("streamplayer playerstart%d name: %s\n", flag, chnode->name);
     printf("streamplayer playerstart%d streamurl: %s\n", flag, chnode->streamurl);
     printf("streamplayer playerstart%d epgurl: %s\n", flag, chnode->epgurl);
@@ -2483,19 +2483,22 @@ void streamplayer(struct channel* chnode, int flag)
     tmpstr = ostrcat(chnode->streamurl, NULL, 0, 0);
     printf("tmpstr1: %s\n", tmpstr);
 
-    if(ostrstr(chnode->streamurl, "vavoo_auth=") != NULL)
+    if(getconfigint("tithek_vavoo_servicebouquets_autoupdate", NULL) == 1)
     {
-        if(file_exist("/tmp/vavoo.authkey"))
+        if(ostrstr(chnode->streamurl, "vavoo_auth=") != NULL)
         {
-            key = readfiletomem("/tmp/vavoo.authkey", 0);
-            printf("new key: %s\n", key);
-            oldkey = string_resub("vavoo_auth=", "|User-Agent", tmpstr, 0);
-            printf("old key: %s\n", oldkey);
-            tmpstr = string_replace(string_newline(key), string_newline(oldkey), tmpstr, 1);
-            printf("tmpstr2: %s\n", tmpstr);
-        }
+            if(file_exist("/tmp/vavoo.authkey"))
+            {
+                newkey = readfiletomem("/tmp/vavoo.authkey", 0);
+                printf("new key: %s\n", newkey);
+                oldkey = string_resub("vavoo_auth=", "|User-Agent", tmpstr, 0);
+                printf("old key: %s\n", oldkey);
+                tmpstr = string_replace(oldkey, newkey, tmpstr, 1);
+                printf("tmpstr2: %s\n", tmpstr);
+            }
 
-        printf("tmpstr3: %s\n", tmpstr);
+            printf("tmpstr3: %s\n", tmpstr);
+        }
     }
 
 	if(getconfigint("streamplayer_use_console", NULL) == 1)
@@ -2515,9 +2518,13 @@ void streamplayer(struct channel* chnode, int flag)
         playercontinue();
 #endif
 	}
-  status.play = 2;
-  delconfigtmp("playerbuffersize");
-  delconfigtmp("playerbufferseektime");
+    free(tmpstr), tmpstr = NULL;
+    free(newkey), newkey = NULL;
+    free(oldkey), oldkey = NULL;
+
+    status.play = 2;
+    delconfigtmp("playerbuffersize");
+    delconfigtmp("playerbufferseektime");
 }
 
 #endif
