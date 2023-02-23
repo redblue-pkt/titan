@@ -2492,7 +2492,7 @@ void streamplayer(struct channel* chnode, int flag)
                 debug(202, "newkey: %s", newkey);
                 if(ostrcmp(newkey, oldkey) != 0)
                 {
-                    printf("streamplayer playerstart%d set new VaVoo Key\n");
+                    printf("streamplayer playerstart%d set new VaVoo Key\n", flag);
                     debug(202, "set newkey: %s", newkey);
                     chnode->streamurl = string_replace(oldkey, newkey, chnode->streamurl, 1);
                 }
@@ -2505,10 +2505,10 @@ void streamplayer(struct channel* chnode, int flag)
 	if(getconfigint("streamplayer_use_console", NULL) == 1)
 	{
 	    printf("console test:\n");
-		printf("gst-launch playbin uri=%s\n", tmpstr);
-		printf("gstplayer %s\n", tmpstr);
-		printf("eplayer3 %s\n", tmpstr);
-		printf("exteplayer3 %s\n", tmpstr);
+		printf("gst-launch playbin uri=%s\n", chnode->streamurl);
+		printf("gstplayer %s\n", chnode->streamurl);
+		printf("eplayer3 %s\n", chnode->streamurl);
+		printf("exteplayer3 %s\n", chnode->streamurl);
 	}
 	else
 	{
