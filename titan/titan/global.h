@@ -8794,7 +8794,7 @@ start:
     }
 }
 
-void reloadsettings(char* input, int flag)
+void reloadsettings(char* input)
 {
     int ret = 0;
 	char* tmpstr = NULL;
