@@ -8761,8 +8761,8 @@ int multiboot()
 
 void servicebouquetsthread(struct stimerthread* timernode, int flag)
 {
+	debug(202, "flag: %d", flag);
 start:
-    flag++;
     if(getconfigint("tithek_vavoo_servicebouquets_autoupdate", NULL) == 1)
     {
         int count = 0, ret = 0;
@@ -8781,6 +8781,7 @@ start:
 	        startplugin = dlsym(tithekplugin->pluginhandle, "servicebouquets_update");
 	        if(startplugin != NULL)
 	        {
+            	debug(202, "startplugin with flag: %d", flag);
 		        startplugin(flag);
 	        }
         }
@@ -8790,7 +8791,7 @@ start:
 	        sleep(1);
 	        count++;
         }
-
+        flag++;
         goto start;
     }
 }

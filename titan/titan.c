@@ -1030,7 +1030,7 @@ timeokw = 1;
 	ret = openrc();
 	if(ret != 0)
 	{
-		//teste andere Geräte
+		//teste andere Ger\E4te
 		addconfig("rcdev", "/dev/input/event1");
 		ret = openrc();
 	  if(ret != 0)
@@ -1493,7 +1493,7 @@ firstwizzardstep1:
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
 	addtimer(&setdate, START, 10000, 1, NULL, NULL, NULL);
-	addtimer(&servicebouquetsthread, START, 1000, 1, NULL, (void*)1, NULL);
+	addtimer(&servicebouquetsthread, START, 1000, 1, (void*)1, NULL, NULL);
 
 	startinternreader(1);
 	screeninfobar();
