@@ -2481,7 +2481,6 @@ void streamplayer(struct channel* chnode, int flag)
     printf("for console test add streamplayer_use_console=1 to titan.cfg\n");
 
     tmpstr = ostrcat(chnode->streamurl, NULL, 0, 0);
-    printf("tmpstr1: %s\n", tmpstr);
 
     if(getconfigint("tithek_vavoo_servicebouquets_autoupdate", NULL) == 1)
     {
@@ -2489,18 +2488,17 @@ void streamplayer(struct channel* chnode, int flag)
         {
             if(file_exist("/tmp/vavoo.authkey"))
             {
-                newkey = readfiletomem("/tmp/vavoo.authkey", 0);
-                printf("new key: %s\n", newkey);
                 oldkey = string_resub("vavoo_auth=", "|User-Agent", tmpstr, 0);
-                printf("old key: %s\n", oldkey);
+                debug(202, "oldkey: %s", oldkey);
+                newkey = readfiletomem("/tmp/vavoo.authkey", 0);
+                debug(202, "newkey: %s", newkey);
                 if(ostrcmp(newkey, oldkey) != 0)
-                    printf("set new key: %s\n", newkey);
-
-                tmpstr = string_replace(oldkey, newkey, tmpstr, 1);
-                printf("tmpstr2: %s\n", tmpstr);
+                {
+                    printf("set new VaVoo Key\n");
+                    debug(202, "set newkey: %s", newkey);
+                    tmpstr = string_replace(oldkey, newkey, tmpstr, 1);
+                }                
             }
-
-            printf("tmpstr3: %s\n", tmpstr);
         }
     }
 
