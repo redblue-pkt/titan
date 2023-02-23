@@ -2469,6 +2469,7 @@ playerend:
 
 void streamplayer(struct channel* chnode, int flag)
 {
+    char* key = NULL, *oldkey = NULL, *tmpstr = NULL;
     printf("streamplayer playerstart%d name: %s\n", flag, chnode->name);
     printf("streamplayer playerstart%d streamurl: %s\n", flag, chnode->streamurl);
     printf("streamplayer playerstart%d epgurl: %s\n", flag, chnode->epgurl);
@@ -2479,21 +2480,39 @@ void streamplayer(struct channel* chnode, int flag)
     servicestop(status.aktservice, 1, 5);
     printf("for console test add streamplayer_use_console=1 to titan.cfg\n");
 
+    tmpstr = ostrcat(chnode->streamurl, NULL, 0, 0);
+    printf("tmpstr1: %s\n", tmpstr);
+
+    if(ostrstr(chnode->streamurl, "vavoo_auth=") != NULL)
+    {
+        if(file_exist("/tmp/localcache/vavoo.4.signed "))
+        {
+            key = readfiletomem("/tmp/vavoo.authkey", 0);
+            printf("new key: %s\n", key);
+            oldkey = string_resub("vavoo_auth=", "|User-Agent", tmpstr, 0);
+            printf("old key: %s\n", oldkey);
+            tmpstr = string_replace(key, oldkey, tmpstr, 1);
+            printf("tmpstr2: %s\n", tmpstr);
+        }
+
+        printf("tmpstr3: %s\n", tmpstr);
+    }
+
 	if(getconfigint("streamplayer_use_console", NULL) == 1)
 	{
 	    printf("console test:\n");
-		printf("gst-launch playbin uri=%s\n", chnode->streamurl);
-		printf("gstplayer %s\n", chnode->streamurl);
-		printf("eplayer3 %s\n", chnode->streamurl);
-		printf("exteplayer3 %s\n", chnode->streamurl);
+		printf("gst-launch playbin uri=%s\n", tmpstr);
+		printf("gstplayer %s\n", tmpstr);
+		printf("eplayer3 %s\n", tmpstr);
+		printf("exteplayer3 %s\n", tmpstr);
 	}
 	else
 	{
-		playerstart(chnode->streamurl);
+		playerstart(tmpstr);
 #ifdef DREAMBOX
 		playerpause();
-	  usleep(1000000);
-	  playercontinue();
+        usleep(1000000);
+        playercontinue();
 #endif
 	}
   status.play = 2;
