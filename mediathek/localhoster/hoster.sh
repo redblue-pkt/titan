@@ -414,6 +414,8 @@ streamcrypt()
 
 voe() 
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	rm -f $TMP/$TYPE.hoster.$hoster.$FILENAME.* > /dev/null 2>&1
 	rm -f $TMP/cache.$TYPE.hoster.$hoster.* > /dev/null 2>&1
 
@@ -450,6 +452,7 @@ voe()
 
 vodlocker()
 {
+	mkdir $TMP > /dev/null 2>&1
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 
 	STREAMLIST="$TMP/$TYPE.$hoster.$FILENAME.streamlist"
@@ -501,6 +504,7 @@ aliezold()
 
 aliez()
 {
+	mkdir $TMP > /dev/null 2>&1
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 	#http://emb.aliez.me/player/live.php?id=56180&w=700&h=480"
 	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
@@ -551,6 +555,8 @@ aliez()
 
 sport7()
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	#http://sport7.tech/487b826914d11080dce4b502052b012d-live.html
 	#var videoLink = 'http://g4.securestream.sport7.tech/stream/NzYyZDUwZWNkODc5YWM5YjViY2ZkOTVhZGNjOGM1ZTc=/BTSport3.m3u8';
 
@@ -585,6 +591,8 @@ sport7()
 
 sportstream365()
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	#http://sport7.tech/487b826914d11080dce4b502052b012d-live.html
 	#var videoLink = 'http://g4.securestream.sport7.tech/stream/NzYyZDUwZWNkODc5YWM5YjViY2ZkOTVhZGNjOGM1ZTc=/BTSport3.m3u8';
 
@@ -627,6 +635,8 @@ sportstream365()
 
 sportsonline()
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	#http://sportsonline.pw/livetv/pt-sporttv1.html
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
@@ -656,6 +666,8 @@ sportsonline()
 
 assia()
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	#http://assia.tv/live/gol-tv/?lang=ru
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
@@ -682,6 +694,8 @@ assia()
 
 cricfree()
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	#http://cricfree.sc/update/bt2.php
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
@@ -761,6 +775,8 @@ cricfree()
 #apl3
 apl3()
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	#http://assia.tv/live/gol-tv/?lang=ru
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
@@ -790,6 +806,8 @@ apl3()
 
 broadcast()
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	#http://assia.tv/live/gol-tv/?lang=ru
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
@@ -827,6 +845,8 @@ broadcast()
 
 popofthestream()
 {
+	mkdir $TMP > /dev/null 2>&1
+
     rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 
     #INPUT=http://www.popofthestream.com/embed/aliez-skymain.html
@@ -865,6 +885,8 @@ popofthestream()
 
 all()
 {
+	mkdir $TMP > /dev/null 2>&1
+
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
 	REFERER=`echo "$INPUT" | sed -e 's/=/%3D/g' -e 's/&/%26/g'`
 	EXTRA="|Referer=$REFERER&User-Agent=$USERAGENT"
