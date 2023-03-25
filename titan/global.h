@@ -8488,7 +8488,17 @@ int checkshutdown(int flag)
 
 	//check if record running
 	//streamplayer fix "&& status.play != 2"
-	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5 || flag == 6) && ((status.streaming > 0 && status.play != 2) || status.recording > 0 || getrectimerbytimediff(300) != NULL))
+printf("flag=%d\n", flag);
+printf("status.play=%d\n", status.play);
+printf("status.recording=%d\n", status.recording);
+printf("status.streaming=%d\n", status.streaming);
+
+	if(getrectimerbytimediff(300) != NULL)
+		printf("getrectimerbytimediff=if\n");
+	else
+		printf("getrectimerbytimediff=else\n");
+
+	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5 || flag == 6) && status.play != 2 && (/*status.streaming > 0 || */status.recording > 0 || getrectimerbytimediff(300) != NULL))
 	{
 		if(flag == 4 && status.fixpowerofftime > 1)
 		{

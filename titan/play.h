@@ -2514,9 +2514,12 @@ void streamplayer(struct channel* chnode, int flag)
 	{
 		playerstart(chnode->streamurl);
 #ifdef DREAMBOX
-		playerpause();
-        usleep(1000000);
-        playercontinue();
+        if(getconfigint("extplayer_type", NULL) == 1)
+        {
+    		playerpause();
+            usleep(1000000);
+            playercontinue();
+        }
 #endif
 	}
 
