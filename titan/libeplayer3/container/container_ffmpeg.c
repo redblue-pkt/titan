@@ -2336,12 +2336,12 @@ __ddg1 =   w1mW5o1idPp9sUV8MaSL ;   +Domain =   .upstream.to ;   +HttpOnly ;   +
         }
     }
 
-#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 0, 100)
+//#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 0, 100)
     //ffmpeg5: error: assignment of member 'flags' in read-only object -> so commented out next line
     //avContextTab[AVIdx]->iformat->flags |= AVFMT_SEEK_TO_PTS;
-#else
+//#else
     avContextTab[AVIdx]->flags = AVFMT_FLAG_GENPTS;
-#endif
+//#endif
     if (context->playback->noprobe)
     {
         wrapped_set_max_analyze_duration(avContextTab[AVIdx], 1);
