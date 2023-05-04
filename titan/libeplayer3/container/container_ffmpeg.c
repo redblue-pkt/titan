@@ -48,10 +48,10 @@
 #include <libavformat/avformat.h>
 #include <libswresample/swresample.h>
 #include <libavutil/opt.h>
-//#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 0, 100)
+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 0, 100)
 #include <libavcodec/bsf.h>
 #include <libavcodec/avcodec.h>
-//#endif
+#endif
 
 #include <ffmpeg/mpeg4audio.h>
 
@@ -323,7 +323,7 @@ void dvbsub_ass_write(Context_t *context, AVCodecContext *c, AVSubtitle *sub, in
 		// pict ->AVPicture
    }
 }
-
+/*
 //int ReadSubtitle(Context_t *context, const char *filename, const char *format, int pid)
 int ReadSubtitle(Context_t *context, const char *filename, char *format, int pid)
 {
@@ -456,7 +456,7 @@ int ReadSubtitles(Context_t *context, const char *filename)
 	return ret;
 }
 //obi (end)
-
+*/
 static void ffmpeg_silen_callback(void *avcl, int level, const char *fmt, va_list vl)
 {
     return;
@@ -1063,7 +1063,7 @@ static void FFMPEGThread(Context_t *context)
 
             if (videoTrack && (videoTrack->AVIdx == cAVIdx) && (videoTrack->Id == pid))
             {
-//#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(56, 34, 100)
+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(56, 34, 100)
                 AVCodecContext *codec_context = videoTrack->avCodecCtx;
                 if (codec_context && codec_context->codec_id == AV_CODEC_ID_MPEG4 && NULL != mpeg4p2_context)
                 {
@@ -1071,7 +1071,7 @@ static void FFMPEGThread(Context_t *context)
                     update_max_injected_pts(latestPts);
                 }
                 else
-//#endif
+#endif
 #ifdef HAVE_FLV2MPEG4_CONVERTER
                 if (get_codecpar(avContextTab[cAVIdx]->streams[packet.stream_index])->codec_id == AV_CODEC_ID_FLV1 &&
                     0 == memcmp(videoTrack->Encoding, "V_MPEG4", 7) )
