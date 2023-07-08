@@ -42,12 +42,12 @@ init()
 
 mainmenu()
 {
-	echo "Neue Episoden#$SRC $SRC latest 'neue-episoden'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >$TMP/$FILENAME.list
-	echo "Neue Serien#$SRC $SRC list 'neu'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Populär#$SRC $SRC list 'beliebte-serien'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Neue Episoden#$SRC $SRC latest 'neue-episoden'#http://openaaf.dyndns.tv/mediathek/menu/new.jpg#new.jpg#$NAME#0" >$TMP/$FILENAME.list
+	echo "Neue Serien#$SRC $SRC list 'neu'#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Populär#$SRC $SRC list 'beliebte-serien'#http://openaaf.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Alle#$SRC $SRC all 'serien'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "A-Z#$SRC $SRC sorted 'katalog'#http://openaaf.dyndns.tv/mediathek/menu/tv-shows.jpg#tv-shows.jpg#$NAME#0" >>$TMP/$FILENAME.list
-	echo "Suche#$SRC $SRC search 'serien' 1 '%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#all-sorted.jpg#$NAME#112" >>$TMP/$FILENAME.list
+	echo "A-Z#$SRC $SRC sorted 'katalog'#http://openaaf.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Suche#$SRC $SRC search 'serien' 1 '%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 #https://s.to/search?q={search_string}
