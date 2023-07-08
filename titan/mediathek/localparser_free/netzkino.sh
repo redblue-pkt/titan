@@ -180,7 +180,8 @@ list()
                         extra = ""
 
 				    piccount += 1
-    			    print title extra "#http://netzkino_and-vh.akamaihd.net/i/" newpage ".mp4/master.m3u8#" pic "#" PICNAME "." piccount ".jpg#" NAME "#2#" desc
+#    			    print title extra "#http://netzkino_and-vh.akamaihd.net/i/" newpage ".mp4/master.m3u8#" pic "#" PICNAME "." piccount ".jpg#" NAME "#2#" desc
+    			    print title extra "#https://pmd.netzkino-seite.netzkino.de/" newpage ".mp4#" pic "#" PICNAME "." piccount ".jpg#" NAME "#2#" desc
                    
                     if (youtube != "")
                     {
