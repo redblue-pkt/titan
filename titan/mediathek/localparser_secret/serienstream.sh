@@ -107,7 +107,7 @@ all()
 
 #<div class="backdrop" style="background-image: url(https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-dGoiANWASrQtOOxy58TI9aKYfqDqq4sk_800x300.png)"></div>            <div class="container row">
 #<div class="seriesCoverBox"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAAAA6fptVAAAACklEQVR4nGP6AgAA+gD3odZZSQAAAABJRU5ErkJggg==" data-src="https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-GTyjOBAKAL3Ifah66vuKkBDC1Z2esgrm_220x330.jpg" alt="Reacher, Cover, HD, Serien Stream, ganze Folge" itemprop="image" title="Cover Reacher SerienStream"><noscript><img src="https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-GTyjOBAKAL3Ifah66vuKkBDC1Z2esgrm_220x330.jpg" alt="Reacher, Cover, HD, Serien Stream, ganze Folge" itemprop="image" title="Cover Reacher SerienStream"></noscript></div>
-                        pic = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*<noscript><img src=\\\"([^\\\"]+)\\\".*/\\1/p\""
+                        pic = "echo https://s.to/ | tr -d \"\\n\" && curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*<noscript><img src=\\\"([^\\\"]+)\\\".*/\\1/p\""
 
 						piccount += 1
 						# 25. in naechste zeile springen
@@ -408,7 +408,7 @@ list()
 							# 25. in naechste zeile springen
 							# 26. \x27 = single quotes
 
-    						print title "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount picext "#" NAME "#0#" desc
+    						print title "#" SRC " " SRC " season \x27" newpage "\x27#https://s.to/" pic "#" PICNAME "." piccount picext "#" NAME "#0#" desc
 						}
 #						next
 					}
