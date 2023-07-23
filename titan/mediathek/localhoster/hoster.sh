@@ -54,7 +54,7 @@ curlbin="$CURLBIN $PROXY -k -s -L --connect-timeout 5 --cookie /mnt/network/cook
 curlbin2="$CURLBIN $PROXY -k -s --connect-timeout 5 --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 
 if [ -e /etc/.oebuild ];then
-	if [ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.3" ];then
+	if [ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.2" ] || [ "$DISTRO" == "7.3" ];then
 		youtubebin="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors -g"
 		youtubebin2="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors -g"
 		youtubebinbg="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
@@ -75,7 +75,7 @@ hlsdlbg="$HLSBIN -u $USERAGENT -o"
 
 if [ -e /mnt/network/cookies ];then sed 's/#HttpOnly_//g' -i /mnt/network/cookies; fi
 
-if [ ! -e /etc/.oebuild ] || [ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.3" ];then
+if [ ! -e /etc/.oebuild ] || [ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.2" ] || [ "$DISTRO" == "7.3" ];then
     export PYTHONHOME=/tmp/localhoster
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/tmp/localhoster/lib
 else
@@ -936,7 +936,7 @@ youtube_dl()
 	fi
 	if [ ! -z "$INPUT" ];then
 		if [ -e /etc/.oebuild ];then
-    		if [ ! -e /usr/bin/yt-dlp ] && ([ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.3" ]);then
+    		if [ ! -e /usr/bin/yt-dlp ] && ([ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.2" ] || [ "$DISTRO" == "7.3" ]);then
 				opkg update > /dev/null 2>&1
 				opkg install $(opkg list *python3* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 				echo install python3-yt-dlp > /dev/null 2>&1
@@ -975,7 +975,7 @@ youtube_dlbg()
 #	echo $URL
 	mkdir $TMP > /dev/null 2>&1
 	if [ -e /etc/.oebuild ];then
-		if [ ! -e /usr/bin/yt-dlp ] && ([ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.3" ]);then
+		if [ ! -e /usr/bin/yt-dlp ] && ([ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.2" ] || [ "$DISTRO" == "7.3" ]);then
 			opkg update > /dev/null 2>&1
 			opkg install $(opkg list *python3* | grep python- | awk '{ print $1 }' | grep -v "\-src" | grep -v "\-dbg" | grep -v "\-dev" | grep -v "\-test" | grep -v "\-2to3") > /dev/null 2>&1
 			echo install python3-yt-dlp > /dev/null 2>&1
