@@ -32,7 +32,7 @@ msgstr " Gerai !"
 msgid " : NOT OKAY!"
 msgstr ": Negerai !"
 
-#: security.h:683 security.h:2163
+#: security.h:683 security.h:2396
 msgid " Days "
 msgstr ""
 
@@ -1803,7 +1803,7 @@ msgstr ""
 msgid "Atemio WLAN configuration"
 msgstr ""
 
-#: security.h:2168
+#: security.h:2401
 msgid "Atemio free license"
 msgstr ""
 
@@ -2956,7 +2956,7 @@ msgstr "Negalima sukurti aplanko !"
 msgid "Can't create service"
 msgstr "ERROR: Can't create Service"
 
-#: service.h:1104
+#: service.h:1107
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -3006,7 +3006,7 @@ msgstr "ERROR: Can't open Frontend Device"
 msgid "Can't open file"
 msgstr "ERROR: Can't open File"
 
-#: service.h:1110
+#: service.h:1113
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
@@ -3350,7 +3350,7 @@ msgstr ""
 msgid "ChannelCount: "
 msgstr "No. Kanal :"
 
-#: service.h:1115
+#: service.h:1118
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "KLAIDA: Channellist tuias arba corrupt\n"
@@ -3447,7 +3447,7 @@ msgstr "Pasirinkite savo interneto mgstamus i io srao"
 msgid "Choose your Language from the following list"
 msgstr ""
 
-#: global.h:8740
+#: global.h:8750
 msgid "Choose your Multiboot STARTUP entry from the following list"
 msgstr ""
 
@@ -3834,7 +3834,7 @@ msgstr "DMESIO : kanalai nenukopijuoti"
 msgid "Copy satlist successfull"
 msgstr "Kanalai skmingai nukopijuoti"
 
-#: security.h:2177
+#: security.h:2410
 msgid "Copyright"
 msgstr "© Autorins teiss"
 
@@ -4422,7 +4422,7 @@ msgstr ""
 msgid "Deutsches Anlegerfernsehen (German)"
 msgstr ""
 
-#: security.h:2170
+#: security.h:2403
 msgid "Dev free license"
 msgstr ""
 
@@ -4725,7 +4725,7 @@ msgstr ""
 msgid "Dresden Fernsehen rtmp (German)"
 msgstr ""
 
-#: security.h:2145
+#: security.h:2378
 msgid "Driver"
 msgstr ""
 
@@ -4779,7 +4779,7 @@ msgstr "DVBapi (enabled)"
 msgid "E"
 msgstr ""
 
-#: security.h:2134
+#: security.h:2367
 msgid "E2 Player"
 msgstr ""
 
@@ -5099,8 +5099,8 @@ msgstr ""
 #: firedrive.h:139 flashx.h:23 flashx.h:57 games_catcatch_skin.xml.h:3
 #: games_sudoku_skin.xml.h:7 games_wins3_skin.xml.h:1 global.h:6658
 #: global.h:7556 global.h:7575 global.h:8092 global.h:8112 global.h:8132
-#: global.h:8152 global.h:8172 global.h:8505 global.h:8510 global.h:8522
-#: global.h:8527 harddisk.h:355 harddisk.h:692 harddisk.h:700 harddisk.h:740
+#: global.h:8152 global.h:8172 global.h:8515 global.h:8520 global.h:8532
+#: global.h:8537 harddisk.h:355 harddisk.h:692 harddisk.h:700 harddisk.h:740
 #: harddisk.h:795 harddisk.h:800 harddisk.h:802 harddisk.h:804 harddisk.h:925
 #: harddisk.h:928 harddisk.h:1170 hbbtv.h:362 hello.c:37 httpdfunc.h:1304
 #: httpdfunc.h:3282 httpdfunc.h:3288 httpdfunc.h:6458 httpdfunc.h:6723
@@ -5152,11 +5152,11 @@ msgstr ""
 #: rectimer.h:585 rectimer.h:1413 restoredefault.h:10 restoredefault.h:34
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:668 security.h:685 service.h:844 service.h:1121
-#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:627
-#: skinadjust.h:668 skin_default_skin.xml.h:200 skins_0acht5zehn_skin.xml.h:237
-#: skins_atemio_skin.xml.h:234 skins_cool_skin.xml.h:281
-#: skins_default_skin.xml.h:200 skinselector.h:231
+#: scriptexec.h:41 security.h:668 security.h:685 security.h:2181 service.h:847
+#: service.h:1124 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
+#: skinadjust.h:627 skinadjust.h:668 skin_default_skin.xml.h:200
+#: skins_0acht5zehn_skin.xml.h:237 skins_atemio_skin.xml.h:234
+#: skins_cool_skin.xml.h:281 skins_default_skin.xml.h:200 skinselector.h:231
 #: skins_kravenhd_skin.xml.h:209 skins_megastyleblue_skin.xml.h:282
 #: skins_megastylegrey_skin.xml.h:282 skins_metrixhd_skin.xml.h:243
 #: skins_nogfx_skin.xml.h:220 skins_sevenhd_skin.xml.h:225
@@ -5572,7 +5572,7 @@ msgstr ""
 msgid "Extensions Type"
 msgstr ""
 
-#: security.h:2127 security.h:2139
+#: security.h:2360 security.h:2372
 msgid "External Player"
 msgstr ""
 
@@ -6197,14 +6197,14 @@ msgstr ""
 "A new Stick/Harddisk was found.\n"
 "You can configure it in the Device Menu."
 
-#: global.h:8527
+#: global.h:8537
 msgid ""
 "Found running download\n"
 "Proceed shutdown?\n"
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:8505 global.h:8522
+#: global.h:8515 global.h:8532
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -6212,7 +6212,7 @@ msgid ""
 "OK to proceed, Exit to cancel"
 msgstr ""
 
-#: global.h:8510
+#: global.h:8520
 msgid ""
 "Found running record\n"
 "or record is starting soon.\n"
@@ -6326,7 +6326,7 @@ msgstr "LCD Ekranas"
 msgid "Front Key"
 msgstr "Priekinis Mygtukas"
 
-#: security.h:2121
+#: security.h:2354
 msgid "Frontcontroller"
 msgstr ""
 
@@ -7556,7 +7556,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2102
+#: security.h:2335
 msgid "Image"
 msgstr ""
 
@@ -7834,7 +7834,7 @@ msgstr "Diegimas pradtas"
 msgid "Installed version:"
 msgstr ""
 
-#: httpdfunc.h:5835 security.h:2116 skin_default_skin.xml.h:333
+#: httpdfunc.h:5835 security.h:2349 skin_default_skin.xml.h:333
 #: skins_default_skin.xml.h:333 skins_kravenhd_skin.xml.h:340
 msgid "Installed:"
 msgstr "Instaliuota:"
@@ -8555,7 +8555,7 @@ msgstr ""
 msgid "Lib extension for Tithek and network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2150
+#: security.h:2383
 msgid "License"
 msgstr ""
 
@@ -9200,8 +9200,8 @@ msgstr ""
 #: firedrive.h:123 firedrive.h:129 firedrive.h:139 flashx.h:23 flashx.h:57
 #: global.h:6658 global.h:7486 global.h:7556 global.h:7575 global.h:8092
 #: global.h:8100 global.h:8112 global.h:8120 global.h:8132 global.h:8140
-#: global.h:8152 global.h:8160 global.h:8172 global.h:8180 global.h:8505
-#: global.h:8510 global.h:8522 global.h:8527 harddisk.h:692 harddisk.h:700
+#: global.h:8152 global.h:8160 global.h:8172 global.h:8180 global.h:8515
+#: global.h:8520 global.h:8532 global.h:8537 harddisk.h:692 harddisk.h:700
 #: harddisk.h:740 harddisk.h:795 harddisk.h:800 harddisk.h:802 harddisk.h:804
 #: harddisk.h:896 harddisk.h:925 harddisk.h:928 hbbtv.h:362 hello.c:37
 #: httpdfunc.h:1304 httpdfunc.h:6068 httpdfunc.h:6458 httpdfunc.h:6723
@@ -9252,15 +9252,15 @@ msgstr ""
 #: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
 #: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167 scan.h:2258
-#: scan.h:2651 scart.h:12 scart.h:25 security.h:1591 security.h:1612
-#: service.h:844 service.h:1121 shared.h:29 shared.h:66 shared.h:83
-#: skinadjust.h:603 skinadjust.h:619 skinadjust.h:627 skinadjust.h:668
-#: skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172 skinselector.h:231
-#: sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478 solarmovie.h:51
-#: solarmovie.h:63 solarmovie.h:375 spinner.h:18 stopifnotused.c:31
-#: streamcloud.h:31 streamcloud.h:75 streamcloud.h:81 streamcloud.h:91
-#: streamcloud.h:104 streamcloud.h:135 streamcloud.h:194 stream.h:33
-#: system_backup_restore.h:57 system_backup_restore.h:63
+#: scan.h:2651 scart.h:12 scart.h:25 security.h:1599 security.h:1622
+#: security.h:2181 service.h:847 service.h:1124 shared.h:29 shared.h:66
+#: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
+#: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
+#: skinselector.h:231 sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478
+#: solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:75 streamcloud.h:81
+#: streamcloud.h:91 streamcloud.h:104 streamcloud.h:135 streamcloud.h:194
+#: stream.h:33 system_backup_restore.h:57 system_backup_restore.h:63
 #: system_backup_restore.h:66 system_backup_restore.h:69
 #: system_backup_restore.h:124 system_backup_restore.h:132
 #: system_backup_restore.h:135 system_update.h:424 system_update.h:430
@@ -10106,7 +10106,7 @@ msgstr ""
 msgid "OE"
 msgstr ""
 
-#: security.h:2110
+#: security.h:2343
 msgid "OE-GIT Version"
 msgstr ""
 
@@ -10134,8 +10134,8 @@ msgstr ""
 #: flashx.h:57 games_sudoku_skin.xml.h:13 games_wins3_skin.xml.h:3
 #: global.h:6658 global.h:7486 global.h:7556 global.h:7575 global.h:8092
 #: global.h:8100 global.h:8112 global.h:8120 global.h:8132 global.h:8140
-#: global.h:8152 global.h:8160 global.h:8172 global.h:8180 global.h:8505
-#: global.h:8510 global.h:8522 global.h:8527 harddisk.h:355 harddisk.h:487
+#: global.h:8152 global.h:8160 global.h:8172 global.h:8180 global.h:8515
+#: global.h:8520 global.h:8532 global.h:8537 harddisk.h:355 harddisk.h:487
 #: harddisk.h:692 harddisk.h:700 harddisk.h:740 harddisk.h:795 harddisk.h:800
 #: harddisk.h:802 harddisk.h:804 harddisk.h:896 harddisk.h:925 harddisk.h:928
 #: harddisk.h:1170 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3282
@@ -10197,10 +10197,10 @@ msgstr ""
 #: rtl2now.h:34 satipclient.h:137 satipclient.h:147 satipclient.h:149
 #: scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:2167 scan.h:2258
 #: scan.h:2651 scart.h:12 scart.h:25 scriptexec.h:41 security.h:668
-#: security.h:685 security.h:1591 security.h:1612 service.h:844 service.h:1121
-#: shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619
-#: skinadjust.h:627 skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110
-#: skinadjust.h:1172 skins_0acht5zehn_skin.xml.h:398
+#: security.h:685 security.h:1599 security.h:1622 security.h:2181 service.h:847
+#: service.h:1124 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
+#: skinadjust.h:619 skinadjust.h:627 skinadjust.h:668 skinadjust.h:685
+#: skinadjust.h:1110 skinadjust.h:1172 skins_0acht5zehn_skin.xml.h:398
 #: skins_atemio_skin.xml.h:397 skins_cool_skin.xml.h:469 skinselector.h:231
 #: skins_kravenhd_skin.xml.h:422 skins_megastyleblue_skin.xml.h:470
 #: skins_megastylegrey_skin.xml.h:470 skins_nogfx_skin.xml.h:375
@@ -13554,7 +13554,7 @@ msgstr ""
 msgid "Select Language"
 msgstr ""
 
-#: global.h:8584
+#: global.h:8594
 msgid "Select Multiboot"
 msgstr ""
 
@@ -15679,7 +15679,7 @@ msgstr ""
 "Timeshift fail short\n"
 "Please palaukti iek tiek ir bandykite dar kart"
 
-#: service.h:844
+#: service.h:847
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -15780,7 +15780,7 @@ msgstr ""
 #: extensions.h:280 extensions.h:350 extensions.h:449 extensions.h:493
 #: extensions.h:727 extensions.h:812 extensions.h:934 extensions.h:1009
 #: global.h:8100 global.h:8120 global.h:8140 global.h:8160 global.h:8180
-#: kravencfg.c:212 security.h:1591 security.h:1612 skinadjust.h:619
+#: kravencfg.c:212 security.h:1599 security.h:1622 skinadjust.h:619
 #: skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 msgid "Titan will be restarted!"
 msgstr ""
@@ -16162,7 +16162,7 @@ msgstr ""
 msgid "Treiber fuer Wlan Displays"
 msgstr ""
 
-#: security.h:681 security.h:2160
+#: security.h:681 security.h:2393
 msgid "Trial period ends in"
 msgstr ""
 
@@ -16257,7 +16257,7 @@ msgstr ""
 "ERROR: Tuner configuration is not allowed during a recording\n"
 "or during Stream Playback"
 
-#: security.h:2194 skin_default_skin.xml.h:724 skins_0acht5zehn_skin.xml.h:733
+#: security.h:2427 skin_default_skin.xml.h:724 skins_0acht5zehn_skin.xml.h:733
 #: skins_atemio_skin.xml.h:687 skins_cool_skin.xml.h:801
 #: skins_default_skin.xml.h:724 skins_kravenhd_skin.xml.h:727
 #: skins_megastyleblue_skin.xml.h:803 skins_megastylegrey_skin.xml.h:803
@@ -16267,7 +16267,7 @@ msgstr ""
 msgid "Tunertype"
 msgstr "Imtuvo Tipas"
 
-#: service.h:1107
+#: service.h:1110
 msgid "Tuning to Channel failed!"
 msgstr "KLAIDA: Kanalo nra"
 
@@ -16335,7 +16335,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2166
+#: security.h:2399
 msgid "UFS910 free license"
 msgstr ""
 
@@ -16684,7 +16684,7 @@ msgstr ""
 msgid "VaVoo Url"
 msgstr ""
 
-#: security.h:2105
+#: security.h:2338
 msgid "Version"
 msgstr "Versija"
 
@@ -18288,7 +18288,7 @@ msgstr "vykis"
 msgid "expert (11)"
 msgstr "Expert mode (11)"
 
-#: security.h:2172
+#: security.h:2405
 msgid "expired"
 msgstr ""
 
@@ -19053,7 +19053,7 @@ msgstr "Ne"
 msgid "no description found"
 msgstr "No description found"
 
-#: global.h:8731
+#: global.h:8741
 msgid "no device found"
 msgstr ""
 
@@ -19069,7 +19069,7 @@ msgstr ""
 msgid "non"
 msgstr ""
 
-#: global.h:8686 system_update.h:125
+#: global.h:8696 system_update.h:125
 msgid "non-version"
 msgstr ""
 
@@ -20797,7 +20797,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2893 httpdfunc.h:2905
 #: httpdfunc.h:5729 httpdfunc.h:5775 hwtest.h:478 moduleconfig.h:449
-#: security.h:2192 skin_default_skin.xml.h:736 skins_0acht5zehn_skin.xml.h:748
+#: security.h:2425 skin_default_skin.xml.h:736 skins_0acht5zehn_skin.xml.h:748
 #: skins_default_skin.xml.h:736 skinselector.h:138
 #: skins_metrixhd_skin.xml.h:716 skins_tobayer01_skin.xml.h:684
 #: skins_ufs912_skin.xml.h:682 stream.h:22 transponder.h:122 transponder.h:158
@@ -20925,7 +20925,7 @@ msgstr "use SSL"
 msgid "v"
 msgstr ""
 
-#: security.h:2153
+#: security.h:2386
 msgid "valid"
 msgstr ""
 
