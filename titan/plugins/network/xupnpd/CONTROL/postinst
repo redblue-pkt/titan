@@ -14,7 +14,7 @@ if [ "$1" != "upgrade" ];then
 	export XUPNPDROOTDIR=$INSTDIR/etc/xupnpd
 	echo INSTDIR $INSTDIR
 	echo PLUGINDIR $PLUGINDIR
-	mkdir $INSTDIR/etc/xupnpd/config
+	mkdir -p $INSTDIR/etc/xupnpd/config
 fi
 
 exit 0
