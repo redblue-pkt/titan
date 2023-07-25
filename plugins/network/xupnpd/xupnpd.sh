@@ -38,7 +38,7 @@ case $1 in
     if [ -e /etc/.ddtbuild ];then
     	bouquet2m3u $IP $PORT $INSTDIR/etc/xupnpd/playlists
     else
-    	bouquet2m3u $IP $PORT $INSTDIR/playlists
+    	bouquet2m3u $IP $PORT $INSTDIR/etc/playlists
     fi
     start-stop-daemon --verbose --start --exec xupnpd
   ;;
