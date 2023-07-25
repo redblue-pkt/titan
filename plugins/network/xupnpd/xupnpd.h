@@ -17,7 +17,7 @@ void screenxupnpd()
 #ifdef DDTBUILD
 	tmpstr = string_replace("/usr/local/share/titan/plugins/network/xupnpd/xupnpd.sh", "/etc/xupnpd", tmpstr, 1);
 #else
-	tmpstr = string_replace("/usr/local/share/titan/plugins/network/xupnpd/xupnpd.sh", "/usr/local/share/titan/plugins/network/xupnpd", tmpstr, 1);
+	tmpstr = string_replace("/usr/local/share/titan/plugins/network/xupnpd/xupnpd.sh", "/usr/local/share/titan/plugins/network/xupnpd/etc", tmpstr, 1);
 #endif
 	printf("tmpstr2: %s\n", tmpstr);
 	xupnpdstop = ostrcat(xupnpdstop, tmpstr, 1, 0);
