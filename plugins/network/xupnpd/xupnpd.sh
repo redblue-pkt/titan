@@ -25,8 +25,10 @@ else
 fi
 
 model=`cat /etc/model`
+host=`hostname`
 NAME=xupnpd
-DESC="xupnpd-$model"
+#DESC="xupnpd-$model"
+DESC="xupnpd-$host"
 DAEMON=xupnpd
 USER=root
 GROUP=root
