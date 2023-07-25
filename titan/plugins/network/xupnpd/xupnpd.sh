@@ -20,7 +20,7 @@ if [ -e /etc/.ddtbuild ];then
 else
     INSTDIR=`echo $0 | sed -e s/xupnpd.sh//g`
 
-    export XUPNPDROOTDIR=$INSTDIR
+    export XUPNPDROOTDIR=$INSTDIR/etc
     export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin:$INSTDIR
 fi
 
