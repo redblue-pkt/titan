@@ -20,7 +20,7 @@ if [ -e /etc/.ddtbuild ];then
 else
     INSTDIR=`echo $0 | sed -e s/xupnpd.sh//g`
 
-    export XUPNPDROOTDIR=$INSTDIR/files
+    export XUPNPDROOTDIR=$INSTDIR
     export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin:$INSTDIR
 fi
 
@@ -38,7 +38,7 @@ case $1 in
     if [ -e /etc/.ddtbuild ];then
     	bouquet2m3u $IP $PORT $INSTDIR/etc/xupnpd/playlists
     else
-    	bouquet2m3u $IP $PORT $INSTDIR/files/playlists
+    	bouquet2m3u $IP $PORT $INSTDIR/playlists
     fi
     start-stop-daemon --verbose --start --exec xupnpd
   ;;
