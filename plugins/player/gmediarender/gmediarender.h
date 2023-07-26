@@ -109,6 +109,7 @@ void screengmediarender()
 		tmpstr = ostrcat(tmpstr, "-", 1, 0);
 		tmpstr = ostrcat(tmpstr, net->ip, 1, 0);
 	}
+	tmpstr = ostrcat(tmpstr, "-gmediarender", 1, 0);
 
 	if(file_exist("/var/usr/local/share/titan/plugins/player/gmediarender/gmediarender.sh") == 1)
 		cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/player/gmediarender/gmediarender.sh ", 1, 0);
