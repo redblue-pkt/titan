@@ -24,16 +24,14 @@ else
     export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin:$INSTDIR
 fi
 
-model=`cat /etc/model`
-host=`hostname`
+model=`cat /etc/model | tr [a-z] [A-Z]`
 NAME=xupnpd
-#DESC="xupnpd-$model"
-DESC="xupnpd-$host"
 DAEMON=xupnpd
 USER=root
 GROUP=root
 IP=`ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2`
 PORT=`cat /mnt/config/titan.cfg | grep stream_port | cut -d"=" -f2` 
+DESC="$model-$IP-xupnpd"
  
 case $1 in
   start)
