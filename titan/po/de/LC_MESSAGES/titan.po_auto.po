@@ -4118,11 +4118,11 @@ msgstr ""
 msgid "DLNA (MiniDLNA Server)"
 msgstr ""
 
-#: gmediarender.h:156
+#: gmediarender.h:157
 msgid "DLNA Control Client connected !"
 msgstr ""
 
-#: gmediarender.h:128
+#: gmediarender.h:129
 msgid "DLNA Renderer Name"
 msgstr ""
 
@@ -9446,8 +9446,8 @@ msgstr "Menüliste"
 #: vidto.h:68 vidto.h:74 vidto.h:80 vidto.h:95 vidto.h:129 vidto.h:175
 #: vidto.h:181 vidzi.h:28 vidzi.h:51 vidzi.h:57 vidzi.h:63 vivo.h:38 vivo.h:44
 #: vivo.h:61 vivo.h:67 vodlocker.h:30 vodlocker.h:75 vodlocker.h:81
-#: vodlocker.h:87 webif_boxcontrol.h:2 wlandisplay.c:108 xupnpd.h:57
-#: xupnpd.h:59 xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29
+#: vodlocker.h:87 webif_boxcontrol.h:2 wlandisplay.c:108 xupnpd.h:62
+#: xupnpd.h:64 xupnpd.h:75 xupnpd.h:86 xupnpd.h:88 xvidstage.h:29
 #: xvidstage.h:59 xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228
 #: zapback.c:79 zdf.h:29
 msgid "Message"
@@ -10418,8 +10418,8 @@ msgstr ""
 #: webif_rc_virtual.dm525.h:20 webif_rc_virtual.dm7020hd.h:20
 #: webif_rc_virtual.dm7020hdv2.h:20 webif_rc_virtual.dm900.h:20
 #: webif_rc_virtual.dm920.h:20 webif_rc_virtual.h:20
-#: webif_rc_virtual.wetek.h:20 wlandisplay.c:108 xupnpd.h:57 xupnpd.h:59
-#: xupnpd.h:70 xupnpd.h:81 xupnpd.h:83 xvidstage.h:29 xvidstage.h:59
+#: webif_rc_virtual.wetek.h:20 wlandisplay.c:108 xupnpd.h:62 xupnpd.h:64
+#: xupnpd.h:75 xupnpd.h:86 xupnpd.h:88 xvidstage.h:29 xvidstage.h:59
 #: xvidstage.h:65 xvidstage.h:71 xvidstage.h:77 youtube.h:228 zapback.c:79
 #: zdf.h:29
 msgid "OK"
@@ -17290,7 +17290,7 @@ msgstr "Wartezeit für CI-Module"
 msgid "Wait for channel scan end"
 msgstr "Bitte warten, Sendersuchlauf wird abgebrochen."
 
-#: gmediarender.h:134
+#: gmediarender.h:135
 msgid "Wait for connect or press EXIT"
 msgstr ""
 "Warten Sie, bis die Verbindung hergestellt wurde\n"
@@ -17952,7 +17952,7 @@ msgstr "automatisch"
 msgid "autores"
 msgstr "Autoresolution"
 
-#: ipsec.h:87 minisatip.h:24 xupnpd.h:29
+#: ipsec.h:87 minisatip.h:24 xupnpd.h:34
 msgid "autostart"
 msgstr "Autostart"
 
@@ -19261,7 +19261,7 @@ msgstr "NFSD Kernel Server autostart"
 #: tithek_settings.h:100 tithek_settings.h:115 tithek_settings.h:119
 #: tithek_settings.h:123 tithek_settings.h:127 tithek_settings.h:131 tmc.h:531
 #: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
-#: tunerconfig.h:327 tunerconfig.h:897 xupnpd.h:30
+#: tunerconfig.h:327 tunerconfig.h:897 xupnpd.h:35
 msgid "no"
 msgstr "Nein"
 
@@ -21341,7 +21341,7 @@ msgstr ""
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
-#: xupnpd.h:59 xupnpd.h:83
+#: xupnpd.h:64 xupnpd.h:88
 msgid ""
 "xupnpd not started,\n"
 "Please check your config."
@@ -21349,15 +21349,15 @@ msgstr ""
 "xupnpd konnte nicht gestartet werden\n"
 "Bitte Konfiguration prüfen"
 
-#: xupnpd.h:70
+#: xupnpd.h:75
 msgid "xupnpd now stopped"
 msgstr "xupnpd wurde gestoppt"
 
-#: xupnpd.h:57
+#: xupnpd.h:62
 msgid "xupnpd started and config saved"
 msgstr "xupnpd gestartet und Einstellungen gespeichert"
 
-#: xupnpd.h:81
+#: xupnpd.h:86
 msgid "xupnpd started."
 msgstr "xupnpd gestartet"
 
@@ -21438,7 +21438,7 @@ msgstr "gelb"
 #: tithek_settings.h:66 tithek_settings.h:70 tithek_settings.h:101
 #: tithek_settings.h:116 tithek_settings.h:120 tithek_settings.h:124
 #: tithek_settings.h:128 tithek_settings.h:132 tmc.h:532 tmc.h:536
-#: tunerconfig.h:897 xupnpd.h:30
+#: tunerconfig.h:897 xupnpd.h:35
 msgid "yes"
 msgstr "Ja"
 
