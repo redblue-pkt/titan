@@ -156,6 +156,10 @@ void mc_main()
 	system("umount -fl `mount | grep fuse | grep -v '/dev/' | cut -d ' ' -f3` > /dev/null 2>&1; /bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3` `mount | grep udf | cut -d ' ' -f3` > /dev/null 2>&1; killall -9 rarfs fusesmb curlftpfs > /dev/null 2>&1");
 	system("umount -a -f -t fuse.rarfs,iso9660,udf,fuse.djmount,fuse.fusesmb,fuse.curlftpfs > /dev/null 2>&1");
 
+#ifdef OEBUILD
+	system("/etc/init.d/djmount start > /dev/null 2>&1");
+	system("/etc/init.d/smbnetfs.sh start > /dev/null 2>&1");
+#endif
 	char* tmpstr = NULL;
 	tmpstr = createpluginpath("/mc/skin.xml", 0);
 	readscreen(tmpstr, 101, 1);

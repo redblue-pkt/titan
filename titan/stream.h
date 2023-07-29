@@ -155,7 +155,7 @@ void streamthreadfunc(struct stimerthread* timernode)
 								zap = 1;
 							}
 						}
-						if(status.aktservice->channel != chnode && getconfigint("streamzapping", NULL) == 1 && zap == 0)
+						if(status.aktservice->channel != chnode && getconfigint("stream_zapping", NULL) == 1 && zap == 0)
 							servicecheckret(servicestart(chnode, NULL, NULL, 5), 0);
 #ifndef MIPSEL
 						ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);
