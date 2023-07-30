@@ -211,8 +211,13 @@ remove()
     fi
 }
 
+#sh4 error
+#/tmp/localparser/vavoo.sh: line 474: shuf: not found
+#awk: bad regex '+[)]+': Invalid preceding regular expression
+
 search()
 {
+rm $TMP/$FILENAME.list
     echo 3 > /proc/sys/vm/drop_caches
 
     NEXT=$(echo $NEXT | tr '+' ' ')
@@ -283,7 +288,10 @@ search()
                         gsub(/\(.*\)/, "", picname)
 	                	gsub(/\+/, "", picname)
 	                	gsub(/\//, " ", picname)
-                        gsub(/+[)]+/, "", picname)
+
+#sh4 error
+##                        gsub(/+[)]+/, "", picname)
+                        gsub(/\+[)]\+/, "", picname)
 
                         gsub(/^[ \t]+/, "", picname)
                         gsub(/[ \t]+$/, "", picname)
