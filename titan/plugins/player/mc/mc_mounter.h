@@ -50,8 +50,10 @@ int mc_mounter_umount()
 	free(cmd), cmd = NULL;
 
 #ifdef OEBUILD
-	system("/etc/init.d/djmount start > /dev/null 2>&1");
-	system("/etc/init.d/smbnetfs.sh start > /dev/null 2>&1");
+//	system("/etc/init.d/djmount start > /dev/null 2>&1");
+//	system("/etc/init.d/smbnetfs.sh start > /dev/null 2>&1");
+	system("/etc/init.d/djmount start");
+	system("/etc/init.d/smbnetfs.sh start");
 #endif
 
 	return 0;
