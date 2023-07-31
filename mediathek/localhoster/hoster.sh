@@ -30,7 +30,12 @@ BIN="$CMD"/bin/python."$ARCH"
 HLSBIN="$CMD"/bin/hlsdl."$ARCH"
 CURLBIN="$CMD"/bin/curl."$ARCH"
 DUKBIN="$CMD"/bin/duk."$ARCH"
-SHUFBIN="$CMD"/bin/shuf."$ARCH"
+
+if [ -e /etc/.ddtbuild ] && [ -e "$CMD"/bin/busybox."$ARCH" ]; then
+    mv -f "$CMD"/bin/busybox."$ARCH" "$CMD"/bin/busybox
+fi
+
+if [ -e "$CMD"/bin/busybox ];then BUSYBOXBIN="$CMD"/bin/busybox; fi
 
 if [ "$ARCH" == "i386" ]; then
 BIN=/usr/bin/python
