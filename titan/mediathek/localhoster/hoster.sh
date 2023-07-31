@@ -30,6 +30,7 @@ BIN="$CMD"/bin/python."$ARCH"
 HLSBIN="$CMD"/bin/hlsdl."$ARCH"
 CURLBIN="$CMD"/bin/curl."$ARCH"
 DUKBIN="$CMD"/bin/duk."$ARCH"
+SHUFBIN="$CMD"/bin/shuf."$ARCH"
 
 if [ "$ARCH" == "i386" ]; then
 BIN=/usr/bin/python
