@@ -999,60 +999,34 @@ youtube_dlbg()
 		unset PYTHONHOME
 		unset LD_LIBRARY_PATH
 		echo "$youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-#		$youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-        URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
-
-#yt-dlp --hls-use-mpegts --format mp4 --ignore-errors --output '/home/obi/xxxtest/%(title)s.%(ext)s' https://de.pornhub.com/video/search?search=fleshpleasures
-
-	    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+)&.*/\1/p')
-	    if [ -z "$TMPREFERER" ];then
-		    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+).*/\1/p')
-	    fi
-
-	    if [ ! -z "$TMPREFERER" ];then
-		    REFERER="--add-headers Referer:$TMPREFERER"
-	    fi
-
-	    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+)&.*/\1/p')
-	    if [ -z "$TMPUSERAGENT" ];then
-		    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+).*/\1/p')
-	    fi
-	    if [ ! -z "$TMPUSERAGENT" ];then
-		    USERAGENT="--add-headers User-Agent:$TMPUSERAGENT"
-	    fi
-
-		echo "$youtubebinbg -v --output $DEST $URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-		$youtubebinbg -v $USERAGENT $REFERER --output "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log 2>&1
-
-#        if [ `cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | wc -l` -eq 0 ];then
-        if [ `cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | grep "ERROR:" | wc -l` -eq 1 ];then
-			$youtubebinbg2 -v $USERAGENT $REFERER --output "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.2.log 2>&1
-        fi
-	else
-		echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-#		$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-        URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
-
-	    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+)&.*/\1/p')
-	    if [ -z "$TMPREFERER" ];then
-		    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+).*/\1/p')
-	    fi
-
-	    if [ ! -z "$TMPREFERER" ];then
-		    REFERER="--add-headers Referer:$TMPREFERER"
-	    fi
-
-	    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+)&.*/\1/p')
-	    if [ -z "$TMPUSERAGENT" ];then
-		    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+).*/\1/p')
-	    fi
-	    if [ ! -z "$TMPUSERAGENT" ];then
-		    USERAGENT="--add-headers User-Agent:$TMPUSERAGENT"
-	    fi
-
-		echo "$BIN $youtubebinbg $DEST $URL" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-		$BIN $youtubebinbg "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+        BIN=""
 	fi
+
+    URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
+
+    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+)&.*/\1/p')
+    if [ -z "$TMPREFERER" ];then
+	    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+).*/\1/p')
+    fi
+
+    if [ ! -z "$TMPREFERER" ];then
+	    REFERER="--add-headers Referer:$TMPREFERER"
+    fi
+
+    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+)&.*/\1/p')
+    if [ -z "$TMPUSERAGENT" ];then
+	    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+).*/\1/p')
+    fi
+    if [ ! -z "$TMPUSERAGENT" ];then
+	    USERAGENT="--add-headers User-Agent:$TMPUSERAGENT"
+    fi
+
+	echo "$BIN $youtubebinbg -v --output $DEST $URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+	$BIN $youtubebinbg -v $USERAGENT $REFERER --output "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log 2>&1
+
+    if [ `cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | grep "ERROR:" | wc -l` -eq 1 ];then
+		$BIN $youtubebinbg2 -v $USERAGENT $REFERER --output "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.2.log 2>&1
+    fi
 
 	cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | tail -n1
 #	echo $TMP/$TYPE.$hoster.$FILENAME.streamlist
