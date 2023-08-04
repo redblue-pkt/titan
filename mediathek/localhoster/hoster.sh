@@ -61,14 +61,16 @@ curlbin2="$CURLBIN $PROXY -k -s --connect-timeout 5 --cookie /mnt/network/cookie
 
 if [ -e /etc/.oebuild ];then
 	if [ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.2" ] || [ "$DISTRO" == "7.3" ];then
-		youtubebin="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors -g"
-		youtubebin2="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors -g"
-		youtubebinbg="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
-		youtubebinbghls="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors --output"
+		youtubebin="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+		youtubebin2="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
+		youtubebinbg="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors"
+		youtubebinbg2="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --restrict-filenames --ignore-errors"
+		youtubebinbghls="/usr/bin/yt-dlp --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors"
 	else
 		youtubebin="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 		youtubebin2="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors -g"
 		youtubebinbg="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
+		youtubebinbg2="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --format mp4 --restrict-filenames --ignore-errors --output"
 		youtubebinbghls="/usr/bin/youtube-dl --no-check-certificate --cookies /mnt/network/cookies --user-agent $USERAGENT --hls-use-mpegts --format mp4 --restrict-filenames --ignore-errors --output"
 	fi
 else
@@ -1002,15 +1004,52 @@ youtube_dlbg()
 
 #yt-dlp --hls-use-mpegts --format mp4 --ignore-errors --output '/home/obi/xxxtest/%(title)s.%(ext)s' https://de.pornhub.com/video/search?search=fleshpleasures
 
-		echo "$youtubebinbg $DEST $URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-		$youtubebinbg "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
-        if [ `cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | wc -l` -eq 0 ];then
-			$youtubebinbg2 "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+	    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+)&.*/\1/p')
+	    if [ -z "$TMPREFERER" ];then
+		    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+).*/\1/p')
+	    fi
+
+	    if [ ! -z "$TMPREFERER" ];then
+		    REFERER="--add-headers Referer:$TMPREFERER"
+	    fi
+
+	    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+)&.*/\1/p')
+	    if [ -z "$TMPUSERAGENT" ];then
+		    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+).*/\1/p')
+	    fi
+	    if [ ! -z "$TMPUSERAGENT" ];then
+		    USERAGENT="--add-headers User-Agent:$TMPUSERAGENT"
+	    fi
+
+		echo "$youtubebinbg -v --output $DEST $URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
+		$youtubebinbg -v $USERAGENT $REFERER --output "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log 2>&1
+
+#        if [ `cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | wc -l` -eq 0 ];then
+        if [ `cat /tmp/.last_hoster_${TYPE}_${CURTIME}.log | grep "ERROR:" | wc -l` -eq 1 ];then
+			$youtubebinbg2 -v $USERAGENT $REFERER --output "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.2.log 2>&1
         fi
 	else
 		echo "$BIN $youtubebinbg $DEST $INPUT" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 #		$BIN $youtubebinbg "$DEST" "$INPUT" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
         URL=$(echo "$INPUT" | tr '|' '\n' | head -n1)
+
+	    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+)&.*/\1/p')
+	    if [ -z "$TMPREFERER" ];then
+		    TMPREFERER=$(echo "$INPUT" | sed -nr 's/.*Referer=([^=]+).*/\1/p')
+	    fi
+
+	    if [ ! -z "$TMPREFERER" ];then
+		    REFERER="--add-headers Referer:$TMPREFERER"
+	    fi
+
+	    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+)&.*/\1/p')
+	    if [ -z "$TMPUSERAGENT" ];then
+		    TMPUSERAGENT=$(echo "$INPUT" | sed -nr 's/.*User-Agent=([^=]+).*/\1/p')
+	    fi
+	    if [ ! -z "$TMPUSERAGENT" ];then
+		    USERAGENT="--add-headers User-Agent:$TMPUSERAGENT"
+	    fi
+
 		echo "$BIN $youtubebinbg $DEST $URL" > /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 		$BIN $youtubebinbg "$DEST" "$URL" >> /tmp/.last_hoster_${TYPE}_${CURTIME}.log
 	fi
