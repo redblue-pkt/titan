@@ -40,7 +40,7 @@
 		<node parent="listbox" name="useproxy" text="Use Proxy" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="proxy" text="Proxy" type="inputbox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="delservice" text="Del Service" type="choicebox" valign="middle" width="100%" height="35">
-		<node parent="listbox" name="iptv_url" text="IpTV Url" type="inputbox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="loadm3u_url" text="LoadM3U (IpTV) Url" type="inputbox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="vavoo_url" text="VaVoo Url" type="inputbox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="vavoo_servicebouquets_autoupdate" text="VaVoo Service Bouquets Auto Update" type="choicebox" valign="middle" width="100%" height="35">
 		<node parent="listbox" name="vavoo_servicebouquets_autoupdate_msg" text="Show VaVoo Service Bouquets Auto Update Info" type="choicebox" valign="middle" width="100%" height="35">
