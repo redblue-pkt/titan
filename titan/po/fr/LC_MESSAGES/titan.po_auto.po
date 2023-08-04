@@ -5059,8 +5059,8 @@ msgstr ""
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:411
 #: mc_audioplayer.h:685 mc_audioplayer.h:797 mc_dateibrowser.h:36
 #: mc_global.h:781 mc_global.h:1086 mc_internetbrowser.h:36 mc_iptvplayer.h:106
-#: mc_iptvplayer.h:246 mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:293
-#: mc_main.h:302 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_iptvplayer.h:246 mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:294
+#: mc_main.h:303 mc_mediathek.h:35 mc_pictureplayer.h:100
 #: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:365 mc_videoplayer.h:806
 #: mc_videoplayer.h:841 mc_videoplayer.h:945 mc_videoplayer.h:964
@@ -9075,7 +9075,7 @@ msgstr ""
 msgid "Menu functions"
 msgstr ""
 
-#: mc_main.h:302 menu.h:160 panel_main.h:29 panel_main.h:135
+#: mc_main.h:303 menu.h:160 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -9125,7 +9125,7 @@ msgstr "Liste de Menu"
 #: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1086
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:246
-#: mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:293 mc_main.h:302
+#: mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:294 mc_main.h:303
 #: mc_mediathek.h:35 mc_pictureplayer.h:100 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:242 mc_pictureplayer.h:368 mc_pictureplayer.h:461
 #: mc_videoplayer.h:365 mc_videoplayer.h:806 mc_videoplayer.h:841
@@ -10053,7 +10053,7 @@ msgstr ""
 #: mc_audioplayer.h:411 mc_audioplayer.h:685 mc_audioplayer.h:797
 #: mc_dateibrowser.h:36 mc_global.h:781 mc_global.h:1086
 #: mc_internetbrowser.h:36 mc_iptvplayer.h:106 mc_iptvplayer.h:246
-#: mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:293 mc_main.h:302
+#: mc_iptvplayer.h:392 mc_iptvplayer.h:503 mc_main.h:294 mc_main.h:303
 #: mc_mediathek.h:35 mc_pictureplayer.h:100 mc_pictureplayer.h:124
 #: mc_pictureplayer.h:242 mc_pictureplayer.h:368 mc_pictureplayer.h:461
 #: mc_videoplayer.h:365 mc_videoplayer.h:806 mc_videoplayer.h:841
@@ -13741,7 +13741,7 @@ msgstr ""
 msgid "Sharename can't be empty!"
 msgstr ""
 
-#: infobar.h:718 mc_audioplayer.h:411 mc_iptvplayer.h:106 mc_main.h:293
+#: infobar.h:718 mc_audioplayer.h:411 mc_iptvplayer.h:106 mc_main.h:294
 #: mc_pictureplayer.h:124 mc_videoplayer.h:365 menu.h:215
 msgid ""
 "Shooting Background done !\n"
