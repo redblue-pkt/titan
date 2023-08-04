@@ -23,7 +23,7 @@ void screentithek_settings()
 	struct skin* useproxy = getscreennode(tithek_settings, "useproxy");
 	struct skin* proxy = getscreennode(tithek_settings, "proxy");
 	struct skin* delservice = getscreennode(tithek_settings, "delservice");
-	struct skin* iptv_url = getscreennode(tithek_settings, "iptv_url");
+	struct skin* loadm3u_url = getscreennode(tithek_settings, "loadm3u_url");
 	struct skin* vavoo_url = getscreennode(tithek_settings, "vavoo_url");
 	struct skin* vavoo_servicebouquets_autoupdate = getscreennode(tithek_settings, "vavoo_servicebouquets_autoupdate");
 	struct skin* vavoo_servicebouquets_autoupdate_msg = getscreennode(tithek_settings, "vavoo_servicebouquets_autoupdate_msg");
@@ -109,8 +109,8 @@ void screentithek_settings()
 	changemask(proxy, "abcdefghijklmnopqrstuvwxyz0123456789://@");
 	changeinput(proxy, getconfig("tithek_proxy", NULL));
 
-	changemask(iptv_url, "abcdefghijklmnopqrstuvwxyz0123456789://@");
-	changeinput(iptv_url, getconfig("tithek_iptv_url", NULL));
+	changemask(loadm3u_url, "abcdefghijklmnopqrstuvwxyz0123456789://@");
+	changeinput(loadm3u_url, getconfig("tithek_loadm3u_url", NULL));
 
 	addchoicebox(useproxy, "0", _("no"));
 	addchoicebox(useproxy, "1", _("yes"));	
@@ -171,7 +171,7 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_useproxy", useproxy, NULL);
 			addconfigscreen("tithek_proxy", proxy);
 			addconfigscreencheck("tithek_delservice", delservice, NULL);
-			addconfigscreen("tithek_iptv_url", iptv_url);
+			addconfigscreen("tithek_loadm3u_url", loadm3u_url);
 			addconfigscreen("tithek_vavoo_url", vavoo_url);
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate", vavoo_servicebouquets_autoupdate, NULL);
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_msg", vavoo_servicebouquets_autoupdate_msg, NULL);
