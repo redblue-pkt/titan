@@ -7801,10 +7801,6 @@ msgstr ""
 msgid "IpTV"
 msgstr ""
 
-#: player_tithek_skin.xml.h:10
-msgid "IpTV Url"
-msgstr ""
-
 #: webif_index.atemio510.h:2 webif_index.atemio5200.h:2
 #: webif_index.atemio6000.h:2 webif_index.atemio6100.h:2
 #: webif_index.atemio6200.h:2 webif_index.atemio-nemesis.h:2
@@ -8074,17 +8070,17 @@ msgstr "Clavier"
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-#: player_tithek_skin.xml.h:11 skins_cool_skin.xml.h:384
+#: player_tithek_skin.xml.h:10 skins_cool_skin.xml.h:384
 #: skins_megastyleblue_skin.xml.h:385 skins_megastylegrey_skin.xml.h:385
 msgid "KinoX Load Preview Pic"
 msgstr ""
 
-#: player_tithek_skin.xml.h:12 skins_cool_skin.xml.h:385
+#: player_tithek_skin.xml.h:11 skins_cool_skin.xml.h:385
 #: skins_megastyleblue_skin.xml.h:386 skins_megastylegrey_skin.xml.h:386
 msgid "KinoX Localhoster"
 msgstr ""
 
-#: player_tithek_skin.xml.h:13 skins_cool_skin.xml.h:386
+#: player_tithek_skin.xml.h:12 skins_cool_skin.xml.h:386
 #: skins_megastyleblue_skin.xml.h:387 skins_megastylegrey_skin.xml.h:387
 msgid "KinoX Url"
 msgstr ""
@@ -8530,6 +8526,10 @@ msgstr "Chargement de Partition"
 #: mc_global.h:614 mc_global.h:623
 msgid "Load Playlist"
 msgstr "Charger liste lecture"
+
+#: player_tithek_skin.xml.h:13
+msgid "LoadM3U (IpTV) Url"
+msgstr ""
 
 #: weather.h:522
 msgid "Location"
