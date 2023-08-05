@@ -2029,7 +2029,7 @@ void servicebouquets_update(int flag)
             tmpstr2 = ostrcat(tmpstr, _("Titan will be reloaded Channellist!"), 0, 0);
 
             configname = ostrcat(configname, "tithek_", 1, 0);
-            configname = ostrcat(configname, name, 1, 0);
+            configname = ostrcat(configname, parsername, 1, 0);
             configname = ostrcat(configname, "_servicebouquets_autoupdate_allchannels", 1, 0);
 
             if(getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
