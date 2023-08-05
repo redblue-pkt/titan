@@ -21499,9 +21499,3 @@ msgstr ""
 #: skins_ufs912_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Show VaVoo Service Bouquets Auto Update Info"
-#~ msgstr "VaVoo Aktualisierungs Info anzeigen"
-
-#~ msgid "VaVoo Service Bouquets Auto Update"
-#~ msgstr "VaVoo Sender Favorite Aktualisierung"
