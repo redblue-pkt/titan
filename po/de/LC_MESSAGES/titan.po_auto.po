@@ -5229,7 +5229,7 @@ msgstr ""
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
 #: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2313
 #: tithek.h:2706 tithek.h:2894 tithek.h:3219 tithek.h:3289 tithek.h:3332
-#: tithek.h:3345 tithek_settings.h:262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:3345 tithek_settings.h:271 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_autotimer_skin.xml.h:6 tools_callmonitor1_skin.xml.h:10
 #: tools_instar_skin.xml.h:8 tools_lcdpearl1_skin.xml.h:6
@@ -9432,11 +9432,11 @@ msgstr "Menüliste"
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:334
 #: titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
-#: tithek.c:105 tithek_global.h:228 tithek_global.h:2023 tithek.h:724
+#: tithek.c:105 tithek_global.h:228 tithek_global.h:2036 tithek.h:724
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
 #: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2706
 #: tithek.h:2894 tithek.h:3219 tithek.h:3289 tithek.h:3332 tithek.h:3345
-#: tithek_settings.h:262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
+#: tithek_settings.h:271 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
 #: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tunerconfig.h:738
 #: tunerconfig.h:765 tunerconfig.h:1163 unlock.h:20 unlock.h:66 unlock.h:71
@@ -10390,10 +10390,10 @@ msgstr ""
 #: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
 #: titan.c:334 titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228
-#: tithek_global.h:2023 tithek.h:724 tithek.h:1711 tithek.h:1738 tithek.h:1760
+#: tithek_global.h:2036 tithek.h:724 tithek.h:1711 tithek.h:1738 tithek.h:1760
 #: tithek.h:1782 tithek.h:1839 tithek.h:2018 tithek.h:2033 tithek.h:2236
 #: tithek.h:2291 tithek.h:2313 tithek.h:2706 tithek.h:2894 tithek.h:3219
-#: tithek.h:3289 tithek.h:3332 tithek.h:3345 tithek_settings.h:262
+#: tithek.h:3289 tithek.h:3332 tithek.h:3345 tithek_settings.h:271
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 tools_optimize_skin.xml.h:2 tools_rgui_skin.xml.h:2
 #: tools_tiwakeup_skin.xml.h:2 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
@@ -13889,6 +13889,10 @@ msgstr ""
 msgid "Service"
 msgstr "Sender"
 
+#: player_tithek_skin.xml.h:24
+msgid "Service Bouquets Auto Update"
+msgstr ""
+
 #: skins_tobayer01_skin.xml.h:804 skins_ufs912_skin.xml.h:802
 msgid "Service Information"
 msgstr ""
@@ -14099,7 +14103,7 @@ msgstr "Anzeige des freien Festplattenspeichers"
 msgid "Show Modules"
 msgstr "Zeige Modul Informationen"
 
-#: player_tithek_skin.xml.h:24 skins_cool_skin.xml.h:676
+#: player_tithek_skin.xml.h:25 skins_cool_skin.xml.h:676
 #: skins_megastyleblue_skin.xml.h:678 skins_megastylegrey_skin.xml.h:678
 msgid "Show Pay Streams"
 msgstr "Zeige kostenpflichtige und englische Streams"
@@ -14108,6 +14112,10 @@ msgstr "Zeige kostenpflichtige und englische Streams"
 #: skins_megastyleblue_skin.xml.h:679 skins_megastylegrey_skin.xml.h:679
 msgid "Show Pictitle"
 msgstr "Zeige Bild Titel"
+
+#: player_tithek_skin.xml.h:26
+msgid "Show Service Bouquets Auto Update Info"
+msgstr ""
 
 #: webif_index.atemio510.h:9 webif_index.atemio5200.h:9
 #: webif_index.atemio6000.h:9 webif_index.atemio6100.h:9
@@ -14131,10 +14139,6 @@ msgstr ""
 #: skins_tobayer01_skin.xml.h:570 skins_ufs912_skin.xml.h:568
 msgid "Show Timeline in Channellist"
 msgstr "Zeige Fortschrittsbalken in Senderliste"
-
-#: player_tithek_skin.xml.h:25
-msgid "Show VaVoo Service Bouquets Auto Update Info"
-msgstr "VaVoo Aktualisierungs Info anzeigen"
 
 #: httpdfunc.h:4736 skin_default_skin.xml.h:603 skins_0acht5zehn_skin.xml.h:564
 #: skins_atemio_skin.xml.h:565 skins_cool_skin.xml.h:671
@@ -14864,7 +14868,7 @@ msgstr "Stream Konfiguration (iOS)"
 msgid "Stream ECM Pids"
 msgstr ""
 
-#: player_tithek_skin.xml.h:26
+#: player_tithek_skin.xml.h:27
 msgid "Stream Link"
 msgstr ""
 
@@ -15981,7 +15985,7 @@ msgstr "Titan Media Center"
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:1058 tithek_global.h:2021
+#: play.h:1058 tithek_global.h:2029
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
@@ -16038,7 +16042,7 @@ msgstr ""
 msgid "Tithek"
 msgstr ""
 
-#: player_tithek_skin.xml.h:27
+#: player_tithek_skin.xml.h:28
 msgid "Tithek - Favorite Edit"
 msgstr ""
 
@@ -16055,11 +16059,11 @@ msgstr "TiThek - Hauptmenü - Favoriten"
 msgid "Tithek Hoster URL with http://"
 msgstr "Tithek Hoster URL (http://...)"
 
-#: player_tithek_skin.xml.h:38
+#: player_tithek_skin.xml.h:39
 msgid "Tithek Menu"
 msgstr ""
 
-#: player_tithek_skin.xml.h:39
+#: player_tithek_skin.xml.h:40
 msgid "Tithek Settings"
 msgstr ""
 
@@ -16073,7 +16077,7 @@ msgid ""
 "Libpack tpk."
 msgstr ""
 
-#: mediadb.h:2626 player_tithek_skin.xml.h:28 skin_default_skin.xml.h:695
+#: mediadb.h:2626 player_tithek_skin.xml.h:29 skin_default_skin.xml.h:695
 #: skins_0acht5zehn_skin.xml.h:709 skins_atemio_skin.xml.h:658
 #: skins_cool_skin.xml.h:775 skins_default_skin.xml.h:695
 #: skins_kravenhd_skin.xml.h:699 skins_megastyleblue_skin.xml.h:777
@@ -16494,7 +16498,7 @@ msgstr "Zwei Stufen Stummschaltung"
 msgid "Typ"
 msgstr ""
 
-#: player_tithek_skin.xml.h:29 skin_default_skin.xml.h:730
+#: player_tithek_skin.xml.h:30 skin_default_skin.xml.h:730
 #: skins_0acht5zehn_skin.xml.h:739 skins_atemio_skin.xml.h:693
 #: skins_cool_skin.xml.h:807 skins_default_skin.xml.h:730
 #: skins_kravenhd_skin.xml.h:733 skins_megastyleblue_skin.xml.h:809
@@ -16695,7 +16699,11 @@ msgstr ""
 msgid "Update Plugins to new Version?"
 msgstr "Installierte Plugins aktualisieren?"
 
-#: player_tithek_skin.xml.h:30
+#: player_tithek_skin.xml.h:31
+msgid "Update all Services with LoadM3U Streamurl"
+msgstr ""
+
+#: player_tithek_skin.xml.h:32
 msgid "Update all Services with VaVoo Streamurl"
 msgstr "Aktualisiere alle Sender mit VaVoo Stream Link"
 
@@ -16750,7 +16758,7 @@ msgstr "USB-Multiboot-Image (Lokal)"
 msgid "Use EPG Endtime"
 msgstr "Zum Sendungsende"
 
-#: player_tithek_skin.xml.h:31 skins_cool_skin.xml.h:830
+#: player_tithek_skin.xml.h:33 skins_cool_skin.xml.h:830
 #: skins_megastyleblue_skin.xml.h:831 skins_megastylegrey_skin.xml.h:831
 msgid "Use Proxy"
 msgstr ""
@@ -16858,12 +16866,12 @@ msgstr "Filme"
 msgid "VIDEO SETTINGS"
 msgstr "Einstellungen"
 
-#: player_tithek_skin.xml.h:36 skins_cool_skin.xml.h:853
+#: player_tithek_skin.xml.h:37 skins_cool_skin.xml.h:853
 #: skins_megastyleblue_skin.xml.h:854 skins_megastylegrey_skin.xml.h:854
 msgid "VK Pass"
 msgstr ""
 
-#: player_tithek_skin.xml.h:37 skins_cool_skin.xml.h:854
+#: player_tithek_skin.xml.h:38 skins_cool_skin.xml.h:854
 #: skins_megastyleblue_skin.xml.h:855 skins_megastylegrey_skin.xml.h:855
 msgid "VK User"
 msgstr ""
@@ -16885,12 +16893,8 @@ msgstr ""
 msgid "VTUNER"
 msgstr ""
 
-#: player_tithek_skin.xml.h:32
-msgid "VaVoo Service Bouquets Auto Update"
-msgstr "VaVoo Sender Favorite Aktualisierung"
-
-#: player_tithek_skin.xml.h:33
-msgid "VaVoo Url"
+#: player_tithek_skin.xml.h:34
+msgid "VaVoo (IpTV) Url"
 msgstr ""
 
 #: security.h:2338
@@ -17027,12 +17031,12 @@ msgstr "Viet"
 msgid "View"
 msgstr "Ansicht"
 
-#: player_tithek_skin.xml.h:34 skins_cool_skin.xml.h:849
+#: player_tithek_skin.xml.h:35 skins_cool_skin.xml.h:849
 #: skins_megastyleblue_skin.xml.h:850 skins_megastylegrey_skin.xml.h:850
 msgid "View Cover"
 msgstr "Ansicht Cover (streams)"
 
-#: player_tithek_skin.xml.h:35 skins_cool_skin.xml.h:850
+#: player_tithek_skin.xml.h:36 skins_cool_skin.xml.h:850
 #: skins_megastyleblue_skin.xml.h:851 skins_megastylegrey_skin.xml.h:851
 msgid "View Sections"
 msgstr "Menü Ansicht"
@@ -18172,7 +18176,7 @@ msgstr "CIFS"
 msgid "close window"
 msgstr "Fenster schließen"
 
-#: tithek_settings.h:106
+#: tithek_settings.h:107
 msgid "cloudfare"
 msgstr ""
 
@@ -18738,7 +18742,7 @@ msgstr "Behalten"
 msgid "html"
 msgstr "HTML"
 
-#: tithek_settings.h:104
+#: tithek_settings.h:105
 msgid "http"
 msgstr ""
 
@@ -18746,7 +18750,7 @@ msgstr ""
 msgid "httpdsettings"
 msgstr "HTTP Einstellungen"
 
-#: tithek_settings.h:105
+#: tithek_settings.h:106
 msgid "https"
 msgstr ""
 
@@ -19256,12 +19260,13 @@ msgstr "NFSD Kernel Server autostart"
 #: settings_overclocking.h:234 settings_overclocking.h:244 sispmctl.h:693
 #: sispmctl.h:697 sispmctl.h:737 sispmctl.h:741 sispmctl.h:781 sispmctl.h:785
 #: sispmctl.h:825 sispmctl.h:829 skinadjust.h:252 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:57
-#: tithek_settings.h:61 tithek_settings.h:65 tithek_settings.h:69
-#: tithek_settings.h:100 tithek_settings.h:115 tithek_settings.h:119
-#: tithek_settings.h:123 tithek_settings.h:127 tithek_settings.h:131 tmc.h:531
-#: tmc.h:535 tunerconfig.h:234 tunerconfig.h:263 tunerconfig.h:294
-#: tunerconfig.h:327 tunerconfig.h:897 xupnpd.h:35
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:58
+#: tithek_settings.h:62 tithek_settings.h:66 tithek_settings.h:70
+#: tithek_settings.h:101 tithek_settings.h:116 tithek_settings.h:120
+#: tithek_settings.h:124 tithek_settings.h:128 tithek_settings.h:135
+#: tithek_settings.h:142 tmc.h:531 tmc.h:535 tunerconfig.h:234
+#: tunerconfig.h:263 tunerconfig.h:294 tunerconfig.h:327 tunerconfig.h:897
+#: xupnpd.h:35
 msgid "no"
 msgstr "Nein"
 
@@ -20087,31 +20092,31 @@ msgstr "EPG-Kurzübersicht"
 msgid "show"
 msgstr "anzeigen"
 
-#: tithek_settings.h:39 tithek_settings.h:50
+#: tithek_settings.h:40 tithek_settings.h:51
 msgid "show 12 entrys"
 msgstr "klein (12 Bilder)"
 
-#: tithek_settings.h:37 tithek_settings.h:48
+#: tithek_settings.h:38 tithek_settings.h:49
 msgid "show 2 entrys"
 msgstr "sehr groß (2 Bilder)"
 
-#: tithek_settings.h:40 tithek_settings.h:51
+#: tithek_settings.h:41 tithek_settings.h:52
 msgid "show 20 entrys"
 msgstr "kleiner (20 Bilder)"
 
-#: tithek_settings.h:41 tithek_settings.h:52
+#: tithek_settings.h:42 tithek_settings.h:53
 msgid "show 30 entrys"
 msgstr "sehr klein (30 Bilder)"
 
-#: tithek_settings.h:38 tithek_settings.h:49
+#: tithek_settings.h:39 tithek_settings.h:50
 msgid "show 6 entrys"
 msgstr "groß (6 Bilder)"
 
-#: tithek_settings.h:36 tithek_settings.h:47
+#: tithek_settings.h:37 tithek_settings.h:48
 msgid "show auto entrys"
 msgstr "automatisch anpassen"
 
-#: tithek_settings.h:42 tithek_settings.h:53
+#: tithek_settings.h:43 tithek_settings.h:54
 msgid "show in list"
 msgstr "in Liste zeigen"
 
@@ -21434,11 +21439,11 @@ msgstr "gelb"
 #: settings_overclocking.h:244 sispmctl.h:692 sispmctl.h:696 sispmctl.h:736
 #: sispmctl.h:740 sispmctl.h:780 sispmctl.h:784 sispmctl.h:824 sispmctl.h:828
 #: skinadjust.h:253 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:58 tithek_settings.h:62
-#: tithek_settings.h:66 tithek_settings.h:70 tithek_settings.h:101
-#: tithek_settings.h:116 tithek_settings.h:120 tithek_settings.h:124
-#: tithek_settings.h:128 tithek_settings.h:132 tmc.h:532 tmc.h:536
-#: tunerconfig.h:897 xupnpd.h:35
+#: timeshiftsettings.h:62 tithek_settings.h:59 tithek_settings.h:63
+#: tithek_settings.h:67 tithek_settings.h:71 tithek_settings.h:102
+#: tithek_settings.h:117 tithek_settings.h:121 tithek_settings.h:125
+#: tithek_settings.h:129 tithek_settings.h:136 tithek_settings.h:143 tmc.h:532
+#: tmc.h:536 tunerconfig.h:897 xupnpd.h:35
 msgid "yes"
 msgstr "Ja"
 
@@ -21494,3 +21499,9 @@ msgstr ""
 #: skins_ufs912_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "Show VaVoo Service Bouquets Auto Update Info"
+#~ msgstr "VaVoo Aktualisierungs Info anzeigen"
+
+#~ msgid "VaVoo Service Bouquets Auto Update"
+#~ msgstr "VaVoo Sender Favorite Aktualisierung"
