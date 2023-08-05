@@ -2036,7 +2036,6 @@ void servicebouquets_update(int flag)
         		textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 5, 2);
 	        debug(202, "%s", tmpstr2);
 		    drawscreen(skin, 0, 0);
-            free(tmpstr2), tmpstr2 = NULL;
 
             reloadsettings(tmpstr3);
             free(tmpstr3), tmpstr3 = NULL;
@@ -2046,6 +2045,7 @@ void servicebouquets_update(int flag)
             debug(202, "channellist unchanged\n%s", tmpstr);
 		}
         free(tmpstr), tmpstr = NULL;
+        free(tmpstr2), tmpstr2 = NULL;
     }
 }
 
