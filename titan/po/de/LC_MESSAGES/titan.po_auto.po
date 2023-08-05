@@ -14115,7 +14115,7 @@ msgstr "Zeige Bild Titel"
 
 #: player_tithek_skin.xml.h:26
 msgid "Show Service Bouquets Auto Update Info"
-msgstr "Zeige Sender Favorite Aktualisierungs Info anzeigen"
+msgstr "Sender Favorite Aktualisierungs Info anzeigen"
 
 #: webif_index.atemio510.h:9 webif_index.atemio5200.h:9
 #: webif_index.atemio6000.h:9 webif_index.atemio6100.h:9
