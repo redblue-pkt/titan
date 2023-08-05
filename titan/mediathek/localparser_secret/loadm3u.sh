@@ -52,7 +52,9 @@ mainmenu()
     	echo "Add Your LoadM3U (IpTV) Url or local dir from m3u file on Tithek > Settings (Menu) > LoadM3U (IpTV) Url##http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >$TMP/$FILENAME.list
     else
     	echo "Category#$SRC $SRC category#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >$TMP/$FILENAME.list
+     	echo "Suchen#$SRC $SRC search '$URL' '%search%' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
     fi
+
 	echo "$TMP/$FILENAME.list"
 }
 
@@ -90,8 +92,13 @@ category()
 					    }
 					    else
 					    {
-						    i = index($0, ":-1,") + 4
-						    title = substr($0, i, length($0) - 1)
+                            #EXTINF:-1,DE: ARTE
+#						    i = index($0, ":-1,") + 4
+#						    title = substr($0, i, length($0) - 1)
+                            split($0, a, ",")
+                            tag = a[length(a)]
+                            title = tag
+
 						    found = 2
 						    next
 					    }
@@ -157,6 +164,10 @@ category()
     echo $TMP/$FILENAME.list
 }
 
+#sh4 error
+#/tmp/localparser/vavoo.sh: line 474: shuf: not found
+#awk: bad regex '+[)]+': Invalid preceding regular expression
+
 search()
 {
     echo 3 > /proc/sys/vm/drop_caches
@@ -169,7 +180,7 @@ search()
     ADD2CHANNEL=0
     if [ ! -z "$1" ];then 
         ADD2CHANNEL=$1
-        remove $NEXT
+        remove "$NEXT"
         rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
 
         if [ ! -e /tmp/settings ];then mkdir /tmp/settings; fi
@@ -219,7 +230,7 @@ search()
                 {
 			        if (found == 0)
 			        {
-					    if ($0 ~ /group-title=/)
+					    if ($0 ~ /tvg-name=/)
 					    {
 					        i = index($0, "tvg-name=\"") + 10
 		                    j = index(substr($0, i), "\"") - 1
@@ -244,7 +255,9 @@ search()
                         gsub(/\(.*\)/, "", picname)
                     	gsub(/\+/, "", picname)
                     	gsub(/\//, " ", picname)
-                        gsub(/+[)]+/, "", picname)
+#sh4 error
+#                        gsub(/+[)]+/, "", picname)
+                        gsub(/\+[)]\+/, "", picname)
 
                         gsub(/^[ \t]+/, "", picname)
                         gsub(/[ \t]+$/, "", picname)
@@ -308,9 +321,9 @@ search()
 #		                j = index(substr($0, i), ".ts") - 1
 #		                id = substr($0, i, j)
 
-                            #EXTINF:-1,DE: ARTE
-                            split(substr($0, 1, length($0)), a, "/")
-                            id = a[length(a)]
+                        #EXTINF:-1,DE: ARTE
+                        split(substr($0, 1, length($0)), a, "/")
+                        id = a[length(a)]
 
                         if(ADD2CHANNEL != 0)
                         {
@@ -325,7 +338,8 @@ search()
 #                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1#;g\" \x5c\n"
                                 newpage3 = newpage
                                 gsub("(&)", "\\\\\\&", newpage3) 
-                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage3 "\\&tslivemode=1#;g\" \x5c\n"
+#                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage3 "\\&tslivemode=1#;g\" \x5c\n"
+                                cmd2 = cmd2 " -e \"s;#http.*/" id "\\&tslivemode=1.*#;#" newpage3 "\\&tslivemode=1#;g\" \x5c\n"
                             }
                             else if(ADD2CHANNEL == 3)
                             {
@@ -335,6 +349,7 @@ search()
                                 #real    1m27.071s
 #                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
                                 cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/#;#" newpage3 "\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+                                cmd3 = cmd3 "sed \"s;#http.*/" id "\\&tslivemode=1#;#" newpage3 "\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
                             }
                             else
                             {
@@ -346,7 +361,7 @@ search()
                             cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
                             cmd = cmd "echo \"" id "#0#0#0#20001#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
                             cmd = cmd "echo \"LoadM3U (IpTV)#0#20001#3\" >> /tmp/settings/satellites.tmp\n"
-                            cmd = cmd "echo \"0#" id "\" >> /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\n"
+                            cmd = cmd "echo \"0#" id "\" >> \"/tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\"\n"
                             if(++dup[cmd4] == 1)
                                 cmd4 = cmd4 "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
                         }
@@ -374,7 +389,7 @@ search()
                     {
                         cmd5 = cmd5 "cat /tmp/settings/channel.tmp | sort -u > /tmp/settings/channel\n"
 #                        cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
-                        cmd5 = cmd5 "cp -a /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\n"
+                        cmd5 = cmd5 "cp -a \"/tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\" \"/tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\"\n"
                         cmd5 = cmd5 "cat /tmp/settings/bouquets.cfg.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/bouquets.cfg\n"
                         cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/transponder\n"
                         cmd5 = cmd5 "cat /tmp/settings/satellites.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/satellites\n"
@@ -449,8 +464,7 @@ hoster()
 ######
 create_service_bouquets()
 {
-#    search 1
-    search 5
+    search 1
 }
 
 #backslash hex
@@ -464,9 +478,8 @@ update_service_bouquets()
 {
     NEXT=$(echo $NEXT | tr '+' ' ')
 
-    remove $NEXT
-#    search 1
-    search 5
+    remove "$NEXT"
+    search 1
     save $NEXT
 }
 
@@ -474,10 +487,9 @@ update_all_channels()
 {
     NEXT=$(echo $NEXT | tr '+' ' ')
 
-    remove $NEXT
-#    search 2
-    search 5
-    save $NEXT
+    remove "$NEXT"
+    search 2
+    save "$NEXT"
 }
 
 writecmd()
@@ -487,25 +499,24 @@ writecmd()
 
     NEXT=$(echo $NEXT | tr '+' ' ')
 
-    remove $NEXT
+    remove "$NEXT"
 #only create 0m8.507s
 #    search 2
 #create and update sat channels with streamid (fast) sed -e .. -i 1m2.206s
-#    search 2
-    search 5
+    search 2
 #create and update sat channels with streamid (slow) sed -- -i 1m28.566s
 #    search 4
 #create and update sat channels with streamid (very slow) echo sed -i 3m24.186s
 #    search 5
 
-    save $NEXT
+    save "$NEXT"
     killall -9 titan
 }
 
 save()
 {
     if [ ! -z "$1" ];then 
-        NEXT=$1
+        NEXT="$1"
     fi
 
     cp /tmp/settings/bouquets.cfg /mnt/settings/bouquets.cfg
@@ -525,7 +536,7 @@ save()
 remove()
 {
     if [ ! -z "$1" ];then 
-        NEXT=$1
+        NEXT="$1"
     fi
 
     if [ -e /tmp/settings ];then

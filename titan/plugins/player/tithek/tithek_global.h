@@ -1983,7 +1983,7 @@ void servicebouquets_update(int flag)
                     cmd = ostrcat("cat ", localparser, 0, 0);
                     cmd = ostrcat(cmd, " | grep '$SRC $SRC search ' | cut -d'#' -f2 | sed 's!$SRC!", 1, 0);
                     cmd = ostrcat(cmd, localparser, 1, 0);
-                    cmd = ostrcat(cmd, "!g'", 1, 0);
+                    cmd = ostrcat(cmd, "!g' | head -n1", 1, 0);
 //                    cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
 
                     debug(202, "cmd2: %s", cmd);

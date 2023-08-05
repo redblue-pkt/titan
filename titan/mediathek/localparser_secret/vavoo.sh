@@ -85,9 +85,25 @@ category()
 			{
 				if (suche == 1)
 				{
-					i = index($0, "group-title=\"") + 13
-		            j = index(substr($0, i), "\"") - 1
-		            title = substr($0, i, j)
+				    if ($0 ~ /group-title=/)
+				    {
+					    i = index($0, "group-title=\"") + 13
+		                j = index(substr($0, i), "\"") - 1
+		                title = substr($0, i, j)
+				    }
+				    else
+				    {
+                        #EXTINF:-1,DE: ARTE
+#					    i = index($0, ":-1,") + 4
+#					    title = substr($0, i, length($0) - 1)
+                        split($0, a, ",")
+                        tag = a[length(a)]
+                        title = tag
+
+					    found = 2
+					    next
+				    }
+
 
 				    picname = tolower(title)
                 	gsub(" ", ".", picname)
@@ -123,95 +139,6 @@ category()
 	echo "$TMP/$FILENAME.sort.list"
 }
 
-
-create_service_bouquets()
-{
-    search 1
-}
-
-#backslash hex
-#awk -F, '{print "\x5c" }'
-#a single quote hex
-#awk -F, '{print "\047" }'
-#a single quote octa
-#awk -F, '{print "\x27" }'
-
-update_service_bouquets()
-{
-    NEXT=$(echo $NEXT | tr '+' ' ')
-
-    remove $NEXT
-    search 1
-    save $NEXT
-}
-
-update_all_channels()
-{
-    NEXT=$(echo $NEXT | tr '+' ' ')
-
-    remove $NEXT
-    search 2
-    save $NEXT
-}
-
-writecmd()
-{
-#rm -rf /mnt/settings
-#cp -a /etc/titan.restore/mnt/settings /mnt
-
-    NEXT=$(echo $NEXT | tr '+' ' ')
-
-    remove $NEXT
-#only create 0m8.507s
-#    search 2
-#create and update sat channels with streamid (fast) sed -e .. -i 1m2.206s
-    search 2
-#create and update sat channels with streamid (slow) sed -- -i 1m28.566s
-#    search 4
-#create and update sat channels with streamid (very slow) echo sed -i 3m24.186s
-#    search 5
-
-    save $NEXT
-    killall -9 titan
-}
-
-save()
-{
-    if [ ! -z "$1" ];then 
-        NEXT=$1
-    fi
-
-    cp /tmp/settings/bouquets.cfg /mnt/settings/bouquets.cfg
-    cp /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv 
-    cp /tmp/settings/channel /mnt/settings/channel
-    cp /tmp/settings/transponder /mnt/settings/transponder
-    cp /tmp/settings/satellites /mnt/settings/satellites
-
-#    cat /tmp/settings/channel.tmp | sort -u > /mnt/settings/channel
-#    cp -a /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv
-#    cat /tmp/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
-#    cat /tmp/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
-#    sed s/"^ *"// -i /mnt/settings/channel
-#    remove $NEXT
-}
-
-remove()
-{
-    if [ ! -z "$1" ];then 
-        NEXT=$1
-    fi
-
-    if [ -e /tmp/settings ];then
-        rm -rf /tmp/settings
-    else
-        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
-        rm /mnt/settings/transponder.* > /dev/null 2>&1
-        rm /mnt/settings/channel.* > /dev/null 2>&1
-        rm /mnt/settings/satellites.* > /dev/null 2>&1
-        rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
-    fi
-}
-
 #sh4 error
 #/tmp/localparser/vavoo.sh: line 474: shuf: not found
 #awk: bad regex '+[)]+': Invalid preceding regular expression
@@ -228,14 +155,14 @@ rm $TMP/$FILENAME.list
     ADD2CHANNEL=0
     if [ ! -z "$1" ];then 
         ADD2CHANNEL=$1
-        remove $NEXT
+        remove "$NEXT"
         rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
 
         if [ ! -e /tmp/settings ];then mkdir /tmp/settings; fi
         if [ -e /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv ];then
             echo "LIST=$(cat /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv | sed 's/0#/#/g' | tr '\n' '#' | sed 's/##/#\\|#/g' | sed "s/^#/'/" | sed -e "s/#$/'/g")" >$TMP/$FILENAME.cmd.list
             echo "cat /mnt/settings/channel | grep -v \$LIST >> /tmp/settings/channel.tmp" >> $TMP/$FILENAME.cmd.list
-            echo "cp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.org" >> $TMP/$FILENAME.cmd.list
+            echo "cp '/mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv' '/tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.org'" >> $TMP/$FILENAME.cmd.list
         else
             echo "cp /mnt/settings/channel /tmp/settings/channel.tmp" > $TMP/$FILENAME.cmd.list
         fi
@@ -273,9 +200,19 @@ rm $TMP/$FILENAME.list
                 {
 				    if (found == 0)
 				    {
-					    i = index($0, "tvg-name=\"") + 10
-		                j = index(substr($0, i), "\"") - 1
-		                title = substr($0, i, j)
+					    if ($0 ~ /tvg-name/)
+					    {
+					        i = index($0, "tvg-name=\"") + 10
+		                    j = index(substr($0, i), "\"") - 1
+       	                    title = substr($0, i, j)
+                        }
+                        else
+                        {
+                            #EXTINF:-1,DE: ARTE
+                            split($0, a, ",")
+                            tag = a[length(a)]
+                            title = tag
+                        }
 
 					    picname = tolower(title)
 
@@ -291,7 +228,7 @@ rm $TMP/$FILENAME.list
 	                	gsub(/\//, " ", picname)
 
 #sh4 error
-##                        gsub(/+[)]+/, "", picname)
+#                        gsub(/+[)]+/, "", picname)
                         gsub(/\+[)]\+/, "", picname)
 
                         gsub(/^[ \t]+/, "", picname)
@@ -372,8 +309,8 @@ rm $TMP/$FILENAME.list
                             cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
                             cmd = cmd "echo \"" id "#0#0#0#20000#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
                             cmd = cmd "echo \"VaVoo (IpTV)#0#20000#3\" >> /tmp/settings/satellites.tmp\n"
-                            cmd = cmd "echo \"0#" id "\" >> /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\n"
-                           if(++dup[cmd4] == 1)
+                            cmd = cmd "echo \"0#" id "\" >> \"/tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\"\n"
+                            if(++dup[cmd4] == 1)
                                 cmd4 = cmd4 "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
                         }
                         else
@@ -399,7 +336,7 @@ rm $TMP/$FILENAME.list
                     {
                         cmd5 = cmd5 "cat /tmp/settings/channel.tmp | sort -u > /tmp/settings/channel\n"
 #                        cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | sort -u > /tmp/settings/transponder\n"
-                        cmd5 = cmd5 "cp -a /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp /tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\n"
+                        cmd5 = cmd5 "cp -a \"/tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\" \"/tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\"\n"
                         cmd5 = cmd5 "cat /tmp/settings/bouquets.cfg.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/bouquets.cfg\n"
                         cmd5 = cmd5 "cat /tmp/settings/transponder.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/transponder\n"
                         cmd5 = cmd5 "cat /tmp/settings/satellites.tmp | awk \x27!seen[$0]++\x27 > /tmp/settings/satellites\n"
@@ -450,6 +387,94 @@ rm $TMP/$FILENAME.list
     else
         cat $TMP/$FILENAME.list | sort -u > $TMP/$FILENAME.sort.list
 	    echo "$TMP/$FILENAME.sort.list"
+    fi
+}
+
+create_service_bouquets()
+{
+    search 1
+}
+
+#backslash hex
+#awk -F, '{print "\x5c" }'
+#a single quote hex
+#awk -F, '{print "\047" }'
+#a single quote octa
+#awk -F, '{print "\x27" }'
+
+update_service_bouquets()
+{
+    NEXT=$(echo $NEXT | tr '+' ' ')
+
+    remove "$NEXT"
+    search 1
+    save "$NEXT"
+}
+
+update_all_channels()
+{
+    NEXT=$(echo $NEXT | tr '+' ' ')
+
+    remove "$NEXT"
+    search 2
+    save "$NEXT"
+}
+
+writecmd()
+{
+#rm -rf /mnt/settings
+#cp -a /etc/titan.restore/mnt/settings /mnt
+
+    NEXT=$(echo $NEXT | tr '+' ' ')
+
+    remove "$NEXT"
+#only create 0m8.507s
+#    search 2
+#create and update sat channels with streamid (fast) sed -e .. -i 1m2.206s
+    search 2
+#create and update sat channels with streamid (slow) sed -- -i 1m28.566s
+#    search 4
+#create and update sat channels with streamid (very slow) echo sed -i 3m24.186s
+#    search 5
+
+    save "$NEXT"
+    killall -9 titan
+}
+
+save()
+{
+    if [ ! -z "$1" ];then 
+        NEXT="$1"
+    fi
+
+    cp /tmp/settings/bouquets.cfg /mnt/settings/bouquets.cfg
+    cp /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv 
+    cp /tmp/settings/channel /mnt/settings/channel
+    cp /tmp/settings/transponder /mnt/settings/transponder
+    cp /tmp/settings/satellites /mnt/settings/satellites
+
+#    cat /tmp/settings/channel.tmp | sort -u > /mnt/settings/channel
+#    cp -a /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.tmp /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv
+#    cat /tmp/settings/bouquets.cfg.tmp | awk '!seen[$0]++' > /mnt/settings/bouquets.cfg
+#    cat /tmp/settings/transponder.tmp | awk '!seen[$0]++' > /mnt/settings/transponder
+#    sed s/"^ *"// -i /mnt/settings/channel
+#    remove $NEXT
+}
+
+remove()
+{
+    if [ ! -z "$1" ];then 
+        NEXT="$1"
+    fi
+
+    if [ -e /tmp/settings ];then
+        rm -rf /tmp/settings
+    else
+        rm /mnt/settings/bouquets.cfg.* > /dev/null 2>&1
+        rm /mnt/settings/transponder.* > /dev/null 2>&1
+        rm /mnt/settings/channel.* > /dev/null 2>&1
+        rm /mnt/settings/satellites.* > /dev/null 2>&1
+        rm /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv.* > /dev/null 2>&1
     fi
 }
 
