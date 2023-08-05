@@ -13891,7 +13891,7 @@ msgstr "Sender"
 
 #: player_tithek_skin.xml.h:24
 msgid "Service Bouquets Auto Update"
-msgstr ""
+msgstr "Sender Favorite Aktualisierung"
 
 #: skins_tobayer01_skin.xml.h:804 skins_ufs912_skin.xml.h:802
 msgid "Service Information"
@@ -14115,7 +14115,7 @@ msgstr "Zeige Bild Titel"
 
 #: player_tithek_skin.xml.h:26
 msgid "Show Service Bouquets Auto Update Info"
-msgstr ""
+msgstr "Zeige Sender Favorite Aktualisierungs Info anzeigen"
 
 #: webif_index.atemio510.h:9 webif_index.atemio5200.h:9
 #: webif_index.atemio6000.h:9 webif_index.atemio6100.h:9
@@ -16701,7 +16701,7 @@ msgstr "Installierte Plugins aktualisieren?"
 
 #: player_tithek_skin.xml.h:31
 msgid "Update all Services with LoadM3U Streamurl"
-msgstr ""
+msgstr "Aktualisiere alle Sender mit LoadM3U Stream Link"
 
 #: player_tithek_skin.xml.h:32
 msgid "Update all Services with VaVoo Streamurl"
