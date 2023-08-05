@@ -1926,7 +1926,7 @@ void servicebouquets_update(int flag)
 	debug(202, "flag: %d", flag);
     printf("servicebouquets_update flag: %d\n", flag);
 
-	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *cmd = NULL, *localparser = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *cmd = NULL, *localparser = NULL, *parsername = NULL, *configname = NULL;
 
 	if(!file_exist("/tmp/localhoster"))
 		localparser_init("http://openaaf.dyndns.tv/mediathek/mainmenu.list", "/tmp/tithek/mainmenu.local.list", 2);
@@ -1968,10 +1968,12 @@ void servicebouquets_update(int flag)
 			ret2 = strsplit(tmpstr2, ".", &count2);
             if(ret2 != NULL && count2 >= 3)
             {
+                parsername = ostrcat(parsername, (&ret2[0])->part, 1, 0);
+                strstrip(parsername);
+                string_tolower(parsername);
+
                 localparser = ostrcat(localparser, "/tmp/localparser/", 1, 0);
-                localparser = ostrcat(localparser, (&ret2[0])->part, 1, 0);
-                strstrip(localparser);
-                string_tolower(localparser);
+                localparser = ostrcat(localparser, parsername, 1, 0);
                 localparser = ostrcat(localparser, ".sh", 1, 0);
                 debug(202, "localparser: %s", localparser);
 
@@ -1994,11 +1996,17 @@ void servicebouquets_update(int flag)
                     free(cmd), cmd = NULL;
                     cmd = ostrcat(cmd, tmpstr, 1, 1);
 
-                    if(getconfigint("tithek_vavoo_servicebouquets_autoupdate_allchannels", NULL) == 1)
+                    configname = ostrcat(configname, "tithek_", 1, 0);
+                    configname = ostrcat(configname, parsername, 1, 0);
+                    configname = ostrcat(configname, "_servicebouquets_autoupdate_allchannels", 1, 0);
+
+                    if(getconfigint(configname, NULL) == 1)
                         cmd = string_replace_all(" search ", " update_all_channels ", cmd, 1);
                     else
                         cmd = string_replace_all(" search ", " update_service_bouquets ", cmd, 1);
 
+                    free(configname), configname = NULL;
+                    free(parsername), parsername = NULL;
                     cmd = string_replace_all("%search%", (&ret2[1])->part, cmd, 1);
                     debug(202, "cmd3: %s", cmd);
 
@@ -2011,7 +2019,7 @@ void servicebouquets_update(int flag)
                 free(localparser), localparser = NULL;
             }
 			free(ret2), ret2 = NULL;
-			free(tmpstr2), tmpstr2 = NULL;
+//			free(tmpstr2), tmpstr2 = NULL;
 		}
 		free(ret1), ret1 = NULL;
 
@@ -2019,6 +2027,11 @@ void servicebouquets_update(int flag)
         {
             tmpstr2 = ostrcat(tmpstr2, "\n\n", 1, 0);
             tmpstr2 = ostrcat(tmpstr, _("Titan will be reloaded Channellist!"), 0, 0);
+
+            configname = ostrcat(configname, "tithek_", 1, 0);
+            configname = ostrcat(configname, name, 1, 0);
+            configname = ostrcat(configname, "_servicebouquets_autoupdate_allchannels", 1, 0);
+
             if(getconfigint("tithek_vavoo_servicebouquets_autoupdate_msg", NULL) == 1)
         		textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 5, 2);
 	        debug(202, "%s", tmpstr2);

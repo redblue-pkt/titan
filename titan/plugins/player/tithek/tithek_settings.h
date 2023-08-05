@@ -176,6 +176,11 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate", vavoo_servicebouquets_autoupdate, NULL);
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_msg", vavoo_servicebouquets_autoupdate_msg, NULL);
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_allchannels", vavoo_servicebouquets_autoupdate_allchannels, NULL);
+
+			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate", vavoo_servicebouquets_autoupdate, NULL);
+			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_msg", vavoo_servicebouquets_autoupdate_msg, NULL);
+			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_allchannels", vavoo_servicebouquets_autoupdate_allchannels, NULL);
+
 /*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
