@@ -23,10 +23,11 @@ void screentithek_settings()
 	struct skin* useproxy = getscreennode(tithek_settings, "useproxy");
 	struct skin* proxy = getscreennode(tithek_settings, "proxy");
 	struct skin* delservice = getscreennode(tithek_settings, "delservice");
+	struct skin* servicebouquets_autoupdate = getscreennode(tithek_settings, "servicebouquets_autoupdate");
+	struct skin* servicebouquets_autoupdate_msg = getscreennode(tithek_settings, "servicebouquets_autoupdate_msg");
 	struct skin* loadm3u_url = getscreennode(tithek_settings, "loadm3u_url");
+	struct skin* loadm3u_servicebouquets_autoupdate_allchannels = getscreennode(tithek_settings, "loadm3u_servicebouquets_autoupdate_allchannels");
 	struct skin* vavoo_url = getscreennode(tithek_settings, "vavoo_url");
-	struct skin* vavoo_servicebouquets_autoupdate = getscreennode(tithek_settings, "vavoo_servicebouquets_autoupdate");
-	struct skin* vavoo_servicebouquets_autoupdate_msg = getscreennode(tithek_settings, "vavoo_servicebouquets_autoupdate_msg");
 	struct skin* vavoo_servicebouquets_autoupdate_allchannels = getscreennode(tithek_settings, "vavoo_servicebouquets_autoupdate_allchannels");
 
 	struct skin* autoupdate = getscreennode(tithek_settings, "autoupdate");
@@ -120,20 +121,27 @@ void screentithek_settings()
 	addchoicebox(delservice, "1", _("yes"));	
 	setchoiceboxselection(delservice, getconfig("tithek_delservice", NULL));
 
-	addchoicebox(vavoo_servicebouquets_autoupdate, "0", _("no"));
-	addchoicebox(vavoo_servicebouquets_autoupdate, "1", _("yes"));	
-	setchoiceboxselection(vavoo_servicebouquets_autoupdate, getconfig("tithek_vavoo_servicebouquets_autoupdate", NULL));
+	addchoicebox(servicebouquets_autoupdate, "0", _("no"));
+	addchoicebox(servicebouquets_autoupdate, "1", _("yes"));	
+	setchoiceboxselection(servicebouquets_autoupdate, getconfig("tithek_servicebouquets_autoupdate", NULL));
 
-	addchoicebox(vavoo_servicebouquets_autoupdate_msg, "0", _("no"));
-	addchoicebox(vavoo_servicebouquets_autoupdate_msg, "1", _("yes"));	
-	setchoiceboxselection(vavoo_servicebouquets_autoupdate_msg, getconfig("tithek_vavoo_servicebouquets_autoupdate_msg", NULL));
+	addchoicebox(servicebouquets_autoupdate_msg, "0", _("no"));
+	addchoicebox(servicebouquets_autoupdate_msg, "1", _("yes"));	
+	setchoiceboxselection(servicebouquets_autoupdate_msg, getconfig("tithek_servicebouquets_autoupdate_msg", NULL));
+
+	changemask(loadm3u_url, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(loadm3u_url, getconfig("tithek_loadm3u_url", NULL));
+
+	addchoicebox(loadm3u_servicebouquets_autoupdate_allchannels, "0", _("no"));
+	addchoicebox(loadm3u_servicebouquets_autoupdate_allchannels, "1", _("yes"));	
+	setchoiceboxselection(loadm3u_servicebouquets_autoupdate_allchannels, getconfig("tithek_loadm3u_servicebouquets_autoupdate_allchannels", NULL));
+
+	changemask(vavoo_url, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(vavoo_url, getconfig("tithek_vavoo_url", NULL));
 
 	addchoicebox(vavoo_servicebouquets_autoupdate_allchannels, "0", _("no"));
 	addchoicebox(vavoo_servicebouquets_autoupdate_allchannels, "1", _("yes"));	
 	setchoiceboxselection(vavoo_servicebouquets_autoupdate_allchannels, getconfig("tithek_vavoo_servicebouquets_autoupdate_allchannels", NULL));
-
-	changemask(vavoo_url, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(vavoo_url, getconfig("tithek_vavoo_url", NULL));
 
 	if(!file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
 		kinox_url->hidden = YES;
@@ -171,16 +179,12 @@ void screentithek_settings()
 			addconfigscreencheck("tithek_useproxy", useproxy, NULL);
 			addconfigscreen("tithek_proxy", proxy);
 			addconfigscreencheck("tithek_delservice", delservice, NULL);
+			addconfigscreencheck("tithek_servicebouquets_autoupdate", servicebouquets_autoupdate, NULL);
+			addconfigscreencheck("tithek_servicebouquets_autoupdate_msg", servicebouquets_autoupdate_msg, NULL);
 			addconfigscreen("tithek_loadm3u_url", loadm3u_url);
+			addconfigscreencheck("tithek_loadm3u_servicebouquets_autoupdate_allchannels", loadm3u_servicebouquets_autoupdate_allchannels, NULL);
 			addconfigscreen("tithek_vavoo_url", vavoo_url);
-			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate", vavoo_servicebouquets_autoupdate, NULL);
-			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_msg", vavoo_servicebouquets_autoupdate_msg, NULL);
 			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_allchannels", vavoo_servicebouquets_autoupdate_allchannels, NULL);
-
-			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate", vavoo_servicebouquets_autoupdate, NULL);
-			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_msg", vavoo_servicebouquets_autoupdate_msg, NULL);
-			addconfigscreencheck("tithek_vavoo_servicebouquets_autoupdate_allchannels", vavoo_servicebouquets_autoupdate_allchannels, NULL);
-
 /*
 			if(amazon_user->ret != NULL && ostrcmp(amazon_user->ret, "****") != 0)
 			{
