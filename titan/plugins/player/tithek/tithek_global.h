@@ -2032,7 +2032,7 @@ void servicebouquets_update(int flag)
             configname = ostrcat(configname, name, 1, 0);
             configname = ostrcat(configname, "_servicebouquets_autoupdate_allchannels", 1, 0);
 
-            if(getconfigint("tithek_vavoo_servicebouquets_autoupdate_msg", NULL) == 1)
+            if(getconfigint("tithek_servicebouquets_autoupdate_msg", NULL) == 1)
         		textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 1100, 300, 5, 2);
 	        debug(202, "%s", tmpstr2);
 		    drawscreen(skin, 0, 0);

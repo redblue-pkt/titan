@@ -433,7 +433,7 @@ search()
         if [ "$ADD2CHANNEL" == "1" ];then
             MSG="Create Service Bouquets"
         elif [ "$ADD2CHANNEL" == "2" ];then
-            MSG="Update all Services with VaVoo Streamurl and Service Bouquets"
+            MSG="Update all Services with LoadM3U Streamurl and Service Bouquets"
         fi
         if [ "$error" == "1" ];then
             echo "errormsg: $MSG "$NAME"-"$NEXT" has been creating error in /tmp/settings"
