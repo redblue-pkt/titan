@@ -1715,6 +1715,8 @@ int localparser_search(struct skin* grid, struct skin* listbox, struct skin* cou
 
 	if(searchstr == NULL)
 		search = textinputhist(_("Search"), " ", "searchhist");
+    else if(ostrcmp(searchstr, link) == 0)
+		search = textinputhist(_("Select Favorite"), " ", "searchhist");
 	else
 		search = textinputhist(_("Search"), searchstr, "searchhist");
 
