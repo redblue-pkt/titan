@@ -19,7 +19,11 @@ case $2 in
 		if [ -z "$FILENAME" ]; then FILENAME=none;fi
 		PICNAME="$FILENAME"
 		if [ `cat /mnt/config/titan.cfg | grep tithek_loadm3u_url= | wc -l` -eq 1 ];then
-			URL=$(cat /mnt/config/titan.cfg | grep "tithek_loadm3u_url=" | sed 's/tithek_loadm3u_url=//g') 
+			URL=$(cat /mnt/config/titan.cfg | grep "tithek_loadm3u_url=" | sed 's/tithek_loadm3u_url=//g')
+            if [ `cat /mnt/config/searchhist | grep "$URL" | wc -l` -eq 0 ];then
+    #echo " " >> /mnt/config/titan.cfg
+                echo "$URL" >> /mnt/config/searchhist
+            fi
 		else
             if [ -e "/mnt/swapextensions/usr/local/share/titan/plugins/network/xupnpd/etc/playlists" ];then
                 URL="/mnt/swapextensions/usr/local/share/titan/plugins/network/xupnpd/etc/playlists"
