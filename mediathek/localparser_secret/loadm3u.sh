@@ -53,6 +53,7 @@ mainmenu()
     else
     	echo "Category#$SRC $SRC category#http://openaaf.dyndns.tv/mediathek/menu/category.jpg#category.jpg#$NAME#0" >$TMP/$FILENAME.list
      	echo "Suchen#$SRC $SRC search '$URL' '%search%' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
+     	echo "Auswahl#$SRC $SRC search '%search%' '%search%' 1#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
     fi
 
 	echo "$TMP/$FILENAME.list"
@@ -60,6 +61,10 @@ mainmenu()
 
 category()
 {
+#needed without write URL to titan.cfg
+#    if [ "$PAGE" == "$NEXT" ];then
+#        URL=$PAGE
+#    fi
     rm "$TMP/$FILENAME.list"
     if [ ! -e "$TMP/$FILENAME.list" ]; then
         if [ $(echo "$URL" | grep ^/ | wc -l) -eq 1 ];then
@@ -68,7 +73,6 @@ category()
             while read -u 3 ROUND; do
 		        TITLE=`echo $ROUND | sed 's/.m3u//'`
 		        filename=`echo $TITLE`
-#		        echo "$TITLE#$SRC $SRC search '$URL/$ROUND' '$URL/$ROUND' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
 		        echo "$TITLE#$SRC $SRC search '$URL/$ROUND' '$TITLE' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
     		done 3<$TMP/cache.$FILENAME.1
         else
@@ -170,6 +174,18 @@ category()
 
 search()
 {
+    if [ "$PAGE" == "$NEXT" ];then
+#echo 11
+        if [ `cat /mnt/config/titan.cfg | grep "tithek_loadm3u_url=" | wc -l` -eq 0 ];then
+#echo " " >> /mnt/config/titan.cfg
+            echo "tithek_loadm3u_url=$PAGE" >> /mnt/config/titan.cfg
+        else
+            sed "s#.*tithek_loadm3u_url=.*#tithek_loadm3u_url=$PAGE#g" -i /mnt/config/titan.cfg
+        fi
+#echo 22
+        $SRC $SRC category $PAGE $NEXT 1
+        exit
+    fi
     echo 3 > /proc/sys/vm/drop_caches
 
     rm "$TMP/$FILENAME.list"
