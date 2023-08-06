@@ -20,9 +20,10 @@ case $2 in
 		PICNAME="$FILENAME"
 		if [ `cat /mnt/config/titan.cfg | grep tithek_loadm3u_url= | wc -l` -eq 1 ];then
 			URL=$(cat /mnt/config/titan.cfg | grep "tithek_loadm3u_url=" | sed 's/tithek_loadm3u_url=//g')
-            if [ `cat /mnt/config/searchhist | grep "$URL" | wc -l` -eq 0 ];then
+            if [ `cat /mnt/config/searchhistory | grep ^"$URL" | wc -l` -eq 0 ];then
     #echo " " >> /mnt/config/titan.cfg
-                echo "$URL" >> /mnt/config/searchhist
+                echo "$URL" >> /mnt/config/searchhistory
+                sed -e '/^\s*$/' -i /mnt/config/searchhistory
             fi
 		else
             if [ -e "/mnt/swapextensions/usr/local/share/titan/plugins/network/xupnpd/etc/playlists" ];then
@@ -182,9 +183,10 @@ search()
 #echo 11
         if [ `cat /mnt/config/titan.cfg | grep "tithek_loadm3u_url=" | wc -l` -eq 0 ];then
 #echo " " >> /mnt/config/titan.cfg
-            echo "tithek_loadm3u_url=$PAGE" >> /mnt/config/titan.cfg
+            echo -en "\ntithek_loadm3u_url=$PAGE" >> /mnt/config/titan.cfg
+            sed -e '/^\s*$/' -i /mnt/config/titan.cfg
         else
-            sed "s#.*tithek_loadm3u_url=.*#tithek_loadm3u_url=$PAGE#g" -i /mnt/config/titan.cfg
+            sed "s#tithek_loadm3u_url=.*#tithek_loadm3u_url=$PAGE#g" -i /mnt/config/titan.cfg
         fi
 #echo 22
         $SRC $SRC category $PAGE $NEXT 1
