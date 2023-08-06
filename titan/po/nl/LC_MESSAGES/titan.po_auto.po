@@ -9259,7 +9259,7 @@ msgstr ""
 #: thefile.h:206 thevideo.h:29 thevideo.h:66 thevideo.h:72 timeshift.h:138
 #: timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45 titan.c:334
 #: titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
-#: tithek.c:105 tithek_global.h:228 tithek_global.h:2036 tithek.h:724
+#: tithek.c:105 tithek_global.h:228 tithek_global.h:2038 tithek.h:724
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
 #: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2706
 #: tithek.h:2894 tithek.h:3219 tithek.h:3289 tithek.h:3332 tithek.h:3345
@@ -10211,7 +10211,7 @@ msgstr ""
 #: timeshift.h:138 timeshift.h:190 timeshift.h:203 timeshiftsettings.h:45
 #: titan.c:334 titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228
-#: tithek_global.h:2036 tithek.h:724 tithek.h:1711 tithek.h:1738 tithek.h:1760
+#: tithek_global.h:2038 tithek.h:724 tithek.h:1711 tithek.h:1738 tithek.h:1760
 #: tithek.h:1782 tithek.h:1839 tithek.h:2018 tithek.h:2033 tithek.h:2236
 #: tithek.h:2291 tithek.h:2313 tithek.h:2706 tithek.h:2894 tithek.h:3219
 #: tithek.h:3289 tithek.h:3332 tithek.h:3345 tithek_settings.h:271
@@ -13466,8 +13466,8 @@ msgstr "Script heeft geen output of is gestart op de achtergrond."
 #: skins_default_skin.xml.h:579 solarmovie.h:138 solarmovie.h:140
 #: solarmovie.h:272 solarmovie.h:274 tectime.h:13 tectime.h:15
 #: tithek_global.h:882 tithek_global.h:1009 tithek_global.h:1078
-#: tithek_global.h:1080 tithek_global.h:1717 tithek_global.h:1719
-#: tithek_global.h:1765 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
+#: tithek_global.h:1080 tithek_global.h:1717 tithek_global.h:1721
+#: tithek_global.h:1767 tithek_mainmenu.h:107 tmdb.h:898 tvtoast.h:530
 #: tvtoast.h:532 xvideos.h:57 xvideos.h:59 youtube.h:253 youtube.h:255
 #: youtube.h:367 youtube.h:369 zdf.h:147 zdf.h:149
 msgid "Search"
@@ -13535,6 +13535,10 @@ msgstr "Tweede informatiebalk"
 #: ipkg.h:647 tpk.h:3505
 msgid "Section: "
 msgstr "Sectie:"
+
+#: tithek_global.h:1719
+msgid "Select Favorite"
+msgstr ""
 
 #: amazon.h:660
 msgid "Select Language"
@@ -15761,7 +15765,7 @@ msgstr ""
 msgid "Titan Mediathek"
 msgstr ""
 
-#: play.h:1058 tithek_global.h:2029
+#: play.h:1058 tithek_global.h:2031
 msgid "Titan will be reloaded Channellist!"
 msgstr ""
 
@@ -15822,7 +15826,7 @@ msgstr ""
 msgid "Tithek - Favorite Edit"
 msgstr ""
 
-#: tithek.c:144 tithek_global.h:840 tithek_global.h:963 tithek_global.h:1829
+#: tithek.c:144 tithek_global.h:840 tithek_global.h:963 tithek_global.h:1831
 msgid "Tithek - Mainmenu"
 msgstr "Tithek - Hoofdmenu"
 
