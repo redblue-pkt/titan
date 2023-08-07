@@ -290,15 +290,15 @@ search()
                             split($0, a, ",")
                             tag = a[length(a)]
                             title = tag
-                            if (title ~ /:/)
-                            {
-                                split(title, b, ":")
-                                tag2 = b[length(b)]
-                                tag3 = b[1]
-                                gsub(/^ /, "", tag3)
-
-                                title = tag2 " (" tag3 ")"
-                            }
+#                            if (title ~ /:/)
+#                            {
+#                                split(title, b, ":")
+#                                tag2 = b[length(b)]
+#                                tag3 = b[1]
+#                                gsub(/^ /, "", tag3)
+#
+#                                title = tag2 " (" tag3 ")"
+#                            }
                         }
 				        picname = tolower(title)
 
