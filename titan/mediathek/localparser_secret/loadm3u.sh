@@ -195,6 +195,9 @@ category()
 
 search()
 {
+    if [ $(echo "$URL" | grep ^/ | wc -l) -eq 1 ] && [ -d "$URL" ];then
+        exit
+    fi
     if [ "$PAGE" == "$NEXT" ];then
 #echo 11
         if [ `cat /mnt/config/titan.cfg | grep "tithek_loadm3u_url=" | wc -l` -eq 0 ];then
