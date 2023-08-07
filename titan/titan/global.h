@@ -8773,7 +8773,7 @@ void servicebouquetsthread(struct stimerthread* timernode, int flag)
 {
 	debug(202, "flag: %d", flag);
 start:
-    if(getconfigint("tithek_vavoo_servicebouquets_autoupdate", NULL) == 1)
+    if(getconfigint("tithek_servicebouquets_autoupdate", NULL) == 1)
     {
         int count = 0, ret = 0;
 
