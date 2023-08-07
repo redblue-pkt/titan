@@ -73,13 +73,19 @@ category()
     rm "$TMP/$FILENAME.list"
     if [ ! -e "$TMP/$FILENAME.list" ]; then
         if [ $(echo "$URL" | grep ^/ | wc -l) -eq 1 ];then
-            ls -1 "$URL" > $TMP/cache.$FILENAME.1
-
-            while read -u 3 ROUND; do
-		        TITLE=`echo $ROUND | sed 's/.m3u//'`
+            if [ $(echo "$URL" | awk '{ split($0, a, ".");print a[length(a)]}') == "m3u" ];then
+		        TITLE=`echo $URL | sed 's/.m3u//' | awk '{ split($0, a, "/");print a[length(a)]}'`
 		        filename=`echo $TITLE`
-		        echo "$TITLE#$SRC $SRC search '$URL/$ROUND' '$TITLE' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
-    		done 3<$TMP/cache.$FILENAME.1
+		        echo "$TITLE#$SRC $SRC search '$URL' '$TITLE' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+            else
+                ls -1 "$URL" > $TMP/cache.$FILENAME.1
+
+                while read -u 3 ROUND; do
+		            TITLE=`echo $ROUND | sed 's/.m3u//'`
+		            filename=`echo $TITLE`
+		            echo "$TITLE#$SRC $SRC search '$URL/$ROUND' '$TITLE' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+        		done 3<$TMP/cache.$FILENAME.1
+            fi
         else
 		    $curlbin -o - "$URL" | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		    '
@@ -107,6 +113,16 @@ category()
                             split($0, a, ",")
                             tag = a[length(a)]
                             title = tag
+
+#                            if (title ~ /:/)
+#                            {
+#                                split(title, b, ":")
+#                                tag2 = b[length(b)]
+#                                tag3 = b[1]
+#                                gsub(/^ /, "", tag3)
+#
+#                                title = tag2 " (" tag3 ")"
+#                            }
 
 						    found = 2
 						    next
@@ -257,6 +273,16 @@ search()
 					        i = index($0, "tvg-name=\"") + 10
 		                    j = index(substr($0, i), "\"") - 1
        	                    title = substr($0, i, j)
+
+#                            if (title ~ /:/)
+#                            {
+#                                split(title, b, ":")
+#                                tag2 = b[length(b)]
+#                                tag3 = b[1]
+#                                gsub(/^ /, "", tag3)
+#
+#                                title = tag2 " (" tag3 ")"
+#                            }
                         }
                         else
                         {
@@ -264,6 +290,15 @@ search()
                             split($0, a, ",")
                             tag = a[length(a)]
                             title = tag
+                            if (title ~ /:/)
+                            {
+                                split(title, b, ":")
+                                tag2 = b[length(b)]
+                                tag3 = b[1]
+                                gsub(/^ /, "", tag3)
+
+                                title = tag2 " (" tag3 ")"
+                            }
                         }
 				        picname = tolower(title)
 
