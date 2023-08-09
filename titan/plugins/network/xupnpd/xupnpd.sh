@@ -18,10 +18,13 @@ if [ -e /etc/.ddtbuild ];then
     fi	
     export XUPNPDROOTDIR=$INSTDIR/etc/xupnpd
 else
-    INSTDIR=`echo $0 | sed -e s/xupnpd.sh//g`
+#    INSTDIR=`echo $0 | sed -e s/xupnpd.sh//g`
+#    export XUPNPDROOTDIR=$INSTDIR/etc
+#    export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin:$INSTDIR
 
-    export XUPNPDROOTDIR=$INSTDIR/etc
-    export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin:$INSTDIR
+    INSTDIR=`echo $0 | sed -e 's;/usr/local/share/titan/plugins/network/xupnpd/xupnpd.sh;;g'`
+    export XUPNPDROOTDIR=$INSTDIR/usr/share/xupnpd
+    export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin:$INSTDIR/usr/bin
 fi
 
 model=`cat /etc/model | tr [a-z] [A-Z]`
@@ -38,7 +41,8 @@ case $1 in
     if [ -e /etc/.ddtbuild ];then
     	bouquet2m3u $IP $PORT $INSTDIR/etc/xupnpd/playlists
     else
-    	bouquet2m3u $IP $PORT $INSTDIR/etc/playlists
+#    	bouquet2m3u $IP $PORT $INSTDIR/etc/playlists
+    	bouquet2m3u $IP $PORT $INSTDIR/usr/share/xupnpd/playlists
     fi
     start-stop-daemon --verbose --start --exec xupnpd
   ;;
