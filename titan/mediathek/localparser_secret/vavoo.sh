@@ -128,7 +128,7 @@ category()
 
 search()
 {
-rm $TMP/$FILENAME.list
+#rm $TMP/$FILENAME.list
     echo 3 > /proc/sys/vm/drop_caches
 
     NEXT=$(echo $NEXT | tr '+' ' ')
@@ -153,12 +153,9 @@ rm $TMP/$FILENAME.list
 
 	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
         getkey
-#        vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
-        vavoo_auth=$(cat /tmp/vavoo.authkey | tr -d '\n')
-        DDTBUILD=0
-        if [ -e /etc/.ddtbuild ]; then DDTBUILD=1;fi
+        vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
 
-		$curlbin -o - $URL$PAGE | sed 's!},{!}\n{!g' | awk -v DDTBUILD="$DDTBUILD" -v vavoo_auth="$vavoo_auth" -v ADD2CHANNEL="$ADD2CHANNEL" -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin -o - $URL$PAGE | sed 's!},{!}\n{!g' | awk -v vavoo_auth="$vavoo_auth" -v ADD2CHANNEL="$ADD2CHANNEL" -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
@@ -231,8 +228,7 @@ rm $TMP/$FILENAME.list
 			            i = index($0, "\"url\":\"") + 7
                         j = index(substr($0, i), "\"") - 1
                         newpage = substr($0, i, j)
-                        if (DDTBUILD == 0)
-                            newpage = newpage "?n=1&b=5&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6"
+                        newpage = newpage "?n=1&b=5&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6"
 
 				        if (++dup[title] == 1 && title != "" && title !~ "= = =")
 				        {
@@ -244,8 +240,6 @@ rm $TMP/$FILENAME.list
 
                             if(ADD2CHANNEL != 0)
                             {
-                                if (DDTBUILD == 1)
-                                    newpage = newpage "?n=1&b=5&vavoo_auth=12345|User-Agent=VAVOO/2.6"
                                 epgurl = "http://epgurl.dummy.to/" id
 
                                 if(ADD2CHANNEL == 2)
@@ -271,9 +265,6 @@ rm $TMP/$FILENAME.list
                             }
                             else
                             {
-                                if (DDTBUILD == 1)
-                                    newpage = newpage "?n=1&b=5&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6"
-
         					    print title "#" newpage "&tslivemode=1#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
     #   					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
     #	    					print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
@@ -409,7 +400,16 @@ save()
 
     cp /tmp/settings/bouquets.cfg /mnt/settings/bouquets.cfg
     cp /tmp/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv /mnt/settings/bouquets.tithek.autoupdate."$NAME"."$NEXT".tv 
-    cp /tmp/settings/channel /mnt/settings/channel
+
+    freespace=`getfreespace /mnt/settings`
+    filesize=`getfreespace /tmp/settings/channel`
+    if [ "$freespace" -lt "$filesize" ]; then
+        cp /tmp/settings/channel /mnt/settings/channel
+    else
+        vavoo_auth=$(cat /tmp/vavoo.authkey | tr -d '\n')
+        cat /tmp/settings/channel | sed "s/vavoo_auth=$vavoo_auth|User-Agent=/vavoo_auth=12345|User-Agent=/g" > /tmp/settings/channel.wokey
+        cp /tmp/settings/channel.wokey /mnt/settings/channel
+    fi
     cp /tmp/settings/transponder /mnt/settings/transponder
     cp /tmp/settings/satellites /mnt/settings/satellites
 
