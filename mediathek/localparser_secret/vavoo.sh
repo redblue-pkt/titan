@@ -403,7 +403,7 @@ save()
 
     freespace=`getfreespace /mnt/settings`
     filesize=`getfreespace /tmp/settings/channel`
-    if [ "$freespace" -lt "$filesize" ]; then
+    if [ "$freespace" -gt "$filesize" ]; then
         cp /tmp/settings/channel /mnt/settings/channel
     else
         vavoo_auth=$(cat /tmp/vavoo.authkey | tr -d '\n')
