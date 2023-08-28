@@ -49,7 +49,7 @@ getkey()
 #        base64 -d $TMP/vavoo.4.signed > $TMP/vavoo.5.signed.base64
 #        cat $TMP/vavoo.5.signed.base64 | sed 's#false#true#g' | sed 's#\\"Daily usage duration reached\\"#null#g' | sed 's#\\"version\\":null#\\"version\\":\\"2.6\\"#g' | sed 's#\\"serivce\\":null#\\"serivce\\":\\"1.2.26\\"#g' | sed 's#\\"verified\\":true#\\"verified\\":\\"false\\"#g' | sed 's#\\"platform\\":null#\\"platform\\":\\"vavoo\\"#g' | sed "s#:16#:26#g" > $TMP/vavoo.7.signed.base64.timestamp.sed
 
-        curl -k --location --request POST 'https://www.vavoo.tv/api/box/ping2' --header 'Content-Type: application/json' --data "{\"vec\": \"$(curl http://openaaf.dyndns.tv/mediathek/vec | $BUSYBOXBIN shuf -n 1)\"}" | sed 's#^.*"signed":"##' | sed "s#\"}}##g" | sed 's/".*//' > $TMP/vavoo.4.signed
+        curl -k --location --request POST 'https://www.vavoo.tv/api/box/ping2' --header 'Content-Type: application/json' --data "{\"vec\": \"$(curl https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/master/data.json | sed -nr 's/.*\"([^\"]+)\".*/\1/p' | $BUSYBOXBIN shuf -n 1)\"}" | sed 's#^.*"signed":"##' | sed "s#\"}}##g" | sed 's/".*//' > $TMP/vavoo.4.signed
 
         cp $TMP/vavoo.4.signed /tmp/vavoo.authkey
         base64 -d $TMP/vavoo.4.signed > $TMP/vavoo.5.signed.base64
@@ -67,13 +67,12 @@ mainmenu()
 
 category()
 {
+#rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
 
-#		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
-
-		$curlbin -o - $URL$PAGE | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin -o - $URL$PAGE | sed 's!},{!}\n{!g' | awk -v TEST=$TEST -v TMP=$TMP -v FILENAME=$FILENAME -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
@@ -81,29 +80,13 @@ category()
 				newpage = ""
 				piccount = 0
 			}
-            /#EXTINF/ \
+            /{\"group\":/ \
 			{
 				if (suche == 1)
 				{
-				    if ($0 ~ /group-title=/)
-				    {
-					    i = index($0, "group-title=\"") + 13
-		                j = index(substr($0, i), "\"") - 1
-		                title = substr($0, i, j)
-				    }
-				    else
-				    {
-                        #EXTINF:-1,DE: ARTE
-#					    i = index($0, ":-1,") + 4
-#					    title = substr($0, i, length($0) - 1)
-                        split($0, a, ",")
-                        tag = a[length(a)]
-                        title = tag
-
-					    found = 2
-					    next
-				    }
-
+				    i = index($0, "{\"group\":\"") + 10
+	                j = index(substr($0, i), "\"") - 1
+	                title = substr($0, i, j)
 
 				    picname = tolower(title)
                 	gsub(" ", ".", picname)
@@ -145,7 +128,7 @@ category()
 
 search()
 {
-rm $TMP/$FILENAME.list
+#rm $TMP/$FILENAME.list
     echo 3 > /proc/sys/vm/drop_caches
 
     NEXT=$(echo $NEXT | tr '+' ' ')
@@ -170,9 +153,10 @@ rm $TMP/$FILENAME.list
 
 	if [ ! -e "$TMP/$FILENAME.list" ] || [ "$ADD2CHANNEL" != "0" ]; then
         getkey
-        vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
+#        vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
+        vavoo_auth=$(cat /tmp/vavoo.authkey | tr -d '\n')
 
-		$curlbin -o - $URL$PAGE | sed -e "s/\.ts$/\.ts?n=1\&b=5\&vavoo_auth=$vavoo_auth|User-Agent=VAVOO\/2.6/g" -e 's/^http:/#EXTVLCOPT:http-user-agent=VAVOO\/2.6\nhttp:/g' | awk -v vavoo_auth="$vavoo_auth" -v ADD2CHANNEL="$ADD2CHANNEL" -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
+		$curlbin -o - $URL$PAGE | sed 's!},{!}\n{!g' | awk -v vavoo_auth="$vavoo_auth" -v ADD2CHANNEL="$ADD2CHANNEL" -v NEXT="$NEXT" -v SRC=$SRC -v URL=$URL -v PAGE=$PAGE -v NAME=$NAME -v PICNAME=$PICNAME \
 		'
 			BEGIN \
 			{
@@ -193,26 +177,16 @@ rm $TMP/$FILENAME.list
                     cmd2 = "sed "
                 }
 			}
-            /#EXTINF/ \
+            /{\"group\":/ \
 			{
                 IGNORECASE=1;
                 if ($0 ~ NEXT)
                 {
 				    if (found == 0)
 				    {
-					    if ($0 ~ /tvg-name/)
-					    {
-					        i = index($0, "tvg-name=\"") + 10
-		                    j = index(substr($0, i), "\"") - 1
-       	                    title = substr($0, i, j)
-                        }
-                        else
-                        {
-                            #EXTINF:-1,DE: ARTE
-                            split($0, a, ",")
-                            tag = a[length(a)]
-                            title = tag
-                        }
+			            i = index($0, "\"name\":\"") + 8
+                        j = index(substr($0, i), "\"") - 1
+                        title = substr($0, i, j)
 
 					    picname = tolower(title)
 
@@ -239,14 +213,10 @@ rm $TMP/$FILENAME.list
                         gsub(/[ ]+$/, "", picname)
                         gsub(/ +/, "", picname)
 
-                        if ($0 ~ /tvg-logo=/)
-                        {
-    					    i = index($0, "tvg-logo=\"") + 10
-	    	                j = index(substr($0, i), "\"") - 1
-	       	                pic = substr($0, i, j)
-                            gsub("https://vjackson.info", URL, pic)
-
-                        }
+			            i = index($0, "\"logo\":\"") + 8
+    	                j = index(substr($0, i), "\"") - 1
+       	                pic = substr($0, i, j)
+                        gsub("https://vjackson.info", URL, pic)
 
 					    if ( pic == "" )
 						    pic = "http://openaaf.dyndns.tv/mediathek/menu/" picname ".jpg"
@@ -256,78 +226,63 @@ rm $TMP/$FILENAME.list
                         else
                             picext = "jpg"  
 
-                        found = 1
-					    next
-                    }
-				}
-            }
-            /^http/ \
-			{
-                if (found == 1)
-                {
-#	                newpage = substr($0, 1, length($0) - 1)
-	                newpage = substr($0, 1, length($0))
-				    if (++dup[title] == 1 && title != "" && title !~ "= = =")
-				    {
-					    piccount += 1
+			            i = index($0, "\"url\":\"") + 7
+                        j = index(substr($0, i), "\"") - 1
+                        newpage = substr($0, i, j)
+                        newpage = newpage "?n=1&b=5&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6"
 
-					    i = index($0, "/live/") + 6
-		                j = index(substr($0, i), ".ts") - 1
-		                id = substr($0, i, j)
+				        if (++dup[title] == 1 && title != "" && title !~ "= = =")
+				        {
+					        piccount += 1
 
-                        if(ADD2CHANNEL != 0)
-                        {
-                            epgurl = "http://epgurl.dummy.to/" id
+					        i = index(newpage, "/live2/play/") + 12
+		                    j = index(substr(newpage, i), ".ts") - 1
+		                    id = substr(newpage, i, j)
 
-                            if(ADD2CHANNEL == 2)
+                            if(ADD2CHANNEL != 0)
                             {
-#                               newpage2 = newpage
-#                                j = index(substr($0, 1), "?n=1&b=5&vavoo_auth=") - 1
-#                                newpage2 = substr($0, 1, j)
-                                #real    1m3.487s
-#                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1#;g\" \x5c\n"
-                                newpage3 = newpage
-                                gsub("(&)", "\\\\\\&", newpage3) 
-                                cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage3 "\\&tslivemode=1#;g\" \x5c\n"
-                            }
-                            else if(ADD2CHANNEL == 3)
-                            {
-#                                newpage2 = newpage
-#                                j = index(substr($0, 1), "?n=1&b=5&vavoo_auth=") - 1
-#                                newpage2 = substr($0, 1, j)
-                                #real    1m27.071s
-#                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/2.6&tslivemode=1;#" newpage2 "?n=1\\&b=5\\&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
-                                cmd3 = cmd3 "sed \"s;#http.*/" id ".ts.*VAVOO/#;#" newpage3 "\\&tslivemode=1;g\" -i /tmp/settings/channel.tmp\n"
+#                                newpage = newpage "?n=1&b=5&vavoo_auth=12345|User-Agent=VAVOO/2.6"
+                                epgurl = "http://epgurl.dummy.to/" id
+
+                                if(ADD2CHANNEL == 2)
+                                {
+                                    #real    1m3.487s
+                                    newpage3 = newpage
+                                    gsub("(&)", "\\\\\\&", newpage3) 
+                                    cmd2 = cmd2 " -e \"s;#http.*/" id ".ts.*VAVOO.*#;#" newpage3 "\\&tslivemode=1#;g\" \x5c\n"
+                                }
+                                else
+                                {
+                                    #real    0m6.421s
+                                    #user    0m4.576s
+                                    #sys     0m1.168s
+                                }
+
+                                cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
+                                cmd = cmd "echo \"" id "#0#0#0#20000#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
+                                cmd = cmd "echo \"VaVoo (IpTV)#0#20000#3\" >> /tmp/settings/satellites.tmp\n"
+                                cmd = cmd "echo \"0#" id "\" >> \"/tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\"\n"
+                                if(++dup[cmd4] == 1)
+                                    cmd4 = cmd4 "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
                             }
                             else
                             {
-                                #real    0m6.421s
-                                #user    0m4.576s
-                                #sys     0m1.168s
-                            }
+#                                newpage = newpage "?n=1&b=5&vavoo_auth=" vavoo_auth "|User-Agent=VAVOO/2.6"
 
-                            cmd = cmd "echo \"" title "#" id "#0#0#0#0#0#0#0#0#0#0#" newpage "&tslivemode=1#" epgurl "\" >> /tmp/settings/channel.tmp\n"
-                            cmd = cmd "echo \"" id "#0#0#0#20000#0#0#0#0#0#0#2\" >> /tmp/settings/transponder.tmp\n"
-                            cmd = cmd "echo \"VaVoo (IpTV)#0#20000#3\" >> /tmp/settings/satellites.tmp\n"
-                            cmd = cmd "echo \"0#" id "\" >> \"/tmp/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv.tmp\"\n"
-                            if(++dup[cmd4] == 1)
-                                cmd4 = cmd4 "echo \"" NAME "-" NEXT "#0#/mnt/settings/bouquets.tithek.autoupdate." NAME "." NEXT ".tv\" >> /tmp/settings/bouquets.cfg.tmp\n"
-                        }
-                        else
-                        {
-    					    print title "#" newpage "&tslivemode=1#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
-#   					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
-#	    					print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
-#	    					print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
-                        }
-				    }
-				    
-				    newpage = ""
-				    title = ""
-				    picname = ""
-				    pic = ""
-                    found = 0
-				    next
+        					    print title "#" newpage "&tslivemode=1#" pic "#" PICNAME "." picname "." picext "#" NAME "#2"
+    #   					    print title "#" newpage "#" pic "#" PICNAME "." piccount "." picext "#" NAME "#2"
+    #	    					print title " (" extra ")#" SRC " " SRC " play \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+    #	    					print title "#" SRC " " SRC " hoster \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#111"
+                            }
+				        }
+				        
+				        newpage = ""
+				        title = ""
+				        picname = ""
+				        pic = ""
+                        found = 0
+				        next
+                    }
 				}
 			}
 			END \
