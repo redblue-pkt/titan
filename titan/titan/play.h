@@ -2480,7 +2480,7 @@ void streamplayer(struct channel* chnode, int flag)
     servicestop(status.aktservice, 1, 5);
     printf("for console test add streamplayer_use_console=1 to titan.cfg\n");
 
-    if(getconfigint("tithek_vavoo_servicebouquets_autoupdate", NULL) == 1)
+    if(getconfigint("tithek_servicebouquets_autoupdate", NULL) == 1)
     {
         if(ostrstr(chnode->streamurl, "vavoo_auth=") != NULL)
         {
