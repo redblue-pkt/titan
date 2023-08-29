@@ -67,7 +67,7 @@ mainmenu()
 
 category()
 {
-#rm $TMP/$FILENAME.list
+rm $TMP/$FILENAME.list
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
         getkey
         vavoo_auth=$(base64 $TMP/vavoo.7.signed.base64.timestamp.sed | tr -d '\n')
@@ -80,11 +80,11 @@ category()
 				newpage = ""
 				piccount = 0
 			}
-            /{\"group\":/ \
+            /\{\"group\":/ \
 			{
 				if (suche == 1)
 				{
-				    i = index($0, "{\"group\":\"") + 10
+				    i = index($0, "\{\"group\":\"") + 10
 	                j = index(substr($0, i), "\"") - 1
 	                title = substr($0, i, j)
 
@@ -176,7 +176,7 @@ search()
                     cmd2 = "sed "
                 }
 			}
-            /{\"group\":/ \
+            /\{\"group\":/ \
 			{
                 IGNORECASE=1;
                 if ($0 ~ NEXT)
