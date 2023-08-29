@@ -49,7 +49,7 @@ getkey()
 #        base64 -d $TMP/vavoo.4.signed > $TMP/vavoo.5.signed.base64
 #        cat $TMP/vavoo.5.signed.base64 | sed 's#false#true#g' | sed 's#\\"Daily usage duration reached\\"#null#g' | sed 's#\\"version\\":null#\\"version\\":\\"2.6\\"#g' | sed 's#\\"serivce\\":null#\\"serivce\\":\\"1.2.26\\"#g' | sed 's#\\"verified\\":true#\\"verified\\":\\"false\\"#g' | sed 's#\\"platform\\":null#\\"platform\\":\\"vavoo\\"#g' | sed "s#:16#:26#g" > $TMP/vavoo.7.signed.base64.timestamp.sed
 
-        $curlbin3 --location --request POST 'https://www.vavoo.tv/api/box/ping2' --header 'Content-Type: application/json' --data "{\"vec\": \"$(curl -vk https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/master/data.json | sed -nr 's/.*\"([^\"]+)\".*/\1/p' | $BUSYBOXBIN shuf -n 1)\"}" | sed 's#^.*"signed":"##' | sed "s#\"}}##g" | sed 's/".*//' > $TMP/vavoo.4.signed
+        $curlbin3 --location --request POST 'https://www.vavoo.tv/api/box/ping2' --header 'Content-Type: application/json' --data "{\"vec\": \"$($curlbin3 https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/master/data.json | sed -nr 's/.*\"([^\"]+)\".*/\1/p' | $BUSYBOXBIN shuf -n 1)\"}" | sed 's#^.*"signed":"##' | sed "s#\"}}##g" | sed 's/".*//' > $TMP/vavoo.4.signed
         cp $TMP/vavoo.4.signed /tmp/vavoo.authkey
         base64 -d $TMP/vavoo.4.signed > $TMP/vavoo.5.signed.base64
         cat $TMP/vavoo.5.signed.base64 > $TMP/vavoo.7.signed.base64.timestamp.sed
