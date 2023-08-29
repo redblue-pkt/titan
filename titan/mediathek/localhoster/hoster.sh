@@ -58,6 +58,7 @@ proxy=`cat /mnt/config/titan.cfg | grep tithek_proxy | cut -d"=" -f2`
 if [ ! -z "$proxy" ];then PROXY="--proxy $proxy"; fi
 curlbin="$CURLBIN $PROXY -k -s -L --connect-timeout 5 --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
 curlbin2="$CURLBIN $PROXY -k -s --connect-timeout 5 --cookie /mnt/network/cookies --cookie-jar /mnt/network/cookies -A $USERAGENT -u $AUTH"
+curlbin3="$CURLBIN -k --connect-timeout 5"
 
 if [ -e /etc/.oebuild ];then
 	if [ "$DISTRO" == "7.1" ] || [ "$DISTRO" == "7.2" ] || [ "$DISTRO" == "7.3" ];then
@@ -92,6 +93,7 @@ fi
 
 if [ "$debuglevel" == "99" ]; then curlbin="$curlbin -v"; fi
 if [ "$debuglevel" == "99" ]; then curlbin2="$curlbin2 -v"; fi
+if [ "$debuglevel" == "99" ]; then curlbin3="$curlbin3 -v"; fi
 if [ "$debuglevel" == "99" ]; then youtubebin="$youtubebin --verbose"; fi
 
 wgetbin="wget -q -T2"
