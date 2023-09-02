@@ -42,6 +42,7 @@ init()
 
 mainmenu()
 {
+	$curlbin -H "X-Requested-With: XMLHttpRequest" -X POST --data "password=abc123456&email=Ither1981%40dayrep.com" "$URL/login"> /dev/null 2>&1
 	echo "Neue Episoden#$SRC $SRC latest 'neue-episoden'#http://openaaf.dyndns.tv/mediathek/menu/new.jpg#new.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Neue Serien#$SRC $SRC list 'neu'#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Populär#$SRC $SRC list 'beliebte-serien'#http://openaaf.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#$NAME#0" >>$TMP/$FILENAME.list
@@ -613,6 +614,11 @@ hosterlist()
 hoster()
 {
 	rm -f $TMP/cache.hoster.$hoster.* > /dev/null 2>&1
+	$curlbin -H "X-Requested-With: XMLHttpRequest" -X POST --data "password=abc123456&email=Ither1981%40dayrep.com" "$URL/login"> /dev/null 2>&1
+	$curlbin "$URL/$PAGE" >$TMP/cache.hoster.$hoster.0
+    URL=`cat $TMP/cache.hoster.$hoster.0 | sed -nr 's/.*<meta name="og:url" content="([^"]+)".*/\1/p'`
+	echo $URL
+    exit
 
 	$curlbin -H "X-Requested-With: XMLHttpRequest" -X POST --data "password=abc123456&email=Ither1981%40dayrep.com" "$URL/login"
 #	$curlbin2 -v https://s.to/redirect/1131416
