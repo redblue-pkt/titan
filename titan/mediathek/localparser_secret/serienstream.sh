@@ -632,7 +632,7 @@ hoster()
 search()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""' | grep $PAGE2 | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""' | grep $PAGE2 | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -659,6 +659,8 @@ search()
 
 					if (title != "")
 					{
+                        pic = "echo " URLMAIN " | tr -d \"\\n\" && curl --connect-timeout 5 " URLMAIN newpage " | tr -d \"\\n\" | sed -nr \"s/.*<noscript><img src=\\\"([^\\\"]+)\\\".*/\\1/p\""
+
 						if ( pic == "" )
 						{
 			      			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
