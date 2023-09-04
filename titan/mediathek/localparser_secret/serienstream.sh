@@ -8,7 +8,7 @@ NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-#URL=https://s.to
+URLMAIN=https://s.to
 URL=http://190.115.18.20
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=SerienStream
@@ -72,7 +72,7 @@ sorted()
 all()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""'| sort -u | awk -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""'| sort -u | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -104,7 +104,7 @@ all()
 			      			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 						}
 
-                        desc = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+                        desc = "curl --connect-timeout 5 " URLMAIN newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
 
 #<div class="backdrop" style="background-image: url(https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-dGoiANWASrQtOOxy58TI9aKYfqDqq4sk_800x300.png)"></div>            <div class="container row">
 #<div class="seriesCoverBox"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAAAA6fptVAAAACklEQVR4nGP6AgAA+gD3odZZSQAAAABJRU5ErkJggg==" data-src="https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-GTyjOBAKAL3Ifah66vuKkBDC1Z2esgrm_220x330.jpg" alt="Reacher, Cover, HD, Serien Stream, ganze Folge" itemprop="image" title="Cover Reacher SerienStream"><noscript><img src="https://zrt5351b7er9.static-webarchive.org/img/cover/reacher-stream-cover-GTyjOBAKAL3Ifah66vuKkBDC1Z2esgrm_220x330.jpg" alt="Reacher, Cover, HD, Serien Stream, ganze Folge" itemprop="image" title="Cover Reacher SerienStream"></noscript></div>
@@ -340,7 +340,7 @@ list()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 		if [ "$NEXT" == "1" ]; then PAGE2=$($curlbin $URL/$PAGE/$NEXT | grep '<ul><li class="active">' | sed 's/<a href=/\npages:<a href=/g' |  grep -v "&gt" | sed -nr 's/.*>([^>]+)<.*/\1/p' | tail -n1);fi
-		$curlbin -o - $URL/$PAGE/$NEXT | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v SRC=$SRC -v pages=$pages -v NAME=$NAME -v NEXT=$NEXT -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT -v PAGE2=$PAGE2 \
+		$curlbin -o - $URL/$PAGE/$NEXT | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v pages=$pages -v NAME=$NAME -v NEXT=$NEXT -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT -v PAGE2=$PAGE2 \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -403,7 +403,7 @@ list()
                             else
                                 picext = ".jpg"
 
-                            desc = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+                            desc = "curl --connect-timeout 5 " URLMAIN newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
 
 							piccount += 1
 							# 25. in naechste zeile springen
@@ -430,7 +430,7 @@ list()
 latest()
 {
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE/$NEXT | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v SRC=$SRC -v pages=$pages -v NAME=$NAME -v NEXT=$NEXT -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT -v PAGE2=$PAGE2 \
+		$curlbin -o - $URL/$PAGE/$NEXT | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v pages=$pages -v NAME=$NAME -v NEXT=$NEXT -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT -v PAGE2=$PAGE2 \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -499,7 +499,7 @@ latest()
 				  				pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
 
-                            desc = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+                            desc = "curl --connect-timeout 5 " URLMAIN newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
 
 							piccount += 1
 							# 25. in naechste zeile springen
@@ -664,7 +664,7 @@ search()
 			      			pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 						}
 
-                        desc = "curl --connect-timeout 5 " URL newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+                        desc = "curl --connect-timeout 5 " URLMAIN newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
 
 						piccount += 1
 						# 25. in naechste zeile springen
