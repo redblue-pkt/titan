@@ -9,7 +9,10 @@ PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
 URLMAIN=https://s.to
-URL=http://190.115.18.20
+URL=https://s.to
+#URL=http://190.115.18.20
+#URL=http://186.2.175.5
+#MAINURL=http://186.2.175.5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=SerienStream
 
@@ -21,6 +24,17 @@ case $2 in
 	   	FILENAME=$(echo $FILENAME | tr '&' '.' | tr '/' '.' | tr '?' '.' | tr '=' '.' | sed -e 's/\&\+/./g' -e 's#\/\+#.#g' -e 's/\?\+/./g' -e 's/;\+/./g' -e 's/=\+/./g' -e 's/ \+/./g' -e 's/\.\+/./g')
 		if [ -z "$FILENAME" ]; then FILENAME=none;fi
 		PICNAME="$FILENAME"
+        rm -f $TMP/cache.hoster.$hoster.0.mainurl
+        if [ ! -e $TMP/cache.hoster.$hoster.0.mainurl ];then
+            $curlbin $URLMAIN >$TMP/cache.hoster.$hoster.0.mainurl
+        fi
+
+        if [ `cat $TMP/cache.hoster.$hoster.0.mainurl.base64.decode | grep "<script>eval(atob" | wc -l` -eq 1 ];then 
+            cat $TMP/cache.hoster.$hoster.0.mainurl | sed -nr "s/.*eval\(atob\('([^']+)'.*/\1/p" >$TMP/cache.hoster.$hoster.0.mainurl.base64
+            base64 -d $TMP/cache.hoster.$hoster.0.mainurl.base64 > $TMP/cache.hoster.$hoster.0.mainurl.base64.decode
+            MAINURL=`cat $TMP/cache.hoster.$hoster.0.mainurl.base64.decode | sed -nr 's/.*window.location.replace\("([^"]+)".*/\1/p'`
+            URL=$MAINURL
+        fi
 		;;
 esac
 
@@ -42,7 +56,7 @@ init()
 
 mainmenu()
 {
-	$curlbin -H "X-Requested-With: XMLHttpRequest" -X POST --data "password=abc123456&email=Ither1981%40dayrep.com" "$URL/login"> /dev/null 2>&1
+#	$curlbin -H "X-Requested-With: XMLHttpRequest" -X POST --data "password=abc123456&email=Ither1981%40dayrep.com" "$URL/login"> /dev/null 2>&1
 	echo "Neue Episoden#$SRC $SRC latest 'neue-episoden'#http://openaaf.dyndns.tv/mediathek/menu/new.jpg#new.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Neue Serien#$SRC $SRC list 'neu'#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Populär#$SRC $SRC list 'beliebte-serien'#http://openaaf.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#$NAME#0" >>$TMP/$FILENAME.list
@@ -71,8 +85,10 @@ sorted()
 
 all()
 {
+$curlbin $URL/$PAGE > $TMP/cache.hoster.$hoster.0.all
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
-		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""'| sort -u | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
+#		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""'| sort -u | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
+		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep title | sort -u | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		'
 			# BEGIN variable setzen
 			BEGIN \
@@ -499,6 +515,127 @@ latest()
 				  				pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
 							}
 
+                            desc = "curl --connect-timeout 5 " URLMAIN newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
+
+							piccount += 1
+							# 25. in naechste zeile springen
+							# 26. \x27 = single quotes
+#							print name "#" SRC " " SRC " season \x27" newpage "\x27#" URL pic "#" PICNAME "." piccount ".jpg#" NAME "#0"
+#							print name "#" SRC " " SRC " season \x27" newpage "\x27#" pic "#" PICNAME "." piccount ".jpg#" NAME "#0#" desc
+
+							#Staffel 3 Episode 26
+							split(title, a, " ")
+							season = a[1]
+							episode = a[2]
+
+                            gsub("S0", "S", season)
+                            gsub("E0", "E", episode)
+
+                            gsub("S", "", season)
+                            gsub("E", "", episode)
+
+#print "season: " season
+#print "episode: " episode
+
+#							print name " - " title " - " episodename " - " lang "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0"
+#							print name " - " title " - " episodename "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
+#							print title " - " episodename " - " lang " - " date "#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
+#							print name " (" title ") (" episodename ") (" date ")#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
+							print name " (" title ") (" episodename ") (" date ")#" SRC " " SRC " hosterlist \x27" newpage "\x27#http://openaaf.dyndns.tv/mediathek/menu/s" season "e" episode ".jpg#s" season "e" episode ".jpg#" NAME "#0#" desc
+						}
+                        next
+					}
+                }             
+			END \
+				{
+				}
+		# 29. schreibe alles in die list datei
+		' >$TMP/$FILENAME.list
+	fi
+	# 30. gebe titan den list namen mit pfad zurueck
+	echo "$TMP/$FILENAME.list"
+#	cat "$TMP/$FILENAME.list"
+}
+
+latest2()
+{
+rm $TMP/$FILENAME.list
+#$curlbin $URL/$PAGE/$NEXT > $TMP/cache.hoster.$hoster.0.latest
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin -o - $URL/$PAGE/$NEXT | tr -d '\n' | sed 's/<div/\n<div/g' | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v pages=$pages -v NAME=$NAME -v NEXT=$NEXT -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT -v PAGE2=$PAGE2 \
+		'
+			# BEGIN variable setzen
+			BEGIN \
+				{
+					suche = 0
+				}
+				# next page init
+#				/<div class="newEpisodeList">/ \
+				/<div class="newEpisodeList"/ \
+				{
+					suche = 1
+				}
+#				/<div class="cf"><\/div>/ \
+                /<a href="\/neue-episoden" class="button blue small"/ \
+				{
+					if ( suche == 1 )
+					{
+						suche = 0
+					}
+					next
+				}
+				/<a href=/ \
+				{
+					if ( suche == 1 )
+					{
+#print "$0: " $0
+						# extrahiere den newpage pfad
+						i = index($0, "href=\"") + 6
+			        	j = index(substr($0, i), "\"") - 1
+			        	newpage = substr($0, i, j)
+#print "newpage: " newpage
+						# extrahiere den newpage pfad
+						i = index($0, "<strong>") + 8
+			        	j = index(substr($0, i), "<") - 1
+			        	name = substr($0, i, j)
+#print "name: " name
+						# extrahiere den newpage pfad
+						i = index($0, "blue2\">") + 7
+#						i = index($0, "blue2\" >") + 8
+			        	j = index(substr($0, i), "<") - 1
+			        	title = substr($0, i, j)
+#print "title: " title
+						# extrahiere den newpage pfad
+						i = index($0, "elementFloatRight\">") + 19
+#						i = index($0, "elementFloatRight\" style=\"padding: 6px 0;\">") + 43
+			        	j = index(substr($0, i), "<") - 1
+			        	date = substr($0, i, j)
+#print "date: " date
+						# extrahiere den newpage pfad
+#						i = index($0, "src=\"") + 5
+						i = index($0, "data-src=\"") + 10
+
+			        	j = index(substr($0, i), "\"") - 1
+			        	pic = substr($0, i, j)
+#print "pic: " pic
+						# extrahiere den newpage pfad
+						i = index($0, "title=\"") + 7
+			        	j = index(substr($0, i), "\"") - 1
+			        	episodename = substr($0, i, j)
+#print "episodename: " episodename
+
+						# extrahiere den newpage pfad
+						i = index($0, "/svg/") + 5
+			        	j = index(substr($0, i), ".") - 1
+			        	lang = substr($0, i, j)
+#print "lang: " lang
+						if (title != "")
+						{
+							if ( pic == "" || pic ~ /.svg/)
+							{
+				  				pic = "http://openaaf.dyndns.tv/mediathek/menu/default.jpg"
+							}
+#
                             desc = "curl --connect-timeout 5 " URLMAIN newpage " | tr -d \"\\n\" | sed -nr \"s/.*data-full-description=\\\"([^\\\"]+)\\\".*/\\1/p\""
 
 							piccount += 1
