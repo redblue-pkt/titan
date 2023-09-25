@@ -29,7 +29,7 @@ case $2 in
             $curlbin $URLMAIN >$TMP/cache.hoster.$hoster.0.mainurl
         fi
 
-        if [ `cat $TMP/cache.hoster.$hoster.0.mainurl.base64.decode | grep "<script>eval(atob" | wc -l` -eq 1 ];then 
+        if [ `cat $TMP/cache.hoster.$hoster.0.mainurl | grep "<script>eval(atob" | wc -l` -eq 1 ];then 
             cat $TMP/cache.hoster.$hoster.0.mainurl | sed -nr "s/.*eval\(atob\('([^']+)'.*/\1/p" >$TMP/cache.hoster.$hoster.0.mainurl.base64
             base64 -d $TMP/cache.hoster.$hoster.0.mainurl.base64 > $TMP/cache.hoster.$hoster.0.mainurl.base64.decode
             MAINURL=`cat $TMP/cache.hoster.$hoster.0.mainurl.base64.decode | sed -nr 's/.*window.location.replace\("([^"]+)".*/\1/p'`
