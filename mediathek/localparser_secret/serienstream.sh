@@ -8,11 +8,15 @@ NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-URLMAIN=https://s.to
-URL=https://s.to
+#URLMAIN=https://s.to
+#URL=https://s.to
 #URL=http://190.115.18.20
-#URL=http://186.2.175.5
-#MAINURL=http://186.2.175.5
+#URLMAIN=http://190.115.18.20
+
+URL=http://186.2.175.5
+MAINURL=http://186.2.175.5
+#https://s.to/_ray/pow
+
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=SerienStream
 
