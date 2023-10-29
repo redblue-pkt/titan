@@ -8,13 +8,13 @@ NEXT=$4
 PAGE2=$5
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-#URLMAIN=https://s.to
+URLMAIN=https://s.to
 #URL=https://s.to
 #URL=http://190.115.18.20
 #URLMAIN=http://190.115.18.20
 
 URL=http://186.2.175.5
-MAINURL=http://186.2.175.5
+#MAINURL=http://186.2.175.5
 #https://s.to/_ray/pow
 
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
@@ -64,12 +64,39 @@ mainmenu()
 	echo "Neue Episoden#$SRC $SRC latest 'neue-episoden'#http://openaaf.dyndns.tv/mediathek/menu/new.jpg#new.jpg#$NAME#0" >$TMP/$FILENAME.list
 	echo "Neue Serien#$SRC $SRC list 'neu'#http://openaaf.dyndns.tv/mediathek/menu/all-newfirst.jpg#all-newfirst.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Populär#$SRC $SRC list 'beliebte-serien'#http://openaaf.dyndns.tv/mediathek/menu/popularity.rank.tv.jpg#popularity.rank.tv.jpg#$NAME#0" >>$TMP/$FILENAME.list
+	echo "Genre#$SRC $SRC genre#http://openaaf.dyndns.tv/mediathek/menu/genre.tv.jpg#genre.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Alle#$SRC $SRC all 'serien'#http://openaaf.dyndns.tv/mediathek/menu/all-sorted.jpg#all-sorted.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "A-Z#$SRC $SRC sorted 'katalog'#http://openaaf.dyndns.tv/mediathek/menu/a-z.jpg#a-z.jpg#$NAME#0" >>$TMP/$FILENAME.list
 	echo "Suche#$SRC $SRC search 'serien' 1 '%search%'#http://openaaf.dyndns.tv/mediathek/menu/search.jpg#search.jpg#$NAME#112" >>$TMP/$FILENAME.list
 	echo "$TMP/$FILENAME.list"
 }
 #https://s.to/search?q={search_string}
+
+genre()
+{
+	if [ ! -e "$TMP/$FILENAME.list" ]; then
+		$curlbin $URLMAIN -o $TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.1
+	
+		cat $TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.1 | sed 's!/genre/!\n/genre/!g' | grep ^/genre/ >$TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.2
+		
+		while read -u 3 ROUND; do
+#echo ROUND $ROUND
+			TITLE=`echo $ROUND | cut -d'>' -f2 | cut -d'<' -f1`
+#echo TITLE $TITLE
+
+			NEWPAGE=`echo $ROUND | cut -d'"' -f1`
+#echo NEWPAGE $NEWPAGE
+
+            filename=`echo $NEWPAGE | sed 's!/genre/!!g'`
+#echo filename $filename
+			if [ ! -z "$TITLE" ] && [ ! -z "$NEWPAGE" ];then
+    			echo "$TITLE#$SRC $SRC list '$NEWPAGE' 1#http://openaaf.dyndns.tv/mediathek/menu/$filename.jpg#$filename.jpg#$NAME#0" >> $TMP/$FILENAME.list
+			fi
+	
+		done 3<$TMP/cache.$PARSER.$INPUT.$NEXT.$FILENAME.2
+    fi
+  	echo "$TMP/$FILENAME.list"
+}
 
 sorted()
 {
@@ -89,7 +116,7 @@ sorted()
 
 all()
 {
-$curlbin $URL/$PAGE > $TMP/cache.hoster.$hoster.0.all
+#$curlbin $URL/$PAGE > $TMP/cache.hoster.$hoster.0.all
 	if [ ! -e "$TMP/$FILENAME.list" ]; then
 #		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep 'data-alternative-title=""'| sort -u | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
 		$curlbin -o - $URL/$PAGE | sed 's/<li><a/\n<li><a/g' | grep "/serie/" | grep title | sort -u | awk -v URLMAIN=$URLMAIN -v SRC=$SRC -v NAME=$NAME -v PICNAME=$PICNAME -v INPUT=$INPUT -v URL=$URL -v PAGE=$PAGE -v NEXT=$NEXT \
@@ -376,7 +403,7 @@ list()
 				{
 					if ( suche == 1 )
 					{
-						suche = 0
+#						suche = 0
 					}
 					next
 				}
@@ -836,4 +863,5 @@ case $INPUT in
 	hosterlist) $INPUT;;
 	hoster) $INPUT;;
 	search) $INPUT;;
+	genre) $INPUT;;
 esac
