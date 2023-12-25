@@ -792,7 +792,7 @@ void screenmc_videoplayer()
 				if(playertype == 1)
 					playerret = playerstartts(filename, 0);
 				else
-					playerret = playerstart(filename);
+					playerret = playerstart(filename, NULL);
 
 				playwritevfd(filename, NULL);
 
@@ -932,7 +932,7 @@ void screenmc_videoplayer()
 				if(playertype == 1)
 					playerret = playerstartts(filename, 0);
 				else
-					playerret = playerstart(filename);
+					playerret = playerstart(filename, NULL);
 
 				playwritevfd(filename, NULL);
 
