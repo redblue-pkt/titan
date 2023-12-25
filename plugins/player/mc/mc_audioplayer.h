@@ -676,7 +676,7 @@ void screenmc_audioplayer()
 				
 				free(status.playfile); status.playfile = NULL;
 				status.playfile = ostrcat(filename, "", 0, 0);
-				playerret = playerstart(filename);
+				playerret = playerstart(filename, NULL);
 				playwritevfd(filename, NULL);
 
 				#ifndef SIMULATE
@@ -785,7 +785,7 @@ void screenmc_audioplayer()
 #endif
 				free(status.playfile); status.playfile = NULL;
 				status.playfile = ostrcat(filename, "", 0, 0);
-				playerret = playerstart(filename);
+				playerret = playerstart(filename, NULL);
 				playwritevfd(filename, NULL);
 
 				#ifndef SIMULATE
