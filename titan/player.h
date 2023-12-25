@@ -1488,7 +1488,7 @@ void playbinNotifySource(GObject *object, GParamSpec *unused, char* file)
 #endif
 
 //extern player
-int playerstart(char* file)
+int playerstart(char* file, char* showname)
 {
 	char * tmpfile = NULL;
 	status.prefillbuffer = 0;
@@ -2408,17 +2408,20 @@ int playergetbufferstatus()
 int playerstopbuffer()
 {
 	int ret = 0;
-#if defined (EXTGST)
-	if(getconfigint("extplayer_type", NULL) == 0)
+	if(status.mcaktiv == 0 && status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{
+#if defined (EXTGST)
+		if(getconfigint("extplayer_type", NULL) == 0)
+		{
 #endif
 	#ifdef EPLAYER3
-		if(player && player->container && player->container->selectedContainer)
-			player->container->selectedContainer->Command(player, CONTAINER_STOP_BUFFER, NULL);
+			if(player && player->container && player->container->selectedContainer)
+				player->container->selectedContainer->Command(player, CONTAINER_STOP_BUFFER, NULL);
 	#endif
 #if defined (EXTGST)
-	}
+		}
 #endif
+	}
 	return ret;
 }
 
