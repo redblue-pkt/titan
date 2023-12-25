@@ -1497,14 +1497,33 @@ int playerstart(char* file)
 	addconfig("lastplayertype", "0");
 	
 	free(status.actplay);
-	status.actplay = ostrcat(file, NULL, 0, 0);
-	
+
+	char* fileseek = NULL;
+
+	if(!file_exist("/mnt/swapextensions/player"))   
+		mkdir("/mnt/swapextensions/player", 0777);
+
+	if(!ostrncmp("/", file, 1))
+	{
+		char* fname = NULL;
+		fname = ostrcat(file, NULL, 0, 0);
+		fileseek = ostrcat("/mnt/swapextensions/player/", basename(fname), 0, 0);
+		free(fname); fname = NULL;
+	}
+	else
+	{
+		fileseek = ostrcat("/mnt/swapextensions/player/", showname, 0, 0);
+	}
+
+	fileseek = ostrcat(fileseek, ".pts", 0, 0);
+	status.actplay = ostrcat(fileseek, NULL, 0, 0);
+
 	status.subtitlethread = NULL;
 	status.writeplayersub = 1;
 	 
 	if(status.mcaktiv == 0 && status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{ 
-			char* fileseek = changefilenameext(file, ".pts");
+//			char* fileseek = changefilenameext(file, ".pts");
 			FILE* fbseek = fopen(fileseek, "r");
 			if(fbseek != NULL)
 			{
@@ -2512,15 +2531,13 @@ int playerstop()
 
 	if(status.actplay != NULL)
 	{
-		char* fileseek = changefilenameext(status.actplay, ".pts");
-		FILE* fbseek = fopen(fileseek, "w");
+		FILE* fbseek = fopen(status.actplay, "w");
 		if(fbseek != NULL)
 		{
 			off64_t pts = playergetpts();
 			fprintf(fbseek,"%lld", pts);
 			fclose(fbseek);
 		}
-		free(fileseek); fileseek=NULL;
 		free(status.actplay); status.actplay=NULL;
 	}
 	 

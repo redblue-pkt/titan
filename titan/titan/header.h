@@ -648,7 +648,7 @@ void playercontinue();
 void playerpause();
 int playerstop();
 void playerseek(float sec);
-int playerstart(char* file);
+int playerstart(char* file, char* showname);
 unsigned long long playergetpts();
 double playergetlength();
 int playergetinfots(unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* aktpts, unsigned long long* bitrate, int flag);

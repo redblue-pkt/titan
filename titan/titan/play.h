@@ -1559,7 +1559,7 @@ void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, in
 			else
 			{
 				playerstop();
-				playerstart(file);
+				playerstart(file, NULL);
 			}
 			return;
 		}
@@ -1595,7 +1595,7 @@ void playrcjumpr(char* file, char* showname, int sec, int* playinfobarstatus, in
 				else
 				{
 					playerstop();
-					playerstart(file);
+					playerstart(file, NULL);
 				}
 			}
 		}
@@ -2073,7 +2073,7 @@ playerstart:
 		if(playertype == 1)
 			rcret = playerstartts(file, 0);
 		else if(playertype == 2)
-			rcret = playerstart(file);
+			rcret = playerstart(file, NULL);
 		else
 		{
 #if defined (EXTGST)
@@ -2084,7 +2084,7 @@ playerstart:
 				if(ostrstr(file, "http://") == file || ostrstr(file, "https://") == file)
 				{
 					struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
-					rcret = playerstart(file);
+					rcret = playerstart(file, showname);
 					if(bufferstatus != NULL && gettimer(bufferstatus) != NULL)
 					{
 						bufferstatus->aktion = STOP;
@@ -2092,14 +2092,14 @@ playerstart:
 					}
 				}
 				else
-					rcret = playerstart(file);
+					rcret = playerstart(file, NULL);
 	#else
-				rcret = playerstart(file);
+				rcret = playerstart(file, NULL);
 	#endif
 #if defined (EXTGST)
 			}
 			else
-				rcret = playerstart(file);
+				rcret = playerstart(file, showname);
 #endif
 		}
 
@@ -2512,7 +2512,7 @@ void streamplayer(struct channel* chnode, int flag)
 	}
 	else
 	{
-		playerstart(chnode->streamurl);
+		playerstart(chnode->streamurl, NULL);
 #ifdef DREAMBOX
         if(getconfigint("extplayer_type", NULL) == 1)
         {

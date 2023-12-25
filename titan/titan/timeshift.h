@@ -197,7 +197,7 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 		}
 	
 		if(snode != NULL && tsextern == 0) ret = playerstartts(snode->recname, 1);
-		if(snode != NULL && tsextern == 1) ret = playerstart(snode->recname);
+		if(snode != NULL && tsextern == 1) ret = playerstart(snode->recname, NULL);
 		if(ret != 0)
 		{
 			textbox(_("Message"), _("Can't start timeshift play !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
