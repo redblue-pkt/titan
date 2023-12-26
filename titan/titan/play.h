@@ -2122,9 +2122,12 @@ playerstart:
 		}
 #endif
 
+printf("play.h/screenplay1 check status.actplaypts: %s\n", status.actplaypts);
 
-if(playertype == 0 && getconfigint("showlastpos", NULL) == 1)
+if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && file_exist(status.actplaypts))
 {
+printf("play.h/screenplay1a check status.actplaypts: %s\n", status.actplaypts);
+
 	FILE* fbseek = fopen(status.actplaypts, "r");
 	if(fbseek != NULL)
 	{
@@ -2337,8 +2340,12 @@ if(playertype == 0 && getconfigint("showlastpos", NULL) == 1)
 						continue;
 					}
 
-if(status.play == 1 && playertype == 0)
+printf("play.h/screenplay2 check status.actplaypts: %s\n", status.actplaypts);
+
+if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && file_exist(status.actplaypts) && status.play == 1)
 {
+printf("play.h/screenplay2a check status.actplaypts: %s\n", status.actplaypts);
+
 	FILE* fbseek = fopen(status.actplaypts, "w");
 	if(fbseek != NULL)
 	{
@@ -2457,8 +2464,11 @@ playerend:
 				playerafterend();
 
 //if(status.play == 1)
-if(file_exist(status.actplaypts))
+printf("play.h/screenplay3 check status.actplaypts: %s\n", status.actplaypts);
+
+if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && file_exist(status.actplaypts) && status.play == 1)
 {
+printf("play.h/screenplay3a check status.actplaypts: %s\n", status.actplaypts);
 	unlink(status.actplaypts);
 }
 free(status.actplaypts);
