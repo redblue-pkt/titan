@@ -2048,6 +2048,9 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		char* filename = NULL;
 		filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title, 0);
 
+		free(status.actplaypts);
+		status.actplaypts = ostrcat(filename, ".pts", 0, 0);
+
 		if(!file_exist(filename))
 		{
 			writesys(filename, "1", 0);
