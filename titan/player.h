@@ -1496,12 +1496,12 @@ int playerstart(char* file)
 	
 	addconfig("lastplayertype", "0");
 	
-//	free(status.actplay);
-//	status.actplay = ostrcat(file, NULL, 0, 0);
+	free(status.actplay);
+	status.actplay = ostrcat(file, NULL, 0, 0);
 	
 	status.subtitlethread = NULL;
 	status.writeplayersub = 1;
-/*	 
+	 
 	if(status.mcaktiv == 0 && status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{ 
 			char* fileseek = changefilenameext(file, ".pts");
@@ -1536,7 +1536,7 @@ int playerstart(char* file)
 			}
 			free(fileseek); fileseek = NULL;
 	}	
-*/
+
 #if defined (EXTGST)
 	if(getconfigint("extplayer_type", NULL) == 1)
 	{
@@ -2509,7 +2509,7 @@ void playerplay()
 int playerstop()
 {
 	status.writeplayersub = 0;
-/*
+
 	if(status.mcaktiv == 0 && status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{
 		char* fileseek = changefilenameext(status.actplay, ".pts");
@@ -2523,7 +2523,7 @@ int playerstop()
 		free(fileseek); fileseek=NULL;
 		free(status.actplay); status.actplay=NULL;
 	}
-*/	 
+	 
 #if defined (EXTGST)
 	if(getconfigint("extplayer_type", NULL) == 0)
 	{

@@ -1731,6 +1731,7 @@ struct status
 	int videodevs;
 	char* streamurl;
 	char* actplay;
+	char* actplaysec;
 	int writeplayersub;
 	struct stimerthread* subtitlethread;
 } status;
