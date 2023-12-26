@@ -739,7 +739,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 						if((getconfigint("mc_vp_autostart_playlist", NULL) == 1 && flag == 1 && status.play == 0) || (getconfigint("mc_ap_autostart_playlist", NULL) == 1 && flag == 2 && status.play == 0))
 						{
 							debug(50, "-------------- check ok titan playlist pls --------------");
-							debug(50, "playerstart: %s", *filename, NULL);
+							debug(50, "playerstart: %s", *filename);
 							debug(50, "flag: %d", flag);
 							debug(50, "playertype: %d", *playertype);	
 											
@@ -761,7 +761,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 								debug(50, "status.play: %d", status.play);				
 							}
 			
-//							playerret = playerstart(*filename, NULL);
+//							playerret = playerstart(*filename);
 							if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(*filename, ".ts") == 0 && ostrstr(*filename, "://") == NULL)
 								*playertype = 1;
 							else
@@ -770,7 +770,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							if(*playertype == 1)
 								playerret = playerstartts(*filename, 0);
 							else
-								playerret = playerstart(*filename, NULL);
+								playerret = playerstart(*filename);
 					
 							playwritevfd(*filename, NULL);
 				
@@ -1066,7 +1066,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 					debug(50, "status.play: %d", status.play);				
 				}
 
-//				playerret = playerstart(*filename, NULL);
+//				playerret = playerstart(*filename);
 				if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(*filename, ".ts") == 0)
 					*playertype = 1;
 				else
@@ -1075,7 +1075,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 				if(*playertype == 1)
 					playerret = playerstartts(*filename, 0);
 				else
-					playerret = playerstart(*filename, NULL);
+					playerret = playerstart(*filename);
 
 				playwritevfd(*filename, NULL);
 				

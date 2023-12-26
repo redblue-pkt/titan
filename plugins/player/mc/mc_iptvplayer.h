@@ -376,7 +376,7 @@ void screenmc_iptvplayer()
 
 				debug(50, "playerstart change: %s", filename);
 
-				playerret = playerstart(filename, NULL);
+				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
 //////
@@ -491,7 +491,7 @@ void screenmc_iptvplayer()
 				//servicestop(status.aktservice, 1, 1);	
 #endif
 
-				playerret = playerstart(filename, NULL);
+				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
 				#ifndef SIMULATE
