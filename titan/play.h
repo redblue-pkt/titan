@@ -2121,6 +2121,32 @@ playerstart:
 			}
 		}
 #endif
+
+
+if(playertype == 0 && getconfigint("showlastpos", NULL) == 1)
+{
+	FILE* fbseek = fopen(status.actplaypts, "r");
+	if(fbseek != NULL)
+	{
+//								int ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
+//printf("ret=%d\n", ret);
+//								if(ret == 0 || ret == 1)
+		if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
+		{
+			char* skip1 = calloc(1, 20); 
+			if(skip1 != NULL) 
+			{
+				fscanf(fbseek,"%s",skip1);
+//										playrcjumpf(file, NULL, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);		
+				playrcjumpf(file, showname, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);
+
+			}
+			free(skip1), skip1 = NULL;
+		}
+		fclose(fbseek);
+	}
+}
+
 		clearscreen(load);
 		if(status.prefillbuffer == 0)
 			screenplayinfobar(file, showname, 0, playertype, flag);
@@ -2310,6 +2336,18 @@ playerstart:
 						status.prefillbuffer = 2;
 						continue;
 					}
+
+if(status.play == 1 && playertype == 0)
+{
+	FILE* fbseek = fopen(status.actplaypts, "w");
+	if(fbseek != NULL)
+	{
+		off64_t pos = playergetpts() / 90000;
+		fprintf(fbseek,"%lld", pos);
+		fclose(fbseek);
+	}
+}
+
 					playrcstop(playertype, flag);
 					if(startfile == NULL)
 					{						
@@ -2417,6 +2455,12 @@ playerend:
 				playerafterendts();
 			else
 				playerafterend();
+
+if(status.play == 1)
+{
+	unlink(status.actplaypts);
+	free(status.actplaypts);
+}
 
 			writevfdmenu("Player");
 			screenplayinfobar(file, showname, 1, playertype, flag);

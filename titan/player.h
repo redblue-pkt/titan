@@ -2510,7 +2510,7 @@ int playerstop()
 {
 	status.writeplayersub = 0;
 
-	if(status.actplay != NULL)
+	if(status.mcaktiv == 0 && status.actplay != NULL && getconfigint("showlastpos", NULL) == 1)
 	{
 		char* fileseek = changefilenameext(status.actplay, ".pts");
 		FILE* fbseek = fopen(fileseek, "w");
