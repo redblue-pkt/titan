@@ -2456,11 +2456,12 @@ playerend:
 			else
 				playerafterend();
 
-if(status.play == 1)
+//if(status.play == 1)
+if(file_exist(status.actplay))
 {
 	unlink(status.actplay);
-	free(status.actplay);
 }
+free(status.actplay);
 
 			writevfdmenu("Player");
 			screenplayinfobar(file, showname, 1, playertype, flag);
