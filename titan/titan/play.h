@@ -2125,7 +2125,7 @@ playerstart:
 
 if(playertype == 0 && getconfigint("showlastpos", NULL) == 1)
 {
-	FILE* fbseek = fopen(status.actplay, "r");
+	FILE* fbseek = fopen(status.actplaypts, "r");
 	if(fbseek != NULL)
 	{
 //								int ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
@@ -2339,7 +2339,7 @@ if(playertype == 0 && getconfigint("showlastpos", NULL) == 1)
 
 if(status.play == 1 && playertype == 0)
 {
-	FILE* fbseek = fopen(status.actplay, "w");
+	FILE* fbseek = fopen(status.actplaypts, "w");
 	if(fbseek != NULL)
 	{
 		off64_t pos = playergetpts() / 90000;
@@ -2457,11 +2457,11 @@ playerend:
 				playerafterend();
 
 //if(status.play == 1)
-if(file_exist(status.actplay))
+if(file_exist(status.actplaypts))
 {
-	unlink(status.actplay);
+	unlink(status.actplaypts);
 }
-free(status.actplay);
+free(status.actplaypts);
 
 			writevfdmenu("Player");
 			screenplayinfobar(file, showname, 1, playertype, flag);
