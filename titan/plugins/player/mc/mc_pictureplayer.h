@@ -91,7 +91,7 @@ void screenmc_pictureplayer()
 
 	if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
 	{
-		playerret = playerstart(track, NULL);
+		playerret = playerstart(track);
 		playwritevfd(track, NULL);
 
 		#ifndef SIMULATE
@@ -233,7 +233,7 @@ void screenmc_pictureplayer()
 
 				if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
 				{
-					playerret = playerstart(track, NULL);
+					playerret = playerstart(track);
 					playwritevfd(filename, NULL);
 
 					#ifndef SIMULATE
@@ -355,7 +355,7 @@ void screenmc_pictureplayer()
 
 				if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
 				{
-					playerret = playerstart(filename, NULL);
+					playerret = playerstart(filename);
 					playwritevfd(filename, NULL);
 
 					#ifndef SIMULATE
@@ -452,7 +452,7 @@ void screenmc_pictureplayer()
 
 			if(stopradio == 0 && getconfig("mc_pp_sound", NULL) != NULL && ostrcmp(sound, "off") != 0)
 			{
-				playerret = playerstart(track, NULL);
+				playerret = playerstart(track);
 				playwritevfd(filename, NULL);
 
 				#ifndef SIMULATE

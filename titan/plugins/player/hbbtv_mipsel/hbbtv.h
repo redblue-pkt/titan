@@ -313,7 +313,7 @@ int operaservice(char* url, int flag)
 		operaplayurl = ostrcat(url, NULL, 0, 0);
 		playerstop();
 		playerafterend();
-		playerstart(operaplayurl, NULL);
+		playerstart(operaplayurl);
 		operaservicestate = 1;
 	}
 
