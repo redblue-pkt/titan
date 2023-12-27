@@ -2294,6 +2294,7 @@ printf("Save Streamurl: tmpstr1=%s\n", tmpstr1);
 	else
 		textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 
+	status.actplaypts = NULL;
 	free(tmpstr1); tmpstr1 = NULL;
 }
 
