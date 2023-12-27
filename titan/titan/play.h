@@ -2341,8 +2341,10 @@ printf("play.h/screenplay1a check status.actplaypts: %s\n", status.actplaypts);
 					}
 
 printf("play.h/screenplay2 check status.actplaypts: %s\n", status.actplaypts);
+printf("play.h/screenplay2 check playertype: %d\n", playertype);
+printf("play.h/screenplay2 check status.play: %d\n", status.play);
 
-if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && file_exist(status.actplaypts) && status.play == 1)
+if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && status.play == 1)
 {
 printf("play.h/screenplay2a check status.actplaypts: %s\n", status.actplaypts);
 
@@ -2455,13 +2457,6 @@ printf("play.h/screenplay2a check status.actplaypts: %s\n", status.actplaypts);
 			
 			if(status.repeat == 1)
 				goto playerstart;
-			
-playerend:
-			sleep(1);
-			if(playertype == 1)
-				playerafterendts();
-			else
-				playerafterend();
 
 //if(status.play == 1)
 printf("play.h/screenplay3 check status.actplaypts: %s\n", status.actplaypts);
@@ -2471,7 +2466,13 @@ if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypt
 printf("play.h/screenplay3a check status.actplaypts: %s\n", status.actplaypts);
 	unlink(status.actplaypts);
 }
-free(status.actplaypts);
+
+playerend:
+			sleep(1);
+			if(playertype == 1)
+				playerafterendts();
+			else
+				playerafterend();
 
 			writevfdmenu("Player");
 			screenplayinfobar(file, showname, 1, playertype, flag);
