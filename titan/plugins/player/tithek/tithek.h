@@ -2049,7 +2049,6 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title, 0);
 
 printf("tithek>submenu 1free status.actplaypts: %s\n", status.actplaypts);
-//		free(status.actplaypts);
 		status.actplaypts = ostrcat(filename, ".pts", 0, 0);
 printf("tithek>submenu 2set status.actplaypts: %s\n", status.actplaypts);
 		if(!file_exist(filename))
