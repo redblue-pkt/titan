@@ -1216,7 +1216,7 @@ msgstr "Добавить букет"
 
 #: player_tithek_skin.xml.h:1 skins_cool_skin.xml.h:64
 #: skins_megastyleblue_skin.xml.h:65 skins_megastylegrey_skin.xml.h:65
-#: tithek.h:2397 tithek.h:3370
+#: tithek.h:2401 tithek.h:3374
 msgid "ADD FAV"
 msgstr "Добавить в фаворит"
 
@@ -1371,11 +1371,11 @@ msgstr "Добавить таймер"
 msgid "Add iMDB manuel"
 msgstr "Добавлять iMDB "
 
-#: tithek.h:3332
+#: tithek.h:3336
 msgid "Add this link as Favorite ?"
 msgstr "Добавить ссылку в фаворит?"
 
-#: tithek.h:2706 tithek.h:2894
+#: tithek.h:2710 tithek.h:2898
 msgid "Add this sub folder as Favorite ?"
 msgstr "Добавить эту вложенную папку в избранное?"
 
@@ -3001,7 +3001,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Не удаётся получить время EPG или время окончания неизвестно"
 
-#: tithek.h:2291
+#: tithek.h:2294
 msgid "Can't get Streamurl !"
 msgstr "Не удаётся получить поток!"
 
@@ -3429,7 +3429,7 @@ msgstr "Выбор носителя для установки"
 msgid "Choice Menu"
 msgstr "Выбор меню"
 
-#: tithek.h:2068
+#: tithek.h:2071
 msgid "Choice Playback"
 msgstr "Выберите как воспроизвести файл"
 
@@ -3497,7 +3497,7 @@ msgstr "Выберите для изменения, добавления нов�
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
-#: tithek.h:2134
+#: tithek.h:2137
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr "Выберите режим воспроизведения потока из списка ниже"
 
@@ -3963,7 +3963,7 @@ msgstr "Создать новый"
 msgid "Create new Skinstyle ?"
 msgstr "Создать новый стиль?"
 
-#: tithek.h:2691 tithek.h:2879
+#: tithek.h:2695 tithek.h:2883
 msgid "Create sub folder"
 msgstr "Создать вложенную папку"
 
@@ -4051,7 +4051,7 @@ msgstr "Удалить"
 
 #: player_tithek_skin.xml.h:6 skins_cool_skin.xml.h:224
 #: skins_megastyleblue_skin.xml.h:225 skins_megastylegrey_skin.xml.h:225
-#: tithek.h:2388 tithek.h:3361
+#: tithek.h:2392 tithek.h:3365
 msgid "DEL FAV"
 msgstr "Удалить фаворит"
 
@@ -4690,23 +4690,23 @@ msgstr "Закачка"
 msgid "Download (KB): "
 msgstr "Загружено (Кб) "
 
-#: tithek.h:2118
+#: tithek.h:2121
 msgid "Download Full File"
 msgstr "Загрузить весь файл"
 
-#: tithek.h:2119
+#: tithek.h:2122
 msgid "Download Full File (background)"
 msgstr "Загрузить весь файл (В фоновом режиме)"
 
-#: tithek.h:2125
+#: tithek.h:2128
 msgid "Download Full File (curldl)"
 msgstr ""
 
-#: tithek.h:2123
+#: tithek.h:2126
 msgid "Download Full File (hlsdl)"
 msgstr "Скачать полный файл"
 
-#: tithek.h:2130
+#: tithek.h:2133
 msgid "Download Full File (youtube_dl)"
 msgstr "Скачать полный файл"
 
@@ -4824,7 +4824,7 @@ msgstr "Изменить"
 msgid "EDIT DiSEqC"
 msgstr "Параметры DiSEqC"
 
-#: tithek.h:2387 tithek.h:3360
+#: tithek.h:2391 tithek.h:3364
 msgid "EDIT FAV"
 msgstr "Параметры фавориты"
 
@@ -5156,20 +5156,21 @@ msgstr ""
 #: played.h:30 played.h:85 played.h:91 played.h:103 played.h:115 played.h:172
 #: player.h:416 player.h:1511 player_mc_skin.xml.h:19 play.h:538 play.h:655
 #: play.h:907 play.h:1021 play.h:1035 play.h:1709 play.h:1715 play.h:1730
-#: play.h:1731 play.h:1767 play.h:1768 play.h:1782 play.h:1866 possetup.h:98
-#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
-#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:90 record.h:427 record.h:1240 record.h:1828
-#: rectimer.h:585 rectimer.h:1413 restoredefault.h:10 restoredefault.h:34
-#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 satipclient.h:137 scan.h:2651 scart.h:12 scart.h:25
-#: scriptexec.h:41 security.h:668 security.h:685 security.h:2181 service.h:847
-#: service.h:1124 shared.h:29 shared.h:66 shared.h:83 skinadjust.h:603
-#: skinadjust.h:627 skinadjust.h:668 skin_default_skin.xml.h:200
-#: skins_0acht5zehn_skin.xml.h:237 skins_atemio_skin.xml.h:234
-#: skins_cool_skin.xml.h:281 skins_default_skin.xml.h:200 skinselector.h:231
+#: play.h:1731 play.h:1767 play.h:1768 play.h:1782 play.h:1866 play.h:2137
+#: possetup.h:98 primeshare.h:29 primeshare.h:74 primeshare.h:80
+#: primeshare.h:125 promptfile.h:26 promptfile.h:35 putlocker.h:32
+#: putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:90 record.h:427 record.h:1240
+#: record.h:1828 rectimer.h:585 rectimer.h:1413 restoredefault.h:10
+#: restoredefault.h:34 restoredefault.h:58 restoredefault.h:73 rgui.h:30
+#: rgui.h:118 rgui.h:134 rtl2now.h:34 satipclient.h:137 scan.h:2651 scart.h:12
+#: scart.h:25 scriptexec.h:41 security.h:668 security.h:685 security.h:2181
+#: service.h:847 service.h:1124 shared.h:29 shared.h:66 shared.h:83
+#: skinadjust.h:603 skinadjust.h:627 skinadjust.h:668
+#: skin_default_skin.xml.h:200 skins_0acht5zehn_skin.xml.h:237
+#: skins_atemio_skin.xml.h:234 skins_cool_skin.xml.h:281
+#: skins_default_skin.xml.h:200 skinselector.h:231
 #: skins_kravenhd_skin.xml.h:209 skins_megastyleblue_skin.xml.h:282
 #: skins_megastylegrey_skin.xml.h:282 skins_metrixhd_skin.xml.h:243
 #: skins_nogfx_skin.xml.h:220 skins_sevenhd_skin.xml.h:225
@@ -5186,9 +5187,9 @@ msgstr ""
 #: titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228 tithek.h:724
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
-#: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2313
-#: tithek.h:2706 tithek.h:2894 tithek.h:3219 tithek.h:3289 tithek.h:3332
-#: tithek.h:3345 tithek_settings.h:271 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:2018 tithek.h:2033 tithek.h:2239 tithek.h:2294 tithek.h:2317
+#: tithek.h:2710 tithek.h:2898 tithek.h:3223 tithek.h:3293 tithek.h:3336
+#: tithek.h:3349 tithek_settings.h:271 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: tools_autotimer_skin.xml.h:6 tools_callmonitor1_skin.xml.h:10
 #: tools_instar_skin.xml.h:8 tools_lcdpearl1_skin.xml.h:6
@@ -5251,7 +5252,7 @@ msgstr "Изменить плейлист"
 msgid "Edit mode"
 msgstr "Переименование"
 
-#: tithek.h:3345
+#: tithek.h:3349
 msgid "Edit this Favorite ?"
 msgstr "Изменить этот фаворит?"
 
@@ -5529,7 +5530,7 @@ msgstr "Выходной цвет"
 
 #: player_tithek_skin.xml.h:8 skins_cool_skin.xml.h:283
 #: skins_megastyleblue_skin.xml.h:284 skins_megastylegrey_skin.xml.h:284
-#: tithek.h:2404 tithek.h:3377
+#: tithek.h:2408 tithek.h:3381
 msgid "Exit Tithek"
 msgstr "Выйти"
 
@@ -5927,7 +5928,7 @@ msgstr "Выберите цвет выделения файлов в списк�
 msgid "Filelist-Mode"
 msgstr "Плейлист"
 
-#: tithek.h:2229 tithek.h:2250 tithek.h:2257 tithek.h:2264 tithek.h:2271
+#: tithek.h:2232 tithek.h:2253 tithek.h:2260 tithek.h:2267 tithek.h:2274
 msgid "Filename"
 msgstr "Имя файла"
 
@@ -8917,11 +8918,11 @@ msgstr "Маркер"
 msgid "Marker Overview"
 msgstr ""
 
-#: play.h:2390
+#: play.h:2437
 msgid "Marker autoseek is started"
 msgstr "Автопоиск запущен"
 
-#: play.h:2401
+#: play.h:2448
 msgid "Marker autoseek is stopped"
 msgstr "Автопоиск остановлен"
 
@@ -9299,21 +9300,21 @@ msgstr "Лист меню"
 #: nowvideo.h:102 nowvideo.h:108 p2pcast.h:41 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:85 played.h:91 played.h:103
 #: played.h:115 played.h:172 player.h:416 player.h:1511 play.h:655 play.h:1058
-#: play.h:1730 play.h:1767 play.h:2109 play.h:2390 play.h:2401 possetup.h:98
-#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
-#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:427 record.h:1240 record.h:1563 record.h:1828
-#: record.h:1864 rectimer.h:585 rectimer.h:1266 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:34
-#: restoredefault.h:45 restoredefault.h:49 restoredefault.h:58
-#: restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: satipclient.h:137 satipclient.h:147 satipclient.h:149 scan.h:1863
-#: scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167 scan.h:2258
-#: scan.h:2651 scart.h:12 scart.h:25 security.h:1599 security.h:1622
-#: security.h:2181 service.h:847 service.h:1124 shared.h:29 shared.h:66
-#: shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
+#: play.h:1730 play.h:1767 play.h:2109 play.h:2137 play.h:2437 play.h:2448
+#: possetup.h:98 primeshare.h:29 primeshare.h:74 primeshare.h:80
+#: primeshare.h:125 promptfile.h:26 promptfile.h:35 putlocker.h:32
+#: putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:427 record.h:1240
+#: record.h:1563 record.h:1828 record.h:1864 rectimer.h:585 rectimer.h:1266
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
+#: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:34 satipclient.h:137 satipclient.h:147 satipclient.h:149
+#: scan.h:1863 scan.h:1865 scan.h:1893 scan.h:1895 scan.h:1905 scan.h:2167
+#: scan.h:2258 scan.h:2651 scart.h:12 scart.h:25 security.h:1599
+#: security.h:1622 security.h:2181 service.h:847 service.h:1124 shared.h:29
+#: shared.h:66 shared.h:83 skinadjust.h:603 skinadjust.h:619 skinadjust.h:627
 #: skinadjust.h:668 skinadjust.h:685 skinadjust.h:1110 skinadjust.h:1172
 #: skinselector.h:231 sock.h:955 softcam.h:414 softcam.h:477 softcam.h:478
 #: solarmovie.h:51 solarmovie.h:63 solarmovie.h:375 spinner.h:18
@@ -9329,8 +9330,8 @@ msgstr "Лист меню"
 #: titan.c:1431 titan.c:1452 titan.c:1458 titan.c:1469 titan.c:1475
 #: tithek.c:105 tithek_global.h:228 tithek_global.h:2038 tithek.h:724
 #: tithek.h:1711 tithek.h:1738 tithek.h:1760 tithek.h:1782 tithek.h:1839
-#: tithek.h:2018 tithek.h:2033 tithek.h:2236 tithek.h:2291 tithek.h:2706
-#: tithek.h:2894 tithek.h:3219 tithek.h:3289 tithek.h:3332 tithek.h:3345
+#: tithek.h:2018 tithek.h:2033 tithek.h:2239 tithek.h:2294 tithek.h:2710
+#: tithek.h:2898 tithek.h:3223 tithek.h:3293 tithek.h:3336 tithek.h:3349
 #: tithek_settings.h:271 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007
 #: tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3246 tpk.new.h:3167 tunerconfig.h:738
@@ -10243,14 +10244,14 @@ msgstr ""
 #: played.h:115 played.h:172 player.h:416 player.h:1511 player_mc_skin.xml.h:40
 #: play.h:538 play.h:655 play.h:907 play.h:1021 play.h:1035 play.h:1058
 #: play.h:1709 play.h:1715 play.h:1730 play.h:1731 play.h:1767 play.h:1768
-#: play.h:1782 play.h:1866 play.h:2109 play.h:2390 play.h:2401 possetup.h:98
-#: primeshare.h:29 primeshare.h:74 primeshare.h:80 primeshare.h:125
-#: promptfile.h:26 promptfile.h:35 putlocker.h:32 putlocker.h:80 putlocker.h:86
-#: putlocker.h:92 putlocker.h:143 putlocker.h:153 putlocker.h:226
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:427 record.h:1240 record.h:1563 record.h:1864
-#: rectimer.h:585 rectimer.h:1266 rectimer.h:1413 rectimer.h:1425
-#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: play.h:1782 play.h:1866 play.h:2109 play.h:2137 play.h:2437 play.h:2448
+#: possetup.h:98 primeshare.h:29 primeshare.h:74 primeshare.h:80
+#: primeshare.h:125 promptfile.h:26 promptfile.h:35 putlocker.h:32
+#: putlocker.h:80 putlocker.h:86 putlocker.h:92 putlocker.h:143 putlocker.h:153
+#: putlocker.h:226 readerconfig.h:351 readerconfig.h:451 readerconfig.h:452
+#: readerconfig.h:497 readerconfig.h:498 record.h:427 record.h:1240
+#: record.h:1563 record.h:1864 rectimer.h:585 rectimer.h:1266 rectimer.h:1413
+#: rectimer.h:1425 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:34 restoredefault.h:45 restoredefault.h:49
 #: restoredefault.h:58 restoredefault.h:73 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 satipclient.h:137 satipclient.h:147 satipclient.h:149
@@ -10280,9 +10281,9 @@ msgstr ""
 #: titan.c:334 titan.c:1291 titan.c:1300 titan.c:1431 titan.c:1452 titan.c:1458
 #: titan.c:1469 titan.c:1475 tithek.c:105 tithek_global.h:228
 #: tithek_global.h:2038 tithek.h:724 tithek.h:1711 tithek.h:1738 tithek.h:1760
-#: tithek.h:1782 tithek.h:1839 tithek.h:2018 tithek.h:2033 tithek.h:2236
-#: tithek.h:2291 tithek.h:2313 tithek.h:2706 tithek.h:2894 tithek.h:3219
-#: tithek.h:3289 tithek.h:3332 tithek.h:3345 tithek_settings.h:271
+#: tithek.h:1782 tithek.h:1839 tithek.h:2018 tithek.h:2033 tithek.h:2239
+#: tithek.h:2294 tithek.h:2317 tithek.h:2710 tithek.h:2898 tithek.h:3223
+#: tithek.h:3293 tithek.h:3336 tithek.h:3349 tithek_settings.h:271
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 tools_optimize_skin.xml.h:2 tools_rgui_skin.xml.h:2
 #: tools_tiwakeup_skin.xml.h:2 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3246
@@ -10738,7 +10739,7 @@ msgid "Paddington Bold"
 msgstr ""
 
 #: skins_megastyleblue_skin.xml.h:490 skins_megastylegrey_skin.xml.h:490
-#: tithek.h:2445
+#: tithek.h:2449
 msgid "Page"
 msgstr "Страница"
 
@@ -12354,7 +12355,7 @@ msgstr "Запуск удаления"
 msgid "Remove success"
 msgstr "Удаление завершено"
 
-#: tithek.h:3289
+#: tithek.h:3293
 msgid "Remove this Favorite ?"
 msgstr "Удалить этот фаворит?"
 
@@ -12408,8 +12409,8 @@ msgstr ""
 #: player_mc_skin.xml.h:50 skin_default_skin.xml.h:522
 #: skins_cool_skin.xml.h:586 skins_default_skin.xml.h:522
 #: skins_kravenhd_skin.xml.h:527 skins_megastyleblue_skin.xml.h:588
-#: skins_megastylegrey_skin.xml.h:588 tithek.h:2390 tithek.h:2400 tithek.h:3363
-#: tithek.h:3373
+#: skins_megastylegrey_skin.xml.h:588 tithek.h:2394 tithek.h:2404 tithek.h:3367
+#: tithek.h:3377
 msgid "Repeat"
 msgstr "Повтор-Выкл"
 
@@ -12419,8 +12420,8 @@ msgid "Repeat type"
 msgstr "Тип повтора"
 
 #: mc_audioplayer.h:486 mc_global.h:1145 mc_iptvplayer.h:141
-#: mc_pictureplayer.h:150 mc_videoplayer.h:462 tithek.h:2392 tithek.h:2402
-#: tithek.h:3365 tithek.h:3375
+#: mc_pictureplayer.h:150 mc_videoplayer.h:462 tithek.h:2396 tithek.h:2406
+#: tithek.h:3369 tithek.h:3379
 msgid "Repeat-On"
 msgstr "Повтор-Вкл"
 
@@ -13250,7 +13251,7 @@ msgstr "Сохранить"
 msgid "Save Settings"
 msgstr "Сохранить настройки"
 
-#: tithek.h:2127
+#: tithek.h:2130
 msgid "Save Streamurl"
 msgstr ""
 
@@ -14618,7 +14619,7 @@ msgstr "Начать восстановления по умолчанию спу
 msgid "Start Wlan ?"
 msgstr "Подключить сеть WLAN?"
 
-#: mc_videoplayer.h:964 player.h:416 player.h:1511
+#: mc_videoplayer.h:964 player.h:416 player.h:1511 play.h:2137
 msgid "Start at last position ?"
 msgstr "Запустить с места последней остановки?"
 
@@ -14641,7 +14642,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "Запускать при загрузке"
 
-#: tithek.h:2236
+#: tithek.h:2239
 msgid "Start playback"
 msgstr "Старт воспроизведения"
 
@@ -14806,15 +14807,15 @@ msgstr "Инфо о потоке"
 msgid "Streaming"
 msgstr "Стриминг"
 
-#: tithek.h:2073 tithek.h:2077 tithek.h:2081 tithek.h:2094
+#: tithek.h:2076 tithek.h:2080 tithek.h:2084 tithek.h:2097
 msgid "Streaming Playback (default)"
 msgstr "Потоковое воспроизведение (По умолчанию)"
 
-#: tithek.h:2105
+#: tithek.h:2108
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Кэширование потокового воспроизведения (10Мб)"
 
-#: tithek.h:2102
+#: tithek.h:2105
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Кэширование потокового воспроизведения (5Мб)"
 
@@ -15449,7 +15450,7 @@ msgid ""
 "The file you were looking for could not be found, sorry for any inconvenience"
 msgstr "Файл, который вы искали не найден, извините за неудобства"
 
-#: tithek_global.h:228 tithek.h:3219
+#: tithek_global.h:228 tithek.h:3223
 msgid "The hoster is not yet supported !"
 msgstr "Хостер не поддерживается!"
 
@@ -15883,7 +15884,7 @@ msgstr ""
 msgid "TitanNit MegaStyle"
 msgstr ""
 
-#: tithek.h:2313
+#: tithek.h:2317
 msgid "TitanNit Tithek disclaimer"
 msgstr "Отказ от ответственности"
 
@@ -15912,8 +15913,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "Главное меню"
 
-#: tithek_global.h:836 tithek_global.h:959 tithek.h:2385 tithek.h:2653
-#: tithek.h:3285 tithek.h:3311 tithek.h:3328 tithek.h:3341 tithek.h:3358
+#: tithek_global.h:836 tithek_global.h:959 tithek.h:2389 tithek.h:2657
+#: tithek.h:3289 tithek.h:3315 tithek.h:3332 tithek.h:3345 tithek.h:3362
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "Фавориты"
 
