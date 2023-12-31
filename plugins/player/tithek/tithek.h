@@ -2048,9 +2048,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		char* filename = NULL;
 		filename = createfilename(title, ((struct tithek*)listbox->select->handle)->title, 0);
 
-printf("tithek>submenu 1free status.actplaypts: %s\n", status.actplaypts);
 		status.actplaypts = ostrcat(filename, ".pts", 0, 0);
-printf("tithek>submenu 2set status.actplaypts: %s\n", status.actplaypts);
+
 		if(!file_exist(filename))
 		{
 			writesys(filename, "1", 0);
@@ -2278,12 +2277,9 @@ printf("tithek>submenu 2set status.actplaypts: %s\n", status.actplaypts);
 		}
 		else if(ostrcmp(keyconf, "Save Streamurl") == 0)
 		{
-printf("Save Streamurl: filename=%s\n", filename);
-printf("Save Streamurl: tmpstr1=%s\n", tmpstr1);
             if(!ostrncmp("http", tmpstr1, 4))
             {
     			status.streamurl = ostrcat(tmpstr1, NULL, 0, 0);
-                printf("status.streamurl2 set: %s\n", status.streamurl);
             }
 		}
 
