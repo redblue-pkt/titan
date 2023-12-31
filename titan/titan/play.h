@@ -1938,17 +1938,12 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	int skip79 = getconfigint("skip79", NULL);
 
 	resettvpic();
-printf("[screenplay] flag: %d startfolder: %d\n", flag, startfolder);
 
 	if((startfolder == 0 && flag != 3) || (startfolder == 2 && getconfigint("tithek_delservice", NULL) == 0))
 	{
-printf("[screenplay] stopservice\n");
-
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
 	}
-
-printf("[screenplay] status.webplayfile: %s\n",status.webplayfile);
 
 	if(status.webplayfile != NULL)
 	{
@@ -1969,14 +1964,11 @@ printf("[screenplay] status.webplayfile: %s\n",status.webplayfile);
 		else
 			startfile = status.webplayfile;
 
-printf("[screenplay] 1startfile: %s\n",startfile);
-
 		// stream over tithek enable end
 
 		rcret = servicestop(status.aktservice, 1, 1);
 		if(rcret == 1) return ret;
 	}
-printf("[screenplay] 2startfile: %s\n",startfile);
 
 	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
 	if(startfolder == 1)
@@ -2121,34 +2113,25 @@ playerstart:
 			}
 		}
 #endif
-
-printf("play.h/screenplay1 check status.actplaypts: %s\n", status.actplaypts);
-
-if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && file_exist(status.actplaypts))
-{
-printf("play.h/screenplay1a check status.actplaypts: %s\n", status.actplaypts);
-
-	FILE* fbseek = fopen(status.actplaypts, "r");
-	if(fbseek != NULL)
-	{
-//								int ret = textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
-//printf("ret=%d\n", ret);
-//								if(ret == 0 || ret == 1)
-		if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
+		if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && file_exist(status.actplaypts))
 		{
-			char* skip1 = calloc(1, 20); 
-			if(skip1 != NULL) 
+			FILE* fbseek = fopen(status.actplaypts, "r");
+			if(fbseek != NULL)
 			{
-				fscanf(fbseek,"%s",skip1);
-//										playrcjumpf(file, NULL, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);		
-				playrcjumpf(file, showname, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);
+				if(textbox(_("Message"), _("Start at last position ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0) == 1)
+				{
+					char* skip1 = calloc(1, 20); 
+					if(skip1 != NULL) 
+					{
+						fscanf(fbseek,"%s",skip1);
+						playrcjumpf(file, showname, atoll(skip1), &playinfobarstatus, &playinfobarcount, playertype, flag);
 
+					}
+					free(skip1), skip1 = NULL;
+				}
+				fclose(fbseek);
 			}
-			free(skip1), skip1 = NULL;
 		}
-		fclose(fbseek);
-	}
-}
 
 		clearscreen(load);
 		if(status.prefillbuffer == 0)
@@ -2340,22 +2323,16 @@ printf("play.h/screenplay1a check status.actplaypts: %s\n", status.actplaypts);
 						continue;
 					}
 
-printf("play.h/screenplay2 check status.actplaypts: %s\n", status.actplaypts);
-printf("play.h/screenplay2 check playertype: %d\n", playertype);
-printf("play.h/screenplay2 check status.play: %d\n", status.play);
-
-if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && status.play == 1)
-{
-printf("play.h/screenplay2a check status.actplaypts: %s\n", status.actplaypts);
-
-	FILE* fbseek = fopen(status.actplaypts, "w");
-	if(fbseek != NULL)
-	{
-		off64_t pos = playergetpts() / 90000;
-		fprintf(fbseek,"%lld", pos);
-		fclose(fbseek);
-	}
-}
+					if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && status.play == 1)
+					{
+						FILE* fbseek = fopen(status.actplaypts, "w");
+						if(fbseek != NULL)
+						{
+							off64_t pos = playergetpts() / 90000;
+							fprintf(fbseek,"%lld", pos);
+							fclose(fbseek);
+						}
+					}
 
 					playrcstop(playertype, flag);
 					if(startfile == NULL)
@@ -2458,14 +2435,8 @@ printf("play.h/screenplay2a check status.actplaypts: %s\n", status.actplaypts);
 			if(status.repeat == 1)
 				goto playerstart;
 
-//if(status.play == 1)
-printf("play.h/screenplay3 check status.actplaypts: %s\n", status.actplaypts);
-
-if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && file_exist(status.actplaypts) && status.play == 1)
-{
-printf("play.h/screenplay3a check status.actplaypts: %s\n", status.actplaypts);
-	unlink(status.actplaypts);
-}
+			if(playertype == 0 && getconfigint("showlastpos", NULL) == 1 && status.actplaypts != NULL && file_exist(status.actplaypts) && status.play == 1)
+				unlink(status.actplaypts);
 
 playerend:
 			sleep(1);
