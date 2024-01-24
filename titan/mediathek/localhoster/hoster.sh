@@ -1124,7 +1124,7 @@ if [ "$TYPE" == "get" ];then
 		vshare) vshare $INPUT;;
 		streamcrypt) hoster2=$(streamcrypt $INPUT);;
 #		voe) voesx $INPUT;;
-		voe|nonesnanking) voe $INPUT;;
+		voe|nonesnanking|bradleyviewdoctor) voe $INPUT;;
 		streamtape|strtape|streamta|strcloud) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
@@ -1176,7 +1176,7 @@ if [ ! -z "$hoster2" ];then
 		vshare) vshare $INPUT;;
 		streamcrypt) streamcrypt $INPUT;;
 #		voe) voesx $INPUT;;
-		voe|nonesnanking) voe $INPUT;;
+		voe|nonesnanking|bradleyviewdoctor) voe $INPUT;;
 		streamtape|strtape|streamta|strcloud) streamtape $INPUT;;
 		upstream) upstream $INPUT;;
 		evoload) evoload $INPUT;;
