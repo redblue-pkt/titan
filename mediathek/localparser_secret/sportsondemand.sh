@@ -8,7 +8,8 @@ NEXT=$4
 
 PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 
-URL=http://livetv.sx
+#URL=http://livetv.sx
+URL=https://livetv759.me
 #PARSER=`echo $SRC | tr '/' '\n' | tail -n1 | sed 's/.sh//'`
 NAME=Sports-On-Demand
 
